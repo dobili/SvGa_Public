@@ -9,7 +9,8 @@
     "wasser_stein": "spiel/eigene/wasser_stein.png",
     "damm": "spiel/eigene/damm.png",
     "felsRot": "spiel/eigene/fels_rot.png",
-    "wasser_rumpf": "spiel/eigene/wasser_rumpf.png"
+    "wasser_rumpf": "spiel/eigene/wasser_rumpf.png",
+    "sinter": "spiel/eigene/boden_sinter.png"
   },
   "boeden": {
     "holzHell": {
@@ -167,6 +168,28 @@
         ],
         "anteil": 24
       }
+    },
+    "sinter": {
+      "bogen": "sinter",
+      "feld": [2, 0],
+      "varianten": [
+        [2, 0],
+        [3, 0],
+        [0, 0],
+        [2, 0],
+        [3, 0],
+        [0, 0],
+        [2, 0],
+        [3, 0],
+        [0, 0],
+        [2, 0],
+        [3, 0],
+        [0, 0],
+        [1, 0],
+        [0, 1],
+        [1, 1],
+        [2, 1]
+      ]
     }
   },
   "waende": {

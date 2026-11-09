@@ -1,0 +1,122 @@
+{
+  "karte": "summitCity.bergladen",
+  "datei": "karten/varianten/summit-city-bergladen-b.json",
+  "art": "innen",
+  "beschreibung": "Der Bergladen von Summit City: Holzwände, alte Dielen, es riecht nach Leder und Seil. Links die Theke mit der Kasse, an den Wänden Regale mit Seilen, Karabinern, Laternen und Wanderkarten, davor Rucksäcke und ein Ständer mit Seilbahnkarten. Die Tür liegt in der Südwand. Variante B, die schlichtere: Theke rechts, zwei Regale, ein Rucksack.",
+  "wand": "holz",
+  "boden": "dielen",
+  "zustand": ["neu", "gebraucht", "alt"],
+  "stil": ["klassisch", "laendlich", "natur", "modern", "rustikal"],
+  "raster": [
+    "##############",
+    "##############",
+    "##############",
+    "#............#",
+    "#............#",
+    "#............#",
+    "#............#",
+    "#............#",
+    "#............#",
+    "######.#######"
+  ],
+  "objekte": [
+    {
+      "moebel": "cc8TuerSuedHolz",
+      "feld": [6, 9],
+      "an_wand": true
+    },
+    {
+      "moebel": "cc4Fussmatte",
+      "feld": [6, 8],
+      "versatz": [0, 8]
+    },
+    {
+      "moebel": "sc7Theke",
+      "feld": [10, 3]
+    },
+    {
+      "moebel": "cc4RegalA",
+      "feld": [2, 1]
+    },
+    {
+      "moebel": "cc4RegalB",
+      "feld": [4, 1]
+    },
+    {
+      "moebel": "cc4RegalC",
+      "feld": [6, 1]
+    },
+    {
+      "moebel": "scRucksack",
+      "feld": [2, 6]
+    },
+    {
+      "moebel": "ccWeltkarte",
+      "feld": [8, 1],
+      "an_wand": true
+    },
+    {
+      "moebel": "kisteRot",
+      "feld": [1, 6]
+    },
+    {
+      "moebel": "ld5Seil",
+      "feld": [4, 6]
+    },
+    {
+      "moebel": "cc4Falttisch",
+      "feld": [6, 5]
+    },
+    {
+      "moebel": "cc4PflanzeK",
+      "feld": [12, 7]
+    },
+    {
+      "moebel": "scRucksackRot",
+      "feld": [3, 6]
+    }
+  ],
+  "ausloeser": [
+    {
+      "name": "start",
+      "feld": [6, 8],
+      "eigenschaften": {
+        "richtung": "oben"
+      }
+    },
+    {
+      "name": "bergladenAusgang",
+      "feld": [6, 9]
+    },
+    {
+      "name": "theke",
+      "feld": [11, 5]
+    }
+  ],
+  "figuren": [],
+  "belebung": [
+    {
+      "name": "ladenhilfe",
+      "typ": "statist",
+      "feld": [11, 6],
+      "eigenschaften": {
+        "von": "11,6",
+        "bis": "11,6",
+        "tun": "räumt Karten ins Regal",
+        "wann": "tag"
+      }
+    },
+    {
+      "name": "kunde",
+      "typ": "statist",
+      "feld": [8, 8],
+      "eigenschaften": {
+        "von": "8,8",
+        "bis": "8,8",
+        "tun": "probiert einen Rucksack",
+        "wann": "tag"
+      }
+    }
+  ],
+  "variante": "b"
+}

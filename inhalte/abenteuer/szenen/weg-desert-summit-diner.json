@@ -80,6 +80,10 @@
       "feld": [124, 4]
     },
     {
+      "moebel": "wds6Windrad",
+      "feld": [130, 4]
+    },
+    {
       "moebel": "wds6Reklame",
       "feld": [112, 4]
     },
@@ -166,16 +170,8 @@
       "feld": [141, 5]
     },
     {
-      "moebel": "wds6Saguaro",
-      "feld": [131, 5]
-    },
-    {
       "moebel": "wds6KaktusKlein",
       "feld": [116, 12]
-    },
-    {
-      "moebel": "wds6KaktusKlein",
-      "feld": [134, 9]
     },
     {
       "moebel": "wds6Saguaro",
@@ -198,8 +194,8 @@
       "feld": [135, 5]
     },
     {
-      "moebel": "wds6KaktusKlein",
-      "feld": [131, 10]
+      "moebel": "wds6SteinRot",
+      "feld": [131, 12]
     },
     {
       "moebel": "wds6KaktusKlein",
@@ -216,6 +212,14 @@
     {
       "moebel": "wds6KaktusKlein",
       "feld": [114, 12]
+    },
+    {
+      "moebel": "wds6SteinRot",
+      "feld": [140, 9]
+    },
+    {
+      "moebel": "wds6KaktusBluehend",
+      "feld": [137, 7]
     },
     {
       "moebel": "wds6KaktusKlein",

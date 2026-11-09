@@ -12,7 +12,7 @@
     "e": "erde",
     "t": "stein"
   },
-  "beschreibung": "Port Delacroix im nassen Winter nach dem Hurrikan, Hoffnung statt Trauer. Ganz oben das Meer mit Steinkante, darunter die Deichkrone als Erdweg vom Westrand (Ankunft von der Fähre) bis zum Kai, am Fuß der Krone Sandsäcke vom Sturm und der grüne Hang des Deichs; eine Rampe führt hinunter in die Stadt, eine zweite zum Kai. Im Westen das Gleis des Wüstenzugs mit Prellbock und der Bahnsteig mit Bank und Wegweiser. An der Rue du Port die graue Turnhalle der Schule mit Bogenfenstern, links ein rotes, rechts ein grünes Holzhaus, dazwischen der Gebäckwagen von Mrs. Arceneaux, ein Rohbau und Bäume. Südlich der Straße der gepflasterte Platz mit Clubzelt und Notzelt, auf einer Kiste der Bläser, Kinder mit Ball; daneben am Kai das Musikhaus mit rostigem Blechdach, um den Eingang ein Absperrgitter. Am Kai Fässer, Kisten, Sandsäcke, Mr. Batiste mit Eimer und Seil, im Hafenbecken zwei Fischerboote und ein Ruderboot, ein Steg. Im Süden die Rue des Facteurs mit der Klavierwerkstatt Whitlock-Duval und zwei kleinen Holzhäusern, Gärten mit Wäscheleinen; im Osten geht sie als Marschpfad zwischen Bäumen zum Bayou. Ersatz: Sandsäcke sind Säcke aus dem Katalog, der Bauzaun ist ein Absperrgitter (eigene Bilder bestellt).",
+  "beschreibung": "Port Delacroix im nassen Winter nach dem Hurrikan, Hoffnung statt Trauer. Ganz oben das Meer mit Steinkante, darunter die Deichkrone als Erdweg vom Westrand (Ankunft von der Fähre) bis zum Kai, am Fuß der Krone Sandsäcke vom Sturm und der grüne Hang des Deichs; eine Rampe führt hinunter in die Stadt, eine zweite zum Kai. Im Westen das Gleis des Wüstenzugs mit Prellbock und der Bahnsteig mit Bank und Wegweiser. An der Rue du Port die graue Turnhalle der Schule mit Bogenfenstern, links ein rotes, rechts ein grünes Holzhaus, dazwischen der Gebäckwagen von Mrs. Arceneaux, ein Rohbau und Bäume. Südlich der Straße der gepflasterte Platz mit Clubzelt und Notzelt, auf einer Kiste der Bläser, Kinder mit Ball; daneben am Kai das Musikhaus mit rostigem Blechdach, links und rechts des Eingangs ein Bauzaun mit blauer Plane. Am Kai Fässer, Kisten, Sandsäcke, Mr. Batiste mit Eimer und Seil, im Hafenbecken zwei Fischerboote und ein Ruderboot, ein Steg. Im Süden die Rue des Facteurs mit der Klavierwerkstatt Whitlock-Duval und zwei kleinen Holzhäusern, Gärten mit Wäscheleinen; im Osten geht sie als Marschpfad zwischen Bäumen zum Bayou.",
   "raster": [
     "~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~",
     "~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~",
@@ -294,47 +294,31 @@
       "bauteil_ok": true
     },
     {
-      "moebel": "pd6Sandsack",
+      "moebel": "pd6SandsaeckeReihe",
       "feld": [3, 7]
     },
     {
-      "moebel": "pd6Sandsack",
-      "feld": [4, 7]
-    },
-    {
-      "moebel": "pd6Sandsack",
+      "moebel": "pd6SandsaeckeReihe",
       "feld": [9, 7]
     },
     {
-      "moebel": "pd6Sandsack",
-      "feld": [10, 7]
-    },
-    {
-      "moebel": "pd6Sandsack",
+      "moebel": "pd6SandsaeckeReihe",
       "feld": [16, 7]
     },
     {
-      "moebel": "pd6Sandsack",
+      "moebel": "pd6SandsaeckeReihe",
       "feld": [22, 7]
     },
     {
-      "moebel": "pd6Sandsack",
-      "feld": [23, 7]
-    },
-    {
-      "moebel": "pd6Sandsack",
+      "moebel": "pd6SandsaeckeReihe",
       "feld": [35, 7]
     },
     {
-      "moebel": "pd6Sandsack",
+      "moebel": "pd6SandsaeckeReihe",
       "feld": [41, 7]
     },
     {
-      "moebel": "pd6Sandsack",
-      "feld": [42, 7]
-    },
-    {
-      "moebel": "pd6Sandsack",
+      "moebel": "pd6SandsaeckeReihe",
       "feld": [47, 7]
     },
     {
@@ -421,36 +405,54 @@
       "feld": [54, 32]
     },
     {
-      "moebel": "pd6Absperrgitter",
-      "feld": [39, 41]
+      "moebel": "pd6BauzaunEndeLinks",
+      "feld": [39, 40],
+      "bauteil_ok": true
     },
     {
-      "moebel": "pd6Absperrgitter",
-      "feld": [40, 41]
+      "moebel": "pd6BauzaunMitte",
+      "feld": [40, 40],
+      "bauteil_ok": true
     },
     {
-      "moebel": "pd6Absperrgitter",
-      "feld": [41, 41]
+      "moebel": "pd6BauzaunMitte",
+      "feld": [41, 40],
+      "bauteil_ok": true
     },
     {
-      "moebel": "pd6Absperrgitter",
-      "feld": [42, 41]
+      "moebel": "pd6BauzaunMitte",
+      "feld": [42, 40],
+      "bauteil_ok": true
     },
     {
-      "moebel": "pd6Absperrgitter",
-      "feld": [43, 41]
+      "moebel": "pd6BauzaunMitte",
+      "feld": [43, 40],
+      "bauteil_ok": true
     },
     {
-      "moebel": "pd6Absperrgitter",
-      "feld": [49, 41]
+      "moebel": "pd6BauzaunEndeRechts",
+      "feld": [44, 40],
+      "bauteil_ok": true
     },
     {
-      "moebel": "pd6Absperrgitter",
-      "feld": [50, 41]
+      "moebel": "pd6BauzaunEndeLinks",
+      "feld": [48, 40],
+      "bauteil_ok": true
     },
     {
-      "moebel": "pd6Absperrgitter",
-      "feld": [51, 41]
+      "moebel": "pd6BauzaunMitte",
+      "feld": [49, 40],
+      "bauteil_ok": true
+    },
+    {
+      "moebel": "pd6BauzaunMitte",
+      "feld": [50, 40],
+      "bauteil_ok": true
+    },
+    {
+      "moebel": "pd6BauzaunEndeRechts",
+      "feld": [51, 40],
+      "bauteil_ok": true
     },
     {
       "moebel": "mf4Laterne",
@@ -479,7 +481,7 @@
     },
     {
       "moebel": "mf4Laterne",
-      "feld": [50, 39],
+      "feld": [37, 39],
       "vorn": true
     },
     {
@@ -547,16 +549,12 @@
       "feld": [55, 36]
     },
     {
-      "moebel": "pd6Sandsack",
-      "feld": [52, 44]
+      "moebel": "pd6Sandsaecke",
+      "feld": [52, 43]
     },
     {
-      "moebel": "pd6Sandsack",
-      "feld": [53, 44]
-    },
-    {
-      "moebel": "pd6Sandsack",
-      "feld": [54, 44]
+      "moebel": "pd6SandsaeckeHaufen",
+      "feld": [54, 10]
     }
   ],
   "ausloeser": [

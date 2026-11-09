@@ -237,5 +237,57 @@
     "ganz": true,
     "sicher": 0.8,
     "korrektur": "niedrig-1"
+  },
+  "modern-exteriors/Modern_Exteriors_16x16/ME_Theme_Sorter_16x16/19_Graveyard_Singles_16x16/ME_Singles_Graveyard_16x16_Brown_Cross_1.png": {
+    "beschreibung": "Hölzernes Grabkreuz, braun, schlicht, auf einem kleinen Erdhügel, 2×2 Kacheln.",
+    "art": "grab",
+    "innen_aussen": "aussen",
+    "orte": ["friedhof"],
+    "zustand": "alt",
+    "stil": ["rustikal"],
+    "blick": "keine",
+    "befestigung": "boden",
+    "ganz": true,
+    "sicher": 0.85,
+    "korrektur": "niedrig-1"
+  },
+  "modern-exteriors/Modern_Exteriors_16x16/ME_Theme_Sorter_16x16/19_Graveyard_Singles_16x16/ME_Singles_Graveyard_16x16_Small_Brown_Tombstone_1.png": {
+    "beschreibung": "Kleiner brauner Grabstein mit rundem Kopf, verwittert, 1 Kachel breit.",
+    "art": "grab",
+    "innen_aussen": "aussen",
+    "orte": ["friedhof"],
+    "zustand": "alt",
+    "stil": ["rustikal"],
+    "blick": "keine",
+    "befestigung": "boden",
+    "ganz": true,
+    "sicher": 0.85,
+    "korrektur": "niedrig-1"
+  },
+  "modern-exteriors/Modern_Exteriors_16x16/ME_Theme_Sorter_16x16/19_Graveyard_Singles_16x16/ME_Singles_Graveyard_16x16_Small_Brown_Tombstone_3.png": {
+    "beschreibung": "Kleiner brauner Grabstein mit Riss, verwittert, 1 Kachel breit.",
+    "art": "grab",
+    "innen_aussen": "aussen",
+    "orte": ["friedhof"],
+    "zustand": "alt",
+    "stil": ["rustikal"],
+    "blick": "keine",
+    "befestigung": "boden",
+    "ganz": true,
+    "sicher": 0.85,
+    "korrektur": "niedrig-1"
+  },
+  "modern-exteriors/Modern_Exteriors_16x16/ME_Theme_Sorter_16x16/19_Graveyard_Singles_16x16/ME_Singles_Graveyard_16x16_Small_Grey_Tombstone_2.png": {
+    "beschreibung": "Kleiner grauer Grabstein mit rundem Kopf, 1 Kachel breit.",
+    "art": "grab",
+    "innen_aussen": "aussen",
+    "orte": ["friedhof"],
+    "zustand": "alt",
+    "stil": ["rustikal"],
+    "blick": "keine",
+    "befestigung": "boden",
+    "ganz": true,
+    "sicher": 0.85,
+    "korrektur": "niedrig-1"
   }
 }

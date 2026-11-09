@@ -11,7 +11,7 @@
  "tilewidth": 16,
  "tileheight": 16,
  "nextlayerid": 5,
- "nextobjectid": 30,
+ "nextobjectid": 31,
  "layers": [
   {
    "id": 1,
@@ -990,7 +990,7 @@
     },
     {
      "id": 6,
-     "name": "pd6KlavierRot",
+     "name": "pd6KlavierPlane",
      "type": "moebel",
      "x": 16,
      "y": 32,
@@ -1105,11 +1105,11 @@
     },
     {
      "id": 11,
-     "name": "pd6PfuetzeGross",
+     "name": "pd6DielenLoch",
      "type": "moebel",
      "x": 96,
      "y": 80,
-     "width": 48,
+     "width": 32,
      "height": 32,
      "rotation": 0,
      "visible": true,
@@ -1117,23 +1117,23 @@
       {
        "name": "tiefe",
        "type": "int",
-       "value": 1
+       "value": 104
       },
       {
        "name": "kollision",
        "type": "bool",
-       "value": false
+       "value": true
       }
      ]
     },
     {
      "id": 12,
-     "name": "pd6PfuetzeKlein",
+     "name": "pd6DielenNass",
      "type": "moebel",
      "x": 192,
-     "y": 64,
+     "y": 48,
      "width": 32,
-     "height": 16,
+     "height": 32,
      "rotation": 0,
      "visible": true,
      "properties": [
@@ -1151,10 +1151,56 @@
     },
     {
      "id": 13,
-     "name": "pd6PfuetzeKlein",
+     "name": "pd6DielenNass",
      "type": "moebel",
      "x": 208,
      "y": 160,
+     "width": 32,
+     "height": 32,
+     "rotation": 0,
+     "visible": true,
+     "properties": [
+      {
+       "name": "tiefe",
+       "type": "int",
+       "value": 1
+      },
+      {
+       "name": "kollision",
+       "type": "bool",
+       "value": false
+      }
+     ]
+    },
+    {
+     "id": 14,
+     "name": "pd6DielenLoch",
+     "type": "moebel",
+     "x": 64,
+     "y": 160,
+     "width": 32,
+     "height": 32,
+     "rotation": 0,
+     "visible": true,
+     "properties": [
+      {
+       "name": "tiefe",
+       "type": "int",
+       "value": 184
+      },
+      {
+       "name": "kollision",
+       "type": "bool",
+       "value": true
+      }
+     ]
+    },
+    {
+     "id": 15,
+     "name": "pd6PfuetzeKlein",
+     "type": "moebel",
+     "x": 144,
+     "y": 80,
      "width": 32,
      "height": 16,
      "rotation": 0,
@@ -1173,30 +1219,7 @@
      ]
     },
     {
-     "id": 14,
-     "name": "pd6PfuetzeGross",
-     "type": "moebel",
-     "x": 64,
-     "y": 160,
-     "width": 48,
-     "height": 32,
-     "rotation": 0,
-     "visible": true,
-     "properties": [
-      {
-       "name": "tiefe",
-       "type": "int",
-       "value": 1
-      },
-      {
-       "name": "kollision",
-       "type": "bool",
-       "value": false
-      }
-     ]
-    },
-    {
-     "id": 15,
+     "id": 16,
      "name": "pd6RahmenKaputt",
      "type": "moebel",
      "x": 144,
@@ -1219,7 +1242,7 @@
      ]
     },
     {
-     "id": 16,
+     "id": 17,
      "name": "pd6Splitter",
      "type": "moebel",
      "x": 176,
@@ -1242,7 +1265,7 @@
      ]
     },
     {
-     "id": 17,
+     "id": 18,
      "name": "pd6Splitter",
      "type": "moebel",
      "x": 112,
@@ -1265,7 +1288,7 @@
      ]
     },
     {
-     "id": 18,
+     "id": 19,
      "name": "pd6Saegebock",
      "type": "moebel",
      "x": 192,
@@ -1288,7 +1311,7 @@
      ]
     },
     {
-     "id": 19,
+     "id": 20,
      "name": "pd6Holzscheite",
      "type": "moebel",
      "x": 64,
@@ -1311,7 +1334,7 @@
      ]
     },
     {
-     "id": 20,
+     "id": 21,
      "name": "pd6Truemmer2",
      "type": "moebel",
      "x": 272,
@@ -1334,7 +1357,7 @@
      ]
     },
     {
-     "id": 21,
+     "id": 22,
      "name": "pd6Kanister",
      "type": "moebel",
      "x": 288,
@@ -1357,7 +1380,7 @@
      ]
     },
     {
-     "id": 22,
+     "id": 23,
      "name": "pd6KistenTuch",
      "type": "moebel",
      "x": 112,
@@ -1380,7 +1403,7 @@
      ]
     },
     {
-     "id": 23,
+     "id": 24,
      "name": "pd6StuhlRechts",
      "type": "moebel",
      "x": 224,
@@ -1403,7 +1426,7 @@
      ]
     },
     {
-     "id": 24,
+     "id": 25,
      "name": "pd6Kiste",
      "type": "moebel",
      "x": 208,
@@ -1426,7 +1449,7 @@
      ]
     },
     {
-     "id": 25,
+     "id": 26,
      "name": "pd6Kiste",
      "type": "moebel",
      "x": 224,
@@ -1449,7 +1472,7 @@
      ]
     },
     {
-     "id": 26,
+     "id": 27,
      "name": "pd6Bretterstapel",
      "type": "moebel",
      "x": 240,
@@ -1472,7 +1495,7 @@
      ]
     },
     {
-     "id": 27,
+     "id": 28,
      "name": "pd6Truemmer",
      "type": "moebel",
      "x": 128,
@@ -1495,7 +1518,7 @@
      ]
     },
     {
-     "id": 28,
+     "id": 29,
      "name": "pd6Kistenstapel",
      "type": "moebel",
      "x": 80,
@@ -1518,7 +1541,7 @@
      ]
     },
     {
-     "id": 29,
+     "id": 30,
      "name": "pd6Tuer",
      "type": "moebel",
      "x": 160,

@@ -1,0 +1,237 @@
+{
+  "karte": "hochebene.schule",
+  "datei": "karten/hochebene-schule.json",
+  "art": "aussen",
+  "beschreibung": "Die Schule der Hochebene: ein gewöhnliches Schulhaus von heute mit rotem Walmdach, davor der gepflasterte Schulhof mit Basketballfeld und Spielgeräten, am Eingang das Schwarze Brett. An der Straße die Bushaltestelle mit dem gelben Schulbus, daneben die Werkstatt von Joss Vell mit Rolltor, Werkbank und Reifen. Der Schotterweg von den Felstürmen kommt am Ostrand an. Wiese ringsum, eine Hecke schließt das Gelände. Schulhaus im Norden mit Schulhof davor, Basketballfeld rechts, Werkstatt links, Straße mit Bus und Haltestelle im Süden.",
+  "boden": "gras",
+  "wandart": "hecke",
+  "boeden": {
+    "p": "pflaster",
+    "s": "asphalt",
+    "k": "schotter"
+  },
+  "zustand": ["neu", "gebraucht", "alt"],
+  "stil": ["natur", "klassisch", "modern", "laendlich", "rustikal"],
+  "raster": [
+    "############################################################",
+    "#..........................................................#",
+    "#..........................................................#",
+    "#..........................................................#",
+    "#..........................................................#",
+    "#..........................................................#",
+    "#..........................................................#",
+    "#..........................................................#",
+    "#..........................................................#",
+    "#..........................................................#",
+    "#..........................................................#",
+    "#..........................................................#",
+    "#..........................................................#",
+    "#..........................................................#",
+    "#..........................................................#",
+    "#..........................................................#",
+    "#..........................................................#",
+    "#..........................................................#",
+    "#..........................................................#",
+    "#.................................................kkkkkkkkk#",
+    "#.................................................kkkkkkkkk#",
+    "#.................................................kk.......#",
+    "#.................................................kk.......#",
+    "#.................................................kk.......#",
+    "#.............pppppppppppppppppppppppppppppppp....kk.......#",
+    "#.............pppppppppppppppppppppppppppppppp....kk.......#",
+    "#.............pppppppppppppppppppppppppppppppp....kk.......#",
+    "#.............pppppppppppppppppppppppppppppppp....kk.......#",
+    "#.............pppppppppppppppppppppppppppppppp....kk.......#",
+    "#.............pppppppppppppppppppppppppppppppp....kk.......#",
+    "#.............pppppppppppppppppppppppppppppppp....kk.......#",
+    "#.............pppppppppppppppppppppppppppppppp....kk.......#",
+    "#.................................................kk.......#",
+    "#.sssssssssssssssssssssssssssssssssssssssssssssssssssssssss#",
+    "#.sssssssssssssssssssssssssssssssssssssssssssssssssssssssss#",
+    "#.sssssssssssssssssssssssssssssssssssssssssssssssssssssssss#",
+    "#..........................................................#",
+    "#..........................................................#",
+    "#..........................................................#",
+    "############################################################"
+  ],
+  "objekte": [
+    {
+      "moebel": "hb7Schule",
+      "feld": [18, 1]
+    },
+    {
+      "moebel": "hb7Aushang",
+      "feld": [33, 24]
+    },
+    {
+      "moebel": "hb7Basketballfeld",
+      "feld": [44, 3]
+    },
+    {
+      "moebel": "hb7Basketballkorb",
+      "feld": [50, 2]
+    },
+    {
+      "moebel": "hb7Schaukel",
+      "feld": [15, 25]
+    },
+    {
+      "moebel": "hb7Spielturm",
+      "feld": [20, 27]
+    },
+    {
+      "moebel": "rvPicknicktisch",
+      "feld": [40, 28]
+    },
+    {
+      "moebel": "hb7Werkstatt",
+      "feld": [2, 23]
+    },
+    {
+      "moebel": "cc4Werktisch",
+      "feld": [9, 25]
+    },
+    {
+      "moebel": "dsReifen",
+      "feld": [9, 29]
+    },
+    {
+      "moebel": "heSchulbus",
+      "feld": [30, 33],
+      "bauteil_ok": true
+    },
+    {
+      "moebel": "haltestellenschild",
+      "feld": [44, 30]
+    },
+    {
+      "moebel": "wds6Briefkasten",
+      "feld": [47, 31]
+    },
+    {
+      "moebel": "wds6Pinie",
+      "feld": [7, 2]
+    },
+    {
+      "moebel": "cc3Busch",
+      "feld": [47, 26]
+    },
+    {
+      "moebel": "cc3Busch",
+      "feld": [10, 13]
+    },
+    {
+      "moebel": "cc3Busch",
+      "feld": [3, 11]
+    },
+    {
+      "moebel": "wds6Pinie",
+      "feld": [13, 13]
+    },
+    {
+      "moebel": "wds6Kegelbaum",
+      "feld": [8, 6]
+    },
+    {
+      "moebel": "cc3Busch",
+      "feld": [11, 18]
+    },
+    {
+      "moebel": "wds6Kegelbaum",
+      "feld": [13, 6]
+    },
+    {
+      "moebel": "wds6Pinie",
+      "feld": [7, 14]
+    },
+    {
+      "moebel": "wds6Kegelbaum",
+      "feld": [53, 25]
+    },
+    {
+      "moebel": "wds6Pinie",
+      "feld": [45, 20]
+    },
+    {
+      "moebel": "cc3Busch",
+      "feld": [2, 8]
+    },
+    {
+      "moebel": "cc3Busch",
+      "feld": [13, 3]
+    },
+    {
+      "moebel": "cc3Busch",
+      "feld": [5, 6]
+    }
+  ],
+  "ausloeser": [
+    {
+      "name": "start",
+      "feld": [58, 19],
+      "eigenschaften": {
+        "richtung": "links"
+      }
+    },
+    {
+      "name": "zurueckFelsentuerme",
+      "feld": [59, 19]
+    },
+    {
+      "name": "zurueckFelsentuerme",
+      "feld": [59, 20]
+    },
+    {
+      "name": "werkstatt",
+      "feld": [5, 29]
+    },
+    {
+      "name": "aushang",
+      "feld": [33, 26]
+    }
+  ],
+  "figuren": [
+    {
+      "name": "annek",
+      "feld": [28, 29]
+    },
+    {
+      "name": "joss",
+      "feld": [8, 30]
+    }
+  ],
+  "belebung": [
+    {
+      "name": "schulkinder",
+      "typ": "statist",
+      "feld": [24, 30],
+      "eigenschaften": {
+        "von": "24,30",
+        "bis": "24,30",
+        "tun": "spielen Fangen",
+        "wann": "tag"
+      }
+    },
+    {
+      "name": "lehrerin",
+      "typ": "statist",
+      "feld": [36, 28],
+      "eigenschaften": {
+        "von": "36,28",
+        "bis": "36,28",
+        "tun": "hat Pausenaufsicht",
+        "wann": "tag"
+      }
+    },
+    {
+      "name": "hund",
+      "typ": "tier",
+      "feld": [50, 37],
+      "eigenschaften": {
+        "von": "50,37",
+        "bis": "53,37",
+        "verhalten": "ausweichen"
+      }
+    }
+  ]
+}

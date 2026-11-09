@@ -3,7 +3,7 @@
   "datei": "karten/port-delacroix-musikhaus-neu.json",
   "art": "innen",
   "zustand_der_karte": "musikhausOffen",
-  "beschreibung": "Das neue Musikhaus am Kai nach dem Wiederaufbau (Zustand ab Szene 70, `musikhausOffen`): Musik- und Schachclub Port Delacroix, seit 1889. Frisch gestrichene cremefarbene Wände, neue helle Dielen, zwei Fenster mit Blick aufs Hafenbecken. An der Nordwand Henris gestiftetes Klavier, links davon ein Regal mit Brettern und Figuren und ein Notenregal, rechts ein Bild und eine große Pflanze. Vier Spieltische mit je einem Brett und zwei Stühlen stehen links und rechts, in der Mitte ein Teppich, auf dem Kinder sitzen. Die Tür liegt in der Mitte der Südwand, davor eine Matte; über der Tür hängt innen das Schild „Musik- und Schachclub Port Delacroix, seit 1889“ (bestellt, Auslöser `schild` links neben der Tür).",
+  "beschreibung": "Das neue Musikhaus am Kai nach dem Wiederaufbau (Zustand ab Szene 70, `musikhausOffen`): Musik- und Schachclub Port Delacroix, seit 1889. Frisch gestrichene cremefarbene Wände, neue helle Dielen, zwei Fenster mit Blick aufs Hafenbecken. An der Nordwand links ein Regal mit Brettern und Figuren und Henris gestiftetes Klavier, in der Mitte das neue Schild „Musik und Schach, seit 1889“, rechts ein Notenregal; eine große Pflanze steht an der Ostwand. Vier Spieltische mit je einem Brett und zwei Stühlen stehen links und rechts, in der Mitte ein Teppich, auf dem Kinder sitzen. Die Tür liegt in der Mitte der Südwand, davor eine Matte; der Auslöser `schild` liegt links neben der Tür.",
   "wand": "creme",
   "boden": "holzHell",
   "raster": [
@@ -30,18 +30,18 @@
     },
     {
       "moebel": "pd6Fenster",
-      "feld": [15, 1],
+      "feld": [16, 1],
       "an_wand": true
     },
     {
-      "moebel": "pd6Bild",
-      "feld": [12, 1],
+      "moebel": "pd6SchildMusikhaus",
+      "feld": [8, 1],
       "an_wand": true,
-      "versatz": [0, 6]
+      "versatz": [0, 4]
     },
     {
       "moebel": "pd6KlavierNatur",
-      "feld": [9, 2]
+      "feld": [5, 2]
     },
     {
       "moebel": "pd6Regal",
@@ -49,11 +49,11 @@
     },
     {
       "moebel": "pd6Notenregal",
-      "feld": [6, 2]
+      "feld": [14, 2]
     },
     {
       "moebel": "pd6PflanzeGross",
-      "feld": [17, 2]
+      "feld": [17, 9]
     },
     {
       "moebel": "pd6Teppich",

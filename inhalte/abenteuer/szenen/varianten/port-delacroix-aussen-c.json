@@ -13,7 +13,7 @@
     "t": "stein",
     "k": "sand"
   },
-  "beschreibung": "Variante C, Platz im Westen: Port Delacroix mit grauem Gleis und Auslegerlaternen, Kies auf dem Uferweg und in der Rue des Facteurs. Oben Meer, Deichkrone und Hang mit Sandsäcken. Die Turnhalle steht gleich hinter dem Bahnsteig im Westen, weiter östlich der Gebäckwagen, ein rotes Haus, ein Rohbau und ein grünes Haus. Der Platz mit den Zelten liegt im Westen unter der Turnhalle, die Gasse führt im Osten nach Süden; am Kai das Musikhaus mit Absperrgitter. Im Süden zwei kleine Holzhäuser im Westen und die Klavierwerkstatt im Osten, Wäscheleinen und Zypressen, Boote und Steg im Hafenbecken, Marschpfad zum Bayou am Ostrand.",
+  "beschreibung": "Variante C, Platz im Westen: Port Delacroix mit grauem Gleis und Auslegerlaternen, Kies auf dem Uferweg und in der Rue des Facteurs. Oben Meer, Deichkrone und Hang mit Sandsäcken. Die Turnhalle steht gleich hinter dem Bahnsteig im Westen, weiter östlich der Gebäckwagen, ein rotes Haus, ein Rohbau und ein grünes Haus. Der Platz mit den Zelten liegt im Westen unter der Turnhalle, die Gasse führt im Osten nach Süden; am Kai das Musikhaus hinter einem Bauzaun. Im Süden zwei kleine Holzhäuser im Westen und die Klavierwerkstatt im Osten, Wäscheleinen und Zypressen, Boote und Steg im Hafenbecken, Marschpfad zum Bayou am Ostrand.",
   "raster": [
     "~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~",
     "~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~",
@@ -295,48 +295,40 @@
       "bauteil_ok": true
     },
     {
-      "moebel": "pd6Sandsack",
+      "moebel": "pd6SandsaeckeReihe",
       "feld": [7, 7]
     },
     {
-      "moebel": "pd6Sandsack",
-      "feld": [8, 7]
-    },
-    {
-      "moebel": "pd6Sandsack",
+      "moebel": "pd6SandsaeckeReihe",
       "feld": [14, 7]
     },
     {
-      "moebel": "pd6Sandsack",
+      "moebel": "pd6SandsaeckeReihe",
       "feld": [20, 7]
     },
     {
-      "moebel": "pd6Sandsack",
-      "feld": [21, 7]
-    },
-    {
-      "moebel": "pd6Sandsack",
+      "moebel": "pd6SandsaeckeReihe",
       "feld": [27, 7]
     },
     {
-      "moebel": "pd6Sandsack",
+      "moebel": "pd6SandsaeckeReihe",
       "feld": [32, 7]
     },
     {
-      "moebel": "pd6Sandsack",
+      "moebel": "pd6SandsaeckeReihe",
       "feld": [36, 7]
     },
     {
-      "moebel": "pd6Sandsack",
+      "moebel": "pd6SandsaeckeReihe",
       "feld": [43, 7]
     },
     {
-      "moebel": "pd6Sandsack",
-      "feld": [44, 7]
+      "moebel": "pd6SandsaeckeReihe",
+      "feld": [49, 7]
     },
     {
-      "moebel": "pd6Sandsack",
-      "feld": [49, 7]
+      "moebel": "pd6SandsaeckeHaufen",
+      "feld": [54, 46]
     },
     {
       "moebel": "pd6Turnhalle",
@@ -434,24 +426,54 @@
       "feld": [55, 21]
     },
     {
-      "moebel": "pd6Absperrgitter",
-      "feld": [41, 41]
+      "moebel": "pd6BauzaunEndeLinks",
+      "feld": [41, 40],
+      "bauteil_ok": true
     },
     {
-      "moebel": "pd6Absperrgitter",
-      "feld": [42, 41]
+      "moebel": "pd6BauzaunMitte",
+      "feld": [42, 40],
+      "bauteil_ok": true
     },
     {
-      "moebel": "pd6Absperrgitter",
-      "feld": [43, 41]
+      "moebel": "pd6BauzaunMitte",
+      "feld": [43, 40],
+      "bauteil_ok": true
     },
     {
-      "moebel": "pd6Absperrgitter",
-      "feld": [44, 41]
+      "moebel": "pd6BauzaunMitte",
+      "feld": [44, 40],
+      "bauteil_ok": true
     },
     {
-      "moebel": "pd6Absperrgitter",
-      "feld": [51, 41]
+      "moebel": "pd6BauzaunMitte",
+      "feld": [45, 40],
+      "bauteil_ok": true
+    },
+    {
+      "moebel": "pd6BauzaunEndeRechts",
+      "feld": [46, 40],
+      "bauteil_ok": true
+    },
+    {
+      "moebel": "pd6BauzaunEndeLinks",
+      "feld": [50, 40],
+      "bauteil_ok": true
+    },
+    {
+      "moebel": "pd6BauzaunMitte",
+      "feld": [51, 40],
+      "bauteil_ok": true
+    },
+    {
+      "moebel": "pd6BauzaunMitte",
+      "feld": [52, 40],
+      "bauteil_ok": true
+    },
+    {
+      "moebel": "pd6BauzaunEndeRechts",
+      "feld": [53, 40],
+      "bauteil_ok": true
     },
     {
       "moebel": "rv5LaterneAusleger",

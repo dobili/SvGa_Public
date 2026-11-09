@@ -11,7 +11,7 @@
  "tilewidth": 16,
  "tileheight": 16,
  "nextlayerid": 5,
- "nextobjectid": 64,
+ "nextobjectid": 66,
  "layers": [
   {
    "id": 1,
@@ -264,7 +264,6 @@
     1,
     1,
     0,
-    0,
     4,
     4,
     4,
@@ -276,6 +275,7 @@
     4,
     4,
     4,
+    4,
     1,
     1,
     1,
@@ -314,17 +314,17 @@
     1,
     4,
     4,
-    0,
-    0,
     0,
     0,
     0,
     0,
+    0,
+    0,
     1,
     1,
     1,
     0,
-    0,
+    4,
     4,
     4,
     4,
@@ -2437,7 +2437,6 @@
     0,
     0,
     2,
-    2,
     0,
     0,
     0,
@@ -2485,19 +2484,20 @@
     0,
     0,
     0,
-    0,
-    0,
-    2,
-    2,
-    2,
-    2,
-    2,
-    2,
     0,
     0,
     0,
     2,
     2,
+    2,
+    2,
+    2,
+    2,
+    0,
+    0,
+    0,
+    2,
+    0,
     0,
     0,
     0,
@@ -6639,6 +6639,28 @@
     },
     {
      "id": 9,
+     "name": "zedernpfad",
+     "type": "ausloeser",
+     "x": 0,
+     "y": 64,
+     "width": 16,
+     "height": 16,
+     "rotation": 0,
+     "visible": true
+    },
+    {
+     "id": 10,
+     "name": "zedernpfad",
+     "type": "ausloeser",
+     "x": 0,
+     "y": 80,
+     "width": 16,
+     "height": 16,
+     "rotation": 0,
+     "visible": true
+    },
+    {
+     "id": 11,
      "name": "flussweg",
      "type": "ausloeser",
      "x": 0,
@@ -6649,7 +6671,7 @@
      "visible": true
     },
     {
-     "id": 10,
+     "id": 12,
      "name": "flussweg",
      "type": "ausloeser",
      "x": 0,
@@ -6660,7 +6682,7 @@
      "visible": true
     },
     {
-     "id": 11,
+     "id": 13,
      "name": "zedernwald",
      "type": "ausloeser",
      "x": 944,
@@ -6671,7 +6693,7 @@
      "visible": true
     },
     {
-     "id": 12,
+     "id": 14,
      "name": "zedernwald",
      "type": "ausloeser",
      "x": 944,
@@ -6682,7 +6704,7 @@
      "visible": true
     },
     {
-     "id": 13,
+     "id": 15,
      "name": "rosa",
      "type": "figur",
      "x": 848,
@@ -6693,7 +6715,7 @@
      "visible": true
     },
     {
-     "id": 14,
+     "id": 16,
      "name": "victor",
      "type": "figur",
      "x": 752,
@@ -6704,7 +6726,7 @@
      "visible": true
     },
     {
-     "id": 15,
+     "id": 17,
      "name": "busfahrer",
      "type": "statist",
      "x": 672,
@@ -6737,7 +6759,7 @@
      ]
     },
     {
-     "id": 16,
+     "id": 18,
      "name": "stegbauer",
      "type": "statist",
      "x": 816,
@@ -6770,7 +6792,7 @@
      ]
     },
     {
-     "id": 17,
+     "id": 19,
      "name": "hund",
      "type": "tier",
      "x": 272,
@@ -6798,7 +6820,7 @@
      ]
     },
     {
-     "id": 18,
+     "id": 20,
      "name": "reiher",
      "type": "tier",
      "x": 784,
@@ -6826,7 +6848,7 @@
      ]
     },
     {
-     "id": 19,
+     "id": 21,
      "name": "eichelhaeher",
      "type": "tier",
      "x": 144,
@@ -6859,7 +6881,7 @@
      ]
     },
     {
-     "id": 20,
+     "id": 22,
      "name": "cc4Drechslerei",
      "type": "moebel",
      "x": 32,
@@ -6882,7 +6904,7 @@
      ]
     },
     {
-     "id": 21,
+     "id": 23,
      "name": "cc4Holzstapel",
      "type": "moebel",
      "x": 96,
@@ -6905,7 +6927,7 @@
      ]
     },
     {
-     "id": 22,
+     "id": 24,
      "name": "mf2Waschsalon",
      "type": "moebel",
      "x": 192,
@@ -6928,7 +6950,7 @@
      ]
     },
     {
-     "id": 23,
+     "id": 25,
      "name": "mfLaterne",
      "type": "moebel",
      "x": 320,
@@ -6951,7 +6973,7 @@
      ]
     },
     {
-     "id": 24,
+     "id": 26,
      "name": "mf2Bibliothek",
      "type": "moebel",
      "x": 352,
@@ -6974,7 +6996,7 @@
      ]
     },
     {
-     "id": 25,
+     "id": 27,
      "name": "mf2Haustuer",
      "type": "moebel",
      "x": 392,
@@ -6997,7 +7019,7 @@
      ]
     },
     {
-     "id": 26,
+     "id": 28,
      "name": "cc3Anschlagtafel",
      "type": "moebel",
      "x": 640,
@@ -7020,7 +7042,7 @@
      ]
     },
     {
-     "id": 27,
+     "id": 29,
      "name": "mfBushaltestelle",
      "type": "moebel",
      "x": 672,
@@ -7043,7 +7065,7 @@
      ]
     },
     {
-     "id": 28,
+     "id": 30,
      "name": "mfMuelltonne",
      "type": "moebel",
      "x": 736,
@@ -7066,7 +7088,7 @@
      ]
     },
     {
-     "id": 29,
+     "id": 31,
      "name": "cc4Nadelbaum",
      "type": "moebel",
      "x": 32,
@@ -7089,7 +7111,7 @@
      ]
     },
     {
-     "id": 30,
+     "id": 32,
      "name": "cc4NadelbaumB",
      "type": "moebel",
      "x": 80,
@@ -7112,7 +7134,7 @@
      ]
     },
     {
-     "id": 31,
+     "id": 33,
      "name": "cc4Nadelbaum",
      "type": "moebel",
      "x": 128,
@@ -7135,56 +7157,10 @@
      ]
     },
     {
-     "id": 32,
+     "id": 34,
      "name": "mf2Zeder",
      "type": "moebel",
      "x": 208,
-     "y": 16,
-     "width": 32,
-     "height": 64,
-     "rotation": 0,
-     "visible": true,
-     "properties": [
-      {
-       "name": "tiefe",
-       "type": "int",
-       "value": 72
-      },
-      {
-       "name": "kollision",
-       "type": "bool",
-       "value": true
-      }
-     ]
-    },
-    {
-     "id": 33,
-     "name": "cc4NadelbaumB",
-     "type": "moebel",
-     "x": 256,
-     "y": 32,
-     "width": 32,
-     "height": 48,
-     "rotation": 0,
-     "visible": true,
-     "properties": [
-      {
-       "name": "tiefe",
-       "type": "int",
-       "value": 72
-      },
-      {
-       "name": "kollision",
-       "type": "bool",
-       "value": true
-      }
-     ]
-    },
-    {
-     "id": 34,
-     "name": "mf2ZederSchmal",
-     "type": "moebel",
-     "x": 304,
      "y": 16,
      "width": 32,
      "height": 64,
@@ -7207,8 +7183,8 @@
      "id": 35,
      "name": "cc4NadelbaumB",
      "type": "moebel",
-     "x": 32,
-     "y": 96,
+     "x": 256,
+     "y": 32,
      "width": 32,
      "height": 48,
      "rotation": 0,
@@ -7217,7 +7193,7 @@
       {
        "name": "tiefe",
        "type": "int",
-       "value": 136
+       "value": 72
       },
       {
        "name": "kollision",
@@ -7228,19 +7204,19 @@
     },
     {
      "id": 36,
-     "name": "cc4Nadelbaum",
+     "name": "mf2ZederSchmal",
      "type": "moebel",
-     "x": 208,
-     "y": 96,
+     "x": 304,
+     "y": 16,
      "width": 32,
-     "height": 48,
+     "height": 64,
      "rotation": 0,
      "visible": true,
      "properties": [
       {
        "name": "tiefe",
        "type": "int",
-       "value": 136
+       "value": 72
       },
       {
        "name": "kollision",
@@ -7253,7 +7229,7 @@
      "id": 37,
      "name": "cc4NadelbaumB",
      "type": "moebel",
-     "x": 272,
+     "x": 32,
      "y": 96,
      "width": 32,
      "height": 48,
@@ -7276,6 +7252,52 @@
      "id": 38,
      "name": "cc4Nadelbaum",
      "type": "moebel",
+     "x": 208,
+     "y": 96,
+     "width": 32,
+     "height": 48,
+     "rotation": 0,
+     "visible": true,
+     "properties": [
+      {
+       "name": "tiefe",
+       "type": "int",
+       "value": 136
+      },
+      {
+       "name": "kollision",
+       "type": "bool",
+       "value": true
+      }
+     ]
+    },
+    {
+     "id": 39,
+     "name": "cc4NadelbaumB",
+     "type": "moebel",
+     "x": 272,
+     "y": 96,
+     "width": 32,
+     "height": 48,
+     "rotation": 0,
+     "visible": true,
+     "properties": [
+      {
+       "name": "tiefe",
+       "type": "int",
+       "value": 136
+      },
+      {
+       "name": "kollision",
+       "type": "bool",
+       "value": true
+      }
+     ]
+    },
+    {
+     "id": 40,
+     "name": "cc4Nadelbaum",
+     "type": "moebel",
      "x": 656,
      "y": 32,
      "width": 32,
@@ -7296,7 +7318,7 @@
      ]
     },
     {
-     "id": 39,
+     "id": 41,
      "name": "mf2Zeder",
      "type": "moebel",
      "x": 704,
@@ -7319,7 +7341,7 @@
      ]
     },
     {
-     "id": 40,
+     "id": 42,
      "name": "mf2ZederSchmal",
      "type": "moebel",
      "x": 656,
@@ -7342,7 +7364,7 @@
      ]
     },
     {
-     "id": 41,
+     "id": 43,
      "name": "cc4NadelbaumB",
      "type": "moebel",
      "x": 720,
@@ -7365,7 +7387,7 @@
      ]
     },
     {
-     "id": 42,
+     "id": 44,
      "name": "cc4Nadelbaum",
      "type": "moebel",
      "x": 672,
@@ -7388,7 +7410,7 @@
      ]
     },
     {
-     "id": 43,
+     "id": 45,
      "name": "cc4Nadelbaum",
      "type": "moebel",
      "x": 896,
@@ -7411,7 +7433,7 @@
      ]
     },
     {
-     "id": 44,
+     "id": 46,
      "name": "cc4NadelbaumB",
      "type": "moebel",
      "x": 896,
@@ -7434,7 +7456,7 @@
      ]
     },
     {
-     "id": 45,
+     "id": 47,
      "name": "cc4Nadelbaum",
      "type": "moebel",
      "x": 912,
@@ -7457,7 +7479,7 @@
      ]
     },
     {
-     "id": 46,
+     "id": 48,
      "name": "mf2Zeder",
      "type": "moebel",
      "x": 896,
@@ -7480,7 +7502,7 @@
      ]
     },
     {
-     "id": 47,
+     "id": 49,
      "name": "cc4NadelbaumB",
      "type": "moebel",
      "x": 912,
@@ -7503,7 +7525,7 @@
      ]
     },
     {
-     "id": 48,
+     "id": 50,
      "name": "cc4Nadelbaum",
      "type": "moebel",
      "x": 896,
@@ -7526,7 +7548,7 @@
      ]
     },
     {
-     "id": 49,
+     "id": 51,
      "name": "mf2ZederSchmal",
      "type": "moebel",
      "x": 912,
@@ -7549,7 +7571,7 @@
      ]
     },
     {
-     "id": 50,
+     "id": 52,
      "name": "cc4NadelbaumB",
      "type": "moebel",
      "x": 896,
@@ -7572,7 +7594,7 @@
      ]
     },
     {
-     "id": 51,
+     "id": 53,
      "name": "cc4Wohnhaus",
      "type": "moebel",
      "x": 48,
@@ -7595,7 +7617,7 @@
      ]
     },
     {
-     "id": 52,
+     "id": 54,
      "name": "cc4Wohnhaus",
      "type": "moebel",
      "x": 192,
@@ -7618,7 +7640,7 @@
      ]
     },
     {
-     "id": 53,
+     "id": 55,
      "name": "mf2Zeder",
      "type": "moebel",
      "x": 384,
@@ -7641,7 +7663,7 @@
      ]
     },
     {
-     "id": 54,
+     "id": 56,
      "name": "cc4NadelbaumB",
      "type": "moebel",
      "x": 448,
@@ -7664,7 +7686,7 @@
      ]
     },
     {
-     "id": 55,
+     "id": 57,
      "name": "cc4Nadelbaum",
      "type": "moebel",
      "x": 512,
@@ -7687,7 +7709,7 @@
      ]
     },
     {
-     "id": 56,
+     "id": 58,
      "name": "cc4Nadelbaum",
      "type": "moebel",
      "x": 400,
@@ -7710,7 +7732,7 @@
      ]
     },
     {
-     "id": 57,
+     "id": 59,
      "name": "mf2ZederSchmal",
      "type": "moebel",
      "x": 560,
@@ -7733,7 +7755,7 @@
      ]
     },
     {
-     "id": 58,
+     "id": 60,
      "name": "mf2Zeder",
      "type": "moebel",
      "x": 528,
@@ -7756,7 +7778,7 @@
      ]
     },
     {
-     "id": 59,
+     "id": 61,
      "name": "cc4NadelbaumB",
      "type": "moebel",
      "x": 608,
@@ -7779,7 +7801,7 @@
      ]
     },
     {
-     "id": 60,
+     "id": 62,
      "name": "mfBank",
      "type": "moebel",
      "x": 720,
@@ -7802,7 +7824,7 @@
      ]
     },
     {
-     "id": 61,
+     "id": 63,
      "name": "cc4Stammbank",
      "type": "moebel",
      "x": 464,
@@ -7825,7 +7847,7 @@
      ]
     },
     {
-     "id": 62,
+     "id": 64,
      "name": "cc4Bootsschuppen",
      "type": "moebel",
      "x": 720,
@@ -7848,7 +7870,7 @@
      ]
     },
     {
-     "id": 63,
+     "id": 65,
      "name": "cc4Ruderboot",
      "type": "moebel",
      "x": 800,

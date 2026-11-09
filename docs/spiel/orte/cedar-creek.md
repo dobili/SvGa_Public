@@ -203,8 +203,8 @@ die Tür sitzt unten im Turm links (3 von 18), innen deshalb bei Spalte 4.
 
 Umgesetzt (Runde 4, mittel-2): Karte `cedarCreek.drechslerei` mit `drechslereiTuer` und
 `drechslereiAusgang`, Auslöser `flussweg` (Westrand, Reihen 20–21), `weiterCedar.ziel` auf `flussweg`,
-`zurueckCedar` (Weg nach Riverton) auf `zedernwald`. Noch offen, bis niedrig-1 den Zedernpfad baut:
-`zedernpfad` auf `cedarCreek.aussen` (der Pfad endet bis dahin an der Hecke bei Spalte 1).
+`zurueckCedar` (Weg nach Riverton) auf `zedernwald`, Auslöser `zedernpfad` (Westrand, Reihen 4–5)
+mit `zedernWeiterCedar` als Gegenstück.
 
 Änderungen in `orte.json` für den Haupt-Chat: neue Auslöser `flussweg` und `zedernpfad` auf
 `cedarCreek.aussen`, `zedernpfad` auf `mapleFalls.park`, neue Karte `wegMapleCedar.zedernpfad` mit
@@ -496,8 +496,7 @@ folgen in Runde 5; der Stamm ist nur ein Kachelbild (1 × 2), als Sperre wirkt e
 
 **Größe:** 60 × 36 (vorher 44 × 24; 56 im Plan, vier Spalten mehr für die 18 breite Bibliothek).
 Rand Hecke, offen am Westrand in den Reihen 20–21 (Hauptstraße, `flussweg`) und am Ostrand in den
-Reihen 8–9 (Waldweg, `zedernwald`); der Zedernpfad (Reihen 4–5) bleibt geschlossen, bis seine Karte
-steht. Böden: Gras, Gehwege Pflaster (Reihen 19 und 22), Straße Asphalt (Reihen 20–21), Erde für Pfade
+Reihen 8–9 (Waldweg, `zedernwald`) und in den Reihen 4–5 (Zedernpfad, `zedernpfad`). Böden: Gras, Gehwege Pflaster (Reihen 19 und 22), Straße Asphalt (Reihen 20–21), Erde für Pfade
 und Uferweg (Spalten 48–49), dunkles Holz für Brücke (Reihen 8–9) und Steg (Reihen 14–15, Spalten
 50–53), Bach in den Spalten 50–55 von oben bis unten.
 
@@ -541,5 +540,4 @@ Platzhalter (13 §7.4): Schild „Brückenarbeiten“ an der Brücke, Schaukaste
 Angel am Steg, Ast auf der Südwiese, Kühe und Zettel kommen als Objekte in Runde 5. Freie Wiese
 südlich der Straße (Spalten 22–44) bleibt für das Gemeindefest.
 
-Offen: Den Zedernpfad (Westrand, Reihen 4–5) öffnen, sobald `wegMapleCedar.zedernpfad` steht. Der
-Katalog hat keinen Kanuständer und kein umgedrehtes Kanu; das Ruderboot vertritt sie.
+Offen: Der Katalog hat keinen Kanuständer und kein umgedrehtes Kanu; das Ruderboot vertritt sie.

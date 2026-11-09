@@ -442,6 +442,14 @@
           }
         },
         {
+          "name": "zedernpfad",
+          "art": "uebergang",
+          "ziel": {
+            "karte": "wegMapleCedar.zedernpfad",
+            "ausloeser": "zedernWeiterCedar"
+          }
+        },
+        {
           "name": "flussweg",
           "art": "uebergang",
           "ziel": {
@@ -675,7 +683,7 @@
           "art": "uebergang",
           "ziel": {
             "karte": "cedarCreek.aussen",
-            "ausloeser": "bushaltestelle"
+            "ausloeser": "zedernpfad"
           }
         }
       ]

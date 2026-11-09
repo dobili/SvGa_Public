@@ -21,7 +21,7 @@
       "stil": "rustikal"
     },
     "ld5Flaschenregal": {
-      "quelle": "modern-interiors/1_Interiors/16x16/Theme_Sorter_Black_Shadow_Singles/3_Bathroom_Black_Shadow_Singles_16x16/Bathroom_Black_Shadow_Singles_84.png",
+      "quelle": "spiel/eigene/flaschenregal_holz.png",
       "breite": 32,
       "hoehe": 48,
       "kollision": true,

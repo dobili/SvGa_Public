@@ -173,3 +173,11 @@ nur dort, wo sie im Bild auffallen.
 - A/B/C: gut lesbar (Banner „Landesmeisterschaft“, Bühne mit Finaltisch, Tribünen, Presse, Fanshop, Turniertafel).
 - A: Die Turniertafel (Holzbrett mit Dach, um (1, 7)) sieht aus wie ein Gartenhäuschen; eine Turnierwand mit Paarungen liest sich besser. Vorschlag: Pinnwand oder Tafel an der Westwand (`an_wand`).
 - B: Bühne in der Raummitte, Tribünen davor an der Nordwand verdecken den Blick der Zuschauer auf die Bühne nicht, aber die Vorrundenbretter stehen hinter der Bühne Richtung Tür; Vorschlag: Reihenfolge Tribüne – Bühne – Vorrunde – Eingang wie in A/C.
+
+## Antwort auf die Gegenprüfung von mittel-4 (Weg 8)
+
+- [x] Geysirbecken: Sinterterrassen über die ganze Breite, das Wasser in kleine Quelltöpfe und durch
+      Sinterstufen geteilte Becken, Geysirkegel zwischen den Becken, Ranger-Tor gut sichtbar am Weg
+      (A, B, C).
+- [x] Prärie B: Weizen- und Maisfelder zu beiden Seiten des Wegs, Windrad nach (23, 40).
+- [x] Prärie C: Der Erdweg schließt bei Reihe 130 an die Schotterstraße an.

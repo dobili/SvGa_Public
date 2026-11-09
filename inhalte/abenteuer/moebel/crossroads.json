@@ -116,7 +116,8 @@
       "kollision": true,
       "art": "zaun",
       "zustand": "gebraucht",
-      "stil": "laendlich"
+      "stil": "laendlich",
+      "maske": ["##", "##", "##", "##"]
     }
   }
 }

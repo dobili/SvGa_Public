@@ -90,7 +90,9 @@ def hintergrund(szene: dict, privat: Path, gezeichnet: dict | None = None) -> Im
     # Draußen ist „#“ eine Hecke (oder ein anderer Boden aus „wandart“), keine Wandkrone.
     wandart = boeden.get(szene["wandart"]) if szene.get("wandart") else None
     ufer = f"wasser_{szene['ufer']}" if szene.get("ufer") else "wasser"
-    flaeche = {} if wandart else flaechen(zeilen)
+    # Wandstile mit eigener Krone (Fels, Damm) zeichnen ihre Flächen auch draußen neben „wandart“:
+    # Der Rand bleibt dann Boden, nur „#“ über einem Boden wird Hang oder Felswand (10.45).
+    flaeche = flaechen(zeilen) if not wandart or "krone" in wand else {}
     for y, zeile in enumerate(zeilen):
         for x, z in enumerate(zeile):
             ort = (x * K, y * K)
@@ -115,13 +117,13 @@ def hintergrund(szene: dict, privat: Path, gezeichnet: dict | None = None) -> Im
                 bild.alpha_composite(kachel(privat, boegen, art, feld), ort)
                 if gezeichnet is not None:
                     gezeichnet[(x, y)] = (artname, feld)
+            elif z == WAND and (x, y) in flaeche:
+                teil = wand[flaeche[(x, y)]]
+                bild.alpha_composite(kachel(privat, boegen, wand, teil), ort)
             elif z == WAND and wandart:
                 bild.alpha_composite(kachel(privat, boegen, wandart, wandart["feld"]), ort)
                 if gezeichnet is not None:
                     gezeichnet[(x, y)] = (szene["wandart"], wandart["feld"])
-            elif z == WAND and (x, y) in flaeche:
-                teil = wand[flaeche[(x, y)]]
-                bild.alpha_composite(kachel(privat, boegen, wand, teil), ort)
             elif z == WAND and "krone" in wand:
                 # Wandstile mit eigener Krone (Fels, KARTENREGELN 10.45): Kachel statt weißer Fläche.
                 feld = wand["krone"][(x * 7 + y * 3) % len(wand["krone"])]

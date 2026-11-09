@@ -6,7 +6,8 @@
     "gelaende": "modern-exteriors/Modern_Exteriors_16x16/ME_Theme_Sorter_16x16/1_Terrains_and_Fences_16x16.png",
     "stadt": "modern-exteriors/Modern_Exteriors_16x16/ME_Theme_Sorter_16x16/2_City_Terrains_16x16.png",
     "fels": "spiel/eigene/fels.png",
-    "wasser_stein": "spiel/eigene/wasser_stein.png"
+    "wasser_stein": "spiel/eigene/wasser_stein.png",
+    "damm": "spiel/eigene/damm.png"
   },
   "boeden": {
     "holzHell": {
@@ -174,6 +175,15 @@
     },
     "fels": {
       "bogen": "fels",
+      "oben": [0, 0],
+      "unten": [0, 1],
+      "krone": [
+        [1, 0],
+        [1, 1]
+      ]
+    },
+    "damm": {
+      "bogen": "damm",
       "oben": [0, 0],
       "unten": [0, 1],
       "krone": [

@@ -108,6 +108,15 @@
       "art": "zaun",
       "zustand": "neu",
       "stil": "laendlich"
+    },
+    "cr7ViehgatterQuer": {
+      "quelle": "spiel/eigene/viehgatter_quer.png",
+      "breite": 32,
+      "hoehe": 64,
+      "kollision": true,
+      "art": "zaun",
+      "zustand": "gebraucht",
+      "stil": "laendlich"
     }
   }
 }

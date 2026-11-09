@@ -2,7 +2,7 @@
   "karte": "crossroads.aussen",
   "variante": "c",
   "art": "aussen",
-  "beschreibung": "Variante C, reich: Diner-Wagen mit Vorplatz und ein doppelt eingezäuntes Jahrmarktfeld mit Plakatwand dahinter, die große Tankstelle mit einer weiteren Zapfsäule und Plakatwand. Südwestlich ein großer Parkplatz mit Werksbus, Food-Truck, zwei Sattelzügen und zwei Autos, daneben Picknicktische; südöstlich ein Motel mit fünf Zimmern unter Bäumen. Im Osten das Viehgatter. Wegweiser mit allen Städten, Schild „Crossroads – Diner + Gas“ vor der Raststätte, die Alte Minenstraße mit Absperrböcken gesperrt (S13; das Viehgatter für eine West-Ost-Straße ist bestellt).",
+  "beschreibung": "Variante C, reich: Diner-Wagen mit Vorplatz und ein doppelt eingezäuntes Jahrmarktfeld mit Plakatwand dahinter, die große Tankstelle mit einer weiteren Zapfsäule und Plakatwand. Südwestlich ein großer Parkplatz mit Werksbus, Food-Truck, zwei Sattelzügen und zwei Autos, daneben Picknicktische; südöstlich ein Motel mit fünf Zimmern unter Bäumen. Im Osten das Viehgatter. Wegweiser mit allen Städten, Schild „Crossroads – Diner + Gas“ vor der Raststätte, geschlossenes Viehgatter vor der Alten Minenstraße (S13).",
   "boden": "gras",
   "wandart": "gras",
   "boeden": {
@@ -335,12 +335,13 @@
       "feld": [34, 40]
     },
     {
-      "moebel": "mf9Absperrbock",
+      "moebel": "cr7ViehgatterQuer",
       "feld": [58, 22]
     },
     {
-      "moebel": "mf9Absperrbock",
-      "feld": [58, 24]
+      "moebel": "ccZaunPfosten",
+      "feld": [58, 22],
+      "bauteil_ok": true
     },
     {
       "moebel": "wg4GrasB",

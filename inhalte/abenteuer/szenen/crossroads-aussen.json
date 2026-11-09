@@ -1,7 +1,7 @@
 {
   "karte": "crossroads.aussen",
   "art": "aussen",
-  "beschreibung": "Crossroads (Variante A, nach dem Ortsdokument): Der Highway läuft von West nach Ost über die ganze Karte, von Norden kommt die Schotterstraße aus der Prärie. An der Ecke steht der Wegweiser in alle Städte. Nordwestlich Darlenes Raststätte, ein silberner Diner-Wagen mit Vorplatz; dahinter ein eingezäuntes Feld, durch das ein Erdweg nach Norden zum Sommerjahrmarkt führt. Nordöstlich die große Tankstelle. Südlich des Highways der Parkplatz mit dem Werksbus aus Ironwood, Rosies Food-Truck, einem Sattelzug und einem Auto, Picknicktische, eine Plakatwand. Nach Westen geht der Wanderweg nach Pinewood ab, im Osten sperrt ein Viehgatter die Alte Minenstraße; dahinter weiden Rinder. Wegweiser mit allen Städten, Schild „Crossroads – Diner + Gas“ vor der Raststätte, die Alte Minenstraße mit Absperrböcken gesperrt (S13; das Viehgatter für eine West-Ost-Straße ist bestellt).",
+  "beschreibung": "Crossroads (Variante A, nach dem Ortsdokument): Der Highway läuft von West nach Ost über die ganze Karte, von Norden kommt die Schotterstraße aus der Prärie. An der Ecke steht der Wegweiser in alle Städte. Nordwestlich Darlenes Raststätte, ein silberner Diner-Wagen mit Vorplatz; dahinter ein eingezäuntes Feld, durch das ein Erdweg nach Norden zum Sommerjahrmarkt führt. Nordöstlich die große Tankstelle. Südlich des Highways der Parkplatz mit dem Werksbus aus Ironwood, Rosies Food-Truck, einem Sattelzug und einem Auto, Picknicktische, eine Plakatwand. Nach Westen geht der Wanderweg nach Pinewood ab, im Osten sperrt ein Viehgatter die Alte Minenstraße; dahinter weiden Rinder. Wegweiser mit allen Städten, Schild „Crossroads – Diner + Gas“ vor der Raststätte, geschlossenes Viehgatter vor der Alten Minenstraße (S13).",
   "boden": "gras",
   "wandart": "gras",
   "boeden": {
@@ -330,12 +330,13 @@
       "bauteil_ok": true
     },
     {
-      "moebel": "mf9Absperrbock",
+      "moebel": "cr7ViehgatterQuer",
       "feld": [58, 22]
     },
     {
-      "moebel": "mf9Absperrbock",
-      "feld": [58, 24]
+      "moebel": "ccZaunPfosten",
+      "feld": [58, 22],
+      "bauteil_ok": true
     },
     {
       "moebel": "rvPicknicktisch",

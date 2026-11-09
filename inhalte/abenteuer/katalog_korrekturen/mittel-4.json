@@ -68,5 +68,53 @@
     "sicher": 0.9,
     "korrektur": "mittel-4",
     "nur_pfad": true
+  },
+  "modern-exteriors/Modern_Exteriors_16x16/ME_Theme_Sorter_16x16/19_Graveyard_Singles_16x16/ME_Singles_Graveyard_16x16_Grace_Chapel.png": {
+    "beschreibung": "Kleine gotische Kapelle aus dunklem Stein von vorn: spitzes Dach mit braunen Schindeln, Kreuz auf dem Giebel, Türmchen an den Ecken, Rosette über dem spitzbogigen Eingang, Stufen davor; Tür unten in der Mitte (dritte Spalte).",
+    "art": "gebaeude",
+    "blick": "unten",
+    "nutzbar_von": ["unten"],
+    "ganz": true,
+    "sicher": 0.8,
+    "korrektur": "mittel-4",
+    "nur_pfad": true
+  },
+  "modern-exteriors/Modern_Exteriors_16x16/ME_Theme_Sorter_16x16/22_Post_Office_Singles_16x16/22_Post_Office_16x16_Building_1.png": {
+    "beschreibung": "Altes Postgebäude aus grauem Stein von vorn, zwei Geschosse mit Flachdach und Lüftern, hohe Fensterreihe oben, Schriftband „POST OFFICE“ über der verglasten Doppeltür in der Mitte (vierte und fünfte Spalte), Fenster links und rechts.",
+    "art": "gebaeude",
+    "blick": "unten",
+    "nutzbar_von": ["unten"],
+    "ganz": true,
+    "sicher": 0.8,
+    "korrektur": "mittel-4",
+    "nur_pfad": true
+  },
+  "modern-exteriors/Modern_Exteriors_16x16/ME_Theme_Sorter_16x16/15_Police_Station_Singles_16x16/ME_Singles_Police_Station_16x16_Parking_Booth_1.png": {
+    "beschreibung": "Kleines Pförtner- oder Parkhäuschen von vorn, graues Flachdach, Schiebefenster und schmale Tür in der Front, orangefarbene Leiste am Sockel.",
+    "art": "gebaeude",
+    "blick": "unten",
+    "nutzbar_von": ["unten"],
+    "ganz": true,
+    "sicher": 0.8,
+    "korrektur": "mittel-4",
+    "nur_pfad": true
+  },
+  "modern-exteriors/Modern_Exteriors_16x16/ME_Theme_Sorter_16x16/20_Subway_and_Train_Station_Singles_16x16/ME_Singles_Subway_and_Train_Station_16x16_Small_Black_Locker.png": {
+    "beschreibung": "Großer dunkelgrauer Doppelspind aus Metall von vorn, zwei Türen mit Lüftungsschlitzen und Griffen, flache Oberseite.",
+    "art": "schrank",
+    "blick": "unten",
+    "nutzbar_von": ["unten"],
+    "ganz": true,
+    "sicher": 0.8,
+    "korrektur": "mittel-4",
+    "nur_pfad": true
+  },
+  "modern-interiors/1_Interiors/16x16/Theme_Sorter_Black_Shadow_Singles/3_Bathroom_Black_Shadow_Singles_16x16/Bathroom_Black_Shadow_Singles_156.png": {
+    "beschreibung": "Flache graue Duschwanne aus Metall von oben schräg gesehen, mit Rand und rundem Abfluss in der Mitte; passt als Boden einer Dusche.",
+    "art": "dusche",
+    "ganz": true,
+    "sicher": 0.8,
+    "korrektur": "mittel-4",
+    "nur_pfad": true
   }
 }

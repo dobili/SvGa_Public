@@ -1,0 +1,118 @@
+{
+  "karte": "ironwood.umkleide",
+  "datei": "karten/ironwood-umkleide.json",
+  "art": "innen",
+  "beschreibung": "Die Umkleide des Werks, 14 × 10 Kacheln, graue Fliesen. An der Nordwand sechs gleiche Spinde ohne Lücke, in der dunklen Nordostecke ein großer Doppelspind mit dem Schließfach. An der Ostwand eine Duschecke mit zwei Brausen auf weißen Fliesen. In der Mitte zwei Umkleidebänke, an der Westwand ein Standspiegel. Die Südwestecke bleibt frei. Die Tür liegt in der Mitte der Südwand.",
+  "wand": "hellgrau",
+  "boden": "fliesenGrau",
+  "boeden": {
+    "f": "fliesenWeiss"
+  },
+  "raster": [
+    "##############",
+    "##############",
+    "##############",
+    "#............#",
+    "#............#",
+    "#..........ff#",
+    "#..........ff#",
+    "#..........ff#",
+    "#..........ff#",
+    "#######.######",
+    "##############"
+  ],
+  "objekte": [
+    {
+      "moebel": "cc6TuerSued",
+      "feld": [7, 10],
+      "an_wand": true
+    },
+    {
+      "moebel": "cc5Fussmatte",
+      "feld": [7, 8],
+      "versatz": [0, 24]
+    },
+    {
+      "moebel": "iwSpind",
+      "feld": [10, 2],
+      "id": "schliessfachSpind"
+    },
+    {
+      "moebel": "mf2Spind",
+      "feld": [1, 2]
+    },
+    {
+      "moebel": "mf2Spind",
+      "feld": [2, 2]
+    },
+    {
+      "moebel": "mf2Spind",
+      "feld": [3, 2]
+    },
+    {
+      "moebel": "mf2Spind",
+      "feld": [4, 2]
+    },
+    {
+      "moebel": "mf2Spind",
+      "feld": [5, 2]
+    },
+    {
+      "moebel": "mf2Spind",
+      "feld": [6, 2]
+    },
+    {
+      "moebel": "iw5Duschwanne",
+      "feld": [11, 5]
+    },
+    {
+      "moebel": "iw5Duschwanne",
+      "feld": [11, 7]
+    },
+    {
+      "moebel": "cc4Bahnbank",
+      "feld": [3, 5]
+    },
+    {
+      "moebel": "cc4Bahnbank",
+      "feld": [3, 7]
+    },
+    {
+      "moebel": "mf2Standspiegel",
+      "feld": [1, 4]
+    }
+  ],
+  "ausloeser": [
+    {
+      "name": "start",
+      "feld": [7, 8],
+      "eigenschaften": {
+        "richtung": "oben"
+      }
+    },
+    {
+      "name": "umkleideAusgang",
+      "feld": [7, 9]
+    },
+    {
+      "name": "schliessfach",
+      "feld": [11, 4]
+    }
+  ],
+  "figuren": [],
+  "belebung": [
+    {
+      "name": "arbeiter",
+      "typ": "statist",
+      "feld": [8, 4],
+      "eigenschaften": {
+        "von": "8,4",
+        "bis": "9,4",
+        "tun": "zieht sich für die Schicht um",
+        "wann": "morgen"
+      }
+    }
+  ],
+  "zustand": ["gebraucht", "alt"],
+  "stil": ["industrie", "klassisch", "einfach", "modern", "rustikal"]
+}

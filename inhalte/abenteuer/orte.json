@@ -1671,6 +1671,12 @@
           "innen": false
         },
         {
+          "kennung": "siliconBay.hafen",
+          "datei": "karten/silicon-bay-hafen.json",
+          "name": "ort.siliconBay.hafen",
+          "innen": false
+        },
+        {
           "kennung": "siliconBay.akademie",
           "datei": "karten/silicon-bay-akademie.json",
           "name": "ort.siliconBay.akademie",
@@ -1749,6 +1755,24 @@
           }
         },
         {
+          "name": "hafen",
+          "karte": "siliconBay.aussen",
+          "art": "uebergang",
+          "ziel": {
+            "karte": "siliconBay.hafen",
+            "ausloeser": "campus"
+          }
+        },
+        {
+          "name": "campus",
+          "karte": "siliconBay.hafen",
+          "art": "uebergang",
+          "ziel": {
+            "karte": "siliconBay.aussen",
+            "ausloeser": "hafen"
+          }
+        },
+        {
           "name": "akademieTuer",
           "karte": "siliconBay.aussen",
           "art": "uebergang",
@@ -1823,14 +1847,8 @@
           "dialog": "silicon-bay-aussen.hotel"
         },
         {
-          "name": "busIronwood",
-          "karte": "siliconBay.aussen",
-          "art": "dialog",
-          "dialog": "silicon-bay-aussen.bus_ironwood"
-        },
-        {
           "name": "faehre",
-          "karte": "siliconBay.aussen",
+          "karte": "siliconBay.hafen",
           "art": "uebergang",
           "dialog": "silicon-bay-aussen.faehre",
           "wenn": "nadelSiliconBay",
@@ -1903,7 +1921,7 @@
           "art": "uebergang",
           "dialog": "weg-silicon-delacroix.zurueck_silicon",
           "ziel": {
-            "karte": "siliconBay.aussen",
+            "karte": "siliconBay.hafen",
             "ausloeser": "faehre"
           }
         },

@@ -1,0 +1,317 @@
+{
+  "karte": "ironwood.kantine",
+  "datei": "karten/varianten/ironwood-kantine-c.json",
+  "art": "innen",
+  "beschreibung": "Variante C, hell: weiße Fliesen, blaue Wände, runde Tische für die Schicht statt langer Tafeln, Essensausgabe kurz links, Kühlschränke rechts an der Nordwand, Pflanzen in allen Ecken.",
+  "wand": "blau",
+  "boden": "fliesenWeiss",
+  "raster": [
+    "########################",
+    "########################",
+    "########################",
+    "#......................#",
+    "#......................#",
+    "#......................#",
+    "#......................#",
+    "#......................#",
+    "#......................#",
+    "#......................#",
+    "#......................#",
+    "#......................#",
+    "#......................#",
+    "#......................#",
+    "#......................#",
+    "############.###########",
+    "########################"
+  ],
+  "objekte": [
+    {
+      "moebel": "mf8Pokaltisch",
+      "feld": [13, 1],
+      "id": "pokale"
+    },
+    {
+      "moebel": "mf3Pokal",
+      "feld": [0, 0],
+      "auf": "pokale"
+    },
+    {
+      "moebel": "cc6TischDunkel",
+      "feld": [15, 6],
+      "id": "clubtisch"
+    },
+    {
+      "moebel": "cc4StuhlVorn",
+      "feld": [15, 5],
+      "zu": "clubtisch"
+    },
+    {
+      "moebel": "cc4StuhlRuecken",
+      "feld": [15, 7],
+      "zu": "clubtisch"
+    },
+    {
+      "moebel": "cc4StuhlVorn",
+      "feld": [16, 5],
+      "zu": "clubtisch"
+    },
+    {
+      "moebel": "cc4StuhlRuecken",
+      "feld": [16, 7],
+      "zu": "clubtisch"
+    },
+    {
+      "moebel": "cc4Brett",
+      "feld": [0, 0],
+      "auf": "clubtisch"
+    },
+    {
+      "moebel": "cc6TuerSued",
+      "feld": [12, 16],
+      "an_wand": true
+    },
+    {
+      "moebel": "cc5Fussmatte",
+      "feld": [12, 14],
+      "versatz": [0, 24]
+    },
+    {
+      "moebel": "mf5ThekeLinks",
+      "feld": [1, 2],
+      "id": "tl",
+      "bauteil_ok": true
+    },
+    {
+      "moebel": "mf5ThekeMitte",
+      "feld": [3, 2],
+      "id": "tm0",
+      "bauteil_ok": true
+    },
+    {
+      "moebel": "mf5ThekeMitte",
+      "feld": [4, 2],
+      "id": "tm1",
+      "bauteil_ok": true
+    },
+    {
+      "moebel": "mf5ThekeRechts",
+      "feld": [5, 2],
+      "id": "tr",
+      "bauteil_ok": true
+    },
+    {
+      "moebel": "mf5Kaffeemaschine",
+      "feld": [0, 0],
+      "auf": "tl"
+    },
+    {
+      "moebel": "mf5Kuehlschrank",
+      "feld": [20, 1]
+    },
+    {
+      "moebel": "mf5Kuehlschrank",
+      "feld": [21, 1]
+    },
+    {
+      "moebel": "mf8Pinnwand",
+      "feld": [7, 1],
+      "an_wand": true,
+      "versatz": [0, 6]
+    },
+    {
+      "moebel": "cc4Fenster",
+      "feld": [9, 1],
+      "an_wand": true
+    },
+    {
+      "moebel": "cc4Fenster",
+      "feld": [17, 1],
+      "an_wand": true
+    },
+    {
+      "moebel": "cc4FotoRahmen",
+      "feld": [11, 1],
+      "an_wand": true,
+      "versatz": [0, 6]
+    },
+    {
+      "moebel": "ldOfen",
+      "feld": [21, 7]
+    },
+    {
+      "moebel": "mf8Rundtisch",
+      "feld": [2, 6],
+      "id": "rund0"
+    },
+    {
+      "moebel": "mf7StuhlRechts",
+      "feld": [1, 6],
+      "zu": "rund0"
+    },
+    {
+      "moebel": "mf7StuhlLinks",
+      "feld": [4, 6],
+      "zu": "rund0"
+    },
+    {
+      "moebel": "mf8Rundtisch",
+      "feld": [6, 6],
+      "id": "rund1"
+    },
+    {
+      "moebel": "mf7StuhlRechts",
+      "feld": [5, 6],
+      "zu": "rund1"
+    },
+    {
+      "moebel": "mf7StuhlLinks",
+      "feld": [8, 6],
+      "zu": "rund1"
+    },
+    {
+      "moebel": "mf8Rundtisch",
+      "feld": [2, 10],
+      "id": "rund2"
+    },
+    {
+      "moebel": "mf7StuhlRechts",
+      "feld": [1, 10],
+      "zu": "rund2"
+    },
+    {
+      "moebel": "mf7StuhlLinks",
+      "feld": [4, 10],
+      "zu": "rund2"
+    },
+    {
+      "moebel": "mf8Rundtisch",
+      "feld": [6, 10],
+      "id": "rund3"
+    },
+    {
+      "moebel": "mf7StuhlRechts",
+      "feld": [5, 10],
+      "zu": "rund3"
+    },
+    {
+      "moebel": "mf7StuhlLinks",
+      "feld": [8, 10],
+      "zu": "rund3"
+    },
+    {
+      "moebel": "cc6TischDunkel",
+      "feld": [15, 10],
+      "id": "clubtisch2"
+    },
+    {
+      "moebel": "cc4StuhlVorn",
+      "feld": [15, 9],
+      "zu": "clubtisch2"
+    },
+    {
+      "moebel": "cc4StuhlRuecken",
+      "feld": [15, 11],
+      "zu": "clubtisch2"
+    },
+    {
+      "moebel": "cc4StuhlVorn",
+      "feld": [16, 9],
+      "zu": "clubtisch2"
+    },
+    {
+      "moebel": "cc4StuhlRuecken",
+      "feld": [16, 11],
+      "zu": "clubtisch2"
+    },
+    {
+      "moebel": "iwSpind",
+      "feld": [18, 13]
+    },
+    {
+      "moebel": "iwSpind",
+      "feld": [2, 13]
+    },
+    {
+      "moebel": "iwSpind",
+      "feld": [4, 13]
+    },
+    {
+      "moebel": "mf5Geschirr",
+      "feld": [9, 13]
+    },
+    {
+      "moebel": "cc4PflanzeK",
+      "feld": [1, 13]
+    },
+    {
+      "moebel": "cc4PflanzeK",
+      "feld": [22, 4]
+    },
+    {
+      "moebel": "cc4PflanzeK",
+      "feld": [22, 13]
+    }
+  ],
+  "ausloeser": [
+    {
+      "name": "start",
+      "feld": [12, 14],
+      "eigenschaften": {
+        "richtung": "oben"
+      }
+    },
+    {
+      "name": "kantineAusgang",
+      "feld": [12, 15]
+    },
+    {
+      "name": "pokalregal",
+      "feld": [14, 4]
+    },
+    {
+      "name": "stahlbrett",
+      "feld": [17, 7]
+    }
+  ],
+  "figuren": [
+    {
+      "name": "bigJoe",
+      "feld": [18, 6]
+    },
+    {
+      "name": "hank",
+      "feld": [10, 12]
+    },
+    {
+      "name": "priya",
+      "feld": [10, 8]
+    }
+  ],
+  "belebung": [
+    {
+      "name": "kantinenkoch",
+      "typ": "statist",
+      "feld": [2, 3],
+      "eigenschaften": {
+        "von": "2,3",
+        "bis": "4,3",
+        "tun": "rührt in der Suppe",
+        "wann": "tag"
+      }
+    },
+    {
+      "name": "werkskatze",
+      "typ": "tier",
+      "feld": [20, 9],
+      "eigenschaften": {
+        "von": "20,9",
+        "bis": "20,9",
+        "tun": "sitzen",
+        "wann": "immer"
+      }
+    }
+  ],
+  "zustand": ["gebraucht", "alt", "neu"],
+  "stil": ["industrie", "klassisch", "einfach", "rustikal"],
+  "variante": "c"
+}

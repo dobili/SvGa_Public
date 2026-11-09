@@ -1,0 +1,18 @@
+{
+  "modern-interiors/1_Interiors/16x16/Theme_Sorter_Singles/14_Basement_Singles/Basement_Singles_164.png": {
+    "sicher": 0.9,
+    "korrektur": "mittel-1"
+  },
+  "modern-interiors/1_Interiors/16x16/Theme_Sorter_Singles/22_Museum_Singles/Museum_Singles_401.png": {
+    "beschreibung": "Kleines Bild im dunklen Rahmen mit dunklem, unruhigem Motiv, eine Kachel groß, zum Aufhängen an der Wand.",
+    "art": "bild",
+    "befestigung": "wand",
+    "innen_aussen": "innen",
+    "raumfunktion": ["wohnen", "museum"],
+    "ganz": true,
+    "blick": "unten",
+    "zustand": "gebraucht",
+    "sicher": 0.8,
+    "korrektur": "mittel-1"
+  }
+}

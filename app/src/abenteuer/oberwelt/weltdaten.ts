@@ -73,6 +73,26 @@ async function figurenbilderFuer(ort: Ortdaten, karte: object): Promise<Record<s
   return Object.fromEntries(paare.filter((p) => p !== null));
 }
 
+/** Orte in Wüste und Canyon (Weltbeschreibung): Sandboden statt Gras. */
+const WUESTE = new Set([
+  "desertSprings",
+  "ghostTown",
+  "wegDelacroixDesert",
+  "wegDesertSummit",
+  "wegPinewoodGhost",
+]);
+
+/**
+ * Kachelstil einer Karte (gekaufte Grafik, `grafik/stil-<stil>.png` im Raster des Platzhalters):
+ * innen, Wüste, Weg (Natur) oder Stadt.
+ * Beispiel: Clubraum → „innen“, Landstraße → „natur“, Ghost Town draußen → „wueste“.
+ */
+export function kachelstil(ort: Ortdaten, innen: boolean): string {
+  if (innen) return "innen";
+  if (WUESTE.has(ort.kennung)) return "wueste";
+  return ort.art === "weg" ? "natur" : "aussen";
+}
+
 /** Bild des Helden: in Erinnerungen der junge Ambrose, sonst die gewählte Heldenvariante. */
 function heldfigurpfad(erinnerung: boolean, variante: number): string {
   return erinnerung ? "figuren/ambrose-jung.png" : `figuren/held-${variante}.png`;
@@ -90,7 +110,8 @@ export async function ladeWelt(kartenkennung: string, heldvariante = 0): Promise
     paketdateiAlsAdresse(FIGURBILD),
   ]);
   const erinnerung = fund.ort.art === "erinnerung";
-  const [heldfigur, figurenbilder] = await Promise.all([
+  const [stilbild, heldfigur, figurenbilder] = await Promise.all([
+    paketdateiAlsAdresseOderNull(`grafik/stil-${kachelstil(fund.ort, fund.karte.innen)}.png`),
     paketdateiAlsAdresseOderNull(heldfigurpfad(erinnerung, heldvariante)),
     figurenbilderFuer(fund.ort, karte),
   ]);
@@ -101,7 +122,7 @@ export async function ladeWelt(kartenkennung: string, heldvariante = 0): Promise
     innen: fund.karte.innen,
     erinnerung: fund.ort.art === "erinnerung",
     karte,
-    kachelbild,
+    kachelbild: stilbild ?? kachelbild,
     heldbild,
     figurbild,
     heldfigur,

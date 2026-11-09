@@ -41,6 +41,21 @@ def grauer_schatten(privat: Path, quelle: str) -> bool:
     return GRAUSCHATTEN in set(moebelbild(privat, quelle).get_flattened_data())
 
 
+def wellenbild(art: dict, feld: list[int], x: int, y: int) -> str | None:
+    """Ein Wellen- oder Glanzbild für offenes Wasser an (x, y), oder None.
+
+    Warum: Einfarbiges Wasser wirkte auf den Autor langweilig (KARTENREGELN 10.4). Nur auf
+    Mittelstücken (kein Ufer), fest je Ort gestreut, damit das Bild bei jedem Bau gleich bleibt.
+    """
+    wellen = art.get("wellen")
+    if not wellen or feld != [art["rand"][0] + 1, art["rand"][1] + 1]:
+        return None
+    wurf = (x * 92821 + y * 68917 + x * y * 31) % 100
+    if wurf >= wellen["anteil"]:
+        return None
+    return wellen["bilder"][(x * 13 + y * 7) % len(wellen["bilder"])]
+
+
 def flaechen(zeilen: list[str]) -> dict[tuple[int, int], str]:
     """Wandflächen: die zwei Wandkacheln direkt über einem Boden werden Fläche (oben, unten)."""
     flaeche = {}
@@ -74,7 +89,10 @@ def hintergrund(szene: dict, privat: Path) -> Image.Image:
             ort = (x * K, y * K)
             if z == WASSER:
                 art = boeden["wasser"]
-                bild.alpha_composite(kachel(privat, boegen, art, bodenfeld(art, zeilen, x, y)), ort)
+                feld = bodenfeld(art, zeilen, x, y)
+                bild.alpha_composite(kachel(privat, boegen, art, feld), ort)
+                if (welle := wellenbild(art, feld, x, y)) is not None:
+                    bild.alpha_composite(Image.open(privat / welle).convert("RGBA"), ort)
             elif z == WAND and wandart and (innen := randnachbar(zeilen, x, y)) is not None:
                 # Außen ist der Rand nur Kollision: Er zeigt den Boden dahinter, damit Felder und
                 # Wege bis an den Bildrand reichen (Regel 5.1, 6.3; Hinweis von niedrig-1).

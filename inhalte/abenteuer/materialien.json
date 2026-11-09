@@ -71,7 +71,19 @@
     "wasser": {
       "bogen": "gelaende",
       "feld": [1, 36],
-      "rand": [0, 35]
+      "rand": [0, 35],
+      "wellen": {
+        "bilder": [
+          "modern-exteriors/Modern_Exteriors_16x16/Modern_Exteriors_Complete_Singles_16x16/ME_Singles_Terrains_and_Fences_16x16_Props_Water_1.png",
+          "modern-exteriors/Modern_Exteriors_16x16/Modern_Exteriors_Complete_Singles_16x16/ME_Singles_Terrains_and_Fences_16x16_Props_Water_2.png",
+          "modern-exteriors/Modern_Exteriors_16x16/Modern_Exteriors_Complete_Singles_16x16/ME_Singles_Terrains_and_Fences_16x16_Props_Water_3.png",
+          "modern-exteriors/Modern_Exteriors_16x16/Modern_Exteriors_Complete_Singles_16x16/ME_Singles_Terrains_and_Fences_16x16_Props_Water_4.png",
+          "modern-exteriors/Modern_Exteriors_16x16/Modern_Exteriors_Complete_Singles_16x16/ME_Singles_Terrains_and_Fences_16x16_Props_Water_5.png",
+          "modern-exteriors/Modern_Exteriors_16x16/Modern_Exteriors_Complete_Singles_16x16/ME_Singles_Terrains_and_Fences_16x16_Props_Water_9.png",
+          "modern-exteriors/Modern_Exteriors_16x16/Modern_Exteriors_Complete_Singles_16x16/ME_Singles_Terrains_and_Fences_16x16_Props_Water_10.png"
+        ],
+        "anteil": 24
+      }
     },
     "asphalt": {
       "bogen": "stadt",

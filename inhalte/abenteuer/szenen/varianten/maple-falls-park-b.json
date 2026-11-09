@@ -9,8 +9,7 @@
     "p": "pflaster",
     "e": "erde",
     "s": "asphalt",
-    "h": "dielen",
-    "b": "dielen"
+    "h": "dielen"
   },
   "raster": [
     "##########ee################################",
@@ -27,11 +26,11 @@
     "#...........ppppp....ee....~~~~~...........#",
     "#...........ppppp....ee.....~~~~~..........#",
     "#....................ee......~~~~~.........#",
-    "#pppppppppppppppppppppppppppppp~~~~pppppppp#",
-    "sssssssssssssssssssssssssssssssbbbbsssssssss",
-    "sssssssssssssssssssssssssssssssbbbbsssssssss",
-    "sssssssssssssssssssssssssssssssbbbbsssssssss",
-    "#pppppppppppppppppppppppppppppp~~~~pppppppp#",
+    "#pppppppppppppppppppppppppppppphhhhpppppppp#",
+    "ssssssssssssssssssssssssssssssshhhhsssssssss",
+    "ssssssssssssssssssssssssssssssshhhhsssssssss",
+    "ssssssssssssssssssssssssssssssshhhhsssssssss",
+    "#pppppppppppppppppppppppppppppphhhhpppppppp#",
     "#......................ppppppp.~~~~........#",
     "#......................ppppppp..~~~~...~~~~~",
     "#..~~~.................ppppppp...~~~~.~~~~~~",
@@ -48,46 +47,12 @@
   ],
   "objekte": [
     {
-      "moebel": "mf6StegBrueckeL",
-      "feld": [10, 2],
-      "bauteil_ok": true
-    },
-    {
-      "moebel": "mf6StegBrueckeR",
-      "feld": [11, 2],
-      "bauteil_ok": true
-    },
-    {
-      "moebel": "mf4Gelaender",
+      "moebel": "mf9StrassenbrueckeGehwegQuer4",
       "feld": [31, 14]
     },
     {
-      "moebel": "mf4Gelaender",
-      "feld": [31, 18]
-    },
-    {
-      "moebel": "mf4Gelaender",
-      "feld": [32, 14]
-    },
-    {
-      "moebel": "mf4Gelaender",
-      "feld": [32, 18]
-    },
-    {
-      "moebel": "mf4Gelaender",
-      "feld": [33, 14]
-    },
-    {
-      "moebel": "mf4Gelaender",
-      "feld": [33, 18]
-    },
-    {
-      "moebel": "mf4Gelaender",
-      "feld": [34, 14]
-    },
-    {
-      "moebel": "mf4Gelaender",
-      "feld": [34, 18]
+      "moebel": "mf9FussbrueckeLaengs3",
+      "feld": [10, 3]
     },
     {
       "moebel": "mf6Busch",

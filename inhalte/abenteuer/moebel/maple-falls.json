@@ -2462,6 +2462,33 @@
       "art": "pflanze",
       "zustand": "neu",
       "stil": "klassisch"
+    },
+    "mf9FussbrueckeLaengs3": {
+      "quelle": "spiel/eigene/bruecke_fuss_laengs_3.png",
+      "breite": 32,
+      "hoehe": 52,
+      "kollision": false,
+      "art": "bruecke",
+      "zustand": "gebraucht",
+      "stil": "klassisch"
+    },
+    "mf9StrassenbrueckeQuer4": {
+      "quelle": "spiel/eigene/bruecke_strasse_quer_4.png",
+      "breite": 64,
+      "hoehe": 52,
+      "kollision": false,
+      "art": "bruecke",
+      "zustand": "gebraucht",
+      "stil": "klassisch"
+    },
+    "mf9StrassenbrueckeGehwegQuer4": {
+      "quelle": "spiel/eigene/bruecke_strasse_gehweg_quer_4.png",
+      "breite": 64,
+      "hoehe": 84,
+      "kollision": false,
+      "art": "bruecke",
+      "zustand": "gebraucht",
+      "stil": "klassisch"
     }
   }
 }

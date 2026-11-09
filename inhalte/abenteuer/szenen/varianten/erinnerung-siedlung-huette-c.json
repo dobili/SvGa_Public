@@ -66,7 +66,13 @@
     },
     {
       "moebel": "es7Kisten",
-      "feld": [9, 6]
+      "feld": [9, 6],
+      "id": "kisten"
+    },
+    {
+      "moebel": "es7Petroleumlampe",
+      "feld": [0, 0],
+      "auf": "kisten"
     },
     {
       "moebel": "es7Fass",

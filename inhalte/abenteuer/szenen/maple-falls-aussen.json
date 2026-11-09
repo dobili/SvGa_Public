@@ -385,7 +385,7 @@
       "feld": [1, 23]
     },
     {
-      "moebel": "mf4ZaunMitte",
+      "moebel": "mf4ZaunEckeRechts",
       "feld": [2, 23]
     },
     {
@@ -393,7 +393,7 @@
       "feld": [5, 22]
     },
     {
-      "moebel": "mf4ZaunMitte",
+      "moebel": "mf4ZaunEckeLinks",
       "feld": [6, 23]
     },
     {
@@ -417,7 +417,7 @@
       "feld": [11, 23]
     },
     {
-      "moebel": "mf4ZaunMitte",
+      "moebel": "mf4ZaunEckeRechts",
       "feld": [12, 23]
     },
     {
@@ -425,7 +425,7 @@
       "feld": [15, 22]
     },
     {
-      "moebel": "mf4ZaunMitte",
+      "moebel": "mf4ZaunEckeLinks",
       "feld": [16, 23]
     },
     {
@@ -449,7 +449,7 @@
       "feld": [21, 23]
     },
     {
-      "moebel": "mf4ZaunMitte",
+      "moebel": "mf4ZaunEckeRechts",
       "feld": [22, 23]
     },
     {
@@ -457,7 +457,7 @@
       "feld": [25, 22]
     },
     {
-      "moebel": "mf4ZaunMitte",
+      "moebel": "mf4ZaunEckeLinks",
       "feld": [26, 23]
     },
     {
@@ -715,11 +715,11 @@
       "feld": [52, 31]
     },
     {
-      "moebel": "mf4ZaunMitte",
+      "moebel": "mf4ZaunEckeRechts",
       "feld": [53, 31]
     },
     {
-      "moebel": "mf4ZaunMitte",
+      "moebel": "mf4ZaunEckeLinks",
       "feld": [56, 31]
     },
     {

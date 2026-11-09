@@ -109,6 +109,82 @@
       "zustand": "neu",
       "stil": "modern"
     },
+    "n6Riesenrad": {
+      "quelle": "spiel/eigene/riesenrad.png",
+      "breite": 128,
+      "hoehe": 160,
+      "kollision": true,
+      "art": "geraet",
+      "zustand": "neu",
+      "stil": "modern"
+    },
+    "n6Karussell": {
+      "quelle": "spiel/eigene/karussell.png",
+      "breite": 96,
+      "hoehe": 96,
+      "kollision": true,
+      "art": "geraet",
+      "zustand": "neu",
+      "stil": "klassisch"
+    },
+    "n6Schachautomat": {
+      "quelle": "spiel/eigene/schachautomat.png",
+      "breite": 32,
+      "hoehe": 48,
+      "kollision": true,
+      "art": "geraet",
+      "blick": "unten",
+      "zustand": "alt",
+      "stil": "klassisch"
+    },
+    "n6BudeDosen": {
+      "quelle": "spiel/eigene/bude_dosenwerfen.png",
+      "breite": 64,
+      "hoehe": 64,
+      "kollision": true,
+      "art": "stand",
+      "blick": "unten",
+      "zustand": "gebraucht",
+      "stil": "rustikal"
+    },
+    "n6BudeLose": {
+      "quelle": "spiel/eigene/bude_lose.png",
+      "breite": 64,
+      "hoehe": 64,
+      "kollision": true,
+      "art": "stand",
+      "blick": "unten",
+      "zustand": "gebraucht",
+      "stil": "rustikal"
+    },
+    "n6Zuckerwatte": {
+      "quelle": "spiel/eigene/zuckerwatte.png",
+      "breite": 32,
+      "hoehe": 48,
+      "kollision": true,
+      "art": "stand",
+      "blick": "unten",
+      "zustand": "neu",
+      "stil": "modern"
+    },
+    "n6Lichterkette": {
+      "quelle": "spiel/eigene/lichterkette_laengs_4.png",
+      "breite": 64,
+      "hoehe": 16,
+      "kollision": false,
+      "art": "lampe",
+      "zustand": "neu",
+      "stil": "modern"
+    },
+    "n6Torbogen": {
+      "quelle": "spiel/eigene/schild_jahrmarkt.png",
+      "breite": 80,
+      "hoehe": 48,
+      "kollision": false,
+      "art": "schild",
+      "zustand": "neu",
+      "stil": "modern"
+    },
     "n6Tribuene": {
       "quelle": "modern-exteriors/Modern_Exteriors_16x16/ME_Theme_Sorter_16x16/13_School_Singles_16x16/ME_Singles_School_16x16_Stands_1.png",
       "breite": 64,

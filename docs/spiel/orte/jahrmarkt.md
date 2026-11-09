@@ -34,7 +34,7 @@ der das Geheimnis errät. Buster verkauft Lose, Juno fotografiert alles.
 | Lieferung von Darlene (S13)       | Abzweig ist offen, die Quest kommt mit Runde 6                                        |
 
 Bestellte Bilder: Riesenrad, Karussell, Schachautomat, Bude Dosenwerfen, Losbude, Lichterkette,
-Zuckerwatte, Schild „Summer Fair“. Bis dahin Ersatz (Pilzkiosk, Zelte, Spielautomat, Marktstände).
+Zuckerwatte, Schild „Summer Fair“. Alle sind geliefert und eingesetzt.
 
 ## 4. Bühnenbild
 

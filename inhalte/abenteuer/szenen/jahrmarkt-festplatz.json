@@ -1,7 +1,7 @@
 {
   "karte": "jahrmarkt.festplatz",
   "art": "aussen",
-  "beschreibung": "Sommerjahrmarkt auf dem Feld hinter der Raststätte (Variante A, nach dem Ortsdokument): Vom Südrand kommt der Erdweg auf einen großen Sandplatz. Oben in der Mitte das Riesenrad, links das Karussell, rechts die Bühne für Country-Bands mit Lautsprechern und einer Holztribüne. In der Mitte der Schachautomat „Der Schachtürke“. Unten eine Reihe Buden: Losbude und Dosenwerfen, Süßigkeiten, Limonade, Hot Dogs und der Eiswagen. Flutlichtmasten an den Ecken, Laternen über dem Platz, ringsum Wiese mit Bäumen. Ersatz bis zur Lieferung: Riesenrad als Pilzkiosk, Karussell als Zelte, Schachautomat als Spielautomat, Wurf- und Losbude als Marktstände.",
+  "beschreibung": "Sommerjahrmarkt auf dem Feld hinter der Raststätte (Variante A, nach dem Ortsdokument): Vom Südrand kommt der Erdweg auf einen großen Sandplatz. Oben in der Mitte das Riesenrad, links das Karussell, rechts die Bühne für Country-Bands mit Lautsprechern und einer Holztribüne. In der Mitte der Schachautomat „Der Schachtürke“. Unten eine Reihe Buden: Losbude und Dosenwerfen, Süßigkeiten, Limonade, Hot Dogs und der Eiswagen. Flutlichtmasten an den Ecken, Lichterketten über dem Platz, ringsum Wiese mit Bäumen. Am Eingang der Torbogen „Summer Fair“.",
   "boden": "gras",
   "wandart": "gras",
   "boeden": {
@@ -48,20 +48,21 @@
   ],
   "objekte": [
     {
-      "moebel": "n6Pilzkiosk",
+      "moebel": "n6Torbogen",
+      "feld": [21, 26],
+      "vorn": true
+    },
+    {
+      "moebel": "n6Riesenrad",
       "feld": [18, 4]
     },
     {
-      "moebel": "mf8Spielautomat",
+      "moebel": "n6Schachautomat",
       "feld": [24, 14]
     },
     {
-      "moebel": "n6Zelt",
-      "feld": [5, 8]
-    },
-    {
-      "moebel": "n6Zelt",
-      "feld": [10, 8]
+      "moebel": "n6Karussell",
+      "feld": [4, 7]
     },
     {
       "moebel": "n6Buehne",
@@ -87,15 +88,15 @@
       "feld": [34, 13]
     },
     {
-      "moebel": "n6Marktstand",
-      "feld": [5, 19]
+      "moebel": "n6BudeLose",
+      "feld": [5, 18]
     },
     {
-      "moebel": "n6Marktstand",
-      "feld": [11, 19]
+      "moebel": "n6BudeDosen",
+      "feld": [11, 18]
     },
     {
-      "moebel": "n6Suessigkeiten",
+      "moebel": "n6Zuckerwatte",
       "feld": [17, 21]
     },
     {
@@ -123,38 +124,43 @@
       "feld": [3, 24]
     },
     {
-      "moebel": "n6Laterne",
-      "feld": [8, 17],
+      "moebel": "n6Lichterkette",
+      "feld": [8, 16],
       "vorn": true
     },
     {
-      "moebel": "n6Laterne",
-      "feld": [13, 17],
+      "moebel": "n6Lichterkette",
+      "feld": [12, 16],
       "vorn": true
     },
     {
-      "moebel": "n6Laterne",
-      "feld": [18, 17],
+      "moebel": "n6Lichterkette",
+      "feld": [16, 16],
       "vorn": true
     },
     {
-      "moebel": "n6Laterne",
-      "feld": [23, 17],
+      "moebel": "n6Lichterkette",
+      "feld": [20, 16],
       "vorn": true
     },
     {
-      "moebel": "n6Laterne",
-      "feld": [28, 17],
+      "moebel": "n6Lichterkette",
+      "feld": [24, 16],
       "vorn": true
     },
     {
-      "moebel": "n6Laterne",
-      "feld": [33, 17],
+      "moebel": "n6Lichterkette",
+      "feld": [28, 16],
       "vorn": true
     },
     {
-      "moebel": "n6Laterne",
-      "feld": [38, 17],
+      "moebel": "n6Lichterkette",
+      "feld": [32, 16],
+      "vorn": true
+    },
+    {
+      "moebel": "n6Lichterkette",
+      "feld": [36, 16],
       "vorn": true
     },
     {

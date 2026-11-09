@@ -2,7 +2,7 @@
   "karte": "jahrmarkt.festplatz",
   "variante": "b",
   "art": "aussen",
-  "beschreibung": "Variante B, schlicht und mittags: Die Bühne steht links ohne Gerüst, daneben zwei Lautsprecher. Rechts oben das Riesenrad, ein Zelt als Karussell, in der Mitte der Schachautomat. Unten nur ein Marktstand als Losbude, ein Limonadenstand und der Hot-Dog-Wagen, zwei Flutlichtmasten. Ersatz bis zur Lieferung: Riesenrad als Pilzkiosk, Karussell als Zelte, Schachautomat als Spielautomat, Wurf- und Losbude als Marktstände.",
+  "beschreibung": "Variante B, schlicht und mittags: Die Bühne steht links ohne Gerüst, daneben zwei Lautsprecher. Rechts oben das Riesenrad, das Karussell, in der Mitte der Schachautomat. Unten nur die Losbude, ein Limonadenstand und der Hot-Dog-Wagen, zwei Flutlichtmasten. Am Eingang der Torbogen „Summer Fair“.",
   "boden": "gras",
   "wandart": "gras",
   "boeden": {
@@ -49,6 +49,11 @@
   ],
   "objekte": [
     {
+      "moebel": "n6Torbogen",
+      "feld": [21, 26],
+      "vorn": true
+    },
+    {
       "moebel": "n6Buehne",
       "feld": [5, 5],
       "bauteil_ok": true
@@ -62,20 +67,20 @@
       "feld": [14, 9]
     },
     {
-      "moebel": "n6Pilzkiosk",
+      "moebel": "n6Riesenrad",
       "feld": [30, 4]
     },
     {
-      "moebel": "mf8Spielautomat",
+      "moebel": "n6Schachautomat",
       "feld": [22, 10]
     },
     {
-      "moebel": "n6Zelt",
-      "feld": [38, 6]
+      "moebel": "n6Karussell",
+      "feld": [38, 12]
     },
     {
-      "moebel": "n6Marktstand",
-      "feld": [30, 19]
+      "moebel": "n6BudeLose",
+      "feld": [30, 18]
     },
     {
       "moebel": "n6Limonade",

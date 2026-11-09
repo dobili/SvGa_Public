@@ -2,7 +2,7 @@
   "karte": "jahrmarkt.festplatz",
   "variante": "c",
   "art": "aussen",
-  "beschreibung": "Variante C, reich und am Abend: Links das Riesenrad und zwei Zelte als Karussell, in der Mitte die Bühne mit Gerüst, Lautsprechern und zwei Tribünen. Davor der Schachautomat neben einem zweiten Automaten. Drei Buden, Süßigkeiten, Limonade, Hot Dogs und Eiswagen, zwei Reihen Laternen über dem Platz, drei Flutlichtmasten. Ersatz bis zur Lieferung: Riesenrad als Pilzkiosk, Karussell als Zelte, Schachautomat als Spielautomat, Wurf- und Losbude als Marktstände.",
+  "beschreibung": "Variante C, reich und am Abend: Links das Riesenrad und das Karussell, in der Mitte die Bühne mit Gerüst, Lautsprechern und zwei Tribünen. Davor der Schachautomat neben dem Zuckerwattestand. Drei Buden, Süßigkeiten, Limonade, Hot Dogs und Eiswagen, zwei Lichterketten über dem Platz, drei Flutlichtmasten. Am Eingang der Torbogen „Summer Fair“.",
   "boden": "gras",
   "wandart": "gras",
   "boeden": {
@@ -49,16 +49,17 @@
   ],
   "objekte": [
     {
-      "moebel": "n6Pilzkiosk",
+      "moebel": "n6Torbogen",
+      "feld": [21, 26],
+      "vorn": true
+    },
+    {
+      "moebel": "n6Riesenrad",
       "feld": [4, 4]
     },
     {
-      "moebel": "n6Zelt",
-      "feld": [11, 6]
-    },
-    {
-      "moebel": "n6Zelt",
-      "feld": [16, 6]
+      "moebel": "n6Karussell",
+      "feld": [13, 6]
     },
     {
       "moebel": "n6Buehne",
@@ -88,27 +89,27 @@
       "feld": [31, 13]
     },
     {
-      "moebel": "mf8Spielautomat",
+      "moebel": "n6Schachautomat",
       "feld": [20, 14]
     },
     {
-      "moebel": "mf8SpielautomatZwei",
-      "feld": [21, 14]
+      "moebel": "n6Zuckerwatte",
+      "feld": [23, 14]
     },
     {
-      "moebel": "n6Marktstand",
-      "feld": [4, 19]
+      "moebel": "n6BudeLose",
+      "feld": [4, 18]
     },
     {
-      "moebel": "n6Marktstand",
-      "feld": [9, 19]
+      "moebel": "n6BudeDosen",
+      "feld": [9, 18]
     },
     {
       "moebel": "n6Marktstand",
       "feld": [38, 10]
     },
     {
-      "moebel": "n6Suessigkeiten",
+      "moebel": "n6Zuckerwatte",
       "feld": [15, 21]
     },
     {
@@ -132,118 +133,103 @@
       "feld": [42, 3]
     },
     {
-      "moebel": "n6Laterne",
-      "feld": [5, 17],
+      "moebel": "n6Lichterkette",
+      "feld": [4, 16],
       "vorn": true
     },
     {
-      "moebel": "n6Laterne",
-      "feld": [8, 17],
+      "moebel": "n6Lichterkette",
+      "feld": [8, 16],
       "vorn": true
     },
     {
-      "moebel": "n6Laterne",
-      "feld": [11, 17],
+      "moebel": "n6Lichterkette",
+      "feld": [12, 16],
       "vorn": true
     },
     {
-      "moebel": "n6Laterne",
-      "feld": [14, 17],
+      "moebel": "n6Lichterkette",
+      "feld": [16, 16],
       "vorn": true
     },
     {
-      "moebel": "n6Laterne",
-      "feld": [17, 17],
+      "moebel": "n6Lichterkette",
+      "feld": [20, 16],
       "vorn": true
     },
     {
-      "moebel": "n6Laterne",
-      "feld": [20, 17],
+      "moebel": "n6Lichterkette",
+      "feld": [24, 16],
       "vorn": true
     },
     {
-      "moebel": "n6Laterne",
-      "feld": [23, 17],
+      "moebel": "n6Lichterkette",
+      "feld": [28, 16],
       "vorn": true
     },
     {
-      "moebel": "n6Laterne",
-      "feld": [26, 17],
+      "moebel": "n6Lichterkette",
+      "feld": [32, 16],
       "vorn": true
     },
     {
-      "moebel": "n6Laterne",
-      "feld": [29, 17],
+      "moebel": "n6Lichterkette",
+      "feld": [36, 16],
       "vorn": true
     },
     {
-      "moebel": "n6Laterne",
-      "feld": [32, 17],
+      "moebel": "n6Lichterkette",
+      "feld": [40, 16],
       "vorn": true
     },
     {
-      "moebel": "n6Laterne",
-      "feld": [35, 17],
+      "moebel": "n6Lichterkette",
+      "feld": [4, 11],
       "vorn": true
     },
     {
-      "moebel": "n6Laterne",
-      "feld": [38, 17],
+      "moebel": "n6Lichterkette",
+      "feld": [8, 11],
       "vorn": true
     },
     {
-      "moebel": "n6Laterne",
-      "feld": [41, 17],
+      "moebel": "n6Lichterkette",
+      "feld": [12, 11],
       "vorn": true
     },
     {
-      "moebel": "n6Laterne",
-      "feld": [5, 12],
+      "moebel": "n6Lichterkette",
+      "feld": [16, 11],
       "vorn": true
     },
     {
-      "moebel": "n6Laterne",
-      "feld": [9, 12],
+      "moebel": "n6Lichterkette",
+      "feld": [20, 11],
       "vorn": true
     },
     {
-      "moebel": "n6Laterne",
-      "feld": [13, 12],
+      "moebel": "n6Lichterkette",
+      "feld": [24, 11],
       "vorn": true
     },
     {
-      "moebel": "n6Laterne",
-      "feld": [17, 12],
+      "moebel": "n6Lichterkette",
+      "feld": [28, 11],
       "vorn": true
     },
     {
-      "moebel": "n6Laterne",
-      "feld": [21, 12],
+      "moebel": "n6Lichterkette",
+      "feld": [32, 11],
       "vorn": true
     },
     {
-      "moebel": "n6Laterne",
-      "feld": [25, 12],
+      "moebel": "n6Lichterkette",
+      "feld": [36, 11],
       "vorn": true
     },
     {
-      "moebel": "n6Laterne",
-      "feld": [29, 12],
-      "vorn": true
-    },
-    {
-      "moebel": "n6Laterne",
-      "feld": [33, 12],
-      "vorn": true
-    },
-    {
-      "moebel": "n6Laterne",
-      "feld": [37, 12],
-      "vorn": true
-    },
-    {
-      "moebel": "n6Laterne",
-      "feld": [41, 12],
+      "moebel": "n6Lichterkette",
+      "feld": [40, 11],
       "vorn": true
     },
     {

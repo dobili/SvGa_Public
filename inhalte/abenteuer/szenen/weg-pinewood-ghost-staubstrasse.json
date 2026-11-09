@@ -2,7 +2,7 @@
   "karte": "wegPinewoodGhost.staubstrasse",
   "datei": "karten/weg-pinewood-ghost-staubstrasse.json",
   "art": "aussen",
-  "beschreibung": "Die Staubstraße auf Weg 10, 150 × 30 Kacheln, Mittagshitze, roter Sand. Eine Schotterpiste (2 breit, eine alte Fahrspur) vom Westrand nach Osten durch eine Sandebene: schiefe Zäune, Telegrafenmasten am Rand, ein liegengebliebenes Auto, Felsen und Kakteen, ein Wegweiser vor dem Ostrand nach Ghost Town. Staubteufel tanzen über die Ebene.",
+  "beschreibung": "Die Staubstraße auf Weg 10, 150 × 30 Kacheln, Mittagshitze, roter Sand. Eine Schotterpiste (2 breit, eine alte Fahrspur) vom Westrand nach Osten durch eine Sandebene: schiefe Zäune, Telegrafenmasten am Rand, ein liegengebliebenes Autowrack, Felsen und Kakteen, ein Wegweiser vor dem Ostrand nach Ghost Town. Staubteufel tanzen über die Ebene.",
   "boden": "sandRot",
   "wandart": "sandRot",
   "boeden": {
@@ -172,7 +172,7 @@
       "bauteil_ok": true
     },
     {
-      "moebel": "iw5AutoA",
+      "moebel": "wr5Autowrack",
       "feld": [56, 3]
     },
     {
@@ -686,7 +686,7 @@
       }
     }
   ],
-  "zustand": ["neu", "gebraucht", "alt"],
+  "zustand": ["neu", "gebraucht", "alt", "verwittert"],
   "stil": [
     "natur",
     "einfach",

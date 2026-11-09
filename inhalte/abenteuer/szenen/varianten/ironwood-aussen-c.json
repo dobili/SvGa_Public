@@ -150,10 +150,6 @@
       "feld": [38, 26]
     },
     {
-      "moebel": "iw5Kisten",
-      "feld": [40, 26]
-    },
-    {
       "moebel": "cc5Poller",
       "feld": [10, 19]
     },
@@ -380,16 +376,6 @@
     },
     {
       "moebel": "wg4ZaunBottomMiddle",
-      "feld": [55, 27],
-      "bauteil_ok": true
-    },
-    {
-      "moebel": "wg4ZaunBottomMiddle",
-      "feld": [61, 27],
-      "bauteil_ok": true
-    },
-    {
-      "moebel": "wg4ZaunBottomMiddle",
       "feld": [62, 27],
       "bauteil_ok": true
     },
@@ -472,6 +458,14 @@
       "moebel": "wg4ZaunBottomMiddle",
       "feld": [78, 27],
       "bauteil_ok": true
+    },
+    {
+      "moebel": "mf4Poller",
+      "feld": [55, 27]
+    },
+    {
+      "moebel": "mf4Poller",
+      "feld": [61, 27]
     },
     {
       "moebel": "iw5Kantine",
@@ -637,6 +631,14 @@
     {
       "moebel": "iw5Prellbock",
       "feld": [11, 51]
+    },
+    {
+      "moebel": "iw5Prellbock",
+      "feld": [77, 49]
+    },
+    {
+      "moebel": "iw5Prellbock",
+      "feld": [77, 51]
     },
     {
       "moebel": "iw5GleisGrau",
@@ -1259,26 +1261,6 @@
       "bauteil_ok": true
     },
     {
-      "moebel": "iw5GleisGrau",
-      "feld": [77, 49],
-      "bauteil_ok": true
-    },
-    {
-      "moebel": "iw5GleisGrau",
-      "feld": [77, 51],
-      "bauteil_ok": true
-    },
-    {
-      "moebel": "iw5GleisGrau",
-      "feld": [78, 49],
-      "bauteil_ok": true
-    },
-    {
-      "moebel": "iw5GleisGrau",
-      "feld": [78, 51],
-      "bauteil_ok": true
-    },
-    {
       "moebel": "wg4Wildblumen",
       "feld": [14, 55]
     },
@@ -1395,12 +1377,12 @@
       "feld": [66, 53]
     },
     {
-      "moebel": "mfBaum",
-      "feld": [72, 53]
+      "moebel": "mfAhorn",
+      "feld": [71, 53]
     },
     {
       "moebel": "mf9Absperrbock",
-      "feld": [76, 55],
+      "feld": [75, 56],
       "id": "torSteinbruch"
     },
     {

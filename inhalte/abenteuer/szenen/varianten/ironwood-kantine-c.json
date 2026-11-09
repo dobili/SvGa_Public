@@ -225,10 +225,6 @@
       "feld": [4, 13]
     },
     {
-      "moebel": "mf5Geschirr",
-      "feld": [9, 13]
-    },
-    {
       "moebel": "cc4PflanzeK",
       "feld": [1, 13]
     },
@@ -242,7 +238,13 @@
     },
     {
       "moebel": "mf8Sideboard",
-      "feld": [6, 12]
+      "feld": [6, 12],
+      "id": "rueckgabe"
+    },
+    {
+      "moebel": "mf5Geschirr",
+      "feld": [0, 0],
+      "auf": "rueckgabe"
     }
   ],
   "ausloeser": [

@@ -487,7 +487,7 @@
       }
     }
   ],
-  "zustand": ["neu", "gebraucht", "alt"],
+  "zustand": ["neu", "gebraucht", "alt", "verwittert"],
   "stil": [
     "natur",
     "einfach",

@@ -23,8 +23,8 @@
     "#..................ee......................................#",
     "#..................ee......................................#",
     "#..................ee......................................#",
-    "#...............pppeeppppp.................................#",
-    "#...............pppppppppp.................................#",
+    "#...eeeeeeeeeeeepppeeppppp.................................#",
+    "#...eeeeeeeeeeeepppppppppp.................................#",
     "#...............pppppppppp.................................#",
     "#...............pppppppppp.................................#",
     "#...............pppppppppp.................................#",
@@ -212,70 +212,66 @@
     },
     {
       "moebel": "wg4BlumeRot",
-      "feld": [9, 10]
-    },
-    {
-      "moebel": "wg4BlumeGelb",
       "feld": [15, 6]
     },
     {
-      "moebel": "wg4Gras",
+      "moebel": "wg4BlumeGelb",
       "feld": [28, 6]
     },
     {
-      "moebel": "wg4BlumeRot",
+      "moebel": "wg4Gras",
       "feld": [33, 8]
     },
     {
-      "moebel": "wg4BlumeGelb",
+      "moebel": "wg4BlumeRot",
       "feld": [40, 7]
     },
     {
-      "moebel": "wg4Gras",
+      "moebel": "wg4BlumeGelb",
       "feld": [44, 8]
     },
     {
-      "moebel": "wg4BlumeRot",
+      "moebel": "wg4Gras",
       "feld": [55, 10]
     },
     {
-      "moebel": "wg4BlumeGelb",
+      "moebel": "wg4BlumeRot",
       "feld": [6, 12]
     },
     {
-      "moebel": "wg4Gras",
+      "moebel": "wg4BlumeGelb",
       "feld": [40, 11]
     },
     {
-      "moebel": "wg4BlumeRot",
+      "moebel": "wg4Gras",
       "feld": [55, 11]
     },
     {
-      "moebel": "wg4BlumeGelb",
+      "moebel": "wg4BlumeRot",
       "feld": [6, 17]
     },
     {
-      "moebel": "wg4Gras",
+      "moebel": "wg4BlumeGelb",
       "feld": [8, 19]
     },
     {
-      "moebel": "wg4BlumeRot",
+      "moebel": "wg4Gras",
       "feld": [36, 19]
     },
     {
-      "moebel": "wg4BlumeGelb",
+      "moebel": "wg4BlumeRot",
       "feld": [47, 16]
     },
     {
-      "moebel": "wg4Gras",
+      "moebel": "wg4BlumeGelb",
       "feld": [56, 19]
     },
     {
-      "moebel": "wg4BlumeRot",
+      "moebel": "wg4Gras",
       "feld": [28, 21]
     },
     {
-      "moebel": "wg4BlumeGelb",
+      "moebel": "wg4BlumeRot",
       "feld": [29, 22]
     }
   ],

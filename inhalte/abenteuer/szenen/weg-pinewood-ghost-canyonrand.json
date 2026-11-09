@@ -4,12 +4,11 @@
   "art": "aussen",
   "beschreibung": "Der Canyonrand auf Weg 10, 150 × 30 Kacheln. Der Weg kommt am Westrand aus dem Wald des Camps und läuft nach Osten an der Kante eines roten Canyons entlang; im Süden fällt die Felswand tief zum Canyongrund ab. Kiefern im Westen, dann Fels und Kakteen. An der Kletterstelle ragt eine Kletterwand mit zwei Routen über die Kante, daneben Seilhaken, dort spielt Juniper Drei-Schach, daneben die Rätseltafel; eine Bank an der Felsnase für das Echo, ein Wegweiser am Ostrand.",
   "wand": "felsRot",
-  "wandart": "hecke",
   "boden": "gras",
   "boeden": {
     "e": "erde",
     "r": "felsbodenRot",
-    "f": "felsbodenRot"
+    "f": "sandRot"
   },
   "raster": [
     "######################################################################################################################################################",
@@ -29,8 +28,8 @@
     "eeeeeeeeeeeeeeeee....................eeeeeeeeeeeeeeeeeeeeeeeeeerrrrrrrrrrrrrrrrrrrrrrrrrrrrrrrrrrrrrrrrrrrrrrrrrrrrrrrrrrrrrrrrrreeeeeeeeeeeeeeeeeeeee",
     "eeeeeeeeeeeeeeeee...........................................rrrrrrrrrrrrrrrrrrrrrrrrrrrrrrrrrrrrrrrrrrrrrrrrrrrrrrrrrrrrrrrrrrrrreeeeeeeeeeeeeeeeeeeee",
     "#...........................................................rrrrrrrrrrrrrrrrrrrrrrrrrrrrrrrrrrrrrrrrrrrrrrrrrrrrrrrrrrrrrrrrrrrrrrrrrrrrrrrrrrrrrrrrr#",
-    "#...........................................................rrrrrrrrrrrrrrrrrrrrrrrrrrrrrrrrrrrrrrrrrrrrrrrrrrrrrrrrrrrrrrrrrrrrrrrrrrrrrrrrrrrrrrrrr#",
-    "#...........................................................rrrrrrrrrrrrrrrrrrrrrrrrrrrrrrrrrrrrrrrrrrrrrrrrrrrrrrrrrrrrrrrrrrrrrrrrrrrrrrrrrrrrrrrrr#",
+    "#rrrrrrrrrrrrrrrrrrrrrrrrrrrrrrrrrrrrrrrrrrrrrrrrrrrrrrrrrrrrrrrrrrrrrrrrrrrrrrrrrrrrrrrrrrrrrrrrrrrrrrrrrrrrrrrrrrrrrrrrrrrrrrrrrrrrrrrrrrrrrrrrrrrr#",
+    "#rrrrrrrrrrrrrrrrrrrrrrrrrrrrrrrrrrrrrrrrrrrrrrrrrrrrrrrrrrrrrrrrrrrrrrrrrrrrrrrrrrrrrrrrrrrrrrrrrrrrrrrrrrrrrrrrrrrrrrrrrrrrrrrrrrrrrrrrrrrrrrrrrrrr#",
     "######################################################################################################################################################",
     "######################################################################################################################################################",
     "######################################################################################################################################################",
@@ -185,14 +184,6 @@
       "feld": [12, 9]
     },
     {
-      "moebel": "pw7Tanne",
-      "feld": [23, 15]
-    },
-    {
-      "moebel": "wg4Busch",
-      "feld": [26, 15]
-    },
-    {
       "moebel": "dd6Saguaro",
       "feld": [63, 4]
     },
@@ -342,15 +333,15 @@
     },
     {
       "moebel": "dd6KaktusKlein",
-      "feld": [67, 17]
+      "feld": [26, 17]
     },
     {
       "moebel": "fels",
-      "feld": [81, 18]
+      "feld": [32, 18]
     },
     {
       "moebel": "wg4Felsgruppe",
-      "feld": [86, 17]
+      "feld": [38, 17]
     }
   ],
   "ausloeser": [

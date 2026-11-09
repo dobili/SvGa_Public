@@ -83,7 +83,7 @@ rustikal, industrie, natur, kinder …). Jedes Bild vorher ansehen; das Register
 
 Szenen legen fest: `"zustand": ["neu", "gebraucht"]` (Standard) und `"stil": ["modern", "klassisch"]`.
 Kaputtes nur, wo die Geschichte es erklärt (Ghost Town, Turnhalle nach dem Sturm, Dachboden mit
-altem Gerümpel als *eigene Ecke*, nicht gemischt).
+altem Gerümpel als _eigene Ecke_, nicht gemischt).
 
 Beziehungen im Eintrag einer Szene: `"auf": "<id>"` (steht auf; muss auf die Platte passen),
 `"an_wand": true`, `"zu": "<id>"` (Stuhl oder Sofa schaut zu Tisch oder Fernseher).

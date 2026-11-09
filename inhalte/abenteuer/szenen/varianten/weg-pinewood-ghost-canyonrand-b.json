@@ -46,12 +46,18 @@
   ],
   "objekte": [
     {
-      "moebel": "pg7Seil",
+      "moebel": "pg7Kletterwand",
+      "feld": [65, 15],
+      "vorn": true,
+      "id": "kletterwand"
+    },
+    {
+      "moebel": "pg7SeilHaken",
       "feld": [60, 17],
       "vorn": true
     },
     {
-      "moebel": "pg7Seil",
+      "moebel": "pg7SeilHaken",
       "feld": [62, 17],
       "vorn": true
     },
@@ -543,10 +549,10 @@
     {
       "name": "kletterer",
       "typ": "statist",
-      "feld": [64, 16],
+      "feld": [63, 16],
       "eigenschaften": {
-        "von": "64,16",
-        "bis": "66,16",
+        "von": "63,16",
+        "bis": "63,16",
         "tun": "sichert das Seil",
         "wann": "tag"
       }

@@ -176,6 +176,14 @@
       "feld": [56, 3]
     },
     {
+      "moebel": "pg7Staubteufel",
+      "feld": [40, 4]
+    },
+    {
+      "moebel": "pg7Staubteufel",
+      "feld": [100, 22]
+    },
+    {
       "moebel": "mf4Wegweiser",
       "feld": [143, 12]
     },

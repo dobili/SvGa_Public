@@ -134,6 +134,62 @@
       "art": "steg",
       "zustand": "gebraucht",
       "stil": "natur"
+    },
+    "pw7Campbude": {
+      "quelle": "spiel/eigene/campbude.png",
+      "breite": 80,
+      "hoehe": 80,
+      "kollision": true,
+      "art": "gebaeude",
+      "zustand": "gebraucht",
+      "stil": "natur",
+      "blick": "unten"
+    },
+    "pw7Kiosk": {
+      "quelle": "spiel/eigene/campkiosk.png",
+      "breite": 80,
+      "hoehe": 80,
+      "kollision": true,
+      "art": "gebaeude",
+      "zustand": "gebraucht",
+      "stil": "natur",
+      "blick": "unten"
+    },
+    "pw7KanuQuer": {
+      "quelle": "spiel/eigene/kanu_quer.png",
+      "breite": 64,
+      "hoehe": 32,
+      "kollision": true,
+      "art": "boot",
+      "zustand": "gebraucht",
+      "stil": "natur"
+    },
+    "pw7KanuLaengs": {
+      "quelle": "spiel/eigene/kanu_laengs.png",
+      "breite": 32,
+      "hoehe": 64,
+      "kollision": true,
+      "art": "boot",
+      "zustand": "gebraucht",
+      "stil": "natur"
+    },
+    "pw7Bootssteg3": {
+      "quelle": "spiel/eigene/bootssteg_holz_laengs_3.png",
+      "breite": 32,
+      "hoehe": 52,
+      "kollision": false,
+      "art": "steg",
+      "zustand": "gebraucht",
+      "stil": "natur"
+    },
+    "pw7Feuerstelle": {
+      "quelle": "spiel/eigene/feuerstelle_gross.png",
+      "breite": 48,
+      "hoehe": 48,
+      "kollision": true,
+      "art": "feuer",
+      "zustand": "gebraucht",
+      "stil": "natur"
     }
   }
 }

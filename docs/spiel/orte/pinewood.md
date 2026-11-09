@@ -166,13 +166,15 @@ klappert ein Blech. Die Farben werden blass.
 
 ### 3.3 Befunde und offene Punkte für den Haupt-Chat
 
-1. **Ränder zu Crossroads und Ghost Town** sind Vorschläge (1.6) und mit mittel-3 und niedrig-1
-   abzustimmen.
+1. **Ränder zu Crossroads und Ghost Town:** siehe Nr. 4.
 2. **Ansehen für Runde 6:** Wegweiser „LONG RIDGE TRAIL“, Bärenspur, Feuerstelle an der Lichtung,
    Steg am See, Kanus, Kletterwand, liegengebliebener Wagen auf der Staubstraße.
-3. **Bilder bestellt** (10.11.2026 nachts): Mammutbaum und Stammfuß, Schutzhütte, Campbude,
-   Rangerhaus, Kiosk, Kanu, Steg, Kletterwand, Seilhaken, Bärenspur, Wegweiser, Staubteufel, große
-   Feuerstelle. Bis dahin Ersatz aus dem Katalog, in den Szenen genannt.
+3. **Bilder** (bestellt und geliefert in der Nacht 10.11.2026, eingebaut): Mammutbaum und Stammfuß,
+   Schutzhütte, Campbude, Rangerhaus, Kiosk, Kanus, Bootssteg, Kletterwand, Seilhaken, Bärenspur,
+   Wegweiser „LONG RIDGE TRAIL“, Staubteufel, große Feuerstelle. Ein Mammutbaum sperrt sein ganzes Bild
+   außer der obersten Reihe; dichte Haine entstehen deshalb aus Stammfüßen.
+4. **Ränder abgestimmt:** crossroads.aussen `wegPinewood` am Westrand 14–15 (mittel-3, 9.11.2026);
+   ghostTown.aussen `wegPinewood` am Westrand 14–15 ist niedrig-1 vorgeschlagen.
 
 ## 4. Bühnenbilder
 

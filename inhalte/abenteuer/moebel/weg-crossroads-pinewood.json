@@ -17,6 +17,72 @@
       "art": "bruecke",
       "zustand": "gebraucht",
       "stil": "natur"
+    },
+    "cp7Mammutbaum": {
+      "quelle": "spiel/eigene/mammutbaum.png",
+      "breite": 112,
+      "hoehe": 192,
+      "kollision": true,
+      "art": "baum",
+      "zustand": "neu",
+      "stil": "natur"
+    },
+    "cp7MammutStamm": {
+      "quelle": "spiel/eigene/mammutbaum_stamm.png",
+      "breite": 64,
+      "hoehe": 64,
+      "kollision": true,
+      "art": "baum",
+      "zustand": "neu",
+      "stil": "natur"
+    },
+    "cp7Schutzhuette": {
+      "quelle": "spiel/eigene/schutzhuette.png",
+      "breite": 128,
+      "hoehe": 112,
+      "kollision": true,
+      "art": "gebaeude",
+      "zustand": "gebraucht",
+      "stil": "natur",
+      "blick": "unten"
+    },
+    "cp7Rangerhaus": {
+      "quelle": "spiel/eigene/rangerhaus.png",
+      "breite": 96,
+      "hoehe": 96,
+      "kollision": true,
+      "art": "gebaeude",
+      "zustand": "gebraucht",
+      "stil": "natur",
+      "blick": "unten"
+    },
+    "cp7Baerenspur": {
+      "quelle": "spiel/eigene/baerenspur.png",
+      "breite": 32,
+      "hoehe": 32,
+      "kollision": false,
+      "art": "deko",
+      "zustand": "neu",
+      "stil": "natur"
+    },
+    "cp7Wegweiser": {
+      "quelle": "spiel/eigene/wegweiser_trail.png",
+      "breite": 32,
+      "hoehe": 48,
+      "kollision": true,
+      "art": "schild",
+      "zustand": "gebraucht",
+      "stil": "natur",
+      "blick": "unten"
+    },
+    "cp7Feuerstelle": {
+      "quelle": "spiel/eigene/feuerstelle_gross.png",
+      "breite": 48,
+      "hoehe": 48,
+      "kollision": true,
+      "art": "feuer",
+      "zustand": "gebraucht",
+      "stil": "natur"
     }
   }
 }

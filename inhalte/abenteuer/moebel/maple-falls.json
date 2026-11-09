@@ -2699,6 +2699,104 @@
       "art": "bruecke",
       "zustand": "gebraucht",
       "stil": "klassisch"
+    },
+    "mf8SpielautomatZwei": {
+      "quelle": "modern-interiors/1_Interiors/16x16/Theme_Sorter_Singles/14_Basement_Singles/Basement_Singles_219.png",
+      "breite": 16,
+      "hoehe": 48,
+      "kollision": true,
+      "art": "geraet",
+      "blick": "unten",
+      "zustand": "gebraucht",
+      "stil": "klassisch"
+    },
+    "mf9Rundtisch": {
+      "quelle": "modern-interiors/1_Interiors/16x16/Theme_Sorter_Black_Shadow_Singles/14_Basement_Black_Shadow_Singles_16x16/Basement_Shadow_Singles_3.png",
+      "breite": 32,
+      "hoehe": 32,
+      "kollision": true,
+      "art": "tisch",
+      "zustand": "gebraucht",
+      "stil": "klassisch"
+    },
+    "mf9Wartebank": {
+      "quelle": "modern-interiors/1_Interiors/16x16/Theme_Sorter_Black_Shadow_Singles/6_Music_and_Sport_Black_Shadow_Singles_16x16/Music_and_Sport_Black_Shadow_Singles_25.png",
+      "breite": 32,
+      "hoehe": 32,
+      "kollision": true,
+      "art": "bank",
+      "blick": "unten",
+      "zustand": "gebraucht",
+      "stil": "klassisch"
+    },
+    "mf9Durchreiche": {
+      "quelle": "spiel/generic/generic_086.png",
+      "breite": 32,
+      "hoehe": 32,
+      "kollision": false,
+      "art": "fenster",
+      "zustand": "gebraucht",
+      "stil": "klassisch"
+    },
+    "mf9TuerSuedGlas": {
+      "quelle": "spiel/eigene/tuer_sued_glas.png",
+      "breite": 16,
+      "hoehe": 16,
+      "kollision": false,
+      "art": "tuer",
+      "blick": "unten",
+      "zustand": "gebraucht",
+      "stil": "klassisch"
+    },
+    "mf8Zerlegetisch2": {
+      "quelle": "modern-interiors/1_Interiors/16x16/Theme_Sorter_Singles/16_Grocery_Store_Singles/Grocery_Store_Singles_261.png",
+      "breite": 32,
+      "hoehe": 32,
+      "kollision": true,
+      "art": "tisch",
+      "blick": "unten",
+      "zustand": "gebraucht",
+      "stil": "industrie"
+    },
+    "mf9Vorrat99": {
+      "quelle": "modern-interiors/1_Interiors/16x16/Theme_Sorter_Black_Shadow_Singles/16_Grocery_Store_Black_Shadow_Singles_16x16/Grocery_Store_Black_Shadow_Singles_99.png",
+      "breite": 16,
+      "hoehe": 48,
+      "kollision": true,
+      "art": "regal",
+      "blick": "unten",
+      "zustand": "gebraucht",
+      "stil": "industrie"
+    },
+    "mf9Vorrat100": {
+      "quelle": "modern-interiors/1_Interiors/16x16/Theme_Sorter_Black_Shadow_Singles/16_Grocery_Store_Black_Shadow_Singles_16x16/Grocery_Store_Black_Shadow_Singles_100.png",
+      "breite": 16,
+      "hoehe": 48,
+      "kollision": true,
+      "art": "regal",
+      "blick": "unten",
+      "zustand": "gebraucht",
+      "stil": "industrie"
+    },
+    "mf9Vorrat102": {
+      "quelle": "modern-interiors/1_Interiors/16x16/Theme_Sorter_Black_Shadow_Singles/16_Grocery_Store_Black_Shadow_Singles_16x16/Grocery_Store_Black_Shadow_Singles_102.png",
+      "breite": 16,
+      "hoehe": 48,
+      "kollision": true,
+      "art": "regal",
+      "blick": "unten",
+      "zustand": "gebraucht",
+      "stil": "industrie"
+    },
+    "mf9Vorrat105": {
+      "quelle": "modern-interiors/1_Interiors/16x16/Theme_Sorter_Black_Shadow_Singles/16_Grocery_Store_Black_Shadow_Singles_16x16/Grocery_Store_Black_Shadow_Singles_105.png",
+      "breite": 16,
+      "hoehe": 48,
+      "kollision": true,
+      "art": "regal",
+      "blick": "unten",
+      "zustand": "gebraucht",
+      "stil": "industrie"
     }
   }
 }

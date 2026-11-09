@@ -361,6 +361,18 @@ Anrichte. Szenen 5, 6, 9, 11, 12.
 
 ### 4.4 Diner (`mapleFalls.diner`), neu gedacht (mittel-3, 9.11.2026)
 
+**Stand nach Runde 5 (gewählt: Variante C, überarbeitet nach den Hinweisen des Autors, 10.11.2026):**
+Größe 30 × 16 und Tür (7, 15) bleiben. Die Großküche liegt jetzt im Norden (Spalten 13–23, Reihen 3–6)
+hinter einer drei Reihen hohen Wand (Reihen 7–9, Regel 39); in ihrer Wandfläche die Durchreiche als
+Fenster (18, 8), Pinnwand (13, 8), Foto 1962 (16, 8) und die Küchentür (27, 8). Davor der Gang des
+Personals (Reihe 10), die rote Bar (Spalten 14–25) mit sechs Hockern direkt davor und der Kaffeemaschine
+auf der Platte; die Kassentheke am Westende (12–13), Kasse zum Gast. Hinter der Küche das Lager (25–28)
+mit Vorratsregalen und Kartons. Zwei Toiletten (Spalten 1–2 und 4–5) hinter einer drei Reihen hohen
+Wand mit Türen (2, 8) und (4, 8). Im früher leeren Teil oben links Spielautomaten-Ecke mit Bildern,
+eine Nische und eine Wartebank; unten links zwei Nischen mit runden Tischen zwischen den Lehnstühlen.
+Niedrige Glastür in der Südwand (eigenes Bild), Fußmatte davor. Die Tabelle unten beschreibt den
+früheren Stand A; die Szene in `szenen/maple-falls-diner.json` gilt.
+
 Rückmeldung des Autors zu Runde 4: „kein Diner, zu kläglich, nicht mal eine Mensa“ (KARTENREGELN 10.30).
 Neu geplant und gebaut nach dieser Liste.
 

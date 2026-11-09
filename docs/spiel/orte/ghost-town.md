@@ -89,14 +89,14 @@ der Postreiter wartet an der Tür.
 
 ### 1.4 Übergänge (Felder auf beiden Seiten)
 
-| Von (Karte, Auslöser, Feld)                                | Nach (Karte, Auslöser, Feld; Ankunft)                                    | Lage, Bedingung                                                                        |
-| ---------------------------------------------------------- | ------------------------------------------------------------------------ | -------------------------------------------------------------------------------------- |
-| staubstrasse `weiterGhost` (Ostrand, Reihen 21–23)         | aussen `wegPinewood` (Westrand, Spalte 0, Reihen 21–23; Ankunft (1, 22)) | Straße drei Felder breit; mittel-4 legt die Staubstraße am Ostrand in dieselben Reihen |
-| aussen `wegCapital` (Ostrand, Spalte 55, Reihen 21–23)     | seeufer `zurueckGhost` (Westrand, Reihen 21–23)                          | `wenn: fernpartieGespielt`; mittel-1 legt das Seeufer am Westrand in dieselben Reihen  |
-| aussen `saloonTuer` (27, 20), Schwingtür in der Südfassade | saloon `saloonAusgang` (10, 13); Ankunft (10, 12)                        | Südfassade ↔ Südwand, Tür bei 50 %                                                     |
-| saloon `abzeichen` (unter der Treppe)                      | huette `ankunft` (6, 8)                                                  | Erinnerung, `wenn: abzeichenGefunden`                                                  |
-| huette `rueckkehr` (6, 9), Tür der Hütte                   | saloon `abzeichen`                                                       | zurück in die Gegenwart                                                                |
-| (später) Q4 Alte Minenstraße                               | aussen Südrand, Spalten 12–14                                            | Runde 6: eigene Karte, Viehgatter S13                                                  |
+| Von (Karte, Auslöser, Feld)                                | Nach (Karte, Auslöser, Feld; Ankunft)                                    | Lage, Bedingung                                                                                                          |
+| ---------------------------------------------------------- | ------------------------------------------------------------------------ | ------------------------------------------------------------------------------------------------------------------------ |
+| staubstrasse `weiterGhost` (Ostrand, Reihen 14–15)         | aussen `wegPinewood` (Westrand, Spalte 0, Reihen 21–22; Ankunft (1, 22)) | zwei Felder auf beiden Seiten (Schotterpiste, mittel-4); die Front Street wird am Rand von drei auf zwei Felder schmaler |
+| aussen `wegCapital` (Ostrand, Spalte 55, Reihen 21–22)     | seeufer `zurueckGhost` (Westrand, Reihen 14–15)                          | `wenn: fernpartieGespielt`; zwei Felder Erdweg auf beiden Seiten (mittel-1)                                              |
+| aussen `saloonTuer` (27, 20), Schwingtür in der Südfassade | saloon `saloonAusgang` (10, 13); Ankunft (10, 12)                        | Südfassade ↔ Südwand, Tür bei 50 %                                                                                       |
+| saloon `abzeichen` (unter der Treppe)                      | huette `ankunft` (6, 8)                                                  | Erinnerung, `wenn: abzeichenGefunden`                                                                                    |
+| huette `rueckkehr` (6, 9), Tür der Hütte                   | saloon `abzeichen`                                                       | zurück in die Gegenwart                                                                                                  |
+| (später) Q4 Alte Minenstraße                               | aussen Südrand, vier Felder Schotter                                     | Runde 6: eigene Karte; das Viehgatter S13 steht am Ostrand von Crossroads (mittel-3)                                     |
 
 ## 2. Ortsbild
 

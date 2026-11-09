@@ -490,7 +490,7 @@ mit Vorsilbe `mf6` in `moebel/maple-falls.json`. Bühnenbild:
   unterbrochen.
 - **Fußsteg zum Zedernpfad** (10.6): eigene Fußgängerbrücke mit Geländer (`spiel/eigene/bruecke_fuss_laengs_3`)
   über den Brückenfeldern `h` (10–11 / 2–4, Szene `bruecken`); die Straßenbrücke (31–34 / 15–17) ist
-  `bruecke_strasse_quer_4` mit Steinbrüstung, der Fluss läuft darunter mit Ufer weiter; Pfad 10–11
+  `bruecke_strasse_gehweg_quer_4` (Gehwege laufen mit über die Brücke, Brüstung außen; Felder 31–34 / 14–18), der Fluss läuft darunter mit Ufer weiter; Pfad 10–11
   vom Nordrand (Übergang `zedernpfad`, Felder unverändert) bis zum Uferweg. Das Schild „Sturmschaden“
   (`schildZedernpfad`, 13 §7.4, S2) steht am Wegrand (12, 5), nicht auf dem Pfad.
 - **Steg S5** (12, 13 §7.4): morscher Steg als ganzes Bild (Pier_26) in der Bucht (5–6 / 4–5); die

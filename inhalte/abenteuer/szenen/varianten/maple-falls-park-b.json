@@ -26,11 +26,11 @@
     "#...........ppppp....ee....~~~~~...........#",
     "#...........ppppp....ee.....~~~~~..........#",
     "#....................ee......~~~~~.........#",
-    "#pppppppppppppppppppppppppppppp~~~~pppppppp#",
+    "#pppppppppppppppppppppppppppppphhhhpppppppp#",
     "ssssssssssssssssssssssssssssssshhhhsssssssss",
     "ssssssssssssssssssssssssssssssshhhhsssssssss",
     "ssssssssssssssssssssssssssssssshhhhsssssssss",
-    "#pppppppppppppppppppppppppppppp~~~~pppppppp#",
+    "#pppppppppppppppppppppppppppppphhhhpppppppp#",
     "#......................ppppppp.~~~~........#",
     "#......................ppppppp..~~~~...~~~~~",
     "#..~~~.................ppppppp...~~~~.~~~~~~",
@@ -47,8 +47,8 @@
   ],
   "objekte": [
     {
-      "moebel": "mf9StrassenbrueckeQuer4",
-      "feld": [31, 15]
+      "moebel": "mf9StrassenbrueckeGehwegQuer4",
+      "feld": [31, 14]
     },
     {
       "moebel": "mf9FussbrueckeLaengs3",

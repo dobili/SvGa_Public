@@ -2480,6 +2480,15 @@
       "art": "bruecke",
       "zustand": "gebraucht",
       "stil": "klassisch"
+    },
+    "mf9StrassenbrueckeGehwegQuer4": {
+      "quelle": "spiel/eigene/bruecke_strasse_gehweg_quer_4.png",
+      "breite": 64,
+      "hoehe": 84,
+      "kollision": false,
+      "art": "bruecke",
+      "zustand": "gebraucht",
+      "stil": "klassisch"
     }
   }
 }

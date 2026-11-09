@@ -1,6 +1,6 @@
 # Auftrag mittel-1: Riverton und der Weg dorthin mit echten Möbeln
 
-**Stand:** offen (Haupt-Chat, 09.11.2026, vierundzwanzigster Auftrag; die Figuren sind gebaut und gepusht, danke)
+**Stand:** kein Auftrag (Haupt-Chat, 09.11.2026; der vierundzwanzigste Auftrag, Riverton, ist zusammengeführt, danke. Bis der nächste Auftrag per Nachricht kommt, bitte nichts tun und warten.)
 
 **Zweig:** dein fester Sitzungszweig, Basis `claude/friendly-shannon-y8bf90` (vorher hereinholen, Stand 7339b420)
 **Darf ändern:** `inhalte/abenteuer/karten/riverton-*.json`, `inhalte/abenteuer/karten/weg-cedar-riverton-*.json`,
@@ -23,6 +23,61 @@ nichts dorthin pushen), Themen etwa „subway and train station“, „city prop
 1. Platzhalterkacheln Kiste, Lampe, Brett dort durch Boden ersetzen, wo jetzt ein Möbel steht.
 2. Gänge mindestens eine Kachel breit, jeder Auslöser und jede Figur erreichbar (Tests).
 3. Je Karte ein Bildschirmfoto prüfen, im Bericht ein Satz je Karte.
+
+## Bericht
+
+Sieben Karten eingerichtet (Riverton draußen, Pavillon, Bahnhofshalle, Wohnwagen, Schuppen,
+Zedernwald, Bahndamm). 41 neue Möbel in `moebel.json`, alle mit Vorsilbe `rv`, alle mit
+`kollision`, Pfade aus `register/register.csv`; dazu wiederverwendet: `laterne`, `baum`,
+`parkbank`, `muelltonne`, `briefkasten`, `blumenbusch`, `blumen`, `pflanzeKlein`, `pflanzeGross`,
+`kuehlschrank`, `herd`, `holztisch`, `sofaRund`. Platzhalter (Kiste, Lampe, Brett) unter jedem Möbel
+durch Boden ersetzt; stehen geblieben sind nur die Platzhalter unter Auslösern (Zeitungsstand,
+Gedenktafel, Limonadenglas, Dosentrophäen, Fahrrad, Bildschirmtische, Tafel, drei Funde), weil ein
+Möbel keinen Auslöser zustellen darf.
+
+Neue Möbel: Bahnhof `rvTicketschalter`, `rvWartebank`, `rvBahnsteigbank`, `rvGetraenkeautomat`,
+`rvKaffeeautomat`, `rvFahrplan`, `rvTopfpflanze`, `rvKoffer`, `rvGepaeckwagen`, `rvSaeule`,
+`rvZeitungsregal`; draußen `rvPicknicktisch`, `rvPicknicktischLang`, `rvHolzbank`,
+`rvLimonadenkarren`, `rvAutoBlau`, `rvAutoGruen`, `rvBildschirmtisch`, `rvHydrant`,
+`rvGitarrenkoffer`; innen `rvBett`, `rvFernseher`, `rvPokalhaufen`, `rvLaterneKlein`, `rvKiste`,
+`rvKisteOffen`, `rvWerkzeugkiste`, `rvMaterialstapel`, `rvFass`, `rvLeiter`, `rvHolzscheite`; Weg
+`rvZeder`, `rvZederSchmal`, `rvZederngruppe`, `rvLaubbaum`, `rvLaubbaumDunkel`, `rvBaumstumpf`,
+`rvWegweiser`, `rvGleis`, `rvHeuhaufen`, `rvHolzbankNatur`. (Einige sind angelegt, aber noch nicht
+gesetzt, etwa `rvAutoGruen`, `rvLimonadenkarren`, `rvKisteOffen`, `rvPicknicktischLang`: als Vorrat
+für Ironwood und spätere Feinarbeit.)
+
+Bildschirmfotos im Spiel (Build mit verlinktem privaten Repository, Spielstand auf die Karte
+gesetzt; Bilder nur lokal):
+
+- **Riverton draußen:** Laternen und Briefkasten am Bahnhofsvorplatz, eine grüne Bank auf dem
+  Bahnsteig neben dem Zug nach Cedar Creek, Bäume und eine Parkbank im Grünstreifen, Gitarrenkoffer
+  beim Straßenmusiker, ein geparktes Auto, Hydrant und Mülltonne; die Bildschirmtische sind zwei
+  dunkle Monitorpulte links und rechts des Auslösers, davor eine Holzbank.
+- **Pavillon:** acht Picknicktische mit Bänken in zwei Reihen statt der Brettkacheln, Slick, Ray und
+  Tamsin stehen zwischen den Tischen, Blumen in den Ecken, Topfpflanzen am Eingang.
+- **Bahnhofshalle:** drei Zeitschriftenregale am Zeitungsstand (Pops davor), zwei Ticketschalter,
+  Kaffee- und Getränkeautomat, orange Wartebänke (eine vor Mr. Harlan), Fahrplan an der Wand, zwei
+  Säulen, Koffer und Gepäckwagen, Pflanzen am Ausgang; die große Uhr bleibt frei erreichbar.
+- **Wohnwagen:** Bett, Küchenzeile mit Kühlschrank und Herd, Fernseher, runder Tisch mit Hocker,
+  zwei Pokalhaufen über den Dosentrophäen, kleine Laterne.
+- **Schuppen:** Materialstapel, Fass, Leiter, Karton und Holzscheite an den Wänden, eine
+  Werkzeugkiste rechts; das Fahrrad (Auslöser) ist frei.
+- **Zedernwald:** sieben Waldstücke aus schmalen Zedern und Zederngruppen statt der Kistenblöcke,
+  Wegweiser neben der Rätseltafel, Baumstumpf, Holzbank am Weg; Fenwick, Reh, Specht und
+  Pilzsammlerin frei.
+- **Bahndamm:** durchgehendes Gleis auf dem Damm, Laub- und Nadelbäume darüber, Holzscheite beim
+  Streckenwärter, Schwellenbank beim Schaffner, Heuhaufen auf der Weide bei den Kühen.
+
+**Entscheidungen:** Die Wälder sind dicht gesetzt; Bäume überlappen sich im Bild, das ist gewollt
+(die oberste Kachelreihe jedes Baums bleibt begehbar, deshalb ist der Waldrand nicht ganz hart).
+Eine Uhr für die Halle gibt es im Register nur als Glockenturm (128 × 240), zu groß für die Halle;
+die Uhr bleibt die Wandkachel mit Auslöser. Ein Fahrrad und einen Wohnwagen als Einzelbild gibt es
+im Register nicht; das Fahrrad bleibt Auslöser, der Wohnwagen ist draußen das Wandgebäude.
+
+**Prüfungen:** `python -m pytest pipeline/tests -q`: 624 bestanden, 3 übersprungen (Gesamtsimulation
+nur mit `ABENTEUER_SIMULATION=1`). Prettier über die geänderten Dateien. `npm run build` mit
+verlinktem privaten Repository ohne Fehler (Abenteuerpaket 4,2 MB). Playwright
+`tests/e2e/abenteuer` (Chromium): 9 bestanden.
 
 ## Bericht des letzten Auftrags, zur Nachlese
 

@@ -11,23 +11,19 @@ import type { Chess } from "chessops/chess";
 import type { NormalMove } from "chessops/types";
 import { makeUci, squareRank } from "chessops/util";
 import { legaleZuege } from "../schach/drohungen";
+import { rochadeUci } from "../schach/chess960";
 import type { Lage } from "./fehlerart-typen";
 
-const AUF_REIHE = 8;
 const LETZTE_REIHEN = new Set([0, 7]);
-/** Linien des Königs nach der kurzen (g) und der langen (c) Rochade, in UCI der Engine. */
-const KOENIG_KURZ = 6;
-const KOENIG_LANG = 2;
 
 /**
  * Ein legaler Zug in der UCI-Schreibweise der Engine: Rochade als Königszug um zwei Felder
- * (chessops schreibt „König auf Turm“), Umwandlung immer in die Dame.
+ * (chessops schreibt „König auf Turm“; im Schach960 bleibt es dabei), Umwandlung immer in die Dame.
  */
 export function engineUci(regeln: Chess, zug: NormalMove): string {
   const figur = regeln.board.get(zug.from);
   if (figur?.role === "king" && regeln.board[regeln.turn].has(zug.to)) {
-    const reihe = zug.from - (zug.from % AUF_REIHE);
-    return makeUci({ from: zug.from, to: reihe + (zug.to > zug.from ? KOENIG_KURZ : KOENIG_LANG) });
+    return rochadeUci(regeln, zug);
   }
   if (figur?.role === "pawn" && LETZTE_REIHEN.has(squareRank(zug.to))) {
     return makeUci({ ...zug, promotion: "queen" });

@@ -89,7 +89,7 @@ export interface Partieauftrag {
   /** Stärkewechsel mitten in der Partie (Halbfinale): ab Halbzug häufiger Fehler um den Faktor. */
   readonly abgelenktAb?: { readonly halbzug: number; readonly faktor: number };
   /** Schachvariante (Akt 4): „blind“ = Blindschach. Zählt nie für Nadel, Wertung oder App. */
-  readonly variante?: "blind";
+  readonly variante?: "blind" | "schach960";
 }
 
 /**

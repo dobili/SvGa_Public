@@ -182,7 +182,10 @@ function abenteuerteil(roh: unknown): Pick<Partieeinstellung, "abenteuer"> {
     istObjekt(wechsel) && typeof wechsel.halbzug === "number" && typeof wechsel.faktor === "number"
       ? { abgelenktAb: { halbzug: wechsel.halbzug, faktor: wechsel.faktor } }
       : {};
-  const variante = roh.variante === "blind" ? { variante: "blind" as const } : {};
+  const variante =
+    roh.variante === "blind" || roh.variante === "schach960"
+      ? { variante: roh.variante as "blind" | "schach960" }
+      : {};
   return { abenteuer: { kennung: roh.kennung, ...zeitnotBis, ...abgelenktAb, ...variante } };
 }
 

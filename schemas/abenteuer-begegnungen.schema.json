@@ -92,8 +92,14 @@
         "startstellung": { "$ref": "#/$defs/startstellung" },
         "kartenErlaubt": { "type": "boolean" },
         "variante": {
-          "description": "Schachvariante eines Nebenschauplatzes (Akt 4, docs/spiel/10): blind = Blindschach, Figuren unsichtbar. Varianten zählen nie für Nadeln, Wertung oder die App",
-          "enum": ["blind"]
+          "description": "Schachvariante eines Nebenschauplatzes (Akt 4, docs/spiel/10): blind = Blindschach, Figuren unsichtbar; schach960 = Zufallsschach, Grundreihe gemischt (V1). Varianten zählen nie für Nadeln, Wertung oder die App",
+          "enum": ["blind", "schach960"]
+        },
+        "startnummer": {
+          "description": "Nur mit variante schach960: feste Startstellung (Zählung nach Scharnagl, 518 = Grundstellung); fehlt sie, wird jede Partie neu ausgelost",
+          "type": "integer",
+          "minimum": 0,
+          "maximum": 959
         },
         "abgelenktAb": {
           "description": "Stärkewechsel mitten in der Partie (Akt 4, Halbfinale): ab diesem Halbzug macht der Gegner um den Faktor häufiger Fehler",

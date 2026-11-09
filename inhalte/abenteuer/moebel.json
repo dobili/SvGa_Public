@@ -3817,6 +3817,25 @@
       "blick": "unten",
       "zustand": "alt",
       "stil": "klassisch"
+    },
+    "cc4Hecke": {
+      "quelle": "modern-exteriors/Modern_Exteriors_16x16/ME_Theme_Sorter_16x16/17_Garden_Singles_16x16/ME_Singles_Garden_16x16_Bush_14.png",
+      "breite": 32,
+      "hoehe": 16,
+      "kollision": true,
+      "art": "busch",
+      "zustand": "neu",
+      "stil": "natur"
+    },
+    "cc4Portal": {
+      "quelle": "modern-exteriors/Modern_Exteriors_16x16/ME_Theme_Sorter_16x16/4_Generic_Building_Singles_16x16/ME_Singles_Generic_Building_16x16_Condo_4_23.png",
+      "breite": 48,
+      "hoehe": 48,
+      "kollision": false,
+      "art": "tuer",
+      "blick": "unten",
+      "zustand": "alt",
+      "stil": "klassisch"
     }
   }
 }

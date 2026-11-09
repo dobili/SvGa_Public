@@ -103,7 +103,7 @@ Creek). Länge etwa 105 Kacheln, etwa 29 s.
 - Fund „Zedernzapfen mit Initialen“ an der Kuppe; Abschnitte zu je etwa 15 Spalten mit Zedern,
   Felsen, Pilzen und einem Specht als Belebung.
 
-### 1.4 Cedar Creek (`cedarCreek.aussen`, 60 × 36)
+### 1.4 Cedar Creek (`cedarCreek.aussen`, 60 × 40)
 
 Abschnitte zu je 14 × 12 Kacheln (vier Spalten, drei Reihen: A Nord, B Mitte, C Süd).
 
@@ -494,7 +494,7 @@ folgen in Runde 5; die liegenden Stämme sperren den Pfad (einreihige Möbel spe
 
 ### 4.5 Ortskern (`cedarCreek.aussen`)
 
-**Größe:** 60 × 36 (vorher 44 × 24; 56 im Plan, vier Spalten mehr für die 18 breite Bibliothek).
+**Größe:** 60 × 40 (vorher 44 × 24; vier Reihen mehr für die Gärten im Süden; 56 im Plan, vier Spalten mehr für die 18 breite Bibliothek).
 Rand Hecke, offen am Westrand in den Reihen 20–21 (Hauptstraße, `flussweg`) und am Ostrand in den
 Reihen 8–9 (Waldweg, `zedernwald`) und in den Reihen 4–5 (Zedernpfad, `zedernpfad`). Böden: Gras, Gehwege Pflaster (Reihen 19 und 22), Straße Asphalt (Reihen 20–21), Erde für Pfade
 und Uferweg (Spalten 48–49), dunkles Holz für Brücke (Reihen 8–9) und Steg (Reihen 14–15, Spalten
@@ -516,21 +516,21 @@ beiden Wohnhäuser.
 | Bach             | Spalten 48–59              | Steg mit Rosa (`steg`), Brücke in den Zedernwald, Reiher      |
 | Südseite         | Reihen 23–34               | zwei Wohnhäuser, Zedernwiese mit Bänken, Kanuverleih mit Boot |
 
-| Zone      | Gegenstand                                          | Feld                         | Ausrichtung       | Material, Stil, Zustand   | Zweck                                                     |
-| --------- | --------------------------------------------------- | ---------------------------- | ----------------- | ------------------------- | --------------------------------------------------------- |
-| Nordseite | Drechslerei: kleine Holzscheune, Blechdach, Rolltor | (2, 9), 8 × 10               | Vorderseite unten | Holz, ländlich, gebraucht | `drechslereiTuer` (4, 19)                                 |
-| Nordseite | Holzstapel aus Rundholz                             | (6, 18)                      | –                 | Holz                      | vor der Drechslerei; wächst nach dem Zedernpfad (13 §7.4) |
-| Nordseite | Waschsalon mit Markisen                             | (12, 10), 8 × 9              | Vorderseite unten | klassisch, gebraucht      | `waschsalonTuer` (16, 19); Hund (17, 19)                  |
-| Nordseite | Laterne                                             | (20, 15)                     | –                 | Metall, klassisch         | zwischen Waschsalon und Bibliothek                        |
-| Nordseite | Bibliothek, Backstein mit Turm, Tür im Turm         | (22, 3), 18 × 16             | Vorderseite unten | Backstein, klassisch, alt | `bibliothekTuer` (25, 19)                                 |
-| Nordseite | Anschlagtafel mit Zetteln                           | (40, 17)                     | Vorderseite unten | Holz, ländlich            | `plakat` (40, 19); Zettel je Akt (13 §7.4)                |
-| Nordseite | Bushaltestelle mit Wartehäuschen                    | (42, 16), 5 × 3              | Vorderseite unten | modern                    | Start, `bushaltestelle` (44, 19), `busZurueck` (43, 19)   |
-| Wiesen    | Zedern und Fichten                                  | Nordwiese, Ostufer, Südwiese | –                 | Natur                     | Wald um den Ort, Zedernholz                               |
-| Südseite  | zwei Holzhäuser mit rotem Dach, Gartenweg           | (3, 24), (12, 24), je 8 × 10 | Vorderseite unten | Holz, ländlich, gebraucht | Haus Holm und Nachbarn (nicht betretbar)                  |
-| Südwiese  | Baumstammbank, Bank zum Bach, Mülleimer             | (29, 30), (45, 25), (46, 23) | Vorderseite unten | Holz, Metall              | Ruheplatz; Platz für den Ast (Runde 5)                    |
-| Ufer      | Bootsschuppen des Kanuverleihs, Ruderboot im Bach   | (45, 27), (50, 29)           | –                 | Holz, Kunststoff          | Kanuverleih (Kulisse)                                     |
-| Bach      | Steg, zwei Felder breit                             | (50–53, 14–15)               | –                 | Holz dunkel               | `steg` (49, 14); Rosa (53, 14), Stegbauer (51, 15)        |
-| Bach      | Holzbrücke                                          | (50–55, 8–9)                 | –                 | Holz dunkel               | zum Zedernwald (`zedernwald`, 59, 8–9)                    |
+| Zone      | Gegenstand                                                                                                                              | Feld                                                                   | Ausrichtung       | Material, Stil, Zustand   | Zweck                                                                |
+| --------- | --------------------------------------------------------------------------------------------------------------------------------------- | ---------------------------------------------------------------------- | ----------------- | ------------------------- | -------------------------------------------------------------------- |
+| Nordseite | Drechslerei: kleine Holzscheune, Blechdach, Rolltor                                                                                     | (2, 9), 8 × 10                                                         | Vorderseite unten | Holz, ländlich, gebraucht | `drechslereiTuer` (4, 19)                                            |
+| Nordseite | Holzstapel aus Rundholz                                                                                                                 | (6, 18)                                                                | –                 | Holz                      | vor der Drechslerei; wächst nach dem Zedernpfad (13 §7.4)            |
+| Nordseite | Waschsalon mit Markisen                                                                                                                 | (12, 10), 8 × 9                                                        | Vorderseite unten | klassisch, gebraucht      | `waschsalonTuer` (16, 19); Hund (17, 19)                             |
+| Nordseite | Laterne                                                                                                                                 | (20, 15)                                                               | –                 | Metall, klassisch         | zwischen Waschsalon und Bibliothek                                   |
+| Nordseite | Bibliothek, Backstein mit Turm; unten im Turm ein Steinbogen mit zwei Lampen und Stufen zum Gehweg                                      | (22, 3), 18 × 16; Bogen 3 × 3 im Turm                                  | Vorderseite unten | Backstein, klassisch, alt | `bibliothekTuer` (24, 19)                                            |
+| Nordseite | Anschlagtafel mit Zetteln                                                                                                               | (40, 17)                                                               | Vorderseite unten | Holz, ländlich            | `plakat` (40, 19); Zettel je Akt (13 §7.4)                           |
+| Nordseite | Bushaltestelle mit Wartehäuschen                                                                                                        | (42, 16), 5 × 3                                                        | Vorderseite unten | modern                    | Start, `bushaltestelle` (44, 19), `busZurueck` (43, 19)              |
+| Wiesen    | Zedern und Fichten                                                                                                                      | Nordwiese, Ostufer, Südwiese                                           | –                 | Natur                     | Wald um den Ort, Zedernholz                                          |
+| Südseite  | zwei Holzhäuser mit rotem Dach in Gärten: Rasen, Plattenweg zur Tür, Blumenbeet, Zedernhecke im Süden, zwischen den Gärten und im Osten | Häuser (3, 24), (12, 24), je 8 × 10; Hecke Reihe 37, Spalten 11 und 21 | Vorderseite unten | Holz, ländlich, gebraucht | Haus Holm (Mrs. Holm pflegt die Hecke) und Nachbarn, nicht betretbar |
+| Südwiese  | Baumstammbank, Bank zum Bach, Mülleimer                                                                                                 | (29, 30), (45, 25), (46, 23)                                           | Vorderseite unten | Holz, Metall              | Ruheplatz; Platz für den Ast (Runde 5)                               |
+| Ufer      | Bootsschuppen des Kanuverleihs, Ruderboot im Bach                                                                                       | (45, 27), (50, 29)                                                     | –                 | Holz, Kunststoff          | Kanuverleih (Kulisse)                                                |
+| Bach      | Steg, zwei Felder breit                                                                                                                 | (50–53, 14–15)                                                         | –                 | Holz dunkel               | `steg` (49, 14); Rosa (53, 14), Stegbauer (51, 15)                   |
+| Bach      | Holzbrücke                                                                                                                              | (50–55, 8–9)                                                           | –                 | Holz dunkel               | zum Zedernwald (`zedernwald`, 59, 8–9)                               |
 
 Belebung: Der Busfahrer steht auf der Straße bei der Haltestelle (42–44, 21) und trinkt Kaffee aus der
 Thermoskanne (nicht mehr rauchend). Victor wartet am Häuschen (47, 19), Reiher am Ufer (49, 24),
@@ -539,5 +539,9 @@ Eichelhäher über der Nordwiese am Morgen.
 Platzhalter (13 §7.4): Schild „Brückenarbeiten“ an der Brücke, Schaukasten an der Bibliothek, zweite
 Angel am Steg, Ast auf der Südwiese, Kühe und Zettel kommen als Objekte in Runde 5. Freie Wiese
 südlich der Straße (Spalten 22–44) bleibt für das Gemeindefest.
+
+Offen: Der Waschsalon nutzt dasselbe Gebäude wie das Diner in Maple Falls; ein Schild „Waschsalon“
+(Neonschild) oder eine andere Fassade gibt der Katalog nicht her (alle Ladenschilder tragen englische
+Aufschriften, eine zweite Markise darf nicht auf das Gebäude gelegt werden). Bitte als eigenes Bild.
 
 Offen: Der Katalog hat keinen Kanuständer und kein umgedrehtes Kanu; das Ruderboot vertritt sie.

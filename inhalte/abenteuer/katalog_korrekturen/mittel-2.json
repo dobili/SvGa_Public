@@ -518,5 +518,13 @@
     "licht": false,
     "anzahl": "einzeln",
     "reihe": false
+  },
+  "modern-exteriors/Modern_Exteriors_16x16/ME_Theme_Sorter_16x16/11_Camping_Singles_16x16/ME_Singles_Camping_16x16_Wood_Board_2.png": {
+    "beschreibung": "Hölzerne Anschlagtafel aus Brettern mit kleinem Satteldach, von vorn; darauf drei mit blauen Nadeln angeheftete Zettel (gelb, beige, hell), Gras am Fuß. 2×2 Kacheln.",
+    "art": "tafel",
+    "ganz": true,
+    "sicher": 0.9,
+    "korrektur": "mittel-2",
+    "nur_pfad": true
   }
 }

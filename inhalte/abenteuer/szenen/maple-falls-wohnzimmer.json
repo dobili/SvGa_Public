@@ -2,7 +2,7 @@
   "karte": "mapleFalls.wohnzimmer",
   "datei": "karten/maple-falls-wohnzimmer.json",
   "art": "innen",
-  "beschreibung": "Das Erdgeschoss des alten Whitlock-Hauses am Tag nach dem Umzug, zwei Räume nebeneinander (20 × 13). Links das Wohnzimmer mit hellen Dielen und cremefarbenen Wänden: In der Nordwestecke führt eine steile Holztreppe zum Dachboden hinauf, unten ist Platz zum Antreten; daneben die Kiste „Whitlock – nicht wegwerfen“. An der Nordwand eine alte Anrichte unter dem Fenster, das gerahmte Foto von Grandma Whitlock, ein niedriges Lowboard mit dem Fernseher an der Wand darüber und rechts die geschlossene Tür zum Schlafzimmer. Vor dem Fernseher liegt der gemusterte Teppich, dahinter stehen zwei gelbe Sessel mit der Lehne zum Raum und Blick zum Fernseher, daneben eine Stehlampe. Überall Umzugskartons: an der Westwand übereinander, ein Stapel hinter den Sesseln, ein kleiner Karton von gestern Abend neben dem Laufweg (der Pizzakarton). Eine Zimmerpflanze in der Südwestecke. Unten die Haustür. Durch einen offenen Durchgang in der Innenwand geht es nach rechts in die Küche mit Fliesen: Küchenzeile mit zwei Arbeitsplatten, Herd und Kühlschrank lückenlos an der Nordwand, darüber ein Fenster und ein kleines Bild. In der Mitte der runde Esstisch mit zwei Stühlen, die zum Tisch schauen; Mama steht daneben und sortiert Papiere. Vorn links der Karton „Küche?“, in der Ecke eine Pflanze. Laufwege: von der Haustür hinauf und nach links zur Treppe; nach rechts über den Durchgang zum Esstisch und zu Mama.",
+  "beschreibung": "Das Erdgeschoss des alten Whitlock-Hauses am Tag nach dem Umzug, zwei Räume nebeneinander (20 × 13). Links das Wohnzimmer mit hellen Dielen und cremefarbenen Wänden: In der Nordwestecke führt eine steile Holztreppe zum Dachboden hinauf, unten ist Platz zum Antreten; daneben die Kiste „Whitlock – nicht wegwerfen“. An der Nordwand eine alte Anrichte unter dem Fenster, das gerahmte Foto von Grandma Whitlock, ein niedriges Lowboard mit dem Fernseher an der Wand darüber und rechts die geschlossene Tür zum Schlafzimmer. Vor dem Fernseher liegt der gemusterte Teppich, dahinter stehen zwei gelbe Sessel mit der Lehne zum Raum und Blick zum Fernseher, daneben eine Stehlampe. Die Umzugskartons stehen in zwei Gruppen an den Wänden: übereinander an der Westwand und als Stapel hinter den Sesseln an der Innenwand, vorn darin der leere Pizzakarton von gestern Abend. Neben dem Fernseher ein schmales Bücherregal, eine Zimmerpflanze in der Südwestecke, unten die Haustür mit Fußmatte. Durch einen offenen Durchgang in der Innenwand geht es nach rechts in die Küche mit Fliesen: Küchenzeile mit zwei Arbeitsplatten, Herd und Kühlschrank lückenlos an der Nordwand, darüber ein Fenster und ein kleines Bild. In der Mitte der runde Esstisch mit zwei Stühlen, die zum Tisch schauen; Mama steht daneben und sortiert Papiere. Vorn links der Karton „Küche?“, in der Südostecke eine Palme. Laufwege: von der Haustür hinauf und nach links zur Treppe; nach rechts über den Durchgang zum Esstisch und zu Mama.",
   "wand": "creme",
   "boden": "holzHell",
   "raster": [
@@ -90,15 +90,6 @@
       "feld": [1, 9]
     },
     {
-      "moebel": "mf4KartonStapel",
-      "feld": [8, 8]
-    },
-    {
-      "moebel": "mf4Karton",
-      "feld": [3, 8],
-      "id": "pizza"
-    },
-    {
       "moebel": "wzPflanze",
       "feld": [1, 10]
     },
@@ -150,20 +141,33 @@
       "id": "kartonKuecheBox"
     },
     {
-      "moebel": "wzPflanze",
-      "feld": [18, 10]
-    },
-    {
       "moebel": "mf4KartonStapel",
       "feld": [12, 3]
     },
     {
       "moebel": "mf4Palme",
-      "feld": [13, 10]
+      "feld": [17, 10]
     },
     {
-      "moebel": "mf4Kommode",
-      "feld": [15, 9]
+      "moebel": "mf4Karton",
+      "feld": [8, 9],
+      "id": "pizza"
+    },
+    {
+      "moebel": "mf4KartonStapel",
+      "feld": [9, 9]
+    },
+    {
+      "moebel": "mf4KartonBreit",
+      "feld": [10, 9]
+    },
+    {
+      "moebel": "mf4Fussmatte",
+      "feld": [5, 11]
+    },
+    {
+      "moebel": "mf4RegalSchmal",
+      "feld": [9, 1]
     }
   ],
   "ausloeser": [
@@ -193,7 +197,7 @@
     },
     {
       "name": "pizzakarton",
-      "feld": [3, 9],
+      "feld": [8, 10],
       "auf_moebel": true
     }
   ],

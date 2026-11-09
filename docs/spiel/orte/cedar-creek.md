@@ -103,7 +103,7 @@ Creek). Länge etwa 105 Kacheln, etwa 29 s.
 - Fund „Zedernzapfen mit Initialen“ an der Kuppe; Abschnitte zu je etwa 15 Spalten mit Zedern,
   Felsen, Pilzen und einem Specht als Belebung.
 
-### 1.4 Cedar Creek (`cedarCreek.aussen`, 56 × 36)
+### 1.4 Cedar Creek (`cedarCreek.aussen`, 60 × 36)
 
 Abschnitte zu je 14 × 12 Kacheln (vier Spalten, drei Reihen: A Nord, B Mitte, C Süd).
 
@@ -165,20 +165,24 @@ Abschnitte zu je 14 × 12 Kacheln (vier Spalten, drei Reihen: A Nord, B Mitte, C
 
 ### 1.5 Gebäude und Maße
 
-| Gebäude                       | Außen (Fassade, Kacheln)                                                     | Innen (7a.2)                                                                             | Begehbar |
-| ----------------------------- | ---------------------------------------------------------------------------- | ---------------------------------------------------------------------------------------- | -------- |
-| Bibliothek (1890)             | Backstein, Hauptbau 11 breit mit Turm, Doppeltür im Turm bei 6 von 11 (50 %) | Lesesaal `bibliothek` 22 × 16 (großer Saal; heute 18 × 14), Tür Südwand Spalte 11 (50 %) | ja       |
-| Archiv (Keller)               | – (unter dem östlichen Teil der Bibliothek)                                  | `archiv` 14 × 11, liegt unter den Spalten 8 bis 21 des Lesesaals                         | ja       |
-| Waschsalon Mr. Boateng        | Flachbau, Fassade 7, Tür bei 4 von 7 (50 %)                                  | `waschsalon` 14 × 11, Tür Südwand Spalte 7 (50 %)                                        | ja       |
-| Drechslerei Dunmore (neu)     | Holz, Fassade 8, Tür bei 5 von 8 (50 %)                                      | `drechslerei` 16 × 11 (12), Tür Südwand Spalte 8                                         | ja       |
-| Haus Süd 1 (Holm), Haus Süd 2 | Holz, je Fassade 7, Tür in der Nordfassade zur Straße                        | –                                                                                        | nein     |
-| Kanuverleih                   | Bootsschuppen am Ufer, 6 breit                                               | –                                                                                        | Kulisse  |
-| Bushaltestelle                | Wartehäuschen 3 breit                                                        | –                                                                                        | Kulisse  |
+| Gebäude                       | Außen (Fassade, Kacheln)                                                                | Innen (7a.2)                                                     | Begehbar |
+| ----------------------------- | --------------------------------------------------------------------------------------- | ---------------------------------------------------------------- | -------- |
+| Bibliothek (1890)             | Backstein, 18 breit mit Turm links (Victorian House 5), Tür im Turm bei 3 von 18 (17 %) | Lesesaal `bibliothek` 22 × 16, Tür Südwand Spalte 4 (18 %)       | ja       |
+| Archiv (Keller)               | – (unter dem östlichen Teil der Bibliothek)                                             | `archiv` 14 × 11, liegt unter den Spalten 8 bis 21 des Lesesaals | ja       |
+| Waschsalon Mr. Boateng        | Flachbau, Fassade 8, Tür bei 4 von 8 (50 %)                                             | `waschsalon` 14 × 11, Tür Südwand Spalte 7 (50 %)                | ja       |
+| Drechslerei Dunmore (neu)     | kleine Holzscheune, Fassade 8, Rolltor bei 2 von 8 (25 %)                               | `drechslerei` 16 × 11, Tür Südwand Spalte 4 (25 %)               | ja       |
+| Haus Süd 1 (Holm), Haus Süd 2 | Holz, je Fassade 7, Tür in der Nordfassade zur Straße                                   | –                                                                | nein     |
+| Kanuverleih                   | Bootsschuppen am Ufer, 6 breit                                                          | –                                                                | Kulisse  |
+| Bushaltestelle                | Wartehäuschen 3 breit                                                                   | –                                                                | Kulisse  |
 
 Die Fassade ist halb so breit wie das Erdgeschoss innen, die Tür sitzt außen und innen an derselben
 relativen Stelle (±1 Kachel). Treppen liegen übereinander: Die Kellertreppe der Bibliothek liegt an
 der Nordwand bei Spalte 19 (Nordostbereich des 22 breiten Saals), die Treppe im Archiv deshalb bei
 Spalte 11 (19 − 8).
+
+Abweichung Bibliothek: Den ganzen Backsteinbau mit Turm gibt es im Katalog nur als Victorian House 5,
+18 Kacheln breit (Regel: 11). Er bleibt in dieser Breite, weil er das größte Haus des Ortes sein soll;
+die Tür sitzt unten im Turm links (3 von 18), innen deshalb bei Spalte 4.
 
 ### 1.6 Übergänge
 
@@ -189,13 +193,18 @@ Spalte 11 (19 − 8).
 | flussweg `weiterCedar` (Ostrand, Spalte 119, Reihen 15–16)           | cedarCreek.aussen `flussweg` (neu, Westrand, Spalte 0, Reihen 20–21)          | Uferweg geht in die Hauptstraße über; Dialog `ankunft_zu_fuss` bleibt an `weiterCedar` |
 | mapleFalls.park `zedernpfad` (neu, Nordrand, Spalten 10–11, Reihe 0) | zedernpfad `zurueckPark` (neu, Südrand, Spalten 10–11, Reihe 23)              | hinter dem Fußsteg über den Fluss; Pfad je zwei Felder                                 |
 | zedernpfad `weiterCedar` (neu, Ostrand, Spalte 99, Reihen 4–5)       | cedarCreek.aussen `zedernpfad` (neu, Westrand, Spalte 0, Reihen 4–5)          | Pfad je zwei Felder; Sperre S2 liegt westlich der Kuppe                                |
-| mapleFalls.park `bushaltestelle` (Dialog, Reise)                     | cedarCreek.aussen `bushaltestelle` (35, 19)                                   | Busfahrt                                                                               |
-| cedarCreek.aussen `busZurueck` (34, 19, Dialog, Reise)               | mapleFalls.park `bushaltestelle`                                              | Busfahrt zurück                                                                        |
-| aussen `drechslereiTuer` (6, 18)                                     | drechslerei `drechslereiAusgang` (Südwand, Spalte 8)                          | hinein nach Norden                                                                     |
-| aussen `waschsalonTuer` (15, 18)                                     | waschsalon `waschsalonAusgang` (Südwand, Spalte 7)                            | hinein nach Norden                                                                     |
-| aussen `bibliothekTuer` (25, 18)                                     | bibliothek `bibliothekAusgang` (Südwand, Spalte 11)                           | hinein nach Norden                                                                     |
+| mapleFalls.park `bushaltestelle` (Dialog, Reise)                     | cedarCreek.aussen `bushaltestelle` (44, 19)                                   | Busfahrt                                                                               |
+| cedarCreek.aussen `busZurueck` (43, 19, Dialog, Reise)               | mapleFalls.park `bushaltestelle`                                              | Busfahrt zurück                                                                        |
+| aussen `drechslereiTuer` (4, 19)                                     | drechslerei `drechslereiAusgang` (Südwand, Spalte 4)                          | hinein nach Norden                                                                     |
+| aussen `waschsalonTuer` (16, 19)                                     | waschsalon `waschsalonAusgang` (Südwand, Spalte 7)                            | hinein nach Norden                                                                     |
+| aussen `bibliothekTuer` (25, 19)                                     | bibliothek `bibliothekAusgang` (Südwand, Spalte 4)                            | hinein nach Norden                                                                     |
 | bibliothek `kellertreppe` (Nordwand, Spalte 19)                      | archiv `kellerAusgang` (Nordwand, Spalte 11)                                  | Treppen übereinander; oben nach unten, unten nach oben (Regel 2.4)                     |
-| aussen `zedernwald` (Ostrand, Spalte 55, Reihen 8–9)                 | wegCedarRiverton.zedernwald `zurueckCedar` (Westrand, Reihen 8–9 nach Neubau) | nach der Brücke; nur nach `endeAkt1Gesehen`                                            |
+| aussen `zedernwald` (Ostrand, Spalte 59, Reihen 8–9)                 | wegCedarRiverton.zedernwald `zurueckCedar` (Westrand, Reihen 8–9 nach Neubau) | nach der Brücke; nur nach `endeAkt1Gesehen`                                            |
+
+Umgesetzt (Runde 4, mittel-2): Karte `cedarCreek.drechslerei` mit `drechslereiTuer` und
+`drechslereiAusgang`, Auslöser `flussweg` (Westrand, Reihen 20–21), `weiterCedar.ziel` auf `flussweg`,
+`zurueckCedar` (Weg nach Riverton) auf `zedernwald`, Auslöser `zedernpfad` (Westrand, Reihen 4–5)
+mit `zedernWeiterCedar` als Gegenstück.
 
 Änderungen in `orte.json` für den Haupt-Chat: neue Auslöser `flussweg` und `zedernpfad` auf
 `cedarCreek.aussen`, `zedernpfad` auf `mapleFalls.park`, neue Karte `wegMapleCedar.zedernpfad` mit
@@ -366,10 +375,10 @@ gebundene Bände und Mappen.
 
 ### 4.3 Drechslerei (`cedarCreek.drechslerei`, neu)
 
-**Größe:** 16 × 11. Nordwand Reihen 0–2 Holz, Boden Dielen, Südwand Reihe 10 mit der Tür bei Spalte 8
-(50 %, außen Spalte 6 von 8 ±1). Es riecht nach Zedernholz; Licht von Norden.
+**Größe:** 16 × 11. Nordwand Reihen 0–2 Holz, Boden Dielen, Südwand Reihe 10 mit der Tür bei Spalte 4
+(25 %, wie das Rolltor links in der Scheunenfassade, außen Spalte 4). Es riecht nach Zedernholz; Licht von Norden.
 
-**Laufwege:** Tür (8, 10) → Start (8, 9) → nach oben in die Mitte; links zur Hobelbank und zu
+**Laufwege:** Tür (4, 10) → Start (4, 9) → nach oben; links zur Hobelbank und zu
 Mr. Dunmore (3, 6), rechts zum Werktisch, zur Holzkiste und zu den Stämmen.
 
 | Zone     | Gegenstand                                                 | Feld             | Ausrichtung       | Material, Stil, Zustand        | Zweck                                                                                                |
@@ -383,16 +392,17 @@ Mr. Dunmore (3, 6), rechts zum Werktisch, zur Holzkiste und zu den Stämmen.
 | Mitte    | zwei Holzhocker                                            | (6, 4), (11, 5)  | –                 | Holz                           | an Hobelbank und Werktisch                                                                           |
 
 Offen: Der Katalog hat keine Drechselbank und kein Regal mit Holzfiguren; die Hobelbank vertritt die
-Drehbank, das Regal zeigt Bücher und Schalen. Die Einträge in `orte.json` (Karte, `drechslereiTuer`,
-`drechslereiAusgang`, Figur `dunmore`) kommen mit der Außenkarte.
+Drehbank, das Regal zeigt Bücher und Schalen. Mr. Dunmore steht vorerst als Statist an der Hobelbank
+(„dreht an der Drehbank“): Eine Figur braucht einen Dialog, und der kommt erst in Runde 5. Karte,
+`drechslereiTuer` und `drechslereiAusgang` stehen in `orte.json`.
 
 ### 4.4 Bibliothek, Lesesaal (`cedarCreek.bibliothek`)
 
 **Größe:** 22 × 16 (großer Saal nach 7a.2; vorher 18 × 14). Nordwand Reihen 0–2 hellgrau, Boden dunkle
-Dielen, Südwand Reihe 15 mit der Doppeltür bei Spalte 11 (50 %, außen Spalte 25 der Hauptstraße im
-Turm). Zwei Fenster in der Nordwand.
+Dielen, Südwand Reihe 15 mit der Tür bei Spalte 4
+(Turm links in der Fassade, Tür bei 3 von 18, außen Spalte 25). Zwei Fenster in der Nordwand.
 
-**Laufwege:** Tür (11, 15) → Start (11, 14) → gerade nach oben; links um den Schachtisch; rechts an
+**Laufwege:** Tür (4, 15) → Start (4, 14) → nach oben; rechts um den Schachtisch; rechts an
 Lesetischen und Regalreihe vorbei zum Zeitungsregal und zur Kellertür (19, 3).
 
 | Zone         | Gegenstand                                                            | Feld                                                              | Ausrichtung       | Material, Stil, Zustand             | Zweck                                                        |
@@ -481,3 +491,53 @@ waagrecht bis Spalte 51, Anstieg zur Kuppe (Reihe 5, Spalten 55–65), dann Reih
 
 Belebung: Specht, Eichhörnchen. Offen: `aussichtKuppe`, Zedernzapfen und die Sperre S2 als Auslöser
 folgen in Runde 5; die liegenden Stämme sperren den Pfad (einreihige Möbel sperren ihre Reihe), der Wald daneben ist aber offen. Hügelkanten gibt es im Katalog nicht.
+
+### 4.5 Ortskern (`cedarCreek.aussen`)
+
+**Größe:** 60 × 36 (vorher 44 × 24; 56 im Plan, vier Spalten mehr für die 18 breite Bibliothek).
+Rand Hecke, offen am Westrand in den Reihen 20–21 (Hauptstraße, `flussweg`) und am Ostrand in den
+Reihen 8–9 (Waldweg, `zedernwald`) und in den Reihen 4–5 (Zedernpfad, `zedernpfad`). Böden: Gras, Gehwege Pflaster (Reihen 19 und 22), Straße Asphalt (Reihen 20–21), Erde für Pfade
+und Uferweg (Spalten 48–49), dunkles Holz für Brücke (Reihen 8–9) und Steg (Reihen 14–15, Spalten
+50–53), Bach in den Spalten 50–55 von oben bis unten.
+
+**Laufwege:** Start an der Haltestelle (44, 19) → Gehweg Nord nach Westen an Anschlagtafel,
+Bibliothek, Waschsalon und Drechslerei vorbei → Straße nach Westen zum Flussweg. Nach Osten zum
+Uferweg, nach oben über die Brücke zum Ostrand, nach unten am Steg und am Kanuverleih vorbei. Der
+Zedernpfad kommt hinter der Drechslerei (Spalten 10–11) herunter. Südlich führen Gartenwege um die
+beiden Wohnhäuser.
+
+**Abschnitte und Entdeckungen** (je etwa ein Bildschirm, 7a.2 Regel 4):
+
+| Abschnitt        | Felder                     | Entdeckung                                                    |
+| ---------------- | -------------------------- | ------------------------------------------------------------- |
+| Zedernwiese Nord | Spalten 1–20, Reihen 1–8   | Zedernpfad aus dem Wald, Eichelhäher                          |
+| Hauptstraße West | Spalten 0–20, Reihen 9–22  | Drechslerei mit Holzstapel, Waschsalon mit Hund               |
+| Bibliothek       | Spalten 21–47, Reihen 1–22 | Bibliothek, Anschlagtafel mit Plakat (`plakat`), Haltestelle  |
+| Bach             | Spalten 48–59              | Steg mit Rosa (`steg`), Brücke in den Zedernwald, Reiher      |
+| Südseite         | Reihen 23–34               | zwei Wohnhäuser, Zedernwiese mit Bänken, Kanuverleih mit Boot |
+
+| Zone      | Gegenstand                                          | Feld                         | Ausrichtung       | Material, Stil, Zustand   | Zweck                                                     |
+| --------- | --------------------------------------------------- | ---------------------------- | ----------------- | ------------------------- | --------------------------------------------------------- |
+| Nordseite | Drechslerei: kleine Holzscheune, Blechdach, Rolltor | (2, 9), 8 × 10               | Vorderseite unten | Holz, ländlich, gebraucht | `drechslereiTuer` (4, 19)                                 |
+| Nordseite | Holzstapel aus Rundholz                             | (6, 18)                      | –                 | Holz                      | vor der Drechslerei; wächst nach dem Zedernpfad (13 §7.4) |
+| Nordseite | Waschsalon mit Markisen                             | (12, 10), 8 × 9              | Vorderseite unten | klassisch, gebraucht      | `waschsalonTuer` (16, 19); Hund (17, 19)                  |
+| Nordseite | Laterne                                             | (20, 15)                     | –                 | Metall, klassisch         | zwischen Waschsalon und Bibliothek                        |
+| Nordseite | Bibliothek, Backstein mit Turm, Tür im Turm         | (22, 3), 18 × 16             | Vorderseite unten | Backstein, klassisch, alt | `bibliothekTuer` (25, 19)                                 |
+| Nordseite | Anschlagtafel mit Zetteln                           | (40, 17)                     | Vorderseite unten | Holz, ländlich            | `plakat` (40, 19); Zettel je Akt (13 §7.4)                |
+| Nordseite | Bushaltestelle mit Wartehäuschen                    | (42, 16), 5 × 3              | Vorderseite unten | modern                    | Start, `bushaltestelle` (44, 19), `busZurueck` (43, 19)   |
+| Wiesen    | Zedern und Fichten                                  | Nordwiese, Ostufer, Südwiese | –                 | Natur                     | Wald um den Ort, Zedernholz                               |
+| Südseite  | zwei Holzhäuser mit rotem Dach, Gartenweg           | (3, 24), (12, 24), je 8 × 10 | Vorderseite unten | Holz, ländlich, gebraucht | Haus Holm und Nachbarn (nicht betretbar)                  |
+| Südwiese  | Baumstammbank, Bank zum Bach, Mülleimer             | (29, 30), (45, 25), (46, 23) | Vorderseite unten | Holz, Metall              | Ruheplatz; Platz für den Ast (Runde 5)                    |
+| Ufer      | Bootsschuppen des Kanuverleihs, Ruderboot im Bach   | (45, 27), (50, 29)           | –                 | Holz, Kunststoff          | Kanuverleih (Kulisse)                                     |
+| Bach      | Steg, zwei Felder breit                             | (50–53, 14–15)               | –                 | Holz dunkel               | `steg` (49, 14); Rosa (53, 14), Stegbauer (51, 15)        |
+| Bach      | Holzbrücke                                          | (50–55, 8–9)                 | –                 | Holz dunkel               | zum Zedernwald (`zedernwald`, 59, 8–9)                    |
+
+Belebung: Der Busfahrer steht auf der Straße bei der Haltestelle (42–44, 21) und trinkt Kaffee aus der
+Thermoskanne (nicht mehr rauchend). Victor wartet am Häuschen (47, 19), Reiher am Ufer (49, 24),
+Eichelhäher über der Nordwiese am Morgen.
+
+Platzhalter (13 §7.4): Schild „Brückenarbeiten“ an der Brücke, Schaukasten an der Bibliothek, zweite
+Angel am Steg, Ast auf der Südwiese, Kühe und Zettel kommen als Objekte in Runde 5. Freie Wiese
+südlich der Straße (Spalten 22–44) bleibt für das Gemeindefest.
+
+Offen: Der Katalog hat keinen Kanuständer und kein umgedrehtes Kanu; das Ruderboot vertritt sie.

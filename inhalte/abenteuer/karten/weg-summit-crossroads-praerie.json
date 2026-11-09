@@ -11,7 +11,7 @@
   "tilewidth": 16,
   "tileheight": 16,
   "nextlayerid": 5,
-  "nextobjectid": 10,
+  "nextobjectid": 34,
   "properties": [
     {
       "name": "kennung",
@@ -121,10 +121,10 @@
         0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0,
         0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0,
         0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0,
-        0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 3, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0,
         0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0,
         0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0,
-        0, 0, 3, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0,
+        0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0,
+        0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0,
         0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0,
         0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0,
         0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0,
@@ -324,6 +324,270 @@
               "value": "fliegen"
             }
           ]
+        },
+        {
+          "id": 10,
+          "name": "scFelsMittel",
+          "type": "moebel",
+          "x": 48,
+          "y": 208,
+          "width": 32,
+          "height": 32,
+          "rotation": 0,
+          "visible": true
+        },
+        {
+          "id": 11,
+          "name": "scFelsMittel",
+          "type": "moebel",
+          "x": 160,
+          "y": 240,
+          "width": 32,
+          "height": 32,
+          "rotation": 0,
+          "visible": true
+        },
+        {
+          "id": 12,
+          "name": "heTraktor",
+          "type": "moebel",
+          "x": 224,
+          "y": 208,
+          "width": 80,
+          "height": 64,
+          "rotation": 0,
+          "visible": true
+        },
+        {
+          "id": 13,
+          "name": "heVogelscheuche",
+          "type": "moebel",
+          "x": 128,
+          "y": 64,
+          "width": 48,
+          "height": 48,
+          "rotation": 0,
+          "visible": true
+        },
+        {
+          "id": 14,
+          "name": "rvHeuhaufen",
+          "type": "moebel",
+          "x": 192,
+          "y": 80,
+          "width": 32,
+          "height": 16,
+          "rotation": 0,
+          "visible": true
+        },
+        {
+          "id": 15,
+          "name": "rvHeuhaufen",
+          "type": "moebel",
+          "x": 256,
+          "y": 80,
+          "width": 32,
+          "height": 16,
+          "rotation": 0,
+          "visible": true
+        },
+        {
+          "id": 16,
+          "name": "rvHeuhaufen",
+          "type": "moebel",
+          "x": 320,
+          "y": 80,
+          "width": 32,
+          "height": 16,
+          "rotation": 0,
+          "visible": true
+        },
+        {
+          "id": 17,
+          "name": "zaun",
+          "type": "moebel",
+          "x": 128,
+          "y": 112,
+          "width": 16,
+          "height": 16,
+          "rotation": 0,
+          "visible": true
+        },
+        {
+          "id": 18,
+          "name": "zaun",
+          "type": "moebel",
+          "x": 144,
+          "y": 112,
+          "width": 16,
+          "height": 16,
+          "rotation": 0,
+          "visible": true
+        },
+        {
+          "id": 19,
+          "name": "zaun",
+          "type": "moebel",
+          "x": 160,
+          "y": 112,
+          "width": 16,
+          "height": 16,
+          "rotation": 0,
+          "visible": true
+        },
+        {
+          "id": 20,
+          "name": "zaun",
+          "type": "moebel",
+          "x": 176,
+          "y": 112,
+          "width": 16,
+          "height": 16,
+          "rotation": 0,
+          "visible": true
+        },
+        {
+          "id": 21,
+          "name": "zaun",
+          "type": "moebel",
+          "x": 192,
+          "y": 112,
+          "width": 16,
+          "height": 16,
+          "rotation": 0,
+          "visible": true
+        },
+        {
+          "id": 22,
+          "name": "zaun",
+          "type": "moebel",
+          "x": 208,
+          "y": 112,
+          "width": 16,
+          "height": 16,
+          "rotation": 0,
+          "visible": true
+        },
+        {
+          "id": 23,
+          "name": "zaun",
+          "type": "moebel",
+          "x": 224,
+          "y": 112,
+          "width": 16,
+          "height": 16,
+          "rotation": 0,
+          "visible": true
+        },
+        {
+          "id": 24,
+          "name": "zaun",
+          "type": "moebel",
+          "x": 240,
+          "y": 112,
+          "width": 16,
+          "height": 16,
+          "rotation": 0,
+          "visible": true
+        },
+        {
+          "id": 25,
+          "name": "zaun",
+          "type": "moebel",
+          "x": 256,
+          "y": 112,
+          "width": 16,
+          "height": 16,
+          "rotation": 0,
+          "visible": true
+        },
+        {
+          "id": 26,
+          "name": "zaun",
+          "type": "moebel",
+          "x": 272,
+          "y": 112,
+          "width": 16,
+          "height": 16,
+          "rotation": 0,
+          "visible": true
+        },
+        {
+          "id": 27,
+          "name": "zaun",
+          "type": "moebel",
+          "x": 288,
+          "y": 112,
+          "width": 16,
+          "height": 16,
+          "rotation": 0,
+          "visible": true
+        },
+        {
+          "id": 28,
+          "name": "zaun",
+          "type": "moebel",
+          "x": 304,
+          "y": 112,
+          "width": 16,
+          "height": 16,
+          "rotation": 0,
+          "visible": true
+        },
+        {
+          "id": 29,
+          "name": "zaun",
+          "type": "moebel",
+          "x": 320,
+          "y": 112,
+          "width": 16,
+          "height": 16,
+          "rotation": 0,
+          "visible": true
+        },
+        {
+          "id": 30,
+          "name": "zaun",
+          "type": "moebel",
+          "x": 336,
+          "y": 112,
+          "width": 16,
+          "height": 16,
+          "rotation": 0,
+          "visible": true
+        },
+        {
+          "id": 31,
+          "name": "zaun",
+          "type": "moebel",
+          "x": 352,
+          "y": 112,
+          "width": 16,
+          "height": 16,
+          "rotation": 0,
+          "visible": true
+        },
+        {
+          "id": 32,
+          "name": "zaun",
+          "type": "moebel",
+          "x": 368,
+          "y": 112,
+          "width": 16,
+          "height": 16,
+          "rotation": 0,
+          "visible": true
+        },
+        {
+          "id": 33,
+          "name": "zaun",
+          "type": "moebel",
+          "x": 384,
+          "y": 112,
+          "width": 16,
+          "height": 16,
+          "rotation": 0,
+          "visible": true
         }
       ]
     }

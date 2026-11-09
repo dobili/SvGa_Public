@@ -1,6 +1,6 @@
 # Auftrag mittel-1: Summit City, Hochebene und Weg nach Crossroads einrichten
 
-**Stand:** offen (Haupt-Chat, 09.11.2026, sechsundzwanzigster Auftrag; Silicon Bay und London sind zusammengeführt, danke; 1851 statt 1960 war richtig)
+**Stand:** fertig (mittel-1, 09.11.2026)
 
 **Zweig:** dein fester Sitzungszweig, Basis `claude/friendly-shannon-y8bf90` (vorher hereinholen, Stand 33bbfd39)
 **Darf ändern:** `inhalte/abenteuer/karten/summit-city-*.json`, `hochebene-*.json`, `weg-summit-crossroads-*.json`,
@@ -14,6 +14,51 @@ Bergstation (Seilbahn, Bänke, Schalter), Bergladen (Regale, Seile, Ausrüstung)
 Weltbeschreibung 5.9: heutige Siedlung, keine Zeichen oder Muster realer Kulturen): Felsentürme
 (Felsplateaus aus Serene Village), Schule (Klassenraum). Geysirbecken (Wasser: Karteneigenschaft
 `stil` = `kueste`, README) und Prärie (Gras, Zäune, Felsen).
+
+## Bericht
+
+Acht Karten eingerichtet: Summit City draußen, Hütte, Bergstation, Bergladen; Hochebene
+Felsentürme und Schule; Geysirbecken und Prärie. 11 neue Möbel am Ende von `moebel.json` (`sc` 7,
+`he` 4), dazu viele aus Riverton, Silicon Bay und London wiederverwendet (Zedern, Holzscheite,
+Materialstapel, Bänke, Laternen, Regale, Ofen, Tische, Stühle, Heuhaufen, Zaun). Das Geysirbecken hat
+die Karteneigenschaft `stil` = `kueste`: die Becken sind Wasser, der Weg ist ein Holzsteg.
+Platzhalter unter jedem Möbel durch Boden ersetzt; stehen geblieben sind nur die unter Auslösern.
+
+Neue Möbel: `scFelsGross`, `scFelsMittel`, `scFelsKlein` (Felsen aus Modern Farm), `scRucksack`,
+`scRucksackRot`, `scSeil`, `scBankSeitlich`, `heSchulbus`, `heBasketballkorb`, `heTraktor`,
+`heVogelscheuche`.
+
+Bildschirmfotos im Spiel (Build mit verlinktem privaten Repository; Bilder nur lokal):
+
+- **Summit City draußen:** Zedern und Zederngruppen zwischen den Holzhäusern und unten am Hang,
+  zwei Holzstapel statt des Kistenblocks, Felsen, Bänke, eine Laterne, ein Steinbrunnen unter dem
+  Drachenbrunnen; Kit und Victor frei. Schnee gibt es im Register nicht.
+- **Hütte (Großmeisterin Ward):** Ofen mit Rohr neben dem Kaminfeuer, Bücherregal, altes Regal,
+  kleine Laterne, Schachtisch aus zwei dunklen Holztischen mit Stuhl, Bett mit Nachttisch, runder
+  Tisch; Pokal und Kaminfeuer bleiben Auslöser.
+- **Bergstation:** vier grüne Wartebänke längs an den Wänden, Ticketschalter neben Mr. Haraldsen,
+  Fahrplan, Kaffeeautomat, Pflanze, Rucksack bei der Skifahrerin.
+- **Bergladen:** vier Warenregale an den Wänden, Seil auf der Auslage bei Sol, zwei Rucksäcke
+  rechts, eine Kiste neben der Theke.
+- **Hochebene Felsentürme:** die Türme bleiben die Wandblöcke; dazu Felsen, ein Baumstumpf, eine
+  Zeder und ein Basketballkorb neben Kiras Steintisch (Kira hat einen Basketball).
+- **Hochebene Schule:** ein gelber Schulbus statt des Kistenblocks bei Joss' Werkstatt (Joss liegt
+  laut Dialog unter dem Bus), Basketballkorb für Annek, Laterne, Picknicktisch, Zedern; nur heutige
+  Dinge, keine Zeichen oder Muster realer Kulturen.
+- **Geysirbecken (`stil` Küste):** fünf Becken als Wasser, Holzsteg als Weg, Bank am Becken,
+  Felsen, Zeder und Baumstumpf; Bell, Tafel, Bisons frei.
+- **Prärie:** langer Holzzaun vor dem Feld, Vogelscheuche und drei Heuhaufen im Feld, ein Traktor
+  beim Hof, zwei Felsen statt der Kisten; Sturmkeller und Ray frei.
+
+**Entscheidungen:** Serene Village liegt nur als ein großes Kachelblatt vor, nicht als Einzelbilder;
+Möbel brauchen ein eigenes Bild, deshalb habe ich die Felsplateaus nicht als Möbel gesetzt (die
+Felstürme bleiben die Wandblöcke des Kachelstils). Wenn der Haupt-Chat Einzelbilder daraus schneidet,
+setze ich sie gern nach. Eine Seilbahn gibt es im Register nicht.
+
+**Prüfungen:** `python -m pytest pipeline/tests -q`: 624 bestanden, 3 übersprungen. Prettier über die
+geänderten Dateien. `npm run build` mit verlinktem privaten Repository ohne Fehler. Playwright
+`tests/e2e/abenteuer` (Chromium): 9 bestanden. Vor dem Push `claude/friendly-shannon-y8bf90`
+erneut hereingeholt; `moebel.json` nur am Ende ergänzt.
 
 ## Bericht des letzten Auftrags, zur Nachlese
 

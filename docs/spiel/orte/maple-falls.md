@@ -356,8 +356,9 @@ mit Dach und Veranda, Schule 24 × 23, Häuser der Südseite 8 × 10 und 10 × 9
 (4, 11); `schule` (47, 23) vor der Treppe; `park` Ostrand (63, 25–27).
 
 **Fahnenmast** (eigene Grafik) rechts neben der Freitreppe (57, 15), mit `vorn` vor der Fassade gezeichnet.
-**Offen:** Kein Schild für das Diner im Katalog. Straße und Gehweg enden eine Kachel vor dem Westrand, weil
-der Rand ohne Übergang geschlossen sein muss (Test „Rand geschlossen“). Die Grundstücke der Südseite
+**Diner-Schild** (eigene Grafik „DINER“) über der Markise, mit `auf` am Diner. **Westende:** Die Birch Lane
+endet an einem runden Wendehammer (1–5 / 24–28) mit drei Pollern (1, 25–27) und einem Schild „Sackgasse“
+(7, 29); der Rand bleibt zu (Regel 5.1: die Straße endet an einem Ziel). Die Grundstücke der Südseite
 haben Seitenzäune, aber keinen Zaun zur Straße, weil der Grünstreifen den Platz braucht.
 
 ### 4.6 Park (`mapleFalls.park`), gebaut

@@ -25,15 +25,31 @@
     },
     {
       "moebel": "cc4Waschmaschine",
-      "feld": [3, 2]
+      "feld": [2, 2]
+    },
+    {
+      "moebel": "cc4WaschmaschineKorb",
+      "feld": [3, 1]
+    },
+    {
+      "moebel": "cc4Waschmaschine",
+      "feld": [4, 2]
     },
     {
       "moebel": "cc4Waschmaschine",
       "feld": [5, 2]
     },
     {
+      "moebel": "cc4WaschmaschineKorbB",
+      "feld": [6, 1]
+    },
+    {
       "moebel": "cc4Waschmaschine",
       "feld": [7, 2]
+    },
+    {
+      "moebel": "cc4Waschmaschine",
+      "feld": [8, 2]
     },
     {
       "moebel": "cc4Trockner",
@@ -76,16 +92,20 @@
       "id": "sitze"
     },
     {
-      "moebel": "cc4WaeschekorbGruen",
-      "feld": [4, 8]
-    },
-    {
       "moebel": "cc4Pflanze",
       "feld": [1, 4]
     },
     {
       "moebel": "cc4Pflanze",
       "feld": [12, 8]
+    },
+    {
+      "moebel": "cc4WaeschekorbGruen",
+      "feld": [6, 8]
+    },
+    {
+      "moebel": "cc4Fussmatte",
+      "feld": [7, 9]
     }
   ],
   "ausloeser": [
@@ -122,7 +142,7 @@
   "figuren": [
     {
       "name": "boateng",
-      "feld": [6, 8]
+      "feld": [9, 7]
     }
   ],
   "belebung": [

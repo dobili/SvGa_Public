@@ -47,32 +47,58 @@
     },
     {
       "moebel": "cc4Karton",
-      "feld": [2, 5]
+      "feld": [1, 4]
+    },
+    {
+      "moebel": "cc4KartonHoch",
+      "feld": [1, 5],
+      "versatz": [0, 4]
     },
     {
       "moebel": "cc4Karton",
-      "feld": [4, 5]
+      "feld": [1, 6],
+      "versatz": [0, 4]
     },
     {
       "moebel": "cc4Karton",
-      "feld": [6, 5]
+      "feld": [2, 7],
+      "versatz": [0, 6]
     },
     {
       "moebel": "cc4Karton",
-      "feld": [2, 7]
+      "feld": [4, 7],
+      "versatz": [0, 6]
+    },
+    {
+      "moebel": "cc4Karton",
+      "feld": [6, 7],
+      "versatz": [0, 6]
+    },
+    {
+      "moebel": "cc4KartonHoch",
+      "feld": [4, 7],
+      "versatz": [0, -6]
+    },
+    {
+      "moebel": "cc4KartonHoch",
+      "feld": [1, 8]
+    },
+    {
+      "moebel": "cc4Karton",
+      "feld": [3, 8]
+    },
+    {
+      "moebel": "cc4KartonHoch",
+      "feld": [5, 8]
     },
     {
       "moebel": "cc4KartonOffen",
-      "feld": [4, 7],
+      "feld": [6, 4],
       "id": "karton1858"
     },
     {
-      "moebel": "cc4Karton",
-      "feld": [6, 7]
-    },
-    {
       "moebel": "cc4StuhlHinten",
-      "feld": [9, 5]
+      "feld": [9, 6]
     },
     {
       "moebel": "cc4Lesetisch",
@@ -82,14 +108,6 @@
     {
       "moebel": "cc4Stehlampe",
       "feld": [11, 6]
-    },
-    {
-      "moebel": "cc4KartonHoch",
-      "feld": [1, 4]
-    },
-    {
-      "moebel": "cc4KartonHoch",
-      "feld": [1, 6]
     }
   ],
   "ausloeser": [
@@ -115,12 +133,12 @@
     },
     {
       "name": "karton1858",
-      "feld": [4, 7],
+      "feld": [6, 5],
       "auf_moebel": true
     },
     {
       "name": "wasserfleck",
-      "feld": [8, 9]
+      "feld": [10, 9]
     }
   ],
   "figuren": [],

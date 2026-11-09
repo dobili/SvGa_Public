@@ -119,8 +119,8 @@
           "id": 3,
           "name": "dunmore",
           "type": "statist",
-          "x": 48,
-          "y": 96,
+          "x": 32,
+          "y": 80,
           "width": 16,
           "height": 16,
           "rotation": 0,
@@ -129,12 +129,12 @@
             {
               "name": "von",
               "type": "string",
-              "value": "3,6"
+              "value": "2,5"
             },
             {
               "name": "bis",
               "type": "string",
-              "value": "3,6"
+              "value": "2,5"
             },
             {
               "name": "tun",
@@ -313,7 +313,7 @@
           "id": 11,
           "name": "cc4Hocker",
           "type": "moebel",
-          "x": 176,
+          "x": 48,
           "y": 80,
           "width": 16,
           "height": 16,
@@ -382,7 +382,7 @@
           "id": 14,
           "name": "cc4Hocker",
           "type": "moebel",
-          "x": 96,
+          "x": 176,
           "y": 64,
           "width": 16,
           "height": 16,

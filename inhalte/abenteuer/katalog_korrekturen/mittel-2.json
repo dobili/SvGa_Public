@@ -526,5 +526,21 @@
     "sicher": 0.9,
     "korrektur": "mittel-2",
     "nur_pfad": true
+  },
+  "modern-interiors/1_Interiors/16x16/Theme_Sorter_Singles/5_Classroom_and_Library_Singles/Classroom_and_Library_Singles_49.png": {
+    "beschreibung": "Linkes Eckteil einer hellen Holztheke: hohe Seitenwand links, Platte mit einem Blatt Papier, Front unten; rechts offen für das Gegenstück (Nr. 52 als rechtes Ende).",
+    "ganz": false,
+    "gegenstuecke": "rechts Nr. 52 (rechtes Eckteil) oder Mittelstücke",
+    "sicher": 0.9,
+    "korrektur": "mittel-2",
+    "nur_pfad": true
+  },
+  "modern-interiors/1_Interiors/16x16/Theme_Sorter_Singles/5_Classroom_and_Library_Singles/Classroom_and_Library_Singles_52.png": {
+    "beschreibung": "Rechtes Eckteil einer hellen Holztheke in L-Form: hoher Block rechts, Platte nach links offen, Front unten; schließt an Nr. 49 an.",
+    "ganz": false,
+    "gegenstuecke": "links Nr. 49 (linkes Eckteil) oder Mittelstücke",
+    "sicher": 0.9,
+    "korrektur": "mittel-2",
+    "nur_pfad": true
   }
 }

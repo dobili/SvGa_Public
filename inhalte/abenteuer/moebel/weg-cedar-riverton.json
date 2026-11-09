@@ -569,6 +569,15 @@
       "art": "blume",
       "zustand": "neu",
       "stil": "klassisch"
+    },
+    "wc5HohlerStamm": {
+      "quelle": "modern-farm/Single_Files_16x16/Trees_16x16/Tree_Trunk_Oak_Huge_16x16.png",
+      "breite": 48,
+      "hoehe": 48,
+      "kollision": true,
+      "art": "baumstumpf",
+      "zustand": "alt",
+      "stil": "laendlich"
     }
   }
 }

@@ -234,9 +234,15 @@ Figur: `postreiter` an der Tür (6, 7).
 ### 4.4 Gebaut (Stand Runde 5c)
 
 Variante A in `szenen/`, B und C in `szenen/varianten/`. Abweichungen vom Plan oben: Der Weg zur Mine
-liegt zwischen Saloon und Sheriff (Spalten 32–33), der Stollenmund ist ein Steinfeld in der Bruchkante
-mit Absperrung; Saloon-Tür bei (27, 20) in A und C, (29, 20) in B. Das Friedhofstor steht offen
+liegt zwischen Saloon und Sheriff (Spalten 30–31 in A, 18–19 in B, 29–30 in C), der Stolleneingang
+(4 × 4, vernagelt) steht in einer Lücke der roten Bruchkante; der Auslöser `goldmine` (Nebenort N7,
+mittel-4) liegt auf den beiden Wegfeldern direkt davor in Reihe 5; Saloon-Tür bei (27, 20) in A und C, (29, 20) in B. Das Friedhofstor steht offen
 (Lücke zwischen Zaunenden), damit das Grab ohne Namen erreichbar ist. Ersatzbilder bis zu den
 bestellten: Holzhäuser aus dem Katalog (Post_Apocalyptic_House, Farmer_House, Barn_Small), Absperrbock
 statt Stolleneingang. Im Saloon liegt die Theke an der Nordwand, die Treppe an der Ost- (A, C) oder
 Westwand (B). In der Hütte steht ein Einzelbett statt einer Pritsche.
+
+Boden nach der Durchsicht (Haupt-Chat, 9.11.2026): roter Sand (`sandRot`) statt des grünlich gefleckten
+Sands, Bruchkante `felsRot` wie in Desert Springs. Front Street und Wege in rotem Felsboden
+(`felsbodenRot`) statt Erde, weil die Erde einen grünen Grasrand zeichnet, der in der Wüste falsch
+wirkt. Keine Büsche mehr, nur Kakteen, Steine und Tumbleweeds.

@@ -31,10 +31,10 @@
     "#ffffffffffffffffffffffffffffffffffffffffffffffffff.eefffffffffffffffffffffffffffffffffffffffffffffffffffffffffffffffff#",
     "#ffffffffffffffffffffffffffffffffffffffffffffffffff.eefffffffffffffffffffffffffffffffffffffffffffffffffffffffffffffffff#",
     "#ffffffffffffffffffffffffffffffffffffffffffffffffff.eefffffffffffffffffffffffffffffffffffffffffffffffffffffffffffffffff#",
-    "#...................................................ee.................................................................#",
-    "#...................................................ee.................................................................#",
-    "#.................eeeeeeeeee........................ee.................................................................#",
-    "#...............eeeeeeeeeeeeee......................ee.................................................................#",
+    "#....................................eee............ee.................................................................#",
+    "#....................................eee............ee.................................................................#",
+    "#.................eeeeeeeeee.........eee............ee.................................................................#",
+    "#...............eeeeeeeeeeeeee.......eee............ee.................................................................#",
     "eeeeeeeeeeeeeeeeeeeeeeeeeeeeeeeeeeeeeeeeeeeeeeeeeeeeeeeeeeeeeeeeeeeeeeeeeeee..............eeeeeeeeeeeeeeeeeeeeeeeeeeeeee",
     "eeeeeeeeeeeeeeeeee..........eeeeeeeeeeeeeeeeeeeeeeeeeeeeeeeeeeeeeeeeeeeeeeeeeeeeeeeeeeeeeeeeeeeeeeeeeeeeeeeeeeeeeeeeeeee",
     "eeeeeeeeeeeeeeee..............eeeeeeeeeeeeeeeeeeeeeeeeeeeeee................eeeeeeeeeeeeee.............................#",
@@ -52,6 +52,10 @@
     "~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~"
   ],
   "objekte": [
+    {
+      "moebel": "ccKorn",
+      "feld": [0, 0]
+    },
     {
       "moebel": "ccKorn",
       "feld": [2, 0]
@@ -383,6 +387,10 @@
     {
       "moebel": "ccMais",
       "feld": [118, 0]
+    },
+    {
+      "moebel": "ccKorn",
+      "feld": [0, 2]
     },
     {
       "moebel": "ccKorn",
@@ -718,6 +726,10 @@
     },
     {
       "moebel": "ccKorn",
+      "feld": [0, 4]
+    },
+    {
+      "moebel": "ccKorn",
       "feld": [2, 4]
     },
     {
@@ -1038,6 +1050,10 @@
     },
     {
       "moebel": "ccKorn",
+      "feld": [0, 6]
+    },
+    {
+      "moebel": "ccKorn",
       "feld": [2, 6]
     },
     {
@@ -1354,6 +1370,10 @@
     },
     {
       "moebel": "ccKorn",
+      "feld": [0, 8]
+    },
+    {
+      "moebel": "ccKorn",
       "feld": [2, 8]
     },
     {
@@ -1666,6 +1686,10 @@
     },
     {
       "moebel": "ccKorn",
+      "feld": [0, 10]
+    },
+    {
+      "moebel": "ccKorn",
       "feld": [2, 10]
     },
     {
@@ -1937,27 +1961,12 @@
       "bauteil_ok": true
     },
     {
-      "moebel": "wg4ZaunBottomMiddle",
+      "moebel": "wg4ZaunBottomRight",
       "feld": [36, 11],
       "bauteil_ok": true
     },
     {
-      "moebel": "wg4ZaunBottomMiddle",
-      "feld": [37, 11],
-      "bauteil_ok": true
-    },
-    {
-      "moebel": "wg4ZaunBottomMiddle",
-      "feld": [38, 11],
-      "bauteil_ok": true
-    },
-    {
-      "moebel": "wg4ZaunBottomMiddle",
-      "feld": [39, 11],
-      "bauteil_ok": true
-    },
-    {
-      "moebel": "wg4ZaunBottomMiddle",
+      "moebel": "wg4ZaunBottomLeft",
       "feld": [40, 11],
       "bauteil_ok": true
     },
@@ -2012,12 +2021,22 @@
       "bauteil_ok": true
     },
     {
-      "moebel": "wg4ZaunBottomRight",
+      "moebel": "wg4ZaunBottomMiddle",
       "feld": [51, 11],
       "bauteil_ok": true
     },
     {
-      "moebel": "wg4ZaunBottomLeft",
+      "moebel": "wg4ZaunBottomMiddle",
+      "feld": [52, 11],
+      "bauteil_ok": true
+    },
+    {
+      "moebel": "wg4ZaunBottomMiddle",
+      "feld": [53, 11],
+      "bauteil_ok": true
+    },
+    {
+      "moebel": "wg4ZaunBottomMiddle",
       "feld": [54, 11],
       "bauteil_ok": true
     },
@@ -2340,6 +2359,10 @@
       "moebel": "wg4ZaunBottomMiddle",
       "feld": [118, 11],
       "bauteil_ok": true
+    },
+    {
+      "moebel": "wg4Zettelschild",
+      "feld": [55, 12]
     },
     {
       "moebel": "wg4ZaunTopLeft",
@@ -2970,24 +2993,16 @@
       "feld": [102, 23]
     },
     {
-      "moebel": "wg4BuschKlein",
-      "feld": [39, 12]
+      "moebel": "wg4SteinB",
+      "feld": [78, 12]
     },
     {
       "moebel": "wg4GrasB",
-      "feld": [68, 14]
+      "feld": [103, 23]
     },
     {
       "moebel": "wg4GrasB",
       "feld": [85, 14]
-    },
-    {
-      "moebel": "wg4BuschKlein",
-      "feld": [87, 19]
-    },
-    {
-      "moebel": "wg4BuschKlein",
-      "feld": [88, 19]
     },
     {
       "moebel": "wg4FelsgruppeB",

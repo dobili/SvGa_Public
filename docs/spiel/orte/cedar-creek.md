@@ -416,3 +416,22 @@ das Gatter S1 (Lücke im Zaun, Reihe 11) bis zum Nordrand.
 Kleinflora (Gras, Farn, Pilze, Blumen, Steine, kleine Büsche) in Gruppen von ein bis drei südlich
 des Weges, Felsgruppen und Wildblumen vereinzelt. Belebung: Otis, Tessa (joggt), Radfahrer, Kühe,
 Krähen, Hase, Reh. Offen: Hufeisen (`fundHufeisen`) und Weidetor als Auslöser folgen in Runde 5.
+
+### 4.F Flussweg (`wegMapleCedar.flussweg`, Bühnenbild, niedrig-1)
+
+**Größe** 120 × 30, Norden oben. **Boden** Gras mit Varianten, Weg aus Erde, Steg aus Dielen
+(`d`), Fluss als Wasser mit Ufer im Süden (Reihen 20–21). **Rand** geschlossen, Übergänge West und
+Ost in den Reihen 15–16.
+
+**Wege:** Uferweg zwei Felder breit (Reihen 15–16) mit zwei Bögen nach Süden bis Reihe 17
+(Spalten 30–47 und 60–77). Abzweig zur Fährstelle bei Spalten 38–39 (Reihen 18–19).
+
+| Abschnitt  | Inventar                                                                            |
+| ---------- | ----------------------------------------------------------------------------------- |
+| Westen     | Baumgruppen im Norden, Münzfund (22, 12), Wildblumen                                |
+| Fährstelle | Felsgruppe (36, 18), Boot am Pfahl im Wasser (40, 21, ohne Kollision)               |
+| Mitte      | Rastbank (52, 13) zum Weg, Auslöser `rast`                                          |
+| Steg       | Dielen Spalten 67–68, Reihen 19–25 ins Wasser                                       |
+| Osten      | Ortsschild „Cedar Creek“ (112, 17), Auslöser `schildCedar` (112, 18), Erlen am Ufer |
+
+Belebung: Angler am Steg, Joggerin, Reiher, Hase, Schmetterlinge, Nebel über dem Wasser.

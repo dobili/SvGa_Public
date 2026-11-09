@@ -3266,6 +3266,16 @@
       "art": "kiste",
       "zustand": "gebraucht",
       "stil": "rustikal"
+    },
+    "wg4BootPfahl": {
+      "quelle": "modern-exteriors/Modern_Exteriors_16x16/ME_Theme_Sorter_16x16/10_Vehicles_Singles_16x16/ME_Singles_Vehicles_16x16_Boat_1_Down_2.png",
+      "breite": 32,
+      "hoehe": 64,
+      "kollision": false,
+      "art": "fahrzeug",
+      "blick": "unten",
+      "zustand": "neu",
+      "stil": "modern"
     }
   }
 }

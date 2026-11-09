@@ -5,7 +5,8 @@
     "wand": "modern-interiors/1_Interiors/16x16/Room_Builder_subfiles/Room_Builder_Walls_16x16.png",
     "gelaende": "modern-exteriors/Modern_Exteriors_16x16/ME_Theme_Sorter_16x16/1_Terrains_and_Fences_16x16.png",
     "stadt": "modern-exteriors/Modern_Exteriors_16x16/ME_Theme_Sorter_16x16/2_City_Terrains_16x16.png",
-    "fels": "spiel/eigene/fels.png"
+    "fels": "spiel/eigene/fels.png",
+    "wasser_stein": "spiel/eigene/wasser_stein.png"
   },
   "boeden": {
     "holzHell": {
@@ -111,6 +112,23 @@
         [1, 0],
         [1, 1]
       ]
+    },
+    "wasser_stein": {
+      "bogen": "wasser_stein",
+      "feld": [1, 1],
+      "rand": [0, 0],
+      "wellen": {
+        "bilder": [
+          "modern-exteriors/Modern_Exteriors_16x16/Modern_Exteriors_Complete_Singles_16x16/ME_Singles_Terrains_and_Fences_16x16_Props_Water_1.png",
+          "modern-exteriors/Modern_Exteriors_16x16/Modern_Exteriors_Complete_Singles_16x16/ME_Singles_Terrains_and_Fences_16x16_Props_Water_2.png",
+          "modern-exteriors/Modern_Exteriors_16x16/Modern_Exteriors_Complete_Singles_16x16/ME_Singles_Terrains_and_Fences_16x16_Props_Water_3.png",
+          "modern-exteriors/Modern_Exteriors_16x16/Modern_Exteriors_Complete_Singles_16x16/ME_Singles_Terrains_and_Fences_16x16_Props_Water_4.png",
+          "modern-exteriors/Modern_Exteriors_16x16/Modern_Exteriors_Complete_Singles_16x16/ME_Singles_Terrains_and_Fences_16x16_Props_Water_5.png",
+          "modern-exteriors/Modern_Exteriors_16x16/Modern_Exteriors_Complete_Singles_16x16/ME_Singles_Terrains_and_Fences_16x16_Props_Water_9.png",
+          "modern-exteriors/Modern_Exteriors_16x16/Modern_Exteriors_Complete_Singles_16x16/ME_Singles_Terrains_and_Fences_16x16_Props_Water_10.png"
+        ],
+        "anteil": 24
+      }
     }
   },
   "waende": {

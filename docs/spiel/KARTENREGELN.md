@@ -97,25 +97,113 @@ privaten Repository) werden verbaut; ihre Angaben steuern die Regeln.
    Festschatten, der nur auf einem Boden passt. **[auto]**
 3. Jedes Bild ist im Katalog beschrieben, bevor es verbaut wird.
 
-## 7a. Maßstab und Laufzeiten
+## 7a. Maßstab und Laufzeiten (nach dem Vorbild Pokémon)
 
-Wunsch des Autors (9.11.2026): Außenkarten müssen sich so groß anfühlen wie der Ort, den sie
-zeigen. Der Held läuft 3,5 Kacheln je Sekunde (56 px); eine Kachel ist etwa ein Meter. Die Kamera
-zeigt im Hochformat etwa 8 × 15 Kacheln. Laufzeiten ohne Umwege:
+Wunsch des Autors (9.11.2026): Die Größenverhältnisse folgen den Pokémon-Spielen der Generationen 1
+bis 3 (Rot/Blau, Gold/Silber/Kristall, Rubin/Saphir/Smaragd). Deren Karten sind aus den
+Disassemblies genau bekannt (7a.1); ein Schritt ist dort eine Kachel von 16 Pixeln, wie bei uns.
+Unser Held läuft 3,5 Kacheln je Sekunde, das Fahrrad 7; in Pokémon sind es 3,75 beim Gehen, 7,5 beim
+Rennen oder Fahrrad (Gen 1 und 3) und bis 15 mit dem Mach-Rad (Gen 3). Die Pokémon-Kamera zeigt
+10 × 9 Schritte (Game Boy) oder 15 × 10 (Game Boy Advance); unsere zeigt 8 × 15 (Hochformat) oder
+17 × 8 (Querformat), also etwa gleich viel. Deshalb übernehmen wir die Maße fast eins zu eins.
 
-| Art                       | Laufzeit                                | Größe in Kacheln              |
-| ------------------------- | --------------------------------------- | ----------------------------- |
-| Raum                      | 3–6 s                                   | nach Inhalt, etwa 16–25 breit |
-| Stadt außen (Hauptstraße) | 25–40 s quer                            | 90–140 breit                  |
-| Park, Platz               | 15–25 s                                 | 50–80                         |
-| Weg zwischen zwei Orten   | 1,5–2,5 min gesamt, auf 2–3 Karten      | je Karte 100–150 lang         |
-| Feld, Weide               | größer als ein Bildschirm, bis zum Rand | mindestens 25 × 20            |
+### 7a.1 Quellen: Kartenmaße in Pokémon
 
-1. Wege zwischen Orten winden sich und haben Abzweigungen (Hof, Aussicht, Bach), damit sie nicht
-   wie ein Flur wirken.
-2. Etwa jeder Bildschirm hat etwas zum Entdecken: Fund, Statist, Tier, Schild, Aussicht. **[auto]**
-   (Abstand zwischen Auslösern, Figuren und Belebung höchstens etwa 25 Kacheln.)
-3. Gebäude haben außen echte Größe: Gärten, Höfe und Felder mit Platz; eine Villa mit großem Garten.
+Maße in Schritten (= Kacheln), Breite × Höhe. Gen 1 und 2 geben die Größe in Blöcken zu 2 × 2
+Schritten an (hier umgerechnet), Gen 3 direkt in Schritten (Metatiles). Durchquerung: längere Seite
+bei 3,75 Schritten je Sekunde, ohne Kämpfe und Umwege.
+
+| Kartenart                     | Beispiele (Spiel, Kennung im Quellcode)                                                                                                     | Breite × Höhe                                                      | Durchquerung |
+| ----------------------------- | ------------------------------------------------------------------------------------------------------------------------------------------- | ------------------------------------------------------------------ | ------------ |
+| Kleine Startstadt             | Rot: `PALLET_TOWN`, `LAVENDER_TOWN`; Kristall: `NEW_BARK_TOWN`; Smaragd: `LITTLEROOT_TOWN`, `OLDALE_TOWN`                                   | 20 × 18, 20 × 18, 20 × 20                                          | 5 s          |
+| Mittlere Stadt                | Rot: `VIRIDIAN_CITY`, `PEWTER_CITY`; Kristall: `VIOLET_CITY`, `GOLDENROD_CITY`; Smaragd: `PETALBURG_CITY`                                   | 40 × 36, 40 × 36, 30 × 30                                          | 8–11 s       |
+| Große Stadt                   | Rot: `CELADON_CITY`; Smaragd: `RUSTBORO_CITY`, `SLATEPORT_CITY`, `LILYCOVE_CITY`                                                            | 50 × 36, 40 × 60, 40 × 60, 80 × 40                                 | 13–21 s      |
+| Kurze Route                   | Rot: `ROUTE_1`, `ROUTE_22`; Kristall: `ROUTE_31`; Smaragd: `ROUTE101`                                                                       | 20 × 36, 40 × 18, 40 × 18, 20 × 20                                 | 5–11 s       |
+| Mittlere Route                | Rot: `ROUTE_2`, `ROUTE_3`; Kristall: `ROUTE_29`, `ROUTE_30`; Smaragd: `ROUTE102`, `ROUTE104`                                                | 20 × 72, 70 × 18, 60 × 18, 20 × 54, 50 × 20, 40 × 80               | 13–21 s      |
+| Lange Route                   | Rot: `ROUTE_4`, `ROUTE_12`, `ROUTE_17`, `ROUTE_20`; Kristall: `ROUTE_32`; Smaragd: `ROUTE110`, `ROUTE119`                                   | 90 × 18, 20 × 108, 20 × 144, 100 × 18, 20 × 90, 40 × 100, 40 × 140 | 24–39 s      |
+| Wohnhaus (Erdgeschoss)        | Rot: `REDS_HOUSE_1F`; Kristall: `PLAYERS_HOUSE_1F`; Smaragd: `LITTLEROOT_TOWN_BRENDANS_HOUSE_1F`                                            | 8 × 8, 10 × 8, 11 × 9                                              | 2–3 s        |
+| Labor                         | Rot: `OAKS_LAB`; Kristall: `ELMS_LAB`                                                                                                       | 10 × 12                                                            | 3 s          |
+| Pokécenter                    | Rot: `VIRIDIAN_POKECENTER`; Kristall: `CHERRYGROVE_POKECENTER_1F`; Smaragd: `POKEMON_CENTER_1F`                                             | 14 × 8, 10 × 8, 14 × 9                                             | 3–4 s        |
+| Laden                         | Rot: `VIRIDIAN_MART`; Kristall: `CHERRYGROVE_MART`; Smaragd: `MART`                                                                         | 8 × 8, 12 × 8, 11 × 8                                              | 2–3 s        |
+| Arena                         | Rot: `PEWTER_GYM`, `CERULEAN_GYM`; Kristall: `VIOLET_GYM`; Smaragd: `RUSTBORO_CITY_GYM`                                                     | 10 × 14, 10 × 16, 11 × 20                                          | 4–5 s        |
+| Mehrstöckiges Gebäude (Etage) | Rot: `CELADON_MART_1F`, `SILPH_CO_1F`; Kristall: `GOLDENROD_DEPT_STORE_1F`, `SPROUT_TOWER_1F`; Smaragd: `LILYCOVE_CITY_DEPARTMENT_STORE_1F` | 20 × 8, 30 × 18, 16 × 8, 20 × 16, 18 × 8                           | 4–8 s        |
+| Wald                          | Rot: `VIRIDIAN_FOREST`; Kristall: `ILEX_FOREST`; Smaragd: `PETALBURG_WOODS`                                                                 | 34 × 48, 30 × 54, 48 × 44                                          | 13–14 s      |
+| Höhle (eine Etage)            | Rot: `MT_MOON_1F`, `ROCK_TUNNEL_1F`; Kristall: `UNION_CAVE_1F`; Smaragd: `GRANITE_CAVE_1F`, `RUSTURF_TUNNEL`                                | 40 × 36, 20 × 36, 42 × 15, 36 × 24                                 | 10–11 s      |
+
+Quellen:
+
+- Gen 1: [pret/pokered, `constants/map_constants.asm`](https://github.com/pret/pokered/blob/master/constants/map_constants.asm)
+  (Breite und Höhe in Blöcken).
+- Gen 2: [pret/pokecrystal, `constants/map_constants.asm`](https://github.com/pret/pokecrystal/blob/master/constants/map_constants.asm)
+  (Kommentar im Makro: „width: in blocks“).
+- Gen 3: [pret/pokeemerald, `data/layouts/layouts.json`](https://github.com/pret/pokeemerald/blob/master/data/layouts/layouts.json)
+  (Breite und Höhe in Metatiles = Schritten).
+- Gehen und Fahrrad Gen 1: [pret/pokered, `home/overworld.asm`](https://github.com/pret/pokered/blob/master/home/overworld.asm)
+  (`wWalkCounter` = 8 Teilschritte je Schritt, `DoBikeSpeedup` verdoppelt).
+- Gehen, Rennen, Rad Gen 3: [pret/pokeemerald, `src/event_object_movement.c`](https://github.com/pret/pokeemerald/blob/master/src/event_object_movement.c)
+  (`sStepTimes`: 16 Bilder je Schritt beim Gehen, 8 beim Rennen und Surfen, 4 beim Mach-Rad mit
+  Höchstgeschwindigkeit; bei etwa 60 Bildern je Sekunde 3,75, 7,5 und 15 Schritte je Sekunde).
+- Gen 4 und 5 (Diamant/Perl, Schwarz/Weiß) setzen ihre Welt aus Kartenfeldern von je 32 × 32 Schritten
+  zusammen ([DS Pokémon Hacking, Mapping](https://ds-pokemon-hacking.github.io/docs/generation-iv/guides/mapping));
+  wie viele Felder eine Stadt oder Route belegt, ließ sich ohne Kartendaten nicht belegen. Diese
+  Generationen fehlen deshalb in der Tabelle.
+
+Lesart: Pokémon-Routen sind schmal und lang (20 Schritte breit, also etwa ein bis zwei Bildschirme)
+oder breit und flach (18 bis 20 hoch). Städte sind zwei bis sechs Bildschirme groß. Innenräume
+passen fast auf einen Bildschirm.
+
+### 7a.2 Unsere Größen (Werte nach dem Vorbild Pokémon)
+
+Bei 3,5 Kacheln je Sekunde dauert alles etwa 7 % länger als in Pokémon. Gemessen wird ohne Umwege
+entlang des Hauptwegs.
+
+| Kartenart                                                              | Größe in Kacheln (Breite × Höhe)                | Durchquerung zu Fuß | Bildschirme (Hochformat 8 × 15) |
+| ---------------------------------------------------------------------- | ----------------------------------------------- | ------------------- | ------------------------------- |
+| Kleiner Ort (Maple Falls, Cedar Creek)                                 | 20–30 × 18–24, als Randkarten höchstens 40 × 24 | 6–10 s              | 3–6                             |
+| Mittlere Stadt (Riverton, Ironwood)                                    | 40 × 36 bis 40 × 40                             | 11–12 s             | 10–14                           |
+| Große Stadt (Silicon Bay, Capital)                                     | 50 × 36 bis 80 × 40 oder 40 × 60                | 15–23 s             | 15–27                           |
+| Kurzer Weg                                                             | 20 × 36 oder 40 × 18                            | 10–12 s             | 5–6                             |
+| Mittlerer Weg                                                          | 20 × 54 bis 20 × 72, oder 50–70 × 18–20         | 15–21 s             | 9–12                            |
+| Langer Weg                                                             | 20 × 90 bis 20 × 140, oder 90–100 × 18          | 26–40 s             | 15–23                           |
+| Wohnraum (Erdgeschoss, Wohnung)                                        | 8–11 × 8–9                                      | 3 s                 | 1                               |
+| Öffentlicher Raum (Laden, Café, Waschsalon)                            | 10–14 × 8–9                                     | 3–4 s               | 1–2                             |
+| Clubraum, Arena                                                        | 10–11 × 14–20                                   | 4–6 s               | 2                               |
+| Großer Saal, Etage eines Großbaus (Bibliothek, Kaufhaus, Turnierhalle) | 16–30 × 8–18                                    | 5–9 s               | 2–4                             |
+| Wald                                                                   | 30–48 × 44–54                                   | 13–15 s             | 11–22                           |
+| Höhle, Keller mit Gängen (eine Etage)                                  | 20–40 × 15–36                                   | 10–12 s             | 3–12                            |
+| Feld, Weide auf einer Außenkarte                                       | größer als ein Bildschirm, bis zum Rand         | –                   | –                               |
+
+Regeln:
+
+1. **Ein Weg zwischen zwei Orten** ist eine Karte, höchstens zwei (wie Pokémon-Routen, die nur
+   selten geteilt sind). Zwei Karten nur, wenn die Landschaft wechselt (Landstraße, dann Flussweg);
+   zusammen höchstens die Größe eines langen Wegs. Die Länge wächst mit dem Akt: in Akt 1 kurze Wege,
+   in Akt 2 mittlere, ab Akt 3 lange.
+2. **Form:** Ein Weg ist schmal und lang (18 bis 20 Kacheln quer zur Laufrichtung, also etwa ein
+   Hochformat-Bildschirm breit plus Rand) oder breit und flach. Er windet sich innerhalb dieses
+   Streifens; quer gibt es Platz für Abzweige von 3 bis 8 Kacheln.
+3. **Abzweigungen:** kurzer Weg mindestens eine, mittlerer zwei, langer drei bis vier. Jede endet
+   an etwas: Fund, Aussicht, Figur, Tafel, Haus, Steg (Regel 9.6.2). Sackgassen ohne Ziel gibt es nicht.
+4. **Entdeckungen:** je Bildschirm (etwa 8 × 15 Kacheln) entlang des Hauptwegs eine Sache zum
+   Ansehen oder Mitnehmen (Fund, Statist, Tier, Schild, Aussicht); auf einem Weg dazu zwei bis vier
+   Stationen nach W4 (Tafel, Gegner, Figur mit Weisheit, Fund). **[auto]** Abstand zwischen
+   Auslösern, Figuren und Belebung höchstens etwa 15 Kacheln entlang des Hauptwegs.
+5. **Innenräume** bleiben klein: Wohnräume passen auf einen Bildschirm; was mehr Platz braucht,
+   bekommt Räume hinter Türen oder Etagen statt einer größeren Karte.
+6. **Städte** sind kompakt: Alles Wichtige eines kleinen Ortes ist in 10 Sekunden zu Fuß erreichbar,
+   in einer großen Stadt in 20. Größere Städte bekommen Viertel als eigene Außenkarten statt einer
+   Riesenkarte.
+7. **Dichte:** Gebäude stehen eng, Wege sind 2 Kacheln breit, Straßen 2 bis 4; Freiflächen sind
+   Plätze, Parks, Felder oder Wasser mit Inhalt (Regel 9.9).
+8. **Fahrrad** (doppelt so schnell): lohnt sich erst ab mittleren Wegen; kurze Wege sind zu Fuß in
+   gut 10 Sekunden durchquert.
+
+**Abweichung vom vorigen Stand (9.11.2026, vormittags):** Dort standen Städte mit 90 bis 140 Kacheln
+Breite, Räume mit 16 bis 25 und Wege mit 2 bis 3 Karten zu je 100 bis 150 Kacheln (1,5 bis 2,5
+Minuten). Nach dem Vorbild Pokémon sind Städte etwa halb so groß, Räume deutlich kleiner und Wege
+etwa so lang wie bisher eine Karte. Unsere heutigen Karten (Cedar Creek außen 44 × 24, Landstraße
+34 × 22, Bibliothek 18 × 14, Wohnzimmer 22 × 14) liegen bei Außenkarten im Rahmen, bei Innenräumen
+darüber.
 
 ## 8. Vorbild: Beispielräume des Zeichners
 

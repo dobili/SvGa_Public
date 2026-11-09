@@ -11,7 +11,7 @@
   "tilewidth": 16,
   "tileheight": 16,
   "nextlayerid": 5,
-  "nextobjectid": 24,
+  "nextobjectid": 26,
   "layers": [
     {
       "id": 1,
@@ -116,8 +116,8 @@
           "id": 3,
           "name": "brett",
           "type": "ausloeser",
-          "x": 96,
-          "y": 96,
+          "x": 64,
+          "y": 112,
           "width": 16,
           "height": 16,
           "rotation": 0,
@@ -127,7 +127,7 @@
           "id": 4,
           "name": "hutschachtel",
           "type": "ausloeser",
-          "x": 128,
+          "x": 64,
           "y": 144,
           "width": 16,
           "height": 16,
@@ -138,8 +138,8 @@
           "id": 5,
           "name": "spiegel",
           "type": "ausloeser",
-          "x": 160,
-          "y": 128,
+          "x": 16,
+          "y": 112,
           "width": 16,
           "height": 16,
           "rotation": 0,
@@ -149,7 +149,7 @@
           "id": 6,
           "name": "zeitungen1961",
           "type": "ausloeser",
-          "x": 48,
+          "x": 112,
           "y": 144,
           "width": 16,
           "height": 16,
@@ -204,6 +204,29 @@
         },
         {
           "id": 9,
+          "name": "mf2BildWald",
+          "type": "moebel",
+          "x": 64,
+          "y": 16,
+          "width": 32,
+          "height": 32,
+          "rotation": 0,
+          "visible": true,
+          "properties": [
+            {
+              "name": "tiefe",
+              "type": "int",
+              "value": 0
+            },
+            {
+              "name": "kollision",
+              "type": "bool",
+              "value": false
+            }
+          ]
+        },
+        {
+          "id": 10,
           "name": "mf2Kleiderschrank",
           "type": "moebel",
           "x": 144,
@@ -226,8 +249,8 @@
           ]
         },
         {
-          "id": 10,
-          "name": "mf2Buecherregal",
+          "id": 11,
+          "name": "mf7Holzschrank",
           "type": "moebel",
           "x": 176,
           "y": 16,
@@ -249,11 +272,11 @@
           ]
         },
         {
-          "id": 11,
+          "id": 12,
           "name": "mf2TeppichAlt",
           "type": "moebel",
-          "x": 96,
-          "y": 64,
+          "x": 48,
+          "y": 80,
           "width": 48,
           "height": 64,
           "rotation": 0,
@@ -272,11 +295,11 @@
           ]
         },
         {
-          "id": 12,
+          "id": 13,
           "name": "mf3Rundtisch",
           "type": "moebel",
-          "x": 96,
-          "y": 80,
+          "x": 64,
+          "y": 96,
           "width": 32,
           "height": 32,
           "rotation": 0,
@@ -285,7 +308,7 @@
             {
               "name": "tiefe",
               "type": "int",
-              "value": 104
+              "value": 120
             },
             {
               "name": "kollision",
@@ -295,11 +318,11 @@
           ]
         },
         {
-          "id": 13,
+          "id": 14,
           "name": "mf3BrettKlein",
           "type": "moebel",
-          "x": 106,
-          "y": 90,
+          "x": 74,
+          "y": 106,
           "width": 12,
           "height": 9,
           "rotation": 0,
@@ -308,7 +331,7 @@
             {
               "name": "tiefe",
               "type": "int",
-              "value": 105
+              "value": 121
             },
             {
               "name": "kollision",
@@ -318,11 +341,11 @@
           ]
         },
         {
-          "id": 14,
+          "id": 15,
           "name": "mf3StuhlDunkelRechts",
           "type": "moebel",
-          "x": 80,
-          "y": 80,
+          "x": 48,
+          "y": 96,
           "width": 16,
           "height": 32,
           "rotation": 0,
@@ -331,30 +354,7 @@
             {
               "name": "tiefe",
               "type": "int",
-              "value": 104
-            },
-            {
-              "name": "kollision",
-              "type": "bool",
-              "value": true
-            }
-          ]
-        },
-        {
-          "id": 15,
-          "name": "mf3StuhlDunkelLinks",
-          "type": "moebel",
-          "x": 128,
-          "y": 80,
-          "width": 16,
-          "height": 32,
-          "rotation": 0,
-          "visible": true,
-          "properties": [
-            {
-              "name": "tiefe",
-              "type": "int",
-              "value": 104
+              "value": 120
             },
             {
               "name": "kollision",
@@ -365,19 +365,19 @@
         },
         {
           "id": 16,
-          "name": "mf2Stehlampe",
+          "name": "mf3StuhlDunkelLinks",
           "type": "moebel",
-          "x": 144,
-          "y": 64,
+          "x": 96,
+          "y": 96,
           "width": 16,
-          "height": 48,
+          "height": 32,
           "rotation": 0,
           "visible": true,
           "properties": [
             {
               "name": "tiefe",
               "type": "int",
-              "value": 104
+              "value": 120
             },
             {
               "name": "kollision",
@@ -388,11 +388,11 @@
         },
         {
           "id": 17,
-          "name": "mf3Kartonstapel",
+          "name": "mf2Stehlampe",
           "type": "moebel",
-          "x": 176,
-          "y": 64,
-          "width": 32,
+          "x": 112,
+          "y": 80,
+          "width": 16,
           "height": 48,
           "rotation": 0,
           "visible": true,
@@ -400,7 +400,7 @@
             {
               "name": "tiefe",
               "type": "int",
-              "value": 104
+              "value": 120
             },
             {
               "name": "kollision",
@@ -411,19 +411,19 @@
         },
         {
           "id": 18,
-          "name": "mf3Kartonstapel",
+          "name": "mf7Truhe",
           "type": "moebel",
           "x": 176,
-          "y": 112,
+          "y": 64,
           "width": 32,
-          "height": 48,
+          "height": 32,
           "rotation": 0,
           "visible": true,
           "properties": [
             {
               "name": "tiefe",
               "type": "int",
-              "value": 152
+              "value": 88
             },
             {
               "name": "kollision",
@@ -434,6 +434,75 @@
         },
         {
           "id": 19,
+          "name": "mf7Kistenstapel",
+          "type": "moebel",
+          "x": 176,
+          "y": 96,
+          "width": 32,
+          "height": 48,
+          "rotation": 0,
+          "visible": true,
+          "properties": [
+            {
+              "name": "tiefe",
+              "type": "int",
+              "value": 136
+            },
+            {
+              "name": "kollision",
+              "type": "bool",
+              "value": true
+            }
+          ]
+        },
+        {
+          "id": 20,
+          "name": "mf7Truhe",
+          "type": "moebel",
+          "x": 144,
+          "y": 112,
+          "width": 32,
+          "height": 32,
+          "rotation": 0,
+          "visible": true,
+          "properties": [
+            {
+              "name": "tiefe",
+              "type": "int",
+              "value": 136
+            },
+            {
+              "name": "kollision",
+              "type": "bool",
+              "value": true
+            }
+          ]
+        },
+        {
+          "id": 21,
+          "name": "mf7Teddy",
+          "type": "moebel",
+          "x": 152,
+          "y": 99,
+          "width": 16,
+          "height": 32,
+          "rotation": 0,
+          "visible": true,
+          "properties": [
+            {
+              "name": "tiefe",
+              "type": "int",
+              "value": 137
+            },
+            {
+              "name": "kollision",
+              "type": "bool",
+              "value": false
+            }
+          ]
+        },
+        {
+          "id": 22,
           "name": "mf2KisteTuch",
           "type": "moebel",
           "x": 16,
@@ -456,10 +525,10 @@
           ]
         },
         {
-          "id": 20,
+          "id": 23,
           "name": "mf2Zeitungsstapel",
           "type": "moebel",
-          "x": 48,
+          "x": 112,
           "y": 112,
           "width": 32,
           "height": 48,
@@ -479,10 +548,10 @@
           ]
         },
         {
-          "id": 21,
+          "id": 24,
           "name": "mf2Hutschachtel",
           "type": "moebel",
-          "x": 128,
+          "x": 64,
           "y": 128,
           "width": 32,
           "height": 32,
@@ -502,11 +571,11 @@
           ]
         },
         {
-          "id": 22,
+          "id": 25,
           "name": "mf2Standspiegel",
           "type": "moebel",
-          "x": 160,
-          "y": 112,
+          "x": 16,
+          "y": 96,
           "width": 16,
           "height": 32,
           "rotation": 0,
@@ -515,35 +584,12 @@
             {
               "name": "tiefe",
               "type": "int",
-              "value": 136
+              "value": 120
             },
             {
               "name": "kollision",
               "type": "bool",
               "value": true
-            }
-          ]
-        },
-        {
-          "id": 23,
-          "name": "mf2BildWald",
-          "type": "moebel",
-          "x": 64,
-          "y": 16,
-          "width": 32,
-          "height": 32,
-          "rotation": 0,
-          "visible": true,
-          "properties": [
-            {
-              "name": "tiefe",
-              "type": "int",
-              "value": 0
-            },
-            {
-              "name": "kollision",
-              "type": "bool",
-              "value": false
             }
           ]
         }

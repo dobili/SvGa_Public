@@ -602,7 +602,7 @@
       "flora": "keine Bäume; Kübel mit akkurat geschnittenen Gräsern in Reihen, sonst nichts.",
       "karten": {
         "aussen": {
-          "zweck": "Viertel Campus (72 × 52, orte/silicon-bay.md 1.3): Boulevard mit Straßenbahn und Roboterspuren, Konzernturm mit Lobby, Akademie, Hotel, Werbetafelwand mit Haltestelle der Fernlinie, Food-Truck mit Bank (Dash), LED-Wasserspiel, Café, Glasbrüstung mit Treppe zum Hafen.",
+          "zweck": "Viertel Campus (72 × 52, orte/silicon-bay.md 1.3): Boulevard mit Straßenbahn und Roboterspuren, Konzernturm mit Lobby, Akademie, Hotel, Werbetafelwand mit Infosäule (kein Bus in der Stadt), Food-Truck mit Bank (Dash), LED-Wasserspiel, Café, Glasbrüstung mit Treppe zum Hafen.",
           "nachbarschaft": "Bürotürme und Glasbauten an einem Boulevard; Platz mit Wasserspiel; Terrasse über dem Hafen.",
           "pflicht": [
             "Boulevard gerade von Rand zu Rand, Gehweg beidseitig, Roboterspuren markiert",
@@ -616,7 +616,7 @@
             "Bäume",
             "Tiere (außer Drohne und Staubsaugerroboter)",
             "alte oder verwitterte Gegenstände (außer dem Food-Truck)",
-            "Schachbretter aus Holz im Freien"
+            "Schachbretter aus Holz im Freien (Ausnahmen: Dashs Brett auf der Bank vor dem Food-Truck und Ellis' Taschenschach nach N-SB2)"
           ],
           "zustand": ["neu"]
         },

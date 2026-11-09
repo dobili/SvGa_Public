@@ -107,7 +107,8 @@ def moebelfelder(karte: dict) -> set[Feld]:
         reihen = max(1, angabe["hoehe"] // KACHELGROESSE)
         x0, y0 = int(o["x"]) // KACHELGROESSE, int(o["y"]) // KACHELGROESSE
         oben = 1 if reihen > 1 else 0
-        felder |= {(x0 + dx, y0 + dy) for dx in range(spalten) for dy in range(oben, reihen)}
+        unten = reihen - angabe.get("frei_unten", 0)  # begehbare Reihen unten (Gang, Veranda)
+        felder |= {(x0 + dx, y0 + dy) for dx in range(spalten) for dy in range(oben, unten)}
     return felder
 
 

@@ -116,5 +116,53 @@
     "sicher": 0.8,
     "korrektur": "mittel-4",
     "nur_pfad": true
+  },
+  "modern-interiors/1_Interiors/16x16/Theme_Sorter_Singles/5_Classroom_and_Library_Singles/Classroom_and_Library_Singles_59.png": {
+    "beschreibung": "Schmales Bücherregal in Seitenansicht, bunt befüllt, drei Fächer; steht an einer Seitenwand und zeigt mit den Büchern in den Raum (linke Wand: Blick nach rechts, rechte Wand: Blick nach links).",
+    "art": "buecherregal",
+    "blick": "rechts",
+    "nutzbar_von": ["links", "rechts"],
+    "ganz": true,
+    "sicher": 0.8,
+    "korrektur": "mittel-4",
+    "nur_pfad": true
+  },
+  "modern-interiors/1_Interiors/16x16/Theme_Sorter_Singles/5_Classroom_and_Library_Singles/Classroom_and_Library_Singles_66.png": {
+    "beschreibung": "Schmales Bücherregal in Seitenansicht, bunt befüllt, drei Fächer; steht an einer Seitenwand und zeigt mit den Büchern in den Raum (linke Wand: Blick nach rechts, rechte Wand: Blick nach links).",
+    "art": "buecherregal",
+    "blick": "rechts",
+    "nutzbar_von": ["links", "rechts"],
+    "ganz": true,
+    "sicher": 0.8,
+    "korrektur": "mittel-4",
+    "nur_pfad": true
+  },
+  "modern-interiors/1_Interiors/16x16/Theme_Sorter_Singles/5_Classroom_and_Library_Singles/Classroom_and_Library_Singles_73.png": {
+    "beschreibung": "Schmales Bücherregal in Seitenansicht, bunt befüllt, drei Fächer; steht an einer Seitenwand und zeigt mit den Büchern in den Raum (linke Wand: Blick nach rechts, rechte Wand: Blick nach links).",
+    "art": "buecherregal",
+    "blick": "rechts",
+    "nutzbar_von": ["links", "rechts"],
+    "ganz": true,
+    "sicher": 0.8,
+    "korrektur": "mittel-4",
+    "nur_pfad": true
+  },
+  "modern-interiors/1_Interiors/16x16/Theme_Sorter_Singles/5_Classroom_and_Library_Singles/Classroom_and_Library_Singles_68.png": {
+    "beschreibung": "Schmales Regalstück in Seitenansicht mit Büchern, an einer Seite abgeschnitten; Bauteil einer längeren Regalreihe an einer Seitenwand.",
+    "art": "buecherregal",
+    "blick": "rechts",
+    "ganz": false,
+    "sicher": 0.8,
+    "korrektur": "mittel-4",
+    "nur_pfad": true
+  },
+  "modern-interiors/1_Interiors/16x16/Theme_Sorter_Singles/5_Classroom_and_Library_Singles/Classroom_and_Library_Singles_75.png": {
+    "beschreibung": "Schmales Regalstück in Seitenansicht mit Büchern, an einer Seite abgeschnitten; Bauteil einer längeren Regalreihe an einer Seitenwand.",
+    "art": "buecherregal",
+    "blick": "rechts",
+    "ganz": false,
+    "sicher": 0.8,
+    "korrektur": "mittel-4",
+    "nur_pfad": true
   }
 }

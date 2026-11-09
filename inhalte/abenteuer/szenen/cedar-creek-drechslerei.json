@@ -84,24 +84,24 @@
       "versatz": [0, 8]
     },
     {
-      "moebel": "cc5Arbeitstisch",
-      "feld": [6, 5],
-      "id": "mitte"
+      "moebel": "cc8Saegebock",
+      "feld": [6, 6],
+      "id": "bock1"
     },
     {
-      "moebel": "cc5Werkstueck",
-      "auf": "mitte",
-      "versatz": [-8, 12]
+      "moebel": "cc8Saegebock",
+      "feld": [8, 6],
+      "id": "bock2"
     },
     {
       "moebel": "cc5Leiste",
-      "auf": "mitte",
-      "versatz": [6, 14]
+      "auf": "bock1",
+      "versatz": [6, 3]
     },
     {
-      "moebel": "cc5Hammer",
-      "auf": "mitte",
-      "versatz": [12, 8]
+      "moebel": "cc5Werkstueck",
+      "auf": "bock2",
+      "versatz": [-6, 3]
     }
   ],
   "ausloeser": [

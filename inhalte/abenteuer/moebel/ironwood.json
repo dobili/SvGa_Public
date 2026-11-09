@@ -304,6 +304,101 @@
       "art": "dusche",
       "zustand": "gebraucht",
       "stil": "einfach"
+    },
+    "iw5Postsack": {
+      "quelle": "modern-interiors/1_Interiors/16x16/Theme_Sorter_Black_Shadow_Singles/16_Grocery_Store_Black_Shadow_Singles_16x16/Grocery_Store_Black_Shadow_Singles_387.png",
+      "breite": 16,
+      "hoehe": 16,
+      "kollision": true,
+      "art": "kiste",
+      "zustand": "alt",
+      "stil": "einfach"
+    },
+    "iw5Sackkarre": {
+      "quelle": "modern-interiors/1_Interiors/16x16/Theme_Sorter_Black_Shadow_Singles/9_Fishing_Black_Shadow_Singles_16x16/Fishing_Shadow_Singles_73.png",
+      "breite": 32,
+      "hoehe": 48,
+      "kollision": true,
+      "art": "fahrzeug",
+      "zustand": "alt",
+      "stil": "industrie"
+    },
+    "iw5WerkHalle": {
+      "quelle": "spiel/eigene/werk_halle.png",
+      "breite": 96,
+      "hoehe": 96,
+      "kollision": true,
+      "art": "gebaeude",
+      "zustand": "gebraucht",
+      "blick": "unten",
+      "stil": "industrie"
+    },
+    "iw5Schornstein": {
+      "quelle": "spiel/eigene/werk_schornstein.png",
+      "breite": 32,
+      "hoehe": 112,
+      "kollision": true,
+      "art": "gebaeude",
+      "zustand": "gebraucht",
+      "stil": "industrie"
+    },
+    "iw5Kran": {
+      "quelle": "spiel/eigene/werk_kran.png",
+      "breite": 112,
+      "hoehe": 80,
+      "kollision": false,
+      "art": "gebaeude",
+      "zustand": "gebraucht",
+      "stil": "industrie"
+    },
+    "iw5Lok": {
+      "quelle": "spiel/eigene/werk_lok.png",
+      "breite": 80,
+      "hoehe": 64,
+      "kollision": true,
+      "art": "denkmal",
+      "zustand": "alt",
+      "stil": "industrie"
+    },
+    "iw5StadthausGrau": {
+      "quelle": "modern-exteriors/Modern_Exteriors_16x16/ME_Theme_Sorter_16x16/4_Generic_Building_Singles_16x16/ME_Singles_Generic_Building_16x16_Condo_5_2.png",
+      "breite": 96,
+      "hoehe": 176,
+      "kollision": true,
+      "art": "gebaeude",
+      "zustand": "gebraucht",
+      "blick": "unten",
+      "stil": "klassisch"
+    },
+    "iw5StadthausBlau": {
+      "quelle": "modern-exteriors/Modern_Exteriors_16x16/ME_Theme_Sorter_16x16/4_Generic_Building_Singles_16x16/ME_Singles_Generic_Building_16x16_Condo_5_1.png",
+      "breite": 96,
+      "hoehe": 176,
+      "kollision": true,
+      "art": "gebaeude",
+      "zustand": "gebraucht",
+      "blick": "unten",
+      "stil": "klassisch"
+    },
+    "iw5StadthausGelb": {
+      "quelle": "modern-exteriors/Modern_Exteriors_16x16/ME_Theme_Sorter_16x16/4_Generic_Building_Singles_16x16/ME_Singles_Generic_Building_16x16_Condo_5_3.png",
+      "breite": 96,
+      "hoehe": 176,
+      "kollision": true,
+      "art": "gebaeude",
+      "zustand": "gebraucht",
+      "blick": "unten",
+      "stil": "klassisch"
+    },
+    "iw5Laden": {
+      "quelle": "modern-exteriors/Modern_Exteriors_16x16/ME_Theme_Sorter_16x16/4_Generic_Building_Singles_16x16/ME_Singles_Generic_Building_16x16_Hardware_Store.png",
+      "breite": 128,
+      "hoehe": 144,
+      "kollision": true,
+      "art": "gebaeude",
+      "zustand": "gebraucht",
+      "blick": "unten",
+      "stil": "einfach"
     }
   }
 }

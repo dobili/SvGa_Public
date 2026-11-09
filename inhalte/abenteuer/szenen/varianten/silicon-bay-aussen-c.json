@@ -67,11 +67,23 @@
   "objekte": [
     {
       "moebel": "sb5Konzernturm",
-      "feld": [3, 2]
+      "feld": [3, 2],
+      "id": "turm"
     },
     {
       "moebel": "sb5AkademieBau",
-      "feld": [22, 3]
+      "feld": [22, 3],
+      "id": "akademie"
+    },
+    {
+      "moebel": "sb5SchildPerfectMove",
+      "auf": "turm",
+      "versatz": [30, -28]
+    },
+    {
+      "moebel": "sb5SchildAcademy",
+      "auf": "akademie",
+      "versatz": [-47, 86]
     },
     {
       "moebel": "sb5Hotel",

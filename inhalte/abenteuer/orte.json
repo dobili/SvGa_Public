@@ -1858,7 +1858,7 @@
           "wenn": "nadelSiliconBay",
           "ziel": {
             "karte": "wegSiliconDelacroix.faehre",
-            "ausloeser": "start"
+            "ausloeser": "zurueckSilicon"
           }
         }
       ],
@@ -3739,7 +3739,7 @@
           "dialog": "bayou.zurueck_delacroix",
           "ziel": {
             "karte": "portDelacroix.aussen",
-            "ausloeser": "deich"
+            "ausloeser": "bayou"
           }
         },
         {

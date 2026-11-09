@@ -1,0 +1,86 @@
+{
+  "karte": "siliconBay.serverraum",
+  "datei": "karten/varianten/silicon-bay-serverraum-b.json",
+  "art": "innen",
+  "wand": "hellgrau",
+  "boden": "fliesenGrau",
+  "beschreibung": "Variante B (schlichter): Eine einzige Reihe Serverschränke an der Nordwand, das Klimagerät in einer Lücke dazwischen. Der Raum ist sonst leer bis auf den Metallschrank an der Ostwand und einen Arbeitsplatz in der Südwestecke; viel freier Doppelboden.",
+  "zustand": ["neu", "gebraucht"],
+  "stil": ["modern", "japanisch"],
+  "raster": [
+    "##############",
+    "##############",
+    "##############",
+    "#............#",
+    "#............#",
+    "#............#",
+    "#............#",
+    "#............#",
+    "#............#",
+    "#######.######"
+  ],
+  "objekte": [
+    {
+      "moebel": "sb5Server",
+      "feld": [1, 1]
+    },
+    {
+      "moebel": "sb5Server",
+      "feld": [3, 1]
+    },
+    {
+      "moebel": "sb5Server",
+      "feld": [5, 1]
+    },
+    {
+      "moebel": "sb5Server",
+      "feld": [9, 1]
+    },
+    {
+      "moebel": "sb5Server",
+      "feld": [11, 1]
+    },
+    {
+      "moebel": "sb5Metallschrank",
+      "feld": [11, 5]
+    },
+    {
+      "moebel": "sb5Klima",
+      "feld": [7, 2]
+    },
+    {
+      "moebel": "sb5Messplatz",
+      "feld": [1, 5]
+    },
+    {
+      "moebel": "sb5Fussmatte",
+      "feld": [7, 8],
+      "versatz": [0, 8]
+    },
+    {
+      "moebel": "sb5Tuer",
+      "feld": [7, 9]
+    }
+  ],
+  "ausloeser": [
+    {
+      "name": "start",
+      "feld": [7, 8],
+      "eigenschaften": {
+        "richtung": "oben"
+      }
+    },
+    {
+      "name": "serverraumAusgang",
+      "feld": [7, 9]
+    },
+    {
+      "name": "schummelgeraete",
+      "feld": [11, 7],
+      "auf_moebel": true
+    }
+  ],
+  "figuren": [],
+  "belebung": [],
+  "variante": "b"
+}

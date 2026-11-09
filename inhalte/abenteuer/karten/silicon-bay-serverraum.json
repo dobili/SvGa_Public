@@ -1,95 +1,91 @@
 {
-  "type": "map",
-  "version": "1.10",
-  "tiledversion": "1.11.0",
+  "compressionlevel": -1,
   "orientation": "orthogonal",
   "renderorder": "right-down",
+  "tiledversion": "1.11.0",
+  "type": "map",
+  "version": "1.10",
   "infinite": false,
-  "compressionlevel": -1,
-  "width": 12,
+  "width": 14,
   "height": 10,
   "tilewidth": 16,
   "tileheight": 16,
   "nextlayerid": 5,
   "nextobjectid": 16,
-  "properties": [
-    {
-      "name": "kennung",
-      "type": "string",
-      "value": "siliconBay.serverraum"
-    }
-  ],
   "layers": [
     {
       "id": 1,
       "name": "boden",
       "type": "tilelayer",
-      "visible": true,
-      "opacity": 1,
+      "width": 14,
+      "height": 10,
       "x": 0,
       "y": 0,
-      "width": 12,
-      "height": 10,
+      "opacity": 1,
+      "visible": true,
       "data": [
-        1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1,
-        1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1,
-        1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1,
-        1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1,
-        1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1
+        0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0,
+        0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 1, 1, 1, 1, 1,
+        1, 1, 1, 1, 1, 1, 1, 0, 0, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 0, 0, 1,
+        1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 0, 0, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1,
+        1, 0, 0, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 0, 0, 1, 1, 1, 1, 1, 1, 1,
+        1, 1, 1, 1, 1, 0, 0, 0, 0, 0, 0, 0, 0, 1, 0, 0, 0, 0, 0, 0
       ]
     },
     {
       "id": 2,
       "name": "waende",
       "type": "tilelayer",
-      "visible": true,
-      "opacity": 1,
+      "width": 14,
+      "height": 10,
       "x": 0,
       "y": 0,
-      "width": 12,
-      "height": 10,
+      "opacity": 1,
+      "visible": true,
       "data": [
-        2, 2, 2, 2, 2, 2, 2, 2, 2, 2, 2, 2, 2, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 2,
-        2, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 2, 2, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 2,
-        2, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 2, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 2,
-        2, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 2, 2, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 2,
-        2, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 2, 2, 2, 2, 2, 2, 2, 2, 2, 2, 2, 2, 2
+        2, 2, 2, 2, 2, 2, 2, 2, 2, 2, 2, 2, 2, 2, 2, 2, 2, 2, 2, 2, 2, 2, 2, 2,
+        2, 2, 2, 2, 2, 2, 2, 2, 2, 2, 2, 2, 2, 2, 2, 2, 2, 2, 2, 0, 0, 0, 0, 0,
+        0, 0, 0, 0, 0, 0, 0, 2, 2, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 2, 2, 0,
+        0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 2, 2, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0,
+        0, 2, 2, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 2, 2, 0, 0, 0, 0, 0, 0, 0,
+        0, 0, 0, 0, 0, 2, 2, 2, 2, 2, 2, 2, 2, 0, 2, 2, 2, 2, 2, 2
       ]
     },
     {
       "id": 3,
       "name": "objekte",
       "type": "tilelayer",
-      "visible": true,
-      "opacity": 1,
+      "width": 14,
+      "height": 10,
       "x": 0,
       "y": 0,
-      "width": 12,
-      "height": 10,
+      "opacity": 1,
+      "visible": true,
       "data": [
         0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0,
         0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0,
         0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0,
         0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0,
-        0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 3, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0
+        0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0,
+        0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0
       ]
     },
     {
       "id": 4,
       "name": "ausloeser",
       "type": "objectgroup",
-      "visible": true,
-      "opacity": 1,
+      "draworder": "topdown",
       "x": 0,
       "y": 0,
-      "draworder": "topdown",
+      "opacity": 1,
+      "visible": true,
       "objects": [
         {
           "id": 1,
           "name": "start",
           "type": "ausloeser",
-          "x": 16,
-          "y": 80,
+          "x": 112,
+          "y": 128,
           "width": 16,
           "height": 16,
           "rotation": 0,
@@ -98,7 +94,7 @@
             {
               "name": "richtung",
               "type": "string",
-              "value": "rechts"
+              "value": "oben"
             }
           ]
         },
@@ -106,8 +102,8 @@
           "id": 2,
           "name": "serverraumAusgang",
           "type": "ausloeser",
-          "x": 0,
-          "y": 80,
+          "x": 112,
+          "y": 144,
           "width": 16,
           "height": 16,
           "rotation": 0,
@@ -117,8 +113,8 @@
           "id": 3,
           "name": "schummelgeraete",
           "type": "ausloeser",
-          "x": 160,
-          "y": 128,
+          "x": 176,
+          "y": 112,
           "width": 16,
           "height": 16,
           "rotation": 0,
@@ -126,135 +122,279 @@
         },
         {
           "id": 4,
-          "name": "sbServer",
+          "name": "sb5Server",
           "type": "moebel",
-          "x": 32,
-          "y": 0,
+          "x": 16,
+          "y": 16,
           "width": 32,
           "height": 48,
           "rotation": 0,
-          "visible": true
+          "visible": true,
+          "properties": [
+            {
+              "name": "tiefe",
+              "type": "int",
+              "value": 56
+            },
+            {
+              "name": "kollision",
+              "type": "bool",
+              "value": true
+            }
+          ]
         },
         {
           "id": 5,
-          "name": "sbServerschrank",
+          "name": "sb5ServerB",
           "type": "moebel",
-          "x": 64,
-          "y": 0,
+          "x": 48,
+          "y": 16,
           "width": 32,
           "height": 48,
           "rotation": 0,
-          "visible": true
+          "visible": true,
+          "properties": [
+            {
+              "name": "tiefe",
+              "type": "int",
+              "value": 56
+            },
+            {
+              "name": "kollision",
+              "type": "bool",
+              "value": true
+            }
+          ]
         },
         {
           "id": 6,
-          "name": "sbServerKlein",
+          "name": "sb5ServerC",
           "type": "moebel",
-          "x": 96,
-          "y": 0,
+          "x": 80,
+          "y": 16,
           "width": 32,
           "height": 48,
           "rotation": 0,
-          "visible": true
+          "visible": true,
+          "properties": [
+            {
+              "name": "tiefe",
+              "type": "int",
+              "value": 56
+            },
+            {
+              "name": "kollision",
+              "type": "bool",
+              "value": true
+            }
+          ]
         },
         {
           "id": 7,
-          "name": "sbServer",
+          "name": "sb5Server",
           "type": "moebel",
-          "x": 128,
-          "y": 0,
+          "x": 112,
+          "y": 16,
           "width": 32,
           "height": 48,
           "rotation": 0,
-          "visible": true
+          "visible": true,
+          "properties": [
+            {
+              "name": "tiefe",
+              "type": "int",
+              "value": 56
+            },
+            {
+              "name": "kollision",
+              "type": "bool",
+              "value": true
+            }
+          ]
         },
         {
           "id": 8,
-          "name": "sbServerschrank",
+          "name": "sb5ServerB",
           "type": "moebel",
-          "x": 32,
-          "y": 48,
+          "x": 144,
+          "y": 16,
           "width": 32,
           "height": 48,
           "rotation": 0,
-          "visible": true
+          "visible": true,
+          "properties": [
+            {
+              "name": "tiefe",
+              "type": "int",
+              "value": 56
+            },
+            {
+              "name": "kollision",
+              "type": "bool",
+              "value": true
+            }
+          ]
         },
         {
           "id": 9,
-          "name": "sbServerKlein",
+          "name": "sb5ServerB",
           "type": "moebel",
-          "x": 64,
-          "y": 48,
+          "x": 48,
+          "y": 80,
           "width": 32,
           "height": 48,
           "rotation": 0,
-          "visible": true
+          "visible": true,
+          "properties": [
+            {
+              "name": "tiefe",
+              "type": "int",
+              "value": 120
+            },
+            {
+              "name": "kollision",
+              "type": "bool",
+              "value": true
+            }
+          ]
         },
         {
           "id": 10,
-          "name": "sbServer",
+          "name": "sb5ServerB",
           "type": "moebel",
-          "x": 96,
-          "y": 48,
+          "x": 80,
+          "y": 80,
           "width": 32,
           "height": 48,
           "rotation": 0,
-          "visible": true
+          "visible": true,
+          "properties": [
+            {
+              "name": "tiefe",
+              "type": "int",
+              "value": 120
+            },
+            {
+              "name": "kollision",
+              "type": "bool",
+              "value": true
+            }
+          ]
         },
         {
           "id": 11,
-          "name": "sbServer",
+          "name": "sb5Metallschrank",
           "type": "moebel",
-          "x": 128,
-          "y": 48,
+          "x": 176,
+          "y": 80,
           "width": 32,
           "height": 48,
           "rotation": 0,
-          "visible": true
+          "visible": true,
+          "properties": [
+            {
+              "name": "tiefe",
+              "type": "int",
+              "value": 120
+            },
+            {
+              "name": "kollision",
+              "type": "bool",
+              "value": true
+            }
+          ]
         },
         {
           "id": 12,
-          "name": "sbServerKlein",
+          "name": "sb5Klima",
           "type": "moebel",
-          "x": 32,
-          "y": 96,
+          "x": 176,
+          "y": 32,
           "width": 32,
-          "height": 48,
+          "height": 32,
           "rotation": 0,
-          "visible": true
+          "visible": true,
+          "properties": [
+            {
+              "name": "tiefe",
+              "type": "int",
+              "value": 56
+            },
+            {
+              "name": "kollision",
+              "type": "bool",
+              "value": true
+            }
+          ]
         },
         {
           "id": 13,
-          "name": "sbServer",
+          "name": "sb5Messplatz",
           "type": "moebel",
-          "x": 64,
-          "y": 96,
+          "x": 16,
+          "y": 80,
           "width": 32,
           "height": 48,
           "rotation": 0,
-          "visible": true
+          "visible": true,
+          "properties": [
+            {
+              "name": "tiefe",
+              "type": "int",
+              "value": 120
+            },
+            {
+              "name": "kollision",
+              "type": "bool",
+              "value": true
+            }
+          ]
         },
         {
           "id": 14,
-          "name": "sbServer",
+          "name": "sb5Fussmatte",
           "type": "moebel",
-          "x": 96,
-          "y": 96,
-          "width": 32,
-          "height": 48,
+          "x": 112,
+          "y": 136,
+          "width": 16,
+          "height": 16,
           "rotation": 0,
-          "visible": true
+          "visible": true,
+          "properties": [
+            {
+              "name": "tiefe",
+              "type": "int",
+              "value": 1
+            },
+            {
+              "name": "kollision",
+              "type": "bool",
+              "value": false
+            }
+          ]
         },
         {
           "id": 15,
-          "name": "sbServerschrank",
+          "name": "sb5Tuer",
           "type": "moebel",
-          "x": 128,
-          "y": 96,
-          "width": 32,
-          "height": 48,
+          "x": 112,
+          "y": 144,
+          "width": 16,
+          "height": 16,
           "rotation": 0,
-          "visible": true
+          "visible": true,
+          "properties": [
+            {
+              "name": "tiefe",
+              "type": "int",
+              "value": 1
+            },
+            {
+              "name": "kollision",
+              "type": "bool",
+              "value": false
+            }
+          ]
         }
       ]
     }
@@ -324,6 +464,13 @@
           ]
         }
       ]
+    }
+  ],
+  "properties": [
+    {
+      "name": "kennung",
+      "type": "string",
+      "value": "siliconBay.serverraum"
     }
   ]
 }

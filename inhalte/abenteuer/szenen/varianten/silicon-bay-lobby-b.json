@@ -1,0 +1,116 @@
+{
+  "karte": "siliconBay.lobby",
+  "datei": "karten/varianten/silicon-bay-lobby-b.json",
+  "art": "innen",
+  "wand": "hellgrau",
+  "boden": "stein",
+  "beschreibung": "Variante B (schlichter): Ein einzelner Aufzug, ein großer Bildschirm mit der Zeitleiste, die Vitrine von Hale allein in der Mitte der weiten Halle, der Empfangstresen mit dem Roboter rechts, links ein Sofa und ein Sessel, Pflanzen in den Ecken; viel leerer, glänzender Boden.",
+  "zustand": ["neu", "gebraucht"],
+  "stil": ["modern", "klassisch", "japanisch", "einfach"],
+  "raster": [
+    "########################",
+    "########################",
+    "########################",
+    "#......................#",
+    "#......................#",
+    "#......................#",
+    "#......................#",
+    "#......................#",
+    "#......................#",
+    "#......................#",
+    "#......................#",
+    "#......................#",
+    "#......................#",
+    "############.###########"
+  ],
+  "objekte": [
+    {
+      "moebel": "sb5Aufzug",
+      "feld": [5, 1],
+      "an_wand": true
+    },
+    {
+      "moebel": "sb5Bildschirm",
+      "feld": [16, 0],
+      "an_wand": true
+    },
+    {
+      "moebel": "sb5Vitrine",
+      "feld": [11, 5]
+    },
+    {
+      "moebel": "sb5Empfang",
+      "feld": [15, 5]
+    },
+    {
+      "moebel": "sb5SofaB",
+      "feld": [3, 6]
+    },
+    {
+      "moebel": "sb5Sessel",
+      "feld": [3, 9]
+    },
+    {
+      "moebel": "sb5Topfpflanze",
+      "feld": [1, 3]
+    },
+    {
+      "moebel": "sb5Topfpflanze",
+      "feld": [21, 3]
+    },
+    {
+      "moebel": "sb5Topfpflanze",
+      "feld": [1, 10]
+    },
+    {
+      "moebel": "sb5Topfpflanze",
+      "feld": [21, 10]
+    },
+    {
+      "moebel": "sb5Fussmatte",
+      "feld": [12, 12],
+      "versatz": [0, 8]
+    },
+    {
+      "moebel": "sb5Tuer",
+      "feld": [12, 13]
+    }
+  ],
+  "ausloeser": [
+    {
+      "name": "start",
+      "feld": [12, 12],
+      "eigenschaften": {
+        "richtung": "oben"
+      }
+    },
+    {
+      "name": "lobbyAusgang",
+      "feld": [12, 13]
+    },
+    {
+      "name": "vitrineHale",
+      "feld": [12, 8]
+    }
+  ],
+  "figuren": [
+    {
+      "name": "empfangsroboter",
+      "feld": [18, 4]
+    }
+  ],
+  "belebung": [
+    {
+      "name": "besuchergruppe",
+      "typ": "statist",
+      "feld": [7, 10],
+      "eigenschaften": {
+        "von": "7,10",
+        "bis": "10,10",
+        "tun": "Besuchergruppe mit Namensschildern wartet auf die Führung",
+        "wann": "tag"
+      }
+    }
+  ],
+  "variante": "b"
+}

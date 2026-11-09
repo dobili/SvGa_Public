@@ -1,0 +1,156 @@
+{
+  "karte": "siliconBay.lobby",
+  "datei": "karten/varianten/silicon-bay-lobby-c.json",
+  "art": "innen",
+  "wand": "hellgrau",
+  "boden": "stein",
+  "beschreibung": "Variante C (reicher): Drei Aufzüge, eine lange Zeitleiste auf drei Bildschirmen, in der Mitte eine kleine Ausstellung: die Hale-Vitrine zwischen zwei Sockeln mit Vasen. Rechts der Empfangstresen mit dem Roboter, davor zwei Kübelpflanzen; links eine Lounge mit Sofa, Tisch und zwei Sesseln. Pflanzen in allen Ecken.",
+  "zustand": ["neu", "gebraucht"],
+  "stil": ["modern", "klassisch", "japanisch", "einfach"],
+  "raster": [
+    "########################",
+    "########################",
+    "########################",
+    "#......................#",
+    "#......................#",
+    "#......................#",
+    "#......................#",
+    "#......................#",
+    "#......................#",
+    "#......................#",
+    "#......................#",
+    "#......................#",
+    "#......................#",
+    "############.###########"
+  ],
+  "objekte": [
+    {
+      "moebel": "sb5Aufzug",
+      "feld": [2, 1],
+      "an_wand": true
+    },
+    {
+      "moebel": "sb5Aufzug",
+      "feld": [5, 1],
+      "an_wand": true
+    },
+    {
+      "moebel": "sb5Aufzug",
+      "feld": [8, 1],
+      "an_wand": true
+    },
+    {
+      "moebel": "sb5Bildschirm",
+      "feld": [13, 0],
+      "an_wand": true
+    },
+    {
+      "moebel": "sb5BildschirmB",
+      "feld": [15, 0],
+      "an_wand": true
+    },
+    {
+      "moebel": "sb5BildschirmC",
+      "feld": [17, 0],
+      "an_wand": true
+    },
+    {
+      "moebel": "sb5Sockel",
+      "feld": [7, 9]
+    },
+    {
+      "moebel": "sb5Vitrine",
+      "feld": [10, 9]
+    },
+    {
+      "moebel": "sb5SockelB",
+      "feld": [15, 9]
+    },
+    {
+      "moebel": "sb5Empfang",
+      "feld": [15, 5]
+    },
+    {
+      "moebel": "sb5Sofa",
+      "feld": [3, 4]
+    },
+    {
+      "moebel": "sb5Tisch",
+      "feld": [3, 7]
+    },
+    {
+      "moebel": "sb5Sessel",
+      "feld": [6, 4]
+    },
+    {
+      "moebel": "sb5Sessel",
+      "feld": [6, 7]
+    },
+    {
+      "moebel": "sb5Topfpflanze",
+      "feld": [1, 3]
+    },
+    {
+      "moebel": "sb5Topfpflanze",
+      "feld": [21, 3]
+    },
+    {
+      "moebel": "sb5Topfpflanze",
+      "feld": [1, 10]
+    },
+    {
+      "moebel": "sb5Topfpflanze",
+      "feld": [21, 10]
+    },
+    {
+      "moebel": "sb5Topfpflanze",
+      "feld": [18, 10]
+    },
+    {
+      "moebel": "sb5Fussmatte",
+      "feld": [12, 12],
+      "versatz": [0, 8]
+    },
+    {
+      "moebel": "sb5Tuer",
+      "feld": [12, 13]
+    }
+  ],
+  "ausloeser": [
+    {
+      "name": "start",
+      "feld": [12, 12],
+      "eigenschaften": {
+        "richtung": "oben"
+      }
+    },
+    {
+      "name": "lobbyAusgang",
+      "feld": [12, 13]
+    },
+    {
+      "name": "vitrineHale",
+      "feld": [11, 12]
+    }
+  ],
+  "figuren": [
+    {
+      "name": "empfangsroboter",
+      "feld": [18, 4]
+    }
+  ],
+  "belebung": [
+    {
+      "name": "besuchergruppe",
+      "typ": "statist",
+      "feld": [7, 10],
+      "eigenschaften": {
+        "von": "7,10",
+        "bis": "10,10",
+        "tun": "Besuchergruppe mit Namensschildern wartet auf die Führung",
+        "wann": "tag"
+      }
+    }
+  ],
+  "variante": "c"
+}

@@ -1,6 +1,6 @@
 # Auftrag niedrig-1: Port Delacroix, Fähre/Deich und Bayou einrichten
 
-**Stand:** offen (Haupt-Chat, 09.11.2026, achtzehnter Auftrag)
+**Stand:** fertig (niedrig-1, 09.11.2026)
 
 **Zweig:** dein fester Sitzungszweig, Basis `claude/friendly-shannon-y8bf90` (vorher hereinholen, Stand c2751464)
 **Darf ändern:** `inhalte/abenteuer/karten/port-delacroix-*.json`, `inhalte/abenteuer/karten/weg-silicon-delacroix-*.json`,
@@ -15,6 +15,38 @@ Port Delacroix (Hafenstadt im Süden, nach dem Sturm im Wiederaufbau): draußen 
 Baustellenteile aus „worksite“, Boote), Turnhalle (Notunterkunft: Feldbetten, Kisten), Werkstatt
 (Werkbänke, Werkzeug), Musikhaus (Instrumente, Bühne; hier steht der Varianten-Tisch mit Schach960);
 Fähre und Deich; Bayou mit Steg (Wasser, Steg, Schilf; Serene Village hat Teiche und Stege).
+
+## Bericht
+
+Zweig: `abenteuer-aufgabenzuordnung` (vor dem Push erneut hereingeholt, ohne Konflikt). Neu in
+`moebel.json`, alle mit Vorsilbe `pd`: `pdFeldbett` (16 × 32), `pdKlavier` (32 × 48),
+`pdSchlagzeug` (32 × 32), `pdGitarrenkoffer` (32 × 32), `pdBoot` (Ruderboot, 64 × 32), `pdEimer`
+(16 × 16), `pdSeil` (16 × 16), `pdWerkzeugregal` (48 × 32). Wiederverwendet: `iwFass`,
+`iwFassGross`, `laterne`, `kisteRot`. Kein Möbel verstellt Auslöser, Figuren oder Laufwege (ein
+Leitkegel auf dem Platz des Reihers wurde wieder entfernt).
+
+Bildschirmfotos (je ein Satz):
+
+- **Fähre:** Fässer an Deck statt Lampen und Kistenstapel, ein Tau am Weg; der Schiffskoch frei
+  erreichbar.
+- **Deich:** Laterne am Deich, ein Eimer neben den Sandsäcken (die Säcke bleiben Kisten, im
+  Register gibt es keine).
+- **Port Delacroix draußen:** Ruderboot und Tau am Kai bei Mr. Batiste, Eimer an der Baustelle
+  vor dem Musikhaus, Laterne vor der Turnhalle; die Zelte bleiben Kistenblöcke (keine Zelte als
+  Einzelbild).
+- **Turnhalle:** vier Feldbetten an den Wänden, eine Kiste mit Hilfsgütern, die Spieltische bleiben.
+- **Werkstatt:** zwei Klaviere, Werkzeugregal mit Gießkannen und Pflanze; Werkbank bleibt Auslöser.
+- **Musikhaus:** Klavier, Schlagzeug und ein Gitarrenkoffer, eine Kiste mit geretteten Sachen;
+  der Bläser steht vor dem Schlagzeug.
+- **Bayou:** ein Ruderboot am Steg.
+
+Prüfungen: 624 Pipeline-Tests bestanden (3 Simulationen übersprungen), Prettier, Paketbau und
+`npm run build` sauber, Oberflächentests Abenteuer (Chromium) 9 von 9 bestanden.
+
+Befund für den Haupt-Chat: Auf Fähre, Deich und Bayou zeigen die Kachelsätze dort, wo Wasser sein
+soll (Wandkacheln am Rand), Gras; Wasser, Schilf und Stege aus `SERENE_VILLAGE_REVAMPED` sind
+Kachelsätze und brauchen einen Wasser-Stil im Kachelsatz, nicht Möbel. Den Varianten-Tisch im
+Musikhaus gibt es in `orte.json` nicht als Auslöser; deshalb nicht gesetzt.
 
 ## Bericht des letzten Auftrags, zur Nachlese
 

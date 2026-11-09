@@ -43,4 +43,4 @@ def test_katalogbefund_meldet_bauteil_und_unsicheres():
     assert "nicht beschrieben" in katalogbefund("x", {"ganz": True})
     assert "Bauteil" in katalogbefund("x", {"beschreibung": "Bank", "ganz": False, "gegenstuecke": "rechts"})
     assert "unsicher" in katalogbefund("x", {"ganz": True, "sicher": 0.5, "beschreibung": "Kiste"})
-    assert katalogbefund("x", {"ganz": True, "sicher": 0.5, "korrektur": "Opus"}) is None
+    assert katalogbefund("x", {"beschreibung": "Kiste", "sicher": 0.5, "korrektur": "Opus"}) is None

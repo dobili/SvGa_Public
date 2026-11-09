@@ -1,207 +1,265 @@
-# Cedar Creek und die Landstraße
+# Cedar Creek und der Weg dorthin
 
-Stand: 9.11.2026. Ortsdokument nach dem Verfahren in `docs/spiel/orte/README.md`: Ortsplan,
-Ortsbild, Abgleich mit der Geschichte, Bühnenbilder. Es umfasst Cedar Creek (Ort 2) und den Weg
-von Maple Falls dorthin (`wegMapleCedar`, Landstraße und Flussweg). Quellen: `05_Story_Bibel.md`
-(Abschnitte 2.8, 2.10, 3.2, Szenen 14 bis 25, Route 2 in 10.1), `09_Weltbeschreibung.md` (5.2,
-5.3, Belebung in `inhalte/abenteuer/szenen/`), `ortsprofile.json`, `KARTENREGELN.md`, `orte.json`
-(Übergänge), die heutigen Szenen in `inhalte/abenteuer/szenen/` und die Übergangsprüfung
-(`python -m pipeline.abenteuer.uebergaenge`). Die Bühnenbilder folgen nach der Durchsicht des
-Musters (Maple Falls).
+Stand: 9.11.2026, überarbeitet nach dem Prüfbericht `docs/spiel/pruefberichte/2026-11-09_akt1_wegenetz.md`
+(Befunde 5, 6, 11, 22, 28, 29). Ortsdokument nach dem Verfahren in `docs/spiel/orte/README.md`:
+Ortsplan, Ortsbild, Abgleich mit der Geschichte, Bühnenbilder. Es umfasst Cedar Creek (Ort 2) und den
+Weg von Maple Falls dorthin (`wegMapleCedar`: Landstraße, Flussweg und der Zedernpfad Q1). Maßstab:
+`KARTENREGELN.md` 7a.2 (Pokémon mal 1,5 bis 2). Leben, Figuren und kleine Aufgaben kommen aus
+`12_Akt1_Leben.md` (mittel-1), Sperren und Rückkehr aus `13_Wegenetz.md`. Quellen: `05_Story_Bibel.md`
+(2.8, 2.10, 3.2, Szenen 14 bis 25, Route 2 in 10.1), `09_Weltbeschreibung.md` (5.2, 5.3),
+`ortsprofile.json`, `orte.json`, die heutigen Szenen in `inhalte/abenteuer/szenen/` und die
+Übergangsprüfung (`python -m pipeline.abenteuer.uebergaenge`). Die Bühnenbilder folgen nach der
+Durchsicht des Musters (Maple Falls).
 
 ## 1. Ortsplan
 
 Norden ist oben, auf allen Karten. Die Reise geht von Westen nach Osten: Maple Falls (Park) →
-Landstraße → Flussweg → Cedar Creek → (ab Akt 2) Zedernwald nach Riverton. Der Fluss von Maple
-Falls begleitet den Weg im Süden; hinter der Kuhweide der Landstraße biegt er nach Süden aus und
-kommt am Flussweg zurück. Der Bach von Cedar Creek ist ein eigenes Gewässer: Er kommt im Norden aus
-den Zedern, fließt am Ostrand des Ortes nach Süden und mündet südlich der Karte in den Fluss.
+Landstraße → Flussweg → Cedar Creek → (ab Akt 2) Zedernwald nach Riverton. Der Zedernpfad (Q1) ist
+die Abkürzung über die Hügelkuppe im Norden.
 
-### 1.1 Der Weg: Landstraße und Flussweg (`wegMapleCedar`)
+**Der Fluss** (Entscheidung zu Befund 5, abgestimmt mit `orte/maple-falls.md`): Er läuft im Park von
+Maple Falls am Nordrand (Reihen 0–3), biegt ab Spalte 30 nach Süden ab, wird von der Parkstraße auf
+einer Brücke (Spalten 31–34) gekreuzt und verlässt den Park am Ostrand in den Reihen 20–23, südlich
+der Straße (Park nach `orte/maple-falls.md`, mit mittel-1 abgestimmt). Auf der Landstraße und
+dem Flussweg begleitet er den Weg im Süden und reicht dort über West-, Ost- und Südrand. **Der Bach**
+von Cedar Creek ist ein eigenes Gewässer: Er kommt im Norden aus den Zedern, fließt am Ostrand des
+Ortes nach Süden und mündet südlich der Karte in den Fluss.
 
-```
-                                        N
- ┌──── mapleFalls.park (30 × 20) ────┐┌──────── wegMapleCedar.landstrasse (34 × 22) ────────┐┌──── wegMapleCedar.flussweg (28 × 20) ────┐
- │ Kiosk, Ahorn                       ││ Kornfeld bis an den West-, Nord- und Ostrand          ││ Ahorn und Erlen in Gruppen, Büsche        │
- │                                    ││ Vogelscheuche · Traktor am Gatter · Büsche (Fund)     ││ Fund Münzen unter dem Baum                │
- │                                    ││ ── Zaun ──────[Gatter]─── Zaun ───────────────────── ││                                           │
- │ ══ Parkstraße (Reihen 9–10) ══════ ╪╪═ Feldweg (Reihen 9–10) ══ Abzweig ═══════════════════╪╪═ Uferweg (Reihen 9–10) ══════════════ ╪═► Cedar Creek
- │ Bänke, Haltestelle (Bus)           ││ Tafel + Ortsschild „Maple Falls“ · Wegweiser am Abzweig││ Bank (Rast) · Ortsschild „Cedar Creek“     │
- │                                    ││ ── Zaun Kuhweide ──     Heuhaufen · Bank (Nia) · Bäume ││ ─── Ufer ──── Steg ─────────────────────── │
- │ ~~~~~ Fluss, Uferweg ~~~~~~~~~~~~~ ││ Kuhweide bis zum Südrand                               ││ ~~~~~~ Fluss bis West-, Ost-, Südrand ~~~~ │
- └────────────────────────────────────┘└────────────────────────────────────────────────────────┘└───────────────────────────────────────────┘
-```
+### 1.1 Landstraße (`wegMapleCedar.landstrasse`, 120 × 30)
 
-**Landstraße (34 × 22, wie heute).**
-
-- **Feldweg** aus Erde mit weichen Rändern und Grasbüscheln (Regel 9.6.1), **zwei Felder breit**,
-  Reihen 9 und 10, durchgehend von Westrand zu Ostrand. Er setzt die Parkstraße fort, die im Park
-  ebenfalls in den Reihen 9 und 10 liegt.
-- **Nördlich:** Kornfeld von Reihe 1 bis 7, reicht an West-, Nord- und Ostrand (Regel 6.3). Zaun in
-  Reihe 8 über die ganze Breite, mit **Gatter** in den Spalten 12 und 13. Dort zweigt ein schmaler
-  Feldweg nach Norden ab (zur Hofeinfahrt außerhalb der Karte): das ist die einzige Kreuzung, und
-  nur hier steht der **Wegweiser** (Maple Falls ←, Cedar Creek →, Hof ↑; Regel 5.8). Der
-  **Traktor** steht innen am Gatter (14, 6), die Vogelscheuche im Feld (6, 3). Die dichten
-  **Büsche** mit dem Fund (`fundFormular`) stehen am Ostende des Feldes (26–30, 3–7), mit einer
-  Lücke von oben.
-- **Südlich:** Am Ortsausgang links die **Rätseltafel** mit Dach (`tafel`, 2–3, 11) und daneben das
-  Ortsschild „Maple Falls“ mit der Rückseite zum Betrachter, wie ein Ortsausgangsschild. Ab Spalte 5
-  der Zaun der **Kuhweide** (Reihe 12), die Weide reicht bis zum Südrand, Kühe darin. Ostwärts
-  Heuhaufen (22, 12), die **Bank** direkt am Weg (25, 11) mit Blick nach Norden über das Feld, Nia
-  daneben (`gegnerin`, 27, 11), zwei Laubbäume südlich der Bank.
-- **Wanderer** (`wanderer`) auf dem Weg unterwegs, um Spalte 15.
-
-**Flussweg (28 × 20, wie heute).**
-
-- **Uferweg** aus Erde, zwei Felder breit, Reihen 9 und 10, von Westrand zu Ostrand.
-- **Südlich:** Uferkante in Reihe 13, der **Fluss** von Reihe 14 bis zum Südrand und über West- und
-  Ostrand hinaus (Regel 6.4). Die **Rastbank** (`rast`, 15, 11) steht direkt am Weg und schaut nach
-  Süden auf das Wasser (Regel 5.7, Aussicht). Ein **Steg** beginnt am Ufer bei Spalte 21 und ragt
-  bis Reihe 17 ins Wasser, auf Pfählen (Regel 9.7.4); ein Angler sitzt darauf. Schilf und Steine am
-  Ufer, der Reiher im seichten Wasser.
-- **Nördlich:** Ahorne und Erlen in Gruppen von drei bis fünf, Büsche, Wildblumen; der Fund
-  `fundMuenzen` unter einem Baum (10, 6), vom Weg aus erreichbar.
-- **Ortsschild** „Cedar Creek, gegr. 1851“ (`schildCedar`) am Ostende südlich des Weges (25, 11),
-  Schrift zum Betrachter.
-
-### 1.2 Cedar Creek (`cedarCreek`)
+Abschnitte zu je 15 Spalten über die ganze Höhe (etwa ein Querformat-Bildschirm breit). Der Feldweg
+(Erde, weiche Ränder mit Grasbüscheln, Regel 9.6.1) ist am Westrand **drei Felder breit** (Reihen 15–17,
+wie die Parkstraße), wird hinter dem Abzweig in L4 zum zwei Felder breiten Weg und windet sich
+zwischen den Reihen 13 und 17: eine Kurve nach Norden in L2, eine nach Süden in L6, am Ostrand
+Reihen 15–16. Der Fluss tritt am Westrand in den Reihen 20–23 ein (drei Reihen Abstand zur Straße)
+und schwenkt in L2 nach Süden bis an den Südrand (Reihen 26–29); so entsteht zwischen Weg und Fluss
+Platz für Kuhweide und Obstwiese. Laufzeit des Hauptwegs etwa 125 Kacheln, gut 35 s.
 
 ```
-                                              N
- ┌─────────────────────────────── cedarCreek.aussen (44 × 24) ────────────────────────────────┐
- │ Zedern (Waldrand, dicht)                                                       │~ Bach ~│ Z│
- │                                                                                │        │ e│
- │  [Waschsalon 7]   L   [Bibliothek 9, Turm, Treppe, Laternen]     Zedern       ─Brücke══════╪═► Zedernwald (ab Akt 2)
- │                                                                                │        │ d│
- │ ─ Gehweg Nord ─────────────────────────────────────── Tafel·Plakat ─[Halt.]─ U │ ═Steg  │ e│
- │ ═ Hauptstraße (Reihen 16–17) ═════════════════════════════════ Wendeplatz ═══ f │        │ r│
- │ ─ Gehweg Süd ─────────────────────────────────────────────────────────────── e │        │ n│
- │  [Haus 1]  [Haus 2]   Wiese mit roten Zedern · Bank zum Bach                  r │        │  │
- └────────────────────────────────────────────────────────────────────────────────┴────────┴──┘
- ▲ Westrand: Hauptstraße ↔ Flussweg                                    Bach oben und unten bis zum Rand
+          N
+ Spalte:  0        15        30        45        60        75        90       105      120
+ Reihe 0  ┌─────────┬─────────┬─────────┬────╥────┬─────────┬─────────┬─────────┬─────────┐
+          │ Feld der Brennans (Korn) bis Nord-   ║Feldweg│ Millers Mais bis Nord- und Ostrand │
+          │ und Westrand · Vogelscheuche · Krähen║zu N1 │            Büsche (fundFormular) │
+ Reihe 11 │──Zaun────────────────────────────[Gatter S1]──Zaun──────────────────────────────│
+ Reihe 15 ═Feldweg (R15–17)╗          ╔════════════╩Wegweiser═══════════╗         ╔════════════════════ Ostrand → Flussweg
+ Reihe 16 ═════════╝  Kurve   ╚═══════════════════════════════  ╚═Kurve═══╝
+          │Tafel+Ortsschild│ Kuhweide (Millers Kühe) │Apfelstand·Schuppen│ Heuhaufen·Bank(Nia)│
+          │ „Maple Falls“  │ Weidetor               │ Obstwiese Brennan  │ Laubbäume          │
+ Reihe 25 │~~~~~~~~~~~~~~~~ Ufer ~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~│
+ Reihe 29 │~~~~~~~~~~~~~~~~~~~~~~~~~~~ Fluss (West-, Ost-, Südrand) ~~~~~~~~~~~~~~~~~~~~~~~~~~│
+          └─────────┴─────────┴─────────┴─────────┴─────────┴─────────┴─────────┴─────────┘
+           L1        L2        L3        L4        L5        L6        L7        L8
 ```
 
-**Außen (44 × 24, wie heute).**
+| Abschnitt (Spalten)   | Thema                    | Inhalt (Bestehendes in Klammern)                                                                                                                                                                                                   | Zum Entdecken                          |
+| --------------------- | ------------------------ | ---------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------- | -------------------------------------- |
+| L1 (0–15) Ortsausgang | Abschied von Maple Falls | (Rätseltafel mit Dach `tafel`, 3–4 × 18), Ortsschild „Maple Falls“ (Rückseite zum Betrachter, 6 × 18); südlich nah der Fluss (Reihen 20–23) mit Schilf; Feld der Brennans beginnt im Norden                                        | Tafel (Torwächter für S1)              |
+| L2 (15–30) Kuhweide   | Weide am Fluss           | Weg kurvt nach Norden (Reihen 13–14); südlich die **Kuhweide** (Reihen 19–24) mit Weidetor „Bitte schließen“ (`weidetor`); darin die ausgebüxten Kühe vom Kürbishof Miller                                                         | Kühe (N1), Weidetor                    |
+| L3 (30–45) Kornfeld   | Feld der Brennans        | im Norden Korn bis zum Rand (Regel 6.3), Vogelscheuche im Feld; Otis mit dem Traktor am Feldrand am Weg                                                                                                                            | Krähen, Otis                           |
+| L4 (45–60) Abzweig    | Kreuzung, Herz des Weges | einzige Kreuzung: nach Norden der Feldweg zum Kürbishof (Gatter S1 in Reihe 11, Spalten 52–53), dort der **Wegweiser** (Maple Falls ←, Cedar Creek →, Hof Miller ↑); südlich gegenüber **Apfelstand** mit Ada, Schuppen, Obstwiese | Gatter S1, Apfelstand (N-W1), Schuppen |
+| L5 (60–75) Mais       | Millers Mais             | nördlich hinter dem Abzweig Millers Mais bis Nord- und Ostrand; (Wanderer) auf dem Weg; im Graben das Hufeisen                                                                                                                     | **Hufeisen** (`fundHufeisen`)          |
+| L6 (75–90) Rast       | Pause am Heuhaufen       | Weg kurvt nach Süden (Reihen 16–17); Heuhaufen, (Bank direkt am Weg, Blick über den Mais; Nia daneben `gegnerin`), zwei Laubbäume, einer schon rot                                                                                 | Nia (Straßengegnerin)                  |
+| L7 (90–105) Büsche    | Versteck am Feldrand     | (dichte Büsche am Ende des Maisfelds mit Lücke von oben, `fundFormular`)                                                                                                                                                           | **Partieformular**                     |
+| L8 (105–120) Ausblick | Übergang zum Flussweg    | Hase am Feldrand, Tessa läuft vorbei; am Ostrand sieht man schon Erlen am Fluss                                                                                                                                                    | Sichtachse auf die Erlen               |
 
-- **Hauptstraße**, asphaltiert, **zwei Felder breit**, Reihen 16 und 17. Sie kommt am Westrand vom
-  Flussweg und endet im Osten an einem **Wendeplatz** (Spalten 28 bis 33), vor dem Uferweg. Gehweg
-  Nord in Reihe 15, Gehweg Süd in Reihe 18, mit Bordsteinkanten auf beiden Seiten (Regel 5.2 und
-  9.2.1), beide bis zum Westrand und um den Wendeplatz herum.
-- **Nordseite der Straße** (Fassaden mit Türen unten, Reihe 14):
-  - **Waschsalon** (Spalten 2 bis 8, Fassade 7), Neonschild, rot-weiße Markisen, Tür bei Spalte 5;
-    davor der Hund.
-  - Zwischen Waschsalon und Bibliothek eine **Laterne** am Gehweg (Regel 9.4.1).
-  - **Bibliothek** (Spalten 12 bis 20, Hauptbau 9 breit, mittig ein schiefergedeckter Turm),
-    Backstein, Bogenfenster, Treppe mit drei Stufen zur hölzernen Doppeltür im Turm (Spalte 16),
-    links und rechts der Treppe je eine Laterne (Regel 9.3.4). Das größte Gebäude des Ortes.
-  - Östlich der Bibliothek Zedern, dann am Gehweg die hölzerne **Anschlagtafel** mit Zetteln vom
-    Gemeindefest und dem Plakat von Perfect Move (`plakat`, 31, 14) und die **Bushaltestelle** mit
-    Wartehäuschen an der Bordsteinkante des Wendeplatzes (`bushaltestelle` und `busZurueck`, 32,
-    15), offene Seite zum Gehweg (Regel 9.4.4). Im Häuschen die Bank, auf der Victor sitzt.
-- **Südseite der Straße:** zwei kleine **Wohnhäuser** aus Holz (Spalten 3 bis 8 und 11 bis 16) mit
-  Vorgarten, Zaun ringsum, Pforte zum Gehweg Süd, Plattenweg zur Tür in der Nordfassade,
-  Briefkasten außen an der Pforte (Regeln 9.3.1 und 9.3.2); nicht begehbar. Östlich davon eine
-  **Wiese mit roten Zedern** in lockeren Gruppen bis zum Südrand und eine Bank am Uferweg mit Blick
-  auf den Bach.
-- **Bach** (Spalten 37 bis 41) von Nord- bis Südrand, Uferkante beidseitig, Schilf am Westufer.
-  Westlich davon ein **Uferweg** aus Erde (Spalten 35 und 36) von Norden bis zum Südrand, der am
-  Wendeplatz an die Straße anschließt. Der **Steg** (`steg`) beginnt am Westufer in Reihe 12 und
-  ragt bis Spalte 40 ins Wasser; Rosa angelt an seinem Ende, ein Mann erneuert Bretter.
-- **Ostufer und Brücke:** Östlich des Baches ein schmaler Streifen Zedernwald (Spalten 42 und 43).
-  Eine **Holzbrücke** quer über den Bach in den Reihen 6 und 7 verbindet den Uferweg mit dem
-  Ostufer, ein Waldweg (zwei Felder breit) führt von dort über den **Ostrand** in den Zedernwald
-  (`zedernwald`, erst nach `endeAkt1Gesehen`; bis dahin steht ein Schild „Weg gesperrt,
-  Brückenarbeiten“ an der Brücke). So beginnt der Weg nach Riverton „ab dem Steg, am Bach entlang“
-  (Bibel 10.1), und der Bach bleibt oben und unten offen bis zum Rand.
+Besitz und Lage (Befund 11): Nordwesten Feld der Brennans (Vogelscheuche, Traktor), Nordosten hinter
+dem Abzweig Millers Mais, Süden die Kuhweide (Millers Kühe sind hineingelaufen) und die Obstwiese
+der Brennans mit dem Apfelstand am Abzweig. Ränder: Norden Feld und Mais, Süden Fluss, Westen und
+Osten nur der Weg.
 
-### 1.3 Gebäude und Maße
+### 1.2 Flussweg (`wegMapleCedar.flussweg`, 120 × 30)
 
-| Gebäude                | Außen (Fassade, Kacheln)                                                                       | Innen                                                            | Begehbar |
-| ---------------------- | ---------------------------------------------------------------------------------------------- | ---------------------------------------------------------------- | -------- |
-| Bibliothek (1890)      | Backstein, Hauptbau 9 breit mit Turm in der Mitte, Doppeltür im Turm bei Spalte 5 von 9 (50 %) | Lesesaal `bibliothek` 18 × 14, Tür Südwand Spalte 9 (50 %)       | ja       |
-| Archiv (Keller)        | – (unter dem östlichen Teil der Bibliothek)                                                    | `archiv` 14 × 11, liegt unter den Spalten 4 bis 17 des Lesesaals | ja       |
-| Waschsalon Mr. Boateng | Flachbau mit Schaufenstern, Fassade 7, Tür bei Spalte 4 von 7 (50 %)                           | `waschsalon` 14 × 11, Tür Südwand Spalte 7 (50 %)                | ja       |
-| Wohnhaus 1 und 2       | Holz, je Fassade 6, Tür in der Nordfassade zur Straße                                          | –                                                                | nein     |
-| Bushaltestelle         | Wartehäuschen 3 breit am Wendeplatz                                                            | –                                                                | Kulisse  |
+Der Uferweg (Erde, zwei Felder) läuft am Westrand in den Reihen 15–16 an, folgt dem Fluss mit zwei
+Bögen nach Süden (F3 und F5, bis Reihe 18) und steigt am Ende wieder auf die Reihen 15–16. Der Fluss
+liegt südlich (Uferkante ab Reihe 20, Wasser bis zum Süd-, West- und Ostrand). Nördlich Erlen und
+Ahorne in Gruppen. Reihenfolge der Stationen nach Befund 29: Münzen, Fährstelle, Rastbank, Steg.
+Laufzeit etwa 125 Kacheln, gut 35 s.
 
-Regel wie in Maple Falls: Die Fassade ist halb so breit wie das Erdgeschoss innen, die Tür sitzt
-außen und innen an derselben relativen Stelle (±1 Kachel). Treppen liegen übereinander: Die
-Kellertreppe der Bibliothek liegt in der Nordostecke (Spalte 15), deshalb liegt die Treppe im Archiv
-bei Spalte 11 (15 − 4) an der Nordwand. Heute liegt sie in der Nordwestecke (Spalte 2); das ändert
-das Bühnenbild.
+| Abschnitt (Spalten)      | Thema              | Inhalt                                                                                                                                              | Zum Entdecken      |
+| ------------------------ | ------------------ | --------------------------------------------------------------------------------------------------------------------------------------------------- | ------------------ |
+| F1 (0–15) Erlen          | Schatten am Wasser | Erlen über dem Wasser, Nebel als Belebung am Morgen (feste Tönung je Szene, keine Uhrzeit)                                                          | Nebel, Libellen    |
+| F2 (15–30) Baumgruppe    | Fund unter Bäumen  | Baumgruppe nördlich des Weges, darunter die Münzen (`fundMuenzen`)                                                                                  | **Münzen**         |
+| F3 (30–45) Fährstelle    | alte Fähre         | **Abzweig** zum Ufer (3 Felder lang): Stein der Fährleute (`faehrstein`, N-W2), Fährpfosten (`faehrpfosten`)                                        | Fährstein, Pfosten |
+| F4 (45–60) Rastbank      | Aussicht           | (Rastbank `rast` direkt am Weg, Blick nach Süden auf das Wasser), Reiher im Schilf                                                                  | Aussicht, Reiher   |
+| F5 (60–75) Steg          | Angler             | **Abzweig** zum Steg; (Steg auf Pfählen, beginnt am Ufer, ragt bis Reihe 25 ins Wasser) mit Silas (heute Statist Angler)                            | Silas, Steg        |
+| F6 (75–90) Ufer          | Picknickstelle     | am Ufer der Korken mit eingebranntem Springer (`fundKorken`)                                                                                        | **Korken**         |
+| F7 (90–105) Wiese        | Blumen             | Wildblumen, Schmetterlinge, Tessa                                                                                                                   | Schmetterlinge     |
+| F8 (105–120) Ortseingang | Ankunft            | (Ortsschild „Cedar Creek, gegr. 1851“ `schildCedar`, südlich des Weges, Schrift zum Betrachter); Sichtachse auf den Bibliotheksturm über den Zedern | Ortsschild, Turm   |
 
-### 1.4 Übergänge
+### 1.3 Zedernpfad (Q1, `wegMapleCedar.zedernpfad`, neu, 100 × 24)
 
-| Von (Karte, Auslöser, Feld)                                 | Nach (Karte, Auslöser, Feld)                                   | Lage                                                                                                                 |
-| ----------------------------------------------------------- | -------------------------------------------------------------- | -------------------------------------------------------------------------------------------------------------------- |
-| mapleFalls.park `landstrasse` (Ostrand, Reihen 9–10)        | landstrasse `zurueckPark` (Westrand, Reihen 9–10)              | Parkstraße und Feldweg je **zwei** Felder breit, gleiche Reihen.                                                     |
-| landstrasse `weiterFluss` (Ostrand, Reihen 9–10)            | flussweg `zurueckLandstrasse` (Westrand, Reihen 9–10)          | Feldweg geht in den Uferweg über, je zwei Felder.                                                                    |
-| flussweg `weiterCedar` (Ostrand, Reihen 9–10)               | cedarCreek.aussen **`flussweg`** (Westrand, Reihen 16–17), neu | Uferweg geht in die Hauptstraße über, je zwei Felder. Heute führt `weiterCedar` zur Bushaltestelle: ändern.          |
-| mapleFalls.park `bushaltestelle` (Dialog, Reise)            | cedarCreek.aussen `bushaltestelle` (32, 15)                    | Busfahrt; Ankunft an der Haltestelle (Szene 14).                                                                     |
-| cedarCreek.aussen `busZurueck` (Dialog, Reise)              | mapleFalls.park `bushaltestelle`                               | Busfahrt zurück.                                                                                                     |
-| aussen `bibliothekTuer` (Doppeltür im Turm, Spalte 16)      | bibliothek `bibliothekAusgang` (Südwand, Spalte 9)             | Hinein nach Norden, Ankunft an der Südwand.                                                                          |
-| bibliothek `kellertreppe` (Tür in der Nordwand, Spalte 15)  | archiv `kellerAusgang` (Treppe an der Nordwand, **Spalte 11**) | Treppen übereinander; oben führt die Treppe nach unten, unten nach oben (Regel 2.4).                                 |
-| aussen `waschsalonTuer` (Spalte 5)                          | waschsalon `waschsalonAusgang` (Südwand, Spalte 7)             | Hinein nach Norden.                                                                                                  |
-| aussen `zedernwald` (Ostrand hinter der Brücke, Reihen 6–7) | wegCedarRiverton.zedernwald `zurueckCedar` (Westrand)          | Waldweg je zwei Felder; nur nach `endeAkt1Gesehen`. Heute liegt `zedernwald` am **Westrand**: auf den Ostrand legen. |
+Abkürzung über die Hügelkuppe, Befunde 22 und 28. Der Pfad (Erde, zwei Felder) beginnt am **Südrand**
+bei den Spalten 10–11 (Anschluss an den Nordrand des Parks von Maple Falls bei den Spalten 10–11,
+hinter dem Fußsteg über den Fluss im Nordwesten des Parks; daneben der Steg S5), steigt durch Zedern nach Nordosten zur **Kuppe** (Spalten 55–65,
+Reihen 3–8) und fällt zum **Ostrand** in den Reihen 4–5 ab (Anschluss an den Nordwesten von Cedar
+Creek). Länge etwa 105 Kacheln, etwa 29 s.
 
-**Was die Übergangsprüfung heute meldet** (Stand 9.11.2026) und wie es passen soll:
+- **Stamm** (Sperre S2) quer über den Pfad bei Spalte 45, also auf der **Maple-Falls-Seite** der
+  Kuppe; von dort sieht man die Kuppe. Im Park steht am Fußsteg nur das Schild „Sturmschaden“
+  (`schildZedernpfad`, verschwindet nach der Öffnung; `orte/maple-falls.md`).
+- **Kuppe** mit Bank (`aussichtKuppe`): Blick auf beide Orte und die Brückenbaustelle nach Riverton.
+  Von Cedar Creek aus von Anfang an erreichbar.
+- Fund „Zedernzapfen mit Initialen“ an der Kuppe; Abschnitte zu je etwa 15 Spalten mit Zedern,
+  Felsen, Pilzen und einem Specht als Belebung.
 
-1. `mapleFalls.park landstrasse` ↔ `wegMapleCedar.landstrasse zurueckPark`: Weg ungleich breit
-   (2 ↔ 1). Soll: Feldweg der Landstraße zwei Felder breit in den Reihen 9 und 10 (heute ein Feld in
-   Reihe 11).
-2. `mapleFalls.aussen park` ↔ `mapleFalls.park park`: ungleich breit (1 ↔ 2). Gehört zu Maple Falls;
-   Soll dort: Birch Lane zwei Felder (siehe `maple-falls.md`).
-3. Nicht gemeldet, aber falsch: Der Flussweg endet heute an der Bushaltestelle statt am Westrand
-   von Cedar Creek, und der Zedernwald liegt am selben Westrand wie die Ankunft vom Flussweg. Mit
-   dem Plan oben kommt man von Westen an und verlässt den Ort nach Osten.
+### 1.4 Cedar Creek (`cedarCreek.aussen`, 56 × 36)
 
-Änderungen in `orte.json`, die der Plan voraussetzt (für den Haupt-Chat): neuer Auslöser
-`flussweg` auf `cedarCreek.aussen` (Übergang zum Flussweg, Gegenstück von `weiterCedar`; der Dialog
-`cedar-creek-aussen.ankunft_zu_fuss` bleibt an `weiterCedar`); `weiterCedar.ziel` auf
-`{karte: cedarCreek.aussen, ausloeser: flussweg}`.
+Abschnitte zu je 14 × 12 Kacheln (vier Spalten, drei Reihen: A Nord, B Mitte, C Süd).
+
+```
+                                                   N
+ Spalte:  0            14            28            42         56
+ Reihe 0  ┌────────────┬────────────┬────────────┬──┬────────┬──┐
+  Westrand│Q1 Zedernpfad (R4–5)                 │U │ ~Bach~ │Z │
+ R4–5 ════╗ Zedernwiese, Pfad nach SO           │f │        │e │
+          ║                       Zedern        │e │══Brücke════╪═ Ostrand R8–9 → Zedernwald (Akt 2)
+ Reihe 12 ├──╨─────────┼────────────┼────────────┤r │        │d │
+          │[Drechslerei 8][Waschs. 7][Bibliothek 11, Turm]  │w │═Steg   │e │
+          │   Tür 6    L  Tür 15   L Tür 25 L Bücherk. Tafel│e │        │r │
+ Reihe 19 │── Gehweg Nord ──────────────────────────[Halt.]──│g │        │n │
+ R20–21 ══╪═ Hauptstraße ════════════════════════ Wendeplatz══│  │        │  │
+ Reihe 22 │── Gehweg Süd ──────────────────────────────────  │  │        │  │
+ Reihe 24 ├────────────┼────────────┼────────────┤  │        │  │
+          │[Haus Süd 1 Holm][Haus Süd 2] Zedernwiese (Ast)   │  │Kanuverleih│
+          │ Zedernhecke    Pforten       Bank zum Bach       │  │ Eisvogel│  │
+ Reihe 35 └────────────┴────────────┴────────────┴──┴────────┴──┘
+                                                   Bach oben und unten bis zum Rand
+```
+
+- **Hauptstraße**, asphaltiert, zwei Felder breit, Reihen 20–21; sie kommt am Westrand vom Flussweg
+  (Auslöser `flussweg`) und endet im Osten am **Wendeplatz** (Spalten 34–40, Reihen 18–23).
+  Gehweg Nord Reihe 19, Gehweg Süd Reihe 22, Bordsteinkanten beidseitig, bis zum Westrand und um den
+  Wendeplatz herum (Regel 9.2.1). Die Straße hat eine leichte Biegung bei Spalte 30, damit der
+  Bibliotheksturm am Ende der Straße steht (Sichtachse vom Westrand).
+- **Nordseite** (Türen unten in der Fassade, Reihe 18; Treppen und Vorplätze auf dem Gehweg Nord):
+  - **Drechslerei Dunmore** (Spalten 2–9, Fassade 8, Tür Spalte 6), Holzstapel vor der Tür; neu aus 12.
+  - Laterne bei Spalte 11.
+  - **Waschsalon** (Spalten 12–18, Fassade 7, Tür Spalte 15), Neonschild, Markisen, Hund vor der Tür.
+  - Laterne bei Spalte 19; im Rinnstein der Messingknopf (`fundKnopf`).
+  - **Bibliothek** (Spalten 20–30, Hauptbau 11 breit mit Turm in der Mitte), Treppe mit drei Stufen
+    zur Doppeltür im Turm (Spalte 25), Laternen links und rechts der Treppe, Bücherkasten an der Tür
+    (`buecherkasten`), Zwillinge auf der Treppe, Schaukasten an der Fassade (Platzhalter, 13 §7.4).
+  - **Anschlagtafel** (Spalte 32, Reihe 19) mit `plakat` und `raetselDerWoche`, wechselnde Zettel je
+    Akt (Platzhalter); **Bushaltestelle** mit Wartehäuschen an der Bordsteinkante des Wendeplatzes
+    (Spalten 34–36, Reihe 19; `bushaltestelle`, `busZurueck`), offene Seite zum Gehweg; Mr. Kettering
+    mit Thermoskanne; im Häuschen die Bank, auf der Victor sitzt (Szene 21).
+- **Hinter den Häusern** (Abschnitte A1 bis A3): Zedernwiese mit lockeren Zedern; der **Zedernpfad**
+  kommt am Westrand in den Reihen 4–5 an und führt als Erdweg nach Südosten zum Gehweg Nord neben der
+  Drechslerei (Spalte 10).
+- **Südseite** (Abschnitte C1 bis C3): **Haus Süd 1** von Mrs. Holm (Spalten 3–9) mit Zedernhecke
+  (`zedernhecke`), **Haus Süd 2** (Spalten 12–18), beide mit Vorgarten, Zaun, Pforte zum Gehweg Süd,
+  Plattenweg zur Tür in der Nordfassade, Briefkasten außen an der Pforte; östlich davon die
+  **Zedernwiese** bis zum Südrand mit dem Ast (`ast`, N-CC2) und einer Bank am Uferweg mit Blick auf
+  den Bach.
+- **Uferweg** (Erde, Spalten 41–42) von Nord- bis Südrand, am Wendeplatz an die Straße angeschlossen.
+- **Bach** (Spalten 43–49) von Nord- bis Südrand, Uferkante beidseitig, Schilf am Westufer. Der
+  **Steg** (`steg`) beginnt am Westufer in Reihe 14 und ragt bis Spalte 47 ins Wasser; Rosa an seinem
+  Ende, der Stegbauer erneuert Bretter; Platz für eine zweite Angel und Eis am Ufer (Platzhalter).
+  Südlich des Stegs am Westufer der **Kanuverleih** von Hattie Quill (Spalten 37–42, Reihen 26–29,
+  Kulisse mit umgedrehtem Kanu); am Ufer südlich davon die Eisvogelfeder (`fundFeder`).
+- **Ostufer und Brücke:** Zedernwald (Spalten 50–55). Eine **Holzbrücke** quer über den Bach in den
+  Reihen 8–9; dahinter führt ein Waldweg (zwei Felder) über den **Ostrand** in den Zedernwald
+  (`zedernwald`, erst nach `endeAkt1Gesehen`; bis dahin das Schild „Weg gesperrt, Brückenarbeiten“
+  als eigenes Objekt an der Brücke).
+
+### 1.5 Gebäude und Maße
+
+| Gebäude                       | Außen (Fassade, Kacheln)                                                     | Innen (7a.2)                                                                             | Begehbar |
+| ----------------------------- | ---------------------------------------------------------------------------- | ---------------------------------------------------------------------------------------- | -------- |
+| Bibliothek (1890)             | Backstein, Hauptbau 11 breit mit Turm, Doppeltür im Turm bei 6 von 11 (50 %) | Lesesaal `bibliothek` 22 × 16 (großer Saal; heute 18 × 14), Tür Südwand Spalte 11 (50 %) | ja       |
+| Archiv (Keller)               | – (unter dem östlichen Teil der Bibliothek)                                  | `archiv` 14 × 11, liegt unter den Spalten 8 bis 21 des Lesesaals                         | ja       |
+| Waschsalon Mr. Boateng        | Flachbau, Fassade 7, Tür bei 4 von 7 (50 %)                                  | `waschsalon` 14 × 11, Tür Südwand Spalte 7 (50 %)                                        | ja       |
+| Drechslerei Dunmore (neu)     | Holz, Fassade 8, Tür bei 5 von 8 (50 %)                                      | `drechslerei` 16 × 11 (12), Tür Südwand Spalte 8                                         | ja       |
+| Haus Süd 1 (Holm), Haus Süd 2 | Holz, je Fassade 7, Tür in der Nordfassade zur Straße                        | –                                                                                        | nein     |
+| Kanuverleih                   | Bootsschuppen am Ufer, 6 breit                                               | –                                                                                        | Kulisse  |
+| Bushaltestelle                | Wartehäuschen 3 breit                                                        | –                                                                                        | Kulisse  |
+
+Die Fassade ist halb so breit wie das Erdgeschoss innen, die Tür sitzt außen und innen an derselben
+relativen Stelle (±1 Kachel). Treppen liegen übereinander: Die Kellertreppe der Bibliothek liegt an
+der Nordwand bei Spalte 19 (Nordostbereich des 22 breiten Saals), die Treppe im Archiv deshalb bei
+Spalte 11 (19 − 8).
+
+### 1.6 Übergänge
+
+| Von (Karte, Auslöser, Feld)                                          | Nach (Karte, Auslöser, Feld)                                                  | Lage                                                                                   |
+| -------------------------------------------------------------------- | ----------------------------------------------------------------------------- | -------------------------------------------------------------------------------------- |
+| mapleFalls.park `landstrasse` (Ostrand, Spalte 43, Reihen 15–17)     | landstrasse `zurueckPark` (Westrand, Spalte 0, Reihen 15–17)                  | Parkstraße und Feldweg je drei Felder, gleiche Reihen (mit mittel-1 abgestimmt)        |
+| landstrasse `weiterFluss` (Ostrand, Spalte 119, Reihen 15–16)        | flussweg `zurueckLandstrasse` (Westrand, Spalte 0, Reihen 15–16)              | Feldweg geht in den Uferweg über                                                       |
+| flussweg `weiterCedar` (Ostrand, Spalte 119, Reihen 15–16)           | cedarCreek.aussen `flussweg` (neu, Westrand, Spalte 0, Reihen 20–21)          | Uferweg geht in die Hauptstraße über; Dialog `ankunft_zu_fuss` bleibt an `weiterCedar` |
+| mapleFalls.park `zedernpfad` (neu, Nordrand, Spalten 10–11, Reihe 0) | zedernpfad `zurueckPark` (neu, Südrand, Spalten 10–11, Reihe 23)              | hinter dem Fußsteg über den Fluss; Pfad je zwei Felder                                 |
+| zedernpfad `weiterCedar` (neu, Ostrand, Spalte 99, Reihen 4–5)       | cedarCreek.aussen `zedernpfad` (neu, Westrand, Spalte 0, Reihen 4–5)          | Pfad je zwei Felder; Sperre S2 liegt westlich der Kuppe                                |
+| mapleFalls.park `bushaltestelle` (Dialog, Reise)                     | cedarCreek.aussen `bushaltestelle` (35, 19)                                   | Busfahrt                                                                               |
+| cedarCreek.aussen `busZurueck` (34, 19, Dialog, Reise)               | mapleFalls.park `bushaltestelle`                                              | Busfahrt zurück                                                                        |
+| aussen `drechslereiTuer` (6, 18)                                     | drechslerei `drechslereiAusgang` (Südwand, Spalte 8)                          | hinein nach Norden                                                                     |
+| aussen `waschsalonTuer` (15, 18)                                     | waschsalon `waschsalonAusgang` (Südwand, Spalte 7)                            | hinein nach Norden                                                                     |
+| aussen `bibliothekTuer` (25, 18)                                     | bibliothek `bibliothekAusgang` (Südwand, Spalte 11)                           | hinein nach Norden                                                                     |
+| bibliothek `kellertreppe` (Nordwand, Spalte 19)                      | archiv `kellerAusgang` (Nordwand, Spalte 11)                                  | Treppen übereinander; oben nach unten, unten nach oben (Regel 2.4)                     |
+| aussen `zedernwald` (Ostrand, Spalte 55, Reihen 8–9)                 | wegCedarRiverton.zedernwald `zurueckCedar` (Westrand, Reihen 8–9 nach Neubau) | nach der Brücke; nur nach `endeAkt1Gesehen`                                            |
+
+Änderungen in `orte.json` für den Haupt-Chat: neue Auslöser `flussweg` und `zedernpfad` auf
+`cedarCreek.aussen`, `zedernpfad` auf `mapleFalls.park`, neue Karte `wegMapleCedar.zedernpfad` mit
+`zurueckPark` und `weiterCedar`, `weiterCedar.ziel` auf den Auslöser `flussweg`, Drechslerei als neue
+Innenkarte; dazu die Auslöser aus 12 (Abschnitt 7).
+
+### 1.7 Platzhalter für die Rückkehr (13, Abschnitt 7.4)
+
+- `cedarCreek.aussen`: Schild „Brückenarbeiten“ an der Brücke (Objekt mit Bedingung); Anschlagtafel
+  mit Zetteln je Akt; zweite Angel und Eis am Ufer (Akt 3); Schaukasten an der Bibliothek (Zeitung von
+  1858 ab Akt 2); Plakat von Perfect Move überklebt ab Akt 2.
+- `cedarCreek.bibliothek`: Wand oder Vitrine für die Kopie von Hales Seite (Post-Game).
+- `cedarCreek.archiv`: dunkles Regal in einer Ecke, das erst mit Laterne etwas zeigt (R3).
+- `wegMapleCedar.landstrasse`: Gatter mit Feldweg zum Kürbishof (S1), Weidetor; Platz für die drei
+  Kühe auf der Weide (Objekte, die nach der Kuhsuche verschwinden).
+- `wegMapleCedar.zedernpfad`: der Stamm als Objekt, das nach der Clubnadel verschwindet; Holzstapel
+  vor der Drechslerei wächst danach (Mr. Dunmore nimmt das Holz mit).
 
 ## 2. Ortsbild
 
-Hinter dem Stadtpark von Maple Falls wird die Parkstraße zu einem Feldweg, und mit dem Asphalt
-endet auch das Rauschen des Wasserfalls. Hier hört man den Wind im Korn. Das Feld des Bauern reicht
-bis an den Himmel, nur eine Vogelscheuche mit verbeultem Hut steht darin, und am Gatter wartet ein
-roter Traktor, als hätte jemand ihn mitten in einem Gedanken abgestellt. Auf der anderen Seite
-grasen Kühe hinter einem Zaun, dessen Pfosten so schief stehen wie Zähne in einem alten Mund. An
-der Bank neben dem Heuhaufen sitzt manchmal ein Mädchen mit Magnetschachspiel und wartet auf
-jemanden, der sich traut.
+Hinter dem Stadtpark von Maple Falls rollt man über eine kleine Brücke, unter der der Fluss nach
+Süden abbiegt, und dann wird die Parkstraße zu einem Feldweg. Mit dem Asphalt endet auch das
+Rauschen des Wasserfalls; hier hört man den Wind im Korn. Das Feld der Brennans reicht bis an den
+Himmel, nur eine Vogelscheuche mit verbeultem Hut steht darin, und am Feldrand tuckert Otis auf
+seinem roten Traktor. Am Abzweig zum Hof der Millers verkauft Ada Äpfel aus einer Kiste mit
+Ehrlichkeitskasse, und hinter dem Gatter wogt der Mais. Auf der Weide zwischen Weg und Fluss grasen
+Kühe, die eigentlich gar nicht hierher gehören. An der Bank neben dem Heuhaufen sitzt manchmal ein
+Mädchen mit Magnetschachspiel und wartet auf jemanden, der sich traut.
 
-Wo der Feldweg den Fluss wiederfindet, wird er weich und schattig. Erlen hängen über das Wasser,
-morgens liegt Nebel auf dem Fluss, und ein Reiher steht so still im Schilf, dass man ihn für einen
-Pfahl hält, bis er den Kopf dreht. Ein alter Steg ragt ins Wasser; auf ihm sitzt fast immer ein
-Angler, der nie etwas fängt und nie traurig darüber ist. Am Ende des Weges steht ein grün
-gestrichenes Schild mit weißen Buchstaben: „Cedar Creek, gegr. 1851“.
+Wo der Weg dem Fluss näherkommt, wird er weich und schattig. Erlen hängen über das Wasser, morgens
+liegt Nebel auf dem Fluss, und ein Reiher steht so still im Schilf, dass man ihn für einen Pfahl hält,
+bis er den Kopf dreht. An der alten Fährstelle liegt ein flacher Stein mit eingeritzten Feldern; ein
+Stück weiter ragt ein Steg ins Wasser, auf dem fast immer ein alter Angler sitzt, der nie etwas fängt
+und nie traurig darüber ist. Am Ende des Weges steht ein grün gestrichenes Schild mit weißen
+Buchstaben: „Cedar Creek, gegr. 1851“. Über den Zedern sieht man schon einen Turm.
 
 Cedar Creek ist kleiner als Maple Falls, und es scheint das zu wissen. Die Hauptstraße ist kurz und
 endet, ehe sie richtig angefangen hat, an einem Wendeplatz vor dem Bach. Rote Zedern stehen um den
-Ort wie ältere Verwandte, die aufpassen, und ihr Holz riecht warm, wenn die Sonne darauf fällt. Der
-Bach ist schmal und schnell, er glitzert unter dem Steg und murmelt Tag und Nacht dasselbe Lied.
+Ort wie ältere Verwandte, die aufpassen, und ihr Holz riecht warm, wenn die Sonne darauf fällt; am
+stärksten vor der Drechslerei von Mr. Dunmore, vor deren Tür sich Späne und Holzscheite stapeln.
+Der Bach ist schmal und schnell, er glitzert unter dem Steg und murmelt Tag und Nacht dasselbe Lied.
 
 Über allem steht die Bibliothek. Sie wurde 1890 aus rotem Backstein gebaut, als man noch glaubte,
 ein Ort brauche zuerst ein Haus für Bücher und dann alles andere. Ihr Turm hat ein Schieferdach, an
 dem ein Eichelhäher sitzt; drei Stufen führen zu einer hölzernen Doppeltür, deren Messinggriffe von
-hundert Jahren Händen hell gerieben sind. Links und rechts der Treppe brennen abends zwei alte
-Laternen. Drinnen riecht es nach Papier, Bohnerwachs und ein wenig nach Kaffee aus der Kanne hinter
-dem Tresen; grüne Leselampen werfen runde Lichtinseln auf die Tische, an denen nachmittags der
-Schachclub von Mrs. Okafor sitzt. Unter dem Lesesaal, eine schmale Treppe hinunter, liegt das
-Archiv: Kartons mit Jahreszahlen, eine Lampe, die flackert, wenn oben jemand über die Dielen geht,
-und der kühle Geruch von Papier, das älter ist als alle Menschen im Ort.
+hundert Jahren Händen hell gerieben sind, und auf den Stufen streiten zwei Zwillinge darüber, ob der
+König springen darf. Drinnen riecht es nach Papier, Bohnerwachs und ein wenig nach Kaffee aus der
+Kanne hinter dem Tresen; grüne Leselampen werfen runde Lichtinseln auf die Tische, an denen
+nachmittags der Schachclub von Mrs. Okafor sitzt. Unter dem Lesesaal, eine schmale Treppe hinunter,
+liegt das Archiv: Kartons mit Jahreszahlen, eine Lampe, die flackert, wenn oben jemand über die
+Dielen geht, und der kühle Geruch von Papier, das älter ist als alle Menschen im Ort.
 
-Neben der Bibliothek brummt der Waschsalon von Mr. Boateng, ein Flachbau mit rot-weißen Markisen
-und einem Neonschild, bei dem ein Buchstabe fehlt. Vor der Tür liegt ein Hund, der zu niemandem
-gehört und allen. Gegenüber stehen zwei kleine Holzhäuser mit Blumenkästen unter den Fenstern und
-Briefkästen an der Pforte. An der Bushaltestelle trinkt der Fahrer des klappernden Überlandbusses
-Kaffee aus einer Thermoskanne, bevor er zurück nach Maple Falls fährt. An der Anschlagtafel daneben hängen Zettel
-vom Gemeindefest, eine Katze wird vermisst, jemand verkauft ein Kanu, und mitten darauf klebt ein
-glänzendes Plakat, das nicht hierher passt: „Perfect Move – Schach für die Zukunft. Bald auch in
-deiner Stadt.“
+Zwischen Drechslerei und Bibliothek brummt der Waschsalon von Mr. Boateng, ein Flachbau mit rot-weißen
+Markisen und einem Neonschild, bei dem ein Buchstabe fehlt. Vor der Tür liegt ein Hund, der zu
+niemandem gehört und allen. Gegenüber stehen zwei kleine Holzhäuser mit Blumenkästen unter den
+Fenstern; an der Zedernhecke des ersten schneidet Mrs. Holm jeden Morgen dieselben drei Zweige. An der
+Bushaltestelle trinkt Mr. Kettering, der Fahrer des klappernden Überlandbusses, Kaffee aus einer
+Thermoskanne, bevor er zurück nach Maple Falls fährt. An der Anschlagtafel daneben hängen Zettel vom
+Gemeindefest, das Rätsel der Woche, eine Katze wird vermisst, und mitten darauf klebt ein glänzendes
+Plakat, das nicht hierher passt: „Perfect Move – Schach für die Zukunft. Bald auch in deiner Stadt.“
 
 Am Bach, auf dem Steg, sitzt Rosa mit ihrer Angel und einem Brett mit Magnetfiguren. Im Schilf
-neben ihr liegt seit zwei Jahren ein verrosteter Schlüssel, den keiner vermisst. Abends, wenn die
+neben ihr liegt seit zwei Jahren ein verrosteter Schlüssel, den keiner vermisst. Weiter südlich
+spielt Hattie Quill auf einem umgedrehten Kanu Schach gegen jeden, der vorbeikommt. Abends, wenn die
 Sonne hinter den Zedern verschwindet, kommen die Kinder mit einem Teleskop zum Steg, und auf der
 anderen Seite des Baches führt eine alte Holzbrücke in den Wald, durch den man eines Tages nach
 Riverton gehen wird. Die Zeit geht hier langsamer. Niemand in Cedar Creek findet das schlimm.
@@ -210,35 +268,42 @@ Riverton gehen wird. Die Zeit geht hier langsamer. Niemand in Cedar Creek findet
 
 ### 3.1 Was die Geschichte verlangt
 
-| Karte       | Szenen                          | Figuren                                                        | Auslöser und Gegenstände                                                                                                                   | Belebung                                                       |
-| ----------- | ------------------------------- | -------------------------------------------------------------- | ------------------------------------------------------------------------------------------------------------------------------------------ | -------------------------------------------------------------- |
-| landstrasse | Route 1 (W4)                    | Nia (Straßengegnerin, Begegnung `wegMapleCedar.nia`), Wanderer | `zurueckPark`, `weiterFluss`, `tafel` (Runde `wegMapleCedar.tafel`), `fundFormular` (Fund „altes Partieformular“)                          | Bauer, Joggerin, Radfahrer, Kühe, Hase, Reh                    |
-| flussweg    | Route 1 (W4)                    | –                                                              | `zurueckLandstrasse`, `weiterCedar` (Ankunftsdialog), `rast`, `fundMuenzen`, `schildCedar`                                                 | Angler, Joggerin, Reiher, Hase, Schmetterling; Nebel am Morgen |
-| aussen      | 14, 21, 22, 23, 25; Akt 2 (Weg) | Rosa (Steg), Victor (Szene 21); Coach, Juno, Sam (Szene 14)    | `bushaltestelle`, `busZurueck`, `bibliothekTuer`, `waschsalonTuer`, `plakat`, `steg` (Sterne, Ende Akt 1, Fund `schluessel`), `zedernwald` | Busfahrer, Stegbauer, Hund, Reiher, Eichelhäher                |
-| bibliothek  | 15, 16, 24                      | Mrs. Okafor, Dex, Mae                                          | `bibliothekAusgang`, `kellertreppe`, `zeitungsregal`, `globus`, `schildFluestern`; vier Bretter                                            | Leserin mit Bücherstapel                                       |
-| archiv      | 18, 19, 20                      | Mrs. Okafor (zeitweise), Ambrose                               | `kellerAusgang`, `karton1858`, `programmheft`, `boxerfoto`, `wasserfleck`                                                                  | –                                                              |
-| waschsalon  | 17                              | Mr. Boateng                                                    | `waschsalonAusgang`, `trockner`, `zettelTurm`, `comicheft`, `automat`                                                                      | Kundin                                                         |
+Figuren, kleine Aufgaben und Funde aus `12_Akt1_Leben.md` (Abschnitte 2 und 3) kommen zu dieser
+Tabelle hinzu; hier stehen die Szenen der Story-Bibel und die Wege.
+
+| Karte       | Szenen                          | Figuren                                                                               | Auslöser und Gegenstände                                                                                                                                                                | Belebung                                             |
+| ----------- | ------------------------------- | ------------------------------------------------------------------------------------- | --------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------- | ---------------------------------------------------- |
+| landstrasse | Route 1 (W4)                    | Nia (Straßengegnerin, Begegnung `wegMapleCedar.nia`), Wanderer; Ada, Otis, Tessa (12) | `zurueckPark`, `weiterFluss`, `tafel` (Runde `wegMapleCedar.tafel`), `fundFormular`; Gatter S1, `apfelstand`, `schuppen`, `weidetor`, `fundHufeisen` (12)                               | Joggerin (Tessa), Radfahrer, Kühe, Hase, Reh, Krähen |
+| flussweg    | Route 1 (W4)                    | Silas (12)                                                                            | `zurueckLandstrasse`, `weiterCedar` (Ankunftsdialog), `fundMuenzen`, `faehrstein`, `faehrpfosten`, `rast`, `fundKorken`, `schildCedar`                                                  | Reiher, Hase, Schmetterling; Nebel am Morgen         |
+| zedernpfad  | Q1 (13)                         | Mr. Dunmore beim Stamm (nach der Clubnadel)                                           | `zurueckPark`, `weiterCedar`, Stamm (S2), `aussichtKuppe`, Zedernzapfen                                                                                                                 | Specht, Eichhörnchen                                 |
+| aussen      | 14, 21, 22, 23, 25; Akt 2 (Weg) | Rosa (Steg), Victor (Szene 21); Coach, Juno, Sam (Szene 14); Figuren aus 12           | `bushaltestelle`, `busZurueck`, `bibliothekTuer`, `waschsalonTuer`, `drechslereiTuer`, `plakat`, `steg` (Sterne, Ende Akt 1, Fund `schluessel`), `zedernwald`, `flussweg`, `zedernpfad` | Stegbauer, Hund, Reiher, Eichelhäher                 |
+| bibliothek  | 15, 16, 24                      | Mrs. Okafor, Dex, Mae; Miss Ashby (12)                                                | `bibliothekAusgang`, `kellertreppe`, `zeitungsregal`, `globus`, `schildFluestern`; vier Bretter                                                                                         | –                                                    |
+| archiv      | 18, 19, 20                      | Mrs. Okafor (zeitweise), Ambrose                                                      | `kellerAusgang`, `karton1858`, `programmheft`, `boxerfoto`, `wasserfleck`                                                                                                               | –                                                    |
+| waschsalon  | 17                              | Mr. Boateng                                                                           | `waschsalonAusgang`, `trockner`, `zettelTurm`, `comicheft`, `automat`                                                                                                                   | Kundin                                               |
+| drechslerei | – (12, N-CC2)                   | Mr. Dunmore                                                                           | `drechslereiAusgang`, `drehbank`, `figurenregal`, `fotoSaegemuehle`                                                                                                                     | –                                                    |
 
 ### 3.2 Was aus dem Ortsbild bleibt, was sich ändert, was entfällt
 
-| Element                                      | Entscheidung                                                                             | Grund                                                                                                                                        |
-| -------------------------------------------- | ---------------------------------------------------------------------------------------- | -------------------------------------------------------------------------------------------------------------------------------------------- |
-| Ankunft zu Fuß an der Bushaltestelle         | geändert: Ankunft am Westrand auf der Hauptstraße; mit dem Bus weiter an der Haltestelle | Wege laufen über den Rand weiter (Regel 5.1, Übergangsprüfung); wer läuft, kommt nicht aus einem Bus.                                        |
-| Zedernwald am Westrand                       | geändert: Ostrand, über eine Holzbrücke über den Bach                                    | Bibel 10.1: Waldweg „ab dem Steg, am Bach entlang“; Reiserichtung West → Ost; der Westrand gehört dem Flussweg.                              |
-| Bach „rechts“                                | bleibt, reicht oben und unten bis zum Rand, mit Uferweg und Ufer beidseitig              | Ortsprofil (Pflicht), Regeln 6.4 und 9.7.1.                                                                                                  |
-| Wasser im Flussweg („der Bach wird breiter“) | geändert: Es ist der Fluss von Maple Falls, nicht der Bach von Cedar Creek               | Der Bach liegt östlich, der Weg kommt von Westen; die Rastbank steht „am Fluss“ (Ink). Der Bach mündet südlich von Cedar Creek in den Fluss. |
-| Victor auf der Bank auf der Wiese            | geändert: Victor sitzt im Wartehäuschen der Bushaltestelle                               | Szene 21: „sitzt allein an der Bushaltestelle“. Die Wiesenbank bleibt, zum Bach gewandt (Ortsprofil).                                        |
-| Zwei kleine Wohnhäuser                       | neu, auf der Südseite, nicht begehbar                                                    | Ortsprofil (Nachbarschaft); ohne Häuser wäre der Ort nur Kulisse. Häuser an der Straße mit Grundstück (Regeln 5.3, 9.3).                     |
-| Plakat von Perfect Move „an einer Mauer“     | geändert: auf der Anschlagtafel neben der Haltestelle                                    | Heutige Szene; eine Tafel erklärt, warum dort ein Plakat hängt (Regel 5.8, Schild mit Zusammenhang).                                         |
-| Bibliothek mit Turm, Treppe und Laternen     | bleibt; Laternen symmetrisch an der Treppe                                               | Bibel 3.2, Weltbeschreibung 5.3, Regel 9.3.4.                                                                                                |
-| Kellertreppe im Archiv                       | geändert: Nordwand, Spalte 11 (unter der Kellertür der Bibliothek)                       | Treppen liegen übereinander (Regel wie Maple Falls).                                                                                         |
-| Wegweiser auf der Landstraße                 | geändert: nur am Abzweig zum Hof (Gatter), mit drei Richtungen                           | Regel 5.8 und Ortsprofil („Wegweiser nur an einer Kreuzung“); heute steht er am Rand ohne Kreuzung.                                          |
-| Traktor mitten im Feld                       | geändert: innen am Gatter                                                                | Regel 6.3 und Ortsprofil.                                                                                                                    |
-| Feldweg ein Feld breit                       | geändert: zwei Felder                                                                    | Übergangsprüfung: Parkstraße ist zwei Felder breit.                                                                                          |
-| Fluss zwischen Park und Flussweg             | biegt hinter der Kuhweide nach Süden aus (auf der Landstraße nicht sichtbar)             | Die Landstraße zeigt Felder (Ortsprofil); so bleibt der Fluss trotzdem ein Gewässer, das zum Rand reicht.                                    |
-| Brücke zum Zedernwald                        | neu; in Akt 1 mit Schild „Weg gesperrt, Brückenarbeiten“                                 | Der Übergang ist erst nach `endeAkt1Gesehen` offen; das Schild erklärt die Sperre in der Welt. Der Stegbauer (Belebung) passt dazu.          |
-| Teleskop, Sternennacht                       | nur Dialog (Szene 22, Abend am Steg)                                                     | kein eigenes Bild nötig.                                                                                                                     |
-| Schlüssel im Schilf                          | über den Dialog am Steg (`steg`, `gibFund("schluessel")`), kein eigenes Objekt           | wie heute; das Schilf am Westufer neben dem Steg ist der Ort.                                                                                |
+| Element                                  | Entscheidung                                                                                      | Grund                                                                                                                               |
+| ---------------------------------------- | ------------------------------------------------------------------------------------------------- | ----------------------------------------------------------------------------------------------------------------------------------- |
+| Größen                                   | Landstraße und Flussweg je 120 × 30, Zedernpfad 100 × 24, Cedar Creek 56 × 36, Bibliothek 22 × 16 | `KARTENREGELN.md` 7a.2 (Befund 6); heutige Karten 34 × 22, 28 × 20, 44 × 24, 18 × 14.                                               |
+| Ankunft zu Fuß an der Bushaltestelle     | geändert: Ankunft am Westrand auf der Hauptstraße; mit dem Bus weiter an der Haltestelle          | Wege laufen über den Rand weiter (Regel 5.1, Übergangsprüfung); wer läuft, kommt nicht aus einem Bus.                               |
+| Zedernwald am Westrand                   | geändert: Ostrand, über eine Holzbrücke über den Bach                                             | Bibel 10.1: Waldweg „ab dem Steg, am Bach entlang“; Reiserichtung West → Ost; der Westrand gehört Flussweg und Zedernpfad.          |
+| Bach „rechts“                            | bleibt, reicht oben und unten bis zum Rand, mit Uferweg und Ufer beidseitig                       | Ortsprofil (Pflicht), Regeln 6.4 und 9.7.1.                                                                                         |
+| Wasser auf Landstraße und Flussweg       | Fluss von Maple Falls im Süden beider Karten, nach der Brücke im Park (Befund 5)                  | Ein durchgehender Fluss; der Bach von Cedar Creek mündet südlich des Ortes in ihn.                                                  |
+| Victor auf der Bank auf der Wiese        | geändert: Victor sitzt im Wartehäuschen der Bushaltestelle                                        | Szene 21: „sitzt allein an der Bushaltestelle“. Die Wiesenbank bleibt, zum Bach gewandt (Ortsprofil).                               |
+| Waschsalon am Westende                   | geändert: Drechslerei am Westende, Waschsalon in der Mitte                                        | 12, Abschnitt 3 (Befund 6).                                                                                                         |
+| Zwei kleine Wohnhäuser                   | bleiben, Haus Süd 1 mit Mrs. Holm (12)                                                            | Ortsprofil (Nachbarschaft); Häuser an der Straße mit Grundstück (Regeln 5.3, 9.3).                                                  |
+| Plakat von Perfect Move „an einer Mauer“ | geändert: auf der Anschlagtafel neben der Haltestelle                                             | Eine Tafel erklärt, warum dort ein Plakat hängt (Regel 5.8).                                                                        |
+| Bibliothek mit Turm, Treppe und Laternen | bleibt; Laternen symmetrisch an der Treppe; Turm als Sichtachse am Ende der Straße                | Bibel 3.2, Weltbeschreibung 5.3, Regel 9.3.4, README (große Außenkarten).                                                           |
+| Kellertreppe im Archiv                   | geändert: Nordwand, Spalte 11 (unter der Kellertür der Bibliothek)                                | Treppen liegen übereinander (Regel wie Maple Falls).                                                                                |
+| Wegweiser auf der Landstraße             | nur am Abzweig zum Kürbishof, mit drei Richtungen                                                 | Regel 5.8 und Ortsprofil („Wegweiser nur an einer Kreuzung“).                                                                       |
+| Traktor mitten im Feld                   | geändert: am Feldrand am Weg (Otis)                                                               | Regel 6.3 und Ortsprofil; Befund 11.                                                                                                |
+| Zedernpfad                               | neu (Q1), Stamm auf der Maple-Falls-Seite der Kuppe, Kuppe von Cedar Creek aus offen              | 13, Befund 22; Mr. Dunmore räumt den Stamm (Befund 34).                                                                             |
+| Brücke zum Zedernwald                    | neu; in Akt 1 mit Schild „Weg gesperrt, Brückenarbeiten“                                          | Der Übergang ist erst nach `endeAkt1Gesehen` offen; das Schild erklärt die Sperre in der Welt. Der Stegbauer (Belebung) passt dazu. |
+| Busfahrer raucht                         | entfällt: Mr. Kettering trinkt Kaffee aus der Thermoskanne                                        | Entscheidung des Haupt-Chats (12, Kinderspiel).                                                                                     |
+| Teleskop, Sternennacht                   | nur Dialog (Szene 22, Abend am Steg)                                                              | kein eigenes Bild nötig.                                                                                                            |
+| Schlüssel im Schilf                      | über den Dialog am Steg (`steg`, `gibFund("schluessel")`), kein eigenes Objekt                    | wie heute; das Schilf am Westufer neben dem Steg ist der Ort.                                                                       |
 
 ## 4. Bühnenbilder
 

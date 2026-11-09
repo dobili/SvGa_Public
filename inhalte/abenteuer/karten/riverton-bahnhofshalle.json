@@ -11,7 +11,7 @@
   "tilewidth": 16,
   "tileheight": 16,
   "nextlayerid": 5,
-  "nextobjectid": 10,
+  "nextobjectid": 27,
   "properties": [
     {
       "name": "kennung",
@@ -83,11 +83,11 @@
       "data": [
         0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0,
         0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0,
-        0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 3, 3, 3, 3, 0, 0, 0, 0, 0, 0,
-        0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 3, 3, 3, 3, 0, 0, 0, 0, 0, 0, 0, 0, 3, 3,
-        3, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0,
         0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0,
-        0, 0, 0, 0, 3, 3, 3, 3, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0,
+        0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 3, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0,
+        0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0,
+        0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0,
+        0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0,
         0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0,
         0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0,
         0, 3, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0,
@@ -249,6 +249,193 @@
               "value": "ausweichen"
             }
           ]
+        },
+        {
+          "id": 10,
+          "name": "rvZeitungsregal",
+          "type": "moebel",
+          "x": 32,
+          "y": 32,
+          "width": 16,
+          "height": 48,
+          "rotation": 0,
+          "visible": true
+        },
+        {
+          "id": 11,
+          "name": "rvZeitungsregal",
+          "type": "moebel",
+          "x": 48,
+          "y": 32,
+          "width": 16,
+          "height": 48,
+          "rotation": 0,
+          "visible": true
+        },
+        {
+          "id": 12,
+          "name": "rvZeitungsregal",
+          "type": "moebel",
+          "x": 64,
+          "y": 32,
+          "width": 16,
+          "height": 48,
+          "rotation": 0,
+          "visible": true
+        },
+        {
+          "id": 13,
+          "name": "rvWartebank",
+          "type": "moebel",
+          "x": 224,
+          "y": 48,
+          "width": 48,
+          "height": 32,
+          "rotation": 0,
+          "visible": true
+        },
+        {
+          "id": 14,
+          "name": "rvWartebank",
+          "type": "moebel",
+          "x": 128,
+          "y": 96,
+          "width": 48,
+          "height": 32,
+          "rotation": 0,
+          "visible": true
+        },
+        {
+          "id": 15,
+          "name": "rvTopfpflanze",
+          "type": "moebel",
+          "x": 176,
+          "y": 96,
+          "width": 16,
+          "height": 32,
+          "rotation": 0,
+          "visible": true
+        },
+        {
+          "id": 16,
+          "name": "rvTicketschalter",
+          "type": "moebel",
+          "x": 192,
+          "y": 16,
+          "width": 32,
+          "height": 32,
+          "rotation": 0,
+          "visible": true
+        },
+        {
+          "id": 17,
+          "name": "rvTicketschalter",
+          "type": "moebel",
+          "x": 224,
+          "y": 16,
+          "width": 32,
+          "height": 32,
+          "rotation": 0,
+          "visible": true
+        },
+        {
+          "id": 18,
+          "name": "rvGetraenkeautomat",
+          "type": "moebel",
+          "x": 272,
+          "y": 16,
+          "width": 32,
+          "height": 48,
+          "rotation": 0,
+          "visible": true
+        },
+        {
+          "id": 19,
+          "name": "rvKaffeeautomat",
+          "type": "moebel",
+          "x": 96,
+          "y": 16,
+          "width": 32,
+          "height": 48,
+          "rotation": 0,
+          "visible": true
+        },
+        {
+          "id": 20,
+          "name": "rvFahrplan",
+          "type": "moebel",
+          "x": 16,
+          "y": 96,
+          "width": 32,
+          "height": 32,
+          "rotation": 0,
+          "visible": true
+        },
+        {
+          "id": 21,
+          "name": "rvSaeule",
+          "type": "moebel",
+          "x": 80,
+          "y": 112,
+          "width": 16,
+          "height": 80,
+          "rotation": 0,
+          "visible": true
+        },
+        {
+          "id": 22,
+          "name": "rvSaeule",
+          "type": "moebel",
+          "x": 224,
+          "y": 112,
+          "width": 16,
+          "height": 80,
+          "rotation": 0,
+          "visible": true
+        },
+        {
+          "id": 23,
+          "name": "rvKoffer",
+          "type": "moebel",
+          "x": 48,
+          "y": 144,
+          "width": 16,
+          "height": 32,
+          "rotation": 0,
+          "visible": true
+        },
+        {
+          "id": 24,
+          "name": "rvGepaeckwagen",
+          "type": "moebel",
+          "x": 256,
+          "y": 144,
+          "width": 16,
+          "height": 32,
+          "rotation": 0,
+          "visible": true
+        },
+        {
+          "id": 25,
+          "name": "rvTopfpflanze",
+          "type": "moebel",
+          "x": 16,
+          "y": 176,
+          "width": 16,
+          "height": 32,
+          "rotation": 0,
+          "visible": true
+        },
+        {
+          "id": 26,
+          "name": "rvTopfpflanze",
+          "type": "moebel",
+          "x": 288,
+          "y": 176,
+          "width": 16,
+          "height": 32,
+          "rotation": 0,
+          "visible": true
         }
       ]
     }

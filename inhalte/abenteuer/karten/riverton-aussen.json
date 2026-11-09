@@ -11,7 +11,7 @@
   "tilewidth": 16,
   "tileheight": 16,
   "nextlayerid": 5,
-  "nextobjectid": 24,
+  "nextobjectid": 40,
   "properties": [
     {
       "name": "kennung",
@@ -130,7 +130,6 @@
         0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0,
         0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0,
         0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0,
-        0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 7, 0,
         0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0,
         0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0,
         0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0,
@@ -146,8 +145,9 @@
         0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0,
         0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0,
         0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0,
-        0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 5, 5, 5,
-        5, 5, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0,
+        0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0,
+        0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 5,
+        0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0,
         0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0,
         0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0,
         0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0,
@@ -563,6 +563,182 @@
               "value": "ausweichen"
             }
           ]
+        },
+        {
+          "id": 24,
+          "name": "laterne",
+          "type": "moebel",
+          "x": 224,
+          "y": 64,
+          "width": 32,
+          "height": 64,
+          "rotation": 0,
+          "visible": true
+        },
+        {
+          "id": 25,
+          "name": "rvBildschirmtisch",
+          "type": "moebel",
+          "x": 208,
+          "y": 288,
+          "width": 32,
+          "height": 32,
+          "rotation": 0,
+          "visible": true
+        },
+        {
+          "id": 26,
+          "name": "rvBildschirmtisch",
+          "type": "moebel",
+          "x": 256,
+          "y": 288,
+          "width": 32,
+          "height": 32,
+          "rotation": 0,
+          "visible": true
+        },
+        {
+          "id": 27,
+          "name": "baum",
+          "type": "moebel",
+          "x": 80,
+          "y": 192,
+          "width": 48,
+          "height": 64,
+          "rotation": 0,
+          "visible": true
+        },
+        {
+          "id": 28,
+          "name": "rvLaubbaum",
+          "type": "moebel",
+          "x": 144,
+          "y": 192,
+          "width": 64,
+          "height": 64,
+          "rotation": 0,
+          "visible": true
+        },
+        {
+          "id": 29,
+          "name": "parkbank",
+          "type": "moebel",
+          "x": 16,
+          "y": 208,
+          "width": 32,
+          "height": 32,
+          "rotation": 0,
+          "visible": true
+        },
+        {
+          "id": 30,
+          "name": "rvHolzbank",
+          "type": "moebel",
+          "x": 224,
+          "y": 336,
+          "width": 48,
+          "height": 32,
+          "rotation": 0,
+          "visible": true
+        },
+        {
+          "id": 31,
+          "name": "rvAutoBlau",
+          "type": "moebel",
+          "x": 336,
+          "y": 208,
+          "width": 64,
+          "height": 48,
+          "rotation": 0,
+          "visible": true
+        },
+        {
+          "id": 32,
+          "name": "rvGitarrenkoffer",
+          "type": "moebel",
+          "x": 288,
+          "y": 208,
+          "width": 32,
+          "height": 32,
+          "rotation": 0,
+          "visible": true
+        },
+        {
+          "id": 33,
+          "name": "laterne",
+          "type": "moebel",
+          "x": 288,
+          "y": 64,
+          "width": 32,
+          "height": 64,
+          "rotation": 0,
+          "visible": true
+        },
+        {
+          "id": 34,
+          "name": "muelltonne",
+          "type": "moebel",
+          "x": 16,
+          "y": 80,
+          "width": 32,
+          "height": 32,
+          "rotation": 0,
+          "visible": true
+        },
+        {
+          "id": 35,
+          "name": "briefkasten",
+          "type": "moebel",
+          "x": 208,
+          "y": 96,
+          "width": 16,
+          "height": 32,
+          "rotation": 0,
+          "visible": true
+        },
+        {
+          "id": 36,
+          "name": "rvHydrant",
+          "type": "moebel",
+          "x": 448,
+          "y": 96,
+          "width": 32,
+          "height": 32,
+          "rotation": 0,
+          "visible": true
+        },
+        {
+          "id": 37,
+          "name": "baum",
+          "type": "moebel",
+          "x": 416,
+          "y": 16,
+          "width": 48,
+          "height": 64,
+          "rotation": 0,
+          "visible": true
+        },
+        {
+          "id": 38,
+          "name": "blumenbusch",
+          "type": "moebel",
+          "x": 16,
+          "y": 320,
+          "width": 32,
+          "height": 16,
+          "rotation": 0,
+          "visible": true
+        },
+        {
+          "id": 39,
+          "name": "rvBahnsteigbank",
+          "type": "moebel",
+          "x": 160,
+          "y": 112,
+          "width": 48,
+          "height": 16,
+          "rotation": 0,
+          "visible": true
         }
       ]
     }

@@ -2489,6 +2489,109 @@
       "art": "pflanze",
       "zustand": "neu",
       "stil": "einfach"
+    },
+    "mf4Anrichte": {
+      "quelle": "modern-interiors/1_Interiors/16x16/Theme_Sorter_Black_Shadow_Singles/2_LivingRoom_Black_Shadow_Singles_16x16/Living_Room_Black_Shadow_Singles_29.png",
+      "breite": 32,
+      "hoehe": 32,
+      "kollision": true,
+      "art": "schrank",
+      "blick": "unten",
+      "zustand": "gebraucht",
+      "stil": "klassisch"
+    },
+    "mf4Lowboard": {
+      "quelle": "modern-interiors/1_Interiors/16x16/Theme_Sorter_Black_Shadow_Singles/2_LivingRoom_Black_Shadow_Singles_16x16/Living_Room_Black_Shadow_Singles_70.png",
+      "breite": 32,
+      "hoehe": 32,
+      "kollision": true,
+      "art": "schrank",
+      "blick": "unten",
+      "zustand": "gebraucht",
+      "stil": "klassisch"
+    },
+    "mf4SesselHinten": {
+      "quelle": "modern-interiors/1_Interiors/16x16/Theme_Sorter_Singles/14_Basement_Singles/Basement_Singles_206.png",
+      "breite": 32,
+      "hoehe": 32,
+      "kollision": true,
+      "art": "sessel",
+      "blick": "oben",
+      "zustand": "gebraucht",
+      "stil": "klassisch"
+    },
+    "mf4KartonStapel": {
+      "quelle": "modern-interiors/1_Interiors/16x16/Theme_Sorter_Black_Shadow_Singles/26_Condominium_Black_Shadow_Singles_16x16/Condominium_Black_Shadow_Singles_71.png",
+      "breite": 16,
+      "hoehe": 32,
+      "kollision": true,
+      "art": "kiste",
+      "zustand": "neu",
+      "stil": "modern"
+    },
+    "mf4Karton": {
+      "quelle": "modern-interiors/1_Interiors/16x16/Theme_Sorter_Black_Shadow_Singles/26_Condominium_Black_Shadow_Singles_16x16/Condominium_Black_Shadow_Singles_72.png",
+      "breite": 16,
+      "hoehe": 32,
+      "kollision": true,
+      "art": "kiste",
+      "zustand": "neu",
+      "stil": "modern"
+    },
+    "mf4KartonBreit": {
+      "quelle": "modern-interiors/1_Interiors/16x16/Theme_Sorter_Black_Shadow_Singles/26_Condominium_Black_Shadow_Singles_16x16/Condominium_Black_Shadow_Singles_73.png",
+      "breite": 16,
+      "hoehe": 32,
+      "kollision": true,
+      "art": "kiste",
+      "zustand": "neu",
+      "stil": "modern"
+    },
+    "mf4Esstisch": {
+      "quelle": "modern-interiors/1_Interiors/16x16/Theme_Sorter_Black_Shadow_Singles/14_Basement_Black_Shadow_Singles_16x16/Basement_Shadow_Singles_3.png",
+      "breite": 32,
+      "hoehe": 32,
+      "kollision": true,
+      "art": "tisch",
+      "zustand": "gebraucht",
+      "stil": "klassisch"
+    },
+    "mf4BildKueche": {
+      "quelle": "modern-interiors/1_Interiors/16x16/Theme_Sorter_Black_Shadow_Singles/12_Kitchen_Black_Shadow_Singles_16x16/Kitchen_Shadow_Singles_271.png",
+      "breite": 16,
+      "hoehe": 16,
+      "kollision": false,
+      "art": "deko",
+      "zustand": "neu",
+      "stil": "klassisch"
+    },
+    "mf4Treppe": {
+      "quelle": "spiel/generic/generic_134.png",
+      "breite": 48,
+      "hoehe": 64,
+      "kollision": false,
+      "art": "treppe",
+      "zustand": "gebraucht",
+      "stil": "klassisch"
+    },
+    "mf4Palme": {
+      "quelle": "modern-interiors/1_Interiors/16x16/Theme_Sorter_Black_Shadow_Singles/2_LivingRoom_Black_Shadow_Singles_16x16/Living_Room_Black_Shadow_Singles_14.png",
+      "breite": 32,
+      "hoehe": 32,
+      "kollision": true,
+      "art": "pflanze",
+      "zustand": "neu",
+      "stil": "klassisch"
+    },
+    "mf4Kommode": {
+      "quelle": "modern-interiors/1_Interiors/16x16/Theme_Sorter_Black_Shadow_Singles/2_LivingRoom_Black_Shadow_Singles_16x16/Living_Room_Black_Shadow_Singles_51.png",
+      "breite": 32,
+      "hoehe": 32,
+      "kollision": true,
+      "art": "schrank",
+      "blick": "unten",
+      "zustand": "gebraucht",
+      "stil": "klassisch"
     }
   }
 }

@@ -2,7 +2,7 @@
   "karte": "cedarCreek.archiv",
   "datei": "karten/cedar-creek-archiv.json",
   "art": "innen",
-  "beschreibung": "Das Archiv im Keller der Bibliothek von Cedar Creek: ein niedriger, kühler Raum mit Steinboden und Backsteinwänden, ordentlich, aber lange nicht benutzt. Es riecht nach altem Papier.\n\nRechts an der Nordwand führt eine steile Holztreppe hinauf in den Lesesaal; sie liegt genau unter der Kellertür der Bibliothek. Links davon stehen vier hohe Regale voller gebundener Zeitungsjahrgänge und Mappen, zwischen zwei Regalen hängt ein vergilbtes Foto eines Boxers. Das Regal ganz rechts neben der Treppe liegt im Schatten; erst mit einer Laterne sieht man, was darin steht.\n\nIn der Mitte stehen die Archivkartons in zwei sauberen Reihen, jeder mit einer Jahreszahl beschriftet. In der unteren Reihe steht ein offener Karton: „1850–1859“. Rechts unten der Lesetisch mit aufgeschlagenem Buch, an dem man Akten sichtet; darauf liegt das alte Programmheft, dahinter ein Stuhl, daneben eine Stehlampe mit warmem Licht. Am Westende ein Stapel höherer Kartons. Auf dem Boden vorn ein dunkler Wasserfleck, der aussieht wie ein Springer.\n\nLaufwege: von der Treppe nach unten, nach links zwischen Regalen und Kartonreihen hindurch zum offenen Karton, nach rechts zum Lesetisch, nach vorn zum Fleck.",
+  "beschreibung": "Das Archiv im Keller der Bibliothek von Cedar Creek: ein niedriger, kühler Raum mit Steinboden und Backsteinwänden, ordentlich, aber lange nicht benutzt. Es riecht nach altem Papier.\n\nRechts an der Nordwand führt eine steile Holztreppe hinauf in den Lesesaal; sie liegt genau unter der Kellertür der Bibliothek. Links davon stehen vier hohe Regale voller gebundener Zeitungsjahrgänge und Mappen, zwischen zwei Regalen hängt ein vergilbtes Foto eines Boxers. Das Regal ganz rechts neben der Treppe liegt im Schatten; erst mit einer Laterne sieht man, was darin steht.\n\nIn der Mitte stehen die Archivkartons in zwei sauberen Reihen, jeder mit einer Jahreszahl beschriftet. In der unteren Reihe steht ein offener Karton: „1850–1859“. Rechts unten an der Südwand der Lesetisch mit aufgeschlagenem Buch, an dem man Akten sichtet; darauf liegt das alte Programmheft, dahinter ein Stuhl, daneben eine Stehlampe mit warmem Licht. Am Westende ein Stapel höherer Kartons. Auf dem Boden vorn ein dunkler Wasserfleck, der aussieht wie ein Springer.\n\nLaufwege: von der Treppe nach unten, nach links zwischen Regalen und Kartonreihen hindurch zum offenen Karton, nach rechts zum Lesetisch, nach vorn zum Fleck.",
   "wand": "backstein",
   "boden": "stein",
   "raster": [
@@ -72,16 +72,16 @@
     },
     {
       "moebel": "cc4StuhlHinten",
-      "feld": [10, 5]
+      "feld": [9, 5]
     },
     {
       "moebel": "cc4Lesetisch",
-      "feld": [10, 7],
+      "feld": [9, 7],
       "id": "tisch"
     },
     {
       "moebel": "cc4Stehlampe",
-      "feld": [12, 5]
+      "feld": [11, 6]
     },
     {
       "moebel": "cc4KartonHoch",
@@ -90,14 +90,6 @@
     {
       "moebel": "cc4KartonHoch",
       "feld": [1, 6]
-    },
-    {
-      "moebel": "cc4Karton",
-      "feld": [8, 5]
-    },
-    {
-      "moebel": "cc4Karton",
-      "feld": [8, 7]
     }
   ],
   "ausloeser": [
@@ -118,7 +110,7 @@
     },
     {
       "name": "programmheft",
-      "feld": [11, 7],
+      "feld": [10, 7],
       "auf_moebel": true
     },
     {

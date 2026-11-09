@@ -11,7 +11,7 @@
  "tilewidth": 16,
  "tileheight": 16,
  "nextlayerid": 5,
- "nextobjectid": 26,
+ "nextobjectid": 24,
  "layers": [
   {
    "id": 1,
@@ -568,7 +568,7 @@
      "id": 4,
      "name": "programmheft",
      "type": "ausloeser",
-     "x": 176,
+     "x": 160,
      "y": 112,
      "width": 16,
      "height": 16,
@@ -877,7 +877,7 @@
      "id": 19,
      "name": "cc4StuhlHinten",
      "type": "moebel",
-     "x": 160,
+     "x": 144,
      "y": 80,
      "width": 16,
      "height": 32,
@@ -900,7 +900,7 @@
      "id": 20,
      "name": "cc4Lesetisch",
      "type": "moebel",
-     "x": 160,
+     "x": 144,
      "y": 112,
      "width": 32,
      "height": 32,
@@ -923,8 +923,8 @@
      "id": 21,
      "name": "cc4Stehlampe",
      "type": "moebel",
-     "x": 192,
-     "y": 80,
+     "x": 176,
+     "y": 96,
      "width": 16,
      "height": 48,
      "rotation": 0,
@@ -933,7 +933,7 @@
       {
        "name": "tiefe",
        "type": "int",
-       "value": 120
+       "value": 136
       },
       {
        "name": "kollision",
@@ -980,52 +980,6 @@
        "name": "tiefe",
        "type": "int",
        "value": 120
-      },
-      {
-       "name": "kollision",
-       "type": "bool",
-       "value": true
-      }
-     ]
-    },
-    {
-     "id": 24,
-     "name": "cc4Karton",
-     "type": "moebel",
-     "x": 128,
-     "y": 80,
-     "width": 32,
-     "height": 32,
-     "rotation": 0,
-     "visible": true,
-     "properties": [
-      {
-       "name": "tiefe",
-       "type": "int",
-       "value": 104
-      },
-      {
-       "name": "kollision",
-       "type": "bool",
-       "value": true
-      }
-     ]
-    },
-    {
-     "id": 25,
-     "name": "cc4Karton",
-     "type": "moebel",
-     "x": 128,
-     "y": 112,
-     "width": 32,
-     "height": 32,
-     "rotation": 0,
-     "visible": true,
-     "properties": [
-      {
-       "name": "tiefe",
-       "type": "int",
-       "value": 136
       },
       {
        "name": "kollision",

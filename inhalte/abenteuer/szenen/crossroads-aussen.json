@@ -1,7 +1,7 @@
 {
   "karte": "crossroads.aussen",
   "art": "aussen",
-  "beschreibung": "Crossroads (Variante A, nach dem Ortsdokument): Der Highway läuft von West nach Ost über die ganze Karte, von Norden kommt die Schotterstraße aus der Prärie. An der Ecke steht der Wegweiser in alle Städte. Nordwestlich Darlenes Raststätte, ein silberner Diner-Wagen mit Vorplatz; dahinter ein eingezäuntes Feld für den Sommerjahrmarkt. Nordöstlich die große Tankstelle. Südlich des Highways der Parkplatz mit dem Werksbus aus Ironwood, Rosies Food-Truck, einem Sattelzug und einem Auto, Picknicktische, eine Plakatwand. Nach Westen geht der Wanderweg nach Pinewood ab, im Osten sperrt ein Viehgatter die Alte Minenstraße; dahinter weiden Rinder. Wegweiser mit allen Städten, Schild „Crossroads – Diner + Gas“ vor der Raststätte, die Alte Minenstraße mit Absperrböcken gesperrt (S13; das Viehgatter für eine West-Ost-Straße ist bestellt).",
+  "beschreibung": "Crossroads (Variante A, nach dem Ortsdokument): Der Highway läuft von West nach Ost über die ganze Karte, von Norden kommt die Schotterstraße aus der Prärie. An der Ecke steht der Wegweiser in alle Städte. Nordwestlich Darlenes Raststätte, ein silberner Diner-Wagen mit Vorplatz; dahinter ein eingezäuntes Feld, durch das ein Erdweg nach Norden zum Sommerjahrmarkt führt. Nordöstlich die große Tankstelle. Südlich des Highways der Parkplatz mit dem Werksbus aus Ironwood, Rosies Food-Truck, einem Sattelzug und einem Auto, Picknicktische, eine Plakatwand. Nach Westen geht der Wanderweg nach Pinewood ab, im Osten sperrt ein Viehgatter die Alte Minenstraße; dahinter weiden Rinder. Wegweiser mit allen Städten, Schild „Crossroads – Diner + Gas“ vor der Raststätte, die Alte Minenstraße mit Absperrböcken gesperrt (S13; das Viehgatter für eine West-Ost-Straße ist bestellt).",
   "boden": "gras",
   "wandart": "gras",
   "boeden": {
@@ -11,20 +11,20 @@
     "p": "pflaster"
   },
   "raster": [
-    "##############################kkk###############################",
-    "#.............................kkk..............................#",
-    "#.............................kkk..............................#",
-    "#.............................kkk..............................#",
-    "#.............................kkk..............................#",
-    "#.............................kkk..............................#",
-    "#.............................kkk..............................#",
-    "#.............................kkk..............................#",
-    "#.............................kkk..............................#",
-    "#.............................kkk..............................#",
-    "#.............................kkk..............................#",
-    "#.............................kkk..............................#",
-    "#.............................kkk..............................#",
-    "#.............................kkk..............................#",
+    "######ee######################kkk###############################",
+    "#.....ee......................kkk..............................#",
+    "#.....ee......................kkk..............................#",
+    "#.....ee......................kkk..............................#",
+    "#.....ee......................kkk..............................#",
+    "#.....ee......................kkk..............................#",
+    "#.....ee......................kkk..............................#",
+    "#.....ee......................kkk..............................#",
+    "#.....ee......................kkk..............................#",
+    "#.....ee......................kkk..............................#",
+    "#.....ee......................kkk..............................#",
+    "#.....ee......................kkk..............................#",
+    "#.....ee......................kkk..............................#",
+    "#.....ee......................kkk..............................#",
     "eeeeeeee......................kkk..............................#",
     "eeeeeeee......................kkk..............................#",
     "#.....ee......................kkk..............................#",
@@ -115,22 +115,12 @@
       "bauteil_ok": true
     },
     {
-      "moebel": "ccZaun",
+      "moebel": "cc3ZaunEndeR",
       "feld": [5, 10],
       "bauteil_ok": true
     },
     {
-      "moebel": "ccZaun",
-      "feld": [6, 10],
-      "bauteil_ok": true
-    },
-    {
-      "moebel": "ccZaun",
-      "feld": [7, 10],
-      "bauteil_ok": true
-    },
-    {
-      "moebel": "ccZaun",
+      "moebel": "cc3ZaunEnde",
       "feld": [8, 10],
       "bauteil_ok": true
     },
@@ -401,10 +391,6 @@
     },
     {
       "moebel": "wg4BlumeGelb",
-      "feld": [7, 12]
-    },
-    {
-      "moebel": "wg4BlumeGelb",
       "feld": [46, 33]
     },
     {
@@ -426,10 +412,6 @@
     {
       "moebel": "wg4Gras",
       "feld": [29, 43]
-    },
-    {
-      "moebel": "wg4BlumeGelb",
-      "feld": [7, 11]
     },
     {
       "moebel": "wg4BlumeGelb",
@@ -504,10 +486,6 @@
       "feld": [54, 44]
     },
     {
-      "moebel": "wg4Gras",
-      "feld": [6, 2]
-    },
-    {
       "moebel": "wg4GrasB",
       "feld": [1, 18]
     },
@@ -556,24 +534,36 @@
       "feld": [29, 15]
     },
     {
+      "moebel": "wg4BlumeGelb",
+      "feld": [42, 2]
+    },
+    {
+      "moebel": "wg4GrasB",
+      "feld": [44, 37]
+    },
+    {
+      "moebel": "wg4GrasB",
+      "feld": [43, 41]
+    },
+    {
       "moebel": "mf4Strassenbaum",
-      "feld": [38, 41]
-    },
-    {
-      "moebel": "wg4Busch",
-      "feld": [32, 32]
-    },
-    {
-      "moebel": "wg4Busch",
       "feld": [28, 37]
     },
     {
-      "moebel": "mf4Strassenbaum",
-      "feld": [30, 41]
+      "moebel": "wg4Busch",
+      "feld": [31, 29]
     },
     {
       "moebel": "mf4Strassenbaum",
-      "feld": [30, 28]
+      "feld": [32, 33]
+    },
+    {
+      "moebel": "mf4Strassenbaum",
+      "feld": [37, 36]
+    },
+    {
+      "moebel": "wg4Busch",
+      "feld": [28, 45]
     },
     {
       "moebel": "wg4Busch",
@@ -581,11 +571,11 @@
     },
     {
       "moebel": "mf4Strassenbaum",
-      "feld": [30, 44]
+      "feld": [29, 40]
     },
     {
-      "moebel": "wg4Busch",
-      "feld": [34, 34]
+      "moebel": "mf4Strassenbaum",
+      "feld": [36, 43]
     }
   ],
   "ausloeser": [
@@ -615,6 +605,14 @@
     {
       "name": "wegPinewood",
       "feld": [0, 15]
+    },
+    {
+      "name": "jahrmarkt",
+      "feld": [6, 0]
+    },
+    {
+      "name": "jahrmarkt",
+      "feld": [7, 0]
     },
     {
       "name": "raststaetteTuer",

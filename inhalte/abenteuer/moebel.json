@@ -4013,6 +4013,34 @@
       "blick": "unten",
       "zustand": "gebraucht",
       "stil": "klassisch"
+    },
+    "mf4SchildDiner": {
+      "quelle": "spiel/eigene/schild_diner.png",
+      "breite": 48,
+      "hoehe": 16,
+      "kollision": false,
+      "art": "deko",
+      "zustand": "neu",
+      "stil": "klassisch"
+    },
+    "mf4Poller": {
+      "quelle": "modern-exteriors/Modern_Exteriors_16x16/ME_Theme_Sorter_16x16/3_City_Props_Singles_16x16/ME_Singles_City_Props_16x16_Pedestrian_Barrier_Post_1.png",
+      "breite": 16,
+      "hoehe": 16,
+      "kollision": true,
+      "art": "zaun",
+      "zustand": "gebraucht",
+      "stil": "klassisch"
+    },
+    "mf4SchildSackgasse": {
+      "quelle": "modern-exteriors/Modern_Exteriors_16x16/ME_Theme_Sorter_16x16/11_Camping_Singles_16x16/ME_Singles_Camping_16x16_Sign_2.png",
+      "breite": 16,
+      "hoehe": 16,
+      "kollision": true,
+      "art": "strassenmoebel",
+      "blick": "unten",
+      "zustand": "gebraucht",
+      "stil": "klassisch"
     }
   }
 }

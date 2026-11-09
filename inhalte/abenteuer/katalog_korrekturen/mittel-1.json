@@ -43,5 +43,43 @@
     "beschreibung": "Buntes Lernplakat mit rotem Raster aus 6 × 4 Feldern voller farbiger Zeichen, hängt an der Wand.",
     "sicher": 0.8,
     "korrektur": "mittel-1"
+  },
+  "modern-exteriors/Modern_Exteriors_16x16/ME_Theme_Sorter_16x16/13_School_Singles_16x16/ME_Singles_School_16x16_School_1.png": {
+    "ganz": true,
+    "gegenstuecke": "",
+    "beschreibung": "Ganzes Schulhaus von vorn, symmetrisch: rotes Walmdach mit Gauben und Rundfenster, beige Putzfassade mit Sprossenfenstern, Backsteinsockel, zwei grüne Doppeltüren unter Rundbögen und eine breite Treppe davor.",
+    "nur_pfad": true,
+    "sicher": 0.9,
+    "korrektur": "mittel-1"
+  },
+  "modern-exteriors/Modern_Exteriors_16x16/ME_Theme_Sorter_16x16/22_Post_Office_Singles_16x16/22_Post_Office_16x16_Black_Mailbox_1_Front.png": {
+    "beschreibung": "Schwarzer Briefkasten auf einem Pfosten, von vorn, wie vor amerikanischen Wohnhäusern.",
+    "art": "schild",
+    "innen_aussen": "aussen",
+    "ganz": true,
+    "blick": "unten",
+    "zustand": "gebraucht",
+    "sicher": 0.85,
+    "korrektur": "mittel-1"
+  },
+  "modern-farm/Single_Files_16x16/0_Complete_Tileset_Singles_16x16/Farmer_House_1_16x16.png": {
+    "sicher": 0.9,
+    "korrektur": "mittel-1",
+    "beschreibung": "Zweigeschossiges Holzhaus mit rotem Ziegeldach, Schornstein und Haustür unten rechts, von vorn; 8 × 10 Kacheln.",
+    "art": "haus",
+    "innen_aussen": "aussen",
+    "ganz": true,
+    "blick": "unten",
+    "zustand": "gebraucht"
+  },
+  "modern-farm/Single_Files_16x16/0_Complete_Tileset_Singles_16x16/Farmer_House_2_16x16.png": {
+    "sicher": 0.9,
+    "korrektur": "mittel-1",
+    "beschreibung": "Breites Holzhaus mit hohem rotem Satteldach, Schornstein, Rundfenster im Giebel, Vordach über dem Fenster und Anbau mit Haustür rechts; 10 × 9 Kacheln.",
+    "art": "haus",
+    "innen_aussen": "aussen",
+    "ganz": true,
+    "blick": "unten",
+    "zustand": "gebraucht"
   }
 }

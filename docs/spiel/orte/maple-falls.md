@@ -35,7 +35,7 @@ oder im Park. Felder sind (Spalte, Reihe), Bereiche „Spalten / Reihen“.
 
 ### 1.1 Außenkarte `mapleFalls.aussen`, 64 × 36
 
-**Größe und Ausnahme:** 64 × 36 statt höchstens 60 (7a.2), begründete Ausnahme (Befund 10): Die
+**Gebaut: 64 × 41, siehe 4.5; der folgende Plan ist der Entwurf.** **Größe und Ausnahme:** 64 × 36 statt höchstens 60 (7a.2), begründete Ausnahme (Befund 10): Die
 Nordseite trägt Haus Whitlock (10), Lily (9), Martínez (9, „zwei Häuser weiter“, Bibel), Diner (9)
 und Schule (16), zusammen 53 Kacheln Fassade; mit je einer Kachel Abstand, dem Durchgang zum Ufer
 neben der Schule und dem Rand sind es 64. Die Alternative (Schule an den Ostrand, Spielplatz
@@ -55,7 +55,7 @@ Hinterweg; 33–35 Hecke und Bäume am Südrand.
 | Haus Whitlock (Held und Mama)      | 2–11 / 6–10, Haustür (5, 10) in der Südfassade (Spalte 3 von 10)                        | Holzhaus mit Veranda, eineinhalb Geschosse, 10 breit   | `wohnzimmer` 20 × 13 (4.1), `dachboden` 14 × 11 (4.2)                           | ja           |
 | Haus Lily                          | 13–21 / 6–10                                                                            | Holzhaus, 9, Katze auf der Veranda                     | –                                                                               | nein         |
 | Haus Martínez (Juno, Carla)        | 23–31 / 6–10; Fahrrad am Zaun (32, 13)                                                  | Holzhaus, 9                                            | –                                                                               | nein         |
-| Diner „Falls Diner“                | 33–41 / 7–10, Tür (37, 10) in der Südfassade (Spalte 4 von 9); Parkplatz 33–41 / 11–13  | Flachbau, 9, Leuchtreklame „Open“ auf dem Dach (38, 7) | `diner` 18 × 12, Tür Südwand (8, 11) (Befund 9)                                 | ja (neu, 12) |
+| Diner „Falls Diner“                | 33–41 / 7–10, Tür (37, 10) in der Südfassade (Spalte 4 von 9); Parkplatz 33–41 / 11–13  | Flachbau, 9, Leuchtreklame „Open“ auf dem Dach (38, 7) | `diner` 18 × 12, Tür Südwand (4, 11) (Befund 9; gebaut 4.4)                     | ja (neu, 12) |
 | Durchgang zum Ufer                 | 42–43 / 3–13, Hecken beidseits, Bank am Ufer (42, 4)                                    | –                                                      | –                                                                               | Weg          |
 | Maple Falls High                   | 44–59 / 5–10, Doppeltür (51–52, 10) in der Mitte der Südfassade; Schulhof 44–59 / 11–13 | Backstein, 16, Fahnenmast (47, 12)                     | `clubraum` 18 × 13, Tür (9, 12) (Vereinfachung: Schultür führt in den Clubraum) | ja           |
 | Haus Calloway (gegenüber Whitlock) | 3–11 / 22–26, Tür (7, 22) zur Straße; Veranda 4–10 / 21 mit Schaukelstuhl               | Holzhaus, 9, Blumenkästen                              | –                                                                               | nein         |
@@ -127,11 +127,11 @@ Laufzeit quer 44 Kacheln, 13 Sekunden.
 
 | Von (Karte, Auslöser, Feld)                         | Nach (Karte, Auslöser, Feld; Ankunft)                                        | Lage                                                                            |
 | --------------------------------------------------- | ---------------------------------------------------------------------------- | ------------------------------------------------------------------------------- |
-| aussen `haustuer` (5, 10)                           | wohnzimmer `haustuer` (5, 12); Ankunft (5, 11), Blick nach oben              | Südfassade 30 % ↔ Südwand 25 % (±1).                                            |
+| aussen `haustuer` (3, 23), unter der Veranda        | wohnzimmer `haustuer` (5, 12); Ankunft (5, 11), Blick nach oben              | Südfassade 22 % ↔ Südwand 25 % (gebaut, 4.5).                                   |
 | wohnzimmer `treppeOben` (1, 3)                      | dachboden `treppe` (Nordwestecke, Feld im Bühnenbild Dachboden)              | Beide Treppen liegen in der Nordwestecke übereinander.                          |
-| aussen `dinerTuer` (37, 10)                         | diner `dinerAusgang` (8, 11); Ankunft (8, 10)                                | Südfassade 44 % ↔ Südwand 44 %.                                                 |
-| aussen `schule` (51, 10) und (52, 10)               | clubraum `schule` (9, 12); Ankunft `start` (9, 11)                           | Südfassade Mitte ↔ Südwand Mitte.                                               |
-| aussen `park` Ostrand (63, 15–17); Ankunft (62, 16) | park `park` Westrand (0, 15–17); Ankunft (1, 16)                             | Straße läuft über den Rand, gleiche Reihen und Breite.                          |
+| aussen `dinerTuer` (33, 23)                         | diner `dinerAusgang` (4, 11); Ankunft (4, 10)                                | Südfassade 25 % ↔ Südwand 22 % (gebaut, 4.5).                                   |
+| aussen `schule` (47, 23), vor der Treppe            | clubraum `schule` (9, 12); Ankunft `start` (9, 11)                           | Südfassade ↔ Südwand Mitte (gebaut, 4.5).                                       |
+| aussen `park` Ostrand (63, 25–27); Ankunft (62, 26) | park `park` Westrand (0, 15–17); Ankunft (1, 16)                             | Straße läuft über den Rand, 3 breit.                                            |
 | park `landstrasse` Ostrand (43, 15–17)              | wegMapleCedar.landstrasse `zurueckPark` Westrand (0, 15–17); Ankunft (1, 16) | Reihen mit mittel-2 abgestimmt (cedar-creek.md); Fluss dort südlich der Straße. |
 | park `zedernpfad` Nordrand (10, 0) und (11, 0)      | zedernpfad `zurueckPark` Südrand (Spalten laut 13 und cedar-creek.md)        | über den Fußsteg; Zedernpfad Q1, Sperre S2.                                     |
 | park `bushaltestelle` (26, 19), Dialog              | cedarCreek.aussen `bushaltestelle`                                           | Busfahrt (R41).                                                                 |
@@ -321,26 +321,52 @@ Anrichte. Szenen 5, 6, 9, 11, 12.
 ### 4.4 Diner (`mapleFalls.diner`, neu)
 
 **Größe:** 18 × 12 (7a.2, öffentlicher Raum). Nordwand Reihen 0–2 (rot), Boden weiße Fliesen, Tür in
-der Südwand (8, 11), Start (8, 10); außen Tür (37, 10) in der Südfassade (44 % ↔ 44 %). Übergänge
+der Südwand (4, 11), Start (4, 10); außen Auslöser (33, 23) unter der Tür der Südfassade (22 % ↔ 25 %). Übergänge
 `dinerTuer` ↔ `dinerAusgang` in `orte.json`.
 
 **Laufwege:** Tür → nach oben zu den Hockern und zur Kasse; nach links und rechts zu den Sitzecken.
 
-| Zone     | Gegenstand                                              | Feld                                                               | Zweck                                                               |
-| -------- | ------------------------------------------------------- | ------------------------------------------------------------------ | ------------------------------------------------------------------- |
-| Nordwand | zwei Fenster, Pinnwand mit Tischsets, Foto 1962         | (3, 1), (6, 1); Pinnwand (9, 1); Foto (11, 1)                      | `tischsetWand`, `fotoSchule1962` (Auslöser folgen in Runde 5)       |
-| Tresen   | vier Glasvitrinen (`mf4Vitrine`) und Kasse (`mf4Kasse`) | Vitrinen (3, 4), (5, 4), (7, 4), (11, 4); Kasse (9, 3)             | Hector dahinter (Reihe 3); Kasse mit dem Foto daneben               |
-| Tresen   | vier Barhocker (`mf4Barhocker`)                         | (3, 5), (5, 5), (7, 5), (11, 5)                                    | Gäste; N-MF1 am Tresen                                              |
-| Küche    | Arbeitsplatte, Herd, Kühlschrank                        | (13, 2), (15, 2), (16, 1)                                          | Durchreiche-Ecke                                                    |
-| Südwand  | zwei Sitzecken: runder Tisch, zwei Stühle               | Tische (2, 8) und (12, 8); Stühle (1, 8), (4, 8), (11, 8), (14, 8) | statt vier Sitznischen: Der Katalog hat keine Sitzbänke für Nischen |
-| Ecken    | Pflanzen                                                | (1, 3), (16, 9)                                                    | Regel 4.4                                                           |
+| Zone     | Gegenstand                                              | Feld                                                                                         | Zweck                                                               |
+| -------- | ------------------------------------------------------- | -------------------------------------------------------------------------------------------- | ------------------------------------------------------------------- |
+| Nordwand | zwei Fenster, Pinnwand mit Tischsets, Foto 1962         | (3, 1), (6, 1); Pinnwand (9, 1); Foto (11, 1)                                                | `tischsetWand`, `fotoSchule1962` (Auslöser folgen in Runde 5)       |
+| Tresen   | vier Glasvitrinen (`mf4Vitrine`) und Kasse (`mf4Kasse`) | Vitrinen (3, 4), (5, 4), (7, 4), (11, 4); Kasse (9, 3)                                       | Hector dahinter (Reihe 3); Kasse mit dem Foto daneben               |
+| Tresen   | vier Barhocker (`mf4Barhocker`)                         | (3, 5), (5, 5), (7, 5), (11, 5)                                                              | Gäste; N-MF1 am Tresen                                              |
+| Küche    | Arbeitsplatte, Herd, Kühlschrank                        | (13, 2), (15, 2), (16, 1)                                                                    | Durchreiche-Ecke                                                    |
+| Südwand  | zwei Sitzecken: runder Tisch, zwei Stühle               | Tische (7, 8) und (12, 8); Stühle (6, 8), (9, 8), (11, 8), (14, 8); Pflanzen (1, 9), (16, 9) | statt vier Sitznischen: Der Katalog hat keine Sitzbänke für Nischen |
+| Ecken    | Pflanzen                                                | (1, 3), (16, 9)                                                                              | Regel 4.4                                                           |
 
 Abweichungen vom Vorschlag in 12: keine Jukebox (im Katalog nicht vorhanden; `jukebox` entfällt oder
 wird ein Radio in Runde 5), zwei statt vier Sitzecken.
 
-### 4.5 und 4.6
+### 4.5 Außenkarte Birch Lane (`mapleFalls.aussen`), gebaut
 
-Außen und Park folgen in Runde 4.
+**Gebaut in Runde 4: 64 × 41.** Die gebaute Lage geht dem Plan in 1.1 vor; die Abweichungen kommen
+von den Größen der ganzen Gebäude im Katalog (Holzhäuser 9 × 13 mit Dach und Veranda, Schule
+24 × 23, Häuser der Südseite 8 × 10 und 10 × 9).
+
+| Reihen | Inhalt                                                                                                                                                                                                                                                                                                        |
+| ------ | ------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------- |
+| 0–2    | Fluss (0–1) und Uferweg aus Erde (2) hinter den Gärten; die Schule reicht im Osten bis an den Kartenrand                                                                                                                                                                                                      |
+| 3–9    | Gärten Nord mit Ahornen und Laubbäumen (Eichhörnchen)                                                                                                                                                                                                                                                         |
+| 10–22  | Nordseite: Whitlock (1, 10), Lily (11, 10), Martínez (21, 10), Diner (31, 14), Schule (39, 0)                                                                                                                                                                                                                 |
+| 23     | Vorgärten mit Briefkästen (6, 22), (16, 22), (26, 22); Plattenwege zu den Türen                                                                                                                                                                                                                               |
+| 24–28  | Gehweg Nord, Birch Lane (25–27), Gehweg Süd                                                                                                                                                                                                                                                                   |
+| 29–38  | Südseite: Calloway (1, 30), Wartehäuschen (12, 28), Schild „Zu verkaufen“ (17, 29), Hayes (18, 29) mit Einfahrt 26–27, Fisk (29, 30), Süd 4 (40, 29), Mülltonne (48, 29), Spielplatz auf Sand 50–61 / 30–37 (Sandkasten (51, 31), Schaukel (56, 30), Rutsche (59, 30), Klettergerüst (52, 35), Bank (57, 35)) |
+| 39     | Plattenweg vor den Häusern der Südseite (ihre Haustüren zeigen nach Süden, wie bei allen Häusern im Bild)                                                                                                                                                                                                     |
+| 40     | Hecke                                                                                                                                                                                                                                                                                                         |
+
+**Übergänge (gebaut):** `haustuer` (3, 23), Start (3, 24); `dinerTuer` (33, 23) ↔ Diner (4, 11), Start
+(4, 10); `schule` (47, 23) vor der Treppe; `park` Ostrand (63, 25–27). Die Auslöser stehen eine
+Kachel unter dem Bild des Gebäudes, weil Veranda und Treppe zum Bild gehören.
+
+**Abweichungen:** Durchgang zum Ufer, Hinterweg und Fahnenmast entfallen (der Mast ist 9 Kacheln hoch
+und hätte die Schule überdeckt); kein Wasserfall-Bild im Katalog, der Fluss ist ruhiges Wasser;
+keine Laternen (sie hätten die Straße versperrt). Briefkasten- und Fundauslöser aus 12 folgen in
+Runde 5. Belebung: Briefträgerin, Laubharker, Kind mit Ball, Eichhörnchen, Katze.
+
+### 4.6 Park
+
+Folgt in Runde 4.
 
 ## 5. Platzhalter für die Rückkehr
 

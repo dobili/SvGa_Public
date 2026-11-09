@@ -3152,6 +3152,120 @@
       "blick": "oben",
       "zustand": "neu",
       "stil": "klassisch"
+    },
+    "cc4Hobelbank": {
+      "quelle": "modern-farm/Single_Files_16x16/Props_and_Buildings_16x16/Woodwork_Crafting_Table_16x16.png",
+      "breite": 80,
+      "hoehe": 64,
+      "kollision": true,
+      "art": "tisch",
+      "blick": "unten",
+      "zustand": "gebraucht",
+      "stil": "rustikal"
+    },
+    "cc4Werktisch": {
+      "quelle": "modern-farm/Single_Files_16x16/Props_and_Buildings_16x16/DIY_Crafting_Table_Full_16x16.png",
+      "breite": 48,
+      "hoehe": 48,
+      "kollision": true,
+      "art": "tisch",
+      "blick": "unten",
+      "zustand": "gebraucht",
+      "stil": "rustikal"
+    },
+    "cc4Spaene": {
+      "quelle": "modern-farm/Single_Files_16x16/Props_and_Buildings_16x16/Shavings_Woodwork_Crafting_Table_16x16.png",
+      "breite": 16,
+      "hoehe": 16,
+      "kollision": false,
+      "art": "deko",
+      "zustand": "gebraucht",
+      "stil": "rustikal"
+    },
+    "cc4FotoRahmen": {
+      "quelle": "modern-farm/Single_Files_16x16/Props_and_Buildings_16x16/Photo_Frame_DIY_Crafting_Table_16x16.png",
+      "breite": 16,
+      "hoehe": 16,
+      "kollision": false,
+      "art": "bild",
+      "blick": "unten",
+      "zustand": "alt",
+      "stil": "rustikal"
+    },
+    "cc4Buegelsaege": {
+      "quelle": "modern-farm/Single_Files_16x16/Props_and_Buildings_16x16/Hacksaw_Woodwork_Crafting_Table_16x16.png",
+      "breite": 16,
+      "hoehe": 16,
+      "kollision": false,
+      "art": "geraet",
+      "zustand": "gebraucht",
+      "stil": "rustikal"
+    },
+    "cc4Hocker": {
+      "quelle": "modern-farm/Single_Files_16x16/Props_and_Buildings_16x16/Stool_Wood_1_16x16.png",
+      "breite": 16,
+      "hoehe": 16,
+      "kollision": true,
+      "art": "stuhl",
+      "zustand": "gebraucht",
+      "stil": "rustikal"
+    },
+    "cc4Holzkiste": {
+      "quelle": "modern-farm/Single_Files_16x16/Props_and_Buildings_16x16/Wood_Box_Woodwork_Crafting_Table_16x16.png",
+      "breite": 32,
+      "hoehe": 48,
+      "kollision": true,
+      "art": "kiste",
+      "blick": "unten",
+      "zustand": "gebraucht",
+      "stil": "rustikal"
+    },
+    "cc4Rundholz": {
+      "quelle": "modern-farm/Single_Files_16x16/Props_and_Buildings_16x16/Trunk_Load_Big_Vertical_16x16.png",
+      "breite": 32,
+      "hoehe": 32,
+      "kollision": true,
+      "art": "kiste",
+      "zustand": "gebraucht",
+      "stil": "rustikal"
+    },
+    "cc4RundholzKlein": {
+      "quelle": "modern-farm/Single_Files_16x16/Props_and_Buildings_16x16/Trunk_Load_Vertical_16x16.png",
+      "breite": 16,
+      "hoehe": 32,
+      "kollision": true,
+      "art": "kiste",
+      "zustand": "gebraucht",
+      "stil": "rustikal"
+    },
+    "cc4Holzregal": {
+      "quelle": "modern-interiors/1_Interiors/16x16/Theme_Sorter_Black_Shadow_Singles/5_Classroom_and_Library_Black_Shadow_Singles_16x16/Classroom_and_Library_Singles_71.png",
+      "breite": 32,
+      "hoehe": 48,
+      "kollision": true,
+      "art": "buecherregal",
+      "blick": "unten",
+      "zustand": "gebraucht",
+      "stil": "rustikal"
+    },
+    "cc4KisteLeer": {
+      "quelle": "modern-farm/Single_Files_16x16/Props_and_Buildings_16x16/Wood_Box_Empty_Woodwork_Crafting_Table_16x16.png",
+      "breite": 32,
+      "hoehe": 32,
+      "kollision": true,
+      "art": "kiste",
+      "blick": "unten",
+      "zustand": "gebraucht",
+      "stil": "rustikal"
+    },
+    "cc4RundholzMittel": {
+      "quelle": "modern-farm/Single_Files_16x16/Props_and_Buildings_16x16/Trunk_Load_Medium_Vertical_16x16.png",
+      "breite": 32,
+      "hoehe": 32,
+      "kollision": true,
+      "art": "kiste",
+      "zustand": "gebraucht",
+      "stil": "rustikal"
     }
   }
 }

@@ -1,0 +1,99 @@
+{
+  "karte": "cedarCreek.drechslerei",
+  "datei": "karten/cedar-creek-drechslerei.json",
+  "art": "innen",
+  "beschreibung": "Die Drechslerei von Mr. Dunmore am Westende der Hauptstraße von Cedar Creek: eine kleine Werkstatt mit Holzwänden und Dielenboden, in der es nach frisch geschnittenem Zedernholz riecht. Späne liegen auf der Hobelbank, Licht fällt durch das Fenster der Nordwand.\n\nAn der Nordwand links die große Hobelbank mit Ablage und Bank, darauf die Bügelsäge, Späne und ein gerahmtes Foto vom Großvater vor der alten Sägemühle; hier arbeitet Mr. Dunmore. Daneben ein Holzregal mit Büchern, Schalen und halbfertigen Figuren, rechts davon der Werktisch voller Farbdosen, Pinsel und Rahmen und in der Nordostecke eine Holzkiste mit Reststücken.\n\nIn der Südwestecke stapeln sich Rundhölzer aus den Zedern. Ein Hocker steht am Werktisch.\n\nLaufwege: von der Tür unten nach oben in die Mitte, links zur Hobelbank und zu Mr. Dunmore, rechts zum Werktisch und zur Kiste.",
+  "wand": "holz",
+  "boden": "dielen",
+  "raster": [
+    "################",
+    "################",
+    "################",
+    "#..............#",
+    "#..............#",
+    "#..............#",
+    "#..............#",
+    "#..............#",
+    "#..............#",
+    "#..............#",
+    "########.#######"
+  ],
+  "objekte": [
+    {
+      "moebel": "cc4Hobelbank",
+      "feld": [1, 1],
+      "id": "hobelbank"
+    },
+    {
+      "moebel": "cc4Buegelsaege",
+      "auf": "hobelbank"
+    },
+    {
+      "moebel": "cc4Spaene",
+      "auf": "hobelbank"
+    },
+    {
+      "moebel": "cc4FotoRahmen",
+      "auf": "hobelbank"
+    },
+    {
+      "moebel": "cc4Holzregal",
+      "feld": [7, 1]
+    },
+    {
+      "moebel": "cc4Werktisch",
+      "feld": [10, 1],
+      "id": "werktisch"
+    },
+    {
+      "moebel": "cc4Holzkiste",
+      "feld": [13, 1]
+    },
+    {
+      "moebel": "cc4Hocker",
+      "feld": [11, 5]
+    },
+    {
+      "moebel": "cc4Rundholz",
+      "feld": [1, 8]
+    },
+    {
+      "moebel": "cc4RundholzKlein",
+      "feld": [3, 8]
+    },
+    {
+      "moebel": "cc4Hocker",
+      "feld": [6, 4]
+    },
+    {
+      "moebel": "cc4KisteLeer",
+      "feld": [13, 7]
+    },
+    {
+      "moebel": "cc4RundholzMittel",
+      "feld": [13, 4]
+    }
+  ],
+  "ausloeser": [
+    {
+      "name": "start",
+      "feld": [8, 9],
+      "eigenschaften": {
+        "richtung": "oben"
+      }
+    },
+    {
+      "name": "drechslereiAusgang",
+      "feld": [8, 10]
+    }
+  ],
+  "figuren": [
+    {
+      "name": "dunmore",
+      "feld": [3, 6]
+    }
+  ],
+  "belebung": [],
+  "zustand": ["neu", "gebraucht", "alt"],
+  "stil": ["rustikal", "klassisch"]
+}

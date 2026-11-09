@@ -21,6 +21,11 @@ kommen sie nur ins private Repository, nie ins öffentliche.
 | Serene Village, Kitchen and more (gratis) | nein | Vorgänger; Modern Interiors und Exteriors enthalten das verbessert |
 | Basic platformer tileset | nein | Seitenansicht und 32 Pixel, das Spiel ist von oben gesehen mit 16 Pixeln |
 
+**Die Zuordnung ist nur ein Ausgangspunkt** (Wunsch des Autors, 9.11.2026): Beim Kartenbau dürfen
+alle hochgeladenen Pakete frei kombiniert werden, wo es sinnvoll ist, etwa Computer und Schreibtische
+aus Office im Arbeitszimmer zu Hause, Küchengeräte aus Interiors in der Raststätte, Tiere aus Farm in
+der Stadt.
+
 Fehlt noch etwas? Nach dieser Liste nicht. Gebirge, Geysire und Riesenbäume (Summit City,
 Geysirbecken, Riesenbäume) gibt es bei LimeZu nicht eigens; dafür reichen Felsen und Bäume aus
 Exteriors und Farm, nachgefärbt. Das zeigt sich beim Zeichnen; dann melde ich mich.

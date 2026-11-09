@@ -633,7 +633,9 @@ gleich gutes Ende bei jedem Ausgang des Finales, Q21-5 endgültiger Abschied mit
 - **G1 Pakete:** LimeZu Modern Exteriors (Außen), Interiors (Innen, Figuren), Office (Silicon Bay,
   Turnierleitung), Farm (Land, Wege, Tiere), Modern UI (Rahmen, Porträts); Fungus Cave nur bei
   Bedarf. Dungeon, Fantasy Battlers, Serene Village, Kitchen und Platformer nicht, weil Stil oder
-  Ansicht nicht passen. Nur im privaten Repository (Lizenz verbietet Weitergabe).
+  Ansicht nicht passen. Nur im privaten Repository (Lizenz verbietet Weitergabe). Die Zuordnung
+  ist kein Zwang: Beim Kartenbau dürfen alle Pakete frei kombiniert werden (Wunsch des Autors,
+  9.11.2026), etwa Bürogeräte auch im Arbeitszimmer zu Hause.
 - **G2 Oberfläche im Spiel:** Pixelrahmen aus Modern UI, nachgefärbt auf die Farben der App; Schrift
   der App (lesbar, Umlaute, Schriftgröße des Lesers); Brett und Uhr bleiben im Aussehen der App, nur
   die Kartenleiste bekommt den Rahmen. Grund: Immersion (Wunsch des Autors) ohne Bruch zur App.

@@ -45,7 +45,7 @@
     "#dddddddddddddddddddddddddddddddddddddddddddddddddddddd#",
     "eeeeeeeeeeeeeeeeeeeeeeeeeeeeeeeeeeeeeeeeeeeeeeeeeeeeeeee",
     "eeeeeeeeeeeeeeeeeeeeeeeeeeeeeeeeeeeeeeeeeeeeeeeeeeeeeeee",
-    "eeeeeeeeeeeeeeeeeeeeeeeeeeeeeeeeeeeeeeeeeeeeeeeeeeeeeeee",
+    "#.eeeeeeeeeeeeeeeeeeeeeeeeeeeeeeeeeeeeeeeeeeeeeeeeeeee.#",
     "#.......ee............eeeeeeeeeeeee.....ee.............#",
     "#.......ee.............eeeeeeeeeee......ee.............#",
     "#.......ee..............................ee.............#",
@@ -908,20 +908,12 @@
       "feld": [0, 22]
     },
     {
-      "name": "wegPinewood",
-      "feld": [0, 23]
-    },
-    {
       "name": "wegCapital",
       "feld": [55, 21]
     },
     {
       "name": "wegCapital",
       "feld": [55, 22]
-    },
-    {
-      "name": "wegCapital",
-      "feld": [55, 23]
     },
     {
       "name": "saloonTuer",

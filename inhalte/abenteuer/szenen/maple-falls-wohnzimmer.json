@@ -2,7 +2,7 @@
   "karte": "mapleFalls.wohnzimmer",
   "datei": "karten/maple-falls-wohnzimmer.json",
   "art": "innen",
-  "beschreibung": "Das neue Wohnzimmer der Familie am Tag nach dem Umzug in Maple Falls: ein heller, warmer Raum mit Holzboden und cremefarbenen Wänden, aber noch nicht fertig eingerichtet. An der Nordwand zwei Fenster mit Vorhängen, durch die Licht fällt, links die Tür zur Dachbodentreppe, rechts eine kleine Küchenecke mit Kühlschrank, Herd und Arbeitsplatte. Links vor der Wand steht das Sofa mit Couchtisch auf einem Teppich; der Fernseher steht noch eingepackt auf dem Couchtisch. Rechts in der Mitte der runde Esstisch mit zwei Stühlen, an dem Mama sitzt und arbeitet. Überall Umzugskartons, einer mit der Aufschrift „Küche?“ neben der Arbeitsplatte, der leere Pizzakarton von gestern Abend liegt mitten auf dem Boden. Zwischen den Fenstern hängt das Foto von Grandma Whitlock. Unten in der Mitte die Haustür nach draußen. Pflanzen in zwei Ecken, eine Stehlampe neben dem Esstisch. Laufwege: von der Haustür gerade nach oben, nach links zur Dachbodentür, nach rechts zu Mama und zur Küche.",
+  "beschreibung": "Das neue Wohnzimmer der Familie am Tag nach dem Umzug in Maple Falls: ein heller, warmer Raum mit Holzboden und cremefarbenen Wänden, aber noch nicht fertig eingerichtet. Links in der Nordwand die Tür zur Dachbodentreppe, daneben steht an der Wand ein niedriges Lowboard, darüber hängt der Fernseher an der Wand; davor liegt der Teppich mit einem kleinen Couchtisch, und mit etwas Abstand steht das Sofa mit der Lehne zum Raum und Blick auf den Fernseher. An der Nordwand zwei Fenster mit Vorhängen und dazwischen das Foto von Grandma Whitlock. Rechts eine kleine Küchenecke mit Arbeitsplatte, Herd und Kühlschrank, davor der Umzugskarton „Küche?“. Rechts in der Mitte der runde Esstisch mit zwei Stühlen, die zum Tisch schauen; Mama steht dahinter und sortiert Papiere. Daneben an der Wand eine Stehlampe. Überall noch Umzugskartons, ein hoher Stapel hinter dem Sofa, der leere Pizzakarton von gestern Abend liegt mitten auf dem Boden. Pflanzen in den unteren Ecken. Unten in der Mitte die Haustür nach draußen. Laufwege: von der Haustür gerade nach oben, nach links zur Dachbodentür, nach rechts zu Mama und zur Küche.",
   "wand": "creme",
   "boden": "holzHell",
   "raster": [
@@ -27,19 +27,19 @@
     },
     {
       "moebel": "wzVorhang",
-      "feld": [4, 1],
+      "feld": [5, 1],
       "an_wand": true,
       "versatz": [0, -8]
     },
     {
       "moebel": "wzFenster",
-      "feld": [4, 1],
+      "feld": [5, 1],
       "an_wand": true,
       "versatz": [8, 0]
     },
     {
       "moebel": "wzBild",
-      "feld": [7, 1],
+      "feld": [8, 1],
       "an_wand": true,
       "versatz": [8, 8]
     },
@@ -47,13 +47,13 @@
       "moebel": "wzVorhang",
       "feld": [9, 1],
       "an_wand": true,
-      "versatz": [0, -8]
+      "versatz": [8, -8]
     },
     {
       "moebel": "wzFenster",
-      "feld": [9, 1],
+      "feld": [10, 1],
       "an_wand": true,
-      "versatz": [8, 0]
+      "versatz": [0, 0]
     },
     {
       "moebel": "wzKuehlschrank",
@@ -73,38 +73,60 @@
       "id": "kartonKueche"
     },
     {
+      "moebel": "mf3Lowboard",
+      "feld": [2, 2],
+      "id": "lowboard"
+    },
+    {
+      "moebel": "mf3FernseherFlach",
+      "feld": [2, 1],
+      "an_wand": true,
+      "versatz": [0, -6]
+    },
+    {
       "moebel": "wzTeppich",
-      "feld": [2, 5]
+      "feld": [1, 4]
     },
     {
-      "moebel": "wzSofa",
-      "feld": [2, 2]
+      "moebel": "mf3Couchtisch",
+      "feld": [2, 4]
     },
     {
-      "moebel": "wzCouchtisch",
-      "feld": [3, 5],
-      "id": "couchtisch"
+      "moebel": "mf3SofaL",
+      "feld": [2, 6],
+      "zu": "lowboard",
+      "bauteil_ok": true
     },
     {
-      "moebel": "wzFernseher",
-      "auf": "couchtisch"
+      "moebel": "mf3SofaM",
+      "feld": [3, 6],
+      "zu": "lowboard",
+      "bauteil_ok": true
+    },
+    {
+      "moebel": "mf3SofaR",
+      "feld": [4, 6],
+      "zu": "lowboard",
+      "bauteil_ok": true
     },
     {
       "moebel": "wzEsstisch",
-      "feld": [10, 6],
+      "feld": [10, 7],
       "id": "esstisch"
     },
     {
-      "moebel": "wzStuhlRechts",
-      "feld": [9, 6]
+      "moebel": "mf3StuhlHellRechts",
+      "feld": [9, 7],
+      "zu": "esstisch"
     },
     {
-      "moebel": "wzStuhlLinks",
-      "feld": [12, 6]
+      "moebel": "mf3StuhlHellLinks",
+      "feld": [12, 7],
+      "zu": "esstisch"
     },
     {
       "moebel": "wzStehlampe",
-      "feld": [14, 5]
+      "feld": [14, 6]
     },
     {
       "moebel": "wzPflanzeGross",
@@ -116,7 +138,7 @@
     },
     {
       "moebel": "wzKartonstapelHoch",
-      "feld": [2, 8]
+      "feld": [5, 8]
     },
     {
       "moebel": "wzKartonGross",
@@ -145,7 +167,7 @@
     },
     {
       "name": "fotoGrandma",
-      "feld": [7, 3]
+      "feld": [8, 3]
     },
     {
       "name": "kartonKueche",
@@ -160,7 +182,9 @@
   "figuren": [
     {
       "name": "mutter",
-      "feld": [11, 8]
+      "feld": [11, 6]
     }
-  ]
+  ],
+  "zustand": ["neu", "gebraucht"],
+  "stil": ["modern", "klassisch"]
 }

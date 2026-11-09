@@ -1,6 +1,6 @@
 # Auftrag: Runde 3 der zehn Karten (Rückmeldungen des Autors einarbeiten)
 
-**Stand:** offen (Haupt-Chat, 09.11.2026, dreißigster Auftrag)
+**Stand:** fertig (mittel-1, 09.11.2026)
 
 **Zweig:** dein fester Sitzungszweig, Basis `claude/friendly-shannon-y8bf90` (vorher hereinholen, Stand b957d636);
 privates Repository auf `origin/main` holen (Stand d7dc36de), nur lesen, nicht pushen
@@ -33,8 +33,8 @@ Deine Karten und die Notizen des Autors:
   - der Globus scheint auf der Schulter der Figur zu stehen und sonst zu schweben
   - Oben links sind mehrere Gegenstände abgeschnitten und die Medaille hängt in der Luft
 - **mapleFalls.aussen:** Das Gras sieht auch viel zu regelmäßig aus.
-- **mapleFalls.park:** Ist das da oben links ein Ubahneingang? Sieht aus wie ein Schacht, wo eine Rolltreppe drüber gelegt worden ist. 
-  Insgesamt scheinen hier auch wieder mehrere Objekte eher zufällig platziert zu sein. 
+- **mapleFalls.park:** Ist das da oben links ein Ubahneingang? Sieht aus wie ein Schacht, wo eine Rolltreppe drüber gelegt worden ist.
+  Insgesamt scheinen hier auch wieder mehrere Objekte eher zufällig platziert zu sein.
   Was ist die graue Fläche unten? Wasser?
   Der Weg geht nicht ganz zum Rand.
 
@@ -47,6 +47,73 @@ Häuser draußen passen zu den Räumen drinnen; keine Industriebauten neben der 
 ## Bericht
 
 (vom Helfer auszufüllen)
+
+## Bericht
+
+Fünf Karten neu gebaut (Dachboden, Wohnzimmer, Clubraum, draußen, Park); `kartenbau` und `kartenbild`
+ohne Befunde, alle benutzten Möbel haben `art`, `zustand`, `stil` (und `blick`, wo es eine Vorderseite
+gibt). Neue Einträge mit Vorsilbe `mf3`. Jede Szene legt `zustand` und `stil` fest. Die Kacheln der
+Oberflächentests bleiben (Dachboden Start (2,7), Brett (5,4); Park Kiosk (16,3), Jo (8,6)).
+
+**Dachboden** (Zustand gebraucht/alt, Stil klassisch/rustikal; 3 Runden):
+
+- _Scheinbar zufällige Platzierung:_ Die Möbel stehen jetzt in drei Gruppen: an der Nordwand Kartons,
+  Schrank und Bücherregal in einer Reihe; unter dem Fenster der Spieltisch auf dem Teppich mit zwei
+  Stühlen und Stehlampe; rechts vorn eine eigene Ecke mit Mrs. Whitlocks Sachen (Kistenstapel,
+  Standspiegel, Hutschachtel, Kiste mit Tuch, Zeitungen).
+- _Treppe beginnt an der Wand:_ Die Treppe endet jetzt zwei Reihen über der Südwand; darunter ist der
+  freie Antritt mit dem Übergang nach unten (Prüfung „Treppenantritt“ ohne Befund).
+- _Zerstörtes Mobiliar gemischt:_ Kaputtes ist ganz entfernt (zerbrochener Stuhl, Besen, offener
+  Karton); alles ist alt, aber heil, die alten Dinge stehen gesammelt in einer Ecke.
+- _Schachbrett ragt über den Tisch:_ kleines Brett (`schachbrett_klein`, 12 × 9) auf dem runden Tisch;
+  die Prüfung „breiter als die Platte“ meldet nichts. Die beiden Stühle sind ein vollständiges Paar
+  (Küchenstühle dunkel, die Generic-Stühle 115–117 sind links angeschnitten) und schauen zum Tisch.
+
+**Clubraum** (Zustand neu/gebraucht, Stil klassisch; 1 Runde):
+
+- _Schachbretter ragen über den Tisch:_ vier runde Spieltische mit dem kleinen Brett mit Figuren, das
+  ganz auf der Platte liegt.
+- _Stühle abgeschnitten:_ je Tisch ein vollständiges Stuhlpaar (Küchenstühle orange, 283/287), beide zum
+  Tisch gewandt (`zu`).
+- _Spinde falsch orientiert:_ Die Spinde stehen jetzt an der Nordwand und zeigen nach unten in den Raum.
+- _Globus auf der Schulter der Figur:_ Coach Delgado steht neben dem Lehrerpult statt dahinter; der
+  Globus steht auf dem Pult, keine Figur wird überdeckt (Prüfung ohne Befund).
+- _Oben links abgeschnitten, Medaille in der Luft:_ Der angeschnittene Pokaltisch und die Urkunde sind
+  weg; stattdessen eine niedrige Anrichte mit einem Pokal darauf.
+
+**Wohnzimmer** (Zustand neu/gebraucht, Stil modern/klassisch; 3 Runden; keine Notiz, allgemeine
+Hinweise): Der Fernseher hängt an der Nordwand über einem Lowboard, davor Teppich und Couchtisch, mit
+Abstand das Sofa mit der Lehne zum Raum und Blick zum Fernseher (`zu`). Der Esstisch überdeckt Mama
+nicht mehr (sie steht dahinter), die Stühle sind ein Paar und schauen zum Tisch. Stehlampe an der
+Wand, Pflanzen in Ecken, Kartonstapel hinter dem Sofa statt vor dem Fenster.
+
+**Draußen** (2 Runden):
+
+- _Gras zu regelmäßig:_ Der Hintergrund hat jetzt Gras mit Abwechslung (Kartenbild); dazu keine
+  verstreuten Bäume mehr auf der Wiese.
+- Allgemeine Hinweise: Die Bäume auf der anderen Straßenseite stehen in gleichem Abstand wie eine
+  Allee (Ahorn und Laubbaum im Wechsel); zwei Laternen direkt am Gehweg (links mit Bank im Vorgarten,
+  rechts mit Mülleimer); die Bushaltestelle steht jetzt zwischen Nachbarhaus und Schule, offen zur
+  Straße. Dafür sind beide Wohnhäuser zwei Kacheln nach links gerückt (Haustür (4,17)). Kein Baum
+  überdeckt mehr Juno oder Lily.
+
+**Park** (2 Runden):
+
+- _U-Bahn-Eingang oben links:_ Die Schulrampe (las sich als Schacht mit Rolltreppe) ist entfernt; Jo
+  wartet am Wegrand.
+- _Zufällig platziert:_ Der Park ist jetzt symmetrisch: Kiosk oben in der Mitte mit Weg, zwei
+  Blumenbeete daneben, Bäume in den Ecken und eine Baumreihe unter der Allee; an der Allee je eine
+  Laterne mit Bank links und Bushaltestelle rechts, zwei lange Bänke mit Blick auf den Weg und ein
+  Mülleimer.
+- _Graue Fläche unten:_ Das ist der Fluss; er hat jetzt Ufer und Rand und ist deutlich als Wasser zu
+  erkennen, davor der Uferweg aus Erde für die Enten.
+- _Weg nicht bis zum Rand:_ Die Allee ist zwei Kacheln breit und reicht auf beiden Seiten bis an den
+  Rand; dafür stehen die Übergänge `park` und `landstrasse` je auf beiden Reihen.
+
+**Prüfungen:** `kartenbau` und `kartenbild` für alle fünf Szenen ohne Befunde; `python -m pytest
+pipeline/tests -q`: 624 bestanden, 3 übersprungen; Prettier; Build mit verlinktem privaten Repository
+ohne Fehler; Playwright `tests/e2e/abenteuer` (Chromium): 9 bestanden. Die Hintergründe liegen nur in
+meinem Klon des privaten Repositorys; bitte mit `kartenbild` für die fünf Szenen neu zeichnen.
 
 ## Bericht des letzten Auftrags, zur Nachlese
 

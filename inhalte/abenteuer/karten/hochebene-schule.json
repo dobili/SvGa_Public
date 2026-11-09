@@ -11,7 +11,7 @@
   "tilewidth": 16,
   "tileheight": 16,
   "nextlayerid": 5,
-  "nextobjectid": 40,
+  "nextobjectid": 39,
   "layers": [
     {
       "id": 1,
@@ -546,7 +546,7 @@
           "type": "moebel",
           "x": 128,
           "y": 160,
-          "width": 96,
+          "width": 128,
           "height": 96,
           "rotation": 0,
           "visible": true,
@@ -565,29 +565,6 @@
         },
         {
           "id": 12,
-          "name": "hb7Basketballkorb",
-          "type": "moebel",
-          "x": 160,
-          "y": 195,
-          "width": 32,
-          "height": 32,
-          "rotation": 0,
-          "visible": true,
-          "properties": [
-            {
-              "name": "tiefe",
-              "type": "int",
-              "value": 249
-            },
-            {
-              "name": "kollision",
-              "type": "bool",
-              "value": false
-            }
-          ]
-        },
-        {
-          "id": 13,
           "name": "hb7Schule",
           "type": "moebel",
           "x": 288,
@@ -610,7 +587,7 @@
           ]
         },
         {
-          "id": 14,
+          "id": 13,
           "name": "hb7Aushang",
           "type": "moebel",
           "x": 528,
@@ -633,7 +610,7 @@
           ]
         },
         {
-          "id": 15,
+          "id": 14,
           "name": "hb7Basketballfeld",
           "type": "moebel",
           "x": 704,
@@ -656,7 +633,7 @@
           ]
         },
         {
-          "id": 16,
+          "id": 15,
           "name": "hb7Basketballkorb",
           "type": "moebel",
           "x": 800,
@@ -679,7 +656,7 @@
           ]
         },
         {
-          "id": 17,
+          "id": 16,
           "name": "hb7Schaukel",
           "type": "moebel",
           "x": 240,
@@ -702,7 +679,7 @@
           ]
         },
         {
-          "id": 18,
+          "id": 17,
           "name": "hb7Spielturm",
           "type": "moebel",
           "x": 320,
@@ -725,7 +702,7 @@
           ]
         },
         {
-          "id": 19,
+          "id": 18,
           "name": "rvPicknicktisch",
           "type": "moebel",
           "x": 640,
@@ -748,7 +725,7 @@
           ]
         },
         {
-          "id": 20,
+          "id": 19,
           "name": "hb7Werkstatt",
           "type": "moebel",
           "x": 32,
@@ -771,7 +748,7 @@
           ]
         },
         {
-          "id": 21,
+          "id": 20,
           "name": "cc4Werktisch",
           "type": "moebel",
           "x": 144,
@@ -794,7 +771,7 @@
           ]
         },
         {
-          "id": 22,
+          "id": 21,
           "name": "dsReifen",
           "type": "moebel",
           "x": 144,
@@ -817,7 +794,7 @@
           ]
         },
         {
-          "id": 23,
+          "id": 22,
           "name": "heSchulbus",
           "type": "moebel",
           "x": 480,
@@ -840,7 +817,7 @@
           ]
         },
         {
-          "id": 24,
+          "id": 23,
           "name": "haltestellenschild",
           "type": "moebel",
           "x": 704,
@@ -863,7 +840,7 @@
           ]
         },
         {
-          "id": 25,
+          "id": 24,
           "name": "wds6Briefkasten",
           "type": "moebel",
           "x": 752,
@@ -886,7 +863,7 @@
           ]
         },
         {
-          "id": 26,
+          "id": 25,
           "name": "wds6Pinie",
           "type": "moebel",
           "x": 112,
@@ -909,7 +886,7 @@
           ]
         },
         {
-          "id": 27,
+          "id": 26,
           "name": "cc3Busch",
           "type": "moebel",
           "x": 752,
@@ -932,7 +909,7 @@
           ]
         },
         {
-          "id": 28,
+          "id": 27,
           "name": "cc3Busch",
           "type": "moebel",
           "x": 48,
@@ -955,7 +932,7 @@
           ]
         },
         {
-          "id": 29,
+          "id": 28,
           "name": "wds6Kegelbaum",
           "type": "moebel",
           "x": 848,
@@ -978,7 +955,7 @@
           ]
         },
         {
-          "id": 30,
+          "id": 29,
           "name": "wds6Pinie",
           "type": "moebel",
           "x": 720,
@@ -1001,7 +978,7 @@
           ]
         },
         {
-          "id": 31,
+          "id": 30,
           "name": "wds6Pinie",
           "type": "moebel",
           "x": 192,
@@ -1024,7 +1001,7 @@
           ]
         },
         {
-          "id": 32,
+          "id": 31,
           "name": "wds6Kegelbaum",
           "type": "moebel",
           "x": 224,
@@ -1047,7 +1024,7 @@
           ]
         },
         {
-          "id": 33,
+          "id": 32,
           "name": "cc3Busch",
           "type": "moebel",
           "x": 32,
@@ -1070,7 +1047,7 @@
           ]
         },
         {
-          "id": 34,
+          "id": 33,
           "name": "cc3Busch",
           "type": "moebel",
           "x": 80,
@@ -1093,7 +1070,7 @@
           ]
         },
         {
-          "id": 35,
+          "id": 34,
           "name": "cc3Busch",
           "type": "moebel",
           "x": 176,
@@ -1116,7 +1093,7 @@
           ]
         },
         {
-          "id": 36,
+          "id": 35,
           "name": "cc3Busch",
           "type": "moebel",
           "x": 48,
@@ -1139,7 +1116,7 @@
           ]
         },
         {
-          "id": 37,
+          "id": 36,
           "name": "cc3Busch",
           "type": "moebel",
           "x": 32,
@@ -1162,7 +1139,7 @@
           ]
         },
         {
-          "id": 38,
+          "id": 37,
           "name": "cc3Busch",
           "type": "moebel",
           "x": 160,
@@ -1185,7 +1162,7 @@
           ]
         },
         {
-          "id": 39,
+          "id": 38,
           "name": "cc3Busch",
           "type": "moebel",
           "x": 896,

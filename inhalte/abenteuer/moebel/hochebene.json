@@ -192,8 +192,8 @@
       "stil": "laendlich"
     },
     "hb7Turnhalle": {
-      "quelle": "spiel/eigene/werk_halle.png",
-      "breite": 96,
+      "quelle": "spiel/eigene/turnhalle.png",
+      "breite": 128,
       "hoehe": 96,
       "kollision": true,
       "art": "gebaeude",

@@ -35,8 +35,8 @@ freigegeben: Entscheidungen trifft der Haupt-Chat, der Autor sieht morgen alles 
 | Birch Lane A           | Wasserfall ohne Berg unterbricht den Bach                                                                 | 45     | mittel-1  |          |
 | Birch Lane A           | Spielplatzzaun: Ecken verbinden die Zaunteile nicht                                                       | 44     | mittel-1  |          |
 | Birch Lane A           | links: Gehweg geht nicht herum, Straße endet gerade abgeschnitten im Gras                                 | 47     | mittel-1  |          |
-| Park A                 | rot-weißes Schildchen unverständlich                                                                      | 48     | mittel-4  |          |
-| Park A                 | morscher Steg unterbricht die Uferkante: weiter in den Fluss setzen                                       | 44     | mittel-4  |          |
+| Park A                 | rot-weißes Schildchen unverständlich                                                                      | 48     | mittel-4  | mittel-4 |
+| Park A                 | morscher Steg unterbricht die Uferkante: weiter in den Fluss setzen                                       | 44     | mittel-4  | mittel-4 |
 | Landstraße A           | Weg an zwei Windungen sehr dünn                                                                           | 41     | niedrig-1 |          |
 | Flussweg C             | Trampelpfad wird immer wieder dünner                                                                      | 41     | niedrig-1 |          |
 | Flussweg C             | Steg: Wasserlinie zwischen den zwei Stegteilen                                                            | 44     | niedrig-1 |          |

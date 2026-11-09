@@ -1,21 +1,25 @@
-# Auftrag mittel-1: Summit City, Hochebene und Weg nach Crossroads einrichten
+# Auftrag mittel-1: Crossroads, Pinewood Camp, Wege dazwischen; Felsplateaus nachsetzen
 
-**Stand:** kein Auftrag (Haupt-Chat, 09.11.2026; der sechsundzwanzigste Auftrag, Summit City und Hochebene, ist zusammengeführt, danke. Bis der nächste Auftrag per Nachricht kommt, bitte nichts tun und warten.)
+**Stand:** offen (Haupt-Chat, 09.11.2026, siebenundzwanzigster Auftrag; Summit City und Hochebene sind zusammengeführt, danke)
 
-**Zweig:** dein fester Sitzungszweig, Basis `claude/friendly-shannon-y8bf90` (vorher hereinholen, Stand 33bbfd39)
-**Darf ändern:** `inhalte/abenteuer/karten/summit-city-*.json`, `hochebene-*.json`, `weg-summit-crossroads-*.json`,
-`inhalte/abenteuer/moebel.json` (nur neue Einträge am Ende, Vorsilben `sc`, `he`), `docs/spiel/auftraege/mittel-1.md`
-**Prüfung vor dem Push:** wie beim letzten Auftrag; vorher erneut hereinholen (niedrig-1 macht parallel Desert Springs, `ds`)
+**Zweig:** dein fester Sitzungszweig, Basis `claude/friendly-shannon-y8bf90` (vorher hereinholen, Stand 623c31ad);
+im privaten Repository `origin/main` holen (Stand d33a9cd2, nur lesen)
+**Darf ändern:** `inhalte/abenteuer/karten/crossroads-*.json`, `pinewood-camp-*.json`,
+`weg-crossroads-pinewood-*.json`, `hochebene-*.json` (nur Felsplateaus nachsetzen),
+`inhalte/abenteuer/moebel.json` (nur neue Einträge am Ende, Vorsilben `cr`, `pw`, `sv`), `docs/spiel/auftraege/mittel-1.md`
+**Prüfung vor dem Push:** wie beim letzten Auftrag; vorher erneut hereinholen (niedrig-1 macht parallel Desert Springs)
 
 ## Ziel
 
-Summit City (Bergstadt): draußen (Holzhäuser, Nadelbäume, Schnee falls vorhanden, Seilbahn), Hütte,
-Bergstation (Seilbahn, Bänke, Schalter), Bergladen (Regale, Seile, Ausrüstung). Hochebene (Vell-Familien,
-Weltbeschreibung 5.9: heutige Siedlung, keine Zeichen oder Muster realer Kulturen): Felsentürme
-(Felsplateaus aus Serene Village), Schule (Klassenraum). Geysirbecken (Wasser: Karteneigenschaft
-`stil` = `kueste`, README) und Prärie (Gras, Zäune, Felsen).
+1. Serene Village gibt es jetzt als Einzelbilder: `spiel/serene/serene_NN.png` im privaten Repository,
+   im Register unter Thema „serene village einzeln“, Übersicht `register/uebersicht/serene-village__01.png`
+   (Felsplateau mit Treppe Nr. 2, Felsbrocken, Holzhäuser, Zäune, Baumreihen). Setze damit die
+   Felsplateaus auf der Hochebene nach (Vorsilbe `sv` für Serene-Village-Teile, wiederverwendbar).
+2. Crossroads (Kreuzung im Landesinneren): draußen (Tankstelle, Motel, Schilder, Bus), Raststätte
+   (innen). Weg Crossroads–Pinewood: Hütten und Riesenbäume. Pinewood Camp draußen (Zelte, Hütten,
+   Lagerfeuer, Steg am See; Wasser über `stil` = `kueste`, falls es einen See gibt).
 
-## Bericht
+## Bericht des letzten Auftrags, zur Nachlese
 
 Acht Karten eingerichtet: Summit City draußen, Hütte, Bergstation, Bergladen; Hochebene
 Felsentürme und Schule; Geysirbecken und Prärie. 11 neue Möbel am Ende von `moebel.json` (`sc` 7,

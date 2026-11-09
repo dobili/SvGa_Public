@@ -1,0 +1,86 @@
+{
+  "karte": "riverton.schuppen",
+  "datei": "karten/varianten/riverton-schuppen-b.json",
+  "art": "innen",
+  "beschreibung": "Variante B, Werkbank links: Der Schuppen hinter Albescus Werkstatt, Holzwände, staubiger Betonboden, Spinnweben in den Ecken. An der Nordwand links die Werkbank mit Farbdose und Werkzeug, in der Mitte lehnt die Leiter, rechts der orange Werkzeugschrank. Das grüne Fahrrad unter der Plane steht rechts neben der Tür an der Ostseite; an der Westwand ein Reifen und ein Holzkarren mit Gartengeräten, in der Südostecke ein stehender Reifen.",
+  "wand": "holz",
+  "boden": "stein",
+  "raster": [
+    "##########",
+    "##########",
+    "##########",
+    "#........#",
+    "#........#",
+    "#........#",
+    "#........#",
+    "#####.####"
+  ],
+  "objekte": [
+    {
+      "moebel": "rv5Werkbank",
+      "feld": [1, 1]
+    },
+    {
+      "moebel": "rv5Leiter",
+      "feld": [5, 1]
+    },
+    {
+      "moebel": "rv5Werkzeugschrank",
+      "feld": [7, 1]
+    },
+    {
+      "moebel": "rv5FahrradPlane",
+      "feld": [6, 4]
+    },
+    {
+      "moebel": "rv5ReifenLiegend",
+      "feld": [1, 4]
+    },
+    {
+      "moebel": "rv5KarrenWerkzeug",
+      "feld": [1, 5]
+    },
+    {
+      "moebel": "rv5ReifenStehend",
+      "feld": [8, 6]
+    },
+    {
+      "moebel": "rv5TuerSuedHolz",
+      "feld": [5, 7],
+      "an_wand": true
+    }
+  ],
+  "ausloeser": [
+    {
+      "name": "start",
+      "feld": [5, 6],
+      "eigenschaften": {
+        "richtung": "oben"
+      }
+    },
+    {
+      "name": "schuppenAusgang",
+      "feld": [5, 7]
+    },
+    {
+      "name": "fahrrad",
+      "feld": [5, 5]
+    }
+  ],
+  "figuren": [],
+  "belebung": [
+    {
+      "name": "maus",
+      "typ": "tier",
+      "feld": [2, 6],
+      "eigenschaften": {
+        "von": "2,6",
+        "bis": "4,6",
+        "verhalten": "ausweichen"
+      }
+    }
+  ],
+  "zustand": ["gebraucht", "alt"],
+  "stil": ["rustikal", "industrie"],
+  "variante": "b"
+}

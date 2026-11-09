@@ -1,0 +1,106 @@
+{
+  "karte": "riverton.wohnwagen",
+  "datei": "karten/riverton-wohnwagen.json",
+  "art": "innen",
+  "beschreibung": "Slicks Wohnwagen am Westende des Riverside-Parks (Szene 37): eng, gemütlich, alles hat zwei Zwecke. Helle Kunststoffwände, heller Holzboden, die Tür in der Mitte der Südwand, davor eine Fußmatte. Am Westende das Bett quer an der Wand, darauf ein Brett mit Figuren. An der Nordwand der weiße Ausstellungstisch mit Slicks Pokalen aus gebogenen Limodosen, daneben ein Regal mit Büchern und Flaschen, das Fenster zeigt auf den Fluss. Am Ostende die Küchenzeile mit dem kleinen Herd. In der Mitte ein Klapptisch mit zwei Hockern, an dem Slick in Szene 37 sitzt; an der Ostwand lehnt die Kuriertasche, in der Südwestecke ein Stapel Zeitungen.",
+  "wand": "creme",
+  "boden": "holzHell",
+  "raster": [
+    "##############",
+    "##############",
+    "##############",
+    "#............#",
+    "#............#",
+    "#............#",
+    "#............#",
+    "#............#",
+    "#######.######"
+  ],
+  "objekte": [
+    {
+      "moebel": "rv5Bett",
+      "feld": [1, 2],
+      "id": "bett"
+    },
+    {
+      "moebel": "mf3BrettKleinFiguren",
+      "auf": "bett"
+    },
+    {
+      "moebel": "rv5Pokaltisch",
+      "feld": [4, 1]
+    },
+    {
+      "moebel": "rv5Buecherregal",
+      "feld": [6, 1]
+    },
+    {
+      "moebel": "wzFenster",
+      "feld": [8, 1],
+      "an_wand": true
+    },
+    {
+      "moebel": "rv5Kuechenzeile",
+      "feld": [10, 2]
+    },
+    {
+      "moebel": "wzHerd",
+      "feld": [12, 2]
+    },
+    {
+      "moebel": "rv5Klapptisch",
+      "feld": [7, 4],
+      "id": "tisch"
+    },
+    {
+      "moebel": "rv5Hocker",
+      "feld": [6, 4],
+      "zu": "tisch"
+    },
+    {
+      "moebel": "rv5Hocker",
+      "feld": [8, 4],
+      "zu": "tisch"
+    },
+    {
+      "moebel": "rv5Kuriertasche",
+      "feld": [12, 5]
+    },
+    {
+      "moebel": "rv5Zeitungen",
+      "feld": [1, 5]
+    },
+    {
+      "moebel": "mf4Fussmatte",
+      "feld": [7, 7],
+      "versatz": [0, 8]
+    },
+    {
+      "moebel": "rv5TuerSuedHell",
+      "feld": [7, 8],
+      "an_wand": true
+    }
+  ],
+  "ausloeser": [
+    {
+      "name": "start",
+      "feld": [7, 7],
+      "eigenschaften": {
+        "richtung": "oben"
+      }
+    },
+    {
+      "name": "wohnwagenAusgang",
+      "feld": [7, 8]
+    },
+    {
+      "name": "dosentrophaeen",
+      "feld": [5, 3],
+      "auf_moebel": true
+    }
+  ],
+  "figuren": [],
+  "belebung": [],
+  "zustand": ["neu", "gebraucht"],
+  "stil": ["modern", "klassisch"]
+}

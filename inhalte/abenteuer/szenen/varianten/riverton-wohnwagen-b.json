@@ -1,0 +1,103 @@
+{
+  "karte": "riverton.wohnwagen",
+  "datei": "karten/varianten/riverton-wohnwagen-b.json",
+  "art": "innen",
+  "beschreibung": "Variante B, Bett am Ostende: Slicks Wohnwagen spiegelverkehrt eingerichtet. Helle Kunststoffwände, heller Holzboden, Tür mit Fußmatte in der Mitte der Südwand. Am Westende die Küchenzeile mit dem kleinen Herd, daneben das Fenster zum Fluss. An der Nordwand der Ausstellungstisch mit den Pokalen aus Limodosen, am Ostende das Bett mit dem Brett darauf, davor ein Stapel Zeitungen. In der Mitte der Klapptisch mit zwei Hockern, an der Westwand die Kuriertasche.",
+  "wand": "creme",
+  "boden": "holzHell",
+  "raster": [
+    "##############",
+    "##############",
+    "##############",
+    "#............#",
+    "#............#",
+    "#............#",
+    "#............#",
+    "#............#",
+    "#######.######"
+  ],
+  "objekte": [
+    {
+      "moebel": "rv5Kuechenzeile",
+      "feld": [1, 2]
+    },
+    {
+      "moebel": "wzHerd",
+      "feld": [3, 2]
+    },
+    {
+      "moebel": "wzFenster",
+      "feld": [5, 1],
+      "an_wand": true
+    },
+    {
+      "moebel": "rv5Pokaltisch",
+      "feld": [8, 1]
+    },
+    {
+      "moebel": "rv5BettKopfRechts",
+      "feld": [10, 2],
+      "id": "bett"
+    },
+    {
+      "moebel": "mf3BrettKleinFiguren",
+      "auf": "bett"
+    },
+    {
+      "moebel": "rv5Klapptisch",
+      "feld": [6, 5],
+      "id": "tisch"
+    },
+    {
+      "moebel": "rv5Hocker",
+      "feld": [5, 5],
+      "zu": "tisch"
+    },
+    {
+      "moebel": "rv5Hocker",
+      "feld": [7, 5],
+      "zu": "tisch"
+    },
+    {
+      "moebel": "rv5Kuriertasche",
+      "feld": [1, 5]
+    },
+    {
+      "moebel": "rv5Zeitungen",
+      "feld": [11, 5]
+    },
+    {
+      "moebel": "mf4Fussmatte",
+      "feld": [7, 7],
+      "versatz": [0, 8]
+    },
+    {
+      "moebel": "rv5TuerSuedHell",
+      "feld": [7, 8],
+      "an_wand": true
+    }
+  ],
+  "ausloeser": [
+    {
+      "name": "start",
+      "feld": [7, 7],
+      "eigenschaften": {
+        "richtung": "oben"
+      }
+    },
+    {
+      "name": "wohnwagenAusgang",
+      "feld": [7, 8]
+    },
+    {
+      "name": "dosentrophaeen",
+      "feld": [9, 3],
+      "auf_moebel": true
+    }
+  ],
+  "figuren": [],
+  "belebung": [],
+  "zustand": ["neu", "gebraucht"],
+  "stil": ["modern", "klassisch"],
+  "variante": "b"
+}

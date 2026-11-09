@@ -1,95 +1,85 @@
 {
-  "type": "map",
-  "version": "1.10",
-  "tiledversion": "1.11.0",
+  "compressionlevel": -1,
   "orientation": "orthogonal",
   "renderorder": "right-down",
+  "tiledversion": "1.11.0",
+  "type": "map",
+  "version": "1.10",
   "infinite": false,
-  "compressionlevel": -1,
-  "width": 12,
-  "height": 10,
+  "width": 10,
+  "height": 8,
   "tilewidth": 16,
   "tileheight": 16,
   "nextlayerid": 5,
-  "nextobjectid": 11,
-  "properties": [
-    {
-      "name": "kennung",
-      "type": "string",
-      "value": "riverton.schuppen"
-    }
-  ],
+  "nextobjectid": 14,
   "layers": [
     {
       "id": 1,
       "name": "boden",
       "type": "tilelayer",
-      "visible": true,
-      "opacity": 1,
+      "width": 10,
+      "height": 8,
       "x": 0,
       "y": 0,
-      "width": 12,
-      "height": 10,
+      "opacity": 1,
+      "visible": true,
       "data": [
-        1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1,
-        1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1,
-        1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1,
-        1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1,
-        1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1
+        0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0,
+        0, 0, 0, 0, 0, 0, 0, 1, 1, 1, 1, 1, 1, 1, 1, 0, 0, 1, 1, 1, 1, 1, 1, 1,
+        1, 0, 0, 1, 1, 1, 1, 1, 1, 1, 1, 0, 0, 1, 1, 1, 1, 1, 1, 1, 1, 0, 0, 0,
+        0, 0, 0, 1, 0, 0, 0, 0
       ]
     },
     {
       "id": 2,
       "name": "waende",
       "type": "tilelayer",
-      "visible": true,
-      "opacity": 1,
+      "width": 10,
+      "height": 8,
       "x": 0,
       "y": 0,
-      "width": 12,
-      "height": 10,
+      "opacity": 1,
+      "visible": true,
       "data": [
-        2, 2, 2, 2, 2, 2, 8, 2, 2, 2, 2, 2, 2, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 2,
-        2, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 2, 2, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 2,
-        2, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 2, 2, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 2,
-        2, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 2, 2, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 2,
-        2, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 2, 2, 2, 2, 2, 2, 0, 2, 2, 2, 2, 2, 2
+        2, 2, 2, 2, 2, 2, 2, 2, 2, 2, 2, 2, 2, 2, 2, 2, 2, 2, 2, 2, 2, 2, 2, 2,
+        2, 2, 2, 2, 2, 2, 2, 0, 0, 0, 0, 0, 0, 0, 0, 2, 2, 0, 0, 0, 0, 0, 0, 0,
+        0, 2, 2, 0, 0, 0, 0, 0, 0, 0, 0, 2, 2, 0, 0, 0, 0, 0, 0, 0, 0, 2, 2, 2,
+        2, 2, 2, 0, 2, 2, 2, 2
       ]
     },
     {
       "id": 3,
       "name": "objekte",
       "type": "tilelayer",
-      "visible": true,
-      "opacity": 1,
+      "width": 10,
+      "height": 8,
       "x": 0,
       "y": 0,
-      "width": 12,
-      "height": 10,
+      "opacity": 1,
+      "visible": true,
       "data": [
         0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0,
         0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0,
-        0, 0, 0, 0, 0, 0, 0, 0, 3, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0,
         0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0,
-        0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0
+        0, 0, 0, 0, 0, 0, 0, 0
       ]
     },
     {
       "id": 4,
       "name": "ausloeser",
       "type": "objectgroup",
-      "visible": true,
-      "opacity": 1,
+      "draworder": "topdown",
       "x": 0,
       "y": 0,
-      "draworder": "topdown",
+      "opacity": 1,
+      "visible": true,
       "objects": [
         {
           "id": 1,
           "name": "start",
           "type": "ausloeser",
           "x": 80,
-          "y": 128,
+          "y": 96,
           "width": 16,
           "height": 16,
           "rotation": 0,
@@ -107,7 +97,7 @@
           "name": "schuppenAusgang",
           "type": "ausloeser",
           "x": 80,
-          "y": 144,
+          "y": 112,
           "width": 16,
           "height": 16,
           "rotation": 0,
@@ -117,8 +107,8 @@
           "id": 3,
           "name": "fahrrad",
           "type": "ausloeser",
-          "x": 128,
-          "y": 64,
+          "x": 80,
+          "y": 80,
           "width": 16,
           "height": 16,
           "rotation": 0,
@@ -129,7 +119,7 @@
           "name": "maus",
           "type": "tier",
           "x": 32,
-          "y": 112,
+          "y": 96,
           "width": 16,
           "height": 16,
           "rotation": 0,
@@ -138,12 +128,12 @@
             {
               "name": "von",
               "type": "string",
-              "value": "2,7"
+              "value": "2,6"
             },
             {
               "name": "bis",
               "type": "string",
-              "value": "4,7"
+              "value": "4,6"
             },
             {
               "name": "verhalten",
@@ -154,69 +144,210 @@
         },
         {
           "id": 5,
-          "name": "rvMaterialstapel",
+          "name": "rv5Werkzeugschrank",
           "type": "moebel",
           "x": 16,
           "y": 16,
           "width": 32,
           "height": 48,
           "rotation": 0,
-          "visible": true
+          "visible": true,
+          "properties": [
+            {
+              "name": "tiefe",
+              "type": "int",
+              "value": 56
+            },
+            {
+              "name": "kollision",
+              "type": "bool",
+              "value": true
+            }
+          ]
         },
         {
           "id": 6,
-          "name": "rvFass",
+          "name": "rv5Leiter",
           "type": "moebel",
           "x": 48,
           "y": 16,
           "width": 16,
-          "height": 32,
+          "height": 48,
           "rotation": 0,
-          "visible": true
+          "visible": true,
+          "properties": [
+            {
+              "name": "tiefe",
+              "type": "int",
+              "value": 56
+            },
+            {
+              "name": "kollision",
+              "type": "bool",
+              "value": true
+            }
+          ]
         },
         {
           "id": 7,
-          "name": "rvLeiter",
+          "name": "rv5Werkbank",
           "type": "moebel",
-          "x": 48,
-          "y": 32,
-          "width": 16,
-          "height": 32,
+          "x": 96,
+          "y": 16,
+          "width": 48,
+          "height": 48,
           "rotation": 0,
-          "visible": true
+          "visible": true,
+          "properties": [
+            {
+              "name": "tiefe",
+              "type": "int",
+              "value": 56
+            },
+            {
+              "name": "kollision",
+              "type": "bool",
+              "value": true
+            }
+          ]
         },
         {
           "id": 8,
-          "name": "rvWerkzeugkiste",
+          "name": "rv5FahrradPlane",
           "type": "moebel",
-          "x": 144,
-          "y": 80,
+          "x": 64,
+          "y": 48,
           "width": 32,
-          "height": 48,
+          "height": 32,
           "rotation": 0,
-          "visible": true
+          "visible": true,
+          "properties": [
+            {
+              "name": "tiefe",
+              "type": "int",
+              "value": 72
+            },
+            {
+              "name": "kollision",
+              "type": "bool",
+              "value": true
+            }
+          ]
         },
         {
           "id": 9,
-          "name": "rvKiste",
+          "name": "rv5ReifenLiegend",
           "type": "moebel",
-          "x": 80,
-          "y": 16,
-          "width": 32,
-          "height": 32,
+          "x": 16,
+          "y": 80,
+          "width": 16,
+          "height": 16,
           "rotation": 0,
-          "visible": true
+          "visible": true,
+          "properties": [
+            {
+              "name": "tiefe",
+              "type": "int",
+              "value": 88
+            },
+            {
+              "name": "kollision",
+              "type": "bool",
+              "value": true
+            }
+          ]
         },
         {
           "id": 10,
-          "name": "rvHolzscheite",
+          "name": "rv5ReifenStehend",
           "type": "moebel",
-          "x": 144,
-          "y": 16,
+          "x": 16,
+          "y": 96,
+          "width": 16,
+          "height": 16,
+          "rotation": 0,
+          "visible": true,
+          "properties": [
+            {
+              "name": "tiefe",
+              "type": "int",
+              "value": 104
+            },
+            {
+              "name": "kollision",
+              "type": "bool",
+              "value": true
+            }
+          ]
+        },
+        {
+          "id": 11,
+          "name": "rv5Kanister",
+          "type": "moebel",
+          "x": 128,
+          "y": 64,
+          "width": 16,
+          "height": 32,
+          "rotation": 0,
+          "visible": true,
+          "properties": [
+            {
+              "name": "tiefe",
+              "type": "int",
+              "value": 88
+            },
+            {
+              "name": "kollision",
+              "type": "bool",
+              "value": true
+            }
+          ]
+        },
+        {
+          "id": 12,
+          "name": "rv5Saegebock",
+          "type": "moebel",
+          "x": 112,
+          "y": 80,
           "width": 32,
           "height": 32,
           "rotation": 0,
-          "visible": true
+          "visible": true,
+          "properties": [
+            {
+              "name": "tiefe",
+              "type": "int",
+              "value": 104
+            },
+            {
+              "name": "kollision",
+              "type": "bool",
+              "value": true
+            }
+          ]
+        },
+        {
+          "id": 13,
+          "name": "rv5TuerSuedHolz",
+          "type": "moebel",
+          "x": 80,
+          "y": 112,
+          "width": 16,
+          "height": 16,
+          "rotation": 0,
+          "visible": true,
+          "properties": [
+            {
+              "name": "tiefe",
+              "type": "int",
+              "value": 0
+            },
+            {
+              "name": "kollision",
+              "type": "bool",
+              "value": false
+            }
+          ]
         }
       ]
     }
@@ -286,6 +417,13 @@
           ]
         }
       ]
+    }
+  ],
+  "properties": [
+    {
+      "name": "kennung",
+      "type": "string",
+      "value": "riverton.schuppen"
     }
   ]
 }

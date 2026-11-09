@@ -203,7 +203,8 @@ def bildbefunde(szene: dict, privat: Path) -> list[str]:
         befund = None if eigen else katalogbefund(eintrag["moebel"], katalog.get(angabe["quelle"]))
         if befund:
             befunde.append(befund)
-        kanten = angeschnitten(Image.open(privat / angabe["quelle"]))
+        # Eigene Bilder dürfen offene Ränder haben (Brücken enden am Ufer, werkzeuge/bruecken.py).
+        kanten = [] if eigen else angeschnitten(Image.open(privat / angabe["quelle"]))
         if kanten:
             befunde.append(f"{eintrag['moebel']} wirkt angeschnitten ({', '.join(kanten)}): Bauteil?")
     return befunde

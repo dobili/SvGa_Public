@@ -521,6 +521,13 @@
           "name": "ort.wegMapleCedar.flussweg",
           "innen": false,
           "musik": "musik/landstrasse.ogg"
+        },
+        {
+          "kennung": "wegMapleCedar.zedernpfad",
+          "datei": "karten/weg-maple-cedar-3.json",
+          "name": "ort.wegMapleCedar.zedernpfad",
+          "innen": false,
+          "musik": "musik/landstrasse.ogg"
         }
       ],
       "figuren": [
@@ -600,6 +607,22 @@
             "ausloeser": "bushaltestelle"
           },
           "dialog": "cedar-creek-aussen.ankunft_zu_fuss"
+        },
+        {
+          "name": "zedernZurueckPark",
+          "art": "uebergang",
+          "ziel": {
+            "karte": "mapleFalls.park",
+            "ausloeser": "landstrasse"
+          }
+        },
+        {
+          "name": "zedernWeiterCedar",
+          "art": "uebergang",
+          "ziel": {
+            "karte": "cedarCreek.aussen",
+            "ausloeser": "bushaltestelle"
+          }
         }
       ]
     },

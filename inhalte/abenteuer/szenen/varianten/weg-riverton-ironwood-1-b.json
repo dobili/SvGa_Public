@@ -1,0 +1,846 @@
+{
+  "karte": "wegRivertonIronwood.kanalweg",
+  "variante": "b",
+  "art": "aussen",
+  "beschreibung": "Kanalweg, Variante B (karger, Herbst): Eine Fabrikhalle im Norden, eine kürzere Mauer mit Schriftgraffiti, Container statt Rohbau, der breite Ziegelturm, ein reines Kürbisfeld, die Scheune weiter südlich, gelbe Pappeln.",
+  "boden": "gras",
+  "wandart": "gras",
+  "boeden": {
+    "e": "erde",
+    "p": "pflaster"
+  },
+  "bruecken": ["h"],
+  "raster": [
+    "#################ee#~~~~~#####",
+    "#................ee.~~~~~....#",
+    "#................ee.~~~~~....#",
+    "#................ee.~~~~~....#",
+    "#................ee.~~~~~....#",
+    "#................ee.~~~~~....#",
+    "#................ee.~~~~~....#",
+    "#................ee.~~~~~....#",
+    "#................ee.~~~~~....#",
+    "#................ee.~~~~~....#",
+    "#................ee.~~~~~....#",
+    "#................ee.~~~~~....#",
+    "#................ee.~~~~~....#",
+    "#................ee.~~~~~....#",
+    "#................ee.~~~~~....#",
+    "#................ee.~~~~~....#",
+    "#................ee.~~~~~....#",
+    "#................ee.~~~~~....#",
+    "#................ee.~~~~~....#",
+    "#................ee.~~~~~....#",
+    "#................ee.~~~~~....#",
+    "#................ee.~~~~~....#",
+    "#................ee.~~~~~....#",
+    "#................ee.~~~~~....#",
+    "#................ee.~~~~~....#",
+    "#................ee.~~~~~....#",
+    "#................ee.~~~~~....#",
+    "#................ee.~~~~~....#",
+    "#................ee.~~~~~....#",
+    "#................ee.~~~~~....#",
+    "#................ee.~~~~~....#",
+    "#................ee.~~~~~....#",
+    "#................ee.~~~~~....#",
+    "#................ee.~~~~~....#",
+    "#................ee.~~~~~....#",
+    "#................ee.~~~~~....#",
+    "#................ee.~~~~~....#",
+    "#.pppppppppppp...ee.~~~~~....#",
+    "#.ppppppppppppeeeee.~~~~~....#",
+    "#.ppppppppppppeeeee.~~~~~....#",
+    "#.pppppppppppp...ee.~~~~~....#",
+    "#.pppppppppppp...ee.~~~~~....#",
+    "#.pppppppppppp...ee.~~~~~....#",
+    "#................ee.~~~~~....#",
+    "#................ee.~~~~~....#",
+    "#................ee.~~~~~....#",
+    "#................ee.~~~~~....#",
+    "#................ee.~~~~~....#",
+    "#................ee.~~~~~....#",
+    "#................ee.~~~~~....#",
+    "#.......pppppppppee.~~~~~....#",
+    "#.......pppppppppee.~~~~~....#",
+    "#................ee.~~~~~....#",
+    "#................ee.~~~~~....#",
+    "#................ee.~~~~~....#",
+    "#................ee.~~~~~....#",
+    "#................ee.~~~~~....#",
+    "#................ee.~~~~~....#",
+    "#................ee.~~~~~....#",
+    "#................ee.~~~~~....#",
+    "#................ee.~~~~~....#",
+    "#................ee.~~~~~....#",
+    "#................ee.~~~~~....#",
+    "#................ee.~~~~~....#",
+    "#................ee.~~~~~....#",
+    "#................ee.~~~~~....#",
+    "#................ee.~~~~~....#",
+    "#................ee.~~~~~....#",
+    "#................ee.~~~~~....#",
+    "#................ee.~~~~~....#",
+    "#...............eee.~~~~~....#",
+    "#...............eee~~~~~.....#",
+    "#...............ee.~~~~~.....#",
+    "#..............eee.~~~~~.....#",
+    "#..............eee~~~~~......#",
+    "#..............ee.~~~~~......#",
+    "#..............ee.~~~~~......#",
+    "#.............eee.~~~~~......#",
+    "#.............eee~~~~~.......#",
+    "#.............ee.~~~~~.......#",
+    "#............eee.~~~~~.......#",
+    "#............eee~~~~~........#",
+    "#............ee.~~~~~........#",
+    "#............ee.~~~~~........#",
+    "#...........eee.~~~~~........#",
+    "#...........eee~~~~~.........#",
+    "#...........ee.~~~~~.........#",
+    "#..........eee.~~~~~.........#",
+    "#..........eee~~~~~..........#",
+    "#..........ee.~~~~~..........#",
+    "#..........ee.~~~~~..........#",
+    "#..........ee.~~~~~..........#",
+    "#..........ee.~~~~~..........#",
+    "#..........ee.~~~~~..........#",
+    "#..........ee.~~~~~..........#",
+    "#..........ee.~~~~~..........#",
+    "#..........ee.~~~~~..........#",
+    "eeeeeeeeeeeee.~~~~~..........#",
+    "eeeeeeeeeeeee.~~~~~..........#",
+    "#..........ee.~~~~~..........#",
+    "#..........ee.~~~~~..........#",
+    "~~~~~~~~~~~hh~~~~~~..........#",
+    "~~~~~~~~~~~hh~~~~~~..........#",
+    "~~~~~~~~~~~hh~~~~~~..........#",
+    "#..........ee.~~~~~..........#",
+    "#..........ee.~~~~~..........#",
+    "#..........ee.~~~~~..........#",
+    "#..........ee.~~~~~..........#",
+    "#..........ee.~~~~~..........#",
+    "#..........ee.~~~~~..........#",
+    "#..........ee.~~~~~..........#",
+    "#..........ee.~~~~~..........#",
+    "#..........ee.~~~~~..........#",
+    "#..........ee.~~~~~..........#",
+    "#..........ee.~~~~~..........#",
+    "#..........ee.~~~~~..........#",
+    "#..........ee.~~~~~..........#",
+    "#..........ee.~~~~~..........#",
+    "#eeeeeeee..ee.~~~~~..........#",
+    "#eeeeeeee..ee.~~~~~..........#",
+    "#eeeeeeee..ee.~~~~~..........#",
+    "#eeeeeeee..ee.~~~~~..........#",
+    "#eeeeeeee..ee.~~~~~..........#",
+    "#eeeeeeee..ee.~~~~~..........#",
+    "#eeeeeeee..ee.~~~~~..........#",
+    "#eeeeeeee..ee.~~~~~..........#",
+    "#eeeeeeee..eee~~~~~..........#",
+    "#eeeeeeee..eee.~~~~~.........#",
+    "#eeeeeeee...ee.~~~~~.........#",
+    "#eeeeeeee...ee.~~~~~.........#",
+    "#eeeeeeee...eee~~~~~.........#",
+    "#eeeeeeee...eee.~~~~~........#",
+    "#eeeeeeee....ee.~~~~~........#",
+    "#eeeeeeee....ee.~~~~~........#",
+    "#............eee~~~~~........#",
+    "#............eee.~~~~~.......#",
+    "#.............ee.~~~~~.......#",
+    "#.............ee.~~~~~.......#",
+    "#.............eee~~~~~.......#",
+    "#.............eee.~~~~~......#",
+    "#..............ee.~~~~~......#",
+    "#..............ee.~~~~~......#",
+    "#..............eee~~~~~......#",
+    "#..............eee.~~~~~.....#",
+    "#...............ee.~~~~~.....#",
+    "#...............ee.~~~~~.....#",
+    "#...............eee~~~~~.....#",
+    "#...............eee.~~~~~....#",
+    "#................ee.~~~~~....#",
+    "#................ee.~~~~~....#",
+    "#................ee.~~~~~....#",
+    "#................ee.~~~~~....#",
+    "#................ee.~~~~~....#",
+    "#................ee.~~~~~....#",
+    "#................ee.~~~~~....#",
+    "#................eee~~~~~....#",
+    "#................eee~~~~~....#",
+    "#................ee.~~~~~....#",
+    "#................ee.~~~~~....#",
+    "#................ee.~~~~~....#",
+    "#................ee.~~~~~....#",
+    "#................ee.~~~~~....#",
+    "#................ee.~~~~~....#",
+    "#................ee.~~~~~....#",
+    "#................ee.~~~~~....#",
+    "#................ee.~~~~~....#",
+    "#................ee.~~~~~....#",
+    "#................ee.~~~~~....#",
+    "#................ee.~~~~~....#",
+    "#................ee.~~~~~....#",
+    "#................ee.~~~~~....#",
+    "#................ee.~~~~~....#",
+    "#................ee.~~~~~....#",
+    "#................ee.~~~~~....#",
+    "#................ee.~~~~~....#",
+    "#................ee.~~~~~....#",
+    "#................ee.~~~~~....#",
+    "#................ee.~~~~~....#",
+    "#................ee.~~~~~....#",
+    "#................ee.~~~~~....#",
+    "#................ee.~~~~~....#",
+    "#................ee.~~~~~....#",
+    "#................ee.~~~~~....#",
+    "#................ee.~~~~~....#",
+    "#................ee.~~~~~....#",
+    "#................ee.~~~~~....#",
+    "#................ee.~~~~~....#",
+    "#................ee.~~~~~....#",
+    "#................ee.~~~~~....#",
+    "#################ee#~~~~~#####"
+  ],
+  "objekte": [
+    {
+      "moebel": "mf9FussbrueckeLaengs3",
+      "feld": [11, 101]
+    },
+    {
+      "moebel": "cc3ZaunEnde",
+      "feld": [2, 43],
+      "bauteil_ok": true
+    },
+    {
+      "moebel": "ccZaun",
+      "feld": [3, 43],
+      "bauteil_ok": true
+    },
+    {
+      "moebel": "ccZaun",
+      "feld": [4, 43],
+      "bauteil_ok": true
+    },
+    {
+      "moebel": "ccZaun",
+      "feld": [5, 43],
+      "bauteil_ok": true
+    },
+    {
+      "moebel": "ccZaun",
+      "feld": [6, 43],
+      "bauteil_ok": true
+    },
+    {
+      "moebel": "ccZaun",
+      "feld": [7, 43],
+      "bauteil_ok": true
+    },
+    {
+      "moebel": "ccZaun",
+      "feld": [8, 43],
+      "bauteil_ok": true
+    },
+    {
+      "moebel": "ccZaun",
+      "feld": [9, 43],
+      "bauteil_ok": true
+    },
+    {
+      "moebel": "ccZaun",
+      "feld": [10, 43],
+      "bauteil_ok": true
+    },
+    {
+      "moebel": "ccZaun",
+      "feld": [11, 43],
+      "bauteil_ok": true
+    },
+    {
+      "moebel": "ccZaun",
+      "feld": [12, 43],
+      "bauteil_ok": true
+    },
+    {
+      "moebel": "cc3ZaunEndeR",
+      "feld": [13, 43],
+      "bauteil_ok": true
+    },
+    {
+      "moebel": "cc3Raetseltafel",
+      "feld": [14, 47]
+    },
+    {
+      "moebel": "haltestellenschild",
+      "feld": [16, 47]
+    },
+    {
+      "moebel": "mf4Wegweiser",
+      "feld": [9, 95]
+    },
+    {
+      "moebel": "mf4Poller",
+      "feld": [19, 154]
+    },
+    {
+      "moebel": "wr5Kuerbis",
+      "feld": [2, 119]
+    },
+    {
+      "moebel": "wr5Kuerbis",
+      "feld": [4, 119]
+    },
+    {
+      "moebel": "wr5Kuerbis",
+      "feld": [6, 119]
+    },
+    {
+      "moebel": "wr5Kuerbis",
+      "feld": [2, 121]
+    },
+    {
+      "moebel": "wr5Kuerbis",
+      "feld": [4, 121]
+    },
+    {
+      "moebel": "wr5Kuerbis",
+      "feld": [6, 121]
+    },
+    {
+      "moebel": "wr5Kuerbis",
+      "feld": [2, 123]
+    },
+    {
+      "moebel": "wr5Kuerbis",
+      "feld": [4, 123]
+    },
+    {
+      "moebel": "wr5Kuerbis",
+      "feld": [6, 123]
+    },
+    {
+      "moebel": "wr5Kuerbis",
+      "feld": [2, 125]
+    },
+    {
+      "moebel": "wr5Kuerbis",
+      "feld": [4, 125]
+    },
+    {
+      "moebel": "wr5Kuerbis",
+      "feld": [6, 125]
+    },
+    {
+      "moebel": "wr5Kuerbis",
+      "feld": [2, 127]
+    },
+    {
+      "moebel": "wr5Kuerbis",
+      "feld": [4, 127]
+    },
+    {
+      "moebel": "wr5Kuerbis",
+      "feld": [6, 127]
+    },
+    {
+      "moebel": "wr5Kuerbis",
+      "feld": [2, 129]
+    },
+    {
+      "moebel": "wr5Kuerbis",
+      "feld": [4, 129]
+    },
+    {
+      "moebel": "wr5Kuerbis",
+      "feld": [6, 129]
+    },
+    {
+      "moebel": "wr5Kuerbis",
+      "feld": [2, 131]
+    },
+    {
+      "moebel": "wr5Kuerbis",
+      "feld": [4, 131]
+    },
+    {
+      "moebel": "wr5Kuerbis",
+      "feld": [6, 131]
+    },
+    {
+      "moebel": "wr5Fabrikhalle",
+      "feld": [1, 3]
+    },
+    {
+      "moebel": "svSchild",
+      "feld": [16, 13]
+    },
+    {
+      "moebel": "wr5MauerLinks",
+      "feld": [4, 22],
+      "bauteil_ok": true
+    },
+    {
+      "moebel": "wr5Mauer",
+      "feld": [5, 22],
+      "bauteil_ok": true
+    },
+    {
+      "moebel": "wr5Mauer2",
+      "feld": [6, 22],
+      "bauteil_ok": true
+    },
+    {
+      "moebel": "wr5Mauer",
+      "feld": [7, 22],
+      "bauteil_ok": true
+    },
+    {
+      "moebel": "wr5Mauer",
+      "feld": [8, 22],
+      "bauteil_ok": true
+    },
+    {
+      "moebel": "wr5Mauer2",
+      "feld": [9, 22],
+      "bauteil_ok": true
+    },
+    {
+      "moebel": "wr5Mauer",
+      "feld": [10, 22],
+      "bauteil_ok": true
+    },
+    {
+      "moebel": "wr5Mauer",
+      "feld": [11, 22],
+      "bauteil_ok": true
+    },
+    {
+      "moebel": "wr5Mauer2",
+      "feld": [12, 22],
+      "bauteil_ok": true
+    },
+    {
+      "moebel": "wr5Mauer",
+      "feld": [13, 22],
+      "bauteil_ok": true
+    },
+    {
+      "moebel": "wr5MauerRechts",
+      "feld": [14, 22],
+      "bauteil_ok": true
+    },
+    {
+      "moebel": "wr5GraffitiBlau",
+      "feld": [6, 23],
+      "vorn": true
+    },
+    {
+      "moebel": "wr5GraffitiKrone",
+      "feld": [11, 23],
+      "vorn": true
+    },
+    {
+      "moebel": "wr5Container",
+      "feld": [2, 26]
+    },
+    {
+      "moebel": "wr5Container",
+      "feld": [6, 27]
+    },
+    {
+      "moebel": "wr5Container",
+      "feld": [6, 30]
+    },
+    {
+      "moebel": "wr5Container",
+      "feld": [2, 46]
+    },
+    {
+      "moebel": "wr5Container",
+      "feld": [4, 38]
+    },
+    {
+      "moebel": "wr5Container",
+      "feld": [9, 38]
+    },
+    {
+      "moebel": "wr5Ziegelturm2",
+      "feld": [1, 60]
+    },
+    {
+      "moebel": "cc3BuschB",
+      "feld": [13, 61]
+    },
+    {
+      "moebel": "ld5Kahn",
+      "feld": [16, 84],
+      "vorn": true,
+      "bauteil_ok": true
+    },
+    {
+      "moebel": "mf9BankLinks",
+      "feld": [13, 113]
+    },
+    {
+      "moebel": "wr5Scheune",
+      "feld": [1, 138]
+    },
+    {
+      "moebel": "wr5Leiterwagen",
+      "feld": [10, 141]
+    },
+    {
+      "moebel": "wr5Karren",
+      "feld": [9, 147]
+    },
+    {
+      "moebel": "ld5Ruderboot",
+      "feld": [20, 156],
+      "vorn": true,
+      "bauteil_ok": true
+    },
+    {
+      "moebel": "wr5PappelGelb",
+      "feld": [14, 164]
+    },
+    {
+      "moebel": "wr5PappelGelb",
+      "feld": [14, 170]
+    },
+    {
+      "moebel": "wr5PappelGelb",
+      "feld": [14, 176]
+    },
+    {
+      "moebel": "wr5PappelGelb",
+      "feld": [14, 182]
+    },
+    {
+      "moebel": "iwStrommast",
+      "feld": [4, 178]
+    },
+    {
+      "moebel": "wg4LaubbaumHerbst",
+      "feld": [25, 8]
+    },
+    {
+      "moebel": "wr5PappelGelb",
+      "feld": [26, 17]
+    },
+    {
+      "moebel": "wr5Eiche",
+      "feld": [25, 26]
+    },
+    {
+      "moebel": "wr5PappelGelb",
+      "feld": [26, 45]
+    },
+    {
+      "moebel": "wg4LaubbaumHerbst",
+      "feld": [25, 56]
+    },
+    {
+      "moebel": "wr5PappelGelb",
+      "feld": [26, 68]
+    },
+    {
+      "moebel": "wr5Eiche",
+      "feld": [24, 77]
+    },
+    {
+      "moebel": "wr5PappelGelb",
+      "feld": [26, 91]
+    },
+    {
+      "moebel": "wg4LaubbaumHerbst",
+      "feld": [24, 101]
+    },
+    {
+      "moebel": "wg4LaubbaumHerbst",
+      "feld": [25, 115]
+    },
+    {
+      "moebel": "wg4LaubbaumHerbst",
+      "feld": [25, 127]
+    },
+    {
+      "moebel": "wg4LaubbaumHerbst",
+      "feld": [24, 141]
+    },
+    {
+      "moebel": "wr5PappelGelb",
+      "feld": [26, 153]
+    },
+    {
+      "moebel": "wg4LaubbaumHerbst",
+      "feld": [25, 160]
+    },
+    {
+      "moebel": "wr5PappelGelb",
+      "feld": [26, 171]
+    },
+    {
+      "moebel": "wg4LaubbaumHerbst",
+      "feld": [25, 185]
+    },
+    {
+      "moebel": "wr5PappelGelb",
+      "feld": [9, 76]
+    },
+    {
+      "moebel": "wg4LaubbaumHerbst",
+      "feld": [7, 106]
+    },
+    {
+      "moebel": "wr5PappelGelb",
+      "feld": [1, 150]
+    },
+    {
+      "moebel": "wr5PappelGelb",
+      "feld": [7, 164]
+    },
+    {
+      "moebel": "wg4BuschB",
+      "feld": [13, 15]
+    },
+    {
+      "moebel": "mf4BuschKlein",
+      "feld": [8, 13]
+    },
+    {
+      "moebel": "wg4BlumeGelb",
+      "feld": [1, 18]
+    },
+    {
+      "moebel": "wg4Gras",
+      "feld": [5, 19]
+    },
+    {
+      "moebel": "wg4BlumeBlau",
+      "feld": [4, 19]
+    },
+    {
+      "moebel": "cc3Busch",
+      "feld": [2, 52]
+    },
+    {
+      "moebel": "wg4Busch",
+      "feld": [5, 56]
+    },
+    {
+      "moebel": "wg4BlumeBlau",
+      "feld": [7, 53]
+    },
+    {
+      "moebel": "wg4BlumeGelb",
+      "feld": [1, 55]
+    },
+    {
+      "moebel": "wg4GrasB",
+      "feld": [1, 55]
+    },
+    {
+      "moebel": "cc3Busch",
+      "feld": [14, 55]
+    },
+    {
+      "moebel": "mf4BuschKlein",
+      "feld": [14, 54]
+    },
+    {
+      "moebel": "wg4GrasB",
+      "feld": [12, 59]
+    },
+    {
+      "moebel": "wg4BlumenWeiss",
+      "feld": [12, 61]
+    },
+    {
+      "moebel": "wg4BlumeBlau",
+      "feld": [8, 57]
+    },
+    {
+      "moebel": "wg4Busch",
+      "feld": [8, 90]
+    },
+    {
+      "moebel": "wg4BuschKlein",
+      "feld": [9, 75]
+    },
+    {
+      "moebel": "wg4Gras",
+      "feld": [10, 87]
+    },
+    {
+      "moebel": "wg4BlumeBlau",
+      "feld": [11, 84]
+    },
+    {
+      "moebel": "wg4BlumeGelb",
+      "feld": [10, 72]
+    },
+    {
+      "moebel": "wg4BuschB",
+      "feld": [1, 162]
+    },
+    {
+      "moebel": "wg4BuschKlein",
+      "feld": [13, 147]
+    },
+    {
+      "moebel": "wg4BlumenWeiss",
+      "feld": [10, 160]
+    },
+    {
+      "moebel": "wg4BlumeGelb",
+      "feld": [11, 157]
+    },
+    {
+      "moebel": "wg4BlumenWeiss",
+      "feld": [6, 156]
+    },
+    {
+      "moebel": "wg4BuschKlein",
+      "feld": [1, 176]
+    },
+    {
+      "moebel": "wg4BuschKlein",
+      "feld": [9, 171]
+    },
+    {
+      "moebel": "wg4BlumeBlau",
+      "feld": [5, 185]
+    },
+    {
+      "moebel": "wg4BlumeGelb",
+      "feld": [3, 179]
+    },
+    {
+      "moebel": "wg4BlumeGelb",
+      "feld": [2, 182]
+    }
+  ],
+  "ausloeser": [
+    {
+      "name": "start",
+      "feld": [17, 1],
+      "eigenschaften": {
+        "richtung": "unten"
+      }
+    },
+    {
+      "name": "zurueckRiverton",
+      "feld": [17, 0]
+    },
+    {
+      "name": "zurueckRiverton",
+      "feld": [18, 0]
+    },
+    {
+      "name": "weiterBruecke",
+      "feld": [17, 189]
+    },
+    {
+      "name": "weiterBruecke",
+      "feld": [18, 189]
+    },
+    {
+      "name": "lockport",
+      "feld": [0, 97]
+    },
+    {
+      "name": "lockport",
+      "feld": [0, 98]
+    },
+    {
+      "name": "tafel",
+      "feld": [16, 50]
+    },
+    {
+      "name": "fundZahnrad",
+      "feld": [12, 42]
+    }
+  ],
+  "figuren": [
+    {
+      "name": "dale",
+      "feld": [10, 128]
+    }
+  ],
+  "belebung": [
+    {
+      "name": "angler",
+      "typ": "statist",
+      "feld": [19, 12],
+      "eigenschaften": {
+        "von": "19,12",
+        "bis": "19,12",
+        "tun": "angelt im Kanal",
+        "wann": "tag"
+      }
+    },
+    {
+      "name": "radfahrerin",
+      "typ": "statist",
+      "feld": [17, 2],
+      "eigenschaften": {
+        "von": "17,2",
+        "bis": "17,68",
+        "tun": "radelt zur Schicht",
+        "wann": "morgen"
+      }
+    },
+    {
+      "name": "enten",
+      "typ": "tier",
+      "feld": [22, 30],
+      "eigenschaften": {
+        "von": "22,30",
+        "bis": "22,40",
+        "verhalten": "folgen"
+      }
+    },
+    {
+      "name": "ratten",
+      "typ": "tier",
+      "feld": [11, 84],
+      "eigenschaften": {
+        "von": "11,84",
+        "bis": "11,88",
+        "verhalten": "ausweichen"
+      }
+    },
+    {
+      "name": "gaense",
+      "typ": "tier",
+      "feld": [22, 168],
+      "eigenschaften": {
+        "von": "22,168",
+        "bis": "22,176",
+        "verhalten": "folgen"
+      }
+    },
+    {
+      "name": "kraehen",
+      "typ": "tier",
+      "feld": [7, 32],
+      "eigenschaften": {
+        "von": "7,32",
+        "bis": "7,32",
+        "verhalten": "sitzen"
+      }
+    }
+  ],
+  "zustand": ["neu", "gebraucht", "alt"],
+  "stil": [
+    "rustikal",
+    "einfach",
+    "natur",
+    "laendlich",
+    "klassisch",
+    "modern",
+    "landhaus"
+  ],
+  "datei": "karten/varianten/weg-riverton-ironwood-1-b.json"
+}

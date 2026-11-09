@@ -10,6 +10,7 @@ industrie, natur …). Szenen legen fest, welche Zustände und Stile erlaubt sin
 
 K = 16
 GESPERRT = {"#", "~", " "}
+WAND = "#"
 RICHTUNG = {"unten": (0, 1), "oben": (0, -1), "links": (-1, 0), "rechts": (1, 0)}
 ALLEIN_VERBOTEN = {"pflanze", "lampe"}
 STANDARD_ZUSTAND = ("neu", "gebraucht")
@@ -100,6 +101,9 @@ def pruefe_regeln(szene: dict, zeilen: list[str], gesetzt: list[dict], moebel: d
 # Abgeleitet aus den Beispielräumen des Zeichners (docs/spiel/KARTENREGELN.md, Abschnitt 8).
 
 BELEGUNG_MIN, BELEGUNG_MAX = 0.20, 0.45  # Anteil der Bodenkacheln unter Möbeln mit Kollision (8.2.6)
+# Lager und Archive leben von dichten Regalreihen (Rückmeldung des Autors zum Archiv, 9.11.2026):
+# Szenen mit "dicht": true dürfen bis zu diesem Anteil belegt sein.
+BELEGUNG_DICHT = 0.60
 GANG_TIEFE = 2  # freie Kacheln vor jedem Eingang am Kartenrand (8.2.1)
 BLICK_MIN, BLICK_MAX = 2, 4  # Abstand Sofa oder Sessel zu Fernseher oder Kamin in Kacheln (8.2.5)
 SITZ = {"sofa", "sessel"}
@@ -122,7 +126,8 @@ def _art(s: dict, moebel: dict) -> str | None:
 
 
 def pruefe_belegung(szene: dict, zeilen: list[str], gesetzt: list[dict]) -> list[str]:
-    """Innenräume: 20–45 % der Bodenkacheln unter Möbeln, sonst „karg“ oder „vollgestellt“.
+    """Innenräume: 20–45 % der Bodenkacheln unter Möbeln (Lager und Archive mit "dicht": true bis
+    60 %), sonst „karg“ oder „vollgestellt“.
 
     Beispiel: Generic Home des Zeichners, etwa ein Drittel der Bodenkacheln belegt.
     """
@@ -132,10 +137,11 @@ def pruefe_belegung(szene: dict, zeilen: list[str], gesetzt: list[dict]) -> list
     if not boden:
         return []
     anteil = len(_sperrfelder(gesetzt) & boden) / len(boden)
+    hoechstens = BELEGUNG_DICHT if szene.get("dicht") else BELEGUNG_MAX
     if anteil < BELEGUNG_MIN:
         return [f"Raum wirkt karg: {anteil:.0%} der Bodenkacheln belegt (Vorbild 20–45 %)"]
-    if anteil > BELEGUNG_MAX:
-        return [f"Raum wirkt vollgestellt: {anteil:.0%} der Bodenkacheln belegt (Vorbild 20–45 %)"]
+    if anteil > hoechstens:
+        return [f"Raum wirkt vollgestellt: {anteil:.0%} der Bodenkacheln belegt (höchstens {hoechstens:.0%})"]
     return []
 
 
@@ -264,6 +270,50 @@ def pruefe_teppiche(gesetzt: list[dict], moebel: dict) -> list[str]:
     return befunde
 
 
+# Einzelmöbel, die zweimal gleich im selben Raum seltsam aussehen (KARTENREGELN 10.43).
+EINZELSTUECK = {"schrank", "sofa", "fernseher", "globus", "vitrine", "pinnwand", "bild"}
+# Teile von Zeilen und Serien (Küchenzeile, Theke, Spinde) dürfen sich wiederholen.
+SERIENTEIL = ("arbeitsplatte", "theke", "tresen", "buffet", "spind", "modular", "links", "rechts", "mitte")
+
+
+def pruefe_wandflaechen(szene: dict, zeilen: list[str]) -> list[str]:
+    """Innen: Eine Wand, unter der Boden liegt, ist drei Reihen hoch (Krone und zwei Reihen
+    Wandfläche), sonst sieht man sie nur von oben (KARTENREGELN 10.39).
+
+    Warum: Im Diner waren die Wände der WCs und zur Küche nur Kronenstriche; dem Autor fehlte die
+    dritte Dimension (9.11.2026).
+    Beispiel: Boden bei (5, 9), Wand bei (5, 8), Boden bei (5, 7): Wand ohne Wandfläche.
+    """
+    if szene.get("art") != "innen":
+        return []
+    stellen = []
+    for y in range(1, len(zeilen)):
+        for x, z in enumerate(zeilen[y]):
+            if z in GESPERRT or zeilen[y - 1][x] != WAND:
+                continue
+            if not all(y - d >= 0 and zeilen[y - d][x] == WAND for d in (1, 2, 3)):
+                stellen.append((x, y - 1))
+    return [f"Wand ohne Wandfläche bei {stellen[0]} ({len(stellen)} Felder)"] if stellen else []
+
+
+def pruefe_doppelte(szene: dict, gesetzt: list[dict], moebel: dict) -> list[str]:
+    """Innen: dasselbe Bild eines Einzelmöbels (Schrank, Sofa, Fernseher …) nicht zweimal im Raum,
+    auch nicht unter zwei Namen (KARTENREGELN 10.43; zwei gleiche Schränke im Dachboden C)."""
+    if szene.get("art") != "innen":
+        return []
+    zaehler: dict[str, list[str]] = {}
+    for s in gesetzt:
+        angabe = moebel.get(s["name"], {})
+        teil = any(w in (s["name"] + angabe.get("quelle", "")).lower() for w in SERIENTEIL)
+        if angabe.get("art") in EINZELSTUECK and not teil:
+            zaehler.setdefault(angabe["quelle"], []).append(s["name"])
+    return [
+        f"{namen[0]} steht {len(namen)}-mal im Raum (gleiches Bild, Einzelstück)"
+        for namen in zaehler.values()
+        if len(namen) > 1
+    ]
+
+
 def pruefe_raum(szene: dict, zeilen: list[str], gesetzt: list[dict], moebel: dict) -> list[str]:
     """Alle Raumregeln aus Abschnitt 8.6 der Kartenregeln."""
     return (
@@ -273,4 +323,6 @@ def pruefe_raum(szene: dict, zeilen: list[str], gesetzt: list[dict], moebel: dic
         + pruefe_blickabstand(szene, gesetzt, moebel)
         + pruefe_tueren(szene, zeilen, gesetzt, moebel)
         + pruefe_teppiche(gesetzt, moebel)
+        + pruefe_wandflaechen(szene, zeilen)
+        + pruefe_doppelte(szene, gesetzt, moebel)
     )

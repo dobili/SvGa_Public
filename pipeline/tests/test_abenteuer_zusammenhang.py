@@ -75,3 +75,14 @@ def test_versetztes_zaunteil():
     moebel = {"zaunMitte": {"art": "zaun"}}
     gesetzt = [_zaun("zaunMitte", 0), _zaun("zaunMitte", 16, 36)]
     assert any("versetzt" in b for b in pruefe_zaeune(gesetzt, moebel))
+
+
+def test_engstelle_an_einer_stufe():
+    from pipeline.abenteuer.zusammenhang import engstellen
+
+    # Weg zwei breit, eine Reihe versetzt: nur ein Feld Überlappung.
+    eng = {(0, 1), (0, 2), (1, 1), (1, 2), (2, 2), (2, 3), (3, 2), (3, 3)}
+    assert engstellen(eng, 2) == [(1, 1)]
+    # Versatz mit voller Überlappung (drei Felder hoch an der Stufe): keine Engstelle.
+    gut = {(0, 1), (0, 2), (1, 1), (1, 2), (1, 3), (2, 2), (2, 3), (3, 2), (3, 3)}
+    assert engstellen(gut, 2) == []

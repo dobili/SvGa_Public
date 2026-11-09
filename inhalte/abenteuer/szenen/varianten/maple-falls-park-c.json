@@ -1,0 +1,463 @@
+{
+  "karte": "mapleFalls.park",
+  "datei": "karten/varianten/maple-falls-park-c.json",
+  "art": "aussen",
+  "beschreibung": "Variante C, reich: Der Fluss zieht in kräftigen Bögen mit zwei Buchten nach Osten und biegt erst bei Spalte 31 nach Süden; hinter der Brücke macht er einen weiten Bogen nach Südosten, bevor er den Ostrand erreicht. Zwischen Uferweg und Straße liegt ein Teich mit Seerosen, daneben die Rentnerbank und der Kiosk. Im Süden der Basketballplatz mit zwei Bänken am Ostrand (Jo) und ein gepflasterter Platz mit großem Steinbrunnen, Bänken und Blumenkästen, verbunden mit der Haltestelle. Viele Bäume verschiedener Arten, Blumenbeete, ein Trinkbrunnen; Laternen mit langem Ausleger.",
+  "boden": "gras",
+  "wandart": "hecke",
+  "boeden": {
+    "p": "pflaster",
+    "e": "erde",
+    "s": "asphalt",
+    "h": "dielen"
+  },
+  "raster": [
+    "##########ee################################",
+    "#.........ee...............................#",
+    "~~~~~~~~~~hh~~~~.....~~~~~~~~~~~~~.........#",
+    "~~~~~~~~~~hh~~~~~~~~~~~~~~~~~~~~~~~........#",
+    "~~~~~~~~~~hh~~~~~~~~~~~~~~~~~~~~~~~........#",
+    "#.........ee....~~~~~.....~~~~~~~~~........#",
+    "#.........ee....~~~~~..........~~~~........#",
+    "#.........ee...................~~~~........#",
+    "#eeeeeeeeeeeeeeeeeeeeeeeeeeeee..~~~~.......#",
+    "#eeeeeeeeeeeeeeeeeeeeeeeeeeeee..~~~~.......#",
+    "#..............~~~~.........ee..~~~~.......#",
+    "#.............~~~~~~........ee.~~~~........#",
+    "#.............~~~~~~........ee.~~~~........#",
+    "#...........................ee.~~~~........#",
+    "#pppppppppppppppppppppppppppppphhhhpppppppp#",
+    "ssssssssssssssssssssssssssssssshhhhsssssssss",
+    "ssssssssssssssssssssssssssssssshhhhsssssssss",
+    "ssssssssssssssssssssssssssssssshhhhsssssssss",
+    "#pppppppppppppppppppppppppppppphhhhpppppppp#",
+    "#......................ppppppp.~~~~........#",
+    "#......................ppppppp.~~~~~.....~~~",
+    "#......................ppppppp..~~~~~...~~~~",
+    "#.....................pp.........~~~~~.~~~~~",
+    "#.....................pp...........~~~~~~~~~",
+    "#.....................pp............~~~~~..#",
+    "#................ppppppp.............~~~~..#",
+    "#................ppppppp...................#",
+    "#................ppppppp...................#",
+    "#................ppppppp...................#",
+    "#................ppppppp...................#",
+    "#..........................................#",
+    "############################################"
+  ],
+  "objekte": [
+    {
+      "moebel": "mf9StrassenbrueckeGehwegQuer4",
+      "feld": [31, 14]
+    },
+    {
+      "moebel": "mf9FussbrueckeLaengs3",
+      "feld": [10, 2]
+    },
+    {
+      "moebel": "mf6Busch",
+      "feld": [1, 1]
+    },
+    {
+      "moebel": "mf6Moos",
+      "feld": [2, 1]
+    },
+    {
+      "moebel": "mf6Busch",
+      "feld": [3, 1]
+    },
+    {
+      "moebel": "mf6Moos",
+      "feld": [4, 1]
+    },
+    {
+      "moebel": "mf6Busch",
+      "feld": [5, 1]
+    },
+    {
+      "moebel": "mf6Moos",
+      "feld": [6, 1]
+    },
+    {
+      "moebel": "mf6Busch",
+      "feld": [7, 1]
+    },
+    {
+      "moebel": "mf6Moos",
+      "feld": [8, 1]
+    },
+    {
+      "moebel": "mf6Busch",
+      "feld": [9, 1]
+    },
+    {
+      "moebel": "mf6Moos",
+      "feld": [12, 1]
+    },
+    {
+      "moebel": "mf6Busch",
+      "feld": [13, 1]
+    },
+    {
+      "moebel": "mf6Moos",
+      "feld": [14, 1]
+    },
+    {
+      "moebel": "mf6Busch",
+      "feld": [15, 1]
+    },
+    {
+      "moebel": "mf6Moos",
+      "feld": [16, 1]
+    },
+    {
+      "moebel": "mf6Busch",
+      "feld": [17, 1]
+    },
+    {
+      "moebel": "mf6Moos",
+      "feld": [18, 1]
+    },
+    {
+      "moebel": "mf6Busch",
+      "feld": [19, 1]
+    },
+    {
+      "moebel": "mf6Moos",
+      "feld": [20, 1]
+    },
+    {
+      "moebel": "mf6Busch",
+      "feld": [21, 1]
+    },
+    {
+      "moebel": "mf6Moos",
+      "feld": [22, 1]
+    },
+    {
+      "moebel": "mf6Busch",
+      "feld": [23, 1]
+    },
+    {
+      "moebel": "mf6Moos",
+      "feld": [24, 1]
+    },
+    {
+      "moebel": "mf6Busch",
+      "feld": [25, 1]
+    },
+    {
+      "moebel": "mf6Moos",
+      "feld": [26, 1]
+    },
+    {
+      "moebel": "mf6Busch",
+      "feld": [27, 1]
+    },
+    {
+      "moebel": "mf6Moos",
+      "feld": [28, 1]
+    },
+    {
+      "moebel": "mf6Busch",
+      "feld": [29, 1]
+    },
+    {
+      "moebel": "mf6Moos",
+      "feld": [30, 1]
+    },
+    {
+      "moebel": "mf6Busch",
+      "feld": [36, 1]
+    },
+    {
+      "moebel": "mf6Busch",
+      "feld": [38, 1]
+    },
+    {
+      "moebel": "mf6Busch",
+      "feld": [40, 1]
+    },
+    {
+      "moebel": "mf6Busch",
+      "feld": [42, 1]
+    },
+    {
+      "moebel": "mf6StegMorsch",
+      "feld": [7, 3],
+      "id": "stegS5"
+    },
+    {
+      "moebel": "mf4Sperrlatte",
+      "feld": [7, 5],
+      "id": "absperrungSteg"
+    },
+    {
+      "moebel": "mf4Wegweiser",
+      "feld": [12, 6]
+    },
+    {
+      "moebel": "mfBank",
+      "feld": [3, 11],
+      "id": "bank"
+    },
+    {
+      "moebel": "mfBank",
+      "feld": [6, 11]
+    },
+    {
+      "moebel": "mf4Abfalleimer",
+      "feld": [5, 11]
+    },
+    {
+      "moebel": "mf2BankLang",
+      "feld": [22, 11]
+    },
+    {
+      "moebel": "mf6Seerose1",
+      "feld": [15, 11]
+    },
+    {
+      "moebel": "mf6Seerose3",
+      "feld": [18, 12]
+    },
+    {
+      "moebel": "mf6Seerose2",
+      "feld": [19, 11]
+    },
+    {
+      "moebel": "mf2Kiosk",
+      "feld": [25, 10]
+    },
+    {
+      "moebel": "mf2Blumenbeet",
+      "feld": [11, 13]
+    },
+    {
+      "moebel": "mfAhorn",
+      "feld": [36, 2]
+    },
+    {
+      "moebel": "mfApfelbaum",
+      "feld": [38, 7]
+    },
+    {
+      "moebel": "mf4Strassenbaum",
+      "feld": [40, 25]
+    },
+    {
+      "moebel": "mfAhorn",
+      "feld": [31, 26]
+    },
+    {
+      "moebel": "mfBaum",
+      "feld": [36, 26]
+    },
+    {
+      "moebel": "mf4Strassenbaum",
+      "feld": [26, 26]
+    },
+    {
+      "moebel": "mf9LaterneLang",
+      "feld": [4, 6],
+      "vorn": true
+    },
+    {
+      "moebel": "mf9LaterneLang",
+      "feld": [14, 6],
+      "vorn": true
+    },
+    {
+      "moebel": "mf9LaterneLang",
+      "feld": [23, 6],
+      "vorn": true
+    },
+    {
+      "moebel": "mf9LaterneLang",
+      "feld": [10, 10],
+      "vorn": true
+    },
+    {
+      "moebel": "mf9LaterneLang",
+      "feld": [20, 10],
+      "vorn": true
+    },
+    {
+      "moebel": "mf9LaterneLang",
+      "feld": [37, 10],
+      "vorn": true
+    },
+    {
+      "moebel": "mf9LaterneLang",
+      "feld": [5, 16],
+      "vorn": true
+    },
+    {
+      "moebel": "mf9LaterneLang",
+      "feld": [18, 16],
+      "vorn": true
+    },
+    {
+      "moebel": "mf9LaterneLang",
+      "feld": [37, 16],
+      "vorn": true
+    },
+    {
+      "moebel": "mf6Basketballplatz",
+      "feld": [2, 20],
+      "id": "platz"
+    },
+    {
+      "moebel": "mf6BankSeiteLinks",
+      "feld": [16, 21],
+      "zu": "platz"
+    },
+    {
+      "moebel": "mf6BankSeiteLinks",
+      "feld": [16, 26],
+      "zu": "platz"
+    },
+    {
+      "moebel": "mf9Brunnen",
+      "feld": [18, 25],
+      "id": "brunnen"
+    },
+    {
+      "moebel": "mf9BankLinks",
+      "feld": [23, 26],
+      "zu": "brunnen"
+    },
+    {
+      "moebel": "mf9BankRot",
+      "feld": [18, 23]
+    },
+    {
+      "moebel": "mf9Blumenkasten",
+      "feld": [20, 24]
+    },
+    {
+      "moebel": "mf9Trinkbrunnen",
+      "feld": [29, 27]
+    },
+    {
+      "moebel": "mf6Haltestelle",
+      "feld": [24, 22]
+    },
+    {
+      "moebel": "mf4Abfalleimer",
+      "feld": [29, 22]
+    }
+  ],
+  "ausloeser": [
+    {
+      "name": "start",
+      "feld": [1, 16],
+      "eigenschaften": {
+        "richtung": "rechts"
+      }
+    },
+    {
+      "name": "park",
+      "feld": [0, 15]
+    },
+    {
+      "name": "park",
+      "feld": [0, 16]
+    },
+    {
+      "name": "park",
+      "feld": [0, 17]
+    },
+    {
+      "name": "landstrasse",
+      "feld": [43, 15]
+    },
+    {
+      "name": "landstrasse",
+      "feld": [43, 16]
+    },
+    {
+      "name": "landstrasse",
+      "feld": [43, 17]
+    },
+    {
+      "name": "zedernpfad",
+      "feld": [10, 0]
+    },
+    {
+      "name": "zedernpfad",
+      "feld": [11, 0]
+    },
+    {
+      "name": "bushaltestelle",
+      "feld": [26, 21]
+    },
+    {
+      "name": "parkbank",
+      "feld": [4, 12],
+      "auf_moebel": true
+    },
+    {
+      "name": "kiosk",
+      "feld": [26, 13]
+    }
+  ],
+  "figuren": [
+    {
+      "name": "skaterJo",
+      "feld": [17, 24]
+    },
+    {
+      "name": "abernathy",
+      "feld": [5, 13]
+    }
+  ],
+  "belebung": [
+    {
+      "name": "rentner",
+      "typ": "statist",
+      "feld": [23, 12],
+      "eigenschaften": {
+        "von": "23,12",
+        "bis": "23,12",
+        "tun": "sitzt auf der Bank und füttert Tauben",
+        "wann": "tag"
+      }
+    },
+    {
+      "name": "kioskbesucher",
+      "typ": "statist",
+      "feld": [24, 13],
+      "eigenschaften": {
+        "von": "22,13",
+        "bis": "27,13",
+        "tun": "holt sich ein Eis",
+        "wann": "tag"
+      }
+    },
+    {
+      "name": "enten",
+      "typ": "tier",
+      "feld": [16, 13],
+      "eigenschaften": {
+        "von": "13,13",
+        "bis": "20,13",
+        "verhalten": "folgen"
+      }
+    },
+    {
+      "name": "kraehen",
+      "typ": "tier",
+      "feld": [16, 5],
+      "eigenschaften": {
+        "von": "10,5",
+        "bis": "24,5",
+        "verhalten": "fliegen"
+      }
+    }
+  ],
+  "zustand": ["neu", "gebraucht", "alt"],
+  "stil": ["klassisch", "modern", "natur"],
+  "bruecken": ["h"],
+  "variante": "c"
+}

@@ -1,0 +1,133 @@
+{
+  "karte": "cedarCreek.archiv",
+  "datei": "karten/varianten/cedar-creek-archiv-b.json",
+  "art": "innen",
+  "beschreibung": "Variante B: zwei Längsreihen mit Gang in der Mitte, Kartonsäule an der Ostwand, Arbeitsplatz in der Südwestecke. Das Archiv im Keller der Bibliothek von Cedar Creek: ein niedriger, kühler Raum mit Steinboden und Backsteinwänden, ordentlich, aber lange nicht benutzt. Es riecht nach altem Papier.\n\nRechts an der Nordwand führt eine steile Holztreppe hinauf in den Lesesaal; sie liegt genau unter der Kellertür der Bibliothek. Links davon stehen vier hohe Regale voller gebundener Zeitungsjahrgänge und Mappen, zwischen zwei Regalen hängt ein vergilbtes Foto eines Boxers. Das Regal ganz rechts neben der Treppe liegt im Schatten; erst mit einer Laterne sieht man, was darin steht.\n\nIn der Mitte stehen die Archivkartons in zwei sauberen Reihen, jeder mit einer Jahreszahl beschriftet. In der unteren Reihe steht ein offener Karton: „1850–1859“. Rechts unten an der Südwand der Lesetisch mit aufgeschlagenem Buch, an dem man Akten sichtet; darauf liegt das alte Programmheft, dahinter ein Stuhl, daneben eine Stehlampe mit warmem Licht. Am Westende ein Stapel höherer Kartons. Auf dem Boden vorn ein dunkler Wasserfleck, der aussieht wie ein Springer.\n\nLaufwege: von der Treppe nach unten, nach links zwischen Regalen und Kartonreihen hindurch zum offenen Karton, nach rechts zum Lesetisch, nach vorn zum Fleck.",
+  "wand": "backstein",
+  "boden": "stein",
+  "raster": [
+    "##############",
+    "##############",
+    "##############",
+    "#............#",
+    "#............#",
+    "#............#",
+    "#............#",
+    "#............#",
+    "#............#",
+    "#............#",
+    "##############"
+  ],
+  "objekte": [
+    {
+      "moebel": "cc4Archivregal",
+      "feld": [1, 1]
+    },
+    {
+      "moebel": "cc4ArchivregalB",
+      "feld": [3, 1]
+    },
+    {
+      "moebel": "cc4Boxerfoto",
+      "feld": [5, 1],
+      "an_wand": true
+    },
+    {
+      "moebel": "cc4Archivregal",
+      "feld": [6, 1]
+    },
+    {
+      "moebel": "cc4ArchivregalB",
+      "feld": [8, 1],
+      "id": "dunklesRegal"
+    },
+    {
+      "moebel": "cc4Treppe",
+      "feld": [10, 1]
+    },
+    {
+      "moebel": "cc4ArchivregalB",
+      "feld": [3, 4]
+    },
+    {
+      "moebel": "cc4ArchivregalB",
+      "feld": [3, 6]
+    },
+    {
+      "moebel": "cc4ArchivregalB",
+      "feld": [7, 4]
+    },
+    {
+      "moebel": "cc4ArchivregalB",
+      "feld": [7, 6]
+    },
+    {
+      "moebel": "cc4KartonHoch",
+      "feld": [11, 6]
+    },
+    {
+      "moebel": "cc4KartonHoch",
+      "feld": [11, 7]
+    },
+    {
+      "moebel": "cc4KartonHoch",
+      "feld": [11, 8]
+    },
+    {
+      "moebel": "cc4KartonOffen",
+      "feld": [9, 4],
+      "id": "karton1858"
+    },
+    {
+      "moebel": "cc4StuhlHinten",
+      "feld": [1, 7]
+    },
+    {
+      "moebel": "cc5Tisch",
+      "feld": [1, 8],
+      "id": "tisch"
+    },
+    {
+      "moebel": "cc4Leselampe",
+      "auf": "tisch",
+      "versatz": [-7, 0]
+    }
+  ],
+  "ausloeser": [
+    {
+      "name": "start",
+      "feld": [11, 5],
+      "eigenschaften": {
+        "richtung": "unten"
+      }
+    },
+    {
+      "name": "kellerAusgang",
+      "feld": [11, 3]
+    },
+    {
+      "name": "boxerfoto",
+      "feld": [5, 3]
+    },
+    {
+      "name": "programmheft",
+      "feld": [2, 9],
+      "auf_moebel": true
+    },
+    {
+      "name": "karton1858",
+      "feld": [9, 5],
+      "auf_moebel": true
+    },
+    {
+      "name": "wasserfleck",
+      "feld": [5, 9]
+    }
+  ],
+  "figuren": [],
+  "belebung": [],
+  "zustand": ["gebraucht", "alt"],
+  "stil": ["klassisch", "einfach"],
+  "dicht": true,
+  "variante": "b"
+}

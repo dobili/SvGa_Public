@@ -4,9 +4,10 @@
  * Flüstern zu teuer, die Münzen oben rechts zeigen den neuen Stand.
  */
 import { expect, test } from "@playwright/test";
+import { feldDarunter } from "./abenteuer-karte";
 import { starteImBrowser } from "./hilfen";
 
-/** Spielstand im Park, eine Kachel unter dem Kiosk (25,13), Blick nach oben (Park aus Runde 4). */
+/** Spielstand im Park, eine Kachel unter dem Kiosk (Feld aus der Karte), Blick nach oben. */
 const STAND = {
   version: 1,
   begonnen: "2026-11-08T05:00:00.000Z",
@@ -17,7 +18,11 @@ const STAND = {
   wertungPartien: 0,
   held: { name: "Kim", variante: 0 },
   handlung: { akt: 1, szene: "akt1.start", liga: null, durchlauf: 1 },
-  position: { karte: "mapleFalls.park", x: 25, y: 14, richtung: "oben" },
+  position: {
+    karte: "mapleFalls.park",
+    ...feldDarunter("maple-falls-park", "kiosk"),
+    richtung: "oben",
+  },
   besuchteOrte: ["mapleFalls"],
   muenzen: 50,
 };

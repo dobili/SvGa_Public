@@ -223,6 +223,26 @@ Landstraße nach Cedar Creek, zwischen Feldern und Zäunen, mit dem Fluss an ihr
 
 ## 4. Bühnenbilder
 
+### 4.0a Varianten B und C (KARTENREGELN 10.37)
+
+Für Wohnzimmer, Dachboden und Birch Lane liegen in `inhalte/abenteuer/szenen/varianten/` je zwei
+weitere Varianten; gleich bleiben Größe, Wände, Türen, Fenster, Übergänge, Auslöser und Figuren.
+
+- **Wohnzimmer B (Landhaus):** Holzwände, dunkle Dielen, graue Küchenfliesen; Sitzecke mit grauem
+  Sofa, rundem Tisch und Stehlampe an der Westwand; Küche mit Herd und Topf, Esstisch an der Südseite.
+  **C (modern):** hellgraue Wände, Dielen in der Küche; zwei weiße Sessel an einem runden Tisch auf
+  rosa Teppich, hohes Bücherregal; Kühlschrank in der Nordwestecke der Küche, Holztisch mit Hockern
+  in der Mitte.
+- **Dachboden B (Nähecke):** Kommode mit Stoffrollen und Nähmaschine an der Westwand, Tisch mit Brett
+  rechts unter dem Fenster, abgedeckte Truhe mit Teddy. **C (abgedeckte Möbel):** zwei alte Schränke,
+  Waldbild, Teppich mit Tisch gleich neben der Luke, zwei abgedeckte Truhen und Kisten an Ost- und
+  Südwand.
+- **Birch Lane B:** Säulen- und niedrige Hecken statt Zäunen, Martínez in grüner Villa, auf der
+  Südseite ein blaues Stadthaus (Hayes), ein Bauernhaus (Fisk), ein Flachdachhaus mit Gartenhaus;
+  Bach in flachem Bogen, wenige Bäume, Laternen mit langem Ausleger, kleiner Spielplatz. **C:**
+  Eisenzaun auf Ziegelsockel, Martínez im kleinen Bauernhaus, auf der Südseite Flachdachhaus (Hayes)
+  und zwei Wohnwagen; Bach in vielen Bögen, Gemüsebeete, Laternen mit Bogenarm, Spielturm und Wippe.
+
 ### 4.0 Nacharbeit nach der Rückmeldung des Autors zu Runde 4 (KARTENREGELN 10)
 
 Diese Änderungen gehen den Tabellen in 4.1 bis 4.5 vor.
@@ -472,8 +492,9 @@ mit Vorsilbe `mf6` in `moebel/maple-falls.json`. Bühnenbild:
   Straßenbrücke (31–34 / 15–17) durch, danach Bogen nach Osten und am Ostrand in den Reihen 20–23 zur
   Landstraße. Am Westrand (Reihen 2–4) und Ostrand reicht er bis an den Kartenrand, nirgends
   unterbrochen.
-- **Fußsteg zum Zedernpfad** (10.6): ein ganzer Holzsteg aus Pier_Bridge_2 (links) und Pier_Bridge_1
-  (rechts), Pfähle außen, über den Brückenfeldern `h` (10–11 / 2–4, Szene `bruecken`); Pfad 10–11
+- **Fußsteg zum Zedernpfad** (10.6): eigene Fußgängerbrücke mit Geländer (`spiel/eigene/bruecke_fuss_laengs_3`)
+  über den Brückenfeldern `h` (10–11 / 2–4, Szene `bruecken`); die Straßenbrücke (31–34 / 15–17) ist
+  `bruecke_strasse_gehweg_quer_4` (Gehwege laufen mit über die Brücke, Brüstung außen; Felder 31–34 / 14–18), der Fluss läuft darunter mit Ufer weiter; Pfad 10–11
   vom Nordrand (Übergang `zedernpfad`, Felder unverändert) bis zum Uferweg. Das Schild „Sturmschaden“
   (`schildZedernpfad`, 13 §7.4, S2) steht am Wegrand (12, 5), nicht auf dem Pfad.
 - **Steg S5** (12, 13 §7.4): morscher Steg als ganzes Bild (Pier_26) in der Bucht (5–6 / 4–5); die

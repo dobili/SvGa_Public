@@ -2533,7 +2533,7 @@
         },
         {
           "id": 96,
-          "name": "mf4ZaunMitte",
+          "name": "mf4ZaunEckeRechts",
           "type": "moebel",
           "x": 32,
           "y": 368,
@@ -2579,7 +2579,7 @@
         },
         {
           "id": 98,
-          "name": "mf4ZaunMitte",
+          "name": "mf4ZaunEckeLinks",
           "type": "moebel",
           "x": 96,
           "y": 368,
@@ -2717,7 +2717,7 @@
         },
         {
           "id": 104,
-          "name": "mf4ZaunMitte",
+          "name": "mf4ZaunEckeRechts",
           "type": "moebel",
           "x": 192,
           "y": 368,
@@ -2763,7 +2763,7 @@
         },
         {
           "id": 106,
-          "name": "mf4ZaunMitte",
+          "name": "mf4ZaunEckeLinks",
           "type": "moebel",
           "x": 256,
           "y": 368,
@@ -2901,7 +2901,7 @@
         },
         {
           "id": 112,
-          "name": "mf4ZaunMitte",
+          "name": "mf4ZaunEckeRechts",
           "type": "moebel",
           "x": 352,
           "y": 368,
@@ -2947,7 +2947,7 @@
         },
         {
           "id": 114,
-          "name": "mf4ZaunMitte",
+          "name": "mf4ZaunEckeLinks",
           "type": "moebel",
           "x": 416,
           "y": 368,
@@ -4350,7 +4350,7 @@
         },
         {
           "id": 175,
-          "name": "mf4ZaunMitte",
+          "name": "mf4ZaunEckeRechts",
           "type": "moebel",
           "x": 848,
           "y": 496,
@@ -4373,7 +4373,7 @@
         },
         {
           "id": 176,
-          "name": "mf4ZaunMitte",
+          "name": "mf4ZaunEckeLinks",
           "type": "moebel",
           "x": 896,
           "y": 496,

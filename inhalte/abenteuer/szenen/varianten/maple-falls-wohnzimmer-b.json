@@ -1,0 +1,205 @@
+{
+  "karte": "mapleFalls.wohnzimmer",
+  "datei": "karten/varianten/maple-falls-wohnzimmer-b.json",
+  "art": "innen",
+  "beschreibung": "Variante B, Landhaus: Holzwände und dunkle Dielen. Links das Wohnzimmer mit der Treppe an der Westwand und daneben der Kiste „Whitlock“. An der Westwand eine Sitzecke: ein graues Sofa mit rundem Holztisch davor und einer Stehlampe mit weißem Schirm. An der Nordwand unter dem Fenster eine niedrige Kommode, das Foto von Grandma Whitlock, das Sideboard mit dem Fernseher auf seinem Fuß und eine hohe Pflanze bei der Schlafzimmertür; die Kartons mit dem Pizzakarton an der Innenwand. Rechts die Küche mit grauen Fliesen: Arbeitsplatten, ein Herd mit Topf und der Kühlschrank lückenlos an der Nordwand; der Esstisch steht an der Südseite mit zwei Stühlen, Mama arbeitet an der Küchenzeile. Unten die Haustür mit Fußmatte.",
+  "wand": "holz",
+  "boden": "holzDunkel",
+  "raster": [
+    "####################",
+    "####################",
+    "####################",
+    "#..........#ggggggg#",
+    "#..........#ggggggg#",
+    "#..........#ggggggg#",
+    "#..........#ggggggg#",
+    "#...........ggggggg#",
+    "#...........ggggggg#",
+    "#..........#ggggggg#",
+    "#..........#ggggggg#",
+    "#..........#ggggggg#",
+    "#####.##############"
+  ],
+  "objekte": [
+    {
+      "moebel": "mf4Treppe",
+      "feld": [1, 0],
+      "id": "treppe"
+    },
+    {
+      "moebel": "wzFenster",
+      "feld": [4, 1],
+      "an_wand": true
+    },
+    {
+      "moebel": "wzBild",
+      "feld": [6, 1],
+      "an_wand": true,
+      "versatz": [0, 4]
+    },
+    {
+      "moebel": "wzTuer",
+      "feld": [10, 1],
+      "an_wand": true
+    },
+    {
+      "moebel": "wzFenster",
+      "feld": [14, 1],
+      "an_wand": true
+    },
+    {
+      "moebel": "wzTuer",
+      "feld": [5, 11],
+      "an_wand": true
+    },
+    {
+      "moebel": "mf4Fussmatte",
+      "feld": [5, 10],
+      "versatz": [0, 18]
+    },
+    {
+      "moebel": "mf4KartonBreit",
+      "feld": [12, 9],
+      "id": "kartonKuecheBox"
+    },
+    {
+      "moebel": "mf4Karton",
+      "feld": [8, 9],
+      "id": "pizza"
+    },
+    {
+      "moebel": "mf4Anrichte",
+      "feld": [7, 2],
+      "id": "tvboard"
+    },
+    {
+      "moebel": "mf4FernseherStand",
+      "auf": "tvboard"
+    },
+    {
+      "moebel": "mf3SofaL",
+      "feld": [2, 6],
+      "bauteil_ok": true
+    },
+    {
+      "moebel": "mf3SofaM",
+      "feld": [3, 6],
+      "bauteil_ok": true
+    },
+    {
+      "moebel": "mf3SofaR",
+      "feld": [4, 6],
+      "bauteil_ok": true
+    },
+    {
+      "moebel": "mf7Rundtisch",
+      "feld": [2, 8],
+      "id": "couchtisch"
+    },
+    {
+      "moebel": "mf7Stehlampe",
+      "feld": [1, 6]
+    },
+    {
+      "moebel": "mf4Karton",
+      "feld": [1, 4],
+      "id": "kiste"
+    },
+    {
+      "moebel": "mf4Lowboard",
+      "feld": [4, 2]
+    },
+    {
+      "moebel": "mf7PflanzeHoch",
+      "feld": [10, 4]
+    },
+    {
+      "moebel": "mf4KartonStapel",
+      "feld": [9, 9]
+    },
+    {
+      "moebel": "mf4KartonBreit",
+      "feld": [10, 9]
+    },
+    {
+      "moebel": "wzArbeitsplatte",
+      "feld": [12, 2],
+      "versatz": [0, 6]
+    },
+    {
+      "moebel": "wzArbeitsplatte",
+      "feld": [14, 2],
+      "versatz": [0, 6]
+    },
+    {
+      "moebel": "mf7HerdTopf",
+      "feld": [16, 2]
+    },
+    {
+      "moebel": "wzKuehlschrank",
+      "feld": [18, 1]
+    },
+    {
+      "moebel": "mf7CouchtischRund",
+      "feld": [14, 9],
+      "id": "esstisch"
+    },
+    {
+      "moebel": "mf7StuhlRechts",
+      "feld": [13, 9],
+      "zu": "esstisch"
+    },
+    {
+      "moebel": "mf7StuhlLinks",
+      "feld": [16, 9],
+      "zu": "esstisch"
+    },
+    {
+      "moebel": "wzPflanze",
+      "feld": [18, 9]
+    }
+  ],
+  "ausloeser": [
+    {
+      "name": "start",
+      "feld": [5, 10],
+      "eigenschaften": {
+        "richtung": "oben"
+      }
+    },
+    {
+      "name": "haustuer",
+      "feld": [5, 12]
+    },
+    {
+      "name": "treppeOben",
+      "feld": [2, 3]
+    },
+    {
+      "name": "fotoGrandma",
+      "feld": [6, 3]
+    },
+    {
+      "name": "kartonKueche",
+      "feld": [12, 10],
+      "auf_moebel": true
+    },
+    {
+      "name": "pizzakarton",
+      "feld": [8, 10],
+      "auf_moebel": true
+    }
+  ],
+  "figuren": [
+    {
+      "name": "mutter",
+      "feld": [17, 7]
+    }
+  ],
+  "zustand": ["neu", "gebraucht"],
+  "stil": ["modern", "klassisch"],
+  "boeden": {
+    "g": "fliesenGrau"
+  },
+  "variante": "b"
+}

@@ -532,8 +532,13 @@ Werkzeug erledigt, steht dabei; daran arbeiten die Helfer nicht vorbei.
    durchscheinenden Schatten (Black_Shadow-Fassung oder `werkzeuge/schatten.py`); die Bildprüfung
    meldet jeden grauen Festschatten.
 6. **Brücken und Stege sind Bauwerke.** Unter einer Brücke läuft das Wasser mit Ufer weiter; die
-   Brücke selbst ist ein Brücken- oder Stegbild aus dem Katalog (Bohlen, Geländer, Pfosten), keine
-   Bodenfläche aus Dielen auf Gras.
+   Brücke selbst ist ein Bild (Bohlen, Geländer, Pfosten), keine Bodenfläche aus Dielen auf Gras.
+   Weil kein gekauftes Paket Brücken hat, gibt es eigene aus LimeZus Texturen im privaten
+   Repository: `spiel/eigene/bruecke_fuss_quer_L.png` und `_laengs_L` (Fußgängerbrücke, 2 Kacheln
+   breit, mit Geländer), `bruecke_strasse_quer_L` und `_laengs_L` (Straßenbrücke, 3 Kacheln breit,
+   Steinbrüstung), `bruecke_strasse_gehweg_quer_L` und `_laengs_L` (mit Gehweg auf beiden Seiten, 5 Kacheln
+   breit; Straßen mit Gehwegen nehmen diese, damit die Gehwege nicht am Wasser enden), L = 2 bis 10 Kacheln (`werkzeuge/bruecken.py`). Stege an Ufern bleiben aus den
+   Camping-Teilen (`Pier_*`).
 
 ### 10.2 Türen und Durchgänge
 
@@ -641,7 +646,39 @@ Werkzeug erledigt, steht dabei; daran arbeiten die Helfer nicht vorbei.
     und ihr Gegenstand mitwandert), alles, was die Geschichte verlangt (Ortsdokument, 12/13/14).
     Verschieden: Anordnung, Wahl der Möbelserie und Bilder, Deko, Dichte (eine schlichtere, eine
     reichere), draußen Verlauf von Wegen und Bächen innerhalb ihrer festen Enden, Bäume, Beete,
-    Kleinkram. Jede Variante besteht alle Prüfungen für sich. Ablage: Variante A ist die Szene in
+    Kleinkram, Häuser und Gärten ohne Rolle in der Geschichte (anderes Hausmodell, andere Farbe).
+    Ein anderer Teppich oder eine andere Lampe allein macht noch keine Variante: Der Autor soll auf den
+    ersten Blick drei verschiedene Räume sehen. Jede Variante besteht alle Prüfungen für sich. Ablage: Variante A ist die Szene in
     `inhalte/abenteuer/szenen/`, B und C liegen in `inhalte/abenteuer/szenen/varianten/` (siehe
     README dort). Nach der Wahl des Autors wird die gewählte Variante zur Szene, die anderen bleiben
     zum Nachschlagen.
+
+### 10.8 Regeln aus der Rückmeldung zu den Varianten (9.11.2026, abends)
+
+38. **Türen in der Südwand ragen nicht über die Wand.** Ein Türbild in der unteren Wand ist so hoch
+    wie die Wand selbst; dafür gibt es eigene niedrige Türen (`spiel/eigene/tuer_sued_*.png`).
+39. **Innenwände haben eine Wandfläche.** Eine waagerechte Wand im Raum (Küche zu Gastraum, WC,
+    Lager) ist wie die Nordwand drei Reihen hoch (Krone und zwei Reihen Fläche), damit man sie als
+    Wand sieht und nicht nur von oben. Senkrechte Innenwände bleiben eine Kachel breit. Durchreichen
+    und Türen sitzen in der Fläche. Prüfung: „Wand ohne Wandfläche“.
+40. **Möbel gehören zusammen, wie man sie benutzt.** Barhocker stehen direkt an der Theke, Tische
+    stehen zwischen den Stühlen, die zu ihnen gehören, Geräte (Kaffeemaschine, Mixer, Kasse) stehen
+    mit `auf` auf der Arbeitsfläche, nicht davor; eine Kasse zeigt zum Gast. Ungenutzte Fläche hat
+    eine Aufgabe (Laufweg, Wartebereich) oder wird genutzt.
+41. **Keine Engstellen.** Wo ein Weg oder Bach um eine Reihe versetzt weiterläuft, überlappen die
+    beiden Stücke in voller Breite; sonst wirkt er dort wie abgeschnürt oder unterbrochen. Prüfung:
+    „Engstelle“.
+42. **Gleise enden an einem Prellbock** (`spiel/eigene/prellbock.png`), nie an einem Schild im Nichts.
+43. **Keine zwei gleichen Einzelmöbel im selben Raum**, außer Serien, die so gedacht sind (Stühle,
+    Regalreihen, Waschmaschinen, Hocker).
+44. **Bauteile sitzen nahtlos.** Stegplanken ohne Wasserlinie dazwischen, Treppen und Anbauten
+    bündig am Gebäude (keine Graslinie), jede Stegplatte über Wasser hat Pfosten, Ecken eines Zauns
+    verbinden beide Seiten.
+45. **Wasserfälle nur mit Fels oder Geländestufe.** Ohne Berg, Klippe oder Felswand im Bild gibt es
+    keinen Wasserfall; ein Bach kommt dann vom Kartenrand oder aus einer Quelle zwischen Steinen.
+46. **Bibliotheken zeigen Bücher an allen Wänden:** Regalreihen im Raum und an den Seitenwänden
+    Regale in Seitenansicht, wo der Katalog sie hat.
+47. **Straßen enden sichtbar.** Am Kartenrand läuft die Straße samt Gehweg bis in die letzte Spalte;
+    endet sie in der Karte, dann mit Gehweg rundherum oder einem Übergang auf einen Weg.
+48. **Zeichen der Geschichte sind lesbar.** Sperren und Hinweise, die der Spieler verstehen muss,
+    tragen Schrift oder ein eindeutiges Bild (eigene Schilder über `werkzeuge/schilder.py`).

@@ -342,6 +342,18 @@
       "feld": [29, 22]
     },
     {
+      "moebel": "mf6Seerose1",
+      "feld": [24, 27]
+    },
+    {
+      "moebel": "mf6Seerose2",
+      "feld": [27, 26]
+    },
+    {
+      "moebel": "mf6Seerose3",
+      "feld": [26, 28]
+    },
+    {
       "moebel": "mf4Strassenbaum",
       "feld": [16, 28]
     },

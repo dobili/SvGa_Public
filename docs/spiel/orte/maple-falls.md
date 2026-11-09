@@ -414,7 +414,8 @@ mit Vorsilbe `mf6` in `moebel/maple-falls.json`. Bühnenbild:
 - **Pflasterplatz** (Platz für das öffentliche Brett im Post-Game, 13 §7.4): 17–21 / 21–25, über einen
   Pflasterstreifen (18–19 / 19–20) an den Gehweg angeschlossen; Bank am Ostrand (22, 22) mit Blick auf
   den Platz; Blumenkasten am Südrand des Pflasters (18, 26).
-- **Teich** (10.23): unregelmäßig (22–29 / 25–29), mit Grasrand zum Kartenrand; Enten am Ufer.
+- **Teich** (10.23): unregelmäßig (22–29 / 25–29), mit Grasrand zum Kartenrand; drei Seerosen
+  (Props_Water_11 bis 13) im Wasser, Enten am Ufer.
 - **Ostteil:** Wiese mit Ahorn (36, 3) und Laubbaum (38, 8) nördlich, Bäume (31, 26) und (39, 25)
   südlich des Flusses.
 
@@ -424,9 +425,9 @@ Teich, Flussbiegung; D (33–43) Brücke, Ostwiese, Fluss zur Landstraße. Laufz
 
 Bildprüfung (drei Runden): Fluss berührte oben den Rand (Nordufer geschlossen), Teich lief in den
 Südrand (eine Reihe Gras dazwischen), Pfad zum Platz hing frei (Pflasterstreifen), Kurve des
-Uferwegs lief unter den Kiosk (zurück auf 27–28). Offen für den Haupt-Chat (Werkzeug, 10.1): Ufer- und
-Wegränder an inneren Ecken, Wasserstruktur. Die Meldungen „Laterne allein mitten im Raum“ (Regel für
-Innenräume) und „Steg wirkt angeschnitten“ (Pier_26 ist absichtlich zerbrochen) sind begründet; die
+Uferwegs lief unter den Kiosk (zurück auf 27–28). Danach mit der verbesserten Zeichnung des Haupt-Chats
+(Innenecken, Ränder, Wellen, Brückenfelder) neu gezeichnet und geprüft: ohne Befund. Die Meldungen „Laterne allein mitten im Raum“ (Regel für
+Innenräume) und „wirkt angeschnitten“ (Pier_26 ist absichtlich zerbrochen, die Seerosen sind Wasserkacheln) sind begründet; die
 Katalogangaben dazu stehen in `katalog_korrekturen/mittel-4.json`.
 
 **Übergänge (gebaut):** `park` Westrand (0, 15–17) ↔ Birch Lane (63, 25–27); `landstrasse` Ostrand

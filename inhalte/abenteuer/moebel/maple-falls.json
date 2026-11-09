@@ -1509,6 +1509,33 @@
       "zustand": "neu",
       "stil": "modern",
       "blick": "oben"
+    },
+    "mf6Seerose1": {
+      "quelle": "modern-exteriors/Modern_Exteriors_16x16/ME_Theme_Sorter_16x16/1_Terrains_and_Fences_Singles_16x16/ME_Singles_Terrains_and_Fences_16x16_Props_Water_11.png",
+      "breite": 16,
+      "hoehe": 16,
+      "kollision": false,
+      "art": "pflanze",
+      "zustand": "neu",
+      "stil": "natur"
+    },
+    "mf6Seerose2": {
+      "quelle": "modern-exteriors/Modern_Exteriors_16x16/ME_Theme_Sorter_16x16/1_Terrains_and_Fences_Singles_16x16/ME_Singles_Terrains_and_Fences_16x16_Props_Water_12.png",
+      "breite": 16,
+      "hoehe": 16,
+      "kollision": false,
+      "art": "pflanze",
+      "zustand": "neu",
+      "stil": "natur"
+    },
+    "mf6Seerose3": {
+      "quelle": "modern-exteriors/Modern_Exteriors_16x16/ME_Theme_Sorter_16x16/1_Terrains_and_Fences_Singles_16x16/ME_Singles_Terrains_and_Fences_16x16_Props_Water_13.png",
+      "breite": 16,
+      "hoehe": 16,
+      "kollision": false,
+      "art": "pflanze",
+      "zustand": "neu",
+      "stil": "natur"
     }
   }
 }

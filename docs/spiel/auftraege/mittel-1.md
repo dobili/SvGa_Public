@@ -1,6 +1,6 @@
 # Auftrag mittel-1: Balancing mit der Gesamtsimulation
 
-**Stand:** offen (Haupt-Chat, 09.11.2026, einundzwanzigster Auftrag)
+**Stand:** fertig (Helfer mittel-1, 09.11.2026, einundzwanzigster Auftrag)
 
 **Zweig:** dein fester Sitzungszweig, Basis `claude/friendly-shannon-y8bf90` (vorher hereinholen)
 **Darf ändern:** `pipeline/abenteuer/gesamtsimulation*.cjs`, `pipeline/tests/test_abenteuer_simulation.py`,
@@ -25,6 +25,81 @@ jetzt den ganzen Weg; nutze sie für eine Auswertung der Wirtschaft.
 3. Passe Preise und Belohnungen in kleinen Schritten an, bis die Ziele erfüllt sind. Jede Änderung
    mit Grund in einer Tabelle im Bericht (alt, neu, warum).
 4. Die Auswertung bleibt als Option im Skript (`--wirtschaft`), damit sie nach neuen Karten wieder läuft.
+
+## Bericht
+
+**Erledigt.**
+
+- Neue Option `--wirtschaft` (dazu `--startwerte 1,2,3,4`):
+  `node pipeline/abenteuer/gesamtsimulation.cjs --wirtschaft`. Der Durchlauf schreibt jetzt eine
+  Zeitachse (Ortswechsel; Münzen aus dem ersten Sieg je Straßengegner, der ersten bestandenen Runde,
+  Quests und Funden; Läden; Karten aus Quests und Dialogen; erster Clubkampf je Club). Die neue Datei
+  `pipeline/abenteuer/gesamtsimulation-wirtschaft.cjs` spielt diese Zeitachse mit zwei Spielern ab:
+  - **sparsam:** kauft nichts auf Vorrat; im Clubkampf zwei Versuche ohne Karte, danach eine leichte
+    Karte (dauerhafte zuerst, sonst die billigste leichte aus einem schon besuchten Laden);
+  - **verschwenderisch:** kauft in jedem Laden alles, was er bezahlen kann (Karten und Gegenstände),
+    und spielt im Clubkampf immer seine stärkste Karte.
+    Clubkämpfe nach der Vorgabe: Sieg ohne Karte 40 %, leicht 50 %, mittel 60 %, stark 75 %; Nadel
+    nach R17 (ohne Karte Gold, leichte Karten Silber, mittlere oder starke Bronze); 50 Münzen für die
+    erste Nadel; Port Delacroix ohne Karten (R28). Jeder Clubkampf 200-mal je Startwert ausgewürfelt.
+- Ausgabe je Spieler: Tabelle je Ort (Akt, Münzen bei Ankunft und Abreise des ersten Aufenthalts,
+  wie viele Waren des Ortes bei Ankunft und Abreise bezahlbar sind, Zahl der Karten), Tabelle je
+  Clubkampf (Anteil mindestens Silber, Versuche, davon mit Karte, Anteil „Karte im Besitz oder
+  kaufbar“, schlechteste Nadel) und die Ziele.
+- Test: `test_wirtschaft_ziele` in `pipeline/tests/test_abenteuer_simulation.py` (nur mit
+  `ABENTEUER_SIMULATION=1`, ein Startwert) prüft die drei Ziele, damit neue Karten oder Preise sie
+  nicht stillschweigend verletzen. Die drei Simulationstests zusammen brauchen etwa 2 Minuten 20.
+- `--startwert` und die übrigen Argumente liest jetzt `gesamtsimulation.cjs` selbst; so bleibt
+  `gesamtsimulation-regeln.cjs` unter 400 Zeilen.
+
+**Ergebnis (Startwerte 1 bis 4, gleiche Werte bis auf wenige Münzen):**
+
+| Stadt          | Akt | sparsam: Münzen Ankunft → Abreise | im Laden bezahlbar (sparsam, Ankunft) | Clubkampf sparsam: mind. Silber, Versuche, davon mit Karte |
+| -------------- | --- | --------------------------------- | ------------------------------------- | ---------------------------------------------------------- |
+| Maple Falls    | 1   | 0 → 110                           | 0 von 7 (bei Abreise 7 von 7)         | 100 %, 2,2, 0,6                                            |
+| Cedar Creek    | 1   | 145 → 245                         | kein Laden                            | 100 %, 2,5, 0,8                                            |
+| Riverton       | 2   | 280 → 295                         | 6 von 6                               | 100 %, 2,4, 0,7                                            |
+| Ironwood       | 2   | 440 → 450                         | 7 von 8 (Kartentasche 450 nicht)      | 100 %, 2,1, 0,5                                            |
+| Silicon Bay    | 3   | 575 → 655                         | 3 von 3                               | 100 %, 2,1, 0,5                                            |
+| Port Delacroix | 3   | 700 → 700                         | 3 von 3                               | 100 % (Gold, ohne Karten), 2,4, 0                          |
+| Desert Springs | 3   | 835 → 835                         | 3 von 3                               | 100 %, 2,4, 0,8                                            |
+| Summit City    | 4   | 975 → 990                         | 4 von 4                               | 100 %, 2,5, 0,8                                            |
+| Capital Arena  | 4   | 1155                              | 2 von 2 (nur Fanartikel)              | (Turnier, kein Clubkampf)                                  |
+
+Der verschwenderische Spieler gibt alles aus: ab Ironwood kommt er mit 0 bis 15 Münzen in jede
+Stadt, weil er die großen Gegenstände kauft (Monatskarte, Fahrrad, Laterne, Reisebrett,
+Kartentasche). Er spielt immer eine Karte und holt deshalb fast nur Bronze (in Port Delacroix Gold,
+weil dort Karten gesperrt sind).
+
+**Ziele:**
+
+1. _Sparsamer Spieler in jeder Stadt mindestens Silber:_ ja, in 100 % der Läufe.
+2. _Kein Clubkampf ohne Kaufmöglichkeit:_ ja, vor jedem Clubkampf ist eine leichte Karte im Besitz
+   (Fingerzeig von Ambrose ab Szene 2) oder bezahlbar, in 100 % der Läufe.
+3. _Starke Karten nicht vor Akt 2 bezahlbar:_ ja; keine starke Karte steht in einem Laden (G3:
+   Vorgaben, Mentor-Zug und Sanduhr nie käuflich). Der verschwenderische Spieler kauft die erste
+   mittlere Karte in Akt 2 (Remisangebot in Riverton). Flüstern (mittel, 40) im Kiosk von Maple Falls
+   ist für den sparsamen Spieler am Ende von Akt 1 bezahlbar (110 Münzen); das ist so geplant
+   (docs/spiel/11, 7.2).
+
+**Änderungen an Preisen und Belohnungen:**
+
+| Ware oder Belohnung | alt | neu | warum                                                                                                                                                                          |
+| ------------------- | --- | --- | ------------------------------------------------------------------------------------------------------------------------------------------------------------------------------ |
+| (keine)             | –   | –   | Alle drei Ziele sind mit den heutigen Preisen erfüllt; jede Erhöhung würde dem Wunsch des Autors („je mehr Karten, desto besser“) entgegenlaufen, ohne ein Ziel zu verbessern. |
+
+**Beobachtungen und Vorschläge (keine Änderung, Entscheidung beim Haupt-Chat):**
+
+- Ab Riverton kann der sparsame Spieler jeden Laden leer kaufen, und am Ende hat er über 1100 Münzen.
+  Für „je mehr Karten, desto besser“ ist das ein guter Vorrat. Wenn neue Karten kommen, sind Akt 3
+  und Akt 4 der richtige Platz für teurere Waren (die Läden dort haben nur drei oder vier). Die
+  Bibel nennt dafür schon Bretthintergründe und Album-Waren.
+- Der verschwenderische Spieler ist ab Akt 2 dauerhaft knapp, weil die Gegenstände teuer sind. Das
+  ist gewollt: Wer alles kauft, hat keine Rücklage.
+- Mit `--wirtschaft` lässt sich jede neue Karte sofort gegen die drei Ziele prüfen.
+
+**Prüfungen:** pytest 622 bestanden, 3 übersprungen; mit `ABENTEUER_SIMULATION=1` alle 3
+Simulationstests bestanden (etwa 2 Minuten 20). ruff sauber, `npm run pruefen` grün (2422 Tests).
 
 ## Bericht des letzten Auftrags, zur Nachlese
 

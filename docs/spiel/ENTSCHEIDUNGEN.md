@@ -664,3 +664,8 @@ und Zubehör nach `werkzeuge/figuren.json` im privaten Repository (`werkzeuge/fi
 heißt `figuren/held-<variante>.png`, in Erinnerungen `figuren/ambrose-jung.png`. Ohne Bild bleibt der
 Platzhalter. Figuren stehen mit den Füßen auf ihrer Kachel, der Kopf ragt in die Kachel darüber;
 wer weiter unten steht, wird davor gezeichnet.
+
+**Karten mit echter Grafik (9.11.2026):** Erst ein Kachelstil je Karte (innen, Stadt, Natur, Wüste)
+im Raster des Platzhalters, damit alle Karten sofort echte Oberflächen haben; dann Möbel und Schmuck
+als Objekte vom Typ `moebel` (moebel.json, Bilder aus dem Register). Ohne gekaufte Grafik zeichnet
+der Paketbau Platzhalterrechtecke in derselben Größe, die Karten bleiben spielbar.

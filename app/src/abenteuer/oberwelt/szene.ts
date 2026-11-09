@@ -19,6 +19,7 @@ import {
   standbild,
   stelleAufKachel,
 } from "./figurbilder";
+import { ladeMoebelbilder, stelleMoebelAuf, type Moebel } from "./moebel";
 
 export type Richtung = Weltposition["richtung"];
 
@@ -68,6 +69,8 @@ export interface Szenendaten {
   readonly heldfigur?: string | null;
   /** Bögen der Figuren dieser Karte im Format von LimeZu, nach Objektname. */
   readonly figurenbilder?: Readonly<Record<string, string>>;
+  /** Möbel und Schmuck der Karte (moebel.ts). */
+  readonly moebel?: readonly Moebel[];
   /** Name des Kachelsatzes in der Tiled-Datei. */
   readonly kachelsatz: string;
   readonly start: Weltposition;
@@ -118,6 +121,7 @@ export class Oberweltszene extends Phaser.Scene {
     for (const [name, adresse] of Object.entries(this.daten.figurenbilder ?? {})) {
       ladeFigurbogen(this, `figur:${name}`, adresse);
     }
+    ladeMoebelbilder(this, this.daten.moebel ?? []);
   }
 
   create(): void {
@@ -160,6 +164,7 @@ export class Oberweltszene extends Phaser.Scene {
     this.cameras.main.setRoundPixels(true);
     this.ausloeser = this.liesAusloeser(karte);
     this.stelleFigurenAuf(held);
+    this.physics.add.collider(held, stelleMoebelAuf(this, this.daten.moebel ?? [], KACHEL));
     this.tasten = this.input.keyboard?.createCursorKeys() ?? null;
   }
 
@@ -190,7 +195,7 @@ export class Oberweltszene extends Phaser.Scene {
       (ebene?.objects ?? [])
         .filter((o) => typeof o.name === "string" && o.name.length > 0)
         // Statisten und Tiere (type statist/tier) sind noch keine Auslöser; sie kommen mit der Grafik.
-        .filter((o) => o.type !== "statist" && o.type !== "tier")
+        .filter((o) => o.type !== "statist" && o.type !== "tier" && o.type !== "moebel")
         .map((o) => ({
           name: o.name,
           typ: o.type === FIGUR_TYP ? ("figur" as const) : ("ausloeser" as const),

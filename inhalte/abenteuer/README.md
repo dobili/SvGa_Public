@@ -59,6 +59,10 @@ Hintergrund: `docs/spiel/04_Architektur.md`, Abschnitt 2 und 9.
   `objekte` (Kachelebene, über den Figuren, wenn `properties.ueberFiguren` gesetzt ist),
   `ausloeser` (Objektebene).
 - Kollision steht am Kachelsatz: Kacheln mit der Eigenschaft `kollision = true` sind nicht begehbar.
+- Möbel und Schmuck (gekaufte Grafik): Objekte mit `type = "moebel"` in der Ebene `ausloeser`,
+  Name = Schlüssel in `moebel.json` (Pfad im privaten Register, Breite, Höhe, `kollision`), `x`/`y`
+  = linke obere Ecke in Pixeln auf dem Kachelraster. Mit `kollision` ist alles außer der obersten
+  Kachelreihe gesperrt; ein Möbel darf keinen Auslöser und keine Figur zustellen (Test).
 - Objekte der Ebene `ausloeser` haben `type = "ausloeser"` und einen Namen, der in `orte.json`
   unter `ausloeser` erklärt wird (`start`, `uebergang`, `dialog`, `gegenstand`). Ein Objekt
   `start` mit `richtung` ist der Standardeinstieg. Übergänge (`ziel.karte`, `ziel.ausloeser`)

@@ -15,6 +15,7 @@ import {
   paketdateiAlsAdresseOderNull,
 } from "../paket/paketlader";
 import { tSpiel } from "../texte/texte";
+import { ladeMoebel, type Moebel } from "./moebel";
 import type { Ausloesertreffer } from "./szene";
 
 /** Bilder des Prototyps im Paket (bis die LimeZu-Kacheln da sind, Entscheidung A10). */
@@ -45,6 +46,8 @@ export interface Weltdaten {
   readonly heldfigur: string | null;
   /** Bögen der Figuren dieser Karte im Format von LimeZu, nach Objektname. */
   readonly figurenbilder: Readonly<Record<string, string>>;
+  /** Möbel und Schmuck der Karte. */
+  readonly moebel: readonly Moebel[];
 }
 
 /** Objektnamen der Figuren einer Tiled-Karte (Objekte mit type „figur“). */
@@ -110,10 +113,11 @@ export async function ladeWelt(kartenkennung: string, heldvariante = 0): Promise
     paketdateiAlsAdresse(FIGURBILD),
   ]);
   const erinnerung = fund.ort.art === "erinnerung";
-  const [stilbild, heldfigur, figurenbilder] = await Promise.all([
+  const [stilbild, heldfigur, figurenbilder, moebel] = await Promise.all([
     paketdateiAlsAdresseOderNull(`grafik/stil-${kachelstil(fund.ort, fund.karte.innen)}.png`),
     paketdateiAlsAdresseOderNull(heldfigurpfad(erinnerung, heldvariante)),
     figurenbilderFuer(fund.ort, karte),
+    ladeMoebel(karte),
   ]);
   return {
     kennung: kartenkennung,
@@ -127,6 +131,7 @@ export async function ladeWelt(kartenkennung: string, heldvariante = 0): Promise
     figurbild,
     heldfigur,
     figurenbilder,
+    moebel,
   };
 }
 

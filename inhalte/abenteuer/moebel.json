@@ -1,0 +1,17 @@
+{
+  "erklaerung": "Möbel und Schmuck der Karten (gekaufte Grafik). Schlüssel = Name des Objekts vom Typ „moebel“ in der Ebene ausloeser einer Karte. quelle = Pfad im privaten Repository dobili/schach-abenteuer-inhalte (Register), breite und hoehe in Pixeln, kollision: die untere Fläche ist nicht begehbar (alles außer der obersten Kachelreihe; bei 16 Pixel Höhe die ganze Fläche).",
+  "moebel": {
+    "parkbank": {
+      "quelle": "modern-exteriors/Modern_Exteriors_16x16/ME_Theme_Sorter_16x16/3_City_Props_Singles_16x16/ME_Singles_City_Props_16x16_Bench_1.png",
+      "breite": 32,
+      "hoehe": 32,
+      "kollision": true
+    },
+    "laterne": {
+      "quelle": "modern-exteriors/Modern_Exteriors_16x16/ME_Theme_Sorter_16x16/3_City_Props_Singles_16x16/ME_Singles_City_Props_16x16_Street_Lamp_1.png",
+      "breite": 32,
+      "hoehe": 64,
+      "kollision": true
+    }
+  }
+}

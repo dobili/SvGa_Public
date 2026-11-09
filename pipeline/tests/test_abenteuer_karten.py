@@ -80,7 +80,7 @@ def test_ausloeser_und_figuren_erklaert(ort: dict, eintrag: dict):
     figuren = {f["kennung"].split(".", 1)[1] for f in ort["figuren"]}
     for objekt in k.objekte(_karte(eintrag)):
         # Statisten und Tiere (09_Weltbeschreibung, 4a) stehen nicht in orte.json.
-        if objekt.belebung:
+        if objekt.belebung or objekt.moebel:
             continue
         if objekt.figur:
             assert objekt.name in figuren, f"Figur {objekt.name} fehlt in orte.json"
@@ -143,3 +143,18 @@ def test_jede_figur_und_jeder_ausloeser_steht_auf_einer_karte(ort: dict):
     fehlend = [f["kennung"] for f in ort["figuren"] if f["kennung"].split(".", 1)[1] not in namen]
     fehlend += [a["name"] for a in ort["ausloeser"] if a["name"] not in namen]
     assert not fehlend, f"nicht auf einer Karte: {fehlend}"
+
+
+def test_moebel_bekannt_und_frei_von_ausloesern():
+    # Möbel stehen in moebel.json und versperren keinen Auslöser und keine Figur.
+    for _ort, eintrag in FAELLE:
+        datei = INHALTE / eintrag["datei"]
+        if not datei.exists():
+            continue
+        karte = k.lade_karte(datei)
+        gesperrt = k.moebelfelder(karte)
+        for objekt in k.objekte(karte):
+            if objekt.moebel:
+                assert objekt.name in k.MOEBEL, f"{eintrag['kennung']}: Möbel {objekt.name} fehlt"
+            elif not objekt.belebung:
+                assert objekt.feld not in gesperrt, f"{eintrag['kennung']}: {objekt.name} zugestellt"

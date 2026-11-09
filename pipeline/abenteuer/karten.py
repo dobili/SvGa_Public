@@ -37,6 +37,8 @@ class Kartenobjekt:
     feld: Feld
     eigenschaften: dict[str, object]
     belebung: bool = False
+    moebel: bool = False
+    groesse: tuple[int, int] = (1, 1)
 
 
 def lade_karte(pfad: Path) -> dict:
@@ -75,6 +77,7 @@ def objekte(karte: dict) -> list[Kartenobjekt]:
             name=o.get("name", ""),
             figur=o.get("type") == "figur",
             belebung=o.get("type") in ("statist", "tier"),
+            moebel=o.get("type") == "moebel",
             feld=(int(o["x"]) // KACHELGROESSE, int(o["y"]) // KACHELGROESSE),
             eigenschaften={e["name"]: e.get("value") for e in o.get("properties", [])},
         )
@@ -82,10 +85,33 @@ def objekte(karte: dict) -> list[Kartenobjekt]:
     ]
 
 
-def blockiert(karte: dict) -> set[Feld]:
-    """Alle Felder, auf denen in einer Kachelebene eine Kollisionskachel liegt."""
-    breite, kollision = karte["width"], kollisionskacheln(karte)
+MOEBEL = json.loads(
+    (Path(__file__).resolve().parents[2] / "inhalte/abenteuer/moebel.json").read_text(encoding="utf-8")
+)["moebel"]
+
+
+def moebelfelder(karte: dict) -> set[Feld]:
+    """Felder unter Möbeln mit ``kollision`` (moebel.json): alles außer der obersten Kachelreihe.
+
+    Beispiel: ein Bett 32 × 48 bei (64, 32) sperrt die Felder (4, 3), (5, 3), (4, 4), (5, 4).
+    """
     felder: set[Feld] = set()
+    for o in (ebene(karte, OBJEKTEBENE) or {}).get("objects", []):
+        angabe = MOEBEL.get(o.get("name", "")) if o.get("type") == "moebel" else None
+        if not angabe or not angabe.get("kollision"):
+            continue
+        spalten = max(1, angabe["breite"] // KACHELGROESSE)
+        reihen = max(1, angabe["hoehe"] // KACHELGROESSE)
+        x0, y0 = int(o["x"]) // KACHELGROESSE, int(o["y"]) // KACHELGROESSE
+        oben = 1 if reihen > 1 else 0
+        felder |= {(x0 + dx, y0 + dy) for dx in range(spalten) for dy in range(oben, reihen)}
+    return felder
+
+
+def blockiert(karte: dict) -> set[Feld]:
+    """Alle Felder, auf denen in einer Kachelebene eine Kollisionskachel oder ein Möbel steht."""
+    breite, kollision = karte["width"], kollisionskacheln(karte)
+    felder: set[Feld] = moebelfelder(karte)
     for name in KACHELEBENEN:
         daten = (ebene(karte, name) or {}).get("data", [])
         for index, kachel in enumerate(daten):

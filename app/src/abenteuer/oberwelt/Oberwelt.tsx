@@ -420,6 +420,7 @@ export function Oberwelt() {
           figurbild: w.figurbild,
           heldfigur: w.heldfigur,
           figurenbilder: w.figurenbilder,
+          moebel: w.moebel,
           kachelsatz: KACHELSATZ,
           start: stand.position,
           // Fahrrad (docs/spiel/08, W3): doppeltes Tempo draußen.

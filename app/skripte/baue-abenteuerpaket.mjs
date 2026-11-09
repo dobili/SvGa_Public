@@ -94,6 +94,37 @@ async function kopierePrivatordner(ordner) {
   }
 }
 
+/** Wurzel des privaten Repositorys (Register-Pfade in moebel.json beziehen sich darauf). */
+const PRIVAT_WURZEL = resolve(HIER, "../inhalte-privat/quelle");
+const MOEBEL_GRUND = [150, 120, 90];
+const MOEBEL_RAND = [58, 58, 80];
+
+/**
+ * Möbel und Schmuck (moebel.json): das Bild aus dem privaten Repository, sonst ein Platzhalter in
+ * der angegebenen Größe (braune Fläche mit dunklem Rand), damit Karten immer vollständig laden.
+ */
+async function schreibeMoebel() {
+  const { moebel } = JSON.parse(await readFile(join(QUELLE, "moebel.json"), "utf8"));
+  for (const [name, angabe] of Object.entries(moebel)) {
+    const quelle = join(PRIVAT_WURZEL, angabe.quelle);
+    const bild = existsSync(quelle)
+      ? await readFile(quelle)
+      : platzhalterRechteck(angabe.breite, angabe.hoehe);
+    await schreibe(`moebel/${name}.png`, bild, "grafik");
+  }
+}
+
+function platzhalterRechteck(breite, hoehe) {
+  const pixel = Buffer.alloc(breite * hoehe * 4);
+  for (let y = 0; y < hoehe; y++) {
+    for (let x = 0; x < breite; x++) {
+      const rand = x === 0 || y === 0 || x === breite - 1 || y === hoehe - 1;
+      setzePixel(pixel, breite, x, y, rand ? MOEBEL_RAND : MOEBEL_GRUND);
+    }
+  }
+  return pngAus(breite, hoehe, pixel);
+}
+
 /** Schreibt eine Datei ins Paket und merkt Größe und Prüfsumme. */
 /** Eine Grafik: aus dem privaten Ordner, wenn vorhanden, sonst der gezeichnete Platzhalter. */
 async function schreibeGrafik(pfad, platzhalter) {
@@ -232,6 +263,7 @@ async function main() {
     "runden.json",
     "funde.json",
     "laeden.json",
+    "moebel.json",
   ]) {
     await kopiereJson("daten", name, "daten");
   }
@@ -255,6 +287,7 @@ async function main() {
   await kopierePrivatordner("figuren");
   await kopierePrivatordner("portraets");
   await kopierePrivatordner("grafik");
+  await schreibeMoebel();
   await schreibeGrafik("grafik/platzhalter.png", platzhalterKacheln);
   await schreibeGrafik("grafik/held.png", () => platzhalterHeld());
   await schreibeGrafik("grafik/figur.png", () => platzhalterHeld(FIGUR_KOERPER));

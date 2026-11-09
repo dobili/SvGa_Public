@@ -1147,6 +1147,70 @@
             "ausloeser": "kanalweg"
           },
           "dialog": "ironwood-aussen.ankunft_zu_fuss"
+        },
+        {
+          "name": "lockport",
+          "karte": "wegRivertonIronwood.kanalweg",
+          "art": "uebergang",
+          "ziel": {
+            "karte": "lockport.aussen",
+            "ausloeser": "kanalweg"
+          }
+        }
+      ]
+    },
+    {
+      "kennung": "lockport",
+      "name": "ort.lockport.name",
+      "nummer": 0,
+      "staffel": 1,
+      "karten": [
+        {
+          "kennung": "lockport.aussen",
+          "datei": "karten/lockport-aussen.json",
+          "name": "ort.lockport.aussen",
+          "innen": false,
+          "musik": "musik/landstrasse.ogg"
+        },
+        {
+          "kennung": "lockport.gasthaus",
+          "datei": "karten/lockport-gasthaus.json",
+          "name": "ort.lockport.gasthaus",
+          "innen": true
+        }
+      ],
+      "figuren": [],
+      "ausloeser": [
+        {
+          "name": "start",
+          "art": "start"
+        },
+        {
+          "name": "kanalweg",
+          "karte": "lockport.aussen",
+          "art": "uebergang",
+          "ziel": {
+            "karte": "wegRivertonIronwood.kanalweg",
+            "ausloeser": "lockport"
+          }
+        },
+        {
+          "name": "gasthausTuer",
+          "karte": "lockport.aussen",
+          "art": "uebergang",
+          "ziel": {
+            "karte": "lockport.gasthaus",
+            "ausloeser": "gasthausAusgang"
+          }
+        },
+        {
+          "name": "gasthausAusgang",
+          "karte": "lockport.gasthaus",
+          "art": "uebergang",
+          "ziel": {
+            "karte": "lockport.aussen",
+            "ausloeser": "gasthausTuer"
+          }
         }
       ]
     },

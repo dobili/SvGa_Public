@@ -1,0 +1,119 @@
+{
+  "karte": "ironwood.umkleide",
+  "datei": "karten/varianten/ironwood-umkleide-c.json",
+  "art": "innen",
+  "beschreibung": "Variante C: weiße Fliesen, Backsteinwand, sieben schmale Spinde, eine lange Holzbank in der Mitte, Duschen in der Südostecke, Fass als Wäschetonne.",
+  "wand": "backstein",
+  "boden": "fliesenWeiss",
+  "boeden": {
+    "f": "fliesenGrau"
+  },
+  "raster": [
+    "##############",
+    "##############",
+    "##############",
+    "#............#",
+    "#............#",
+    "#............#",
+    "#..........ff#",
+    "#..........ff#",
+    "#..........ff#",
+    "#######.######",
+    "##############"
+  ],
+  "objekte": [
+    {
+      "moebel": "cc6TuerSued",
+      "feld": [7, 10],
+      "an_wand": true
+    },
+    {
+      "moebel": "cc5Fussmatte",
+      "feld": [7, 8],
+      "versatz": [0, 24]
+    },
+    {
+      "moebel": "iwSpind",
+      "feld": [10, 2],
+      "id": "schliessfachSpind"
+    },
+    {
+      "moebel": "mf2Spind",
+      "feld": [1, 2]
+    },
+    {
+      "moebel": "mf2Spind",
+      "feld": [2, 2]
+    },
+    {
+      "moebel": "mf2Spind",
+      "feld": [3, 2]
+    },
+    {
+      "moebel": "mf2Spind",
+      "feld": [4, 2]
+    },
+    {
+      "moebel": "mf2Spind",
+      "feld": [5, 2]
+    },
+    {
+      "moebel": "mf2Spind",
+      "feld": [6, 2]
+    },
+    {
+      "moebel": "mf2Spind",
+      "feld": [7, 2]
+    },
+    {
+      "moebel": "iw5Duschwanne",
+      "feld": [11, 7]
+    },
+    {
+      "moebel": "cc4Stammbank",
+      "feld": [3, 5]
+    },
+    {
+      "moebel": "cc4Stammbank",
+      "feld": [6, 5]
+    },
+    {
+      "moebel": "iwFass",
+      "feld": [1, 7]
+    }
+  ],
+  "ausloeser": [
+    {
+      "name": "start",
+      "feld": [7, 8],
+      "eigenschaften": {
+        "richtung": "oben"
+      }
+    },
+    {
+      "name": "umkleideAusgang",
+      "feld": [7, 9]
+    },
+    {
+      "name": "schliessfach",
+      "feld": [11, 4]
+    }
+  ],
+  "figuren": [],
+  "belebung": [
+    {
+      "name": "arbeiter",
+      "typ": "statist",
+      "feld": [8, 4],
+      "eigenschaften": {
+        "von": "8,4",
+        "bis": "9,4",
+        "tun": "zieht sich für die Schicht um",
+        "wann": "morgen"
+      }
+    }
+  ],
+  "zustand": ["gebraucht", "alt"],
+  "stil": ["industrie", "klassisch", "einfach", "modern", "rustikal"],
+  "variante": "c"
+}

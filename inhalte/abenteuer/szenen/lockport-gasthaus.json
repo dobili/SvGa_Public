@@ -1,0 +1,205 @@
+{
+  "karte": "lockport.gasthaus",
+  "art": "innen",
+  "beschreibung": "Gasthaus „Zur Schleuse“ in Lockport, Variante A: Holzwände, Dielen. An der Nordwand läuft die Kegelbahn aus hellem Holz von links nach rechts, an ihrem Ende der Platz für die Kegel, die Henrik abends aufstellt; darüber zwei Fenster, die Kreidetafel „Kegelkönig des Monats“ und ein Foto der Schleuse im Hochwasser. Rechts die Theke aus dunklem Holz mit zwei Hockern, dahinter das Regal mit Flaschen und Gläsern, wo Wirt Henrik steht. Rechts oben der Kaminofen. Im Raum vier runde Tische mit je zwei Stühlen, Fässer, eine Pflanze, an der Tür ein Paar Gummistiefel. Unten die Tür mit Fußmatte.",
+  "wand": "holz",
+  "boden": "dielen",
+  "boeden": {
+    "k": "holzHell"
+  },
+  "raster": [
+    "####################",
+    "####################",
+    "####################",
+    "#kkkkkkkkkkkkkk....#",
+    "#kkkkkkkkkkkkkk....#",
+    "#..................#",
+    "#..................#",
+    "#..................#",
+    "#..................#",
+    "#..................#",
+    "#..................#",
+    "#..................#",
+    "##############.#####"
+  ],
+  "objekte": [
+    {
+      "moebel": "wzFenster",
+      "feld": [7, 1],
+      "an_wand": true
+    },
+    {
+      "moebel": "wzFenster",
+      "feld": [11, 1],
+      "an_wand": true
+    },
+    {
+      "moebel": "mf2Tafel",
+      "feld": [3, 1],
+      "an_wand": true,
+      "versatz": [0, 5]
+    },
+    {
+      "moebel": "wzBild",
+      "feld": [13, 1],
+      "an_wand": true,
+      "versatz": [0, 6]
+    },
+    {
+      "moebel": "ld5Flaschenregal",
+      "feld": [15, 1]
+    },
+    {
+      "moebel": "ld5Ofen",
+      "feld": [17, 1]
+    },
+    {
+      "moebel": "ld5ThekeLinks",
+      "feld": [15, 6],
+      "id": "th1",
+      "bauteil_ok": true
+    },
+    {
+      "moebel": "ld5ThekeMitte",
+      "feld": [17, 6],
+      "id": "th2",
+      "bauteil_ok": true
+    },
+    {
+      "moebel": "ld5ThekeRechts",
+      "feld": [18, 6],
+      "id": "th3",
+      "bauteil_ok": true
+    },
+    {
+      "moebel": "ld5Barhocker",
+      "feld": [15, 8],
+      "zu": "th1",
+      "versatz": [0, -6],
+      "vorn": true
+    },
+    {
+      "moebel": "ld5Barhocker",
+      "feld": [17, 8],
+      "zu": "th2",
+      "versatz": [0, -6],
+      "vorn": true
+    },
+    {
+      "moebel": "ld5Rundtisch",
+      "feld": [3, 6],
+      "id": "t1"
+    },
+    {
+      "moebel": "ld5Stuhl1",
+      "feld": [2, 6],
+      "zu": "t1"
+    },
+    {
+      "moebel": "ld5Stuhl2",
+      "feld": [5, 6],
+      "zu": "t1"
+    },
+    {
+      "moebel": "ld5Rundtisch",
+      "feld": [8, 6],
+      "id": "t2"
+    },
+    {
+      "moebel": "ld5Stuhl1",
+      "feld": [7, 6],
+      "zu": "t2"
+    },
+    {
+      "moebel": "ld5Stuhl2",
+      "feld": [10, 6],
+      "zu": "t2"
+    },
+    {
+      "moebel": "ld5Rundtisch",
+      "feld": [3, 9],
+      "id": "t3"
+    },
+    {
+      "moebel": "ld5Stuhl1",
+      "feld": [2, 9],
+      "zu": "t3"
+    },
+    {
+      "moebel": "ld5Stuhl2",
+      "feld": [5, 9],
+      "zu": "t3"
+    },
+    {
+      "moebel": "ld5Rundtisch",
+      "feld": [8, 9],
+      "id": "t4"
+    },
+    {
+      "moebel": "ld5Stuhl1",
+      "feld": [7, 9],
+      "zu": "t4"
+    },
+    {
+      "moebel": "ld5Stuhl2",
+      "feld": [10, 9],
+      "zu": "t4"
+    },
+    {
+      "moebel": "wg6Faesser",
+      "feld": [11, 10]
+    },
+    {
+      "moebel": "wg6Kisten",
+      "feld": [16, 10]
+    },
+    {
+      "moebel": "wzPflanze",
+      "feld": [18, 10]
+    },
+    {
+      "moebel": "ld5Stiefel",
+      "feld": [12, 11]
+    },
+    {
+      "moebel": "mf4Fussmatte",
+      "feld": [14, 11],
+      "versatz": [0, 8]
+    },
+    {
+      "moebel": "ld5TuerSued",
+      "feld": [14, 12],
+      "an_wand": true
+    }
+  ],
+  "ausloeser": [
+    {
+      "name": "start",
+      "feld": [14, 11],
+      "eigenschaften": {
+        "richtung": "oben"
+      }
+    },
+    {
+      "name": "gasthausAusgang",
+      "feld": [14, 12]
+    }
+  ],
+  "figuren": [],
+  "belebung": [
+    {
+      "name": "kegler",
+      "typ": "statist",
+      "feld": [2, 4],
+      "eigenschaften": {
+        "von": "2,4",
+        "bis": "10,4",
+        "tun": "schiebt die Kugel",
+        "wann": "tag"
+      }
+    }
+  ],
+  "zustand": ["neu", "gebraucht", "alt"],
+  "stil": ["rustikal", "klassisch", "modern", "einfach", "laendlich"],
+  "datei": "karten/lockport-gasthaus.json"
+}

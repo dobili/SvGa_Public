@@ -26,12 +26,15 @@ nachträgliches Möblieren:
   "boden": "holzHell", // Standardboden (materialien.json, boeden)
   "boeden": { "t": "teppichRot" }, // weitere Böden je Buchstabe im Raster
   "bruecken": ["h"], // begehbar, gezeichnet als Wasser mit Ufer; Brückenbild als Möbel darauf
-  "ufer": "stein", // optional: alles Wasser mit Steinkante statt Grasufer (Kai, Schleuse, Steinbruch)
+  "ufer": "stein", // optional: alles Wasser mit Steinkante statt Grasufer (Kai, Schleuse, Steinbruch);
+  // "rumpf": Bordwand eines Schiffs, das Deck ist dann das Land (Fährdeck)
   "dicht": true, // nur Lager und Archive: Belegung bis 60 % statt 45 % (dichte Regalreihen)
   // Fels (Steinbruch, Stollen): "wand": "fels" zeichnet Wände als Felskrone und zwei Reihen
   // Felswand (auch draußen, mit oder ohne "wandart"); Böden "schotter" und "felsboden".
   // Damm (Bahndamm, Deich): "wand": "damm" zeichnet "#" über einem Boden als Grashang (Regel 10.49).
   // Roter Fels (Canyon, Wüste): "wand": "felsRot", Böden "sandRot" und "felsbodenRot".
+  // Zweite Fassung einer Karte (Musikhaus nach musikhausOffen): "zustand_der_karte": "<flag>",
+  // eigene Datei; der Hintergrund heißt dann <kennung>-<flag>.png (die App tauscht ab Runde 6).
   "raster": ["####", "#..#", "####"], // # Wand, . Boden, ~ Wasser, Leerzeichen: nichts
   "objekte": [
     { "moebel": "wzSofa", "feld": [2, 2] }, // linke obere Kachel
@@ -132,3 +135,9 @@ Beziehungen im Eintrag einer Szene: `"auf": "<id>"` (steht auf; muss auf die Pla
 
 `"vorn": true` an einem Objekt: wird nach seinem Fuß vor anderen gezeichnet, hat aber keine Kollision und
 keine Überlappungsprüfung (Fahnenmast, Laterne oder Schild vor einer Fassade).
+
+## Möbel: begehbare Reihen unten
+
+Ein Möbel in `inhalte/abenteuer/moebel/<ort>.json` kann `"frei_unten": N` tragen: Die untersten N
+Kachelreihen des Bildes sperren nicht (Gang vor den Motelzimmern, Veranda des alten Bahnhofs).
+Kartenbau, Prüfungen und App rechnen gleich.

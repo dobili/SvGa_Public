@@ -101,7 +101,8 @@
     },
     {
       "moebel": "cc5Fussmatte",
-      "feld": [4, 9]
+      "feld": [4, 9],
+      "versatz": [0, 16]
     }
   ],
   "ausloeser": [

@@ -112,7 +112,8 @@
     },
     {
       "moebel": "cc4Fussmatte",
-      "feld": [7, 9]
+      "feld": [7, 9],
+      "versatz": [0, 16]
     }
   ],
   "ausloeser": [

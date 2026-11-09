@@ -2,11 +2,18 @@
   "karte": "summitCity.bergladen",
   "datei": "karten/varianten/summit-city-bergladen-b.json",
   "art": "innen",
-  "beschreibung": "Der Bergladen von Summit City: Holzwände, alte Dielen, es riecht nach Leder und Seil. Links die Theke mit der Kasse, an den Wänden Regale mit Seilen, Karabinern, Laternen und Wanderkarten, davor Rucksäcke und ein Ständer mit Seilbahnkarten. Die Tür liegt in der Südwand. Variante B, die schlichtere: Theke rechts, zwei Regale, ein Rucksack.",
+  "beschreibung": "Der Bergladen von Summit City: Holzwände, alte Dielen, es riecht nach Leder und Seil. Links die Theke mit der Kasse, an den Wänden Regale mit Seilen, Karabinern, Laternen und Wanderkarten, davor Rucksäcke und ein Ständer mit Seilbahnkarten. Die Tür liegt in der Südwand. Variante B, die schlichtere: Theke rechts, links zwei Warenregale und Seilhaken, ein Rucksack.",
   "wand": "holz",
   "boden": "dielen",
   "zustand": ["neu", "gebraucht", "alt"],
-  "stil": ["klassisch", "laendlich", "natur", "modern", "rustikal"],
+  "stil": [
+    "klassisch",
+    "laendlich",
+    "natur",
+    "modern",
+    "rustikal",
+    "industrie"
+  ],
   "raster": [
     "##############",
     "##############",
@@ -35,36 +42,32 @@
       "feld": [10, 3]
     },
     {
-      "moebel": "cc4RegalA",
+      "moebel": "mf9Vorrat105",
+      "feld": [1, 1]
+    },
+    {
+      "moebel": "mf9Vorrat99",
       "feld": [2, 1]
     },
     {
-      "moebel": "cc4RegalB",
-      "feld": [4, 1]
+      "moebel": "pg7SeilHaken",
+      "feld": [4, 1],
+      "an_wand": true
     },
     {
-      "moebel": "cc4RegalC",
-      "feld": [6, 1]
+      "moebel": "pdWerkzeugregal",
+      "feld": [5, 2]
     },
     {
       "moebel": "scRucksack",
       "feld": [2, 6]
     },
     {
-      "moebel": "ccWeltkarte",
-      "feld": [8, 1],
-      "an_wand": true
-    },
-    {
-      "moebel": "kisteRot",
-      "feld": [1, 6]
-    },
-    {
       "moebel": "ld5Seil",
       "feld": [4, 6]
     },
     {
-      "moebel": "cc4Falttisch",
+      "moebel": "cc5Tisch",
       "feld": [6, 5]
     },
     {
@@ -74,6 +77,14 @@
     {
       "moebel": "scRucksackRot",
       "feld": [3, 6]
+    },
+    {
+      "moebel": "cc3Zeitungsregal",
+      "feld": [8, 4]
+    },
+    {
+      "moebel": "kisteRot",
+      "feld": [9, 7]
     }
   ],
   "ausloeser": [

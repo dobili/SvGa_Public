@@ -41,6 +41,21 @@ def grauer_schatten(privat: Path, quelle: str) -> bool:
     return GRAUSCHATTEN in set(moebelbild(privat, quelle).get_flattened_data())
 
 
+def wellenbild(art: dict, feld: list[int], x: int, y: int) -> str | None:
+    """Ein Wellen- oder Glanzbild für offenes Wasser an (x, y), oder None.
+
+    Warum: Einfarbiges Wasser wirkte auf den Autor langweilig (KARTENREGELN 10.4). Nur auf
+    Mittelstücken (kein Ufer), fest je Ort gestreut, damit das Bild bei jedem Bau gleich bleibt.
+    """
+    wellen = art.get("wellen")
+    if not wellen or feld != [art["rand"][0] + 1, art["rand"][1] + 1]:
+        return None
+    wurf = (x * 92821 + y * 68917 + x * y * 31) % 100
+    if wurf >= wellen["anteil"]:
+        return None
+    return wellen["bilder"][(x * 13 + y * 7) % len(wellen["bilder"])]
+
+
 def flaechen(zeilen: list[str]) -> dict[tuple[int, int], str]:
     """Wandflächen: die zwei Wandkacheln direkt über einem Boden werden Fläche (oben, unten)."""
     flaeche = {}
@@ -58,9 +73,7 @@ def hintergrund(szene: dict, privat: Path) -> Image.Image:
     # Brückenfelder (Szene „bruecken“) sind begehbar, gezeichnet wird darunter aber Wasser mit
     # durchgehendem Ufer; die Brücke selbst ist ein Bild aus dem Katalog (KARTENREGELN 10.6).
     bruecken = set(szene.get("bruecken", []))
-    zeilen = [
-        "".join(WASSER if z in bruecken else z for z in zeile) for zeile in raster(szene)
-    ]
+    zeilen = ["".join(WASSER if z in bruecken else z for z in zeile) for zeile in raster(szene)]
     bild = Image.new("RGBA", (len(zeilen[0]) * K, len(zeilen) * K), DUNKEL)
     zeichner = ImageDraw.Draw(bild)
     grund = szene.get("boden", "holzHell")
@@ -74,7 +87,10 @@ def hintergrund(szene: dict, privat: Path) -> Image.Image:
             ort = (x * K, y * K)
             if z == WASSER:
                 art = boeden["wasser"]
-                bild.alpha_composite(kachel(privat, boegen, art, bodenfeld(art, zeilen, x, y)), ort)
+                feld = bodenfeld(art, zeilen, x, y)
+                bild.alpha_composite(kachel(privat, boegen, art, feld), ort)
+                if (welle := wellenbild(art, feld, x, y)) is not None:
+                    bild.alpha_composite(Image.open(privat / welle).convert("RGBA"), ort)
             elif z == WAND and wandart and (innen := randnachbar(zeilen, x, y)) is not None:
                 # Außen ist der Rand nur Kollision: Er zeigt den Boden dahinter, damit Felder und
                 # Wege bis an den Bildrand reichen (Regel 5.1, 6.3; Hinweis von niedrig-1).
@@ -163,7 +179,9 @@ def bildbefunde(szene: dict, privat: Path) -> list[str]:
             )
         if not angabe or eintrag.get("bauteil_ok"):
             continue
-        befund = katalogbefund(eintrag["moebel"], katalog.get(angabe["quelle"]))
+        # Eigene Bilder (spiel/eigene/, werkzeuge/schilder.py) stehen nicht im Katalog der Pakete.
+        eigen = angabe["quelle"].startswith("spiel/eigene/")
+        befund = None if eigen else katalogbefund(eintrag["moebel"], katalog.get(angabe["quelle"]))
         if befund:
             befunde.append(befund)
         kanten = angeschnitten(Image.open(privat / angabe["quelle"]))
@@ -177,10 +195,7 @@ def vorschau(szene: dict, privat: Path, grund: Image.Image) -> Image.Image:
     moebel = lade_moebel()
     gesetzt, _ = platziere(szene, moebel)
     bild = grund.copy()
-    teile = [
-        (s["tiefe"], s["x"], s["y"], moebelbild(privat, moebel[s["name"]]["quelle"]))
-        for s in gesetzt
-    ]
+    teile = [(s["tiefe"], s["x"], s["y"], moebelbild(privat, moebel[s["name"]]["quelle"])) for s in gesetzt]
     orte = {o["kennung"]: o for o in lade(INHALTE / "orte.json")["orte"]}
     ort = orte.get(szene["karte"].split(".")[0], {"figuren": []})
     for f in szene.get("figuren", []):

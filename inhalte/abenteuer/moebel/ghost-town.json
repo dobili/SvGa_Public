@@ -551,6 +551,113 @@
       "art": "tuer",
       "stil": "rustikal",
       "zustand": "alt"
+    },
+    "gt7SaloonFassade": {
+      "quelle": "spiel/eigene/saloon_fassade.png",
+      "breite": 160,
+      "hoehe": 144,
+      "kollision": true,
+      "stil": "rustikal",
+      "zustand": "verwittert",
+      "art": "haus",
+      "blick": "unten"
+    },
+    "gt7FassadeLaden": {
+      "quelle": "spiel/eigene/fassade_laden.png",
+      "breite": 112,
+      "hoehe": 112,
+      "kollision": true,
+      "stil": "rustikal",
+      "zustand": "verwittert",
+      "art": "haus",
+      "blick": "unten"
+    },
+    "gt7FassadeSheriff": {
+      "quelle": "spiel/eigene/fassade_sheriff.png",
+      "breite": 112,
+      "hoehe": 112,
+      "kollision": true,
+      "stil": "rustikal",
+      "zustand": "verwittert",
+      "art": "haus",
+      "blick": "unten"
+    },
+    "gt7FassadePruefamt": {
+      "quelle": "spiel/eigene/fassade_pruefamt.png",
+      "breite": 112,
+      "hoehe": 112,
+      "kollision": true,
+      "stil": "rustikal",
+      "zustand": "verwittert",
+      "art": "haus",
+      "blick": "unten"
+    },
+    "gt7FassadeSchmiede": {
+      "quelle": "spiel/eigene/fassade_schmiede.png",
+      "breite": 112,
+      "hoehe": 112,
+      "kollision": true,
+      "stil": "rustikal",
+      "zustand": "verwittert",
+      "art": "haus",
+      "blick": "unten"
+    },
+    "gt7Stollen": {
+      "quelle": "spiel/eigene/stollen_eingang.png",
+      "breite": 64,
+      "hoehe": 64,
+      "kollision": true,
+      "stil": "rustikal",
+      "zustand": "verwittert"
+    },
+    "gt7Lore": {
+      "quelle": "spiel/eigene/lore.png",
+      "breite": 32,
+      "hoehe": 32,
+      "kollision": true,
+      "stil": "rustikal",
+      "zustand": "verwittert"
+    },
+    "gt7PlanwagenKaputt": {
+      "quelle": "spiel/eigene/planwagen_kaputt.png",
+      "breite": 64,
+      "hoehe": 48,
+      "kollision": true,
+      "stil": "rustikal",
+      "zustand": "verwittert"
+    },
+    "gt7Tumbleweed": {
+      "quelle": "spiel/eigene/tumbleweed.png",
+      "breite": 16,
+      "hoehe": 16,
+      "kollision": false,
+      "stil": "rustikal",
+      "zustand": "alt"
+    },
+    "gt7TumbleweedGross": {
+      "quelle": "spiel/eigene/tumbleweed_gross.png",
+      "breite": 32,
+      "hoehe": 32,
+      "kollision": false,
+      "stil": "rustikal",
+      "zustand": "alt"
+    },
+    "gt7Wagenrad": {
+      "quelle": "spiel/eigene/wagenrad.png",
+      "breite": 16,
+      "hoehe": 16,
+      "kollision": false,
+      "stil": "rustikal",
+      "zustand": "alt"
+    },
+    "gt7Felsgruppe": {
+      "quelle": "spiel/serene/serene_29.png",
+      "breite": 32,
+      "hoehe": 32,
+      "kollision": true,
+      "art": "stein",
+      "zustand": "alt",
+      "stil": "rustikal"
     }
   }
 }

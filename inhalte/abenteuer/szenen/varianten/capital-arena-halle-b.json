@@ -1,0 +1,355 @@
+{
+  "karte": "capitalArena.halle",
+  "datei": "karten/varianten/capital-arena-halle-b.json",
+  "art": "innen",
+  "beschreibung": "Variante B, Bühne in der Mitte: Die Turnierhalle mit blauen Wänden und hellem Holzboden. An der Nordwand zwischen zwei Fenstern das Banner „Landesmeisterschaft“, darunter eine lange Reihe aus sechs Holztribünen. Die Bühne mit dem Finaltisch steht frei in der Mitte der Halle, links und rechts je ein Mikrofon. Davor zwei Reihen dunkler Holztische mit je einem Brett und zwei Stühlen. Die Turniertafel an der Westwand, der Pressetisch rechts neben der Bühne, der Fanshop rechts vor dem Ausgang, Glastür in der Mitte der Südwand.",
+  "wand": "blau",
+  "boden": "holzHell",
+  "raster": [
+    "##############################",
+    "##############################",
+    "##############################",
+    "#............................#",
+    "#............................#",
+    "#............................#",
+    "#............................#",
+    "#............................#",
+    "#............................#",
+    "#............................#",
+    "#............................#",
+    "#............................#",
+    "#............................#",
+    "#............................#",
+    "#............................#",
+    "#............................#",
+    "#............................#",
+    "#............................#",
+    "#............................#",
+    "###############.##############"
+  ],
+  "objekte": [
+    {
+      "moebel": "ca7Fenster",
+      "feld": [9, 1],
+      "an_wand": true
+    },
+    {
+      "moebel": "ca7Fenster",
+      "feld": [19, 1],
+      "an_wand": true
+    },
+    {
+      "moebel": "ca7Banner",
+      "feld": [12, 1],
+      "an_wand": true
+    },
+    {
+      "moebel": "ca7Tribuene",
+      "feld": [1, 3]
+    },
+    {
+      "moebel": "ca7Tribuene",
+      "feld": [5, 3]
+    },
+    {
+      "moebel": "ca7Tribuene",
+      "feld": [21, 3]
+    },
+    {
+      "moebel": "ca7Tribuene",
+      "feld": [25, 3]
+    },
+    {
+      "moebel": "ca7Tribuene",
+      "feld": [9, 3]
+    },
+    {
+      "moebel": "ca7Tribuene",
+      "feld": [17, 3]
+    },
+    {
+      "moebel": "ca7Buehne",
+      "feld": [12, 8]
+    },
+    {
+      "moebel": "ca7Tisch",
+      "feld": [14, 8],
+      "id": "fin"
+    },
+    {
+      "moebel": "ca7Brett",
+      "auf": "fin"
+    },
+    {
+      "moebel": "ca7StuhlRechts",
+      "feld": [13, 8],
+      "zu": "fin"
+    },
+    {
+      "moebel": "ca7StuhlLinks",
+      "feld": [16, 8],
+      "zu": "fin"
+    },
+    {
+      "moebel": "ca7Mikrofon2",
+      "feld": [11, 9]
+    },
+    {
+      "moebel": "ca7Mikrofon2",
+      "feld": [18, 9]
+    },
+    {
+      "moebel": "ca7Tisch",
+      "feld": [4, 13],
+      "id": "h4"
+    },
+    {
+      "moebel": "ca7Brett",
+      "auf": "h4"
+    },
+    {
+      "moebel": "ca7StuhlRechts",
+      "feld": [3, 13],
+      "zu": "h4"
+    },
+    {
+      "moebel": "ca7StuhlLinks",
+      "feld": [6, 13],
+      "zu": "h4"
+    },
+    {
+      "moebel": "ca7Tisch",
+      "feld": [9, 13],
+      "id": "h9"
+    },
+    {
+      "moebel": "ca7Brett",
+      "auf": "h9"
+    },
+    {
+      "moebel": "ca7StuhlRechts",
+      "feld": [8, 13],
+      "zu": "h9"
+    },
+    {
+      "moebel": "ca7StuhlLinks",
+      "feld": [11, 13],
+      "zu": "h9"
+    },
+    {
+      "moebel": "ca7Tisch",
+      "feld": [20, 13],
+      "id": "h20"
+    },
+    {
+      "moebel": "ca7Brett",
+      "auf": "h20"
+    },
+    {
+      "moebel": "ca7StuhlRechts",
+      "feld": [19, 13],
+      "zu": "h20"
+    },
+    {
+      "moebel": "ca7StuhlLinks",
+      "feld": [22, 13],
+      "zu": "h20"
+    },
+    {
+      "moebel": "ca7Tisch",
+      "feld": [25, 13],
+      "id": "h25"
+    },
+    {
+      "moebel": "ca7Brett",
+      "auf": "h25"
+    },
+    {
+      "moebel": "ca7StuhlRechts",
+      "feld": [24, 13],
+      "zu": "h25"
+    },
+    {
+      "moebel": "ca7StuhlLinks",
+      "feld": [27, 13],
+      "zu": "h25"
+    },
+    {
+      "moebel": "ca7Tafel",
+      "feld": [1, 8]
+    },
+    {
+      "moebel": "ca7Pressetisch",
+      "feld": [24, 8]
+    },
+    {
+      "moebel": "ca7Fanshop",
+      "feld": [25, 15]
+    },
+    {
+      "moebel": "ca7Muelleimer",
+      "feld": [11, 16]
+    },
+    {
+      "moebel": "ca7Pflanzekl",
+      "feld": [1, 16]
+    },
+    {
+      "moebel": "ca7Tisch",
+      "feld": [5, 16],
+      "id": "h5b"
+    },
+    {
+      "moebel": "ca7Brett",
+      "auf": "h5b"
+    },
+    {
+      "moebel": "ca7StuhlRechts",
+      "feld": [4, 16],
+      "zu": "h5b"
+    },
+    {
+      "moebel": "ca7StuhlLinks",
+      "feld": [7, 16],
+      "zu": "h5b"
+    },
+    {
+      "moebel": "ca7Tisch",
+      "feld": [20, 16],
+      "id": "h20b"
+    },
+    {
+      "moebel": "ca7Brett",
+      "auf": "h20b"
+    },
+    {
+      "moebel": "ca7StuhlRechts",
+      "feld": [19, 16],
+      "zu": "h20b"
+    },
+    {
+      "moebel": "ca7StuhlLinks",
+      "feld": [22, 16],
+      "zu": "h20b"
+    },
+    {
+      "moebel": "ca7Pflanzekl",
+      "feld": [28, 16]
+    },
+    {
+      "moebel": "ca7Pflanzekl",
+      "feld": [28, 6]
+    },
+    {
+      "moebel": "ca7Fussmatte",
+      "feld": [15, 18],
+      "versatz": [0, 8]
+    },
+    {
+      "moebel": "ca7Tuer",
+      "feld": [15, 19],
+      "an_wand": true
+    }
+  ],
+  "ausloeser": [
+    {
+      "name": "start",
+      "feld": [15, 18],
+      "eigenschaften": {
+        "richtung": "oben"
+      }
+    },
+    {
+      "name": "halleAusgang",
+      "feld": [15, 19]
+    },
+    {
+      "name": "turniertafel",
+      "feld": [2, 9],
+      "auf_moebel": true
+    },
+    {
+      "name": "pressetisch",
+      "feld": [26, 9],
+      "auf_moebel": true
+    },
+    {
+      "name": "fanshop",
+      "feld": [26, 16],
+      "auf_moebel": true
+    }
+  ],
+  "figuren": [
+    {
+      "name": "victor",
+      "feld": [16, 11]
+    },
+    {
+      "name": "nova",
+      "feld": [7, 15]
+    },
+    {
+      "name": "bea",
+      "feld": [3, 11]
+    },
+    {
+      "name": "marcus",
+      "feld": [22, 11]
+    },
+    {
+      "name": "tobias",
+      "feld": [18, 17]
+    },
+    {
+      "name": "kade",
+      "feld": [17, 15]
+    },
+    {
+      "name": "turnierleiterin",
+      "feld": [13, 11]
+    },
+    {
+      "name": "lin",
+      "feld": [23, 10]
+    },
+    {
+      "name": "grahamHale",
+      "feld": [28, 12]
+    },
+    {
+      "name": "mama",
+      "feld": [13, 16]
+    },
+    {
+      "name": "juno",
+      "feld": [14, 16]
+    }
+  ],
+  "belebung": [
+    {
+      "name": "zuschauer",
+      "typ": "statist",
+      "feld": [7, 15],
+      "eigenschaften": {
+        "von": "5,15",
+        "bis": "10,15",
+        "tun": "suchen einen Platz auf der Tribüne",
+        "wann": "tag"
+      }
+    },
+    {
+      "name": "reporter",
+      "typ": "statist",
+      "feld": [20, 15],
+      "eigenschaften": {
+        "von": "18,15",
+        "bis": "22,15",
+        "tun": "fotografiert die Bretter",
+        "wann": "tag"
+      }
+    }
+  ],
+  "zustand": ["neu", "gebraucht"],
+  "stil": ["klassisch", "modern"],
+  "variante": "b"
+}

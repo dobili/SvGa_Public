@@ -23,10 +23,10 @@
   ],
   "raster": [
     "########################################################",
-    "########################################################",
-    "########################################################",
-    "##################kk####################################",
-    "##################kk####################################",
+    "#################kkkk###################################",
+    "#################kkkk###################################",
+    "#################kkkk###################################",
+    "#################kkkk###################################",
     "#.................ee...................................#",
     "#.................ee...................................#",
     "#.................ee...................................#",
@@ -65,27 +65,27 @@
   ],
   "objekte": [
     {
-      "moebel": "gt7Laden",
-      "feld": [4, 10]
+      "moebel": "gt7FassadeLaden",
+      "feld": [4, 13]
     },
     {
-      "moebel": "gt7Saloon",
-      "feld": [21, 10]
+      "moebel": "gt7SaloonFassade",
+      "feld": [21, 11]
     },
     {
-      "moebel": "gt7Sheriff",
-      "feld": [40, 11]
+      "moebel": "gt7FassadeSheriff",
+      "feld": [40, 13]
     },
     {
       "moebel": "gt7Traenke",
       "feld": [36, 25]
     },
     {
-      "moebel": "gt7Absperrung",
-      "feld": [18, 5]
+      "moebel": "gt7Stollen",
+      "feld": [17, 1]
     },
     {
-      "moebel": "gt7Schild",
+      "moebel": "gt7Lore",
       "feld": [20, 5]
     },
     {
@@ -375,15 +375,15 @@
       "feld": [31, 35]
     },
     {
-      "moebel": "gt7Gras",
-      "feld": [2, 31]
-    },
-    {
       "moebel": "gt7Busch",
       "feld": [25, 5]
     },
     {
-      "moebel": "gt7Kaktus",
+      "moebel": "gt7Tumbleweed",
+      "feld": [3, 16]
+    },
+    {
+      "moebel": "gt7Tumbleweed",
       "feld": [23, 27]
     },
     {
@@ -411,7 +411,7 @@
       "feld": [12, 10]
     },
     {
-      "moebel": "gt7Kaktus",
+      "moebel": "gt7Tumbleweed",
       "feld": [11, 8]
     },
     {
@@ -427,7 +427,11 @@
       "feld": [4, 7]
     },
     {
-      "moebel": "gt7Kaktus",
+      "moebel": "gt7KaktusBluete",
+      "feld": [47, 13]
+    },
+    {
+      "moebel": "gt7Tumbleweed",
       "feld": [32, 25]
     },
     {
@@ -435,7 +439,7 @@
       "feld": [5, 27]
     },
     {
-      "moebel": "gt7Kaktus",
+      "moebel": "gt7Tumbleweed",
       "feld": [19, 27]
     },
     {
@@ -443,7 +447,7 @@
       "feld": [18, 27]
     },
     {
-      "moebel": "gt7Kaktus",
+      "moebel": "gt7Tumbleweed",
       "feld": [24, 26]
     },
     {
@@ -451,11 +455,11 @@
       "feld": [34, 15]
     },
     {
-      "moebel": "gt7FelsRot",
+      "moebel": "gt7Felsgruppe",
       "feld": [24, 35]
     },
     {
-      "moebel": "gt7Gras",
+      "moebel": "gt7TumbleweedGross",
       "feld": [11, 31]
     },
     {
@@ -463,12 +467,8 @@
       "feld": [13, 15]
     },
     {
-      "moebel": "gt7Kaktus",
-      "feld": [13, 7]
-    },
-    {
-      "moebel": "gt7Gras",
-      "feld": [30, 27]
+      "moebel": "gt7Felsgruppe",
+      "feld": [49, 16]
     }
   ],
   "ausloeser": [
@@ -497,7 +497,7 @@
     },
     {
       "name": "saloonTuer",
-      "feld": [29, 20]
+      "feld": [25, 20]
     },
     {
       "name": "grab",

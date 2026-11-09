@@ -698,6 +698,14 @@
             "karte": "cedarCreek.aussen",
             "ausloeser": "zedernpfad"
           }
+        },
+        {
+          "name": "kuerbishof",
+          "art": "uebergang",
+          "ziel": {
+            "karte": "kuerbishof.hof",
+            "ausloeser": "zurueckLandstrasse"
+          }
         }
       ]
     },
@@ -1542,6 +1550,88 @@
       ]
     },
     {
+      "kennung": "sternwarte",
+      "name": "ort.sternwarte.name",
+      "nummer": 0,
+      "staffel": 2,
+      "art": "weg",
+      "karten": [
+        {
+          "kennung": "sternwarte.felsnase",
+          "datei": "karten/sternwarte-felsnase.json",
+          "name": "ort.sternwarte.felsnase",
+          "innen": false
+        },
+        {
+          "kennung": "sternwarte.kuppel",
+          "datei": "karten/sternwarte-kuppel.json",
+          "name": "ort.sternwarte.kuppel",
+          "innen": true
+        }
+      ],
+      "figuren": [],
+      "ausloeser": [
+        {
+          "name": "start",
+          "art": "start"
+        },
+        {
+          "name": "zurueckCanyon",
+          "karte": "sternwarte.felsnase",
+          "art": "uebergang",
+          "ziel": {
+            "karte": "wegDelacroixDesert.canyonpfad",
+            "ausloeser": "sternwarte"
+          }
+        },
+        {
+          "name": "kuppelTuer",
+          "karte": "sternwarte.felsnase",
+          "art": "uebergang",
+          "ziel": {
+            "karte": "sternwarte.kuppel",
+            "ausloeser": "kuppelAusgang"
+          }
+        },
+        {
+          "name": "kuppelAusgang",
+          "karte": "sternwarte.kuppel",
+          "art": "uebergang",
+          "ziel": {
+            "karte": "sternwarte.felsnase",
+            "ausloeser": "kuppelTuer"
+          }
+        }
+      ]
+    },
+    {
+      "kennung": "goldmine",
+      "name": "ort.goldmine.name",
+      "nummer": 0,
+      "staffel": 2,
+      "art": "weg",
+      "karten": [
+        {
+          "kennung": "goldmine.stollen",
+          "datei": "karten/goldmine-stollen.json",
+          "name": "ort.goldmine.stollen",
+          "innen": true
+        }
+      ],
+      "figuren": [],
+      "ausloeser": [
+        {
+          "name": "start",
+          "art": "start"
+        },
+        {
+          "name": "stollenAusgang",
+          "karte": "goldmine.stollen",
+          "art": "uebergang"
+        }
+      ]
+    },
+    {
       "kennung": "erinnerungLondon",
       "name": "ort.erinnerungLondon.name",
       "nummer": 0,
@@ -2370,6 +2460,15 @@
             "karte": "desertSprings.aussen",
             "ausloeser": "canyon"
           }
+        },
+        {
+          "name": "sternwarte",
+          "karte": "wegDelacroixDesert.canyonpfad",
+          "art": "uebergang",
+          "ziel": {
+            "karte": "sternwarte.felsnase",
+            "ausloeser": "zurueckCanyon"
+          }
         }
       ]
     },
@@ -3127,6 +3226,46 @@
             "karte": "wegCrossroadsPinewood.huetten",
             "ausloeser": "zurueckCrossroads"
           }
+        },
+        {
+          "name": "jahrmarkt",
+          "karte": "crossroads.aussen",
+          "art": "uebergang",
+          "ziel": {
+            "karte": "jahrmarkt.festplatz",
+            "ausloeser": "zurueckCrossroads"
+          }
+        }
+      ]
+    },
+    {
+      "kennung": "jahrmarkt",
+      "name": "ort.jahrmarkt.name",
+      "nummer": 0,
+      "staffel": 2,
+      "art": "weg",
+      "karten": [
+        {
+          "kennung": "jahrmarkt.festplatz",
+          "datei": "karten/jahrmarkt-festplatz.json",
+          "name": "ort.jahrmarkt.festplatz",
+          "innen": false
+        }
+      ],
+      "figuren": [],
+      "ausloeser": [
+        {
+          "name": "start",
+          "art": "start"
+        },
+        {
+          "name": "zurueckCrossroads",
+          "karte": "jahrmarkt.festplatz",
+          "art": "uebergang",
+          "ziel": {
+            "karte": "crossroads.aussen",
+            "ausloeser": "jahrmarkt"
+          }
         }
       ]
     },
@@ -3807,6 +3946,37 @@
           "karte": "bayou.steg",
           "art": "gegenstand",
           "dialog": "bayou.nebel"
+        }
+      ]
+    },
+    {
+      "kennung": "kuerbishof",
+      "name": "ort.kuerbishof.name",
+      "nummer": 0,
+      "staffel": 1,
+      "art": "weg",
+      "karten": [
+        {
+          "kennung": "kuerbishof.hof",
+          "datei": "karten/kuerbishof-hof.json",
+          "name": "ort.kuerbishof.hof",
+          "innen": false
+        }
+      ],
+      "figuren": [],
+      "ausloeser": [
+        {
+          "name": "start",
+          "art": "start"
+        },
+        {
+          "name": "zurueckLandstrasse",
+          "karte": "kuerbishof.hof",
+          "art": "uebergang",
+          "ziel": {
+            "karte": "wegMapleCedar.landstrasse",
+            "ausloeser": "kuerbishof"
+          }
         }
       ]
     }

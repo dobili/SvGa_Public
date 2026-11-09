@@ -1,0 +1,198 @@
+{
+  "moebel": {
+    "n6Buehne": {
+      "quelle": "modern-exteriors/Modern_Exteriors_16x16/ME_Theme_Sorter_16x16/21_Beach_Singles_16x16/21_Beach_16x16_Example_Small_Stage_1.png",
+      "breite": 128,
+      "hoehe": 96,
+      "kollision": true,
+      "art": "buehne",
+      "zustand": "neu",
+      "stil": "modern",
+      "frei_unten": 0
+    },
+    "n6Gestell": {
+      "quelle": "modern-exteriors/Modern_Exteriors_16x16/ME_Theme_Sorter_16x16/21_Beach_Singles_16x16/21_Beach_16x16_Example_Small_Stage_Structure.png",
+      "breite": 112,
+      "hoehe": 176,
+      "kollision": true,
+      "art": "gebaeude",
+      "zustand": "neu",
+      "stil": "modern"
+    },
+    "n6Lautsprecher": {
+      "quelle": "modern-exteriors/Modern_Exteriors_16x16/ME_Theme_Sorter_16x16/21_Beach_Singles_16x16/21_Beach_16x16_Medium_Loudspeaker.png",
+      "breite": 32,
+      "hoehe": 32,
+      "kollision": true,
+      "art": "geraet",
+      "zustand": "neu",
+      "stil": "modern"
+    },
+    "n6Marktstand": {
+      "quelle": "modern-farm/Single_Files_16x16/Props_and_Buildings_16x16/Market_Stand_Yellow_Example_16x16.png",
+      "breite": 80,
+      "hoehe": 80,
+      "kollision": true,
+      "art": "stand",
+      "zustand": "neu",
+      "stil": "laendlich"
+    },
+    "n6HotDog": {
+      "quelle": "modern-exteriors/Modern_Exteriors_16x16/ME_Theme_Sorter_16x16/10_Vehicles_Singles_16x16/ME_Singles_Vehicles_16x16_Hot_Dog_Cart_1.png",
+      "breite": 112,
+      "hoehe": 96,
+      "kollision": true,
+      "art": "fahrzeug",
+      "zustand": "neu",
+      "stil": "einfach"
+    },
+    "n6Eiswagen": {
+      "quelle": "modern-exteriors/Modern_Exteriors_16x16/ME_Theme_Sorter_16x16/10_Vehicles_Singles_16x16/ME_Singles_Vehicles_16x16_Ice_Cream_Truck_1.png",
+      "breite": 112,
+      "hoehe": 96,
+      "kollision": true,
+      "art": "fahrzeug",
+      "zustand": "neu",
+      "stil": "einfach"
+    },
+    "n6Suessigkeiten": {
+      "quelle": "modern-exteriors/Modern_Exteriors_16x16/ME_Theme_Sorter_16x16/3_City_Props_Singles_16x16/ME_Singles_City_Props_16x16_Candies_Cart_1.png",
+      "breite": 48,
+      "hoehe": 48,
+      "kollision": true,
+      "art": "stand",
+      "zustand": "neu",
+      "stil": "einfach"
+    },
+    "n6Limonade": {
+      "quelle": "modern-exteriors/Modern_Exteriors_16x16/ME_Theme_Sorter_16x16/7_Villas_Singles_16x16/ME_Singles_Villas_16x16_Lemonade_Stand_1.png",
+      "breite": 32,
+      "hoehe": 48,
+      "kollision": true,
+      "art": "stand",
+      "zustand": "neu",
+      "stil": "einfach"
+    },
+    "n6Zelt": {
+      "quelle": "modern-exteriors/Modern_Exteriors_16x16/ME_Theme_Sorter_16x16/11_Camping_Singles_16x16/ME_Singles_Camping_16x16_Tent_1.png",
+      "breite": 64,
+      "hoehe": 64,
+      "kollision": true,
+      "art": "zelt",
+      "zustand": "neu",
+      "stil": "natur"
+    },
+    "n6Flutlicht": {
+      "quelle": "modern-exteriors/Modern_Exteriors_16x16/ME_Theme_Sorter_16x16/13_School_Singles_16x16/ME_Singles_School_16x16_Stadium_Light_1.png",
+      "breite": 32,
+      "hoehe": 80,
+      "kollision": true,
+      "art": "lampe",
+      "zustand": "neu",
+      "stil": "modern"
+    },
+    "n6Laterne": {
+      "quelle": "modern-exteriors/Modern_Exteriors_16x16/ME_Theme_Sorter_16x16/11_Camping_Singles_16x16/ME_Singles_Camping_16x16_Lantern_1.png",
+      "breite": 16,
+      "hoehe": 16,
+      "kollision": false,
+      "art": "lampe",
+      "zustand": "neu",
+      "stil": "einfach"
+    },
+    "n6Pilzkiosk": {
+      "quelle": "modern-exteriors/Modern_Exteriors_16x16/ME_Theme_Sorter_16x16/3_City_Props_Singles_16x16/ME_Singles_City_Props_16x16_Kiosk_Mushroom_Example.png",
+      "breite": 96,
+      "hoehe": 128,
+      "kollision": true,
+      "art": "stand",
+      "zustand": "neu",
+      "stil": "modern"
+    },
+    "n6Riesenrad": {
+      "quelle": "spiel/eigene/riesenrad.png",
+      "breite": 128,
+      "hoehe": 160,
+      "kollision": true,
+      "art": "geraet",
+      "zustand": "neu",
+      "stil": "modern"
+    },
+    "n6Karussell": {
+      "quelle": "spiel/eigene/karussell.png",
+      "breite": 96,
+      "hoehe": 96,
+      "kollision": true,
+      "art": "geraet",
+      "zustand": "neu",
+      "stil": "klassisch"
+    },
+    "n6Schachautomat": {
+      "quelle": "spiel/eigene/schachautomat.png",
+      "breite": 32,
+      "hoehe": 48,
+      "kollision": true,
+      "art": "geraet",
+      "blick": "unten",
+      "zustand": "alt",
+      "stil": "klassisch"
+    },
+    "n6BudeDosen": {
+      "quelle": "spiel/eigene/bude_dosenwerfen.png",
+      "breite": 64,
+      "hoehe": 64,
+      "kollision": true,
+      "art": "stand",
+      "blick": "unten",
+      "zustand": "gebraucht",
+      "stil": "rustikal"
+    },
+    "n6BudeLose": {
+      "quelle": "spiel/eigene/bude_lose.png",
+      "breite": 64,
+      "hoehe": 64,
+      "kollision": true,
+      "art": "stand",
+      "blick": "unten",
+      "zustand": "gebraucht",
+      "stil": "rustikal"
+    },
+    "n6Zuckerwatte": {
+      "quelle": "spiel/eigene/zuckerwatte.png",
+      "breite": 32,
+      "hoehe": 48,
+      "kollision": true,
+      "art": "stand",
+      "blick": "unten",
+      "zustand": "neu",
+      "stil": "modern"
+    },
+    "n6Lichterkette": {
+      "quelle": "spiel/eigene/lichterkette_laengs_4.png",
+      "breite": 64,
+      "hoehe": 16,
+      "kollision": false,
+      "art": "lampe",
+      "zustand": "neu",
+      "stil": "modern"
+    },
+    "n6Torbogen": {
+      "quelle": "spiel/eigene/schild_jahrmarkt.png",
+      "breite": 80,
+      "hoehe": 48,
+      "kollision": false,
+      "art": "schild",
+      "zustand": "neu",
+      "stil": "modern"
+    },
+    "n6Tribuene": {
+      "quelle": "modern-exteriors/Modern_Exteriors_16x16/ME_Theme_Sorter_16x16/13_School_Singles_16x16/ME_Singles_School_16x16_Stands_1.png",
+      "breite": 64,
+      "hoehe": 48,
+      "kollision": true,
+      "art": "bank",
+      "zustand": "neu",
+      "stil": "einfach"
+    }
+  }
+}

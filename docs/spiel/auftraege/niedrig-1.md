@@ -1,6 +1,6 @@
 # Auftrag niedrig-1: Maple Falls mit echten Möbeln einrichten (erste spielbare Demo)
 
-**Stand:** offen (Haupt-Chat, 09.11.2026, fünfzehnter Auftrag)
+**Stand:** Frage (niedrig-1, 09.11.2026; vier Karten fertig, Dachboden blockiert)
 
 **Zweig:** dein fester Sitzungszweig, Basis `claude/friendly-shannon-y8bf90` (vorher hereinholen, Stand 90d3448b)
 **Darf ändern:** `inhalte/abenteuer/karten/maple-falls-*.json`, `inhalte/abenteuer/moebel.json`,
@@ -37,7 +37,57 @@ Nichts aus dem privaten Repository ins öffentliche kopieren; in `moebel.json` s
    Figur erreichbar (die Tests prüfen das).
 4. Mit dem Paketbau (in `app/`: `node skripte/baue-abenteuerpaket.mjs`) und, wenn du das private
    Repository als `app/inhalte-privat/quelle` verlinkst (`ln -s /home/user/schach-abenteuer-inhalte
-   app/inhalte-privat/quelle`), im Spiel ansehen; ein Bildschirmfoto je Karte im Bericht beschreiben.
+app/inhalte-privat/quelle`), im Spiel ansehen; ein Bildschirmfoto je Karte im Bericht beschreiben.
+
+## Bericht
+
+Zweig: `abenteuer-aufgabenzuordnung`. Privates Repository angehängt (lesen) und nach
+`/home/user/schach-abenteuer-inhalte` geklont, als `app/inhalte-privat/quelle` verlinkt (nicht im
+Repository, steht in `.gitignore`). In `moebel.json` stehen nur Pfade aus dem Register.
+
+Neue Möbel in `moebel.json` (Schlüssel: Register-Name, Breite × Höhe): `kisteRot`/`kisteBlau`
+(Holzkisten 16 × 32), `regalAlt` (32 × 32), `stehlampe` (16 × 48), `truhe` (32 × 32),
+`sofaRund` (32 × 32), `holztisch` (16 × 16), `stuhl` (16 × 32), `kuehlschrank` (16 × 32), `herd`
+(32 × 32), `pflanzeGross` (32 × 48), `pflanzeKlein` (16 × 32), `buecherregal` (32 × 32),
+`schreibtisch` (16 × 32), `tafel` (32 × 48), `pokal` (16 × 16), `baum`/`baumRund` (48 × 64),
+`blumen` (16 × 16), `blumenbusch` (32 × 16), `muelltonne` (32 × 32), `briefkasten` (16 × 32),
+`haltestellenschild` (16 × 48), `zaun` (16 × 16), `rampe` (64 × 32, Schuleingangsrampe als
+Halfpipe-Ersatz; eine Halfpipe gibt es im Register nicht), `brunnen` (32 × 48). Alle mit
+`kollision`. Platzhalterkacheln 3/5/7 unter jedem Möbel durch Boden ersetzt; Platzhalter, auf denen
+ein Auslöser liegt (Kiste `kartonKueche`, Brett `brettOhneDame`, Bank `parkbank`, Lampe
+`pokalvitrine` …), bleiben, weil ein Möbel keinen Auslöser zustellen darf.
+
+Bildschirmfotos im Spiel (Entwicklungsserver mit verlinkter Grafik, Spielstand auf die Karte
+gesetzt; Bilder nur lokal):
+
+- **Wohnzimmer:** rundes Sofa links oben, Küchenzeile mit Herd und Kühlschrank rechts oben neben
+  dem Umzugskarton, Holztisch auf dem Teppich, zwei Zimmerpflanzen, Holzkisten in den Ecken; Mama
+  frei erreichbar. Die Stehlampe oben blieb Platzhalter (siehe unten).
+- **Clubraum:** sechs Schachtische (Brettkacheln) mit je einem Holzstuhl, Tafel und Bücherregal an
+  der Wand, Pokal neben der Pokalvitrine, Schreibtisch des Coachs, Pflanze rechts unten.
+- **Draußen:** Bäume über und unter der Straße, Laternen, Mülltonne am Gehweg, blauer Briefkasten
+  vor dem Haus, Blumen, ein Zaun vor dem Nachbarhaus, Haltestellenschild am Weg zum Park. Die
+  Häuser bleiben die Wandblöcke der Kachelsätze; Haus-Grafiken aus dem Register (etwa „Country
+  House“) würden die Türen neu ordnen und sind deshalb nicht gesetzt.
+- **Park:** Rampe statt Kistenblock, Brunnen, Bäume, Blumenbusch, Laternen, Blumen neben der
+  Bank; Skater Jo und Abernathy erreichbar.
+
+Prüfungen: 624 Pipeline-Tests bestanden (3 übersprungen: Gesamtsimulation, nur mit
+`ABENTEUER_SIMULATION=1`), Prettier und Paketbau sauber.
+
+**Frage (Dachboden, nicht umgesetzt):** Zwei Tests lassen Möbel auf dem Dachboden bzw. an Wänden
+nicht zu, und die Tests sind für mich gesperrt:
+
+1. `test_ink_szene_und_tiled_karte_liegen_bereit` (`pipeline/tests/test_abenteuer.py`) verlangt,
+   dass jedes Objekt der Dachbodenkarte ein Auslöser aus `orte.json` ist; Möbel fallen durch.
+   Vorschlag: dort Objekte mit `type` `moebel`, `statist`, `tier` ausnehmen.
+2. `test_alles_von_start_erreichbar` prüft auch Möbel und verlangt, dass ihre linke obere Kachel
+   erreichbar ist; hohe Möbel an der Wand (Stehlampe, Kisten am oberen Rand) liegen mit der oberen
+   Reihe auf der Wand und fallen durch. Vorschlag: Möbel dort ausnehmen (ihre Kollision zählt
+   schon in `blockiert`). Deshalb blieb die Lampe im Wohnzimmer ein Platzhalter.
+
+Für den Dachboden sind `kisteRot`, `kisteBlau`, `regalAlt`, `stehlampe` und `truhe` schon in
+`moebel.json` angelegt; nach der Teständerung setze ich sie in wenigen Minuten.
 
 ## Bericht des letzten Auftrags, zur Nachlese
 

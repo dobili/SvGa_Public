@@ -2169,7 +2169,7 @@
         {
           "name": "wuestenzug",
           "karte": "portDelacroix.aussen",
-          "art": "uebergang",
+          "art": "dialog",
           "dialog": "port-delacroix-aussen.wuestenzug",
           "wenn": "nadelPortDelacroix",
           "ziel": {

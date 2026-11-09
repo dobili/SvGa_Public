@@ -15,96 +15,97 @@ Feld = (Spalte, Reihe), linke obere Kachel; Bereiche „Spalten / Reihen“. Nor
 ### 1.0 Lage in der Welt
 
 ```text
-                         N
-          (Fähranleger, Deich: wegSiliconDelacroix.deich)
-                         │ Deichweg über die Krone
- Wüstenzug ◄── Bahnsteig ┤ [PORT DELACROIX] ├── Hafenbecken (Wasser bis zum Ostrand)
- (wegDelacroixDesert)    │
-                         ▼ Marschpfad
-                     [Bayou] (bayou.steg, S8)
+                                      N
+                         Meer (Delta, Steinufer)
+ wegSiliconDelacroix.deich ══ Deichkrone (W→O) ══╗
+ (Querkarte, mittel-3)                            ║ Rampe
+ Wüstenzug ◄── Bahnsteig ── [PORT DELACROIX] ── Kai ≈ Hafenbecken ≈
+ (wegDelacroixDesert)                              Marsch ── Marschpfad ──► [Bayou] (bayou.steg, S8)
 ```
 
-Port Delacroix liegt hinter einem Deich am Delta. Wer mit der Küstenfähre kommt, läuft auf der
-Deichkrone heran und steigt über eine Rampe in die Stadt. Im Osten öffnet sich das Hafenbecken mit
-dem Kai, im Westen hält der Wüstenzug an einem einfachen Bahnsteig, im Süden beginnt hinter den
-letzten Häusern das Marschland mit dem Pfad zum Bayou.
+Port Delacroix liegt hinter einem Deich am Delta. Wer mit der Küstenfähre kommt, läuft von Westen auf
+der Deichkrone heran (die Deichkarte von mittel-3 ist eine Querkarte), hat das Meer zur Linken und die
+Stadt unter sich und steigt über eine Rampe hinunter. Im Osten öffnet sich das Hafenbecken mit dem
+Kai, im Westen hält der Wüstenzug an einem einfachen Bahnsteig, im Südosten beginnt hinter den letzten
+Häusern das Marschland mit dem Pfad zum Bayou.
 
 **Maße und Laufzeiten (7a.2, mittlere Stadt 60–80 × 50–60):**
 
-| Karte                     | Größe   | Hauptweg                        | Zeit zu Fuß |
-| ------------------------- | ------- | ------------------------------- | ----------- |
-| `portDelacroix.aussen`    | 70 × 54 | Deichrampe → Turnhalle 26       | ≈ 7 s       |
-|                           |         | Deichrampe → Kai → Musikhaus 52 | ≈ 15 s      |
-|                           |         | Bahnsteig → Bayou 64            | ≈ 18 s      |
-| `portDelacroix.turnhalle` | 26 × 16 | Tür → Bühne 12                  | ≈ 3 s       |
-| `portDelacroix.werkstatt` | 20 × 13 | Tür → Foto 9                    | ≈ 3 s       |
-| `portDelacroix.musikhaus` | 20 × 14 | Tür → Bühne 10                  | ≈ 3 s       |
+| Karte                     | Größe   | Hauptweg                                | Zeit zu Fuß |
+| ------------------------- | ------- | --------------------------------------- | ----------- |
+| `portDelacroix.aussen`    | 70 × 58 | Westrand (Deich) → Rampe → Turnhalle 45 | ≈ 13 s      |
+|                           |         | Rampe → Kai → Musikhaus 52              | ≈ 15 s      |
+|                           |         | Bahnsteig → Bayou (Ostrand) 80          | ≈ 23 s      |
+| `portDelacroix.turnhalle` | 26 × 16 | Tür → Lehrertisch 12                    | ≈ 3 s       |
+| `portDelacroix.werkstatt` | 20 × 13 | Tür → Hobelbank 8                       | ≈ 3 s       |
+| `portDelacroix.musikhaus` | 20 × 14 | Tür → Nordwand 10                       | ≈ 3 s       |
 
-### 1.1 Port Delacroix außen (`portDelacroix.aussen`, 70 × 54)
+### 1.1 Port Delacroix außen (`portDelacroix.aussen`, 70 × 58)
 
-Abschnitte zu je etwa 17 × 13 Kacheln (Spalten A bis D, Reihen 1 bis 4).
+Abschnitte zu je etwa 17 × 14 Kacheln (Spalten A bis D, Reihen 1 bis 4).
 
 ```text
                                                   N
  Spalte: 0     6            18            35            52  56            69
- R0–2   ┌─────────── Deichkrone, Deichweg (Erde), Sandsäcke ──╥──┐≈≈≈≈≈≈≈≈≈≈≈≈≈≈┐
- R3–5   │═══════════ Böschung (wand: damm) ════════ Rampe 29–30║  │≈ Hafenbecken ≈│
- R6–20  │Gleis│Bahn-│ [Haus 1]   [TURNHALLE 20–32]  [Gebäck] [Haus 2] │Kai│≈ Boote  ≈│
-        │     │steig│                                                  │   │≈ Steg   ≈│
- R21    │     │     │──────── Gehweg ───────────────────────────────── │   │≈        ≈│
- R22–24 │     │     │════════ Rue du Port (Asphalt) ════════════════╗  │   │≈        ≈│
- R25    │     │     │──────── Gehweg ───────────────────────────────╢  │   │≈        ≈│
- R26–36 │     │     │ Gasse│ Platz: Clubzelt, Notzelt, Bläser │[MUSIKHAUS-RUINE]│≈ ≈│
- R37–38 │     │     │──────┴── Uferweg ─────────────────────────────── Kai ─────┤≈ ≈│
- R39–48 │     │     │[WERKSTATT 8–17]│ [Haus 3] [Haus 4]  Gärten, Wäsche │   │≈ ≈│
- R49–50 │     │     │═════ Rue des Facteurs (Pflaster) ════════════════│   │≈ ≈│
- R51–53 └─────┴─────┴──── Marsch, Schilf ── Pfad 24–25 ▼ Bayou ─────────┴───┴≈≈≈┘
+ R0–4   ┌≈≈≈≈≈≈≈≈≈≈≈≈≈≈≈≈≈≈≈≈ Meer (Steinufer) ≈≈≈≈≈≈≈≈≈≈≈≈≈≈≈≈≈≈≈≈≈≈≈≈≈≈≈≈≈≈≈≈≈≈≈┐
+ R5–6   ◄═ deich ══ Deichkrone (Erde) ══════════════════════════════╗══┐≈≈≈≈≈≈≈≈≈≈≈≈≈│
+ R7–9   │ Sandsäcke · Hang (wand: damm) ════════ Rampe 29–30 ║   │≈ Hafenbecken ≈│
+ R10–24 │Gleis│Bahn-│ [Haus 1]   [TURNHALLE 20–32]  [Gebäck] [Haus 2] │Kai│≈ Boote  ≈│
+ R25    │     │steig│──────── Gehweg ─────────────────────────────── │   │≈ Steg   ≈│
+ R26–28 │     │     │════════ Rue du Port (Asphalt) ═══════════════╗  │   │≈        ≈│
+ R29    │     │     │──────── Gehweg ──────────────────────────────╢  │   │≈        ≈│
+ R30–40 │     │     │ Gasse│ Platz: Clubzelt, Notzelt, Bläser │[MUSIKHAUS-RUINE]│≈ ≈│
+ R41–42 │     │     │──────┴── Uferweg ────────────────────────────── Kai ─────┤≈ ≈│
+ R43–52 │     │     │[WERKSTATT 8–17]│ [Haus 3] [Haus 4]  Gärten, Wäsche │   Marsch  │
+ R53–54 │     │     │═════ Rue des Facteurs (Pflaster) ═══ Marschpfad ═══════► bayou │
+ R55–57 └─────┴─────┴──── Marsch, Schilf, Hecke ──────────────────────────────────────┘
              A                B                C                 D
 ```
 
-**Reihen (Nord nach Süd):** 0 Rand der Deichkrone; 1–2 Deichweg (Erde) über die ganze Breite bis zum
-Kai; 3 Gras mit Sandsäcken; 4–5 Böschung des Deichs (`"wand": "damm"`, Regel 10.49), offen nur an der
-Rampe (Spalten 29–30); 6–20 Nordseite der Rue du Port; 21 Gehweg; 22–24 **Rue du Port**; 25 Gehweg;
-26–36 Platz mit Zelten, Gasse und Musikhaus; 37–38 Uferweg; 39–48 Rue des Facteurs, Nordseite;
-49–50 **Rue des Facteurs**; 51–53 Marsch mit Schilf und dem Pfad zum Bayou.
+**Reihen (Nord nach Süd):** 0–4 Meer mit Steinkante; 5–6 Deichkrone (Erde), vom Westrand bis zum Kai;
+7 Gras mit Sandsäcken; 8–9 Hang des Deichs (`"wand": "damm"`, Regel 10.49), offen nur an der Rampe
+(Spalten 29–30); 10–24 Nordseite der Rue du Port; 25 Gehweg; 26–28 **Rue du Port**; 29 Gehweg;
+30–40 Platz mit Zelten, Gasse und Musikhaus; 41–42 Uferweg; 43–52 Nordseite der Rue des Facteurs;
+53–54 **Rue des Facteurs**, im Osten als Marschpfad bis zum Ostrand; 55–57 Marsch mit Schilf und Hecke.
 
-**Spalten (West nach Ost):** 0–2 Gleis des Wüstenzugs (Schotter, ein Gleis längs), 3–5 Bahnsteig,
-6–51 Stadt, 52–55 Kai mit Steinkante, 56–69 Hafenbecken (Wasser bis zum Nord-, Ost- und Südrand,
-`"ufer": "stein"`).
+**Spalten (West nach Ost):** 0–2 Gleis des Wüstenzugs (Schotter, ein Gleis längs, ab Reihe 10), 3–5
+Bahnsteig, 6–51 Stadt, 52–55 Kai mit Steinkante (Reihen 10–48), 56–69 Hafenbecken (Reihen 0–48, mit dem
+Meer im Norden verbunden; Wasser bis zum Nord- und Ostrand, `"ufer": "stein"`); südöstlich (52–69 /
+49–57) Marsch mit dem Pfad zum Bayou.
 
 **Gebäude und Plätze:**
 
 | Gebäude, Platz                        | Lage außen (Spalten / Reihen), Tür                                                         | Fassade                                                   | Innen                                                     | Begehbar |
 | ------------------------------------- | ------------------------------------------------------------------------------------------ | --------------------------------------------------------- | --------------------------------------------------------- | -------- |
-| Turnhalle der Schule (Ausweichclub)   | 20–32 / 5–20, Tür unten links im Bild, Auslöser `turnhalleTuer` vor der Tür auf dem Gehweg | 13 breit, grauer Bau mit Bogenfenstern und Rolltor        | `turnhalle` 26 × 16, Doppeltür Südwand Spalte 13          | ja       |
-| Klavierwerkstatt Whitlock-Duval       | 8–17 / 40–48, Tür rechts im Bild (Spalte 15), Auslöser `werkstattTuer` (15, 49)            | 10 breit, Holzhaus mit hohem Dach, Erker, Plane über Dach | `werkstatt` 20 × 13, Tür Südwand Spalte 10                | ja       |
-| Musikhaus am Kai (Ruine)              | 39–51 / 27–36, Tür mit Stufen (Spalte 46), Auslöser `musikhausTuer` (46, 37)               | 13 breit, rostiges Blechdach, Bauzaun links und rechts    | `musikhaus` 20 × 14, Tür Südwand Spalte 10; Ruine und neu | ja       |
-| Gebäckstand von Mrs. Arceneaux        | 34–36 / 18–20 vor der Turnhalle, Front zum Gehweg                                          | Verkaufswagen mit Markise und Vitrine                     | –                                                         | Laden    |
-| Häuser der Familien (Bretter sammeln) | Haus 1 (8, 17), Haus 2 (40, 17), Haus 3 (22, 45), Haus 4 (28, 45); je Tür unten Mitte      | kleine bunte Holzhäuser mit Wellblechdach                 | –                                                         | Kulisse  |
-| Clubzelt und Notzelt                  | 20–23 / 28–31 und 27–30 / 28–30 auf dem Platz                                              | Zeltbahnen blau und braun                                 | –                                                         | Kulisse  |
-| Bahnsteig des Wüstenzugs              | 3–5 / 8–20, Wartehäuschen, Auslöser `wuestenzug` (4, 15)                                   | Holzbohlen, Schild                                        | –                                                         | Reise    |
-| Kai mit Fischerbooten                 | 52–55 / 6–50, Boote im Becken, Steg (56–57 / 19–20)                                        | Steinkante                                                | –                                                         | Platz    |
+| Turnhalle der Schule (Ausweichclub)   | 20–32 / 9–24, Tür unten links im Bild, Auslöser `turnhalleTuer` vor der Tür auf dem Gehweg | 13 breit, grauer Bau mit Bogenfenstern und Rolltor        | `turnhalle` 26 × 16, Doppeltür Südwand Spalte 13          | ja       |
+| Klavierwerkstatt Whitlock-Duval       | 8–17 / 44–52, Tür rechts im Bild, Auslöser `werkstattTuer` vor der Tür (Reihe 53)          | 10 breit, Holzhaus mit hohem Dach, Erker, Plane über Dach | `werkstatt` 20 × 13, Tür Südwand Spalte 10                | ja       |
+| Musikhaus am Kai (Ruine)              | 39–51 / 31–40, Tür mit Stufen, Auslöser `musikhausTuer` vor der Tür (Reihe 41)             | 13 breit, rostiges Blechdach, Bauzaun links und rechts    | `musikhaus` 20 × 14, Tür Südwand Spalte 10; Ruine und neu | ja       |
+| Gebäckstand von Mrs. Arceneaux        | 34–36 / 22–24 vor der Turnhalle, Front zum Gehweg                                          | Verkaufswagen mit Markise und Vitrine                     | –                                                         | Laden    |
+| Häuser der Familien (Bretter sammeln) | Haus 1 (8, 21), Haus 2 (40, 21), Haus 3 (22, 49), Haus 4 (28, 49); je Tür unten Mitte      | kleine bunte Holzhäuser mit Wellblechdach                 | –                                                         | Kulisse  |
+| Clubzelt und Notzelt                  | 20–23 / 32–35 und 27–30 / 32–34 auf dem Platz                                              | Zeltbahnen blau und braun                                 | –                                                         | Kulisse  |
+| Bahnsteig des Wüstenzugs              | 3–5 / 12–24, Wartehäuschen, Auslöser `wuestenzug` (4, 19)                                  | Holzbohlen, Schild                                        | –                                                         | Reise    |
+| Kai mit Fischerbooten                 | 52–55 / 10–48, Boote im Becken, Steg (56–57 / 23–24)                                       | Steinkante                                                | –                                                         | Platz    |
 
-**Wegeführung:** Von der Deichrampe (29–30 / 3–5) geht es auf die Rue du Port (Asphalt, drei Felder,
-Gehwege je eins, Regel 9.2.1), die vom Bahnsteig im Westen bis zum Kai im Osten läuft und dort am Kai
-endet (Gehweg rundherum, Regel 47). Von der Rue du Port führt eine gepflasterte Gasse (Spalten
-18–19) zwischen Werkstatt und Platz nach Süden zur Rue des Facteurs. Der Platz (18–38 / 26–36) ist
-offen und gepflastert, der Uferweg (Reihen 37–38) verbindet Gasse, Platz, Musikhaus und Kai. Die Rue
-des Facteurs (Reihen 49–50, Pflaster) läuft vom Bahnsteig zum Kai; in ihrer Mitte zweigt der
-Marschpfad (24–25 / 51–53) zum Bayou ab. Die Deichkrone (Reihen 1–2) ist ein Rundweg mit Blick über
-die Stadt.
+**Wegeführung:** Vom Westrand läuft die Deichkrone (Reihen 5–6, Erde, zwei Felder) nach Osten; an der
+Rampe (29–30 / 7–9) geht es hinunter auf die Rue du Port (Asphalt, drei Felder, Gehwege je eins, Regel
+9.2.1), die vom Bahnsteig im Westen bis zum Kai im Osten läuft und dort endet (Gehweg rundherum,
+Regel 47). Die Deichkrone läuft weiter bis an den Kai und steigt dort über eine zweite Rampe ab. Von der
+Rue du Port führt eine gepflasterte Gasse (Spalten 18–19) zwischen Werkstatt und Platz nach Süden zur
+Rue des Facteurs. Der Platz (20–38 / 30–40) ist offen und gepflastert, der Uferweg (Reihen 41–42)
+verbindet Gasse, Platz, Musikhaus und Kai. Die Rue des Facteurs (Reihen 53–54, Pflaster) läuft vom
+Bahnsteig nach Osten und geht hinter dem Kai als Marschpfad (Erde) bis zum Ostrand zum Bayou.
 
-**Sichtachsen:** (1) Von der Deichrampe nach Süden über die ganze Stadt: Dächer mit Planen, die Zelte,
+**Sichtachsen:** (1) Von der Deichkrone nach Süden über die ganze Stadt: Dächer mit Planen, die Zelte,
 das rostige Dach des Musikhauses. (2) Von der Rue du Port nach Osten das Hafenbecken mit Batistes Boot.
 (3) Von der Gasse nach Süden die Werkstatt mit der Plane auf dem Dach. (4) Vom Bahnsteig nach Osten
 die ganze Rue du Port bis zum Wasser.
 
-**Ränder:** Norden Deichkrone (dahinter das offene Delta, man sieht nur Himmel); Westen Gleis und
-Böschung; Osten und Teile von Norden und Süden Wasser des Hafenbeckens bis zum Rand (Regel 6.4); Süden
-Marsch mit Schilf und Hecke, offen nur der Marschpfad.
+**Ränder:** Norden Meer bis zum Rand (Regel 6.4); Westen Deichkrone (Übergang), darunter Gleis und
+Hecke; Osten Hafenbecken bis zum Rand, im Südosten Marsch mit dem Marschpfad (Übergang); Süden Marsch mit
+Schilf und Hecke.
 
-**Laufzeit:** Deichrampe → Rue du Port → Kai → Uferweg → Musikhaus ≈ 52 Kacheln (15 s); vom Bahnsteig
-zum Bayou ≈ 64 Kacheln (18 s); quer über die Karte 70 Kacheln (20 s).
+**Laufzeit:** Westrand → Deichkrone → Rampe → Rue du Port → Turnhalle ≈ 45 Kacheln (13 s); Rampe → Kai →
+Uferweg → Musikhaus ≈ 52 Kacheln (15 s); vom Bahnsteig zum Bayou ≈ 80 Kacheln (23 s).
 
 ### 1.2 Gebäude und Maße
 
@@ -120,15 +121,17 @@ derselben relativen Stelle ±1 Kachel; hier bewusste Ausnahme, Befund 3.3 Nr. 4)
 
 ### 1.3 Übergänge (Felder auf beiden Seiten)
 
-| Von (Karte, Auslöser, Feld)                                     | Nach (Karte, Auslöser, Feld; Ankunft)                                               | Lage                                                                                                    |
-| --------------------------------------------------------------- | ----------------------------------------------------------------------------------- | ------------------------------------------------------------------------------------------------------- |
-| portDelacroix.aussen `deich` (Nordrand, Spalten 29–30, Reihe 0) | wegSiliconDelacroix.deich `weiterDelacroix` (Südrand, zwei Felder; Ankunft (29, 1)) | Deichweg je zwei Felder; Dialog `port-delacroix-aussen.ankunft_zu_fuss` bleibt an `weiterDelacroix`     |
-| portDelacroix.aussen `turnhalleTuer` (vor der Tür, Reihe 21)    | turnhalle `turnhalleAusgang` (13, 15); Ankunft (13, 14), Blick nach oben            | Südfassade ↔ Südwand                                                                                    |
-| portDelacroix.aussen `werkstattTuer` (15, 49)                   | werkstatt `werkstattAusgang` (10, 12); Ankunft (10, 11)                             | Südfassade ↔ Südwand                                                                                    |
-| portDelacroix.aussen `musikhausTuer` (46, 37)                   | musikhaus `musikhausAusgang` (10, 13); Ankunft (10, 12)                             | Südfassade ↔ Südwand; dieselben Felder in Ruine und neuem Clubraum                                      |
-| portDelacroix.aussen `wuestenzug` (4, 15, Bahnsteig; Reise)     | wegDelacroixDesert.canyonpfad, Auslöser des Wüstenbahnhofs (mittel-4)               | `wenn: nadelPortDelacroix`; heute zielt orte.json auf `start` (kein Übergang), Befund 3.3 Nr. 1         |
-| portDelacroix.aussen `bayou` (Südrand, Spalten 24–25, Reihe 53) | bayou.steg `zurueckDelacroix` (Nordrand, zwei Felder; Ankunft (24, 1))              | Marschpfad je zwei Felder; `wenn: musikhausOffen` (S8); bayou zielt heute auf `deich`, Befund 3.3 Nr. 2 |
-| Küstenfähre zurück (Freifahrt nach Szene 70, S7)                | über den Deich und das Fährdeck (mittel-3)                                          | keine eigene Stelle in der Stadt                                                                        |
+Abgestimmt mit mittel-3 (9.11.2026 nachts) und dem Haupt-Chat.
+
+| Von (Karte, Auslöser, Feld)                                     | Nach (Karte, Auslöser, Feld; Ankunft)                                          | Lage                                                                                                                                  |
+| --------------------------------------------------------------- | ------------------------------------------------------------------------------ | ------------------------------------------------------------------------------------------------------------------------------------- |
+| portDelacroix.aussen `deich` (Westrand, Spalte 0, Reihen 5–6)   | wegSiliconDelacroix.deich `weiterDelacroix` (Ostrand, Deichkrone, zwei Felder) | Deichkrone je zwei Felder, Meer nördlich, Hang südlich auf beiden Karten; Ankunft (1, 5)                                              |
+| portDelacroix.aussen `turnhalleTuer` (vor der Tür, Reihe 25)    | turnhalle `turnhalleAusgang` (13, 15); Ankunft (13, 14), Blick nach oben       | Südfassade ↔ Südwand                                                                                                                  |
+| portDelacroix.aussen `werkstattTuer` (vor der Tür, Reihe 53)    | werkstatt `werkstattAusgang` (10, 12); Ankunft (10, 11)                        | Südfassade ↔ Südwand                                                                                                                  |
+| portDelacroix.aussen `musikhausTuer` (vor der Tür, Reihe 41)    | musikhaus `musikhausAusgang` (10, 13); Ankunft (10, 12)                        | Südfassade ↔ Südwand; dieselben Felder in Ruine und neuem Clubraum                                                                    |
+| portDelacroix.aussen `wuestenzug` (4, 19, Bahnsteig)            | wegDelacroixDesert.canyonpfad `start`                                          | Reise wie der Bus: Auslöser der Art `dialog`, `wenn: nadelPortDelacroix`; zurück zielt `zurueckDelacroix` (mittel-4) auf `wuestenzug` |
+| portDelacroix.aussen `bayou` (Ostrand, Spalte 69, Reihen 53–54) | bayou.steg `zurueckDelacroix` (Westrand, zwei Felder)                          | Marschpfad je zwei Felder; `wenn: musikhausOffen` (S8); Ankunft (68, 53)                                                              |
+| Küstenfähre zurück (Freifahrt nach Szene 70, S7)                | über den Deich und das Fährdeck (mittel-3)                                     | keine eigene Stelle in der Stadt                                                                                                      |
 
 ### 1.4 Platzhalter für Rückkehr und Weltzustand
 
@@ -199,17 +202,21 @@ Der Ton ist Hoffnung: Niemand jammert, alle packen an, und wer nichts tragen kan
 
 ### 3.3 Befunde und offene Punkte für den Haupt-Chat
 
-1. `portDelacroix.wuestenzug` zielt auf `wegDelacroixDesert.canyonpfad` Auslöser `start`; das ist kein
-   Übergang. Vorschlag: mittel-4 legt am Wüstenbahnhof einen Auslöser `zugDelacroix` an, dann zielt
-   `wuestenzug` darauf, und `zurueckDelacroix` zielt wie heute auf `wuestenzug`.
-2. `bayou.zurueckDelacroix` zielt auf `portDelacroix.aussen` Auslöser `deich`; richtig ist `bayou`
-   (Südrand). Gehört zu mittel-3.
-3. Die Felder am Deich (Nordrand, Spalten 29–30) und am Bayou (Südrand, Spalten 24–25) gelten, bis
-   mittel-3 die Gegenstücke baut; die Breite ist zwei Felder.
+1. **Wüstenzug** (entschieden vom Haupt-Chat): Reise wie der Bus, `wuestenzug` ist ein Auslöser der Art
+   `dialog` mit Ziel canyonpfad `start`; `canyonpfad.zurueckDelacroix` zielt auf `wuestenzug`
+   (mittel-4).
+2. `bayou.zurueckDelacroix` zielte auf `deich`; mittel-3 korrigiert auf `bayou`.
+3. Felder am Deich (Westrand, Reihen 5–6) und am Bayou (Ostrand, Reihen 53–54) sind mit mittel-3
+   abgestimmt; Breite zwei Felder.
 4. Turnhallentür: Ausnahme von „gleiche relative Stelle“ (siehe 1.2).
-5. Fehlende Bilder (bestellt beim Haupt-Chat, bis dahin Ersatz): Flügel von oben, Klavier unter Plane,
-   Sandsäcke, Bauzaun mit Plane, Schild „Musik- und Schachclub Port Delacroix, seit 1889“, Basketballkorb
-   an der Wand, Bodenloch in Dielen und nasse Dielen (Ruine).
+5. **Musikhaus in zwei Zuständen** (entschieden vom Haupt-Chat): A, B, C (`port-delacroix-musikhaus.json`
+   und Varianten) sind die Ruine; der neue Clubraum ist eine zweite Szene derselben Karte,
+   `port-delacroix-musikhaus-neu.json` mit `"zustand_der_karte": "musikhausOffen"` (Datei
+   `karten/port-delacroix-musikhaus-neu.json`, gleiche Größe, Tür und Auslöser), ebenfalls in drei
+   Varianten. Die App wertet das Feld erst in Runde 6 aus.
+6. Fehlende Bilder (beim Haupt-Chat in Arbeit, bis dahin Ersatz): Flügel mit Laptop, Klavier unter
+   Plane, Sandsäcke, Bauzaun mit Plane, Schild „Musik- und Schachclub Port Delacroix, seit 1889“,
+   Basketballkorb an der Wand, Dielen mit Loch und nasse Dielen (Ruine).
 
 ## 4. Bühnenbilder
 

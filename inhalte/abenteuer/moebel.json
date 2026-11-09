@@ -2862,6 +2862,20 @@
       "art": "deko",
       "zustand": "gebraucht",
       "stil": "laendlich"
+    },
+    "wg4Tor1": {
+      "quelle": "modern-farm/Single_Files_16x16/Fences_16x16/Wooden_Fence_Type_4_Brown_Gate_1_16x16.png",
+      "breite": 16,
+      "hoehe": 16,
+      "kollision": true,
+      "art": "zaun"
+    },
+    "wg4Tor2": {
+      "quelle": "modern-farm/Single_Files_16x16/Fences_16x16/Wooden_Fence_Type_4_Brown_Gate_2_16x16.png",
+      "breite": 16,
+      "hoehe": 16,
+      "kollision": true,
+      "art": "zaun"
     }
   }
 }

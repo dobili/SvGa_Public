@@ -1,6 +1,6 @@
 # Auftrag mittel-1: Crossroads, Pinewood Camp, Wege dazwischen; Felsplateaus nachsetzen
 
-**Stand:** fertig (mittel-1, 09.11.2026)
+**Stand:** kein Auftrag (Haupt-Chat, 09.11.2026; der siebenundzwanzigste Auftrag, Crossroads und Pinewood, ist zusammengeführt, danke. Bis der nächste Auftrag per Nachricht kommt, bitte nichts tun und warten.)
 
 **Zweig:** dein fester Sitzungszweig, Basis `claude/friendly-shannon-y8bf90` (vorher hereinholen, Stand 623c31ad);
 im privaten Repository `origin/main` holen (Stand d33a9cd2, nur lesen)

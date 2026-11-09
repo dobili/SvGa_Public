@@ -61,3 +61,32 @@ def test_abspann_und_alle_hauptquests(ausgabe: str):
 def test_jede_figur_steht_auf_einer_karte(ausgabe: str):
     ohne = _figuren_ohne_karte(ausgabe)
     assert not ohne, f"Figuren ohne Platz auf einer gezeichneten Karte: {sorted(ohne)}"
+
+
+def test_wirtschaft_ziele():
+    """Wirtschaft (R17, R21 ff.): sparsamer Spieler mindestens Silber, vor jedem Clubkampf eine
+    leichte Karte im Besitz oder kaufbar, keine starke Karte im Laden."""
+    if os.environ.get("ABENTEUER_SIMULATION") != "1":
+        pytest.skip("Auswertung der Wirtschaft dauert etwa eine Minute; mit ABENTEUER_SIMULATION=1 starten")
+    if shutil.which("node") is None or not INKJS.exists():
+        pytest.skip("Node oder app/node_modules/inkjs fehlt (vorher im Ordner app/ npm ci)")
+    lauf = subprocess.run(
+        [
+            "node",
+            str(SKRIPT),
+            "--wirtschaft",
+            "--startwerte",
+            str(STARTWERT),
+            "--sekunden",
+            str(ZEITBUDGET_SEKUNDEN),
+        ],
+        cwd=HAUPTORDNER,
+        capture_output=True,
+        text=True,
+        timeout=ZEITBUDGET_SEKUNDEN + 120,
+        check=False,
+    )
+    ziele = lauf.stdout.split("## Ziele", 1)[-1]
+    assert "Sparsamer Spieler mindestens Silber (in 95 % der Läufe): ja" in ziele, lauf.stdout
+    assert "Vor jedem Clubkampf eine leichte Karte im Besitz oder kaufbar: ja" in ziele, lauf.stdout
+    assert "Erste kaufbare starke Karte: nie" in ziele, lauf.stdout

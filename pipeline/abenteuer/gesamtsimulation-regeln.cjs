@@ -1,7 +1,6 @@
-// Regeln der Gesamtsimulation (pipeline/abenteuer/gesamtsimulation.cjs): Spieldaten laden,
-// Spielstand, Quests, Dialoge und die Folgen eines Dialogs, genau wie in der App
-// (app/src/abenteuer/oberwelt/Oberwelt.tsx, regeln/quests.ts, regeln/dialogvariablen.ts).
-// Getrennt vom Erkunden, damit beide Dateien unter 400 Zeilen bleiben (CLAUDE.md, Regel 4).
+// Regeln der Gesamtsimulation (gesamtsimulation.cjs): Spieldaten, Spielstand, Quests, Dialoge und
+// Folgen eines Dialogs wie in der App (oberwelt/Oberwelt.tsx, regeln/quests.ts, dialogvariablen.ts);
+// eigene Datei, damit jede unter 400 Zeilen bleibt (CLAUDE.md, Regel 4).
 "use strict";
 const fs = require("fs");
 const path = require("path");
@@ -41,6 +40,10 @@ const FOLGE = [
   "capitalArena",
   "bayou",
 ];
+// Münzen wie in regeln/muenzen.ts (MUENZEN); Rollen, Fundmünzen, Karten in ladeWelt für --wirtschaft.
+const MUENZEN_STRASSENSIEG = 10;
+const MUENZEN_RUNDE = 10;
+const MUENZEN_ERSTE_NADEL = 50;
 const AUSGAENGE = ["abgebrochen", "niederlage", "remis", "sieg"];
 const VERSUCHE_JE_ZUSTAND = 16;
 const RUHE_NEUER_VERSUCH = 61;
@@ -50,19 +53,6 @@ const RUHE_ENDE = 1500;
 const WAHLEN_JE_DIALOG = 60;
 
 // ---------------------------------------------------------------- Aufruf und Daten
-
-/** Liest --startwert, --sekunden, --ersatz aus der Befehlszeile. */
-function argumente(liste) {
-  const wert = (name, vorgabe) => {
-    const i = liste.indexOf(name);
-    return i >= 0 && liste[i + 1] !== undefined ? liste[i + 1] : vorgabe;
-  };
-  return {
-    startwert: Number(wert("--startwert", "1")),
-    sekunden: Number(wert("--sekunden", "300")),
-    ersatz: wert("--ersatz", "").split(",").filter(Boolean),
-  };
-}
 
 const lade = (name) => JSON.parse(fs.readFileSync(path.join(DATEN, name), "utf8"));
 const gross = (s) => s[0].toUpperCase() + s.slice(1);
@@ -76,6 +66,14 @@ function ladeWelt() {
     quests: lade("quests.json").quests,
     laeden: lade("laeden.json").laeden,
     begegnungen: new Set(lade("begegnungen.json").begegnungen.map((b) => b.kennung)),
+    rolle: rollenJeBegegnung(),
+    fundmuenzen: Object.fromEntries(
+      lade("funde.json").funde.map((f) => [f.kennung, f.muenzen || 0]),
+    ),
+    karten: Object.fromEntries(lade("karten.json").karten.map((k) => [k.kennung, k])),
+    kartenErlaubt: Object.fromEntries(
+      lade("begegnungen.json").begegnungen.map((b) => [b.kennung, b.kartenErlaubt]),
+    ),
     ink: {},
     knoten: {},
     objekte: {},
@@ -100,6 +98,14 @@ function ladeWelt() {
   return welt;
 }
 
+/** Rolle des Gegners (strasse, clubchef …) je Begegnung, aus begegnungen.json und gegner.json. */
+function rollenJeBegegnung() {
+  const rollen = Object.fromEntries(lade("gegner.json").gegner.map((g) => [g.kennung, g.rolle]));
+  return Object.fromEntries(
+    lade("begegnungen.json").begegnungen.map((b) => [b.kennung, rollen[b.gegner]]),
+  );
+}
+
 /** Figuren, die auf keiner Karte ihres Ortes stehen; die bekannten werden ersatzweise gesetzt. */
 function figurenOhneKarte(welt, ersatz) {
   const ohne = [];
@@ -121,6 +127,7 @@ function figurenOhneKarte(welt, ersatz) {
 function neuerStand(startwert) {
   return {
     vars: { held: "Kim" },
+    zeitachse: [],
     besitz: new Set(),
     karten: {},
     muenzen: 0,
@@ -155,10 +162,16 @@ function passt(e, x) {
 
 function wirke(st, wirkungen) {
   for (const w of wirkungen || []) {
-    if (w.art === "karte") st.karten[w.karte] = (st.karten[w.karte] || 0) + 1;
+    if (w.art === "karte") {
+      st.karten[w.karte] = (st.karten[w.karte] || 0) + 1;
+      st.zeitachse.push({ art: "karte", karte: w.karte });
+    }
     if (w.art === "gegenstand") st.besitz.add(w.gegenstand);
     if (w.art === "gegenstandWeg") st.besitz.delete(w.gegenstand);
-    if (w.art === "muenzen") st.muenzen += w.anzahl;
+    if (w.art === "muenzen") {
+      st.muenzen += w.anzahl;
+      st.zeitachse.push({ art: "muenzen", anzahl: w.anzahl, quelle: "quest" });
+    }
   }
 }
 
@@ -227,10 +240,15 @@ function geschichte(welt, st, datei) {
     st.folgen.abspann = true;
   });
   binde("gibFund", (f) => {
-    st.folgen.huelle["gefunden" + gross(f)] = true;
+    const name = "gefunden" + gross(f);
+    if (!st.vars[name] && welt.fundmuenzen[f]) {
+      st.zeitachse.push({ art: "muenzen", anzahl: welt.fundmuenzen[f], quelle: "fund" });
+    }
+    st.folgen.huelle[name] = true;
   });
   binde("gibKarte", (k) => {
     st.karten[k] = (st.karten[k] || 0) + 1;
+    st.zeitachse.push({ art: "karte", karte: k });
   });
   for (const f of ["setzeSzene", "setzeZustand", "schalteSteckbrief"]) binde(f, () => {});
   return (welt.geschichten[datei] = s);
@@ -297,6 +315,12 @@ function spielePartie(welt, st, b) {
   const a = AUSGAENGE[Math.min(n, AUSGAENGE.length) - 1];
   const name = variablenname(b);
   st.vars["ausgang" + name] = a;
+  // Wirtschaft: erster Sieg gegen einen Straßengegner (MUENZEN.strassensieg), erster Clubkampf.
+  if (a === "sieg" && !st.vars["siege" + name] && welt.rolle[b] === "strasse") {
+    st.zeitachse.push({ art: "muenzen", anzahl: MUENZEN_STRASSENSIEG, quelle: "strasse" });
+  }
+  if (welt.rolle[b] === "clubchef" && n === 1)
+    st.zeitachse.push({ art: "clubkampf", begegnung: b });
   if (a === "sieg") st.vars["siege" + name] = (st.vars["siege" + name] || 0) + 1;
   if (b.endsWith(".clubkampf") && (a === "sieg" || a === "remis")) {
     const nadel = "nadel" + gross(b.split(".")[0]);
@@ -310,6 +334,7 @@ function spieleRunde(welt, st, r) {
   if (n < 2) return;
   const teile = r.split("."),
     name = teile.pop();
+  if (n === 2) st.zeitachse.push({ art: "muenzen", anzahl: MUENZEN_RUNDE, quelle: "runde" });
   st.vars[name + "Bestanden"] = true;
   st.vars[teile.join("") + gross(name) + "Bestanden"] = true;
   melde(welt, st, { art: "aufgaben", runde: r });
@@ -319,6 +344,7 @@ function spieleRunde(welt, st, r) {
 function wendeFolgenAn(welt, st, f, uebergang, reiseErlaubt) {
   if (f.abspann) st.abspann = true;
   const laden = welt.laeden.find((l) => l.kennung === f.laden);
+  if (laden) st.zeitachse.push({ art: "laden", laden: laden.kennung });
   for (const w of laden ? laden.angebot : []) if (w.art === "gegenstand") st.besitz.add(w.kennung);
   let ziel = f.reise && reiseErlaubt(f.reise.karte) ? f.reise : null;
   if (uebergang && (!uebergang.wenn || Boolean(st.vars[uebergang.wenn]))) ziel = uebergang.ziel;
@@ -335,6 +361,7 @@ function betrete(welt, st, karte) {
     st.meldungen.add(`Karte fehlt: ${karte}`);
     return;
   }
+  if (st.letzterOrt !== ort.kennung) st.zeitachse.push({ art: "ort", ort: ort.kennung });
   st.karte = karte;
   st.letzterOrt = ort.kennung;
   st.karteBesucht[karte] = ++st.uhr;
@@ -353,7 +380,7 @@ function ausloeserFuer(ort, karte, name) {
 }
 
 module.exports = {
-  argumente,
+  MUENZEN_ERSTE_NADEL,
   ladeWelt,
   figurenOhneKarte,
   neuerStand,

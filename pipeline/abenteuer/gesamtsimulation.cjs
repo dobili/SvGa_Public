@@ -13,6 +13,9 @@
 // --sekunden: Zeitbudget, danach wird der Bericht trotzdem geschrieben.
 // --ersatz: bekannte Figuren ohne Karte, die ersatzweise auf die Karte ihrer Dialogdatei gesetzt
 //   werden (nur für den Test, bis die Karten sie haben).
+// --wirtschaft: statt des Berichts die Auswertung der Wirtschaft je Ort für einen sparsamen und
+//   einen verschwenderischen Spieler (gesamtsimulation-wirtschaft.cjs); --startwerte 1,2,3,4 legt
+//   die Durchläufe fest.
 //
 // Ausgabe: hängende und nie begonnene Quests, nie erreichte Knoten, Figuren ohne Karte, nie
 // besuchte Orte. Rückgabewert 1, wenn eine Hauptquest nicht fertig wird, eine begonnene Quest
@@ -28,7 +31,7 @@
 // an, bis sich nichts mehr ändert, und reist am Ende mit der Monatskarte zu offenen Quests zurück.
 "use strict";
 const {
-  argumente,
+  MUENZEN_ERSTE_NADEL,
   ladeWelt,
   figurenOhneKarte,
   neuerStand,
@@ -45,6 +48,24 @@ const {
   RUHE_NAECHSTES_GEBIET,
   RUHE_ENDE,
 } = require("./gesamtsimulation-regeln.cjs");
+const { berichtWirtschaft } = require("./gesamtsimulation-wirtschaft.cjs");
+
+// ---------------------------------------------------------------- Aufruf
+
+/** Liest --startwert, --sekunden, --ersatz, --wirtschaft, --startwerte aus der Befehlszeile. */
+function argumente(liste) {
+  const wert = (name, vorgabe) => {
+    const i = liste.indexOf(name);
+    return i >= 0 && liste[i + 1] !== undefined ? liste[i + 1] : vorgabe;
+  };
+  return {
+    startwert: Number(wert("--startwert", "1")),
+    sekunden: Number(wert("--sekunden", "300")),
+    ersatz: wert("--ersatz", "").split(",").filter(Boolean),
+    wirtschaft: liste.includes("--wirtschaft"),
+    startwerte: wert("--startwerte", "1,2,3,4").split(",").map(Number),
+  };
+}
 
 // ---------------------------------------------------------------- Erkunden
 
@@ -293,9 +314,24 @@ function sackgasse(welt, st) {
   return hauptOffen || !st.abspann || datenFehlen;
 }
 
+/** --wirtschaft: je Startwert ein Durchlauf, dann die Auswertung der Wirtschaft beider Spieler. */
+function wirtschaft(welt, arg) {
+  const zeitachsen = [];
+  for (const startwert of arg.startwerte) {
+    welt.geschichten = {};
+    const st = neuerStand(startwert);
+    const frist = Date.now() + arg.sekunden * 1000;
+    erkunde(welt, st, frist);
+    rueckkehr(welt, st, frist);
+    zeitachsen.push(st.zeitachse);
+  }
+  console.log(berichtWirtschaft(welt, zeitachsen, MUENZEN_ERSTE_NADEL));
+}
+
 function hauptprogramm(liste) {
   const arg = argumente(liste);
   const welt = ladeWelt();
+  if (arg.wirtschaft) return wirtschaft(welt, arg);
   const ohneKarte = figurenOhneKarte(welt, arg.ersatz);
   const st = neuerStand(arg.startwert);
   const frist = Date.now() + arg.sekunden * 1000;

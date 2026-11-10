@@ -41,12 +41,12 @@ Alles hier gilt nach Regel 9 als „schon so geplant, Widerspruch genügt“.
      unterscheidet sich.
    - Die Logik (Bedingungen, Belohnungen) steht nicht doppelt: Was sich nicht übersetzt, gehört in
      Tags oder Funktionen, nicht in Text.
-5. **Schrift in Bildern ist Englisch.**
-   - Das Spiel spielt in den USA, also sind Schilder, Plakate und Fassaden englisch beschriftet
-     („STORE“, „BANK“, „COMING SOON“, „YARD SALE“).
-   - So muss kein Bild übersetzt werden, und die Welt wirkt stimmig.
+5. **Schrift in Bildern wird später entschieden.**
+   - Die englische Fassung kommt erst, wenn das Spiel auf Deutsch fertig ist (Autor, 10.11.2026). Bis
+     dahin bleiben Schilder mit deutscher Schrift, wie sie sind.
+   - Damit der Wechsel später leicht wird, schreiben die Zeichenwerkzeuge Schrift nur über eine
+     Stelle (`schilder.py`), und Abschnitt 4 führt alle eigenen Bilder mit Schrift.
    - Was der Spieler verstehen muss, steht zusätzlich im Text (Auslöser „Ansehen“ mit Schlüssel).
-   - Deutsche Schrift in eigenen Bildern wird ersetzt.
 6. **Schach in der Sprache des Lesers.**
    - Züge erscheinen über `sanInSprache` (deutsch: S, L, T, D; englisch: N, B, R, Q).
    - Die Daten (Vorführungen, Aufgaben) speichern SAN englisch, wie jetzt schon.
@@ -89,9 +89,12 @@ Alles hier gilt nach Regel 9 als „schon so geplant, Widerspruch genügt“.
   (`partie`, `quelle`, `fen`, `pgn`, `eroeffnungen`, `wert`) und die Bauhilfen des Kartenbauers
   (`ortsprofile.json`, `materialien.json`, `katalog_korrekturen/`, `moebel/`).
 
-## 4. Eigene Bilder mit deutscher Schrift (werden ersetzt)
+## 4. Eigene Bilder mit Schrift (für später)
 
-| Bild                             | heute                                          | neu                                          |
+Erst für die englische Fassung: Dann werden diese Bilder je Sprache erzeugt oder neutral
+beschriftet. Jetzt wird nichts umgezeichnet.
+
+| Bild                             | Schrift heute                                  | Vorschlag Englisch                           |
 | -------------------------------- | ---------------------------------------------- | -------------------------------------------- |
 | `plakat_bald.png`                | BALD                                           | COMING SOON                                  |
 | `plakat_flohmarkt.png`           | FLOHMARKT SA                                   | YARD SALE SAT                                |
@@ -100,5 +103,4 @@ Alles hier gilt nach Regel 9 als „schon so geplant, Widerspruch genügt“.
 | `funkmast_testfeld.png`          | TESTFELD SIGNAL                                | SIGNAL TEST SITE                             |
 | Schilder aus `schilder.py` u. a. | TURNHALLE, ZUR SCHLEUSE, SEILBAHN, BERGLADEN … | GYM, TO THE LOCK, CABLE CAR, MOUNTAIN SHOP … |
 
-Die genaue Liste ermittelt der Zeichenauftrag, der alle Bilder in `spiel/eigene/` auf Schrift
-durchsucht.
+Neue Bilder mit Schrift kommen in diese Liste.

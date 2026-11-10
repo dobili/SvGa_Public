@@ -373,7 +373,12 @@
       "feld": [6, 22]
     }
   ],
-  "figuren": [],
+  "figuren": [
+    {
+      "name": "dolores",
+      "feld": [26, 16]
+    }
+  ],
   "belebung": [
     {
       "name": "juno",

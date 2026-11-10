@@ -4,7 +4,7 @@
 // Runde 6: der Schachtürke von Schaustellerin Dolores (drin sitzt ihr Sohn Ike und freut sich über
 // jeden, der das Geheimnis errät), Riesenrad und Losbude zum Ansehen, Darlenes Lieferung
 // (Quest crossroads.lieferung, Schritt dolores_lieferung).
-// Einstiege wie in orte.json: schachautomat, riesenrad, losbude.
+// Einstiege wie in orte.json: schachautomat, riesenrad, losbude; Figur Dolores: dolores.
 // Schachgeschichte nur aus Dokument 16, Abschnitt 4 (Kempelens Türke, 1770).
 
 EXTERNAL gibFund(kennung)
@@ -16,6 +16,9 @@ VAR lieferungFuerDolores = false
 VAR lieferungAbgegeben = false
 
 // ---------------------------------------------------------------- Der Schachtürke
+
+=== dolores ===
+-> schachautomat
 
 === schachautomat ===
 {lieferungFuerDolores and not lieferungAbgegeben: -> dolores_lieferung}

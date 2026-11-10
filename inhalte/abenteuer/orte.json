@@ -1756,6 +1756,12 @@
           "sprite": "figuren/joggerin.png",
           "dialog": "weg-ironwood-silicon.joggerin",
           "gegner": "wegIronwoodSilicon.joggerin"
+        },
+        {
+          "kennung": "wegIronwoodSilicon.kiki",
+          "name": "figur.kiki.name",
+          "sprite": "figuren/kiki.png",
+          "dialog": "weg-ironwood-silicon.kiki"
         }
       ],
       "ausloeser": [
@@ -3398,7 +3404,14 @@
           "innen": false
         }
       ],
-      "figuren": [],
+      "figuren": [
+        {
+          "kennung": "jahrmarkt.dolores",
+          "name": "figur.dolores.name",
+          "sprite": "figuren/dolores.png",
+          "dialog": "jahrmarkt.dolores"
+        }
+      ],
       "ausloeser": [
         {
           "name": "start",

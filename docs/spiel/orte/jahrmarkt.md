@@ -55,8 +55,8 @@ Tauben, Spatzen, Hund, Katze, Krähen.
 
 Neue Datei `dialoge/de/jahrmarkt.ink`. Auslöser `schachautomat` (Dolores, Kempelens Türke von 1770;
 wer errät, dass Ike im Kasten sitzt, bekommt den Fund `geheimnisTuerke` mit zehn Münzen; dort gibt
-{held} auch Darlenes Lieferung ab), `riesenrad` und `losbude` zum Ansehen. Dolores und Ike sprechen
-über den Automaten; als Figuren mit eigenem Bild kommen sie, wenn die Bilder da sind.
+{held} auch Darlenes Lieferung ab), `riesenrad` und `losbude` zum Ansehen. Dolores steht als Figur
+`jahrmarkt.dolores` neben dem Automaten (A (26, 16), B (24, 12), C (22, 16)); Ike bleibt im Kasten.
 
 | Auslöser        | A        | B        | C        |
 | --------------- | -------- | -------- | -------- |

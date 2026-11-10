@@ -1076,6 +1076,10 @@
     {
       "name": "joggerin",
       "feld": [46, 11]
+    },
+    {
+      "name": "kiki",
+      "feld": [70, 10]
     }
   ],
   "belebung": [

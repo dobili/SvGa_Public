@@ -212,7 +212,12 @@
       "feld": [31, 22]
     }
   ],
-  "figuren": [],
+  "figuren": [
+    {
+      "name": "dolores",
+      "feld": [24, 12]
+    }
+  ],
   "belebung": [
     {
       "name": "juno",

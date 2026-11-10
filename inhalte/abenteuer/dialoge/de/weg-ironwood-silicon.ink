@@ -146,6 +146,9 @@ Für einen Ohrstöpsel ist er sehr schwer. Behalte ihn, {held}. #sprecher:ambros
 // Kandidatenwahl gebaut ist (mittel-2), spielt {held} eine Aufgabenrunde zu Fallen (Kapitel 4).
 // Quest wegIronwoodSilicon.stream; Lohn Fund fotoLive. Spur P2 kommt mit dem Ohrstöpsel.
 
+=== kiki ===
+-> ereignis_stream
+
 === ereignis_stream ===
 {streamBelohnt: -> stream_danach}
 {wegIronwoodSiliconStreamBestanden: -> stream_ende}

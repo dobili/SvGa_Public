@@ -388,7 +388,7 @@ Hund.
 
 ### 3.4 Runde 6: Weg 4 und Silicon Bay spielbar (mittel-3)
 
-Ereignis `ereignisStream` (Kiki Blitz) mit Aufgabenrunde `wegIronwoodSilicon.stream` (Fallen,
+Ereignis `ereignisStream` (Kiki Blitz, als Figur `wegIronwoodSilicon.kiki` am Stream-Tisch: A (70, 7), B (70, 10), C (65, 6)) mit Aufgabenrunde `wegIronwoodSilicon.stream` (Fallen,
 Kapitel 4; Platzhalter für die Partie mit Kandidatenwahl) und Quest gleichen Namens, Lohn Fund
 `fotoLive`. Spur P2 gibt der Ohrstöpsel (`fund_ohrstoepsel` gibt jetzt auch `spurPM2`).
 Fundstellen an der Raststätte `kreide2`, `finchBauerB`, `seite04`. Sperre S6: Die Inselfähre hat den

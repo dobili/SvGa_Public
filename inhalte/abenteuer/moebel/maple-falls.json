@@ -2892,6 +2892,25 @@
       "art": "sport",
       "zustand": "gebraucht",
       "stil": "modern"
+    },
+    "mf9Limowagen": {
+      "quelle": "modern-exteriors/Modern_Exteriors_16x16/ME_Theme_Sorter_16x16/3_City_Props_Singles_16x16/ME_Singles_City_Props_16x16_Candies_Cart_2.png",
+      "breite": 48,
+      "hoehe": 48,
+      "kollision": true,
+      "art": "strassenmoebel",
+      "zustand": "neu",
+      "stil": "modern",
+      "blick": "unten"
+    },
+    "mf9AbsperrbockBreit": {
+      "quelle": "spiel/eigene/absperrbock_breit.png",
+      "breite": 48,
+      "hoehe": 32,
+      "kollision": true,
+      "art": "absperrung",
+      "zustand": "neu",
+      "stil": "modern"
     }
   }
 }

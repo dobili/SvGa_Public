@@ -71,7 +71,7 @@ fernpartieGespielt`), der Wachmann ist der sichtbare Grund dafür.
   der Tür. Fund `fundLinse` (alte Linse des Leuchtfeuers) am Turmfuß.
 - Ostrand: `weiterCapital` (Spalte 139, Reihen 20–21).
 
-### 1.3 Capital Arena außen (`capitalArena.aussen`, 64 × 48)
+### 1.3 Capital Arena außen (`capitalArena.aussen`, 80 × 60 seit Runde 7)
 
 ```text
  Spalte: 0          19                        44          63
@@ -90,6 +90,50 @@ fernpartieGespielt`), der Wachmann ist der sichtbare Grund dafür.
 - Vorplatz mit Fahnenmasten links und rechts der Treppe, Brunnen, zwei Food-Trucks, Bänke, Laternen,
   Fans mit Schals (Statisten), Reporter mit Kamera.
 
+**Runde 7 (mittel-1, 10.11.2026):** Die Karte wuchs auf 80 × 60 (Regel 10.51, große Stadt: 20 Gebäude
+je Viertel). Der Park um die Arena ist Stadt geworden:
+
+- A: Arena in der Mitte (Spalten 27–51); links und rechts je zwei Häuserreihen an einer Querstraße
+  (Reihen 14–15) mit Gassen neben der Arena; oben Post, Kaufhäuser, Wohnhäuser, Laden, unten
+  Feuerwache, Hochhaus und das Polizeirevier. Vorplatz Reihen 36–46 wie bisher, darunter eine Reihe
+  Läden, Märkte und Stadthäuser (Reihen 47–56) mit zwei Gassen hinunter zur Fußgängerstraße (Reihen
+  57–58). 22 Gebäude.
+- B: Arena am Ostrand (Spalten 54–78), zwei lange Häuserreihen links, Steinplatz. 24 Gebäude.
+- C: Arena am Westrand (Spalten 1–25), Häuserreihen rechts. 23 Gebäude.
+- Neue Möbel `ca8` (Läden, Märkte, Kaufhäuser, Post, Wachen, Polizeirevier, Feuerwache, Landhaus,
+  Hoch-, Wohn- und Reihenhäuser aus Modern Exteriors), alle Kulissen ohne Innenraum.
+- Ostrand: `innenstadt` (Spalte 79, Reihen 57–58), die Fußgängerstraße führt ins neue Viertel.
+- Belebung (alle Varianten gleich): 12 Statisten, davon 9 mit Satz (Eisverkäuferin, Tourist mit
+  Stadtplan, Rentnerin mit Lasker, Student mit Deep Blue, Busfahrer mit Perfect Move,
+  Straßenmusiker, Vater, Schülerin mit Abzugsschach, Junge mit Autogrammheft in zwei Teilen), dazu
+  Fans, Reporterin, Polizist; Tauben, Spatzen, Hund, Katze. Sätze unter `statist.capitalArena.aussen.*`.
+
+### 1.3a Innenstadt (`capitalArena.innenstadt`, 80 × 60, neues Viertel)
+
+```text
+ Spalte: 0       24/25                      54/55                    79
+ R1–13   Häuserreihe │ Häuserreihe            │ Häuserreihe
+ R14–15  ═══ Gasse ═══════════════════════════════════════════════
+ R16–31  Häuserreihe │ Häuserreihe            │ Häuserreihe
+ R32–36  ═══ Allee (Asphalt 33–35, Gehwege 32 und 36), Bus ═══════
+ R37–55  Hochhäuser  │ U-Bahn-Platz: Kiosk,   │ Polizeirevier
+                     │ Abgang hinter Bauzaun  │
+ R56–58  ◄ arena (57–58) ═══ Fußgängerstraße ════════════════════
+```
+
+- Szene mit `"viertel": true`; zählt wie eine Außenkarte (Regel 10.51 und 10.53). Gebäude: A 28,
+  B und C je 27.
+- **U-Bahn-Platz** (Dokument 15, 2.14, Treffpunkt K5): zwei alte Treppen mit Geländer führen hinab
+  zum stillgelegten U-Bahnhof, davor ein Bauzaun mit Plane. A Platz in der Mitte (Spalten 26–53), B
+  im Westen (1–28), C im Osten (51–78). Der Bahnhof selbst (Bahnsteig, Fliesen, Graffiti) kommt mit
+  dem Ereignis in Runde 6 als Innenraum.
+- Westrand: `arena` (Spalte 0, Reihen 57–58), Ankunft (1, 57).
+- Belebung (alle Varianten gleich): 12 Statisten, 8 mit Satz (Zeitungsverkäuferin, Kellner mit dem
+  Washington Square Park, Bauarbeiter mit dem Spieß, Frau mit Dackel, Junge mit Kapuze, der vom
+  Kreidepferd am Gitter erzählt (zwei Teile, Antwort von Ambrose), Geschäftsfrau mit Perfect Move,
+  Schüler mit Judit Polgár, Straßenkehrer mit dem Zentrum); dazu Taxifahrer, Touristen, Jogger,
+  Lieferfahrer; Tauben, Dackel, Katze, Spatzen. Sätze unter `statist.capitalArena.innenstadt.*`.
+
 ### 1.4 Halle (`capitalArena.halle`, 30 × 20)
 
 Großer Saal 30 × 20, Tür in der Mitte der Südwand (Spalte 15). Nordwand mit Fenstern und Bannern;
@@ -104,6 +148,7 @@ neben dem Eingang, Turniertafel (`turniertafel`) an der Westwand.
 | ghostTown.aussen `wegCapital` (Ostrand, Spalte 55, Reihen 21–22) | seeufer `zurueckGhost` (Westrand, Reihen 14–15; Ankunft (1, 14))         | Erdweg je zwei Felder; `wenn: fernpartieGespielt` (S12), wie heute       |
 | seeufer `weiterLeuchtturm` (Ostrand, Reihen 16–17)               | leuchtturm `zurueckSeeufer` (Westrand, Reihen 16–17; Ankunft (1, 16))    | Uferweg je zwei Felder                                                   |
 | leuchtturm `weiterCapital` (Ostrand, Reihen 20–21)               | capitalArena.aussen `wegGhost` (Westrand, Reihen 40–41; Ankunft (1, 40)) | Weg je zwei Felder; Dialog `capital-arena-aussen.ankunft_zu_fuss` bleibt |
+| capitalArena.aussen `innenstadt` (Ostrand, Reihen 57–58)         | innenstadt `arena` (Westrand, Reihen 57–58; Ankunft (1, 57))             | Fußgängerstraße je zwei Felder (Runde 7)                                 |
 | capitalArena.aussen `halleTuer` (Tür oben auf der Treppe)        | halle `halleAusgang` (15, 19); Ankunft (15, 18), Blick nach oben         | Südfassade ↔ Südwand                                                     |
 
 ## 2. Ortsbild
@@ -159,6 +204,14 @@ ein Fanshop mit Schals und T-Shirts.
 1. Rand zu Ghost Town mit niedrig-1 abgestimmt: ghostTown.aussen Ostrand (Spalte 55, Reihen 21–22) ↔ seeufer Westrand (Reihen 14–15), je zwei Felder Erdweg.
 2. Bilder (beim Haupt-Chat bestellt, bis dahin Ersatz): Bühne für das Finale, Banner
    „Landesmeisterschaft“, Pressetisch mit Laptops und Mikrofonen, Fanshop-Stand.
+3. **Für Runde 6 (Felder der Fundstellen, frei begehbar):** Nacht der Kreidespringer (Dokument 15,
+   2.14) in `capitalArena.innenstadt` vor dem Bauzaun am U-Bahn-Abgang:
+   - `ereignisKreidenacht`: A (40, 48), B (15, 48), C (66, 48);
+   - `kreide5` (Kreidespringer am Gitter): A (36, 48), B (11, 48), C (61, 48).
+4. Bilder für das Viertel (beim Haupt-Chat bestellt, bis dahin Ersatz): Gitter vor dem U-Bahn-Abgang
+   (Ersatz: Bauzaun mit Plane), Kreidespringer an Mauer oder Gitter (2 × 2), Plakat „Bald“.
+5. Halle (Runde 7): vier Statisten mit Satz (Zuschauer mit den Kiebitzen, Reporter mit der ersten
+   Olympiade 1927, Mutter mit Brotdose, Ordner).
 
 ## 4. Bühnenbilder
 

@@ -69,8 +69,8 @@
     "#.............pp..................................pp...........................#",
     "#.............pp..................................pp...........................#",
     "#.............pp..................................pp...........................#",
-    "#pppppppppppppppppppppppppppppppppppppppppppppppppppppppppppppppppppppppppppppp#",
-    "#pppppppppppppppppppppppppppppppppppppppppppppppppppppppppppppppppppppppppppppp#",
+    "#ppppppppppppppppppppppppppppppppppppppppppppppppppppppppppppppppppppppppppppppp",
+    "#ppppppppppppppppppppppppppppppppppppppppppppppppppppppppppppppppppppppppppppppp",
     "################################################################################"
   ],
   "objekte": [
@@ -346,6 +346,20 @@
       "feld": [
         13,
         33
+      ]
+    },
+    {
+      "name": "innenstadt",
+      "feld": [
+        79,
+        57
+      ]
+    },
+    {
+      "name": "innenstadt",
+      "feld": [
+        79,
+        58
       ]
     }
   ],

@@ -686,6 +686,7 @@
   "figur.abe.name": "Abe Lindgren",
   "ort.capitalArena.name": "Capital Arena",
   "ort.capitalArena.aussen": "Capital Arena, Vorplatz",
+  "ort.capitalArena.innenstadt": "Innenstadt",
   "ort.capitalArena.halle": "Turnierhalle",
   "figur.turnierleiterin.name": "Turnierleiterin",
   "figur.bea.name": "Bea Lindqvist",
@@ -853,5 +854,15 @@
   "statist.capitalArena.halle.zuschauer": "Psst. Hier drin dürfen Kiebitze nicht reden. Draußen auf dem Platz reden sie dafür doppelt so viel.",
   "statist.capitalArena.halle.reporter": "Die erste Schacholympiade war 1927 in London. Ich schreibe gerade, dass heute Capital dran ist. Mein Chef sagt, das sei übertrieben.",
   "statist.capitalArena.halle.vereinsmutter": "Ich hab für die ganze Mannschaft Brote geschmiert. Gegessen hat keiner. Vor einem Finale hat niemand Hunger.",
-  "statist.capitalArena.halle.ordner": "Ich kenn mich mit Schach nicht aus. Aber ich weiß: Wenn einer plötzlich die Hände vors Gesicht hält, hat der andere gerade etwas Gutes gezogen."
+  "statist.capitalArena.halle.ordner": "Ich kenn mich mit Schach nicht aus. Aber ich weiß: Wenn einer plötzlich die Hände vors Gesicht hält, hat der andere gerade etwas Gutes gezogen.",
+  "statist.capitalArena.innenstadt.zeitungsverkaeuferin": "Früher hab ich hier hundert Zeitungen am Tag verkauft. Heute zwanzig. Die Schachaufgabe auf Seite zwölf ist der Grund, warum es die zwanzig noch gibt.",
+  "statist.capitalArena.innenstadt.kellner": "Im Washington Square Park in New York spielen sie seit Jahrzehnten an Steintischen Blitz, um ein paar Münzen. Wir haben hier nur Cafétische. Die Münzen sind dieselben.",
+  "statist.capitalArena.innenstadt.bauarbeiter": "Der Spieß! Du greifst die große Figur an, sie muss weg, und dahinter steht die kleine ohne Schutz. Wie auf dem Bau: erst kommt der Chef, dann der Ärger.",
+  "statist.capitalArena.innenstadt.hundefrau": "Mein Lieblingszug ist ein Springer, der zurückgeht. Alle wollen immer nach vorn. Mein Dackel weiß es besser: An jeder Ecke dreht er erst mal um.",
+  "statist.capitalArena.innenstadt.sprayer": "Hast du die Kreidezeichnung am Gitter da drüben gesehen? Ein Pferd. Jeden Morgen wischt sie einer weg, jeden Abend ist sie wieder da.",
+  "statist.capitalArena.innenstadt.sprayer.2": "Heute war das Pferd größer. Und daneben stand eine Uhrzeit. Ich sag ja nichts.",
+  "statist.capitalArena.innenstadt.sprayer.ambrose": "Ein Springer aus Kreide. Wer so etwas malt, will gefunden werden. Nur nicht von jedem.",
+  "statist.capitalArena.innenstadt.geschaeftsfrau": "Bei uns im Büro bewertet eine Software von Perfect Move jede Besprechung. Gestern stand da: Ungenauigkeit. Ich hatte nur Kaffee geholt.",
+  "statist.capitalArena.innenstadt.schueler": "Judit Polgár war mit fünfzehn Großmeisterin, jünger als Fischer damals. Ich bin vierzehn. Ich hab also noch ein Jahr.",
+  "statist.capitalArena.innenstadt.strassenkehrer": "Ich fange immer in der Mitte der Straße an. Von da komme ich überall hin. Im Schach heißt das Zentrum, hat mir mein Enkel erklärt."
 }

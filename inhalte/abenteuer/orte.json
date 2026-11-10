@@ -3835,6 +3835,12 @@
           "innen": false
         },
         {
+          "kennung": "capitalArena.innenstadt",
+          "datei": "karten/capital-arena-innenstadt.json",
+          "name": "ort.capitalArena.innenstadt",
+          "innen": false
+        },
+        {
           "kennung": "capitalArena.halle",
           "datei": "karten/capital-arena-halle.json",
           "name": "ort.capitalArena.halle",
@@ -3924,6 +3930,24 @@
           "ziel": {
             "karte": "wegGhostCapital.leuchtturm",
             "ausloeser": "weiterCapital"
+          }
+        },
+        {
+          "name": "innenstadt",
+          "karte": "capitalArena.aussen",
+          "art": "uebergang",
+          "ziel": {
+            "karte": "capitalArena.innenstadt",
+            "ausloeser": "arena"
+          }
+        },
+        {
+          "name": "arena",
+          "karte": "capitalArena.innenstadt",
+          "art": "uebergang",
+          "ziel": {
+            "karte": "capitalArena.aussen",
+            "ausloeser": "innenstadt"
           }
         },
         {

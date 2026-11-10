@@ -1075,6 +1075,59 @@
       "stil": "modern",
       "blick": "unten",
       "gebaeude": true
+    },
+    "ci8UBahnAbgang": {
+      "quelle": "modern-exteriors/Modern_Exteriors_16x16/ME_Theme_Sorter_16x16/20_Subway_and_Train_Station_Singles_16x16/ME_Singles_Subway_and_Train_Station_16x16_Stairs_Complete_1.png",
+      "breite": 48,
+      "hoehe": 80,
+      "kollision": true,
+      "art": "treppe",
+      "zustand": "alt",
+      "stil": "industrie",
+      "blick": "unten",
+      "gebaeude": false
+    },
+    "ci8UBahnAbgangB": {
+      "quelle": "modern-exteriors/Modern_Exteriors_16x16/ME_Theme_Sorter_16x16/20_Subway_and_Train_Station_Singles_16x16/ME_Singles_Subway_and_Train_Station_16x16_Stairs_Complete_3.png",
+      "breite": 48,
+      "hoehe": 80,
+      "kollision": true,
+      "art": "treppe",
+      "zustand": "alt",
+      "stil": "industrie",
+      "blick": "unten",
+      "gebaeude": false
+    },
+    "ci8Haltestelle": {
+      "quelle": "modern-exteriors/Modern_Exteriors_16x16/ME_Theme_Sorter_16x16/10_Vehicles_Singles_16x16/ME_Singles_Vehicles_16x16_Bus_Stop_1.png",
+      "breite": 80,
+      "hoehe": 48,
+      "kollision": true,
+      "art": "haltestelle",
+      "zustand": "gebraucht",
+      "stil": "modern",
+      "blick": "unten"
+    },
+    "ci8Kaffeekiosk": {
+      "quelle": "modern-exteriors/Modern_Exteriors_16x16/ME_Theme_Sorter_16x16/3_City_Props_Singles_16x16/ME_Singles_City_Props_16x16_Kiosk_Coffee_Cup.png",
+      "breite": 96,
+      "hoehe": 144,
+      "kollision": true,
+      "art": "kiosk",
+      "zustand": "gebraucht",
+      "stil": "modern",
+      "blick": "unten",
+      "gebaeude": false
+    },
+    "ci8Plakate": {
+      "quelle": "modern-exteriors/Modern_Exteriors_16x16/ME_Theme_Sorter_16x16/20_Subway_and_Train_Station_Singles_16x16/ME_Singles_Subway_and_Train_Station_16x16_Three_Posters.png",
+      "breite": 48,
+      "hoehe": 16,
+      "kollision": true,
+      "art": "deko",
+      "zustand": "alt",
+      "stil": "industrie",
+      "blick": "unten"
     }
   }
 }

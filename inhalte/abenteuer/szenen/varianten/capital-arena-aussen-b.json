@@ -291,7 +291,7 @@
     {
       "name": "reporterin",
       "typ": "statist",
-      "feld": [46, 37],
+      "feld": [44, 35],
       "eigenschaften": {
         "von": "44,37",
         "bis": "50,37",
@@ -476,7 +476,7 @@
       "typ": "tier",
       "feld": [60, 44],
       "eigenschaften": {
-        "von": "56,43",
+        "von": "55,44",
         "bis": "66,45",
         "verhalten": "flitzen"
       }

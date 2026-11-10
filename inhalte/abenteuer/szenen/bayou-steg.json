@@ -362,20 +362,20 @@
     {
       "name": "reiher",
       "typ": "tier",
-      "feld": [40, 24],
+      "feld": [41, 24],
       "eigenschaften": {
-        "von": "40,24",
-        "bis": "40,24",
+        "von": "41,24",
+        "bis": "41,24",
         "verhalten": "sitzen"
       }
     },
     {
       "name": "alligator",
       "typ": "tier",
-      "feld": [30, 28],
+      "feld": [29, 27],
       "eigenschaften": {
         "von": "26,28",
-        "bis": "36,30",
+        "bis": "32,34",
         "verhalten": "schwimmen"
       }
     },
@@ -414,7 +414,7 @@
       "typ": "tier",
       "feld": [10, 30],
       "eigenschaften": {
-        "von": "6,30",
+        "von": "4,32",
         "bis": "14,31",
         "verhalten": "schwimmen"
       }
@@ -430,5 +430,6 @@
     "landhaus",
     "maritim"
   ],
-  "datei": "karten/bayou-steg.json"
+  "datei": "karten/bayou-steg.json",
+  "toenung": "nebel"
 }

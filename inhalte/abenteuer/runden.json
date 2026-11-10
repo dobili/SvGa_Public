@@ -547,15 +547,6 @@
       "anzahl": 5
     },
     {
-      "kennung": "wegGhostCapital.meisterproblem",
-      "ort": "wegGhostCapital",
-      "steller": "wegGhostCapital.odette",
-      "reihe": false,
-      "buchuebungen": [],
-      "themen": ["matt2"],
-      "anzahl": 1
-    },
-    {
       "kennung": "capitalArena.kreideraetsel",
       "ort": "capitalArena",
       "steller": "capitalArena.mo",

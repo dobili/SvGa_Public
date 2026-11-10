@@ -3221,8 +3221,9 @@
         {
           "text": "quest.finchJagd.schritt2",
           "ereignis": {
-            "art": "aufgaben",
-            "runde": "wegGhostCapital.meisterproblem"
+            "art": "partie",
+            "begegnung": "wegGhostCapital.meisterproblem",
+            "ausgang": ["sieg"]
           }
         },
         {

@@ -14229,8 +14229,8 @@
      "id": 20,
      "name": "sandsackhelfer",
      "type": "statist",
-     "x": 320,
-     "y": 112,
+     "x": 304,
+     "y": 96,
      "width": 16,
      "height": 16,
      "rotation": 0,
@@ -14239,12 +14239,12 @@
       {
        "name": "von",
        "type": "string",
-       "value": "14,7"
+       "value": "13,6"
       },
       {
        "name": "bis",
        "type": "string",
-       "value": "26,7"
+       "value": "25,6"
       },
       {
        "name": "tun",
@@ -14277,12 +14277,12 @@
       {
        "name": "von",
        "type": "string",
-       "value": "22,37"
+       "value": "25,36"
       },
       {
        "name": "bis",
        "type": "string",
-       "value": "30,38"
+       "value": "28,40"
       },
       {
        "name": "tun",
@@ -14708,7 +14708,7 @@
       {
        "name": "bis",
        "type": "string",
-       "value": "55,47"
+       "value": "54,46"
       },
       {
        "name": "verhalten",
@@ -14721,8 +14721,8 @@
      "id": 34,
      "name": "katze",
      "type": "tier",
-     "x": 864,
-     "y": 192,
+     "x": 848,
+     "y": 176,
      "width": 16,
      "height": 16,
      "rotation": 0,
@@ -14731,12 +14731,12 @@
       {
        "name": "von",
        "type": "string",
-       "value": "54,12"
+       "value": "53,11"
       },
       {
        "name": "bis",
        "type": "string",
-       "value": "54,12"
+       "value": "53,11"
       },
       {
        "name": "verhalten",

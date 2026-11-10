@@ -5525,7 +5525,7 @@
      "id": 16,
      "name": "reiher",
      "type": "tier",
-     "x": 640,
+     "x": 656,
      "y": 384,
      "width": 16,
      "height": 16,
@@ -5535,12 +5535,12 @@
       {
        "name": "von",
        "type": "string",
-       "value": "40,24"
+       "value": "41,24"
       },
       {
        "name": "bis",
        "type": "string",
-       "value": "40,24"
+       "value": "41,24"
       },
       {
        "name": "verhalten",
@@ -5553,8 +5553,8 @@
      "id": 17,
      "name": "alligator",
      "type": "tier",
-     "x": 480,
-     "y": 448,
+     "x": 464,
+     "y": 432,
      "width": 16,
      "height": 16,
      "rotation": 0,
@@ -5568,7 +5568,7 @@
       {
        "name": "bis",
        "type": "string",
-       "value": "36,30"
+       "value": "32,34"
       },
       {
        "name": "verhalten",
@@ -5675,7 +5675,7 @@
       {
        "name": "von",
        "type": "string",
-       "value": "6,30"
+       "value": "4,32"
       },
       {
        "name": "bis",
@@ -6960,6 +6960,11 @@
    "name": "kennung",
    "type": "string",
    "value": "bayou.steg"
+  },
+  {
+   "name": "toenung",
+   "type": "string",
+   "value": "nebel"
   }
  ]
 }

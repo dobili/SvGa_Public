@@ -306,6 +306,30 @@ ein Fanshop mit Schals und T-Shirts.
 - Zustände: keine neuen. Die Geschichte ändert die Arena-Karten nicht sichtbar; das Gitter am
   Abgang ist nach `ubahnOffen` nur offen, und das zeigt schon der Übergang.
 
+### 3.6 Gutachten Runde 9: Antworten (mittel-1, 10.11.2026)
+
+Gutachten `docs/spiel/auftraege/gutachten/capital-arena-bayou.md`.
+
+- **Außen, Schilder (2):** Feuerwache, Polizei und Post tragen deutsche Schilder (Bildwunsch
+  `schilder_deutsch.py`). Die zweite Eisenwarenhandlung ist ein Café. „Hot Dogs“ am Imbisswagen
+  bleibt, das Wort ist im Deutschen geläufig.
+- **Außen, Fahrbahn (3):** Vor Feuerwache, Arenatreppe und Polizeirevier läuft eine Straße
+  (Reihen 36–38) mit Mittellinie (`"markierung": ["s"]`). Feuerwache und Revier fahren auf sie
+  hinaus. Imbisswagen, Laternen, Limonadenwagen und Fahnen stehen jetzt südlich davon auf dem
+  Platz, der Auslöser `fahnen` liegt bei (34, 44).
+- **Außen, Kuppeln (1):** Die Arena bleibt, wie in 3.5 begründet. Ein Verschieben hätte die
+  Treppe auf die Straße gesetzt.
+- **Innenstadt (1, 2, 4):** Der Bus in Seitenansicht ist weg. Statt der Möwen auf der Allee laufen
+  Krähen auf dem Platz. Feuerwache und Polizei stehen nur noch an der Arena. In der Innenstadt
+  stehen dafür ein graues Stadthaus (27, 16) und ein großes Bürohaus (57, 38). Die Post hat ein
+  deutsches Schild.
+- **Halle (1):** Die Beschreibung folgt jetzt dem Bild: helle Wände, dunkler Holzboden, Tribünen
+  links und rechts der Bühne an der Nordwand, Turniertafel an der Nordwand.
+- **U-Bahnhof (1, 4):** Das Rollgitter hängt sichtbar über dem Ausgang (`vorn`). An den
+  Klapptischen sitzen drei Blitzspieler auf den Hockern.
+- Offen: schmale graue Häuser (außen 5), Allee in drei Stücken (Innenstadt 3), Stühle neben den
+  Tischen in der Halle (2, 3), Treppe gestreift und Kreidespringer blass (U-Bahnhof 2, 3).
+
 ## 4. Bühnenbilder
 
 Möbel mit Vorsilbe `gc7` (Weg) in `moebel/weg-ghost-capital.json` und `ca7` (Arena) in

@@ -11,7 +11,7 @@
  "tilewidth": 16,
  "tileheight": 16,
  "nextlayerid": 5,
- "nextobjectid": 76,
+ "nextobjectid": 78,
  "layers": [
   {
    "id": 1,
@@ -2297,7 +2297,7 @@
       {
        "name": "tun",
        "type": "string",
-       "value": "stehen mit Kapuzen um die Tische"
+       "value": "sitzt mit Kapuze am Klapptisch und spielt Blitz"
       },
       {
        "name": "wann",
@@ -2379,47 +2379,87 @@
     },
     {
      "id": 8,
-     "name": "ci8Schiene",
-     "type": "moebel",
-     "x": 32,
-     "y": 64,
+     "name": "blitzspielerin",
+     "type": "statist",
+     "x": 256,
+     "y": 192,
      "width": 16,
-     "height": 32,
+     "height": 16,
      "rotation": 0,
      "visible": true,
      "properties": [
       {
-       "name": "tiefe",
-       "type": "int",
-       "value": 1
+       "name": "von",
+       "type": "string",
+       "value": "16,12"
       },
       {
-       "name": "kollision",
-       "type": "bool",
-       "value": false
+       "name": "bis",
+       "type": "string",
+       "value": "16,12"
+      },
+      {
+       "name": "tun",
+       "type": "string",
+       "value": "sitzt am Klapptisch und spielt Blitz"
+      },
+      {
+       "name": "wann",
+       "type": "string",
+       "value": "abend"
+      },
+      {
+       "name": "bild",
+       "type": "string",
+       "value": "statist-09"
+      },
+      {
+       "name": "verhalten",
+       "type": "string",
+       "value": "sitzen"
       }
      ]
     },
     {
      "id": 9,
-     "name": "ci8Schiene",
-     "type": "moebel",
-     "x": 48,
-     "y": 64,
+     "name": "blitzspieler",
+     "type": "statist",
+     "x": 368,
+     "y": 192,
      "width": 16,
-     "height": 32,
+     "height": 16,
      "rotation": 0,
      "visible": true,
      "properties": [
       {
-       "name": "tiefe",
-       "type": "int",
-       "value": 1
+       "name": "von",
+       "type": "string",
+       "value": "23,12"
       },
       {
-       "name": "kollision",
-       "type": "bool",
-       "value": false
+       "name": "bis",
+       "type": "string",
+       "value": "23,12"
+      },
+      {
+       "name": "tun",
+       "type": "string",
+       "value": "sitzt am Klapptisch und spielt Blitz"
+      },
+      {
+       "name": "wann",
+       "type": "string",
+       "value": "abend"
+      },
+      {
+       "name": "bild",
+       "type": "string",
+       "value": "statist-12"
+      },
+      {
+       "name": "verhalten",
+       "type": "string",
+       "value": "sitzen"
       }
      ]
     },
@@ -2427,7 +2467,7 @@
      "id": 10,
      "name": "ci8Schiene",
      "type": "moebel",
-     "x": 64,
+     "x": 32,
      "y": 64,
      "width": 16,
      "height": 32,
@@ -2450,7 +2490,7 @@
      "id": 11,
      "name": "ci8Schiene",
      "type": "moebel",
-     "x": 80,
+     "x": 48,
      "y": 64,
      "width": 16,
      "height": 32,
@@ -2473,7 +2513,7 @@
      "id": 12,
      "name": "ci8Schiene",
      "type": "moebel",
-     "x": 96,
+     "x": 64,
      "y": 64,
      "width": 16,
      "height": 32,
@@ -2496,7 +2536,7 @@
      "id": 13,
      "name": "ci8Schiene",
      "type": "moebel",
-     "x": 112,
+     "x": 80,
      "y": 64,
      "width": 16,
      "height": 32,
@@ -2519,7 +2559,7 @@
      "id": 14,
      "name": "ci8Schiene",
      "type": "moebel",
-     "x": 128,
+     "x": 96,
      "y": 64,
      "width": 16,
      "height": 32,
@@ -2542,7 +2582,7 @@
      "id": 15,
      "name": "ci8Schiene",
      "type": "moebel",
-     "x": 144,
+     "x": 112,
      "y": 64,
      "width": 16,
      "height": 32,
@@ -2565,7 +2605,7 @@
      "id": 16,
      "name": "ci8Schiene",
      "type": "moebel",
-     "x": 160,
+     "x": 128,
      "y": 64,
      "width": 16,
      "height": 32,
@@ -2588,7 +2628,7 @@
      "id": 17,
      "name": "ci8Schiene",
      "type": "moebel",
-     "x": 176,
+     "x": 144,
      "y": 64,
      "width": 16,
      "height": 32,
@@ -2611,7 +2651,7 @@
      "id": 18,
      "name": "ci8Schiene",
      "type": "moebel",
-     "x": 192,
+     "x": 160,
      "y": 64,
      "width": 16,
      "height": 32,
@@ -2634,7 +2674,7 @@
      "id": 19,
      "name": "ci8Schiene",
      "type": "moebel",
-     "x": 208,
+     "x": 176,
      "y": 64,
      "width": 16,
      "height": 32,
@@ -2657,7 +2697,7 @@
      "id": 20,
      "name": "ci8Schiene",
      "type": "moebel",
-     "x": 224,
+     "x": 192,
      "y": 64,
      "width": 16,
      "height": 32,
@@ -2680,7 +2720,7 @@
      "id": 21,
      "name": "ci8Schiene",
      "type": "moebel",
-     "x": 240,
+     "x": 208,
      "y": 64,
      "width": 16,
      "height": 32,
@@ -2703,7 +2743,7 @@
      "id": 22,
      "name": "ci8Schiene",
      "type": "moebel",
-     "x": 256,
+     "x": 224,
      "y": 64,
      "width": 16,
      "height": 32,
@@ -2726,7 +2766,7 @@
      "id": 23,
      "name": "ci8Schiene",
      "type": "moebel",
-     "x": 272,
+     "x": 240,
      "y": 64,
      "width": 16,
      "height": 32,
@@ -2749,7 +2789,7 @@
      "id": 24,
      "name": "ci8Schiene",
      "type": "moebel",
-     "x": 288,
+     "x": 256,
      "y": 64,
      "width": 16,
      "height": 32,
@@ -2772,7 +2812,7 @@
      "id": 25,
      "name": "ci8Schiene",
      "type": "moebel",
-     "x": 304,
+     "x": 272,
      "y": 64,
      "width": 16,
      "height": 32,
@@ -2795,7 +2835,7 @@
      "id": 26,
      "name": "ci8Schiene",
      "type": "moebel",
-     "x": 320,
+     "x": 288,
      "y": 64,
      "width": 16,
      "height": 32,
@@ -2818,7 +2858,7 @@
      "id": 27,
      "name": "ci8Schiene",
      "type": "moebel",
-     "x": 336,
+     "x": 304,
      "y": 64,
      "width": 16,
      "height": 32,
@@ -2841,7 +2881,7 @@
      "id": 28,
      "name": "ci8Schiene",
      "type": "moebel",
-     "x": 352,
+     "x": 320,
      "y": 64,
      "width": 16,
      "height": 32,
@@ -2864,7 +2904,7 @@
      "id": 29,
      "name": "ci8Schiene",
      "type": "moebel",
-     "x": 368,
+     "x": 336,
      "y": 64,
      "width": 16,
      "height": 32,
@@ -2887,7 +2927,7 @@
      "id": 30,
      "name": "ci8Schiene",
      "type": "moebel",
-     "x": 384,
+     "x": 352,
      "y": 64,
      "width": 16,
      "height": 32,
@@ -2910,7 +2950,7 @@
      "id": 31,
      "name": "ci8Schiene",
      "type": "moebel",
-     "x": 400,
+     "x": 368,
      "y": 64,
      "width": 16,
      "height": 32,
@@ -2933,7 +2973,7 @@
      "id": 32,
      "name": "ci8Schiene",
      "type": "moebel",
-     "x": 416,
+     "x": 384,
      "y": 64,
      "width": 16,
      "height": 32,
@@ -2956,7 +2996,7 @@
      "id": 33,
      "name": "ci8Schiene",
      "type": "moebel",
-     "x": 432,
+     "x": 400,
      "y": 64,
      "width": 16,
      "height": 32,
@@ -2979,7 +3019,7 @@
      "id": 34,
      "name": "ci8Schiene",
      "type": "moebel",
-     "x": 448,
+     "x": 416,
      "y": 64,
      "width": 16,
      "height": 32,
@@ -3002,7 +3042,7 @@
      "id": 35,
      "name": "ci8Schiene",
      "type": "moebel",
-     "x": 464,
+     "x": 432,
      "y": 64,
      "width": 16,
      "height": 32,
@@ -3025,7 +3065,7 @@
      "id": 36,
      "name": "ci8Schiene",
      "type": "moebel",
-     "x": 480,
+     "x": 448,
      "y": 64,
      "width": 16,
      "height": 32,
@@ -3048,7 +3088,7 @@
      "id": 37,
      "name": "ci8Schiene",
      "type": "moebel",
-     "x": 496,
+     "x": 464,
      "y": 64,
      "width": 16,
      "height": 32,
@@ -3071,7 +3111,7 @@
      "id": 38,
      "name": "ci8Schiene",
      "type": "moebel",
-     "x": 512,
+     "x": 480,
      "y": 64,
      "width": 16,
      "height": 32,
@@ -3094,7 +3134,7 @@
      "id": 39,
      "name": "ci8Schiene",
      "type": "moebel",
-     "x": 528,
+     "x": 496,
      "y": 64,
      "width": 16,
      "height": 32,
@@ -3117,7 +3157,7 @@
      "id": 40,
      "name": "ci8Schiene",
      "type": "moebel",
-     "x": 544,
+     "x": 512,
      "y": 64,
      "width": 16,
      "height": 32,
@@ -3138,6 +3178,52 @@
     },
     {
      "id": 41,
+     "name": "ci8Schiene",
+     "type": "moebel",
+     "x": 528,
+     "y": 64,
+     "width": 16,
+     "height": 32,
+     "rotation": 0,
+     "visible": true,
+     "properties": [
+      {
+       "name": "tiefe",
+       "type": "int",
+       "value": 1
+      },
+      {
+       "name": "kollision",
+       "type": "bool",
+       "value": false
+      }
+     ]
+    },
+    {
+     "id": 42,
+     "name": "ci8Schiene",
+     "type": "moebel",
+     "x": 544,
+     "y": 64,
+     "width": 16,
+     "height": 32,
+     "rotation": 0,
+     "visible": true,
+     "properties": [
+      {
+       "name": "tiefe",
+       "type": "int",
+       "value": 1
+      },
+      {
+       "name": "kollision",
+       "type": "bool",
+       "value": false
+      }
+     ]
+    },
+    {
+     "id": 43,
      "name": "ci8ZugGraffiti",
      "type": "moebel",
      "x": 144,
@@ -3160,56 +3246,10 @@
      ]
     },
     {
-     "id": 42,
-     "name": "ci8Gelaender",
-     "type": "moebel",
-     "x": 32,
-     "y": 112,
-     "width": 48,
-     "height": 16,
-     "rotation": 0,
-     "visible": true,
-     "properties": [
-      {
-       "name": "tiefe",
-       "type": "int",
-       "value": 120
-      },
-      {
-       "name": "kollision",
-       "type": "bool",
-       "value": true
-      }
-     ]
-    },
-    {
-     "id": 43,
-     "name": "ci8Gelaender",
-     "type": "moebel",
-     "x": 80,
-     "y": 112,
-     "width": 48,
-     "height": 16,
-     "rotation": 0,
-     "visible": true,
-     "properties": [
-      {
-       "name": "tiefe",
-       "type": "int",
-       "value": 120
-      },
-      {
-       "name": "kollision",
-       "type": "bool",
-       "value": true
-      }
-     ]
-    },
-    {
      "id": 44,
      "name": "ci8Gelaender",
      "type": "moebel",
-     "x": 128,
+     "x": 32,
      "y": 112,
      "width": 48,
      "height": 16,
@@ -3232,7 +3272,7 @@
      "id": 45,
      "name": "ci8Gelaender",
      "type": "moebel",
-     "x": 176,
+     "x": 80,
      "y": 112,
      "width": 48,
      "height": 16,
@@ -3255,7 +3295,7 @@
      "id": 46,
      "name": "ci8Gelaender",
      "type": "moebel",
-     "x": 224,
+     "x": 128,
      "y": 112,
      "width": 48,
      "height": 16,
@@ -3278,7 +3318,7 @@
      "id": 47,
      "name": "ci8Gelaender",
      "type": "moebel",
-     "x": 272,
+     "x": 176,
      "y": 112,
      "width": 48,
      "height": 16,
@@ -3301,7 +3341,7 @@
      "id": 48,
      "name": "ci8Gelaender",
      "type": "moebel",
-     "x": 320,
+     "x": 224,
      "y": 112,
      "width": 48,
      "height": 16,
@@ -3324,7 +3364,7 @@
      "id": 49,
      "name": "ci8Gelaender",
      "type": "moebel",
-     "x": 368,
+     "x": 272,
      "y": 112,
      "width": 48,
      "height": 16,
@@ -3347,7 +3387,7 @@
      "id": 50,
      "name": "ci8Gelaender",
      "type": "moebel",
-     "x": 416,
+     "x": 320,
      "y": 112,
      "width": 48,
      "height": 16,
@@ -3370,7 +3410,7 @@
      "id": 51,
      "name": "ci8Gelaender",
      "type": "moebel",
-     "x": 464,
+     "x": 368,
      "y": 112,
      "width": 48,
      "height": 16,
@@ -3393,7 +3433,7 @@
      "id": 52,
      "name": "ci8Gelaender",
      "type": "moebel",
-     "x": 512,
+     "x": 416,
      "y": 112,
      "width": 48,
      "height": 16,
@@ -3414,6 +3454,52 @@
     },
     {
      "id": 53,
+     "name": "ci8Gelaender",
+     "type": "moebel",
+     "x": 464,
+     "y": 112,
+     "width": 48,
+     "height": 16,
+     "rotation": 0,
+     "visible": true,
+     "properties": [
+      {
+       "name": "tiefe",
+       "type": "int",
+       "value": 120
+      },
+      {
+       "name": "kollision",
+       "type": "bool",
+       "value": true
+      }
+     ]
+    },
+    {
+     "id": 54,
+     "name": "ci8Gelaender",
+     "type": "moebel",
+     "x": 512,
+     "y": 112,
+     "width": 48,
+     "height": 16,
+     "rotation": 0,
+     "visible": true,
+     "properties": [
+      {
+       "name": "tiefe",
+       "type": "int",
+       "value": 120
+      },
+      {
+       "name": "kollision",
+       "type": "bool",
+       "value": true
+      }
+     ]
+    },
+    {
+     "id": 55,
      "name": "ca8KlapptischBrett",
      "type": "moebel",
      "x": 160,
@@ -3436,7 +3522,7 @@
      ]
     },
     {
-     "id": 54,
+     "id": 56,
      "name": "ca8KlapptischBrett",
      "type": "moebel",
      "x": 272,
@@ -3459,7 +3545,7 @@
      ]
     },
     {
-     "id": 55,
+     "id": 57,
      "name": "ca8KlapptischBrett",
      "type": "moebel",
      "x": 384,
@@ -3482,7 +3568,7 @@
      ]
     },
     {
-     "id": 56,
+     "id": 58,
      "name": "ci8Pfeiler",
      "type": "moebel",
      "x": 96,
@@ -3505,7 +3591,7 @@
      ]
     },
     {
-     "id": 57,
+     "id": 59,
      "name": "ci8Pfeiler",
      "type": "moebel",
      "x": 464,
@@ -3528,7 +3614,7 @@
      ]
     },
     {
-     "id": 58,
+     "id": 60,
      "name": "ci8Bank",
      "type": "moebel",
      "x": 16,
@@ -3551,7 +3637,7 @@
      ]
     },
     {
-     "id": 59,
+     "id": 61,
      "name": "ci8BankB",
      "type": "moebel",
      "x": 512,
@@ -3574,7 +3660,7 @@
      ]
     },
     {
-     "id": 60,
+     "id": 62,
      "name": "ci8GraffitiSchrift",
      "type": "moebel",
      "x": 32,
@@ -3597,7 +3683,7 @@
      ]
     },
     {
-     "id": 61,
+     "id": 63,
      "name": "ci8GraffitiWolf",
      "type": "moebel",
      "x": 192,
@@ -3620,7 +3706,7 @@
      ]
     },
     {
-     "id": 62,
+     "id": 64,
      "name": "ci8Plakate3",
      "type": "moebel",
      "x": 304,
@@ -3643,7 +3729,7 @@
      ]
     },
     {
-     "id": 63,
+     "id": 65,
      "name": "ci8GraffitiBlume",
      "type": "moebel",
      "x": 448,
@@ -3666,7 +3752,7 @@
      ]
     },
     {
-     "id": 64,
+     "id": 66,
      "name": "ci8Leuchte",
      "type": "moebel",
      "x": 384,
@@ -3689,7 +3775,7 @@
      ]
     },
     {
-     "id": 65,
+     "id": 67,
      "name": "ci8Drehkreuz",
      "type": "moebel",
      "x": 240,
@@ -3712,7 +3798,7 @@
      ]
     },
     {
-     "id": 66,
+     "id": 68,
      "name": "ci8Drehkreuz",
      "type": "moebel",
      "x": 320,
@@ -3735,7 +3821,7 @@
      ]
     },
     {
-     "id": 67,
+     "id": 69,
      "name": "ci8Kreidespringer",
      "type": "moebel",
      "x": 128,
@@ -3758,7 +3844,7 @@
      ]
     },
     {
-     "id": 68,
+     "id": 70,
      "name": "ca9Treppe",
      "type": "moebel",
      "x": 272,
@@ -3781,11 +3867,11 @@
      ]
     },
     {
-     "id": 69,
+     "id": 71,
      "name": "ca9Rollgitter",
      "type": "moebel",
      "x": 264,
-     "y": 304,
+     "y": 296,
      "width": 48,
      "height": 16,
      "rotation": 0,
@@ -3794,7 +3880,7 @@
       {
        "name": "tiefe",
        "type": "int",
-       "value": 0
+       "value": 304
       },
       {
        "name": "kollision",
@@ -3804,7 +3890,7 @@
      ]
     },
     {
-     "id": 70,
+     "id": 72,
      "name": "ca9Hocker",
      "type": "moebel",
      "x": 144,
@@ -3827,7 +3913,7 @@
      ]
     },
     {
-     "id": 71,
+     "id": 73,
      "name": "ca9Hocker",
      "type": "moebel",
      "x": 192,
@@ -3850,7 +3936,7 @@
      ]
     },
     {
-     "id": 72,
+     "id": 74,
      "name": "ca9Hocker",
      "type": "moebel",
      "x": 256,
@@ -3873,7 +3959,7 @@
      ]
     },
     {
-     "id": 73,
+     "id": 75,
      "name": "ca9Hocker",
      "type": "moebel",
      "x": 304,
@@ -3896,7 +3982,7 @@
      ]
     },
     {
-     "id": 74,
+     "id": 76,
      "name": "ca9Hocker",
      "type": "moebel",
      "x": 368,
@@ -3919,7 +4005,7 @@
      ]
     },
     {
-     "id": 75,
+     "id": 77,
      "name": "ca9Hocker",
      "type": "moebel",
      "x": 416,

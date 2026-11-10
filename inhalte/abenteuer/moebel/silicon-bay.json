@@ -1461,7 +1461,7 @@
       "blick": "keine"
     },
     "sb8Glaswand": {
-      "quelle": "spiel/eigene/akademie_glaswand.png",
+      "quelle": "modern-interiors/1_Interiors/16x16/Theme_Sorter_Singles/16_Grocery_Store_Singles/Grocery_Store_Singles_157.png",
       "breite": 32,
       "hoehe": 32,
       "kollision": true,
@@ -1757,6 +1757,56 @@
       "kollision": true,
       "art": "gebaeude",
       "zustand": "gebraucht",
+      "stil": "modern",
+      "blick": "unten"
+    },
+    "sb8Fenster": {
+      "quelle": "modern-interiors/1_Interiors/16x16/Theme_Sorter_Singles/16_Grocery_Store_Singles/Grocery_Store_Singles_157.png",
+      "breite": 32,
+      "hoehe": 32,
+      "kollision": false,
+      "art": "fenster",
+      "zustand": "neu",
+      "stil": "modern",
+      "blick": "keine"
+    },
+    "sb8RanglisteTafel": {
+      "quelle": "spiel/eigene/akademie_rangliste_tafel.png",
+      "breite": 48,
+      "hoehe": 32,
+      "kollision": false,
+      "art": "bild",
+      "zustand": "neu",
+      "stil": "modern",
+      "blick": "unten"
+    },
+    "sb8Grossbildschirm": {
+      "quelle": "spiel/eigene/akademie_grossbildschirm.png",
+      "breite": 64,
+      "hoehe": 32,
+      "kollision": false,
+      "art": "bild",
+      "zustand": "neu",
+      "stil": "modern",
+      "blick": "unten"
+    },
+    "sb8Beistelltisch": {
+      "quelle": "spiel/eigene/akademie_beistelltisch.png",
+      "breite": 32,
+      "hoehe": 32,
+      "kollision": true,
+      "art": "tisch",
+      "zustand": "neu",
+      "stil": "modern",
+      "blick": "keine"
+    },
+    "sb8KaffeeautomatVorn": {
+      "quelle": "modern-exteriors/Modern_Exteriors_16x16/ME_Theme_Sorter_16x16/20_Subway_and_Train_Station_Singles_16x16/ME_Singles_Subway_and_Train_Station_16x16_Coffee_Machine_Front.png",
+      "breite": 32,
+      "hoehe": 48,
+      "kollision": true,
+      "art": "automat",
+      "zustand": "neu",
       "stil": "modern",
       "blick": "unten"
     }

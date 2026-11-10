@@ -596,6 +596,16 @@ Tür zum Serverraum in der Nordwand bei Spalte 12, Feld davor (12, 3). Eigene Bi
   Angel) ist ein kleines Holzboot, kein Kutter; es bleibt so und heißt Fischerboot (10.64: zwischen Ruderboot
   und Motorboot). Ein Verlängern ergäbe nur ein langes Ruderboot.
 
+Gutachten Runde 8 (`gutachten/silicon-bay-akademie.md`), behoben: Glaswand und Fenster aus gerahmten
+Glasscheiben (Grocery 157) statt des grauen Bands; gläserne Eingangstür ohne Matte; Stahl-Doppeltür
+zum Serverraum; zwei Fenster in der Nordwand; Foyer mit grauen Fliesen, Büro mit blauem Teppich;
+an jedem Tisch ein Schüler, zwischen den Tischreihen ein Gang; Bildschirm mit Rangliste und großer
+Vortragsbildschirm (Bildwunsch `akademie.py`), die Stuhlreihen mittig davor; Kaffeeautomat gleich
+hoch wie der Getränkeautomat; Pausenecke mit zwei Sesseln im Osten; Glaspokal statt Goldpokal in der
+Vitrine; weißer Beistelltisch statt Holzbank; Empfangsdame am Empfang, Kübelbaum im Foyer; Durchgang
+vom Foyer ins Büro; Lin hinter seinem Schreibtisch, Bücherregal im Büro. Offen: Das Bild der
+gläsernen Tür (`tuer_sued_glas.png`) wirkt braun; der Saugroboter ist eine Belebung ohne Bild.
+
 ### 4.6 Serverraum (`siliconBay.serverraum`)
 
 **Größe:** 14 × 10. Nordwand Reihen 0–2 grau, Boden Doppelboden mit Lochplatten, Südwand Reihe 9 mit

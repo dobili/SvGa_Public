@@ -249,10 +249,12 @@ wirkt. Keine Büsche mehr, nur Kakteen, Steine und Tumbleweeds.
 
 ### 4.5 Runde 7 (10.11.2026): mehr Häuser, mehr Leben
 
-Regel 10.51 und 10.53. Jede Variante hat jetzt 12 Gebäude: hinter den Fassaden der Front Street eine
-zweite Reihe aus Bretterbuden, Blockhütte und Station, auf der Südseite verwitterte Holzhäuser und
-ein Mietstall (Scheune). Das sind Ersatzbilder (`gt8…`), bis die bestellten Westernfassaden kommen
-(Bank, Hotel, Barbier, Bestatter, Mietstall, Postkutschenstation, Bretterhütten). Belebung in allen
-Varianten gleich: Mr. Pruitts Metallsucher und 12 Sommergäste und Durchreisende, 8 davon ansprechbar
-(`statist.ghostTown.aussen.*`), dazu Geier, Eule auf dem Wasserturm (nachts), Eidechse und ein alter
-Hund, der {held} folgt (Dokument 16, 5.3: Er legt sich in Runde 6 vor das Grab ohne Namen).
+Regel 10.51 und 10.53. Jede Variante hat jetzt 12 Gebäude mit den neuen eigenen Westernfassaden
+(`gt8Bank`, `gt8Post` „Stage & Mail“, `gt8Barbier`, `gt8Bestatter`, `gt8Hotel`, `gt8Mietstall`
+„Livery“) und Bretterhütten (`gt8HuetteA`, `gt8HuetteB`) in zweiter Reihe. A: Hütten und Post hinter
+den Fassaden, Bank, Hotel und Mietstall auf der Südseite der Front Street. B: Bank, Post und Barbier
+schließen die Häuserzeile der Nordseite, Bestatter, Hotel und Mietstall stehen auf der Südseite neben
+dem Friedhof, drei Hütten dahinter. C: Post und Barbier in zweiter Reihe, Hotel und Mietstall
+südlich. Belebung in allen Varianten gleich: Mr. Pruitts Metallsucher und 12 Sommergäste und
+Durchreisende, 8 davon ansprechbar (`statist.ghostTown.aussen.*`), dazu Geier, Eule auf dem
+Wasserturm (nachts), Eidechse und ein alter Hund, der {held} folgt (Dokument 16, 5.3).

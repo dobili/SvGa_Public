@@ -1902,6 +1902,14 @@
     },
     {
       "moebel": "wc5BlumenWeiss",
+      "feld": [46, 12]
+    },
+    {
+      "moebel": "wc5BlumenWeiss",
+      "feld": [46, 13]
+    },
+    {
+      "moebel": "wc5BlumenWeiss",
       "feld": [47, 13]
     },
     {
@@ -1927,6 +1935,10 @@
     {
       "moebel": "wc5BlumenWeiss",
       "feld": [106, 21]
+    },
+    {
+      "moebel": "wc5Stein",
+      "feld": [44, 11]
     },
     {
       "moebel": "wc5BlumeBlau",
@@ -2106,11 +2118,7 @@
     },
     {
       "moebel": "wc8Stellwerk",
-      "feld": [40, 11]
-    },
-    {
-      "moebel": "wc8StellwerkTafel",
-      "feld": [45, 12]
+      "feld": [40, 10]
     },
     {
       "moebel": "wc8StellwerkBank",

@@ -1730,6 +1730,10 @@
       "feld": [23, 10]
     },
     {
+      "moebel": "wc5Stein",
+      "feld": [46, 12]
+    },
+    {
       "moebel": "wc5Loewenzahn",
       "feld": [122, 26]
     },
@@ -2467,11 +2471,7 @@
     },
     {
       "moebel": "wc8Stellwerk",
-      "feld": [42, 11]
-    },
-    {
-      "moebel": "wc8StellwerkTafel",
-      "feld": [47, 12]
+      "feld": [42, 10]
     },
     {
       "moebel": "wc8StellwerkBank",

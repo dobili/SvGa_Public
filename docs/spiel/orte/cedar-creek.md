@@ -654,8 +654,8 @@ Straße (95–96, 17–18), Odettes Wohnmobil „Gambit“ (88, 19), drei Tische
 | `seite00`           | `wegMapleCedar.landstrasse` | (87, 17) | Buchseite Kapitel 0 im Graben neben dem Hof |
 | `finchBauerA`       | `wegMapleCedar.flussweg`    | (54, 21) | unter der neuen Bank am Steg (54, 20)       |
 
-Das Finkenzeichen am Pfosten und das Schild „Flohmarkt Samstag“ (vor dem Ereignis) sind beim
-Haupt-Chat bestellt. **Belebung:** Landstraße mit der Frau, die die wilden Pferde beobachtet
+Das Finkenzeichen aus Blech steht am Steg (58, 21), das Plakat „Flohmarkt SA“ gegenüber der
+Einfahrt nördlich der Straße (95, 12) (eigene Bilder). **Belebung:** Landstraße mit der Frau, die die wilden Pferde beobachtet
 (Dokument 16, 3.2, Beispiel 4, mit Ambroses Antwort), Verkäuferin und Kunde auf dem Hof, Pferde und
 Eichhörnchen; Flussweg mit Vogelbeobachterin, Picknickvater, Kind beim Steinehüpfen, Enten, Eisvogel;
 Zedernpfad mit Pilzsammlerin, Försterin, Landschaftsmaler, Kindern, Reh, Krähen, Hase, Eule. Jede

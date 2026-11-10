@@ -615,24 +615,14 @@
       "stil": "industrie"
     },
     "wc8Stellwerk": {
-      "quelle": "spiel/serene/serene_51.png",
-      "breite": 80,
-      "hoehe": 64,
+      "quelle": "spiel/eigene/stellwerk.png",
+      "breite": 64,
+      "hoehe": 80,
       "kollision": true,
       "art": "gebaeude",
-      "zustand": "alt",
+      "blick": "unten",
       "stil": "laendlich",
-      "blick": "unten"
-    },
-    "wc8StellwerkTafel": {
-      "quelle": "modern-exteriors/Modern_Exteriors_16x16/ME_Theme_Sorter_16x16/11_Camping_Singles_16x16/ME_Singles_Camping_16x16_Wood_Board_2.png",
-      "breite": 32,
-      "hoehe": 32,
-      "kollision": true,
-      "art": "strassenmoebel",
-      "zustand": "alt",
-      "stil": "laendlich",
-      "blick": "unten"
+      "zustand": "alt"
     },
     "wc8StellwerkBank": {
       "quelle": "modern-exteriors/Modern_Exteriors_16x16/ME_Theme_Sorter_16x16/17_Garden_Singles_16x16/ME_Singles_Garden_16x16_Medium_Bench_Horizontal.png",

@@ -679,28 +679,68 @@
       "zustand": "alt",
       "stil": "rustikal"
     },
-    "gt8Bretterbude": {
-      "quelle": "modern-exteriors/Modern_Exteriors_16x16/ME_Theme_Sorter_16x16/3_City_Props_Singles_16x16/ME_Singles_City_Props_16x16_Junk_Shack_1.png",
-      "breite": 96,
-      "hoehe": 96,
-      "kollision": true,
-      "art": "gebaeude",
-      "blick": "unten",
-      "zustand": "verwittert",
-      "stil": "rustikal"
-    },
     "gt8Mietstall": {
-      "quelle": "modern-farm/Single_Files_16x16/Props_and_Buildings_16x16/Barn_Small_16x16.png",
+      "quelle": "spiel/eigene/fassade_mietstall.png",
       "breite": 128,
-      "hoehe": 160,
+      "hoehe": 128,
       "kollision": true,
       "art": "gebaeude",
       "blick": "unten",
-      "zustand": "verwittert",
-      "stil": "rustikal"
+      "stil": "rustikal",
+      "zustand": "verwittert"
     },
-    "gt8Blockhaus": {
-      "quelle": "spiel/eigene/campbude.png",
+    "gt8Bank": {
+      "quelle": "spiel/eigene/fassade_bank.png",
+      "breite": 112,
+      "hoehe": 112,
+      "kollision": true,
+      "art": "gebaeude",
+      "blick": "unten",
+      "stil": "rustikal",
+      "zustand": "verwittert"
+    },
+    "gt8Barbier": {
+      "quelle": "spiel/eigene/fassade_barbier.png",
+      "breite": 112,
+      "hoehe": 112,
+      "kollision": true,
+      "art": "gebaeude",
+      "blick": "unten",
+      "stil": "rustikal",
+      "zustand": "verwittert"
+    },
+    "gt8Bestatter": {
+      "quelle": "spiel/eigene/fassade_bestatter.png",
+      "breite": 112,
+      "hoehe": 112,
+      "kollision": true,
+      "art": "gebaeude",
+      "blick": "unten",
+      "stil": "rustikal",
+      "zustand": "verwittert"
+    },
+    "gt8Post": {
+      "quelle": "spiel/eigene/fassade_post.png",
+      "breite": 112,
+      "hoehe": 112,
+      "kollision": true,
+      "art": "gebaeude",
+      "blick": "unten",
+      "stil": "rustikal",
+      "zustand": "verwittert"
+    },
+    "gt8Hotel": {
+      "quelle": "spiel/eigene/fassade_hotel.png",
+      "breite": 128,
+      "hoehe": 144,
+      "kollision": true,
+      "art": "gebaeude",
+      "blick": "unten",
+      "stil": "rustikal",
+      "zustand": "verwittert"
+    },
+    "gt8HuetteA": {
+      "quelle": "spiel/eigene/huette_bretter_a.png",
       "breite": 80,
       "hoehe": 80,
       "kollision": true,
@@ -709,35 +749,15 @@
       "stil": "rustikal",
       "zustand": "verwittert"
     },
-    "gt8Station": {
-      "quelle": "spiel/eigene/wuestenbahnhof.png",
-      "breite": 96,
-      "hoehe": 96,
+    "gt8HuetteB": {
+      "quelle": "spiel/eigene/huette_bretter_b.png",
+      "breite": 80,
+      "hoehe": 80,
       "kollision": true,
       "art": "gebaeude",
       "blick": "unten",
       "stil": "rustikal",
       "zustand": "verwittert"
-    },
-    "gt8HausVerwittertA": {
-      "quelle": "modern-exteriors/Modern_Exteriors_16x16/ME_Theme_Sorter_16x16/24_Additional_Houses_Singles_16x16/24_Additional_Houses_Post_Apocalyptic_House_1_16x16.png",
-      "breite": 208,
-      "hoehe": 160,
-      "kollision": true,
-      "art": "gebaeude",
-      "blick": "unten",
-      "zustand": "verwittert",
-      "stil": "rustikal"
-    },
-    "gt8HausVerwittertB": {
-      "quelle": "modern-exteriors/Modern_Exteriors_16x16/ME_Theme_Sorter_16x16/24_Additional_Houses_Singles_16x16/24_Additional_Houses_Post_Apocalyptic_House_2_16x16.png",
-      "breite": 208,
-      "hoehe": 160,
-      "kollision": true,
-      "art": "gebaeude",
-      "blick": "unten",
-      "zustand": "verwittert",
-      "stil": "rustikal"
     }
   }
 }

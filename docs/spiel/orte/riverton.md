@@ -947,11 +947,11 @@ kommen mit ihren Dialogen in Runde 6.
 
 ## Runde 7 (10.11.2026): Weg 2 mit Stellwerk und Belebung (niedrig-1)
 
-**Zugpartie am Bahndamm** (Dokument 15, 2.2): südlich des Weges am Signalmast ein kleines
-Stellwerkshäuschen (`wc8Stellwerk`, Ersatzbild bis zum bestellten Stellwerk), davor eine Bank
-(`wc8StellwerkBank`) und die Tafel an der Hauswand (`wc8StellwerkTafel`); Wiese mit Platz für drei bis
-sechs Figuren. Lage je Variante relativ zum Signal (A 38, B 24, C 40): Häuschen bei (Signal + 2, 11),
-Tafel (Signal + 7, 12), Bank (Signal − 2, 11).
+**Zugpartie am Bahndamm** (Dokument 15, 2.2): südlich des Weges am Signalmast das Stellwerk
+(`wc8Stellwerk`, eigenes Bild `stellwerk.png`, 4 × 5, mit Tafel an der Hauswand neben der Tür), davor
+eine Bank (`wc8StellwerkBank`); Wiese mit Platz für drei bis sechs Figuren. Lage je Variante relativ
+zum Signal (A 38, B 24, C 40): Stellwerk bei (Signal + 2, 10), Tür in Spalte Signal + 4, Bank
+(Signal − 2, 11).
 
 ### Für Runde 6 (Felder bleiben begehbar)
 

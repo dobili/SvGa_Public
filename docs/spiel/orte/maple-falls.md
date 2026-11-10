@@ -571,10 +571,12 @@ Damit die Karten die Rückkehr in späteren Akten tragen, ohne neu gezeichnet zu
 
 ## Runde 7 (10.11.2026): Gebäude und Belebung
 
-Nach Regel 10.51 und 10.53, ohne das gewählte Bild zu ändern. Drei Kulissenhäuser ohne Innenraum:
-`mf8KulisseHausRot` im Garten zwischen den beiden Bauernhäusern im Süden (12, 37), dazu in zweiter
-Reihe hinter dem Diner `mf8KulisseHausBlau` (33, 10) und `mf8KulisseHausKlein` (36, 5). Damit 12
-Gebäude. Belebung: 12 Statisten, 9 davon ansprechbar (Sätze unter `statist.mapleFalls.aussen.*`,
-gemischt nach Dokument 16, 3.2: Welt, Lieblingszug, Geschichte in zwei Teilen, Rat, zweimal
-Schachgeschichte, Missverständnis, Perfect Move, Motiv), dazu Hund, Tauben, Eichhörnchen und
-Katze.
+Nach Regel 10.51 und 10.53, ohne das gewählte Bild zu ändern. Drei Kulissenhäuser in voller Größe,
+ohne Innenraum (Wunsch des Autors: Größe zeigen): `mf8KulisseBauernhaus` in zweiter Reihe hinter dem
+Diner (31, 4); `mf8KulisseLaden` (Markt) an der Hintergasse im Süden, in der Lücke zwischen den beiden
+Bauernhäusern (11, 32), dafür sind die Seitenzäune der Lücke und das Beet weg; `mf8KulisseStadthaus`
+am Ostrand (57, 30). Der Spielplatz ist dafür schmaler (Spalten 49–56) und behält Sandkasten,
+Klettergerüst, Schaukel, Bank und Mülleimer; die Rutsche ist weg. Damit 12 Gebäude. Belebung: 12
+Statisten, 9 davon ansprechbar (`statist.mapleFalls.aussen.*`), dazu Hund, Tauben, Eichhörnchen und
+Katze. Die Kinder mit Kreide zeigen die Königsjagd Lasker gegen Thomas, London 1912
+(`zeigt: laskerThomas`).

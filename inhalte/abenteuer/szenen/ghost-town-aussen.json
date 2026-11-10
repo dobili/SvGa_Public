@@ -89,28 +89,28 @@
       "feld": [17, 19]
     },
     {
-      "moebel": "gt8Bretterbude",
+      "moebel": "gt8HuetteA",
       "feld": [3, 6]
     },
     {
-      "moebel": "gt8Blockhaus",
-      "feld": [11, 7]
+      "moebel": "gt8Post",
+      "feld": [11, 5]
     },
     {
-      "moebel": "gt8Station",
-      "feld": [40, 6]
+      "moebel": "gt8HuetteB",
+      "feld": [41, 7]
     },
     {
-      "moebel": "gt8Bretterbude",
-      "feld": [48, 6]
+      "moebel": "gt8Bank",
+      "feld": [9, 25]
+    },
+    {
+      "moebel": "gt8Hotel",
+      "feld": [17, 24]
     },
     {
       "moebel": "gt8Mietstall",
-      "feld": [24, 25]
-    },
-    {
-      "moebel": "gt8HausVerwittertA",
-      "feld": [9, 26]
+      "feld": [26, 25]
     },
     {
       "moebel": "gt7Wasserturm",
@@ -118,11 +118,7 @@
     },
     {
       "moebel": "gt7Traenke",
-      "feld": [13, 25]
-    },
-    {
-      "moebel": "gt7PlanwagenKaputt",
-      "feld": [33, 25]
+      "feld": [2, 25]
     },
     {
       "moebel": "gt7Stollen",
@@ -438,7 +434,15 @@
     },
     {
       "moebel": "gt7KaktusBluete",
+      "feld": [17, 34]
+    },
+    {
+      "moebel": "gt7KaktusBluete",
       "feld": [38, 25]
+    },
+    {
+      "moebel": "gt7Saguaro",
+      "feld": [50, 6]
     },
     {
       "moebel": "gt7Tumbleweed",
@@ -493,6 +497,14 @@
       "feld": [36, 5]
     },
     {
+      "moebel": "gt7Saguaro",
+      "feld": [24, 34]
+    },
+    {
+      "moebel": "gt7TumbleweedGross",
+      "feld": [52, 7]
+    },
+    {
       "moebel": "gt7Stein",
       "feld": [28, 8]
     },
@@ -509,8 +521,16 @@
       "feld": [25, 7]
     },
     {
+      "moebel": "gt7Stein",
+      "feld": [6, 11]
+    },
+    {
       "moebel": "gt7Tumbleweed",
       "feld": [2, 26]
+    },
+    {
+      "moebel": "gt7Tumbleweed",
+      "feld": [8, 6]
     },
     {
       "moebel": "gt7Tumbleweed",
@@ -541,16 +561,24 @@
       "feld": [20, 6]
     },
     {
+      "moebel": "gt7Kaktus",
+      "feld": [21, 35]
+    },
+    {
       "moebel": "gt7Felsgruppe",
       "feld": [38, 6]
+    },
+    {
+      "moebel": "gt7Felsgruppe",
+      "feld": [47, 9]
     },
     {
       "moebel": "gt7Tumbleweed",
       "feld": [26, 7]
     },
     {
-      "moebel": "gt7TumbleweedGross",
-      "feld": [46, 9]
+      "moebel": "gt7KaktusBluete",
+      "feld": [12, 32]
     },
     {
       "moebel": "gt7Tumbleweed",
@@ -559,6 +587,14 @@
     {
       "moebel": "gt7KaktusBluete",
       "feld": [25, 8]
+    },
+    {
+      "moebel": "gt7KaktusBluete",
+      "feld": [26, 33]
+    },
+    {
+      "moebel": "gt7Stein",
+      "feld": [52, 9]
     },
     {
       "moebel": "gt7Kaktus",

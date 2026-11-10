@@ -13,7 +13,8 @@ describe("tierartVon", () => {
   it("findet eigene Bilder und nahen Ersatz", () => {
     expect(tierartVon("hund")).toBe("hund");
     expect(tierartVon("werkskatzeAussen")).toBe("katze");
-    expect(tierartVon("reh")).toBe("ziege");
+    expect(tierartVon("reh")).toBe("reh");
+    expect(tierartVon("wapiti")).toBe("hirsch");
     expect(tierartVon("moewen")).toBe("moewe");
     expect(tierartVon("specht")).toBe("kraehe");
     expect(tierartVon("wuestenfuchs")).toBe("hund");
@@ -22,16 +23,17 @@ describe("tierartVon", () => {
     expect(tierartVon("bisonherde")).toBe("bison");
     expect(tierartVon("eichhoernchen")).toBe("hase");
     expect(tierartVon("drohne")).toBe("drohne");
+    expect(tierartVon("saugroboter")).toBe("lieferroboter");
   });
 
   it("zeichnet nichts ohne passenden Ersatz", () => {
     expect(tierartVon("wind")).toBeNull();
-    expect(tierartVon("saugroboter")).toBeNull();
+    expect(tierartVon("einhorn")).toBeNull();
   });
 
   it("nimmt die Eigenschaft bild, wenn es den Bogen gibt", () => {
     expect(tierartVon("bishop", "hund")).toBe("hund");
-    expect(tierartVon("reh", "einhorn")).toBe("ziege");
+    expect(tierartVon("reh", "einhorn")).toBe("reh");
   });
 
   it("kennt für jede Ersatzart die Rahmengröße", () => {

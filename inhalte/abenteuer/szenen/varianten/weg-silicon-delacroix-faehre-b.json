@@ -1037,12 +1037,36 @@
     {
       "name": "fundFlaschenpost",
       "feld": [8, 52]
+    },
+    {
+      "name": "ereignisKapitaen",
+      "feld": [19, 23]
+    },
+    {
+      "name": "ladung",
+      "feld": [15, 62]
+    },
+    {
+      "name": "delfin",
+      "feld": [21, 52]
+    },
+    {
+      "name": "seite02",
+      "feld": [21, 44]
+    },
+    {
+      "name": "finchTurmA",
+      "feld": [9, 46]
     }
   ],
   "figuren": [
     {
       "name": "schiffskoch",
       "feld": [17, 25]
+    },
+    {
+      "name": "kapitaen",
+      "feld": [16, 26]
     }
   ],
   "belebung": [
@@ -1051,7 +1075,7 @@
       "typ": "statist",
       "feld": [19, 10],
       "eigenschaften": {
-        "von": "19,8",
+        "von": "18,7",
         "bis": "19,18",
         "tun": "prüft die Ladungsgurte",
         "wann": "tag",

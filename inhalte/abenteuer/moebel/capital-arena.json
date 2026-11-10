@@ -1270,6 +1270,145 @@
       "blick": "unten",
       "breite": 64,
       "hoehe": 16
+    },
+    "ci8ZugGraffiti": {
+      "quelle": "modern-exteriors/Modern_Exteriors_16x16/ME_Theme_Sorter_16x16/20_Subway_and_Train_Station_Singles_16x16/ME_Singles_Subway_and_Train_Station_16x16_Example_Graffiti_Train.png",
+      "breite": 288,
+      "hoehe": 64,
+      "kollision": true,
+      "art": "fahrzeug",
+      "zustand": "alt",
+      "stil": "industrie",
+      "blick": "unten"
+    },
+    "ci8Schiene": {
+      "quelle": "modern-exteriors/Modern_Exteriors_16x16/ME_Theme_Sorter_16x16/20_Subway_and_Train_Station_Singles_16x16/ME_Singles_Subway_and_Train_Station_16x16_Grey_Rail_Modular_Horizontal.png",
+      "breite": 16,
+      "hoehe": 32,
+      "kollision": false,
+      "art": "boden",
+      "zustand": "alt",
+      "stil": "industrie"
+    },
+    "ci8Pfeiler": {
+      "quelle": "modern-exteriors/Modern_Exteriors_16x16/ME_Theme_Sorter_16x16/20_Subway_and_Train_Station_Singles_16x16/ME_Singles_Subway_and_Train_Station_16x16_Big_Pillar.png",
+      "breite": 16,
+      "hoehe": 80,
+      "kollision": true,
+      "art": "saeule",
+      "zustand": "alt",
+      "stil": "industrie",
+      "blick": "unten"
+    },
+    "ci8Bank": {
+      "quelle": "modern-exteriors/Modern_Exteriors_16x16/ME_Theme_Sorter_16x16/20_Subway_and_Train_Station_Singles_16x16/ME_Singles_Subway_and_Train_Station_16x16_Three_Seats_Grey_Bench_Frontal_1.png",
+      "breite": 48,
+      "hoehe": 16,
+      "kollision": true,
+      "art": "bank",
+      "zustand": "alt",
+      "stil": "industrie",
+      "blick": "unten"
+    },
+    "ci8BankB": {
+      "quelle": "modern-exteriors/Modern_Exteriors_16x16/ME_Theme_Sorter_16x16/20_Subway_and_Train_Station_Singles_16x16/ME_Singles_Subway_and_Train_Station_16x16_Three_Seats_Grey_Bench_Frontal_2.png",
+      "breite": 48,
+      "hoehe": 16,
+      "kollision": true,
+      "art": "bank",
+      "zustand": "alt",
+      "stil": "industrie",
+      "blick": "unten"
+    },
+    "ci8Drehkreuz": {
+      "quelle": "modern-exteriors/Modern_Exteriors_16x16/ME_Theme_Sorter_16x16/20_Subway_and_Train_Station_Singles_16x16/ME_Singles_Subway_and_Train_Station_16x16_Turnstile_Closed.png",
+      "breite": 32,
+      "hoehe": 64,
+      "kollision": true,
+      "art": "geraet",
+      "zustand": "alt",
+      "stil": "industrie",
+      "blick": "unten"
+    },
+    "ci8Gelaender": {
+      "quelle": "modern-exteriors/Modern_Exteriors_16x16/ME_Theme_Sorter_16x16/20_Subway_and_Train_Station_Singles_16x16/ME_Singles_Subway_and_Train_Station_16x16_Railing.png",
+      "breite": 48,
+      "hoehe": 16,
+      "kollision": true,
+      "art": "zaun",
+      "zustand": "alt",
+      "stil": "industrie",
+      "blick": "unten"
+    },
+    "ci8GraffitiSchrift": {
+      "quelle": "modern-exteriors/Modern_Exteriors_16x16/ME_Theme_Sorter_16x16/20_Subway_and_Train_Station_Singles_16x16/ME_Singles_Subway_and_Train_Station_16x16_Writing_Graffiti_1.png",
+      "breite": 80,
+      "hoehe": 48,
+      "kollision": false,
+      "art": "bild",
+      "zustand": "alt",
+      "stil": "industrie",
+      "blick": "unten"
+    },
+    "ci8GraffitiSchriftB": {
+      "quelle": "modern-exteriors/Modern_Exteriors_16x16/ME_Theme_Sorter_16x16/20_Subway_and_Train_Station_Singles_16x16/ME_Singles_Subway_and_Train_Station_16x16_Writing_Graffiti_2.png",
+      "breite": 64,
+      "hoehe": 48,
+      "kollision": false,
+      "art": "bild",
+      "zustand": "alt",
+      "stil": "industrie",
+      "blick": "unten"
+    },
+    "ci8GraffitiBlume": {
+      "quelle": "modern-exteriors/Modern_Exteriors_16x16/ME_Theme_Sorter_16x16/20_Subway_and_Train_Station_Singles_16x16/ME_Singles_Subway_and_Train_Station_16x16_Flower_Graffiti.png",
+      "breite": 48,
+      "hoehe": 48,
+      "kollision": false,
+      "art": "bild",
+      "zustand": "alt",
+      "stil": "industrie",
+      "blick": "unten"
+    },
+    "ci8GraffitiWolf": {
+      "quelle": "modern-exteriors/Modern_Exteriors_16x16/ME_Theme_Sorter_16x16/20_Subway_and_Train_Station_Singles_16x16/ME_Singles_Subway_and_Train_Station_16x16_Black_Wolf_Clean_Graffiti.png",
+      "breite": 48,
+      "hoehe": 32,
+      "kollision": false,
+      "art": "bild",
+      "zustand": "alt",
+      "stil": "industrie",
+      "blick": "unten"
+    },
+    "ci8GraffitiFrosch": {
+      "quelle": "modern-exteriors/Modern_Exteriors_16x16/ME_Theme_Sorter_16x16/20_Subway_and_Train_Station_Singles_16x16/ME_Singles_Subway_and_Train_Station_16x16_Frog_Clean_Graffiti.png",
+      "breite": 48,
+      "hoehe": 48,
+      "kollision": false,
+      "art": "bild",
+      "zustand": "alt",
+      "stil": "industrie",
+      "blick": "unten"
+    },
+    "ci8Plakate3": {
+      "quelle": "modern-exteriors/Modern_Exteriors_16x16/ME_Theme_Sorter_16x16/20_Subway_and_Train_Station_Singles_16x16/ME_Singles_Subway_and_Train_Station_16x16_Three_Posters.png",
+      "breite": 48,
+      "hoehe": 16,
+      "kollision": false,
+      "art": "bild",
+      "zustand": "alt",
+      "stil": "industrie",
+      "blick": "unten"
+    },
+    "ci8Leuchte": {
+      "quelle": "modern-exteriors/Modern_Exteriors_16x16/ME_Theme_Sorter_16x16/20_Subway_and_Train_Station_Singles_16x16/ME_Singles_Subway_and_Train_Station_16x16_Led_Light_On.png",
+      "breite": 32,
+      "hoehe": 16,
+      "kollision": false,
+      "art": "bild",
+      "zustand": "alt",
+      "stil": "industrie",
+      "blick": "unten"
     }
   }
 }

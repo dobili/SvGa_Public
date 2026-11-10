@@ -287,6 +287,10 @@
     {
       "name": "inselfaehre",
       "feld": [46, 35]
+    },
+    {
+      "name": "netze",
+      "feld": [46, 16]
     }
   ],
   "figuren": [],

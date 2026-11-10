@@ -63,9 +63,21 @@ vor sich. Schwarz stellt sie selbst auf, am Leuchtturm von Weg 11.
   selbst am Leuchtturm.
 - **Verstecke:** Die Figuren liegen nicht offen herum, aber nie ganz ohne Hinweis. Jede Fundstelle
   hat ein kleines Zeichen, das Odette hinterlässt: ein Finkenpiktogramm aus Kreide oder Blech.
-- **Ende:** Am Leuchtturm stellt sie Schwarz auf. Das Problem ist Matt in drei. Es wird in Runde 6
-  mit der Engine gebaut, aus den 16 vorgegebenen Feldern; legal und eindeutig, wie bei
-  `pipeline.zugfolgen.konstruieren`.
+- **Ende:** Am Leuchtturm stellt Odette Schwarz auf. Ihr Meisterproblem ist eine Falle, keine
+  Mattaufgabe: Weiß hat alle 16 Figuren noch auf dem Brett, so wie {held} sie gefunden hat, die
+  meisten auf ihren Startfeldern.
+  - **Stellung:** nach 1.e4 e5 2.Sf3 d6 3.Lc4 Lg4 4.Sc3 g6, die Falle von Légal (Seekadettenmatt,
+    Paris um 1750).
+  - **Felder unter den Figuren:**
+    - Türme a1 und h1, Springer c3 und f3, Läufer c1 und c4, Dame d1, König e1;
+    - Bauern a2, b2, c2, d2, e4, f2, g2, h2.
+  - **Aufgabe:** „Weiß zieht und gewinnt.“ Die Lösung 5.Sxe5! lässt die eigene Dame hängen:
+    - 5…Lxd1 6.Lxf7+ Ke7 7.Sd5# ist Matt;
+    - 5…dxe5 6.Dxg4 gewinnt einen Bauern.
+  - **Geprüft** mit python-chess. Nach dem Lösen spielt Odette die Falle vor (Vorführung
+    `finchFalle`).
+  - Odette: „Die Dame ist die teuerste Figur. Deshalb nimmt sie jeder. Deshalb ist sie der beste
+    Köder.“
 - **Lohn:** der Figurensatz „Finchs Buchsbaum“ als Extra der App (E3) und ein Platz im Album.
 - **Später:** Wer weniger als 16 Figuren hat, bekommt am Leuchtturm einen Hinweis auf die fehlenden
   Wege. Odette wartet bis zum Ende des Spiels dort.
@@ -180,7 +192,7 @@ Jeder Abschnitt nennt:
   3. Wer es löst, bekommt die Karte der Finch-Jagd (1.1).
   4. Ambrose kennt den Stil: „Diese Art Aufgabe hat man 1850 in den Zeitungen gedruckt. Sie ist
      schön und gemein.“
-- **Schach:** drei Finch-Fallen, immer schwerer (Kapitel 0 und 1: Matt, Patt).
+- **Schach:** drei Finch-Fallen, immer schwerer (Kapitel 4, Das Fallenkabinett).
 - **Lohn:**
   - die Karte der Jagd;
   - ein Problemheft als Fund mit drei weiteren Aufgaben für unterwegs;
@@ -269,7 +281,7 @@ Jeder Abschnitt nennt:
   4. Später findet {held} den „verlorenen Ohrstöpsel“ (schon geplant). Das ist Spur P2.
   5. Hinter der Raststätte ist der zweite Kreidespringer (K2).
 - **Schach:** eine Partie, in der der Gegner zufällig zwischen drei Kandidatenzügen wählt (einer
-  davon ein Fehler). {held} soll den Fehler bestrafen, wenn er kommt (Kapitel 4).
+  davon ein Fehler). {held} soll den Fehler bestrafen, wenn er kommt (Kapitel 7, Taktik).
 - **Später:**
   - **Akt 4:** Kiki kündigt ihren Vertrag. In Capital sitzt sie im Publikum und streamt ohne Logo.
 - **Lohn:** ein Ringlicht als Album-Foto „Live“; Buchseite Kapitel 4 an der Raststätte.
@@ -299,7 +311,7 @@ Jeder Abschnitt nennt:
   3. Auf dem Deich danach steht ein weißer Messwagen von Perfect Move. Ein Techniker misst den
      Pegel und lässt eine Mappe liegen: „Hochwasserhilfe: 40 Bildschirmtische, Nutzerdaten
      Port Delacroix“. Das ist Spur P3.
-- **Schach:** eine Studie (Kapitel 2, Wert und Kraft der Figuren; Unterverwandlung oder
+- **Schach:** eine Studie (Kapitel 10, Studien und Kuriositäten; Unterverwandlung oder
   Läuferopfer). Die drei falschen Lösungen widerlegt {held} je mit einem Zug.
 - **Lohn:**
   - das Horn (Klang beim Anlegen, ab dann bei jeder Überfahrt);
@@ -328,7 +340,7 @@ Jeder Abschnitt nennt:
      hat die Partie gegen einen Hafenarbeiter verloren und es damals niemandem erzählt.
   3. {held} spielt die Stellung nach dem 20. Zug weiter, mit Ambroses Seite. Ambrose verliert
      nicht noch einmal, oder doch, und lacht.
-- **Schach:** Stellung aus der alten Partie, weiterspielen gegen die Engine (Kapitel 5).
+- **Schach:** Stellung aus der alten Partie, weiterspielen gegen die Engine (Kapitel 11, Beispielpartien).
 - **Lohn:**
   - das Formular als Fund für Ambroses Album;
   - Pépé behält die Kiste und bringt sie ins Musikhaus;
@@ -353,7 +365,7 @@ Jeder Abschnitt nennt:
   3. Rufen kann man aber nur, was man sich merkt: Wren sieht das Brett nicht. Es ist eine kleine
      Übung im Blindspiel.
 - **Schach:** Stellung mit sieben Figuren, die {held} kurz sieht und dann aus dem Gedächtnis
-  beschreibt (Kapitel 6). Dazu ein Zug, der die Partie entscheidet.
+  beschreibt (Kapitel 7, Typische Mattbilder). Dazu ein Zug, der die Partie entscheidet.
 - **Lohn:** ein Karabiner als Fund; Buchseite Kapitel 6 unter dem Felsbogen.
 - **Auf der Karte:**
   - **Ereignisort:** Fuß der Felswand am Felsbogen. Seil, Rucksäcke, Kreidebeutel; zwei Figuren
@@ -379,8 +391,8 @@ Jeder Abschnitt nennt:
      ist Spur P4.
   4. Das Hinterzimmer des Diners ist Treffpunkt K3 der Kreidespringer.
 - **Schach:** eine Partie, bei der {held} die Züge des Gegners nur hört. Ein Brett gibt es auf dem
-  Bildschirm, aber die gegnerischen Züge kommen als Notation (Kapitel 8: Notation lesen,
-  Königsaktivität).
+  Bildschirm, aber die gegnerischen Züge kommen als Notation (Notation aus Kapitel 0;
+  Königsaktivität aus Kapitel 8).
 - **Lohn:**
   - der Funkname „{held} Junior“, ab dann bei jedem Besuch im Diner;
   - 30 Münzen;
@@ -411,7 +423,7 @@ Jeder Abschnitt nennt:
   3. Kira Vell spielt dabei die Rolle der Unruhestifterin: Sie hat die Diplome selbst gemalt, mit
      Falke und Bison darauf.
 - **Schach:** {held} wählt für jedes Kind die passende Aufgabe aus drei. Gut ist die, die das Kind
-  schaffen kann und bei der es etwas lernt (Kapitel 3: Grundlagen der Eröffnung).
+  schaffen kann und bei der es etwas lernt (Kapitel 12, Trainingsmethodik).
 - **Lohn:**
   - ein selbstgemaltes Diplom als Album-Seite;
   - Ambrose: „Lehren ist Spielen mit einem Brett, das man nicht sieht.“;
@@ -439,7 +451,7 @@ Jeder Abschnitt nennt:
   3. In der Prärie danach zieht ein Gewitter auf. {held} wartet mit Sturmjäger Ray Castillo im
      Sturmkeller und spielt beim Licht der Taschenlampe. Das ist eine ruhige Szene ohne Aufgabe.
 - **Schach:** eine Runde mit sechs Aufgaben in vier Minuten (Spielzeit). Die Uhr ist der Geysir.
-  Aufgaben aus Kapitel 9.
+  Aufgaben aus Kapitel 7 (Taktik).
 - **Lohn:**
   - Rangerabzeichen als Fund;
   - bei sechs von sechs das Album-Foto „Old Patience“;
@@ -465,7 +477,7 @@ Jeder Abschnitt nennt:
      hören, und protestieren, wenn sie geschlagen werden sollen: „Ich will nicht raus!“
   3. Bei der Holzfällerhütte am Weg ist Treffpunkt K4 der Kreidespringer.
 - **Schach:** eine kurze Partie ab einer Mittelspielstellung. Wer eine Figur ohne Not opfert,
-  bekommt einen Satz vom betroffenen Kind zu hören. Kapitel 10.
+  bekommt einen Satz vom betroffenen Kind zu hören (Kapitel 1, Grundprinzipien).
 - **Lohn:**
   - Album-Foto „Lebendschach“;
   - die Weste als Extra „Dein Aussehen“;
@@ -495,7 +507,7 @@ Jeder Abschnitt nennt:
      Arm zittert dann.
   4. Ambrose zum Schluss: „Eine Nähmaschine mit Ehrgeiz. Lasst ihn spielen, er hat sonst niemanden.“
 - **Schach:** Partie gegen Z-1. Die Engine spielt stark, bis {held} von der Hauptvariante abweicht.
-  Danach spielt sie wie Stufe 2 (Kapitel 11).
+  Danach spielt sie wie Stufe 2 (Kapitel 2, Klassische Eröffnungssysteme).
 - **Lohn:**
   - der Bauer von Z-1, eine Metallfigur, als Fund;
   - Spur P6;
@@ -529,8 +541,8 @@ Jeder Abschnitt nennt:
   5. **Abe** funkt eine Partie über das ganze Land: Jeder im Publikum stimmt über den nächsten Zug
      ab, gegen ihn. {held} darf einmal vorschlagen.
 - **Schach:**
-  - Simultan gegen fünf, je eine kurze Stellung mit Vorteil (Kapitel 12);
-  - Finch-Problem Matt in drei.
+  - Simultan gegen fünf, je eine kurze Stellung mit Vorteil (Kapitel 6, Abschnitt 6.8: den Vorteil verwerten);
+  - Finchs Falle: Weiß zieht und gewinnt (1.1).
 - **Lohn:**
   - Album-Foto „Weltschachtag“;
   - der König von Finch und das Problem (1.1);
@@ -587,7 +599,8 @@ Fundstellen bleiben frei begehbar.
 | Capital      | `innenstadt`, U-Bahnhof       | Nacht der Kreidespringer | –     | –                         | –                  | K5             |
 
 Zählung: 8 Bauern (A bis H), 2 Springer, 2 Läufer, 2 Türme, Dame, König, zusammen 16 Figuren.
-Buchseiten: 13 (Kapitel 0 bis 12).
+Buchseiten: 13 (Kapitel 0 bis 12). Die Kapitelbezüge im Schachteil folgen den Kapiteltiteln der App
+(`app/public/daten/de/a1/`); die Buchseite eines Wegs gehört nicht immer zum Thema seines Ereignisses.
 
 ## 4. Was die Technik dafür braucht (für Runde 6)
 
@@ -599,18 +612,19 @@ Das meiste geht mit dem, was es schon gibt:
 Neu oder zu erweitern:
 
 1. **Sammelkarte der Finch-Jagd:** eine Seite wie das Album mit 16 Kästchen und Feldnamen. Das
-   Meisterproblem baut die Pipeline mit der Engine (Runde 6).
-2. **Partie mit Kandidatenwahl** (Stream, 2.4): Der Gegner zieht zufällig einen von drei
+   Meisterproblem steht in Abschnitt 1.1, mit python-chess geprüft.
+2. **Finchs Falle** als Aufgabe „Weiß zieht und gewinnt“ mit beiden Antworten von Schwarz (Daten oben, Abschnitt 1.1).
+3. **Partie mit Kandidatenwahl** (Stream, 2.4): Der Gegner zieht zufällig einen von drei
    vorgegebenen Zügen. Das ist ein kleiner Zusatz zur Engine-Stufe.
-3. **Partie nach Gehör** (Funkschach, 2.8): Gegnerzüge erscheinen erst als Notation und dann auf
+4. **Partie nach Gehör** (Funkschach, 2.8): Gegnerzüge erscheinen erst als Notation und dann auf
    dem Brett.
-4. **Simultan** (2.13): fünf kurze Stellungsduelle hintereinander auf einer Tafel. Das reicht als
+5. **Simultan** (2.13): fünf kurze Stellungsduelle hintereinander auf einer Tafel. Das reicht als
    erste Fassung.
-5. **Gedächtnisstellung** (Seilschaft, 2.7): Stellung 5 Sekunden zeigen, dann leeres Brett zum
+6. **Gedächtnisstellung** (Seilschaft, 2.7): Stellung 5 Sekunden zeigen, dann leeres Brett zum
    Aufbauen. Das ist neu, aber klein.
-6. **Gegner mit Eröffnungsbuch und Bruch** (Z-1, 2.12): stark im Buch, danach schwach. Das ist eine
+7. **Gegner mit Eröffnungsbuch und Bruch** (Z-1, 2.12): stark im Buch, danach schwach. Das ist eine
    Fehlerprofil-Einstellung der vorhandenen Engine-Stufen (AP 11).
-7. **Lebendschach** (2.11): Figuren als Kinder auf der Karte. Bis zur Animation reicht die normale
+8. **Lebendschach** (2.11): Figuren als Kinder auf der Karte. Bis zur Animation reicht die normale
    Brettansicht mit dem Bild der Lichtung dahinter.
 
 ## 5. Offene Punkte für den Autor (Widerspruch genügt)

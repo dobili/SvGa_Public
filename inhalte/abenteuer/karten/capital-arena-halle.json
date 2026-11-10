@@ -11,7 +11,7 @@
  "tilewidth": 16,
  "tileheight": 16,
  "nextlayerid": 5,
- "nextobjectid": 76,
+ "nextobjectid": 77,
  "layers": [
   {
    "id": 1,
@@ -1926,6 +1926,17 @@
     },
     {
      "id": 6,
+     "name": "banner",
+     "type": "ausloeser",
+     "x": 192,
+     "y": 48,
+     "width": 16,
+     "height": 16,
+     "rotation": 0,
+     "visible": true
+    },
+    {
+     "id": 7,
      "name": "victor",
      "type": "figur",
      "x": 256,
@@ -1936,7 +1947,7 @@
      "visible": true
     },
     {
-     "id": 7,
+     "id": 8,
      "name": "nova",
      "type": "figur",
      "x": 176,
@@ -1947,7 +1958,7 @@
      "visible": true
     },
     {
-     "id": 8,
+     "id": 9,
      "name": "bea",
      "type": "figur",
      "x": 80,
@@ -1958,7 +1969,7 @@
      "visible": true
     },
     {
-     "id": 9,
+     "id": 10,
      "name": "marcus",
      "type": "figur",
      "x": 304,
@@ -1969,7 +1980,7 @@
      "visible": true
     },
     {
-     "id": 10,
+     "id": 11,
      "name": "tobias",
      "type": "figur",
      "x": 368,
@@ -1980,7 +1991,7 @@
      "visible": true
     },
     {
-     "id": 11,
+     "id": 12,
      "name": "kade",
      "type": "figur",
      "x": 272,
@@ -1991,7 +2002,7 @@
      "visible": true
     },
     {
-     "id": 12,
+     "id": 13,
      "name": "turnierleiterin",
      "type": "figur",
      "x": 224,
@@ -2002,7 +2013,7 @@
      "visible": true
     },
     {
-     "id": 13,
+     "id": 14,
      "name": "lin",
      "type": "figur",
      "x": 352,
@@ -2013,7 +2024,7 @@
      "visible": true
     },
     {
-     "id": 14,
+     "id": 15,
      "name": "grahamHale",
      "type": "figur",
      "x": 416,
@@ -2024,7 +2035,7 @@
      "visible": true
     },
     {
-     "id": 15,
+     "id": 16,
      "name": "mama",
      "type": "figur",
      "x": 176,
@@ -2035,7 +2046,7 @@
      "visible": true
     },
     {
-     "id": 16,
+     "id": 17,
      "name": "juno",
      "type": "figur",
      "x": 192,
@@ -2046,7 +2057,7 @@
      "visible": true
     },
     {
-     "id": 17,
+     "id": 18,
      "name": "zuschauer",
      "type": "statist",
      "x": 112,
@@ -2084,7 +2095,7 @@
      ]
     },
     {
-     "id": 18,
+     "id": 19,
      "name": "reporter",
      "type": "statist",
      "x": 320,
@@ -2122,7 +2133,7 @@
      ]
     },
     {
-     "id": 19,
+     "id": 20,
      "name": "vereinsmutter",
      "type": "statist",
      "x": 80,
@@ -2160,7 +2171,7 @@
      ]
     },
     {
-     "id": 20,
+     "id": 21,
      "name": "ordner",
      "type": "statist",
      "x": 400,
@@ -2198,7 +2209,7 @@
      ]
     },
     {
-     "id": 21,
+     "id": 22,
      "name": "ca7Fenster",
      "type": "moebel",
      "x": 48,
@@ -2221,7 +2232,7 @@
      ]
     },
     {
-     "id": 22,
+     "id": 23,
      "name": "ca7Fenster",
      "type": "moebel",
      "x": 400,
@@ -2244,7 +2255,7 @@
      ]
     },
     {
-     "id": 23,
+     "id": 24,
      "name": "ca7Banner",
      "type": "moebel",
      "x": 192,
@@ -2267,7 +2278,7 @@
      ]
     },
     {
-     "id": 24,
+     "id": 25,
      "name": "ca7Buehne",
      "type": "moebel",
      "x": 192,
@@ -2290,7 +2301,7 @@
      ]
     },
     {
-     "id": 25,
+     "id": 26,
      "name": "ca7Tisch",
      "type": "moebel",
      "x": 224,
@@ -2313,7 +2324,7 @@
      ]
     },
     {
-     "id": 26,
+     "id": 27,
      "name": "ca7Brett",
      "type": "moebel",
      "x": 234,
@@ -2336,7 +2347,7 @@
      ]
     },
     {
-     "id": 27,
+     "id": 28,
      "name": "ca7StuhlRechts",
      "type": "moebel",
      "x": 208,
@@ -2359,7 +2370,7 @@
      ]
     },
     {
-     "id": 28,
+     "id": 29,
      "name": "ca7StuhlLinks",
      "type": "moebel",
      "x": 256,
@@ -2382,33 +2393,10 @@
      ]
     },
     {
-     "id": 29,
-     "name": "ca7Tribuene",
-     "type": "moebel",
-     "x": 32,
-     "y": 48,
-     "width": 64,
-     "height": 48,
-     "rotation": 0,
-     "visible": true,
-     "properties": [
-      {
-       "name": "tiefe",
-       "type": "int",
-       "value": 88
-      },
-      {
-       "name": "kollision",
-       "type": "bool",
-       "value": true
-      }
-     ]
-    },
-    {
      "id": 30,
      "name": "ca7Tribuene",
      "type": "moebel",
-     "x": 96,
+     "x": 32,
      "y": 48,
      "width": 64,
      "height": 48,
@@ -2431,7 +2419,7 @@
      "id": 31,
      "name": "ca7Tribuene",
      "type": "moebel",
-     "x": 320,
+     "x": 96,
      "y": 48,
      "width": 64,
      "height": 48,
@@ -2454,7 +2442,7 @@
      "id": 32,
      "name": "ca7Tribuene",
      "type": "moebel",
-     "x": 384,
+     "x": 320,
      "y": 48,
      "width": 64,
      "height": 48,
@@ -2475,19 +2463,19 @@
     },
     {
      "id": 33,
-     "name": "ca7Klapptisch",
+     "name": "ca7Tribuene",
      "type": "moebel",
-     "x": 64,
-     "y": 144,
-     "width": 32,
-     "height": 32,
+     "x": 384,
+     "y": 48,
+     "width": 64,
+     "height": 48,
      "rotation": 0,
      "visible": true,
      "properties": [
       {
        "name": "tiefe",
        "type": "int",
-       "value": 168
+       "value": 88
       },
       {
        "name": "kollision",
@@ -2498,6 +2486,29 @@
     },
     {
      "id": 34,
+     "name": "ca7Klapptisch",
+     "type": "moebel",
+     "x": 64,
+     "y": 144,
+     "width": 32,
+     "height": 32,
+     "rotation": 0,
+     "visible": true,
+     "properties": [
+      {
+       "name": "tiefe",
+       "type": "int",
+       "value": 168
+      },
+      {
+       "name": "kollision",
+       "type": "bool",
+       "value": true
+      }
+     ]
+    },
+    {
+     "id": 35,
      "name": "ca7Brett",
      "type": "moebel",
      "x": 74,
@@ -2520,7 +2531,7 @@
      ]
     },
     {
-     "id": 35,
+     "id": 36,
      "name": "ca7StuhlVorn",
      "type": "moebel",
      "x": 64,
@@ -2534,29 +2545,6 @@
        "name": "tiefe",
        "type": "int",
        "value": 152
-      },
-      {
-       "name": "kollision",
-       "type": "bool",
-       "value": true
-      }
-     ]
-    },
-    {
-     "id": 36,
-     "name": "ca7StuhlRuecken",
-     "type": "moebel",
-     "x": 64,
-     "y": 160,
-     "width": 16,
-     "height": 32,
-     "rotation": 0,
-     "visible": true,
-     "properties": [
-      {
-       "name": "tiefe",
-       "type": "int",
-       "value": 184
       },
       {
        "name": "kollision",
@@ -2567,6 +2555,29 @@
     },
     {
      "id": 37,
+     "name": "ca7StuhlRuecken",
+     "type": "moebel",
+     "x": 64,
+     "y": 160,
+     "width": 16,
+     "height": 32,
+     "rotation": 0,
+     "visible": true,
+     "properties": [
+      {
+       "name": "tiefe",
+       "type": "int",
+       "value": 184
+      },
+      {
+       "name": "kollision",
+       "type": "bool",
+       "value": true
+      }
+     ]
+    },
+    {
+     "id": 38,
      "name": "ca7Klapptisch",
      "type": "moebel",
      "x": 64,
@@ -2589,7 +2600,7 @@
      ]
     },
     {
-     "id": 38,
+     "id": 39,
      "name": "ca7Brett",
      "type": "moebel",
      "x": 74,
@@ -2612,7 +2623,7 @@
      ]
     },
     {
-     "id": 39,
+     "id": 40,
      "name": "ca7StuhlVorn",
      "type": "moebel",
      "x": 64,
@@ -2626,29 +2637,6 @@
        "name": "tiefe",
        "type": "int",
        "value": 216
-      },
-      {
-       "name": "kollision",
-       "type": "bool",
-       "value": true
-      }
-     ]
-    },
-    {
-     "id": 40,
-     "name": "ca7StuhlRuecken",
-     "type": "moebel",
-     "x": 64,
-     "y": 224,
-     "width": 16,
-     "height": 32,
-     "rotation": 0,
-     "visible": true,
-     "properties": [
-      {
-       "name": "tiefe",
-       "type": "int",
-       "value": 248
       },
       {
        "name": "kollision",
@@ -2659,11 +2647,11 @@
     },
     {
      "id": 41,
-     "name": "ca7Klapptisch",
+     "name": "ca7StuhlRuecken",
      "type": "moebel",
-     "x": 128,
-     "y": 144,
-     "width": 32,
+     "x": 64,
+     "y": 224,
+     "width": 16,
      "height": 32,
      "rotation": 0,
      "visible": true,
@@ -2671,7 +2659,7 @@
       {
        "name": "tiefe",
        "type": "int",
-       "value": 168
+       "value": 248
       },
       {
        "name": "kollision",
@@ -2682,6 +2670,29 @@
     },
     {
      "id": 42,
+     "name": "ca7Klapptisch",
+     "type": "moebel",
+     "x": 128,
+     "y": 144,
+     "width": 32,
+     "height": 32,
+     "rotation": 0,
+     "visible": true,
+     "properties": [
+      {
+       "name": "tiefe",
+       "type": "int",
+       "value": 168
+      },
+      {
+       "name": "kollision",
+       "type": "bool",
+       "value": true
+      }
+     ]
+    },
+    {
+     "id": 43,
      "name": "ca7Brett",
      "type": "moebel",
      "x": 138,
@@ -2704,7 +2715,7 @@
      ]
     },
     {
-     "id": 43,
+     "id": 44,
      "name": "ca7StuhlVorn",
      "type": "moebel",
      "x": 128,
@@ -2718,29 +2729,6 @@
        "name": "tiefe",
        "type": "int",
        "value": 152
-      },
-      {
-       "name": "kollision",
-       "type": "bool",
-       "value": true
-      }
-     ]
-    },
-    {
-     "id": 44,
-     "name": "ca7StuhlRuecken",
-     "type": "moebel",
-     "x": 128,
-     "y": 160,
-     "width": 16,
-     "height": 32,
-     "rotation": 0,
-     "visible": true,
-     "properties": [
-      {
-       "name": "tiefe",
-       "type": "int",
-       "value": 184
       },
       {
        "name": "kollision",
@@ -2751,6 +2739,29 @@
     },
     {
      "id": 45,
+     "name": "ca7StuhlRuecken",
+     "type": "moebel",
+     "x": 128,
+     "y": 160,
+     "width": 16,
+     "height": 32,
+     "rotation": 0,
+     "visible": true,
+     "properties": [
+      {
+       "name": "tiefe",
+       "type": "int",
+       "value": 184
+      },
+      {
+       "name": "kollision",
+       "type": "bool",
+       "value": true
+      }
+     ]
+    },
+    {
+     "id": 46,
      "name": "ca7Klapptisch",
      "type": "moebel",
      "x": 128,
@@ -2773,7 +2784,7 @@
      ]
     },
     {
-     "id": 46,
+     "id": 47,
      "name": "ca7Brett",
      "type": "moebel",
      "x": 138,
@@ -2796,7 +2807,7 @@
      ]
     },
     {
-     "id": 47,
+     "id": 48,
      "name": "ca7StuhlVorn",
      "type": "moebel",
      "x": 128,
@@ -2810,29 +2821,6 @@
        "name": "tiefe",
        "type": "int",
        "value": 216
-      },
-      {
-       "name": "kollision",
-       "type": "bool",
-       "value": true
-      }
-     ]
-    },
-    {
-     "id": 48,
-     "name": "ca7StuhlRuecken",
-     "type": "moebel",
-     "x": 128,
-     "y": 224,
-     "width": 16,
-     "height": 32,
-     "rotation": 0,
-     "visible": true,
-     "properties": [
-      {
-       "name": "tiefe",
-       "type": "int",
-       "value": 248
       },
       {
        "name": "kollision",
@@ -2843,11 +2831,11 @@
     },
     {
      "id": 49,
-     "name": "ca7Klapptisch",
+     "name": "ca7StuhlRuecken",
      "type": "moebel",
-     "x": 320,
-     "y": 144,
-     "width": 32,
+     "x": 128,
+     "y": 224,
+     "width": 16,
      "height": 32,
      "rotation": 0,
      "visible": true,
@@ -2855,7 +2843,7 @@
       {
        "name": "tiefe",
        "type": "int",
-       "value": 168
+       "value": 248
       },
       {
        "name": "kollision",
@@ -2866,6 +2854,29 @@
     },
     {
      "id": 50,
+     "name": "ca7Klapptisch",
+     "type": "moebel",
+     "x": 320,
+     "y": 144,
+     "width": 32,
+     "height": 32,
+     "rotation": 0,
+     "visible": true,
+     "properties": [
+      {
+       "name": "tiefe",
+       "type": "int",
+       "value": 168
+      },
+      {
+       "name": "kollision",
+       "type": "bool",
+       "value": true
+      }
+     ]
+    },
+    {
+     "id": 51,
      "name": "ca7Brett",
      "type": "moebel",
      "x": 330,
@@ -2888,7 +2899,7 @@
      ]
     },
     {
-     "id": 51,
+     "id": 52,
      "name": "ca7StuhlVorn",
      "type": "moebel",
      "x": 320,
@@ -2911,7 +2922,7 @@
      ]
     },
     {
-     "id": 52,
+     "id": 53,
      "name": "ca7StuhlRuecken",
      "type": "moebel",
      "x": 320,
@@ -2934,7 +2945,7 @@
      ]
     },
     {
-     "id": 53,
+     "id": 54,
      "name": "ca7Klapptisch",
      "type": "moebel",
      "x": 320,
@@ -2957,7 +2968,7 @@
      ]
     },
     {
-     "id": 54,
+     "id": 55,
      "name": "ca7Brett",
      "type": "moebel",
      "x": 330,
@@ -2980,7 +2991,7 @@
      ]
     },
     {
-     "id": 55,
+     "id": 56,
      "name": "ca7StuhlVorn",
      "type": "moebel",
      "x": 320,
@@ -3003,7 +3014,7 @@
      ]
     },
     {
-     "id": 56,
+     "id": 57,
      "name": "ca7StuhlRuecken",
      "type": "moebel",
      "x": 320,
@@ -3026,7 +3037,7 @@
      ]
     },
     {
-     "id": 57,
+     "id": 58,
      "name": "ca7Klapptisch",
      "type": "moebel",
      "x": 384,
@@ -3049,7 +3060,7 @@
      ]
     },
     {
-     "id": 58,
+     "id": 59,
      "name": "ca7Brett",
      "type": "moebel",
      "x": 394,
@@ -3072,7 +3083,7 @@
      ]
     },
     {
-     "id": 59,
+     "id": 60,
      "name": "ca7StuhlVorn",
      "type": "moebel",
      "x": 384,
@@ -3095,7 +3106,7 @@
      ]
     },
     {
-     "id": 60,
+     "id": 61,
      "name": "ca7StuhlRuecken",
      "type": "moebel",
      "x": 384,
@@ -3118,7 +3129,7 @@
      ]
     },
     {
-     "id": 61,
+     "id": 62,
      "name": "ca7Klapptisch",
      "type": "moebel",
      "x": 384,
@@ -3141,7 +3152,7 @@
      ]
     },
     {
-     "id": 62,
+     "id": 63,
      "name": "ca7Brett",
      "type": "moebel",
      "x": 394,
@@ -3164,7 +3175,7 @@
      ]
     },
     {
-     "id": 63,
+     "id": 64,
      "name": "ca7StuhlVorn",
      "type": "moebel",
      "x": 384,
@@ -3187,7 +3198,7 @@
      ]
     },
     {
-     "id": 64,
+     "id": 65,
      "name": "ca7StuhlRuecken",
      "type": "moebel",
      "x": 384,
@@ -3210,7 +3221,7 @@
      ]
     },
     {
-     "id": 65,
+     "id": 66,
      "name": "ca7Turnierwand",
      "type": "moebel",
      "x": 160,
@@ -3233,7 +3244,7 @@
      ]
     },
     {
-     "id": 66,
+     "id": 67,
      "name": "ca7Pressetisch",
      "type": "moebel",
      "x": 384,
@@ -3256,7 +3267,7 @@
      ]
     },
     {
-     "id": 67,
+     "id": 68,
      "name": "ca7Fanshop",
      "type": "moebel",
      "x": 32,
@@ -3279,7 +3290,7 @@
      ]
     },
     {
-     "id": 68,
+     "id": 69,
      "name": "ca7Muelleimer",
      "type": "moebel",
      "x": 288,
@@ -3302,7 +3313,7 @@
      ]
     },
     {
-     "id": 69,
+     "id": 70,
      "name": "ca7Pflanze",
      "type": "moebel",
      "x": 432,
@@ -3325,7 +3336,7 @@
      ]
     },
     {
-     "id": 70,
+     "id": 71,
      "name": "ca7Pflanze",
      "type": "moebel",
      "x": 432,
@@ -3348,7 +3359,7 @@
      ]
     },
     {
-     "id": 71,
+     "id": 72,
      "name": "ca7Pflanze",
      "type": "moebel",
      "x": 16,
@@ -3371,7 +3382,7 @@
      ]
     },
     {
-     "id": 72,
+     "id": 73,
      "name": "ca7Mikrofon2",
      "type": "moebel",
      "x": 288,
@@ -3394,7 +3405,7 @@
      ]
     },
     {
-     "id": 73,
+     "id": 74,
      "name": "ca7Mikrofon2",
      "type": "moebel",
      "x": 176,
@@ -3417,7 +3428,7 @@
      ]
     },
     {
-     "id": 74,
+     "id": 75,
      "name": "ca7Fussmatte",
      "type": "moebel",
      "x": 240,
@@ -3440,7 +3451,7 @@
      ]
     },
     {
-     "id": 75,
+     "id": 76,
      "name": "ca7Tuer",
      "type": "moebel",
      "x": 240,

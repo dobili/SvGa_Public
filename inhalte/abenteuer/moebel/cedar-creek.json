@@ -1551,6 +1551,15 @@
       "zustand": "gebraucht",
       "blick": "unten",
       "stil": "klassisch"
+    },
+    "cc8PrellbockQuer": {
+      "quelle": "spiel/eigene/prellbock_quer.png",
+      "breite": 16,
+      "hoehe": 32,
+      "kollision": true,
+      "art": "gleis",
+      "zustand": "gebraucht",
+      "stil": "industrie"
     }
   }
 }

@@ -12782,7 +12782,7 @@
       {
        "name": "verhalten",
        "type": "string",
-       "value": "sitzen"
+       "value": "fliegen"
       },
       {
        "name": "wann",
@@ -12795,8 +12795,8 @@
      "id": 11,
      "name": "eichhoernchen",
      "type": "tier",
-     "x": 112,
-     "y": 112,
+     "x": 96,
+     "y": 128,
      "width": 16,
      "height": 16,
      "rotation": 0,
@@ -12805,12 +12805,12 @@
       {
        "name": "von",
        "type": "string",
-       "value": "7,7"
+       "value": "6,8"
       },
       {
        "name": "bis",
        "type": "string",
-       "value": "12,7"
+       "value": "11,8"
       },
       {
        "name": "verhalten",
@@ -12912,8 +12912,8 @@
      "id": 15,
      "name": "pfadfinder",
      "type": "statist",
-     "x": 368,
-     "y": 128,
+     "x": 352,
+     "y": 144,
      "width": 16,
      "height": 16,
      "rotation": 0,
@@ -12922,12 +12922,12 @@
       {
        "name": "von",
        "type": "string",
-       "value": "23,8"
+       "value": "22,9"
       },
       {
        "name": "bis",
        "type": "string",
-       "value": "27,10"
+       "value": "26,11"
       },
       {
        "name": "tun",
@@ -13029,8 +13029,8 @@
      "id": 19,
      "name": "hirsch",
      "type": "tier",
-     "x": 1520,
-     "y": 32,
+     "x": 1488,
+     "y": 64,
      "width": 16,
      "height": 16,
      "rotation": 0,
@@ -13047,8 +13047,8 @@
      "id": 20,
      "name": "fuchs",
      "type": "tier",
-     "x": 480,
-     "y": 240,
+     "x": 448,
+     "y": 208,
      "width": 16,
      "height": 16,
      "rotation": 0,
@@ -13062,12 +13062,12 @@
       {
        "name": "von",
        "type": "string",
-       "value": "27,15"
+       "value": "25,13"
       },
       {
        "name": "bis",
        "type": "string",
-       "value": "33,15"
+       "value": "31,13"
       }
      ]
     },

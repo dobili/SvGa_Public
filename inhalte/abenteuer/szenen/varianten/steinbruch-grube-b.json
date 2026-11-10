@@ -367,6 +367,14 @@
     {
       "name": "finchBauerF",
       "feld": [59, 42]
+    },
+    {
+      "name": "graffiti",
+      "feld": [60, 25]
+    },
+    {
+      "name": "bagger",
+      "feld": [19, 32]
     }
   ],
   "figuren": [],
@@ -374,10 +382,10 @@
     {
       "name": "hargrove",
       "typ": "statist",
-      "feld": [32, 10],
+      "feld": [32, 9],
       "eigenschaften": {
-        "von": "32,10",
-        "bis": "32,10",
+        "von": "32,9",
+        "bis": "32,9",
         "tun": "",
         "wann": "tag"
       }
@@ -385,10 +393,10 @@
     {
       "name": "lena",
       "typ": "statist",
-      "feld": [46, 10],
+      "feld": [46, 9],
       "eigenschaften": {
-        "von": "46,10",
-        "bis": "46,10",
+        "von": "46,9",
+        "bis": "46,9",
         "tun": "",
         "wann": "tag"
       }
@@ -407,10 +415,10 @@
     {
       "name": "kraehe",
       "typ": "tier",
-      "feld": [30, 4],
+      "feld": [29, 4],
       "eigenschaften": {
-        "von": "30,4",
-        "bis": "30,4",
+        "von": "29,4",
+        "bis": "29,4",
         "verhalten": "sitzen"
       }
     },

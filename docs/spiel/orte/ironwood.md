@@ -548,10 +548,15 @@ Tiere: Krähe, Fledermäuse, Fuchs, Hasen, Falke, Eidechse.
 **3.3 Feld für Runde 6:** `finchBauerF` in `steinbruch.grube` bei (59, 42) in A, B und C, begehbar,
 mit Finkenzeichen aus Kreide.
 
-**Umgesetzt in Runde 6 (mittel-2):** `finchBauerF` als Auslöser in A, B und C mit Dialog
-`steinbruch.finch_bauer_f` (neue Datei `steinbruch.ink`) und Fund `finchBauerF`. Sperre S4: Der
-Übergang `steinbruch` in Ironwood hat `wenn: hatLaterne` und den Dialog
-`ironwood-aussen.steinbruch_sperre` (dunkler Hohlweg; ohne Laterne der Hinweis auf Edna). Der Stollen
-ist dunkel (`toenung: dunkel`), mit Laterne sieht {held} vier Felder weit. Offen: Abendtönung und
-Schnee in Ironwood ab Szene 50 (über `setzeToenung` im Dialog der Szene; Schnee braucht eine
-Objektebene).
+## Runde 6: Steinbruch (10.11.2026, mittel-4)
+
+- **Fund:** `finchBauerF` (59, 42).
+- **Ansehen:** `graffiti` (Wolf und Krone an der Felswand), `bagger`.
+- **Offen:** Sperre S4 (Laterne) am Übergang in Ironwood gehört zu mittel-2, ebenso Tönung und
+  Lichtkreis im Stollen.
+
+**Sperre S4, umgesetzt in Runde 6 (mittel-2):** Der Übergang `steinbruch` in Ironwood hat
+`wenn: hatLaterne` und den Dialog `ironwood-aussen.steinbruch_sperre` (dunkler Hohlweg; ohne Laterne
+der Hinweis auf Edna). Der Stollen ist dunkel (`toenung: dunkel`); mit Laterne sieht {held} vier
+Felder weit. Offen: Abendtönung und Schnee in Ironwood ab Szene 50 (Tönung über `setzeToenung` im
+Dialog der Szene; Schnee braucht eine Objektebene).

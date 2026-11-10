@@ -198,9 +198,26 @@
     {
       "name": "zurueckCrossroads",
       "feld": [24, 35]
+    },
+    {
+      "name": "schachautomat",
+      "feld": [22, 13]
+    },
+    {
+      "name": "riesenrad",
+      "feld": [33, 14]
+    },
+    {
+      "name": "losbude",
+      "feld": [31, 22]
     }
   ],
-  "figuren": [],
+  "figuren": [
+    {
+      "name": "dolores",
+      "feld": [24, 12]
+    }
+  ],
   "belebung": [
     {
       "name": "juno",
@@ -231,7 +248,7 @@
       "eigenschaften": {
         "tun": "eine Country-Band spielt",
         "wann": "abend",
-        "von": "34,8",
+        "von": "38,8",
         "bis": "40,8"
       }
     },

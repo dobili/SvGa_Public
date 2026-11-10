@@ -11,7 +11,7 @@
  "tilewidth": 16,
  "tileheight": 16,
  "nextlayerid": 5,
- "nextobjectid": 250,
+ "nextobjectid": 254,
  "layers": [
   {
    "id": 1,
@@ -11057,6 +11057,39 @@
     },
     {
      "id": 7,
+     "name": "ereignisStream",
+     "type": "ausloeser",
+     "x": 1136,
+     "y": 128,
+     "width": 16,
+     "height": 16,
+     "rotation": 0,
+     "visible": true
+    },
+    {
+     "id": 8,
+     "name": "werbetafelZero",
+     "type": "ausloeser",
+     "x": 160,
+     "y": 224,
+     "width": 16,
+     "height": 16,
+     "rotation": 0,
+     "visible": true
+    },
+    {
+     "id": 9,
+     "name": "schildSmartCity",
+     "type": "ausloeser",
+     "x": 2176,
+     "y": 272,
+     "width": 16,
+     "height": 16,
+     "rotation": 0,
+     "visible": true
+    },
+    {
+     "id": 10,
      "name": "joggerin",
      "type": "figur",
      "x": 800,
@@ -11067,7 +11100,18 @@
      "visible": true
     },
     {
-     "id": 8,
+     "id": 11,
+     "name": "kiki",
+     "type": "figur",
+     "x": 1120,
+     "y": 112,
+     "width": 16,
+     "height": 16,
+     "rotation": 0,
+     "visible": true
+    },
+    {
+     "id": 12,
      "name": "lieferroboter",
      "type": "tier",
      "x": 416,
@@ -11095,7 +11139,7 @@
      ]
     },
     {
-     "id": 9,
+     "id": 13,
      "name": "pendlerin",
      "type": "statist",
      "x": 96,
@@ -11133,7 +11177,7 @@
      ]
     },
     {
-     "id": 10,
+     "id": 14,
      "name": "kameramann",
      "type": "statist",
      "x": 1120,
@@ -11171,7 +11215,7 @@
      ]
     },
     {
-     "id": 11,
+     "id": 15,
      "name": "techniker",
      "type": "statist",
      "x": 1600,
@@ -11209,7 +11253,7 @@
      ]
     },
     {
-     "id": 12,
+     "id": 16,
      "name": "rentnerin",
      "type": "statist",
      "x": 480,
@@ -11247,7 +11291,7 @@
      ]
     },
     {
-     "id": 13,
+     "id": 17,
      "name": "moewe",
      "type": "tier",
      "x": 1920,
@@ -11275,7 +11319,7 @@
      ]
     },
     {
-     "id": 14,
+     "id": 18,
      "name": "tauben",
      "type": "tier",
      "x": 160,
@@ -11303,7 +11347,7 @@
      ]
     },
     {
-     "id": 15,
+     "id": 19,
      "name": "kraehe",
      "type": "tier",
      "x": 1328,
@@ -11331,7 +11375,7 @@
      ]
     },
     {
-     "id": 16,
+     "id": 20,
      "name": "spatzen",
      "type": "tier",
      "x": 224,
@@ -11359,7 +11403,7 @@
      ]
     },
     {
-     "id": 17,
+     "id": 21,
      "name": "seeschwalben",
      "type": "tier",
      "x": 2080,
@@ -11387,7 +11431,7 @@
      ]
     },
     {
-     "id": 18,
+     "id": 22,
      "name": "kaninchen",
      "type": "tier",
      "x": 2016,
@@ -11415,102 +11459,10 @@
      ]
     },
     {
-     "id": 19,
+     "id": 23,
      "name": "ws5GlasL",
      "type": "moebel",
      "x": 640,
-     "y": 144,
-     "width": 16,
-     "height": 16,
-     "rotation": 0,
-     "visible": true,
-     "properties": [
-      {
-       "name": "tiefe",
-       "type": "int",
-       "value": 152
-      },
-      {
-       "name": "kollision",
-       "type": "bool",
-       "value": true
-      }
-     ]
-    },
-    {
-     "id": 20,
-     "name": "ws5GlasM",
-     "type": "moebel",
-     "x": 656,
-     "y": 144,
-     "width": 16,
-     "height": 16,
-     "rotation": 0,
-     "visible": true,
-     "properties": [
-      {
-       "name": "tiefe",
-       "type": "int",
-       "value": 152
-      },
-      {
-       "name": "kollision",
-       "type": "bool",
-       "value": true
-      }
-     ]
-    },
-    {
-     "id": 21,
-     "name": "ws5GlasM",
-     "type": "moebel",
-     "x": 672,
-     "y": 144,
-     "width": 16,
-     "height": 16,
-     "rotation": 0,
-     "visible": true,
-     "properties": [
-      {
-       "name": "tiefe",
-       "type": "int",
-       "value": 152
-      },
-      {
-       "name": "kollision",
-       "type": "bool",
-       "value": true
-      }
-     ]
-    },
-    {
-     "id": 22,
-     "name": "ws5GlasM",
-     "type": "moebel",
-     "x": 688,
-     "y": 144,
-     "width": 16,
-     "height": 16,
-     "rotation": 0,
-     "visible": true,
-     "properties": [
-      {
-       "name": "tiefe",
-       "type": "int",
-       "value": 152
-      },
-      {
-       "name": "kollision",
-       "type": "bool",
-       "value": true
-      }
-     ]
-    },
-    {
-     "id": 23,
-     "name": "ws5GlasM",
-     "type": "moebel",
-     "x": 704,
      "y": 144,
      "width": 16,
      "height": 16,
@@ -11533,7 +11485,7 @@
      "id": 24,
      "name": "ws5GlasM",
      "type": "moebel",
-     "x": 720,
+     "x": 656,
      "y": 144,
      "width": 16,
      "height": 16,
@@ -11556,7 +11508,7 @@
      "id": 25,
      "name": "ws5GlasM",
      "type": "moebel",
-     "x": 736,
+     "x": 672,
      "y": 144,
      "width": 16,
      "height": 16,
@@ -11579,7 +11531,7 @@
      "id": 26,
      "name": "ws5GlasM",
      "type": "moebel",
-     "x": 752,
+     "x": 688,
      "y": 144,
      "width": 16,
      "height": 16,
@@ -11602,7 +11554,7 @@
      "id": 27,
      "name": "ws5GlasM",
      "type": "moebel",
-     "x": 768,
+     "x": 704,
      "y": 144,
      "width": 16,
      "height": 16,
@@ -11625,7 +11577,7 @@
      "id": 28,
      "name": "ws5GlasM",
      "type": "moebel",
-     "x": 784,
+     "x": 720,
      "y": 144,
      "width": 16,
      "height": 16,
@@ -11648,7 +11600,7 @@
      "id": 29,
      "name": "ws5GlasM",
      "type": "moebel",
-     "x": 800,
+     "x": 736,
      "y": 144,
      "width": 16,
      "height": 16,
@@ -11671,7 +11623,7 @@
      "id": 30,
      "name": "ws5GlasM",
      "type": "moebel",
-     "x": 816,
+     "x": 752,
      "y": 144,
      "width": 16,
      "height": 16,
@@ -11694,7 +11646,7 @@
      "id": 31,
      "name": "ws5GlasM",
      "type": "moebel",
-     "x": 832,
+     "x": 768,
      "y": 144,
      "width": 16,
      "height": 16,
@@ -11717,7 +11669,7 @@
      "id": 32,
      "name": "ws5GlasM",
      "type": "moebel",
-     "x": 848,
+     "x": 784,
      "y": 144,
      "width": 16,
      "height": 16,
@@ -11740,7 +11692,7 @@
      "id": 33,
      "name": "ws5GlasM",
      "type": "moebel",
-     "x": 864,
+     "x": 800,
      "y": 144,
      "width": 16,
      "height": 16,
@@ -11763,7 +11715,7 @@
      "id": 34,
      "name": "ws5GlasM",
      "type": "moebel",
-     "x": 880,
+     "x": 816,
      "y": 144,
      "width": 16,
      "height": 16,
@@ -11786,7 +11738,7 @@
      "id": 35,
      "name": "ws5GlasM",
      "type": "moebel",
-     "x": 896,
+     "x": 832,
      "y": 144,
      "width": 16,
      "height": 16,
@@ -11809,7 +11761,7 @@
      "id": 36,
      "name": "ws5GlasM",
      "type": "moebel",
-     "x": 912,
+     "x": 848,
      "y": 144,
      "width": 16,
      "height": 16,
@@ -11832,7 +11784,7 @@
      "id": 37,
      "name": "ws5GlasM",
      "type": "moebel",
-     "x": 928,
+     "x": 864,
      "y": 144,
      "width": 16,
      "height": 16,
@@ -11855,7 +11807,7 @@
      "id": 38,
      "name": "ws5GlasM",
      "type": "moebel",
-     "x": 944,
+     "x": 880,
      "y": 144,
      "width": 16,
      "height": 16,
@@ -11878,7 +11830,7 @@
      "id": 39,
      "name": "ws5GlasM",
      "type": "moebel",
-     "x": 960,
+     "x": 896,
      "y": 144,
      "width": 16,
      "height": 16,
@@ -11901,7 +11853,7 @@
      "id": 40,
      "name": "ws5GlasM",
      "type": "moebel",
-     "x": 976,
+     "x": 912,
      "y": 144,
      "width": 16,
      "height": 16,
@@ -11924,7 +11876,7 @@
      "id": 41,
      "name": "ws5GlasM",
      "type": "moebel",
-     "x": 992,
+     "x": 928,
      "y": 144,
      "width": 16,
      "height": 16,
@@ -11947,7 +11899,7 @@
      "id": 42,
      "name": "ws5GlasM",
      "type": "moebel",
-     "x": 1008,
+     "x": 944,
      "y": 144,
      "width": 16,
      "height": 16,
@@ -11970,7 +11922,7 @@
      "id": 43,
      "name": "ws5GlasM",
      "type": "moebel",
-     "x": 1024,
+     "x": 960,
      "y": 144,
      "width": 16,
      "height": 16,
@@ -11991,9 +11943,9 @@
     },
     {
      "id": 44,
-     "name": "ws5GlasR",
+     "name": "ws5GlasM",
      "type": "moebel",
-     "x": 1040,
+     "x": 976,
      "y": 144,
      "width": 16,
      "height": 16,
@@ -12014,9 +11966,9 @@
     },
     {
      "id": 45,
-     "name": "ws5GlasL",
+     "name": "ws5GlasM",
      "type": "moebel",
-     "x": 1200,
+     "x": 992,
      "y": 144,
      "width": 16,
      "height": 16,
@@ -12039,7 +11991,7 @@
      "id": 46,
      "name": "ws5GlasM",
      "type": "moebel",
-     "x": 1216,
+     "x": 1008,
      "y": 144,
      "width": 16,
      "height": 16,
@@ -12062,7 +12014,7 @@
      "id": 47,
      "name": "ws5GlasM",
      "type": "moebel",
-     "x": 1232,
+     "x": 1024,
      "y": 144,
      "width": 16,
      "height": 16,
@@ -12083,9 +12035,9 @@
     },
     {
      "id": 48,
-     "name": "ws5GlasM",
+     "name": "ws5GlasR",
      "type": "moebel",
-     "x": 1248,
+     "x": 1040,
      "y": 144,
      "width": 16,
      "height": 16,
@@ -12106,9 +12058,9 @@
     },
     {
      "id": 49,
-     "name": "ws5GlasM",
+     "name": "ws5GlasL",
      "type": "moebel",
-     "x": 1264,
+     "x": 1200,
      "y": 144,
      "width": 16,
      "height": 16,
@@ -12131,7 +12083,7 @@
      "id": 50,
      "name": "ws5GlasM",
      "type": "moebel",
-     "x": 1280,
+     "x": 1216,
      "y": 144,
      "width": 16,
      "height": 16,
@@ -12154,7 +12106,7 @@
      "id": 51,
      "name": "ws5GlasM",
      "type": "moebel",
-     "x": 1296,
+     "x": 1232,
      "y": 144,
      "width": 16,
      "height": 16,
@@ -12177,7 +12129,7 @@
      "id": 52,
      "name": "ws5GlasM",
      "type": "moebel",
-     "x": 1312,
+     "x": 1248,
      "y": 144,
      "width": 16,
      "height": 16,
@@ -12200,7 +12152,7 @@
      "id": 53,
      "name": "ws5GlasM",
      "type": "moebel",
-     "x": 1328,
+     "x": 1264,
      "y": 144,
      "width": 16,
      "height": 16,
@@ -12223,7 +12175,7 @@
      "id": 54,
      "name": "ws5GlasM",
      "type": "moebel",
-     "x": 1344,
+     "x": 1280,
      "y": 144,
      "width": 16,
      "height": 16,
@@ -12246,7 +12198,7 @@
      "id": 55,
      "name": "ws5GlasM",
      "type": "moebel",
-     "x": 1360,
+     "x": 1296,
      "y": 144,
      "width": 16,
      "height": 16,
@@ -12269,7 +12221,7 @@
      "id": 56,
      "name": "ws5GlasM",
      "type": "moebel",
-     "x": 1376,
+     "x": 1312,
      "y": 144,
      "width": 16,
      "height": 16,
@@ -12292,7 +12244,7 @@
      "id": 57,
      "name": "ws5GlasM",
      "type": "moebel",
-     "x": 1392,
+     "x": 1328,
      "y": 144,
      "width": 16,
      "height": 16,
@@ -12315,7 +12267,7 @@
      "id": 58,
      "name": "ws5GlasM",
      "type": "moebel",
-     "x": 1408,
+     "x": 1344,
      "y": 144,
      "width": 16,
      "height": 16,
@@ -12338,7 +12290,7 @@
      "id": 59,
      "name": "ws5GlasM",
      "type": "moebel",
-     "x": 1424,
+     "x": 1360,
      "y": 144,
      "width": 16,
      "height": 16,
@@ -12361,7 +12313,7 @@
      "id": 60,
      "name": "ws5GlasM",
      "type": "moebel",
-     "x": 1440,
+     "x": 1376,
      "y": 144,
      "width": 16,
      "height": 16,
@@ -12384,7 +12336,7 @@
      "id": 61,
      "name": "ws5GlasM",
      "type": "moebel",
-     "x": 1456,
+     "x": 1392,
      "y": 144,
      "width": 16,
      "height": 16,
@@ -12407,7 +12359,7 @@
      "id": 62,
      "name": "ws5GlasM",
      "type": "moebel",
-     "x": 1472,
+     "x": 1408,
      "y": 144,
      "width": 16,
      "height": 16,
@@ -12430,7 +12382,7 @@
      "id": 63,
      "name": "ws5GlasM",
      "type": "moebel",
-     "x": 1488,
+     "x": 1424,
      "y": 144,
      "width": 16,
      "height": 16,
@@ -12453,7 +12405,7 @@
      "id": 64,
      "name": "ws5GlasM",
      "type": "moebel",
-     "x": 1504,
+     "x": 1440,
      "y": 144,
      "width": 16,
      "height": 16,
@@ -12476,7 +12428,7 @@
      "id": 65,
      "name": "ws5GlasM",
      "type": "moebel",
-     "x": 1520,
+     "x": 1456,
      "y": 144,
      "width": 16,
      "height": 16,
@@ -12499,7 +12451,7 @@
      "id": 66,
      "name": "ws5GlasM",
      "type": "moebel",
-     "x": 1536,
+     "x": 1472,
      "y": 144,
      "width": 16,
      "height": 16,
@@ -12522,7 +12474,7 @@
      "id": 67,
      "name": "ws5GlasM",
      "type": "moebel",
-     "x": 1552,
+     "x": 1488,
      "y": 144,
      "width": 16,
      "height": 16,
@@ -12545,7 +12497,7 @@
      "id": 68,
      "name": "ws5GlasM",
      "type": "moebel",
-     "x": 1568,
+     "x": 1504,
      "y": 144,
      "width": 16,
      "height": 16,
@@ -12568,7 +12520,7 @@
      "id": 69,
      "name": "ws5GlasM",
      "type": "moebel",
-     "x": 1584,
+     "x": 1520,
      "y": 144,
      "width": 16,
      "height": 16,
@@ -12591,7 +12543,7 @@
      "id": 70,
      "name": "ws5GlasM",
      "type": "moebel",
-     "x": 1600,
+     "x": 1536,
      "y": 144,
      "width": 16,
      "height": 16,
@@ -12614,7 +12566,7 @@
      "id": 71,
      "name": "ws5GlasM",
      "type": "moebel",
-     "x": 1616,
+     "x": 1552,
      "y": 144,
      "width": 16,
      "height": 16,
@@ -12637,7 +12589,7 @@
      "id": 72,
      "name": "ws5GlasM",
      "type": "moebel",
-     "x": 1632,
+     "x": 1568,
      "y": 144,
      "width": 16,
      "height": 16,
@@ -12660,7 +12612,7 @@
      "id": 73,
      "name": "ws5GlasM",
      "type": "moebel",
-     "x": 1648,
+     "x": 1584,
      "y": 144,
      "width": 16,
      "height": 16,
@@ -12683,7 +12635,7 @@
      "id": 74,
      "name": "ws5GlasM",
      "type": "moebel",
-     "x": 1664,
+     "x": 1600,
      "y": 144,
      "width": 16,
      "height": 16,
@@ -12706,7 +12658,7 @@
      "id": 75,
      "name": "ws5GlasM",
      "type": "moebel",
-     "x": 1680,
+     "x": 1616,
      "y": 144,
      "width": 16,
      "height": 16,
@@ -12729,7 +12681,7 @@
      "id": 76,
      "name": "ws5GlasM",
      "type": "moebel",
-     "x": 1696,
+     "x": 1632,
      "y": 144,
      "width": 16,
      "height": 16,
@@ -12752,7 +12704,7 @@
      "id": 77,
      "name": "ws5GlasM",
      "type": "moebel",
-     "x": 1712,
+     "x": 1648,
      "y": 144,
      "width": 16,
      "height": 16,
@@ -12775,7 +12727,7 @@
      "id": 78,
      "name": "ws5GlasM",
      "type": "moebel",
-     "x": 1728,
+     "x": 1664,
      "y": 144,
      "width": 16,
      "height": 16,
@@ -12798,7 +12750,7 @@
      "id": 79,
      "name": "ws5GlasM",
      "type": "moebel",
-     "x": 1744,
+     "x": 1680,
      "y": 144,
      "width": 16,
      "height": 16,
@@ -12821,7 +12773,7 @@
      "id": 80,
      "name": "ws5GlasM",
      "type": "moebel",
-     "x": 1760,
+     "x": 1696,
      "y": 144,
      "width": 16,
      "height": 16,
@@ -12842,6 +12794,98 @@
     },
     {
      "id": 81,
+     "name": "ws5GlasM",
+     "type": "moebel",
+     "x": 1712,
+     "y": 144,
+     "width": 16,
+     "height": 16,
+     "rotation": 0,
+     "visible": true,
+     "properties": [
+      {
+       "name": "tiefe",
+       "type": "int",
+       "value": 152
+      },
+      {
+       "name": "kollision",
+       "type": "bool",
+       "value": true
+      }
+     ]
+    },
+    {
+     "id": 82,
+     "name": "ws5GlasM",
+     "type": "moebel",
+     "x": 1728,
+     "y": 144,
+     "width": 16,
+     "height": 16,
+     "rotation": 0,
+     "visible": true,
+     "properties": [
+      {
+       "name": "tiefe",
+       "type": "int",
+       "value": 152
+      },
+      {
+       "name": "kollision",
+       "type": "bool",
+       "value": true
+      }
+     ]
+    },
+    {
+     "id": 83,
+     "name": "ws5GlasM",
+     "type": "moebel",
+     "x": 1744,
+     "y": 144,
+     "width": 16,
+     "height": 16,
+     "rotation": 0,
+     "visible": true,
+     "properties": [
+      {
+       "name": "tiefe",
+       "type": "int",
+       "value": 152
+      },
+      {
+       "name": "kollision",
+       "type": "bool",
+       "value": true
+      }
+     ]
+    },
+    {
+     "id": 84,
+     "name": "ws5GlasM",
+     "type": "moebel",
+     "x": 1760,
+     "y": 144,
+     "width": 16,
+     "height": 16,
+     "rotation": 0,
+     "visible": true,
+     "properties": [
+      {
+       "name": "tiefe",
+       "type": "int",
+       "value": 152
+      },
+      {
+       "name": "kollision",
+       "type": "bool",
+       "value": true
+      }
+     ]
+    },
+    {
+     "id": 85,
      "name": "ws5GlasR",
      "type": "moebel",
      "x": 1776,
@@ -12864,7 +12908,7 @@
      ]
     },
     {
-     "id": 82,
+     "id": 86,
      "name": "ws5GlasL",
      "type": "moebel",
      "x": 640,
@@ -12887,7 +12931,7 @@
      ]
     },
     {
-     "id": 83,
+     "id": 87,
      "name": "ws5GlasM",
      "type": "moebel",
      "x": 656,
@@ -12910,7 +12954,7 @@
      ]
     },
     {
-     "id": 84,
+     "id": 88,
      "name": "ws5GlasM",
      "type": "moebel",
      "x": 672,
@@ -12933,7 +12977,7 @@
      ]
     },
     {
-     "id": 85,
+     "id": 89,
      "name": "ws5GlasM",
      "type": "moebel",
      "x": 688,
@@ -12956,7 +13000,7 @@
      ]
     },
     {
-     "id": 86,
+     "id": 90,
      "name": "ws5GlasM",
      "type": "moebel",
      "x": 704,
@@ -12979,7 +13023,7 @@
      ]
     },
     {
-     "id": 87,
+     "id": 91,
      "name": "ws5GlasM",
      "type": "moebel",
      "x": 720,
@@ -13002,7 +13046,7 @@
      ]
     },
     {
-     "id": 88,
+     "id": 92,
      "name": "ws5GlasM",
      "type": "moebel",
      "x": 736,
@@ -13025,102 +13069,10 @@
      ]
     },
     {
-     "id": 89,
-     "name": "ws5GlasM",
-     "type": "moebel",
-     "x": 752,
-     "y": 224,
-     "width": 16,
-     "height": 16,
-     "rotation": 0,
-     "visible": true,
-     "properties": [
-      {
-       "name": "tiefe",
-       "type": "int",
-       "value": 232
-      },
-      {
-       "name": "kollision",
-       "type": "bool",
-       "value": true
-      }
-     ]
-    },
-    {
-     "id": 90,
-     "name": "ws5GlasM",
-     "type": "moebel",
-     "x": 768,
-     "y": 224,
-     "width": 16,
-     "height": 16,
-     "rotation": 0,
-     "visible": true,
-     "properties": [
-      {
-       "name": "tiefe",
-       "type": "int",
-       "value": 232
-      },
-      {
-       "name": "kollision",
-       "type": "bool",
-       "value": true
-      }
-     ]
-    },
-    {
-     "id": 91,
-     "name": "ws5GlasM",
-     "type": "moebel",
-     "x": 784,
-     "y": 224,
-     "width": 16,
-     "height": 16,
-     "rotation": 0,
-     "visible": true,
-     "properties": [
-      {
-       "name": "tiefe",
-       "type": "int",
-       "value": 232
-      },
-      {
-       "name": "kollision",
-       "type": "bool",
-       "value": true
-      }
-     ]
-    },
-    {
-     "id": 92,
-     "name": "ws5GlasM",
-     "type": "moebel",
-     "x": 800,
-     "y": 224,
-     "width": 16,
-     "height": 16,
-     "rotation": 0,
-     "visible": true,
-     "properties": [
-      {
-       "name": "tiefe",
-       "type": "int",
-       "value": 232
-      },
-      {
-       "name": "kollision",
-       "type": "bool",
-       "value": true
-      }
-     ]
-    },
-    {
      "id": 93,
      "name": "ws5GlasM",
      "type": "moebel",
-     "x": 816,
+     "x": 752,
      "y": 224,
      "width": 16,
      "height": 16,
@@ -13143,7 +13095,7 @@
      "id": 94,
      "name": "ws5GlasM",
      "type": "moebel",
-     "x": 832,
+     "x": 768,
      "y": 224,
      "width": 16,
      "height": 16,
@@ -13166,7 +13118,7 @@
      "id": 95,
      "name": "ws5GlasM",
      "type": "moebel",
-     "x": 848,
+     "x": 784,
      "y": 224,
      "width": 16,
      "height": 16,
@@ -13189,7 +13141,7 @@
      "id": 96,
      "name": "ws5GlasM",
      "type": "moebel",
-     "x": 864,
+     "x": 800,
      "y": 224,
      "width": 16,
      "height": 16,
@@ -13212,7 +13164,7 @@
      "id": 97,
      "name": "ws5GlasM",
      "type": "moebel",
-     "x": 880,
+     "x": 816,
      "y": 224,
      "width": 16,
      "height": 16,
@@ -13235,7 +13187,7 @@
      "id": 98,
      "name": "ws5GlasM",
      "type": "moebel",
-     "x": 896,
+     "x": 832,
      "y": 224,
      "width": 16,
      "height": 16,
@@ -13258,7 +13210,7 @@
      "id": 99,
      "name": "ws5GlasM",
      "type": "moebel",
-     "x": 912,
+     "x": 848,
      "y": 224,
      "width": 16,
      "height": 16,
@@ -13281,7 +13233,7 @@
      "id": 100,
      "name": "ws5GlasM",
      "type": "moebel",
-     "x": 928,
+     "x": 864,
      "y": 224,
      "width": 16,
      "height": 16,
@@ -13304,7 +13256,7 @@
      "id": 101,
      "name": "ws5GlasM",
      "type": "moebel",
-     "x": 944,
+     "x": 880,
      "y": 224,
      "width": 16,
      "height": 16,
@@ -13327,7 +13279,7 @@
      "id": 102,
      "name": "ws5GlasM",
      "type": "moebel",
-     "x": 960,
+     "x": 896,
      "y": 224,
      "width": 16,
      "height": 16,
@@ -13350,7 +13302,7 @@
      "id": 103,
      "name": "ws5GlasM",
      "type": "moebel",
-     "x": 976,
+     "x": 912,
      "y": 224,
      "width": 16,
      "height": 16,
@@ -13373,7 +13325,7 @@
      "id": 104,
      "name": "ws5GlasM",
      "type": "moebel",
-     "x": 992,
+     "x": 928,
      "y": 224,
      "width": 16,
      "height": 16,
@@ -13396,7 +13348,7 @@
      "id": 105,
      "name": "ws5GlasM",
      "type": "moebel",
-     "x": 1008,
+     "x": 944,
      "y": 224,
      "width": 16,
      "height": 16,
@@ -13419,7 +13371,7 @@
      "id": 106,
      "name": "ws5GlasM",
      "type": "moebel",
-     "x": 1024,
+     "x": 960,
      "y": 224,
      "width": 16,
      "height": 16,
@@ -13442,7 +13394,7 @@
      "id": 107,
      "name": "ws5GlasM",
      "type": "moebel",
-     "x": 1040,
+     "x": 976,
      "y": 224,
      "width": 16,
      "height": 16,
@@ -13465,7 +13417,7 @@
      "id": 108,
      "name": "ws5GlasM",
      "type": "moebel",
-     "x": 1056,
+     "x": 992,
      "y": 224,
      "width": 16,
      "height": 16,
@@ -13488,7 +13440,7 @@
      "id": 109,
      "name": "ws5GlasM",
      "type": "moebel",
-     "x": 1072,
+     "x": 1008,
      "y": 224,
      "width": 16,
      "height": 16,
@@ -13511,7 +13463,7 @@
      "id": 110,
      "name": "ws5GlasM",
      "type": "moebel",
-     "x": 1088,
+     "x": 1024,
      "y": 224,
      "width": 16,
      "height": 16,
@@ -13534,7 +13486,7 @@
      "id": 111,
      "name": "ws5GlasM",
      "type": "moebel",
-     "x": 1104,
+     "x": 1040,
      "y": 224,
      "width": 16,
      "height": 16,
@@ -13557,7 +13509,7 @@
      "id": 112,
      "name": "ws5GlasM",
      "type": "moebel",
-     "x": 1120,
+     "x": 1056,
      "y": 224,
      "width": 16,
      "height": 16,
@@ -13580,7 +13532,7 @@
      "id": 113,
      "name": "ws5GlasM",
      "type": "moebel",
-     "x": 1136,
+     "x": 1072,
      "y": 224,
      "width": 16,
      "height": 16,
@@ -13603,7 +13555,7 @@
      "id": 114,
      "name": "ws5GlasM",
      "type": "moebel",
-     "x": 1152,
+     "x": 1088,
      "y": 224,
      "width": 16,
      "height": 16,
@@ -13626,7 +13578,7 @@
      "id": 115,
      "name": "ws5GlasM",
      "type": "moebel",
-     "x": 1168,
+     "x": 1104,
      "y": 224,
      "width": 16,
      "height": 16,
@@ -13649,7 +13601,7 @@
      "id": 116,
      "name": "ws5GlasM",
      "type": "moebel",
-     "x": 1184,
+     "x": 1120,
      "y": 224,
      "width": 16,
      "height": 16,
@@ -13672,7 +13624,7 @@
      "id": 117,
      "name": "ws5GlasM",
      "type": "moebel",
-     "x": 1200,
+     "x": 1136,
      "y": 224,
      "width": 16,
      "height": 16,
@@ -13695,7 +13647,7 @@
      "id": 118,
      "name": "ws5GlasM",
      "type": "moebel",
-     "x": 1216,
+     "x": 1152,
      "y": 224,
      "width": 16,
      "height": 16,
@@ -13718,7 +13670,7 @@
      "id": 119,
      "name": "ws5GlasM",
      "type": "moebel",
-     "x": 1232,
+     "x": 1168,
      "y": 224,
      "width": 16,
      "height": 16,
@@ -13741,7 +13693,7 @@
      "id": 120,
      "name": "ws5GlasM",
      "type": "moebel",
-     "x": 1248,
+     "x": 1184,
      "y": 224,
      "width": 16,
      "height": 16,
@@ -13764,7 +13716,7 @@
      "id": 121,
      "name": "ws5GlasM",
      "type": "moebel",
-     "x": 1264,
+     "x": 1200,
      "y": 224,
      "width": 16,
      "height": 16,
@@ -13787,7 +13739,7 @@
      "id": 122,
      "name": "ws5GlasM",
      "type": "moebel",
-     "x": 1280,
+     "x": 1216,
      "y": 224,
      "width": 16,
      "height": 16,
@@ -13810,7 +13762,7 @@
      "id": 123,
      "name": "ws5GlasM",
      "type": "moebel",
-     "x": 1296,
+     "x": 1232,
      "y": 224,
      "width": 16,
      "height": 16,
@@ -13833,7 +13785,7 @@
      "id": 124,
      "name": "ws5GlasM",
      "type": "moebel",
-     "x": 1312,
+     "x": 1248,
      "y": 224,
      "width": 16,
      "height": 16,
@@ -13856,7 +13808,7 @@
      "id": 125,
      "name": "ws5GlasM",
      "type": "moebel",
-     "x": 1328,
+     "x": 1264,
      "y": 224,
      "width": 16,
      "height": 16,
@@ -13879,7 +13831,7 @@
      "id": 126,
      "name": "ws5GlasM",
      "type": "moebel",
-     "x": 1344,
+     "x": 1280,
      "y": 224,
      "width": 16,
      "height": 16,
@@ -13902,7 +13854,7 @@
      "id": 127,
      "name": "ws5GlasM",
      "type": "moebel",
-     "x": 1360,
+     "x": 1296,
      "y": 224,
      "width": 16,
      "height": 16,
@@ -13925,7 +13877,7 @@
      "id": 128,
      "name": "ws5GlasM",
      "type": "moebel",
-     "x": 1376,
+     "x": 1312,
      "y": 224,
      "width": 16,
      "height": 16,
@@ -13948,7 +13900,7 @@
      "id": 129,
      "name": "ws5GlasM",
      "type": "moebel",
-     "x": 1392,
+     "x": 1328,
      "y": 224,
      "width": 16,
      "height": 16,
@@ -13971,7 +13923,7 @@
      "id": 130,
      "name": "ws5GlasM",
      "type": "moebel",
-     "x": 1408,
+     "x": 1344,
      "y": 224,
      "width": 16,
      "height": 16,
@@ -13994,7 +13946,7 @@
      "id": 131,
      "name": "ws5GlasM",
      "type": "moebel",
-     "x": 1424,
+     "x": 1360,
      "y": 224,
      "width": 16,
      "height": 16,
@@ -14017,7 +13969,7 @@
      "id": 132,
      "name": "ws5GlasM",
      "type": "moebel",
-     "x": 1440,
+     "x": 1376,
      "y": 224,
      "width": 16,
      "height": 16,
@@ -14040,7 +13992,7 @@
      "id": 133,
      "name": "ws5GlasM",
      "type": "moebel",
-     "x": 1456,
+     "x": 1392,
      "y": 224,
      "width": 16,
      "height": 16,
@@ -14063,7 +14015,7 @@
      "id": 134,
      "name": "ws5GlasM",
      "type": "moebel",
-     "x": 1472,
+     "x": 1408,
      "y": 224,
      "width": 16,
      "height": 16,
@@ -14086,7 +14038,7 @@
      "id": 135,
      "name": "ws5GlasM",
      "type": "moebel",
-     "x": 1488,
+     "x": 1424,
      "y": 224,
      "width": 16,
      "height": 16,
@@ -14109,7 +14061,7 @@
      "id": 136,
      "name": "ws5GlasM",
      "type": "moebel",
-     "x": 1504,
+     "x": 1440,
      "y": 224,
      "width": 16,
      "height": 16,
@@ -14132,7 +14084,7 @@
      "id": 137,
      "name": "ws5GlasM",
      "type": "moebel",
-     "x": 1520,
+     "x": 1456,
      "y": 224,
      "width": 16,
      "height": 16,
@@ -14155,7 +14107,7 @@
      "id": 138,
      "name": "ws5GlasM",
      "type": "moebel",
-     "x": 1536,
+     "x": 1472,
      "y": 224,
      "width": 16,
      "height": 16,
@@ -14178,7 +14130,7 @@
      "id": 139,
      "name": "ws5GlasM",
      "type": "moebel",
-     "x": 1552,
+     "x": 1488,
      "y": 224,
      "width": 16,
      "height": 16,
@@ -14201,7 +14153,7 @@
      "id": 140,
      "name": "ws5GlasM",
      "type": "moebel",
-     "x": 1568,
+     "x": 1504,
      "y": 224,
      "width": 16,
      "height": 16,
@@ -14224,7 +14176,7 @@
      "id": 141,
      "name": "ws5GlasM",
      "type": "moebel",
-     "x": 1584,
+     "x": 1520,
      "y": 224,
      "width": 16,
      "height": 16,
@@ -14247,7 +14199,7 @@
      "id": 142,
      "name": "ws5GlasM",
      "type": "moebel",
-     "x": 1600,
+     "x": 1536,
      "y": 224,
      "width": 16,
      "height": 16,
@@ -14270,7 +14222,7 @@
      "id": 143,
      "name": "ws5GlasM",
      "type": "moebel",
-     "x": 1616,
+     "x": 1552,
      "y": 224,
      "width": 16,
      "height": 16,
@@ -14293,7 +14245,7 @@
      "id": 144,
      "name": "ws5GlasM",
      "type": "moebel",
-     "x": 1632,
+     "x": 1568,
      "y": 224,
      "width": 16,
      "height": 16,
@@ -14316,7 +14268,7 @@
      "id": 145,
      "name": "ws5GlasM",
      "type": "moebel",
-     "x": 1648,
+     "x": 1584,
      "y": 224,
      "width": 16,
      "height": 16,
@@ -14339,7 +14291,7 @@
      "id": 146,
      "name": "ws5GlasM",
      "type": "moebel",
-     "x": 1664,
+     "x": 1600,
      "y": 224,
      "width": 16,
      "height": 16,
@@ -14362,7 +14314,7 @@
      "id": 147,
      "name": "ws5GlasM",
      "type": "moebel",
-     "x": 1680,
+     "x": 1616,
      "y": 224,
      "width": 16,
      "height": 16,
@@ -14385,7 +14337,7 @@
      "id": 148,
      "name": "ws5GlasM",
      "type": "moebel",
-     "x": 1696,
+     "x": 1632,
      "y": 224,
      "width": 16,
      "height": 16,
@@ -14408,7 +14360,7 @@
      "id": 149,
      "name": "ws5GlasM",
      "type": "moebel",
-     "x": 1712,
+     "x": 1648,
      "y": 224,
      "width": 16,
      "height": 16,
@@ -14431,7 +14383,7 @@
      "id": 150,
      "name": "ws5GlasM",
      "type": "moebel",
-     "x": 1728,
+     "x": 1664,
      "y": 224,
      "width": 16,
      "height": 16,
@@ -14454,7 +14406,7 @@
      "id": 151,
      "name": "ws5GlasM",
      "type": "moebel",
-     "x": 1744,
+     "x": 1680,
      "y": 224,
      "width": 16,
      "height": 16,
@@ -14477,7 +14429,7 @@
      "id": 152,
      "name": "ws5GlasM",
      "type": "moebel",
-     "x": 1760,
+     "x": 1696,
      "y": 224,
      "width": 16,
      "height": 16,
@@ -14498,6 +14450,98 @@
     },
     {
      "id": 153,
+     "name": "ws5GlasM",
+     "type": "moebel",
+     "x": 1712,
+     "y": 224,
+     "width": 16,
+     "height": 16,
+     "rotation": 0,
+     "visible": true,
+     "properties": [
+      {
+       "name": "tiefe",
+       "type": "int",
+       "value": 232
+      },
+      {
+       "name": "kollision",
+       "type": "bool",
+       "value": true
+      }
+     ]
+    },
+    {
+     "id": 154,
+     "name": "ws5GlasM",
+     "type": "moebel",
+     "x": 1728,
+     "y": 224,
+     "width": 16,
+     "height": 16,
+     "rotation": 0,
+     "visible": true,
+     "properties": [
+      {
+       "name": "tiefe",
+       "type": "int",
+       "value": 232
+      },
+      {
+       "name": "kollision",
+       "type": "bool",
+       "value": true
+      }
+     ]
+    },
+    {
+     "id": 155,
+     "name": "ws5GlasM",
+     "type": "moebel",
+     "x": 1744,
+     "y": 224,
+     "width": 16,
+     "height": 16,
+     "rotation": 0,
+     "visible": true,
+     "properties": [
+      {
+       "name": "tiefe",
+       "type": "int",
+       "value": 232
+      },
+      {
+       "name": "kollision",
+       "type": "bool",
+       "value": true
+      }
+     ]
+    },
+    {
+     "id": 156,
+     "name": "ws5GlasM",
+     "type": "moebel",
+     "x": 1760,
+     "y": 224,
+     "width": 16,
+     "height": 16,
+     "rotation": 0,
+     "visible": true,
+     "properties": [
+      {
+       "name": "tiefe",
+       "type": "int",
+       "value": 232
+      },
+      {
+       "name": "kollision",
+       "type": "bool",
+       "value": true
+      }
+     ]
+    },
+    {
+     "id": 157,
      "name": "ws5GlasR",
      "type": "moebel",
      "x": 1776,
@@ -14520,7 +14564,7 @@
      ]
     },
     {
-     "id": 154,
+     "id": 158,
      "name": "ws5GlasL",
      "type": "moebel",
      "x": 1040,
@@ -14543,7 +14587,7 @@
      ]
     },
     {
-     "id": 155,
+     "id": 159,
      "name": "ws5GlasM",
      "type": "moebel",
      "x": 1056,
@@ -14566,7 +14610,7 @@
      ]
     },
     {
-     "id": 156,
+     "id": 160,
      "name": "ws5GlasM",
      "type": "moebel",
      "x": 1072,
@@ -14589,7 +14633,7 @@
      ]
     },
     {
-     "id": 157,
+     "id": 161,
      "name": "ws5GlasM",
      "type": "moebel",
      "x": 1088,
@@ -14612,102 +14656,10 @@
      ]
     },
     {
-     "id": 158,
-     "name": "ws5GlasM",
-     "type": "moebel",
-     "x": 1104,
-     "y": 64,
-     "width": 16,
-     "height": 16,
-     "rotation": 0,
-     "visible": true,
-     "properties": [
-      {
-       "name": "tiefe",
-       "type": "int",
-       "value": 72
-      },
-      {
-       "name": "kollision",
-       "type": "bool",
-       "value": true
-      }
-     ]
-    },
-    {
-     "id": 159,
-     "name": "ws5GlasM",
-     "type": "moebel",
-     "x": 1120,
-     "y": 64,
-     "width": 16,
-     "height": 16,
-     "rotation": 0,
-     "visible": true,
-     "properties": [
-      {
-       "name": "tiefe",
-       "type": "int",
-       "value": 72
-      },
-      {
-       "name": "kollision",
-       "type": "bool",
-       "value": true
-      }
-     ]
-    },
-    {
-     "id": 160,
-     "name": "ws5GlasM",
-     "type": "moebel",
-     "x": 1136,
-     "y": 64,
-     "width": 16,
-     "height": 16,
-     "rotation": 0,
-     "visible": true,
-     "properties": [
-      {
-       "name": "tiefe",
-       "type": "int",
-       "value": 72
-      },
-      {
-       "name": "kollision",
-       "type": "bool",
-       "value": true
-      }
-     ]
-    },
-    {
-     "id": 161,
-     "name": "ws5GlasM",
-     "type": "moebel",
-     "x": 1152,
-     "y": 64,
-     "width": 16,
-     "height": 16,
-     "rotation": 0,
-     "visible": true,
-     "properties": [
-      {
-       "name": "tiefe",
-       "type": "int",
-       "value": 72
-      },
-      {
-       "name": "kollision",
-       "type": "bool",
-       "value": true
-      }
-     ]
-    },
-    {
      "id": 162,
      "name": "ws5GlasM",
      "type": "moebel",
-     "x": 1168,
+     "x": 1104,
      "y": 64,
      "width": 16,
      "height": 16,
@@ -14730,7 +14682,7 @@
      "id": 163,
      "name": "ws5GlasM",
      "type": "moebel",
-     "x": 1184,
+     "x": 1120,
      "y": 64,
      "width": 16,
      "height": 16,
@@ -14751,6 +14703,98 @@
     },
     {
      "id": 164,
+     "name": "ws5GlasM",
+     "type": "moebel",
+     "x": 1136,
+     "y": 64,
+     "width": 16,
+     "height": 16,
+     "rotation": 0,
+     "visible": true,
+     "properties": [
+      {
+       "name": "tiefe",
+       "type": "int",
+       "value": 72
+      },
+      {
+       "name": "kollision",
+       "type": "bool",
+       "value": true
+      }
+     ]
+    },
+    {
+     "id": 165,
+     "name": "ws5GlasM",
+     "type": "moebel",
+     "x": 1152,
+     "y": 64,
+     "width": 16,
+     "height": 16,
+     "rotation": 0,
+     "visible": true,
+     "properties": [
+      {
+       "name": "tiefe",
+       "type": "int",
+       "value": 72
+      },
+      {
+       "name": "kollision",
+       "type": "bool",
+       "value": true
+      }
+     ]
+    },
+    {
+     "id": 166,
+     "name": "ws5GlasM",
+     "type": "moebel",
+     "x": 1168,
+     "y": 64,
+     "width": 16,
+     "height": 16,
+     "rotation": 0,
+     "visible": true,
+     "properties": [
+      {
+       "name": "tiefe",
+       "type": "int",
+       "value": 72
+      },
+      {
+       "name": "kollision",
+       "type": "bool",
+       "value": true
+      }
+     ]
+    },
+    {
+     "id": 167,
+     "name": "ws5GlasM",
+     "type": "moebel",
+     "x": 1184,
+     "y": 64,
+     "width": 16,
+     "height": 16,
+     "rotation": 0,
+     "visible": true,
+     "properties": [
+      {
+       "name": "tiefe",
+       "type": "int",
+       "value": 72
+      },
+      {
+       "name": "kollision",
+       "type": "bool",
+       "value": true
+      }
+     ]
+    },
+    {
+     "id": 168,
      "name": "ws5GlasR",
      "type": "moebel",
      "x": 1200,
@@ -14773,103 +14817,11 @@
      ]
     },
     {
-     "id": 165,
-     "name": "ws5Leitplanke",
-     "type": "moebel",
-     "x": 1040,
-     "y": 80,
-     "width": 16,
-     "height": 16,
-     "rotation": 0,
-     "visible": true,
-     "properties": [
-      {
-       "name": "tiefe",
-       "type": "int",
-       "value": 88
-      },
-      {
-       "name": "kollision",
-       "type": "bool",
-       "value": true
-      }
-     ]
-    },
-    {
-     "id": 166,
-     "name": "ws5Leitplanke",
-     "type": "moebel",
-     "x": 1200,
-     "y": 80,
-     "width": 16,
-     "height": 16,
-     "rotation": 0,
-     "visible": true,
-     "properties": [
-      {
-       "name": "tiefe",
-       "type": "int",
-       "value": 88
-      },
-      {
-       "name": "kollision",
-       "type": "bool",
-       "value": true
-      }
-     ]
-    },
-    {
-     "id": 167,
-     "name": "ws5Leitplanke",
-     "type": "moebel",
-     "x": 1040,
-     "y": 96,
-     "width": 16,
-     "height": 16,
-     "rotation": 0,
-     "visible": true,
-     "properties": [
-      {
-       "name": "tiefe",
-       "type": "int",
-       "value": 104
-      },
-      {
-       "name": "kollision",
-       "type": "bool",
-       "value": true
-      }
-     ]
-    },
-    {
-     "id": 168,
-     "name": "ws5Leitplanke",
-     "type": "moebel",
-     "x": 1200,
-     "y": 96,
-     "width": 16,
-     "height": 16,
-     "rotation": 0,
-     "visible": true,
-     "properties": [
-      {
-       "name": "tiefe",
-       "type": "int",
-       "value": 104
-      },
-      {
-       "name": "kollision",
-       "type": "bool",
-       "value": true
-      }
-     ]
-    },
-    {
      "id": 169,
      "name": "ws5Leitplanke",
      "type": "moebel",
      "x": 1040,
-     "y": 112,
+     "y": 80,
      "width": 16,
      "height": 16,
      "rotation": 0,
@@ -14878,7 +14830,7 @@
       {
        "name": "tiefe",
        "type": "int",
-       "value": 120
+       "value": 88
       },
       {
        "name": "kollision",
@@ -14892,6 +14844,75 @@
      "name": "ws5Leitplanke",
      "type": "moebel",
      "x": 1200,
+     "y": 80,
+     "width": 16,
+     "height": 16,
+     "rotation": 0,
+     "visible": true,
+     "properties": [
+      {
+       "name": "tiefe",
+       "type": "int",
+       "value": 88
+      },
+      {
+       "name": "kollision",
+       "type": "bool",
+       "value": true
+      }
+     ]
+    },
+    {
+     "id": 171,
+     "name": "ws5Leitplanke",
+     "type": "moebel",
+     "x": 1040,
+     "y": 96,
+     "width": 16,
+     "height": 16,
+     "rotation": 0,
+     "visible": true,
+     "properties": [
+      {
+       "name": "tiefe",
+       "type": "int",
+       "value": 104
+      },
+      {
+       "name": "kollision",
+       "type": "bool",
+       "value": true
+      }
+     ]
+    },
+    {
+     "id": 172,
+     "name": "ws5Leitplanke",
+     "type": "moebel",
+     "x": 1200,
+     "y": 96,
+     "width": 16,
+     "height": 16,
+     "rotation": 0,
+     "visible": true,
+     "properties": [
+      {
+       "name": "tiefe",
+       "type": "int",
+       "value": 104
+      },
+      {
+       "name": "kollision",
+       "type": "bool",
+       "value": true
+      }
+     ]
+    },
+    {
+     "id": 173,
+     "name": "ws5Leitplanke",
+     "type": "moebel",
+     "x": 1040,
      "y": 112,
      "width": 16,
      "height": 16,
@@ -14911,7 +14932,30 @@
      ]
     },
     {
-     "id": 171,
+     "id": 174,
+     "name": "ws5Leitplanke",
+     "type": "moebel",
+     "x": 1200,
+     "y": 112,
+     "width": 16,
+     "height": 16,
+     "rotation": 0,
+     "visible": true,
+     "properties": [
+      {
+       "name": "tiefe",
+       "type": "int",
+       "value": 120
+      },
+      {
+       "name": "kollision",
+       "type": "bool",
+       "value": true
+      }
+     ]
+    },
+    {
+     "id": 175,
      "name": "ws5Leitplanke",
      "type": "moebel",
      "x": 1040,
@@ -14934,7 +14978,7 @@
      ]
     },
     {
-     "id": 172,
+     "id": 176,
      "name": "ws5Leitplanke",
      "type": "moebel",
      "x": 1200,
@@ -14957,7 +15001,7 @@
      ]
     },
     {
-     "id": 173,
+     "id": 177,
      "name": "ws5Leitplanke",
      "type": "moebel",
      "x": 752,
@@ -14971,98 +15015,6 @@
        "name": "tiefe",
        "type": "int",
        "value": 24
-      },
-      {
-       "name": "kollision",
-       "type": "bool",
-       "value": true
-      }
-     ]
-    },
-    {
-     "id": 174,
-     "name": "ws5Leitplanke",
-     "type": "moebel",
-     "x": 752,
-     "y": 32,
-     "width": 16,
-     "height": 16,
-     "rotation": 0,
-     "visible": true,
-     "properties": [
-      {
-       "name": "tiefe",
-       "type": "int",
-       "value": 40
-      },
-      {
-       "name": "kollision",
-       "type": "bool",
-       "value": true
-      }
-     ]
-    },
-    {
-     "id": 175,
-     "name": "ws5Leitplanke",
-     "type": "moebel",
-     "x": 752,
-     "y": 48,
-     "width": 16,
-     "height": 16,
-     "rotation": 0,
-     "visible": true,
-     "properties": [
-      {
-       "name": "tiefe",
-       "type": "int",
-       "value": 56
-      },
-      {
-       "name": "kollision",
-       "type": "bool",
-       "value": true
-      }
-     ]
-    },
-    {
-     "id": 176,
-     "name": "ws5Leitplanke",
-     "type": "moebel",
-     "x": 752,
-     "y": 64,
-     "width": 16,
-     "height": 16,
-     "rotation": 0,
-     "visible": true,
-     "properties": [
-      {
-       "name": "tiefe",
-       "type": "int",
-       "value": 72
-      },
-      {
-       "name": "kollision",
-       "type": "bool",
-       "value": true
-      }
-     ]
-    },
-    {
-     "id": 177,
-     "name": "ws5Leitplanke",
-     "type": "moebel",
-     "x": 752,
-     "y": 80,
-     "width": 16,
-     "height": 16,
-     "rotation": 0,
-     "visible": true,
-     "properties": [
-      {
-       "name": "tiefe",
-       "type": "int",
-       "value": 88
       },
       {
        "name": "kollision",
@@ -15076,6 +15028,98 @@
      "name": "ws5Leitplanke",
      "type": "moebel",
      "x": 752,
+     "y": 32,
+     "width": 16,
+     "height": 16,
+     "rotation": 0,
+     "visible": true,
+     "properties": [
+      {
+       "name": "tiefe",
+       "type": "int",
+       "value": 40
+      },
+      {
+       "name": "kollision",
+       "type": "bool",
+       "value": true
+      }
+     ]
+    },
+    {
+     "id": 179,
+     "name": "ws5Leitplanke",
+     "type": "moebel",
+     "x": 752,
+     "y": 48,
+     "width": 16,
+     "height": 16,
+     "rotation": 0,
+     "visible": true,
+     "properties": [
+      {
+       "name": "tiefe",
+       "type": "int",
+       "value": 56
+      },
+      {
+       "name": "kollision",
+       "type": "bool",
+       "value": true
+      }
+     ]
+    },
+    {
+     "id": 180,
+     "name": "ws5Leitplanke",
+     "type": "moebel",
+     "x": 752,
+     "y": 64,
+     "width": 16,
+     "height": 16,
+     "rotation": 0,
+     "visible": true,
+     "properties": [
+      {
+       "name": "tiefe",
+       "type": "int",
+       "value": 72
+      },
+      {
+       "name": "kollision",
+       "type": "bool",
+       "value": true
+      }
+     ]
+    },
+    {
+     "id": 181,
+     "name": "ws5Leitplanke",
+     "type": "moebel",
+     "x": 752,
+     "y": 80,
+     "width": 16,
+     "height": 16,
+     "rotation": 0,
+     "visible": true,
+     "properties": [
+      {
+       "name": "tiefe",
+       "type": "int",
+       "value": 88
+      },
+      {
+       "name": "kollision",
+       "type": "bool",
+       "value": true
+      }
+     ]
+    },
+    {
+     "id": 182,
+     "name": "ws5Leitplanke",
+     "type": "moebel",
+     "x": 752,
      "y": 96,
      "width": 16,
      "height": 16,
@@ -15095,7 +15139,7 @@
      ]
     },
     {
-     "id": 179,
+     "id": 183,
      "name": "ws5Leitplanke",
      "type": "moebel",
      "x": 752,
@@ -15118,7 +15162,7 @@
      ]
     },
     {
-     "id": 180,
+     "id": 184,
      "name": "ws5Leitplanke",
      "type": "moebel",
      "x": 752,
@@ -15141,7 +15185,7 @@
      ]
     },
     {
-     "id": 181,
+     "id": 185,
      "name": "ws5Leitplanke",
      "type": "moebel",
      "x": 752,
@@ -15164,7 +15208,7 @@
      ]
     },
     {
-     "id": 182,
+     "id": 186,
      "name": "ws5Leitplanke",
      "type": "moebel",
      "x": 752,
@@ -15187,7 +15231,7 @@
      ]
     },
     {
-     "id": 183,
+     "id": 187,
      "name": "ws5Leitplanke",
      "type": "moebel",
      "x": 752,
@@ -15210,7 +15254,7 @@
      ]
     },
     {
-     "id": 184,
+     "id": 188,
      "name": "ws5Leitplanke",
      "type": "moebel",
      "x": 752,
@@ -15233,7 +15277,7 @@
      ]
     },
     {
-     "id": 185,
+     "id": 189,
      "name": "ws5Leitplanke",
      "type": "moebel",
      "x": 752,
@@ -15256,7 +15300,7 @@
      ]
     },
     {
-     "id": 186,
+     "id": 190,
      "name": "ws5Leitplanke",
      "type": "moebel",
      "x": 752,
@@ -15279,7 +15323,7 @@
      ]
     },
     {
-     "id": 187,
+     "id": 191,
      "name": "ws5Leitplanke",
      "type": "moebel",
      "x": 752,
@@ -15302,7 +15346,7 @@
      ]
     },
     {
-     "id": 188,
+     "id": 192,
      "name": "ws5Leitplanke",
      "type": "moebel",
      "x": 752,
@@ -15325,7 +15369,7 @@
      ]
     },
     {
-     "id": 189,
+     "id": 193,
      "name": "ws5Leitplanke",
      "type": "moebel",
      "x": 752,
@@ -15348,7 +15392,7 @@
      ]
     },
     {
-     "id": 190,
+     "id": 194,
      "name": "ws5Leitplanke",
      "type": "moebel",
      "x": 752,
@@ -15371,7 +15415,7 @@
      ]
     },
     {
-     "id": 191,
+     "id": 195,
      "name": "ws5Leitplanke",
      "type": "moebel",
      "x": 1488,
@@ -15394,7 +15438,7 @@
      ]
     },
     {
-     "id": 192,
+     "id": 196,
      "name": "ws5Leitplanke",
      "type": "moebel",
      "x": 1488,
@@ -15417,7 +15461,7 @@
      ]
     },
     {
-     "id": 193,
+     "id": 197,
      "name": "ws5Leitplanke",
      "type": "moebel",
      "x": 1488,
@@ -15440,7 +15484,7 @@
      ]
     },
     {
-     "id": 194,
+     "id": 198,
      "name": "ws5Leitplanke",
      "type": "moebel",
      "x": 1488,
@@ -15463,7 +15507,7 @@
      ]
     },
     {
-     "id": 195,
+     "id": 199,
      "name": "ws5Leitplanke",
      "type": "moebel",
      "x": 1488,
@@ -15486,7 +15530,7 @@
      ]
     },
     {
-     "id": 196,
+     "id": 200,
      "name": "ws5Leitplanke",
      "type": "moebel",
      "x": 1488,
@@ -15509,7 +15553,7 @@
      ]
     },
     {
-     "id": 197,
+     "id": 201,
      "name": "ws5Leitplanke",
      "type": "moebel",
      "x": 1488,
@@ -15532,7 +15576,7 @@
      ]
     },
     {
-     "id": 198,
+     "id": 202,
      "name": "ws5Leitplanke",
      "type": "moebel",
      "x": 1488,
@@ -15555,7 +15599,7 @@
      ]
     },
     {
-     "id": 199,
+     "id": 203,
      "name": "ws5Leitplanke",
      "type": "moebel",
      "x": 1488,
@@ -15578,7 +15622,7 @@
      ]
     },
     {
-     "id": 200,
+     "id": 204,
      "name": "ws5Leitplanke",
      "type": "moebel",
      "x": 1488,
@@ -15601,7 +15645,7 @@
      ]
     },
     {
-     "id": 201,
+     "id": 205,
      "name": "ws5Leitplanke",
      "type": "moebel",
      "x": 1488,
@@ -15624,7 +15668,7 @@
      ]
     },
     {
-     "id": 202,
+     "id": 206,
      "name": "ws5Leitplanke",
      "type": "moebel",
      "x": 1488,
@@ -15647,7 +15691,7 @@
      ]
     },
     {
-     "id": 203,
+     "id": 207,
      "name": "ws5Leitplanke",
      "type": "moebel",
      "x": 1488,
@@ -15670,7 +15714,7 @@
      ]
     },
     {
-     "id": 204,
+     "id": 208,
      "name": "ws5Leitplanke",
      "type": "moebel",
      "x": 1488,
@@ -15693,7 +15737,7 @@
      ]
     },
     {
-     "id": 205,
+     "id": 209,
      "name": "ws5Leitplanke",
      "type": "moebel",
      "x": 1488,
@@ -15716,7 +15760,7 @@
      ]
     },
     {
-     "id": 206,
+     "id": 210,
      "name": "ws5Leitplanke",
      "type": "moebel",
      "x": 1488,
@@ -15739,7 +15783,7 @@
      ]
     },
     {
-     "id": 207,
+     "id": 211,
      "name": "ws5Leitplanke",
      "type": "moebel",
      "x": 1488,
@@ -15762,7 +15806,7 @@
      ]
     },
     {
-     "id": 208,
+     "id": 212,
      "name": "ws5Leitplanke",
      "type": "moebel",
      "x": 1488,
@@ -15785,7 +15829,7 @@
      ]
     },
     {
-     "id": 209,
+     "id": 213,
      "name": "ws5AutoBlau",
      "type": "moebel",
      "x": 832,
@@ -15808,7 +15852,7 @@
      ]
     },
     {
-     "id": 210,
+     "id": 214,
      "name": "ws5AutoGrau",
      "type": "moebel",
      "x": 960,
@@ -15831,7 +15875,7 @@
      ]
     },
     {
-     "id": 211,
+     "id": 215,
      "name": "ws5AutoGrau",
      "type": "moebel",
      "x": 1280,
@@ -15854,7 +15898,7 @@
      ]
     },
     {
-     "id": 212,
+     "id": 216,
      "name": "ws5AutoBlau",
      "type": "moebel",
      "x": 1408,
@@ -15877,7 +15921,7 @@
      ]
     },
     {
-     "id": 213,
+     "id": 217,
      "name": "ws5AutoGrau",
      "type": "moebel",
      "x": 1120,
@@ -15900,7 +15944,7 @@
      ]
     },
     {
-     "id": 214,
+     "id": 218,
      "name": "ws5Aufzug",
      "type": "moebel",
      "x": 384,
@@ -15923,7 +15967,7 @@
      ]
     },
     {
-     "id": 215,
+     "id": 219,
      "name": "ws5Werbetafel",
      "type": "moebel",
      "x": 128,
@@ -15946,7 +15990,7 @@
      ]
     },
     {
-     "id": 216,
+     "id": 220,
      "name": "ws5Laterne",
      "type": "moebel",
      "x": 64,
@@ -15969,7 +16013,7 @@
      ]
     },
     {
-     "id": 217,
+     "id": 221,
      "name": "ws5Laterne",
      "type": "moebel",
      "x": 256,
@@ -15992,7 +16036,7 @@
      ]
     },
     {
-     "id": 218,
+     "id": 222,
      "name": "ws5Kuebel",
      "type": "moebel",
      "x": 32,
@@ -16015,7 +16059,7 @@
      ]
     },
     {
-     "id": 219,
+     "id": 223,
      "name": "ws5Kuebel",
      "type": "moebel",
      "x": 96,
@@ -16038,7 +16082,7 @@
      ]
     },
     {
-     "id": 220,
+     "id": 224,
      "name": "ws5Kuebel",
      "type": "moebel",
      "x": 224,
@@ -16061,7 +16105,7 @@
      ]
     },
     {
-     "id": 221,
+     "id": 225,
      "name": "ws5Kuebel",
      "type": "moebel",
      "x": 288,
@@ -16084,7 +16128,7 @@
      ]
     },
     {
-     "id": 222,
+     "id": 226,
      "name": "ws5Schild",
      "type": "moebel",
      "x": 2176,
@@ -16107,7 +16151,7 @@
      ]
     },
     {
-     "id": 223,
+     "id": 227,
      "name": "ws5Bank",
      "type": "moebel",
      "x": 1344,
@@ -16130,7 +16174,7 @@
      ]
     },
     {
-     "id": 224,
+     "id": 228,
      "name": "ws5Bank",
      "type": "moebel",
      "x": 1104,
@@ -16153,7 +16197,7 @@
      ]
     },
     {
-     "id": 225,
+     "id": 229,
      "name": "ws5Strandgras",
      "type": "moebel",
      "x": 1648,
@@ -16176,7 +16220,7 @@
      ]
     },
     {
-     "id": 226,
+     "id": 230,
      "name": "ws5Strandgras",
      "type": "moebel",
      "x": 1632,
@@ -16199,7 +16243,7 @@
      ]
     },
     {
-     "id": 227,
+     "id": 231,
      "name": "ws5Strandgras",
      "type": "moebel",
      "x": 1728,
@@ -16222,7 +16266,7 @@
      ]
     },
     {
-     "id": 228,
+     "id": 232,
      "name": "ws5Strandgras",
      "type": "moebel",
      "x": 2016,
@@ -16245,7 +16289,7 @@
      ]
     },
     {
-     "id": 229,
+     "id": 233,
      "name": "ws5Strandgras",
      "type": "moebel",
      "x": 2128,
@@ -16268,7 +16312,7 @@
      ]
     },
     {
-     "id": 230,
+     "id": 234,
      "name": "ws5Strandgras",
      "type": "moebel",
      "x": 1744,
@@ -16291,103 +16335,11 @@
      ]
     },
     {
-     "id": 231,
-     "name": "ws5Strandgras",
-     "type": "moebel",
-     "x": 1536,
-     "y": 32,
-     "width": 32,
-     "height": 32,
-     "rotation": 0,
-     "visible": true,
-     "properties": [
-      {
-       "name": "tiefe",
-       "type": "int",
-       "value": 1
-      },
-      {
-       "name": "kollision",
-       "type": "bool",
-       "value": false
-      }
-     ]
-    },
-    {
-     "id": 232,
-     "name": "ws5Strandgras",
-     "type": "moebel",
-     "x": 1536,
-     "y": 352,
-     "width": 32,
-     "height": 32,
-     "rotation": 0,
-     "visible": true,
-     "properties": [
-      {
-       "name": "tiefe",
-       "type": "int",
-       "value": 1
-      },
-      {
-       "name": "kollision",
-       "type": "bool",
-       "value": false
-      }
-     ]
-    },
-    {
-     "id": 233,
-     "name": "ws5Strandgras",
-     "type": "moebel",
-     "x": 2064,
-     "y": 32,
-     "width": 32,
-     "height": 32,
-     "rotation": 0,
-     "visible": true,
-     "properties": [
-      {
-       "name": "tiefe",
-       "type": "int",
-       "value": 1
-      },
-      {
-       "name": "kollision",
-       "type": "bool",
-       "value": false
-      }
-     ]
-    },
-    {
-     "id": 234,
-     "name": "ws5Strandgras",
-     "type": "moebel",
-     "x": 1904,
-     "y": 368,
-     "width": 32,
-     "height": 32,
-     "rotation": 0,
-     "visible": true,
-     "properties": [
-      {
-       "name": "tiefe",
-       "type": "int",
-       "value": 1
-      },
-      {
-       "name": "kollision",
-       "type": "bool",
-       "value": false
-      }
-     ]
-    },
-    {
      "id": 235,
      "name": "ws5Strandgras",
      "type": "moebel",
-     "x": 1728,
-     "y": 240,
+     "x": 1536,
+     "y": 32,
      "width": 32,
      "height": 32,
      "rotation": 0,
@@ -16410,7 +16362,7 @@
      "name": "ws5Strandgras",
      "type": "moebel",
      "x": 1536,
-     "y": 288,
+     "y": 352,
      "width": 32,
      "height": 32,
      "rotation": 0,
@@ -16430,6 +16382,98 @@
     },
     {
      "id": 237,
+     "name": "ws5Strandgras",
+     "type": "moebel",
+     "x": 2064,
+     "y": 32,
+     "width": 32,
+     "height": 32,
+     "rotation": 0,
+     "visible": true,
+     "properties": [
+      {
+       "name": "tiefe",
+       "type": "int",
+       "value": 1
+      },
+      {
+       "name": "kollision",
+       "type": "bool",
+       "value": false
+      }
+     ]
+    },
+    {
+     "id": 238,
+     "name": "ws5Strandgras",
+     "type": "moebel",
+     "x": 1904,
+     "y": 368,
+     "width": 32,
+     "height": 32,
+     "rotation": 0,
+     "visible": true,
+     "properties": [
+      {
+       "name": "tiefe",
+       "type": "int",
+       "value": 1
+      },
+      {
+       "name": "kollision",
+       "type": "bool",
+       "value": false
+      }
+     ]
+    },
+    {
+     "id": 239,
+     "name": "ws5Strandgras",
+     "type": "moebel",
+     "x": 1728,
+     "y": 240,
+     "width": 32,
+     "height": 32,
+     "rotation": 0,
+     "visible": true,
+     "properties": [
+      {
+       "name": "tiefe",
+       "type": "int",
+       "value": 1
+      },
+      {
+       "name": "kollision",
+       "type": "bool",
+       "value": false
+      }
+     ]
+    },
+    {
+     "id": 240,
+     "name": "ws5Strandgras",
+     "type": "moebel",
+     "x": 1536,
+     "y": 288,
+     "width": 32,
+     "height": 32,
+     "rotation": 0,
+     "visible": true,
+     "properties": [
+      {
+       "name": "tiefe",
+       "type": "int",
+       "value": 1
+      },
+      {
+       "name": "kollision",
+       "type": "bool",
+       "value": false
+      }
+     ]
+    },
+    {
+     "id": 241,
      "name": "ws5Strandgras",
      "type": "moebel",
      "x": 1744,
@@ -16452,7 +16496,7 @@
      ]
     },
     {
-     "id": 238,
+     "id": 242,
      "name": "ws5Strandgras",
      "type": "moebel",
      "x": 1808,
@@ -16475,7 +16519,7 @@
      ]
     },
     {
-     "id": 239,
+     "id": 243,
      "name": "ws5Strandgras",
      "type": "moebel",
      "x": 2176,
@@ -16498,7 +16542,7 @@
      ]
     },
     {
-     "id": 240,
+     "id": 244,
      "name": "ws5Strandgras",
      "type": "moebel",
      "x": 1696,
@@ -16521,7 +16565,7 @@
      ]
     },
     {
-     "id": 241,
+     "id": 245,
      "name": "ws5Strandgras",
      "type": "moebel",
      "x": 1808,
@@ -16544,7 +16588,7 @@
      ]
     },
     {
-     "id": 242,
+     "id": 246,
      "name": "ws5Strandgras",
      "type": "moebel",
      "x": 2032,
@@ -16567,7 +16611,7 @@
      ]
     },
     {
-     "id": 243,
+     "id": 247,
      "name": "ws5Strandgras",
      "type": "moebel",
      "x": 1808,
@@ -16590,7 +16634,7 @@
      ]
     },
     {
-     "id": 244,
+     "id": 248,
      "name": "ws5Strandgras",
      "type": "moebel",
      "x": 1920,
@@ -16613,7 +16657,7 @@
      ]
     },
     {
-     "id": 245,
+     "id": 249,
      "name": "ws5Strandgras",
      "type": "moebel",
      "x": 1936,
@@ -16636,7 +16680,7 @@
      ]
     },
     {
-     "id": 246,
+     "id": 250,
      "name": "pd6Klapptisch",
      "type": "moebel",
      "x": 1136,
@@ -16659,7 +16703,7 @@
      ]
     },
     {
-     "id": 247,
+     "id": 251,
      "name": "pd6Laptop",
      "type": "moebel",
      "x": 1144,
@@ -16682,7 +16726,7 @@
      ]
     },
     {
-     "id": 248,
+     "id": 252,
      "name": "sb8Ringlicht",
      "type": "moebel",
      "x": 1168,
@@ -16705,7 +16749,7 @@
      ]
     },
     {
-     "id": 249,
+     "id": 253,
      "name": "sb8Funkmast",
      "type": "moebel",
      "x": 1056,

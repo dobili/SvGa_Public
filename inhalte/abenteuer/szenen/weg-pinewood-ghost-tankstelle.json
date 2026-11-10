@@ -1,0 +1,88 @@
+{
+  "karte": "wegPinewoodGhost.tankstelle",
+  "datei": "karten/weg-pinewood-ghost-tankstelle.json",
+  "art": "innen",
+  "beschreibung": "Die verlassene Tankstelle an der Staubstraße (Weg 10), 12 × 11 Kacheln: In der Mitte steht der Greifarm Z-1 mit dem Logo von Perfect Move vor einem Tisch mit Brett und einem Hocker. Regale mit Ölkanistern, alte Reifen, ein Fass. Tür in der Südwand.",
+  "wand": "backstein",
+  "boden": "stein",
+  "raster": [
+    "############",
+    "############",
+    "############",
+    "#..........#",
+    "#..........#",
+    "#..........#",
+    "#..........#",
+    "#..........#",
+    "#..........#",
+    "######.#####",
+    "############"
+  ],
+  "objekte": [
+    {
+      "moebel": "cc6TuerSued",
+      "feld": [6, 10],
+      "an_wand": true
+    },
+    {
+      "moebel": "cp8Greifarm",
+      "feld": [5, 3],
+      "id": "z1"
+    },
+    {
+      "moebel": "cc5Tisch",
+      "feld": [5, 6],
+      "id": "brettZ1"
+    },
+    {
+      "moebel": "cc4Brett",
+      "feld": [0, 0],
+      "auf": "brettZ1"
+    },
+    {
+      "moebel": "cc4Hocker",
+      "feld": [5, 8]
+    },
+    {
+      "moebel": "cc4RegalA",
+      "feld": [1, 1]
+    },
+    {
+      "moebel": "cc4RegalA",
+      "feld": [9, 1]
+    },
+    {
+      "moebel": "dsReifen",
+      "feld": [1, 7]
+    },
+    {
+      "moebel": "dsReifen",
+      "feld": [2, 7]
+    },
+    {
+      "moebel": "iwFass",
+      "feld": [9, 6]
+    }
+  ],
+  "ausloeser": [
+    {
+      "name": "start",
+      "feld": [6, 8],
+      "eigenschaften": {
+        "richtung": "oben"
+      }
+    },
+    {
+      "name": "tankstelleAusgang",
+      "feld": [6, 9]
+    },
+    {
+      "name": "greifarm",
+      "feld": [7, 7]
+    }
+  ],
+  "figuren": [],
+  "belebung": [],
+  "zustand": ["gebraucht", "alt", "neu"],
+  "stil": ["einfach", "industrie", "modern", "rustikal", "klassisch"]
+}

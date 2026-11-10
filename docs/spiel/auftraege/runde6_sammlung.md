@@ -123,3 +123,21 @@ Zweigs): Welche Sperre dort schon eine Bedingung `wenn` hat, steht in Abschnitt 
 | Szenenvariante nach Fund | Neonschild in Akt 4 repariert, wenn das K zurückgebracht wurde                                 | `summit-weg.md` 3                                     |
 | Ohne Uhrzeit             | Geysirausbruch „zur vollen Stunde“ widerspricht dem Grundsatz ohne Uhrzeit                     | `crossroads.md` 3.3; `2026-11-09_akt1_wegenetz.md` 16 |
 | Dialoge, Quests          | Keine neuen Dialoge und Quests in Runde 5; alle Ansehen-Auslöser oben kommen mit den Dialogen  | `runde5_karten.md`; `runde5b_akt3.md` 4               |
+
+## 5. Nachtrag Haupt-Chat (10.11.2026): Möbel, die etwas anderes zeigen als ihr Name
+
+Die Katalogkorrekturen der Runde 7 (`inhalte/abenteuer/katalog_korrekturen/runde7.json`) haben
+gezeigt, dass einige Bilder nicht zum Möbelnamen passen. Wer am Ort arbeitet, prüft, ob das Bild in
+der Szene trotzdem stimmt, und tauscht es sonst:
+
+| Möbel                             | zeigt tatsächlich                                    | Ort                      |
+| --------------------------------- | ---------------------------------------------------- | ------------------------ |
+| `rv5Gepaeckwagen`                 | Rollkoffer                                           | Riverton, Bahnhofshalle  |
+| `rvBildschirmtisch`               | großer Standbildschirm mit Abfahrtsplan              | Riverton                 |
+| `rv5Kommode`, `pd6Kommode`        | flacher Vitrinentisch mit Glasscheibe                | Riverton, Port Delacroix |
+| `rv5Schalter`, `rvTicketschalter` | Teilstück eines Ticketschalters (mit 5 und 7)        | Riverton                 |
+| `kisteRot`                        | Mittelstück einer Konferenztheke (mit 25 und 27)     | allgemein                |
+| `wzSofa`                          | lila Polsterbank ohne Lehne                          | Maple Falls, Wohnzimmer  |
+| `wds6Schranke`                    | mobiles Absperrgitter, kein Schlagbaum               | Wüste                    |
+| `st5Schotterhaufen`               | braune Erdhaufen                                     | Steinbruch               |
+| `ds8Sheriff`, `sc8Bergwacht`      | Wache mit „POLICE“ und Feuerwache mit „FIRE STATION“ | Desert Springs, Summit   |

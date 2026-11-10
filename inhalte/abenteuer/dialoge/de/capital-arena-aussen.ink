@@ -27,6 +27,10 @@ VAR arenaGesehen = false
 VAR ausgangCapitalArenaFinale = ""
 VAR abschiedGesehen = false
 VAR novaHilfeZugesagt = false
+VAR angesehenFahnen = false
+VAR wandererSeitenZurueck = 0
+VAR buchGeschenkt = false
+VAR wandererCapitalGetroffen = false
 
 === function ligapunkte() ===
 ~ return nadelMapleFalls + nadelCedarCreek + nadelRiverton + nadelIronwood + nadelSiliconBay + nadelPortDelacroix + nadelDesertSprings + nadelSummitCity
@@ -131,3 +135,41 @@ Menschen, die kämpfen, Fehler machen und wachsen. Du hast mir das gezeigt. #spr
 - Das Brett wird still. Die Figuren stehen in der Schlussstellung der Fernpartie. #sprecher:erzaehler #pause
 ~ zeigeAbspann()
 -> END
+
+// ---------------------------------------------------------------- Ansehen (Runde 6)
+
+=== fahnen ===
+{angesehenFahnen:
+    Die Fahnen knattern im Wind. Auf jeder ein König, schwarz auf weiß. #sprecher:erzaehler
+    -> END
+}
+~ angesehenFahnen = true
+Zwei Fahnen vor der Freitreppe, darauf ein König und die Jahreszahl der ersten Landesmeisterschaft. Der Mast ist frisch gestrichen. #sprecher:erzaehler
+-> END
+
+// ---------------------------------------------------------------- Der Wanderer (Buchseiten, 15, 1.2)
+// Nach dem Finale schenkt er {held} das gedruckte Buch, wenn alle dreizehn Seiten zurück sind
+// (wandererSeitenZurueck setzt weg-ghost-capital.ink).
+
+=== wanderer ===
+{
+- buchGeschenkt:
+    {~Der Verlag druckt eine zweite Auflage. Mit einem Dank an dich im Vorwort.|Wenn du nicht weiterweißt: Kapitel 12. Da steht, wie man übt.|Ich laufe jetzt nach Hause. Ohne Wind, hoffe ich.} #sprecher:wanderer
+- finaleGespielt() and wandererSeitenZurueck >= 13:
+    -> wanderer_buch
+- wandererSeitenZurueck >= 13:
+    Alle dreizehn Seiten sind beim Verlag. Spiel dein Finale, dann sehen wir uns hier. #sprecher:wanderer
+- else:
+    ~ wandererCapitalGetroffen = true
+    Mein Verlag ist gleich um die Ecke. Aber ohne die fehlenden Seiten will ich da nicht hinein. #sprecher:wanderer
+}
+-> END
+
+=== wanderer_buch ===
+~ buchGeschenkt = true
+Der Mann mit dem gelben Rucksack hält ein Buch in den Händen, noch nach Druckerschwärze riechend. #sprecher:erzaehler
+Für dich. Dreizehn Kapitel, und jedes hast du einmal in der Hand gehabt. #sprecher:wanderer
+~ gibFund("buchVonGrundAuf")
+Ein Buch für Anfänger. Die besten Bücher sind die, die man immer wieder aufschlägt. #sprecher:ambrose #stimmung:friedlich
+-> END
+

@@ -737,6 +737,14 @@
     {
       "name": "fundMuschel",
       "feld": [106, 25]
+    },
+    {
+      "name": "pumpenhaus",
+      "feld": [153, 16]
+    },
+    {
+      "name": "spurPM3",
+      "feld": [140, 15]
     }
   ],
   "figuren": [
@@ -751,8 +759,8 @@
       "typ": "statist",
       "feld": [70, 7],
       "eigenschaften": {
-        "von": "64,7",
-        "bis": "80,7",
+        "von": "63,6",
+        "bis": "79,6",
         "tun": "schiebt eine Schubkarre mit Sandsäcken",
         "wann": "tag",
         "sagt": "statist.wegSiliconDelacroix.deich.helfer"
@@ -807,20 +815,20 @@
     {
       "name": "reiher",
       "typ": "tier",
-      "feld": [128, 20],
+      "feld": [127, 19],
       "eigenschaften": {
-        "von": "128,20",
-        "bis": "128,20",
+        "von": "127,19",
+        "bis": "127,19",
         "verhalten": "sitzen"
       }
     },
     {
       "name": "pelikan",
       "typ": "tier",
-      "feld": [30, 3],
+      "feld": [28, 5],
       "eigenschaften": {
-        "von": "30,3",
-        "bis": "30,3",
+        "von": "28,5",
+        "bis": "28,5",
         "verhalten": "sitzen"
       }
     },

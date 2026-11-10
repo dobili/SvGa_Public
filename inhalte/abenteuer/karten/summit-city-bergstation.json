@@ -11,7 +11,7 @@
  "tilewidth": 16,
  "tileheight": 16,
  "nextlayerid": 5,
- "nextobjectid": 19,
+ "nextobjectid": 20,
  "layers": [
   {
    "id": 1,
@@ -752,6 +752,17 @@
     },
     {
      "id": 4,
+     "name": "fahrplan",
+     "type": "ausloeser",
+     "x": 16,
+     "y": 80,
+     "width": 16,
+     "height": 16,
+     "rotation": 0,
+     "visible": true
+    },
+    {
+     "id": 5,
      "name": "victor",
      "type": "figur",
      "x": 96,
@@ -762,7 +773,7 @@
      "visible": true
     },
     {
-     "id": 5,
+     "id": 6,
      "name": "skifahrerin",
      "type": "statist",
      "x": 176,
@@ -800,7 +811,7 @@
      ]
     },
     {
-     "id": 6,
+     "id": 7,
      "name": "seilbahnfan",
      "type": "statist",
      "x": 224,
@@ -838,7 +849,7 @@
      ]
     },
     {
-     "id": 7,
+     "id": 8,
      "name": "sc7FensterWolken",
      "type": "moebel",
      "x": 32,
@@ -861,7 +872,7 @@
      ]
     },
     {
-     "id": 8,
+     "id": 9,
      "name": "sc7FensterWolken",
      "type": "moebel",
      "x": 96,
@@ -884,7 +895,7 @@
      ]
     },
     {
-     "id": 9,
+     "id": 10,
      "name": "sc7FensterWolken",
      "type": "moebel",
      "x": 160,
@@ -907,7 +918,7 @@
      ]
     },
     {
-     "id": 10,
+     "id": 11,
      "name": "rvBahnsteigbank",
      "type": "moebel",
      "x": 80,
@@ -930,7 +941,7 @@
      ]
     },
     {
-     "id": 11,
+     "id": 12,
      "name": "sc7Seil",
      "type": "moebel",
      "x": 224,
@@ -953,7 +964,7 @@
      ]
     },
     {
-     "id": 12,
+     "id": 13,
      "name": "sc7Gondel",
      "type": "moebel",
      "x": 208,
@@ -976,7 +987,7 @@
      ]
     },
     {
-     "id": 13,
+     "id": 14,
      "name": "rvTicketschalter",
      "type": "moebel",
      "x": 16,
@@ -999,7 +1010,7 @@
      ]
     },
     {
-     "id": 14,
+     "id": 15,
      "name": "rvFahrplan",
      "type": "moebel",
      "x": 16,
@@ -1022,7 +1033,7 @@
      ]
     },
     {
-     "id": 15,
+     "id": 16,
      "name": "rvKaffeeautomat",
      "type": "moebel",
      "x": 144,
@@ -1045,7 +1056,7 @@
      ]
     },
     {
-     "id": 16,
+     "id": 17,
      "name": "iwSpind",
      "type": "moebel",
      "x": 64,
@@ -1068,7 +1079,7 @@
      ]
     },
     {
-     "id": 17,
+     "id": 18,
      "name": "rvTopfpflanze",
      "type": "moebel",
      "x": 176,
@@ -1091,7 +1102,7 @@
      ]
     },
     {
-     "id": 18,
+     "id": 19,
      "name": "scRucksack",
      "type": "moebel",
      "x": 112,

@@ -469,6 +469,14 @@
     {
       "name": "finchBauerF",
       "feld": [59, 42]
+    },
+    {
+      "name": "graffiti",
+      "feld": [60, 25]
+    },
+    {
+      "name": "bagger",
+      "feld": [3, 33]
     }
   ],
   "figuren": [],
@@ -476,10 +484,10 @@
     {
       "name": "hargrove",
       "typ": "statist",
-      "feld": [54, 10],
+      "feld": [54, 9],
       "eigenschaften": {
-        "von": "54,10",
-        "bis": "54,10",
+        "von": "54,9",
+        "bis": "54,9",
         "tun": "",
         "wann": "tag"
       }

@@ -125,3 +125,10 @@ Darauf ein Pferd und die Zahl 1866. #sprecher:erzaehler
 Er hat meinen Brief getragen. #sprecher:ambrose #stimmung:fern #pause
 Die Farben werden braun wie ein altes Foto. #sprecher:erzaehler
 -> END
+
+// ---------------------------------------------------------------- Ansehen (Runde 6)
+
+=== klavier ===
+Du drückst eine Taste. Nichts. Die nächste klingt schief und viel zu laut im leeren Saloon. #sprecher:erzaehler
+Ein Klavier verstimmt sich in der Hitze. Und in der Stille. #sprecher:ambrose
+-> END

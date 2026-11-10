@@ -313,6 +313,14 @@
     {
       "name": "kiosk",
       "feld": [30, 21]
+    },
+    {
+      "name": "steg",
+      "feld": [40, 29]
+    },
+    {
+      "name": "kanus",
+      "feld": [34, 30]
     }
   ],
   "figuren": [
@@ -350,7 +358,8 @@
         "von": "24,35",
         "bis": "40,35",
         "tun": "paddelt über den See",
-        "wann": "tag"
+        "wann": "tag",
+        "verhalten": "schwimmen"
       }
     },
     {

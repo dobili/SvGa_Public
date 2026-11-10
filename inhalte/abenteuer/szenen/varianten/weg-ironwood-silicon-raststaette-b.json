@@ -662,6 +662,18 @@
     {
       "name": "fundAnstecker",
       "feld": [151, 25]
+    },
+    {
+      "name": "kreide2",
+      "feld": [124, 11]
+    },
+    {
+      "name": "finchBauerB",
+      "feld": [122, 16]
+    },
+    {
+      "name": "seite04",
+      "feld": [110, 14]
     }
   ],
   "figuren": [
@@ -728,7 +740,7 @@
         "tun": "zählt mit einem Klicker die Strandläufer",
         "wann": "tag",
         "von": "66,18",
-        "bis": "74,19",
+        "bis": "75,19",
         "sagt": "statist.wegIronwoodSilicon.raststaette.vogelzaehlerin"
       }
     },
@@ -755,20 +767,20 @@
     {
       "name": "krebse",
       "typ": "tier",
-      "feld": [20, 23],
+      "feld": [18, 21],
       "eigenschaften": {
-        "von": "14,23",
-        "bis": "26,25",
+        "von": "12,21",
+        "bis": "26,22",
         "verhalten": "ausweichen"
       }
     },
     {
       "name": "hund",
       "typ": "tier",
-      "feld": [150, 22],
+      "feld": [149, 21],
       "eigenschaften": {
-        "von": "146,20",
-        "bis": "156,24",
+        "von": "145,19",
+        "bis": "156,23",
         "verhalten": "folgen"
       }
     }

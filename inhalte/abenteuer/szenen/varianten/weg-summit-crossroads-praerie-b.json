@@ -2607,6 +2607,14 @@
     {
       "name": "sturmkeller",
       "feld": [17, 95]
+    },
+    {
+      "name": "seite09",
+      "feld": [16, 95]
+    },
+    {
+      "name": "windrad",
+      "feld": [24, 46]
     }
   ],
   "figuren": [
@@ -2696,7 +2704,7 @@
         "tun": "schiebt ihr Rad gegen den Wind",
         "wann": "tag",
         "von": "14,40",
-        "bis": "15,70",
+        "bis": "16,70",
         "sagt": "statist.wegSummitCrossroads.praerie.radfahrerin"
       }
     },

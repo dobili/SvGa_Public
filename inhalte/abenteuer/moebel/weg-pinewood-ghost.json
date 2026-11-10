@@ -81,6 +81,15 @@
       "art": "schild",
       "zustand": "gebraucht",
       "stil": "natur"
+    },
+    "cp8Greifarm": {
+      "quelle": "spiel/eigene/greifarm_z1.png",
+      "breite": 32,
+      "hoehe": 48,
+      "kollision": true,
+      "art": "geraet",
+      "zustand": "gebraucht",
+      "stil": "modern"
     }
   }
 }

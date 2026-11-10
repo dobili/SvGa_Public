@@ -3090,6 +3090,14 @@
     {
       "name": "sturmkeller",
       "feld": [17, 95]
+    },
+    {
+      "name": "seite09",
+      "feld": [16, 95]
+    },
+    {
+      "name": "windrad",
+      "feld": [21, 80]
     }
   ],
   "figuren": [
@@ -3154,7 +3162,7 @@
       "typ": "tier",
       "feld": [12, 140],
       "eigenschaften": {
-        "von": "10,135",
+        "von": "10,136",
         "bis": "18,150",
         "verhalten": "flitzen"
       }

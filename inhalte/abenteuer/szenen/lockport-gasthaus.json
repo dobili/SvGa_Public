@@ -218,6 +218,26 @@
     {
       "name": "gasthausAusgang",
       "feld": [14, 12]
+    },
+    {
+      "name": "henrik",
+      "feld": [15, 8]
+    },
+    {
+      "name": "fundKegel",
+      "feld": [15, 4]
+    },
+    {
+      "name": "kegelbahn",
+      "feld": [7, 5]
+    },
+    {
+      "name": "fotoHochwasser",
+      "feld": [13, 3]
+    },
+    {
+      "name": "kegelkoenig",
+      "feld": [3, 3]
     }
   ],
   "figuren": [],
@@ -250,6 +270,15 @@
         "tun": "isst eine Suppe",
         "wann": "tag",
         "sagt": "statist.lockport.gasthaus.wanderinBeimEssen"
+      }
+    },
+    {
+      "name": "henrik",
+      "typ": "statist",
+      "feld": [15, 5],
+      "eigenschaften": {
+        "tun": "poliert Gläser hinter dem Tresen",
+        "wann": "tag"
       }
     }
   ],

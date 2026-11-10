@@ -655,6 +655,26 @@
     {
       "name": "weiterGhost",
       "feld": [149, 15]
+    },
+    {
+      "name": "ereignisTankstelle",
+      "feld": [88, 15]
+    },
+    {
+      "name": "spurPM6",
+      "feld": [89, 15]
+    },
+    {
+      "name": "seite11",
+      "feld": [84, 14]
+    },
+    {
+      "name": "tankstelleTuer",
+      "feld": [90, 15]
+    },
+    {
+      "name": "wagen",
+      "feld": [57, 7]
     }
   ],
   "figuren": [],
@@ -786,5 +806,6 @@
     "industrie",
     "modern",
     "rustikal"
-  ]
+  ],
+  "toenung": "sepia"
 }

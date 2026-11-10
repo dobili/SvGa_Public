@@ -997,7 +997,7 @@
       "eigenschaften": {
         "von": "26,4",
         "bis": "26,4",
-        "verhalten": "sitzen",
+        "verhalten": "fliegen",
         "wann": "tag"
       }
     },
@@ -1075,11 +1075,11 @@
     {
       "name": "hase",
       "typ": "tier",
-      "feld": [85, 15],
+      "feld": [83, 14],
       "eigenschaften": {
         "verhalten": "ausweichen",
-        "von": "83,15",
-        "bis": "90,15"
+        "von": "81,14",
+        "bis": "88,14"
       }
     },
     {
@@ -1087,7 +1087,7 @@
       "typ": "tier",
       "feld": [40, 3],
       "eigenschaften": {
-        "verhalten": "sitzen",
+        "verhalten": "fliegen",
         "wann": "nacht"
       }
     }

@@ -773,6 +773,14 @@
     {
       "name": "altstadt",
       "feld": [0, 22]
+    },
+    {
+      "name": "infosaeule",
+      "feld": [60, 21]
+    },
+    {
+      "name": "werbetafel",
+      "feld": [66, 9]
     }
   ],
   "figuren": [
@@ -1015,7 +1023,7 @@
       "typ": "tier",
       "feld": [66, 44],
       "eigenschaften": {
-        "von": "64,42",
+        "von": "66,42",
         "bis": "69,45",
         "verhalten": "schlafen"
       }

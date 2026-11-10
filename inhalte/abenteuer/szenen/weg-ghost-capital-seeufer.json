@@ -518,9 +518,26 @@
     {
       "name": "tafel",
       "feld": [89, 16]
+    },
+    {
+      "name": "ereignisWeltschachtag",
+      "feld": [140, 13]
+    },
+    {
+      "name": "faehrterminal",
+      "feld": [48, 12]
+    },
+    {
+      "name": "seite12",
+      "feld": [59, 8]
     }
   ],
-  "figuren": [],
+  "figuren": [
+    {
+      "name": "wanderer",
+      "feld": [124, 15]
+    }
+  ],
   "belebung": [
     {
       "name": "wachmann",
@@ -539,7 +556,7 @@
       "typ": "statist",
       "feld": [20, 10],
       "eigenschaften": {
-        "von": "16,10",
+        "von": "17,9",
         "bis": "28,10",
         "tun": "lässt einen Drachen steigen",
         "wann": "tag"
@@ -596,7 +613,7 @@
       "feld": [40, 4],
       "eigenschaften": {
         "von": "34,4",
-        "bis": "48,5",
+        "bis": "46,3",
         "verhalten": "schwimmen"
       }
     },
@@ -605,7 +622,7 @@
       "typ": "tier",
       "feld": [100, 5],
       "eigenschaften": {
-        "von": "96,5",
+        "von": "97,4",
         "bis": "110,6",
         "verhalten": "schwimmen"
       }
@@ -615,7 +632,7 @@
       "typ": "tier",
       "feld": [34, 20],
       "eigenschaften": {
-        "von": "30,20",
+        "von": "29,19",
         "bis": "40,21",
         "verhalten": "flitzen"
       }

@@ -223,6 +223,18 @@
     {
       "name": "fundNieten",
       "feld": [56, 18]
+    },
+    {
+      "name": "ereignisSeilschaft",
+      "feld": [106, 14]
+    },
+    {
+      "name": "seite06",
+      "feld": [97, 20]
+    },
+    {
+      "name": "finchLaeuferB",
+      "feld": [68, 20]
     }
   ],
   "figuren": [],

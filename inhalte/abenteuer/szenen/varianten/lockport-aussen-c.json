@@ -234,10 +234,6 @@
       "feld": [10, 36]
     },
     {
-      "moebel": "mf4BaumRot",
-      "feld": [32, 36]
-    },
-    {
       "moebel": "mf4BaumGruen",
       "feld": [18, 36]
     },
@@ -324,10 +320,6 @@
     {
       "moebel": "wg4BlumeGelb",
       "feld": [17, 23]
-    },
-    {
-      "moebel": "wg4BuschKlein",
-      "feld": [31, 36]
     },
     {
       "moebel": "wg4BlumenWeiss",
@@ -480,6 +472,30 @@
     {
       "moebel": "lp8BauernhausBreit",
       "feld": [45, 23]
+    },
+    {
+      "moebel": "ccZaun",
+      "feld": [30, 14]
+    },
+    {
+      "moebel": "ccZaun",
+      "feld": [31, 14]
+    },
+    {
+      "moebel": "ccZaun",
+      "feld": [36, 14]
+    },
+    {
+      "moebel": "ccZaun",
+      "feld": [37, 14]
+    },
+    {
+      "moebel": "ccZaun",
+      "feld": [1, 13]
+    },
+    {
+      "moebel": "lp6Brunnen",
+      "feld": [30, 36]
     }
   ],
   "ausloeser": [
@@ -501,6 +517,44 @@
     {
       "name": "gasthausTuer",
       "feld": [21, 32]
+    },
+    {
+      "name": "tafelSchleuse",
+      "feld": [35, 10]
+    },
+    {
+      "name": "steg",
+      "feld": [30, 13]
+    },
+    {
+      "name": "steg",
+      "feld": [31, 13]
+    },
+    {
+      "name": "stegSued",
+      "feld": [30, 17],
+      "eigenschaften": {
+        "richtung": "unten"
+      }
+    },
+    {
+      "name": "stegSued",
+      "feld": [31, 17],
+      "eigenschaften": {
+        "richtung": "unten"
+      }
+    },
+    {
+      "name": "kai",
+      "feld": [13, 20]
+    },
+    {
+      "name": "henriksBoot",
+      "feld": [23, 20]
+    },
+    {
+      "name": "pumpe",
+      "feld": [31, 36]
     }
   ],
   "figuren": [],
@@ -529,11 +583,11 @@
     {
       "name": "gans",
       "typ": "tier",
-      "feld": [48, 37],
+      "feld": [47, 36],
       "eigenschaften": {
         "verhalten": "ausweichen",
-        "von": "44,37",
-        "bis": "52,37"
+        "von": "43,36",
+        "bis": "51,36"
       }
     },
     {
@@ -603,12 +657,12 @@
     {
       "name": "kahnmaler",
       "typ": "statist",
-      "feld": [11, 20],
+      "feld": [12, 20],
       "eigenschaften": {
         "tun": "streicht die Bordwand des Lastkahns",
         "wann": "tag",
-        "von": "10,20",
-        "bis": "13,20",
+        "von": "11,20",
+        "bis": "14,20",
         "sagt": "statist.lockport.aussen.kahnmaler"
       }
     },
@@ -680,6 +734,24 @@
       "feld": [37, 19],
       "eigenschaften": {
         "verhalten": "sitzen"
+      }
+    },
+    {
+      "name": "imogen",
+      "typ": "statist",
+      "feld": [31, 10],
+      "eigenschaften": {
+        "tun": "steht mit dem Schlüsselbund an der Tafel",
+        "wann": "tag"
+      }
+    },
+    {
+      "name": "ruben",
+      "typ": "statist",
+      "feld": [13, 20],
+      "eigenschaften": {
+        "tun": "sitzt auf dem Poller und sieht auf den Kahn",
+        "wann": "tag"
       }
     }
   ],

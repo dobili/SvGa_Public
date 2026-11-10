@@ -127,6 +127,14 @@
     {
       "name": "kuppelTuer",
       "feld": [19, 9]
+    },
+    {
+      "name": "bank",
+      "feld": [7, 9]
+    },
+    {
+      "name": "antennenmast",
+      "feld": [31, 7]
     }
   ],
   "figuren": [],
@@ -254,5 +262,6 @@
     "rustikal",
     "schule",
     "landhaus"
-  ]
+  ],
+  "toenung": "nacht"
 }

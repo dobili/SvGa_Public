@@ -11,7 +11,7 @@
  "tilewidth": 16,
  "tileheight": 16,
  "nextlayerid": 5,
- "nextobjectid": 84,
+ "nextobjectid": 85,
  "layers": [
   {
    "id": 1,
@@ -12200,6 +12200,17 @@
     },
     {
      "id": 4,
+     "name": "eisenwaren",
+     "type": "ausloeser",
+     "x": 592,
+     "y": 656,
+     "width": 16,
+     "height": 16,
+     "rotation": 0,
+     "visible": true
+    },
+    {
+     "id": 5,
      "name": "drohne",
      "type": "tier",
      "x": 480,
@@ -12227,7 +12238,7 @@
      ]
     },
     {
-     "id": 5,
+     "id": 6,
      "name": "lieferroboter",
      "type": "tier",
      "x": 640,
@@ -12255,7 +12266,7 @@
      ]
     },
     {
-     "id": 6,
+     "id": 7,
      "name": "maehroboter",
      "type": "tier",
      "x": 320,
@@ -12268,7 +12279,7 @@
       {
        "name": "von",
        "type": "string",
-       "value": "4,52"
+       "value": "3,52"
       },
       {
        "name": "bis",
@@ -12283,7 +12294,7 @@
      ]
     },
     {
-     "id": 7,
+     "id": 8,
      "name": "staubsaugerroboter",
      "type": "tier",
      "x": 800,
@@ -12311,7 +12322,7 @@
      ]
     },
     {
-     "id": 8,
+     "id": 9,
      "name": "baeckerin",
      "type": "statist",
      "x": 128,
@@ -12349,7 +12360,7 @@
      ]
     },
     {
-     "id": 9,
+     "id": 10,
      "name": "uhrmacher",
      "type": "statist",
      "x": 416,
@@ -12387,7 +12398,7 @@
      ]
     },
     {
-     "id": 10,
+     "id": 11,
      "name": "musikhaendler",
      "type": "statist",
      "x": 704,
@@ -12425,7 +12436,7 @@
      ]
     },
     {
-     "id": 11,
+     "id": 12,
      "name": "schuelerin",
      "type": "statist",
      "x": 320,
@@ -12463,7 +12474,7 @@
      ]
     },
     {
-     "id": 12,
+     "id": 13,
      "name": "metzger",
      "type": "statist",
      "x": 928,
@@ -12501,7 +12512,7 @@
      ]
     },
     {
-     "id": 13,
+     "id": 14,
      "name": "rentnerpaar",
      "type": "statist",
      "x": 576,
@@ -12539,7 +12550,7 @@
      ]
     },
     {
-     "id": 14,
+     "id": 15,
      "name": "feuerwehrmann",
      "type": "statist",
      "x": 992,
@@ -12577,7 +12588,7 @@
      ]
     },
     {
-     "id": 15,
+     "id": 16,
      "name": "eisverkaeuferin",
      "type": "statist",
      "x": 768,
@@ -12605,7 +12616,7 @@
       {
        "name": "bis",
        "type": "string",
-       "value": "52,45"
+       "value": "51,45"
       },
       {
        "name": "sagt",
@@ -12615,7 +12626,7 @@
      ]
     },
     {
-     "id": 16,
+     "id": 17,
      "name": "brieftraegerin",
      "type": "statist",
      "x": 224,
@@ -12648,7 +12659,7 @@
      ]
     },
     {
-     "id": 17,
+     "id": 18,
      "name": "strassenmusiker",
      "type": "statist",
      "x": 480,
@@ -12691,7 +12702,7 @@
      ]
     },
     {
-     "id": 18,
+     "id": 19,
      "name": "kinder",
      "type": "statist",
      "x": 640,
@@ -12724,7 +12735,7 @@
      ]
     },
     {
-     "id": 19,
+     "id": 20,
      "name": "ladenbesitzer",
      "type": "statist",
      "x": 800,
@@ -12757,7 +12768,7 @@
      ]
     },
     {
-     "id": 20,
+     "id": 21,
      "name": "moewen",
      "type": "tier",
      "x": 640,
@@ -12785,7 +12796,7 @@
      ]
     },
     {
-     "id": 21,
+     "id": 22,
      "name": "tauben",
      "type": "tier",
      "x": 416,
@@ -12813,7 +12824,7 @@
      ]
     },
     {
-     "id": 22,
+     "id": 23,
      "name": "hund",
      "type": "tier",
      "x": 256,
@@ -12841,7 +12852,7 @@
      ]
     },
     {
-     "id": 23,
+     "id": 24,
      "name": "katze",
      "type": "tier",
      "x": 960,
@@ -12869,7 +12880,7 @@
      ]
     },
     {
-     "id": 24,
+     "id": 25,
      "name": "hundebesitzer",
      "type": "statist",
      "x": 256,
@@ -12902,7 +12913,7 @@
      ]
     },
     {
-     "id": 25,
+     "id": 26,
      "name": "sa8Laden1",
      "type": "moebel",
      "x": 16,
@@ -12925,7 +12936,7 @@
      ]
     },
     {
-     "id": 26,
+     "id": 27,
      "name": "sb8Condo51",
      "type": "moebel",
      "x": 128,
@@ -12948,7 +12959,7 @@
      ]
     },
     {
-     "id": 27,
+     "id": 28,
      "name": "sa8Postamt1",
      "type": "moebel",
      "x": 224,
@@ -12971,7 +12982,7 @@
      ]
     },
     {
-     "id": 28,
+     "id": 29,
      "name": "sa8Laden4",
      "type": "moebel",
      "x": 352,
@@ -12994,7 +13005,7 @@
      ]
     },
     {
-     "id": 29,
+     "id": 30,
      "name": "sb8Markt2",
      "type": "moebel",
      "x": 464,
@@ -13017,7 +13028,7 @@
      ]
     },
     {
-     "id": 30,
+     "id": 31,
      "name": "sa8Kaufhaus1",
      "type": "moebel",
      "x": 544,
@@ -13040,7 +13051,7 @@
      ]
     },
     {
-     "id": 31,
+     "id": 32,
      "name": "sa8Condo9",
      "type": "moebel",
      "x": 656,
@@ -13063,7 +13074,7 @@
      ]
     },
     {
-     "id": 32,
+     "id": 33,
      "name": "sa8Laden7",
      "type": "moebel",
      "x": 752,
@@ -13086,7 +13097,7 @@
      ]
     },
     {
-     "id": 33,
+     "id": 34,
      "name": "sb8Condo45",
      "type": "moebel",
      "x": 864,
@@ -13109,7 +13120,7 @@
      ]
     },
     {
-     "id": 34,
+     "id": 35,
      "name": "sa8Laden11",
      "type": "moebel",
      "x": 960,
@@ -13132,7 +13143,7 @@
      ]
     },
     {
-     "id": 35,
+     "id": 36,
      "name": "sa8Laden2",
      "type": "moebel",
      "x": 16,
@@ -13155,7 +13166,7 @@
      ]
     },
     {
-     "id": 36,
+     "id": 37,
      "name": "sa8Polizei1",
      "type": "moebel",
      "x": 128,
@@ -13178,7 +13189,7 @@
      ]
     },
     {
-     "id": 37,
+     "id": 38,
      "name": "sb8Markt8",
      "type": "moebel",
      "x": 240,
@@ -13201,7 +13212,7 @@
      ]
     },
     {
-     "id": 38,
+     "id": 39,
      "name": "iw5Kirche",
      "type": "moebel",
      "x": 352,
@@ -13224,7 +13235,7 @@
      ]
     },
     {
-     "id": 39,
+     "id": 40,
      "name": "sa8Laden9",
      "type": "moebel",
      "x": 432,
@@ -13247,7 +13258,7 @@
      ]
     },
     {
-     "id": 40,
+     "id": 41,
      "name": "sa8Eisenwaren",
      "type": "moebel",
      "x": 544,
@@ -13270,7 +13281,7 @@
      ]
     },
     {
-     "id": 41,
+     "id": 42,
      "name": "sa8Kaufhaus3",
      "type": "moebel",
      "x": 704,
@@ -13293,7 +13304,7 @@
      ]
     },
     {
-     "id": 42,
+     "id": 43,
      "name": "sa8Laden5",
      "type": "moebel",
      "x": 816,
@@ -13316,7 +13327,7 @@
      ]
     },
     {
-     "id": 43,
+     "id": 44,
      "name": "sb8Condo44",
      "type": "moebel",
      "x": 928,
@@ -13339,7 +13350,7 @@
      ]
     },
     {
-     "id": 44,
+     "id": 45,
      "name": "sa8Laden3",
      "type": "moebel",
      "x": 1024,
@@ -13362,7 +13373,7 @@
      ]
     },
     {
-     "id": 45,
+     "id": 46,
      "name": "sb5BrunnenWasser",
      "type": "moebel",
      "x": 544,
@@ -13385,7 +13396,7 @@
      ]
     },
     {
-     "id": 46,
+     "id": 47,
      "name": "mfBank",
      "type": "moebel",
      "x": 576,
@@ -13408,7 +13419,7 @@
      ]
     },
     {
-     "id": 47,
+     "id": 48,
      "name": "mfBank",
      "type": "moebel",
      "x": 480,
@@ -13431,7 +13442,7 @@
      ]
     },
     {
-     "id": 48,
+     "id": 49,
      "name": "n6Marktstand",
      "type": "moebel",
      "x": 128,
@@ -13454,7 +13465,7 @@
      ]
     },
     {
-     "id": 49,
+     "id": 50,
      "name": "n6Marktstand",
      "type": "moebel",
      "x": 224,
@@ -13477,7 +13488,7 @@
      ]
     },
     {
-     "id": 50,
+     "id": 51,
      "name": "n6Marktstand",
      "type": "moebel",
      "x": 320,
@@ -13500,7 +13511,7 @@
      ]
     },
     {
-     "id": 51,
+     "id": 52,
      "name": "rv5Kaffeekiosk",
      "type": "moebel",
      "x": 832,
@@ -13523,7 +13534,7 @@
      ]
     },
     {
-     "id": 52,
+     "id": 53,
      "name": "mf4Strassenbaum",
      "type": "moebel",
      "x": 1008,
@@ -13546,7 +13557,7 @@
      ]
     },
     {
-     "id": 53,
+     "id": 54,
      "name": "wg4Laubbaum",
      "type": "moebel",
      "x": 896,
@@ -13569,7 +13580,7 @@
      ]
     },
     {
-     "id": 54,
+     "id": 55,
      "name": "wg4Busch",
      "type": "moebel",
      "x": 480,
@@ -13592,7 +13603,7 @@
      ]
     },
     {
-     "id": 55,
+     "id": 56,
      "name": "wg4Laubbaum",
      "type": "moebel",
      "x": 64,
@@ -13615,7 +13626,7 @@
      ]
     },
     {
-     "id": 56,
+     "id": 57,
      "name": "wg4Laubbaum",
      "type": "moebel",
      "x": 608,
@@ -13638,7 +13649,7 @@
      ]
     },
     {
-     "id": 57,
+     "id": 58,
      "name": "wg4Busch",
      "type": "moebel",
      "x": 400,
@@ -13661,7 +13672,7 @@
      ]
     },
     {
-     "id": 58,
+     "id": 59,
      "name": "wg4Busch",
      "type": "moebel",
      "x": 768,
@@ -13684,7 +13695,7 @@
      ]
     },
     {
-     "id": 59,
+     "id": 60,
      "name": "wg4Busch",
      "type": "moebel",
      "x": 816,
@@ -13707,7 +13718,7 @@
      ]
     },
     {
-     "id": 60,
+     "id": 61,
      "name": "mf4Strassenbaum",
      "type": "moebel",
      "x": 528,
@@ -13730,7 +13741,7 @@
      ]
     },
     {
-     "id": 61,
+     "id": 62,
      "name": "wg4Busch",
      "type": "moebel",
      "x": 160,
@@ -13753,7 +13764,7 @@
      ]
     },
     {
-     "id": 62,
+     "id": 63,
      "name": "wg4Busch",
      "type": "moebel",
      "x": 928,
@@ -13776,7 +13787,7 @@
      ]
     },
     {
-     "id": 63,
+     "id": 64,
      "name": "cc4Hecke",
      "type": "moebel",
      "x": 512,
@@ -13799,7 +13810,7 @@
      ]
     },
     {
-     "id": 64,
+     "id": 65,
      "name": "wg4Busch",
      "type": "moebel",
      "x": 384,
@@ -13822,7 +13833,7 @@
      ]
     },
     {
-     "id": 65,
+     "id": 66,
      "name": "cc4Hecke",
      "type": "moebel",
      "x": 144,
@@ -13845,7 +13856,7 @@
      ]
     },
     {
-     "id": 66,
+     "id": 67,
      "name": "wg4Busch",
      "type": "moebel",
      "x": 528,
@@ -13868,7 +13879,7 @@
      ]
     },
     {
-     "id": 67,
+     "id": 68,
      "name": "mf4Strassenbaum",
      "type": "moebel",
      "x": 560,
@@ -13891,7 +13902,7 @@
      ]
     },
     {
-     "id": 68,
+     "id": 69,
      "name": "cc4Hecke",
      "type": "moebel",
      "x": 672,
@@ -13914,7 +13925,7 @@
      ]
     },
     {
-     "id": 69,
+     "id": 70,
      "name": "cc4Hecke",
      "type": "moebel",
      "x": 240,
@@ -13937,7 +13948,7 @@
      ]
     },
     {
-     "id": 70,
+     "id": 71,
      "name": "cc4Hecke",
      "type": "moebel",
      "x": 800,
@@ -13960,7 +13971,7 @@
      ]
     },
     {
-     "id": 71,
+     "id": 72,
      "name": "cc4Hecke",
      "type": "moebel",
      "x": 400,
@@ -13983,7 +13994,7 @@
      ]
     },
     {
-     "id": 72,
+     "id": 73,
      "name": "wg4Busch",
      "type": "moebel",
      "x": 48,
@@ -14006,7 +14017,7 @@
      ]
     },
     {
-     "id": 73,
+     "id": 74,
      "name": "wg4Busch",
      "type": "moebel",
      "x": 80,
@@ -14029,7 +14040,7 @@
      ]
     },
     {
-     "id": 74,
+     "id": 75,
      "name": "cc4Hecke",
      "type": "moebel",
      "x": 1040,
@@ -14052,7 +14063,7 @@
      ]
     },
     {
-     "id": 75,
+     "id": 76,
      "name": "wg4Busch",
      "type": "moebel",
      "x": 1088,
@@ -14075,7 +14086,7 @@
      ]
     },
     {
-     "id": 76,
+     "id": 77,
      "name": "wg4Busch",
      "type": "moebel",
      "x": 624,
@@ -14098,7 +14109,7 @@
      ]
     },
     {
-     "id": 77,
+     "id": 78,
      "name": "cc4Hecke",
      "type": "moebel",
      "x": 272,
@@ -14121,7 +14132,7 @@
      ]
     },
     {
-     "id": 78,
+     "id": 79,
      "name": "wg4Busch",
      "type": "moebel",
      "x": 1056,
@@ -14144,7 +14155,7 @@
      ]
     },
     {
-     "id": 79,
+     "id": 80,
      "name": "cc4Hecke",
      "type": "moebel",
      "x": 416,
@@ -14167,7 +14178,7 @@
      ]
     },
     {
-     "id": 80,
+     "id": 81,
      "name": "wg4Busch",
      "type": "moebel",
      "x": 1024,
@@ -14190,7 +14201,7 @@
      ]
     },
     {
-     "id": 81,
+     "id": 82,
      "name": "cc4Hecke",
      "type": "moebel",
      "x": 608,
@@ -14213,7 +14224,7 @@
      ]
     },
     {
-     "id": 82,
+     "id": 83,
      "name": "cc4Hecke",
      "type": "moebel",
      "x": 48,
@@ -14236,7 +14247,7 @@
      ]
     },
     {
-     "id": 83,
+     "id": 84,
      "name": "cc4Hecke",
      "type": "moebel",
      "x": 880,

@@ -321,6 +321,10 @@
     {
       "name": "campus",
       "feld": [71, 22]
+    },
+    {
+      "name": "eisenwaren",
+      "feld": [37, 41]
     }
   ],
   "figuren": [],
@@ -350,7 +354,7 @@
       "typ": "tier",
       "feld": [20, 53],
       "eigenschaften": {
-        "von": "4,52",
+        "von": "3,52",
         "bis": "66,54",
         "verhalten": "ausweichen"
       }
@@ -457,7 +461,7 @@
         "tun": "verkauft Eis, obwohl es schneit",
         "wann": "tag",
         "von": "46,43",
-        "bis": "52,45",
+        "bis": "51,45",
         "sagt": "statist.siliconBay.altstadt.eisverkaeuferin"
       }
     },

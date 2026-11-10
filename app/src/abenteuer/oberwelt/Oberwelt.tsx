@@ -274,6 +274,8 @@ export function Oberwelt() {
         const pos = objektposition(json, ausloeser) ?? objektposition(json, "start");
         if (!pos) throw new Error(`Auslöser ${ausloeser} fehlt auf ${karte}`);
         const position: Weltposition = { karte, x: pos.x, y: pos.y, richtung };
+        // Dieselbe Karte (Steg über die Schleuse): nur versetzen, die Szene bleibt geladen.
+        if (karte === aktuell.position.karte) szene?.versetze(pos.x, pos.y);
         schreibe({ ...aktuell, position });
       })
       .catch(() => setzeMeldung(tSpiel("oberwelt.karteFehlt", { karte })));

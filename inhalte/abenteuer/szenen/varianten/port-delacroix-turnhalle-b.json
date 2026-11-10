@@ -255,6 +255,18 @@
     {
       "name": "turnhalleAusgang",
       "feld": [13, 15]
+    },
+    {
+      "name": "spendenkasse",
+      "feld": [24, 5]
+    },
+    {
+      "name": "notenheft",
+      "feld": [1, 4]
+    },
+    {
+      "name": "plakatTurnhalle",
+      "feld": [7, 3]
     }
   ],
   "figuren": [
@@ -289,8 +301,8 @@
       "typ": "statist",
       "feld": [5, 9],
       "eigenschaften": {
-        "von": "2,9",
-        "bis": "8,9",
+        "von": "1,8",
+        "bis": "8,8",
         "tun": "wischt mit einem breiten Besen den Hallenboden",
         "wann": "immer",
         "sagt": "statist.portDelacroix.turnhalle.hausmeister"
@@ -299,10 +311,10 @@
     {
       "name": "zuschauerin",
       "typ": "statist",
-      "feld": [20, 9],
+      "feld": [19, 8],
       "eigenschaften": {
-        "von": "20,9",
-        "bis": "20,9",
+        "von": "19,8",
+        "bis": "19,8",
         "tun": "steht mit verschränkten Armen am Rand und schaut zu",
         "wann": "immer",
         "sagt": "statist.portDelacroix.turnhalle.zuschauerin"

@@ -223,6 +223,51 @@
     {
       "moebel": "lp8Bauernhaus",
       "feld": [47, 22]
+    },
+    {
+      "moebel": "ccZaun",
+      "feld": [30, 14]
+    },
+    {
+      "moebel": "ccZaun",
+      "feld": [31, 14]
+    },
+    {
+      "moebel": "ccZaun",
+      "feld": [36, 14]
+    },
+    {
+      "moebel": "ccZaun",
+      "feld": [37, 14]
+    },
+    {
+      "moebel": "ccZaun",
+      "feld": [1, 13]
+    },
+    {
+      "moebel": "ccZaun",
+      "feld": [2, 13]
+    },
+    {
+      "moebel": "ccZaun",
+      "feld": [3, 13]
+    },
+    {
+      "moebel": "ccZaun",
+      "feld": [4, 13]
+    },
+    {
+      "moebel": "ccZaun",
+      "feld": [5, 13]
+    },
+    {
+      "moebel": "ld5Ruderboot",
+      "feld": [21, 18],
+      "bauteil_ok": true
+    },
+    {
+      "moebel": "lp6Brunnen",
+      "feld": [30, 36]
     }
   ],
   "ausloeser": [
@@ -244,6 +289,44 @@
     {
       "name": "gasthausTuer",
       "feld": [21, 32]
+    },
+    {
+      "name": "tafelSchleuse",
+      "feld": [37, 10]
+    },
+    {
+      "name": "steg",
+      "feld": [30, 13]
+    },
+    {
+      "name": "steg",
+      "feld": [31, 13]
+    },
+    {
+      "name": "stegSued",
+      "feld": [30, 17],
+      "eigenschaften": {
+        "richtung": "unten"
+      }
+    },
+    {
+      "name": "stegSued",
+      "feld": [31, 17],
+      "eigenschaften": {
+        "richtung": "unten"
+      }
+    },
+    {
+      "name": "kai",
+      "feld": [13, 20]
+    },
+    {
+      "name": "henriksBoot",
+      "feld": [23, 20]
+    },
+    {
+      "name": "pumpe",
+      "feld": [31, 36]
     }
   ],
   "figuren": [],
@@ -400,11 +483,11 @@
     {
       "name": "enten",
       "typ": "tier",
-      "feld": [15, 15],
+      "feld": [20, 14],
       "eigenschaften": {
         "verhalten": "schwimmen",
-        "von": "3,15",
-        "bis": "27,15"
+        "von": "8,14",
+        "bis": "32,14"
       }
     },
     {
@@ -418,11 +501,29 @@
     {
       "name": "gans",
       "typ": "tier",
-      "feld": [48, 37],
+      "feld": [47, 36],
       "eigenschaften": {
         "verhalten": "ausweichen",
-        "von": "44,37",
-        "bis": "52,37"
+        "von": "43,36",
+        "bis": "51,36"
+      }
+    },
+    {
+      "name": "imogen",
+      "typ": "statist",
+      "feld": [38, 10],
+      "eigenschaften": {
+        "tun": "steht mit dem Schlüsselbund an der Tafel",
+        "wann": "tag"
+      }
+    },
+    {
+      "name": "ruben",
+      "typ": "statist",
+      "feld": [13, 20],
+      "eigenschaften": {
+        "tun": "sitzt auf dem Poller und sieht auf den Kahn",
+        "wann": "tag"
       }
     }
   ],

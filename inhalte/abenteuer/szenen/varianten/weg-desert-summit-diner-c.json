@@ -422,6 +422,38 @@
     {
       "name": "fundNeonK",
       "feld": [78, 2]
+    },
+    {
+      "name": "ereignisFunkschach",
+      "feld": [77, 11]
+    },
+    {
+      "name": "kreide3",
+      "feld": [85, 9]
+    },
+    {
+      "name": "finchSpringerB",
+      "feld": [87, 10]
+    },
+    {
+      "name": "seite08",
+      "feld": [54, 17]
+    },
+    {
+      "name": "hinterzimmerTuer",
+      "feld": [84, 7]
+    },
+    {
+      "name": "reklame",
+      "feld": [112, 10]
+    },
+    {
+      "name": "motelschild",
+      "feld": [100, 10]
+    },
+    {
+      "name": "aussicht",
+      "feld": [6, 18]
     }
   ],
   "figuren": [
@@ -455,10 +487,10 @@
     {
       "name": "roadrunner",
       "typ": "tier",
-      "feld": [24, 17],
+      "feld": [23, 17],
       "eigenschaften": {
-        "von": "24,17",
-        "bis": "28,17",
+        "von": "23,17",
+        "bis": "27,17",
         "verhalten": "ausweichen"
       }
     },

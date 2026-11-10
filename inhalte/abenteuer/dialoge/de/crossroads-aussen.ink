@@ -12,6 +12,7 @@
 // Variablen: alle setzt diese Datei; novaBitteGehoert setzt crossroads-raststaette.ink.
 
 EXTERNAL oeffneLaden(kennung)
+EXTERNAL reise(karte, ausloeser)
 
 VAR held = "Du"
 VAR ankunftCrossroadsGesehen = false
@@ -20,6 +21,7 @@ VAR slickGetroffen = false
 VAR miraCrossroadsGetroffen = false
 VAR bigJoeCrossroadsGetroffen = false
 VAR rosieCrossroadsGetroffen = false
+VAR gatterschluessel = false
 
 // ---------------------------------------------------------------- Ankunft (Szene 93)
 
@@ -111,3 +113,60 @@ Die Straße führt durch die Prärie zurück, Richtung Geysire und Berge. #sprec
 === weg_pinewood ===
 Ein Wanderweg führt nach Norden in den Wald. Ein Schild: „Fernwanderweg – Pinewood Camp“. #sprecher:erzaehler
 -> END
+
+// ---------------------------------------------------------------- Viehgatter (Sperre S13, Q4)
+// Runde 6 (13_Wegenetz, Abschnitt 5): Das Gatter vor der Alten Minenstraße öffnet Darlenes
+// Schlüssel (gatterschluessel, crossroads-raststaette.darlene_lieferung). Q4-FEHLT: Die Karte der
+// Minenstraße ist noch nicht gebaut; bis dahin reist {held} nach Ghost Town außen.
+
+=== viehgatter ===
+{gatterschluessel: -> viehgatter_offen}
+Ein Viehgatter sperrt die Alte Minenstraße. Dahinter stehen Rinder mitten auf dem Asphalt. Am Gatter hängt ein Schild: „Privatweg. Schlüssel bei Darlene.“ #sprecher:erzaehler
+Ein Hindernis, das man nicht schlagen kann. Nur fragen, wer den Schlüssel hat. #sprecher:ambrose
+-> END
+
+=== viehgatter_offen ===
+Darlenes Schlüssel passt. Hinter dem Gatter führt die Alte Minenstraße über die Hügel nach Ghost Town. Die Rinder machen widerwillig Platz. #sprecher:erzaehler
++ [Die Minenstraße nach Ghost Town nehmen]
+    ~ reise("ghostTown.aussen", "wegPinewood")
+    -> END
++ [Hierbleiben]
+    -> END
+
+// ---------------------------------------------------------------- Fernbus (Q3)
+// Runde 6 (13_Wegenetz, Abschnitt 5): Der Fernbus an der Haltestelle am Highway West bringt {held}
+// schnell zurück in die alten Städte (Revanchen, Bayou, Schach960). Er fährt nur hin; zurück geht
+// es mit den Bussen und Zügen der Städte oder zu Fuß. Ziel ist je Stadt ihre Haltestelle oder ihr
+// Bahnhof; Silicon Bay hält an der Raststätte an der Küste, Summit City am Südrand.
+
+=== fernbus ===
+An der Haltestelle hängt ein Fahrplan mit allen Städten. Der Fernbus wartet mit laufendem Motor. #sprecher:erzaehler
+Die Fahrerin lehnt sich aus dem Fenster: „Wohin? Ich fahre überallhin, wo es eine Straße gibt.“ #sprecher:erzaehler
++ [Maple Falls]
+    ~ reise("mapleFalls.park", "bushaltestelle")
+    -> END
++ [Cedar Creek]
+    ~ reise("cedarCreek.aussen", "bushaltestelle")
+    -> END
++ [Riverton]
+    ~ reise("riverton.aussen", "bahnhof")
+    -> END
++ [Ironwood]
+    ~ reise("ironwood.aussen", "bushaltestelle")
+    -> END
++ [Silicon Bay, Raststätte an der Küste]
+    ~ reise("wegIronwoodSilicon.raststaette", "zurueckIronwood")
+    -> END
++ [Port Delacroix]
+    ~ reise("portDelacroix.aussen", "wuestenzug")
+    -> END
++ [Desert Springs]
+    ~ reise("desertSprings.aussen", "bahnhof")
+    -> END
++ [Summit City]
+    ~ reise("summitCity.aussen", "wegCrossroads")
+    -> END
++ [Hierbleiben]
+    „Ich fahre in zehn Minuten. Oder in zwanzig. Kommt drauf an, wann der Kaffee alle ist.“ #sprecher:erzaehler
+    -> END
+

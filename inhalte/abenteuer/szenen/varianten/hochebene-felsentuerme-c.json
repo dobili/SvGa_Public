@@ -357,6 +357,14 @@
     {
       "name": "steintisch",
       "feld": [56, 17]
+    },
+    {
+      "name": "pferd",
+      "feld": [36, 4]
+    },
+    {
+      "name": "schildSchule",
+      "feld": [95, 16]
     }
   ],
   "figuren": [
@@ -389,10 +397,10 @@
     {
       "name": "wanderer",
       "typ": "statist",
-      "feld": [88, 18],
+      "feld": [89, 18],
       "eigenschaften": {
-        "von": "88,18",
-        "bis": "88,18",
+        "von": "89,18",
+        "bis": "89,18",
         "tun": "macht ein Foto",
         "wann": "tag"
       }

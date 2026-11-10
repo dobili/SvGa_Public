@@ -1,17 +1,28 @@
-// Alter Steinbruch bei Ironwood (Nebenort N3, Akt 2): Fundstellen der Sammelstränge (Runde 6).
-//
-// Einstieg wie in orte.json: finch_bauer_f (Finch-Jagd, Dokument 15, 1.1 und Tabelle in 3;
-// Feld in steinbruch.grube laut orte/ironwood.md 3.3). gefundenFinchBauerF setzt die Hülle nach gibFund.
+// Nebenort N3 Alter Steinbruch bei Ironwood (Akt 2): Ansehen Graffiti und Bagger, Finch-Figur Bauer F.
+// Die Sperre S4 (Laterne) sitzt am Übergang in Ironwood (mittel-2).
+VAR held = "Du"
 
+// >>> Runde 6 (mittel-4)
+VAR finchFiguren = 0
 EXTERNAL gibFund(kennung)
-
 VAR gefundenFinchBauerF = false
 
 === finch_bauer_f ===
 {gefundenFinchBauerF:
-    Am Fels ist nur noch ein Fink aus Kreide zu sehen. #sprecher:erzaehler
+    Am Fels ist nur noch der Fink aus Kreide. #sprecher:erzaehler
     -> END
 }
-Am Fels ist ein kleiner Fink mit Kreide gezeichnet. Darunter, zwischen zwei Steinen, liegt ein weißer Bauer aus hellem Holz. #sprecher:erzaehler
+~ gefundenFinchBauerF = true
+Am Fuß der Felswand ist ein Fink aus Kreide gemalt. In einer Ritze darunter steckt ein weißer Bauer aus Buchsbaum. #sprecher:erzaehler
 ~ gibFund("finchBauerF")
+~ finchFiguren = finchFiguren + 1
 -> END
+
+=== graffiti ===
+Ein Wolf aus Sprühfarbe an der Felswand, daneben eine Krone. Jemand war hier, lange bevor {held} kam. #sprecher:erzaehler
+-> END
+
+=== bagger ===
+Ein alter Bagger, die Schaufel im Schotter. Seit Jahren hat ihn niemand bewegt. Auf dem Sitz liegt ein Vogelnest. #sprecher:erzaehler
+-> END
+// <<< Runde 6 (mittel-4)

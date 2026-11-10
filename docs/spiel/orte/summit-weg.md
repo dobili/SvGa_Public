@@ -288,3 +288,34 @@ Kehren. **Ränder** offen nur Ost (39, 120–122), West (0, 70–71), Nord (18�
   Antwort von Ambrose), Wanderer (Franklins Aufsatz über Schach), Fotograf.
 - **Tiere, Diner:** Präriehunde, Eidechse, Geier, Hund, Krähen, Hase.
 - **Tiere, Bergstraße:** Ziegen, Murmeltier, Adler, Reh, Eichhörnchen, Schmetterlinge.
+
+## Runde 6: spielbar (10.11.2026, mittel-4)
+
+- **Schach über Funk** (`ereignisFunkschach`, Dialog `weg-desert-summit.ereignis_funkschach`): Earl
+  holt {held} ans CB-Funkgerät.
+  - Quest `wegDesertSummit.funkschach` (klein): Partie gegen Mama Bear (Begegnung
+    `wegDesertSummit.funkschach`, Gegner `wegDesertSummit.mamaBear`) als Partie nach Gehör
+    (`"variante": "gehoer"`): Ihr Zug kommt erst als Ansage, dann aufs Brett.
+  - Danach erzählt Mama Bear von den summenden Kisten. Lohn: Funkname „{held} Junior“ und
+    30 Münzen.
+- **Hinterzimmer (K3), neuer Innenraum `wegDesertSummit.hinterzimmer`** (14 × 12, A/B/C):
+  - Die Tür `hinterzimmerTuer` an der Seite des Diners öffnet, wenn der Kreidespringer gefunden
+    ist (`hinterzimmerOffen`, gesetzt vom Türdialog).
+  - Drinnen ist Mags, eine Kreidespringerin. Sie spielt Blitz 3 + 2, Begegnung
+    `wegDesertSummit.kreideblitz`.
+  - Ebenfalls drinnen: Ruth Keene, die am Funk Mama Bear heißt.
+  - Das Losungswort der Kreidespringer gehört zur Quest von mittel-1. Bis dahin genügt der Fund
+    `kreide3`.
+- **Funde:**
+  - `kreide3`: Kreidespringer an der Seite des Diners;
+  - `finchSpringerB`: Blumenkasten am Motel;
+  - `seite08`: Parkplatz, Kapitel 8, Endspiel-Fundament;
+  - `spurPM4`: Frachtbrief am Sattelzug in der Haltebucht.
+- **Ansehen:**
+  - Diner: `reklame` (D3), `motelschild` (D4), `aussicht` (Rastbank D11);
+  - Bergstraße: `aussichtBerg` (B3), `wegweiserHochebene` (B5), `quelle` (B6).
+- **Repariertes Neonschild:** Wer das K gefunden hat, kann es Earl geben (`earl_k`, Wahl in
+  `earl_alltag`). Das setzt `neonRepariert`; orte.json lädt dann über `zustaende` die zweite Fassung
+  `weg-desert-summit-diner-neon` (A, B, C) mit leuchtendem Schild `wds6SchildDinerHell`
+  (`schild_kings_diner_hell.png`) und ohne das K im Hinterhof.
+- **Offen:** Tönung Hitze (mittel-2).

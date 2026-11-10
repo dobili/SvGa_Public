@@ -143,6 +143,14 @@
     {
       "name": "kaminfeuer",
       "feld": [4, 4]
+    },
+    {
+      "name": "foto",
+      "feld": [13, 4]
+    },
+    {
+      "name": "teekanne",
+      "feld": [7, 5]
     }
   ],
   "figuren": [
@@ -163,10 +171,10 @@
     {
       "name": "katze",
       "typ": "tier",
-      "feld": [2, 4],
+      "feld": [1, 4],
       "eigenschaften": {
-        "von": "2,4",
-        "bis": "2,4",
+        "von": "1,4",
+        "bis": "1,4",
         "verhalten": "sitzen"
       }
     }

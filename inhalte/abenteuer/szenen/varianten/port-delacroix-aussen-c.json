@@ -690,6 +690,10 @@
     {
       "name": "brettHaus4",
       "feld": [23, 53]
+    },
+    {
+      "name": "bauzaun",
+      "feld": [42, 42]
     }
   ],
   "figuren": [
@@ -722,10 +726,10 @@
     {
       "name": "sandsackhelfer",
       "typ": "statist",
-      "feld": [20, 7],
+      "feld": [19, 6],
       "eigenschaften": {
-        "von": "14,7",
-        "bis": "26,7",
+        "von": "13,6",
+        "bis": "25,6",
         "tun": "stapelt Sandsäcke",
         "wann": "morgen",
         "sagt": "statist.portDelacroix.aussen.sandsackhelfer"
@@ -736,8 +740,8 @@
       "typ": "statist",
       "feld": [25, 37],
       "eigenschaften": {
-        "von": "22,37",
-        "bis": "30,38",
+        "von": "25,36",
+        "bis": "28,40",
         "tun": "spielen Ball zwischen den Zelten",
         "wann": "tag"
       }
@@ -875,17 +879,17 @@
       "feld": [55, 45],
       "eigenschaften": {
         "von": "55,44",
-        "bis": "55,47",
+        "bis": "54,46",
         "verhalten": "ausweichen"
       }
     },
     {
       "name": "katze",
       "typ": "tier",
-      "feld": [54, 12],
+      "feld": [53, 11],
       "eigenschaften": {
-        "von": "54,12",
-        "bis": "54,12",
+        "von": "53,11",
+        "bis": "53,11",
         "verhalten": "sitzen"
       }
     },

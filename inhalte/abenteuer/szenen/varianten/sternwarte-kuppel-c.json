@@ -125,9 +125,30 @@
     {
       "name": "kuppelAusgang",
       "feld": [7, 11]
+    },
+    {
+      "name": "teleskop",
+      "feld": [7, 8]
+    },
+    {
+      "name": "sternkarte",
+      "feld": [3, 3]
+    },
+    {
+      "name": "finchBauerG",
+      "feld": [12, 8]
     }
   ],
-  "figuren": [],
+  "figuren": [
+    {
+      "name": "ngata",
+      "feld": [3, 5]
+    },
+    {
+      "name": "lucia",
+      "feld": [5, 6]
+    }
+  ],
   "zustand": ["neu", "gebraucht", "alt"],
   "stil": [
     "natur",
@@ -139,5 +160,6 @@
     "rustikal",
     "schule",
     "landhaus"
-  ]
+  ],
+  "toenung": "nacht"
 }

@@ -14,6 +14,7 @@ EXTERNAL beginneAufgaben(runde)
 EXTERNAL beginnePartie(begegnung)
 EXTERNAL reise(karte, ausloeser)
 EXTERNAL oeffneLaden(laden)
+EXTERNAL gibFund(kennung)
 
 VAR held = "Du"
 VAR abernathyGetroffen = false
@@ -28,6 +29,10 @@ VAR patelGetroffen = false
 VAR hatLimo = false
 VAR limoGefragt = false
 VAR limoGebracht = false
+VAR nadelMapleFalls = 0
+VAR nadelCedarCreek = 0
+VAR stegNeuGesehen = false
+VAR initialenGefunden = false
 
 // ---------------------------------------------------------------- Mr. Abernathy
 
@@ -244,3 +249,43 @@ Eine Limonade für eine Schwäche. Ein guter Handel. #sprecher:ambrose #stimmung
     Zu Fuß? Gut. Der Bus fährt später auch. #sprecher:ambrose
 }
 -> END
+
+// ---------------------------------------------------------------- Runde 6: Steg S5
+
+// Morscher Steg zum Wasserfall (13_Wegenetz.md, S5). Nach der ersten Clubnadel hat Mr. Pratt ihn
+// selbst erneuert; dann Aussicht auf den Wasserfall und die Initialen im Geländer (Album).
+=== steg ===
+{nadelMapleFalls < 1:
+    Rot-weißes Absperrband vor dem Steg. Ein Schild der Stadt: „Steg morsch, wird erneuert.“ #sprecher:erzaehler
+    Darunter hat jemand mit Kuli geschrieben: „Die Stadt hat kein Geld.“ #sprecher:erzaehler
+    -> END
+}
+{stegNeuGesehen:
+    -> steg_aussicht
+}
+~ stegNeuGesehen = true
+Das Absperrband ist weg. Die Bretter sind neu und riechen nach Harz. #sprecher:erzaehler
+Am Pfosten ein Zettel: „Für Pokale baue ich alles. Pratt.“ #sprecher:erzaehler
+-> steg_aussicht
+
+=== steg_aussicht ===
+Vom Ende des Stegs sieht man den kleinen Wasserfall hinter den Ahornbäumen. #sprecher:erzaehler
+{initialenGefunden:
+    -> END
+}
+~ initialenGefunden = true
+Ins Geländer hat jemand Buchstaben geritzt: „M. W. + E. C. 1952“. #sprecher:erzaehler
+~ gibFund("initialen1952")
+-> END
+
+// ---------------------------------------------------------------- Runde 6: Stamm auf dem Zedernpfad (S2)
+
+// Vor dem Übergang „zedernpfad“ (wenn: nadelCedarCreek).
+=== stamm_s2 ===
+{nadelCedarCreek >= 1:
+    -> END
+- else:
+    Hinter der Brücke liegt eine umgestürzte Zeder quer über dem Pfad. Von hier kommst du nicht weiter. #sprecher:erzaehler
+    Den Stamm muss jemand mit Seil und Flaschenzug wegziehen. In Cedar Creek gibt es einen Drechsler, der Holz braucht. #sprecher:ambrose
+    -> END
+}

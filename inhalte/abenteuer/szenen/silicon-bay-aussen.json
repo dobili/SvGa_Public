@@ -972,6 +972,14 @@
     {
       "name": "altstadt",
       "feld": [0, 22]
+    },
+    {
+      "name": "infosaeule",
+      "feld": [60, 21]
+    },
+    {
+      "name": "werbetafel",
+      "feld": [63, 9]
     }
   ],
   "figuren": [
@@ -1176,7 +1184,7 @@
         "tun": "Schulklasse mit Tablets auf Besichtigung",
         "wann": "tag",
         "von": "22,38",
-        "bis": "30,42"
+        "bis": "30,41"
       }
     },
     {

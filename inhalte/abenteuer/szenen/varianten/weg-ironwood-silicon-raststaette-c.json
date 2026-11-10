@@ -942,6 +942,18 @@
     {
       "name": "fundAnstecker",
       "feld": [149, 25]
+    },
+    {
+      "name": "kreide2",
+      "feld": [129, 11]
+    },
+    {
+      "name": "finchBauerB",
+      "feld": [142, 17]
+    },
+    {
+      "name": "seite04",
+      "feld": [130, 14]
     }
   ],
   "figuren": [
@@ -1035,10 +1047,10 @@
     {
       "name": "krebse",
       "typ": "tier",
-      "feld": [20, 23],
+      "feld": [18, 21],
       "eigenschaften": {
-        "von": "14,23",
-        "bis": "26,25",
+        "von": "12,21",
+        "bis": "26,22",
         "verhalten": "ausweichen"
       }
     },

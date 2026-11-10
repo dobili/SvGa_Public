@@ -275,45 +275,45 @@
     {
       "name": "faehre",
       "feld": [25, 1]
+    },
+    {
+      "name": "leuchtfeuer",
+      "feld": [42, 15]
+    },
+    {
+      "name": "netze",
+      "feld": [29, 13]
+    },
+    {
+      "name": "watt",
+      "feld": [18, 31]
+    },
+    {
+      "name": "finchBauerH",
+      "feld": [40, 10]
     }
   ],
-  "figuren": [],
-  "belebung": [
+  "figuren": [
     {
       "name": "delphine",
-      "typ": "statist",
-      "feld": [15, 14],
-      "eigenschaften": {
-        "tun": "Fischerin Delphine flickt ihr Boot",
-        "wann": "tag"
-      }
+      "feld": [15, 14]
     },
     {
       "name": "oldPete",
-      "typ": "statist",
-      "feld": [27, 12],
-      "eigenschaften": {
-        "tun": "Old Pete flickt ein Netz",
-        "wann": "tag"
-      }
+      "feld": [27, 12]
     },
     {
       "name": "coral",
-      "typ": "statist",
-      "feld": [25, 28],
-      "eigenschaften": {
-        "von": "35,28",
-        "bis": "15,28",
-        "tun": "Coral sammelt Muscheln im Watt",
-        "wann": "tag"
-      }
-    },
+      "feld": [25, 28]
+    }
+  ],
+  "belebung": [
     {
       "name": "bishop",
       "typ": "tier",
       "feld": [29, 2],
       "eigenschaften": {
-        "verhalten": "sitzen"
+        "verhalten": "schwimmen"
       }
     },
     {
@@ -374,6 +374,18 @@
         "tun": "wirft Brotkrumen für die Möwen",
         "wann": "tag",
         "sagt": "statist.pelikaninsel.dorf.inselkind"
+      }
+    },
+    {
+      "name": "muschelsammler",
+      "typ": "statist",
+      "feld": [36, 26],
+      "eigenschaften": {
+        "von": "36,26",
+        "bis": "41,25",
+        "tun": "sucht am Strand nach Muscheln",
+        "wann": "tag",
+        "sagt": "statist.pelikaninsel.dorf.muschelsammler"
       }
     },
     {

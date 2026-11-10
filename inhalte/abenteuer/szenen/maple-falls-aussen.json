@@ -24,24 +24,24 @@
     "#..............................................................#",
     "#..............................................................#",
     "#..............................................................#",
-    "#..............................................................#",
-    "#..............................................................#",
-    "#..............................................................#",
-    "#..............................................................#",
-    "#..............................................................#",
-    "#..............................................................#",
-    "#..............................................................#",
-    "#..............................................................#",
-    "#..............................................................#",
-    "#..............................................................#",
-    "#..............................................................#",
-    "#..pp........pp........pp........pp..........ppppp.............#",
-    "#pppppppppppppppppppppppppppppppppppppppppppppppppppppppppppppp#",
-    "#pssssssssssssssssssssssssssssssssssssssssssssssssssssssssssssss",
-    "#pssssssssssssssssssssssssssssssssssssssssssssssssssssssssssssss",
-    "#pssssssssssssssssssssssssssssssssssssssssssssssssssssssssssssss",
-    "#pssssppppppppppppppppppppppppppppppppppppppppppppppppppppppppp#",
-    "#pppppp...................pp..........................ee.......#",
+    "#................................pppppp........................#",
+    "#.....................................p........................#",
+    "#.....................................p........................#",
+    "#.....................................p........................#",
+    "#.....................................p........................#",
+    "#.....................................p........................#",
+    "#.....................................p........................#",
+    "#.....................................p........................#",
+    "#.....................................p........................#",
+    "#.....................................p........................#",
+    "#.....................................p........................#",
+    "#..pp........pp........pp.......pp....p......ppppp.............#",
+    "#.ssssppppppppppppppppppppppppppppppppppppppppppppppppppppppppp#",
+    "#.ssssssssssssssssssssssssssssssssssssssssssssssssssssssssssssss",
+    "#.ssssssssssssssssssssssssssssssssssssssssssssssssssssssssssssss",
+    "#.ssssssssssssssssssssssssssssssssssssssssssssssssssssssssssssss",
+    "#.ssssppppppppppppppppppppppppppppppppppppppppppppppppppppppppp#",
+    "#.ssssp...................pp..........................ee.......#",
     "#.........................pp..........................ee.......#",
     "#.........................pp..........................ee.......#",
     "#.........................pp......................dddddd.......#",
@@ -111,7 +111,7 @@
     },
     {
       "moebel": "mf4Diner",
-      "feld": [31, 14],
+      "feld": [30, 14],
       "id": "diner"
     },
     {
@@ -309,43 +309,7 @@
       "feld": [30, 13]
     },
     {
-      "moebel": "mf4ZaunSeite",
-      "feld": [30, 14]
-    },
-    {
-      "moebel": "mf4ZaunSeite",
-      "feld": [30, 15]
-    },
-    {
-      "moebel": "mf4ZaunSeite",
-      "feld": [30, 16]
-    },
-    {
-      "moebel": "mf4ZaunSeite",
-      "feld": [30, 17]
-    },
-    {
-      "moebel": "mf4ZaunSeite",
-      "feld": [30, 18]
-    },
-    {
-      "moebel": "mf4ZaunSeite",
-      "feld": [30, 19]
-    },
-    {
-      "moebel": "mf4ZaunSeite",
-      "feld": [30, 20]
-    },
-    {
-      "moebel": "mf4ZaunSeite",
-      "feld": [30, 21]
-    },
-    {
-      "moebel": "mf4ZaunSeite",
-      "feld": [30, 22]
-    },
-    {
-      "moebel": "mf4ZaunMitte",
+      "moebel": "mf4ZaunEckeLinks",
       "feld": [1, 23]
     },
     {
@@ -442,12 +406,12 @@
     },
     {
       "moebel": "mf4TischLinks",
-      "feld": [36, 22],
+      "feld": [35, 22],
       "bauteil_ok": true
     },
     {
       "moebel": "mf4TischRechts",
-      "feld": [37, 22],
+      "feld": [36, 22],
       "bauteil_ok": true
     },
     {
@@ -700,8 +664,8 @@
       "feld": [54, 37]
     },
     {
-      "moebel": "mf8KulisseBauernhaus",
-      "feld": [31, 4]
+      "moebel": "mf7HausFlach",
+      "feld": [32, 4]
     },
     {
       "moebel": "mf8KulisseLaden",
@@ -710,6 +674,14 @@
     {
       "moebel": "mf8KulisseStadthaus",
       "feld": [57, 30]
+    },
+    {
+      "moebel": "mf7HeckeSaeule",
+      "feld": [1, 24]
+    },
+    {
+      "moebel": "mf7HeckeSaeule",
+      "feld": [1, 27]
     }
   ],
   "ausloeser": [
@@ -726,7 +698,7 @@
     },
     {
       "name": "dinerTuer",
-      "feld": [33, 23]
+      "feld": [32, 23]
     },
     {
       "name": "schule",
@@ -783,12 +755,12 @@
     {
       "name": "kindMitBall",
       "typ": "statist",
-      "feld": [53, 39],
+      "feld": [51, 37],
       "eigenschaften": {
         "tun": "spielt Ball auf dem Spielplatz",
         "wann": "tag",
-        "von": "50,39",
-        "bis": "55,39",
+        "von": "48,37",
+        "bis": "53,37",
         "sagt": "statist.mapleFalls.aussen.kindMitBall"
       }
     },

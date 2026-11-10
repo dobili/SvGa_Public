@@ -2883,6 +2883,15 @@
       "zustand": "gebraucht",
       "blick": "unten",
       "stil": "klassisch"
+    },
+    "mf9Halfpipe": {
+      "quelle": "spiel/eigene/halfpipe.png",
+      "breite": 64,
+      "hoehe": 48,
+      "kollision": true,
+      "art": "sport",
+      "zustand": "gebraucht",
+      "stil": "modern"
     }
   }
 }

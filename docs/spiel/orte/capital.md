@@ -230,6 +230,45 @@ ein Fanshop mit Schals und T-Shirts.
 7. Halle (Runde 7): vier Statisten mit Satz (Zuschauer mit den Kiebitzen, Reporter mit der ersten
    Olympiade 1927, Mutter mit Brotdose, Ordner).
 
+### 3.4 Runde 6 (mittel-1, 10.11.2026): spielbar
+
+- **Neuer Innenraum `capitalArena.ubahnhof`** (36 × 20, A/B/C): stillgelegter Bahnsteig mit
+  Graffitizug hinter einem Geländer, Pfeilern, Bänken, Drehkreuzen und drei Turniertischen. Ausgang
+  `ubahnAusgang` (18, 19) ↔ Innenstadt `ubahn` vor dem Rollgitter (A (40, 47), B (15, 47), C
+  (65, 47)), `wenn: ubahnOffen`.
+- **Innenstadt:** `kreide5` neben dem Kreidespringer (A (38, 47), B (13, 47), C (63, 47)): Fund
+  `kreide5`, dann Losungsrätsel (Runde `capitalArena.kreideraetsel`, eine Aufgabe Doppelangriff);
+  das Losungswort öffnet das Gitter. Die Felder ersetzen `ereignisKreidenacht` aus 3.3, der Auslöser
+  steht jetzt unten im Bahnhof.
+- **U-Bahnhof:** Figur Mo (`capitalArena.mo`, (18, 10)), `ereignisKreidenacht` vor dem mittleren Tisch
+  (18, 14). Quest `capitalArena.kreidenacht` (klein): drei Blitzpartien 3 + 2
+  (`capitalArena.kreidenacht1` gegen Dime, `2` gegen Mama Bear, `3` gegen Victor mit Kapuze), dann
+  Victors Moment ohne Kamera, Lohn Karte Sanduhr (eine eigene Zeitkarte „Kreide“ fehlt noch), Foto,
+  30 Münzen.
+- **Weg 11, Seeufer:** Sperre S12 am Übergang `weiterLeuchtturm` (`wenn: capitalZugang` =
+  `fernpartieGespielt` und `novaBitteGehoert`, der Wachmann erklärt). `ereignisWeltschachtag` (140, 13)
+  mit Quest `wegGhostCapital.weltschachtag` (klein): Simultan als Runde `wegGhostCapital.simultan`
+  (fünf Aufgaben, bis mittel-2 die Form Simultan baut), danach Abes Partie gegen die Welt, Foto, 25
+  Münzen. Figur Wanderer (`wegGhostCapital.wanderer`, (124, 15)) nimmt die Buchseiten zurück.
+  `seite12` am Anleger (A (59, 8), B (99, 8), C (33, 8)), `faehrterminal` (A (48, 12), B (88, 12), C
+  (22, 12)).
+- **Leuchtturm:** Figur Odette Finch (`wegGhostCapital.odette`, A (78, 14), B (114, 14), C (43, 13)):
+  Hinweise nach Zahl der Figuren, ab 15 der König (Fund `finchKoenig`) und das Meisterproblem (Runde
+  `wegGhostCapital.meisterproblem`, Platzhalter bis zum Bau mit der Engine), danach Fund
+  `finchsBuchsbaum` (Extra). `plakatWeltschachtag` vor dem Aufsteller (A (58, 13), B (110, 14), C
+  (20, 13)).
+- **Arena:** `fahnen` (A (31, 44), B (59, 44), C (5, 44)); Figur Wanderer (`capitalArena.wanderer`,
+  (16, 43)) schenkt nach dem Finale das Buch (Fund `buchVonGrundAuf`, Bretthintergrund „Manuskript“).
+  Halle: `banner` (12, 3); Dr. Lin erkennt die Mappe mit allen sechs Spuren (Knoten `lin_mappe`, Fund
+  `fotoMappe`).
+- **Quests der Sammelstränge** (alle klein): `wegGhostCapital.finchJagd` (Start am Flohmarkt,
+  Auslöser `ereignisFlohmarkt` auf `wegMapleCedar.landstrasse`; Ende bei Odette),
+  `capitalArena.verloreneSeiten` (Start bei `seite00`; Ende Buch nach dem Finale),
+  `capitalArena.spurenPerfectMove` (Start bei `spurPM1` auf `wegRivertonIronwood.bruecke`; Ende bei Dr.
+  Lin), `capitalArena.kreidespringer` (Start bei `kreide1` ebenda; Ende in der Kreidenacht). Die Zahl
+  der Funde prüft Ink über die gemeinsamen Zähler `finchFiguren`, `buchseiten`, `spurenPM`,
+  `kreideTreffpunkte`; keine `voraussetzung`, damit eine verpasste Fundstelle den Strang nicht sperrt.
+
 ## 4. Bühnenbilder
 
 Möbel mit Vorsilbe `gc7` (Weg) in `moebel/weg-ghost-capital.json` und `ca7` (Arena) in

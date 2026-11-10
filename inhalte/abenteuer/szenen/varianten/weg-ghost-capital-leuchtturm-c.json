@@ -413,12 +413,20 @@
     {
       "name": "fundLinse",
       "feld": [25, 17]
+    },
+    {
+      "name": "plakatWeltschachtag",
+      "feld": [20, 13]
     }
   ],
   "figuren": [
     {
       "name": "abe",
       "feld": [30, 16]
+    },
+    {
+      "name": "odette",
+      "feld": [43, 13]
     }
   ],
   "belebung": [
@@ -495,7 +503,7 @@
       "feld": [85, 2],
       "eigenschaften": {
         "von": "80,2",
-        "bis": "92,3",
+        "bis": "91,2",
         "verhalten": "schwimmen"
       }
     },

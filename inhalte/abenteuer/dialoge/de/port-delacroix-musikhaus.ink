@@ -21,6 +21,7 @@ VAR varianteSchach960Gelernt = false
 VAR ausgangPortDelacroixSchach960Set1 = ""
 VAR ausgangPortDelacroixSchach960Set2 = ""
 VAR ausgangPortDelacroixSchach960Set3 = ""
+VAR angesehenLochImDach = false
 
 === schild ===
 {
@@ -79,7 +80,7 @@ Wir spielen nie zweimal dasselbe Stück. Warum sollten wir zweimal dieselbe Erö
 Schach960. Die Grundreihe wird gemischt, die Läufer stehen auf verschiedenen Farben, der König irgendwo zwischen den Türmen. #sprecher:ambrose
 Rochiert wird wie immer: König und Turm landen auf denselben Feldern wie im normalen Schach. #sprecher:ambrose
 Zum Rochieren tippst du am Brett erst den König an und dann deinen eigenen Turm. #sprecher:ambrose
-Kein Eröffnungsbuch hilft dir hier, {held}. Nur Grundsätze: Figuren entwickeln, das Zentrum besetzen, den König in Sicherheit bringen. Kapitel 2 und 3. #sprecher:ambrose
+Kein Eröffnungsbuch hilft dir hier, {held}. Nur Grundsätze: Figuren entwickeln, das Zentrum besetzen, den König in Sicherheit bringen. Kapitel 1, Abschnitt 1.1. #sprecher:ambrose
 Als Kind fand ich das Unsinn. Mein Vater stimmte Klaviere, und bei mir sollte jede Figur an ihrem Platz stehen. #sprecher:ambrose #stimmung:lacht
 Jetzt lerne ich es eben. Fast zweihundert Jahre zu spät, aber in der richtigen Stadt. #sprecher:ambrose #stimmung:friedlich
 -> blaeser_set1
@@ -131,3 +132,19 @@ In meiner Stadt, mit gemischten Figuren und einer Posaune. Ich hätte nie gedach
     -> END
 + [„Bis bald, Mabel.“]
     -> END
+
+// ---------------------------------------------------------------- Ansehen (Runde 6)
+
+=== loch_im_dach ===
+{musikhausOffen:
+    Das Dach ist geflickt. Wo das Loch war, ist jetzt ein Fenster, und die Sonne fällt aufs Klavier. #sprecher:erzaehler
+    -> END
+}
+{angesehenLochImDach:
+    Durch das Loch im Dach fällt Licht auf die nassen Dielen. #sprecher:erzaehler
+    -> END
+}
+~ angesehenLochImDach = true
+Über dir ein Loch im Dach, so groß wie ein Tisch. Ein Lichtstreifen fällt auf die Dielen, mitten in eine Pfütze. #sprecher:erzaehler
+Früher hat hier jemand Trompete gespielt, bis die Fenster zitterten. Jetzt zittert nur das Wasser. #sprecher:ambrose #stimmung:fern
+-> END

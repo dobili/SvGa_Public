@@ -503,6 +503,14 @@
     {
       "name": "finchBauerF",
       "feld": [59, 42]
+    },
+    {
+      "name": "graffiti",
+      "feld": [60, 25]
+    },
+    {
+      "name": "bagger",
+      "feld": [3, 31]
     }
   ],
   "figuren": [],
@@ -510,10 +518,10 @@
     {
       "name": "hargrove",
       "typ": "statist",
-      "feld": [42, 10],
+      "feld": [42, 9],
       "eigenschaften": {
-        "von": "42,10",
-        "bis": "42,10",
+        "von": "42,9",
+        "bis": "42,9",
         "tun": "",
         "wann": "tag"
       }
@@ -521,10 +529,10 @@
     {
       "name": "lena",
       "typ": "statist",
-      "feld": [20, 10],
+      "feld": [20, 9],
       "eigenschaften": {
-        "von": "20,10",
-        "bis": "20,10",
+        "von": "20,9",
+        "bis": "20,9",
         "tun": "",
         "wann": "tag"
       }

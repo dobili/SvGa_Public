@@ -775,6 +775,22 @@
     {
       "name": "fundBisonhaar",
       "feld": [11, 128]
+    },
+    {
+      "name": "ereignisGeysirblitz",
+      "feld": [14, 63]
+    },
+    {
+      "name": "spurPM5",
+      "feld": [9, 63]
+    },
+    {
+      "name": "finchBauerD",
+      "feld": [8, 64]
+    },
+    {
+      "name": "geysirAusbruch",
+      "feld": [16, 61]
     }
   ],
   "figuren": [
@@ -789,7 +805,7 @@
       "typ": "tier",
       "feld": [19, 92],
       "eigenschaften": {
-        "von": "18,91",
+        "von": "18,92",
         "bis": "24,95",
         "verhalten": "ausweichen"
       }

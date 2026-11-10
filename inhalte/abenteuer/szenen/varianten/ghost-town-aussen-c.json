@@ -733,6 +733,10 @@
     {
       "moebel": "gt7KaktusBluete",
       "feld": [18, 8]
+    },
+    {
+      "moebel": "gt7Schild",
+      "feld": [8, 18]
     }
   ],
   "ausloeser": [
@@ -778,6 +782,18 @@
     {
       "name": "goldmine",
       "feld": [30, 5]
+    },
+    {
+      "name": "ortsschild",
+      "feld": [8, 20]
+    },
+    {
+      "name": "steckbrief",
+      "feld": [34, 20]
+    },
+    {
+      "name": "amboss",
+      "feld": [11, 20]
     }
   ],
   "figuren": [
@@ -811,7 +827,7 @@
       "typ": "tier",
       "feld": [49, 15],
       "eigenschaften": {
-        "verhalten": "sitzen",
+        "verhalten": "fliegen",
         "wann": "nacht"
       }
     },

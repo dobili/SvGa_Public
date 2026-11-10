@@ -270,6 +270,10 @@
     {
       "name": "campus",
       "feld": [71, 22]
+    },
+    {
+      "name": "eisenwaren",
+      "feld": [17, 41]
     }
   ],
   "figuren": [],
@@ -310,7 +314,7 @@
       "feld": [50, 45],
       "eigenschaften": {
         "von": "40,42",
-        "bis": "60,48",
+        "bis": "59,48",
         "verhalten": "ausweichen"
       }
     },
@@ -492,7 +496,7 @@
       "feld": [60, 4],
       "eigenschaften": {
         "von": "56,2",
-        "bis": "66,7",
+        "bis": "65,7",
         "verhalten": "schlafen"
       }
     },

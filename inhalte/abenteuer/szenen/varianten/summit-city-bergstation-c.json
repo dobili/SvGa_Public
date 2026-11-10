@@ -110,6 +110,10 @@
     {
       "name": "fundMurmeltierpfeife",
       "feld": [16, 10]
+    },
+    {
+      "name": "fahrplan",
+      "feld": [4, 10]
     }
   ],
   "figuren": [

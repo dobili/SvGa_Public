@@ -329,6 +329,14 @@
     {
       "name": "steintisch",
       "feld": [42, 16]
+    },
+    {
+      "name": "pferd",
+      "feld": [62, 12]
+    },
+    {
+      "name": "schildSchule",
+      "feld": [94, 14]
     }
   ],
   "figuren": [
@@ -341,10 +349,10 @@
     {
       "name": "pferd",
       "typ": "tier",
-      "feld": [63, 18],
+      "feld": [62, 18],
       "eigenschaften": {
-        "von": "63,18",
-        "bis": "66,18",
+        "von": "62,18",
+        "bis": "65,18",
         "verhalten": "ausweichen"
       }
     },

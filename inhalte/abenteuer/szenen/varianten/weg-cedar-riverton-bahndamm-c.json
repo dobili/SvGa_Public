@@ -2505,6 +2505,18 @@
     {
       "name": "fundFahrkarte",
       "feld": [60, 7]
+    },
+    {
+      "name": "ereignisZugpartie",
+      "feld": [44, 15]
+    },
+    {
+      "name": "seite01",
+      "feld": [46, 5]
+    },
+    {
+      "name": "durchlass",
+      "feld": [64, 7]
     }
   ],
   "figuren": [
@@ -2607,7 +2619,7 @@
     {
       "name": "katzeImWaggon",
       "typ": "tier",
-      "feld": [105, 1],
+      "feld": [104, 2],
       "eigenschaften": {
         "verhalten": "sitzen"
       }

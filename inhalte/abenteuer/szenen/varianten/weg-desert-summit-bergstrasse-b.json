@@ -483,6 +483,22 @@
     {
       "name": "weiterSummit",
       "feld": [20, 0]
+    },
+    {
+      "name": "spurPM4",
+      "feld": [16, 115]
+    },
+    {
+      "name": "aussichtBerg",
+      "feld": [11, 32]
+    },
+    {
+      "name": "wegweiserHochebene",
+      "feld": [28, 74]
+    },
+    {
+      "name": "quelle",
+      "feld": [8, 80]
     }
   ],
   "figuren": [],

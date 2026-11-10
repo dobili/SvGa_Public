@@ -1126,7 +1126,7 @@
      "name": "besuchergruppe",
      "type": "statist",
      "x": 112,
-     "y": 160,
+     "y": 176,
      "width": 16,
      "height": 16,
      "rotation": 0,
@@ -1135,7 +1135,7 @@
       {
        "name": "von",
        "type": "string",
-       "value": "7,10"
+       "value": "7,11"
       },
       {
        "name": "bis",

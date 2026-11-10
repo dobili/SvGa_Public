@@ -321,15 +321,20 @@
     },
     {
       "moebel": "mf4Strassenbaum",
-      "feld": [16, 28]
-    },
-    {
-      "moebel": "mf4Strassenbaum",
       "feld": [39, 25]
     },
     {
       "moebel": "mfAhorn",
       "feld": [31, 26]
+    },
+    {
+      "moebel": "mf9Halfpipe",
+      "feld": [16, 27]
+    },
+    {
+      "moebel": "mf3BrettKlein",
+      "auf": "bank",
+      "versatz": [6, -3]
     }
   ],
   "ausloeser": [
@@ -384,12 +389,16 @@
     {
       "name": "kiosk",
       "feld": [25, 13]
+    },
+    {
+      "name": "steg",
+      "feld": [5, 7]
     }
   ],
   "figuren": [
     {
       "name": "skaterJo",
-      "feld": [16, 24]
+      "feld": [17, 26]
     },
     {
       "name": "abernathy",

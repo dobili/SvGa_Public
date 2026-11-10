@@ -354,6 +354,38 @@
     {
       "name": "fundNeonK",
       "feld": [84, 2]
+    },
+    {
+      "name": "ereignisFunkschach",
+      "feld": [83, 11]
+    },
+    {
+      "name": "kreide3",
+      "feld": [91, 9]
+    },
+    {
+      "name": "finchSpringerB",
+      "feld": [65, 10]
+    },
+    {
+      "name": "seite08",
+      "feld": [52, 18]
+    },
+    {
+      "name": "hinterzimmerTuer",
+      "feld": [90, 7]
+    },
+    {
+      "name": "reklame",
+      "feld": [116, 10]
+    },
+    {
+      "name": "motelschild",
+      "feld": [60, 8]
+    },
+    {
+      "name": "aussicht",
+      "feld": [9, 18]
     }
   ],
   "figuren": [

@@ -292,9 +292,26 @@
     {
       "name": "zurueckCrossroads",
       "feld": [24, 35]
+    },
+    {
+      "name": "schachautomat",
+      "feld": [20, 17]
+    },
+    {
+      "name": "riesenrad",
+      "feld": [7, 14]
+    },
+    {
+      "name": "losbude",
+      "feld": [5, 22]
     }
   ],
-  "figuren": [],
+  "figuren": [
+    {
+      "name": "dolores",
+      "feld": [22, 16]
+    }
+  ],
   "belebung": [
     {
       "name": "juno",
@@ -304,7 +321,7 @@
         "tun": "Juno fotografiert alles",
         "wann": "tag",
         "von": "16,24",
-        "bis": "30,24"
+        "bis": "30,26"
       }
     },
     {
@@ -336,7 +353,7 @@
       "eigenschaften": {
         "tun": "schlendert mit Zuckerwatte über den Platz",
         "wann": "tag",
-        "von": "26,14",
+        "von": "25,14",
         "bis": "38,18",
         "sagt": "statist.jahrmarkt.festplatz.besucher"
       }
@@ -348,7 +365,7 @@
       "eigenschaften": {
         "tun": "ölt die Pferde des Karussells",
         "wann": "tag",
-        "von": "10,13",
+        "von": "10,14",
         "bis": "16,13",
         "sagt": "statist.jahrmarkt.festplatz.karussellbetreiber"
       }

@@ -2,6 +2,7 @@
   "karte": "wegMapleCedar.flussweg",
   "datei": "karten/weg-maple-cedar-flussweg.json",
   "art": "aussen",
+  "toenung": "nebel",
   "beschreibung": "Variante C (reicher): Der Uferweg schlängelt sich: im Westen hoch nach Norden unter die Bäume, in der Mitte tief zum Wasser, wo der Steg mit zwei Booten, Fässern und Kisten liegt, im Osten über eine Wiese voller Wildblumen. An der Fährstelle im Osten liegt ein Boot längs am Ufer am Pfahl. Zwei Baumreihen im Norden, Erlen am Ufer, viel Kleinkram.",
   "boden": "gras",
   "wandart": "gras",
@@ -36,11 +37,11 @@
     "#......................................................................................................................#",
     "#..................eeeeeeeeeeeeeeeeee..................................................................................#",
     "#................eeeeeeeeeeeeeeeeeeeeee................................................................................#",
-    "#.............eeeeee................eeeeee..................................eeeeeeeeeeeeeeeeeeeeeee...........pppppppppp",
+    "#.............eeeeee................eeeeee..................................eeeeeeeeeeeeeeeeeeeeeee.......eeeepppppppppp",
     "eeeeeeeeeeeeeeeeee....................eeeeee...........................eeeeeeeeeeeeeeeeeeeeeeeeeeeeeeeeeeeeeeessssssssss",
     "eeeeeeeeeeeeeee..........................eeeeee.....................eeeeeeeee.....................eeeeeeeeeeeessssssssss",
-    "#..........................................eeeee..................eeeeee......................................ssssssssss",
-    "#.............................................eeeeeeeeeeeeeeeeeeeeeee..........................................ppppppppp",
+    "#..........................................eeeee..................eeeeee................................eeeeeessssssssss",
+    "#.............................................eeeeeeeeeeeeeeeeeeeeeee.......................................ee.ppppppppp",
     "#.............................~~~~~............eeeeeeeeeeeeeeeeeeee...................................~~~~~~...........#",
     "~~.........................~~~~~~~~~~~..................ee.....................~~~~~~~~~~...........~~~~~~~~...........#",
     "~~~~.....................~~~~~~~~~~~~~~~~~~...~~........ee........~~~~~~~~~~~~~~~~~~~~~~~~~........~~~~~~~~~~~~~..~~~~~~",
@@ -1058,10 +1059,6 @@
     },
     {
       "moebel": "wg4Stein",
-      "feld": [109, 18]
-    },
-    {
-      "moebel": "wg4Stein",
       "feld": [110, 18]
     },
     {
@@ -1262,6 +1259,10 @@
       "name": "schildCedar",
       "feld": [112, 20],
       "auf_moebel": true
+    },
+    {
+      "name": "finchBauerA",
+      "feld": [54, 21]
     }
   ],
   "figuren": [],
@@ -1269,10 +1270,10 @@
     {
       "name": "angler",
       "typ": "statist",
-      "feld": [56, 25],
+      "feld": [56, 24],
       "eigenschaften": {
-        "von": "56,25",
-        "bis": "56,25",
+        "von": "56,24",
+        "bis": "56,24",
         "tun": "Silas angelt am Ende des Stegs",
         "wann": "tag"
       }
@@ -1353,12 +1354,12 @@
     {
       "name": "kindSteinehuepfen",
       "typ": "statist",
-      "feld": [59, 20],
+      "feld": [58, 19],
       "eigenschaften": {
         "tun": "lässt Steine über das Wasser hüpfen",
         "wann": "tag",
-        "von": "59,21",
-        "bis": "62,21",
+        "von": "58,20",
+        "bis": "61,20",
         "sagt": "statist.wegMapleCedar.flussweg.kindSteinehuepfen"
       }
     },

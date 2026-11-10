@@ -2416,6 +2416,913 @@
       ]
     },
     {
+      "kennung": "wegMapleCedar.flohmarkt",
+      "titel": "quest.flohmarkt.titel",
+      "typ": "raetsel",
+      "ort": "wegMapleCedar",
+      "haupt": false,
+      "start": {
+        "art": "dialog",
+        "knoten": "weg-maple-cedar.flohmarkt_angebot"
+      },
+      "schritte": [
+        {
+          "text": "quest.flohmarkt.schritt1",
+          "ereignis": {
+            "art": "aufgaben",
+            "runde": "wegMapleCedar.finchFallen"
+          }
+        },
+        {
+          "text": "quest.flohmarkt.schritt2",
+          "ereignis": {
+            "art": "dialog",
+            "knoten": "weg-maple-cedar.flohmarkt_karte"
+          }
+        }
+      ],
+      "klein": true
+    },
+    {
+      "kennung": "wegCedarRiverton.zugpartie",
+      "titel": "quest.zugpartie.titel",
+      "typ": "raetsel",
+      "ort": "wegCedarRiverton",
+      "haupt": false,
+      "start": {
+        "art": "dialog",
+        "knoten": "weg-cedar-riverton.zugpartie_angebot"
+      },
+      "schritte": [
+        {
+          "text": "quest.zugpartie.schritt1",
+          "ereignis": {
+            "art": "aufgaben",
+            "runde": "wegCedarRiverton.zugpartie"
+          }
+        },
+        {
+          "text": "quest.zugpartie.schritt2",
+          "ereignis": {
+            "art": "dialog",
+            "knoten": "weg-cedar-riverton.zugpartie_geloest"
+          }
+        }
+      ],
+      "klein": true
+    },
+    {
+      "kennung": "lockport.tafelSchleuse",
+      "titel": "quest.tafelSchleuse.titel",
+      "typ": "raetsel",
+      "ort": "lockport",
+      "haupt": false,
+      "klein": true,
+      "start": {
+        "art": "ort",
+        "karte": "lockport.aussen",
+        "ausloeser": "tafelSchleuse"
+      },
+      "schritte": [
+        {
+          "text": "quest.tafelSchleuse.schritt1",
+          "ereignis": {
+            "art": "aufgaben",
+            "runde": "lockport.tafelSchleuse"
+          },
+          "wirkungen": [
+            {
+              "art": "muenzen",
+              "anzahl": 5
+            }
+          ]
+        }
+      ]
+    },
+    {
+      "kennung": "lockport.kahnrennen",
+      "titel": "quest.kahnrennen.titel",
+      "typ": "raetsel",
+      "ort": "lockport",
+      "haupt": false,
+      "klein": true,
+      "start": {
+        "art": "dialog",
+        "knoten": "lockport-aussen.kahnrennen_angebot"
+      },
+      "schritte": [
+        {
+          "text": "quest.kahnrennen.schritt1",
+          "ereignis": {
+            "art": "aufgaben",
+            "runde": "lockport.kahnrennen"
+          }
+        },
+        {
+          "text": "quest.kahnrennen.schritt2",
+          "ereignis": {
+            "art": "dialog",
+            "knoten": "lockport-aussen.kahnrennen_geloest"
+          },
+          "wirkungen": [
+            {
+              "art": "muenzen",
+              "anzahl": 10
+            }
+          ]
+        }
+      ]
+    },
+    {
+      "kennung": "lockport.taue",
+      "titel": "quest.taue.titel",
+      "typ": "raetsel",
+      "ort": "lockport",
+      "haupt": false,
+      "klein": true,
+      "start": {
+        "art": "dialog",
+        "knoten": "lockport-gasthaus.henrik_tipp"
+      },
+      "schritte": [
+        {
+          "text": "quest.taue.schritt1",
+          "ereignis": {
+            "art": "aufgaben",
+            "runde": "lockport.taue"
+          }
+        },
+        {
+          "text": "quest.taue.schritt2",
+          "ereignis": {
+            "art": "dialog",
+            "knoten": "lockport-aussen.taue_geloest"
+          },
+          "wirkungen": [
+            {
+              "art": "muenzen",
+              "anzahl": 10
+            },
+            {
+              "art": "gegenstand",
+              "gegenstand": "gummistiefel"
+            }
+          ]
+        }
+      ]
+    },
+    {
+      "kennung": "lockport.post",
+      "titel": "quest.lockportPost.titel",
+      "typ": "hilfe",
+      "ort": "lockport",
+      "haupt": false,
+      "klein": true,
+      "start": {
+        "art": "dialog",
+        "knoten": "lockport-aussen.post_abgeben"
+      },
+      "schritte": [
+        {
+          "text": "quest.lockportPost.schritt1",
+          "ereignis": {
+            "art": "dialog",
+            "knoten": "lockport-aussen.post_geloest"
+          },
+          "wirkungen": [
+            {
+              "art": "muenzen",
+              "anzahl": 10
+            }
+          ]
+        }
+      ]
+    },
+    {
+      "kennung": "wegDelacroixDesert.seilschaft",
+      "titel": "quest.seilschaft.titel",
+      "typ": "hilfe",
+      "ort": "wegDelacroixDesert",
+      "haupt": false,
+      "klein": true,
+      "start": {
+        "art": "dialog",
+        "knoten": "weg-delacroix-desert.seilschaft_start"
+      },
+      "schritte": [
+        {
+          "text": "quest.seilschaft.schritt1",
+          "ereignis": {
+            "art": "dialog",
+            "knoten": "weg-delacroix-desert.seilschaft_ende"
+          },
+          "wirkungen": [
+            {
+              "art": "muenzen",
+              "anzahl": 20
+            }
+          ]
+        }
+      ]
+    },
+    {
+      "kennung": "sternwarte.koenigsangriff",
+      "titel": "quest.koenigsangriffSterne.titel",
+      "typ": "raetsel",
+      "ort": "sternwarte",
+      "haupt": false,
+      "klein": true,
+      "start": {
+        "art": "dialog",
+        "knoten": "sternwarte.ngata_angebot"
+      },
+      "schritte": [
+        {
+          "text": "quest.koenigsangriffSterne.schritt1",
+          "ereignis": {
+            "art": "aufgaben",
+            "runde": "sternwarte.sterne"
+          },
+          "wirkungen": [
+            {
+              "art": "muenzen",
+              "anzahl": 25
+            }
+          ]
+        }
+      ]
+    },
+    {
+      "kennung": "wegDesertSummit.funkschach",
+      "titel": "quest.funkschach.titel",
+      "typ": "hilfe",
+      "ort": "wegDesertSummit",
+      "haupt": false,
+      "klein": true,
+      "start": {
+        "art": "dialog",
+        "knoten": "weg-desert-summit.funkschach_start"
+      },
+      "schritte": [
+        {
+          "text": "quest.funkschach.schritt1",
+          "ereignis": {
+            "art": "partie",
+            "begegnung": "wegDesertSummit.funkschach",
+            "ausgang": ["sieg", "remis", "niederlage"]
+          }
+        },
+        {
+          "text": "quest.funkschach.schritt2",
+          "ereignis": {
+            "art": "dialog",
+            "knoten": "weg-desert-summit.funkschach_ende"
+          },
+          "wirkungen": [
+            {
+              "art": "muenzen",
+              "anzahl": 30
+            }
+          ]
+        }
+      ]
+    },
+    {
+      "kennung": "hochebene.bauerndiplom",
+      "titel": "quest.bauerndiplom.titel",
+      "typ": "hilfe",
+      "ort": "hochebene",
+      "haupt": false,
+      "klein": true,
+      "start": {
+        "art": "dialog",
+        "knoten": "hochebene.diplom_start"
+      },
+      "schritte": [
+        {
+          "text": "quest.bauerndiplom.schritt1",
+          "ereignis": {
+            "art": "aufgaben",
+            "runde": "hochebene.diplom"
+          }
+        },
+        {
+          "text": "quest.bauerndiplom.schritt2",
+          "ereignis": {
+            "art": "dialog",
+            "knoten": "hochebene.diplom_ende"
+          },
+          "wirkungen": [
+            {
+              "art": "muenzen",
+              "anzahl": 20
+            }
+          ]
+        }
+      ]
+    },
+    {
+      "kennung": "wegPinewoodGhost.gespenst",
+      "titel": "quest.gespenstTankstelle.titel",
+      "typ": "begegnung",
+      "ort": "wegPinewoodGhost",
+      "haupt": false,
+      "klein": true,
+      "start": {
+        "art": "dialog",
+        "knoten": "weg-pinewood-ghost.greifarm_start"
+      },
+      "schritte": [
+        {
+          "text": "quest.gespenstTankstelle.schritt1",
+          "ereignis": {
+            "art": "partie",
+            "begegnung": "wegPinewoodGhost.z1",
+            "ausgang": ["sieg", "remis", "niederlage"]
+          }
+        },
+        {
+          "text": "quest.gespenstTankstelle.schritt2",
+          "ereignis": {
+            "art": "dialog",
+            "knoten": "weg-pinewood-ghost.greifarm_ende"
+          },
+          "wirkungen": [
+            {
+              "art": "muenzen",
+              "anzahl": 25
+            }
+          ]
+        }
+      ]
+    },
+    {
+      "kennung": "kuerbishof.irrgarten",
+      "titel": "quest.irrgarten.titel",
+      "typ": "raetsel",
+      "ort": "kuerbishof",
+      "haupt": false,
+      "klein": true,
+      "start": {
+        "art": "dialog",
+        "knoten": "kuerbishof.clover_irrgarten"
+      },
+      "schritte": [
+        {
+          "text": "quest.irrgarten.schritt1",
+          "ereignis": {
+            "art": "aufgaben",
+            "runde": "kuerbishof.irrgarten"
+          },
+          "wirkungen": [
+            {
+              "art": "muenzen",
+              "anzahl": 15
+            }
+          ]
+        }
+      ]
+    },
+    {
+      "kennung": "pelikaninsel.netze",
+      "titel": "quest.netzeFlicken.titel",
+      "typ": "raetsel",
+      "ort": "pelikaninsel",
+      "haupt": false,
+      "klein": true,
+      "start": {
+        "art": "dialog",
+        "knoten": "pelikaninsel.old_pete_netze"
+      },
+      "schritte": [
+        {
+          "text": "quest.netzeFlicken.schritt1",
+          "ereignis": {
+            "art": "aufgaben",
+            "runde": "pelikaninsel.netze"
+          },
+          "wirkungen": [
+            {
+              "art": "muenzen",
+              "anzahl": 15
+            }
+          ]
+        }
+      ]
+    },
+    {
+      "kennung": "pelikaninsel.leuchtfeuer",
+      "titel": "quest.leuchtfeuer.titel",
+      "typ": "hilfe",
+      "ort": "pelikaninsel",
+      "haupt": false,
+      "klein": true,
+      "start": {
+        "art": "dialog",
+        "knoten": "pelikaninsel.leuchtfeuer_auftrag"
+      },
+      "schritte": [
+        {
+          "text": "quest.leuchtfeuer.schritt1",
+          "ereignis": {
+            "art": "dialog",
+            "knoten": "pelikaninsel.leuchtfeuer_einsetzen"
+          },
+          "wirkungen": [
+            {
+              "art": "gegenstandWeg",
+              "gegenstand": "batterie"
+            },
+            {
+              "art": "muenzen",
+              "anzahl": 35
+            }
+          ]
+        }
+      ]
+    },
+    {
+      "kennung": "goldmine.letzteSchicht",
+      "titel": "quest.letzteSchicht.titel",
+      "typ": "hilfe",
+      "ort": "goldmine",
+      "haupt": false,
+      "klein": true,
+      "start": {
+        "art": "dialog",
+        "knoten": "goldmine.eingang"
+      },
+      "schritte": [
+        {
+          "text": "quest.letzteSchicht.schritt1",
+          "ereignis": {
+            "art": "dialog",
+            "knoten": "goldmine.logbuch_gefunden"
+          }
+        }
+      ]
+    },
+    {
+      "kennung": "goldmine.lorenendspiel",
+      "titel": "quest.lorenendspiel.titel",
+      "typ": "raetsel",
+      "ort": "goldmine",
+      "haupt": false,
+      "klein": true,
+      "start": {
+        "art": "dialog",
+        "knoten": "goldmine.lore"
+      },
+      "schritte": [
+        {
+          "text": "quest.lorenendspiel.schritt1",
+          "ereignis": {
+            "art": "aufgaben",
+            "runde": "goldmine.loren"
+          },
+          "wirkungen": [
+            {
+              "art": "muenzen",
+              "anzahl": 20
+            }
+          ]
+        }
+      ]
+    },
+    {
+      "kennung": "wegIronwoodSilicon.stream",
+      "titel": "quest.stream.titel",
+      "typ": "hilfe",
+      "ort": "wegIronwoodSilicon",
+      "haupt": false,
+      "start": {
+        "art": "ort",
+        "karte": "wegIronwoodSilicon.glasbruecke",
+        "ausloeser": "ereignisStream"
+      },
+      "schritte": [
+        {
+          "text": "quest.stream.schritt1",
+          "ereignis": {
+            "art": "aufgaben",
+            "runde": "wegIronwoodSilicon.stream"
+          }
+        },
+        {
+          "text": "quest.stream.schritt3",
+          "ereignis": {
+            "art": "partie",
+            "begegnung": "wegIronwoodSilicon.stream",
+            "ausgang": ["sieg", "remis", "niederlage"]
+          }
+        },
+        {
+          "text": "quest.stream.schritt2",
+          "ereignis": {
+            "art": "dialog",
+            "knoten": "weg-ironwood-silicon.stream_ende"
+          }
+        }
+      ],
+      "klein": true
+    },
+    {
+      "kennung": "wegSummitCrossroads.geysirblitz",
+      "titel": "quest.geysirblitz.titel",
+      "typ": "hilfe",
+      "ort": "wegSummitCrossroads",
+      "haupt": false,
+      "start": {
+        "art": "ort",
+        "karte": "wegSummitCrossroads.geysirbecken",
+        "ausloeser": "ereignisGeysirblitz"
+      },
+      "schritte": [
+        {
+          "text": "quest.geysirblitz.schritt1",
+          "ereignis": {
+            "art": "aufgaben",
+            "runde": "wegSummitCrossroads.geysirblitz"
+          }
+        },
+        {
+          "text": "quest.geysirblitz.schritt2",
+          "ereignis": {
+            "art": "dialog",
+            "knoten": "weg-summit-crossroads.geysirblitz_ende"
+          }
+        }
+      ],
+      "klein": true
+    },
+    {
+      "kennung": "wegCrossroadsPinewood.lebendschach",
+      "titel": "quest.lebendschach.titel",
+      "typ": "hilfe",
+      "ort": "wegCrossroadsPinewood",
+      "haupt": false,
+      "start": {
+        "art": "ort",
+        "karte": "wegCrossroadsPinewood.riesenbaeume",
+        "ausloeser": "ereignisLebendschach"
+      },
+      "schritte": [
+        {
+          "text": "quest.lebendschach.schritt1",
+          "ereignis": {
+            "art": "aufgaben",
+            "runde": "wegCrossroadsPinewood.lebendschach"
+          }
+        },
+        {
+          "text": "quest.lebendschach.schritt2",
+          "ereignis": {
+            "art": "dialog",
+            "knoten": "weg-crossroads-pinewood.lebendschach_ende"
+          }
+        }
+      ],
+      "klein": true
+    },
+    {
+      "kennung": "crossroads.lieferung",
+      "titel": "quest.lieferung.titel",
+      "typ": "hilfe",
+      "ort": "crossroads",
+      "haupt": false,
+      "start": {
+        "art": "dialog",
+        "knoten": "crossroads-raststaette.darlene_lieferung"
+      },
+      "schritte": [
+        {
+          "text": "quest.lieferung.schritt1",
+          "ereignis": {
+            "art": "dialog",
+            "knoten": "jahrmarkt.dolores_lieferung"
+          },
+          "wirkungen": [
+            {
+              "art": "muenzen",
+              "anzahl": 20
+            }
+          ]
+        }
+      ],
+      "klein": true
+    },
+    {
+      "kennung": "wegSiliconDelacroix.kapitaensproblem",
+      "titel": "quest.kapitaensproblem.titel",
+      "typ": "raetsel",
+      "ort": "wegSiliconDelacroix",
+      "haupt": false,
+      "klein": true,
+      "start": {
+        "art": "dialog",
+        "knoten": "weg-silicon-delacroix.kapitaen_erstes"
+      },
+      "schritte": [
+        {
+          "text": "quest.kapitaensproblem.schritt1",
+          "ereignis": {
+            "art": "aufgaben",
+            "runde": "wegSiliconDelacroix.kapitaensproblem"
+          }
+        },
+        {
+          "text": "quest.kapitaensproblem.schritt2",
+          "ereignis": {
+            "art": "dialog",
+            "knoten": "weg-silicon-delacroix.kapitaen_horn"
+          },
+          "wirkungen": [
+            {
+              "art": "muenzen",
+              "anzahl": 20
+            }
+          ]
+        }
+      ]
+    },
+    {
+      "kennung": "bayou.kisteImHausboot",
+      "titel": "quest.kisteImHausboot.titel",
+      "typ": "hilfe",
+      "ort": "bayou",
+      "haupt": false,
+      "klein": true,
+      "start": {
+        "art": "dialog",
+        "knoten": "bayou.pepe_kiste"
+      },
+      "schritte": [
+        {
+          "text": "quest.kisteImHausboot.schritt1",
+          "ereignis": {
+            "art": "dialog",
+            "knoten": "bayou.pepe_formular"
+          }
+        },
+        {
+          "text": "quest.kisteImHausboot.schritt2",
+          "ereignis": {
+            "art": "partie",
+            "begegnung": "bayou.hausboot",
+            "ausgang": ["sieg", "remis", "niederlage"]
+          }
+        },
+        {
+          "text": "quest.kisteImHausboot.schritt3",
+          "ereignis": {
+            "art": "dialog",
+            "knoten": "bayou.pepe_nach_partie"
+          },
+          "wirkungen": [
+            {
+              "art": "muenzen",
+              "anzahl": 15
+            }
+          ]
+        }
+      ]
+    },
+    {
+      "kennung": "wegGhostCapital.weltschachtag",
+      "titel": "quest.weltschachtag.titel",
+      "typ": "hilfe",
+      "ort": "wegGhostCapital",
+      "haupt": false,
+      "klein": true,
+      "start": {
+        "art": "dialog",
+        "knoten": "weg-ghost-capital.ereignis_weltschachtag"
+      },
+      "schritte": [
+        {
+          "text": "quest.weltschachtag.schritt1",
+          "ereignis": {
+            "art": "aufgaben",
+            "runde": "wegGhostCapital.simultan"
+          }
+        },
+        {
+          "text": "quest.weltschachtag.schritt2",
+          "ereignis": {
+            "art": "dialog",
+            "knoten": "weg-ghost-capital.weltschachtag_funk"
+          },
+          "wirkungen": [
+            {
+              "art": "muenzen",
+              "anzahl": 25
+            }
+          ]
+        }
+      ]
+    },
+    {
+      "kennung": "siliconBay.batterie",
+      "titel": "quest.batterie.titel",
+      "typ": "hilfe",
+      "ort": "siliconBay",
+      "haupt": false,
+      "klein": true,
+      "start": {
+        "art": "dialog",
+        "knoten": "silicon-bay-aussen.eisenwaren_batterie"
+      },
+      "schritte": [
+        {
+          "text": "quest.batterie.schritt1",
+          "ereignis": {
+            "art": "dialog",
+            "knoten": "silicon-bay-aussen.eisenwaren_batterie_mitgenommen"
+          },
+          "wirkungen": [
+            {
+              "art": "gegenstand",
+              "gegenstand": "batterie"
+            }
+          ]
+        }
+      ]
+    },
+    {
+      "kennung": "capitalArena.kreidenacht",
+      "titel": "quest.kreidenacht.titel",
+      "typ": "hilfe",
+      "ort": "capitalArena",
+      "haupt": false,
+      "klein": true,
+      "start": {
+        "art": "dialog",
+        "knoten": "capital-arena-ubahnhof.mo_erstes"
+      },
+      "schritte": [
+        {
+          "text": "quest.kreidenacht.schritt1",
+          "ereignis": {
+            "art": "partie",
+            "begegnung": "capitalArena.kreidenacht1",
+            "ausgang": ["sieg", "remis", "niederlage"]
+          }
+        },
+        {
+          "text": "quest.kreidenacht.schritt2",
+          "ereignis": {
+            "art": "partie",
+            "begegnung": "capitalArena.kreidenacht2",
+            "ausgang": ["sieg", "remis", "niederlage"]
+          }
+        },
+        {
+          "text": "quest.kreidenacht.schritt3",
+          "ereignis": {
+            "art": "partie",
+            "begegnung": "capitalArena.kreidenacht3",
+            "ausgang": ["sieg", "remis", "niederlage"]
+          }
+        },
+        {
+          "text": "quest.kreidenacht.schritt4",
+          "ereignis": {
+            "art": "dialog",
+            "knoten": "capital-arena-ubahnhof.mo_victor"
+          },
+          "wirkungen": [
+            {
+              "art": "muenzen",
+              "anzahl": 30
+            }
+          ]
+        }
+      ]
+    },
+    {
+      "kennung": "wegGhostCapital.finchJagd",
+      "titel": "quest.finchJagd.titel",
+      "typ": "raetsel",
+      "ort": "wegGhostCapital",
+      "haupt": false,
+      "klein": true,
+      "start": {
+        "art": "ort",
+        "karte": "wegMapleCedar.landstrasse",
+        "ausloeser": "ereignisFlohmarkt"
+      },
+      "schritte": [
+        {
+          "text": "quest.finchJagd.schritt1",
+          "ereignis": {
+            "art": "dialog",
+            "knoten": "weg-ghost-capital.odette_koenig"
+          }
+        },
+        {
+          "text": "quest.finchJagd.schritt2",
+          "ereignis": {
+            "art": "partie",
+            "begegnung": "wegGhostCapital.meisterproblem",
+            "ausgang": ["sieg"]
+          }
+        },
+        {
+          "text": "quest.finchJagd.schritt3",
+          "ereignis": {
+            "art": "dialog",
+            "knoten": "weg-ghost-capital.odette_geloest"
+          },
+          "wirkungen": [
+            {
+              "art": "muenzen",
+              "anzahl": 50
+            }
+          ]
+        }
+      ]
+    },
+    {
+      "kennung": "capitalArena.verloreneSeiten",
+      "titel": "quest.verloreneSeiten.titel",
+      "typ": "hilfe",
+      "ort": "capitalArena",
+      "haupt": false,
+      "klein": true,
+      "start": {
+        "art": "ort",
+        "karte": "wegMapleCedar.landstrasse",
+        "ausloeser": "seite00"
+      },
+      "schritte": [
+        {
+          "text": "quest.verloreneSeiten.schritt1",
+          "ereignis": {
+            "art": "dialog",
+            "knoten": "weg-ghost-capital.wanderer_seiten"
+          }
+        },
+        {
+          "text": "quest.verloreneSeiten.schritt2",
+          "ereignis": {
+            "art": "dialog",
+            "knoten": "capital-arena-aussen.wanderer_buch"
+          }
+        }
+      ]
+    },
+    {
+      "kennung": "capitalArena.spurenPerfectMove",
+      "titel": "quest.spurenPerfectMove.titel",
+      "typ": "hilfe",
+      "ort": "capitalArena",
+      "haupt": false,
+      "klein": true,
+      "start": {
+        "art": "ort",
+        "karte": "wegRivertonIronwood.bruecke",
+        "ausloeser": "spurPM1"
+      },
+      "schritte": [
+        {
+          "text": "quest.spurenPerfectMove.schritt1",
+          "ereignis": {
+            "art": "dialog",
+            "knoten": "capital-arena-halle.lin_mappe"
+          }
+        }
+      ]
+    },
+    {
+      "kennung": "capitalArena.kreidespringer",
+      "titel": "quest.kreidespringer.titel",
+      "typ": "hilfe",
+      "ort": "capitalArena",
+      "haupt": false,
+      "klein": true,
+      "start": {
+        "art": "ort",
+        "karte": "wegRivertonIronwood.bruecke",
+        "ausloeser": "kreide1"
+      },
+      "schritte": [
+        {
+          "text": "quest.kreidespringer.schritt1",
+          "ereignis": {
+            "art": "dialog",
+            "knoten": "capital-arena-innenstadt.kreide5"
+          }
+        },
+        {
+          "text": "quest.kreidespringer.schritt2",
+          "ereignis": {
+            "art": "dialog",
+            "knoten": "capital-arena-ubahnhof.mo_victor"
+          }
+        }
+      ]
+    },
+    {
       "kennung": "wegRivertonIronwood.brueckenbauern",
       "titel": "quest.brueckenbauern.titel",
       "typ": "begegnung",

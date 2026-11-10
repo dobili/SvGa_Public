@@ -263,6 +263,15 @@ musikhausOffen`): A Spieltische und Henris Klavier; B Musikschule mit Klapptisch
 - **Turnhalle:** vier Statisten mit Satz (Kinder, Hausmeister, Zuschauerin mit den Kiebitzen,
   alter Herr mit der langen Rochade).
 
+### 4.0c Runde 6 (mittel-1, 10.11.2026): Ansehen
+
+- Turnhalle: `spendenkasse` (A und C (15, 4), B (24, 5)), `notenheft` (A (12, 4), B (1, 4), C (9, 4)),
+  `plakatTurnhalle` (A (14, 3), B (7, 3), C (12, 3)).
+- Werkstatt: `fotoWand` (A (14, 3), B (6, 3), C (8, 3)), `laptop` (A (15, 5), B (13, 6), C (7, 9)).
+- Musikhaus (Ruine): `lochImDach` (A (6, 7), B (10, 7), C (14, 6)).
+- Außen: `bauzaun` vor dem Musikhaus (A und B (40, 42), C (42, 42)); Übergang `bayou` jetzt mit
+  `wenn: bayouOffen` (Sperre S8, siehe `delta.md`).
+
 ### 4.1 Turnhalle (`portDelacroix.turnhalle`)
 
 **Größe:** 26 × 16 (großer Saal). Nordwand Reihen 0–2 helle Wand mit hohen Fenstern, Boden Holz hell

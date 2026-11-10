@@ -663,3 +663,24 @@ Eichhörnchen; Flussweg mit Vogelbeobachterin, Picknickvater, Kind beim Steineh�
 Zedernpfad mit Pilzsammlerin, Försterin, Landschaftsmaler, Kindern, Reh, Krähen, Hase, Eule. Jede
 Karte hat mindestens 4 Statisten (3 ansprechbar) und 6 Tiere. Weg 1 ist vom Autor gewählt; die
 Varianten in `szenen/varianten/` bleiben unverändert zum Nachschlagen.
+
+## Runde 6 (10.11.2026): Weg 1, Park und Zedernpfad spielbar (niedrig-1)
+
+| Auslöser (orte.json)     | Karte                       | Art        | Dialog / Bedingung                                                               |
+| ------------------------ | --------------------------- | ---------- | -------------------------------------------------------------------------------- |
+| `kuerbishof` (S1)        | `wegMapleCedar.landstrasse` | Übergang   | `wenn: wegMapleCedarTafelBestanden`, Zettel von Walt Miller (`gatter_s1`)        |
+| `ereignisFlohmarkt`      | `wegMapleCedar.landstrasse` | Dialog     | Odette Finch, erst ab `nadelMapleFalls` ≥ 1; Runde `wegMapleCedar.finchFallen`   |
+| `seite00`                | `wegMapleCedar.landstrasse` | Gegenstand | Fund `seite00`                                                                   |
+| `finchBauerA`            | `wegMapleCedar.flussweg`    | Gegenstand | Fund `finchBauerA`                                                               |
+| `zedernZurueckPark` (S2) | `wegMapleCedar.zedernpfad`  | Übergang   | `wenn: nadelCedarCreek`, Stamm (`stamm_s2`)                                      |
+| `zedernpfad` (S2)        | `mapleFalls.park`           | Übergang   | `wenn: nadelCedarCreek`, Stamm von der Parkseite                                 |
+| `steg` (S5)              | `mapleFalls.park` (5, 7)    | Gegenstand | Absperrband; ab `nadelMapleFalls` ≥ 1 neuer Steg, Aussicht, Fund `initialen1952` |
+
+Quest `wegMapleCedar.flohmarkt` („Finchs Fallen“): Fallen lösen, dann bei Odette die Karte der
+Finch-Jagd abholen (Funde `finchKarte`, `problemheft`). Die Karten von Flussweg und Zedernpfad in
+`orte.json` zeigen jetzt auf die gewählten Fassungen (`weg-maple-cedar-flussweg.json`,
+`weg-maple-cedar-zedernpfad.json`); `weg-maple-cedar-2.json` und `-3.json` sind die alten Stände.
+
+**Nachtrag Runde 6 (niedrig-1):** Der Flussweg hat die feste Tönung `nebel` (F1, Nebel am Morgen).
+Die Fundknoten heißen wie ihre Auslöser (`seite00`, `finch_bauer_a`) und zählen `buchseiten` und
+`finchFiguren` hoch (Vereinbarung der Sammelstränge).

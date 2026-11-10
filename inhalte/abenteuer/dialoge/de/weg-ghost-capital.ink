@@ -233,7 +233,7 @@ Ein Problem, das gelöst wird, ist nicht verloren. Es ist angekommen. #sprecher:
 === wanderer_erstes ===
 ~ wandererGetroffen = true
 Auf der Bank am Weg sitzt ein Mann mit gelbem Rucksack und zählt Papier. #sprecher:erzaehler
-Mein Manuskript. Auf jedem Weg hat der Wind mir eine Seite genommen. Dreizehn Kapitel, und jetzt fehlen sie mir alle. #sprecher:wanderer
+Mein Manuskript. Auf jedem Weg hat der Wind mir eine Seite genommen. Dreizehn Seiten, und jetzt fehlen sie mir alle. #sprecher:wanderer
 -> END
 
 === wanderer_seiten ===
@@ -248,7 +248,7 @@ Du hast meine Seiten! Er streicht jede glatt und legt sie in den Rucksack. #spre
 -> END
 
 === wanderer_danach ===
-{~Jede Seite hat ihr Kapitel, jedes Kapitel seinen Weg.|Ein Buch für Einsteiger, das ist das schwerste. Man muss alles weglassen, was man selbst gern liest.|Der Wind hier ist freundlicher. Er nimmt nur Hüte.} #sprecher:wanderer
+{~Jede Seite hat ihren eigenen Weg genommen. Ich hätte sie festbinden sollen.|Ein Buch für Einsteiger, das ist das schwerste. Man muss alles weglassen, was man selbst gern liest.|Der Wind hier ist freundlicher. Er nimmt nur Hüte.} #sprecher:wanderer
 -> END
 
 === seite12 ===
@@ -258,7 +258,7 @@ Du hast meine Seiten! Er streicht jede glatt und legt sie in den Rucksack. #spre
 }
 ~ seite12Gefunden = true
 ~ buchseiten = buchseiten + 1
-Am Anleger klebt ein Blatt an einem Pfosten. Eine Seite aus einem Handbuch, Kapitel 12. #sprecher:erzaehler
+Am Anleger klebt ein Blatt an einem Pfosten. Eine lose Seite voller Schachdiagramme. #sprecher:erzaehler
 ~ gibFund("seite12")
 -> END
 

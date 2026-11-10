@@ -146,7 +146,7 @@ Das Wasser steht knöcheltief über den Planken. Mit Gummistiefeln geht es, lang
 }
 ~ seite05Gefunden = true
 ~ buchseiten = buchseiten + 1
-Am Ufer klebt ein Blatt an einer Wurzel. Eine Seite aus einem Handbuch, Kapitel 5. #sprecher:erzaehler
+Am Ufer klebt ein Blatt an einer Wurzel. Eine lose Seite voller Schachdiagramme. #sprecher:erzaehler
 ~ gibFund("seite05")
 -> END
 

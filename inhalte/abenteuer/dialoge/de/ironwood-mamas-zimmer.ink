@@ -30,7 +30,7 @@ Poster an der Wand, eine Silbermedaille am Haken, auf dem Schreibtisch ein Foto:
 Sie hat genau so gelacht wie deine Mama heute. Nur jünger. #sprecher:juno
 Sie hat das Formular vom Finale eingerahmt und nie wieder angesehen. Nimm das Foto mit. #sprecher:omaRuth
 Ich ruf sie an. #sprecher:omaRuth
-Ihre Mutter, wenn ich so sagen darf, war eine Meisterin. Und niemand hat es mir erzählt. #sprecher:ambrose #stimmung:stolz
+Deine Mutter, wenn ich das sagen darf, war eine Meisterin. Und niemand hat es mir erzählt. #sprecher:ambrose #stimmung:stolz
 -> END
 
 // Szene 39a: Mamas Turnierheft (Gegenstand notizbuch, Quest ironwood.turnierheft gibt ihn).
@@ -40,7 +40,7 @@ Oma Ruth zieht die Schreibtischschublade auf und holt ein dickes, blaues Heft he
 Lauries Turnierheft. Jede Partie mit Datum, Gegner und drei Sätzen: Was ich gelernt habe. #sprecher:omaRuth
 Die letzte Seite ist das Finale 2001. Danach ist alles leer. #sprecher:omaRuth
 Sie hat es mir dagelassen. Ich glaube, sie wollte, dass jemand weiterschreibt. #sprecher:omaRuth #stimmung:froh
-Drei Sätze nach jeder Partie. Ihre Mutter war eine ordentliche Spielerin. Ich war das nie. #sprecher:ambrose
+Drei Sätze nach jeder Partie. Deine Mutter war eine ordentliche Spielerin. Ich war das nie. #sprecher:ambrose
 Ab jetzt schreibe ich nach jeder Partie die wichtigsten Momente hinein. Du findest sie im Tagebuch. #sprecher:ambrose
 -> END
 

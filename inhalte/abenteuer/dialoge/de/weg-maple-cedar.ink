@@ -63,18 +63,18 @@ Am Ortsausgang hängt eine Holztafel mit drei Schachdiagrammen: „Matt in eins.
 === wanderer_erstes ===
 Ein Mann mit Rucksack und Wanderstock sitzt am Wegrand. Aus der Tasche schaut ein Taschenschach. #sprecher:erzaehler
 Auch unterwegs nach Cedar Creek? Ich gehe die Strecke jede Woche, und jede Woche spiele ich eine Partie im Kopf. #sprecher:wanderer
-Ein Rat für den Weg: Bring erst deine Figuren ins Spiel, dann greif an. Kapitel 1, Abschnitt 1.1, wenn du nachlesen willst. #sprecher:wanderer
+Ein Rat für den Weg: Bring erst deine Figuren ins Spiel, dann greif an. Wer mit zwei Figuren stürmt, stürmt allein. #sprecher:wanderer
 Ein Mann, der im Gehen Schach spielt. Ich mag ihn. #sprecher:ambrose
 -> END
 
 === wanderer_zweites ===
 Wieder unterwegs? Dann noch ein Rat. #sprecher:wanderer
-Schlag nicht vorschnell. Manchmal ist die Spannung die stärkere Waffe, steht in Abschnitt 1.5. #sprecher:wanderer
+Schlag nicht vorschnell. Manchmal ist die Spannung die stärkere Waffe. #sprecher:wanderer
 Er hat recht. Ich habe zu Lebzeiten zu oft zu früh geschlagen. #sprecher:ambrose
 -> END
 
 === wanderer_drittes ===
-{~Ein Gambit tauscht einen Bauern gegen Zeit, so steht es in Kapitel 3, Abschnitt 3.1. Wer die Zeit nicht nutzt, hat nur einen Bauern weniger.|Der Weg ist das halbe Spiel. Die andere Hälfte ist das Brett.|Ich gehe weiter. Viel Glück in Cedar Creek!} #sprecher:wanderer
+{~Ein Gambit tauscht einen Bauern gegen Zeit. Wer die Zeit nicht nutzt, hat nur einen Bauern weniger.|Der Weg ist das halbe Spiel. Die andere Hälfte ist das Brett.|Ich gehe weiter. Viel Glück in Cedar Creek!} #sprecher:wanderer
 -> END
 
 // ---------------------------------------------------------------- Nia
@@ -177,7 +177,7 @@ Eine Stadt, die vor Schach warnt. Wir sind am richtigen Ort. #sprecher:ambrose #
     }
     ~ gatterOffenGesehen = true
     Das Gatter steht einen Spalt offen. Dahinter winkt ein Mann mit Strohhut. #sprecher:erzaehler
-    „Du bist das, das die Tafel am Ortsausgang gelöst hat? Dann komm. Die Kühe suche ich später mit dir.“ #sprecher:erzaehler
+    „Du hast die Tafel am Ortsausgang gelöst? Dann komm. Die Kühe suche ich später mit dir.“ #sprecher:erzaehler
     -> END
 - else:
     Das Gatter ist zu. Am Pfosten hängt ein Zettel: „Kühe ausgebüxt. Rein darf nur, wer denken kann. Die Tafel am Ortsausgang zeigt es. W. Miller.“ #sprecher:erzaehler
@@ -205,7 +205,7 @@ Auf den Tischen liegen Lampen, Kisten und ein Fahrrad ohne Kette. Vor dem Wohnmo
 
 === flohmarkt_angebot ===
 „Matt in einem Zug. Sieht aus wie Patt, ist es aber nicht. Drei Stück hab ich, eine gemeiner als die andere.“ #sprecher:erzaehler
-Diese Art Aufgabe hat man um 1850 in den Zeitungen gedruckt. Sie ist schön und gemein. #sprecher:ambrose
+Solche Aufgaben standen zu meiner Zeit in den Zeitungen. Schön und gemein. #sprecher:ambrose
 * [Die Fallen lösen]
     ~ beginneAufgaben("wegMapleCedar.finchFallen")
     -> END
@@ -215,7 +215,7 @@ Diese Art Aufgabe hat man um 1850 in den Zeitungen gedruckt. Sie ist schön und 
 
 === flohmarkt_karte ===
 ~ flohmarktKarteErhalten = true
-Odette klatscht in die Hände. „Alle drei! Dann bist du die Richtige für meine letzte große Aufgabe.“ #sprecher:erzaehler
+Odette klatscht in die Hände. „Alle drei! Dann bist du genau richtig für meine letzte große Aufgabe.“ #sprecher:erzaehler
 Sie gibt dir eine Karte mit sechzehn leeren Kästchen. „Sechzehn weiße Figuren aus Buchsbaum, versteckt an den Wegen. Unter jeder steht ihr Feld.“ #sprecher:erzaehler
 ~ gibFund("finchKarte")
 „Wo eine liegt, hab ich einen Finken hingemalt. Und das Heft hier nimmst du auch mit, drei Aufgaben für unterwegs.“ #sprecher:erzaehler
@@ -237,7 +237,7 @@ Odette packt eine Lampe in Zeitungspapier. „Am Leuchtturm bei Capital sehen wi
 }
 ~ seite00Gefunden = true
 Im Graben neben dem Hof steckt ein Blatt Papier, feucht vom Tau. #sprecher:erzaehler
-Eine Seite aus einem Handbuch, Kapitel 0: „Dein Einstieg ins Schachbuch“. #sprecher:erzaehler
+Eine lose Seite voller Schachdiagramme. #sprecher:erzaehler
 ~ gibFund("seite00")
 ~ buchseiten = buchseiten + 1
 Eine Seite aus einem Buch, das es zu meiner Zeit noch nicht gab. Heb sie auf. #sprecher:ambrose

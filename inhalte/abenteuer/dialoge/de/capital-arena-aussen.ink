@@ -154,7 +154,7 @@ Zwei Fahnen vor der Freitreppe, darauf ein König und die Jahreszahl der ersten 
 === wanderer ===
 {
 - buchGeschenkt:
-    {~Der Verlag druckt eine zweite Auflage. Mit einem Dank an dich im Vorwort.|Wenn du nicht weiterweißt: Kapitel 12. Da steht, wie man übt.|Ich laufe jetzt nach Hause. Ohne Wind, hoffe ich.} #sprecher:wanderer
+    {~Der Verlag druckt eine zweite Auflage. Mit einem Dank an dich im Vorwort.|Wenn du nicht weiterweißt: Geh ein Stück. Unterwegs fällt einem das meiste ein.|Ich laufe jetzt nach Hause. Ohne Wind, hoffe ich.} #sprecher:wanderer
 - finaleGespielt() and wandererSeitenZurueck >= 13:
     -> wanderer_buch
 - wandererSeitenZurueck >= 13:
@@ -168,7 +168,7 @@ Zwei Fahnen vor der Freitreppe, darauf ein König und die Jahreszahl der ersten 
 === wanderer_buch ===
 ~ buchGeschenkt = true
 Der Mann mit dem gelben Rucksack hält ein Buch in den Händen, noch nach Druckerschwärze riechend. #sprecher:erzaehler
-Für dich. Dreizehn Kapitel, und jedes hast du einmal in der Hand gehabt. #sprecher:wanderer
+Für dich. Dreizehn Seiten haben gefehlt, und jede hast du einmal in der Hand gehabt. #sprecher:wanderer
 ~ gibFund("buchVonGrundAuf")
 Ein Buch für Anfänger. Die besten Bücher sind die, die man immer wieder aufschlägt. #sprecher:ambrose #stimmung:friedlich
 -> END

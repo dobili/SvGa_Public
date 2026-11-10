@@ -231,7 +231,7 @@ Eine Limonade für eine Schwäche. Ein guter Handel. #sprecher:ambrose #stimmung
     ~ patelGetroffen = true
     Ein kleiner Kiosk mit bunter Markise. Hinter der Theke sortiert ein Mann Zeitschriften. #sprecher:erzaehler
     Willkommen bei Patel! Zeitungen, Limo und Schachkarten für unterwegs. #sprecher:patel #stimmung:froh
-    Zahlen kannst du mit Münzen. Die bekommst du für Siege und gelöste Rätsel, das weiß hier jedes Kind. #sprecher:patel
+    Wer hier gewinnt oder ein Rätsel knackt, bekommt ein paar Münzen zugesteckt, so ist das in Maple Falls. Bei mir wirst du sie wieder los. #sprecher:patel
 }
 {limoGefragt and not limoGebracht and not hatLimo:
     Für Jo? Die mit dem zerkratzten Brett? Die trinkt nur Zitrone. #sprecher:patel
@@ -286,6 +286,6 @@ Ins Geländer hat jemand Buchstaben geritzt: „M. W. + E. C. 1952“. #sprecher
     -> END
 - else:
     Hinter der Brücke liegt eine umgestürzte Zeder quer über dem Pfad. Von hier kommst du nicht weiter. #sprecher:erzaehler
-    Den Stamm muss jemand mit Seil und Flaschenzug wegziehen. In Cedar Creek gibt es einen Drechsler, der Holz braucht. #sprecher:ambrose
+    Den Stamm muss jemand mit Seil und Flaschenzug wegziehen. Frag in Cedar Creek, wer dort Holz brauchen kann. #sprecher:ambrose
     -> END
 }

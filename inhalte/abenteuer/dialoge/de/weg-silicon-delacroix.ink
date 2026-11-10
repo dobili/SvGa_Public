@@ -89,7 +89,7 @@ Angebrannt. Passiert. Noch einmal, solange das Meer ruhig ist? #sprecher:schiffs
 ~ guidryGetroffen = true
 Am Deich stapelt ein Mann Sandsäcke. Hinter ihm liegt die Stadt: abgedeckte Dächer, Bauzäune, aus einem Zelt klingt Musik. #sprecher:erzaehler
 Guidry. Der Sturm hat uns erwischt, aber nicht umgeworfen. #sprecher:guidry
-Ein Loch im Deich ist wie ein Loch in der Bauernkette. Man stopft es, bevor es größer wird. Kapitel 5, sagt meine Enkelin, die spielt Schach. #sprecher:guidry
+Ein Loch im Deich ist wie ein Loch in der Bauernkette. Man stopft es, bevor es größer wird. Sagt meine Enkelin, die spielt Schach. #sprecher:guidry
 Diese Luft. Salz und Holz. Ich kenne diese Luft. #sprecher:ambrose #stimmung:fern
 -> END
 
@@ -223,7 +223,7 @@ Im Pumpenhaus brummt eine alte Pumpe. An der Tür hängt ein Zettel: „Läuft. 
 }
 ~ seite02Gefunden = true
 ~ buchseiten = buchseiten + 1
-An der Reling hat sich ein Blatt Papier verfangen, nass vom Gischt. Eine Seite aus einem Handbuch, Kapitel 2. #sprecher:erzaehler
+An der Reling hat sich ein Blatt Papier verfangen, nass vom Gischt. Eine lose Seite voller Schachdiagramme. #sprecher:erzaehler
 ~ gibFund("seite02")
 Jemand verliert sein Buch Seite für Seite. Heben wir sie auf. #sprecher:ambrose
 -> END

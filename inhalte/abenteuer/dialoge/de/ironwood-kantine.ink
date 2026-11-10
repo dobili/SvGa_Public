@@ -122,7 +122,7 @@ Draußen am Werkstor stehen Männer in Anzügen. Big Joe sieht hinaus und wird s
 
 === big_joe_brief ===
 Big Joe zieht einen zerknitterten Umschlag aus der Brusttasche. #sprecher:erzaehler
-Kumpel, fährst du am Kanal entlang? Bring das Ruben in Lockport, Kumpel. Der Mann hat seit dem Sommer keine Fracht. #sprecher:bigJoe
+Kumpel, fährst du am Kanal entlang? Bring das Ruben in Lockport. Der Mann hat seit dem Sommer keine Fracht. #sprecher:bigJoe
 ~ briefFuerRuben = true
 -> END
 
@@ -186,7 +186,7 @@ Big Joe kommt herüber. Die beiden umarmen sich, ohne ein Wort. #sprecher:erzaeh
 Gut. Eine Partie. #sprecher:mutter
 Hier, in diesem Raum. Aber wenn ich gewinne, räumst du die Spülmaschine aus. #sprecher:mutter
 * [„Abgemacht.“]
-    Ihre Mutter, wenn ich so sagen darf, setzt sich wie jemand, der nie aufgehört hat. #sprecher:ambrose
+    Deine Mutter, wenn ich das sagen darf, setzt sich wie jemand, der nie aufgehört hat. #sprecher:ambrose
     ~ beginnePartie("ironwood.mama")
     -> END
 * [„Gleich, Mama.“]
@@ -205,7 +205,7 @@ Hier, in diesem Raum. Aber wenn ich gewinne, räumst du die Spülmaschine aus. #
 }
 Ab jetzt fahre ich mit zu den Turnieren. Jemand muss ja auf die Zeit achten. #sprecher:mutter #stimmung:froh
 Du spielst zu langsam. #sprecher:mutter
-Ihre Mutter, wenn ich so sagen darf, spielt besser, als sie lügt. #sprecher:ambrose #stimmung:lacht
+Deine Mutter, wenn ich das sagen darf, spielt besser, als sie lügt. #sprecher:ambrose #stimmung:lacht
 Juno klebt das Foto ins Tagebuch. Mit Glitzer. Diesmal ja. #sprecher:juno #stimmung:froh
 -> END
 

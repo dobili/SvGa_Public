@@ -85,7 +85,6 @@ function useAufbaupruefungen(k: Oberweltkern): void {
     k.schreibe(ergebnis.stand);
     k.setzeMeldung(
       tSpiel("karte.lernkarte", {
-        kapitel: erste.kapitel ?? 0,
         karte: tSpiel(erste.name),
         satz: tSpiel(`karte.${erste.kennung}.geschenkt`),
       }),

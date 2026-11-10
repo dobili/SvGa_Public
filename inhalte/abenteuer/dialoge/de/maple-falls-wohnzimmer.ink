@@ -74,7 +74,7 @@ Sie sieht lange auf die Stellung. Dann sagt sie, ohne nachzudenken: „Schwarz s
     Ich? Nein. Das hab ich irgendwo gelesen. #sprecher:mutter
 * [„Woher weißt du das?“]
     Weiß ich nicht. Sieht halt so aus. #sprecher:mutter
-- Ihre Mutter, wenn ich so sagen darf, lügt schlecht. #sprecher:ambrose
+- Deine Mutter, wenn ich das sagen darf, lügt schlecht. #sprecher:ambrose
 Das Brett ist alt. Pass auf die Figuren auf. Die sind bestimmt was wert. #sprecher:mutter
 Ach, und im Briefkasten lag ein Zettel von der Schule. Die haben ein Schachteam. #sprecher:mutter
 * [„Vielleicht schau ich mal hin.“]

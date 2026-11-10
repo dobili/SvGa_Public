@@ -49,7 +49,7 @@ Vor der Schutzhütte hackt eine Frau Holz. Auf der Bank daneben sitzen zwei Wand
 Greta. Mir gehört die Hütte. Wer wochenlang wandert, trägt kein Brett. Also spielt man im Kopf. #sprecher:greta
 Blindschach. Du sagst deinen Zug, ich sage meinen. Wer sich verzählt, verliert. #sprecher:greta
 Ich habe zwölf Jahre lang Partien in Briefen gespielt. Das hier ist meine Heimat. #sprecher:ambrose #stimmung:friedlich
-Kapitel 7, {held}: Rechnen statt hoffen. Das Brett im Kopf ist dasselbe Brett. Nur leiser. #sprecher:ambrose
+Rechnen statt hoffen, {held}. Das Brett im Kopf ist dasselbe Brett. Nur leiser. #sprecher:ambrose
 -> greta_angebot
 
 === greta_angebot ===
@@ -137,12 +137,12 @@ Gut kommandiert. Die Kinder wollen ein Foto mit dir. #sprecher:ezra #stimmung:fr
 
 === seite10 ===
 {seite10Gefunden:
-    Hier lag die Buchseite. Zwischen den Wurzeln ist nichts mehr. #sprecher:erzaehler
+    Hier lag die Seite. Zwischen den Wurzeln ist nichts mehr. #sprecher:erzaehler
     -> END
 }
 ~ seite10Gefunden = true
-Zwischen den Wurzeln eines Mammutbaums steckt ein Blatt Papier. Oben steht: Kapitel 10, „Studien und Kuriositäten“. #sprecher:erzaehler
-Eine Seite aus einem Handbuch, an einem Baum, der älter ist als jedes Buch. #sprecher:ambrose
+Zwischen den Wurzeln eines Mammutbaums steckt ein Blatt Papier, voller Schachdiagramme. #sprecher:erzaehler
+Eine Seite aus einem Buch, an einem Baum, der älter ist als jedes Buch. #sprecher:ambrose
 ~ gibFund("seite10")
 ~ buchseiten = buchseiten + 1
 -> END

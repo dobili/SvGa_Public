@@ -37,7 +37,7 @@ VAR gefundenNietenkopf = false
 ~ hollowayGetroffen = true
 Unter einem Felsvorsprung sitzt eine Frau mit breitem Hut im Schatten und teilt ihr Wasser mit einer Eidechse. #sprecher:erzaehler
 Holloway. Ich wandere hier seit vierzig Jahren. Die Wüste lehrt Geduld und Angriff. #sprecher:holloway
-Wer angreift, braucht mehr Figuren am König als der Verteidiger. Kapitel 1, Abschnitt 1.6. #sprecher:holloway
+Wer angreift, braucht mehr Figuren am König als der Verteidiger. So einfach, und doch vergisst es jeder. #sprecher:holloway
 {ambroseSprichtWieder:
     Ich war nie in einer Wüste. Sie ist so still wie ein Club. #sprecher:ambrose
 }
@@ -111,8 +111,8 @@ Ich bin nicht angekommen. Darum warte ich noch. #sprecher:ambrose #stimmung:trau
 
 === versoehnung_lektion ===
 Er zeigt dir mit dem alten Brett zwei Stellungen nebeneinander: einmal ein Opfer, das trägt, einmal eines, das scheitert. #sprecher:erzaehler
-Ein Opfer ist schön, wenn genug Figuren mitkommen. Das ist die Goldene Angriffsregel, Kapitel 1, Abschnitt 1.6. #sprecher:ambrose
-Morphy wusste das. Er opferte nur, wenn seine Figuren schon bereitstanden. Kapitel 11, Abschnitt 11.2. #sprecher:ambrose
+Ein Opfer ist schön, wenn genug Figuren mitkommen. Das nenne ich die Goldene Angriffsregel. #sprecher:ambrose
+Morphy wusste das. Er opferte nur, wenn seine Figuren schon bereitstanden. #sprecher:ambrose
 Ab jetzt spielen wir wieder zusammen. Aber du entscheidest. #sprecher:ambrose #stimmung:froh
 Den Mentor-Zug aus Port Delacroix habe ich dir aufgehoben. Jetzt darfst du ihn spielen. #sprecher:ambrose
 -> END
@@ -210,7 +210,7 @@ Du hast die Stellung im Kopf behalten. Hier, der gehört dir. Er hält mehr, als
     -> END
 }
 ~ gefundenSeite06 = true
-Unter dem Felsbogen klemmt eine Buchseite zwischen zwei Steinen. Oben steht: Kapitel 6, Mittelspielstrategie. #sprecher:erzaehler
+Unter dem Felsbogen klemmt eine lose Seite zwischen zwei Steinen, voller Schachdiagramme. #sprecher:erzaehler
 ~ gibFund("seite06")
 ~ buchseiten = buchseiten + 1
 -> END

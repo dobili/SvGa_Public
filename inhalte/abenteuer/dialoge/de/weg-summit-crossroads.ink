@@ -46,8 +46,8 @@ Bell. Rangerin. In sechs Minuten bricht der große Geysir aus. Bis dahin: Willst
 ~ varianteAtomschachGelernt = true
 Atomschach. Wer schlägt, löst eine Explosion aus. Alle Figuren rund um das Feld fliegen vom Brett, die eigenen auch. Nur Bauern bleiben stehen. #sprecher:bell
 Also zählst du vorher. Wer greift an, wer verteidigt, was fliegt mit in die Luft. #sprecher:bell
-Wer schlägt, ohne zu zählen, fliegt in die Luft. Eine Lektion, die ich gern früher gehabt hätte. #sprecher:ambrose #stimmung:lacht
-Kapitel 1, {held}: Angreifer und Verteidiger zählen. Hier zählt man nur ein paar Felder weiter. #sprecher:ambrose
+Wer schlägt, ohne zu zählen, fliegt in die Luft. Eine Lehre, die ich gern früher gehabt hätte. #sprecher:ambrose #stimmung:lacht
+Angreifer und Verteidiger zählen, {held}. Hier zählt man nur ein paar Felder weiter. #sprecher:ambrose
 -> bell_angebot
 
 === bell_angebot ===
@@ -166,7 +166,7 @@ Der Geysirblitz! Old Patience bricht alle neun Minuten aus. Bis dahin löst ihr 
 
 === geysirblitz_angebot ===
 Sechs Endspiele. Wer fertig ist, bevor das Wasser kommt, bekommt mein Abzeichen. Machst du mit? #sprecher:bell
-Kapitel 9, {held}. Im Endspiel zählt jedes Tempo, und hier zählt die Natur mit. #sprecher:ambrose
+Im Endspiel zählt jedes Tempo, {held}, und hier zählt die Natur mit. #sprecher:ambrose
 + [„Ich bin dabei.“]
     ~ beginneAufgaben("wegSummitCrossroads.geysirblitz")
     -> END
@@ -220,12 +220,12 @@ Am Pfosten des Stegs ist ein Fink aus Kreide gemalt. Darunter, im Schatten der B
 
 === seite09 ===
 {seite09Gefunden:
-    Hier lag die Buchseite. Der Wind hat nichts mehr dagelassen. #sprecher:erzaehler
+    Hier lag die Seite. Der Wind hat nichts mehr dagelassen. #sprecher:erzaehler
     -> END
 }
 ~ seite09Gefunden = true
-An der Klappe des Sturmkellers hat sich ein Blatt Papier verfangen. Oben steht: Kapitel 9, „Endspiel-Vertiefung“. #sprecher:erzaehler
-Eine Seite aus einem Handbuch. Der Sturm trägt alles irgendwohin, sogar Bücher. #sprecher:ambrose
+An der Klappe des Sturmkellers hat sich ein Blatt Papier verfangen, voller Schachdiagramme. #sprecher:erzaehler
+Eine Seite aus einem Buch. Der Sturm trägt alles irgendwohin, sogar Bücher. #sprecher:ambrose
 ~ gibFund("seite09")
 ~ buchseiten = buchseiten + 1
 -> END

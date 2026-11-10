@@ -48,7 +48,7 @@ An einem Zaun lehnt ein Mann in Latzhose und schaut auf den Kanal. Hinter ihm gr
 Dale. Ich hab hier früher Gemüse an die Fabriken verkauft. #sprecher:dale
 Jetzt verkaufe ich nichts, ich schaue nur. #sprecher:dale
 Ein Bauer zieht nie zurück. Also überleg vorher. #sprecher:dale
-Steht in Kapitel 5 von so einem Schachbuch, sagt mein Enkel. #sprecher:dale
+Sagt mein Enkel. Der spielt Schach, ich baue Zäune. #sprecher:dale
 Ein Landwirt, der Bauern versteht. Das ist naheliegend und trotzdem selten. #sprecher:ambrose #stimmung:lacht
 -> END
 
@@ -108,7 +108,7 @@ Er glaubte es, und er eilte. Wer eilt, übersieht. #sprecher:ambrose
     Ich rücke nichts, ich verrate nichts. #sprecher:ambrose
 * [„Und wenn ich selbst in Zeitnot bin?“]
     Dann hilft dir kein Theater. Dann hilft nur Übung. #sprecher:ambrose
-- Und der ehrliche Teil, aus dem Buch: „Ist bloß dein Gegner in Zeitnot, blitze nicht mit, sondern nutze die Zeit, die du hast.“ Kapitel 12, Abschnitt 12.5. #sprecher:ambrose
+- Und der ehrliche Teil: Ist bloß dein Gegner in Zeitnot, blitze nicht mit. Nutze die Zeit, die du hast. #sprecher:ambrose
 Nimm diese Karte. Einmal, und nur wenn die Uhr läuft. #sprecher:ambrose
 Eine Goldnadel bekommst du damit nicht. #sprecher:ambrose
 ~ gibKarte("grossesMaul")
@@ -228,7 +228,7 @@ Sie dreht sich langsam zu den Klapptischen, als würde sie zuschauen. #sprecher:
     -> END
 }
 Zwischen den Steinen am Kanalufer klemmt ein Blatt, trocken und sauber. #sprecher:erzaehler
-Kapitel 7: „Taktik: Wie man aus kleinen Vorteilen Material gewinnt“. Eine Seite aus einem Handbuch. #sprecher:erzaehler
+Eine lose Seite voller Schachdiagramme. #sprecher:erzaehler
 ~ gibFund("seite07")
 ~ buchseiten = buchseiten + 1
 -> END

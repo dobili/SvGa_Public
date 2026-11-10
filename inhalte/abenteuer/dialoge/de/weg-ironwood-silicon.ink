@@ -47,7 +47,7 @@ VAR seite04Gefunden = false
 Am Kaffeeautomaten lehnt eine Frau in Latzhose. Auf ihrer Tasse steht „Königin der Landstraße“. #sprecher:erzaehler
 Du spielst Schach? Mein Vater hat's mir im Führerhaus beigebracht. #sprecher:kowalczyk
 Er hat immer gesagt: Erst die Figuren raus, dann die Dame. Sonst jagen sie dir die Dame übers Brett. #sprecher:kowalczyk
-Das steht in Kapitel 1, Abschnitt 1.2. Die Dame zu früh, das ist eine Todsünde. #sprecher:kowalczyk
+Die Dame zu früh, das ist eine Todsünde. Ich hab's ihm erst geglaubt, als meine weg war. #sprecher:kowalczyk
 Eine Kutscherin mit Verstand. Die Landstraße erzieht gut. #sprecher:ambrose
 -> END
 
@@ -163,7 +163,7 @@ Kiki Blitz. Ich spiele live, und heute wählt der Chat meine Züge. Drei Vorschl
 
 === stream_angebot ===
 Der Chat liebt Fallen. Wenn er dir eine stellt, sieh sie. Wenn er sich selbst eine stellt, bestraf sie. Spielst du mit? #sprecher:kiki
-Kapitel 4, {held}: Fallen erkennen, bevor man hineintritt. #sprecher:ambrose
+Fallen erkennt man, bevor man hineintritt, {held}. #sprecher:ambrose
 + [„Ich spiele mit.“]
     ~ beginneAufgaben("wegIronwoodSilicon.stream")
     -> END
@@ -228,12 +228,12 @@ Am Rand des Blumenkübels klebt ein kleiner Fink aus Blech. Zwischen den Stielen
 
 === seite04 ===
 {seite04Gefunden:
-    Hier lag die Buchseite. Der Wind hat nichts mehr dagelassen. #sprecher:erzaehler
+    Hier lag die Seite. Der Wind hat nichts mehr dagelassen. #sprecher:erzaehler
     -> END
 }
 ~ seite04Gefunden = true
-Unter der Rätseltafel klemmt ein Blatt Papier, vom Wind hergeweht. Oben steht: Kapitel 4, „Das Fallenkabinett“. #sprecher:erzaehler
-Eine Seite aus einem Handbuch. Jemand vermisst sie bestimmt. #sprecher:ambrose
+Unter der Rätseltafel klemmt ein Blatt Papier, vom Wind hergeweht und voller Schachdiagramme. #sprecher:erzaehler
+Eine Seite aus einem Buch. Jemand vermisst sie bestimmt. #sprecher:ambrose
 ~ gibFund("seite04")
 ~ buchseiten = buchseiten + 1
 -> END

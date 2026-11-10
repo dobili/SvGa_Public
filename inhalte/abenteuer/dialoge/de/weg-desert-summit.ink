@@ -40,7 +40,7 @@ Earl. Ich fahr seit dreißig Jahren diese Straße. Und seit dreißig Jahren zahl
 Königsrennen. Keiner darf Schach geben, keiner darf im Schach stehen. #sprecher:earl
 Wer mit seinem König zuerst die letzte Reihe erreicht, gewinnt. Wer verliert, zahlt den Kaffee. #sprecher:earl
 Ein Rennen ohne Angriff. Wie seltsam. #sprecher:ambrose
-Und doch: Auch hier gewinnt, wer den Weg kennt. Im Endspiel muss der König laufen, {held}. Das steht in Kapitel 8. #sprecher:ambrose
+Und doch: Auch hier gewinnt, wer den Weg kennt. Im Endspiel muss der König laufen, {held}. #sprecher:ambrose
 -> earl_angebot
 
 === earl_angebot ===
@@ -194,7 +194,7 @@ Im Blumenkasten am Motel steckt ein kleiner Fink aus Blech. Zwischen den Blumen 
     -> END
 }
 ~ gefundenSeite08 = true
-Unter einem Reifen des Lasters klemmt eine Buchseite. Oben steht: Kapitel 8, Endspiel-Fundament. #sprecher:erzaehler
+Unter einem Reifen des Lasters klemmt eine lose Seite voller Schachdiagramme. #sprecher:erzaehler
 ~ gibFund("seite08")
 ~ buchseiten = buchseiten + 1
 -> END

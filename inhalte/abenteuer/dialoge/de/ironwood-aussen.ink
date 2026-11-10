@@ -57,7 +57,7 @@ Und heute Abend bist du zu Hause, ja? Ich hab Nachtschicht, aber ich ruf an. #sp
     Sie hat schon aufgelegt. #sprecher:erzaehler
 * [„Okay, Mama.“]
     Danke. Hab dich lieb. #sprecher:mutter
-- Ihre Mutter hat Angst. Vor einer Stadt. Das ist selten. #sprecher:ambrose
+- Deine Mutter hat Angst. Vor einer Stadt. Das ist selten. #sprecher:ambrose
 Wir sind ja schon da. Wir gucken uns nur um. Gucken ist kein Turnier. #sprecher:juno
 -> END
 

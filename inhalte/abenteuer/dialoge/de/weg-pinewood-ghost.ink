@@ -135,7 +135,7 @@ An der Tür klebt ein Typenschild: „Prototyp Z-1, Testlabor Perfect Move. Nich
     -> END
 }
 ~ gefundenSeite11 = true
-Im alten Ölwechsel-Graben liegt eine Buchseite, kaum ölig. Oben steht: Kapitel 11, Beispielpartien. #sprecher:erzaehler
+Im alten Ölwechsel-Graben liegt eine lose Seite, kaum ölig und voller Schachdiagramme. #sprecher:erzaehler
 ~ gibFund("seite11")
 ~ buchseiten = buchseiten + 1
 -> END

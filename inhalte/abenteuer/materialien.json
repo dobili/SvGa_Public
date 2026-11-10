@@ -17,7 +17,8 @@
     "moor": "spiel/eigene/wasser_moor.png",
     "see": "spiel/eigene/wasser_see.png",
     "strand": "modern-exteriors/Modern_Exteriors_16x16/ME_Theme_Sorter_16x16/21_Beach_16x16.png",
-    "watt": "spiel/eigene/wasser_watt.png"
+    "watt": "spiel/eigene/wasser_watt.png",
+    "sumpfboden": "spiel/eigene/sumpfboden.png"
   },
   "boeden": {
     "holzHell": {
@@ -644,7 +645,15 @@
       "rand": [
         0,
         0
-      ]
+      ],
+      "wellen": {
+        "bilder": [
+          "spiel/eigene/seerosen_moor_1.png",
+          "spiel/eigene/seerosen_moor_2.png",
+          "spiel/eigene/seerosen_moor_3.png"
+        ],
+        "anteil": 5
+      }
     },
     "wasser_see": {
       "bogen": "see",
@@ -670,6 +679,17 @@
     },
     "wasser_watt": {
       "bogen": "watt",
+      "feld": [
+        1,
+        1
+      ],
+      "rand": [
+        0,
+        0
+      ]
+    },
+    "sumpfboden": {
+      "bogen": "sumpfboden",
       "feld": [
         1,
         1

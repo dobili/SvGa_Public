@@ -62,10 +62,10 @@ Der König muss zum Leuchtturm. Wie wir alle. #sprecher:ambrose #stimmung:friedl
     -> END
 }
 Am Steg hängt eine Tafel mit drei Diagrammen: „Im Endspiel ist der König eine Figur. Bring ihn nach vorn!“ #sprecher:erzaehler
-* [Die Aufgaben lösen]
++ [Die Aufgaben lösen]
     ~ beginneAufgaben("wegGhostCapital.tafel")
     -> END
-* [Weitergehen]
++ [Weitergehen]
     -> END
 
 === fund_linse ===

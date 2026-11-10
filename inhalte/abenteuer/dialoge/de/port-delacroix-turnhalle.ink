@@ -94,10 +94,10 @@ Heute ohne Karten, nur du und das Brett. Die Uhr darfst du wählen. #sprecher:od
 {not ambroseSprichtWieder:
     Spiel deine Partie. #sprecher:ambrose #stimmung:still
 }
-* [„Ich bin bereit.“]
++ [„Ich bin bereit.“]
     ~ beginnePartie("portDelacroix.clubkampf")
     -> END
-* [„Noch nicht.“]
++ [„Noch nicht.“]
     Gut. Eine Melodie übt man, bevor man sie spielt. #sprecher:odile
     -> END
 
@@ -129,11 +129,11 @@ Heute ohne Karten, nur du und das Brett. Die Uhr darfst du wählen. #sprecher:od
 === odile_simultan ===
 Die Bretter sind da, jetzt brauchen wir Geld für das Dach. #sprecher:odile
 Spielst du eine Simultan gegen die Kinder der Stadt? Jedes Kind gibt einen Dollar in die Kasse. #sprecher:odile
-* [„Ich spiele.“]
++ [„Ich spiele.“]
     Drei Tische, drei Kinder. Am dritten setzt sich Remy hin, die Arme verschränkt. #sprecher:erzaehler
     ~ beginneAufgaben("portDelacroix.simultan")
     -> END
-* [„Später.“]
++ [„Später.“]
     Die Kinder warten. Sie üben solange Springerzüge. #sprecher:odile
     -> END
 
@@ -152,18 +152,20 @@ Damit du nicht wieder etwas verlierst, was dir wichtig ist. #sprecher:odile
 === remy ===
 {
 - not tiefpunktGesehen: -> vorwurf
-- simultanGedankt: -> remy_versoehnt
+// Erst die Reihe, dann die Versöhnung: Wer das Simultan vor Remys Reihe spielt, darf die Reihe
+// nicht verlieren (Sackgasse in der Gesamtsimulation, 10.11.2026).
 - not reiheRemyBestanden: -> remy_reihe
+- simultanGedankt: -> remy_versoehnt
 - else: -> remy_alltag
 }
 
 === remy_reihe ===
 Remy poliert seine Trompete und sieht dich nicht an. #sprecher:erzaehler
 Du willst um die Nadel spielen? Dann zeig mir, dass du Bauern verstehst. Ohne Flüstern. #sprecher:remy
-* [„Gib mir deine Aufgaben.“]
++ [„Gib mir deine Aufgaben.“]
     ~ beginneAufgaben("portDelacroix.reiheRemy")
     -> END
-* [„Später.“]
++ [„Später.“]
     Hier hilft man mit den Händen. Nicht mit Bildschirmen. Und nicht mit Geistern. #sprecher:remy
     -> END
 
@@ -200,10 +202,10 @@ So ist die Reihenfolge. Remy hat sie erfunden. #sprecher:lou
 }
 Ich hab einen Plan. Er ist noch nicht fertig, aber er ist gut. #sprecher:lou
 Findest du in meinen Stellungen auch einen? Mit Läufern. Läufer sind wichtig für Pläne. #sprecher:lou
-* [„Zeig her.“]
++ [„Zeig her.“]
     ~ beginneAufgaben("portDelacroix.reiheLou")
     -> END
-* [„Später.“]
++ [„Später.“]
     Gut. Ein Plan braucht Zeit. #sprecher:lou
     -> END
 

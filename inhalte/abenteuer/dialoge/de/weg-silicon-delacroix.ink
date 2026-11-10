@@ -56,10 +56,10 @@ Mama lehnt in der Tür. „Spiel ruhig. Ich hol uns Kaffee.“ #sprecher:erzaehl
 
 === ruiz_angebot ===
 Zehn Minuten und fünf Sekunden je Zug, solange die Suppe zieht. Eine Stellung, du hast Weiß. #sprecher:schiffskoch
-* [„Abgemacht.“]
++ [„Abgemacht.“]
     ~ beginnePartie("wegSiliconDelacroix.schiffskoch")
     -> END
-* [„Nach dem Essen.“]
++ [„Nach dem Essen.“]
     Gute Antwort. Die Suppe ist wichtiger. #sprecher:schiffskoch
     -> END
 
@@ -101,10 +101,10 @@ Diese Luft. Salz und Holz. Ich kenne diese Luft. #sprecher:ambrose #stimmung:fer
     -> END
 }
 Im Salon der Fähre hängt eine Tafel mit drei Diagrammen: „Wer die Bauern versteht, versteht das Spiel.“ #sprecher:erzaehler
-* [Die Aufgaben lösen]
++ [Die Aufgaben lösen]
     ~ beginneAufgaben("wegSiliconDelacroix.tafel")
     -> END
-* [Weiter an Deck]
++ [Weiter an Deck]
     -> END
 
 === zurueck_silicon ===

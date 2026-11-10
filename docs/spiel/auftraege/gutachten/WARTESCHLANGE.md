@@ -60,8 +60,8 @@ Szene heißt die Datei in `inhalte/abenteuer/szenen/` ohne `.json`.
 - [ ] weg-silicon-delacroix-deich (Runde 9, Fassung C, mittel-1; Bild `bildwuensche/wasser_see.py`)
 - [x] weg-ghost-capital-seeufer (Runde 9, mittel-1; Bild `bildwuensche/faehrhaus.py`)
 - [x] weg-ghost-capital-leuchtturm (Runde 9, mittel-1)
-- [ ] weg-ironwood-silicon-glasbruecke (dritte Prüfung, mittel-1, Datei `weg-ironwood-silicon-glasbruecke-3.md`; Bilder `bildwuensche/matschsaum.py`)
-- [ ] weg-ironwood-silicon-raststaette (dritte Prüfung, mittel-1, Datei `weg-ironwood-silicon-raststaette-3.md`; Bilder `bildwuensche/wasser_watt.py`, `fassaden_zweck.py` neu)
+- [x] weg-ironwood-silicon-glasbruecke (dritte Prüfung, mittel-1, Datei `weg-ironwood-silicon-glasbruecke-3.md`; Bilder `bildwuensche/matschsaum.py`)
+- [x] weg-ironwood-silicon-raststaette (dritte Prüfung, mittel-1, Datei `weg-ironwood-silicon-raststaette-3.md`; Bilder `bildwuensche/wasser_watt.py`, `fassaden_zweck.py` neu)
 - [x] weg-riverton-ironwood-1, weg-riverton-ironwood-2 (zweite Prüfung, mittel-4, mit Zuständen graffiti und ohne-tische; Dateien `…-2.md`)
 - [x] ironwood-aussen (zweite Prüfung, mittel-4, mit Zuständen meisterschaft und vermietet; `ironwood-aussen-2.md`)
 - [x] ironwood-kantine (dritte Prüfung, mit Zustand logo; `ironwood-kantine-3.md`), ironwood-museum, ironwood-umkleide, ironwood-mamas-zimmer (zweite Prüfung, mittel-4; eine Datei `ironwood-innen-2.md`)
@@ -87,7 +87,7 @@ Szene heißt die Datei in `inhalte/abenteuer/szenen/` ohne `.json`.
 - [x] weg-crossroads-pinewood-huetten, weg-crossroads-pinewood-riesenbaeume (Runde 9, mittel-3)
 - [x] pelikaninsel-dorf im Winter (Runde 9, mittel-3)
 
-- [ ] silicon-bay-akademie, silicon-bay-altstadt (dritte Prüfung, mittel-3; Stehpulte, Glaswand mit Pfosten, geräumte Straße mit Schneewällen; Dateien `silicon-bay-akademie-3.md`, `silicon-bay-altstadt-3.md`)
+- [x] silicon-bay-akademie, silicon-bay-altstadt (dritte Prüfung, mittel-3; Stehpulte, Glaswand mit Pfosten, geräumte Straße mit Schneewällen; Dateien `silicon-bay-akademie-3.md`, `silicon-bay-altstadt-3.md`)
 
 ## Erledigt
 

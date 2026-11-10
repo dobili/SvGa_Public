@@ -8,7 +8,8 @@
   "boeden": {
     "p": "pflaster",
     "f": "felsboden",
-    "e": "erde"
+    "e": "erde",
+    "k": "schotter"
   },
   "zustand": ["neu", "gebraucht", "alt"],
   "stil": ["natur", "klassisch", "modern", "rustikal", "laendlich"],
@@ -32,9 +33,9 @@
     "#..............................................................................#",
     "#..............................................................................#",
     "#..............................................................................#",
-    "#...............................................................pp.............#",
-    "#...............................................................pp.............#",
-    "#...................................pp..........................pp.............#",
+    "#..............................................................................#",
+    "#..............................................................................#",
+    "#..............................................................pp.........pp...#",
     "#.........................ppppppppppppppppppppppppppppppppppppppppppppppppppppp#",
     "#.........................ppppppppppppppppppppppppppppppppppppppppppppppppppppp#",
     "#....................pp...............................pp.......................#",
@@ -43,31 +44,35 @@
     "#.......pp...........pp...............................pp.......................#",
     "#.......pp...........pp...pppppppppppppppppppppppppppppp.......................#",
     "#.......pppppppppppppppppppppppppppppppppppppppppppppppp.......................#",
-    "#.......ppppppppppppppppppppppppppppppppppppppp.............pp.................#",
-    "#.........................ppppppppppppppppppppp.............pp.................#",
-    "#.........................ppppppppppppppppppppp.............pp.................#",
+    "#.......ppppppppppppppppppppppppppppppppppppppp................................#",
+    "#.........................ppppppppppppppppppppp................................#",
+    "#.........................ppppppppppppppppppppp................................#",
     "#.........................pppppppppppppppppppppeeeeeeeeeeeeeeeeeeeeeeeeeeeeeeee#",
     "#.........................pppppppppppppppppppppeeeeeeeeeeeeeeeeeeeeeeeeeeeeeeee#",
     "#.........................ppppppppppppppppppppp.........ee.....................#",
-    "#..........pp.............ppppppppppppppppppppp.........ee.....................#",
-    "#..........pp.............ppppppppppppppppppppp.........ee.....................#",
-    "#...pp.....pp......pp.....ppppppppppppppppppppp.........ee.....................#",
+    "#.........................ppppppppppppppppppppp.........ee.....................#",
+    "#.........................ppppppppppppppppppppp.........ee.....................#",
+    "#........pp...............ppppppppppppppppppppp.........ee.....................#",
     "#.ppppppppppppppppppppppppppppppppppppppppppppp.........ee.....................#",
-    "#.ppppppppppppppppppppppppppppppppppppppppppppp.........ee.........pp..........#",
-    "#.................................ppp...................ee.........pp..........#",
-    "#.................................ppp...................ee.........pp..........#",
-    "#.................................ppp...................ee.........pp..........#",
-    "#.................................ppp...................ee.........pp..........#",
-    "#.................................ppp...................ee.........pp..........#",
+    "#.ppppppppppppppppppppppppppppppppppppppppppppp.........ee.....................#",
+    "#.................................ppp...................ee.....................#",
+    "#.................................ppp...................ee.....................#",
+    "#.................................ppp...................ee.....................#",
+    "#.................................ppp...................ee.....................#",
+    "#.................................ppp...................ee.....................#",
     "#..eeeeeeeeeeeeeeeeeeeeeeeeeeeeeeeppp..........eeeeeeeeeeeeeeeeeeeeeeeeeeeeeeee#",
-    "#..eeeeeeeeeeeeeeeeeeeeeeeeeeeeeeeppp......pp..eeeeeeeeeeeeeeeeeeeeeeeeeeeeeeee#",
-    "#.................................ppp......pp...........ee.....................#",
-    "#.................................ppp......pp...........ee.....................#",
-    "#.................................ppp......pp...........ee.....................#",
-    "#.................................ppp......pp...........ee.....................#",
-    "#.eeeeeeeeeeeeeeeeeeeeeeeeeeeeeeeepppeeeeeeeeeeeeeeeeeeeeeeeeeeeeeeeeeeeeeeeeee#",
-    "#.eeeeeeeeeeeeeeeeeeeeeeeeeeeeeeeepppeeeeeeeeeeeeeeeeeeeeeeeeeeeeeeeeeeeeeeeeee#",
-    "#.eeeeeeeeeeeeeeeeeeeeeeeeeeeeeeeepppeeeeeeeeeeeeeeeeeeeeeeeeeeeeeeeeeeeeeeeeee#",
+    "#..eeeeeeeeeeeeeeeeeeeeeeeeeeeeeeeppp..........eeeeeeeeeeeeeeeeeeeeeeeeeeeeeeee#",
+    "#.................................ppp...................ee.....................#",
+    "#.................................ppp...................ee.....................#",
+    "#.................................ppp...................ee.....................#",
+    "#.................................ppp...................ee.....................#",
+    "#.................................ppp...................ee.....................#",
+    "#.................................ppp...................ee.....................#",
+    "#.................................ppp...................ee.....................#",
+    "#.................................ppp...................ee.....................#",
+    "#.................................ppp...........pp......ee.....................#",
+    "#.kkkkkkkkkkkkkkkkkkkkkkkkkkkkkkkkpppkkkkkkkkkkkkkkkkkkkeekkkkkkkkkkkkkkkkkkkkk#",
+    "#.kkkkkkkkkkkkkkkkkkkkkkkkkkkkkkkkpppkkkkkkkkkkkkkkkkkkkeekkkkkkkkkkkkkkkkkkkkk#",
     "##################################ppp###################ee######################"
   ],
   "objekte": [
@@ -217,10 +222,6 @@
       "feld": [12, 49]
     },
     {
-      "moebel": "wds6PinieB",
-      "feld": [66, 19]
-    },
-    {
       "moebel": "wds6Pinie",
       "feld": [46, 8]
     },
@@ -238,15 +239,27 @@
     },
     {
       "moebel": "wds6Pinie",
+      "feld": [16, 51]
+    },
+    {
+      "moebel": "wds6Pinie",
       "feld": [22, 9]
+    },
+    {
+      "moebel": "wds6PinieB",
+      "feld": [4, 34]
+    },
+    {
+      "moebel": "wds6PinieB",
+      "feld": [4, 30]
     },
     {
       "moebel": "wds6PinieB",
       "feld": [4, 8]
     },
     {
-      "moebel": "wds6Pinie",
-      "feld": [20, 49]
+      "moebel": "wds6PinieB",
+      "feld": [43, 45]
     },
     {
       "moebel": "scFelsKlein",
@@ -262,96 +275,76 @@
     },
     {
       "moebel": "sc8Bergwacht",
-      "feld": [29, 6]
+      "feld": [28, 7]
     },
     {
       "moebel": "sc8ChaletBraun",
-      "feld": [61, 6]
+      "feld": [60, 8]
     },
     {
       "moebel": "sc8Post",
-      "feld": [71, 9]
+      "feld": [71, 8]
     },
     {
       "moebel": "sc8Hof",
-      "feld": [71, 36]
+      "feld": [67, 36]
     },
     {
       "moebel": "sc7Huette",
-      "feld": [16, 31]
+      "feld": [71, 26]
     },
     {
       "moebel": "sc8HofBreit",
-      "feld": [69, 24]
+      "feld": [62, 48]
     },
     {
       "moebel": "sc7Huette",
-      "feld": [1, 31]
+      "feld": [6, 31]
     },
     {
-      "moebel": "sc8HaeuschenRot",
-      "feld": [42, 43]
+      "moebel": "sc8HofBreit",
+      "feld": [18, 48]
     },
     {
-      "moebel": "sc8HaeuschenGruen",
-      "feld": [73, 48]
+      "moebel": "sc8Stall",
+      "feld": [44, 48]
     },
     {
-      "moebel": "sc8HaeuschenBlau",
-      "feld": [59, 26]
+      "moebel": "sc8HofBreit",
+      "feld": [60, 24]
     },
     {
-      "moebel": "sc8HaeuschenMoos",
-      "feld": [10, 32]
-    },
-    {
-      "moebel": "sc8HaeuschenRot",
-      "feld": [66, 36]
-    },
-    {
-      "moebel": "sc8HaeuschenGruen",
-      "feld": [48, 48]
-    },
-    {
-      "moebel": "sc8HaeuschenBlau",
-      "feld": [2, 48]
-    },
-    {
-      "moebel": "sc8HaeuschenMoos",
-      "feld": [22, 48]
-    },
-    {
-      "moebel": "sc8HaeuschenBlau",
-      "feld": [63, 48]
+      "moebel": "sc8Stall",
+      "feld": [15, 31]
     }
   ],
   "ausloeser": [
     {
       "name": "start",
-      "feld": [35, 54],
+      "feld": [35, 58],
       "eigenschaften": {
         "richtung": "oben"
       }
     },
     {
       "name": "wegDesert",
-      "feld": [34, 55]
+      "feld": [34, 59]
     },
     {
       "name": "wegDesert",
-      "feld": [35, 55]
+      "feld": [35, 59]
     },
     {
       "name": "wegDesert",
-      "feld": [36, 55]
+      "feld": [36, 59]
     },
     {
       "name": "wegCrossroads",
-      "feld": [56, 55]
+      "feld": [56, 59]
     },
     {
       "name": "wegCrossroads",
-      "feld": [57, 55]
+      "feld": [57, 59]
     },
     {
       "name": "huetteTuer",
@@ -495,6 +488,19 @@
       }
     },
     {
+      "name": "blitzspieler",
+      "typ": "statist",
+      "feld": [31, 33],
+      "eigenschaften": {
+        "von": "31,33",
+        "bis": "31,33",
+        "tun": "baut am Platz ein Brett für das Fest auf",
+        "wann": "tag",
+        "sagt": "statist.summitCity.aussen.blitzspieler",
+        "zeigt": "schirowLh3"
+      }
+    },
+    {
       "name": "gaertnerin",
       "typ": "statist",
       "feld": [12, 28],
@@ -519,30 +525,30 @@
     {
       "name": "murmeltier",
       "typ": "tier",
-      "feld": [45, 18],
+      "feld": [44, 18],
       "eigenschaften": {
-        "von": "45,18",
-        "bis": "48,18",
+        "von": "44,18",
+        "bis": "47,18",
         "verhalten": "ausweichen"
       }
     },
     {
       "name": "ziegen",
       "typ": "tier",
-      "feld": [7, 51],
+      "feld": [6, 51],
       "eigenschaften": {
-        "von": "7,51",
-        "bis": "10,51",
+        "von": "6,51",
+        "bis": "9,51",
         "verhalten": "sitzen"
       }
     },
     {
       "name": "kuh",
       "typ": "tier",
-      "feld": [70, 40],
+      "feld": [75, 40],
       "eigenschaften": {
-        "von": "70,40",
-        "bis": "70,40",
+        "von": "75,40",
+        "bis": "75,40",
         "verhalten": "sitzen"
       }
     },
@@ -559,10 +565,10 @@
     {
       "name": "adler",
       "typ": "tier",
-      "feld": [40, 6],
+      "feld": [40, 7],
       "eigenschaften": {
-        "von": "40,6",
-        "bis": "56,6",
+        "von": "40,7",
+        "bis": "56,7",
         "verhalten": "fliegen"
       }
     },

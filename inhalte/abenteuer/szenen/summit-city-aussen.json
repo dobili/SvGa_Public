@@ -8,7 +8,8 @@
   "boeden": {
     "p": "pflaster",
     "f": "felsboden",
-    "e": "erde"
+    "e": "erde",
+    "k": "schotter"
   },
   "zustand": ["neu", "gebraucht", "alt"],
   "stil": ["natur", "klassisch", "modern", "rustikal", "laendlich"],
@@ -28,13 +29,13 @@
     "#.fffffffffffffffffffffff......................................................#",
     "##########pp##############.....................................................#",
     "##########pp##############.....................................................#",
-    "##########pp##############.....................pp..............................#",
-    "#..............................................pp..............................#",
-    "#..............................................pp..............................#",
-    "#..............................................pp..............................#",
-    "#..............................................pp...............pp.............#",
-    "#..............................................pp...............pp.............#",
-    "#.................................pp...........pp...............pp.............#",
+    "##########pp##############.....................................................#",
+    "#........................................pp....................................#",
+    "#........................................pp....................................#",
+    "#........................................pp....................................#",
+    "#..............................pp........pp....................................#",
+    "#..............................pp........pp....................................#",
+    "#..............................pp........pp..........................pp........#",
     "#.........................ppppppppppppppppppppppppppppppppppppppppppppppppppppp#",
     "#.........................ppppppppppppppppppppppppppppppppppppppppppppppppppppp#",
     "#....................pp...............................pp.......................#",
@@ -44,30 +45,34 @@
     "#.......pp...........pp...pppppppppppppppppppppppppppppp.......................#",
     "#.......pppppppppppppppppppppppppppppppppppppppppppppppp.......................#",
     "#.......ppppppppppppppppppppppppppppppppppppppp................................#",
-    "#.........................ppppppppppppppppppppp................................#",
-    "#.........................ppppppppppppppppppppp................................#",
+    "#.........................ppppppppppppppppppppp................pp..............#",
+    "#.........................ppppppppppppppppppppp................pp........pp....#",
     "#.........................pppppppppppppppppppppeeeeeeeeeeeeeeeeeeeeeeeeeeeeeeee#",
     "#.........................pppppppppppppppppppppeeeeeeeeeeeeeeeeeeeeeeeeeeeeeeee#",
     "#.........................ppppppppppppppppppppp.........ee.....................#",
-    "#..........pp.............ppppppppppppppppppppp.........ee.....................#",
-    "#..........pp.............ppppppppppppppppppppp.........ee.....................#",
-    "#...pp.....pp......pp.....ppppppppppppppppppppp.........ee.....................#",
+    "#.........................ppppppppppppppppppppp.........ee.....................#",
+    "#.........................ppppppppppppppppppppp.........ee.....................#",
+    "#.........................ppppppppppppppppppppp.........ee.....................#",
     "#.ppppppppppppppppppppppppppppppppppppppppppppp.........ee.....................#",
     "#.ppppppppppppppppppppppppppppppppppppppppppppp.........ee.....................#",
     "#.................................ppp...................ee.....................#",
     "#.................................ppp...................ee.....................#",
     "#.................................ppp...................ee.....................#",
     "#.................................ppp...................ee.....................#",
-    "#.................................ppp...................ee.............pp......#",
+    "#.................................ppp...................ee.....................#",
     "#..eeeeeeeeeeeeeeeeeeeeeeeeeeeeeeeppp..........eeeeeeeeeeeeeeeeeeeeeeeeeeeeeeee#",
-    "#..eeeeeeeeeeeeeeeeeeeeeeeeeeeeeeeppp......pp..eeeeeeeeeeeeeeeeeeeeeeeeeeeeeeee#",
-    "#.................................ppp......pp...........ee.....................#",
-    "#.................................ppp......pp...........ee.....................#",
-    "#.................................ppp......pp...........ee.....................#",
-    "#.................................ppp......pp...........ee.....................#",
-    "#.eeeeeeeeeeeeeeeeeeeeeeeeeeeeeeeepppeeeeeeeeeeeeeeeeeeeeeeeeeeeeeeeeeeeeeeeeee#",
-    "#.eeeeeeeeeeeeeeeeeeeeeeeeeeeeeeeepppeeeeeeeeeeeeeeeeeeeeeeeeeeeeeeeeeeeeeeeeee#",
-    "#.eeeeeeeeeeeeeeeeeeeeeeeeeeeeeeeepppeeeeeeeeeeeeeeeeeeeeeeeeeeeeeeeeeeeeeeeeee#",
+    "#..eeeeeeeeeeeeeeeeeeeeeeeeeeeeeeeppp..........eeeeeeeeeeeeeeeeeeeeeeeeeeeeeeee#",
+    "#.................................ppp...................ee.....................#",
+    "#.................................ppp...................ee.....................#",
+    "#.................................ppp...................ee.....................#",
+    "#.................................ppp...................ee.....................#",
+    "#.................................ppp...................ee.....................#",
+    "#.................................ppp...................ee.....................#",
+    "#.................................ppp...................ee.....................#",
+    "#.................................ppp...................ee.....................#",
+    "#.................................ppp...................ee...pp................#",
+    "#.kkkkkkkkkkkkkkkkkkkkkkkkkkkkkkkkpppkkkkkkkkkkkkkkkkkkkeekkkkkkkkkkkkkkkkkkkkk#",
+    "#.kkkkkkkkkkkkkkkkkkkkkkkkkkkkkkkkpppkkkkkkkkkkkkkkkkkkkeekkkkkkkkkkkkkkkkkkkkk#",
     "##################################ppp###################ee######################"
   ],
   "objekte": [
@@ -221,6 +226,10 @@
       "feld": [16, 8]
     },
     {
+      "moebel": "wds6Kegelbaum",
+      "feld": [41, 44]
+    },
+    {
       "moebel": "wds6Wacholder",
       "feld": [34, 25]
     },
@@ -229,109 +238,85 @@
       "feld": [59, 7]
     },
     {
-      "moebel": "scFelsKlein",
-      "feld": [44, 13]
-    },
-    {
       "moebel": "wds6Wacholder",
       "feld": [50, 7]
     },
     {
-      "moebel": "scFelsKlein",
-      "feld": [66, 19]
-    },
-    {
       "moebel": "sc8Haus",
-      "feld": [27, 7]
+      "feld": [62, 7]
     },
     {
       "moebel": "sc8ChaletBraun",
-      "feld": [61, 6]
-    },
-    {
-      "moebel": "sc8Post",
-      "feld": [71, 9]
+      "feld": [28, 6]
     },
     {
       "moebel": "sc8HofBreit",
-      "feld": [67, 36]
+      "feld": [19, 48]
     },
     {
       "moebel": "sc7Huette",
+      "feld": [60, 24]
+    },
+    {
+      "moebel": "sc8Stadel",
+      "feld": [68, 36]
+    },
+    {
+      "moebel": "sc7Huette",
+      "feld": [58, 49]
+    },
+    {
+      "moebel": "sc8HofBreit",
+      "feld": [68, 48]
+    },
+    {
+      "moebel": "sc8Hof",
+      "feld": [38, 6]
+    },
+    {
+      "moebel": "sc8Stall",
       "feld": [16, 31]
     },
     {
-      "moebel": "sc7Huette",
-      "feld": [1, 31]
-    },
-    {
       "moebel": "sc8HofBreit",
-      "feld": [64, 24]
+      "feld": [44, 48]
     },
     {
-      "moebel": "sc8HaeuschenRot",
-      "feld": [42, 43]
+      "moebel": "sc8Stall",
+      "feld": [2, 31]
     },
     {
-      "moebel": "sc8HaeuschenGruen",
-      "feld": [73, 48]
-    },
-    {
-      "moebel": "sc8HaeuschenBlau",
-      "feld": [20, 48]
-    },
-    {
-      "moebel": "sc8HaeuschenMoos",
-      "feld": [10, 32]
-    },
-    {
-      "moebel": "sc8HaeuschenRot",
-      "feld": [46, 11]
-    },
-    {
-      "moebel": "sc8HaeuschenGruen",
-      "feld": [48, 48]
-    },
-    {
-      "moebel": "sc8HaeuschenBlau",
-      "feld": [67, 48]
-    },
-    {
-      "moebel": "sc8HaeuschenMoos",
-      "feld": [29, 42]
-    },
-    {
-      "moebel": "sc8HaeuschenBlau",
-      "feld": [49, 24]
+      "moebel": "sc8Stall",
+      "feld": [69, 24]
     }
   ],
   "ausloeser": [
     {
       "name": "start",
-      "feld": [35, 54],
+      "feld": [35, 58],
       "eigenschaften": {
         "richtung": "oben"
       }
     },
     {
       "name": "wegDesert",
-      "feld": [34, 55]
+      "feld": [34, 59]
     },
     {
       "name": "wegDesert",
-      "feld": [35, 55]
+      "feld": [35, 59]
     },
     {
       "name": "wegDesert",
-      "feld": [36, 55]
+      "feld": [36, 59]
     },
     {
       "name": "wegCrossroads",
-      "feld": [56, 55]
+      "feld": [56, 59]
     },
     {
       "name": "wegCrossroads",
-      "feld": [57, 55]
+      "feld": [57, 59]
     },
     {
       "name": "huetteTuer",
@@ -475,6 +460,19 @@
       }
     },
     {
+      "name": "blitzspieler",
+      "typ": "statist",
+      "feld": [31, 33],
+      "eigenschaften": {
+        "von": "31,33",
+        "bis": "31,33",
+        "tun": "baut am Platz ein Brett für das Fest auf",
+        "wann": "tag",
+        "sagt": "statist.summitCity.aussen.blitzspieler",
+        "zeigt": "schirowLh3"
+      }
+    },
+    {
       "name": "gaertnerin",
       "typ": "statist",
       "feld": [12, 28],
@@ -539,10 +537,10 @@
     {
       "name": "adler",
       "typ": "tier",
-      "feld": [40, 7],
+      "feld": [37, 10],
       "eigenschaften": {
-        "von": "40,7",
-        "bis": "56,7",
+        "von": "37,10",
+        "bis": "53,10",
         "verhalten": "fliegen"
       }
     },

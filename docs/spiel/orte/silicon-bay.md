@@ -32,6 +32,25 @@ dagegen voller Vögel; an der Glasbrücke hören sie auf. Das ist Absicht und wi
 
 ### 1.1 Raststätte (`wegIronwoodSilicon.raststaette`, 160 × 28)
 
+**Runde 8 (Revision 2 des Autors, Wahl C, mittel-1):**
+
+- Die Schnellstraße hat zwei Spuren mit Rechtsverkehr: nach Westen oben, nach Osten unten. Die
+  Autos sind von der Seite gesehen und fahren in Fahrtrichtung. Rand- und Mittellinie sind
+  eingezeichnet.
+- Der Lärmschutz hinter der Leitplanke ist eine zusammenhängende Hecke (Reihe 6, Spalten 1–103).
+  Dahinter wechseln sich Bäume, Kugelbüsche und Büsche ab, statt immer desselben Busches.
+- Laternen stehen nur noch an Rastplätzen:
+  - an der Bank am Pfad (Laterne (29, 11), Mülleimer (32, 13));
+  - zwischen den sechs Picknicktischen im Osten. Die Tische stehen in zwei Reihen zu drei (147,
+    151, 155 / 21 und 24), daneben zwei Mülleimer. Der Anstecker liegt jetzt bei (150, 23).
+- Die Vogelhütte steht bei (75, 18). Ein Erdweg führt von ihrer Tür nach Osten und zum Pfadbogen
+  hinauf.
+- Die Anlegepfosten stehen direkt am Ufer, auch in der Einbuchtung.
+- Der Lastwagen von Mrs. Kowalczyk ist ein eigenes Bild mit Dach und Tiefe (Bildwunsch
+  `lkw_schraeg.py`).
+- Asphalt und Pflaster haben rundum einen Bordstein zum Gras.
+- Die Anschlagtafel (131, 13) zeigt Zettel und steht mit der Vorderseite zur Fahrgasse.
+
 Die **Schnellstraße** läuft im Norden über die ganze Breite (Reihen 0–4, Fahrbahnen mit
 Mittelleitplanke, Leitplanke in Reihe 5), Kraftfahrstraße ohne Gehweg. Im Osten liegt der
 **Rastplatz** (Spalten 104–159): Gebäude nördlich der Fahrgasse mit Türen nach Süden, die Fahrgasse

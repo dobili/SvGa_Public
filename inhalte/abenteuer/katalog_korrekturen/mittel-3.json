@@ -674,5 +674,25 @@
     "orte": ["markt", "bauernhof"],
     "beziehungen": ["auf Marktstand", "auf Ladentheke"],
     "beschreibung": "Kleiner runder Weidenkorb voll mit gelben Maiskolben, schräg von oben; 1×1 Kachel, als Ware auf einem Marktstand oder einer Theke."
+  },
+  "modern-exteriors/Modern_Exteriors_16x16/ME_Theme_Sorter_16x16/18_Fire_Station_Singles_16x16/ME_Singles_Fire_Station_16x16_Fire_Hydrant.png": {
+    "innen_aussen": "aussen",
+    "zustand": "gebraucht",
+    "material": ["metall"],
+    "stil": ["klassisch"],
+    "epoche": "gegenwart",
+    "ganz": true,
+    "befestigung": "boden",
+    "einzigartig": false,
+    "licht": false,
+    "anzahl": "einige",
+    "reihe": false,
+    "sicher": 0.9,
+    "korrektur": "mittel-3",
+    "art": "strassenmoebel",
+    "raumfunktion": ["aussen_strasse"],
+    "orte": ["stadt"],
+    "beziehungen": ["am Gehweg", "an der Straße"],
+    "beschreibung": "Roter Hydrant mit silbernen Kappen, schräg von oben; 2×2 Kacheln groß gezeichnet, steht am Gehweg oder auf einem Platz."
   }
 }

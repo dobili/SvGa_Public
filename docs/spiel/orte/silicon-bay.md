@@ -207,6 +207,24 @@ Ständen und Kaffeekiosk; 51–54 Park am Südrand. Der Westrand ist geschlossen
 kleine Polizeiwache (`sa8Polizei1`, `2`), Eisenwarenladen (`sa8Eisenwaren`), Wohnhäuser (`sa8Condo9`,
 `sb8Condo44` bis `53`), Kapelle (`iw5Kirche`). A und C mit Wochenmarkt, B schlicht.
 
+**Runde 8 (mittel-3, 10.11.2026), Hauptfassung C nach den Notizen des Autors:**
+
+- Dasselbe Gebäudebild höchstens zweimal (Punkt 25): Bäckerei, Metzgerei, Musikladen, Eisdiele und
+  Angelladen sind jetzt ganze Läden aus dem Baukasten „Floor Modular Building“ (Bildwunsch
+  `docs/spiel/auftraege/bildwuensche/altstadt.py`, Möbel `sa8Baeckerei` usw.), dazu ein schmales
+  viktorianisches Haus und ein Wohnhaus; nur noch je zwei „Market Medium“ und „Market Small“, eine
+  Polizeiwache.
+- Die Kapelle hatte keine Rolle in der Geschichte und ist weg (Punkt 27); an ihrer Stelle ein kleiner
+  Garten mit Baum.
+- Der Kaffeekiosk steht jetzt in der Südzeile, seine Öffnung zeigt nach Süden zum Platz (Punkt 26).
+- Die Bänke stehen links und rechts vom Brunnen und schauen zu ihm.
+- Hecken als lückenlose Reihen (Punkt 23): an der Nordmauer, als Vorgartenhecke an der Straße mit
+  den beiden Gassen als Durchgang, am Rand des Parks mit drei Eingängen. Sie fassen zugleich die
+  Grasflächen gegen Pflaster ein (Punkt 22; eigene Randbilder für Gras gibt es nicht).
+- Marktstände mit Obst- und Gemüsekörben, Marktfrau und Gemüsehändler an den Ständen (10.59); dafür
+  sind Briefträgerin, Ladenbesitzer, Hundebesitzer und Hund weg (zwölf Statisten). Ein Hydrant für den
+  Feuerwehrmann.
+
 **Belebung:** zwölf Statisten, acht davon mit Satz (`statist.siliconBay.altstadt.*`): Bäckerin,
 Uhrmacher, Musikhändler, Schülerin, Metzger (Perfect Move will die Straße kaufen), Rentnerpaar,
 Feuerwehrmann, Eisverkäuferin und der Straßenmusiker (zeigt die Goldmünzen-Partie, `zeigt:

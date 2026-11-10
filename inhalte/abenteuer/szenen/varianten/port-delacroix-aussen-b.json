@@ -15,734 +15,1222 @@
   },
   "beschreibung": "Variante B, Kopfsteinpflaster: Port Delacroix mit grauem Gleis, gepflasterter Rue du Port und Gehwegen aus Stein, Bogenlaternen und Ahornen. Oben Meer, Deichkrone vom Westrand und Hang mit Sandsäcken. Die Turnhalle, eine Halle mit Blechdach und Holzwänden, steht im Osten der Straße, im Westen ein Rohbau, ein rotes und ein grünes Holzhaus und der Gebäckwagen. Der Platz liegt weiter östlich auf Sand mit grünem und blauem Zelt und einem Fass als Sitz für den Bläser; am Kai das Musikhaus mit Solarpaneel und Generator, davor ein Bauzaun mit Plane. Im Süden die schmale Klavierwerkstatt mit rotem Dach und zwei kleine Holzhäuser, Wäscheleinen, im Hafenbecken ein Fischerboot und zwei Ruderboote, Marschpfad zum Bayou am Ostrand.",
   "raster": [
-    "~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~",
-    "~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~",
-    "~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~",
-    "~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~",
-    "~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~",
-    "eeeeeeeeeeeeeeeeeeeeeeeeeeeeeeeeeeeeeeeeeeeeeeeeeeeeeeee~~~~~~~~~~~~~~",
-    "eeeeeeeeeeeeeeeeeeeeeeeeeeeeeeeeeeeeeeeeeeeeeeeeeeeeeeee~~~~~~~~~~~~~~",
-    "#............................ee.....................ee..~~~~~~~~~~~~~~",
-    "#############################ee#####################ee..~~~~~~~~~~~~~~",
-    "#############################ee#####################ee..~~~~~~~~~~~~~~",
-    "#tt.................................................pppp~~~~~~~~~~~~~~",
-    "#tt.................................................pppp~~~~~~~~~~~~~~",
-    "#ttppp..............................................pppp~~~~~~~~~~~~~~",
-    "#ttppp..............................................pppp~~~~~~~~~~~~~~",
-    "#ttppp..............................................pppp~~~~~~~~~~~~~~",
-    "#ttppp..............................................pppp~~~~~~~~~~~~~~",
-    "#ttppp..............................................pppp~~~~~~~~~~~~~~",
-    "#ttppp..............................................pppp~~~~~~~~~~~~~~",
-    "#ttppp..............................................pppp~~~~~~~~~~~~~~",
-    "#ttppp..............................................pppp~~~~~~~~~~~~~~",
-    "#ttppp..............................................pppp~~~~~~~~~~~~~~",
-    "#ttppp..............................................pppp~~~~~~~~~~~~~~",
-    "#ttppp..............................................pppp~~~~~~~~~~~~~~",
-    "#ttppp..............................................pppp~~~~~~~~~~~~~~",
-    "#ttppp..............................................pppp~~~~~~~~~~~~~~",
-    "#tttttttttttttttttttttttttttttttttttttttttttttttttttpppp~~~~~~~~~~~~~~",
-    "#tttttpppppppppppppppppppppppppppppppppppppppppppppppppp~~~~~~~~~~~~~~",
-    "#tttttpppppppppppppppppppppppppppppppppppppppppppppppppp~~~~~~~~~~~~~~",
-    "#tttttpppppppppppppppppppppppppppppppppppppppppppppppppp~~~~~~~~~~~~~~",
-    "#tttttttttttttttttttttttttttttttttttttttttttttttttttpppp~~~~~~~~~~~~~~",
-    "#tt.................pppppppppppppppppp..............pppp~~~~~~~~~~~~~~",
-    "#tt.................pppppppppppppppppp..............pppp~~~~~~~~~~~~~~",
-    "#tt.................ppkkkkkkkkkkkkkkkk..............pppp~~~~~~~~~~~~~~",
-    "#tt.................ppkkkkkkkkkkkkkkkk..............pppp~~~~~~~~~~~~~~",
-    "#tt.................ppkkkkkkkkkkkkkkkk..............pppp~~~~~~~~~~~~~~",
-    "#tt.................ppkkkkkkkkkkkkkkkk..............pppp~~~~~~~~~~~~~~",
-    "#tt.................ppkkkkkkkkkkkkkkkk..............pppp~~~~~~~~~~~~~~",
-    "#tt.................ppkkkkkkkkkkkkkkkk..............pppp~~~~~~~~~~~~~~",
-    "#tt.................ppkkkkkkkkkkkkkkkk..............pppp~~~~~~~~~~~~~~",
-    "#tt.................ppkkkkkkkkkkkkkkkk..............pppp~~~~~~~~~~~~~~",
-    "#tt.................pppppppppppppppppp..............pppp~~~~~~~~~~~~~~",
-    "#ttppppppppppppppppppppppppppppppppppppppppppppppppppppp~~~~~~~~~~~~~~",
-    "#ttppppppppppppppppppppppppppppppppppppppppppppppppppppp~~~~~~~~~~~~~~",
-    "#ttppp..............pp..............................pppp~~~~~~~~~~~~~~",
-    "#ttppp..............pp..............................pppp~~~~~~~~~~~~~~",
-    "#ttppp..............pp..............................pppp~~~~~~~~~~~~~~",
-    "#ttppp..............pp..............................pppp~~~~~~~~~~~~~~",
-    "#ttppp..............pp..............................pppp~~~~~~~~~~~~~~",
-    "#ttppp..............pp..............................pppp~~~~~~~~~~~~~~",
-    "#ttppp..............pp...............................................#",
-    "#ttppp..............pp...............................................#",
-    "#ttppp..............pp...............................................#",
-    "#ttppp..............pp...............................................#",
-    "#ttpppppppppppppppppppppppppppppppppppppppppppppppppppppeeeeeeeeeeeeee",
-    "#ttpppppppppppppppppppppppppppppppppppppppppppppppppppppeeeeeeeeeeeeee",
-    "######################################################################",
-    "######################################################################",
-    "######################################################################"
+    "~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~",
+    "~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~",
+    "~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~",
+    "~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~",
+    "~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~",
+    "eeeeeeeeeeeeeeeeeeeeeeeeeeeeeeeeeeeeeeeeeeeeeeeeeeeeeeee~~~~~~~~...............#",
+    "eeeeeeeeeeeeeeeeeeeeeeeeeeeeeeeeeeeeeeeeeeeeeeeeeeeeeeee~~~~~~~~...............#",
+    "#............................ee.....................ee..~~~~~~~~pp.............#",
+    "#############################ee#####################ee..~~~~~~~~pp.............#",
+    "#############################ee#####################ee..~~~~~~~~pp.............#",
+    "#tt.................................................pppp~~~~~~~~pp.............#",
+    "#tt.................................................pppp~~~~~~~~pp.............#",
+    "#ttppp..............................................pppp~~~~~~~~pp.............#",
+    "#ttppp..............................................pppp~~~~~~~~pp.............#",
+    "#ttppp..............................................pppp~~~~~~~~pp.............#",
+    "#ttppp..............................................pppp~~~~~~~~pp.............#",
+    "#ttppp..............................................pppp~~~~~~~~pp.............#",
+    "#ttppp..............................................pppp~~~~~~~~pp.............#",
+    "#ttppp..............................................pppp~~~~~~~~ppppppppppppppp#",
+    "#ttppp..............................................pppp~~~~~~~~ppppppppppppppp#",
+    "#ttppp..............................................pppp~~~~~~~~pp.............#",
+    "#ttppp..............................................pppp~~~~~~~~pp.............#",
+    "#ttppp..............................................pppp~~~~~~~~pp.............#",
+    "#ttppp..............................................pppp~~~~~~~~pp.............#",
+    "#ttppp..............................................pppp~~~~~~~~pp.............#",
+    "#tttttttttttttttttttttttttttttttttttttttttttttttttttpppp~~~~~~~~pp.............#",
+    "#tttttpppppppppppppppppppppppppppppppppppppppppppppppppp~~~~~~~~pp.............#",
+    "#tttttpppppppppppppppppppppppppppppppppppppppppppppppppp~~~~~~~~pp.............#",
+    "#tttttpppppppppppppppppppppppppppppppppppppppppppppppppp~~~~~~~~pp.............#",
+    "#tttttttttttttttttttttttttttttttttttttttttttttttttttpppp~~~~~~~~pp.............#",
+    "#tt.................pppppppppppppppppp..............pppp~~~~~~~~pp.............#",
+    "#tt.................pppppppppppppppppp..............pppp~~~~~~~~pp.............#",
+    "#tt.................ppkkkkkkkkkkkkkkkk..............pppp~~~~~~~~pp.............#",
+    "#tt.................ppkkkkkkkkkkkkkkkk..............pppp~~~~~~~~ppppppppppppppp#",
+    "#tt.................ppkkkkkkkkkkkkkkkk..............pppp~~~~~~~~ppppppppppppppp#",
+    "#tt.................ppkkkkkkkkkkkkkkkk..............pppp~~~~~~~~pp.............#",
+    "#tt.................ppkkkkkkkkkkkkkkkk..............pppp~~~~~~~~pp.............#",
+    "#tt.................ppkkkkkkkkkkkkkkkk..............pppp~~~~~~~~pp.............#",
+    "#tt.................ppkkkkkkkkkkkkkkkk..............pppp~~~~~~~~pp.............#",
+    "#tt.................ppkkkkkkkkkkkkkkkk..............pppp~~~~~~~~pp.............#",
+    "#tt.................pppppppppppppppppp..............pppp~~~~~~~~pp.............#",
+    "#ttppppppppppppppppppppppppppppppppppppppppppppppppppppp~~~~~~~~pp.............#",
+    "#ttppppppppppppppppppppppppppppppppppppppppppppppppppppp~~~~~~~~pp.............#",
+    "#ttppp..............pp..............................pppp~~~~~~~~ppppppppppppppp#",
+    "#ttppp..............pp..............................pppp~~~~~~~~ppppppppppppppp#",
+    "#ttppp..............pp..............................pppp~~~~~~~~pp.............#",
+    "#ttppp..............pp..............................pppp~~~~~~~~pp.............#",
+    "#ttppp..............pp..............................pppp~~~~~~~~pp.............#",
+    "#ttppp..............pp..............................pppp~~~~~~~~pp.............#",
+    "#ttppp..............pp..........................................pp.............#",
+    "#ttppp..............pp..........................................pp.............#",
+    "#ttppp..............pp..........................................pp.............#",
+    "#ttppp..............pp..........................................pp.............#",
+    "#ttpppppppppppppppppppppppppppppppppppppppppppppppppppppeeeeeeeeeeeeeeeeeeeeeeee",
+    "#ttpppppppppppppppppppppppppppppppppppppppppppppppppppppeeeeeeeeeeeeeeeeeeeeeeee",
+    "################################################################################",
+    "################################################################################",
+    "################################################################################"
   ],
   "objekte": [
     {
       "moebel": "pd6Prellbock",
-      "feld": [1, 10]
+      "feld": [
+        1,
+        10
+      ]
     },
     {
       "moebel": "pd6GleisGrau",
-      "feld": [1, 12],
+      "feld": [
+        1,
+        12
+      ],
       "bauteil_ok": true
     },
     {
       "moebel": "pd6GleisGrau",
-      "feld": [1, 13],
+      "feld": [
+        1,
+        13
+      ],
       "bauteil_ok": true
     },
     {
       "moebel": "pd6GleisGrau",
-      "feld": [1, 14],
+      "feld": [
+        1,
+        14
+      ],
       "bauteil_ok": true
     },
     {
       "moebel": "pd6GleisGrau",
-      "feld": [1, 15],
+      "feld": [
+        1,
+        15
+      ],
       "bauteil_ok": true
     },
     {
       "moebel": "pd6GleisGrau",
-      "feld": [1, 16],
+      "feld": [
+        1,
+        16
+      ],
       "bauteil_ok": true
     },
     {
       "moebel": "pd6GleisGrau",
-      "feld": [1, 17],
+      "feld": [
+        1,
+        17
+      ],
       "bauteil_ok": true
     },
     {
       "moebel": "pd6GleisGrau",
-      "feld": [1, 18],
+      "feld": [
+        1,
+        18
+      ],
       "bauteil_ok": true
     },
     {
       "moebel": "pd6GleisGrau",
-      "feld": [1, 19],
+      "feld": [
+        1,
+        19
+      ],
       "bauteil_ok": true
     },
     {
       "moebel": "pd6GleisGrau",
-      "feld": [1, 20],
+      "feld": [
+        1,
+        20
+      ],
       "bauteil_ok": true
     },
     {
       "moebel": "pd6GleisGrau",
-      "feld": [1, 21],
+      "feld": [
+        1,
+        21
+      ],
       "bauteil_ok": true
     },
     {
       "moebel": "pd6GleisGrau",
-      "feld": [1, 22],
+      "feld": [
+        1,
+        22
+      ],
       "bauteil_ok": true
     },
     {
       "moebel": "pd6GleisGrau",
-      "feld": [1, 23],
+      "feld": [
+        1,
+        23
+      ],
       "bauteil_ok": true
     },
     {
       "moebel": "pd6GleisGrau",
-      "feld": [1, 24],
+      "feld": [
+        1,
+        24
+      ],
       "bauteil_ok": true
     },
     {
       "moebel": "pd6GleisGrau",
-      "feld": [1, 25],
+      "feld": [
+        1,
+        25
+      ],
       "bauteil_ok": true
     },
     {
       "moebel": "pd6GleisGrau",
-      "feld": [1, 26],
+      "feld": [
+        1,
+        26
+      ],
       "bauteil_ok": true
     },
     {
       "moebel": "pd6GleisGrau",
-      "feld": [1, 27],
+      "feld": [
+        1,
+        27
+      ],
       "bauteil_ok": true
     },
     {
       "moebel": "pd6GleisGrau",
-      "feld": [1, 28],
+      "feld": [
+        1,
+        28
+      ],
       "bauteil_ok": true
     },
     {
       "moebel": "pd6GleisGrau",
-      "feld": [1, 29],
+      "feld": [
+        1,
+        29
+      ],
       "bauteil_ok": true
     },
     {
       "moebel": "pd6GleisGrau",
-      "feld": [1, 30],
+      "feld": [
+        1,
+        30
+      ],
       "bauteil_ok": true
     },
     {
       "moebel": "pd6GleisGrau",
-      "feld": [1, 31],
+      "feld": [
+        1,
+        31
+      ],
       "bauteil_ok": true
     },
     {
       "moebel": "pd6GleisGrau",
-      "feld": [1, 32],
+      "feld": [
+        1,
+        32
+      ],
       "bauteil_ok": true
     },
     {
       "moebel": "pd6GleisGrau",
-      "feld": [1, 33],
+      "feld": [
+        1,
+        33
+      ],
       "bauteil_ok": true
     },
     {
       "moebel": "pd6GleisGrau",
-      "feld": [1, 34],
+      "feld": [
+        1,
+        34
+      ],
       "bauteil_ok": true
     },
     {
       "moebel": "pd6GleisGrau",
-      "feld": [1, 35],
+      "feld": [
+        1,
+        35
+      ],
       "bauteil_ok": true
     },
     {
       "moebel": "pd6GleisGrau",
-      "feld": [1, 36],
+      "feld": [
+        1,
+        36
+      ],
       "bauteil_ok": true
     },
     {
       "moebel": "pd6GleisGrau",
-      "feld": [1, 37],
+      "feld": [
+        1,
+        37
+      ],
       "bauteil_ok": true
     },
     {
       "moebel": "pd6GleisGrau",
-      "feld": [1, 38],
+      "feld": [
+        1,
+        38
+      ],
       "bauteil_ok": true
     },
     {
       "moebel": "pd6GleisGrau",
-      "feld": [1, 39],
+      "feld": [
+        1,
+        39
+      ],
       "bauteil_ok": true
     },
     {
       "moebel": "pd6GleisGrau",
-      "feld": [1, 40],
+      "feld": [
+        1,
+        40
+      ],
       "bauteil_ok": true
     },
     {
       "moebel": "pd6GleisGrau",
-      "feld": [1, 41],
+      "feld": [
+        1,
+        41
+      ],
       "bauteil_ok": true
     },
     {
       "moebel": "pd6GleisGrau",
-      "feld": [1, 42],
+      "feld": [
+        1,
+        42
+      ],
       "bauteil_ok": true
     },
     {
       "moebel": "pd6GleisGrau",
-      "feld": [1, 43],
+      "feld": [
+        1,
+        43
+      ],
       "bauteil_ok": true
     },
     {
       "moebel": "pd6GleisGrau",
-      "feld": [1, 44],
+      "feld": [
+        1,
+        44
+      ],
       "bauteil_ok": true
     },
     {
       "moebel": "pd6GleisGrau",
-      "feld": [1, 45],
+      "feld": [
+        1,
+        45
+      ],
       "bauteil_ok": true
     },
     {
       "moebel": "pd6GleisGrau",
-      "feld": [1, 46],
+      "feld": [
+        1,
+        46
+      ],
       "bauteil_ok": true
     },
     {
       "moebel": "pd6GleisGrau",
-      "feld": [1, 47],
+      "feld": [
+        1,
+        47
+      ],
       "bauteil_ok": true
     },
     {
       "moebel": "pd6GleisGrau",
-      "feld": [1, 48],
+      "feld": [
+        1,
+        48
+      ],
       "bauteil_ok": true
     },
     {
       "moebel": "pd6GleisGrau",
-      "feld": [1, 49],
+      "feld": [
+        1,
+        49
+      ],
       "bauteil_ok": true
     },
     {
       "moebel": "pd6GleisGrau",
-      "feld": [1, 50],
+      "feld": [
+        1,
+        50
+      ],
       "bauteil_ok": true
     },
     {
       "moebel": "pd6GleisGrau",
-      "feld": [1, 51],
+      "feld": [
+        1,
+        51
+      ],
       "bauteil_ok": true
     },
     {
       "moebel": "pd6GleisGrau",
-      "feld": [1, 52],
+      "feld": [
+        1,
+        52
+      ],
       "bauteil_ok": true
     },
     {
       "moebel": "pd6GleisGrau",
-      "feld": [1, 53],
+      "feld": [
+        1,
+        53
+      ],
       "bauteil_ok": true
     },
     {
       "moebel": "pd6GleisGrau",
-      "feld": [1, 54],
+      "feld": [
+        1,
+        54
+      ],
       "bauteil_ok": true
     },
     {
       "moebel": "pd6SandsaeckeReihe",
-      "feld": [5, 7]
+      "feld": [
+        5,
+        7
+      ]
     },
     {
       "moebel": "pd6SandsaeckeReihe",
-      "feld": [12, 7]
+      "feld": [
+        12,
+        7
+      ]
     },
     {
       "moebel": "pd6SandsaeckeReihe",
-      "feld": [18, 7]
+      "feld": [
+        18,
+        7
+      ]
     },
     {
       "moebel": "pd6SandsaeckeReihe",
-      "feld": [26, 7]
+      "feld": [
+        26,
+        7
+      ]
     },
     {
       "moebel": "pd6SandsaeckeReihe",
-      "feld": [33, 7]
+      "feld": [
+        33,
+        7
+      ]
     },
     {
       "moebel": "pd6SandsaeckeReihe",
-      "feld": [38, 7]
+      "feld": [
+        38,
+        7
+      ]
     },
     {
       "moebel": "pd6SandsaeckeReihe",
-      "feld": [45, 7]
+      "feld": [
+        45,
+        7
+      ]
     },
     {
       "moebel": "pd6Gueterhalle",
-      "feld": [35, 15],
+      "feld": [
+        35,
+        15
+      ],
       "id": "th"
     },
     {
       "moebel": "pd6SchildTurnhalle",
       "auf": "th",
-      "versatz": [24, 56]
+      "versatz": [
+        24,
+        56
+      ]
     },
     {
       "moebel": "pd6HausGross",
-      "feld": [8, 15],
+      "feld": [
+        8,
+        15
+      ],
       "id": "h1"
     },
     {
       "moebel": "pd6PlaneDach",
       "auf": "h1",
-      "versatz": [30, -28]
+      "versatz": [
+        30,
+        -28
+      ]
     },
     {
       "moebel": "pd6Werkstatt",
-      "feld": [22, 16],
+      "feld": [
+        22,
+        16
+      ],
       "id": "h2"
     },
     {
       "moebel": "pd6PlaneDachKlein",
       "auf": "h2",
-      "versatz": [30, -30]
+      "versatz": [
+        30,
+        -30
+      ]
     },
     {
       "moebel": "pd6Gebaeckstand",
-      "feld": [18, 22]
+      "feld": [
+        18,
+        22
+      ]
     },
     {
       "moebel": "pd6Rohbau",
-      "feld": [44, 12]
+      "feld": [
+        44,
+        12
+      ]
     },
     {
       "moebel": "pd6ZeltGruen",
-      "feld": [24, 32]
+      "feld": [
+        24,
+        32
+      ]
     },
     {
       "moebel": "pd6Zelt",
-      "feld": [31, 33]
+      "feld": [
+        31,
+        33
+      ]
     },
     {
       "moebel": "pd6MusikhausSolar",
-      "feld": [39, 31],
+      "feld": [
+        39,
+        31
+      ],
       "id": "mh"
     },
     {
       "moebel": "pd6PlaneDach",
       "auf": "mh",
-      "versatz": [-20, -50]
+      "versatz": [
+        -20,
+        -50
+      ]
     },
     {
       "moebel": "pd6Fass",
-      "feld": [30, 38]
+      "feld": [
+        30,
+        38
+      ]
     },
     {
       "moebel": "pd6WerkstattSchmal",
-      "feld": [9, 43]
+      "feld": [
+        9,
+        43
+      ]
     },
     {
       "moebel": "pd6HausGross",
-      "feld": [22, 43],
+      "feld": [
+        22,
+        43
+      ],
       "id": "h3"
     },
     {
       "moebel": "pd6PlaneDachKlein",
       "auf": "h3",
-      "versatz": [16, -54]
+      "versatz": [
+        16,
+        -54
+      ]
     },
     {
       "moebel": "pd6Werkstatt",
-      "feld": [32, 44]
+      "feld": [
+        32,
+        44
+      ]
     },
     {
       "moebel": "pd6Fischerboot",
-      "feld": [56, 18],
+      "feld": [
+        56,
+        18
+      ],
       "bauteil_ok": true
     },
     {
       "moebel": "pd6Ruderboot",
-      "feld": [58, 30],
+      "feld": [
+        58,
+        30
+      ],
       "bauteil_ok": true
     },
     {
       "moebel": "pd6Ruderboot",
-      "feld": [56, 42],
+      "feld": [
+        56,
+        42
+      ],
       "bauteil_ok": true
     },
     {
       "moebel": "pd6Steg",
-      "feld": [56, 30]
+      "feld": [
+        56,
+        30
+      ]
     },
     {
       "moebel": "pd6Steg",
-      "feld": [56, 31]
+      "feld": [
+        56,
+        31
+      ]
     },
     {
       "moebel": "cc4Bahnbank",
-      "feld": [3, 20]
+      "feld": [
+        3,
+        20
+      ]
     },
     {
       "moebel": "rvWegweiser",
-      "feld": [5, 13]
+      "feld": [
+        5,
+        13
+      ]
     },
     {
       "moebel": "pdEimer",
-      "feld": [53, 24]
+      "feld": [
+        53,
+        24
+      ]
     },
     {
       "moebel": "pdSeil",
-      "feld": [54, 25]
+      "feld": [
+        54,
+        25
+      ]
     },
     {
       "moebel": "pd6Kiste",
-      "feld": [54, 12]
+      "feld": [
+        54,
+        12
+      ]
     },
     {
       "moebel": "pd6Kiste",
-      "feld": [55, 12]
+      "feld": [
+        55,
+        12
+      ]
     },
     {
       "moebel": "pd6BauzaunEndeLinks",
-      "feld": [39, 40],
+      "feld": [
+        39,
+        40
+      ],
       "bauteil_ok": true
     },
     {
       "moebel": "pd6BauzaunMitte",
-      "feld": [40, 40],
+      "feld": [
+        40,
+        40
+      ],
       "bauteil_ok": true
     },
     {
       "moebel": "pd6BauzaunMitte",
-      "feld": [41, 40],
+      "feld": [
+        41,
+        40
+      ],
       "bauteil_ok": true
     },
     {
       "moebel": "pd6BauzaunMitte",
-      "feld": [42, 40],
+      "feld": [
+        42,
+        40
+      ],
       "bauteil_ok": true
     },
     {
       "moebel": "pd6BauzaunMitte",
-      "feld": [43, 40],
+      "feld": [
+        43,
+        40
+      ],
       "bauteil_ok": true
     },
     {
       "moebel": "pd6BauzaunEndeRechts",
-      "feld": [44, 40],
+      "feld": [
+        44,
+        40
+      ],
       "bauteil_ok": true
     },
     {
       "moebel": "pd6BauzaunEndeLinks",
-      "feld": [48, 40],
+      "feld": [
+        48,
+        40
+      ],
       "bauteil_ok": true
     },
     {
       "moebel": "pd6BauzaunMitte",
-      "feld": [49, 40],
+      "feld": [
+        49,
+        40
+      ],
       "bauteil_ok": true
     },
     {
       "moebel": "pd6BauzaunMitte",
-      "feld": [50, 40],
+      "feld": [
+        50,
+        40
+      ],
       "bauteil_ok": true
     },
     {
       "moebel": "pd6BauzaunEndeRechts",
-      "feld": [51, 40],
+      "feld": [
+        51,
+        40
+      ],
       "bauteil_ok": true
     },
     {
       "moebel": "pd6BauzaunEndeLinks",
-      "feld": [43, 20],
+      "feld": [
+        43,
+        20
+      ],
       "bauteil_ok": true
     },
     {
       "moebel": "pd6BauzaunMitte",
-      "feld": [44, 20],
+      "feld": [
+        44,
+        20
+      ],
       "bauteil_ok": true
     },
     {
       "moebel": "pd6BauzaunMitte",
-      "feld": [45, 20],
+      "feld": [
+        45,
+        20
+      ],
       "bauteil_ok": true
     },
     {
       "moebel": "pd6BauzaunMitte",
-      "feld": [46, 20],
+      "feld": [
+        46,
+        20
+      ],
       "bauteil_ok": true
     },
     {
       "moebel": "pd6BauzaunMitte",
-      "feld": [47, 20],
+      "feld": [
+        47,
+        20
+      ],
       "bauteil_ok": true
     },
     {
       "moebel": "pd6BauzaunMitte",
-      "feld": [48, 20],
+      "feld": [
+        48,
+        20
+      ],
       "bauteil_ok": true
     },
     {
       "moebel": "pd6BauzaunMitte",
-      "feld": [49, 20],
+      "feld": [
+        49,
+        20
+      ],
       "bauteil_ok": true
     },
     {
       "moebel": "pd6BauzaunMitte",
-      "feld": [50, 20],
+      "feld": [
+        50,
+        20
+      ],
       "bauteil_ok": true
     },
     {
       "moebel": "pd6BauzaunEndeRechts",
-      "feld": [51, 20],
+      "feld": [
+        51,
+        20
+      ],
       "bauteil_ok": true
     },
     {
       "moebel": "pd6DielenNass",
-      "feld": [10, 27]
+      "feld": [
+        10,
+        27
+      ]
     },
     {
       "moebel": "pd6DielenNass",
-      "feld": [28, 35]
+      "feld": [
+        28,
+        35
+      ]
     },
     {
       "moebel": "pd6DielenNass",
-      "feld": [40, 42]
+      "feld": [
+        40,
+        42
+      ]
     },
     {
       "moebel": "pd6DielenNass",
-      "feld": [53, 30]
+      "feld": [
+        53,
+        30
+      ]
     },
     {
       "moebel": "pd6DielenNass",
-      "feld": [22, 53]
+      "feld": [
+        22,
+        53
+      ]
     },
     {
       "moebel": "pd6Leiter",
-      "feld": [16, 22]
+      "feld": [
+        16,
+        22
+      ]
     },
     {
       "moebel": "pd6Leiter",
-      "feld": [32, 22]
+      "feld": [
+        32,
+        22
+      ]
     },
     {
       "moebel": "pd6Stamm",
-      "feld": [19, 16]
+      "feld": [
+        19,
+        16
+      ]
     },
     {
       "moebel": "pd6SandsaeckeReihe",
-      "feld": [53, 20]
+      "feld": [
+        53,
+        20
+      ]
     },
     {
       "moebel": "pd6SandsaeckeReihe",
-      "feld": [53, 38]
+      "feld": [
+        53,
+        38
+      ]
     },
     {
       "moebel": "rv5LaterneBogen",
-      "feld": [6, 22],
+      "feld": [
+        6,
+        22
+      ],
       "vorn": true
     },
     {
       "moebel": "rv5LaterneBogen",
-      "feld": [33, 22],
+      "feld": [
+        33,
+        22
+      ],
       "vorn": true
     },
     {
       "moebel": "rv5LaterneBogen",
-      "feld": [49, 22],
+      "feld": [
+        49,
+        22
+      ],
       "vorn": true
     },
     {
       "moebel": "rv5LaterneBogen",
-      "feld": [7, 39],
+      "feld": [
+        7,
+        39
+      ],
       "vorn": true
     },
     {
       "moebel": "rv5LaterneBogen",
-      "feld": [16, 39],
+      "feld": [
+        16,
+        39
+      ],
       "vorn": true
     },
     {
       "moebel": "rv5LaterneBogen",
-      "feld": [52, 39],
+      "feld": [
+        52,
+        39
+      ],
       "vorn": true
     },
     {
       "moebel": "mfAhorn",
-      "feld": [16, 10]
+      "feld": [
+        16,
+        10
+      ]
     },
     {
       "moebel": "mfAhorn",
-      "feld": [57, 49]
+      "feld": [
+        57,
+        49
+      ]
+    },
+    {
+      "moebel": "pd7Laden2",
+      "feld": [
+        66,
+        10
+      ]
+    },
+    {
+      "moebel": "pd7Reihenhaus3",
+      "feld": [
+        71,
+        6
+      ]
+    },
+    {
+      "moebel": "pd7Laden7",
+      "feld": [
+        74,
+        10
+      ]
+    },
+    {
+      "moebel": "pd7Markt8",
+      "feld": [
+        66,
+        24
+      ]
+    },
+    {
+      "moebel": "pd7Stadthaus5_3",
+      "feld": [
+        73,
+        22
+      ]
+    },
+    {
+      "moebel": "pd7Laden5",
+      "feld": [
+        66,
+        35
+      ]
+    },
+    {
+      "moebel": "pd7Laden8",
+      "feld": [
+        71,
+        35
+      ]
+    },
+    {
+      "moebel": "pd7Laden6",
+      "feld": [
+        66,
+        45
+      ]
+    },
+    {
+      "moebel": "pd7Laden9",
+      "feld": [
+        71,
+        45
+      ]
+    },
+    {
+      "moebel": "pd7Stadthaus5_1",
+      "feld": [
+        6,
+        30
+      ]
+    },
+    {
+      "moebel": "pd7Laden11",
+      "feld": [
+        13,
+        32
+      ]
+    },
+    {
+      "moebel": "pd7Laden3",
+      "feld": [
+        42,
+        45
+      ]
+    },
+    {
+      "moebel": "pd7Laden12",
+      "feld": [
+        47,
+        45
+      ]
     },
     {
       "moebel": "mfAhorn",
-      "feld": [63, 49]
-    },
-    {
-      "moebel": "mfAhorn",
-      "feld": [44, 45]
-    },
-    {
-      "moebel": "pd6Waescheleine",
-      "feld": [44, 50]
-    },
-    {
-      "moebel": "pd6Waescheleine",
-      "feld": [6, 36]
-    },
-    {
-      "moebel": "mfAhorn",
-      "feld": [6, 32]
+      "feld": [
+        76,
+        47
+      ]
     }
   ],
   "ausloeser": [
     {
       "name": "start",
-      "feld": [1, 5],
+      "feld": [
+        1,
+        5
+      ],
       "eigenschaften": {
         "richtung": "rechts"
       }
     },
     {
       "name": "deich",
-      "feld": [0, 5]
+      "feld": [
+        0,
+        5
+      ]
     },
     {
       "name": "deich",
-      "feld": [0, 6]
+      "feld": [
+        0,
+        6
+      ]
     },
     {
       "name": "bayou",
-      "feld": [69, 53]
+      "feld": [
+        79,
+        53
+      ]
     },
     {
       "name": "bayou",
-      "feld": [69, 54]
+      "feld": [
+        79,
+        54
+      ]
     },
     {
       "name": "turnhalleTuer",
-      "feld": [37, 25]
+      "feld": [
+        37,
+        25
+      ]
     },
     {
       "name": "werkstattTuer",
-      "feld": [14, 53]
+      "feld": [
+        14,
+        53
+      ]
     },
     {
       "name": "musikhausTuer",
-      "feld": [46, 41]
+      "feld": [
+        46,
+        41
+      ]
     },
     {
       "name": "wuestenzug",
-      "feld": [4, 19]
+      "feld": [
+        4,
+        19
+      ]
     },
     {
       "name": "gebaeckstand",
-      "feld": [19, 25]
+      "feld": [
+        19,
+        25
+      ]
     },
     {
       "name": "brettHaus1",
-      "feld": [13, 25]
+      "feld": [
+        13,
+        25
+      ]
     },
     {
       "name": "brettHaus2",
-      "feld": [29, 25]
+      "feld": [
+        29,
+        25
+      ]
     },
     {
       "name": "brettHaus3",
-      "feld": [27, 53]
+      "feld": [
+        27,
+        53
+      ]
     },
     {
       "name": "brettHaus4",
-      "feld": [39, 53]
+      "feld": [
+        39,
+        53
+      ]
     }
   ],
   "figuren": [
     {
       "name": "batiste",
-      "feld": [54, 27]
+      "feld": [
+        54,
+        27
+      ]
     },
     {
       "name": "arceneaux",
-      "feld": [21, 25]
+      "feld": [
+        21,
+        25
+      ]
     },
     {
       "name": "blaeser",
-      "feld": [29, 38]
+      "feld": [
+        29,
+        38
+      ]
     }
   ],
   "belebung": [
     {
       "name": "handwerker",
       "typ": "statist",
-      "feld": [12, 30],
+      "feld": [
+        12,
+        41
+      ],
       "eigenschaften": {
-        "von": "12,30",
-        "bis": "16,30",
+        "von": "6,41",
+        "bis": "16,41",
         "tun": "trägt Bretter",
-        "wann": "tag"
+        "wann": "tag",
+        "sagt": "statist.portDelacroix.aussen.handwerker"
       }
     },
     {
       "name": "sandsackhelfer",
       "typ": "statist",
-      "feld": [20, 7],
+      "feld": [
+        20,
+        7
+      ],
       "eigenschaften": {
         "von": "14,7",
         "bis": "26,7",
         "tun": "stapelt Sandsäcke",
-        "wann": "morgen"
+        "wann": "morgen",
+        "sagt": "statist.portDelacroix.aussen.sandsackhelfer"
       }
     },
     {
       "name": "ballkinder",
       "typ": "statist",
-      "feld": [25, 37],
+      "feld": [
+        25,
+        37
+      ],
       "eigenschaften": {
         "von": "22,37",
         "bis": "30,38",
@@ -751,9 +1239,145 @@
       }
     },
     {
+      "name": "brieftraegerin",
+      "typ": "statist",
+      "feld": [
+        8,
+        29
+      ],
+      "eigenschaften": {
+        "von": "6,29",
+        "bis": "50,29",
+        "tun": "trägt Briefe aus, Schal bis zur Nase",
+        "wann": "tag",
+        "sagt": "statist.portDelacroix.aussen.brieftraegerin"
+      }
+    },
+    {
+      "name": "rentner",
+      "typ": "statist",
+      "feld": [
+        30,
+        42
+      ],
+      "eigenschaften": {
+        "von": "30,42",
+        "bis": "30,42",
+        "tun": "sitzt im Mantel am Uferweg und schaut aufs Wasser",
+        "wann": "tag",
+        "sagt": "statist.portDelacroix.aussen.rentner"
+      }
+    },
+    {
+      "name": "fischer",
+      "typ": "statist",
+      "feld": [
+        54,
+        44
+      ],
+      "eigenschaften": {
+        "von": "54,44",
+        "bis": "54,44",
+        "tun": "flickt ein Netz am Kai",
+        "wann": "tag",
+        "sagt": "statist.portDelacroix.aussen.fischer"
+      }
+    },
+    {
+      "name": "mutter",
+      "typ": "statist",
+      "feld": [
+        44,
+        29
+      ],
+      "eigenschaften": {
+        "von": "44,29",
+        "bis": "44,29",
+        "tun": "wartet mit Thermosbecher vor dem Gebäckwagen",
+        "wann": "tag",
+        "sagt": "statist.portDelacroix.aussen.mutter"
+      }
+    },
+    {
+      "name": "grossmutter",
+      "typ": "statist",
+      "feld": [
+        24,
+        54
+      ],
+      "eigenschaften": {
+        "von": "20,54",
+        "bis": "30,54",
+        "tun": "geht mit Einkaufstasche die Rue des Facteurs entlang",
+        "wann": "tag",
+        "sagt": "statist.portDelacroix.aussen.grossmutter"
+      }
+    },
+    {
+      "name": "bootsbauer",
+      "typ": "statist",
+      "feld": [
+        68,
+        45
+      ],
+      "eigenschaften": {
+        "von": "66,45",
+        "bis": "72,45",
+        "tun": "streicht ein Ruder",
+        "wann": "tag",
+        "sagt": "statist.portDelacroix.aussen.bootsbauer"
+      }
+    },
+    {
+      "name": "gummistiefel",
+      "typ": "statist",
+      "feld": [
+        65,
+        30
+      ],
+      "eigenschaften": {
+        "von": "65,22",
+        "bis": "65,40",
+        "tun": "springt in Gummistiefeln von Pfütze zu Pfütze",
+        "wann": "tag",
+        "sagt": "statist.portDelacroix.aussen.gummistiefel"
+      }
+    },
+    {
+      "name": "kehrerin",
+      "typ": "statist",
+      "feld": [
+        46,
+        27
+      ],
+      "eigenschaften": {
+        "von": "40,27",
+        "bis": "50,27",
+        "tun": "schiebt Wasser mit dem Besen in den Gully",
+        "wann": "tag"
+      }
+    },
+    {
+      "name": "angler",
+      "typ": "statist",
+      "feld": [
+        64,
+        12
+      ],
+      "eigenschaften": {
+        "von": "64,12",
+        "bis": "64,12",
+        "tun": "angelt im Hafenbecken",
+        "wann": "morgen"
+      }
+    },
+    {
       "name": "pelikane",
       "typ": "tier",
-      "feld": [55, 20],
+      "feld": [
+        55,
+        20
+      ],
       "eigenschaften": {
         "von": "55,18",
         "bis": "55,24",
@@ -763,17 +1387,23 @@
     {
       "name": "moewen",
       "typ": "tier",
-      "feld": [60, 10],
+      "feld": [
+        60,
+        10
+      ],
       "eigenschaften": {
-        "von": "58,8",
-        "bis": "66,12",
+        "von": "57,8",
+        "bis": "62,14",
         "verhalten": "fliegen"
       }
     },
     {
       "name": "reiher",
       "typ": "tier",
-      "feld": [55, 45],
+      "feld": [
+        55,
+        45
+      ],
       "eigenschaften": {
         "von": "55,44",
         "bis": "55,47",
@@ -783,15 +1413,42 @@
     {
       "name": "katze",
       "typ": "tier",
-      "feld": [54, 12],
+      "feld": [
+        54,
+        12
+      ],
       "eigenschaften": {
         "von": "54,12",
         "bis": "54,12",
         "verhalten": "sitzen"
       }
+    },
+    {
+      "name": "hund",
+      "typ": "tier",
+      "feld": [
+        30,
+        54
+      ],
+      "eigenschaften": {
+        "von": "26,54",
+        "bis": "36,54",
+        "verhalten": "folgen"
+      }
     }
   ],
-  "zustand": ["neu", "gebraucht", "alt", "kaputt"],
-  "stil": ["klassisch", "rustikal", "industrie", "modern", "natur"],
+  "zustand": [
+    "neu",
+    "gebraucht",
+    "alt",
+    "kaputt"
+  ],
+  "stil": [
+    "klassisch",
+    "rustikal",
+    "industrie",
+    "modern",
+    "natur"
+  ],
   "variante": "b"
 }

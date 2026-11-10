@@ -11,7 +11,7 @@
  "tilewidth": 16,
  "tileheight": 16,
  "nextlayerid": 5,
- "nextobjectid": 64,
+ "nextobjectid": 67,
  "layers": [
   {
    "id": 1,
@@ -1386,27 +1386,146 @@
       {
        "name": "von",
        "type": "string",
-       "value": "11,12"
+       "value": "9,12"
       },
       {
        "name": "bis",
        "type": "string",
-       "value": "15,12"
+       "value": "13,12"
       },
       {
        "name": "tun",
        "type": "string",
-       "value": "warten auf ihre Partie"
+       "value": "spielen Fangen um die Bretter"
       },
       {
        "name": "wann",
        "type": "string",
-       "value": "tag"
+       "value": "immer"
+      },
+      {
+       "name": "sagt",
+       "type": "string",
+       "value": "statist.portDelacroix.turnhalle.kinder"
       }
      ]
     },
     {
      "id": 7,
+     "name": "hausmeister",
+     "type": "statist",
+     "x": 80,
+     "y": 144,
+     "width": 16,
+     "height": 16,
+     "rotation": 0,
+     "visible": true,
+     "properties": [
+      {
+       "name": "von",
+       "type": "string",
+       "value": "2,9"
+      },
+      {
+       "name": "bis",
+       "type": "string",
+       "value": "8,9"
+      },
+      {
+       "name": "tun",
+       "type": "string",
+       "value": "wischt mit einem breiten Besen den Hallenboden"
+      },
+      {
+       "name": "wann",
+       "type": "string",
+       "value": "immer"
+      },
+      {
+       "name": "sagt",
+       "type": "string",
+       "value": "statist.portDelacroix.turnhalle.hausmeister"
+      }
+     ]
+    },
+    {
+     "id": 8,
+     "name": "zuschauerin",
+     "type": "statist",
+     "x": 320,
+     "y": 144,
+     "width": 16,
+     "height": 16,
+     "rotation": 0,
+     "visible": true,
+     "properties": [
+      {
+       "name": "von",
+       "type": "string",
+       "value": "20,9"
+      },
+      {
+       "name": "bis",
+       "type": "string",
+       "value": "20,9"
+      },
+      {
+       "name": "tun",
+       "type": "string",
+       "value": "steht mit verschränkten Armen am Rand und schaut zu"
+      },
+      {
+       "name": "wann",
+       "type": "string",
+       "value": "immer"
+      },
+      {
+       "name": "sagt",
+       "type": "string",
+       "value": "statist.portDelacroix.turnhalle.zuschauerin"
+      }
+     ]
+    },
+    {
+     "id": 9,
+     "name": "alterHerr",
+     "type": "statist",
+     "x": 192,
+     "y": 144,
+     "width": 16,
+     "height": 16,
+     "rotation": 0,
+     "visible": true,
+     "properties": [
+      {
+       "name": "von",
+       "type": "string",
+       "value": "12,9"
+      },
+      {
+       "name": "bis",
+       "type": "string",
+       "value": "12,9"
+      },
+      {
+       "name": "tun",
+       "type": "string",
+       "value": "sitzt auf einer umgedrehten Kiste und schaut aufs Brett"
+      },
+      {
+       "name": "wann",
+       "type": "string",
+       "value": "immer"
+      },
+      {
+       "name": "sagt",
+       "type": "string",
+       "value": "statist.portDelacroix.turnhalle.alterHerr"
+      }
+     ]
+    },
+    {
+     "id": 10,
      "name": "pd6SpielfeldQuer",
      "type": "moebel",
      "x": 96,
@@ -1429,7 +1548,7 @@
      ]
     },
     {
-     "id": 8,
+     "id": 11,
      "name": "pd6Fenster",
      "type": "moebel",
      "x": 32,
@@ -1452,7 +1571,7 @@
      ]
     },
     {
-     "id": 9,
+     "id": 12,
      "name": "pd6Fenster",
      "type": "moebel",
      "x": 128,
@@ -1475,7 +1594,7 @@
      ]
     },
     {
-     "id": 10,
+     "id": 13,
      "name": "pd6Fenster",
      "type": "moebel",
      "x": 256,
@@ -1498,7 +1617,7 @@
      ]
     },
     {
-     "id": 11,
+     "id": 14,
      "name": "pd6Fenster",
      "type": "moebel",
      "x": 352,
@@ -1521,7 +1640,7 @@
      ]
     },
     {
-     "id": 12,
+     "id": 15,
      "name": "pd6Plakat",
      "type": "moebel",
      "x": 224,
@@ -1544,7 +1663,7 @@
      ]
     },
     {
-     "id": 13,
+     "id": 16,
      "name": "pd6Basketballkorb",
      "type": "moebel",
      "x": 80,
@@ -1567,7 +1686,7 @@
      ]
     },
     {
-     "id": 14,
+     "id": 17,
      "name": "pd6Basketballkorb",
      "type": "moebel",
      "x": 304,
@@ -1590,7 +1709,7 @@
      ]
     },
     {
-     "id": 15,
+     "id": 18,
      "name": "pd6Pult",
      "type": "moebel",
      "x": 192,
@@ -1613,7 +1732,7 @@
      ]
     },
     {
-     "id": 16,
+     "id": 19,
      "name": "pd6Brettregal",
      "type": "moebel",
      "x": 16,
@@ -1636,7 +1755,7 @@
      ]
     },
     {
-     "id": 17,
+     "id": 20,
      "name": "pd6Brettregal",
      "type": "moebel",
      "x": 48,
@@ -1659,7 +1778,7 @@
      ]
     },
     {
-     "id": 18,
+     "id": 21,
      "name": "pd6Figurenkiste",
      "type": "moebel",
      "x": 80,
@@ -1682,7 +1801,7 @@
      ]
     },
     {
-     "id": 19,
+     "id": 22,
      "name": "pd6Klapptisch",
      "type": "moebel",
      "x": 48,
@@ -1696,75 +1815,6 @@
        "name": "tiefe",
        "type": "int",
        "value": 120
-      },
-      {
-       "name": "kollision",
-       "type": "bool",
-       "value": true
-      }
-     ]
-    },
-    {
-     "id": 20,
-     "name": "pd6Brett",
-     "type": "moebel",
-     "x": 58,
-     "y": 106,
-     "width": 12,
-     "height": 9,
-     "rotation": 0,
-     "visible": true,
-     "properties": [
-      {
-       "name": "tiefe",
-       "type": "int",
-       "value": 121
-      },
-      {
-       "name": "kollision",
-       "type": "bool",
-       "value": false
-      }
-     ]
-    },
-    {
-     "id": 21,
-     "name": "pd6StuhlVorn",
-     "type": "moebel",
-     "x": 48,
-     "y": 80,
-     "width": 16,
-     "height": 32,
-     "rotation": 0,
-     "visible": true,
-     "properties": [
-      {
-       "name": "tiefe",
-       "type": "int",
-       "value": 104
-      },
-      {
-       "name": "kollision",
-       "type": "bool",
-       "value": true
-      }
-     ]
-    },
-    {
-     "id": 22,
-     "name": "pd6StuhlRuecken",
-     "type": "moebel",
-     "x": 48,
-     "y": 112,
-     "width": 16,
-     "height": 32,
-     "rotation": 0,
-     "visible": true,
-     "properties": [
-      {
-       "name": "tiefe",
-       "type": "int",
-       "value": 136
       },
       {
        "name": "kollision",
@@ -1775,6 +1825,75 @@
     },
     {
      "id": 23,
+     "name": "pd6Brett",
+     "type": "moebel",
+     "x": 58,
+     "y": 106,
+     "width": 12,
+     "height": 9,
+     "rotation": 0,
+     "visible": true,
+     "properties": [
+      {
+       "name": "tiefe",
+       "type": "int",
+       "value": 121
+      },
+      {
+       "name": "kollision",
+       "type": "bool",
+       "value": false
+      }
+     ]
+    },
+    {
+     "id": 24,
+     "name": "pd6StuhlVorn",
+     "type": "moebel",
+     "x": 48,
+     "y": 80,
+     "width": 16,
+     "height": 32,
+     "rotation": 0,
+     "visible": true,
+     "properties": [
+      {
+       "name": "tiefe",
+       "type": "int",
+       "value": 104
+      },
+      {
+       "name": "kollision",
+       "type": "bool",
+       "value": true
+      }
+     ]
+    },
+    {
+     "id": 25,
+     "name": "pd6StuhlRuecken",
+     "type": "moebel",
+     "x": 48,
+     "y": 112,
+     "width": 16,
+     "height": 32,
+     "rotation": 0,
+     "visible": true,
+     "properties": [
+      {
+       "name": "tiefe",
+       "type": "int",
+       "value": 136
+      },
+      {
+       "name": "kollision",
+       "type": "bool",
+       "value": true
+      }
+     ]
+    },
+    {
+     "id": 26,
      "name": "pd6Klapptisch",
      "type": "moebel",
      "x": 48,
@@ -1797,7 +1916,7 @@
      ]
     },
     {
-     "id": 24,
+     "id": 27,
      "name": "pd6Brett",
      "type": "moebel",
      "x": 58,
@@ -1820,7 +1939,7 @@
      ]
     },
     {
-     "id": 25,
+     "id": 28,
      "name": "pd6StuhlVorn",
      "type": "moebel",
      "x": 48,
@@ -1843,7 +1962,7 @@
      ]
     },
     {
-     "id": 26,
+     "id": 29,
      "name": "pd6StuhlRuecken",
      "type": "moebel",
      "x": 48,
@@ -1857,75 +1976,6 @@
        "name": "tiefe",
        "type": "int",
        "value": 200
-      },
-      {
-       "name": "kollision",
-       "type": "bool",
-       "value": true
-      }
-     ]
-    },
-    {
-     "id": 27,
-     "name": "pd6Klapptisch",
-     "type": "moebel",
-     "x": 112,
-     "y": 96,
-     "width": 32,
-     "height": 32,
-     "rotation": 0,
-     "visible": true,
-     "properties": [
-      {
-       "name": "tiefe",
-       "type": "int",
-       "value": 120
-      },
-      {
-       "name": "kollision",
-       "type": "bool",
-       "value": true
-      }
-     ]
-    },
-    {
-     "id": 28,
-     "name": "pd6Brett",
-     "type": "moebel",
-     "x": 122,
-     "y": 106,
-     "width": 12,
-     "height": 9,
-     "rotation": 0,
-     "visible": true,
-     "properties": [
-      {
-       "name": "tiefe",
-       "type": "int",
-       "value": 121
-      },
-      {
-       "name": "kollision",
-       "type": "bool",
-       "value": false
-      }
-     ]
-    },
-    {
-     "id": 29,
-     "name": "pd6StuhlVorn",
-     "type": "moebel",
-     "x": 112,
-     "y": 80,
-     "width": 16,
-     "height": 32,
-     "rotation": 0,
-     "visible": true,
-     "properties": [
-      {
-       "name": "tiefe",
-       "type": "int",
-       "value": 104
       },
       {
        "name": "kollision",
@@ -1936,6 +1986,75 @@
     },
     {
      "id": 30,
+     "name": "pd6Klapptisch",
+     "type": "moebel",
+     "x": 112,
+     "y": 96,
+     "width": 32,
+     "height": 32,
+     "rotation": 0,
+     "visible": true,
+     "properties": [
+      {
+       "name": "tiefe",
+       "type": "int",
+       "value": 120
+      },
+      {
+       "name": "kollision",
+       "type": "bool",
+       "value": true
+      }
+     ]
+    },
+    {
+     "id": 31,
+     "name": "pd6Brett",
+     "type": "moebel",
+     "x": 122,
+     "y": 106,
+     "width": 12,
+     "height": 9,
+     "rotation": 0,
+     "visible": true,
+     "properties": [
+      {
+       "name": "tiefe",
+       "type": "int",
+       "value": 121
+      },
+      {
+       "name": "kollision",
+       "type": "bool",
+       "value": false
+      }
+     ]
+    },
+    {
+     "id": 32,
+     "name": "pd6StuhlVorn",
+     "type": "moebel",
+     "x": 112,
+     "y": 80,
+     "width": 16,
+     "height": 32,
+     "rotation": 0,
+     "visible": true,
+     "properties": [
+      {
+       "name": "tiefe",
+       "type": "int",
+       "value": 104
+      },
+      {
+       "name": "kollision",
+       "type": "bool",
+       "value": true
+      }
+     ]
+    },
+    {
+     "id": 33,
      "name": "pd6StuhlRuecken",
      "type": "moebel",
      "x": 112,
@@ -1958,7 +2077,7 @@
      ]
     },
     {
-     "id": 31,
+     "id": 34,
      "name": "pd6Klapptisch",
      "type": "moebel",
      "x": 112,
@@ -1981,7 +2100,7 @@
      ]
     },
     {
-     "id": 32,
+     "id": 35,
      "name": "pd6Brett",
      "type": "moebel",
      "x": 122,
@@ -2004,7 +2123,7 @@
      ]
     },
     {
-     "id": 33,
+     "id": 36,
      "name": "pd6StuhlVorn",
      "type": "moebel",
      "x": 112,
@@ -2027,7 +2146,7 @@
      ]
     },
     {
-     "id": 34,
+     "id": 37,
      "name": "pd6StuhlRuecken",
      "type": "moebel",
      "x": 112,
@@ -2041,75 +2160,6 @@
        "name": "tiefe",
        "type": "int",
        "value": 200
-      },
-      {
-       "name": "kollision",
-       "type": "bool",
-       "value": true
-      }
-     ]
-    },
-    {
-     "id": 35,
-     "name": "pd6Klapptisch",
-     "type": "moebel",
-     "x": 272,
-     "y": 96,
-     "width": 32,
-     "height": 32,
-     "rotation": 0,
-     "visible": true,
-     "properties": [
-      {
-       "name": "tiefe",
-       "type": "int",
-       "value": 120
-      },
-      {
-       "name": "kollision",
-       "type": "bool",
-       "value": true
-      }
-     ]
-    },
-    {
-     "id": 36,
-     "name": "pd6Brett",
-     "type": "moebel",
-     "x": 282,
-     "y": 106,
-     "width": 12,
-     "height": 9,
-     "rotation": 0,
-     "visible": true,
-     "properties": [
-      {
-       "name": "tiefe",
-       "type": "int",
-       "value": 121
-      },
-      {
-       "name": "kollision",
-       "type": "bool",
-       "value": false
-      }
-     ]
-    },
-    {
-     "id": 37,
-     "name": "pd6StuhlVorn",
-     "type": "moebel",
-     "x": 272,
-     "y": 80,
-     "width": 16,
-     "height": 32,
-     "rotation": 0,
-     "visible": true,
-     "properties": [
-      {
-       "name": "tiefe",
-       "type": "int",
-       "value": 104
       },
       {
        "name": "kollision",
@@ -2120,6 +2170,75 @@
     },
     {
      "id": 38,
+     "name": "pd6Klapptisch",
+     "type": "moebel",
+     "x": 272,
+     "y": 96,
+     "width": 32,
+     "height": 32,
+     "rotation": 0,
+     "visible": true,
+     "properties": [
+      {
+       "name": "tiefe",
+       "type": "int",
+       "value": 120
+      },
+      {
+       "name": "kollision",
+       "type": "bool",
+       "value": true
+      }
+     ]
+    },
+    {
+     "id": 39,
+     "name": "pd6Brett",
+     "type": "moebel",
+     "x": 282,
+     "y": 106,
+     "width": 12,
+     "height": 9,
+     "rotation": 0,
+     "visible": true,
+     "properties": [
+      {
+       "name": "tiefe",
+       "type": "int",
+       "value": 121
+      },
+      {
+       "name": "kollision",
+       "type": "bool",
+       "value": false
+      }
+     ]
+    },
+    {
+     "id": 40,
+     "name": "pd6StuhlVorn",
+     "type": "moebel",
+     "x": 272,
+     "y": 80,
+     "width": 16,
+     "height": 32,
+     "rotation": 0,
+     "visible": true,
+     "properties": [
+      {
+       "name": "tiefe",
+       "type": "int",
+       "value": 104
+      },
+      {
+       "name": "kollision",
+       "type": "bool",
+       "value": true
+      }
+     ]
+    },
+    {
+     "id": 41,
      "name": "pd6StuhlRuecken",
      "type": "moebel",
      "x": 272,
@@ -2142,7 +2261,7 @@
      ]
     },
     {
-     "id": 39,
+     "id": 42,
      "name": "pd6Klapptisch",
      "type": "moebel",
      "x": 272,
@@ -2165,7 +2284,7 @@
      ]
     },
     {
-     "id": 40,
+     "id": 43,
      "name": "pd6Brett",
      "type": "moebel",
      "x": 282,
@@ -2188,7 +2307,7 @@
      ]
     },
     {
-     "id": 41,
+     "id": 44,
      "name": "pd6StuhlVorn",
      "type": "moebel",
      "x": 272,
@@ -2211,7 +2330,7 @@
      ]
     },
     {
-     "id": 42,
+     "id": 45,
      "name": "pd6StuhlRuecken",
      "type": "moebel",
      "x": 272,
@@ -2234,7 +2353,7 @@
      ]
     },
     {
-     "id": 43,
+     "id": 46,
      "name": "pd6Klapptisch",
      "type": "moebel",
      "x": 336,
@@ -2257,7 +2376,7 @@
      ]
     },
     {
-     "id": 44,
+     "id": 47,
      "name": "pd6Brett",
      "type": "moebel",
      "x": 346,
@@ -2280,7 +2399,7 @@
      ]
     },
     {
-     "id": 45,
+     "id": 48,
      "name": "pd6StuhlVorn",
      "type": "moebel",
      "x": 336,
@@ -2303,7 +2422,7 @@
      ]
     },
     {
-     "id": 46,
+     "id": 49,
      "name": "pd6StuhlRuecken",
      "type": "moebel",
      "x": 336,
@@ -2326,7 +2445,7 @@
      ]
     },
     {
-     "id": 47,
+     "id": 50,
      "name": "pd6Klapptisch",
      "type": "moebel",
      "x": 336,
@@ -2349,7 +2468,7 @@
      ]
     },
     {
-     "id": 48,
+     "id": 51,
      "name": "pd6Brett",
      "type": "moebel",
      "x": 346,
@@ -2372,7 +2491,7 @@
      ]
     },
     {
-     "id": 49,
+     "id": 52,
      "name": "pd6StuhlVorn",
      "type": "moebel",
      "x": 336,
@@ -2395,7 +2514,7 @@
      ]
     },
     {
-     "id": 50,
+     "id": 53,
      "name": "pd6StuhlRuecken",
      "type": "moebel",
      "x": 336,
@@ -2418,7 +2537,7 @@
      ]
     },
     {
-     "id": 51,
+     "id": 54,
      "name": "pd6Spendenkasse",
      "type": "moebel",
      "x": 240,
@@ -2441,7 +2560,7 @@
      ]
     },
     {
-     "id": 52,
+     "id": 55,
      "name": "pd6Turnmatte",
      "type": "moebel",
      "x": 16,
@@ -2464,7 +2583,7 @@
      ]
     },
     {
-     "id": 53,
+     "id": 56,
      "name": "pd6Turnmatte",
      "type": "moebel",
      "x": 32,
@@ -2487,7 +2606,7 @@
      ]
     },
     {
-     "id": 54,
+     "id": 57,
      "name": "pd6Ball",
      "type": "moebel",
      "x": 64,
@@ -2510,7 +2629,7 @@
      ]
     },
     {
-     "id": 55,
+     "id": 58,
      "name": "pd6Ball",
      "type": "moebel",
      "x": 368,
@@ -2533,7 +2652,7 @@
      ]
     },
     {
-     "id": 56,
+     "id": 59,
      "name": "pd6Bank",
      "type": "moebel",
      "x": 272,
@@ -2556,7 +2675,7 @@
      ]
     },
     {
-     "id": 57,
+     "id": 60,
      "name": "pd6Bank",
      "type": "moebel",
      "x": 336,
@@ -2579,7 +2698,7 @@
      ]
     },
     {
-     "id": 58,
+     "id": 61,
      "name": "pd6Bank",
      "type": "moebel",
      "x": 80,
@@ -2602,7 +2721,7 @@
      ]
     },
     {
-     "id": 59,
+     "id": 62,
      "name": "pd6Kistenstapel",
      "type": "moebel",
      "x": 368,
@@ -2625,7 +2744,7 @@
      ]
     },
     {
-     "id": 60,
+     "id": 63,
      "name": "pd6Kiste",
      "type": "moebel",
      "x": 352,
@@ -2648,7 +2767,7 @@
      ]
     },
     {
-     "id": 61,
+     "id": 64,
      "name": "pd6Kiste",
      "type": "moebel",
      "x": 16,
@@ -2671,7 +2790,7 @@
      ]
     },
     {
-     "id": 62,
+     "id": 65,
      "name": "pd6Fussmatte",
      "type": "moebel",
      "x": 208,
@@ -2694,7 +2813,7 @@
      ]
     },
     {
-     "id": 63,
+     "id": 66,
      "name": "pd6Tuer",
      "type": "moebel",
      "x": 208,

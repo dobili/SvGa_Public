@@ -8,6 +8,7 @@
     "stadt": "modern-exteriors/Modern_Exteriors_16x16/ME_Theme_Sorter_16x16/2_City_Terrains_16x16.png",
     "fels": "spiel/eigene/fels.png",
     "wasser_stein": "spiel/eigene/wasser_stein.png",
+    "moor": "spiel/eigene/wasser_moor.png",
     "damm": "spiel/eigene/damm.png",
     "felsRot": "spiel/eigene/fels_rot.png",
     "wasser_rumpf": "spiel/eigene/wasser_rumpf.png",
@@ -191,6 +192,11 @@
         ],
         "anteil": 24
       }
+    },
+    "wasser_moor": {
+      "bogen": "moor",
+      "feld": [1, 1],
+      "rand": [0, 0]
     },
     "sandRot": {
       "bogen": "felsRot",

@@ -51,6 +51,10 @@ Szene heißt die Datei in `inhalte/abenteuer/szenen/` ohne `.json`.
 - [ ] port-delacroix-musikhaus (Runde 9, mittel-1)
 - [ ] port-delacroix-werkstatt (Runde 9, mittel-1)
 - [ ] port-delacroix-turnhalle (Runde 9, mittel-1)
+- [ ] capital-arena-aussen (Runde 9, mittel-1; Bilder `bildwuensche/laeden_schilder.py`)
+- [ ] capital-arena-innenstadt (Runde 9, mittel-1; Bilder `bildwuensche/laeden_schilder.py`)
+- [ ] capital-arena-halle (Runde 9, Fassung C, mittel-1)
+- [ ] capital-arena-ubahnhof (Runde 9, mittel-1; Bild `bildwuensche/ubahn_rollgitter.py`)
 
 ## Erledigt
 

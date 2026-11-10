@@ -41,6 +41,15 @@ LAEDEN = {
     "laden_kaffee": ("Market_Medium_3", "KAFFEE"),
     "laden_mode": ("Market_Small_3", "MODE"),
     "laden_spielwaren": ("Market_Medium_4", "SPIELWAREN"),
+    "laden_schuhe": ("Market_Small_8", "SCHUHE"),
+    "laden_uhren": ("Market_Small_10", "UHREN"),
+    "laden_feinkost": ("Market_Medium_1", "FEINKOST"),
+    "laden_kaufhaus": ("Market_Big_1", "KAUFHAUS"),
+    "laden_elektro": ("Market_Big_2", "ELEKTRO"),
+    "laden_sport": ("Market_Big_3", "SPORT"),
+    "laden_wohnen": ("Market_Big_4", "WOHNEN"),
+    "laden_galerie": ("Market_Big_5", "GALERIE"),
+    "laden_warenhaus": ("Market_Big_6", "WARENHAUS"),
 }
 SCHRIFT = {
     "A": [".#.", "#.#", "###", "#.#", "#.#"],

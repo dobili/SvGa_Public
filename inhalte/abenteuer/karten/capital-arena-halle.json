@@ -11,7 +11,7 @@
  "tilewidth": 16,
  "tileheight": 16,
  "nextlayerid": 5,
- "nextobjectid": 79,
+ "nextobjectid": 82,
  "layers": [
   {
    "id": 1,
@@ -1895,8 +1895,8 @@
      "id": 3,
      "name": "turniertafel",
      "type": "ausloeser",
-     "x": 432,
-     "y": 256,
+     "x": 304,
+     "y": 48,
      "width": 16,
      "height": 16,
      "rotation": 0,
@@ -1962,7 +1962,7 @@
      "name": "nova",
      "type": "figur",
      "x": 176,
-     "y": 160,
+     "y": 176,
      "width": 16,
      "height": 16,
      "rotation": 0,
@@ -2060,8 +2060,8 @@
      "id": 18,
      "name": "zuschauer",
      "type": "statist",
-     "x": 112,
-     "y": 240,
+     "x": 48,
+     "y": 272,
      "width": 16,
      "height": 16,
      "rotation": 0,
@@ -2098,8 +2098,8 @@
      "id": 19,
      "name": "reporter",
      "type": "statist",
-     "x": 320,
-     "y": 240,
+     "x": 352,
+     "y": 256,
      "width": 16,
      "height": 16,
      "rotation": 0,
@@ -2486,19 +2486,19 @@
     },
     {
      "id": 34,
-     "name": "ca7Tribuene",
+     "name": "ca7Rundtisch",
      "type": "moebel",
-     "x": 16,
-     "y": 112,
-     "width": 64,
-     "height": 48,
+     "x": 128,
+     "y": 144,
+     "width": 32,
+     "height": 32,
      "rotation": 0,
      "visible": true,
      "properties": [
       {
        "name": "tiefe",
        "type": "int",
-       "value": 152
+       "value": 168
       },
       {
        "name": "kollision",
@@ -2509,34 +2509,34 @@
     },
     {
      "id": 35,
-     "name": "ca7Tribuene",
+     "name": "ca7Brett",
      "type": "moebel",
-     "x": 400,
-     "y": 112,
-     "width": 64,
-     "height": 48,
+     "x": 138,
+     "y": 154,
+     "width": 12,
+     "height": 9,
      "rotation": 0,
      "visible": true,
      "properties": [
       {
        "name": "tiefe",
        "type": "int",
-       "value": 152
+       "value": 169
       },
       {
        "name": "kollision",
        "type": "bool",
-       "value": true
+       "value": false
       }
      ]
     },
     {
      "id": 36,
-     "name": "ca7Rundtisch",
+     "name": "ca7StuhlRechts",
      "type": "moebel",
-     "x": 128,
+     "x": 112,
      "y": 144,
-     "width": 32,
+     "width": 16,
      "height": 32,
      "rotation": 0,
      "visible": true,
@@ -2555,34 +2555,34 @@
     },
     {
      "id": 37,
-     "name": "ca7Brett",
+     "name": "ca7StuhlLinks",
      "type": "moebel",
-     "x": 138,
-     "y": 154,
-     "width": 12,
-     "height": 9,
+     "x": 160,
+     "y": 144,
+     "width": 16,
+     "height": 32,
      "rotation": 0,
      "visible": true,
      "properties": [
       {
        "name": "tiefe",
        "type": "int",
-       "value": 169
+       "value": 168
       },
       {
        "name": "kollision",
        "type": "bool",
-       "value": false
+       "value": true
       }
      ]
     },
     {
      "id": 38,
-     "name": "ca7StuhlRechts",
+     "name": "ca7Rundtisch",
      "type": "moebel",
-     "x": 112,
+     "x": 208,
      "y": 144,
-     "width": 16,
+     "width": 32,
      "height": 32,
      "rotation": 0,
      "visible": true,
@@ -2601,34 +2601,34 @@
     },
     {
      "id": 39,
-     "name": "ca7StuhlLinks",
+     "name": "ca7Brett",
      "type": "moebel",
-     "x": 160,
-     "y": 144,
-     "width": 16,
-     "height": 32,
+     "x": 218,
+     "y": 154,
+     "width": 12,
+     "height": 9,
      "rotation": 0,
      "visible": true,
      "properties": [
       {
        "name": "tiefe",
        "type": "int",
-       "value": 168
+       "value": 169
       },
       {
        "name": "kollision",
        "type": "bool",
-       "value": true
+       "value": false
       }
      ]
     },
     {
      "id": 40,
-     "name": "ca7Rundtisch",
+     "name": "ca7StuhlRechts",
      "type": "moebel",
-     "x": 208,
+     "x": 192,
      "y": 144,
-     "width": 32,
+     "width": 16,
      "height": 32,
      "rotation": 0,
      "visible": true,
@@ -2647,34 +2647,34 @@
     },
     {
      "id": 41,
-     "name": "ca7Brett",
+     "name": "ca7StuhlLinks",
      "type": "moebel",
-     "x": 218,
-     "y": 154,
-     "width": 12,
-     "height": 9,
+     "x": 240,
+     "y": 144,
+     "width": 16,
+     "height": 32,
      "rotation": 0,
      "visible": true,
      "properties": [
       {
        "name": "tiefe",
        "type": "int",
-       "value": 169
+       "value": 168
       },
       {
        "name": "kollision",
        "type": "bool",
-       "value": false
+       "value": true
       }
      ]
     },
     {
      "id": 42,
-     "name": "ca7StuhlRechts",
+     "name": "ca7Rundtisch",
      "type": "moebel",
-     "x": 192,
+     "x": 288,
      "y": 144,
-     "width": 16,
+     "width": 32,
      "height": 32,
      "rotation": 0,
      "visible": true,
@@ -2693,52 +2693,6 @@
     },
     {
      "id": 43,
-     "name": "ca7StuhlLinks",
-     "type": "moebel",
-     "x": 240,
-     "y": 144,
-     "width": 16,
-     "height": 32,
-     "rotation": 0,
-     "visible": true,
-     "properties": [
-      {
-       "name": "tiefe",
-       "type": "int",
-       "value": 168
-      },
-      {
-       "name": "kollision",
-       "type": "bool",
-       "value": true
-      }
-     ]
-    },
-    {
-     "id": 44,
-     "name": "ca7Rundtisch",
-     "type": "moebel",
-     "x": 288,
-     "y": 144,
-     "width": 32,
-     "height": 32,
-     "rotation": 0,
-     "visible": true,
-     "properties": [
-      {
-       "name": "tiefe",
-       "type": "int",
-       "value": 168
-      },
-      {
-       "name": "kollision",
-       "type": "bool",
-       "value": true
-      }
-     ]
-    },
-    {
-     "id": 45,
      "name": "ca7Brett",
      "type": "moebel",
      "x": 298,
@@ -2761,7 +2715,7 @@
      ]
     },
     {
-     "id": 46,
+     "id": 44,
      "name": "ca7StuhlRechts",
      "type": "moebel",
      "x": 272,
@@ -2784,7 +2738,7 @@
      ]
     },
     {
-     "id": 47,
+     "id": 45,
      "name": "ca7StuhlLinks",
      "type": "moebel",
      "x": 320,
@@ -2807,12 +2761,58 @@
      ]
     },
     {
-     "id": 48,
+     "id": 46,
      "name": "ca7Rundtisch",
      "type": "moebel",
      "x": 128,
      "y": 192,
      "width": 32,
+     "height": 32,
+     "rotation": 0,
+     "visible": true,
+     "properties": [
+      {
+       "name": "tiefe",
+       "type": "int",
+       "value": 216
+      },
+      {
+       "name": "kollision",
+       "type": "bool",
+       "value": true
+      }
+     ]
+    },
+    {
+     "id": 47,
+     "name": "ca7Brett",
+     "type": "moebel",
+     "x": 138,
+     "y": 202,
+     "width": 12,
+     "height": 9,
+     "rotation": 0,
+     "visible": true,
+     "properties": [
+      {
+       "name": "tiefe",
+       "type": "int",
+       "value": 217
+      },
+      {
+       "name": "kollision",
+       "type": "bool",
+       "value": false
+      }
+     ]
+    },
+    {
+     "id": 48,
+     "name": "ca7StuhlRechts",
+     "type": "moebel",
+     "x": 112,
+     "y": 192,
+     "width": 16,
      "height": 32,
      "rotation": 0,
      "visible": true,
@@ -2831,52 +2831,6 @@
     },
     {
      "id": 49,
-     "name": "ca7Brett",
-     "type": "moebel",
-     "x": 138,
-     "y": 202,
-     "width": 12,
-     "height": 9,
-     "rotation": 0,
-     "visible": true,
-     "properties": [
-      {
-       "name": "tiefe",
-       "type": "int",
-       "value": 217
-      },
-      {
-       "name": "kollision",
-       "type": "bool",
-       "value": false
-      }
-     ]
-    },
-    {
-     "id": 50,
-     "name": "ca7StuhlRechts",
-     "type": "moebel",
-     "x": 112,
-     "y": 192,
-     "width": 16,
-     "height": 32,
-     "rotation": 0,
-     "visible": true,
-     "properties": [
-      {
-       "name": "tiefe",
-       "type": "int",
-       "value": 216
-      },
-      {
-       "name": "kollision",
-       "type": "bool",
-       "value": true
-      }
-     ]
-    },
-    {
-     "id": 51,
      "name": "ca7StuhlLinks",
      "type": "moebel",
      "x": 160,
@@ -2899,7 +2853,7 @@
      ]
     },
     {
-     "id": 52,
+     "id": 50,
      "name": "ca7Rundtisch",
      "type": "moebel",
      "x": 208,
@@ -2922,7 +2876,7 @@
      ]
     },
     {
-     "id": 53,
+     "id": 51,
      "name": "ca7Brett",
      "type": "moebel",
      "x": 218,
@@ -2945,7 +2899,7 @@
      ]
     },
     {
-     "id": 54,
+     "id": 52,
      "name": "ca7StuhlRechts",
      "type": "moebel",
      "x": 192,
@@ -2968,7 +2922,7 @@
      ]
     },
     {
-     "id": 55,
+     "id": 53,
      "name": "ca7StuhlLinks",
      "type": "moebel",
      "x": 240,
@@ -2991,7 +2945,7 @@
      ]
     },
     {
-     "id": 56,
+     "id": 54,
      "name": "ca7Rundtisch",
      "type": "moebel",
      "x": 288,
@@ -3014,7 +2968,7 @@
      ]
     },
     {
-     "id": 57,
+     "id": 55,
      "name": "ca7Brett",
      "type": "moebel",
      "x": 298,
@@ -3037,7 +2991,7 @@
      ]
     },
     {
-     "id": 58,
+     "id": 56,
      "name": "ca7StuhlRechts",
      "type": "moebel",
      "x": 272,
@@ -3060,7 +3014,7 @@
      ]
     },
     {
-     "id": 59,
+     "id": 57,
      "name": "ca7StuhlLinks",
      "type": "moebel",
      "x": 320,
@@ -3083,7 +3037,7 @@
      ]
     },
     {
-     "id": 60,
+     "id": 58,
      "name": "ca7Rundtisch",
      "type": "moebel",
      "x": 128,
@@ -3106,7 +3060,7 @@
      ]
     },
     {
-     "id": 61,
+     "id": 59,
      "name": "ca7Brett",
      "type": "moebel",
      "x": 138,
@@ -3129,7 +3083,7 @@
      ]
     },
     {
-     "id": 62,
+     "id": 60,
      "name": "ca7StuhlRechts",
      "type": "moebel",
      "x": 112,
@@ -3152,7 +3106,7 @@
      ]
     },
     {
-     "id": 63,
+     "id": 61,
      "name": "ca7StuhlLinks",
      "type": "moebel",
      "x": 160,
@@ -3175,7 +3129,7 @@
      ]
     },
     {
-     "id": 64,
+     "id": 62,
      "name": "ca7Rundtisch",
      "type": "moebel",
      "x": 208,
@@ -3198,7 +3152,7 @@
      ]
     },
     {
-     "id": 65,
+     "id": 63,
      "name": "ca7Brett",
      "type": "moebel",
      "x": 218,
@@ -3221,7 +3175,7 @@
      ]
     },
     {
-     "id": 66,
+     "id": 64,
      "name": "ca7StuhlRechts",
      "type": "moebel",
      "x": 192,
@@ -3244,7 +3198,7 @@
      ]
     },
     {
-     "id": 67,
+     "id": 65,
      "name": "ca7StuhlLinks",
      "type": "moebel",
      "x": 240,
@@ -3267,7 +3221,7 @@
      ]
     },
     {
-     "id": 68,
+     "id": 66,
      "name": "ca7Rundtisch",
      "type": "moebel",
      "x": 288,
@@ -3290,7 +3244,7 @@
      ]
     },
     {
-     "id": 69,
+     "id": 67,
      "name": "ca7Brett",
      "type": "moebel",
      "x": 298,
@@ -3313,7 +3267,7 @@
      ]
     },
     {
-     "id": 70,
+     "id": 68,
      "name": "ca7StuhlRechts",
      "type": "moebel",
      "x": 272,
@@ -3336,7 +3290,7 @@
      ]
     },
     {
-     "id": 71,
+     "id": 69,
      "name": "ca7StuhlLinks",
      "type": "moebel",
      "x": 320,
@@ -3359,7 +3313,7 @@
      ]
     },
     {
-     "id": 72,
+     "id": 70,
      "name": "ca7Pressetisch",
      "type": "moebel",
      "x": 16,
@@ -3382,7 +3336,7 @@
      ]
     },
     {
-     "id": 73,
+     "id": 71,
      "name": "ca7Fanshop",
      "type": "moebel",
      "x": 400,
@@ -3405,30 +3359,7 @@
      ]
     },
     {
-     "id": 74,
-     "name": "ca7Tafel",
-     "type": "moebel",
-     "x": 432,
-     "y": 240,
-     "width": 32,
-     "height": 32,
-     "rotation": 0,
-     "visible": true,
-     "properties": [
-      {
-       "name": "tiefe",
-       "type": "int",
-       "value": 264
-      },
-      {
-       "name": "kollision",
-       "type": "bool",
-       "value": true
-      }
-     ]
-    },
-    {
-     "id": 75,
+     "id": 72,
      "name": "ca7Pflanzekl",
      "type": "moebel",
      "x": 16,
@@ -3451,7 +3382,7 @@
      ]
     },
     {
-     "id": 76,
+     "id": 73,
      "name": "ca7Muelleimer",
      "type": "moebel",
      "x": 80,
@@ -3474,7 +3405,7 @@
      ]
     },
     {
-     "id": 77,
+     "id": 74,
      "name": "ca7Fussmatte",
      "type": "moebel",
      "x": 240,
@@ -3497,7 +3428,7 @@
      ]
     },
     {
-     "id": 78,
+     "id": 75,
      "name": "ca7Tuer",
      "type": "moebel",
      "x": 240,
@@ -3516,6 +3447,144 @@
        "name": "kollision",
        "type": "bool",
        "value": false
+      }
+     ]
+    },
+    {
+     "id": 76,
+     "name": "ca9Turniertafel",
+     "type": "moebel",
+     "x": 304,
+     "y": 14,
+     "width": 32,
+     "height": 32,
+     "rotation": 0,
+     "visible": true,
+     "properties": [
+      {
+       "name": "tiefe",
+       "type": "int",
+       "value": 0
+      },
+      {
+       "name": "kollision",
+       "type": "bool",
+       "value": false
+      }
+     ]
+    },
+    {
+     "id": 77,
+     "name": "ca7Pflanzekl",
+     "type": "moebel",
+     "x": 400,
+     "y": 256,
+     "width": 16,
+     "height": 32,
+     "rotation": 0,
+     "visible": true,
+     "properties": [
+      {
+       "name": "tiefe",
+       "type": "int",
+       "value": 280
+      },
+      {
+       "name": "kollision",
+       "type": "bool",
+       "value": true
+      }
+     ]
+    },
+    {
+     "id": 78,
+     "name": "ca7Pflanzekl",
+     "type": "moebel",
+     "x": 448,
+     "y": 256,
+     "width": 16,
+     "height": 32,
+     "rotation": 0,
+     "visible": true,
+     "properties": [
+      {
+       "name": "tiefe",
+       "type": "int",
+       "value": 280
+      },
+      {
+       "name": "kollision",
+       "type": "bool",
+       "value": true
+      }
+     ]
+    },
+    {
+     "id": 79,
+     "name": "ca7Muelleimer",
+     "type": "moebel",
+     "x": 368,
+     "y": 256,
+     "width": 16,
+     "height": 32,
+     "rotation": 0,
+     "visible": true,
+     "properties": [
+      {
+       "name": "tiefe",
+       "type": "int",
+       "value": 280
+      },
+      {
+       "name": "kollision",
+       "type": "bool",
+       "value": true
+      }
+     ]
+    },
+    {
+     "id": 80,
+     "name": "ca7Pflanze",
+     "type": "moebel",
+     "x": 16,
+     "y": 112,
+     "width": 32,
+     "height": 48,
+     "rotation": 0,
+     "visible": true,
+     "properties": [
+      {
+       "name": "tiefe",
+       "type": "int",
+       "value": 152
+      },
+      {
+       "name": "kollision",
+       "type": "bool",
+       "value": true
+      }
+     ]
+    },
+    {
+     "id": 81,
+     "name": "ca7Pflanze",
+     "type": "moebel",
+     "x": 432,
+     "y": 112,
+     "width": 32,
+     "height": 48,
+     "rotation": 0,
+     "visible": true,
+     "properties": [
+      {
+       "name": "tiefe",
+       "type": "int",
+       "value": 152
+      },
+      {
+       "name": "kollision",
+       "type": "bool",
+       "value": true
       }
      ]
     }

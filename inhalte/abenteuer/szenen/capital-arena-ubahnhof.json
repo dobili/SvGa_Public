@@ -245,16 +245,6 @@
       "feld": [32, 7]
     },
     {
-      "moebel": "ca7Fussmatte",
-      "feld": [18, 18],
-      "versatz": [0, 8]
-    },
-    {
-      "moebel": "ca7Tuer",
-      "feld": [18, 19],
-      "an_wand": true
-    },
-    {
       "moebel": "ca8KlapptischBrett",
       "feld": [10, 11]
     },
@@ -309,15 +299,50 @@
     },
     {
       "moebel": "ci8Drehkreuz",
-      "feld": [14, 14]
+      "feld": [15, 13]
     },
     {
       "moebel": "ci8Drehkreuz",
-      "feld": [21, 14]
+      "feld": [20, 13]
     },
     {
       "moebel": "ci8Kreidespringer",
       "feld": [8, 15]
+    },
+    {
+      "moebel": "ca9Treppe",
+      "feld": [17, 16],
+      "bauteil_ok": true
+    },
+    {
+      "moebel": "ca9Rollgitter",
+      "feld": [17, 19],
+      "an_wand": true,
+      "versatz": [-8, 0]
+    },
+    {
+      "moebel": "ca9Hocker",
+      "feld": [9, 12]
+    },
+    {
+      "moebel": "ca9Hocker",
+      "feld": [12, 12]
+    },
+    {
+      "moebel": "ca9Hocker",
+      "feld": [16, 12]
+    },
+    {
+      "moebel": "ca9Hocker",
+      "feld": [19, 12]
+    },
+    {
+      "moebel": "ca9Hocker",
+      "feld": [23, 12]
+    },
+    {
+      "moebel": "ca9Hocker",
+      "feld": [26, 12]
     }
   ],
   "ausloeser": [
@@ -347,7 +372,7 @@
     {
       "name": "zuschauer",
       "typ": "statist",
-      "feld": [12, 16],
+      "feld": [9, 12],
       "eigenschaften": {
         "von": "10,16",
         "bis": "26,16",

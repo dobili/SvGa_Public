@@ -820,3 +820,45 @@ Gutachten `maple-falls-cedar-creek-2.md` und `weg-maple-cedar-2.md`.
 - **Sturmholz neben dem Weg:** Bei Spalte 38 liegen die Stämme quer über dem Weg (flach, man steigt
   darüber), daneben Äste.
 - **Wald:** Er ist auf allen freien Feldern dichter, mit Abstand zum Weg.
+
+## Drittes Gutachten Runde 8: Antworten (niedrig-1, 10.11.2026)
+
+Gutachten `docs/spiel/auftraege/gutachten/niedrig-1-3.md`. Die Straßenmarkierung (8588ba4d) sah
+der Gutachter noch nicht.
+
+- **Lockport:**
+  - Der Kahn liegt am Südkai, zwei Seile gehen zu den Pollern.
+  - Statt sechs gleicher Schuppen stehen drei, dazu Beet, Baum und Blumen.
+  - Das kleine Blumensymbol am Schiffsausrüster ist weg.
+  - Die Tore gelten als lesbar. Das Bild mit Laufsteg (a4f3a8a2) ist erst ab dem nächsten Rendern
+    des Hintergrunds zu sehen.
+- **Gasthaus:**
+  - Die Tafel trägt „KEGEL KOENIG“ mit Kreidezeilen (Bildwunsch `tafel_kegelkoenig.png`).
+  - Das Kugelregal steht frontal unter der Bahn statt an der Westwand.
+  - Fußmatte vor der Tür, Gläser auf allen Tischen.
+- **Bahndamm:**
+  - Der Rest des Abstellgleises ist Gras.
+  - Die Kuhweide hat einen Zaun ringsum, im Süden mit Gatter am Durchlass. Die Nordmündung des
+    Durchlasses liegt in der Böschung, die vom Betrachter wegfällt, und ist nicht zu sehen.
+- **Maple Falls:**
+  - Der gelbe Flachdachblock ist eine Blockhütte mit Baum.
+  - Am Wendehammer steht ein Schild „Sackgasse“ (Bildwunsch). Der Hammer bleibt eckig, weil
+    Asphalt mindestens drei Felder breit sein muss.
+  - Der blaue Schuppen im Südgarten ist rot.
+- **Park:**
+  - Die Krähen sitzen am Ufer, die Enten schwimmen im Teich.
+  - Die Straßenbrücke deckt den Fluss auf ihrer ganzen Breite ab, das Wasser läuft darunter durch.
+  - Die Holzbrücke kommt mit Gemini-Prompt 2.
+- **Cedar Creek:**
+  - Die Hecke ist doppelt.
+  - Der westliche Pflasterstreifen ist schmaler.
+  - Der Bus steht längs in seiner Bucht. Sein Bild ist vier Reihen hoch, so berührt er die Kante
+    der Bucht, nicht den Gehweg.
+- **Flussweg:**
+  - Der Nebel ist weg; die Karte spielt am Tag.
+  - Die Ruderboote liegen längs zum Ufer zu beiden Seiten des Stegs.
+- **Landstraße:**
+  - Der Traktor steht längs am Straßenrand (10.65).
+  - Der „Esel“ ist das Bild der Wildpferde; das gehört zur Tierzuordnung wie die Ziegen.
+- **Zedernpfad:** Der Steinkreis ist geschlossen (zwölf Steine um die Bank). Die orangen
+  Platzhalter an den Stufenenden löst mittel-4 zentral.

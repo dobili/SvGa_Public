@@ -44,6 +44,10 @@ Bilder (in ``spiel/eigene/``, Breite × Höhe in Pixeln):
   mit einem kleinen Glanzpunkt, damit man ihn findet.
 - ``fassade_london_d_tief.png`` (80 × 144): Front A mit Ladenschild „HUETE“ statt „TABAK“ (Hutmacher),
   damit am Strand kein Laden doppelt steht.
+- ``tafel_kegelkoenig.png`` (32 × 32): Wandtafel des Gasthauses mit „KEGEL-KOENIG“ und drei
+  Kreidezeilen (Namen mit Strichen), Holzrahmen (Gutachten: Tafel leer).
+- ``schild_sackgasse.png`` (16 × 32): Verkehrsschild Sackgasse (blaues Quadrat, weißer Balken mit
+  rotem Querbalken oben) an einem grauen Pfosten, für den Wendehammer der Birch Lane.
 
 Aufruf: python niedrig1_runde9_karten.py /home/user/schach-abenteuer-inhalte
 """
@@ -355,6 +359,45 @@ def fassade_london_d(haupt: Path) -> Image.Image:
     return bild
 
 
+TAFEL_GRUEN = (40, 64, 52, 255)
+KREIDE = (226, 226, 214, 255)
+BLAU_SCHILD = (40, 92, 170, 255)
+ROT_SCHILD = (196, 40, 40, 255)
+WEISS_SCHILD = (245, 245, 245, 255)
+GRAU_PFOSTEN = (140, 142, 150, 255)
+
+
+def tafel_kegelkoenig() -> Image.Image:
+    """Wandtafel 32 × 32: Holzrahmen, grüne Fläche, oben „KEGEL“, darunter „KOENIG“, dann drei
+    Zeilen aus Kreidestrichen (Namen und Wurfzahlen)."""
+    bild = Image.new("RGBA", (32, 32))
+    z = ImageDraw.Draw(bild)
+    z.rectangle((1, 2, 30, 29), fill=RAHMEN)
+    z.rectangle((2, 3, 29, 28), fill=HOLZ_PB)
+    z.rectangle((4, 5, 27, 26), fill=TAFEL_GRUEN)
+    for wort, y in (("KEGEL", 6), ("KOENIG", 12)):
+        schreibe(z, wort, 4 + (24 - textbreite(wort)) // 2, y, KREIDE)
+    for y in (19, 22, 25):
+        z.line((6, y, 15, y), fill=KREIDE)
+        for x in range(18, 26, 2):
+            z.line((x, y - 1, x, y), fill=KREIDE)
+    return bild
+
+
+def schild_sackgasse() -> Image.Image:
+    """Verkehrsschild Sackgasse 16 × 32: grauer Pfosten, oben ein blaues Quadrat mit weißem
+    senkrechtem Balken und rotem Querbalken an seinem Ende."""
+    bild = Image.new("RGBA", (16, 32))
+    z = ImageDraw.Draw(bild)
+    z.rectangle((7, 12, 8, 31), fill=GRAU_PFOSTEN)
+    z.rectangle((2, 1, 13, 12), fill=RAHMEN)
+    z.rectangle((3, 2, 12, 11), fill=BLAU_SCHILD)
+    z.rectangle((7, 5, 8, 10), fill=WEISS_SCHILD)
+    z.rectangle((5, 3, 10, 4), fill=ROT_SCHILD)
+    z.rectangle((6, 30, 9, 31), fill=(58, 58, 80, 90))
+    return bild
+
+
 def main(haupt: Path) -> None:
     ziel = haupt / "spiel" / "eigene"
     fenster_nacht(haupt).save(ziel / "fenster_nacht.png")
@@ -373,6 +416,8 @@ def main(haupt: Path) -> None:
     lore_vorn().save(ziel / "lore_vorn.png")
     schwingtuer().save(ziel / "schwingtuer.png")
     abzeichen_postreiter().save(ziel / "abzeichen_postreiter.png")
+    tafel_kegelkoenig().save(ziel / "tafel_kegelkoenig.png")
+    schild_sackgasse().save(ziel / "schild_sackgasse.png")
 
 
 if __name__ == "__main__":

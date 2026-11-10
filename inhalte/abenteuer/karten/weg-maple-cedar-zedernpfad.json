@@ -11,7 +11,7 @@
  "tilewidth": 16,
  "tileheight": 16,
  "nextlayerid": 5,
- "nextobjectid": 278,
+ "nextobjectid": 280,
  "layers": [
   {
    "id": 1,
@@ -9267,29 +9267,6 @@
     },
     {
      "id": 88,
-     "name": "wg4Zeder",
-     "type": "moebel",
-     "x": 816,
-     "y": 32,
-     "width": 32,
-     "height": 64,
-     "rotation": 0,
-     "visible": true,
-     "properties": [
-      {
-       "name": "tiefe",
-       "type": "int",
-       "value": 88
-      },
-      {
-       "name": "kollision",
-       "type": "bool",
-       "value": true
-      }
-     ]
-    },
-    {
-     "id": 89,
      "name": "wg4Farn",
      "type": "moebel",
      "x": 880,
@@ -9312,7 +9289,7 @@
      ]
     },
     {
-     "id": 90,
+     "id": 89,
      "name": "wg4Zeder",
      "type": "moebel",
      "x": 1200,
@@ -9335,7 +9312,7 @@
      ]
     },
     {
-     "id": 91,
+     "id": 90,
      "name": "wg4Zeder",
      "type": "moebel",
      "x": 1344,
@@ -9358,7 +9335,7 @@
      ]
     },
     {
-     "id": 92,
+     "id": 91,
      "name": "wg4Farn",
      "type": "moebel",
      "x": 1552,
@@ -9381,7 +9358,7 @@
      ]
     },
     {
-     "id": 93,
+     "id": 92,
      "name": "wg4Farn",
      "type": "moebel",
      "x": 144,
@@ -9404,7 +9381,7 @@
      ]
     },
     {
-     "id": 94,
+     "id": 93,
      "name": "wg4Farn",
      "type": "moebel",
      "x": 528,
@@ -9427,7 +9404,7 @@
      ]
     },
     {
-     "id": 95,
+     "id": 94,
      "name": "wg4Farn",
      "type": "moebel",
      "x": 1232,
@@ -9450,7 +9427,7 @@
      ]
     },
     {
-     "id": 96,
+     "id": 95,
      "name": "wg4Farn",
      "type": "moebel",
      "x": 1440,
@@ -9473,7 +9450,7 @@
      ]
     },
     {
-     "id": 97,
+     "id": 96,
      "name": "wg4Farn",
      "type": "moebel",
      "x": 656,
@@ -9496,7 +9473,7 @@
      ]
     },
     {
-     "id": 98,
+     "id": 97,
      "name": "wg4Farn",
      "type": "moebel",
      "x": 1296,
@@ -9519,7 +9496,7 @@
      ]
     },
     {
-     "id": 99,
+     "id": 98,
      "name": "wg4Farn",
      "type": "moebel",
      "x": 976,
@@ -9542,7 +9519,7 @@
      ]
     },
     {
-     "id": 100,
+     "id": 99,
      "name": "wg4Farn",
      "type": "moebel",
      "x": 512,
@@ -9565,7 +9542,7 @@
      ]
     },
     {
-     "id": 101,
+     "id": 100,
      "name": "wg4Farn",
      "type": "moebel",
      "x": 448,
@@ -9588,7 +9565,7 @@
      ]
     },
     {
-     "id": 102,
+     "id": 101,
      "name": "wg4Farn",
      "type": "moebel",
      "x": 1280,
@@ -9611,7 +9588,7 @@
      ]
     },
     {
-     "id": 103,
+     "id": 102,
      "name": "wg4Farn",
      "type": "moebel",
      "x": 224,
@@ -9634,7 +9611,7 @@
      ]
     },
     {
-     "id": 104,
+     "id": 103,
      "name": "wg4Farn",
      "type": "moebel",
      "x": 768,
@@ -9657,7 +9634,7 @@
      ]
     },
     {
-     "id": 105,
+     "id": 104,
      "name": "wg4Zeder",
      "type": "moebel",
      "x": 496,
@@ -9680,10 +9657,33 @@
      ]
     },
     {
-     "id": 106,
+     "id": 105,
      "name": "wg4Farn",
      "type": "moebel",
      "x": 816,
+     "y": 224,
+     "width": 16,
+     "height": 16,
+     "rotation": 0,
+     "visible": true,
+     "properties": [
+      {
+       "name": "tiefe",
+       "type": "int",
+       "value": 1
+      },
+      {
+       "name": "kollision",
+       "type": "bool",
+       "value": false
+      }
+     ]
+    },
+    {
+     "id": 106,
+     "name": "wg4Farn",
+     "type": "moebel",
+     "x": 896,
      "y": 224,
      "width": 16,
      "height": 16,
@@ -9706,29 +9706,6 @@
      "id": 107,
      "name": "wg4Farn",
      "type": "moebel",
-     "x": 896,
-     "y": 224,
-     "width": 16,
-     "height": 16,
-     "rotation": 0,
-     "visible": true,
-     "properties": [
-      {
-       "name": "tiefe",
-       "type": "int",
-       "value": 1
-      },
-      {
-       "name": "kollision",
-       "type": "bool",
-       "value": false
-      }
-     ]
-    },
-    {
-     "id": 108,
-     "name": "wg4Farn",
-     "type": "moebel",
      "x": 1376,
      "y": 192,
      "width": 16,
@@ -9749,7 +9726,7 @@
      ]
     },
     {
-     "id": 109,
+     "id": 108,
      "name": "wg4Zeder",
      "type": "moebel",
      "x": 560,
@@ -9772,7 +9749,7 @@
      ]
     },
     {
-     "id": 110,
+     "id": 109,
      "name": "wg4Farn",
      "type": "moebel",
      "x": 48,
@@ -9795,7 +9772,7 @@
      ]
     },
     {
-     "id": 111,
+     "id": 110,
      "name": "wg4Farn",
      "type": "moebel",
      "x": 1200,
@@ -9818,7 +9795,7 @@
      ]
     },
     {
-     "id": 112,
+     "id": 111,
      "name": "wg4Farn",
      "type": "moebel",
      "x": 1248,
@@ -9841,7 +9818,7 @@
      ]
     },
     {
-     "id": 113,
+     "id": 112,
      "name": "wg4Zeder",
      "type": "moebel",
      "x": 304,
@@ -9864,7 +9841,7 @@
      ]
     },
     {
-     "id": 114,
+     "id": 113,
      "name": "wg4Farn",
      "type": "moebel",
      "x": 288,
@@ -9887,7 +9864,7 @@
      ]
     },
     {
-     "id": 115,
+     "id": 114,
      "name": "wg4Farn",
      "type": "moebel",
      "x": 400,
@@ -9910,7 +9887,7 @@
      ]
     },
     {
-     "id": 116,
+     "id": 115,
      "name": "wg4Farn",
      "type": "moebel",
      "x": 1184,
@@ -9933,7 +9910,7 @@
      ]
     },
     {
-     "id": 117,
+     "id": 116,
      "name": "wg4Farn",
      "type": "moebel",
      "x": 160,
@@ -9956,7 +9933,7 @@
      ]
     },
     {
-     "id": 118,
+     "id": 117,
      "name": "wg4Farn",
      "type": "moebel",
      "x": 320,
@@ -9979,7 +9956,7 @@
      ]
     },
     {
-     "id": 119,
+     "id": 118,
      "name": "wg4Farn",
      "type": "moebel",
      "x": 1088,
@@ -10002,7 +9979,7 @@
      ]
     },
     {
-     "id": 120,
+     "id": 119,
      "name": "wg4Farn",
      "type": "moebel",
      "x": 1280,
@@ -10025,7 +10002,7 @@
      ]
     },
     {
-     "id": 121,
+     "id": 120,
      "name": "wg4Zeder",
      "type": "moebel",
      "x": 1392,
@@ -10048,7 +10025,7 @@
      ]
     },
     {
-     "id": 122,
+     "id": 121,
      "name": "wg4Farn",
      "type": "moebel",
      "x": 1024,
@@ -10071,7 +10048,7 @@
      ]
     },
     {
-     "id": 123,
+     "id": 122,
      "name": "wg4ZederSchmal",
      "type": "moebel",
      "x": 336,
@@ -10094,7 +10071,7 @@
      ]
     },
     {
-     "id": 124,
+     "id": 123,
      "name": "wg4Farn",
      "type": "moebel",
      "x": 480,
@@ -10117,7 +10094,7 @@
      ]
     },
     {
-     "id": 125,
+     "id": 124,
      "name": "wg4Farn",
      "type": "moebel",
      "x": 1424,
@@ -10140,7 +10117,7 @@
      ]
     },
     {
-     "id": 126,
+     "id": 125,
      "name": "wg4Farn",
      "type": "moebel",
      "x": 464,
@@ -10163,7 +10140,7 @@
      ]
     },
     {
-     "id": 127,
+     "id": 126,
      "name": "wg4Zeder",
      "type": "moebel",
      "x": 1024,
@@ -10186,7 +10163,7 @@
      ]
     },
     {
-     "id": 128,
+     "id": 127,
      "name": "wg4ZederSchmal",
      "type": "moebel",
      "x": 1104,
@@ -10209,7 +10186,7 @@
      ]
     },
     {
-     "id": 129,
+     "id": 128,
      "name": "wg4Farn",
      "type": "moebel",
      "x": 1264,
@@ -10232,7 +10209,7 @@
      ]
     },
     {
-     "id": 130,
+     "id": 129,
      "name": "wg4Zeder",
      "type": "moebel",
      "x": 1056,
@@ -10255,7 +10232,7 @@
      ]
     },
     {
-     "id": 131,
+     "id": 130,
      "name": "wg4Farn",
      "type": "moebel",
      "x": 176,
@@ -10278,7 +10255,7 @@
      ]
     },
     {
-     "id": 132,
+     "id": 131,
      "name": "wg4ZederSchmal",
      "type": "moebel",
      "x": 880,
@@ -10301,7 +10278,7 @@
      ]
     },
     {
-     "id": 133,
+     "id": 132,
      "name": "wg4Farn",
      "type": "moebel",
      "x": 336,
@@ -10324,7 +10301,7 @@
      ]
     },
     {
-     "id": 134,
+     "id": 133,
      "name": "wg4Farn",
      "type": "moebel",
      "x": 1264,
@@ -10347,7 +10324,7 @@
      ]
     },
     {
-     "id": 135,
+     "id": 134,
      "name": "wg4Farn",
      "type": "moebel",
      "x": 80,
@@ -10370,7 +10347,7 @@
      ]
     },
     {
-     "id": 136,
+     "id": 135,
      "name": "wg4Farn",
      "type": "moebel",
      "x": 784,
@@ -10393,7 +10370,7 @@
      ]
     },
     {
-     "id": 137,
+     "id": 136,
      "name": "wg4Farn",
      "type": "moebel",
      "x": 1504,
@@ -10416,7 +10393,7 @@
      ]
     },
     {
-     "id": 138,
+     "id": 137,
      "name": "wg4Farn",
      "type": "moebel",
      "x": 768,
@@ -10439,7 +10416,7 @@
      ]
     },
     {
-     "id": 139,
+     "id": 138,
      "name": "wg4Farn",
      "type": "moebel",
      "x": 800,
@@ -10462,7 +10439,7 @@
      ]
     },
     {
-     "id": 140,
+     "id": 139,
      "name": "wg4Zeder",
      "type": "moebel",
      "x": 528,
@@ -10485,7 +10462,7 @@
      ]
     },
     {
-     "id": 141,
+     "id": 140,
      "name": "wg4Zeder",
      "type": "moebel",
      "x": 688,
@@ -10508,7 +10485,7 @@
      ]
     },
     {
-     "id": 142,
+     "id": 141,
      "name": "wg4Zeder",
      "type": "moebel",
      "x": 1408,
@@ -10531,7 +10508,7 @@
      ]
     },
     {
-     "id": 143,
+     "id": 142,
      "name": "wg4Farn",
      "type": "moebel",
      "x": 1328,
@@ -10554,7 +10531,7 @@
      ]
     },
     {
-     "id": 144,
+     "id": 143,
      "name": "wg4Farn",
      "type": "moebel",
      "x": 432,
@@ -10577,7 +10554,7 @@
      ]
     },
     {
-     "id": 145,
+     "id": 144,
      "name": "wg4Zeder",
      "type": "moebel",
      "x": 1344,
@@ -10600,7 +10577,7 @@
      ]
     },
     {
-     "id": 146,
+     "id": 145,
      "name": "wg4Farn",
      "type": "moebel",
      "x": 1232,
@@ -10623,7 +10600,7 @@
      ]
     },
     {
-     "id": 147,
+     "id": 146,
      "name": "wg4Farn",
      "type": "moebel",
      "x": 1008,
@@ -10646,10 +10623,33 @@
      ]
     },
     {
-     "id": 148,
+     "id": 147,
      "name": "wg4Farn",
      "type": "moebel",
      "x": 1136,
+     "y": 176,
+     "width": 16,
+     "height": 16,
+     "rotation": 0,
+     "visible": true,
+     "properties": [
+      {
+       "name": "tiefe",
+       "type": "int",
+       "value": 1
+      },
+      {
+       "name": "kollision",
+       "type": "bool",
+       "value": false
+      }
+     ]
+    },
+    {
+     "id": 148,
+     "name": "wg4Farn",
+     "type": "moebel",
+     "x": 304,
      "y": 176,
      "width": 16,
      "height": 16,
@@ -10672,29 +10672,6 @@
      "id": 149,
      "name": "wg4Farn",
      "type": "moebel",
-     "x": 304,
-     "y": 176,
-     "width": 16,
-     "height": 16,
-     "rotation": 0,
-     "visible": true,
-     "properties": [
-      {
-       "name": "tiefe",
-       "type": "int",
-       "value": 1
-      },
-      {
-       "name": "kollision",
-       "type": "bool",
-       "value": false
-      }
-     ]
-    },
-    {
-     "id": 150,
-     "name": "wg4Farn",
-     "type": "moebel",
      "x": 1552,
      "y": 224,
      "width": 16,
@@ -10715,7 +10692,7 @@
      ]
     },
     {
-     "id": 151,
+     "id": 150,
      "name": "wg4Farn",
      "type": "moebel",
      "x": 1488,
@@ -10738,7 +10715,7 @@
      ]
     },
     {
-     "id": 152,
+     "id": 151,
      "name": "wg4Farn",
      "type": "moebel",
      "x": 464,
@@ -10761,7 +10738,7 @@
      ]
     },
     {
-     "id": 153,
+     "id": 152,
      "name": "wg4Zeder",
      "type": "moebel",
      "x": 32,
@@ -10784,7 +10761,7 @@
      ]
     },
     {
-     "id": 154,
+     "id": 153,
      "name": "wg4Zeder",
      "type": "moebel",
      "x": 1424,
@@ -10807,7 +10784,7 @@
      ]
     },
     {
-     "id": 155,
+     "id": 154,
      "name": "wg4Farn",
      "type": "moebel",
      "x": 448,
@@ -10830,7 +10807,7 @@
      ]
     },
     {
-     "id": 156,
+     "id": 155,
      "name": "wg4Zeder",
      "type": "moebel",
      "x": 384,
@@ -10853,7 +10830,7 @@
      ]
     },
     {
-     "id": 157,
+     "id": 156,
      "name": "wg4Zeder",
      "type": "moebel",
      "x": 32,
@@ -10876,7 +10853,7 @@
      ]
     },
     {
-     "id": 158,
+     "id": 157,
      "name": "wg4Farn",
      "type": "moebel",
      "x": 320,
@@ -10899,7 +10876,7 @@
      ]
     },
     {
-     "id": 159,
+     "id": 158,
      "name": "wg4Farn",
      "type": "moebel",
      "x": 240,
@@ -10922,7 +10899,7 @@
      ]
     },
     {
-     "id": 160,
+     "id": 159,
      "name": "wg4Farn",
      "type": "moebel",
      "x": 1328,
@@ -10945,7 +10922,7 @@
      ]
     },
     {
-     "id": 161,
+     "id": 160,
      "name": "wg4Farn",
      "type": "moebel",
      "x": 512,
@@ -10968,7 +10945,7 @@
      ]
     },
     {
-     "id": 162,
+     "id": 161,
      "name": "wg4Zeder",
      "type": "moebel",
      "x": 1168,
@@ -10991,7 +10968,7 @@
      ]
     },
     {
-     "id": 163,
+     "id": 162,
      "name": "wg4Farn",
      "type": "moebel",
      "x": 432,
@@ -11014,7 +10991,7 @@
      ]
     },
     {
-     "id": 164,
+     "id": 163,
      "name": "wg4Farn",
      "type": "moebel",
      "x": 1408,
@@ -11037,7 +11014,7 @@
      ]
     },
     {
-     "id": 165,
+     "id": 164,
      "name": "wg4Farn",
      "type": "moebel",
      "x": 80,
@@ -11060,7 +11037,7 @@
      ]
     },
     {
-     "id": 166,
+     "id": 165,
      "name": "wg4Farn",
      "type": "moebel",
      "x": 96,
@@ -11083,7 +11060,7 @@
      ]
     },
     {
-     "id": 167,
+     "id": 166,
      "name": "wg4Farn",
      "type": "moebel",
      "x": 1344,
@@ -11106,7 +11083,7 @@
      ]
     },
     {
-     "id": 168,
+     "id": 167,
      "name": "wg4ZederSchmal",
      "type": "moebel",
      "x": 608,
@@ -11129,7 +11106,7 @@
      ]
     },
     {
-     "id": 169,
+     "id": 168,
      "name": "wg4ZederSchmal",
      "type": "moebel",
      "x": 592,
@@ -11152,7 +11129,7 @@
      ]
     },
     {
-     "id": 170,
+     "id": 169,
      "name": "wg4Farn",
      "type": "moebel",
      "x": 240,
@@ -11175,7 +11152,7 @@
      ]
     },
     {
-     "id": 171,
+     "id": 170,
      "name": "wg4Zeder",
      "type": "moebel",
      "x": 480,
@@ -11198,7 +11175,7 @@
      ]
     },
     {
-     "id": 172,
+     "id": 171,
      "name": "wg4Farn",
      "type": "moebel",
      "x": 1536,
@@ -11221,7 +11198,7 @@
      ]
     },
     {
-     "id": 173,
+     "id": 172,
      "name": "wg4Farn",
      "type": "moebel",
      "x": 1424,
@@ -11244,7 +11221,7 @@
      ]
     },
     {
-     "id": 174,
+     "id": 173,
      "name": "wg4ZederSchmal",
      "type": "moebel",
      "x": 1488,
@@ -11267,7 +11244,7 @@
      ]
     },
     {
-     "id": 175,
+     "id": 174,
      "name": "wg4Farn",
      "type": "moebel",
      "x": 1248,
@@ -11290,7 +11267,7 @@
      ]
     },
     {
-     "id": 176,
+     "id": 175,
      "name": "wg4Zeder",
      "type": "moebel",
      "x": 80,
@@ -11313,7 +11290,7 @@
      ]
     },
     {
-     "id": 177,
+     "id": 176,
      "name": "wg4ZederSchmal",
      "type": "moebel",
      "x": 352,
@@ -11336,7 +11313,7 @@
      ]
     },
     {
-     "id": 178,
+     "id": 177,
      "name": "wg4Farn",
      "type": "moebel",
      "x": 1376,
@@ -11359,7 +11336,7 @@
      ]
     },
     {
-     "id": 179,
+     "id": 178,
      "name": "wg4Zeder",
      "type": "moebel",
      "x": 1088,
@@ -11382,7 +11359,7 @@
      ]
     },
     {
-     "id": 180,
+     "id": 179,
      "name": "wg4Farn",
      "type": "moebel",
      "x": 576,
@@ -11405,7 +11382,7 @@
      ]
     },
     {
-     "id": 181,
+     "id": 180,
      "name": "wg4Zeder",
      "type": "moebel",
      "x": 128,
@@ -11428,7 +11405,7 @@
      ]
     },
     {
-     "id": 182,
+     "id": 181,
      "name": "wg4Farn",
      "type": "moebel",
      "x": 64,
@@ -11451,168 +11428,7 @@
      ]
     },
     {
-     "id": 183,
-     "name": "wg4Baumstammbank",
-     "type": "moebel",
-     "x": 896,
-     "y": 64,
-     "width": 48,
-     "height": 16,
-     "rotation": 0,
-     "visible": true,
-     "properties": [
-      {
-       "name": "tiefe",
-       "type": "int",
-       "value": 72
-      },
-      {
-       "name": "kollision",
-       "type": "bool",
-       "value": true
-      }
-     ]
-    },
-    {
-     "id": 184,
-     "name": "wg4Stein",
-     "type": "moebel",
-     "x": 976,
-     "y": 80,
-     "width": 16,
-     "height": 16,
-     "rotation": 0,
-     "visible": true,
-     "properties": [
-      {
-       "name": "tiefe",
-       "type": "int",
-       "value": 88
-      },
-      {
-       "name": "kollision",
-       "type": "bool",
-       "value": true
-      }
-     ]
-    },
-    {
-     "id": 185,
-     "name": "wg4SteinB",
-     "type": "moebel",
-     "x": 848,
-     "y": 80,
-     "width": 16,
-     "height": 16,
-     "rotation": 0,
-     "visible": true,
-     "properties": [
-      {
-       "name": "tiefe",
-       "type": "int",
-       "value": 88
-      },
-      {
-       "name": "kollision",
-       "type": "bool",
-       "value": true
-      }
-     ]
-    },
-    {
-     "id": 186,
-     "name": "wg4Stein",
-     "type": "moebel",
-     "x": 864,
-     "y": 48,
-     "width": 16,
-     "height": 16,
-     "rotation": 0,
-     "visible": true,
-     "properties": [
-      {
-       "name": "tiefe",
-       "type": "int",
-       "value": 56
-      },
-      {
-       "name": "kollision",
-       "type": "bool",
-       "value": true
-      }
-     ]
-    },
-    {
-     "id": 187,
-     "name": "wg4SteinB",
-     "type": "moebel",
-     "x": 896,
-     "y": 48,
-     "width": 16,
-     "height": 16,
-     "rotation": 0,
-     "visible": true,
-     "properties": [
-      {
-       "name": "tiefe",
-       "type": "int",
-       "value": 56
-      },
-      {
-       "name": "kollision",
-       "type": "bool",
-       "value": true
-      }
-     ]
-    },
-    {
-     "id": 188,
-     "name": "wg4Stein",
-     "type": "moebel",
-     "x": 928,
-     "y": 48,
-     "width": 16,
-     "height": 16,
-     "rotation": 0,
-     "visible": true,
-     "properties": [
-      {
-       "name": "tiefe",
-       "type": "int",
-       "value": 56
-      },
-      {
-       "name": "kollision",
-       "type": "bool",
-       "value": true
-      }
-     ]
-    },
-    {
-     "id": 189,
-     "name": "wg4SteinB",
-     "type": "moebel",
-     "x": 960,
-     "y": 48,
-     "width": 16,
-     "height": 16,
-     "rotation": 0,
-     "visible": true,
-     "properties": [
-      {
-       "name": "tiefe",
-       "type": "int",
-       "value": 56
-      },
-      {
-       "name": "kollision",
-       "type": "bool",
-       "value": true
-      }
-     ]
-    },
-    {
-     "id": 190,
+     "id": 182,
      "name": "wg9SturmholzFlach",
      "type": "moebel",
      "x": 592,
@@ -11635,7 +11451,7 @@
      ]
     },
     {
-     "id": 191,
+     "id": 183,
      "name": "wg9SturmholzFlach",
      "type": "moebel",
      "x": 608,
@@ -11658,7 +11474,7 @@
      ]
     },
     {
-     "id": 192,
+     "id": 184,
      "name": "wg9SturmholzFlach",
      "type": "moebel",
      "x": 624,
@@ -11681,7 +11497,7 @@
      ]
     },
     {
-     "id": 193,
+     "id": 185,
      "name": "wg5Aeste",
      "type": "moebel",
      "x": 560,
@@ -11704,7 +11520,7 @@
      ]
     },
     {
-     "id": 194,
+     "id": 186,
      "name": "wg5Aeste",
      "type": "moebel",
      "x": 656,
@@ -11727,7 +11543,7 @@
      ]
     },
     {
-     "id": 195,
+     "id": 187,
      "name": "wg5Aeste",
      "type": "moebel",
      "x": 576,
@@ -11750,7 +11566,7 @@
      ]
     },
     {
-     "id": 196,
+     "id": 188,
      "name": "wg4Kegelbaum",
      "type": "moebel",
      "x": 16,
@@ -11773,7 +11589,7 @@
      ]
     },
     {
-     "id": 197,
+     "id": 189,
      "name": "wg4Zeder",
      "type": "moebel",
      "x": 192,
@@ -11796,7 +11612,7 @@
      ]
     },
     {
-     "id": 198,
+     "id": 190,
      "name": "wg4Zeder",
      "type": "moebel",
      "x": 224,
@@ -11819,7 +11635,7 @@
      ]
     },
     {
-     "id": 199,
+     "id": 191,
      "name": "wg4Zeder",
      "type": "moebel",
      "x": 384,
@@ -11842,7 +11658,7 @@
      ]
     },
     {
-     "id": 200,
+     "id": 192,
      "name": "wg4Zeder",
      "type": "moebel",
      "x": 1072,
@@ -11865,7 +11681,7 @@
      ]
     },
     {
-     "id": 201,
+     "id": 193,
      "name": "wg4ZederSchmal",
      "type": "moebel",
      "x": 1104,
@@ -11888,7 +11704,7 @@
      ]
     },
     {
-     "id": 202,
+     "id": 194,
      "name": "wg4Kegelbaum",
      "type": "moebel",
      "x": 448,
@@ -11911,7 +11727,7 @@
      ]
     },
     {
-     "id": 203,
+     "id": 195,
      "name": "wg4Zeder",
      "type": "moebel",
      "x": 1200,
@@ -11934,7 +11750,7 @@
      ]
     },
     {
-     "id": 204,
+     "id": 196,
      "name": "wg4Zeder",
      "type": "moebel",
      "x": 160,
@@ -11957,7 +11773,7 @@
      ]
     },
     {
-     "id": 205,
+     "id": 197,
      "name": "wg4Kegelbaum",
      "type": "moebel",
      "x": 256,
@@ -11980,7 +11796,7 @@
      ]
     },
     {
-     "id": 206,
+     "id": 198,
      "name": "wg4Kegelbaum",
      "type": "moebel",
      "x": 1136,
@@ -12003,7 +11819,7 @@
      ]
     },
     {
-     "id": 207,
+     "id": 199,
      "name": "wg4ZederSchmal",
      "type": "moebel",
      "x": 624,
@@ -12026,7 +11842,7 @@
      ]
     },
     {
-     "id": 208,
+     "id": 200,
      "name": "wg4Zeder",
      "type": "moebel",
      "x": 352,
@@ -12049,7 +11865,7 @@
      ]
     },
     {
-     "id": 209,
+     "id": 201,
      "name": "wg4ZederSchmal",
      "type": "moebel",
      "x": 256,
@@ -12072,7 +11888,7 @@
      ]
     },
     {
-     "id": 210,
+     "id": 202,
      "name": "wg4Zeder",
      "type": "moebel",
      "x": 288,
@@ -12095,7 +11911,7 @@
      ]
     },
     {
-     "id": 211,
+     "id": 203,
      "name": "wg4Kegelbaum",
      "type": "moebel",
      "x": 528,
@@ -12118,7 +11934,7 @@
      ]
     },
     {
-     "id": 212,
+     "id": 204,
      "name": "wg4ZederSchmal",
      "type": "moebel",
      "x": 1456,
@@ -12141,7 +11957,7 @@
      ]
     },
     {
-     "id": 213,
+     "id": 205,
      "name": "wg4Kegelbaum",
      "type": "moebel",
      "x": 160,
@@ -12164,7 +11980,7 @@
      ]
     },
     {
-     "id": 214,
+     "id": 206,
      "name": "wg4Zeder",
      "type": "moebel",
      "x": 320,
@@ -12187,7 +12003,7 @@
      ]
     },
     {
-     "id": 215,
+     "id": 207,
      "name": "wg4Zeder",
      "type": "moebel",
      "x": 416,
@@ -12210,7 +12026,7 @@
      ]
     },
     {
-     "id": 216,
+     "id": 208,
      "name": "wg4ZederSchmal",
      "type": "moebel",
      "x": 1552,
@@ -12233,7 +12049,7 @@
      ]
     },
     {
-     "id": 217,
+     "id": 209,
      "name": "wg4Zeder",
      "type": "moebel",
      "x": 192,
@@ -12256,7 +12072,7 @@
      ]
     },
     {
-     "id": 218,
+     "id": 210,
      "name": "wg4Zeder",
      "type": "moebel",
      "x": 832,
@@ -12279,7 +12095,7 @@
      ]
     },
     {
-     "id": 219,
+     "id": 211,
      "name": "wg4Kegelbaum",
      "type": "moebel",
      "x": 880,
@@ -12302,7 +12118,7 @@
      ]
     },
     {
-     "id": 220,
+     "id": 212,
      "name": "wg4ZederSchmal",
      "type": "moebel",
      "x": 912,
@@ -12325,7 +12141,7 @@
      ]
     },
     {
-     "id": 221,
+     "id": 213,
      "name": "wg4Kegelbaum",
      "type": "moebel",
      "x": 960,
@@ -12348,7 +12164,7 @@
      ]
     },
     {
-     "id": 222,
+     "id": 214,
      "name": "wg4Zeder",
      "type": "moebel",
      "x": 992,
@@ -12371,7 +12187,7 @@
      ]
     },
     {
-     "id": 223,
+     "id": 215,
      "name": "wg4ZederSchmal",
      "type": "moebel",
      "x": 1024,
@@ -12394,7 +12210,7 @@
      ]
     },
     {
-     "id": 224,
+     "id": 216,
      "name": "wg4Zeder",
      "type": "moebel",
      "x": 1456,
@@ -12417,7 +12233,7 @@
      ]
     },
     {
-     "id": 225,
+     "id": 217,
      "name": "wg4Kegelbaum",
      "type": "moebel",
      "x": 1120,
@@ -12440,7 +12256,7 @@
      ]
     },
     {
-     "id": 226,
+     "id": 218,
      "name": "wg4Zeder",
      "type": "moebel",
      "x": 848,
@@ -12463,7 +12279,7 @@
      ]
     },
     {
-     "id": 227,
+     "id": 219,
      "name": "wg4Kegelbaum",
      "type": "moebel",
      "x": 1376,
@@ -12486,7 +12302,7 @@
      ]
     },
     {
-     "id": 228,
+     "id": 220,
      "name": "wg4Zeder",
      "type": "moebel",
      "x": 1312,
@@ -12509,7 +12325,7 @@
      ]
     },
     {
-     "id": 229,
+     "id": 221,
      "name": "wg4Zeder",
      "type": "moebel",
      "x": 16,
@@ -12532,7 +12348,7 @@
      ]
     },
     {
-     "id": 230,
+     "id": 222,
      "name": "wg4Zeder",
      "type": "moebel",
      "x": 48,
@@ -12555,7 +12371,7 @@
      ]
     },
     {
-     "id": 231,
+     "id": 223,
      "name": "wg4Kegelbaum",
      "type": "moebel",
      "x": 528,
@@ -12578,7 +12394,7 @@
      ]
     },
     {
-     "id": 232,
+     "id": 224,
      "name": "wg4Kegelbaum",
      "type": "moebel",
      "x": 560,
@@ -12601,7 +12417,7 @@
      ]
     },
     {
-     "id": 233,
+     "id": 225,
      "name": "wg4Zeder",
      "type": "moebel",
      "x": 624,
@@ -12624,7 +12440,7 @@
      ]
     },
     {
-     "id": 234,
+     "id": 226,
      "name": "wg4Zeder",
      "type": "moebel",
      "x": 656,
@@ -12647,7 +12463,7 @@
      ]
     },
     {
-     "id": 235,
+     "id": 227,
      "name": "wg4Kegelbaum",
      "type": "moebel",
      "x": 720,
@@ -12670,7 +12486,7 @@
      ]
     },
     {
-     "id": 236,
+     "id": 228,
      "name": "wg4Kegelbaum",
      "type": "moebel",
      "x": 1248,
@@ -12693,7 +12509,7 @@
      ]
     },
     {
-     "id": 237,
+     "id": 229,
      "name": "wg4ZederSchmal",
      "type": "moebel",
      "x": 1424,
@@ -12716,7 +12532,7 @@
      ]
     },
     {
-     "id": 238,
+     "id": 230,
      "name": "wg4Zeder",
      "type": "moebel",
      "x": 1456,
@@ -12739,7 +12555,7 @@
      ]
     },
     {
-     "id": 239,
+     "id": 231,
      "name": "wg4ZederSchmal",
      "type": "moebel",
      "x": 1552,
@@ -12762,7 +12578,7 @@
      ]
     },
     {
-     "id": 240,
+     "id": 232,
      "name": "wg4ZederSchmal",
      "type": "moebel",
      "x": 816,
@@ -12785,7 +12601,7 @@
      ]
     },
     {
-     "id": 241,
+     "id": 233,
      "name": "wg4Zeder",
      "type": "moebel",
      "x": 912,
@@ -12808,7 +12624,7 @@
      ]
     },
     {
-     "id": 242,
+     "id": 234,
      "name": "wg4Kegelbaum",
      "type": "moebel",
      "x": 848,
@@ -12831,7 +12647,7 @@
      ]
     },
     {
-     "id": 243,
+     "id": 235,
      "name": "wg4Kegelbaum",
      "type": "moebel",
      "x": 992,
@@ -12854,7 +12670,7 @@
      ]
     },
     {
-     "id": 244,
+     "id": 236,
      "name": "wg4Zeder",
      "type": "moebel",
      "x": 1152,
@@ -12877,7 +12693,7 @@
      ]
     },
     {
-     "id": 245,
+     "id": 237,
      "name": "wg4Zeder",
      "type": "moebel",
      "x": 1488,
@@ -12900,7 +12716,7 @@
      ]
     },
     {
-     "id": 246,
+     "id": 238,
      "name": "wg4Kegelbaum",
      "type": "moebel",
      "x": 80,
@@ -12923,7 +12739,7 @@
      ]
     },
     {
-     "id": 247,
+     "id": 239,
      "name": "wg4Zeder",
      "type": "moebel",
      "x": 1024,
@@ -12946,7 +12762,7 @@
      ]
     },
     {
-     "id": 248,
+     "id": 240,
      "name": "wg4ZederSchmal",
      "type": "moebel",
      "x": 1520,
@@ -12969,7 +12785,7 @@
      ]
     },
     {
-     "id": 249,
+     "id": 241,
      "name": "wg4Kegelbaum",
      "type": "moebel",
      "x": 1552,
@@ -12992,7 +12808,7 @@
      ]
     },
     {
-     "id": 250,
+     "id": 242,
      "name": "wg4Farn",
      "type": "moebel",
      "x": 64,
@@ -13015,7 +12831,7 @@
      ]
     },
     {
-     "id": 251,
+     "id": 243,
      "name": "wg4Farn",
      "type": "moebel",
      "x": 688,
@@ -13038,53 +12854,7 @@
      ]
     },
     {
-     "id": 252,
-     "name": "wg4Farn",
-     "type": "moebel",
-     "x": 832,
-     "y": 16,
-     "width": 16,
-     "height": 16,
-     "rotation": 0,
-     "visible": true,
-     "properties": [
-      {
-       "name": "tiefe",
-       "type": "int",
-       "value": 1
-      },
-      {
-       "name": "kollision",
-       "type": "bool",
-       "value": false
-      }
-     ]
-    },
-    {
-     "id": 253,
-     "name": "wg4Farn",
-     "type": "moebel",
-     "x": 976,
-     "y": 16,
-     "width": 16,
-     "height": 16,
-     "rotation": 0,
-     "visible": true,
-     "properties": [
-      {
-       "name": "tiefe",
-       "type": "int",
-       "value": 1
-      },
-      {
-       "name": "kollision",
-       "type": "bool",
-       "value": false
-      }
-     ]
-    },
-    {
-     "id": 254,
+     "id": 244,
      "name": "wg4Farn",
      "type": "moebel",
      "x": 1504,
@@ -13107,30 +12877,7 @@
      ]
     },
     {
-     "id": 255,
-     "name": "wg4Farn",
-     "type": "moebel",
-     "x": 880,
-     "y": 48,
-     "width": 16,
-     "height": 16,
-     "rotation": 0,
-     "visible": true,
-     "properties": [
-      {
-       "name": "tiefe",
-       "type": "int",
-       "value": 1
-      },
-      {
-       "name": "kollision",
-       "type": "bool",
-       "value": false
-      }
-     ]
-    },
-    {
-     "id": 256,
+     "id": 245,
      "name": "wg4Farn",
      "type": "moebel",
      "x": 112,
@@ -13153,7 +12900,7 @@
      ]
     },
     {
-     "id": 257,
+     "id": 246,
      "name": "wg4Farn",
      "type": "moebel",
      "x": 496,
@@ -13176,7 +12923,7 @@
      ]
     },
     {
-     "id": 258,
+     "id": 247,
      "name": "wg4Farn",
      "type": "moebel",
      "x": 592,
@@ -13199,7 +12946,7 @@
      ]
     },
     {
-     "id": 259,
+     "id": 248,
      "name": "wg4Farn",
      "type": "moebel",
      "x": 1120,
@@ -13222,7 +12969,7 @@
      ]
     },
     {
-     "id": 260,
+     "id": 249,
      "name": "wg4Farn",
      "type": "moebel",
      "x": 112,
@@ -13245,7 +12992,7 @@
      ]
     },
     {
-     "id": 261,
+     "id": 250,
      "name": "wg4Farn",
      "type": "moebel",
      "x": 448,
@@ -13268,7 +13015,7 @@
      ]
     },
     {
-     "id": 262,
+     "id": 251,
      "name": "wg4Farn",
      "type": "moebel",
      "x": 592,
@@ -13291,7 +13038,7 @@
      ]
     },
     {
-     "id": 263,
+     "id": 252,
      "name": "wg4Farn",
      "type": "moebel",
      "x": 1312,
@@ -13314,7 +13061,7 @@
      ]
     },
     {
-     "id": 264,
+     "id": 253,
      "name": "wg4Farn",
      "type": "moebel",
      "x": 1552,
@@ -13337,7 +13084,7 @@
      ]
     },
     {
-     "id": 265,
+     "id": 254,
      "name": "wg4Farn",
      "type": "moebel",
      "x": 64,
@@ -13360,7 +13107,7 @@
      ]
     },
     {
-     "id": 266,
+     "id": 255,
      "name": "wg4Farn",
      "type": "moebel",
      "x": 112,
@@ -13383,7 +13130,7 @@
      ]
     },
     {
-     "id": 267,
+     "id": 256,
      "name": "wg4Farn",
      "type": "moebel",
      "x": 1312,
@@ -13406,7 +13153,7 @@
      ]
     },
     {
-     "id": 268,
+     "id": 257,
      "name": "wg4Farn",
      "type": "moebel",
      "x": 304,
@@ -13429,7 +13176,7 @@
      ]
     },
     {
-     "id": 269,
+     "id": 258,
      "name": "wg4Farn",
      "type": "moebel",
      "x": 784,
@@ -13452,7 +13199,7 @@
      ]
     },
     {
-     "id": 270,
+     "id": 259,
      "name": "wg4Farn",
      "type": "moebel",
      "x": 1072,
@@ -13475,7 +13222,7 @@
      ]
     },
     {
-     "id": 271,
+     "id": 260,
      "name": "wg4Farn",
      "type": "moebel",
      "x": 1312,
@@ -13498,7 +13245,7 @@
      ]
     },
     {
-     "id": 272,
+     "id": 261,
      "name": "wg4Farn",
      "type": "moebel",
      "x": 1504,
@@ -13521,7 +13268,7 @@
      ]
     },
     {
-     "id": 273,
+     "id": 262,
      "name": "wg4Farn",
      "type": "moebel",
      "x": 1168,
@@ -13544,7 +13291,7 @@
      ]
     },
     {
-     "id": 274,
+     "id": 263,
      "name": "wg4Farn",
      "type": "moebel",
      "x": 784,
@@ -13567,7 +13314,7 @@
      ]
     },
     {
-     "id": 275,
+     "id": 264,
      "name": "wg4Farn",
      "type": "moebel",
      "x": 1264,
@@ -13590,7 +13337,7 @@
      ]
     },
     {
-     "id": 276,
+     "id": 265,
      "name": "wg4Farn",
      "type": "moebel",
      "x": 64,
@@ -13613,7 +13360,7 @@
      ]
     },
     {
-     "id": 277,
+     "id": 266,
      "name": "wg4Farn",
      "type": "moebel",
      "x": 544,
@@ -13632,6 +13379,305 @@
        "name": "kollision",
        "type": "bool",
        "value": false
+      }
+     ]
+    },
+    {
+     "id": 267,
+     "name": "wg4Baumstammbank",
+     "type": "moebel",
+     "x": 896,
+     "y": 48,
+     "width": 48,
+     "height": 16,
+     "rotation": 0,
+     "visible": true,
+     "properties": [
+      {
+       "name": "tiefe",
+       "type": "int",
+       "value": 56
+      },
+      {
+       "name": "kollision",
+       "type": "bool",
+       "value": true
+      }
+     ]
+    },
+    {
+     "id": 268,
+     "name": "wg4Stein",
+     "type": "moebel",
+     "x": 992,
+     "y": 48,
+     "width": 16,
+     "height": 16,
+     "rotation": 0,
+     "visible": true,
+     "properties": [
+      {
+       "name": "tiefe",
+       "type": "int",
+       "value": 56
+      },
+      {
+       "name": "kollision",
+       "type": "bool",
+       "value": true
+      }
+     ]
+    },
+    {
+     "id": 269,
+     "name": "wg4SteinB",
+     "type": "moebel",
+     "x": 976,
+     "y": 64,
+     "width": 16,
+     "height": 16,
+     "rotation": 0,
+     "visible": true,
+     "properties": [
+      {
+       "name": "tiefe",
+       "type": "int",
+       "value": 72
+      },
+      {
+       "name": "kollision",
+       "type": "bool",
+       "value": true
+      }
+     ]
+    },
+    {
+     "id": 270,
+     "name": "wg4Stein",
+     "type": "moebel",
+     "x": 960,
+     "y": 80,
+     "width": 16,
+     "height": 16,
+     "rotation": 0,
+     "visible": true,
+     "properties": [
+      {
+       "name": "tiefe",
+       "type": "int",
+       "value": 88
+      },
+      {
+       "name": "kollision",
+       "type": "bool",
+       "value": true
+      }
+     ]
+    },
+    {
+     "id": 271,
+     "name": "wg4SteinB",
+     "type": "moebel",
+     "x": 912,
+     "y": 80,
+     "width": 16,
+     "height": 16,
+     "rotation": 0,
+     "visible": true,
+     "properties": [
+      {
+       "name": "tiefe",
+       "type": "int",
+       "value": 88
+      },
+      {
+       "name": "kollision",
+       "type": "bool",
+       "value": true
+      }
+     ]
+    },
+    {
+     "id": 272,
+     "name": "wg4Stein",
+     "type": "moebel",
+     "x": 864,
+     "y": 80,
+     "width": 16,
+     "height": 16,
+     "rotation": 0,
+     "visible": true,
+     "properties": [
+      {
+       "name": "tiefe",
+       "type": "int",
+       "value": 88
+      },
+      {
+       "name": "kollision",
+       "type": "bool",
+       "value": true
+      }
+     ]
+    },
+    {
+     "id": 273,
+     "name": "wg4SteinB",
+     "type": "moebel",
+     "x": 848,
+     "y": 64,
+     "width": 16,
+     "height": 16,
+     "rotation": 0,
+     "visible": true,
+     "properties": [
+      {
+       "name": "tiefe",
+       "type": "int",
+       "value": 72
+      },
+      {
+       "name": "kollision",
+       "type": "bool",
+       "value": true
+      }
+     ]
+    },
+    {
+     "id": 274,
+     "name": "wg4Stein",
+     "type": "moebel",
+     "x": 832,
+     "y": 48,
+     "width": 16,
+     "height": 16,
+     "rotation": 0,
+     "visible": true,
+     "properties": [
+      {
+       "name": "tiefe",
+       "type": "int",
+       "value": 56
+      },
+      {
+       "name": "kollision",
+       "type": "bool",
+       "value": true
+      }
+     ]
+    },
+    {
+     "id": 275,
+     "name": "wg4SteinB",
+     "type": "moebel",
+     "x": 848,
+     "y": 32,
+     "width": 16,
+     "height": 16,
+     "rotation": 0,
+     "visible": true,
+     "properties": [
+      {
+       "name": "tiefe",
+       "type": "int",
+       "value": 40
+      },
+      {
+       "name": "kollision",
+       "type": "bool",
+       "value": true
+      }
+     ]
+    },
+    {
+     "id": 276,
+     "name": "wg4Stein",
+     "type": "moebel",
+     "x": 864,
+     "y": 16,
+     "width": 16,
+     "height": 16,
+     "rotation": 0,
+     "visible": true,
+     "properties": [
+      {
+       "name": "tiefe",
+       "type": "int",
+       "value": 24
+      },
+      {
+       "name": "kollision",
+       "type": "bool",
+       "value": true
+      }
+     ]
+    },
+    {
+     "id": 277,
+     "name": "wg4SteinB",
+     "type": "moebel",
+     "x": 912,
+     "y": 16,
+     "width": 16,
+     "height": 16,
+     "rotation": 0,
+     "visible": true,
+     "properties": [
+      {
+       "name": "tiefe",
+       "type": "int",
+       "value": 24
+      },
+      {
+       "name": "kollision",
+       "type": "bool",
+       "value": true
+      }
+     ]
+    },
+    {
+     "id": 278,
+     "name": "wg4Stein",
+     "type": "moebel",
+     "x": 960,
+     "y": 16,
+     "width": 16,
+     "height": 16,
+     "rotation": 0,
+     "visible": true,
+     "properties": [
+      {
+       "name": "tiefe",
+       "type": "int",
+       "value": 24
+      },
+      {
+       "name": "kollision",
+       "type": "bool",
+       "value": true
+      }
+     ]
+    },
+    {
+     "id": 279,
+     "name": "wg4SteinB",
+     "type": "moebel",
+     "x": 976,
+     "y": 32,
+     "width": 16,
+     "height": 16,
+     "rotation": 0,
+     "visible": true,
+     "properties": [
+      {
+       "name": "tiefe",
+       "type": "int",
+       "value": 40
+      },
+      {
+       "name": "kollision",
+       "type": "bool",
+       "value": true
       }
      ]
     }

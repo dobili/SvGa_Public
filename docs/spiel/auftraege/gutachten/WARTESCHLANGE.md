@@ -90,6 +90,8 @@ Szene heißt die Datei in `inhalte/abenteuer/szenen/` ohne `.json`.
 
 - [ ] ghost-town-aussen, ghost-town-saloon, goldmine-stollen, erinnerung-london-kaffeehaus, erinnerung-london-strand, kuerbishof-hof (zweite Prüfung, niedrig-1; Antworten in ghost-town.md, erinnerung-london.md, kuerbishof.md, Abschnitt „Gutachten Runde 9: Antworten“; Bilder aus `niedrig1_runde9_karten.py` erst rendern)
 
+- [ ] lockport-aussen, lockport-gasthaus, weg-cedar-riverton-bahndamm, maple-falls-aussen, maple-falls-park, cedar-creek-aussen, weg-maple-cedar-flussweg, -landstrasse, -zedernpfad (vierte Prüfung, nur die Restpunkte, niedrig-1; Antworten in cedar-creek.md „Drittes Gutachten Runde 8“; Bilder tafel_kegelkoenig, schild_sackgasse aus `niedrig1_runde9_karten.py`)
+
 ## Erledigt
 
 - [x] ironwood-kantine (Test, Haupt-Chat)

@@ -11,7 +11,7 @@
  "tilewidth": 16,
  "tileheight": 16,
  "nextlayerid": 5,
- "nextobjectid": 74,
+ "nextobjectid": 77,
  "layers": [
   {
    "id": 1,
@@ -1563,7 +1563,7 @@
     },
     {
      "id": 13,
-     "name": "mf2Tafel",
+     "name": "ld10TafelKegelkoenig",
      "type": "moebel",
      "x": 32,
      "y": 16,
@@ -1818,8 +1818,8 @@
      "id": 24,
      "name": "ld8Kugelregal",
      "type": "moebel",
-     "x": 16,
-     "y": 80,
+     "x": 32,
+     "y": 96,
      "width": 16,
      "height": 32,
      "rotation": 0,
@@ -1828,7 +1828,7 @@
       {
        "name": "tiefe",
        "type": "int",
-       "value": 104
+       "value": 120
       },
       {
        "name": "kollision",
@@ -2956,6 +2956,75 @@
        "name": "tiefe",
        "type": "int",
        "value": 169
+      },
+      {
+       "name": "kollision",
+       "type": "bool",
+       "value": false
+      }
+     ]
+    },
+    {
+     "id": 74,
+     "name": "mf4Fussmatte",
+     "type": "moebel",
+     "x": 336,
+     "y": 204,
+     "width": 16,
+     "height": 16,
+     "rotation": 0,
+     "visible": true,
+     "properties": [
+      {
+       "name": "tiefe",
+       "type": "int",
+       "value": 1
+      },
+      {
+       "name": "kollision",
+       "type": "bool",
+       "value": false
+      }
+     ]
+    },
+    {
+     "id": 75,
+     "name": "ld5Glaeser",
+     "type": "moebel",
+     "x": 168,
+     "y": 111,
+     "width": 16,
+     "height": 16,
+     "rotation": 0,
+     "visible": true,
+     "properties": [
+      {
+       "name": "tiefe",
+       "type": "int",
+       "value": 137
+      },
+      {
+       "name": "kollision",
+       "type": "bool",
+       "value": false
+      }
+     ]
+    },
+    {
+     "id": 76,
+     "name": "ld5Glaeser",
+     "type": "moebel",
+     "x": 168,
+     "y": 159,
+     "width": 16,
+     "height": 16,
+     "rotation": 0,
+     "visible": true,
+     "properties": [
+      {
+       "name": "tiefe",
+       "type": "int",
+       "value": 185
       },
       {
        "name": "kollision",

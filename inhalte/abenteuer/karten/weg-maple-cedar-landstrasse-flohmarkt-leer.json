@@ -19213,8 +19213,8 @@
      "id": 367,
      "name": "heTraktor",
      "type": "moebel",
-     "x": 576,
-     "y": 112,
+     "x": 400,
+     "y": 208,
      "width": 80,
      "height": 64,
      "rotation": 0,
@@ -19223,7 +19223,7 @@
       {
        "name": "tiefe",
        "type": "int",
-       "value": 168
+       "value": 264
       },
       {
        "name": "kollision",

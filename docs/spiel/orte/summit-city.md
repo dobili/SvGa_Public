@@ -269,3 +269,27 @@ haben 20 bis 22 Gebäude.
 
 Ohne Satz: Wanderer, Holzhacker, Touristen, Gärtnerin, Radfahrer. Tiere: Murmeltier, Ziegen,
 Kuh, Hund, Adler, Katze.
+
+### Hochebene in Runde 7: Ereignisort und Leben
+
+**Ereignisort „Das Bauerndiplom“ (Dokument 15, 2.9):** Auf dem Schulhof stehen eine Tribüne aus
+drei Teilen (`sc8Tribuene*`), drei Steintische, das Plakat „Diplomtag“ und eine Kiste mit
+Sportgeräten. Am Rand des Hofs steht die Fahnenstange der Schule (`sc8Fahnenmast`, sperrt nur am
+Fuß). Vor den Tischen ist Platz für drei Kinder, Annek, Kira und {held}.
+
+**3.3 Felder für Runde 6 (`hochebene.schule`, begehbar):**
+
+| Auslöser         | A        | B        | C        | Hinweis                               |
+| ---------------- | -------- | -------- | -------- | ------------------------------------- |
+| `ereignisDiplom` | (28, 27) | (28, 27) | (29, 27) | zwischen den Steintischen             |
+| `seite03`        | (48, 23) | (48, 23) | (46, 24) | an der Fahnenstange                   |
+| `finchTurmB`     | (43, 31) | (43, 31) | (42, 31) | Kiste mit Sportgeräten, Finkenzeichen |
+
+**Leben (Regel 10.53):**
+
+- **Felstürme:** Kletterer (drei Punkte fest), Bisonforscherin (Bisons wie Bauern vor dem König),
+  Lehrer im Urlaub (Schachdorf Ströbeck seit 1823), Fotografin.
+  Tiere: Bisons, Falke, Murmeltier, Präriehunde, Hase, Schmetterlinge.
+- **Schule:** Hausmeister (Läufer im Sandkasten), Busfahrerin (en passant), Schulkind (Kiras Bison
+  als Turm, mit Antwort von Ambrose), Vater.
+  Tiere: Hühner, Hund, Spatzen, Katze, Falke, Hase.

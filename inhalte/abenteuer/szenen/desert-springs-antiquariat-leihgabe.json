@@ -4,7 +4,7 @@
   "art": "innen",
   "beschreibung": "Zustand: nach dem Finale in Capital Arena (abschiedGesehen) und wenn der Brief gelesen ist, liegt Hales Brief von 1866 als Leihgabe in einer eigenen Vitrine neben dem Lesetisch, weil Mr. Okoro ihn für die Besucher ausstellt (13_Wegenetz, Post-Game). Sonst wie die Grundkarte. Das Antiquariat von Mr. Okoro im alten Bahnhof von Desert Springs, 20 × 13 Kacheln, Dielen, Holzwand. An der Nordwand Bücherregale, ein Fenster und die alte Bahnhofsuhr, an den Seitenwänden schmale Regale; in der Mitte zwei Regalreihen und ein Lesetisch mit Lampe. Rechts der Tresen mit Mr. Okoro und eine Vitrine mit alten Fahrkarten, links Kisten mit Briefen, Zeitungsstapel und die Kellerluke. Tür in der Mitte der Südwand.",
   "wand": "holz",
-  "boden": "holzHell",
+  "boden": "holzDunkel",
   "raster": [
     "####################",
     "####################",
@@ -137,7 +137,7 @@
     },
     {
       "moebel": "mf2Zeitungsstapel",
-      "feld": [3, 6]
+      "feld": [2, 3]
     },
     {
       "moebel": "sb5VitrineHale",
@@ -169,10 +169,10 @@
     {
       "name": "sammler",
       "typ": "statist",
-      "feld": [6, 7],
+      "feld": [8, 7],
       "eigenschaften": {
-        "von": "6,7",
-        "bis": "6,7",
+        "von": "8,7",
+        "bis": "8,7",
         "tun": "blättert in einem alten Schachbuch",
         "wann": "tag",
         "sagt": "statist.desertSprings.antiquariat.sammler"

@@ -3045,19 +3045,19 @@
     },
     {
      "id": 8,
-     "name": "n10PrellbockHolz",
+     "name": "gm9PrellbockHolz",
      "type": "moebel",
      "x": 304,
      "y": 80,
      "width": 32,
-     "height": 16,
+     "height": 32,
      "rotation": 0,
      "visible": true,
      "properties": [
       {
        "name": "tiefe",
        "type": "int",
-       "value": 88
+       "value": 104
       },
       {
        "name": "kollision",

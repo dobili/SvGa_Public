@@ -19,7 +19,8 @@
     "see": "spiel/eigene/wasser_see.png",
     "strand": "modern-exteriors/Modern_Exteriors_16x16/ME_Theme_Sorter_16x16/21_Beach_16x16.png",
     "watt": "spiel/eigene/wasser_watt.png",
-    "sumpfboden": "spiel/eigene/sumpfboden.png"
+    "sumpfboden": "spiel/eigene/sumpfboden.png",
+    "pisteRot": "spiel/eigene/piste_rot.png"
   },
   "boeden": {
     "holzHell": {
@@ -699,6 +700,18 @@
         0,
         0
       ]
+    },
+    "pisteRot": {
+      "bogen": "pisteRot",
+      "feld": [
+        1,
+        1
+      ],
+      "rand": [
+        0,
+        0
+      ],
+      "diagonalen": true
     }
   },
   "waende": {

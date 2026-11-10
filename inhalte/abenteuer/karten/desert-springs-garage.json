@@ -11,7 +11,7 @@
  "tilewidth": 16,
  "tileheight": 16,
  "nextlayerid": 5,
- "nextobjectid": 31,
+ "nextobjectid": 32,
  "layers": [
   {
    "id": 1,
@@ -920,12 +920,12 @@
     },
     {
      "id": 10,
-     "name": "mf4RegalNiedrig",
+     "name": "pd9Werkzeugschrank2",
      "type": "moebel",
      "x": 64,
-     "y": 16,
+     "y": 32,
      "width": 32,
-     "height": 48,
+     "height": 32,
      "rotation": 0,
      "visible": true,
      "properties": [
@@ -946,7 +946,7 @@
      "name": "mf3PokalKlein",
      "type": "moebel",
      "x": 72,
-     "y": 28,
+     "y": 35,
      "width": 16,
      "height": 16,
      "rotation": 0,
@@ -1265,12 +1265,12 @@
     },
     {
      "id": 25,
-     "name": "rv8Werkzeugkiste",
+     "name": "dsReifen",
      "type": "moebel",
      "x": 48,
-     "y": 112,
-     "width": 32,
-     "height": 32,
+     "y": 128,
+     "width": 16,
+     "height": 16,
      "rotation": 0,
      "visible": true,
      "properties": [
@@ -1383,6 +1383,29 @@
      "name": "rv5ReifenLiegend",
      "type": "moebel",
      "x": 256,
+     "y": 128,
+     "width": 16,
+     "height": 16,
+     "rotation": 0,
+     "visible": true,
+     "properties": [
+      {
+       "name": "tiefe",
+       "type": "int",
+       "value": 136
+      },
+      {
+       "name": "kollision",
+       "type": "bool",
+       "value": true
+      }
+     ]
+    },
+    {
+     "id": 31,
+     "name": "rv5ReifenStehend",
+     "type": "moebel",
+     "x": 64,
      "y": 128,
      "width": 16,
      "height": 16,

@@ -62,6 +62,16 @@
       "art": "fahrzeug",
       "zustand": "alt",
       "stil": "rustikal"
+    },
+    "gm9PrellbockHolz": {
+      "quelle": "spiel/eigene/prellbock_holz_oben.png",
+      "breite": 32,
+      "hoehe": 32,
+      "kollision": true,
+      "art": "gleis",
+      "zustand": "alt",
+      "stil": "industrie",
+      "beschreibung": "Prellbock aus Holz für die Feldbahn (eigenes Bild, prellbock_stahl.py): Bock und Balken aus Holz mit zwei Puffern, ohne Signal; Gleis senkrecht, endet oben (Querauftrag m, 10.11.2026)."
     }
   }
 }

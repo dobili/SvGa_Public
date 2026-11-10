@@ -79,7 +79,7 @@
       "stil": "klassisch"
     },
     "ccZeitungen": {
-      "quelle": "modern-interiors/1_Interiors/16x16/Theme_Sorter_Black_Shadow_Singles/16_Grocery_Store_Black_Shadow_Singles_16x16/Grocery_Store_Black_Shadow_Singles_98.png",
+      "quelle": "modern-interiors/1_Interiors/16x16/Theme_Sorter_Black_Shadow_Singles/5_Classroom_and_Library_Black_Shadow_Singles_16x16/Classroom_and_Library_Singles_59.png",
       "breite": 16,
       "hoehe": 48,
       "kollision": true
@@ -190,31 +190,31 @@
       "stil": "natur"
     },
     "cc3Zeitungsregal": {
-      "quelle": "modern-interiors/1_Interiors/16x16/Theme_Sorter_Black_Shadow_Singles/5_Classroom_and_Library_Black_Shadow_Singles_16x16/Classroom_and_Library_Singles_45.png",
+      "quelle": "modern-interiors/1_Interiors/16x16/Theme_Sorter_Black_Shadow_Singles/5_Classroom_and_Library_Black_Shadow_Singles_16x16/Classroom_and_Library_Singles_69.png",
       "breite": 32,
       "hoehe": 48,
       "kollision": true,
-      "art": "regal",
+      "art": "buecherregal",
       "zustand": "gebraucht",
       "stil": "klassisch",
       "blick": "unten"
     },
     "cc3Ordnerregal": {
-      "quelle": "modern-interiors/1_Interiors/16x16/Theme_Sorter_Black_Shadow_Singles/5_Classroom_and_Library_Black_Shadow_Singles_16x16/Classroom_and_Library_Singles_43.png",
+      "quelle": "modern-interiors/1_Interiors/16x16/Theme_Sorter_Black_Shadow_Singles/5_Classroom_and_Library_Black_Shadow_Singles_16x16/Classroom_and_Library_Singles_71.png",
       "breite": 32,
       "hoehe": 48,
       "kollision": true,
-      "art": "regal",
+      "art": "buecherregal",
       "zustand": "gebraucht",
       "stil": "klassisch",
       "blick": "unten"
     },
     "cc3OrdnerregalB": {
-      "quelle": "modern-interiors/1_Interiors/16x16/Theme_Sorter_Black_Shadow_Singles/5_Classroom_and_Library_Black_Shadow_Singles_16x16/Classroom_and_Library_Singles_44.png",
+      "quelle": "modern-interiors/1_Interiors/16x16/Theme_Sorter_Black_Shadow_Singles/5_Classroom_and_Library_Black_Shadow_Singles_16x16/Classroom_and_Library_Singles_72.png",
       "breite": 32,
       "hoehe": 48,
       "kollision": true,
-      "art": "regal",
+      "art": "buecherregal",
       "zustand": "gebraucht",
       "stil": "klassisch",
       "blick": "unten"
@@ -679,7 +679,7 @@
       "stil": "klassisch"
     },
     "cc4Zeitungsregal": {
-      "quelle": "modern-interiors/1_Interiors/16x16/Theme_Sorter_Black_Shadow_Singles/5_Classroom_and_Library_Black_Shadow_Singles_16x16/Classroom_and_Library_Singles_44.png",
+      "quelle": "modern-interiors/1_Interiors/16x16/Theme_Sorter_Black_Shadow_Singles/5_Classroom_and_Library_Black_Shadow_Singles_16x16/Classroom_and_Library_Singles_72.png",
       "breite": 32,
       "hoehe": 48,
       "kollision": true,
@@ -1438,7 +1438,7 @@
       "stil": "rustikal"
     },
     "cc8Prellbock": {
-      "quelle": "spiel/eigene/prellbock.png",
+      "quelle": "spiel/eigene/prellbock_stahl_oben.png",
       "breite": 32,
       "hoehe": 32,
       "kollision": true,
@@ -1555,13 +1555,24 @@
       "stil": "klassisch"
     },
     "cc8PrellbockQuer": {
-      "quelle": "spiel/eigene/prellbock_quer.png",
+      "quelle": "spiel/eigene/prellbock_stahl_links.png",
       "breite": 16,
-      "hoehe": 32,
+      "hoehe": 48,
       "kollision": true,
       "art": "gleis",
       "zustand": "gebraucht",
-      "stil": "industrie"
+      "stil": "industrie",
+      "beschreibung": "Prellbock aus Stahl (eigenes Bild, prellbock_stahl.py): Bock mit Querbalken, zwei Puffern und Schutzhaltsignal; ersetzt die rot-weiße Straßenbake (Querauftrag m, 10.11.2026). Gleis waagerecht, endet links; Feld eine Kachel über dem Gleis."
+    },
+    "cc8PrellbockQuerRechts": {
+      "quelle": "spiel/eigene/prellbock_stahl_rechts.png",
+      "breite": 16,
+      "hoehe": 48,
+      "kollision": true,
+      "art": "gleis",
+      "zustand": "gebraucht",
+      "stil": "industrie",
+      "beschreibung": "Prellbock aus Stahl (eigenes Bild, prellbock_stahl.py): Bock mit Querbalken, zwei Puffern und Schutzhaltsignal; ersetzt die rot-weiße Straßenbake (Querauftrag m, 10.11.2026). Gleis waagerecht, endet rechts; Feld eine Kachel über dem Gleis."
     },
     "cc8HolzhausBlau": {
       "quelle": "spiel/serene/serene_76.png",

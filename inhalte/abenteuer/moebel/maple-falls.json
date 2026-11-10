@@ -554,10 +554,11 @@
       "blick": "unten"
     },
     "mf2Regal": {
-      "quelle": "modern-interiors/1_Interiors/16x16/Theme_Sorter_Black_Shadow_Singles/5_Classroom_and_Library_Black_Shadow_Singles_16x16/Classroom_and_Library_Singles_43.png",
+      "quelle": "modern-interiors/1_Interiors/16x16/Theme_Sorter_Black_Shadow_Singles/5_Classroom_and_Library_Black_Shadow_Singles_16x16/Classroom_and_Library_Singles_69.png",
       "breite": 32,
       "hoehe": 48,
-      "kollision": true
+      "kollision": true,
+      "art": "buecherregal"
     },
     "mf2Pflanze": {
       "quelle": "spiel/generic/generic_137.png",
@@ -999,11 +1000,11 @@
       "stil": "klassisch"
     },
     "mf4RegalNiedrig": {
-      "quelle": "modern-interiors/1_Interiors/16x16/Theme_Sorter_Black_Shadow_Singles/5_Classroom_and_Library_Black_Shadow_Singles_16x16/Classroom_and_Library_Singles_43.png",
+      "quelle": "modern-interiors/1_Interiors/16x16/Theme_Sorter_Black_Shadow_Singles/5_Classroom_and_Library_Black_Shadow_Singles_16x16/Classroom_and_Library_Singles_69.png",
       "breite": 32,
       "hoehe": 48,
       "kollision": true,
-      "art": "regal",
+      "art": "buecherregal",
       "blick": "unten",
       "zustand": "gebraucht",
       "stil": "klassisch"
@@ -2292,11 +2293,11 @@
       "stil": "klassisch"
     },
     "mf8RegalRot": {
-      "quelle": "modern-interiors/1_Interiors/16x16/Theme_Sorter_Black_Shadow_Singles/5_Classroom_and_Library_Black_Shadow_Singles_16x16/Classroom_and_Library_Singles_43.png",
+      "quelle": "modern-interiors/1_Interiors/16x16/Theme_Sorter_Black_Shadow_Singles/5_Classroom_and_Library_Black_Shadow_Singles_16x16/Classroom_and_Library_Singles_71.png",
       "breite": 32,
       "hoehe": 48,
       "kollision": true,
-      "art": "regal",
+      "art": "buecherregal",
       "blick": "unten",
       "zustand": "gebraucht",
       "stil": "schule"

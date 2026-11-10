@@ -1271,6 +1271,74 @@
             "karte": "lockport.aussen",
             "ausloeser": "gasthausTuer"
           }
+        },
+        {
+          "name": "tafelSchleuse",
+          "karte": "lockport.aussen",
+          "art": "gegenstand",
+          "dialog": "lockport-aussen.tafel_schleuse"
+        },
+        {
+          "name": "steg",
+          "karte": "lockport.aussen",
+          "art": "uebergang",
+          "ziel": {
+            "karte": "lockport.aussen",
+            "ausloeser": "stegSued"
+          },
+          "wenn": "lockportSteg",
+          "dialog": "lockport-aussen.steg_s3"
+        },
+        {
+          "name": "stegSued",
+          "karte": "lockport.aussen",
+          "art": "uebergang",
+          "ziel": {
+            "karte": "lockport.aussen",
+            "ausloeser": "steg"
+          }
+        },
+        {
+          "name": "kai",
+          "karte": "lockport.aussen",
+          "art": "dialog",
+          "dialog": "lockport-aussen.kai"
+        },
+        {
+          "name": "henriksBoot",
+          "karte": "lockport.aussen",
+          "art": "gegenstand",
+          "dialog": "lockport-aussen.henriks_boot"
+        },
+        {
+          "name": "henrik",
+          "karte": "lockport.gasthaus",
+          "art": "dialog",
+          "dialog": "lockport-gasthaus.henrik"
+        },
+        {
+          "name": "fundKegel",
+          "karte": "lockport.gasthaus",
+          "art": "gegenstand",
+          "dialog": "lockport-gasthaus.fund_kegel"
+        },
+        {
+          "name": "kegelbahn",
+          "karte": "lockport.gasthaus",
+          "art": "dialog",
+          "dialog": "lockport-gasthaus.kegelbahn"
+        },
+        {
+          "name": "fotoHochwasser",
+          "karte": "lockport.gasthaus",
+          "art": "dialog",
+          "dialog": "lockport-gasthaus.foto_hochwasser"
+        },
+        {
+          "name": "kegelkoenig",
+          "karte": "lockport.gasthaus",
+          "art": "dialog",
+          "dialog": "lockport-gasthaus.kegelkoenig"
         }
       ]
     },

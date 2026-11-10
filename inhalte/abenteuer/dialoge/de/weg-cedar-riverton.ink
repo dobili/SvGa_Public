@@ -183,8 +183,8 @@ Vor dem Stellwerk sitzt eine ältere Frau auf der Bank, die rechte Hand im Verba
 ~ zugpartieErledigt = true
 Rosalind sieht auf das Brett. „Der Läufer hätte gehangen. Und Earl sieht so etwas sofort.“ #sprecher:erzaehler
 Du hängst den besseren Zug ans Signal. Der Güterzug rattert vorbei, aus dem Führerhaus winkt eine Hand mit einer Tafel. #sprecher:erzaehler
-„Hier, die alte Laterne aus dem Stellwerk. Die brauch ich nicht mehr, seit es Strom gibt.“ #sprecher:erzaehler
-~ gibFund("bahnwaerterlaterne")
+„Hier, die alte Signalkelle aus dem Stellwerk. Die brauch ich nicht mehr, seit es Strom gibt.“ #sprecher:erzaehler
+~ gibFund("signalkelle")
 Sie warten aufeinander. Und es macht sie nicht unglücklich. #sprecher:ambrose
 -> END
 

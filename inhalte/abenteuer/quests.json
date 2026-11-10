@@ -2440,7 +2440,8 @@
             "knoten": "weg-maple-cedar.flohmarkt_karte"
           }
         }
-      ]
+      ],
+      "klein": true
     },
     {
       "kennung": "wegCedarRiverton.zugpartie",
@@ -2466,6 +2467,134 @@
             "art": "dialog",
             "knoten": "weg-cedar-riverton.zugpartie_geloest"
           }
+        }
+      ],
+      "klein": true
+    },
+    {
+      "kennung": "lockport.tafelSchleuse",
+      "titel": "quest.tafelSchleuse.titel",
+      "typ": "raetsel",
+      "ort": "lockport",
+      "haupt": false,
+      "klein": true,
+      "start": {
+        "art": "ort",
+        "karte": "lockport.aussen",
+        "ausloeser": "tafelSchleuse"
+      },
+      "schritte": [
+        {
+          "text": "quest.tafelSchleuse.schritt1",
+          "ereignis": {
+            "art": "aufgaben",
+            "runde": "lockport.tafelSchleuse"
+          },
+          "wirkungen": [
+            {
+              "art": "muenzen",
+              "anzahl": 5
+            }
+          ]
+        }
+      ]
+    },
+    {
+      "kennung": "lockport.kahnrennen",
+      "titel": "quest.kahnrennen.titel",
+      "typ": "raetsel",
+      "ort": "lockport",
+      "haupt": false,
+      "klein": true,
+      "start": {
+        "art": "dialog",
+        "knoten": "lockport-aussen.kahnrennen_angebot"
+      },
+      "schritte": [
+        {
+          "text": "quest.kahnrennen.schritt1",
+          "ereignis": {
+            "art": "aufgaben",
+            "runde": "lockport.kahnrennen"
+          }
+        },
+        {
+          "text": "quest.kahnrennen.schritt2",
+          "ereignis": {
+            "art": "dialog",
+            "knoten": "lockport-aussen.kahnrennen_geloest"
+          },
+          "wirkungen": [
+            {
+              "art": "muenzen",
+              "anzahl": 10
+            }
+          ]
+        }
+      ]
+    },
+    {
+      "kennung": "lockport.taue",
+      "titel": "quest.taue.titel",
+      "typ": "raetsel",
+      "ort": "lockport",
+      "haupt": false,
+      "klein": true,
+      "start": {
+        "art": "dialog",
+        "knoten": "lockport-gasthaus.henrik_tipp"
+      },
+      "schritte": [
+        {
+          "text": "quest.taue.schritt1",
+          "ereignis": {
+            "art": "aufgaben",
+            "runde": "lockport.taue"
+          }
+        },
+        {
+          "text": "quest.taue.schritt2",
+          "ereignis": {
+            "art": "dialog",
+            "knoten": "lockport-aussen.taue_geloest"
+          },
+          "wirkungen": [
+            {
+              "art": "muenzen",
+              "anzahl": 10
+            },
+            {
+              "art": "gegenstand",
+              "gegenstand": "gummistiefel"
+            }
+          ]
+        }
+      ]
+    },
+    {
+      "kennung": "lockport.post",
+      "titel": "quest.lockportPost.titel",
+      "typ": "hilfe",
+      "ort": "lockport",
+      "haupt": false,
+      "klein": true,
+      "start": {
+        "art": "dialog",
+        "knoten": "lockport-aussen.post_abgeben"
+      },
+      "schritte": [
+        {
+          "text": "quest.lockportPost.schritt1",
+          "ereignis": {
+            "art": "dialog",
+            "knoten": "lockport-aussen.post_geloest"
+          },
+          "wirkungen": [
+            {
+              "art": "muenzen",
+              "anzahl": 10
+            }
+          ]
         }
       ]
     }

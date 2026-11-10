@@ -976,4 +976,34 @@ Fuchs. Gwen, Juno, Leif und die Pfadfinder bleiben ohne Satz, weil ihre Dialoge 
 | `fundHolzspringer`  | gegenstand (vorher) | –        | –        | –        | gibt zusätzlich `finchSpringerA` (Finch-Figur Springer a)                              |
 
 Quest `wegCedarRiverton.zugpartie` (Rätsel): Dialog `zugpartie_angebot`, dann die Aufgaben, dann
-`zugpartie_geloest` mit der Bahnwärterlaterne (Fund `bahnwaerterlaterne`), die den Durchlass öffnet.
+`zugpartie_geloest` mit der Signalkelle (Fund `signalkelle`). Die Laterne für den Durchlass kommt aus Ironwood (Edna, 13 S14).
+
+## Runde 6 (10.11.2026): Lockport spielbar (niedrig-1)
+
+**Sperre S3:** Der Steg über das Untertor ist ein Übergang auf derselben Karte (`steg` (30–31, 13) →
+`stegSued` (30–31, 17), `wenn: lockportSteg`). Damit niemand außen herum läuft, sperren Holzzäune
+(`ccZaun`) beide Schleusentore (30–31 und 36–37, Reihe 14) und den Uferstreifen im Westen (A und C
+(1, 13), B (1–5, 13)). Die App kann dafür den Helden jetzt auf derselben Karte versetzen
+(`Oberweltszene.versetze`). `lockportSteg` setzt der Dialog selbst, sobald die Tafel
+`lockport.tafelSchleuse` bestanden ist (5 Münzen).
+
+| Auslöser         | Karte    | Art              | Feld A      | Feld B   | Feld C   | Inhalt                                              |
+| ---------------- | -------- | ---------------- | ----------- | -------- | -------- | --------------------------------------------------- |
+| `tafelSchleuse`  | aussen   | gegenstand       | (37, 10)    | (37, 10) | (35, 10) | Imogen, Tafel S3; nach L1–L3 die Karte „Auszeit“    |
+| `steg`           | aussen   | uebergang, S3    | (30–31, 13) | gleich   | gleich   | ohne Tafel: Schild „Herbstwartung“                  |
+| `stegSued`       | aussen   | uebergang        | (30–31, 17) | gleich   | gleich   | zurück ans Nordufer                                 |
+| `kai`            | aussen   | dialog           | (13, 20)    | (13, 20) | (13, 20) | Kapitän Ruben: L1 Kahnrennen, L3 Post               |
+| `henriksBoot`    | aussen   | gegenstand       | (23, 20)    | (23, 20) | (23, 20) | L2: Aufgaben, danach Gummistiefel                   |
+| `henrik`         | gasthaus | dialog           | (15, 8)     | (15, 6)  | (4, 7)   | Henrik am Tresen, nimmt L2 an                       |
+| `fundKegel`      | gasthaus | gegenstand       | (15, 4)     | (1, 4)   | (18, 5)  | Fund `kegelKerbe`                                   |
+| `kegelbahn`      | gasthaus | dialog (Ansehen) | (7, 5)      | (3, 7)   | (12, 5)  | acht Kegel fallen                                   |
+| `fotoHochwasser` | gasthaus | dialog (Ansehen) | (13, 3)     | (10, 3)  | (16, 3)  | Imogen im Hochwasser                                |
+| `kegelkoenig`    | gasthaus | dialog (Ansehen) | (3, 3)      | (3, 3)   | (14, 3)  | Tafel „Kegelkönig des Monats“ (in B neu bei (2, 1)) |
+
+Quests (alle `klein`): `lockport.tafelSchleuse` (5 Münzen), `.kahnrennen` (3 Aufgaben Doppelangriff,
+10), `.taue` (2 Aufgaben Fesselung, 10 und Gegenstand `gummistiefel`), `.post` (10, setzt
+`lastkahnFrei`). Den Brief gibt Big Joe in Ironwood mit der Variable `briefFuerRuben` (mittel-4 setzt
+sie in seinem Dialog). Imogen, Ruben und Henrik stehen als Statisten ohne Satz an ihren Auslösern; in B
+liegt das Ruderboot neu bei (21, 18). **Offen:** Glocke und Pumpe haben kein Bild auf der Karte und
+bleiben ohne Auslöser; die Schnellreise mit dem Lastkahn (`reise`) braucht Anleger in Riverton und
+Ironwood.

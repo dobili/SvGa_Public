@@ -281,10 +281,10 @@
       "text": "fund.finchSpringerA.text"
     },
     {
-      "kennung": "bahnwaerterlaterne",
+      "kennung": "signalkelle",
       "ort": "wegCedarRiverton",
-      "name": "fund.bahnwaerterlaterne.name",
-      "text": "fund.bahnwaerterlaterne.text"
+      "name": "fund.signalkelle.name",
+      "text": "fund.signalkelle.text"
     },
     {
       "kennung": "seite01",
@@ -297,6 +297,12 @@
       "ort": "wegCedarRiverton",
       "name": "fund.thermoskanneGwen.name",
       "text": "fund.thermoskanneGwen.text"
+    },
+    {
+      "kennung": "kegelKerbe",
+      "ort": "lockport",
+      "name": "fund.kegelKerbe.name",
+      "text": "fund.kegelKerbe.text"
     }
   ]
 }

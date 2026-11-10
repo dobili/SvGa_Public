@@ -204,3 +204,18 @@ mit Seilen, Geländer an der Kante, Bank, Rätseltafel, Kiefern im Westen, Felse
 
 Boden Sand, Piste Schotter (2 breit). Inventar: schiefe Zäune, Telegrafenmasten, liegengebliebener
 Wagen, Kakteen, Felsen, ein Schild „GHOST TOWN 2 MI“.
+
+## Runde 7: Camp als Ort und Leben (10.11.2026)
+
+**Camp (Regel 10.51, klein: 12 Gebäude):** Zu den Campbuden und dem Kiosk kommen
+Kulissenhäuser ohne Innenraum am Uferweg: Ranger-Häuschen, Waschhaus, zwei Wohnwagen,
+Schutzhütte, Pavillon und Bootsschuppen. Dazu ein Badehäuschen am Strand und ein Holzschuppen im
+Nordosten. Ein Erdweg führt im Westen am Ufer entlang und im Nordosten bis zum Schuppen. In B
+stehen die Hütten im Norden am Hüttenweg, weil der Westen dort Strand ist.
+
+**Leben (Regel 10.53):** 12 Statisten, 7 davon ansprechbar (`statist.pinewoodCamp.aussen.*`):
+Betreuer, Köchin am Kiosk (Bauer schlägt Dame, mit Antwort von Ambrose), Rangerin
+(Lewis-Figuren), Wanderin, Anglerin (Italienisch), Bademeister (Perfect Move im Alltag) und Opa
+am Wohnwagen (Bobby Fischer mit 14). Ohne Satz: Holzhacker, zwei Kinder beim Wettlauf,
+Fotografin, Gitarrist am Abend, Kanufahrer. Tiere: Libellen, Reh, Eichhörnchen, Enten, Hund,
+Specht.

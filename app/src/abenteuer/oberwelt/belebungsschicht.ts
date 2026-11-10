@@ -11,7 +11,15 @@
  */
 import Phaser from "phaser";
 import { passtZurStunde, statistenbild, type Belebung, type Feld } from "./belebung";
-import { neueBewegung, schritt, steht, type Bewegung, type Umgebung } from "./belebungsbewegung";
+import {
+  haeltAuf,
+  neueBewegung,
+  schritt,
+  sperreAn,
+  steht,
+  type Bewegung,
+  type Umgebung,
+} from "./belebungsbewegung";
 import { erzeugeLaufanimationen, ladeFigurbogen, laufname, standbild } from "./figurbilder";
 import {
   scharGroesse,
@@ -116,9 +124,14 @@ export class Belebungsschicht {
       erzeugeLaufanimationen(this.szene, bogen);
       sprite.setOrigin(0.5, 1 - this.kachel / 2 / sprite.height);
     }
+    this.fuegeHinzu(v, sprite, eigen ? bogen : null, this.neueSperre());
+  }
+
+  /** Unsichtbare Fläche von einer Kachel, an der der Held anstößt (Statist oder Tier). */
+  private neueSperre(): Phaser.GameObjects.Rectangle {
     const sperre = this.szene.add.rectangle(0, 0, this.kachel, this.kachel).setVisible(false);
     this.szene.physics.add.existing(sperre, true);
-    this.fuegeHinzu(v, sprite, eigen ? bogen : null, sperre);
+    return sperre;
   }
 
   private stelleTierAuf(v: Belebung): void {
@@ -135,7 +148,10 @@ export class Belebungsschicht {
       // Große Tiere (Ziege, Kuh) brauchen in der Schar mehr als eine Kachel Abstand.
       const weite = Math.ceil(sprite.width / this.kachel);
       const d = v.verhalten === "schwimmen" ? schwimmversatz(v.von, v.bis, i, 1) : scharversatz(i);
-      this.fuegeHinzu(verschoben(v, { x: d.x * weite, y: d.y * weite }), sprite, bogen, null);
+      // Das erste Tier einer Schar hält den Helden auf (belebungsbewegung.ts, haeltAuf); die
+      // übrigen stehen locker darum und bleiben durchlässig, damit eine Schar keinen Weg zustellt.
+      const sperre = i === 0 && haeltAuf(v) ? this.neueSperre() : null;
+      this.fuegeHinzu(verschoben(v, { x: d.x * weite, y: d.y * weite }), sprite, bogen, sperre);
     }
   }
 
@@ -198,14 +214,17 @@ export class Belebungsschicht {
     }
   }
 
-  /** Statisten sperren nur im Stehen und nie auf der Kachel des Helden (er läuft nie fest). */
+  /**
+   * Statisten und Tiere am Boden sperren ihre Kachel, auch im Gehen (Wunsch des Autors,
+   * 10.11.2026), aber nie, solange der Held sie berührt (er läuft nie fest).
+   */
   private schalteSperre(d: Darsteller, held: Feld): void {
     const sperre = d.sperre;
     const koerper = sperre?.body;
     if (!sperre || !(koerper instanceof Phaser.Physics.Arcade.StaticBody)) return;
     const x = Math.round(d.b.x);
     const y = Math.round(d.b.y);
-    const an = steht(d.b) && Math.hypot(held.x - x, held.y - y) >= 1;
+    const an = sperreAn(held, x, y);
     const mx = x * this.kachel + this.kachel / 2;
     const my = y * this.kachel + this.kachel / 2;
     if (an && (sperre.x !== mx || sperre.y !== my || !koerper.enable)) {

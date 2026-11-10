@@ -224,15 +224,17 @@ stehen.
 
 ### 4.5 Zitate, brillante Züge, Interviews, Eröffnungen, Motive
 
-Eine Recherche mit Quellen läuft (Haupt-Chat, 10.11.2026). Ihr Ergebnis wird hier eingefügt:
+Steht mit Quellen in `16a_Vorrat_Zitate_Zuege.md`:
 
-- 30 Zitate von Weltmeistern und Großmeistern;
-- 20 berühmte Züge;
-- 15 Interview-Schnipsel heutiger Spitzenspieler;
-- 15 Eröffnungen mit Vor- und Nachteil;
-- 10 taktische Motive mit berühmtem Beispiel.
+- 36 Zitate mit Status gesichert, überliefert oder zugeschrieben, dazu bekannte
+  Falschzuschreibungen;
+- 20 berühmte Züge (davon zwei Studien);
+- 19 Interview-Schnipsel heutiger Spitzenspieler;
+- 15 Eröffnungen mit Vorteil und Nachteil;
+- 10 taktische Motive mit echtem Beispiel.
 
-Bis dahin gelten nur 4.1 bis 4.4.
+Die Regeln für den Gebrauch stehen dort am Anfang. Aus dem Vorrat darf jeder Statist schöpfen; je
+Karte höchstens zwei Zitate, damit es nicht wie ein Kalender klingt.
 
 ## 5. Tiere
 

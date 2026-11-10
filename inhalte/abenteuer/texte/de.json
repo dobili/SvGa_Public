@@ -1309,5 +1309,11 @@
   "fehler.paket.pruefsumme": "Die Spieldatei {pfad} ist beschädigt. Bitte das Spiel neu laden.",
   "fehler.paket.ohneSpeicher": "Dieser Browser hat keinen Speicher für das Spielpaket.",
   "fehler.paket.datei": "Die Spieldatei {pfad} fehlt ({status}).",
-  "fehler.welt.karteFehlt": "Die Karte {karte} gibt es im Spiel nicht."
+  "fehler.welt.karteFehlt": "Die Karte {karte} gibt es im Spiel nicht.",
+  "vorfuehrung.finchFalle.titel": "Finchs letzte Falle",
+  "vorfuehrung.finchFalle.1": "Der Springer schlägt auf e5 und lässt die eigene Dame stehen. Mit Absicht.",
+  "vorfuehrung.finchFalle.2": "Schwarz greift zu und nimmt die Dame. Genau das wollte Odette.",
+  "vorfuehrung.finchFalle.3": "Läufer schlägt auf f7, Schach. Der König muss einen Schritt vor.",
+  "vorfuehrung.finchFalle.4": "Ke7 ist das einzige Feld.",
+  "vorfuehrung.finchFalle.5": "Der zweite Springer setzt matt, mit drei leichten Figuren gegen den König. Wer die Dame nicht genommen hätte, hätte nur einen Bauern verloren."
 }

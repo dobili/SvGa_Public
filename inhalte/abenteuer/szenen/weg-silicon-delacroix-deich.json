@@ -1,7 +1,7 @@
 {
   "karte": "wegSiliconDelacroix.deich",
   "art": "aussen",
-  "beschreibung": "Variante C, reich: Die Fähre und ein Ruderboot am Steg, viele Bojen und Pfähle mit Möwen im grauen Wintermeer vor dem Steinufer. Der Deich ist eine Höhe: Auf der Krone schwingt der Erdweg zwischen Treibgut, Fässern und Tauen, die Böschung fällt als Hang zur Marsch, zwei Treppen führen hinunter. In der Krone klafft ein Loch, durch das das Meer drückt; Mr. Guidry stopft es mit Sandsäcken. Unten eine dichte Marsch mit Zypressen, Büschen, Schilf und Wildblumen, am Ende der zweiten Treppe eine große Pumpenhalle. Am Ortsrand drei Hilfszelte hinter Bauzäunen und zwei Häuser mit Planen.",
+  "beschreibung": "Variante C, reich: Ein Fischerboot und ein Ruderboot am Steg, viele Bojen und Pfähle mit Möwen im grauen Wintermeer vor dem Steinufer. Der Deich ist eine Höhe: Auf der Krone schwingt der Erdweg zwischen Treibgut, Fässern und Tauen, die Böschung fällt als grüner Grashang zur Marsch, zwei Treppen führen hinunter. In der Krone klafft ein Loch, durch das das Meer drückt; Mr. Guidry stopft es mit Sandsäcken. Unten eine winterliche Marsch mit Zypressen, Büschen und Schilf, am Ende der zweiten Treppe eine große Pumpenhalle. Am Ortsrand drei Hilfszelte hinter Bauzäunen und zwei Bretterhütten.",
   "boden": "gras",
   "wandart": "gras",
   "wand": "damm",
@@ -26,8 +26,8 @@
     "################################################################################################ee######################################################ee##################################################################",
     "################################################################################################ee######################################################ee##################################################################",
     "#...............................................................................................ee......................................................ee.................................................................#",
-    "#...............................................................................................ee......................................................ee.................................................................#",
-    "#...............................................................................................ee......................................................ee.................................................................#",
+    "#...............................................................................................ee.........................................pppp.........ee.................................................................#",
+    "#...............................................................................................ee.........................................pppp.........ee.................................................................#",
     "#...............................................................................................eee.....................................................ee.................................................................#",
     "#................................................................................................eee..................................................pppppp...............................................................#",
     "#.................................................................................................eee.................................................pppppp...............................................................#",
@@ -74,15 +74,15 @@
     {
       "moebel": "sd6Boje",
       "feld": [
-        18,
-        2
+        19,
+        1
       ],
       "bauteil_ok": true
     },
     {
       "moebel": "sd6Boje",
       "feld": [
-        27,
+        26,
         2
       ],
       "bauteil_ok": true
@@ -91,6 +91,14 @@
       "moebel": "sd6Boje",
       "feld": [
         36,
+        3
+      ],
+      "bauteil_ok": true
+    },
+    {
+      "moebel": "sd6Boje",
+      "feld": [
+        44,
         2
       ],
       "bauteil_ok": true
@@ -98,15 +106,7 @@
     {
       "moebel": "sd6Boje",
       "feld": [
-        45,
-        2
-      ],
-      "bauteil_ok": true
-    },
-    {
-      "moebel": "sd6Boje",
-      "feld": [
-        54,
+        56,
         2
       ],
       "bauteil_ok": true
@@ -115,6 +115,14 @@
       "moebel": "sd6Boje",
       "feld": [
         63,
+        1
+      ],
+      "bauteil_ok": true
+    },
+    {
+      "moebel": "sd6Boje",
+      "feld": [
+        71,
         2
       ],
       "bauteil_ok": true
@@ -122,7 +130,23 @@
     {
       "moebel": "sd6Boje",
       "feld": [
-        72,
+        79,
+        1
+      ],
+      "bauteil_ok": true
+    },
+    {
+      "moebel": "sd6Boje",
+      "feld": [
+        88,
+        1
+      ],
+      "bauteil_ok": true
+    },
+    {
+      "moebel": "sd6Boje",
+      "feld": [
+        101,
         2
       ],
       "bauteil_ok": true
@@ -130,7 +154,7 @@
     {
       "moebel": "sd6Boje",
       "feld": [
-        81,
+        110,
         2
       ],
       "bauteil_ok": true
@@ -138,7 +162,7 @@
     {
       "moebel": "sd6Boje",
       "feld": [
-        90,
+        119,
         2
       ],
       "bauteil_ok": true
@@ -146,7 +170,7 @@
     {
       "moebel": "sd6Boje",
       "feld": [
-        99,
+        125,
         2
       ],
       "bauteil_ok": true
@@ -154,7 +178,23 @@
     {
       "moebel": "sd6Boje",
       "feld": [
-        108,
+        134,
+        3
+      ],
+      "bauteil_ok": true
+    },
+    {
+      "moebel": "sd6Boje",
+      "feld": [
+        142,
+        1
+      ],
+      "bauteil_ok": true
+    },
+    {
+      "moebel": "sd6Boje",
+      "feld": [
+        155,
         2
       ],
       "bauteil_ok": true
@@ -162,87 +202,47 @@
     {
       "moebel": "sd6Boje",
       "feld": [
-        117,
-        2
+        164,
+        1
       ],
       "bauteil_ok": true
     },
     {
       "moebel": "sd6Boje",
       "feld": [
-        126,
-        2
+        173,
+        1
       ],
       "bauteil_ok": true
     },
     {
       "moebel": "sd6Boje",
       "feld": [
-        135,
-        2
+        181,
+        1
       ],
       "bauteil_ok": true
     },
     {
       "moebel": "sd6Boje",
       "feld": [
-        144,
-        2
+        190,
+        1
       ],
       "bauteil_ok": true
     },
     {
       "moebel": "sd6Boje",
       "feld": [
-        153,
-        2
+        197,
+        3
       ],
       "bauteil_ok": true
     },
     {
       "moebel": "sd6Boje",
       "feld": [
-        162,
-        2
-      ],
-      "bauteil_ok": true
-    },
-    {
-      "moebel": "sd6Boje",
-      "feld": [
-        171,
-        2
-      ],
-      "bauteil_ok": true
-    },
-    {
-      "moebel": "sd6Boje",
-      "feld": [
-        180,
-        2
-      ],
-      "bauteil_ok": true
-    },
-    {
-      "moebel": "sd6Boje",
-      "feld": [
-        189,
-        2
-      ],
-      "bauteil_ok": true
-    },
-    {
-      "moebel": "sd6Boje",
-      "feld": [
-        198,
-        2
-      ],
-      "bauteil_ok": true
-    },
-    {
-      "moebel": "sd6Boje",
-      "feld": [
-        207,
+        205,
         2
       ],
       "bauteil_ok": true
@@ -542,17 +542,17 @@
       "bauteil_ok": true
     },
     {
-      "moebel": "svHausRot",
+      "moebel": "by9HuetteKrebs",
       "feld": [
         190,
-        23
+        22
       ]
     },
     {
-      "moebel": "svHausRot",
+      "moebel": "by9HuetteTheron",
       "feld": [
         202,
-        23
+        22
       ]
     },
     {
@@ -781,13 +781,6 @@
       ]
     },
     {
-      "moebel": "wg4BlumenWeiss",
-      "feld": [
-        117,
-        19
-      ]
-    },
-    {
       "moebel": "sd6Schilf",
       "feld": [
         203,
@@ -816,13 +809,6 @@
       ]
     },
     {
-      "moebel": "wg4Wildblumen",
-      "feld": [
-        108,
-        20
-      ]
-    },
-    {
       "moebel": "sd6Schilf",
       "feld": [
         147,
@@ -841,27 +827,6 @@
       "feld": [
         3,
         26
-      ]
-    },
-    {
-      "moebel": "wg4BlumenWeiss",
-      "feld": [
-        132,
-        24
-      ]
-    },
-    {
-      "moebel": "wg4BlumenWeiss",
-      "feld": [
-        185,
-        18
-      ]
-    },
-    {
-      "moebel": "wg4Wildblumen",
-      "feld": [
-        193,
-        27
       ]
     },
     {
@@ -914,24 +879,10 @@
       ]
     },
     {
-      "moebel": "wg4BlumenWeiss",
-      "feld": [
-        139,
-        24
-      ]
-    },
-    {
       "moebel": "sd6SchilfBreit",
       "feld": [
         34,
         19
-      ]
-    },
-    {
-      "moebel": "wg4BlumenWeiss",
-      "feld": [
-        124,
-        12
       ]
     },
     {
@@ -977,13 +928,6 @@
       ]
     },
     {
-      "moebel": "wg4BlumenWeiss",
-      "feld": [
-        110,
-        12
-      ]
-    },
-    {
       "moebel": "wg4Gras",
       "feld": [
         200,
@@ -1005,31 +949,10 @@
       ]
     },
     {
-      "moebel": "wg4Wildblumen",
-      "feld": [
-        24,
-        27
-      ]
-    },
-    {
-      "moebel": "wg4BlumenWeiss",
-      "feld": [
-        79,
-        22
-      ]
-    },
-    {
       "moebel": "sd6SchilfBreit",
       "feld": [
         50,
         21
-      ]
-    },
-    {
-      "moebel": "wg4BlumenWeiss",
-      "feld": [
-        2,
-        23
       ]
     },
     {
@@ -1040,23 +963,9 @@
       ]
     },
     {
-      "moebel": "wg4BlumenWeiss",
-      "feld": [
-        168,
-        28
-      ]
-    },
-    {
       "moebel": "sd6Schilf",
       "feld": [
         164,
-        12
-      ]
-    },
-    {
-      "moebel": "wg4BlumenWeiss",
-      "feld": [
-        112,
         12
       ]
     },
@@ -1072,13 +981,6 @@
       "feld": [
         64,
         17
-      ]
-    },
-    {
-      "moebel": "wg4BlumenWeiss",
-      "feld": [
-        71,
-        13
       ]
     },
     {
@@ -1100,13 +1002,6 @@
       "feld": [
         120,
         14
-      ]
-    },
-    {
-      "moebel": "wg4Wildblumen",
-      "feld": [
-        171,
-        27
       ]
     },
     {
@@ -1152,13 +1047,6 @@
       ]
     },
     {
-      "moebel": "wg4BlumenWeiss",
-      "feld": [
-        78,
-        13
-      ]
-    },
-    {
       "moebel": "wg4Gras",
       "feld": [
         198,
@@ -1166,24 +1054,10 @@
       ]
     },
     {
-      "moebel": "wg4BlumenWeiss",
-      "feld": [
-        185,
-        18
-      ]
-    },
-    {
       "moebel": "wg4Gras",
       "feld": [
         143,
         14
-      ]
-    },
-    {
-      "moebel": "wg4BlumenWeiss",
-      "feld": [
-        17,
-        28
       ]
     },
     {
@@ -1201,13 +1075,6 @@
       ]
     },
     {
-      "moebel": "wg4BlumenWeiss",
-      "feld": [
-        181,
-        23
-      ]
-    },
-    {
       "moebel": "sd6SchilfBreit",
       "feld": [
         144,
@@ -1215,24 +1082,10 @@
       ]
     },
     {
-      "moebel": "wg4Wildblumen",
-      "feld": [
-        104,
-        15
-      ]
-    },
-    {
       "moebel": "sd6Schilf",
       "feld": [
         26,
         26
-      ]
-    },
-    {
-      "moebel": "wg4Wildblumen",
-      "feld": [
-        125,
-        27
       ]
     },
     {
@@ -1376,13 +1229,6 @@
       ]
     },
     {
-      "moebel": "wg4Wildblumen",
-      "feld": [
-        77,
-        16
-      ]
-    },
-    {
       "moebel": "sd6Schilf",
       "feld": [
         96,
@@ -1397,13 +1243,6 @@
       ]
     },
     {
-      "moebel": "wg4BlumenWeiss",
-      "feld": [
-        78,
-        16
-      ]
-    },
-    {
       "moebel": "sd6Schilf",
       "feld": [
         182,
@@ -1415,13 +1254,6 @@
       "feld": [
         185,
         16
-      ]
-    },
-    {
-      "moebel": "wg4BlumenWeiss",
-      "feld": [
-        141,
-        23
       ]
     },
     {
@@ -1443,20 +1275,6 @@
       "feld": [
         12,
         26
-      ]
-    },
-    {
-      "moebel": "wg4BlumenWeiss",
-      "feld": [
-        71,
-        18
-      ]
-    },
-    {
-      "moebel": "wg4Wildblumen",
-      "feld": [
-        198,
-        27
       ]
     },
     {
@@ -1488,30 +1306,9 @@
       ]
     },
     {
-      "moebel": "wg4BlumenWeiss",
-      "feld": [
-        108,
-        23
-      ]
-    },
-    {
       "moebel": "sd6Schilf",
       "feld": [
         206,
-        17
-      ]
-    },
-    {
-      "moebel": "wg4BlumenWeiss",
-      "feld": [
-        137,
-        16
-      ]
-    },
-    {
-      "moebel": "wg4BlumenWeiss",
-      "feld": [
-        47,
         17
       ]
     },
@@ -1534,13 +1331,6 @@
       "feld": [
         143,
         20
-      ]
-    },
-    {
-      "moebel": "wg4Wildblumen",
-      "feld": [
-        129,
-        27
       ]
     },
     {
@@ -1688,13 +1478,6 @@
       "feld": [
         2,
         17
-      ]
-    },
-    {
-      "moebel": "cc3Busch",
-      "feld": [
-        202,
-        22
       ]
     },
     {
@@ -2003,5 +1786,7 @@
     "landhaus"
   ],
   "datei": "karten/weg-silicon-delacroix-deich.json",
-  "kante": "klippe"
+  "kante": "klippe",
+  "fels": "gras",
+  "jahreszeit": "winter"
 }

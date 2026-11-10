@@ -626,3 +626,14 @@ Die Bibliothek baut mittel-4. Das Archiv ist in allen drei Varianten `"dicht": t
 | Archiv      | zwei versetzte Querreihen (links vorn, rechts hinten), Kartonstapel an der Südwand, Arbeitsplatz Südostecke | zwei Längsreihen mit Gang in der Mitte, Kartonsäule an der Ostwand, Arbeitsplatz Südwestecke                                       | Doppelreihe Rücken an Rücken mitten im Raum, Gänge ringsum, Kartons an der Südwand, Arbeitsplatz am Fuß der Treppe                  |
 | Waschsalon  | Maschinenreihe an der Nordwand, Falttische in der Mitte, Wartesitze links                                   | Maschinen und Getränkeautomat an der Nordwand, Falttische an der Westwand, Sitzecke in der Südostecke                              | zweite Reihe Maschinen in der Mitte, Falttisch und Wartesitze unten, mehr Körbe und Pflanzen                                        |
 | Drechslerei | Hobelbank links, Regal am Werktisch rechts, Arbeitstisch mit Werkstück in der Mitte                         | große Bank als Drehbank mitten im Raum, Werktisch und Regal an der Nordwand, Holzlager an der Ostwand                              | zwei Holztische als Werkbänke mit Werkzeug, Regal und Holzkiste, Hobelbank rechts, Werkstück in der Mitte, Holzlager an der Südwand |
+
+## Runde 7 (10.11.2026): Gebäude und Belebung in `cedarCreek.aussen`
+
+Nach Regel 10.51 und 10.53, das gewählte Bild bleibt. Sechs Kulissenhäuser ohne Innenraum: zwei
+kleine in zweiter Reihe zwischen Bahnsteig und den Rückseiten von Waschsalon und Seiteneingang
+(12, 5) und (19, 5); vier an einer neuen Gasse aus Pflaster am Südrand (Reihen 38–39, vom
+Vordachhaus bis zum Uferweg), Türen zur Gasse, Rücken zur Zedernwiese: (23, 34), (29, 34),
+(36, 34), (42, 34). Dafür sind eine Zeder, eine schmale Zeder, eine Tanne und das letzte
+Heckenstück weg, die Picknicktische stehen weiter nördlich (24, 28) und (37, 28). Damit 12
+Gebäude. Belebung: 12 Statisten, 9 ansprechbar (`statist.cedarCreek.aussen.*`), dazu Hund,
+Reiher, Eichelhäher, Enten auf dem Bach und ein Eichhörnchen auf der Wiese.

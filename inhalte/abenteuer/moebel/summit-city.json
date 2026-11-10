@@ -161,6 +161,54 @@
       "zustand": "gebraucht",
       "stil": "modern"
     },
+    "sc9EndspieldiagrammA": {
+      "quelle": "spiel/eigene/endspieldiagramm_a.png",
+      "breite": 32,
+      "hoehe": 32,
+      "kollision": false,
+      "art": "bild",
+      "zustand": "alt",
+      "stil": "rustikal"
+    },
+    "sc9EndspieldiagrammB": {
+      "quelle": "spiel/eigene/endspieldiagramm_b.png",
+      "breite": 32,
+      "hoehe": 32,
+      "kollision": false,
+      "art": "bild",
+      "zustand": "alt",
+      "stil": "rustikal"
+    },
+    "sc9RegalBergsport": {
+      "quelle": "spiel/eigene/regal_bergsport.png",
+      "breite": 32,
+      "hoehe": 48,
+      "kollision": true,
+      "art": "regal",
+      "blick": "unten",
+      "zustand": "gebraucht",
+      "stil": "rustikal"
+    },
+    "sc9Kartenstaender": {
+      "quelle": "spiel/eigene/kartenstaender.png",
+      "breite": 16,
+      "hoehe": 32,
+      "kollision": true,
+      "art": "regal",
+      "blick": "unten",
+      "zustand": "gebraucht",
+      "stil": "rustikal"
+    },
+    "sc9Wanderkarte": {
+      "quelle": "spiel/eigene/wanderkarte.png",
+      "breite": 24,
+      "hoehe": 16,
+      "kollision": false,
+      "art": "deko",
+      "blick": "unten",
+      "zustand": "gebraucht",
+      "stil": "rustikal"
+    },
     "sc7Kamin": {
       "quelle": "spiel/eigene/kamin.png",
       "breite": 48,

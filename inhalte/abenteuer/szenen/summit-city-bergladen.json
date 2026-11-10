@@ -2,7 +2,7 @@
   "karte": "summitCity.bergladen",
   "datei": "karten/summit-city-bergladen.json",
   "art": "innen",
-  "beschreibung": "Der Bergladen von Summit City: Holzwände, alte Dielen, es riecht nach Leder und Seil. Links die Theke mit der Kasse, an den Wänden Regale mit Seilen, Karabinern, Laternen und Wanderkarten, davor Rucksäcke und ein Ständer mit Seilbahnkarten. Die Tür liegt in der Südwand. Theke links, an der Nordwand Warenregale, Seilhaken und ein Werkzeugregal, Kartentisch in der Mitte.",
+  "beschreibung": "Der Bergladen von Summit City: Holzwände, alte Dielen, es riecht nach Leder und Seil. Links die Theke mit der Kasse, dahinter die Ladenhilfe. An der Nordwand drei Regale mit aufgerollten Seilen, Karabinern und Laternen, dazwischen ein Seil am Haken und eine große Landkarte. In der Mitte der Kartentisch mit einer aufgefalteten Wanderkarte, davor Rucksäcke und ein Seil, rechts der Ständer mit Seilbahn- und Wanderkarten. Die Tür liegt in der Südwand.",
   "wand": "holz",
   "boden": "dielen",
   "zustand": ["neu", "gebraucht", "alt"],
@@ -39,48 +39,63 @@
     },
     {
       "moebel": "sc7Theke",
-      "feld": [1, 3]
+      "feld": [1, 4],
+      "id": "theke"
     },
     {
-      "moebel": "mf9Vorrat99",
-      "feld": [5, 1]
+      "moebel": "cc4Kasse",
+      "feld": [0, 0],
+      "auf": "theke",
+      "versatz": [4, 0]
     },
     {
-      "moebel": "mf9Vorrat100",
-      "feld": [6, 1]
+      "moebel": "sc9RegalBergsport",
+      "feld": [4, 1]
     },
     {
       "moebel": "pg7SeilHaken",
-      "feld": [8, 1],
+      "feld": [6, 1],
       "an_wand": true
     },
     {
-      "moebel": "pdWerkzeugregal",
-      "feld": [9, 2]
+      "moebel": "sc9RegalBergsport",
+      "feld": [7, 1]
     },
     {
-      "moebel": "mf9Vorrat102",
-      "feld": [12, 1]
+      "moebel": "ccWeltkarte",
+      "feld": [9, 1],
+      "an_wand": true
+    },
+    {
+      "moebel": "sc9RegalBergsport",
+      "feld": [11, 1]
+    },
+    {
+      "moebel": "sc9Kartenstaender",
+      "feld": [12, 5]
     },
     {
       "moebel": "cc5Tisch",
-      "feld": [7, 5]
+      "feld": [6, 5],
+      "id": "kartentisch"
     },
     {
-      "moebel": "ld5Seil",
-      "feld": [4, 6]
+      "moebel": "sc9Wanderkarte",
+      "feld": [0, 0],
+      "auf": "kartentisch",
+      "versatz": [4, 2]
     },
     {
       "moebel": "scRucksack",
-      "feld": [10, 6]
+      "feld": [9, 6]
     },
     {
       "moebel": "scRucksackRot",
-      "feld": [11, 6]
+      "feld": [10, 6]
     },
     {
-      "moebel": "cc3Zeitungsregal",
-      "feld": [11, 3]
+      "moebel": "pdSeil",
+      "feld": [4, 6]
     },
     {
       "moebel": "cc4PflanzeK",
@@ -101,7 +116,7 @@
     },
     {
       "name": "theke",
-      "feld": [2, 5]
+      "feld": [2, 6]
     }
   ],
   "figuren": [],
@@ -109,24 +124,25 @@
     {
       "name": "ladenhilfe",
       "typ": "statist",
-      "feld": [4, 6],
+      "feld": [2, 3],
       "eigenschaften": {
-        "von": "4,6",
-        "bis": "4,6",
-        "tun": "räumt Wanderkarten ins Regal",
+        "von": "2,3",
+        "bis": "3,3",
+        "tun": "steht hinter der Theke an der Kasse",
         "sagt": "statist.summitCity.bergladen.ladenhilfe"
       }
     },
     {
       "name": "kunde",
       "typ": "statist",
-      "feld": [9, 6],
+      "feld": [8, 7],
       "eigenschaften": {
-        "von": "9,6",
-        "bis": "9,6",
+        "von": "8,7",
+        "bis": "8,7",
         "tun": "probiert einen Wanderstock aus",
         "sagt": "statist.summitCity.bergladen.kunde",
-        "zeigt": "schaefermatt"
+        "zeigt": "schaefermatt",
+        "bild": "statist-31"
       }
     }
   ]

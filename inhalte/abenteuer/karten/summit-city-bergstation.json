@@ -11,7 +11,7 @@
  "tilewidth": 16,
  "tileheight": 16,
  "nextlayerid": 5,
- "nextobjectid": 24,
+ "nextobjectid": 27,
  "layers": [
   {
    "id": 1,
@@ -754,8 +754,8 @@
      "id": 4,
      "name": "fahrplan",
      "type": "ausloeser",
-     "x": 64,
-     "y": 160,
+     "x": 96,
+     "y": 144,
      "width": 16,
      "height": 16,
      "rotation": 0,
@@ -850,24 +850,34 @@
     },
     {
      "id": 8,
-     "name": "sc7FensterWolken",
-     "type": "moebel",
-     "x": 16,
-     "y": 16,
-     "width": 48,
-     "height": 32,
+     "name": "schalterbeamter",
+     "type": "statist",
+     "x": 32,
+     "y": 112,
+     "width": 16,
+     "height": 16,
      "rotation": 0,
      "visible": true,
      "properties": [
       {
-       "name": "tiefe",
-       "type": "int",
-       "value": 0
+       "name": "von",
+       "type": "string",
+       "value": "2,7"
       },
       {
-       "name": "kollision",
-       "type": "bool",
-       "value": false
+       "name": "bis",
+       "type": "string",
+       "value": "2,7"
+      },
+      {
+       "name": "tun",
+       "type": "string",
+       "value": "verkauft Fahrkarten hinter dem Schalter"
+      },
+      {
+       "name": "wann",
+       "type": "string",
+       "value": "tag"
       }
      ]
     },
@@ -875,7 +885,7 @@
      "id": 9,
      "name": "sc7FensterWolken",
      "type": "moebel",
-     "x": 64,
+     "x": 16,
      "y": 16,
      "width": 48,
      "height": 32,
@@ -898,7 +908,7 @@
      "id": 10,
      "name": "sc7FensterWolken",
      "type": "moebel",
-     "x": 112,
+     "x": 64,
      "y": 16,
      "width": 48,
      "height": 32,
@@ -921,7 +931,7 @@
      "id": 11,
      "name": "sc7FensterWolken",
      "type": "moebel",
-     "x": 160,
+     "x": 112,
      "y": 16,
      "width": 48,
      "height": 32,
@@ -942,6 +952,52 @@
     },
     {
      "id": 12,
+     "name": "sc7FensterWolken",
+     "type": "moebel",
+     "x": 160,
+     "y": 16,
+     "width": 48,
+     "height": 32,
+     "rotation": 0,
+     "visible": true,
+     "properties": [
+      {
+       "name": "tiefe",
+       "type": "int",
+       "value": 0
+      },
+      {
+       "name": "kollision",
+       "type": "bool",
+       "value": false
+      }
+     ]
+    },
+    {
+     "id": 13,
+     "name": "sc7FensterWolken",
+     "type": "moebel",
+     "x": 224,
+     "y": 16,
+     "width": 48,
+     "height": 32,
+     "rotation": 0,
+     "visible": true,
+     "properties": [
+      {
+       "name": "tiefe",
+       "type": "int",
+       "value": 0
+      },
+      {
+       "name": "kollision",
+       "type": "bool",
+       "value": false
+      }
+     ]
+    },
+    {
+     "id": 14,
      "name": "rvBahnsteigbank",
      "type": "moebel",
      "x": 32,
@@ -964,7 +1020,7 @@
      ]
     },
     {
-     "id": 13,
+     "id": 15,
      "name": "rvBahnsteigbank",
      "type": "moebel",
      "x": 112,
@@ -987,7 +1043,7 @@
      ]
     },
     {
-     "id": 14,
+     "id": 16,
      "name": "sc7Seil",
      "type": "moebel",
      "x": 224,
@@ -1010,7 +1066,7 @@
      ]
     },
     {
-     "id": 15,
+     "id": 17,
      "name": "sc7Gondel",
      "type": "moebel",
      "x": 208,
@@ -1033,99 +1089,7 @@
      ]
     },
     {
-     "id": 16,
-     "name": "rvTicketschalter",
-     "type": "moebel",
-     "x": 16,
-     "y": 128,
-     "width": 32,
-     "height": 32,
-     "rotation": 0,
-     "visible": true,
-     "properties": [
-      {
-       "name": "tiefe",
-       "type": "int",
-       "value": 152
-      },
-      {
-       "name": "kollision",
-       "type": "bool",
-       "value": true
-      }
-     ]
-    },
-    {
-     "id": 17,
-     "name": "rvFahrplan",
-     "type": "moebel",
-     "x": 64,
-     "y": 128,
-     "width": 32,
-     "height": 32,
-     "rotation": 0,
-     "visible": true,
-     "properties": [
-      {
-       "name": "tiefe",
-       "type": "int",
-       "value": 152
-      },
-      {
-       "name": "kollision",
-       "type": "bool",
-       "value": true
-      }
-     ]
-    },
-    {
      "id": 18,
-     "name": "rvKaffeeautomat",
-     "type": "moebel",
-     "x": 160,
-     "y": 112,
-     "width": 32,
-     "height": 48,
-     "rotation": 0,
-     "visible": true,
-     "properties": [
-      {
-       "name": "tiefe",
-       "type": "int",
-       "value": 152
-      },
-      {
-       "name": "kollision",
-       "type": "bool",
-       "value": true
-      }
-     ]
-    },
-    {
-     "id": 19,
-     "name": "iwSpind",
-     "type": "moebel",
-     "x": 112,
-     "y": 128,
-     "width": 32,
-     "height": 32,
-     "rotation": 0,
-     "visible": true,
-     "properties": [
-      {
-       "name": "tiefe",
-       "type": "int",
-       "value": 152
-      },
-      {
-       "name": "kollision",
-       "type": "bool",
-       "value": true
-      }
-     ]
-    },
-    {
-     "id": 20,
      "name": "rvTopfpflanze",
      "type": "moebel",
      "x": 176,
@@ -1148,11 +1112,34 @@
      ]
     },
     {
-     "id": 21,
-     "name": "rvTopfpflanze",
+     "id": 19,
+     "name": "rv8SchalterA",
      "type": "moebel",
      "x": 16,
-     "y": 48,
+     "y": 128,
+     "width": 32,
+     "height": 32,
+     "rotation": 0,
+     "visible": true,
+     "properties": [
+      {
+       "name": "tiefe",
+       "type": "int",
+       "value": 1
+      },
+      {
+       "name": "kollision",
+       "type": "bool",
+       "value": false
+      }
+     ]
+    },
+    {
+     "id": 20,
+     "name": "rv8SchalterEnde",
+     "type": "moebel",
+     "x": 48,
+     "y": 128,
      "width": 16,
      "height": 32,
      "rotation": 0,
@@ -1161,7 +1148,53 @@
       {
        "name": "tiefe",
        "type": "int",
-       "value": 72
+       "value": 1
+      },
+      {
+       "name": "kollision",
+       "type": "bool",
+       "value": false
+      }
+     ]
+    },
+    {
+     "id": 21,
+     "name": "rv5Kasse",
+     "type": "moebel",
+     "x": 32,
+     "y": 131,
+     "width": 16,
+     "height": 16,
+     "rotation": 0,
+     "visible": true,
+     "properties": [
+      {
+       "name": "tiefe",
+       "type": "int",
+       "value": 2
+      },
+      {
+       "name": "kollision",
+       "type": "bool",
+       "value": false
+      }
+     ]
+    },
+    {
+     "id": 22,
+     "name": "cc4Fahrplan",
+     "type": "moebel",
+     "x": 80,
+     "y": 112,
+     "width": 38,
+     "height": 32,
+     "rotation": 0,
+     "visible": true,
+     "properties": [
+      {
+       "name": "tiefe",
+       "type": "int",
+       "value": 136
       },
       {
        "name": "kollision",
@@ -1171,7 +1204,53 @@
      ]
     },
     {
-     "id": 22,
+     "id": 23,
+     "name": "rvKaffeeautomat",
+     "type": "moebel",
+     "x": 16,
+     "y": 48,
+     "width": 32,
+     "height": 48,
+     "rotation": 0,
+     "visible": true,
+     "properties": [
+      {
+       "name": "tiefe",
+       "type": "int",
+       "value": 88
+      },
+      {
+       "name": "kollision",
+       "type": "bool",
+       "value": true
+      }
+     ]
+    },
+    {
+     "id": 24,
+     "name": "iwSpind",
+     "type": "moebel",
+     "x": 240,
+     "y": 128,
+     "width": 32,
+     "height": 32,
+     "rotation": 0,
+     "visible": true,
+     "properties": [
+      {
+       "name": "tiefe",
+       "type": "int",
+       "value": 152
+      },
+      {
+       "name": "kollision",
+       "type": "bool",
+       "value": true
+      }
+     ]
+    },
+    {
+     "id": 25,
      "name": "scRucksack",
      "type": "moebel",
      "x": 96,
@@ -1194,7 +1273,7 @@
      ]
     },
     {
-     "id": 23,
+     "id": 26,
      "name": "scRucksackRot",
      "type": "moebel",
      "x": 128,

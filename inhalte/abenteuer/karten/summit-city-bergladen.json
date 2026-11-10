@@ -11,7 +11,7 @@
  "tilewidth": 16,
  "tileheight": 16,
  "nextlayerid": 5,
- "nextobjectid": 20,
+ "nextobjectid": 22,
  "layers": [
   {
    "id": 1,
@@ -516,7 +516,7 @@
      "name": "theke",
      "type": "ausloeser",
      "x": 32,
-     "y": 80,
+     "y": 96,
      "width": 16,
      "height": 16,
      "rotation": 0,
@@ -526,8 +526,8 @@
      "id": 4,
      "name": "ladenhilfe",
      "type": "statist",
-     "x": 64,
-     "y": 96,
+     "x": 32,
+     "y": 48,
      "width": 16,
      "height": 16,
      "rotation": 0,
@@ -536,17 +536,17 @@
       {
        "name": "von",
        "type": "string",
-       "value": "4,6"
+       "value": "2,3"
       },
       {
        "name": "bis",
        "type": "string",
-       "value": "4,6"
+       "value": "3,3"
       },
       {
        "name": "tun",
        "type": "string",
-       "value": "räumt Wanderkarten ins Regal"
+       "value": "steht hinter der Theke an der Kasse"
       },
       {
        "name": "sagt",
@@ -559,8 +559,8 @@
      "id": 5,
      "name": "kunde",
      "type": "statist",
-     "x": 144,
-     "y": 96,
+     "x": 128,
+     "y": 112,
      "width": 16,
      "height": 16,
      "rotation": 0,
@@ -569,12 +569,12 @@
       {
        "name": "von",
        "type": "string",
-       "value": "9,6"
+       "value": "8,7"
       },
       {
        "name": "bis",
        "type": "string",
-       "value": "9,6"
+       "value": "8,7"
       },
       {
        "name": "tun",
@@ -590,6 +590,11 @@
        "name": "zeigt",
        "type": "string",
        "value": "schaefermatt"
+      },
+      {
+       "name": "bild",
+       "type": "string",
+       "value": "statist-31"
       }
      ]
     },
@@ -644,7 +649,7 @@
      "name": "sc7Theke",
      "type": "moebel",
      "x": 16,
-     "y": 48,
+     "y": 64,
      "width": 48,
      "height": 32,
      "rotation": 0,
@@ -653,7 +658,7 @@
       {
        "name": "tiefe",
        "type": "int",
-       "value": 72
+       "value": 88
       },
       {
        "name": "kollision",
@@ -664,34 +669,34 @@
     },
     {
      "id": 9,
-     "name": "mf9Vorrat99",
+     "name": "cc4Kasse",
      "type": "moebel",
-     "x": 80,
-     "y": 16,
+     "x": 36,
+     "y": 67,
      "width": 16,
-     "height": 48,
+     "height": 16,
      "rotation": 0,
      "visible": true,
      "properties": [
       {
        "name": "tiefe",
        "type": "int",
-       "value": 56
+       "value": 89
       },
       {
        "name": "kollision",
        "type": "bool",
-       "value": true
+       "value": false
       }
      ]
     },
     {
      "id": 10,
-     "name": "mf9Vorrat100",
+     "name": "sc9RegalBergsport",
      "type": "moebel",
-     "x": 96,
+     "x": 64,
      "y": 16,
-     "width": 16,
+     "width": 32,
      "height": 48,
      "rotation": 0,
      "visible": true,
@@ -712,7 +717,7 @@
      "id": 11,
      "name": "pg7SeilHaken",
      "type": "moebel",
-     "x": 128,
+     "x": 96,
      "y": 16,
      "width": 16,
      "height": 32,
@@ -733,34 +738,11 @@
     },
     {
      "id": 12,
-     "name": "pdWerkzeugregal",
+     "name": "sc9RegalBergsport",
      "type": "moebel",
-     "x": 144,
-     "y": 32,
-     "width": 48,
-     "height": 32,
-     "rotation": 0,
-     "visible": true,
-     "properties": [
-      {
-       "name": "tiefe",
-       "type": "int",
-       "value": 56
-      },
-      {
-       "name": "kollision",
-       "type": "bool",
-       "value": true
-      }
-     ]
-    },
-    {
-     "id": 13,
-     "name": "mf9Vorrat102",
-     "type": "moebel",
-     "x": 192,
+     "x": 112,
      "y": 16,
-     "width": 16,
+     "width": 32,
      "height": 48,
      "rotation": 0,
      "visible": true,
@@ -778,10 +760,79 @@
      ]
     },
     {
+     "id": 13,
+     "name": "ccWeltkarte",
+     "type": "moebel",
+     "x": 144,
+     "y": 16,
+     "width": 32,
+     "height": 32,
+     "rotation": 0,
+     "visible": true,
+     "properties": [
+      {
+       "name": "tiefe",
+       "type": "int",
+       "value": 0
+      },
+      {
+       "name": "kollision",
+       "type": "bool",
+       "value": false
+      }
+     ]
+    },
+    {
      "id": 14,
+     "name": "sc9RegalBergsport",
+     "type": "moebel",
+     "x": 176,
+     "y": 16,
+     "width": 32,
+     "height": 48,
+     "rotation": 0,
+     "visible": true,
+     "properties": [
+      {
+       "name": "tiefe",
+       "type": "int",
+       "value": 56
+      },
+      {
+       "name": "kollision",
+       "type": "bool",
+       "value": true
+      }
+     ]
+    },
+    {
+     "id": 15,
+     "name": "sc9Kartenstaender",
+     "type": "moebel",
+     "x": 192,
+     "y": 80,
+     "width": 16,
+     "height": 32,
+     "rotation": 0,
+     "visible": true,
+     "properties": [
+      {
+       "name": "tiefe",
+       "type": "int",
+       "value": 104
+      },
+      {
+       "name": "kollision",
+       "type": "bool",
+       "value": true
+      }
+     ]
+    },
+    {
+     "id": 16,
      "name": "cc5Tisch",
      "type": "moebel",
-     "x": 112,
+     "x": 96,
      "y": 80,
      "width": 32,
      "height": 32,
@@ -801,12 +852,12 @@
      ]
     },
     {
-     "id": 15,
-     "name": "ld5Seil",
+     "id": 17,
+     "name": "sc9Wanderkarte",
      "type": "moebel",
-     "x": 64,
-     "y": 96,
-     "width": 16,
+     "x": 104,
+     "y": 85,
+     "width": 24,
      "height": 16,
      "rotation": 0,
      "visible": true,
@@ -814,7 +865,7 @@
       {
        "name": "tiefe",
        "type": "int",
-       "value": 1
+       "value": 105
       },
       {
        "name": "kollision",
@@ -824,8 +875,31 @@
      ]
     },
     {
-     "id": 16,
+     "id": 18,
      "name": "scRucksack",
+     "type": "moebel",
+     "x": 144,
+     "y": 96,
+     "width": 16,
+     "height": 32,
+     "rotation": 0,
+     "visible": true,
+     "properties": [
+      {
+       "name": "tiefe",
+       "type": "int",
+       "value": 120
+      },
+      {
+       "name": "kollision",
+       "type": "bool",
+       "value": true
+      }
+     ]
+    },
+    {
+     "id": 19,
+     "name": "scRucksackRot",
      "type": "moebel",
      "x": 160,
      "y": 96,
@@ -847,20 +921,20 @@
      ]
     },
     {
-     "id": 17,
-     "name": "scRucksackRot",
+     "id": 20,
+     "name": "pdSeil",
      "type": "moebel",
-     "x": 176,
+     "x": 64,
      "y": 96,
      "width": 16,
-     "height": 32,
+     "height": 16,
      "rotation": 0,
      "visible": true,
      "properties": [
       {
        "name": "tiefe",
        "type": "int",
-       "value": 120
+       "value": 104
       },
       {
        "name": "kollision",
@@ -870,30 +944,7 @@
      ]
     },
     {
-     "id": 18,
-     "name": "cc3Zeitungsregal",
-     "type": "moebel",
-     "x": 176,
-     "y": 48,
-     "width": 32,
-     "height": 48,
-     "rotation": 0,
-     "visible": true,
-     "properties": [
-      {
-       "name": "tiefe",
-       "type": "int",
-       "value": 88
-      },
-      {
-       "name": "kollision",
-       "type": "bool",
-       "value": true
-      }
-     ]
-    },
-    {
-     "id": 19,
+     "id": 21,
      "name": "cc4PflanzeK",
      "type": "moebel",
      "x": 16,

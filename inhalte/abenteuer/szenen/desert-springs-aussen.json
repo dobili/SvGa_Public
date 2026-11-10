@@ -843,7 +843,11 @@
     },
     {
       "name": "antiquariatTuer",
-      "feld": [24, 17]
+      "feld": [24, 16]
+    },
+    {
+      "name": "antiquariatTuer",
+      "feld": [25, 16]
     },
     {
       "name": "garageTuer",

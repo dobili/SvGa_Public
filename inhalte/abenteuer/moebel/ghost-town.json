@@ -566,7 +566,17 @@
       "stil": "rustikal",
       "zustand": "verwittert",
       "art": "haus",
-      "blick": "unten"
+      "blick": "unten",
+      "tuer": [
+        [
+          4,
+          9
+        ],
+        [
+          5,
+          9
+        ]
+      ]
     },
     "gt7FassadeLaden": {
       "quelle": "spiel/eigene/fassade_laden.png",
@@ -614,7 +624,17 @@
       "hoehe": 64,
       "kollision": true,
       "stil": "rustikal",
-      "zustand": "verwittert"
+      "zustand": "verwittert",
+      "tuer": [
+        [
+          1,
+          4
+        ],
+        [
+          2,
+          4
+        ]
+      ]
     },
     "gt7Lore": {
       "quelle": "spiel/eigene/lore.png",

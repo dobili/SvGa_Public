@@ -7,6 +7,7 @@
 import { readdirSync, readFileSync } from "node:fs";
 import { describe, expect, it } from "vitest";
 import { liesAusloeser, type Ausloeser } from "./ausloeserebene";
+import { ankunftsort } from "./ankunft";
 import { begehbar, sperrkacheln, type Sperrangabe, type Tiledkarte } from "./begehbar";
 import { gehe, kuerzesterWeg, loestAus, type Kachelort } from "./uebergangslauf";
 
@@ -101,10 +102,15 @@ function pruefeKarte(
     for (const f of felder) {
       if (!frei(f.x, f.y)) befunde.push(`${datei} ${ziel}: Feld (${f.x}, ${f.y}) ist gesperrt`);
     }
+    if (ankunftsort(karte, moebel, ziel, KACHEL)?.aufAusloeser) {
+      befunde.push(`${datei} ${ziel}: kein freies Feld neben dem Durchgang für die Ankunft`);
+    }
     // Ankünfte: jeder andere Übergang; hat die Karte nur einen, der Auslöser „start“.
     const andere = namen.filter((n) => n !== ziel);
     for (const start of andere.length > 0 ? andere : ["start"]) {
-      const ankunft = felderVon(start)[0];
+      // Der Held kommt neben dem Durchgang an (ankunft.ts), auf „start“ genau dort.
+      const ankunft =
+        start === "start" ? felderVon(start)[0] : ankunftsort(karte, moebel, start, KACHEL);
       if (!ankunft) continue;
       const weg = wegMitStegen(frei, ankunft, felder, stege);
       if (!weg) befunde.push(`${datei} ${ziel}: von ${start} aus nicht erreichbar`);

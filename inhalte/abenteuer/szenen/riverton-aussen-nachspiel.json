@@ -1195,6 +1195,10 @@
     },
     {
       "name": "bahnhofTuer",
+      "feld": [35, 18]
+    },
+    {
+      "name": "bahnhofTuer",
       "feld": [36, 18]
     },
     {
@@ -1223,7 +1227,7 @@
     },
     {
       "name": "pavillonEingang",
-      "feld": [40, 51]
+      "feld": [39, 51]
     },
     {
       "name": "bildschirmtische",

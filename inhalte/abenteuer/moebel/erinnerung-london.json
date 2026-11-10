@@ -237,7 +237,13 @@
       "zustand": "gebraucht",
       "stil": "klassisch",
       "begehbar": true,
-      "begehbar_grund": "Fassade als Kulisse auf der Wandfläche"
+      "begehbar_grund": "Fassade als Kulisse auf der Wandfläche",
+      "tuer": [
+        [
+          5,
+          12
+        ]
+      ]
     },
     "el11Schachsalon": {
       "quelle": "spiel/eigene/london_schachsalon.png",

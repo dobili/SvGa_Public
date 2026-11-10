@@ -617,7 +617,17 @@
       "art": "gebaeude",
       "zustand": "kaputt",
       "stil": "rustikal",
-      "blick": "unten"
+      "blick": "unten",
+      "tuer": [
+        [
+          7,
+          10
+        ],
+        [
+          8,
+          10
+        ]
+      ]
     },
     "pd6HausRot": {
       "quelle": "spiel/serene/serene_51.png",
@@ -1031,7 +1041,17 @@
       "art": "gebaeude",
       "blick": "unten",
       "zustand": "gebraucht",
-      "stil": "industrie"
+      "stil": "industrie",
+      "tuer": [
+        [
+          2,
+          6
+        ],
+        [
+          3,
+          6
+        ]
+      ]
     },
     "pd6Gueterhalle": {
       "quelle": "modern-farm/Single_Files_16x16/0_Complete_Tileset_Singles_16x16/Barn_Small_16x16.png",
@@ -2043,7 +2063,13 @@
       "art": "gebaeude",
       "zustand": "alt",
       "stil": "rustikal",
-      "blick": "unten"
+      "blick": "unten",
+      "tuer": [
+        [
+          7,
+          9
+        ]
+      ]
     },
     "pd10WerkGruen": {
       "quelle": "spiel/eigene/haus_farm2_gruen.png",

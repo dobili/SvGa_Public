@@ -61,7 +61,25 @@
       "blick": "unten",
       "zustand": "gebraucht",
       "stil": "rustikal",
-      "frei_unten": 1
+      "tuer": [
+        [
+          3,
+          6
+        ],
+        [
+          4,
+          6
+        ]
+      ],
+      "maske": [
+        "........",
+        "########",
+        "########",
+        "########",
+        "########",
+        "########",
+        "###..###"
+      ]
     },
     "sc7Bergladen": {
       "quelle": "spiel/eigene/bergladen.png",
@@ -71,7 +89,13 @@
       "art": "gebaeude",
       "blick": "unten",
       "zustand": "gebraucht",
-      "stil": "rustikal"
+      "stil": "rustikal",
+      "tuer": [
+        [
+          3,
+          6
+        ]
+      ]
     },
     "sc7Ferienhuette": {
       "quelle": "spiel/eigene/huette_a.png",
@@ -139,7 +163,17 @@
       "art": "gebaeude",
       "blick": "unten",
       "zustand": "gebraucht",
-      "stil": "modern"
+      "stil": "modern",
+      "tuer": [
+        [
+          3,
+          8
+        ],
+        [
+          4,
+          8
+        ]
+      ]
     },
     "sc7Mast": {
       "quelle": "spiel/eigene/seilbahn_mast.png",

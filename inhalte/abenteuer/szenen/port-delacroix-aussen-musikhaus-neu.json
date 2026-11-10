@@ -1629,6 +1629,13 @@
       ]
     },
     {
+      "name": "turnhalleTuer",
+      "feld": [
+        23,
+        25
+      ]
+    },
+    {
       "name": "werkstattTuer",
       "feld": [
         15,
@@ -1639,6 +1646,13 @@
       "name": "musikhausTuer",
       "feld": [
         46,
+        41
+      ]
+    },
+    {
+      "name": "musikhausTuer",
+      "feld": [
+        47,
         41
       ]
     },

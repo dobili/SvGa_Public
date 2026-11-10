@@ -571,7 +571,35 @@
     {
       "name": "halleTuer",
       "feld": [
+        37,
+        30
+      ]
+    },
+    {
+      "name": "halleTuer",
+      "feld": [
+        38,
+        30
+      ]
+    },
+    {
+      "name": "halleTuer",
+      "feld": [
         39,
+        30
+      ]
+    },
+    {
+      "name": "halleTuer",
+      "feld": [
+        40,
+        30
+      ]
+    },
+    {
+      "name": "halleTuer",
+      "feld": [
+        41,
         30
       ]
     },

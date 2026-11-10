@@ -564,22 +564,22 @@
     },
     {
       "moebel": "ca9Treppe",
-      "feld": [32, 0],
+      "feld": [32, 1],
       "bauteil_ok": true
     },
     {
       "moebel": "ca9Treppe",
-      "feld": [34, 0],
+      "feld": [34, 1],
       "bauteil_ok": true
     },
     {
       "moebel": "ca9Treppe",
-      "feld": [32, 3],
+      "feld": [32, 4],
       "bauteil_ok": true
     },
     {
       "moebel": "ca9Treppe",
-      "feld": [34, 3],
+      "feld": [34, 4],
       "bauteil_ok": true
     },
     {
@@ -876,7 +876,7 @@
   "ausloeser": [
     {
       "name": "start",
-      "feld": [33, 2],
+      "feld": [33, 7],
       "eigenschaften": {
         "richtung": "unten"
       }
@@ -896,6 +896,10 @@
     {
       "name": "campus",
       "feld": [35, 0]
+    },
+    {
+      "name": "faehre",
+      "feld": [3, 28]
     },
     {
       "name": "faehre",

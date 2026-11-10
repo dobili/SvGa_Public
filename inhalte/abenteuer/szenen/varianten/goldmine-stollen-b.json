@@ -3,6 +3,7 @@
   "datei": "karten/varianten/goldmine-stollen-b.json",
   "variante": "b",
   "art": "innen",
+  "toenung": "dunkel",
   "beschreibung": "Variante B: die Kammer im Südwesten, die Goldader oben im Nordosten, Bauholz am Abzweig.",
   "wand": "fels",
   "boden": "felsboden",
@@ -367,6 +368,18 @@
     {
       "name": "stollenAusgang",
       "feld": [20, 23]
+    },
+    {
+      "name": "logbuch",
+      "feld": [6, 16]
+    },
+    {
+      "name": "lore",
+      "feld": [25, 8]
+    },
+    {
+      "name": "goldader",
+      "feld": [25, 7]
     }
   ],
   "figuren": [],

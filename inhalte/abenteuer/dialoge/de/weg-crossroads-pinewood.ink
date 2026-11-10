@@ -15,12 +15,20 @@
 
 EXTERNAL beginnePartie(begegnung)
 EXTERNAL beginneAufgaben(runde)
+EXTERNAL gibFund(kennung)
 
 VAR held = "Du"
+VAR buchseiten = 0
+VAR kreideTreffpunkte = 0
 VAR wegCrossroadsPinewoodTafelBestanden = false
 VAR ausgangWegCrossroadsPinewoodBlindschach = ""
 VAR gretaGetroffen = false
 VAR varianteBlindschachGelernt = false
+VAR wegCrossroadsPinewoodLebendschachBestanden = false
+VAR lebendschachGesehen = false
+VAR lebendschachBelohnt = false
+VAR kreide4Gefunden = false
+VAR seite10Gefunden = false
 
 // ---------------------------------------------------------------- Greta und das Blindschach
 
@@ -89,3 +97,65 @@ Diese Bäume standen schon, als ich geboren wurde. Und sie stehen noch, wenn du 
 === zurueck_crossroads ===
 Der Fernwanderweg führt zurück aus dem Wald, zur Kreuzung in der Prärie. #sprecher:erzaehler
 -> END
+
+// ---------------------------------------------------------------- Ereignis: Lebendschach
+// Runde 6 (Dokument 15, 2.11): Ezra und die Pfadfinder aus Pinewood Camp üben auf dem Rasenbrett.
+// Bis die Brettansicht mit der Lichtung gebaut ist (mittel-2), eine Aufgabenrunde. Quest
+// wegCrossroadsPinewood.lebendschach; Lohn Fund fotoLebendschach.
+
+=== ereignis_lebendschach ===
+{lebendschachBelohnt: -> lebendschach_danach}
+{wegCrossroadsPinewoodLebendschachBestanden: -> lebendschach_ende}
+{lebendschachGesehen: -> lebendschach_angebot}
+~ lebendschachGesehen = true
+Auf der Lichtung ist ein Brett aus Rasen und Kies ausgelegt. Dreißig Kinder in weißen und schwarzen Westen warten an den Rändern. #sprecher:erzaehler
+Der Feldherr der Weißen liegt mit Fieber im Zelt. Du kommst wie gerufen. Kannst du kommandieren? #sprecher:ezra
+-> lebendschach_angebot
+
+=== lebendschach_angebot ===
+Die Kinder ziehen erst, wenn sie den Zug laut hören. Und wer geschlagen werden soll, protestiert. #sprecher:ezra
+Opfere niemanden ohne Not, {held}. Diese Figuren haben eine Stimme. #sprecher:ambrose
++ [„Ich kommandiere.“]
+    ~ beginneAufgaben("wegCrossroadsPinewood.lebendschach")
+    -> END
++ [„Später.“]
+    Wir üben bis zum Sommerfest. Du findest uns hier. #sprecher:ezra
+    -> END
+
+=== lebendschach_ende ===
+~ lebendschachBelohnt = true
+Die weißen Kinder reißen die Arme hoch. Ein geschlagener schwarzer Bauer setzt sich ins Gras und ruft: „Ich war gerade so schön vorne!“ #sprecher:erzaehler
+Gut kommandiert. Die Kinder wollen ein Foto mit dir. #sprecher:ezra #stimmung:froh
+~ gibFund("fotoLebendschach")
+-> END
+
+=== lebendschach_danach ===
+{~Die Kinder fragen, wann du wieder kommandierst.|Der Feldherr ist wieder gesund. Er sagt, du warst zu streng mit den Bauern.|Das Sommerfest wird groß. Komm, wenn du kannst.} #sprecher:ezra
+-> END
+
+=== seite10 ===
+{seite10Gefunden:
+    Hier lag die Buchseite. Zwischen den Wurzeln ist nichts mehr. #sprecher:erzaehler
+    -> END
+}
+~ seite10Gefunden = true
+Zwischen den Wurzeln eines Mammutbaums steckt ein Blatt Papier. Oben steht: Kapitel 10, „Studien und Kuriositäten“. #sprecher:erzaehler
+Eine Seite aus einem Handbuch, an einem Baum, der älter ist als jedes Buch. #sprecher:ambrose
+~ gibFund("seite10")
+~ buchseiten = buchseiten + 1
+-> END
+
+// ---------------------------------------------------------------- Holzfällerhütte: Kreidespringer K4
+
+=== kreide4 ===
+{kreide4Gefunden:
+    Der Kreidespringer an der Hütte ist noch da. Jemand hat ihn nachgezogen. #sprecher:erzaehler
+    -> END
+}
+~ kreide4Gefunden = true
+An der Wand der Holzfällerhütte ist ein Springer aus Kreide gemalt. Darunter, klein: „K4. Wer das Wort kennt, spielt mit.“ #sprecher:erzaehler
+Wieder dieser Springer. Er reist schneller als wir. #sprecher:ambrose
+~ gibFund("kreide4")
+~ kreideTreffpunkte = kreideTreffpunkte + 1
+-> END
+

@@ -245,6 +245,292 @@
       "text": "fund.setliste960.text"
     },
     {
+      "kennung": "finchKarte",
+      "ort": "wegMapleCedar",
+      "name": "fund.finchKarte.name",
+      "text": "fund.finchKarte.text"
+    },
+    {
+      "kennung": "problemheft",
+      "ort": "wegMapleCedar",
+      "name": "fund.problemheft.name",
+      "text": "fund.problemheft.text"
+    },
+    {
+      "kennung": "seite00",
+      "ort": "wegMapleCedar",
+      "name": "fund.seite00.name",
+      "text": "fund.seite00.text"
+    },
+    {
+      "kennung": "finchBauerA",
+      "ort": "wegMapleCedar",
+      "name": "fund.finchBauerA.name",
+      "text": "fund.finchBauerA.text"
+    },
+    {
+      "kennung": "initialen1952",
+      "ort": "mapleFalls",
+      "name": "fund.initialen1952.name",
+      "text": "fund.initialen1952.text"
+    },
+    {
+      "kennung": "finchSpringerA",
+      "ort": "wegCedarRiverton",
+      "name": "fund.finchSpringerA.name",
+      "text": "fund.finchSpringerA.text"
+    },
+    {
+      "kennung": "signalkelle",
+      "ort": "wegCedarRiverton",
+      "name": "fund.signalkelle.name",
+      "text": "fund.signalkelle.text"
+    },
+    {
+      "kennung": "seite01",
+      "ort": "wegCedarRiverton",
+      "name": "fund.seite01.name",
+      "text": "fund.seite01.text"
+    },
+    {
+      "kennung": "thermoskanneGwen",
+      "ort": "wegCedarRiverton",
+      "name": "fund.thermoskanneGwen.name",
+      "text": "fund.thermoskanneGwen.text"
+    },
+    {
+      "kennung": "kegelKerbe",
+      "ort": "lockport",
+      "name": "fund.kegelKerbe.name",
+      "text": "fund.kegelKerbe.text"
+    },
+    {
+      "kennung": "karabiner",
+      "ort": "wegDelacroixDesert",
+      "name": "fund.karabiner.name",
+      "text": "fund.karabiner.text"
+    },
+    {
+      "kennung": "seite06",
+      "ort": "wegDelacroixDesert",
+      "name": "fund.seite06.name",
+      "text": "fund.seite06.text",
+      "muenzen": 5
+    },
+    {
+      "kennung": "finchLaeuferB",
+      "ort": "wegDelacroixDesert",
+      "name": "fund.finchLaeuferB.name",
+      "text": "fund.finchLaeuferB.text"
+    },
+    {
+      "kennung": "finchBauerG",
+      "ort": "sternwarte",
+      "name": "fund.finchBauerG.name",
+      "text": "fund.finchBauerG.text"
+    },
+    {
+      "kennung": "kreide3",
+      "ort": "wegDesertSummit",
+      "name": "fund.kreide3.name",
+      "text": "fund.kreide3.text"
+    },
+    {
+      "kennung": "finchSpringerB",
+      "ort": "wegDesertSummit",
+      "name": "fund.finchSpringerB.name",
+      "text": "fund.finchSpringerB.text"
+    },
+    {
+      "kennung": "seite08",
+      "ort": "wegDesertSummit",
+      "name": "fund.seite08.name",
+      "text": "fund.seite08.text",
+      "muenzen": 5
+    },
+    {
+      "kennung": "spurPM4",
+      "ort": "wegDesertSummit",
+      "name": "fund.spurPM4.name",
+      "text": "fund.spurPM4.text"
+    },
+    {
+      "kennung": "seite03",
+      "ort": "hochebene",
+      "name": "fund.seite03.name",
+      "text": "fund.seite03.text",
+      "muenzen": 5
+    },
+    {
+      "kennung": "finchTurmB",
+      "ort": "hochebene",
+      "name": "fund.finchTurmB.name",
+      "text": "fund.finchTurmB.text"
+    },
+    {
+      "kennung": "diplomKira",
+      "ort": "hochebene",
+      "name": "fund.diplomKira.name",
+      "text": "fund.diplomKira.text"
+    },
+    {
+      "kennung": "spurPM6",
+      "ort": "wegPinewoodGhost",
+      "name": "fund.spurPM6.name",
+      "text": "fund.spurPM6.text"
+    },
+    {
+      "kennung": "seite11",
+      "ort": "wegPinewoodGhost",
+      "name": "fund.seite11.name",
+      "text": "fund.seite11.text",
+      "muenzen": 5
+    },
+    {
+      "kennung": "bauerZ1",
+      "ort": "wegPinewoodGhost",
+      "name": "fund.bauerZ1.name",
+      "text": "fund.bauerZ1.text"
+    },
+    {
+      "kennung": "finchBauerE",
+      "ort": "wegPinewoodGhost",
+      "name": "fund.finchBauerE.name",
+      "text": "fund.finchBauerE.text"
+    },
+    {
+      "kennung": "kuerbisschleife",
+      "ort": "kuerbishof",
+      "name": "fund.kuerbisschleife.name",
+      "text": "fund.kuerbisschleife.text"
+    },
+    {
+      "kennung": "finchBauerH",
+      "ort": "pelikaninsel",
+      "name": "fund.finchBauerH.name",
+      "text": "fund.finchBauerH.text"
+    },
+    {
+      "kennung": "treibholzTurm",
+      "ort": "pelikaninsel",
+      "name": "fund.treibholzTurm.name",
+      "text": "fund.treibholzTurm.text"
+    },
+    {
+      "kennung": "muschelCoral",
+      "ort": "pelikaninsel",
+      "name": "fund.muschelCoral.name",
+      "text": "fund.muschelCoral.text"
+    },
+    {
+      "kennung": "finchBauerF",
+      "ort": "steinbruch",
+      "name": "fund.finchBauerF.name",
+      "text": "fund.finchBauerF.text"
+    },
+    {
+      "kennung": "logbuch1866",
+      "ort": "goldmine",
+      "name": "fund.logbuch1866.name",
+      "text": "fund.logbuch1866.text"
+    },
+    {
+      "kennung": "grubenlampe1866",
+      "ort": "goldmine",
+      "name": "fund.grubenlampe1866.name",
+      "text": "fund.grubenlampe1866.text",
+      "muenzen": 30
+    },
+    {
+      "kennung": "goldkorn",
+      "ort": "goldmine",
+      "name": "fund.goldkorn.name",
+      "text": "fund.goldkorn.text",
+      "muenzen": 10
+    },
+    {
+      "kennung": "kreide2",
+      "ort": "wegIronwoodSilicon",
+      "name": "fund.kreide2.name",
+      "text": "fund.kreide2.text"
+    },
+    {
+      "kennung": "finchBauerB",
+      "ort": "wegIronwoodSilicon",
+      "name": "fund.finchBauerB.name",
+      "text": "fund.finchBauerB.text"
+    },
+    {
+      "kennung": "seite04",
+      "ort": "wegIronwoodSilicon",
+      "name": "fund.seite04.name",
+      "text": "fund.seite04.text",
+      "muenzen": 5
+    },
+    {
+      "kennung": "spurPM2",
+      "ort": "wegIronwoodSilicon",
+      "name": "fund.spurPM2.name",
+      "text": "fund.spurPM2.text"
+    },
+    {
+      "kennung": "fotoLive",
+      "ort": "wegIronwoodSilicon",
+      "name": "fund.fotoLive.name",
+      "text": "fund.fotoLive.text"
+    },
+    {
+      "kennung": "spurPM5",
+      "ort": "wegSummitCrossroads",
+      "name": "fund.spurPM5.name",
+      "text": "fund.spurPM5.text"
+    },
+    {
+      "kennung": "finchBauerD",
+      "ort": "wegSummitCrossroads",
+      "name": "fund.finchBauerD.name",
+      "text": "fund.finchBauerD.text"
+    },
+    {
+      "kennung": "seite09",
+      "ort": "wegSummitCrossroads",
+      "name": "fund.seite09.name",
+      "text": "fund.seite09.text",
+      "muenzen": 5
+    },
+    {
+      "kennung": "rangerabzeichen",
+      "ort": "wegSummitCrossroads",
+      "name": "fund.rangerabzeichen.name",
+      "text": "fund.rangerabzeichen.text"
+    },
+    {
+      "kennung": "kreide4",
+      "ort": "wegCrossroadsPinewood",
+      "name": "fund.kreide4.name",
+      "text": "fund.kreide4.text"
+    },
+    {
+      "kennung": "seite10",
+      "ort": "wegCrossroadsPinewood",
+      "name": "fund.seite10.name",
+      "text": "fund.seite10.text",
+      "muenzen": 5
+    },
+    {
+      "kennung": "fotoLebendschach",
+      "ort": "wegCrossroadsPinewood",
+      "name": "fund.fotoLebendschach.name",
+      "text": "fund.fotoLebendschach.text"
+    },
+    {
+      "kennung": "geheimnisTuerke",
+      "ort": "jahrmarkt",
+      "name": "fund.geheimnisTuerke.name",
+      "text": "fund.geheimnisTuerke.text",
+      "muenzen": 10
+    },
+    {
       "kennung": "seite02",
       "ort": "wegSiliconDelacroix",
       "name": "fund.seite02.name",

@@ -24,226 +24,132 @@
   "objekte": [
     {
       "moebel": "pd6Fenster",
-      "feld": [
-        6,
-        1
-      ],
+      "feld": [6, 1],
       "an_wand": true
     },
     {
       "moebel": "pd6Fenster",
-      "feld": [
-        12,
-        1
-      ],
+      "feld": [12, 1],
       "an_wand": true
     },
     {
       "moebel": "pd6KlavierHell",
-      "feld": [
-        9,
-        2
-      ]
+      "feld": [9, 2]
     },
     {
       "moebel": "pd6KistenTuch",
-      "feld": [
-        1,
-        3
-      ]
+      "feld": [1, 3]
     },
     {
       "moebel": "pd6KistenTuch",
-      "feld": [
-        3,
-        3
-      ]
+      "feld": [3, 3]
     },
     {
       "moebel": "pd6DielenLoch",
-      "feld": [
-        14,
-        4
-      ]
+      "feld": [14, 4]
     },
     {
       "moebel": "pd6DielenNass",
-      "feld": [
-        4,
-        8
-      ]
+      "feld": [4, 8]
     },
     {
       "moebel": "pd6DielenNass",
-      "feld": [
-        9,
-        5
-      ]
+      "feld": [9, 5]
     },
     {
       "moebel": "pd6StuhlRechts",
-      "feld": [
-        5,
-        6
-      ]
+      "feld": [5, 6]
     },
     {
       "moebel": "pd6StuhlLinks",
-      "feld": [
-        7,
-        6
-      ]
+      "feld": [7, 6]
     },
     {
       "moebel": "pd6StuhlRechts",
-      "feld": [
-        14,
-        8
-      ]
+      "feld": [14, 8]
     },
     {
       "moebel": "pd6Rundtisch",
-      "feld": [
-        15,
-        8
-      ]
+      "feld": [15, 8]
     },
     {
       "moebel": "pd6Truemmer",
-      "feld": [
-        1,
-        10
-      ]
+      "feld": [1, 10]
     },
     {
       "moebel": "pd6Truemmer2",
-      "feld": [
-        17,
-        10
-      ]
+      "feld": [17, 10]
     },
     {
       "moebel": "pd6Kistenstapel",
-      "feld": [
-        17,
-        2
-      ]
+      "feld": [17, 2]
     },
     {
       "moebel": "pd6RahmenKaputt",
-      "feld": [
-        11,
-        9
-      ]
+      "feld": [11, 9]
     },
     {
       "moebel": "pd6Splitter",
-      "feld": [
-        4,
-        9
-      ]
+      "feld": [4, 9]
     },
     {
       "moebel": "pd6Holzscheite",
-      "feld": [
-        12,
-        11
-      ]
+      "feld": [12, 11]
     },
     {
       "moebel": "pd6Saegebock",
-      "feld": [
-        6,
-        10
-      ]
+      "feld": [6, 10]
     },
     {
       "moebel": "pd6Bretterstapel",
-      "feld": [
-        15,
-        2
-      ]
+      "feld": [15, 2]
     },
     {
       "moebel": "pd6Truemmer2",
-      "feld": [
-        3,
-        10
-      ]
+      "feld": [3, 10]
     },
     {
       "moebel": "pd6Kiste",
-      "feld": [
-        13,
-        11
-      ]
+      "feld": [13, 11]
     },
     {
       "moebel": "pd6Kiste",
-      "feld": [
-        14,
-        11
-      ]
+      "feld": [14, 11]
     },
     {
       "moebel": "pd6Kistenstapel",
-      "feld": [
-        1,
-        5
-      ]
+      "feld": [1, 5]
     },
     {
       "moebel": "pd6Tuer",
-      "feld": [
-        10,
-        13
-      ],
+      "feld": [10, 13],
       "an_wand": true
     }
   ],
   "ausloeser": [
     {
       "name": "start",
-      "feld": [
-        10,
-        12
-      ],
+      "feld": [10, 12],
       "eigenschaften": {
         "richtung": "oben"
       }
     },
     {
       "name": "musikhausAusgang",
-      "feld": [
-        10,
-        13
-      ]
+      "feld": [10, 13]
     },
     {
       "name": "schild",
-      "feld": [
-        9,
-        12
-      ]
+      "feld": [9, 12]
     },
     {
       "name": "lochImDach",
-      "feld": [
-        14,
-        6
-      ]
+      "feld": [14, 6]
     }
   ],
   "figuren": [],
   "belebung": [],
-  "zustand": [
-    "gebraucht",
-    "alt",
-    "kaputt"
-  ],
-  "stil": [
-    "klassisch",
-    "rustikal"
-  ],
+  "zustand": ["gebraucht", "alt", "kaputt"],
+  "stil": ["klassisch", "rustikal"],
   "variante": "c"
 }

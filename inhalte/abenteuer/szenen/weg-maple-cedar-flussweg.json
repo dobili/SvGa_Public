@@ -1262,6 +1262,10 @@
       "name": "schildCedar",
       "feld": [112, 20],
       "auf_moebel": true
+    },
+    {
+      "name": "finchBauerA",
+      "feld": [54, 21]
     }
   ],
   "figuren": [],

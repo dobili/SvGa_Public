@@ -3,6 +3,7 @@
   "datei": "karten/varianten/goldmine-stollen-c.json",
   "variante": "c",
   "art": "innen",
+  "toenung": "dunkel",
   "beschreibung": "Variante C: drei Abzweige, die Goldader im Osten mit Lore und Pfützen, Bauholz im Nordgang.",
   "wand": "fels",
   "boden": "schotter",
@@ -375,6 +376,18 @@
     {
       "name": "stollenAusgang",
       "feld": [20, 23]
+    },
+    {
+      "name": "logbuch",
+      "feld": [5, 10]
+    },
+    {
+      "name": "lore",
+      "feld": [32, 17]
+    },
+    {
+      "name": "goldader",
+      "feld": [35, 12]
     }
   ],
   "figuren": [],

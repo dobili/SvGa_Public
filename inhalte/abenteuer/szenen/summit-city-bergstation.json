@@ -94,6 +94,10 @@
     {
       "name": "fundMurmeltierpfeife",
       "feld": [1, 9]
+    },
+    {
+      "name": "fahrplan",
+      "feld": [1, 5]
     }
   ],
   "figuren": [

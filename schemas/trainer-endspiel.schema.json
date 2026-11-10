@@ -28,11 +28,7 @@
     "massstab": {
       "type": "object",
       "additionalProperties": false,
-      "required": [
-        "gewinnAb",
-        "remisBis",
-        "tiefe"
-      ],
+      "required": ["gewinnAb", "remisBis", "tiefe"],
       "properties": {
         "gewinnAb": {
           "description": "Wert aus Sicht des Lesers (Bauerneinheiten), ab dem eine Stellung als gewonnen gilt; die App nutzt dieselbe Grenze, um das Kippen zu erkennen",
@@ -131,10 +127,7 @@
         },
         "ziel": {
           "description": "gewinn: der Leser gewinnt (Matt oder Umwandlung mit gewonnener Stellung); remis: der Leser hält das Remis",
-          "enum": [
-            "gewinn",
-            "remis"
-          ]
+          "enum": ["gewinn", "remis"]
         },
         "thema": {
           "$ref": "#/$defs/thema"
@@ -159,13 +152,7 @@
           "description": "Engine-Prüfung der Ausgangsstellung",
           "type": "object",
           "additionalProperties": false,
-          "required": [
-            "wert",
-            "mattIn",
-            "bester",
-            "einzigerZug",
-            "tiefe"
-          ],
+          "required": ["wert", "mattIn", "bester", "einzigerZug", "tiefe"],
           "properties": {
             "wert": {
               "description": "Wert aus Sicht des Lesers in Bauerneinheiten (Matt als 100 minus Züge)",
@@ -173,10 +160,7 @@
             },
             "mattIn": {
               "description": "Züge bis zum Matt aus Sicht des Lesers, falls die Engine eines sieht (höchstens nötige Züge)",
-              "type": [
-                "integer",
-                "null"
-              ]
+              "type": ["integer", "null"]
             },
             "bester": {
               "description": "Bester Zug der Seite am Zug laut Engine (SAN); bei Leser am Zug der Zug, der das Ziel hält",

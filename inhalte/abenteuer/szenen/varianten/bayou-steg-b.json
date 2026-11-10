@@ -5,9 +5,7 @@
   "beschreibung": "Variante B, schlicht: Eine große Insel mit einem grünen Holzhaus, wo Theron wohnt, ein Steg nach Süden mit einem flachen Kahn, ein zweiter Steg nach Osten zu einer Insel mit wenigen Bäumen. Der Eingangssteg mit dem überfluteten Stück (S8) und der Nebelsteg nach Osten bleiben. Sumpfzypressen mit Moos, Schilf an den Ufern, Therons Luftboot am Steg; das überflutete Stück (S8) zeigt den Steg halb unter Wasser.",
   "boden": "gras",
   "wandart": "gras",
-  "bruecken": [
-    "h"
-  ],
+  "bruecken": ["h"],
   "raster": [
     "~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~",
     "~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~",
@@ -49,314 +47,188 @@
   "objekte": [
     {
       "moebel": "by6StegQuer7",
-      "feld": [
-        0,
-        17
-      ]
+      "feld": [0, 17]
     },
     {
       "moebel": "by6StegUeberflutetQuer3",
-      "feld": [
-        7,
-        17
-      ]
+      "feld": [7, 17]
     },
     {
       "moebel": "by6StegQuer2",
-      "feld": [
-        10,
-        17
-      ]
+      "feld": [10, 17]
     },
     {
       "moebel": "by6StegQuer7",
-      "feld": [
-        23,
-        17
-      ]
+      "feld": [23, 17]
     },
     {
       "moebel": "by6StegLaengs3",
-      "feld": [
-        13,
-        28
-      ]
+      "feld": [13, 28]
     },
     {
       "moebel": "by6LuftbootRechts",
-      "feld": [
-        15,
-        29
-      ]
+      "feld": [15, 29]
     },
     {
       "moebel": "by6StegQuer7",
-      "feld": [
-        23,
-        25
-      ]
+      "feld": [23, 25]
     },
     {
       "moebel": "svHausGruen",
-      "feld": [
-        14,
-        9
-      ]
+      "feld": [14, 9]
     },
     {
       "moebel": "sd6Zypresse",
-      "feld": [
-        19,
-        9
-      ]
+      "feld": [19, 9]
     },
     {
       "moebel": "sd6Zypresse",
-      "feld": [
-        34,
-        24
-      ]
+      "feld": [34, 24]
     },
     {
       "moebel": "sd6Zypresse",
-      "feld": [
-        40,
-        27
-      ]
+      "feld": [40, 27]
     },
     {
       "moebel": "sd6Schilf",
-      "feld": [
-        20,
-        21
-      ]
+      "feld": [20, 21]
     },
     {
       "moebel": "wg4Gras",
-      "feld": [
-        35,
-        31
-      ]
+      "feld": [35, 31]
     },
     {
       "moebel": "wg4Gras",
-      "feld": [
-        33,
-        25
-      ]
+      "feld": [33, 25]
     },
     {
       "moebel": "wg4Gras",
-      "feld": [
-        21,
-        15
-      ]
+      "feld": [21, 15]
     },
     {
       "moebel": "wg4Gras",
-      "feld": [
-        21,
-        22
-      ]
+      "feld": [21, 22]
     },
     {
       "moebel": "sd6SchilfBreit",
-      "feld": [
-        41,
-        24
-      ]
+      "feld": [41, 24]
     },
     {
       "moebel": "wg4Gras",
-      "feld": [
-        32,
-        29
-      ]
+      "feld": [32, 29]
     },
     {
       "moebel": "wg4Gras",
-      "feld": [
-        20,
-        27
-      ]
+      "feld": [20, 27]
     },
     {
       "moebel": "sd6SchilfBreit",
-      "feld": [
-        42,
-        25
-      ]
+      "feld": [42, 25]
     },
     {
       "moebel": "wg4Gras",
-      "feld": [
-        33,
-        29
-      ]
+      "feld": [33, 29]
     },
     {
       "moebel": "wg4Gras",
-      "feld": [
-        14,
-        18
-      ]
+      "feld": [14, 18]
     },
     {
       "moebel": "wg4Gras",
-      "feld": [
-        16,
-        9
-      ]
+      "feld": [16, 9]
     },
     {
       "moebel": "wg4Gras",
-      "feld": [
-        13,
-        16
-      ]
+      "feld": [13, 16]
     },
     {
       "moebel": "sd6Schilf",
-      "feld": [
-        37,
-        30
-      ]
+      "feld": [37, 30]
     },
     {
       "moebel": "by6StegQuer5",
-      "feld": [
-        7,
-        12
-      ],
+      "feld": [7, 12],
       "runde7": true
     },
     {
       "moebel": "pd7Hausboot",
-      "feld": [
-        1,
-        10
-      ],
+      "feld": [1, 10],
       "bauteil_ok": true,
       "runde7": true
     },
     {
       "moebel": "el7Gaslaterne",
-      "feld": [
-        6,
-        10
-      ],
+      "feld": [6, 10],
       "vorn": true,
       "runde7": true
     },
     {
       "moebel": "pd7Blechkiste",
-      "feld": [
-        16,
-        14
-      ],
+      "feld": [16, 14],
       "runde7": true
     },
     {
       "moebel": "pd7Finkenzeichen",
-      "feld": [
-        10,
-        13
-      ],
+      "feld": [10, 13],
       "runde7": true
     }
   ],
   "ausloeser": [
     {
       "name": "start",
-      "feld": [
-        1,
-        17
-      ],
+      "feld": [1, 17],
       "eigenschaften": {
         "richtung": "rechts"
       }
     },
     {
       "name": "zurueckDelacroix",
-      "feld": [
-        0,
-        17
-      ]
+      "feld": [0, 17]
     },
     {
       "name": "zurueckDelacroix",
-      "feld": [
-        0,
-        18
-      ]
+      "feld": [0, 18]
     },
     {
       "name": "nebel",
-      "feld": [
-        28,
-        17
-      ]
+      "feld": [28, 17]
     },
     {
       "name": "ereignisHausboot",
-      "feld": [
-        8,
-        12
-      ]
+      "feld": [8, 12]
     },
     {
       "name": "finchBauerC",
-      "feld": [
-        10,
-        13
-      ]
+      "feld": [10, 13]
     },
     {
       "name": "seite05",
-      "feld": [
-        22,
-        10
-      ]
+      "feld": [22, 10]
     },
     {
       "name": "sperreHochwasser",
-      "feld": [
-        8,
-        17
-      ]
+      "feld": [8, 17]
     },
     {
       "name": "luftboot",
-      "feld": [
-        14,
-        29
-      ]
+      "feld": [14, 29]
     }
   ],
   "figuren": [
     {
       "name": "theron",
-      "feld": [
-        17,
-        20
-      ]
+      "feld": [17, 20]
     },
     {
       "name": "pepe",
-      "feld": [
-        7,
-        13
-      ]
+      "feld": [7, 13]
     }
   ],
   "belebung": [
     {
       "name": "angler",
       "typ": "statist",
-      "feld": [
-        12,
-        24
-      ],
+      "feld": [12, 24],
       "eigenschaften": {
         "von": "12,24",
         "bis": "12,24",
@@ -368,10 +240,7 @@
     {
       "name": "krebsfischerin",
       "typ": "statist",
-      "feld": [
-        22,
-        17
-      ],
+      "feld": [22, 17],
       "eigenschaften": {
         "von": "22,17",
         "bis": "22,17",
@@ -383,10 +252,7 @@
     {
       "name": "mundharmonika",
       "typ": "statist",
-      "feld": [
-        21,
-        14
-      ],
+      "feld": [21, 14],
       "eigenschaften": {
         "von": "21,14",
         "bis": "21,14",
@@ -398,10 +264,7 @@
     {
       "name": "fotografin",
       "typ": "statist",
-      "feld": [
-        19,
-        22
-      ],
+      "feld": [19, 22],
       "eigenschaften": {
         "von": "19,22",
         "bis": "19,22",
@@ -412,10 +275,7 @@
     {
       "name": "reiher",
       "typ": "tier",
-      "feld": [
-        40,
-        24
-      ],
+      "feld": [40, 24],
       "eigenschaften": {
         "von": "40,24",
         "bis": "40,24",
@@ -425,10 +285,7 @@
     {
       "name": "alligator",
       "typ": "tier",
-      "feld": [
-        30,
-        28
-      ],
+      "feld": [30, 28],
       "eigenschaften": {
         "von": "26,28",
         "bis": "36,30",
@@ -438,10 +295,7 @@
     {
       "name": "libellen",
       "typ": "tier",
-      "feld": [
-        6,
-        14
-      ],
+      "feld": [6, 14],
       "eigenschaften": {
         "von": "3,14",
         "bis": "10,14",
@@ -451,10 +305,7 @@
     {
       "name": "frosch",
       "typ": "tier",
-      "feld": [
-        21,
-        23
-      ],
+      "feld": [21, 23],
       "eigenschaften": {
         "von": "21,23",
         "bis": "21,23",
@@ -464,10 +315,7 @@
     {
       "name": "schildkroete",
       "typ": "tier",
-      "feld": [
-        5,
-        21
-      ],
+      "feld": [5, 21],
       "eigenschaften": {
         "von": "3,21",
         "bis": "8,22",
@@ -477,10 +325,7 @@
     {
       "name": "nutria",
       "typ": "tier",
-      "feld": [
-        10,
-        30
-      ],
+      "feld": [10, 30],
       "eigenschaften": {
         "von": "6,30",
         "bis": "14,31",
@@ -488,11 +333,7 @@
       }
     }
   ],
-  "zustand": [
-    "neu",
-    "gebraucht",
-    "alt"
-  ],
+  "zustand": ["neu", "gebraucht", "alt"],
   "stil": [
     "rustikal",
     "natur",

@@ -32,6 +32,8 @@ export interface Wirkungen {
   readonly zeigeAbspann?: () => void;
   /** Reise auf eine Karte eines anderen Ortes (Bus nach Cedar Creek); wirkt nach dem Dialog. */
   readonly reise: (karte: string, ausloeser: string) => void;
+  /** Tönung der aktuellen Karte: nebel, nacht, abend, sepia, dunkel oder „keine“ (toenung.ts). */
+  readonly setzeToenung: (name: string) => void;
 }
 
 /** Werte, die über Szenen hinweg gelten (Spielstand, Feld dialogvariablen). */
@@ -81,6 +83,11 @@ export class Geschichte {
     this.story.BindExternalFunction(
       "setzeZustand",
       (g: string, f: number, grund: string) => wirkungen.setzeZustand(g, f, grund),
+      false,
+    );
+    this.story.BindExternalFunction(
+      "setzeToenung",
+      (t: string) => wirkungen.setzeToenung(t),
       false,
     );
     this.story.BindExternalFunction(

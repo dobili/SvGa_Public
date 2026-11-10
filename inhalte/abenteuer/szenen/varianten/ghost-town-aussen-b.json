@@ -514,6 +514,18 @@
     {
       "name": "goldmine",
       "feld": [19, 5]
+    },
+    {
+      "name": "ortsschild",
+      "feld": [3, 19]
+    },
+    {
+      "name": "steckbrief",
+      "feld": [42, 20]
+    },
+    {
+      "name": "amboss",
+      "feld": [40, 33]
     }
   ],
   "figuren": [

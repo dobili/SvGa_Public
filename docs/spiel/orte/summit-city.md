@@ -295,3 +295,20 @@ Fuß). Vor den Tischen ist Platz für drei Kinder, Annek, Kira und {held}.
 - **Schule:** Hausmeister (Läufer im Sandkasten), Busfahrerin (en passant), Schulkind (Kiras Bison
   als Turm, mit Antwort von Ambrose), Vater (Rétis Studie von 1921, zeigt die Vorführung `retiStudie`).
   Tiere: Hühner, Hund, Spatzen, Katze, Falke, Hase.
+
+## Runde 6: spielbar (10.11.2026, mittel-4)
+
+- **Summit City, Ansehen:**
+  - außen: `plakat` (Landesmeisterschaft) und `fernrohr` (Blick vom Felsplateau);
+  - Hütte: `foto` und `teekanne`;
+  - Bergstation: `fahrplan`.
+- **Bergladen:** `wanderkarten` bleibt offen; der Bergladen ist auf Wunsch des Haupt-Chats
+  festgeschrieben.
+- **Hochebene, Bauerndiplom** (`ereignisDiplom`): Das Ereignis beginnt erst, wenn Annek Schach
+  gelernt hat (`annekSchachGelernt`). Vorher zeigt es das Plakat „Diplomtag – bald!“.
+  - Quest `hochebene.bauerndiplom` (klein): Aufgabenrunde `hochebene.diplom`, gestellt von Annek.
+    Das ist der Ersatz für die Aufgabenwahl je Kind.
+  - Lohn: Fund `diplomKira`, von Kira gemalt mit Falke und Bison, dazu 20 Münzen.
+- **Hochebene, Funde:** `seite03` (Kapitel 3, Gambits; an der Fahnenstange) und `finchTurmB` (Kiste
+  mit Sportgeräten).
+- **Hochebene, Ansehen:** `pferd`, `schildSchule` (Felstürme) und `bus` (Schule).

@@ -204,7 +204,7 @@
           "type": "boolean"
         },
         "klein": {
-          "description": "Kleine Nebenquest eines Wegereignisses oder Sammelstrangs (docs/spiel/15, Grundsatz 3): zählt nicht für R27 und gibt keine Nadel",
+          "description": "Kleine Nebenquest (Routen-Ereignis, Nebenort, Sammelstrang; docs/spiel/15 und 13): zählt nicht für „alle Nebenquests einer Stadt“ (R27) und gibt keine Nadel und keine Karte nach R27.",
           "type": "boolean"
         },
         "start": {

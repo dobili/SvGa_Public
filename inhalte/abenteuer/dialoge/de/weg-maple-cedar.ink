@@ -25,6 +25,14 @@ VAR niaGetroffen = false
 VAR ausgangWegMapleCedarNia = ""
 VAR formularGefunden = false
 VAR muenzenGefunden = false
+VAR nadelMapleFalls = 0
+VAR nadelCedarCreek = 0
+VAR wegMapleCedarFinchFallenBestanden = false
+VAR odetteGetroffen = false
+VAR flohmarktKarteErhalten = false
+VAR seite00Gefunden = false
+VAR finchBauerAGefunden = false
+VAR gatterOffenGesehen = false
 
 // ---------------------------------------------------------------- Rätseltafel
 
@@ -155,3 +163,103 @@ Ein Tag Weg für eine gute Partie war nicht zu viel. Man hatte unterwegs Zeit, d
 Ein Holzschild: „Cedar Creek. Langsam fahren, hier spielen Kinder Schach.“ #sprecher:erzaehler
 Eine Stadt, die vor Schach warnt. Wir sind am richtigen Ort. #sprecher:ambrose #stimmung:lacht
 -> END
+
+// ---------------------------------------------------------------- Runde 6: Gatter S1 (Kürbishof)
+
+// Läuft vor dem Übergang „kuerbishof“ (wenn: wegMapleCedarTafelBestanden). Walt Miller lässt nur
+// herein, wer die Tafel am Ortsausgang gelöst hat (13_Wegenetz.md, S1).
+=== gatter_s1 ===
+{wegMapleCedarTafelBestanden:
+    {gatterOffenGesehen:
+        -> END
+    }
+    ~ gatterOffenGesehen = true
+    Das Gatter steht einen Spalt offen. Dahinter winkt ein Mann mit Strohhut. #sprecher:erzaehler
+    „Du bist das, das die Tafel am Ortsausgang gelöst hat? Dann komm. Die Kühe suche ich später mit dir.“ #sprecher:erzaehler
+    -> END
+- else:
+    Das Gatter ist zu. Am Pfosten hängt ein Zettel: „Kühe ausgebüxt. Rein darf nur, wer denken kann. Die Tafel am Ortsausgang zeigt es. W. Miller.“ #sprecher:erzaehler
+    -> END
+}
+
+// ---------------------------------------------------------------- Runde 6: Flohmarkt (15, 2.1)
+
+// Odette Finch, Problemkomponistin mit dem Wohnmobil „Gambit“. Erst nach der ersten Clubnadel
+// (Samstag). Drei Finch-Fallen (Runde wegMapleCedar.finchFallen, Matt in eins), Lohn: die Karte
+// der Finch-Jagd und ein Problemheft.
+=== ereignis_flohmarkt ===
+{nadelMapleFalls < 1:
+    Das Wohnmobil „Gambit“ parkt in der Einfahrt, die Tür ist zu. Auf den Tischen liegen Decken über den Kisten. #sprecher:erzaehler
+    Am Aufsteller steht: „Flohmarkt am Samstag.“ #sprecher:erzaehler
+    -> END
+}
+{flohmarktKarteErhalten: -> flohmarkt_spaeter}
+{wegMapleCedarFinchFallenBestanden: -> flohmarkt_karte}
+{odetteGetroffen: -> flohmarkt_angebot}
+~ odetteGetroffen = true
+Auf den Tischen liegen Lampen, Kisten und ein Fahrrad ohne Kette. Vor dem Wohnmobil sitzt eine alte Dame auf einem Klappstuhl und lacht. #sprecher:erzaehler
+„Odette Finch. Problemhefte, fünfzig Cent das Stück. Aber erst stelle ich dir eine Falle.“ #sprecher:erzaehler
+-> flohmarkt_angebot
+
+=== flohmarkt_angebot ===
+„Matt in einem Zug. Sieht aus wie Patt, ist es aber nicht. Drei Stück hab ich, eine gemeiner als die andere.“ #sprecher:erzaehler
+Diese Art Aufgabe hat man um 1850 in den Zeitungen gedruckt. Sie ist schön und gemein. #sprecher:ambrose
+* [Die Fallen lösen]
+    ~ beginneAufgaben("wegMapleCedar.finchFallen")
+    -> END
+* [Später]
+    „Ich bin den ganzen Samstag hier. Die Fallen laufen nicht weg.“ #sprecher:erzaehler
+    -> END
+
+=== flohmarkt_karte ===
+~ flohmarktKarteErhalten = true
+Odette klatscht in die Hände. „Alle drei! Dann bist du die Richtige für meine letzte große Aufgabe.“ #sprecher:erzaehler
+Sie gibt dir eine Karte mit sechzehn leeren Kästchen. „Sechzehn weiße Figuren aus Buchsbaum, versteckt an den Wegen. Unter jeder steht ihr Feld.“ #sprecher:erzaehler
+~ gibFund("finchKarte")
+„Wo eine liegt, hab ich einen Finken hingemalt. Und das Heft hier nimmst du auch mit, drei Aufgaben für unterwegs.“ #sprecher:erzaehler
+~ gibFund("problemheft")
+Sechzehn Figuren. Das wird ein langer Spaziergang, {held}. Ein schöner. #sprecher:ambrose #stimmung:lacht
+-> END
+
+=== flohmarkt_spaeter ===
+„Hast du schon einen Finken gesehen? Die Figuren liegen nie ohne Zeichen.“ #sprecher:erzaehler
+Odette packt eine Lampe in Zeitungspapier. „Am Leuchtturm bei Capital sehen wir uns wieder. Dort stelle ich Schwarz auf.“ #sprecher:erzaehler
+-> END
+
+// ---------------------------------------------------------------- Runde 6: Sammelstellen
+
+=== fund_seite00 ===
+{seite00Gefunden:
+    Im Graben liegt nur noch Laub. #sprecher:erzaehler
+    -> END
+}
+~ seite00Gefunden = true
+Im Graben neben dem Hof steckt ein Blatt Papier, feucht vom Tau. #sprecher:erzaehler
+Eine Seite aus einem Handbuch, Kapitel 0: „Dein Einstieg ins Schachbuch“. #sprecher:erzaehler
+~ gibFund("seite00")
+Eine Seite aus einem Buch, das es zu meiner Zeit noch nicht gab. Heb sie auf. #sprecher:ambrose
+-> END
+
+=== fund_finch_bauer_a ===
+{finchBauerAGefunden:
+    Unter der Bank ist nichts mehr, nur das Blechschild mit dem Finken am Pfosten. #sprecher:erzaehler
+    -> END
+}
+~ finchBauerAGefunden = true
+Am Pfosten neben der Bank hängt ein Blechschild mit einem Finken. Unter der Bank klemmt etwas. #sprecher:erzaehler
+Ein weißer Bauer aus hellem Holz. Unter dem Fuß ist ein Feld eingebrannt. #sprecher:erzaehler
+~ gibFund("finchBauerA")
+-> END
+
+// ---------------------------------------------------------------- Runde 6: Stamm auf dem Zedernpfad (S2)
+
+// Vor dem Übergang „zedernZurueckPark“ (wenn: nadelCedarCreek). Mr. Dunmore räumt den Stamm nach
+// der Clubnadel von Cedar Creek.
+=== stamm_s2 ===
+{nadelCedarCreek >= 1:
+    -> END
+- else:
+    Eine Zeder liegt quer über dem Pfad, der Sturm hat sie umgeworfen. Darüber kommst du nicht. #sprecher:erzaehler
+    Hinter dem Stamm sieht man schon den Park von Maple Falls. #sprecher:erzaehler
+    -> END
+}

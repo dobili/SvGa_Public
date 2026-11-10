@@ -2,6 +2,7 @@
   "karte": "goldmine.stollen",
   "datei": "karten/goldmine-stollen.json",
   "art": "innen",
+  "toenung": "dunkel",
   "beschreibung": "Der Stollen der Goldmine (N7), 40 × 24 Kacheln, Fels. Vom Eingang am Südrand läuft der Hauptgang mit Gleis, Stützrahmen aus Holz und Grubenlampen nach Norden bis zum Prellbock; nach Westen die Kammer der Bergleute mit Tisch, Hockern und Kiste (auf dem Tisch ist Platz für das Logbuch von 1866), nach Osten die glänzende Goldader mit abgestellter Lore und Pfützen. Der Fels jenseits der Wände liegt im Dunkeln.",
   "wand": "fels",
   "boden": "felsboden",
@@ -374,6 +375,18 @@
     {
       "name": "stollenAusgang",
       "feld": [20, 23]
+    },
+    {
+      "name": "logbuch",
+      "feld": [6, 6]
+    },
+    {
+      "name": "lore",
+      "feld": [30, 11]
+    },
+    {
+      "name": "goldader",
+      "feld": [33, 8]
     }
   ],
   "figuren": [],

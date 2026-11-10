@@ -1520,6 +1520,77 @@
       ]
     },
     {
+      "kennung": "wegDesertSummit.mags",
+      "name": "figur.mags.name",
+      "rolle": "strasse",
+      "portraet": "portraets/mags.svg",
+      "staerke": {
+        "art": "aktuell",
+        "versatz": -50
+      },
+      "stil": {
+        "angreifer": 120,
+        "taktiker": 100
+      },
+      "eroeffnung": {
+        "art": "frei"
+      },
+      "steckbrief": [
+        {
+          "art": "fleck",
+          "wert": "rueckzug"
+        }
+      ]
+    },
+    {
+      "kennung": "wegDesertSummit.mamaBear",
+      "name": "figur.mamaBear.name",
+      "rolle": "strasse",
+      "portraet": "portraets/mama-bear.svg",
+      "staerke": {
+        "art": "aktuell",
+        "versatz": -80
+      },
+      "stil": {
+        "angreifer": 90,
+        "taktiker": 90
+      },
+      "eroeffnung": {
+        "art": "frei"
+      },
+      "steckbrief": [
+        {
+          "art": "fleck",
+          "wert": "rueckzug"
+        }
+      ]
+    },
+    {
+      "kennung": "wegPinewoodGhost.z1",
+      "name": "figur.z1.name",
+      "rolle": "strasse",
+      "portraet": "portraets/greifarm.svg",
+      "staerke": {
+        "art": "aktuell",
+        "versatz": 0
+      },
+      "stil": {
+        "angreifer": 100,
+        "taktiker": 120
+      },
+      "eroeffnung": {
+        "art": "fest",
+        "eroeffnungen": ["praxis:Italian Game"],
+        "abweichung": 0
+      },
+      "steckbrief": [
+        {
+          "art": "eroeffnung",
+          "wert": "Italienisch"
+        }
+      ]
+    },
+    {
       "kennung": "bayou.hafenarbeiter",
       "name": "figur.hafenarbeiter.name",
       "rolle": "story",

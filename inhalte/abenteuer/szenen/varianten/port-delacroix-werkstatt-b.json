@@ -23,74 +23,44 @@
   "objekte": [
     {
       "moebel": "pd6Fenster",
-      "feld": [
-        3,
-        1
-      ],
+      "feld": [3, 1],
       "an_wand": true
     },
     {
       "moebel": "pd6Fenster",
-      "feld": [
-        15,
-        1
-      ],
+      "feld": [15, 1],
       "an_wand": true
     },
     {
       "moebel": "pd6FotoAlt",
-      "feld": [
-        6,
-        1
-      ],
+      "feld": [6, 1],
       "an_wand": true,
-      "versatz": [
-        0,
-        4
-      ]
+      "versatz": [0, 4]
     },
     {
       "moebel": "pd6Bastelbank",
-      "feld": [
-        8,
-        1
-      ],
+      "feld": [8, 1],
       "id": "hobel"
     },
     {
       "moebel": "pd6Brettregal",
-      "feld": [
-        12,
-        2
-      ]
+      "feld": [12, 2]
     },
     {
       "moebel": "pd6Kommode",
-      "feld": [
-        1,
-        3
-      ]
+      "feld": [1, 3]
     },
     {
       "moebel": "pd6KlavierHell",
-      "feld": [
-        17,
-        3
-      ]
+      "feld": [17, 3]
     },
     {
       "moebel": "pd6KlavierRot",
-      "feld": [
-        17,
-        6
-      ]
+      "feld": [17, 6]
     },
     {
       "moebel": "pd6Fluegel",
-      "feld": [
-        13,
-        6
-      ],
+      "feld": [13, 6],
       "id": "fluegel"
     },
     {
@@ -99,148 +69,85 @@
     },
     {
       "moebel": "pd6Keyboard",
-      "feld": [
-        2,
-        8
-      ]
+      "feld": [2, 8]
     },
     {
       "moebel": "pd6Hocker",
-      "feld": [
-        4,
-        9
-      ]
+      "feld": [4, 9]
     },
     {
       "moebel": "pd6Saegebock",
-      "feld": [
-        7,
-        6
-      ]
+      "feld": [7, 6]
     },
     {
       "moebel": "pd6Holzscheite",
-      "feld": [
-        10,
-        8
-      ]
+      "feld": [10, 8]
     },
     {
       "moebel": "pd6Kanister",
-      "feld": [
-        1,
-        6
-      ]
+      "feld": [1, 6]
     },
     {
       "moebel": "pd6Bretterstapel",
-      "feld": [
-        4,
-        2
-      ]
+      "feld": [4, 2]
     },
     {
       "moebel": "pd6Kistenstapel",
-      "feld": [
-        12,
-        8
-      ]
+      "feld": [12, 8]
     },
     {
       "moebel": "pd6Kiste",
-      "feld": [
-        17,
-        10
-      ]
+      "feld": [17, 10]
     },
     {
       "moebel": "pd6Fussmatte",
-      "feld": [
-        10,
-        11
-      ],
-      "versatz": [
-        0,
-        8
-      ]
+      "feld": [10, 11],
+      "versatz": [0, 8]
     },
     {
       "moebel": "pd6Tuer",
-      "feld": [
-        10,
-        12
-      ],
+      "feld": [10, 12],
       "an_wand": true
     }
   ],
   "ausloeser": [
     {
       "name": "start",
-      "feld": [
-        10,
-        11
-      ],
+      "feld": [10, 11],
       "eigenschaften": {
         "richtung": "oben"
       }
     },
     {
       "name": "werkstattAusgang",
-      "feld": [
-        10,
-        12
-      ]
+      "feld": [10, 12]
     },
     {
       "name": "werkbank",
-      "feld": [
-        9,
-        3
-      ],
+      "feld": [9, 3],
       "auf_moebel": true
     },
     {
       "name": "fotoWand",
-      "feld": [
-        6,
-        3
-      ]
+      "feld": [6, 3]
     },
     {
       "name": "laptop",
-      "feld": [
-        13,
-        6
-      ]
+      "feld": [13, 6]
     }
   ],
   "figuren": [
     {
       "name": "henri",
-      "feld": [
-        11,
-        6
-      ]
+      "feld": [11, 6]
     },
     {
       "name": "celeste",
-      "feld": [
-        5,
-        10
-      ]
+      "feld": [5, 10]
     }
   ],
   "belebung": [],
-  "zustand": [
-    "neu",
-    "gebraucht",
-    "alt"
-  ],
-  "stil": [
-    "klassisch",
-    "rustikal",
-    "modern",
-    "industrie"
-  ],
+  "zustand": ["neu", "gebraucht", "alt"],
+  "stil": ["klassisch", "rustikal", "modern", "industrie"],
   "variante": "b"
 }

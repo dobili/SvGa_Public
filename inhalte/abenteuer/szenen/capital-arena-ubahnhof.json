@@ -33,525 +33,321 @@
   "objekte": [
     {
       "moebel": "ci8Schiene",
-      "feld": [
-        2,
-        4
-      ],
+      "feld": [2, 4],
       "bauteil_ok": true
     },
     {
       "moebel": "ci8Schiene",
-      "feld": [
-        3,
-        4
-      ],
+      "feld": [3, 4],
       "bauteil_ok": true
     },
     {
       "moebel": "ci8Schiene",
-      "feld": [
-        4,
-        4
-      ],
+      "feld": [4, 4],
       "bauteil_ok": true
     },
     {
       "moebel": "ci8Schiene",
-      "feld": [
-        5,
-        4
-      ],
+      "feld": [5, 4],
       "bauteil_ok": true
     },
     {
       "moebel": "ci8Schiene",
-      "feld": [
-        6,
-        4
-      ],
+      "feld": [6, 4],
       "bauteil_ok": true
     },
     {
       "moebel": "ci8Schiene",
-      "feld": [
-        7,
-        4
-      ],
+      "feld": [7, 4],
       "bauteil_ok": true
     },
     {
       "moebel": "ci8Schiene",
-      "feld": [
-        8,
-        4
-      ],
+      "feld": [8, 4],
       "bauteil_ok": true
     },
     {
       "moebel": "ci8Schiene",
-      "feld": [
-        9,
-        4
-      ],
+      "feld": [9, 4],
       "bauteil_ok": true
     },
     {
       "moebel": "ci8Schiene",
-      "feld": [
-        10,
-        4
-      ],
+      "feld": [10, 4],
       "bauteil_ok": true
     },
     {
       "moebel": "ci8Schiene",
-      "feld": [
-        11,
-        4
-      ],
+      "feld": [11, 4],
       "bauteil_ok": true
     },
     {
       "moebel": "ci8Schiene",
-      "feld": [
-        12,
-        4
-      ],
+      "feld": [12, 4],
       "bauteil_ok": true
     },
     {
       "moebel": "ci8Schiene",
-      "feld": [
-        13,
-        4
-      ],
+      "feld": [13, 4],
       "bauteil_ok": true
     },
     {
       "moebel": "ci8Schiene",
-      "feld": [
-        14,
-        4
-      ],
+      "feld": [14, 4],
       "bauteil_ok": true
     },
     {
       "moebel": "ci8Schiene",
-      "feld": [
-        15,
-        4
-      ],
+      "feld": [15, 4],
       "bauteil_ok": true
     },
     {
       "moebel": "ci8Schiene",
-      "feld": [
-        16,
-        4
-      ],
+      "feld": [16, 4],
       "bauteil_ok": true
     },
     {
       "moebel": "ci8Schiene",
-      "feld": [
-        17,
-        4
-      ],
+      "feld": [17, 4],
       "bauteil_ok": true
     },
     {
       "moebel": "ci8Schiene",
-      "feld": [
-        18,
-        4
-      ],
+      "feld": [18, 4],
       "bauteil_ok": true
     },
     {
       "moebel": "ci8Schiene",
-      "feld": [
-        19,
-        4
-      ],
+      "feld": [19, 4],
       "bauteil_ok": true
     },
     {
       "moebel": "ci8Schiene",
-      "feld": [
-        20,
-        4
-      ],
+      "feld": [20, 4],
       "bauteil_ok": true
     },
     {
       "moebel": "ci8Schiene",
-      "feld": [
-        21,
-        4
-      ],
+      "feld": [21, 4],
       "bauteil_ok": true
     },
     {
       "moebel": "ci8Schiene",
-      "feld": [
-        22,
-        4
-      ],
+      "feld": [22, 4],
       "bauteil_ok": true
     },
     {
       "moebel": "ci8Schiene",
-      "feld": [
-        23,
-        4
-      ],
+      "feld": [23, 4],
       "bauteil_ok": true
     },
     {
       "moebel": "ci8Schiene",
-      "feld": [
-        24,
-        4
-      ],
+      "feld": [24, 4],
       "bauteil_ok": true
     },
     {
       "moebel": "ci8Schiene",
-      "feld": [
-        25,
-        4
-      ],
+      "feld": [25, 4],
       "bauteil_ok": true
     },
     {
       "moebel": "ci8Schiene",
-      "feld": [
-        26,
-        4
-      ],
+      "feld": [26, 4],
       "bauteil_ok": true
     },
     {
       "moebel": "ci8Schiene",
-      "feld": [
-        27,
-        4
-      ],
+      "feld": [27, 4],
       "bauteil_ok": true
     },
     {
       "moebel": "ci8Schiene",
-      "feld": [
-        28,
-        4
-      ],
+      "feld": [28, 4],
       "bauteil_ok": true
     },
     {
       "moebel": "ci8Schiene",
-      "feld": [
-        29,
-        4
-      ],
+      "feld": [29, 4],
       "bauteil_ok": true
     },
     {
       "moebel": "ci8Schiene",
-      "feld": [
-        30,
-        4
-      ],
+      "feld": [30, 4],
       "bauteil_ok": true
     },
     {
       "moebel": "ci8Schiene",
-      "feld": [
-        31,
-        4
-      ],
+      "feld": [31, 4],
       "bauteil_ok": true
     },
     {
       "moebel": "ci8Schiene",
-      "feld": [
-        32,
-        4
-      ],
+      "feld": [32, 4],
       "bauteil_ok": true
     },
     {
       "moebel": "ci8Schiene",
-      "feld": [
-        33,
-        4
-      ],
+      "feld": [33, 4],
       "bauteil_ok": true
     },
     {
       "moebel": "ci8Schiene",
-      "feld": [
-        34,
-        4
-      ],
+      "feld": [34, 4],
       "bauteil_ok": true
     },
     {
       "moebel": "ci8ZugGraffiti",
-      "feld": [
-        9,
-        3
-      ]
+      "feld": [9, 3]
     },
     {
       "moebel": "ci8Gelaender",
-      "feld": [
-        2,
-        7
-      ]
+      "feld": [2, 7]
     },
     {
       "moebel": "ci8Gelaender",
-      "feld": [
-        5,
-        7
-      ]
+      "feld": [5, 7]
     },
     {
       "moebel": "ci8Gelaender",
-      "feld": [
-        8,
-        7
-      ]
+      "feld": [8, 7]
     },
     {
       "moebel": "ci8Gelaender",
-      "feld": [
-        11,
-        7
-      ]
+      "feld": [11, 7]
     },
     {
       "moebel": "ci8Gelaender",
-      "feld": [
-        14,
-        7
-      ]
+      "feld": [14, 7]
     },
     {
       "moebel": "ci8Gelaender",
-      "feld": [
-        17,
-        7
-      ]
+      "feld": [17, 7]
     },
     {
       "moebel": "ci8Gelaender",
-      "feld": [
-        20,
-        7
-      ]
+      "feld": [20, 7]
     },
     {
       "moebel": "ci8Gelaender",
-      "feld": [
-        23,
-        7
-      ]
+      "feld": [23, 7]
     },
     {
       "moebel": "ci8Gelaender",
-      "feld": [
-        26,
-        7
-      ]
+      "feld": [26, 7]
     },
     {
       "moebel": "ci8Gelaender",
-      "feld": [
-        29,
-        7
-      ]
+      "feld": [29, 7]
     },
     {
       "moebel": "ci8Gelaender",
-      "feld": [
-        32,
-        7
-      ]
+      "feld": [32, 7]
     },
     {
       "moebel": "ca7Fussmatte",
-      "feld": [
-        18,
-        18
-      ],
-      "versatz": [
-        0,
-        8
-      ]
+      "feld": [18, 18],
+      "versatz": [0, 8]
     },
     {
       "moebel": "ca7Tuer",
-      "feld": [
-        18,
-        19
-      ],
+      "feld": [18, 19],
       "an_wand": true
     },
     {
       "moebel": "ca8KlapptischBrett",
-      "feld": [
-        10,
-        11
-      ]
+      "feld": [10, 11]
     },
     {
       "moebel": "ca8KlapptischBrett",
-      "feld": [
-        17,
-        11
-      ]
+      "feld": [17, 11]
     },
     {
       "moebel": "ca8KlapptischBrett",
-      "feld": [
-        24,
-        11
-      ]
+      "feld": [24, 11]
     },
     {
       "moebel": "ci8Pfeiler",
-      "feld": [
-        6,
-        8
-      ]
+      "feld": [6, 8]
     },
     {
       "moebel": "ci8Pfeiler",
-      "feld": [
-        29,
-        8
-      ]
+      "feld": [29, 8]
     },
     {
       "moebel": "ci8Bank",
-      "feld": [
-        1,
-        9
-      ]
+      "feld": [1, 9]
     },
     {
       "moebel": "ci8BankB",
-      "feld": [
-        32,
-        9
-      ]
+      "feld": [32, 9]
     },
     {
       "moebel": "ci8GraffitiSchrift",
-      "feld": [
-        2,
-        0
-      ],
+      "feld": [2, 0],
       "an_wand": true
     },
     {
       "moebel": "ci8GraffitiWolf",
-      "feld": [
-        12,
-        1
-      ],
+      "feld": [12, 1],
       "an_wand": true
     },
     {
       "moebel": "ci8Plakate3",
-      "feld": [
-        19,
-        1
-      ],
+      "feld": [19, 1],
       "an_wand": true
     },
     {
       "moebel": "ci8GraffitiBlume",
-      "feld": [
-        28,
-        0
-      ],
+      "feld": [28, 0],
       "an_wand": true
     },
     {
       "moebel": "ci8Leuchte",
-      "feld": [
-        24,
-        1
-      ],
+      "feld": [24, 1],
       "an_wand": true
     },
     {
       "moebel": "ci8Drehkreuz",
-      "feld": [
-        14,
-        14
-      ]
+      "feld": [14, 14]
     },
     {
       "moebel": "ci8Drehkreuz",
-      "feld": [
-        21,
-        14
-      ]
+      "feld": [21, 14]
     },
     {
       "moebel": "ci8Kreidespringer",
-      "feld": [
-        8,
-        15
-      ]
+      "feld": [8, 15]
     }
   ],
   "ausloeser": [
     {
       "name": "start",
-      "feld": [
-        18,
-        18
-      ],
+      "feld": [18, 18],
       "eigenschaften": {
         "richtung": "oben"
       }
     },
     {
       "name": "ubahnAusgang",
-      "feld": [
-        18,
-        19
-      ]
+      "feld": [18, 19]
     },
     {
       "name": "ereignisKreidenacht",
-      "feld": [
-        18,
-        14
-      ]
+      "feld": [18, 14]
     }
   ],
   "figuren": [
     {
       "name": "mo",
-      "feld": [
-        18,
-        10
-      ]
+      "feld": [18, 10]
     }
   ],
   "belebung": [
     {
       "name": "zuschauer",
       "typ": "statist",
-      "feld": [
-        12,
-        16
-      ],
+      "feld": [12, 16],
       "eigenschaften": {
         "von": "10,16",
         "bis": "26,16",
@@ -563,10 +359,7 @@
     {
       "name": "uhrwart",
       "typ": "statist",
-      "feld": [
-        25,
-        14
-      ],
+      "feld": [25, 14],
       "eigenschaften": {
         "von": "25,14",
         "bis": "25,14",
@@ -578,10 +371,7 @@
     {
       "name": "ratte",
       "typ": "tier",
-      "feld": [
-        3,
-        16
-      ],
+      "feld": [3, 16],
       "eigenschaften": {
         "von": "2,16",
         "bis": "6,17",
@@ -589,15 +379,6 @@
       }
     }
   ],
-  "zustand": [
-    "alt",
-    "kaputt",
-    "gebraucht",
-    "neu"
-  ],
-  "stil": [
-    "industrie",
-    "modern",
-    "klassisch"
-  ]
+  "zustand": ["alt", "kaputt", "gebraucht", "neu"],
+  "stil": ["industrie", "modern", "klassisch"]
 }

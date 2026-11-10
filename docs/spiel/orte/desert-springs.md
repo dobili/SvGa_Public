@@ -122,3 +122,21 @@ davon.
 - **Felsbogen:** Rangerin (Springer, Ritter und Pferd), Goldsucher, Radfahrerin (Geier wie
   Kiebitze), Fotograf.
 - **Tiere auf beiden Karten:** Roadrunner, Eidechse, Geier, Wüstenhase, Kojote, Falke.
+
+### Weg 6 in Runde 6: spielbar (10.11.2026, mittel-4)
+
+- **Seilschaft** (`ereignisSeilschaft`, Dialog `weg-delacroix-desert.ereignis_seilschaft`):
+  - Vor der Versöhnung liegen nur Seile und Rucksäcke da.
+  - Danach rufen Wren Okoro (unten) und Sol Ferris (oben) um Hilfe.
+  - Quest `wegDelacroixDesert.seilschaft` (klein), mit der Aufgabenrunde
+    `wegDelacroixDesert.seilschaft`. Das ist der Ersatz für die Gedächtnisstellung, bis mittel-2
+    sie gebaut hat.
+  - Lohn: Fund `karabiner` und 20 Münzen.
+- **Funde:** `seite06` (Kapitel 6, Mittelspielstrategie) und `finchLaeuferB` als Gegenstände an den
+  Feldern aus 3.3.
+- **Sperre S9:** Der Übergang `sternwarte` auf dem Canyonpfad hat den Dialog
+  `weg-delacroix-desert.sternwarte_abzweig` und `wenn: sternwarteOffen`. Der Dialog setzt die
+  Variable, wenn `hatLaterne` und `versoehnungGesehen` gelten; sonst nennt er den Grund (Geröll,
+  Dunkelheit).
+- **Offen:** Mira hat auf dem Canyonpfad keine eigene Figur. Ihr Stein (`stein`) bleibt der Ort von
+  Szene 72; eine zweite Mira-Figur würde neben der Garage gleichzeitig stehen.

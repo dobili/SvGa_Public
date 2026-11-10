@@ -942,6 +942,18 @@
     {
       "name": "fundAnstecker",
       "feld": [149, 25]
+    },
+    {
+      "name": "kreide2",
+      "feld": [127, 11]
+    },
+    {
+      "name": "finchBauerB",
+      "feld": [140, 16]
+    },
+    {
+      "name": "seite04",
+      "feld": [128, 14]
     }
   ],
   "figuren": [

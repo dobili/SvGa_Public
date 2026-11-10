@@ -313,6 +313,14 @@
     {
       "name": "kiosk",
       "feld": [30, 21]
+    },
+    {
+      "name": "steg",
+      "feld": [40, 29]
+    },
+    {
+      "name": "kanus",
+      "feld": [34, 30]
     }
   ],
   "figuren": [

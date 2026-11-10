@@ -403,6 +403,132 @@
       "anzahl": 3
     },
     {
+      "kennung": "wegMapleCedar.finchFallen",
+      "ort": "wegMapleCedar",
+      "steller": "wegMapleCedar.odette",
+      "reihe": false,
+      "buchuebungen": [],
+      "themen": ["matt1"],
+      "anzahl": 3
+    },
+    {
+      "kennung": "wegCedarRiverton.zugpartie",
+      "ort": "wegCedarRiverton",
+      "steller": "wegCedarRiverton.rosalind",
+      "reihe": false,
+      "buchuebungen": [],
+      "themen": ["haengend"],
+      "anzahl": 2
+    },
+    {
+      "kennung": "lockport.tafelSchleuse",
+      "ort": "lockport",
+      "steller": "lockport.imogen",
+      "reihe": false,
+      "buchuebungen": [],
+      "themen": ["doppelangriff"],
+      "anzahl": 2
+    },
+    {
+      "kennung": "lockport.kahnrennen",
+      "ort": "lockport",
+      "steller": "lockport.ruben",
+      "reihe": false,
+      "buchuebungen": [],
+      "themen": ["doppelangriff"],
+      "anzahl": 3
+    },
+    {
+      "kennung": "lockport.taue",
+      "ort": "lockport",
+      "steller": "lockport.henrik",
+      "reihe": false,
+      "buchuebungen": [],
+      "themen": ["fesselung"],
+      "anzahl": 2
+    },
+    {
+      "kennung": "wegDelacroixDesert.seilschaft",
+      "ort": "wegDelacroixDesert",
+      "steller": "wegDelacroixDesert.wren",
+      "reihe": false,
+      "buchuebungen": [],
+      "themen": ["mattbilder"],
+      "anzahl": 3
+    },
+    {
+      "kennung": "sternwarte.sterne",
+      "ort": "sternwarte",
+      "steller": "sternwarte.ngata",
+      "reihe": false,
+      "buchuebungen": [],
+      "themen": ["mattbilder", "matt2"],
+      "anzahl": 4
+    },
+    {
+      "kennung": "hochebene.diplom",
+      "ort": "hochebene",
+      "steller": "hochebene.annek",
+      "reihe": false,
+      "buchuebungen": [],
+      "themen": ["matt1", "haengend"],
+      "anzahl": 3
+    },
+    {
+      "kennung": "kuerbishof.irrgarten",
+      "ort": "kuerbishof",
+      "steller": "kuerbishof.clover",
+      "reihe": false,
+      "buchuebungen": [],
+      "themen": ["matt1"],
+      "anzahl": 3
+    },
+    {
+      "kennung": "pelikaninsel.netze",
+      "ort": "pelikaninsel",
+      "steller": "pelikaninsel.oldPete",
+      "reihe": false,
+      "buchuebungen": [],
+      "themen": ["haengend"],
+      "anzahl": 3
+    },
+    {
+      "kennung": "goldmine.loren",
+      "ort": "goldmine",
+      "steller": "goldmine.pruitt",
+      "reihe": false,
+      "buchuebungen": [],
+      "themen": ["endspiel"],
+      "anzahl": 3
+    },
+    {
+      "kennung": "wegIronwoodSilicon.stream",
+      "ort": "wegIronwoodSilicon",
+      "steller": "wegIronwoodSilicon.kiki",
+      "reihe": false,
+      "buchuebungen": [],
+      "themen": ["falle", "haengend"],
+      "anzahl": 3
+    },
+    {
+      "kennung": "wegSummitCrossroads.geysirblitz",
+      "ort": "wegSummitCrossroads",
+      "steller": "wegSummitCrossroads.bell",
+      "reihe": false,
+      "buchuebungen": [],
+      "themen": ["endspiel"],
+      "anzahl": 6
+    },
+    {
+      "kennung": "wegCrossroadsPinewood.lebendschach",
+      "ort": "wegCrossroadsPinewood",
+      "steller": "wegCrossroadsPinewood.ezra",
+      "reihe": false,
+      "buchuebungen": [],
+      "themen": ["matt2", "doppelangriff"],
+      "anzahl": 3
+    },
+    {
       "kennung": "wegSiliconDelacroix.kapitaensproblem",
       "ort": "wegSiliconDelacroix",
       "steller": "wegSiliconDelacroix.kapitaen",

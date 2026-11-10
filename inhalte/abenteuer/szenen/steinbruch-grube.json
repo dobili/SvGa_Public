@@ -613,52 +613,73 @@
       ]
     },
     {
-      "moebel": "felsKlein",
+      "moebel": "sd6Schilf",
       "feld": [
-        14,
-        36
+        29,
+        31
       ]
     },
     {
-      "moebel": "wg4GrasB",
+      "moebel": "sd6Schilf",
       "feld": [
-        16,
-        33
+        21,
+        32
       ]
     },
     {
-      "moebel": "felsKlein",
+      "moebel": "sd6Schilf",
       "feld": [
-        38,
+        23,
+        31
+      ]
+    },
+    {
+      "moebel": "sd6Schilf",
+      "feld": [
+        15,
         35
       ]
     },
     {
-      "moebel": "wg4Gras",
+      "moebel": "mf6Seerose1",
       "feld": [
-        36,
-        42
+        26,
+        38
       ]
     },
     {
-      "moebel": "wg4GrasB",
+      "moebel": "mf6Seerose3",
+      "feld": [
+        27,
+        37
+      ]
+    },
+    {
+      "moebel": "mf6Seerose1",
+      "feld": [
+        22,
+        36
+      ]
+    },
+    {
+      "moebel": "mf6Seerose3",
+      "feld": [
+        31,
+        39
+      ]
+    },
+    {
+      "moebel": "mf6Seerose1",
+      "feld": [
+        29,
+        41
+      ]
+    },
+    {
+      "moebel": "mf6Seerose3",
       "feld": [
         20,
-        44
-      ]
-    },
-    {
-      "moebel": "wg4GrasB",
-      "feld": [
-        30,
-        44
-      ]
-    },
-    {
-      "moebel": "wg4Gras",
-      "feld": [
-        40,
-        39
+        40
       ]
     },
     {

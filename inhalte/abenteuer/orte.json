@@ -290,14 +290,9 @@
       ],
       "club": {
         "name": "club.mapleFalls.name",
-        "kapitel": [
-          0,
-          1
-        ],
+        "kapitel": [0, 1],
         "chef": "mapleFalls.coachDelgado",
-        "mitglieder": [
-          "mapleFalls.sam"
-        ],
+        "mitglieder": ["mapleFalls.sam"],
         "aufgaben": {
           "minuten": 12,
           "buchuebungen": [
@@ -305,11 +300,7 @@
             "ueb:zaehlen-vorstoss",
             "ueb:angriff-zaehlen"
           ],
-          "themen": [
-            "zaehlen",
-            "haengend",
-            "matt1"
-          ]
+          "themen": ["zaehlen", "haengend", "matt1"]
         }
       }
     },
@@ -575,15 +566,9 @@
       ],
       "club": {
         "name": "club.cedarCreek.name",
-        "kapitel": [
-          7,
-          8
-        ],
+        "kapitel": [7, 8],
         "chef": "cedarCreek.okafor",
-        "mitglieder": [
-          "cedarCreek.dex",
-          "cedarCreek.mae"
-        ],
+        "mitglieder": ["cedarCreek.dex", "cedarCreek.mae"],
         "aufgaben": {
           "minuten": 15,
           "buchuebungen": [
@@ -597,12 +582,7 @@
             "ueb:damenmatt",
             "ueb:turmmatt"
           ],
-          "themen": [
-            "matt1",
-            "matt2",
-            "mattbilder",
-            "grundreihenmatt"
-          ]
+          "themen": ["matt1", "matt2", "mattbilder", "grundreihenmatt"]
         }
       }
     },
@@ -1124,15 +1104,9 @@
       ],
       "club": {
         "name": "club.riverton.name",
-        "kapitel": [
-          7,
-          4
-        ],
+        "kapitel": [7, 4],
         "chef": "riverton.slick",
-        "mitglieder": [
-          "riverton.tamsin",
-          "riverton.ray"
-        ],
+        "mitglieder": ["riverton.tamsin", "riverton.ray"],
         "aufgaben": {
           "minuten": 15,
           "buchuebungen": [
@@ -1141,9 +1115,7 @@
             "ueb:droh-ignorieren",
             "ueb:k2-zweispringer-la4"
           ],
-          "themen": [
-            "doppelangriff"
-          ]
+          "themen": ["doppelangriff"]
         }
       }
     },
@@ -1628,15 +1600,9 @@
       ],
       "club": {
         "name": "club.ironwood.name",
-        "kapitel": [
-          7,
-          4
-        ],
+        "kapitel": [7, 4],
         "chef": "ironwood.bigJoe",
-        "mitglieder": [
-          "ironwood.hank",
-          "ironwood.priya"
-        ],
+        "mitglieder": ["ironwood.hank", "ironwood.priya"],
         "aufgaben": {
           "minuten": 15,
           "buchuebungen": [
@@ -1645,10 +1611,7 @@
             "ueb:elefant",
             "ueb:legal-verteidigung"
           ],
-          "themen": [
-            "fesselung",
-            "spiess"
-          ]
+          "themen": ["fesselung", "spiess"]
         }
       }
     },
@@ -2351,16 +2314,9 @@
       ],
       "club": {
         "name": "club.siliconBay.name",
-        "kapitel": [
-          1,
-          2,
-          4
-        ],
+        "kapitel": [1, 2, 4],
         "chef": "siliconBay.lin",
-        "mitglieder": [
-          "siliconBay.theo",
-          "siliconBay.nova"
-        ],
+        "mitglieder": ["siliconBay.theo", "siliconBay.nova"],
         "aufgaben": {
           "minuten": 15,
           "buchuebungen": [
@@ -2369,10 +2325,7 @@
             "ueb:k2-carokann-h4",
             "ueb:lasker-falle"
           ],
-          "themen": [
-            "haengend",
-            "gefangen"
-          ]
+          "themen": ["haengend", "gefangen"]
         }
       }
     },
@@ -2483,6 +2436,12 @@
           "name": "figur.guidry.name",
           "sprite": "figuren/guidry.png",
           "dialog": "weg-silicon-delacroix.guidry"
+        },
+        {
+          "kennung": "wegSiliconDelacroix.kapitaen",
+          "name": "figur.kapitaen.name",
+          "sprite": "figuren/kapitaen.png",
+          "dialog": "weg-silicon-delacroix.kapitaen"
         }
       ],
       "ausloeser": [
@@ -2545,6 +2504,48 @@
             "karte": "portDelacroix.aussen",
             "ausloeser": "deich"
           }
+        },
+        {
+          "name": "ereignisKapitaen",
+          "karte": "wegSiliconDelacroix.faehre",
+          "art": "dialog",
+          "dialog": "weg-silicon-delacroix.ereignis_kapitaen"
+        },
+        {
+          "name": "ladung",
+          "karte": "wegSiliconDelacroix.faehre",
+          "art": "dialog",
+          "dialog": "weg-silicon-delacroix.ladung"
+        },
+        {
+          "name": "delfin",
+          "karte": "wegSiliconDelacroix.faehre",
+          "art": "dialog",
+          "dialog": "weg-silicon-delacroix.delfin"
+        },
+        {
+          "name": "seite02",
+          "karte": "wegSiliconDelacroix.faehre",
+          "art": "gegenstand",
+          "dialog": "weg-silicon-delacroix.seite02"
+        },
+        {
+          "name": "finchTurmA",
+          "karte": "wegSiliconDelacroix.faehre",
+          "art": "gegenstand",
+          "dialog": "weg-silicon-delacroix.finch_turm_a"
+        },
+        {
+          "name": "pumpenhaus",
+          "karte": "wegSiliconDelacroix.deich",
+          "art": "dialog",
+          "dialog": "weg-silicon-delacroix.pumpenhaus"
+        },
+        {
+          "name": "spurPM3",
+          "karte": "wegSiliconDelacroix.deich",
+          "art": "gegenstand",
+          "dialog": "weg-silicon-delacroix.spur_pm3"
         }
       ]
     },
@@ -2758,24 +2759,60 @@
           "karte": "portDelacroix.aussen",
           "art": "uebergang",
           "dialog": "port-delacroix-aussen.bayou",
-          "wenn": "musikhausOffen",
+          "wenn": "bayouOffen",
           "ziel": {
             "karte": "bayou.steg",
             "ausloeser": "zurueckDelacroix"
           }
+        },
+        {
+          "name": "spendenkasse",
+          "karte": "portDelacroix.turnhalle",
+          "art": "dialog",
+          "dialog": "port-delacroix-turnhalle.spendenkasse"
+        },
+        {
+          "name": "notenheft",
+          "karte": "portDelacroix.turnhalle",
+          "art": "dialog",
+          "dialog": "port-delacroix-turnhalle.notenheft"
+        },
+        {
+          "name": "plakatTurnhalle",
+          "karte": "portDelacroix.turnhalle",
+          "art": "dialog",
+          "dialog": "port-delacroix-turnhalle.plakat_turnhalle"
+        },
+        {
+          "name": "fotoWand",
+          "karte": "portDelacroix.werkstatt",
+          "art": "dialog",
+          "dialog": "port-delacroix-werkstatt.foto_wand"
+        },
+        {
+          "name": "laptop",
+          "karte": "portDelacroix.werkstatt",
+          "art": "dialog",
+          "dialog": "port-delacroix-werkstatt.laptop"
+        },
+        {
+          "name": "lochImDach",
+          "karte": "portDelacroix.musikhaus",
+          "art": "dialog",
+          "dialog": "port-delacroix-musikhaus.loch_im_dach"
+        },
+        {
+          "name": "bauzaun",
+          "karte": "portDelacroix.aussen",
+          "art": "dialog",
+          "dialog": "port-delacroix-aussen.bauzaun"
         }
       ],
       "club": {
         "name": "club.portDelacroix.name",
-        "kapitel": [
-          5,
-          6
-        ],
+        "kapitel": [5, 6],
         "chef": "portDelacroix.odile",
-        "mitglieder": [
-          "portDelacroix.remy",
-          "portDelacroix.lou"
-        ],
+        "mitglieder": ["portDelacroix.remy", "portDelacroix.lou"],
         "aufgaben": {
           "minuten": 15,
           "buchuebungen": [
@@ -2784,9 +2821,7 @@
             "ueb:skelett-roentgen",
             "ueb:lap-spanisch"
           ],
-          "themen": [
-            "umwandlung"
-          ]
+          "themen": ["umwandlung"]
         }
       }
     },
@@ -3057,15 +3092,9 @@
       ],
       "club": {
         "name": "club.desertSprings.name",
-        "kapitel": [
-          7,
-          1
-        ],
+        "kapitel": [7, 1],
         "chef": "desertSprings.mira",
-        "mitglieder": [
-          "desertSprings.tomas",
-          "desertSprings.dot"
-        ],
+        "mitglieder": ["desertSprings.tomas", "desertSprings.dot"],
         "aufgaben": {
           "minuten": 15,
           "buchuebungen": [
@@ -3074,12 +3103,7 @@
             "ueb:taktik-a11",
             "ueb:taktik-a14"
           ],
-          "themen": [
-            "hinlenkung",
-            "beseitigung",
-            "abzug",
-            "doppelschach"
-          ]
+          "themen": ["hinlenkung", "beseitigung", "abzug", "doppelschach"]
         }
       }
     },
@@ -3621,15 +3645,9 @@
       ],
       "club": {
         "name": "club.summitCity.name",
-        "kapitel": [
-          8,
-          9
-        ],
+        "kapitel": [8, 9],
         "chef": "summitCity.ward",
-        "mitglieder": [
-          "summitCity.kit",
-          "summitCity.haraldsen"
-        ],
+        "mitglieder": ["summitCity.kit", "summitCity.haraldsen"],
         "aufgaben": {
           "minuten": 15,
           "buchuebungen": [
@@ -3646,10 +3664,7 @@
             "ueb:abschneiden-reihe",
             "ueb:falscher-laeufer"
           ],
-          "themen": [
-            "endspiel",
-            "umwandlung"
-          ]
+          "themen": ["endspiel", "umwandlung"]
         }
       }
     },
@@ -4546,6 +4561,18 @@
           "name": "figur.abe.name",
           "sprite": "figuren/abe.png",
           "dialog": "weg-ghost-capital.abe"
+        },
+        {
+          "kennung": "wegGhostCapital.odette",
+          "name": "figur.odette.name",
+          "sprite": "figuren/odette.png",
+          "dialog": "weg-ghost-capital.odette"
+        },
+        {
+          "kennung": "wegGhostCapital.wanderer",
+          "name": "figur.wanderer.name",
+          "sprite": "figuren/wanderer.png",
+          "dialog": "weg-ghost-capital.wanderer"
         }
       ],
       "ausloeser": [
@@ -4576,7 +4603,9 @@
           "ziel": {
             "karte": "wegGhostCapital.leuchtturm",
             "ausloeser": "zurueckSeeufer"
-          }
+          },
+          "dialog": "weg-ghost-capital.weiter_leuchtturm",
+          "wenn": "capitalZugang"
         },
         {
           "name": "zurueckSeeufer",
@@ -4602,6 +4631,24 @@
             "karte": "capitalArena.aussen",
             "ausloeser": "wegGhost"
           }
+        },
+        {
+          "name": "ereignisWeltschachtag",
+          "karte": "wegGhostCapital.seeufer",
+          "art": "dialog",
+          "dialog": "weg-ghost-capital.ereignis_weltschachtag"
+        },
+        {
+          "name": "seite12",
+          "karte": "wegGhostCapital.seeufer",
+          "art": "gegenstand",
+          "dialog": "weg-ghost-capital.seite12"
+        },
+        {
+          "name": "plakatWeltschachtag",
+          "karte": "wegGhostCapital.leuchtturm",
+          "art": "dialog",
+          "dialog": "weg-ghost-capital.plakat_weltschachtag"
         }
       ]
     },
@@ -4799,6 +4846,12 @@
           "name": "figur.theron.name",
           "sprite": "figuren/theron.png",
           "dialog": "bayou.theron"
+        },
+        {
+          "kennung": "bayou.pepe",
+          "name": "figur.pepe.name",
+          "sprite": "figuren/pepe.png",
+          "dialog": "bayou.pepe"
         }
       ],
       "ausloeser": [
@@ -4821,6 +4874,36 @@
           "karte": "bayou.steg",
           "art": "gegenstand",
           "dialog": "bayou.nebel"
+        },
+        {
+          "name": "ereignisHausboot",
+          "karte": "bayou.steg",
+          "art": "dialog",
+          "dialog": "bayou.ereignis_hausboot"
+        },
+        {
+          "name": "luftboot",
+          "karte": "bayou.steg",
+          "art": "dialog",
+          "dialog": "bayou.luftboot"
+        },
+        {
+          "name": "sperreHochwasser",
+          "karte": "bayou.steg",
+          "art": "dialog",
+          "dialog": "bayou.sperre_hochwasser"
+        },
+        {
+          "name": "seite05",
+          "karte": "bayou.steg",
+          "art": "gegenstand",
+          "dialog": "bayou.seite05"
+        },
+        {
+          "name": "finchBauerC",
+          "karte": "bayou.steg",
+          "art": "gegenstand",
+          "dialog": "bayou.finch_bauer_c"
         }
       ]
     },

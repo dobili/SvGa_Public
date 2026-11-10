@@ -737,6 +737,14 @@
     {
       "name": "fundMuschel",
       "feld": [106, 25]
+    },
+    {
+      "name": "pumpenhaus",
+      "feld": [153, 16]
+    },
+    {
+      "name": "spurPM3",
+      "feld": [140, 15]
     }
   ],
   "figuren": [

@@ -529,6 +529,77 @@
       "name": "fund.geheimnisTuerke.name",
       "text": "fund.geheimnisTuerke.text",
       "muenzen": 10
+    },
+    {
+      "kennung": "seite02",
+      "ort": "wegSiliconDelacroix",
+      "name": "fund.seite02.name",
+      "text": "fund.seite02.text",
+      "muenzen": 5
+    },
+    {
+      "kennung": "finchTurmA",
+      "ort": "wegSiliconDelacroix",
+      "name": "fund.finchTurmA.name",
+      "text": "fund.finchTurmA.text"
+    },
+    {
+      "kennung": "spurPM3",
+      "ort": "wegSiliconDelacroix",
+      "name": "fund.spurPM3.name",
+      "text": "fund.spurPM3.text"
+    },
+    {
+      "kennung": "kapitaensmuetze",
+      "ort": "wegSiliconDelacroix",
+      "name": "fund.kapitaensmuetze.name",
+      "text": "fund.kapitaensmuetze.text",
+      "extra": "aussehen:kapitaensmuetze"
+    },
+    {
+      "kennung": "seite05",
+      "ort": "bayou",
+      "name": "fund.seite05.name",
+      "text": "fund.seite05.text",
+      "muenzen": 5
+    },
+    {
+      "kennung": "finchBauerC",
+      "ort": "bayou",
+      "name": "fund.finchBauerC.name",
+      "text": "fund.finchBauerC.text"
+    },
+    {
+      "kennung": "formularCafeDesExiles",
+      "ort": "bayou",
+      "name": "fund.formularCafeDesExiles.name",
+      "text": "fund.formularCafeDesExiles.text"
+    },
+    {
+      "kennung": "seite12",
+      "ort": "wegGhostCapital",
+      "name": "fund.seite12.name",
+      "text": "fund.seite12.text",
+      "muenzen": 5
+    },
+    {
+      "kennung": "finchKoenig",
+      "ort": "wegGhostCapital",
+      "name": "fund.finchKoenig.name",
+      "text": "fund.finchKoenig.text"
+    },
+    {
+      "kennung": "finchsBuchsbaum",
+      "ort": "wegGhostCapital",
+      "name": "fund.finchsBuchsbaum.name",
+      "text": "fund.finchsBuchsbaum.text",
+      "extra": "figurensatz:finchs-buchsbaum"
+    },
+    {
+      "kennung": "fotoWeltschachtag",
+      "ort": "wegGhostCapital",
+      "name": "fund.fotoWeltschachtag.name",
+      "text": "fund.fotoWeltschachtag.text"
     }
   ]
 }

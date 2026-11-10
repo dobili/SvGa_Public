@@ -1589,6 +1589,26 @@
           "wert": "Italienisch"
         }
       ]
+    },
+    {
+      "kennung": "bayou.hafenarbeiter",
+      "name": "figur.hafenarbeiter.name",
+      "rolle": "story",
+      "portraet": "portraets/hafenarbeiter.svg",
+      "staerke": {
+        "art": "aktuell",
+        "versatz": -50
+      },
+      "stil": "angreifer",
+      "eroeffnung": {
+        "art": "frei"
+      },
+      "steckbrief": [
+        {
+          "art": "stil",
+          "wert": "angreifer"
+        }
+      ]
     }
   ]
 }

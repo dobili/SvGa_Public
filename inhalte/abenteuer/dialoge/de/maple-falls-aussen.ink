@@ -90,8 +90,8 @@ Zeigst du mir jetzt das Pferd? Den Springer, meine ich. #sprecher:lily
 
 === lily_lektion ===
 Lehre es ihr. Dann weißt du, ob du es kannst. Ich sage nichts. #sprecher:ambrose
-Der Springer zieht zwei Felder geradeaus und eins zur Seite. Wie ein L. #sprecher:erzaehler
-Und er darf über andere Figuren springen. Als Einziger. #sprecher:erzaehler
+Du setzt den Springer auf ihr Brett und fährst mit dem Finger: zwei Felder geradeaus, eins zur Seite. Wie ein L. #sprecher:erzaehler
+Dann lässt du ihn über einen Bauern hüpfen. Das darf nur er. #sprecher:erzaehler
 Zeig es mir an meinem Brett! #sprecher:lily #stimmung:froh
 ~ beginneAufgaben("mapleFalls.springerLily")
 -> END

@@ -98,9 +98,9 @@ Ich spiele ehrlich. Du auch. Und danach gibt es Kekse, egal wie es ausgeht. #spr
 }
 Viertes Brett, du bist dran. Samstag spielen wir in Cedar Creek. #sprecher:coachDelgado
 Hier, deine Clubnadel. Juno klebt sie gleich ins Tagebuch. #sprecher:coachDelgado
-Ihr erster Sieg in einem Club, {held}. Merk dir dieses Gefühl. #sprecher:ambrose #stimmung:stolz
+Dein erster Sieg in einem Club, {held}. Merk dir dieses Gefühl. #sprecher:ambrose #stimmung:stolz
 Es kommt seltener, als man glaubt. #sprecher:ambrose
-Und nimm diese Karte. Mentor-Zug. Ich hoffe, du brauchst sie nie. #sprecher:ambrose
+Und noch ein Versprechen, nenn es Mentor-Zug: Einmal ziehe ich für dich. Ich hoffe, du brauchst es nie. #sprecher:ambrose
 ~ setzeSzene("akt1.clubnadelMapleFalls")
 -> END
 
@@ -115,9 +115,9 @@ Noch einmal? Ich habe Zeit. Und Kekse. #sprecher:coachDelgado
 
 === coach_alltag ===
 {nadelMapleFalls < 3:
-    {~Noch einmal um die Nadel? Gold geht nur ohne Karten. Sag Bescheid.|Samstag Cedar Creek. Pünktlich am Bus, sonst pfeife ich.} #sprecher:coachDelgado
+    {~Noch einmal um die Nadel? Gold gibt es nur für eine Partie ganz ohne Hilfe. Sag Bescheid.|Samstag Cedar Creek. Pünktlich am Bus, sonst pfeife ich.} #sprecher:coachDelgado
 - else:
-    {~Goldnadel! Ohne Karten! Ich erzähle es jedem, der zuhört.|Samstag Cedar Creek. Pünktlich am Bus, sonst pfeife ich.} #sprecher:coachDelgado #stimmung:froh
+    {~Goldnadel! Ganz ohne Hilfe! Ich erzähle es jedem, der zuhört.|Samstag Cedar Creek. Pünktlich am Bus, sonst pfeife ich.} #sprecher:coachDelgado #stimmung:froh
 }
 + {nadelMapleFalls > 0 and nadelMapleFalls < 3} [„Noch eine Partie um die Nadel.“]
     -> coach_partie
@@ -245,7 +245,7 @@ Und ein Matt in eins, das hab ich selbst gefunden. #sprecher:juno
 
 === victor_trifft ===
 ~ victorGesehen = true
-Im Clubraum steht ein Mann im Anzug vor dem Schulamt. Auf seinem Tablet leuchtet „Perfect Move“. #sprecher:erzaehler
+Im Clubraum redet ein Mann im Anzug auf zwei Leute vom Schulamt ein. Auf seinem Tablet leuchtet „Perfect Move“. #sprecher:erzaehler
 Unsere App ersetzt keinen Trainer. Sie ist nur der bessere. #sprecher:grahamHale
 Ein Pilotprojekt, kostenlos. #sprecher:grahamHale
 Coach Delgado verschränkt die Arme. Neben dem Mann lehnt ein Junge in deinem Alter. #sprecher:erzaehler
@@ -315,7 +315,7 @@ Als der Raum leer ist, meldet sich das Brett in deiner Tasche. #sprecher:erzaehl
 * [„Ich will besser werden.“]
     ~ ambroseVertrauen = ambroseVertrauen + 1
     Das ist der erste kluge Satz, den du heute sagst. #sprecher:ambrose
-- Ich will besser werden. Ohne Glück. #sprecher:erzaehler
+- Du nimmst es dir fest vor: besser werden. Ohne Glück. #sprecher:erzaehler
 Dann gehen wir nach Cedar Creek. Sag deiner Mutter Bescheid. #sprecher:ambrose
 -> END
 

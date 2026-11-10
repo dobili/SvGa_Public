@@ -58,7 +58,7 @@ König und Bauer gegen König. Die Könige stehen sich gegenüber, ein Feld dazw
     Genau. Der andere König geht vor, auf das Feld, das frei wird. #sprecher:ward
 + [„Ich weiß es nicht.“]
     Ehrlich. Gut. Der König, der ziehen muss, muss ausweichen. Und der andere geht vor. #sprecher:ward
-- Das heißt Opposition. Wer sie hat, bestimmt, wohin der andere König darf. Kapitel 8 in deinem Buch, nehme ich an. #sprecher:ward
+- Das heißt Opposition. Wer sie hat, bestimmt, wohin der andere König darf. #sprecher:ward
 Opposition. Der König, der zuerst zieht, verliert. Wie im Leben, manchmal. #sprecher:ward
 Ambrose lehnt sich vor, so weit ein Geist sich vorlehnen kann. #sprecher:erzaehler
 Sie spielt, wie ich mit fünfzig gespielt hätte. Wenn ich fünfzig geworden wäre. #sprecher:ambrose #stimmung:friedlich
@@ -161,10 +161,10 @@ Nach jedem Zug brummt etwas in Victors Tasche. Er sieht nicht aufs Brett, er war
 Nach zwei Stunden steht ein Turmendspiel auf dem Brett. Victor hat einen Bauern mehr. Dann brummt es zweimal, und er zieht den König in die falsche Richtung. #sprecher:erzaehler
 Drei Züge später gibt er auf. #sprecher:erzaehler
 Sein Telefon klingelt. Er nimmt ab, ohne etwas zu sagen. #sprecher:erzaehler
-Victor? Was sagt die Bewertung? Hast du dem Coach gefolgt? #sprecher:grahamHale
+Victor? Was sagt die Bewertung? Bist du dem Coach gefolgt? #sprecher:grahamHale
 Victor legt auf. Er zieht ein kleines schwarzes Gerät aus der Tasche, wirft es auf den Tisch und läuft hinaus. #sprecher:erzaehler
 Er spielt, als wäre er nicht da. #sprecher:ward
-Kapitel 12, {held}. Kopf und Konzentration. Wer einer Maschine in der Tasche glaubt, sieht das Brett nicht mehr. #sprecher:ambrose #stimmung:still
+Kopf und Ruhe, {held}. Wer einer Maschine in der Tasche glaubt, sieht das Brett nicht mehr. #sprecher:ambrose #stimmung:still
 Geh ihm nach. Ich glaube, er braucht jetzt keinen Erwachsenen. #sprecher:ambrose
 -> END
 

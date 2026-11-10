@@ -46,8 +46,8 @@ VAR thermoskanneGefunden = false
 ~ fenwickGetroffen = true
 Am Wegweiser rastet eine Frau mit Rucksack und Wanderstock. Ihre Stiefel sind voller Moos. #sprecher:erzaehler
 Nach Riverton? Dann ein Rat für unterwegs. #sprecher:fenwick
-Wer angreift, soll zuerst zählen, wer verteidigt. So steht es in Kapitel 1, Abschnitt 1.4. #sprecher:fenwick
-Eine Dame, die Bücher im Kopf trägt und Moos an den Stiefeln. Sie gefällt mir. #sprecher:ambrose
+Wer angreift, soll zuerst zählen, wer verteidigt. Das hat mir mein Trainer hundertmal gesagt. #sprecher:fenwick
+Eine Dame, die Regeln im Kopf trägt und Moos an den Stiefeln. Sie gefällt mir. #sprecher:ambrose
 -> END
 
 // ---------------------------------------------------------------- Rätseltafel
@@ -204,7 +204,7 @@ Sie warten aufeinander. Und es macht sie nicht unglücklich. #sprecher:ambrose
 }
 ~ seite01Gefunden = true
 Zwischen den Schottersteinen neben dem Bahnsteig flattert ein Blatt Papier. #sprecher:erzaehler
-Eine Seite aus einem Handbuch, Kapitel 1: „Grundprinzipien des Schachs“. #sprecher:erzaehler
+Eine lose Seite voller Schachdiagramme. #sprecher:erzaehler
 ~ gibFund("seite01")
 ~ buchseiten = buchseiten + 1
 -> END

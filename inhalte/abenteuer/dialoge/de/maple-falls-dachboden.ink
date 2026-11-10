@@ -10,7 +10,7 @@
 //   schalteSteckbrief, reise(karte, ausloeser). Das Spiel bindet sie beim Laden der Geschichte (inkjs BindExternalFunction).
 // - Globale Variablen (VAR) liegen im Spielstand (Feld dialogvariablen) und überleben Szenen.
 // - Der Name des Helden kommt aus dem Spielstand: {held}.
-// - Keine Seitenzahlen des Buches, nur Abschnitte und Abbildungen (CLAUDE.md, Regel 1).
+// - Keine Verweise auf das Buch (Kapitel, Abschnitte, Seiten): docs/spiel/ENTSCHEIDUNGEN.md, 10.11.2026.
 
 EXTERNAL gibKarte(kennung)
 EXTERNAL setzeSzene(kennung)
@@ -54,13 +54,14 @@ Wer wagt es, mein Brett zu berühren? #sprecher:ambrose #stimmung:streng
     -> ambrose_erwacht
 * [Den König fallen lassen und wegrennen]
     Der König kullert über die Dielen. Hinter dir ein Seufzen, wie von jemandem, der lange geschwiegen hat. #sprecher:erzaehler
-    Lauf nur. Das Brett wartet. Es hat hundertsechzig Jahre gewartet. #sprecher:ambrose
+    Lauf nur. Das Brett wartet. Darin ist es geübt. #sprecher:ambrose
     -> dachboden_brett
 
 === ambrose_erwacht ===
 ~ ambroseErwachtGesehen = true
-Ambrose Whitlock, zu Diensten. New Orleans, 1858. Ich habe gegen Männer gespielt, deren Namen du in Büchern findest. #sprecher:ambrose #stimmung:stolz
-Und du, {held}, hältst einen König wie einen Suppenlöffel. #sprecher:ambrose
+Ein Kind. Bei allen Heiligen, ein Kind hält meinen König. Wie lange habe ich in dieser Kiste gelegen? #sprecher:ambrose
+Ambrose Whitlock, zu Diensten. Schachmeister aus New Orleans. Verzeih den Ton, ich habe lange mit niemandem gesprochen. #sprecher:ambrose #stimmung:stolz
+Und du bist {held}? Der Name steht hier oben auf jeder zweiten Kiste. Du hältst den König wie einen Suppenlöffel. #sprecher:ambrose
 * [„Ich kann kaum Schach.“]
     ~ ambroseVertrauen = ambroseVertrauen + 1
     Ehrlich. Das ist mehr, als die meisten mitbringen. #sprecher:ambrose
@@ -70,13 +71,14 @@ Und du, {held}, hältst einen König wie einen Suppenlöffel. #sprecher:ambrose
     -> erste_lektion
 
 === erste_lektion ===
-Wir fangen vorne an. Nicht mit Tricks. Mit der einen Frage, die jeder Zug beantworten muss: Was hängt? #sprecher:ambrose
-Nimm das hier. Es ist kein Zauber. Es ist ein Fingerzeig. #sprecher:ambrose #klang:karte
+Stell ihn zurück. Sachte. Sag mir nur eines: Spielt man noch, dort draußen? #sprecher:ambrose
+Du nickst? Gut. Dann ist nicht alles verloren. #sprecher:ambrose
+Nimm das hier. Es ist kein Zauber, nur ein Versprechen: Stockst du, so zeige ich dir die Figur, die arbeiten will. Ein Fingerzeig. #sprecher:ambrose #klang:karte
 // Karte und Szene vergibt die Quest „Das Brett auf dem Dachboden“ (quests.json), sobald dieser
 // Knoten erreicht ist; gibKarte/setzeSzene bleiben für Belohnungen ohne Quest.
-Und jetzt: Du gegen mich. Nur ein paar Züge. Ich will sehen, wie du denkst. #sprecher:ambrose
+Und jetzt setz dich. Du gegen mich, nur ein paar Züge. Ich möchte sehen, wie du denkst. #sprecher:ambrose
 * [„Jetzt?“]
-    Die Zeit, in der ich warten konnte, ist vorbei. #sprecher:ambrose
+    Ich habe lange genug gewartet. Länger, als du dir vorstellen kannst. #sprecher:ambrose
     -> partie_beginnt
 * [„Gut. Aber sei nicht streng.“]
     Ich bin tot. Streng ist das Mindeste, was ich noch kann. #sprecher:ambrose #stimmung:lacht
@@ -87,11 +89,11 @@ Und jetzt: Du gegen mich. Nur ein paar Züge. Ich will sehen, wie du denkst. #sp
 -> END
 
 === ambrose_wartet ===
-Nun? Hast du das Brett nur zum Anschauen hochgetragen? #sprecher:ambrose
+Nun? Die Figuren stehen, und ich habe Zeit. Zu viel davon. #sprecher:ambrose
 * [„Lass uns spielen.“]
     -> partie_beginnt
 * [„Später.“]
-    Später. Das Wort, mit dem mein Rivale mich in den Tod warten ließ. #sprecher:ambrose #stimmung:bitter
+    Später. Ich kenne das Wort. Ich habe sehr lange darauf gewartet, dass es endet. #sprecher:ambrose #stimmung:bitter
     -> END
 
 // Ab hier ergänzt (Story-Bibel, Szene 3 Nachgespräch und Gespräche allein mit Ambrose).
@@ -111,29 +113,29 @@ Nun? Hast du das Brett nur zum Anschauen hochgetragen? #sprecher:ambrose
 - "remis": Remis. Weder du noch ich. Für den ersten Abend ist das gar nicht übel. #sprecher:ambrose
 - else: Verloren. Gut. Jetzt weißt du, was du lernen willst. #sprecher:ambrose
 }
-Nun zu der Karte, die ich dir gab. Der Fingerzeig. #sprecher:ambrose
-In einer Partie zeigt er dir die Figur, die arbeiten will. Welcher Zug, das findest du selbst. #sprecher:ambrose
-Einmal je Partie darfst du ihn spielen. Er geht nicht verloren. #sprecher:ambrose
-* [„Und was ist mit der Frage von vorhin?“]
-    Was hängt? Gut, dass du fragst. #sprecher:ambrose
-* [„Kann ich nicht einfach immer den Fingerzeig nehmen?“]
-    Dann lernst du nur, auf Finger zu sehen. Hör lieber zu. #sprecher:ambrose #stimmung:streng
+Und mein Versprechen gilt weiter. Der Fingerzeig bleibt dir. #sprecher:ambrose
+Ich zeige dir die Figur, die arbeiten will. Den Zug findest du selbst, das nehme ich dir nicht ab. #sprecher:ambrose
+Einmal in jeder Partie darfst du mich so fragen. Morgen wieder, und übermorgen auch. #sprecher:ambrose
+* [„Du hast beim Spielen gemurmelt: Was hängt?“]
+    Habe ich das? Eine alte Gewohnheit. Ich frage es vor jedem Zug. #sprecher:ambrose
+* [„Kannst du mir nicht jeden Zug zeigen?“]
+    Dann spielte ich und nicht du. Merk dir lieber eine Frage: Was hängt? #sprecher:ambrose #stimmung:streng
 - Eine Figur hängt, wenn sie angegriffen wird und niemand sie schützt. #sprecher:ambrose
 Oder wenn mehr Figuren sie angreifen, als sie verteidigen. Zähle beide Seiten. Immer. #sprecher:ambrose
-Wer mehr wissen will: Kapitel 1, Abschnitt 1.4. Ein Buch, das ich gern geschrieben hätte. #sprecher:ambrose
+Ich habe das an einem verlorenen Turm gelernt, vor einem vollen Kaffeehaus. Du lernst es billiger. #sprecher:ambrose
 * [„Zählen. Verstanden.“]
     ~ ambroseVertrauen = ambroseVertrauen + 1
     Das sagen viele. Wir werden sehen. #sprecher:ambrose
 * [„Das klingt langweilig.“]
     Langweilig ist ein verlorener Turm. Zählen dauert drei Sekunden. #sprecher:ambrose #stimmung:streng
-- Deine Mutter erwähnte ein Schachteam an deiner Schule. #sprecher:ambrose
-Geh hin. Nimm mich mit. Ich will sehen, wie man heute spielt. #sprecher:ambrose
+- Und nun trag mich hinunter, {held}. Ich möchte sehen, in welcher Welt ich aufgewacht bin. #sprecher:ambrose
+Nimm das Brett mit. Wo es ist, da bin ich auch. #sprecher:ambrose
 -> END
 
 === ambrose_rat ===
 {
 - not clubBeigetreten: Die Schule, {held}. Das Schachteam wartet, und ich werde nicht jünger. #sprecher:ambrose
-- not (reiheSamBestanden and reiheJunoBestanden): Erst die Aufgaben deiner Mitspieler. Wer die Aufgaben scheut, scheut auch den Gegner. #sprecher:ambrose
+- not (reiheSamBestanden and reiheJunoBestanden): Erst die Stellungen, die deine Mitspieler dir vorlegen. Wer das Rätsel scheut, scheut auch den Gegner. #sprecher:ambrose
 - nadelMapleFalls == 0: Die Trainerin wartet. Und denk daran: Sie sieht nur ihren eigenen Angriff. #sprecher:ambrose
 - not kenntHale: Eine Nadel am Kragen. Zu meiner Zeit gab es dafür Wein, für dich gibt es Limonade. #sprecher:ambrose #stimmung:lacht
 - endeAkt1Gesehen: Der Weg führt weiter, aber nicht heute. Ruh dich aus, {held}. #sprecher:ambrose

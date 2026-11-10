@@ -108,7 +108,7 @@ Der Weg führt zurück nach Süden, nach Ghost Town. #sprecher:erzaehler
 }
 ~ weltschachtagBegonnen = true
 Am Ufer steht eine Bühne mit zwei Fahnen, schwarz und weiß. Davor eine lange Tafel mit fünf Brettern, und an jedem sitzt jemand, den du kennst. #sprecher:erzaehler
-Abe winkt von der Bühne. Weltschachtag! Der 20. Juli, seit 1924. Heute spielt das ganze Ufer. #sprecher:abe
+Weltschachtag! Der 20. Juli, seit 1924. Heute spielt das ganze Ufer. #sprecher:abe
 Fünf Bretter, fünf Gegner, und du gehst von Brett zu Brett. Wie die großen Meister. #sprecher:abe
 An jedem Brett steht schon eine Stellung, in der du besser stehst. Jetzt musst du es nur noch nach Hause bringen. #sprecher:abe
 -> weltschachtag_angebot
@@ -188,7 +188,7 @@ Odette Finch. Mein Wohnmobil heißt Gambit, und ich warte hier auf jemanden, der
 === odette_koenig ===
 ~ finchKoenigErhalten = true
 Alle fünfzehn! Du bist schneller als die letzten drei zusammen. #sprecher:odette
-Sie legt einen weißen König auf das Brett. Den hatte ich die ganze Zeit in der Tasche. Jetzt stelle ich Schwarz auf. #sprecher:odette
+Hier ist der weiße König. Den hatte ich die ganze Zeit in der Tasche. Jetzt stelle ich Schwarz auf. #sprecher:odette
 ~ gibFund("finchKoenig")
 Weiß zieht und gewinnt. Finchs letzte Falle, und die älteste. #sprecher:odette
 + [Das Meisterproblem lösen]
@@ -208,7 +208,7 @@ Noch einmal? Weiß zieht und gewinnt. Sieh dir den Springer an, und dann sieh di
 
 === odette_geloest ===
 ~ finchErledigt = true
-Odette klatscht in die Hände. Gelöst! Dann gehört der Satz dir. Finchs Buchsbaum, sechzehn Weiße, sechzehn Schwarze. #sprecher:odette
+Gelöst! Dann gehört der Satz dir. Finchs Buchsbaum, sechzehn Weiße, sechzehn Schwarze. #sprecher:odette
 ~ gibFund("finchsBuchsbaum")
 Und jetzt zeige ich dir, woher die Falle kommt. Légal hat sie um 1750 in Paris gestellt. #sprecher:odette
 ~ zeigeVorfuehrung("finchFalle")
@@ -233,13 +233,13 @@ Ein Problem, das gelöst wird, ist nicht verloren. Es ist angekommen. #sprecher:
 === wanderer_erstes ===
 ~ wandererGetroffen = true
 Auf der Bank am Weg sitzt ein Mann mit gelbem Rucksack und zählt Papier. #sprecher:erzaehler
-Mein Manuskript. Auf jedem Weg hat der Wind mir eine Seite genommen. Dreizehn Kapitel, und jetzt fehlen sie mir alle. #sprecher:wanderer
+Mein Manuskript. Auf jedem Weg hat der Wind mir eine Seite genommen. Dreizehn Seiten, und jetzt fehlen sie mir alle. #sprecher:wanderer
 -> END
 
 === wanderer_seiten ===
 ~ wandererGetroffen = true
 ~ wandererSeitenZurueck = buchseiten
-Du hast meine Seiten! Er streicht jede glatt und legt sie in den Rucksack. #sprecher:wanderer
+Du hast meine Seiten! Warte, ich streiche sie glatt. Jede einzelne. #sprecher:wanderer
 {buchseiten >= 13:
     Alle dreizehn. Nach deinem Finale bringe ich sie zum Verlag. Komm mich in Capital besuchen. #sprecher:wanderer
 - else:
@@ -248,7 +248,7 @@ Du hast meine Seiten! Er streicht jede glatt und legt sie in den Rucksack. #spre
 -> END
 
 === wanderer_danach ===
-{~Jede Seite hat ihr Kapitel, jedes Kapitel seinen Weg.|Ein Buch für Einsteiger, das ist das schwerste. Man muss alles weglassen, was man selbst gern liest.|Der Wind hier ist freundlicher. Er nimmt nur Hüte.} #sprecher:wanderer
+{~Jede Seite hat ihren eigenen Weg genommen. Ich hätte sie festbinden sollen.|Ein Buch für Einsteiger, das ist das schwerste. Man muss alles weglassen, was man selbst gern liest.|Der Wind hier ist freundlicher. Er nimmt nur Hüte.} #sprecher:wanderer
 -> END
 
 === seite12 ===
@@ -258,7 +258,7 @@ Du hast meine Seiten! Er streicht jede glatt und legt sie in den Rucksack. #spre
 }
 ~ seite12Gefunden = true
 ~ buchseiten = buchseiten + 1
-Am Anleger klebt ein Blatt an einem Pfosten. Eine Seite aus einem Handbuch, Kapitel 12. #sprecher:erzaehler
+Am Anleger klebt ein Blatt an einem Pfosten. Eine lose Seite voller Schachdiagramme. #sprecher:erzaehler
 ~ gibFund("seite12")
 -> END
 

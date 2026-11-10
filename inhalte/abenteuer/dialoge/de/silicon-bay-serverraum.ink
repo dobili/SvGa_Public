@@ -30,7 +30,7 @@ Bitte. Noch nicht. Wenn das rauskommt, bin ich die Schuldige. Nicht die. #sprech
 Mein Vertrag sagt, ich muss gewinnen. Er sagt nicht, wie. #sprecher:nova
 * [„Ich sag nichts. Noch nicht.“]
     ~ novaVersprechen = true
-    Danke. Nova dreht sich um und geht schnell. #sprecher:nova
+    Danke. Ich muss los, bevor mich jemand sucht. #sprecher:nova
 * [„Das ist nicht fair. Dir gegenüber auch nicht.“]
     ~ novaVersprechen = true
     Ich weiß. Gib mir Zeit. Bitte. #sprecher:nova

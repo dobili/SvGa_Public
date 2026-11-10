@@ -187,7 +187,7 @@ Erst Dex, dann ich. Meine sind schwerer. Matt in zwei! #sprecher:mae
 === mae_reihe ===
 Matt in zwei und Mattbilder: Grundreihe, Erstickung, Anastasia, das Arabische. #sprecher:mae
 Mattbilder sind wie Gesichter. Wer eines kennt, erkennt es in jeder Menge. #sprecher:ambrose
-Wer mehr will: Kapitel 7, Abschnitt 7.4. #sprecher:ambrose
+Präg sie dir ein, {held}. Sie kommen wieder. #sprecher:ambrose
 * [„Los geht's.“]
     ~ beginneAufgaben("cedarCreek.reiheMae")
     -> END

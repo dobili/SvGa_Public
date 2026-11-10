@@ -74,12 +74,12 @@ Am Brett eines Clubs schweigt man. Im Park redet man. #sprecher:ambrose
     Wer ihn stört, nimmt ihm die Partie weg, nicht nur die Zeit. #sprecher:ambrose
 * [„Verstanden.“]
     Gut. Auch in echten Turnieren gilt Ruhe. Den Gegner abzulenken ist dort verboten. #sprecher:ambrose
-- Die Sprüche liegen heute grau in deiner Tasche. #sprecher:erzaehler
+- Die Sprüche bleiben heute in deiner Tasche. #sprecher:erzaehler
 -> lin_clubkampf
 
 === lin_clubkampf ===
-Bereit? Ich spiele, was im Buch steht. Mal sehen, was du dagegen hast. #sprecher:lin
-Lass sie das Buch zuklappen, {held}. Dann wird sie vorsichtig. #sprecher:ambrose
+Bereit? Ich spiele, was die Theorie sagt. Mal sehen, was du dagegen hast. #sprecher:lin
+Führ sie von den gelernten Wegen herunter, {held}. Dann wird sie vorsichtig. #sprecher:ambrose
 + [„Ich bin bereit.“]
     ~ beginnePartie("siliconBay.clubkampf")
     -> END
@@ -88,7 +88,7 @@ Lass sie das Buch zuklappen, {held}. Dann wird sie vorsichtig. #sprecher:ambrose
     -> END
 
 === lin_nach_niederlage ===
-Gut gespielt bis zum Mittelspiel. Danach habe ich das Buch noch einmal aufgeschlagen. #sprecher:lin
+Gut gespielt bis zum Mittelspiel. Danach habe ich die Theorie noch einmal nachgespielt. #sprecher:lin
 Sie war sicher, solange es Regeln gab. Zwing sie in eine Stellung ohne Regeln. #sprecher:ambrose
 + [„Noch einmal.“]
     ~ beginnePartie("siliconBay.clubkampf")
@@ -115,7 +115,7 @@ Die fünfte Nadel. Und ein Mentor-Zug. Ich hätte ihn heute kaum gebraucht, du s
 === lin_alltag ===
 {~Ich habe die Spielberichte meiner Klasse noch einmal angesehen. Ich schlafe schlecht.|Komm wieder, wenn du eine neue Eröffnung probieren willst.|Die Bildschirme helfen. Glaube ich.} #sprecher:lin
 + {nadelSiliconBay < 3} [„Revanche um eine bessere Nadel?“]
-    Gern. Diesmal ohne Buch. #sprecher:lin
+    Gern. Diesmal ohne Theorie. #sprecher:lin
     ~ beginnePartie("siliconBay.clubkampf")
     -> END
 + [„Bis bald.“]
@@ -188,7 +188,7 @@ Ich hab nichts gesagt. Zahlen lügen nicht. Ich auch nicht. #sprecher:theo
 ~ novaGetroffen = true
 Das Mädchen am Fenster springt auf und lächelt. „Nova! Champion der Akademie. Ein Foto?“ #sprecher:erzaehler
 Mit Perfect Move trainiert jeder wie ein Champion! #sprecher:nova #stimmung:froh
-Als niemand mehr hinsieht, setzt sie sich wieder hin. „Kann ich jetzt kurz sitzen?“ #sprecher:nova
+Sieht gerade jemand her? Nein? Kann ich jetzt kurz sitzen? #sprecher:nova
 -> END
 
 === nova_erst_theo ===

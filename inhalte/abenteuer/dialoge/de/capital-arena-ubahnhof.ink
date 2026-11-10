@@ -62,7 +62,7 @@ Runde drei. Da hinten sitzt einer mit Kapuze. Hat kein Wort gesagt, aber seine U
 Nach dem letzten Zug zieht dein Gegner die Kapuze vom Kopf. Es ist Victor. #sprecher:erzaehler
 Sag es keinem. Hier unten weiß niemand, wer mein Vater ist. Hier spiele ich nur. #sprecher:victor
 Zum ersten Mal ohne Kamera. Es war das beste Blitz meines Lebens. #sprecher:victor
-Mo drückt dir ein Stück Kreide in die Hand. Für die nächste Wand. Und für die Uhr. #sprecher:mo
+Hier, ein Stück Kreide. Für die nächste Wand. Und für die Uhr. #sprecher:mo
 ~ gibKarte("sanduhr")
 ~ gibFund("fotoKreidenacht")
 Ein Spiel ohne Namen, ohne Kamera, nur zwei Menschen und eine Uhr. So hat alles angefangen. #sprecher:ambrose #stimmung:friedlich

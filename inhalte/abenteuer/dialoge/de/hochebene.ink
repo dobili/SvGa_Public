@@ -208,7 +208,7 @@ Eins hab ich extra gemalt. Für den Prüfer. #sprecher:kira
 ~ gibFund("diplomKira")
 {ambroseSprichtWieder:
     Lehren ist Spielen mit einem Brett, das man nicht sieht. #sprecher:ambrose
-    Die richtige Aufgabe zur richtigen Zeit: Wie man übt, steht in Kapitel 12. #sprecher:ambrose
+    Die richtige Aufgabe zur richtigen Zeit. Das ist die halbe Kunst des Übens. #sprecher:ambrose
 }
 -> END
 
@@ -220,7 +220,7 @@ Eins hab ich extra gemalt. Für den Prüfer. #sprecher:kira
     -> END
 }
 ~ gefundenSeite03 = true
-Am Fuß der Fahnenstange flattert eine Buchseite im Wind. Oben steht: Kapitel 3, Gambits. #sprecher:erzaehler
+Am Fuß der Fahnenstange flattert eine lose Seite im Wind, voller Schachdiagramme. #sprecher:erzaehler
 ~ gibFund("seite03")
 ~ buchseiten = buchseiten + 1
 -> END

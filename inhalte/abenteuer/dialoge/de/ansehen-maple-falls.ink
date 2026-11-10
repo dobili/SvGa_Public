@@ -107,7 +107,7 @@ VAR angesehenPlakatZaehlen = false
 
 === plakat_zaehlen ===
 {angesehenPlakatZaehlen:
-    Unten auf dem Plakat steht klein: Angreifer und Verteidiger zählen, Kapitel 1, Abschnitt 1.4. #sprecher:erzaehler
+    Unten auf dem Plakat steht klein: Erst zählen, dann schlagen. #sprecher:erzaehler
 - else:
     ~ angesehenPlakatZaehlen = true
     Ein handgemaltes Plakat: „Erst zählen, dann schlagen!“ Darunter ist mit Filzstift eine Trillerpfeife gezeichnet. #sprecher:erzaehler

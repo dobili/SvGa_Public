@@ -44,7 +44,7 @@ Frag oben die Dame mit dem Buch. Das gebietet der Anstand. #sprecher:ambrose
 // cedarCreek.archivOrdnen beginnt hier; Befund der Gesamtsimulation).
 ~ ordnenAngeboten = true
 Der Keller riecht nach altem Papier. Zehn Kartons stehen in einer Pfütze, auf jedem eine Jahreszahl. #sprecher:erzaehler
-Mrs. Okafor kommt die Treppe herunter. Die Regale links sind für das neunzehnte Jahrhundert, rechts für das zwanzigste. #sprecher:okafor
+Da bist du ja. Die Regale links sind für das neunzehnte Jahrhundert, rechts für das zwanzigste. #sprecher:okafor
 * [Anfangen]
     -> ordnen_wahl
 * [Später helfen]

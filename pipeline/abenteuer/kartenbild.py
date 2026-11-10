@@ -20,7 +20,7 @@ from pipeline.abenteuer.katalog import katalogbefund, katalogeintraege
 from pipeline.abenteuer.klippe import grasboden, klippenfeld, strassenzeichen, treppenfeld
 from pipeline.abenteuer.moebelliste import lade_moebel
 from pipeline.abenteuer.randspur import randluecken
-from pipeline.abenteuer.winter import ist_winter, winterbefunde, winterlich
+from pipeline.abenteuer.winter import ist_winter, winterbefunde, winterlich, winterliche_moebel
 from pipeline.abenteuer.zusammenhang import HOLZ
 from pipeline.abenteuer.zustaende import zustandsname
 
@@ -305,7 +305,7 @@ def vorschau(szene: dict, privat: Path, grund: Image.Image) -> Image.Image:
     teile = [(s["tiefe"], s["x"], s["y"], moebelbild(privat, moebel[s["name"]]["quelle"])) for s in gesetzt]
     if ist_winter(szene):
         # Wie die App (oberwelt/winter.ts): Möbel ohne Wasserregel, sonst würden blaue Autos dunkel.
-        teile = [(t, x, y, winterlich(b, wasser=False)) for t, x, y, b in teile]
+        teile = [(t, x, y, winterliche_moebel(b)) for t, x, y, b in teile]
     orte = {o["kennung"]: o for o in lade(INHALTE / "orte.json")["orte"]}
     ort = orte.get(szene["karte"].split(".")[0], {"figuren": []})
     for f in szene.get("figuren", []):

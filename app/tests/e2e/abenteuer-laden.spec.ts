@@ -174,7 +174,8 @@ test("Dunkler Stollen: mit Laterne leuchtet ein Lichtkreis um den Helden", async
 });
 
 test("Musikhaus: nach musikhausOffen lädt die zweite Fassung der Karte", async ({ page }) => {
-  // Runde 6, zustand_der_karte: orte.json `zustaende` wählt die Datei nach der Dialogvariable.
+  // Runde 6 und 8: orte.json `zustaende` wählt die Datei nach der Bedingung; der Name ist der
+  // Teil des Dateinamens hinter der Grundkarte (port-delacroix-musikhaus-neu → „neu“).
   const stand = {
     ...STAND,
     dialogvariablen: { musikhausOffen: true },
@@ -190,10 +191,7 @@ test("Musikhaus: nach musikhausOffen lädt die zweite Fassung der Karte", async 
   await page.goto("/app/#abenteuer");
   await page.getByTestId("abenteuer-laden").click();
   await expect(page.locator(".abenteuer-welt canvas")).toBeVisible({ timeout: 30000 });
-  await expect(page.getByTestId("abenteuer-welt")).toHaveAttribute(
-    "data-fassung",
-    "musikhausOffen",
-  );
+  await expect(page.getByTestId("abenteuer-welt")).toHaveAttribute("data-fassung", "neu");
 });
 
 test("Tagebuch: Sammelkarte der Finch-Jagd zeigt die gefundene Figur", async ({ page }) => {

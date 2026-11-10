@@ -3,7 +3,7 @@
   "datei": "karten/port-delacroix-musikhaus-neu.json",
   "art": "innen",
   "zustand_der_karte": "musikhausOffen",
-  "beschreibung": "Das neue Musikhaus am Kai nach dem Wiederaufbau (Zustand ab Szene 70, `musikhausOffen`): Musik- und Schachclub Port Delacroix, seit 1889. Frisch gestrichene cremefarbene Wände, neue helle Dielen, zwei Fenster mit Blick aufs Hafenbecken. An der Nordwand links ein Regal mit Brettern und Figuren und Henris gestiftetes Klavier, in der Mitte das neue Schild „Musik und Schach, seit 1889“, rechts ein Notenregal; eine große Pflanze steht an der Ostwand. Vier Spieltische mit je einem Brett und zwei Stühlen stehen links und rechts, in der Mitte ein Teppich, auf dem Kinder sitzen. Die Tür liegt in der Mitte der Südwand, davor eine Matte; der Auslöser `schild` liegt links neben der Tür.",
+  "beschreibung": "Zustand: ab Szene 70 (musikhausOffen) steht am Kai das wieder aufgebaute Musikhaus statt der Ruine, weil der Club es nach dem Hurrikan gemeinsam neu errichtet hat. Das neue Musikhaus am Kai nach dem Wiederaufbau (Zustand ab Szene 70, `musikhausOffen`): Musik- und Schachclub Port Delacroix, seit 1889. Frisch gestrichene cremefarbene Wände, neue helle Dielen, zwei Fenster mit Blick aufs Hafenbecken. An der Nordwand links ein Regal mit Brettern und Figuren und Henris gestiftetes Klavier, in der Mitte das neue Schild „Musik und Schach, seit 1889“, rechts ein Notenregal; eine große Pflanze steht an der Ostwand. Vier Spieltische mit je einem Brett und zwei Stühlen stehen links und rechts, in der Mitte ein Teppich, auf dem Kinder sitzen. Die Tür liegt in der Mitte der Südwand, davor eine Matte; der Auslöser `schild` liegt links neben der Tür.",
   "wand": "creme",
   "boden": "holzHell",
   "raster": [

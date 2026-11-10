@@ -401,6 +401,15 @@
       "buchuebungen": [],
       "themen": ["matt2"],
       "anzahl": 3
+    },
+    {
+      "kennung": "wegSiliconDelacroix.kapitaensproblem",
+      "ort": "wegSiliconDelacroix",
+      "steller": "wegSiliconDelacroix.kapitaen",
+      "reihe": false,
+      "buchuebungen": [],
+      "themen": ["umwandlung", "hinlenkung"],
+      "anzahl": 4
     }
   ]
 }

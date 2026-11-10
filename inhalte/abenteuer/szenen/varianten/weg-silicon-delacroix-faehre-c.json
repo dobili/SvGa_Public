@@ -1743,6 +1743,41 @@
         8,
         52
       ]
+    },
+    {
+      "name": "ereignisKapitaen",
+      "feld": [
+        17,
+        32
+      ]
+    },
+    {
+      "name": "ladung",
+      "feld": [
+        13,
+        8
+      ]
+    },
+    {
+      "name": "delfin",
+      "feld": [
+        21,
+        52
+      ]
+    },
+    {
+      "name": "seite02",
+      "feld": [
+        21,
+        39
+      ]
+    },
+    {
+      "name": "finchTurmA",
+      "feld": [
+        9,
+        64
+      ]
     }
   ],
   "figuren": [
@@ -1751,6 +1786,13 @@
       "feld": [
         17,
         25
+      ]
+    },
+    {
+      "name": "kapitaen",
+      "feld": [
+        10,
+        34
       ]
     }
   ],

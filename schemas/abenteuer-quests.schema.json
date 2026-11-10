@@ -203,6 +203,10 @@
           "description": "Teil der Haupthandlung?",
           "type": "boolean"
         },
+        "klein": {
+          "description": "Kleine Nebenquest eines Wegereignisses oder Sammelstrangs (docs/spiel/15, Grundsatz 3): zählt nicht für R27 und gibt keine Nadel",
+          "type": "boolean"
+        },
         "start": {
           "description": "Wodurch die Quest angenommen wird",
           "$ref": "#/$defs/ereignis"

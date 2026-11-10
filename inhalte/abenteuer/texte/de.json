@@ -1309,5 +1309,17 @@
   "fehler.paket.pruefsumme": "Die Spieldatei {pfad} ist beschädigt. Bitte das Spiel neu laden.",
   "fehler.paket.ohneSpeicher": "Dieser Browser hat keinen Speicher für das Spielpaket.",
   "fehler.paket.datei": "Die Spieldatei {pfad} fehlt ({status}).",
-  "fehler.welt.karteFehlt": "Die Karte {karte} gibt es im Spiel nicht."
+  "fehler.welt.karteFehlt": "Die Karte {karte} gibt es im Spiel nicht.",
+  "figur.kapitaen.name": "Kapitän Fall",
+  "fund.seite02.name": "Buchseite, Kapitel 2",
+  "fund.seite02.text": "Eine Seite aus einem Handbuch, Kapitel 2: Klassische Eröffnungssysteme. Gefunden an der Reling der Fähre.",
+  "fund.finchTurmA.name": "Finchs Turm",
+  "fund.finchTurmA.text": "Ein weißer Turm aus Buchsbaum, unten ist ein Feld eingebrannt. Gefunden im Kasten der Rettungsringe auf der Fähre.",
+  "fund.spurPM3.name": "Mappe „Hochwasserhilfe“",
+  "fund.spurPM3.text": "„Hochwasserhilfe: 40 Bildschirmtische, Nutzerdaten Port Delacroix.“ Liegengelassen neben einem Messwagen von Perfect Move am Deich.",
+  "fund.kapitaensmuetze.name": "Kapitänsmütze",
+  "fund.kapitaensmuetze.text": "Die blaue Mütze von Kapitän Fall, für das gelöste Kapitänsproblem.",
+  "quest.kapitaensproblem.titel": "Das Kapitänsproblem",
+  "quest.kapitaensproblem.schritt1": "Die drei Zettel am Brett des Kapitäns widerlegen und die Aufgabe lösen",
+  "quest.kapitaensproblem.schritt2": "Dem Kapitän die Lösung zeigen und das Horn blasen"
 }

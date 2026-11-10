@@ -243,6 +243,32 @@
       "ort": "portDelacroix",
       "name": "fund.setliste960.name",
       "text": "fund.setliste960.text"
+    },
+    {
+      "kennung": "seite02",
+      "ort": "wegSiliconDelacroix",
+      "name": "fund.seite02.name",
+      "text": "fund.seite02.text",
+      "muenzen": 5
+    },
+    {
+      "kennung": "finchTurmA",
+      "ort": "wegSiliconDelacroix",
+      "name": "fund.finchTurmA.name",
+      "text": "fund.finchTurmA.text"
+    },
+    {
+      "kennung": "spurPM3",
+      "ort": "wegSiliconDelacroix",
+      "name": "fund.spurPM3.name",
+      "text": "fund.spurPM3.text"
+    },
+    {
+      "kennung": "kapitaensmuetze",
+      "ort": "wegSiliconDelacroix",
+      "name": "fund.kapitaensmuetze.name",
+      "text": "fund.kapitaensmuetze.text",
+      "extra": "aussehen:kapitaensmuetze"
     }
   ]
 }

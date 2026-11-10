@@ -2137,6 +2137,12 @@
           "name": "figur.guidry.name",
           "sprite": "figuren/guidry.png",
           "dialog": "weg-silicon-delacroix.guidry"
+        },
+        {
+          "kennung": "wegSiliconDelacroix.kapitaen",
+          "name": "figur.kapitaen.name",
+          "sprite": "figuren/kapitaen.png",
+          "dialog": "weg-silicon-delacroix.kapitaen"
         }
       ],
       "ausloeser": [
@@ -2199,6 +2205,48 @@
             "karte": "portDelacroix.aussen",
             "ausloeser": "deich"
           }
+        },
+        {
+          "name": "ereignisKapitaen",
+          "karte": "wegSiliconDelacroix.faehre",
+          "art": "dialog",
+          "dialog": "weg-silicon-delacroix.ereignis_kapitaen"
+        },
+        {
+          "name": "ladung",
+          "karte": "wegSiliconDelacroix.faehre",
+          "art": "dialog",
+          "dialog": "weg-silicon-delacroix.ladung"
+        },
+        {
+          "name": "delfin",
+          "karte": "wegSiliconDelacroix.faehre",
+          "art": "dialog",
+          "dialog": "weg-silicon-delacroix.delfin"
+        },
+        {
+          "name": "seite02",
+          "karte": "wegSiliconDelacroix.faehre",
+          "art": "gegenstand",
+          "dialog": "weg-silicon-delacroix.seite02"
+        },
+        {
+          "name": "finchTurmA",
+          "karte": "wegSiliconDelacroix.faehre",
+          "art": "gegenstand",
+          "dialog": "weg-silicon-delacroix.finch_turm_a"
+        },
+        {
+          "name": "pumpenhaus",
+          "karte": "wegSiliconDelacroix.deich",
+          "art": "dialog",
+          "dialog": "weg-silicon-delacroix.pumpenhaus"
+        },
+        {
+          "name": "spurPM3",
+          "karte": "wegSiliconDelacroix.deich",
+          "art": "gegenstand",
+          "dialog": "weg-silicon-delacroix.spur_pm3"
         }
       ]
     },

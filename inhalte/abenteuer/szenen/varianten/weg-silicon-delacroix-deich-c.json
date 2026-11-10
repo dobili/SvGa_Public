@@ -1840,6 +1840,20 @@
         106,
         25
       ]
+    },
+    {
+      "name": "pumpenhaus",
+      "feld": [
+        153,
+        16
+      ]
+    },
+    {
+      "name": "spurPM3",
+      "feld": [
+        144,
+        15
+      ]
     }
   ],
   "figuren": [

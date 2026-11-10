@@ -71,8 +71,13 @@ def tierart(name: str) -> str | None:
     return STAEMME[max(treffer, key=len)] if treffer else None
 
 
-def statistenbogen(name: str) -> str:
-    """Fester Bogen aus dem Vorrat für einen Statisten (gleicher Name, gleiches Bild)."""
+def statistenbogen(name: str, bild: str | None = None) -> str:
+    """Bogen eines Statisten: eigenes Bild („statist-07“, wie in der App), sonst fest nach dem Namen.
+
+    Beispiel: ``statistenbogen("schuelerin", "statist-07")`` → „figuren/statist-07.png“.
+    """
+    if bild and bild.startswith("statist-"):
+        return f"figuren/{bild}.png"
     return f"figuren/statist-{zlib.crc32(name.encode()) % STATISTEN + 1:02d}.png"
 
 
@@ -87,7 +92,7 @@ def teile(szene: dict, privat: Path, oeffne) -> list[tuple[int, int, int, object
     for b in szene.get("belebung", []):
         x, y = b["feld"][0] * K, b["feld"][1] * K
         if b.get("typ") == "statist":
-            pfad, (breite, hoehe) = privat / "spiel" / statistenbogen(b["name"]), (16, 32)
+            pfad, (breite, hoehe) = privat / "spiel" / statistenbogen(b["name"], b.get("eigenschaften", {}).get("bild")), (16, 32)
         else:
             art = tierart(b["name"])
             if art is None:

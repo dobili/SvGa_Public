@@ -50,20 +50,20 @@ Hinterweg; 33–35 Hecke und Bäume am Südrand.
 
 **Gebäude und Plätze:**
 
-| Gebäude                            | Lage außen (Spalten / Reihen), Tür                                                      | Fassade                                                | Innen                                                                           | Begehbar     |
-| ---------------------------------- | --------------------------------------------------------------------------------------- | ------------------------------------------------------ | ------------------------------------------------------------------------------- | ------------ |
-| Haus Whitlock (Held und Mama)      | 2–11 / 6–10, Haustür (5, 10) in der Südfassade (Spalte 3 von 10)                        | Holzhaus mit Veranda, eineinhalb Geschosse, 10 breit   | `wohnzimmer` 20 × 13 (4.1), `dachboden` 14 × 11 (4.2)                           | ja           |
-| Haus Lily                          | 13–21 / 6–10                                                                            | Holzhaus, 9, Katze auf der Veranda                     | –                                                                               | nein         |
-| Haus Martínez (Juno, Carla)        | 23–31 / 6–10; Fahrrad am Zaun (32, 13)                                                  | Holzhaus, 9                                            | –                                                                               | nein         |
-| Diner „Falls Diner“                | 33–41 / 7–10, Tür (37, 10) in der Südfassade (Spalte 4 von 9); Parkplatz 33–41 / 11–13  | Flachbau, 9, Leuchtreklame „Open“ auf dem Dach (38, 7) | `diner` 30 × 16, Tür Südwand (7, 15) (neu gedacht 4.4; Fassade 8, Abweichung)   | ja (neu, 12) |
-| Durchgang zum Ufer                 | 42–43 / 3–13, Hecken beidseits, Bank am Ufer (42, 4)                                    | –                                                      | –                                                                               | Weg          |
-| Maple Falls High                   | 44–59 / 5–10, Doppeltür (51–52, 10) in der Mitte der Südfassade; Schulhof 44–59 / 11–13 | Backstein, 16, Fahnenmast (47, 12)                     | `clubraum` 18 × 13, Tür (9, 12) (Vereinfachung: Schultür führt in den Clubraum) | ja           |
-| Haus Calloway (gegenüber Whitlock) | 3–11 / 22–26, Tür (7, 22) zur Straße; Veranda 4–10 / 21 mit Schaukelstuhl               | Holzhaus, 9, Blumenkästen                              | –                                                                               | nein         |
-| Haltestelle Schulbus               | Schild (14, 18), Wartehäuschen 13–15 / 19                                               | –                                                      | –                                                                               | –            |
-| Haus Hayes (Leerstand)             | 17–25 / 22–26; Einfahrt 26–27 / 19–26 frei; Schild „Zu verkaufen“ (19, 20)              | Holzhaus, 9                                            | –                                                                               | nein         |
-| Haus Fisk (Owens Familie)          | 29–37 / 22–26                                                                           | Holzhaus, 9                                            | –                                                                               | nein         |
-| Haus Süd 4                         | 39–47 / 22–26                                                                           | Holzhaus, 8                                            | –                                                                               | nein         |
-| Spielplatz (gegenüber der Schule)  | 49–59 / 19–26: Sandkasten 52–54 / 22–23, Schaukel 56–57 / 20–21, Bank (50, 25)          | –                                                      | –                                                                               | Platz        |
+| Gebäude                            | Lage außen (Spalten / Reihen), Tür                                                      | Fassade                                                | Innen                                                                            | Begehbar     |
+| ---------------------------------- | --------------------------------------------------------------------------------------- | ------------------------------------------------------ | -------------------------------------------------------------------------------- | ------------ |
+| Haus Whitlock (Held und Mama)      | 2–11 / 6–10, Haustür (5, 10) in der Südfassade (Spalte 3 von 10)                        | Holzhaus mit Veranda, eineinhalb Geschosse, 10 breit   | `wohnzimmer` 20 × 13 (4.1), `dachboden` 14 × 11 (4.2)                            | ja           |
+| Haus Lily                          | 13–21 / 6–10                                                                            | Holzhaus, 9, Katze auf der Veranda                     | –                                                                                | nein         |
+| Haus Martínez (Juno, Carla)        | 23–31 / 6–10; Fahrrad am Zaun (32, 13)                                                  | Holzhaus, 9                                            | –                                                                                | nein         |
+| Diner „Falls Diner“                | 33–41 / 7–10, Tür (37, 10) in der Südfassade (Spalte 4 von 9); Parkplatz 33–41 / 11–13  | Flachbau, 9, Leuchtreklame „Open“ auf dem Dach (38, 7) | `diner` 30 × 16, Tür Südwand (7, 15) (neu gedacht 4.4; Fassade 8, Abweichung)    | ja (neu, 12) |
+| Durchgang zum Ufer                 | 42–43 / 3–13, Hecken beidseits, Bank am Ufer (42, 4)                                    | –                                                      | –                                                                                | Weg          |
+| Maple Falls High                   | 44–59 / 5–10, Doppeltür (51–52, 10) in der Mitte der Südfassade; Schulhof 44–59 / 11–13 | Backstein, 16, Fahnenmast (47, 12)                     | `clubraum` 26 × 15, Tür (13, 14) (Vereinfachung: Schultür führt in den Clubraum) | ja           |
+| Haus Calloway (gegenüber Whitlock) | 3–11 / 22–26, Tür (7, 22) zur Straße; Veranda 4–10 / 21 mit Schaukelstuhl               | Holzhaus, 9, Blumenkästen                              | –                                                                                | nein         |
+| Haltestelle Schulbus               | Schild (14, 18), Wartehäuschen 13–15 / 19                                               | –                                                      | –                                                                                | –            |
+| Haus Hayes (Leerstand)             | 17–25 / 22–26; Einfahrt 26–27 / 19–26 frei; Schild „Zu verkaufen“ (19, 20)              | Holzhaus, 9                                            | –                                                                                | nein         |
+| Haus Fisk (Owens Familie)          | 29–37 / 22–26                                                                           | Holzhaus, 9                                            | –                                                                                | nein         |
+| Haus Süd 4                         | 39–47 / 22–26                                                                           | Holzhaus, 8                                            | –                                                                                | nein         |
+| Spielplatz (gegenüber der Schule)  | 49–59 / 19–26: Sandkasten 52–54 / 22–23, Schaukel 56–57 / 20–21, Bank (50, 25)          | –                                                      | –                                                                                | Platz        |
 
 Regel für alle Häuser: Die Fassade ist halb so breit wie das Erdgeschoss innen (gerundet), die Tür
 sitzt außen und innen an derselben relativen Stelle (gleiche Wand, gleicher Anteil von links, ±1
@@ -355,23 +355,86 @@ bleibt frei (Ortsprofil, Rückmeldung Haupt-Chat).
 
 Das Waldbild entfällt (die breite Treppe braucht die Wandfläche).
 
-### 4.3 Clubraum der Maple Falls High (`mapleFalls.clubraum`)
+### 4.3 Clubraum der Maple Falls High (`mapleFalls.clubraum`), Runde 8 nach dem Gutachten
 
-**Größe:** 18 × 13 (7a.2, öffentlicher Raum 14–20 × 10–14). Nordwand Reihen 0–2, Tür in der
-Südwand (9, 12), Start (9, 11). Heller Holzboden, cremefarbene Wände.
+**Größe:** 26 × 15 (KARTENREGELN 10.56, Tabelle in 3.3). Nordwand Reihen 0–2, Tür mittig in der
+Südwand (13, 14), Fußmatte (13, 13), Start (13, 12). Heller Holzboden, blauer Teppich x 4–22,
+y 5–10, rundum mindestens eine Kachel Holzboden.
 
-**Laufwege:** Tür → Gang zwischen den Tischen (Spalten 6–7 und 12–13) nach oben zu Tafel, Pult und
-Anrichte. Szenen 5, 6, 9, 11, 12.
+**Laufwege:** Tür → breiter Gang (Spalte 13) zwischen den Bänken nach oben, zwischen den Tischen
+quer zu Pult (West), Vitrine (Nord) und Spinden (Ost). Szenen 5, 6, 9, 11, 12.
 
-| Zone     | Gegenstand                                                     | Feld                                               | Zweck                                                 |
-| -------- | -------------------------------------------------------------- | -------------------------------------------------- | ----------------------------------------------------- |
-| Nordwand | Pinnwand, zwei Fenster, Weltkarte, Tafel, Plakat „Erst zählen“ | (1, 1); (3, 1) und (11, 1); (5, 1); (7, 1); (9, 1) | Auslöser `plakatZaehlen` (9, 3)                       |
-| Nordwand | freie Wandfläche                                               | (13, 1)–(14, 2) über dem Pult                      | Platzhalter Nadel-Plakat (5)                          |
-| West     | Anrichte mit Pokal von 1994                                    | (1, 2)                                             | Auslöser `pokalvitrine` (1, 3)                        |
-| Ost      | Lehrerpult mit Globus, zwei Spinde                             | Pult (13, 3); Spinde (15, 2) und (16, 2)           | Coach Delgado (12, 4)                                 |
-| Ost      | zwei niedrige Bücherregale                                     | (14, 5) und (14, 8), je 2 × 3 (neu in Runde 4)     | Schachbücher; gegen die karge Ostseite                |
-| Mitte    | vier Spieltische mit Brett und je zwei Stühlen                 | Tische (3, 5), (9, 5), (3, 8), (9, 8)              | die vier Bretter; `brettOhneDame` (10, 9); Sam (4, 4) |
-| Ecken    | Pflanzen                                                       | (1, 9) und (16, 9)                                 | Regel 4.4                                             |
+| Zone     | Gegenstand                                                | Feld                                               | Zweck                                   |
+| -------- | --------------------------------------------------------- | -------------------------------------------------- | --------------------------------------- |
+| Nordwand | zwei Fenster, Weltkarte, Kreidetafel, Plakat, Pinnwand    | (4, 1), (21, 1); (7, 1); (12, 1); (15, 1); (18, 1) | Auslöser `plakatZaehlen` (15, 3)        |
+| Nord     | Glasvitrine mit zwei Pokalen                              | (7, 3)                                             | Auslöser `pokalvitrine` (7, 3)          |
+| West     | Bücherregal (Seitenansicht), Pult mit Globus, Bücherregal | (1, 3); (1, 6); (1, 9)                             | Coach Delgado (3, 7), Blick in den Raum |
+| Nordost  | drei Spinde, hohes Bücherregal, Pflanze                   | (19–21, 3); (22, 3); (24, 3)                       | Jacken und Taschen; Schachbücher        |
+| Ost      | fahrbare Demonstrationstafel, Seitenansicht nach Westen   | (23, 7)                                            | Tafel für Erklärungen am Brett          |
+| Mitte    | sechs runde Tische in zwei Reihen zu drei, je zwei Stühle | (6, 6), (12, 6), (18, 6), (6, 9), (12, 9), (18, 9) | sechs Bretter; `brettOhneDame` (18, 6)  |
+| Süd      | zwei Holzbänke für Eltern, Pflanzen in den Ecken          | (5, 11), (17, 11); (1, 11), (23, 11)               | Mutter wartet (11, 12)                  |
+
+Figuren: Coach Delgado am Pult (3, 7), Sam zwischen den Tischen (9, 8). Belebung mit festen,
+verschiedenen Bildern (Eigenschaft `bild`): Schülerin (12, 8, statist-07), Clubmitglied (16, 8,
+statist-14), wartende Mutter (11, 12, statist-18).
+
+#### Antworten auf das Gutachten (10.11.2026)
+
+Behoben (Lage im neuen Raum):
+
+- **1, 2 Pokale:** stehen jetzt auf einer Glasvitrine (7, 3) vor der Nordwand, nicht mehr in der
+  Wand; das rote Ding und das Schildchen sind weg. Der Pokal von 1994 ist der linke; ein eigenes
+  Bild mit Plakette ist als Bildwunsch gemeldet.
+- **4 Tafel:** große Kreidetafel (12, 1) mittig über dem Tischfeld, dazu die fahrbare
+  Demonstrationstafel (23, 7), die zu den Tischen zeigt.
+- **5, 6, 7 Pult:** großes grünes Pult 2 × 3 an der Westwand (1, 6), Blick nach Osten in den
+  Raum; der Coach steht dahinter (3, 7) und schaut zu den Tischen. Der Globus steht auf dem Pult
+  und berührt keine Wand.
+- **8, 9 leere Möbel, Supermarktregal:** entfernt. Statt dessen drei Spinde (Jacken und Taschen)
+  und ein hohes Bücherregal mit Büchern, keine Flaschen.
+- **10, 11 Regale:** alle Bücherregale stehen an Wänden und zeigen in den Raum; nur noch zwei
+  Arten (schmal in Seitenansicht an der Westwand, hoch in Vorderansicht im Nordosten).
+- **12, 13 Pflanzen:** vier Pflanzen, je eine in jeder Ecke, drei verschiedene Bilder; keine
+  steht über einer anderen.
+- **14 Südband:** zwei Bänke für die Eltern (5, 11) und (17, 11), die wartende Mutter (11, 12).
+- **15 Tür:** mittig (13, 14), Gang in Spalte 13 frei bis zu den Tischen.
+- **16 Teppich:** x 4–22, links und rechts gleich weit von den Wänden (3 Kacheln), oben und unten
+  eine Kachel Holz.
+- **17 Tische:** zwei Reihen zu drei im festen Abstand von 6 Kacheln, mittig auf dem Teppich.
+- **18 Brett ohne Dame:** der Tisch hinten rechts (18, 6) trägt ein leeres Brett ohne Figuren,
+  die anderen fünf Bretter haben Figuren; Auslöser darauf.
+- **19 Stuhl an der Wand:** kein Stuhl berührt mehr eine Wand.
+- **21, 22 Figuren:** keine Figur steht mehr in einem Möbel oder Stuhl (Regel 10.55, Prüfung des
+  Kartenbaus in Ordnung); Sam steht frei zwischen den Tischen.
+- **23 gleiche Statisten:** jeder Statist hat ein eigenes Bild; die Vorschau zeigt es jetzt wie
+  die App (`pipeline/abenteuer/belebungsvorschau.py`).
+- **24 Coach:** die blaue Figur am Pult ist Coach Delgado; er steht jetzt hinter seinem Pult.
+
+Trifft nicht oder nur teilweise zu, mit Grund:
+
+- **3 Plakat „Erst zählen“:** Ein solches Bild gibt es im Katalog nicht; bis es gezeichnet ist,
+  hängt das bunte Lernplakat als Ersatz an seiner Stelle (15, 1). Bildwunsch an den Haupt-Chat.
+- **10 Regale an der Ostwand:** Im Katalog gibt es schmale Bücherregale in Seitenansicht nur mit
+  Blick nach rechts, also nur für die Westwand. Deshalb stehen sie im Westen; im Osten steht die
+  fahrbare Tafel, die es auch mit Blick nach links gibt. Bildwunsch: Seitenregal mit Blick nach
+  links.
+- **14 Garderobe und Uhr:** Weder Garderobe mit Jacken noch Wanduhr sind im Katalog; die Spinde
+  übernehmen die Garderobe. Beide als Bildwunsch gemeldet.
+- **16 Rand des Teppichs:** Der Katalog hat keinen Teppich mit Rand als Bodenbelag; Bildwunsch
+  (Teppich in neun Teilen).
+- **20 Schachuhren:** Kein Bild im Katalog. Die Bretter sind 12 × 9 Pixel klein; eine Uhr daneben
+  wäre als Kleinbild nötig. Bildwunsch.
+
+Antworten auf die Fragen:
+
+- _Ausstellungstisch, Pokal 1994:_ Die Pokale stehen jetzt in einer Glasvitrine; der von 1994 ist
+  der linke, bis ein Bild mit Plakette da ist.
+- _Leere Möbel, Supermarktregal:_ gibt es nicht mehr.
+- _Eltern:_ auf den Bänken vor der Tür.
+- _Hinterer Tisch:_ „hinten“ heißt vom Eingang aus weiter weg, also die Reihe y 6; das Brett
+  ohne Dame liegt auf ihrem rechten Tisch (18, 6), als einziges ohne Figuren.
+- _Teppich rechts:_ endet jetzt auf beiden Seiten gleich weit vor der Wand.
+- _Demonstrationstafel:_ ja, die Kreidetafel (12, 1) und die fahrbare Tafel (23, 7).
 
 ### 4.4 Diner (`mapleFalls.diner`), neu gedacht (mittel-3, 9.11.2026)
 

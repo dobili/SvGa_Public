@@ -909,3 +909,15 @@ links zu den Tischen.
 Drei Dinge zum Ansehen nach 09, 3.2: Foto der Schleuse (Foto), Kegel mit Kerbe (Geschichte), Tafel
 „Kegelkönig“ (Komisches); der Schachbezug kommt über die Kegelbahn („neun Kegel, und einer hält alle
 anderen“, Henrik zu L2).
+
+## Runde 7 (10.11.2026): Lockport mit mehr Häusern und Leben (niedrig-1)
+
+`lockport.aussen` A, B, C nach Regel 10.51 und 10.53, Raster und Übergänge unverändert. Die untere
+Straße (Reihen 32–35) läuft jetzt bis an den Ostrand (Spalte 54); daran stehen im Südosten neue
+Häuser statt eines Teils des Wäldchens. Neue Kulissen (Vorsilbe `lp8`): Dorfladen „Store“,
+Markt, Wohnhaus mit Flachdach (ein- und zweistöckig), Lagerschuppen, Bauernhäuser. A hat 12, B 13,
+C 12 Gebäude. In A und B steht die Rätseltafel eine Spalte weiter (36, 8), in B eine Laterne
+(21, 9), in C eine (54, 9). Belebung in allen drei gleich: Finn und 12 neue Statisten, 8 davon
+ansprechbar (`statist.lockport.aussen.*`, Akt 2 im Herbstnebel), Möwe, Enten im Becken, Katze am
+Kai, Gans im Süden. Die benannten Figuren aus `14_Akt2_Leben_teil1.md` 4.1 (Imogen, Ruben, Henrik)
+kommen mit ihren Dialogen in Runde 6.

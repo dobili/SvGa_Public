@@ -3102,8 +3102,9 @@
         {
           "text": "quest.weltschachtag.schritt1",
           "ereignis": {
-            "art": "aufgaben",
-            "runde": "wegGhostCapital.simultan"
+            "art": "partie",
+            "begegnung": "wegGhostCapital.simultan5",
+            "ausgang": ["sieg", "remis", "niederlage"]
           }
         },
         {

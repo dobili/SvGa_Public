@@ -1841,6 +1841,12 @@
           "innen": false
         },
         {
+          "kennung": "siliconBay.altstadt",
+          "datei": "karten/silicon-bay-altstadt.json",
+          "name": "ort.siliconBay.altstadt",
+          "innen": false
+        },
+        {
           "kennung": "siliconBay.akademie",
           "datei": "karten/silicon-bay-akademie.json",
           "name": "ort.siliconBay.akademie",
@@ -2029,6 +2035,24 @@
           "ziel": {
             "karte": "pelikaninsel.dorf",
             "ausloeser": "faehre"
+          }
+        },
+        {
+          "name": "altstadt",
+          "karte": "siliconBay.aussen",
+          "art": "uebergang",
+          "ziel": {
+            "karte": "siliconBay.altstadt",
+            "ausloeser": "campus"
+          }
+        },
+        {
+          "name": "campus",
+          "karte": "siliconBay.altstadt",
+          "art": "uebergang",
+          "ziel": {
+            "karte": "siliconBay.aussen",
+            "ausloeser": "altstadt"
           }
         }
       ],

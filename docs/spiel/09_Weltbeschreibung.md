@@ -85,7 +85,7 @@ Farben werden mit jeder Etappe kälter oder heller, nie zufällig.
   ein Eichelhäher am Steg.
 - **Riverton:** Tauben im Park, Ratten an der Bahn (nur Geräusch und Huschen), Möwen am Fluss.
 - **Ironwood:** Krähen auf Stahlträgern, eine Werkskatze, Fledermäuse in der Dämmerung.
-- **Silicon Bay:** keine Tiere außer einer Drohne und einem Roboterstaubsauger (Absicht).
+- **Silicon Bay:** kaum Tiere: Möwen am Ufer, Tauben, ein paar Hunde an der Leine, dazu Drohnen und Roboter. Die Stadt wirkt steril, aber die Möwen lassen sich nicht vertreiben (geändert 10.11.2026, Wunsch des Autors nach mehr Tieren).
 - **Port Delacroix:** Pelikane und Möwen am Kai, ein Reiher im Bauzaun, eine Katze auf dem Bootsdach.
 - **Desert Springs:** Eidechsen, ein Roadrunner, Geier als Kreise am Himmel.
 - **Summit City:** Murmeltiere, ein Adler, Ziegen am Hang.
@@ -108,7 +108,7 @@ Ort, zur Tageszeit und zum Wirtschaftszweig des Ortes; nichts steht nur herum.
 | Cedar Creek    | Bibliothek, Waschsalon, Holz, Rente        | Mr. Boateng faltet Wäsche, Leserin mit Bücherstapel, Kinder auf der Bibliothekstreppe, Mann repariert Steg, Busfahrer raucht an der Haltestelle | Hund wartet vor dem Waschsalon und wedelt, Reiher steht still, Motten um die Lampe, Eichelhäher ruft          |
 | Riverton       | Bahn, Hafen am Fluss, Markt                | Pendler mit Schirmen, Straßenmusiker unter der Brücke, Parkschachspieler mit Uhr (klopfen), Zeitungsverkäufer, Kinder springen in Pfützen       | Tauben picken und fliegen auf, Möwen streiten um Pommes, Ratten huschen an der Bahn                           |
 | Ironwood       | Stahlwerk, Kneipe, Reihenhäuser            | Schichtwechsel am Werkstor (Gruppen laufen), Frau trägt Kohle, Kinder spielen Straßenschach mit Kreide, Mann füttert Tauben, Kantinenkoch       | Werkskatze schläft am Ofen, Krähen auf Trägern, Fledermäuse abends                                            |
-| Silicon Bay    | Konzern, Cafés, Lieferdienste              | Alle schauen auf Bildschirme, Lieferroboter rollt, Wachmann, Besucher mit Namensschildern, niemand spielt am Brett                              | nur Drohne und Staubsaugerroboter (Absicht: die Stadt hat keine Tiere)                                        |
+| Silicon Bay    | Konzern, Cafés, Lieferdienste              | Alle schauen auf Bildschirme, Lieferroboter rollt, Wachmann, Besucher mit Namensschildern, niemand spielt am Brett                              | Möwen, Tauben, Hunde an der Leine; dazu Drohnen und Roboter (seit 10.11.2026)                                 |
 | Port Delacroix | Fischerei, Klavierbau, Musik, Wiederaufbau | Handwerker auf Dächern, Helfer mit Sandsäcken, Mr. Batiste flickt Boote, ein Bläser auf einer Kiste, Kinder spielen Ball zwischen Zelten        | Pelikane tauchen nach Fisch, Möwen klauen, Reiher steht im Bauzaun, Katze schläft auf dem Bootsdach           |
 | Desert Springs | Motel, Diner, Tankstelle, Touristen        | Tankwart, Motelputzfrau, Mira mit Schachbuch im Schatten, Touristen fotografieren, Mann wartet auf den Bus                                      | Eidechsen sonnen sich und huschen weg, Roadrunner rennt vorbei, Geier kreisen                                 |
 | Summit City    | Seilbahn, Hütten, Wanderer                 | Wanderer mit Rucksack, Seilbahnwärter, Holzhacker, Ward mit Thermoskanne am Fenster                                                             | Murmeltier pfeift, Ziegen fressen, Adler zieht Kreise                                                         |
@@ -225,7 +225,7 @@ fällt der erste Schnee.
 
 ### 5.6 Silicon Bay (Akt 3)
 
-Glasstadt am Wasser, Kunstlicht, keine Jahreszeit, keine Tiere. Konzern-Akademie mit
+Glasstadt am Wasser, Kunstlicht, keine Jahreszeit, kaum Tiere außer den Möwen. Konzern-Akademie mit
 Bildschirmen statt Brettern. Die Welt ist hier sauber und falsch.
 
 - **Außen `aussen`:** Campus mit Glasgebäuden, Straßenbahn, Werbetafeln (ZERO-Arbeitsname), der

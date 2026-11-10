@@ -88,6 +88,20 @@ auf einem Schotterplatz. Der Highway läuft bis an beide Ränder (Fernbus nach W
 Minenstraße nach Osten mit dem geschlossenen Viehgatter S13 bei Spalte 58; ein Übergang dorthin kommt
 mit Q4 in Runde 6). Wegweiser in alle Städte an der Kreuzung (`wegweiser` (29, 20)).
 
+**Ortsteil (Runde 7, Regel 10.51):** Crossroads ist ein kleiner Ort und hat in jeder Variante
+mindestens zwölf Gebäude, die meisten Kulissenhäuser ohne Innenraum. Südöstlich des Highways führen
+zwei Schottergassen zu Motel, Garage, Hühnerstall, Bauernhaus, Kapelle, Eisenwarenladen und Lagerhaus;
+im Norden steht eine Scheune auf dem Feld beim Jahrmarktweg, neben der Tankstelle ein Wohnwagen,
+südlich des Parkplatzes zwei Wohnwagen (A). B legt die Häuser südwestlich an eine Gasse unter dem
+Schotterplatz, Motel und Wohnwagen nordöstlich; C hat die Gassen wie A, aber andere Häuser.
+
+**Belebung (Regel 10.53):** 13 Statisten in allen Varianten gleich, neun davon ansprechbar
+(`statist.crossroads.aussen.*`): Fernfahrerin, Mechaniker, Motelwirtin, Küsterin, Kreidekind, Postbote,
+Rentner, Farmer, Anhalterin; dazu Tankwart, Tomás, Autowäscher und Hundebesitzerin ohne Satz. Tiere:
+Hund, Rinder auf dem Feld, Krähen, Motelkatze, Spatzen. In der Raststätte vier ansprechbare
+Statisten (`statist.crossroads.raststaette.*`): Kellnerin, Fernfahrer, Variantenspielerin,
+Schausteller.
+
 ### 1.4 Raststätte innen (24 × 18)
 
 Nordwand (Reihen 0–2), dahinter die Hinterräume (3–5): die Großküche mit Kühlschränken, Herden unter
@@ -147,6 +161,25 @@ Spielarten, die man unterwegs gelernt hat. Hier trifft man alle wieder.
 | Fernbus Q3         | Haltestelle am Highway West                             | Schnellreise in Runde 6                                   |
 
 ### 3.3 Für Runde 6
+
+**Ereignis Weg 8, Geysirblitz (Dokument 15, 2.10; Runde 7):** Auf der Sinterinsel am großen Geysir
+„Old Patience“ liegt eine Holzplattform (Boden `dielen`) mit zwei Bänken, Infotafel
+(`cc3Raetseltafel`, Ersatz bis `infotafel_geysir.png`) und Rangerhäuschen (`cc4Bootsschuppen`). Die
+Felder bleiben frei begehbar:
+
+| Auslöser              | A        | B        | C        | Ort                                              |
+| --------------------- | -------- | -------- | -------- | ------------------------------------------------ |
+| `ereignisGeysirblitz` | (5, 71)  | (14, 63) | (21, 62) | geysirbecken, Plattform                          |
+| `spurPM5`             | (11, 73) | (9, 63)  | (18, 60) | geysirbecken, vor dem Rangerhäuschen (Infobrett) |
+| `finchBauerD`         | (20, 73) | (8, 64)  | (15, 63) | geysirbecken, Ufer am Steg (Finkenzeichen)       |
+| `seite09`             | (16, 95) | (16, 95) | (16, 95) | praerie, neben dem Sturmkeller                   |
+
+**Belebung Weg 8 (Regel 10.53):** je Karte vier ansprechbare Statisten und sechs Tiere, in A, B, C
+dieselben (Sätze unter `statist.wegSummitCrossroads.geysirbecken.*` und `….praerie.*`).
+Geysirbecken: Fotograf, Ranger-Praktikant, Vogelbeobachterin (Bisons), Kind; Bisonherde,
+Bisonweide, Raben, Murmeltiere, Eichhörnchen, Wapiti. Prärie: Farmerin, Radfahrerin, Landvermesser
+(arbeitet für eine Firma aus Silicon Bay, passt zu Spur P5), Bauer (Präriehunde); Falke,
+Präriehunde, Lerchen, Hühner, Hofhund, Hase.
 
 Auslöser `fernbus` (Haltestelle), `viehgatter` (S13), `geysirAusbruch` (Ansehen, zur vollen
 Stunde), `windrad` (Ansehen); Bilder: siehe Bestellung beim Haupt-Chat (Bison, Geysir, Dampf,

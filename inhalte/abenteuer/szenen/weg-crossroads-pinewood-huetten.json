@@ -19,9 +19,9 @@
     "#.............................................................................................................................~~.....................#",
     "#.............................................................................................................................~~.....................#",
     "#.............................................................................................................................~~.....................#",
-    "#........................................................................................................eeeeeeeeeeeeeeee.....~~.....................#",
-    "#............eeeeeeeeeeeeeeeeeeeeee......................................................................eeeeeeeeeeeeeeee.....~~.....................#",
-    "#............eeeeeeeeeeeeeeeeeeeeee......................................................................ee............ee.....~~.....................#",
+    "#................................................................................................ee......eeeeeeeeeeeeeeee.....~~.....................#",
+    "#............eeeeeeeeeeeeeeeeeeeeee..............................................................ee......eeeeeeeeeeeeeeee.....~~.....................#",
+    "#............eeeeeeeeeeeeeeeeeeeeee..............................................................ee......ee............ee.....~~.....................#",
     "#............ee..................ee........................................................eeeeeeeeeeeeeeee............ee.....~~.....................#",
     "#............ee..................eeeeeeeeeeeeeeeeeeeeee....................................eeeeeeeeeeeeeeee............ee.....~~.....................#",
     "#............ee..................eeeeeeeeeeeeeeeeeeeeee....................................ee..........................eeeeeeehheeeeeeeeeeeee........#",
@@ -56,10 +56,6 @@
     {
       "moebel": "cc4Holzstapel",
       "feld": [77, 14]
-    },
-    {
-      "moebel": "wg4Schild",
-      "feld": [98, 9]
     },
     {
       "moebel": "cc7Picknicktisch",
@@ -186,14 +182,6 @@
       "feld": [91, 4]
     },
     {
-      "moebel": "pw7KieferHoch",
-      "feld": [97, 2]
-    },
-    {
-      "moebel": "wg4Busch",
-      "feld": [103, 2]
-    },
-    {
       "moebel": "pw7Kiefer",
       "feld": [106, 1]
     },
@@ -248,14 +236,6 @@
     {
       "moebel": "mfBaum",
       "feld": [76, 7]
-    },
-    {
-      "moebel": "pw7KieferHoch",
-      "feld": [96, 6]
-    },
-    {
-      "moebel": "wg4Busch",
-      "feld": [100, 8]
     },
     {
       "moebel": "pw7Kiefer",
@@ -1104,6 +1084,14 @@
     {
       "moebel": "wg4BlumeRot",
       "feld": [138, 28]
+    },
+    {
+      "moebel": "sc7FerienhuetteB",
+      "feld": [96, 3]
+    },
+    {
+      "moebel": "cc4Holzstapel",
+      "feld": [102, 5]
     }
   ],
   "ausloeser": [
@@ -1147,20 +1135,107 @@
       "typ": "statist",
       "feld": [112, 8],
       "eigenschaften": {
+        "tun": "wandert mit Riesenrucksack",
+        "wann": "tag",
         "von": "112,8",
         "bis": "100,11",
-        "tun": "wandert mit Riesenrucksack",
-        "wann": "tag"
+        "sagt": "statist.wegCrossroadsPinewood.huetten.wanderer"
       }
     },
     {
       "name": "eichhoernchen",
       "typ": "tier",
-      "feld": [44, 10],
+      "feld": [60, 10],
       "eigenschaften": {
-        "von": "44,10",
-        "bis": "48,10",
+        "von": "55,8",
+        "bis": "66,13",
         "verhalten": "flitzen"
+      }
+    },
+    {
+      "name": "reh",
+      "typ": "tier",
+      "feld": [120, 6],
+      "eigenschaften": {
+        "von": "115,3",
+        "bis": "128,9",
+        "verhalten": "ausweichen"
+      }
+    },
+    {
+      "name": "hase",
+      "typ": "tier",
+      "feld": [130, 23],
+      "eigenschaften": {
+        "von": "125,20",
+        "bis": "140,26",
+        "verhalten": "flitzen"
+      }
+    },
+    {
+      "name": "waschbaer",
+      "typ": "tier",
+      "feld": [78, 24],
+      "eigenschaften": {
+        "von": "76,22",
+        "bis": "86,26",
+        "verhalten": "ausweichen"
+      }
+    },
+    {
+      "name": "eichelhaeher",
+      "typ": "tier",
+      "feld": [100, 8],
+      "eigenschaften": {
+        "von": "92,4",
+        "bis": "110,12",
+        "verhalten": "fliegen"
+      }
+    },
+    {
+      "name": "specht",
+      "typ": "tier",
+      "feld": [40, 6],
+      "eigenschaften": {
+        "von": "35,3",
+        "bis": "45,10",
+        "verhalten": "fliegen"
+      }
+    },
+    {
+      "name": "holzfaeller",
+      "typ": "statist",
+      "feld": [102, 8],
+      "eigenschaften": {
+        "tun": "spaltet Holz für Gretas Ofen",
+        "wann": "tag",
+        "von": "101,8",
+        "bis": "104,9",
+        "sagt": "statist.wegCrossroadsPinewood.huetten.holzfaeller"
+      }
+    },
+    {
+      "name": "pilzsammlerin",
+      "typ": "statist",
+      "feld": [110, 20],
+      "eigenschaften": {
+        "tun": "sucht unter den Kiefern nach Pfifferlingen",
+        "wann": "tag",
+        "von": "105,18",
+        "bis": "115,23",
+        "sagt": "statist.wegCrossroadsPinewood.huetten.pilzsammlerin"
+      }
+    },
+    {
+      "name": "vogelkundler",
+      "typ": "statist",
+      "feld": [25, 10],
+      "eigenschaften": {
+        "tun": "schreibt Vogelstimmen in ein Heft",
+        "wann": "tag",
+        "von": "20,8",
+        "bis": "30,12",
+        "sagt": "statist.wegCrossroadsPinewood.huetten.vogelkundler"
       }
     }
   ],

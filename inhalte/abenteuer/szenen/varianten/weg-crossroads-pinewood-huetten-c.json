@@ -20,14 +20,14 @@
     "#...............................................................................................................................~~...................#",
     "#...............................................................................................................................~~...................#",
     "#...............................................................................................................................~~...................#",
-    "#...............................................................................................................................~~...................#",
-    "#..............................................eeeeeeeeeeeeeeeeeeeeeeeeeeeeeeeeeeeeeeeeeeee.....................................~~...................#",
-    "#..............................................eeeeeeeeeeeeeeeeeeeeeeeeeeeeeeeeeeeeeeeeeeee............eeeeeeeeeeeeeeee.........~~...................#",
-    "#..............................................ee........................................ee............eeeeeeeeeeeeeeee.........~~...................#",
-    "#..............................................ee........................................ee............ee............ee.........~~...................#",
-    "#..............................................ee........................................ee............ee............ee.........~~...................#",
-    "eeeeeeeeeee....................................ee........................................ee............ee............ee.........~~.........eeeeeeeeeee",
-    "eeeeeeeeeee....................................ee........................................eeeeeeeeeeeeeeee............eeeeeeeeeeehheeeeeeeeeeeeeeeeeeee",
+    "#......................................ee.......................................................................................~~...................#",
+    "#......................................ee......eeeeeeeeeeeeeeeeeeeeeeeeeeeeeeeeeeeeeeeeeeee.....................................~~...................#",
+    "#......................................ee......eeeeeeeeeeeeeeeeeeeeeeeeeeeeeeeeeeeeeeeeeeee............eeeeeeeeeeeeeeee.........~~...................#",
+    "#......................................ee......ee........................................ee............eeeeeeeeeeeeeeee.........~~...................#",
+    "#......................................ee......ee........................................ee............ee............ee.........~~...................#",
+    "#......................................ee......ee........................................ee............ee............ee.........~~...................#",
+    "eeeeeeeeeee............................ee......ee........................................ee............ee............ee.........~~.........eeeeeeeeeee",
+    "eeeeeeeeeee............................ee......ee........................................eeeeeeeeeeeeeeee............eeeeeeeeeeehheeeeeeeeeeeeeeeeeeee",
     "#........ee................eeeeeeeeeeeeeeeeeeeeee........................................eeeeeeeeeeeeeeee............eeeeeeeeeeehheeeeeeeeeee........#",
     "#........ee................eeeeeeeeeeeeeeeeeeeeee...............................................................................~~...................#",
     "#........ee................ee...................................................................................................~~...................#",
@@ -145,14 +145,6 @@
     {
       "moebel": "wg4Busch",
       "feld": [36, 2]
-    },
-    {
-      "moebel": "pw7Tanne",
-      "feld": [40, 2]
-    },
-    {
-      "moebel": "pw7TanneHoch",
-      "feld": [45, 2]
     },
     {
       "moebel": "pw7KieferHoch",
@@ -283,18 +275,6 @@
       "feld": [35, 6]
     },
     {
-      "moebel": "wg4Busch",
-      "feld": [37, 5]
-    },
-    {
-      "moebel": "pw7Tanne",
-      "feld": [40, 6]
-    },
-    {
-      "moebel": "pw7TanneHoch",
-      "feld": [43, 5]
-    },
-    {
       "moebel": "pw7KieferHoch",
       "feld": [54, 4]
     },
@@ -365,10 +345,6 @@
     {
       "moebel": "wg4Busch",
       "feld": [32, 7]
-    },
-    {
-      "moebel": "pw7Tanne",
-      "feld": [37, 7]
     },
     {
       "moebel": "pw7TanneHoch",
@@ -987,10 +963,6 @@
       "feld": [34, 8]
     },
     {
-      "moebel": "wg4Farn",
-      "feld": [43, 9]
-    },
-    {
       "moebel": "wg4Pilze",
       "feld": [51, 7]
     },
@@ -1097,10 +1069,6 @@
     {
       "moebel": "wg4Pilze",
       "feld": [36, 14]
-    },
-    {
-      "moebel": "wg4Farn",
-      "feld": [40, 14]
     },
     {
       "moebel": "wg4Pilze",
@@ -1457,6 +1425,14 @@
     {
       "moebel": "wg4Pilze",
       "feld": [146, 28]
+    },
+    {
+      "moebel": "sc7FerienhuetteB",
+      "feld": [38, 3]
+    },
+    {
+      "moebel": "cc4Holzstapel",
+      "feld": [44, 5]
     }
   ],
   "ausloeser": [
@@ -1500,20 +1476,107 @@
       "typ": "statist",
       "feld": [112, 10],
       "eigenschaften": {
+        "tun": "wandert mit Riesenrucksack",
+        "wann": "tag",
         "von": "112,10",
         "bis": "100,15",
-        "tun": "wandert mit Riesenrucksack",
-        "wann": "tag"
+        "sagt": "statist.wegCrossroadsPinewood.huetten.wanderer"
       }
     },
     {
       "name": "eichhoernchen",
       "typ": "tier",
-      "feld": [44, 14],
+      "feld": [60, 10],
       "eigenschaften": {
-        "von": "44,14",
-        "bis": "48,14",
+        "von": "55,8",
+        "bis": "66,13",
         "verhalten": "flitzen"
+      }
+    },
+    {
+      "name": "reh",
+      "typ": "tier",
+      "feld": [119, 6],
+      "eigenschaften": {
+        "von": "115,3",
+        "bis": "128,9",
+        "verhalten": "ausweichen"
+      }
+    },
+    {
+      "name": "hase",
+      "typ": "tier",
+      "feld": [130, 20],
+      "eigenschaften": {
+        "von": "125,20",
+        "bis": "140,26",
+        "verhalten": "flitzen"
+      }
+    },
+    {
+      "name": "waschbaer",
+      "typ": "tier",
+      "feld": [80, 24],
+      "eigenschaften": {
+        "von": "76,22",
+        "bis": "86,26",
+        "verhalten": "ausweichen"
+      }
+    },
+    {
+      "name": "eichelhaeher",
+      "typ": "tier",
+      "feld": [100, 8],
+      "eigenschaften": {
+        "von": "92,4",
+        "bis": "110,12",
+        "verhalten": "fliegen"
+      }
+    },
+    {
+      "name": "specht",
+      "typ": "tier",
+      "feld": [40, 6],
+      "eigenschaften": {
+        "von": "35,3",
+        "bis": "45,10",
+        "verhalten": "fliegen"
+      }
+    },
+    {
+      "name": "holzfaeller",
+      "typ": "statist",
+      "feld": [44, 8],
+      "eigenschaften": {
+        "tun": "spaltet Holz für Gretas Ofen",
+        "wann": "tag",
+        "von": "43,8",
+        "bis": "46,9",
+        "sagt": "statist.wegCrossroadsPinewood.huetten.holzfaeller"
+      }
+    },
+    {
+      "name": "pilzsammlerin",
+      "typ": "statist",
+      "feld": [111, 20],
+      "eigenschaften": {
+        "tun": "sucht unter den Kiefern nach Pfifferlingen",
+        "wann": "tag",
+        "von": "105,18",
+        "bis": "115,23",
+        "sagt": "statist.wegCrossroadsPinewood.huetten.pilzsammlerin"
+      }
+    },
+    {
+      "name": "vogelkundler",
+      "typ": "statist",
+      "feld": [24, 10],
+      "eigenschaften": {
+        "tun": "schreibt Vogelstimmen in ein Heft",
+        "wann": "tag",
+        "von": "20,8",
+        "bis": "30,12",
+        "sagt": "statist.wegCrossroadsPinewood.huetten.vogelkundler"
       }
     }
   ],

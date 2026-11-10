@@ -137,9 +137,53 @@ Die übrigen Akt-1-Punkte (Maple Falls, Weg 1, Cedar Creek) hat niedrig-1 ebenfa
 
 - Bisher keine Notiz.
 
-### `wegRivertonIronwood.bruecke` (Wahl A)
+### `wegRivertonIronwood.bruecke` (Wahl A, „Eisenbrücke“)
 
-- Bisher keine Notiz.
+- Frage: Soll es eine Brücke aus Eisen geben? Dann fehlt sie, es gibt keine Eisenbrücke.
+- Das Wärterhäuschen hat keinen Pfad zum Weg.
+- Straßenlaternen: Nur am Häuschen ist in Ordnung, dann aber am Pfad zum Häuschen. Für den ganzen
+  Weg braucht es mehr Laternen.
+- Fluss und Weg sind sehr gerade. Ein natürlicher Fluss windet sich, ein Kanal nicht (siehe
+  Kanalweg, falls es derselbe Kanal ist).
+- Die Spieltische stehen ohne Grund in einer Reihe auf der Wiese, nicht gepflastert, ohne Bänke.
+  Es braucht einen sichtbaren Grund und einen in der Geschichte. Klapptische lassen sich bei Regen
+  wegräumen, aber warum gerade dort?
+- Eine Parkbank steht irgendwo auf der Wiese statt an einem Weg oder Aussichtspunkt.
+- Der Weg läuft im Zickzack mit Zäunen. Das ist in Ordnung, braucht aber einen erkennbaren Grund,
+  etwa eine Blühwiese für Bienen oder eine Koppel mit Pferden.
+- Die große Steinmauer mit Graffiti unten steht allein da. Frage: Was hat es damit auf sich?
+  - Möglicher Grund: Die Stadt hatte Graffiti-Probleme und baute eine Mauer für legale Kunst.
+  - Dann sollten Graffiti-Künstler davor stehen.
+- Tiere stehen im Wasser.
+- Ein Springer ist an der Brücke ins Gras gezeichnet, links daneben liegt ein Schildchen mit einem
+  Huhn. Frage: Was bedeuten sie? Warum liegt ein Schild im Gras, warum ein Springer aus Kreide im
+  Gras? In Ordnung, wenn die Geschichte das vorsieht. Vermutlich sind das das Kreidezeichen K1 und
+  das Finkenschild.
+
+### `wegRivertonIronwood.kanalweg` (Wahl A)
+
+- Vermutung des Autors: Die Eisenbrücke geht in den Kanalweg über; das erklärt den geraden Lauf.
+- Gebäude ohne Weganbindung.
+- Graffiti-Mauern brauchen eine Erklärung in der Geschichte (wie oben).
+- Tiere stehen im Wasser.
+- Das große Silo hat keinen Weg zum Hauptweg. Frage: Warum steht dort ein Silo, ohne Farm und Felder
+  ringsum? Mit der Farm unten ließe sich oben am Silo Anbau ergänzen.
+- Ein Boot liegt quer und verstopft den ganzen Kanal; es ist so breit wie der Kanal. Ist es ein
+  Kanal für große Schiffe? Dann muss er breiter sein, auch auf der Eisenbrücke. Weiter unten liegt
+  ein zweites Boot quer.
+- Farm:
+  - Wenig Bepflanzung.
+  - Die Anbaufläche (Kohl, Kürbis) hat denselben Boden wie der Trampelweg; das passt nicht.
+  - Dichter bepflanzen.
+- Das Farmhaus hat keinen Weg zum Hauptweg.
+- Das Gebäude neben dem Farmhaus hat nur ein vernageltes Fenster und keine Tür. Ist es ein Anbau,
+  der an das Farmhaus gehört? Dann die Lücke schließen.
+- Unten links steht ein einzelner Mast (Telegrafen- oder Strommast) neben einem Baum. Gehört er zur
+  Geschichte? Sonst weg.
+- Die freien Grünflächen interessanter gestalten:
+  - mehr Abwechslung bei Gras und Bepflanzung;
+  - kleine Häuser ohne Innenraum;
+  - anderes, was man an so einem Weg in der Wirklichkeit fände.
 
 ### `wegRivertonIronwood.kanalweg` (Wahl A)
 

@@ -162,3 +162,18 @@ Acht Nadeln. Acht! Jetzt fehlt nur noch die Meisterschaft. #sprecher:juno #stimm
 Bis zur Capital Arena sind es noch ein paar Tage. Über die Geysire, dann nach Crossroads. #sprecher:mutter
 Hinter Summit City wird die Straße flacher. Weit vorn dampft der Boden. #sprecher:erzaehler
 -> END
+
+// >>> Runde 6 (mittel-4)
+VAR ambroseSprichtWieder = false
+
+=== plakat ===
+Ein Plakat am Platz: „Landesmeisterschaft – Finale in der Capital Arena“. Darunter hat jemand mit Bleistift geschrieben: „Wir fahren hin!“ #sprecher:erzaehler
+-> END
+
+=== fernrohr ===
+Vom Felsplateau sieht man über das ganze Tal. Die Gondel hängt wie eine Figur am Faden über dem Abgrund. #sprecher:erzaehler
+{ambroseSprichtWieder:
+    Von hier oben sieht das Tal aus wie ein Brett nach der Eröffnung. Alles steht noch, nichts ist entschieden. #sprecher:ambrose
+}
+-> END
+// <<< Runde 6 (mittel-4)

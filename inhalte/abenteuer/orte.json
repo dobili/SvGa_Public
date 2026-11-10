@@ -3051,6 +3051,42 @@
           "karte": "hochebene.schule",
           "art": "gegenstand",
           "dialog": "hochebene.aushang"
+        },
+        {
+          "name": "pferd",
+          "karte": "hochebene.felsentuerme",
+          "art": "dialog",
+          "dialog": "hochebene.pferd"
+        },
+        {
+          "name": "schildSchule",
+          "karte": "hochebene.felsentuerme",
+          "art": "dialog",
+          "dialog": "hochebene.schild_schule"
+        },
+        {
+          "name": "bus",
+          "karte": "hochebene.schule",
+          "art": "dialog",
+          "dialog": "hochebene.bus"
+        },
+        {
+          "name": "ereignisDiplom",
+          "karte": "hochebene.schule",
+          "art": "dialog",
+          "dialog": "hochebene.ereignis_diplom"
+        },
+        {
+          "name": "seite03",
+          "karte": "hochebene.schule",
+          "art": "gegenstand",
+          "dialog": "hochebene.fund_seite03"
+        },
+        {
+          "name": "finchTurmB",
+          "karte": "hochebene.schule",
+          "art": "gegenstand",
+          "dialog": "hochebene.fund_finch_turm_b"
         }
       ]
     },
@@ -3229,6 +3265,36 @@
             "karte": "wegSummitCrossroads.geysirbecken",
             "ausloeser": "zurueckSummit"
           }
+        },
+        {
+          "name": "plakat",
+          "karte": "summitCity.aussen",
+          "art": "dialog",
+          "dialog": "summit-city-aussen.plakat"
+        },
+        {
+          "name": "fernrohr",
+          "karte": "summitCity.aussen",
+          "art": "dialog",
+          "dialog": "summit-city-aussen.fernrohr"
+        },
+        {
+          "name": "foto",
+          "karte": "summitCity.huette",
+          "art": "gegenstand",
+          "dialog": "summit-city-huette.foto"
+        },
+        {
+          "name": "teekanne",
+          "karte": "summitCity.huette",
+          "art": "gegenstand",
+          "dialog": "summit-city-huette.teekanne"
+        },
+        {
+          "name": "fahrplan",
+          "karte": "summitCity.bergstation",
+          "art": "dialog",
+          "dialog": "summit-city-bergstation.fahrplan"
         }
       ],
       "club": {

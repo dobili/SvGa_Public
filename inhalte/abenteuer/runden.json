@@ -419,6 +419,15 @@
       "buchuebungen": [],
       "themen": ["mattbilder", "matt2"],
       "anzahl": 4
+    },
+    {
+      "kennung": "hochebene.diplom",
+      "ort": "hochebene",
+      "steller": "hochebene.annek",
+      "reihe": false,
+      "buchuebungen": [],
+      "themen": ["matt1", "haengend"],
+      "anzahl": 3
     }
   ]
 }

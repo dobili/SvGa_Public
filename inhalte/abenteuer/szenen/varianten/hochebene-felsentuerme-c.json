@@ -357,6 +357,14 @@
     {
       "name": "steintisch",
       "feld": [56, 17]
+    },
+    {
+      "name": "pferd",
+      "feld": [36, 4]
+    },
+    {
+      "name": "schildSchule",
+      "feld": [95, 16]
     }
   ],
   "figuren": [

@@ -293,6 +293,25 @@
       "ort": "wegDesertSummit",
       "name": "fund.spurPM4.name",
       "text": "fund.spurPM4.text"
+    },
+    {
+      "kennung": "seite03",
+      "ort": "hochebene",
+      "name": "fund.seite03.name",
+      "text": "fund.seite03.text",
+      "muenzen": 5
+    },
+    {
+      "kennung": "finchTurmB",
+      "ort": "hochebene",
+      "name": "fund.finchTurmB.name",
+      "text": "fund.finchTurmB.text"
+    },
+    {
+      "kennung": "diplomKira",
+      "ort": "hochebene",
+      "name": "fund.diplomKira.name",
+      "text": "fund.diplomKira.text"
     }
   ]
 }

@@ -165,6 +165,14 @@
     {
       "name": "kaminfeuer",
       "feld": [10, 4]
+    },
+    {
+      "name": "foto",
+      "feld": [15, 8]
+    },
+    {
+      "name": "teekanne",
+      "feld": [10, 6]
     }
   ],
   "figuren": [

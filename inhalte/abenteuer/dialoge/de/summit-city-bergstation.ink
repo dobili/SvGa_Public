@@ -103,3 +103,9 @@ Unter der Bank am Fenster liegt eine kleine Holzpfeife. Du pfeifst hinein. Drau�
 Pfeif, und sie pfeifen zurück. Murmeltiere sind höflicher als die meisten Menschen. #sprecher:ambrose #stimmung:lacht
 ~ gibFund("murmeltierpfeife")
 -> END
+
+// >>> Runde 6 (mittel-4)
+=== fahrplan ===
+Der Fahrplan der Seilbahn: jede halbe Stunde eine Gondel, bei Sturm keine. Darunter ein Zettel: „Schachbretter bitte nicht in der Gondel liegen lassen.“ #sprecher:erzaehler
+-> END
+// <<< Runde 6 (mittel-4)

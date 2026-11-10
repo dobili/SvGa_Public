@@ -2510,6 +2510,40 @@
           ]
         }
       ]
+    },
+    {
+      "kennung": "hochebene.bauerndiplom",
+      "titel": "quest.bauerndiplom.titel",
+      "typ": "hilfe",
+      "ort": "hochebene",
+      "haupt": false,
+      "klein": true,
+      "start": {
+        "art": "dialog",
+        "knoten": "hochebene.diplom_start"
+      },
+      "schritte": [
+        {
+          "text": "quest.bauerndiplom.schritt1",
+          "ereignis": {
+            "art": "aufgaben",
+            "runde": "hochebene.diplom"
+          }
+        },
+        {
+          "text": "quest.bauerndiplom.schritt2",
+          "ereignis": {
+            "art": "dialog",
+            "knoten": "hochebene.diplom_ende"
+          },
+          "wirkungen": [
+            {
+              "art": "muenzen",
+              "anzahl": 20
+            }
+          ]
+        }
+      ]
     }
   ]
 }

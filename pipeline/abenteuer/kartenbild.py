@@ -12,6 +12,7 @@ from pathlib import Path
 
 from PIL import Image, ImageDraw
 
+from pipeline.abenteuer.belebungsvorschau import teile as belebungsteile
 from pipeline.abenteuer.bodenraster import bodenfeld, randnachbar
 from pipeline.abenteuer.kartenbau import GESPERRT, INHALTE, LEER, WAND, WASSER, K, lade, platziere, raster
 from pipeline.abenteuer.katalog import katalogbefund, katalogeintraege
@@ -270,6 +271,7 @@ def vorschau(szene: dict, privat: Path, grund: Image.Image) -> Image.Image:
             teil = Image.open(sprite).convert("RGBA").crop((48, 0, 64, 32))
             x, y = f["feld"][0] * K, f["feld"][1] * K - K
             teile.append((y + K + K // 2, x, y, teil))
+    teile += belebungsteile(szene, privat, lambda pfad: Image.open(pfad).convert("RGBA"))
     for _, x, y, teil in sorted(teile, key=lambda t: t[0]):
         bild.alpha_composite(teil, (max(0, x), max(0, y)))
     return bild.resize((bild.width * 2, bild.height * 2), Image.NEAREST)

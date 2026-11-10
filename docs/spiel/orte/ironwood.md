@@ -694,3 +694,43 @@ vom 10.11.2026), nicht als eigene Szene. **Lastkahn am Kai:** Der Kanal läuft i
 Süd; den Lastkahn gibt es nur in Ost-West-Ansicht, er läge quer im Kanal (Regel 24). **Rückkauf des
 Clubs** (nach dem Spiel): Dafür gibt es noch keine Variable. **Gittertor zum Steinbruch:** Die Sperre
 S4 betrifft den Stollen (Laterne), nicht die Zufahrt; der Absperrbock bleibt Ortsbild.
+
+### Gutachten Runde 8: Umsetzung und Begründungen
+
+**Ironwood außen:** Bahnübergang mit Bohlen und zwei Andreaskreuzen (der Weg nach Süden zu Gus ist
+erreichbar, Test „erreichbar“), Prellbock am alten Bahnhof, Hauptstraße endet am Kai statt auf einer Brücke
+ins Wasser, Haltestelle auf der Nordseite mit Blick zur Straße, Schornsteine auf dem Werkhof. Nicht
+umgesetzt: **Markierungen und Bordsteine** der Straßen brauchen ein Straßenmaterial im Kartenbild
+(Gehwege aus Pflaster sind da); **gleiche Häuser** ersetzt mittel-1 für alle Karten.
+
+**Kantine:** Speiseplan über der Ausgabe, Kasse auf der Theke, Warmhaltevitrine auf einer Theke, Fenster,
+zwei Stühle je Schachtisch. Die Küchenzeile ist lückenlos (Kühlschränke, Herde, Theke, Anrichte).
+
+**Museum:** Vitrinen mit Dokumenten, Werkzeugen und Gesteinen statt Schädeln, Infotafeln an der Wand,
+Läufer nur von der Tür bis vor das Pult, keine Absperrpfosten ohne Seil; Bänke und Pflanzen füllen die
+Räume.
+
+**Umkleide:** Doppelspind aus zwei Spinden, Duschkabinen mit Tür und Trennwand, Bank vor den Kabinen.
+
+**Mamas Zimmer:** gerahmtes Partieformular, zwei Stühle (Mama und Oma Ruth), Spüle auf der Theke.
+
+**Steinbruchgrube** (`gutachten/steinbruch-grube-2.md`, geprüft war noch die Fassung ohne
+Klippenkacheln): Kanten jetzt aus Klippenkacheln ohne Kästen (2, 3), Rampen mit Treppen bzw. als
+gepflasterte Fahrrampe (4), Seitenwände gleich breit (5), Geröll ohne Grasrand in unregelmäßigem Abstand
+(6), Birken an der Bruchkante (9), Bank am Aussichtspunkt mit Blick in die Grube (10), Metallgeländer (11),
+Falke über der Wiese (12), Büsche und Blumen auf der Wiese (13), Blöcke in zwei Gruppen, Abraum, Pfützen
+und Grubenholz auf der Stufe (14–16), kleineres Wasserloch (19) mit Schilf und Seerosen (18), Blechhütte
+statt Hundehütte (20), Lichtmast entfernt (21), Abraum und Pfütze auf der Sohle (22), Hasen entfernt (23).
+Nicht umgesetzt: **Rahmen (1):** Die Ränder zeigen jetzt die obere Fläche statt einer Wand; ganz offen
+dürfen sie nach Regel 5.1 nicht sein. **Kette (8):** Statt einer Kette stehen zwei Poller mit Schild an der
+Einfahrt (Beschreibung angepasst). **Kinder (24):** Die Belebung ist eine Figur mit dem Namen „kinder“, die
+Sprechblase redet von beiden. **Verladeplatz (25):** Der Bruch ist stillgelegt; die Loren brachten die
+Blöcke zum Verladeplatz, Laster fuhren über die gepflasterte Rampe im Westen hinauf.
+
+**Stollen** (`gutachten/steinbruch-stollen.md`): Wände sind jetzt Dunkel, nur über den Böden steht eine
+Felswand (1, 5); Steine ohne Gras, weniger und unregelmäßig (2, 3); Tageslicht am Eingang (4); zwei Loren
+auf dem Gleis (6); Türstöcke in gleichem Abstand, auch an der Gabelung und im Seitenstollen (7, 16);
+Grubenholz als Stapel statt Zaunstück, Kiste und Fässer entfernt (9–11); Kaverne mit unregelmäßigen Wänden
+(12); kleine Nische mit dem losen Stein vor Mamas Versteck (14, 15); Karte auf 33 Spalten gekürzt (17).
+Nicht umgesetzt: **Gleis links im Gang (8)** ist gewollt (rechts der Laufweg); **Fledermaus (13)** hat
+noch kein Tierbild.

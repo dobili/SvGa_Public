@@ -1270,3 +1270,32 @@ neun Felder lang. Auf Weg 3 fahren keine Fahrzeuge; die Ruderboote am Ufer sind 
 Fabrikhof 4 × 4, der Leiterwagen 2 × 3. Ironwood: Werksbus 7 × 4 (wie LimeZus Bus), keine Lastwagen.
 Steinbruch: Radlader 6 × 3, Lore der Feldbahn 1,5 × 1. Weg 7: die Sattelzüge sind 10 × 4; das Autowrack an
 der Tankstelle war ein Kleinwagen von vorn (2 × 2) und ist jetzt ein Wrack in Autogröße (4 × 4).
+
+### Gutachten Runde 8 (Kanalweg, Eisenbrücke): Umsetzung und Begründungen
+
+**Kanalweg** (`gutachten/weg-riverton-ironwood-1.md`), umgesetzt: befestigter Treidelpfad direkt an der
+Kaimauer (9), Poller in gleichem Abstand und ein Frachtkahn längs am Kai (2, eigenes Bild 5 × 26, Regel
+10.64), Steg am Rastanleger mit Boot daneben (4, 5), Reiher entfernt (6), Brücke mit Brückenköpfen und
+Fachwerk über den Seitenarm (8), Hütte am Ostufer entfernt, das Ostufer ist bewachsene Böschung (10), die
+Mauer ist die Hofmauer der Fabrik (11), Graffiti mit Turm und Springer (12), Fabrikhalle mit Rolltor statt
+Holzschuppen (14), Hof mit Containern und Fässern statt Autowracks (15), Hof ringsum eingezäunt mit Tor zum
+Pfad (16), Laternen an der Werkstraße (17), Haltestelle mit Bank und Mülleimer (18), Obstwiese und
+Picknicktisch statt leerer Wiese (19), vier verschiedene umzäunte Kleingärten ohne Straßenlaternen, Beete
+bepflanzt, der Gärtner gießt Kohl (20–23), Landvermesser auf dem Treidelpfad (24), Silo auf 9 Kacheln
+gekürzt (25), Hofplatz aus Erde mit Rand (26), Weg zwischen den Äckern bis zum Pfad (28), Zaun ringsum
+(29), Baumreihe als Birkenreihe beschrieben (31), ein Baumstil (32).
+Nicht umgesetzt, mit Grund: **Ufer als Mauer mit Krone (1, 3):** Das Steinufer zeichnet das Material
+`wasser_stein` des Kartenbilds; eine Mauerfläche mit Krone und dunklerer Wassermitte braucht ein neues
+Material (Vorschlag an den Haupt-Chat). **Enten und Gänse (6):** Das Tierbild „ente“ kommt aus
+`belebungsbilder.py`; dort gehört es ausgetauscht. **Wegweiser lesbar (7):** Das Bild ist ein Wegweiser
+ohne Schrift; der Seitenarm führt zum Westrand, wo Lockport anschließt. **Farmhaus (27):** Das wiederholte
+Hausbild ersetzt mittel-1 für alle Karten. **Hochbeete (30):** Der Gutachter nennt sie sauber gemacht; sie
+bleiben.
+
+**Eisenbrücke** (`gutachten/weg-riverton-ironwood-2.md`), umgesetzt: Der Hang hat Felskanten mit
+Treppen zwischen den Kehren (Klippenkacheln, Kante „klippe“), die Treppe nach Ironwood führt durch die
+letzte Kante, das Widerlager mit Graffiti sitzt am Brückenkopf, die Möwe fliegt über der Wiese, der
+Reiher ist weg, am Wärterhaus stehen kleine Laternen statt Straßenlaternen. Nicht umgesetzt: **Brücke
+liegt flach:** Das Fachwerk mit steinernen Brückenköpfen ist in der Draufsicht gezeichnet; eine Brücke mit
+sichtbarer Höhe über einem Einschnitt bräuchte ein eigenes Bild mit Unterseite und Schatten
+(Bildwunsch).

@@ -3,7 +3,7 @@
   "datei": "karten/steinbruch-grube.json",
   "art": "aussen",
   "toenung": "nebel",
-  "beschreibung": "Der alte Steinbruch Hargrove & Söhne hinter Ironwood (Runde 8), ein kühler Morgen. Die Karte zeigt die Grube von oben in drei Höhen: oben die Wiese an der Bruchkante, darunter die Abbaustufe aus Felsboden, ganz unten die Sohle aus Schotter. Die Kanten verlaufen unregelmäßig, am Fuß liegt Geröll; Rampen führen schräg hinunter, oben im Osten, auf der Stufe zurück nach Westen und dort zur Sohle. Die Zufahrt kommt am Westrand an einer Kette mit Schild vorbei, die Bude hat ihre Tür zur Zufahrt, eine Bank und ein Aussichtspunkt mit Geländer blicken in die Tiefe, Birken stehen an der Kante. Auf der Stufe lagern gesägte Blöcke in Reihen. Auf der Sohle liegt ein natürliches Wasserloch mit Schilf. Der Stollenmund sitzt in der unteren Felskante; die Feldbahn läuft von dort mit zwei Loren nach Süden bis zum Prellbock am Verladeplatz, wo der alte Radlader steht. Werkzeugschuppen im Westen, Graffiti an der Felswand im Nordosten.",
+  "beschreibung": "Der alte Steinbruch Hargrove & Söhne hinter Ironwood (Runde 8), ein kühler Morgen. Die Karte zeigt die Grube von oben in drei Höhen: oben die Wiese an der Bruchkante, darunter die Abbaustufe aus Felsboden, ganz unten die Sohle aus Schotter. Die Kanten verlaufen unregelmäßig, am Fuß liegt Geröll; Rampen führen schräg hinunter, oben im Osten, auf der Stufe zurück nach Westen und dort zur Sohle. Die Zufahrt kommt am Westrand zwischen zwei Pollern mit Schild herein, die Bude hat ihre Tür zur Zufahrt, Aussichtspunkt mit Eisengeländer und Bank blicken in die Tiefe, Birken stehen an der Kante. Auf der Stufe lagern gesägte Blöcke in Reihen, dazu Abraum, Pfützen und Grubenholz. Auf der Sohle liegt ein natürliches Wasserloch mit Schilf und Seerosen; die gepflasterte Rampe im Westen ist die alte Fahrrampe der Laster. Der Stollenmund sitzt in der unteren Felskante; die Feldbahn läuft von dort mit zwei Loren nach Süden bis zum Prellbock am Verladeplatz, wo der alte Radlader steht. Blechhütte für Werkzeug im Westen, Graffiti an der Felswand im Nordosten.",
   "wand": "fels",
   "kante": "klippe",
   "boden": "schotter",
@@ -44,30 +44,30 @@
     "#ffffffffffffffffffffffffffffffffffffffffffffffffffffffffffffffffffff#",
     "#ffffffffffffffffffffffffffffffffffffffffffffffffffffffffffffffffffff#",
     "#ffffffffffffffffffffffffffffffffffffffffffffffffffffffffffffffffffff#",
-    "#######kkkkffffffffffffffffffffffffffff#fffff#######fffffffffffffffff#",
-    "#######kkkk##ff##########fffff#########################fffff##########",
-    "#########kkkk#########################################################",
-    "###......kkkk##########################.#####.......##################",
-    "####.......kkkk..........#####.........................#####......####",
-    "####.......kkkk...................................................####",
-    "####..............................................................####",
-    "####..............................................................####",
-    "###......................~~~.......................................###",
-    "###...................~~~~~~~~~~~~.................................###",
-    "###..............~~~~~~~~~~~~~~~~~.................................###",
-    "###.............~~~~~~~~~~~~~~~~~~~................................###",
-    "####............~~~~~~~~~~~~~~~~~~~~~~............................####",
-    "####...........~~~~~~~~~~~~~~~~~~~~~~~............................####",
-    "####...........~~~~~~~~~~~~~~~~~~~~~~~............................####",
-    "####...........~~~~~~~~~~~~~~~~~~~~~~.............................####",
-    "###..............~~~~~~~~~~~~~~~~~~~~..............................###",
-    "###...............~~~~~~~~~~~~~~~~~~...............................###",
-    "###...............~~~~~~~~~~~~~~~~~................................###",
-    "###................~~..~~~~~~~~~~~.................................###",
-    "####....................~~~.......................................####",
-    "####..............................................................####",
-    "####..............................................................####",
-    "####..............................................................####",
+    "#######ppppffffffffffffffffffffffffffff#fffff#######fffffffffffffffff#",
+    "#######pppp##ff##########fffff#########################fffff##########",
+    "#########pppp#########################################################",
+    "###......pppp##########################.#####.......##################",
+    "###........pppp..........#####.........................#####.......###",
+    "###........pppp....................................................###",
+    "###................................................................###",
+    "###................................................................###",
+    "###......................~~~~~~~~..................................###",
+    "###....................~~~~~~~~~~~.................................###",
+    "###...................~~~~~~~~~~~~~................................###",
+    "###..................~~~~~~~~~~~~~~~...............................###",
+    "###..................~~~~~~~~~~~~~~~~..............................###",
+    "###..................~~~~~~~~~~~~~~~~..............................###",
+    "###..................~~~~~~~~~~~~~~~...............................###",
+    "###...................~~~~~~~~~~~~~................................###",
+    "###.......................~~~~~....................................###",
+    "###................................................................###",
+    "###................................................................###",
+    "###................................................................###",
+    "###................................................................###",
+    "###................................................................###",
+    "###................................................................###",
+    "###................................................................###",
     "###................................................................###",
     "######################################################################"
   ],
@@ -103,12 +103,12 @@
     {
       "moebel": "mfBank",
       "feld": [
-        21,
-        4
+        26,
+        9
       ]
     },
     {
-      "moebel": "cc3ZaunEnde",
+      "moebel": "wg4ZaunBottomLeft",
       "feld": [
         19,
         10
@@ -116,7 +116,7 @@
       "bauteil_ok": true
     },
     {
-      "moebel": "ccZaun",
+      "moebel": "wg4ZaunBottomMiddle",
       "feld": [
         20,
         10
@@ -124,7 +124,7 @@
       "bauteil_ok": true
     },
     {
-      "moebel": "ccZaun",
+      "moebel": "wg4ZaunBottomMiddle",
       "feld": [
         21,
         10
@@ -132,7 +132,7 @@
       "bauteil_ok": true
     },
     {
-      "moebel": "ccZaun",
+      "moebel": "wg4ZaunBottomMiddle",
       "feld": [
         22,
         10
@@ -140,7 +140,7 @@
       "bauteil_ok": true
     },
     {
-      "moebel": "ccZaun",
+      "moebel": "wg4ZaunBottomMiddle",
       "feld": [
         23,
         10
@@ -148,7 +148,7 @@
       "bauteil_ok": true
     },
     {
-      "moebel": "ccZaun",
+      "moebel": "wg4ZaunBottomMiddle",
       "feld": [
         24,
         10
@@ -156,7 +156,7 @@
       "bauteil_ok": true
     },
     {
-      "moebel": "cc3ZaunEndeR",
+      "moebel": "wg4ZaunBottomRight",
       "feld": [
         25,
         10
@@ -173,19 +173,12 @@
     {
       "moebel": "st5BirkeKlein",
       "feld": [
-        11,
-        2
-      ]
-    },
-    {
-      "moebel": "st5BirkeKlein",
-      "feld": [
         28,
         1
       ]
     },
     {
-      "moebel": "st5Birke",
+      "moebel": "st5BirkeKlein",
       "feld": [
         50,
         1
@@ -199,164 +192,241 @@
       ]
     },
     {
-      "moebel": "st5Birke",
+      "moebel": "st5BirkeKlein",
       "feld": [
-        64,
+        7,
         7
       ]
     },
     {
-      "moebel": "felsKlein",
+      "moebel": "st5BirkeKlein",
+      "feld": [
+        13,
+        7
+      ]
+    },
+    {
+      "moebel": "st5BirkeKlein",
+      "feld": [
+        31,
+        7
+      ]
+    },
+    {
+      "moebel": "st5BirkeKlein",
+      "feld": [
+        37,
+        7
+      ]
+    },
+    {
+      "moebel": "st5BirkeKlein",
+      "feld": [
+        46,
+        7
+      ]
+    },
+    {
+      "moebel": "st5BirkeKlein",
+      "feld": [
+        52,
+        7
+      ]
+    },
+    {
+      "moebel": "wg4Busch",
+      "feld": [
+        15,
+        3
+      ]
+    },
+    {
+      "moebel": "wg4Busch",
+      "feld": [
+        34,
+        2
+      ]
+    },
+    {
+      "moebel": "wg4Busch",
+      "feld": [
+        55,
+        3
+      ]
+    },
+    {
+      "moebel": "wg4Busch",
+      "feld": [
+        24,
+        2
+      ]
+    },
+    {
+      "moebel": "wg4BlumeBlau",
+      "feld": [
+        66,
+        3
+      ]
+    },
+    {
+      "moebel": "wg4Gras",
+      "feld": [
+        5,
+        5
+      ]
+    },
+    {
+      "moebel": "wg4Gras",
+      "feld": [
+        60,
+        5
+      ]
+    },
+    {
+      "moebel": "wg4Gras",
+      "feld": [
+        26,
+        5
+      ]
+    },
+    {
+      "moebel": "wg4BlumenWeiss",
+      "feld": [
+        64,
+        3
+      ]
+    },
+    {
+      "moebel": "wg4BlumenWeiss",
+      "feld": [
+        36,
+        5
+      ]
+    },
+    {
+      "moebel": "wg4Gras",
+      "feld": [
+        50,
+        2
+      ]
+    },
+    {
+      "moebel": "wg4BlumeGelb",
+      "feld": [
+        14,
+        2
+      ]
+    },
+    {
+      "moebel": "wg4Gras",
+      "feld": [
+        50,
+        2
+      ]
+    },
+    {
+      "moebel": "wg4BlumenWeiss",
+      "feld": [
+        45,
+        3
+      ]
+    },
+    {
+      "moebel": "wg4BlumenWeiss",
+      "feld": [
+        65,
+        3
+      ]
+    },
+    {
+      "moebel": "wg4BlumeBlau",
+      "feld": [
+        10,
+        2
+      ]
+    },
+    {
+      "moebel": "wg4Gras",
+      "feld": [
+        26,
+        3
+      ]
+    },
+    {
+      "moebel": "wg4Gras",
+      "feld": [
+        58,
+        4
+      ]
+    },
+    {
+      "moebel": "scFelsMittel",
       "feld": [
         3,
         14
       ]
     },
     {
-      "moebel": "felsKlein",
+      "moebel": "scFelsKlein",
       "feld": [
-        4,
-        27
-      ]
-    },
-    {
-      "moebel": "felsKlein",
-      "feld": [
-        15,
+        18,
         14
       ]
     },
     {
-      "moebel": "felsKlein",
-      "feld": [
-        16,
-        28
-      ]
-    },
-    {
-      "moebel": "mf4Fels",
-      "feld": [
-        19,
-        14
-      ]
-    },
-    {
-      "moebel": "felsKlein",
-      "feld": [
-        20,
-        28
-      ]
-    },
-    {
-      "moebel": "mf4Fels",
+      "moebel": "scFelsMittel",
       "feld": [
         23,
         15
       ]
     },
     {
-      "moebel": "mf4Fels",
-      "feld": [
-        24,
-        28
-      ]
-    },
-    {
-      "moebel": "mf4Fels",
-      "feld": [
-        27,
-        16
-      ]
-    },
-    {
-      "moebel": "mf4Fels",
-      "feld": [
-        28,
-        29
-      ]
-    },
-    {
-      "moebel": "mf4Fels",
-      "feld": [
-        31,
-        15
-      ]
-    },
-    {
-      "moebel": "felsKlein",
+      "moebel": "scFelsKlein",
       "feld": [
         32,
-        28
-      ]
-    },
-    {
-      "moebel": "mf4Fels",
-      "feld": [
-        35,
-        14
-      ]
-    },
-    {
-      "moebel": "felsKlein",
-      "feld": [
-        36,
-        28
-      ]
-    },
-    {
-      "moebel": "mf4Fels",
-      "feld": [
-        39,
-        14
-      ]
-    },
-    {
-      "moebel": "felsKlein",
-      "feld": [
-        40,
-        28
-      ]
-    },
-    {
-      "moebel": "felsKlein",
-      "feld": [
-        43,
         15
       ]
     },
     {
-      "moebel": "mf4Fels",
+      "moebel": "scFelsGross",
       "feld": [
-        44,
+        33,
         28
       ]
     },
     {
       "moebel": "scFelsKlein",
       "feld": [
-        47,
+        39,
+        14
+      ]
+    },
+    {
+      "moebel": "scFelsMittel",
+      "feld": [
+        45,
         15
       ]
     },
     {
-      "moebel": "mf4Fels",
+      "moebel": "scFelsKlein",
       "feld": [
-        48,
+        46,
         27
       ]
     },
     {
-      "moebel": "mf4Fels",
+      "moebel": "scFelsMittel",
       "feld": [
-        51,
+        52,
         14
       ]
     },
     {
-      "moebel": "mf4Fels",
+      "moebel": "scFelsGross",
       "feld": [
-        55,
-        14
+        59,
+        29
       ]
     },
     {
@@ -374,7 +444,7 @@
       ]
     },
     {
-      "moebel": "st8GranitquaderStapel",
+      "moebel": "st8Granitquader",
       "feld": [
         19,
         16
@@ -388,7 +458,7 @@
       ]
     },
     {
-      "moebel": "st8Granitquader",
+      "moebel": "st8GranitquaderStapel",
       "feld": [
         22,
         16
@@ -402,7 +472,7 @@
       ]
     },
     {
-      "moebel": "st8GranitquaderStapel",
+      "moebel": "st8Granitquader",
       "feld": [
         25,
         16
@@ -430,16 +500,93 @@
       ]
     },
     {
-      "moebel": "st5Bohlen",
+      "moebel": "st8Granitquader",
+      "feld": [
+        40,
+        16
+      ]
+    },
+    {
+      "moebel": "st8Granitquader",
+      "feld": [
+        40,
+        21
+      ]
+    },
+    {
+      "moebel": "st8Granitquader",
+      "feld": [
+        43,
+        16
+      ]
+    },
+    {
+      "moebel": "st8Granitquader",
+      "feld": [
+        43,
+        21
+      ]
+    },
+    {
+      "moebel": "st8Granitquader",
+      "feld": [
+        46,
+        16
+      ]
+    },
+    {
+      "moebel": "st8Granitquader",
+      "feld": [
+        46,
+        21
+      ]
+    },
+    {
+      "moebel": "cc7Bretterstapel",
       "feld": [
         32,
+        18
+      ]
+    },
+    {
+      "moebel": "st5PfuetzeKlein",
+      "feld": [
+        8,
+        19
+      ]
+    },
+    {
+      "moebel": "st5PfuetzeGross",
+      "feld": [
+        60,
+        20
+      ]
+    },
+    {
+      "moebel": "scFelsGross",
+      "feld": [
+        4,
         17
       ]
     },
     {
-      "moebel": "st5Bohlen",
+      "moebel": "scFelsGross",
       "feld": [
-        33,
+        36,
+        22
+      ]
+    },
+    {
+      "moebel": "scFelsGross",
+      "feld": [
+        52,
+        18
+      ]
+    },
+    {
+      "moebel": "scFelsMittel",
+      "feld": [
+        63,
         17
       ]
     },
@@ -586,13 +733,6 @@
       ]
     },
     {
-      "moebel": "st5Lichtmast",
-      "feld": [
-        58,
-        31
-      ]
-    },
-    {
       "moebel": "st8Granitquader",
       "feld": [
         50,
@@ -607,80 +747,143 @@
       ]
     },
     {
-      "moebel": "st5Schuppen",
+      "moebel": "iw8Blechhuette",
       "feld": [
-        6,
-        31
+        5,
+        30
+      ]
+    },
+    {
+      "moebel": "scFelsGross",
+      "feld": [
+        40,
+        30
+      ]
+    },
+    {
+      "moebel": "scFelsMittel",
+      "feld": [
+        46,
+        34
+      ]
+    },
+    {
+      "moebel": "scFelsMittel",
+      "feld": [
+        8,
+        40
+      ]
+    },
+    {
+      "moebel": "scFelsMittel",
+      "feld": [
+        60,
+        30
+      ]
+    },
+    {
+      "moebel": "st5PfuetzeKlein",
+      "feld": [
+        44,
+        39
       ]
     },
     {
       "moebel": "sd6Schilf",
       "feld": [
-        29,
-        31
-      ]
-    },
-    {
-      "moebel": "sd6Schilf",
-      "feld": [
-        21,
+        34,
         32
       ]
     },
     {
       "moebel": "sd6Schilf",
       "feld": [
-        23,
+        33,
         31
       ]
     },
     {
       "moebel": "sd6Schilf",
       "feld": [
-        15,
+        20,
+        36
+      ]
+    },
+    {
+      "moebel": "sd6Schilf",
+      "feld": [
+        32,
+        30
+      ]
+    },
+    {
+      "moebel": "sd6Schilf",
+      "feld": [
+        25,
+        30
+      ]
+    },
+    {
+      "moebel": "sd6Schilf",
+      "feld": [
+        30,
+        30
+      ]
+    },
+    {
+      "moebel": "sd6Schilf",
+      "feld": [
+        37,
         35
+      ]
+    },
+    {
+      "moebel": "sd6Schilf",
+      "feld": [
+        21,
+        33
       ]
     },
     {
       "moebel": "mf6Seerose1",
       "feld": [
-        26,
-        38
+        25,
+        35
       ]
     },
     {
       "moebel": "mf6Seerose3",
       "feld": [
-        27,
-        37
+        26,
+        36
       ]
     },
     {
       "moebel": "mf6Seerose1",
       "feld": [
-        22,
+        31,
+        36
+      ]
+    },
+    {
+      "moebel": "mf6Seerose2",
+      "feld": [
+        27,
         36
       ]
     },
     {
       "moebel": "mf6Seerose3",
       "feld": [
-        31,
-        39
+        32,
+        37
       ]
     },
     {
       "moebel": "mf6Seerose1",
       "feld": [
         29,
-        41
-      ]
-    },
-    {
-      "moebel": "mf6Seerose3",
-      "feld": [
-        20,
-        40
+        37
       ]
     },
     {
@@ -876,29 +1079,29 @@
       }
     },
     {
-      "name": "hasen",
-      "typ": "tier",
-      "feld": [
-        8,
-        45
-      ],
-      "eigenschaften": {
-        "von": "8,45",
-        "bis": "14,45",
-        "verhalten": "flitzen"
-      }
-    },
-    {
       "name": "falke",
       "typ": "tier",
       "feld": [
-        40,
-        5
+        18,
+        3
       ],
       "eigenschaften": {
-        "von": "40,5",
-        "bis": "56,5",
+        "von": "18,3",
+        "bis": "34,3",
         "verhalten": "fliegen"
+      }
+    },
+    {
+      "name": "kraehen",
+      "typ": "tier",
+      "feld": [
+        60,
+        4
+      ],
+      "eigenschaften": {
+        "von": "60,4",
+        "bis": "60,4",
+        "verhalten": "sitzen"
       }
     },
     {

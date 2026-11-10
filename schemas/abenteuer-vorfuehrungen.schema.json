@@ -29,7 +29,7 @@
           "type": "string"
         },
         "pgn": {
-          "description": "Zugfolge der Partie von der Grundstellung bis mindestens zum Ende der Vorführung, in SAN ohne Kommentare",
+          "description": "Zugfolge der Partie von der Grundstellung bis mindestens zum Ende der Vorführung, in SAN ohne Kommentare. Bei Studien und Partien, von denen nur die Schlussstellung belegt ist, beginnt sie mit [SetUp \"1\"] [FEN \"…\"], und ab ist 0.",
           "type": "string"
         },
         "ab": {

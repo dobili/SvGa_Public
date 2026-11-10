@@ -11,7 +11,7 @@
  "tilewidth": 16,
  "tileheight": 16,
  "nextlayerid": 5,
- "nextobjectid": 14,
+ "nextobjectid": 13,
  "layers": [
   {
    "id": 1,
@@ -335,7 +335,7 @@
      "id": 3,
      "name": "fahrrad",
      "type": "ausloeser",
-     "x": 80,
+     "x": 64,
      "y": 80,
      "width": 16,
      "height": 16,
@@ -395,11 +395,11 @@
     },
     {
      "id": 6,
-     "name": "rv5Leiter",
+     "name": "rv5Werkbank",
      "type": "moebel",
-     "x": 48,
+     "x": 64,
      "y": 16,
-     "width": 16,
+     "width": 48,
      "height": 48,
      "rotation": 0,
      "visible": true,
@@ -418,11 +418,11 @@
     },
     {
      "id": 7,
-     "name": "rv5Werkbank",
+     "name": "rv5Bretterstapel",
      "type": "moebel",
-     "x": 96,
+     "x": 112,
      "y": 16,
-     "width": 48,
+     "width": 32,
      "height": 48,
      "rotation": 0,
      "visible": true,
@@ -443,8 +443,8 @@
      "id": 8,
      "name": "rv5FahrradPlane",
      "type": "moebel",
-     "x": 64,
-     "y": 48,
+     "x": 32,
+     "y": 64,
      "width": 32,
      "height": 32,
      "rotation": 0,
@@ -453,7 +453,7 @@
       {
        "name": "tiefe",
        "type": "int",
-       "value": 72
+       "value": 88
       },
       {
        "name": "kollision",
@@ -464,12 +464,12 @@
     },
     {
      "id": 9,
-     "name": "rv5ReifenLiegend",
+     "name": "rv5Holzscheite",
      "type": "moebel",
-     "x": 16,
-     "y": 80,
-     "width": 16,
-     "height": 16,
+     "x": 112,
+     "y": 64,
+     "width": 32,
+     "height": 32,
      "rotation": 0,
      "visible": true,
      "properties": [
@@ -487,7 +487,30 @@
     },
     {
      "id": 10,
-     "name": "rv5ReifenStehend",
+     "name": "rv5Kanister",
+     "type": "moebel",
+     "x": 96,
+     "y": 64,
+     "width": 16,
+     "height": 32,
+     "rotation": 0,
+     "visible": true,
+     "properties": [
+      {
+       "name": "tiefe",
+       "type": "int",
+       "value": 88
+      },
+      {
+       "name": "kollision",
+       "type": "bool",
+       "value": true
+      }
+     ]
+    },
+    {
+     "id": 11,
+     "name": "rv5ReifenLiegend",
      "type": "moebel",
      "x": 16,
      "y": 96,
@@ -509,53 +532,7 @@
      ]
     },
     {
-     "id": 11,
-     "name": "rv5Kanister",
-     "type": "moebel",
-     "x": 128,
-     "y": 64,
-     "width": 16,
-     "height": 32,
-     "rotation": 0,
-     "visible": true,
-     "properties": [
-      {
-       "name": "tiefe",
-       "type": "int",
-       "value": 88
-      },
-      {
-       "name": "kollision",
-       "type": "bool",
-       "value": true
-      }
-     ]
-    },
-    {
      "id": 12,
-     "name": "rv5Saegebock",
-     "type": "moebel",
-     "x": 96,
-     "y": 80,
-     "width": 32,
-     "height": 32,
-     "rotation": 0,
-     "visible": true,
-     "properties": [
-      {
-       "name": "tiefe",
-       "type": "int",
-       "value": 104
-      },
-      {
-       "name": "kollision",
-       "type": "bool",
-       "value": true
-      }
-     ]
-    },
-    {
-     "id": 13,
      "name": "rv5TuerSuedHolz",
      "type": "moebel",
      "x": 80,

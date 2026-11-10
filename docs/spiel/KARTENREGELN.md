@@ -213,8 +213,9 @@ Regeln:
    Ansehen oder Mitnehmen (Fund, Statist, Tier, Schild, Aussicht); auf einem Weg dazu zwei bis vier
    Stationen nach W4 (Tafel, Gegner, Figur mit Weisheit, Fund). **[auto]** Abstand zwischen
    Auslösern, Figuren und Belebung höchstens etwa 15 Kacheln entlang des Hauptwegs.
-5. **Innenräume** bleiben klein: Wohnräume passen auf einen Bildschirm; was mehr Platz braucht,
-   bekommt Räume hinter Türen oder Etagen statt einer größeren Karte.
+5. **Innenräume:** aufgehoben durch 10.56 (Wunsch des Autors, 10.11.2026). Bisher hieß es:
+   „Wohnräume passen auf einen Bildschirm; was mehr Platz braucht, bekommt Räume hinter Türen oder
+   Etagen statt einer größeren Karte.“
 6. **Städte** sind kompakt: Alles Wichtige eines kleinen Ortes ist in 10 Sekunden zu Fuß erreichbar,
    in einer großen Stadt in 20. Größere Städte bekommen Viertel als eigene Außenkarten statt einer
    Riesenkarte.
@@ -781,3 +782,46 @@ auf jeder soll etwas passieren, das man entdecken kann. Die Geschichten dazu ste
     darf überall sein; `schwimmen` steht im Wasser `~` (die App und die Vorschau zeigen Schwimmer
     nur bis zur Wasserlinie); Statisten dürfen auf Bänken, Stühlen, Sesseln und Bühnen stehen. Ein
     Angler steht auf dem letzten Feld des Stegs, nicht davor. Der Kartenbauer meldet Verstöße.
+
+56. **Innenräume haben die Größe, die ihr Gebäude nahelegt** (Wunsch des Autors, 10.11.2026). Das
+    ersetzt „Räume auf etwa einem Bildschirm“ in 7a.2 und 7b.5. Die Tabelle in 7a gilt nur noch als
+    Untergrenze.
+    - Ein Raum ist so groß, wie das Gebäude von außen und sein Zweck es verlangen. Gasthaus mit
+      Kegelbahn, Bahnhofshalle, Kantine sind breiter als ein Bildschirm; die App scrollt mit dem
+      Helden wie draußen.
+    - Was zusammen benutzt wird, hat Platz und steht nicht im Weg: Kegelbahn getrennt von der Theke,
+      Barhocker am Tresen, Wasserspender neben den Sitzreihen.
+    - Wohnwagen, Hütten und Abteile sind eng, haben aber ihren echten Grundriss (Wohnwagen:
+      Mini-Bad, Kochnische, Bett, Schränke, Tisch).
+    - Räume sind abwechslungsreich in Größe und Form.
+57. **Kanäle sind gebaut, Flüsse gewachsen** (zu 23).
+    - Ein gerader Kanal hat ein befestigtes Ufer aus Stein oder Spundwand, wie in Lockport.
+    - Ein Kanal mit Schleuse ist breit genug für Frachtkähne. Die Schleusenkammer fasst ein Boot
+      der Größe, die im Ort festmacht.
+    - Ruderboote passen zu kleinen Flüssen. Kein Boot verstopft das Wasser (zu 24).
+    - Wo ein Weg auf beiden Seiten des Wassers liegt, gibt es eine Brücke.
+58. **Jede Tür hat einen Weg**, auch bei Kulissen ohne Innenraum (Pfad, Pflaster oder Trampelpfad
+    zum nächsten Weg). Kein Schild, kein Möbel verdeckt eine Tür.
+59. **Stände tragen Waren.** Marktstände, Limostände, Kioske haben Waren. An einem geöffneten Stand
+    steht ein Statist.
+60. **Nur Bilder in unserer Ansicht** (schräg von oben). Fassaden in reiner Frontansicht ohne Dach
+    und Tiefe (Industriehallen, Lok auf Sockel, Bäckerei) und Bilder mit falschem Schatten werden
+    durch passende ersetzt oder selbst gezeichnet.
+61. **Jedes auffällige Objekt hat einen Grund.** Graffiti-Mauer, Silo, Mast, Spieltische auf der
+    Wiese, Zickzackweg mit Zaun, Kapelle:
+    - Das Ortsdokument nennt den Grund in der Welt oder in der Geschichte.
+    - Der Grund ist auf der Karte erkennbar: Sprayer vor der legalen Wand, Felder am Silo, Blühwiese
+      oder Koppel hinter dem Zaun, Friedhof an der Kapelle.
+    - Ohne Grund kommt das Objekt weg.
+    - Kreidezeichen stehen auf Stein oder Holz, nicht im Gras. Schilder hängen an Pfosten oder
+      Geländern, nicht lose am Boden.
+62. **Gleise führen irgendwohin.** Ein Gleisende hat einen Prellbock quer zum Gleis. Übergänge und
+    Bahnsteige sind an das Gleis angeschlossen, nicht darübergelegt. Ein Bahndamm ist durchgehend;
+    eine Haltestelle liegt oben auf dem Damm, mit Treppe hinunter.
+63. **Zustände einer Karte** (Wunsch des Autors, 10.11.2026).
+    - Ändert sich in der Geschichte etwas Festes auf einer Karte (Absperrung, Bus, Gerüst, Schild,
+      Stand), bekommt die Karte je Zustand eine eigene Szene `<basis>-<zustand>.json`. In
+      `orte.json` steht sie unter `zustaende`.
+    - Figuren und Tiere zählen nicht als Zustand.
+    - Die `beschreibung` der Zustandsszene beginnt mit dem Satz „Zustand: wann in der Geschichte,
+      was sich ändert, warum“.

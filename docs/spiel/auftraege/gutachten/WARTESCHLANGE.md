@@ -99,6 +99,8 @@ Szene heißt die Datei in `inhalte/abenteuer/szenen/` ohne `.json`.
 - [x] Gemini-Bilder eingebaut (mittel-3; Datei `mittel-3-gemini-sichtpruefung.md`, silicon-bay-aussen ungeprüft): Roboter in silicon-bay-altstadt, -akademie, -aussen; Reh in weg-crossroads-pinewood-huetten, -riesenbaeume; Sturmkeller in weg-summit-crossroads-praerie (kurze Sichtprüfung)
 
 - [ ] Gemini-Bilder in den Karten von niedrig-1 (Reh/Hirsch, Häuser und Bänke von hinten, Holzbrücke, London-Fronten, Postreiter, Ofen): maple-falls-aussen, maple-falls-park, cedar-creek-aussen, weg-cedar-riverton-bahndamm, -zedernwald, weg-maple-cedar-zedernpfad, -landstrasse, erinnerung-london-strand, erinnerung-siedlung-huette, lockport-gasthaus (Liste in cedar-creek.md „Gemini-Bilder eingebaut“; Figurenbogen postreiter und Tierbögen reh/hirsch erst bauen)
+- [ ] silicon-bay-aussen (Campus, erste Prüfung, mittel-3; mit Lieferroboter) und silicon-bay-hafen (alter Hafen, erste Prüfung, mittel-3)
+- [ ] silicon-bay-lobby, silicon-bay-serverraum (erste Prüfung, niedrig-1)
 
 ## Erledigt
 

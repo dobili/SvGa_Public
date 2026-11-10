@@ -17,7 +17,7 @@ describe("tierartVon", () => {
     expect(tierartVon("wapiti")).toBe("hirsch");
     expect(tierartVon("moewen")).toBe("moewe");
     expect(tierartVon("specht")).toBe("kraehe");
-    expect(tierartVon("wuestenfuchs")).toBe("hund");
+    expect(tierartVon("wuestenfuchs")).toBe("fuchs");
     expect(tierartVon("praeriehunde")).toBe("hase");
     expect(tierartVon("schwan")).toBe("gans");
     expect(tierartVon("bisonherde")).toBe("bison");

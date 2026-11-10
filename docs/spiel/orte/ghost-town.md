@@ -359,3 +359,13 @@ Gutachten `docs/spiel/auftraege/gutachten/ghost-town.md`.
     Prellbock (`lore_vorn.png`, Regel 10.65).
   - Holz und Fässer sind auf je vier und drei begrenzt, dazu kommen Türstöcke und Grubenlampen.
   - Das moderne Verbotsschild ist weg.
+
+## Gemini Teil 2: Planwagen und Pferd (niedrig-1, 10.11.2026)
+
+- Ein heiler Planwagen steht von vorn neben dem Mietstall (28, 26), Deichsel zur Straße
+  (`gt12PlanwagenVorn`, Bild `planwagen_vorn.png`; `gt12PlanwagenHinten` liegt für später bereit).
+  Der Saguaro an dieser Stelle ist weg, ein blühender Kaktus rückt nach Süden.
+- Vor dem Hotel grast ein Pferd bei der Tränke (Belebung `pferdAmStall`, 15–17 / 25). Die Art
+  `pferd` steht neu in `tierarten.json` (Gemini-Bilder `pferd_braun_*`), ebenso `fuchs` und
+  `schimmel`; die Bögen baut der Haupt-Chat.
+- Der umgekippte Planwagen am Friedhofsweg bleibt.

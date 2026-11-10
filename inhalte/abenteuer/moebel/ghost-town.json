@@ -568,14 +568,8 @@
       "art": "haus",
       "blick": "unten",
       "tuer": [
-        [
-          4,
-          9
-        ],
-        [
-          5,
-          9
-        ]
+        [4, 9],
+        [5, 9]
       ]
     },
     "gt7FassadeLaden": {
@@ -626,14 +620,8 @@
       "stil": "rustikal",
       "zustand": "verwittert",
       "tuer": [
-        [
-          1,
-          4
-        ],
-        [
-          2,
-          4
-        ]
+        [1, 4],
+        [2, 4]
       ]
     },
     "gt7Lore": {
@@ -833,6 +821,26 @@
       "kollision": true,
       "art": "geraet",
       "zustand": "alt",
+      "stil": "rustikal"
+    },
+    "gt12PlanwagenHinten": {
+      "quelle": "spiel/eigene/planwagen_hinten.png",
+      "breite": 48,
+      "hoehe": 93,
+      "kollision": true,
+      "art": "fahrzeug",
+      "blick": "oben",
+      "zustand": "gebraucht",
+      "stil": "rustikal"
+    },
+    "gt12PlanwagenVorn": {
+      "quelle": "spiel/eigene/planwagen_vorn.png",
+      "breite": 48,
+      "hoehe": 118,
+      "kollision": true,
+      "art": "fahrzeug",
+      "blick": "unten",
+      "zustand": "gebraucht",
       "stil": "rustikal"
     }
   }

@@ -392,7 +392,7 @@
     },
     {
       "moebel": "gt7KaktusBluete",
-      "feld": [28, 32]
+      "feld": [29, 36]
     },
     {
       "moebel": "gt7Stein",
@@ -453,10 +453,6 @@
     {
       "moebel": "gt7Felsgruppe",
       "feld": [11, 35]
-    },
-    {
-      "moebel": "gt7Saguaro",
-      "feld": [28, 28]
     },
     {
       "moebel": "gt7KaktusBluete",
@@ -581,6 +577,10 @@
     {
       "moebel": "gt7KaktusBluete",
       "feld": [36, 37]
+    },
+    {
+      "moebel": "gt12PlanwagenVorn",
+      "feld": [28, 26]
     }
   ],
   "ausloeser": [
@@ -818,6 +818,16 @@
         "verhalten": "folgen",
         "von": "36,23",
         "bis": "40,23"
+      }
+    },
+    {
+      "name": "pferdAmStall",
+      "typ": "tier",
+      "feld": [16, 25],
+      "eigenschaften": {
+        "von": "15,25",
+        "bis": "17,25",
+        "verhalten": "grasen"
       }
     }
   ]

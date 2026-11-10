@@ -25,8 +25,8 @@ Szene heißt die Datei in `inhalte/abenteuer/szenen/` ohne `.json`.
 - [x] ironwood-museum (Runde 8, mittel-4)
 - [x] ironwood-umkleide (Runde 8, mittel-4)
 - [x] ironwood-mamas-zimmer (Runde 8, mittel-4)
-- [ ] steinbruch-grube (zweite Prüfung, Runde 8, mittel-4)
-- [ ] steinbruch-stollen (Runde 8, mittel-4)
+- [x] steinbruch-grube (zweite Prüfung, Runde 8, mittel-4)
+- [x] steinbruch-stollen (Runde 8, mittel-4)
 - [ ] silicon-bay-akademie (neu gebaut, Runde 8, mittel-3)
 - [ ] silicon-bay-altstadt (Runde 8, mittel-3)
 

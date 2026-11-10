@@ -1027,7 +1027,8 @@
       "art": "gebaeude",
       "blick": "unten",
       "zustand": "alt",
-      "stil": "klassisch"
+      "stil": "klassisch",
+      "frei_unten": 1
     },
     "cc5Planke": {
       "quelle": "modern-exteriors/Modern_Exteriors_16x16/ME_Theme_Sorter_16x16/11_Camping_Singles_16x16/ME_Singles_Camping_16x16_Pier_12.png",

@@ -311,6 +311,26 @@ frei begehbar; die Auslöser kommen mit den Dialogen.
   Grasrand.
 - Offen: Möwe statt Reiher (6, Gemini-Prompt 14), Vogelschild (4, Story-Gegenstand).
 
+**Weg 5, Gutachten Runde 9 (`gutachten/weg-silicon-delacroix.md`, mittel-1):**
+
+- **Fähre (2, 3):** Das Vorderdeck hat zwei weitere Liegestühle, Koffer, zwei Münzferngläser an der
+  Reling, eine Kiste am Bug und zwei Rettungsringe mehr. Das Kapitänsbrett steht auf einem runden
+  Tisch, nicht auf den Planken.
+- **Deich, Böschung (4):** Die Böschung ist ein Hang aus strohfarbenem Wintergras statt einer
+  Felswand. Dafür gibt es neu `"fels": "gras"` (`pipeline/abenteuer/klippe.py`, Bogen
+  `klippeGras`, Bildwunsch `klippe_gras.py`). Grün wäre im Winter weiß gefärbt worden und der
+  Hang verschwunden.
+- **Deich, Marsch (6):** Die Karte ist jetzt Winter wie Port Delacroix dahinter, die Blumen sind
+  weg.
+- **Deich, Steg (1):** Die Beschreibung nennt jetzt ein Fischerboot und ein Ruderboot am Steg. Eine
+  Fähre nach 10.64 (16–20 × 6) passt nicht in die sechs Reihen Wasser.
+- **Deich, Bojen (2):** Sie liegen unregelmäßig.
+- **Deich, Messwagen (7):** Er steht auf Pflaster.
+- **Deich, Häuser (10):** Die zwei Spielzeughäuser sind verwitterte Bretterhütten (5 × 5, 10.66).
+- Offen: Proportion der Fähre (1), Wasser ohne Wellen (9), Steinufer als Linie (3), orange
+  Platzhalter an den Kantenenden (5, mittel-4 zentral), Pumpenhalle als Scheune (8), Bauzaun (9),
+  Wegdiagonale und Krone (11, 12).
+
 ## 4. Bühnenbilder
 
 ### 4.1 Fährdeck

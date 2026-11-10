@@ -327,6 +327,14 @@ Gutachten `docs/spiel/auftraege/gutachten/capital-arena-bayou.md`.
   links und rechts der Bühne an der Nordwand, Turniertafel an der Nordwand.
 - **U-Bahnhof (1, 4):** Das Rollgitter hängt sichtbar über dem Ausgang (`vorn`). An den
   Klapptischen sitzen drei Blitzspieler auf den Hockern.
+- **Seeufer (Weg 11):** Die Fähre ist eine große weiße Seefähre, 20 × 6 Kacheln (Regel 10.64,
+  Bildwunsch `weg11_bilder.py`). Sie liegt längsseits an einem Stegkopf, der genauso lang ist
+  (60–79, 7–8). In der Mitte liegt der Weg auf dem Strand, nicht als zweiter Erdweg daneben.
+  Absperrbock und Wachmann stehen am Weg (3–5, 14). Die Imbisswagen stehen auf einem
+  Plattenplatz, Verkäufer davor. An den Schachtischen stehen Hocker, zwei Spieler sitzen.
+- **Leuchtturm (Weg 11):** Die alte Linse ist eine Fresnel-Linse aus Glasringen im
+  Messinggestell auf einer Palette (`weg11_bilder.py`). Offen: Landzunge (1, die Karte endet
+  oben), Bank mit Blick auf den See (4), Wohnmobil ohne Zufahrt (5), Wegstufen (6).
 - Offen: schmale graue Häuser (außen 5), Allee in drei Stücken (Innenstadt 3), Stühle neben den
   Tischen in der Halle (2, 3), Treppe gestreift und Kreidespringer blass (U-Bahnhof 2, 3).
 

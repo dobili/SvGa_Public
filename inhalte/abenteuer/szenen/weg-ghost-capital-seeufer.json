@@ -10,9 +10,10 @@
   "boeden": {
     "e": "erde",
     "a": "strand",
-    "h": "wasser"
+    "h": "wasser",
+    "q": "platten"
   },
-  "beschreibung": "Weg 11, erste Karte: das Südufer eines großen Sees an einem Sommerabend (Szene 102). Im Norden reicht der See bis zum Kartenrand, davor ein heller Sandstrand mit blau-weißen Sonnenschirmen, Handtüchern, Treibholz und einem Kind mit Drachen. Am Westrand kommt der Erdweg aus Ghost Town an; gleich daneben steht der Wachmann von Perfect Move mit seiner Liste, sein Absperrbock „Gesperrt“ steht neben ihm am Wegrand. Der Weg läuft in Bögen nach Osten; auf einer runden Strandzunge steht das hölzerne Fährhaus mit Schalter und Uhr im Giebel, daneben führt ein Holzsteg hinaus; an seinem Kopf liegt die weiße Fähre längsseits, ein Rettungsring und Kisten liegen am Steg. Weiter östlich die Rätseltafel mit Dach und ein Mülleimer, Bänke am Weg. Im Süden schließt ein Kiefernwald mit unregelmäßigem Rand ab, mit einem Picknicktisch auf einer Lichtung und einer Bank.",
+  "beschreibung": "Weg 11, erste Karte: das Südufer eines großen Sees an einem Sommerabend (Szene 102). Im Norden reicht der See bis zum Kartenrand, davor ein heller Sandstrand mit blau-weißen Sonnenschirmen, Handtüchern, Treibholz und einem Kind mit Drachen. Am Westrand kommt der Erdweg aus Ghost Town an; gleich daneben steht der Wachmann von Perfect Move mit seiner Liste, sein Absperrbock „Gesperrt“ steht neben ihm am Rand des Wegs. Der Weg läuft in Bögen nach Osten; auf einer runden Strandzunge steht das hölzerne Fährhaus mit Schalter und Uhr im Giebel, daneben führt ein Holzsteg hinaus; an seinem langen Kopf liegt die große weiße Fähre längsseits, ein Rettungsring und Kisten liegen am Steg. Weiter östlich die Rätseltafel mit Dach und ein Mülleimer, Bänke am Weg. Im Süden schließt ein Kiefernwald mit unregelmäßigem Rand ab, mit einem Picknicktisch auf einer Lichtung und einer Bank.",
   "raster": [
     "~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~",
     "~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~",
@@ -21,15 +22,15 @@
     "~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~aaaaaaaaa~~~hh~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~",
     "~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~aaaaaaaaaaa~~hh~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~",
     "~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~aaaaaaaaaaaaa~hh~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~",
-    "~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~aaaaaaaaaaaaa~hhhhhhhhhhhh~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~",
-    "~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~aaaaaaaaaaaaa~hhhhhhhhhhhh~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~",
+    "~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~aaaaaaaaaaaaa~hhhhhhhhhhhhhhhhhhhhhh~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~",
+    "~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~aaaaaaaaaaaaa~hhhhhhhhhhhhhhhhhhhhhh~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~",
     "#aaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaa#",
     "#aaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaa#",
     "#aaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaa#",
-    "#.................................eeeeeeeeeeeeeeeeeeeeeeeeeeeeeeeeeeeeeeeeeeeeeeeeeeee...............................................................#",
-    "#.................................eeeeeeeeeeeeeeeeeeeeeeeeeeeeeeeeeeeeeeeeeeeeeeeeeeee...............................................................#",
-    "eeeeeeeeeeeeeeeeeeeeeeeeeeeeeeeeeeee................................................ee....................................eeeeeeeeeeeeeeee...........#",
-    "eeeeeeeeeeeeeeeeeeeeeeeeeeeeeeeeeeee................................................ee....................................eeeeeeeeeeeeeeee...........#",
+    "#.................................aaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaee.............qqqqqqqqqqqqqqqqqqq...............................#",
+    "#.................................aaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaee.............qqqqqqqqqqqqqqqqqqq...............................#",
+    "eeeeeeeeeeeeeeeeeeeeeeeeeeeeeeeeeeee................................................ee.............qqqqqqqqqqqqqqqqqqq....eeeeeeeeeeeeeeee...........#",
+    "eeeeeeeeeeeeeeeeeeeeeeeeeeeeeeeeeeee................................................ee.............qqqqqqqqqqqqqqqqqqq....eeeeeeeeeeeeeeee...........#",
     "#...................................................................................eeeeeeeeeeeeeeeeeeeeeeeeeeeeeeeeeeeeeeee............eeeeeeeeeeeeee",
     "#...................................................................................eeeeeeeeeeeeeeeeeeeeeeeeeeeeeeeeeeeeeeee............eeeeeeeeeeeeee",
     "#....................................................................................................................................................#",
@@ -54,11 +55,13 @@
       ]
     },
     {
-      "moebel": "gc7Faehre",
+      "moebel": "gc10Seefaehre",
       "feld": [
         60,
-        3
-      ]
+        1
+      ],
+      "vorn": true,
+      "bauteil_ok": true
     },
     {
       "moebel": "gc9Faehrhaus",
@@ -77,8 +80,8 @@
     {
       "moebel": "gc7Absperrbock",
       "feld": [
-        2,
-        12
+        3,
+        14
       ]
     },
     {
@@ -865,6 +868,55 @@
         144,
         22
       ]
+    },
+    {
+      "moebel": "gc9StegQuer7",
+      "feld": [
+        70,
+        7
+      ]
+    },
+    {
+      "moebel": "gc9StegQuer3",
+      "feld": [
+        77,
+        7
+      ]
+    },
+    {
+      "moebel": "gc10Hocker",
+      "feld": [
+        122,
+        14
+      ]
+    },
+    {
+      "moebel": "gc10Hocker",
+      "feld": [
+        125,
+        14
+      ]
+    },
+    {
+      "moebel": "gc10Hocker",
+      "feld": [
+        128,
+        14
+      ]
+    },
+    {
+      "moebel": "gc10Hocker",
+      "feld": [
+        131,
+        14
+      ]
+    },
+    {
+      "moebel": "gc10Hocker",
+      "feld": [
+        134,
+        14
+      ]
     }
   ],
   "ausloeser": [
@@ -949,12 +1001,12 @@
       "name": "wachmann",
       "typ": "statist",
       "feld": [
-        4,
-        13
+        5,
+        14
       ],
       "eigenschaften": {
-        "von": "4,13",
-        "bis": "4,13",
+        "von": "5,14",
+        "bis": "5,14",
         "tun": "prüft eine Liste: Nur für Gemeldete",
         "wann": "tag",
         "sagt": "statist.wegGhostCapital.seeufer.wachmann"
@@ -1094,6 +1146,70 @@
         "von": "124,3",
         "bis": "136,4",
         "verhalten": "schwimmen"
+      }
+    },
+    {
+      "name": "eisverkaeufer",
+      "typ": "statist",
+      "feld": [
+        103,
+        16
+      ],
+      "eigenschaften": {
+        "von": "103,16",
+        "bis": "103,16",
+        "tun": "verkauft Eis aus dem Wagen",
+        "wann": "tag",
+        "bild": "statist-05",
+        "verhalten": "sitzen"
+      }
+    },
+    {
+      "name": "tacokoechin",
+      "typ": "statist",
+      "feld": [
+        113,
+        16
+      ],
+      "eigenschaften": {
+        "von": "113,16",
+        "bis": "113,16",
+        "tun": "reicht Tacos aus dem Fenster",
+        "wann": "tag",
+        "bild": "statist-16",
+        "verhalten": "sitzen"
+      }
+    },
+    {
+      "name": "schachspielerin",
+      "typ": "statist",
+      "feld": [
+        122,
+        14
+      ],
+      "eigenschaften": {
+        "von": "122,14",
+        "bis": "122,14",
+        "tun": "sitzt am Klapptisch und spielt Blitz",
+        "wann": "tag",
+        "bild": "statist-11",
+        "verhalten": "sitzen"
+      }
+    },
+    {
+      "name": "schachspieler",
+      "typ": "statist",
+      "feld": [
+        128,
+        14
+      ],
+      "eigenschaften": {
+        "von": "128,14",
+        "bis": "128,14",
+        "tun": "sitzt am Klapptisch und grübelt",
+        "wann": "tag",
+        "bild": "statist-13",
+        "verhalten": "sitzen"
       }
     }
   ],

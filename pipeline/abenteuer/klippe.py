@@ -24,6 +24,8 @@ from pathlib import Path
 
 # Rot umgefärbte Erdklippe (Bogen „klippeRot“ in materialien.json), gleiche Kachellage.
 ROTE_KLIPPE = "spiel/eigene/klippe_rot.png"
+# Grün umgefärbte Erdklippe für Deiche (Bogen „klippeGras“, Bildwunsch klippe_gras.py, mittel-1).
+GRAS_KLIPPE = "spiel/eigene/klippe_gras.png"
 # Geländebogen (materialien.json „gelaende“): Spalte je Variante für links, Mitte, rechts.
 SPALTEN = {"gras": (8, 9, 10), "erde": (14, 15, 16)}
 REIHE_RAND, REIHE_KANTE, REIHE_WAND, REIHE_FUSS, REIHE_OBEN = 42, 44, 45, 46, 43
@@ -176,7 +178,8 @@ def grasboden(szene: dict) -> set[str]:
 
 
 def klippenbogen(szene: dict, privat: Path) -> str:
-    """Bogen der Klippenkacheln: „klippeRot“ für roten Fels (Szene „fels“: „rot“), sonst „gelaende“.
+    """Bogen der Klippenkacheln: „klippeRot“ für roten Fels (Szene „fels“: „rot“), „klippeGras“ für
+    einen Grashang (Szene „fels“: „gras“, Deich), sonst „gelaende“.
 
     Warum: Canyon, Sternwarte und Wüste liegen auf rotem Sandstein; ``klippe_rot.png`` (Bildwunsch
     ``docs/spiel/auftraege/bildwuensche/klippe_rot.py``) hat die Erdklippe an derselben Kachellage rot
@@ -184,6 +187,8 @@ def klippenbogen(szene: dict, privat: Path) -> str:
     """
     if szene.get("fels") == "rot" and (privat / ROTE_KLIPPE).exists():
         return "klippeRot"
+    if szene.get("fels") == "gras" and (privat / GRAS_KLIPPE).exists():
+        return "klippeGras"
     return "gelaende"
 
 

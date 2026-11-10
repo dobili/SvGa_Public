@@ -6,6 +6,7 @@ Rampen. Die Tests prüfen die Kachelwahl ohne Bilder; ohne den Schlüssel bleibt
 """
 
 from pipeline.abenteuer.klippe import (
+    GRAS_KLIPPE,
     REIHE_FUSS,
     REIHE_KANTE,
     REIHE_OBEN,
@@ -93,6 +94,15 @@ def test_roter_fels_nimmt_die_rote_klippe_nur_wenn_das_bild_da_ist(tmp_path):
     (tmp_path / ROTE_KLIPPE).write_bytes(b"")
     assert klippenbogen(szene, tmp_path) == "klippeRot"
     assert klippenbogen({"kante": "klippe"}, tmp_path) == "gelaende"
+
+
+def test_deich_nimmt_den_grashang_nur_wenn_das_bild_da_ist(tmp_path):
+    """Regel: Runde 9, Deich mit grünem Hang statt Felswand (Gutachten weg-silicon-delacroix)."""
+    szene = {"kante": "klippe", "fels": "gras"}
+    assert klippenbogen(szene, tmp_path) == "gelaende"
+    (tmp_path / GRAS_KLIPPE).parent.mkdir(parents=True)
+    (tmp_path / GRAS_KLIPPE).write_bytes(b"")
+    assert klippenbogen(szene, tmp_path) == "klippeGras"
 
 
 def test_kartenrand_neben_boden_ist_kein_fels():

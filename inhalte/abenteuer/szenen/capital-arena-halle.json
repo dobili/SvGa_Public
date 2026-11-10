@@ -464,6 +464,13 @@
         16
       ],
       "auf_moebel": true
+    },
+    {
+      "name": "banner",
+      "feld": [
+        12,
+        3
+      ]
     }
   ],
   "figuren": [

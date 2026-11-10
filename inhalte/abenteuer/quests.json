@@ -2524,6 +2524,57 @@
           ]
         }
       ]
+    },
+    {
+      "kennung": "capitalArena.kreidenacht",
+      "titel": "quest.kreidenacht.titel",
+      "typ": "hilfe",
+      "ort": "capitalArena",
+      "haupt": false,
+      "klein": true,
+      "start": {
+        "art": "dialog",
+        "knoten": "capital-arena-ubahnhof.mo_erstes"
+      },
+      "schritte": [
+        {
+          "text": "quest.kreidenacht.schritt1",
+          "ereignis": {
+            "art": "partie",
+            "begegnung": "capitalArena.kreidenacht1",
+            "ausgang": ["sieg", "remis", "niederlage"]
+          }
+        },
+        {
+          "text": "quest.kreidenacht.schritt2",
+          "ereignis": {
+            "art": "partie",
+            "begegnung": "capitalArena.kreidenacht2",
+            "ausgang": ["sieg", "remis", "niederlage"]
+          }
+        },
+        {
+          "text": "quest.kreidenacht.schritt3",
+          "ereignis": {
+            "art": "partie",
+            "begegnung": "capitalArena.kreidenacht3",
+            "ausgang": ["sieg", "remis", "niederlage"]
+          }
+        },
+        {
+          "text": "quest.kreidenacht.schritt4",
+          "ereignis": {
+            "art": "dialog",
+            "knoten": "capital-arena-ubahnhof.mo_victor"
+          },
+          "wirkungen": [
+            {
+              "art": "muenzen",
+              "anzahl": 30
+            }
+          ]
+        }
+      ]
     }
   ]
 }

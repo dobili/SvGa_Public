@@ -669,10 +669,17 @@
       ]
     },
     {
+      "name": "faehrterminal",
+      "feld": [
+        88,
+        12
+      ]
+    },
+    {
       "name": "seite12",
       "feld": [
-        59,
-        10
+        99,
+        8
       ]
     }
   ],

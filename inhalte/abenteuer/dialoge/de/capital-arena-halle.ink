@@ -31,6 +31,7 @@ VAR vorrundeGeschafft = false
 VAR aussageGesehen = false
 VAR vorDemFinaleGesehen = false
 VAR finaleBesprochen = false
+VAR angesehenBanner = false
 
 === function punkt(ausgang) ===
 {
@@ -339,4 +340,15 @@ Auf den Tribünen jubeln alle Städte zugleich. Draußen auf der Treppe ist es r
 === fanshop ===
 Am Fanshop gibt es Schals und Anstecker der Meisterschaft. #sprecher:erzaehler
 ~ oeffneLaden("capitalArena.fanshop")
+-> END
+
+// ---------------------------------------------------------------- Ansehen (Runde 6)
+
+=== banner ===
+{angesehenBanner:
+    „Landesmeisterschaft“. Darunter hat jemand mit Bleistift einen kleinen Springer gemalt. #sprecher:erzaehler
+    -> END
+}
+~ angesehenBanner = true
+Über den Tribünen hängt ein langes Banner: „Landesmeisterschaft“. An einer Ecke hat sich die Naht gelöst und flattert. #sprecher:erzaehler
 -> END

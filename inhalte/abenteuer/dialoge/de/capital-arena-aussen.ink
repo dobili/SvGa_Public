@@ -27,6 +27,7 @@ VAR arenaGesehen = false
 VAR ausgangCapitalArenaFinale = ""
 VAR abschiedGesehen = false
 VAR novaHilfeZugesagt = false
+VAR angesehenFahnen = false
 
 === function ligapunkte() ===
 ~ return nadelMapleFalls + nadelCedarCreek + nadelRiverton + nadelIronwood + nadelSiliconBay + nadelPortDelacroix + nadelDesertSprings + nadelSummitCity
@@ -130,4 +131,15 @@ Menschen, die kämpfen, Fehler machen und wachsen. Du hast mir das gezeigt. #spr
     Nein. Dieses eine Mal nicht später. #sprecher:ambrose #stimmung:lacht
 - Das Brett wird still. Die Figuren stehen in der Schlussstellung der Fernpartie. #sprecher:erzaehler #pause
 ~ zeigeAbspann()
+-> END
+
+// ---------------------------------------------------------------- Ansehen (Runde 6)
+
+=== fahnen ===
+{angesehenFahnen:
+    Die Fahnen knattern im Wind. Auf jeder ein König, schwarz auf weiß. #sprecher:erzaehler
+    -> END
+}
+~ angesehenFahnen = true
+Zwei Fahnen vor der Freitreppe, darauf ein König und die Jahreszahl der ersten Landesmeisterschaft. Der Mast ist frisch gestrichen. #sprecher:erzaehler
 -> END

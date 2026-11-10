@@ -428,6 +428,15 @@
       "buchuebungen": [],
       "themen": ["matt2"],
       "anzahl": 1
+    },
+    {
+      "kennung": "capitalArena.kreideraetsel",
+      "ort": "capitalArena",
+      "steller": "capitalArena.mo",
+      "reihe": false,
+      "buchuebungen": [],
+      "themen": ["doppelangriff"],
+      "anzahl": 1
     }
   ]
 }

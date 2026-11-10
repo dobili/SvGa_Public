@@ -219,12 +219,31 @@
     {
       "name": "schuelerin",
       "typ": "statist",
-      "feld": [2, 7],
+      "feld": [3, 7],
       "eigenschaften": {
-        "von": "2,7",
-        "bis": "9,7",
-        "tun": "räumt Figuren in die Kiste",
-        "wann": "tag"
+        "tun": "stellt die Figuren auf",
+        "wann": "tag",
+        "sagt": "statist.mapleFalls.clubraum.schuelerin"
+      }
+    },
+    {
+      "name": "clubmitglied",
+      "typ": "statist",
+      "feld": [13, 8],
+      "eigenschaften": {
+        "tun": "analysiert eine alte Partie",
+        "wann": "tag",
+        "sagt": "statist.mapleFalls.clubraum.clubmitglied"
+      }
+    },
+    {
+      "name": "mutterWartet",
+      "typ": "statist",
+      "feld": [8, 10],
+      "eigenschaften": {
+        "tun": "wartet an der Tür auf ihren Sohn",
+        "wann": "tag",
+        "sagt": "statist.mapleFalls.clubraum.mutterWartet"
       }
     }
   ],

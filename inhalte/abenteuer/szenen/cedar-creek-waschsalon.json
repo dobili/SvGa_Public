@@ -168,12 +168,21 @@
     {
       "name": "kundin",
       "typ": "statist",
-      "feld": [9, 8],
+      "feld": [8, 8],
       "eigenschaften": {
-        "von": "9,8",
-        "bis": "11,8",
-        "tun": "wartet auf ihre Wäsche",
-        "wann": "tag"
+        "tun": "spielt Blitz am Telefon, während die Wäsche läuft",
+        "wann": "tag",
+        "sagt": "statist.cedarCreek.waschsalon.kundin"
+      }
+    },
+    {
+      "name": "mannMitZeitung",
+      "typ": "statist",
+      "feld": [3, 5],
+      "eigenschaften": {
+        "tun": "wartet mit der Zeitung auf den Trockner",
+        "wann": "tag",
+        "sagt": "statist.cedarCreek.waschsalon.mannMitZeitung"
       }
     }
   ],

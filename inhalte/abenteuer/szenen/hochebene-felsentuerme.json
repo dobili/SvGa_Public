@@ -2,36 +2,36 @@
   "karte": "hochebene.felsentuerme",
   "datei": "karten/hochebene-felsentuerme.json",
   "art": "aussen",
-  "beschreibung": "Die Hochebene westlich der Bergstraße: roter Boden, weiter Himmel, rote Felstürme. Ein Schotterweg kommt am Ostrand von der Bergstraße und läuft in Bögen nach Westen zur Schule. Unterwegs eine Pferdekoppel mit Wassertrog und ein Wacholder, unter dem ein flacher roter Stein als Tisch dient: Hier spielt Kira Vell nach der Schule. Falken kreisen, Eidechsen sonnen sich. Weg mit drei Bögen, zwei Felstürme am Ostende, Koppel in der Mitte, Steintisch unter dem Wacholder, Felsbogen im Westen.",
+  "beschreibung": "Die Hochebene westlich der Bergstraße: roter Boden, weiter Himmel, rote Felstürme. Ein Schotterweg kommt am Ostrand von der Bergstraße und läuft in Bögen nach Westen zur Schule. Unterwegs eine Pferdekoppel mit Wassertrog und ein Wacholder, unter dem ein flacher roter Stein als Tisch dient: Hier spielt Kira Vell nach der Schule. Falken kreisen, Eidechsen sonnen sich. Weg aus rotem Felsboden mit drei ausgerundeten Bögen, im Norden eine Felswand, im Süden die Kante einer Geländestufe, zwei Felstürme am Ostende, Koppel mit Holzzaun in der Mitte, flacher Steintisch mit Brett unter dem Wacholderbaum, Felsbogen im Westen.",
   "wand": "felsRot",
   "boden": "sandRot",
   "boeden": {
-    "k": "schotter",
+    "e": "erde",
     "f": "felsbodenRot"
   },
   "zustand": ["neu", "gebraucht", "alt"],
-  "stil": ["natur", "klassisch", "modern", "laendlich"],
+  "stil": ["natur", "klassisch", "modern", "laendlich", "rustikal"],
   "raster": [
     "####################################################################################################",
     "####################################################################################################",
     "####################################################################################################",
-    "#................................................................................fff...............#",
-    "#................................................................ffffffffffffffffffffffff..........#",
-    "#...........................................................fffffffffffffffffffffffffffffff........#",
-    "#...........................................................fffffffffffffffffffffffffffffff........#",
-    "#...........................................................fffffffffffffffffffffffffffff..........#",
     "#..................................................................................................#",
-    "#...............................................kkkkkkkkkkkkkkkkkkkkkkkkkkkkkkkk...................#",
-    "#...............................................kkkkkkkkkkkkkkkkkkkkkkkkkkkkkkkk...................#",
-    "#...............................................kk............................kk...................#",
-    "#...............................................kk............................kk...................#",
-    "#...............................................kk............................kk...................#",
-    "kkkkkkkkkkkkkkkkkkkk............................kk............................kkkkkkkkkkkkkkkkkkkkkk",
-    "kkkkkkkkkkkkkkkkkkkk............................kk............................kkkkkkkkkkkkkkkkkkkkkk",
-    "#.................kk............................kk.................................................#",
-    "#.................kk............................kk.................................................#",
-    "#.................kkkkkkkkkkkkkkkkkkkkkkkkkkkkkkkk.................................................#",
-    "#.................kkkkkkkkkkkkkkkkkkkkkkkkkkkkkkkk.................................................#",
+    "#..................................................................................................#",
+    "#..................................................................................................#",
+    "#..................................................................................................#",
+    "#..................................................................................................#",
+    "#..................................................................................................#",
+    "#...............................................ffffffffffffffffffffffffffffffff...................#",
+    "#...............................................ffffffffffffffffffffffffffffffff...................#",
+    "#...............................................fff..........................fff...................#",
+    "#...............................................ff............................ff...................#",
+    "#...............................................ff............................fff..................#",
+    "ffffffffffffffffffff............................ff............................ffffffffffffffffffffff",
+    "ffffffffffffffffffff............................ff............................ffffffffffffffffffffff",
+    "#................fff............................ff.................................................#",
+    "#.................fff..........................fff.................................................#",
+    "#.................ffffffffffffffffffffffffffffffff.................................................#",
+    "#.................ffffffffffffffffffffffffffffffff.................................................#",
     "#....................................ffffffffff....ffff............................................#",
     "#..................................ffffffffffffffffffffffffff......................................#",
     "#.................................fffffffffffffffffffffffffff......................................#",
@@ -53,163 +53,163 @@
       "feld": [88, 15]
     },
     {
-      "moebel": "hb7Zaun",
+      "moebel": "ccZaun",
       "feld": [58, 13]
     },
     {
-      "moebel": "hb7Zaun",
+      "moebel": "ccZaun",
       "feld": [59, 13]
     },
     {
-      "moebel": "hb7Zaun",
+      "moebel": "ccZaun",
       "feld": [60, 13]
     },
     {
-      "moebel": "hb7Zaun",
+      "moebel": "ccZaun",
       "feld": [61, 13]
     },
     {
-      "moebel": "hb7Zaun",
+      "moebel": "ccZaun",
       "feld": [62, 13]
     },
     {
-      "moebel": "hb7Zaun",
+      "moebel": "ccZaun",
       "feld": [63, 13]
     },
     {
-      "moebel": "hb7Zaun",
+      "moebel": "ccZaun",
       "feld": [64, 13]
     },
     {
-      "moebel": "hb7Zaun",
+      "moebel": "ccZaun",
       "feld": [65, 13]
     },
     {
-      "moebel": "hb7Zaun",
+      "moebel": "ccZaun",
       "feld": [66, 13]
     },
     {
-      "moebel": "hb7Zaun",
+      "moebel": "ccZaun",
       "feld": [67, 13]
     },
     {
-      "moebel": "hb7Zaun",
+      "moebel": "ccZaun",
       "feld": [68, 13]
     },
     {
-      "moebel": "hb7Zaun",
+      "moebel": "ccZaun",
       "feld": [69, 13]
     },
     {
-      "moebel": "hb7Zaun",
+      "moebel": "ccZaun",
       "feld": [70, 13]
     },
     {
-      "moebel": "hb7Zaun",
+      "moebel": "ccZaun",
       "feld": [58, 21]
     },
     {
-      "moebel": "hb7Zaun",
+      "moebel": "ccZaun",
       "feld": [59, 21]
     },
     {
-      "moebel": "hb7Zaun",
+      "moebel": "ccZaun",
       "feld": [60, 21]
     },
     {
-      "moebel": "hb7Zaun",
+      "moebel": "ccZaun",
       "feld": [61, 21]
     },
     {
-      "moebel": "hb7Zaun",
+      "moebel": "ccZaun",
       "feld": [62, 21]
     },
     {
-      "moebel": "hb7Zaun",
+      "moebel": "ccZaun",
       "feld": [63, 21]
     },
     {
-      "moebel": "hb7Zaun",
+      "moebel": "ccZaun",
       "feld": [64, 21]
     },
     {
-      "moebel": "hb7Zaun",
+      "moebel": "ccZaun",
       "feld": [65, 21]
     },
     {
-      "moebel": "hb7Zaun",
+      "moebel": "ccZaun",
       "feld": [66, 21]
     },
     {
-      "moebel": "hb7Zaun",
+      "moebel": "ccZaun",
       "feld": [67, 21]
     },
     {
-      "moebel": "hb7Zaun",
+      "moebel": "ccZaun",
       "feld": [68, 21]
     },
     {
-      "moebel": "hb7Zaun",
+      "moebel": "ccZaun",
       "feld": [69, 21]
     },
     {
-      "moebel": "hb7Zaun",
+      "moebel": "ccZaun",
       "feld": [70, 21]
     },
     {
-      "moebel": "hb7Zaun",
+      "moebel": "ccZaun",
       "feld": [58, 14]
     },
     {
-      "moebel": "hb7Zaun",
+      "moebel": "ccZaun",
       "feld": [58, 15]
     },
     {
-      "moebel": "hb7Zaun",
+      "moebel": "ccZaun",
       "feld": [58, 16]
     },
     {
-      "moebel": "hb7Zaun",
+      "moebel": "ccZaun",
       "feld": [58, 17]
     },
     {
-      "moebel": "hb7Zaun",
+      "moebel": "ccZaun",
       "feld": [58, 18]
     },
     {
-      "moebel": "hb7Zaun",
+      "moebel": "ccZaun",
       "feld": [58, 19]
     },
     {
-      "moebel": "hb7Zaun",
+      "moebel": "ccZaun",
       "feld": [58, 20]
     },
     {
-      "moebel": "hb7Zaun",
+      "moebel": "ccZaun",
       "feld": [70, 14]
     },
     {
-      "moebel": "hb7Zaun",
+      "moebel": "ccZaun",
       "feld": [70, 15]
     },
     {
-      "moebel": "hb7Zaun",
+      "moebel": "ccZaun",
       "feld": [70, 16]
     },
     {
-      "moebel": "hb7Zaun",
+      "moebel": "ccZaun",
       "feld": [70, 17]
     },
     {
-      "moebel": "hb7Zaun",
+      "moebel": "ccZaun",
       "feld": [70, 18]
     },
     {
-      "moebel": "hb7Zaun",
+      "moebel": "ccZaun",
       "feld": [70, 19]
     },
     {
-      "moebel": "hb7Zaun",
+      "moebel": "ccZaun",
       "feld": [70, 20]
     },
     {
@@ -225,13 +225,19 @@
       "feld": [94, 12]
     },
     {
-      "moebel": "wds6Wacholder",
-      "feld": [44, 12]
+      "moebel": "wds6Pinie",
+      "feld": [42, 10]
     },
     {
-      "moebel": "hb7Steintisch",
+      "moebel": "wds6SteinRot",
       "feld": [41, 13],
       "id": "tisch"
+    },
+    {
+      "moebel": "mf3BrettKlein",
+      "feld": [0, 0],
+      "auf": "tisch",
+      "versatz": [10, 2]
     },
     {
       "moebel": "hb7Felsbogen",
@@ -484,5 +490,8 @@
         "verhalten": "fliegen"
       }
     }
-  ]
+  ],
+  "kante": "klippe",
+  "fels": "rot",
+  "wandart": "sandRot"
 }

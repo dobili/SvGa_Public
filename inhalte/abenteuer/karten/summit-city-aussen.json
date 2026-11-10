@@ -11,7 +11,7 @@
  "tilewidth": 16,
  "tileheight": 16,
  "nextlayerid": 5,
- "nextobjectid": 86,
+ "nextobjectid": 125,
  "layers": [
   {
    "id": 1,
@@ -14731,7 +14731,7 @@
      "name": "brieftraeger",
      "type": "statist",
      "x": 1056,
-     "y": 384,
+     "y": 368,
      "width": 16,
      "height": 16,
      "rotation": 0,
@@ -14740,12 +14740,12 @@
       {
        "name": "von",
        "type": "string",
-       "value": "66,24"
+       "value": "66,23"
       },
       {
        "name": "bis",
        "type": "string",
-       "value": "56,24"
+       "value": "56,23"
       },
       {
        "name": "tun",
@@ -15058,7 +15058,7 @@
      "name": "radfahrer",
      "type": "statist",
      "x": 960,
-     "y": 384,
+     "y": 352,
      "width": 16,
      "height": 16,
      "rotation": 0,
@@ -15067,12 +15067,12 @@
       {
        "name": "von",
        "type": "string",
-       "value": "60,24"
+       "value": "60,22"
       },
       {
        "name": "bis",
        "type": "string",
-       "value": "74,24"
+       "value": "74,22"
       },
       {
        "name": "tun",
@@ -15146,8 +15146,8 @@
      "id": 29,
      "name": "kuh",
      "type": "tier",
-     "x": 1152,
-     "y": 576,
+     "x": 1056,
+     "y": 592,
      "width": 16,
      "height": 16,
      "rotation": 0,
@@ -15156,12 +15156,12 @@
       {
        "name": "von",
        "type": "string",
-       "value": "72,36"
+       "value": "66,37"
       },
       {
        "name": "bis",
        "type": "string",
-       "value": "72,36"
+       "value": "66,37"
       },
       {
        "name": "verhalten",
@@ -15785,7 +15785,7 @@
     },
     {
      "id": 56,
-     "name": "sc7Ferienhuette",
+     "name": "cr8Holzfaellerhuette",
      "type": "moebel",
      "x": 352,
      "y": 656,
@@ -15831,12 +15831,12 @@
     },
     {
      "id": 58,
-     "name": "sc7Ferienhuette",
+     "name": "cp8Schuppen",
      "type": "moebel",
      "x": 960,
-     "y": 656,
-     "width": 80,
-     "height": 80,
+     "y": 640,
+     "width": 96,
+     "height": 96,
      "rotation": 0,
      "visible": true,
      "properties": [
@@ -16268,7 +16268,7 @@
     },
     {
      "id": 77,
-     "name": "sc7Huette",
+     "name": "cp7Schutzhuette",
      "type": "moebel",
      "x": 960,
      "y": 384,
@@ -16337,12 +16337,12 @@
     },
     {
      "id": 80,
-     "name": "sc8HofBreit",
+     "name": "cc4Wohnhaus",
      "type": "moebel",
-     "x": 1088,
-     "y": 768,
-     "width": 160,
-     "height": 144,
+     "x": 1104,
+     "y": 752,
+     "width": 128,
+     "height": 160,
      "rotation": 0,
      "visible": true,
      "properties": [
@@ -16452,12 +16452,403 @@
     },
     {
      "id": 85,
-     "name": "sc8Stall",
+     "name": "sx7Rangerhaus",
      "type": "moebel",
-     "x": 1104,
-     "y": 384,
-     "width": 160,
-     "height": 128,
+     "x": 1136,
+     "y": 400,
+     "width": 96,
+     "height": 96,
+     "rotation": 0,
+     "visible": true,
+     "properties": [
+      {
+       "name": "tiefe",
+       "type": "int",
+       "value": 488
+      },
+      {
+       "name": "kollision",
+       "type": "bool",
+       "value": true
+      }
+     ]
+    },
+    {
+     "id": 86,
+     "name": "sc7Seil",
+     "type": "moebel",
+     "x": 864,
+     "y": 0,
+     "width": 32,
+     "height": 16,
+     "rotation": 0,
+     "visible": true,
+     "properties": [
+      {
+       "name": "tiefe",
+       "type": "int",
+       "value": 8
+      },
+      {
+       "name": "kollision",
+       "type": "bool",
+       "value": false
+      }
+     ]
+    },
+    {
+     "id": 87,
+     "name": "sc7Seil",
+     "type": "moebel",
+     "x": 864,
+     "y": 16,
+     "width": 32,
+     "height": 16,
+     "rotation": 0,
+     "visible": true,
+     "properties": [
+      {
+       "name": "tiefe",
+       "type": "int",
+       "value": 24
+      },
+      {
+       "name": "kollision",
+       "type": "bool",
+       "value": false
+      }
+     ]
+    },
+    {
+     "id": 88,
+     "name": "sc7Seil",
+     "type": "moebel",
+     "x": 864,
+     "y": 32,
+     "width": 32,
+     "height": 16,
+     "rotation": 0,
+     "visible": true,
+     "properties": [
+      {
+       "name": "tiefe",
+       "type": "int",
+       "value": 40
+      },
+      {
+       "name": "kollision",
+       "type": "bool",
+       "value": false
+      }
+     ]
+    },
+    {
+     "id": 89,
+     "name": "sc7Seil",
+     "type": "moebel",
+     "x": 864,
+     "y": 48,
+     "width": 32,
+     "height": 16,
+     "rotation": 0,
+     "visible": true,
+     "properties": [
+      {
+       "name": "tiefe",
+       "type": "int",
+       "value": 56
+      },
+      {
+       "name": "kollision",
+       "type": "bool",
+       "value": false
+      }
+     ]
+    },
+    {
+     "id": 90,
+     "name": "sc7Seil",
+     "type": "moebel",
+     "x": 864,
+     "y": 64,
+     "width": 32,
+     "height": 16,
+     "rotation": 0,
+     "visible": true,
+     "properties": [
+      {
+       "name": "tiefe",
+       "type": "int",
+       "value": 72
+      },
+      {
+       "name": "kollision",
+       "type": "bool",
+       "value": false
+      }
+     ]
+    },
+    {
+     "id": 91,
+     "name": "scFelsKlein",
+     "type": "moebel",
+     "x": 496,
+     "y": 656,
+     "width": 32,
+     "height": 32,
+     "rotation": 0,
+     "visible": true,
+     "properties": [
+      {
+       "name": "tiefe",
+       "type": "int",
+       "value": 680
+      },
+      {
+       "name": "kollision",
+       "type": "bool",
+       "value": true
+      }
+     ]
+    },
+    {
+     "id": 92,
+     "name": "blumenbusch",
+     "type": "moebel",
+     "x": 240,
+     "y": 320,
+     "width": 32,
+     "height": 16,
+     "rotation": 0,
+     "visible": true,
+     "properties": [
+      {
+       "name": "tiefe",
+       "type": "int",
+       "value": 328
+      },
+      {
+       "name": "kollision",
+       "type": "bool",
+       "value": true
+      }
+     ]
+    },
+    {
+     "id": 93,
+     "name": "wds6Wacholder",
+     "type": "moebel",
+     "x": 400,
+     "y": 112,
+     "width": 32,
+     "height": 32,
+     "rotation": 0,
+     "visible": true,
+     "properties": [
+      {
+       "name": "tiefe",
+       "type": "int",
+       "value": 136
+      },
+      {
+       "name": "kollision",
+       "type": "bool",
+       "value": true
+      }
+     ]
+    },
+    {
+     "id": 94,
+     "name": "scFelsKlein",
+     "type": "moebel",
+     "x": 800,
+     "y": 560,
+     "width": 32,
+     "height": 32,
+     "rotation": 0,
+     "visible": true,
+     "properties": [
+      {
+       "name": "tiefe",
+       "type": "int",
+       "value": 584
+      },
+      {
+       "name": "kollision",
+       "type": "bool",
+       "value": true
+      }
+     ]
+    },
+    {
+     "id": 95,
+     "name": "scFelsKlein",
+     "type": "moebel",
+     "x": 624,
+     "y": 864,
+     "width": 32,
+     "height": 32,
+     "rotation": 0,
+     "visible": true,
+     "properties": [
+      {
+       "name": "tiefe",
+       "type": "int",
+       "value": 888
+      },
+      {
+       "name": "kollision",
+       "type": "bool",
+       "value": true
+      }
+     ]
+    },
+    {
+     "id": 96,
+     "name": "blumenbusch",
+     "type": "moebel",
+     "x": 848,
+     "y": 704,
+     "width": 32,
+     "height": 16,
+     "rotation": 0,
+     "visible": true,
+     "properties": [
+      {
+       "name": "tiefe",
+       "type": "int",
+       "value": 712
+      },
+      {
+       "name": "kollision",
+       "type": "bool",
+       "value": true
+      }
+     ]
+    },
+    {
+     "id": 97,
+     "name": "wds6Wacholder",
+     "type": "moebel",
+     "x": 848,
+     "y": 560,
+     "width": 32,
+     "height": 32,
+     "rotation": 0,
+     "visible": true,
+     "properties": [
+      {
+       "name": "tiefe",
+       "type": "int",
+       "value": 584
+      },
+      {
+       "name": "kollision",
+       "type": "bool",
+       "value": true
+      }
+     ]
+    },
+    {
+     "id": 98,
+     "name": "wds6Kegelbaum",
+     "type": "moebel",
+     "x": 32,
+     "y": 352,
+     "width": 32,
+     "height": 64,
+     "rotation": 0,
+     "visible": true,
+     "properties": [
+      {
+       "name": "tiefe",
+       "type": "int",
+       "value": 408
+      },
+      {
+       "name": "kollision",
+       "type": "bool",
+       "value": true
+      }
+     ]
+    },
+    {
+     "id": 99,
+     "name": "scFelsKlein",
+     "type": "moebel",
+     "x": 448,
+     "y": 656,
+     "width": 32,
+     "height": 32,
+     "rotation": 0,
+     "visible": true,
+     "properties": [
+      {
+       "name": "tiefe",
+       "type": "int",
+       "value": 680
+      },
+      {
+       "name": "kollision",
+       "type": "bool",
+       "value": true
+      }
+     ]
+    },
+    {
+     "id": 100,
+     "name": "wds6Wacholder",
+     "type": "moebel",
+     "x": 288,
+     "y": 400,
+     "width": 32,
+     "height": 32,
+     "rotation": 0,
+     "visible": true,
+     "properties": [
+      {
+       "name": "tiefe",
+       "type": "int",
+       "value": 424
+      },
+      {
+       "name": "kollision",
+       "type": "bool",
+       "value": true
+      }
+     ]
+    },
+    {
+     "id": 101,
+     "name": "blumenbusch",
+     "type": "moebel",
+     "x": 96,
+     "y": 864,
+     "width": 32,
+     "height": 16,
+     "rotation": 0,
+     "visible": true,
+     "properties": [
+      {
+       "name": "tiefe",
+       "type": "int",
+       "value": 872
+      },
+      {
+       "name": "kollision",
+       "type": "bool",
+       "value": true
+      }
+     ]
+    },
+    {
+     "id": 102,
+     "name": "wds6Wacholder",
+     "type": "moebel",
+     "x": 752,
+     "y": 480,
+     "width": 32,
+     "height": 32,
      "rotation": 0,
      "visible": true,
      "properties": [
@@ -16465,6 +16856,512 @@
        "name": "tiefe",
        "type": "int",
        "value": 504
+      },
+      {
+       "name": "kollision",
+       "type": "bool",
+       "value": true
+      }
+     ]
+    },
+    {
+     "id": 103,
+     "name": "wds6PinieB",
+     "type": "moebel",
+     "x": 768,
+     "y": 384,
+     "width": 32,
+     "height": 48,
+     "rotation": 0,
+     "visible": true,
+     "properties": [
+      {
+       "name": "tiefe",
+       "type": "int",
+       "value": 424
+      },
+      {
+       "name": "kollision",
+       "type": "bool",
+       "value": true
+      }
+     ]
+    },
+    {
+     "id": 104,
+     "name": "blumenbusch",
+     "type": "moebel",
+     "x": 800,
+     "y": 608,
+     "width": 32,
+     "height": 16,
+     "rotation": 0,
+     "visible": true,
+     "properties": [
+      {
+       "name": "tiefe",
+       "type": "int",
+       "value": 616
+      },
+      {
+       "name": "kollision",
+       "type": "bool",
+       "value": true
+      }
+     ]
+    },
+    {
+     "id": 105,
+     "name": "wds6Wacholder",
+     "type": "moebel",
+     "x": 48,
+     "y": 800,
+     "width": 32,
+     "height": 32,
+     "rotation": 0,
+     "visible": true,
+     "properties": [
+      {
+       "name": "tiefe",
+       "type": "int",
+       "value": 824
+      },
+      {
+       "name": "kollision",
+       "type": "bool",
+       "value": true
+      }
+     ]
+    },
+    {
+     "id": 106,
+     "name": "scFelsKlein",
+     "type": "moebel",
+     "x": 480,
+     "y": 864,
+     "width": 32,
+     "height": 32,
+     "rotation": 0,
+     "visible": true,
+     "properties": [
+      {
+       "name": "tiefe",
+       "type": "int",
+       "value": 888
+      },
+      {
+       "name": "kollision",
+       "type": "bool",
+       "value": true
+      }
+     ]
+    },
+    {
+     "id": 107,
+     "name": "wds6PinieB",
+     "type": "moebel",
+     "x": 144,
+     "y": 848,
+     "width": 32,
+     "height": 48,
+     "rotation": 0,
+     "visible": true,
+     "properties": [
+      {
+       "name": "tiefe",
+       "type": "int",
+       "value": 888
+      },
+      {
+       "name": "kollision",
+       "type": "bool",
+       "value": true
+      }
+     ]
+    },
+    {
+     "id": 108,
+     "name": "blumenbusch",
+     "type": "moebel",
+     "x": 848,
+     "y": 608,
+     "width": 32,
+     "height": 16,
+     "rotation": 0,
+     "visible": true,
+     "properties": [
+      {
+       "name": "tiefe",
+       "type": "int",
+       "value": 616
+      },
+      {
+       "name": "kollision",
+       "type": "bool",
+       "value": true
+      }
+     ]
+    },
+    {
+     "id": 109,
+     "name": "blumenbusch",
+     "type": "moebel",
+     "x": 256,
+     "y": 880,
+     "width": 32,
+     "height": 16,
+     "rotation": 0,
+     "visible": true,
+     "properties": [
+      {
+       "name": "tiefe",
+       "type": "int",
+       "value": 888
+      },
+      {
+       "name": "kollision",
+       "type": "bool",
+       "value": true
+      }
+     ]
+    },
+    {
+     "id": 110,
+     "name": "wds6Wacholder",
+     "type": "moebel",
+     "x": 912,
+     "y": 160,
+     "width": 32,
+     "height": 32,
+     "rotation": 0,
+     "visible": true,
+     "properties": [
+      {
+       "name": "tiefe",
+       "type": "int",
+       "value": 184
+      },
+      {
+       "name": "kollision",
+       "type": "bool",
+       "value": true
+      }
+     ]
+    },
+    {
+     "id": 111,
+     "name": "wds6Wacholder",
+     "type": "moebel",
+     "x": 608,
+     "y": 288,
+     "width": 32,
+     "height": 32,
+     "rotation": 0,
+     "visible": true,
+     "properties": [
+      {
+       "name": "tiefe",
+       "type": "int",
+       "value": 312
+      },
+      {
+       "name": "kollision",
+       "type": "bool",
+       "value": true
+      }
+     ]
+    },
+    {
+     "id": 112,
+     "name": "blumenbusch",
+     "type": "moebel",
+     "x": 48,
+     "y": 880,
+     "width": 32,
+     "height": 16,
+     "rotation": 0,
+     "visible": true,
+     "properties": [
+      {
+       "name": "tiefe",
+       "type": "int",
+       "value": 888
+      },
+      {
+       "name": "kollision",
+       "type": "bool",
+       "value": true
+      }
+     ]
+    },
+    {
+     "id": 113,
+     "name": "wds6Pinie",
+     "type": "moebel",
+     "x": 704,
+     "y": 656,
+     "width": 32,
+     "height": 48,
+     "rotation": 0,
+     "visible": true,
+     "properties": [
+      {
+       "name": "tiefe",
+       "type": "int",
+       "value": 696
+      },
+      {
+       "name": "kollision",
+       "type": "bool",
+       "value": true
+      }
+     ]
+    },
+    {
+     "id": 114,
+     "name": "wds6Wacholder",
+     "type": "moebel",
+     "x": 752,
+     "y": 192,
+     "width": 32,
+     "height": 32,
+     "rotation": 0,
+     "visible": true,
+     "properties": [
+      {
+       "name": "tiefe",
+       "type": "int",
+       "value": 216
+      },
+      {
+       "name": "kollision",
+       "type": "bool",
+       "value": true
+      }
+     ]
+    },
+    {
+     "id": 115,
+     "name": "blumenbusch",
+     "type": "moebel",
+     "x": 64,
+     "y": 256,
+     "width": 32,
+     "height": 16,
+     "rotation": 0,
+     "visible": true,
+     "properties": [
+      {
+       "name": "tiefe",
+       "type": "int",
+       "value": 264
+      },
+      {
+       "name": "kollision",
+       "type": "bool",
+       "value": true
+      }
+     ]
+    },
+    {
+     "id": 116,
+     "name": "blumenbusch",
+     "type": "moebel",
+     "x": 496,
+     "y": 704,
+     "width": 32,
+     "height": 16,
+     "rotation": 0,
+     "visible": true,
+     "properties": [
+      {
+       "name": "tiefe",
+       "type": "int",
+       "value": 712
+      },
+      {
+       "name": "kollision",
+       "type": "bool",
+       "value": true
+      }
+     ]
+    },
+    {
+     "id": 117,
+     "name": "blumenbusch",
+     "type": "moebel",
+     "x": 752,
+     "y": 608,
+     "width": 32,
+     "height": 16,
+     "rotation": 0,
+     "visible": true,
+     "properties": [
+      {
+       "name": "tiefe",
+       "type": "int",
+       "value": 616
+      },
+      {
+       "name": "kollision",
+       "type": "bool",
+       "value": true
+      }
+     ]
+    },
+    {
+     "id": 118,
+     "name": "scFelsKlein",
+     "type": "moebel",
+     "x": 208,
+     "y": 512,
+     "width": 32,
+     "height": 32,
+     "rotation": 0,
+     "visible": true,
+     "properties": [
+      {
+       "name": "tiefe",
+       "type": "int",
+       "value": 536
+      },
+      {
+       "name": "kollision",
+       "type": "bool",
+       "value": true
+      }
+     ]
+    },
+    {
+     "id": 119,
+     "name": "blumenbusch",
+     "type": "moebel",
+     "x": 192,
+     "y": 256,
+     "width": 32,
+     "height": 16,
+     "rotation": 0,
+     "visible": true,
+     "properties": [
+      {
+       "name": "tiefe",
+       "type": "int",
+       "value": 264
+      },
+      {
+       "name": "kollision",
+       "type": "bool",
+       "value": true
+      }
+     ]
+    },
+    {
+     "id": 120,
+     "name": "blumenbusch",
+     "type": "moebel",
+     "x": 704,
+     "y": 320,
+     "width": 32,
+     "height": 16,
+     "rotation": 0,
+     "visible": true,
+     "properties": [
+      {
+       "name": "tiefe",
+       "type": "int",
+       "value": 328
+      },
+      {
+       "name": "kollision",
+       "type": "bool",
+       "value": true
+      }
+     ]
+    },
+    {
+     "id": 121,
+     "name": "blumenbusch",
+     "type": "moebel",
+     "x": 32,
+     "y": 304,
+     "width": 32,
+     "height": 16,
+     "rotation": 0,
+     "visible": true,
+     "properties": [
+      {
+       "name": "tiefe",
+       "type": "int",
+       "value": 312
+      },
+      {
+       "name": "kollision",
+       "type": "bool",
+       "value": true
+      }
+     ]
+    },
+    {
+     "id": 122,
+     "name": "scFelsKlein",
+     "type": "moebel",
+     "x": 608,
+     "y": 672,
+     "width": 32,
+     "height": 32,
+     "rotation": 0,
+     "visible": true,
+     "properties": [
+      {
+       "name": "tiefe",
+       "type": "int",
+       "value": 696
+      },
+      {
+       "name": "kollision",
+       "type": "bool",
+       "value": true
+      }
+     ]
+    },
+    {
+     "id": 123,
+     "name": "blumenbusch",
+     "type": "moebel",
+     "x": 896,
+     "y": 432,
+     "width": 32,
+     "height": 16,
+     "rotation": 0,
+     "visible": true,
+     "properties": [
+      {
+       "name": "tiefe",
+       "type": "int",
+       "value": 440
+      },
+      {
+       "name": "kollision",
+       "type": "bool",
+       "value": true
+      }
+     ]
+    },
+    {
+     "id": 124,
+     "name": "blumenbusch",
+     "type": "moebel",
+     "x": 864,
+     "y": 656,
+     "width": 32,
+     "height": 16,
+     "rotation": 0,
+     "visible": true,
+     "properties": [
+      {
+       "name": "tiefe",
+       "type": "int",
+       "value": 664
       },
       {
        "name": "kollision",

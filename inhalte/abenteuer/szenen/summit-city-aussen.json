@@ -2,7 +2,7 @@
   "karte": "summitCity.aussen",
   "datei": "karten/summit-city-aussen.json",
   "art": "aussen",
-  "beschreibung": "Summit City im Sommer: eine Bergstadt auf einer Alm, im Norden die Gipfelwand aus grauem Fels. Die Bergstraße kommt am Südrand an und führt als Pflasterweg zum Marktplatz mit dem Drachenbrunnen, auf dem das Sommerfest vorbereitet wird. Im Westen Wards Hütte und der Bergladen, darüber die Gipfelfelsen mit Treppe, auf denen Sol steht. Im Nordosten die Talstation der Seilbahn, das Seil läuft über einen Mast in die Gipfelwand. Ein Erdweg führt vom Platz nach Südosten zu Weg 8 und zum Geysirbecken. Ferienhütten, Pinien und Felsbrocken an den Hängen, Murmeltiere und Ziegen. Gepflasterter Marktplatz mit zwei Ständen und Wimpeln, Ferienhütten am Hüttenweg im Westen und Osten, Holzhacker bei den Westhütten, Blumen und eine Bank im Osten.",
+  "beschreibung": "Summit City im Sommer: eine Bergstadt auf einer Alm, im Norden die Gipfelwand als Felswand mit Kante. Die Bergstraße kommt am Südrand an und führt als Pflasterweg zum Marktplatz mit dem Drachenbrunnen, auf dem das Sommerfest vorbereitet wird. Im Westen Wards Hütte und der Bergladen, darüber die Gipfelfelsen mit einer in den Fels geschlagenen Treppe, auf denen Sol steht. Im Nordosten die Talstation der Seilbahn, das Seil läuft über den Mast bis in die Gipfelwand. Ein Erdweg führt vom Platz nach Südosten zu Weg 8 und zum Geysirbecken. Ferienhütten verschiedener Bauart, Schutzhütte und Bergwacht, zwischen den Häusern Pinien, Wacholder, Felsbrocken und Blumen, Murmeltiere und Ziegen. Gepflasterter Marktplatz mit zwei Ständen und Wimpeln, Ferienhütten am Hüttenweg im Westen und Osten, Holzhacker bei den Westhütten, Blumen und eine Bank im Osten.",
   "wand": "fels",
   "boden": "gras",
   "boeden": {
@@ -27,9 +27,9 @@
     "#.fffffffffffffffffffffff......................................................#",
     "#.fffffffffffffffffffffff......................................................#",
     "#.fffffffffffffffffffffff......................................................#",
-    "##########pp##############.....................................................#",
-    "##########pp##############.....................................................#",
-    "##########pp##############.....................................................#",
+    "##########ff##############.....................................................#",
+    "##########ff##############.....................................................#",
+    "##########ff##############.....................................................#",
     "#........................................pp....................................#",
     "#........................................pp....................................#",
     "#........................................pp....................................#",
@@ -170,7 +170,7 @@
       "feld": [14, 41]
     },
     {
-      "moebel": "sc7Ferienhuette",
+      "moebel": "cr8Holzfaellerhuette",
       "feld": [22, 41]
     },
     {
@@ -178,8 +178,8 @@
       "feld": [47, 41]
     },
     {
-      "moebel": "sc7Ferienhuette",
-      "feld": [60, 41]
+      "moebel": "cp8Schuppen",
+      "feld": [60, 40]
     },
     {
       "moebel": "sc7Hackklotz",
@@ -254,7 +254,7 @@
       "feld": [19, 48]
     },
     {
-      "moebel": "sc7Huette",
+      "moebel": "cp7Schutzhuette",
       "feld": [60, 24]
     },
     {
@@ -266,8 +266,8 @@
       "feld": [58, 49]
     },
     {
-      "moebel": "sc8HofBreit",
-      "feld": [68, 48]
+      "moebel": "cc4Wohnhaus",
+      "feld": [69, 47]
     },
     {
       "moebel": "sc8Hof",
@@ -286,8 +286,169 @@
       "feld": [2, 31]
     },
     {
-      "moebel": "sc8Stall",
-      "feld": [69, 24]
+      "moebel": "sx7Rangerhaus",
+      "feld": [71, 25]
+    },
+    {
+      "moebel": "sc7Seil",
+      "feld": [54, 0],
+      "vorn": true
+    },
+    {
+      "moebel": "sc7Seil",
+      "feld": [54, 1],
+      "vorn": true
+    },
+    {
+      "moebel": "sc7Seil",
+      "feld": [54, 2],
+      "vorn": true
+    },
+    {
+      "moebel": "sc7Seil",
+      "feld": [54, 3],
+      "vorn": true
+    },
+    {
+      "moebel": "sc7Seil",
+      "feld": [54, 4],
+      "vorn": true
+    },
+    {
+      "moebel": "scFelsKlein",
+      "feld": [31, 41]
+    },
+    {
+      "moebel": "blumenbusch",
+      "feld": [15, 20]
+    },
+    {
+      "moebel": "wds6Wacholder",
+      "feld": [25, 7]
+    },
+    {
+      "moebel": "scFelsKlein",
+      "feld": [50, 35]
+    },
+    {
+      "moebel": "scFelsKlein",
+      "feld": [39, 54]
+    },
+    {
+      "moebel": "blumenbusch",
+      "feld": [53, 44]
+    },
+    {
+      "moebel": "wds6Wacholder",
+      "feld": [53, 35]
+    },
+    {
+      "moebel": "wds6Kegelbaum",
+      "feld": [2, 22]
+    },
+    {
+      "moebel": "scFelsKlein",
+      "feld": [28, 41]
+    },
+    {
+      "moebel": "wds6Wacholder",
+      "feld": [18, 25]
+    },
+    {
+      "moebel": "blumenbusch",
+      "feld": [6, 54]
+    },
+    {
+      "moebel": "wds6Wacholder",
+      "feld": [47, 30]
+    },
+    {
+      "moebel": "wds6PinieB",
+      "feld": [48, 24]
+    },
+    {
+      "moebel": "blumenbusch",
+      "feld": [50, 38]
+    },
+    {
+      "moebel": "wds6Wacholder",
+      "feld": [3, 50]
+    },
+    {
+      "moebel": "scFelsKlein",
+      "feld": [30, 54]
+    },
+    {
+      "moebel": "wds6PinieB",
+      "feld": [9, 53]
+    },
+    {
+      "moebel": "blumenbusch",
+      "feld": [53, 38]
+    },
+    {
+      "moebel": "blumenbusch",
+      "feld": [16, 55]
+    },
+    {
+      "moebel": "wds6Wacholder",
+      "feld": [57, 10]
+    },
+    {
+      "moebel": "wds6Wacholder",
+      "feld": [38, 18]
+    },
+    {
+      "moebel": "blumenbusch",
+      "feld": [3, 55]
+    },
+    {
+      "moebel": "wds6Pinie",
+      "feld": [44, 41]
+    },
+    {
+      "moebel": "wds6Wacholder",
+      "feld": [47, 12]
+    },
+    {
+      "moebel": "blumenbusch",
+      "feld": [4, 16]
+    },
+    {
+      "moebel": "blumenbusch",
+      "feld": [31, 44]
+    },
+    {
+      "moebel": "blumenbusch",
+      "feld": [47, 38]
+    },
+    {
+      "moebel": "scFelsKlein",
+      "feld": [13, 32]
+    },
+    {
+      "moebel": "blumenbusch",
+      "feld": [12, 16]
+    },
+    {
+      "moebel": "blumenbusch",
+      "feld": [44, 20]
+    },
+    {
+      "moebel": "blumenbusch",
+      "feld": [2, 19]
+    },
+    {
+      "moebel": "scFelsKlein",
+      "feld": [38, 42]
+    },
+    {
+      "moebel": "blumenbusch",
+      "feld": [56, 27]
+    },
+    {
+      "moebel": "blumenbusch",
+      "feld": [54, 41]
     }
   ],
   "ausloeser": [
@@ -389,10 +550,10 @@
     {
       "name": "brieftraeger",
       "typ": "statist",
-      "feld": [66, 24],
+      "feld": [66, 23],
       "eigenschaften": {
-        "von": "66,24",
-        "bis": "56,24",
+        "von": "66,23",
+        "bis": "56,23",
         "tun": "bringt Pakete zur Post",
         "wann": "tag",
         "sagt": "statist.summitCity.aussen.brieftraeger"
@@ -494,10 +655,10 @@
     {
       "name": "radfahrer",
       "typ": "statist",
-      "feld": [60, 24],
+      "feld": [60, 22],
       "eigenschaften": {
-        "von": "60,24",
-        "bis": "74,24",
+        "von": "60,22",
+        "bis": "74,22",
         "tun": "schiebt sein Rad den Berg hinauf",
         "wann": "tag"
       }
@@ -525,10 +686,10 @@
     {
       "name": "kuh",
       "typ": "tier",
-      "feld": [72, 36],
+      "feld": [66, 37],
       "eigenschaften": {
-        "von": "72,36",
-        "bis": "72,36",
+        "von": "66,37",
+        "bis": "66,37",
         "verhalten": "sitzen"
       }
     },
@@ -562,5 +723,7 @@
         "verhalten": "schlafen"
       }
     }
-  ]
+  ],
+  "kante": "klippe",
+  "wandart": "gras"
 }

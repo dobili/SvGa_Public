@@ -1321,5 +1321,17 @@
   "fund.kapitaensmuetze.text": "Die blaue Mütze von Kapitän Fall, für das gelöste Kapitänsproblem.",
   "quest.kapitaensproblem.titel": "Das Kapitänsproblem",
   "quest.kapitaensproblem.schritt1": "Die drei Zettel am Brett des Kapitäns widerlegen und die Aufgabe lösen",
-  "quest.kapitaensproblem.schritt2": "Dem Kapitän die Lösung zeigen und das Horn blasen"
+  "quest.kapitaensproblem.schritt2": "Dem Kapitän die Lösung zeigen und das Horn blasen",
+  "figur.pepe.name": "Pépé Thibodeaux",
+  "figur.hafenarbeiter.name": "Der Hafenarbeiter von 1852",
+  "fund.seite05.name": "Buchseite, Kapitel 5",
+  "fund.seite05.text": "Eine Seite aus einem Handbuch, Kapitel 5: Bauernstrukturen: Das Skelett des Schachbretts. Gefunden am Ufer im Bayou.",
+  "fund.finchBauerC.name": "Finchs Bauer",
+  "fund.finchBauerC.text": "Ein weißer Bauer aus Buchsbaum, unten ist ein Feld eingebrannt. Gefunden in einer Reuse am Steg im Bayou.",
+  "fund.formularCafeDesExiles.name": "Partieformular von 1852",
+  "fund.formularCafeDesExiles.text": "Ein Formular aus dem Café des Exilés in Ambroses Handschrift. Die Partie gegen einen Hafenarbeiter bricht nach dem 20. Zug ab.",
+  "quest.kisteImHausboot.titel": "Die Kiste im Hausboot",
+  "quest.kisteImHausboot.schritt1": "In Pépés Blechkiste blättern, bevor sie brennt",
+  "quest.kisteImHausboot.schritt2": "Die alte Partie nach dem 20. Zug mit Ambroses Seite weiterspielen",
+  "quest.kisteImHausboot.schritt3": "Pépé erzählen, wie die Partie ausging"
 }

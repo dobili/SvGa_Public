@@ -32,6 +32,9 @@ VAR ausgangPortDelacroixBatiste = ""
 VAR arceneauxGetroffen = false
 VAR nadelPortDelacroix = 0
 VAR musikhausOffen = false
+VAR bayouOffen = false
+VAR hatGummistiefel = false
+VAR nadelSummitCity = 0
 
 // ---------------------------------------------------------------- Ankunft und Wege
 
@@ -198,9 +201,15 @@ Karten hab ich auch. Der Erlös geht ins Musikhaus. #sprecher:arceneaux
 // ---------------------------------------------------------------- Luftboot in den Bayou (Akt 4)
 
 === bayou ===
-{musikhausOffen:
-    Am Kai wartet ein Luftboot mit einem riesigen Propeller. Es fährt hinaus in den Bayou. #sprecher:erzaehler
-- else:
+// Sperre S8 (13_Wegenetz): offen nach dem Musikhaus, im Winter nur mit Gummistiefeln; im Sommer
+// (Akt 4, erkennbar an der Nadel von Summit City) ohne Stiefel. Der Übergang prüft bayouOffen.
+~ bayouOffen = musikhausOffen and (hatGummistiefel or nadelSummitCity > 0)
+{
+- not musikhausOffen:
     Am Kai liegt ein Luftboot unter einer Plane. „Wenn das Musikhaus wieder offen ist“, steht auf einem Zettel. #sprecher:erzaehler
+- not bayouOffen:
+    Der Marschpfad steht unter Wasser. Ohne Gummistiefel kommst du hier nicht weiter. #sprecher:erzaehler
+- else:
+    Der Marschpfad führt hinaus in den Bayou. Das Wasser gluckst um die Stiefel. #sprecher:erzaehler
 }
 -> END

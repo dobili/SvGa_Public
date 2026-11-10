@@ -2448,6 +2448,48 @@
           ]
         }
       ]
+    },
+    {
+      "kennung": "bayou.kisteImHausboot",
+      "titel": "quest.kisteImHausboot.titel",
+      "typ": "hilfe",
+      "ort": "bayou",
+      "haupt": false,
+      "klein": true,
+      "start": {
+        "art": "dialog",
+        "knoten": "bayou.pepe_kiste"
+      },
+      "schritte": [
+        {
+          "text": "quest.kisteImHausboot.schritt1",
+          "ereignis": {
+            "art": "dialog",
+            "knoten": "bayou.pepe_formular"
+          }
+        },
+        {
+          "text": "quest.kisteImHausboot.schritt2",
+          "ereignis": {
+            "art": "partie",
+            "begegnung": "bayou.hausboot",
+            "ausgang": ["sieg", "remis", "niederlage"]
+          }
+        },
+        {
+          "text": "quest.kisteImHausboot.schritt3",
+          "ereignis": {
+            "art": "dialog",
+            "knoten": "bayou.pepe_nach_partie"
+          },
+          "wirkungen": [
+            {
+              "art": "muenzen",
+              "anzahl": 15
+            }
+          ]
+        }
+      ]
     }
   ]
 }

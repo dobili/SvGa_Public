@@ -2460,7 +2460,7 @@
           "karte": "portDelacroix.aussen",
           "art": "uebergang",
           "dialog": "port-delacroix-aussen.bayou",
-          "wenn": "musikhausOffen",
+          "wenn": "bayouOffen",
           "ziel": {
             "karte": "bayou.steg",
             "ausloeser": "zurueckDelacroix"
@@ -4087,6 +4087,12 @@
           "name": "figur.theron.name",
           "sprite": "figuren/theron.png",
           "dialog": "bayou.theron"
+        },
+        {
+          "kennung": "bayou.pepe",
+          "name": "figur.pepe.name",
+          "sprite": "figuren/pepe.png",
+          "dialog": "bayou.pepe"
         }
       ],
       "ausloeser": [
@@ -4109,6 +4115,36 @@
           "karte": "bayou.steg",
           "art": "gegenstand",
           "dialog": "bayou.nebel"
+        },
+        {
+          "name": "ereignisHausboot",
+          "karte": "bayou.steg",
+          "art": "dialog",
+          "dialog": "bayou.ereignis_hausboot"
+        },
+        {
+          "name": "luftboot",
+          "karte": "bayou.steg",
+          "art": "dialog",
+          "dialog": "bayou.luftboot"
+        },
+        {
+          "name": "sperreHochwasser",
+          "karte": "bayou.steg",
+          "art": "dialog",
+          "dialog": "bayou.sperre_hochwasser"
+        },
+        {
+          "name": "seite05",
+          "karte": "bayou.steg",
+          "art": "gegenstand",
+          "dialog": "bayou.seite05"
+        },
+        {
+          "name": "finchBauerC",
+          "karte": "bayou.steg",
+          "art": "gegenstand",
+          "dialog": "bayou.finch_bauer_c"
         }
       ]
     },

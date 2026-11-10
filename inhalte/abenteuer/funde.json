@@ -269,6 +269,25 @@
       "name": "fund.kapitaensmuetze.name",
       "text": "fund.kapitaensmuetze.text",
       "extra": "aussehen:kapitaensmuetze"
+    },
+    {
+      "kennung": "seite05",
+      "ort": "bayou",
+      "name": "fund.seite05.name",
+      "text": "fund.seite05.text",
+      "muenzen": 5
+    },
+    {
+      "kennung": "finchBauerC",
+      "ort": "bayou",
+      "name": "fund.finchBauerC.name",
+      "text": "fund.finchBauerC.text"
+    },
+    {
+      "kennung": "formularCafeDesExiles",
+      "ort": "bayou",
+      "name": "fund.formularCafeDesExiles.name",
+      "text": "fund.formularCafeDesExiles.text"
     }
   ]
 }

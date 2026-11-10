@@ -242,7 +242,7 @@
     {
       "moebel": "el7Gaslaterne",
       "feld": [
-        7,
+        6,
         10
       ],
       "vorn": true,
@@ -296,6 +296,41 @@
         28,
         17
       ]
+    },
+    {
+      "name": "ereignisHausboot",
+      "feld": [
+        8,
+        12
+      ]
+    },
+    {
+      "name": "finchBauerC",
+      "feld": [
+        10,
+        13
+      ]
+    },
+    {
+      "name": "seite05",
+      "feld": [
+        22,
+        10
+      ]
+    },
+    {
+      "name": "sperreHochwasser",
+      "feld": [
+        8,
+        17
+      ]
+    },
+    {
+      "name": "luftboot",
+      "feld": [
+        14,
+        29
+      ]
     }
   ],
   "figuren": [
@@ -304,6 +339,13 @@
       "feld": [
         17,
         20
+      ]
+    },
+    {
+      "name": "pepe",
+      "feld": [
+        7,
+        13
       ]
     }
   ],

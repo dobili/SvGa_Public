@@ -7,6 +7,7 @@ und eine Vorschau mit Möbeln und Figuren für die Bildprüfung.
 Aufruf: ``python -m pipeline.abenteuer.kartenbild PRIVAT VORSCHAUORDNER inhalte/abenteuer/szenen/*.json``
 """
 
+import re
 import sys
 from pathlib import Path
 
@@ -16,8 +17,10 @@ from pipeline.abenteuer.belebungsvorschau import teile as belebungsteile
 from pipeline.abenteuer.bodenraster import bodenfeld, randnachbar
 from pipeline.abenteuer.kartenbau import GESPERRT, INHALTE, LEER, WAND, WASSER, K, lade, platziere, raster
 from pipeline.abenteuer.katalog import katalogbefund, katalogeintraege
+from pipeline.abenteuer.klippe import grasboden, klippenfeld, strassenzeichen, treppenfeld
 from pipeline.abenteuer.moebelliste import lade_moebel
 from pipeline.abenteuer.randspur import randluecken
+from pipeline.abenteuer.winter import winterlich
 from pipeline.abenteuer.zusammenhang import HOLZ
 from pipeline.abenteuer.zustaende import zustandsname
 
@@ -111,9 +114,15 @@ def hintergrund(szene: dict, privat: Path, gezeichnet: dict | None = None) -> Im
     # Wandstile mit eigener Krone (Fels, Damm) zeichnen ihre Flächen auch draußen neben „wandart“:
     # Der Rand bleibt dann Boden, nur „#“ über einem Boden wird Hang oder Felswand (10.45).
     flaeche = flaechen(zeilen, szene.get("art") == "innen") if not wandart or "krone" in wand else {}
+    # Felskanten aus LimeZus Klippenkacheln (Szene „kante“: „klippe“, pipeline/abenteuer/klippe.py).
+    klippe = szene.get("kante") == "klippe"
+    gras = grasboden(szene)
     for y, zeile in enumerate(zeilen):
         for x, z in enumerate(zeile):
             ort = (x * K, y * K)
+            if klippe and (feld := klippenfeld(zeilen, x, y, gras)) is not None:
+                bild.alpha_composite(kachel(privat, boegen, {"bogen": "gelaende"}, list(feld)), ort)
+                continue
             if z == WASSER:
                 # Ufer aus Stein (Szene „ufer“: „stein“, KARTENREGELN 10.6): dieselbe Kachelwahl,
                 # gezeichnet aus dem eigenen Bogen; die Randspur rechnet mit LimeZus Wasser.
@@ -158,9 +167,20 @@ def hintergrund(szene: dict, privat: Path, gezeichnet: dict | None = None) -> Im
                 bild.alpha_composite(kachel(privat, boegen, art, feld), ort)
                 if gezeichnet is not None:
                     gezeichnet[(x, y)] = (sonder.get(z, grund), feld)
-    if not wandart:
+    if klippe:
+        _treppen(bild, privat, boegen, zeilen, strassenzeichen(szene))
+    elif not wandart:
         _kronenrand(zeichner, zeilen, flaeche)
     return bild
+
+
+def _treppen(bild: Image.Image, privat: Path, boegen: dict, zeilen: list[str], strasse: set[str]) -> None:
+    """In den Fels geschlagene Treppen auf Rampen durch eine Klippenkante (klippe.treppenfeld)."""
+    for y, zeile in enumerate(zeilen):
+        for x in range(len(zeile)):
+            if (feld := treppenfeld(zeilen, x, y, strasse)) is not None:
+                treppe = kachel(privat, boegen, {"bogen": "gelaende"}, list(feld))
+                bild.alpha_composite(treppe, (x * K, y * K))
 
 
 def _kronenrand(zeichner: ImageDraw.ImageDraw, zeilen: list[str], flaeche: dict) -> None:
@@ -283,6 +303,9 @@ def vorschau(szene: dict, privat: Path, grund: Image.Image) -> Image.Image:
     gesetzt, _ = platziere(szene, moebel)
     bild = grund.copy()
     teile = [(s["tiefe"], s["x"], s["y"], moebelbild(privat, moebel[s["name"]]["quelle"])) for s in gesetzt]
+    if ist_winter(szene):
+        # Wie die App (oberwelt/winter.ts): Möbel ohne Wasserregel, sonst würden blaue Autos dunkel.
+        teile = [(t, x, y, winterlich(b, wasser=False)) for t, x, y, b in teile]
     orte = {o["kennung"]: o for o in lade(INHALTE / "orte.json")["orte"]}
     ort = orte.get(szene["karte"].split(".")[0], {"figuren": []})
     for f in szene.get("figuren", []):
@@ -313,6 +336,23 @@ def randhang(x: int, y: int, zeilen: list[str], flaeche: dict) -> tuple[int, int
     breite = len(zeilen[0])
     nachbar = (1, y) if x == 0 else (breite - 2, y) if x == breite - 1 else None
     return nachbar if nachbar in flaeche else None
+
+
+def ist_winter(szene: dict) -> bool:
+    """Szene im Winterzustand (``"jahreszeit": "winter"``, Entscheidung 10.11.2026)."""
+    return szene.get("jahreszeit") == "winter"
+
+
+# Blumen und Pilze bleiben beim Umfärben bunt; in Winterszenen kommen sie weg (Entscheidung Winter).
+BLUEHT = re.compile(r"blume|pilz(?!kiosk)", re.I)
+
+
+def winterbefunde(szene: dict) -> list[str]:
+    """Blumen und Pilze in einer Winterszene (sie gehören weg); sonst nichts."""
+    if not ist_winter(szene):
+        return []
+    namen = sorted({o["moebel"] for o in szene.get("objekte", []) if BLUEHT.search(o.get("moebel", ""))})
+    return [f"{n}: Blumen und Pilze gehören nicht in eine Winterszene" for n in namen]
 
 
 def bildname(szene: dict) -> tuple[str, bool]:
@@ -347,6 +387,8 @@ def main() -> None:
         szene = lade(Path(name))
         gezeichnet: dict = {}
         grund = hintergrund(szene, privat, gezeichnet)
+        if ist_winter(szene):
+            grund = winterlich(grund)
         name, spielbild = bildname(szene)
         if spielbild:
             grund.convert("RGB").save(privat / "spiel" / "grafik" / "karten" / f"{name}.png")
@@ -355,6 +397,7 @@ def main() -> None:
         if not spielbild and not szene.get("variante"):
             befunde.append(f"{szene['datei']} ist weder Grundkarte noch Zustand in orte.json: nur Vorschau")
         befunde += mattenbefunde(szene, privat)
+        befunde += winterbefunde(szene)
         print(f"{name}: Hintergrund und Vorschau gezeichnet")
         for b in befunde:
             print(f"  - {b}")

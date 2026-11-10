@@ -1708,6 +1708,66 @@
       "zustand": "gebraucht",
       "stil": "klassisch",
       "blick": "keine"
+    },
+    "rv8Bahnhof": {
+      "quelle": "spiel/eigene/riverton_bahnhof.png",
+      "breite": 336,
+      "hoehe": 160,
+      "kollision": true,
+      "art": "gebaeude",
+      "zustand": "gebraucht",
+      "stil": "klassisch",
+      "blick": "unten"
+    },
+    "rv8Brueckenschatten": {
+      "quelle": "spiel/eigene/riverton_brueckenschatten.png",
+      "breite": 16,
+      "hoehe": 96,
+      "kollision": false,
+      "art": "deko",
+      "zustand": "gebraucht",
+      "stil": "klassisch",
+      "blick": "keine"
+    },
+    "rv8Holzdach": {
+      "quelle": "modern-farm/Single_Files_16x16/Props_and_Buildings_16x16/Canopy_Big_16x16.png",
+      "breite": 64,
+      "hoehe": 64,
+      "kollision": false,
+      "art": "gebaeude_teil",
+      "zustand": "gebraucht",
+      "stil": "klassisch",
+      "blick": "keine"
+    },
+    "rv8Ruderboot": {
+      "quelle": "modern-exteriors/Modern_Exteriors_16x16/ME_Theme_Sorter_16x16/10_Vehicles_Singles_16x16/ME_Singles_Vehicles_16x16_Boat_2_Left_1.png",
+      "breite": 80,
+      "hoehe": 32,
+      "kollision": false,
+      "art": "fahrzeug",
+      "zustand": "gebraucht",
+      "stil": "klassisch",
+      "blick": "keine"
+    },
+    "rv8Infokiosk": {
+      "quelle": "modern-exteriors/Modern_Exteriors_16x16/ME_Theme_Sorter_16x16/3_City_Props_Singles_16x16/ME_Singles_City_Props_16x16_Kiosk_Infopoint_1.png",
+      "breite": 80,
+      "hoehe": 96,
+      "kollision": true,
+      "art": "gebaeude",
+      "zustand": "gebraucht",
+      "stil": "klassisch",
+      "blick": "unten"
+    },
+    "rv8Poller": {
+      "quelle": "modern-exteriors/Modern_Exteriors_16x16/ME_Theme_Sorter_16x16/11_Camping_Singles_16x16/ME_Singles_Camping_16x16_Pier_14.png",
+      "breite": 32,
+      "hoehe": 16,
+      "kollision": true,
+      "art": "steg",
+      "zustand": "gebraucht",
+      "stil": "klassisch",
+      "blick": "keine"
     }
   }
 }

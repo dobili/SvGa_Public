@@ -28,312 +28,534 @@
   "objekte": [
     {
       "moebel": "wzFenster",
-      "feld": [2, 1],
+      "feld": [
+        2,
+        1
+      ],
       "an_wand": true
     },
     {
       "moebel": "wzFenster",
-      "feld": [5, 1],
+      "feld": [
+        5,
+        1
+      ],
       "an_wand": true
     },
     {
       "moebel": "rv8Gruendungsbild",
-      "feld": [11, 1],
+      "feld": [
+        11,
+        1
+      ],
       "an_wand": true
     },
     {
       "moebel": "wzFenster",
-      "feld": [17, 1],
+      "feld": [
+        17,
+        1
+      ],
       "an_wand": true
     },
     {
       "moebel": "wzFenster",
-      "feld": [20, 1],
+      "feld": [
+        20,
+        1
+      ],
       "an_wand": true
     },
     {
       "moebel": "rv5BankLang",
-      "feld": [8, 3]
+      "feld": [
+        8,
+        3
+      ]
     },
     {
       "moebel": "rv5BankLang",
-      "feld": [13, 3]
+      "feld": [
+        13,
+        3
+      ]
     },
     {
       "moebel": "cr7LangtischL",
-      "feld": [1, 5],
+      "feld": [
+        1,
+        5
+      ],
       "id": "t1",
       "bauteil_ok": true
     },
     {
       "moebel": "cr7LangtischM",
-      "feld": [3, 5],
+      "feld": [
+        3,
+        5
+      ],
       "id": "t1m",
       "bauteil_ok": true
     },
     {
       "moebel": "cr7LangtischR",
-      "feld": [4, 5],
+      "feld": [
+        4,
+        5
+      ],
       "id": "t1r",
       "bauteil_ok": true
     },
     {
       "moebel": "rv5Brett",
       "auf": "t1",
-      "versatz": [0, -6]
+      "versatz": [
+        0,
+        -6
+      ]
     },
     {
       "moebel": "rv5Brett",
       "auf": "t1m",
-      "versatz": [8, -6]
+      "versatz": [
+        8,
+        -6
+      ]
     },
     {
       "moebel": "rv5StuhlVorn",
-      "feld": [1, 4],
+      "feld": [
+        1,
+        4
+      ],
       "zu": "t1",
-      "versatz": [8, 0]
+      "versatz": [
+        8,
+        0
+      ]
     },
     {
       "moebel": "rv5StuhlRuecken",
-      "feld": [1, 7],
+      "feld": [
+        1,
+        7
+      ],
       "zu": "t1",
-      "versatz": [8, 0]
+      "versatz": [
+        8,
+        0
+      ]
     },
     {
       "moebel": "rv5StuhlVorn",
-      "feld": [3, 4],
+      "feld": [
+        3,
+        4
+      ],
       "zu": "t1m",
-      "versatz": [8, 0]
+      "versatz": [
+        8,
+        0
+      ]
     },
     {
       "moebel": "rv5StuhlRuecken",
-      "feld": [3, 7],
+      "feld": [
+        3,
+        7
+      ],
       "zu": "t1m",
-      "versatz": [8, 0]
+      "versatz": [
+        8,
+        0
+      ]
     },
     {
       "moebel": "cr7LangtischL",
-      "feld": [19, 5],
+      "feld": [
+        19,
+        5
+      ],
       "id": "t2",
       "bauteil_ok": true
     },
     {
       "moebel": "cr7LangtischM",
-      "feld": [21, 5],
+      "feld": [
+        21,
+        5
+      ],
       "id": "t2m",
       "bauteil_ok": true
     },
     {
       "moebel": "cr7LangtischR",
-      "feld": [22, 5],
+      "feld": [
+        22,
+        5
+      ],
       "id": "t2r",
       "bauteil_ok": true
     },
     {
       "moebel": "rv5Brett",
       "auf": "t2",
-      "versatz": [0, -6]
+      "versatz": [
+        0,
+        -6
+      ]
     },
     {
       "moebel": "rv5Brett",
       "auf": "t2m",
-      "versatz": [8, -6]
+      "versatz": [
+        8,
+        -6
+      ]
     },
     {
       "moebel": "rv5StuhlVorn",
-      "feld": [19, 4],
+      "feld": [
+        19,
+        4
+      ],
       "zu": "t2",
-      "versatz": [8, 0]
+      "versatz": [
+        8,
+        0
+      ]
     },
     {
       "moebel": "rv5StuhlRuecken",
-      "feld": [19, 7],
+      "feld": [
+        19,
+        7
+      ],
       "zu": "t2",
-      "versatz": [8, 0]
+      "versatz": [
+        8,
+        0
+      ]
     },
     {
       "moebel": "rv5StuhlVorn",
-      "feld": [21, 4],
+      "feld": [
+        21,
+        4
+      ],
       "zu": "t2m",
-      "versatz": [8, 0]
+      "versatz": [
+        8,
+        0
+      ]
     },
     {
       "moebel": "rv5StuhlRuecken",
-      "feld": [21, 7],
+      "feld": [
+        21,
+        7
+      ],
       "zu": "t2m",
-      "versatz": [8, 0]
+      "versatz": [
+        8,
+        0
+      ]
     },
     {
       "moebel": "cr7LangtischL",
-      "feld": [1, 10],
+      "feld": [
+        1,
+        10
+      ],
       "id": "t3",
       "bauteil_ok": true
     },
     {
       "moebel": "cr7LangtischM",
-      "feld": [3, 10],
+      "feld": [
+        3,
+        10
+      ],
       "id": "t3m",
       "bauteil_ok": true
     },
     {
       "moebel": "cr7LangtischR",
-      "feld": [4, 10],
+      "feld": [
+        4,
+        10
+      ],
       "id": "t3r",
       "bauteil_ok": true
     },
     {
       "moebel": "rv5Brett",
       "auf": "t3",
-      "versatz": [0, -6]
+      "versatz": [
+        0,
+        -6
+      ]
     },
     {
       "moebel": "rv5Brett",
       "auf": "t3m",
-      "versatz": [8, -6]
+      "versatz": [
+        8,
+        -6
+      ]
     },
     {
       "moebel": "rv5StuhlVorn",
-      "feld": [1, 9],
+      "feld": [
+        1,
+        9
+      ],
       "zu": "t3",
-      "versatz": [8, 0]
+      "versatz": [
+        8,
+        0
+      ]
     },
     {
       "moebel": "rv5StuhlRuecken",
-      "feld": [1, 12],
+      "feld": [
+        1,
+        12
+      ],
       "zu": "t3",
-      "versatz": [8, 0]
+      "versatz": [
+        8,
+        0
+      ]
     },
     {
       "moebel": "rv5StuhlVorn",
-      "feld": [3, 9],
+      "feld": [
+        3,
+        9
+      ],
       "zu": "t3m",
-      "versatz": [8, 0]
+      "versatz": [
+        8,
+        0
+      ]
     },
     {
       "moebel": "rv5StuhlRuecken",
-      "feld": [3, 12],
+      "feld": [
+        3,
+        12
+      ],
       "zu": "t3m",
-      "versatz": [8, 0]
+      "versatz": [
+        8,
+        0
+      ]
     },
     {
       "moebel": "cr7LangtischL",
-      "feld": [19, 10],
+      "feld": [
+        19,
+        10
+      ],
       "id": "t4",
       "bauteil_ok": true
     },
     {
       "moebel": "cr7LangtischM",
-      "feld": [21, 10],
+      "feld": [
+        21,
+        10
+      ],
       "id": "t4m",
       "bauteil_ok": true
     },
     {
       "moebel": "cr7LangtischR",
-      "feld": [22, 10],
+      "feld": [
+        22,
+        10
+      ],
       "id": "t4r",
       "bauteil_ok": true
     },
     {
       "moebel": "rv5Brett",
       "auf": "t4",
-      "versatz": [0, -6]
+      "versatz": [
+        0,
+        -6
+      ]
     },
     {
       "moebel": "rv5Brett",
       "auf": "t4m",
-      "versatz": [8, -6]
+      "versatz": [
+        8,
+        -6
+      ]
     },
     {
       "moebel": "rv5StuhlVorn",
-      "feld": [19, 9],
+      "feld": [
+        19,
+        9
+      ],
       "zu": "t4",
-      "versatz": [8, 0]
+      "versatz": [
+        8,
+        0
+      ]
     },
     {
       "moebel": "rv5StuhlRuecken",
-      "feld": [19, 12],
+      "feld": [
+        19,
+        12
+      ],
       "zu": "t4",
-      "versatz": [8, 0]
+      "versatz": [
+        8,
+        0
+      ]
     },
     {
       "moebel": "rv5StuhlVorn",
-      "feld": [21, 9],
+      "feld": [
+        21,
+        9
+      ],
       "zu": "t4m",
-      "versatz": [8, 0]
+      "versatz": [
+        8,
+        0
+      ]
     },
     {
       "moebel": "rv5StuhlRuecken",
-      "feld": [21, 12],
+      "feld": [
+        21,
+        12
+      ],
       "zu": "t4m",
-      "versatz": [8, 0]
+      "versatz": [
+        8,
+        0
+      ]
     },
     {
       "moebel": "mf7Truhe",
-      "feld": [3, 14]
+      "feld": [
+        3,
+        14
+      ]
     },
     {
       "moebel": "mf7Truhe",
-      "feld": [5, 14]
+      "feld": [
+        5,
+        14
+      ]
     },
     {
       "moebel": "rv8Limonadenstand",
-      "feld": [20, 13]
+      "feld": [
+        20,
+        13
+      ]
     },
     {
       "moebel": "wzPflanze",
-      "feld": [22, 14]
+      "feld": [
+        22,
+        14
+      ]
     },
     {
       "moebel": "mf4Fussmatte",
-      "feld": [12, 16],
-      "versatz": [0, 8]
+      "feld": [
+        12,
+        16
+      ],
+      "versatz": [
+        0,
+        8
+      ]
     },
     {
       "moebel": "mf5TuerSuedHolz",
-      "feld": [12, 17],
+      "feld": [
+        12,
+        17
+      ],
       "an_wand": true
     }
   ],
   "ausloeser": [
     {
       "name": "start",
-      "feld": [12, 16],
+      "feld": [
+        12,
+        16
+      ],
       "eigenschaften": {
         "richtung": "oben"
       }
     },
     {
       "name": "pavillonAusgang",
-      "feld": [12, 17]
+      "feld": [
+        12,
+        17
+      ]
     },
     {
       "name": "gedenktafel",
-      "feld": [11, 4]
+      "feld": [
+        11,
+        4
+      ]
     },
     {
       "name": "limonadenglas",
-      "feld": [20, 16]
+      "feld": [
+        20,
+        16
+      ]
     }
   ],
   "figuren": [
     {
       "name": "slick",
-      "feld": [5, 8]
+      "feld": [
+        5,
+        8
+      ]
     },
     {
       "name": "ray",
-      "feld": [18, 8]
+      "feld": [
+        18,
+        8
+      ]
     },
     {
       "name": "tamsin",
-      "feld": [8, 16]
+      "feld": [
+        8,
+        16
+      ]
     }
   ],
   "belebung": [
     {
       "name": "zuschauer",
       "typ": "statist",
-      "feld": [2, 8],
+      "feld": [
+        2,
+        8
+      ],
       "eigenschaften": {
         "von": "2,8",
         "bis": "1,10",
@@ -345,7 +567,10 @@
     {
       "name": "wettender",
       "typ": "statist",
-      "feld": [16, 8],
+      "feld": [
+        16,
+        8
+      ],
       "eigenschaften": {
         "von": "16,8",
         "bis": "16,10",
@@ -355,8 +580,16 @@
       }
     }
   ],
-  "zustand": ["alt", "gebraucht", "neu"],
-  "stil": ["klassisch", "modern", "rustikal"],
+  "zustand": [
+    "alt",
+    "gebraucht",
+    "neu"
+  ],
+  "stil": [
+    "klassisch",
+    "modern",
+    "rustikal"
+  ],
   "boeden": {
     "w": "fliesenWeiss",
     "d": "holzDunkel",

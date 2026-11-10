@@ -5,6 +5,7 @@
   "toenung": "nebel",
   "beschreibung": "Der alte Steinbruch Hargrove & Söhne hinter Ironwood (Runde 8), ein kühler Morgen. Die Karte zeigt die Grube von oben in drei Höhen: oben die Wiese an der Bruchkante, darunter die Abbaustufe aus Felsboden, ganz unten die Sohle aus Schotter. Die Kanten verlaufen unregelmäßig, am Fuß liegt Geröll; Rampen führen schräg hinunter, oben im Osten, auf der Stufe zurück nach Westen und dort zur Sohle. Die Zufahrt kommt am Westrand an einer Kette mit Schild vorbei, die Bude hat ihre Tür zur Zufahrt, eine Bank und ein Aussichtspunkt mit Geländer blicken in die Tiefe, Birken stehen an der Kante. Auf der Stufe lagern gesägte Blöcke in Reihen. Auf der Sohle liegt ein natürliches Wasserloch mit Schilf. Der Stollenmund sitzt in der unteren Felskante; die Feldbahn läuft von dort mit zwei Loren nach Süden bis zum Prellbock am Verladeplatz, wo der alte Radlader steht. Werkzeugschuppen im Westen, Graffiti an der Felswand im Nordosten.",
   "wand": "fels",
+  "kante": "klippe",
   "boden": "schotter",
   "boeden": {
     "r": "gras",

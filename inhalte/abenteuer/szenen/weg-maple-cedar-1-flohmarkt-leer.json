@@ -1,8 +1,8 @@
 {
   "karte": "wegMapleCedar.landstrasse",
-  "datei": "karten/weg-maple-cedar-landstrasse-gatter-offen.json",
+  "datei": "karten/weg-maple-cedar-1-flohmarkt-leer.json",
   "art": "aussen",
-  "beschreibung": "Zustand: Nach der Rätseltafel am Ortsausgang (S1): Walt Miller hat das Gatter zum Kürbishof geöffnet, man kann zu den Feldern hinüber. Die Landstraße zwischen Maple Falls und Cedar Creek, ein Spätsommermorgen, Maßstab nach 7a.2 (120 × 30 Kacheln, gut 35 s Weg). Ein Feldweg aus Erde mit weichen Rändern zieht sich von Westen nach Osten: am Westrand drei Felder breit wie die Parkstraße, mit einer Kurve nach Norden an der Kuhweide und einer nach Süden an der Rast, am Ostrand zwei Felder breit. Im Norden reichen die Felder bis zum Rand: links das Kornfeld der Brennans mit Vogelscheuche und dem Traktor von Otis am Feldrand, rechts hinter dem Abzweig Millers Mais. Ein durchgehender Holzzaun trennt Felder und Weg; am Abzweig führt durch das Gatter (S1) der Feldweg nach Norden zum Kürbishof, daneben der Wegweiser mit mehreren Richtungen. Im Süden fließt der Fluss über West-, Ost- und Südrand.\n\nL1 Ortsausgang: Rätseltafel mit Dach und das Ortsschild „Maple Falls“ nördlich am Weg (südlich ist schon der Fluss). L2: die eingezäunte Kuhweide mit Weidetor „Bitte schließen“ und Tränke. L3: Kornfeld, Traktor am Feldrand, Krähen. L4: Kreuzung mit Wegweiser, gegenüber Adas Apfelstand mit Äpfeln, Schuppen und drei Obstbäumen. L5: Millers Mais, der Wanderer auf dem Weg. L6: Bank direkt am Weg mit Nia, zwei Heuhaufen, zwei Laubbäume, einer rot. L7: dichte Büsche am Ende des Maisfelds, oben eine Lücke zum verlorenen Formular. L8: Erlen am Fluss, ein Hase am Feldrand. Dazwischen Baumgruppen, Grasbüschel, Blumen, Pilze und Steine in kleinen Gruppen am Wegrand.",
+  "beschreibung": "Zustand: Vor der ersten Clubnadel: Auf dem Hof steht nur Odettes Wohnmobil, die Tische mit Kram sind noch nicht aufgebaut; die Plakate kündigen den Flohmarkt an (Dokument 15, Ereignis „später“). Die Landstraße zwischen Maple Falls und Cedar Creek, ein Spätsommermorgen, Maßstab nach 7a.2 (120 × 30 Kacheln, gut 35 s Weg). Ein Feldweg aus Erde mit weichen Rändern zieht sich von Westen nach Osten: am Westrand drei Felder breit wie die Parkstraße, mit einer Kurve nach Norden an der Kuhweide und einer nach Süden an der Rast, am Ostrand zwei Felder breit. Im Norden reichen die Felder bis zum Rand: links das Kornfeld der Brennans mit Vogelscheuche und dem Traktor von Otis am Feldrand, rechts hinter dem Abzweig Millers Mais. Ein durchgehender Holzzaun trennt Felder und Weg; am Abzweig führt durch das Gatter (S1) der Feldweg nach Norden zum Kürbishof, daneben der Wegweiser mit mehreren Richtungen. Im Süden fließt der Fluss über West-, Ost- und Südrand.\n\nL1 Ortsausgang: Rätseltafel mit Dach und das Ortsschild „Maple Falls“ nördlich am Weg (südlich ist schon der Fluss). L2: die eingezäunte Kuhweide mit Weidetor „Bitte schließen“ und Tränke. L3: Kornfeld, Traktor am Feldrand, Krähen. L4: Kreuzung mit Wegweiser, gegenüber Adas Apfelstand mit Äpfeln, Schuppen und drei Obstbäumen. L5: Millers Mais, der Wanderer auf dem Weg. L6: Bank direkt am Weg mit Nia, zwei Heuhaufen, zwei Laubbäume, einer rot. L7: dichte Büsche am Ende des Maisfelds, oben eine Lücke zum verlorenen Formular. L8: Erlen am Fluss, ein Hase am Feldrand. Dazwischen Baumgruppen, Grasbüschel, Blumen, Pilze und Steine in kleinen Gruppen am Wegrand.",
   "boden": "gras",
   "wandart": "gras",
   "boeden": {
@@ -2027,12 +2027,12 @@
       "bauteil_ok": true
     },
     {
-      "moebel": "wg4ZaunBottomRight",
+      "moebel": "wg4ZaunBottomMiddle",
       "feld": [51, 11],
       "bauteil_ok": true
     },
     {
-      "moebel": "wg4ZaunBottomLeft",
+      "moebel": "wg4ZaunBottomMiddle",
       "feld": [54, 11],
       "bauteil_ok": true
     },
@@ -2359,6 +2359,16 @@
     {
       "moebel": "wg4ZaunBottomMiddle",
       "feld": [119, 11],
+      "bauteil_ok": true
+    },
+    {
+      "moebel": "wg4Tor1",
+      "feld": [52, 11],
+      "bauteil_ok": true
+    },
+    {
+      "moebel": "wg4Tor2",
+      "feld": [53, 11],
       "bauteil_ok": true
     },
     {
@@ -2968,26 +2978,6 @@
       "bauteil_ok": true
     },
     {
-      "moebel": "mf8FlohmarktTischA",
-      "feld": [89, 23]
-    },
-    {
-      "moebel": "mf8FlohmarktTischB",
-      "feld": [92, 23]
-    },
-    {
-      "moebel": "mf8FlohmarktTischC",
-      "feld": [96, 22]
-    },
-    {
-      "moebel": "mf8FlohmarktKarton",
-      "feld": [94, 19]
-    },
-    {
-      "moebel": "mf8FlohmarktKiste",
-      "feld": [97, 19]
-    },
-    {
       "moebel": "mf8FlohmarktPlakat",
       "feld": [95, 12]
     },
@@ -3186,5 +3176,5 @@
       }
     }
   ],
-  "zustand_der_karte": "wegMapleCedarTafelBestanden"
+  "zustand_der_karte": "nadelMapleFalls < 1"
 }

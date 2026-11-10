@@ -40,7 +40,8 @@
           "name": "ort.mapleFalls.park",
           "innen": false,
           "zustaende": {
-            "nadelMapleFalls >= 1": "karten/maple-falls-park-steg-neu.json"
+            "nadelMapleFalls >= 1": "karten/maple-falls-park-steg-neu.json",
+            "aufbruchGesehen und nicht ankunftCedarCreekGesehen": "karten/maple-falls-park-schulbus.json"
           }
         },
         {
@@ -603,9 +604,9 @@
           "innen": false,
           "musik": "musik/landstrasse.ogg",
           "zustaende": {
-            "nadelMapleFalls < 1": "karten/weg-maple-cedar-landstrasse-flohmarkt-leer.json",
-            "wegMapleCedarTafelBestanden": "karten/weg-maple-cedar-landstrasse-gatter-offen.json",
-            "wegMapleCedarTafelBestanden und nadelMapleFalls < 1": "karten/weg-maple-cedar-landstrasse-gatter-offen-leer.json"
+            "nadelMapleFalls < 1": "karten/weg-maple-cedar-1-flohmarkt-leer.json",
+            "wegMapleCedarTafelBestanden": "karten/weg-maple-cedar-1-gatter-offen.json",
+            "wegMapleCedarTafelBestanden und nadelMapleFalls < 1": "karten/weg-maple-cedar-1-gatter-offen-leer.json"
           }
         },
         {

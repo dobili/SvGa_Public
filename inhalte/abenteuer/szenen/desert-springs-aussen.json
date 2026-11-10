@@ -2,7 +2,7 @@
   "karte": "desertSprings.aussen",
   "datei": "karten/desert-springs-aussen.json",
   "art": "aussen",
-  "beschreibung": "Variante C, reich: Gemischtwarenladen am Vorplatz, große Tankstelle mit Waschstraße, blaues Diner, blaues Bahnhofshaus, Hof aus Stein mit Bänken, viele blühende Kakteen und Bäume, Blumenkästen.",
+  "beschreibung": "Desert Springs an der Old Mother Road, am Rand des roten Canyons. Oben die Bahnlinie mit einem langen Bahnsteig, daran der alte Bahnhof mit Veranda (darin das Antiquariat von Mr. Okoro); westlich der Wasserturm und das Diner, östlich die große Tankstelle mit Waschstraße. Die Straße kommt von Westen (Highway), hat eine Mittellinie und biegt in einer Kurve nach Süden zum Hof ab. Südlich der Straße das Motel mit Leuchtschild, die Garage von Tomás (Club), Wohncontainer, Wohnwagen, eine Hütte und der Gemischtwarenladen; davor ein heller Hof mit Bänken. Ringsum roter Sand, Felsen, Saguaros und blühende Kakteen; nach Osten der Pfad zum Canyon.",
   "wand": "felsRot",
   "wandart": "sandRot",
   "boden": "sandRot",
@@ -10,7 +10,9 @@
     "k": "schotter",
     "p": "pflaster",
     "s": "asphalt",
-    "q": "stein"
+    "q": "stein",
+    "m": "asphaltMitte",
+    "n": "asphaltMitteSenkrecht"
   },
   "raster": [
     "############################################################",
@@ -21,7 +23,7 @@
     "#kkkkkkkkkkkkkkkkkkkkkkkkkkkkkkkkkkkkkkkkkkkkkkkkkkkkkkkkkk#",
     "#.............ppppppppppppppppppppppp......................#",
     "#.............ppppppppppppppppppppppp......................#",
-    "#..........................................................#",
+    "#................pppppppppppppppppppp......................#",
     "#..........................................................#",
     "#..........................................................#",
     "#..........................................................#",
@@ -31,17 +33,17 @@
     "#..........................................................#",
     "#pppppppppppppppppppppppppppppppppppppppppppppppppppppppppp#",
     "#pppppppppppppppppppppppppppppppppppppppppppppppppppppppppp#",
+    "sssssssssssssssssssssssssssssssssssssssssssspp.............#",
+    "mmmmmmmmmmmmmmmmmmmmmmmmmmmmmmmmmmmmmmmmmssssp.............#",
     "ssssssssssssssssssssssssssssssssssssssssssssss.............#",
-    "ssssssssssssssssssssssssssssssssssssssssssssss.............#",
-    "ssssssssssssssssssssssssssssssssssssssssssssss.............#",
-    "#ppppppppppppppppppppppppppppppppppppppppppsss.............#",
-    "#..........................................sss.............#",
-    "#..........................................sss.............#",
-    "#..........................................sss.............#",
-    "#..........................................sss.............#",
-    "#..........................................sss.............#",
-    "#..........................................sss.............#",
-    "#..........................................sss.............#",
+    "#ppppppppppppppppppppppppppppppppppppppppsssss.............#",
+    "#.........................................ssss.............#",
+    "#..........................................sns.............#",
+    "#..........................................sns.............#",
+    "#..........................................sns.............#",
+    "#..........................................sns.............#",
+    "#..........................................sns.............#",
+    "#..........................................sns.............#",
     "#..qqqqqqqqqqqqqqqqqqqqqqqqqqqqqqqqqqqqqqqqqqq.............#",
     "#..qqqqqqqqqqqqqqqqqqqqqqqqqqqqqqqqqqqqqqqqqqq.............#",
     "#..qqqqqqqqqqqqqqqqqqqqqqqqqqqqqqqqqqqqqqqqqqqppppppppppppp#",
@@ -646,16 +648,6 @@
       "vorn": true
     },
     {
-      "moebel": "ds6Diner",
-      "feld": [8, 9],
-      "id": "diner"
-    },
-    {
-      "moebel": "mf4SchildDiner",
-      "feld": [11, 9],
-      "vorn": true
-    },
-    {
       "moebel": "dd6Wasserturm",
       "feld": [1, 8]
     },
@@ -766,6 +758,59 @@
     {
       "moebel": "wg4Felsgruppe",
       "feld": [20, 35]
+    },
+    {
+      "moebel": "mf4Diner",
+      "feld": [9, 7],
+      "id": "diner"
+    },
+    {
+      "moebel": "rvBahnsteigbank",
+      "feld": [18, 6]
+    },
+    {
+      "moebel": "rvBahnsteigbank",
+      "feld": [33, 6]
+    },
+    {
+      "moebel": "dd6Saguaro",
+      "feld": [6, 9]
+    },
+    {
+      "moebel": "dd6KaktusBluehend",
+      "feld": [7, 13]
+    },
+    {
+      "moebel": "wg4Felsgruppe",
+      "feld": [5, 34]
+    },
+    {
+      "moebel": "wg4Felsgruppe",
+      "feld": [40, 34]
+    },
+    {
+      "moebel": "wg4Felsgruppe",
+      "feld": [24, 34]
+    },
+    {
+      "moebel": "dd6Saguaro",
+      "feld": [13, 33]
+    },
+    {
+      "moebel": "dd6Saguaro",
+      "feld": [32, 33]
+    },
+    {
+      "moebel": "dd6KaktusKlein",
+      "feld": [45, 35]
+    },
+    {
+      "moebel": "dd6KaktusBluehend",
+      "feld": [1, 32]
+    },
+    {
+      "moebel": "dd6Saguaro",
+      "feld": [56, 22]
     }
   ],
   "ausloeser": [

@@ -3117,6 +3117,9 @@
         {
           "kennung": "desertSprings.aussen",
           "datei": "karten/desert-springs-aussen.json",
+          "zustaende": {
+            "endeAkt3Gesehen": "karten/desert-springs-aussen-meisterschaft.json"
+          },
           "name": "ort.desertSprings.aussen",
           "innen": false
         },

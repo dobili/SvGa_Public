@@ -352,6 +352,20 @@
         "gullys": 0.01
       }
     },
+    "asphaltMitte": {
+      "bogen": "stadt",
+      "feld": [
+        12,
+        6
+      ]
+    },
+    "asphaltMitteSenkrecht": {
+      "bogen": "stadt",
+      "feld": [
+        12,
+        7
+      ]
+    },
     "hecke": {
       "bogen": "gelaende",
       "feld": [

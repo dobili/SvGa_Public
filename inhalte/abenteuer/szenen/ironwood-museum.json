@@ -2,191 +2,353 @@
   "karte": "ironwood.museum",
   "datei": "karten/ironwood-museum.json",
   "art": "innen",
-  "beschreibung": "Variante B: roter Teppich als Mittelgang, die Schalter rechts an der Nordwand, Vitrinen links, Postsäcke rechts an der Ostwand, Wartesitze unter den Fenstern.",
+  "beschreibung": "Heimatmuseum im alten Bahnhof (Runde 8, Notiz 17): zwei Räume, 34 × 18. Die alte Schalterhalle mit dem Fahrkartenschalter an der Nordwand, drei hohen Fenstern und dem Fahrplan davor; roter Teppich als Mittelgang von der Tür zum Pult von Mr. Teague. Zwei große Vitrinen mit Platz ringsum, an der Südseite eine Reihe gefüllter Vitrinen, darunter die Zeitung von 1858 und ein freies Fach für Brief und Umschlag. Die Postsäcke von 1866 liegen als Ausstellungsstück auf dem Gepäckkarren hinter Absperrpfosten. Durch einen Durchgang der Nebenraum über Werk und Stadt: Bilder an der Wand, das Foto vom Brückenbau, eine große Vitrine in der Mitte und eine Reihe Schaukästen, darunter der Glasfunke. Bank, Infotafeln, Pflanzen.",
   "wand": "creme",
   "boden": "fliesenGrau",
   "raster": [
-    "##########################",
-    "##########################",
-    "##########################",
-    "#...........tt...........#",
-    "#...........tt...........#",
-    "#...........tt...........#",
-    "#...........tt...........#",
-    "#...........tt...........#",
-    "#...........tt...........#",
-    "#...........tt...........#",
-    "#...........tt...........#",
-    "#...........tt...........#",
-    "#...........tt...........#",
-    "#############.############",
-    "##########################"
+    "##################################",
+    "##################################",
+    "##################################",
+    "#.........ttt.........#..........#",
+    "#.........ttt.........#..........#",
+    "#.........ttt.........#..........#",
+    "#.........ttt.........#..........#",
+    "#.........ttt.........#..........#",
+    "#.........ttt.........#..........#",
+    "#.........ttt....................#",
+    "#.........ttt....................#",
+    "#.........ttt.........#..........#",
+    "#.........ttt.........#..........#",
+    "#.........ttt.........#..........#",
+    "#.........ttt.........#..........#",
+    "#.........ttt.........#..........#",
+    "###########.######################",
+    "##################################"
   ],
   "objekte": [
     {
-      "moebel": "cc6TuerSued",
-      "feld": [13, 14],
-      "an_wand": true
-    },
-    {
-      "moebel": "cc5Fussmatte",
-      "feld": [13, 12],
-      "versatz": [0, 24]
-    },
-    {
-      "moebel": "cc4Tresen",
-      "feld": [14, 1]
-    },
-    {
-      "moebel": "cc4Tresen",
-      "feld": [16, 1]
-    },
-    {
-      "moebel": "cc4Tresen",
-      "feld": [18, 1]
+      "moebel": "iw8Schalter",
+      "feld": [
+        1,
+        1
+      ]
     },
     {
       "moebel": "cc4Fenster",
-      "feld": [2, 1],
+      "feld": [
+        8,
+        1
+      ],
       "an_wand": true
     },
     {
       "moebel": "cc4Fenster",
-      "feld": [7, 1],
+      "feld": [
+        13,
+        1
+      ],
+      "an_wand": true
+    },
+    {
+      "moebel": "cc4Fenster",
+      "feld": [
+        17,
+        1
+      ],
       "an_wand": true
     },
     {
       "moebel": "cc4Fahrplan",
-      "feld": [10, 1],
-      "an_wand": true
-    },
-    {
-      "moebel": "wzBild",
-      "feld": [5, 1],
-      "an_wand": true,
-      "versatz": [0, 6]
-    },
-    {
-      "moebel": "cc4Wartesitze",
-      "feld": [2, 4]
-    },
-    {
-      "moebel": "cc4Wartesitze",
-      "feld": [6, 4]
-    },
-    {
-      "moebel": "iwVitrine",
-      "feld": [3, 8]
-    },
-    {
-      "moebel": "mf8VitrineLeer",
-      "feld": [5, 8]
-    },
-    {
-      "moebel": "mf4Vitrine",
-      "feld": [8, 9]
+      "feld": [
+        19,
+        2
+      ]
     },
     {
       "moebel": "mf8Lehrerpult",
-      "feld": [16, 6],
+      "feld": [
+        14,
+        4
+      ],
       "id": "pult"
     },
     {
       "moebel": "cc4Hocker",
-      "feld": [15, 7]
+      "feld": [
+        16,
+        5
+      ]
     },
     {
-      "moebel": "iw5Sackkarre",
-      "feld": [21, 7]
+      "moebel": "iw8VitrineGross1",
+      "feld": [
+        3,
+        6
+      ]
     },
     {
-      "moebel": "iw5Postsack",
-      "feld": [21, 10]
-    },
-    {
-      "moebel": "iw5Postsack",
-      "feld": [22, 10]
-    },
-    {
-      "moebel": "iw5Postsack",
-      "feld": [23, 9]
-    },
-    {
-      "moebel": "cc4PflanzeK",
-      "feld": [1, 11]
-    },
-    {
-      "moebel": "cc4PflanzeK",
-      "feld": [24, 11]
-    },
-    {
-      "moebel": "iwFass",
-      "feld": [10, 11]
-    },
-    {
-      "moebel": "mf4Vitrine",
-      "feld": [10, 6]
-    },
-    {
-      "moebel": "mf4Vitrine",
-      "feld": [16, 10]
-    },
-    {
-      "moebel": "cc4PflanzeK",
-      "feld": [1, 3]
+      "moebel": "iw8VitrineGross2",
+      "feld": [
+        16,
+        8
+      ]
     },
     {
       "moebel": "iwVitrine",
-      "feld": [23, 4]
+      "feld": [
+        2,
+        12
+      ]
+    },
+    {
+      "moebel": "iw8VitrineA",
+      "feld": [
+        5,
+        12
+      ]
+    },
+    {
+      "moebel": "iw8VitrineB",
+      "feld": [
+        14,
+        12
+      ]
+    },
+    {
+      "moebel": "iw8VitrineC",
+      "feld": [
+        17,
+        12
+      ]
     },
     {
       "moebel": "mf4Vitrine",
-      "feld": [19, 5]
+      "feld": [
+        7,
+        13
+      ]
     },
     {
-      "moebel": "cc4Holzkiste",
-      "feld": [10, 3]
+      "moebel": "iw5Sackkarre",
+      "feld": [
+        19,
+        4
+      ]
+    },
+    {
+      "moebel": "iw5Postsack",
+      "feld": [
+        20,
+        7
+      ]
+    },
+    {
+      "moebel": "iw5Postsack",
+      "feld": [
+        21,
+        7
+      ]
+    },
+    {
+      "moebel": "iw8Absperrpfosten",
+      "feld": [
+        18,
+        4
+      ]
+    },
+    {
+      "moebel": "iw8Absperrpfosten",
+      "feld": [
+        18,
+        6
+      ]
+    },
+    {
+      "moebel": "iw8Infotafel",
+      "feld": [
+        7,
+        9
+      ]
+    },
+    {
+      "moebel": "iw8Museumsbank",
+      "feld": [
+        7,
+        4
+      ]
+    },
+    {
+      "moebel": "iw8Pflanze",
+      "feld": [
+        1,
+        9
+      ]
+    },
+    {
+      "moebel": "iw8Pflanze",
+      "feld": [
+        12,
+        3
+      ]
+    },
+    {
+      "moebel": "iw8BildA",
+      "feld": [
+        24,
+        1
+      ],
+      "an_wand": true
+    },
+    {
+      "moebel": "iw8BildB",
+      "feld": [
+        27,
+        1
+      ],
+      "an_wand": true
+    },
+    {
+      "moebel": "iw8BildC",
+      "feld": [
+        30,
+        1
+      ],
+      "an_wand": true
+    },
+    {
+      "moebel": "wzBild",
+      "feld": [
+        32,
+        1
+      ],
+      "an_wand": true,
+      "versatz": [
+        0,
+        6
+      ]
+    },
+    {
+      "moebel": "iw8VitrineGross3",
+      "feld": [
+        26,
+        6
+      ]
+    },
+    {
+      "moebel": "iw8Schaukasten1",
+      "feld": [
+        24,
+        12
+      ]
+    },
+    {
+      "moebel": "iw8Schaukasten2",
+      "feld": [
+        27,
+        12
+      ]
+    },
+    {
+      "moebel": "iw8Schaukasten3",
+      "feld": [
+        30,
+        12
+      ]
+    },
+    {
+      "moebel": "iw8Infotafel",
+      "feld": [
+        23,
+        4
+      ]
+    },
+    {
+      "moebel": "iw8Pflanze",
+      "feld": [
+        31,
+        4
+      ]
+    },
+    {
+      "moebel": "cc6TuerSued",
+      "feld": [
+        11,
+        17
+      ],
+      "an_wand": true
+    },
+    {
+      "moebel": "cc5Fussmatte",
+      "feld": [
+        11,
+        15
+      ],
+      "versatz": [
+        0,
+        24
+      ]
     }
   ],
   "ausloeser": [
     {
       "name": "start",
-      "feld": [13, 12],
+      "feld": [
+        11,
+        15
+      ],
       "eigenschaften": {
         "richtung": "oben"
       }
     },
     {
       "name": "museumAusgang",
-      "feld": [13, 13]
+      "feld": [
+        11,
+        16
+      ]
     },
     {
       "name": "postsack",
-      "feld": [20, 10]
+      "feld": [
+        19,
+        8
+      ]
     },
     {
       "name": "vitrine1858",
-      "feld": [4, 11]
+      "feld": [
+        3,
+        15
+      ]
     },
     {
       "name": "fundGlasfunke",
-      "feld": [9, 11]
+      "feld": [
+        28,
+        15
+      ]
     }
   ],
   "figuren": [
     {
       "name": "teague",
-      "feld": [18, 9]
+      "feld": [
+        16,
+        7
+      ]
     }
   ],
   "belebung": [
     {
       "name": "besucherin",
       "typ": "statist",
-      "feld": [8, 12],
+      "feld": [
+        25,
+        10
+      ],
       "eigenschaften": {
-        "von": "8,12",
-        "bis": "11,12",
+        "von": "25,10",
+        "bis": "30,10",
         "tun": "liest die Schilder",
         "wann": "tag",
         "sagt": "statist.ironwood.museum.besucherin"
@@ -195,17 +357,31 @@
     {
       "name": "lehrer",
       "typ": "statist",
-      "feld": [14, 12],
+      "feld": [
+        6,
+        10
+      ],
       "eigenschaften": {
-        "von": "14,12",
-        "bis": "14,12",
+        "von": "6,10",
+        "bis": "6,10",
         "tun": "führt eine Schulklasse durch das Museum",
         "sagt": "statist.ironwood.museum.lehrer"
       }
     }
   ],
-  "zustand": ["gebraucht", "alt", "neu"],
-  "stil": ["klassisch", "einfach", "industrie", "rustikal", "modern", "schule"],
+  "zustand": [
+    "gebraucht",
+    "alt",
+    "neu"
+  ],
+  "stil": [
+    "klassisch",
+    "einfach",
+    "industrie",
+    "rustikal",
+    "modern",
+    "schule"
+  ],
   "boeden": {
     "t": "teppichRot"
   }

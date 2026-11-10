@@ -1,5 +1,235 @@
 {
   "moebel": {
+    "iw8Duschkabine": {
+      "quelle": "modern-interiors/1_Interiors/16x16/Theme_Sorter_Black_Shadow_Singles/3_Bathroom_Black_Shadow_Singles_16x16/Bathroom_Black_Shadow_Singles_152.png",
+      "breite": 32,
+      "hoehe": 48,
+      "kollision": true,
+      "art": "dusche",
+      "blick": "unten",
+      "zustand": "gebraucht",
+      "stil": "industrie"
+    },
+    "iw8DuschkabineB": {
+      "quelle": "modern-interiors/1_Interiors/16x16/Theme_Sorter_Black_Shadow_Singles/3_Bathroom_Black_Shadow_Singles_16x16/Bathroom_Black_Shadow_Singles_154.png",
+      "breite": 32,
+      "hoehe": 48,
+      "kollision": true,
+      "art": "dusche",
+      "blick": "unten",
+      "zustand": "gebraucht",
+      "stil": "industrie"
+    },
+    "iw8Wandspiegel": {
+      "quelle": "modern-interiors/1_Interiors/16x16/Theme_Sorter_Black_Shadow_Singles/3_Bathroom_Black_Shadow_Singles_16x16/Bathroom_Black_Shadow_Singles_67.png",
+      "breite": 16,
+      "hoehe": 32,
+      "kollision": false,
+      "art": "spiegel",
+      "blick": "unten",
+      "zustand": "gebraucht",
+      "stil": "industrie"
+    },
+    "iw8Schalter": {
+      "quelle": "modern-interiors/1_Interiors/16x16/Theme_Sorter_Black_Shadow_Singles/22_Museum_Black_Shadow_Singles_16x16/Museum_Black_Shadow_Singles_1.png",
+      "breite": 96,
+      "hoehe": 64,
+      "kollision": true,
+      "art": "tresen",
+      "blick": "unten",
+      "zustand": "gebraucht",
+      "stil": "klassisch"
+    },
+    "iw8VitrineA": {
+      "quelle": "modern-interiors/1_Interiors/16x16/Theme_Sorter_Black_Shadow_Singles/22_Museum_Black_Shadow_Singles_16x16/Museum_Black_Shadow_Singles_136.png",
+      "breite": 32,
+      "hoehe": 48,
+      "kollision": true,
+      "art": "vitrine",
+      "blick": "unten",
+      "zustand": "gebraucht",
+      "stil": "klassisch"
+    },
+    "iw8VitrineB": {
+      "quelle": "modern-interiors/1_Interiors/16x16/Theme_Sorter_Black_Shadow_Singles/22_Museum_Black_Shadow_Singles_16x16/Museum_Black_Shadow_Singles_138.png",
+      "breite": 32,
+      "hoehe": 48,
+      "kollision": true,
+      "art": "vitrine",
+      "blick": "unten",
+      "zustand": "gebraucht",
+      "stil": "klassisch"
+    },
+    "iw8VitrineC": {
+      "quelle": "modern-interiors/1_Interiors/16x16/Theme_Sorter_Black_Shadow_Singles/22_Museum_Black_Shadow_Singles_16x16/Museum_Black_Shadow_Singles_140.png",
+      "breite": 32,
+      "hoehe": 48,
+      "kollision": true,
+      "art": "vitrine",
+      "blick": "unten",
+      "zustand": "gebraucht",
+      "stil": "klassisch"
+    },
+    "iw8VitrineD": {
+      "quelle": "modern-interiors/1_Interiors/16x16/Theme_Sorter_Black_Shadow_Singles/22_Museum_Black_Shadow_Singles_16x16/Museum_Black_Shadow_Singles_142.png",
+      "breite": 32,
+      "hoehe": 48,
+      "kollision": true,
+      "art": "vitrine",
+      "blick": "unten",
+      "zustand": "gebraucht",
+      "stil": "klassisch"
+    },
+    "iw8VitrineGross1": {
+      "quelle": "modern-interiors/1_Interiors/16x16/Theme_Sorter_Black_Shadow_Singles/22_Museum_Black_Shadow_Singles_16x16/Museum_Black_Shadow_Singles_342.png",
+      "breite": 48,
+      "hoehe": 48,
+      "kollision": true,
+      "art": "vitrine",
+      "blick": "unten",
+      "zustand": "gebraucht",
+      "stil": "klassisch"
+    },
+    "iw8VitrineGross2": {
+      "quelle": "modern-interiors/1_Interiors/16x16/Theme_Sorter_Black_Shadow_Singles/22_Museum_Black_Shadow_Singles_16x16/Museum_Black_Shadow_Singles_343.png",
+      "breite": 48,
+      "hoehe": 48,
+      "kollision": true,
+      "art": "vitrine",
+      "blick": "unten",
+      "zustand": "gebraucht",
+      "stil": "klassisch"
+    },
+    "iw8VitrineGross3": {
+      "quelle": "modern-interiors/1_Interiors/16x16/Theme_Sorter_Black_Shadow_Singles/22_Museum_Black_Shadow_Singles_16x16/Museum_Black_Shadow_Singles_344.png",
+      "breite": 48,
+      "hoehe": 48,
+      "kollision": true,
+      "art": "vitrine",
+      "blick": "unten",
+      "zustand": "gebraucht",
+      "stil": "klassisch"
+    },
+    "iw8Schaukasten1": {
+      "quelle": "modern-interiors/1_Interiors/16x16/Theme_Sorter_Black_Shadow_Singles/22_Museum_Black_Shadow_Singles_16x16/Museum_Black_Shadow_Singles_321.png",
+      "breite": 32,
+      "hoehe": 48,
+      "kollision": true,
+      "art": "vitrine",
+      "blick": "unten",
+      "zustand": "gebraucht",
+      "stil": "klassisch"
+    },
+    "iw8Schaukasten2": {
+      "quelle": "modern-interiors/1_Interiors/16x16/Theme_Sorter_Black_Shadow_Singles/22_Museum_Black_Shadow_Singles_16x16/Museum_Black_Shadow_Singles_327.png",
+      "breite": 32,
+      "hoehe": 48,
+      "kollision": true,
+      "art": "vitrine",
+      "blick": "unten",
+      "zustand": "gebraucht",
+      "stil": "klassisch"
+    },
+    "iw8Schaukasten3": {
+      "quelle": "modern-interiors/1_Interiors/16x16/Theme_Sorter_Black_Shadow_Singles/22_Museum_Black_Shadow_Singles_16x16/Museum_Black_Shadow_Singles_329.png",
+      "breite": 32,
+      "hoehe": 48,
+      "kollision": true,
+      "art": "vitrine",
+      "blick": "unten",
+      "zustand": "gebraucht",
+      "stil": "klassisch"
+    },
+    "iw8Absperrpfosten": {
+      "quelle": "modern-interiors/1_Interiors/16x16/Theme_Sorter_Black_Shadow_Singles/22_Museum_Black_Shadow_Singles_16x16/Museum_Black_Shadow_Singles_71.png",
+      "breite": 16,
+      "hoehe": 32,
+      "kollision": true,
+      "art": "deko",
+      "blick": "unten",
+      "zustand": "gebraucht",
+      "stil": "klassisch"
+    },
+    "iw8Infotafel": {
+      "quelle": "modern-interiors/1_Interiors/16x16/Theme_Sorter_Black_Shadow_Singles/22_Museum_Black_Shadow_Singles_16x16/Museum_Black_Shadow_Singles_86.png",
+      "breite": 16,
+      "hoehe": 32,
+      "kollision": true,
+      "art": "schild",
+      "blick": "unten",
+      "zustand": "gebraucht",
+      "stil": "klassisch"
+    },
+    "iw8BildA": {
+      "quelle": "modern-interiors/1_Interiors/16x16/Theme_Sorter_Black_Shadow_Singles/22_Museum_Black_Shadow_Singles_16x16/Museum_Black_Shadow_Singles_109.png",
+      "breite": 32,
+      "hoehe": 32,
+      "kollision": false,
+      "art": "bild",
+      "blick": "unten",
+      "zustand": "gebraucht",
+      "stil": "klassisch"
+    },
+    "iw8BildB": {
+      "quelle": "modern-interiors/1_Interiors/16x16/Theme_Sorter_Black_Shadow_Singles/22_Museum_Black_Shadow_Singles_16x16/Museum_Black_Shadow_Singles_113.png",
+      "breite": 32,
+      "hoehe": 32,
+      "kollision": false,
+      "art": "bild",
+      "blick": "unten",
+      "zustand": "gebraucht",
+      "stil": "klassisch"
+    },
+    "iw8BildC": {
+      "quelle": "modern-interiors/1_Interiors/16x16/Theme_Sorter_Black_Shadow_Singles/22_Museum_Black_Shadow_Singles_16x16/Museum_Black_Shadow_Singles_117.png",
+      "breite": 32,
+      "hoehe": 32,
+      "kollision": false,
+      "art": "bild",
+      "blick": "unten",
+      "zustand": "gebraucht",
+      "stil": "klassisch"
+    },
+    "iw8Museumsbank": {
+      "quelle": "modern-interiors/1_Interiors/16x16/Theme_Sorter_Black_Shadow_Singles/22_Museum_Black_Shadow_Singles_16x16/Museum_Black_Shadow_Singles_41.png",
+      "breite": 32,
+      "hoehe": 32,
+      "kollision": true,
+      "art": "bank",
+      "blick": "unten",
+      "zustand": "gebraucht",
+      "stil": "klassisch"
+    },
+    "iw8Pflanze": {
+      "quelle": "modern-interiors/1_Interiors/16x16/Theme_Sorter_Black_Shadow_Singles/22_Museum_Black_Shadow_Singles_16x16/Museum_Black_Shadow_Singles_197.png",
+      "breite": 32,
+      "hoehe": 48,
+      "kollision": true,
+      "art": "pflanze",
+      "blick": "unten",
+      "zustand": "gebraucht",
+      "stil": "klassisch"
+    },
+    "iw8Theke4": {
+      "quelle": "spiel/eigene/theke_holz_laengs_4.png",
+      "breite": 64,
+      "hoehe": 32,
+      "kollision": true,
+      "art": "tresen",
+      "blick": "unten",
+      "zustand": "gebraucht",
+      "stil": "industrie"
+    },
+    "iw8Theke8": {
+      "quelle": "spiel/eigene/theke_holz_laengs_8.png",
+      "breite": 128,
+      "hoehe": 32,
+      "kollision": true,
+      "art": "tresen",
+      "blick": "unten",
+      "zustand": "gebraucht",
+      "stil": "industrie"
+    },
     "iw8StrassenbrueckeGehwegQuer10": {
       "quelle": "spiel/eigene/bruecke_strasse_gehweg_quer_10.png",
       "breite": 160,

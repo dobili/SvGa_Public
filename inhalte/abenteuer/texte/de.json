@@ -1216,11 +1216,11 @@
   "statist.portDelacroix.aussen.handwerker": "Fesselung. Eine Figur kann nicht weg, weil hinter ihr etwas Wichtigeres steht. So wie mein Daumen gerade unter diesem Brett.",
   "statist.portDelacroix.aussen.sandsackhelfer": "Mein Lieblingszug ist ein Bauer, der einfach stehen bleibt und alles aufhält. Wie ein Sandsack. Keiner lobt ihn, aber ohne ihn wäre alles nass.",
   "statist.portDelacroix.aussen.brieftraegerin": "Seit dem Sturm bringe ich Briefe an Häuser, die es nur noch halb gibt. Die Leute freuen sich trotzdem. Manche mehr als vorher.",
-  "statist.portDelacroix.aussen.rentner": "Paul Morphy aus New Orleans hat 1858 in der Pariser Oper gespielt, gegen einen Herzog und einen Grafen. Siebzehn Züge. Und er hat dabei kaum zur Bühne geschaut.",
+  "statist.portDelacroix.aussen.rentner": "Paul Morphy aus New Orleans hat 1858 in der Pariser Oper gespielt, gegen einen Herzog und einen Grafen. Er hat dabei kaum zur Bühne geschaut.",
   "statist.portDelacroix.aussen.rentner.ambrose": "Ich habe die Partie so oft nachgespielt, dass ich manchmal glaube, ich hätte in der Loge gesessen.",
   "statist.portDelacroix.aussen.fischer": "Die erste Weltmeisterschaft, 1886, wurde zum Teil in New Orleans gespielt. Mein Urgroßvater hat behauptet, er hätte Steinitz Fisch verkauft. Geglaubt hat ihm das keiner.",
   "statist.portDelacroix.aussen.mutter": "Perfect Move hat der Schule nach dem Sturm Tablets geschenkt. Meine Tochter lernt jetzt Schach mit einer Stimme, die nie müde wird. Ich bin müde.",
-  "statist.portDelacroix.aussen.grossmutter": "Mein Enkel sagt, der König darf nur einen Schritt gehen. Der wichtigste Mann im Spiel, und dann so langsam? Wie mein Mann. Der war auch wichtig.",
+  "statist.portDelacroix.aussen.grossmutter": "Mein Enkel sagt, der König darf nur einen Schritt gehen. Der wichtigste Mann im Spiel, und dann so langsam? Wie mein Mann, der war auch wichtig.",
   "statist.portDelacroix.aussen.bootsbauer": "Bevor ein Boot ins Wasser geht, suche ich jedes Leck. Beim Schach genauso: erst nachsehen, welche Figur ungeschützt steht, dann ziehen.",
   "statist.portDelacroix.aussen.gummistiefel": "Ich hab im Hochwasser einen Turm gefunden. Einen Schachturm aus Holz. Jetzt suche ich den Rest.",
   "statist.portDelacroix.aussen.gummistiefel.2": "Jetzt hab ich zwei Bauern und ein Pferd. Mama sagt, das heißt Springer. Mir egal, es ist ein Pferd.",
@@ -1278,5 +1278,6 @@
   "statist.wegGhostCapital.seeufer.geschwister.ambrose": "Drei auf einer Linie sind ein Tripelbauer. Selten gut, aber schön anzusehen.",
   "statist.wegGhostCapital.leuchtturm.spaziergaenger": "Mein Hund bellt jeden Abend den Leuchtturm an, genau wenn das Licht angeht. Er hält ihn für einen Gegner. Bisher steht es unentschieden.",
   "statist.wegGhostCapital.leuchtturm.fotograf": "Magnus Carlsen hatte 2014 eine Elo-Zahl von 2882, höher war noch keiner. Ich hatte mal 1400. Für einen Fotografen gar nicht schlecht.",
-  "statist.wegGhostCapital.leuchtturm.radfahrerin": "Jeden Sommer fahre ich von Ghost Town nach Capital. Früher gab es hier nur Felsen und Möwen. Jetzt hängen Plakate für einen Schachtag am Strand. Wer hätte das gedacht."
+  "statist.wegGhostCapital.leuchtturm.radfahrerin": "Jeden Sommer fahre ich von Ghost Town nach Capital. Früher gab es hier nur Felsen und Möwen. Jetzt hängen Plakate für einen Schachtag am Strand. Wer hätte das gedacht.",
+  "statist.capitalArena.aussen.schachlehrer": "Anderssen gegen Dufresne, Berlin 1852. Die Immergrüne Partie heißt so, weil sie nie alt wird."
 }

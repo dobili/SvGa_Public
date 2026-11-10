@@ -482,6 +482,22 @@
       "runde7": true
     },
     {
+      "moebel": "ca8FahneWeiss",
+      "feld": [
+        137,
+        9
+      ],
+      "runde7": true
+    },
+    {
+      "moebel": "ca8FahneSchwarz",
+      "feld": [
+        144,
+        9
+      ],
+      "runde7": true
+    },
+    {
       "moebel": "ca8Lautsprecher",
       "feld": [
         134,
@@ -516,73 +532,43 @@
       "runde7": true
     },
     {
-      "moebel": "ca7Klapptisch",
+      "moebel": "ca8KlapptischBrett",
       "feld": [
         122,
         12
       ],
-      "id": "simultan0",
       "runde7": true
     },
     {
-      "moebel": "mf2SchachbrettFiguren",
-      "auf": "simultan0",
-      "runde7": true
-    },
-    {
-      "moebel": "ca7Klapptisch",
+      "moebel": "ca8KlapptischBrett",
       "feld": [
         125,
         12
       ],
-      "id": "simultan1",
       "runde7": true
     },
     {
-      "moebel": "mf2SchachbrettFiguren",
-      "auf": "simultan1",
-      "runde7": true
-    },
-    {
-      "moebel": "ca7Klapptisch",
+      "moebel": "ca8KlapptischBrett",
       "feld": [
         128,
         12
       ],
-      "id": "simultan2",
       "runde7": true
     },
     {
-      "moebel": "mf2SchachbrettFiguren",
-      "auf": "simultan2",
-      "runde7": true
-    },
-    {
-      "moebel": "ca7Klapptisch",
+      "moebel": "ca8KlapptischBrett",
       "feld": [
         131,
         12
       ],
-      "id": "simultan3",
       "runde7": true
     },
     {
-      "moebel": "mf2SchachbrettFiguren",
-      "auf": "simultan3",
-      "runde7": true
-    },
-    {
-      "moebel": "ca7Klapptisch",
+      "moebel": "ca8KlapptischBrett",
       "feld": [
         134,
         12
       ],
-      "id": "simultan4",
-      "runde7": true
-    },
-    {
-      "moebel": "mf2SchachbrettFiguren",
-      "auf": "simultan4",
       "runde7": true
     }
   ],

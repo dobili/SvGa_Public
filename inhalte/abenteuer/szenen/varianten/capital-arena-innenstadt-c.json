@@ -11,7 +11,7 @@
     "s": "asphalt",
     "t": "stein"
   },
-  "beschreibung": "Variante C, Platz im Osten: Die Innenstadt von Capital mit drei Häuserreihen; oben Wache, Post, Kaufhäuser und Läden, darunter Feuerwache, Märkte und Wohnhäuser an der Allee mit einem Bus. Im Süden links das Polizeirevier und Hochhäuser, ganz im Osten der U-Bahn-Platz mit Kaffeekiosk, Haltestelle, Bänken und Bäumen; in der Mitte zwei alte Treppen hinab zum stillgelegten U-Bahnhof hinter einem Bauzaun mit Plane. Die Fußgängerstraße im Süden führt nach Westen zur Arena.",
+  "beschreibung": "Variante C, Platz im Osten: Die Innenstadt von Capital mit drei Häuserreihen; oben Wache, Post, Kaufhäuser und Läden, darunter Feuerwache, Märkte und Wohnhäuser an der Allee mit einem Bus. Im Süden links das Polizeirevier und Hochhäuser, ganz im Osten der U-Bahn-Platz mit Kaffeekiosk, Haltestelle, Bänken und Bäumen; in der Mitte der alte U-Bahn-Abgang hinter einem Rollgitter mit Kette, daneben ein Kreidespringer und ein Aufsteller „Bald“. Die Fußgängerstraße im Süden führt nach Westen zur Arena.",
   "raster": [
     "################################################################################",
     "#..............................................................................#",
@@ -265,82 +265,25 @@
       ]
     },
     {
-      "moebel": "ci8UBahnAbgang",
-      "feld": [
-        63,
-        42
-      ]
-    },
-    {
-      "moebel": "ci8UBahnAbgangB",
-      "feld": [
-        66,
-        42
-      ]
-    },
-    {
-      "moebel": "pd6BauzaunEndeLinks",
-      "feld": [
-        62,
-        47
-      ],
-      "bauteil_ok": true
-    },
-    {
-      "moebel": "pd6BauzaunMitte",
-      "feld": [
-        63,
-        47
-      ],
-      "bauteil_ok": true
-    },
-    {
-      "moebel": "pd6BauzaunMitte",
+      "moebel": "ci8Gitter",
       "feld": [
         64,
-        47
-      ],
-      "bauteil_ok": true
+        45
+      ]
     },
     {
-      "moebel": "pd6BauzaunMitte",
+      "moebel": "ci8Kreidespringer",
       "feld": [
-        65,
-        47
-      ],
-      "bauteil_ok": true
+        63,
+        46
+      ]
     },
     {
-      "moebel": "pd6BauzaunMitte",
-      "feld": [
-        66,
-        47
-      ],
-      "bauteil_ok": true
-    },
-    {
-      "moebel": "pd6BauzaunMitte",
-      "feld": [
-        67,
-        47
-      ],
-      "bauteil_ok": true
-    },
-    {
-      "moebel": "pd6BauzaunMitte",
+      "moebel": "ci8PlakatBald",
       "feld": [
         68,
-        47
-      ],
-      "bauteil_ok": true
-    },
-    {
-      "moebel": "pd6BauzaunEndeRechts",
-      "feld": [
-        69,
-        47
-      ],
-      "bauteil_ok": true
+        45
+      ]
     },
     {
       "moebel": "ci8Kaffeekiosk",
@@ -663,6 +606,32 @@
         "von": "4,36",
         "bis": "14,36",
         "verhalten": "fliegen"
+      }
+    },
+    {
+      "name": "moewen",
+      "typ": "tier",
+      "feld": [
+        40,
+        34
+      ],
+      "eigenschaften": {
+        "von": "30,33",
+        "bis": "52,35",
+        "verhalten": "fliegen"
+      }
+    },
+    {
+      "name": "eichhoernchen",
+      "typ": "tier",
+      "feld": [
+        54,
+        22
+      ],
+      "eigenschaften": {
+        "von": "54,18",
+        "bis": "54,28",
+        "verhalten": "flitzen"
       }
     }
   ],

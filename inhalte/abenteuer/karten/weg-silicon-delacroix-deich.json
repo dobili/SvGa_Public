@@ -23789,17 +23789,17 @@
      "id": 171,
      "name": "pd7Messwagen",
      "type": "moebel",
-     "x": 2144,
+     "x": 2160,
      "y": 176,
-     "width": 96,
-     "height": 64,
+     "width": 64,
+     "height": 48,
      "rotation": 0,
      "visible": true,
      "properties": [
       {
        "name": "tiefe",
        "type": "int",
-       "value": 232
+       "value": 216
       },
       {
        "name": "kollision",

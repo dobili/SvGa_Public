@@ -384,10 +384,10 @@
       "runde7": true
     },
     {
-      "moebel": "n4PfahlhausWeiss",
+      "moebel": "pd7Hausboot",
       "feld": [
-        3,
-        8
+        1,
+        10
       ],
       "bauteil_ok": true,
       "runde7": true
@@ -406,6 +406,14 @@
       "feld": [
         16,
         14
+      ],
+      "runde7": true
+    },
+    {
+      "moebel": "pd7Finkenzeichen",
+      "feld": [
+        10,
+        13
       ],
       "runde7": true
     }

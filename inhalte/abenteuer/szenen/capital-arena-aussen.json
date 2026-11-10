@@ -433,7 +433,7 @@
         "von": "70,57",
         "bis": "70,57",
         "tun": "regelt den Verkehr vor dem Platz",
-        "wann": "tag"
+        "wann": "morgen"
       }
     },
     {
@@ -507,7 +507,7 @@
         "von": "10,57",
         "bis": "10,57",
         "tun": "macht Pause neben seinem Bus",
-        "wann": "tag",
+        "wann": "morgen",
         "sagt": "statist.capitalArena.aussen.busfahrer"
       }
     },
@@ -522,8 +522,24 @@
         "von": "40,58",
         "bis": "40,58",
         "tun": "spielt Saxofon für Kleingeld",
-        "wann": "tag",
+        "wann": "abend",
         "sagt": "statist.capitalArena.aussen.strassenmusiker"
+      }
+    },
+    {
+      "name": "schachlehrer",
+      "typ": "statist",
+      "feld": [
+        34,
+        45
+      ],
+      "eigenschaften": {
+        "von": "34,45",
+        "bis": "34,45",
+        "tun": "sitzt mit einem Taschenschach auf dem Brunnenrand",
+        "wann": "abend",
+        "zeigt": "immergruenePartie",
+        "sagt": "statist.capitalArena.aussen.schachlehrer"
       }
     },
     {
@@ -621,6 +637,32 @@
         "von": "76,57",
         "bis": "76,57",
         "verhalten": "schlafen"
+      }
+    },
+    {
+      "name": "eichhoernchen",
+      "typ": "tier",
+      "feld": [
+        60,
+        44
+      ],
+      "eigenschaften": {
+        "von": "56,43",
+        "bis": "66,45",
+        "verhalten": "flitzen"
+      }
+    },
+    {
+      "name": "amseln",
+      "typ": "tier",
+      "feld": [
+        66,
+        40
+      ],
+      "eigenschaften": {
+        "von": "60,38",
+        "bis": "72,42",
+        "verhalten": "fliegen"
       }
     }
   ],

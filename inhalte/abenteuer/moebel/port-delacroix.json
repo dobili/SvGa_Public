@@ -1438,7 +1438,7 @@
       "gebaeude": true
     },
     "pd7KapitaensBrett": {
-      "quelle": "modern-exteriors/Modern_Exteriors_16x16/ME_Theme_Sorter_16x16/11_Camping_Singles_16x16/ME_Singles_Camping_16x16_Wood_Board_3.png",
+      "quelle": "spiel/eigene/gerahmtes_brett.png",
       "breite": 32,
       "hoehe": 32,
       "kollision": true,
@@ -1448,9 +1448,9 @@
       "blick": "unten"
     },
     "pd7Messwagen": {
-      "quelle": "modern-exteriors/Modern_Exteriors_16x16/ME_Theme_Sorter_16x16/10_Vehicles_Singles_16x16/ME_Singles_Vehicles_16x16_Camper_Right_2.png",
-      "breite": 96,
-      "hoehe": 64,
+      "quelle": "spiel/eigene/messwagen.png",
+      "breite": 64,
+      "hoehe": 48,
       "kollision": true,
       "art": "fahrzeug",
       "zustand": "neu",
@@ -1458,9 +1458,9 @@
       "blick": "rechts"
     },
     "pd7Blechkiste": {
-      "quelle": "modern-exteriors/Modern_Exteriors_16x16/ME_Theme_Sorter_16x16/8_Worksite_Singles_16x16/ME_Singles_Worksite_16x16_Tool_Box_1.png",
-      "breite": 32,
-      "hoehe": 32,
+      "quelle": "spiel/eigene/blechkiste.png",
+      "breite": 16,
+      "hoehe": 16,
       "kollision": true,
       "art": "kiste",
       "zustand": "alt",
@@ -1476,6 +1476,26 @@
       "zustand": "gebraucht",
       "stil": "rustikal",
       "blick": "keine"
+    },
+    "pd7Hausboot": {
+      "kollision": false,
+      "zustand": "alt",
+      "stil": "rustikal",
+      "quelle": "spiel/eigene/hausboot.png",
+      "breite": 96,
+      "hoehe": 64,
+      "art": "boot",
+      "gebaeude": false
+    },
+    "pd7Finkenzeichen": {
+      "kollision": false,
+      "zustand": "gebraucht",
+      "stil": "rustikal",
+      "quelle": "spiel/eigene/finkenzeichen_blech.png",
+      "breite": 16,
+      "hoehe": 16,
+      "art": "deko",
+      "blick": "unten"
     }
   }
 }

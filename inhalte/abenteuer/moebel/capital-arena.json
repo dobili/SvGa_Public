@@ -1170,7 +1170,7 @@
       "blick": "links"
     },
     "ca8PlakatJuli": {
-      "quelle": "spiel/eigene/plakat_meisterschaft.png",
+      "quelle": "spiel/eigene/plakat_20juli.png",
       "kollision": true,
       "art": "plakat",
       "zustand": "neu",
@@ -1178,6 +1178,78 @@
       "blick": "unten",
       "breite": 32,
       "hoehe": 48
+    },
+    "ca8FahneWeiss": {
+      "kollision": true,
+      "zustand": "neu",
+      "stil": "klassisch",
+      "quelle": "spiel/eigene/fahne_weiss.png",
+      "breite": 16,
+      "hoehe": 48,
+      "art": "fahne",
+      "blick": "unten"
+    },
+    "ca8FahneSchwarz": {
+      "kollision": true,
+      "zustand": "neu",
+      "stil": "klassisch",
+      "quelle": "spiel/eigene/fahne_schwarz.png",
+      "breite": 16,
+      "hoehe": 48,
+      "art": "fahne",
+      "blick": "unten"
+    },
+    "ca8KlapptischBrett": {
+      "kollision": true,
+      "zustand": "gebraucht",
+      "stil": "einfach",
+      "quelle": "spiel/eigene/klapptisch_brett.png",
+      "breite": 32,
+      "hoehe": 32,
+      "art": "tisch",
+      "blick": "unten"
+    },
+    "ci8Gitter": {
+      "kollision": true,
+      "zustand": "alt",
+      "stil": "industrie",
+      "quelle": "spiel/eigene/gitter_ubahn.png",
+      "breite": 48,
+      "hoehe": 32,
+      "art": "tor",
+      "blick": "unten",
+      "gebaeude": false
+    },
+    "ci8GitterOffen": {
+      "kollision": true,
+      "zustand": "alt",
+      "stil": "industrie",
+      "quelle": "spiel/eigene/gitter_ubahn_offen.png",
+      "breite": 48,
+      "hoehe": 32,
+      "art": "tor",
+      "blick": "unten",
+      "gebaeude": false
+    },
+    "ci8Kreidespringer": {
+      "kollision": false,
+      "zustand": "neu",
+      "stil": "industrie",
+      "quelle": "spiel/eigene/kreidespringer.png",
+      "breite": 16,
+      "hoehe": 16,
+      "art": "deko",
+      "blick": "unten"
+    },
+    "ci8PlakatBald": {
+      "kollision": true,
+      "zustand": "neu",
+      "stil": "modern",
+      "quelle": "spiel/eigene/plakat_bald.png",
+      "breite": 32,
+      "hoehe": 48,
+      "art": "plakat",
+      "blick": "unten"
     }
   }
 }

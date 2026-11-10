@@ -1,6 +1,6 @@
 /**
  * Der gemeinsame Kern der Oberwelt: Spielstand, geladene Welt, Phaser-Spiel, Meldung, Quest-
- * Ereignisse und Kartenwechsel. Die Hooks der Oberwelt (usePartiestart, useAufgabenrunde,
+ * Ereignisse, Kartenwechsel und Tönung. Die Hooks der Oberwelt (usePartiestart, useAufgabenrunde,
  * useDialogende, useWeltladen) bekommen ihn als Kontext.
  *
  * Rolle im Gesamtbild: Ausgelagert aus oberwelt/Oberwelt.tsx (Aufteilen, Schritt 3), damit der
@@ -22,6 +22,7 @@ import type { Appdienste } from "../schnittstelle/modul";
 import type { Abenteuerstand, Weltposition } from "../schnittstelle/spielstand";
 import { tSpiel } from "../texte/texte";
 import { szeneVon } from "./oberweltspiel";
+import type { Toenung } from "./toenung";
 import { objektposition, type Weltdaten } from "./weltdaten";
 
 /** Was alle Teile der Oberwelt teilen. */
@@ -46,6 +47,10 @@ export interface Oberweltkern {
   readonly melde: (ereignis: Questereignis, w?: Weltdaten | null) => void;
   /** Wechselt auf eine andere Karte: Der Held erscheint auf dem Zielauslöser. */
   readonly wechsleKarte: (karte: string, ausloeser: string) => void;
+  /** Tönung der Karte, die gerade gilt (toenung.ts); Sepia wirkt als CSS-Filter wie Erinnerungen. */
+  readonly toenung: Toenung | null;
+  /** Neue Tönung zeigen: Zustand der Hülle und, wenn sie läuft, die Szene. */
+  readonly zeigeToenung: (t: Toenung | null) => void;
   /** Die Position des Helden gerade jetzt (aus der Szene, sonst aus dem Spielstand). */
   readonly position: (aktuell: Abenteuerstand) => Weltposition;
 }
@@ -144,6 +149,7 @@ export function useOberweltkern(): Oberweltkern {
   const [stand, setzeStand] = useState<Abenteuerstand | null>(() => dienste.liesStand());
   const [geladeneWelt, setzeWelt] = useState<Weltdaten | null>(null);
   const [meldung, setzeMeldung] = useState<string | null>(null);
+  const [toenung, setzeToenung] = useState<Toenung | null>(null);
   const spiel = useRef<Phaser.Game | null>(null);
   const standRef = useRef(stand);
   useEffect(() => {
@@ -181,6 +187,11 @@ export function useOberweltkern(): Oberweltkern {
       if (w) meldeEreignis({ standRef, schreibe, setzeMeldung }, ereignis, w);
     },
     wechsleKarte: (karte, ausloeser) => wechsle(k, karte, ausloeser),
+    toenung,
+    zeigeToenung: (t) => {
+      setzeToenung(t);
+      szeneAus(spiel)?.setzeToenung(t);
+    },
     position: (aktuell) => {
       const szene = szeneAus(spiel);
       return szene ? { ...szene.position(), karte: aktuell.position.karte } : aktuell.position;

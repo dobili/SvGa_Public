@@ -22,22 +22,14 @@
  */
 import { useEffect, useRef, useState } from "react";
 import { Dialog } from "../dialog/Dialog";
-import type { Dialogvariablen } from "../dialog/geschichte";
 import { deckgroesse, mentorzugGesperrt } from "../regeln/karten";
 import { kaufe } from "../regeln/muenzen";
-import {
-  variablenAusBesitz,
-  variablenNachDialog,
-  variablenNachBesuch,
-} from "../regeln/dialogvariablen";
+import { variablenAusBesitz, variablenNachBesuch } from "../regeln/dialogvariablen";
 import { spruecheErlaubt, ZEITKLASSEN } from "../regeln/zeitkarten";
 import type { Kartensorte } from "../schnittstelle/karten";
-import type { Partieauftrag } from "../schnittstelle/partie";
-import type { Abenteuerstand } from "../schnittstelle/spielstand";
 import { fehlertext, tSpiel } from "../texte/texte";
 import { Abspann } from "./Abspann";
 import { Deckwahl } from "./Deckwahl";
-import { dialogwirkungen } from "./dialogwirkungen";
 import { Fortsetzungskarte, Partieergebniskarte, Rundenergebniskarte } from "./Ergebniskarten";
 import { Gedaechtnisstellung } from "./Gedaechtnisstellung";
 import { useOberweltkern } from "./kern";
@@ -51,13 +43,13 @@ import { lupenzeilen } from "./steckbrieftext";
 import { Steuerkreuz } from "./Steuerkreuz";
 import type { Ausloesertreffer, Richtung } from "./szene";
 import { Tagebuch } from "./Tagebuch";
-import { aktuelleToenung, type Toenung } from "./toenung";
+import { aktuelleToenung } from "./toenung";
 import { useAufgabenrunde } from "./useAufgabenrunde";
+import { useDialogende } from "./useDialogende";
 import { LUPE, usePartiestart } from "./usePartiestart";
 import { Vorfuehrung } from "./Vorfuehrung";
 import {
   KACHELSATZ,
-  ladeDialog,
   aktionFuer,
   ausloeserFuer,
   figurZu,
@@ -86,13 +78,6 @@ function lupeFuer(
   return daten ? lupenzeilen(daten) : [];
 }
 
-/** Ein offener Dialog: die übersetzte Geschichte, der Knoten und der Name der Datei. */
-interface OffenerDialog {
-  readonly json: string;
-  readonly datei: string;
-  readonly knoten: string;
-}
-
 /** Der Laden zu einer Kennung aus den Spieldaten; unbekannt → undefined (kein Fenster). */
 function ladenDaten(w: Weltdaten, kennung: string) {
   return w.daten.laeden.find((l) => l.kennung === kennung);
@@ -106,53 +91,18 @@ export function Oberwelt() {
   const { deckwahl, ergebnis, offenePartie } = partie;
   const runden = useAufgabenrunde(k, partie);
   const { rundenergebnis, offeneRunde, gedaechtnis } = runden;
+  const dialoge = useDialogende(k, partie, runden);
+  const { dialog, oeffneDialog, vorfuehrung, offenerLaden, abspann } = dialoge;
+  const toenung = k.toenung;
   const rahmen = useRef<HTMLDivElement>(null);
   const kachelanzeige = useRef<HTMLSpanElement>(null);
   const [fehler, setzeFehler] = useState<string | null>(null);
   const [treffer, setzeTreffer] = useState<Ausloesertreffer | null>(null);
-  const [dialog, setzeDialog] = useState<OffenerDialog | null>(null);
   // Sprechblase eines Statisten und wie oft jeder schon angesprochen wurde (nur in dieser Sitzung).
   const [sprechblase, setzeSprechblase] = useState<SprechblasenInhalt | null>(null);
   const angesprochen = useRef(new Map<string, number>());
-  // Vorführung eines Statisten (Kennung aus `zeigt`), solange das kleine Brett offen ist.
-  const [vorfuehrung, setzeVorfuehrung] = useState<string | null>(null);
-  // Tönung der Karte, die gerade gilt (toenung.ts); Sepia wirkt als CSS-Filter wie Erinnerungen.
-  const [toenung, setzeToenungZustand] = useState<Toenung | null>(null);
   const [tagebuch, setzeTagebuch] = useState(false);
   const [reisen, setzeReisen] = useState(false);
-  // Dialogvariablen beim Öffnen des Dialogs: Was die Hülle danach setzt, überschreibt Ink nicht.
-  const variablenBeimOeffnen = useRef<Abenteuerstand["dialogvariablen"]>({});
-  const auftragInArbeit = useRef<Partieauftrag | null>(null);
-  // Eine Reise, die ein Dialog angestoßen hat (Bus); sie geschieht, wenn der Dialog zu ist.
-  const reiseInArbeit = useRef<{ karte: string; ausloeser: string } | null>(null);
-  // Ein Übergang mit Dialog (orte.json `dialog`, `wenn`): der Wechsel folgt nach dem Dialog.
-  const uebergangNachDialog = useRef<{
-    ziel: { karte: string; ausloeser: string };
-    wenn: string | null;
-  } | null>(null);
-  // Ein Laden, den ein Dialog geöffnet hat (G5); er erscheint, wenn der Dialog zu ist.
-  const ladenInArbeit = useRef<string | null>(null);
-  const abspannInArbeit = useRef(false);
-  const [abspann, setzeAbspann] = useState(false);
-  const [offenerLaden, setzeOffenerLaden] = useState<string | null>(null);
-  // Eine Aufgabenrunde, die ein Dialog angestoßen hat; sie beginnt, wenn der Dialog zu ist.
-  const rundeInArbeit = useRef<string | null>(null);
-  // Eine Gedächtnisstellung, die ein Dialog angestoßen hat (Runde 6); sie beginnt nach dem Dialog.
-  const gedaechtnisInArbeit = useRef<string | null>(null);
-  // Ein Simultan, das ein Dialog angestoßen hat (Runde 6); das erste Brett beginnt nach dem Dialog.
-  const simultanInArbeit = useRef<string | null>(null);
-  // Eine Vorführung, die ein Dialog angestoßen hat (Odette am Leuchtturm); sie folgt dem Dialog.
-  const vorfuehrungInArbeit = useRef<string | null>(null);
-  /** Öffnet den Dialog „datei.knoten“ aus dem Paket. */
-  const oeffneDialog = (verweis: string) => {
-    const [datei, knoten] = verweis.split(".", 2);
-    if (!datei || !knoten) return;
-    variablenBeimOeffnen.current = (standRef.current ?? stand)?.dialogvariablen ?? {};
-    ladeDialog(datei)
-      .then((json) => setzeDialog({ json: JSON.stringify(json), datei, knoten }))
-      .catch(() => setzeMeldung(tSpiel("oberwelt.dialogFehlt", { datei })));
-  };
-
   /** Ein Auslöser der Karte (aus Phaser): Übergänge sofort, alles andere als Quest-Ereignis. */
   const beiTreffer = (t: Ausloesertreffer | null) => {
     setzeTreffer(t);
@@ -162,9 +112,7 @@ export function Oberwelt() {
     if (!t || !w || !aktuell) return;
     const a = ausloeserFuer(w.ort, w.kennung, t.name);
     if (t.typ === "ausloeser" && a?.art === "uebergang" && t.darauf && a.dialog && a.ziel) {
-      // Erst der Dialog (Abschied, Ankunft, Sperre), dann der Wechsel, wenn `wenn` erfüllt ist.
-      uebergangNachDialog.current = { ziel: a.ziel, wenn: a.wenn ?? null };
-      oeffneDialog(a.dialog);
+      dialoge.oeffneUebergang(a.dialog, a.ziel, a.wenn ?? null);
       return;
     }
     if (t.typ === "ausloeser" && a?.art === "uebergang" && t.darauf) {
@@ -204,7 +152,7 @@ export function Oberwelt() {
         partie.meldeErgebnis(w);
         runden.meldeRunde(w);
         const startToenung = aktuelleToenung(w.karte, w.kennung, stand.dialogvariablen);
-        setzeToenungZustand(startToenung);
+        k.zeigeToenung(startToenung);
         spiel.current = starteOberwelt(rahmen.current, {
           karte: w.karte,
           kachelbild: w.kachelbild,
@@ -312,89 +260,6 @@ export function Oberwelt() {
 
   if (!stand) return <p className="fehlertext">{tSpiel("oberwelt.keinSpielstand")}</p>;
 
-  // Die Refs (Spielstand, Merker) liest dialogwirkungen erst, wenn Ink eine Funktion aufruft,
-  // also nach dem Zeichnen; die Regel react-hooks/refs kann das nicht erkennen.
-  // eslint-disable-next-line react-hooks/refs
-  const wirkungen = dialogwirkungen({
-    stand: () => standRef.current ?? stand,
-    welt,
-    schreibe,
-    meldung: setzeMeldung,
-    toenung: (t) => {
-      setzeToenungZustand(t);
-      const szene = spiel.current ? szeneVon(spiel.current) : null;
-      szene?.setzeToenung(t);
-    },
-    merker: () => ({
-      abspann: abspannInArbeit,
-      laden: ladenInArbeit,
-      auftrag: auftragInArbeit,
-      runde: rundeInArbeit,
-      gedaechtnis: gedaechtnisInArbeit,
-      simultan: simultanInArbeit,
-      vorfuehrung: vorfuehrungInArbeit,
-      reise: reiseInArbeit,
-    }),
-  });
-
-  /** Dialog zu Ende: Variablen sichern, dann eine angestoßene Partie starten (ggf. Deck wählen). */
-  const beiDialogende = (variablen: Dialogvariablen) => {
-    setzeDialog(null);
-    const aktuell = standRef.current ?? stand;
-    const auftrag = auftragInArbeit.current;
-    auftragInArbeit.current = null;
-    const dialogvariablen = variablenNachDialog(
-      variablenBeimOeffnen.current,
-      aktuell.dialogvariablen,
-      variablen,
-    );
-    const neu = { ...aktuell, dialogvariablen };
-    schreibe(neu);
-    const reise = reiseInArbeit.current;
-    reiseInArbeit.current = null;
-    if (reise) wechsleKarte(reise.karte, reise.ausloeser);
-    if (abspannInArbeit.current) {
-      abspannInArbeit.current = false;
-      setzeAbspann(true);
-    }
-    const laden = ladenInArbeit.current;
-    ladenInArbeit.current = null;
-    if (laden) setzeOffenerLaden(laden);
-    const uebergang = uebergangNachDialog.current;
-    uebergangNachDialog.current = null;
-    // `wenn` gilt als erfüllt bei true, einer Zahl über 0 (Nadel) oder einem nicht leeren Text.
-    // Besitz zählt mit (hatLaterne, hatGummistiefel: Sperren S4, S8, S9, S11, S14).
-    const bedingungen = { ...neu.dialogvariablen, ...variablenAusBesitz(neu) };
-    if (uebergang && (!uebergang.wenn || Boolean(bedingungen[uebergang.wenn]))) {
-      wechsleKarte(uebergang.ziel.karte, uebergang.ziel.ausloeser);
-    }
-    const zeigen = vorfuehrungInArbeit.current;
-    vorfuehrungInArbeit.current = null;
-    if (zeigen) {
-      setzeVorfuehrung(zeigen);
-      return;
-    }
-    const simultan = simultanInArbeit.current;
-    simultanInArbeit.current = null;
-    if (simultan) {
-      runden.starteSimultan(simultan);
-      return;
-    }
-    const merken = gedaechtnisInArbeit.current;
-    gedaechtnisInArbeit.current = null;
-    if (merken) {
-      runden.starteGedaechtnis(merken);
-      return;
-    }
-    const runde = rundeInArbeit.current;
-    rundeInArbeit.current = null;
-    if (runde) {
-      runden.starteRunde(runde);
-      return;
-    }
-    if (auftrag) partie.waehleOderStarte(auftrag);
-  };
-
   const aktuellerLaden = welt && offenerLaden ? ladenDaten(welt, offenerLaden) : undefined;
 
   return (
@@ -443,11 +308,11 @@ export function Oberwelt() {
           key={`${dialog.datei}.${dialog.knoten}`}
           json={dialog.json}
           knoten={dialog.knoten}
-          wirkungen={wirkungen}
+          wirkungen={dialoge.wirkungen}
           variablen={{ ...stand.dialogvariablen, ...variablenAusBesitz(stand) }}
           heldname={stand.held.name}
           beiKnoten={(knoten) => melde({ art: "dialog", knoten: `${dialog.datei}.${knoten}` })}
-          beiEnde={beiDialogende}
+          beiEnde={dialoge.beiDialogende}
         />
       )}
       {deckwahl && welt && (
@@ -484,11 +349,11 @@ export function Oberwelt() {
             const sorten = welt.daten.karten as unknown as readonly Kartensorte[];
             schreibe(kaufe(standRef.current ?? stand, ware, sorten, new Date()));
           }}
-          beiSchliessen={() => setzeOffenerLaden(null)}
+          beiSchliessen={dialoge.schliesseLaden}
         />
       )}
       {abspann && welt && (
-        <Abspann stand={stand} daten={welt.daten} beiSchliessen={() => setzeAbspann(false)} />
+        <Abspann stand={stand} daten={welt.daten} beiSchliessen={dialoge.schliesseAbspann} />
       )}
       {reisen && welt && (
         <Reisen
@@ -514,7 +379,7 @@ export function Oberwelt() {
           beiSchliessen={() => setzeSprechblase(null)}
           beiZeigen={(kennung) => {
             setzeSprechblase(null);
-            setzeVorfuehrung(kennung);
+            dialoge.zeigeVorfuehrung(kennung);
           }}
         />
       )}
@@ -525,7 +390,7 @@ export function Oberwelt() {
         />
       )}
       {vorfuehrung && (
-        <Vorfuehrung kennung={vorfuehrung} beiSchliessen={() => setzeVorfuehrung(null)} />
+        <Vorfuehrung kennung={vorfuehrung} beiSchliessen={() => dialoge.zeigeVorfuehrung(null)} />
       )}
       {meldung && (
         <section className="abenteuer-ergebnis" role="status" data-testid="abenteuer-meldung">

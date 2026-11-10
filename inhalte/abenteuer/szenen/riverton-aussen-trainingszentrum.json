@@ -1,0 +1,1166 @@
+{
+  "karte": "riverton.aussen",
+  "datei": "karten/riverton-aussen-trainingszentrum.json",
+  "art": "aussen",
+  "boden": "gras",
+  "wandart": "hecke",
+  "bruecken": ["h"],
+  "boeden": {
+    "p": "pflaster",
+    "s": "asphalt",
+    "e": "erde",
+    "t": "stein",
+    "h": "wasser",
+    "w": "wasser_stein"
+  },
+  "beschreibung": "Zustand: nach Szene 37 (slickAbschiedGesehen): Perfect Move hat den Pavillon übernommen; über dem Eingang hängt das Schild von Perfect Move, neben der Treppe steht ein Absperrbock „Gesperrt“, weil der Club nicht mehr hineindarf. Riverton an einem Herbsttag, auf dem Pflaster stehen noch Pfützen. Ganz oben die Bahnlinie mit Schotter und einer Hecke am Bahnzaun. Vom Westrand kommt der Fußweg vom Bahndamm an zwei Laternen vorbei und biegt in einem Bogen auf den Vorplatz. Darüber steht der Bahnhof aus rotem Backstein mit dem Uhrturm und dem Bogenportal, links das kleine Stellwerk, rechts der Güterschuppen mit Holzstapel an der Laderampe, ganz rechts der Wasserturm, aus dem früher die Dampfloks Wasser nahmen; ein Trampelpfad führt vom Gehweg hin. Auf dem gepflasterten Vorplatz ein Brunnen, der Wegweiser, Laternen und das Wartehäuschen der Buslinie. Die Water Street läuft quer durch die Stadt, Gehwege rundherum. Südlich der Straße die Häuser mit der Front zum Fluss: zwei schmale Reihenhäuser, der Handyladen mit Leuchtschild, der Markt mit zwei Ständen unter Markisen voller Obst- und Gemüsekörbe, ein Obstkarren und ein Pommeskarren, an jedem ein Verkäufer, die Bäckerei mit rotem Ziegeldach, das Café mit gestreifter Markise und zwei Lagerschuppen am Kai. Davor die Uferpromenade mit Bank und Laternen. Der Ashford River fließt vom West- zum Ostrand; die Steinbrücke mit Gehwegen führt hinüber in den Riverside-Park. Dort am Uferweg ganz im Westen Slicks Wohnwagen, Albescus Werkstatt und der Schuppen mit Vorhängeschloss, auf der Wiese die sechs Bildschirmtische (Picknicktische mit aufgeklappten Laptops), der Pavillon aus Holz mit Platz davor, das Pegelhaus und Bäume. Im Osten öffnet sich das Kanalbecken, der Kanal läuft nach Süden aus der Karte, daneben der Treidelpfad.",
+  "raster": [
+    "########################################################################",
+    "#tttttttttttttttttttttttttttttttttttttttttttttttttttttttttttttttttttttt#",
+    "#tttttttttttttttttttttttttttttttttttttttttttttttttttttttttttttttttttttt#",
+    "#.................eeppppppppppppppppppppppppppppppppppppppppppp........#",
+    "#.................eeppppppppppppppppppppppppppppppppp........pp........#",
+    "#.................eeppppppppppppppppppppppppppppppppp........pp........#",
+    "#.................ee...................................................#",
+    "#.................ee...................................................#",
+    "eeeeeeeeeeeeeeeeeeee...................................................#",
+    "eeeeeeeeeeeeeeeeeeee...................................................#",
+    "#...............................................................ee.....#",
+    "#...............................................................ee.....#",
+    "#...............................................................ee.....#",
+    "#...............................................................ee.....#",
+    "#......................................................pp.......ee.....#",
+    "#......................................................pp.......ee.....#",
+    "#.............ppppppppppppppppppppppppppppppppppppppppppppp.....ee.....#",
+    "#.............ppppppppppppppppppppppppppppppppppppppppppppp.....ee.....#",
+    "#.............ppppppppppppppppppppppppppppppppppppppppppppp.....ee.....#",
+    "#.............ppppppppppppppppppppppppppppppppppppppppppppp.....ee.....#",
+    "#.............ppppppppppppppppppppppppppppppppppppppppppppp.....ee.....#",
+    "#.............ppppppppppppppppppppppppppppppppppppppppppppppppppee.....#",
+    "#pppppppppppppppppppppppppppppppppppppppppppppppppppppppppppppppppppppp#",
+    "#ssssssssssssssssssssssssssssssssssssssssssssssssssssssssssssssssssssss#",
+    "#ssssssssssssssssssssssssssssssssssssssssssssssssssssssssssssssssssssss#",
+    "#ssssssssssssssssssssssssssssssssssssssssssssssssssssssssssssssssssssss#",
+    "#pppppppppppppppppppppppppppppppppppppppppppppppppppppppppppppppppppppp#",
+    "#.............ppppppppppppppppppppppppppppppppppppppppppppppppppppppppp#",
+    "#.............ppppppppppppppppppppppppppppppppppppppppppppppppppppppppp#",
+    "#.............ppppppppppppppppppppppppppppppppppppppppppppppppppppppppp#",
+    "#.............ppppppppppppppppppppppppppppppppppppppppppppppppppppppppp#",
+    "#.............ppppppppppppppppppppppppppppppppppppppppppppppppppppppppp#",
+    "#.............ppppppppppppppppppppppppppppppppppppppppppppppppppppppppp#",
+    "#.............ppppppppppppppppppppppppppppppppppppppppppppppppppppppppp#",
+    "#.............ppppppppppppppppppppppppppppppppppppppppppppppppppppppppp#",
+    "#.............ppppppppppppppppppppppppppppppppppppppppppppppppppppppppp#",
+    "#pppppppppppppppppppppppppppppppppppppppppppppppppppppppppppppppppppppp#",
+    "#pppppppppppppppppppppppppppppppppppppppppppppppppppppppppppppppppppppp#",
+    "#pppppppppppppppppppppppppppppppppppppppppppppppppppppppppppppppppppppp#",
+    "#~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~hhhhh~~~~~~~~~~~~~~~~#",
+    "#~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~hhhhh~~~~~~~~~~~~~~~~#",
+    "#~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~hhhhh~~~~~~~~~~~~~~~~#",
+    "#~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~hhhhh~~~~~~~~~~~~~~~~#",
+    "#~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~hhhhh~~~~~~~~~~~~~~~~#",
+    "#eeeeeeeeeeeeeeeeeeeee~~~~~~~~~~~~~eeeeeeeeeeeeeepppppppeeepwwwwwwwww..#",
+    "#eeeeeeeeeeeeeeeeeeeeeeeeeeeeeeeeeeeeeeeeeeeeeeeepppppppeeepwwwwwwwww..#",
+    "#...................eeeeeeeeeeeeeeee..........ee.........eepwwwwwwwww..#",
+    "#...................ee........................ee.........eepwwwwwwwww..#",
+    "#...................ee........................ee.........eepwwwwwww....#",
+    "#...................ee........................ee.........eepwwwwwww....#",
+    "#...................ee........................ee.........eepwwwwwww....#",
+    "#...................ee..............ppppppppppee.........eepwwwwwww....#",
+    "#...................ee..............ppppppppppee.........eepwwwwwww....#",
+    "#eeeeeeeeeeeeeeeeeeeeeeeeeeeeeeeeeeeeeeeeeeeeeee.........eepwwwwwww....#",
+    "#eeeeeeeeeeeeeeeeeeeeeeeeeeeeeeeeeeeeeeeeeeeeeee.........eepwwwwwww....#",
+    "#########################################################ee#############"
+  ],
+  "objekte": [
+    {
+      "moebel": "cc4Gleis",
+      "feld": [0, 1],
+      "bauteil_ok": true
+    },
+    {
+      "moebel": "cc4Gleis",
+      "feld": [1, 1],
+      "bauteil_ok": true
+    },
+    {
+      "moebel": "cc4Gleis",
+      "feld": [2, 1],
+      "bauteil_ok": true
+    },
+    {
+      "moebel": "cc4Gleis",
+      "feld": [3, 1],
+      "bauteil_ok": true
+    },
+    {
+      "moebel": "cc4Gleis",
+      "feld": [4, 1],
+      "bauteil_ok": true
+    },
+    {
+      "moebel": "cc4Gleis",
+      "feld": [5, 1],
+      "bauteil_ok": true
+    },
+    {
+      "moebel": "cc4Gleis",
+      "feld": [6, 1],
+      "bauteil_ok": true
+    },
+    {
+      "moebel": "cc4Gleis",
+      "feld": [7, 1],
+      "bauteil_ok": true
+    },
+    {
+      "moebel": "cc4Gleis",
+      "feld": [8, 1],
+      "bauteil_ok": true
+    },
+    {
+      "moebel": "cc4Gleis",
+      "feld": [9, 1],
+      "bauteil_ok": true
+    },
+    {
+      "moebel": "cc4Gleis",
+      "feld": [10, 1],
+      "bauteil_ok": true
+    },
+    {
+      "moebel": "cc4Gleis",
+      "feld": [11, 1],
+      "bauteil_ok": true
+    },
+    {
+      "moebel": "cc4Gleis",
+      "feld": [12, 1],
+      "bauteil_ok": true
+    },
+    {
+      "moebel": "cc4Gleis",
+      "feld": [13, 1],
+      "bauteil_ok": true
+    },
+    {
+      "moebel": "cc4Gleis",
+      "feld": [14, 1],
+      "bauteil_ok": true
+    },
+    {
+      "moebel": "cc4Gleis",
+      "feld": [15, 1],
+      "bauteil_ok": true
+    },
+    {
+      "moebel": "cc4Gleis",
+      "feld": [16, 1],
+      "bauteil_ok": true
+    },
+    {
+      "moebel": "cc4Gleis",
+      "feld": [17, 1],
+      "bauteil_ok": true
+    },
+    {
+      "moebel": "cc4Gleis",
+      "feld": [18, 1],
+      "bauteil_ok": true
+    },
+    {
+      "moebel": "cc4Gleis",
+      "feld": [19, 1],
+      "bauteil_ok": true
+    },
+    {
+      "moebel": "cc4Gleis",
+      "feld": [20, 1],
+      "bauteil_ok": true
+    },
+    {
+      "moebel": "cc4Gleis",
+      "feld": [21, 1],
+      "bauteil_ok": true
+    },
+    {
+      "moebel": "cc4Gleis",
+      "feld": [22, 1],
+      "bauteil_ok": true
+    },
+    {
+      "moebel": "cc4Gleis",
+      "feld": [23, 1],
+      "bauteil_ok": true
+    },
+    {
+      "moebel": "cc4Gleis",
+      "feld": [24, 1],
+      "bauteil_ok": true
+    },
+    {
+      "moebel": "cc4Gleis",
+      "feld": [25, 1],
+      "bauteil_ok": true
+    },
+    {
+      "moebel": "cc4Gleis",
+      "feld": [26, 1],
+      "bauteil_ok": true
+    },
+    {
+      "moebel": "cc4Gleis",
+      "feld": [27, 1],
+      "bauteil_ok": true
+    },
+    {
+      "moebel": "cc4Gleis",
+      "feld": [28, 1],
+      "bauteil_ok": true
+    },
+    {
+      "moebel": "cc4Gleis",
+      "feld": [29, 1],
+      "bauteil_ok": true
+    },
+    {
+      "moebel": "cc4Gleis",
+      "feld": [30, 1],
+      "bauteil_ok": true
+    },
+    {
+      "moebel": "cc4Gleis",
+      "feld": [31, 1],
+      "bauteil_ok": true
+    },
+    {
+      "moebel": "cc4Gleis",
+      "feld": [32, 1],
+      "bauteil_ok": true
+    },
+    {
+      "moebel": "cc4Gleis",
+      "feld": [33, 1],
+      "bauteil_ok": true
+    },
+    {
+      "moebel": "cc4Gleis",
+      "feld": [34, 1],
+      "bauteil_ok": true
+    },
+    {
+      "moebel": "cc4Gleis",
+      "feld": [35, 1],
+      "bauteil_ok": true
+    },
+    {
+      "moebel": "cc4Gleis",
+      "feld": [36, 1],
+      "bauteil_ok": true
+    },
+    {
+      "moebel": "cc4Gleis",
+      "feld": [37, 1],
+      "bauteil_ok": true
+    },
+    {
+      "moebel": "cc4Gleis",
+      "feld": [38, 1],
+      "bauteil_ok": true
+    },
+    {
+      "moebel": "cc4Gleis",
+      "feld": [39, 1],
+      "bauteil_ok": true
+    },
+    {
+      "moebel": "cc4Gleis",
+      "feld": [40, 1],
+      "bauteil_ok": true
+    },
+    {
+      "moebel": "cc4Gleis",
+      "feld": [41, 1],
+      "bauteil_ok": true
+    },
+    {
+      "moebel": "cc4Gleis",
+      "feld": [42, 1],
+      "bauteil_ok": true
+    },
+    {
+      "moebel": "cc4Gleis",
+      "feld": [43, 1],
+      "bauteil_ok": true
+    },
+    {
+      "moebel": "cc4Gleis",
+      "feld": [44, 1],
+      "bauteil_ok": true
+    },
+    {
+      "moebel": "cc4Gleis",
+      "feld": [45, 1],
+      "bauteil_ok": true
+    },
+    {
+      "moebel": "cc4Gleis",
+      "feld": [46, 1],
+      "bauteil_ok": true
+    },
+    {
+      "moebel": "cc4Gleis",
+      "feld": [47, 1],
+      "bauteil_ok": true
+    },
+    {
+      "moebel": "cc4Gleis",
+      "feld": [48, 1],
+      "bauteil_ok": true
+    },
+    {
+      "moebel": "cc4Gleis",
+      "feld": [49, 1],
+      "bauteil_ok": true
+    },
+    {
+      "moebel": "cc4Gleis",
+      "feld": [50, 1],
+      "bauteil_ok": true
+    },
+    {
+      "moebel": "cc4Gleis",
+      "feld": [51, 1],
+      "bauteil_ok": true
+    },
+    {
+      "moebel": "cc4Gleis",
+      "feld": [52, 1],
+      "bauteil_ok": true
+    },
+    {
+      "moebel": "cc4Gleis",
+      "feld": [53, 1],
+      "bauteil_ok": true
+    },
+    {
+      "moebel": "cc4Gleis",
+      "feld": [54, 1],
+      "bauteil_ok": true
+    },
+    {
+      "moebel": "cc4Gleis",
+      "feld": [55, 1],
+      "bauteil_ok": true
+    },
+    {
+      "moebel": "cc4Gleis",
+      "feld": [56, 1],
+      "bauteil_ok": true
+    },
+    {
+      "moebel": "cc4Gleis",
+      "feld": [57, 1],
+      "bauteil_ok": true
+    },
+    {
+      "moebel": "cc4Gleis",
+      "feld": [58, 1],
+      "bauteil_ok": true
+    },
+    {
+      "moebel": "cc4Gleis",
+      "feld": [59, 1],
+      "bauteil_ok": true
+    },
+    {
+      "moebel": "cc4Gleis",
+      "feld": [60, 1],
+      "bauteil_ok": true
+    },
+    {
+      "moebel": "cc4Gleis",
+      "feld": [61, 1],
+      "bauteil_ok": true
+    },
+    {
+      "moebel": "cc4Gleis",
+      "feld": [62, 1],
+      "bauteil_ok": true
+    },
+    {
+      "moebel": "cc4Gleis",
+      "feld": [63, 1],
+      "bauteil_ok": true
+    },
+    {
+      "moebel": "cc4Gleis",
+      "feld": [64, 1],
+      "bauteil_ok": true
+    },
+    {
+      "moebel": "cc4Gleis",
+      "feld": [65, 1],
+      "bauteil_ok": true
+    },
+    {
+      "moebel": "cc4Gleis",
+      "feld": [66, 1],
+      "bauteil_ok": true
+    },
+    {
+      "moebel": "cc4Gleis",
+      "feld": [67, 1],
+      "bauteil_ok": true
+    },
+    {
+      "moebel": "cc4Gleis",
+      "feld": [68, 1],
+      "bauteil_ok": true
+    },
+    {
+      "moebel": "cc4Gleis",
+      "feld": [69, 1],
+      "bauteil_ok": true
+    },
+    {
+      "moebel": "cc4Gleis",
+      "feld": [70, 1],
+      "bauteil_ok": true
+    },
+    {
+      "moebel": "cc4Gleis",
+      "feld": [71, 1],
+      "bauteil_ok": true
+    },
+    {
+      "moebel": "cc4Hecke",
+      "feld": [1, 3],
+      "bauteil_ok": true
+    },
+    {
+      "moebel": "cc4Hecke",
+      "feld": [3, 3],
+      "bauteil_ok": true
+    },
+    {
+      "moebel": "cc4Hecke",
+      "feld": [5, 3],
+      "bauteil_ok": true
+    },
+    {
+      "moebel": "cc4Hecke",
+      "feld": [7, 3],
+      "bauteil_ok": true
+    },
+    {
+      "moebel": "cc4Hecke",
+      "feld": [9, 3],
+      "bauteil_ok": true
+    },
+    {
+      "moebel": "cc4Hecke",
+      "feld": [67, 3],
+      "bauteil_ok": true
+    },
+    {
+      "moebel": "cc4Hecke",
+      "feld": [69, 3],
+      "bauteil_ok": true
+    },
+    {
+      "moebel": "rv5Stellwerk",
+      "feld": [11, 3]
+    },
+    {
+      "moebel": "rv5Gueterschuppen",
+      "feld": [53, 4]
+    },
+    {
+      "moebel": "cc4Holzstapel",
+      "feld": [61, 4]
+    },
+    {
+      "moebel": "rv5Wasserturm",
+      "feld": [64, 3],
+      "bauteil_ok": true
+    },
+    {
+      "moebel": "cc4Bahnbank",
+      "feld": [23, 3]
+    },
+    {
+      "moebel": "cc4Bahnbank",
+      "feld": [46, 3]
+    },
+    {
+      "moebel": "rv8Bahnhof",
+      "feld": [26, 6]
+    },
+    {
+      "moebel": "rv5Brunnen",
+      "feld": [24, 16]
+    },
+    {
+      "moebel": "cc5BankZumBach",
+      "feld": [22, 17]
+    },
+    {
+      "moebel": "mf9BankLinks",
+      "feld": [28, 17]
+    },
+    {
+      "moebel": "rvWegweiser",
+      "feld": [18, 20]
+    },
+    {
+      "moebel": "mfBushaltestelle",
+      "feld": [50, 19],
+      "vorn": true
+    },
+    {
+      "moebel": "sb8Condo44",
+      "feld": [58, 13]
+    },
+    {
+      "moebel": "rv8Infokiosk",
+      "feld": [45, 16]
+    },
+    {
+      "moebel": "mf4Laterne",
+      "feld": [17, 18],
+      "vorn": true
+    },
+    {
+      "moebel": "mf4Laterne",
+      "feld": [30, 18],
+      "vorn": true
+    },
+    {
+      "moebel": "mf4Laterne",
+      "feld": [43, 18],
+      "vorn": true
+    },
+    {
+      "moebel": "mf4Laterne",
+      "feld": [56, 18],
+      "vorn": true
+    },
+    {
+      "moebel": "mf4Laterne",
+      "feld": [12, 42],
+      "vorn": true
+    },
+    {
+      "moebel": "mf4Laterne",
+      "feld": [34, 43],
+      "vorn": true
+    },
+    {
+      "moebel": "mf4Laterne",
+      "feld": [56, 42],
+      "vorn": true
+    },
+    {
+      "moebel": "pw7Kiefer",
+      "feld": [18, 47]
+    },
+    {
+      "moebel": "sa8Angelladen",
+      "feld": [1, 13]
+    },
+    {
+      "moebel": "sb8Condo51",
+      "feld": [8, 11]
+    },
+    {
+      "moebel": "wg4Busch",
+      "feld": [15, 10]
+    },
+    {
+      "moebel": "rvLaubbaumDunkel",
+      "feld": [66, 12]
+    },
+    {
+      "moebel": "sb5Faehrhaus",
+      "feld": [67, 17]
+    },
+    {
+      "moebel": "rv5Reihenhaus",
+      "feld": [1, 28]
+    },
+    {
+      "moebel": "rv5Reihenhaus",
+      "feld": [4, 28]
+    },
+    {
+      "moebel": "rv5Handyladen",
+      "feld": [8, 28]
+    },
+    {
+      "moebel": "rv5Marktstand",
+      "feld": [15, 29],
+      "id": "stand1"
+    },
+    {
+      "moebel": "rv5Marktstand",
+      "feld": [21, 29],
+      "id": "stand2"
+    },
+    {
+      "moebel": "rv8Baeckerei",
+      "feld": [32, 27]
+    },
+    {
+      "moebel": "rv5Cafe",
+      "feld": [42, 27]
+    },
+    {
+      "moebel": "rv8KorbAepfel",
+      "auf": "stand1",
+      "versatz": [-24, 8]
+    },
+    {
+      "moebel": "rv8KorbBananen",
+      "auf": "stand1",
+      "versatz": [-8, 8]
+    },
+    {
+      "moebel": "rv8KorbTrauben",
+      "auf": "stand1",
+      "versatz": [8, 8]
+    },
+    {
+      "moebel": "rv8KorbMais",
+      "auf": "stand1",
+      "versatz": [24, 8]
+    },
+    {
+      "moebel": "rv8KorbMoehren",
+      "auf": "stand2",
+      "versatz": [-24, 8]
+    },
+    {
+      "moebel": "rv8KorbKohl",
+      "auf": "stand2",
+      "versatz": [-8, 8]
+    },
+    {
+      "moebel": "rv8KorbAepfel",
+      "auf": "stand2",
+      "versatz": [8, 8]
+    },
+    {
+      "moebel": "rv8KorbMoehren",
+      "auf": "stand2",
+      "versatz": [24, 8]
+    },
+    {
+      "moebel": "rv8Obstkarren",
+      "feld": [16, 33]
+    },
+    {
+      "moebel": "rv8Imbisskarren",
+      "feld": [24, 33]
+    },
+    {
+      "moebel": "rv5Lagerhaus",
+      "feld": [56, 30]
+    },
+    {
+      "moebel": "rv5Lagerhaus",
+      "feld": [62, 30]
+    },
+    {
+      "moebel": "mf4Laterne",
+      "feld": [13, 34],
+      "vorn": true
+    },
+    {
+      "moebel": "mf4Laterne",
+      "feld": [27, 34],
+      "vorn": true
+    },
+    {
+      "moebel": "mf4Laterne",
+      "feld": [41, 34],
+      "vorn": true
+    },
+    {
+      "moebel": "mf4Laterne",
+      "feld": [55, 34],
+      "vorn": true
+    },
+    {
+      "moebel": "mfBank",
+      "feld": [8, 36]
+    },
+    {
+      "moebel": "mfBank",
+      "feld": [20, 36]
+    },
+    {
+      "moebel": "mfBank",
+      "feld": [33, 36]
+    },
+    {
+      "moebel": "mfBank",
+      "feld": [45, 36]
+    },
+    {
+      "moebel": "caKisten",
+      "feld": [56, 36]
+    },
+    {
+      "moebel": "caKisten",
+      "feld": [66, 36]
+    },
+    {
+      "moebel": "sb5Fass",
+      "feld": [65, 37]
+    },
+    {
+      "moebel": "sb5Fass",
+      "feld": [64, 37]
+    },
+    {
+      "moebel": "rv8Poller",
+      "feld": [60, 38],
+      "bauteil_ok": true
+    },
+    {
+      "moebel": "rv8Poller",
+      "feld": [66, 38],
+      "bauteil_ok": true
+    },
+    {
+      "moebel": "rv8Ruderboot",
+      "feld": [59, 40],
+      "bauteil_ok": true
+    },
+    {
+      "moebel": "rv5Pegelhaus",
+      "feld": [68, 34]
+    },
+    {
+      "moebel": "rv5Bruecke",
+      "feld": [50, 38]
+    },
+    {
+      "moebel": "rv8Brueckenschatten",
+      "feld": [55, 39]
+    },
+    {
+      "moebel": "rv5Wohnwagen",
+      "feld": [2, 47]
+    },
+    {
+      "moebel": "rv5Werkstatt",
+      "feld": [9, 48]
+    },
+    {
+      "moebel": "rv5Schuppen",
+      "feld": [15, 49]
+    },
+    {
+      "moebel": "rv8Holzdach",
+      "feld": [22, 46],
+      "bauteil_ok": true
+    },
+    {
+      "moebel": "rvPicknicktisch",
+      "feld": [22, 49],
+      "id": "bt10"
+    },
+    {
+      "moebel": "pd6Laptop",
+      "auf": "bt10"
+    },
+    {
+      "moebel": "rvPicknicktisch",
+      "feld": [24, 49],
+      "id": "bt12"
+    },
+    {
+      "moebel": "pd6Laptop",
+      "auf": "bt12"
+    },
+    {
+      "moebel": "rv8Holzdach",
+      "feld": [26, 46],
+      "bauteil_ok": true
+    },
+    {
+      "moebel": "rvPicknicktisch",
+      "feld": [26, 49],
+      "id": "bt20"
+    },
+    {
+      "moebel": "pd6Laptop",
+      "auf": "bt20"
+    },
+    {
+      "moebel": "rvPicknicktisch",
+      "feld": [28, 49],
+      "id": "bt22"
+    },
+    {
+      "moebel": "pd6Laptop",
+      "auf": "bt22"
+    },
+    {
+      "moebel": "rv8Holzdach",
+      "feld": [30, 46],
+      "bauteil_ok": true
+    },
+    {
+      "moebel": "rvPicknicktisch",
+      "feld": [30, 49],
+      "id": "bt30"
+    },
+    {
+      "moebel": "pd6Laptop",
+      "auf": "bt30"
+    },
+    {
+      "moebel": "rvPicknicktisch",
+      "feld": [32, 49],
+      "id": "bt32"
+    },
+    {
+      "moebel": "pd6Laptop",
+      "auf": "bt32"
+    },
+    {
+      "moebel": "rv8Holzdach",
+      "feld": [37, 46],
+      "bauteil_ok": true
+    },
+    {
+      "moebel": "rv8Holzdach",
+      "feld": [41, 46],
+      "bauteil_ok": true
+    },
+    {
+      "moebel": "rvPicknicktisch",
+      "feld": [34, 52],
+      "id": "schachtisch"
+    },
+    {
+      "moebel": "rv5Brett",
+      "auf": "schachtisch"
+    },
+    {
+      "moebel": "rvLaubbaumDunkel",
+      "feld": [48, 48]
+    },
+    {
+      "moebel": "rvLaubbaum",
+      "feld": [52, 49]
+    },
+    {
+      "moebel": "wg4Busch",
+      "feld": [18, 51]
+    },
+    {
+      "moebel": "wg4Busch",
+      "feld": [44, 49]
+    },
+    {
+      "moebel": "wg4Busch",
+      "feld": [50, 52]
+    },
+    {
+      "moebel": "wg4Busch",
+      "feld": [68, 51]
+    },
+    {
+      "moebel": "sb5SchildPerfectMove",
+      "feld": [38, 46],
+      "vorn": true,
+      "versatz": [0, 4]
+    },
+    {
+      "moebel": "gc7Absperrbock",
+      "feld": [43, 51]
+    }
+  ],
+  "ausloeser": [
+    {
+      "name": "start",
+      "feld": [36, 17],
+      "eigenschaften": {
+        "richtung": "unten"
+      }
+    },
+    {
+      "name": "bahnhof",
+      "feld": [36, 17]
+    },
+    {
+      "name": "bahnhofTuer",
+      "feld": [36, 16]
+    },
+    {
+      "name": "bahndamm",
+      "feld": [0, 8]
+    },
+    {
+      "name": "bahndamm",
+      "feld": [0, 9]
+    },
+    {
+      "name": "kanalweg",
+      "feld": [57, 55]
+    },
+    {
+      "name": "kanalweg",
+      "feld": [58, 55]
+    },
+    {
+      "name": "wohnwagenTuer",
+      "feld": [4, 53]
+    },
+    {
+      "name": "schuppenTuer",
+      "feld": [16, 53]
+    },
+    {
+      "name": "pavillonEingang",
+      "feld": [41, 51]
+    },
+    {
+      "name": "bildschirmtische",
+      "feld": [27, 51]
+    },
+    {
+      "name": "handyladen",
+      "feld": [10, 36]
+    },
+    {
+      "name": "fundLaeufer",
+      "feld": [49, 37]
+    },
+    {
+      "name": "anlegerSchild",
+      "feld": [59, 46]
+    }
+  ],
+  "figuren": [
+    {
+      "name": "albescu",
+      "feld": [13, 54]
+    },
+    {
+      "name": "nova",
+      "feld": [31, 18]
+    },
+    {
+      "name": "victor",
+      "feld": [44, 46]
+    }
+  ],
+  "belebung": [
+    {
+      "name": "pendler",
+      "typ": "statist",
+      "feld": [20, 19],
+      "eigenschaften": {
+        "von": "20,19",
+        "bis": "35,17",
+        "tun": "eilt mit Schirm zum Zug",
+        "wann": "morgen",
+        "sagt": "statist.riverton.aussen.pendler"
+      }
+    },
+    {
+      "name": "parkschachspieler",
+      "typ": "statist",
+      "feld": [35, 54],
+      "eigenschaften": {
+        "von": "35,54",
+        "bis": "35,54",
+        "tun": "klopft am Picknicktisch auf die Schachuhr",
+        "wann": "tag",
+        "sagt": "statist.riverton.aussen.parkschachspieler",
+        "zeigt": "partieDesJahrhunderts"
+      }
+    },
+    {
+      "name": "brieftraegerin",
+      "typ": "statist",
+      "feld": [4, 37],
+      "eigenschaften": {
+        "von": "4,37",
+        "bis": "30,37",
+        "tun": "trägt die Post die Water Street entlang",
+        "wann": "tag",
+        "sagt": "statist.riverton.aussen.brieftraegerin"
+      }
+    },
+    {
+      "name": "taubenmann",
+      "typ": "statist",
+      "feld": [24, 21],
+      "eigenschaften": {
+        "von": "24,21",
+        "bis": "24,21",
+        "tun": "zählt seine Tauben",
+        "wann": "tag",
+        "sagt": "statist.riverton.aussen.taubenmann"
+      }
+    },
+    {
+      "name": "uhrmacher",
+      "typ": "statist",
+      "feld": [33, 17],
+      "eigenschaften": {
+        "von": "33,17",
+        "bis": "33,17",
+        "tun": "steht unter der Bahnhofsuhr und prüft seine Taschenuhr",
+        "wann": "tag",
+        "sagt": "statist.riverton.aussen.uhrmacher"
+      }
+    },
+    {
+      "name": "gabelstaplerfahrer",
+      "typ": "statist",
+      "feld": [59, 37],
+      "eigenschaften": {
+        "von": "59,37",
+        "bis": "63,37",
+        "tun": "fährt Kisten vom Kai ins Lagerhaus",
+        "wann": "tag",
+        "sagt": "statist.riverton.aussen.gabelstaplerfahrer"
+      }
+    },
+    {
+      "name": "anglerin",
+      "typ": "statist",
+      "feld": [5, 38],
+      "eigenschaften": {
+        "von": "5,38",
+        "bis": "5,38",
+        "tun": "angelt von der Ufermauer",
+        "wann": "tag",
+        "sagt": "statist.riverton.aussen.anglerin"
+      }
+    },
+    {
+      "name": "kreidekinder",
+      "typ": "statist",
+      "feld": [38, 53],
+      "eigenschaften": {
+        "von": "38,53",
+        "bis": "38,53",
+        "tun": "malen ein Brett mit Kreide auf den Weg",
+        "wann": "tag"
+      }
+    },
+    {
+      "name": "hundebesitzerin",
+      "typ": "statist",
+      "feld": [20, 53],
+      "eigenschaften": {
+        "von": "20,53",
+        "bis": "34,54",
+        "tun": "geht mit dem Hund im Park spazieren",
+        "wann": "tag"
+      }
+    },
+    {
+      "name": "tauben",
+      "typ": "tier",
+      "feld": [26, 19],
+      "eigenschaften": {
+        "von": "22,19",
+        "bis": "30,21",
+        "verhalten": "fliegen"
+      }
+    },
+    {
+      "name": "moewen",
+      "typ": "tier",
+      "feld": [60, 37],
+      "eigenschaften": {
+        "von": "56,36",
+        "bis": "68,38",
+        "verhalten": "fliegen"
+      }
+    },
+    {
+      "name": "ratten",
+      "typ": "tier",
+      "feld": [5, 4],
+      "eigenschaften": {
+        "von": "3,4",
+        "bis": "9,4",
+        "verhalten": "ausweichen"
+      }
+    },
+    {
+      "name": "hund",
+      "typ": "tier",
+      "feld": [21, 54],
+      "eigenschaften": {
+        "von": "21,54",
+        "bis": "21,54",
+        "verhalten": "folgen"
+      }
+    },
+    {
+      "name": "enten",
+      "typ": "tier",
+      "feld": [14, 41],
+      "eigenschaften": {
+        "von": "14,41",
+        "bis": "40,41",
+        "verhalten": "schwimmen"
+      }
+    },
+    {
+      "name": "marktfrau",
+      "typ": "statist",
+      "feld": [20, 31],
+      "eigenschaften": {
+        "von": "20,31",
+        "bis": "20,31",
+        "tun": "verkauft Obst und Gemüse an beiden Ständen",
+        "wann": "tag"
+      }
+    },
+    {
+      "name": "obsthaendler",
+      "typ": "statist",
+      "feld": [19, 34],
+      "eigenschaften": {
+        "von": "19,34",
+        "bis": "19,34",
+        "tun": "wiegt am Obstkarren Trauben ab",
+        "wann": "tag"
+      }
+    },
+    {
+      "name": "imbissverkaeufer",
+      "typ": "statist",
+      "feld": [21, 35],
+      "eigenschaften": {
+        "von": "21,35",
+        "bis": "21,35",
+        "tun": "reicht Pommes aus dem Imbisskarren",
+        "wann": "tag"
+      }
+    }
+  ],
+  "zustand": ["neu", "gebraucht", "alt"],
+  "stil": [
+    "industrie",
+    "klassisch",
+    "laendlich",
+    "landhaus",
+    "modern",
+    "natur",
+    "rustikal"
+  ],
+  "zustand_der_karte": "slickAbschiedGesehen"
+}

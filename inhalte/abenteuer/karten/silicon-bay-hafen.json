@@ -7999,7 +7999,7 @@
       {
        "name": "tun",
        "type": "string",
-       "value": "trägt Kisten zum Kutter"
+       "value": "trägt Kisten zum Fischerboot"
       },
       {
        "name": "wann",
@@ -8065,7 +8065,7 @@
       {
        "name": "tun",
        "type": "string",
-       "value": "nimmt die Kisten auf dem Kutter an"
+       "value": "nimmt die Kisten im Fischerboot an"
       },
       {
        "name": "wann",
@@ -9046,8 +9046,8 @@
      "type": "moebel",
      "x": 16,
      "y": 496,
-     "width": 224,
-     "height": 80,
+     "width": 288,
+     "height": 96,
      "rotation": 0,
      "visible": true,
      "properties": [

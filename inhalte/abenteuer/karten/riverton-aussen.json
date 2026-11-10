@@ -11,7 +11,7 @@
  "tilewidth": 16,
  "tileheight": 16,
  "nextlayerid": 5,
- "nextobjectid": 207,
+ "nextobjectid": 206,
  "layers": [
   {
    "id": 1,
@@ -3545,8 +3545,8 @@
     4,
     4,
     4,
-    1,
-    1,
+    4,
+    4,
     1,
     1,
     1,
@@ -3617,8 +3617,8 @@
     4,
     4,
     4,
-    1,
-    1,
+    4,
+    4,
     1,
     1,
     1,
@@ -3689,8 +3689,8 @@
     4,
     4,
     4,
-    1,
-    1,
+    4,
+    4,
     1,
     1,
     1,
@@ -3761,8 +3761,8 @@
     4,
     4,
     4,
-    1,
-    1,
+    4,
+    4,
     1,
     1,
     1,
@@ -3833,8 +3833,8 @@
     4,
     4,
     4,
-    1,
-    1,
+    4,
+    4,
     1,
     1,
     1,
@@ -3905,8 +3905,8 @@
     4,
     4,
     4,
-    1,
-    1,
+    4,
+    4,
     1,
     1,
     1,
@@ -3977,8 +3977,8 @@
     4,
     4,
     4,
-    1,
-    1,
+    4,
+    4,
     1,
     1,
     1,
@@ -15345,11 +15345,11 @@
     },
     {
      "id": 140,
-     "name": "pw7Kiefer",
+     "name": "sb5Faehrhaus",
      "type": "moebel",
-     "x": 1088,
-     "y": 256,
-     "width": 32,
+     "x": 1072,
+     "y": 272,
+     "width": 48,
      "height": 64,
      "rotation": 0,
      "visible": true,
@@ -15357,7 +15357,7 @@
       {
        "name": "tiefe",
        "type": "int",
-       "value": 312
+       "value": 328
       },
       {
        "name": "kollision",
@@ -15989,29 +15989,6 @@
     },
     {
      "id": 168,
-     "name": "sb5Kran",
-     "type": "moebel",
-     "x": 928,
-     "y": 560,
-     "width": 112,
-     "height": 80,
-     "rotation": 0,
-     "visible": true,
-     "properties": [
-      {
-       "name": "tiefe",
-       "type": "int",
-       "value": 632
-      },
-      {
-       "name": "kollision",
-       "type": "bool",
-       "value": false
-      }
-     ]
-    },
-    {
-     "id": 169,
      "name": "caKisten",
      "type": "moebel",
      "x": 896,
@@ -16034,7 +16011,7 @@
      ]
     },
     {
-     "id": 170,
+     "id": 169,
      "name": "caKisten",
      "type": "moebel",
      "x": 1056,
@@ -16057,7 +16034,7 @@
      ]
     },
     {
-     "id": 171,
+     "id": 170,
      "name": "sb5Fass",
      "type": "moebel",
      "x": 1040,
@@ -16080,7 +16057,7 @@
      ]
     },
     {
-     "id": 172,
+     "id": 171,
      "name": "sb5Fass",
      "type": "moebel",
      "x": 1024,
@@ -16103,7 +16080,7 @@
      ]
     },
     {
-     "id": 173,
+     "id": 172,
      "name": "rv8Poller",
      "type": "moebel",
      "x": 960,
@@ -16126,7 +16103,7 @@
      ]
     },
     {
-     "id": 174,
+     "id": 173,
      "name": "rv8Poller",
      "type": "moebel",
      "x": 1056,
@@ -16149,7 +16126,7 @@
      ]
     },
     {
-     "id": 175,
+     "id": 174,
      "name": "rv8Ruderboot",
      "type": "moebel",
      "x": 944,
@@ -16172,7 +16149,7 @@
      ]
     },
     {
-     "id": 176,
+     "id": 175,
      "name": "rv5Pegelhaus",
      "type": "moebel",
      "x": 1088,
@@ -16195,7 +16172,7 @@
      ]
     },
     {
-     "id": 177,
+     "id": 176,
      "name": "rv5Bruecke",
      "type": "moebel",
      "x": 800,
@@ -16218,7 +16195,7 @@
      ]
     },
     {
-     "id": 178,
+     "id": 177,
      "name": "rv8Brueckenschatten",
      "type": "moebel",
      "x": 880,
@@ -16241,7 +16218,7 @@
      ]
     },
     {
-     "id": 179,
+     "id": 178,
      "name": "rv5Wohnwagen",
      "type": "moebel",
      "x": 32,
@@ -16264,7 +16241,7 @@
      ]
     },
     {
-     "id": 180,
+     "id": 179,
      "name": "rv5Werkstatt",
      "type": "moebel",
      "x": 144,
@@ -16287,7 +16264,7 @@
      ]
     },
     {
-     "id": 181,
+     "id": 180,
      "name": "rv5Schuppen",
      "type": "moebel",
      "x": 240,
@@ -16310,7 +16287,7 @@
      ]
     },
     {
-     "id": 182,
+     "id": 181,
      "name": "rv8Holzdach",
      "type": "moebel",
      "x": 352,
@@ -16333,7 +16310,7 @@
      ]
     },
     {
-     "id": 183,
+     "id": 182,
      "name": "rvPicknicktisch",
      "type": "moebel",
      "x": 352,
@@ -16356,7 +16333,7 @@
      ]
     },
     {
-     "id": 184,
+     "id": 183,
      "name": "pd6Laptop",
      "type": "moebel",
      "x": 360,
@@ -16379,7 +16356,7 @@
      ]
     },
     {
-     "id": 185,
+     "id": 184,
      "name": "rvPicknicktisch",
      "type": "moebel",
      "x": 384,
@@ -16402,7 +16379,7 @@
      ]
     },
     {
-     "id": 186,
+     "id": 185,
      "name": "pd6Laptop",
      "type": "moebel",
      "x": 392,
@@ -16425,7 +16402,7 @@
      ]
     },
     {
-     "id": 187,
+     "id": 186,
      "name": "rv8Holzdach",
      "type": "moebel",
      "x": 416,
@@ -16448,7 +16425,7 @@
      ]
     },
     {
-     "id": 188,
+     "id": 187,
      "name": "rvPicknicktisch",
      "type": "moebel",
      "x": 416,
@@ -16471,7 +16448,7 @@
      ]
     },
     {
-     "id": 189,
+     "id": 188,
      "name": "pd6Laptop",
      "type": "moebel",
      "x": 424,
@@ -16494,7 +16471,7 @@
      ]
     },
     {
-     "id": 190,
+     "id": 189,
      "name": "rvPicknicktisch",
      "type": "moebel",
      "x": 448,
@@ -16517,7 +16494,7 @@
      ]
     },
     {
-     "id": 191,
+     "id": 190,
      "name": "pd6Laptop",
      "type": "moebel",
      "x": 456,
@@ -16540,7 +16517,7 @@
      ]
     },
     {
-     "id": 192,
+     "id": 191,
      "name": "rv8Holzdach",
      "type": "moebel",
      "x": 480,
@@ -16563,7 +16540,7 @@
      ]
     },
     {
-     "id": 193,
+     "id": 192,
      "name": "rvPicknicktisch",
      "type": "moebel",
      "x": 480,
@@ -16586,7 +16563,7 @@
      ]
     },
     {
-     "id": 194,
+     "id": 193,
      "name": "pd6Laptop",
      "type": "moebel",
      "x": 488,
@@ -16609,7 +16586,7 @@
      ]
     },
     {
-     "id": 195,
+     "id": 194,
      "name": "rvPicknicktisch",
      "type": "moebel",
      "x": 512,
@@ -16632,7 +16609,7 @@
      ]
     },
     {
-     "id": 196,
+     "id": 195,
      "name": "pd6Laptop",
      "type": "moebel",
      "x": 520,
@@ -16655,7 +16632,7 @@
      ]
     },
     {
-     "id": 197,
+     "id": 196,
      "name": "rv8Holzdach",
      "type": "moebel",
      "x": 592,
@@ -16678,7 +16655,7 @@
      ]
     },
     {
-     "id": 198,
+     "id": 197,
      "name": "rv8Holzdach",
      "type": "moebel",
      "x": 656,
@@ -16701,7 +16678,7 @@
      ]
     },
     {
-     "id": 199,
+     "id": 198,
      "name": "rvPicknicktisch",
      "type": "moebel",
      "x": 544,
@@ -16724,7 +16701,7 @@
      ]
     },
     {
-     "id": 200,
+     "id": 199,
      "name": "rv5Brett",
      "type": "moebel",
      "x": 554,
@@ -16747,7 +16724,7 @@
      ]
     },
     {
-     "id": 201,
+     "id": 200,
      "name": "rvLaubbaumDunkel",
      "type": "moebel",
      "x": 768,
@@ -16770,7 +16747,7 @@
      ]
     },
     {
-     "id": 202,
+     "id": 201,
      "name": "rvLaubbaum",
      "type": "moebel",
      "x": 832,
@@ -16793,7 +16770,7 @@
      ]
     },
     {
-     "id": 203,
+     "id": 202,
      "name": "wg4Busch",
      "type": "moebel",
      "x": 288,
@@ -16816,7 +16793,7 @@
      ]
     },
     {
-     "id": 204,
+     "id": 203,
      "name": "wg4Busch",
      "type": "moebel",
      "x": 704,
@@ -16839,7 +16816,7 @@
      ]
     },
     {
-     "id": 205,
+     "id": 204,
      "name": "wg4Busch",
      "type": "moebel",
      "x": 800,
@@ -16862,20 +16839,20 @@
      ]
     },
     {
-     "id": 206,
-     "name": "rvLaubbaumDunkel",
+     "id": 205,
+     "name": "wg4Busch",
      "type": "moebel",
-     "x": 1056,
-     "y": 800,
-     "width": 64,
-     "height": 64,
+     "x": 1088,
+     "y": 816,
+     "width": 32,
+     "height": 32,
      "rotation": 0,
      "visible": true,
      "properties": [
       {
        "name": "tiefe",
        "type": "int",
-       "value": 856
+       "value": 840
       },
       {
        "name": "kollision",

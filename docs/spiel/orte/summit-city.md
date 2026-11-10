@@ -364,3 +364,23 @@ das zweite Backsteinhaus ist die Turnhalle und hat einen Weg zum Hof.
 Keine Zustände für Summit City außen, Hütte, Bergstation, Bergladen und Felstürme: Sommerfest, Wimpel und
 Plakat der Landesmeisterschaft stehen den ganzen Akt 4; das Drachenfest (Szene 90) ist ein Abend auf dem
 Marktplatz ohne feste neue Objekte.
+
+### Gutachten Runde 9 (10.11.2026, mittel-4)
+
+Gutachten `gutachten/summit-city.md` und `gutachten/hochebene-sternwarte.md`.
+
+- **Orange Flächen** (Querbefund): Die Randspalte setzt Felsbänder fort, Ecken zeigen den Boden, über
+  der Gipfelwand liegt Almwiese (`"hochflaeche": "gras"`); ein Test prüft alle Karten mit Klippe.
+- **Summit City außen:** Felsen auf den Gipfelfelsen, kein Schotterstreifen am Südrand, Chalet statt
+  Vorstadthaus mit Doppelgarage, nur noch eine Langhütte (die zweite ist eine Holzfällerhütte), zwei
+  kleine Häuser statt Hof und Wohnhaus, das Seil endet in der Gipfelwand. Nicht umgesetzt: **Erdwege
+  im Osten** bleiben ein Kreuz aus geraden Stücken.
+- **Bergstation:** Dielen statt gelbem Holz, Fahrplan aus dem Laufweg. Nicht umgesetzt: **Schalter**
+  – der Beamte steht hinter dem Glasschalter des Pakets; „TICKET“ steht auf dem Bild.
+- **Bergladen:** Der Kunde steht nicht mehr in den Rucksäcken.
+- **Felstürme:** Weg aus hellem Sand mit abgeschrägten Bögen; Wacholder statt Tanne am Steintisch;
+  Wassertrog in der Koppel; Haltestellenschild und Automat entfernt; Kakteen statt grüner Laubbüsche;
+  Kleinkram auf der Fläche. Nicht umgesetzt: **Esel** ist das Tierbild „pferd“ aus
+  `belebungsbilder.py`.
+- **Schule:** Der Schulbus steht in der Bucht am Hof, nicht quer über der Straße (10.65); im Zustand
+  „vor-diplom“ stehen Annek und die Kinder nicht mehr am leeren Platz der Steintische.

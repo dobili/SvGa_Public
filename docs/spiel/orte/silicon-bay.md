@@ -389,7 +389,10 @@ Rand aus hellen Platten (`platten`). Der Mähroboter heißt im Winter Schneeräu
 Roboter bleiben ohne Bild, bis der Lieferroboter des Autors (Gemini, `ki-roh/lieferroboter.png`)
 kommt; der Gitarrenkoffer ist ein Bild mit zwei Koffern. Drittes Gutachten (`silicon-bay-altstadt-3.md`, „bereit für den Autor“),
 Restpunkte: Die Laternen stehen an den Hausgrenzen statt vor den Schaufenstern; ein zweites Kind
-rollt am Schneemann eine Schneekugel.
+rollt am Schneemann eine Schneekugel. Gemini-Bilder (Runde 9): Die Roboter
+(Liefer-, Staubsauger-, Schneeräumroboter in der Altstadt, Saugroboter in der Akademie, Lieferroboter
+und Roboterhund am Campus) zeigen jetzt den Lieferroboter von Perfect Move (Tierart `lieferroboter`
+in `tierarten.json`, Schnitt `ansichten` aus `lieferroboter_rechts/_oben/_unten`).
 
 **Belebung:** zwölf Statisten, acht davon mit Satz (`statist.siliconBay.altstadt.*`): Bäckerin,
 Uhrmacher, Musikhändler, Schülerin, Metzger (Perfect Move will die Straße kaufen), Rentnerpaar,

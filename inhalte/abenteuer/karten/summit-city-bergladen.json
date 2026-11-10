@@ -560,7 +560,7 @@
      "name": "kunde",
      "type": "statist",
      "x": 128,
-     "y": 112,
+     "y": 128,
      "width": 16,
      "height": 16,
      "rotation": 0,
@@ -569,12 +569,12 @@
       {
        "name": "von",
        "type": "string",
-       "value": "8,7"
+       "value": "8,8"
       },
       {
        "name": "bis",
        "type": "string",
-       "value": "8,7"
+       "value": "8,8"
       },
       {
        "name": "tun",
@@ -626,7 +626,7 @@
      "name": "cc4Fussmatte",
      "type": "moebel",
      "x": 96,
-     "y": 136,
+     "y": 131,
      "width": 16,
      "height": 16,
      "rotation": 0,

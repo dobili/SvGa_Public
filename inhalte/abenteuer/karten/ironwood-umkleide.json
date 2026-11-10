@@ -1025,7 +1025,7 @@
     },
     {
      "id": 19,
-     "name": "cc4Bahnbank",
+     "name": "iw9UmkleidebankWaagrecht",
      "type": "moebel",
      "x": 96,
      "y": 96,
@@ -1048,7 +1048,7 @@
     },
     {
      "id": 20,
-     "name": "cc4Bahnbank",
+     "name": "iw9UmkleidebankWaagrecht",
      "type": "moebel",
      "x": 96,
      "y": 128,
@@ -1071,7 +1071,7 @@
     },
     {
      "id": 21,
-     "name": "iw8Garderobe",
+     "name": "iw9GarderobeHelm",
      "type": "moebel",
      "x": 16,
      "y": 112,
@@ -1117,7 +1117,7 @@
     },
     {
      "id": 23,
-     "name": "cc4Bahnbank",
+     "name": "iw9UmkleidebankWaagrecht",
      "type": "moebel",
      "x": 176,
      "y": 128,

@@ -309,7 +309,8 @@ frei begehbar; die Auslöser kommen mit den Dialogen.
 - Baum (5): Die Eiche auf Therons Insel ist eine Sumpfzypresse.
 - Boden (7): Die Inseln sind nasser, dunkler Sumpfboden (Bildwunsch `sumpfboden.py`) mit
   Grasrand.
-- Offen: Möwe statt Reiher (6, Gemini-Prompt 14), Vogelschild (4, Story-Gegenstand).
+- Reiher (6): eigene Tierart „reiher“ aus dem Gemini-Bild des Autors (`tierarten.json`, Bogen aus
+  `bildwuensche/reiher_reihen.py`). Offen: Vogelschild (4, Story-Gegenstand).
 
 **Weg 5, Gutachten Runde 9 (`gutachten/weg-silicon-delacroix.md`, mittel-1):**
 

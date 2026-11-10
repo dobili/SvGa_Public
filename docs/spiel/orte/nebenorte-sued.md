@@ -141,3 +141,12 @@ in Draufsicht gibt es in keinem Paket. (3) Das Zeichen am Boden ist das Finkenze
 kein Springer; der Karton ohne Grund ist weg. Die Dielen sind das Material des Kartenbilds.
 
 **Zustände:** keine; die Sternwarte ändert sich in der Geschichte nicht.
+
+## 9. Gutachten Runde 9 (10.11.2026, mittel-4)
+
+- **Felsnase:** Der Pfad ist heller Sand und auch nachts sichtbar; die obere Kante hat einen Versprung.
+  Nicht umgesetzt: **Hunde** sind die Tierbilder für Kojote und Wüstenfuchs (`belebungsbilder.py`);
+  **Bank** von der Seite (Bild).
+
+**Gemini-Bilder (10.11.2026):** In der Kuppel steht das Messingfernrohr auf seiner Säule mit dem
+Beobachterstuhl, links ein Tisch mit aufgeschlagenem Sternatlas statt Anrichte und Globus.

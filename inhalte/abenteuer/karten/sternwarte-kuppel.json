@@ -11,7 +11,7 @@
  "tilewidth": 16,
  "tileheight": 16,
  "nextlayerid": 5,
- "nextobjectid": 24,
+ "nextobjectid": 23,
  "layers": [
   {
    "id": 1,
@@ -720,7 +720,7 @@
      "name": "cc5Fussmatte",
      "type": "moebel",
      "x": 112,
-     "y": 184,
+     "y": 179,
      "width": 16,
      "height": 16,
      "rotation": 0,
@@ -740,12 +740,12 @@
     },
     {
      "id": 10,
-     "name": "n5Teleskop",
+     "name": "n9Fernrohr",
      "type": "moebel",
      "x": 80,
-     "y": 64,
+     "y": 80,
      "width": 48,
-     "height": 80,
+     "height": 64,
      "rotation": 0,
      "visible": true,
      "properties": [
@@ -947,7 +947,7 @@
     },
     {
      "id": 19,
-     "name": "cc5Anrichte",
+     "name": "n9Sternatlas",
      "type": "moebel",
      "x": 48,
      "y": 128,
@@ -970,19 +970,19 @@
     },
     {
      "id": 20,
-     "name": "cc4Hocker",
+     "name": "n9Beobachterstuhl",
      "type": "moebel",
      "x": 128,
      "y": 112,
      "width": 16,
-     "height": 16,
+     "height": 32,
      "rotation": 0,
      "visible": true,
      "properties": [
       {
        "name": "tiefe",
        "type": "int",
-       "value": 120
+       "value": 136
       },
       {
        "name": "kollision",
@@ -993,29 +993,6 @@
     },
     {
      "id": 21,
-     "name": "cc4Globus",
-     "type": "moebel",
-     "x": 64,
-     "y": 115,
-     "width": 16,
-     "height": 32,
-     "rotation": 0,
-     "visible": true,
-     "properties": [
-      {
-       "name": "tiefe",
-       "type": "int",
-       "value": 153
-      },
-      {
-       "name": "kollision",
-       "type": "bool",
-       "value": false
-      }
-     ]
-    },
-    {
-     "id": 22,
      "name": "ds8Finkenzeichen",
      "type": "moebel",
      "x": 192,
@@ -1038,7 +1015,7 @@
      ]
     },
     {
-     "id": 23,
+     "id": 22,
      "name": "cc4Fenster",
      "type": "moebel",
      "x": 112,

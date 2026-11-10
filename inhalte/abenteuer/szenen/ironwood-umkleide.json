@@ -2,7 +2,7 @@
   "karte": "ironwood.umkleide",
   "datei": "karten/ironwood-umkleide.json",
   "art": "innen",
-  "beschreibung": "Die Umkleide des Werks (Runde 8), 16 × 12, graue Fliesen. An der Nordwand sechs gleiche Spinde in einer Reihe, gleich daneben der schwarze Doppelspind mit dem Schließfach, dann Wandspiegel über dem Handwaschbecken. In der Nordostecke die Duschen: zwei Kabinen mit Brause auf weißen Fliesen, jede Kabine mit Tür und Trennwand. In der Mitte zwei Umkleidebänke, eine dritte Bank vor der Trennwand, an der Westwand Haken mit Jacken, an der Tür ein Mülleimer, eine Pflanze in der Südostecke. Die Tür liegt in der Südwand.",
+  "beschreibung": "Die Umkleide des Werks (Runde 8), 16 × 12, graue Fliesen. An der Nordwand sechs gleiche Spinde in einer Reihe, gleich daneben der schwarze Doppelspind mit dem Schließfach, dann Wandspiegel über dem Handwaschbecken. In der Nordostecke die Duschen: zwei Kabinen mit Brause auf weißen Fliesen, jede Kabine mit Tür und Trennwand. In der Mitte zwei Umkleidebänke ohne Lehne, eine dritte Bank vor der Trennwand, an der Westwand Haken mit Jacke und Schutzhelm, an der Tür ein Mülleimer, eine Pflanze in der Südostecke. Die Tür liegt in der Südwand.",
   "wand": "hellgrau",
   "boden": "fliesenGrau",
   "boeden": {
@@ -85,15 +85,15 @@
       "bauteil_ok": true
     },
     {
-      "moebel": "cc4Bahnbank",
+      "moebel": "iw9UmkleidebankWaagrecht",
       "feld": [6, 6]
     },
     {
-      "moebel": "cc4Bahnbank",
+      "moebel": "iw9UmkleidebankWaagrecht",
       "feld": [6, 8]
     },
     {
-      "moebel": "iw8Garderobe",
+      "moebel": "iw9GarderobeHelm",
       "feld": [1, 7]
     },
     {
@@ -101,7 +101,7 @@
       "feld": [4, 7]
     },
     {
-      "moebel": "cc4Bahnbank",
+      "moebel": "iw9UmkleidebankWaagrecht",
       "feld": [11, 8]
     },
     {

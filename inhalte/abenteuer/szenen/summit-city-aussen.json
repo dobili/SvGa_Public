@@ -71,8 +71,8 @@
     "#.................................ppp...................ee.....................#",
     "#.................................ppp...................ee.....................#",
     "#.................................ppp...................ee...pp................#",
-    "#.kkkkkkkkkkkkkkkkkkkkkkkkkkkkkkkkpppkkkkkkkkkkkkkkkkkkkeekkkkkkkkkkkkkkkkkkkkk#",
-    "#.kkkkkkkkkkkkkkkkkkkkkkkkkkkkkkkkpppkkkkkkkkkkkkkkkkkkkeekkkkkkkkkkkkkkkkkkkkk#",
+    "#.................................ppp...................ee.....................#",
+    "#.................................ppp...................ee.....................#",
     "##################################ppp###################ee######################"
   ],
   "objekte": [
@@ -242,8 +242,8 @@
       "feld": [50, 7]
     },
     {
-      "moebel": "sc8Haus",
-      "feld": [62, 7]
+      "moebel": "sc8ChaletBlau",
+      "feld": [64, 7]
     },
     {
       "moebel": "sc8ChaletBraun",
@@ -266,20 +266,20 @@
       "feld": [58, 49]
     },
     {
-      "moebel": "cc4Wohnhaus",
-      "feld": [69, 47]
+      "moebel": "pd6HausRot",
+      "feld": [70, 52]
     },
     {
       "moebel": "sc8Hof",
       "feld": [38, 6]
     },
     {
-      "moebel": "sc8Stall",
-      "feld": [16, 31]
+      "moebel": "cr8Holzfaellerhuette",
+      "feld": [18, 33]
     },
     {
-      "moebel": "sc8HofBreit",
-      "feld": [44, 48]
+      "moebel": "pd6HausGruen",
+      "feld": [46, 52]
     },
     {
       "moebel": "sc8Stall",
@@ -288,21 +288,6 @@
     {
       "moebel": "sx7Rangerhaus",
       "feld": [71, 25]
-    },
-    {
-      "moebel": "sc7Seil",
-      "feld": [54, 0],
-      "vorn": true
-    },
-    {
-      "moebel": "sc7Seil",
-      "feld": [54, 1],
-      "vorn": true
-    },
-    {
-      "moebel": "sc7Seil",
-      "feld": [54, 2],
-      "vorn": true
     },
     {
       "moebel": "sc7Seil",
@@ -449,6 +434,22 @@
     {
       "moebel": "blumenbusch",
       "feld": [54, 41]
+    },
+    {
+      "moebel": "scFelsGross",
+      "feld": [3, 10]
+    },
+    {
+      "moebel": "scFelsMittel",
+      "feld": [12, 10]
+    },
+    {
+      "moebel": "scFelsKlein",
+      "feld": [20, 6]
+    },
+    {
+      "moebel": "scFelsGross",
+      "feld": [9, 6]
     }
   ],
   "ausloeser": [
@@ -725,5 +726,6 @@
     }
   ],
   "kante": "klippe",
-  "wandart": "gras"
+  "wandart": "gras",
+  "hochflaeche": "gras"
 }

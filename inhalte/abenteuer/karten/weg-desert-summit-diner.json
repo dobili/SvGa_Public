@@ -14633,12 +14633,12 @@
     },
     {
      "id": 52,
-     "name": "wds6Autowrack",
+     "name": "wr5Autowrack",
      "type": "moebel",
-     "x": 720,
-     "y": 176,
-     "width": 32,
-     "height": 32,
+     "x": 704,
+     "y": 144,
+     "width": 64,
+     "height": 64,
      "rotation": 0,
      "visible": true,
      "properties": [

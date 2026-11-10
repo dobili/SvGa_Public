@@ -137,7 +137,7 @@
       "stil": "modern"
     },
     "ds8Gemischtwaren": {
-      "quelle": "spiel/eigene/fassade_laden.png",
+      "quelle": "spiel/eigene/fassade_kramladen.png",
       "breite": 128,
       "hoehe": 144,
       "kollision": true,

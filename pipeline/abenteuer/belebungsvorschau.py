@@ -10,58 +10,39 @@ Das Standbild „von vorn“ ist bei LimeZu das vierte der oberen Reihe.
 Abhängigkeiten: Pillow (nur über kartenbild.py, lokal).
 """
 
+import json
 import zlib
 from pathlib import Path
 
 K = 16
 STATISTEN = 40
 VORN = 3  # Reihenfolge der Standbilder: rechts, oben, links, unten
-# Art → Rahmengröße (wie TIERBILDER in tiere.ts)
-TIERBILDER = {
-    "taube": (16, 16),
-    "huhn": (16, 16),
-    "ente": (32, 32),
-    "hase": (32, 32),
-    "schwein": (32, 32),
-    "ziege": (32, 48),
-    "schaf": (32, 32),
-    "kuh": (48, 48),
-    "esel": (48, 48),
-    "hund": (48, 32),
-    "katze": (32, 32),
-    "drohne": (16, 16),
-}
-# Wortstamm im Namen → Art (Auszug aus STAEMME in tiere.ts)
-STAEMME = {
-    "moewe": "taube",
-    "kraehe": "taube",
-    "rabe": "taube",
-    "geier": "taube",
-    "falke": "taube",
-    "adler": "taube",
-    "eule": "taube",
-    "specht": "taube",
-    "roadrunner": "huhn",
-    "huehner": "huhn",
-    "gans": "ente",
-    "gaense": "ente",
-    "reiher": "ente",
-    "pelikan": "ente",
-    "kaninchen": "hase",
-    "eichhoernchen": "hase",
-    "murmeltier": "hase",
-    "reh": "ziege",
-    "kueh": "kuh",
-    "rind": "kuh",
-    "bison": "kuh",
-    "pferd": "esel",
-    "kojote": "hund",
-    "fuchs": "hund",
-    **{art: art for art in TIERBILDER},
-}
+# Arten und Wortstämme wie in der App (app/src/abenteuer/oberwelt/tierarten.json, eine Quelle).
+_TIERARTEN = json.loads(
+    (Path(__file__).resolve().parents[2] / "app/src/abenteuer/oberwelt/tierarten.json").read_text(
+        encoding="utf-8"
+    )
+)
+TIERBILDER = {art: (a["breite"], a["hoehe"]) for art, a in _TIERARTEN["arten"].items()}
+STAEMME = _TIERARTEN["staemme"]
+# Tiere von der Seite (Standbild „rechts“): Von vorn wirken Hund und Fuchs, als stünden sie aufrecht
+# (Gutachter 10.11.2026); Statisten weiter von vorn.
+SEITE = 0
 # Schwimmer zeigen nur den Teil über der Wasserlinie (Regel 10.55), wie in der App.
 WASSERLINIE = 0.85
-SCHAR = ("tauben", "moewen", "kraehen", "enten", "gaense", "huehner", "ziegen", "schafe", "kuehe", "herde")
+SCHAR = (
+    "tauben",
+    "moewen",
+    "kraehen",
+    "enten",
+    "gaense",
+    "huehner",
+    "ziegen",
+    "schafe",
+    "kuehe",
+    "herde",
+    "spatzen",
+)
 
 
 def tierart(name: str) -> str | None:
@@ -104,7 +85,8 @@ def teile(szene: dict, privat: Path, oeffne) -> list[tuple[int, int, int, object
         sichtbar = hoehe
         if b.get("eigenschaften", {}).get("verhalten") == "schwimmen":
             sichtbar = round(hoehe * WASSERLINIE)
-        bild = oeffne(pfad).crop((VORN * breite, 0, (VORN + 1) * breite, sichtbar))
+        rahmen = VORN if b.get("typ") == "statist" else SEITE
+        bild = oeffne(pfad).crop((rahmen * breite, 0, (rahmen + 1) * breite, sichtbar))
         anzahl = 3 if any(w in b["name"].lower() for w in SCHAR) else 1
         for i in range(anzahl):
             dx, dy = i * (breite // 2 + 4), (i % 2) * 6

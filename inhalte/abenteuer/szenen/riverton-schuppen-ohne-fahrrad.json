@@ -1,0 +1,93 @@
+{
+  "karte": "riverton.schuppen",
+  "datei": "karten/riverton-schuppen-ohne-fahrrad.json",
+  "art": "innen",
+  "beschreibung": "Zustand: nach Szene 33 (fahrradErhalten): Der Held hat das grüne Fahrrad mitgenommen; wo es stand, liegt nur noch die zusammengefaltete Plane. Der Schuppen hinter der Werkstatt ist halb Holzlager. Holzwände, staubiger Betonboden. An der Nordwand ein Wandbord mit Haken für Werkzeug, darunter die orange Werkzeugkiste, daneben die Werkbank und ein Stapel aufrecht gestellter Bretter. Das grüne Fahrrad steht links unter einer Plane, nur das Hinterrad schaut hervor. Rechts zwei hohe Gestelle voller Brennholz und eine leere Farbdose, vorn an der Westwand ein alter Reifen.",
+  "wand": "holz",
+  "boden": "stein",
+  "raster": [
+    "##########",
+    "##########",
+    "##########",
+    "#........#",
+    "#........#",
+    "#........#",
+    "#........#",
+    "#####.####"
+  ],
+  "objekte": [
+    {
+      "moebel": "rv8Werkzeugbord",
+      "feld": [1, 1],
+      "an_wand": true,
+      "versatz": [0, 14],
+      "bauteil_ok": true
+    },
+    {
+      "moebel": "rv8Werkzeugkiste",
+      "feld": [1, 2]
+    },
+    {
+      "moebel": "rv5Werkbank",
+      "feld": [4, 1]
+    },
+    {
+      "moebel": "rv8Bretterstapel",
+      "feld": [7, 2]
+    },
+    {
+      "moebel": "rv8Farbdose",
+      "feld": [6, 4]
+    },
+    {
+      "moebel": "rv8Brennholz",
+      "feld": [7, 4]
+    },
+    {
+      "moebel": "rv8Brennholz",
+      "feld": [8, 4]
+    },
+    {
+      "moebel": "rv5ReifenLiegend",
+      "feld": [1, 6]
+    },
+    {
+      "moebel": "rv5TuerSuedHolz",
+      "feld": [5, 7],
+      "an_wand": true
+    },
+    {
+      "moebel": "rv8Plane",
+      "feld": [2, 5]
+    }
+  ],
+  "ausloeser": [
+    {
+      "name": "start",
+      "feld": [5, 6],
+      "eigenschaften": {
+        "richtung": "oben"
+      }
+    },
+    {
+      "name": "schuppenAusgang",
+      "feld": [5, 7]
+    }
+  ],
+  "figuren": [],
+  "belebung": [
+    {
+      "name": "maus",
+      "typ": "tier",
+      "feld": [2, 6],
+      "eigenschaften": {
+        "von": "2,6",
+        "bis": "4,6",
+        "verhalten": "ausweichen"
+      }
+    }
+  ],
+  "zustand": ["gebraucht", "alt"],
+  "stil": ["rustikal", "industrie"],
+  "zustand_der_karte": "fahrradErhalten"
+}

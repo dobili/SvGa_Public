@@ -636,11 +636,14 @@ Tür zum Serverraum in der Nordwand bei Spalte 12, Feld davor (12, 3). Eigene Bi
   Terrasse (die „Kante“ war das Glasgeländer); Infokiosk, Wohnhaus und Fahrradschuppen dazu (10.51).
   Bodenvariation (Punkt 31) kommt als Technik von mittel-2.
 - **Alter Hafen (`siliconBay.hafen`, Hauptfassung C):** Küstenfähre neu gezeichnet, schräg von oben
-  und 14 × 5 Kacheln groß (Bildwunsch `hafen_faehre.py`); Fährhäuschen als Häuschen mit Dach statt
-  flacher Front; der Kran ist weg; Ladebetrieb am Kutter mit Kisten und Fässern in Reihen und drei
+  und 18 × 6 Kacheln groß (Bildwunsch `hafen_faehre.py`, KARTENREGELN 10.64: Personenfähre 16–20 × 6; der Kai ist
+  länger als die Fähre); Fährhäuschen als Häuschen mit Dach statt
+  flacher Front; der Kran ist weg; Ladebetrieb am kleinen Fischerboot mit Kisten und Fässern in Reihen und drei
   Arbeitern; ein Gemüsekarren mit Händlerin statt zwei leerer; keine Kisten mehr auf der Straße;
   Laternen am Straßenrand alle zehn Felder; die „H“-Taschen (Fischkisten) und der Fischeimer sind
-  weg; um den Leuchtturm genug Land für den Weg zur Tür.
+  weg; um den Leuchtturm genug Land für den Weg zur Tür. Das Fischerboot des Pakets (6 × 3 Kacheln mit
+  Angel) ist ein kleines Holzboot, kein Kutter; es bleibt so und heißt Fischerboot (10.64: zwischen Ruderboot
+  und Motorboot). Ein Verlängern ergäbe nur ein langes Ruderboot.
 
 ### 4.6 Serverraum (`siliconBay.serverraum`)
 

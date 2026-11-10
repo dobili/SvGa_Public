@@ -9,8 +9,11 @@ pytest.importorskip("PIL.Image")
 
 from PIL import Image  # noqa: E402
 
-from pipeline.abenteuer.kartenbild import winterbefunde  # noqa: E402
-from pipeline.abenteuer.winter import winterfarbe, winterlich  # noqa: E402
+from pipeline.abenteuer.winter import (  # noqa: E402
+    winterbefunde,  # noqa: E402
+    winterfarbe,
+    winterlich,
+)
 
 
 def test_farben():

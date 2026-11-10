@@ -14,6 +14,7 @@ Beispiel: Gras (106, 170, 72) → Schnee (222, 221, 219); Erde (150, 110, 70) �
 
 import colorsys
 import math
+import re
 
 from PIL import Image
 
@@ -62,3 +63,20 @@ def winterlich(bild: Image.Image, wasser: bool = True) -> Image.Image:
     neu = Image.new("RGBA", rgba.size)
     neu.putdata([farbe(px) for px in rgba.getdata()])
     return neu
+
+
+def ist_winter(szene: dict) -> bool:
+    """Szene im Winterzustand (``"jahreszeit": "winter"``, Entscheidung 10.11.2026)."""
+    return szene.get("jahreszeit") == "winter"
+
+
+# Blumen und Pilze bleiben beim Umfärben bunt; in Winterszenen kommen sie weg (Entscheidung Winter).
+BLUEHT = re.compile(r"blume|pilz(?!kiosk)", re.I)
+
+
+def winterbefunde(szene: dict) -> list[str]:
+    """Blumen und Pilze in einer Winterszene (sie gehören weg); sonst nichts."""
+    if not ist_winter(szene):
+        return []
+    namen = sorted({o["moebel"] for o in szene.get("objekte", []) if BLUEHT.search(o.get("moebel", ""))})
+    return [f"{n}: Blumen und Pilze gehören nicht in eine Winterszene" for n in namen]

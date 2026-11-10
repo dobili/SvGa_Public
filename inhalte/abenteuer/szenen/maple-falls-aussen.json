@@ -626,10 +626,6 @@
       "feld": [33, 7]
     },
     {
-      "moebel": "mf8KulisseStadthaus",
-      "feld": [57, 30]
-    },
-    {
       "moebel": "mf7HeckeSaeule",
       "feld": [1, 24]
     },
@@ -794,7 +790,7 @@
       "feld": [54, 32]
     },
     {
-      "moebel": "mf7Gartenhaus",
+      "moebel": "wc5GartenhausB",
       "feld": [14, 30]
     },
     {
@@ -908,6 +904,18 @@
     {
       "moebel": "mf4BaumGruen",
       "feld": [12, 35]
+    },
+    {
+      "moebel": "sc7Ferienhuette",
+      "feld": [58, 33]
+    },
+    {
+      "moebel": "mf4BaumGruen",
+      "feld": [58, 38]
+    },
+    {
+      "moebel": "mf10SchildSackgasse",
+      "feld": [2, 29]
     }
   ],
   "ausloeser": [
@@ -1128,5 +1136,6 @@
     }
   ],
   "zustand": ["neu", "gebraucht"],
-  "stil": ["klassisch", "modern", "natur"]
+  "stil": ["klassisch", "modern", "natur", "landhaus", "rustikal"],
+  "markierung": ["s"]
 }

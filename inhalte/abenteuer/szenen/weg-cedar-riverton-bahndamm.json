@@ -27,8 +27,8 @@
     "######################################################################################################################################################",
     "#....................................................................................................................................................#",
     "#....................................................................................................................................................#",
-    "#................................................................................................kkkkkkkkkkkkkkkkkkk.................................#",
-    "#................................................................................................kkkkkkkkkkkkkkkkkkk.................................#",
+    "#....................................................................................................................................................#",
+    "#....................................................................................................................................................#",
     "#....................................................................................................................................................#",
     "#kkkkkkkkkkkkkkkkkkkkkkkkkkkkkkkkkkkkkkkkkkkkkkkkkkkkkkkkkkkkkkkkkkkkkkkkkkkkkkkkkkkkkkkkkkkkkkkkkkkkkkkkkkkkkkkkkkkkkkkkkkkkkkkkkkkkkkkkkkkkkkkkkkkk#",
     "#kkkkkkkkkkkkkkkkkkkkkkkkkkkkkkkkkkkkkkkkkkkkkkkkkkkkkkkkkkkkkkkkkkkkkkkkkkkkkkkkkkkkkkkkkkkkkkkkkkkkkkkkkkkkkkkkkkkkkkkkkkkkkkkkkkkkkkkkkkkkkkkkkkkk#",
@@ -2869,6 +2869,106 @@
     {
       "moebel": "scBankSeitlich",
       "feld": [57, 9]
+    },
+    {
+      "moebel": "wc5ZaunML",
+      "feld": [57, 2],
+      "bauteil_ok": true
+    },
+    {
+      "moebel": "wc5ZaunML",
+      "feld": [57, 3],
+      "bauteil_ok": true
+    },
+    {
+      "moebel": "wc5ZaunMR",
+      "feld": [72, 2],
+      "bauteil_ok": true
+    },
+    {
+      "moebel": "wc5ZaunMR",
+      "feld": [72, 3],
+      "bauteil_ok": true
+    },
+    {
+      "moebel": "n1ZaunEndeRechts",
+      "feld": [57, 4],
+      "bauteil_ok": true
+    },
+    {
+      "moebel": "n1ZaunM",
+      "feld": [58, 4],
+      "bauteil_ok": true
+    },
+    {
+      "moebel": "n1ZaunM",
+      "feld": [59, 4],
+      "bauteil_ok": true
+    },
+    {
+      "moebel": "n1ZaunM",
+      "feld": [60, 4],
+      "bauteil_ok": true
+    },
+    {
+      "moebel": "n1ZaunM",
+      "feld": [61, 4],
+      "bauteil_ok": true
+    },
+    {
+      "moebel": "n1ZaunM",
+      "feld": [62, 4],
+      "bauteil_ok": true
+    },
+    {
+      "moebel": "n1ZaunEndeLinks",
+      "feld": [63, 4],
+      "bauteil_ok": true
+    },
+    {
+      "moebel": "wc5Tor1",
+      "feld": [64, 4],
+      "bauteil_ok": true
+    },
+    {
+      "moebel": "wc5Tor2",
+      "feld": [65, 4],
+      "bauteil_ok": true
+    },
+    {
+      "moebel": "n1ZaunEndeRechts",
+      "feld": [66, 4],
+      "bauteil_ok": true
+    },
+    {
+      "moebel": "n1ZaunM",
+      "feld": [67, 4],
+      "bauteil_ok": true
+    },
+    {
+      "moebel": "n1ZaunM",
+      "feld": [68, 4],
+      "bauteil_ok": true
+    },
+    {
+      "moebel": "n1ZaunM",
+      "feld": [69, 4],
+      "bauteil_ok": true
+    },
+    {
+      "moebel": "n1ZaunM",
+      "feld": [70, 4],
+      "bauteil_ok": true
+    },
+    {
+      "moebel": "n1ZaunM",
+      "feld": [71, 4],
+      "bauteil_ok": true
+    },
+    {
+      "moebel": "n1ZaunEndeLinks",
+      "feld": [72, 4],
+      "bauteil_ok": true
     }
   ],
   "ausloeser": [

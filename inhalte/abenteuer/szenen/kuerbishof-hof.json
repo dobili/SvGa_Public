@@ -57,6 +57,38 @@
   ],
   "objekte": [
     {
+      "moebel": "lm8Acker10x5",
+      "feld": [1, 1]
+    },
+    {
+      "moebel": "lm8Acker10x5",
+      "feld": [1, 6]
+    },
+    {
+      "moebel": "lm8Acker10x5",
+      "feld": [1, 11]
+    },
+    {
+      "moebel": "lm8Acker5x5",
+      "feld": [9, 1]
+    },
+    {
+      "moebel": "lm8Acker5x5",
+      "feld": [9, 6]
+    },
+    {
+      "moebel": "lm8Acker5x5",
+      "feld": [9, 11]
+    },
+    {
+      "moebel": "lm8Acker10x5",
+      "feld": [1, 14]
+    },
+    {
+      "moebel": "lm8Acker5x5",
+      "feld": [9, 14]
+    },
+    {
       "moebel": "n9MaisWand",
       "feld": [1, 1]
     },
@@ -979,7 +1011,7 @@
     },
     {
       "moebel": "n1Traktor",
-      "feld": [30, 20],
+      "feld": [30, 25],
       "bauteil_ok": true
     },
     {
@@ -995,7 +1027,7 @@
       "feld": [14, 23]
     },
     {
-      "moebel": "n1Traenke",
+      "moebel": "n10Traenke",
       "feld": [37, 22]
     },
     {
@@ -1464,6 +1496,14 @@
       "moebel": "n1ZaunEndeLinks",
       "feld": [12, 32],
       "bauteil_ok": true
+    },
+    {
+      "moebel": "n1Heu",
+      "feld": [7, 20]
+    },
+    {
+      "moebel": "n1Heu",
+      "feld": [13, 20]
     }
   ],
   "ausloeser": [
@@ -1565,11 +1605,11 @@
     {
       "name": "traktorfahrer",
       "typ": "statist",
-      "feld": [30, 26],
+      "feld": [36, 26],
       "eigenschaften": {
-        "von": "30,26",
-        "bis": "36,26",
-        "tun": "fährt Heu mit dem Traktor",
+        "von": "36,26",
+        "bis": "40,26",
+        "tun": "lädt Heu vom Traktor",
         "wann": "tag",
         "sagt": "statist.kuerbishof.hof.traktorfahrer"
       }

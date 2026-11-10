@@ -91,6 +91,10 @@ Szene heißt die Datei in `inhalte/abenteuer/szenen/` ohne `.json`.
 - [ ] riverton-aussen mit Zuständen, riverton-bahnhofshalle, riverton-pavillon, riverton-wohnwagen (vierte Prüfung, mittel-3; Markierung, Straße zur Brücke, Bogenfenster, große Figuren; `riverton-aussen-4.md`, `riverton-innen-4.md`)
 - [ ] crossroads-aussen, crossroads-raststaette, jahrmarkt-festplatz, pelikaninsel-dorf, Weg 8 und Weg 9 (zweite Prüfung, mittel-3; Dateien `…-2.md`)
 
+- [ ] ghost-town-aussen, ghost-town-saloon, goldmine-stollen, erinnerung-london-kaffeehaus, erinnerung-london-strand, kuerbishof-hof (zweite Prüfung, niedrig-1; Antworten in ghost-town.md, erinnerung-london.md, kuerbishof.md, Abschnitt „Gutachten Runde 9: Antworten“; Bilder aus `niedrig1_runde9_karten.py` erst rendern)
+
+- [ ] lockport-aussen, lockport-gasthaus, weg-cedar-riverton-bahndamm, maple-falls-aussen, maple-falls-park, cedar-creek-aussen, weg-maple-cedar-flussweg, -landstrasse, -zedernpfad (vierte Prüfung, nur die Restpunkte, niedrig-1; Antworten in cedar-creek.md „Drittes Gutachten Runde 8“; Bilder tafel_kegelkoenig, schild_sackgasse aus `niedrig1_runde9_karten.py`)
+
 ## Erledigt
 
 - [x] ironwood-kantine (Test, Haupt-Chat)

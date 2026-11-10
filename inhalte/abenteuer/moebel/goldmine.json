@@ -44,6 +44,24 @@
       "art": "gleis",
       "zustand": "gebraucht",
       "stil": "industrie"
+    },
+    "n10PrellbockHolz": {
+      "quelle": "spiel/eigene/prellbock_holz.png",
+      "breite": 32,
+      "hoehe": 16,
+      "kollision": true,
+      "art": "deko",
+      "zustand": "alt",
+      "stil": "rustikal"
+    },
+    "n10LoreVorn": {
+      "quelle": "spiel/eigene/lore_vorn.png",
+      "breite": 32,
+      "hoehe": 32,
+      "kollision": true,
+      "art": "fahrzeug",
+      "zustand": "alt",
+      "stil": "rustikal"
     }
   }
 }

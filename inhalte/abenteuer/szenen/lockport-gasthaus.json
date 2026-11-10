@@ -25,7 +25,7 @@
   ],
   "objekte": [
     {
-      "moebel": "mf2Tafel",
+      "moebel": "ld10TafelKegelkoenig",
       "feld": [2, 1],
       "an_wand": true
     },
@@ -77,7 +77,7 @@
     },
     {
       "moebel": "ld8Kugelregal",
-      "feld": [1, 5]
+      "feld": [2, 6]
     },
     {
       "moebel": "ld8Kegelbande",
@@ -316,6 +316,23 @@
       "moebel": "ld5Glaeser",
       "feld": [0, 0],
       "auf": "t6",
+      "versatz": [0, -4]
+    },
+    {
+      "moebel": "mf4Fussmatte",
+      "feld": [21, 12],
+      "versatz": [0, 12]
+    },
+    {
+      "moebel": "ld5Glaeser",
+      "feld": [0, 0],
+      "auf": "t2",
+      "versatz": [0, -4]
+    },
+    {
+      "moebel": "ld5Glaeser",
+      "feld": [0, 0],
+      "auf": "t4",
       "versatz": [0, -4]
     }
   ],

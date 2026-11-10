@@ -334,10 +334,6 @@
       "feld": [95, 15]
     },
     {
-      "moebel": "wg4Zeder",
-      "feld": [51, 2]
-    },
-    {
       "moebel": "wg4Farn",
       "feld": [55, 15]
     },
@@ -714,34 +710,6 @@
       "feld": [4, 20]
     },
     {
-      "moebel": "wg4Baumstammbank",
-      "feld": [56, 4]
-    },
-    {
-      "moebel": "wg4Stein",
-      "feld": [61, 5]
-    },
-    {
-      "moebel": "wg4SteinB",
-      "feld": [53, 5]
-    },
-    {
-      "moebel": "wg4Stein",
-      "feld": [54, 3]
-    },
-    {
-      "moebel": "wg4SteinB",
-      "feld": [56, 3]
-    },
-    {
-      "moebel": "wg4Stein",
-      "feld": [58, 3]
-    },
-    {
-      "moebel": "wg4SteinB",
-      "feld": [60, 3]
-    },
-    {
       "moebel": "wg9SturmholzFlach",
       "feld": [37, 12]
     },
@@ -991,19 +959,7 @@
     },
     {
       "moebel": "wg4Farn",
-      "feld": [52, 1]
-    },
-    {
-      "moebel": "wg4Farn",
-      "feld": [61, 1]
-    },
-    {
-      "moebel": "wg4Farn",
       "feld": [94, 1]
-    },
-    {
-      "moebel": "wg4Farn",
-      "feld": [55, 3]
     },
     {
       "moebel": "wg4Farn",
@@ -1092,6 +1048,58 @@
     {
       "moebel": "wg4Farn",
       "feld": [34, 21]
+    },
+    {
+      "moebel": "wg4Baumstammbank",
+      "feld": [56, 3]
+    },
+    {
+      "moebel": "wg4Stein",
+      "feld": [62, 3]
+    },
+    {
+      "moebel": "wg4SteinB",
+      "feld": [61, 4]
+    },
+    {
+      "moebel": "wg4Stein",
+      "feld": [60, 5]
+    },
+    {
+      "moebel": "wg4SteinB",
+      "feld": [57, 5]
+    },
+    {
+      "moebel": "wg4Stein",
+      "feld": [54, 5]
+    },
+    {
+      "moebel": "wg4SteinB",
+      "feld": [53, 4]
+    },
+    {
+      "moebel": "wg4Stein",
+      "feld": [52, 3]
+    },
+    {
+      "moebel": "wg4SteinB",
+      "feld": [53, 2]
+    },
+    {
+      "moebel": "wg4Stein",
+      "feld": [54, 1]
+    },
+    {
+      "moebel": "wg4SteinB",
+      "feld": [57, 1]
+    },
+    {
+      "moebel": "wg4Stein",
+      "feld": [60, 1]
+    },
+    {
+      "moebel": "wg4SteinB",
+      "feld": [61, 2]
     }
   ],
   "ausloeser": [

@@ -11,7 +11,7 @@
  "tilewidth": 16,
  "tileheight": 16,
  "nextlayerid": 5,
- "nextobjectid": 37,
+ "nextobjectid": 38,
  "layers": [
   {
    "id": 1,
@@ -947,7 +947,7 @@
      "name": "abzeichen",
      "type": "ausloeser",
      "x": 288,
-     "y": 64,
+     "y": 96,
      "width": 16,
      "height": 16,
      "rotation": 0,
@@ -1030,8 +1030,8 @@
      "id": 9,
      "name": "touristinMitHut",
      "type": "statist",
-     "x": 208,
-     "y": 128,
+     "x": 192,
+     "y": 96,
      "width": 16,
      "height": 16,
      "rotation": 0,
@@ -1040,7 +1040,7 @@
       {
        "name": "tun",
        "type": "string",
-       "value": "probiert einen Cowboyhut an"
+       "value": "sitzt am Tisch und probiert einen Cowboyhut an"
       },
       {
        "name": "wann",
@@ -1051,6 +1051,11 @@
        "name": "sagt",
        "type": "string",
        "value": "statist.ghostTown.saloon.touristinMitHut"
+      },
+      {
+       "name": "verhalten",
+       "type": "string",
+       "value": "sitzen"
       }
      ]
     },
@@ -1151,7 +1156,7 @@
      "name": "gt7Treppe",
      "type": "moebel",
      "x": 256,
-     "y": 0,
+     "y": 32,
      "width": 48,
      "height": 64,
      "rotation": 0,
@@ -1171,7 +1176,7 @@
     },
     {
      "id": 15,
-     "name": "gt7TischDunkel",
+     "name": "gt10TischDunkel",
      "type": "moebel",
      "x": 128,
      "y": 112,
@@ -1516,7 +1521,7 @@
     },
     {
      "id": 30,
-     "name": "gt7TuerHolz",
+     "name": "gt10Schwingtuer",
      "type": "moebel",
      "x": 160,
      "y": 208,
@@ -1672,6 +1677,29 @@
        "name": "kollision",
        "type": "bool",
        "value": true
+      }
+     ]
+    },
+    {
+     "id": 37,
+     "name": "gt10Abzeichen",
+     "type": "moebel",
+     "x": 288,
+     "y": 96,
+     "width": 16,
+     "height": 16,
+     "rotation": 0,
+     "visible": true,
+     "properties": [
+      {
+       "name": "tiefe",
+       "type": "int",
+       "value": 1
+      },
+      {
+       "name": "kollision",
+       "type": "bool",
+       "value": false
       }
      ]
     }

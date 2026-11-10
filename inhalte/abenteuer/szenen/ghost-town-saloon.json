@@ -42,10 +42,10 @@
     },
     {
       "moebel": "gt7Treppe",
-      "feld": [16, 0]
+      "feld": [16, 2]
     },
     {
-      "moebel": "gt7TischDunkel",
+      "moebel": "gt10TischDunkel",
       "feld": [8, 7],
       "id": "spiel"
     },
@@ -112,7 +112,7 @@
       "versatz": [0, 8]
     },
     {
-      "moebel": "gt7TuerHolz",
+      "moebel": "gt10Schwingtuer",
       "feld": [10, 13]
     },
     {
@@ -142,6 +142,10 @@
     {
       "moebel": "gt7FassKlein",
       "feld": [9, 5]
+    },
+    {
+      "moebel": "gt10Abzeichen",
+      "feld": [18, 6]
     }
   ],
   "ausloeser": [
@@ -163,7 +167,7 @@
     },
     {
       "name": "abzeichen",
-      "feld": [18, 4]
+      "feld": [18, 6]
     },
     {
       "name": "klavier",
@@ -199,11 +203,12 @@
     {
       "name": "touristinMitHut",
       "typ": "statist",
-      "feld": [13, 8],
+      "feld": [12, 6],
       "eigenschaften": {
-        "tun": "probiert einen Cowboyhut an",
+        "tun": "sitzt am Tisch und probiert einen Cowboyhut an",
         "wann": "tag",
-        "sagt": "statist.ghostTown.saloon.touristinMitHut"
+        "sagt": "statist.ghostTown.saloon.touristinMitHut",
+        "verhalten": "sitzen"
       }
     }
   ]

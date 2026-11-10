@@ -120,3 +120,10 @@ Beide Karten haben jetzt `"toenung": "sepia"` wie die Siedlungshütte.
      Händlerkarren und Fässer.
 
 Zustände: keine (eine Erinnerung).
+
+## Gutachten Runde 9: Antworten (niedrig-1, 10.11.2026)
+
+- **Kaffeehaus:** Das zweite Bild ist ein anderes. Die Zuschauer stehen neben den Stühlen, nicht
+  darin; die Spieler sitzen.
+- **Strand:** Die fünfte Front ist ein Hutmacher („HUETE“) statt eines zweiten Tabakladens
+  (Bildwunsch `fassade_london_d_tief.png`). Ein Kutscher wartet neben der Droschke.

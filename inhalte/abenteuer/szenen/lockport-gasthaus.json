@@ -1,7 +1,7 @@
 {
   "karte": "lockport.gasthaus",
   "art": "innen",
-  "beschreibung": "Hauptfassung (früher Variante C), nach 10.56 auf 30 × 14 verbreitert: grüne Wände, Dielen. Links an der Nordwand die Kegelbahn (Spalten 1–15) mit Kegeln am Ende, einer hölzernen Bande davor und dem Kugelregal am Abwurf, darüber die Kreidetafel „Kegelkönig“ und zwei Fenster. Rechts, getrennt von der Bahn, Kaminofen, das Foto der Schleuse im Hochwasser und hinter der Theke das Flaschenregal; Wirt Henrik hinter dem Tresen, vier Hocker direkt davor. Fünf runde Tische mit dunklen Stühlen im Gastraum, Fässer und Pflanzen, die Tür in der Südwand bei Spalte 21.",
+  "beschreibung": "Hauptfassung, nach 10.56 30 × 14: petrolgrüne Wände, Dielen. Links an der Nordwand die Kegelbahn (Spalten 1–15) mit einem Kegelsatz am Ende, Prallbrettern als Kugelfang dahinter, einer Holzbande direkt an der Bahn und dem Kugelregal am Abwurf; darüber die Kreidetafel „Kegelkönig“ und zwei Fenster. Hinter dem Kugelfang Garderobe und Kaminofen, daneben das Foto der Schleuse im Hochwasser, dann hinter der Theke das Flaschenregal und die Tür zur Küche. Wirt Henrik hinter dem Tresen, vier Hocker direkt davor, Fässer in der Ecke. Fünf runde Tische mit dunklen Stühlen, drei mit Gläsern; Pflanzen in den Ecken; die Tür in der Südwand bei Spalte 21.",
   "wand": "gruen",
   "boden": "dielen",
   "boeden": {
@@ -27,8 +27,7 @@
     {
       "moebel": "mf2Tafel",
       "feld": [2, 1],
-      "an_wand": true,
-      "versatz": [0, 5]
+      "an_wand": true
     },
     {
       "moebel": "wzFenster",
@@ -41,12 +40,17 @@
       "an_wand": true
     },
     {
+      "moebel": "ld8Garderobe",
+      "feld": [17, 1],
+      "an_wand": true
+    },
+    {
       "moebel": "ld5Ofen",
-      "feld": [17, 1]
+      "feld": [19, 1]
     },
     {
       "moebel": "wzBild",
-      "feld": [20, 1],
+      "feld": [21, 1],
       "an_wand": true,
       "versatz": [0, 6]
     },
@@ -55,22 +59,22 @@
       "feld": [23, 1]
     },
     {
-      "moebel": "mf8BildPflanze",
-      "feld": [27, 1],
-      "an_wand": true,
-      "versatz": [0, 6]
+      "moebel": "mf2Haustuer",
+      "feld": [26, 1],
+      "an_wand": true
     },
     {
       "moebel": "ld5Kegel",
-      "feld": [15, 3]
+      "feld": [15, 3],
+      "versatz": [0, 8]
     },
     {
-      "moebel": "ld5Kegel",
-      "feld": [15, 4]
+      "moebel": "cc7Bretterstapel",
+      "feld": [16, 3]
     },
     {
       "moebel": "ld5Kegelkugel",
-      "feld": [2, 3]
+      "feld": [2, 4]
     },
     {
       "moebel": "ld8Kugelregal",
@@ -176,121 +180,125 @@
       "versatz": [0, -13]
     },
     {
-      "moebel": "mf9Rundtisch",
-      "feld": [3, 8],
-      "id": "t1"
-    },
-    {
-      "moebel": "ld5StuhlDunkelR",
-      "feld": [2, 8],
-      "zu": "t1"
-    },
-    {
-      "moebel": "ld5StuhlDunkelL",
-      "feld": [5, 8],
-      "zu": "t1"
-    },
-    {
-      "moebel": "mf9Rundtisch",
-      "feld": [9, 8],
-      "id": "t2"
-    },
-    {
-      "moebel": "ld5StuhlDunkelR",
-      "feld": [8, 8],
-      "zu": "t2"
-    },
-    {
-      "moebel": "ld5StuhlDunkelL",
-      "feld": [11, 8],
-      "zu": "t2"
-    },
-    {
-      "moebel": "mf9Rundtisch",
-      "feld": [3, 11],
-      "id": "t3"
-    },
-    {
-      "moebel": "ld5StuhlDunkelR",
-      "feld": [2, 11],
-      "zu": "t3"
-    },
-    {
-      "moebel": "ld5StuhlDunkelL",
-      "feld": [5, 11],
-      "zu": "t3"
-    },
-    {
-      "moebel": "mf9Rundtisch",
-      "feld": [9, 11],
-      "id": "t4"
-    },
-    {
-      "moebel": "ld5StuhlDunkelR",
-      "feld": [8, 11],
-      "zu": "t4"
-    },
-    {
-      "moebel": "ld5StuhlDunkelL",
-      "feld": [11, 11],
-      "zu": "t4"
-    },
-    {
-      "moebel": "mf9Rundtisch",
-      "feld": [15, 8],
-      "id": "t5"
-    },
-    {
-      "moebel": "ld5StuhlDunkelR",
-      "feld": [14, 8],
-      "zu": "t5"
-    },
-    {
-      "moebel": "ld5StuhlDunkelL",
-      "feld": [17, 8],
-      "zu": "t5"
-    },
-    {
-      "moebel": "mf9Rundtisch",
-      "feld": [15, 11],
-      "id": "t6"
-    },
-    {
-      "moebel": "ld5StuhlDunkelR",
-      "feld": [14, 11],
-      "zu": "t6"
-    },
-    {
-      "moebel": "ld5StuhlDunkelL",
-      "feld": [17, 11],
-      "zu": "t6"
-    },
-    {
-      "moebel": "mf9Rundtisch",
-      "feld": [26, 9],
-      "id": "stamm"
-    },
-    {
-      "moebel": "ld5StuhlDunkelR",
-      "feld": [25, 9],
-      "zu": "stamm"
-    },
-    {
-      "moebel": "ld5StuhlDunkelL",
-      "feld": [28, 9],
-      "zu": "stamm"
-    },
-    {
       "moebel": "wg6Faesser",
       "feld": [27, 3]
     },
     {
+      "moebel": "mf9Rundtisch",
+      "feld": [4, 7],
+      "id": "t1"
+    },
+    {
+      "moebel": "ld5StuhlDunkelR",
+      "feld": [3, 7],
+      "zu": "t1"
+    },
+    {
+      "moebel": "ld5StuhlDunkelL",
+      "feld": [6, 7],
+      "zu": "t1"
+    },
+    {
+      "moebel": "ld5Glaeser",
+      "feld": [0, 0],
+      "auf": "t1",
+      "versatz": [0, -4]
+    },
+    {
+      "moebel": "mf9Rundtisch",
+      "feld": [10, 7],
+      "id": "t2"
+    },
+    {
+      "moebel": "ld5StuhlDunkelR",
+      "feld": [9, 7],
+      "zu": "t2"
+    },
+    {
+      "moebel": "ld5StuhlDunkelL",
+      "feld": [12, 7],
+      "zu": "t2"
+    },
+    {
+      "moebel": "mf9Rundtisch",
+      "feld": [4, 10],
+      "id": "t3"
+    },
+    {
+      "moebel": "ld5StuhlDunkelR",
+      "feld": [3, 10],
+      "zu": "t3"
+    },
+    {
+      "moebel": "ld5StuhlDunkelL",
+      "feld": [6, 10],
+      "zu": "t3"
+    },
+    {
+      "moebel": "ld5Glaeser",
+      "feld": [0, 0],
+      "auf": "t3",
+      "versatz": [0, -4]
+    },
+    {
+      "moebel": "mf9Rundtisch",
+      "feld": [10, 10],
+      "id": "t4"
+    },
+    {
+      "moebel": "ld5StuhlDunkelR",
+      "feld": [9, 10],
+      "zu": "t4"
+    },
+    {
+      "moebel": "ld5StuhlDunkelL",
+      "feld": [12, 10],
+      "zu": "t4"
+    },
+    {
+      "moebel": "mf9Rundtisch",
+      "feld": [16, 8],
+      "id": "t5"
+    },
+    {
+      "moebel": "ld5StuhlDunkelR",
+      "feld": [15, 8],
+      "zu": "t5"
+    },
+    {
+      "moebel": "ld5StuhlDunkelL",
+      "feld": [18, 8],
+      "zu": "t5"
+    },
+    {
+      "moebel": "ld5Glaeser",
+      "feld": [0, 0],
+      "auf": "t5",
+      "versatz": [0, -4]
+    },
+    {
       "moebel": "wzPflanze",
-      "feld": [18, 11]
+      "feld": [1, 11]
     },
     {
       "moebel": "wzPflanze",
       "feld": [28, 11]
+    },
+    {
+      "moebel": "wzPflanze",
+      "feld": [19, 11]
+    },
+    {
+      "moebel": "wg6Faesser",
+      "feld": [13, 11]
+    },
+    {
+      "moebel": "wg6Faesser",
+      "feld": [25, 10]
+    },
+    {
+      "moebel": "ldFass",
+      "feld": [1, 8]
     },
     {
       "moebel": "mf4Fussmatte",
@@ -321,7 +329,7 @@
     },
     {
       "name": "fundKegel",
-      "feld": [16, 4]
+      "feld": [14, 4]
     },
     {
       "name": "kegelbahn",
@@ -329,11 +337,11 @@
     },
     {
       "name": "fotoHochwasser",
-      "feld": [20, 3]
+      "feld": [21, 3]
     },
     {
       "name": "kegelkoenig",
-      "feld": [2, 4]
+      "feld": [2, 3]
     }
   ],
   "figuren": [],
@@ -341,7 +349,7 @@
     {
       "name": "kegler",
       "typ": "statist",
-      "feld": [3, 4],
+      "feld": [3, 3],
       "eigenschaften": {
         "tun": "schiebt eine Kugel auf der Kegelbahn",
         "wann": "tag",
@@ -351,7 +359,7 @@
     {
       "name": "fischerAmTresen",
       "typ": "statist",
-      "feld": [23, 7],
+      "feld": [22, 7],
       "eigenschaften": {
         "tun": "trinkt ein Bier am Tresen",
         "wann": "tag",
@@ -361,7 +369,7 @@
     {
       "name": "wanderinBeimEssen",
       "typ": "statist",
-      "feld": [8, 9],
+      "feld": [6, 9],
       "eigenschaften": {
         "tun": "isst eine Suppe",
         "wann": "tag",

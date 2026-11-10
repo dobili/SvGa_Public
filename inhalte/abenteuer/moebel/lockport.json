@@ -400,6 +400,15 @@
       "art": "bruecke",
       "zustand": "gebraucht",
       "stil": "rustikal"
+    },
+    "ld8Garderobe": {
+      "quelle": "spiel/eigene/garderobe_jacken.png",
+      "breite": 32,
+      "hoehe": 32,
+      "kollision": false,
+      "art": "wandschmuck",
+      "zustand": "gebraucht",
+      "stil": "rustikal"
     }
   }
 }

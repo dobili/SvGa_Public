@@ -2707,7 +2707,10 @@
           "kennung": "portDelacroix.aussen",
           "datei": "karten/port-delacroix-aussen.json",
           "name": "ort.portDelacroix.aussen",
-          "innen": false
+          "innen": false,
+          "zustaende": {
+            "musikhausOffen": "karten/port-delacroix-aussen-musikhaus-neu.json"
+          }
         },
         {
           "kennung": "portDelacroix.turnhalle",
@@ -3117,6 +3120,9 @@
         {
           "kennung": "desertSprings.aussen",
           "datei": "karten/desert-springs-aussen.json",
+          "zustaende": {
+            "endeAkt3Gesehen": "karten/desert-springs-aussen-meisterschaft.json"
+          },
           "name": "ort.desertSprings.aussen",
           "innen": false
         },
@@ -3129,6 +3135,9 @@
         {
           "kennung": "desertSprings.antiquariat",
           "datei": "karten/desert-springs-antiquariat.json",
+          "zustaende": {
+            "abschiedGesehen und briefGelesen": "karten/desert-springs-antiquariat-leihgabe.json"
+          },
           "name": "ort.desertSprings.antiquariat",
           "innen": true
         }
@@ -3477,7 +3486,10 @@
           "kennung": "hochebene.schule",
           "datei": "karten/hochebene-schule.json",
           "name": "ort.hochebene.schule",
-          "innen": false
+          "innen": false,
+          "zustaende": {
+            "nicht annekSchachGelernt": "karten/hochebene-schule-vor-diplom.json"
+          }
         }
       ],
       "figuren": [

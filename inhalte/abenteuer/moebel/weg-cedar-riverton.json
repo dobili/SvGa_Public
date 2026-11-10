@@ -688,6 +688,15 @@
       "art": "stein",
       "zustand": "neu",
       "stil": "einfach"
+    },
+    "wc9BoeschungNord": {
+      "quelle": "spiel/eigene/boeschung_nord.png",
+      "breite": 16,
+      "hoehe": 16,
+      "kollision": false,
+      "art": "boden",
+      "zustand": "gebraucht",
+      "stil": "laendlich"
     }
   }
 }

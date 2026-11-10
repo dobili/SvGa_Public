@@ -36,7 +36,7 @@
     "ssssssssssssssssssssssssssssssssssssssssssssssspee.~~~~~...#",
     "ssssssssssssssssssssssssssssssssssssssssssssssspee.~~~~~...#",
     "ssssssssssssssssssssssssssssssssssssssssssssssspee..~~~~~..#",
-    "ppppppppppppppppppppppppppppppppppppppppssssssspee..~~~~~..#",
+    "ppppppppppppppppppppppppppppppssssssssssssssssspee..~~~~~..#",
     "#pp....................................ppsssssspee..~~~~~..#",
     "#pp....................................pppppppppee..~~~~~..#",
     "#pp.............................................ee..~~~~~..#",
@@ -453,10 +453,6 @@
       "feld": [57, 23]
     },
     {
-      "moebel": "cc7Vordachhaus",
-      "feld": [4, 24]
-    },
-    {
       "moebel": "cc8HeckeSenkrecht",
       "feld": [21, 24],
       "bauteil_ok": true
@@ -485,10 +481,6 @@
       "moebel": "cc8HeckeSenkrecht",
       "feld": [21, 34],
       "bauteil_ok": true
-    },
-    {
-      "moebel": "mf2BlumenbeetKlein",
-      "feld": [19, 30]
     },
     {
       "moebel": "cc4Briefkasten",
@@ -599,36 +591,8 @@
       "feld": [32, 38]
     },
     {
-      "moebel": "cc8KulisseStadthaus",
-      "feld": [42, 3]
-    },
-    {
-      "moebel": "cc8HolzhausBlau",
-      "feld": [4, 43]
-    },
-    {
-      "moebel": "cc8HolzhausRot",
-      "feld": [11, 43]
-    },
-    {
-      "moebel": "cc8HolzhausGruen",
-      "feld": [17, 43]
-    },
-    {
-      "moebel": "cc8HolzhausBlau",
-      "feld": [43, 43]
-    },
-    {
       "moebel": "cc4Nadelbaum",
       "feld": [44, 38]
-    },
-    {
-      "moebel": "mf4Gemuesebeet",
-      "feld": [8, 40]
-    },
-    {
-      "moebel": "mf4Gemuesebeet",
-      "feld": [15, 40]
     },
     {
       "moebel": "mf2Blumenbeet",
@@ -644,7 +608,7 @@
     },
     {
       "moebel": "caBus",
-      "feld": [31, 19],
+      "feld": [31, 20],
       "bauteil_ok": true
     },
     {
@@ -659,6 +623,46 @@
       "moebel": "cc5BootUfer",
       "feld": [54, 28],
       "bauteil_ok": true
+    },
+    {
+      "moebel": "sc7Ferienhuette",
+      "feld": [5, 27]
+    },
+    {
+      "moebel": "sc7FerienhuetteB",
+      "feld": [13, 27]
+    },
+    {
+      "moebel": "cr8Holzfaellerhuette",
+      "feld": [42, 8]
+    },
+    {
+      "moebel": "sc7Ferienhuette",
+      "feld": [4, 42]
+    },
+    {
+      "moebel": "sc7FerienhuetteB",
+      "feld": [11, 42]
+    },
+    {
+      "moebel": "cr8Holzfaellerhuette",
+      "feld": [17, 42]
+    },
+    {
+      "moebel": "wc5Gartenhaus",
+      "feld": [44, 43]
+    },
+    {
+      "moebel": "mf4Gemuesebeet",
+      "feld": [8, 33]
+    },
+    {
+      "moebel": "cc4Nadelbaum",
+      "feld": [18, 28]
+    },
+    {
+      "moebel": "mf2Blumenbeet",
+      "feld": [3, 33]
     }
   ],
   "ausloeser": [

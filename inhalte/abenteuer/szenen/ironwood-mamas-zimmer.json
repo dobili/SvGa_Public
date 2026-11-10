@@ -23,275 +23,160 @@
   "objekte": [
     {
       "moebel": "cc6TuerSued",
-      "feld": [
-        8,
-        12
-      ],
+      "feld": [8, 12],
       "an_wand": true
     },
     {
       "moebel": "cc5Fussmatte",
-      "feld": [
-        8,
-        10
-      ],
-      "versatz": [
-        0,
-        24
-      ]
+      "feld": [8, 10],
+      "versatz": [0, 24]
     },
     {
       "moebel": "mf8KuehlschrankWeiss",
-      "feld": [
-        1,
-        1
-      ]
+      "feld": [1, 1]
     },
     {
       "moebel": "mf8Herd",
-      "feld": [
-        2,
-        2
-      ]
+      "feld": [2, 2]
     },
     {
       "moebel": "wzHerd",
-      "feld": [
-        3,
-        2
-      ]
+      "feld": [3, 2]
     },
     {
       "moebel": "iw8Theke4",
-      "feld": [
-        4,
-        2
-      ],
+      "feld": [4, 2],
       "id": "platte"
     },
     {
       "moebel": "mf5Spuele",
-      "feld": [
-        0,
-        0
-      ],
+      "feld": [0, 0],
       "auf": "platte"
     },
     {
       "moebel": "wzFenster",
-      "feld": [
-        6,
-        1
-      ],
+      "feld": [6, 1],
       "an_wand": true
     },
     {
       "moebel": "ldOfen",
-      "feld": [
-        8,
-        1
-      ]
+      "feld": [8, 1]
     },
     {
       "moebel": "mf7SesselWeissLinks",
-      "feld": [
-        7,
-        5
-      ]
+      "feld": [7, 5]
     },
     {
       "moebel": "cc4Stehlampe",
-      "feld": [
-        9,
-        4
-      ]
+      "feld": [9, 4]
     },
     {
       "moebel": "mf3Rundtisch",
-      "feld": [
-        4,
-        6
-      ],
+      "feld": [4, 6],
       "id": "kuechentisch"
     },
     {
       "moebel": "cc4StuhlVorn",
-      "feld": [
-        4,
-        5
-      ],
+      "feld": [4, 5],
       "zu": "kuechentisch"
     },
     {
       "moebel": "cc4StuhlRuecken",
-      "feld": [
-        5,
-        7
-      ],
+      "feld": [5, 7],
       "zu": "kuechentisch"
     },
     {
       "moebel": "cc4PflanzeK",
-      "feld": [
-        1,
-        9
-      ]
+      "feld": [1, 9]
     },
     {
       "moebel": "mf7TeppichQuadrat",
-      "feld": [
-        1,
-        5
-      ]
+      "feld": [1, 5]
     },
     {
       "moebel": "mf7Obstkorb",
-      "feld": [
-        0,
-        0
-      ],
+      "feld": [0, 0],
       "auf": "kuechentisch"
     },
     {
       "moebel": "wzFenster",
-      "feld": [
-        12,
-        1
-      ],
+      "feld": [12, 1],
       "an_wand": true
     },
     {
       "moebel": "iw5BettLila",
-      "feld": [
-        11,
-        3
-      ],
+      "feld": [11, 3],
       "id": "bett"
     },
     {
       "moebel": "iw8Partieformular",
-      "feld": [
-        14,
-        1
-      ],
+      "feld": [14, 1],
       "an_wand": true,
       "id": "rahmen2001",
-      "versatz": [
-        0,
-        6
-      ]
+      "versatz": [0, 6]
     },
     {
       "moebel": "mf2Kleiderschrank",
-      "feld": [
-        15,
-        1
-      ]
+      "feld": [15, 1]
     },
     {
       "moebel": "cc3Schreibtisch",
-      "feld": [
-        15,
-        7
-      ],
+      "feld": [15, 7],
       "id": "schreibtisch"
     },
     {
       "moebel": "cc4StuhlVorn",
-      "feld": [
-        15,
-        6
-      ],
+      "feld": [15, 6],
       "zu": "schreibtisch"
     },
     {
       "moebel": "cc4Leselampe",
-      "feld": [
-        0,
-        0
-      ],
+      "feld": [0, 0],
       "auf": "schreibtisch",
-      "versatz": [
-        8,
-        0
-      ]
+      "versatz": [8, 0]
     },
     {
       "moebel": "mf7TeppichRund",
-      "feld": [
-        12,
-        7
-      ]
+      "feld": [12, 7]
     },
     {
       "moebel": "cc4PflanzeK",
-      "feld": [
-        11,
-        9
-      ]
+      "feld": [11, 9]
     }
   ],
   "ausloeser": [
     {
       "name": "start",
-      "feld": [
-        8,
-        10
-      ],
+      "feld": [8, 10],
       "eigenschaften": {
         "richtung": "oben"
       }
     },
     {
       "name": "zimmerAusgang",
-      "feld": [
-        8,
-        11
-      ]
+      "feld": [8, 11]
     },
     {
       "name": "medaille",
-      "feld": [
-        14,
-        8
-      ]
+      "feld": [14, 8]
     },
     {
       "name": "partieformular2001",
-      "feld": [
-        14,
-        3
-      ]
+      "feld": [14, 3]
     }
   ],
   "figuren": [
     {
       "name": "omaRuth",
-      "feld": [
-        6,
-        9
-      ]
+      "feld": [6, 9]
     },
     {
       "name": "mama",
-      "feld": [
-        14,
-        5
-      ]
+      "feld": [14, 5]
     }
   ],
-  "zustand": [
-    "gebraucht",
-    "alt",
-    "neu"
-  ],
-  "stil": [
-    "klassisch",
-    "einfach",
-    "rustikal",
-    "modern",
-    "industrie"
-  ],
+  "zustand": ["gebraucht", "alt", "neu"],
+  "stil": ["klassisch", "einfach", "rustikal", "modern", "industrie"],
   "boeden": {
     "k": "fliesenWeiss",
     "z": "holzHell"

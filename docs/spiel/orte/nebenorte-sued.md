@@ -126,3 +126,18 @@ begehbar, mit Finkenzeichen aus Kreide.
 - **Goldader** (`goldader`): Fund `goldkorn`.
 - **Offen für mittel-2:** Lichtkreis der Laterne. Pruitt und Juniper bleiben bei ihren Orten (Ghost
   Town, Weg 10).
+
+## 8. Runde 9: Mängel der Variantenwahl (10.11.2026, mittel-4)
+
+**Felsnase (Wahl A).** (1) Neu gebaut als drei Stufen: Plateau mit der Sternwarte vor der höheren
+Felswand, mittlere Stufe, Canyonboden; dazwischen rote Felskanten (`"fels": "rot"`) mit Treppen, der Pfad
+aus Felsboden steigt in zwei Kehren. Kein Rahmen, keine schwarzen Flächen. (2) Die Bank schaut nach Westen
+über die Kante. (3) Die Sternwarte steht vor einer Felswand über die ganze Breite; die Nacht zeigt jetzt
+auch die Vorschau (`pipeline/abenteuer/toenung.py`, wie die App).
+
+**Kuppel (Wahl A).** (1) Nachtblaue Wand (neues Wandmaterial `nachtblau`). (2) Abgeschrägte Ecken geben
+dem Raum ein Rund; das Teleskop zeigt auf den offenen Kuppelspalt in der Nordwand. Eine echte runde Kuppel
+in Draufsicht gibt es in keinem Paket. (3) Das Zeichen am Boden ist das Finkenzeichen (Ereignis von Finch),
+kein Springer; der Karton ohne Grund ist weg. Die Dielen sind das Material des Kartenbilds.
+
+**Zustände:** keine; die Sternwarte ändert sich in der Geschichte nicht.

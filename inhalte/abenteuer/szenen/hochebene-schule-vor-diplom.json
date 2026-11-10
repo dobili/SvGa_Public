@@ -1,0 +1,627 @@
+{
+  "karte": "hochebene.schule",
+  "datei": "karten/hochebene-schule-vor-diplom.json",
+  "art": "aussen",
+  "beschreibung": "Zustand: Bevor Annek Schach gelernt hat, ist der Diplomtag noch nicht vorbereitet: Auf dem Schulhof stehen weder Tribüne noch Steintische, nur das Plakat „Diplomtag – bald!“ kündigt ihn an. Sonst wie die gewöhnliche Karte: Die Schule der Hochebene: ein gewöhnliches Schulhaus von heute mit rotem Walmdach, davor der gepflasterte Schulhof mit Spielgeräten, Steintischen, Tribüne und Fahnenmast, am Eingang das Schwarze Brett. Rechts auf eigenem Pflaster das Basketballfeld, mit dem Hof durch einen Weg verbunden; links die Turnhalle mit Weg zum Hof. An der Straße mit Mittellinie die Haltestelle mit dem gelben Schulbus am Bordstein und der Haltestelle, daneben die Werkstatt von Joss Vell mit Rolltor, Zufahrt, Werkbank und Reifen. Der Schotterweg von den Felstürmen kommt am Ostrand an. Wiese ringsum, eine Hecke schließt das Gelände, offen nur an Straße und Weg.",
+  "boden": "gras",
+  "wandart": "hecke",
+  "boeden": {
+    "p": "pflaster",
+    "s": "asphalt",
+    "k": "schotter",
+    "a": "asphalt"
+  },
+  "zustand": ["neu", "gebraucht", "alt"],
+  "stil": ["natur", "klassisch", "modern", "laendlich", "rustikal"],
+  "raster": [
+    "############################################################",
+    "#..........................................................#",
+    "#..........................................ppppppppppppppp.#",
+    "#..........................................ppppppppppppppp.#",
+    "#..........................................ppppppppppppppp.#",
+    "#..........................................ppppppppppppppp.#",
+    "#..........................................ppppppppppppppp.#",
+    "#..........................................ppppppppppppppp.#",
+    "#..........................................ppppppppppppppp.#",
+    "#..........................................ppppppppppppppp.#",
+    "#..........................................ppppppppppppppp.#",
+    "#..........................................ppppppppppppppp.#",
+    "#..........................................ppppppppppppppp.#",
+    "#..........................................ppppppppppppppp.#",
+    "#..........................................ppppppppppppppp.#",
+    "#..........................................ppppppppppppppp.#",
+    "#..........pp..............................ppppppppppppppp.#",
+    "#..........pp..............................ppppppppppppppp.#",
+    "#..........pp...............................pp.............#",
+    "#..........pp...............................pp....kkkkkkkkk#",
+    "#..........pp...............................pp....kkkkkkkkk#",
+    "#..........pp...............................pp....kk.......#",
+    "#..........pp...............................pp....kk.......#",
+    "#..........pp...............................pp....kk.......#",
+    "#..........ppppppppppppppppppppppppppppppppppp....kk.......#",
+    "#..........ppppppppppppppppppppppppppppppppppp....kk.......#",
+    "#.............pppppppppppppppppppppppppppppppp....kk.......#",
+    "#.............pppppppppppppppppppppppppppppppp....kk.......#",
+    "#.............pppppppppppppppppppppppppppppppp....kk.......#",
+    "#..aaaa.......pppppppppppppppppppppppppppppppp....kk.......#",
+    "#..aaaa.......pppppppppppppppppppppppppppppppp....kk.......#",
+    "#..aaaa.......pppppppppppppppppppppppppppppppp....kk.......#",
+    "#..aaaa.....................pppppppppp............kk.......#",
+    "#ssssssssssssssssssssssssssssssssssssssssssssssssssssssssss#",
+    "#ssssssssssssssssssssssssssssssssssssssssssssssssssssssssss#",
+    "#ssssssssssssssssssssssssssssssssssssssssssssssssssssssssss#",
+    "#..........................................................#",
+    "#..........................................................#",
+    "#..........................................................#",
+    "############################################################"
+  ],
+  "objekte": [
+    {
+      "moebel": "hb7Turnhalle",
+      "feld": [8, 10],
+      "id": "halle"
+    },
+    {
+      "moebel": "hb7Schule",
+      "feld": [18, 1]
+    },
+    {
+      "moebel": "hb7Aushang",
+      "feld": [33, 24]
+    },
+    {
+      "moebel": "hb7Basketballfeld",
+      "feld": [44, 3]
+    },
+    {
+      "moebel": "hb7Basketballkorb",
+      "feld": [50, 2]
+    },
+    {
+      "moebel": "hb7Schaukel",
+      "feld": [15, 25]
+    },
+    {
+      "moebel": "hb7Spielturm",
+      "feld": [20, 27]
+    },
+    {
+      "moebel": "rvPicknicktisch",
+      "feld": [40, 28]
+    },
+    {
+      "moebel": "hb7Werkstatt",
+      "feld": [2, 23]
+    },
+    {
+      "moebel": "cc4Werktisch",
+      "feld": [9, 25]
+    },
+    {
+      "moebel": "dsReifen",
+      "feld": [9, 29]
+    },
+    {
+      "moebel": "heSchulbus",
+      "feld": [30, 32],
+      "bauteil_ok": true
+    },
+    {
+      "moebel": "haltestellenschild",
+      "feld": [44, 30]
+    },
+    {
+      "moebel": "wds6Briefkasten",
+      "feld": [47, 31]
+    },
+    {
+      "moebel": "wds6Pinie",
+      "feld": [7, 2]
+    },
+    {
+      "moebel": "cc3Busch",
+      "feld": [47, 26]
+    },
+    {
+      "moebel": "cc3Busch",
+      "feld": [3, 11]
+    },
+    {
+      "moebel": "wds6Kegelbaum",
+      "feld": [53, 25]
+    },
+    {
+      "moebel": "wds6Pinie",
+      "feld": [45, 20]
+    },
+    {
+      "moebel": "wds6Pinie",
+      "feld": [8, 19]
+    },
+    {
+      "moebel": "wds6Kegelbaum",
+      "feld": [14, 3]
+    },
+    {
+      "moebel": "cc3Busch",
+      "feld": [2, 8]
+    },
+    {
+      "moebel": "cc3Busch",
+      "feld": [5, 6]
+    },
+    {
+      "moebel": "cc3Busch",
+      "feld": [11, 5]
+    },
+    {
+      "moebel": "cc3Busch",
+      "feld": [3, 16]
+    },
+    {
+      "moebel": "cc3Busch",
+      "feld": [2, 3]
+    },
+    {
+      "moebel": "cc3Busch",
+      "feld": [10, 2]
+    },
+    {
+      "moebel": "cc3Busch",
+      "feld": [56, 24]
+    },
+    {
+      "moebel": "sc8Fahnenmast",
+      "feld": [49, 21],
+      "id": "ereignis34"
+    },
+    {
+      "moebel": "sc8PlakatDiplomtag",
+      "feld": [35, 24],
+      "id": "ereignis35"
+    },
+    {
+      "moebel": "sc8FinkenzeichenSchule",
+      "feld": [43, 31],
+      "id": "ereignis37"
+    },
+    {
+      "moebel": "cc4Hecke",
+      "feld": [1, 1]
+    },
+    {
+      "moebel": "cc4Hecke",
+      "feld": [1, 38]
+    },
+    {
+      "moebel": "cc4Hecke",
+      "feld": [3, 1]
+    },
+    {
+      "moebel": "cc4Hecke",
+      "feld": [3, 38]
+    },
+    {
+      "moebel": "cc4Hecke",
+      "feld": [5, 1]
+    },
+    {
+      "moebel": "cc4Hecke",
+      "feld": [5, 38]
+    },
+    {
+      "moebel": "cc4Hecke",
+      "feld": [7, 1]
+    },
+    {
+      "moebel": "cc4Hecke",
+      "feld": [7, 38]
+    },
+    {
+      "moebel": "cc4Hecke",
+      "feld": [9, 1]
+    },
+    {
+      "moebel": "cc4Hecke",
+      "feld": [9, 38]
+    },
+    {
+      "moebel": "cc4Hecke",
+      "feld": [11, 1]
+    },
+    {
+      "moebel": "cc4Hecke",
+      "feld": [11, 38]
+    },
+    {
+      "moebel": "cc4Hecke",
+      "feld": [13, 1]
+    },
+    {
+      "moebel": "cc4Hecke",
+      "feld": [13, 38]
+    },
+    {
+      "moebel": "cc4Hecke",
+      "feld": [15, 1]
+    },
+    {
+      "moebel": "cc4Hecke",
+      "feld": [15, 38]
+    },
+    {
+      "moebel": "cc4Hecke",
+      "feld": [17, 38]
+    },
+    {
+      "moebel": "cc4Hecke",
+      "feld": [19, 38]
+    },
+    {
+      "moebel": "cc4Hecke",
+      "feld": [21, 38]
+    },
+    {
+      "moebel": "cc4Hecke",
+      "feld": [23, 38]
+    },
+    {
+      "moebel": "cc4Hecke",
+      "feld": [25, 38]
+    },
+    {
+      "moebel": "cc4Hecke",
+      "feld": [27, 38]
+    },
+    {
+      "moebel": "cc4Hecke",
+      "feld": [29, 38]
+    },
+    {
+      "moebel": "cc4Hecke",
+      "feld": [31, 38]
+    },
+    {
+      "moebel": "cc4Hecke",
+      "feld": [33, 38]
+    },
+    {
+      "moebel": "cc4Hecke",
+      "feld": [35, 38]
+    },
+    {
+      "moebel": "cc4Hecke",
+      "feld": [37, 38]
+    },
+    {
+      "moebel": "cc4Hecke",
+      "feld": [39, 38]
+    },
+    {
+      "moebel": "cc4Hecke",
+      "feld": [41, 38]
+    },
+    {
+      "moebel": "cc4Hecke",
+      "feld": [43, 1]
+    },
+    {
+      "moebel": "cc4Hecke",
+      "feld": [43, 38]
+    },
+    {
+      "moebel": "cc4Hecke",
+      "feld": [45, 1]
+    },
+    {
+      "moebel": "cc4Hecke",
+      "feld": [45, 38]
+    },
+    {
+      "moebel": "cc4Hecke",
+      "feld": [47, 1]
+    },
+    {
+      "moebel": "cc4Hecke",
+      "feld": [47, 38]
+    },
+    {
+      "moebel": "cc4Hecke",
+      "feld": [49, 1]
+    },
+    {
+      "moebel": "cc4Hecke",
+      "feld": [49, 38]
+    },
+    {
+      "moebel": "cc4Hecke",
+      "feld": [51, 1]
+    },
+    {
+      "moebel": "cc4Hecke",
+      "feld": [51, 38]
+    },
+    {
+      "moebel": "cc4Hecke",
+      "feld": [53, 1]
+    },
+    {
+      "moebel": "cc4Hecke",
+      "feld": [53, 38]
+    },
+    {
+      "moebel": "cc4Hecke",
+      "feld": [55, 1]
+    },
+    {
+      "moebel": "cc4Hecke",
+      "feld": [55, 38]
+    },
+    {
+      "moebel": "cc4Hecke",
+      "feld": [57, 1]
+    },
+    {
+      "moebel": "cc4Hecke",
+      "feld": [57, 38]
+    },
+    {
+      "moebel": "cc8HeckeSenkrecht",
+      "feld": [1, 2]
+    },
+    {
+      "moebel": "cc8HeckeSenkrecht",
+      "feld": [1, 5]
+    },
+    {
+      "moebel": "cc8HeckeSenkrecht",
+      "feld": [1, 8]
+    },
+    {
+      "moebel": "cc8HeckeSenkrecht",
+      "feld": [1, 11]
+    },
+    {
+      "moebel": "cc8HeckeSenkrecht",
+      "feld": [1, 14]
+    },
+    {
+      "moebel": "cc8HeckeSenkrecht",
+      "feld": [1, 17]
+    },
+    {
+      "moebel": "cc8HeckeSenkrecht",
+      "feld": [1, 20]
+    },
+    {
+      "moebel": "cc8HeckeSenkrecht",
+      "feld": [1, 23]
+    },
+    {
+      "moebel": "cc8HeckeSenkrecht",
+      "feld": [1, 26]
+    },
+    {
+      "moebel": "cc8HeckeSenkrecht",
+      "feld": [1, 29]
+    },
+    {
+      "moebel": "cc8HeckeSenkrecht",
+      "feld": [58, 2]
+    },
+    {
+      "moebel": "cc8HeckeSenkrecht",
+      "feld": [58, 5]
+    },
+    {
+      "moebel": "cc8HeckeSenkrecht",
+      "feld": [58, 8]
+    },
+    {
+      "moebel": "cc8HeckeSenkrecht",
+      "feld": [58, 11]
+    },
+    {
+      "moebel": "cc8HeckeSenkrecht",
+      "feld": [58, 14]
+    },
+    {
+      "moebel": "cc8HeckeSenkrecht",
+      "feld": [58, 23]
+    },
+    {
+      "moebel": "cc8HeckeSenkrecht",
+      "feld": [58, 26]
+    },
+    {
+      "moebel": "cc8HeckeSenkrecht",
+      "feld": [58, 29]
+    }
+  ],
+  "ausloeser": [
+    {
+      "name": "start",
+      "feld": [58, 19],
+      "eigenschaften": {
+        "richtung": "links"
+      }
+    },
+    {
+      "name": "zurueckFelsentuerme",
+      "feld": [59, 19]
+    },
+    {
+      "name": "zurueckFelsentuerme",
+      "feld": [59, 20]
+    },
+    {
+      "name": "werkstatt",
+      "feld": [5, 29]
+    },
+    {
+      "name": "aushang",
+      "feld": [33, 26]
+    },
+    {
+      "name": "bus",
+      "feld": [33, 36]
+    },
+    {
+      "name": "ereignisDiplom",
+      "feld": [28, 27]
+    },
+    {
+      "name": "seite03",
+      "feld": [48, 23]
+    },
+    {
+      "name": "finchTurmB",
+      "feld": [43, 31]
+    }
+  ],
+  "figuren": [
+    {
+      "name": "annek",
+      "feld": [28, 29]
+    },
+    {
+      "name": "joss",
+      "feld": [8, 30]
+    }
+  ],
+  "belebung": [
+    {
+      "name": "schulkinder",
+      "typ": "statist",
+      "feld": [24, 30],
+      "eigenschaften": {
+        "von": "24,30",
+        "bis": "24,30",
+        "tun": "spielen Fangen",
+        "wann": "tag"
+      }
+    },
+    {
+      "name": "lehrerin",
+      "typ": "statist",
+      "feld": [36, 28],
+      "eigenschaften": {
+        "von": "36,28",
+        "bis": "36,28",
+        "tun": "hat Pausenaufsicht",
+        "wann": "tag"
+      }
+    },
+    {
+      "name": "hausmeister",
+      "typ": "statist",
+      "feld": [13, 18],
+      "eigenschaften": {
+        "von": "13,18",
+        "bis": "13,18",
+        "tun": "fegt den Hof vor der Turnhalle",
+        "wann": "tag",
+        "sagt": "statist.hochebene.schule.hausmeister"
+      }
+    },
+    {
+      "name": "busfahrerin",
+      "typ": "statist",
+      "feld": [32, 31],
+      "eigenschaften": {
+        "von": "32,31",
+        "bis": "32,31",
+        "tun": "wartet am Schulbus",
+        "wann": "tag",
+        "sagt": "statist.hochebene.schule.busfahrerin"
+      }
+    },
+    {
+      "name": "schulkind",
+      "typ": "statist",
+      "feld": [22, 30],
+      "eigenschaften": {
+        "von": "22,30",
+        "bis": "22,30",
+        "tun": "hüpft Kästchen auf dem Hof",
+        "wann": "tag",
+        "sagt": "statist.hochebene.schule.schulkind"
+      }
+    },
+    {
+      "name": "vater",
+      "typ": "statist",
+      "feld": [46, 36],
+      "eigenschaften": {
+        "von": "46,36",
+        "bis": "46,36",
+        "tun": "holt sein Kind ab",
+        "wann": "tag",
+        "sagt": "statist.hochebene.schule.vater",
+        "zeigt": "retiStudie"
+      }
+    },
+    {
+      "name": "huehner",
+      "typ": "tier",
+      "feld": [6, 18],
+      "eigenschaften": {
+        "von": "6,18",
+        "bis": "10,18",
+        "verhalten": "ausweichen"
+      }
+    },
+    {
+      "name": "hund",
+      "typ": "tier",
+      "feld": [40, 36],
+      "eigenschaften": {
+        "von": "40,36",
+        "bis": "40,36",
+        "verhalten": "folgen"
+      }
+    },
+    {
+      "name": "spatzen",
+      "typ": "tier",
+      "feld": [30, 24],
+      "eigenschaften": {
+        "von": "30,24",
+        "bis": "38,24",
+        "verhalten": "fliegen"
+      }
+    },
+    {
+      "name": "katze",
+      "typ": "tier",
+      "feld": [8, 22],
+      "eigenschaften": {
+        "von": "8,22",
+        "bis": "8,22",
+        "verhalten": "schlafen"
+      }
+    },
+    {
+      "name": "falke",
+      "typ": "tier",
+      "feld": [17, 6],
+      "eigenschaften": {
+        "von": "17,6",
+        "bis": "37,1",
+        "verhalten": "fliegen"
+      }
+    },
+    {
+      "name": "hase",
+      "typ": "tier",
+      "feld": [54, 10],
+      "eigenschaften": {
+        "von": "54,10",
+        "bis": "48,10",
+        "verhalten": "flitzen"
+      }
+    }
+  ],
+  "markierung": ["s"],
+  "zustand_der_karte": "nicht annekSchachGelernt"
+}

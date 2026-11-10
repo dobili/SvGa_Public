@@ -2,7 +2,7 @@
   "karte": "wegPinewoodGhost.canyonrand",
   "datei": "karten/weg-pinewood-ghost-canyonrand.json",
   "art": "aussen",
-  "beschreibung": "Variante C, grün: Wald bis zur Mitte, Blumen am Weg, zwei Bänke am Rand, mehr Kletterseile.",
+  "beschreibung": "Weg 10 am Canyonrand: Von Westen kommt der Weg aus dem Kiefernwald (Bänke, Blumen, Tafel), im Osten wird der Boden zu rotem Fels mit Kakteen; die Grenze ist unregelmäßig. Der Weg läuft nahe an der Kante entlang. Darunter fällt eine Felswand in den Canyon, an ihr zwei Kletterrouten mit Griffen und Seilen (Juniper); unten windet sich ein Fluss durch den roten Sand, mit Felsen und Kakteen am Ufer.",
   "wand": "felsRot",
   "boden": "gras",
   "boeden": {
@@ -13,33 +13,33 @@
   "raster": [
     "######################################################################################################################################################",
     "#.........................................................................................rrrrrrrrrrrrrrrrrrrrrrrrrrrrrrrrrrrrrrrrrrrrrrrrrrrrrrrrrrr#",
+    "#..........................................................................................rrrrrrrrrrrrrrrrrrrrrrrrrrrrrrrrrrrrrrrrrrrrrrrrrrrrrrrrrr#",
+    "#............................................................................................rrrrrrrrrrrrrrrrrrrrrrrrrrrrrrrrrrrrrrrrrrrrrrrrrrrrrrrr#",
+    "#...........................................................................................rrrrrrrrrrrrrrrrrrrrrrrrrrrrrrrrrrrrrrrrrrrrrrrrrrrrrrrrr#",
     "#.........................................................................................rrrrrrrrrrrrrrrrrrrrrrrrrrrrrrrrrrrrrrrrrrrrrrrrrrrrrrrrrrr#",
-    "#.........................................................................................rrrrrrrrrrrrrrrrrrrrrrrrrrrrrrrrrrrrrrrrrrrrrrrrrrrrrrrrrrr#",
-    "#.........................................................................................rrrrrrrrrrrrrrrrrrrrrrrrrrrrrrrrrrrrrrrrrrrrrrrrrrrrrrrrrrr#",
-    "#.........................................................................................rrrrrrrrrrrrrrrrrrrrrrrrrrrrrrrrrrrrrrrrrrrrrrrrrrrrrrrrrrr#",
-    "#.........................................................................................rrrrrrrrrrrrrrrrrrrrrrrrrrrrrrrrrrrrrrrrrrrrrrrrrrrrrrrrrrr#",
-    "#.........................................................................................rrrrrrrrrrrrrrrrrrrrrrrrrrrrrrrrrrrrrrrrrrrrrrrrrrrrrrrrrrr#",
-    "#.........................................................................................rrrrrrrrrrrrrrrrrrrrrrrrrrrrrrrrrrrrrrrrrrrrrrrrrrrrrrrrrrr#",
-    "#......................................................eeeeeeeeeeeeeeeeeeeeeeeeee.........rrrrrrrrrrrrrrrrrrrrrrrrrrrrrrrrrrrrrrrrrrrrrrrrrrrrrrrrrrr#",
-    "#..........eeeeeeeeeeeeeeeeeeee........................eeeeeeeeeeeeeeeeeeeeeeeeee.........rrrrrrrrrrrrreeeeeeeeeeeeeeeeeeeeeeeeeerrrrrrrrrrrrrrrrrrrr#",
-    "#..........eeeeeeeeeeeeeeeeeeee........................ee......................ee.........rrrrrrrrrrrrreeeeeeeeeeeeeeeeeeeeeeeeeerrrrrrrrrrrrrrrrrrrr#",
-    "#..........ee................ee........................ee......................ee.........rrrrrrrrrrrrreerrrrrrrrrrrrrrrrrrrrrreerrrrrrrrrrrrrrrrrrrr#",
+    "#.......................................................................................rrrrrrrrrrrrrrrrrrrrrrrrrrrrrrrrrrrrrrrrrrrrrrrrrrrrrrrrrrrrr#",
+    "#......................................................................................rrrrrrrrrrrrrrrrrrrrrrrrrrrrrrrrrrrrrrrrrrrrrrrrrrrrrrrrrrrrrr#",
+    "#........................................................................................rrrrrrrrrrrrrrrrrrrrrrrrrrrrrrrrrrrrrrrrrrrrrrrrrrrrrrrrrrrr#",
+    "#......................................................eeeeeeeeeeeeeeeeeeeeeeeeee..........rrrrrrrrrrrrrrrrrrrrrrrrrrrrrrrrrrrrrrrrrrrrrrrrrrrrrrrrrr#",
+    "#..........eeeeeeeeeeeeeeeeeeee........................eeeeeeeeeeeeeeeeeeeeeeeeee...........rrrrrrrrrrreeeeeeeeeeeeeeeeeeeeeeeeeerrrrrrrrrrrrrrrrrrrr#",
+    "#..........eeeeeeeeeeeeeeeeeeee........................ee......................ee.............rrrrrrrrreeeeeeeeeeeeeeeeeeeeeeeeeerrrrrrrrrrrrrrrrrrrr#",
+    "#..........ee................ee........................ee......................ee............rrrrrrrrrreerrrrrrrrrrrrrrrrrrrrrreerrrrrrrrrrrrrrrrrrrr#",
     "#..........ee................eeeeeeeeeeeeeeeeeeeeeeeeeeee......................eeeeeeeeeeeeeeeeeeeeeeeeeerrrrrrrrrrrrrrrrrrrrrreerrrrrrrrrrrrrrrrrrrr#",
     "eeeeeeeeeeeee................eeeeeeeeeeeeeeeeeeeeeeeeeeee......................eeeeeeeeeeeeeeeeeeeeeeeeeerrrrrrrrrrrrrrrrrrrrrreeeeeeeeeeeeeeeeeeeeeee",
-    "eeeeeeeeeeeee.............................................................................rrrrrrrrrrrrrrrrrrrrrrrrrrrrrrrrrrrrreeeeeeeeeeeeeeeeeeeeeee",
-    "#.........................................................................................rrrrrrrrrrrrrrrrrrrrrrrrrrrrrrrrrrrrrrrrrrrrrrrrrrrrrrrrrrr#",
-    "#rrrrrrrrrrrrrrrrrrrrrrrrrrrrrrrrrrrrrrrrrrrrrrrrrrrrrrrrrrrrrrrrrrrrrrrrrrrrrrrrrrrrrrrrrrrrrrrrrrrrrrrrrrrrrrrrrrrrrrrrrrrrrrrrrrrrrrrrrrrrrrrrrrrr#",
-    "#rrrrrrrrrrrrrrrrrrrrrrrrrrrrrrrrrrrrrrrrrrrrrrrrrrrrrrrrrrrrrrrrrrrrrrrrrrrrrrrrrrrrrrrrrrrrrrrrrrrrrrrrrrrrrrrrrrrrrrrrrrrrrrrrrrrrrrrrrrrrrrrrrrrr#",
+    "eeeeeeeeeeeee...........................................................................rrrrrrrrrrrrrrrrrrrrrrrrrrrrrrrrrrrrrrreeeeeeeeeeeeeeeeeeeeeee",
+    "#........................................................................................rrrrrrrrrrrrrrrrrrrrrrrrrrrrrrrrrrrrrrrrrrrrrrrrrrrrrrrrrrrr#",
+    "#rrrrrrrrrrrrrrrrrrrrrrrrrrrrrrrrrrrrrrrrrrrrrrrrrrrrrrrrrrrrrrrrrrrrrrrrrrrrrrrrrrr.......rrrrrrrrrrrrrrrrrrrrrrrrrrrrrrrrrrrrrrrrrrrrrrrrrrrrrrrrrr#",
+    "#rrrrrrrrrrrrrrrrrrrrrrrrrrrrrrrrrrrrrrrrrrrrrrrrrrrrrrrrrrrrrrrrrrrrrrrrrrrrrrrrrrr........rrrrrrrrrrrrrrrrrrrrrrrrrrrrrrrrrrrrrrrrrrrrrrrrrrrrrrrrr#",
     "######################################################################################################################################################",
     "######################################################################################################################################################",
     "######################################################################################################################################################",
     "#ffffffffffffffffffffffffffffffffffffffffffffffffffffffffffffffffffffffffffffffffffffffffffffffffffffffffffffffffffffffffffffffffffffffffffffffffffff#",
     "#ffffffffffffffffffffffffffffffffffffffffffffffffffffffffffffffffffffffffffffffffffffffffffffffffffffffffffffffffffffffffffffffffffffffffffffffffffff#",
     "#ffffffffffffffffffffffffffffffffffffffffffffffffffffffffffffffffffffffffffffffffffffffffffffffffffffffffffffffffffffffffffffffffffffffffffffffffffff#",
-    "#ffffffffffffffffffffffffffffffffffffffffffffffffffffffffffffffffffffffffffffffffffffffffffffffffffffffffffffffffffffffffffffffffffffffffffffffffffff#",
-    "#ffffffffffffffffffffffffffffffffffffffffffffffffffffffffffffffffffffffffffffffffffffffffffffffffffffffffffffffffffffffffffffffffffffffffffffffffffff#",
-    "#ffffffffffffffffffffffffffffffffffffffffffffffffffffffffffffffffffffffffffffffffffffffffffffffffffffffffffffffffffffffffffffffffffffffffffffffffffff#",
-    "#ffffffffffffffffffffffffffffffffffffffffffffffffffffffffffffffffffffffffffffffffffffffffffffffffffffffffffffffffffffffffffffffffffffffffffffffffffff#",
+    "#~~~~~~~~~~~~~~~~~~~~~~~~~~~ffffff~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~ffffff~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~fffff~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~#",
+    "#~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~#",
+    "#~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~#",
+    "#fff~~~~ffffffffffffffffffffffffffffffffffffffffffff~~~~~~~ffffffffffffffffffffffffffffffffffffffffffff~~~~fffffffffffffffffffffffffffffff~~~~~~~ffff#",
     "######################################################################################################################################################"
   ],
   "objekte": [
@@ -520,6 +520,31 @@
       "moebel": "cp8Finkenzeichen",
       "feld": [43, 17],
       "id": "ereignis117"
+    },
+    {
+      "moebel": "pg7Kletterwand",
+      "feld": [100, 16],
+      "vorn": true
+    },
+    {
+      "moebel": "felsKlein",
+      "feld": [12, 28]
+    },
+    {
+      "moebel": "dd6KaktusKlein",
+      "feld": [30, 28]
+    },
+    {
+      "moebel": "felsKlein",
+      "feld": [47, 28]
+    },
+    {
+      "moebel": "felsKlein",
+      "feld": [85, 28]
+    },
+    {
+      "moebel": "felsKlein",
+      "feld": [123, 28]
     }
   ],
   "ausloeser": [
@@ -556,7 +581,7 @@
     },
     {
       "name": "kletterwand",
-      "feld": [79, 18]
+      "feld": [79, 17]
     }
   ],
   "figuren": [
@@ -675,5 +700,7 @@
     }
   ],
   "zustand": ["neu", "gebraucht", "alt"],
-  "stil": ["natur", "einfach", "laendlich", "klassisch", "landhaus"]
+  "stil": ["natur", "einfach", "laendlich", "klassisch", "landhaus"],
+  "wandart": "sandRot",
+  "ufer": null
 }

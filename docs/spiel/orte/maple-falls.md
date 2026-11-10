@@ -715,3 +715,30 @@ Gutachten in `docs/spiel/auftraege/gutachten/`. „Technik“ heißt: zentral ge
   den Park), 16 (eigenes Diner-Bild), 32 (Rutsche), 35 (Sandboden).
 - Gewollt: 1 (der Bach läuft am Nordrand aus der Karte).
 - Zur Nachprüfung: 4, 5, 7, 10, 12, 18, 19, 34, 36.
+
+## Zweites Gutachten Runde 8: Antworten (niedrig-1, 10.11.2026)
+
+Gutachten `docs/spiel/auftraege/gutachten/maple-falls-cedar-creek-2.md`.
+
+**Maple Falls außen:**
+
+- **Südhäuser mit Türen zur Gasse:** Jedes Hausbild hat seine Tür unten. Ein Haus südlich einer
+  West-Ost-Straße zeigt ihr deshalb immer den Rücken. Die Straßenseite sind ihre Gärten mit Hecke;
+  Bilder von hinten gibt es nicht. Das bleibt eine Grenze der Ansicht.
+- **Zäune ohne Tor:** Die drei Vorgärten der Nordseite und der Spielplatz haben jetzt offene
+  Holzpforten in den Zaunlücken.
+- **„Zu verkaufen“:** Am Hayes-Haus steht ein Maklerschild (Bildwunsch `schild_zu_verkaufen.png`).
+- **Hecke:** Am Plattenweg vor den Südgärten steht eine Hecke.
+- **Rutsche:** Sie steht auf dem Spielplatz; Sandkasten, Schaukel und Klettergerüst sind umgestellt.
+- **Dinertisch:** Vor dem Diner ist zwischen Tür und Gehweg nur eine Reihe frei, ein Tisch mit Stühlen
+  passt dort nicht hin. Die Beschreibung nennt ihn nicht mehr.
+- **Spielzeughaus (10.66):** Es ist weg.
+
+**Park:**
+
+- **Basketballfeld mit zwei Körben:** Es ist jetzt ein Halbfeld 6 × 5 mit einem Korb (Bildwunsch).
+- **Keine Holzbrücke:** Die Parkstraße hat eine Straßenbrücke mit Gehwegen. Die Beschreibung sagt
+  das jetzt; eine Holzbrücke trägt keinen Autoverkehr.
+- **Bäume am Uferweg:** Drei Straßenbäume stehen zwischen den Laternen. Ein vierter passt nicht neben
+  den Verkaufswagen.
+- **Grauer Gegenstand:** Das war die alte Halfpipe; das neue Bild ist gerendert.

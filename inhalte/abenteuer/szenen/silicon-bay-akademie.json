@@ -2,7 +2,7 @@
   "karte": "siliconBay.akademie",
   "datei": "karten/silicon-bay-akademie.json",
   "art": "innen",
-  "beschreibung": "Die Perfect Move Academy in Silicon Bay: hell, kühl und leise summend, alles Glas, Weiß und Bildschirm. Durch die gläserne Eingangstür im Süden kommt man ins Foyer mit grauen Fliesen: rechts der Empfangstisch mit Laptop, an dem die Empfangsdame Besucher begrüßt, links eine Sitzgruppe aus Sofa, zwei Stühlen und weißem Beistelltisch, ein Kübelbaum und die Vitrine mit dem Glaspokal. Eine Glaswand aus gerahmten Scheiben trennt Foyer und Büro vom Trainingssaal; durch sie sieht man die Schüler an ihren Bildschirmen. Im Saal stehen vier weiße Tische in zwei Reihen mit Gang dazwischen, an jedem zwei Flachbildschirme; an jedem Tisch spielt ein Schüler gegen die Maschine. An der Nordwand der Bildschirm mit der Rangliste der Schüler und eine Statistiktafel, zwei Fenster, die Stahltür zum Serverraum und der große Vortragsbildschirm mit drei Stuhlreihen davor; in der Ecke Wasserspender, Getränke- und Kaffeeautomat, daneben zwei Sessel an einem Beistelltisch. An der Westwand filmt Nova sich mit dem Ringlicht. Im Südosten das Büro von Dr. Lin mit blauem Teppich, zum Saal hin verglast, vom Foyer durch einen Durchgang erreichbar: ein weißer Schreibtisch, auf dem als einziges ein altes Holzbrett steht, Lin dahinter, ein Besucherstuhl davor, ein Bücherregal.",
+  "beschreibung": "Die Perfect Move Academy in Silicon Bay: hell, kühl und leise summend, alles Glas, Weiß und Bildschirm. Durch die gläserne Eingangstür im Süden kommt man ins Foyer mit grauen Fliesen: rechts der Empfangstisch mit Laptop, an dem die Empfangsdame Besucher begrüßt, links eine Sitzgruppe aus Sofa, zwei Stühlen und weißem Beistelltisch, ein Kübelbaum und die Vitrine mit dem Glaspokal. Eine Glaswand aus Scheiben zwischen schmalen Pfosten auf einer Schwelle trennt Foyer und Büro vom Trainingssaal; durch sie sieht man die Schüler an ihren Bildschirmen. Im Saal stehen vier weiße Stehpulte in zwei Reihen mit Gang dazwischen, an jedem zwei Flachbildschirme; an jedem Pult steht ein Schüler und spielt gegen die Maschine. An der Nordwand der Bildschirm mit der Rangliste der Schüler und eine Statistiktafel, zwei Fenster, die Stahltür zum Serverraum und der große Vortragsbildschirm mit drei Stuhlreihen davor; in der Ecke Wasserspender, Getränke- und Kaffeeautomat, daneben zwei Sessel an einem Beistelltisch. An der Westwand filmt Nova sich mit dem Ringlicht. Im Südosten das Büro von Dr. Lin mit blauem Teppich, zum Saal hin verglast, vom Foyer durch ein Bücherregal als Raumteiler getrennt und daneben offen: ein weißer Schreibtisch, auf dem als einziges ein altes Holzbrett steht, Lin dahinter, ein Besucherstuhl davor, ein Bücherregal.",
   "wand": "hellgrau",
   "boden": "fliesenWeiss",
   "zustand": ["neu", "gebraucht"],
@@ -21,10 +21,10 @@
     "#........................#",
     "#........................#",
     "#........................#",
-    "#ffffffffffffff##kkkkkkkk#",
-    "#ffffffffffffff##kkkkkkkk#",
-    "#ffffffffffffff##kkkkkkkk#",
-    "#ffffffffffffff##kkkkkkkk#",
+    "#ffffffffffffffkkkkkkkkkk#",
+    "#ffffffffffffffkkkkkkkkkk#",
+    "#ffffffffffffffkkkkkkkkkk#",
+    "#ffffffffffffffkkkkkkkkkk#",
     "#ffffffffffffffkkkkkkkkkk#",
     "#ffffffffffffffkkkkkkkkkk#",
     "##########################"
@@ -83,21 +83,9 @@
       "id": "t1"
     },
     {
-      "moebel": "sb8StuhlRuecken",
-      "feld": [5, 5],
-      "zu": "t1",
-      "versatz": [8, 0]
-    },
-    {
       "moebel": "sb8Bildschirmtisch",
       "feld": [9, 4],
       "id": "t2"
-    },
-    {
-      "moebel": "sb8StuhlRuecken",
-      "feld": [11, 5],
-      "zu": "t2",
-      "versatz": [8, 0]
     },
     {
       "moebel": "sb8Bildschirmtisch",
@@ -105,21 +93,9 @@
       "id": "t3"
     },
     {
-      "moebel": "sb8StuhlRuecken",
-      "feld": [5, 9],
-      "zu": "t3",
-      "versatz": [8, 0]
-    },
-    {
       "moebel": "sb8Bildschirmtisch",
       "feld": [9, 8],
       "id": "t4"
-    },
-    {
-      "moebel": "sb8StuhlRuecken",
-      "feld": [11, 9],
-      "zu": "t4",
-      "versatz": [8, 0]
     },
     {
       "moebel": "sb8StuhlRuecken",
@@ -307,7 +283,7 @@
       "zu": "lin"
     },
     {
-      "moebel": "rv5Buecherregal",
+      "moebel": "buecherregal",
       "feld": [23, 13]
     },
     {
@@ -317,6 +293,94 @@
     {
       "moebel": "sb8Pflanze",
       "feld": [24, 17]
+    },
+    {
+      "moebel": "cr9BordL2",
+      "feld": [1, 11],
+      "bauteil_ok": true
+    },
+    {
+      "moebel": "cr9BordL2",
+      "feld": [3, 11],
+      "bauteil_ok": true
+    },
+    {
+      "moebel": "cr9BordL2",
+      "feld": [5, 11],
+      "bauteil_ok": true
+    },
+    {
+      "moebel": "cr9BordL2",
+      "feld": [7, 11],
+      "bauteil_ok": true
+    },
+    {
+      "moebel": "cr9BordL2",
+      "feld": [9, 11],
+      "bauteil_ok": true
+    },
+    {
+      "moebel": "cr9BordL2",
+      "feld": [11, 11],
+      "bauteil_ok": true
+    },
+    {
+      "moebel": "cr9BordL2",
+      "feld": [13, 11],
+      "bauteil_ok": true
+    },
+    {
+      "moebel": "cr9BordL2",
+      "feld": [15, 11],
+      "bauteil_ok": true
+    },
+    {
+      "moebel": "cr9BordL2",
+      "feld": [17, 11],
+      "bauteil_ok": true
+    },
+    {
+      "moebel": "cr9BordL2",
+      "feld": [19, 11],
+      "bauteil_ok": true
+    },
+    {
+      "moebel": "cr9BordL2",
+      "feld": [21, 11],
+      "bauteil_ok": true
+    },
+    {
+      "moebel": "cr9BordL2",
+      "feld": [23, 11],
+      "bauteil_ok": true
+    },
+    {
+      "moebel": "cr9BordL2",
+      "feld": [25, 11],
+      "bauteil_ok": true
+    },
+    {
+      "moebel": "cr9BordQ6",
+      "feld": [1, 13],
+      "bauteil_ok": true
+    },
+    {
+      "moebel": "cr9BordQ10",
+      "feld": [9, 13],
+      "bauteil_ok": true
+    },
+    {
+      "moebel": "cr9BordQ4",
+      "feld": [21, 13],
+      "bauteil_ok": true
+    },
+    {
+      "moebel": "mf7Buecherregal",
+      "feld": [15, 13]
+    },
+    {
+      "moebel": "sb8Pflanze",
+      "feld": [16, 15]
     }
   ],
   "ausloeser": [
@@ -364,44 +428,44 @@
     {
       "name": "schueler1",
       "typ": "statist",
-      "feld": [3, 6],
+      "feld": [5, 6],
       "eigenschaften": {
-        "von": "3,6",
-        "bis": "3,6",
-        "tun": "spielt am Bildschirm gegen die Maschine",
+        "von": "5,6",
+        "bis": "5,6",
+        "tun": "steht am Stehpult und spielt am Bildschirm gegen die Maschine",
         "wann": "tag"
       }
     },
     {
       "name": "schueler2",
       "typ": "statist",
-      "feld": [9, 6],
+      "feld": [11, 6],
       "eigenschaften": {
-        "von": "9,6",
-        "bis": "9,6",
-        "tun": "spielt am Bildschirm gegen die Maschine",
+        "von": "11,6",
+        "bis": "11,6",
+        "tun": "steht am Stehpult und spielt am Bildschirm gegen die Maschine",
         "wann": "tag"
       }
     },
     {
       "name": "schueler3",
       "typ": "statist",
-      "feld": [3, 10],
+      "feld": [5, 10],
       "eigenschaften": {
-        "von": "3,10",
-        "bis": "3,10",
-        "tun": "spielt am Bildschirm gegen die Maschine",
+        "von": "5,10",
+        "bis": "5,10",
+        "tun": "steht am Stehpult und spielt am Bildschirm gegen die Maschine",
         "wann": "tag"
       }
     },
     {
       "name": "schueler4",
       "typ": "statist",
-      "feld": [9, 10],
+      "feld": [11, 10],
       "eigenschaften": {
-        "von": "9,10",
-        "bis": "9,10",
-        "tun": "spielt am Bildschirm gegen die Maschine",
+        "von": "11,10",
+        "bis": "11,10",
+        "tun": "steht am Stehpult und spielt am Bildschirm gegen die Maschine",
         "wann": "tag"
       }
     },

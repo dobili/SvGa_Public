@@ -37,23 +37,23 @@
   "objekte": [
     {
       "moebel": "el7FassadeA",
-      "feld": [1, 2]
+      "feld": [1, 0]
     },
     {
       "moebel": "el7FassadeB",
-      "feld": [6, 2]
+      "feld": [6, 0]
     },
     {
       "moebel": "el7Kaffeehaus",
-      "feld": [11, 2]
+      "feld": [11, 0]
     },
     {
       "moebel": "el7FassadeC",
-      "feld": [18, 2]
+      "feld": [18, 0]
     },
     {
       "moebel": "el7FassadeA",
-      "feld": [23, 2]
+      "feld": [23, 0]
     },
     {
       "moebel": "el7Gaslaterne",

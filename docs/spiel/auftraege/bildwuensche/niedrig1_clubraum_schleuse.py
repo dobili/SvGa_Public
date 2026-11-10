@@ -223,24 +223,36 @@ def frachtkahn() -> Image.Image:
 
 
 def schleusentor_stemm() -> Image.Image:
-    """Stemmtor 32 × 144 für eine Kammer mit 7 Reihen Wasser (Mauer oben und unten je eine Kachel):
-    zwei Holzflügel treffen sich in der Mitte in einem flachen V gegen den Wasserdruck, darauf ein
-    Laufsteg mit Geländer, oben und unten auf der Mauer je ein Drehbalken."""
+    """Stemmtor 32 × 144 für eine Kammer mit 7 Reihen Wasser (Mauer oben und unten je eine Kachel).
+
+    Zwei breite Holzflügel treffen sich in der Mitte in einem deutlichen V gegen das Oberwasser
+    (Spitze nach rechts). Darauf liegt über die ganze Länge ein Laufsteg aus Bohlen mit Geländer
+    auf beiden Seiten; oben und unten auf der Mauer je ein Drehbalken. Zweites Gutachten Runde 8:
+    „ein Flügel je Tor, ohne Laufsteg“."""
     bild = Image.new("RGBA", (32, TOR_H))
     z = ImageDraw.Draw(bild)
-    mitte_y, mitte_x, oben_y, unten_y = TOR_H // 2, 20, 16, TOR_H - 16
+    mitte_y, oben_y, unten_y, spitze_x, rand_x = TOR_H // 2, 16, TOR_H - 16, 26, 6
     for y0, y1 in ((oben_y, mitte_y), (mitte_y, unten_y)):
-        spitze = y1 if y0 == oben_y else y0
-        rand = y0 if y0 == oben_y else y1
-        z.polygon([(8, rand), (14, rand), (mitte_x + 2, spitze), (mitte_x - 4, spitze)], fill=RAHMEN)
-        z.polygon([(9, rand), (13, rand), (mitte_x + 1, spitze), (mitte_x - 3, spitze)], fill=HOLZ_DUNKEL)
-    for y in range(oben_y + 2, unten_y, 6):
-        z.line((10, y, 12, y), fill=HOLZ_HELL)
+        rand_y, spitz_y = (y0, y1) if y0 == oben_y else (y1, y0)
+        z.polygon(
+            [(rand_x, rand_y), (rand_x + 7, rand_y), (spitze_x, spitz_y), (spitze_x - 7, spitz_y)],
+            fill=RAHMEN,
+        )
+        z.polygon(
+            [(rand_x + 1, rand_y), (rand_x + 6, rand_y), (spitze_x - 1, spitz_y), (spitze_x - 6, spitz_y)],
+            fill=HOLZ_DUNKEL,
+        )
+    for y in range(oben_y, unten_y, 4):  # Bohlen des Laufstegs
+        z.rectangle((11, y, 20, y + 2), fill=HOLZ_HELL)
+        z.line((11, y + 3, 20, y + 3), fill=RAHMEN)
+    for x in (10, 21):  # Geländer mit Pfosten
+        z.line((x, oben_y - 4, x, unten_y + 2), fill=STAHL)
+        for y in range(oben_y, unten_y, 12):
+            z.rectangle((x - 1, y, x + 1, y + 1), fill=RAHMEN)
     for y in (oben_y - 8, unten_y + 2):
         z.rectangle((2, y, 29, y + 4), fill=RAHMEN)
         z.rectangle((3, y + 1, 28, y + 3), fill=HOLZ_HELL)
         z.rectangle((26, y + 1, 28, y + 3), fill=(90, 90, 100, 255))
-    z.line((7, oben_y - 4, 7, unten_y + 2), fill=STAHL)
     return bild
 
 

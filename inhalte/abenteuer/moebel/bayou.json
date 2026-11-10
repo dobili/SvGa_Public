@@ -197,6 +197,26 @@
       "art": "boot",
       "zustand": "alt",
       "stil": "rustikal"
+    },
+    "by9HuetteTheron": {
+      "quelle": "spiel/eigene/huette_bretter_a.png",
+      "breite": 80,
+      "hoehe": 80,
+      "kollision": true,
+      "art": "gebaeude",
+      "blick": "unten",
+      "stil": "rustikal",
+      "zustand": "alt"
+    },
+    "by9HuetteKrebs": {
+      "quelle": "spiel/eigene/huette_bretter_b.png",
+      "breite": 80,
+      "hoehe": 80,
+      "kollision": true,
+      "art": "gebaeude",
+      "blick": "unten",
+      "stil": "rustikal",
+      "zustand": "alt"
     }
   }
 }

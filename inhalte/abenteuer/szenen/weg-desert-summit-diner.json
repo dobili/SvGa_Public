@@ -2,12 +2,15 @@
   "karte": "wegDesertSummit.diner",
   "datei": "karten/weg-desert-summit-diner.json",
   "art": "aussen",
-  "beschreibung": "Weg 7, die Wüstenstraße: Die Old Mother Road kommt am Ostrand aus Desert Springs und läuft durch roten Sand nach Westen. Kakteen am Bankett, Tafelberge aus rotem Fels am Nord- und Südrand. In der Mitte liegt King's Diner, ein silberner Speisewagen mit dem Neonschild, dem das K fehlt, daneben das Starlight Motel mit fünf Zimmern; davor ein Parkplatz. Südlich der Straße stehen Sattelzüge auf dem Fernfahrerplatz, unter einem Sonnenschirm spielt Earl Dubois Königsrennen. Hinter dem Diner liegt das Neon-K im Sand. Im Westen Wacholder und Kakteen, die Straße führt zur Bergstraße. Variante C, die reichere: Diner und Motel enger zusammen, ein Campingplatz mit Wohnwagen am Wasserturm, zwei Sattelzüge und viele blühende Kakteen, der Felsbogen weiter im Westen, die alte Zapfsäule am Felsbogen.",
+  "beschreibung": "Weg 7, die Wüstenstraße: Die Old Mother Road kommt am Ostrand aus Desert Springs und läuft gerade durch roten Sand nach Westen, mit gelber Mittellinie und weißen Randlinien. Im Norden die Felswand der Tafelberge mit einem Vorsprung, im Südwesten und Südosten zwei Tafelberge mit Felswand. In der Mitte King's Diner, ein silberner Speisewagen mit dem Neonschild, dem das K fehlt, daneben das Starlight Motel; davor Gehweg und Parkplatz. Südlich der Straße der Fernfahrerplatz mit Buchten und zwei Sattelzügen, daneben spielt Earl Dubois unter einem Sonnenschirm Königsrennen. Hinter dem Diner liegt das Neon-K im Sand. Im Westen die Tankstelle auf ihrem Vorplatz an der Straße, dahinter ein Autowrack, weiter westlich der Felsbogen, Wacholder und Kakteen; am Westrand Bank und Wegweiser zur Bergstraße. Im Osten Reklametafel, Windrad, Wasserturm, ein Wohnwagen und viele blühende Kakteen.",
   "wand": "felsRot",
   "boden": "sandRot",
   "boeden": {
     "r": "gras",
     "s": "asphalt",
+    "a": "asphalt",
+    "b": "asphalt",
+    "p": "pflaster",
     "k": "schotter"
   },
   "zustand": ["neu", "gebraucht", "alt"],
@@ -15,32 +18,32 @@
   "raster": [
     "######################################################################################################################################################",
     "######################################################################################################################################################",
-    "######################################################################.................................###############################################",
-    "#.....................................................#############..................................................................................#",
-    "#.....................................................#############..................................................................................#",
-    "#....................................................................................................................................................#",
-    "#....................................................................................................................................................#",
-    "#....................................................................................................................................................#",
-    "#....................................................................................................................................................#",
-    "#....................................................................................................................................................#",
-    "#.....................................................................ssssssssssssssssssssssssssssssssss.............................................#",
-    "#.....................................................................ssssssssssssssssssssssssssssssssss.............................................#",
-    "#.................................................sssssssssssssssssssssssssssssssssssssssssssssssssssssssss..........................................#",
-    "#.................................................sssssssssssssssssssssssssssssssssssssssssssssssssssssssss..........................................#",
-    "#.................................................sssssssssssssssssssssssssssssssssssssssssssssssssssssssss..........................................#",
-    "#.................................................sss..sssssssssssssssssssssssss........................ssssssssssssssssssssssssssssssssssssssssssssss",
-    "#.................................................sss..sssssssssssssssssssssssss........................ssssssssssssssssssssssssssssssssssssssssssssss",
-    "#.................................................sss..sssssssssssssssssssssssss........................ssssssssssssssssssssssssssssssssssssssssssssss",
-    "#.................................................sss..sssssssssssssssssssssssss...........................kkkkkkkkkkkkkkkkkkkkkkkkkkkkkkkkkkkkkkkkkk#",
-    "sssssssssssssssssssssssssssssssssssssssssssssssssssss..sssssssssssssssssssssssss.....................................................................#",
-    "sssssssssssssssssssssssssssssssssssssssssssssssssssss..sssssssssssssssssssssssss.....................................................................#",
-    "sssssssssssssssssssssssssssssssssssssssssssssssssssss..sssssssssssssssssssssssss.....................................................................#",
-    "#kkkkkkkkkkkkkkkkkkkkkkkkkkkkkkkkkkkkkkkkkkkkkkkkk.....sssssssssssssssssssssssss.....................................................................#",
-    "#......................................................sssssssssssssssssssssssss.....................................................................#",
-    "#......................................................sssssssssssssssssssssssss..................#############################......................#",
-    "#......................................................sssssssssssssssssssssssss..................#############################......................#",
-    "#.................................................................................................#############################......................#",
     "######################################################################################################################################################",
+    "#.....................................................#############..................................................................................#",
+    "#.....................................................#############..................................................................................#",
+    "#.....................................................#############..................................................................................#",
+    "#....................................................................................................................................................#",
+    "#....................................................................................................................................................#",
+    "#....................................................................................................................................................#",
+    "#...........................aaaaaaaaaaaaaaa..........................................................................................................#",
+    "#...........................aaaaaaaaaaaaaaa...........................ppppppppppppppppppppppppppppppppppp............................................#",
+    "#...........................aaaaaaaaaaaaaaa...........................aaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaa............................................#",
+    "#...........................aaaaaaaaaaaaaaa...........................aaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaa............................................#",
+    "#...........................aaaaaaaaaaaaaaa...........................aaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaa............................................#",
+    "#...........................aaaaaaaaaaaaaaa...........................aaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaa............................................#",
+    "ssssssssssssssssssssssssssssssssssssssssssssssssssssssssssssssssssssssssssssssssssssssssssssssssssssssssssssssssssssssssssssssssssssssssssssssssssssss",
+    "ssssssssssssssssssssssssssssssssssssssssssssssssssssssssssssssssssssssssssssssssssssssssssssssssssssssssssssssssssssssssssssssssssssssssssssssssssssss",
+    "ssssssssssssssssssssssssssssssssssssssssssssssssssssssssssssssssssssssssssssssssssssssssssssssssssssssssssssssssssssssssssssssssssssssssssssssssssssss",
+    "#...................................................bbbbbbbbbbbbbbbbbbbbbbbbbbbbbbb..................................................................#",
+    "#...................................................bbbbbbbbbbbbbbbbbbbbbbbbbbbbbbb..................................................................#",
+    "#...................................................bbbbbbbbbbbbbbbbbbbbbbbbbbbbbbb..................................................................#",
+    "#.###############...................................bbbbbbbbbbbbbbbbbbbbbbbbbbbbbbb..................................................................#",
+    "#.###############...................................bbbbbbbbbbbbbbbbbbbbbbbbbbbbbbb...................................##############################.#",
+    "#.###############...................................bbbbbbbbbbbbbbbbbbbbbbbbbbbbbbb...................................##############################.#",
+    "#.###############...................................bbbbbbbbbbbbbbbbbbbbbbbbbbbbbbb...................................##############################.#",
+    "#.###############...................................bbbbbbbbbbbbbbbbbbbbbbbbbbbbbbb...................................##############################.#",
+    "#.###############...................................bbbbbbbbbbbbbbbbbbbbbbbbbbbbbbb...................................##############################.#",
+    "#....................................................................................................................................................#",
     "######################################################################################################################################################",
     "######################################################################################################################################################"
   ],
@@ -93,15 +96,15 @@
     },
     {
       "moebel": "wds6SattelzugBlau",
-      "feld": [56, 16]
+      "feld": [56, 18]
     },
     {
       "moebel": "wds6SattelzugRot",
-      "feld": [56, 21]
+      "feld": [56, 22]
     },
     {
       "moebel": "wds6Spieltisch",
-      "feld": [71, 20],
+      "feld": [85, 20],
       "id": "tisch"
     },
     {
@@ -111,27 +114,27 @@
     },
     {
       "moebel": "wds6Reifen",
-      "feld": [76, 16]
+      "feld": [50, 19]
     },
     {
       "moebel": "wds6Reifen",
-      "feld": [77, 16]
+      "feld": [51, 19]
     },
     {
       "moebel": "wds6Reifen",
-      "feld": [76, 17]
+      "feld": [50, 20]
     },
     {
       "moebel": "wds6Felsbogen",
-      "feld": [20, 3]
+      "feld": [14, 3]
     },
     {
       "moebel": "wds6Tankstelle",
-      "feld": [32, 12]
+      "feld": [32, 8]
     },
     {
       "moebel": "wds6Autowrack",
-      "feld": [40, 16]
+      "feld": [45, 11]
     },
     {
       "moebel": "wds6Ortsschild",
@@ -139,11 +142,11 @@
     },
     {
       "moebel": "wds6Bank",
-      "feld": [5, 17]
+      "feld": [5, 19]
     },
     {
       "moebel": "wds6Wegweiser",
-      "feld": [2, 17]
+      "feld": [2, 18]
     },
     {
       "moebel": "wds6Saguaro",
@@ -166,16 +169,12 @@
       "feld": [9, 11]
     },
     {
-      "moebel": "wds6Saguaro",
-      "feld": [14, 13]
+      "moebel": "wds6SteinRot",
+      "feld": [8, 9]
     },
     {
       "moebel": "wds6SteinRot",
-      "feld": [16, 9]
-    },
-    {
-      "moebel": "wds6SteinRot",
-      "feld": [31, 9]
+      "feld": [25, 7]
     },
     {
       "moebel": "wds6Geierkreis",
@@ -251,39 +250,7 @@
     },
     {
       "moebel": "wds6KaktusKlein",
-      "feld": [144, 20]
-    },
-    {
-      "moebel": "wds6KaktusBluehend",
-      "feld": [86, 21]
-    },
-    {
-      "moebel": "wds6KaktusKlein",
       "feld": [100, 19]
-    },
-    {
-      "moebel": "wds6KaktusKlein",
-      "feld": [130, 22]
-    },
-    {
-      "moebel": "wds6KaktusKlein",
-      "feld": [83, 24]
-    },
-    {
-      "moebel": "wds6KaktusBluehend",
-      "feld": [82, 19]
-    },
-    {
-      "moebel": "wds6KaktusKlein",
-      "feld": [87, 24]
-    },
-    {
-      "moebel": "wds6KaktusBluehend",
-      "feld": [86, 18]
-    },
-    {
-      "moebel": "wds6Saguaro",
-      "feld": [132, 22]
     },
     {
       "moebel": "wds6KaktusKlein",
@@ -295,31 +262,11 @@
     },
     {
       "moebel": "wds6KaktusKlein",
-      "feld": [146, 21]
-    },
-    {
-      "moebel": "wds6KaktusKlein",
       "feld": [109, 20]
     },
     {
       "moebel": "wds6KaktusKlein",
       "feld": [113, 21]
-    },
-    {
-      "moebel": "wds6Saguaro",
-      "feld": [47, 14]
-    },
-    {
-      "moebel": "wds6Saguaro",
-      "feld": [28, 14]
-    },
-    {
-      "moebel": "wds6Saguaro",
-      "feld": [44, 14]
-    },
-    {
-      "moebel": "wds6KaktusBluehend",
-      "feld": [41, 12]
     },
     {
       "moebel": "wds6KaktusKlein",
@@ -344,10 +291,6 @@
     {
       "moebel": "wds6Wacholder",
       "feld": [40, 24]
-    },
-    {
-      "moebel": "wds6KaktusBluehend",
-      "feld": [52, 24]
     },
     {
       "moebel": "wds6Wacholder",
@@ -381,12 +324,32 @@
       "moebel": "sc8Finkenzeichen",
       "feld": [87, 10],
       "id": "ereignis81"
+    },
+    {
+      "moebel": "wds6KaktusKlein",
+      "feld": [112, 21]
+    },
+    {
+      "moebel": "wds6Saguaro",
+      "feld": [108, 23]
+    },
+    {
+      "moebel": "wds6KaktusBluehend",
+      "feld": [96, 24]
+    },
+    {
+      "moebel": "wds6KaktusKlein",
+      "feld": [46, 22]
+    },
+    {
+      "moebel": "wds6Wacholder",
+      "feld": [4, 12]
     }
   ],
   "ausloeser": [
     {
       "name": "start",
-      "feld": [147, 16],
+      "feld": [146, 16],
       "eigenschaften": {
         "richtung": "links"
       }
@@ -405,15 +368,15 @@
     },
     {
       "name": "weiterBergstrasse",
-      "feld": [0, 19]
+      "feld": [0, 15]
     },
     {
       "name": "weiterBergstrasse",
-      "feld": [0, 20]
+      "feld": [0, 16]
     },
     {
       "name": "weiterBergstrasse",
-      "feld": [0, 21]
+      "feld": [0, 17]
     },
     {
       "name": "tafel",
@@ -437,7 +400,7 @@
     },
     {
       "name": "seite08",
-      "feld": [54, 17]
+      "feld": [53, 19]
     },
     {
       "name": "hinterzimmerTuer",
@@ -453,23 +416,23 @@
     },
     {
       "name": "aussicht",
-      "feld": [6, 18]
+      "feld": [6, 20]
     }
   ],
   "figuren": [
     {
       "name": "earl",
-      "feld": [73, 26]
+      "feld": [90, 23]
     }
   ],
   "belebung": [
     {
       "name": "trucker",
       "typ": "statist",
-      "feld": [68, 15],
+      "feld": [68, 19],
       "eigenschaften": {
-        "von": "68,15",
-        "bis": "68,15",
+        "von": "68,19",
+        "bis": "68,19",
         "tun": "lehnt am Führerhaus",
         "wann": "tag"
       }
@@ -487,10 +450,10 @@
     {
       "name": "roadrunner",
       "typ": "tier",
-      "feld": [23, 17],
+      "feld": [23, 19],
       "eigenschaften": {
-        "von": "23,17",
-        "bis": "27,17",
+        "von": "23,19",
+        "bis": "27,19",
         "verhalten": "ausweichen"
       }
     },
@@ -509,10 +472,10 @@
     {
       "name": "fernfahrer",
       "typ": "statist",
-      "feld": [62, 20],
+      "feld": [67, 21],
       "eigenschaften": {
-        "von": "62,20",
-        "bis": "62,20",
+        "von": "67,21",
+        "bis": "67,21",
         "tun": "kontrolliert die Reifen seines Lasters",
         "wann": "tag",
         "sagt": "statist.wegDesertSummit.diner.fernfahrer"
@@ -533,10 +496,10 @@
     {
       "name": "tankwart",
       "typ": "statist",
-      "feld": [42, 18],
+      "feld": [38, 14],
       "eigenschaften": {
-        "von": "42,18",
-        "bis": "42,18",
+        "von": "38,14",
+        "bis": "38,14",
         "tun": "füllt Wasser in einen Kühler",
         "wann": "tag"
       }
@@ -544,20 +507,20 @@
     {
       "name": "praeriehunde",
       "typ": "tier",
-      "feld": [105, 15],
+      "feld": [108, 20],
       "eigenschaften": {
-        "von": "105,15",
-        "bis": "109,15",
+        "von": "108,20",
+        "bis": "112,20",
         "verhalten": "ausweichen"
       }
     },
     {
       "name": "eidechse",
       "typ": "tier",
-      "feld": [30, 22],
+      "feld": [30, 21],
       "eigenschaften": {
-        "von": "30,22",
-        "bis": "35,22",
+        "von": "30,21",
+        "bis": "35,21",
         "verhalten": "flitzen"
       }
     },
@@ -584,10 +547,10 @@
     {
       "name": "kraehen",
       "typ": "tier",
-      "feld": [120, 20],
+      "feld": [100, 25],
       "eigenschaften": {
-        "von": "120,20",
-        "bis": "130,20",
+        "von": "100,25",
+        "bis": "110,25",
         "verhalten": "fliegen"
       }
     },
@@ -601,5 +564,11 @@
         "verhalten": "flitzen"
       }
     }
-  ]
+  ],
+  "markierung": ["s"],
+  "buchten": {
+    "b": 4
+  },
+  "kante": "klippe",
+  "fels": "rot"
 }

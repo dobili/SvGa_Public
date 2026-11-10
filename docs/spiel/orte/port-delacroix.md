@@ -322,3 +322,48 @@ auf dem Deich, Bauzaun um das Musikhaus, zwei Zelte, Bläser auf Kiste, Gebäcks
 Fässer und Netze am Kai, Laternen an den Straßen, Wäscheleinen in den Gärten, Schilf in der Marsch,
 Wartehäuschen am Bahnsteig. **Belebung:** Pelikane und Möwen am Kai, Katze auf dem Boot, Helfer mit
 Brettern, Kinder mit Ball zwischen den Zelten, Reiher am Wasser.
+
+## Runde 9 (10.11.2026): Mängel aus der Variantenwahl, Winter, Zustände (mittel-1)
+
+**Außen (`portDelacroix.aussen`):**
+
+- Winter nach dem Hurrikan (`jahreszeit: winter`), dazu Sturmschutt (Schutthaufen, Ziegel) und
+  die Planen auf den Dächern.
+- Der Deich zeigt seine Höhe: `kante: klippe`, Böschung in den Reihen 8–10 unter Krone und
+  Sandsäcken, Treppen auf den beiden Rampen (x 29–30 und 52–53).
+- Die Rue du Port hat eine gestrichelte Mittellinie. Pflaster und Asphalt haben rundum Bordstein
+  zum Gras.
+- Die Boote liegen längs im Kanal, am Kai festgemacht (LimeZus Schlauchboot von oben, das einzige
+  Boot in Längsrichtung), statt quer darin.
+- Die Läden heißen nach ihrem Zweck: Fisch, Tabak, Brot, Musik, Hafenbedarf und Bücher statt
+  STORE und MARKET. Die Türen sind offen, ohne Vorhängeschloss (Bildwunsch
+  `laeden_schilder.py`).
+- Die Kartenränder bleiben mit Klippen Boden. Dafür hat `kartenbild` eine kleine zentrale Änderung
+  bekommen: Randwände draußen gehen vor den Klippenflächen.
+- Zustand `musikhaus-neu` (wenn `musikhausOffen`): Das Musikhaus am Kai ist ohne Planen und
+  Bauzaun und hat das Schild „Musik und Schach, seit 1889“. Der Katalog hat kein unbeschädigtes
+  Gegenstück zum Endzeit-Haus, deshalb bleibt die Form gleich.
+
+**Musikhaus (Ruine):**
+
+- Dunkle Dielen ohne Schrägmuster: `holzDunkel` ist jetzt eine ruhige dunkle Diele, zentral für
+  alle Karten.
+- Nur noch ein Loch im Boden. Unter dem Loch im Dach (`lochImDach`) liegen nasse Dielen und zwei
+  Pfützen.
+- Trümmer, Kisten und Bretter stehen je einmal; dazu verschiedene Teile: Ziegel, kaputte Leiter,
+  Rohr, Stiefel, breiter Schutthaufen und Kisten.
+
+**Werkstatt:**
+
+- Die verwaschene Hobelbank an der Wand ist ersetzt durch eine Werkbank (3 × 3) mit Holzspänen
+  davor.
+- Grubenholz und blaues Fass sind weg. Dazu ein offenes beiges Klavier in Arbeit, ein
+  Klavierhocker und ein zweiter Werkzeugschrank.
+- Das Foto bleibt klein: Ein größeres Foto gibt der Katalog nicht her.
+
+**Turnhalle:**
+
+- Heller Hallenboden (neuer Boden `hallenboden`) statt des grauen Spielfelds auf Dielen.
+- Ein Korb an der Nordwand mit Zone darunter (weiße Linien); der zweite Korb ist weg.
+- Lehrertisch von vorn statt des schmalen Pults von der Seite.
+- Zwei Zuschauer sitzen auf den Stühlen, die Tische stehen nicht mehr auf Linien.

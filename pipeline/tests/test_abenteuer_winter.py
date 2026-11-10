@@ -35,3 +35,17 @@ def test_blumen_und_pilze_in_winterszenen():
     assert winterbefunde(szene) == []
     befunde = winterbefunde({**szene, "jahreszeit": "winter"})
     assert [b.split(":")[0] for b in befunde] == ["wg4BlumeBlau", "wg4Pilze"]
+
+
+def test_baeume_bekommen_schneekappen_statt_schneebaellen():
+    """Regel 10.67: dunkler Rand und 10 hellgrüne Pixel (Strecke 11, Kappe 4): Rand bleibt, 3 Schnee,
+    7 Wintergrün."""
+    from pipeline.abenteuer.winter import schneekappen, winterlaub
+
+    rand, hell = (20, 50, 25, 255), (90, 170, 70, 255)
+    aus = schneekappen(1, 11, [rand] + [hell] * 10)
+    assert aus[0] == rand
+    schnee = (*winterfarbe(*hell[:3]), 255)
+    gruen = (*winterlaub(*hell[:3]), 255)
+    assert aus[1:] == [schnee] * 3 + [gruen] * 7
+    assert schneekappen(1, 10, [hell] * 10) == [schnee] * 4 + [gruen] * 6

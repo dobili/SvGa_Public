@@ -3,7 +3,7 @@
  * erzeugt), Umfärben von Bilddaten und Erkennen einer Winterkarte.
  */
 import { describe, expect, it } from "vitest";
-import { faerbeDaten, istWinter, winterfarbe } from "./winter";
+import { faerbeMoebelDaten, istWinter, winterfarbe } from "./winter";
 
 /** r, g, b → Winterfarbe mit Wasser, dann ohne Wasser (Werte aus winter.py). */
 const AUS_PYTHON: readonly (readonly number[])[] = [
@@ -60,11 +60,93 @@ describe("winterfarbe", () => {
   });
 });
 
-describe("faerbeDaten und istWinter", () => {
-  it("färbt RGBA um und lässt die Transparenz", () => {
-    const daten = new Uint8ClampedArray([106, 170, 72, 128, 200, 40, 40, 255]);
-    faerbeDaten(daten);
-    expect([...daten]).toEqual([222, 221, 219, 128, 200, 40, 40, 255]);
+/** Testbild 3 × 12 und Ergebnis aus schneekappen in winter.py (Spalten: Baum, Baum mit Glanzpunkt, Wasser). */
+const KAPPEN = {
+  breite: 3,
+  hoehe: 12,
+  ein: [
+    [0, 0, 0, 0],
+    [0, 0, 0, 0],
+    [60, 120, 200, 255],
+    [20, 50, 25, 255],
+    [0, 0, 0, 0],
+    [60, 120, 200, 255],
+    [90, 170, 70, 255],
+    [20, 50, 25, 255],
+    [0, 0, 0, 0],
+    [90, 170, 70, 255],
+    [90, 170, 70, 255],
+    [0, 0, 0, 0],
+    [90, 170, 70, 255],
+    [235, 240, 230, 255],
+    [0, 0, 0, 0],
+    [60, 130, 50, 255],
+    [90, 170, 70, 255],
+    [0, 0, 0, 0],
+    [60, 130, 50, 255],
+    [90, 170, 70, 255],
+    [0, 0, 0, 0],
+    [60, 130, 50, 255],
+    [60, 130, 50, 255],
+    [0, 0, 0, 0],
+    [90, 170, 70, 255],
+    [60, 130, 50, 255],
+    [0, 0, 0, 0],
+    [60, 130, 50, 255],
+    [20, 50, 25, 255],
+    [0, 0, 0, 0],
+    [60, 130, 50, 255],
+    [140, 95, 60, 255],
+    [0, 0, 0, 0],
+    [140, 95, 60, 255],
+    [140, 95, 60, 255],
+    [0, 0, 0, 0],
+  ],
+  aus: [
+    [0, 0, 0, 0],
+    [0, 0, 0, 0],
+    [60, 120, 200, 255],
+    [20, 50, 25, 255],
+    [0, 0, 0, 0],
+    [60, 120, 200, 255],
+    [222, 221, 219, 255],
+    [20, 50, 25, 255],
+    [0, 0, 0, 0],
+    [222, 221, 219, 255],
+    [222, 221, 219, 255],
+    [0, 0, 0, 0],
+    [222, 221, 219, 255],
+    [250, 250, 250, 255],
+    [0, 0, 0, 0],
+    [59, 91, 54, 255],
+    [84, 122, 75, 255],
+    [0, 0, 0, 0],
+    [59, 91, 54, 255],
+    [84, 122, 75, 255],
+    [0, 0, 0, 0],
+    [59, 91, 54, 255],
+    [59, 91, 54, 255],
+    [0, 0, 0, 0],
+    [84, 122, 75, 255],
+    [59, 91, 54, 255],
+    [0, 0, 0, 0],
+    [59, 91, 54, 255],
+    [20, 50, 25, 255],
+    [0, 0, 0, 0],
+    [59, 91, 54, 255],
+    [119, 97, 79, 255],
+    [0, 0, 0, 0],
+    [119, 97, 79, 255],
+    [119, 97, 79, 255],
+    [0, 0, 0, 0],
+  ],
+} as const;
+
+describe("faerbeMoebelDaten und istWinter", () => {
+  it("Schneekappen wie die Pipeline: oben Schnee, darunter Wintergrün, Rand und Wasser bleiben", () => {
+    const daten = new Uint8ClampedArray(KAPPEN.ein.flat());
+    faerbeMoebelDaten(daten, KAPPEN.breite, KAPPEN.hoehe);
+    expect([...daten]).toEqual(KAPPEN.aus.flat());
   });
 
   it("erkennt die Eigenschaft jahreszeit", () => {

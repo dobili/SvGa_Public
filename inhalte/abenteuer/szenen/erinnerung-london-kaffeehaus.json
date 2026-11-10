@@ -173,11 +173,11 @@
     {
       "name": "anderssen",
       "typ": "statist",
-      "feld": [7, 9],
+      "feld": [7, 8],
       "eigenschaften": {
-        "von": "7,9",
-        "bis": "7,9",
-        "tun": "spielt Schach",
+        "von": "7,8",
+        "bis": "7,8",
+        "tun": "sitzt am mittleren Tisch und spielt Schach",
         "wann": "tag",
         "verhalten": "sitzen"
       }
@@ -185,11 +185,11 @@
     {
       "name": "kieseritzky",
       "typ": "statist",
-      "feld": [10, 9],
+      "feld": [10, 8],
       "eigenschaften": {
-        "von": "10,9",
-        "bis": "10,9",
-        "tun": "spielt Schach",
+        "von": "10,8",
+        "bis": "10,8",
+        "tun": "sitzt am mittleren Tisch und spielt Schach",
         "wann": "tag",
         "verhalten": "sitzen"
       }
@@ -230,13 +230,25 @@
     {
       "name": "zeitungsleserBank",
       "typ": "statist",
-      "feld": [4, 5],
+      "feld": [3, 3],
       "eigenschaften": {
-        "von": "4,5",
-        "bis": "4,5",
-        "tun": "liest Zeitung an der Lederbank",
+        "von": "3,3",
+        "bis": "3,3",
+        "tun": "sitzt auf der Lederbank und liest Zeitung",
         "wann": "tag",
         "verhalten": "sitzen"
+      }
+    },
+    {
+      "name": "gastAmFenstertisch",
+      "typ": "statist",
+      "feld": [3, 8],
+      "eigenschaften": {
+        "von": "3,8",
+        "bis": "3,8",
+        "verhalten": "sitzen",
+        "tun": "sitzt am linken Tisch und grübelt über einer Stellung",
+        "wann": "tag"
       }
     }
   ],

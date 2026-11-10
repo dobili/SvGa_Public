@@ -314,3 +314,53 @@ Fuß). Vor den Tischen ist Platz für drei Kinder, Annek, Kira und {held}.
 - **Hochebene, Funde:** `seite03` (Kapitel 3, Gambits; an der Fahnenstange) und `finchTurmB` (Kiste
   mit Sportgeräten).
 - **Hochebene, Ansehen:** `pferd`, `schildSchule` (Felstürme) und `bus` (Schule).
+
+## Runde 9: Mängel der Variantenwahl, Muster und Zustände (10.11.2026, mittel-4)
+
+Grundlage: `docs/spiel/auftraege/variantenwahl.md` (Wahl A für außen, Bergladen, Felstürme, Schule; Wahl C
+für Hütte und Bergstation) und die fünf Muster.
+
+**Summit City außen.** (1) Die Gipfelwand ist jetzt eine Felswand mit Kante aus Klippenkacheln
+(`"kante": "klippe"`), die Gipfelfelsen haben eine in den Fels geschlagene Treppe; der Kartenrand neben
+Boden zeigt den Boden, kein Rahmen mehr (`"wandart": "gras"`). (2) Kein Haus steht mehr als zweimal: an
+die Stelle der dritten Ferienhütten, der dritten Berghütte, des dritten Hofs und des dritten Stalls treten
+Holzfällerhütte, Schuppen, Schutzhütte, Wohnhaus und die Bergwacht. (3) Das Seil läuft vom Mast der
+Talstation bis in die Gipfelwand; zwischen den Häusern stehen 34 Pinien, Wacholder, Felsen und
+Blumenbüsche. Kuh und Radfahrer standen in Gebäuden und sind versetzt. Nicht umgesetzt: Die Gipfelwand ist
+braun statt grau, weil LimeZus Klippe nur Erde und Gras kennt.
+
+**Wards Hütte.** (1) Die Vitrine mit dem Pokal von 1985 steht an der Nordwand. (2) Ruhige Dielen statt
+Schrägmuster. (3) Zwei gerahmte Endspieldiagramme (Bildwunsch `bildwuensche/endspieldiagramm.py`) statt
+Karo und Landschaftsbild; Kit und Haraldsen stehen an den Clubtischen, ihnen gegenüber sitzen zwei Clubmitglieder
+(Statisten auf den Stuhlfeldern mit „sitzt …“, Hinweis des Haupt-Chats).
+
+**Bergstation.** (1) Die Gondel steht auf der steinernen Plattform, das Seil läuft durch ein Glastor in der
+Nordwand hinaus. (2) Der Schalter ist ein Schaltertresen mit Glas und Kasse, dahinter ein Schalterbeamter
+(neuer Statist), daneben der Fahrplan statt des U-Bahn-Netzes. Das Schild „TICKET“ gehört zum Bild des
+Pakets. (3) Holzboden statt Schachbrettfliesen; Kaffeeautomat und Schließfächer stehen an West- und Ostwand.
+
+**Bergladen.** (1, 2) Drei Bergsportregale mit Seilen, Karabinern und Laternen, ein Seil am Haken, ein
+Ständer mit Seilbahn- und Wanderkarten und eine aufgefaltete Wanderkarte auf dem Kartentisch (Bildwunsch
+`bildwuensche/bergladen.py`); Dosenregale und Gießkannen sind weg. (3) Die Ladenhilfe steht hinter der
+Theke mit Kasse, der Kunde hat ein anderes Bild (`statist-31`).
+
+**Hochebene, Felstürme.** (1) Rote Felswand im Norden und Kante der Geländestufe im Süden aus roten
+Klippenkacheln (`"fels": "rot"`, Bildwunsch `bildwuensche/klippe_rot.py`), kein Rahmen. (2) Der Weg ist aus
+rotem Felsboden mit innen ausgerundeten Bögen (Erde hätte grüne Grasränder auf rotem Sand). (3) Der
+Steintisch ist ein flacher roter Stein mit Brett unter einem Baum; die Koppel hat einen Holzzaun. Das Pferd
+bleibt das Tierbild aus `belebungsbilder.py`.
+
+**Hochebene, Schule.** (1) Das Basketballfeld liegt auf eigenem Pflaster, ein Weg verbindet es mit dem Hof;
+kleiner als das Bild des Pakets geht es nicht. (2) Eine Hecke schließt das Gelände, offen nur an Straße und
+Schotterweg. (3) Die Straße hat Mittellinie und Randlinien (`"markierung"`) und läuft bis an beide Ränder;
+das zweite Backsteinhaus ist die Turnhalle und hat einen Weg zum Hof.
+
+**Zustände (10.63):**
+
+| Karte              | Bedingung                  | Szene                         | Was sich ändert                                     |
+| ------------------ | -------------------------- | ----------------------------- | --------------------------------------------------- |
+| `hochebene.schule` | `nicht annekSchachGelernt` | `hochebene-schule-vor-diplom` | ohne Tribüne, Steintische und Kisten des Diplomtags |
+
+Keine Zustände für Summit City außen, Hütte, Bergstation, Bergladen und Felstürme: Sommerfest, Wimpel und
+Plakat der Landesmeisterschaft stehen den ganzen Akt 4; das Drachenfest (Szene 90) ist ein Abend auf dem
+Marktplatz ohne feste neue Objekte.

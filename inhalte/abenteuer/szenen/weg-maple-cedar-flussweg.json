@@ -210,10 +210,6 @@
     },
     {
       "moebel": "wg4Erle",
-      "feld": [76, 18]
-    },
-    {
-      "moebel": "wg4Erle",
       "feld": [95, 19]
     },
     {
@@ -238,13 +234,13 @@
     },
     {
       "moebel": "wg5StegEndeLinks",
-      "feld": [56, 23],
+      "feld": [56, 24],
       "bauteil_ok": true,
       "versatz": [0, -7]
     },
     {
       "moebel": "wg5StegEndeRechts",
-      "feld": [57, 23],
+      "feld": [57, 24],
       "bauteil_ok": true,
       "versatz": [0, -7]
     },
@@ -288,15 +284,7 @@
     },
     {
       "moebel": "wg4GrasB",
-      "feld": [9, 19]
-    },
-    {
-      "moebel": "wg4GrasB",
       "feld": [10, 19]
-    },
-    {
-      "moebel": "wg4GrasB",
-      "feld": [9, 20]
     },
     {
       "moebel": "wg4SteinB",
@@ -575,10 +563,6 @@
       "feld": [24, 10]
     },
     {
-      "moebel": "wg4Farn",
-      "feld": [22, 19]
-    },
-    {
       "moebel": "wg4SteinB",
       "feld": [12, 10]
     },
@@ -593,10 +577,6 @@
     {
       "moebel": "wg4GrasB",
       "feld": [112, 13]
-    },
-    {
-      "moebel": "wg4GrasB",
-      "feld": [45, 20]
     },
     {
       "moebel": "wg4GrasB",
@@ -725,10 +705,6 @@
     {
       "moebel": "wg4Stein",
       "feld": [54, 13]
-    },
-    {
-      "moebel": "wg4SteinB",
-      "feld": [45, 19]
     },
     {
       "moebel": "wg4SteinB",
@@ -917,14 +893,6 @@
     {
       "moebel": "wg4BlumenWeiss",
       "feld": [71, 20]
-    },
-    {
-      "moebel": "wg4SteinB",
-      "feld": [22, 20]
-    },
-    {
-      "moebel": "wg4SteinB",
-      "feld": [23, 20]
     },
     {
       "moebel": "wg4SteinB",
@@ -1209,6 +1177,48 @@
     {
       "moebel": "mf8Finkenzeichen",
       "feld": [58, 21]
+    },
+    {
+      "moebel": "wg5StegLinks",
+      "feld": [56, 23],
+      "bauteil_ok": true
+    },
+    {
+      "moebel": "wg5StegRechts",
+      "feld": [57, 23],
+      "bauteil_ok": true
+    },
+    {
+      "moebel": "cc5Poller",
+      "feld": [99, 20]
+    },
+    {
+      "moebel": "wg4Schild",
+      "feld": [97, 19]
+    },
+    {
+      "moebel": "wg4Erle",
+      "feld": [8, 18]
+    },
+    {
+      "moebel": "wg4Erle",
+      "feld": [22, 18]
+    },
+    {
+      "moebel": "wg4Erle",
+      "feld": [38, 18]
+    },
+    {
+      "moebel": "wg4Erle",
+      "feld": [44, 18]
+    },
+    {
+      "moebel": "wg4Erle",
+      "feld": [77, 18]
+    },
+    {
+      "moebel": "wg4Erle",
+      "feld": [90, 18]
     }
   ],
   "ausloeser": [

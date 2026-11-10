@@ -120,6 +120,26 @@ Westen die Bucht; nur der Pfad öffnet den Westrand.
   - **Vögel:** Ringelgänse und Möwen zeichnet die Belebung nach dem Namen; das betrifft die
     Tierbilder aller Karten.
 
+**Zweites Gutachten (`gutachten/weg-ironwood-silicon-raststaette-2.md`, mittel-1):**
+
+- **Sand** (Befunde 1, 2, 4): Das Material `strand` zeigt jetzt LimeZus hellen Strandsand
+  (`21_Beach`) statt des orangen Bodens. Strand und Düne heben sich vom olivbraunen Pfad ab.
+- **Laternen** (3): Die drei Laternen am Ortsschild stehen am Südrand des Pfads (y 17–20), nicht
+  mehr auf der Düne.
+- **Rastbank** (7): Sie steht auf hellen Platten (eigenes Zeichen `q`) mit moderner Laterne.
+- **Watt** (9): Das Wasser ist grauer Schlick (`"ufer": "watt"`, Bildwunsch `wasser_watt.py`). Der
+  Austernfischer sitzt am Sandrand (60, 22), die Strandläufer sitzen, die Ringelgänse schwimmen.
+- **Parkplatz** (15, KARTENREGELN 10.65): Lastwagen und Auto stehen längs der Fahrgasse in Buchten
+  mit senkrechten Trennlinien, Stoßstange an Stoßstange. Die quer markierten Buchten und das
+  zweite Auto sind weg. Das Auto auf der Ausfahrt fährt weiter östlich (150, 17).
+- **Waschstraße** (17): Vor dem Tor liegt Asphalt (Reihe 13). Es ist eine Waschbox, in die man
+  vorwärts hinein- und wieder hinausfährt.
+- **Rasthausdach** (18): Das Dach ist eine glatte Fläche ohne das grüne Fugennetz
+  (`fassaden_zweck.py`, `GLATTES_DACH`).
+- **Bäume** (10, KARTENREGELN 10.67): Die Kugelbäume ohne Stamm sind Bäume mit Stamm.
+- Offen: Düne ohne Höhe (2), Priel mit Sandrahmen (5), Radfahrer ohne Rad (11), leerer Nordosten
+  (25), Bus in der Busbucht (22).
+
 ### 1.2 Glasbrücke (`wegIronwoodSilicon.glasbruecke`, 140 × 26), Runde 8 neu gebaut
 
 **Neu gebaut nach der Revision des Autors (10.11.2026, „keine Variante passt“, mittel-1).** Die
@@ -185,6 +205,19 @@ Laufzeit: Ostrand → Westrand etwa 150 Kacheln, gut 40 s. Die Varianten B und C
   - Die Laternen sind modern.
 - **Rastplatz Ost:** steht auf einer Plattenbucht am Weg.
 - **Tiere:** Die Krähe ist weg (gleiches Bild wie die Möwe), das Kaninchen läuft auf der Wiese.
+
+**Zweites Gutachten (`gutachten/weg-ironwood-silicon-glasbruecke-2.md`, mittel-1):**
+
+- **Matschsaum** (Befund 1): grauer, zur Wiese hin ausfransender Schneematsch an beiden Rändern
+  der Autobahn (x 53 und x 81), Bildwunsch `matschsaum.py`.
+- **Plattform** (2): Die zwei Pfeilerköpfe auf dem Mittelstreifen liegen jetzt sichtbar über dem
+  Glas (`vorn`).
+- **Lieferroboter** (5): Er steht als kleiner weißer Kastenroboter mit Fähnchen am Platz (28, 12),
+  Bildwunsch `matschsaum.py`. Als Belebung zeichnet ihn die App nicht (keine Tierart), deshalb
+  ist er ein Objekt; dafür laufen Krähen in der Nordostwiese (Regel 10.53, sechs Tiere).
+- **Bäume** (8, KARTENREGELN 10.67): Die Kugelbäume ohne Stamm sind Bäume mit Stamm.
+- Offen: Blickrichtung der Figuren, Stativ (4), Fußspuren im Schnee (7), Tauben und Spatzen mit
+  demselben Bild (10, Tierbilder liegen bei mittel-2).
 
 ### 1.3 Silicon Bay, Campus (`siliconBay.aussen`, 72 × 60 seit Runde 7)
 
@@ -331,6 +364,16 @@ Reihen, eine Hecke mit drei gleichen Durchgängen, einen Weg, Bänke und den Sch
 Fahrbahnmarkierung und Bordstein (keine Bodenbilder, Bodenvariation von mittel-2), die Roboter und
 die aufrechte Katze (Belebungsbilder, nicht Kartenbild), der graue Flachbau des Eisenwarenladens
 (mittel-1 ersetzt das Bild auf allen Karten).
+
+**Zweites Gutachten (`gutachten/silicon-bay-altstadt-2.md`, Runde 9), behoben:** Die Straße ist
+geräumt, mit Mittellinie, zwei Zebrastreifen an den Gassen und Schneewällen an beiden Rändern
+(Bildwunsch `winterstrasse.py`, Möbel `sa9Schneewall…`, `sa9Zebrastreifen`). Der Parkweg ist ein
+geräumter Weg aus Steinplatten mit Schneewall statt brauner Erde. Statt der grauen Rückseite
+(Condo 9) steht ein Wohnhaus mit Haustür (`altstadt.py`, `wohnhaus_e`, Möbel `sa9WohnhausE`); die
+Metzgerei rückt eine Spalte nach Osten, die Laterne steht in der Lücke. Der Marktplatz hat einen
+Rand aus hellen Platten (`platten`). Der Mähroboter heißt im Winter Schneeräumroboter. Offen: Die
+Roboter bleiben ohne Bild, bis der Lieferroboter des Autors (Gemini, `ki-roh/lieferroboter.png`)
+kommt; der Gitarrenkoffer ist ein Bild mit zwei Koffern.
 
 **Belebung:** zwölf Statisten, acht davon mit Satz (`statist.siliconBay.altstadt.*`): Bäckerin,
 Uhrmacher, Musikhändler, Schülerin, Metzger (Perfect Move will die Straße kaufen), Rentnerpaar,
@@ -670,6 +713,15 @@ hoch wie der Getränkeautomat; Pausenecke mit zwei Sesseln im Osten; Glaspokal s
 Vitrine; weißer Beistelltisch statt Holzbank; Empfangsdame am Empfang, Kübelbaum im Foyer; Durchgang
 vom Foyer ins Büro; Lin hinter seinem Schreibtisch, Bücherregal im Büro. Offen: Das Bild der
 gläsernen Tür (`tuer_sued_glas.png`) wirkt braun; der Saugroboter ist eine Belebung ohne Bild.
+
+Zweites Gutachten (`gutachten/silicon-bay-akademie-2.md`, Runde 9), behoben: Die Schüler stehen an
+Stehpulten an der Stelle der leeren Stühle (Statisten können nicht sitzen; die Stühle der vier
+Tische sind weg). Die Glaswand hat schmale Pfosten zwischen den Scheiben und an den Durchgängen und
+eine Schwelle darunter (Bordsteinbilder `cr9BordL2`/`cr9BordQ…`). Der weiße Wandblock zwischen
+Foyer und Büro ist weg; ein Bücherregal steht dort als Raumteiler, daneben eine Pflanze. Im Büro
+steht ein Regal mit Büchern statt Dosen. Die Eingangstür ist die Glastür `sb8GlastuerSued`
+(Bild seit Runde 8 im privaten Repository). Offen: Saugroboter (Bild des Autors aus Gemini kommt),
+Sofa von hinten und Kübelbaum (nicht im Auftrag des Haupt-Chats).
 
 ### 4.6 Serverraum (`siliconBay.serverraum`)
 

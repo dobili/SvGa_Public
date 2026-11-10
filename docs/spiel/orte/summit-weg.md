@@ -319,3 +319,34 @@ Kehren. **Ränder** offen nur Ost (39, 120–122), West (0, 70–71), Nord (18�
   `weg-desert-summit-diner-neon` (A, B, C) mit leuchtendem Schild `wds6SchildDinerHell`
   (`schild_kings_diner_hell.png`) und ohne das K im Hinterhof.
 - **Offen:** Tönung Hitze (mittel-2).
+
+## Runde 9: Mängel der Variantenwahl, Muster und Zustände (10.11.2026, mittel-4)
+
+Grundlage: `variantenwahl.md` (alle drei Karten Wahl C, die alte A liegt in `varianten/`).
+
+**Wüstenstraße mit Diner.** (1) Die Old Mother Road läuft gerade, drei Spuren breit, mit gelber
+Mittellinie und weißen Randlinien (`"markierung"`, `pipeline/abenteuer/strasse.py`). (2) Der
+Fernfahrerplatz hat Buchten (`"buchten"`), die Sattelzüge stehen darin; sie bleiben Seitenansichten, weil
+das Paket keine Draufsicht hat. (3) Tafelberge: Felswand im Norden mit einem Vorsprung, zwei Tafelberge im
+Süden, rote Klippenkacheln, kein Rahmen. (4) Die Tankstelle steht auf einem Vorplatz aus Beton an der
+Straße, die Zapfsäulen nicht mehr im Sand; das Bild bleibt so groß wie im Paket. Aus Runde 8 übernommen:
+das Autowrack steht hinter der Tankstelle statt auf der Straße. Gehweg und Parkplatz vor Diner und Motel.
+
+**Bergstraße.** (1) Markierung, abgeschrägte Kehren (Außenecke abgeschnitten, Innenecke gefüllt),
+Leitplanken bleiben an den Querstücken. (2) Die Felsstufen sind Klippenkanten, die Straße läuft durch einen
+Einschnitt mit Randkacheln; der Kartenrand neben Boden zeigt den Boden. (3) Die Zonen wechseln an den
+Felsstufen statt an geraden Linien im offenen Gelände (Gras über der oberen Stufe, Erde dazwischen, Sand
+unter der unteren); der Rastplatz ist eine Haltebucht aus Asphalt.
+
+**Hinterzimmer.** (1, 2) Mags und Ruth Keene stehen je an einem Brett, ihnen gegenüber und am dritten
+Brett sitzen Spieler (Statisten auf den Hockern). (3) Gestapelte Kisten statt des Werkbankstücks, ein zweites Fass und eine Kiste in der Ecke. (4) Ein
+Kreidespringer auf der Tafel zeigt den Treffpunkt. Die Dielen sind das Material des Kartenbilds.
+
+**Zustände (10.63):**
+
+| Karte                   | Bedingung       | Szene                          | Was sich ändert                           |
+| ----------------------- | --------------- | ------------------------------ | ----------------------------------------- |
+| `wegDesertSummit.diner` | `neonRepariert` | `weg-desert-summit-diner-neon` | Schild leuchtet ganz, kein Neon-K im Sand |
+
+Der Zustand ist aus der neuen Hauptfassung (C) neu abgeleitet. Bergstraße und Hinterzimmer haben keine
+Zustände: Die Geschichte ändert dort keine festen Objekte.

@@ -13,7 +13,7 @@
     "g": "stein",
     "h": "wasser"
   },
-  "beschreibung": "Riverton an einem Herbsttag, auf dem Pflaster stehen noch Pfützen. Ganz oben die Bahnlinie mit Schotter und einer Hecke am Bahnzaun. Vom Westrand kommt der Fußweg vom Bahndamm an zwei Laternen vorbei und biegt in einem Bogen auf den Vorplatz. Darüber steht der Bahnhof aus rotem Backstein mit dem Uhrturm und dem Bogenportal, links das kleine Stellwerk, rechts der Güterschuppen mit Holzstapel an der Laderampe, ganz rechts der Wasserturm, aus dem früher die Dampfloks Wasser nahmen; ein Trampelpfad führt vom Gehweg hin. Auf dem gepflasterten Vorplatz ein Brunnen, der Wegweiser, Laternen und das Wartehäuschen der Buslinie. Die Water Street läuft quer durch die Stadt, Gehwege rundherum. Südlich der Straße die Häuser mit der Front zum Fluss: zwei schmale Reihenhäuser, der Handyladen mit Leuchtschild, der Markt mit zwei Ständen unter Markisen voller Obst- und Gemüsekörbe, ein Obstkarren und ein Pommeskarren, an jedem ein Verkäufer, die Bäckerei mit rotem Ziegeldach, das Café mit gestreifter Markise und zwei Lagerschuppen am Kai. Davor die Uferpromenade mit Bank und Laternen. Der Ashford River fließt vom West- zum Ostrand; die Steinbrücke mit Gehwegen führt hinüber in den Riverside-Park. Dort am Uferweg ganz im Westen Slicks Wohnwagen, Albescus Werkstatt und der Schuppen mit Vorhängeschloss, auf der Wiese die sechs Bildschirmtische (Picknicktische mit aufgeklappten Laptops), der Pavillon aus Holz mit Platz davor, das Pegelhaus und Bäume. Im Osten öffnet sich das Kanalbecken, der Kanal läuft nach Süden aus der Karte, daneben der Treidelpfad.",
+  "beschreibung": "Riverton an einem Herbsttag, auf dem Pflaster stehen noch Pfützen. Ganz oben die Bahnlinie mit Schotter und einer Hecke am Bahnzaun. Vom Westrand kommt der Fußweg vom Bahndamm an zwei Laternen vorbei und biegt in einem Bogen auf den Vorplatz. Darüber steht der Bahnhof aus rotem Backstein mit dem Uhrturm und dem Bogenportal, links das kleine Stellwerk, rechts der Güterschuppen mit Holzstapel an der Laderampe, ganz rechts der Wasserturm, aus dem früher die Dampfloks Wasser nahmen; ein Trampelpfad führt vom Gehweg hin. Auf dem gepflasterten Vorplatz ein Brunnen, der Wegweiser, Laternen und das Wartehäuschen der Buslinie. Die Water Street läuft quer durch die Stadt, Gehwege rundherum. Südlich der Straße die Häuser mit der Front zum Fluss: zwei schmale Reihenhäuser, der Handyladen mit Leuchtschild, der Markt mit zwei Ständen unter Markisen voller Obst- und Gemüsekörbe, ein Obstkarren und ein Pommeskarren, an jedem ein Verkäufer, die Bäckerei mit rotem Ziegeldach, das Café mit gestreifter Markise und zwei Lagerschuppen am Kai. Davor die Uferpromenade mit Bank und Laternen. Der Ashford River fließt vom West- zum Ostrand; die Steinbrücke mit Gehwegen führt hinüber in den Riverside-Park. Dort am Uferweg ganz im Westen Slicks Wohnwagen, Albescus Werkstatt und der Schuppen mit Vorhängeschloss, auf der Wiese die sechs Bildschirmtische (weiße Tische, deren Platte ein Bildschirm mit Schachbrett ist), der Pavillon aus Holz mit Platz davor, das Pegelhaus und Bäume. Im Osten öffnet sich das Kanalbecken, der Kanal läuft nach Süden aus der Karte, daneben der Treidelpfad.",
   "raster": [
     "########################################################################",
     "#tttttttttttttttttttttttttttttttttttttttttttttttttttttttttttttttttttttt#",
@@ -1109,66 +1109,12 @@
       "feld": [15, 49]
     },
     {
-      "moebel": "rvPicknicktisch",
-      "feld": [23, 47],
-      "id": "bt1"
-    },
-    {
-      "moebel": "pd6Laptop",
-      "auf": "bt1"
-    },
-    {
-      "moebel": "rvPicknicktisch",
-      "feld": [26, 47],
-      "id": "bt2"
-    },
-    {
-      "moebel": "pd6Laptop",
-      "auf": "bt2"
-    },
-    {
-      "moebel": "rvPicknicktisch",
-      "feld": [29, 47],
-      "id": "bt3"
-    },
-    {
-      "moebel": "pd6Laptop",
-      "auf": "bt3"
-    },
-    {
-      "moebel": "rvPicknicktisch",
-      "feld": [23, 50],
-      "id": "bt4"
-    },
-    {
-      "moebel": "pd6Laptop",
-      "auf": "bt4"
-    },
-    {
-      "moebel": "rvPicknicktisch",
-      "feld": [26, 50],
-      "id": "bt5"
-    },
-    {
-      "moebel": "pd6Laptop",
-      "auf": "bt5"
-    },
-    {
-      "moebel": "rvPicknicktisch",
-      "feld": [29, 50],
-      "id": "bt6"
-    },
-    {
-      "moebel": "pd6Laptop",
-      "auf": "bt6"
-    },
-    {
       "moebel": "rv8Pavillon",
       "feld": [34, 47]
     },
     {
       "moebel": "rvPicknicktisch",
-      "feld": [32, 52],
+      "feld": [38, 51],
       "id": "schachtisch"
     },
     {
@@ -1198,6 +1144,36 @@
     {
       "moebel": "wg4Busch",
       "feld": [68, 51]
+    },
+    {
+      "moebel": "rv9Bildschirmtisch",
+      "feld": [23, 47],
+      "id": "bt1"
+    },
+    {
+      "moebel": "rv9Bildschirmtisch",
+      "feld": [27, 47],
+      "id": "bt2"
+    },
+    {
+      "moebel": "rv9Bildschirmtisch",
+      "feld": [31, 47],
+      "id": "bt3"
+    },
+    {
+      "moebel": "rv9Bildschirmtisch",
+      "feld": [23, 50],
+      "id": "bt4"
+    },
+    {
+      "moebel": "rv9Bildschirmtisch",
+      "feld": [27, 50],
+      "id": "bt5"
+    },
+    {
+      "moebel": "rv9Bildschirmtisch",
+      "feld": [31, 50],
+      "id": "bt6"
     }
   ],
   "ausloeser": [
@@ -1246,7 +1222,7 @@
     },
     {
       "name": "bildschirmtische",
-      "feld": [28, 49]
+      "feld": [26, 51]
     },
     {
       "name": "handyladen",
@@ -1291,10 +1267,10 @@
     {
       "name": "parkschachspieler",
       "typ": "statist",
-      "feld": [33, 54],
+      "feld": [38, 53],
       "eigenschaften": {
-        "von": "33,54",
-        "bis": "33,54",
+        "von": "38,53",
+        "bis": "38,53",
         "tun": "klopft am Picknicktisch auf die Schachuhr",
         "wann": "tag",
         "sagt": "statist.riverton.aussen.parkschachspieler",

@@ -365,6 +365,45 @@
       "blick": "unten",
       "zustand": "neu",
       "stil": "klassisch"
+    },
+    "fz9Bug": {
+      "quelle": "spiel/eigene/faehre_bug.png",
+      "breite": 256,
+      "hoehe": 96,
+      "kollision": false,
+      "art": "boot",
+      "zustand": "gebraucht",
+      "stil": "modern"
+    },
+    "fz9Deckhaus": {
+      "quelle": "spiel/eigene/faehre_deckhaus.png",
+      "breite": 160,
+      "hoehe": 112,
+      "kollision": true,
+      "art": "gebaeude",
+      "zustand": "gebraucht",
+      "stil": "modern",
+      "blick": "unten"
+    },
+    "fz9Bordbar": {
+      "quelle": "spiel/eigene/faehre_bar.png",
+      "breite": 96,
+      "hoehe": 64,
+      "kollision": true,
+      "art": "theke",
+      "zustand": "gebraucht",
+      "stil": "modern",
+      "blick": "unten"
+    },
+    "fz9Bank": {
+      "quelle": "modern-exteriors/Modern_Exteriors_16x16/ME_Theme_Sorter_16x16/3_City_Props_Singles_16x16/ME_Singles_City_Props_16x16_Bench_2.png",
+      "breite": 48,
+      "hoehe": 32,
+      "kollision": true,
+      "art": "bank",
+      "zustand": "gebraucht",
+      "stil": "modern",
+      "blick": "unten"
     }
   }
 }

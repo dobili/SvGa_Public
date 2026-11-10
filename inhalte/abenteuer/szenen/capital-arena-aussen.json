@@ -8,46 +8,47 @@
     "p": "pflaster",
     "k": "sand",
     "s": "asphalt",
-    "t": "stein"
+    "t": "stein",
+    "l": "platten"
   },
   "beschreibung": "Die Capital Arena an einem langen Sommerabend (Szenen 103 und 109), mitten in der Stadt. Der historische Prachtbau mit Kuppeln und Glasdach steht in der Mitte, eine breite Freitreppe führt zum Eingang; dort oben sitzt {held} nach dem Finale. Links und rechts der Treppe wehen Fahnen, auf dem gepflasterten Vorplatz plätschert ein Brunnen in der Achse der Treppe, links ein Hotdog-Wagen, rechts ein Limonadenwagen, Bänke und Laternen. Links der Arena zwei Häuserreihen an einer Querstraße: Post, Kaufhaus, Wohnhäuser, dahinter die Feuerwache und ein Hochhaus; rechts eine Wache, ein Kaufhaus, Wohnhaus und Laden, dahinter das große Polizeirevier. Südlich des Platzes eine Reihe Läden, Märkte, Eisenwarenhandlungen und Stadthäuser mit zwei Gassen hinunter zur Fußgängerstraße am Südrand. Am Westrand kommt der Weg vom Leuchtturm an.",
   "raster": [
     "################################################################################",
-    "#..............................................................................#",
-    "#..............................................................................#",
-    "#..............................................................................#",
-    "#..............................................................................#",
-    "#..............................................................................#",
-    "#..............................................................................#",
-    "#..............................................................................#",
-    "#..............................................................................#",
-    "#..............................................................................#",
-    "#..............................................................................#",
-    "#..............................................................................#",
-    "#..............................................................................#",
-    "#..............................................................................#",
+    "#llllllllllllllllllllllll.............................lllllllllllllllllllllllll#",
+    "#llllllllllllllllllllllll.............................lllllllllllllllllllllllll#",
+    "#llllllllllllllllllllllll.............................lllllllllllllllllllllllll#",
+    "#llllllllllllllllllllllll.............................lllllllllllllllllllllllll#",
+    "#llllllllllllllllllllllll.............................lllllllllllllllllllllllll#",
+    "#llllllllllllllllllllllll.............................lllllllllllllllllllllllll#",
+    "#llllllllllllllllllllllll.............................lllllllllllllllllllllllll#",
+    "#llllllllllllllllllllllll.............................lllllllllllllllllllllllll#",
+    "#llllllllllllllllllllllll.............................lllllllllllllllllllllllll#",
+    "#llllllllllllllllllllllll.............................lllllllllllllllllllllllll#",
+    "#llllllllllllllllllllllll.............................lllllllllllllllllllllllll#",
+    "#llllllllllllllllllllllll.............................lllllllllllllllllllllllll#",
+    "#llllllllllllllllllllllll.............................lllllllllllllllllllllllll#",
     "#pppppppppppppppppppppppppp.........................ppppppppppppppppppppppppppp#",
     "#pppppppppppppppppppppppppp.........................ppppppppppppppppppppppppppp#",
-    "#........................pp.........................pp.........................#",
-    "#........................pp.........................pp.........................#",
-    "#........................pp.........................pp.........................#",
-    "#........................pp.........................pp.........................#",
-    "#........................pp.........................pp.........................#",
-    "#........................pp.........................pp.........................#",
-    "#........................pp.........................pp.........................#",
-    "#........................pp.........................pp.........................#",
-    "#........................pp.........................pp.........................#",
-    "#........................pp.........................pp.........................#",
-    "#........................pp.........................pp.........................#",
-    "#........................pp.........................pp.........................#",
-    "#........................pp.........................pp.........................#",
-    "#........................pp.........................pp.........................#",
-    "#........................pp.........................pp.........................#",
-    "#........................pp.........................pp.........................#",
-    "#........................pp.........................pp.........................#",
-    "#........................pp.........................pp.........................#",
-    "#........................pp.........................pp.........................#",
-    "#........................pp.........................pp.........................#",
+    "#lllllllllllllllllllllll.pp.........................pplllllllllllllllllllllllll#",
+    "#lllllllllllllllllllllll.pp.........................pplllllllllllllllllllllllll#",
+    "#lllllllllllllllllllllll.pp.........................pplllllllllllllllllllllllll#",
+    "#lllllllllllllllllllllll.pp.........................pplllllllllllllllllllllllll#",
+    "#lllllllllllllllllllllll.pp.........................pplllllllllllllllllllllllll#",
+    "#lllllllllllllllllllllll.pp.........................pplllllllllllllllllllllllll#",
+    "#lllllllllllllllllllllll.pp.........................pplllllllllllllllllllllllll#",
+    "#lllllllllllllllllllllll.pp.........................pplllllllllllllllllllllllll#",
+    "#lllllllllllllllllllllll.pp.........................pplllllllllllllllllllllllll#",
+    "#lllllllllllllllllllllll.pp.........................pplllllllllllllllllllllllll#",
+    "#lllllllllllllllllllllll.pp.........................pplllllllllllllllllllllllll#",
+    "#lllllllllllllllllllllll.pp.........................pplllllllllllllllllllllllll#",
+    "#lllllllllllllllllllllll.pp.........................pplllllllllllllllllllllllll#",
+    "#lllllllllllllllllllllll.pp.........................pplllllllllllllllllllllllll#",
+    "#lllllllllllllllllllllll.pp.........................pplllllllllllllllllllllllll#",
+    "#lllllllllllllllllllllll.pp.........................pplllllllllllllllllllllllll#",
+    "#lllllllllllllllllllllll.pp.........................pplllllllllllllllllllllllll#",
+    "#lllllllllllllllllllllll.pp.........................pplllllllllllllllllllllllll#",
+    "#lllllllllllllllllllllll.pp.........................pplllllllllllllllllllllllll#",
+    "#lllllllllllllllllllllll.pp.........................pplllllllllllllllllllllllll#",
     "#pppppppppppppppppppppppppppppppppppppppppppppppppppppppppppppppppppppppppppppp#",
     "#pppppppppppppppppppppppppppppppppppppppppppppppppppppppppppppppppppppppppppppp#",
     "#pppppppppppppppppppppppppppppppppppppppppppppppppppppppppppppppppppppppppppppp#",
@@ -59,21 +60,101 @@
     "#pppppppppppppppppppppppppppppppppppppppppppppppppppppppppppppppppppppppppppppp#",
     "#pppppppppppppppppppppppppppppppppppppppppppppppppppppppppppppppppppppppppppppp#",
     "#pppppppppppppppppppppppppppppppppppppppppppppppppppppppppppppppppppppppppppppp#",
-    "#...................pp....................................pp...................#",
-    "#...................pp....................................pp...................#",
-    "#...................pp....................................pp...................#",
-    "#...................pp....................................pp...................#",
-    "#...................pp....................................pp...................#",
-    "#...................pp....................................pp...................#",
-    "#...................pp....................................pp...................#",
-    "#...................pp....................................pp...................#",
-    "#...................pp....................................pp...................#",
-    "#...................pp....................................pp...................#",
+    "#lllllllllllllllllllppllllllllllllllllllllllllllllllllllllpplllllllllllllllllll#",
+    "#lllllllllllllllllllppllllllllllllllllllllllllllllllllllllpplllllllllllllllllll#",
+    "#lllllllllllllllllllppllllllllllllllllllllllllllllllllllllpplllllllllllllllllll#",
+    "#lllllllllllllllllllppllllllllllllllllllllllllllllllllllllpplllllllllllllllllll#",
+    "#lllllllllllllllllllppllllllllllllllllllllllllllllllllllllpplllllllllllllllllll#",
+    "#lllllllllllllllllllppllllllllllllllllllllllllllllllllllllpplllllllllllllllllll#",
+    "#lllllllllllllllllllppllllllllllllllllllllllllllllllllllllpplllllllllllllllllll#",
+    "#lllllllllllllllllllppllllllllllllllllllllllllllllllllllllpplllllllllllllllllll#",
+    "#lllllllllllllllllllppllllllllllllllllllllllllllllllllllllpplllllllllllllllllll#",
+    "#lllllllllllllllllllppllllllllllllllllllllllllllllllllllllpplllllllllllllllllll#",
     "#ppppppppppppppppppppppppppppppppppppppppppppppppppppppppppppppppppppppppppppppp",
     "#ppppppppppppppppppppppppppppppppppppppppppppppppppppppppppppppppppppppppppppppp",
     "################################################################################"
   ],
   "objekte": [
+    {
+      "moebel": "ca9BordQ2",
+      "feld": [25, 14],
+      "versatz": [0, -1]
+    },
+    {
+      "moebel": "ca9BordQ2",
+      "feld": [52, 14],
+      "versatz": [0, -1]
+    },
+    {
+      "moebel": "ca9BordQ1",
+      "feld": [24, 36],
+      "versatz": [0, -1]
+    },
+    {
+      "moebel": "ca9BordQ16",
+      "feld": [27, 36],
+      "versatz": [0, -1]
+    },
+    {
+      "moebel": "ca9BordQ9",
+      "feld": [43, 36],
+      "versatz": [0, -1]
+    },
+    {
+      "moebel": "ca9BordQ1",
+      "feld": [24, 16],
+      "versatz": [0, -2]
+    },
+    {
+      "moebel": "ca9BordL16",
+      "feld": [25, 16],
+      "versatz": [-1, 0]
+    },
+    {
+      "moebel": "ca9BordL4",
+      "feld": [25, 32],
+      "versatz": [-1, 0]
+    },
+    {
+      "moebel": "ca9BordL16",
+      "feld": [52, 14],
+      "versatz": [-1, 0]
+    },
+    {
+      "moebel": "ca9BordL6",
+      "feld": [52, 30],
+      "versatz": [-1, 0]
+    },
+    {
+      "moebel": "ca9BordL13",
+      "feld": [54, 1],
+      "versatz": [-1, 0]
+    },
+    {
+      "moebel": "ca9BordL16",
+      "feld": [24, 16],
+      "versatz": [-2, 0]
+    },
+    {
+      "moebel": "ca9BordL4",
+      "feld": [24, 32],
+      "versatz": [-2, 0]
+    },
+    {
+      "moebel": "ca9BordL13",
+      "feld": [25, 1],
+      "versatz": [-2, 0]
+    },
+    {
+      "moebel": "ca9BordL16",
+      "feld": [27, 14],
+      "versatz": [-2, 0]
+    },
+    {
+      "moebel": "ca9BordL6",
+      "feld": [27, 30],
+      "versatz": [-2, 0]
+    },
     {
       "moebel": "ca7Arena",
       "feld": [27, 2]
@@ -225,6 +306,22 @@
     {
       "moebel": "ca8Laden5",
       "feld": [73, 49]
+    },
+    {
+      "moebel": "ca9BeetBaum",
+      "feld": [76, 2]
+    },
+    {
+      "moebel": "ca9BeetZypresse",
+      "feld": [4, 16]
+    },
+    {
+      "moebel": "ca9BeetBaum",
+      "feld": [12, 16]
+    },
+    {
+      "moebel": "ca9BeetZypresse",
+      "feld": [76, 16]
     }
   ],
   "ausloeser": [

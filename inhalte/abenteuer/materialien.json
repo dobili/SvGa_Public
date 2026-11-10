@@ -12,7 +12,12 @@
     "damm": "spiel/eigene/damm.png",
     "felsRot": "spiel/eigene/fels_rot.png",
     "wasser_rumpf": "spiel/eigene/wasser_rumpf.png",
-    "sinter": "spiel/eigene/boden_sinter.png"
+    "sinter": "spiel/eigene/boden_sinter.png",
+    "klippeRot": "spiel/eigene/klippe_rot.png",
+    "moor": "spiel/eigene/wasser_moor.png",
+    "see": "spiel/eigene/wasser_see.png",
+    "strand": "modern-exteriors/Modern_Exteriors_16x16/ME_Theme_Sorter_16x16/21_Beach_16x16.png",
+    "watt": "spiel/eigene/wasser_watt.png"
   },
   "boeden": {
     "holzHell": {
@@ -29,12 +34,12 @@
     "holzDunkel": {
       "bogen": "boden",
       "feld": [
-        1,
-        17
+        13,
+        27
       ],
       "unter_wand": [
-        1,
-        16
+        13,
+        26
       ]
     },
     "dielen": {
@@ -353,6 +358,32 @@
         "gullys": 0.01
       }
     },
+    "sandplatz": {
+      "bogen": "gelaende",
+      "feld": [
+        9,
+        31
+      ],
+      "rand": [
+        8,
+        30
+      ],
+      "diagonalen": true
+    },
+    "asphaltMitte": {
+      "bogen": "stadt",
+      "feld": [
+        12,
+        6
+      ]
+    },
+    "asphaltMitteSenkrecht": {
+      "bogen": "stadt",
+      "feld": [
+        12,
+        7
+      ]
+    },
     "hecke": {
       "bogen": "gelaende",
       "feld": [
@@ -594,14 +625,58 @@
       ]
     },
     "strand": {
-      "bogen": "gelaende",
+      "bogen": "strand",
       "feld": [
-        9,
-        31
+        1,
+        2
       ],
       "rand": [
-        8,
-        30
+        0,
+        1
+      ]
+    },
+    "wasser_moor": {
+      "bogen": "moor",
+      "feld": [
+        1,
+        1
+      ],
+      "rand": [
+        0,
+        0
+      ]
+    },
+    "wasser_see": {
+      "bogen": "see",
+      "feld": [
+        1,
+        1
+      ],
+      "rand": [
+        0,
+        0
+      ]
+    },
+    "hallenboden": {
+      "bogen": "boden",
+      "feld": [
+        1,
+        25
+      ],
+      "unter_wand": [
+        1,
+        24
+      ]
+    },
+    "wasser_watt": {
+      "bogen": "watt",
+      "feld": [
+        1,
+        1
+      ],
+      "rand": [
+        0,
+        0
       ]
     }
   },
@@ -670,6 +745,17 @@
       "unten": [
         23,
         1
+      ]
+    },
+    "nachtblau": {
+      "bogen": "wand",
+      "oben": [
+        11,
+        34
+      ],
+      "unten": [
+        11,
+        35
       ]
     },
     "blau": {

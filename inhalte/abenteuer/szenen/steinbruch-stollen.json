@@ -2,6 +2,7 @@
   "karte": "steinbruch.stollen",
   "datei": "karten/steinbruch-stollen.json",
   "art": "innen",
+  "toenung": "dunkel",
   "beschreibung": "Stollen 2 im alten Steinbruch: ein enger Gang im Fels, kalt und still, nur Tropfen fallen. Vom Eingang im Süden, durch den Tageslicht hereinfällt, läuft der Hauptgang mit einem alten Lorengleis nach Norden; Stützbalken aus Holz halten die Decke. An einer Gabelung geht links ein Seitenstollen zu einer Nische, in der Mama als Kind ihre Blechdose versteckt hat; rechts weitet sich der Gang zur Kaverne mit Pfütze, Geröll und einer abgestellten Lore, in der jedes Wort widerhallt. Hauptgang gerade nach Norden, Seitenstollen nach Nordwesten, Kaverne im Nordosten wie im Ortsplan.",
   "wand": "fels",
   "boden": "schotter",

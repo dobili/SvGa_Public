@@ -76,291 +76,171 @@
   "objekte": [
     {
       "moebel": "ca7Arena",
-      "feld": [
-        1,
-        2
-      ]
+      "feld": [1, 2]
     },
     {
       "moebel": "ca7Fahne",
-      "feld": [
-        5,
-        35
-      ]
+      "feld": [5, 35]
     },
     {
       "moebel": "ca7Fahne2",
-      "feld": [
-        19,
-        35
-      ]
+      "feld": [19, 35]
     },
     {
       "moebel": "ca7Brunnen",
-      "feld": [
-        11,
-        40
-      ]
+      "feld": [11, 40]
     },
     {
       "moebel": "ca7Imbiss",
-      "feld": [
-        44,
-        37
-      ]
+      "feld": [44, 37]
     },
     {
       "moebel": "ca7Limonadenwagen",
-      "feld": [
-        56,
-        38
-      ]
+      "feld": [56, 38]
     },
     {
       "moebel": "ca7BankGarten",
-      "feld": [
-        30,
-        44
-      ]
+      "feld": [30, 44]
     },
     {
       "moebel": "ca7Laterne",
-      "feld": [
-        30,
-        38
-      ],
+      "feld": [30, 38],
       "vorn": true
     },
     {
       "moebel": "ca7Laterne",
-      "feld": [
-        40,
-        38
-      ],
+      "feld": [40, 38],
       "vorn": true
     },
     {
       "moebel": "ca7Laterne",
-      "feld": [
-        70,
-        38
-      ],
+      "feld": [70, 38],
       "vorn": true
     },
     {
       "moebel": "ca8Wache1",
-      "feld": [
-        28,
-        1
-      ]
+      "feld": [28, 1]
     },
     {
       "moebel": "ca8Post3",
-      "feld": [
-        35,
-        1
-      ]
+      "feld": [35, 1]
     },
     {
       "moebel": "ca8Kaufhaus6",
-      "feld": [
-        43,
-        2
-      ]
+      "feld": [43, 2]
     },
     {
       "moebel": "ca8Wohnhaus5_3",
-      "feld": [
-        50,
-        3
-      ]
+      "feld": [50, 3]
     },
     {
       "moebel": "ca8Wohnhaus9",
-      "feld": [
-        56,
-        2
-      ]
+      "feld": [56, 2]
     },
     {
       "moebel": "ca8Kaufhaus1",
-      "feld": [
-        62,
-        2
-      ]
+      "feld": [62, 2]
     },
     {
       "moebel": "ca8Reihenhaus2",
-      "feld": [
-        69,
-        2
-      ]
+      "feld": [69, 2]
     },
     {
       "moebel": "ca8Laden12",
-      "feld": [
-        73,
-        6
-      ]
+      "feld": [73, 6]
     },
     {
       "moebel": "ca8Feuerwache",
-      "feld": [
-        28,
-        19
-      ]
+      "feld": [28, 19]
     },
     {
       "moebel": "ca8Polizei",
-      "feld": [
-        44,
-        16
-      ]
+      "feld": [44, 16]
     },
     {
       "moebel": "ca8Hochhaus46",
-      "feld": [
-        65,
-        16
-      ]
+      "feld": [65, 16]
     },
     {
       "moebel": "ca8Hochhaus",
-      "feld": [
-        72,
-        17
-      ]
+      "feld": [72, 17]
     },
     {
       "moebel": "ca8Markt4",
-      "feld": [
-        1,
-        48
-      ]
+      "feld": [1, 48]
     },
     {
       "moebel": "ca8Stadthaus45",
-      "feld": [
-        8,
-        47
-      ]
+      "feld": [8, 47]
     },
     {
       "moebel": "ca8Eisenwaren",
-      "feld": [
-        16,
-        48
-      ]
+      "feld": [16, 48]
     },
     {
       "moebel": "ca8Markt8",
-      "feld": [
-        24,
-        48
-      ]
+      "feld": [24, 48]
     },
     {
       "moebel": "ca8Laden3",
-      "feld": [
-        31,
-        49
-      ]
+      "feld": [31, 49]
     },
     {
       "moebel": "ca8Stadthaus44",
-      "feld": [
-        36,
-        49
-      ]
+      "feld": [36, 49]
     },
     {
       "moebel": "ca8Markt12",
-      "feld": [
-        43,
-        48
-      ]
+      "feld": [43, 48]
     },
     {
       "moebel": "ca8EisenwarenB",
-      "feld": [
-        52,
-        48
-      ]
+      "feld": [52, 48]
     },
     {
       "moebel": "ca8Laden6",
-      "feld": [
-        60,
-        49
-      ]
+      "feld": [60, 49]
     },
     {
       "moebel": "ca8Markt5",
-      "feld": [
-        65,
-        48
-      ]
+      "feld": [65, 48]
     },
     {
       "moebel": "ca8Stadthaus45",
-      "feld": [
-        72,
-        47
-      ]
+      "feld": [72, 47]
     }
   ],
   "ausloeser": [
     {
       "name": "start",
-      "feld": [
-        1,
-        40
-      ],
+      "feld": [1, 40],
       "eigenschaften": {
         "richtung": "rechts"
       }
     },
     {
       "name": "wegGhost",
-      "feld": [
-        0,
-        40
-      ]
+      "feld": [0, 40]
     },
     {
       "name": "wegGhost",
-      "feld": [
-        0,
-        41
-      ]
+      "feld": [0, 41]
     },
     {
       "name": "halleTuer",
-      "feld": [
-        13,
-        30
-      ]
+      "feld": [13, 30]
     },
     {
       "name": "treppe",
-      "feld": [
-        13,
-        33
-      ]
+      "feld": [13, 33]
     },
     {
       "name": "innenstadt",
-      "feld": [
-        79,
-        57
-      ]
+      "feld": [79, 57]
     },
     {
       "name": "innenstadt",
-      "feld": [
-        79,
-        58
-      ]
+      "feld": [79, 58]
     }
   ],
   "figuren": [],
@@ -368,10 +248,7 @@
     {
       "name": "fans",
       "typ": "statist",
-      "feld": [
-        20,
-        45
-      ],
+      "feld": [20, 45],
       "eigenschaften": {
         "von": "12,45",
         "bis": "26,45",
@@ -382,10 +259,7 @@
     {
       "name": "reporterin",
       "typ": "statist",
-      "feld": [
-        46,
-        37
-      ],
+      "feld": [46, 37],
       "eigenschaften": {
         "von": "44,37",
         "bis": "50,37",
@@ -396,10 +270,7 @@
     {
       "name": "polizist",
       "typ": "statist",
-      "feld": [
-        70,
-        57
-      ],
+      "feld": [70, 57],
       "eigenschaften": {
         "von": "70,57",
         "bis": "70,57",
@@ -410,10 +281,7 @@
     {
       "name": "eisverkaeuferin",
       "typ": "statist",
-      "feld": [
-        48,
-        45
-      ],
+      "feld": [48, 45],
       "eigenschaften": {
         "von": "48,45",
         "bis": "48,45",
@@ -425,10 +293,7 @@
     {
       "name": "tourist",
       "typ": "statist",
-      "feld": [
-        8,
-        45
-      ],
+      "feld": [8, 45],
       "eigenschaften": {
         "von": "8,45",
         "bis": "8,45",
@@ -440,10 +305,7 @@
     {
       "name": "rentnerin",
       "typ": "statist",
-      "feld": [
-        28,
-        46
-      ],
+      "feld": [28, 46],
       "eigenschaften": {
         "von": "28,46",
         "bis": "28,46",
@@ -455,10 +317,7 @@
     {
       "name": "student",
       "typ": "statist",
-      "feld": [
-        60,
-        45
-      ],
+      "feld": [60, 45],
       "eigenschaften": {
         "von": "60,45",
         "bis": "60,45",
@@ -470,10 +329,7 @@
     {
       "name": "busfahrer",
       "typ": "statist",
-      "feld": [
-        10,
-        57
-      ],
+      "feld": [10, 57],
       "eigenschaften": {
         "von": "10,57",
         "bis": "10,57",
@@ -485,10 +341,7 @@
     {
       "name": "strassenmusiker",
       "typ": "statist",
-      "feld": [
-        40,
-        58
-      ],
+      "feld": [40, 58],
       "eigenschaften": {
         "von": "40,58",
         "bis": "40,58",
@@ -500,10 +353,7 @@
     {
       "name": "schachlehrer",
       "typ": "statist",
-      "feld": [
-        34,
-        45
-      ],
+      "feld": [34, 45],
       "eigenschaften": {
         "von": "34,45",
         "bis": "34,45",
@@ -516,10 +366,7 @@
     {
       "name": "vater",
       "typ": "statist",
-      "feld": [
-        66,
-        45
-      ],
+      "feld": [66, 45],
       "eigenschaften": {
         "von": "66,45",
         "bis": "66,45",
@@ -531,10 +378,7 @@
     {
       "name": "schuelerin",
       "typ": "statist",
-      "feld": [
-        30,
-        58
-      ],
+      "feld": [30, 58],
       "eigenschaften": {
         "von": "26,58",
         "bis": "34,58",
@@ -546,10 +390,7 @@
     {
       "name": "autogrammjunge",
       "typ": "statist",
-      "feld": [
-        52,
-        40
-      ],
+      "feld": [52, 40],
       "eigenschaften": {
         "von": "52,39",
         "bis": "52,42",
@@ -561,10 +402,7 @@
     {
       "name": "tauben",
       "typ": "tier",
-      "feld": [
-        44,
-        44
-      ],
+      "feld": [44, 44],
       "eigenschaften": {
         "von": "38,43",
         "bis": "54,45",
@@ -574,10 +412,7 @@
     {
       "name": "spatzen",
       "typ": "tier",
-      "feld": [
-        14,
-        38
-      ],
+      "feld": [14, 38],
       "eigenschaften": {
         "von": "10,37",
         "bis": "18,39",
@@ -587,10 +422,7 @@
     {
       "name": "hund",
       "typ": "tier",
-      "feld": [
-        24,
-        57
-      ],
+      "feld": [24, 57],
       "eigenschaften": {
         "von": "18,57",
         "bis": "30,57",
@@ -600,10 +432,7 @@
     {
       "name": "katze",
       "typ": "tier",
-      "feld": [
-        76,
-        57
-      ],
+      "feld": [76, 57],
       "eigenschaften": {
         "von": "76,57",
         "bis": "76,57",
@@ -613,10 +442,7 @@
     {
       "name": "eichhoernchen",
       "typ": "tier",
-      "feld": [
-        60,
-        44
-      ],
+      "feld": [60, 44],
       "eigenschaften": {
         "von": "56,43",
         "bis": "66,45",
@@ -626,10 +452,7 @@
     {
       "name": "amseln",
       "typ": "tier",
-      "feld": [
-        66,
-        40
-      ],
+      "feld": [66, 40],
       "eigenschaften": {
         "von": "60,38",
         "bis": "72,42",
@@ -637,15 +460,8 @@
       }
     }
   ],
-  "zustand": [
-    "neu",
-    "gebraucht"
-  ],
-  "stil": [
-    "klassisch",
-    "modern",
-    "natur"
-  ],
+  "zustand": ["neu", "gebraucht"],
+  "stil": ["klassisch", "modern", "natur"],
   "variante": "c",
   "ufer": null
 }

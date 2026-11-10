@@ -162,6 +162,11 @@ def pruefe(zeilen: list[str], gesetzt: list[dict], punkte: list[dict], aussen: b
     return befunde
 
 
+# Felder der Szene, die als Eigenschaft in die Tiled-Karte gehen.
+KARTENFELDER = ("toenung", "zustand_der_karte")
+TOENUNGEN = ("nebel", "nacht", "abend", "sepia", "dunkel")
+
+
 def tiled(szene: dict, zeilen: list[str], gesetzt: list[dict], vorlage: dict) -> dict:
     """Die Tiled-Karte (Format der übrigen Karten, Kachelsatz des Platzhalters)."""
     boden, waende = kachelebenen(zeilen, szene)
@@ -233,6 +238,13 @@ def tiled(szene: dict, zeilen: list[str], gesetzt: list[dict], vorlage: dict) ->
     eigenschaften += [
         {"name": k, "type": "string", "value": v} for k, v in szene.get("eigenschaften", {}).items()
     ]
+    # Tönung (nebel, nacht, abend, sepia, dunkel) und zweite Fassung einer Karte liest die App aus
+    # den Eigenschaften der Karte (Runde 6: oberwelt/toenung.ts, zustand_der_karte).
+    eigenschaften += [
+        {"name": k, "type": "string", "value": szene[k]}
+        for k in KARTENFELDER
+        if isinstance(szene.get(k), str)
+    ]
     return {
         **{
             k: vorlage[k]
@@ -290,6 +302,8 @@ def baue(pfad: Path) -> list[str]:
         stadt = zaehlt_als_stadtkarte(szene) and "groesse" in ort
         befunde += pruefe_belebung(szene, ort.get("art", "stadt"), stadt, lade_texte())
     befunde += vergleiche_mit_a(pfad.resolve(), szene, lade)
+    if "toenung" in szene and szene["toenung"] not in TOENUNGEN:
+        befunde.append(f"Tönung {szene['toenung']!r} unbekannt (erlaubt: {', '.join(TOENUNGEN)})")
     ziel = INHALTE / szene["datei"]
     ziel.parent.mkdir(parents=True, exist_ok=True)  # Varianten: karten/varianten/
     vorlage = lade(INHALTE / "karten" / "maple-falls-dachboden.json")

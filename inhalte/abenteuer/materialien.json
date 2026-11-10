@@ -1,5 +1,6 @@
 {
-  "erklaerung": "Böden und Wände für den Kartenbauer (pipeline/abenteuer/kartenbau.py). Jede Angabe: Bogen im privaten Repository (Pfad), Spalte und Reihe in 16-Pixel-Kacheln. Wände: obere und untere Kachel der Wandfläche (zwei Reihen hoch, unten mit Sockelleiste). Böden mit „varianten“ wechseln je Kachel zufällig (fest je Ort); mit „rand“ (linke obere Kachel eines 3×3-Blocks) bekommen sie Ränder und Ecken zu anderen Böden.",
+  "erklaerung": "Böden und Wände für den Kartenbauer (pipeline/abenteuer/kartenbau.py). Jede Angabe: Bogen im privaten Repository (Pfad), Spalte und Reihe in 16-Pixel-Kacheln. Wände: obere und untere Kachel der Wandfläche (zwei Reihen hoch, unten mit Sockelleiste). Böden mit „varianten“ wechseln je Kachel zufällig (fest je Ort); mit „rand“ (linke obere Kachel eines 3×3-Blocks) bekommen sie Ränder und Ecken zu anderen Böden. Mit „variation“ (pipeline/abenteuer/bodenvariation.py) bekommen Innenkacheln gewichtete Ersatzkacheln und seltene Überlagerungen (Anteile je Feld: flecken, risse, moos, flicken, farbe, gullys); an ist das je Szene mit „bodenvariation“, sonst gilt „bodenvariation_standard“.",
+  "bodenvariation_standard": false,
   "boegen": {
     "boden": "modern-interiors/1_Interiors/16x16/Room_Builder_subfiles/Room_Builder_Floors_16x16.png",
     "wand": "modern-interiors/1_Interiors/16x16/Room_Builder_subfiles/Room_Builder_Walls_16x16.png",
@@ -43,7 +44,13 @@
     },
     "stein": {
       "bogen": "boden",
-      "feld": [13, 34]
+      "feld": [13, 34],
+      "variation": {
+        "flecken": 0.025,
+        "risse": 0.02,
+        "moos": 0.03,
+        "farbe": 0.06
+      }
     },
     "gras": {
       "bogen": "gelaende",
@@ -63,7 +70,21 @@
     },
     "pflaster": {
       "bogen": "gelaende",
-      "feld": [25, 9]
+      "feld": [25, 9],
+      "variation": {
+        "kacheln": [
+          [25, 9, 20],
+          [26, 9, 2],
+          [25, 10, 1],
+          [26, 10, 1]
+        ],
+        "flecken": 0.05,
+        "risse": 0.02,
+        "moos": 0.04,
+        "flicken": 0.015,
+        "farbe": 0.08,
+        "gullys": 0.008
+      }
     },
     "erde": {
       "bogen": "gelaende",
@@ -93,7 +114,36 @@
     },
     "asphalt": {
       "bogen": "stadt",
-      "feld": [0, 4]
+      "feld": [0, 4],
+      "variation": {
+        "kacheln": [
+          [0, 4, 24],
+          [1, 4, 1],
+          [2, 4, 1],
+          [3, 4, 1],
+          [4, 4, 1],
+          [0, 5, 1],
+          [1, 5, 1],
+          [2, 5, 1],
+          [3, 5, 1],
+          [4, 5, 1],
+          [0, 6, 1],
+          [1, 6, 1],
+          [2, 6, 1],
+          [3, 6, 1],
+          [4, 6, 1],
+          [0, 7, 1],
+          [1, 7, 1],
+          [2, 7, 1],
+          [3, 7, 1],
+          [4, 7, 1]
+        ],
+        "flecken": 0.06,
+        "risse": 0.03,
+        "flicken": 0.02,
+        "farbe": 0.06,
+        "gullys": 0.01
+      }
     },
     "hecke": {
       "bogen": "gelaende",

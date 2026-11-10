@@ -11,7 +11,7 @@
  "tilewidth": 16,
  "tileheight": 16,
  "nextlayerid": 5,
- "nextobjectid": 109,
+ "nextobjectid": 96,
  "layers": [
   {
    "id": 1,
@@ -150,13 +150,6 @@
     1,
     1,
     1,
-    1,
-    1,
-    1,
-    1,
-    1,
-    1,
-    1,
     0,
     0,
     0,
@@ -194,7 +187,13 @@
     0,
     0,
     0,
-    1,
+    0,
+    0,
+    0,
+    0,
+    0,
+    0,
+    0,
     1,
     1,
     1,
@@ -242,7 +241,7 @@
     0,
     0,
     0,
-    1,
+    0,
     1,
     1,
     1,
@@ -290,7 +289,7 @@
     0,
     0,
     0,
-    1,
+    0,
     1,
     1,
     1,
@@ -305,8 +304,8 @@
     0,
     0,
     0,
-    0,
-    0,
+    1,
+    1,
     0,
     0,
     0,
@@ -349,16 +348,16 @@
     1,
     1,
     1,
+    1,
     0,
     0,
-    1,
-    1,
-    1,
-    1,
-    1,
+    0,
     1,
     1,
     1,
+    0,
+    0,
+    0,
     0,
     0,
     0,
@@ -397,12 +396,9 @@
     1,
     1,
     1,
+    1,
     0,
     0,
-    1,
-    1,
-    1,
-    1,
     1,
     1,
     1,
@@ -430,6 +426,9 @@
     0,
     0,
     0,
+    1,
+    1,
+    1,
     0,
     0,
     0,
@@ -455,9 +454,7 @@
     1,
     1,
     1,
-    0,
-    0,
-    0,
+    1,
     0,
     0,
     0,
@@ -477,6 +474,9 @@
     0,
     0,
     0,
+    1,
+    1,
+    1,
     0,
     0,
     0,
@@ -516,7 +516,7 @@
     0,
     0,
     0,
-    1,
+    0,
     1,
     1,
     1,
@@ -687,8 +687,6 @@
     0,
     0,
     0,
-    1,
-    1,
     1,
     1,
     1,
@@ -708,6 +706,8 @@
     0,
     0,
     0,
+    0,
+    0,
     1,
     1,
     1,
@@ -741,8 +741,7 @@
     1,
     1,
     1,
-    1,
-    1,
+    0,
     0,
     0,
     0,
@@ -756,6 +755,7 @@
     0,
     0,
     0,
+    0,
     1,
     1,
     1,
@@ -1055,7 +1055,7 @@
     1,
     1,
     1,
-    0,
+    1,
     0,
     0,
     0,
@@ -1103,7 +1103,7 @@
     1,
     1,
     1,
-    0,
+    1,
     0,
     0,
     0,
@@ -1151,10 +1151,7 @@
     1,
     1,
     1,
-    0,
-    0,
-    0,
-    0,
+    1,
     0,
     0,
     0,
@@ -1164,6 +1161,9 @@
     0,
     0,
     0,
+    1,
+    1,
+    1,
     0,
     0,
     0,
@@ -1178,6 +1178,7 @@
     0,
     0,
     0,
+    0,
     1,
     1,
     1,
@@ -1185,9 +1186,6 @@
     1,
     1,
     1,
-    0,
-    0,
-    0,
     1,
     1,
     1,
@@ -1199,6 +1197,8 @@
     1,
     1,
     1,
+    1,
+    1,
     0,
     0,
     0,
@@ -1206,11 +1206,9 @@
     0,
     0,
     0,
-    1,
-    1,
-    1,
-    1,
-    1,
+    0,
+    0,
+    0,
     1,
     1,
     1,
@@ -1226,7 +1224,9 @@
     0,
     0,
     0,
-    1,
+    0,
+    0,
+    0,
     1,
     1,
     1,
@@ -1254,7 +1254,7 @@
     0,
     0,
     0,
-    1,
+    0,
     1,
     1,
     1,
@@ -1274,7 +1274,7 @@
     0,
     0,
     0,
-    1,
+    0,
     1,
     1,
     1,
@@ -1302,7 +1302,7 @@
     0,
     0,
     0,
-    1,
+    0,
     1,
     1,
     1,
@@ -1322,7 +1322,7 @@
     0,
     0,
     0,
-    1,
+    0,
     1,
     1,
     1,
@@ -1370,7 +1370,7 @@
     0,
     0,
     0,
-    1,
+    0,
     1,
     1,
     1,
@@ -1418,7 +1418,7 @@
     0,
     0,
     0,
-    1,
+    0,
     1,
     1,
     1,
@@ -1466,9 +1466,8 @@
     0,
     0,
     0,
-    1,
-    1,
-    1,
+    0,
+    0,
     1,
     1,
     1,
@@ -1494,6 +1493,7 @@
     0,
     0,
     0,
+    0,
     1,
     1,
     1,
@@ -1514,10 +1514,9 @@
     0,
     0,
     0,
-    1,
-    1,
-    1,
-    1,
+    0,
+    0,
+    0,
     1,
     1,
     1,
@@ -1542,6 +1541,7 @@
     0,
     0,
     0,
+    0,
     1,
     1,
     1,
@@ -1590,16 +1590,15 @@
     0,
     0,
     0,
-    1,
-    1,
-    1,
-    1,
-    1,
+    0,
     1,
     1,
     1,
     1,
     1,
+    0,
+    0,
+    0,
     1,
     1,
     1,
@@ -1638,23 +1637,24 @@
     0,
     0,
     0,
-    1,
-    1,
-    1,
-    1,
-    1,
-    1,
-    1,
-    1,
-    1,
-    1,
-    1,
-    1,
-    1,
-    1,
-    1,
+    0,
+    0,
     1,
     1,
+    0,
+    0,
+    0,
+    0,
+    0,
+    0,
+    0,
+    0,
+    0,
+    0,
+    0,
+    0,
+    0,
+    0,
     0,
     0,
     0,
@@ -1891,13 +1891,6 @@
     0,
     0,
     0,
-    0,
-    0,
-    0,
-    0,
-    0,
-    0,
-    0,
     2,
     2,
     2,
@@ -1935,7 +1928,13 @@
     2,
     2,
     2,
-    0,
+    2,
+    2,
+    2,
+    2,
+    2,
+    2,
+    2,
     0,
     0,
     0,
@@ -1983,7 +1982,7 @@
     2,
     2,
     2,
-    0,
+    2,
     0,
     0,
     0,
@@ -2031,7 +2030,7 @@
     2,
     2,
     2,
-    0,
+    2,
     0,
     0,
     0,
@@ -2046,8 +2045,8 @@
     2,
     2,
     2,
-    2,
-    2,
+    0,
+    0,
     2,
     2,
     2,
@@ -2090,16 +2089,16 @@
     0,
     0,
     0,
+    0,
     2,
     2,
-    0,
-    0,
-    0,
-    0,
-    0,
+    2,
     0,
     0,
     0,
+    2,
+    2,
+    2,
     2,
     2,
     2,
@@ -2138,12 +2137,9 @@
     0,
     0,
     0,
+    0,
     2,
     2,
-    0,
-    0,
-    0,
-    0,
     0,
     0,
     0,
@@ -2171,6 +2167,9 @@
     2,
     2,
     2,
+    0,
+    0,
+    0,
     2,
     2,
     2,
@@ -2196,9 +2195,7 @@
     0,
     0,
     0,
-    2,
-    2,
-    2,
+    0,
     2,
     2,
     2,
@@ -2218,6 +2215,9 @@
     2,
     2,
     2,
+    0,
+    0,
+    0,
     2,
     2,
     2,
@@ -2257,7 +2257,7 @@
     2,
     2,
     2,
-    0,
+    2,
     0,
     0,
     0,
@@ -2428,8 +2428,6 @@
     2,
     2,
     2,
-    0,
-    0,
     0,
     0,
     0,
@@ -2449,6 +2447,8 @@
     2,
     2,
     2,
+    2,
+    2,
     0,
     0,
     0,
@@ -2482,8 +2482,7 @@
     0,
     0,
     0,
-    0,
-    0,
+    2,
     2,
     2,
     2,
@@ -2497,6 +2496,7 @@
     2,
     2,
     2,
+    2,
     0,
     0,
     0,
@@ -2796,7 +2796,7 @@
     0,
     0,
     0,
-    2,
+    0,
     2,
     2,
     2,
@@ -2844,7 +2844,7 @@
     0,
     0,
     0,
-    2,
+    0,
     2,
     2,
     2,
@@ -2892,10 +2892,7 @@
     0,
     0,
     0,
-    2,
-    2,
-    2,
-    2,
+    0,
     2,
     2,
     2,
@@ -2905,6 +2902,9 @@
     2,
     2,
     2,
+    0,
+    0,
+    0,
     2,
     2,
     2,
@@ -2919,6 +2919,7 @@
     2,
     2,
     2,
+    2,
     0,
     0,
     0,
@@ -2926,9 +2927,6 @@
     0,
     0,
     0,
-    2,
-    2,
-    2,
     0,
     0,
     0,
@@ -2940,6 +2938,8 @@
     0,
     0,
     0,
+    0,
+    0,
     2,
     2,
     2,
@@ -2947,11 +2947,9 @@
     2,
     2,
     2,
-    0,
-    0,
-    0,
-    0,
-    0,
+    2,
+    2,
+    2,
     0,
     0,
     0,
@@ -2967,7 +2965,9 @@
     2,
     2,
     2,
-    0,
+    2,
+    2,
+    2,
     0,
     0,
     0,
@@ -2995,7 +2995,7 @@
     2,
     2,
     2,
-    0,
+    2,
     0,
     0,
     0,
@@ -3015,7 +3015,7 @@
     2,
     2,
     2,
-    0,
+    2,
     0,
     0,
     0,
@@ -3043,7 +3043,7 @@
     2,
     2,
     2,
-    0,
+    2,
     0,
     0,
     0,
@@ -3063,7 +3063,7 @@
     2,
     2,
     2,
-    0,
+    2,
     0,
     0,
     0,
@@ -3111,7 +3111,7 @@
     2,
     2,
     2,
-    0,
+    2,
     0,
     0,
     0,
@@ -3159,7 +3159,7 @@
     2,
     2,
     2,
-    0,
+    2,
     0,
     0,
     0,
@@ -3207,9 +3207,8 @@
     2,
     2,
     2,
-    0,
-    0,
-    0,
+    2,
+    2,
     0,
     0,
     0,
@@ -3235,6 +3234,7 @@
     2,
     2,
     2,
+    2,
     0,
     0,
     0,
@@ -3255,10 +3255,9 @@
     2,
     2,
     2,
-    0,
-    0,
-    0,
-    0,
+    2,
+    2,
+    2,
     0,
     0,
     0,
@@ -3283,6 +3282,7 @@
     2,
     2,
     2,
+    2,
     0,
     0,
     0,
@@ -3331,16 +3331,15 @@
     2,
     2,
     2,
-    0,
-    0,
-    0,
-    0,
-    0,
+    2,
     0,
     0,
     0,
     0,
     0,
+    2,
+    2,
+    2,
     0,
     0,
     0,
@@ -3379,23 +3378,24 @@
     2,
     2,
     2,
-    0,
-    0,
-    0,
-    0,
-    0,
-    0,
-    0,
-    0,
-    0,
-    0,
-    0,
-    0,
-    0,
-    0,
-    0,
+    2,
+    2,
     0,
     0,
+    2,
+    2,
+    2,
+    2,
+    2,
+    2,
+    2,
+    2,
+    2,
+    2,
+    2,
+    2,
+    2,
+    2,
     2,
     2,
     2,
@@ -5378,8 +5378,8 @@
      "id": 12,
      "name": "angler",
      "type": "statist",
-     "x": 192,
-     "y": 384,
+     "x": 96,
+     "y": 480,
      "width": 16,
      "height": 16,
      "rotation": 0,
@@ -5388,12 +5388,12 @@
       {
        "name": "von",
        "type": "string",
-       "value": "12,24"
+       "value": "6,30"
       },
       {
        "name": "bis",
        "type": "string",
-       "value": "12,24"
+       "value": "6,30"
       },
       {
        "name": "tun",
@@ -5416,8 +5416,8 @@
      "id": 13,
      "name": "krebsfischerin",
      "type": "statist",
-     "x": 352,
-     "y": 272,
+     "x": 480,
+     "y": 480,
      "width": 16,
      "height": 16,
      "rotation": 0,
@@ -5426,12 +5426,12 @@
       {
        "name": "von",
        "type": "string",
-       "value": "22,17"
+       "value": "30,30"
       },
       {
        "name": "bis",
        "type": "string",
-       "value": "22,17"
+       "value": "30,30"
       },
       {
        "name": "tun",
@@ -5944,12 +5944,12 @@
     },
     {
      "id": 33,
-     "name": "cc4Bootsschuppen",
+     "name": "by9HuetteTheron",
      "type": "moebel",
      "x": 208,
-     "y": 176,
-     "width": 48,
-     "height": 64,
+     "y": 160,
+     "width": 80,
+     "height": 80,
      "rotation": 0,
      "visible": true,
      "properties": [
@@ -5967,12 +5967,12 @@
     },
     {
      "id": 34,
-     "name": "svHausBlau",
+     "name": "by9HuetteKrebs",
      "type": "moebel",
      "x": 496,
-     "y": 416,
-     "width": 64,
-     "height": 64,
+     "y": 400,
+     "width": 80,
+     "height": 80,
      "rotation": 0,
      "visible": true,
      "properties": [
@@ -6289,29 +6289,6 @@
     },
     {
      "id": 48,
-     "name": "wg4BlumenWeiss",
-     "type": "moebel",
-     "x": 416,
-     "y": 32,
-     "width": 16,
-     "height": 16,
-     "rotation": 0,
-     "visible": true,
-     "properties": [
-      {
-       "name": "tiefe",
-       "type": "int",
-       "value": 1
-      },
-      {
-       "name": "kollision",
-       "type": "bool",
-       "value": false
-      }
-     ]
-    },
-    {
-     "id": 49,
      "name": "wg4BuschKlein",
      "type": "moebel",
      "x": 640,
@@ -6334,7 +6311,7 @@
      ]
     },
     {
-     "id": 50,
+     "id": 49,
      "name": "wg4Gras",
      "type": "moebel",
      "x": 576,
@@ -6357,7 +6334,7 @@
      ]
     },
     {
-     "id": 51,
+     "id": 50,
      "name": "wg4BuschKlein",
      "type": "moebel",
      "x": 672,
@@ -6380,30 +6357,7 @@
      ]
     },
     {
-     "id": 52,
-     "name": "wg4BlumenWeiss",
-     "type": "moebel",
-     "x": 304,
-     "y": 272,
-     "width": 16,
-     "height": 16,
-     "rotation": 0,
-     "visible": true,
-     "properties": [
-      {
-       "name": "tiefe",
-       "type": "int",
-       "value": 1
-      },
-      {
-       "name": "kollision",
-       "type": "bool",
-       "value": false
-      }
-     ]
-    },
-    {
-     "id": 53,
+     "id": 51,
      "name": "wg4BlumenWeiss",
      "type": "moebel",
      "x": 288,
@@ -6426,76 +6380,7 @@
      ]
     },
     {
-     "id": 54,
-     "name": "wg4BuschKlein",
-     "type": "moebel",
-     "x": 496,
-     "y": 416,
-     "width": 16,
-     "height": 16,
-     "rotation": 0,
-     "visible": true,
-     "properties": [
-      {
-       "name": "tiefe",
-       "type": "int",
-       "value": 424
-      },
-      {
-       "name": "kollision",
-       "type": "bool",
-       "value": true
-      }
-     ]
-    },
-    {
-     "id": 55,
-     "name": "wg4BlumenWeiss",
-     "type": "moebel",
-     "x": 720,
-     "y": 128,
-     "width": 16,
-     "height": 16,
-     "rotation": 0,
-     "visible": true,
-     "properties": [
-      {
-       "name": "tiefe",
-       "type": "int",
-       "value": 1
-      },
-      {
-       "name": "kollision",
-       "type": "bool",
-       "value": false
-      }
-     ]
-    },
-    {
-     "id": 56,
-     "name": "wg4BlumenWeiss",
-     "type": "moebel",
-     "x": 336,
-     "y": 368,
-     "width": 16,
-     "height": 16,
-     "rotation": 0,
-     "visible": true,
-     "properties": [
-      {
-       "name": "tiefe",
-       "type": "int",
-       "value": 1
-      },
-      {
-       "name": "kollision",
-       "type": "bool",
-       "value": false
-      }
-     ]
-    },
-    {
-     "id": 57,
+     "id": 52,
      "name": "sd6Schilf",
      "type": "moebel",
      "x": 672,
@@ -6518,7 +6403,7 @@
      ]
     },
     {
-     "id": 58,
+     "id": 53,
      "name": "sd6Schilf",
      "type": "moebel",
      "x": 624,
@@ -6541,7 +6426,7 @@
      ]
     },
     {
-     "id": 59,
+     "id": 54,
      "name": "wg4BuschKlein",
      "type": "moebel",
      "x": 336,
@@ -6564,7 +6449,7 @@
      ]
     },
     {
-     "id": 60,
+     "id": 55,
      "name": "wg4Gras",
      "type": "moebel",
      "x": 416,
@@ -6587,7 +6472,7 @@
      ]
     },
     {
-     "id": 61,
+     "id": 56,
      "name": "wg4Gras",
      "type": "moebel",
      "x": 272,
@@ -6610,7 +6495,7 @@
      ]
     },
     {
-     "id": 62,
+     "id": 57,
      "name": "wg4BlumenWeiss",
      "type": "moebel",
      "x": 208,
@@ -6633,30 +6518,7 @@
      ]
     },
     {
-     "id": 63,
-     "name": "wg4Gras",
-     "type": "moebel",
-     "x": 688,
-     "y": 112,
-     "width": 16,
-     "height": 16,
-     "rotation": 0,
-     "visible": true,
-     "properties": [
-      {
-       "name": "tiefe",
-       "type": "int",
-       "value": 1
-      },
-      {
-       "name": "kollision",
-       "type": "bool",
-       "value": false
-      }
-     ]
-    },
-    {
-     "id": 64,
+     "id": 58,
      "name": "wg4BuschKlein",
      "type": "moebel",
      "x": 320,
@@ -6679,7 +6541,7 @@
      ]
     },
     {
-     "id": 65,
+     "id": 59,
      "name": "sd6Schilf",
      "type": "moebel",
      "x": 512,
@@ -6702,30 +6564,7 @@
      ]
     },
     {
-     "id": 66,
-     "name": "wg4BlumenWeiss",
-     "type": "moebel",
-     "x": 576,
-     "y": 448,
-     "width": 16,
-     "height": 16,
-     "rotation": 0,
-     "visible": true,
-     "properties": [
-      {
-       "name": "tiefe",
-       "type": "int",
-       "value": 1
-      },
-      {
-       "name": "kollision",
-       "type": "bool",
-       "value": false
-      }
-     ]
-    },
-    {
-     "id": 67,
+     "id": 60,
      "name": "wg4Gras",
      "type": "moebel",
      "x": 256,
@@ -6748,7 +6587,7 @@
      ]
     },
     {
-     "id": 68,
+     "id": 61,
      "name": "sd6Schilf",
      "type": "moebel",
      "x": 576,
@@ -6771,7 +6610,7 @@
      ]
     },
     {
-     "id": 69,
+     "id": 62,
      "name": "wg4Gras",
      "type": "moebel",
      "x": 272,
@@ -6794,30 +6633,7 @@
      ]
     },
     {
-     "id": 70,
-     "name": "wg4BlumenWeiss",
-     "type": "moebel",
-     "x": 560,
-     "y": 464,
-     "width": 16,
-     "height": 16,
-     "rotation": 0,
-     "visible": true,
-     "properties": [
-      {
-       "name": "tiefe",
-       "type": "int",
-       "value": 1
-      },
-      {
-       "name": "kollision",
-       "type": "bool",
-       "value": false
-      }
-     ]
-    },
-    {
-     "id": 71,
+     "id": 63,
      "name": "wg4Gras",
      "type": "moebel",
      "x": 192,
@@ -6840,7 +6656,7 @@
      ]
     },
     {
-     "id": 72,
+     "id": 64,
      "name": "wg4Gras",
      "type": "moebel",
      "x": 288,
@@ -6863,7 +6679,7 @@
      ]
     },
     {
-     "id": 73,
+     "id": 65,
      "name": "wg4Gras",
      "type": "moebel",
      "x": 464,
@@ -6886,7 +6702,7 @@
      ]
     },
     {
-     "id": 74,
+     "id": 66,
      "name": "wg4BlumenWeiss",
      "type": "moebel",
      "x": 688,
@@ -6909,7 +6725,7 @@
      ]
     },
     {
-     "id": 75,
+     "id": 67,
      "name": "sd6Schilf",
      "type": "moebel",
      "x": 656,
@@ -6932,30 +6748,7 @@
      ]
     },
     {
-     "id": 76,
-     "name": "wg4BlumenWeiss",
-     "type": "moebel",
-     "x": 96,
-     "y": 464,
-     "width": 16,
-     "height": 16,
-     "rotation": 0,
-     "visible": true,
-     "properties": [
-      {
-       "name": "tiefe",
-       "type": "int",
-       "value": 1
-      },
-      {
-       "name": "kollision",
-       "type": "bool",
-       "value": false
-      }
-     ]
-    },
-    {
-     "id": 77,
+     "id": 68,
      "name": "wg4BuschKlein",
      "type": "moebel",
      "x": 736,
@@ -6978,30 +6771,7 @@
      ]
     },
     {
-     "id": 78,
-     "name": "wg4BlumenWeiss",
-     "type": "moebel",
-     "x": 416,
-     "y": 128,
-     "width": 16,
-     "height": 16,
-     "rotation": 0,
-     "visible": true,
-     "properties": [
-      {
-       "name": "tiefe",
-       "type": "int",
-       "value": 1
-      },
-      {
-       "name": "kollision",
-       "type": "bool",
-       "value": false
-      }
-     ]
-    },
-    {
-     "id": 79,
+     "id": 69,
      "name": "sd6Schilf",
      "type": "moebel",
      "x": 560,
@@ -7024,7 +6794,7 @@
      ]
     },
     {
-     "id": 80,
+     "id": 70,
      "name": "wg4BlumenWeiss",
      "type": "moebel",
      "x": 128,
@@ -7047,7 +6817,7 @@
      ]
     },
     {
-     "id": 81,
+     "id": 71,
      "name": "sd6SchilfBreit",
      "type": "moebel",
      "x": 48,
@@ -7070,7 +6840,7 @@
      ]
     },
     {
-     "id": 82,
+     "id": 72,
      "name": "sd6SchilfBreit",
      "type": "moebel",
      "x": 208,
@@ -7093,7 +6863,7 @@
      ]
     },
     {
-     "id": 83,
+     "id": 73,
      "name": "wg4BuschKlein",
      "type": "moebel",
      "x": 656,
@@ -7116,7 +6886,7 @@
      ]
     },
     {
-     "id": 84,
+     "id": 74,
      "name": "wg4Gras",
      "type": "moebel",
      "x": 592,
@@ -7139,30 +6909,7 @@
      ]
     },
     {
-     "id": 85,
-     "name": "wg4BlumenWeiss",
-     "type": "moebel",
-     "x": 624,
-     "y": 512,
-     "width": 16,
-     "height": 16,
-     "rotation": 0,
-     "visible": true,
-     "properties": [
-      {
-       "name": "tiefe",
-       "type": "int",
-       "value": 1
-      },
-      {
-       "name": "kollision",
-       "type": "bool",
-       "value": false
-      }
-     ]
-    },
-    {
-     "id": 86,
+     "id": 75,
      "name": "wg4BuschKlein",
      "type": "moebel",
      "x": 512,
@@ -7185,30 +6932,7 @@
      ]
     },
     {
-     "id": 87,
-     "name": "wg4BlumenWeiss",
-     "type": "moebel",
-     "x": 208,
-     "y": 160,
-     "width": 16,
-     "height": 16,
-     "rotation": 0,
-     "visible": true,
-     "properties": [
-      {
-       "name": "tiefe",
-       "type": "int",
-       "value": 1
-      },
-      {
-       "name": "kollision",
-       "type": "bool",
-       "value": false
-      }
-     ]
-    },
-    {
-     "id": 88,
+     "id": 76,
      "name": "wg4Gras",
      "type": "moebel",
      "x": 224,
@@ -7231,7 +6955,7 @@
      ]
     },
     {
-     "id": 89,
+     "id": 77,
      "name": "wg4Gras",
      "type": "moebel",
      "x": 512,
@@ -7254,7 +6978,7 @@
      ]
     },
     {
-     "id": 90,
+     "id": 78,
      "name": "wg4BuschKlein",
      "type": "moebel",
      "x": 96,
@@ -7277,7 +7001,7 @@
      ]
     },
     {
-     "id": 91,
+     "id": 79,
      "name": "sd6SchilfBreit",
      "type": "moebel",
      "x": 688,
@@ -7300,7 +7024,7 @@
      ]
     },
     {
-     "id": 92,
+     "id": 80,
      "name": "sd6SchilfBreit",
      "type": "moebel",
      "x": 288,
@@ -7323,7 +7047,7 @@
      ]
     },
     {
-     "id": 93,
+     "id": 81,
      "name": "sd6SchilfBreit",
      "type": "moebel",
      "x": 288,
@@ -7346,7 +7070,7 @@
      ]
     },
     {
-     "id": 94,
+     "id": 82,
      "name": "sd6Schilf",
      "type": "moebel",
      "x": 288,
@@ -7369,7 +7093,7 @@
      ]
     },
     {
-     "id": 95,
+     "id": 83,
      "name": "sd6Schilf",
      "type": "moebel",
      "x": 48,
@@ -7392,7 +7116,7 @@
      ]
     },
     {
-     "id": 96,
+     "id": 84,
      "name": "wg4BlumenWeiss",
      "type": "moebel",
      "x": 736,
@@ -7415,30 +7139,7 @@
      ]
     },
     {
-     "id": 97,
-     "name": "wg4BlumenWeiss",
-     "type": "moebel",
-     "x": 576,
-     "y": 144,
-     "width": 16,
-     "height": 16,
-     "rotation": 0,
-     "visible": true,
-     "properties": [
-      {
-       "name": "tiefe",
-       "type": "int",
-       "value": 1
-      },
-      {
-       "name": "kollision",
-       "type": "bool",
-       "value": false
-      }
-     ]
-    },
-    {
-     "id": 98,
+     "id": 85,
      "name": "wg4BuschKlein",
      "type": "moebel",
      "x": 544,
@@ -7461,7 +7162,7 @@
      ]
     },
     {
-     "id": 99,
+     "id": 86,
      "name": "sd6Schilf",
      "type": "moebel",
      "x": 320,
@@ -7484,7 +7185,7 @@
      ]
     },
     {
-     "id": 100,
+     "id": 87,
      "name": "sd6SchilfBreit",
      "type": "moebel",
      "x": 496,
@@ -7507,30 +7208,7 @@
      ]
     },
     {
-     "id": 101,
-     "name": "wg4BlumenWeiss",
-     "type": "moebel",
-     "x": 304,
-     "y": 272,
-     "width": 16,
-     "height": 16,
-     "rotation": 0,
-     "visible": true,
-     "properties": [
-      {
-       "name": "tiefe",
-       "type": "int",
-       "value": 1
-      },
-      {
-       "name": "kollision",
-       "type": "bool",
-       "value": false
-      }
-     ]
-    },
-    {
-     "id": 102,
+     "id": 88,
      "name": "wg4BuschKlein",
      "type": "moebel",
      "x": 480,
@@ -7553,7 +7231,7 @@
      ]
     },
     {
-     "id": 103,
+     "id": 89,
      "name": "wg4Gras",
      "type": "moebel",
      "x": 528,
@@ -7576,7 +7254,7 @@
      ]
     },
     {
-     "id": 104,
+     "id": 90,
      "name": "by6StegQuer5",
      "type": "moebel",
      "x": 112,
@@ -7599,7 +7277,7 @@
      ]
     },
     {
-     "id": 105,
+     "id": 91,
      "name": "pd7Hausboot",
      "type": "moebel",
      "x": 16,
@@ -7622,7 +7300,7 @@
      ]
     },
     {
-     "id": 106,
+     "id": 92,
      "name": "el7Gaslaterne",
      "type": "moebel",
      "x": 96,
@@ -7645,10 +7323,10 @@
      ]
     },
     {
-     "id": 107,
+     "id": 93,
      "name": "pd7Blechkiste",
      "type": "moebel",
-     "x": 256,
+     "x": 288,
      "y": 224,
      "width": 16,
      "height": 16,
@@ -7668,13 +7346,36 @@
      ]
     },
     {
-     "id": 108,
+     "id": 94,
      "name": "pd7Finkenzeichen",
      "type": "moebel",
      "x": 160,
      "y": 208,
      "width": 16,
      "height": 16,
+     "rotation": 0,
+     "visible": true,
+     "properties": [
+      {
+       "name": "tiefe",
+       "type": "int",
+       "value": 1
+      },
+      {
+       "name": "kollision",
+       "type": "bool",
+       "value": false
+      }
+     ]
+    },
+    {
+     "id": 95,
+     "name": "by6StegQuer3",
+     "type": "moebel",
+     "x": 144,
+     "y": 384,
+     "width": 48,
+     "height": 36,
      "rotation": 0,
      "visible": true,
      "properties": [

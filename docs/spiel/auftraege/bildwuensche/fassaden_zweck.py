@@ -31,6 +31,10 @@ MARKISE_ROT = {(167, 96, 74), (161, 79, 68), (157, 67, 62), (148, 60, 63)}
 MARKISE_HELL = {(208, 190, 156), (224, 208, 178), (195, 172, 144)}
 DACH = {(125, 127, 153), (108, 110, 133), (113, 111, 121), (126, 125, 134)}
 SCHILD_Y = 78  # Oberkante des Schilds auf der vorderen Dachkante
+# Glattes Dach ohne das Plattenraster der Vorlage: Im Winter blieb beim Rasthaus nur das grüne
+# Fugennetz sichtbar (zweites Gutachten der Raststätte, Befund 18). Ein Farbton, eine Helligkeit.
+GLATTES_DACH = {"rasthaus"}
+DACHFLAECHE = (12, 12, 116, 74)  # Innenfläche des Dachs (x0, y0, x1, y1) ohne Rahmen
 
 SCHRIFT = {
     "A": [".#.", "#.#", "###", "#.#", "#.#"],
@@ -62,8 +66,11 @@ ZWECKE = {
 }
 
 
-def faerben(bild: Image.Image, dunkel: tuple, hell: tuple, farbton: float | None) -> Image.Image:
-    """Markise in die neuen Farben (Helligkeit der Vorlage bleibt), Dach im neuen Farbton."""
+def faerben(
+    bild: Image.Image, dunkel: tuple, hell: tuple, farbton: float | None, glatt: bool = False
+) -> Image.Image:
+    """Markise in die neuen Farben (Helligkeit der Vorlage bleibt), Dach im neuen Farbton; ``glatt``
+    gibt dem Dach eine einzige Helligkeit."""
     neu = bild.copy()
     px = neu.load()
     for y in range(neu.height):
@@ -77,8 +84,18 @@ def faerben(bild: Image.Image, dunkel: tuple, hell: tuple, farbton: float | None
             elif (r, g, b) in MARKISE_HELL:
                 faktor = (r + g + b) / (224 + 208 + 178)
                 px[x, y] = tuple(min(255, round(c * faktor)) for c in hell) + (a,)
+            elif (
+                farbton is not None
+                and glatt
+                and DACHFLAECHE[0] <= x < DACHFLAECHE[2]
+                and DACHFLAECHE[1] <= y < DACHFLAECHE[3]
+            ):
+                rr, gg, bb = colorsys.hls_to_rgb(farbton / 360, 0.5, 0.18)
+                px[x, y] = (round(rr * 255), round(gg * 255), round(bb * 255), a)
             elif farbton is not None and (r, g, b) in DACH:
                 _, hell_wert, s = colorsys.rgb_to_hls(r / 255, g / 255, b / 255)
+                if glatt:
+                    hell_wert = 0.5
                 rr, gg, bb = colorsys.hls_to_rgb(farbton / 360, hell_wert, min(0.18, s + 0.06))
                 px[x, y] = (round(rr * 255), round(gg * 255), round(bb * 255), a)
     return neu
@@ -120,7 +137,7 @@ def main() -> None:
     vorlage = Image.open(privat / VORLAGE).convert("RGBA")
     ziel = privat / "spiel" / "eigene"
     for name, (dunkel, hell, farbton, grund, schrift, text) in ZWECKE.items():
-        bild = faerben(vorlage, dunkel, hell, farbton)
+        bild = faerben(vorlage, dunkel, hell, farbton, name in GLATTES_DACH)
         schild(bild, grund, schrift, text)
         bild.save(ziel / f"fassade_{name}.png")
     print(f"{len(ZWECKE)} Fassaden nach {ziel}")

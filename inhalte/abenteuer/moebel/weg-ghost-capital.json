@@ -272,6 +272,34 @@
       "zustand": "gebraucht",
       "stil": "natur",
       "blick": "unten"
+    },
+    "gc9Faehrhaus": {
+      "quelle": "spiel/eigene/faehrhaus.png",
+      "breite": 96,
+      "hoehe": 112,
+      "kollision": true,
+      "art": "gebaeude",
+      "blick": "unten",
+      "zustand": "gebraucht",
+      "stil": "modern"
+    },
+    "gc9StegQuer7": {
+      "quelle": "spiel/eigene/bruecke_fuss_quer_7.png",
+      "breite": 112,
+      "hoehe": 36,
+      "kollision": false,
+      "art": "steg",
+      "zustand": "gebraucht",
+      "stil": "natur"
+    },
+    "gc9StegQuer3": {
+      "quelle": "spiel/eigene/bruecke_fuss_quer_3.png",
+      "breite": 48,
+      "hoehe": 36,
+      "kollision": false,
+      "art": "steg",
+      "zustand": "gebraucht",
+      "stil": "natur"
     }
   }
 }

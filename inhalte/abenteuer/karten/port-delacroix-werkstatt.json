@@ -11,7 +11,7 @@
  "tilewidth": 16,
  "tileheight": 16,
  "nextlayerid": 5,
- "nextobjectid": 24,
+ "nextobjectid": 27,
  "layers": [
   {
    "id": 1,
@@ -876,7 +876,7 @@
      "name": "werkbank",
      "type": "ausloeser",
      "x": 144,
-     "y": 64,
+     "y": 80,
      "width": 16,
      "height": 16,
      "rotation": 0,
@@ -951,29 +951,6 @@
     },
     {
      "id": 9,
-     "name": "pd6Hobelbank",
-     "type": "moebel",
-     "x": 112,
-     "y": 16,
-     "width": 80,
-     "height": 64,
-     "rotation": 0,
-     "visible": true,
-     "properties": [
-      {
-       "name": "tiefe",
-       "type": "int",
-       "value": 72
-      },
-      {
-       "name": "kollision",
-       "type": "bool",
-       "value": true
-      }
-     ]
-    },
-    {
-     "id": 10,
      "name": "pd6Fenster",
      "type": "moebel",
      "x": 192,
@@ -996,7 +973,7 @@
      ]
     },
     {
-     "id": 11,
+     "id": 10,
      "name": "pd6FotoAlt",
      "type": "moebel",
      "x": 224,
@@ -1019,7 +996,7 @@
      ]
     },
     {
-     "id": 12,
+     "id": 11,
      "name": "pd6Werkzeugschrank",
      "type": "moebel",
      "x": 272,
@@ -1042,7 +1019,7 @@
      ]
     },
     {
-     "id": 13,
+     "id": 12,
      "name": "pd6KlavierHell",
      "type": "moebel",
      "x": 16,
@@ -1065,7 +1042,7 @@
      ]
     },
     {
-     "id": 14,
+     "id": 13,
      "name": "pd6KlavierRot",
      "type": "moebel",
      "x": 16,
@@ -1088,7 +1065,7 @@
      ]
     },
     {
-     "id": 15,
+     "id": 14,
      "name": "pd6KlavierPlane",
      "type": "moebel",
      "x": 48,
@@ -1111,7 +1088,7 @@
      ]
     },
     {
-     "id": 16,
+     "id": 15,
      "name": "pd6Fluegel",
      "type": "moebel",
      "x": 240,
@@ -1134,7 +1111,7 @@
      ]
     },
     {
-     "id": 17,
+     "id": 16,
      "name": "pd6Laptop",
      "type": "moebel",
      "x": 256,
@@ -1157,7 +1134,7 @@
      ]
     },
     {
-     "id": 18,
+     "id": 17,
      "name": "pd6Saegebock",
      "type": "moebel",
      "x": 80,
@@ -1180,30 +1157,7 @@
      ]
     },
     {
-     "id": 19,
-     "name": "pd6Bretterstapel",
-     "type": "moebel",
-     "x": 272,
-     "y": 128,
-     "width": 32,
-     "height": 48,
-     "rotation": 0,
-     "visible": true,
-     "properties": [
-      {
-       "name": "tiefe",
-       "type": "int",
-       "value": 168
-      },
-      {
-       "name": "kollision",
-       "type": "bool",
-       "value": true
-      }
-     ]
-    },
-    {
-     "id": 20,
+     "id": 18,
      "name": "pd6Holzscheite",
      "type": "moebel",
      "x": 192,
@@ -1226,30 +1180,7 @@
      ]
     },
     {
-     "id": 21,
-     "name": "pd6Kanister",
-     "type": "moebel",
-     "x": 64,
-     "y": 160,
-     "width": 16,
-     "height": 32,
-     "rotation": 0,
-     "visible": true,
-     "properties": [
-      {
-       "name": "tiefe",
-       "type": "int",
-       "value": 184
-      },
-      {
-       "name": "kollision",
-       "type": "bool",
-       "value": true
-      }
-     ]
-    },
-    {
-     "id": 22,
+     "id": 19,
      "name": "pd6Fussmatte",
      "type": "moebel",
      "x": 160,
@@ -1272,7 +1203,7 @@
      ]
     },
     {
-     "id": 23,
+     "id": 20,
      "name": "pd6Tuer",
      "type": "moebel",
      "x": 160,
@@ -1286,6 +1217,144 @@
        "name": "tiefe",
        "type": "int",
        "value": 0
+      },
+      {
+       "name": "kollision",
+       "type": "bool",
+       "value": false
+      }
+     ]
+    },
+    {
+     "id": 21,
+     "name": "pd9Werkbank",
+     "type": "moebel",
+     "x": 128,
+     "y": 48,
+     "width": 48,
+     "height": 48,
+     "rotation": 0,
+     "visible": true,
+     "properties": [
+      {
+       "name": "tiefe",
+       "type": "int",
+       "value": 88
+      },
+      {
+       "name": "kollision",
+       "type": "bool",
+       "value": true
+      }
+     ]
+    },
+    {
+     "id": 22,
+     "name": "pd9KlavierBeige",
+     "type": "moebel",
+     "x": 48,
+     "y": 112,
+     "width": 32,
+     "height": 48,
+     "rotation": 0,
+     "visible": true,
+     "properties": [
+      {
+       "name": "tiefe",
+       "type": "int",
+       "value": 152
+      },
+      {
+       "name": "kollision",
+       "type": "bool",
+       "value": true
+      }
+     ]
+    },
+    {
+     "id": 23,
+     "name": "pd9Klavierhocker",
+     "type": "moebel",
+     "x": 64,
+     "y": 160,
+     "width": 16,
+     "height": 16,
+     "rotation": 0,
+     "visible": true,
+     "properties": [
+      {
+       "name": "tiefe",
+       "type": "int",
+       "value": 168
+      },
+      {
+       "name": "kollision",
+       "type": "bool",
+       "value": true
+      }
+     ]
+    },
+    {
+     "id": 24,
+     "name": "pd9Werkzeugschrank2",
+     "type": "moebel",
+     "x": 272,
+     "y": 128,
+     "width": 32,
+     "height": 32,
+     "rotation": 0,
+     "visible": true,
+     "properties": [
+      {
+       "name": "tiefe",
+       "type": "int",
+       "value": 152
+      },
+      {
+       "name": "kollision",
+       "type": "bool",
+       "value": true
+      }
+     ]
+    },
+    {
+     "id": 25,
+     "name": "pd9Spaene",
+     "type": "moebel",
+     "x": 116,
+     "y": 100,
+     "width": 16,
+     "height": 16,
+     "rotation": 0,
+     "visible": true,
+     "properties": [
+      {
+       "name": "tiefe",
+       "type": "int",
+       "value": 1
+      },
+      {
+       "name": "kollision",
+       "type": "bool",
+       "value": false
+      }
+     ]
+    },
+    {
+     "id": 26,
+     "name": "pd9Spaene",
+     "type": "moebel",
+     "x": 176,
+     "y": 102,
+     "width": 16,
+     "height": 16,
+     "rotation": 0,
+     "visible": true,
+     "properties": [
+      {
+       "name": "tiefe",
+       "type": "int",
+       "value": 1
       },
       {
        "name": "kollision",

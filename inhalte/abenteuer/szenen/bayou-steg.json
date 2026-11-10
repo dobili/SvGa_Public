@@ -1,465 +1,673 @@
 {
   "karte": "bayou.steg",
   "art": "aussen",
-  "beschreibung": "Variante C, reich: Viele Inseln mit dichten Zypressen. Therons Hütte mit Boot am Südsteg, nördlich eine Zypresseninsel mit Steg, im Osten eine Baumgruppe, südöstlich eine große Insel mit einem blauen Fischerhaus und Kisten, die über einen langen Steg zu erreichen ist; im Südwesten eine kleine Insel mit einem Kahn. Eingangssteg mit überflutetem Stück (S8) und Nebelsteg bleiben. Sumpfzypressen mit Moos, Schilf an den Ufern, Therons Luftboot am Steg; das überflutete Stück (S8) zeigt den Steg halb unter Wasser.",
+  "beschreibung": "Variante C, reich: Schwarzes, stehendes Wasser mit ausgefransten Inseln und dichten Zypressen. Therons Bretterhütte mit Fässern und Brennholz steht auf der großen Insel, sein Luftboot am Südsteg. Nördlich eine Zypresseninsel mit Steg, im Osten eine Baumgruppe. Südöstlich die Hütte der Krebsfischerin mit Kisten, über einen langen Steg zu erreichen. Ein kurzer Steg führt zur kleinen Südwestinsel, wo der Angler neben seinem Kahn sitzt. Eingangssteg mit überflutetem Stück (S8) und Nebelsteg bleiben; Sumpfzypressen mit Moos und Schilf an den Ufern.",
   "boden": "gras",
   "wandart": "gras",
-  "bruecken": ["h"],
+  "bruecken": [
+    "h"
+  ],
   "raster": [
     "~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~",
     "~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~",
-    "~~~~~~~~~~~~~~~~~~~~~~~~~~...........~~~~~~~~~~~",
-    "~~~~~~~~~~~~~~~~~~~~~~~~~~...........~~~~~~~~~~~",
-    "~~~~~~~~~~~~~~~~~~~~~~~~~~...........~~~~~~~~~~~",
-    "~~~~~~~~~~~~~~~~~~~~~~~~~~...........~~~~~~~~~~~",
-    "~~~~~~~~~~~~~~~~~~~~~~~~~~...........~~........~",
-    "~~~~~~~~~~~~~~~~~~~~~~~~~~...........~~........~",
-    "~~~~~~~~~~~~~~~~~~~~~~~~~~...........hh........~",
-    "~~~~~~~~~~~~~~~~~~~~~~~~~~...........hh........~",
-    "~~~~~~~~~~~~...........~~~...........~~........~",
+    "~~~~~~~~~~~~~~~~~~~~~~~~~~....~~~~~~~~~~~~~~~~~~",
+    "~~~~~~~~~~~~~~~~~~~~~~~~~~..........~~~~~~~~~~~~",
+    "~~~~~~~~~~~~~~~~~~~~~~~~~~..........~~~~~~~~~~~~",
+    "~~~~~~~~~~~~~~~~~~~~~~~~~~..........~~~~..~~~~~~",
+    "~~~~~~~~~~~~~~~~~~~~~~~~~............~~~...~~~~~",
+    "~~~~~~~~~~~~~~~~~~~~~~~~~............~~....~~~~~",
+    "~~~~~~~~~~~~~~~~~~...~~~~............hh........~",
+    "~~~~~~~~~~~~~~~~~~...~~~~~...........hh........~",
+    "~~~~~~~~~~~~~..........~~~...........~~........~",
     "~~~~~~~~~~~~...........hhh~~~~hh~~~~~~~........~",
     "~~~~~~~hhhhh...........hhh~~~~hh~~~~~~~........~",
-    "~~~~~~~hhhhh...........~~~~~~~hh~~~~~~~........~",
-    "~~~~~~~~~~~~...........~~~~~~~hh~~~~~~~........~",
+    "~~~~~~~hhhhh...........~~~~~~~hh~~~~~~~......~~~",
+    "~~~~~~~~~~~~...........~~~~~~~hh~~~~~~~......~~~",
     "~~~~~~~~~~~~...........~~~~~~~hh~~~~~~~~hh~~~~~~",
     "~~~~~~~~~~~~...........~~~~~~~~~~~~~~~~~hh~~~~~~",
     "hhhhhhhhhhhh...........hhhhhhh~~~~~~~~~~hh~~~~~~",
     "hhhhhhhhhhhh...........hhhhhhh~~~~~~~~~~hh~~~~~~",
     "~~~~~~~~~~~~...........~~~~~~~~~~~~~~~~~hh~~~~~~",
     "~~~~~~~~~~~~...........~~~~~~~~~~~~~~~~~hh~~~~~~",
-    "~~~~~~~~~~~~...........~~~~~~~~~~~~~~~~~hh~~~~~~",
-    "~~~~~~~~~~~~...........~~~~~~~~~~~~~~~~~hh~~~~~~",
-    "~~~~~~~~~~~~...........~~~~~~~~~~~~~~~~~hh~~~~~~",
-    "~~.......~~~...........~~~~~~~.................~",
-    "~~.......~~~~~~~hh~~~~~~~~~~~~.................~",
-    "~~.......~~~~~~~hh~~~~~~~~~~~~.................~",
-    "~~.......~~~~~~~hh~~~~~~~~~~~~.................~",
-    "~~.......~~~~~~~~~~~~~~~~~~~~~.................~",
-    "~~.......~~~~~~~~~~~~~~~~~~~~~.................~",
-    "~~.......~~~~~~~~~~~~~~~~~~~~~.................~",
-    "~~.......~~~~~~~~~~~~~~~~~~~~~.................~",
-    "~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~.................~",
-    "~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~.................~",
+    "~~~~~~~~~~~~............~~~~~~~~~~~~~~~~hh~~~~~~",
+    "~~~~~~~~~~~~............~~~~~~~~~~~~~~~~hh~~~~~~",
+    "~~~~~~~~~~~~............~~~~~~~~~...~~~~hh~~~~~~",
+    "~~~......hhh...........~~~~~~~~~~............~~~",
+    "~~~......~~~~~~~hh~~~~~~~~~~~~~................~",
+    "~~~......~~~~~~~hh~~~~~~~~~~~~~................~",
+    "~~~......~~~~~~~hh~~~~~~~~~~~~.................~",
+    "~~~......~~~~~~~~~~~~~~~~~~~~~.................~",
+    "~~~......~~~~~~~~~~~~~~~~~~~~~.................~",
+    "~~~~....~~~~~~~~~~~~~~~~~~~~~~.................~",
+    "~~~~~...~~~~~~~~~~~~~~~~~~~~~~.................~",
+    "~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~.....~~~.......~~",
+    "~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~..~~~~~~~~~~~~~~~",
     "~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~",
     "~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~"
   ],
   "objekte": [
     {
       "moebel": "by6StegQuer7",
-      "feld": [0, 17]
+      "feld": [
+        0,
+        17
+      ]
     },
     {
       "moebel": "by6StegUeberflutetQuer3",
-      "feld": [7, 17]
+      "feld": [
+        7,
+        17
+      ]
     },
     {
       "moebel": "by6StegQuer2",
-      "feld": [10, 17]
+      "feld": [
+        10,
+        17
+      ]
     },
     {
       "moebel": "by6StegQuer7",
-      "feld": [23, 17]
+      "feld": [
+        23,
+        17
+      ]
     },
     {
       "moebel": "by6StegQuer3",
-      "feld": [23, 11]
+      "feld": [
+        23,
+        11
+      ]
     },
     {
       "moebel": "by6StegLaengs5",
-      "feld": [30, 11]
+      "feld": [
+        30,
+        11
+      ]
     },
     {
       "moebel": "by6StegQuer2",
-      "feld": [37, 8]
+      "feld": [
+        37,
+        8
+      ]
     },
     {
       "moebel": "by6StegLaengs3",
-      "feld": [16, 25]
+      "feld": [
+        16,
+        25
+      ]
     },
     {
       "moebel": "by6Luftboot",
-      "feld": [18, 26]
+      "feld": [
+        18,
+        26
+      ]
     },
     {
       "moebel": "ld5Kahn",
-      "feld": [4, 32],
+      "feld": [
+        4,
+        32
+      ],
       "bauteil_ok": true
     },
     {
       "moebel": "by6StegLaengs9",
-      "feld": [40, 15]
+      "feld": [
+        40,
+        15
+      ]
     },
     {
-      "moebel": "cc4Bootsschuppen",
-      "feld": [13, 11]
+      "moebel": "by9HuetteTheron",
+      "feld": [
+        13,
+        10
+      ]
     },
     {
-      "moebel": "svHausBlau",
-      "feld": [31, 26]
+      "moebel": "by9HuetteKrebs",
+      "feld": [
+        31,
+        25
+      ]
     },
     {
       "moebel": "wg6Faesser",
-      "feld": [18, 12]
+      "feld": [
+        18,
+        12
+      ]
     },
     {
       "moebel": "rvHolzscheite",
-      "feld": [19, 15]
+      "feld": [
+        19,
+        15
+      ]
     },
     {
       "moebel": "wg6Kisten",
-      "feld": [36, 29]
+      "feld": [
+        36,
+        29
+      ]
     },
     {
       "moebel": "wr5Eiche",
-      "feld": [13, 19]
+      "feld": [
+        13,
+        19
+      ]
     },
     {
       "moebel": "sd6Zypresse",
-      "feld": [26, 2]
+      "feld": [
+        26,
+        2
+      ]
     },
     {
       "moebel": "sd6Zypresse",
-      "feld": [32, 4]
+      "feld": [
+        32,
+        4
+      ]
     },
     {
       "moebel": "sd6Zypresse",
-      "feld": [40, 6]
+      "feld": [
+        40,
+        6
+      ]
     },
     {
       "moebel": "sd6Zypresse",
-      "feld": [44, 25]
+      "feld": [
+        44,
+        25
+      ]
     },
     {
       "moebel": "sd6Zypresse",
-      "feld": [3, 24]
+      "feld": [
+        3,
+        24
+      ]
     },
     {
       "moebel": "wg4Gras",
-      "feld": [40, 32]
+      "feld": [
+        40,
+        32
+      ]
     },
     {
       "moebel": "wg4BuschKlein",
-      "feld": [18, 16]
+      "feld": [
+        18,
+        16
+      ]
     },
     {
       "moebel": "sd6SchilfBreit",
-      "feld": [32, 32]
+      "feld": [
+        32,
+        32
+      ]
     },
     {
       "moebel": "wg4BuschKlein",
-      "feld": [42, 11]
-    },
-    {
-      "moebel": "wg4BlumenWeiss",
-      "feld": [26, 2]
+      "feld": [
+        42,
+        11
+      ]
     },
     {
       "moebel": "wg4BuschKlein",
-      "feld": [40, 26]
+      "feld": [
+        40,
+        26
+      ]
     },
     {
       "moebel": "wg4Gras",
-      "feld": [36, 8]
+      "feld": [
+        36,
+        8
+      ]
     },
     {
       "moebel": "wg4BuschKlein",
-      "feld": [42, 32]
+      "feld": [
+        42,
+        32
+      ]
     },
     {
       "moebel": "wg4BlumenWeiss",
-      "feld": [19, 17]
-    },
-    {
-      "moebel": "wg4BlumenWeiss",
-      "feld": [18, 11]
-    },
-    {
-      "moebel": "wg4BuschKlein",
-      "feld": [31, 26]
-    },
-    {
-      "moebel": "wg4BlumenWeiss",
-      "feld": [45, 8]
-    },
-    {
-      "moebel": "wg4BlumenWeiss",
-      "feld": [21, 23]
+      "feld": [
+        18,
+        11
+      ]
     },
     {
       "moebel": "sd6Schilf",
-      "feld": [42, 23]
+      "feld": [
+        42,
+        23
+      ]
     },
     {
       "moebel": "sd6Schilf",
-      "feld": [39, 5]
+      "feld": [
+        39,
+        5
+      ]
     },
     {
       "moebel": "wg4BuschKlein",
-      "feld": [21, 22]
+      "feld": [
+        21,
+        22
+      ]
     },
     {
       "moebel": "wg4Gras",
-      "feld": [26, 8]
+      "feld": [
+        26,
+        8
+      ]
     },
     {
       "moebel": "wg4Gras",
-      "feld": [17, 22]
+      "feld": [
+        17,
+        22
+      ]
     },
     {
       "moebel": "wg4BlumenWeiss",
-      "feld": [13, 19]
-    },
-    {
-      "moebel": "wg4Gras",
-      "feld": [43, 7]
+      "feld": [
+        13,
+        19
+      ]
     },
     {
       "moebel": "wg4BuschKlein",
-      "feld": [20, 19]
+      "feld": [
+        20,
+        19
+      ]
     },
     {
       "moebel": "sd6Schilf",
-      "feld": [32, 9]
-    },
-    {
-      "moebel": "wg4BlumenWeiss",
-      "feld": [36, 28]
+      "feld": [
+        32,
+        9
+      ]
     },
     {
       "moebel": "wg4Gras",
-      "feld": [16, 14]
+      "feld": [
+        16,
+        14
+      ]
     },
     {
       "moebel": "sd6Schilf",
-      "feld": [36, 9]
+      "feld": [
+        36,
+        9
+      ]
     },
     {
       "moebel": "wg4Gras",
-      "feld": [17, 19]
+      "feld": [
+        17,
+        19
+      ]
+    },
+    {
+      "moebel": "wg4Gras",
+      "feld": [
+        12,
+        22
+      ]
+    },
+    {
+      "moebel": "wg4Gras",
+      "feld": [
+        18,
+        14
+      ]
+    },
+    {
+      "moebel": "wg4Gras",
+      "feld": [
+        29,
+        9
+      ]
     },
     {
       "moebel": "wg4BlumenWeiss",
-      "feld": [35, 29]
-    },
-    {
-      "moebel": "wg4Gras",
-      "feld": [12, 22]
-    },
-    {
-      "moebel": "wg4Gras",
-      "feld": [18, 14]
-    },
-    {
-      "moebel": "wg4Gras",
-      "feld": [29, 9]
-    },
-    {
-      "moebel": "wg4BlumenWeiss",
-      "feld": [43, 26]
+      "feld": [
+        43,
+        26
+      ]
     },
     {
       "moebel": "sd6Schilf",
-      "feld": [41, 29]
-    },
-    {
-      "moebel": "wg4BlumenWeiss",
-      "feld": [6, 29]
+      "feld": [
+        41,
+        29
+      ]
     },
     {
       "moebel": "wg4BuschKlein",
-      "feld": [46, 9]
-    },
-    {
-      "moebel": "wg4BlumenWeiss",
-      "feld": [26, 8]
+      "feld": [
+        46,
+        9
+      ]
     },
     {
       "moebel": "sd6Schilf",
-      "feld": [35, 7]
+      "feld": [
+        35,
+        7
+      ]
     },
     {
       "moebel": "wg4BlumenWeiss",
-      "feld": [8, 26]
+      "feld": [
+        8,
+        26
+      ]
     },
     {
       "moebel": "sd6SchilfBreit",
-      "feld": [3, 23]
+      "feld": [
+        3,
+        23
+      ]
     },
     {
       "moebel": "sd6SchilfBreit",
-      "feld": [13, 17]
+      "feld": [
+        13,
+        17
+      ]
     },
     {
       "moebel": "wg4BuschKlein",
-      "feld": [41, 27]
+      "feld": [
+        41,
+        27
+      ]
     },
     {
       "moebel": "wg4Gras",
-      "feld": [37, 28]
-    },
-    {
-      "moebel": "wg4BlumenWeiss",
-      "feld": [39, 32]
+      "feld": [
+        37,
+        28
+      ]
     },
     {
       "moebel": "wg4BuschKlein",
-      "feld": [32, 30]
-    },
-    {
-      "moebel": "wg4BlumenWeiss",
-      "feld": [13, 10]
-    },
-    {
-      "moebel": "wg4Gras",
-      "feld": [14, 11]
+      "feld": [
+        32,
+        30
+      ]
     },
     {
       "moebel": "wg4Gras",
-      "feld": [32, 26]
+      "feld": [
+        14,
+        11
+      ]
+    },
+    {
+      "moebel": "wg4Gras",
+      "feld": [
+        32,
+        26
+      ]
     },
     {
       "moebel": "wg4BuschKlein",
-      "feld": [6, 27]
+      "feld": [
+        6,
+        27
+      ]
     },
     {
       "moebel": "sd6SchilfBreit",
-      "feld": [43, 6]
+      "feld": [
+        43,
+        6
+      ]
     },
     {
       "moebel": "sd6SchilfBreit",
-      "feld": [18, 17]
+      "feld": [
+        18,
+        17
+      ]
     },
     {
       "moebel": "sd6SchilfBreit",
-      "feld": [18, 10]
+      "feld": [
+        18,
+        10
+      ]
     },
     {
       "moebel": "sd6Schilf",
-      "feld": [18, 20]
+      "feld": [
+        18,
+        20
+      ]
     },
     {
       "moebel": "sd6Schilf",
-      "feld": [3, 23]
+      "feld": [
+        3,
+        23
+      ]
     },
     {
       "moebel": "wg4BlumenWeiss",
-      "feld": [46, 25]
-    },
-    {
-      "moebel": "wg4BlumenWeiss",
-      "feld": [36, 9]
+      "feld": [
+        46,
+        25
+      ]
     },
     {
       "moebel": "wg4BuschKlein",
-      "feld": [34, 24]
+      "feld": [
+        34,
+        24
+      ]
     },
     {
       "moebel": "sd6Schilf",
-      "feld": [20, 13]
+      "feld": [
+        20,
+        13
+      ]
     },
     {
       "moebel": "sd6SchilfBreit",
-      "feld": [31, 32]
-    },
-    {
-      "moebel": "wg4BlumenWeiss",
-      "feld": [19, 17]
+      "feld": [
+        31,
+        32
+      ]
     },
     {
       "moebel": "wg4BuschKlein",
-      "feld": [30, 6]
+      "feld": [
+        30,
+        6
+      ]
     },
     {
       "moebel": "wg4Gras",
-      "feld": [33, 9]
+      "feld": [
+        33,
+        9
+      ]
     },
     {
       "moebel": "by6StegQuer5",
-      "feld": [7, 12],
+      "feld": [
+        7,
+        12
+      ],
       "runde7": true
     },
     {
       "moebel": "pd7Hausboot",
-      "feld": [1, 10],
+      "feld": [
+        1,
+        10
+      ],
       "bauteil_ok": true,
       "runde7": true
     },
     {
       "moebel": "el7Gaslaterne",
-      "feld": [6, 10],
+      "feld": [
+        6,
+        10
+      ],
       "vorn": true,
       "runde7": true
     },
     {
       "moebel": "pd7Blechkiste",
-      "feld": [16, 14],
+      "feld": [
+        18,
+        14
+      ],
       "runde7": true
     },
     {
       "moebel": "pd7Finkenzeichen",
-      "feld": [10, 13],
+      "feld": [
+        10,
+        13
+      ],
       "runde7": true
+    },
+    {
+      "moebel": "by6StegQuer3",
+      "feld": [
+        9,
+        24
+      ]
     }
   ],
   "ausloeser": [
     {
       "name": "start",
-      "feld": [1, 17],
+      "feld": [
+        1,
+        17
+      ],
       "eigenschaften": {
         "richtung": "rechts"
       }
     },
     {
       "name": "zurueckDelacroix",
-      "feld": [0, 17]
+      "feld": [
+        0,
+        17
+      ]
     },
     {
       "name": "zurueckDelacroix",
-      "feld": [0, 18]
+      "feld": [
+        0,
+        18
+      ]
     },
     {
       "name": "nebel",
-      "feld": [28, 17]
+      "feld": [
+        28,
+        17
+      ]
     },
     {
       "name": "ereignisHausboot",
-      "feld": [8, 12]
+      "feld": [
+        8,
+        12
+      ]
     },
     {
       "name": "finchBauerC",
-      "feld": [10, 13]
+      "feld": [
+        10,
+        13
+      ]
     },
     {
       "name": "seite05",
-      "feld": [22, 10]
+      "feld": [
+        22,
+        10
+      ]
     },
     {
       "name": "sperreHochwasser",
-      "feld": [8, 17]
+      "feld": [
+        8,
+        17
+      ]
     },
     {
       "name": "luftboot",
-      "feld": [17, 26]
+      "feld": [
+        17,
+        26
+      ]
     }
   ],
   "figuren": [
     {
       "name": "theron",
-      "feld": [17, 20]
+      "feld": [
+        17,
+        20
+      ]
     },
     {
       "name": "pepe",
-      "feld": [7, 13]
+      "feld": [
+        7,
+        13
+      ]
     }
   ],
   "belebung": [
     {
       "name": "angler",
       "typ": "statist",
-      "feld": [12, 24],
+      "feld": [
+        6,
+        30
+      ],
       "eigenschaften": {
-        "von": "12,24",
-        "bis": "12,24",
+        "von": "6,30",
+        "bis": "6,30",
         "tun": "sitzt mit der Angel am Ufer, Mütze tief im Gesicht",
         "wann": "tag",
         "sagt": "statist.bayou.steg.angler"
@@ -468,10 +676,13 @@
     {
       "name": "krebsfischerin",
       "typ": "statist",
-      "feld": [22, 17],
+      "feld": [
+        30,
+        30
+      ],
       "eigenschaften": {
-        "von": "22,17",
-        "bis": "22,17",
+        "von": "30,30",
+        "bis": "30,30",
         "tun": "zieht eine Reuse aus dem Wasser",
         "wann": "tag",
         "sagt": "statist.bayou.steg.krebsfischerin"
@@ -480,7 +691,10 @@
     {
       "name": "mundharmonika",
       "typ": "statist",
-      "feld": [21, 14],
+      "feld": [
+        21,
+        14
+      ],
       "eigenschaften": {
         "von": "21,14",
         "bis": "21,14",
@@ -492,7 +706,10 @@
     {
       "name": "fotografin",
       "typ": "statist",
-      "feld": [19, 22],
+      "feld": [
+        19,
+        22
+      ],
       "eigenschaften": {
         "von": "19,22",
         "bis": "19,22",
@@ -503,7 +720,10 @@
     {
       "name": "reiher",
       "typ": "tier",
-      "feld": [41, 24],
+      "feld": [
+        41,
+        24
+      ],
       "eigenschaften": {
         "von": "41,24",
         "bis": "41,24",
@@ -513,7 +733,10 @@
     {
       "name": "alligator",
       "typ": "tier",
-      "feld": [29, 27],
+      "feld": [
+        29,
+        27
+      ],
       "eigenschaften": {
         "von": "26,28",
         "bis": "32,34",
@@ -523,7 +746,10 @@
     {
       "name": "libellen",
       "typ": "tier",
-      "feld": [6, 14],
+      "feld": [
+        6,
+        14
+      ],
       "eigenschaften": {
         "von": "3,14",
         "bis": "10,14",
@@ -533,7 +759,10 @@
     {
       "name": "frosch",
       "typ": "tier",
-      "feld": [21, 23],
+      "feld": [
+        21,
+        23
+      ],
       "eigenschaften": {
         "von": "21,23",
         "bis": "21,23",
@@ -543,7 +772,10 @@
     {
       "name": "schildkroete",
       "typ": "tier",
-      "feld": [5, 21],
+      "feld": [
+        5,
+        21
+      ],
       "eigenschaften": {
         "von": "3,21",
         "bis": "8,22",
@@ -553,7 +785,10 @@
     {
       "name": "nutria",
       "typ": "tier",
-      "feld": [10, 30],
+      "feld": [
+        10,
+        30
+      ],
       "eigenschaften": {
         "von": "4,32",
         "bis": "14,31",
@@ -561,7 +796,11 @@
       }
     }
   ],
-  "zustand": ["neu", "gebraucht", "alt"],
+  "zustand": [
+    "neu",
+    "gebraucht",
+    "alt"
+  ],
   "stil": [
     "rustikal",
     "natur",
@@ -572,5 +811,6 @@
     "maritim"
   ],
   "datei": "karten/bayou-steg.json",
-  "toenung": "nebel"
+  "toenung": "nebel",
+  "ufer": "moor"
 }

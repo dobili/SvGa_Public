@@ -1108,7 +1108,7 @@
       "gebaeude": true
     },
     "pd7Laden1": {
-      "quelle": "modern-exteriors/Modern_Exteriors_16x16/ME_Theme_Sorter_16x16/9_Shopping_Center_and_Markets_Singles_16x16/ME_Singles_Shopping_Center_and_Markets_16x16_Market_Small_1.png",
+      "quelle": "spiel/eigene/laden_fisch.png",
       "breite": 80,
       "hoehe": 128,
       "kollision": true,
@@ -1141,7 +1141,7 @@
       "gebaeude": true
     },
     "pd7Markt2": {
-      "quelle": "modern-exteriors/Modern_Exteriors_16x16/ME_Theme_Sorter_16x16/9_Shopping_Center_and_Markets_Singles_16x16/ME_Singles_Shopping_Center_and_Markets_16x16_Market_Medium_2.png",
+      "quelle": "spiel/eigene/laden_hafenbedarf.png",
       "breite": 112,
       "hoehe": 144,
       "kollision": true,
@@ -1174,7 +1174,7 @@
       "gebaeude": true
     },
     "pd7Laden4": {
-      "quelle": "modern-exteriors/Modern_Exteriors_16x16/ME_Theme_Sorter_16x16/9_Shopping_Center_and_Markets_Singles_16x16/ME_Singles_Shopping_Center_and_Markets_16x16_Market_Small_4.png",
+      "quelle": "spiel/eigene/laden_tabak.png",
       "breite": 80,
       "hoehe": 128,
       "kollision": true,
@@ -1207,7 +1207,7 @@
       "gebaeude": true
     },
     "pd7Markt5": {
-      "quelle": "modern-exteriors/Modern_Exteriors_16x16/ME_Theme_Sorter_16x16/9_Shopping_Center_and_Markets_Singles_16x16/ME_Singles_Shopping_Center_and_Markets_16x16_Market_Medium_5.png",
+      "quelle": "spiel/eigene/laden_buecher.png",
       "breite": 112,
       "hoehe": 144,
       "kollision": true,
@@ -1240,7 +1240,7 @@
       "gebaeude": true
     },
     "pd7Laden7": {
-      "quelle": "modern-exteriors/Modern_Exteriors_16x16/ME_Theme_Sorter_16x16/9_Shopping_Center_and_Markets_Singles_16x16/ME_Singles_Shopping_Center_and_Markets_16x16_Market_Small_7.png",
+      "quelle": "spiel/eigene/laden_baeckerei.png",
       "breite": 80,
       "hoehe": 128,
       "kollision": true,
@@ -1306,7 +1306,7 @@
       "gebaeude": true
     },
     "pd7Laden10": {
-      "quelle": "modern-exteriors/Modern_Exteriors_16x16/ME_Theme_Sorter_16x16/9_Shopping_Center_and_Markets_Singles_16x16/ME_Singles_Shopping_Center_and_Markets_16x16_Market_Small_10.png",
+      "quelle": "spiel/eigene/laden_musik.png",
       "breite": 80,
       "hoehe": 128,
       "kollision": true,
@@ -1496,6 +1496,475 @@
       "hoehe": 16,
       "art": "deko",
       "blick": "unten"
+    },
+    "pd9Linie4": {
+      "quelle": "spiel/eigene/fahrbahn_linie_4.png",
+      "breite": 16,
+      "hoehe": 64,
+      "kollision": false,
+      "art": "markierung",
+      "zustand": "neu",
+      "stil": "modern"
+    },
+    "pd9LinieQ4": {
+      "quelle": "spiel/eigene/fahrbahn_linie_quer_4.png",
+      "breite": 64,
+      "hoehe": 16,
+      "kollision": false,
+      "art": "markierung",
+      "zustand": "neu",
+      "stil": "modern"
+    },
+    "pd9Linie5": {
+      "quelle": "spiel/eigene/fahrbahn_linie_5.png",
+      "breite": 16,
+      "hoehe": 80,
+      "kollision": false,
+      "art": "markierung",
+      "zustand": "neu",
+      "stil": "modern"
+    },
+    "pd9LinieQ5": {
+      "quelle": "spiel/eigene/fahrbahn_linie_quer_5.png",
+      "breite": 80,
+      "hoehe": 16,
+      "kollision": false,
+      "art": "markierung",
+      "zustand": "neu",
+      "stil": "modern"
+    },
+    "pd9Werkbank": {
+      "quelle": "modern-farm/Single_Files_16x16/0_Complete_Tileset_Singles_16x16/DIY_Crafting_Table_16x16.png",
+      "breite": 48,
+      "hoehe": 48,
+      "kollision": true,
+      "art": "tisch",
+      "zustand": "gebraucht",
+      "stil": "rustikal",
+      "blick": "unten"
+    },
+    "pd9Spaene": {
+      "quelle": "modern-farm/Single_Files_16x16/0_Complete_Tileset_Singles_16x16/Shavings_Woodwork_Crafting_Table_16x16.png",
+      "breite": 16,
+      "hoehe": 16,
+      "kollision": false,
+      "art": "deko",
+      "zustand": "gebraucht",
+      "stil": "rustikal"
+    },
+    "pd9Lehrertisch": {
+      "quelle": "modern-interiors/1_Interiors/16x16/Theme_Sorter_Black_Shadow_Singles/5_Classroom_and_Library_Black_Shadow_Singles_16x16/Classroom_and_Library_Singles_25.png",
+      "breite": 32,
+      "hoehe": 32,
+      "kollision": true,
+      "art": "schreibtisch",
+      "zustand": "gebraucht",
+      "stil": "klassisch",
+      "blick": "unten"
+    },
+    "pd9Ziegel": {
+      "quelle": "modern-exteriors/Modern_Exteriors_16x16/ME_Theme_Sorter_16x16/3_City_Props_Singles_16x16/ME_Singles_City_Props_16x16_Brick_5.png",
+      "breite": 32,
+      "hoehe": 32,
+      "kollision": false,
+      "art": "deko",
+      "zustand": "gebraucht",
+      "stil": "klassisch"
+    },
+    "pd9LeiterKaputt": {
+      "quelle": "modern-exteriors/Modern_Exteriors_16x16/ME_Theme_Sorter_16x16/3_City_Props_Singles_16x16/ME_Singles_City_Props_16x16_Broken_Ladder_1.png",
+      "breite": 16,
+      "hoehe": 32,
+      "kollision": true,
+      "art": "deko",
+      "zustand": "gebraucht",
+      "stil": "rustikal",
+      "blick": "unten"
+    },
+    "pd9Rohr": {
+      "quelle": "modern-exteriors/Modern_Exteriors_16x16/ME_Theme_Sorter_16x16/3_City_Props_Singles_16x16/ME_Singles_City_Props_16x16_Trash_Pile_Props_10.png",
+      "breite": 16,
+      "hoehe": 16,
+      "kollision": false,
+      "art": "deko",
+      "zustand": "gebraucht",
+      "stil": "rustikal"
+    },
+    "pd9Stiefel": {
+      "quelle": "modern-exteriors/Modern_Exteriors_16x16/ME_Theme_Sorter_16x16/3_City_Props_Singles_16x16/ME_Singles_City_Props_16x16_Trash_Pile_Props_11.png",
+      "breite": 16,
+      "hoehe": 16,
+      "kollision": false,
+      "art": "deko",
+      "zustand": "gebraucht",
+      "stil": "rustikal"
+    },
+    "pd9KlavierBeige": {
+      "quelle": "modern-interiors/1_Interiors/16x16/Theme_Sorter_Black_Shadow_Singles/6_Music_and_Sport_Black_Shadow_Singles_16x16/Music_and_Sport_Black_Shadow_Singles_189.png",
+      "breite": 32,
+      "hoehe": 48,
+      "kollision": true,
+      "art": "geraet",
+      "zustand": "gebraucht",
+      "stil": "klassisch",
+      "blick": "unten"
+    },
+    "pd9Schutt": {
+      "quelle": "modern-exteriors/Modern_Exteriors_16x16/ME_Theme_Sorter_16x16/3_City_Props_Singles_16x16/ME_Singles_City_Props_16x16_Trash_Pile_3.png",
+      "breite": 64,
+      "hoehe": 32,
+      "kollision": true,
+      "art": "deko",
+      "zustand": "gebraucht",
+      "stil": "rustikal",
+      "blick": "unten"
+    },
+    "pd9Werkzeugschrank2": {
+      "quelle": "modern-exteriors/Modern_Exteriors_16x16/ME_Theme_Sorter_16x16/8_Worksite_Singles_16x16/ME_Singles_Worksite_16x16_Tool_Box_1.png",
+      "breite": 32,
+      "hoehe": 32,
+      "kollision": true,
+      "art": "schrank",
+      "zustand": "gebraucht",
+      "stil": "industrie",
+      "blick": "unten"
+    },
+    "pd9Klavierhocker": {
+      "quelle": "modern-interiors/1_Interiors/16x16/Theme_Sorter_Black_Shadow_Singles/6_Music_and_Sport_Black_Shadow_Singles_16x16/Music_and_Sport_Black_Shadow_Singles_171.png",
+      "breite": 16,
+      "hoehe": 16,
+      "kollision": true,
+      "art": "bank",
+      "zustand": "gebraucht",
+      "stil": "klassisch",
+      "blick": "unten"
+    },
+    "pd9BootAb": {
+      "quelle": "modern-exteriors/Modern_Exteriors_16x16/ME_Theme_Sorter_16x16/10_Vehicles_Singles_16x16/ME_Singles_Vehicles_16x16_Boat_1_Down_2.png",
+      "breite": 32,
+      "hoehe": 64,
+      "kollision": false,
+      "art": "boot",
+      "zustand": "gebraucht",
+      "stil": "klassisch",
+      "blick": "unten"
+    },
+    "pd9BootAuf": {
+      "quelle": "modern-exteriors/Modern_Exteriors_16x16/ME_Theme_Sorter_16x16/10_Vehicles_Singles_16x16/ME_Singles_Vehicles_16x16_Boat_1_Up_2.png",
+      "breite": 32,
+      "hoehe": 64,
+      "kollision": false,
+      "art": "boot",
+      "zustand": "gebraucht",
+      "stil": "klassisch",
+      "blick": "oben"
+    },
+    "pd9Sturmschutt": {
+      "quelle": "modern-exteriors/Modern_Exteriors_16x16/ME_Theme_Sorter_16x16/3_City_Props_Singles_16x16/ME_Singles_City_Props_16x16_Trash_Pile_1.png",
+      "breite": 64,
+      "hoehe": 32,
+      "kollision": true,
+      "art": "deko",
+      "zustand": "gebraucht",
+      "stil": "klassisch",
+      "blick": "unten"
+    },
+    "pd9StrichQ16": {
+      "quelle": "spiel/eigene/fahrbahn_strich_quer_16.png",
+      "breite": 256,
+      "hoehe": 16,
+      "kollision": false,
+      "art": "markierung",
+      "zustand": "gebraucht",
+      "stil": "klassisch"
+    },
+    "pd9BordQ1": {
+      "quelle": "spiel/eigene/einfassung_quer_1.png",
+      "breite": 16,
+      "hoehe": 16,
+      "kollision": false,
+      "art": "bordstein",
+      "zustand": "gebraucht",
+      "stil": "klassisch"
+    },
+    "pd9BordL1": {
+      "quelle": "spiel/eigene/einfassung_laengs_1.png",
+      "breite": 16,
+      "hoehe": 16,
+      "kollision": false,
+      "art": "bordstein",
+      "zustand": "gebraucht",
+      "stil": "klassisch"
+    },
+    "pd9BordQ2": {
+      "quelle": "spiel/eigene/einfassung_quer_2.png",
+      "breite": 32,
+      "hoehe": 16,
+      "kollision": false,
+      "art": "bordstein",
+      "zustand": "gebraucht",
+      "stil": "klassisch"
+    },
+    "pd9BordL2": {
+      "quelle": "spiel/eigene/einfassung_laengs_2.png",
+      "breite": 16,
+      "hoehe": 32,
+      "kollision": false,
+      "art": "bordstein",
+      "zustand": "gebraucht",
+      "stil": "klassisch"
+    },
+    "pd9BordQ3": {
+      "quelle": "spiel/eigene/einfassung_quer_3.png",
+      "breite": 48,
+      "hoehe": 16,
+      "kollision": false,
+      "art": "bordstein",
+      "zustand": "gebraucht",
+      "stil": "klassisch"
+    },
+    "pd9BordL3": {
+      "quelle": "spiel/eigene/einfassung_laengs_3.png",
+      "breite": 16,
+      "hoehe": 48,
+      "kollision": false,
+      "art": "bordstein",
+      "zustand": "gebraucht",
+      "stil": "klassisch"
+    },
+    "pd9BordQ4": {
+      "quelle": "spiel/eigene/einfassung_quer_4.png",
+      "breite": 64,
+      "hoehe": 16,
+      "kollision": false,
+      "art": "bordstein",
+      "zustand": "gebraucht",
+      "stil": "klassisch"
+    },
+    "pd9BordL4": {
+      "quelle": "spiel/eigene/einfassung_laengs_4.png",
+      "breite": 16,
+      "hoehe": 64,
+      "kollision": false,
+      "art": "bordstein",
+      "zustand": "gebraucht",
+      "stil": "klassisch"
+    },
+    "pd9BordQ5": {
+      "quelle": "spiel/eigene/einfassung_quer_5.png",
+      "breite": 80,
+      "hoehe": 16,
+      "kollision": false,
+      "art": "bordstein",
+      "zustand": "gebraucht",
+      "stil": "klassisch"
+    },
+    "pd9BordL5": {
+      "quelle": "spiel/eigene/einfassung_laengs_5.png",
+      "breite": 16,
+      "hoehe": 80,
+      "kollision": false,
+      "art": "bordstein",
+      "zustand": "gebraucht",
+      "stil": "klassisch"
+    },
+    "pd9BordQ6": {
+      "quelle": "spiel/eigene/einfassung_quer_6.png",
+      "breite": 96,
+      "hoehe": 16,
+      "kollision": false,
+      "art": "bordstein",
+      "zustand": "gebraucht",
+      "stil": "klassisch"
+    },
+    "pd9BordL6": {
+      "quelle": "spiel/eigene/einfassung_laengs_6.png",
+      "breite": 16,
+      "hoehe": 96,
+      "kollision": false,
+      "art": "bordstein",
+      "zustand": "gebraucht",
+      "stil": "klassisch"
+    },
+    "pd9BordQ7": {
+      "quelle": "spiel/eigene/einfassung_quer_7.png",
+      "breite": 112,
+      "hoehe": 16,
+      "kollision": false,
+      "art": "bordstein",
+      "zustand": "gebraucht",
+      "stil": "klassisch"
+    },
+    "pd9BordL7": {
+      "quelle": "spiel/eigene/einfassung_laengs_7.png",
+      "breite": 16,
+      "hoehe": 112,
+      "kollision": false,
+      "art": "bordstein",
+      "zustand": "gebraucht",
+      "stil": "klassisch"
+    },
+    "pd9BordQ8": {
+      "quelle": "spiel/eigene/einfassung_quer_8.png",
+      "breite": 128,
+      "hoehe": 16,
+      "kollision": false,
+      "art": "bordstein",
+      "zustand": "gebraucht",
+      "stil": "klassisch"
+    },
+    "pd9BordL8": {
+      "quelle": "spiel/eigene/einfassung_laengs_8.png",
+      "breite": 16,
+      "hoehe": 128,
+      "kollision": false,
+      "art": "bordstein",
+      "zustand": "gebraucht",
+      "stil": "klassisch"
+    },
+    "pd9BordQ9": {
+      "quelle": "spiel/eigene/einfassung_quer_9.png",
+      "breite": 144,
+      "hoehe": 16,
+      "kollision": false,
+      "art": "bordstein",
+      "zustand": "gebraucht",
+      "stil": "klassisch"
+    },
+    "pd9BordL9": {
+      "quelle": "spiel/eigene/einfassung_laengs_9.png",
+      "breite": 16,
+      "hoehe": 144,
+      "kollision": false,
+      "art": "bordstein",
+      "zustand": "gebraucht",
+      "stil": "klassisch"
+    },
+    "pd9BordQ10": {
+      "quelle": "spiel/eigene/einfassung_quer_10.png",
+      "breite": 160,
+      "hoehe": 16,
+      "kollision": false,
+      "art": "bordstein",
+      "zustand": "gebraucht",
+      "stil": "klassisch"
+    },
+    "pd9BordL10": {
+      "quelle": "spiel/eigene/einfassung_laengs_10.png",
+      "breite": 16,
+      "hoehe": 160,
+      "kollision": false,
+      "art": "bordstein",
+      "zustand": "gebraucht",
+      "stil": "klassisch"
+    },
+    "pd9BordQ11": {
+      "quelle": "spiel/eigene/einfassung_quer_11.png",
+      "breite": 176,
+      "hoehe": 16,
+      "kollision": false,
+      "art": "bordstein",
+      "zustand": "gebraucht",
+      "stil": "klassisch"
+    },
+    "pd9BordL11": {
+      "quelle": "spiel/eigene/einfassung_laengs_11.png",
+      "breite": 16,
+      "hoehe": 176,
+      "kollision": false,
+      "art": "bordstein",
+      "zustand": "gebraucht",
+      "stil": "klassisch"
+    },
+    "pd9BordQ12": {
+      "quelle": "spiel/eigene/einfassung_quer_12.png",
+      "breite": 192,
+      "hoehe": 16,
+      "kollision": false,
+      "art": "bordstein",
+      "zustand": "gebraucht",
+      "stil": "klassisch"
+    },
+    "pd9BordL12": {
+      "quelle": "spiel/eigene/einfassung_laengs_12.png",
+      "breite": 16,
+      "hoehe": 192,
+      "kollision": false,
+      "art": "bordstein",
+      "zustand": "gebraucht",
+      "stil": "klassisch"
+    },
+    "pd9BordQ13": {
+      "quelle": "spiel/eigene/einfassung_quer_13.png",
+      "breite": 208,
+      "hoehe": 16,
+      "kollision": false,
+      "art": "bordstein",
+      "zustand": "gebraucht",
+      "stil": "klassisch"
+    },
+    "pd9BordL13": {
+      "quelle": "spiel/eigene/einfassung_laengs_13.png",
+      "breite": 16,
+      "hoehe": 208,
+      "kollision": false,
+      "art": "bordstein",
+      "zustand": "gebraucht",
+      "stil": "klassisch"
+    },
+    "pd9BordQ14": {
+      "quelle": "spiel/eigene/einfassung_quer_14.png",
+      "breite": 224,
+      "hoehe": 16,
+      "kollision": false,
+      "art": "bordstein",
+      "zustand": "gebraucht",
+      "stil": "klassisch"
+    },
+    "pd9BordL14": {
+      "quelle": "spiel/eigene/einfassung_laengs_14.png",
+      "breite": 16,
+      "hoehe": 224,
+      "kollision": false,
+      "art": "bordstein",
+      "zustand": "gebraucht",
+      "stil": "klassisch"
+    },
+    "pd9BordQ15": {
+      "quelle": "spiel/eigene/einfassung_quer_15.png",
+      "breite": 240,
+      "hoehe": 16,
+      "kollision": false,
+      "art": "bordstein",
+      "zustand": "gebraucht",
+      "stil": "klassisch"
+    },
+    "pd9BordL15": {
+      "quelle": "spiel/eigene/einfassung_laengs_15.png",
+      "breite": 16,
+      "hoehe": 240,
+      "kollision": false,
+      "art": "bordstein",
+      "zustand": "gebraucht",
+      "stil": "klassisch"
+    },
+    "pd9BordQ16": {
+      "quelle": "spiel/eigene/einfassung_quer_16.png",
+      "breite": 256,
+      "hoehe": 16,
+      "kollision": false,
+      "art": "bordstein",
+      "zustand": "gebraucht",
+      "stil": "klassisch"
+    },
+    "pd9BordL16": {
+      "quelle": "spiel/eigene/einfassung_laengs_16.png",
+      "breite": 16,
+      "hoehe": 256,
+      "kollision": false,
+      "art": "bordstein",
+      "zustand": "gebraucht",
+      "stil": "klassisch"
     }
   }
 }

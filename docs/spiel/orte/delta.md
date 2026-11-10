@@ -252,6 +252,55 @@ frei begehbar; die Auslöser kommen mit den Dialogen.
 - **Sammelstränge:** Fundknoten zählen die gemeinsamen Ink-Variablen `buchseiten`, `finchFiguren`,
   `spurenPM` hoch (zusätzlich zu `gibFund`).
 
+### 3.4 Runde 9 (mittel-1, 10.11.2026): Mängel aus der Variantenwahl
+
+**Bayou (`bayou.steg`, C):**
+
+- Das Wasser ist schwarz und steht (`"ufer": "moor"`, Material `wasser_moor`): LimeZus Uferblock
+  mit umgefärbtem Wasser, braunschwarz mit grünem Schimmer, ohne Wellen (Bildwunsch
+  `wasser_moor.py`). Die Flüsse der anderen Karten bleiben türkis.
+- Die Inseln sind ausgefranst statt rechteckig: Ecken abgerundet, Ufer in Stücken von drei Feldern
+  eingebuchtet oder vorgeschoben. Stegenden, Hütten, Auslöser und Figuren bleiben, wo sie waren.
+  Von den weißen Blumen bleibt ein Drittel, damit die Inseln nicht wie Rasen wirken.
+- Therons Hütte ist eine verwitterte Bretterhütte (13, 10) mit Fässern, Blechkiste und Brennholz.
+  Das blaue Haus ist jetzt die Bretterhütte der Krebsfischerin (31, 25), sie steht mit ihrer Reuse
+  am Ufer davor (30, 30).
+- Die Südwestinsel ist über einen kurzen Steg (9–11, 24) erreichbar. Dort sitzt der Angler neben
+  seinem Kahn (6, 30).
+- Der Reiher wird wie alle weißen Wasservögel als Möwe gezeichnet (`tierarten.json`, Stamm
+  „reiher“), nicht mehr als Huhn. Ein eigenes Reiherbild wäre ein Bildwunsch für später.
+- Zustände: keine neuen. Das Hochwasser (S8) zeigt schon der halb überflutete Steg.
+
+**Fähre (`wegSiliconDelacroix.faehre`, A):**
+
+- Die Fähre hat einen spitzen Bug nach Süden (Reihen 74–79, begehbar bis zur Spitze), mit
+  weißer Bordwand und Reling (Bildwunsch `faehre_aufbau.py`, Bild `faehre_bug.png`). Das Heck
+  bleibt gerade, mit dem Fallreep in der Lücke der Reling.
+- Der Salon ist ein weißes Deckhaus mit blauem Streifen, Fenstern und Tür (10, 28). Auf seinem
+  Dach stehen die Brücke mit Fensterband nach vorn und der rote Schornstein. Die Rätseltafel hängt
+  rechts neben der Tür, der Auslöser `tafel` steht davor (17, 35). Das graue Steuerhaus am Bug ist
+  weg.
+- Die Bordbar ist ein kleines Deckhaus mit gestreifter Markise, Luke und Theke (8, 20) statt der
+  Fischbude mit Hai.
+- Statt zehn grüner Bahnsteigbänke in fünf gleichen Reihen stehen sechs Holzbänke versetzt auf
+  dem Vorderdeck, alle mit Blick zum Bug. Das Deck ist die ruhige dunkle Diele (`holzDunkel`).
+- Zustände: keine. Die Fahrt hat in der Geschichte nur einen Zustand.
+
+**Deich (`wegSiliconDelacroix.deich`, C):**
+
+- Der Deich hat Höhe: `kante: klippe` zeichnet die Böschung (Reihen 8–10) als Hang unter der
+  Krone, die beiden Rampen werden Treppen. Die gerade Heckenlinie ist weg.
+- Das Meer ist grau (Winter) vor einem Steinufer (`"ufer": "see"`, Material `wasser_see`,
+  Bildwunsch `wasser_see.py`: das eigene Steinufer mit umgefärbtem Wasser).
+- In der Krone klafft ein Loch zum Meer (59–60, 5). Mr. Guidry steht daneben (61, 5), die
+  Sandsäcke liegen am Weg, der dort auf die Reihen 6–7 ausweicht.
+- Der Kronenweg schwingt in Abschnitten von 18 bis 34 Feldern zwischen den Reihen 5–6 und 6–7,
+  statt 220 Felder schnurgerade zu laufen. Der Pfad von der ersten Treppe zur Muschel läuft schräg
+  statt im rechten Winkel.
+- Die zwei Boote in der Wiese sind weg. Am Steg bleiben Fähre und Ruderboot.
+- Zustände: keine neuen. Das Loch gehört zur Ankunft vor dem Hurrikan-Aufräumen; ein Zustand
+  „Deich geflickt“ wäre erst sinnvoll, wenn die Geschichte zurückführt.
+
 ## 4. Bühnenbilder
 
 ### 4.1 Fährdeck

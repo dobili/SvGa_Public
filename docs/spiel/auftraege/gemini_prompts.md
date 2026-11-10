@@ -322,3 +322,32 @@ OBJECTS, side by side with plenty of magenta space, 3 tiles wide and 2 tiles tal
 2. The same bench in dark brown wood.
 3. A railway platform bench of three joined green plastic seats on a metal beam, seen from behind (the backs of the three seats in front).
 ```
+
+---
+
+## 14. Reiher (Tier, stehend und fliegend)
+
+**Für:** Bayou (Fotografin „fotografiert die Reiher“, Tier `reiher` bei (41, 24)) und andere
+Ufer. Der Gutachter sah ein Huhn; seit `tierarten.json` zeichnet die App weiße Wasservögel als
+Möwe, ein Reiher ist aber grau, hochbeinig und langhalsig (Entwurf mittel-1).
+**Datei:** `ki-roh/reiher.png`. **Ziel:** Bogen wie die Möwe (`Beach_Seagull_Complete`): Rahmen
+32 × 32 Pixel, oben Standbilder, darunter Flugbilder (Schnitt „reihen“).
+
+```
+
+Pixel art animal sprite sheet for a top-down RPG.
+
+VIEW: classic 16-bit RPG animal sprites, front-facing top-down style like the birds in RPG town maps, NOT isometric.
+
+PIXEL STYLE: chunky pixel art, every frame is 32x32 sprite pixels, enlarged so that every sprite pixel is an exactly square block of 10x10 screen pixels on a strict grid. Hard edges, no anti-aliasing, no gradients. 1-pixel dark outline (#3A3A50). 2-3 flat shades per color, light from the top left.
+
+BACKGROUND: solid flat magenta (#FF00FF). No ground, no water, no shadow, no text.
+
+ANIMAL: a great blue heron of a Louisiana swamp: blue-grey body, long thin neck in an S-curve, long yellow dagger-shaped beak, white face with a black stripe above the eye, long thin yellow-grey legs, dark grey wing tips. The bird fills about 20x28 of the 32x32 frame while standing.
+
+LAYOUT: a strict grid of 32x32 frames with magenta between them.
+Row 1: four standing frames: facing down (toward the viewer), facing left, facing right, facing up (back to the viewer).
+Row 2: four flying frames facing left with wings up, wings level, wings down, wings level (legs trailing behind).
+Row 3: the same four flying frames facing right.
+
+```

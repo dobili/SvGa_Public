@@ -4,7 +4,7 @@
   "art": "innen",
   "beschreibung": "Die Turnhalle der Schule von Port Delacroix, Ausweichquartier des Schachclubs nach dem Hurrikan (Szenen 63, 67, 69). Helle Wände mit hohen Fenstern, durch die der Winterregen läuft, ein heller Hallenboden mit den Linien des Spielfelds. Die Doppeltür liegt in der Mitte der Südwand, davor eine Matte. An der Nordwand der Lehrertisch, an dem Miss Odile beim Clubkampf sitzt, daneben ein Korb für Spenden, rechts das Plakat „Wir spielen weiter“ (bis das eigene Plakat kommt, ein Schulplakat). In der Nordwestecke zwei Regale mit geretteten Brettern und eine offene Kiste mit Figuren. Acht graue Klapptische in vier Reihen, links und rechts eines Mittelgangs, auf jedem ein Brett, je ein Stuhl davor und dahinter. In der Südwestecke Turnmatten, Basketbälle liegen herum; an der Südwand drei Holzbänke für Zuschauer, in der Nordostecke ein Stapel Kisten mit Spenden. An der Nordwand hängen zwei Basketballkörbe zwischen den Fenstern.",
   "wand": "hellgrau",
-  "boden": "holzHell",
+  "boden": "hallenboden",
   "raster": [
     "##########################",
     "##########################",
@@ -25,8 +25,22 @@
   ],
   "objekte": [
     {
-      "moebel": "pd6SpielfeldQuer",
-      "feld": [6, 3]
+      "moebel": "pd9Linie5",
+      "feld": [10, 3],
+      "versatz": [-1, 0]
+    },
+    {
+      "moebel": "pd9Linie5",
+      "feld": [14, 3],
+      "versatz": [-1, 0]
+    },
+    {
+      "moebel": "pd9LinieQ4",
+      "feld": [10, 8]
+    },
+    {
+      "moebel": "pd9LinieQ5",
+      "feld": [10, 3]
     },
     {
       "moebel": "pd6Fenster",
@@ -55,18 +69,8 @@
     },
     {
       "moebel": "pd6Basketballkorb",
-      "feld": [5, 1],
+      "feld": [11, 1],
       "an_wand": true
-    },
-    {
-      "moebel": "pd6Basketballkorb",
-      "feld": [19, 1],
-      "an_wand": true
-    },
-    {
-      "moebel": "pd6Pult",
-      "feld": [12, 1],
-      "id": "pult"
     },
     {
       "moebel": "pd6Brettregal",
@@ -285,6 +289,11 @@
       "moebel": "pd6Tuer",
       "feld": [13, 15],
       "an_wand": true
+    },
+    {
+      "moebel": "pd9Lehrertisch",
+      "feld": [17, 3],
+      "id": "lehrertisch"
     }
   ],
   "ausloeser": [
@@ -305,7 +314,7 @@
     },
     {
       "name": "notenheft",
-      "feld": [12, 4]
+      "feld": [17, 5]
     },
     {
       "name": "plakatTurnhalle",
@@ -315,7 +324,7 @@
   "figuren": [
     {
       "name": "odile",
-      "feld": [14, 4]
+      "feld": [19, 4]
     },
     {
       "name": "remy",
@@ -354,7 +363,7 @@
     {
       "name": "zuschauerin",
       "typ": "statist",
-      "feld": [19, 8],
+      "feld": [17, 9],
       "eigenschaften": {
         "von": "19,8",
         "bis": "19,8",
@@ -366,7 +375,7 @@
     {
       "name": "alterHerr",
       "typ": "statist",
-      "feld": [12, 9],
+      "feld": [7, 9],
       "eigenschaften": {
         "von": "12,9",
         "bis": "12,9",

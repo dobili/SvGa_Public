@@ -270,6 +270,42 @@ ein Fanshop mit Schals und T-Shirts.
   der Funde prüft Ink über die gemeinsamen Zähler `finchFiguren`, `buchseiten`, `spurenPM`,
   `kreideTreffpunkte`; keine `voraussetzung`, damit eine verpasste Fundstelle den Strang nicht sperrt.
 
+### 3.5 Runde 9 (mittel-1, 10.11.2026): Mängel aus der Variantenwahl
+
+- **Außen (`capitalArena.aussen`, A):** Höfe und Gassen zwischen den Häusern sind helle Platten statt
+  Rasen, nur der Park um die Arena bleibt grün. Bordstein an jeder Kante von Pflaster zu Rasen. Die
+  Läden heißen nach ihrem Zweck (Kaufhaus, Sport, Blumen, Kaffee, Apotheke, Mode, Spielwaren,
+  Bücher, Musik) und haben kein Vorhängeschloss mehr (Bildwunsch `laeden_schilder.py`). Pflanzkübel
+  mit Bäumen in den Höfen. Die Arena bleibt am oberen Rand: Sie füllt die Karte bis zum Vorplatz,
+  nach Norden liegt nichts, was die Geschichte braucht, und ein Umbau würde Übergänge und Auslöser
+  verschieben.
+- **Innenstadt (`capitalArena.innenstadt`, A):** dicht bebaut, Höfe gepflastert statt Wiesen. Die
+  Allee hat eine gestrichelte Mittellinie und Bordstein zu den Gehwegen. Der U-Bahn-Abgang ist ein
+  sichtbarer Treppenschacht mitten auf dem Platz (37, 42). Die zweite kleine Polizeiwache ist ein
+  Wohnhaus. Statt sechsmal MARKET stehen Elektro, Warenhaus, Tabak, Sport, Schuhe, Kaufhaus,
+  Galerie, Uhren, Wohnen und Feinkost an den Läden.
+- **Halle (`capitalArena.halle`, C):** helle Wand (`creme`) und dunkles Holz (`holzDunkel`, jetzt
+  eine ruhige Diele). Die Turniertafel hängt an der Nordwand über dem Saal (19, 1), der Auslöser
+  `turniertafel` steht davor (19, 3). Die zwei quer stehenden Tribünen sind weg, an ihrer Stelle
+  stehen Pflanzen. Nova und die Statisten stehen frei, nicht in Stühlen.
+- **U-Bahnhof (`capitalArena.ubahnhof`, A):** Der Ausgang ist eine Treppe nach oben (17, 16) unter
+  einem halb hochgezogenen Rollgitter (Bildwunsch `ubahn_rollgitter.py`), passend zur Kreidenacht
+  („das Rollgitter geht um Mitternacht herunter“). Die Drehkreuze stehen als Sperre davor
+  (15, 13) und (20, 13), Hocker an den Klapptischen.
+- **Seeufer (`wegGhostCapital.seeufer`, A):** Der Strand ist heller Sand aus LimeZus Strandbogen
+  (Material `strand` zeigt jetzt `21_Beach`, vorher war es oranger Boden; das betrifft auch den
+  Strand der Raststätte). Die Strandzunge hat runde Ecken. Das Fährhaus ist ein Holzhaus mit
+  Satteldach, Schalter und Uhr im Giebel (Bildwunsch `faehrhaus.py`), der Auslöser
+  `faehrterminal` bleibt. Der Steg hat einen Kopf nach Osten (60–69, 7–8), an dem die Fähre
+  längsseits liegt. Der Absperrbock steht am Wegrand neben dem Wachmann (2, 12). Die Kiefern
+  stehen locker gestreut mit unregelmäßigem Waldrand und einer Lichtung um den Picknicktisch.
+- **Leuchtturm (`wegGhostCapital.leuchtturm`, A):** Die Landzunge ist breit am Ufer und läuft zur
+  Spitze schmal aus (Reihen 1–8, x 47–82), mit Felsen rings am Ufer. Der orange Erdstreifen
+  zwischen See und Wiese ist Wiese geworden. Der Weg läuft in Bögen durch Stützpunkte, mit einem
+  Abzweig zum Turmfuß. Die Kiefern stehen locker gestreut unter dem Weg, der Waldrand schwingt.
+- Zustände: keine neuen. Die Geschichte ändert die Arena-Karten nicht sichtbar; das Gitter am
+  Abgang ist nach `ubahnOffen` nur offen, und das zeigt schon der Übergang.
+
 ## 4. Bühnenbilder
 
 Möbel mit Vorsilbe `gc7` (Weg) in `moebel/weg-ghost-capital.json` und `ca7` (Arena) in

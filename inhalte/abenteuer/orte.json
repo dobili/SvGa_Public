@@ -2707,7 +2707,10 @@
           "kennung": "portDelacroix.aussen",
           "datei": "karten/port-delacroix-aussen.json",
           "name": "ort.portDelacroix.aussen",
-          "innen": false
+          "innen": false,
+          "zustaende": {
+            "musikhausOffen": "karten/port-delacroix-aussen-musikhaus-neu.json"
+          }
         },
         {
           "kennung": "portDelacroix.turnhalle",

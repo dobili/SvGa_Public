@@ -11,7 +11,7 @@
  "tilewidth": 16,
  "tileheight": 16,
  "nextlayerid": 5,
- "nextobjectid": 70,
+ "nextobjectid": 76,
  "layers": [
   {
    "id": 1,
@@ -2277,8 +2277,8 @@
      "id": 5,
      "name": "zuschauer",
      "type": "statist",
-     "x": 192,
-     "y": 256,
+     "x": 144,
+     "y": 192,
      "width": 16,
      "height": 16,
      "rotation": 0,
@@ -3414,52 +3414,6 @@
     },
     {
      "id": 53,
-     "name": "ca7Fussmatte",
-     "type": "moebel",
-     "x": 288,
-     "y": 296,
-     "width": 16,
-     "height": 16,
-     "rotation": 0,
-     "visible": true,
-     "properties": [
-      {
-       "name": "tiefe",
-       "type": "int",
-       "value": 1
-      },
-      {
-       "name": "kollision",
-       "type": "bool",
-       "value": false
-      }
-     ]
-    },
-    {
-     "id": 54,
-     "name": "ca7Tuer",
-     "type": "moebel",
-     "x": 288,
-     "y": 304,
-     "width": 16,
-     "height": 16,
-     "rotation": 0,
-     "visible": true,
-     "properties": [
-      {
-       "name": "tiefe",
-       "type": "int",
-       "value": 0
-      },
-      {
-       "name": "kollision",
-       "type": "bool",
-       "value": false
-      }
-     ]
-    },
-    {
-     "id": 55,
      "name": "ca8KlapptischBrett",
      "type": "moebel",
      "x": 160,
@@ -3482,7 +3436,7 @@
      ]
     },
     {
-     "id": 56,
+     "id": 54,
      "name": "ca8KlapptischBrett",
      "type": "moebel",
      "x": 272,
@@ -3505,7 +3459,7 @@
      ]
     },
     {
-     "id": 57,
+     "id": 55,
      "name": "ca8KlapptischBrett",
      "type": "moebel",
      "x": 384,
@@ -3528,7 +3482,7 @@
      ]
     },
     {
-     "id": 58,
+     "id": 56,
      "name": "ci8Pfeiler",
      "type": "moebel",
      "x": 96,
@@ -3551,7 +3505,7 @@
      ]
     },
     {
-     "id": 59,
+     "id": 57,
      "name": "ci8Pfeiler",
      "type": "moebel",
      "x": 464,
@@ -3574,7 +3528,7 @@
      ]
     },
     {
-     "id": 60,
+     "id": 58,
      "name": "ci8Bank",
      "type": "moebel",
      "x": 16,
@@ -3597,7 +3551,7 @@
      ]
     },
     {
-     "id": 61,
+     "id": 59,
      "name": "ci8BankB",
      "type": "moebel",
      "x": 512,
@@ -3620,7 +3574,7 @@
      ]
     },
     {
-     "id": 62,
+     "id": 60,
      "name": "ci8GraffitiSchrift",
      "type": "moebel",
      "x": 32,
@@ -3643,7 +3597,7 @@
      ]
     },
     {
-     "id": 63,
+     "id": 61,
      "name": "ci8GraffitiWolf",
      "type": "moebel",
      "x": 192,
@@ -3666,7 +3620,7 @@
      ]
     },
     {
-     "id": 64,
+     "id": 62,
      "name": "ci8Plakate3",
      "type": "moebel",
      "x": 304,
@@ -3689,7 +3643,7 @@
      ]
     },
     {
-     "id": 65,
+     "id": 63,
      "name": "ci8GraffitiBlume",
      "type": "moebel",
      "x": 448,
@@ -3712,7 +3666,7 @@
      ]
     },
     {
-     "id": 66,
+     "id": 64,
      "name": "ci8Leuchte",
      "type": "moebel",
      "x": 384,
@@ -3735,53 +3689,53 @@
      ]
     },
     {
+     "id": 65,
+     "name": "ci8Drehkreuz",
+     "type": "moebel",
+     "x": 240,
+     "y": 208,
+     "width": 32,
+     "height": 64,
+     "rotation": 0,
+     "visible": true,
+     "properties": [
+      {
+       "name": "tiefe",
+       "type": "int",
+       "value": 264
+      },
+      {
+       "name": "kollision",
+       "type": "bool",
+       "value": true
+      }
+     ]
+    },
+    {
+     "id": 66,
+     "name": "ci8Drehkreuz",
+     "type": "moebel",
+     "x": 320,
+     "y": 208,
+     "width": 32,
+     "height": 64,
+     "rotation": 0,
+     "visible": true,
+     "properties": [
+      {
+       "name": "tiefe",
+       "type": "int",
+       "value": 264
+      },
+      {
+       "name": "kollision",
+       "type": "bool",
+       "value": true
+      }
+     ]
+    },
+    {
      "id": 67,
-     "name": "ci8Drehkreuz",
-     "type": "moebel",
-     "x": 224,
-     "y": 224,
-     "width": 32,
-     "height": 64,
-     "rotation": 0,
-     "visible": true,
-     "properties": [
-      {
-       "name": "tiefe",
-       "type": "int",
-       "value": 280
-      },
-      {
-       "name": "kollision",
-       "type": "bool",
-       "value": true
-      }
-     ]
-    },
-    {
-     "id": 68,
-     "name": "ci8Drehkreuz",
-     "type": "moebel",
-     "x": 336,
-     "y": 224,
-     "width": 32,
-     "height": 64,
-     "rotation": 0,
-     "visible": true,
-     "properties": [
-      {
-       "name": "tiefe",
-       "type": "int",
-       "value": 280
-      },
-      {
-       "name": "kollision",
-       "type": "bool",
-       "value": true
-      }
-     ]
-    },
-    {
-     "id": 69,
      "name": "ci8Kreidespringer",
      "type": "moebel",
      "x": 128,
@@ -3800,6 +3754,190 @@
        "name": "kollision",
        "type": "bool",
        "value": false
+      }
+     ]
+    },
+    {
+     "id": 68,
+     "name": "ca9Treppe",
+     "type": "moebel",
+     "x": 272,
+     "y": 256,
+     "width": 32,
+     "height": 48,
+     "rotation": 0,
+     "visible": true,
+     "properties": [
+      {
+       "name": "tiefe",
+       "type": "int",
+       "value": 1
+      },
+      {
+       "name": "kollision",
+       "type": "bool",
+       "value": false
+      }
+     ]
+    },
+    {
+     "id": 69,
+     "name": "ca9Rollgitter",
+     "type": "moebel",
+     "x": 264,
+     "y": 304,
+     "width": 48,
+     "height": 16,
+     "rotation": 0,
+     "visible": true,
+     "properties": [
+      {
+       "name": "tiefe",
+       "type": "int",
+       "value": 0
+      },
+      {
+       "name": "kollision",
+       "type": "bool",
+       "value": false
+      }
+     ]
+    },
+    {
+     "id": 70,
+     "name": "ca9Hocker",
+     "type": "moebel",
+     "x": 144,
+     "y": 192,
+     "width": 16,
+     "height": 16,
+     "rotation": 0,
+     "visible": true,
+     "properties": [
+      {
+       "name": "tiefe",
+       "type": "int",
+       "value": 200
+      },
+      {
+       "name": "kollision",
+       "type": "bool",
+       "value": true
+      }
+     ]
+    },
+    {
+     "id": 71,
+     "name": "ca9Hocker",
+     "type": "moebel",
+     "x": 192,
+     "y": 192,
+     "width": 16,
+     "height": 16,
+     "rotation": 0,
+     "visible": true,
+     "properties": [
+      {
+       "name": "tiefe",
+       "type": "int",
+       "value": 200
+      },
+      {
+       "name": "kollision",
+       "type": "bool",
+       "value": true
+      }
+     ]
+    },
+    {
+     "id": 72,
+     "name": "ca9Hocker",
+     "type": "moebel",
+     "x": 256,
+     "y": 192,
+     "width": 16,
+     "height": 16,
+     "rotation": 0,
+     "visible": true,
+     "properties": [
+      {
+       "name": "tiefe",
+       "type": "int",
+       "value": 200
+      },
+      {
+       "name": "kollision",
+       "type": "bool",
+       "value": true
+      }
+     ]
+    },
+    {
+     "id": 73,
+     "name": "ca9Hocker",
+     "type": "moebel",
+     "x": 304,
+     "y": 192,
+     "width": 16,
+     "height": 16,
+     "rotation": 0,
+     "visible": true,
+     "properties": [
+      {
+       "name": "tiefe",
+       "type": "int",
+       "value": 200
+      },
+      {
+       "name": "kollision",
+       "type": "bool",
+       "value": true
+      }
+     ]
+    },
+    {
+     "id": 74,
+     "name": "ca9Hocker",
+     "type": "moebel",
+     "x": 368,
+     "y": 192,
+     "width": 16,
+     "height": 16,
+     "rotation": 0,
+     "visible": true,
+     "properties": [
+      {
+       "name": "tiefe",
+       "type": "int",
+       "value": 200
+      },
+      {
+       "name": "kollision",
+       "type": "bool",
+       "value": true
+      }
+     ]
+    },
+    {
+     "id": 75,
+     "name": "ca9Hocker",
+     "type": "moebel",
+     "x": 416,
+     "y": 192,
+     "width": 16,
+     "height": 16,
+     "rotation": 0,
+     "visible": true,
+     "properties": [
+      {
+       "name": "tiefe",
+       "type": "int",
+       "value": 200
+      },
+      {
+       "name": "kollision",
+       "type": "bool",
+       "value": true
       }
      ]
     }

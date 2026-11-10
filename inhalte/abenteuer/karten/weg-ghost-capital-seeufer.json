@@ -11,7 +11,7 @@
  "tilewidth": 16,
  "tileheight": 16,
  "nextlayerid": 5,
- "nextobjectid": 128,
+ "nextobjectid": 136,
  "layers": [
   {
    "id": 1,
@@ -668,10 +668,8 @@
     0,
     0,
     0,
-    4,
-    4,
-    4,
-    4,
+    0,
+    0,
     4,
     4,
     4,
@@ -682,6 +680,8 @@
     4,
     4,
     0,
+    0,
+    0,
     4,
     4,
     0,
@@ -818,8 +818,7 @@
     0,
     0,
     0,
-    4,
-    4,
+    0,
     4,
     4,
     4,
@@ -832,6 +831,7 @@
     4,
     4,
     0,
+    0,
     4,
     4,
     0,
@@ -1134,16 +1134,16 @@
     0,
     4,
     4,
-    0,
-    0,
-    0,
-    0,
-    0,
-    0,
-    0,
-    0,
-    0,
-    0,
+    4,
+    4,
+    4,
+    4,
+    4,
+    4,
+    4,
+    4,
+    4,
+    4,
     0,
     0,
     0,
@@ -1284,16 +1284,16 @@
     0,
     4,
     4,
-    0,
-    0,
-    0,
-    0,
-    0,
-    0,
-    0,
-    0,
-    0,
-    0,
+    4,
+    4,
+    4,
+    4,
+    4,
+    4,
+    4,
+    4,
+    4,
+    4,
     0,
     0,
     0,
@@ -5181,10 +5181,8 @@
     2,
     2,
     2,
-    0,
-    0,
-    0,
-    0,
+    2,
+    2,
     0,
     0,
     0,
@@ -5195,6 +5193,8 @@
     0,
     0,
     2,
+    2,
+    2,
     0,
     0,
     2,
@@ -5331,8 +5331,7 @@
     2,
     2,
     2,
-    0,
-    0,
+    2,
     0,
     0,
     0,
@@ -5345,6 +5344,7 @@
     0,
     0,
     2,
+    2,
     0,
     0,
     2,
@@ -5647,16 +5647,16 @@
     2,
     0,
     0,
-    2,
-    2,
-    2,
-    2,
-    2,
-    2,
-    2,
-    2,
-    2,
-    2,
+    0,
+    0,
+    0,
+    0,
+    0,
+    0,
+    0,
+    0,
+    0,
+    0,
     2,
     2,
     2,
@@ -5797,16 +5797,16 @@
     2,
     0,
     0,
-    2,
-    2,
-    2,
-    2,
-    2,
-    2,
-    2,
-    2,
-    2,
-    2,
+    0,
+    0,
+    0,
+    0,
+    0,
+    0,
+    0,
+    0,
+    0,
+    0,
     2,
     2,
     2,
@@ -14075,19 +14075,19 @@
     },
     {
      "id": 24,
-     "name": "gc7Faehrterminal",
+     "name": "gc9Faehrhaus",
      "type": "moebel",
-     "x": 768,
+     "x": 752,
      "y": 64,
      "width": 96,
-     "height": 128,
+     "height": 112,
      "rotation": 0,
      "visible": true,
      "properties": [
       {
        "name": "tiefe",
        "type": "int",
-       "value": 184
+       "value": 168
       },
       {
        "name": "kollision",
@@ -14123,8 +14123,8 @@
      "id": 26,
      "name": "gc7Absperrbock",
      "type": "moebel",
-     "x": 48,
-     "y": 272,
+     "x": 32,
+     "y": 192,
      "width": 32,
      "height": 32,
      "rotation": 0,
@@ -14133,7 +14133,7 @@
       {
        "name": "tiefe",
        "type": "int",
-       "value": 296
+       "value": 216
       },
       {
        "name": "kollision",
@@ -14558,7 +14558,444 @@
     },
     {
      "id": 45,
-     "name": "gc7KieferB",
+     "name": "ca7Buehne",
+     "type": "moebel",
+     "x": 2208,
+     "y": 144,
+     "width": 96,
+     "height": 48,
+     "rotation": 0,
+     "visible": true,
+     "properties": [
+      {
+       "name": "tiefe",
+       "type": "int",
+       "value": 1
+      },
+      {
+       "name": "kollision",
+       "type": "bool",
+       "value": false
+      }
+     ]
+    },
+    {
+     "id": 46,
+     "name": "ca8FahneWeiss",
+     "type": "moebel",
+     "x": 2192,
+     "y": 144,
+     "width": 16,
+     "height": 48,
+     "rotation": 0,
+     "visible": true,
+     "properties": [
+      {
+       "name": "tiefe",
+       "type": "int",
+       "value": 184
+      },
+      {
+       "name": "kollision",
+       "type": "bool",
+       "value": true
+      }
+     ]
+    },
+    {
+     "id": 47,
+     "name": "ca8FahneSchwarz",
+     "type": "moebel",
+     "x": 2304,
+     "y": 144,
+     "width": 16,
+     "height": 48,
+     "rotation": 0,
+     "visible": true,
+     "properties": [
+      {
+       "name": "tiefe",
+       "type": "int",
+       "value": 184
+      },
+      {
+       "name": "kollision",
+       "type": "bool",
+       "value": true
+      }
+     ]
+    },
+    {
+     "id": 48,
+     "name": "ca8Lautsprecher",
+     "type": "moebel",
+     "x": 2144,
+     "y": 144,
+     "width": 48,
+     "height": 48,
+     "rotation": 0,
+     "visible": true,
+     "properties": [
+      {
+       "name": "tiefe",
+       "type": "int",
+       "value": 184
+      },
+      {
+       "name": "kollision",
+       "type": "bool",
+       "value": true
+      }
+     ]
+    },
+    {
+     "id": 49,
+     "name": "ca8Lautsprecher",
+     "type": "moebel",
+     "x": 2320,
+     "y": 144,
+     "width": 48,
+     "height": 48,
+     "rotation": 0,
+     "visible": true,
+     "properties": [
+      {
+       "name": "tiefe",
+       "type": "int",
+       "value": 184
+      },
+      {
+       "name": "kollision",
+       "type": "bool",
+       "value": true
+      }
+     ]
+    },
+    {
+     "id": 50,
+     "name": "ca8Eiswagen",
+     "type": "moebel",
+     "x": 1600,
+     "y": 192,
+     "width": 112,
+     "height": 64,
+     "rotation": 0,
+     "visible": true,
+     "properties": [
+      {
+       "name": "tiefe",
+       "type": "int",
+       "value": 248
+      },
+      {
+       "name": "kollision",
+       "type": "bool",
+       "value": true
+      }
+     ]
+    },
+    {
+     "id": 51,
+     "name": "ca8Tacowagen",
+     "type": "moebel",
+     "x": 1760,
+     "y": 192,
+     "width": 112,
+     "height": 64,
+     "rotation": 0,
+     "visible": true,
+     "properties": [
+      {
+       "name": "tiefe",
+       "type": "int",
+       "value": 248
+      },
+      {
+       "name": "kollision",
+       "type": "bool",
+       "value": true
+      }
+     ]
+    },
+    {
+     "id": 52,
+     "name": "ca8KlapptischBrett",
+     "type": "moebel",
+     "x": 1952,
+     "y": 192,
+     "width": 32,
+     "height": 32,
+     "rotation": 0,
+     "visible": true,
+     "properties": [
+      {
+       "name": "tiefe",
+       "type": "int",
+       "value": 216
+      },
+      {
+       "name": "kollision",
+       "type": "bool",
+       "value": true
+      }
+     ]
+    },
+    {
+     "id": 53,
+     "name": "ca8KlapptischBrett",
+     "type": "moebel",
+     "x": 2000,
+     "y": 192,
+     "width": 32,
+     "height": 32,
+     "rotation": 0,
+     "visible": true,
+     "properties": [
+      {
+       "name": "tiefe",
+       "type": "int",
+       "value": 216
+      },
+      {
+       "name": "kollision",
+       "type": "bool",
+       "value": true
+      }
+     ]
+    },
+    {
+     "id": 54,
+     "name": "ca8KlapptischBrett",
+     "type": "moebel",
+     "x": 2048,
+     "y": 192,
+     "width": 32,
+     "height": 32,
+     "rotation": 0,
+     "visible": true,
+     "properties": [
+      {
+       "name": "tiefe",
+       "type": "int",
+       "value": 216
+      },
+      {
+       "name": "kollision",
+       "type": "bool",
+       "value": true
+      }
+     ]
+    },
+    {
+     "id": 55,
+     "name": "ca8KlapptischBrett",
+     "type": "moebel",
+     "x": 2096,
+     "y": 192,
+     "width": 32,
+     "height": 32,
+     "rotation": 0,
+     "visible": true,
+     "properties": [
+      {
+       "name": "tiefe",
+       "type": "int",
+       "value": 216
+      },
+      {
+       "name": "kollision",
+       "type": "bool",
+       "value": true
+      }
+     ]
+    },
+    {
+     "id": 56,
+     "name": "ca8KlapptischBrett",
+     "type": "moebel",
+     "x": 2144,
+     "y": 192,
+     "width": 32,
+     "height": 32,
+     "rotation": 0,
+     "visible": true,
+     "properties": [
+      {
+       "name": "tiefe",
+       "type": "int",
+       "value": 216
+      },
+      {
+       "name": "kollision",
+       "type": "bool",
+       "value": true
+      }
+     ]
+    },
+    {
+     "id": 57,
+     "name": "ca8Lichtermast",
+     "type": "moebel",
+     "x": 1936,
+     "y": 144,
+     "width": 16,
+     "height": 48,
+     "rotation": 0,
+     "visible": true,
+     "properties": [
+      {
+       "name": "tiefe",
+       "type": "int",
+       "value": 184
+      },
+      {
+       "name": "kollision",
+       "type": "bool",
+       "value": true
+      }
+     ]
+    },
+    {
+     "id": 58,
+     "name": "ca8Lichtermast",
+     "type": "moebel",
+     "x": 2128,
+     "y": 144,
+     "width": 16,
+     "height": 48,
+     "rotation": 0,
+     "visible": true,
+     "properties": [
+      {
+       "name": "tiefe",
+       "type": "int",
+       "value": 184
+      },
+      {
+       "name": "kollision",
+       "type": "bool",
+       "value": true
+      }
+     ]
+    },
+    {
+     "id": 59,
+     "name": "ca8Lichterkette",
+     "type": "moebel",
+     "x": 1952,
+     "y": 144,
+     "width": 64,
+     "height": 16,
+     "rotation": 0,
+     "visible": true,
+     "properties": [
+      {
+       "name": "tiefe",
+       "type": "int",
+       "value": 152
+      },
+      {
+       "name": "kollision",
+       "type": "bool",
+       "value": false
+      }
+     ]
+    },
+    {
+     "id": 60,
+     "name": "ca8Lichterkette",
+     "type": "moebel",
+     "x": 2016,
+     "y": 144,
+     "width": 64,
+     "height": 16,
+     "rotation": 0,
+     "visible": true,
+     "properties": [
+      {
+       "name": "tiefe",
+       "type": "int",
+       "value": 152
+      },
+      {
+       "name": "kollision",
+       "type": "bool",
+       "value": false
+      }
+     ]
+    },
+    {
+     "id": 61,
+     "name": "ca8Lichterkette",
+     "type": "moebel",
+     "x": 2064,
+     "y": 144,
+     "width": 64,
+     "height": 16,
+     "rotation": 0,
+     "visible": true,
+     "properties": [
+      {
+       "name": "tiefe",
+       "type": "int",
+       "value": 152
+      },
+      {
+       "name": "kollision",
+       "type": "bool",
+       "value": false
+      }
+     ]
+    },
+    {
+     "id": 62,
+     "name": "gc9StegQuer7",
+     "type": "moebel",
+     "x": 960,
+     "y": 112,
+     "width": 112,
+     "height": 36,
+     "rotation": 0,
+     "visible": true,
+     "properties": [
+      {
+       "name": "tiefe",
+       "type": "int",
+       "value": 1
+      },
+      {
+       "name": "kollision",
+       "type": "bool",
+       "value": false
+      }
+     ]
+    },
+    {
+     "id": 63,
+     "name": "gc9StegQuer3",
+     "type": "moebel",
+     "x": 1072,
+     "y": 112,
+     "width": 48,
+     "height": 36,
+     "rotation": 0,
+     "visible": true,
+     "properties": [
+      {
+       "name": "tiefe",
+       "type": "int",
+       "value": 1
+      },
+      {
+       "name": "kollision",
+       "type": "bool",
+       "value": false
+      }
+     ]
+    },
+    {
+     "id": 64,
+     "name": "gc7Kiefer",
      "type": "moebel",
      "x": 1856,
      "y": 416,
@@ -14580,10 +15017,56 @@
      ]
     },
     {
-     "id": 46,
+     "id": 65,
+     "name": "gc7KieferB",
+     "type": "moebel",
+     "x": 1920,
+     "y": 384,
+     "width": 32,
+     "height": 48,
+     "rotation": 0,
+     "visible": true,
+     "properties": [
+      {
+       "name": "tiefe",
+       "type": "int",
+       "value": 424
+      },
+      {
+       "name": "kollision",
+       "type": "bool",
+       "value": true
+      }
+     ]
+    },
+    {
+     "id": 66,
      "name": "gc7Kiefer",
      "type": "moebel",
      "x": 2096,
+     "y": 416,
+     "width": 32,
+     "height": 48,
+     "rotation": 0,
+     "visible": true,
+     "properties": [
+      {
+       "name": "tiefe",
+       "type": "int",
+       "value": 456
+      },
+      {
+       "name": "kollision",
+       "type": "bool",
+       "value": true
+      }
+     ]
+    },
+    {
+     "id": 67,
+     "name": "gc7Kiefer",
+     "type": "moebel",
+     "x": 784,
      "y": 352,
      "width": 32,
      "height": 48,
@@ -14603,11 +15086,11 @@
      ]
     },
     {
-     "id": 47,
+     "id": 68,
      "name": "gc7Kiefer",
      "type": "moebel",
      "x": 2112,
-     "y": 416,
+     "y": 368,
      "width": 32,
      "height": 48,
      "rotation": 0,
@@ -14616,7 +15099,7 @@
       {
        "name": "tiefe",
        "type": "int",
-       "value": 456
+       "value": 408
       },
       {
        "name": "kollision",
@@ -14626,31 +15109,31 @@
      ]
     },
     {
-     "id": 48,
-     "name": "gc7KieferB",
-     "type": "moebel",
-     "x": 400,
-     "y": 416,
-     "width": 32,
-     "height": 48,
-     "rotation": 0,
-     "visible": true,
-     "properties": [
-      {
-       "name": "tiefe",
-       "type": "int",
-       "value": 456
-      },
-      {
-       "name": "kollision",
-       "type": "bool",
-       "value": true
-      }
-     ]
-    },
-    {
-     "id": 49,
+     "id": 69,
      "name": "gc7Kiefer",
+     "type": "moebel",
+     "x": 1840,
+     "y": 352,
+     "width": 32,
+     "height": 48,
+     "rotation": 0,
+     "visible": true,
+     "properties": [
+      {
+       "name": "tiefe",
+       "type": "int",
+       "value": 392
+      },
+      {
+       "name": "kollision",
+       "type": "bool",
+       "value": true
+      }
+     ]
+    },
+    {
+     "id": 70,
+     "name": "gc7KieferB",
      "type": "moebel",
      "x": 592,
      "y": 320,
@@ -14672,10 +15155,10 @@
      ]
     },
     {
-     "id": 50,
+     "id": 71,
      "name": "gc7Kiefer",
      "type": "moebel",
-     "x": 1632,
+     "x": 2208,
      "y": 416,
      "width": 32,
      "height": 48,
@@ -14695,11 +15178,11 @@
      ]
     },
     {
-     "id": 51,
-     "name": "gc7Kiefer",
+     "id": 72,
+     "name": "gc7KieferB",
      "type": "moebel",
-     "x": 64,
-     "y": 320,
+     "x": 176,
+     "y": 400,
      "width": 32,
      "height": 48,
      "rotation": 0,
@@ -14708,7 +15191,7 @@
       {
        "name": "tiefe",
        "type": "int",
-       "value": 360
+       "value": 440
       },
       {
        "name": "kollision",
@@ -14718,7 +15201,53 @@
      ]
     },
     {
-     "id": 52,
+     "id": 73,
+     "name": "gc7Kiefer",
+     "type": "moebel",
+     "x": 64,
+     "y": 400,
+     "width": 32,
+     "height": 48,
+     "rotation": 0,
+     "visible": true,
+     "properties": [
+      {
+       "name": "tiefe",
+       "type": "int",
+       "value": 440
+      },
+      {
+       "name": "kollision",
+       "type": "bool",
+       "value": true
+      }
+     ]
+    },
+    {
+     "id": 74,
+     "name": "gc7Kiefer",
+     "type": "moebel",
+     "x": 272,
+     "y": 336,
+     "width": 32,
+     "height": 48,
+     "rotation": 0,
+     "visible": true,
+     "properties": [
+      {
+       "name": "tiefe",
+       "type": "int",
+       "value": 376
+      },
+      {
+       "name": "kollision",
+       "type": "bool",
+       "value": true
+      }
+     ]
+    },
+    {
+     "id": 75,
      "name": "gc7Kiefer",
      "type": "moebel",
      "x": 160,
@@ -14741,8 +15270,31 @@
      ]
     },
     {
-     "id": 53,
-     "name": "gc7KieferB",
+     "id": 76,
+     "name": "gc7Kiefer",
+     "type": "moebel",
+     "x": 992,
+     "y": 416,
+     "width": 32,
+     "height": 48,
+     "rotation": 0,
+     "visible": true,
+     "properties": [
+      {
+       "name": "tiefe",
+       "type": "int",
+       "value": 456
+      },
+      {
+       "name": "kollision",
+       "type": "bool",
+       "value": true
+      }
+     ]
+    },
+    {
+     "id": 77,
+     "name": "gc7Kiefer",
      "type": "moebel",
      "x": 128,
      "y": 416,
@@ -14764,563 +15316,11 @@
      ]
     },
     {
-     "id": 54,
-     "name": "gc7Kiefer",
-     "type": "moebel",
-     "x": 1808,
-     "y": 352,
-     "width": 32,
-     "height": 48,
-     "rotation": 0,
-     "visible": true,
-     "properties": [
-      {
-       "name": "tiefe",
-       "type": "int",
-       "value": 392
-      },
-      {
-       "name": "kollision",
-       "type": "bool",
-       "value": true
-      }
-     ]
-    },
-    {
-     "id": 55,
-     "name": "gc7Kiefer",
-     "type": "moebel",
-     "x": 1216,
-     "y": 416,
-     "width": 32,
-     "height": 48,
-     "rotation": 0,
-     "visible": true,
-     "properties": [
-      {
-       "name": "tiefe",
-       "type": "int",
-       "value": 456
-      },
-      {
-       "name": "kollision",
-       "type": "bool",
-       "value": true
-      }
-     ]
-    },
-    {
-     "id": 56,
-     "name": "gc7Kiefer",
-     "type": "moebel",
-     "x": 1152,
-     "y": 400,
-     "width": 32,
-     "height": 48,
-     "rotation": 0,
-     "visible": true,
-     "properties": [
-      {
-       "name": "tiefe",
-       "type": "int",
-       "value": 440
-      },
-      {
-       "name": "kollision",
-       "type": "bool",
-       "value": true
-      }
-     ]
-    },
-    {
-     "id": 57,
-     "name": "gc7Kiefer",
-     "type": "moebel",
-     "x": 1056,
-     "y": 384,
-     "width": 32,
-     "height": 48,
-     "rotation": 0,
-     "visible": true,
-     "properties": [
-      {
-       "name": "tiefe",
-       "type": "int",
-       "value": 424
-      },
-      {
-       "name": "kollision",
-       "type": "bool",
-       "value": true
-      }
-     ]
-    },
-    {
-     "id": 58,
-     "name": "gc7KieferB",
-     "type": "moebel",
-     "x": 2320,
-     "y": 320,
-     "width": 32,
-     "height": 48,
-     "rotation": 0,
-     "visible": true,
-     "properties": [
-      {
-       "name": "tiefe",
-       "type": "int",
-       "value": 360
-      },
-      {
-       "name": "kollision",
-       "type": "bool",
-       "value": true
-      }
-     ]
-    },
-    {
-     "id": 59,
-     "name": "gc7KieferB",
-     "type": "moebel",
-     "x": 448,
-     "y": 368,
-     "width": 32,
-     "height": 48,
-     "rotation": 0,
-     "visible": true,
-     "properties": [
-      {
-       "name": "tiefe",
-       "type": "int",
-       "value": 408
-      },
-      {
-       "name": "kollision",
-       "type": "bool",
-       "value": true
-      }
-     ]
-    },
-    {
-     "id": 60,
-     "name": "gc7Kiefer",
-     "type": "moebel",
-     "x": 288,
-     "y": 304,
-     "width": 32,
-     "height": 48,
-     "rotation": 0,
-     "visible": true,
-     "properties": [
-      {
-       "name": "tiefe",
-       "type": "int",
-       "value": 344
-      },
-      {
-       "name": "kollision",
-       "type": "bool",
-       "value": true
-      }
-     ]
-    },
-    {
-     "id": 61,
-     "name": "gc7Kiefer",
-     "type": "moebel",
-     "x": 880,
-     "y": 352,
-     "width": 32,
-     "height": 48,
-     "rotation": 0,
-     "visible": true,
-     "properties": [
-      {
-       "name": "tiefe",
-       "type": "int",
-       "value": 392
-      },
-      {
-       "name": "kollision",
-       "type": "bool",
-       "value": true
-      }
-     ]
-    },
-    {
-     "id": 62,
-     "name": "gc7KieferB",
-     "type": "moebel",
-     "x": 1936,
-     "y": 400,
-     "width": 32,
-     "height": 48,
-     "rotation": 0,
-     "visible": true,
-     "properties": [
-      {
-       "name": "tiefe",
-       "type": "int",
-       "value": 440
-      },
-      {
-       "name": "kollision",
-       "type": "bool",
-       "value": true
-      }
-     ]
-    },
-    {
-     "id": 63,
-     "name": "gc7KieferB",
-     "type": "moebel",
-     "x": 368,
-     "y": 368,
-     "width": 32,
-     "height": 48,
-     "rotation": 0,
-     "visible": true,
-     "properties": [
-      {
-       "name": "tiefe",
-       "type": "int",
-       "value": 408
-      },
-      {
-       "name": "kollision",
-       "type": "bool",
-       "value": true
-      }
-     ]
-    },
-    {
-     "id": 64,
-     "name": "gc7Kiefer",
-     "type": "moebel",
-     "x": 64,
-     "y": 400,
-     "width": 32,
-     "height": 48,
-     "rotation": 0,
-     "visible": true,
-     "properties": [
-      {
-       "name": "tiefe",
-       "type": "int",
-       "value": 440
-      },
-      {
-       "name": "kollision",
-       "type": "bool",
-       "value": true
-      }
-     ]
-    },
-    {
-     "id": 65,
-     "name": "gc7Kiefer",
-     "type": "moebel",
-     "x": 416,
-     "y": 304,
-     "width": 32,
-     "height": 48,
-     "rotation": 0,
-     "visible": true,
-     "properties": [
-      {
-       "name": "tiefe",
-       "type": "int",
-       "value": 344
-      },
-      {
-       "name": "kollision",
-       "type": "bool",
-       "value": true
-      }
-     ]
-    },
-    {
-     "id": 66,
-     "name": "gc7KieferB",
-     "type": "moebel",
-     "x": 736,
-     "y": 352,
-     "width": 32,
-     "height": 48,
-     "rotation": 0,
-     "visible": true,
-     "properties": [
-      {
-       "name": "tiefe",
-       "type": "int",
-       "value": 392
-      },
-      {
-       "name": "kollision",
-       "type": "bool",
-       "value": true
-      }
-     ]
-    },
-    {
-     "id": 67,
-     "name": "gc7KieferB",
-     "type": "moebel",
-     "x": 544,
-     "y": 400,
-     "width": 32,
-     "height": 48,
-     "rotation": 0,
-     "visible": true,
-     "properties": [
-      {
-       "name": "tiefe",
-       "type": "int",
-       "value": 440
-      },
-      {
-       "name": "kollision",
-       "type": "bool",
-       "value": true
-      }
-     ]
-    },
-    {
-     "id": 68,
-     "name": "gc7Kiefer",
-     "type": "moebel",
-     "x": 1248,
-     "y": 304,
-     "width": 32,
-     "height": 48,
-     "rotation": 0,
-     "visible": true,
-     "properties": [
-      {
-       "name": "tiefe",
-       "type": "int",
-       "value": 344
-      },
-      {
-       "name": "kollision",
-       "type": "bool",
-       "value": true
-      }
-     ]
-    },
-    {
-     "id": 69,
-     "name": "gc7Kiefer",
-     "type": "moebel",
-     "x": 768,
-     "y": 400,
-     "width": 32,
-     "height": 48,
-     "rotation": 0,
-     "visible": true,
-     "properties": [
-      {
-       "name": "tiefe",
-       "type": "int",
-       "value": 440
-      },
-      {
-       "name": "kollision",
-       "type": "bool",
-       "value": true
-      }
-     ]
-    },
-    {
-     "id": 70,
-     "name": "gc7KieferB",
-     "type": "moebel",
-     "x": 880,
-     "y": 416,
-     "width": 32,
-     "height": 48,
-     "rotation": 0,
-     "visible": true,
-     "properties": [
-      {
-       "name": "tiefe",
-       "type": "int",
-       "value": 456
-      },
-      {
-       "name": "kollision",
-       "type": "bool",
-       "value": true
-      }
-     ]
-    },
-    {
-     "id": 71,
-     "name": "gc7KieferB",
-     "type": "moebel",
-     "x": 1520,
-     "y": 384,
-     "width": 32,
-     "height": 48,
-     "rotation": 0,
-     "visible": true,
-     "properties": [
-      {
-       "name": "tiefe",
-       "type": "int",
-       "value": 424
-      },
-      {
-       "name": "kollision",
-       "type": "bool",
-       "value": true
-      }
-     ]
-    },
-    {
-     "id": 72,
-     "name": "gc7Kiefer",
-     "type": "moebel",
-     "x": 1280,
-     "y": 352,
-     "width": 32,
-     "height": 48,
-     "rotation": 0,
-     "visible": true,
-     "properties": [
-      {
-       "name": "tiefe",
-       "type": "int",
-       "value": 392
-      },
-      {
-       "name": "kollision",
-       "type": "bool",
-       "value": true
-      }
-     ]
-    },
-    {
-     "id": 73,
-     "name": "gc7KieferB",
-     "type": "moebel",
-     "x": 992,
-     "y": 400,
-     "width": 32,
-     "height": 48,
-     "rotation": 0,
-     "visible": true,
-     "properties": [
-      {
-       "name": "tiefe",
-       "type": "int",
-       "value": 440
-      },
-      {
-       "name": "kollision",
-       "type": "bool",
-       "value": true
-      }
-     ]
-    },
-    {
-     "id": 74,
-     "name": "gc7KieferB",
-     "type": "moebel",
-     "x": 1728,
-     "y": 416,
-     "width": 32,
-     "height": 48,
-     "rotation": 0,
-     "visible": true,
-     "properties": [
-      {
-       "name": "tiefe",
-       "type": "int",
-       "value": 456
-      },
-      {
-       "name": "kollision",
-       "type": "bool",
-       "value": true
-      }
-     ]
-    },
-    {
-     "id": 75,
-     "name": "gc7Kiefer",
-     "type": "moebel",
-     "x": 1152,
-     "y": 352,
-     "width": 32,
-     "height": 48,
-     "rotation": 0,
-     "visible": true,
-     "properties": [
-      {
-       "name": "tiefe",
-       "type": "int",
-       "value": 392
-      },
-      {
-       "name": "kollision",
-       "type": "bool",
-       "value": true
-      }
-     ]
-    },
-    {
-     "id": 76,
-     "name": "gc7Kiefer",
-     "type": "moebel",
-     "x": 1520,
-     "y": 336,
-     "width": 32,
-     "height": 48,
-     "rotation": 0,
-     "visible": true,
-     "properties": [
-      {
-       "name": "tiefe",
-       "type": "int",
-       "value": 376
-      },
-      {
-       "name": "kollision",
-       "type": "bool",
-       "value": true
-      }
-     ]
-    },
-    {
-     "id": 77,
-     "name": "gc7KieferB",
-     "type": "moebel",
-     "x": 144,
-     "y": 304,
-     "width": 32,
-     "height": 48,
-     "rotation": 0,
-     "visible": true,
-     "properties": [
-      {
-       "name": "tiefe",
-       "type": "int",
-       "value": 344
-      },
-      {
-       "name": "kollision",
-       "type": "bool",
-       "value": true
-      }
-     ]
-    },
-    {
      "id": 78,
      "name": "gc7Kiefer",
      "type": "moebel",
-     "x": 320,
-     "y": 416,
+     "x": 1216,
+     "y": 384,
      "width": 32,
      "height": 48,
      "rotation": 0,
@@ -15329,7 +15329,7 @@
       {
        "name": "tiefe",
        "type": "int",
-       "value": 456
+       "value": 424
       },
       {
        "name": "kollision",
@@ -15340,10 +15340,10 @@
     },
     {
      "id": 79,
-     "name": "gc7Kiefer",
+     "name": "gc7KieferB",
      "type": "moebel",
-     "x": 2240,
-     "y": 384,
+     "x": 352,
+     "y": 416,
      "width": 32,
      "height": 48,
      "rotation": 0,
@@ -15352,7 +15352,7 @@
       {
        "name": "tiefe",
        "type": "int",
-       "value": 424
+       "value": 456
       },
       {
        "name": "kollision",
@@ -15365,237 +15365,7 @@
      "id": 80,
      "name": "gc7KieferB",
      "type": "moebel",
-     "x": 1456,
-     "y": 320,
-     "width": 32,
-     "height": 48,
-     "rotation": 0,
-     "visible": true,
-     "properties": [
-      {
-       "name": "tiefe",
-       "type": "int",
-       "value": 360
-      },
-      {
-       "name": "kollision",
-       "type": "bool",
-       "value": true
-      }
-     ]
-    },
-    {
-     "id": 81,
-     "name": "gc7Kiefer",
-     "type": "moebel",
-     "x": 2224,
-     "y": 320,
-     "width": 32,
-     "height": 48,
-     "rotation": 0,
-     "visible": true,
-     "properties": [
-      {
-       "name": "tiefe",
-       "type": "int",
-       "value": 360
-      },
-      {
-       "name": "kollision",
-       "type": "bool",
-       "value": true
-      }
-     ]
-    },
-    {
-     "id": 82,
-     "name": "gc7Kiefer",
-     "type": "moebel",
-     "x": 1984,
-     "y": 304,
-     "width": 32,
-     "height": 48,
-     "rotation": 0,
-     "visible": true,
-     "properties": [
-      {
-       "name": "tiefe",
-       "type": "int",
-       "value": 344
-      },
-      {
-       "name": "kollision",
-       "type": "bool",
-       "value": true
-      }
-     ]
-    },
-    {
-     "id": 83,
-     "name": "gc7KieferB",
-     "type": "moebel",
-     "x": 464,
-     "y": 416,
-     "width": 32,
-     "height": 48,
-     "rotation": 0,
-     "visible": true,
-     "properties": [
-      {
-       "name": "tiefe",
-       "type": "int",
-       "value": 456
-      },
-      {
-       "name": "kollision",
-       "type": "bool",
-       "value": true
-      }
-     ]
-    },
-    {
-     "id": 84,
-     "name": "gc7KieferB",
-     "type": "moebel",
-     "x": 1056,
-     "y": 304,
-     "width": 32,
-     "height": 48,
-     "rotation": 0,
-     "visible": true,
-     "properties": [
-      {
-       "name": "tiefe",
-       "type": "int",
-       "value": 344
-      },
-      {
-       "name": "kollision",
-       "type": "bool",
-       "value": true
-      }
-     ]
-    },
-    {
-     "id": 85,
-     "name": "gc7KieferB",
-     "type": "moebel",
-     "x": 1408,
-     "y": 416,
-     "width": 32,
-     "height": 48,
-     "rotation": 0,
-     "visible": true,
-     "properties": [
-      {
-       "name": "tiefe",
-       "type": "int",
-       "value": 456
-      },
-      {
-       "name": "kollision",
-       "type": "bool",
-       "value": true
-      }
-     ]
-    },
-    {
-     "id": 86,
-     "name": "gc7Kiefer",
-     "type": "moebel",
-     "x": 1664,
-     "y": 368,
-     "width": 32,
-     "height": 48,
-     "rotation": 0,
-     "visible": true,
-     "properties": [
-      {
-       "name": "tiefe",
-       "type": "int",
-       "value": 408
-      },
-      {
-       "name": "kollision",
-       "type": "bool",
-       "value": true
-      }
-     ]
-    },
-    {
-     "id": 87,
-     "name": "gc7Kiefer",
-     "type": "moebel",
-     "x": 272,
-     "y": 368,
-     "width": 32,
-     "height": 48,
-     "rotation": 0,
-     "visible": true,
-     "properties": [
-      {
-       "name": "tiefe",
-       "type": "int",
-       "value": 408
-      },
-      {
-       "name": "kollision",
-       "type": "bool",
-       "value": true
-      }
-     ]
-    },
-    {
-     "id": 88,
-     "name": "gc7KieferB",
-     "type": "moebel",
-     "x": 1296,
-     "y": 416,
-     "width": 32,
-     "height": 48,
-     "rotation": 0,
-     "visible": true,
-     "properties": [
-      {
-       "name": "tiefe",
-       "type": "int",
-       "value": 456
-      },
-      {
-       "name": "kollision",
-       "type": "bool",
-       "value": true
-      }
-     ]
-    },
-    {
-     "id": 89,
-     "name": "gc7KieferB",
-     "type": "moebel",
      "x": 1152,
-     "y": 304,
-     "width": 32,
-     "height": 48,
-     "rotation": 0,
-     "visible": true,
-     "properties": [
-      {
-       "name": "tiefe",
-       "type": "int",
-       "value": 344
-      },
-      {
-       "name": "kollision",
-       "type": "bool",
-       "value": true
-      }
-     ]
-    },
-    {
-     "id": 90,
-     "name": "gc7KieferB",
-     "type": "moebel",
-     "x": 2352,
      "y": 384,
      "width": 32,
      "height": 48,
@@ -15615,10 +15385,102 @@
      ]
     },
     {
-     "id": 91,
+     "id": 81,
      "name": "gc7Kiefer",
      "type": "moebel",
-     "x": 1872,
+     "x": 2272,
+     "y": 304,
+     "width": 32,
+     "height": 48,
+     "rotation": 0,
+     "visible": true,
+     "properties": [
+      {
+       "name": "tiefe",
+       "type": "int",
+       "value": 344
+      },
+      {
+       "name": "kollision",
+       "type": "bool",
+       "value": true
+      }
+     ]
+    },
+    {
+     "id": 82,
+     "name": "gc7Kiefer",
+     "type": "moebel",
+     "x": 944,
+     "y": 416,
+     "width": 32,
+     "height": 48,
+     "rotation": 0,
+     "visible": true,
+     "properties": [
+      {
+       "name": "tiefe",
+       "type": "int",
+       "value": 456
+      },
+      {
+       "name": "kollision",
+       "type": "bool",
+       "value": true
+      }
+     ]
+    },
+    {
+     "id": 83,
+     "name": "gc7Kiefer",
+     "type": "moebel",
+     "x": 1184,
+     "y": 288,
+     "width": 32,
+     "height": 48,
+     "rotation": 0,
+     "visible": true,
+     "properties": [
+      {
+       "name": "tiefe",
+       "type": "int",
+       "value": 328
+      },
+      {
+       "name": "kollision",
+       "type": "bool",
+       "value": true
+      }
+     ]
+    },
+    {
+     "id": 84,
+     "name": "gc7Kiefer",
+     "type": "moebel",
+     "x": 288,
+     "y": 400,
+     "width": 32,
+     "height": 48,
+     "rotation": 0,
+     "visible": true,
+     "properties": [
+      {
+       "name": "tiefe",
+       "type": "int",
+       "value": 440
+      },
+      {
+       "name": "kollision",
+       "type": "bool",
+       "value": true
+      }
+     ]
+    },
+    {
+     "id": 85,
+     "name": "gc7Kiefer",
+     "type": "moebel",
+     "x": 448,
      "y": 352,
      "width": 32,
      "height": 48,
@@ -15638,10 +15500,33 @@
      ]
     },
     {
-     "id": 92,
-     "name": "gc7KieferB",
+     "id": 86,
+     "name": "gc7Kiefer",
      "type": "moebel",
-     "x": 1600,
+     "x": 1584,
+     "y": 320,
+     "width": 32,
+     "height": 48,
+     "rotation": 0,
+     "visible": true,
+     "properties": [
+      {
+       "name": "tiefe",
+       "type": "int",
+       "value": 360
+      },
+      {
+       "name": "kollision",
+       "type": "bool",
+       "value": true
+      }
+     ]
+    },
+    {
+     "id": 87,
+     "name": "gc7Kiefer",
+     "type": "moebel",
+     "x": 16,
      "y": 336,
      "width": 32,
      "height": 48,
@@ -15661,10 +15546,125 @@
      ]
     },
     {
+     "id": 88,
+     "name": "gc7Kiefer",
+     "type": "moebel",
+     "x": 1632,
+     "y": 400,
+     "width": 32,
+     "height": 48,
+     "rotation": 0,
+     "visible": true,
+     "properties": [
+      {
+       "name": "tiefe",
+       "type": "int",
+       "value": 440
+      },
+      {
+       "name": "kollision",
+       "type": "bool",
+       "value": true
+      }
+     ]
+    },
+    {
+     "id": 89,
+     "name": "gc7KieferB",
+     "type": "moebel",
+     "x": 816,
+     "y": 384,
+     "width": 32,
+     "height": 48,
+     "rotation": 0,
+     "visible": true,
+     "properties": [
+      {
+       "name": "tiefe",
+       "type": "int",
+       "value": 424
+      },
+      {
+       "name": "kollision",
+       "type": "bool",
+       "value": true
+      }
+     ]
+    },
+    {
+     "id": 90,
+     "name": "gc7Kiefer",
+     "type": "moebel",
+     "x": 1392,
+     "y": 352,
+     "width": 32,
+     "height": 48,
+     "rotation": 0,
+     "visible": true,
+     "properties": [
+      {
+       "name": "tiefe",
+       "type": "int",
+       "value": 392
+      },
+      {
+       "name": "kollision",
+       "type": "bool",
+       "value": true
+      }
+     ]
+    },
+    {
+     "id": 91,
+     "name": "gc7Kiefer",
+     "type": "moebel",
+     "x": 1280,
+     "y": 368,
+     "width": 32,
+     "height": 48,
+     "rotation": 0,
+     "visible": true,
+     "properties": [
+      {
+       "name": "tiefe",
+       "type": "int",
+       "value": 408
+      },
+      {
+       "name": "kollision",
+       "type": "bool",
+       "value": true
+      }
+     ]
+    },
+    {
+     "id": 92,
+     "name": "gc7Kiefer",
+     "type": "moebel",
+     "x": 496,
+     "y": 304,
+     "width": 32,
+     "height": 48,
+     "rotation": 0,
+     "visible": true,
+     "properties": [
+      {
+       "name": "tiefe",
+       "type": "int",
+       "value": 344
+      },
+      {
+       "name": "kollision",
+       "type": "bool",
+       "value": true
+      }
+     ]
+    },
+    {
      "id": 93,
      "name": "gc7Kiefer",
      "type": "moebel",
-     "x": 512,
+     "x": 736,
      "y": 352,
      "width": 32,
      "height": 48,
@@ -15687,7 +15687,7 @@
      "id": 94,
      "name": "gc7KieferB",
      "type": "moebel",
-     "x": 624,
+     "x": 784,
      "y": 416,
      "width": 32,
      "height": 48,
@@ -15708,10 +15708,10 @@
     },
     {
      "id": 95,
-     "name": "gc7KieferB",
+     "name": "gc7Kiefer",
      "type": "moebel",
-     "x": 2064,
-     "y": 304,
+     "x": 544,
+     "y": 400,
      "width": 32,
      "height": 48,
      "rotation": 0,
@@ -15720,7 +15720,7 @@
       {
        "name": "tiefe",
        "type": "int",
-       "value": 344
+       "value": 440
       },
       {
        "name": "kollision",
@@ -15733,30 +15733,7 @@
      "id": 96,
      "name": "gc7KieferB",
      "type": "moebel",
-     "x": 1792,
-     "y": 416,
-     "width": 32,
-     "height": 48,
-     "rotation": 0,
-     "visible": true,
-     "properties": [
-      {
-       "name": "tiefe",
-       "type": "int",
-       "value": 456
-      },
-      {
-       "name": "kollision",
-       "type": "bool",
-       "value": true
-      }
-     ]
-    },
-    {
-     "id": 97,
-     "name": "gc7Kiefer",
-     "type": "moebel",
-     "x": 800,
+     "x": 96,
      "y": 336,
      "width": 32,
      "height": 48,
@@ -15776,11 +15753,11 @@
      ]
     },
     {
-     "id": 98,
+     "id": 97,
      "name": "gc7Kiefer",
      "type": "moebel",
-     "x": 656,
-     "y": 368,
+     "x": 416,
+     "y": 272,
      "width": 32,
      "height": 48,
      "rotation": 0,
@@ -15789,7 +15766,30 @@
       {
        "name": "tiefe",
        "type": "int",
-       "value": 408
+       "value": 312
+      },
+      {
+       "name": "kollision",
+       "type": "bool",
+       "value": true
+      }
+     ]
+    },
+    {
+     "id": 98,
+     "name": "gc7Kiefer",
+     "type": "moebel",
+     "x": 320,
+     "y": 320,
+     "width": 32,
+     "height": 48,
+     "rotation": 0,
+     "visible": true,
+     "properties": [
+      {
+       "name": "tiefe",
+       "type": "int",
+       "value": 360
       },
       {
        "name": "kollision",
@@ -15800,10 +15800,10 @@
     },
     {
      "id": 99,
-     "name": "gc7KieferB",
+     "name": "gc7Kiefer",
      "type": "moebel",
-     "x": 1408,
-     "y": 368,
+     "x": 1008,
+     "y": 272,
      "width": 32,
      "height": 48,
      "rotation": 0,
@@ -15812,7 +15812,7 @@
       {
        "name": "tiefe",
        "type": "int",
-       "value": 408
+       "value": 312
       },
       {
        "name": "kollision",
@@ -15825,7 +15825,30 @@
      "id": 100,
      "name": "gc7Kiefer",
      "type": "moebel",
-     "x": 704,
+     "x": 1520,
+     "y": 384,
+     "width": 32,
+     "height": 48,
+     "rotation": 0,
+     "visible": true,
+     "properties": [
+      {
+       "name": "tiefe",
+       "type": "int",
+       "value": 424
+      },
+      {
+       "name": "kollision",
+       "type": "bool",
+       "value": true
+      }
+     ]
+    },
+    {
+     "id": 101,
+     "name": "gc7KieferB",
+     "type": "moebel",
+     "x": 1984,
      "y": 416,
      "width": 32,
      "height": 48,
@@ -15845,33 +15868,10 @@
      ]
     },
     {
-     "id": 101,
-     "name": "gc7KieferB",
-     "type": "moebel",
-     "x": 1728,
-     "y": 368,
-     "width": 32,
-     "height": 48,
-     "rotation": 0,
-     "visible": true,
-     "properties": [
-      {
-       "name": "tiefe",
-       "type": "int",
-       "value": 408
-      },
-      {
-       "name": "kollision",
-       "type": "bool",
-       "value": true
-      }
-     ]
-    },
-    {
      "id": 102,
      "name": "gc7KieferB",
      "type": "moebel",
-     "x": 2176,
+     "x": 640,
      "y": 368,
      "width": 32,
      "height": 48,
@@ -15895,98 +15895,6 @@
      "name": "gc7KieferB",
      "type": "moebel",
      "x": 208,
-     "y": 400,
-     "width": 32,
-     "height": 48,
-     "rotation": 0,
-     "visible": true,
-     "properties": [
-      {
-       "name": "tiefe",
-       "type": "int",
-       "value": 440
-      },
-      {
-       "name": "kollision",
-       "type": "bool",
-       "value": true
-      }
-     ]
-    },
-    {
-     "id": 104,
-     "name": "gc7Kiefer",
-     "type": "moebel",
-     "x": 1344,
-     "y": 368,
-     "width": 32,
-     "height": 48,
-     "rotation": 0,
-     "visible": true,
-     "properties": [
-      {
-       "name": "tiefe",
-       "type": "int",
-       "value": 408
-      },
-      {
-       "name": "kollision",
-       "type": "bool",
-       "value": true
-      }
-     ]
-    },
-    {
-     "id": 105,
-     "name": "gc7KieferB",
-     "type": "moebel",
-     "x": 2032,
-     "y": 384,
-     "width": 32,
-     "height": 48,
-     "rotation": 0,
-     "visible": true,
-     "properties": [
-      {
-       "name": "tiefe",
-       "type": "int",
-       "value": 424
-      },
-      {
-       "name": "kollision",
-       "type": "bool",
-       "value": true
-      }
-     ]
-    },
-    {
-     "id": 106,
-     "name": "gc7Kiefer",
-     "type": "moebel",
-     "x": 2128,
-     "y": 304,
-     "width": 32,
-     "height": 48,
-     "rotation": 0,
-     "visible": true,
-     "properties": [
-      {
-       "name": "tiefe",
-       "type": "int",
-       "value": 344
-      },
-      {
-       "name": "kollision",
-       "type": "bool",
-       "value": true
-      }
-     ]
-    },
-    {
-     "id": 107,
-     "name": "gc7KieferB",
-     "type": "moebel",
-     "x": 1376,
      "y": 320,
      "width": 32,
      "height": 48,
@@ -16006,56 +15914,10 @@
      ]
     },
     {
-     "id": 108,
+     "id": 104,
      "name": "gc7Kiefer",
      "type": "moebel",
-     "x": 352,
-     "y": 304,
-     "width": 32,
-     "height": 48,
-     "rotation": 0,
-     "visible": true,
-     "properties": [
-      {
-       "name": "tiefe",
-       "type": "int",
-       "value": 344
-      },
-      {
-       "name": "kollision",
-       "type": "bool",
-       "value": true
-      }
-     ]
-    },
-    {
-     "id": 109,
-     "name": "gc7KieferB",
-     "type": "moebel",
-     "x": 1904,
-     "y": 304,
-     "width": 32,
-     "height": 48,
-     "rotation": 0,
-     "visible": true,
-     "properties": [
-      {
-       "name": "tiefe",
-       "type": "int",
-       "value": 344
-      },
-      {
-       "name": "kollision",
-       "type": "bool",
-       "value": true
-      }
-     ]
-    },
-    {
-     "id": 110,
-     "name": "gc7KieferB",
-     "type": "moebel",
-     "x": 1936,
+     "x": 2016,
      "y": 352,
      "width": 32,
      "height": 48,
@@ -16075,12 +15937,12 @@
      ]
     },
     {
-     "id": 111,
-     "name": "ca7Buehne",
+     "id": 105,
+     "name": "gc7Kiefer",
      "type": "moebel",
-     "x": 2208,
-     "y": 144,
-     "width": 96,
+     "x": 2144,
+     "y": 336,
+     "width": 32,
      "height": 48,
      "rotation": 0,
      "visible": true,
@@ -16088,22 +15950,160 @@
       {
        "name": "tiefe",
        "type": "int",
-       "value": 1
+       "value": 376
       },
       {
        "name": "kollision",
        "type": "bool",
-       "value": false
+       "value": true
+      }
+     ]
+    },
+    {
+     "id": 106,
+     "name": "gc7KieferB",
+     "type": "moebel",
+     "x": 1152,
+     "y": 336,
+     "width": 32,
+     "height": 48,
+     "rotation": 0,
+     "visible": true,
+     "properties": [
+      {
+       "name": "tiefe",
+       "type": "int",
+       "value": 376
+      },
+      {
+       "name": "kollision",
+       "type": "bool",
+       "value": true
+      }
+     ]
+    },
+    {
+     "id": 107,
+     "name": "gc7Kiefer",
+     "type": "moebel",
+     "x": 1696,
+     "y": 400,
+     "width": 32,
+     "height": 48,
+     "rotation": 0,
+     "visible": true,
+     "properties": [
+      {
+       "name": "tiefe",
+       "type": "int",
+       "value": 440
+      },
+      {
+       "name": "kollision",
+       "type": "bool",
+       "value": true
+      }
+     ]
+    },
+    {
+     "id": 108,
+     "name": "gc7KieferB",
+     "type": "moebel",
+     "x": 544,
+     "y": 320,
+     "width": 32,
+     "height": 48,
+     "rotation": 0,
+     "visible": true,
+     "properties": [
+      {
+       "name": "tiefe",
+       "type": "int",
+       "value": 360
+      },
+      {
+       "name": "kollision",
+       "type": "bool",
+       "value": true
+      }
+     ]
+    },
+    {
+     "id": 109,
+     "name": "gc7KieferB",
+     "type": "moebel",
+     "x": 1488,
+     "y": 336,
+     "width": 32,
+     "height": 48,
+     "rotation": 0,
+     "visible": true,
+     "properties": [
+      {
+       "name": "tiefe",
+       "type": "int",
+       "value": 376
+      },
+      {
+       "name": "kollision",
+       "type": "bool",
+       "value": true
+      }
+     ]
+    },
+    {
+     "id": 110,
+     "name": "gc7KieferB",
+     "type": "moebel",
+     "x": 1472,
+     "y": 400,
+     "width": 32,
+     "height": 48,
+     "rotation": 0,
+     "visible": true,
+     "properties": [
+      {
+       "name": "tiefe",
+       "type": "int",
+       "value": 440
+      },
+      {
+       "name": "kollision",
+       "type": "bool",
+       "value": true
+      }
+     ]
+    },
+    {
+     "id": 111,
+     "name": "gc7Kiefer",
+     "type": "moebel",
+     "x": 1280,
+     "y": 288,
+     "width": 32,
+     "height": 48,
+     "rotation": 0,
+     "visible": true,
+     "properties": [
+      {
+       "name": "tiefe",
+       "type": "int",
+       "value": 328
+      },
+      {
+       "name": "kollision",
+       "type": "bool",
+       "value": true
       }
      ]
     },
     {
      "id": 112,
-     "name": "ca8FahneWeiss",
+     "name": "gc7Kiefer",
      "type": "moebel",
-     "x": 2192,
-     "y": 144,
-     "width": 16,
+     "x": 320,
+     "y": 368,
+     "width": 32,
      "height": 48,
      "rotation": 0,
      "visible": true,
@@ -16111,7 +16111,7 @@
       {
        "name": "tiefe",
        "type": "int",
-       "value": 184
+       "value": 408
       },
       {
        "name": "kollision",
@@ -16122,11 +16122,11 @@
     },
     {
      "id": 113,
-     "name": "ca8FahneSchwarz",
+     "name": "gc7Kiefer",
      "type": "moebel",
-     "x": 2304,
-     "y": 144,
-     "width": 16,
+     "x": 2240,
+     "y": 384,
+     "width": 32,
      "height": 48,
      "rotation": 0,
      "visible": true,
@@ -16134,7 +16134,7 @@
       {
        "name": "tiefe",
        "type": "int",
-       "value": 184
+       "value": 424
       },
       {
        "name": "kollision",
@@ -16145,11 +16145,11 @@
     },
     {
      "id": 114,
-     "name": "ca8Lautsprecher",
+     "name": "gc7Kiefer",
      "type": "moebel",
-     "x": 2144,
-     "y": 144,
-     "width": 48,
+     "x": 1952,
+     "y": 336,
+     "width": 32,
      "height": 48,
      "rotation": 0,
      "visible": true,
@@ -16157,7 +16157,7 @@
       {
        "name": "tiefe",
        "type": "int",
-       "value": 184
+       "value": 376
       },
       {
        "name": "kollision",
@@ -16168,11 +16168,11 @@
     },
     {
      "id": 115,
-     "name": "ca8Lautsprecher",
+     "name": "gc7KieferB",
      "type": "moebel",
-     "x": 2320,
-     "y": 144,
-     "width": 48,
+     "x": 2048,
+     "y": 304,
+     "width": 32,
      "height": 48,
      "rotation": 0,
      "visible": true,
@@ -16180,7 +16180,7 @@
       {
        "name": "tiefe",
        "type": "int",
-       "value": 184
+       "value": 344
       },
       {
        "name": "kollision",
@@ -16191,19 +16191,19 @@
     },
     {
      "id": 116,
-     "name": "ca8Eiswagen",
+     "name": "gc7KieferB",
      "type": "moebel",
-     "x": 1600,
-     "y": 192,
-     "width": 112,
-     "height": 64,
+     "x": 1568,
+     "y": 400,
+     "width": 32,
+     "height": 48,
      "rotation": 0,
      "visible": true,
      "properties": [
       {
        "name": "tiefe",
        "type": "int",
-       "value": 248
+       "value": 440
       },
       {
        "name": "kollision",
@@ -16214,19 +16214,19 @@
     },
     {
      "id": 117,
-     "name": "ca8Tacowagen",
+     "name": "gc7Kiefer",
      "type": "moebel",
-     "x": 1760,
-     "y": 192,
-     "width": 112,
-     "height": 64,
+     "x": 1360,
+     "y": 384,
+     "width": 32,
+     "height": 48,
      "rotation": 0,
      "visible": true,
      "properties": [
       {
        "name": "tiefe",
        "type": "int",
-       "value": 248
+       "value": 424
       },
       {
        "name": "kollision",
@@ -16237,19 +16237,19 @@
     },
     {
      "id": 118,
-     "name": "ca8KlapptischBrett",
+     "name": "gc7KieferB",
      "type": "moebel",
-     "x": 1952,
-     "y": 192,
+     "x": 2224,
+     "y": 320,
      "width": 32,
-     "height": 32,
+     "height": 48,
      "rotation": 0,
      "visible": true,
      "properties": [
       {
        "name": "tiefe",
        "type": "int",
-       "value": 216
+       "value": 360
       },
       {
        "name": "kollision",
@@ -16260,19 +16260,19 @@
     },
     {
      "id": 119,
-     "name": "ca8KlapptischBrett",
+     "name": "gc7Kiefer",
      "type": "moebel",
-     "x": 2000,
-     "y": 192,
+     "x": 2048,
+     "y": 416,
      "width": 32,
-     "height": 32,
+     "height": 48,
      "rotation": 0,
      "visible": true,
      "properties": [
       {
        "name": "tiefe",
        "type": "int",
-       "value": 216
+       "value": 456
       },
       {
        "name": "kollision",
@@ -16283,19 +16283,19 @@
     },
     {
      "id": 120,
-     "name": "ca8KlapptischBrett",
+     "name": "gc7Kiefer",
      "type": "moebel",
-     "x": 2048,
-     "y": 192,
+     "x": 1408,
+     "y": 400,
      "width": 32,
-     "height": 32,
+     "height": 48,
      "rotation": 0,
      "visible": true,
      "properties": [
       {
        "name": "tiefe",
        "type": "int",
-       "value": 216
+       "value": 440
       },
       {
        "name": "kollision",
@@ -16306,19 +16306,19 @@
     },
     {
      "id": 121,
-     "name": "ca8KlapptischBrett",
+     "name": "gc7KieferB",
      "type": "moebel",
-     "x": 2096,
-     "y": 192,
+     "x": 1440,
+     "y": 336,
      "width": 32,
-     "height": 32,
+     "height": 48,
      "rotation": 0,
      "visible": true,
      "properties": [
       {
        "name": "tiefe",
        "type": "int",
-       "value": 216
+       "value": 376
       },
       {
        "name": "kollision",
@@ -16329,19 +16329,19 @@
     },
     {
      "id": 122,
-     "name": "ca8KlapptischBrett",
+     "name": "gc7Kiefer",
      "type": "moebel",
-     "x": 2144,
-     "y": 192,
+     "x": 704,
+     "y": 320,
      "width": 32,
-     "height": 32,
+     "height": 48,
      "rotation": 0,
      "visible": true,
      "properties": [
       {
        "name": "tiefe",
        "type": "int",
-       "value": 216
+       "value": 360
       },
       {
        "name": "kollision",
@@ -16352,11 +16352,11 @@
     },
     {
      "id": 123,
-     "name": "ca8Lichtermast",
+     "name": "gc7Kiefer",
      "type": "moebel",
-     "x": 1936,
-     "y": 144,
-     "width": 16,
+     "x": 1296,
+     "y": 416,
+     "width": 32,
      "height": 48,
      "rotation": 0,
      "visible": true,
@@ -16364,7 +16364,7 @@
       {
        "name": "tiefe",
        "type": "int",
-       "value": 184
+       "value": 456
       },
       {
        "name": "kollision",
@@ -16375,11 +16375,11 @@
     },
     {
      "id": 124,
-     "name": "ca8Lichtermast",
+     "name": "gc7Kiefer",
      "type": "moebel",
-     "x": 2128,
-     "y": 144,
-     "width": 16,
+     "x": 1328,
+     "y": 320,
+     "width": 32,
      "height": 48,
      "rotation": 0,
      "visible": true,
@@ -16387,7 +16387,7 @@
       {
        "name": "tiefe",
        "type": "int",
-       "value": 184
+       "value": 360
       },
       {
        "name": "kollision",
@@ -16398,70 +16398,254 @@
     },
     {
      "id": 125,
-     "name": "ca8Lichterkette",
+     "name": "gc7Kiefer",
      "type": "moebel",
-     "x": 1952,
-     "y": 144,
-     "width": 64,
-     "height": 16,
+     "x": 2320,
+     "y": 288,
+     "width": 32,
+     "height": 48,
      "rotation": 0,
      "visible": true,
      "properties": [
       {
        "name": "tiefe",
        "type": "int",
-       "value": 152
+       "value": 328
       },
       {
        "name": "kollision",
        "type": "bool",
-       "value": false
+       "value": true
       }
      ]
     },
     {
      "id": 126,
-     "name": "ca8Lichterkette",
+     "name": "gc7Kiefer",
      "type": "moebel",
-     "x": 2016,
-     "y": 144,
-     "width": 64,
-     "height": 16,
+     "x": 1104,
+     "y": 352,
+     "width": 32,
+     "height": 48,
      "rotation": 0,
      "visible": true,
      "properties": [
       {
        "name": "tiefe",
        "type": "int",
-       "value": 152
+       "value": 392
       },
       {
        "name": "kollision",
        "type": "bool",
-       "value": false
+       "value": true
       }
      ]
     },
     {
      "id": 127,
-     "name": "ca8Lichterkette",
+     "name": "gc7KieferB",
      "type": "moebel",
-     "x": 2064,
-     "y": 144,
-     "width": 64,
-     "height": 16,
+     "x": 480,
+     "y": 384,
+     "width": 32,
+     "height": 48,
      "rotation": 0,
      "visible": true,
      "properties": [
       {
        "name": "tiefe",
        "type": "int",
-       "value": 152
+       "value": 424
       },
       {
        "name": "kollision",
        "type": "bool",
-       "value": false
+       "value": true
+      }
+     ]
+    },
+    {
+     "id": 128,
+     "name": "gc7KieferB",
+     "type": "moebel",
+     "x": 448,
+     "y": 416,
+     "width": 32,
+     "height": 48,
+     "rotation": 0,
+     "visible": true,
+     "properties": [
+      {
+       "name": "tiefe",
+       "type": "int",
+       "value": 456
+      },
+      {
+       "name": "kollision",
+       "type": "bool",
+       "value": true
+      }
+     ]
+    },
+    {
+     "id": 129,
+     "name": "gc7KieferB",
+     "type": "moebel",
+     "x": 368,
+     "y": 352,
+     "width": 32,
+     "height": 48,
+     "rotation": 0,
+     "visible": true,
+     "properties": [
+      {
+       "name": "tiefe",
+       "type": "int",
+       "value": 392
+      },
+      {
+       "name": "kollision",
+       "type": "bool",
+       "value": true
+      }
+     ]
+    },
+    {
+     "id": 130,
+     "name": "gc7Kiefer",
+     "type": "moebel",
+     "x": 1728,
+     "y": 352,
+     "width": 32,
+     "height": 48,
+     "rotation": 0,
+     "visible": true,
+     "properties": [
+      {
+       "name": "tiefe",
+       "type": "int",
+       "value": 392
+      },
+      {
+       "name": "kollision",
+       "type": "bool",
+       "value": true
+      }
+     ]
+    },
+    {
+     "id": 131,
+     "name": "gc7Kiefer",
+     "type": "moebel",
+     "x": 896,
+     "y": 416,
+     "width": 32,
+     "height": 48,
+     "rotation": 0,
+     "visible": true,
+     "properties": [
+      {
+       "name": "tiefe",
+       "type": "int",
+       "value": 456
+      },
+      {
+       "name": "kollision",
+       "type": "bool",
+       "value": true
+      }
+     ]
+    },
+    {
+     "id": 132,
+     "name": "gc7Kiefer",
+     "type": "moebel",
+     "x": 2192,
+     "y": 368,
+     "width": 32,
+     "height": 48,
+     "rotation": 0,
+     "visible": true,
+     "properties": [
+      {
+       "name": "tiefe",
+       "type": "int",
+       "value": 408
+      },
+      {
+       "name": "kollision",
+       "type": "bool",
+       "value": true
+      }
+     ]
+    },
+    {
+     "id": 133,
+     "name": "gc7Kiefer",
+     "type": "moebel",
+     "x": 624,
+     "y": 416,
+     "width": 32,
+     "height": 48,
+     "rotation": 0,
+     "visible": true,
+     "properties": [
+      {
+       "name": "tiefe",
+       "type": "int",
+       "value": 456
+      },
+      {
+       "name": "kollision",
+       "type": "bool",
+       "value": true
+      }
+     ]
+    },
+    {
+     "id": 134,
+     "name": "gc7Kiefer",
+     "type": "moebel",
+     "x": 1808,
+     "y": 416,
+     "width": 32,
+     "height": 48,
+     "rotation": 0,
+     "visible": true,
+     "properties": [
+      {
+       "name": "tiefe",
+       "type": "int",
+       "value": 456
+      },
+      {
+       "name": "kollision",
+       "type": "bool",
+       "value": true
+      }
+     ]
+    },
+    {
+     "id": 135,
+     "name": "gc7Kiefer",
+     "type": "moebel",
+     "x": 2304,
+     "y": 352,
+     "width": 32,
+     "height": 48,
+     "rotation": 0,
+     "visible": true,
+     "properties": [
+      {
+       "name": "tiefe",
+       "type": "int",
+       "value": 392
+      },
+      {
+       "name": "kollision",
+       "type": "bool",
+       "value": true
       }
      ]
     }

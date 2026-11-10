@@ -120,7 +120,8 @@ test("Übergang von vorn: vom Dachboden über die Luke ins Wohnzimmer", async ({
   // Links neben die Luke, dann von unten auf die Luke (1,4): Der Held schaut sie vorher an.
   await laufeBis(page, "ArrowLeft", "1,5");
   await page.keyboard.down("ArrowUp");
-  // Im Wohnzimmer kommt der Held auf der Treppe (2,3) an.
-  await expect.poll(() => kachel(page), { timeout: 8000 }).toBe("2,3");
+  // Im Wohnzimmer kommt der Held neben der Treppe an, auf (3,5) mit Blick von ihr weg
+  // (oberwelt/ankunft.ts); die gehaltene Taste zählt dort erst nach einer kurzen Pause.
+  await expect.poll(() => kachel(page), { timeout: 8000, intervals: [50] }).toBe("3,5");
   await page.keyboard.up("ArrowUp");
 });

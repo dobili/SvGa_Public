@@ -23,6 +23,8 @@ import type { Abenteuerstand, Weltposition } from "../schnittstelle/spielstand";
 import { tSpiel } from "../texte/texte";
 import { szeneVon } from "./oberweltspiel";
 import type { Toenung } from "./toenung";
+import { ankunftsort } from "./ankunft";
+import type { Sperrangabe, Tiledkarte } from "./begehbar";
 import { objektposition, type Weltdaten } from "./weltdaten";
 
 /** Was alle Teile der Oberwelt teilen. */
@@ -116,6 +118,9 @@ function meldeEreignis(
   }
 }
 
+/** Kantenlänge einer Kachel der Tiled-Karten in Pixeln (wie in szene.ts). */
+const KACHEL = 16;
+
 /** Kartenwechsel: Zielkarte lesen, Auslöser suchen, Position schreiben. */
 function wechsle(k: Oberweltkern, karte: string, ausloeser: string): void {
   const aktuell = k.standRef.current;
@@ -128,13 +133,21 @@ function wechsle(k: Oberweltkern, karte: string, ausloeser: string): void {
   }
   const szene = szeneAus(k.spiel);
   const richtung = szene?.position().richtung ?? aktuell.position.richtung;
-  liesPaketJson<object>(ziel.karte.datei)
-    .then((json) => {
-      const pos = objektposition(json, ausloeser) ?? objektposition(json, "start");
-      if (!pos) throw new Error(`Auslöser ${ausloeser} fehlt auf ${karte}`);
-      const position: Weltposition = { karte, x: pos.x, y: pos.y, richtung };
+  // Möbel bestimmen mit, wo neben dem Durchgang Platz ist; ohne Liste zählen nur die Wände.
+  const moebel = liesPaketJson<{ moebel: Record<string, Sperrangabe> }>("daten/moebel.json")
+    .then((d) => d.moebel)
+    .catch(() => ({}));
+  Promise.all([liesPaketJson<Tiledkarte>(ziel.karte.datei), moebel])
+    .then(([json, liste]) => {
+      // Ankunft vor dem Durchgang mit Blick von ihm weg (ankunft.ts), sonst der Start der Karte.
+      const an = ankunftsort(json, liste, ausloeser, KACHEL);
+      const start = an ? null : objektposition(json, "start");
+      if (!an && !start) throw new Error(`Auslöser ${ausloeser} fehlt auf ${karte}`);
+      const position: Weltposition = an
+        ? { karte, x: an.x, y: an.y, richtung: an.richtung }
+        : { karte, x: start?.x ?? 0, y: start?.y ?? 0, richtung };
       // Dieselbe Karte (Steg über die Schleuse): nur versetzen, die Szene bleibt geladen.
-      if (karte === aktuell.position.karte) szene?.versetze(pos.x, pos.y);
+      if (karte === aktuell.position.karte) szene?.versetze(position.x, position.y);
       k.schreibe({ ...aktuell, position });
     })
     .catch(() => k.setzeMeldung(tSpiel("oberwelt.karteFehlt", { karte })));

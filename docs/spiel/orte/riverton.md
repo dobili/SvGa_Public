@@ -713,6 +713,89 @@ der Story-Bibel und die Wege.
 | `riverton.wohnwagen`     | –                                  | nur Szene 37                               | keiner                                                                                    |
 | `riverton.schuppen`      | `ohneFahrrad`                      | nach Szene 33, wenn das Fahrrad geholt ist | Plane liegt leer auf dem Boden, Fahrrad fehlt                                             |
 
+### 3.5 Gutachten Runde 8 (10.11.2026, mittel-3): Innenräume
+
+Behoben (Gutachten `docs/spiel/auftraege/gutachten/riverton-innen.md`):
+
+- **Wohnwagen**, jetzt 14 × 8 statt 17 × 8, ohne leere Südhälfte: Querbett (Doppelbett von oben) über
+  die ganze Breite im Heck, darüber ein schmales Wandbord mit den Pokalen (Bildwunsch
+  `riverton_innen.py`), Kuriertasche an der Wand, Nasszelle hinter einer Milchglastür,
+  Küchenzeile mit Spüle und Zweiflammer auf zwei Arbeitsplatten neben dem Kühlschrank, Sitzecke mit
+  zwei Bänken um den Tisch, zwei Fenster.
+- **Pavillon**, jetzt 24 × 18: Bodenbrett mit Steinrahmen und Laufweg ringsum; Bretter liegen ganz auf
+  den Tischen, je ein Stuhl davor und dahinter genau unter jedem Brett; zwischen den Tischreihen eine
+  Reihe Abstand; zwei Truhen für die großen Figuren; Gründungsbild statt winziger Tafel;
+  Limonadenstand mit Gläsern statt eines unkenntlichen Tischchens; Zuschauerbänke an der Nordwand mit
+  Blick aufs Brett.
+- **Schuppen**: Brennholz in Gestellen statt Holzscheiten mit Gras, Bretterstapel statt Zaunfeld,
+  Farbdose statt Fass als „Kanister“, Werkzeugbord mit Haken und Werkzeugkiste statt Ladenvitrine.
+- **Bahnhofshalle**: drei Schalterfenster mit Ablage in der Nordwand statt einer flachen Ladenfront;
+  Kiosk in der Ecke mit Zeitungshaltern und Pops hinter dem Tresen; Abfahrtsmonitor an der Wand statt
+  Tafel auf Beinen; schwarze Doppeltür zum Bahnsteig, gläserne Doppeltür als Haupteingang;
+  Getränke- und Kaffeeautomat nebeneinander an der Ostwand; vier gleiche Säulen, Pflanzen
+  einheitlich an den Säulen und am Eingang, keine mehr vor einer Tür; nur noch eine Bankart; der
+  „Wasserspender“ ist weg; Sackkarre mit Gepäck und Koffer in den Ecken.
+
+Begründet nicht geändert:
+
+- Pavillon „rechteckig statt achteckig“: Die Innenkarte ist im Raster rechteckig; die Beschreibung
+  nennt kein Achteck mehr. Fenster nur in der Nordwand, weil Seitenwände in der Draufsicht keine
+  Fenster zeigen können.
+- Pavillon „Brett ohne Koordinaten“: Es gibt keine Bodenbilder mit Buchstaben und Zahlen; der Rahmen
+  aus Stein grenzt das Brett ab.
+- Bahnhofshalle „Personal am Schalter“: Die Schalter sind Fenster in der Wand, der Beamte sitzt
+  dahinter und ist in der Draufsicht nicht zu sehen. „Niedrige Wände“: Die Wandhöhe ist für alle
+  Innenräume gleich (drei Kacheln).
+- Schuppen „Fahrrad unter der Plane wie ein Zelt“: Das Fahrrad ist absichtlich abgedeckt (Szene 33);
+  das Hinterrad schaut hervor. „Kein Staub, kein Licht durch Ritzen“: Partikel und Lichtstreifen sind
+  Sache der Laufzeit, nicht des Kartenbilds.
+
+### 3.6 Gutachten Runde 8 (10.11.2026, mittel-3): Riverton außen
+
+Behoben (Gutachten `docs/spiel/auftraege/gutachten/riverton-aussen.md`, Nummern in Klammern):
+
+- **Bahn (1–9):** Bahnsteig aus Pflaster zwischen Gleis und Bahnhof mit zwei Bahnsteigbänken. Der
+  Bahnhof ist jetzt ein Backsteinbau mit rotem Ziegeldach, zwei Bogenfenstern und der gläsernen
+  Eingangstür in der Mitte (Bildwunsch `riverton_aussen.py`); `bahnhofTuer` (36, 16) liegt davor.
+  Hecke am Bahnzaun links und rechts des Bahnsteigs. Stellwerk, Güterschuppen (mit Laderampe zum
+  Gleis und Holzstapel darauf) und Wasserturm stehen direkt am Gleis; der Fußweg vom Bahndamm läuft
+  am Zaun entlang am Stellwerk vorbei zum Bahnsteig. Leere Rasenflächen sind gefüllt.
+- **Häuser (10–12):** Graues Hochhaus, Turmhaus und gequetschtes Wohnhaus sind weg. Dafür ein
+  Angelladen und ein Wohnhaus an der Water Street im Westen, ein Wohnhaus östlich des Güterschuppens
+  und ein Infokiosk auf dem Vorplatz.
+- **Vorplatz und Straße (13, 15, 17, 21, 22):** Die Water Street läuft an beiden Rändern aus der Karte
+  hinaus (nach Cedar Creek und Ironwood). Vorplatz sechs Reihen tief, der Brunnen mit zwei Bänken,
+  die zu ihm schauen, in der Mitte der Westhälfte; die Achse zur Bahnhofstür bleibt frei. Bäckerei,
+  Café und Lagerhäuser stehen auf Pflaster; die Brückenstraße ist Fußgängerzone und endet am
+  gepflasterten Brückenkopf im Park.
+- **Fluss, Kai, Kanal (23–31):** Nordufer als gerade Kaimauer mit drei Reihen Promenade, vier Bänken
+  mit Blick aufs Wasser und Laternen in festen Abständen. Am Kai im Osten ein Kran, Kisten, Fässer,
+  Poller mit Tau, ein Boot am Kai und der Gabelstaplerfahrer bei der Arbeit; das Pegelhaus steht am
+  Ende des Kais direkt am Wasser. Das Südufer schwingt aus. Der Kanal und sein Becken haben Steinufer
+  und laufen gerade nach Süden; der Treidelpfad läuft einfach neben dem Steinrand. Die Brücke wirft
+  einen Schatten aufs Wasser.
+- **Park (32–40):** Bäume, Büsche, drei Laternen am Uferweg. Die Bildschirmtische stehen unter drei
+  Holzdächern (Regen); der Pavillon hat ein Holzdach; der Platz davor ist zwei Reihen tief. Der
+  Parkschachspieler hat einen Picknicktisch mit Brett.
+
+Begründet nicht geändert:
+
+- (8) Wasserkran und Stichgleis gibt es nicht als Bild; der Turm steht am Hauptgleis.
+- (13) Fahrbahnmarkierung und Überweg: keine passenden Bodenbilder für Asphalt.
+- (14) Pfützen: Tönung und Partikel der Laufzeit (Regen), nicht das Kartenbild.
+- (16) Haltestellenschild: Das Bild der Haltestelle hat den Fahrplan am Wartehäuschen.
+- (18) Handyladen „STORE“: Kulisse ohne Innenraum (Bibel 10.2), Kyle steht davor.
+- (19) Verkäufer hinter dem Stand: Unter der Markise wäre die Figur verdeckt; Marktfrau, Obsthändler
+  und Imbissverkäufer stehen daneben.
+- (26) Die Enten sind eine Belebung, das Spiel bewegt sie.
+- (31) Das Ostufer des Kanals ist eine Böschung mit Bäumen, nicht begehbar.
+- (34) Wohnwagen, Werkstatt und Schuppen haben ihre Türen zum Hinterweg im Süden (Schuppentür zur
+  Südwand, 3.2); der Uferweg ist der Vorderweg des Parks. (35) Die Werkstatt ist seit dem Frühjahr
+  geschlossen (Bibel 9.2) und behält ihr Schaufenster.
+- (37) Der Pavillon ist außen ein Holzdach auf Stützen; innen hat er Wände und Fenster (Planen und
+  Holzwände sind in der Draufsicht nicht darstellbar).
+- (42) Reihenhaus und Lagerhaus stehen je zweimal nebeneinander als Paar (Punkt 25: höchstens zweimal).
+
 ## 4. Bühnenbilder
 
 Je Karte Größe, Wände, Böden, Laufwege, Zonen und Inventar. Feld = linke obere Kachel. Möbel und Bilder
@@ -1103,16 +1186,18 @@ Pfadfinder.
 - _Warum gibt es den Damm?_ Er hebt das Gleis über die Flussaue, die im Frühjahr überschwemmt wird
   (kein Staudamm). Der Durchlass lässt Weg und Hochwasser hindurch.
 
-**Zustände (10.63):**
+**Zustände (10.63), gebaut (Szenen `lockport-aussen-<zustand>.json`):**
 
-| Karte                         | Zustand             | Bedingung      | Zustand: wann, was, warum                                                                         |
-| ----------------------------- | ------------------- | -------------- | ------------------------------------------------------------------------------------------------- |
-| `lockport.aussen`             | `stegOffen`         | `lockportSteg` | Nach Imogens Tafel: Die Wartung ist vorbei, die Zäune an Unter- und Obertor sind weg (S3).        |
-| `lockport.aussen`             | `henriksBootAnLand` | `taueErledigt` | Nach L2: Henriks Ruderboot liegt kieloben an Land, nicht mehr im Becken.                          |
-| `lockport.aussen`             | `lastkahnFrei`      | `lastkahnFrei` | Nach L3: Die Plane ist vom Lastkahn herunter, Stahlträger liegen an Bord, die Belle fährt wieder. |
-| `lockport.gasthaus`           | –                   | –              | Kein fester Wechsel.                                                                              |
-| `wegCedarRiverton.bahndamm`   | –                   | –              | Kein fester Wechsel (Rosalind und der Güterzug sind Figuren und Ereignis).                        |
-| `wegCedarRiverton.zedernwald` | –                   | –              | Kein fester Wechsel.                                                                              |
+| Karte                         | Zustand        | Bedingung      | Zustand: wann, was, warum                                                                       |
+| ----------------------------- | -------------- | -------------- | ----------------------------------------------------------------------------------------------- |
+| `lockport.aussen`             | `steg-offen`   | `lockportSteg` | Nach Imogens Tafel: Wartung vorbei, die Zäune an beiden Toren sind weg (S3).                    |
+| `lockport.aussen`             | `boot-an-land` | `taueErledigt` | Nach L2: Henriks Ruderboot liegt auf dem Werftplatz am Schuppen; der Steg ist dann schon offen. |
+| `lockport.gasthaus`           | –              | –              | Kein fester Wechsel.                                                                            |
+| `wegCedarRiverton.bahndamm`   | –              | –              | Kein fester Wechsel.                                                                            |
+| `wegCedarRiverton.zedernwald` | –              | –              | Kein fester Wechsel.                                                                            |
+
+Der Lastkahn hat auf der Karte keine Plane; der Zustand „lastkahnFrei“ entfällt, bis das Bild des
+Frachtkahns da ist (Bildwunsch `frachtkahn`).
 
 ## Runde 8 (10.11.2026): Kanalweg und Eisenbrücke nach den Notizen des Autors (mittel-4)
 
@@ -1174,3 +1259,14 @@ Boot; Pappelallee. Auslöser: `tafel` (15, 50), `fundZahnrad` (12, 43), `meilens
 | kanalweg | Winter              | Akt 3: Schnee am Pfad, Eis am Ufer (13, 7.3)                              |
 | bruecke  | Geländer gestrichen | nach Corwins Quest: Farbeimer und Leiter weg, Geländer frisch             |
 | bruecke  | Winter              | Akt 3: Schnee auf den Weiden, die Klapptische sind weggeräumt             |
+
+**Zustände Weg 3 (gebaut):** Kanalweg `graffiti` (`nadelIronwood >= 1`): Noors Wand ist fertig bemalt,
+Leiter und Sprayerin sind weg. Eisenbrücke `ohne-tische` (`nadelIronwood >= 1`): Die Brückenbauern haben
+die Klapptische weggeräumt, Corwin ist mit dem Streichen fertig. Der Winter beider Karten kommt mit der
+Schneefärbung (mittel-2).
+
+**Regel 10.64 (Größen):** Kanal 8 Reihen, Seitenarm nach Lockport jetzt 7 Reihen (vorher 6), Treidelbrücke
+neun Felder lang. Auf Weg 3 fahren keine Fahrzeuge; die Ruderboote am Ufer sind 4 × 2, das Autowrack im
+Fabrikhof 4 × 4, der Leiterwagen 2 × 3. Ironwood: Werksbus 7 × 4 (wie LimeZus Bus), keine Lastwagen.
+Steinbruch: Radlader 6 × 3, Lore der Feldbahn 1,5 × 1. Weg 7: die Sattelzüge sind 10 × 4; das Autowrack an
+der Tankstelle war ein Kleinwagen von vorn (2 × 2) und ist jetzt ein Wrack in Autogröße (4 × 4).

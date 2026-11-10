@@ -1,0 +1,646 @@
+{
+  "karte": "lockport.aussen",
+  "art": "aussen",
+  "beschreibung": "Zustand: Nach Imogens Tafel (S3): Die Herbstwartung ist vorbei, die Zäune an Unter- und Obertor sind weg, man geht über beide Torstege zum Kai. Lockport, das Schleusendorf am Seitenarm (Variante A, nach dem Ortsdokument). Der Uferweg kommt am Ostrand vom Kanalweg und läuft am Nordufer entlang; dort stehen das Haus der Schleusenwärterin mit der Rätseltafel davor, zwei Wohnhäuser mit Wäscheleinen und Laternen am Weg. In der Mitte die Schleusenkammer, über ihr Untertor (Stemmtor mit Laufsteg und Schwenkbalken) geht man nach Süden zum Kai, das Obertor im Osten hält das Oberwasser (Sperre S3 kommt in Runde 6). Westlich das Hafenbecken mit Kaimauer; am Kai liegen der Lastkahn „Ashford Belle“ und ein Ruderboot längs, Poller, ein Seil, ein Rettungsring. Hinter dem Kai das Gasthaus „Zur Schleuse“, ein Wohnhaus und eine Scheune, dazwischen Gassen zum Dorfplatz mit Linde und einer Bank, die zum Platz schaut. Östlich am Seitenarm der Bootsschuppen, dahinter Wiese und Bäume. Runde 8: Schleusenkammer 10 Kacheln lang, Kammer und Seitenarm 5 Reihen breit mit Steinufer (10.57), Stege auf Unter- und Obertor, Werftplatz mit Bootsschuppen, Schiffsausrüster statt Scheune, zweite Häuserreihe im Süden an einer Hintergasse.",
+  "boden": "gras",
+  "wandart": "gras",
+  "boeden": {
+    "e": "erde",
+    "p": "pflaster"
+  },
+  "bruecken": ["h"],
+  "raster": [
+    "########################################################",
+    "#......................................................#",
+    "#......................................................#",
+    "#......................................................#",
+    "#......................................................#",
+    "#......................................................#",
+    "#......................................................#",
+    "#......................................................#",
+    "#......................................................#",
+    "#......................................................#",
+    "#..eeeeeeeeeeeeeeeeeeeeeeeeeeeeeeeeeeeeeeeeeeeeeeeeeeeee",
+    "#..eeeeeeeeeeeeeeeeeeeeeeeeeeeeeeeeeeeeeeeeeeeeeeeeeeeee",
+    "#.............................pppppppppppppppp.........#",
+    "#p~~~~~~~~~~~~~~~~~~~~~~~~~~~~ppppppppppppppppppppppppp#",
+    "#p~~~~~~~~~~~~~~~~~~~~~~~~~~~~hh~~~~~~~~~~hh~~~~~~~~~~~~",
+    "#p~~~~~~~~~~~~~~~~~~~~~~~~~~~~hh~~~~~~~~~~hh~~~~~~~~~~~~",
+    "#p~~~~~~~~~~~~~~~~~~~~~~~~~~~~hh~~~~~~~~~~hh~~~~~~~~~~~~",
+    "#p~~~~~~~~~~~~~~~~~~~~~~~~~~~~hh~~~~~~~~~~hh~~~~~~~~~~~~",
+    "#p~~~~~~~~~~~~~~~~~~~~~~~~~~~~hh~~~~~~~~~~hh~~~~~~~~~~~~",
+    "#p~~~~~~~~~~~~~~~~~~~~~~~~~~~~ppppppppppppppppppppppppp#",
+    "#pppppppppppppppppppppppppppppppppppppppppppppppppppppp#",
+    "#pppppppppppppppppppppppppppppppppppppppppppppppppppppp#",
+    "#..........ee............ee.................ppppppppppp#",
+    "#..........ee............ee.................ppppppppppp#",
+    "#..........ee............ee.................ppppppppppp#",
+    "#..........ee............ee............................#",
+    "#..........ee............ee............................#",
+    "#..........ee............ee............................#",
+    "#..........ee............ee............................#",
+    "#..........ee............ee............................#",
+    "#..........ee............ee............................#",
+    "#..........ee............ee............................#",
+    "#.ppppppppppppppppppppppppppppppppppppppppppppppppppppp#",
+    "#.ppppppppppppppppppppppppppppppppppppppppppppppppppppp#",
+    "#.ppppppppppppppppppppppppppppppppppppppppppppppppppppp#",
+    "#.ppppppppppppppppppppppppppppppppppppppppppppppppppppp#",
+    "#...........ee.........................ee..............#",
+    "#...........ee.........................ee..............#",
+    "#...........ee.........................ee..............#",
+    "#...........ee.........................ee..............#",
+    "#...........ee.........................ee..............#",
+    "#...........ee.........................ee..............#",
+    "#...........ee.........................ee..............#",
+    "#...........ee.........................ee..............#",
+    "#...........ee.........................ee..............#",
+    "#eeeeeeeeeeeeeeeeeeeeeeeeeeeeeeeeeeeeeeeeeeeeeeeeeeeeee#",
+    "#eeeeeeeeeeeeeeeeeeeeeeeeeeeeeeeeeeeeeeeeeeeeeeeeeeeeee#",
+    "#......................................................#",
+    "#......................................................#",
+    "#......................................................#",
+    "########################################################"
+  ],
+  "objekte": [
+    {
+      "moebel": "mf4BauernhausBreit",
+      "feld": [14, 23],
+      "id": "gasthaus"
+    },
+    {
+      "moebel": "ld5SchildSchleuse",
+      "auf": "gasthaus",
+      "versatz": [-34, 40]
+    },
+    {
+      "moebel": "mf4Bauernhaus",
+      "feld": [38, 0]
+    },
+    {
+      "moebel": "mf4Bauernhaus",
+      "feld": [3, 0]
+    },
+    {
+      "moebel": "mf4BauernhausBreit",
+      "feld": [19, 1]
+    },
+    {
+      "moebel": "cc3Raetseltafel",
+      "feld": [36, 8]
+    },
+    {
+      "moebel": "ld5Lastkahn",
+      "feld": [8, 16],
+      "bauteil_ok": true
+    },
+    {
+      "moebel": "ld5Ruderboot",
+      "feld": [21, 18],
+      "bauteil_ok": true
+    },
+    {
+      "moebel": "cc5Poller",
+      "feld": [4, 20]
+    },
+    {
+      "moebel": "cc5Poller",
+      "feld": [10, 20]
+    },
+    {
+      "moebel": "cc5Poller",
+      "feld": [16, 20]
+    },
+    {
+      "moebel": "cc5Poller",
+      "feld": [22, 20]
+    },
+    {
+      "moebel": "cc5Poller",
+      "feld": [28, 20]
+    },
+    {
+      "moebel": "cc5Poller",
+      "feld": [36, 20]
+    },
+    {
+      "moebel": "ld5Seil",
+      "feld": [17, 20]
+    },
+    {
+      "moebel": "mf4Bauernhaus",
+      "feld": [2, 22]
+    },
+    {
+      "moebel": "mfAhorn",
+      "feld": [4, 33]
+    },
+    {
+      "moebel": "mfBank",
+      "feld": [8, 32]
+    },
+    {
+      "moebel": "wg4Stein",
+      "feld": [24, 1]
+    },
+    {
+      "moebel": "wg4BlumeGelb",
+      "feld": [13, 12]
+    },
+    {
+      "moebel": "wg4Stein",
+      "feld": [11, 7]
+    },
+    {
+      "moebel": "wg4Gras",
+      "feld": [18, 8]
+    },
+    {
+      "moebel": "wg4BlumenWeiss",
+      "feld": [53, 26]
+    },
+    {
+      "moebel": "wg4BlumenWeiss",
+      "feld": [5, 22]
+    },
+    {
+      "moebel": "wg4Stein",
+      "feld": [2, 8]
+    },
+    {
+      "moebel": "wg4BuschKlein",
+      "feld": [1, 7]
+    },
+    {
+      "moebel": "wg4BlumeGelb",
+      "feld": [36, 3]
+    },
+    {
+      "moebel": "wg4Gras",
+      "feld": [2, 1]
+    },
+    {
+      "moebel": "wg4BlumenWeiss",
+      "feld": [27, 25]
+    },
+    {
+      "moebel": "wg4BuschKlein",
+      "feld": [2, 3]
+    },
+    {
+      "moebel": "wg4Gras",
+      "feld": [14, 22]
+    },
+    {
+      "moebel": "wg4BuschKlein",
+      "feld": [38, 25]
+    },
+    {
+      "moebel": "wg4Stein",
+      "feld": [12, 12]
+    },
+    {
+      "moebel": "wg4BuschKlein",
+      "feld": [23, 22]
+    },
+    {
+      "moebel": "wg4BlumeGelb",
+      "feld": [46, 3]
+    },
+    {
+      "moebel": "lp8Markt",
+      "feld": [47, 1]
+    },
+    {
+      "moebel": "lp8Laden",
+      "feld": [12, 2]
+    },
+    {
+      "moebel": "lp8HausFlachHoch",
+      "feld": [29, 0]
+    },
+    {
+      "moebel": "lp8HausFlach",
+      "feld": [40, 24]
+    },
+    {
+      "moebel": "lp8Schuppen",
+      "feld": [47, 26]
+    },
+    {
+      "moebel": "lp6Glocke",
+      "feld": [46, 8]
+    },
+    {
+      "moebel": "ld5Schleusentor",
+      "feld": [30, 14]
+    },
+    {
+      "moebel": "ld5Schleusentor",
+      "feld": [30, 16]
+    },
+    {
+      "moebel": "ld5Schleusentor",
+      "feld": [42, 14]
+    },
+    {
+      "moebel": "ld5Schleusentor",
+      "feld": [42, 16]
+    },
+    {
+      "moebel": "ld5Schwenkbalken",
+      "feld": [32, 13]
+    },
+    {
+      "moebel": "ld5Schwenkbalken",
+      "feld": [32, 19]
+    },
+    {
+      "moebel": "ld5Schwenkbalken",
+      "feld": [44, 13]
+    },
+    {
+      "moebel": "ld5Schwenkbalken",
+      "feld": [44, 19]
+    },
+    {
+      "moebel": "ld5Rettungsring",
+      "feld": [47, 11]
+    },
+    {
+      "moebel": "cc4Bootsschuppen",
+      "feld": [46, 20]
+    },
+    {
+      "moebel": "wg6Kisten",
+      "feld": [51, 22]
+    },
+    {
+      "moebel": "ca8Eisenwaren",
+      "feld": [28, 23]
+    },
+    {
+      "moebel": "lp8HausFlach",
+      "feld": [3, 37]
+    },
+    {
+      "moebel": "mf7HausFlach",
+      "feld": [15, 37]
+    },
+    {
+      "moebel": "lp8Laden",
+      "feld": [22, 37]
+    },
+    {
+      "moebel": "lp8HausFlach",
+      "feld": [33, 37]
+    },
+    {
+      "moebel": "lp8HausFlach",
+      "feld": [41, 37]
+    },
+    {
+      "moebel": "mf7HausFlach",
+      "feld": [47, 37]
+    },
+    {
+      "moebel": "lp6Brunnen",
+      "feld": [30, 36]
+    },
+    {
+      "moebel": "wg4Erle",
+      "feld": [2, 47]
+    },
+    {
+      "moebel": "mf4BaumRot",
+      "feld": [9, 47]
+    },
+    {
+      "moebel": "mf4BaumRot",
+      "feld": [17, 47]
+    },
+    {
+      "moebel": "wg4Erle",
+      "feld": [26, 47]
+    },
+    {
+      "moebel": "mf4BaumRot",
+      "feld": [33, 47]
+    },
+    {
+      "moebel": "wg4Erle",
+      "feld": [44, 47]
+    },
+    {
+      "moebel": "mf4BaumRot",
+      "feld": [51, 47]
+    },
+    {
+      "moebel": "mf4Laterne",
+      "feld": [6, 9],
+      "vorn": true
+    },
+    {
+      "moebel": "mf4Laterne",
+      "feld": [17, 9],
+      "vorn": true
+    },
+    {
+      "moebel": "mf4Laterne",
+      "feld": [28, 9],
+      "vorn": true
+    },
+    {
+      "moebel": "mf4Laterne",
+      "feld": [39, 9],
+      "vorn": true
+    },
+    {
+      "moebel": "mf4Laterne",
+      "feld": [50, 9],
+      "vorn": true
+    }
+  ],
+  "ausloeser": [
+    {
+      "name": "start",
+      "feld": [54, 10],
+      "eigenschaften": {
+        "richtung": "links"
+      }
+    },
+    {
+      "name": "kanalweg",
+      "feld": [55, 10]
+    },
+    {
+      "name": "kanalweg",
+      "feld": [55, 11]
+    },
+    {
+      "name": "gasthausTuer",
+      "feld": [21, 32]
+    },
+    {
+      "name": "tafelSchleuse",
+      "feld": [37, 10]
+    },
+    {
+      "name": "steg",
+      "feld": [30, 13]
+    },
+    {
+      "name": "steg",
+      "feld": [31, 13]
+    },
+    {
+      "name": "stegSued",
+      "feld": [30, 18],
+      "eigenschaften": {
+        "richtung": "unten"
+      }
+    },
+    {
+      "name": "stegSued",
+      "feld": [31, 18],
+      "eigenschaften": {
+        "richtung": "unten"
+      }
+    },
+    {
+      "name": "kai",
+      "feld": [13, 20]
+    },
+    {
+      "name": "henriksBoot",
+      "feld": [23, 20]
+    },
+    {
+      "name": "pumpe",
+      "feld": [31, 36]
+    },
+    {
+      "name": "glocke",
+      "feld": [46, 10]
+    },
+    {
+      "name": "lastkahn",
+      "feld": [9, 20]
+    }
+  ],
+  "figuren": [],
+  "belebung": [
+    {
+      "name": "finn",
+      "typ": "statist",
+      "feld": [14, 12],
+      "eigenschaften": {
+        "von": "14,12",
+        "bis": "14,12",
+        "tun": "angelt Flaschen aus dem Becken",
+        "wann": "tag"
+      }
+    },
+    {
+      "name": "moewe",
+      "typ": "tier",
+      "feld": [24, 20],
+      "eigenschaften": {
+        "verhalten": "fliegen",
+        "von": "24,20",
+        "bis": "24,20"
+      }
+    },
+    {
+      "name": "waescherin",
+      "typ": "statist",
+      "feld": [27, 10],
+      "eigenschaften": {
+        "tun": "hängt im Nebel Wäsche auf",
+        "wann": "morgen",
+        "sagt": "statist.lockport.aussen.waescherin"
+      }
+    },
+    {
+      "name": "bootsbauer",
+      "typ": "statist",
+      "feld": [50, 21],
+      "eigenschaften": {
+        "tun": "kalfatert ein Ruderboot am Bootsschuppen",
+        "wann": "tag",
+        "sagt": "statist.lockport.aussen.bootsbauer",
+        "von": "50,21",
+        "bis": "52,21"
+      }
+    },
+    {
+      "name": "anglerAmKai",
+      "typ": "statist",
+      "feld": [6, 20],
+      "eigenschaften": {
+        "tun": "angelt vom Kai aus",
+        "wann": "morgen",
+        "sagt": "statist.lockport.aussen.anglerAmKai"
+      }
+    },
+    {
+      "name": "postbotin",
+      "typ": "statist",
+      "feld": [3, 10],
+      "eigenschaften": {
+        "tun": "fährt mit dem Rad die Post aus",
+        "wann": "morgen",
+        "von": "3,10",
+        "bis": "54,10",
+        "sagt": "statist.lockport.aussen.postbotin"
+      }
+    },
+    {
+      "name": "schulkind",
+      "typ": "statist",
+      "feld": [12, 24],
+      "eigenschaften": {
+        "tun": "geht mit dem Ranzen nach Hause",
+        "wann": "tag",
+        "von": "12,24",
+        "bis": "12,31",
+        "sagt": "statist.lockport.aussen.schulkind"
+      }
+    },
+    {
+      "name": "hafenmeisterRuhestand",
+      "typ": "statist",
+      "feld": [33, 12],
+      "eigenschaften": {
+        "tun": "schaut der Schleuse zu",
+        "wann": "tag",
+        "sagt": "statist.lockport.aussen.hafenmeisterRuhestand"
+      }
+    },
+    {
+      "name": "kahnmaler",
+      "typ": "statist",
+      "feld": [12, 20],
+      "eigenschaften": {
+        "tun": "streicht die Bordwand des Lastkahns",
+        "wann": "tag",
+        "von": "11,20",
+        "bis": "14,20",
+        "sagt": "statist.lockport.aussen.kahnmaler"
+      }
+    },
+    {
+      "name": "touristin",
+      "typ": "statist",
+      "feld": [35, 19],
+      "eigenschaften": {
+        "tun": "fotografiert die Schleusentore",
+        "wann": "tag",
+        "sagt": "statist.lockport.aussen.touristin"
+      }
+    },
+    {
+      "name": "fischer",
+      "typ": "statist",
+      "feld": [20, 21],
+      "eigenschaften": {
+        "tun": "flickt ein Netz am Kai",
+        "wann": "morgen"
+      }
+    },
+    {
+      "name": "frauMitBesen",
+      "typ": "statist",
+      "feld": [30, 33],
+      "eigenschaften": {
+        "tun": "fegt Laub vor der Tür",
+        "wann": "tag",
+        "von": "28,33",
+        "bis": "33,33"
+      }
+    },
+    {
+      "name": "spaziergaenger",
+      "typ": "statist",
+      "feld": [3, 34],
+      "eigenschaften": {
+        "tun": "geht mit Schirm durch den Nebel",
+        "wann": "abend",
+        "von": "3,34",
+        "bis": "37,34"
+      }
+    },
+    {
+      "name": "mannMitSchubkarre",
+      "typ": "statist",
+      "feld": [25, 22],
+      "eigenschaften": {
+        "tun": "schiebt Brennholz zum Gasthaus",
+        "wann": "tag",
+        "von": "25,22",
+        "bis": "25,31"
+      }
+    },
+    {
+      "name": "enten",
+      "typ": "tier",
+      "feld": [15, 15],
+      "eigenschaften": {
+        "verhalten": "schwimmen",
+        "von": "3,15",
+        "bis": "27,15"
+      }
+    },
+    {
+      "name": "katze",
+      "typ": "tier",
+      "feld": [40, 20],
+      "eigenschaften": {
+        "verhalten": "sitzen",
+        "von": "40,20",
+        "bis": "40,20"
+      }
+    },
+    {
+      "name": "gans",
+      "typ": "tier",
+      "feld": [46, 47],
+      "eigenschaften": {
+        "verhalten": "ausweichen",
+        "von": "42,47",
+        "bis": "50,47"
+      }
+    },
+    {
+      "name": "imogen",
+      "typ": "statist",
+      "feld": [38, 10],
+      "eigenschaften": {
+        "tun": "steht mit dem Schlüsselbund an der Tafel",
+        "wann": "tag"
+      }
+    },
+    {
+      "name": "ruben",
+      "typ": "statist",
+      "feld": [13, 20],
+      "eigenschaften": {
+        "tun": "sitzt auf dem Poller und sieht auf den Kahn",
+        "wann": "tag"
+      }
+    }
+  ],
+  "zustand": ["neu", "gebraucht", "alt"],
+  "stil": [
+    "rustikal",
+    "klassisch",
+    "natur",
+    "einfach",
+    "laendlich",
+    "landhaus",
+    "modern"
+  ],
+  "ufer": "stein",
+  "datei": "karten/lockport-aussen-steg-offen.json",
+  "zustand_der_karte": "lockportSteg"
+}

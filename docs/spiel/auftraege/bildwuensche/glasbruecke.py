@@ -6,7 +6,7 @@ Der Katalog hat keine erhöhte Brücke und keine Fahrbahnmarkierung. Diese Bilde
 in unserer Ansicht (KARTENREGELN 10.60): oben die Lauffläche, darunter die Stirnseite des Trägers,
 darunter frei bis zum Boden (Pfeiler, Schatten). Die Höhe des Decks ist HOEHE Pixel.
 
-Bilder (L = Länge in Kacheln):
+Bilder (L = Länge in Kacheln, 1 bis 16):
 - ``glasdeck_L`` (L × 16 breit, 64 + 6 + HOEHE hoch): Glasboden 4 Kacheln tief, halb durchsichtig,
   Stahlrahmen, Glanzlichter; darunter Träger (6 px) und der Schatten auf dem Boden. Flach legen
   (ohne Kollision), damit Figuren darauf laufen; das Geländer sperrt.
@@ -19,7 +19,8 @@ Bilder (L = Länge in Kacheln):
   ist leer. Möbelangabe dazu ``"maske": ["", "#…#"]``: Die Reihe unter dem Deck sperrt.
 - ``glasgelaender_seite_L`` (16 breit, L hoch): Geländer an einer Seitenkante (Plattform).
 - ``fahrbahn_strich_L`` / ``fahrbahn_linie_L`` (16 breit, L hoch): gestrichelte und durchgezogene
-  weiße Linie am linken Bildrand (2 px), mit Versatz −1 genau auf die Kachelgrenze legen.
+  weiße Linie am linken Bildrand (2 px), mit Versatz −1 genau auf die Kachelgrenze legen;
+  ``fahrbahn_strich_quer_L`` / ``fahrbahn_linie_quer_L`` (L breit, 16 hoch) waagerecht am oberen Rand.
 - ``einfassung_quer_L`` / ``einfassung_laengs_L``: Bordstein (3 px) am oberen bzw. linken Bildrand,
   für Plätze und Asphalt (Revision 2, Punkt 22).
 
@@ -45,7 +46,7 @@ SCHATTEN = (30, 34, 52, 80)
 BETON, BETON_HELL, BETON_DUNKEL = (184, 184, 190, 255), (214, 214, 220, 255), (132, 132, 142, 255)
 WEISS = (238, 238, 232, 255)
 BORD, BORD_DUNKEL = (204, 204, 210, 255), (120, 120, 132, 255)
-LAENGEN = range(2, 17)
+LAENGEN = range(1, 17)
 
 
 def glasflaeche(breite: int, tiefe: int) -> Image.Image:
@@ -166,6 +167,15 @@ def fahrbahnlinie(laenge: int, gestrichelt: bool) -> Image.Image:
     return bild
 
 
+def fahrbahnlinie_quer(laenge: int, gestrichelt: bool) -> Image.Image:
+    """Waagerechte Linie am oberen Bildrand (2 px), für Straßen von West nach Ost."""
+    bild = Image.new("RGBA", (laenge * K, K))
+    z = ImageDraw.Draw(bild)
+    for x in range(0, laenge * K, K if gestrichelt else 1):
+        z.rectangle((x + 2 if gestrichelt else x, 0, x + 9 if gestrichelt else x, 1), fill=WEISS)
+    return bild
+
+
 def einfassung(laenge: int, quer: bool) -> Image.Image:
     """Bordstein 3 px am oberen (quer) oder linken Rand, Fugen alle 16 px, dunkle Kante."""
     bild = Image.new("RGBA", (laenge * K, K) if quer else (K, laenge * K))
@@ -196,6 +206,8 @@ def main() -> None:
             f"glasgelaender_seite_{n}": glasgelaender_seite(n),
             f"fahrbahn_strich_{n}": fahrbahnlinie(n, True),
             f"fahrbahn_linie_{n}": fahrbahnlinie(n, False),
+            f"fahrbahn_strich_quer_{n}": fahrbahnlinie_quer(n, True),
+            f"fahrbahn_linie_quer_{n}": fahrbahnlinie_quer(n, False),
             f"einfassung_quer_{n}": einfassung(n, True),
             f"einfassung_laengs_{n}": einfassung(n, False),
         }

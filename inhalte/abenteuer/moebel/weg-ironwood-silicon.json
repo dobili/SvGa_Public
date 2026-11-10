@@ -886,6 +886,167 @@
         "#",
         "#"
       ]
+    },
+    "wsrLkw": {
+      "quelle": "spiel/eigene/lkw_links_blau.png",
+      "breite": 176,
+      "hoehe": 80,
+      "kollision": true,
+      "art": "fahrzeug",
+      "zustand": "neu",
+      "stil": "modern",
+      "blick": "links"
+    },
+    "wsrAutoLinks1": {
+      "quelle": "modern-exteriors/Modern_Exteriors_16x16/ME_Theme_Sorter_16x16/10_Vehicles_Singles_16x16/ME_Singles_Vehicles_16x16_Car_Left_1.png",
+      "breite": 64,
+      "hoehe": 48,
+      "kollision": false,
+      "art": "fahrzeug",
+      "zustand": "neu",
+      "stil": "modern",
+      "blick": "links"
+    },
+    "wsrAutoLinks14": {
+      "quelle": "modern-exteriors/Modern_Exteriors_16x16/ME_Theme_Sorter_16x16/10_Vehicles_Singles_16x16/ME_Singles_Vehicles_16x16_Car_Left_14.png",
+      "breite": 80,
+      "hoehe": 48,
+      "kollision": false,
+      "art": "fahrzeug",
+      "zustand": "neu",
+      "stil": "modern",
+      "blick": "links"
+    },
+    "wsrAutoLinks21": {
+      "quelle": "modern-exteriors/Modern_Exteriors_16x16/ME_Theme_Sorter_16x16/10_Vehicles_Singles_16x16/ME_Singles_Vehicles_16x16_Car_Left_21.png",
+      "breite": 80,
+      "hoehe": 48,
+      "kollision": false,
+      "art": "fahrzeug",
+      "zustand": "neu",
+      "stil": "modern",
+      "blick": "links"
+    },
+    "wsrAutoRechts10": {
+      "quelle": "modern-exteriors/Modern_Exteriors_16x16/ME_Theme_Sorter_16x16/10_Vehicles_Singles_16x16/ME_Singles_Vehicles_16x16_Car_Right_10.png",
+      "breite": 80,
+      "hoehe": 48,
+      "kollision": false,
+      "art": "fahrzeug",
+      "zustand": "neu",
+      "stil": "modern",
+      "blick": "rechts"
+    },
+    "wsrAutoRechts2": {
+      "quelle": "modern-exteriors/Modern_Exteriors_16x16/ME_Theme_Sorter_16x16/10_Vehicles_Singles_16x16/ME_Singles_Vehicles_16x16_Car_Right_2.png",
+      "breite": 64,
+      "hoehe": 48,
+      "kollision": false,
+      "art": "fahrzeug",
+      "zustand": "neu",
+      "stil": "modern",
+      "blick": "rechts"
+    },
+    "wsrAutoRechts17": {
+      "quelle": "modern-exteriors/Modern_Exteriors_16x16/ME_Theme_Sorter_16x16/10_Vehicles_Singles_16x16/ME_Singles_Vehicles_16x16_Car_Right_17.png",
+      "breite": 80,
+      "hoehe": 48,
+      "kollision": false,
+      "art": "fahrzeug",
+      "zustand": "neu",
+      "stil": "modern",
+      "blick": "rechts"
+    },
+    "wsrTafel": {
+      "quelle": "modern-exteriors/Modern_Exteriors_16x16/ME_Theme_Sorter_16x16/11_Camping_Singles_16x16/ME_Singles_Camping_16x16_Wood_Board_2.png",
+      "breite": 32,
+      "hoehe": 32,
+      "kollision": true,
+      "art": "tafel",
+      "zustand": "neu",
+      "stil": "rustikal",
+      "blick": "unten"
+    },
+    "wsgLinieQ16": {
+      "quelle": "spiel/eigene/fahrbahn_linie_quer_16.png",
+      "breite": 256,
+      "hoehe": 16,
+      "kollision": false,
+      "art": "markierung",
+      "zustand": "neu",
+      "stil": "modern"
+    },
+    "wsgStrichQ16": {
+      "quelle": "spiel/eigene/fahrbahn_strich_quer_16.png",
+      "breite": 256,
+      "hoehe": 16,
+      "kollision": false,
+      "art": "markierung",
+      "zustand": "neu",
+      "stil": "modern"
+    },
+    "wsgBordQ9": {
+      "quelle": "spiel/eigene/einfassung_quer_9.png",
+      "breite": 144,
+      "hoehe": 16,
+      "kollision": false,
+      "art": "bordstein",
+      "zustand": "neu",
+      "stil": "modern"
+    },
+    "wsgBordQ6": {
+      "quelle": "spiel/eigene/einfassung_quer_6.png",
+      "breite": 96,
+      "hoehe": 16,
+      "kollision": false,
+      "art": "bordstein",
+      "zustand": "neu",
+      "stil": "modern"
+    },
+    "wsgBordQ8": {
+      "quelle": "spiel/eigene/einfassung_quer_8.png",
+      "breite": 128,
+      "hoehe": 16,
+      "kollision": false,
+      "art": "bordstein",
+      "zustand": "neu",
+      "stil": "modern"
+    },
+    "wsgBordQ3": {
+      "quelle": "spiel/eigene/einfassung_quer_3.png",
+      "breite": 48,
+      "hoehe": 16,
+      "kollision": false,
+      "art": "bordstein",
+      "zustand": "neu",
+      "stil": "modern"
+    },
+    "wsgBordQ15": {
+      "quelle": "spiel/eigene/einfassung_quer_15.png",
+      "breite": 240,
+      "hoehe": 16,
+      "kollision": false,
+      "art": "bordstein",
+      "zustand": "neu",
+      "stil": "modern"
+    },
+    "wsgBordL2": {
+      "quelle": "spiel/eigene/einfassung_laengs_2.png",
+      "breite": 16,
+      "hoehe": 32,
+      "kollision": false,
+      "art": "bordstein",
+      "zustand": "neu",
+      "stil": "modern"
+    },
+    "wsgBordL7": {
+      "quelle": "spiel/eigene/einfassung_laengs_7.png",
+      "breite": 16,
+      "hoehe": 112,
+      "kollision": false,
+      "art": "bordstein",
+      "zustand": "neu",
+      "stil": "modern"
     }
   }
 }

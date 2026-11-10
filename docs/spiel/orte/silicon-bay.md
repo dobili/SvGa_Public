@@ -32,6 +32,25 @@ dagegen voller Vögel; an der Glasbrücke hören sie auf. Das ist Absicht und wi
 
 ### 1.1 Raststätte (`wegIronwoodSilicon.raststaette`, 160 × 28)
 
+**Runde 8 (Revision 2 des Autors, Wahl C, mittel-1):**
+
+- Die Schnellstraße hat zwei Spuren mit Rechtsverkehr: nach Westen oben, nach Osten unten. Die
+  Autos sind von der Seite gesehen und fahren in Fahrtrichtung. Rand- und Mittellinie sind
+  eingezeichnet.
+- Der Lärmschutz hinter der Leitplanke ist eine zusammenhängende Hecke (Reihe 6, Spalten 1–103).
+  Dahinter wechseln sich Bäume, Kugelbüsche und Büsche ab, statt immer desselben Busches.
+- Laternen stehen nur noch an Rastplätzen:
+  - an der Bank am Pfad (Laterne (29, 11), Mülleimer (32, 13));
+  - zwischen den sechs Picknicktischen im Osten. Die Tische stehen in zwei Reihen zu drei (147,
+    151, 155 / 21 und 24), daneben zwei Mülleimer. Der Anstecker liegt jetzt bei (150, 23).
+- Die Vogelhütte steht bei (75, 18). Ein Erdweg führt von ihrer Tür nach Osten und zum Pfadbogen
+  hinauf.
+- Die Anlegepfosten stehen direkt am Ufer, auch in der Einbuchtung.
+- Der Lastwagen von Mrs. Kowalczyk ist ein eigenes Bild mit Dach und Tiefe (Bildwunsch
+  `lkw_schraeg.py`).
+- Asphalt und Pflaster haben rundum einen Bordstein zum Gras.
+- Die Anschlagtafel (131, 13) zeigt Zettel und steht mit der Vorderseite zur Fahrgasse.
+
 Die **Schnellstraße** läuft im Norden über die ganze Breite (Reihen 0–4, Fahrbahnen mit
 Mittelleitplanke, Leitplanke in Reihe 5), Kraftfahrstraße ohne Gehweg. Im Osten liegt der
 **Rastplatz** (Spalten 104–159): Gebäude nördlich der Fahrgasse mit Türen nach Süden, die Fahrgasse
@@ -558,6 +577,21 @@ Glaswand fehlte, Kapselmaschinen-Tische, Automaten mitten im Raum, Stühle nicht
 
 Tür zum Serverraum in der Nordwand bei Spalte 12, Feld davor (12, 3). Eigene Bilder: Bildwunsch
 `docs/spiel/auftraege/bildwuensche/akademie.py` (Möbel `sb8…` in `moebel/silicon-bay.json`).
+
+### Runde 8 (mittel-3, 10.11.2026): Campus und alter Hafen nach den Notizen des Autors
+
+- **Campus (`siliconBay.aussen`, Hauptfassung C):** Bahn auf den Gleisen, Prellbock quer zum
+  Gleisende; Werbetafel am Gehweg; Waren und zwei Händler an den Marktständen; Bänke seitlich am
+  Wasserspiel; Ladenzeile aus acht verschiedenen Läden (Bildwunsch `altstadt.py`, Teil Campus) und
+  einem kleinen Supermarkt; Baumplatz mit eigenem hellem Steinboden; Hecke statt Glasgeländer an der
+  Terrasse (die „Kante“ war das Glasgeländer); Infokiosk, Wohnhaus und Fahrradschuppen dazu (10.51).
+  Bodenvariation (Punkt 31) kommt als Technik von mittel-2.
+- **Alter Hafen (`siliconBay.hafen`, Hauptfassung C):** Küstenfähre neu gezeichnet, schräg von oben
+  und 14 × 5 Kacheln groß (Bildwunsch `hafen_faehre.py`); Fährhäuschen als Häuschen mit Dach statt
+  flacher Front; der Kran ist weg; Ladebetrieb am Kutter mit Kisten und Fässern in Reihen und drei
+  Arbeitern; ein Gemüsekarren mit Händlerin statt zwei leerer; keine Kisten mehr auf der Straße;
+  Laternen am Straßenrand alle zehn Felder; die „H“-Taschen (Fischkisten) und der Fischeimer sind
+  weg; um den Leuchtturm genug Land für den Weg zur Tür.
 
 ### 4.6 Serverraum (`siliconBay.serverraum`)
 

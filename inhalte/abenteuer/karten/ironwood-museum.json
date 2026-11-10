@@ -11,7 +11,7 @@
  "tilewidth": 16,
  "tileheight": 16,
  "nextlayerid": 5,
- "nextobjectid": 48,
+ "nextobjectid": 47,
  "layers": [
   {
    "id": 1,
@@ -2365,7 +2365,7 @@
     },
     {
      "id": 21,
-     "name": "iwVitrine",
+     "name": "iw9VitrineZeitung",
      "type": "moebel",
      "x": 32,
      "y": 192,
@@ -2388,7 +2388,7 @@
     },
     {
      "id": 22,
-     "name": "iw8VitrineA",
+     "name": "iw9VitrineLaterne",
      "type": "moebel",
      "x": 80,
      "y": 192,
@@ -2434,9 +2434,9 @@
     },
     {
      "id": 24,
-     "name": "iw8VitrineC",
+     "name": "iw9VitrineLeer",
      "type": "moebel",
-     "x": 272,
+     "x": 112,
      "y": 192,
      "width": 32,
      "height": 48,
@@ -2457,29 +2457,6 @@
     },
     {
      "id": 25,
-     "name": "mf4Vitrine",
-     "type": "moebel",
-     "x": 112,
-     "y": 208,
-     "width": 32,
-     "height": 32,
-     "rotation": 0,
-     "visible": true,
-     "properties": [
-      {
-       "name": "tiefe",
-       "type": "int",
-       "value": 232
-      },
-      {
-       "name": "kollision",
-       "type": "bool",
-       "value": true
-      }
-     ]
-    },
-    {
-     "id": 26,
      "name": "iw5Sackkarre",
      "type": "moebel",
      "x": 304,
@@ -2502,7 +2479,7 @@
      ]
     },
     {
-     "id": 27,
+     "id": 26,
      "name": "iw5Postsack",
      "type": "moebel",
      "x": 320,
@@ -2525,7 +2502,7 @@
      ]
     },
     {
-     "id": 28,
+     "id": 27,
      "name": "iw5Postsack",
      "type": "moebel",
      "x": 336,
@@ -2548,7 +2525,7 @@
      ]
     },
     {
-     "id": 29,
+     "id": 28,
      "name": "iw8Infotafel",
      "type": "moebel",
      "x": 96,
@@ -2571,7 +2548,7 @@
      ]
     },
     {
-     "id": 30,
+     "id": 29,
      "name": "iw8Museumsbank",
      "type": "moebel",
      "x": 112,
@@ -2594,7 +2571,7 @@
      ]
     },
     {
-     "id": 31,
+     "id": 30,
      "name": "iw8Pflanze",
      "type": "moebel",
      "x": 16,
@@ -2617,30 +2594,7 @@
      ]
     },
     {
-     "id": 32,
-     "name": "iw8Pflanze",
-     "type": "moebel",
-     "x": 192,
-     "y": 48,
-     "width": 32,
-     "height": 48,
-     "rotation": 0,
-     "visible": true,
-     "properties": [
-      {
-       "name": "tiefe",
-       "type": "int",
-       "value": 88
-      },
-      {
-       "name": "kollision",
-       "type": "bool",
-       "value": true
-      }
-     ]
-    },
-    {
-     "id": 33,
+     "id": 31,
      "name": "iw8BildA",
      "type": "moebel",
      "x": 384,
@@ -2663,7 +2617,7 @@
      ]
     },
     {
-     "id": 34,
+     "id": 32,
      "name": "iw8BildB",
      "type": "moebel",
      "x": 432,
@@ -2686,7 +2640,7 @@
      ]
     },
     {
-     "id": 35,
+     "id": 33,
      "name": "iw8BildC",
      "type": "moebel",
      "x": 480,
@@ -2709,7 +2663,7 @@
      ]
     },
     {
-     "id": 36,
+     "id": 34,
      "name": "wzBild",
      "type": "moebel",
      "x": 512,
@@ -2732,20 +2686,20 @@
      ]
     },
     {
-     "id": 37,
-     "name": "iw8Museumsbank",
+     "id": 35,
+     "name": "iw8VitrineC",
      "type": "moebel",
      "x": 432,
-     "y": 112,
+     "y": 96,
      "width": 32,
-     "height": 16,
+     "height": 48,
      "rotation": 0,
      "visible": true,
      "properties": [
       {
        "name": "tiefe",
        "type": "int",
-       "value": 120
+       "value": 136
       },
       {
        "name": "kollision",
@@ -2755,7 +2709,7 @@
      ]
     },
     {
-     "id": 38,
+     "id": 36,
      "name": "iw8Pflanze",
      "type": "moebel",
      "x": 384,
@@ -2778,7 +2732,7 @@
      ]
     },
     {
-     "id": 39,
+     "id": 37,
      "name": "iw8Pflanze",
      "type": "moebel",
      "x": 320,
@@ -2801,7 +2755,7 @@
      ]
     },
     {
-     "id": 40,
+     "id": 38,
      "name": "iw8Museumsbank",
      "type": "moebel",
      "x": 112,
@@ -2824,8 +2778,8 @@
      ]
     },
     {
-     "id": 41,
-     "name": "iw8Schaukasten1",
+     "id": 39,
+     "name": "iw9VitrineWerkzeug",
      "type": "moebel",
      "x": 384,
      "y": 192,
@@ -2847,8 +2801,8 @@
      ]
     },
     {
-     "id": 42,
-     "name": "iw8Schaukasten2",
+     "id": 40,
+     "name": "iw9VitrineGlasfunke",
      "type": "moebel",
      "x": 432,
      "y": 192,
@@ -2870,7 +2824,7 @@
      ]
     },
     {
-     "id": 43,
+     "id": 41,
      "name": "iw8Schaukasten3",
      "type": "moebel",
      "x": 480,
@@ -2893,7 +2847,7 @@
      ]
     },
     {
-     "id": 44,
+     "id": 42,
      "name": "iw8Infotafel",
      "type": "moebel",
      "x": 368,
@@ -2916,7 +2870,7 @@
      ]
     },
     {
-     "id": 45,
+     "id": 43,
      "name": "iw8Pflanze",
      "type": "moebel",
      "x": 496,
@@ -2939,7 +2893,7 @@
      ]
     },
     {
-     "id": 46,
+     "id": 44,
      "name": "cc6TuerSued",
      "type": "moebel",
      "x": 176,
@@ -2962,11 +2916,11 @@
      ]
     },
     {
-     "id": 47,
+     "id": 45,
      "name": "cc5Fussmatte",
      "type": "moebel",
      "x": 176,
-     "y": 264,
+     "y": 259,
      "width": 16,
      "height": 16,
      "rotation": 0,
@@ -2981,6 +2935,29 @@
        "name": "kollision",
        "type": "bool",
        "value": false
+      }
+     ]
+    },
+    {
+     "id": 46,
+     "name": "iw8Museumsbank",
+     "type": "moebel",
+     "x": 464,
+     "y": 160,
+     "width": 32,
+     "height": 16,
+     "rotation": 0,
+     "visible": true,
+     "properties": [
+      {
+       "name": "tiefe",
+       "type": "int",
+       "value": 168
+      },
+      {
+       "name": "kollision",
+       "type": "bool",
+       "value": true
       }
      ]
     }

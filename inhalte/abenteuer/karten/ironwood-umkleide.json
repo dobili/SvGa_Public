@@ -671,7 +671,7 @@
      "id": 3,
      "name": "schliessfach",
      "type": "ausloeser",
-     "x": 128,
+     "x": 112,
      "y": 64,
      "width": 16,
      "height": 16,
@@ -682,27 +682,17 @@
      "id": 4,
      "name": "arbeiter",
      "type": "statist",
-     "x": 80,
-     "y": 112,
+     "x": 96,
+     "y": 96,
      "width": 16,
      "height": 16,
      "rotation": 0,
      "visible": true,
      "properties": [
       {
-       "name": "von",
-       "type": "string",
-       "value": "5,7"
-      },
-      {
-       "name": "bis",
-       "type": "string",
-       "value": "8,7"
-      },
-      {
        "name": "tun",
        "type": "string",
-       "value": "zieht sich nach der Schicht um"
+       "value": "sitzt auf der Bank und zieht nach der Schicht die Schuhe aus"
       },
       {
        "name": "wann",
@@ -851,11 +841,11 @@
     },
     {
      "id": 11,
-     "name": "mf2Spind",
+     "name": "iwSpind",
      "type": "moebel",
      "x": 112,
      "y": 32,
-     "width": 16,
+     "width": 32,
      "height": 32,
      "rotation": 0,
      "visible": true,
@@ -874,29 +864,6 @@
     },
     {
      "id": 12,
-     "name": "mf2Spind",
-     "type": "moebel",
-     "x": 128,
-     "y": 32,
-     "width": 16,
-     "height": 32,
-     "rotation": 0,
-     "visible": true,
-     "properties": [
-      {
-       "name": "tiefe",
-       "type": "int",
-       "value": 56
-      },
-      {
-       "name": "kollision",
-       "type": "bool",
-       "value": true
-      }
-     ]
-    },
-    {
-     "id": 13,
      "name": "iw8Wandspiegel",
      "type": "moebel",
      "x": 144,
@@ -919,7 +886,7 @@
      ]
     },
     {
-     "id": 14,
+     "id": 13,
      "name": "mf5Handwaschbecken",
      "type": "moebel",
      "x": 144,
@@ -942,11 +909,11 @@
      ]
     },
     {
-     "id": 15,
+     "id": 14,
      "name": "iw8Duschkabine",
      "type": "moebel",
      "x": 160,
-     "y": 16,
+     "y": 32,
      "width": 32,
      "height": 48,
      "rotation": 0,
@@ -955,7 +922,30 @@
       {
        "name": "tiefe",
        "type": "int",
-       "value": 56
+       "value": 72
+      },
+      {
+       "name": "kollision",
+       "type": "bool",
+       "value": true
+      }
+     ]
+    },
+    {
+     "id": 15,
+     "name": "iw8DuschkabineB",
+     "type": "moebel",
+     "x": 192,
+     "y": 32,
+     "width": 32,
+     "height": 48,
+     "rotation": 0,
+     "visible": true,
+     "properties": [
+      {
+       "name": "tiefe",
+       "type": "int",
+       "value": 72
       },
       {
        "name": "kollision",
@@ -966,10 +956,10 @@
     },
     {
      "id": 16,
-     "name": "iw8DuschkabineB",
+     "name": "iw8Kabinentuer",
      "type": "moebel",
-     "x": 192,
-     "y": 16,
+     "x": 160,
+     "y": 80,
      "width": 32,
      "height": 48,
      "rotation": 0,
@@ -978,7 +968,7 @@
       {
        "name": "tiefe",
        "type": "int",
-       "value": 56
+       "value": 120
       },
       {
        "name": "kollision",
@@ -989,10 +979,10 @@
     },
     {
      "id": 17,
-     "name": "iw8Kabinentuer",
+     "name": "iw8KabinentuerB",
      "type": "moebel",
-     "x": 160,
-     "y": 64,
+     "x": 192,
+     "y": 80,
      "width": 32,
      "height": 48,
      "rotation": 0,
@@ -1001,7 +991,7 @@
       {
        "name": "tiefe",
        "type": "int",
-       "value": 104
+       "value": 120
       },
       {
        "name": "kollision",
@@ -1012,11 +1002,11 @@
     },
     {
      "id": 18,
-     "name": "iw8KabinentuerB",
+     "name": "iw8Trennwand",
      "type": "moebel",
-     "x": 192,
-     "y": 64,
-     "width": 32,
+     "x": 224,
+     "y": 32,
+     "width": 16,
      "height": 48,
      "rotation": 0,
      "visible": true,
@@ -1024,7 +1014,7 @@
       {
        "name": "tiefe",
        "type": "int",
-       "value": 104
+       "value": 72
       },
       {
        "name": "kollision",
@@ -1035,29 +1025,6 @@
     },
     {
      "id": 19,
-     "name": "iw8Trennwand",
-     "type": "moebel",
-     "x": 224,
-     "y": 64,
-     "width": 16,
-     "height": 48,
-     "rotation": 0,
-     "visible": true,
-     "properties": [
-      {
-       "name": "tiefe",
-       "type": "int",
-       "value": 104
-      },
-      {
-       "name": "kollision",
-       "type": "bool",
-       "value": true
-      }
-     ]
-    },
-    {
-     "id": 20,
      "name": "cc4Bahnbank",
      "type": "moebel",
      "x": 96,
@@ -1080,7 +1047,7 @@
      ]
     },
     {
-     "id": 21,
+     "id": 20,
      "name": "cc4Bahnbank",
      "type": "moebel",
      "x": 96,
@@ -1103,7 +1070,7 @@
      ]
     },
     {
-     "id": 22,
+     "id": 21,
      "name": "iw8Garderobe",
      "type": "moebel",
      "x": 16,
@@ -1126,10 +1093,10 @@
      ]
     },
     {
-     "id": 23,
+     "id": 22,
      "name": "ca7Muelleimer",
      "type": "moebel",
-     "x": 144,
+     "x": 64,
      "y": 112,
      "width": 16,
      "height": 32,
@@ -1149,7 +1116,7 @@
      ]
     },
     {
-     "id": 24,
+     "id": 23,
      "name": "cc4Bahnbank",
      "type": "moebel",
      "x": 176,
@@ -1172,7 +1139,7 @@
      ]
     },
     {
-     "id": 25,
+     "id": 24,
      "name": "cc4PflanzeK",
      "type": "moebel",
      "x": 224,
@@ -1195,7 +1162,7 @@
      ]
     },
     {
-     "id": 26,
+     "id": 25,
      "name": "cc6TuerSued",
      "type": "moebel",
      "x": 96,
@@ -1218,11 +1185,11 @@
      ]
     },
     {
-     "id": 27,
+     "id": 26,
      "name": "cc5Fussmatte",
      "type": "moebel",
      "x": 96,
-     "y": 168,
+     "y": 163,
      "width": 16,
      "height": 16,
      "rotation": 0,
@@ -1237,6 +1204,29 @@
        "name": "kollision",
        "type": "bool",
        "value": false
+      }
+     ]
+    },
+    {
+     "id": 27,
+     "name": "iw8Trennwand",
+     "type": "moebel",
+     "x": 224,
+     "y": 80,
+     "width": 16,
+     "height": 48,
+     "rotation": 0,
+     "visible": true,
+     "properties": [
+      {
+       "name": "tiefe",
+       "type": "int",
+       "value": 120
+      },
+      {
+       "name": "kollision",
+       "type": "bool",
+       "value": true
       }
      ]
     }

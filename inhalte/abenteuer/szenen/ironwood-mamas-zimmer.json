@@ -2,7 +2,7 @@
   "karte": "ironwood.mamasZimmer",
   "datei": "karten/ironwood-mamas-zimmer.json",
   "art": "innen",
-  "beschreibung": "Wohnküche und Mamas Zimmer (Variante B, Runde 8). Küche mit weißen Fliesen: Kühlschrank, zwei verschiedene Herde und Theke mit Spüle an der Nordwand, Fenster, der Ofen mit dem Rücken an der Wand, daneben die Leseecke mit Sessel und Stehlampe; Läufer, runder Tisch mit Obstschale und zwei Stühlen für Mama und Oma Ruth. Mamas Zimmer mit hellem Holzboden: lila Bett unter dem Fenster, Rahmen mit dem Partieformular von 2001, Kleiderschrank an der Nordwand, Schreibtisch mit Stuhl und Lampe, runder Teppich. Karg, aber bewohnt.",
+  "beschreibung": "Wohnküche und Mamas Zimmer (Variante B, Runde 8). Küche mit weißen Fliesen: Kühlschrank, zwei verschiedene Herde und Theke mit Spüle an der Nordwand, Fenster, der Ofen mit dem Rücken an der Wand, daneben die Leseecke mit Sessel und Stehlampe; ein Küchenschrank, Garderobe an der Tür, runder Tisch mit Obstschale und zwei Stühlen für Mama und Oma Ruth. Mamas Zimmer mit hellem Holzboden: lila Bett unter dem Fenster, Rahmen mit dem Partieformular von 2001, Kleiderschrank an der Nordwand, Schreibtisch mit Stuhl und Lampe, runder Teppich. Karg, aber bewohnt.",
   "wand": "holz",
   "boden": "dielen",
   "raster": [
@@ -29,7 +29,7 @@
     {
       "moebel": "cc5Fussmatte",
       "feld": [8, 10],
-      "versatz": [0, 24]
+      "versatz": [0, 19]
     },
     {
       "moebel": "mf8KuehlschrankWeiss",
@@ -78,25 +78,28 @@
     {
       "moebel": "cc4StuhlVorn",
       "feld": [4, 5],
-      "zu": "kuechentisch"
+      "zu": "kuechentisch",
+      "versatz": [8, 0]
     },
     {
       "moebel": "cc4StuhlRuecken",
-      "feld": [5, 7],
-      "zu": "kuechentisch"
+      "feld": [4, 7],
+      "zu": "kuechentisch",
+      "versatz": [8, 6]
     },
     {
       "moebel": "cc4PflanzeK",
       "feld": [1, 9]
     },
     {
-      "moebel": "mf7TeppichQuadrat",
+      "moebel": "mf8Sideboard",
       "feld": [1, 5]
     },
     {
       "moebel": "mf7Obstkorb",
       "feld": [0, 0],
-      "auf": "kuechentisch"
+      "auf": "kuechentisch",
+      "versatz": [0, 10]
     },
     {
       "moebel": "wzFenster",
@@ -142,6 +145,10 @@
     {
       "moebel": "cc4PflanzeK",
       "feld": [11, 9]
+    },
+    {
+      "moebel": "iw8Garderobe",
+      "feld": [3, 9]
     }
   ],
   "ausloeser": [

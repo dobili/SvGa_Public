@@ -2,7 +2,7 @@
   "karte": "ironwood.aussen",
   "datei": "karten/ironwood-aussen.json",
   "art": "aussen",
-  "beschreibung": "Ironwood außen (Variante C als Hauptfassung, Runde 8 nach den Notizen des Autors): Der Kanal am Westrand ist acht Felder breit mit Steinufer, Poller am Kai in gleichem Abstand, die Hauptstraße quert ihn auf einer Straßenbrücke mit Gehwegen. Hauptstraße und Seitenstraße sind durchgehend mit Pflaster eingefasst, die Seitenstraße mündet direkt in die Hauptstraße. Im Werk eine Halle mit Dach, Container und Fässer im Werkhof, ein durchgehender Zaun mit Endpfosten am Tor. Der Markt hat Waren auf jedem Stand, der Platz reicht bis an die Promenade, eine Hecke fasst ihn ein. Die Kapelle St. Barbara (Schutzpatronin der Hütten- und Bergleute) hat einen Weg und einen kleinen Friedhof mit Zaun. Die Gleise enden im Westen am Prellbock quer zum Gleis beim alten Bahnhof und führen im Osten aus der Stadt zum Werk und Steinbruch; der Übergang ist ins Gleis eingelassen. Laternen an der Promenade stehen oben in gleichem Abstand.",
+  "beschreibung": "Ironwood außen (Variante C als Hauptfassung, Runde 8 nach den Notizen des Autors): Der Kanal am Westrand ist acht Felder breit mit Steinufer, Poller am Kai in gleichem Abstand, die Hauptstraße quert ihn auf einer Straßenbrücke mit Gehwegen. Hauptstraße und Seitenstraße sind durchgehend mit Pflaster eingefasst, die Seitenstraße mündet direkt in die Hauptstraße. Im Werk eine Halle mit Dach, Container und Fässer im Werkhof, ein durchgehender Zaun mit Endpfosten am Tor. Der Markt hat Waren auf jedem Stand, der Platz reicht bis an die Promenade, eine Hecke fasst ihn ein. Die Kapelle St. Barbara (Schutzpatronin der Hütten- und Bergleute) hat einen Weg und einen kleinen Friedhof mit Zaun. Die Gleise enden im Westen am Prellbock quer zum Gleis beim alten Bahnhof und führen im Osten aus der Stadt zum Werk und Steinbruch; der Übergang ist ins Gleis eingelassen. Laternen an der Promenade stehen oben in gleichem Abstand. Runde 8, zweite Prüfung: Straßen mit Markierung, am Bahnsteig der alte Bahnhof, im Übergang Bohlen statt Schienen, eine Hecke um den Markt, eine Schranke im Werkstor, am Übergang das Haus des Schrankenwärters; der Absperrbock im Südosten sperrt den Erdweg zum stillgelegten Steinbruch.",
   "boden": "gras",
   "wandart": "hecke",
   "boeden": {
@@ -88,12 +88,12 @@
       "feld": [18, 0]
     },
     {
-      "moebel": "iw5StadthausBlau",
-      "feld": [26, 0]
+      "moebel": "iw5ReihenhausHoch",
+      "feld": [26, 1]
     },
     {
-      "moebel": "iw5StadthausGelb",
-      "feld": [32, 0]
+      "moebel": "iw5Laden",
+      "feld": [32, 2]
     },
     {
       "moebel": "iw5ReihenhausHoch",
@@ -352,10 +352,6 @@
       "feld": [66, 53]
     },
     {
-      "moebel": "mfAhorn",
-      "feld": [71, 53]
-    },
-    {
       "moebel": "mf9Absperrbock",
       "feld": [75, 56],
       "id": "torSteinbruch"
@@ -387,18 +383,6 @@
     {
       "moebel": "cc5Poller",
       "feld": [10, 24]
-    },
-    {
-      "moebel": "cc5Poller",
-      "feld": [10, 36]
-    },
-    {
-      "moebel": "cc5Poller",
-      "feld": [10, 40]
-    },
-    {
-      "moebel": "cc5Poller",
-      "feld": [10, 44]
     },
     {
       "moebel": "cc5Poller",
@@ -619,18 +603,6 @@
     {
       "moebel": "iw5GleisGrau",
       "feld": [61, 49],
-      "bauteil_ok": true
-    },
-    {
-      "moebel": "iw5GleisGrau",
-      "feld": [62, 49],
-      "vorn": true,
-      "bauteil_ok": true
-    },
-    {
-      "moebel": "iw5GleisGrau",
-      "feld": [63, 49],
-      "vorn": true,
       "bauteil_ok": true
     },
     {
@@ -925,18 +897,6 @@
     },
     {
       "moebel": "iw5GleisGrau",
-      "feld": [62, 51],
-      "vorn": true,
-      "bauteil_ok": true
-    },
-    {
-      "moebel": "iw5GleisGrau",
-      "feld": [63, 51],
-      "vorn": true,
-      "bauteil_ok": true
-    },
-    {
-      "moebel": "iw5GleisGrau",
       "feld": [64, 51],
       "bauteil_ok": true
     },
@@ -1064,11 +1024,6 @@
     {
       "moebel": "mf9LaterneLang",
       "feld": [38, 12],
-      "vorn": true
-    },
-    {
-      "moebel": "mf9LaterneLang",
-      "feld": [13, 43],
       "vorn": true
     },
     {
@@ -1361,14 +1316,6 @@
       "moebel": "wg4ZaunBottomMiddle",
       "feld": [78, 27],
       "bauteil_ok": true
-    },
-    {
-      "moebel": "mf2Blumenbeet",
-      "feld": [12, 42]
-    },
-    {
-      "moebel": "mfBank",
-      "feld": [15, 42]
     },
     {
       "moebel": "iw8KorbKohl",
@@ -1677,14 +1624,6 @@
       "feld": [36, 33]
     },
     {
-      "moebel": "ws5Huette",
-      "feld": [13, 37]
-    },
-    {
-      "moebel": "wc5Gartenhaus",
-      "feld": [17, 37]
-    },
-    {
       "moebel": "sd6Steuerhaus",
       "feld": [49, 18]
     },
@@ -1715,6 +1654,84 @@
     {
       "moebel": "cc7Bretterstapel",
       "feld": [62, 19]
+    },
+    {
+      "moebel": "ds6BahnhofAlt",
+      "feld": [10, 38],
+      "id": "alterBahnhof"
+    },
+    {
+      "moebel": "pd6HausRot",
+      "feld": [70, 53]
+    },
+    {
+      "moebel": "wds6Schranke",
+      "feld": [57, 27],
+      "bauteil_ok": true
+    },
+    {
+      "moebel": "cc4Hecke",
+      "feld": [38, 33]
+    },
+    {
+      "moebel": "cc4Hecke",
+      "feld": [40, 33]
+    },
+    {
+      "moebel": "cc4Hecke",
+      "feld": [42, 33]
+    },
+    {
+      "moebel": "cc4Hecke",
+      "feld": [50, 33]
+    },
+    {
+      "moebel": "cc4Hecke",
+      "feld": [52, 33]
+    },
+    {
+      "moebel": "cc4Hecke",
+      "feld": [54, 33]
+    },
+    {
+      "moebel": "cc4Hecke",
+      "feld": [54, 45]
+    },
+    {
+      "moebel": "cc4Hecke",
+      "feld": [56, 45]
+    },
+    {
+      "moebel": "cc4Hecke",
+      "feld": [58, 45]
+    },
+    {
+      "moebel": "cc8HeckeSenkrecht",
+      "feld": [38, 34]
+    },
+    {
+      "moebel": "cc8HeckeSenkrecht",
+      "feld": [60, 34]
+    },
+    {
+      "moebel": "cc8HeckeSenkrecht",
+      "feld": [38, 37]
+    },
+    {
+      "moebel": "cc8HeckeSenkrecht",
+      "feld": [60, 37]
+    },
+    {
+      "moebel": "cc8HeckeSenkrecht",
+      "feld": [38, 40]
+    },
+    {
+      "moebel": "cc8HeckeSenkrecht",
+      "feld": [60, 40]
+    },
+    {
+      "moebel": "cc8HeckeSenkrecht",
+      "feld": [60, 43]
     }
   ],
   "ausloeser": [
@@ -1985,10 +2002,10 @@
     {
       "name": "ratten",
       "typ": "tier",
-      "feld": [11, 44],
+      "feld": [21, 48],
       "eigenschaften": {
-        "von": "11,44",
-        "bis": "11,48",
+        "von": "21,48",
+        "bis": "24,48",
         "verhalten": "ausweichen"
       }
     },
@@ -2070,5 +2087,6 @@
     "rustikal",
     "landhaus"
   ],
-  "ufer": "stein"
+  "ufer": "stein",
+  "markierung": ["s"]
 }

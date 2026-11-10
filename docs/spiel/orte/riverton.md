@@ -1482,3 +1482,16 @@ Gutachter sah noch den Frachtkahn 6 × 3. Seit 3e2bf4af misst der Kahn 24 × 5, 
 - **Fahnenmast auf großem Sockel:** Es ist jetzt eine schlichte Fahne, daneben eine Feuerstelle.
 - **Ziegen statt Rehe:** Die Szene nennt Reh und Hirsch. Welches Bild ein Tier bekommt, legt die
   gemeinsame Tierzuordnung (`tierarten.json`) fest; Wunsch an den Haupt-Chat.
+
+### Gutachten Runde 8, zweite Prüfung: Kanalweg und Eisenbrücke (10.11.2026, mittel-4)
+
+- **Kanalweg** (`weg-riverton-ironwood-1-2.md`): Werkstraße mit Mittel- und Randlinien und einem
+  Gehweg für Laternen, Bank und Haltestelle; doppelter Wegweiser entfernt; Enten schwimmen im Wasser;
+  im Zustand „graffiti“ ist die Wand von Ende zu Ende bemalt, der Satz nennt keine Leiter mehr. Nicht
+  umgesetzt: **Durchfahrt unter der Brücke** – Draufsicht, die Brücke liegt über dem Wasser;
+  **Fabrik** ist das Steinhaus des Pakets (mit Rolltor); **Hoftor, Gartenstichwege** bleiben.
+- **Eisenbrücke** (`weg-riverton-ironwood-2-2.md`): Felskanten reichen bis an den Kanal, dort steigt
+  der Kanal über eine Schleusentreppe (Tore an jeder Stufe) ab; Versprünge in den Kanten; die Ränder
+  sind Wiese statt orange Platzhalter (`"hochflaeche": "gras"`); Graffiti-Turm am steinernen
+  Brückenkopf statt der freien Mauer; Gatter in den Weiden; sechs Brückenbauer sitzen an den
+  Klapptischen. Nicht umgesetzt: **Brücke flach** – Draufsicht.

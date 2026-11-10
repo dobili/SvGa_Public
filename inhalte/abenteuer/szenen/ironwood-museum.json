@@ -2,7 +2,7 @@
   "karte": "ironwood.museum",
   "datei": "karten/ironwood-museum.json",
   "art": "innen",
-  "beschreibung": "Heimatmuseum im alten Bahnhof (Runde 8, Notiz 17): zwei Räume, 34 × 18. Die alte Schalterhalle mit dem Fahrkartenschalter an der Nordwand, drei hohen Fenstern und dem Fahrplan davor; dunkle Dielen, blauer Läufer von der Tür bis vor das Pult von Mr. Teague. Zwei große Vitrinen mit Platz ringsum, an der Südseite eine Reihe gefüllter Vitrinen, darunter die Zeitung von 1858 und ein freies Fach für Brief und Umschlag. Die Postsäcke von 1866 liegen als Ausstellungsstück auf dem Gepäckkarren. Durch einen Durchgang der Nebenraum über Werk und Stadt: Bilder an der Wand, das Foto vom Brückenbau, eine große Vitrine in der Mitte und eine Reihe Schaukästen, darunter der Glasfunke. Bank, Infotafeln, Pflanzen.",
+  "beschreibung": "Heimatmuseum im alten Bahnhof (Runde 8, Notiz 17): zwei Räume, 34 × 18. Die alte Schalterhalle mit dem Fahrkartenschalter an der Nordwand, drei hohen Fenstern und dem Fahrplan davor; dunkle Dielen, blauer Läufer auf ruhigen Dielen von der Tür bis vor das Pult von Mr. Teague. Zwei große Vitrinen mit Platz ringsum, an der Südseite eine Reihe gefüllter Vitrinen, darunter die Zeitung von 1858, eine alte Bahnlaterne und ein leeres Fach für Brief und Umschlag. Die Postsäcke von 1866 liegen als Ausstellungsstück auf dem Gepäckkarren. Durch einen Durchgang der Nebenraum über Werk und Stadt: Bilder an der Wand, das Foto vom Brückenbau, eine große Vitrine mit Bank davor und eine Reihe Schaukästen, darunter Werkzeug aus dem Werk und der Glasfunke. Bank, Infotafeln, Pflanzen.",
   "wand": "creme",
   "boden": "fliesenGrau",
   "raster": [
@@ -67,11 +67,11 @@
       "feld": [16, 9]
     },
     {
-      "moebel": "iwVitrine",
+      "moebel": "iw9VitrineZeitung",
       "feld": [2, 12]
     },
     {
-      "moebel": "iw8VitrineA",
+      "moebel": "iw9VitrineLaterne",
       "feld": [5, 12]
     },
     {
@@ -79,12 +79,8 @@
       "feld": [14, 12]
     },
     {
-      "moebel": "iw8VitrineC",
-      "feld": [17, 12]
-    },
-    {
-      "moebel": "mf4Vitrine",
-      "feld": [7, 13]
+      "moebel": "iw9VitrineLeer",
+      "feld": [7, 12]
     },
     {
       "moebel": "iw5Sackkarre",
@@ -112,10 +108,6 @@
       "feld": [1, 9]
     },
     {
-      "moebel": "iw8Pflanze",
-      "feld": [12, 3]
-    },
-    {
       "moebel": "iw8BildA",
       "feld": [24, 1],
       "an_wand": true
@@ -137,8 +129,8 @@
       "versatz": [0, 6]
     },
     {
-      "moebel": "iw8Museumsbank",
-      "feld": [27, 7]
+      "moebel": "iw8VitrineC",
+      "feld": [27, 6]
     },
     {
       "moebel": "iw8Pflanze",
@@ -153,11 +145,11 @@
       "feld": [7, 9]
     },
     {
-      "moebel": "iw8Schaukasten1",
+      "moebel": "iw9VitrineWerkzeug",
       "feld": [24, 12]
     },
     {
-      "moebel": "iw8Schaukasten2",
+      "moebel": "iw9VitrineGlasfunke",
       "feld": [27, 12]
     },
     {
@@ -181,7 +173,11 @@
     {
       "moebel": "cc5Fussmatte",
       "feld": [11, 15],
-      "versatz": [0, 24]
+      "versatz": [0, 19]
+    },
+    {
+      "moebel": "iw8Museumsbank",
+      "feld": [29, 10]
     }
   ],
   "ausloeser": [
@@ -280,6 +276,6 @@
   "stil": ["klassisch", "einfach", "industrie", "rustikal", "modern", "schule"],
   "boeden": {
     "t": "teppichBlau",
-    "h": "holzDunkel"
+    "h": "dielen"
   }
 }

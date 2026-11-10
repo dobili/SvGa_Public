@@ -150,3 +150,4 @@ Szene heißt die Datei in `inhalte/abenteuer/szenen/` ohne `.json`.
 - [x] hochebene-schule (+ vor-diplom), ironwood-aussen-vermietet: Busse in Vorderansicht nach 10.65 (mittel-4) → `mittel-4-busse.md`
 
 - [ ] weg-desert-summit-diner (+ neon): Tür des Hinterzimmers am Diner; hochebene-schule (+ vor-diplom): Bucht mit Randlinie (mittel-4)
+- [ ] weg-silicon-delacroix-deich, weg-ghost-capital-seeufer, weg-ghost-capital-leuchtturm, capital-arena-aussen, port-delacroix-aussen (+ musikhaus-neu), weg-ironwood-silicon-raststaette: neue Fahrzeuge aus Gemini Teil 2 und Stellfläche unter dem Wohnmobil (kurze Sichtprüfung, mittel-1)

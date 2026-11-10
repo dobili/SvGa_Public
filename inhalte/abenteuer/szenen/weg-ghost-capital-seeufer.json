@@ -136,8 +136,8 @@
     {
       "moebel": "gc7Schirm",
       "feld": [
-        100,
-        8
+        106,
+        9
       ]
     },
     {
@@ -251,21 +251,19 @@
       "runde7": true
     },
     {
-      "moebel": "ca8Eiswagen",
+      "moebel": "gc12Eiswagen",
       "feld": [
-        100,
-        12
+        102,
+        10
       ],
-      "bauteil_ok": true,
       "runde7": true
     },
     {
-      "moebel": "ca8Tacowagen",
+      "moebel": "gc12Hotdogwagen",
       "feld": [
-        110,
-        12
+        112,
+        10
       ],
-      "bauteil_ok": true,
       "runde7": true
     },
     {

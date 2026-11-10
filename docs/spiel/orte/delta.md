@@ -345,6 +345,10 @@ frei begehbar; die Auslöser kommen mit den Dialogen.
   es für Seitenansichten verlangt.
 - Offen: Bauzaun südlich der Zelte (4), Fähre: Deck, Vogelschild, Fässer.
 
+- **Deich, Messwagen (Gemini Teil 2, 10.11.2026):** Der Messwagen ist jetzt der Lieferwagen von
+  vorn (`dz12Lieferwagen`, Bild `spiel/eigene/lieferwagen_vorn.png`, (139, 11)) auf einer
+  Pflasterfläche (138–142, 11–15). Der Längsstreifen ist wieder Wiese.
+
 ## 4. Bühnenbilder
 
 ### 4.1 Fährdeck

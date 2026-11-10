@@ -17031,19 +17031,19 @@
     },
     {
      "id": 156,
-     "name": "wsrLkw",
+     "name": "wsr12Lastwagen",
      "type": "moebel",
-     "x": 1760,
-     "y": 320,
-     "width": 176,
-     "height": 80,
+     "x": 1792,
+     "y": 288,
+     "width": 48,
+     "height": 144,
      "rotation": 0,
      "visible": true,
      "properties": [
       {
        "name": "tiefe",
        "type": "int",
-       "value": 392
+       "value": 424
       },
       {
        "name": "kollision",

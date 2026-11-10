@@ -161,6 +161,9 @@ Westen die Bucht; nur der Pfad öffnet den Westrand.
 - **Buchten (3, 4):** Die senkrechten Buchtlinien und das einzelne Auto sind weg. Lastwagen und
   Bus stehen längs am Rand der Fahrgasse.
 - Offen: Abfahrt (2), Laternenabstand (5), Vogelschild (7).
+- **Lastwagen (Gemini Teil 2, 10.11.2026):** Mrs. Kowalczyks Lastwagen ist das neue Bild von vorn
+  (`wsr12Lastwagen`, `spiel/eigene/lastwagen_vorn.png`, (112, 18)) statt des Bildes aus
+  `lkw_schraeg.py`.
 
 ### 1.2 Glasbrücke (`wegIronwoodSilicon.glasbruecke`, 140 × 26), Runde 8 neu gebaut
 

@@ -2090,6 +2090,24 @@
       "blick": "unten",
       "zustand": "gebraucht",
       "stil": "klassisch"
+    },
+    "pd12Bagger": {
+      "quelle": "spiel/eigene/bagger_links.png",
+      "breite": 112,
+      "hoehe": 78,
+      "kollision": true,
+      "art": "fahrzeug",
+      "zustand": "gebraucht",
+      "stil": "klassisch"
+    },
+    "pd12Lastwagen": {
+      "quelle": "spiel/eigene/lastwagen_vorn.png",
+      "breite": 48,
+      "hoehe": 144,
+      "kollision": true,
+      "art": "fahrzeug",
+      "zustand": "gebraucht",
+      "stil": "klassisch"
     }
   }
 }

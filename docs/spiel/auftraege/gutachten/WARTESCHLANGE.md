@@ -109,6 +109,8 @@ Szene heißt die Datei in `inhalte/abenteuer/szenen/` ohne `.json`.
 - [x] port-delacroix-aussen, capital-arena-innenstadt, bayou-steg, weg-ghost-capital-leuchtturm, weg-silicon-delacroix-deich (dritte Prüfung, mittel-1, nach `mittel-1-runde9-2.md`; Bild `bildwuensche/boje_frei.py`, Nebel 0,28) → `mittel-1-runde9-3.md`
 - [x] weg-ironwood-silicon-raststaette (fünfte Prüfung, nur Waschstraße und Buchten, mittel-1) → `mittel-1-runde9-3.md`
 
+- [ ] silicon-bay-lobby, silicon-bay-serverraum (zweite Prüfung, niedrig-1; Antworten in silicon-bay.md; Bilder klimageraet_serverraum, schubladenschrank_metall, serverreihe_6 aus `niedrig1_runde9_karten.py` erst rendern; neue Tönung serverblau)
+
 ## Erledigt
 
 - [x] ironwood-kantine (Test, Haupt-Chat)

@@ -116,6 +116,26 @@
       "feld": [11, 3]
     },
     {
+      "name": "kellerAusgang",
+      "feld": [10, 3]
+    },
+    {
+      "name": "kellerAusgang",
+      "feld": [10, 4]
+    },
+    {
+      "name": "kellerAusgang",
+      "feld": [11, 4]
+    },
+    {
+      "name": "kellerAusgang",
+      "feld": [12, 3]
+    },
+    {
+      "name": "kellerAusgang",
+      "feld": [12, 4]
+    },
+    {
       "name": "boxerfoto",
       "feld": [5, 3]
     },

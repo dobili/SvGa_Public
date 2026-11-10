@@ -5,11 +5,7 @@
   "description": "Vorbereitete Texte zu den Abbildungen eines Kapitels (AP 14, Art V), Datei inhalte/de/texte/vorbereitet-kapNN.json: je Abbildung kurze Einschätzungen je Werkzeug mit drei Hinweisstufen und Warum-Fragen mit Antwortauswahl (Pflichtenheft 3, Konzept 4.5). Entwürfe schreibt Claude, die Pipeline prüft sie (auch mit der Engine), der Autor gibt sie frei; nur freigegebene kommen als abbildung.vorbereitet in die App.",
   "type": "object",
   "additionalProperties": false,
-  "required": [
-    "schemaVersion",
-    "kapitel",
-    "texte"
-  ],
+  "required": ["schemaVersion", "kapitel", "texte"],
   "properties": {
     "schemaVersion": {
       "const": 1
@@ -31,11 +27,7 @@
       "description": "Einschätzung der Stellung mit einem Werkzeug des Buches",
       "type": "object",
       "additionalProperties": false,
-      "required": [
-        "werkzeug",
-        "hinweise",
-        "text"
-      ],
+      "required": ["werkzeug", "hinweise", "text"],
       "properties": {
         "werkzeug": {
           "description": "Kennung des Werkzeugs, etwa k1-zaehlen; freigeschaltet bis zum Kapitel der Abbildung",
@@ -63,12 +55,7 @@
       "description": "Warum-Frage zur Stellung der Abbildung, optional zum nächsten Buchzug",
       "type": "object",
       "additionalProperties": false,
-      "required": [
-        "frage",
-        "antworten",
-        "richtig",
-        "erklaerung"
-      ],
+      "required": ["frage", "antworten", "richtig", "erklaerung"],
       "properties": {
         "zug": {
           "description": "Der Zug, nach dem gefragt wird, in deutscher Notation mit Zugnummer wie im Buch (etwa 6. Ld3); ab der Stellung der Abbildung spielbar. Fehlt bei Fragen zur Stellung.",
@@ -105,17 +92,11 @@
       "description": "Was die App an einer Abbildung zeigt (abbildung.vorbereitet): seit 0.2.27 nur die Warum-Fragen",
       "type": "object",
       "additionalProperties": false,
-      "required": [
-        "status",
-        "fragen"
-      ],
+      "required": ["status", "fragen"],
       "properties": {
         "status": {
           "description": "freigegeben; entwurf nur mit --mit-entwuerfen (die App kennzeichnet ihn)",
-          "enum": [
-            "entwurf",
-            "freigegeben"
-          ]
+          "enum": ["entwurf", "freigegeben"]
         },
         "fragen": {
           "type": "array",
@@ -128,22 +109,14 @@
     "eintrag": {
       "type": "object",
       "additionalProperties": false,
-      "required": [
-        "abbildung",
-        "status",
-        "einschaetzungen",
-        "fragen"
-      ],
+      "required": ["abbildung", "status", "einschaetzungen", "fragen"],
       "properties": {
         "abbildung": {
           "type": "string",
           "pattern": "^[0-9]{1,2}\\.[0-9]{1,3}$"
         },
         "status": {
-          "enum": [
-            "entwurf",
-            "freigegeben"
-          ]
+          "enum": ["entwurf", "freigegeben"]
         },
         "einschaetzungen": {
           "type": "array",

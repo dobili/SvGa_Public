@@ -39,6 +39,7 @@ import { aktuelleFen, type Partie, type Partiezug } from "../../../spiel/partie"
 import { phaseVon } from "../../../spiel/phasen";
 import { sanZuUci, uciZuSan } from "../../../spiel/zuege";
 import { stufeNachBruch, vorgegebenerZug } from "../../../spiel/vorgabezug";
+import { ANSAGE_MS, sageAn } from "../../../spiel/ansage";
 import { GRUNDSTELLUNG } from "../../../spiel/stellungsbau";
 import { BUCHTIEFE, linienzug, praxiszug, type Praxisbuch } from "../../../engine/praxisbuch";
 import { wertungInZeitklasse } from "../../../engine/zeitklassenabstand";
@@ -309,6 +310,23 @@ function praxisErgebnis(
 }
 
 /**
+ * Partie nach Gehör (Variante „gehoer“ des Abenteuers): sagt den Zug an und wartet `ANSAGE_MS`.
+ * Ausgabe: ob der Zug danach noch gesetzt werden soll (die Partie läuft noch, die Stellung stimmt).
+ * Gewöhnliche Partien: sofort true.
+ */
+async function nachAnsage(
+  partie: Partie,
+  san: string,
+  nochGueltig: () => boolean,
+): Promise<boolean> {
+  const abenteuer = partie.einstellung.abenteuer;
+  if (abenteuer?.variante !== "gehoer") return true;
+  sageAn({ partie: abenteuer.kennung, san });
+  await new Promise((fertig) => setTimeout(fertig, ANSAGE_MS));
+  return nochGueltig();
+}
+
+/**
  * Ein vorgegebener Zug einer Abenteuer-Partie (Kandidatenwahl, Buch und Bruch; spiel/vorgabezug.ts),
  * sonst null. Gilt als Buchzug (schnelle Bedenkzeit, keine Fehlerart).
  */
@@ -378,6 +396,12 @@ export async function normalerBotzug(
     nachNotzug(id, danach, stufennummer);
     return;
   }
+  // Partie nach Gehör (Abenteuer, Funkschach): erst die Ansage, dann der Zug auf dem Brett.
+  const nochGueltig = () => {
+    const spaeter = neueste(id);
+    return laeuft() && spaeter !== null && aktuelleFen(spaeter) === fen;
+  };
+  if (!(await nachAnsage(jetzt, mitStufe.san, nochGueltig))) return;
   // R37: Die Uhr des Lesers läuft erst, wenn der Zug des Bots über das Brett geglitten ist.
   aendereNeueste(id, (p) =>
     mitUhrverzug(

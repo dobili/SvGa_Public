@@ -89,8 +89,11 @@ export interface Partieauftrag {
   readonly freieKarten?: readonly string[];
   /** Stärkewechsel mitten in der Partie (Halbfinale): ab Halbzug häufiger Fehler um den Faktor. */
   readonly abgelenktAb?: { readonly halbzug: number; readonly faktor: number };
-  /** Schachvariante (Akt 4): „blind“ = Blindschach. Zählt nie für Nadel, Wertung oder App. */
-  readonly variante?: "blind" | "schach960";
+  /**
+   * Schachvariante (Akt 4): „blind“ = Blindschach; „gehoer“ = Partie nach Gehör (Runde 6), der
+   * Gegnerzug kommt erst als Ansage. Zählt nie für Nadel, Wertung oder App.
+   */
+  readonly variante?: "blind" | "schach960" | "gehoer";
   /** Kandidatenwahl: erster Zug des Gegners zufällig aus diesen (spiel/vorgabezug.ts). */
   readonly kandidaten?: readonly string[];
   /** Buch und Bruch: Linie des Gegners, danach diese Stufe (spiel/vorgabezug.ts). */

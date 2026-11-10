@@ -136,6 +136,11 @@ export interface Partieeinstellung {
     readonly buchbruch?: { readonly linie: readonly string[]; readonly stufe: Stufennummer };
     /** Lebendschach (Weg 9): Karte, deren Hintergrundbild hinter dem Brett steht. */
     readonly kulisse?: string;
+    /**
+     * Porträt des Gegners im Zusatzpaket („portraets/jo.svg“), für den Kopf der Spielhülle
+     * (abenteuer/anbindung/PartieHuelle.tsx, docs/spiel/18_Spielhuelle.md).
+     */
+    readonly portraet?: string;
   };
 }
 

@@ -89,7 +89,14 @@ test("vom Dachboden in die erste Partie und zurück", async ({ page }) => {
   await page.getByRole("button", { name: "Mit 1 Karten spielen" }).click();
   await expect(page.getByTestId("partie")).toBeVisible({ timeout: 20000 });
   await expect(page.getByTestId("abenteuer-kartenleiste")).toBeVisible();
-  await expect(page.getByText("gegen Ambrose")).toBeVisible();
+  // Spielhülle (docs/spiel/18): Kopf mit dem Gegner, Status in der Sprache der Geschichte, keine
+  // Kopfzeile und keine Zugliste der App, kein „Brett drehen“.
+  await expect(page.getByTestId("abenteuer-huelle-kopf")).toContainText("Ambrose");
+  await expect(page.getByTestId("partiestatus")).toBeVisible();
+  await expect(page.getByTestId("abenteuer-partie-aufgeben")).toBeVisible();
+  await expect(page.locator(".kopfzeile")).toHaveCount(0);
+  await expect(page.locator(".zugliste-aufklappen")).toHaveCount(0);
+  await expect(page.getByRole("button", { name: "Brett drehen" })).toBeHidden();
   // Die Karte spielen: Die Engine markiert das Startfeld, die Karte ist danach verbraucht.
   const karte = page.getByTestId("abenteuer-karte-fingerzeig");
   await expect(karte).toBeEnabled({ timeout: 10000 });

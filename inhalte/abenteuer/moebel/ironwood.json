@@ -1,5 +1,59 @@
 {
   "moebel": {
+    "iw8StrassenbrueckeGehwegQuer10": {
+      "quelle": "spiel/eigene/bruecke_strasse_gehweg_quer_10.png",
+      "breite": 160,
+      "hoehe": 84,
+      "kollision": false,
+      "art": "bruecke",
+      "zustand": "gebraucht",
+      "stil": "industrie"
+    },
+    "iw8KorbKuerbis": {
+      "quelle": "modern-farm/Single_Files_16x16/Crops_16x16/Crop_Pumpkin_Brown_Basket_16x16.png",
+      "breite": 32,
+      "hoehe": 32,
+      "kollision": false,
+      "art": "ware",
+      "zustand": "neu",
+      "stil": "laendlich"
+    },
+    "iw8KorbKohl": {
+      "quelle": "modern-farm/Single_Files_16x16/Crops_16x16/Crop_Cabbage_Brown_Basket_16x16.png",
+      "breite": 32,
+      "hoehe": 32,
+      "kollision": false,
+      "art": "ware",
+      "zustand": "neu",
+      "stil": "laendlich"
+    },
+    "iw8KorbMais": {
+      "quelle": "modern-farm/Single_Files_16x16/Crops_16x16/Crop_Corn_Brown_Basket_16x16.png",
+      "breite": 32,
+      "hoehe": 32,
+      "kollision": false,
+      "art": "ware",
+      "zustand": "neu",
+      "stil": "laendlich"
+    },
+    "iw8KorbBeeren": {
+      "quelle": "modern-farm/Single_Files_16x16/Crops_16x16/Crop_Berry_Brown_Basket_16x16.png",
+      "breite": 32,
+      "hoehe": 32,
+      "kollision": false,
+      "art": "ware",
+      "zustand": "neu",
+      "stil": "laendlich"
+    },
+    "iw8KorbKarotte": {
+      "quelle": "modern-farm/Single_Files_16x16/Crops_16x16/Crop_Carrot_Small_Basket_16x16.png",
+      "breite": 16,
+      "hoehe": 16,
+      "kollision": false,
+      "art": "ware",
+      "zustand": "neu",
+      "stil": "laendlich"
+    },
     "iwSpind": {
       "quelle": "modern-exteriors/Modern_Exteriors_16x16/ME_Theme_Sorter_16x16/20_Subway_and_Train_Station_Singles_16x16/ME_Singles_Subway_and_Train_Station_16x16_Small_Black_Locker.png",
       "breite": 32,

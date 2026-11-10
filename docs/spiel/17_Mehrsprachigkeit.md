@@ -71,6 +71,24 @@ Alles hier gilt nach Regel 9 als „schon so geplant, Widerspruch genügt“.
 4. **Prüfung im Test:** Daten des Abenteuers (`inhalte/abenteuer/*.json` außer `texte/`) enthalten
    keine Zeichenkette, die nach Satz aussieht, außer in den Notizfeldern.
 
+**Umgesetzt (mittel-2, 10.11.2026):**
+
+- `texte/texte.ts` lädt mit `ladeSpieltexte(sprache)` die Datei `texte/<sprache>.json` aus dem Paket
+  (Aufruf in `ladeWelt` mit der Sprache der App). Fehlt die Datei, bleibt alles Deutsch; fehlt nur
+  ein Schlüssel, kommt dieser auf Deutsch. Dialoge lädt `ladeDialog` aus `dialoge/<sprache>/`,
+  sonst aus `dialoge/de/`.
+- Der Paketbau nimmt alle `texte/*.json` und alle Ordner unter `dialoge/` mit.
+- `src/abenteuer/texte/uebersetzung.test.ts` prüft jede weitere Sprache gegen `de.json`: unbekannte
+  Schlüssel und abweichende Platzhalter sind Fehler; fehlende Schlüssel erst, wenn die Sprache in
+  `FERTIGE_SPRACHEN` steht. Eine `en.json` liegt bewusst noch nicht im Repository, damit das Spiel
+  nicht halb englisch wird; der Rückfall ist im Test mit Testtexten geprüft.
+- Fehler des Paketladers und der Weltdaten sind `Spielfehler` mit Schlüssel (`fehler.paket.*`,
+  `fehler.welt.*`); die Oberwelt zeigt sie über `fehlertext`.
+- `pipeline/tests/test_abenteuer_ohne_saetze.py` sucht satzartige Zeichenketten in den Daten.
+  Ausgenommen: Notizfelder (`beschreibung`, `hinweis`, `tun`, `erklaerung`), Partieangaben
+  (`partie`, `quelle`, `fen`, `pgn`, `eroeffnungen`, `wert`) und die Bauhilfen des Kartenbauers
+  (`ortsprofile.json`, `materialien.json`, `katalog_korrekturen/`, `moebel/`).
+
 ## 4. Eigene Bilder mit deutscher Schrift (werden ersetzt)
 
 | Bild                             | heute                                          | neu                                          |

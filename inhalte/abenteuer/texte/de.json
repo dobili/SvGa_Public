@@ -1302,5 +1302,11 @@
   "vorfuehrung.schaefermatt.4": "Schwarz holt einen Springer heraus. Gut, aber nicht genug.",
   "vorfuehrung.schaefermatt.5": "Die Dame kommt dazu. Jetzt greifen zwei Figuren f7 an.",
   "vorfuehrung.schaefermatt.6": "Schwarz greift die Dame an und übersieht, was auf f7 hängt.",
-  "vorfuehrung.schaefermatt.7": "Dame schlägt auf f7, der Läufer deckt sie. Matt! Wer zuerst fragt „Was hängt?“, fällt nicht darauf herein."
+  "vorfuehrung.schaefermatt.7": "Dame schlägt auf f7, der Läufer deckt sie. Matt! Wer zuerst fragt „Was hängt?“, fällt nicht darauf herein.",
+  "fehler.paket.verzeichnis": "Das Verzeichnis des Spielpakets ist nicht erreichbar ({status}).",
+  "fehler.paket.laden": "Die Spieldatei {pfad} konnte nicht geladen werden ({status}).",
+  "fehler.paket.pruefsumme": "Die Spieldatei {pfad} ist beschädigt. Bitte das Spiel neu laden.",
+  "fehler.paket.ohneSpeicher": "Dieser Browser hat keinen Speicher für das Spielpaket.",
+  "fehler.paket.datei": "Die Spieldatei {pfad} fehlt ({status}).",
+  "fehler.welt.karteFehlt": "Die Karte {karte} gibt es im Spiel nicht."
 }

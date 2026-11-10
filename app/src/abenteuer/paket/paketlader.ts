@@ -20,6 +20,7 @@ import {
   type Paketverzeichnis,
   type Paketzustand,
 } from "../schnittstelle/paket";
+import { Spielfehler } from "../schnittstelle/spielfehler";
 
 const CACHE_PRAEFIX = "abenteuer-";
 
@@ -43,7 +44,7 @@ function mitCache(): boolean {
 /** Das Verzeichnis vom Server (immer frisch, damit eine neue Version erkannt wird). */
 async function verzeichnisVomServer(): Promise<Paketverzeichnis> {
   const antwort = await fetch(adresse(VERZEICHNIS_DATEI), { cache: "no-cache" });
-  if (!antwort.ok) throw new Error(`Paketverzeichnis nicht erreichbar (${antwort.status})`);
+  if (!antwort.ok) throw new Spielfehler("fehler.paket.verzeichnis", { status: antwort.status });
   return (await antwort.json()) as Paketverzeichnis;
 }
 
@@ -96,7 +97,8 @@ async function ladeDatei(
     return;
   }
   const antwort = await fetch(adresse(datei.pfad), { cache: "no-cache" });
-  if (!antwort.ok || !antwort.body) throw new Error(`${datei.pfad}: ${antwort.status}`);
+  if (!antwort.ok || !antwort.body)
+    throw new Spielfehler("fehler.paket.laden", { pfad: datei.pfad, status: antwort.status });
   const teile: Uint8Array<ArrayBuffer>[] = [];
   const leser = antwort.body.getReader();
   for (;;) {
@@ -107,7 +109,7 @@ async function ladeDatei(
   }
   const blob = new Blob(teile);
   if ((await pruefsumme(await blob.arrayBuffer())) !== datei.sha256) {
-    throw new Error(`${datei.pfad}: Prüfsumme stimmt nicht, bitte erneut laden`);
+    throw new Spielfehler("fehler.paket.pruefsumme", { pfad: datei.pfad });
   }
   const typ = antwort.headers.get("content-type") ?? "application/octet-stream";
   await speicher.put(adresse(datei.pfad), new Response(blob, { headers: { "content-type": typ } }));
@@ -119,7 +121,7 @@ async function ladeDatei(
  * Wirft bei Netzfehlern; Geladenes bleibt für den nächsten Versuch erhalten.
  */
 export async function ladePaket(fortschritt: Ladefortschritt): Promise<void> {
-  if (!mitCache()) throw new Error("Dieser Browser hat keinen Speicher für das Paket");
+  if (!mitCache()) throw new Spielfehler("fehler.paket.ohneSpeicher");
   const verzeichnis = await verzeichnisVomServer();
   const speicher = await caches.open(cachename(verzeichnis.version));
   let geladen = 0;
@@ -161,7 +163,7 @@ export async function liesPaketdatei(pfad: string): Promise<Response> {
     if (antwort) return antwort;
   }
   const antwort = await fetch(adresse(pfad));
-  if (!antwort.ok) throw new Error(`Paketdatei ${pfad} fehlt (${antwort.status})`);
+  if (!antwort.ok) throw new Spielfehler("fehler.paket.datei", { pfad, status: antwort.status });
   return antwort;
 }
 

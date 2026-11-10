@@ -67,7 +67,7 @@ import type { Aufgabenauftrag } from "../schnittstelle/aufgaben";
 import type { Kartenspiel, Kartensorte } from "../schnittstelle/karten";
 import type { Kipppunkt, Nadelstufe, Partieauftrag, Partieergebnis } from "../schnittstelle/partie";
 import type { Abenteuerstand, Partiekarten, Weltposition } from "../schnittstelle/spielstand";
-import { tSpiel } from "../texte/texte";
+import { fehlertext, tSpiel } from "../texte/texte";
 import { GRUNDSTELLUNG } from "../anbindung/partiestart";
 import {
   amZugIn,
@@ -91,7 +91,7 @@ import { beendeOberwelt, starteOberwelt, szeneVon } from "./oberweltspiel";
 import type { Ausloesertreffer, Richtung } from "./szene";
 import {
   KACHELSATZ,
-  SPRACHE,
+  ladeDialog,
   aktionFuer,
   ausloeserFuer,
   figurZu,
@@ -361,7 +361,7 @@ export function Oberwelt() {
     const [datei, knoten] = verweis.split(".", 2);
     if (!datei || !knoten) return;
     variablenBeimOeffnen.current = (standRef.current ?? stand)?.dialogvariablen ?? {};
-    liesPaketJson<object>(`dialoge/${SPRACHE}/${datei}.json`)
+    ladeDialog(datei)
       .then((json) => setzeDialog({ json: JSON.stringify(json), datei, knoten }))
       .catch(() => setzeMeldung(tSpiel("oberwelt.dialogFehlt", { datei })));
   };
@@ -440,7 +440,7 @@ export function Oberwelt() {
           },
         });
       })
-      .catch((f: unknown) => setzeFehler(f instanceof Error ? f.message : String(f)));
+      .catch((f: unknown) => setzeFehler(fehlertext(f)));
     return () => {
       aktiv = false;
       const szene = spiel.current ? szeneVon(spiel.current) : null;

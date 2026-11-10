@@ -167,8 +167,8 @@ def _randlinien(bild: Image.Image, zeilen: list[str], zeichen: set[str], offen: 
 
 
 def markiere(bild: Image.Image, zeilen: list[str], szene: dict) -> None:
-    """Alle Markierungen einer Szene: Linien auf Fahrbahnen (``markierung``), Parkbuchten (``buchten``, ``buchten_laengs``),
-    Randlinien um Haltebuchten (``randlinie``).
+    """Alle Markierungen einer Szene: Linien auf Fahrbahnen (``markierung``), Parkbuchten
+    (``buchten``, ``buchten_laengs``), Randlinien um Haltebuchten (``randlinie``).
 
     Ohne die beiden Schlüssel bleibt das Bild unverändert.
     """

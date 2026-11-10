@@ -35,6 +35,7 @@ VAR musikhausOffen = false
 VAR bayouOffen = false
 VAR hatGummistiefel = false
 VAR nadelSummitCity = 0
+VAR angesehenBauzaun = false
 
 // ---------------------------------------------------------------- Ankunft und Wege
 
@@ -211,5 +212,19 @@ Karten hab ich auch. Der Erlös geht ins Musikhaus. #sprecher:arceneaux
     Der Marschpfad steht unter Wasser. Ohne Gummistiefel kommst du hier nicht weiter. #sprecher:erzaehler
 - else:
     Der Marschpfad führt hinaus in den Bayou. Das Wasser gluckst um die Stiefel. #sprecher:erzaehler
+}
+-> END
+
+// ---------------------------------------------------------------- Ansehen (Runde 6)
+
+=== bauzaun ===
+{
+- musikhausOffen:
+    Der Bauzaun ist weg. Am Musikhaus hängt ein neues Schild, und drinnen spielt jemand. #sprecher:erzaehler
+- angesehenBauzaun:
+    Hinter dem Bauzaun hämmert jemand. Das Musikhaus wird wieder. #sprecher:erzaehler
+- else:
+    ~ angesehenBauzaun = true
+    Ein Bauzaun mit blauer Plane vor dem Musikhaus. Ein Schild: „Betreten verboten. Musik erlaubt.“ #sprecher:erzaehler
 }
 -> END

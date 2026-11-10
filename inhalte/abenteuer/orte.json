@@ -2465,6 +2465,48 @@
             "karte": "bayou.steg",
             "ausloeser": "zurueckDelacroix"
           }
+        },
+        {
+          "name": "spendenkasse",
+          "karte": "portDelacroix.turnhalle",
+          "art": "dialog",
+          "dialog": "port-delacroix-turnhalle.spendenkasse"
+        },
+        {
+          "name": "notenheft",
+          "karte": "portDelacroix.turnhalle",
+          "art": "dialog",
+          "dialog": "port-delacroix-turnhalle.notenheft"
+        },
+        {
+          "name": "plakatTurnhalle",
+          "karte": "portDelacroix.turnhalle",
+          "art": "dialog",
+          "dialog": "port-delacroix-turnhalle.plakat_turnhalle"
+        },
+        {
+          "name": "fotoWand",
+          "karte": "portDelacroix.werkstatt",
+          "art": "dialog",
+          "dialog": "port-delacroix-werkstatt.foto_wand"
+        },
+        {
+          "name": "laptop",
+          "karte": "portDelacroix.werkstatt",
+          "art": "dialog",
+          "dialog": "port-delacroix-werkstatt.laptop"
+        },
+        {
+          "name": "lochImDach",
+          "karte": "portDelacroix.musikhaus",
+          "art": "dialog",
+          "dialog": "port-delacroix-musikhaus.loch_im_dach"
+        },
+        {
+          "name": "bauzaun",
+          "karte": "portDelacroix.aussen",
+          "art": "dialog",
+          "dialog": "port-delacroix-aussen.bauzaun"
         }
       ],
       "club": {

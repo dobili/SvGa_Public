@@ -24,141 +24,248 @@
   "objekte": [
     {
       "moebel": "pd6Fenster",
-      "feld": [3, 1],
+      "feld": [
+        3,
+        1
+      ],
       "an_wand": true
     },
     {
       "moebel": "pd6Fenster",
-      "feld": [9, 1],
+      "feld": [
+        9,
+        1
+      ],
       "an_wand": true
     },
     {
       "moebel": "pd6Fenster",
-      "feld": [15, 1],
+      "feld": [
+        15,
+        1
+      ],
       "an_wand": true
     },
     {
       "moebel": "pd6KlavierNatur",
-      "feld": [17, 2]
+      "feld": [
+        17,
+        2
+      ]
     },
     {
       "moebel": "pd6KistenTuch",
-      "feld": [13, 3]
+      "feld": [
+        13,
+        3
+      ]
     },
     {
       "moebel": "pd6Kistenstapel",
-      "feld": [1, 2]
+      "feld": [
+        1,
+        2
+      ]
     },
     {
       "moebel": "pd6Kistenstapel",
-      "feld": [3, 2]
+      "feld": [
+        3,
+        2
+      ]
     },
     {
       "moebel": "pd6DielenNass",
-      "feld": [8, 4]
+      "feld": [
+        8,
+        4
+      ]
     },
     {
       "moebel": "pd6DielenNass",
-      "feld": [12, 8]
+      "feld": [
+        12,
+        8
+      ]
     },
     {
       "moebel": "pd6DielenNass",
-      "feld": [3, 8]
+      "feld": [
+        3,
+        8
+      ]
     },
     {
       "moebel": "pd6DielenNass",
-      "feld": [15, 5]
+      "feld": [
+        15,
+        5
+      ]
     },
     {
       "moebel": "pd6Truemmer2",
-      "feld": [1, 6]
+      "feld": [
+        1,
+        6
+      ]
     },
     {
       "moebel": "pd6Truemmer2",
-      "feld": [1, 9]
+      "feld": [
+        1,
+        9
+      ]
     },
     {
       "moebel": "pd6Truemmer",
-      "feld": [17, 7]
+      "feld": [
+        17,
+        7
+      ]
     },
     {
       "moebel": "pd6Bretterstapel",
-      "feld": [15, 9]
+      "feld": [
+        15,
+        9
+      ]
     },
     {
       "moebel": "pd6Holzscheite",
-      "feld": [6, 8]
+      "feld": [
+        6,
+        8
+      ]
     },
     {
       "moebel": "pd6RahmenKaputt",
-      "feld": [10, 10]
+      "feld": [
+        10,
+        10
+      ]
     },
     {
       "moebel": "pd6Splitter",
-      "feld": [5, 5]
+      "feld": [
+        5,
+        5
+      ]
     },
     {
       "moebel": "pd6Splitter",
-      "feld": [14, 5]
+      "feld": [
+        14,
+        5
+      ]
     },
     {
       "moebel": "pd6Kanister",
-      "feld": [4, 11]
+      "feld": [
+        4,
+        11
+      ]
     },
     {
       "moebel": "pd6StuhlLinks",
-      "feld": [6, 11]
+      "feld": [
+        6,
+        11
+      ]
     },
     {
       "moebel": "pd6Kiste",
-      "feld": [18, 10]
+      "feld": [
+        18,
+        10
+      ]
     },
     {
       "moebel": "pd6Kiste",
-      "feld": [18, 11]
+      "feld": [
+        18,
+        11
+      ]
     },
     {
       "moebel": "pd6Kistenstapel",
-      "feld": [5, 2]
+      "feld": [
+        5,
+        2
+      ]
     },
     {
       "moebel": "pd6Truemmer",
-      "feld": [12, 4]
+      "feld": [
+        12,
+        4
+      ]
     },
     {
       "moebel": "pd6KistenTuch",
-      "feld": [7, 3]
+      "feld": [
+        7,
+        3
+      ]
     },
     {
       "moebel": "pd6Kiste",
-      "feld": [11, 3]
+      "feld": [
+        11,
+        3
+      ]
     },
     {
       "moebel": "pd6Tuer",
-      "feld": [10, 13],
+      "feld": [
+        10,
+        13
+      ],
       "an_wand": true
     }
   ],
   "ausloeser": [
     {
       "name": "start",
-      "feld": [10, 12],
+      "feld": [
+        10,
+        12
+      ],
       "eigenschaften": {
         "richtung": "oben"
       }
     },
     {
       "name": "musikhausAusgang",
-      "feld": [10, 13]
+      "feld": [
+        10,
+        13
+      ]
     },
     {
       "name": "schild",
-      "feld": [9, 12]
+      "feld": [
+        9,
+        12
+      ]
+    },
+    {
+      "name": "lochImDach",
+      "feld": [
+        10,
+        7
+      ]
     }
   ],
   "figuren": [],
   "belebung": [],
-  "zustand": ["gebraucht", "alt", "kaputt"],
-  "stil": ["klassisch", "rustikal"],
+  "zustand": [
+    "gebraucht",
+    "alt",
+    "kaputt"
+  ],
+  "stil": [
+    "klassisch",
+    "rustikal"
+  ],
   "variante": "b"
 }

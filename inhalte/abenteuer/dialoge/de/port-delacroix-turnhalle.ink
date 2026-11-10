@@ -33,6 +33,9 @@ VAR nadelPortDelacroix = 0
 VAR clubkampfPortDelacroixNadel = 0
 VAR odileHandGegeben = false
 VAR louGetroffen = false
+VAR angesehenSpendenkasse = false
+VAR angesehenNotenheft = false
+VAR angesehenPlakatTurnhalle = false
 
 // ---------------------------------------------------------------- Der Vorwurf
 
@@ -206,4 +209,34 @@ Findest du in meinen Stellungen auch einen? Mit Läufern. Läufer sind wichtig f
 
 === lou_alltag ===
 {~Diese Muschel hat elf Rillen. Die hier zwölf. Das ist ein Plan, glaube ich.|Miss Odile sagt, ein Plan ist kein Sprint. Ich renne trotzdem gern.|Wenn das Musikhaus fertig ist, kriege ich ein Regal für meine Muscheln.} #sprecher:lou
+-> END
+
+// ---------------------------------------------------------------- Ansehen (Runde 6)
+
+=== spendenkasse ===
+{angesehenSpendenkasse:
+    In der Kasse klimpert es. Jemand hat einen Zettel dazugelegt: „Für neue Bretter.“ #sprecher:erzaehler
+    -> END
+}
+~ angesehenSpendenkasse = true
+Eine Blechdose mit Schlitz: „Für das Musikhaus.“ Darin Münzen, ein Knopf und eine Busfahrkarte. #sprecher:erzaehler
+-> END
+
+=== notenheft ===
+{angesehenNotenheft:
+    Das Notenheft trocknet. Die Seiten wellen sich, die Töne bleiben. #sprecher:erzaehler
+    -> END
+}
+~ angesehenNotenheft = true
+Ein Notenheft, aufgequollen vom Hochwasser. Auf dem Umschlag steht in Bleistift: „Nicht wegwerfen. Spielt noch.“ #sprecher:erzaehler
+Musik und Schach. Beides wird nicht schlechter, wenn es nass wird. #sprecher:ambrose
+-> END
+
+=== plakat_turnhalle ===
+{angesehenPlakatTurnhalle:
+    „Wir spielen weiter.“ Jemand hat ein Herz daneben gemalt. #sprecher:erzaehler
+    -> END
+}
+~ angesehenPlakatTurnhalle = true
+Ein handgemaltes Plakat an der Wand: „Wir spielen weiter. Jeden Abend, solange das Licht reicht.“ #sprecher:erzaehler
 -> END

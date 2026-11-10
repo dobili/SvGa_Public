@@ -8009,6 +8009,11 @@
        "name": "sagt",
        "type": "string",
        "value": "statist.cedarCreek.aussen.rentnerPicknick"
+      },
+      {
+       "name": "zeigt",
+       "type": "string",
+       "value": "rubinsteinsUnsterbliche"
       }
      ]
     },

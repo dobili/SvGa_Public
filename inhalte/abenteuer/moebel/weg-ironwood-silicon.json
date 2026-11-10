@@ -1281,6 +1281,15 @@
       "art": "fahrzeug",
       "zustand": "gebraucht",
       "stil": "modern"
+    },
+    "wsr12Linie7": {
+      "quelle": "spiel/eigene/fahrbahn_linie_7.png",
+      "breite": 16,
+      "hoehe": 112,
+      "kollision": false,
+      "art": "markierung",
+      "zustand": "neu",
+      "stil": "modern"
     }
   }
 }

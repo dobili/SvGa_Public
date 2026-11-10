@@ -403,7 +403,7 @@ Gutachten `docs/spiel/auftraege/gutachten/mittel-1-runde9-2.md`.
   Türmatte in der Turnhalle, doppelter Kistenstapel im Musikhaus.
 
 - **Fahrzeuge aus Gemini Teil 2 (10.11.2026):** Auf der Baustelle neben dem Rohbau steht ein
-  Bagger (`pd12Bagger`, `spiel/eigene/bagger_links.png`, (29, 12)). Am Südende des Westkais parkt
-  ein Lastwagen von vorn (`pd12Lastwagen`, (52, 43)); der Kai ist dafür drei Reihen länger
-  (52–55, 49–51). Fischer (53, 38) und Reiher stehen nördlich der Quergasse. Im Zustand
-  `musikhaus-neu` gleich.
+  Bagger (`pd12Bagger`, `spiel/eigene/bagger_links.png`, (29, 12)). Der Lastwagen von vorn
+  (`pd12Lastwagen`, (34, 30)) steht am Ostrand des Marktplatzes direkt an der Hauptstraße; am Kai
+  war er eingeklemmt (Sichtprüfung `gemini-fahrzeuge-teil2.md`). Fischer (53, 38) und Reiher
+  stehen nördlich der Quergasse. Im Zustand `musikhaus-neu` gleich.

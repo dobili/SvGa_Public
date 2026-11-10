@@ -703,12 +703,12 @@
       "name": "tourist",
       "typ": "statist",
       "feld": [
-        8,
-        45
+        11,
+        44
       ],
       "eigenschaften": {
-        "von": "8,45",
-        "bis": "8,45",
+        "von": "11,44",
+        "bis": "11,44",
         "tun": "hält einen Stadtplan verkehrt herum",
         "wann": "tag",
         "sagt": "statist.capitalArena.aussen.tourist"
@@ -911,6 +911,21 @@
         "von": "60,38",
         "bis": "72,42",
         "verhalten": "fliegen"
+      }
+    },
+    {
+      "name": "hotdogverkaeufer",
+      "typ": "statist",
+      "feld": [
+        9,
+        41
+      ],
+      "eigenschaften": {
+        "von": "9,41",
+        "bis": "9,41",
+        "tun": "verkauft Hotdogs unter der Markise",
+        "wann": "tag",
+        "verhalten": "sitzen"
       }
     }
   ],

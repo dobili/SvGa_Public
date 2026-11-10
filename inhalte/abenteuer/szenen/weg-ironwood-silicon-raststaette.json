@@ -1296,10 +1296,35 @@
       ]
     },
     {
+      "moebel": "wsr12Linie7",
+      "feld": [
+        125,
+        20
+      ]
+    },
+    {
+      "moebel": "wsr12Linie7",
+      "feld": [
+        121,
+        20
+      ]
+    },
+    {
+      "moebel": "wsr12Linie7",
+      "feld": [
+        117,
+        20
+      ]
+    },
+    {
       "moebel": "wsr12Lastwagen",
       "feld": [
-        112,
+        117,
         18
+      ],
+      "versatz": [
+        8,
+        0
       ]
     },
     {
@@ -2164,12 +2189,16 @@
       ]
     },
     {
-      "moebel": "wsr10Bus",
+      "moebel": "fz11BusAuf",
       "feld": [
-        127,
-        18
+        125,
+        20
       ],
-      "bauteil_ok": true
+      "bauteil_ok": true,
+      "versatz": [
+        8,
+        0
+      ]
     }
   ],
   "ausloeser": [
@@ -2245,8 +2274,8 @@
     {
       "name": "kowalczyk",
       "feld": [
-        118,
-        26
+        121,
+        25
       ]
     }
   ],

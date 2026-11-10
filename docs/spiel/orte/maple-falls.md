@@ -580,3 +580,33 @@ Klettergerüst, Schaukel, Bank und Mülleimer; die Rutsche ist weg. Damit 12 Geb
 Statisten, 9 davon ansprechbar (`statist.mapleFalls.aussen.*`), dazu Hund, Tauben, Eichhörnchen und
 Katze. Die Kinder mit Kreide zeigen die Königsjagd Lasker gegen Thomas, London 1912
 (`zeigt: laskerThomas`).
+
+## Runde 8 (10.11.2026): Notizen des Autors und Zustände (niedrig-1)
+
+**Umgesetzt (Revision 2):**
+
+- Straße: Das Haus hinter dem Diner ist ein kleineres Haus mit gepflastertem Vorplatz; ein Weg
+  zwischen Diner und Schule (Spalte 38) führt hinauf, statt eines Hinterausgangs. Der Zaun links hat
+  einen Endpfosten. Das Seeufer im Norden ist nicht mehr gerade (Regel 23).
+- Park: breiter Absperrbock, „GESPERRT“ ganz lesbar; der Limowagen trägt Waren, eine Verkäuferin
+  steht daneben (10.59); Reisebrett auf Abernathys Bank; eigene Halfpipe neben dem Basketballplatz,
+  Jo an ihrer Kante.
+
+**Antworten auf die Fragen des Autors:**
+
+- _Soll die Straße links nicht weitergehen?_ Nein. Westlich von Maple Falls liegt in der Geschichte
+  nichts; die Birch Lane endet in einem Wendehammer mit Hecke. Umgesetzt.
+- _Reisebrett sichtbar?_ Ja, als kleines Brett auf der Bank (Auslöser `parkbank` bleibt).
+- _Schulbus schon zu sehen?_ Nein, erst in Szene 13 (Aufbruch). Bis dahin ist die Haltestelle leer;
+  der Bus ist ein Zustand der Karte (unten).
+- _Absperrung am kaputten Steg?_ Richtig so: Der morsche Steg ist Sperre S5. Der begehbare Steg führt
+  zum Zedernpfad, an seinem Ende das Schild „Sturmschaden“ (S2).
+
+**Zustände (10.63), Szenen folgen, sobald mittel-2 die Technik meldet:**
+
+| Karte               | Zustand          | Bedingung                                              | Zustand: wann, was, warum                                                                                  |
+| ------------------- | ---------------- | ------------------------------------------------------ | ---------------------------------------------------------------------------------------------------------- |
+| `mapleFalls.park`   | `stegNeu`        | `nadelMapleFalls >= 1`                                 | Nach der ersten Clubnadel: Absperrbock weg, der morsche Steg ist durch Mr. Pratts neuen Steg ersetzt (S5). |
+| `mapleFalls.park`   | `schulbus`       | `aufbruchGesehen` und nicht `ankunftCedarCreekGesehen` | Szene 13: Der Schulbus wartet an der Haltestelle, mit dem Coach am Steuer; danach fährt er ab.             |
+| `mapleFalls.park`   | `zedernpfadFrei` | `nadelCedarCreek >= 1`                                 | Nach der Nadel von Cedar Creek: Das Schild „Sturmschaden“ am Ende des Stegs zum Zedernpfad ist weg (S2).   |
+| `mapleFalls.aussen` | –                | –                                                      | Kein fester Wechsel; Abend in Szene 4 nur als Tönung.                                                      |

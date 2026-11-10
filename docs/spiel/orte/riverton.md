@@ -1017,3 +1017,50 @@ sie in seinem Dialog). Imogen, Ruben und Henrik stehen als Statisten ohne Satz a
 liegt das Ruderboot neu bei (21, 18). Statt der Pumpe steht ein Dorfbrunnen mit Kurbel (`lp6Brunnen`, Modern Farm) bei (30, 36), Auslöser
 `pumpe` (31, 36), in allen drei Varianten. Die Glocke (`lp6Glocke`, eigenes Bild `glocke_pfosten.png`) hängt am Nordufer, Auslöser `glocke` davor auf der Uferstraße bei A (46, 10), B (44, 10), C (37, 10). **Offen:** die Schnellreise mit dem Lastkahn (`reise`) braucht Anleger in Riverton und
 Ironwood.
+
+## Runde 8 (10.11.2026): Lockport und Weg 2 nach den Notizen des Autors, Zustände (niedrig-1)
+
+**Lockport außen** (Hauptfassung A, jetzt 56 × 51):
+
+- Schleuse für Frachtkähne (10.57): Kammer 10 Kacheln lang (Spalten 32–41), Kammer und Seitenarm
+  5 Reihen Wasser (14–18) mit Steinufer; Untertor (30–31) und Obertor (42–43) tragen je einen Steg.
+- Platz unter der Schleuse durchgehend gepflastert; der Bootsschuppen steht auf einem gepflasterten
+  Werftplatz (44–54 / 20–24); das Schild „Zur Schleuse“ hängt über den Fenstern, nicht vor der Tür.
+- Statt der Scheune ein Schiffsausrüster (`ca8Eisenwaren`) an der Hauptstraße; im Süden eine zweite
+  Häuserreihe (fünf Häuser und ein Laden) an einer Hintergasse, Bäume am Südrand.
+- Sperre S3 bleibt dicht (Zäune an beiden Toren und am Westufer, geprüft mit Breitensuche).
+
+**Gasthaus** (Hauptfassung, früher C) nach 10.56 auf 30 × 14: Kegelbahn links an der Nordwand mit
+Bande und Kugelregal am Abwurf, getrennt von der Theke rechts; Hocker direkt am Tresen; das Rohr unter
+dem Stuhl ist weg.
+
+**Bahndamm** (Hauptfassung, früher C): Birkenwäldchen an beiden Enden; Dammkrone zwei Reihen breit,
+der Bahnsteig liegt oben, eine Treppe führt die Böschung hinunter; die Böschung läuft durchgehend bis
+an beide Ränder (`hang_bis_rand`); Durchlass mittig über dem Trampelpfad, der Teich darüber ist weg;
+Weg zum Stellwerk; der Garten hat ein offenes Tor mit Endpfosten und Wege zu beiden Gartenhäusern (das
+rote steht nicht mehr am Zaun); das Zaunstück am Damm über der Plakatwand ist weg; der Güterwagen steht
+vor den Schienen, die Katze sitzt daneben. **Zedernwald** (früher C): Trampelpfad zum Zelt der
+Pfadfinder.
+
+**Antworten auf die Fragen des Autors:**
+
+- _Brücke über den Kanal in Lockport?_ Die Stege auf Unter- und Obertor sind die Brücken; im Herbst
+  sind beide wegen der Wartung zu (S3), danach offen (Zustand `stegOffen`).
+- _Passt das Farmhaus unten?_ Nein, die Scheune ist durch einen Schiffsausrüster ersetzt; ein
+  Kanaldorf lebt von Kähnen, nicht von Feldern.
+- _Liegt die Haltestelle am Bahndamm oben oder unten?_ Oben auf dem Damm, mit Treppe hinunter. Umgesetzt.
+- _Wie sieht die andere Seite des Damms aus?_ Hinter der Krone fällt die Böschung zu Wiesen ab; die
+  Büsche oben stehen auf der Kante als Windschutz. Die Karte zeigt nur die Südseite.
+- _Warum gibt es den Damm?_ Er hebt das Gleis über die Flussaue, die im Frühjahr überschwemmt wird
+  (kein Staudamm). Der Durchlass lässt Weg und Hochwasser hindurch.
+
+**Zustände (10.63):**
+
+| Karte                         | Zustand             | Bedingung      | Zustand: wann, was, warum                                                                         |
+| ----------------------------- | ------------------- | -------------- | ------------------------------------------------------------------------------------------------- |
+| `lockport.aussen`             | `stegOffen`         | `lockportSteg` | Nach Imogens Tafel: Die Wartung ist vorbei, die Zäune an Unter- und Obertor sind weg (S3).        |
+| `lockport.aussen`             | `henriksBootAnLand` | `taueErledigt` | Nach L2: Henriks Ruderboot liegt kieloben an Land, nicht mehr im Becken.                          |
+| `lockport.aussen`             | `lastkahnFrei`      | `lastkahnFrei` | Nach L3: Die Plane ist vom Lastkahn herunter, Stahlträger liegen an Bord, die Belle fährt wieder. |
+| `lockport.gasthaus`           | –                   | –              | Kein fester Wechsel.                                                                              |
+| `wegCedarRiverton.bahndamm`   | –                   | –              | Kein fester Wechsel (Rosalind und der Güterzug sind Figuren und Ereignis).                        |
+| `wegCedarRiverton.zedernwald` | –                   | –              | Kein fester Wechsel.                                                                              |

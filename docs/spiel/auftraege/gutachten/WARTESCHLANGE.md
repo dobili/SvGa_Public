@@ -46,7 +46,7 @@ Szene heißt die Datei in `inhalte/abenteuer/szenen/` ohne `.json`.
 - [x] weg-cedar-riverton-bahndamm, weg-cedar-riverton-zedernwald (zweite Prüfung, niedrig-1; Datei `weg-cedar-riverton-2.md`)
 - [x] maple-falls-aussen, maple-falls-park, cedar-creek-aussen (zweite Prüfung, niedrig-1; Datei `maple-falls-cedar-creek-2.md`)
 - [x] weg-maple-cedar-flussweg, -landstrasse, -zedernpfad (zweite Prüfung, niedrig-1; eine Datei `weg-maple-cedar-2.md`)
-- [ ] Zustände aus Runde 8 (`python -m pipeline.abenteuer.zustaende`): je Grundkarte eine kurze Prüfung, ob der Zustand zur Beschreibung „Zustand: …“ passt; eine Datei `zustaende-runde8.md`
+- [x] Zustände aus Runde 8 (`python -m pipeline.abenteuer.zustaende`): je Grundkarte eine kurze Prüfung, ob der Zustand zur Beschreibung „Zustand: …“ passt; eine Datei `zustaende-runde8.md`
 - [x] weg-riverton-ironwood-1, weg-riverton-ironwood-2 (zweite Prüfung, mittel-4, mit Zuständen graffiti und ohne-tische; Dateien `…-2.md`)
 - [x] ironwood-aussen (zweite Prüfung, mittel-4, mit Zuständen meisterschaft und vermietet; `ironwood-aussen-2.md`)
 - [x] ironwood-kantine (dritte Prüfung, mit Zustand logo; `ironwood-kantine-3.md`), ironwood-museum, ironwood-umkleide, ironwood-mamas-zimmer (zweite Prüfung, mittel-4; eine Datei `ironwood-innen-2.md`)

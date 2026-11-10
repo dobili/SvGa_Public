@@ -9,6 +9,7 @@
     "fels": "spiel/eigene/fels.png",
     "wasser_stein": "spiel/eigene/wasser_stein.png",
     "moor": "spiel/eigene/wasser_moor.png",
+    "see": "spiel/eigene/wasser_see.png",
     "damm": "spiel/eigene/damm.png",
     "felsRot": "spiel/eigene/fels_rot.png",
     "wasser_rumpf": "spiel/eigene/wasser_rumpf.png",
@@ -427,6 +428,17 @@
     },
     "wasser_moor": {
       "bogen": "moor",
+      "feld": [
+        1,
+        1
+      ],
+      "rand": [
+        0,
+        0
+      ]
+    },
+    "wasser_see": {
+      "bogen": "see",
       "feld": [
         1,
         1

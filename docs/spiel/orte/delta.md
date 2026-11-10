@@ -286,6 +286,21 @@ frei begehbar; die Auslöser kommen mit den Dialogen.
   dem Vorderdeck, alle mit Blick zum Bug. Das Deck ist die ruhige dunkle Diele (`holzDunkel`).
 - Zustände: keine. Die Fahrt hat in der Geschichte nur einen Zustand.
 
+**Deich (`wegSiliconDelacroix.deich`, C):**
+
+- Der Deich hat Höhe: `kante: klippe` zeichnet die Böschung (Reihen 8–10) als Hang unter der
+  Krone, die beiden Rampen werden Treppen. Die gerade Heckenlinie ist weg.
+- Das Meer ist grau (Winter) vor einem Steinufer (`"ufer": "see"`, Material `wasser_see`,
+  Bildwunsch `wasser_see.py`: das eigene Steinufer mit umgefärbtem Wasser).
+- In der Krone klafft ein Loch zum Meer (59–60, 5). Mr. Guidry steht daneben (61, 5), die
+  Sandsäcke liegen am Weg, der dort auf die Reihen 6–7 ausweicht.
+- Der Kronenweg schwingt in Abschnitten von 18 bis 34 Feldern zwischen den Reihen 5–6 und 6–7,
+  statt 220 Felder schnurgerade zu laufen. Der Pfad von der ersten Treppe zur Muschel läuft schräg
+  statt im rechten Winkel.
+- Die zwei Boote in der Wiese sind weg. Am Steg bleiben Fähre und Ruderboot.
+- Zustände: keine neuen. Das Loch gehört zur Ankunft vor dem Hurrikan-Aufräumen; ein Zustand
+  „Deich geflickt“ wäre erst sinnvoll, wenn die Geschichte zurückführt.
+
 ## 4. Bühnenbilder
 
 ### 4.1 Fährdeck

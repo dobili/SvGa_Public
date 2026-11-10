@@ -21,17 +21,13 @@
  * regeln/quests.ts, modul/abenteuer.tsx (Dienste).
  */
 import { useEffect, useRef, useState } from "react";
-import type Phaser from "phaser";
-import { liesPaketJson } from "../paket/paketlader";
-import { findeKarte, ladeSpieldaten } from "../daten/laden";
+import { ladeSpieldaten } from "../daten/laden";
 import { Dialog } from "../dialog/Dialog";
 import type { Dialogvariablen } from "../dialog/geschichte";
-import { appdienste } from "../modul/abenteuer";
-import { deckgroesse, mentorzugGesperrt, mitLernkarten, vorgabeFen } from "../regeln/karten";
-import { wendeWirkungenAn, werteEreignisAus, type Questereignis } from "../regeln/quests";
+import { liesPaketJson } from "../paket/paketlader";
+import { deckgroesse, mentorzugGesperrt } from "../regeln/karten";
 import { kaufe } from "../regeln/muenzen";
-import { standNachPartie, standNachRunde, type Rundenrueckweg } from "../regeln/rueckweg";
-import { mitAppWertung, zaehltFuerA } from "../regeln/wertung";
+import { standNachRunde, type Rundenrueckweg } from "../regeln/rueckweg";
 import {
   variablenAusBesitz,
   variablenNachDialog,
@@ -39,19 +35,53 @@ import {
   variablenNachRunde,
 } from "../regeln/dialogvariablen";
 import { laufendesSimultan, nachSimultanpartie, starteSimultan } from "../regeln/simultan";
+import { spruecheErlaubt, ZEITKLASSEN } from "../regeln/zeitkarten";
 import type { BesonderePartieformenDesSchachAbenteuers } from "../../daten/generiert/abenteuer-partieformen";
+import type { Aufgabenauftrag } from "../schnittstelle/aufgaben";
+import type { Kartensorte } from "../schnittstelle/karten";
+import type { Partieauftrag, Partieergebnis } from "../schnittstelle/partie";
+import type { Abenteuerstand } from "../schnittstelle/spielstand";
+import { fehlertext, tSpiel } from "../texte/texte";
+import { Abspann } from "./Abspann";
+import { auftragFuer, auftragFuerRunde } from "./auftraege";
+import { Deckwahl } from "./Deckwahl";
+import { dialogwirkungen } from "./dialogwirkungen";
+import { Fortsetzungskarte, Partieergebniskarte, Rundenergebniskarte } from "./Ergebniskarten";
+import { Gedaechtnisstellung } from "./Gedaechtnisstellung";
+import { useOberweltkern } from "./kern";
+import { Kopfleiste } from "./Kopfleiste";
+import { Laden } from "./Laden";
+import { beendeOberwelt, starteOberwelt, szeneVon } from "./oberweltspiel";
+import { Reisen } from "./Reisen";
+import { reiseziele } from "./reiseziele";
+import { Sprechblase, type SprechblasenInhalt } from "./Sprechblase";
+import { lupenzeilen } from "./steckbrieftext";
+import { Steuerkreuz } from "./Steuerkreuz";
+import type { Ausloesertreffer, Richtung } from "./szene";
+import { Tagebuch } from "./Tagebuch";
+import { aktuelleToenung, type Toenung } from "./toenung";
+import { LUPE, usePartiestart } from "./usePartiestart";
+import { Vorfuehrung } from "./Vorfuehrung";
+import {
+  KACHELSATZ,
+  ladeDialog,
+  aktionFuer,
+  ausloeserFuer,
+  figurZu,
+  ladeWelt,
+  sprechblaseFuer,
+  type Weltdaten,
+} from "./weltdaten";
 
-/** Gegenstand „Reisebrett“ und seine Begegnung (docs/spiel/11, I3): Übungspartie gegen Ambrose. */
+/** Gegenstand „Reisebrett“ (docs/spiel/11, I3): Übungspartie gegen Ambrose. */
 const REISEBRETT = "reisebrett";
-const UEBUNGSPARTIE = "reisebrett.ambrose";
-
 /** Gegenstand „Monatskarte“ (docs/spiel/11, I6): Schnellreise in besuchte Städte. */
 const MONATSKARTE = "monatskarte";
-
-/** Gegenstand „Lupe des Uhrmachers“ (docs/spiel/11, I1): Steckbrief vor jeder Partie. */
-const LUPE = "lupe";
 /** Gegenstand für den Lichtkreis auf dunklen Karten (Sperren S4, S9, S11, S14). */
 const LATERNE = "laterne";
+/** Gegenstand Fahrrad und sein Tempofaktor draußen (docs/spiel/08, W3). */
+const FAHRRAD = "fahrrad";
+const FAHRRAD_TEMPO = 2;
 
 /** Was die Lupe über einen Gegner verrät; leer ohne Lupe oder ohne Gegnerdaten. */
 function lupeFuer(
@@ -62,54 +92,6 @@ function lupeFuer(
   const daten = gegenstaende.includes(LUPE) ? gegner.find((g) => g.kennung === kennung) : undefined;
   return daten ? lupenzeilen(daten) : [];
 }
-
-/** Gegenstand Fahrrad und sein Tempofaktor draußen (docs/spiel/08, W3). */
-const FAHRRAD = "fahrrad";
-const FAHRRAD_TEMPO = 2;
-import type { Aufgabenauftrag } from "../schnittstelle/aufgaben";
-import type { Kartenspiel, Kartensorte } from "../schnittstelle/karten";
-import type { Kipppunkt, Nadelstufe, Partieauftrag, Partieergebnis } from "../schnittstelle/partie";
-import type { Abenteuerstand, Partiekarten, Weltposition } from "../schnittstelle/spielstand";
-import { fehlertext, tSpiel } from "../texte/texte";
-import { GRUNDSTELLUNG } from "../anbindung/partiestart";
-import {
-  amZugIn,
-  auftragFuer,
-  auftragFuerRunde,
-  kartenFuerWiedereinstieg,
-  mitSchmeichelei,
-  sichtbarerZustand,
-  wiedereinstiegMoeglich,
-} from "./auftraege";
-import { Deckwahl } from "./Deckwahl";
-import { lupenzeilen } from "./steckbrieftext";
-import { Reisen } from "./Reisen";
-import { Abspann } from "./Abspann";
-import { reiseziele } from "./reiseziele";
-import { spruecheErlaubt, ZEITKLASSEN } from "../regeln/zeitkarten";
-import { Laden } from "./Laden";
-import { Steuerkreuz } from "./Steuerkreuz";
-import { Tagebuch } from "./Tagebuch";
-import { beendeOberwelt, starteOberwelt, szeneVon } from "./oberweltspiel";
-import type { Ausloesertreffer, Richtung } from "./szene";
-import {
-  KACHELSATZ,
-  ladeDialog,
-  aktionFuer,
-  ausloeserFuer,
-  figurZu,
-  ladeWelt,
-  objektposition,
-  sprechblaseFuer,
-  type Weltdaten,
-} from "./weltdaten";
-import { Sprechblase, type SprechblasenInhalt } from "./Sprechblase";
-import { Vorfuehrung } from "./Vorfuehrung";
-import { Gedaechtnisstellung } from "./Gedaechtnisstellung";
-import { Kopfleiste } from "./Kopfleiste";
-import { dialogwirkungen } from "./dialogwirkungen";
-import { Fortsetzungskarte, Partieergebniskarte, Rundenergebniskarte } from "./Ergebniskarten";
-import { aktuelleToenung, type Toenung } from "./toenung";
 
 /** Ein offener Dialog: die übersetzte Geschichte, der Knoten und der Name der Datei. */
 interface OffenerDialog {
@@ -124,16 +106,16 @@ function ladenDaten(w: Weltdaten, kennung: string) {
 }
 
 export function Oberwelt() {
-  const dienste = appdienste();
+  const k = useOberweltkern();
+  const { dienste, stand, standRef, welt, weltRef, spiel, meldung, setzeMeldung } = k;
+  const { schreibe, melde, wechsleKarte } = k;
+  const partie = usePartiestart(k);
+  const { deckwahl, ergebnis, offenePartie } = partie;
   const rahmen = useRef<HTMLDivElement>(null);
   const kachelanzeige = useRef<HTMLSpanElement>(null);
-  const spiel = useRef<Phaser.Game | null>(null);
-  const [stand, setzeStand] = useState<Abenteuerstand | null>(() => dienste.liesStand());
-  const [geladeneWelt, setzeWelt] = useState<Weltdaten | null>(null);
   const [fehler, setzeFehler] = useState<string | null>(null);
   const [treffer, setzeTreffer] = useState<Ausloesertreffer | null>(null);
   const [dialog, setzeDialog] = useState<OffenerDialog | null>(null);
-  const [meldung, setzeMeldung] = useState<string | null>(null);
   // Sprechblase eines Statisten und wie oft jeder schon angesprochen wurde (nur in dieser Sitzung).
   const [sprechblase, setzeSprechblase] = useState<SprechblasenInhalt | null>(null);
   const angesprochen = useRef(new Map<string, number>());
@@ -141,20 +123,10 @@ export function Oberwelt() {
   const [vorfuehrung, setzeVorfuehrung] = useState<string | null>(null);
   // Tönung der Karte, die gerade gilt (toenung.ts); Sepia wirkt als CSS-Filter wie Erinnerungen.
   const [toenung, setzeToenungZustand] = useState<Toenung | null>(null);
-  const [ergebnis, setzeErgebnis] = useState<Partieergebnis | null>(null);
-  const [offenePartie, setzeOffenePartie] = useState<string | null>(null);
   const [tagebuch, setzeTagebuch] = useState(false);
   const [reisen, setzeReisen] = useState(false);
   // Dialogvariablen beim Öffnen des Dialogs: Was die Hülle danach setzt, überschreibt Ink nicht.
   const variablenBeimOeffnen = useRef<Abenteuerstand["dialogvariablen"]>({});
-  // Eine Begegnung, für die der Leser gerade sein Deck wählt (Regelwerk R24).
-  const [deckwahl, setzeDeckwahl] = useState<Partieauftrag | null>(null);
-  // Die Clubnadel, die die zuletzt gelesene Partie gebracht hat (für die Ergebniskarte).
-  const [neueNadel, setzeNeueNadel] = useState<Nadelstufe | null>(null);
-  // Kipppunkt der zuletzt verlorenen Partie: „suche“ während Ambrose nachsieht (Regelwerk R14).
-  const [kipppunkt, setzeKipppunkt] = useState<Kipppunkt | "suche" | null>(null);
-  // Deck und gespielte Karten der gerade beendeten Partie, für den Wiedereinstieg (R15).
-  const vorherigeKarten = useRef<Partiekarten | null>(null);
   const auftragInArbeit = useRef<Partieauftrag | null>(null);
   // Eine Reise, die ein Dialog angestoßen hat (Bus); sie geschieht, wenn der Dialog zu ist.
   const reiseInArbeit = useRef<{ karte: string; ausloeser: string } | null>(null);
@@ -186,134 +158,6 @@ export function Oberwelt() {
   const [offeneRunde, setzeOffeneRunde] = useState<Aufgabenauftrag | null>(null);
   // Eine bestandene Runde, die als Quest-Ereignis noch auf die Welt wartet.
   const offeneRundenmeldung = useRef<string | null>(null);
-  // Der aktuelle Stand für Rückrufe aus Phaser und Dialogen, die nicht neu gerendert werden.
-  const standRef = useRef(stand);
-  useEffect(() => {
-    standRef.current = stand;
-  }, [stand]);
-  // Die Welt gilt nur, solange sie zur Karte des Spielstands gehört (Kartenwechsel lädt neu).
-  const welt = geladeneWelt && geladeneWelt.kennung === stand?.position.karte ? geladeneWelt : null;
-  // Die geladene Welt für Rückrufe aus Phaser (Auslöser), die außerhalb des Renderns kommen.
-  const weltRef = useRef<Weltdaten | null>(null);
-  useEffect(() => {
-    weltRef.current = welt;
-  }, [welt]);
-  // Ein gelesenes Partieergebnis, das noch auf die Welt wartet (Quest-Ereignis „partie“).
-  const offenesErgebnis = useRef<Partieergebnis | null>(null);
-
-  /** Schreibt den Spielstand in die App und merkt ihn hier. */
-  const schreibe = (neu: Abenteuerstand) => {
-    standRef.current = neu;
-    setzeStand(neu);
-    void dienste.schreibeStand(neu);
-  };
-
-  // Abenteuerwertung A folgt der Wertung der App (R2), geprüft beim Aufbau.
-  useEffect(() => {
-    const aktuell = standRef.current;
-    if (!aktuell) return;
-    const neu = mitAppWertung(aktuell, dienste.wertung());
-    if (neu !== aktuell) schreibe(neu);
-    // Nur beim Aufbau; danach ändert nur diese Komponente den Stand.
-    // eslint-disable-next-line react-hooks/exhaustive-deps
-  }, []);
-
-  // Lernkarten (docs/spiel/11, Abschnitt 5): abgeschlossene Buchkapitel der App schenken Karten.
-  const lernkartenGeprueft = useRef(false);
-  useEffect(() => {
-    const aktuell = standRef.current;
-    if (!welt || !aktuell || lernkartenGeprueft.current) return;
-    lernkartenGeprueft.current = true;
-    const sorten = welt.daten.karten as unknown as readonly Kartensorte[];
-    const ergebnis = mitLernkarten(aktuell, dienste.fertigeKapitel(), sorten, new Date());
-    const erste = ergebnis.neu[0];
-    if (!erste) return;
-    schreibe(ergebnis.stand);
-    setzeMeldung(
-      tSpiel("karte.lernkarte", {
-        kapitel: erste.kapitel ?? 0,
-        karte: tSpiel(erste.name),
-        satz: tSpiel(`karte.${erste.kennung}.geschenkt`),
-      }),
-    );
-    // Einmal je Aufbau, sobald die Welt da ist.
-    // eslint-disable-next-line react-hooks/exhaustive-deps
-  }, [welt]);
-
-  /** Ein Ereignis der Welt: Quests fortschreiben, Wirkungen anwenden, Meldungen zeigen. */
-  const melde = (ereignis: Questereignis, w: Weltdaten | null = weltRef.current) => {
-    const aktuell = standRef.current;
-    if (!aktuell || !w) return;
-    const welt = w;
-    const jetzt = new Date();
-    const q = werteEreignisAus(aktuell, welt.daten.quests, ereignis, jetzt);
-    if (q.begonnen.length === 0 && q.erledigt.length === 0 && q.fortgeschritten.length === 0) {
-      return;
-    }
-    schreibe(wendeWirkungenAn(q.stand, q.wirkungen, jetzt));
-    const titel = (kennung: string) =>
-      tSpiel(welt.daten.quests.find((x) => x.kennung === kennung)?.titel ?? kennung);
-    if (q.erledigt.length > 0) {
-      setzeMeldung(tSpiel("quest.erledigt", { titel: titel(q.erledigt[0] ?? "") }));
-    } else if (q.begonnen.length > 0) {
-      setzeMeldung(tSpiel("quest.begonnen", { titel: titel(q.begonnen[0] ?? "") }));
-    }
-  };
-
-  /** Wechselt auf eine andere Karte: Der Held erscheint auf dem Zielauslöser. */
-  function wechsleKarte(karte: string, ausloeser: string): void {
-    const aktuell = standRef.current;
-    const welt = weltRef.current;
-    if (!aktuell || !welt) return;
-    const ziel = findeKarte(welt.daten, karte);
-    if (!ziel) {
-      setzeMeldung(tSpiel("oberwelt.karteFehlt", { karte }));
-      return;
-    }
-    const szene = spiel.current ? szeneVon(spiel.current) : null;
-    const richtung = szene?.position().richtung ?? aktuell.position.richtung;
-    liesPaketJson<object>(ziel.karte.datei)
-      .then((json) => {
-        const pos = objektposition(json, ausloeser) ?? objektposition(json, "start");
-        if (!pos) throw new Error(`Auslöser ${ausloeser} fehlt auf ${karte}`);
-        const position: Weltposition = { karte, x: pos.x, y: pos.y, richtung };
-        // Dieselbe Karte (Steg über die Schleuse): nur versetzen, die Szene bleibt geladen.
-        if (karte === aktuell.position.karte) szene?.versetze(pos.x, pos.y);
-        schreibe({ ...aktuell, position });
-      })
-      .catch(() => setzeMeldung(tSpiel("oberwelt.karteFehlt", { karte })));
-  }
-
-  // Rückweg: eine Partie des Abenteuers war offen; ist sie beendet, kommt das Ergebnis hierher.
-  useEffect(() => {
-    if (!stand?.laufendePartie) return;
-    const kennung = stand.laufendePartie;
-    void dienste.liesErgebnis(kennung).then((e) => {
-      const aktuell = standRef.current;
-      if (!aktuell) return;
-      if (!e) {
-        setzeOffenePartie(kennung);
-        return;
-      }
-      setzeErgebnis(e);
-      offenesErgebnis.current = e;
-      void ladeSpieldaten().then((daten) => {
-        const r = standNachPartie(standRef.current ?? aktuell, e, daten);
-        setzeNeueNadel(r.nadel);
-        vorherigeKarten.current = aktuell.partiekarten;
-        if (wiedereinstiegMoeglich(e, r.begegnung, daten, aktuell)) {
-          setzeKipppunkt("suche");
-          void dienste
-            .sucheKipppunkt(kennung)
-            .then((k) => setzeKipppunkt(k))
-            .catch(() => setzeKipppunkt(null));
-        }
-        schreibe(r.stand);
-      });
-    });
-    // Nur beim Aufbau; der Spielstand ändert sich danach nur noch durch diese Komponente.
-    // eslint-disable-next-line react-hooks/exhaustive-deps
-  }, []);
 
   /** Eine bestandene Aufgabenrunde als Quest-Ereignis, sobald die Welt da ist. */
   const meldeRunde = (w: Weltdaten) => {
@@ -360,20 +204,9 @@ export function Oberwelt() {
       ? { ...szene.position(), karte: aktuell.position.karte }
       : aktuell.position;
     const mitPosition = { ...aktuell, position };
-    standRef.current = mitPosition;
-    setzeStand(mitPosition);
+    k.merke(mitPosition);
     setzeRundenergebnis(null);
     void dienste.schreibeStand(mitPosition).then(() => dienste.starteAufgaben(auftrag));
-  };
-
-  /** Ein gelesenes Partieergebnis als Quest-Ereignis, sobald die Welt da ist. */
-  const meldeErgebnis = (w: Weltdaten) => {
-    const e = offenesErgebnis.current;
-    if (!e) return;
-    offenesErgebnis.current = null;
-    const begegnung = e.kennung.split("#")[0] ?? "";
-    const ausgang = e.ausgang === "abgebrochen" ? "niederlage" : e.ausgang;
-    melde({ art: "partie", begegnung, ausgang: [ausgang] }, w);
   };
 
   /** Öffnet den Dialog „datei.knoten“ aus dem Paket. */
@@ -419,8 +252,7 @@ export function Oberwelt() {
       .then((w) => {
         if (!aktiv || !rahmen.current) return;
         setzeTreffer(null);
-        setzeWelt(w);
-        weltRef.current = w;
+        k.setzeWelt(w);
         // Erster Besuch eines Ortes (W2): merken, Dialogvariable `besucht<Ort>` für den Bus.
         const aktuell = standRef.current;
         if (aktuell && !aktuell.besuchteOrte.includes(w.ort.kennung)) {
@@ -435,7 +267,7 @@ export function Oberwelt() {
         }
         // Karte betreten (Quests), dann ein Partieergebnis, das auf die Welt gewartet hat.
         melde({ art: "ort", karte: w.kennung }, w);
-        meldeErgebnis(w);
+        partie.meldeErgebnis(w);
         meldeRunde(w);
         const startToenung = aktuelleToenung(w.karte, w.kennung, stand.dialogvariablen);
         setzeToenungZustand(startToenung);
@@ -495,24 +327,25 @@ export function Oberwelt() {
     const szene = spiel.current ? szeneVon(spiel.current) : null;
     szene?.laufenErlaubt(
       dialog === null &&
-        ergebnis === null &&
-        offenePartie === null &&
+        partie.ergebnis === null &&
+        partie.offenePartie === null &&
         rundenergebnis === null &&
         offeneRunde === null &&
         !tagebuch &&
-        !deckwahl &&
+        !partie.deckwahl &&
         vorfuehrung === null &&
         gedaechtnis === null &&
         offenerLaden === null,
     );
   }, [
+    spiel,
     dialog,
-    ergebnis,
-    offenePartie,
+    partie.ergebnis,
+    partie.offenePartie,
     rundenergebnis,
     offeneRunde,
     tagebuch,
-    deckwahl,
+    partie.deckwahl,
     vorfuehrung,
     gedaechtnis,
     offenerLaden,
@@ -539,7 +372,7 @@ export function Oberwelt() {
       const neu = { ...aktuell, dialogvariablen: starteSimultan(aktuell.dialogvariablen, eintrag) };
       schreibe(neu);
       const auftrag = auftragFuer(erste, welt.daten, neu);
-      if (auftrag) startePartie(auftrag, []);
+      if (auftrag) partie.startePartie(auftrag, []);
     });
   };
 
@@ -555,7 +388,7 @@ export function Oberwelt() {
       const neu = { ...aktuell, dialogvariablen: { ...r.variablen } };
       schreibe(neu);
       const auftrag = r.naechste ? auftragFuer(r.naechste, welt.daten, neu) : null;
-      if (auftrag) startePartie(auftrag, []);
+      if (auftrag) partie.startePartie(auftrag, []);
       if (r.ende?.bestanden) melde({ art: "aufgaben", runde: eintrag.kennung });
       if (r.ende) {
         setzeMeldung(
@@ -627,117 +460,6 @@ export function Oberwelt() {
     }),
   });
 
-  /**
-   * Startet die Partie zu einem Auftrag mit dem gewählten Deck: Vorgaben ändern die Startstellung
-   * und zählen als gespielt (Halbzug 0, Regelwerk R24, R26); Position und laufende Partie werden
-   * gesichert, dann übernimmt die App.
-   */
-  const startePartie = (
-    auftragDerBegegnung: Partieauftrag,
-    deck: readonly string[],
-    schonGespielt: readonly Kartenspiel[] = [],
-  ) => {
-    let auftrag = auftragDerBegegnung;
-    const aktuell = standRef.current ?? stand;
-    const sorten = (welt?.daten.karten ?? []) as unknown as readonly Kartensorte[];
-    const gegnerfarbe = auftrag.farbe === "white" ? "black" : "white";
-    let startstellung = auftrag.startstellung;
-    const vorher: Kartenspiel[] = [...schonGespielt];
-    let karten = aktuell.karten;
-    for (const kennung of deck) {
-      const sorte = sorten.find((s) => s.kennung === kennung);
-      if (!sorte || sorte.zeitpunkt !== "vorher") continue;
-      // Sprüche nur gegen Straßengegner (docs/spiel/10, S2); sonst bleibt die Karte unberührt.
-      if (sorte.spruch_art && !spruecheErlaubt(auftrag.profil.rolle)) continue;
-      if (sorte.wirkung.art === "schmeichelei") auftrag = mitSchmeichelei(auftrag, aktuell);
-      if (sorte.wirkung.art === "vorgabe") {
-        const fen = startstellung.art === "fen" ? startstellung.fen : GRUNDSTELLUNG;
-        const neu = vorgabeFen(fen, sorte.wirkung.feld, gegnerfarbe);
-        if (neu) startstellung = { art: "fen", fen: neu };
-      }
-      vorher.push({ kennung, stufe: sorte.stufe, halbzug: 0 });
-      if (sorte.art === "verbrauch") {
-        karten = karten
-          .map((k) => (k.kennung === kennung ? { ...k, anzahl: k.anzahl - 1 } : k))
-          .filter((k) => k.anzahl > 0);
-      }
-    }
-    const szene = spiel.current ? szeneVon(spiel.current) : null;
-    const position = szene
-      ? { ...szene.position(), karte: aktuell.position.karte }
-      : aktuell.position;
-    const mitPartie: Abenteuerstand = {
-      ...aktuell,
-      karten,
-      position,
-      laufendePartie: auftrag.kennung,
-      // Für die Abenteuerwertung (R2, R38): Zielstärke vor dem Zustandsfaktor und ob sie zählt.
-      laufendeWertung: {
-        zielElo: auftrag.staerke.zielElo,
-        zaehlt: zaehltFuerA(auftrag),
-        zustand: sichtbarerZustand(auftrag),
-      },
-      partiekarten: {
-        deck: [
-          ...deck.filter((k) => !vorher.some((v) => v.kennung === k)),
-          ...(auftrag.freieKarten ?? []).filter((k) => !deck.includes(k)),
-        ],
-        ...(auftrag.freieKarten ? { frei: auftrag.freieKarten } : {}),
-        gespielt: vorher,
-        wiedereinstieg: auftrag.format.art === "wiedereinstieg",
-        letzterHalbzug: null,
-        gegner: auftrag.profil.kennung,
-        uhr: auftrag.uhr,
-      },
-    };
-    standRef.current = mitPartie;
-    setzeStand(mitPartie);
-    setzeDeckwahl(null);
-    void dienste
-      .schreibeStand(mitPartie)
-      .then(() => dienste.startePartie({ ...auftrag, startstellung, deck: { karten: deck } }));
-  };
-
-  /**
-   * Reisebrett (docs/spiel/11, I3): überall eine freie Übungspartie gegen Ambrose, mit Wahl der
-   * Bedenkzeit und Karten wie jede Begegnung; sie zählt für Partienliste und Abenteuerwertung.
-   */
-  const starteUebungspartie = () => {
-    const aktuell = standRef.current ?? stand;
-    if (!welt) return;
-    const auftrag = auftragFuer(UEBUNGSPARTIE, welt.daten, aktuell);
-    if (auftrag) setzeDeckwahl(auftrag);
-  };
-
-  /**
-   * Wiedereinstieg (Regelwerk R14): dieselbe Begegnung ab dem Kipppunkt, gleiches Profil und
-   * gleicher Zustand, Farbe aus dem Zugrecht der Stellung, Karten nach R15.
-   */
-  const starteWiedereinstieg = (e: Partieergebnis, k: Kipppunkt) => {
-    const aktuell = standRef.current ?? stand;
-    if (!welt) return;
-    const begegnung = e.kennung.split("#")[0] ?? "";
-    const auftrag = auftragFuer(begegnung, welt.daten, aktuell);
-    if (!auftrag) return;
-    const sorten = welt.daten.karten as unknown as readonly Kartensorte[];
-    const karten = kartenFuerWiedereinstieg(vorherigeKarten.current, e.gespielteKarten, k, sorten);
-    setzeErgebnis(null);
-    setzeNeueNadel(null);
-    setzeKipppunkt(null);
-    startePartie(
-      {
-        ...auftrag,
-        // Dieselbe Bedenkzeit wie in der verlorenen Partie (gewählt oder fest).
-        uhr: vorherigeKarten.current?.uhr ?? auftrag.uhr,
-        farbe: amZugIn(k.fen),
-        format: { art: "wiedereinstieg", vorherigeKennung: e.kennung },
-        startstellung: { art: "fen", fen: k.fen },
-      },
-      karten.deck,
-      karten.gespielt,
-    );
-  };
-
   /** Dialog zu Ende: Variablen sichern, dann eine angestoßene Partie starten (ggf. Deck wählen). */
   const beiDialogende = (variablen: Dialogvariablen) => {
     setzeDialog(null);
@@ -793,24 +515,7 @@ export function Oberwelt() {
       starteRunde(runde);
       return;
     }
-    if (!auftrag) return;
-    const mitLupe = neu.gegenstaende.includes(LUPE);
-    const mitFreien = (auftrag.freieKarten?.length ?? 0) > 0;
-    if (
-      (auftrag.kartenErlaubt && neu.karten.length > 0) ||
-      auftrag.zeitwahl ||
-      mitLupe ||
-      mitFreien
-    )
-      setzeDeckwahl(auftrag);
-    else startePartie(auftrag, []);
-  };
-
-  const gegnername = (e: Partieergebnis) => {
-    const kennung = e.kennung.split("#")[0] ?? "";
-    const begegnung = welt?.daten.begegnungen.find((b) => b.kennung === kennung);
-    const gegner = begegnung && welt?.daten.gegner.find((g) => g.kennung === begegnung.gegner);
-    return gegner ? tSpiel(gegner.name) : "";
+    if (auftrag) partie.waehleOderStarte(auftrag);
   };
 
   const aktuellerLaden = welt && offenerLaden ? ladenDaten(welt, offenerLaden) : undefined;
@@ -835,7 +540,7 @@ export function Oberwelt() {
           beiTagebuch={() => setzeTagebuch(true)}
           beiReisebrett={
             welt && stand.gegenstaende.includes(REISEBRETT) && !dialog && !deckwahl
-              ? starteUebungspartie
+              ? partie.starteUebungspartie
               : null
           }
           beiReisen={
@@ -881,7 +586,7 @@ export function Oberwelt() {
           mentorGesperrt={mentorzugGesperrt(stand.dialogvariablen)}
           freieKarten={deckwahl.freieKarten ?? []}
           beiWahl={(deck, zeit, farbe) =>
-            startePartie(
+            partie.startePartie(
               {
                 ...deckwahl,
                 ...(deckwahl.zeitwahl ? { uhr: ZEITKLASSEN[zeit] } : {}),
@@ -890,7 +595,7 @@ export function Oberwelt() {
               deck,
             )
           }
-          beiAbbruch={() => setzeDeckwahl(null)}
+          beiAbbruch={partie.brichDeckwahlAb}
         />
       )}
       {welt && aktuellerLaden && (
@@ -956,15 +661,13 @@ export function Oberwelt() {
       {ergebnis && (
         <Partieergebniskarte
           ergebnis={ergebnis}
-          gegner={gegnername(ergebnis)}
+          gegner={partie.gegnername(ergebnis)}
           club={tSpiel(welt?.ort.club?.name ?? "club.mapleFalls.name")}
-          neueNadel={neueNadel}
-          kipppunkt={kipppunkt}
-          beiWiedereinstieg={(k) => starteWiedereinstieg(ergebnis, k)}
+          neueNadel={partie.neueNadel}
+          kipppunkt={partie.kipppunkt}
+          beiWiedereinstieg={(p) => partie.starteWiedereinstieg(ergebnis, p)}
           beiWeiter={() => {
-            setzeErgebnis(null);
-            setzeNeueNadel(null);
-            setzeKipppunkt(null);
+            partie.schliesseErgebnis();
             weiterImSimultan(ergebnis);
           }}
         />
@@ -995,10 +698,7 @@ export function Oberwelt() {
           weiter="ergebnis.weiterspielen"
           abbrechen="ergebnis.aufgeben"
           beiWeiter={() => dienste.zeigePartie(offenePartie)}
-          beiAbbrechen={() => {
-            setzeOffenePartie(null);
-            schreibe({ ...(standRef.current ?? stand), laufendePartie: null });
-          }}
+          beiAbbrechen={partie.gibOffenePartieAuf}
         />
       )}
     </div>

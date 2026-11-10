@@ -134,6 +134,8 @@ export interface Partieeinstellung {
     readonly kandidaten?: readonly string[];
     /** Buch und Bruch (spiel/vorgabezug.ts, Z-1 auf Weg 10): Linie, danach schwache Stufe. */
     readonly buchbruch?: { readonly linie: readonly string[]; readonly stufe: Stufennummer };
+    /** Lebendschach (Weg 9): Karte, deren Hintergrundbild hinter dem Brett steht. */
+    readonly kulisse?: string;
   };
 }
 

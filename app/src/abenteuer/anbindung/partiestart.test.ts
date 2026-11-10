@@ -112,3 +112,24 @@ describe("Varianten und Stärkewechsel (Akt 4)", () => {
     expect(e.abenteuer?.abgelenktAb).toEqual({ halbzug: 40, faktor: 1.5 });
   });
 });
+
+describe("Partieformen der Runde 6", () => {
+  it("geben Kandidaten, Buch und Bruch, Gehör und Kulisse an die Partie weiter", () => {
+    const e = partieeinstellungAus(
+      {
+        ...AUFTRAG,
+        variante: "gehoer",
+        kandidaten: ["e5", "f6", "Nf6"],
+        buchbruch: { linie: ["e4", "e5"], stufe: 2 },
+        kulisse: "wegCrossroadsPinewood.riesenbaeume",
+      },
+      false,
+    );
+    expect(e.abenteuer).toMatchObject({
+      variante: "gehoer",
+      kandidaten: ["e5", "f6", "Nf6"],
+      buchbruch: { linie: ["e4", "e5"], stufe: 2 },
+      kulisse: "wegCrossroadsPinewood.riesenbaeume",
+    });
+  });
+});

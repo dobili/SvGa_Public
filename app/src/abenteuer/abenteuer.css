@@ -477,3 +477,13 @@
 .abenteuer-finchkarte span {
   font-size: 1.6rem;
 }
+
+/* Lebendschach (Runde 6): Bild der Lichtung als Hintergrund der Partieansicht, hell verschleiert. */
+body.abenteuer-mit-kulisse {
+  background-image:
+    linear-gradient(rgb(255 255 255 / 55%), rgb(255 255 255 / 55%)), var(--abenteuer-kulisse);
+  background-size: cover;
+  background-position: center;
+  background-attachment: fixed;
+  image-rendering: pixelated;
+}

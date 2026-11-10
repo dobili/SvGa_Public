@@ -163,8 +163,10 @@ def pruefe(zeilen: list[str], gesetzt: list[dict], punkte: list[dict], aussen: b
 
 
 # Felder der Szene, die als Eigenschaft in die Tiled-Karte gehen.
-KARTENFELDER = ("toenung", "zustand_der_karte")
+KARTENFELDER = ("toenung", "zustand_der_karte", "jahreszeit")
 TOENUNGEN = ("nebel", "nacht", "abend", "sepia", "dunkel")
+# Winter färbt kartenbild um und lässt in der App Schnee fallen (Entscheidung 10.11.2026).
+JAHRESZEITEN = ("winter",)
 
 
 def tiled(szene: dict, zeilen: list[str], gesetzt: list[dict], vorlage: dict) -> dict:
@@ -238,8 +240,8 @@ def tiled(szene: dict, zeilen: list[str], gesetzt: list[dict], vorlage: dict) ->
     eigenschaften += [
         {"name": k, "type": "string", "value": v} for k, v in szene.get("eigenschaften", {}).items()
     ]
-    # Tönung (nebel, nacht, abend, sepia, dunkel) und zweite Fassung einer Karte liest die App aus
-    # den Eigenschaften der Karte (Runde 6: oberwelt/toenung.ts, zustand_der_karte).
+    # Tönung (nebel, nacht, abend, sepia, dunkel), Zustand und Jahreszeit liest die App aus den
+    # Eigenschaften der Karte (oberwelt/toenung.ts, zustand_der_karte, oberwelt/winter.ts).
     eigenschaften += [
         {"name": k, "type": "string", "value": szene[k]}
         for k in KARTENFELDER
@@ -306,6 +308,8 @@ def baue(pfad: Path) -> list[str]:
     befunde += vergleiche_mit_a(pfad.resolve(), szene, lade)
     if "toenung" in szene and szene["toenung"] not in TOENUNGEN:
         befunde.append(f"Tönung {szene['toenung']!r} unbekannt (erlaubt: {', '.join(TOENUNGEN)})")
+    if "jahreszeit" in szene and szene["jahreszeit"] not in JAHRESZEITEN:
+        befunde.append(f"Jahreszeit {szene['jahreszeit']!r} unbekannt (erlaubt: {', '.join(JAHRESZEITEN)})")
     ziel = INHALTE / szene["datei"]
     ziel.parent.mkdir(parents=True, exist_ok=True)  # Varianten: karten/varianten/
     vorlage = lade(INHALTE / "karten" / "maple-falls-dachboden.json")

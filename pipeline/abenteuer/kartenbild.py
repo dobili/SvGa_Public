@@ -7,6 +7,7 @@ und eine Vorschau mit Möbeln und Figuren für die Bildprüfung.
 Aufruf: ``python -m pipeline.abenteuer.kartenbild PRIVAT VORSCHAUORDNER inhalte/abenteuer/szenen/*.json``
 """
 
+import re
 import sys
 from pathlib import Path
 
@@ -18,6 +19,7 @@ from pipeline.abenteuer.kartenbau import GESPERRT, INHALTE, LEER, WAND, WASSER, 
 from pipeline.abenteuer.katalog import katalogbefund, katalogeintraege
 from pipeline.abenteuer.moebelliste import lade_moebel
 from pipeline.abenteuer.randspur import randluecken
+from pipeline.abenteuer.winter import winterlich
 from pipeline.abenteuer.zusammenhang import HOLZ
 from pipeline.abenteuer.zustaende import zustandsname
 
@@ -267,6 +269,9 @@ def vorschau(szene: dict, privat: Path, grund: Image.Image) -> Image.Image:
     gesetzt, _ = platziere(szene, moebel)
     bild = grund.copy()
     teile = [(s["tiefe"], s["x"], s["y"], moebelbild(privat, moebel[s["name"]]["quelle"])) for s in gesetzt]
+    if ist_winter(szene):
+        # Wie die App (oberwelt/winter.ts): Möbel ohne Wasserregel, sonst würden blaue Autos dunkel.
+        teile = [(t, x, y, winterlich(b, wasser=False)) for t, x, y, b in teile]
     orte = {o["kennung"]: o for o in lade(INHALTE / "orte.json")["orte"]}
     ort = orte.get(szene["karte"].split(".")[0], {"figuren": []})
     for f in szene.get("figuren", []):
@@ -290,6 +295,23 @@ def randspur(szene: dict, gezeichnet: dict) -> list[str]:
     raender = {name: boeden[name]["rand"] for name in ("wasser", "erde")}
     trennt = {szene.get("boden", "gras"), szene.get("wandart", "hecke")}
     return randluecken(gezeichnet, raender, trennt, frozenset(HOLZ))
+
+
+def ist_winter(szene: dict) -> bool:
+    """Szene im Winterzustand (``"jahreszeit": "winter"``, Entscheidung 10.11.2026)."""
+    return szene.get("jahreszeit") == "winter"
+
+
+# Blumen und Pilze bleiben beim Umfärben bunt; in Winterszenen kommen sie weg (Entscheidung Winter).
+BLUEHT = re.compile(r"blume|pilz(?!kiosk)", re.I)
+
+
+def winterbefunde(szene: dict) -> list[str]:
+    """Blumen und Pilze in einer Winterszene (sie gehören weg); sonst nichts."""
+    if not ist_winter(szene):
+        return []
+    namen = sorted({o["moebel"] for o in szene.get("objekte", []) if BLUEHT.search(o.get("moebel", ""))})
+    return [f"{n}: Blumen und Pilze gehören nicht in eine Winterszene" for n in namen]
 
 
 def bildname(szene: dict) -> tuple[str, bool]:
@@ -331,6 +353,8 @@ def main() -> None:
         szene = lade(Path(name))
         gezeichnet: dict = {}
         grund = hintergrund(szene, privat, gezeichnet)
+        if ist_winter(szene):
+            grund = winterlich(grund)
         name, spielbild = bildname(szene)
         if spielbild:
             grund.convert("RGB").save(privat / "spiel" / "grafik" / "karten" / f"{name}.png")
@@ -339,6 +363,7 @@ def main() -> None:
         if not spielbild and not szene.get("variante"):
             befunde.append(f"{szene['datei']} ist weder Grundkarte noch Zustand in orte.json: nur Vorschau")
         befunde += mattenbefunde(szene, privat)
+        befunde += winterbefunde(szene)
         print(f"{name}: Hintergrund und Vorschau gezeichnet")
         for b in befunde:
             print(f"  - {b}")

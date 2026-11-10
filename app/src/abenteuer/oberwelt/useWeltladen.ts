@@ -65,6 +65,7 @@ function starteSpiel(k: Oberweltkern, a: Weltanschluss, w: Weltdaten, stand: Abe
     belebungsbilder: w.belebungsbilder,
     toenung,
     laterne: stand.gegenstaende.includes(LATERNE),
+    winter: w.winter,
     kachelsatz: KACHELSATZ,
     start: stand.position,
     // Fahrrad (docs/spiel/08, W3): doppeltes Tempo draußen.

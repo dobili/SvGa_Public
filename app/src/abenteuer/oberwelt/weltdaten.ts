@@ -20,6 +20,7 @@ import { GRUNDSPRACHE, hatSpieltext, ladeSpieltexte, spielsprache, tSpiel } from
 import { liesBelebung, statistenbild, statistensatz } from "./belebung";
 import type { SprechblasenInhalt } from "./Sprechblase";
 import { kartenfassung } from "./kartenfassung";
+import { istWinter } from "./winter";
 import { ladeMoebel, type Moebel } from "./moebel";
 import { tierartVon } from "./tiere";
 import type { Ausloesertreffer } from "./szene";
@@ -57,6 +58,8 @@ export interface Weltdaten {
   readonly hintergrund: string | null;
   /** Zweite Fassung der Karte (zustand_der_karte), sonst null. */
   readonly zustand: string | null;
+  /** Winterkarte (Eigenschaft `jahreszeit`, winter.ts): Schnee und umgefärbte Möbel. */
+  readonly winter: boolean;
   /** Bögen der Statisten und Tiere dieser Karte, Pfad im Paket → Adresse (nur vorhandene). */
   readonly belebungsbilder: Readonly<Record<string, string>>;
 }
@@ -191,6 +194,7 @@ export async function ladeWelt(
     hintergrund,
     belebungsbilder,
     zustand: fassung.zustand,
+    winter: istWinter(karte),
   };
 }
 

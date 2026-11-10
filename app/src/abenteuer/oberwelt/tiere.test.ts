@@ -14,7 +14,11 @@ describe("tierartVon", () => {
     expect(tierartVon("hund")).toBe("hund");
     expect(tierartVon("werkskatzeAussen")).toBe("katze");
     expect(tierartVon("reh")).toBe("ziege");
-    expect(tierartVon("moewen")).toBe("taube");
+    expect(tierartVon("moewen")).toBe("moewe");
+    expect(tierartVon("specht")).toBe("kraehe");
+    expect(tierartVon("wuestenfuchs")).toBe("hund");
+    expect(tierartVon("praeriehunde")).toBe("hase");
+    expect(tierartVon("schwan")).toBe("gans");
     expect(tierartVon("bisonherde")).toBe("kuh");
     expect(tierartVon("eichhoernchen")).toBe("hase");
     expect(tierartVon("drohne")).toBe("drohne");

@@ -1,0 +1,148 @@
+{
+  "erklaerung": "Tiere der Oberwelt, gemeinsam für App (oberwelt/tiere.ts), Bogenbau (pipeline/abenteuer/belebungsbilder.py) und Vorschau (pipeline/abenteuer/belebungsvorschau.py). arten: Art → Quelle im privaten Repository, Rahmengröße und Schnitt (reihen: Standbilder oben, Laufen darunter; streifen: eine Reihe, alle Richtungen gleich; richtungen: eine Reihe mit 4 × 6 Bildern; baender und fest:<stand_y>:<lauf_y> für Bögen mit Beschriftungen). staemme: Wortstamm im Objektnamen → Art (längster gewinnt). Ohne passenden Stamm wird nichts gezeichnet (Eidechse, Delfin, Libellen). Eine Art ohne eigenes Bild bekommt die nächstliegende darstellbare (Gutachter 10.11.2026): dunkle Greif- und Waldvögel die Krähe, weiße Wasservögel die Möwe oder Gans, Nager das braune Kaninchen, Fuchs und Kojote den Hund.",
+  "arten": {
+    "taube": {
+      "quelle": "modern-exteriors/Modern_Exteriors_16x16/Animated_16x16/Animated_sheets_16x16/Pigeon_16x16.png",
+      "breite": 16,
+      "hoehe": 16,
+      "schnitt": "streifen"
+    },
+    "kraehe": {
+      "quelle": "modern-exteriors/Modern_Exteriors_16x16/Animated_16x16/Animated_sheets_16x16/Crow_idle_16x16.png",
+      "breite": 32,
+      "hoehe": 32,
+      "schnitt": "richtungen"
+    },
+    "moewe": {
+      "quelle": "modern-exteriors/Modern_Exteriors_16x16/Animated_16x16/Animated_sheets_16x16/Beach_Seagull_Complete_16x16.png",
+      "breite": 32,
+      "hoehe": 32,
+      "schnitt": "reihen"
+    },
+    "drohne": {
+      "quelle": "modern-exteriors/Modern_Exteriors_16x16/Animated_16x16/Animated_sheets_16x16/Drone_1_Flying_16x16.png",
+      "breite": 16,
+      "hoehe": 16,
+      "schnitt": "streifen"
+    },
+    "huhn": {
+      "quelle": "modern-farm/Animals/Chickens_and_Roosters/Chicken_Brown_16x16.png",
+      "breite": 16,
+      "hoehe": 16,
+      "schnitt": "reihen"
+    },
+    "ente": {
+      "quelle": "modern-farm/Animals/Ducks/Duck_Green_Head_16x16.png",
+      "breite": 32,
+      "hoehe": 32,
+      "schnitt": "reihen"
+    },
+    "gans": {
+      "quelle": "modern-farm/Animals/Ducks/Duck_White_16x16.png",
+      "breite": 32,
+      "hoehe": 32,
+      "schnitt": "reihen"
+    },
+    "hase": {
+      "quelle": "modern-farm/Animals/Rabbits/Rabbit_Brown_Dark_Ears_16x16.png",
+      "breite": 32,
+      "hoehe": 32,
+      "schnitt": "reihen"
+    },
+    "schwein": {
+      "quelle": "modern-farm/Animals/Pigs/Pig_Pink_16x16.png",
+      "breite": 32,
+      "hoehe": 32,
+      "schnitt": "reihen"
+    },
+    "ziege": {
+      "quelle": "modern-farm/Animals/Goats/Goat_Brown_16x16.png",
+      "breite": 32,
+      "hoehe": 48,
+      "schnitt": "reihen"
+    },
+    "schaf": {
+      "quelle": "modern-farm/Animals/Sheeps/Sheep_2_White_16x16.png",
+      "breite": 32,
+      "hoehe": 32,
+      "schnitt": "reihen"
+    },
+    "kuh": {
+      "quelle": "modern-farm/Animals/Cows/Cow_16x16.png",
+      "breite": 48,
+      "hoehe": 48,
+      "schnitt": "reihen"
+    },
+    "esel": {
+      "quelle": "modern-farm/Animals/Donkeys/Donkey_16x16.png",
+      "breite": 48,
+      "hoehe": 48,
+      "schnitt": "reihen"
+    },
+    "hund": {
+      "quelle": "modern-farm/Animals/Dogs/Dog_Labrador_Brown_16x16.png",
+      "breite": 48,
+      "hoehe": 32,
+      "schnitt": "baender"
+    },
+    "katze": {
+      "quelle": "modern-farm/Animals/Cats/Cat_Hugo.png",
+      "breite": 32,
+      "hoehe": 32,
+      "schnitt": "fest:0:192"
+    }
+  },
+  "staemme": {
+    "taube": "taube",
+    "spatz": "taube",
+    "amsel": "taube",
+    "lerche": "taube",
+    "eichelhaeher": "taube",
+    "kraehe": "kraehe",
+    "rabe": "kraehe",
+    "geier": "kraehe",
+    "falke": "kraehe",
+    "adler": "kraehe",
+    "eule": "kraehe",
+    "specht": "kraehe",
+    "kormoran": "kraehe",
+    "moewe": "moewe",
+    "pelikan": "moewe",
+    "reiher": "moewe",
+    "austernfischer": "moewe",
+    "seeschwalbe": "moewe",
+    "strandlaeufer": "moewe",
+    "huhn": "huhn",
+    "huehner": "huhn",
+    "roadrunner": "huhn",
+    "fasan": "huhn",
+    "ente": "ente",
+    "gans": "gans",
+    "gaense": "gans",
+    "schwan": "gans",
+    "hase": "hase",
+    "kaninchen": "hase",
+    "hoernchen": "hase",
+    "murmeltier": "hase",
+    "praeriehund": "hase",
+    "schwein": "schwein",
+    "ziege": "ziege",
+    "reh": "ziege",
+    "hirsch": "ziege",
+    "schaf": "schaf",
+    "kuh": "kuh",
+    "kueh": "kuh",
+    "rind": "kuh",
+    "bison": "kuh",
+    "wapiti": "kuh",
+    "esel": "esel",
+    "pferd": "esel",
+    "pony": "esel",
+    "hund": "hund",
+    "dackel": "hund",
+    "kojote": "hund",
+    "fuchs": "hund",
+    "katze": "katze",
+    "drohne": "drohne"
+  }
+}

@@ -795,3 +795,25 @@ fertigen Karten und beim Spielen die Geschichte.
   (`werkzeuge/bruecken.py`, `werkzeuge/schilder.py`); fremde Pakete passen im Stil nicht.
 - Nacht 9./10.11.2026 (Freigabe des Autors): Nacharbeit Akt 1 und alle Karten von Akt 2 in drei
   Varianten (Auftrag `auftraege/runde5_karten.md`), Revision am Morgen.
+
+## 10.11.2026 – Notizen des Autors zu den Akt-1-Karten (Revisionsseite, Runde 7)
+
+Alle Akt-1-Außenkarten bleiben bei Variante A. Die Antworten auf die Fragen des Autors gelten nach
+Regel 9; Widerspruch genügt.
+
+- **Park, Reisebrett:** Es liegt sichtbar auf Abernathys Bank, als Haken für Szene 7.
+- **Park, Halfpipe:** Die Geschichte braucht sie (Jo, Szene 10). Im Katalog gibt es keine, deshalb
+  zeichnet niedrig-1 eine eigene neben dem Basketballplatz.
+- **Park, Schulbus:** Er ist erst in Szene 13 zu sehen; bis dahin ist die Haltestelle leer.
+- **Park, Steg:** Die Absperrung am morschen Steg ist S5 und bleibt dort. Der begehbare Steg führt
+  zum Zedernpfad, und das Schild „Sturmschaden“ (S2) steht an seinem Ende.
+- **Maple Falls, Straße links:**
+  - Westlich liegt in der Geschichte nichts.
+  - Birch Lane endet sichtbar in einem Wendehammer mit Hecke.
+  - Das Haus hinter dem Diner erreicht man über einen Weg um das Diner, nicht durch einen
+    Hinterausgang.
+- **Landstraße:** Das hängende „Garage Sale“-Schild wird ein stehendes Schild auf einem Pfosten.
+- **Cedar Creek:** Der Prellbock steht quer zum Gleis, wenn nötig als eigenes Bild.
+- **Neue Regel 10.55:** Statisten und Tiere stehen nicht im Wasser und nicht in Möbeln oder
+  Bäumen. Schwimmer werden nur bis zur Wasserlinie gezeichnet. Der Kartenbauer prüft das. Die
+  Befunde aller Karten stehen in `auftraege/nacharbeit_10_55.md`.

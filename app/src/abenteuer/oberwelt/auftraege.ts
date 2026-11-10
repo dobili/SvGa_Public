@@ -10,6 +10,7 @@
  * Stärke aus Profil, Zustand (abgelenkt, überheblich) und Abenteuerwertung A, Farbe nach der
  * Begegnung.
  */
+import type { Stufennummer } from "../../engine/stufen";
 import { farbeAus } from "../anbindung/partiestart";
 import { startFen960, zufallsnummer960 } from "../../schach/chess960";
 import type { Begegnungsdaten, Gegnerdaten, Spieldaten } from "../daten/laden";
@@ -148,7 +149,16 @@ export function auftragFuer(
     ...(b.freieKarten ? { freieKarten: b.freieKarten } : {}),
     ...(b.abgelenktAb ? { abgelenktAb: b.abgelenktAb } : {}),
     ...(b.variante ? { variante: b.variante } : {}),
+    ...(b.kandidaten ? { kandidaten: b.kandidaten } : {}),
+    ...(b.buchbruch
+      ? { buchbruch: { linie: b.buchbruch.linie, stufe: alsStufe(b.buchbruch.stufe) } }
+      : {}),
   };
+}
+
+/** Eine Stufe aus den Daten (1 bis 10, vom Schema geprüft) als Stufennummer. */
+function alsStufe(zahl: number): Stufennummer {
+  return Math.min(Math.max(Math.round(zahl), 1), 10) as Stufennummer;
 }
 
 /** Wer in einer FEN am Zug ist (zweites Feld); fehlt es, Weiß. */

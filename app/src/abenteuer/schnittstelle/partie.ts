@@ -15,6 +15,7 @@
  * Buchbezug: Die Schlüsselmomente nennen die Fehlerkategorien des Buches (W1–W10, F1–F10) mit
  * Kapitel und Fundstelle, so wie die Karte „Fehler mit Buchbezug“ der App.
  */
+import type { Stufennummer } from "../../engine/stufen";
 import type { Color } from "chessops/types";
 import type { Phase } from "../../schach/phase";
 import type { Zugklasse } from "../../spiel/auswertung";
@@ -90,6 +91,10 @@ export interface Partieauftrag {
   readonly abgelenktAb?: { readonly halbzug: number; readonly faktor: number };
   /** Schachvariante (Akt 4): „blind“ = Blindschach. Zählt nie für Nadel, Wertung oder App. */
   readonly variante?: "blind" | "schach960";
+  /** Kandidatenwahl: erster Zug des Gegners zufällig aus diesen (spiel/vorgabezug.ts). */
+  readonly kandidaten?: readonly string[];
+  /** Buch und Bruch: Linie des Gegners, danach diese Stufe (spiel/vorgabezug.ts). */
+  readonly buchbruch?: { readonly linie: readonly string[]; readonly stufe: Stufennummer };
 }
 
 /**

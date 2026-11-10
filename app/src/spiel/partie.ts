@@ -130,6 +130,10 @@ export interface Partieeinstellung {
      * Figuren auf dem Brett aus (Rahmenklasse in app/App.tsx); die Regeln bleiben die normalen.
      */
     readonly variante?: "blind" | "schach960";
+    /** Kandidatenwahl für den ersten Zug des Gegners (spiel/vorgabezug.ts, Stream auf Weg 4). */
+    readonly kandidaten?: readonly string[];
+    /** Buch und Bruch (spiel/vorgabezug.ts, Z-1 auf Weg 10): Linie, danach schwache Stufe. */
+    readonly buchbruch?: { readonly linie: readonly string[]; readonly stufe: Stufennummer };
   };
 }
 

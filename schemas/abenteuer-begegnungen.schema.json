@@ -111,6 +111,27 @@
             "faktor": { "type": "number", "minimum": 1, "maximum": 3 }
           }
         },
+        "kandidaten": {
+          "description": "Partieform Kandidatenwahl (Runde 6, docs/spiel/15 Abschnitt 4): Der erste Zug des Gegners ist zufällig einer dieser Züge (SAN, englisch), einer davon ein Fehler",
+          "type": "array",
+          "minItems": 2,
+          "maxItems": 5,
+          "items": { "type": "string", "minLength": 2 }
+        },
+        "buchbruch": {
+          "description": "Partieform Buch und Bruch (Runde 6, Z-1): Der Gegner folgt der Linie (SAN beider Seiten ab der Startstellung); weicht der Leser ab, spielt er auf dieser Stufe weiter",
+          "type": "object",
+          "additionalProperties": false,
+          "required": ["linie", "stufe"],
+          "properties": {
+            "linie": {
+              "type": "array",
+              "minItems": 2,
+              "items": { "type": "string", "minLength": 2 }
+            },
+            "stufe": { "type": "integer", "minimum": 1, "maximum": 10 }
+          }
+        },
         "freieKarten": {
           "description": "Karten, die in dieser Begegnung ohne Besitz zusätzlich im Deck liegen, nicht verbraucht werden und nicht für Nadel und Wertung zählen (R29: Mentor-Zug im Halbfinale); Kennungen aus karten.json",
           "type": "array",

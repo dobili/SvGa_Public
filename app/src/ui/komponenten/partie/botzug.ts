@@ -38,6 +38,7 @@ import {
 import { aktuelleFen, type Partie, type Partiezug } from "../../../spiel/partie";
 import { phaseVon } from "../../../spiel/phasen";
 import { sanZuUci, uciZuSan } from "../../../spiel/zuege";
+import { stufeNachBruch, vorgegebenerZug } from "../../../spiel/vorgabezug";
 import { GRUNDSTELLUNG } from "../../../spiel/stellungsbau";
 import { BUCHTIEFE, linienzug, praxiszug, type Praxisbuch } from "../../../engine/praxisbuch";
 import { wertungInZeitklasse } from "../../../engine/zeitklassenabstand";
@@ -82,6 +83,9 @@ export function stufeFuer(
   partie: Pick<Partie, "zuege" | "einstellung">,
   fen: string,
 ): Stufennummer {
+  // Buch und Bruch (spiel/vorgabezug.ts): nach dem Abweichen sofort die schwache Stufe.
+  const bruch = stufeNachBruch(partie);
+  if (bruch !== null) return bruch;
   const ziel = partie.einstellung.stufenJePhase[phaseVon(fen) ?? "mittelspiel"];
   const letzter = [...partie.zuege].reverse().find((z) => z.von === "engine" && z.stufe);
   return letzter?.stufe ? naechsteStufe(letzter.stufe, ziel) : ziel;
@@ -305,6 +309,20 @@ function praxisErgebnis(
 }
 
 /**
+ * Ein vorgegebener Zug einer Abenteuer-Partie (Kandidatenwahl, Buch und Bruch; spiel/vorgabezug.ts),
+ * sonst null. Gilt als Buchzug (schnelle Bedenkzeit, keine Fehlerart).
+ */
+function vorgabeErgebnis(
+  partie: Partie,
+  fen: string,
+): { zug: Partiezug; uci: string; breite?: number } | null {
+  const san = vorgegebenerZug(partie, (z) => sanZuUci(fen, z) !== null, Math.random);
+  const uci = san ? sanZuUci(fen, san) : null;
+  if (!san || !uci) return null;
+  return { zug: { san, von: "engine", quelle: "buch", fehler: null, verlust: 0 }, uci };
+}
+
+/**
  * Rechnet in der laufenden Partie den Zug des Bots (Eröffnungsbuch oder Engine mit Stufe, Profil
  * und Bedenkzeit) und schreibt ihn samt Uhr in die gespeicherte Partie.
  */
@@ -320,7 +338,9 @@ export async function normalerBotzug(
   const profil = jetzige ? profilDerPartie(jetzige, start) : undefined;
   const st = stufe(stufennummer);
   // Gruppenmodus: alle Bots der Stufe beraten sich (engine/gruppenwahl.ts), ohne Eröffnungsbuch.
-  const ausBuch = jetzige ? praxisErgebnis(jetzige, fen, st.wertung, buchzuege) : null;
+  const ausBuch = jetzige
+    ? (vorgabeErgebnis(jetzige, fen) ?? praxisErgebnis(jetzige, fen, st.wertung, buchzuege))
+    : null;
   const ergebnis =
     ausBuch ??
     (jetzige && gruppenstufe(jetzige.einstellung.bot) !== null

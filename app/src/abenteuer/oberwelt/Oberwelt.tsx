@@ -556,6 +556,7 @@ export function Oberwelt() {
       schreibe(neu);
       const auftrag = r.naechste ? auftragFuer(r.naechste, welt.daten, neu) : null;
       if (auftrag) startePartie(auftrag, []);
+      if (r.ende?.bestanden) melde({ art: "aufgaben", runde: eintrag.kennung });
       if (r.ende) {
         setzeMeldung(
           tSpiel("oberwelt.simultan.ende", {
@@ -576,6 +577,8 @@ export function Oberwelt() {
       ...aktuell,
       dialogvariablen: { ...aktuell.dialogvariablen, ...variablenNachRunde(kennung, bestanden) },
     });
+    // Quests warten darauf wie auf eine bestandene Aufgabenrunde (Vorschlag mittel-1).
+    if (bestanden) melde({ art: "aufgaben", runde: kennung });
   };
 
   /** Der Aktionsknopf: Dialog des Auslösers oder der Figur öffnen. */

@@ -2,6 +2,7 @@
   "karte": "steinbruch.grube",
   "datei": "karten/varianten/steinbruch-grube-b.json",
   "art": "aussen",
+  "toenung": "nebel",
   "beschreibung": "Der alte Steinbruch Hargrove & Söhne hinter Ironwood, ein kühler Morgen. Die Zufahrt aus Schotter kommt am Westrand oben an der Bruchkante an, an Birken und einer Kette mit altem Schild vorbei. Oben steht die Vorarbeiterbude aus Wellblech mit einer Bank davor, ein Aussichtspunkt blickt in die Tiefe. Zwei Felskanten fallen in Stufen ab, Rampen führen in Serpentinen hinunter. Unten auf der Sohle aus Schotter liegt ein stilles Wasserloch, in dem sich der Himmel spiegelt; ein Lorengleis läuft vom Stollenmund im Südosten quer über die Sohle zu einem alten Radlader, der dort seit Jahren steht. An der Felswand im Nordosten Graffiti von 1980. Felswände schließen die Grube ringsum. Der Stollenmund ist in einen Felsblock gebaut; sein Bild ist ein Bauteil und wirkt deshalb an den Seiten angeschnitten, der Fels deckt das ab. Variante B, die schlichtere: Rampen im Westen, Wasserloch rechts vor dem Stollen, wenig Gerät; die Bude steht links.",
   "wand": "fels",
   "boden": "schotter",

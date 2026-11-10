@@ -1356,5 +1356,8 @@
   "quest.lebendschach.schritt2": "Sprich nach der Partie mit Ezra.",
   "quest.lieferung.titel": "Darlenes Lieferung",
   "quest.lieferung.schritt1": "Bring Darlenes Kiste zu Dolores auf den Sommerjahrmarkt.",
-  "figur.faehrmann.name": "Der Fährmann"
+  "figur.faehrmann.name": "Der Fährmann",
+  "gegenstand.batterie.name": "Bootsbatterie",
+  "quest.batterie.titel": "Eine Batterie für das Leuchtfeuer",
+  "quest.batterie.schritt1": "Hol im Eisenwarenladen der Altstadt eine Batterie für das Leuchtfeuer der Pelikaninsel."
 }

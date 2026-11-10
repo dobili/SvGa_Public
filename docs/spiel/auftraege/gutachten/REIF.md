@@ -50,10 +50,10 @@ Stand: 10.11.2026.
 | summit-city-bergstation                        | 10.11.2026 | `mittel-4-runde9-2.md`                  |
 | summit-city-bergladen                          | 10.11.2026 | `mittel-4-runde9-2.md`                  |
 | summit-city-huette                             | 10.11.2026 | `summit-city.md`                        |
-| hochebene-schule (mit vor-diplom)              | 10.11.2026 | `mittel-4-busse.md`                     |
+| hochebene-schule (mit vor-diplom)              | 10.11.2026 | `mittel-4-diner-schule.md`              |
 | sternwarte-felsnase                            | 10.11.2026 | `mittel-4-runde9-2.md`                  |
 | sternwarte-kuppel                              | 10.11.2026 | `mittel-4-restpunkte.md`                |
-| weg-desert-summit-diner                        | 10.11.2026 | `mittel-4-runde9-2.md`                  |
+| weg-desert-summit-diner (mit neon)             | 10.11.2026 | `mittel-4-diner-schule.md`              |
 | weg-delacroix-desert-felsbogen                 | 10.11.2026 | `mittel-4-restpunkte.md`                |
 | maple-falls-park                               | 10.11.2026 | `niedrig-1-5.md`                        |
 | cedar-creek-aussen                             | 10.11.2026 | `silicon-bay-lobby-serverraum-3.md`     |

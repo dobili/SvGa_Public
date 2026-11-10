@@ -11,7 +11,7 @@
  "tilewidth": 16,
  "tileheight": 16,
  "nextlayerid": 5,
- "nextobjectid": 92,
+ "nextobjectid": 99,
  "layers": [
   {
    "id": 1,
@@ -14581,37 +14581,9 @@
     },
     {
      "id": 11,
-     "name": "eidechse",
-     "type": "tier",
-     "x": 1728,
-     "y": 208,
-     "width": 16,
-     "height": 16,
-     "rotation": 0,
-     "visible": true,
-     "properties": [
-      {
-       "name": "von",
-       "type": "string",
-       "value": "108,13"
-      },
-      {
-       "name": "bis",
-       "type": "string",
-       "value": "112,13"
-      },
-      {
-       "name": "verhalten",
-       "type": "string",
-       "value": "flitzen"
-      }
-     ]
-    },
-    {
-     "id": 12,
-     "name": "roadrunner",
-     "type": "tier",
-     "x": 1440,
+     "name": "vogelbeobachterin",
+     "type": "statist",
+     "x": 640,
      "y": 256,
      "width": 16,
      "height": 16,
@@ -14621,26 +14593,36 @@
       {
        "name": "von",
        "type": "string",
-       "value": "84,16"
+       "value": "40,16"
       },
       {
        "name": "bis",
        "type": "string",
-       "value": "96,16"
+       "value": "40,16"
       },
       {
-       "name": "verhalten",
+       "name": "tun",
        "type": "string",
-       "value": "rennen"
+       "value": "schaut durch ihr Fernglas"
+      },
+      {
+       "name": "wann",
+       "type": "string",
+       "value": "tag"
+      },
+      {
+       "name": "sagt",
+       "type": "string",
+       "value": "statist.wegDelacroixDesert.canyonpfad.vogelbeobachterin"
       }
      ]
     },
     {
-     "id": 13,
-     "name": "geier",
-     "type": "tier",
-     "x": 288,
-     "y": 96,
+     "id": 12,
+     "name": "geologe",
+     "type": "statist",
+     "x": 1440,
+     "y": 240,
      "width": 16,
      "height": 16,
      "rotation": 0,
@@ -14649,12 +14631,177 @@
       {
        "name": "von",
        "type": "string",
-       "value": "12,6"
+       "value": "90,15"
       },
       {
        "name": "bis",
        "type": "string",
-       "value": "24,6"
+       "value": "90,15"
+      },
+      {
+       "name": "tun",
+       "type": "string",
+       "value": "klopft Steine aus der Felswand"
+      },
+      {
+       "name": "wann",
+       "type": "string",
+       "value": "tag"
+      },
+      {
+       "name": "sagt",
+       "type": "string",
+       "value": "statist.wegDelacroixDesert.canyonpfad.geologe"
+      }
+     ]
+    },
+    {
+     "id": 13,
+     "name": "wanderpaar",
+     "type": "statist",
+     "x": 2000,
+     "y": 240,
+     "width": 16,
+     "height": 16,
+     "rotation": 0,
+     "visible": true,
+     "properties": [
+      {
+       "name": "von",
+       "type": "string",
+       "value": "125,15"
+      },
+      {
+       "name": "bis",
+       "type": "string",
+       "value": "118,15"
+      },
+      {
+       "name": "tun",
+       "type": "string",
+       "value": "steigt langsam den Pfad hinab"
+      },
+      {
+       "name": "wann",
+       "type": "string",
+       "value": "tag"
+      },
+      {
+       "name": "sagt",
+       "type": "string",
+       "value": "statist.wegDelacroixDesert.canyonpfad.wanderpaar"
+      }
+     ]
+    },
+    {
+     "id": 14,
+     "name": "fotograf",
+     "type": "statist",
+     "x": 2384,
+     "y": 240,
+     "width": 16,
+     "height": 16,
+     "rotation": 0,
+     "visible": true,
+     "properties": [
+      {
+       "name": "von",
+       "type": "string",
+       "value": "149,15"
+      },
+      {
+       "name": "bis",
+       "type": "string",
+       "value": "149,15"
+      },
+      {
+       "name": "tun",
+       "type": "string",
+       "value": "fotografiert die Felswände"
+      },
+      {
+       "name": "wann",
+       "type": "string",
+       "value": "tag"
+      }
+     ]
+    },
+    {
+     "id": 15,
+     "name": "roadrunner",
+     "type": "tier",
+     "x": 240,
+     "y": 192,
+     "width": 16,
+     "height": 16,
+     "rotation": 0,
+     "visible": true,
+     "properties": [
+      {
+       "name": "von",
+       "type": "string",
+       "value": "15,12"
+      },
+      {
+       "name": "bis",
+       "type": "string",
+       "value": "21,12"
+      },
+      {
+       "name": "verhalten",
+       "type": "string",
+       "value": "flitzen"
+      }
+     ]
+    },
+    {
+     "id": 16,
+     "name": "eidechse",
+     "type": "tier",
+     "x": 624,
+     "y": 256,
+     "width": 16,
+     "height": 16,
+     "rotation": 0,
+     "visible": true,
+     "properties": [
+      {
+       "name": "von",
+       "type": "string",
+       "value": "39,16"
+      },
+      {
+       "name": "bis",
+       "type": "string",
+       "value": "45,16"
+      },
+      {
+       "name": "verhalten",
+       "type": "string",
+       "value": "flitzen"
+      }
+     ]
+    },
+    {
+     "id": 17,
+     "name": "geier",
+     "type": "tier",
+     "x": 1040,
+     "y": 256,
+     "width": 16,
+     "height": 16,
+     "rotation": 0,
+     "visible": true,
+     "properties": [
+      {
+       "name": "von",
+       "type": "string",
+       "value": "65,16"
+      },
+      {
+       "name": "bis",
+       "type": "string",
+       "value": "71,16"
       },
       {
        "name": "verhalten",
@@ -14664,150 +14811,96 @@
      ]
     },
     {
-     "id": 14,
-     "name": "iw5Prellbock",
-     "type": "moebel",
-     "x": 2208,
-     "y": 64,
-     "width": 32,
-     "height": 32,
-     "rotation": 0,
-     "visible": true,
-     "properties": [
-      {
-       "name": "tiefe",
-       "type": "int",
-       "value": 88
-      },
-      {
-       "name": "kollision",
-       "type": "bool",
-       "value": true
-      }
-     ]
-    },
-    {
-     "id": 15,
-     "name": "iw5Prellbock",
-     "type": "moebel",
-     "x": 2208,
-     "y": 96,
-     "width": 32,
-     "height": 32,
-     "rotation": 0,
-     "visible": true,
-     "properties": [
-      {
-       "name": "tiefe",
-       "type": "int",
-       "value": 120
-      },
-      {
-       "name": "kollision",
-       "type": "bool",
-       "value": true
-      }
-     ]
-    },
-    {
-     "id": 16,
-     "name": "cc4Gleis",
-     "type": "moebel",
-     "x": 2240,
-     "y": 64,
-     "width": 16,
-     "height": 32,
-     "rotation": 0,
-     "visible": true,
-     "properties": [
-      {
-       "name": "tiefe",
-       "type": "int",
-       "value": 88
-      },
-      {
-       "name": "kollision",
-       "type": "bool",
-       "value": true
-      }
-     ]
-    },
-    {
-     "id": 17,
-     "name": "cc4Gleis",
-     "type": "moebel",
-     "x": 2240,
-     "y": 96,
-     "width": 16,
-     "height": 32,
-     "rotation": 0,
-     "visible": true,
-     "properties": [
-      {
-       "name": "tiefe",
-       "type": "int",
-       "value": 120
-      },
-      {
-       "name": "kollision",
-       "type": "bool",
-       "value": true
-      }
-     ]
-    },
-    {
      "id": 18,
-     "name": "cc4Gleis",
-     "type": "moebel",
-     "x": 2256,
-     "y": 64,
+     "name": "wuestenhase",
+     "type": "tier",
+     "x": 1424,
+     "y": 240,
      "width": 16,
-     "height": 32,
+     "height": 16,
      "rotation": 0,
      "visible": true,
      "properties": [
       {
-       "name": "tiefe",
-       "type": "int",
-       "value": 88
+       "name": "von",
+       "type": "string",
+       "value": "89,15"
       },
       {
-       "name": "kollision",
-       "type": "bool",
-       "value": true
+       "name": "bis",
+       "type": "string",
+       "value": "95,15"
+      },
+      {
+       "name": "verhalten",
+       "type": "string",
+       "value": "flitzen"
       }
      ]
     },
     {
      "id": 19,
-     "name": "cc4Gleis",
-     "type": "moebel",
-     "x": 2256,
-     "y": 96,
+     "name": "kojote",
+     "type": "tier",
+     "x": 1840,
+     "y": 224,
      "width": 16,
-     "height": 32,
+     "height": 16,
      "rotation": 0,
      "visible": true,
      "properties": [
       {
-       "name": "tiefe",
-       "type": "int",
-       "value": 120
+       "name": "von",
+       "type": "string",
+       "value": "115,14"
       },
       {
-       "name": "kollision",
-       "type": "bool",
-       "value": true
+       "name": "bis",
+       "type": "string",
+       "value": "121,14"
+      },
+      {
+       "name": "verhalten",
+       "type": "string",
+       "value": "ausweichen"
       }
      ]
     },
     {
      "id": 20,
-     "name": "cc4Gleis",
-     "type": "moebel",
-     "x": 2272,
-     "y": 64,
+     "name": "falke",
+     "type": "tier",
+     "x": 2240,
+     "y": 272,
      "width": 16,
+     "height": 16,
+     "rotation": 0,
+     "visible": true,
+     "properties": [
+      {
+       "name": "von",
+       "type": "string",
+       "value": "140,17"
+      },
+      {
+       "name": "bis",
+       "type": "string",
+       "value": "146,17"
+      },
+      {
+       "name": "verhalten",
+       "type": "string",
+       "value": "fliegen"
+      }
+     ]
+    },
+    {
+     "id": 21,
+     "name": "iw5Prellbock",
+     "type": "moebel",
+     "x": 2208,
+     "y": 64,
+     "width": 32,
      "height": 32,
      "rotation": 0,
      "visible": true,
@@ -14816,29 +14909,6 @@
        "name": "tiefe",
        "type": "int",
        "value": 88
-      },
-      {
-       "name": "kollision",
-       "type": "bool",
-       "value": true
-      }
-     ]
-    },
-    {
-     "id": 21,
-     "name": "cc4Gleis",
-     "type": "moebel",
-     "x": 2272,
-     "y": 96,
-     "width": 16,
-     "height": 32,
-     "rotation": 0,
-     "visible": true,
-     "properties": [
-      {
-       "name": "tiefe",
-       "type": "int",
-       "value": 120
       },
       {
        "name": "kollision",
@@ -14849,11 +14919,11 @@
     },
     {
      "id": 22,
-     "name": "cc4Gleis",
+     "name": "iw5Prellbock",
      "type": "moebel",
-     "x": 2288,
-     "y": 64,
-     "width": 16,
+     "x": 2208,
+     "y": 96,
+     "width": 32,
      "height": 32,
      "rotation": 0,
      "visible": true,
@@ -14861,7 +14931,7 @@
       {
        "name": "tiefe",
        "type": "int",
-       "value": 88
+       "value": 120
       },
       {
        "name": "kollision",
@@ -14874,6 +14944,167 @@
      "id": 23,
      "name": "cc4Gleis",
      "type": "moebel",
+     "x": 2240,
+     "y": 64,
+     "width": 16,
+     "height": 32,
+     "rotation": 0,
+     "visible": true,
+     "properties": [
+      {
+       "name": "tiefe",
+       "type": "int",
+       "value": 88
+      },
+      {
+       "name": "kollision",
+       "type": "bool",
+       "value": true
+      }
+     ]
+    },
+    {
+     "id": 24,
+     "name": "cc4Gleis",
+     "type": "moebel",
+     "x": 2240,
+     "y": 96,
+     "width": 16,
+     "height": 32,
+     "rotation": 0,
+     "visible": true,
+     "properties": [
+      {
+       "name": "tiefe",
+       "type": "int",
+       "value": 120
+      },
+      {
+       "name": "kollision",
+       "type": "bool",
+       "value": true
+      }
+     ]
+    },
+    {
+     "id": 25,
+     "name": "cc4Gleis",
+     "type": "moebel",
+     "x": 2256,
+     "y": 64,
+     "width": 16,
+     "height": 32,
+     "rotation": 0,
+     "visible": true,
+     "properties": [
+      {
+       "name": "tiefe",
+       "type": "int",
+       "value": 88
+      },
+      {
+       "name": "kollision",
+       "type": "bool",
+       "value": true
+      }
+     ]
+    },
+    {
+     "id": 26,
+     "name": "cc4Gleis",
+     "type": "moebel",
+     "x": 2256,
+     "y": 96,
+     "width": 16,
+     "height": 32,
+     "rotation": 0,
+     "visible": true,
+     "properties": [
+      {
+       "name": "tiefe",
+       "type": "int",
+       "value": 120
+      },
+      {
+       "name": "kollision",
+       "type": "bool",
+       "value": true
+      }
+     ]
+    },
+    {
+     "id": 27,
+     "name": "cc4Gleis",
+     "type": "moebel",
+     "x": 2272,
+     "y": 64,
+     "width": 16,
+     "height": 32,
+     "rotation": 0,
+     "visible": true,
+     "properties": [
+      {
+       "name": "tiefe",
+       "type": "int",
+       "value": 88
+      },
+      {
+       "name": "kollision",
+       "type": "bool",
+       "value": true
+      }
+     ]
+    },
+    {
+     "id": 28,
+     "name": "cc4Gleis",
+     "type": "moebel",
+     "x": 2272,
+     "y": 96,
+     "width": 16,
+     "height": 32,
+     "rotation": 0,
+     "visible": true,
+     "properties": [
+      {
+       "name": "tiefe",
+       "type": "int",
+       "value": 120
+      },
+      {
+       "name": "kollision",
+       "type": "bool",
+       "value": true
+      }
+     ]
+    },
+    {
+     "id": 29,
+     "name": "cc4Gleis",
+     "type": "moebel",
+     "x": 2288,
+     "y": 64,
+     "width": 16,
+     "height": 32,
+     "rotation": 0,
+     "visible": true,
+     "properties": [
+      {
+       "name": "tiefe",
+       "type": "int",
+       "value": 88
+      },
+      {
+       "name": "kollision",
+       "type": "bool",
+       "value": true
+      }
+     ]
+    },
+    {
+     "id": 30,
+     "name": "cc4Gleis",
+     "type": "moebel",
      "x": 2288,
      "y": 96,
      "width": 16,
@@ -14894,172 +15125,11 @@
      ]
     },
     {
-     "id": 24,
-     "name": "cc4Gleis",
-     "type": "moebel",
-     "x": 2304,
-     "y": 64,
-     "width": 16,
-     "height": 32,
-     "rotation": 0,
-     "visible": true,
-     "properties": [
-      {
-       "name": "tiefe",
-       "type": "int",
-       "value": 88
-      },
-      {
-       "name": "kollision",
-       "type": "bool",
-       "value": true
-      }
-     ]
-    },
-    {
-     "id": 25,
-     "name": "cc4Gleis",
-     "type": "moebel",
-     "x": 2304,
-     "y": 96,
-     "width": 16,
-     "height": 32,
-     "rotation": 0,
-     "visible": true,
-     "properties": [
-      {
-       "name": "tiefe",
-       "type": "int",
-       "value": 120
-      },
-      {
-       "name": "kollision",
-       "type": "bool",
-       "value": true
-      }
-     ]
-    },
-    {
-     "id": 26,
-     "name": "cc4Gleis",
-     "type": "moebel",
-     "x": 2320,
-     "y": 64,
-     "width": 16,
-     "height": 32,
-     "rotation": 0,
-     "visible": true,
-     "properties": [
-      {
-       "name": "tiefe",
-       "type": "int",
-       "value": 88
-      },
-      {
-       "name": "kollision",
-       "type": "bool",
-       "value": true
-      }
-     ]
-    },
-    {
-     "id": 27,
-     "name": "cc4Gleis",
-     "type": "moebel",
-     "x": 2320,
-     "y": 96,
-     "width": 16,
-     "height": 32,
-     "rotation": 0,
-     "visible": true,
-     "properties": [
-      {
-       "name": "tiefe",
-       "type": "int",
-       "value": 120
-      },
-      {
-       "name": "kollision",
-       "type": "bool",
-       "value": true
-      }
-     ]
-    },
-    {
-     "id": 28,
-     "name": "cc4Gleis",
-     "type": "moebel",
-     "x": 2336,
-     "y": 64,
-     "width": 16,
-     "height": 32,
-     "rotation": 0,
-     "visible": true,
-     "properties": [
-      {
-       "name": "tiefe",
-       "type": "int",
-       "value": 88
-      },
-      {
-       "name": "kollision",
-       "type": "bool",
-       "value": true
-      }
-     ]
-    },
-    {
-     "id": 29,
-     "name": "cc4Gleis",
-     "type": "moebel",
-     "x": 2336,
-     "y": 96,
-     "width": 16,
-     "height": 32,
-     "rotation": 0,
-     "visible": true,
-     "properties": [
-      {
-       "name": "tiefe",
-       "type": "int",
-       "value": 120
-      },
-      {
-       "name": "kollision",
-       "type": "bool",
-       "value": true
-      }
-     ]
-    },
-    {
-     "id": 30,
-     "name": "cc4Gleis",
-     "type": "moebel",
-     "x": 2352,
-     "y": 64,
-     "width": 16,
-     "height": 32,
-     "rotation": 0,
-     "visible": true,
-     "properties": [
-      {
-       "name": "tiefe",
-       "type": "int",
-       "value": 88
-      },
-      {
-       "name": "kollision",
-       "type": "bool",
-       "value": true
-      }
-     ]
-    },
-    {
      "id": 31,
      "name": "cc4Gleis",
      "type": "moebel",
-     "x": 2352,
-     "y": 96,
+     "x": 2304,
+     "y": 64,
      "width": 16,
      "height": 32,
      "rotation": 0,
@@ -15068,7 +15138,7 @@
       {
        "name": "tiefe",
        "type": "int",
-       "value": 120
+       "value": 88
       },
       {
        "name": "kollision",
@@ -15081,8 +15151,8 @@
      "id": 32,
      "name": "cc4Gleis",
      "type": "moebel",
-     "x": 2368,
-     "y": 64,
+     "x": 2304,
+     "y": 96,
      "width": 16,
      "height": 32,
      "rotation": 0,
@@ -15091,7 +15161,7 @@
       {
        "name": "tiefe",
        "type": "int",
-       "value": 88
+       "value": 120
       },
       {
        "name": "kollision",
@@ -15104,6 +15174,167 @@
      "id": 33,
      "name": "cc4Gleis",
      "type": "moebel",
+     "x": 2320,
+     "y": 64,
+     "width": 16,
+     "height": 32,
+     "rotation": 0,
+     "visible": true,
+     "properties": [
+      {
+       "name": "tiefe",
+       "type": "int",
+       "value": 88
+      },
+      {
+       "name": "kollision",
+       "type": "bool",
+       "value": true
+      }
+     ]
+    },
+    {
+     "id": 34,
+     "name": "cc4Gleis",
+     "type": "moebel",
+     "x": 2320,
+     "y": 96,
+     "width": 16,
+     "height": 32,
+     "rotation": 0,
+     "visible": true,
+     "properties": [
+      {
+       "name": "tiefe",
+       "type": "int",
+       "value": 120
+      },
+      {
+       "name": "kollision",
+       "type": "bool",
+       "value": true
+      }
+     ]
+    },
+    {
+     "id": 35,
+     "name": "cc4Gleis",
+     "type": "moebel",
+     "x": 2336,
+     "y": 64,
+     "width": 16,
+     "height": 32,
+     "rotation": 0,
+     "visible": true,
+     "properties": [
+      {
+       "name": "tiefe",
+       "type": "int",
+       "value": 88
+      },
+      {
+       "name": "kollision",
+       "type": "bool",
+       "value": true
+      }
+     ]
+    },
+    {
+     "id": 36,
+     "name": "cc4Gleis",
+     "type": "moebel",
+     "x": 2336,
+     "y": 96,
+     "width": 16,
+     "height": 32,
+     "rotation": 0,
+     "visible": true,
+     "properties": [
+      {
+       "name": "tiefe",
+       "type": "int",
+       "value": 120
+      },
+      {
+       "name": "kollision",
+       "type": "bool",
+       "value": true
+      }
+     ]
+    },
+    {
+     "id": 37,
+     "name": "cc4Gleis",
+     "type": "moebel",
+     "x": 2352,
+     "y": 64,
+     "width": 16,
+     "height": 32,
+     "rotation": 0,
+     "visible": true,
+     "properties": [
+      {
+       "name": "tiefe",
+       "type": "int",
+       "value": 88
+      },
+      {
+       "name": "kollision",
+       "type": "bool",
+       "value": true
+      }
+     ]
+    },
+    {
+     "id": 38,
+     "name": "cc4Gleis",
+     "type": "moebel",
+     "x": 2352,
+     "y": 96,
+     "width": 16,
+     "height": 32,
+     "rotation": 0,
+     "visible": true,
+     "properties": [
+      {
+       "name": "tiefe",
+       "type": "int",
+       "value": 120
+      },
+      {
+       "name": "kollision",
+       "type": "bool",
+       "value": true
+      }
+     ]
+    },
+    {
+     "id": 39,
+     "name": "cc4Gleis",
+     "type": "moebel",
+     "x": 2368,
+     "y": 64,
+     "width": 16,
+     "height": 32,
+     "rotation": 0,
+     "visible": true,
+     "properties": [
+      {
+       "name": "tiefe",
+       "type": "int",
+       "value": 88
+      },
+      {
+       "name": "kollision",
+       "type": "bool",
+       "value": true
+      }
+     ]
+    },
+    {
+     "id": 40,
+     "name": "cc4Gleis",
+     "type": "moebel",
      "x": 2368,
      "y": 96,
      "width": 16,
@@ -15124,172 +15355,11 @@
      ]
     },
     {
-     "id": 34,
-     "name": "cc4Gleis",
-     "type": "moebel",
-     "x": 2384,
-     "y": 64,
-     "width": 16,
-     "height": 32,
-     "rotation": 0,
-     "visible": true,
-     "properties": [
-      {
-       "name": "tiefe",
-       "type": "int",
-       "value": 88
-      },
-      {
-       "name": "kollision",
-       "type": "bool",
-       "value": true
-      }
-     ]
-    },
-    {
-     "id": 35,
-     "name": "cc4Gleis",
-     "type": "moebel",
-     "x": 2384,
-     "y": 96,
-     "width": 16,
-     "height": 32,
-     "rotation": 0,
-     "visible": true,
-     "properties": [
-      {
-       "name": "tiefe",
-       "type": "int",
-       "value": 120
-      },
-      {
-       "name": "kollision",
-       "type": "bool",
-       "value": true
-      }
-     ]
-    },
-    {
-     "id": 36,
-     "name": "cc4Gleis",
-     "type": "moebel",
-     "x": 2400,
-     "y": 64,
-     "width": 16,
-     "height": 32,
-     "rotation": 0,
-     "visible": true,
-     "properties": [
-      {
-       "name": "tiefe",
-       "type": "int",
-       "value": 88
-      },
-      {
-       "name": "kollision",
-       "type": "bool",
-       "value": true
-      }
-     ]
-    },
-    {
-     "id": 37,
-     "name": "cc4Gleis",
-     "type": "moebel",
-     "x": 2400,
-     "y": 96,
-     "width": 16,
-     "height": 32,
-     "rotation": 0,
-     "visible": true,
-     "properties": [
-      {
-       "name": "tiefe",
-       "type": "int",
-       "value": 120
-      },
-      {
-       "name": "kollision",
-       "type": "bool",
-       "value": true
-      }
-     ]
-    },
-    {
-     "id": 38,
-     "name": "cc4Gleis",
-     "type": "moebel",
-     "x": 2416,
-     "y": 64,
-     "width": 16,
-     "height": 32,
-     "rotation": 0,
-     "visible": true,
-     "properties": [
-      {
-       "name": "tiefe",
-       "type": "int",
-       "value": 88
-      },
-      {
-       "name": "kollision",
-       "type": "bool",
-       "value": true
-      }
-     ]
-    },
-    {
-     "id": 39,
-     "name": "cc4Gleis",
-     "type": "moebel",
-     "x": 2416,
-     "y": 96,
-     "width": 16,
-     "height": 32,
-     "rotation": 0,
-     "visible": true,
-     "properties": [
-      {
-       "name": "tiefe",
-       "type": "int",
-       "value": 120
-      },
-      {
-       "name": "kollision",
-       "type": "bool",
-       "value": true
-      }
-     ]
-    },
-    {
-     "id": 40,
-     "name": "cc4Gleis",
-     "type": "moebel",
-     "x": 2432,
-     "y": 64,
-     "width": 16,
-     "height": 32,
-     "rotation": 0,
-     "visible": true,
-     "properties": [
-      {
-       "name": "tiefe",
-       "type": "int",
-       "value": 88
-      },
-      {
-       "name": "kollision",
-       "type": "bool",
-       "value": true
-      }
-     ]
-    },
-    {
      "id": 41,
      "name": "cc4Gleis",
      "type": "moebel",
-     "x": 2432,
-     "y": 96,
+     "x": 2384,
+     "y": 64,
      "width": 16,
      "height": 32,
      "rotation": 0,
@@ -15298,7 +15368,7 @@
       {
        "name": "tiefe",
        "type": "int",
-       "value": 120
+       "value": 88
       },
       {
        "name": "kollision",
@@ -15311,8 +15381,8 @@
      "id": 42,
      "name": "cc4Gleis",
      "type": "moebel",
-     "x": 2448,
-     "y": 64,
+     "x": 2384,
+     "y": 96,
      "width": 16,
      "height": 32,
      "rotation": 0,
@@ -15321,7 +15391,7 @@
       {
        "name": "tiefe",
        "type": "int",
-       "value": 88
+       "value": 120
       },
       {
        "name": "kollision",
@@ -15334,6 +15404,167 @@
      "id": 43,
      "name": "cc4Gleis",
      "type": "moebel",
+     "x": 2400,
+     "y": 64,
+     "width": 16,
+     "height": 32,
+     "rotation": 0,
+     "visible": true,
+     "properties": [
+      {
+       "name": "tiefe",
+       "type": "int",
+       "value": 88
+      },
+      {
+       "name": "kollision",
+       "type": "bool",
+       "value": true
+      }
+     ]
+    },
+    {
+     "id": 44,
+     "name": "cc4Gleis",
+     "type": "moebel",
+     "x": 2400,
+     "y": 96,
+     "width": 16,
+     "height": 32,
+     "rotation": 0,
+     "visible": true,
+     "properties": [
+      {
+       "name": "tiefe",
+       "type": "int",
+       "value": 120
+      },
+      {
+       "name": "kollision",
+       "type": "bool",
+       "value": true
+      }
+     ]
+    },
+    {
+     "id": 45,
+     "name": "cc4Gleis",
+     "type": "moebel",
+     "x": 2416,
+     "y": 64,
+     "width": 16,
+     "height": 32,
+     "rotation": 0,
+     "visible": true,
+     "properties": [
+      {
+       "name": "tiefe",
+       "type": "int",
+       "value": 88
+      },
+      {
+       "name": "kollision",
+       "type": "bool",
+       "value": true
+      }
+     ]
+    },
+    {
+     "id": 46,
+     "name": "cc4Gleis",
+     "type": "moebel",
+     "x": 2416,
+     "y": 96,
+     "width": 16,
+     "height": 32,
+     "rotation": 0,
+     "visible": true,
+     "properties": [
+      {
+       "name": "tiefe",
+       "type": "int",
+       "value": 120
+      },
+      {
+       "name": "kollision",
+       "type": "bool",
+       "value": true
+      }
+     ]
+    },
+    {
+     "id": 47,
+     "name": "cc4Gleis",
+     "type": "moebel",
+     "x": 2432,
+     "y": 64,
+     "width": 16,
+     "height": 32,
+     "rotation": 0,
+     "visible": true,
+     "properties": [
+      {
+       "name": "tiefe",
+       "type": "int",
+       "value": 88
+      },
+      {
+       "name": "kollision",
+       "type": "bool",
+       "value": true
+      }
+     ]
+    },
+    {
+     "id": 48,
+     "name": "cc4Gleis",
+     "type": "moebel",
+     "x": 2432,
+     "y": 96,
+     "width": 16,
+     "height": 32,
+     "rotation": 0,
+     "visible": true,
+     "properties": [
+      {
+       "name": "tiefe",
+       "type": "int",
+       "value": 120
+      },
+      {
+       "name": "kollision",
+       "type": "bool",
+       "value": true
+      }
+     ]
+    },
+    {
+     "id": 49,
+     "name": "cc4Gleis",
+     "type": "moebel",
+     "x": 2448,
+     "y": 64,
+     "width": 16,
+     "height": 32,
+     "rotation": 0,
+     "visible": true,
+     "properties": [
+      {
+       "name": "tiefe",
+       "type": "int",
+       "value": 88
+      },
+      {
+       "name": "kollision",
+       "type": "bool",
+       "value": true
+      }
+     ]
+    },
+    {
+     "id": 50,
+     "name": "cc4Gleis",
+     "type": "moebel",
      "x": 2448,
      "y": 96,
      "width": 16,
@@ -15354,172 +15585,11 @@
      ]
     },
     {
-     "id": 44,
-     "name": "cc4Gleis",
-     "type": "moebel",
-     "x": 2464,
-     "y": 64,
-     "width": 16,
-     "height": 32,
-     "rotation": 0,
-     "visible": true,
-     "properties": [
-      {
-       "name": "tiefe",
-       "type": "int",
-       "value": 88
-      },
-      {
-       "name": "kollision",
-       "type": "bool",
-       "value": true
-      }
-     ]
-    },
-    {
-     "id": 45,
-     "name": "cc4Gleis",
-     "type": "moebel",
-     "x": 2464,
-     "y": 96,
-     "width": 16,
-     "height": 32,
-     "rotation": 0,
-     "visible": true,
-     "properties": [
-      {
-       "name": "tiefe",
-       "type": "int",
-       "value": 120
-      },
-      {
-       "name": "kollision",
-       "type": "bool",
-       "value": true
-      }
-     ]
-    },
-    {
-     "id": 46,
-     "name": "cc4Gleis",
-     "type": "moebel",
-     "x": 2480,
-     "y": 64,
-     "width": 16,
-     "height": 32,
-     "rotation": 0,
-     "visible": true,
-     "properties": [
-      {
-       "name": "tiefe",
-       "type": "int",
-       "value": 88
-      },
-      {
-       "name": "kollision",
-       "type": "bool",
-       "value": true
-      }
-     ]
-    },
-    {
-     "id": 47,
-     "name": "cc4Gleis",
-     "type": "moebel",
-     "x": 2480,
-     "y": 96,
-     "width": 16,
-     "height": 32,
-     "rotation": 0,
-     "visible": true,
-     "properties": [
-      {
-       "name": "tiefe",
-       "type": "int",
-       "value": 120
-      },
-      {
-       "name": "kollision",
-       "type": "bool",
-       "value": true
-      }
-     ]
-    },
-    {
-     "id": 48,
-     "name": "cc4Gleis",
-     "type": "moebel",
-     "x": 2496,
-     "y": 64,
-     "width": 16,
-     "height": 32,
-     "rotation": 0,
-     "visible": true,
-     "properties": [
-      {
-       "name": "tiefe",
-       "type": "int",
-       "value": 88
-      },
-      {
-       "name": "kollision",
-       "type": "bool",
-       "value": true
-      }
-     ]
-    },
-    {
-     "id": 49,
-     "name": "cc4Gleis",
-     "type": "moebel",
-     "x": 2496,
-     "y": 96,
-     "width": 16,
-     "height": 32,
-     "rotation": 0,
-     "visible": true,
-     "properties": [
-      {
-       "name": "tiefe",
-       "type": "int",
-       "value": 120
-      },
-      {
-       "name": "kollision",
-       "type": "bool",
-       "value": true
-      }
-     ]
-    },
-    {
-     "id": 50,
-     "name": "cc4Gleis",
-     "type": "moebel",
-     "x": 2512,
-     "y": 64,
-     "width": 16,
-     "height": 32,
-     "rotation": 0,
-     "visible": true,
-     "properties": [
-      {
-       "name": "tiefe",
-       "type": "int",
-       "value": 88
-      },
-      {
-       "name": "kollision",
-       "type": "bool",
-       "value": true
-      }
-     ]
-    },
-    {
      "id": 51,
      "name": "cc4Gleis",
      "type": "moebel",
-     "x": 2512,
-     "y": 96,
+     "x": 2464,
+     "y": 64,
      "width": 16,
      "height": 32,
      "rotation": 0,
@@ -15528,7 +15598,7 @@
       {
        "name": "tiefe",
        "type": "int",
-       "value": 120
+       "value": 88
       },
       {
        "name": "kollision",
@@ -15541,6 +15611,167 @@
      "id": 52,
      "name": "cc4Gleis",
      "type": "moebel",
+     "x": 2464,
+     "y": 96,
+     "width": 16,
+     "height": 32,
+     "rotation": 0,
+     "visible": true,
+     "properties": [
+      {
+       "name": "tiefe",
+       "type": "int",
+       "value": 120
+      },
+      {
+       "name": "kollision",
+       "type": "bool",
+       "value": true
+      }
+     ]
+    },
+    {
+     "id": 53,
+     "name": "cc4Gleis",
+     "type": "moebel",
+     "x": 2480,
+     "y": 64,
+     "width": 16,
+     "height": 32,
+     "rotation": 0,
+     "visible": true,
+     "properties": [
+      {
+       "name": "tiefe",
+       "type": "int",
+       "value": 88
+      },
+      {
+       "name": "kollision",
+       "type": "bool",
+       "value": true
+      }
+     ]
+    },
+    {
+     "id": 54,
+     "name": "cc4Gleis",
+     "type": "moebel",
+     "x": 2480,
+     "y": 96,
+     "width": 16,
+     "height": 32,
+     "rotation": 0,
+     "visible": true,
+     "properties": [
+      {
+       "name": "tiefe",
+       "type": "int",
+       "value": 120
+      },
+      {
+       "name": "kollision",
+       "type": "bool",
+       "value": true
+      }
+     ]
+    },
+    {
+     "id": 55,
+     "name": "cc4Gleis",
+     "type": "moebel",
+     "x": 2496,
+     "y": 64,
+     "width": 16,
+     "height": 32,
+     "rotation": 0,
+     "visible": true,
+     "properties": [
+      {
+       "name": "tiefe",
+       "type": "int",
+       "value": 88
+      },
+      {
+       "name": "kollision",
+       "type": "bool",
+       "value": true
+      }
+     ]
+    },
+    {
+     "id": 56,
+     "name": "cc4Gleis",
+     "type": "moebel",
+     "x": 2496,
+     "y": 96,
+     "width": 16,
+     "height": 32,
+     "rotation": 0,
+     "visible": true,
+     "properties": [
+      {
+       "name": "tiefe",
+       "type": "int",
+       "value": 120
+      },
+      {
+       "name": "kollision",
+       "type": "bool",
+       "value": true
+      }
+     ]
+    },
+    {
+     "id": 57,
+     "name": "cc4Gleis",
+     "type": "moebel",
+     "x": 2512,
+     "y": 64,
+     "width": 16,
+     "height": 32,
+     "rotation": 0,
+     "visible": true,
+     "properties": [
+      {
+       "name": "tiefe",
+       "type": "int",
+       "value": 88
+      },
+      {
+       "name": "kollision",
+       "type": "bool",
+       "value": true
+      }
+     ]
+    },
+    {
+     "id": 58,
+     "name": "cc4Gleis",
+     "type": "moebel",
+     "x": 2512,
+     "y": 96,
+     "width": 16,
+     "height": 32,
+     "rotation": 0,
+     "visible": true,
+     "properties": [
+      {
+       "name": "tiefe",
+       "type": "int",
+       "value": 120
+      },
+      {
+       "name": "kollision",
+       "type": "bool",
+       "value": true
+      }
+     ]
+    },
+    {
+     "id": 59,
+     "name": "cc4Gleis",
+     "type": "moebel",
      "x": 2528,
      "y": 64,
      "width": 16,
@@ -15561,7 +15792,7 @@
      ]
     },
     {
-     "id": 53,
+     "id": 60,
      "name": "cc4Gleis",
      "type": "moebel",
      "x": 2528,
@@ -15584,7 +15815,7 @@
      ]
     },
     {
-     "id": 54,
+     "id": 61,
      "name": "mfBank",
      "type": "moebel",
      "x": 2320,
@@ -15607,7 +15838,7 @@
      ]
     },
     {
-     "id": 55,
+     "id": 62,
      "name": "dd6Wuestenbahnhof",
      "type": "moebel",
      "x": 2256,
@@ -15630,7 +15861,7 @@
      ]
     },
     {
-     "id": 56,
+     "id": 63,
      "name": "dd6Wasserturm",
      "type": "moebel",
      "x": 2400,
@@ -15653,7 +15884,7 @@
      ]
     },
     {
-     "id": 57,
+     "id": 64,
      "name": "wg4Schild",
      "type": "moebel",
      "x": 1920,
@@ -15676,7 +15907,7 @@
      ]
     },
     {
-     "id": 58,
+     "id": 65,
      "name": "dd6SteinFlach",
      "type": "moebel",
      "x": 976,
@@ -15699,7 +15930,7 @@
      ]
     },
     {
-     "id": 59,
+     "id": 66,
      "name": "felsKlein",
      "type": "moebel",
      "x": 464,
@@ -15722,7 +15953,7 @@
      ]
     },
     {
-     "id": 60,
+     "id": 67,
      "name": "fels",
      "type": "moebel",
      "x": 512,
@@ -15745,7 +15976,7 @@
      ]
     },
     {
-     "id": 61,
+     "id": 68,
      "name": "fels",
      "type": "moebel",
      "x": 464,
@@ -15768,7 +15999,7 @@
      ]
     },
     {
-     "id": 62,
+     "id": 69,
      "name": "dd6Saguaro",
      "type": "moebel",
      "x": 64,
@@ -15791,7 +16022,7 @@
      ]
     },
     {
-     "id": 63,
+     "id": 70,
      "name": "dd6KaktusKlein",
      "type": "moebel",
      "x": 176,
@@ -15814,7 +16045,7 @@
      ]
     },
     {
-     "id": 64,
+     "id": 71,
      "name": "dd6KaktusBluehend",
      "type": "moebel",
      "x": 288,
@@ -15837,7 +16068,7 @@
      ]
     },
     {
-     "id": 65,
+     "id": 72,
      "name": "dd6Saguaro",
      "type": "moebel",
      "x": 624,
@@ -15860,7 +16091,7 @@
      ]
     },
     {
-     "id": 66,
+     "id": 73,
      "name": "dd6KaktusKlein",
      "type": "moebel",
      "x": 736,
@@ -15883,7 +16114,7 @@
      ]
     },
     {
-     "id": 67,
+     "id": 74,
      "name": "dd6KaktusBluehend",
      "type": "moebel",
      "x": 848,
@@ -15906,7 +16137,7 @@
      ]
     },
     {
-     "id": 68,
+     "id": 75,
      "name": "dd6Saguaro",
      "type": "moebel",
      "x": 960,
@@ -15929,7 +16160,7 @@
      ]
     },
     {
-     "id": 69,
+     "id": 76,
      "name": "dd6KaktusKlein",
      "type": "moebel",
      "x": 1072,
@@ -15952,7 +16183,7 @@
      ]
     },
     {
-     "id": 70,
+     "id": 77,
      "name": "dd6KaktusBluehend",
      "type": "moebel",
      "x": 1184,
@@ -15975,7 +16206,7 @@
      ]
     },
     {
-     "id": 71,
+     "id": 78,
      "name": "dd6Saguaro",
      "type": "moebel",
      "x": 1296,
@@ -15998,7 +16229,7 @@
      ]
     },
     {
-     "id": 72,
+     "id": 79,
      "name": "dd6KaktusKlein",
      "type": "moebel",
      "x": 1632,
@@ -16021,7 +16252,7 @@
      ]
     },
     {
-     "id": 73,
+     "id": 80,
      "name": "dd6KaktusBluehend",
      "type": "moebel",
      "x": 1744,
@@ -16044,7 +16275,7 @@
      ]
     },
     {
-     "id": 74,
+     "id": 81,
      "name": "dd6Saguaro",
      "type": "moebel",
      "x": 1856,
@@ -16067,7 +16298,7 @@
      ]
     },
     {
-     "id": 75,
+     "id": 82,
      "name": "dd6KaktusKlein",
      "type": "moebel",
      "x": 1968,
@@ -16090,7 +16321,7 @@
      ]
     },
     {
-     "id": 76,
+     "id": 83,
      "name": "dd6KaktusBluehend",
      "type": "moebel",
      "x": 2080,
@@ -16113,7 +16344,7 @@
      ]
     },
     {
-     "id": 77,
+     "id": 84,
      "name": "fels",
      "type": "moebel",
      "x": 112,
@@ -16136,7 +16367,7 @@
      ]
     },
     {
-     "id": 78,
+     "id": 85,
      "name": "felsKlein",
      "type": "moebel",
      "x": 288,
@@ -16159,7 +16390,7 @@
      ]
     },
     {
-     "id": 79,
+     "id": 86,
      "name": "felsKlein",
      "type": "moebel",
      "x": 640,
@@ -16182,7 +16413,7 @@
      ]
     },
     {
-     "id": 80,
+     "id": 87,
      "name": "fels",
      "type": "moebel",
      "x": 816,
@@ -16205,7 +16436,7 @@
      ]
     },
     {
-     "id": 81,
+     "id": 88,
      "name": "fels",
      "type": "moebel",
      "x": 1168,
@@ -16228,7 +16459,7 @@
      ]
     },
     {
-     "id": 82,
+     "id": 89,
      "name": "felsKlein",
      "type": "moebel",
      "x": 1344,
@@ -16251,7 +16482,7 @@
      ]
     },
     {
-     "id": 83,
+     "id": 90,
      "name": "fels",
      "type": "moebel",
      "x": 1520,
@@ -16274,7 +16505,7 @@
      ]
     },
     {
-     "id": 84,
+     "id": 91,
      "name": "felsKlein",
      "type": "moebel",
      "x": 1696,
@@ -16297,7 +16528,7 @@
      ]
     },
     {
-     "id": 85,
+     "id": 92,
      "name": "fels",
      "type": "moebel",
      "x": 1872,
@@ -16320,7 +16551,7 @@
      ]
     },
     {
-     "id": 86,
+     "id": 93,
      "name": "felsKlein",
      "type": "moebel",
      "x": 2048,
@@ -16343,7 +16574,7 @@
      ]
     },
     {
-     "id": 87,
+     "id": 94,
      "name": "cc3Kiesel",
      "type": "moebel",
      "x": 1680,
@@ -16366,7 +16597,7 @@
      ]
     },
     {
-     "id": 88,
+     "id": 95,
      "name": "cc3Kiesel",
      "type": "moebel",
      "x": 1728,
@@ -16389,7 +16620,7 @@
      ]
     },
     {
-     "id": 89,
+     "id": 96,
      "name": "cc3Kiesel",
      "type": "moebel",
      "x": 1776,
@@ -16412,7 +16643,7 @@
      ]
     },
     {
-     "id": 90,
+     "id": 97,
      "name": "cc3Kiesel",
      "type": "moebel",
      "x": 1824,
@@ -16435,7 +16666,7 @@
      ]
     },
     {
-     "id": 91,
+     "id": 98,
      "name": "dd6Geierkreis",
      "type": "moebel",
      "x": 288,

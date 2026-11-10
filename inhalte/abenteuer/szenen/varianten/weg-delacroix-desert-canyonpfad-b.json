@@ -458,32 +458,109 @@
   ],
   "belebung": [
     {
-      "name": "eidechse",
-      "typ": "tier",
-      "feld": [108, 19],
+      "name": "vogelbeobachterin",
+      "typ": "statist",
+      "feld": [40, 15],
       "eigenschaften": {
-        "von": "108,19",
-        "bis": "112,19",
-        "verhalten": "flitzen"
+        "von": "40,15",
+        "bis": "40,15",
+        "tun": "schaut durch ihr Fernglas",
+        "wann": "tag",
+        "sagt": "statist.wegDelacroixDesert.canyonpfad.vogelbeobachterin"
+      }
+    },
+    {
+      "name": "geologe",
+      "typ": "statist",
+      "feld": [90, 13],
+      "eigenschaften": {
+        "von": "90,13",
+        "bis": "90,13",
+        "tun": "klopft Steine aus der Felswand",
+        "wann": "tag",
+        "sagt": "statist.wegDelacroixDesert.canyonpfad.geologe"
+      }
+    },
+    {
+      "name": "wanderpaar",
+      "typ": "statist",
+      "feld": [125, 15],
+      "eigenschaften": {
+        "von": "125,15",
+        "bis": "117,15",
+        "tun": "steigt langsam den Pfad hinab",
+        "wann": "tag",
+        "sagt": "statist.wegDelacroixDesert.canyonpfad.wanderpaar"
+      }
+    },
+    {
+      "name": "fotograf",
+      "typ": "statist",
+      "feld": [149, 15],
+      "eigenschaften": {
+        "von": "149,15",
+        "bis": "149,15",
+        "tun": "fotografiert die Felswände",
+        "wann": "tag"
       }
     },
     {
       "name": "roadrunner",
       "typ": "tier",
-      "feld": [90, 10],
+      "feld": [16, 10],
       "eigenschaften": {
-        "von": "84,10",
-        "bis": "96,10",
-        "verhalten": "rennen"
+        "von": "16,10",
+        "bis": "22,10",
+        "verhalten": "flitzen"
+      }
+    },
+    {
+      "name": "eidechse",
+      "typ": "tier",
+      "feld": [40, 14],
+      "eigenschaften": {
+        "von": "40,14",
+        "bis": "46,13",
+        "verhalten": "flitzen"
       }
     },
     {
       "name": "geier",
       "typ": "tier",
-      "feld": [18, 6],
+      "feld": [65, 18],
       "eigenschaften": {
-        "von": "12,6",
-        "bis": "24,6",
+        "von": "65,18",
+        "bis": "71,18",
+        "verhalten": "fliegen"
+      }
+    },
+    {
+      "name": "wuestenhase",
+      "typ": "tier",
+      "feld": [90, 10],
+      "eigenschaften": {
+        "von": "90,10",
+        "bis": "95,10",
+        "verhalten": "flitzen"
+      }
+    },
+    {
+      "name": "kojote",
+      "typ": "tier",
+      "feld": [114, 15],
+      "eigenschaften": {
+        "von": "114,15",
+        "bis": "120,15",
+        "verhalten": "ausweichen"
+      }
+    },
+    {
+      "name": "falke",
+      "typ": "tier",
+      "feld": [140, 17],
+      "eigenschaften": {
+        "von": "140,17",
+        "bis": "146,17",
         "verhalten": "fliegen"
       }
     }

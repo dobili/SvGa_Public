@@ -126,10 +126,10 @@
     "#.....sss..............................#",
     "#.....sss..............................#",
     "#.....sss..............................#",
-    "#.....sss..............................#",
-    "#.....sss..............................#",
-    "#.....sss..............................#",
-    "#.....sss..............................#",
+    "#.....ssskkkkkkkkkk....................#",
+    "#.....ssskkkkkkkkkk....................#",
+    "#.....ssskkkkkkkkkk....................#",
+    "#.....ssskkkkkkkkkk....................#",
     "#.....sss..............................#",
     "#.....sss..............................#",
     "#.....sss..............................#",
@@ -605,6 +605,21 @@
     {
       "moebel": "wds6Fels",
       "feld": [35, 126]
+    },
+    {
+      "moebel": "wds6SattelzugBlau",
+      "feld": [9, 112],
+      "id": "ereignis111"
+    },
+    {
+      "moebel": "wg6Kisten",
+      "feld": [20, 113],
+      "id": "ereignis112"
+    },
+    {
+      "moebel": "wg6Kisten",
+      "feld": [21, 110],
+      "id": "ereignis113"
     }
   ],
   "ausloeser": [
@@ -662,23 +677,110 @@
       }
     },
     {
+      "name": "radfahrerin",
+      "typ": "statist",
+      "feld": [20, 40],
+      "eigenschaften": {
+        "von": "20,40",
+        "bis": "20,32",
+        "tun": "schiebt ihr Rennrad bergauf",
+        "wann": "tag",
+        "sagt": "statist.wegDesertSummit.bergstrasse.radfahrerin"
+      }
+    },
+    {
+      "name": "schaeferin",
+      "typ": "statist",
+      "feld": [25, 65],
+      "eigenschaften": {
+        "von": "25,65",
+        "bis": "25,65",
+        "tun": "treibt ihre Ziegen über den Hang",
+        "wann": "tag",
+        "sagt": "statist.wegDesertSummit.bergstrasse.schaeferin"
+      }
+    },
+    {
+      "name": "wanderer",
+      "typ": "statist",
+      "feld": [30, 100],
+      "eigenschaften": {
+        "von": "30,100",
+        "bis": "30,100",
+        "tun": "macht Rast auf einem Stein",
+        "wann": "tag",
+        "sagt": "statist.wegDesertSummit.bergstrasse.wanderer"
+      }
+    },
+    {
+      "name": "fotograf",
+      "typ": "statist",
+      "feld": [20, 10],
+      "eigenschaften": {
+        "von": "20,10",
+        "bis": "20,10",
+        "tun": "fotografiert die Kehren von oben",
+        "wann": "tag"
+      }
+    },
+    {
       "name": "ziegen",
       "typ": "tier",
-      "feld": [14, 100],
+      "feld": [28, 66],
       "eigenschaften": {
-        "von": "14,100",
-        "bis": "17,100",
+        "von": "28,66",
+        "bis": "32,66",
         "verhalten": "sitzen"
+      }
+    },
+    {
+      "name": "murmeltier",
+      "typ": "tier",
+      "feld": [31, 20],
+      "eigenschaften": {
+        "von": "31,20",
+        "bis": "34,20",
+        "verhalten": "ausweichen"
+      }
+    },
+    {
+      "name": "adler",
+      "typ": "tier",
+      "feld": [20, 51],
+      "eigenschaften": {
+        "von": "20,51",
+        "bis": "20,71",
+        "verhalten": "fliegen"
+      }
+    },
+    {
+      "name": "reh",
+      "typ": "tier",
+      "feld": [10, 81],
+      "eigenschaften": {
+        "von": "10,81",
+        "bis": "14,81",
+        "verhalten": "ausweichen"
       }
     },
     {
       "name": "eichhoernchen",
       "typ": "tier",
-      "feld": [30, 18],
+      "feld": [30, 88],
       "eigenschaften": {
-        "von": "30,18",
-        "bis": "33,18",
-        "verhalten": "ausweichen"
+        "von": "30,88",
+        "bis": "35,88",
+        "verhalten": "flitzen"
+      }
+    },
+    {
+      "name": "schmetterlinge",
+      "typ": "tier",
+      "feld": [15, 124],
+      "eigenschaften": {
+        "von": "15,124",
+        "bis": "23,124",
+        "verhalten": "fliegen"
       }
     }
   ]

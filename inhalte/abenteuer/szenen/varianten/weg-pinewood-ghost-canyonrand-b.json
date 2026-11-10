@@ -507,6 +507,11 @@
     {
       "moebel": "fels",
       "feld": [134, 16]
+    },
+    {
+      "moebel": "cp8Finkenzeichen",
+      "feld": [99, 16],
+      "id": "ereignis115"
     }
   ],
   "ausloeser": [
@@ -548,22 +553,108 @@
     {
       "name": "kletterer",
       "typ": "statist",
-      "feld": [63, 16],
+      "feld": [69, 16],
       "eigenschaften": {
-        "von": "63,16",
-        "bis": "63,16",
+        "von": "69,16",
+        "bis": "69,16",
         "tun": "sichert das Seil",
+        "wann": "tag",
+        "sagt": "statist.wegPinewoodGhost.canyonrand.kletterer"
+      }
+    },
+    {
+      "name": "wanderin",
+      "typ": "statist",
+      "feld": [29, 13],
+      "eigenschaften": {
+        "von": "29,13",
+        "bis": "29,13",
+        "tun": "sucht etwas zwischen den Kiefern",
+        "wann": "tag",
+        "sagt": "statist.wegPinewoodGhost.canyonrand.wanderin"
+      }
+    },
+    {
+      "name": "campbetreuerin",
+      "typ": "statist",
+      "feld": [12, 14],
+      "eigenschaften": {
+        "von": "12,14",
+        "bis": "12,14",
+        "tun": "führt eine Kindergruppe zum Canyon",
+        "wann": "tag",
+        "sagt": "statist.wegPinewoodGhost.canyonrand.campbetreuerin"
+      }
+    },
+    {
+      "name": "fotograf",
+      "typ": "statist",
+      "feld": [100, 12],
+      "eigenschaften": {
+        "von": "100,12",
+        "bis": "100,12",
+        "tun": "fotografiert den Canyon",
         "wann": "tag"
       }
     },
     {
       "name": "adler",
       "typ": "tier",
-      "feld": [110, 23],
+      "feld": [110, 24],
       "eigenschaften": {
-        "von": "100,23",
-        "bis": "120,23",
+        "von": "110,24",
+        "bis": "130,24",
         "verhalten": "fliegen"
+      }
+    },
+    {
+      "name": "eichhoernchen",
+      "typ": "tier",
+      "feld": [25, 10],
+      "eigenschaften": {
+        "von": "25,10",
+        "bis": "31,10",
+        "verhalten": "flitzen"
+      }
+    },
+    {
+      "name": "eidechse",
+      "typ": "tier",
+      "feld": [80, 10],
+      "eigenschaften": {
+        "von": "80,10",
+        "bis": "85,10",
+        "verhalten": "flitzen"
+      }
+    },
+    {
+      "name": "geier",
+      "typ": "tier",
+      "feld": [60, 24],
+      "eigenschaften": {
+        "von": "60,24",
+        "bis": "75,24",
+        "verhalten": "fliegen"
+      }
+    },
+    {
+      "name": "hase",
+      "typ": "tier",
+      "feld": [130, 8],
+      "eigenschaften": {
+        "von": "130,8",
+        "bis": "124,8",
+        "verhalten": "flitzen"
+      }
+    },
+    {
+      "name": "specht",
+      "typ": "tier",
+      "feld": [8, 6],
+      "eigenschaften": {
+        "von": "8,6",
+        "bis": "8,6",
+        "verhalten": "sitzen"
       }
     }
   ],

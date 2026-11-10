@@ -190,6 +190,42 @@
       "art": "feuer",
       "zustand": "gebraucht",
       "stil": "natur"
+    },
+    "cp8Waschhaus": {
+      "quelle": "modern-exteriors/Modern_Exteriors_16x16/ME_Theme_Sorter_16x16/3_City_Props_Singles_16x16/ME_Singles_City_Props_16x16_Container_House_1.png",
+      "breite": 80,
+      "hoehe": 80,
+      "kollision": true,
+      "art": "gebaeude",
+      "zustand": "gebraucht",
+      "stil": "einfach"
+    },
+    "cp8WohnwagenKlein": {
+      "quelle": "modern-exteriors/Modern_Exteriors_16x16/ME_Theme_Sorter_16x16/11_Camping_Singles_16x16/ME_Singles_Camping_16x16_Mobile_House_Small_3.png",
+      "breite": 96,
+      "hoehe": 96,
+      "kollision": true,
+      "art": "gebaeude",
+      "zustand": "gebraucht",
+      "stil": "einfach"
+    },
+    "cp8WohnwagenMittel": {
+      "quelle": "modern-exteriors/Modern_Exteriors_16x16/ME_Theme_Sorter_16x16/11_Camping_Singles_16x16/ME_Singles_Camping_16x16_Mobile_House_Medium_4.png",
+      "breite": 128,
+      "hoehe": 96,
+      "kollision": true,
+      "art": "gebaeude",
+      "zustand": "gebraucht",
+      "stil": "einfach"
+    },
+    "cp8Schuppen": {
+      "quelle": "modern-exteriors/Modern_Exteriors_16x16/ME_Theme_Sorter_16x16/3_City_Props_Singles_16x16/ME_Singles_City_Props_16x16_Junk_Shack_1.png",
+      "breite": 96,
+      "hoehe": 96,
+      "kollision": true,
+      "art": "gebaeude",
+      "zustand": "gebraucht",
+      "stil": "rustikal"
     }
   }
 }

@@ -38,6 +38,7 @@ Szene heißt die Datei in `inhalte/abenteuer/szenen/` ohne `.json`.
 - [x] maple-falls-clubraum (dritte Prüfung, mittel-1, Datei `maple-falls-clubraum-3.md`)
 - [x] weg-ironwood-silicon-glasbruecke (zweite Prüfung, Winter, mittel-1, Datei `weg-ironwood-silicon-glasbruecke-2.md`; Bilder aus `bildwuensche/zero_werbung.py`)
 - [x] weg-ironwood-silicon-raststaette (zweite Prüfung, Winter, Küste, Zufahrt, mittel-1, Datei `weg-ironwood-silicon-raststaette-2.md`; Bilder aus `bildwuensche/gartenhaus.py`, `fassaden_zweck.py`, `wartehaus.py`)
+- [ ] maple-falls-clubraum (vierte Prüfung, mittel-1, Datei `maple-falls-clubraum-4.md`; Bilder aus `bildwuensche/clubraum_moebel.py`)
 
 - [x] silicon-bay-akademie (zweite Prüfung, mittel-3; Bilder privat ab a579b56c; Datei `silicon-bay-akademie-2.md`)
 - [x] silicon-bay-altstadt (zweite Prüfung, jetzt Winter, mittel-3; Datei `silicon-bay-altstadt-2.md`)

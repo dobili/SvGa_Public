@@ -281,7 +281,9 @@ kommt in Runde 6 der kleine Raum mit Z-1), zwei alte Zapfsäulen unter einem Vor
   - Drinnen steht der Greifarm Z-1 (`cp8Greifarm`, Bild `greifarm_z1`) vor einem Tisch mit Brett.
 - **Quest `wegPinewoodGhost.gespenst`** (klein):
   - Partie gegen Z-1 (Gegner `wegPinewoodGhost.z1`).
-  - Z-1 spielt fest Italienisch ohne Abweichung. Den Bruch nach dem Buch baut mittel-2.
+  - Buch und Bruch: Z-1 spielt die Hauptvariante des Italieners (Giuoco Pianissimo, 20 Halbzüge bis
+    10…Re8) in voller Stärke; weicht der Leser ab, spielt er auf Stufe 2 weiter (`buchbruch` in
+    begegnungen.json).
   - Lohn: Fund `bauerZ1` (Bauer aus Metall) und 25 Münzen.
   - Das Porträt `z1.svg` ist eine eigene Pixelzeichnung.
 - **Funde:**

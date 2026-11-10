@@ -2854,7 +2854,10 @@
           "kennung": "wegDesertSummit.diner",
           "datei": "karten/weg-desert-summit-diner.json",
           "name": "ort.wegDesertSummit.diner",
-          "innen": false
+          "innen": false,
+          "zustaende": {
+            "neonRepariert": "karten/weg-desert-summit-diner-neon.json"
+          }
         },
         {
           "kennung": "wegDesertSummit.bergstrasse",

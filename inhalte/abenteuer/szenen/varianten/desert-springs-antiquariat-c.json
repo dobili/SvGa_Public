@@ -145,5 +145,31 @@
   ],
   "zustand": ["gebraucht", "alt", "neu"],
   "stil": ["klassisch", "einfach", "rustikal", "modern", "industrie"],
-  "variante": "c"
+  "variante": "c",
+  "belebung": [
+    {
+      "name": "sammler",
+      "typ": "statist",
+      "feld": [6, 8],
+      "eigenschaften": {
+        "von": "6,8",
+        "bis": "6,8",
+        "tun": "blättert in einem alten Schachbuch",
+        "wann": "tag",
+        "sagt": "statist.desertSprings.antiquariat.sammler"
+      }
+    },
+    {
+      "name": "leserin",
+      "typ": "statist",
+      "feld": [11, 10],
+      "eigenschaften": {
+        "von": "11,10",
+        "bis": "11,10",
+        "tun": "sitzt mit einem Buch in der Leseecke",
+        "wann": "tag",
+        "sagt": "statist.desertSprings.antiquariat.leserin"
+      }
+    }
+  ]
 }

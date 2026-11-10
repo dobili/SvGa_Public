@@ -250,6 +250,123 @@
       "blick": "unten",
       "zustand": "gebraucht",
       "stil": "laendlich"
+    },
+    "sc8ChaletBraun": {
+      "quelle": "modern-exteriors/Modern_Exteriors_16x16/ME_Theme_Sorter_16x16/7_Villas_Singles_16x16/ME_Singles_Villas_16x16_Villa_2.png",
+      "breite": 144,
+      "hoehe": 208,
+      "kollision": true,
+      "art": "haus",
+      "zustand": "gebraucht",
+      "stil": "rustikal"
+    },
+    "sc8ChaletBlau": {
+      "quelle": "modern-exteriors/Modern_Exteriors_16x16/ME_Theme_Sorter_16x16/7_Villas_Singles_16x16/ME_Singles_Villas_16x16_Villa_4.png",
+      "breite": 144,
+      "hoehe": 208,
+      "kollision": true,
+      "art": "haus",
+      "zustand": "gebraucht",
+      "stil": "rustikal"
+    },
+    "sc8Lodge": {
+      "quelle": "modern-exteriors/Modern_Exteriors_16x16/ME_Theme_Sorter_16x16/24_Additional_Houses_Singles_16x16/24_Additional_Houses_Country_House_16x16.png",
+      "breite": 288,
+      "hoehe": 256,
+      "kollision": true,
+      "art": "haus",
+      "zustand": "gebraucht",
+      "stil": "rustikal"
+    },
+    "sc8Hof": {
+      "quelle": "modern-farm/Single_Files_16x16/0_Complete_Tileset_Singles_16x16/Farmer_House_1_16x16.png",
+      "breite": 128,
+      "hoehe": 160,
+      "kollision": true,
+      "art": "haus",
+      "zustand": "gebraucht",
+      "stil": "laendlich"
+    },
+    "sc8HofBreit": {
+      "quelle": "modern-farm/Single_Files_16x16/0_Complete_Tileset_Singles_16x16/Farmer_House_2_16x16.png",
+      "breite": 160,
+      "hoehe": 144,
+      "kollision": true,
+      "art": "haus",
+      "zustand": "gebraucht",
+      "stil": "laendlich"
+    },
+    "sc8Stadel": {
+      "quelle": "modern-farm/Single_Files_16x16/0_Complete_Tileset_Singles_16x16/Barn_Small_16x16.png",
+      "breite": 128,
+      "hoehe": 160,
+      "kollision": true,
+      "art": "haus",
+      "zustand": "gebraucht",
+      "stil": "laendlich"
+    },
+    "sc8Post": {
+      "quelle": "modern-exteriors/Modern_Exteriors_16x16/ME_Theme_Sorter_16x16/22_Post_Office_Singles_16x16/22_Post_Office_16x16_Building_2.png",
+      "breite": 128,
+      "hoehe": 208,
+      "kollision": true,
+      "art": "haus",
+      "zustand": "gebraucht",
+      "stil": "klassisch"
+    },
+    "sc8Bergwacht": {
+      "quelle": "modern-exteriors/Modern_Exteriors_16x16/ME_Theme_Sorter_16x16/18_Fire_Station_Singles_16x16/ME_Singles_Fire_Station_16x16_Building.png",
+      "breite": 256,
+      "hoehe": 240,
+      "kollision": true,
+      "art": "haus",
+      "zustand": "gebraucht",
+      "stil": "modern"
+    },
+    "sc8Haus": {
+      "quelle": "modern-exteriors/Modern_Exteriors_16x16/ME_Theme_Sorter_16x16/24_Additional_Houses_Singles_16x16/24_Additional_Houses_One_Story_House_16x16.png",
+      "breite": 256,
+      "hoehe": 224,
+      "kollision": true,
+      "art": "haus",
+      "zustand": "gebraucht",
+      "stil": "modern"
+    },
+    "sc8HaeuschenRot": {
+      "quelle": "spiel/serene/serene_40.png",
+      "breite": 64,
+      "hoehe": 64,
+      "kollision": true,
+      "art": "haus",
+      "zustand": "gebraucht",
+      "stil": "rustikal"
+    },
+    "sc8HaeuschenGruen": {
+      "quelle": "spiel/serene/serene_58.png",
+      "breite": 64,
+      "hoehe": 64,
+      "kollision": true,
+      "art": "haus",
+      "zustand": "gebraucht",
+      "stil": "rustikal"
+    },
+    "sc8HaeuschenBlau": {
+      "quelle": "spiel/serene/serene_77.png",
+      "breite": 80,
+      "hoehe": 64,
+      "kollision": true,
+      "art": "haus",
+      "zustand": "gebraucht",
+      "stil": "rustikal"
+    },
+    "sc8HaeuschenMoos": {
+      "quelle": "spiel/serene/serene_72.png",
+      "breite": 80,
+      "hoehe": 64,
+      "kollision": true,
+      "art": "haus",
+      "zustand": "gebraucht",
+      "stil": "rustikal"
     }
   }
 }

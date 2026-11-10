@@ -135,6 +135,78 @@
       "zustand": "gebraucht",
       "blick": "unten",
       "stil": "modern"
+    },
+    "ds8Gemischtwaren": {
+      "quelle": "modern-exteriors/Modern_Exteriors_16x16/ME_Theme_Sorter_16x16/4_Generic_Building_Singles_16x16/ME_Singles_Generic_Building_16x16_Hardware_Store.png",
+      "breite": 128,
+      "hoehe": 144,
+      "kollision": true,
+      "art": "haus",
+      "zustand": "gebraucht",
+      "stil": "einfach"
+    },
+    "ds8Post": {
+      "quelle": "modern-exteriors/Modern_Exteriors_16x16/ME_Theme_Sorter_16x16/22_Post_Office_Singles_16x16/22_Post_Office_16x16_Building_1.png",
+      "breite": 128,
+      "hoehe": 208,
+      "kollision": true,
+      "art": "haus",
+      "zustand": "gebraucht",
+      "stil": "klassisch"
+    },
+    "ds8Sheriff": {
+      "quelle": "modern-exteriors/Modern_Exteriors_16x16/ME_Theme_Sorter_16x16/15_Police_Station_Singles_16x16/ME_Singles_Police_Station_16x16_Police_Station_Small_1.png",
+      "breite": 112,
+      "hoehe": 208,
+      "kollision": true,
+      "art": "haus",
+      "zustand": "gebraucht",
+      "stil": "modern"
+    },
+    "ds8WohnwagenKlein": {
+      "quelle": "modern-exteriors/Modern_Exteriors_16x16/ME_Theme_Sorter_16x16/11_Camping_Singles_16x16/ME_Singles_Camping_16x16_Mobile_House_Small_1.png",
+      "breite": 96,
+      "hoehe": 96,
+      "kollision": true,
+      "art": "haus",
+      "zustand": "gebraucht",
+      "stil": "einfach"
+    },
+    "ds8WohnwagenMittel": {
+      "quelle": "modern-exteriors/Modern_Exteriors_16x16/ME_Theme_Sorter_16x16/11_Camping_Singles_16x16/ME_Singles_Camping_16x16_Mobile_House_Medium_2.png",
+      "breite": 128,
+      "hoehe": 96,
+      "kollision": true,
+      "art": "haus",
+      "zustand": "gebraucht",
+      "stil": "einfach"
+    },
+    "ds8Huette": {
+      "quelle": "modern-exteriors/Modern_Exteriors_16x16/ME_Theme_Sorter_16x16/3_City_Props_Singles_16x16/ME_Singles_City_Props_16x16_Junk_Shack_1.png",
+      "breite": 96,
+      "hoehe": 96,
+      "kollision": true,
+      "art": "haus",
+      "zustand": "gebraucht",
+      "stil": "einfach"
+    },
+    "ds8Containerhaus": {
+      "quelle": "modern-exteriors/Modern_Exteriors_16x16/ME_Theme_Sorter_16x16/3_City_Props_Singles_16x16/ME_Singles_City_Props_16x16_Container_House_1.png",
+      "breite": 80,
+      "hoehe": 80,
+      "kollision": true,
+      "art": "haus",
+      "zustand": "gebraucht",
+      "stil": "industrie"
+    },
+    "ds8Pumpenhaus": {
+      "quelle": "modern-exteriors/Modern_Exteriors_16x16/ME_Theme_Sorter_16x16/3_City_Props_Singles_16x16/ME_Singles_City_Props_16x16_Power_House_1.png",
+      "breite": 112,
+      "hoehe": 128,
+      "kollision": true,
+      "art": "haus",
+      "zustand": "gebraucht",
+      "stil": "industrie"
     }
   }
 }

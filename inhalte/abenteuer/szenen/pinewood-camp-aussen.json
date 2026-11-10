@@ -2,7 +2,7 @@
   "karte": "pinewoodCamp.aussen",
   "datei": "karten/pinewood-camp-aussen.json",
   "art": "aussen",
-  "beschreibung": "Pinewood Camp im Red-Giants-Nationalpark, 60 × 44 Kacheln, Sommer. Vom Nordrand kommt der Weg aus den Riesenbäumen (am Nordrand die Stammfüße der Mammutbäume) auf den Lagerfeuerplatz aus Sand mit Steinring und Sitzstämmen und einem Fahnenmast. Links Zelte, rechts die Campbuden aus Blockholz mit einem Weg vor den Türen und der Kiosk mit Klappladen. Ein Weg führt zum Strand und zum Steg am See, der bis zum Süd-, West- und Ostrand reicht; Kanus liegen am Ufer und am Steg, Seerosen und eine kleine Grasinsel im See. Nach Osten geht es zum Canyonrand.",
+  "beschreibung": "Pinewood Camp im Red-Giants-Nationalpark, 60 × 44 Kacheln, Sommer. Vom Nordrand kommt der Weg aus den Riesenbäumen (am Nordrand die Stammfüße der Mammutbäume) auf den Lagerfeuerplatz aus Sand mit Steinring und Sitzstämmen und einem Fahnenmast. Links Zelte, rechts die Campbuden aus Blockholz mit einem Weg vor den Türen und der Kiosk mit Klappladen. Ein Weg führt zum Strand und zum Steg am See, der bis zum Süd-, West- und Ostrand reicht; Kanus liegen am Ufer und am Steg, Seerosen und eine kleine Grasinsel im See. Nach Osten geht es zum Canyonrand. Am Uferweg stehen Ranger-Häuschen, Waschhaus, Wohnwagen, Schutzhütte und Pavillon, im Nordosten ein Holzschuppen.",
   "boden": "gras",
   "wandart": "hecke",
   "boeden": {
@@ -22,8 +22,8 @@
     "#..................ee......................................#",
     "#..................ee......................................#",
     "#..................ee......................................#",
-    "#..................eeeeeeeeeeeeeeeeeeeeeeeeeeeeeee.........#",
-    "#..................eeeeeeeeeeeeeeeeeeeeeeeeeeeeeee.........#",
+    "#..................eeeeeeeeeeeeeeeeeeeeeeeeeeeeeeeeeeeeeee.#",
+    "#..................eeeeeeeeeeeeeeeeeeeeeeeeeeeeeeeeeeeeeee.#",
     "#..................eeddddd.................................#",
     "#..................dddddddd................................#",
     "#.................dddddddddd...............................#",
@@ -37,8 +37,8 @@
     "#.....................ee...................................#",
     "#.....................ee...................................#",
     "#.....................ee...................................#",
-    "#.....................eeeeeeeeeeeeeeeeeeeeeeeeeeeeeeeeeeeeee",
-    "#.....................eeeeeeeeeeeeeeeeeeeeeeeeeeeeeeeeeeeeee",
+    "#eeeeeeeeeeeeeeeeeeeeeeeeeeeeeeeeeeeeeeeeeeeeeeeeeeeeeeeeeee",
+    "#eeeeeeeeeeeeeeeeeeeeeeeeeeeeeeeeeeeeeeeeeeeeeeeeeeeeeeeeeee",
     "#.......................................ee.................#",
     "#.......................................ee.................#",
     "#.............dddddddd.............dddddeedd............ddd#",
@@ -142,6 +142,42 @@
       "feld": [31, 21]
     },
     {
+      "moebel": "cp7Rangerhaus",
+      "feld": [34, 18]
+    },
+    {
+      "moebel": "cp8Waschhaus",
+      "feld": [41, 19]
+    },
+    {
+      "moebel": "cp8WohnwagenMittel",
+      "feld": [46, 18]
+    },
+    {
+      "moebel": "cc4Bootsschuppen",
+      "feld": [56, 20]
+    },
+    {
+      "moebel": "cp8Schuppen",
+      "feld": [52, 3]
+    },
+    {
+      "moebel": "cp7Schutzhuette",
+      "feld": [1, 17]
+    },
+    {
+      "moebel": "cp8WohnwagenKlein",
+      "feld": [9, 18]
+    },
+    {
+      "moebel": "rv5Pavillon",
+      "feld": [18, 20]
+    },
+    {
+      "moebel": "rv5HolzhausGruen",
+      "feld": [3, 26]
+    },
+    {
       "moebel": "cp7MammutStamm",
       "feld": [1, 1]
     },
@@ -156,10 +192,6 @@
     {
       "moebel": "cp7MammutStamm",
       "feld": [26, 1]
-    },
-    {
-      "moebel": "cp7MammutStamm",
-      "feld": [51, 1]
     },
     {
       "moebel": "pw7Kiefer",
@@ -179,15 +211,15 @@
     },
     {
       "moebel": "mfBaum",
-      "feld": [52, 5]
+      "feld": [14, 6]
     },
     {
       "moebel": "wg4Busch",
-      "feld": [56, 1]
+      "feld": [22, 6]
     },
     {
       "moebel": "pw7Kiefer",
-      "feld": [14, 6]
+      "feld": [12, 12]
     },
     {
       "moebel": "mfBaum",
@@ -200,42 +232,6 @@
     {
       "moebel": "pw7Kiefer",
       "feld": [48, 12]
-    },
-    {
-      "moebel": "mfBaum",
-      "feld": [2, 18]
-    },
-    {
-      "moebel": "wg4Busch",
-      "feld": [6, 20]
-    },
-    {
-      "moebel": "pw7Kiefer",
-      "feld": [13, 18]
-    },
-    {
-      "moebel": "mfBaum",
-      "feld": [43, 17]
-    },
-    {
-      "moebel": "wg4Busch",
-      "feld": [50, 18]
-    },
-    {
-      "moebel": "pw7Kiefer",
-      "feld": [1, 22]
-    },
-    {
-      "moebel": "mfBaum",
-      "feld": [9, 25]
-    },
-    {
-      "moebel": "wg4Busch",
-      "feld": [14, 22]
-    },
-    {
-      "moebel": "pw7Kiefer",
-      "feld": [17, 23]
     },
     {
       "moebel": "wg4BlumeGelb",
@@ -251,47 +247,23 @@
     },
     {
       "moebel": "wg4BlumeGelb",
-      "feld": [55, 3]
-    },
-    {
-      "moebel": "wg4Gras",
       "feld": [58, 2]
     },
     {
-      "moebel": "wg4BlumeRot",
+      "moebel": "wg4Gras",
       "feld": [9, 10]
     },
     {
-      "moebel": "wg4BlumeGelb",
+      "moebel": "wg4BlumeRot",
       "feld": [28, 6]
     },
     {
-      "moebel": "wg4Gras",
-      "feld": [55, 10]
-    },
-    {
-      "moebel": "wg4BlumeRot",
+      "moebel": "wg4BlumeGelb",
       "feld": [31, 14]
     },
     {
-      "moebel": "wg4BlumeGelb",
-      "feld": [55, 11]
-    },
-    {
       "moebel": "wg4Gras",
-      "feld": [6, 17]
-    },
-    {
-      "moebel": "wg4BlumeRot",
-      "feld": [8, 19]
-    },
-    {
-      "moebel": "wg4BlumeGelb",
       "feld": [33, 16]
-    },
-    {
-      "moebel": "wg4Gras",
-      "feld": [36, 19]
     },
     {
       "moebel": "wg4BlumeRot",
@@ -303,23 +275,11 @@
     },
     {
       "moebel": "wg4Gras",
-      "feld": [6, 25]
-    },
-    {
-      "moebel": "wg4BlumeRot",
-      "feld": [10, 23]
-    },
-    {
-      "moebel": "wg4BlumeGelb",
       "feld": [28, 21]
     },
     {
-      "moebel": "wg4Gras",
-      "feld": [29, 22]
-    },
-    {
       "moebel": "wg4BlumeRot",
-      "feld": [5, 27]
+      "feld": [29, 22]
     }
   ],
   "ausloeser": [
@@ -383,17 +343,6 @@
   ],
   "belebung": [
     {
-      "name": "betreuer",
-      "typ": "statist",
-      "feld": [22, 22],
-      "eigenschaften": {
-        "von": "22,22",
-        "bis": "22,18",
-        "tun": "pfeift die Kinder zusammen",
-        "wann": "tag"
-      }
-    },
-    {
       "name": "kanufahrer",
       "typ": "statist",
       "feld": [30, 35],
@@ -405,12 +354,140 @@
       }
     },
     {
+      "name": "betreuer",
+      "typ": "statist",
+      "feld": [22, 22],
+      "eigenschaften": {
+        "von": "22,22",
+        "bis": "22,17",
+        "tun": "pfeift die Kinder zusammen",
+        "wann": "tag",
+        "sagt": "statist.pinewoodCamp.aussen.betreuer"
+      }
+    },
+    {
+      "name": "koechin",
+      "typ": "statist",
+      "feld": [30, 22],
+      "eigenschaften": {
+        "von": "30,22",
+        "bis": "30,22",
+        "tun": "verteilt Eis am Kiosk",
+        "wann": "tag",
+        "sagt": "statist.pinewoodCamp.aussen.koechin"
+      }
+    },
+    {
+      "name": "rangerin",
+      "typ": "statist",
+      "feld": [36, 25],
+      "eigenschaften": {
+        "von": "36,25",
+        "bis": "44,25",
+        "tun": "geht den Uferweg ab",
+        "wann": "tag",
+        "sagt": "statist.pinewoodCamp.aussen.rangerin"
+      }
+    },
+    {
+      "name": "wanderin",
+      "typ": "statist",
+      "feld": [18, 24],
+      "eigenschaften": {
+        "von": "18,24",
+        "bis": "18,24",
+        "tun": "rastet am Pavillon",
+        "wann": "tag",
+        "sagt": "statist.pinewoodCamp.aussen.wanderin"
+      }
+    },
+    {
+      "name": "anglerin",
+      "typ": "statist",
+      "feld": [38, 26],
+      "eigenschaften": {
+        "von": "38,26",
+        "bis": "38,26",
+        "tun": "wirft am Steg die Angel aus",
+        "wann": "tag",
+        "sagt": "statist.pinewoodCamp.aussen.anglerin"
+      }
+    },
+    {
+      "name": "bademeister",
+      "typ": "statist",
+      "feld": [32, 26],
+      "eigenschaften": {
+        "von": "32,26",
+        "bis": "32,26",
+        "tun": "sitzt am Strand und passt auf",
+        "wann": "tag",
+        "sagt": "statist.pinewoodCamp.aussen.bademeister"
+      }
+    },
+    {
+      "name": "opa",
+      "typ": "statist",
+      "feld": [49, 25],
+      "eigenschaften": {
+        "von": "49,25",
+        "bis": "49,25",
+        "tun": "sitzt im Klappstuhl vor dem Wohnwagen",
+        "wann": "tag",
+        "sagt": "statist.pinewoodCamp.aussen.opa"
+      }
+    },
+    {
+      "name": "holzhacker",
+      "typ": "statist",
+      "feld": [5, 24],
+      "eigenschaften": {
+        "von": "5,24",
+        "bis": "5,24",
+        "tun": "hackt Holz für das Feuer",
+        "wann": "morgen"
+      }
+    },
+    {
+      "name": "laeufer",
+      "typ": "statist",
+      "feld": [44, 24],
+      "eigenschaften": {
+        "von": "44,24",
+        "bis": "52,24",
+        "tun": "zwei Kinder laufen um die Wette",
+        "wann": "tag"
+      }
+    },
+    {
+      "name": "fotografin",
+      "typ": "statist",
+      "feld": [54, 23],
+      "eigenschaften": {
+        "von": "54,23",
+        "bis": "54,23",
+        "tun": "fotografiert den Mammutbaum",
+        "wann": "tag"
+      }
+    },
+    {
+      "name": "gitarrist",
+      "typ": "statist",
+      "feld": [26, 17],
+      "eigenschaften": {
+        "von": "26,17",
+        "bis": "26,17",
+        "tun": "spielt Gitarre am Feuer",
+        "wann": "abend"
+      }
+    },
+    {
       "name": "libellen",
       "typ": "tier",
-      "feld": [16, 30],
+      "feld": [16, 29],
       "eigenschaften": {
-        "von": "12,30",
-        "bis": "22,30",
+        "von": "16,29",
+        "bis": "22,29",
         "verhalten": "fliegen"
       }
     },
@@ -421,6 +498,46 @@
       "eigenschaften": {
         "von": "54,29",
         "bis": "54,29",
+        "verhalten": "sitzen"
+      }
+    },
+    {
+      "name": "eichhoernchen",
+      "typ": "tier",
+      "feld": [10, 4],
+      "eigenschaften": {
+        "von": "10,4",
+        "bis": "16,4",
+        "verhalten": "flitzen"
+      }
+    },
+    {
+      "name": "enten",
+      "typ": "tier",
+      "feld": [30, 34],
+      "eigenschaften": {
+        "von": "30,34",
+        "bis": "38,34",
+        "verhalten": "schwimmen"
+      }
+    },
+    {
+      "name": "hund",
+      "typ": "tier",
+      "feld": [40, 24],
+      "eigenschaften": {
+        "von": "40,24",
+        "bis": "40,24",
+        "verhalten": "folgen"
+      }
+    },
+    {
+      "name": "specht",
+      "typ": "tier",
+      "feld": [48, 4],
+      "eigenschaften": {
+        "von": "48,4",
+        "bis": "48,4",
         "verhalten": "sitzen"
       }
     }

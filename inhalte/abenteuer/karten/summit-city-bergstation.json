@@ -11,7 +11,7 @@
  "tilewidth": 16,
  "tileheight": 16,
  "nextlayerid": 5,
- "nextobjectid": 18,
+ "nextobjectid": 19,
  "layers": [
   {
    "id": 1,
@@ -765,8 +765,8 @@
      "id": 5,
      "name": "skifahrerin",
      "type": "statist",
-     "x": 144,
-     "y": 144,
+     "x": 176,
+     "y": 128,
      "width": 16,
      "height": 16,
      "rotation": 0,
@@ -775,27 +775,70 @@
       {
        "name": "von",
        "type": "string",
-       "value": "9,9"
+       "value": "11,8"
       },
       {
        "name": "bis",
        "type": "string",
-       "value": "9,9"
+       "value": "11,8"
       },
       {
        "name": "tun",
        "type": "string",
-       "value": "wartet auf die Gondel"
+       "value": "trägt ihre Ski hinauf zum Gletscher"
       },
       {
        "name": "wann",
        "type": "string",
        "value": "tag"
+      },
+      {
+       "name": "sagt",
+       "type": "string",
+       "value": "statist.summitCity.bergstation.skifahrerin"
       }
      ]
     },
     {
      "id": 6,
+     "name": "seilbahnfan",
+     "type": "statist",
+     "x": 224,
+     "y": 96,
+     "width": 16,
+     "height": 16,
+     "rotation": 0,
+     "visible": true,
+     "properties": [
+      {
+       "name": "von",
+       "type": "string",
+       "value": "14,6"
+      },
+      {
+       "name": "bis",
+       "type": "string",
+       "value": "14,6"
+      },
+      {
+       "name": "tun",
+       "type": "string",
+       "value": "schaut durch das Fenster auf das Seil"
+      },
+      {
+       "name": "wann",
+       "type": "string",
+       "value": "tag"
+      },
+      {
+       "name": "sagt",
+       "type": "string",
+       "value": "statist.summitCity.bergstation.seilbahnfan"
+      }
+     ]
+    },
+    {
+     "id": 7,
      "name": "sc7FensterWolken",
      "type": "moebel",
      "x": 32,
@@ -818,7 +861,7 @@
      ]
     },
     {
-     "id": 7,
+     "id": 8,
      "name": "sc7FensterWolken",
      "type": "moebel",
      "x": 96,
@@ -841,7 +884,7 @@
      ]
     },
     {
-     "id": 8,
+     "id": 9,
      "name": "sc7FensterWolken",
      "type": "moebel",
      "x": 160,
@@ -864,7 +907,7 @@
      ]
     },
     {
-     "id": 9,
+     "id": 10,
      "name": "rvBahnsteigbank",
      "type": "moebel",
      "x": 80,
@@ -887,7 +930,7 @@
      ]
     },
     {
-     "id": 10,
+     "id": 11,
      "name": "sc7Seil",
      "type": "moebel",
      "x": 224,
@@ -910,7 +953,7 @@
      ]
     },
     {
-     "id": 11,
+     "id": 12,
      "name": "sc7Gondel",
      "type": "moebel",
      "x": 208,
@@ -933,7 +976,7 @@
      ]
     },
     {
-     "id": 12,
+     "id": 13,
      "name": "rvTicketschalter",
      "type": "moebel",
      "x": 16,
@@ -956,7 +999,7 @@
      ]
     },
     {
-     "id": 13,
+     "id": 14,
      "name": "rvFahrplan",
      "type": "moebel",
      "x": 16,
@@ -979,7 +1022,7 @@
      ]
     },
     {
-     "id": 14,
+     "id": 15,
      "name": "rvKaffeeautomat",
      "type": "moebel",
      "x": 144,
@@ -1002,7 +1045,7 @@
      ]
     },
     {
-     "id": 15,
+     "id": 16,
      "name": "iwSpind",
      "type": "moebel",
      "x": 64,
@@ -1025,7 +1068,7 @@
      ]
     },
     {
-     "id": 16,
+     "id": 17,
      "name": "rvTopfpflanze",
      "type": "moebel",
      "x": 176,
@@ -1048,7 +1091,7 @@
      ]
     },
     {
-     "id": 17,
+     "id": 18,
      "name": "scRucksack",
      "type": "moebel",
      "x": 112,

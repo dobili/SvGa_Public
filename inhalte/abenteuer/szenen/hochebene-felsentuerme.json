@@ -339,16 +339,6 @@
   ],
   "belebung": [
     {
-      "name": "falke",
-      "typ": "tier",
-      "feld": [70, 6],
-      "eigenschaften": {
-        "von": "70,6",
-        "bis": "73,6",
-        "verhalten": "fliegen"
-      }
-    },
-    {
       "name": "pferd",
       "typ": "tier",
       "feld": [63, 18],
@@ -377,6 +367,113 @@
         "bis": "84,16",
         "tun": "macht ein Foto",
         "wann": "tag"
+      }
+    },
+    {
+      "name": "kletterer",
+      "typ": "statist",
+      "feld": [40, 15],
+      "eigenschaften": {
+        "von": "40,15",
+        "bis": "40,15",
+        "tun": "sichert ein Seil am Felsturm",
+        "wann": "tag",
+        "sagt": "statist.hochebene.felsentuerme.kletterer"
+      }
+    },
+    {
+      "name": "bisonforscherin",
+      "typ": "statist",
+      "feld": [69, 15],
+      "eigenschaften": {
+        "von": "69,15",
+        "bis": "69,15",
+        "tun": "zählt durch ein Fernglas die Bisons",
+        "wann": "tag",
+        "sagt": "statist.hochebene.felsentuerme.bisonforscherin"
+      }
+    },
+    {
+      "name": "lehrerImUrlaub",
+      "typ": "statist",
+      "feld": [20, 15],
+      "eigenschaften": {
+        "von": "20,15",
+        "bis": "20,15",
+        "tun": "malt die Felstürme in ein Skizzenbuch",
+        "wann": "tag",
+        "sagt": "statist.hochebene.felsentuerme.lehrerImUrlaub"
+      }
+    },
+    {
+      "name": "fotografin",
+      "typ": "statist",
+      "feld": [90, 15],
+      "eigenschaften": {
+        "von": "90,15",
+        "bis": "90,15",
+        "tun": "fotografiert den Sonnenuntergang",
+        "wann": "abend"
+      }
+    },
+    {
+      "name": "bisons",
+      "typ": "tier",
+      "feld": [75, 20],
+      "eigenschaften": {
+        "von": "75,20",
+        "bis": "87,20",
+        "verhalten": "rennen"
+      }
+    },
+    {
+      "name": "falke",
+      "typ": "tier",
+      "feld": [30, 3],
+      "eigenschaften": {
+        "von": "30,3",
+        "bis": "50,3",
+        "verhalten": "fliegen"
+      }
+    },
+    {
+      "name": "murmeltier",
+      "typ": "tier",
+      "feld": [50, 21],
+      "eigenschaften": {
+        "von": "50,21",
+        "bis": "53,21",
+        "verhalten": "ausweichen"
+      }
+    },
+    {
+      "name": "praeriehunde",
+      "typ": "tier",
+      "feld": [60, 22],
+      "eigenschaften": {
+        "von": "60,22",
+        "bis": "64,22",
+        "verhalten": "ausweichen"
+      }
+    },
+    {
+      "name": "hase",
+      "typ": "tier",
+      "feld": [85, 22],
+      "eigenschaften": {
+        "von": "85,22",
+        "bis": "90,23",
+        "verhalten": "flitzen"
+      }
+    },
+    {
+      "name": "schmetterlinge",
+      "typ": "tier",
+      "feld": [10, 10],
+      "eigenschaften": {
+        "von": "10,10",
+        "bis": "16,10",
+        "verhalten": "fliegen"
       }
     }
   ]

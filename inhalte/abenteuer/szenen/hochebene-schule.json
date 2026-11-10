@@ -168,6 +168,56 @@
     {
       "moebel": "cc3Busch",
       "feld": [56, 24]
+    },
+    {
+      "moebel": "sc8TribueneLinks",
+      "feld": [37, 24],
+      "id": "ereignis28"
+    },
+    {
+      "moebel": "sc8TribueneMitte",
+      "feld": [39, 25],
+      "id": "ereignis29"
+    },
+    {
+      "moebel": "sc8TribueneRechts",
+      "feld": [43, 24],
+      "id": "ereignis30"
+    },
+    {
+      "moebel": "hb7Steintisch",
+      "feld": [25, 25],
+      "id": "ereignis31"
+    },
+    {
+      "moebel": "hb7Steintisch",
+      "feld": [29, 25],
+      "id": "ereignis32"
+    },
+    {
+      "moebel": "hb7Steintisch",
+      "feld": [25, 29],
+      "id": "ereignis33"
+    },
+    {
+      "moebel": "sc8Fahnenmast",
+      "feld": [49, 21],
+      "id": "ereignis34"
+    },
+    {
+      "moebel": "sc8PlakatDiplomtag",
+      "feld": [35, 24],
+      "id": "ereignis35"
+    },
+    {
+      "moebel": "wg6Kisten",
+      "feld": [44, 28],
+      "id": "ereignis36"
+    },
+    {
+      "moebel": "sc8FinkenzeichenSchule",
+      "feld": [43, 31],
+      "id": "ereignis37"
     }
   ],
   "ausloeser": [
@@ -229,13 +279,110 @@
       }
     },
     {
+      "name": "hausmeister",
+      "typ": "statist",
+      "feld": [12, 19],
+      "eigenschaften": {
+        "von": "12,19",
+        "bis": "12,19",
+        "tun": "fegt den Hof vor der Turnhalle",
+        "wann": "tag",
+        "sagt": "statist.hochebene.schule.hausmeister"
+      }
+    },
+    {
+      "name": "busfahrerin",
+      "typ": "statist",
+      "feld": [32, 31],
+      "eigenschaften": {
+        "von": "32,31",
+        "bis": "32,31",
+        "tun": "wartet am Schulbus",
+        "wann": "tag",
+        "sagt": "statist.hochebene.schule.busfahrerin"
+      }
+    },
+    {
+      "name": "schulkind",
+      "typ": "statist",
+      "feld": [22, 30],
+      "eigenschaften": {
+        "von": "22,30",
+        "bis": "22,30",
+        "tun": "hüpft Kästchen auf dem Hof",
+        "wann": "tag",
+        "sagt": "statist.hochebene.schule.schulkind"
+      }
+    },
+    {
+      "name": "vater",
+      "typ": "statist",
+      "feld": [46, 36],
+      "eigenschaften": {
+        "von": "46,36",
+        "bis": "46,36",
+        "tun": "holt sein Kind ab",
+        "wann": "tag"
+      }
+    },
+    {
+      "name": "huehner",
+      "typ": "tier",
+      "feld": [6, 18],
+      "eigenschaften": {
+        "von": "6,18",
+        "bis": "10,18",
+        "verhalten": "ausweichen"
+      }
+    },
+    {
       "name": "hund",
       "typ": "tier",
-      "feld": [50, 37],
+      "feld": [40, 36],
       "eigenschaften": {
-        "von": "50,37",
-        "bis": "53,37",
-        "verhalten": "ausweichen"
+        "von": "40,36",
+        "bis": "40,36",
+        "verhalten": "folgen"
+      }
+    },
+    {
+      "name": "spatzen",
+      "typ": "tier",
+      "feld": [30, 24],
+      "eigenschaften": {
+        "von": "30,24",
+        "bis": "38,24",
+        "verhalten": "fliegen"
+      }
+    },
+    {
+      "name": "katze",
+      "typ": "tier",
+      "feld": [8, 22],
+      "eigenschaften": {
+        "von": "8,22",
+        "bis": "8,22",
+        "verhalten": "schlafen"
+      }
+    },
+    {
+      "name": "falke",
+      "typ": "tier",
+      "feld": [17, 6],
+      "eigenschaften": {
+        "von": "17,6",
+        "bis": "37,1",
+        "verhalten": "fliegen"
+      }
+    },
+    {
+      "name": "hase",
+      "typ": "tier",
+      "feld": [54, 10],
+      "eigenschaften": {
+        "von": "54,10",
+        "bis": "48,10",
+        "verhalten": "flitzen"
       }
     }
   ]

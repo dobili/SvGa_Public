@@ -1427,12 +1427,18 @@
       "feld": [146, 28]
     },
     {
-      "moebel": "sc7FerienhuetteB",
+      "moebel": "cr8Holzfaellerhuette",
       "feld": [38, 3]
     },
     {
       "moebel": "cc4Holzstapel",
       "feld": [44, 5]
+    },
+    {
+      "moebel": "cr8Kreidespringer",
+      "feld": [42, 6],
+      "vorn": true,
+      "versatz": [0, 0]
     }
   ],
   "ausloeser": [

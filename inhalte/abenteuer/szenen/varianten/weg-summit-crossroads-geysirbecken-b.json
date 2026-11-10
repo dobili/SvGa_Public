@@ -370,7 +370,7 @@
       "feld": [15, 62]
     },
     {
-      "moebel": "cc3Raetseltafel",
+      "moebel": "cr8InfotafelDach",
       "feld": [17, 62]
     },
     {
@@ -732,6 +732,12 @@
     {
       "moebel": "sx7Bison",
       "feld": [7, 146]
+    },
+    {
+      "moebel": "cr8Finkenzeichen",
+      "feld": [8, 64],
+      "vorn": true,
+      "versatz": [0, 0]
     }
   ],
   "ausloeser": [
@@ -884,6 +890,19 @@
         "von": "15,157",
         "bis": "20,160",
         "sagt": "statist.wegSummitCrossroads.geysirbecken.kind"
+      }
+    },
+    {
+      "name": "schachlehrerin",
+      "typ": "statist",
+      "feld": [16, 155],
+      "eigenschaften": {
+        "tun": "sammelt ihre Klasse für die Rückfahrt",
+        "wann": "tag",
+        "von": "14,154",
+        "bis": "20,158",
+        "sagt": "statist.wegSummitCrossroads.geysirbecken.schachlehrerin",
+        "zeigt": "unzickerSarapu"
       }
     }
   ],

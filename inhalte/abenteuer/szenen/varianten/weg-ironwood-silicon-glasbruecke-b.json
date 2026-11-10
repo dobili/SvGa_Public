@@ -1022,7 +1022,7 @@
     },
     {
       "moebel": "pd6Klapptisch",
-      "feld": [70, 6],
+      "feld": [71, 6],
       "id": "streamtisch"
     },
     {
@@ -1031,12 +1031,12 @@
       "auf": "streamtisch"
     },
     {
-      "moebel": "ccStehlampe",
-      "feld": [72, 6]
+      "moebel": "sb8Ringlicht",
+      "feld": [72, 8]
     },
     {
-      "moebel": "n6Flutlicht",
-      "feld": [68, 5]
+      "moebel": "sb8Funkmast",
+      "feld": [68, 3]
     }
   ],
   "ausloeser": [

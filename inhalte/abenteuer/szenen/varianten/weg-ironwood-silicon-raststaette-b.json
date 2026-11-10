@@ -620,6 +620,18 @@
     {
       "moebel": "sb5KuebelBluete",
       "feld": [122, 14]
+    },
+    {
+      "moebel": "sb8Kreidespringer",
+      "feld": [124, 9],
+      "vorn": true,
+      "versatz": [0, 0]
+    },
+    {
+      "moebel": "sb8Finkenzeichen",
+      "feld": [123, 15],
+      "vorn": true,
+      "versatz": [4, -2]
     }
   ],
   "ausloeser": [

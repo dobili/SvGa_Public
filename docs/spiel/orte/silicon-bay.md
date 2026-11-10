@@ -102,9 +102,11 @@ zum Hafen 32–35 / 55–59, Auslöser `hafen` in Reihe 59. In den neuen Reihen 
 **Uferzeile**: zwölf Kulissenhäuser (`sb8Markt1` bis `sb8Markt12`, „Market Small“) dicht an dicht,
 Türen zur Terrasse; die Spalten 31–36 bleiben als Weg zur Treppe frei. In der Nordzeile füllen zwei
 schmale Wohnhäuser (`sb8Condo51` bis `sb8Condo53`) die Lücken neben Konzernturm und Werbetafeln, in C
-dazu ein Wohnhaus am Platz. Jede Variante hat damit mindestens 20 Gebäude. Belebung: 12 Statisten
-(acht mit Satz, `statist.siliconBay.aussen.*`) und als „Tiere“ nur Maschinen, wie es die
-Weltbeschreibung will (Lieferroboter, Drohne, Staubsaugerroboter, Roboterhund, Fensterputzdrohne).
+dazu ein Wohnhaus am Platz. Jede Variante hat damit mindestens 20 Gebäude. Belebung: 13 Statisten
+(acht mit Satz, `statist.siliconBay.aussen.*`), dazu echte Tiere: Möwen über der Terrasse, Tauben
+auf dem Platz, ein Hund an der Leine, eine Katze am Café (Entscheidung des Haupt-Chats: Die Stadt
+wirkt steril, aber die Möwen lassen sich nicht vertreiben); Lieferroboter, Drohne,
+Staubsaugerroboter, Roboterhund und Fensterputzdrohne bleiben zusätzlich.
 Die Koordinaten der Tabellen unten gelten für die Reihen bis 46 weiter; darunter plus acht.
 
 Abschnitte zu je 18 Spalten × etwa 17 Reihen (A bis D, 1 bis 3), zwölf Abschnitte.
@@ -207,8 +209,10 @@ kleine Polizeiwache (`sa8Polizei1`, `2`), Eisenwarenladen (`sa8Eisenwaren`), Woh
 
 **Belebung:** zwölf Statisten, acht davon mit Satz (`statist.siliconBay.altstadt.*`): Bäckerin,
 Uhrmacher, Musikhändler, Schülerin, Metzger (Perfect Move will die Straße kaufen), Rentnerpaar,
-Feuerwehrmann, Eisverkäuferin; dazu Briefträgerin, Straßenmusiker, Kinder und Ladenbesitzer. Tiere
-nur als Maschinen (Weltbeschreibung): Drohne, Lieferroboter, Mähroboter, Staubsaugerroboter.
+Feuerwehrmann, Eisverkäuferin und der Straßenmusiker (zeigt die Goldmünzen-Partie, `zeigt:
+goldmuenzenPartie`, die Münzen nur als Gerücht); dazu Briefträgerin, Kinder, Ladenbesitzer und
+Hundebesitzer. Tiere: Möwen, Tauben, Hund, Katze im Hinterhof; dazu Drohne, Lieferroboter,
+Mähroboter und Staubsaugerroboter.
 
 ### 1.5 Gebäude und Maße
 
@@ -363,10 +367,10 @@ Fährmann, und welcher Tag heute ist, sagt er nicht.
 ### 3.3 Für Runde 6: Ereignisorte und Belebung auf Weg 4 (Runde 7, mittel-3, 10.11.2026)
 
 **Stream auf der Glasbrücke (Dokument 15, 2.4):** Auf der Aussichtsplattform stehen ein Klapptisch
-mit Laptop, das Ringlicht (Ersatz `ccStehlampe` bis `ringlicht.png`) und der Funkmast „Testfeld
-Signal“ (Ersatz `n6Flutlicht` bis `funkmast_testfeld.png`). **Raststätte:** neben dem Rasthaus ein
-Container (`wr5Container`, an seiner Wand kommt der Kreidespringer K2) und ein Blumenkübel nahe der
-Tür (Finch-Bauer B).
+mit Laptop, das Ringlicht (`sb8Ringlicht`) und der Funkmast „Testfeld Signal“ (`sb8Funkmast`, sperrt nur
+am Fuß). **Raststätte:** neben dem Rasthaus ein
+Container (`wr5Container`, an seiner Wand der Kreidespringer `sb8Kreidespringer`, K2) und ein
+Blumenkübel nahe der Tür mit Finkenzeichen (`sb8Finkenzeichen`, Finch-Bauer B).
 
 | Auslöser         | A         | B         | C         | Ort                                              |
 | ---------------- | --------- | --------- | --------- | ------------------------------------------------ |

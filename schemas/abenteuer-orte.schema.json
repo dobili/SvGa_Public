@@ -47,7 +47,7 @@
           "pattern": "^musik/[a-z0-9-]+\\.(ogg|m4a)$"
         },
         "zustaende": {
-          "description": "Zweite Fassungen der Karte (zustand_der_karte, Runde 6): Dialogvariable → Tiled-JSON. Ist die Variable wahr, lädt die App diese Datei und den Hintergrund grafik/karten/<kennung>-<variable>.png (Musikhaus: musikhausOffen).",
+          "description": "Zustände der Karte (Runde 6 und 8): Bedingung (Sprache wie bei wenn) → Tiled-JSON karten/<basis>-<zustand>.json. Der letzte Eintrag, dessen Bedingung gilt, wird geladen, mit dem Hintergrund grafik/karten/<kennung>-<zustand>.png; ohne passenden Eintrag die Grundkarte. Beispiel Musikhaus: musikhausOffen → karten/port-delacroix-musikhaus-neu.json (Zustand „neu“).",
           "type": "object",
           "additionalProperties": {
             "type": "string",
@@ -88,9 +88,9 @@
         "name": { "$ref": "#/$defs/kennung" },
         "art": { "enum": ["uebergang", "dialog", "gegenstand", "start"] },
         "wenn": {
-          "description": "uebergang: nur wenn diese Dialogvariable wahr ist (sonst läuft nur der Dialog, der Held bleibt); etwa aufbruchGesehen",
+          "description": "uebergang: nur wenn diese Bedingung gilt (sonst läuft nur der Dialog, der Held bleibt). Sprache wie app/src/abenteuer/regeln/bedingung.ts: Variable (aufbruchGesehen, hatLaterne), Vergleich (nadelMapleFalls >= 1, ausgangIronwoodGus == \"sieg\"), nicht, und, oder, Klammern",
           "type": "string",
-          "pattern": "^[a-z][a-zA-Z0-9]*$"
+          "minLength": 1
         },
         "karte": {
           "description": "Gilt nur auf dieser Karte des Ortes (etwa der Rückweg einer Tür); ohne Angabe auf allen Karten. Bei gleichem Namen geht der Eintrag mit Karte vor.",

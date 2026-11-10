@@ -26,7 +26,7 @@ from pipeline.abenteuer.klippe import (
     treppenfelder,
 )
 from pipeline.abenteuer.moebelliste import lade_moebel
-from pipeline.abenteuer.randspur import randluecken
+from pipeline.abenteuer.randspur import randhang, randluecken
 from pipeline.abenteuer.strasse import markiere
 from pipeline.abenteuer.toenung import schleier
 from pipeline.abenteuer.winter import ist_winter, winterbefunde, winterlich, winterliche_moebel
@@ -337,13 +337,6 @@ def randspur(szene: dict, gezeichnet: dict) -> list[str]:
     raender = {name: boeden[name]["rand"] for name in ("wasser", "erde")}
     trennt = {szene.get("boden", "gras"), szene.get("wandart", "hecke")}
     return randluecken(gezeichnet, raender, trennt, frozenset(HOLZ))
-
-
-def randhang(x: int, y: int, zeilen: list[str], flaeche: dict) -> tuple[int, int] | None:
-    """Für ein Randfeld links oder rechts das Hangfeld daneben (für „hang_bis_rand“), sonst None."""
-    breite = len(zeilen[0])
-    nachbar = (1, y) if x == 0 else (breite - 2, y) if x == breite - 1 else None
-    return nachbar if nachbar in flaeche else None
 
 
 def bildname(szene: dict) -> tuple[str, bool]:

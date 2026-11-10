@@ -1,8 +1,12 @@
 """Tests für den Schleier der Tönung in der Vorschau (pipeline/abenteuer/toenung.py)."""
 
-from PIL import Image
+import pytest
 
-from pipeline.abenteuer.toenung import schleier
+pytest.importorskip("PIL.Image")  # Pillow fehlt in Actions
+
+from PIL import Image  # noqa: E402
+
+from pipeline.abenteuer.toenung import schleier  # noqa: E402
 
 
 def test_nacht_dunkelt_die_vorschau_ab():

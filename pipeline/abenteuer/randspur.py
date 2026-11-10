@@ -75,3 +75,10 @@ def randluecken(
         mehr = f" und {len(felder) - NENNEN} weitere" if len(felder) > NENNEN else ""
         befunde.append(f"Randlücke {art} bei {liste}{mehr}")
     return befunde
+
+
+def randhang(x: int, y: int, zeilen: list[str], flaeche: dict) -> tuple[int, int] | None:
+    """Für ein Randfeld links oder rechts das Hangfeld daneben (für „hang_bis_rand“), sonst None."""
+    breite = len(zeilen[0])
+    nachbar = (1, y) if x == 0 else (breite - 2, y) if x == breite - 1 else None
+    return nachbar if nachbar in flaeche else None

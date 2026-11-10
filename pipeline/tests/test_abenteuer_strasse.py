@@ -1,8 +1,12 @@
 """Tests für Straßenmarkierungen (pipeline/abenteuer/strasse.py)."""
 
-from PIL import Image
+import pytest
 
-from pipeline.abenteuer.strasse import GELB, WEISS, K, markiere
+pytest.importorskip("PIL.Image")  # Pillow fehlt in Actions
+
+from PIL import Image  # noqa: E402
+
+from pipeline.abenteuer.strasse import GELB, WEISS, K, markiere  # noqa: E402
 
 
 def test_waagerechte_strasse_bekommt_mittellinie_und_randlinien():

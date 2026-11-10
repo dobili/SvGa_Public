@@ -8,7 +8,7 @@ import pytest
 
 pytest.importorskip("PIL.Image")  # kartenbild braucht Pillow; in Actions fehlt es
 
-from pipeline.abenteuer.kartenbild import randhang  # noqa: E402
+from pipeline.abenteuer.randspur import randhang  # noqa: E402
 
 ZEILEN = ["#####", "#...#", "#####", "#...#"]
 

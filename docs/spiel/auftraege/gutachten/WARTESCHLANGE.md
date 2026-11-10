@@ -58,6 +58,8 @@ Szene heißt die Datei in `inhalte/abenteuer/szenen/` ohne `.json`.
 - [ ] bayou-steg (Runde 9, Fassung C, mittel-1; Bild `bildwuensche/wasser_moor.py`)
 - [ ] weg-silicon-delacroix-faehre (Runde 9, mittel-1; Bilder `bildwuensche/faehre_aufbau.py`)
 - [ ] weg-silicon-delacroix-deich (Runde 9, Fassung C, mittel-1; Bild `bildwuensche/wasser_see.py`)
+- [ ] weg-ghost-capital-seeufer (Runde 9, mittel-1; Bild `bildwuensche/faehrhaus.py`)
+- [ ] weg-ghost-capital-leuchtturm (Runde 9, mittel-1)
 - [ ] weg-riverton-ironwood-1, weg-riverton-ironwood-2 (zweite Prüfung, mittel-4, mit Zuständen graffiti und ohne-tische; Dateien `…-2.md`)
 - [ ] ironwood-aussen (zweite Prüfung, mittel-4, mit Zuständen meisterschaft und vermietet; `ironwood-aussen-2.md`)
 - [ ] ironwood-kantine (dritte Prüfung, mit Zustand logo; `ironwood-kantine-3.md`), ironwood-museum, ironwood-umkleide, ironwood-mamas-zimmer (zweite Prüfung, mittel-4; eine Datei `ironwood-innen-2.md`)

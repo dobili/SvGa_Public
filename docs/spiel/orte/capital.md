@@ -292,6 +292,17 @@ ein Fanshop mit Schals und T-Shirts.
   einem halb hochgezogenen Rollgitter (Bildwunsch `ubahn_rollgitter.py`), passend zur Kreidenacht
   („das Rollgitter geht um Mitternacht herunter“). Die Drehkreuze stehen als Sperre davor
   (15, 13) und (20, 13), Hocker an den Klapptischen.
+- **Seeufer (`wegGhostCapital.seeufer`, A):** Der Strand ist heller Sand aus LimeZus Strandbogen
+  (Material `strand` zeigt jetzt `21_Beach`, vorher war es oranger Boden; das betrifft auch den
+  Strand der Raststätte). Die Strandzunge hat runde Ecken. Das Fährhaus ist ein Holzhaus mit
+  Satteldach, Schalter und Uhr im Giebel (Bildwunsch `faehrhaus.py`), der Auslöser
+  `faehrterminal` bleibt. Der Steg hat einen Kopf nach Osten (60–69, 7–8), an dem die Fähre
+  längsseits liegt. Der Absperrbock steht am Wegrand neben dem Wachmann (2, 12). Die Kiefern
+  stehen locker gestreut mit unregelmäßigem Waldrand und einer Lichtung um den Picknicktisch.
+- **Leuchtturm (`wegGhostCapital.leuchtturm`, A):** Die Landzunge ist breit am Ufer und läuft zur
+  Spitze schmal aus (Reihen 1–8, x 47–82), mit Felsen rings am Ufer. Der orange Erdstreifen
+  zwischen See und Wiese ist Wiese geworden. Der Weg läuft in Bögen durch Stützpunkte, mit einem
+  Abzweig zum Turmfuß. Die Kiefern stehen locker gestreut unter dem Weg, der Waldrand schwingt.
 - Zustände: keine neuen. Die Geschichte ändert die Arena-Karten nicht sichtbar; das Gitter am
   Abgang ist nach `ubahnOffen` nur offen, und das zeigt schon der Übergang.
 

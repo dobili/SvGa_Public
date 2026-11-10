@@ -10,6 +10,7 @@
     "wasser_stein": "spiel/eigene/wasser_stein.png",
     "moor": "spiel/eigene/wasser_moor.png",
     "see": "spiel/eigene/wasser_see.png",
+    "strand": "modern-exteriors/Modern_Exteriors_16x16/ME_Theme_Sorter_16x16/21_Beach_16x16.png",
     "damm": "spiel/eigene/damm.png",
     "felsRot": "spiel/eigene/fels_rot.png",
     "wasser_rumpf": "spiel/eigene/wasser_rumpf.png",
@@ -594,14 +595,14 @@
       ]
     },
     "strand": {
-      "bogen": "gelaende",
+      "bogen": "strand",
       "feld": [
-        9,
-        31
+        1,
+        2
       ],
       "rand": [
-        8,
-        30
+        0,
+        1
       ]
     },
     "hallenboden": {

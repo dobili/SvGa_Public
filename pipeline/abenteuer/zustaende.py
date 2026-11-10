@@ -20,7 +20,8 @@ from pathlib import Path
 from pipeline.abenteuer.bedingung import Bedingungsfehler, variablen
 
 INHALTE = Path(__file__).resolve().parents[2] / "inhalte" / "abenteuer"
-SATZ = re.compile(r"Zustand:\s*(.*?[.!?])(?:\s|$)", re.S)
+# Abkürzungen, an deren Punkt kein Satz endet (Gutachten Runde 8: „Mr. Pratt“ schnitt den Satz ab).
+ABKUERZUNGEN = ("Mr.", "Mrs.", "Ms.", "Dr.", "St.", "Nr.", "z. B.", "u. a.", "S.", "ca.", "bzw.")
 
 
 def zustandsname(datei: str, basis: str) -> str:
@@ -46,8 +47,16 @@ def szenen_nach_datei() -> dict[str, dict]:
 
 def zustandssatz(beschreibung: str) -> str | None:
     """Der erste Satz ab „Zustand:“ in der Beschreibung, sonst None."""
-    treffer = SATZ.search(beschreibung or "")
-    return treffer.group(1).strip() if treffer else None
+    text = beschreibung or ""
+    start = text.find("Zustand:")
+    if start < 0:
+        return None
+    rest = text[start + len("Zustand:") :].lstrip()
+    for treffer in re.finditer(r"[.!?](?=\s|$)", rest):
+        satz = rest[: treffer.end()]
+        if not satz.endswith(ABKUERZUNGEN):
+            return satz.strip()
+    return rest.strip() or None
 
 
 def liste() -> tuple[list[dict], list[str]]:

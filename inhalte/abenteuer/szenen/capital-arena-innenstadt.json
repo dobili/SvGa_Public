@@ -47,9 +47,9 @@
     "#lllllllllllllllllllllllppllllllllllllllllllllllllllllpplllllllllllllllllllllll#",
     "#lllllllllllllllllllllllppllllllllllllllllllllllllllllpplllllllllllllllllllllll#",
     "#pppppppppppppppppppppppppppppppppppppppppppppppppppppppppppppppppppppppppppppp#",
-    "#sssssssssssssssssssssssppssssssssssssssssssssssssssssppsssssssssssssssssssssss#",
-    "#sssssssssssssssssssssssppssssssssssssssssssssssssssssppsssssssssssssssssssssss#",
-    "#sssssssssssssssssssssssppssssssssssssssssssssssssssssppsssssssssssssssssssssss#",
+    "#ssssssssssssssssssssssssssssssssssssssssssssssssssssssssssssssssssssssssssssss#",
+    "#ssssssssssssssssssssssssssssssssssssssssssssssssssssssssssssssssssssssssssssss#",
+    "#ssssssssssssssssssssssssssssssssssssssssssssssssssssssssssssssssssssssssssssss#",
     "#pppppppppppppppppppppppppppppppppppppppppppppppppppppppppppppppppppppppppppppp#",
     "#lllllllllllllllllllllllppttttttttttttttttttttttttttttpplllllllllllllllllllllll#",
     "#lllllllllllllllllllllllppttttttttttttttttttttttttttttpplllllllllllllllllllllll#",
@@ -647,6 +647,20 @@
       "feld": [
         70,
         20
+      ]
+    },
+    {
+      "moebel": "ca10Zebrastreifen",
+      "feld": [
+        24,
+        33
+      ]
+    },
+    {
+      "moebel": "ca10Zebrastreifen",
+      "feld": [
+        54,
+        33
       ]
     }
   ],

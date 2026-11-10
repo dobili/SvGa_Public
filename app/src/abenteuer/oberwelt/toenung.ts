@@ -24,7 +24,8 @@ export interface Schleier {
 
 /** Schleier je Tönung; Sepia und Dunkel haben eigene Wege (CSS-Filter, Lichtkreis). */
 export const SCHLEIER: Readonly<Partial<Record<Toenung, Schleier>>> = {
-  nebel: { farbe: 0xd8dde0, deckkraft: 0.45 },
+  // Nebel bei 0,28: Mit 0,45 verschwammen im Bayou Wasser, Boden und Stege zu Grau (Gutachten Runde 9).
+  nebel: { farbe: 0xd8dde0, deckkraft: 0.28 },
   nacht: { farbe: 0x0b1530, deckkraft: 0.55 },
   abend: { farbe: 0xff8a3d, deckkraft: 0.18 },
 };

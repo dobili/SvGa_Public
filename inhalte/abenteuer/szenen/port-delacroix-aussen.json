@@ -40,9 +40,9 @@
     "#ttppp..............................................pppp~~~~~~~~pp.............#",
     "#ttppp..............................................pppp~~~~~~~~pp.............#",
     "#ttppppppppppppppppppppppppppppppppppppppppppppppppppppp~~~~~~~~pp.............#",
-    "#ttpppsssssssssssssssssssssssssssssssssssssssssssssspppp~~~~~~~~pp.............#",
-    "#ttpppsssssssssssssssssssssssssssssssssssssssssssssspppp~~~~~~~~pp.............#",
-    "#ttpppsssssssssssssssssssssssssssssssssssssssssssssspppp~~~~~~~~pp.............#",
+    "#ttssssssssssssssssssssssssssssssssssssssssssssssssssssp~~~~~~~~pp.............#",
+    "#ttssssssssssssssssssssssssssssssssssssssssssssssssssssp~~~~~~~~pp.............#",
+    "#ttssssssssssssssssssssssssssssssssssssssssssssssssssssp~~~~~~~~pp.............#",
     "#ttppppppppppppppppppppppppppppppppppppppppppppppppppppp~~~~~~~~pp.............#",
     "#tt...............ppppppppppppppppppppp.............pppp~~~~~~~~pp.............#",
     "#tt...............ppppppppppppppppppppp.............pppp~~~~~~~~pp.............#",
@@ -1556,6 +1556,118 @@
         4,
         11
       ]
+    },
+    {
+      "moebel": "pd6BauzaunEndeLinks",
+      "feld": [
+        16,
+        17
+      ],
+      "bauteil_ok": true
+    },
+    {
+      "moebel": "pd6BauzaunMitte",
+      "feld": [
+        17,
+        17
+      ],
+      "bauteil_ok": true
+    },
+    {
+      "moebel": "pd6BauzaunMitte",
+      "feld": [
+        18,
+        17
+      ],
+      "bauteil_ok": true
+    },
+    {
+      "moebel": "pd6BauzaunMitte",
+      "feld": [
+        19,
+        17
+      ],
+      "bauteil_ok": true
+    },
+    {
+      "moebel": "pd6BauzaunMitte",
+      "feld": [
+        20,
+        17
+      ],
+      "bauteil_ok": true
+    },
+    {
+      "moebel": "pd6BauzaunMitte",
+      "feld": [
+        21,
+        17
+      ],
+      "bauteil_ok": true
+    },
+    {
+      "moebel": "pd6BauzaunMitte",
+      "feld": [
+        22,
+        17
+      ],
+      "bauteil_ok": true
+    },
+    {
+      "moebel": "pd6BauzaunMitte",
+      "feld": [
+        23,
+        17
+      ],
+      "bauteil_ok": true
+    },
+    {
+      "moebel": "pd6BauzaunMitte",
+      "feld": [
+        24,
+        17
+      ],
+      "bauteil_ok": true
+    },
+    {
+      "moebel": "pd6BauzaunMitte",
+      "feld": [
+        25,
+        17
+      ],
+      "bauteil_ok": true
+    },
+    {
+      "moebel": "pd6BauzaunMitte",
+      "feld": [
+        26,
+        17
+      ],
+      "bauteil_ok": true
+    },
+    {
+      "moebel": "pd6BauzaunMitte",
+      "feld": [
+        27,
+        17
+      ],
+      "bauteil_ok": true
+    },
+    {
+      "moebel": "pd6BauzaunMitte",
+      "feld": [
+        28,
+        17
+      ],
+      "bauteil_ok": true
+    },
+    {
+      "moebel": "pd6BauzaunEndeRechts",
+      "feld": [
+        29,
+        17
+      ],
+      "bauteil_ok": true
     }
   ],
   "ausloeser": [

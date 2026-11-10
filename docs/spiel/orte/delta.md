@@ -332,6 +332,19 @@ frei begehbar; die Auslöser kommen mit den Dialogen.
   Platzhalter an den Kantenenden (5, mittel-4 zentral), Pumpenhalle als Scheune (8), Bauzaun (9),
   Wegdiagonale und Krone (11, 12).
 
+**Zweites Gutachten Runde 9 (`gutachten/mittel-1-runde9-2.md`, mittel-1):**
+
+- **Bayou, blasse Vorschau (1):** Der Nebel hat Deckkraft 0,28 statt 0,45 (`toenung.ts` und
+  `toenung.py`, gilt für alle Nebelkarten). Wasser, Sumpfboden und Stege bleiben lesbar.
+- **Bayou, Möwe (2):** Der Reiher ist jetzt eine eigene Tierart.
+- **Deich, Bojen (2):** Boje und Pfahl ohne Wasserkachel (Bildwunsch `boje_frei.py`), sie sitzen
+  nicht mehr auf hellblauen Quadraten.
+- **Deich, Steg (1):** Am Steg liegen Fischerboot und Ruderboot, so steht es in der Beschreibung.
+  Für eine Fähre nach 10.64 ist das Wasser zu schmal.
+- **Deich, Messwagen (3):** Er parkt längs auf einem Pflasterstreifen (136–146, 12–13), wie 10.65
+  es für Seitenansichten verlangt.
+- Offen: Bauzaun südlich der Zelte (4), Fähre: Deck, Vogelschild, Fässer.
+
 ## 4. Bühnenbilder
 
 ### 4.1 Fährdeck

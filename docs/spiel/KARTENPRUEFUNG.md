@@ -168,3 +168,38 @@ Erst danach sieht der Autor die Karte. Neue Notizen des Autors kommen als neue P
 
 Der Gutachter bekommt nicht den Bericht des Helfers und nicht die Notizen des Autors zu dieser
 Karte, damit er unbefangen bleibt.
+
+## 5. Vorhandene Themen zuerst nutzen
+
+Viele Mängel kamen daher, dass passende Bilder aus unseren Paketen nicht genutzt wurden. Alle stehen
+im Katalog (`register/katalog.json` im privaten Repository). Bevor ein Ersatz oder ein eigenes Bild
+gezeichnet wird, diese Themen durchsehen:
+
+- **Modern Exteriors:**
+  - 19 Graveyard: Friedhof, Kapelle.
+  - 20 Subway and Train Station: Bahnsteige, Züge, Gleisenden, Fahrkartenautomaten.
+  - 8 Worksite: Baustelle, Kräne, Absperrungen.
+  - 9 Shopping Center and Markets: Stände mit Waren.
+  - 10 Vehicles: Fahrzeuge in Fahrtrichtung.
+  - 21 Beach.
+  - 17 Garden: Hecken, Beete.
+  - 3 City Props: Laternen, Bänke, Mülleimer, Poller.
+  - 2 City Terrains: Straßen, Markierungen, Bordsteine.
+- **Modern Interiors:**
+  - 22 Museum: Vitrinen mit Exponaten.
+  - 12 Kitchen: Großküche, Ausgabe.
+  - 13 Conference Hall.
+  - 5 Classroom and Library.
+  - 8 Gym, 3 Bathroom: Umkleide, Duschen.
+  - 9 Fishing.
+  - 16 Grocery Store.
+- **Weitere Pakete:** Modern Office, Modern Farm (Felder, Beete, Silos), Kitchen and more, Serene
+  Village.
+
+Echte Lücken (Stand 10.11.2026), für die ein eigenes Bild gezeichnet wird:
+
+- Schnee: wird durch Umfärbung gelöst (`docs/ENTSCHEIDUNGEN.md`).
+- Große Frachtkähne und Fähren.
+- Brücken mit Pfeilern über Straßen.
+- Industriehallen und Förderanlagen in Schrägansicht.
+- Steinbruchkanten.

@@ -15996,8 +15996,8 @@
      "id": 19,
      "name": "ziegen",
      "type": "tier",
-     "x": 448,
-     "y": 1056,
+     "x": 192,
+     "y": 960,
      "width": 16,
      "height": 16,
      "rotation": 0,
@@ -16006,12 +16006,12 @@
       {
        "name": "von",
        "type": "string",
-       "value": "28,66"
+       "value": "12,60"
       },
       {
        "name": "bis",
        "type": "string",
-       "value": "32,66"
+       "value": "18,60"
       },
       {
        "name": "verhalten",

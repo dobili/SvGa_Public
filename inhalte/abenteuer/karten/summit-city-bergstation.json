@@ -755,7 +755,7 @@
      "name": "fahrplan",
      "type": "ausloeser",
      "x": 96,
-     "y": 144,
+     "y": 160,
      "width": 16,
      "height": 16,
      "rotation": 0,
@@ -1185,7 +1185,7 @@
      "name": "cc4Fahrplan",
      "type": "moebel",
      "x": 80,
-     "y": 112,
+     "y": 128,
      "width": 38,
      "height": 32,
      "rotation": 0,
@@ -1194,7 +1194,7 @@
       {
        "name": "tiefe",
        "type": "int",
-       "value": 136
+       "value": 152
       },
       {
        "name": "kollision",

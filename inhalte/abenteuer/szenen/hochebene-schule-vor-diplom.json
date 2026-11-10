@@ -103,7 +103,7 @@
     },
     {
       "moebel": "heSchulbus",
-      "feld": [30, 32],
+      "feld": [30, 28],
       "bauteil_ok": true
     },
     {
@@ -482,7 +482,7 @@
   "figuren": [
     {
       "name": "annek",
-      "feld": [28, 29]
+      "feld": [34, 27]
     },
     {
       "name": "joss",
@@ -493,10 +493,10 @@
     {
       "name": "schulkinder",
       "typ": "statist",
-      "feld": [24, 30],
+      "feld": [18, 30],
       "eigenschaften": {
-        "von": "24,30",
-        "bis": "24,30",
+        "von": "18,30",
+        "bis": "18,30",
         "tun": "spielen Fangen",
         "wann": "tag"
       }
@@ -527,10 +527,10 @@
     {
       "name": "busfahrerin",
       "typ": "statist",
-      "feld": [32, 31],
+      "feld": [37, 32],
       "eigenschaften": {
-        "von": "32,31",
-        "bis": "32,31",
+        "von": "37,32",
+        "bis": "37,32",
         "tun": "wartet am Schulbus",
         "wann": "tag",
         "sagt": "statist.hochebene.schule.busfahrerin"
@@ -539,10 +539,10 @@
     {
       "name": "schulkind",
       "typ": "statist",
-      "feld": [22, 30],
+      "feld": [18, 30],
       "eigenschaften": {
-        "von": "22,30",
-        "bis": "22,30",
+        "von": "18,30",
+        "bis": "18,30",
         "tun": "hüpft Kästchen auf dem Hof",
         "wann": "tag",
         "sagt": "statist.hochebene.schule.schulkind"

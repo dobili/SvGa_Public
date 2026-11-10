@@ -336,6 +336,27 @@
     {
       "moebel": "wds6KaktusKlein",
       "feld": [22, 24]
+    },
+    {
+      "moebel": "sc8Funkgeraet",
+      "feld": [78, 7],
+      "vorn": true,
+      "id": "ereignis72"
+    },
+    {
+      "moebel": "sc8Kreidespringer",
+      "feld": [87, 9],
+      "id": "ereignis73"
+    },
+    {
+      "moebel": "mf2Blumenbeet",
+      "feld": [91, 10],
+      "id": "ereignis74"
+    },
+    {
+      "moebel": "sc8Finkenzeichen",
+      "feld": [89, 10],
+      "id": "ereignis75"
     }
   ],
   "ausloeser": [
@@ -398,33 +419,12 @@
       }
     },
     {
-      "name": "kellnerin",
-      "typ": "statist",
-      "feld": [82, 10],
-      "eigenschaften": {
-        "von": "82,10",
-        "bis": "82,10",
-        "tun": "bringt Kaffee raus",
-        "wann": "tag"
-      }
-    },
-    {
       "name": "kojote",
       "typ": "tier",
       "feld": [46, 23],
       "eigenschaften": {
         "von": "46,23",
         "bis": "50,23",
-        "verhalten": "ausweichen"
-      }
-    },
-    {
-      "name": "eidechse",
-      "typ": "tier",
-      "feld": [132, 22],
-      "eigenschaften": {
-        "von": "132,22",
-        "bis": "136,22",
         "verhalten": "ausweichen"
       }
     },
@@ -436,6 +436,113 @@
         "von": "26,17",
         "bis": "30,17",
         "verhalten": "ausweichen"
+      }
+    },
+    {
+      "name": "kellnerin",
+      "typ": "statist",
+      "feld": [80, 11],
+      "eigenschaften": {
+        "von": "80,11",
+        "bis": "80,11",
+        "tun": "bringt Kaffee nach draußen",
+        "wann": "tag",
+        "sagt": "statist.wegDesertSummit.diner.kellnerin"
+      }
+    },
+    {
+      "name": "fernfahrer",
+      "typ": "statist",
+      "feld": [62, 20],
+      "eigenschaften": {
+        "von": "62,20",
+        "bis": "62,20",
+        "tun": "kontrolliert die Reifen seines Lasters",
+        "wann": "tag",
+        "sagt": "statist.wegDesertSummit.diner.fernfahrer"
+      }
+    },
+    {
+      "name": "motelgast",
+      "typ": "statist",
+      "feld": [98, 11],
+      "eigenschaften": {
+        "von": "98,11",
+        "bis": "98,11",
+        "tun": "sitzt mit einem Buch vor dem Motel",
+        "wann": "tag",
+        "sagt": "statist.wegDesertSummit.diner.motelgast"
+      }
+    },
+    {
+      "name": "tankwart",
+      "typ": "statist",
+      "feld": [42, 18],
+      "eigenschaften": {
+        "von": "42,18",
+        "bis": "42,18",
+        "tun": "füllt Wasser in einen Kühler",
+        "wann": "tag"
+      }
+    },
+    {
+      "name": "praeriehunde",
+      "typ": "tier",
+      "feld": [105, 15],
+      "eigenschaften": {
+        "von": "105,15",
+        "bis": "109,15",
+        "verhalten": "ausweichen"
+      }
+    },
+    {
+      "name": "eidechse",
+      "typ": "tier",
+      "feld": [30, 22],
+      "eigenschaften": {
+        "von": "30,22",
+        "bis": "35,22",
+        "verhalten": "flitzen"
+      }
+    },
+    {
+      "name": "geier",
+      "typ": "tier",
+      "feld": [70, 6],
+      "eigenschaften": {
+        "von": "70,6",
+        "bis": "90,3",
+        "verhalten": "fliegen"
+      }
+    },
+    {
+      "name": "hund",
+      "typ": "tier",
+      "feld": [96, 12],
+      "eigenschaften": {
+        "von": "96,12",
+        "bis": "96,12",
+        "verhalten": "folgen"
+      }
+    },
+    {
+      "name": "kraehen",
+      "typ": "tier",
+      "feld": [120, 20],
+      "eigenschaften": {
+        "von": "120,20",
+        "bis": "130,20",
+        "verhalten": "fliegen"
+      }
+    },
+    {
+      "name": "hase",
+      "typ": "tier",
+      "feld": [135, 12],
+      "eigenschaften": {
+        "von": "135,12",
+        "bis": "129,12",
+        "verhalten": "flitzen"
       }
     }
   ]

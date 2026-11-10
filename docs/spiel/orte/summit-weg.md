@@ -258,3 +258,33 @@ Kehren. **Ränder** offen nur Ost (39, 120–122), West (0, 70–71), Nord (18�
 - **Bergstraße** (`weg-desert-summit-bergstrasse`): wie 4.2 mit grauem Fels (`wand: fels`), Leitplanken
   (eigene Bilder) talseits und an der Außenseite jeder Kehre. **B:** zwei lange Kehren (80, 34), weniger
   Wald. **C:** drei weite Kehren (Straße 4–35), Picknickplatz an der Quelle, dichter Wald.
+
+## Runde 7: Ereignisort und Leben (10.11.2026, mittel-4)
+
+**Ereignisort „Schach über Funk“ (Dokument 15, 2.8):**
+
+- **Diner:** Im Fenster des Diners steht das CB-Funkgerät. An der Seite des Diners ist ein
+  Kreidespringer (K3). Am Motel steht ein Blumenkasten, daneben das Finkenzeichen aus Blech.
+- **Bergstraße:** Ein blauer Sattelzug steht in einer Haltebucht aus Schotter neben der Straße,
+  mit Kisten daneben (Spur P4).
+- **Hinterzimmer:** Die Tür an der Rückseite des Diners kommt mit dem Innenraum in Runde 6. Das
+  Bild des Diners hat dort keine Tür.
+
+**3.3 Felder für Runde 6 (begehbar):**
+
+| Karte         | Auslöser             | A         | B         | C        | Hinweis                     |
+| ------------- | -------------------- | --------- | --------- | -------- | --------------------------- |
+| `diner`       | `ereignisFunkschach` | (79, 11)  | (83, 11)  | (77, 11) | vor dem Diner               |
+| `diner`       | `kreide3`            | (87, 9)   | (91, 9)   | (85, 9)  | Kreidespringer an der Seite |
+| `diner`       | `finchSpringerB`     | (89, 10)  | (65, 10)  | (87, 10) | Blumenkasten am Motel       |
+| `diner`       | `seite08`            | (55, 22)  | (52, 18)  | (54, 17) | Parkplatz                   |
+| `bergstrasse` | `spurPM4`            | (16, 116) | (16, 115) | (15, 95) | neben dem Sattelzug         |
+
+**Leben (Regel 10.53):**
+
+- **Diner:** Kellnerin (über Earl), Fernfahrer (erst in den Spiegel schauen), Motelgast
+  (Präriehunde wie zögernde Bauern), Tankwart.
+- **Bergstraße:** Radfahrerin (Bauernendspiel bergauf), Schäferin (Ziegen wie Springer, mit
+  Antwort von Ambrose), Wanderer (Franklins Aufsatz über Schach), Fotograf.
+- **Tiere, Diner:** Präriehunde, Eidechse, Geier, Hund, Krähen, Hase.
+- **Tiere, Bergstraße:** Ziegen, Murmeltier, Adler, Reh, Eichhörnchen, Schmetterlinge.

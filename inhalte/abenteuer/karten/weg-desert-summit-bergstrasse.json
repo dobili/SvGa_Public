@@ -11,7 +11,7 @@
  "tilewidth": 16,
  "tileheight": 16,
  "nextlayerid": 5,
- "nextobjectid": 124,
+ "nextobjectid": 135,
  "layers": [
   {
    "id": 1,
@@ -4513,16 +4513,16 @@
     4,
     4,
     4,
-    1,
-    1,
-    1,
-    1,
-    1,
-    1,
-    1,
-    1,
-    1,
-    1,
+    4,
+    4,
+    4,
+    4,
+    4,
+    4,
+    4,
+    4,
+    4,
+    4,
     1,
     1,
     1,
@@ -4553,16 +4553,16 @@
     4,
     4,
     4,
-    1,
-    1,
-    1,
-    1,
-    1,
-    1,
-    1,
-    1,
-    1,
-    1,
+    4,
+    4,
+    4,
+    4,
+    4,
+    4,
+    4,
+    4,
+    4,
+    4,
     1,
     1,
     1,
@@ -4593,16 +4593,16 @@
     4,
     4,
     4,
-    1,
-    1,
-    1,
-    1,
-    1,
-    1,
-    1,
-    1,
-    1,
-    1,
+    4,
+    4,
+    4,
+    4,
+    4,
+    4,
+    4,
+    4,
+    4,
+    4,
     1,
     1,
     1,
@@ -4633,16 +4633,16 @@
     4,
     4,
     4,
-    1,
-    1,
-    1,
-    1,
-    1,
-    1,
-    1,
-    1,
-    1,
-    1,
+    4,
+    4,
+    4,
+    4,
+    4,
+    4,
+    4,
+    4,
+    4,
+    4,
     1,
     1,
     1,
@@ -15803,9 +15803,85 @@
     },
     {
      "id": 11,
-     "name": "ziegen",
-     "type": "tier",
-     "x": 224,
+     "name": "radfahrerin",
+     "type": "statist",
+     "x": 320,
+     "y": 640,
+     "width": 16,
+     "height": 16,
+     "rotation": 0,
+     "visible": true,
+     "properties": [
+      {
+       "name": "von",
+       "type": "string",
+       "value": "20,40"
+      },
+      {
+       "name": "bis",
+       "type": "string",
+       "value": "20,32"
+      },
+      {
+       "name": "tun",
+       "type": "string",
+       "value": "schiebt ihr Rennrad bergauf"
+      },
+      {
+       "name": "wann",
+       "type": "string",
+       "value": "tag"
+      },
+      {
+       "name": "sagt",
+       "type": "string",
+       "value": "statist.wegDesertSummit.bergstrasse.radfahrerin"
+      }
+     ]
+    },
+    {
+     "id": 12,
+     "name": "schaeferin",
+     "type": "statist",
+     "x": 400,
+     "y": 1040,
+     "width": 16,
+     "height": 16,
+     "rotation": 0,
+     "visible": true,
+     "properties": [
+      {
+       "name": "von",
+       "type": "string",
+       "value": "25,65"
+      },
+      {
+       "name": "bis",
+       "type": "string",
+       "value": "25,65"
+      },
+      {
+       "name": "tun",
+       "type": "string",
+       "value": "treibt ihre Ziegen über den Hang"
+      },
+      {
+       "name": "wann",
+       "type": "string",
+       "value": "tag"
+      },
+      {
+       "name": "sagt",
+       "type": "string",
+       "value": "statist.wegDesertSummit.bergstrasse.schaeferin"
+      }
+     ]
+    },
+    {
+     "id": 13,
+     "name": "wanderer",
+     "type": "statist",
+     "x": 480,
      "y": 1600,
      "width": 16,
      "height": 16,
@@ -15815,12 +15891,83 @@
       {
        "name": "von",
        "type": "string",
-       "value": "14,100"
+       "value": "30,100"
       },
       {
        "name": "bis",
        "type": "string",
-       "value": "17,100"
+       "value": "30,100"
+      },
+      {
+       "name": "tun",
+       "type": "string",
+       "value": "macht Rast auf einem Stein"
+      },
+      {
+       "name": "wann",
+       "type": "string",
+       "value": "tag"
+      },
+      {
+       "name": "sagt",
+       "type": "string",
+       "value": "statist.wegDesertSummit.bergstrasse.wanderer"
+      }
+     ]
+    },
+    {
+     "id": 14,
+     "name": "fotograf",
+     "type": "statist",
+     "x": 320,
+     "y": 160,
+     "width": 16,
+     "height": 16,
+     "rotation": 0,
+     "visible": true,
+     "properties": [
+      {
+       "name": "von",
+       "type": "string",
+       "value": "20,10"
+      },
+      {
+       "name": "bis",
+       "type": "string",
+       "value": "20,10"
+      },
+      {
+       "name": "tun",
+       "type": "string",
+       "value": "fotografiert die Kehren von oben"
+      },
+      {
+       "name": "wann",
+       "type": "string",
+       "value": "tag"
+      }
+     ]
+    },
+    {
+     "id": 15,
+     "name": "ziegen",
+     "type": "tier",
+     "x": 448,
+     "y": 1056,
+     "width": 16,
+     "height": 16,
+     "rotation": 0,
+     "visible": true,
+     "properties": [
+      {
+       "name": "von",
+       "type": "string",
+       "value": "28,66"
+      },
+      {
+       "name": "bis",
+       "type": "string",
+       "value": "32,66"
       },
       {
        "name": "verhalten",
@@ -15830,11 +15977,11 @@
      ]
     },
     {
-     "id": 12,
-     "name": "eichhoernchen",
+     "id": 16,
+     "name": "murmeltier",
      "type": "tier",
-     "x": 480,
-     "y": 288,
+     "x": 496,
+     "y": 320,
      "width": 16,
      "height": 16,
      "rotation": 0,
@@ -15843,12 +15990,12 @@
       {
        "name": "von",
        "type": "string",
-       "value": "30,18"
+       "value": "31,20"
       },
       {
        "name": "bis",
        "type": "string",
-       "value": "33,18"
+       "value": "34,20"
       },
       {
        "name": "verhalten",
@@ -15858,7 +16005,119 @@
      ]
     },
     {
-     "id": 13,
+     "id": 17,
+     "name": "adler",
+     "type": "tier",
+     "x": 320,
+     "y": 816,
+     "width": 16,
+     "height": 16,
+     "rotation": 0,
+     "visible": true,
+     "properties": [
+      {
+       "name": "von",
+       "type": "string",
+       "value": "20,51"
+      },
+      {
+       "name": "bis",
+       "type": "string",
+       "value": "20,71"
+      },
+      {
+       "name": "verhalten",
+       "type": "string",
+       "value": "fliegen"
+      }
+     ]
+    },
+    {
+     "id": 18,
+     "name": "reh",
+     "type": "tier",
+     "x": 160,
+     "y": 1296,
+     "width": 16,
+     "height": 16,
+     "rotation": 0,
+     "visible": true,
+     "properties": [
+      {
+       "name": "von",
+       "type": "string",
+       "value": "10,81"
+      },
+      {
+       "name": "bis",
+       "type": "string",
+       "value": "14,81"
+      },
+      {
+       "name": "verhalten",
+       "type": "string",
+       "value": "ausweichen"
+      }
+     ]
+    },
+    {
+     "id": 19,
+     "name": "eichhoernchen",
+     "type": "tier",
+     "x": 480,
+     "y": 1408,
+     "width": 16,
+     "height": 16,
+     "rotation": 0,
+     "visible": true,
+     "properties": [
+      {
+       "name": "von",
+       "type": "string",
+       "value": "30,88"
+      },
+      {
+       "name": "bis",
+       "type": "string",
+       "value": "35,88"
+      },
+      {
+       "name": "verhalten",
+       "type": "string",
+       "value": "flitzen"
+      }
+     ]
+    },
+    {
+     "id": 20,
+     "name": "schmetterlinge",
+     "type": "tier",
+     "x": 240,
+     "y": 1984,
+     "width": 16,
+     "height": 16,
+     "rotation": 0,
+     "visible": true,
+     "properties": [
+      {
+       "name": "von",
+       "type": "string",
+       "value": "15,124"
+      },
+      {
+       "name": "bis",
+       "type": "string",
+       "value": "23,124"
+      },
+      {
+       "name": "verhalten",
+       "type": "string",
+       "value": "fliegen"
+      }
+     ]
+    },
+    {
+     "id": 21,
      "name": "wds6Warnschild",
      "type": "moebel",
      "x": 480,
@@ -15881,7 +16140,7 @@
      ]
     },
     {
-     "id": 14,
+     "id": 22,
      "name": "wds6Quelle",
      "type": "moebel",
      "x": 192,
@@ -15904,7 +16163,7 @@
      ]
     },
     {
-     "id": 15,
+     "id": 23,
      "name": "wds6Wegweiser",
      "type": "moebel",
      "x": 448,
@@ -15927,7 +16186,7 @@
      ]
     },
     {
-     "id": 16,
+     "id": 24,
      "name": "wds6Schranke",
      "type": "moebel",
      "x": 32,
@@ -15950,7 +16209,7 @@
      ]
     },
     {
-     "id": 17,
+     "id": 25,
      "name": "wds6Bank",
      "type": "moebel",
      "x": 384,
@@ -15973,7 +16232,7 @@
      ]
     },
     {
-     "id": 18,
+     "id": 26,
      "name": "wds6Holzstapel",
      "type": "moebel",
      "x": 160,
@@ -15996,7 +16255,7 @@
      ]
     },
     {
-     "id": 19,
+     "id": 27,
      "name": "wds6Briefkasten",
      "type": "moebel",
      "x": 336,
@@ -16019,7 +16278,7 @@
      ]
     },
     {
-     "id": 20,
+     "id": 28,
      "name": "wds6LeitplankeL8",
      "type": "moebel",
      "x": 144,
@@ -16042,7 +16301,7 @@
      ]
     },
     {
-     "id": 21,
+     "id": 29,
      "name": "wds6LeitplankeL8",
      "type": "moebel",
      "x": 272,
@@ -16065,7 +16324,7 @@
      ]
     },
     {
-     "id": 22,
+     "id": 30,
      "name": "wds6LeitplankeL7",
      "type": "moebel",
      "x": 400,
@@ -16088,7 +16347,7 @@
      ]
     },
     {
-     "id": 23,
+     "id": 31,
      "name": "wds6LeitplankeL2",
      "type": "moebel",
      "x": 512,
@@ -16111,7 +16370,7 @@
      ]
     },
     {
-     "id": 24,
+     "id": 32,
      "name": "wds6LeitplankeQ3",
      "type": "moebel",
      "x": 80,
@@ -16134,7 +16393,7 @@
      ]
     },
     {
-     "id": 25,
+     "id": 33,
      "name": "wds6LeitplankeQ3",
      "type": "moebel",
      "x": 544,
@@ -16157,7 +16416,7 @@
      ]
     },
     {
-     "id": 26,
+     "id": 34,
      "name": "wds6LeitplankeL8",
      "type": "moebel",
      "x": 96,
@@ -16180,7 +16439,7 @@
      ]
     },
     {
-     "id": 27,
+     "id": 35,
      "name": "wds6LeitplankeL8",
      "type": "moebel",
      "x": 224,
@@ -16203,7 +16462,7 @@
      ]
     },
     {
-     "id": 28,
+     "id": 36,
      "name": "wds6LeitplankeL7",
      "type": "moebel",
      "x": 352,
@@ -16226,7 +16485,7 @@
      ]
     },
     {
-     "id": 29,
+     "id": 37,
      "name": "wds6LeitplankeL2",
      "type": "moebel",
      "x": 464,
@@ -16249,7 +16508,7 @@
      ]
     },
     {
-     "id": 30,
+     "id": 38,
      "name": "wds6LeitplankeQ3",
      "type": "moebel",
      "x": 80,
@@ -16272,7 +16531,7 @@
      ]
     },
     {
-     "id": 31,
+     "id": 39,
      "name": "wds6LeitplankeQ3",
      "type": "moebel",
      "x": 544,
@@ -16295,7 +16554,7 @@
      ]
     },
     {
-     "id": 32,
+     "id": 40,
      "name": "wds6LeitplankeL8",
      "type": "moebel",
      "x": 144,
@@ -16318,7 +16577,7 @@
      ]
     },
     {
-     "id": 33,
+     "id": 41,
      "name": "wds6LeitplankeL4",
      "type": "moebel",
      "x": 272,
@@ -16341,7 +16600,7 @@
      ]
     },
     {
-     "id": 34,
+     "id": 42,
      "name": "wds6LeitplankeQ3",
      "type": "moebel",
      "x": 80,
@@ -16364,7 +16623,7 @@
      ]
     },
     {
-     "id": 35,
+     "id": 43,
      "name": "wds6LeitplankeQ3",
      "type": "moebel",
      "x": 336,
@@ -16387,7 +16646,7 @@
      ]
     },
     {
-     "id": 36,
+     "id": 44,
      "name": "wds6Kegelbaum",
      "type": "moebel",
      "x": 416,
@@ -16410,7 +16669,7 @@
      ]
     },
     {
-     "id": 37,
+     "id": 45,
      "name": "wds6Kegelbaum",
      "type": "moebel",
      "x": 512,
@@ -16433,7 +16692,7 @@
      ]
     },
     {
-     "id": 38,
+     "id": 46,
      "name": "wds6Pinie",
      "type": "moebel",
      "x": 80,
@@ -16456,7 +16715,7 @@
      ]
     },
     {
-     "id": 39,
+     "id": 47,
      "name": "wds6Kegelbaum",
      "type": "moebel",
      "x": 80,
@@ -16479,7 +16738,7 @@
      ]
     },
     {
-     "id": 40,
+     "id": 48,
      "name": "wds6Pinie",
      "type": "moebel",
      "x": 576,
@@ -16502,7 +16761,7 @@
      ]
     },
     {
-     "id": 41,
+     "id": 49,
      "name": "wds6Pinie",
      "type": "moebel",
      "x": 368,
@@ -16525,7 +16784,7 @@
      ]
     },
     {
-     "id": 42,
+     "id": 50,
      "name": "wds6PinieB",
      "type": "moebel",
      "x": 240,
@@ -16548,7 +16807,7 @@
      ]
     },
     {
-     "id": 43,
+     "id": 51,
      "name": "wds6Kegelbaum",
      "type": "moebel",
      "x": 240,
@@ -16571,7 +16830,7 @@
      ]
     },
     {
-     "id": 44,
+     "id": 52,
      "name": "wds6Kegelbaum",
      "type": "moebel",
      "x": 32,
@@ -16594,7 +16853,7 @@
      ]
     },
     {
-     "id": 45,
+     "id": 53,
      "name": "wds6Pinie",
      "type": "moebel",
      "x": 448,
@@ -16617,7 +16876,7 @@
      ]
     },
     {
-     "id": 46,
+     "id": 54,
      "name": "wds6Pinie",
      "type": "moebel",
      "x": 512,
@@ -16640,7 +16899,7 @@
      ]
     },
     {
-     "id": 47,
+     "id": 55,
      "name": "wds6Kegelbaum",
      "type": "moebel",
      "x": 480,
@@ -16663,7 +16922,7 @@
      ]
     },
     {
-     "id": 48,
+     "id": 56,
      "name": "wds6Kegelbaum",
      "type": "moebel",
      "x": 32,
@@ -16686,7 +16945,7 @@
      ]
     },
     {
-     "id": 49,
+     "id": 57,
      "name": "wds6Pinie",
      "type": "moebel",
      "x": 512,
@@ -16709,7 +16968,7 @@
      ]
     },
     {
-     "id": 50,
+     "id": 58,
      "name": "wds6Kegelbaum",
      "type": "moebel",
      "x": 128,
@@ -16732,7 +16991,7 @@
      ]
     },
     {
-     "id": 51,
+     "id": 59,
      "name": "wds6PinieB",
      "type": "moebel",
      "x": 448,
@@ -16755,7 +17014,7 @@
      ]
     },
     {
-     "id": 52,
+     "id": 60,
      "name": "wds6Pinie",
      "type": "moebel",
      "x": 368,
@@ -16778,7 +17037,7 @@
      ]
     },
     {
-     "id": 53,
+     "id": 61,
      "name": "wds6PinieB",
      "type": "moebel",
      "x": 352,
@@ -16801,7 +17060,7 @@
      ]
     },
     {
-     "id": 54,
+     "id": 62,
      "name": "wds6Kegelbaum",
      "type": "moebel",
      "x": 560,
@@ -16824,7 +17083,7 @@
      ]
     },
     {
-     "id": 55,
+     "id": 63,
      "name": "wds6PinieB",
      "type": "moebel",
      "x": 192,
@@ -16847,7 +17106,7 @@
      ]
     },
     {
-     "id": 56,
+     "id": 64,
      "name": "wds6Pinie",
      "type": "moebel",
      "x": 176,
@@ -16870,7 +17129,7 @@
      ]
     },
     {
-     "id": 57,
+     "id": 65,
      "name": "wds6Kegelbaum",
      "type": "moebel",
      "x": 32,
@@ -16893,7 +17152,7 @@
      ]
     },
     {
-     "id": 58,
+     "id": 66,
      "name": "wds6Pinie",
      "type": "moebel",
      "x": 96,
@@ -16916,7 +17175,7 @@
      ]
     },
     {
-     "id": 59,
+     "id": 67,
      "name": "wds6Pinie",
      "type": "moebel",
      "x": 112,
@@ -16939,7 +17198,7 @@
      ]
     },
     {
-     "id": 60,
+     "id": 68,
      "name": "wds6PinieB",
      "type": "moebel",
      "x": 576,
@@ -16962,7 +17221,7 @@
      ]
     },
     {
-     "id": 61,
+     "id": 69,
      "name": "wds6Pinie",
      "type": "moebel",
      "x": 240,
@@ -16985,7 +17244,7 @@
      ]
     },
     {
-     "id": 62,
+     "id": 70,
      "name": "wds6Pinie",
      "type": "moebel",
      "x": 352,
@@ -17008,7 +17267,7 @@
      ]
     },
     {
-     "id": 63,
+     "id": 71,
      "name": "wds6PinieB",
      "type": "moebel",
      "x": 480,
@@ -17031,7 +17290,7 @@
      ]
     },
     {
-     "id": 64,
+     "id": 72,
      "name": "wds6PinieB",
      "type": "moebel",
      "x": 32,
@@ -17054,7 +17313,7 @@
      ]
     },
     {
-     "id": 65,
+     "id": 73,
      "name": "wds6PinieB",
      "type": "moebel",
      "x": 176,
@@ -17077,7 +17336,7 @@
      ]
     },
     {
-     "id": 66,
+     "id": 74,
      "name": "wds6PinieB",
      "type": "moebel",
      "x": 224,
@@ -17100,7 +17359,7 @@
      ]
     },
     {
-     "id": 67,
+     "id": 75,
      "name": "wds6Pinie",
      "type": "moebel",
      "x": 576,
@@ -17123,7 +17382,7 @@
      ]
     },
     {
-     "id": 68,
+     "id": 76,
      "name": "wds6PinieB",
      "type": "moebel",
      "x": 160,
@@ -17146,7 +17405,7 @@
      ]
     },
     {
-     "id": 69,
+     "id": 77,
      "name": "wds6Pinie",
      "type": "moebel",
      "x": 432,
@@ -17169,7 +17428,7 @@
      ]
     },
     {
-     "id": 70,
+     "id": 78,
      "name": "wds6PinieB",
      "type": "moebel",
      "x": 240,
@@ -17192,7 +17451,7 @@
      ]
     },
     {
-     "id": 71,
+     "id": 79,
      "name": "wds6Pinie",
      "type": "moebel",
      "x": 96,
@@ -17215,7 +17474,7 @@
      ]
     },
     {
-     "id": 72,
+     "id": 80,
      "name": "wds6PinieB",
      "type": "moebel",
      "x": 416,
@@ -17238,7 +17497,7 @@
      ]
     },
     {
-     "id": 73,
+     "id": 81,
      "name": "wds6Pinie",
      "type": "moebel",
      "x": 128,
@@ -17261,7 +17520,7 @@
      ]
     },
     {
-     "id": 74,
+     "id": 82,
      "name": "wds6PinieB",
      "type": "moebel",
      "x": 528,
@@ -17284,7 +17543,7 @@
      ]
     },
     {
-     "id": 75,
+     "id": 83,
      "name": "wds6Pinie",
      "type": "moebel",
      "x": 544,
@@ -17307,7 +17566,7 @@
      ]
     },
     {
-     "id": 76,
+     "id": 84,
      "name": "wds6Kegelbaum",
      "type": "moebel",
      "x": 576,
@@ -17330,7 +17589,7 @@
      ]
     },
     {
-     "id": 77,
+     "id": 85,
      "name": "wds6Pinie",
      "type": "moebel",
      "x": 80,
@@ -17353,7 +17612,7 @@
      ]
     },
     {
-     "id": 78,
+     "id": 86,
      "name": "wds6PinieB",
      "type": "moebel",
      "x": 400,
@@ -17376,7 +17635,7 @@
      ]
     },
     {
-     "id": 79,
+     "id": 87,
      "name": "wds6Pinie",
      "type": "moebel",
      "x": 352,
@@ -17399,7 +17658,7 @@
      ]
     },
     {
-     "id": 80,
+     "id": 88,
      "name": "wds6Pinie",
      "type": "moebel",
      "x": 512,
@@ -17422,7 +17681,7 @@
      ]
     },
     {
-     "id": 81,
+     "id": 89,
      "name": "wds6Pinie",
      "type": "moebel",
      "x": 32,
@@ -17445,7 +17704,7 @@
      ]
     },
     {
-     "id": 82,
+     "id": 90,
      "name": "wds6Kegelbaum",
      "type": "moebel",
      "x": 464,
@@ -17468,7 +17727,7 @@
      ]
     },
     {
-     "id": 83,
+     "id": 91,
      "name": "wds6PinieB",
      "type": "moebel",
      "x": 144,
@@ -17491,7 +17750,7 @@
      ]
     },
     {
-     "id": 84,
+     "id": 92,
      "name": "wds6Kegelbaum",
      "type": "moebel",
      "x": 160,
@@ -17514,7 +17773,7 @@
      ]
     },
     {
-     "id": 85,
+     "id": 93,
      "name": "wds6Wacholder",
      "type": "moebel",
      "x": 576,
@@ -17537,7 +17796,7 @@
      ]
     },
     {
-     "id": 86,
+     "id": 94,
      "name": "wds6Wacholder",
      "type": "moebel",
      "x": 48,
@@ -17560,7 +17819,7 @@
      ]
     },
     {
-     "id": 87,
+     "id": 95,
      "name": "wds6Wacholder",
      "type": "moebel",
      "x": 288,
@@ -17583,7 +17842,7 @@
      ]
     },
     {
-     "id": 88,
+     "id": 96,
      "name": "wds6Pinie",
      "type": "moebel",
      "x": 272,
@@ -17606,7 +17865,7 @@
      ]
     },
     {
-     "id": 89,
+     "id": 97,
      "name": "wds6Kegelbaum",
      "type": "moebel",
      "x": 224,
@@ -17629,7 +17888,7 @@
      ]
     },
     {
-     "id": 90,
+     "id": 98,
      "name": "wds6Pinie",
      "type": "moebel",
      "x": 160,
@@ -17652,7 +17911,7 @@
      ]
     },
     {
-     "id": 91,
+     "id": 99,
      "name": "wds6Wacholder",
      "type": "moebel",
      "x": 240,
@@ -17675,7 +17934,7 @@
      ]
     },
     {
-     "id": 92,
+     "id": 100,
      "name": "wds6Kegelbaum",
      "type": "moebel",
      "x": 320,
@@ -17698,7 +17957,7 @@
      ]
     },
     {
-     "id": 93,
+     "id": 101,
      "name": "wds6Wacholder",
      "type": "moebel",
      "x": 304,
@@ -17721,7 +17980,7 @@
      ]
     },
     {
-     "id": 94,
+     "id": 102,
      "name": "wds6Wacholder",
      "type": "moebel",
      "x": 208,
@@ -17744,7 +18003,7 @@
      ]
     },
     {
-     "id": 95,
+     "id": 103,
      "name": "wds6Pinie",
      "type": "moebel",
      "x": 560,
@@ -17767,7 +18026,7 @@
      ]
     },
     {
-     "id": 96,
+     "id": 104,
      "name": "wds6Wacholder",
      "type": "moebel",
      "x": 352,
@@ -17790,7 +18049,7 @@
      ]
     },
     {
-     "id": 97,
+     "id": 105,
      "name": "wds6Pinie",
      "type": "moebel",
      "x": 48,
@@ -17813,7 +18072,7 @@
      ]
     },
     {
-     "id": 98,
+     "id": 106,
      "name": "wds6Pinie",
      "type": "moebel",
      "x": 448,
@@ -17836,7 +18095,7 @@
      ]
     },
     {
-     "id": 99,
+     "id": 107,
      "name": "wds6Kegelbaum",
      "type": "moebel",
      "x": 464,
@@ -17859,7 +18118,7 @@
      ]
     },
     {
-     "id": 100,
+     "id": 108,
      "name": "wds6Kegelbaum",
      "type": "moebel",
      "x": 496,
@@ -17882,7 +18141,7 @@
      ]
     },
     {
-     "id": 101,
+     "id": 109,
      "name": "wds6Wacholder",
      "type": "moebel",
      "x": 432,
@@ -17905,7 +18164,7 @@
      ]
     },
     {
-     "id": 102,
+     "id": 110,
      "name": "wds6Brocken",
      "type": "moebel",
      "x": 272,
@@ -17928,7 +18187,7 @@
      ]
     },
     {
-     "id": 103,
+     "id": 111,
      "name": "wds6Brocken",
      "type": "moebel",
      "x": 448,
@@ -17951,7 +18210,7 @@
      ]
     },
     {
-     "id": 104,
+     "id": 112,
      "name": "wds6Brocken",
      "type": "moebel",
      "x": 160,
@@ -17974,7 +18233,7 @@
      ]
     },
     {
-     "id": 105,
+     "id": 113,
      "name": "wds6WacholderB",
      "type": "moebel",
      "x": 304,
@@ -17997,7 +18256,7 @@
      ]
     },
     {
-     "id": 106,
+     "id": 114,
      "name": "wds6Wacholder",
      "type": "moebel",
      "x": 416,
@@ -18020,7 +18279,7 @@
      ]
     },
     {
-     "id": 107,
+     "id": 115,
      "name": "wds6Fels",
      "type": "moebel",
      "x": 304,
@@ -18043,7 +18302,7 @@
      ]
     },
     {
-     "id": 108,
+     "id": 116,
      "name": "wds6Wacholder",
      "type": "moebel",
      "x": 336,
@@ -18066,7 +18325,7 @@
      ]
     },
     {
-     "id": 109,
+     "id": 117,
      "name": "wds6Fels",
      "type": "moebel",
      "x": 240,
@@ -18089,7 +18348,7 @@
      ]
     },
     {
-     "id": 110,
+     "id": 118,
      "name": "wds6Fels",
      "type": "moebel",
      "x": 48,
@@ -18112,7 +18371,7 @@
      ]
     },
     {
-     "id": 111,
+     "id": 119,
      "name": "wds6WacholderB",
      "type": "moebel",
      "x": 384,
@@ -18135,7 +18394,7 @@
      ]
     },
     {
-     "id": 112,
+     "id": 120,
      "name": "wds6Fels",
      "type": "moebel",
      "x": 272,
@@ -18158,7 +18417,7 @@
      ]
     },
     {
-     "id": 113,
+     "id": 121,
      "name": "wds6WacholderB",
      "type": "moebel",
      "x": 432,
@@ -18181,7 +18440,7 @@
      ]
     },
     {
-     "id": 114,
+     "id": 122,
      "name": "wds6Fels",
      "type": "moebel",
      "x": 176,
@@ -18204,7 +18463,7 @@
      ]
     },
     {
-     "id": 115,
+     "id": 123,
      "name": "wds6Fels",
      "type": "moebel",
      "x": 272,
@@ -18227,7 +18486,7 @@
      ]
     },
     {
-     "id": 116,
+     "id": 124,
      "name": "wds6Wacholder",
      "type": "moebel",
      "x": 368,
@@ -18250,7 +18509,7 @@
      ]
     },
     {
-     "id": 117,
+     "id": 125,
      "name": "wds6BrockenMittel",
      "type": "moebel",
      "x": 448,
@@ -18273,7 +18532,7 @@
      ]
     },
     {
-     "id": 118,
+     "id": 126,
      "name": "wds6BrockenMittel",
      "type": "moebel",
      "x": 240,
@@ -18296,7 +18555,7 @@
      ]
     },
     {
-     "id": 119,
+     "id": 127,
      "name": "wds6Wacholder",
      "type": "moebel",
      "x": 400,
@@ -18319,7 +18578,7 @@
      ]
     },
     {
-     "id": 120,
+     "id": 128,
      "name": "wds6Wacholder",
      "type": "moebel",
      "x": 320,
@@ -18342,7 +18601,7 @@
      ]
     },
     {
-     "id": 121,
+     "id": 129,
      "name": "wds6Fels",
      "type": "moebel",
      "x": 512,
@@ -18365,7 +18624,7 @@
      ]
     },
     {
-     "id": 122,
+     "id": 130,
      "name": "wds6Fels",
      "type": "moebel",
      "x": 288,
@@ -18388,7 +18647,7 @@
      ]
     },
     {
-     "id": 123,
+     "id": 131,
      "name": "wds6Fels",
      "type": "moebel",
      "x": 560,
@@ -18402,6 +18661,75 @@
        "name": "tiefe",
        "type": "int",
        "value": 2024
+      },
+      {
+       "name": "kollision",
+       "type": "bool",
+       "value": true
+      }
+     ]
+    },
+    {
+     "id": 132,
+     "name": "wds6SattelzugBlau",
+     "type": "moebel",
+     "x": 144,
+     "y": 1792,
+     "width": 160,
+     "height": 64,
+     "rotation": 0,
+     "visible": true,
+     "properties": [
+      {
+       "name": "tiefe",
+       "type": "int",
+       "value": 1848
+      },
+      {
+       "name": "kollision",
+       "type": "bool",
+       "value": true
+      }
+     ]
+    },
+    {
+     "id": 133,
+     "name": "wg6Kisten",
+     "type": "moebel",
+     "x": 320,
+     "y": 1808,
+     "width": 32,
+     "height": 32,
+     "rotation": 0,
+     "visible": true,
+     "properties": [
+      {
+       "name": "tiefe",
+       "type": "int",
+       "value": 1832
+      },
+      {
+       "name": "kollision",
+       "type": "bool",
+       "value": true
+      }
+     ]
+    },
+    {
+     "id": 134,
+     "name": "wg6Kisten",
+     "type": "moebel",
+     "x": 336,
+     "y": 1760,
+     "width": 32,
+     "height": 32,
+     "rotation": 0,
+     "visible": true,
+     "properties": [
+      {
+       "name": "tiefe",
+       "type": "int",
+       "value": 1784
       },
       {
        "name": "kollision",

@@ -2,7 +2,7 @@
   "karte": "siliconBay.hafen",
   "datei": "karten/silicon-bay-hafen.json",
   "art": "aussen",
-  "beschreibung": "Der alte Hafen von Silicon Bay unterhalb der Terrasse des Campus; eine Stützmauer trägt die Terrasse, in der Mitte führt die Treppe in zwei Läufen herunter auf die Hafenstraße. Oben die alten Häuser: der Fischladen der Fischhalle, der Laden für Hafenbedarf, Ames leerer Kurzwarenladen mit dem Schild „Coming soon“ und dem Plakat „Bald geöffnet“ und die Hafenmeisterei mit Schild und Flagge; daneben trocknen Netze. Am Südrand der Straße Laternen in festen Abständen, am Kai ein Gemüsekarren mit Händlerin. Links das Fährhäuschen, davor am Kai die Küstenfähre, 18 Kacheln lang, mit Gangway zum Kai. In der Mitte das kleine Fischerboot, ein Ruderboot mit Angel; davor ein paar Kisten und Fässer, die Hafenarbeiter zur Kaikante tragen. Bänke mit Blick aufs Wasser, Poller an der Kaikante; die Kaimauer fällt mit Leitern und Reifenfendern zum Wasser ab. Rechts der Steg der Inselfähre mit einem Motorboot und der rot-weiße Leuchtturm auf einer Mole, zu dessen Tür ein Weg um den Turm führt.",
+  "beschreibung": "Der alte Hafen von Silicon Bay unterhalb der Terrasse des Campus; eine Stützmauer trägt die Terrasse, in der Mitte führt die Treppe in zwei Läufen herunter auf die Hafenstraße. Oben die alten Häuser: der Fischladen der Fischhalle, der Laden für Hafenbedarf, die Bäckerei, Ames leerer Kurzwarenladen mit dem Schild „Coming soon“ und dem Plakat „Bald geöffnet“ und gleich rechts der Treppe die Hafenmeisterei mit Schild und Flagge; daneben trocknen Netze über Fischkisten. Am Südrand der Straße Laternen in festen Abständen, am Kai ein Gemüsekarren mit Händlerin. Links das Fährhäuschen, davor am Kai die Küstenfähre, 18 Kacheln lang, sie liegt mit der Bordwand an der Kaimauer, die Gangway reicht auf den Kai. In der Mitte das kleine Fischerboot, ein Ruderboot mit Angel; davor der Arbeitsplatz der Fischer: ein gelber Portalkran, Kistenstapel, Fischkisten, Trockengestelle mit Netzen, ein aufgelegtes Beiboot, Bretter und Fässer, die Hafenarbeiter zur Kaikante tragen. Bänke mit Blick aufs Wasser, Poller an der Kaikante; die Kaimauer fällt mit Leitern und Reifenfendern zum Wasser ab. Rechts der Steg der Inselfähre mit einem Motorboot und der rot-weiße Leuchtturm auf einer Mole, zu dessen Tür ein Weg um den Turm führt.",
   "boden": "pflaster",
   "wandart": "stein",
   "ufer": "stein",
@@ -193,7 +193,7 @@
     },
     {
       "moebel": "sb5Hafenmeisterei",
-      "feld": [40, 6],
+      "feld": [37, 6],
       "id": "meisterei"
     },
     {
@@ -247,7 +247,8 @@
     },
     {
       "moebel": "sb8Faehre",
-      "feld": [1, 32]
+      "feld": [1, 31],
+      "vorn": true
     },
     {
       "moebel": "sbLaterne",
@@ -279,12 +280,8 @@
       "feld": [20, 24]
     },
     {
-      "moebel": "caKisten",
-      "feld": [20, 26]
-    },
-    {
       "moebel": "caFaesser",
-      "feld": [34, 24]
+      "feld": [32, 23]
     },
     {
       "moebel": "sb8Kaimauer",
@@ -535,32 +532,12 @@
     },
     {
       "moebel": "cr8FahneWeiss",
-      "feld": [47, 13]
-    },
-    {
-      "moebel": "pk9Netztrockner",
-      "feld": [50, 10]
-    },
-    {
-      "moebel": "pk9Netztrockner",
-      "feld": [55, 12]
-    },
-    {
-      "moebel": "caKisten",
-      "feld": [51, 13]
+      "feld": [44, 13]
     },
     {
       "moebel": "rv8Ruderboot",
       "feld": [40, 33],
       "bauteil_ok": true
-    },
-    {
-      "moebel": "caFaesser",
-      "feld": [18, 13]
-    },
-    {
-      "moebel": "caKisten",
-      "feld": [20, 13]
     },
     {
       "moebel": "ca9Treppe",
@@ -871,6 +848,98 @@
       "moebel": "sb8Kaimauer",
       "feld": [62, 5],
       "bauteil_ok": true
+    },
+    {
+      "moebel": "pd7Laden7",
+      "feld": [18, 8]
+    },
+    {
+      "moebel": "pk9Netztrockner",
+      "feld": [46, 11]
+    },
+    {
+      "moebel": "pk9Netztrockner",
+      "feld": [51, 13]
+    },
+    {
+      "moebel": "pk9Netztrockner",
+      "feld": [56, 11]
+    },
+    {
+      "moebel": "caKisten",
+      "feld": [49, 14]
+    },
+    {
+      "moebel": "sb5Fischkiste",
+      "feld": [54, 13]
+    },
+    {
+      "moebel": "sb5FischkisteB",
+      "feld": [55, 13]
+    },
+    {
+      "moebel": "sb5Kran",
+      "feld": [35, 21]
+    },
+    {
+      "moebel": "pd6Kistenstapel",
+      "feld": [37, 23]
+    },
+    {
+      "moebel": "sb5Fischkiste",
+      "feld": [39, 24]
+    },
+    {
+      "moebel": "sb5FischkisteB",
+      "feld": [40, 24]
+    },
+    {
+      "moebel": "pk9Netztrockner",
+      "feld": [23, 21]
+    },
+    {
+      "moebel": "pk9Netztrockner",
+      "feld": [27, 22]
+    },
+    {
+      "moebel": "sb5Fischkiste",
+      "feld": [22, 25]
+    },
+    {
+      "moebel": "sb5FischkisteB",
+      "feld": [23, 25]
+    },
+    {
+      "moebel": "sb5Fischkiste",
+      "feld": [24, 25]
+    },
+    {
+      "moebel": "pd9BootAuf",
+      "feld": [43, 22]
+    },
+    {
+      "moebel": "pd6Bretterstapel",
+      "feld": [16, 23]
+    },
+    {
+      "moebel": "sb5Fass",
+      "feld": [18, 26]
+    },
+    {
+      "moebel": "sb5FassB",
+      "feld": [19, 26]
+    },
+    {
+      "moebel": "sb5Fass",
+      "feld": [44, 27]
+    },
+    {
+      "moebel": "mfBank",
+      "feld": [22, 27]
+    },
+    {
+      "moebel": "mfBank",
+      "feld": [14, 27]
     }
   ],
   "ausloeser": [
@@ -979,7 +1048,7 @@
       "typ": "statist",
       "feld": [32, 28],
       "eigenschaften": {
-        "von": "32,25",
+        "von": "31,26",
         "bis": "33,28",
         "tun": "rollt Fässer an die Kaikante",
         "wann": "tag"

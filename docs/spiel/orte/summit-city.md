@@ -396,3 +396,9 @@ Querbucht östlich am Hof, mit der Front zur Straße; die Fahrerin daneben.
 
 **Haltebucht (10.11.2026, abends):** Die Bucht des Schulbusses hat ein eigenes Zeichen und eine weiße
 Randlinie, offen zur Straße (`"randlinie"`, `strasse.py`).
+
+## Gemini-Bilder Teil 2: Pferde auf der Koppel (10.11.2026, mittel-4)
+
+Die Belebung `pferd` der Hochebene zeigt jetzt das braune Pferd aus Gemini statt des Esels (Art `pferd` in
+`tierarten.json`, Schnitt „ansichten“; der Bogen kommt vom Haupt-Chat). Dazu grasen auf der Koppel ein
+Schimmel (66, 15) und ein Brauner (61, 19) als Möbel (`tier12SchimmelGrast`, `tier12PferdGrast`).

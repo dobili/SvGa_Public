@@ -2,7 +2,7 @@
   "karte": "wegDesertSummit.diner",
   "datei": "karten/weg-desert-summit-diner-neon.json",
   "art": "aussen",
-  "beschreibung": "Zustand: nach neonRepariert leuchtet das Schild über dem Diner wieder vollständig und das Neon-K liegt nicht mehr im Hinterhof, weil Earl es mit dem Helden zurückgesetzt hat. Sonst wie die gewöhnliche Karte: Weg 7, die Wüstenstraße: Die Old Mother Road kommt am Ostrand aus Desert Springs und läuft gerade durch roten Sand nach Westen, mit gelber Mittellinie und weißen Randlinien. Im Norden die Felswand der Tafelberge mit einem Vorsprung, im Südwesten und Südosten zwei Tafelberge mit Felswand. In der Mitte King's Diner, ein silberner Speisewagen mit dem Neonschild, dem das K fehlt, daneben das Starlight Motel; davor Gehweg und Parkplatz. Südlich der Straße der Fernfahrerplatz mit Buchten und zwei Sattelzügen, daneben spielt Earl Dubois unter einem Sonnenschirm Königsrennen. Hinter dem Diner liegt das Neon-K im Sand. Im Westen die Tankstelle auf ihrem Vorplatz an der Straße, dahinter ein Autowrack, weiter westlich der Felsbogen, Wacholder und Kakteen; am Westrand Bank und Wegweiser zur Bergstraße. Im Osten Reklametafel, Windrad, Wasserturm, ein Wohnwagen und viele blühende Kakteen.",
+  "beschreibung": "Zustand: nach neonRepariert leuchtet das Schild über dem Diner wieder vollständig und das Neon-K liegt nicht mehr im Hinterhof, weil Earl es mit dem Helden zurückgesetzt hat. Sonst wie die gewöhnliche Karte: Weg 7, die Wüstenstraße: Die Old Mother Road kommt am Ostrand aus Desert Springs und läuft gerade durch roten Sand nach Westen, mit gelber Mittellinie und weißen Randlinien. Im Norden die Felswand der Tafelberge mit einem Vorsprung, im Südwesten und Südosten zwei Tafelberge mit Felswand. In der Mitte King's Diner, ein silberner Speisewagen mit dem Neonschild, dem das K fehlt, daneben das Starlight Motel; davor Gehweg und Parkplatz. Südlich der Straße der Fernfahrerplatz mit Buchten und zwei Sattelzügen, daneben spielt Earl Dubois unter einem Sonnenschirm Königsrennen. Hinter dem Diner liegt das Neon-K im Sand. Im Westen die Tankstelle auf ihrem Vorplatz an der Straße, dahinter ein Autowrack, weiter westlich der Felsbogen, Wacholder und Kakteen; am Westrand Bank und Wegweiser zur Bergstraße. Im Osten Reklametafel, Windrad, Wasserturm, ein Wohnwagen und viele blühende Kakteen. Auf dem Fernfahrerplatz stehen die Laster von vorn und von hinten in Buchten quer zur Straße (Linien von Nord nach Süd), dafür ist der Platz zwölf Reihen tief.",
   "wand": "felsRot",
   "boden": "sandRot",
   "boeden": {
@@ -34,15 +34,18 @@
     "ssssssssssssssssssssssssssssssssssssssssssssssssssssssssssssssssssssssssssssssssssssssssssssssssssssssssssssssssssssssssssssssssssssssssssssssssssssss",
     "ssssssssssssssssssssssssssssssssssssssssssssssssssssssssssssssssssssssssssssssssssssssssssssssssssssssssssssssssssssssssssssssssssssssssssssssssssssss",
     "ssssssssssssssssssssssssssssssssssssssssssssssssssssssssssssssssssssssssssssssssssssssssssssssssssssssssssssssssssssssssssssssssssssssssssssssssssssss",
-    "#...................................................bbbbbbbbbbbbbbbbbbbbbbbbbbbbbbb..................................................................#",
-    "#...................................................bbbbbbbbbbbbbbbbbbbbbbbbbbbbbbb..................................................................#",
-    "#...................................................bbbbbbbbbbbbbbbbbbbbbbbbbbbbbbb..................................................................#",
-    "#.###############...................................bbbbbbbbbbbbbbbbbbbbbbbbbbbbbbb..................................................................#",
-    "#.###############...................................bbbbbbbbbbbbbbbbbbbbbbbbbbbbbbb...................................##############################.#",
-    "#.###############...................................bbbbbbbbbbbbbbbbbbbbbbbbbbbbbbb...................................##############################.#",
-    "#.###############...................................bbbbbbbbbbbbbbbbbbbbbbbbbbbbbbb...................................##############################.#",
-    "#.###############...................................bbbbbbbbbbbbbbbbbbbbbbbbbbbbbbb...................................##############################.#",
-    "#.###############...................................bbbbbbbbbbbbbbbbbbbbbbbbbbbbbbb...................................##############################.#",
+    "#...................................................bbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbb.................................................................#",
+    "#...................................................bbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbb.................................................................#",
+    "#...................................................bbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbb.................................................................#",
+    "#.###############...................................bbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbb.................................................................#",
+    "#.###############...................................bbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbb..................................##############################.#",
+    "#.###############...................................bbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbb..................................##############################.#",
+    "#.###############...................................bbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbb..................................##############################.#",
+    "#.###############...................................bbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbb..................................##############################.#",
+    "#.###############...................................bbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbb..................................##############################.#",
+    "#...................................................bbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbb.................................................................#",
+    "#...................................................bbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbb.................................................................#",
+    "#...................................................bbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbb.................................................................#",
     "#....................................................................................................................................................#",
     "######################################################################################################################################################",
     "######################################################################################################################################################"
@@ -89,14 +92,6 @@
     {
       "moebel": "wds6Reklame",
       "feld": [110, 4]
-    },
-    {
-      "moebel": "wds6SattelzugBlau",
-      "feld": [56, 18]
-    },
-    {
-      "moebel": "wds6SattelzugRot",
-      "feld": [56, 22]
     },
     {
       "moebel": "wds6Spieltisch",
@@ -340,6 +335,21 @@
     {
       "moebel": "wds6Wacholder",
       "feld": [4, 12]
+    },
+    {
+      "moebel": "fz12SattelzugVorn",
+      "feld": [56, 18],
+      "versatz": [8, 0]
+    },
+    {
+      "moebel": "fz12SattelzugHinten",
+      "feld": [64, 19],
+      "versatz": [8, 0]
+    },
+    {
+      "moebel": "fz12LastwagenHinten",
+      "feld": [76, 18],
+      "versatz": [8, 8]
     }
   ],
   "ausloeser": [
@@ -429,10 +439,10 @@
     {
       "name": "trucker",
       "typ": "statist",
-      "feld": [68, 19],
+      "feld": [68, 20],
       "eigenschaften": {
-        "von": "68,19",
-        "bis": "68,19",
+        "von": "68,20",
+        "bis": "68,20",
         "tun": "lehnt am Führerhaus",
         "wann": "tag"
       }
@@ -472,10 +482,10 @@
     {
       "name": "fernfahrer",
       "typ": "statist",
-      "feld": [67, 21],
+      "feld": [60, 27],
       "eigenschaften": {
-        "von": "67,21",
-        "bis": "67,21",
+        "von": "60,27",
+        "bis": "60,27",
         "tun": "kontrolliert die Reifen seines Lasters",
         "wann": "tag",
         "sagt": "statist.wegDesertSummit.diner.fernfahrer"
@@ -566,10 +576,10 @@
     }
   ],
   "markierung": ["s"],
-  "buchten": {
-    "b": 4
-  },
   "kante": "klippe",
   "fels": "rot",
-  "zustand_der_karte": "neonRepariert"
+  "zustand_der_karte": "neonRepariert",
+  "buchten_laengs": {
+    "b": 4
+  }
 }

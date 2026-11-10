@@ -5786,8 +5786,8 @@
      "id": 22,
      "name": "hotdogverkaeufer",
      "type": "statist",
-     "x": 480,
-     "y": 416,
+     "x": 512,
+     "y": 368,
      "width": 16,
      "height": 16,
      "rotation": 0,
@@ -5796,7 +5796,7 @@
       {
        "name": "tun",
        "type": "string",
-       "value": "reicht Hot Dogs durch die Klappe des Wagens"
+       "value": "reicht Hot Dogs aus der Klappe des Wagens"
       },
       {
        "name": "wann",
@@ -5806,12 +5806,12 @@
       {
        "name": "von",
        "type": "string",
-       "value": "30,26"
+       "value": "32,23"
       },
       {
        "name": "bis",
        "type": "string",
-       "value": "30,26"
+       "value": "32,23"
       }
      ]
     },
@@ -5819,8 +5819,8 @@
      "id": 23,
      "name": "eisverkaeuferin",
      "type": "statist",
-     "x": 608,
-     "y": 416,
+     "x": 640,
+     "y": 368,
      "width": 16,
      "height": 16,
      "rotation": 0,
@@ -5839,12 +5839,12 @@
       {
        "name": "von",
        "type": "string",
-       "value": "38,26"
+       "value": "40,23"
       },
       {
        "name": "bis",
        "type": "string",
-       "value": "38,26"
+       "value": "40,23"
       }
      ]
     },
@@ -6581,11 +6581,11 @@
     },
     {
      "id": 51,
-     "name": "n6HotDog",
+     "name": "cr10HotdogwagenVorn",
      "type": "moebel",
-     "x": 432,
+     "x": 464,
      "y": 320,
-     "width": 112,
+     "width": 48,
      "height": 96,
      "rotation": 0,
      "visible": true,
@@ -6604,11 +6604,11 @@
     },
     {
      "id": 52,
-     "name": "n6Eiswagen",
+     "name": "cr10EiswagenVorn",
      "type": "moebel",
-     "x": 560,
+     "x": 592,
      "y": 320,
-     "width": 112,
+     "width": 48,
      "height": 96,
      "rotation": 0,
      "visible": true,

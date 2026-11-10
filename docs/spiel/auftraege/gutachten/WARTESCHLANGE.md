@@ -111,8 +111,6 @@ Szene heißt die Datei in `inhalte/abenteuer/szenen/` ohne `.json`.
 
 - [x] silicon-bay-lobby, silicon-bay-serverraum (zweite Prüfung, niedrig-1; Antworten in silicon-bay.md; Bilder klimageraet_serverraum, schubladenschrank_metall, serverreihe_6 aus `niedrig1_runde9_karten.py` erst rendern; neue Tönung serverblau) → `silicon-bay-lobby-serverraum-2.md`
 
-- [x] port-delacroix-aussen, capital-arena-innenstadt, bayou-steg, weg-ghost-capital-leuchtturm, weg-silicon-delacroix-deich (dritte Prüfung, mittel-1, nach `mittel-1-runde9-2.md`; Bild `bildwuensche/boje_frei.py`, Nebel 0,28) → `mittel-1-runde9-3.md`
-- [x] weg-ironwood-silicon-raststaette (fünfte Prüfung, nur Waschstraße und Buchten, mittel-1) → `mittel-1-runde9-3.md`
 - [x] silicon-bay-aussen (Campus, jetzt 72 × 70) und silicon-bay-hafen (zweite Prüfung, mittel-3; Turm, Tunnel, Glasdeck, Läden zum Platz, Brüstung; Fähre schattiert, Hafenläden, Stützmauer; Datei `silicon-bay-aussen-hafen-2.md`) → `silicon-bay-aussen-hafen-2.md`
 - [x] crossroads-aussen, weg-summit-crossroads-praerie (Fahrzeuge nach 10.65: kurze Sichtprüfung, mittel-3) → `silicon-bay-aussen-hafen-2.md`
 
@@ -139,9 +137,14 @@ Szene heißt die Datei in `inhalte/abenteuer/szenen/` ohne `.json`.
 - [x] weg-riverton-ironwood-2 (+ ohne-tische), ironwood-museum, ironwood-umkleide, sternwarte-kuppel: Restpunkte des Nachtrags (mittel-4) → `mittel-4-restpunkte.md`
 - [x] summit-city-aussen, hochebene-felsentuerme, weg-desert-summit-bergstrasse, weg-delacroix-desert-canyonpfad, weg-delacroix-desert-felsbogen: Restpunkte Runde 9, zweite Prüfung (mittel-4) → `mittel-4-restpunkte.md`
 
-- [x] weg-riverton-ironwood-2 (+ ohne-tische), ironwood-museum, ironwood-umkleide, sternwarte-kuppel: Restpunkte des Nachtrags (mittel-4) → `mittel-4-restpunkte.md`
-- [x] summit-city-aussen, hochebene-felsentuerme, weg-desert-summit-bergstrasse, weg-delacroix-desert-canyonpfad, weg-delacroix-desert-felsbogen: Restpunkte Runde 9, zweite Prüfung (mittel-4) → `mittel-4-restpunkte.md`
 - [x] hochebene-schule (+ vor-diplom), ironwood-aussen-vermietet: Busse in Vorderansicht nach 10.65 (mittel-4) → `mittel-4-busse.md`
 
 - [x] weg-desert-summit-diner (+ neon): Tür des Hinterzimmers am Diner; hochebene-schule (+ vor-diplom): Bucht mit Randlinie (mittel-4) → `mittel-4-diner-schule.md`
 - [x] weg-silicon-delacroix-deich, weg-ghost-capital-seeufer, weg-ghost-capital-leuchtturm, capital-arena-aussen, port-delacroix-aussen (+ musikhaus-neu), weg-ironwood-silicon-raststaette: neue Fahrzeuge aus Gemini Teil 2 und Stellfläche unter dem Wohnmobil (kurze Sichtprüfung, mittel-1) → `gemini-fahrzeuge-teil2.md`
+
+- [x] weg-desert-summit-diner (+ neon): Tür des Hinterzimmers am Diner; hochebene-schule (+ vor-diplom): Bucht mit Randlinie (mittel-4)
+- [ ] silicon-bay-aussen und silicon-bay-hafen (dritte Prüfung, mittel-3; Tunnelbogen am Kartenrand, Park im Norden, Gartenhof, Baumplatz symmetrisch; Kai mit Kran und Fischkisten, Fähre an der Kaimauer, Bäckerei in der Häuserzeile)
+- [ ] riverton-aussen (+ vier Zustände), crossroads-aussen (+ gatter-offen), jahrmarkt-festplatz: Gemini-Bilder Teil 2 eingebaut (Steinbrücke, Sattelzüge, Lastwagen, Imbisswagen von vorn; kurze Sichtprüfung, mittel-3)
+
+- [ ] weg-desert-summit-diner (+ neon), weg-desert-summit-bergstrasse, hochebene-felsentuerme: Lastwagen von vorn und hinten in Buchten, Pferde auf der Koppel (Gemini Teil 2, mittel-4)
+- [ ] steinbruch-grube: Bagger aus Gemini (bagger_links) statt des kleinen Baggers von vorn (mittel-4)

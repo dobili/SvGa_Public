@@ -1,5 +1,5 @@
 {
-  "erklaerung": "Tiere der Oberwelt, gemeinsam für App (oberwelt/tiere.ts), Bogenbau (pipeline/abenteuer/belebungsbilder.py) und Vorschau (pipeline/abenteuer/belebungsvorschau.py). arten: Art → Quelle im privaten Repository, Rahmengröße und Schnitt (reihen: Standbilder oben, Laufen darunter; streifen: eine Reihe, alle Richtungen gleich; richtungen: eine Reihe mit 4 × 6 Bildern; baender und fest:<stand_y>:<lauf_y> für Bögen mit Beschriftungen). staemme: Wortstamm im Objektnamen → Art (längster gewinnt). Ohne passenden Stamm wird nichts gezeichnet (Eidechse, Delfin, Libellen). Eine Art ohne eigenes Bild bekommt die nächstliegende darstellbare (Gutachter 10.11.2026): dunkle Greif- und Waldvögel die Krähe, weiße Wasservögel die Möwe oder Gans, Nager das braune Kaninchen, der Kojote den Hund. Der Reiher ist ein Gemini-Bild des Autors, zu Reihen gelegt mit bildwuensche/reiher_reihen.py (mittel-1). Der Bison ist ein Einzelbild von mittel-3 (Schnitt „standbild“: gespiegelt, Laufen als Wippen). Reh und Hirsch kommen aus Gemini als Einzelbilder von Seite, hinten und vorn (Schnitt „ansichten“, Runde 9, mittel-3); der Wapiti nimmt den Hirsch. Roboter (Liefer-, Saug-, Schneeräumroboter) zeigen den Lieferroboter von Perfect Move aus Gemini. Fuchs und Pferd (braun; „schimmel“ grau) kommen aus Gemini Teil 2 als Einzelbilder (Schnitt „ansichten“, niedrig-1, 10.11.2026); das Pony bleibt beim Esel.",
+  "erklaerung": "Tiere der Oberwelt, gemeinsam für App (oberwelt/tiere.ts), Bogenbau (pipeline/abenteuer/belebungsbilder.py) und Vorschau (pipeline/abenteuer/belebungsvorschau.py). arten: Art → Quelle im privaten Repository, Rahmengröße und Schnitt (reihen: Standbilder oben, Laufen darunter; streifen: eine Reihe, alle Richtungen gleich; richtungen: eine Reihe mit 4 × 6 Bildern; baender und fest:<stand_y>:<lauf_y> für Bögen mit Beschriftungen). staemme: Wortstamm im Objektnamen → Art (längster gewinnt). Ohne passenden Stamm wird nichts gezeichnet (Eidechse, Delfin, Libellen). Eine Art ohne eigenes Bild bekommt die nächstliegende darstellbare (Gutachter 10.11.2026): dunkle Greif- und Waldvögel die Krähe, weiße Wasservögel die Möwe oder Gans, Nager das braune Kaninchen. Der Reiher ist ein Gemini-Bild des Autors, zu Reihen gelegt mit bildwuensche/reiher_reihen.py (mittel-1). Der Bison ist ein Einzelbild von mittel-3 (Schnitt „standbild“: gespiegelt, Laufen als Wippen). Reh und Hirsch kommen aus Gemini als Einzelbilder von Seite, hinten und vorn (Schnitt „ansichten“, Runde 9, mittel-3); der Wapiti nimmt den Hirsch. Roboter (Liefer-, Saug-, Schneeräumroboter) zeigen den Lieferroboter von Perfect Move aus Gemini. Pferd (braun), Schimmel (grau), Kojote und Fuchs kommen ebenfalls aus Gemini (Teil 2, 10.11.2026, Schnitt „ansichten“) und lösen Esel und Hund als Ersatz ab; die Bilder „grast“ und „sitzt“ stehen als Möbel bereit (allgemein.json, tier12…).",
   "arten": {
     "taube": {
       "quelle": "modern-exteriors/Modern_Exteriors_16x16/Animated_16x16/Animated_sheets_16x16/Pigeon_16x16.png",
@@ -122,12 +122,6 @@
       "schnitt": "ansichten",
       "ansichten": ["rechts", "oben", "unten"]
     },
-    "fuchs": {
-      "quelle": "spiel/eigene/fuchs_{}.png",
-      "breite": 22,
-      "hoehe": 22,
-      "schnitt": "ansichten"
-    },
     "pferd": {
       "quelle": "spiel/eigene/pferd_braun_{}.png",
       "breite": 32,
@@ -138,6 +132,18 @@
       "quelle": "spiel/eigene/pferd_grau_{}.png",
       "breite": 32,
       "hoehe": 32,
+      "schnitt": "ansichten"
+    },
+    "kojote": {
+      "quelle": "spiel/eigene/kojote_{}.png",
+      "breite": 28,
+      "hoehe": 28,
+      "schnitt": "ansichten"
+    },
+    "fuchs": {
+      "quelle": "spiel/eigene/fuchs_{}.png",
+      "breite": 22,
+      "hoehe": 22,
       "schnitt": "ansichten"
     }
   },
@@ -186,10 +192,10 @@
     "wapiti": "hirsch",
     "esel": "esel",
     "pferd": "pferd",
-    "pony": "esel",
+    "pony": "pferd",
     "hund": "hund",
     "dackel": "hund",
-    "kojote": "hund",
+    "kojote": "kojote",
     "fuchs": "fuchs",
     "katze": "katze",
     "drohne": "drohne",

@@ -58,6 +58,11 @@ Sängerin, Gitarre und Fiedel; Hot-Dog- und Eisverkäuferin stehen an der Klappe
 
 Reif für den Autor. „Am Abend“ ist jetzt zu sehen: Tönung `abend` in der Szene.
 
+### 3.4 Imbisswagen von vorn (mittel-3, 10.11.2026)
+
+Am Festplatz stehen ein Hotdog-Wagen und ein Eiswagen in Vorderansicht (`cr10HotdogwagenVorn`,
+`cr10EiswagenVorn`, Gemini-Bilder Teil 2), je mit Verkäufer davor.
+
 ## 4. Bühnenbild
 
 A: Riesenrad oben Mitte, Karussell links, Bühne mit Gerüst, Lautsprechern und Tribüne rechts,

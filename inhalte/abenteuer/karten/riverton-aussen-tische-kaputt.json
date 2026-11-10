@@ -11,7 +11,7 @@
  "tilewidth": 16,
  "tileheight": 16,
  "nextlayerid": 5,
- "nextobjectid": 277,
+ "nextobjectid": 276,
  "layers": [
   {
    "id": 1,
@@ -17771,52 +17771,6 @@
     },
     {
      "id": 246,
-     "name": "rv5Bruecke",
-     "type": "moebel",
-     "x": 800,
-     "y": 608,
-     "width": 80,
-     "height": 116,
-     "rotation": 0,
-     "visible": true,
-     "properties": [
-      {
-       "name": "tiefe",
-       "type": "int",
-       "value": 1
-      },
-      {
-       "name": "kollision",
-       "type": "bool",
-       "value": false
-      }
-     ]
-    },
-    {
-     "id": 247,
-     "name": "rv8Brueckenschatten",
-     "type": "moebel",
-     "x": 880,
-     "y": 624,
-     "width": 16,
-     "height": 96,
-     "rotation": 0,
-     "visible": true,
-     "properties": [
-      {
-       "name": "tiefe",
-       "type": "int",
-       "value": 1
-      },
-      {
-       "name": "kollision",
-       "type": "bool",
-       "value": false
-      }
-     ]
-    },
-    {
-     "id": 248,
      "name": "rv5Wohnwagen",
      "type": "moebel",
      "x": 32,
@@ -17839,7 +17793,7 @@
      ]
     },
     {
-     "id": 249,
+     "id": 247,
      "name": "rv5Werkstatt",
      "type": "moebel",
      "x": 144,
@@ -17862,7 +17816,7 @@
      ]
     },
     {
-     "id": 250,
+     "id": 248,
      "name": "rv5Schuppen",
      "type": "moebel",
      "x": 240,
@@ -17885,7 +17839,7 @@
      ]
     },
     {
-     "id": 251,
+     "id": 249,
      "name": "rv8Pavillon",
      "type": "moebel",
      "x": 544,
@@ -17908,7 +17862,7 @@
      ]
     },
     {
-     "id": 252,
+     "id": 250,
      "name": "rvPicknicktisch",
      "type": "moebel",
      "x": 608,
@@ -17931,7 +17885,7 @@
      ]
     },
     {
-     "id": 253,
+     "id": 251,
      "name": "rv5Brett",
      "type": "moebel",
      "x": 618,
@@ -17954,7 +17908,7 @@
      ]
     },
     {
-     "id": 254,
+     "id": 252,
      "name": "sb8Kreidespringer",
      "type": "moebel",
      "x": 640,
@@ -17977,7 +17931,7 @@
      ]
     },
     {
-     "id": 255,
+     "id": 253,
      "name": "rvLaubbaumDunkel",
      "type": "moebel",
      "x": 768,
@@ -18000,7 +17954,7 @@
      ]
     },
     {
-     "id": 256,
+     "id": 254,
      "name": "rvLaubbaum",
      "type": "moebel",
      "x": 832,
@@ -18023,7 +17977,7 @@
      ]
     },
     {
-     "id": 257,
+     "id": 255,
      "name": "wg4Busch",
      "type": "moebel",
      "x": 288,
@@ -18046,7 +18000,7 @@
      ]
     },
     {
-     "id": 258,
+     "id": 256,
      "name": "wg4Busch",
      "type": "moebel",
      "x": 800,
@@ -18069,7 +18023,7 @@
      ]
     },
     {
-     "id": 259,
+     "id": 257,
      "name": "wg4Busch",
      "type": "moebel",
      "x": 1088,
@@ -18092,7 +18046,7 @@
      ]
     },
     {
-     "id": 260,
+     "id": 258,
      "name": "sb5SchildPerfectMove",
      "type": "moebel",
      "x": 596,
@@ -18115,7 +18069,7 @@
      ]
     },
     {
-     "id": 261,
+     "id": 259,
      "name": "gc7Absperrbock",
      "type": "moebel",
      "x": 688,
@@ -18138,10 +18092,56 @@
      ]
     },
     {
-     "id": 262,
+     "id": 260,
      "name": "rv9Bildschirmtisch",
      "type": "moebel",
      "x": 368,
+     "y": 752,
+     "width": 48,
+     "height": 48,
+     "rotation": 0,
+     "visible": true,
+     "properties": [
+      {
+       "name": "tiefe",
+       "type": "int",
+       "value": 792
+      },
+      {
+       "name": "kollision",
+       "type": "bool",
+       "value": true
+      }
+     ]
+    },
+    {
+     "id": 261,
+     "name": "rv9BildschirmtischKaputt",
+     "type": "moebel",
+     "x": 432,
+     "y": 752,
+     "width": 48,
+     "height": 48,
+     "rotation": 0,
+     "visible": true,
+     "properties": [
+      {
+       "name": "tiefe",
+       "type": "int",
+       "value": 792
+      },
+      {
+       "name": "kollision",
+       "type": "bool",
+       "value": true
+      }
+     ]
+    },
+    {
+     "id": 262,
+     "name": "rv9Bildschirmtisch",
+     "type": "moebel",
+     "x": 496,
      "y": 752,
      "width": 48,
      "height": 48,
@@ -18162,52 +18162,6 @@
     },
     {
      "id": 263,
-     "name": "rv9BildschirmtischKaputt",
-     "type": "moebel",
-     "x": 432,
-     "y": 752,
-     "width": 48,
-     "height": 48,
-     "rotation": 0,
-     "visible": true,
-     "properties": [
-      {
-       "name": "tiefe",
-       "type": "int",
-       "value": 792
-      },
-      {
-       "name": "kollision",
-       "type": "bool",
-       "value": true
-      }
-     ]
-    },
-    {
-     "id": 264,
-     "name": "rv9Bildschirmtisch",
-     "type": "moebel",
-     "x": 496,
-     "y": 752,
-     "width": 48,
-     "height": 48,
-     "rotation": 0,
-     "visible": true,
-     "properties": [
-      {
-       "name": "tiefe",
-       "type": "int",
-       "value": 792
-      },
-      {
-       "name": "kollision",
-       "type": "bool",
-       "value": true
-      }
-     ]
-    },
-    {
-     "id": 265,
      "name": "rv9Bildschirmtisch",
      "type": "moebel",
      "x": 368,
@@ -18230,7 +18184,7 @@
      ]
     },
     {
-     "id": 266,
+     "id": 264,
      "name": "rv9Bildschirmtisch",
      "type": "moebel",
      "x": 432,
@@ -18253,7 +18207,7 @@
      ]
     },
     {
-     "id": 267,
+     "id": 265,
      "name": "rv9BildschirmtischKaputt",
      "type": "moebel",
      "x": 496,
@@ -18276,7 +18230,7 @@
      ]
     },
     {
-     "id": 268,
+     "id": 266,
      "name": "cr9BordL12",
      "type": "moebel",
      "x": 800,
@@ -18299,7 +18253,7 @@
      ]
     },
     {
-     "id": 269,
+     "id": 267,
      "name": "cr9BordL3",
      "type": "moebel",
      "x": 880,
@@ -18322,7 +18276,7 @@
      ]
     },
     {
-     "id": 270,
+     "id": 268,
      "name": "cr9BordL6",
      "type": "moebel",
      "x": 880,
@@ -18345,7 +18299,7 @@
      ]
     },
     {
-     "id": 271,
+     "id": 269,
      "name": "sa9Zebrastreifen",
      "type": "moebel",
      "x": 528,
@@ -18368,7 +18322,7 @@
      ]
     },
     {
-     "id": 272,
+     "id": 270,
      "name": "rv9PfuetzeGross",
      "type": "moebel",
      "x": 576,
@@ -18391,7 +18345,7 @@
      ]
     },
     {
-     "id": 273,
+     "id": 271,
      "name": "rv9PfuetzeKlein",
      "type": "moebel",
      "x": 416,
@@ -18414,7 +18368,7 @@
      ]
     },
     {
-     "id": 274,
+     "id": 272,
      "name": "rv9PfuetzeKlein",
      "type": "moebel",
      "x": 720,
@@ -18437,7 +18391,7 @@
      ]
     },
     {
-     "id": 275,
+     "id": 273,
      "name": "rv9PfuetzeKlein",
      "type": "moebel",
      "x": 192,
@@ -18460,7 +18414,7 @@
      ]
     },
     {
-     "id": 276,
+     "id": 274,
      "name": "sb5Faehrhaus",
      "type": "moebel",
      "x": 1072,
@@ -18479,6 +18433,29 @@
        "name": "kollision",
        "type": "bool",
        "value": true
+      }
+     ]
+    },
+    {
+     "id": 275,
+     "name": "rv10Steinbruecke",
+     "type": "moebel",
+     "x": 800,
+     "y": 608,
+     "width": 80,
+     "height": 116,
+     "rotation": 0,
+     "visible": true,
+     "properties": [
+      {
+       "name": "tiefe",
+       "type": "int",
+       "value": 1
+      },
+      {
+       "name": "kollision",
+       "type": "bool",
+       "value": false
       }
      ]
     }

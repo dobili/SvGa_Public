@@ -494,6 +494,152 @@
       "blick": "rechts",
       "zustand": "gebraucht",
       "stil": "modern"
+    },
+    "fz12SattelzugVorn": {
+      "quelle": "spiel/eigene/sattelzug_vorn.png",
+      "breite": 48,
+      "hoehe": 168,
+      "kollision": true,
+      "art": "fahrzeug",
+      "blick": "unten",
+      "zustand": "gebraucht",
+      "stil": "modern"
+    },
+    "fz12SattelzugHinten": {
+      "quelle": "spiel/eigene/sattelzug_hinten.png",
+      "breite": 48,
+      "hoehe": 160,
+      "kollision": true,
+      "art": "fahrzeug",
+      "blick": "oben",
+      "zustand": "gebraucht",
+      "stil": "modern"
+    },
+    "fz12SattelzugLinks": {
+      "quelle": "spiel/eigene/sattelzug_links.png",
+      "breite": 160,
+      "hoehe": 68,
+      "kollision": true,
+      "art": "fahrzeug",
+      "blick": "links",
+      "zustand": "gebraucht",
+      "stil": "modern"
+    },
+    "fz12LastwagenVorn": {
+      "quelle": "spiel/eigene/lastwagen_vorn.png",
+      "breite": 48,
+      "hoehe": 144,
+      "kollision": true,
+      "art": "fahrzeug",
+      "blick": "unten",
+      "zustand": "gebraucht",
+      "stil": "modern"
+    },
+    "fz12LastwagenHinten": {
+      "quelle": "spiel/eigene/lastwagen_hinten.png",
+      "breite": 48,
+      "hoehe": 144,
+      "kollision": true,
+      "art": "fahrzeug",
+      "blick": "oben",
+      "zustand": "gebraucht",
+      "stil": "modern"
+    },
+    "fz12LieferwagenVorn": {
+      "quelle": "spiel/eigene/lieferwagen_vorn.png",
+      "breite": 48,
+      "hoehe": 84,
+      "kollision": true,
+      "art": "fahrzeug",
+      "blick": "unten",
+      "zustand": "gebraucht",
+      "stil": "modern"
+    },
+    "fz12LieferwagenHinten": {
+      "quelle": "spiel/eigene/lieferwagen_hinten.png",
+      "breite": 48,
+      "hoehe": 84,
+      "kollision": true,
+      "art": "fahrzeug",
+      "blick": "oben",
+      "zustand": "gebraucht",
+      "stil": "modern"
+    },
+    "fz12LieferwagenRechts": {
+      "quelle": "spiel/eigene/lieferwagen_rechts.png",
+      "breite": 96,
+      "hoehe": 47,
+      "kollision": true,
+      "art": "fahrzeug",
+      "blick": "rechts",
+      "zustand": "gebraucht",
+      "stil": "modern"
+    },
+    "fz12LieferwagenLinks": {
+      "quelle": "spiel/eigene/lieferwagen_links.png",
+      "breite": 96,
+      "hoehe": 47,
+      "kollision": true,
+      "art": "fahrzeug",
+      "blick": "links",
+      "zustand": "gebraucht",
+      "stil": "modern"
+    },
+    "fz12BaggerLinks": {
+      "quelle": "spiel/eigene/bagger_links.png",
+      "breite": 112,
+      "hoehe": 78,
+      "kollision": true,
+      "art": "fahrzeug",
+      "blick": "links",
+      "zustand": "gebraucht",
+      "stil": "modern"
+    },
+    "fz12BaggerRechts": {
+      "quelle": "spiel/eigene/bagger_rechts.png",
+      "breite": 112,
+      "hoehe": 78,
+      "kollision": true,
+      "art": "fahrzeug",
+      "blick": "rechts",
+      "zustand": "gebraucht",
+      "stil": "modern"
+    },
+    "tier12PferdGrast": {
+      "quelle": "spiel/eigene/pferd_braun_grast.png",
+      "breite": 32,
+      "hoehe": 32,
+      "kollision": true,
+      "art": "tier_deko",
+      "zustand": "neu",
+      "stil": "natur"
+    },
+    "tier12SchimmelGrast": {
+      "quelle": "spiel/eigene/pferd_grau_grast.png",
+      "breite": 32,
+      "hoehe": 32,
+      "kollision": true,
+      "art": "tier_deko",
+      "zustand": "neu",
+      "stil": "natur"
+    },
+    "tier12KojoteSitzt": {
+      "quelle": "spiel/eigene/kojote_sitzt.png",
+      "breite": 28,
+      "hoehe": 28,
+      "kollision": true,
+      "art": "tier_deko",
+      "zustand": "neu",
+      "stil": "natur"
+    },
+    "tier12FuchsSitzt": {
+      "quelle": "spiel/eigene/fuchs_sitzt.png",
+      "breite": 22,
+      "hoehe": 22,
+      "kollision": true,
+      "art": "tier_deko",
+      "zustand": "neu",
+      "stil": "natur"
     }
   }
 }

@@ -861,3 +861,25 @@ Gutachten `silicon-bay-lobby-serverraum.md`.
   - Die Schrankreihe ist nicht mehr angeschnitten: Das Bild ist 160 px breit, die sechs Schränke
     stehen mittig mit Rand links und rechts (`serverreihe_6.png`, neu rendern).
   - Der Stuhl steht direkt am Messplatz.
+
+## Zweites Gutachten Campus und alter Hafen: Antworten (mittel-3, 10.11.2026)
+
+- **Campus (`siliconBay.aussen`):**
+  - Tunnel: Das Portal ist jetzt ein Betonbau quer über der Fahrbahn am Kartenrand (x 0–4,
+    Reihen 32–36) mit einem dunklen Bogen nach Osten; Gleis und Asphalt verschwinden im Dunkel,
+    links davon läuft nichts weiter (`tunnelportal_west.png`, 80 × 80, neu rendern).
+  - Nordteil: Hinter den Häusern liegt ein Park mit Rasen (Boden `w`), zwei Baumreihen und
+    Büschen. Zwischen Hotel und Wohnhaus ein Gartenhof mit Statuenbrunnen, zwei Bänken, vier
+    Bäumen und Hecke zur Straße.
+  - Baumplatz: Der Steinboden reicht von x 14 bis 53, Brunnen und Treppe liegen auf der
+    Mittelachse; links und rechts stehen je zwei Baumspalten (x 16, 22 und 43, 49).
+  - Der Kaffeebecher steht eine Kachel tiefer (62, 53).
+- **Alter Hafen (`siliconBay.hafen`):**
+  - Kai Mitte: Arbeitsplatz der Fischer mit gelbem Portalkran (nur die Beine sperren),
+    Kistenstapel, Fischkisten, Netzgestellen, aufgelegtem Beiboot, Brettern, Fässern und zwei
+    weiteren Bänken.
+  - Fähre: Sie liegt eine Reihe höher an der Kaimauer und wird davor gezeichnet; die Gangway
+    reicht auf den Kai (Auslöser `faehre` direkt darüber).
+  - Häuserzeile: Zwischen Hafenbedarf und Kurzwaren steht die Bäckerei (`pd7Laden7`), die
+    Hafenmeisterei steht gleich rechts der Treppe (x 37–42); die Netze trocknen östlich davon.
+  - Der Kutter (nächste Gemini-Datei) ersetzt später das Ruderboot.

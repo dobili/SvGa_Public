@@ -153,3 +153,9 @@ Beobachterstuhl, links ein Tisch mit aufgeschlagenem Sternatlas statt Anrichte u
 
 **Restpunkt Kuppel (10.11.2026):** Der Kuppelspalt ist ein eigenes Bild mit Schienen und Nachthimmel
 (Bildwunsch `bildwuensche/kuppelspalt.py`).
+
+## Gemini-Bilder Teil 2: Bagger im Steinbruch (10.11.2026, mittel-4)
+
+In der Grube steht der gelbe Kettenbagger aus Gemini von der Seite (`fz12BaggerLinks`, 112 × 78, Feld
+(56, 37)), der Löffel zeigt zur Feldbahn. Er ersetzt den kleinen Bagger von vorn (`st5Bagger`). Der
+Auslöser `bagger` liegt jetzt bei (59, 42) vor den Ketten.

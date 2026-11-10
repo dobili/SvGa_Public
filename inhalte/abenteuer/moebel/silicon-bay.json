@@ -710,7 +710,8 @@
       "art": "geraet",
       "blick": "unten",
       "zustand": "gebraucht",
-      "stil": "modern"
+      "stil": "modern",
+      "maske": [".......", ".......", ".......", ".......", "#.....#"]
     },
     "sb5LabGlas": {
       "quelle": "modern-exteriors/Modern_Exteriors_16x16/ME_Theme_Sorter_16x16/17_Garden_Singles_16x16/ME_Singles_Garden_16x16_Large_Greenhouse_Example.png",
@@ -2362,8 +2363,8 @@
     },
     "sb9Tunnelportal": {
       "quelle": "spiel/eigene/tunnelportal_west.png",
-      "breite": 64,
-      "hoehe": 64,
+      "breite": 80,
+      "hoehe": 80,
       "kollision": true,
       "art": "gebaeude",
       "blick": "keine",

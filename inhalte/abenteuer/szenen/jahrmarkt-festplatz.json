@@ -116,12 +116,12 @@
       "feld": [19, 20]
     },
     {
-      "moebel": "n6HotDog",
-      "feld": [27, 20]
+      "moebel": "cr10HotdogwagenVorn",
+      "feld": [29, 20]
     },
     {
-      "moebel": "n6Eiswagen",
-      "feld": [35, 20]
+      "moebel": "cr10EiswagenVorn",
+      "feld": [37, 20]
     },
     {
       "moebel": "n6Flutlicht",
@@ -874,23 +874,23 @@
     {
       "name": "hotdogverkaeufer",
       "typ": "statist",
-      "feld": [30, 26],
+      "feld": [32, 23],
       "eigenschaften": {
-        "tun": "reicht Hot Dogs durch die Klappe des Wagens",
+        "tun": "reicht Hot Dogs aus der Klappe des Wagens",
         "wann": "tag",
-        "von": "30,26",
-        "bis": "30,26"
+        "von": "32,23",
+        "bis": "32,23"
       }
     },
     {
       "name": "eisverkaeuferin",
       "typ": "statist",
-      "feld": [38, 26],
+      "feld": [40, 23],
       "eigenschaften": {
         "tun": "reicht Eiswaffeln aus dem Fenster des Wagens",
         "wann": "tag",
-        "von": "38,26",
-        "bis": "38,26"
+        "von": "40,23",
+        "bis": "40,23"
       }
     },
     {

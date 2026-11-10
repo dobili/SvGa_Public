@@ -1085,14 +1085,6 @@
       "bauteil_ok": true
     },
     {
-      "moebel": "rv5Bruecke",
-      "feld": [50, 38]
-    },
-    {
-      "moebel": "rv8Brueckenschatten",
-      "feld": [55, 39]
-    },
-    {
       "moebel": "rv5Wohnwagen",
       "feld": [2, 47]
     },
@@ -1179,6 +1171,11 @@
     {
       "moebel": "sb5Faehrhaus",
       "feld": [67, 9]
+    },
+    {
+      "moebel": "rv10Steinbruecke",
+      "feld": [50, 38],
+      "bauteil_ok": true
     }
   ],
   "ausloeser": [

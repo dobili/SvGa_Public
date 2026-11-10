@@ -50,6 +50,12 @@ Szene heißt die Datei in `inhalte/abenteuer/szenen/` ohne `.json`.
 - [ ] ironwood-aussen (zweite Prüfung, mittel-4, mit Zuständen meisterschaft und vermietet; `ironwood-aussen-2.md`)
 - [ ] ironwood-kantine (dritte Prüfung, mit Zustand logo; `ironwood-kantine-3.md`), ironwood-museum, ironwood-umkleide, ironwood-mamas-zimmer (zweite Prüfung, mittel-4; eine Datei `ironwood-innen-2.md`)
 - [ ] steinbruch-grube (dritte Prüfung, jetzt mit Felskanten; `steinbruch-grube-3.md`), steinbruch-stollen (zweite Prüfung; `steinbruch-stollen-2.md`)
+- [ ] crossroads-aussen mit Zustand gatter-offen (Runde 9, mittel-3)
+- [ ] crossroads-raststaette (Runde 9, mittel-3)
+- [ ] weg-summit-crossroads-geysirbecken, weg-summit-crossroads-praerie (Runde 9, mittel-3)
+- [ ] jahrmarkt-festplatz (Runde 9, mittel-3)
+- [ ] weg-crossroads-pinewood-huetten, weg-crossroads-pinewood-riesenbaeume (Runde 9, mittel-3)
+- [ ] pelikaninsel-dorf im Winter (Runde 9, mittel-3)
 
 ## Erledigt
 

@@ -100,6 +100,34 @@
       "zustand": "neu",
       "stil": "rustikal",
       "blick": "unten"
+    },
+    "sx9Bison": {
+      "quelle": "spiel/eigene/bison_klein_rechts.png",
+      "breite": 48,
+      "hoehe": 32,
+      "kollision": true,
+      "art": "tier_deko",
+      "zustand": "neu",
+      "stil": "natur"
+    },
+    "sx9BisonLiegend": {
+      "quelle": "spiel/eigene/bison_klein_liegend.png",
+      "breite": 48,
+      "hoehe": 32,
+      "kollision": true,
+      "art": "tier_deko",
+      "zustand": "neu",
+      "stil": "natur"
+    },
+    "sx9ScheuneRot": {
+      "quelle": "spiel/eigene/scheune_rot.png",
+      "breite": 128,
+      "hoehe": 160,
+      "kollision": true,
+      "art": "gebaeude",
+      "blick": "unten",
+      "zustand": "gebraucht",
+      "stil": "laendlich"
     }
   }
 }

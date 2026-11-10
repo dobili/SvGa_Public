@@ -544,6 +544,9 @@ Werkzeug erledigt, steht dabei; daran arbeiten die Helfer nicht vorbei.
    (`werkzeuge/schleuse.py`). Kai, Schleusenkammer, Wasserloch im Steinbruch und Becken in der
    Stadt haben kein Grasufer, sondern eine Steinkante: in der Szene `"ufer": "stein"`
    (`werkzeuge/wasser_stein.py`, Boden `wasser_stein`); es gilt dann für alles Wasser der Karte.
+   Heiße Quellen (Geysirbecken) haben statt Gras einen Sinterrand: `"ufer": "sinter"` (Bildwunsch
+   `bildwuensche/wasser_sinter.py`, Boden `wasser_sinter`, Runde 9): heller Sinterwulst, oranger Saum,
+   flaches türkises Wasser, gewellt.
    Pfützen im Stollen sind Möbel (`pfuetze_fels_klein`, `_gross`), kein Wasser.
 
 ### 10.2 Türen und Durchgänge

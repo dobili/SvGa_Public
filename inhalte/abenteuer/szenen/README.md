@@ -28,6 +28,7 @@ nachträgliches Möblieren:
   "bruecken": ["h"], // begehbar, gezeichnet als Wasser mit Ufer; Brückenbild als Möbel darauf
   "ufer": "stein", // optional: alles Wasser mit Steinkante statt Grasufer (Kai, Schleuse, Steinbruch);
   // "rumpf": Bordwand eines Schiffs, das Deck ist dann das Land (Fährdeck)
+  // "sinter": Sinterrand heißer Quellen (Geysirbecken)
   "dicht": true, // nur Lager und Archive: Belegung bis 60 % statt 45 % (dichte Regalreihen)
   // Fels (Steinbruch, Stollen): "wand": "fels" zeichnet Wände als Felskrone und zwei Reihen
   // Felswand (auch draußen, mit oder ohne "wandart"); Böden "schotter" und "felsboden".

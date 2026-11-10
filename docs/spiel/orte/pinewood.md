@@ -202,6 +202,24 @@ Vogelkundler (Spechte); Eichhörnchen, Reh, Hase, Waschbär, Eichelhäher, Spech
 dem Camp, Dokument 16, 5.3), Betreuerin, Fotografin; Libellen, Specht, Eichhörnchen,
 Streifenhörnchen, Eule, Reh.
 
+### 3.6 Runde 9: Weg 9 nach Mängeln und Mustern (mittel-3, 10.11.2026)
+
+Auftrag `runde9_uebrige_karten.md`: drei Mängel aus `variantenwahl.md`, die fünf Muster, Zustände (10.63).
+
+**Hütten** (`weg-crossroads-pinewood-huetten`)
+
+- Mangel 1: Weg als weite Welle (Sinus, höchstens eine Reihe je Spalte) von Rand zu Rand statt Geraden mit rechtwinkligen Versprüngen.
+- Mangel 2: Bach mäandert von Nord nach Süd, zwei bis drei Kacheln breit; der Steg liegt genau über der Kreuzung mit dem Weg.
+- Mangel 3: Schutzhütte direkt nördlich des Wegs mit Erdpfad zur Tür, Greta davor; Holzfällerhütte mit Pfad und Kreidespringer; Lichtung südlich mit Picknicktisch, Feuerstelle und Bank zum Feuer. Hang: Felsgruppen und Bärenspuren im Südwesten statt Klippe (Klippe bräuchte Wandbänder mitten im Weg; der Wald bliebe zerschnitten).
+- Zustände: keine.
+
+**Riesenbäume** (`weg-crossroads-pinewood-riesenbaeume`)
+
+- Mangel 1: Weg in Kehren (schräge Abschnitte zwischen 23 Wegpunkten) statt Geraden mit rechten Winkeln; das Ranger-Häuschen hat einen Pfad zur Tür.
+- Mangel 2: Das Schachbrett aus Rasen und Kies ist der Ereignisort Lebendschach (15_Routen 2.11): jetzt in der Beschreibung, mit acht Kindern in weißen und schwarzen Westen auf den Grundreihen, Fahnen und Tribüne.
+- Mangel 3: Bach mäandert quer durch den Hain bis an beide Ränder, Steg genau über der Kreuzung; 15 Mammutbäume frei verteilt statt Kolonne am linken Rand. Mammutbaum mit Buchseite 10 und die Tanne mit finchDame bleiben.
+- Zustände: keine.
+
 ## 4. Bühnenbilder
 
 ### 4.1 Hütten

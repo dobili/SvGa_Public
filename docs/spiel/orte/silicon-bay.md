@@ -89,6 +89,37 @@ Laufzeit: Haltestelle → Westrand etwa 150 Kacheln, 43 s. Ränder: Norden Schne
 Wall und der Leitplanke (Kraftfahrstraße), Osten Auffahrt mit Schild „Keine Fußgänger“, Süden und
 Westen die Bucht; nur der Pfad öffnet den Westrand.
 
+**Runde 8, nach dem Gutachten (mittel-1):**
+
+- **Winter:** `jahreszeit: winter`. Akt 3 spielt laut Story-Bibel im Winter (Szene 51 „Abfahrt
+  im Schnee“), Silicon Bay selbst hat keine Jahreszeit. Blumen sind weg.
+- **Küste:**
+  - Sandstrand (Boden `strand` mit Rand) zwei Kacheln breit am Wasser.
+  - Runde Düne im Westen (x 1–21, y 10–17) mit Strandgras.
+  - Am Ortsschild drei moderne Laternen.
+- **Zufahrt:** Abfahrt von der Schnellstraße (x 101–104, y 5–19), die Leitplanke hat dort eine
+  Lücke.
+- **Tankstelle:** Fahrspur unter dem Dach (y 14–16); die Zapfsäulen stehen auf Asphalt, die
+  Waschstraße fährt auf die Fahrspur aus.
+- **Parkplatz:** zwei Buchten mit Linien, Autos in Buchten und auf der Fahrgasse.
+- **Plätze aus Pflaster:**
+  - Container, Imbisswagen und Haltestelle stehen auf Pflaster.
+  - Der Picknickplatz hat vier Tische statt sechs, zwei Mülleimer und eine Laterne.
+- **Grün:**
+  - Die Hecke hat Lücken und drei Arten im Wechsel, das Gehölz dahinter steht in loser Folge.
+  - Pflanzen auf dem Pfad, Poller in der Wiese und Blumen sind weg.
+- Der Rastplatz-Asphalt hat ein eigenes Zeichen `z` (gleicher Boden). So prüft der Kartenbau
+  Straße und Platz getrennt.
+- **Begründet statt geändert:**
+  - **Fahrzeuge:** Fahrzeuge auf Straßen von West nach Ost sind wie bei LimeZu von der Seite
+    gezeichnet, solche auf Nord-Süd-Straßen von vorn oder hinten. Das ist die Schrägansicht von
+    LimeZu (KARTENREGELN 10.60). Deshalb stehen auch die geparkten Autos jetzt quer.
+  - **Größen:** Autos 4–5 × 3, Lastwagen 11 × 5 Bildkacheln; das entspricht 10.64 mit Dach.
+  - **Vogelhütte:** Sie ist ein Gartenhaus mit Tür und Fenster (Punkt h) und bleibt in der Mitte
+    am Pfadbogen.
+  - **Vögel:** Ringelgänse und Möwen zeichnet die Belebung nach dem Namen; das betrifft die
+    Tierbilder aller Karten.
+
 ### 1.2 Glasbrücke (`wegIronwoodSilicon.glasbruecke`, 140 × 26), Runde 8 neu gebaut
 
 **Neu gebaut nach der Revision des Autors (10.11.2026, „keine Variante passt“, mittel-1).** Die
@@ -136,6 +167,24 @@ Autobreite etwa 18 Spuren breit und alle Autos fuhren in eine Richtung. Jetzt (R
 
 Laufzeit: Ostrand → Westrand etwa 150 Kacheln, gut 40 s. Die Varianten B und C unter
 `szenen/varianten/` sind der alte Stand; sie gelten nicht mehr, Wahl ist dieser Neubau.
+
+**Runde 8, nach dem Gutachten (mittel-1):**
+
+- **Winter:** `jahreszeit: winter`, Blumen weg.
+- **Pfeiler:** Sie stehen nur noch auf Grünstreifen, Seitenstreifen und Mittelstreifen (x 44,
+  53, 67, 82, 91), nicht mehr in Fahrspuren.
+- **Plattform:** zwei Pfeiler auf dem Mittelstreifen, durch das Glas zu sehen.
+- **Rampe:** ein Querträger an der Fuge zwischen Rampe und Glas; die Farnbüschel an der
+  Rampenwand sind weg.
+- **Fund:** zwei weiße Ohrstöpsel unter der Bank (`fundOhrstoepsel`); das Fernglas ist weg.
+- **Platz:**
+  - Die Werbetafel zeigt jetzt „ZERO – Nie wieder Fehler“ (Bild `werbetafel_zero`).
+  - Der Platz hat helle Platten (neuer Boden `platten` aus dem Straßenbogen) statt
+    Kopfsteinpflaster.
+  - Die Mitte ist gefüllt: Bäume in Pflanzbeeten, zwei Bänke, ein Kübel.
+  - Die Laternen sind modern.
+- **Rastplatz Ost:** steht auf einer Plattenbucht am Weg.
+- **Tiere:** Die Krähe ist weg (gleiches Bild wie die Möwe), das Kaninchen läuft auf der Wiese.
 
 ### 1.3 Silicon Bay, Campus (`siliconBay.aussen`, 72 × 60 seit Runde 7)
 

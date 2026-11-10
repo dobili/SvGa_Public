@@ -26,12 +26,12 @@
     "#.........ee.........ppp........................ee..~~~~~..#",
     "#.........ee.........ppp........................ee..~~~~~..#",
     "#.........ee.........ppp........................ee.~~~~~...#",
-    "#.........ee.........ppp....................pp..ee.~~~~~...#",
-    "#.........ee.........ppp....................pp..eehhhh~....#",
-    "#.........ee.........ppp....................pp..eehhhh~....#",
-    "#.........ee.........ppp....................pp..ee~~~~~....#",
-    "#.........ee.........ppp....................pp..ee~~~~~....#",
-    "#.........ee.........ppp....................pp..ee.~~~~~...#",
+    "#.........ee.........ppp....................ppppee.~~~~~...#",
+    "#.........ee.........ppp....................ppppeehhhh~....#",
+    "#.........ee.........ppp........................eehhhh~....#",
+    "#.........ee.........ppp........................ee~~~~~....#",
+    "#.........ee.........ppp........................ee~~~~~....#",
+    "#.........ee.........ppp........................ee.~~~~~...#",
     "ppppppppppppppppppppppppppppppppppppppppppppppppee.~~~~~...#",
     "ssssssssssssssssssssssssssssssssssssssssssssssspee.~~~~~...#",
     "ssssssssssssssssssssssssssssssssssssssssssssssspee.~~~~~...#",
@@ -44,8 +44,8 @@
     "#pp.............................................ee...~~~~~.#",
     "#pp.............................................ee...~~~~~.#",
     "#pp.............................................ee...~~~~~.#",
-    "#pp...........................................eeee...~~~~~.#",
-    "#pp...........................................eeee..~~~~~..#",
+    "#pp...........................................eeee~~~~~~~~.#",
+    "#pp...........................................eeee~~~~~~~..#",
     "#pp.............................................ee..~~~~~..#",
     "#pp.............................................ee..~~~~~..#",
     "#pp.............................................ee..~~~~~..#",
@@ -537,10 +537,6 @@
       "feld": [56, 35]
     },
     {
-      "moebel": "cc5BankZumBach",
-      "feld": [50, 26]
-    },
-    {
       "moebel": "cc4Stammbank",
       "feld": [29, 30]
     },
@@ -555,10 +551,6 @@
     {
       "moebel": "cc7Blumenkasten",
       "feld": [36, 27]
-    },
-    {
-      "moebel": "cc4Bootsschuppen",
-      "feld": [45, 27]
     },
     {
       "moebel": "cc7Fussbruecke",
@@ -599,22 +591,6 @@
       "feld": [53, 17]
     },
     {
-      "moebel": "cc5BootUfer",
-      "feld": [52, 25]
-    },
-    {
-      "moebel": "cc8KulisseHausFlach",
-      "feld": [3, 39]
-    },
-    {
-      "moebel": "cc8KulisseLaden",
-      "feld": [10, 39]
-    },
-    {
-      "moebel": "cc8KulisseHausFlach",
-      "feld": [16, 39]
-    },
-    {
       "moebel": "cc8KulisseBauernhaus",
       "feld": [23, 37]
     },
@@ -623,12 +599,66 @@
       "feld": [32, 38]
     },
     {
-      "moebel": "cc8KulisseHausHoch",
-      "feld": [42, 37]
-    },
-    {
       "moebel": "cc8KulisseStadthaus",
       "feld": [42, 3]
+    },
+    {
+      "moebel": "cc8HolzhausBlau",
+      "feld": [4, 43]
+    },
+    {
+      "moebel": "cc8HolzhausRot",
+      "feld": [11, 43]
+    },
+    {
+      "moebel": "cc8HolzhausGruen",
+      "feld": [17, 43]
+    },
+    {
+      "moebel": "cc8HolzhausBlau",
+      "feld": [43, 43]
+    },
+    {
+      "moebel": "cc4Nadelbaum",
+      "feld": [44, 38]
+    },
+    {
+      "moebel": "mf4Gemuesebeet",
+      "feld": [8, 40]
+    },
+    {
+      "moebel": "mf4Gemuesebeet",
+      "feld": [15, 40]
+    },
+    {
+      "moebel": "mf2Blumenbeet",
+      "feld": [4, 41]
+    },
+    {
+      "moebel": "mf2Blumenbeet",
+      "feld": [11, 41]
+    },
+    {
+      "moebel": "mf2Blumenbeet",
+      "feld": [17, 41]
+    },
+    {
+      "moebel": "caBus",
+      "feld": [31, 19],
+      "bauteil_ok": true
+    },
+    {
+      "moebel": "cc5BankZumBach",
+      "feld": [50, 24]
+    },
+    {
+      "moebel": "cc4Bootsschuppen",
+      "feld": [50, 27]
+    },
+    {
+      "moebel": "cc5BootUfer",
+      "feld": [54, 28],
+      "bauteil_ok": true
     }
   ],
   "ausloeser": [

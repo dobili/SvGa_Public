@@ -650,7 +650,7 @@
       "stil": "klassisch"
     },
     "mf2Waschsalon": {
-      "quelle": "modern-exteriors/Modern_Exteriors_16x16/ME_Theme_Sorter_16x16/4_Generic_Building_Singles_16x16/ME_Singles_Generic_Building_16x16_Hardware_Store.png",
+      "quelle": "spiel/eigene/fassade_waschsalon.png",
       "breite": 128,
       "hoehe": 144,
       "kollision": true,
@@ -1078,7 +1078,7 @@
       "stil": "klassisch"
     },
     "mf4Diner": {
-      "quelle": "modern-exteriors/Modern_Exteriors_16x16/ME_Theme_Sorter_16x16/4_Generic_Building_Singles_16x16/ME_Singles_Generic_Building_16x16_Hardware_Store.png",
+      "quelle": "spiel/eigene/fassade_diner.png",
       "breite": 128,
       "hoehe": 144,
       "kollision": true,
@@ -1828,7 +1828,7 @@
       "blick": "links"
     },
     "mf6Haltestelle": {
-      "quelle": "modern-exteriors/Modern_Exteriors_16x16/ME_Theme_Sorter_16x16/10_Vehicles_Singles_16x16/ME_Singles_Vehicles_16x16_Bus_Stop_2.png",
+      "quelle": "spiel/eigene/wartehaus_hinten.png",
       "breite": 80,
       "hoehe": 48,
       "kollision": true,
@@ -2460,7 +2460,7 @@
       "blick": "unten"
     },
     "mf7Gartenhaus": {
-      "quelle": "modern-exteriors/Modern_Exteriors_16x16/ME_Theme_Sorter_16x16/17_Garden_Singles_16x16/ME_Singles_Garden_16x16_Blue_Brown_Wood_Storage.png",
+      "quelle": "spiel/eigene/gartenhaus_blau.png",
       "breite": 48,
       "hoehe": 64,
       "kollision": true,
@@ -3036,15 +3036,6 @@
       "stil": "schule",
       "blick": "unten"
     },
-    "mf9StegNeu": {
-      "quelle": "spiel/eigene/bruecke_fuss_laengs_3.png",
-      "breite": 32,
-      "hoehe": 52,
-      "kollision": false,
-      "art": "steg",
-      "zustand": "alt",
-      "stil": "natur"
-    },
     "mfc9TeppichLo": {
       "quelle": "spiel/eigene/teppich_lo.png",
       "breite": 16,
@@ -3258,6 +3249,54 @@
       "zustand": "gebraucht",
       "stil": "schule",
       "blick": "unten"
+    },
+    "mf9StegNeu": {
+      "quelle": "spiel/eigene/bruecke_fuss_laengs_3.png",
+      "breite": 32,
+      "hoehe": 52,
+      "kollision": false,
+      "art": "steg",
+      "zustand": "alt",
+      "stil": "natur"
+    },
+    "mfc10Pokalregal": {
+      "quelle": "spiel/eigene/pokalregal.png",
+      "breite": 32,
+      "hoehe": 48,
+      "kollision": true,
+      "art": "pokal",
+      "zustand": "gebraucht",
+      "stil": "schule",
+      "blick": "unten"
+    },
+    "mfc10SpindeHoch": {
+      "quelle": "spiel/eigene/spinde_hoch.png",
+      "breite": 48,
+      "hoehe": 48,
+      "kollision": true,
+      "art": "spind",
+      "zustand": "gebraucht",
+      "stil": "schule",
+      "blick": "unten"
+    },
+    "mfc10RegalSeiteRechts": {
+      "quelle": "spiel/eigene/buecherregal_schmal_rechts.png",
+      "breite": 16,
+      "hoehe": 48,
+      "kollision": true,
+      "art": "buecherregal",
+      "zustand": "gebraucht",
+      "stil": "schule",
+      "blick": "rechts"
+    },
+    "mfc10Zettel": {
+      "quelle": "spiel/eigene/zettel_fragezeichen.png",
+      "breite": 8,
+      "hoehe": 8,
+      "kollision": false,
+      "art": "deko",
+      "zustand": "gebraucht",
+      "stil": "schule"
     }
   }
 }

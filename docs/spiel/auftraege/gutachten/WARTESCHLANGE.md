@@ -33,9 +33,25 @@ Szene heißt die Datei in `inhalte/abenteuer/szenen/` ohne `.json`.
 - [x] weg-ironwood-silicon-glasbruecke (neu gebaut, Runde 8, mittel-1)
 - [x] weg-ironwood-silicon-raststaette (Runde 8, mittel-1)
 
-- [ ] riverton-aussen (zweite Prüfung nach Nachbesserung, mittel-3; Bilder im privaten main ab b6c369b2)
-- [ ] riverton-bahnhofshalle, riverton-pavillon, riverton-wohnwagen, riverton-schuppen (zweite Prüfung, mittel-3, eine Datei `riverton-innen-2.md`)
-- [ ] maple-falls-clubraum (dritte Prüfung, mittel-1, Datei `maple-falls-clubraum-3.md`)
+- [x] riverton-aussen (zweite Prüfung nach Nachbesserung, mittel-3; Bilder im privaten main ab b6c369b2)
+- [x] riverton-bahnhofshalle, riverton-pavillon, riverton-wohnwagen, riverton-schuppen (zweite Prüfung, mittel-3, eine Datei `riverton-innen-2.md`)
+- [x] maple-falls-clubraum (dritte Prüfung, mittel-1, Datei `maple-falls-clubraum-3.md`)
+- [x] weg-ironwood-silicon-glasbruecke (zweite Prüfung, Winter, mittel-1, Datei `weg-ironwood-silicon-glasbruecke-2.md`; Bilder aus `bildwuensche/zero_werbung.py`)
+- [x] weg-ironwood-silicon-raststaette (zweite Prüfung, Winter, Küste, Zufahrt, mittel-1, Datei `weg-ironwood-silicon-raststaette-2.md`; Bilder aus `bildwuensche/gartenhaus.py`, `fassaden_zweck.py`, `wartehaus.py`)
+- [ ] maple-falls-clubraum (vierte Prüfung, mittel-1, Datei `maple-falls-clubraum-4.md`; Bilder aus `bildwuensche/clubraum_moebel.py`)
+
+- [x] silicon-bay-akademie (zweite Prüfung, mittel-3; Bilder privat ab a579b56c; Datei `silicon-bay-akademie-2.md`)
+- [x] silicon-bay-altstadt (zweite Prüfung, jetzt Winter, mittel-3; Datei `silicon-bay-altstadt-2.md`)
+- [x] lockport-aussen, lockport-gasthaus (zweite Prüfung, niedrig-1; Datei `lockport-2.md`; Antworten in den Ortsdokumenten, Abschnitt „Gutachten Runde 8: Antworten“)
+- [x] weg-cedar-riverton-bahndamm, weg-cedar-riverton-zedernwald (zweite Prüfung, niedrig-1; Datei `weg-cedar-riverton-2.md`)
+- [x] maple-falls-aussen, maple-falls-park, cedar-creek-aussen (zweite Prüfung, niedrig-1; Datei `maple-falls-cedar-creek-2.md`)
+- [x] weg-maple-cedar-flussweg, -landstrasse, -zedernpfad (zweite Prüfung, niedrig-1; eine Datei `weg-maple-cedar-2.md`)
+- [ ] Zustände aus Runde 8 (`python -m pipeline.abenteuer.zustaende`): je Grundkarte eine kurze Prüfung, ob der Zustand zur Beschreibung „Zustand: …“ passt; eine Datei `zustaende-runde8.md`
+- [ ] weg-riverton-ironwood-1, weg-riverton-ironwood-2 (zweite Prüfung, mittel-4, mit Zuständen graffiti und ohne-tische; Dateien `…-2.md`)
+- [ ] ironwood-aussen (zweite Prüfung, mittel-4, mit Zuständen meisterschaft und vermietet; `ironwood-aussen-2.md`)
+- [ ] ironwood-kantine (dritte Prüfung, mit Zustand logo; `ironwood-kantine-3.md`), ironwood-museum, ironwood-umkleide, ironwood-mamas-zimmer (zweite Prüfung, mittel-4; eine Datei `ironwood-innen-2.md`)
+- [ ] steinbruch-grube (dritte Prüfung, jetzt mit Felskanten; `steinbruch-grube-3.md`), steinbruch-stollen (zweite Prüfung; `steinbruch-stollen-2.md`)
+- [ ] riverton-aussen und die vier Innenräume (dritte Prüfung, mittel-3; Bahnhof mit Uhrturm, Glastüren; Bilder privat ab c0febaac; Dateien `riverton-aussen-3.md`, `riverton-innen-3.md`)
 
 ## Erledigt
 

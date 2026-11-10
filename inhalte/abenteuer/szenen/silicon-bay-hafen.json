@@ -2,7 +2,7 @@
   "karte": "siliconBay.hafen",
   "datei": "karten/silicon-bay-hafen.json",
   "art": "aussen",
-  "beschreibung": "Der alte Hafen von Silicon Bay unterhalb der Terrasse des Campus. Von der Treppe in der Mitte kommt man auf die Hafenstraße. Oben die alten Häuser: die Fischhalle, ein Laden, Ames leerer Kurzwarenladen mit dem Schild „Bald geöffnet“ und die Hafenmeisterei. Am Südrand der Straße Laternen in festen Abständen, am Kai ein Gemüsekarren mit Händlerin. Links das Fährhäuschen, davor am Kai die Küstenfähre, viel größer als die Ruderboote. In der Mitte Ladebetrieb am Kutter: Kisten und Fässer in Reihen, Hafenarbeiter tragen sie zur Kaikante. Bänke mit Blick aufs Wasser, Poller an der Kaikante. Rechts der Steg der Inselfähre und der rot-weiße Leuchtturm auf einer Landzunge, zu dessen Tür ein Weg um den Turm führt.",
+  "beschreibung": "Der alte Hafen von Silicon Bay unterhalb der Terrasse des Campus. Von der Treppe in der Mitte kommt man auf die Hafenstraße. Oben die alten Häuser: die Fischhalle, ein Laden, Ames leerer Kurzwarenladen mit dem Schild „Bald geöffnet“ und die Hafenmeisterei. Am Südrand der Straße Laternen in festen Abständen, am Kai ein Gemüsekarren mit Händlerin. Links das Fährhäuschen, davor am Kai die Küstenfähre, 18 Kacheln lang, dreimal so lang wie das Fischerboot. In der Mitte Ladebetrieb am kleinen Fischerboot: Kisten und Fässer in Reihen, Hafenarbeiter tragen sie zur Kaikante. Bänke mit Blick aufs Wasser, Poller an der Kaikante; die Kaimauer fällt mit Leitern und Reifenfendern zum Wasser ab. Rechts der Steg der Inselfähre und der rot-weiße Leuchtturm auf einer Landzunge, zu dessen Tür ein Weg um den Turm führt.",
   "boden": "pflaster",
   "wandart": "stein",
   "ufer": "stein",
@@ -253,7 +253,7 @@
     },
     {
       "moebel": "sb8Faehre",
-      "feld": [1, 31]
+      "feld": [1, 32]
     },
     {
       "moebel": "sbLaterne",
@@ -319,6 +319,231 @@
     {
       "moebel": "caFaesser",
       "feld": [36, 26]
+    },
+    {
+      "moebel": "sb8Kaimauer",
+      "feld": [1, 31],
+      "bauteil_ok": true
+    },
+    {
+      "moebel": "sb8KaimauerReifen",
+      "feld": [2, 31],
+      "bauteil_ok": true
+    },
+    {
+      "moebel": "sb8Kaimauer",
+      "feld": [3, 31],
+      "bauteil_ok": true
+    },
+    {
+      "moebel": "sb8Kaimauer",
+      "feld": [4, 31],
+      "bauteil_ok": true
+    },
+    {
+      "moebel": "sb8KaimauerLeiter",
+      "feld": [5, 31],
+      "bauteil_ok": true
+    },
+    {
+      "moebel": "sb8Kaimauer",
+      "feld": [6, 31],
+      "bauteil_ok": true
+    },
+    {
+      "moebel": "sb8Kaimauer",
+      "feld": [7, 31],
+      "bauteil_ok": true
+    },
+    {
+      "moebel": "sb8KaimauerReifen",
+      "feld": [8, 31],
+      "bauteil_ok": true
+    },
+    {
+      "moebel": "sb8Kaimauer",
+      "feld": [9, 31],
+      "bauteil_ok": true
+    },
+    {
+      "moebel": "sb8Kaimauer",
+      "feld": [10, 31],
+      "bauteil_ok": true
+    },
+    {
+      "moebel": "sb8Kaimauer",
+      "feld": [11, 31],
+      "bauteil_ok": true
+    },
+    {
+      "moebel": "sb8Kaimauer",
+      "feld": [12, 31],
+      "bauteil_ok": true
+    },
+    {
+      "moebel": "sb8Kaimauer",
+      "feld": [13, 31],
+      "bauteil_ok": true
+    },
+    {
+      "moebel": "sb8KaimauerReifen",
+      "feld": [14, 31],
+      "bauteil_ok": true
+    },
+    {
+      "moebel": "sb8Kaimauer",
+      "feld": [15, 31],
+      "bauteil_ok": true
+    },
+    {
+      "moebel": "sb8Kaimauer",
+      "feld": [16, 31],
+      "bauteil_ok": true
+    },
+    {
+      "moebel": "sb8KaimauerLeiter",
+      "feld": [17, 31],
+      "bauteil_ok": true
+    },
+    {
+      "moebel": "sb8Kaimauer",
+      "feld": [18, 31],
+      "bauteil_ok": true
+    },
+    {
+      "moebel": "sb8Kaimauer",
+      "feld": [19, 31],
+      "bauteil_ok": true
+    },
+    {
+      "moebel": "sb8KaimauerReifen",
+      "feld": [20, 31],
+      "bauteil_ok": true
+    },
+    {
+      "moebel": "sb8Kaimauer",
+      "feld": [21, 31],
+      "bauteil_ok": true
+    },
+    {
+      "moebel": "sb8Kaimauer",
+      "feld": [22, 31],
+      "bauteil_ok": true
+    },
+    {
+      "moebel": "sb8Kaimauer",
+      "feld": [23, 31],
+      "bauteil_ok": true
+    },
+    {
+      "moebel": "sb8Kaimauer",
+      "feld": [24, 31],
+      "bauteil_ok": true
+    },
+    {
+      "moebel": "sb8Kaimauer",
+      "feld": [25, 31],
+      "bauteil_ok": true
+    },
+    {
+      "moebel": "sb8KaimauerReifen",
+      "feld": [26, 31],
+      "bauteil_ok": true
+    },
+    {
+      "moebel": "sb8Kaimauer",
+      "feld": [27, 31],
+      "bauteil_ok": true
+    },
+    {
+      "moebel": "sb8Kaimauer",
+      "feld": [28, 31],
+      "bauteil_ok": true
+    },
+    {
+      "moebel": "sb8KaimauerLeiter",
+      "feld": [29, 31],
+      "bauteil_ok": true
+    },
+    {
+      "moebel": "sb8Kaimauer",
+      "feld": [30, 31],
+      "bauteil_ok": true
+    },
+    {
+      "moebel": "sb8Kaimauer",
+      "feld": [31, 31],
+      "bauteil_ok": true
+    },
+    {
+      "moebel": "sb8KaimauerReifen",
+      "feld": [32, 31],
+      "bauteil_ok": true
+    },
+    {
+      "moebel": "sb8Kaimauer",
+      "feld": [33, 31],
+      "bauteil_ok": true
+    },
+    {
+      "moebel": "sb8Kaimauer",
+      "feld": [34, 31],
+      "bauteil_ok": true
+    },
+    {
+      "moebel": "sb8Kaimauer",
+      "feld": [35, 31],
+      "bauteil_ok": true
+    },
+    {
+      "moebel": "sb8Kaimauer",
+      "feld": [36, 31],
+      "bauteil_ok": true
+    },
+    {
+      "moebel": "sb8Kaimauer",
+      "feld": [37, 31],
+      "bauteil_ok": true
+    },
+    {
+      "moebel": "sb8KaimauerReifen",
+      "feld": [38, 31],
+      "bauteil_ok": true
+    },
+    {
+      "moebel": "sb8Kaimauer",
+      "feld": [39, 31],
+      "bauteil_ok": true
+    },
+    {
+      "moebel": "sb8Kaimauer",
+      "feld": [40, 31],
+      "bauteil_ok": true
+    },
+    {
+      "moebel": "sb8KaimauerLeiter",
+      "feld": [41, 31],
+      "bauteil_ok": true
+    },
+    {
+      "moebel": "sb8Kaimauer",
+      "feld": [42, 31],
+      "bauteil_ok": true
+    },
+    {
+      "moebel": "sb8Kaimauer",
+      "feld": [43, 31],
+      "bauteil_ok": true
+    },
+    {
+      "moebel": "sb8KaimauerReifen",
+      "feld": [44, 31],
+      "bauteil_ok": true
+    },
+    {
+      "moebel": "sb8Kaimauer",
+      "feld": [45, 31],
+      "bauteil_ok": true
     }
   ],
   "ausloeser": [
@@ -414,7 +639,7 @@
       "eigenschaften": {
         "von": "20,28",
         "bis": "30,28",
-        "tun": "trägt Kisten zum Kutter",
+        "tun": "trägt Kisten zum Fischerboot",
         "wann": "tag"
       }
     },
@@ -436,7 +661,7 @@
       "eigenschaften": {
         "von": "29,30",
         "bis": "31,30",
-        "tun": "nimmt die Kisten auf dem Kutter an",
+        "tun": "nimmt die Kisten im Fischerboot an",
         "wann": "tag"
       }
     }

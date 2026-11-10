@@ -1,0 +1,843 @@
+{
+  "karte": "ghostTown.aussen",
+  "datei": "karten/varianten/ghost-town-aussen-a.json",
+  "art": "aussen",
+  "wand": "felsRot",
+  "beschreibung": "Ghost Town an einem Hochsommermittag (Variante A, nach dem Ortsdokument), 56 × 40. Die Front Street aus festgetretenem rotem Fels läuft in den Reihen 21–23 von West nach Ost, nördlich davor ein Bretterweg vor den Holzhäusern mit ihren Türen zur Straße: Laden, Schmiede, der verwitterte Saloon mit der Schwingtür und das Sheriffbüro, dahinter ein Wasserturm. Zwischen Saloon und Sheriff führt ein Weg hinauf zur roten Bruchkante, wo der Stolleneingang der Goldmine mit einer Absperrung „Betreten verboten“ gesperrt ist. Südlich der Straße eine leere Tränke, Kakteen und rote Felsen; im Südosten der Friedhof hinter einem Holzzaun mit Tor, Holzkreuze und Grabsteine in Reihen, am Ostrand das Grab ohne Namen, darüber kreisen Geier. Im Südwesten führt ein Trampelpfad auf einen Hügel mit einer Bank für den Blick in die Sterne. Am Ostausgang die Haltestelle, an der Victor aus dem Bus steigt. Saloon, Laden, Schmiede, Sheriff und Prüfamt mit falschen Holzfassaden; der Stollen ist vernagelt, daneben eine rostige Lore; Tumbleweeds im roten Sand, ein kaputter Planwagen.",
+  "boden": "sandRot",
+  "wandart": "sandRot",
+  "boeden": {
+    "e": "felsbodenRot",
+    "d": "dielen",
+    "k": "felsbodenRot"
+  },
+  "zustand": ["alt", "verwittert", "gebraucht", "neu"],
+  "stil": [
+    "rustikal",
+    "laendlich",
+    "einfach",
+    "industrie",
+    "natur",
+    "klassisch",
+    "modern"
+  ],
+  "raster": [
+    "########################################################",
+    "#############################kkkk#######################",
+    "#############################kkkk#######################",
+    "#############################kkkk#######################",
+    "#############################kkkk#######################",
+    "#.............................ee.......................#",
+    "#.............................ee.......................#",
+    "#.............................ee.......................#",
+    "#.............................ee.......................#",
+    "#.............................ee.......................#",
+    "#.............................ee.......................#",
+    "#.............................ee.......................#",
+    "#.............................ee.......................#",
+    "#.............................ee.......................#",
+    "#.............................ee.......................#",
+    "#.............................ee.......................#",
+    "#.............................ee.......................#",
+    "#.............................ee.......................#",
+    "#.............................ee.......................#",
+    "#.............................ee.......................#",
+    "#dddddddddddddddddddddddddddddddddddddddddddddddddddddd#",
+    "eeeeeeeeeeeeeeeeeeeeeeeeeeeeeeeeeeeeeeeeeeeeeeeeeeeeeeee",
+    "eeeeeeeeeeeeeeeeeeeeeeeeeeeeeeeeeeeeeeeeeeeeeeeeeeeeeeee",
+    "#.eeeeeeeeeeeeeeeeeeeeeeeeeeeeeeeeeeeeeeeeeeeeeeeeeeee.#",
+    "#......ee..................................ee..........#",
+    "#......ee..................................ee..........#",
+    "#......ee..................................ee..........#",
+    "#......ee..................................ee..........#",
+    "#......ee..............................................#",
+    "#......ee..............................................#",
+    "#......ee..............................................#",
+    "#......ee..............................................#",
+    "#......ee..............................................#",
+    "#......................................................#",
+    "#......................................................#",
+    "#......................................................#",
+    "#......................................................#",
+    "#......................................................#",
+    "#......................................................#",
+    "########################################################"
+  ],
+  "objekte": [
+    {
+      "moebel": "gt7FassadeLaden",
+      "feld": [2, 13]
+    },
+    {
+      "moebel": "gt7FassadeSchmiede",
+      "feld": [10, 13]
+    },
+    {
+      "moebel": "gt7SaloonFassade",
+      "feld": [19, 11]
+    },
+    {
+      "moebel": "gt7FassadeSheriff",
+      "feld": [33, 13]
+    },
+    {
+      "moebel": "gt7FassadePruefamt",
+      "feld": [41, 13]
+    },
+    {
+      "moebel": "gt7Wagenrad",
+      "feld": [17, 19]
+    },
+    {
+      "moebel": "gt8HuetteA",
+      "feld": [3, 6]
+    },
+    {
+      "moebel": "gt8Post",
+      "feld": [11, 5]
+    },
+    {
+      "moebel": "gt8HuetteB",
+      "feld": [41, 7]
+    },
+    {
+      "moebel": "gt8Bank",
+      "feld": [9, 25]
+    },
+    {
+      "moebel": "gt8Hotel",
+      "feld": [17, 24]
+    },
+    {
+      "moebel": "gt8Mietstall",
+      "feld": [26, 25]
+    },
+    {
+      "moebel": "gt7Wasserturm",
+      "feld": [49, 13]
+    },
+    {
+      "moebel": "gt7Traenke",
+      "feld": [2, 25]
+    },
+    {
+      "moebel": "gt7Stollen",
+      "feld": [29, 1]
+    },
+    {
+      "moebel": "gt7Lore",
+      "feld": [32, 5]
+    },
+    {
+      "moebel": "gt7ZaunUL",
+      "feld": [36, 37],
+      "bauteil_ok": true
+    },
+    {
+      "moebel": "gt7ZaunOL",
+      "feld": [36, 28],
+      "bauteil_ok": true
+    },
+    {
+      "moebel": "gt7ZaunUM",
+      "feld": [37, 37],
+      "bauteil_ok": true
+    },
+    {
+      "moebel": "gt7ZaunOM",
+      "feld": [37, 28],
+      "bauteil_ok": true
+    },
+    {
+      "moebel": "gt7ZaunUM",
+      "feld": [38, 37],
+      "bauteil_ok": true
+    },
+    {
+      "moebel": "gt7ZaunOM",
+      "feld": [38, 28],
+      "bauteil_ok": true
+    },
+    {
+      "moebel": "gt7ZaunUM",
+      "feld": [39, 37],
+      "bauteil_ok": true
+    },
+    {
+      "moebel": "gt7ZaunOM",
+      "feld": [39, 28],
+      "bauteil_ok": true
+    },
+    {
+      "moebel": "gt7ZaunUM",
+      "feld": [40, 37],
+      "bauteil_ok": true
+    },
+    {
+      "moebel": "gt7ZaunOM",
+      "feld": [40, 28],
+      "bauteil_ok": true
+    },
+    {
+      "moebel": "gt7ZaunUM",
+      "feld": [41, 37],
+      "bauteil_ok": true
+    },
+    {
+      "moebel": "gt7ZaunOM",
+      "feld": [41, 28],
+      "bauteil_ok": true
+    },
+    {
+      "moebel": "gt7ZaunUM",
+      "feld": [42, 37],
+      "bauteil_ok": true
+    },
+    {
+      "moebel": "gt7ZaunEndeLinks",
+      "feld": [42, 28],
+      "bauteil_ok": true
+    },
+    {
+      "moebel": "gt7ZaunUM",
+      "feld": [43, 37],
+      "bauteil_ok": true
+    },
+    {
+      "moebel": "gt7ZaunUM",
+      "feld": [44, 37],
+      "bauteil_ok": true
+    },
+    {
+      "moebel": "gt7ZaunUM",
+      "feld": [45, 37],
+      "bauteil_ok": true
+    },
+    {
+      "moebel": "gt7ZaunEndeRechts",
+      "feld": [45, 28],
+      "bauteil_ok": true
+    },
+    {
+      "moebel": "gt7ZaunUM",
+      "feld": [46, 37],
+      "bauteil_ok": true
+    },
+    {
+      "moebel": "gt7ZaunOM",
+      "feld": [46, 28],
+      "bauteil_ok": true
+    },
+    {
+      "moebel": "gt7ZaunUM",
+      "feld": [47, 37],
+      "bauteil_ok": true
+    },
+    {
+      "moebel": "gt7ZaunOM",
+      "feld": [47, 28],
+      "bauteil_ok": true
+    },
+    {
+      "moebel": "gt7ZaunUM",
+      "feld": [48, 37],
+      "bauteil_ok": true
+    },
+    {
+      "moebel": "gt7ZaunOM",
+      "feld": [48, 28],
+      "bauteil_ok": true
+    },
+    {
+      "moebel": "gt7ZaunUM",
+      "feld": [49, 37],
+      "bauteil_ok": true
+    },
+    {
+      "moebel": "gt7ZaunOM",
+      "feld": [49, 28],
+      "bauteil_ok": true
+    },
+    {
+      "moebel": "gt7ZaunUM",
+      "feld": [50, 37],
+      "bauteil_ok": true
+    },
+    {
+      "moebel": "gt7ZaunOM",
+      "feld": [50, 28],
+      "bauteil_ok": true
+    },
+    {
+      "moebel": "gt7ZaunUM",
+      "feld": [51, 37],
+      "bauteil_ok": true
+    },
+    {
+      "moebel": "gt7ZaunOM",
+      "feld": [51, 28],
+      "bauteil_ok": true
+    },
+    {
+      "moebel": "gt7ZaunUR",
+      "feld": [52, 37],
+      "bauteil_ok": true
+    },
+    {
+      "moebel": "gt7ZaunOR",
+      "feld": [52, 28],
+      "bauteil_ok": true
+    },
+    {
+      "moebel": "gt7ZaunML",
+      "feld": [36, 29],
+      "bauteil_ok": true
+    },
+    {
+      "moebel": "gt7ZaunMR",
+      "feld": [52, 29],
+      "bauteil_ok": true
+    },
+    {
+      "moebel": "gt7ZaunML",
+      "feld": [36, 30],
+      "bauteil_ok": true
+    },
+    {
+      "moebel": "gt7ZaunMR",
+      "feld": [52, 30],
+      "bauteil_ok": true
+    },
+    {
+      "moebel": "gt7ZaunML",
+      "feld": [36, 31],
+      "bauteil_ok": true
+    },
+    {
+      "moebel": "gt7ZaunMR",
+      "feld": [52, 31],
+      "bauteil_ok": true
+    },
+    {
+      "moebel": "gt7ZaunML",
+      "feld": [36, 32],
+      "bauteil_ok": true
+    },
+    {
+      "moebel": "gt7ZaunMR",
+      "feld": [52, 32],
+      "bauteil_ok": true
+    },
+    {
+      "moebel": "gt7ZaunML",
+      "feld": [36, 33],
+      "bauteil_ok": true
+    },
+    {
+      "moebel": "gt7ZaunMR",
+      "feld": [52, 33],
+      "bauteil_ok": true
+    },
+    {
+      "moebel": "gt7ZaunML",
+      "feld": [36, 34],
+      "bauteil_ok": true
+    },
+    {
+      "moebel": "gt7ZaunMR",
+      "feld": [52, 34],
+      "bauteil_ok": true
+    },
+    {
+      "moebel": "gt7ZaunML",
+      "feld": [36, 35],
+      "bauteil_ok": true
+    },
+    {
+      "moebel": "gt7ZaunMR",
+      "feld": [52, 35],
+      "bauteil_ok": true
+    },
+    {
+      "moebel": "gt7ZaunML",
+      "feld": [36, 36],
+      "bauteil_ok": true
+    },
+    {
+      "moebel": "gt7ZaunMR",
+      "feld": [52, 36],
+      "bauteil_ok": true
+    },
+    {
+      "moebel": "gt7GrabOhneName",
+      "feld": [50, 32]
+    },
+    {
+      "moebel": "gt7GrabsteinGrau",
+      "feld": [48, 30]
+    },
+    {
+      "moebel": "gt7Grabstein",
+      "feld": [38, 33]
+    },
+    {
+      "moebel": "gt7Grabhuegel",
+      "feld": [46, 30]
+    },
+    {
+      "moebel": "gt7GrabsteinB",
+      "feld": [46, 33]
+    },
+    {
+      "moebel": "gt7Grabstein",
+      "feld": [47, 30]
+    },
+    {
+      "moebel": "gt7GrabsteinB",
+      "feld": [47, 33]
+    },
+    {
+      "moebel": "gt7Kreuz",
+      "feld": [40, 33]
+    },
+    {
+      "moebel": "gt7GrabsteinB",
+      "feld": [38, 30]
+    },
+    {
+      "moebel": "gt7Grabstein",
+      "feld": [48, 33]
+    },
+    {
+      "moebel": "gt7GrabsteinB",
+      "feld": [39, 30]
+    },
+    {
+      "moebel": "gt7Geierkreis",
+      "feld": [44, 30]
+    },
+    {
+      "moebel": "gt7Bank",
+      "feld": [6, 33]
+    },
+    {
+      "moebel": "gt7Haltestelle",
+      "feld": [52, 24]
+    },
+    {
+      "moebel": "gt7KaktusBluete",
+      "feld": [1, 31]
+    },
+    {
+      "moebel": "gt7Stein",
+      "feld": [21, 6]
+    },
+    {
+      "moebel": "gt7KaktusBluete",
+      "feld": [17, 34]
+    },
+    {
+      "moebel": "gt7KaktusBluete",
+      "feld": [38, 25]
+    },
+    {
+      "moebel": "gt7Saguaro",
+      "feld": [50, 6]
+    },
+    {
+      "moebel": "gt7Tumbleweed",
+      "feld": [40, 27]
+    },
+    {
+      "moebel": "gt7Kaktus",
+      "feld": [1, 35]
+    },
+    {
+      "moebel": "gt7Tumbleweed",
+      "feld": [40, 32]
+    },
+    {
+      "moebel": "gt7Felsgruppe",
+      "feld": [37, 8]
+    },
+    {
+      "moebel": "gt7Stein",
+      "feld": [35, 31]
+    },
+    {
+      "moebel": "gt7Tumbleweed",
+      "feld": [35, 35]
+    },
+    {
+      "moebel": "gt7Tumbleweed",
+      "feld": [9, 5]
+    },
+    {
+      "moebel": "gt7Felsgruppe",
+      "feld": [41, 30]
+    },
+    {
+      "moebel": "gt7Tumbleweed",
+      "feld": [1, 8]
+    },
+    {
+      "moebel": "gt7Tumbleweed",
+      "feld": [9, 7]
+    },
+    {
+      "moebel": "gt7Stein",
+      "feld": [33, 36]
+    },
+    {
+      "moebel": "gt7KaktusBluete",
+      "feld": [17, 17]
+    },
+    {
+      "moebel": "gt7Kaktus",
+      "feld": [36, 5]
+    },
+    {
+      "moebel": "gt7Saguaro",
+      "feld": [24, 34]
+    },
+    {
+      "moebel": "gt7TumbleweedGross",
+      "feld": [52, 7]
+    },
+    {
+      "moebel": "gt7Stein",
+      "feld": [28, 8]
+    },
+    {
+      "moebel": "gt7Stein",
+      "feld": [35, 11]
+    },
+    {
+      "moebel": "gt7Tumbleweed",
+      "feld": [38, 5]
+    },
+    {
+      "moebel": "gt7Tumbleweed",
+      "feld": [25, 7]
+    },
+    {
+      "moebel": "gt7Stein",
+      "feld": [6, 11]
+    },
+    {
+      "moebel": "gt7Tumbleweed",
+      "feld": [2, 26]
+    },
+    {
+      "moebel": "gt7Tumbleweed",
+      "feld": [8, 6]
+    },
+    {
+      "moebel": "gt7Tumbleweed",
+      "feld": [8, 35]
+    },
+    {
+      "moebel": "gt7Stein",
+      "feld": [20, 10]
+    },
+    {
+      "moebel": "gt7Stein",
+      "feld": [4, 25]
+    },
+    {
+      "moebel": "gt7Felsgruppe",
+      "feld": [45, 35]
+    },
+    {
+      "moebel": "gt7Felsgruppe",
+      "feld": [48, 35]
+    },
+    {
+      "moebel": "gt7TumbleweedGross",
+      "feld": [34, 33]
+    },
+    {
+      "moebel": "gt7Kaktus",
+      "feld": [20, 6]
+    },
+    {
+      "moebel": "gt7Kaktus",
+      "feld": [21, 35]
+    },
+    {
+      "moebel": "gt7Felsgruppe",
+      "feld": [38, 6]
+    },
+    {
+      "moebel": "gt7Felsgruppe",
+      "feld": [47, 9]
+    },
+    {
+      "moebel": "gt7Tumbleweed",
+      "feld": [26, 7]
+    },
+    {
+      "moebel": "gt7KaktusBluete",
+      "feld": [12, 32]
+    },
+    {
+      "moebel": "gt7Tumbleweed",
+      "feld": [19, 7]
+    },
+    {
+      "moebel": "gt7KaktusBluete",
+      "feld": [25, 8]
+    },
+    {
+      "moebel": "gt7KaktusBluete",
+      "feld": [26, 33]
+    },
+    {
+      "moebel": "gt7Stein",
+      "feld": [52, 9]
+    },
+    {
+      "moebel": "gt7Kaktus",
+      "feld": [18, 11]
+    },
+    {
+      "moebel": "gt7Schild",
+      "feld": [1, 18]
+    }
+  ],
+  "ausloeser": [
+    {
+      "name": "start",
+      "feld": [1, 22],
+      "eigenschaften": {
+        "richtung": "rechts"
+      }
+    },
+    {
+      "name": "wegPinewood",
+      "feld": [0, 21]
+    },
+    {
+      "name": "wegPinewood",
+      "feld": [0, 22]
+    },
+    {
+      "name": "wegCapital",
+      "feld": [55, 21]
+    },
+    {
+      "name": "wegCapital",
+      "feld": [55, 22]
+    },
+    {
+      "name": "saloonTuer",
+      "feld": [23, 20]
+    },
+    {
+      "name": "grab",
+      "feld": [49, 33]
+    },
+    {
+      "name": "sternenhimmel",
+      "feld": [7, 32]
+    },
+    {
+      "name": "goldmine",
+      "feld": [30, 5]
+    },
+    {
+      "name": "goldmine",
+      "feld": [31, 5]
+    },
+    {
+      "name": "ortsschild",
+      "feld": [1, 20]
+    },
+    {
+      "name": "steckbrief",
+      "feld": [35, 20]
+    },
+    {
+      "name": "amboss",
+      "feld": [12, 20]
+    }
+  ],
+  "figuren": [
+    {
+      "name": "victor",
+      "feld": [50, 25]
+    }
+  ],
+  "belebung": [
+    {
+      "name": "metallsucher",
+      "typ": "statist",
+      "feld": [8, 22],
+      "eigenschaften": {
+        "von": "8,22",
+        "bis": "40,22",
+        "tun": "Mr. Pruitt sucht mit dem Metalldetektor die Straße ab",
+        "wann": "tag"
+      }
+    },
+    {
+      "name": "geier",
+      "typ": "tier",
+      "feld": [44, 31],
+      "eigenschaften": {
+        "verhalten": "fliegen"
+      }
+    },
+    {
+      "name": "eule",
+      "typ": "tier",
+      "feld": [50, 15],
+      "eigenschaften": {
+        "verhalten": "fliegen",
+        "wann": "nacht"
+      }
+    },
+    {
+      "name": "echse",
+      "typ": "tier",
+      "feld": [3, 24],
+      "eigenschaften": {
+        "verhalten": "flitzen",
+        "von": "3,24",
+        "bis": "6,24",
+        "wann": "tag"
+      }
+    },
+    {
+      "name": "touristin",
+      "typ": "statist",
+      "feld": [12, 22],
+      "eigenschaften": {
+        "tun": "fotografiert die Fassaden",
+        "wann": "tag",
+        "von": "12,22",
+        "bis": "18,22",
+        "sagt": "statist.ghostTown.aussen.touristin"
+      }
+    },
+    {
+      "name": "bikerin",
+      "typ": "statist",
+      "feld": [44, 23],
+      "eigenschaften": {
+        "tun": "macht Pause neben ihrem Motorrad",
+        "wann": "tag",
+        "sagt": "statist.ghostTown.aussen.bikerin"
+      }
+    },
+    {
+      "name": "geschichtslehrer",
+      "typ": "statist",
+      "feld": [26, 23],
+      "eigenschaften": {
+        "tun": "erklärt einer Schulklasse die Stadt",
+        "wann": "tag",
+        "sagt": "statist.ghostTown.aussen.geschichtslehrer"
+      }
+    },
+    {
+      "name": "schulkind",
+      "typ": "statist",
+      "feld": [27, 22],
+      "eigenschaften": {
+        "tun": "hört dem Lehrer halb zu",
+        "wann": "tag",
+        "sagt": "statist.ghostTown.aussen.schulkind"
+      }
+    },
+    {
+      "name": "urenkelPostkutscher",
+      "typ": "statist",
+      "feld": [47, 22],
+      "eigenschaften": {
+        "tun": "sucht einen Namen auf alten Listen",
+        "wann": "tag",
+        "sagt": "statist.ghostTown.aussen.urenkelPostkutscher"
+      }
+    },
+    {
+      "name": "fotograf",
+      "typ": "statist",
+      "feld": [20, 22],
+      "eigenschaften": {
+        "tun": "wartet auf ein Bild ohne Menschen",
+        "wann": "tag",
+        "sagt": "statist.ghostTown.aussen.fotograf"
+      }
+    },
+    {
+      "name": "goldwaescherin",
+      "typ": "statist",
+      "feld": [3, 22],
+      "eigenschaften": {
+        "tun": "siebt Sand in einer Pfanne",
+        "wann": "tag",
+        "sagt": "statist.ghostTown.aussen.goldwaescherin"
+      }
+    },
+    {
+      "name": "wanderin",
+      "typ": "statist",
+      "feld": [8, 21],
+      "eigenschaften": {
+        "tun": "füllt ihre Wasserflasche auf",
+        "wann": "morgen",
+        "sagt": "statist.ghostTown.aussen.wanderin"
+      }
+    },
+    {
+      "name": "radfahrer",
+      "typ": "statist",
+      "feld": [1, 21],
+      "eigenschaften": {
+        "tun": "fährt staubig durch die Stadt",
+        "wann": "tag",
+        "von": "1,21",
+        "bis": "54,21"
+      }
+    },
+    {
+      "name": "bikerFreund",
+      "typ": "statist",
+      "feld": [45, 22],
+      "eigenschaften": {
+        "tun": "putzt den Helm",
+        "wann": "tag"
+      }
+    },
+    {
+      "name": "malerin",
+      "typ": "statist",
+      "feld": [30, 23],
+      "eigenschaften": {
+        "tun": "zeichnet den Saloon",
+        "wann": "tag"
+      }
+    },
+    {
+      "name": "mannMitHut",
+      "typ": "statist",
+      "feld": [16, 20],
+      "eigenschaften": {
+        "tun": "döst im Schatten auf dem Bretterweg",
+        "wann": "tag"
+      }
+    },
+    {
+      "name": "alterHund",
+      "typ": "tier",
+      "feld": [36, 23],
+      "eigenschaften": {
+        "verhalten": "folgen",
+        "von": "36,23",
+        "bis": "40,23"
+      }
+    }
+  ],
+  "variante": "a"
+}

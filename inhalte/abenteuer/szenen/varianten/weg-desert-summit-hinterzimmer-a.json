@@ -1,0 +1,144 @@
+{
+  "karte": "wegDesertSummit.hinterzimmer",
+  "datei": "karten/varianten/weg-desert-summit-hinterzimmer-a.json",
+  "art": "innen",
+  "beschreibung": "Das Hinterzimmer des Diners (Weg 7), 14 × 12 Kacheln: Treffpunkt K3 der Kreidespringer. Drei Tische mit Brettern und Hockern, an der Nordwand eine Tafel mit Kreide, ein Regal mit alten Schachheften, Kisten und ein Fass. Kein Bildschirm. Tür in der Südwand.",
+  "wand": "holz",
+  "boden": "holzDunkel",
+  "raster": [
+    "##############",
+    "##############",
+    "##############",
+    "#............#",
+    "#............#",
+    "#............#",
+    "#............#",
+    "#............#",
+    "#............#",
+    "#............#",
+    "#######.######",
+    "##############"
+  ],
+  "objekte": [
+    {
+      "moebel": "cc6TuerSued",
+      "feld": [7, 11],
+      "an_wand": true
+    },
+    {
+      "moebel": "cc5Fussmatte",
+      "feld": [7, 9],
+      "versatz": [0, 24]
+    },
+    {
+      "moebel": "mf2Tafel",
+      "feld": [2, 1],
+      "an_wand": true
+    },
+    {
+      "moebel": "cc5Tisch",
+      "feld": [3, 5],
+      "id": "brett0"
+    },
+    {
+      "moebel": "cc4Brett",
+      "feld": [0, 0],
+      "auf": "brett0"
+    },
+    {
+      "moebel": "cc4Hocker",
+      "feld": [2, 6]
+    },
+    {
+      "moebel": "cc4Hocker",
+      "feld": [5, 6]
+    },
+    {
+      "moebel": "cc5Tisch",
+      "feld": [8, 5],
+      "id": "brett1"
+    },
+    {
+      "moebel": "cc4Brett",
+      "feld": [0, 0],
+      "auf": "brett1"
+    },
+    {
+      "moebel": "cc4Hocker",
+      "feld": [7, 6]
+    },
+    {
+      "moebel": "cc4Hocker",
+      "feld": [10, 6]
+    },
+    {
+      "moebel": "cc5Tisch",
+      "feld": [3, 8],
+      "id": "brett2"
+    },
+    {
+      "moebel": "cc4Brett",
+      "feld": [0, 0],
+      "auf": "brett2"
+    },
+    {
+      "moebel": "cc4Hocker",
+      "feld": [2, 9]
+    },
+    {
+      "moebel": "cc4Hocker",
+      "feld": [5, 9]
+    },
+    {
+      "moebel": "cc4RegalA",
+      "feld": [11, 1]
+    },
+    {
+      "moebel": "cc4KisteLeer",
+      "feld": [11, 3]
+    },
+    {
+      "moebel": "iwFass",
+      "feld": [12, 6]
+    },
+    {
+      "moebel": "cc4PflanzeK",
+      "feld": [1, 3]
+    }
+  ],
+  "ausloeser": [
+    {
+      "name": "start",
+      "feld": [7, 9],
+      "eigenschaften": {
+        "richtung": "oben"
+      }
+    },
+    {
+      "name": "hinterzimmerAusgang",
+      "feld": [7, 10]
+    }
+  ],
+  "figuren": [
+    {
+      "name": "mags",
+      "feld": [6, 4]
+    },
+    {
+      "name": "ruthKeene",
+      "feld": [10, 9]
+    }
+  ],
+  "belebung": [],
+  "zustand": ["gebraucht", "alt", "neu"],
+  "stil": [
+    "einfach",
+    "klassisch",
+    "industrie",
+    "rustikal",
+    "modern",
+    "laendlich",
+    "schule"
+  ],
+  "variante": "a"
+}

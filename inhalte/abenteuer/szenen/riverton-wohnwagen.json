@@ -2,89 +2,61 @@
   "karte": "riverton.wohnwagen",
   "datei": "karten/riverton-wohnwagen.json",
   "art": "innen",
-  "beschreibung": "Slicks Wohnwagen am Westende des Riverside-Parks (Szene 37), eng wie ein echter kleiner Wohnwagen: die Tür in der Längsseite, alles in einem Raum von gut sechs Metern. Im Heck das Querbett über die ganze Breite mit einem Brett voller Figuren, darüber ein schmales Wandbord mit Slicks Pokalen aus gebogenen Limodosen. Daneben die Nasszelle hinter einer Milchglastür, an der Wand hängt die Kuriertasche. Gegenüber der Tür die Küchenzeile: Kühlschrank, Arbeitsplatte mit Spüle und eine zweite Platte mit Zweiflammer. Im Bug unter dem Fenster die Sitzecke, zwei Bänke um einen Tisch, an dem Slick in Szene 37 sitzt.",
+  "beschreibung": "Slicks Wohnwagen am Westende des Riverside-Parks (Szene 37), eng wie ein echter kleiner Wohnwagen: die Tür in der Längsseite, alles in einem Raum von gut sechs Metern. Im Heck das Querbett über die ganze Breite mit einem Brett voller Figuren, darüber ein schmales Wandbord mit Slicks Pokalen aus gebogenen Limodosen. Daneben die Nasszelle: Mini-Toilette und Duschvorhang, die Kuriertasche hängt am Haken neben dem Kühlschrank. Gegenüber der Tür die Küchenzeile: Kühlschrank, Arbeitsplatte mit Spüle und eine zweite Platte mit Zweiflammer. Im Bug unter dem Fenster die Sitzecke, zwei Bänke um einen niedrigen Holztisch, an dem Slick in Szene 37 sitzt.",
   "wand": "creme",
   "boden": "holzHell",
   "raster": [
-    "##############",
-    "##############",
-    "##############",
-    "#............#",
-    "#............#",
-    "#............#",
-    "#............#",
-    "########.#####"
+    "################",
+    "################",
+    "################",
+    "#..............#",
+    "#..............#",
+    "#..............#",
+    "########.#######"
   ],
   "objekte": [
     {
       "moebel": "rv8Wandbord",
-      "feld": [
-        0,
-        1
-      ],
+      "feld": [0, 1],
       "an_wand": true,
       "id": "bord",
-      "versatz": [
-        4,
-        18
-      ]
+      "versatz": [4, 24]
     },
     {
       "moebel": "rv5PokalKlein",
       "auf": "bord",
-      "versatz": [
-        -8,
-        -2
-      ]
+      "versatz": [-8, -2]
     },
     {
       "moebel": "rv5PokalSilber",
       "auf": "bord",
-      "versatz": [
-        8,
-        -2
-      ]
+      "versatz": [8, -2]
     },
     {
       "moebel": "rv8Querbett",
-      "feld": [
-        1,
-        3
-      ],
+      "feld": [1, 3],
       "id": "bett"
     },
     {
       "moebel": "mf3BrettKleinFiguren",
-      "auf": "bett"
+      "auf": "bett",
+      "versatz": [-6, 0]
     },
     {
-      "moebel": "rv8Nasszelle",
-      "feld": [
-        3,
-        2
-      ]
+      "moebel": "mf5Toilette",
+      "feld": [3, 1]
     },
     {
-      "moebel": "rv5Kuriertasche",
-      "feld": [
-        5,
-        1
-      ],
-      "an_wand": true
+      "moebel": "rv8Duschvorhang",
+      "feld": [4, 1]
     },
     {
       "moebel": "mf8KuehlschrankWeiss",
-      "feld": [
-        6,
-        1
-      ]
+      "feld": [6, 1]
     },
     {
       "moebel": "rv8Arbeitsplatte",
-      "feld": [
-        7,
-        2
-      ],
+      "feld": [7, 2],
       "id": "platte"
     },
     {
@@ -93,112 +65,61 @@
     },
     {
       "moebel": "rv8Arbeitsplatte",
-      "feld": [
-        9,
-        2
-      ],
+      "feld": [9, 2],
       "id": "koch"
     },
     {
       "moebel": "rv8Kocher",
       "auf": "koch",
-      "versatz": [
-        -6,
-        0
-      ]
+      "versatz": [-6, 0]
     },
     {
       "moebel": "rv8Kocher",
       "auf": "koch",
-      "versatz": [
-        6,
-        0
-      ]
+      "versatz": [6, 0]
     },
     {
       "moebel": "wzFenster",
-      "feld": [
-        11,
-        1
-      ],
+      "feld": [11, 1],
       "an_wand": true
     },
     {
       "moebel": "rv8Sitzbank",
-      "feld": [
-        11,
-        3
-      ]
+      "feld": [11, 3]
     },
     {
-      "moebel": "pd6Tisch",
-      "feld": [
-        11,
-        4
-      ]
+      "moebel": "sb8Couchtisch",
+      "feld": [11, 4]
     },
     {
       "moebel": "rv8Sitzbank",
-      "feld": [
-        11,
-        6
-      ]
-    },
-    {
-      "moebel": "mf4Fussmatte",
-      "feld": [
-        8,
-        6
-      ],
-      "versatz": [
-        0,
-        8
-      ]
+      "feld": [11, 5]
     },
     {
       "moebel": "rv5TuerSuedHell",
-      "feld": [
-        8,
-        7
-      ],
+      "feld": [8, 6],
       "an_wand": true
     }
   ],
   "ausloeser": [
     {
       "name": "start",
-      "feld": [
-        8,
-        6
-      ],
+      "feld": [8, 5],
       "eigenschaften": {
         "richtung": "oben"
       }
     },
     {
       "name": "wohnwagenAusgang",
-      "feld": [
-        8,
-        7
-      ]
+      "feld": [8, 6]
     },
     {
       "name": "dosentrophaeen",
-      "feld": [
-        2,
-        6
-      ]
+      "feld": [3, 5]
     }
   ],
   "figuren": [],
   "belebung": [],
-  "zustand": [
-    "neu",
-    "gebraucht"
-  ],
-  "stil": [
-    "industrie",
-    "klassisch",
-    "modern"
-  ]
+  "zustand": ["neu", "gebraucht"],
+  "stil": ["industrie", "klassisch", "modern"]
 }

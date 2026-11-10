@@ -1,0 +1,407 @@
+{
+  "karte": "riverton.pavillon",
+  "datei": "karten/riverton-pavillon-perfect-move.json",
+  "art": "innen",
+  "beschreibung": "Zustand: nach Szene 37 (slickAbschiedGesehen): Auf den langen Tischen stehen Laptops von Perfect Move statt der Bretter, die großen Figuren liegen weggeräumt in den Truhen, an der Nordwand hängt das Schild von Perfect Move. Parkpavillon von Riverton, Slicks Club (Szenen 29 bis 37): ein Holzbau mit Dielen und einer Fensterreihe zum Fluss. In der Mitte ist ein großes Schachbrett in den Boden eingelassen, acht mal acht Platten aus hellem Marmor und dunklem Holz in einem Rahmen aus Stein, rundherum ein Laufweg, damit man die großen Figuren tragen kann. Die Figuren liegen in zwei Holztruhen südlich des Bretts. An der Nordwand hängt das Gründungsbild des Clubs, davor zwei lange Bänke für Zuschauer mit Blick aufs Brett. Links und rechts je zwei lange Tische aus zwei hellen Platten, auf jeder Platte ein Brett, an jedem Brett ein Stuhl davor und dahinter. Vor der Tür ein Tischchen mit einem Limonadenglas, Pflanzen an den Ecken des Laufwegs, unten die Tür mit Fußmatte.",
+  "wand": "holz",
+  "boden": "dielen",
+  "raster": [
+    "########################",
+    "########################",
+    "########################",
+    "#......................#",
+    "#......................#",
+    "#......rrrrrrrrrr......#",
+    "#......rwdwdwdwdr......#",
+    "#......rdwdwdwdwr......#",
+    "#......rwdwdwdwdr......#",
+    "#......rdwdwdwdwr......#",
+    "#......rwdwdwdwdr......#",
+    "#......rdwdwdwdwr......#",
+    "#......rwdwdwdwdr......#",
+    "#......rdwdwdwdwr......#",
+    "#......rrrrrrrrrr......#",
+    "#......................#",
+    "#......................#",
+    "############.###########"
+  ],
+  "objekte": [
+    {
+      "moebel": "wzFenster",
+      "feld": [2, 1],
+      "an_wand": true
+    },
+    {
+      "moebel": "wzFenster",
+      "feld": [5, 1],
+      "an_wand": true
+    },
+    {
+      "moebel": "rv8Gruendungsbild",
+      "feld": [11, 1],
+      "an_wand": true
+    },
+    {
+      "moebel": "wzFenster",
+      "feld": [17, 1],
+      "an_wand": true
+    },
+    {
+      "moebel": "wzFenster",
+      "feld": [20, 1],
+      "an_wand": true
+    },
+    {
+      "moebel": "rv5BankLang",
+      "feld": [8, 3]
+    },
+    {
+      "moebel": "rv5BankLang",
+      "feld": [13, 3]
+    },
+    {
+      "moebel": "rv8Holztisch",
+      "feld": [1, 5],
+      "id": "t1"
+    },
+    {
+      "moebel": "pd6Laptop",
+      "auf": "t1",
+      "versatz": [-16, 0]
+    },
+    {
+      "moebel": "pd6Laptop",
+      "auf": "t1",
+      "versatz": [16, 0]
+    },
+    {
+      "moebel": "rv5StuhlVorn",
+      "feld": [1, 4],
+      "zu": "t1",
+      "versatz": [8, 0]
+    },
+    {
+      "moebel": "rv5StuhlRuecken",
+      "feld": [1, 6],
+      "zu": "t1",
+      "versatz": [8, 0]
+    },
+    {
+      "moebel": "rv5StuhlVorn",
+      "feld": [3, 4],
+      "zu": "t1",
+      "versatz": [8, 0]
+    },
+    {
+      "moebel": "rv5StuhlRuecken",
+      "feld": [3, 6],
+      "zu": "t1",
+      "versatz": [8, 0]
+    },
+    {
+      "moebel": "rv8Holztisch",
+      "feld": [19, 5],
+      "id": "t2"
+    },
+    {
+      "moebel": "pd6Laptop",
+      "auf": "t2",
+      "versatz": [-16, 0]
+    },
+    {
+      "moebel": "pd6Laptop",
+      "auf": "t2",
+      "versatz": [16, 0]
+    },
+    {
+      "moebel": "rv5StuhlVorn",
+      "feld": [19, 4],
+      "zu": "t2",
+      "versatz": [8, 0]
+    },
+    {
+      "moebel": "rv5StuhlRuecken",
+      "feld": [19, 6],
+      "zu": "t2",
+      "versatz": [8, 0]
+    },
+    {
+      "moebel": "rv5StuhlVorn",
+      "feld": [21, 4],
+      "zu": "t2",
+      "versatz": [8, 0]
+    },
+    {
+      "moebel": "rv5StuhlRuecken",
+      "feld": [21, 6],
+      "zu": "t2",
+      "versatz": [8, 0]
+    },
+    {
+      "moebel": "rv8Holztisch",
+      "feld": [1, 9],
+      "id": "t3"
+    },
+    {
+      "moebel": "pd6Laptop",
+      "auf": "t3",
+      "versatz": [-16, 0]
+    },
+    {
+      "moebel": "pd6Laptop",
+      "auf": "t3",
+      "versatz": [16, 0]
+    },
+    {
+      "moebel": "rv5StuhlVorn",
+      "feld": [1, 8],
+      "zu": "t3",
+      "versatz": [8, 0]
+    },
+    {
+      "moebel": "rv5StuhlRuecken",
+      "feld": [1, 10],
+      "zu": "t3",
+      "versatz": [8, 0]
+    },
+    {
+      "moebel": "rv5StuhlVorn",
+      "feld": [3, 8],
+      "zu": "t3",
+      "versatz": [8, 0]
+    },
+    {
+      "moebel": "rv5StuhlRuecken",
+      "feld": [3, 10],
+      "zu": "t3",
+      "versatz": [8, 0]
+    },
+    {
+      "moebel": "rv8Holztisch",
+      "feld": [19, 9],
+      "id": "t4"
+    },
+    {
+      "moebel": "pd6Laptop",
+      "auf": "t4",
+      "versatz": [-16, 0]
+    },
+    {
+      "moebel": "pd6Laptop",
+      "auf": "t4",
+      "versatz": [16, 0]
+    },
+    {
+      "moebel": "rv5StuhlVorn",
+      "feld": [19, 8],
+      "zu": "t4",
+      "versatz": [8, 0]
+    },
+    {
+      "moebel": "rv5StuhlRuecken",
+      "feld": [19, 10],
+      "zu": "t4",
+      "versatz": [8, 0]
+    },
+    {
+      "moebel": "rv5StuhlVorn",
+      "feld": [21, 8],
+      "zu": "t4",
+      "versatz": [8, 0]
+    },
+    {
+      "moebel": "rv5StuhlRuecken",
+      "feld": [21, 10],
+      "zu": "t4",
+      "versatz": [8, 0]
+    },
+    {
+      "moebel": "rv8Holztisch",
+      "feld": [1, 13],
+      "id": "t5"
+    },
+    {
+      "moebel": "pd6Laptop",
+      "auf": "t5",
+      "versatz": [-16, 0]
+    },
+    {
+      "moebel": "pd6Laptop",
+      "auf": "t5",
+      "versatz": [16, 0]
+    },
+    {
+      "moebel": "rv5StuhlVorn",
+      "feld": [1, 12],
+      "zu": "t5",
+      "versatz": [8, 0]
+    },
+    {
+      "moebel": "rv5StuhlRuecken",
+      "feld": [1, 14],
+      "zu": "t5",
+      "versatz": [8, 0]
+    },
+    {
+      "moebel": "rv5StuhlVorn",
+      "feld": [3, 12],
+      "zu": "t5",
+      "versatz": [8, 0]
+    },
+    {
+      "moebel": "rv5StuhlRuecken",
+      "feld": [3, 14],
+      "zu": "t5",
+      "versatz": [8, 0]
+    },
+    {
+      "moebel": "rv8Holztisch",
+      "feld": [19, 13],
+      "id": "t6"
+    },
+    {
+      "moebel": "pd6Laptop",
+      "auf": "t6",
+      "versatz": [-16, 0]
+    },
+    {
+      "moebel": "pd6Laptop",
+      "auf": "t6",
+      "versatz": [16, 0]
+    },
+    {
+      "moebel": "rv5StuhlVorn",
+      "feld": [19, 12],
+      "zu": "t6",
+      "versatz": [8, 0]
+    },
+    {
+      "moebel": "rv5StuhlRuecken",
+      "feld": [19, 14],
+      "zu": "t6",
+      "versatz": [8, 0]
+    },
+    {
+      "moebel": "rv5StuhlVorn",
+      "feld": [21, 12],
+      "zu": "t6",
+      "versatz": [8, 0]
+    },
+    {
+      "moebel": "rv5StuhlRuecken",
+      "feld": [21, 14],
+      "zu": "t6",
+      "versatz": [8, 0]
+    },
+    {
+      "moebel": "rv8Truhe",
+      "feld": [6, 15]
+    },
+    {
+      "moebel": "rv8Truhe",
+      "feld": [16, 15]
+    },
+    {
+      "moebel": "wzPflanze",
+      "feld": [18, 15]
+    },
+    {
+      "moebel": "wzPflanze",
+      "feld": [5, 15]
+    },
+    {
+      "moebel": "wzPflanze",
+      "feld": [5, 3]
+    },
+    {
+      "moebel": "wzPflanze",
+      "feld": [18, 3]
+    },
+    {
+      "moebel": "mf4Fussmatte",
+      "feld": [12, 16],
+      "versatz": [0, 8]
+    },
+    {
+      "moebel": "mf5TuerSuedHolz",
+      "feld": [12, 17],
+      "an_wand": true
+    },
+    {
+      "moebel": "sb5SchildPerfectMove",
+      "feld": [8, 1],
+      "an_wand": true,
+      "versatz": [0, 8]
+    }
+  ],
+  "ausloeser": [
+    {
+      "name": "start",
+      "feld": [12, 16],
+      "eigenschaften": {
+        "richtung": "oben"
+      }
+    },
+    {
+      "name": "pavillonAusgang",
+      "feld": [12, 17]
+    },
+    {
+      "name": "gedenktafel",
+      "feld": [11, 4]
+    },
+    {
+      "name": "limonadenglas",
+      "feld": [11, 16],
+      "auf_moebel": true
+    }
+  ],
+  "figuren": [
+    {
+      "name": "slick",
+      "feld": [5, 8]
+    },
+    {
+      "name": "ray",
+      "feld": [18, 8]
+    },
+    {
+      "name": "tamsin",
+      "feld": [8, 16]
+    }
+  ],
+  "belebung": [
+    {
+      "name": "zuschauer",
+      "typ": "statist",
+      "feld": [6, 10],
+      "eigenschaften": {
+        "von": "6,10",
+        "bis": "6,10",
+        "tun": "schaut einer Blitzpartie zu",
+        "wann": "tag",
+        "sagt": "statist.riverton.pavillon.zuschauer"
+      }
+    },
+    {
+      "name": "wettender",
+      "typ": "statist",
+      "feld": [16, 8],
+      "eigenschaften": {
+        "von": "16,8",
+        "bis": "16,10",
+        "tun": "wettet um eine Limonade",
+        "wann": "tag",
+        "sagt": "statist.riverton.pavillon.wettender"
+      }
+    }
+  ],
+  "zustand": ["alt", "gebraucht", "neu"],
+  "stil": ["klassisch", "modern", "rustikal"],
+  "boeden": {
+    "w": "fliesenWeiss",
+    "d": "holzDunkel",
+    "r": "stein"
+  },
+  "zustand_der_karte": "slickAbschiedGesehen"
+}

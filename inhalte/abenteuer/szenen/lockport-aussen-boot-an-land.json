@@ -1,7 +1,7 @@
 {
   "karte": "lockport.aussen",
   "art": "aussen",
-  "beschreibung": "Zustand: Nach der Aufgabe L2 (Taue): Henriks Ruderboot ist für den Winter an Land gezogen und liegt auf dem Werftplatz am Bootsschuppen; der Steg ist dann schon offen. Lockport, das Schleusendorf am Seitenarm (Variante A, nach dem Ortsdokument). Der Uferweg kommt am Ostrand vom Kanalweg und läuft am Nordufer entlang; dort stehen das Haus der Schleusenwärterin mit der Rätseltafel davor, zwei Wohnhäuser mit Wäscheleinen und Laternen am Weg. In der Mitte die Schleusenkammer, über ihr Untertor (Stemmtor mit Laufsteg und Schwenkbalken) geht man nach Süden zum Kai, das Obertor im Osten hält das Oberwasser (Sperre S3 kommt in Runde 6). Westlich das Hafenbecken mit Kaimauer; am Kai liegen der Lastkahn „Ashford Belle“ und ein Ruderboot längs, Poller, ein Seil, ein Rettungsring. Hinter dem Kai das Gasthaus „Zur Schleuse“, ein Wohnhaus und eine Scheune, dazwischen Gassen zum Dorfplatz mit Linde und einer Bank, die zum Platz schaut. Östlich am Seitenarm der Bootsschuppen, dahinter Wiese und Bäume. Runde 8: Schleusenkammer 10 Kacheln lang, Kammer und Seitenarm 5 Reihen breit mit Steinufer (10.57), Stege auf Unter- und Obertor, Werftplatz mit Bootsschuppen, Schiffsausrüster statt Scheune, zweite Häuserreihe im Süden an einer Hintergasse.",
+  "beschreibung": "Zustand: Nach der Aufgabe L2 (Taue): Henriks Ruderboot ist für den Winter an Land gezogen und liegt auf dem Werftplatz am Bootsschuppen; der Steg ist dann schon offen. Lockport, das Schleusendorf am Seitenarm (Variante A, nach dem Ortsdokument). Der Uferweg kommt am Ostrand vom Kanalweg und läuft am Nordufer entlang; dort stehen Wohnhäuser mit Gärten, ganz im Osten das Haus der Schleusenwärterin mit der Rätseltafel und der Glocke, und am Westende des Wegs der Bootsschuppen mit dem Tor zum Wasser. In der Mitte die Schleusenkammer, 28 Kacheln lang und 7 Reihen Wasser breit (Regel 10.64), zwischen Untertor und Obertor (Stemmtore mit Laufsteg; während der Herbstwartung mit GESPERRT-Böcken, Sperre S3). Westlich das Hafenbecken, offen zum Fluss; darin liegt längs der Frachtkahn „Ashford Belle“ (24 × 5 Kacheln) unter seinen Lukendeckeln, am Kai Poller, Seile, Kisten und Fässer. Im Oberwasser östlich der Kammer Henriks Ruderboot an seinen Tauen, gegenüber der Werftplatz mit Werkstattschuppen. Hinter dem Kai das Gasthaus „Zur Schleuse“, die Eisenwaren und eine Reihe Holzhäuser, dazwischen gepflasterte Gassen zum Dorfplatz mit Brunnen, Linde und Bank; im Süden eine zweite Häuserreihe mit Gärten und Wäscheleinen an einer Hintergasse, dahinter Bäume.",
   "boden": "gras",
   "wandart": "gras",
   "boeden": {
@@ -10,57 +10,57 @@
   },
   "bruecken": ["h"],
   "raster": [
-    "########################################################",
-    "#......................................................#",
-    "#......................................................#",
-    "#......................................................#",
-    "#......................................................#",
-    "#......................................................#",
-    "#......................................................#",
-    "#......................................................#",
-    "#......................................................#",
-    "#......................................................#",
-    "#..eeeeeeeeeeeeeeeeeeeeeeeeeeeeeeeeeeeeeeeeeeeeeeeeeeeee",
-    "#..eeeeeeeeeeeeeeeeeeeeeeeeeeeeeeeeeeeeeeeeeeeeeeeeeeeee",
-    "#.............................pppppppppppppppp.........#",
-    "#p~~~~~~~~~~~~~~~~~~~~~~~~~~~~ppppppppppppppppppppppppp#",
-    "#p~~~~~~~~~~~~~~~~~~~~~~~~~~~~hh~~~~~~~~~~hh~~~~~~~~~~~~",
-    "#p~~~~~~~~~~~~~~~~~~~~~~~~~~~~hh~~~~~~~~~~hh~~~~~~~~~~~~",
-    "#p~~~~~~~~~~~~~~~~~~~~~~~~~~~~hh~~~~~~~~~~hh~~~~~~~~~~~~",
-    "#p~~~~~~~~~~~~~~~~~~~~~~~~~~~~hh~~~~~~~~~~hh~~~~~~~~~~~~",
-    "#p~~~~~~~~~~~~~~~~~~~~~~~~~~~~hh~~~~~~~~~~hh~~~~~~~~~~~~",
-    "#p~~~~~~~~~~~~~~~~~~~~~~~~~~~~ppppppppppppppppppppppppp#",
-    "#pppppppppppppppppppppppppppppppppppppppppppppppppppppp#",
-    "#pppppppppppppppppppppppppppppppppppppppppppppppppppppp#",
-    "#..........ee............ee.................ppppppppppp#",
-    "#..........ee............ee.................ppppppppppp#",
-    "#..........ee............ee.................ppppppppppp#",
-    "#..........ee............ee............................#",
-    "#..........ee............ee............................#",
-    "#..........ee............ee............................#",
-    "#..........ee............ee............................#",
-    "#..........ee............ee............................#",
-    "#..........ee............ee............................#",
-    "#..........ee............ee............................#",
-    "#.ppppppppppppppppppppppppppppppppppppppppppppppppppppp#",
-    "#.ppppppppppppppppppppppppppppppppppppppppppppppppppppp#",
-    "#.ppppppppppppppppppppppppppppppppppppppppppppppppppppp#",
-    "#.ppppppppppppppppppppppppppppppppppppppppppppppppppppp#",
-    "#...........ee.........................ee..............#",
-    "#...........ee.........................ee..............#",
-    "#...........ee.........................ee..............#",
-    "#...........ee.........................ee..............#",
-    "#...........ee.........................ee..............#",
-    "#...........ee.........................ee..............#",
-    "#...........ee.........................ee..............#",
-    "#...........ee.........................ee..............#",
-    "#...........ee.........................ee..............#",
-    "#eeeeeeeeeeeeeeeeeeeeeeeeeeeeeeeeeeeeeeeeeeeeeeeeeeeeee#",
-    "#eeeeeeeeeeeeeeeeeeeeeeeeeeeeeeeeeeeeeeeeeeeeeeeeeeeeee#",
-    "#......................................................#",
-    "#......................................................#",
-    "#......................................................#",
-    "########################################################"
+    "##########################################################################",
+    "#........................................................................#",
+    "#........................................................................#",
+    "#........................................................................#",
+    "#........................................................................#",
+    "#........................................................................#",
+    "#........................................................................#",
+    "#........................................................................#",
+    "#........................................................................#",
+    "#........................................................................#",
+    "#eeeeeeeeeeeeeeeeeeeeeeeeeeeeeeeeeeeeeeeeeeeeeeeeeeeeeeeeeeeeeeeeeeeeeeeee",
+    "#eeeeeeeeeeeeeeeeeeeeeeeeeeeeeeeeeeeeeeeeeeeeeeeeeeeeeeeeeeeeeeeeeeeeeeeee",
+    "#pppppppppppppppppppppppppppppppppppppppppppppppppppppppppppppppppppppppp#",
+    "~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~hh~~~~~~~~~~~~~~~~~~~~~~~~~~~~hh~~~~~~~~~~~~",
+    "~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~hh~~~~~~~~~~~~~~~~~~~~~~~~~~~~hh~~~~~~~~~~~~",
+    "~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~hh~~~~~~~~~~~~~~~~~~~~~~~~~~~~hh~~~~~~~~~~~~",
+    "~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~hh~~~~~~~~~~~~~~~~~~~~~~~~~~~~hh~~~~~~~~~~~~",
+    "~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~hh~~~~~~~~~~~~~~~~~~~~~~~~~~~~hh~~~~~~~~~~~~",
+    "~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~hh~~~~~~~~~~~~~~~~~~~~~~~~~~~~hh~~~~~~~~~~~~",
+    "~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~hh~~~~~~~~~~~~~~~~~~~~~~~~~~~~hh~~~~~~~~~~~~",
+    "#pppppppppppppppppppppppppppppppppppppppppppppppppppppppppppppppppppppppp#",
+    "#pppppppppppppppppppppppppppppppppppppppppppppppppppppppppppppppppppppppp#",
+    "#..........pp............pp...................................ppppppppppp#",
+    "#..........pp............pp...................................ppppppppppp#",
+    "#..........pp............pp...................................ppppppppppp#",
+    "#..........pp............pp...................................ppppppppppp#",
+    "#..........pp............pp..............................................#",
+    "#..........pp............pp..............................................#",
+    "#..........pp............pp..............................................#",
+    "#..........pp............pp..............................................#",
+    "#..........pp............pp..............................................#",
+    "#..........pp............pp..............................................#",
+    "#.ppppppppppppppppppppppppppppppppppppppppppppppppppppppppppppppppppppp..#",
+    "#.ppppppppppppppppppppppppppppppppppppppppppppppppppppppppppppppppppppp..#",
+    "#.ppppppppppppppppppppppppppppppppppppppppppppppppppppppppppppppppppppp..#",
+    "#.ppppppppppppppppppppppppppppppppppppppppppppppppppppppppppppppppppppp..#",
+    "#...........ee.............pppppppppppp..................ee..............#",
+    "#...........ee.............pppppppppppp..................ee..............#",
+    "#...........ee.............pppppppppppp..................ee..............#",
+    "#...........ee.............pppppppppppp..................ee..............#",
+    "#...........ee.............pppppppppppp..................ee..............#",
+    "#...........ee.............pppppppppppp..................ee..............#",
+    "#...........ee.............pppppppppppp..................ee..............#",
+    "#...........ee.............pppppppppppp..................ee..............#",
+    "#...........ee.............pppppppppppp..................ee..............#",
+    "#..eeeeeeeeeeeeeeeeeeeeeeeeeeeeeeeeeeeeeeeeeeeeeeeeeeeeeeeeeeeeeeeeeeee..#",
+    "#..eeeeeeeeeeeeeeeeeeeeeeeeeeeeeeeeeeeeeeeeeeeeeeeeeeeeeeeeeeeeeeeeeeee..#",
+    "#........................................................................#",
+    "#........................................................................#",
+    "#........................................................................#",
+    "##########################################################################"
   ],
   "objekte": [
     {
@@ -75,11 +75,11 @@
     },
     {
       "moebel": "mf4Bauernhaus",
-      "feld": [38, 0]
+      "feld": [56, 0]
     },
     {
       "moebel": "mf4Bauernhaus",
-      "feld": [3, 0]
+      "feld": [4, 0]
     },
     {
       "moebel": "mf4BauernhausBreit",
@@ -88,16 +88,6 @@
     {
       "moebel": "cc3Raetseltafel",
       "feld": [36, 8]
-    },
-    {
-      "moebel": "ld5Lastkahn",
-      "feld": [8, 16],
-      "bauteil_ok": true
-    },
-    {
-      "moebel": "ld5Ruderboot",
-      "feld": [49, 23],
-      "bauteil_ok": true
     },
     {
       "moebel": "cc5Poller",
@@ -128,52 +118,12 @@
       "feld": [17, 20]
     },
     {
-      "moebel": "mf4Bauernhaus",
-      "feld": [2, 22]
-    },
-    {
-      "moebel": "mfAhorn",
-      "feld": [4, 33]
-    },
-    {
-      "moebel": "mfBank",
-      "feld": [8, 32]
-    },
-    {
-      "moebel": "wg4Stein",
-      "feld": [24, 1]
-    },
-    {
-      "moebel": "wg4BlumeGelb",
-      "feld": [13, 12]
-    },
-    {
-      "moebel": "wg4Stein",
-      "feld": [11, 7]
-    },
-    {
       "moebel": "wg4Gras",
       "feld": [18, 8]
     },
     {
-      "moebel": "wg4BlumenWeiss",
-      "feld": [53, 26]
-    },
-    {
-      "moebel": "wg4BlumenWeiss",
-      "feld": [5, 22]
-    },
-    {
-      "moebel": "wg4Stein",
-      "feld": [2, 8]
-    },
-    {
       "moebel": "wg4BuschKlein",
       "feld": [1, 7]
-    },
-    {
-      "moebel": "wg4BlumeGelb",
-      "feld": [36, 3]
     },
     {
       "moebel": "wg4Gras",
@@ -193,189 +143,337 @@
     },
     {
       "moebel": "wg4BuschKlein",
-      "feld": [38, 25]
-    },
-    {
-      "moebel": "wg4Stein",
-      "feld": [12, 12]
+      "feld": [56, 25]
     },
     {
       "moebel": "wg4BuschKlein",
       "feld": [23, 22]
     },
     {
-      "moebel": "wg4BlumeGelb",
-      "feld": [46, 3]
-    },
-    {
-      "moebel": "lp8Markt",
-      "feld": [47, 1]
-    },
-    {
-      "moebel": "lp8Laden",
-      "feld": [12, 2]
-    },
-    {
-      "moebel": "lp8HausFlachHoch",
-      "feld": [29, 0]
-    },
-    {
-      "moebel": "lp8HausFlach",
-      "feld": [40, 24]
-    },
-    {
-      "moebel": "lp8Schuppen",
-      "feld": [47, 26]
-    },
-    {
       "moebel": "lp6Glocke",
-      "feld": [46, 8]
-    },
-    {
-      "moebel": "ld5Schleusentor",
-      "feld": [30, 14]
-    },
-    {
-      "moebel": "ld5Schleusentor",
-      "feld": [30, 16]
-    },
-    {
-      "moebel": "ld5Schleusentor",
-      "feld": [42, 14]
-    },
-    {
-      "moebel": "ld5Schleusentor",
-      "feld": [42, 16]
-    },
-    {
-      "moebel": "ld5Schwenkbalken",
-      "feld": [32, 13]
-    },
-    {
-      "moebel": "ld5Schwenkbalken",
-      "feld": [32, 19]
-    },
-    {
-      "moebel": "ld5Schwenkbalken",
-      "feld": [44, 13]
-    },
-    {
-      "moebel": "ld5Schwenkbalken",
-      "feld": [44, 19]
-    },
-    {
-      "moebel": "ld5Rettungsring",
-      "feld": [47, 11]
-    },
-    {
-      "moebel": "cc4Bootsschuppen",
-      "feld": [46, 20]
-    },
-    {
-      "moebel": "wg6Kisten",
-      "feld": [51, 22]
+      "feld": [64, 8]
     },
     {
       "moebel": "ca8Eisenwaren",
       "feld": [28, 23]
     },
     {
-      "moebel": "lp8HausFlach",
-      "feld": [3, 37]
+      "moebel": "ld8Stemmtor",
+      "feld": [30, 12]
     },
     {
-      "moebel": "mf7HausFlach",
-      "feld": [15, 37]
+      "moebel": "ld8Stemmtor",
+      "feld": [60, 12]
     },
     {
-      "moebel": "lp8Laden",
-      "feld": [22, 37]
+      "moebel": "ld8Frachtkahn",
+      "feld": [3, 14]
     },
     {
-      "moebel": "lp8HausFlach",
-      "feld": [33, 37]
+      "moebel": "ld5Seil",
+      "feld": [9, 20]
     },
     {
-      "moebel": "lp8HausFlach",
-      "feld": [41, 37]
+      "moebel": "ld5Rettungsring",
+      "feld": [63, 11]
     },
     {
-      "moebel": "mf7HausFlach",
-      "feld": [47, 37]
+      "moebel": "wg6Kisten",
+      "feld": [72, 22]
+    },
+    {
+      "moebel": "wg6Kisten",
+      "feld": [15, 20]
+    },
+    {
+      "moebel": "ldFass",
+      "feld": [18, 20]
+    },
+    {
+      "moebel": "wg6Faesser",
+      "feld": [27, 20]
+    },
+    {
+      "moebel": "mf4Laterne",
+      "feld": [5, 9],
+      "vorn": true
+    },
+    {
+      "moebel": "mf4Laterne",
+      "feld": [16, 9],
+      "vorn": true
+    },
+    {
+      "moebel": "mf4Laterne",
+      "feld": [27, 9],
+      "vorn": true
+    },
+    {
+      "moebel": "mf4Laterne",
+      "feld": [56, 9],
+      "vorn": true
+    },
+    {
+      "moebel": "mf4Laterne",
+      "feld": [67, 9],
+      "vorn": true
+    },
+    {
+      "moebel": "mf4Laterne",
+      "feld": [27, 33],
+      "vorn": true
+    },
+    {
+      "moebel": "mf4Laterne",
+      "feld": [56, 33],
+      "vorn": true
+    },
+    {
+      "moebel": "svHausRot",
+      "feld": [12, 6]
+    },
+    {
+      "moebel": "pd6HausRot",
+      "feld": [29, 6]
+    },
+    {
+      "moebel": "svHausGruen",
+      "feld": [66, 6]
+    },
+    {
+      "moebel": "rv5HolzhausRot",
+      "feld": [3, 28]
+    },
+    {
+      "moebel": "rv5HolzhausGruen",
+      "feld": [58, 28]
+    },
+    {
+      "moebel": "pd6HausRot2",
+      "feld": [3, 41]
+    },
+    {
+      "moebel": "rv5HolzhausRot",
+      "feld": [15, 41]
+    },
+    {
+      "moebel": "svHausBlau",
+      "feld": [22, 41]
+    },
+    {
+      "moebel": "pd6HausGruen",
+      "feld": [59, 41]
+    },
+    {
+      "moebel": "rv5HolzhausGruen",
+      "feld": [65, 41]
+    },
+    {
+      "moebel": "cc7Bretterstapel",
+      "feld": [63, 23]
     },
     {
       "moebel": "lp6Brunnen",
-      "feld": [30, 36]
+      "feld": [31, 39]
     },
     {
-      "moebel": "wg4Erle",
+      "moebel": "mfAhorn",
+      "feld": [34, 40]
+    },
+    {
+      "moebel": "mfBank",
+      "feld": [28, 40]
+    },
+    {
+      "moebel": "ld5WaescheBunt",
+      "feld": [15, 37]
+    },
+    {
+      "moebel": "ld5Waesche",
+      "feld": [4, 37]
+    },
+    {
+      "moebel": "mf2Blumenbeet",
+      "feld": [60, 37]
+    },
+    {
+      "moebel": "mf4Gemuesebeet",
+      "feld": [66, 37]
+    },
+    {
+      "moebel": "mf2Blumenbeet",
+      "feld": [22, 37]
+    },
+    {
+      "moebel": "mf4BaumRot",
       "feld": [2, 47]
     },
     {
       "moebel": "mf4BaumRot",
-      "feld": [9, 47]
+      "feld": [29, 47]
     },
     {
       "moebel": "mf4BaumRot",
-      "feld": [17, 47]
+      "feld": [61, 47]
+    },
+    {
+      "moebel": "mf4BaumRot",
+      "feld": [5, 47]
     },
     {
       "moebel": "wg4Erle",
-      "feld": [26, 47]
+      "feld": [11, 47]
     },
     {
       "moebel": "mf4BaumRot",
-      "feld": [33, 47]
+      "feld": [19, 47]
+    },
+    {
+      "moebel": "mf4BaumRot",
+      "feld": [24, 47]
     },
     {
       "moebel": "wg4Erle",
-      "feld": [44, 47]
+      "feld": [57, 47]
+    },
+    {
+      "moebel": "wg4Erle",
+      "feld": [65, 47]
+    },
+    {
+      "moebel": "wg4Erle",
+      "feld": [69, 47]
     },
     {
       "moebel": "mf4BaumRot",
-      "feld": [51, 47]
+      "feld": [70, 27]
     },
     {
-      "moebel": "mf4Laterne",
-      "feld": [6, 9],
-      "vorn": true
+      "moebel": "mf4BaumRot",
+      "feld": [1, 22]
     },
     {
-      "moebel": "mf4Laterne",
-      "feld": [17, 9],
-      "vorn": true
+      "moebel": "mf4BaumRot",
+      "feld": [5, 22]
     },
     {
-      "moebel": "mf4Laterne",
-      "feld": [28, 9],
-      "vorn": true
+      "moebel": "wg4Erle",
+      "feld": [36, 24]
     },
     {
-      "moebel": "mf4Laterne",
-      "feld": [39, 9],
-      "vorn": true
+      "moebel": "wg4Erle",
+      "feld": [71, 37]
     },
     {
-      "moebel": "mf4Laterne",
-      "feld": [50, 9],
-      "vorn": true
+      "moebel": "wg4Erle",
+      "feld": [9, 23]
+    },
+    {
+      "moebel": "wg6BootLaengs",
+      "feld": [62, 22],
+      "id": "henriksBoot",
+      "bauteil_ok": true
+    },
+    {
+      "moebel": "cc4Bootsschuppen",
+      "feld": [1, 9]
+    },
+    {
+      "moebel": "lp8Schuppen",
+      "feld": [66, 21]
+    },
+    {
+      "moebel": "pd6HausRot",
+      "feld": [38, 5]
+    },
+    {
+      "moebel": "svHausBlau",
+      "feld": [44, 5]
+    },
+    {
+      "moebel": "rv5HolzhausGruen",
+      "feld": [50, 5]
+    },
+    {
+      "moebel": "mf4Gemuesebeet",
+      "feld": [39, 2]
+    },
+    {
+      "moebel": "mf4Gemuesebeet",
+      "feld": [45, 2]
+    },
+    {
+      "moebel": "wg4Erle",
+      "feld": [48, 1]
+    },
+    {
+      "moebel": "rv5HolzhausRot",
+      "feld": [39, 27]
+    },
+    {
+      "moebel": "svHausGruen",
+      "feld": [45, 27]
+    },
+    {
+      "moebel": "pd6HausRot2",
+      "feld": [51, 27]
+    },
+    {
+      "moebel": "mf2Blumenbeet",
+      "feld": [39, 24]
+    },
+    {
+      "moebel": "mf2Blumenbeet",
+      "feld": [45, 24]
+    },
+    {
+      "moebel": "wg4Erle",
+      "feld": [49, 23]
+    },
+    {
+      "moebel": "mf4BaumRot",
+      "feld": [53, 22]
+    },
+    {
+      "moebel": "svHausRot",
+      "feld": [41, 40]
+    },
+    {
+      "moebel": "rv5HolzhausGruen",
+      "feld": [47, 40]
+    },
+    {
+      "moebel": "mf4Gemuesebeet",
+      "feld": [52, 40]
+    },
+    {
+      "moebel": "ld5Waesche",
+      "feld": [41, 37]
+    },
+    {
+      "moebel": "mf4BaumRot",
+      "feld": [47, 36]
+    },
+    {
+      "moebel": "wg4Erle",
+      "feld": [54, 37]
     }
   ],
   "ausloeser": [
     {
       "name": "start",
-      "feld": [54, 10],
+      "feld": [72, 10],
       "eigenschaften": {
         "richtung": "links"
       }
     },
     {
       "name": "kanalweg",
-      "feld": [55, 10]
+      "feld": [73, 10]
     },
     {
       "name": "kanalweg",
-      "feld": [55, 11]
+      "feld": [73, 11]
     },
     {
       "name": "gasthausTuer",
@@ -383,26 +481,26 @@
     },
     {
       "name": "tafelSchleuse",
-      "feld": [37, 10]
+      "feld": [55, 10]
     },
     {
       "name": "steg",
-      "feld": [30, 13]
+      "feld": [30, 12]
     },
     {
       "name": "steg",
-      "feld": [31, 13]
+      "feld": [31, 12]
     },
     {
       "name": "stegSued",
-      "feld": [30, 18],
+      "feld": [30, 19],
       "eigenschaften": {
         "richtung": "unten"
       }
     },
     {
       "name": "stegSued",
-      "feld": [31, 18],
+      "feld": [31, 19],
       "eigenschaften": {
         "richtung": "unten"
       }
@@ -413,19 +511,19 @@
     },
     {
       "name": "henriksBoot",
-      "feld": [23, 20]
+      "feld": [66, 20]
     },
     {
       "name": "pumpe",
-      "feld": [31, 36]
+      "feld": [32, 39]
     },
     {
       "name": "glocke",
-      "feld": [46, 10]
+      "feld": [64, 10]
     },
     {
       "name": "lastkahn",
-      "feld": [9, 20]
+      "feld": [14, 20]
     }
   ],
   "figuren": [],
@@ -454,7 +552,7 @@
     {
       "name": "waescherin",
       "typ": "statist",
-      "feld": [27, 10],
+      "feld": [26, 10],
       "eigenschaften": {
         "tun": "hängt im Nebel Wäsche auf",
         "wann": "morgen",
@@ -464,13 +562,13 @@
     {
       "name": "bootsbauer",
       "typ": "statist",
-      "feld": [50, 21],
+      "feld": [4, 12],
       "eigenschaften": {
         "tun": "kalfatert ein Ruderboot am Bootsschuppen",
         "wann": "tag",
         "sagt": "statist.lockport.aussen.bootsbauer",
-        "von": "50,21",
-        "bis": "52,21"
+        "von": "4,12",
+        "bis": "4,12"
       }
     },
     {
@@ -486,12 +584,12 @@
     {
       "name": "postbotin",
       "typ": "statist",
-      "feld": [3, 10],
+      "feld": [4, 10],
       "eigenschaften": {
         "tun": "fährt mit dem Rad die Post aus",
         "wann": "morgen",
-        "von": "3,10",
-        "bis": "54,10",
+        "von": "4,10",
+        "bis": "72,10",
         "sagt": "statist.lockport.aussen.postbotin"
       }
     },
@@ -532,7 +630,7 @@
     {
       "name": "touristin",
       "typ": "statist",
-      "feld": [35, 19],
+      "feld": [34, 20],
       "eigenschaften": {
         "tun": "fotografiert die Schleusentore",
         "wann": "tag",
@@ -567,7 +665,7 @@
         "tun": "geht mit Schirm durch den Nebel",
         "wann": "abend",
         "von": "3,34",
-        "bis": "37,34"
+        "bis": "55,34"
       }
     },
     {
@@ -584,37 +682,37 @@
     {
       "name": "enten",
       "typ": "tier",
-      "feld": [15, 15],
+      "feld": [44, 16],
       "eigenschaften": {
         "verhalten": "schwimmen",
-        "von": "3,15",
-        "bis": "27,15"
+        "von": "36,16",
+        "bis": "56,16"
       }
     },
     {
       "name": "katze",
       "typ": "tier",
-      "feld": [40, 20],
+      "feld": [58, 20],
       "eigenschaften": {
         "verhalten": "sitzen",
-        "von": "40,20",
-        "bis": "40,20"
+        "von": "58,20",
+        "bis": "58,20"
       }
     },
     {
       "name": "gans",
       "typ": "tier",
-      "feld": [46, 47],
+      "feld": [64, 47],
       "eigenschaften": {
         "verhalten": "ausweichen",
-        "von": "42,47",
-        "bis": "50,47"
+        "von": "60,47",
+        "bis": "68,47"
       }
     },
     {
       "name": "imogen",
       "typ": "statist",
-      "feld": [38, 10],
+      "feld": [55, 9],
       "eigenschaften": {
         "tun": "steht mit dem Schlüsselbund an der Tafel",
         "wann": "tag"

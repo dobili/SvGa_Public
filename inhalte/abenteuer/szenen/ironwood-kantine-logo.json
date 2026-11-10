@@ -3,7 +3,7 @@
   "datei": "karten/ironwood-kantine-logo.json",
   "art": "innen",
   "zustand_der_karte": "kaufGesehen",
-  "beschreibung": "Zustand: ab Szene 49 (kaufGesehen), Akt 3: An der Wand über der Essensausgabe hängt das Logo von Perfect Move, an der Tür steht ein Karton mit den Pokalen des Clubs, weil der Club die Kantine räumen musste. Die Kantine des Werks, zugleich Clubraum des Werksclubs (Runde 8, Regeln 10.56 und Notizen 12–16): 36 × 20, so breit wie das Kantinengebäude. Links hinter einer Trennwand die Küche mit zwei Kühlschränken, Gastroherd unter der Haube, Herden, Spüle, Ablage mit Geschirr und Anrichte; davor die lange Essensausgabe mit Kaffeemaschine, Warmhaltetheke aus Glas und Kasse, daneben der Mülleimer zur Geschirrrückgabe, der Speiseplan an der Wand. Der Gastraum ist voll mit Tischreihen der Schicht; Wasserspender und Getränkeautomat an der Westwand, Spinde, Uhr und Pinnwand an der Nordwand; der Mittelgang von der Tür zur Ausgabe ist frei. Rechts, durch Pflanzen abgesetzt und auf Dielen, die Schachecke: der Ofen an der Wand, davor Big Joes Clubtisch, zwei weitere Clubtische auf Teppichen, Pokalregal, Foto der Werksmannschaft, Regal, Stehlampe und Bank. Die Tür liegt in der Mitte der Südwand, die Matte davor.",
+  "beschreibung": "Zustand: ab Szene 49 (kaufGesehen), Akt 3: An der Wand über der Essensausgabe hängt das Logo von Perfect Move, an der Tür steht ein Karton mit den Pokalen des Clubs, weil der Club die Kantine räumen musste. Die Kantine des Werks, zugleich Clubraum des Werksclubs (Runde 8, Regeln 10.56 und Notizen 12–16): 36 × 20, so breit wie das Kantinengebäude. Links hinter einer Trennwand die Küche mit zwei Kühlschränken, Gastroherd unter der Haube, Herden mit dem Suppentopf, Spüle, Ablage mit Geschirr, Arbeitstisch und Anrichte; davor die lange Essensausgabe mit Kaffeemaschine, Warmhaltetheke aus Glas, Geschirr und Kasse, der Speiseplan an der Wand. Der Gastraum ist voll mit Tischreihen der Schicht; Mülleimer, Wasserspender und Getränkeautomat an der Westwand, Spinde, Uhr und Pinnwand an der Nordwand; der Mittelgang von der Tür zur Ausgabe ist frei. Rechts, durch Pflanzen abgesetzt und auf Dielen, die Schachecke: der Ofen an der Wand, davor Big Joes Clubtisch, drei weitere Clubtische auf Teppichen, Pokalregal, Foto der Werksmannschaft, Regal und Stehlampe. Die Tür liegt in der Mitte der Südwand, die Matte davor.",
   "wand": "hellgrau",
   "boden": "fliesenGrau",
   "raster": [
@@ -73,19 +73,11 @@
       ]
     },
     {
-      "moebel": "mf8HerdOffen",
+      "moebel": "mf5Gastroherd",
       "feld": [
         7,
         2
       ]
-    },
-    {
-      "moebel": "mf5Dunstabzug",
-      "feld": [
-        7,
-        1
-      ],
-      "an_wand": true
     },
     {
       "moebel": "iw8Theke4",
@@ -119,6 +111,22 @@
       ]
     },
     {
+      "moebel": "mf5Stahltisch",
+      "feld": [
+        9,
+        4
+      ],
+      "id": "arbeitstisch"
+    },
+    {
+      "moebel": "mf5Geschirr",
+      "feld": [
+        0,
+        0
+      ],
+      "auf": "arbeitstisch"
+    },
+    {
       "moebel": "iw8Theke8",
       "feld": [
         1,
@@ -135,50 +143,59 @@
       "auf": "ausgabe"
     },
     {
-      "moebel": "mf8GlasthekeLinks",
+      "moebel": "iw8Theke4",
       "feld": [
         9,
         7
       ],
-      "bauteil_ok": true
+      "id": "warmhalten"
     },
     {
-      "moebel": "mf8GlasthekeMitte",
+      "moebel": "mf5Kuchenvitrine",
       "feld": [
-        10,
-        7
+        0,
+        0
       ],
-      "bauteil_ok": true
-    },
-    {
-      "moebel": "mf8GlasthekeMitte",
-      "feld": [
-        11,
-        7
-      ],
-      "bauteil_ok": true
-    },
-    {
-      "moebel": "mf8GlasthekeRechts",
-      "feld": [
-        12,
-        7
-      ],
-      "bauteil_ok": true
+      "auf": "warmhalten"
     },
     {
       "moebel": "cc4Kasse",
       "feld": [
-        13,
-        9
-      ]
+        6,
+        0
+      ],
+      "auf": "ausgabe"
     },
     {
       "moebel": "ca7Muelleimer",
       "feld": [
-        15,
-        8
+        2,
+        15
       ]
+    },
+    {
+      "moebel": "mf5Geschirr",
+      "feld": [
+        2,
+        0
+      ],
+      "auf": "ausgabe"
+    },
+    {
+      "moebel": "mf5Geschirr",
+      "feld": [
+        3,
+        0
+      ],
+      "auf": "ausgabe"
+    },
+    {
+      "moebel": "mf8Tafel",
+      "feld": [
+        10,
+        1
+      ],
+      "an_wand": true
     },
     {
       "moebel": "mf2Spind",
@@ -212,6 +229,14 @@
       "moebel": "rv5Bahnhofsuhr",
       "feld": [
         20,
+        1
+      ],
+      "an_wand": true
+    },
+    {
+      "moebel": "cc4Fenster",
+      "feld": [
+        24,
         1
       ],
       "an_wand": true
@@ -970,7 +995,7 @@
       ]
     },
     {
-      "moebel": "cc4PflanzeK",
+      "moebel": "rv5Topfpflanze",
       "feld": [
         24,
         7
@@ -984,7 +1009,7 @@
       ]
     },
     {
-      "moebel": "cc4PflanzeK",
+      "moebel": "rv5Topfpflanze",
       "feld": [
         24,
         16
@@ -1055,34 +1080,18 @@
       "id": "clubtisch"
     },
     {
-      "moebel": "cc4StuhlVorn",
+      "moebel": "wzStuhlRechts",
       "feld": [
-        30,
-        5
+        29,
+        6
       ],
       "zu": "clubtisch"
     },
     {
-      "moebel": "cc4StuhlRuecken",
+      "moebel": "wzStuhlLinks",
       "feld": [
-        30,
-        7
-      ],
-      "zu": "clubtisch"
-    },
-    {
-      "moebel": "cc4StuhlVorn",
-      "feld": [
-        31,
-        5
-      ],
-      "zu": "clubtisch"
-    },
-    {
-      "moebel": "cc4StuhlRuecken",
-      "feld": [
-        31,
-        7
+        32,
+        6
       ],
       "zu": "clubtisch"
     },
@@ -1110,34 +1119,18 @@
       "id": "clubtisch2"
     },
     {
-      "moebel": "cc4StuhlVorn",
+      "moebel": "wzStuhlRechts",
       "feld": [
-        27,
-        10
+        26,
+        11
       ],
       "zu": "clubtisch2"
     },
     {
-      "moebel": "cc4StuhlRuecken",
+      "moebel": "wzStuhlLinks",
       "feld": [
-        27,
-        12
-      ],
-      "zu": "clubtisch2"
-    },
-    {
-      "moebel": "cc4StuhlVorn",
-      "feld": [
-        28,
-        10
-      ],
-      "zu": "clubtisch2"
-    },
-    {
-      "moebel": "cc4StuhlRuecken",
-      "feld": [
-        28,
-        12
+        29,
+        11
       ],
       "zu": "clubtisch2"
     },
@@ -1165,34 +1158,18 @@
       "id": "clubtisch3"
     },
     {
-      "moebel": "cc4StuhlVorn",
+      "moebel": "wzStuhlRechts",
       "feld": [
-        31,
-        10
+        30,
+        11
       ],
       "zu": "clubtisch3"
     },
     {
-      "moebel": "cc4StuhlRuecken",
+      "moebel": "wzStuhlLinks",
       "feld": [
-        31,
-        12
-      ],
-      "zu": "clubtisch3"
-    },
-    {
-      "moebel": "cc4StuhlVorn",
-      "feld": [
-        32,
-        10
-      ],
-      "zu": "clubtisch3"
-    },
-    {
-      "moebel": "cc4StuhlRuecken",
-      "feld": [
-        32,
-        12
+        33,
+        11
       ],
       "zu": "clubtisch3"
     },
@@ -1203,6 +1180,45 @@
         0
       ],
       "auf": "clubtisch3"
+    },
+    {
+      "moebel": "rv5Teppich",
+      "feld": [
+        28,
+        14
+      ]
+    },
+    {
+      "moebel": "cc6TischDunkel",
+      "feld": [
+        29,
+        15
+      ],
+      "id": "clubtisch4"
+    },
+    {
+      "moebel": "wzStuhlRechts",
+      "feld": [
+        28,
+        15
+      ],
+      "zu": "clubtisch4"
+    },
+    {
+      "moebel": "wzStuhlLinks",
+      "feld": [
+        31,
+        15
+      ],
+      "zu": "clubtisch4"
+    },
+    {
+      "moebel": "cc4Brett",
+      "feld": [
+        0,
+        0
+      ],
+      "auf": "clubtisch4"
     },
     {
       "moebel": "cc4Stehlampe",
@@ -1290,8 +1306,8 @@
     {
       "name": "stahlbrett",
       "feld": [
-        32,
-        7
+        30,
+        8
       ]
     }
   ],
@@ -1323,12 +1339,12 @@
       "name": "kantinenkoch",
       "typ": "statist",
       "feld": [
-        3,
-        5
+        4,
+        4
       ],
       "eigenschaften": {
-        "von": "3,5",
-        "bis": "11,5",
+        "von": "4,4",
+        "bis": "7,4",
         "tun": "rührt in der Suppe",
         "wann": "tag",
         "sagt": "statist.ironwood.kantine.kantinenkoch"
@@ -1373,7 +1389,8 @@
     "klassisch",
     "einfach",
     "rustikal",
-    "modern"
+    "modern",
+    "schule"
   ],
   "boeden": {
     "d": "dielen"

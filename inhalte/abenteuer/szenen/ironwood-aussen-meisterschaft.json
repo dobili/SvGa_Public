@@ -21,18 +21,18 @@
   ],
   "raster": [
     "##~~~~~~~~##############pp######################################################",
-    "##~~~~~~~~##############pp######################################################",
-    "##~~~~~~~~pp............pp.....................................................#",
-    "##~~~~~~~~pp............pp.....................................................#",
-    "##~~~~~~~~pp............pp.....................................................#",
-    "##~~~~~~~~pp............pp.....................................................#",
-    "##~~~~~~~~pp............pp.....................................................#",
-    "##~~~~~~~~pp............pp.....................................................#",
-    "##~~~~~~~~pp............pp.....................................................#",
-    "##~~~~~~~~pp............pp.....................................................#",
-    "##~~~~~~~~ppppppppppppppppppppppppppppppppppppp................................#",
-    "##~~~~~~~~ppssssspppppppppppppppppppppppppppppp..........................qq....#",
-    "##~~~~~~~~ppssssssssssssssssssssssssssssssssssp..........................qq....#",
+    "##~~~~~~~~##############pp######################qqqqq###########################",
+    "##~~~~~~~~pp............pp......................qqqqq..........................#",
+    "##~~~~~~~~pp............pp......................qqqqq..........................#",
+    "##~~~~~~~~pp............pp......................qqqqq..........................#",
+    "##~~~~~~~~pp............pp......................qqqqq..........................#",
+    "##~~~~~~~~pp............pp......................qqqqq..........................#",
+    "##~~~~~~~~pp............pp......................qqqqq..........................#",
+    "##~~~~~~~~pp............pp......................qqqqq..........................#",
+    "##~~~~~~~~pp............pp......................qqqqq..........................#",
+    "##~~~~~~~~ppppppppppppppppppppppppppppppppppppp.qqqqq..........................#",
+    "##~~~~~~~~ppssssspppppppppppppppppppppppppppppp.qqqqq....................qq....#",
+    "##~~~~~~~~ppssssssssssssssssssssssssssssssssssp.qqqqq....................qq....#",
     "##~~~~~~~~ppssssssssssssssssssssssssssssssssssp..........................qq....#",
     "##~~~~~~~~ppssssssssssssssssssssssssssssssssssp..........................qq....#",
     "##~~~~~~~~ppsssssppppppppppppppppppppppppppsssp..........................qq....#",
@@ -48,31 +48,31 @@
     "##~~~~~~~~ppppp.........pp................psssp.qqqqqqqqqqqqqqqqqqqqqqqqqqqqqqq#",
     "##~~~~~~~~ppppp.........pp................psssp.qqqqqqqqqqqqqqqqqqqqqqqqqqqqqqq#",
     "##~~~~~~~~pp............pp................psssp.........qqqqq..................#",
-    "#hhhhhhhhhpppppppppppppppppppppppppppppppppsssppppppppppppppppppppppppppppppppp#",
-    "#hhhhhhhhhsssssssssssssssssssssssssssssssssssssssssssssssssssssssssssssssssssss#",
-    "#hhhhhhhhhsssssssssssssssssssssssssssssssssssssssssssssssssssssssssssssssssssss#",
-    "#hhhhhhhhhsssssssssssssssssssssssssssssssssssssssssssssssssssssssssssssssssssss#",
-    "#hhhhhhhhhppppppppppppppppppppppppppppppppppppppppppppppppppppppppppppppppppppp#",
-    "##~~~~~~~~pp......pp........pp........qqqqqqqqqqqqqqqqqqqqqqq..................#",
-    "##~~~~~~~~pp......pp........pp........qqqqqqqqqqqqqqqqqqqqqqq..................#",
-    "##~~~~~~~~pp......pp........pp........qqqqqqqqqqqqqqqqqqqqqqq..................#",
-    "##~~~~~~~~pp......pp........pp........qqqqqqqqqqqqqqqqqqqqqqq..................#",
-    "##~~~~~~~~pp......pp........pp........qqqqqqqqqqqqqqqqqqqqqqq..................#",
-    "##~~~~~~~~pp......pp........pp........qqqqqqqqqqqqqqqqqqqqqqq..................#",
-    "##~~~~~~~~pp......pp........pp........qqqqqqqqqqqqqqqqqqqqqqq..................#",
-    "##~~~~~~~~pp......pp........pp........qqqqqqqqqqqqqqqqqqqqqqq..................#",
-    "##~~~~~~~~pp......pp........pp........qqqqqqqqqqqqqqqqqqqqqqq..................#",
-    "##~~~~~~~~pp......pp........pp........qqqqqqqqqqqqqqqqqqqqqqq..................#",
-    "##~~~~~~~~pp......pp........pp........qqqqqqqqqqqqqqqqqqqqqqq..................#",
-    "##~~~~~~~~pp......pp........pp........qqqqqqqqqqqqqqqqqqqqqqq...........pp.....#",
-    "##~~~~~~~~pp......pp........pp........qqqqqqqqqqqqqqqqqqqqqqq...........pp.....#",
+    "##~~~~~~~~pppppppppppppppppppppppppppppppppsssppppppppppppppppppppppppppppppppp#",
+    "##~~~~~~~~sssssssssssssssssssssssssssssssssssssssssssssssssssssssssssssssssssss#",
+    "##~~~~~~~~sssssssssssssssssssssssssssssssssssssssssssssssssssssssssssssssssssss#",
+    "##~~~~~~~~sssssssssssssssssssssssssssssssssssssssssssssssssssssssssssssssssssss#",
+    "##~~~~~~~~ppppppppppppppppppppppppppppppppppppppppppppppppppppppppppppppppppppp#",
+    "##~~~~~~~~pp......pp........pp........ppppppppppppppppppppppp..................#",
+    "##~~~~~~~~pp......pp........pp........ppppppppppppppppppppppp..................#",
+    "##~~~~~~~~pp......pp........pp........ppppppppppppppppppppppp..................#",
+    "##~~~~~~~~pp......pp........pp........ppppppppppppppppppppppp..................#",
+    "##~~~~~~~~pp......pp........pp........ppppppppppppppppppppppp..................#",
+    "##~~~~~~~~pp......pp........pp........ppppppppppppppppppppppp..................#",
+    "##~~~~~~~~pp......pp........pp........ppppppppppppppppppppppp..................#",
+    "##~~~~~~~~pp......pp........pp........ppppppppppppppppppppppp..................#",
+    "##~~~~~~~~pp......pp........pp........ppppppppppppppppppppppp..................#",
+    "##~~~~~~~~pp......pp........pp........ppppppppppppppppppppppp..................#",
+    "##~~~~~~~~pp......pp........pp........ppppppppppppppppppppppp..................#",
+    "##~~~~~~~~pp......pp........pp........ppppppppppppppppppppppp...........pp.....#",
+    "##~~~~~~~~pp......pp........pp........ppppppppppppppppppppppp...........pp.....#",
     "##~~~~~~~~ppppppppppppppppppppppppppppppppppppppppppppppppppppppppppppppppppppp#",
     "##~~~~~~~~ppppppppppppppppppppppppppppppppppppppppppppppppppppppppppppppppppppp#",
     "##~~~~~~~~ppppppppppppppppppppppppppppppppppppppppppppppppppppppppppppppppppppp#",
-    "##~~~~~~~~kkkkkkkkkkkkkkkkkkkkkkkkkkkkkkkkkkkkkkkkkkkkkkkkkkkkkkkkkkkkkkkkkkkkk#",
-    "##~~~~~~~~kkkkkkkkkkkkkkkkkkkkkkkkkkkkkkkkkkkkkkkkkkkkkkkkkkkkkkkkkkkkkkkkkkkkk#",
-    "##~~~~~~~~kkkkkkkkkkkkkkkkkkkkkkkkkkkkkkkkkkkkkkkkkkkkkkkkkkkkkkkkkkkkkkkkkkkkk#",
-    "##~~~~~~~~kkkkkkkkkkkkkkkkkkkkkkkkkkkkkkkkkkkkkkkkkkkkkkkkkkkkkkkkkkkkkkkkkkkkk#",
+    "##~~~~~~~~kkkkkkkkkkkkkkkkkkkkkkkkkkkkkkkkkkkkkkkkkkkkkkkkkkkkuukkkkkkkkkkkkkkk#",
+    "##~~~~~~~~kkkkkkkkkkkkkkkkkkkkkkkkkkkkkkkkkkkkkkkkkkkkkkkkkkkkuukkkkkkkkkkkkkkk#",
+    "##~~~~~~~~kkkkkkkkkkkkkkkkkkkkkkkkkkkkkkkkkkkkkkkkkkkkkkkkkkkkuukkkkkkkkkkkkkkk#",
+    "##~~~~~~~~kkkkkkkkkkkkkkkkkkkkkkkkkkkkkkkkkkkkkkkkkkkkkkkkkkkkuukkkkkkkkkkkkkkk#",
     "##~~~~~~~~...eeeeeeeeeeeeeeeeeeeeeeeeeeeeeeeeeeeeeeeeeeeeeeeeeee...............#",
     "##~~~~~~~~...eeeeeeeeeeeeeeeeeeeeeeeeeeeeeeeeeeeeeeeeeeeeeeeeeee...............#",
     "##~~~~~~~~....gggg.....gggg.....gggg.....gggg.................ee...............#",
@@ -233,20 +233,6 @@
       "feld": [
         75,
         20
-      ]
-    },
-    {
-      "moebel": "mf6Haltestelle",
-      "feld": [
-        12,
-        33
-      ]
-    },
-    {
-      "moebel": "iw5Haltestellenschild",
-      "feld": [
-        17,
-        32
       ]
     },
     {
@@ -589,13 +575,6 @@
       ]
     },
     {
-      "moebel": "iw8StrassenbrueckeGehwegQuer10",
-      "feld": [
-        1,
-        28
-      ]
-    },
-    {
       "moebel": "cc5Poller",
       "feld": [
         10,
@@ -682,73 +661,9 @@
     {
       "moebel": "cc8PrellbockQuer",
       "feld": [
-        12,
-        49
-      ]
-    },
-    {
-      "moebel": "iw5GleisGrau",
-      "feld": [
-        13,
-        49
-      ],
-      "bauteil_ok": true
-    },
-    {
-      "moebel": "iw5GleisGrau",
-      "feld": [
-        14,
-        49
-      ],
-      "bauteil_ok": true
-    },
-    {
-      "moebel": "iw5GleisGrau",
-      "feld": [
-        15,
-        49
-      ],
-      "bauteil_ok": true
-    },
-    {
-      "moebel": "iw5GleisGrau",
-      "feld": [
-        16,
-        49
-      ],
-      "bauteil_ok": true
-    },
-    {
-      "moebel": "iw5GleisGrau",
-      "feld": [
-        17,
-        49
-      ],
-      "bauteil_ok": true
-    },
-    {
-      "moebel": "iw5GleisGrau",
-      "feld": [
-        18,
-        49
-      ],
-      "bauteil_ok": true
-    },
-    {
-      "moebel": "iw5GleisGrau",
-      "feld": [
-        19,
-        49
-      ],
-      "bauteil_ok": true
-    },
-    {
-      "moebel": "iw5GleisGrau",
-      "feld": [
         20,
         49
-      ],
-      "bauteil_ok": true
+      ]
     },
     {
       "moebel": "iw5GleisGrau",
@@ -1228,73 +1143,9 @@
     {
       "moebel": "cc8PrellbockQuer",
       "feld": [
-        12,
-        51
-      ]
-    },
-    {
-      "moebel": "iw5GleisGrau",
-      "feld": [
-        13,
-        51
-      ],
-      "bauteil_ok": true
-    },
-    {
-      "moebel": "iw5GleisGrau",
-      "feld": [
-        14,
-        51
-      ],
-      "bauteil_ok": true
-    },
-    {
-      "moebel": "iw5GleisGrau",
-      "feld": [
-        15,
-        51
-      ],
-      "bauteil_ok": true
-    },
-    {
-      "moebel": "iw5GleisGrau",
-      "feld": [
-        16,
-        51
-      ],
-      "bauteil_ok": true
-    },
-    {
-      "moebel": "iw5GleisGrau",
-      "feld": [
-        17,
-        51
-      ],
-      "bauteil_ok": true
-    },
-    {
-      "moebel": "iw5GleisGrau",
-      "feld": [
-        18,
-        51
-      ],
-      "bauteil_ok": true
-    },
-    {
-      "moebel": "iw5GleisGrau",
-      "feld": [
-        19,
-        51
-      ],
-      "bauteil_ok": true
-    },
-    {
-      "moebel": "iw5GleisGrau",
-      "feld": [
         20,
         51
-      ],
-      "bauteil_ok": true
+      ]
     },
     {
       "moebel": "iw5GleisGrau",
@@ -1774,14 +1625,6 @@
     {
       "moebel": "mf9LaterneLang",
       "feld": [
-        15,
-        25
-      ],
-      "vorn": true
-    },
-    {
-      "moebel": "mf9LaterneLang",
-      "feld": [
         34,
         25
       ],
@@ -1902,7 +1745,7 @@
     {
       "moebel": "mf9LaterneLang",
       "feld": [
-        73,
+        75,
         43
       ],
       "vorn": true
@@ -2866,6 +2709,55 @@
       ]
     },
     {
+      "moebel": "iw8Andreaskreuz",
+      "feld": [
+        61,
+        46
+      ]
+    },
+    {
+      "moebel": "iw8Andreaskreuz",
+      "feld": [
+        64,
+        53
+      ]
+    },
+    {
+      "moebel": "mf6Haltestelle",
+      "feld": [
+        11,
+        25
+      ]
+    },
+    {
+      "moebel": "iw5Haltestellenschild",
+      "feld": [
+        10,
+        25
+      ]
+    },
+    {
+      "moebel": "iwFassGross",
+      "feld": [
+        52,
+        22
+      ]
+    },
+    {
+      "moebel": "wr5Container",
+      "feld": [
+        74,
+        18
+      ]
+    },
+    {
+      "moebel": "cc7Bretterstapel",
+      "feld": [
+        62,
+        19
+      ]
+    },
+    {
       "moebel": "sb5SchildPerfectMove",
       "feld": [
         55,
@@ -2877,8 +2769,8 @@
     {
       "name": "start",
       "feld": [
-        16,
-        32
+        15,
+        28
       ],
       "eigenschaften": {
         "richtung": "links"
@@ -2887,8 +2779,8 @@
     {
       "name": "bushaltestelle",
       "feld": [
-        14,
-        32
+        13,
+        28
       ]
     },
     {
@@ -2909,14 +2801,14 @@
       "name": "busRiverton",
       "feld": [
         12,
-        32
+        28
       ]
     },
     {
       "name": "busSiliconBay",
       "feld": [
-        15,
-        32
+        14,
+        28
       ]
     },
     {
@@ -3001,8 +2893,8 @@
     {
       "name": "victor",
       "feld": [
-        11,
-        28
+        12,
+        33
       ]
     },
     {
@@ -3135,7 +3027,7 @@
       "eigenschaften": {
         "von": "50,53",
         "bis": "60,53",
-        "tun": "kuppelt Güterwagen am Schuppen",
+        "tun": "prüft die Weichen am Gleis",
         "wann": "tag",
         "sagt": "statist.ironwood.aussen.rangierer"
       }
@@ -3150,7 +3042,7 @@
       "eigenschaften": {
         "von": "60,28",
         "bis": "66,28",
-        "tun": "wartet mit dem Lieferwagen an der Schranke",
+        "tun": "wartet am Werkstor auf den Pförtner",
         "wann": "tag",
         "sagt": "statist.ironwood.aussen.lieferfahrer"
       }
@@ -3159,12 +3051,12 @@
       "name": "wirt",
       "typ": "statist",
       "feld": [
-        28,
-        29
+        27,
+        28
       ],
       "eigenschaften": {
-        "von": "28,29",
-        "bis": "28,29",
+        "von": "27,28",
+        "bis": "27,28",
         "tun": "fegt vor der Kneipe „Zum Hoch“",
         "wann": "abend",
         "sagt": "statist.ironwood.aussen.wirt",
@@ -3175,12 +3067,12 @@
       "name": "schuelerin",
       "typ": "statist",
       "feld": [
-        30,
-        12
+        29,
+        11
       ],
       "eigenschaften": {
-        "von": "30,12",
-        "bis": "44,13",
+        "von": "29,11",
+        "bis": "43,12",
         "tun": "geht mit Ranzen von der Schule heim",
         "wann": "tag",
         "sagt": "statist.ironwood.aussen.schuelerin"
@@ -3191,11 +3083,11 @@
       "typ": "statist",
       "feld": [
         16,
-        33
+        28
       ],
       "eigenschaften": {
-        "von": "16,33",
-        "bis": "16,33",
+        "von": "16,28",
+        "bis": "16,28",
         "tun": "macht Pause an der Haltestelle",
         "wann": "tag",
         "sagt": "statist.ironwood.aussen.busfahrerin"
@@ -3220,12 +3112,12 @@
       "name": "nachbar",
       "typ": "statist",
       "feld": [
-        20,
-        12
+        19,
+        11
       ],
       "eigenschaften": {
-        "von": "20,12",
-        "bis": "40,12",
+        "von": "19,11",
+        "bis": "39,11",
         "tun": "trägt Einkaufstüten die Elm Street hinauf",
         "wann": "abend"
       }
@@ -3235,11 +3127,11 @@
       "typ": "tier",
       "feld": [
         42,
-        48
+        44
       ],
       "eigenschaften": {
-        "von": "42,48",
-        "bis": "46,48",
+        "von": "42,44",
+        "bis": "46,44",
         "verhalten": "fliegen"
       }
     },

@@ -66,6 +66,8 @@ Erst danach sieht der Autor die Karte. Neue Notizen des Autors kommen als neue P
 - Nur Gebäude mit Tiefe in Schrägansicht, keine Fassaden von vorn.
 - Anbauten gehören an ihr Haus; einzelne Bauteile (Fenster ohne Tür) stehen nicht frei.
 - Alte Kirchen und Kapellen stehen frei, mit Platz, Zaun und Grün oder Friedhof.
+- Wohnhäuser sind mindestens 5 × 5 Kacheln groß, Läden 6 × 5. Häuser mit 3–4 Kacheln sind Schuppen,
+  Kioske oder Garagen, keine Wohnhäuser (KARTENREGELN 10.66).
 
 ### Wasser, Ufer, Boote
 
@@ -90,6 +92,9 @@ Erst danach sieht der Autor die Karte. Neue Notizen des Autors kommen als neue P
   Autos passt. Autos fahren in Fahrtrichtung, mit Gegenverkehr.
 - Laternen stehen am Weg, in regelmäßigen Abständen oder gezielt an Rastplätzen, nicht an Gleisen.
 - Rastplätze haben Bank, Mülleimer und Laterne.
+- Fahrzeuge passen zu ihrer Fläche: Von der Seite gezeichnete Autos parken längs, Autos in Buchten quer
+  zur Straße sind von vorn oder hinten gezeichnet. Busse und Lastwagen ragen nicht in den Gehweg
+  (KARTENREGELN 10.65).
 
 ### Zäune, Mauern, Gelände
 
@@ -106,6 +111,8 @@ Erst danach sieht der Autor die Karte. Neue Notizen des Autors kommen als neue P
 - Hecken sind zusammenhängend.
 - Bepflanzung ist abwechslungsreich, nicht dasselbe Bild in Reihe.
 - Grünflächen sind gestaltet, nicht leer.
+- Im Winter hat jeder Baum einen Stamm; ein weißer Kreis ohne Stamm ist ein Befund (KARTENREGELN
+  10.67).
 - Pflanzen innen stehen in Ecken oder symmetrisch (an Säulen), nicht kopiert übereinander.
 
 ### Innenräume: Möbel

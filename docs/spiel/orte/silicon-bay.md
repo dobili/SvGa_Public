@@ -89,6 +89,37 @@ Laufzeit: Haltestelle → Westrand etwa 150 Kacheln, 43 s. Ränder: Norden Schne
 Wall und der Leitplanke (Kraftfahrstraße), Osten Auffahrt mit Schild „Keine Fußgänger“, Süden und
 Westen die Bucht; nur der Pfad öffnet den Westrand.
 
+**Runde 8, nach dem Gutachten (mittel-1):**
+
+- **Winter:** `jahreszeit: winter`. Akt 3 spielt laut Story-Bibel im Winter (Szene 51 „Abfahrt
+  im Schnee“), Silicon Bay selbst hat keine Jahreszeit. Blumen sind weg.
+- **Küste:**
+  - Sandstrand (Boden `strand` mit Rand) zwei Kacheln breit am Wasser.
+  - Runde Düne im Westen (x 1–21, y 10–17) mit Strandgras.
+  - Am Ortsschild drei moderne Laternen.
+- **Zufahrt:** Abfahrt von der Schnellstraße (x 101–104, y 5–19), die Leitplanke hat dort eine
+  Lücke.
+- **Tankstelle:** Fahrspur unter dem Dach (y 14–16); die Zapfsäulen stehen auf Asphalt, die
+  Waschstraße fährt auf die Fahrspur aus.
+- **Parkplatz:** zwei Buchten mit Linien, Autos in Buchten und auf der Fahrgasse.
+- **Plätze aus Pflaster:**
+  - Container, Imbisswagen und Haltestelle stehen auf Pflaster.
+  - Der Picknickplatz hat vier Tische statt sechs, zwei Mülleimer und eine Laterne.
+- **Grün:**
+  - Die Hecke hat Lücken und drei Arten im Wechsel, das Gehölz dahinter steht in loser Folge.
+  - Pflanzen auf dem Pfad, Poller in der Wiese und Blumen sind weg.
+- Der Rastplatz-Asphalt hat ein eigenes Zeichen `z` (gleicher Boden). So prüft der Kartenbau
+  Straße und Platz getrennt.
+- **Begründet statt geändert:**
+  - **Fahrzeuge:** Fahrzeuge auf Straßen von West nach Ost sind wie bei LimeZu von der Seite
+    gezeichnet, solche auf Nord-Süd-Straßen von vorn oder hinten. Das ist die Schrägansicht von
+    LimeZu (KARTENREGELN 10.60). Deshalb stehen auch die geparkten Autos jetzt quer.
+  - **Größen:** Autos 4–5 × 3, Lastwagen 11 × 5 Bildkacheln; das entspricht 10.64 mit Dach.
+  - **Vogelhütte:** Sie ist ein Gartenhaus mit Tür und Fenster (Punkt h) und bleibt in der Mitte
+    am Pfadbogen.
+  - **Vögel:** Ringelgänse und Möwen zeichnet die Belebung nach dem Namen; das betrifft die
+    Tierbilder aller Karten.
+
 ### 1.2 Glasbrücke (`wegIronwoodSilicon.glasbruecke`, 140 × 26), Runde 8 neu gebaut
 
 **Neu gebaut nach der Revision des Autors (10.11.2026, „keine Variante passt“, mittel-1).** Die
@@ -136,6 +167,24 @@ Autobreite etwa 18 Spuren breit und alle Autos fuhren in eine Richtung. Jetzt (R
 
 Laufzeit: Ostrand → Westrand etwa 150 Kacheln, gut 40 s. Die Varianten B und C unter
 `szenen/varianten/` sind der alte Stand; sie gelten nicht mehr, Wahl ist dieser Neubau.
+
+**Runde 8, nach dem Gutachten (mittel-1):**
+
+- **Winter:** `jahreszeit: winter`, Blumen weg.
+- **Pfeiler:** Sie stehen nur noch auf Grünstreifen, Seitenstreifen und Mittelstreifen (x 44,
+  53, 67, 82, 91), nicht mehr in Fahrspuren.
+- **Plattform:** zwei Pfeiler auf dem Mittelstreifen, durch das Glas zu sehen.
+- **Rampe:** ein Querträger an der Fuge zwischen Rampe und Glas; die Farnbüschel an der
+  Rampenwand sind weg.
+- **Fund:** zwei weiße Ohrstöpsel unter der Bank (`fundOhrstoepsel`); das Fernglas ist weg.
+- **Platz:**
+  - Die Werbetafel zeigt jetzt „ZERO – Nie wieder Fehler“ (Bild `werbetafel_zero`).
+  - Der Platz hat helle Platten (neuer Boden `platten` aus dem Straßenbogen) statt
+    Kopfsteinpflaster.
+  - Die Mitte ist gefüllt: Bäume in Pflanzbeeten, zwei Bänke, ein Kübel.
+  - Die Laternen sind modern.
+- **Rastplatz Ost:** steht auf einer Plattenbucht am Weg.
+- **Tiere:** Die Krähe ist weg (gleiches Bild wie die Möwe), das Kaninchen läuft auf der Wiese.
 
 ### 1.3 Silicon Bay, Campus (`siliconBay.aussen`, 72 × 60 seit Runde 7)
 
@@ -267,6 +316,21 @@ kleine Polizeiwache (`sa8Polizei1`, `2`), Eisenwarenladen (`sa8Eisenwaren`), Woh
 - Marktstände mit Obst- und Gemüsekörben, Marktfrau und Gemüsehändler an den Ständen (10.59); dafür
   sind Briefträgerin, Ladenbesitzer, Hundebesitzer und Hund weg (zwölf Statisten). Ein Hydrant für den
   Feuerwehrmann.
+
+**Gutachten Altstadt (Runde 8, `gutachten/silicon-bay-altstadt.md`), behoben:** Die Altstadt liegt im
+Winter (`"jahreszeit": "winter"`); die Story-Bibel nennt Silicon Bay „ohne Jahreszeit“, das gilt für
+die Glasbauten des Campus, die Altstadt außerhalb hat Akt-3-Winter (Schnee, Schneemann der Kinder,
+Weihnachtsbaum). Campus, Akademie und Hafen bleiben ohne Jahreszeit. Gärten hinter beiden Zeilen statt
+Pflasterflecken, zwei Gartenschuppen; die Flachdachblöcke aus anderen Orten und die STORE- und
+MARKET-Häuser mit Vorhängeschloss sind durch vier Wohnhäuser und vier offene Läden ersetzt (Bildwunsch
+`altstadt.py`); Laternen am Gehweg, der Metzger fegt den Gehweg; der Marktplatz ist auf sieben Reihen
+mit Steinrand verkleinert, mit Bäumen in Baumscheiben, zwei Ständen mit Händlerin und Händler (Stände
+ohne Fischschild), Kreidezeichnung, Gitarrenkoffer und Weihnachtsbaum; der Park bekommt die freien
+Reihen, eine Hecke mit drei gleichen Durchgängen, einen Weg, Bänke und den Schneemann
+(`schneemann.py`). Nicht geändert: englische Ladenschilder (Silicon Bay, jetzt in der Beschreibung),
+Fahrbahnmarkierung und Bordstein (keine Bodenbilder, Bodenvariation von mittel-2), die Roboter und
+die aufrechte Katze (Belebungsbilder, nicht Kartenbild), der graue Flachbau des Eisenwarenladens
+(mittel-1 ersetzt das Bild auf allen Karten).
 
 **Belebung:** zwölf Statisten, acht davon mit Satz (`statist.siliconBay.altstadt.*`): Bäckerin,
 Uhrmacher, Musikhändler, Schülerin, Metzger (Perfect Move will die Straße kaufen), Rentnerpaar,
@@ -587,11 +651,25 @@ Tür zum Serverraum in der Nordwand bei Spalte 12, Feld davor (12, 3). Eigene Bi
   Terrasse (die „Kante“ war das Glasgeländer); Infokiosk, Wohnhaus und Fahrradschuppen dazu (10.51).
   Bodenvariation (Punkt 31) kommt als Technik von mittel-2.
 - **Alter Hafen (`siliconBay.hafen`, Hauptfassung C):** Küstenfähre neu gezeichnet, schräg von oben
-  und 14 × 5 Kacheln groß (Bildwunsch `hafen_faehre.py`); Fährhäuschen als Häuschen mit Dach statt
-  flacher Front; der Kran ist weg; Ladebetrieb am Kutter mit Kisten und Fässern in Reihen und drei
+  und 18 × 6 Kacheln groß (Bildwunsch `hafen_faehre.py`, KARTENREGELN 10.64: Personenfähre 16–20 × 6; der Kai ist
+  länger als die Fähre); Fährhäuschen als Häuschen mit Dach statt
+  flacher Front; der Kran ist weg; Ladebetrieb am kleinen Fischerboot mit Kisten und Fässern in Reihen und drei
   Arbeitern; ein Gemüsekarren mit Händlerin statt zwei leerer; keine Kisten mehr auf der Straße;
   Laternen am Straßenrand alle zehn Felder; die „H“-Taschen (Fischkisten) und der Fischeimer sind
-  weg; um den Leuchtturm genug Land für den Weg zur Tür.
+  weg; um den Leuchtturm genug Land für den Weg zur Tür. Die Kaimauer fällt von vorn gesehen zum Wasser ab
+  (`hafen-16/ground`, Wand mit Leitern und Reifenfendern, `sb8Kaimauer…`). Das Fischerboot des Pakets (6 × 3 Kacheln mit
+  Angel) ist ein kleines Holzboot, kein Kutter; es bleibt so und heißt Fischerboot (10.64: zwischen Ruderboot
+  und Motorboot). Ein Verlängern ergäbe nur ein langes Ruderboot.
+
+Gutachten Runde 8 (`gutachten/silicon-bay-akademie.md`), behoben: Glaswand und Fenster aus gerahmten
+Glasscheiben (Grocery 157) statt des grauen Bands; gläserne Eingangstür ohne Matte; Stahl-Doppeltür
+zum Serverraum; zwei Fenster in der Nordwand; Foyer mit grauen Fliesen, Büro mit blauem Teppich;
+an jedem Tisch ein Schüler, zwischen den Tischreihen ein Gang; Bildschirm mit Rangliste und großer
+Vortragsbildschirm (Bildwunsch `akademie.py`), die Stuhlreihen mittig davor; Kaffeeautomat gleich
+hoch wie der Getränkeautomat; Pausenecke mit zwei Sesseln im Osten; Glaspokal statt Goldpokal in der
+Vitrine; weißer Beistelltisch statt Holzbank; Empfangsdame am Empfang, Kübelbaum im Foyer; Durchgang
+vom Foyer ins Büro; Lin hinter seinem Schreibtisch, Bücherregal im Büro. Offen: Das Bild der
+gläsernen Tür (`tuer_sued_glas.png`) wirkt braun; der Saugroboter ist eine Belebung ohne Bild.
 
 ### 4.6 Serverraum (`siliconBay.serverraum`)
 

@@ -2,7 +2,7 @@
   "karte": "riverton.bahnhofshalle",
   "datei": "karten/riverton-bahnhofshalle.json",
   "art": "innen",
-  "beschreibung": "Die Bahnhofshalle von Riverton: Backsteinwände, Steinboden, hohe Bogenfenster. Durch die gläserne Doppeltür im Süden kommt man vom Vorplatz herein, gegenüber in der Nordwand die schwarze Doppeltür zum Bahnsteig, daneben die Schaffnerin. In der Nordwand links drei Schalterfenster für Fahrkarten mit Ablage, in der Mitte die große Bahnhofsuhr, der Abfahrtsmonitor und der Netzplan, rechts die Schließfächer. In der Nordwestecke der Kiosk von Pops: Zeitungshalter und ein Regal mit Getränken an der Wand, davor der gläserne Tresen, Pops dahinter. An der Ostwand Getränke- und Kaffeeautomat nebeneinander. In der Mitte zwischen vier Säulen die Wartezone mit orangefarbenen Bänken in drei Reihen, in der Mitte ein Gang zur Tür, neben einer Bank ein vergessener Koffer; an den Säulen und neben dem Eingang Pflanzen in Vasen. Im Westen zwei Zweierbänke, in der Südostecke eine Sackkarre mit Gepäck und ein Koffer.",
+  "beschreibung": "Die Bahnhofshalle von Riverton: Backsteinwände, Steinboden, hohe Bogenfenster. Durch die gläserne Doppeltür im Süden kommt man vom Vorplatz herein, gegenüber in der Nordwand die gläserne Doppeltür zum Bahnsteig, daneben die Schaffnerin. In der Nordwand links drei Schalterfenster für Fahrkarten mit Ablage, in der Mitte die große Bahnhofsuhr, der Abfahrtsmonitor und der Netzplan, die Automaten rechts. In der Nordwestecke der Kiosk von Pops: drei Zeitungshalter an der Wand, davor der gläserne Tresen, Pops dahinter. In der Nordwand rechts Getränke- und Kaffeeautomat nebeneinander, an der Ostwand die Schließfächer. In der Mitte zwischen vier Säulen die Wartezone mit orangefarbenen Bänken in drei Reihen, in der Mitte ein Gang zur Tür, neben einer Bank ein vergessener Koffer; an den Säulen und neben dem Eingang Pflanzen in Vasen. Im Westen zwei Zweierbänke, in der Südostecke eine Sackkarre mit Gepäck und ein Koffer.",
   "wand": "backstein",
   "boden": "stein",
   "raster": [
@@ -26,418 +26,235 @@
   "objekte": [
     {
       "moebel": "el7Zeitungshalter",
-      "feld": [
-        1,
-        1
-      ]
+      "feld": [1, 3]
     },
     {
       "moebel": "el7Zeitungshalter",
-      "feld": [
-        2,
-        1
-      ]
+      "feld": [2, 3]
     },
     {
-      "moebel": "rv5Zeitungsregal",
-      "feld": [
-        3,
-        1
-      ],
-      "bauteil_ok": true
+      "moebel": "el7Zeitungshalter",
+      "feld": [3, 3]
     },
     {
       "moebel": "rv8SchalterA",
-      "feld": [
-        6,
-        1
-      ],
+      "feld": [5, 1],
       "an_wand": true,
       "bauteil_ok": true
     },
     {
       "moebel": "rv8SchalterB",
-      "feld": [
-        8,
-        1
-      ],
+      "feld": [7, 1],
+      "an_wand": true,
+      "bauteil_ok": true
+    },
+    {
+      "moebel": "rv8SchalterA",
+      "feld": [9, 1],
       "an_wand": true,
       "bauteil_ok": true
     },
     {
       "moebel": "rv8SchalterEnde",
-      "feld": [
-        10,
-        1
-      ],
+      "feld": [11, 1],
       "an_wand": true,
       "bauteil_ok": true
     },
     {
       "moebel": "rv5Bahnhofsuhr",
-      "feld": [
-        12,
-        1
-      ],
+      "feld": [12, 1],
       "an_wand": true
     },
     {
       "moebel": "rv8Abfahrtsmonitor",
-      "feld": [
-        14,
-        1
-      ],
+      "feld": [14, 1],
       "an_wand": true
     },
     {
       "moebel": "rv5Netzplan",
-      "feld": [
-        16,
-        1
-      ],
+      "feld": [16, 1],
       "an_wand": true
     },
     {
-      "moebel": "rv8Doppeltuer",
-      "feld": [
-        19,
-        1
-      ],
+      "moebel": "rv8GlastuerNord",
+      "feld": [19, 1],
       "an_wand": true
     },
     {
       "moebel": "rv5Bogenfenster",
-      "feld": [
-        21,
-        1
-      ],
+      "feld": [21, 1],
       "an_wand": true
     },
     {
-      "moebel": "rv8Schliessfach",
-      "feld": [
-        23,
-        2
-      ]
+      "moebel": "rv8GetraenkeVorn",
+      "feld": [21, 1]
+    },
+    {
+      "moebel": "rv8KaffeeVorn",
+      "feld": [23, 1]
     },
     {
       "moebel": "mf8GlasthekeLinks",
-      "feld": [
-        1,
-        6
-      ]
+      "feld": [1, 8]
     },
     {
       "moebel": "mf8GlasthekeMitte",
-      "feld": [
-        2,
-        6
-      ]
+      "feld": [2, 8]
     },
     {
       "moebel": "mf8GlasthekeRechts",
-      "feld": [
-        3,
-        6
-      ]
+      "feld": [3, 8]
     },
     {
-      "moebel": "rv8Getraenkeautomat",
-      "feld": [
-        24,
-        5
-      ],
-      "bauteil_ok": true
+      "moebel": "rv8Schliessfach",
+      "feld": [23, 6]
     },
     {
-      "moebel": "rv8Kaffeeautomat",
-      "feld": [
-        24,
-        9
-      ],
-      "bauteil_ok": true
+      "moebel": "rv8Rollkoffer",
+      "feld": [19, 9]
+    },
+    {
+      "moebel": "rv8Pflanze",
+      "feld": [1, 13]
+    },
+    {
+      "moebel": "rv8Pflanze",
+      "feld": [24, 13]
     },
     {
       "moebel": "rv8Saeule",
-      "feld": [
-        8,
-        4
-      ]
+      "feld": [8, 4]
     },
     {
       "moebel": "rv8Saeule",
-      "feld": [
-        8,
-        9
-      ]
+      "feld": [8, 9]
     },
     {
       "moebel": "rv8Saeule",
-      "feld": [
-        17,
-        4
-      ]
+      "feld": [17, 4]
     },
     {
       "moebel": "rv8Saeule",
-      "feld": [
-        17,
-        9
-      ]
+      "feld": [17, 9]
     },
     {
       "moebel": "rv8Pflanze",
-      "feld": [
-        8,
-        13
-      ]
+      "feld": [8, 13]
     },
     {
       "moebel": "rv8Pflanze",
-      "feld": [
-        17,
-        13
-      ]
+      "feld": [17, 13]
     },
     {
       "moebel": "rv8Pflanze",
-      "feld": [
-        11,
-        13
-      ]
+      "feld": [9, 4]
     },
     {
       "moebel": "rv8Pflanze",
-      "feld": [
-        14,
-        13
-      ]
-    },
-    {
-      "moebel": "rv8Pflanze",
-      "feld": [
-        9,
-        4
-      ]
-    },
-    {
-      "moebel": "rv8Pflanze",
-      "feld": [
-        16,
-        4
-      ]
+      "feld": [16, 4]
     },
     {
       "moebel": "rv8Wartebank",
-      "feld": [
-        10,
-        4
-      ]
+      "feld": [10, 4]
     },
     {
       "moebel": "rv8Wartebank",
-      "feld": [
-        13,
-        4
-      ]
+      "feld": [13, 4]
     },
     {
       "moebel": "rv8Wartebank",
-      "feld": [
-        10,
-        8
-      ]
+      "feld": [10, 8]
     },
     {
       "moebel": "rv8Wartebank",
-      "feld": [
-        13,
-        8
-      ]
+      "feld": [13, 8]
     },
     {
       "moebel": "rv8Koffer",
-      "feld": [
-        16,
-        9
-      ]
+      "feld": [16, 9]
     },
     {
       "moebel": "rv8Zweierbank",
-      "feld": [
-        10,
-        11
-      ]
+      "feld": [10, 11]
     },
     {
       "moebel": "rv8Zweierbank",
-      "feld": [
-        14,
-        11
-      ]
+      "feld": [14, 11]
     },
     {
       "moebel": "rv8Zweierbank",
-      "feld": [
-        2,
-        10
-      ]
+      "feld": [2, 11]
     },
     {
       "moebel": "rv8Zweierbank",
-      "feld": [
-        4,
-        10
-      ]
+      "feld": [4, 11]
     },
     {
       "moebel": "rv8Sackkarre",
-      "feld": [
-        21,
-        12
-      ]
-    },
-    {
-      "moebel": "rv8Koffer",
-      "feld": [
-        23,
-        12
-      ]
+      "feld": [21, 12]
     },
     {
       "moebel": "rv8Rollkoffer",
-      "feld": [
-        6,
-        10
-      ]
+      "feld": [6, 11]
     },
     {
-      "moebel": "rv8Koffer",
-      "feld": [
-        1,
-        10
-      ]
-    },
-    {
-      "moebel": "rv8Rollkoffer",
-      "feld": [
-        19,
-        9
-      ]
-    },
-    {
-      "moebel": "mf4Fussmatte",
-      "feld": [
-        12,
-        14
-      ],
-      "versatz": [
-        8,
-        8
-      ]
-    },
-    {
-      "moebel": "rv5TuerSuedGlas",
-      "feld": [
-        12,
-        15
-      ],
-      "an_wand": true
-    },
-    {
-      "moebel": "rv5TuerSuedGlas",
-      "feld": [
-        13,
-        15
-      ],
+      "moebel": "rv8GlastuerSued",
+      "feld": [12, 15],
       "an_wand": true
     }
   ],
   "ausloeser": [
     {
       "name": "start",
-      "feld": [
-        12,
-        14
-      ],
+      "feld": [12, 14],
       "eigenschaften": {
         "richtung": "oben"
       }
     },
     {
       "name": "bahnhofAusgang",
-      "feld": [
-        12,
-        15
-      ]
+      "feld": [12, 15]
     },
     {
       "name": "bahnhofAusgang",
-      "feld": [
-        13,
-        15
-      ]
+      "feld": [13, 15]
     },
     {
       "name": "grosseUhr",
-      "feld": [
-        12,
-        3
-      ]
+      "feld": [12, 3]
     },
     {
       "name": "zugCedar",
-      "feld": [
-        19,
-        3
-      ]
+      "feld": [19, 3]
     },
     {
       "name": "zeitungsstand",
-      "feld": [
-        2,
-        8
-      ]
+      "feld": [2, 10]
     },
     {
       "name": "fundZeitungsausschnitt",
-      "feld": [
-        5,
-        4
-      ]
+      "feld": [5, 4]
     },
     {
       "name": "fundTaubenfeder",
-      "feld": [
-        14,
-        7
-      ]
+      "feld": [14, 7]
     }
   ],
   "figuren": [
     {
       "name": "harlan",
-      "feld": [
-        12,
-        7
-      ]
+      "feld": [12, 7]
     },
     {
       "name": "pops",
-      "feld": [
-        2,
-        5
-      ]
+      "feld": [2, 7]
     }
   ],
   "belebung": [
     {
       "name": "reisende",
       "typ": "statist",
-      "feld": [
-        13,
-        12
-      ],
+      "feld": [13, 12],
       "eigenschaften": {
         "von": "13,12",
         "bis": "19,3",
@@ -448,10 +265,7 @@
     {
       "name": "taube",
       "typ": "tier",
-      "feld": [
-        15,
-        10
-      ],
+      "feld": [15, 10],
       "eigenschaften": {
         "von": "15,10",
         "bis": "16,10",
@@ -461,25 +275,15 @@
     {
       "name": "schaffnerin",
       "typ": "statist",
-      "feld": [
-        20,
-        4
-      ],
+      "feld": [18, 3],
       "eigenschaften": {
-        "von": "20,4",
-        "bis": "20,4",
+        "von": "18,3",
+        "bis": "18,3",
         "tun": "wartet mit der Kelle auf den nächsten Zug",
         "sagt": "statist.riverton.bahnhofshalle.schaffnerin"
       }
     }
   ],
-  "zustand": [
-    "neu",
-    "gebraucht",
-    "alt"
-  ],
-  "stil": [
-    "klassisch",
-    "modern"
-  ]
+  "zustand": ["neu", "gebraucht", "alt"],
+  "stil": ["klassisch", "modern"]
 }

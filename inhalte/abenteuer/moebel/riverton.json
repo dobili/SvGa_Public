@@ -822,7 +822,7 @@
       "blick": "unten"
     },
     "rv5Cafe": {
-      "quelle": "modern-exteriors/Modern_Exteriors_16x16/ME_Theme_Sorter_16x16/4_Generic_Building_Singles_16x16/ME_Singles_Generic_Building_16x16_Hardware_Store.png",
+      "quelle": "spiel/eigene/fassade_cafe.png",
       "breite": 128,
       "hoehe": 144,
       "kollision": true,
@@ -862,7 +862,7 @@
       "blick": "unten"
     },
     "rv5Schuppen": {
-      "quelle": "modern-exteriors/Modern_Exteriors_16x16/ME_Theme_Sorter_16x16/17_Garden_Singles_16x16/ME_Singles_Garden_16x16_Brown_Wood_Storage.png",
+      "quelle": "spiel/eigene/gartenhaus_braun.png",
       "breite": 48,
       "hoehe": 64,
       "kollision": true,
@@ -872,7 +872,7 @@
       "blick": "unten"
     },
     "rv5Pegelhaus": {
-      "quelle": "modern-exteriors/Modern_Exteriors_16x16/ME_Theme_Sorter_16x16/17_Garden_Singles_16x16/ME_Singles_Garden_16x16_Blue_White_Wood_Storage.png",
+      "quelle": "spiel/eigene/gartenhaus_weiss.png",
       "breite": 48,
       "hoehe": 64,
       "kollision": true,
@@ -1205,7 +1205,7 @@
       "blick": "unten"
     },
     "rv5PegelhausWeiss": {
-      "quelle": "modern-exteriors/Modern_Exteriors_16x16/ME_Theme_Sorter_16x16/17_Garden_Singles_16x16/ME_Singles_Garden_16x16_White_Wood_Storage.png",
+      "quelle": "spiel/eigene/gartenhaus_weiss.png",
       "breite": 48,
       "hoehe": 64,
       "kollision": true,
@@ -1431,7 +1431,7 @@
       "art": "bett",
       "zustand": "gebraucht",
       "stil": "klassisch",
-      "blick": "unten"
+      "blick": "keine"
     },
     "rv8Nasszelle": {
       "quelle": "modern-interiors/1_Interiors/16x16/Theme_Sorter_Black_Shadow_Singles/3_Bathroom_Black_Shadow_Singles_16x16/Bathroom_Black_Shadow_Singles_63.png",
@@ -1711,8 +1711,8 @@
     },
     "rv8Bahnhof": {
       "quelle": "spiel/eigene/riverton_bahnhof.png",
-      "breite": 336,
-      "hoehe": 160,
+      "breite": 352,
+      "hoehe": 240,
       "kollision": true,
       "art": "gebaeude",
       "zustand": "gebraucht",
@@ -1768,6 +1768,126 @@
       "zustand": "gebraucht",
       "stil": "klassisch",
       "blick": "keine"
+    },
+    "rv8Plakat": {
+      "quelle": "modern-exteriors/Modern_Exteriors_16x16/ME_Theme_Sorter_16x16/20_Subway_and_Train_Station_Singles_16x16/ME_Singles_Subway_and_Train_Station_16x16_Single_Poster.png",
+      "breite": 16,
+      "hoehe": 32,
+      "kollision": false,
+      "art": "bild",
+      "zustand": "neu",
+      "stil": "modern",
+      "blick": "unten"
+    },
+    "rv8Plane": {
+      "quelle": "modern-exteriors/Modern_Exteriors_16x16/ME_Theme_Sorter_16x16/20_Subway_and_Train_Station_Singles_16x16/ME_Singles_Subway_and_Train_Station_16x16_Grey_Folded_Blanket.png",
+      "breite": 16,
+      "hoehe": 16,
+      "kollision": false,
+      "art": "deko",
+      "zustand": "gebraucht",
+      "stil": "rustikal",
+      "blick": "keine"
+    },
+    "rv8Duschvorhang": {
+      "quelle": "modern-interiors/1_Interiors/16x16/Theme_Sorter_Black_Shadow_Singles/3_Bathroom_Black_Shadow_Singles_16x16/Bathroom_Black_Shadow_Singles_64.png",
+      "breite": 16,
+      "hoehe": 48,
+      "kollision": true,
+      "art": "dusche",
+      "zustand": "gebraucht",
+      "stil": "klassisch",
+      "blick": "unten"
+    },
+    "rv8Holztisch": {
+      "quelle": "spiel/eigene/pavillon_holztisch.png",
+      "breite": 64,
+      "hoehe": 32,
+      "kollision": true,
+      "art": "tisch",
+      "zustand": "gebraucht",
+      "stil": "klassisch",
+      "blick": "keine"
+    },
+    "rv8Truhe": {
+      "quelle": "modern-farm/Single_Files_16x16/Props_and_Buildings_16x16/Trunk_Closed_1_16x16.png",
+      "breite": 32,
+      "hoehe": 32,
+      "kollision": true,
+      "art": "kiste",
+      "zustand": "gebraucht",
+      "stil": "rustikal",
+      "blick": "keine"
+    },
+    "rv8GlastuerNord": {
+      "quelle": "spiel/eigene/glastuer_nord_doppel.png",
+      "breite": 32,
+      "hoehe": 32,
+      "kollision": false,
+      "art": "tuer",
+      "zustand": "neu",
+      "stil": "klassisch",
+      "blick": "unten"
+    },
+    "rv8GlastuerSued": {
+      "quelle": "spiel/eigene/glastuer_sued_doppel.png",
+      "breite": 32,
+      "hoehe": 16,
+      "kollision": false,
+      "art": "tuer",
+      "zustand": "neu",
+      "stil": "klassisch",
+      "blick": "unten"
+    },
+    "rv8GetraenkeVorn": {
+      "quelle": "modern-exteriors/Modern_Exteriors_16x16/ME_Theme_Sorter_16x16/20_Subway_and_Train_Station_Singles_16x16/ME_Singles_Subway_and_Train_Station_16x16_Drink_Machine_Front.png",
+      "breite": 32,
+      "hoehe": 48,
+      "kollision": true,
+      "art": "automat",
+      "zustand": "gebraucht",
+      "stil": "klassisch",
+      "blick": "unten"
+    },
+    "rv8KaffeeVorn": {
+      "quelle": "modern-exteriors/Modern_Exteriors_16x16/ME_Theme_Sorter_16x16/20_Subway_and_Train_Station_Singles_16x16/ME_Singles_Subway_and_Train_Station_16x16_Coffee_Machine_Front.png",
+      "breite": 32,
+      "hoehe": 48,
+      "kollision": true,
+      "art": "automat",
+      "zustand": "gebraucht",
+      "stil": "klassisch",
+      "blick": "unten"
+    },
+    "rv8Pavillon": {
+      "quelle": "spiel/eigene/riverton_pavillon.png",
+      "breite": 192,
+      "hoehe": 64,
+      "kollision": true,
+      "art": "gebaeude",
+      "zustand": "gebraucht",
+      "stil": "klassisch",
+      "blick": "unten"
+    },
+    "rv8Stellwerk": {
+      "quelle": "modern-exteriors/Modern_Exteriors_16x16/ME_Theme_Sorter_16x16/7_Villas_Singles_16x16/ME_Singles_Villas_16x16_Tree_House_House_1.png",
+      "breite": 64,
+      "hoehe": 64,
+      "kollision": true,
+      "art": "gebaeude",
+      "zustand": "gebraucht",
+      "stil": "klassisch",
+      "blick": "unten"
+    },
+    "rv8Bahnsteigbank": {
+      "quelle": "modern-exteriors/Modern_Exteriors_16x16/ME_Theme_Sorter_16x16/20_Subway_and_Train_Station_Singles_16x16/ME_Singles_Subway_and_Train_Station_16x16_Three_Seats_Green_Bench_Lateral_1.png",
+      "breite": 16,
+      "hoehe": 48,
+      "kollision": true,
+      "art": "bank",
+      "zustand": "gebraucht",
+      "stil": "klassisch",
+      "blick": "rechts"
     }
   }
 }

@@ -250,6 +250,78 @@
       "zustand": "alt",
       "stil": "modern"
     },
+    "wr8Acker6x5": {
+      "quelle": "spiel/eigene/acker_6x5.png",
+      "breite": 96,
+      "hoehe": 80,
+      "kollision": false,
+      "art": "boden",
+      "zustand": "gebraucht",
+      "stil": "laendlich"
+    },
+    "wr8Acker5x5": {
+      "quelle": "spiel/eigene/acker_5x5.png",
+      "breite": 80,
+      "hoehe": 80,
+      "kollision": false,
+      "art": "boden",
+      "zustand": "gebraucht",
+      "stil": "laendlich"
+    },
+    "wr8Acker6x4": {
+      "quelle": "spiel/eigene/acker_6x4.png",
+      "breite": 96,
+      "hoehe": 64,
+      "kollision": false,
+      "art": "boden",
+      "zustand": "gebraucht",
+      "stil": "laendlich"
+    },
+    "wr8Acker4x4": {
+      "quelle": "spiel/eigene/acker_4x4.png",
+      "breite": 64,
+      "hoehe": 64,
+      "kollision": false,
+      "art": "boden",
+      "zustand": "gebraucht",
+      "stil": "laendlich"
+    },
+    "wr8Mais": {
+      "quelle": "modern-farm/Single_Files_16x16/Crops_16x16/Crop_Corn_Ripe_16x16.png",
+      "breite": 16,
+      "hoehe": 32,
+      "kollision": true,
+      "art": "feldfrucht",
+      "zustand": "gebraucht",
+      "stil": "laendlich"
+    },
+    "wr8Karotte": {
+      "quelle": "modern-farm/Single_Files_16x16/Crops_16x16/Crop_Carrot_Ripe_1_16x16.png",
+      "breite": 16,
+      "hoehe": 16,
+      "kollision": true,
+      "art": "feldfrucht",
+      "zustand": "gebraucht",
+      "stil": "laendlich"
+    },
+    "wr8Blumenkohl": {
+      "quelle": "modern-farm/Single_Files_16x16/Crops_16x16/Crop_Cauliflower_Ripe_16x16.png",
+      "breite": 16,
+      "hoehe": 16,
+      "kollision": true,
+      "art": "feldfrucht",
+      "zustand": "gebraucht",
+      "stil": "laendlich"
+    },
+    "wr8BrueckeEisen8": {
+      "quelle": "spiel/eigene/bruecke_eisen_laengs_8.png",
+      "breite": 64,
+      "hoehe": 164,
+      "kollision": false,
+      "art": "bruecke",
+      "zustand": "alt",
+      "stil": "klassisch"
+    },
     "wr5BrueckeLaengs5": {
       "quelle": "spiel/eigene/bruecke_fuss_laengs_5.png",
       "breite": 32,

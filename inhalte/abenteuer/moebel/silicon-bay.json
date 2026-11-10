@@ -1959,6 +1959,313 @@
       "zustand": "neu",
       "stil": "modern",
       "blick": "unten"
+    },
+    "sa9WohnhausE": {
+      "quelle": "spiel/eigene/altstadt_wohnhaus_e.png",
+      "breite": 112,
+      "hoehe": 208,
+      "kollision": true,
+      "art": "gebaeude",
+      "blick": "unten",
+      "zustand": "gebraucht",
+      "stil": "klassisch"
+    },
+    "sa9SchneewallUnten1": {
+      "quelle": "spiel/eigene/schneewall_unten_1.png",
+      "breite": 16,
+      "hoehe": 16,
+      "kollision": false,
+      "art": "markierung",
+      "zustand": "neu",
+      "stil": "klassisch"
+    },
+    "sa9SchneewallOben1": {
+      "quelle": "spiel/eigene/schneewall_oben_1.png",
+      "breite": 16,
+      "hoehe": 16,
+      "kollision": false,
+      "art": "markierung",
+      "zustand": "neu",
+      "stil": "klassisch"
+    },
+    "sa9SchneewallUnten2": {
+      "quelle": "spiel/eigene/schneewall_unten_2.png",
+      "breite": 32,
+      "hoehe": 16,
+      "kollision": false,
+      "art": "markierung",
+      "zustand": "neu",
+      "stil": "klassisch"
+    },
+    "sa9SchneewallOben2": {
+      "quelle": "spiel/eigene/schneewall_oben_2.png",
+      "breite": 32,
+      "hoehe": 16,
+      "kollision": false,
+      "art": "markierung",
+      "zustand": "neu",
+      "stil": "klassisch"
+    },
+    "sa9SchneewallUnten3": {
+      "quelle": "spiel/eigene/schneewall_unten_3.png",
+      "breite": 48,
+      "hoehe": 16,
+      "kollision": false,
+      "art": "markierung",
+      "zustand": "neu",
+      "stil": "klassisch"
+    },
+    "sa9SchneewallOben3": {
+      "quelle": "spiel/eigene/schneewall_oben_3.png",
+      "breite": 48,
+      "hoehe": 16,
+      "kollision": false,
+      "art": "markierung",
+      "zustand": "neu",
+      "stil": "klassisch"
+    },
+    "sa9SchneewallUnten4": {
+      "quelle": "spiel/eigene/schneewall_unten_4.png",
+      "breite": 64,
+      "hoehe": 16,
+      "kollision": false,
+      "art": "markierung",
+      "zustand": "neu",
+      "stil": "klassisch"
+    },
+    "sa9SchneewallOben4": {
+      "quelle": "spiel/eigene/schneewall_oben_4.png",
+      "breite": 64,
+      "hoehe": 16,
+      "kollision": false,
+      "art": "markierung",
+      "zustand": "neu",
+      "stil": "klassisch"
+    },
+    "sa9SchneewallUnten5": {
+      "quelle": "spiel/eigene/schneewall_unten_5.png",
+      "breite": 80,
+      "hoehe": 16,
+      "kollision": false,
+      "art": "markierung",
+      "zustand": "neu",
+      "stil": "klassisch"
+    },
+    "sa9SchneewallOben5": {
+      "quelle": "spiel/eigene/schneewall_oben_5.png",
+      "breite": 80,
+      "hoehe": 16,
+      "kollision": false,
+      "art": "markierung",
+      "zustand": "neu",
+      "stil": "klassisch"
+    },
+    "sa9SchneewallUnten6": {
+      "quelle": "spiel/eigene/schneewall_unten_6.png",
+      "breite": 96,
+      "hoehe": 16,
+      "kollision": false,
+      "art": "markierung",
+      "zustand": "neu",
+      "stil": "klassisch"
+    },
+    "sa9SchneewallOben6": {
+      "quelle": "spiel/eigene/schneewall_oben_6.png",
+      "breite": 96,
+      "hoehe": 16,
+      "kollision": false,
+      "art": "markierung",
+      "zustand": "neu",
+      "stil": "klassisch"
+    },
+    "sa9SchneewallUnten7": {
+      "quelle": "spiel/eigene/schneewall_unten_7.png",
+      "breite": 112,
+      "hoehe": 16,
+      "kollision": false,
+      "art": "markierung",
+      "zustand": "neu",
+      "stil": "klassisch"
+    },
+    "sa9SchneewallOben7": {
+      "quelle": "spiel/eigene/schneewall_oben_7.png",
+      "breite": 112,
+      "hoehe": 16,
+      "kollision": false,
+      "art": "markierung",
+      "zustand": "neu",
+      "stil": "klassisch"
+    },
+    "sa9SchneewallUnten8": {
+      "quelle": "spiel/eigene/schneewall_unten_8.png",
+      "breite": 128,
+      "hoehe": 16,
+      "kollision": false,
+      "art": "markierung",
+      "zustand": "neu",
+      "stil": "klassisch"
+    },
+    "sa9SchneewallOben8": {
+      "quelle": "spiel/eigene/schneewall_oben_8.png",
+      "breite": 128,
+      "hoehe": 16,
+      "kollision": false,
+      "art": "markierung",
+      "zustand": "neu",
+      "stil": "klassisch"
+    },
+    "sa9SchneewallUnten9": {
+      "quelle": "spiel/eigene/schneewall_unten_9.png",
+      "breite": 144,
+      "hoehe": 16,
+      "kollision": false,
+      "art": "markierung",
+      "zustand": "neu",
+      "stil": "klassisch"
+    },
+    "sa9SchneewallOben9": {
+      "quelle": "spiel/eigene/schneewall_oben_9.png",
+      "breite": 144,
+      "hoehe": 16,
+      "kollision": false,
+      "art": "markierung",
+      "zustand": "neu",
+      "stil": "klassisch"
+    },
+    "sa9SchneewallUnten10": {
+      "quelle": "spiel/eigene/schneewall_unten_10.png",
+      "breite": 160,
+      "hoehe": 16,
+      "kollision": false,
+      "art": "markierung",
+      "zustand": "neu",
+      "stil": "klassisch"
+    },
+    "sa9SchneewallOben10": {
+      "quelle": "spiel/eigene/schneewall_oben_10.png",
+      "breite": 160,
+      "hoehe": 16,
+      "kollision": false,
+      "art": "markierung",
+      "zustand": "neu",
+      "stil": "klassisch"
+    },
+    "sa9SchneewallUnten11": {
+      "quelle": "spiel/eigene/schneewall_unten_11.png",
+      "breite": 176,
+      "hoehe": 16,
+      "kollision": false,
+      "art": "markierung",
+      "zustand": "neu",
+      "stil": "klassisch"
+    },
+    "sa9SchneewallOben11": {
+      "quelle": "spiel/eigene/schneewall_oben_11.png",
+      "breite": 176,
+      "hoehe": 16,
+      "kollision": false,
+      "art": "markierung",
+      "zustand": "neu",
+      "stil": "klassisch"
+    },
+    "sa9SchneewallUnten12": {
+      "quelle": "spiel/eigene/schneewall_unten_12.png",
+      "breite": 192,
+      "hoehe": 16,
+      "kollision": false,
+      "art": "markierung",
+      "zustand": "neu",
+      "stil": "klassisch"
+    },
+    "sa9SchneewallOben12": {
+      "quelle": "spiel/eigene/schneewall_oben_12.png",
+      "breite": 192,
+      "hoehe": 16,
+      "kollision": false,
+      "art": "markierung",
+      "zustand": "neu",
+      "stil": "klassisch"
+    },
+    "sa9SchneewallUnten13": {
+      "quelle": "spiel/eigene/schneewall_unten_13.png",
+      "breite": 208,
+      "hoehe": 16,
+      "kollision": false,
+      "art": "markierung",
+      "zustand": "neu",
+      "stil": "klassisch"
+    },
+    "sa9SchneewallOben13": {
+      "quelle": "spiel/eigene/schneewall_oben_13.png",
+      "breite": 208,
+      "hoehe": 16,
+      "kollision": false,
+      "art": "markierung",
+      "zustand": "neu",
+      "stil": "klassisch"
+    },
+    "sa9SchneewallUnten14": {
+      "quelle": "spiel/eigene/schneewall_unten_14.png",
+      "breite": 224,
+      "hoehe": 16,
+      "kollision": false,
+      "art": "markierung",
+      "zustand": "neu",
+      "stil": "klassisch"
+    },
+    "sa9SchneewallOben14": {
+      "quelle": "spiel/eigene/schneewall_oben_14.png",
+      "breite": 224,
+      "hoehe": 16,
+      "kollision": false,
+      "art": "markierung",
+      "zustand": "neu",
+      "stil": "klassisch"
+    },
+    "sa9SchneewallUnten15": {
+      "quelle": "spiel/eigene/schneewall_unten_15.png",
+      "breite": 240,
+      "hoehe": 16,
+      "kollision": false,
+      "art": "markierung",
+      "zustand": "neu",
+      "stil": "klassisch"
+    },
+    "sa9SchneewallOben15": {
+      "quelle": "spiel/eigene/schneewall_oben_15.png",
+      "breite": 240,
+      "hoehe": 16,
+      "kollision": false,
+      "art": "markierung",
+      "zustand": "neu",
+      "stil": "klassisch"
+    },
+    "sa9SchneewallUnten16": {
+      "quelle": "spiel/eigene/schneewall_unten_16.png",
+      "breite": 256,
+      "hoehe": 16,
+      "kollision": false,
+      "art": "markierung",
+      "zustand": "neu",
+      "stil": "klassisch"
+    },
+    "sa9SchneewallOben16": {
+      "quelle": "spiel/eigene/schneewall_oben_16.png",
+      "breite": 256,
+      "hoehe": 16,
+      "kollision": false,
+      "art": "markierung",
+      "zustand": "neu",
+      "stil": "klassisch"
+    },
+    "sa9Zebrastreifen": {
+      "quelle": "spiel/eigene/zebrastreifen_3.png",
+      "breite": 32,
+      "hoehe": 48,
+      "kollision": false,
+      "art": "markierung",
+      "zustand": "neu",
+      "stil": "modern"
     }
   }
 }

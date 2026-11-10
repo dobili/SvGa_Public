@@ -11,7 +11,7 @@
  "tilewidth": 16,
  "tileheight": 16,
  "nextlayerid": 5,
- "nextobjectid": 78,
+ "nextobjectid": 92,
  "layers": [
   {
    "id": 1,
@@ -377,22 +377,6 @@
     4,
     4,
     4,
-    0,
-    0,
-    4,
-    4,
-    4,
-    4,
-    4,
-    4,
-    4,
-    4,
-    0,
-    0,
-    4,
-    4,
-    4,
-    4,
     4,
     4,
     4,
@@ -413,8 +397,8 @@
     4,
     4,
     4,
-    0,
-    0,
+    4,
+    4,
     4,
     4,
     4,
@@ -439,6 +423,22 @@
     4,
     4,
     4,
+    4,
+    4,
+    4,
+    4,
+    4,
+    4,
+    4,
+    4,
+    4,
+    4,
+    4,
+    4,
+    4,
+    4,
+    4,
+    4,
     0,
     0,
     4,
@@ -455,8 +455,8 @@
     4,
     4,
     4,
-    0,
-    0,
+    4,
+    4,
     4,
     4,
     4,
@@ -910,22 +910,6 @@
     0,
     0,
     0,
-    2,
-    2,
-    0,
-    0,
-    0,
-    0,
-    0,
-    0,
-    0,
-    0,
-    2,
-    2,
-    0,
-    0,
-    0,
-    0,
     0,
     0,
     0,
@@ -946,8 +930,8 @@
     0,
     0,
     0,
-    2,
-    2,
+    0,
+    0,
     0,
     0,
     0,
@@ -972,6 +956,22 @@
     0,
     0,
     0,
+    0,
+    0,
+    0,
+    0,
+    0,
+    0,
+    0,
+    0,
+    0,
+    0,
+    0,
+    0,
+    0,
+    0,
+    0,
+    0,
     2,
     2,
     0,
@@ -988,8 +988,8 @@
     0,
     0,
     0,
-    2,
-    2,
+    0,
+    0,
     0,
     0,
     0,
@@ -1727,7 +1727,7 @@
      "id": 8,
      "name": "schueler1",
      "type": "statist",
-     "x": 48,
+     "x": 80,
      "y": 96,
      "width": 16,
      "height": 16,
@@ -1737,17 +1737,17 @@
       {
        "name": "von",
        "type": "string",
-       "value": "3,6"
+       "value": "5,6"
       },
       {
        "name": "bis",
        "type": "string",
-       "value": "3,6"
+       "value": "5,6"
       },
       {
        "name": "tun",
        "type": "string",
-       "value": "spielt am Bildschirm gegen die Maschine"
+       "value": "steht am Stehpult und spielt am Bildschirm gegen die Maschine"
       },
       {
        "name": "wann",
@@ -1760,7 +1760,7 @@
      "id": 9,
      "name": "schueler2",
      "type": "statist",
-     "x": 144,
+     "x": 176,
      "y": 96,
      "width": 16,
      "height": 16,
@@ -1770,17 +1770,17 @@
       {
        "name": "von",
        "type": "string",
-       "value": "9,6"
+       "value": "11,6"
       },
       {
        "name": "bis",
        "type": "string",
-       "value": "9,6"
+       "value": "11,6"
       },
       {
        "name": "tun",
        "type": "string",
-       "value": "spielt am Bildschirm gegen die Maschine"
+       "value": "steht am Stehpult und spielt am Bildschirm gegen die Maschine"
       },
       {
        "name": "wann",
@@ -1793,7 +1793,7 @@
      "id": 10,
      "name": "schueler3",
      "type": "statist",
-     "x": 48,
+     "x": 80,
      "y": 160,
      "width": 16,
      "height": 16,
@@ -1803,17 +1803,17 @@
       {
        "name": "von",
        "type": "string",
-       "value": "3,10"
+       "value": "5,10"
       },
       {
        "name": "bis",
        "type": "string",
-       "value": "3,10"
+       "value": "5,10"
       },
       {
        "name": "tun",
        "type": "string",
-       "value": "spielt am Bildschirm gegen die Maschine"
+       "value": "steht am Stehpult und spielt am Bildschirm gegen die Maschine"
       },
       {
        "name": "wann",
@@ -1826,7 +1826,7 @@
      "id": 11,
      "name": "schueler4",
      "type": "statist",
-     "x": 144,
+     "x": 176,
      "y": 160,
      "width": 16,
      "height": 16,
@@ -1836,17 +1836,17 @@
       {
        "name": "von",
        "type": "string",
-       "value": "9,10"
+       "value": "11,10"
       },
       {
        "name": "bis",
        "type": "string",
-       "value": "9,10"
+       "value": "11,10"
       },
       {
        "name": "tun",
        "type": "string",
-       "value": "spielt am Bildschirm gegen die Maschine"
+       "value": "steht am Stehpult und spielt am Bildschirm gegen die Maschine"
       },
       {
        "name": "wann",
@@ -2143,29 +2143,6 @@
     },
     {
      "id": 24,
-     "name": "sb8StuhlRuecken",
-     "type": "moebel",
-     "x": 88,
-     "y": 80,
-     "width": 16,
-     "height": 32,
-     "rotation": 0,
-     "visible": true,
-     "properties": [
-      {
-       "name": "tiefe",
-       "type": "int",
-       "value": 104
-      },
-      {
-       "name": "kollision",
-       "type": "bool",
-       "value": true
-      }
-     ]
-    },
-    {
-     "id": 25,
      "name": "sb8Bildschirmtisch",
      "type": "moebel",
      "x": 144,
@@ -2188,30 +2165,7 @@
      ]
     },
     {
-     "id": 26,
-     "name": "sb8StuhlRuecken",
-     "type": "moebel",
-     "x": 184,
-     "y": 80,
-     "width": 16,
-     "height": 32,
-     "rotation": 0,
-     "visible": true,
-     "properties": [
-      {
-       "name": "tiefe",
-       "type": "int",
-       "value": 104
-      },
-      {
-       "name": "kollision",
-       "type": "bool",
-       "value": true
-      }
-     ]
-    },
-    {
-     "id": 27,
+     "id": 25,
      "name": "sb8Bildschirmtisch",
      "type": "moebel",
      "x": 48,
@@ -2234,30 +2188,7 @@
      ]
     },
     {
-     "id": 28,
-     "name": "sb8StuhlRuecken",
-     "type": "moebel",
-     "x": 88,
-     "y": 144,
-     "width": 16,
-     "height": 32,
-     "rotation": 0,
-     "visible": true,
-     "properties": [
-      {
-       "name": "tiefe",
-       "type": "int",
-       "value": 168
-      },
-      {
-       "name": "kollision",
-       "type": "bool",
-       "value": true
-      }
-     ]
-    },
-    {
-     "id": 29,
+     "id": 26,
      "name": "sb8Bildschirmtisch",
      "type": "moebel",
      "x": 144,
@@ -2280,11 +2211,11 @@
      ]
     },
     {
-     "id": 30,
+     "id": 27,
      "name": "sb8StuhlRuecken",
      "type": "moebel",
-     "x": 184,
-     "y": 144,
+     "x": 224,
+     "y": 80,
      "width": 16,
      "height": 32,
      "rotation": 0,
@@ -2293,7 +2224,76 @@
       {
        "name": "tiefe",
        "type": "int",
-       "value": 168
+       "value": 104
+      },
+      {
+       "name": "kollision",
+       "type": "bool",
+       "value": true
+      }
+     ]
+    },
+    {
+     "id": 28,
+     "name": "sb8StuhlRuecken",
+     "type": "moebel",
+     "x": 240,
+     "y": 80,
+     "width": 16,
+     "height": 32,
+     "rotation": 0,
+     "visible": true,
+     "properties": [
+      {
+       "name": "tiefe",
+       "type": "int",
+       "value": 104
+      },
+      {
+       "name": "kollision",
+       "type": "bool",
+       "value": true
+      }
+     ]
+    },
+    {
+     "id": 29,
+     "name": "sb8StuhlRuecken",
+     "type": "moebel",
+     "x": 272,
+     "y": 80,
+     "width": 16,
+     "height": 32,
+     "rotation": 0,
+     "visible": true,
+     "properties": [
+      {
+       "name": "tiefe",
+       "type": "int",
+       "value": 104
+      },
+      {
+       "name": "kollision",
+       "type": "bool",
+       "value": true
+      }
+     ]
+    },
+    {
+     "id": 30,
+     "name": "sb8StuhlRuecken",
+     "type": "moebel",
+     "x": 288,
+     "y": 80,
+     "width": 16,
+     "height": 32,
+     "rotation": 0,
+     "visible": true,
+     "properties": [
+      {
+       "name": "tiefe",
+       "type": "int",
+       "value": 104
       },
       {
        "name": "kollision",
@@ -2307,7 +2307,7 @@
      "name": "sb8StuhlRuecken",
      "type": "moebel",
      "x": 224,
-     "y": 80,
+     "y": 112,
      "width": 16,
      "height": 32,
      "rotation": 0,
@@ -2316,7 +2316,7 @@
       {
        "name": "tiefe",
        "type": "int",
-       "value": 104
+       "value": 136
       },
       {
        "name": "kollision",
@@ -2330,7 +2330,7 @@
      "name": "sb8StuhlRuecken",
      "type": "moebel",
      "x": 240,
-     "y": 80,
+     "y": 112,
      "width": 16,
      "height": 32,
      "rotation": 0,
@@ -2339,7 +2339,7 @@
       {
        "name": "tiefe",
        "type": "int",
-       "value": 104
+       "value": 136
       },
       {
        "name": "kollision",
@@ -2353,7 +2353,7 @@
      "name": "sb8StuhlRuecken",
      "type": "moebel",
      "x": 272,
-     "y": 80,
+     "y": 112,
      "width": 16,
      "height": 32,
      "rotation": 0,
@@ -2362,7 +2362,7 @@
       {
        "name": "tiefe",
        "type": "int",
-       "value": 104
+       "value": 136
       },
       {
        "name": "kollision",
@@ -2376,7 +2376,7 @@
      "name": "sb8StuhlRuecken",
      "type": "moebel",
      "x": 288,
-     "y": 80,
+     "y": 112,
      "width": 16,
      "height": 32,
      "rotation": 0,
@@ -2385,7 +2385,7 @@
       {
        "name": "tiefe",
        "type": "int",
-       "value": 104
+       "value": 136
       },
       {
        "name": "kollision",
@@ -2399,7 +2399,7 @@
      "name": "sb8StuhlRuecken",
      "type": "moebel",
      "x": 224,
-     "y": 112,
+     "y": 144,
      "width": 16,
      "height": 32,
      "rotation": 0,
@@ -2408,7 +2408,7 @@
       {
        "name": "tiefe",
        "type": "int",
-       "value": 136
+       "value": 168
       },
       {
        "name": "kollision",
@@ -2422,7 +2422,7 @@
      "name": "sb8StuhlRuecken",
      "type": "moebel",
      "x": 240,
-     "y": 112,
+     "y": 144,
      "width": 16,
      "height": 32,
      "rotation": 0,
@@ -2431,7 +2431,7 @@
       {
        "name": "tiefe",
        "type": "int",
-       "value": 136
+       "value": 168
       },
       {
        "name": "kollision",
@@ -2445,7 +2445,7 @@
      "name": "sb8StuhlRuecken",
      "type": "moebel",
      "x": 272,
-     "y": 112,
+     "y": 144,
      "width": 16,
      "height": 32,
      "rotation": 0,
@@ -2454,7 +2454,7 @@
       {
        "name": "tiefe",
        "type": "int",
-       "value": 136
+       "value": 168
       },
       {
        "name": "kollision",
@@ -2468,7 +2468,7 @@
      "name": "sb8StuhlRuecken",
      "type": "moebel",
      "x": 288,
-     "y": 112,
+     "y": 144,
      "width": 16,
      "height": 32,
      "rotation": 0,
@@ -2477,7 +2477,7 @@
       {
        "name": "tiefe",
        "type": "int",
-       "value": 136
+       "value": 168
       },
       {
        "name": "kollision",
@@ -2488,98 +2488,6 @@
     },
     {
      "id": 39,
-     "name": "sb8StuhlRuecken",
-     "type": "moebel",
-     "x": 224,
-     "y": 144,
-     "width": 16,
-     "height": 32,
-     "rotation": 0,
-     "visible": true,
-     "properties": [
-      {
-       "name": "tiefe",
-       "type": "int",
-       "value": 168
-      },
-      {
-       "name": "kollision",
-       "type": "bool",
-       "value": true
-      }
-     ]
-    },
-    {
-     "id": 40,
-     "name": "sb8StuhlRuecken",
-     "type": "moebel",
-     "x": 240,
-     "y": 144,
-     "width": 16,
-     "height": 32,
-     "rotation": 0,
-     "visible": true,
-     "properties": [
-      {
-       "name": "tiefe",
-       "type": "int",
-       "value": 168
-      },
-      {
-       "name": "kollision",
-       "type": "bool",
-       "value": true
-      }
-     ]
-    },
-    {
-     "id": 41,
-     "name": "sb8StuhlRuecken",
-     "type": "moebel",
-     "x": 272,
-     "y": 144,
-     "width": 16,
-     "height": 32,
-     "rotation": 0,
-     "visible": true,
-     "properties": [
-      {
-       "name": "tiefe",
-       "type": "int",
-       "value": 168
-      },
-      {
-       "name": "kollision",
-       "type": "bool",
-       "value": true
-      }
-     ]
-    },
-    {
-     "id": 42,
-     "name": "sb8StuhlRuecken",
-     "type": "moebel",
-     "x": 288,
-     "y": 144,
-     "width": 16,
-     "height": 32,
-     "rotation": 0,
-     "visible": true,
-     "properties": [
-      {
-       "name": "tiefe",
-       "type": "int",
-       "value": 168
-      },
-      {
-       "name": "kollision",
-       "type": "bool",
-       "value": true
-      }
-     ]
-    },
-    {
-     "id": 43,
      "name": "sb5SesselRund",
      "type": "moebel",
      "x": 336,
@@ -2602,7 +2510,7 @@
      ]
     },
     {
-     "id": 44,
+     "id": 40,
      "name": "sb5SesselRund",
      "type": "moebel",
      "x": 368,
@@ -2625,7 +2533,7 @@
      ]
     },
     {
-     "id": 45,
+     "id": 41,
      "name": "sb8Beistelltisch",
      "type": "moebel",
      "x": 352,
@@ -2648,7 +2556,7 @@
      ]
     },
     {
-     "id": 46,
+     "id": 42,
      "name": "sb8Pflanze",
      "type": "moebel",
      "x": 320,
@@ -2671,7 +2579,7 @@
      ]
     },
     {
-     "id": 47,
+     "id": 43,
      "name": "sb8Pflanze",
      "type": "moebel",
      "x": 384,
@@ -2694,7 +2602,7 @@
      ]
     },
     {
-     "id": 48,
+     "id": 44,
      "name": "sb8Ringlicht",
      "type": "moebel",
      "x": 16,
@@ -2717,7 +2625,7 @@
      ]
     },
     {
-     "id": 49,
+     "id": 45,
      "name": "sb8Glaswand",
      "type": "moebel",
      "x": 16,
@@ -2740,7 +2648,7 @@
      ]
     },
     {
-     "id": 50,
+     "id": 46,
      "name": "sb8Glaswand",
      "type": "moebel",
      "x": 48,
@@ -2763,7 +2671,7 @@
      ]
     },
     {
-     "id": 51,
+     "id": 47,
      "name": "sb8Glaswand",
      "type": "moebel",
      "x": 80,
@@ -2786,7 +2694,7 @@
      ]
     },
     {
-     "id": 52,
+     "id": 48,
      "name": "sb8Glaswand",
      "type": "moebel",
      "x": 144,
@@ -2809,7 +2717,7 @@
      ]
     },
     {
-     "id": 53,
+     "id": 49,
      "name": "sb8Glaswand",
      "type": "moebel",
      "x": 176,
@@ -2832,7 +2740,7 @@
      ]
     },
     {
-     "id": 54,
+     "id": 50,
      "name": "sb8Glaswand",
      "type": "moebel",
      "x": 208,
@@ -2855,7 +2763,7 @@
      ]
     },
     {
-     "id": 55,
+     "id": 51,
      "name": "sb8Glaswand",
      "type": "moebel",
      "x": 240,
@@ -2878,7 +2786,7 @@
      ]
     },
     {
-     "id": 56,
+     "id": 52,
      "name": "sb8Glaswand",
      "type": "moebel",
      "x": 272,
@@ -2901,7 +2809,7 @@
      ]
     },
     {
-     "id": 57,
+     "id": 53,
      "name": "sb8Glaswand",
      "type": "moebel",
      "x": 336,
@@ -2924,7 +2832,7 @@
      ]
     },
     {
-     "id": 58,
+     "id": 54,
      "name": "sb8Glaswand",
      "type": "moebel",
      "x": 368,
@@ -2947,7 +2855,7 @@
      ]
     },
     {
-     "id": 59,
+     "id": 55,
      "name": "sb8Sofa",
      "type": "moebel",
      "x": 32,
@@ -2970,7 +2878,7 @@
      ]
     },
     {
-     "id": 60,
+     "id": 56,
      "name": "sb8Beistelltisch",
      "type": "moebel",
      "x": 32,
@@ -2993,7 +2901,7 @@
      ]
     },
     {
-     "id": 61,
+     "id": 57,
      "name": "sb8StuhlRechts",
      "type": "moebel",
      "x": 16,
@@ -3016,7 +2924,7 @@
      ]
     },
     {
-     "id": 62,
+     "id": 58,
      "name": "sb8StuhlLinks",
      "type": "moebel",
      "x": 64,
@@ -3039,7 +2947,7 @@
      ]
     },
     {
-     "id": 63,
+     "id": 59,
      "name": "sb8Schreibtisch",
      "type": "moebel",
      "x": 160,
@@ -3062,7 +2970,7 @@
      ]
     },
     {
-     "id": 64,
+     "id": 60,
      "name": "pd6Laptop",
      "type": "moebel",
      "x": 176,
@@ -3085,7 +2993,7 @@
      ]
     },
     {
-     "id": 65,
+     "id": 61,
      "name": "sbKuebelbaum",
      "type": "moebel",
      "x": 80,
@@ -3108,7 +3016,7 @@
      ]
     },
     {
-     "id": 66,
+     "id": 62,
      "name": "sb8Pflanze",
      "type": "moebel",
      "x": 144,
@@ -3131,7 +3039,7 @@
      ]
     },
     {
-     "id": 67,
+     "id": 63,
      "name": "sb5Vitrine",
      "type": "moebel",
      "x": 208,
@@ -3154,7 +3062,7 @@
      ]
     },
     {
-     "id": 68,
+     "id": 64,
      "name": "rv5PokalSilber",
      "type": "moebel",
      "x": 216,
@@ -3177,7 +3085,7 @@
      ]
     },
     {
-     "id": 69,
+     "id": 65,
      "name": "sb8Pflanze",
      "type": "moebel",
      "x": 16,
@@ -3200,7 +3108,7 @@
      ]
     },
     {
-     "id": 70,
+     "id": 66,
      "name": "sb8Pflanze",
      "type": "moebel",
      "x": 224,
@@ -3223,7 +3131,7 @@
      ]
     },
     {
-     "id": 71,
+     "id": 67,
      "name": "sb8GlastuerSued",
      "type": "moebel",
      "x": 128,
@@ -3246,7 +3154,7 @@
      ]
     },
     {
-     "id": 72,
+     "id": 68,
      "name": "sb8Schreibtisch",
      "type": "moebel",
      "x": 304,
@@ -3269,7 +3177,7 @@
      ]
     },
     {
-     "id": 73,
+     "id": 69,
      "name": "cc4Brett",
      "type": "moebel",
      "x": 322,
@@ -3292,7 +3200,7 @@
      ]
     },
     {
-     "id": 74,
+     "id": 70,
      "name": "sb8StuhlRuecken",
      "type": "moebel",
      "x": 320,
@@ -3315,8 +3223,8 @@
      ]
     },
     {
-     "id": 75,
-     "name": "rv5Buecherregal",
+     "id": 71,
+     "name": "buecherregal",
      "type": "moebel",
      "x": 368,
      "y": 208,
@@ -3338,7 +3246,7 @@
      ]
     },
     {
-     "id": 76,
+     "id": 72,
      "name": "sb8Pflanze",
      "type": "moebel",
      "x": 272,
@@ -3361,7 +3269,7 @@
      ]
     },
     {
-     "id": 77,
+     "id": 73,
      "name": "sb8Pflanze",
      "type": "moebel",
      "x": 384,
@@ -3375,6 +3283,420 @@
        "name": "tiefe",
        "type": "int",
        "value": 296
+      },
+      {
+       "name": "kollision",
+       "type": "bool",
+       "value": true
+      }
+     ]
+    },
+    {
+     "id": 74,
+     "name": "cr9BordL2",
+     "type": "moebel",
+     "x": 16,
+     "y": 176,
+     "width": 16,
+     "height": 32,
+     "rotation": 0,
+     "visible": true,
+     "properties": [
+      {
+       "name": "tiefe",
+       "type": "int",
+       "value": 1
+      },
+      {
+       "name": "kollision",
+       "type": "bool",
+       "value": false
+      }
+     ]
+    },
+    {
+     "id": 75,
+     "name": "cr9BordL2",
+     "type": "moebel",
+     "x": 48,
+     "y": 176,
+     "width": 16,
+     "height": 32,
+     "rotation": 0,
+     "visible": true,
+     "properties": [
+      {
+       "name": "tiefe",
+       "type": "int",
+       "value": 1
+      },
+      {
+       "name": "kollision",
+       "type": "bool",
+       "value": false
+      }
+     ]
+    },
+    {
+     "id": 76,
+     "name": "cr9BordL2",
+     "type": "moebel",
+     "x": 80,
+     "y": 176,
+     "width": 16,
+     "height": 32,
+     "rotation": 0,
+     "visible": true,
+     "properties": [
+      {
+       "name": "tiefe",
+       "type": "int",
+       "value": 1
+      },
+      {
+       "name": "kollision",
+       "type": "bool",
+       "value": false
+      }
+     ]
+    },
+    {
+     "id": 77,
+     "name": "cr9BordL2",
+     "type": "moebel",
+     "x": 112,
+     "y": 176,
+     "width": 16,
+     "height": 32,
+     "rotation": 0,
+     "visible": true,
+     "properties": [
+      {
+       "name": "tiefe",
+       "type": "int",
+       "value": 1
+      },
+      {
+       "name": "kollision",
+       "type": "bool",
+       "value": false
+      }
+     ]
+    },
+    {
+     "id": 78,
+     "name": "cr9BordL2",
+     "type": "moebel",
+     "x": 144,
+     "y": 176,
+     "width": 16,
+     "height": 32,
+     "rotation": 0,
+     "visible": true,
+     "properties": [
+      {
+       "name": "tiefe",
+       "type": "int",
+       "value": 1
+      },
+      {
+       "name": "kollision",
+       "type": "bool",
+       "value": false
+      }
+     ]
+    },
+    {
+     "id": 79,
+     "name": "cr9BordL2",
+     "type": "moebel",
+     "x": 176,
+     "y": 176,
+     "width": 16,
+     "height": 32,
+     "rotation": 0,
+     "visible": true,
+     "properties": [
+      {
+       "name": "tiefe",
+       "type": "int",
+       "value": 1
+      },
+      {
+       "name": "kollision",
+       "type": "bool",
+       "value": false
+      }
+     ]
+    },
+    {
+     "id": 80,
+     "name": "cr9BordL2",
+     "type": "moebel",
+     "x": 208,
+     "y": 176,
+     "width": 16,
+     "height": 32,
+     "rotation": 0,
+     "visible": true,
+     "properties": [
+      {
+       "name": "tiefe",
+       "type": "int",
+       "value": 1
+      },
+      {
+       "name": "kollision",
+       "type": "bool",
+       "value": false
+      }
+     ]
+    },
+    {
+     "id": 81,
+     "name": "cr9BordL2",
+     "type": "moebel",
+     "x": 240,
+     "y": 176,
+     "width": 16,
+     "height": 32,
+     "rotation": 0,
+     "visible": true,
+     "properties": [
+      {
+       "name": "tiefe",
+       "type": "int",
+       "value": 1
+      },
+      {
+       "name": "kollision",
+       "type": "bool",
+       "value": false
+      }
+     ]
+    },
+    {
+     "id": 82,
+     "name": "cr9BordL2",
+     "type": "moebel",
+     "x": 272,
+     "y": 176,
+     "width": 16,
+     "height": 32,
+     "rotation": 0,
+     "visible": true,
+     "properties": [
+      {
+       "name": "tiefe",
+       "type": "int",
+       "value": 1
+      },
+      {
+       "name": "kollision",
+       "type": "bool",
+       "value": false
+      }
+     ]
+    },
+    {
+     "id": 83,
+     "name": "cr9BordL2",
+     "type": "moebel",
+     "x": 304,
+     "y": 176,
+     "width": 16,
+     "height": 32,
+     "rotation": 0,
+     "visible": true,
+     "properties": [
+      {
+       "name": "tiefe",
+       "type": "int",
+       "value": 1
+      },
+      {
+       "name": "kollision",
+       "type": "bool",
+       "value": false
+      }
+     ]
+    },
+    {
+     "id": 84,
+     "name": "cr9BordL2",
+     "type": "moebel",
+     "x": 336,
+     "y": 176,
+     "width": 16,
+     "height": 32,
+     "rotation": 0,
+     "visible": true,
+     "properties": [
+      {
+       "name": "tiefe",
+       "type": "int",
+       "value": 1
+      },
+      {
+       "name": "kollision",
+       "type": "bool",
+       "value": false
+      }
+     ]
+    },
+    {
+     "id": 85,
+     "name": "cr9BordL2",
+     "type": "moebel",
+     "x": 368,
+     "y": 176,
+     "width": 16,
+     "height": 32,
+     "rotation": 0,
+     "visible": true,
+     "properties": [
+      {
+       "name": "tiefe",
+       "type": "int",
+       "value": 1
+      },
+      {
+       "name": "kollision",
+       "type": "bool",
+       "value": false
+      }
+     ]
+    },
+    {
+     "id": 86,
+     "name": "cr9BordL2",
+     "type": "moebel",
+     "x": 400,
+     "y": 176,
+     "width": 16,
+     "height": 32,
+     "rotation": 0,
+     "visible": true,
+     "properties": [
+      {
+       "name": "tiefe",
+       "type": "int",
+       "value": 1
+      },
+      {
+       "name": "kollision",
+       "type": "bool",
+       "value": false
+      }
+     ]
+    },
+    {
+     "id": 87,
+     "name": "cr9BordQ6",
+     "type": "moebel",
+     "x": 16,
+     "y": 208,
+     "width": 96,
+     "height": 16,
+     "rotation": 0,
+     "visible": true,
+     "properties": [
+      {
+       "name": "tiefe",
+       "type": "int",
+       "value": 1
+      },
+      {
+       "name": "kollision",
+       "type": "bool",
+       "value": false
+      }
+     ]
+    },
+    {
+     "id": 88,
+     "name": "cr9BordQ10",
+     "type": "moebel",
+     "x": 144,
+     "y": 208,
+     "width": 160,
+     "height": 16,
+     "rotation": 0,
+     "visible": true,
+     "properties": [
+      {
+       "name": "tiefe",
+       "type": "int",
+       "value": 1
+      },
+      {
+       "name": "kollision",
+       "type": "bool",
+       "value": false
+      }
+     ]
+    },
+    {
+     "id": 89,
+     "name": "cr9BordQ4",
+     "type": "moebel",
+     "x": 336,
+     "y": 208,
+     "width": 64,
+     "height": 16,
+     "rotation": 0,
+     "visible": true,
+     "properties": [
+      {
+       "name": "tiefe",
+       "type": "int",
+       "value": 1
+      },
+      {
+       "name": "kollision",
+       "type": "bool",
+       "value": false
+      }
+     ]
+    },
+    {
+     "id": 90,
+     "name": "mf7Buecherregal",
+     "type": "moebel",
+     "x": 240,
+     "y": 208,
+     "width": 32,
+     "height": 48,
+     "rotation": 0,
+     "visible": true,
+     "properties": [
+      {
+       "name": "tiefe",
+       "type": "int",
+       "value": 248
+      },
+      {
+       "name": "kollision",
+       "type": "bool",
+       "value": true
+      }
+     ]
+    },
+    {
+     "id": 91,
+     "name": "sb8Pflanze",
+     "type": "moebel",
+     "x": 256,
+     "y": 240,
+     "width": 16,
+     "height": 32,
+     "rotation": 0,
+     "visible": true,
+     "properties": [
+      {
+       "name": "tiefe",
+       "type": "int",
+       "value": 264
       },
       {
        "name": "kollision",

@@ -672,7 +672,7 @@ der Story-Bibel und die Wege.
   (`rv8Baeckerei`, eigenes Bild aus Dach und Ladengeschoss); Wege zur Tür für Stadthaus, Stellwerk,
   Wohnhaus und Pegelhaus, der Güterschuppen steht nicht mehr auf dem Pflaster (10.58); Sandwege im
   Park sind Erdwege mit Rand; Stände mit Obst- und Gemüsekörben, Obstkarren mit Ware, Pommeskarren,
-  an jedem jemand (10.59); Bildschirmtische als Picknicktische mit aufgeklappten Laptops (10.60);
+  an jedem jemand (10.59); Bildschirmtische als weiße Tische, deren Platte ein Bildschirm mit Schachbrett ist (10.60; seit Runde 9 eigenes Bild `rv9Bildschirmtisch`);
   Laternen in festen Abständen; Wasserturm mit Trampelpfad. Tiere im Wasser: nur die Enten
   (`schwimmen`), Möwen fliegen über der Promenade.
 - `riverton.bahnhofshalle` (A): echter Fahrkartenschalter (Tresen mit Schalterfenstern) statt Holztisch
@@ -698,22 +698,38 @@ der Story-Bibel und die Wege.
 
 **Zustände (gebaut, Technik von mittel-2; Liste: `python -m pipeline.abenteuer.zustaende`):**
 
-| Karte                    | Szene                                       | Bedingung                               | was sich ändert                                                    |
-| ------------------------ | ------------------------------------------- | --------------------------------------- | ------------------------------------------------------------------ |
-| `riverton.aussen`        | `riverton-aussen-trainingszentrum`          | `slickAbschiedGesehen` (nach Szene 37)  | Schild von Perfect Move über dem Pavillon, Absperrbock „Gesperrt“  |
-| `riverton.aussen`        | `riverton-aussen-tische-kaputt`             | dazu `nadelIronwood >= 1` (Akt 3)       | zwei Bildschirmtische ohne Laptop (im Winter kaputt)               |
-| `riverton.aussen`        | `riverton-aussen-unterschriften`            | dazu `nadelDesertSprings >= 1` (Akt 4)  | alle Laptops abgebaut, Tisch für Slicks Unterschriftenliste        |
-| `riverton.aussen`        | `riverton-aussen-nachspiel`                 | `nicht ausgangCapitalArenaFinale == ""` | Bildschirmtische und ihre Dächer weg, Schild ab                    |
-| `riverton.bahnhofshalle` | `riverton-bahnhofshalle-slick-auf-der-bank` | `nadelIronwood >= 1` (Akt 3)            | Slicks Brett auf der Bank, Kuriertasche daneben                    |
-| `riverton.bahnhofshalle` | `riverton-bahnhofshalle-plakat`             | `nadelDesertSprings >= 1` (Akt 4)       | Plakat der Landesmeisterschaft neben dem Kiosk                     |
-| `riverton.pavillon`      | `riverton-pavillon-perfect-move`            | `slickAbschiedGesehen` (nach Szene 37)  | Laptops statt Bretter, Limonadenstand weg, Schild von Perfect Move |
-| `riverton.schuppen`      | `riverton-schuppen-ohne-fahrrad`            | `fahrradErhalten` (Szene 33)            | Fahrrad weg, nur die gefaltete Plane                               |
+| Karte                    | Szene                                       | Bedingung                               | was sich ändert                                                                                   |
+| ------------------------ | ------------------------------------------- | --------------------------------------- | ------------------------------------------------------------------------------------------------- |
+| `riverton.aussen`        | `riverton-aussen-trainingszentrum`          | `slickAbschiedGesehen` (nach Szene 37)  | Schild von Perfect Move über dem Pavillon, Absperrbock „Gesperrt“                                 |
+| `riverton.aussen`        | `riverton-aussen-tische-kaputt`             | dazu `nadelIronwood >= 1` (Akt 3)       | zwei Bildschirmtische kaputt (`rv9BildschirmtischKaputt`: Sprung, Flatterband)                    |
+| `riverton.aussen`        | `riverton-aussen-unterschriften`            | dazu `nadelDesertSprings >= 1` (Akt 4)  | Bildschirmtische abgeschaltet, Tisch für Slicks Unterschriftenliste                               |
+| `riverton.aussen`        | `riverton-aussen-nachspiel`                 | `nicht ausgangCapitalArenaFinale == ""` | Bildschirmtische und ihre Dächer weg, Schild ab                                                   |
+| `riverton.bahnhofshalle` | `riverton-bahnhofshalle-slick-auf-der-bank` | `nadelIronwood >= 1` (Akt 3)            | Slicks Brett auf der Bank, Kuriertasche daneben                                                   |
+| `riverton.bahnhofshalle` | `riverton-bahnhofshalle-plakat`             | `nadelDesertSprings >= 1` (Akt 4)       | Plakat der Landesmeisterschaft neben dem Kiosk                                                    |
+| `riverton.pavillon`      | `riverton-pavillon-perfect-move`            | `slickAbschiedGesehen` (nach Szene 37)  | sechs Bildschirmtische statt der langen Tische, Kartons, Rechnerschränke, Schild von Perfect Move |
+| `riverton.schuppen`      | `riverton-schuppen-ohne-fahrrad`            | `fahrradErhalten` (Szene 33)            | Fahrrad weg, nur die gefaltete Plane                                                              |
 
 Nicht als eigene Szene: `schuppenOffen` (außen ist das Vorhängeschloss im Bild nicht zu sehen), der
 Lastkahn am Anleger (Objekt mit `wenn`, sobald es Objekte mit Bedingung gibt), Regen und Schnee
 (Tönung und Partikel; Schneebilder gibt es nicht, ENTSCHEIDUNGEN 10.11.2026), Wohnwagen (nur Szene 37).
 
-### 3.5 Gutachten Runde 8 (10.11.2026, mittel-3): Innenräume
+#### Runde 9: Bildschirmtische (mittel-3, 10.11.2026)
+
+Wunsch des Autors und der Geschichte (Szene 29: „Die Tische machen keine Fehler“; Szene 37: „am
+nächsten Morgen stehen im Pavillon Bildschirmtische“): Die Picknicktische mit Laptops sind ersetzt
+durch `rv9Bildschirmtisch` (3 × 3 Kacheln, weißer Kunststofftisch mit blauem Rahmen und vier Bänken,
+die Platte ist ein Bildschirm mit Schachbrett).
+
+- Park (Grundkarte, `trainingszentrum`, `unterschriften`, `tische-kaputt`): sechs Tische in zwei
+  Reihen (23/27/31 × 47/50), je eine Kachel Luft zur Seite und zum Erdweg. Vier Kacheln Abstand
+  auch nach unten gehen nicht: zwischen Uferweg (Reihe 46) und Parkweg (Reihe 53) liegen nur sechs
+  Reihen Wiese; die Bänke der Tischbilder halten die Reihen trotzdem sichtbar auseinander.
+- `tische-kaputt`: Tisch 2 und 6 als `rv9BildschirmtischKaputt` (Zustand „kaputt“ in der Szene).
+- Der Parkschachtisch des Parkschachspielers steht jetzt auf dem Platz vor dem Pavillon (38, 51).
+- Pavillon `perfect-move`: Auch innen Bildschirmtische, je drei links und rechts statt der langen
+  Holztische mit Laptops (Szene 37); dazu Kartons der Lieferung und zwei Rechnerschränke.
+
+## 3.5 Gutachten Runde 8 (10.11.2026, mittel-3): Innenräume
 
 Behoben (Gutachten `docs/spiel/auftraege/gutachten/riverton-innen.md`):
 

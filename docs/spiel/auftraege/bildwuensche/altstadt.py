@@ -38,6 +38,8 @@ LAEDEN = {
     "wohnhaus_b": ("Roof_4", ["Middle_Floor_7"], "Ground_Floor_Condo_7"),
     "wohnhaus_c": ("Roof_1", ["Middle_Floor_14"], "Ground_Floor_Condo_11"),
     "wohnhaus_d": ("Roof_6", ["Middle_Floor_4"], "Ground_Floor_Condo_3"),
+    # Runde 9 (zweites Gutachten, Punkt 6): Wohnhaus mit Haustür statt der grauen Rückseite.
+    "wohnhaus_e": ("Roof_3", ["Middle_Floor_9"], "Ground_Floor_Condo_8"),
     "laden_a": ("Roof_3", [], "Ground_Floor_Shop_11"),
     "laden_b": ("Roof_5", [], "Ground_Floor_Shop_13"),
     "laden_c": ("Roof_2", [], "Ground_Floor_Shop_21"),

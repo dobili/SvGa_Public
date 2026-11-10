@@ -58,9 +58,9 @@ Stand: 10.11.2026.
 | maple-falls-park                               | 10.11.2026 | `niedrig-1-5.md`                        |
 | cedar-creek-aussen                             | 10.11.2026 | `niedrig-1-5.md`                        |
 | weg-cedar-riverton-zedernwald                  | 10.11.2026 | `niedrig-1-5.md`                        |
-| weg-maple-cedar-landstrasse                    | 10.11.2026 | `niedrig-1-5.md`                        |
+| weg-maple-cedar-landstrasse (mit Zuständen)    | 10.11.2026 | `nachpruefung-neubau-13a5891d.md`       |
 | goldmine-stollen                               | 10.11.2026 | `niedrig-1-5.md`                        |
-| kuerbishof-hof                                 | 10.11.2026 | `niedrig-1-5.md`                        |
+| kuerbishof-hof                                 | 10.11.2026 | `nachpruefung-neubau-13a5891d.md`       |
 | riverton-pavillon                              | 10.11.2026 | `mittel-3-restpunkte.md`                |
 | riverton-wohnwagen                             | 10.11.2026 | `mittel-3-restpunkte.md`                |
 | crossroads-raststaette                         | 10.11.2026 | `mittel-3-restpunkte.md`                |
@@ -68,9 +68,9 @@ Stand: 10.11.2026.
 | weg-summit-crossroads-praerie                  | 10.11.2026 | `mittel-3-restpunkte.md`                |
 | weg-crossroads-pinewood-riesenbaeume           | 10.11.2026 | `mittel-3-restpunkte.md`                |
 | port-delacroix-aussen                          | 10.11.2026 | `mittel-1-runde9-3.md`                  |
-| capital-arena-innenstadt                       | 10.11.2026 | `mittel-1-runde9-3.md`                  |
+| capital-arena-innenstadt                       | 10.11.2026 | `nachpruefung-neubau-13a5891d.md`       |
 | bayou-steg                                     | 10.11.2026 | `mittel-1-runde9-3.md`                  |
-| weg-ghost-capital-leuchtturm                   | 10.11.2026 | `mittel-1-runde9-3.md`                  |
+| weg-ghost-capital-leuchtturm                   | 10.11.2026 | `nachpruefung-neubau-13a5891d.md`       |
 | weg-silicon-delacroix-deich                    | 10.11.2026 | `mittel-1-runde9-3.md`                  |
 | hochebene-felsentuerme                         | 10.11.2026 | `mittel-4-restpunkte.md`                |
 | weg-delacroix-desert-canyonpfad                | 10.11.2026 | `mittel-4-restpunkte.md`                |

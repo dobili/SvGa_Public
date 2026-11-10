@@ -112,3 +112,17 @@ begehbar, mit Finkenzeichen aus Kreide.
 - **Offen für mittel-2:** feste Nachttönung (`toenung`).
 - **Offen:** Mira kommt nach der Versöhnung nicht als Figur dazu; sie steht schon in der Garage von
   Desert Springs.
+
+## 7. Runde 6: Goldmine spielbar (10.11.2026)
+
+- **Sperre S11:** Der Übergang `goldmine` in Ghost Town hat den Dialog `goldmine.eingang` und
+  `wenn: goldmineOffen`. Der Dialog setzt die Variable bei `hatLaterne` und `grabGesehen` (Pruitts
+  Geschichte nach dem Grab). Sonst nennt er den Grund: vernagelt oder zu dunkel.
+- **Nebenquest `goldmine.letzteSchicht`** (klein):
+  - Auf dem Tisch der Kammer liegt das Logbuch von 1866 (`logbuch`).
+  - Funde `logbuch1866` und `grubenlampe1866` (30 Münzen).
+- **Nebenquest `goldmine.lorenendspiel`** (klein): Turmendspiele als Aufgabenrunde an der Lore
+  (`lore`), 20 Münzen.
+- **Goldader** (`goldader`): Fund `goldkorn`.
+- **Offen für mittel-2:** Lichtkreis der Laterne. Pruitt und Juniper bleiben bei ihren Orten (Ghost
+  Town, Weg 10).

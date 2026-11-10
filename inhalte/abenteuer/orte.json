@@ -1551,6 +1551,24 @@
             "karte": "steinbruch.grube",
             "ausloeser": "stollen"
           }
+        },
+        {
+          "name": "finchBauerF",
+          "karte": "steinbruch.grube",
+          "art": "gegenstand",
+          "dialog": "steinbruch.fund_finch_bauer_f"
+        },
+        {
+          "name": "graffiti",
+          "karte": "steinbruch.grube",
+          "art": "dialog",
+          "dialog": "steinbruch.graffiti"
+        },
+        {
+          "name": "bagger",
+          "karte": "steinbruch.grube",
+          "art": "dialog",
+          "dialog": "steinbruch.bagger"
         }
       ]
     },
@@ -1680,6 +1698,24 @@
             "karte": "ghostTown.aussen",
             "ausloeser": "goldmine"
           }
+        },
+        {
+          "name": "logbuch",
+          "karte": "goldmine.stollen",
+          "art": "gegenstand",
+          "dialog": "goldmine.logbuch"
+        },
+        {
+          "name": "lore",
+          "karte": "goldmine.stollen",
+          "art": "dialog",
+          "dialog": "goldmine.lore"
+        },
+        {
+          "name": "goldader",
+          "karte": "goldmine.stollen",
+          "art": "gegenstand",
+          "dialog": "goldmine.goldader"
         }
       ]
     },
@@ -2130,7 +2166,26 @@
           "innen": false
         }
       ],
-      "figuren": [],
+      "figuren": [
+        {
+          "kennung": "pelikaninsel.delphine",
+          "name": "figur.delphine.name",
+          "sprite": "figuren/delphine.png",
+          "dialog": "pelikaninsel.delphine"
+        },
+        {
+          "kennung": "pelikaninsel.oldPete",
+          "name": "figur.oldPete.name",
+          "sprite": "figuren/old-pete.png",
+          "dialog": "pelikaninsel.old_pete"
+        },
+        {
+          "kennung": "pelikaninsel.coral",
+          "name": "figur.coral.name",
+          "sprite": "figuren/coral.png",
+          "dialog": "pelikaninsel.coral"
+        }
+      ],
       "ausloeser": [
         {
           "name": "start",
@@ -2144,6 +2199,30 @@
             "karte": "siliconBay.hafen",
             "ausloeser": "inselfaehre"
           }
+        },
+        {
+          "name": "leuchtfeuer",
+          "karte": "pelikaninsel.dorf",
+          "art": "dialog",
+          "dialog": "pelikaninsel.leuchtfeuer"
+        },
+        {
+          "name": "netze",
+          "karte": "pelikaninsel.dorf",
+          "art": "dialog",
+          "dialog": "pelikaninsel.netze"
+        },
+        {
+          "name": "watt",
+          "karte": "pelikaninsel.dorf",
+          "art": "dialog",
+          "dialog": "pelikaninsel.watt"
+        },
+        {
+          "name": "finchBauerH",
+          "karte": "pelikaninsel.dorf",
+          "art": "gegenstand",
+          "dialog": "pelikaninsel.fund_finch_bauer_h"
         }
       ]
     },
@@ -4023,7 +4102,9 @@
           "ziel": {
             "karte": "goldmine.stollen",
             "ausloeser": "stollenAusgang"
-          }
+          },
+          "dialog": "goldmine.eingang",
+          "wenn": "goldmineOffen"
         }
       ]
     },
@@ -4390,7 +4471,26 @@
           "innen": false
         }
       ],
-      "figuren": [],
+      "figuren": [
+        {
+          "kennung": "kuerbishof.walt",
+          "name": "figur.walt.name",
+          "sprite": "figuren/walt.png",
+          "dialog": "kuerbishof.walt"
+        },
+        {
+          "kennung": "kuerbishof.clover",
+          "name": "figur.clover.name",
+          "sprite": "figuren/clover.png",
+          "dialog": "kuerbishof.clover"
+        },
+        {
+          "kennung": "kuerbishof.omaMiller",
+          "name": "figur.omaMiller.name",
+          "sprite": "figuren/oma-miller.png",
+          "dialog": "kuerbishof.oma_miller"
+        }
+      ],
       "ausloeser": [
         {
           "name": "start",
@@ -4404,6 +4504,24 @@
             "karte": "wegMapleCedar.landstrasse",
             "ausloeser": "kuerbishof"
           }
+        },
+        {
+          "name": "irrgarten",
+          "karte": "kuerbishof.hof",
+          "art": "dialog",
+          "dialog": "kuerbishof.irrgarten"
+        },
+        {
+          "name": "vogelscheuche",
+          "karte": "kuerbishof.hof",
+          "art": "dialog",
+          "dialog": "kuerbishof.vogelscheuche"
+        },
+        {
+          "name": "kuerbiswaage",
+          "karte": "kuerbishof.hof",
+          "art": "dialog",
+          "dialog": "kuerbishof.kuerbiswaage"
         }
       ]
     }

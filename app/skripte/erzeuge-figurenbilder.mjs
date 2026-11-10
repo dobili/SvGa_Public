@@ -176,6 +176,13 @@ const FIGUREN = {
   mags: ["long11", "rot", "h3", "variant18", "614f8a", "", "", "variant08"], // Kreidespringerin im Hinterzimmer, Kühlwagenfahrerin
   "ruth-keene": ["long01", "hellgrau", "h5", "variant20", "d11141", "", "", "variant04"], // Ruth Keene, Funkname Mama Bear
   "mama-bear": ["long01", "hellgrau", "h5", "variant20", "d11141", "", "", "variant04"], // Mama Bear am Funk (Ruth Keene)
+  // Runde 6 (mittel-4): Nebenorte
+  walt: ["short05", "grau", "h2", "variant17", "2663a3", "", "variant02", "variant08"], // Walt Miller, Bauer am Kürbishof
+  clover: ["long02", "kupfer", "h2", "variant10", "00b159", "", "", ""], // Clover Miller, schneidet den Irrgarten
+  "oma-miller": ["long04", "weiss", "h1", "variant08", "d11141", "light03", "", ""], // Oma Miller am Hofladen
+  delphine: ["long15", "schwarz", "h7", "variant18", "2663a3", "", "", "variant04"], // Fischerin Delphine, Pelikaninsel
+  "old-pete": ["short01", "weiss", "h4", "variant21", "5f705c", "", "variant06", "variant04"], // Netzmacher Old Pete
+  coral: ["long08", "dunkelbraun", "h6", "variant05", "ffc425", "", "", ""], // Coral, sammelt Muscheln im Watt
 };
 
 /** Alle Porträtnamen, die die Spieldaten nennen (gegner.json, orte.json). */

@@ -428,6 +428,33 @@
       "buchuebungen": [],
       "themen": ["matt1", "haengend"],
       "anzahl": 3
+    },
+    {
+      "kennung": "kuerbishof.irrgarten",
+      "ort": "kuerbishof",
+      "steller": "kuerbishof.clover",
+      "reihe": false,
+      "buchuebungen": [],
+      "themen": ["matt1"],
+      "anzahl": 3
+    },
+    {
+      "kennung": "pelikaninsel.netze",
+      "ort": "pelikaninsel",
+      "steller": "pelikaninsel.oldPete",
+      "reihe": false,
+      "buchuebungen": [],
+      "themen": ["haengend"],
+      "anzahl": 3
+    },
+    {
+      "kennung": "goldmine.loren",
+      "ort": "goldmine",
+      "steller": "goldmine.pruitt",
+      "reihe": false,
+      "buchuebungen": [],
+      "themen": ["endspiel"],
+      "anzahl": 3
     }
   ]
 }

@@ -337,6 +337,56 @@
       "ort": "wegPinewoodGhost",
       "name": "fund.finchBauerE.name",
       "text": "fund.finchBauerE.text"
+    },
+    {
+      "kennung": "kuerbisschleife",
+      "ort": "kuerbishof",
+      "name": "fund.kuerbisschleife.name",
+      "text": "fund.kuerbisschleife.text"
+    },
+    {
+      "kennung": "finchBauerH",
+      "ort": "pelikaninsel",
+      "name": "fund.finchBauerH.name",
+      "text": "fund.finchBauerH.text"
+    },
+    {
+      "kennung": "treibholzTurm",
+      "ort": "pelikaninsel",
+      "name": "fund.treibholzTurm.name",
+      "text": "fund.treibholzTurm.text"
+    },
+    {
+      "kennung": "muschelCoral",
+      "ort": "pelikaninsel",
+      "name": "fund.muschelCoral.name",
+      "text": "fund.muschelCoral.text"
+    },
+    {
+      "kennung": "finchBauerF",
+      "ort": "steinbruch",
+      "name": "fund.finchBauerF.name",
+      "text": "fund.finchBauerF.text"
+    },
+    {
+      "kennung": "logbuch1866",
+      "ort": "goldmine",
+      "name": "fund.logbuch1866.name",
+      "text": "fund.logbuch1866.text"
+    },
+    {
+      "kennung": "grubenlampe1866",
+      "ort": "goldmine",
+      "name": "fund.grubenlampe1866.name",
+      "text": "fund.grubenlampe1866.text",
+      "muenzen": 30
+    },
+    {
+      "kennung": "goldkorn",
+      "ort": "goldmine",
+      "name": "fund.goldkorn.name",
+      "text": "fund.goldkorn.text",
+      "muenzen": 10
     }
   ]
 }

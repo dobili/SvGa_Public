@@ -1066,12 +1066,28 @@
     {
       "name": "fundOhrstoepsel",
       "feld": [82, 10]
+    },
+    {
+      "name": "ereignisStream",
+      "feld": [71, 8]
+    },
+    {
+      "name": "werbetafelZero",
+      "feld": [10, 14]
+    },
+    {
+      "name": "schildSmartCity",
+      "feld": [136, 17]
     }
   ],
   "figuren": [
     {
       "name": "joggerin",
       "feld": [46, 11]
+    },
+    {
+      "name": "kiki",
+      "feld": [73, 11]
     }
   ],
   "belebung": [

@@ -11,7 +11,7 @@
  "tilewidth": 16,
  "tileheight": 16,
  "nextlayerid": 5,
- "nextobjectid": 31,
+ "nextobjectid": 32,
  "layers": [
   {
    "id": 1,
@@ -944,6 +944,17 @@
     },
     {
      "id": 4,
+     "name": "lochImDach",
+     "type": "ausloeser",
+     "x": 96,
+     "y": 112,
+     "width": 16,
+     "height": 16,
+     "rotation": 0,
+     "visible": true
+    },
+    {
+     "id": 5,
      "name": "pd6Fenster",
      "type": "moebel",
      "x": 64,
@@ -966,7 +977,7 @@
      ]
     },
     {
-     "id": 5,
+     "id": 6,
      "name": "pd6Fenster",
      "type": "moebel",
      "x": 224,
@@ -989,7 +1000,7 @@
      ]
     },
     {
-     "id": 6,
+     "id": 7,
      "name": "pd6KlavierPlane",
      "type": "moebel",
      "x": 16,
@@ -1012,7 +1023,7 @@
      ]
     },
     {
-     "id": 7,
+     "id": 8,
      "name": "pd6KistenTuch",
      "type": "moebel",
      "x": 16,
@@ -1035,7 +1046,7 @@
      ]
     },
     {
-     "id": 8,
+     "id": 9,
      "name": "pd6Bretterstapel",
      "type": "moebel",
      "x": 272,
@@ -1058,7 +1069,7 @@
      ]
     },
     {
-     "id": 9,
+     "id": 10,
      "name": "pd6Truemmer",
      "type": "moebel",
      "x": 240,
@@ -1081,7 +1092,7 @@
      ]
     },
     {
-     "id": 10,
+     "id": 11,
      "name": "pd6Kistenstapel",
      "type": "moebel",
      "x": 16,
@@ -1104,7 +1115,7 @@
      ]
     },
     {
-     "id": 11,
+     "id": 12,
      "name": "pd6DielenLoch",
      "type": "moebel",
      "x": 96,
@@ -1127,7 +1138,7 @@
      ]
     },
     {
-     "id": 12,
+     "id": 13,
      "name": "pd6DielenNass",
      "type": "moebel",
      "x": 192,
@@ -1150,7 +1161,7 @@
      ]
     },
     {
-     "id": 13,
+     "id": 14,
      "name": "pd6DielenNass",
      "type": "moebel",
      "x": 208,
@@ -1173,7 +1184,7 @@
      ]
     },
     {
-     "id": 14,
+     "id": 15,
      "name": "pd6DielenLoch",
      "type": "moebel",
      "x": 64,
@@ -1196,7 +1207,7 @@
      ]
     },
     {
-     "id": 15,
+     "id": 16,
      "name": "pd6PfuetzeKlein",
      "type": "moebel",
      "x": 144,
@@ -1219,7 +1230,7 @@
      ]
     },
     {
-     "id": 16,
+     "id": 17,
      "name": "pd6RahmenKaputt",
      "type": "moebel",
      "x": 144,
@@ -1242,7 +1253,7 @@
      ]
     },
     {
-     "id": 17,
+     "id": 18,
      "name": "pd6Splitter",
      "type": "moebel",
      "x": 176,
@@ -1265,7 +1276,7 @@
      ]
     },
     {
-     "id": 18,
+     "id": 19,
      "name": "pd6Splitter",
      "type": "moebel",
      "x": 112,
@@ -1288,7 +1299,7 @@
      ]
     },
     {
-     "id": 19,
+     "id": 20,
      "name": "pd6Saegebock",
      "type": "moebel",
      "x": 192,
@@ -1311,7 +1322,7 @@
      ]
     },
     {
-     "id": 20,
+     "id": 21,
      "name": "pd6Holzscheite",
      "type": "moebel",
      "x": 64,
@@ -1334,7 +1345,7 @@
      ]
     },
     {
-     "id": 21,
+     "id": 22,
      "name": "pd6Truemmer2",
      "type": "moebel",
      "x": 272,
@@ -1357,7 +1368,7 @@
      ]
     },
     {
-     "id": 22,
+     "id": 23,
      "name": "pd6Kanister",
      "type": "moebel",
      "x": 288,
@@ -1380,7 +1391,7 @@
      ]
     },
     {
-     "id": 23,
+     "id": 24,
      "name": "pd6KistenTuch",
      "type": "moebel",
      "x": 112,
@@ -1403,7 +1414,7 @@
      ]
     },
     {
-     "id": 24,
+     "id": 25,
      "name": "pd6StuhlRechts",
      "type": "moebel",
      "x": 224,
@@ -1426,7 +1437,7 @@
      ]
     },
     {
-     "id": 25,
+     "id": 26,
      "name": "pd6Kiste",
      "type": "moebel",
      "x": 208,
@@ -1449,7 +1460,7 @@
      ]
     },
     {
-     "id": 26,
+     "id": 27,
      "name": "pd6Kiste",
      "type": "moebel",
      "x": 224,
@@ -1472,7 +1483,7 @@
      ]
     },
     {
-     "id": 27,
+     "id": 28,
      "name": "pd6Bretterstapel",
      "type": "moebel",
      "x": 240,
@@ -1495,7 +1506,7 @@
      ]
     },
     {
-     "id": 28,
+     "id": 29,
      "name": "pd6Truemmer",
      "type": "moebel",
      "x": 128,
@@ -1518,7 +1529,7 @@
      ]
     },
     {
-     "id": 29,
+     "id": 30,
      "name": "pd6Kistenstapel",
      "type": "moebel",
      "x": 80,
@@ -1541,7 +1552,7 @@
      ]
     },
     {
-     "id": 30,
+     "id": 31,
      "name": "pd6Tuer",
      "type": "moebel",
      "x": 160,

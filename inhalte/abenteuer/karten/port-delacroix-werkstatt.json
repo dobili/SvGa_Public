@@ -11,7 +11,7 @@
  "tilewidth": 16,
  "tileheight": 16,
  "nextlayerid": 5,
- "nextobjectid": 22,
+ "nextobjectid": 24,
  "layers": [
   {
    "id": 1,
@@ -884,6 +884,28 @@
     },
     {
      "id": 4,
+     "name": "fotoWand",
+     "type": "ausloeser",
+     "x": 224,
+     "y": 48,
+     "width": 16,
+     "height": 16,
+     "rotation": 0,
+     "visible": true
+    },
+    {
+     "id": 5,
+     "name": "laptop",
+     "type": "ausloeser",
+     "x": 240,
+     "y": 80,
+     "width": 16,
+     "height": 16,
+     "rotation": 0,
+     "visible": true
+    },
+    {
+     "id": 6,
      "name": "henri",
      "type": "figur",
      "x": 192,
@@ -894,7 +916,7 @@
      "visible": true
     },
     {
-     "id": 5,
+     "id": 7,
      "name": "celeste",
      "type": "figur",
      "x": 224,
@@ -905,7 +927,7 @@
      "visible": true
     },
     {
-     "id": 6,
+     "id": 8,
      "name": "pd6Fenster",
      "type": "moebel",
      "x": 80,
@@ -928,7 +950,7 @@
      ]
     },
     {
-     "id": 7,
+     "id": 9,
      "name": "pd6Hobelbank",
      "type": "moebel",
      "x": 112,
@@ -951,7 +973,7 @@
      ]
     },
     {
-     "id": 8,
+     "id": 10,
      "name": "pd6Fenster",
      "type": "moebel",
      "x": 192,
@@ -974,7 +996,7 @@
      ]
     },
     {
-     "id": 9,
+     "id": 11,
      "name": "pd6FotoAlt",
      "type": "moebel",
      "x": 224,
@@ -997,7 +1019,7 @@
      ]
     },
     {
-     "id": 10,
+     "id": 12,
      "name": "pd6Werkzeugschrank",
      "type": "moebel",
      "x": 272,
@@ -1020,7 +1042,7 @@
      ]
     },
     {
-     "id": 11,
+     "id": 13,
      "name": "pd6KlavierHell",
      "type": "moebel",
      "x": 16,
@@ -1043,7 +1065,7 @@
      ]
     },
     {
-     "id": 12,
+     "id": 14,
      "name": "pd6KlavierRot",
      "type": "moebel",
      "x": 16,
@@ -1066,7 +1088,7 @@
      ]
     },
     {
-     "id": 13,
+     "id": 15,
      "name": "pd6KlavierPlane",
      "type": "moebel",
      "x": 48,
@@ -1089,7 +1111,7 @@
      ]
     },
     {
-     "id": 14,
+     "id": 16,
      "name": "pd6Fluegel",
      "type": "moebel",
      "x": 240,
@@ -1112,7 +1134,7 @@
      ]
     },
     {
-     "id": 15,
+     "id": 17,
      "name": "pd6Laptop",
      "type": "moebel",
      "x": 256,
@@ -1135,7 +1157,7 @@
      ]
     },
     {
-     "id": 16,
+     "id": 18,
      "name": "pd6Saegebock",
      "type": "moebel",
      "x": 80,
@@ -1158,7 +1180,7 @@
      ]
     },
     {
-     "id": 17,
+     "id": 19,
      "name": "pd6Bretterstapel",
      "type": "moebel",
      "x": 272,
@@ -1181,7 +1203,7 @@
      ]
     },
     {
-     "id": 18,
+     "id": 20,
      "name": "pd6Holzscheite",
      "type": "moebel",
      "x": 192,
@@ -1204,7 +1226,7 @@
      ]
     },
     {
-     "id": 19,
+     "id": 21,
      "name": "pd6Kanister",
      "type": "moebel",
      "x": 64,
@@ -1227,7 +1249,7 @@
      ]
     },
     {
-     "id": 20,
+     "id": 22,
      "name": "pd6Fussmatte",
      "type": "moebel",
      "x": 160,
@@ -1250,7 +1272,7 @@
      ]
     },
     {
-     "id": 21,
+     "id": 23,
      "name": "pd6Tuer",
      "type": "moebel",
      "x": 160,

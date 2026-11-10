@@ -107,6 +107,8 @@ export function partieeinstellungAus(
       kennung: auftrag.kennung,
       ...(auftrag.abgelenktAb ? { abgelenktAb: auftrag.abgelenktAb } : {}),
       ...(auftrag.variante ? { variante: auftrag.variante } : {}),
+      ...(auftrag.kandidaten ? { kandidaten: auftrag.kandidaten } : {}),
+      ...(auftrag.buchbruch ? { buchbruch: auftrag.buchbruch } : {}),
     },
   };
 }

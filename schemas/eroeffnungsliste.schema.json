@@ -8,7 +8,10 @@
   "required": ["schemaVersion", "quelle", "lizenz", "stellungen"],
   "properties": {
     "schemaVersion": { "const": 2 },
-    "quelle": { "description": "Herkunft der Liste mit Adresse", "type": "string" },
+    "quelle": {
+      "description": "Herkunft der Liste mit Adresse",
+      "type": "string"
+    },
     "lizenz": { "type": "string" },
     "stellungen": {
       "description": "Je Stellung: Schlüssel (Figurenstellung, Zugrecht, Rochaderechte wie im Eröffnungsindex der App), ECO-Schlüssel, Name (Familie auf Deutsch, Variante englisch), Zugfolge ab der Grundstellung (englische Kurznotation ohne Zugnummern, durch Leerzeichen getrennt; seit Version 2 für den Theoriebaum)",

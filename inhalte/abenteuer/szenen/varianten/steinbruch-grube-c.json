@@ -499,6 +499,18 @@
     {
       "name": "stollen",
       "feld": [57, 42]
+    },
+    {
+      "name": "finchBauerF",
+      "feld": [59, 42]
+    },
+    {
+      "name": "graffiti",
+      "feld": [60, 25]
+    },
+    {
+      "name": "bagger",
+      "feld": [3, 31]
     }
   ],
   "figuren": [],

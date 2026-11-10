@@ -11,7 +11,7 @@
  "tilewidth": 16,
  "tileheight": 16,
  "nextlayerid": 5,
- "nextobjectid": 163,
+ "nextobjectid": 164,
  "layers": [
   {
    "id": 1,
@@ -14145,6 +14145,17 @@
     },
     {
      "id": 15,
+     "name": "bauzaun",
+     "type": "ausloeser",
+     "x": 640,
+     "y": 672,
+     "width": 16,
+     "height": 16,
+     "rotation": 0,
+     "visible": true
+    },
+    {
+     "id": 16,
      "name": "batiste",
      "type": "figur",
      "x": 864,
@@ -14155,7 +14166,7 @@
      "visible": true
     },
     {
-     "id": 16,
+     "id": 17,
      "name": "arceneaux",
      "type": "figur",
      "x": 576,
@@ -14166,7 +14177,7 @@
      "visible": true
     },
     {
-     "id": 17,
+     "id": 18,
      "name": "blaeser",
      "type": "figur",
      "x": 496,
@@ -14177,7 +14188,7 @@
      "visible": true
     },
     {
-     "id": 18,
+     "id": 19,
      "name": "handwerker",
      "type": "statist",
      "x": 192,
@@ -14215,7 +14226,7 @@
      ]
     },
     {
-     "id": 19,
+     "id": 20,
      "name": "sandsackhelfer",
      "type": "statist",
      "x": 320,
@@ -14253,7 +14264,7 @@
      ]
     },
     {
-     "id": 20,
+     "id": 21,
      "name": "ballkinder",
      "type": "statist",
      "x": 400,
@@ -14286,7 +14297,7 @@
      ]
     },
     {
-     "id": 21,
+     "id": 22,
      "name": "brieftraegerin",
      "type": "statist",
      "x": 128,
@@ -14324,7 +14335,7 @@
      ]
     },
     {
-     "id": 22,
+     "id": 23,
      "name": "rentner",
      "type": "statist",
      "x": 480,
@@ -14367,7 +14378,7 @@
      ]
     },
     {
-     "id": 23,
+     "id": 24,
      "name": "fischer",
      "type": "statist",
      "x": 864,
@@ -14405,7 +14416,7 @@
      ]
     },
     {
-     "id": 24,
+     "id": 25,
      "name": "mutter",
      "type": "statist",
      "x": 704,
@@ -14443,7 +14454,7 @@
      ]
     },
     {
-     "id": 25,
+     "id": 26,
      "name": "grossmutter",
      "type": "statist",
      "x": 384,
@@ -14481,7 +14492,7 @@
      ]
     },
     {
-     "id": 26,
+     "id": 27,
      "name": "bootsbauer",
      "type": "statist",
      "x": 1088,
@@ -14519,7 +14530,7 @@
      ]
     },
     {
-     "id": 27,
+     "id": 28,
      "name": "gummistiefel",
      "type": "statist",
      "x": 1040,
@@ -14557,7 +14568,7 @@
      ]
     },
     {
-     "id": 28,
+     "id": 29,
      "name": "kehrerin",
      "type": "statist",
      "x": 736,
@@ -14590,7 +14601,7 @@
      ]
     },
     {
-     "id": 29,
+     "id": 30,
      "name": "angler",
      "type": "statist",
      "x": 1024,
@@ -14623,7 +14634,7 @@
      ]
     },
     {
-     "id": 30,
+     "id": 31,
      "name": "pelikane",
      "type": "tier",
      "x": 880,
@@ -14651,7 +14662,7 @@
      ]
     },
     {
-     "id": 31,
+     "id": 32,
      "name": "moewen",
      "type": "tier",
      "x": 960,
@@ -14679,7 +14690,7 @@
      ]
     },
     {
-     "id": 32,
+     "id": 33,
      "name": "reiher",
      "type": "tier",
      "x": 880,
@@ -14707,7 +14718,7 @@
      ]
     },
     {
-     "id": 33,
+     "id": 34,
      "name": "katze",
      "type": "tier",
      "x": 864,
@@ -14735,7 +14746,7 @@
      ]
     },
     {
-     "id": 34,
+     "id": 35,
      "name": "hund",
      "type": "tier",
      "x": 480,
@@ -14763,7 +14774,7 @@
      ]
     },
     {
-     "id": 35,
+     "id": 36,
      "name": "pd6Prellbock",
      "type": "moebel",
      "x": 16,
@@ -14786,7 +14797,7 @@
      ]
     },
     {
-     "id": 36,
+     "id": 37,
      "name": "pd6Gleis",
      "type": "moebel",
      "x": 16,
@@ -14809,7 +14820,7 @@
      ]
     },
     {
-     "id": 37,
+     "id": 38,
      "name": "pd6Gleis",
      "type": "moebel",
      "x": 16,
@@ -14832,7 +14843,7 @@
      ]
     },
     {
-     "id": 38,
+     "id": 39,
      "name": "pd6Gleis",
      "type": "moebel",
      "x": 16,
@@ -14855,7 +14866,7 @@
      ]
     },
     {
-     "id": 39,
+     "id": 40,
      "name": "pd6Gleis",
      "type": "moebel",
      "x": 16,
@@ -14878,7 +14889,7 @@
      ]
     },
     {
-     "id": 40,
+     "id": 41,
      "name": "pd6Gleis",
      "type": "moebel",
      "x": 16,
@@ -14901,7 +14912,7 @@
      ]
     },
     {
-     "id": 41,
+     "id": 42,
      "name": "pd6Gleis",
      "type": "moebel",
      "x": 16,
@@ -14924,7 +14935,7 @@
      ]
     },
     {
-     "id": 42,
+     "id": 43,
      "name": "pd6Gleis",
      "type": "moebel",
      "x": 16,
@@ -14947,7 +14958,7 @@
      ]
     },
     {
-     "id": 43,
+     "id": 44,
      "name": "pd6Gleis",
      "type": "moebel",
      "x": 16,
@@ -14970,7 +14981,7 @@
      ]
     },
     {
-     "id": 44,
+     "id": 45,
      "name": "pd6Gleis",
      "type": "moebel",
      "x": 16,
@@ -14993,7 +15004,7 @@
      ]
     },
     {
-     "id": 45,
+     "id": 46,
      "name": "pd6Gleis",
      "type": "moebel",
      "x": 16,
@@ -15016,7 +15027,7 @@
      ]
     },
     {
-     "id": 46,
+     "id": 47,
      "name": "pd6Gleis",
      "type": "moebel",
      "x": 16,
@@ -15039,7 +15050,7 @@
      ]
     },
     {
-     "id": 47,
+     "id": 48,
      "name": "pd6Gleis",
      "type": "moebel",
      "x": 16,
@@ -15062,7 +15073,7 @@
      ]
     },
     {
-     "id": 48,
+     "id": 49,
      "name": "pd6Gleis",
      "type": "moebel",
      "x": 16,
@@ -15085,7 +15096,7 @@
      ]
     },
     {
-     "id": 49,
+     "id": 50,
      "name": "pd6Gleis",
      "type": "moebel",
      "x": 16,
@@ -15108,7 +15119,7 @@
      ]
     },
     {
-     "id": 50,
+     "id": 51,
      "name": "pd6Gleis",
      "type": "moebel",
      "x": 16,
@@ -15131,7 +15142,7 @@
      ]
     },
     {
-     "id": 51,
+     "id": 52,
      "name": "pd6Gleis",
      "type": "moebel",
      "x": 16,
@@ -15154,7 +15165,7 @@
      ]
     },
     {
-     "id": 52,
+     "id": 53,
      "name": "pd6Gleis",
      "type": "moebel",
      "x": 16,
@@ -15177,7 +15188,7 @@
      ]
     },
     {
-     "id": 53,
+     "id": 54,
      "name": "pd6Gleis",
      "type": "moebel",
      "x": 16,
@@ -15200,7 +15211,7 @@
      ]
     },
     {
-     "id": 54,
+     "id": 55,
      "name": "pd6Gleis",
      "type": "moebel",
      "x": 16,
@@ -15223,7 +15234,7 @@
      ]
     },
     {
-     "id": 55,
+     "id": 56,
      "name": "pd6Gleis",
      "type": "moebel",
      "x": 16,
@@ -15246,7 +15257,7 @@
      ]
     },
     {
-     "id": 56,
+     "id": 57,
      "name": "pd6Gleis",
      "type": "moebel",
      "x": 16,
@@ -15269,7 +15280,7 @@
      ]
     },
     {
-     "id": 57,
+     "id": 58,
      "name": "pd6Gleis",
      "type": "moebel",
      "x": 16,
@@ -15292,7 +15303,7 @@
      ]
     },
     {
-     "id": 58,
+     "id": 59,
      "name": "pd6Gleis",
      "type": "moebel",
      "x": 16,
@@ -15315,7 +15326,7 @@
      ]
     },
     {
-     "id": 59,
+     "id": 60,
      "name": "pd6Gleis",
      "type": "moebel",
      "x": 16,
@@ -15338,7 +15349,7 @@
      ]
     },
     {
-     "id": 60,
+     "id": 61,
      "name": "pd6Gleis",
      "type": "moebel",
      "x": 16,
@@ -15361,7 +15372,7 @@
      ]
     },
     {
-     "id": 61,
+     "id": 62,
      "name": "pd6Gleis",
      "type": "moebel",
      "x": 16,
@@ -15384,7 +15395,7 @@
      ]
     },
     {
-     "id": 62,
+     "id": 63,
      "name": "pd6Gleis",
      "type": "moebel",
      "x": 16,
@@ -15407,7 +15418,7 @@
      ]
     },
     {
-     "id": 63,
+     "id": 64,
      "name": "pd6Gleis",
      "type": "moebel",
      "x": 16,
@@ -15430,7 +15441,7 @@
      ]
     },
     {
-     "id": 64,
+     "id": 65,
      "name": "pd6Gleis",
      "type": "moebel",
      "x": 16,
@@ -15453,7 +15464,7 @@
      ]
     },
     {
-     "id": 65,
+     "id": 66,
      "name": "pd6Gleis",
      "type": "moebel",
      "x": 16,
@@ -15476,7 +15487,7 @@
      ]
     },
     {
-     "id": 66,
+     "id": 67,
      "name": "pd6Gleis",
      "type": "moebel",
      "x": 16,
@@ -15499,7 +15510,7 @@
      ]
     },
     {
-     "id": 67,
+     "id": 68,
      "name": "pd6Gleis",
      "type": "moebel",
      "x": 16,
@@ -15522,7 +15533,7 @@
      ]
     },
     {
-     "id": 68,
+     "id": 69,
      "name": "pd6Gleis",
      "type": "moebel",
      "x": 16,
@@ -15545,7 +15556,7 @@
      ]
     },
     {
-     "id": 69,
+     "id": 70,
      "name": "pd6Gleis",
      "type": "moebel",
      "x": 16,
@@ -15568,7 +15579,7 @@
      ]
     },
     {
-     "id": 70,
+     "id": 71,
      "name": "pd6Gleis",
      "type": "moebel",
      "x": 16,
@@ -15591,7 +15602,7 @@
      ]
     },
     {
-     "id": 71,
+     "id": 72,
      "name": "pd6Gleis",
      "type": "moebel",
      "x": 16,
@@ -15614,7 +15625,7 @@
      ]
     },
     {
-     "id": 72,
+     "id": 73,
      "name": "pd6Gleis",
      "type": "moebel",
      "x": 16,
@@ -15637,7 +15648,7 @@
      ]
     },
     {
-     "id": 73,
+     "id": 74,
      "name": "pd6Gleis",
      "type": "moebel",
      "x": 16,
@@ -15660,7 +15671,7 @@
      ]
     },
     {
-     "id": 74,
+     "id": 75,
      "name": "pd6Gleis",
      "type": "moebel",
      "x": 16,
@@ -15683,7 +15694,7 @@
      ]
     },
     {
-     "id": 75,
+     "id": 76,
      "name": "pd6Gleis",
      "type": "moebel",
      "x": 16,
@@ -15706,7 +15717,7 @@
      ]
     },
     {
-     "id": 76,
+     "id": 77,
      "name": "pd6Gleis",
      "type": "moebel",
      "x": 16,
@@ -15729,7 +15740,7 @@
      ]
     },
     {
-     "id": 77,
+     "id": 78,
      "name": "pd6Gleis",
      "type": "moebel",
      "x": 16,
@@ -15752,7 +15763,7 @@
      ]
     },
     {
-     "id": 78,
+     "id": 79,
      "name": "pd6Gleis",
      "type": "moebel",
      "x": 16,
@@ -15775,33 +15786,10 @@
      ]
     },
     {
-     "id": 79,
-     "name": "pd6SandsaeckeReihe",
-     "type": "moebel",
-     "x": 48,
-     "y": 112,
-     "width": 32,
-     "height": 16,
-     "rotation": 0,
-     "visible": true,
-     "properties": [
-      {
-       "name": "tiefe",
-       "type": "int",
-       "value": 120
-      },
-      {
-       "name": "kollision",
-       "type": "bool",
-       "value": true
-      }
-     ]
-    },
-    {
      "id": 80,
      "name": "pd6SandsaeckeReihe",
      "type": "moebel",
-     "x": 144,
+     "x": 48,
      "y": 112,
      "width": 32,
      "height": 16,
@@ -15824,7 +15812,7 @@
      "id": 81,
      "name": "pd6SandsaeckeReihe",
      "type": "moebel",
-     "x": 256,
+     "x": 144,
      "y": 112,
      "width": 32,
      "height": 16,
@@ -15847,7 +15835,7 @@
      "id": 82,
      "name": "pd6SandsaeckeReihe",
      "type": "moebel",
-     "x": 352,
+     "x": 256,
      "y": 112,
      "width": 32,
      "height": 16,
@@ -15870,7 +15858,7 @@
      "id": 83,
      "name": "pd6SandsaeckeReihe",
      "type": "moebel",
-     "x": 560,
+     "x": 352,
      "y": 112,
      "width": 32,
      "height": 16,
@@ -15893,7 +15881,7 @@
      "id": 84,
      "name": "pd6SandsaeckeReihe",
      "type": "moebel",
-     "x": 656,
+     "x": 560,
      "y": 112,
      "width": 32,
      "height": 16,
@@ -15916,7 +15904,7 @@
      "id": 85,
      "name": "pd6SandsaeckeReihe",
      "type": "moebel",
-     "x": 752,
+     "x": 656,
      "y": 112,
      "width": 32,
      "height": 16,
@@ -15937,6 +15925,29 @@
     },
     {
      "id": 86,
+     "name": "pd6SandsaeckeReihe",
+     "type": "moebel",
+     "x": 752,
+     "y": 112,
+     "width": 32,
+     "height": 16,
+     "rotation": 0,
+     "visible": true,
+     "properties": [
+      {
+       "name": "tiefe",
+       "type": "int",
+       "value": 120
+      },
+      {
+       "name": "kollision",
+       "type": "bool",
+       "value": true
+      }
+     ]
+    },
+    {
+     "id": 87,
      "name": "pd6Werkhalle",
      "type": "moebel",
      "x": 320,
@@ -15959,7 +15970,7 @@
      ]
     },
     {
-     "id": 87,
+     "id": 88,
      "name": "pd6Werkhalle",
      "type": "moebel",
      "x": 416,
@@ -15982,7 +15993,7 @@
      ]
     },
     {
-     "id": 88,
+     "id": 89,
      "name": "pd6SchildTurnhalle",
      "type": "moebel",
      "x": 368,
@@ -16005,7 +16016,7 @@
      ]
     },
     {
-     "id": 89,
+     "id": 90,
      "name": "pd6HausGross",
      "type": "moebel",
      "x": 128,
@@ -16028,7 +16039,7 @@
      ]
     },
     {
-     "id": 90,
+     "id": 91,
      "name": "pd6PlaneDach",
      "type": "moebel",
      "x": 198,
@@ -16051,7 +16062,7 @@
      ]
     },
     {
-     "id": 91,
+     "id": 92,
      "name": "pd6Werkstatt",
      "type": "moebel",
      "x": 592,
@@ -16074,7 +16085,7 @@
      ]
     },
     {
-     "id": 92,
+     "id": 93,
      "name": "pd6PlaneDachKlein",
      "type": "moebel",
      "x": 626,
@@ -16097,7 +16108,7 @@
      ]
     },
     {
-     "id": 93,
+     "id": 94,
      "name": "pd6Gebaeckstand",
      "type": "moebel",
      "x": 528,
@@ -16120,7 +16131,7 @@
      ]
     },
     {
-     "id": 94,
+     "id": 95,
      "name": "pd6Rohbau",
      "type": "moebel",
      "x": 352,
@@ -16143,7 +16154,7 @@
      ]
     },
     {
-     "id": 95,
+     "id": 96,
      "name": "pd6Zelt",
      "type": "moebel",
      "x": 336,
@@ -16166,7 +16177,7 @@
      ]
     },
     {
-     "id": 96,
+     "id": 97,
      "name": "pd6ZeltFlach",
      "type": "moebel",
      "x": 432,
@@ -16189,7 +16200,7 @@
      ]
     },
     {
-     "id": 97,
+     "id": 98,
      "name": "pd6Musikhaus",
      "type": "moebel",
      "x": 624,
@@ -16212,7 +16223,7 @@
      ]
     },
     {
-     "id": 98,
+     "id": 99,
      "name": "pd6PlaneDach",
      "type": "moebel",
      "x": 664,
@@ -16235,7 +16246,7 @@
      ]
     },
     {
-     "id": 99,
+     "id": 100,
      "name": "pd6PlaneDachKlein",
      "type": "moebel",
      "x": 772,
@@ -16258,7 +16269,7 @@
      ]
     },
     {
-     "id": 100,
+     "id": 101,
      "name": "pd6Kiste",
      "type": "moebel",
      "x": 496,
@@ -16281,7 +16292,7 @@
      ]
     },
     {
-     "id": 101,
+     "id": 102,
      "name": "pd6Werkstatt",
      "type": "moebel",
      "x": 128,
@@ -16304,7 +16315,7 @@
      ]
     },
     {
-     "id": 102,
+     "id": 103,
      "name": "pd6HausGross",
      "type": "moebel",
      "x": 352,
@@ -16327,7 +16338,7 @@
      ]
     },
     {
-     "id": 103,
+     "id": 104,
      "name": "pd6PlaneDachKlein",
      "type": "moebel",
      "x": 416,
@@ -16350,7 +16361,7 @@
      ]
     },
     {
-     "id": 104,
+     "id": 105,
      "name": "pd6HausGross",
      "type": "moebel",
      "x": 512,
@@ -16373,7 +16384,7 @@
      ]
     },
     {
-     "id": 105,
+     "id": 106,
      "name": "pd6Fischerboot",
      "type": "moebel",
      "x": 896,
@@ -16396,7 +16407,7 @@
      ]
     },
     {
-     "id": 106,
+     "id": 107,
      "name": "pd6Ruderboot",
      "type": "moebel",
      "x": 928,
@@ -16419,7 +16430,7 @@
      ]
     },
     {
-     "id": 107,
+     "id": 108,
      "name": "pd6Fischerboot",
      "type": "moebel",
      "x": 896,
@@ -16442,7 +16453,7 @@
      ]
     },
     {
-     "id": 108,
+     "id": 109,
      "name": "pd6Steg",
      "type": "moebel",
      "x": 896,
@@ -16465,7 +16476,7 @@
      ]
     },
     {
-     "id": 109,
+     "id": 110,
      "name": "pd6Steg",
      "type": "moebel",
      "x": 896,
@@ -16488,7 +16499,7 @@
      ]
     },
     {
-     "id": 110,
+     "id": 111,
      "name": "cc4Bahnbank",
      "type": "moebel",
      "x": 48,
@@ -16511,7 +16522,7 @@
      ]
     },
     {
-     "id": 111,
+     "id": 112,
      "name": "rvWegweiser",
      "type": "moebel",
      "x": 80,
@@ -16534,7 +16545,7 @@
      ]
     },
     {
-     "id": 112,
+     "id": 113,
      "name": "pdEimer",
      "type": "moebel",
      "x": 848,
@@ -16557,7 +16568,7 @@
      ]
     },
     {
-     "id": 113,
+     "id": 114,
      "name": "pdSeil",
      "type": "moebel",
      "x": 864,
@@ -16580,7 +16591,7 @@
      ]
     },
     {
-     "id": 114,
+     "id": 115,
      "name": "pd6BauzaunEndeLinks",
      "type": "moebel",
      "x": 624,
@@ -16603,33 +16614,10 @@
      ]
     },
     {
-     "id": 115,
-     "name": "pd6BauzaunMitte",
-     "type": "moebel",
-     "x": 640,
-     "y": 640,
-     "width": 16,
-     "height": 32,
-     "rotation": 0,
-     "visible": true,
-     "properties": [
-      {
-       "name": "tiefe",
-       "type": "int",
-       "value": 664
-      },
-      {
-       "name": "kollision",
-       "type": "bool",
-       "value": true
-      }
-     ]
-    },
-    {
      "id": 116,
      "name": "pd6BauzaunMitte",
      "type": "moebel",
-     "x": 656,
+     "x": 640,
      "y": 640,
      "width": 16,
      "height": 32,
@@ -16652,7 +16640,7 @@
      "id": 117,
      "name": "pd6BauzaunMitte",
      "type": "moebel",
-     "x": 672,
+     "x": 656,
      "y": 640,
      "width": 16,
      "height": 32,
@@ -16675,7 +16663,7 @@
      "id": 118,
      "name": "pd6BauzaunMitte",
      "type": "moebel",
-     "x": 688,
+     "x": 672,
      "y": 640,
      "width": 16,
      "height": 32,
@@ -16696,6 +16684,29 @@
     },
     {
      "id": 119,
+     "name": "pd6BauzaunMitte",
+     "type": "moebel",
+     "x": 688,
+     "y": 640,
+     "width": 16,
+     "height": 32,
+     "rotation": 0,
+     "visible": true,
+     "properties": [
+      {
+       "name": "tiefe",
+       "type": "int",
+       "value": 664
+      },
+      {
+       "name": "kollision",
+       "type": "bool",
+       "value": true
+      }
+     ]
+    },
+    {
+     "id": 120,
      "name": "pd6BauzaunEndeRechts",
      "type": "moebel",
      "x": 704,
@@ -16718,7 +16729,7 @@
      ]
     },
     {
-     "id": 120,
+     "id": 121,
      "name": "pd6BauzaunEndeLinks",
      "type": "moebel",
      "x": 768,
@@ -16741,7 +16752,7 @@
      ]
     },
     {
-     "id": 121,
+     "id": 122,
      "name": "pd6BauzaunMitte",
      "type": "moebel",
      "x": 784,
@@ -16764,7 +16775,7 @@
      ]
     },
     {
-     "id": 122,
+     "id": 123,
      "name": "pd6BauzaunMitte",
      "type": "moebel",
      "x": 800,
@@ -16787,7 +16798,7 @@
      ]
     },
     {
-     "id": 123,
+     "id": 124,
      "name": "pd6BauzaunEndeRechts",
      "type": "moebel",
      "x": 816,
@@ -16810,7 +16821,7 @@
      ]
     },
     {
-     "id": 124,
+     "id": 125,
      "name": "pd6DielenNass",
      "type": "moebel",
      "x": 224,
@@ -16833,7 +16844,7 @@
      ]
     },
     {
-     "id": 125,
+     "id": 126,
      "name": "pd6DielenNass",
      "type": "moebel",
      "x": 480,
@@ -16856,7 +16867,7 @@
      ]
     },
     {
-     "id": 126,
+     "id": 127,
      "name": "pd6DielenNass",
      "type": "moebel",
      "x": 704,
@@ -16879,7 +16890,7 @@
      ]
     },
     {
-     "id": 127,
+     "id": 128,
      "name": "pd6DielenNass",
      "type": "moebel",
      "x": 848,
@@ -16902,7 +16913,7 @@
      ]
     },
     {
-     "id": 128,
+     "id": 129,
      "name": "pd6DielenNass",
      "type": "moebel",
      "x": 576,
@@ -16925,7 +16936,7 @@
      ]
     },
     {
-     "id": 129,
+     "id": 130,
      "name": "pd6DielenNass",
      "type": "moebel",
      "x": 1040,
@@ -16948,7 +16959,7 @@
      ]
     },
     {
-     "id": 130,
+     "id": 131,
      "name": "pd6Leiter",
      "type": "moebel",
      "x": 256,
@@ -16971,7 +16982,7 @@
      ]
     },
     {
-     "id": 131,
+     "id": 132,
      "name": "pd6Leiter",
      "type": "moebel",
      "x": 752,
@@ -16994,7 +17005,7 @@
      ]
     },
     {
-     "id": 132,
+     "id": 133,
      "name": "pd6Stamm",
      "type": "moebel",
      "x": 256,
@@ -17017,7 +17028,7 @@
      ]
     },
     {
-     "id": 133,
+     "id": 134,
      "name": "pd6Holzscheite",
      "type": "moebel",
      "x": 288,
@@ -17040,7 +17051,7 @@
      ]
     },
     {
-     "id": 134,
+     "id": 135,
      "name": "pd6SandsaeckeReihe",
      "type": "moebel",
      "x": 848,
@@ -17063,7 +17074,7 @@
      ]
     },
     {
-     "id": 135,
+     "id": 136,
      "name": "pd6SandsaeckeReihe",
      "type": "moebel",
      "x": 848,
@@ -17086,7 +17097,7 @@
      ]
     },
     {
-     "id": 136,
+     "id": 137,
      "name": "pd6SandsaeckeReihe",
      "type": "moebel",
      "x": 848,
@@ -17109,7 +17120,7 @@
      ]
     },
     {
-     "id": 137,
+     "id": 138,
      "name": "mf4Laterne",
      "type": "moebel",
      "x": 272,
@@ -17132,7 +17143,7 @@
      ]
     },
     {
-     "id": 138,
+     "id": 139,
      "name": "mf4Laterne",
      "type": "moebel",
      "x": 528,
@@ -17155,7 +17166,7 @@
      ]
     },
     {
-     "id": 139,
+     "id": 140,
      "name": "mf4Laterne",
      "type": "moebel",
      "x": 816,
@@ -17178,7 +17189,7 @@
      ]
     },
     {
-     "id": 140,
+     "id": 141,
      "name": "mf4Laterne",
      "type": "moebel",
      "x": 160,
@@ -17201,7 +17212,7 @@
      ]
     },
     {
-     "id": 141,
+     "id": 142,
      "name": "mf4Laterne",
      "type": "moebel",
      "x": 480,
@@ -17224,7 +17235,7 @@
      ]
     },
     {
-     "id": 142,
+     "id": 143,
      "name": "mf4Laterne",
      "type": "moebel",
      "x": 592,
@@ -17247,7 +17258,7 @@
      ]
     },
     {
-     "id": 143,
+     "id": 144,
      "name": "rvLaubbaum",
      "type": "moebel",
      "x": 896,
@@ -17270,7 +17281,7 @@
      ]
     },
     {
-     "id": 144,
+     "id": 145,
      "name": "rvLaubbaumDunkel",
      "type": "moebel",
      "x": 992,
@@ -17293,7 +17304,7 @@
      ]
     },
     {
-     "id": 145,
+     "id": 146,
      "name": "rvLaubbaum",
      "type": "moebel",
      "x": 576,
@@ -17316,7 +17327,7 @@
      ]
     },
     {
-     "id": 146,
+     "id": 147,
      "name": "pd6Fass",
      "type": "moebel",
      "x": 864,
@@ -17339,7 +17350,7 @@
      ]
     },
     {
-     "id": 147,
+     "id": 148,
      "name": "pd6Fass",
      "type": "moebel",
      "x": 880,
@@ -17362,7 +17373,7 @@
      ]
     },
     {
-     "id": 148,
+     "id": 149,
      "name": "pd6Kiste",
      "type": "moebel",
      "x": 864,
@@ -17385,7 +17396,7 @@
      ]
     },
     {
-     "id": 149,
+     "id": 150,
      "name": "pd7Laden1",
      "type": "moebel",
      "x": 1056,
@@ -17408,7 +17419,7 @@
      ]
     },
     {
-     "id": 150,
+     "id": 151,
      "name": "pd7Laden4",
      "type": "moebel",
      "x": 1136,
@@ -17431,7 +17442,7 @@
      ]
     },
     {
-     "id": 151,
+     "id": 152,
      "name": "pd7Reihenhaus2",
      "type": "moebel",
      "x": 1216,
@@ -17454,7 +17465,7 @@
      ]
     },
     {
-     "id": 152,
+     "id": 153,
      "name": "pd7Villa2",
      "type": "moebel",
      "x": 1056,
@@ -17477,7 +17488,7 @@
      ]
     },
     {
-     "id": 153,
+     "id": 154,
      "name": "pd7Reihenhaus3",
      "type": "moebel",
      "x": 1200,
@@ -17500,7 +17511,7 @@
      ]
     },
     {
-     "id": 154,
+     "id": 155,
      "name": "pd7Markt2",
      "type": "moebel",
      "x": 1056,
@@ -17523,7 +17534,7 @@
      ]
     },
     {
-     "id": 155,
+     "id": 156,
      "name": "pd7Stadthaus",
      "type": "moebel",
      "x": 1168,
@@ -17546,7 +17557,7 @@
      ]
     },
     {
-     "id": 156,
+     "id": 157,
      "name": "pd7Laden7",
      "type": "moebel",
      "x": 96,
@@ -17569,7 +17580,7 @@
      ]
     },
     {
-     "id": 157,
+     "id": 158,
      "name": "pd7Stadthaus5_1",
      "type": "moebel",
      "x": 176,
@@ -17592,7 +17603,7 @@
      ]
     },
     {
-     "id": 158,
+     "id": 159,
      "name": "pd7Markt5",
      "type": "moebel",
      "x": 640,
@@ -17615,7 +17626,7 @@
      ]
     },
     {
-     "id": 159,
+     "id": 160,
      "name": "pd7Laden10",
      "type": "moebel",
      "x": 752,
@@ -17638,7 +17649,7 @@
      ]
     },
     {
-     "id": 160,
+     "id": 161,
      "name": "pd7Reihenhaus3",
      "type": "moebel",
      "x": 768,
@@ -17661,7 +17672,7 @@
      ]
     },
     {
-     "id": 161,
+     "id": 162,
      "name": "pd6Waescheleine",
      "type": "moebel",
      "x": 1120,
@@ -17684,7 +17695,7 @@
      ]
     },
     {
-     "id": 162,
+     "id": 163,
      "name": "rvLaubbaumDunkel",
      "type": "moebel",
      "x": 1184,

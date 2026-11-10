@@ -239,6 +239,22 @@
     {
       "name": "aushang",
       "feld": [47, 26]
+    },
+    {
+      "name": "bus",
+      "feld": [17, 36]
+    },
+    {
+      "name": "ereignisDiplom",
+      "feld": [29, 27]
+    },
+    {
+      "name": "seite03",
+      "feld": [46, 24]
+    },
+    {
+      "name": "finchTurmB",
+      "feld": [42, 31]
     }
   ],
   "figuren": [

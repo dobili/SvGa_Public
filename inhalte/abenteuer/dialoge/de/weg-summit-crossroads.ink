@@ -16,6 +16,9 @@ EXTERNAL beginneAufgaben(runde)
 EXTERNAL gibFund(kennung)
 
 VAR held = "Du"
+VAR buchseiten = 0
+VAR finchFiguren = 0
+VAR spurenPM = 0
 VAR wegSummitCrossroadsTafelBestanden = false
 VAR bellGetroffen = false
 VAR rayGetroffen = false
@@ -23,6 +26,12 @@ VAR varianteAtomschachGelernt = false
 VAR varianteEntenschachGelernt = false
 VAR bisonhaarGefunden = false
 VAR bisonsGewartet = false
+VAR wegSummitCrossroadsGeysirblitzBestanden = false
+VAR geysirblitzGesehen = false
+VAR geysirblitzBelohnt = false
+VAR spurPM5Gefunden = false
+VAR finchBauerDGefunden = false
+VAR seite09Gefunden = false
 
 // ---------------------------------------------------------------- Rangerin Bell und das Atomschach
 
@@ -140,3 +149,88 @@ Ein Tier, das niemandem ausweicht. Respekt. #sprecher:ambrose
 === zurueck_summit ===
 Der Steg führt zurück, bergauf nach Summit City. #sprecher:erzaehler
 -> END
+
+// ---------------------------------------------------------------- Ereignis: Der Geysirblitz
+// Runde 6 (Dokument 15, 2.10): Bell und die Schulklasse aus Summit City lösen Aufgaben, bis Old
+// Patience ausbricht. Bis die Uhr als Geysir gebaut ist, eine Aufgabenrunde mit sechs Endspielen
+// (Kapitel 9). Quest wegSummitCrossroads.geysirblitz; Lohn Fund rangerabzeichen.
+
+=== ereignis_geysirblitz ===
+{geysirblitzBelohnt: -> geysirblitz_danach}
+{wegSummitCrossroadsGeysirblitzBestanden: -> geysirblitz_ende}
+{geysirblitzGesehen: -> geysirblitz_angebot}
+~ geysirblitzGesehen = true
+Auf der Plattform am großen Geysir sitzt eine Schulklasse auf den Bänken, Bretter auf den Knien. Bell steht mit der Uhr davor. #sprecher:erzaehler
+Der Geysirblitz! Old Patience bricht alle neun Minuten aus. Bis dahin löst ihr so viele Aufgaben, wie ihr schafft. #sprecher:bell #stimmung:froh
+-> geysirblitz_angebot
+
+=== geysirblitz_angebot ===
+Sechs Endspiele. Wer fertig ist, bevor das Wasser kommt, bekommt mein Abzeichen. Machst du mit? #sprecher:bell
+Kapitel 9, {held}. Im Endspiel zählt jedes Tempo, und hier zählt die Natur mit. #sprecher:ambrose
++ [„Ich bin dabei.“]
+    ~ beginneAufgaben("wegSummitCrossroads.geysirblitz")
+    -> END
++ [„Später.“]
+    Old Patience wartet auf niemanden. Aber sie kommt wieder. #sprecher:bell
+    -> END
+
+=== geysirblitz_ende ===
+~ geysirblitzBelohnt = true
+Hinter dir zischt es, dann steigt eine weiße Säule in den Himmel. Die Klasse jubelt. #sprecher:erzaehler
+Fertig vor dem Wasser. Das schaffen nicht viele. #sprecher:bell #stimmung:froh
+Bell steckt dir ein Abzeichen aus Messing an die Jacke. #sprecher:erzaehler
+~ gibFund("rangerabzeichen")
+-> END
+
+=== geysirblitz_danach ===
+{~Die Klasse fragt, ob du nächstes Jahr wiederkommst.|Old Patience ist pünktlich. Pünktlicher als jeder Bus.|Am Infobrett hängt ein Antrag. Lies ihn, wenn du dich ärgern willst.} #sprecher:bell
+-> END
+
+=== geysir_ausbruch ===
+{~Der Boden zittert, dann schießt Old Patience eine weiße Säule in den Himmel. Tropfen regnen auf die Stege.|Old Patience ist still. Nur ein dünner Faden Dampf steigt auf.|Das Becken um den Geysir brodelt. Gleich ist es so weit.} #sprecher:erzaehler
+-> END
+
+// ---------------------------------------------------------------- Sammelstellen im Geysirbecken
+
+=== spur_pm5 ===
+{spurPM5Gefunden:
+    Am Infobrett hängt der Antrag noch. Jemand hat einen Bison daneben gemalt. #sprecher:erzaehler
+    -> END
+}
+~ spurPM5Gefunden = true
+Am Infobrett des Rangerhäuschens hängt ein Antrag mit dem Logo von Perfect Move: „Kühlung für Rechenzentrum Summit. Entnahme von Geysirwasser.“ Quer darüber steht in Bells Schrift: „Abgelehnt.“ #sprecher:erzaehler
+Über meine Leiche. Und über die der Bisons. #sprecher:bell
+Wer Rechner mit Geysiren kühlen will, braucht sehr viele Rechner. #sprecher:ambrose
+~ gibFund("spurPM5")
+~ spurenPM = spurenPM + 1
+-> END
+
+=== finch_bauer_d ===
+{finchBauerDGefunden:
+    Unter dem Steg ist nur noch warmer Sinter. #sprecher:erzaehler
+    -> END
+}
+~ finchBauerDGefunden = true
+Am Pfosten des Stegs ist ein Fink aus Kreide gemalt. Darunter, im Schatten der Bohlen, liegt ein weißer Bauer aus Buchsbaum. Unter seinem Fuß ist ein Feld eingebrannt. #sprecher:erzaehler
+~ gibFund("finchBauerD")
+~ finchFiguren = finchFiguren + 1
+-> END
+
+// ---------------------------------------------------------------- Prärie: Sturmkeller und Windrad
+
+=== seite09 ===
+{seite09Gefunden:
+    Hier lag die Buchseite. Der Wind hat nichts mehr dagelassen. #sprecher:erzaehler
+    -> END
+}
+~ seite09Gefunden = true
+An der Klappe des Sturmkellers hat sich ein Blatt Papier verfangen. Oben steht: Kapitel 9, „Endspiel-Vertiefung“. #sprecher:erzaehler
+Eine Seite aus einem Handbuch. Der Sturm trägt alles irgendwohin, sogar Bücher. #sprecher:ambrose
+~ gibFund("seite09")
+~ buchseiten = buchseiten + 1
+-> END
+
+=== windrad ===
+{~Das Windrad quietscht bei jeder Drehung, wie eine alte Tür.|Das Windrad steht still. Ray sagt, dann kommt der Sturm.|Unter dem Windrad liegt ein Eimer voll Wasser, frisch gepumpt.} #sprecher:erzaehler
+-> END
+

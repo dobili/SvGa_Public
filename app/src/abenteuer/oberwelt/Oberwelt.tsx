@@ -402,7 +402,7 @@ export function Oberwelt() {
     let aktiv = true;
     // Beginn dieser Sitzung in der Welt, für die Spielzeit im Spielstand.
     const begonnen = Date.now();
-    ladeWelt(stand.position.karte, stand.held.variante)
+    ladeWelt(stand.position.karte, stand.held.variante, stand.dialogvariablen)
       .then((w) => {
         if (!aktiv || !rahmen.current) return;
         setzeTreffer(null);
@@ -772,6 +772,7 @@ export function Oberwelt() {
       }
       data-testid="abenteuer-welt"
       data-toenung={toenung ?? "keine"}
+      data-fassung={welt?.zustand ?? "grund"}
     >
       <div ref={rahmen} style={{ width: "100%", height: "100%" }} />
       <span ref={kachelanzeige} hidden data-testid="abenteuer-kachel" />

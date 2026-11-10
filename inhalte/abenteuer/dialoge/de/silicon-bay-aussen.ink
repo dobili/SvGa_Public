@@ -14,6 +14,7 @@ EXTERNAL beginnePartie(begegnung)
 EXTERNAL gibKarte(kennung)
 EXTERNAL reise(karte, ausloeser)
 EXTERNAL oeffneLaden(laden)
+EXTERNAL setzeToenung(name)
 
 VAR held = "Du"
 VAR ausgangSiliconBayDash = ""
@@ -129,6 +130,7 @@ Eine Köchin, die lacht. In dieser Stadt aus Glas ist das ein Wunder. #sprecher:
 
 === hotel_nacht ===
 ~ tabletNachtGesehen = true
+~ setzeToenung("nacht")
 Mitten in der Nacht wachst du auf. Das Tablet leuchtet neben dem Brett. #sprecher:erzaehler
 Die Maschine spielt gegen sich selbst. Partie um Partie, ohne Pause. #sprecher:erzaehler
 Ich habe zugesehen. Die ganze Nacht. #sprecher:ambrose #stimmung:gebannt
@@ -138,7 +140,8 @@ Sie spielt, wie ich immer spielen wollte. Kein einziger Zweifel. #sprecher:ambro
 * [„Mach das aus.“]
     Gleich. Nur noch diese eine Partie. #sprecher:ambrose #stimmung:gebannt
     Er sagt es dreimal in dieser Nacht. #sprecher:erzaehler
-- Am Morgen fährt Juno zurück nach Hause. „Pass auf ihn auf“, sagt sie leise. „Er klingt komisch.“ #sprecher:erzaehler
+- ~ setzeToenung("keine")
+Am Morgen fährt Juno zurück nach Hause. „Pass auf ihn auf“, sagt sie leise. „Er klingt komisch.“ #sprecher:erzaehler
 -> END
 
 // ---------------------------------------------------------------- Bus und Fähre
@@ -161,3 +164,33 @@ Der Fernbus nach Ironwood hält an der Haltestelle vor dem Campus. #sprecher:erz
     Erst die Akademie, {held}. Dann die Reise. #sprecher:ambrose
 }
 -> END
+
+// ---------------------------------------------------------------- Inselfähre (Sperre S6)
+// Runde 6 (13_Wegenetz, Abschnitt 4): Nach der Nadel von Silicon Bay fährt die Fähre zur
+// Pelikaninsel dauerhaft; vorher nur der Fahrplan („sonntags“ ist Erzählung, Befund 16).
+
+=== inselfaehre ===
+{nadelSiliconBay:
+    Der Fährmann winkt dich an Bord. Seit du die Nadel hast, fährt er für dich jeden Tag. #sprecher:erzaehler
+    -> END
+}
+Am Fährhäuschen hängt ein Fahrplan: „Pelikaninsel. Sonntags.“ Der Fährmann flickt ein Tau und schaut nicht auf. #sprecher:erzaehler
+Heute ist nicht Sonntag. Und für die Insel brauchst du einen Grund. Hol dir erst die Nadel im Club. #sprecher:faehrmann
+-> END
+
+// ---------------------------------------------------------------- Ansehen (Runde 6)
+
+=== infosaeule ===
+{~Die Infosäule zeigt einen Stadtplan, der sich dreht, sobald man hinsieht: „Sie sind hier.“|Auf der Infosäule läuft die Wettervorhersage: klar, kalt, Empfang ausgezeichnet.|Die Infosäule fragt: „Brauchen Sie Hilfe?“ Bevor du antworten kannst, schlägt sie drei Cafés vor.} #sprecher:erzaehler
+-> END
+
+=== werbetafel ===
+Auf der Werbetafel leuchtet ZERO in weißer Schrift auf schwarzem Grund: „Nie wieder Fehler.“ #sprecher:erzaehler
+Nie wieder Fehler. Und nie wieder ein Grund, etwas Neues zu probieren. #sprecher:ambrose
+-> END
+
+=== netze ===
+An der Fassade der alten Fischhalle hängen Netze zum Trocknen, steif vor Salz. Über dem Tor steht verblichen: „Fresh Fish Daily“. #sprecher:erzaehler
+Bevor die Bildschirme kamen, roch diese Stadt nach Fisch. Ein ehrlicher Geruch. #sprecher:ambrose
+-> END
+

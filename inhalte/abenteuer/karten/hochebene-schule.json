@@ -11,7 +11,7 @@
  "tilewidth": 16,
  "tileheight": 16,
  "nextlayerid": 5,
- "nextobjectid": 58,
+ "nextobjectid": 62,
  "layers": [
   {
    "id": 1,
@@ -7326,6 +7326,50 @@
     },
     {
      "id": 6,
+     "name": "bus",
+     "type": "ausloeser",
+     "x": 528,
+     "y": 576,
+     "width": 16,
+     "height": 16,
+     "rotation": 0,
+     "visible": true
+    },
+    {
+     "id": 7,
+     "name": "ereignisDiplom",
+     "type": "ausloeser",
+     "x": 448,
+     "y": 432,
+     "width": 16,
+     "height": 16,
+     "rotation": 0,
+     "visible": true
+    },
+    {
+     "id": 8,
+     "name": "seite03",
+     "type": "ausloeser",
+     "x": 768,
+     "y": 368,
+     "width": 16,
+     "height": 16,
+     "rotation": 0,
+     "visible": true
+    },
+    {
+     "id": 9,
+     "name": "finchTurmB",
+     "type": "ausloeser",
+     "x": 688,
+     "y": 496,
+     "width": 16,
+     "height": 16,
+     "rotation": 0,
+     "visible": true
+    },
+    {
+     "id": 10,
      "name": "annek",
      "type": "figur",
      "x": 448,
@@ -7336,7 +7380,7 @@
      "visible": true
     },
     {
-     "id": 7,
+     "id": 11,
      "name": "joss",
      "type": "figur",
      "x": 128,
@@ -7347,7 +7391,7 @@
      "visible": true
     },
     {
-     "id": 8,
+     "id": 12,
      "name": "schulkinder",
      "type": "statist",
      "x": 384,
@@ -7380,7 +7424,7 @@
      ]
     },
     {
-     "id": 9,
+     "id": 13,
      "name": "lehrerin",
      "type": "statist",
      "x": 576,
@@ -7413,7 +7457,7 @@
      ]
     },
     {
-     "id": 10,
+     "id": 14,
      "name": "hausmeister",
      "type": "statist",
      "x": 192,
@@ -7451,7 +7495,7 @@
      ]
     },
     {
-     "id": 11,
+     "id": 15,
      "name": "busfahrerin",
      "type": "statist",
      "x": 512,
@@ -7489,7 +7533,7 @@
      ]
     },
     {
-     "id": 12,
+     "id": 16,
      "name": "schulkind",
      "type": "statist",
      "x": 352,
@@ -7527,7 +7571,7 @@
      ]
     },
     {
-     "id": 13,
+     "id": 17,
      "name": "vater",
      "type": "statist",
      "x": 736,
@@ -7570,7 +7614,7 @@
      ]
     },
     {
-     "id": 14,
+     "id": 18,
      "name": "huehner",
      "type": "tier",
      "x": 96,
@@ -7598,7 +7642,7 @@
      ]
     },
     {
-     "id": 15,
+     "id": 19,
      "name": "hund",
      "type": "tier",
      "x": 640,
@@ -7626,7 +7670,7 @@
      ]
     },
     {
-     "id": 16,
+     "id": 20,
      "name": "spatzen",
      "type": "tier",
      "x": 480,
@@ -7654,7 +7698,7 @@
      ]
     },
     {
-     "id": 17,
+     "id": 21,
      "name": "katze",
      "type": "tier",
      "x": 128,
@@ -7682,7 +7726,7 @@
      ]
     },
     {
-     "id": 18,
+     "id": 22,
      "name": "falke",
      "type": "tier",
      "x": 272,
@@ -7710,7 +7754,7 @@
      ]
     },
     {
-     "id": 19,
+     "id": 23,
      "name": "hase",
      "type": "tier",
      "x": 864,
@@ -7738,7 +7782,7 @@
      ]
     },
     {
-     "id": 20,
+     "id": 24,
      "name": "hb7Turnhalle",
      "type": "moebel",
      "x": 128,
@@ -7761,7 +7805,7 @@
      ]
     },
     {
-     "id": 21,
+     "id": 25,
      "name": "hb7Schule",
      "type": "moebel",
      "x": 288,
@@ -7784,7 +7828,7 @@
      ]
     },
     {
-     "id": 22,
+     "id": 26,
      "name": "hb7Aushang",
      "type": "moebel",
      "x": 528,
@@ -7807,7 +7851,7 @@
      ]
     },
     {
-     "id": 23,
+     "id": 27,
      "name": "hb7Basketballfeld",
      "type": "moebel",
      "x": 704,
@@ -7830,7 +7874,7 @@
      ]
     },
     {
-     "id": 24,
+     "id": 28,
      "name": "hb7Basketballkorb",
      "type": "moebel",
      "x": 800,
@@ -7853,7 +7897,7 @@
      ]
     },
     {
-     "id": 25,
+     "id": 29,
      "name": "hb7Schaukel",
      "type": "moebel",
      "x": 240,
@@ -7876,7 +7920,7 @@
      ]
     },
     {
-     "id": 26,
+     "id": 30,
      "name": "hb7Spielturm",
      "type": "moebel",
      "x": 320,
@@ -7899,7 +7943,7 @@
      ]
     },
     {
-     "id": 27,
+     "id": 31,
      "name": "rvPicknicktisch",
      "type": "moebel",
      "x": 640,
@@ -7922,7 +7966,7 @@
      ]
     },
     {
-     "id": 28,
+     "id": 32,
      "name": "hb7Werkstatt",
      "type": "moebel",
      "x": 32,
@@ -7945,7 +7989,7 @@
      ]
     },
     {
-     "id": 29,
+     "id": 33,
      "name": "cc4Werktisch",
      "type": "moebel",
      "x": 144,
@@ -7968,7 +8012,7 @@
      ]
     },
     {
-     "id": 30,
+     "id": 34,
      "name": "dsReifen",
      "type": "moebel",
      "x": 144,
@@ -7991,7 +8035,7 @@
      ]
     },
     {
-     "id": 31,
+     "id": 35,
      "name": "heSchulbus",
      "type": "moebel",
      "x": 480,
@@ -8014,7 +8058,7 @@
      ]
     },
     {
-     "id": 32,
+     "id": 36,
      "name": "haltestellenschild",
      "type": "moebel",
      "x": 704,
@@ -8037,7 +8081,7 @@
      ]
     },
     {
-     "id": 33,
+     "id": 37,
      "name": "wds6Briefkasten",
      "type": "moebel",
      "x": 752,
@@ -8060,7 +8104,7 @@
      ]
     },
     {
-     "id": 34,
+     "id": 38,
      "name": "wds6Pinie",
      "type": "moebel",
      "x": 112,
@@ -8083,7 +8127,7 @@
      ]
     },
     {
-     "id": 35,
+     "id": 39,
      "name": "cc3Busch",
      "type": "moebel",
      "x": 752,
@@ -8106,7 +8150,7 @@
      ]
     },
     {
-     "id": 36,
+     "id": 40,
      "name": "cc3Busch",
      "type": "moebel",
      "x": 48,
@@ -8129,7 +8173,7 @@
      ]
     },
     {
-     "id": 37,
+     "id": 41,
      "name": "wds6Kegelbaum",
      "type": "moebel",
      "x": 848,
@@ -8152,7 +8196,7 @@
      ]
     },
     {
-     "id": 38,
+     "id": 42,
      "name": "wds6Pinie",
      "type": "moebel",
      "x": 720,
@@ -8175,7 +8219,7 @@
      ]
     },
     {
-     "id": 39,
+     "id": 43,
      "name": "wds6Pinie",
      "type": "moebel",
      "x": 192,
@@ -8198,7 +8242,7 @@
      ]
     },
     {
-     "id": 40,
+     "id": 44,
      "name": "wds6Kegelbaum",
      "type": "moebel",
      "x": 224,
@@ -8221,7 +8265,7 @@
      ]
     },
     {
-     "id": 41,
+     "id": 45,
      "name": "cc3Busch",
      "type": "moebel",
      "x": 32,
@@ -8244,7 +8288,7 @@
      ]
     },
     {
-     "id": 42,
+     "id": 46,
      "name": "cc3Busch",
      "type": "moebel",
      "x": 80,
@@ -8267,7 +8311,7 @@
      ]
     },
     {
-     "id": 43,
+     "id": 47,
      "name": "cc3Busch",
      "type": "moebel",
      "x": 176,
@@ -8290,7 +8334,7 @@
      ]
     },
     {
-     "id": 44,
+     "id": 48,
      "name": "cc3Busch",
      "type": "moebel",
      "x": 48,
@@ -8313,7 +8357,7 @@
      ]
     },
     {
-     "id": 45,
+     "id": 49,
      "name": "cc3Busch",
      "type": "moebel",
      "x": 32,
@@ -8336,7 +8380,7 @@
      ]
     },
     {
-     "id": 46,
+     "id": 50,
      "name": "cc3Busch",
      "type": "moebel",
      "x": 160,
@@ -8359,7 +8403,7 @@
      ]
     },
     {
-     "id": 47,
+     "id": 51,
      "name": "cc3Busch",
      "type": "moebel",
      "x": 896,
@@ -8382,7 +8426,7 @@
      ]
     },
     {
-     "id": 48,
+     "id": 52,
      "name": "sc8TribueneLinks",
      "type": "moebel",
      "x": 592,
@@ -8405,7 +8449,7 @@
      ]
     },
     {
-     "id": 49,
+     "id": 53,
      "name": "sc8TribueneMitte",
      "type": "moebel",
      "x": 624,
@@ -8428,7 +8472,7 @@
      ]
     },
     {
-     "id": 50,
+     "id": 54,
      "name": "sc8TribueneRechts",
      "type": "moebel",
      "x": 688,
@@ -8451,7 +8495,7 @@
      ]
     },
     {
-     "id": 51,
+     "id": 55,
      "name": "hb7Steintisch",
      "type": "moebel",
      "x": 400,
@@ -8474,7 +8518,7 @@
      ]
     },
     {
-     "id": 52,
+     "id": 56,
      "name": "hb7Steintisch",
      "type": "moebel",
      "x": 464,
@@ -8497,7 +8541,7 @@
      ]
     },
     {
-     "id": 53,
+     "id": 57,
      "name": "hb7Steintisch",
      "type": "moebel",
      "x": 400,
@@ -8520,7 +8564,7 @@
      ]
     },
     {
-     "id": 54,
+     "id": 58,
      "name": "sc8Fahnenmast",
      "type": "moebel",
      "x": 784,
@@ -8543,7 +8587,7 @@
      ]
     },
     {
-     "id": 55,
+     "id": 59,
      "name": "sc8PlakatDiplomtag",
      "type": "moebel",
      "x": 560,
@@ -8566,7 +8610,7 @@
      ]
     },
     {
-     "id": 56,
+     "id": 60,
      "name": "wg6Kisten",
      "type": "moebel",
      "x": 704,
@@ -8589,7 +8633,7 @@
      ]
     },
     {
-     "id": 57,
+     "id": 61,
      "name": "sc8FinkenzeichenSchule",
      "type": "moebel",
      "x": 688,

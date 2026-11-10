@@ -2808,6 +2808,14 @@
     {
       "name": "sturmkeller",
       "feld": [17, 95]
+    },
+    {
+      "name": "seite09",
+      "feld": [16, 95]
+    },
+    {
+      "name": "windrad",
+      "feld": [26, 80]
     }
   ],
   "figuren": [

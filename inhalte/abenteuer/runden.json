@@ -446,6 +446,114 @@
       "buchuebungen": [],
       "themen": ["fesselung"],
       "anzahl": 2
+    },
+    {
+      "kennung": "wegDelacroixDesert.seilschaft",
+      "ort": "wegDelacroixDesert",
+      "steller": "wegDelacroixDesert.wren",
+      "reihe": false,
+      "buchuebungen": [],
+      "themen": ["mattbilder"],
+      "anzahl": 3
+    },
+    {
+      "kennung": "sternwarte.sterne",
+      "ort": "sternwarte",
+      "steller": "sternwarte.ngata",
+      "reihe": false,
+      "buchuebungen": [],
+      "themen": ["mattbilder", "matt2"],
+      "anzahl": 4
+    },
+    {
+      "kennung": "hochebene.diplom",
+      "ort": "hochebene",
+      "steller": "hochebene.annek",
+      "reihe": false,
+      "buchuebungen": [],
+      "themen": ["matt1", "haengend"],
+      "anzahl": 3
+    },
+    {
+      "kennung": "kuerbishof.irrgarten",
+      "ort": "kuerbishof",
+      "steller": "kuerbishof.clover",
+      "reihe": false,
+      "buchuebungen": [],
+      "themen": ["matt1"],
+      "anzahl": 3
+    },
+    {
+      "kennung": "pelikaninsel.netze",
+      "ort": "pelikaninsel",
+      "steller": "pelikaninsel.oldPete",
+      "reihe": false,
+      "buchuebungen": [],
+      "themen": ["haengend"],
+      "anzahl": 3
+    },
+    {
+      "kennung": "goldmine.loren",
+      "ort": "goldmine",
+      "steller": "goldmine.pruitt",
+      "reihe": false,
+      "buchuebungen": [],
+      "themen": ["endspiel"],
+      "anzahl": 3
+    },
+    {
+      "kennung": "wegIronwoodSilicon.stream",
+      "ort": "wegIronwoodSilicon",
+      "steller": "wegIronwoodSilicon.kiki",
+      "reihe": false,
+      "buchuebungen": [],
+      "themen": ["falle", "haengend"],
+      "anzahl": 3
+    },
+    {
+      "kennung": "wegSummitCrossroads.geysirblitz",
+      "ort": "wegSummitCrossroads",
+      "steller": "wegSummitCrossroads.bell",
+      "reihe": false,
+      "buchuebungen": [],
+      "themen": ["endspiel"],
+      "anzahl": 6
+    },
+    {
+      "kennung": "wegCrossroadsPinewood.lebendschach",
+      "ort": "wegCrossroadsPinewood",
+      "steller": "wegCrossroadsPinewood.ezra",
+      "reihe": false,
+      "buchuebungen": [],
+      "themen": ["matt2", "doppelangriff"],
+      "anzahl": 3
+    },
+    {
+      "kennung": "wegSiliconDelacroix.kapitaensproblem",
+      "ort": "wegSiliconDelacroix",
+      "steller": "wegSiliconDelacroix.kapitaen",
+      "reihe": false,
+      "buchuebungen": [],
+      "themen": ["umwandlung", "hinlenkung"],
+      "anzahl": 4
+    },
+    {
+      "kennung": "wegGhostCapital.simultan",
+      "ort": "wegGhostCapital",
+      "steller": "wegGhostCapital.abe",
+      "reihe": false,
+      "buchuebungen": [],
+      "themen": ["endspiel", "mattbilder", "doppelangriff"],
+      "anzahl": 5
+    },
+    {
+      "kennung": "wegGhostCapital.meisterproblem",
+      "ort": "wegGhostCapital",
+      "steller": "wegGhostCapital.odette",
+      "reihe": false,
+      "buchuebungen": [],
+      "themen": ["matt2"],
+      "anzahl": 1
     }
   ]
 }

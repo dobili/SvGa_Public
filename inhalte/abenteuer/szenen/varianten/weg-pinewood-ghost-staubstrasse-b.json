@@ -480,6 +480,26 @@
     {
       "name": "weiterGhost",
       "feld": [149, 15]
+    },
+    {
+      "name": "ereignisTankstelle",
+      "feld": [49, 9]
+    },
+    {
+      "name": "spurPM6",
+      "feld": [51, 9]
+    },
+    {
+      "name": "seite11",
+      "feld": [45, 8]
+    },
+    {
+      "name": "tankstelleTuer",
+      "feld": [54, 9]
+    },
+    {
+      "name": "wagen",
+      "feld": [58, 8]
     }
   ],
   "figuren": [],

@@ -141,6 +141,10 @@
     {
       "name": "schild",
       "feld": [9, 12]
+    },
+    {
+      "name": "lochImDach",
+      "feld": [14, 6]
     }
   ],
   "figuren": [],

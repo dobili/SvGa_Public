@@ -360,6 +360,12 @@
   font-style: italic;
 }
 
+/* Partie nach Gehör (Funkschach, Runde 6): Ansage des Gegnerzugs, bevor er aufs Brett kommt. */
+.abenteuer-funkansage {
+  font-weight: bold;
+  font-size: 1.2em;
+}
+
 /* Einstiegskarte auf der Seite „Spielen“. */
 .abenteuer-karte-spielen {
   text-align: center;

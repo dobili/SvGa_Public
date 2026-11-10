@@ -30,6 +30,7 @@
   "abenteuer.aufgaben.laedt": "Aufgaben werden zusammengestellt …",
   "abenteuer.kartenleiste": "Schach-Abenteuer",
   "abenteuer.kartenleisteHinweis": "Begegnung {begegnung}. Nach der Partie: „Zurück zur Stadt“.",
+  "abenteuer.funkansage": "Über Funk: {zug}",
   "abenteuer.zustand": "{gegner} {zustand}.",
   "partie.zurueckZurStadt": "Zurück zur Stadt",
   "app.titel": "Schach von Grund auf",

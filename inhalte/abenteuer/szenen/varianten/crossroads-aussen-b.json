@@ -237,10 +237,6 @@
       "feld": [11, 7]
     },
     {
-      "moebel": "wg4GrasB",
-      "feld": [5, 17]
-    },
-    {
       "moebel": "wg4Gras",
       "feld": [10, 3]
     },
@@ -263,6 +259,10 @@
     {
       "moebel": "wg4GrasB",
       "feld": [33, 2]
+    },
+    {
+      "moebel": "ws5Wartehaus",
+      "feld": [1, 17]
     }
   ],
   "ausloeser": [
@@ -308,6 +308,14 @@
     {
       "name": "wegweiser",
       "feld": [29, 20]
+    },
+    {
+      "name": "viehgatter",
+      "feld": [57, 23]
+    },
+    {
+      "name": "fernbus",
+      "feld": [3, 20]
     }
   ],
   "figuren": [

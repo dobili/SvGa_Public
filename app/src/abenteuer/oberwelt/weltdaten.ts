@@ -19,6 +19,7 @@ import { sprache } from "../../i18n/sprache";
 import { GRUNDSPRACHE, hatSpieltext, ladeSpieltexte, spielsprache, tSpiel } from "../texte/texte";
 import { liesBelebung, statistenbild, statistensatz } from "./belebung";
 import type { SprechblasenInhalt } from "./Sprechblase";
+import { kartenfassung } from "./kartenfassung";
 import { ladeMoebel, type Moebel } from "./moebel";
 import { tierartVon } from "./tiere";
 import type { Ausloesertreffer } from "./szene";
@@ -54,6 +55,8 @@ export interface Weltdaten {
   readonly moebel: readonly Moebel[];
   /** Hintergrundbild aus dem Kartenbauer (grafik/karten/<kennung>.png), sonst null. */
   readonly hintergrund: string | null;
+  /** Zweite Fassung der Karte (zustand_der_karte), sonst null. */
+  readonly zustand: string | null;
   /** Bögen der Statisten und Tiere dieser Karte, Pfad im Paket → Adresse (nur vorhandene). */
   readonly belebungsbilder: Readonly<Record<string, string>>;
 }
@@ -137,15 +140,23 @@ function heldfigurpfad(erinnerung: boolean, variante: number): string {
   return erinnerung ? "figuren/ambrose-jung.png" : `figuren/held-${variante}.png`;
 }
 
-/** Lädt Spieldaten, Karte und Bilder für die Karte des Spielstands. */
-export async function ladeWelt(kartenkennung: string, heldvariante = 0): Promise<Weltdaten> {
+/**
+ * Lädt Spieldaten, Karte und Bilder für die Karte des Spielstands. `variablen` (Dialogvariablen)
+ * wählen die Fassung der Karte (zustand_der_karte).
+ */
+export async function ladeWelt(
+  kartenkennung: string,
+  heldvariante = 0,
+  variablen: Readonly<Record<string, unknown>> = {},
+): Promise<Weltdaten> {
   // Spieltexte in der Sprache der App (Dokument 17); ohne Übersetzung im Paket bleibt Deutsch.
   await ladeSpieltexte(sprache());
   const daten = await ladeSpieldaten();
   const fund = findeKarte(daten, kartenkennung);
   if (!fund) throw new Spielfehler("fehler.welt.karteFehlt", { karte: kartenkennung });
+  const fassung = kartenfassung(fund.karte, variablen);
   const [karte, kachelbild, heldbild, figurbild] = await Promise.all([
-    liesPaketJson<object>(fund.karte.datei),
+    liesPaketJson<object>(fassung.datei),
     paketdateiAlsAdresse(KACHELBILD),
     paketdateiAlsAdresse(fund.ort.art === "erinnerung" ? FIGURBILD : HELDBILD),
     paketdateiAlsAdresse(FIGURBILD),
@@ -159,7 +170,9 @@ export async function ladeWelt(kartenkennung: string, heldvariante = 0): Promise
       paketdateiAlsAdresseOderNull(heldfigurpfad(erinnerung, heldvariante)),
       figurenbilderFuer(fund.ort, karte),
       ladeMoebel(karte),
-      paketdateiAlsAdresseOderNull(`grafik/karten/${kartenkennung}.png`),
+      paketdateiAlsAdresseOderNull(
+        `grafik/karten/${kartenkennung}${fassung.zustand ? `-${fassung.zustand}` : ""}.png`,
+      ),
       belebungsbilderFuer(karte),
     ]);
   return {
@@ -177,6 +190,7 @@ export async function ladeWelt(kartenkennung: string, heldvariante = 0): Promise
     moebel,
     hintergrund,
     belebungsbilder,
+    zustand: fassung.zustand,
   };
 }
 

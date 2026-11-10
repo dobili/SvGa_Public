@@ -1,0 +1,89 @@
+{
+  "karte": "wegPinewoodGhost.tankstelle",
+  "datei": "karten/varianten/weg-pinewood-ghost-tankstelle-b.json",
+  "variante": "b",
+  "art": "innen",
+  "beschreibung": "Variante B: der Greifarm links, ein Regal rechts, Reifen und Kiste rechts.",
+  "wand": "holz",
+  "boden": "holzDunkel",
+  "raster": [
+    "############",
+    "############",
+    "############",
+    "#..........#",
+    "#..........#",
+    "#..........#",
+    "#..........#",
+    "#..........#",
+    "#..........#",
+    "######.#####",
+    "############"
+  ],
+  "objekte": [
+    {
+      "moebel": "cc6TuerSued",
+      "feld": [6, 10],
+      "an_wand": true
+    },
+    {
+      "moebel": "cp8Greifarm",
+      "feld": [2, 3],
+      "id": "z1"
+    },
+    {
+      "moebel": "cc5Tisch",
+      "feld": [2, 6],
+      "id": "brettZ1"
+    },
+    {
+      "moebel": "cc4Brett",
+      "feld": [0, 0],
+      "auf": "brettZ1"
+    },
+    {
+      "moebel": "cc4Hocker",
+      "feld": [2, 8]
+    },
+    {
+      "moebel": "cc4RegalA",
+      "feld": [8, 1]
+    },
+    {
+      "moebel": "dsReifen",
+      "feld": [9, 7]
+    },
+    {
+      "moebel": "dsReifen",
+      "feld": [10, 7]
+    },
+    {
+      "moebel": "iwFass",
+      "feld": [1, 7]
+    },
+    {
+      "moebel": "cc4KisteLeer",
+      "feld": [9, 4]
+    }
+  ],
+  "ausloeser": [
+    {
+      "name": "start",
+      "feld": [6, 8],
+      "eigenschaften": {
+        "richtung": "oben"
+      }
+    },
+    {
+      "name": "tankstelleAusgang",
+      "feld": [6, 9]
+    },
+    {
+      "name": "greifarm",
+      "feld": [4, 7]
+    }
+  ],
+  "figuren": [],
+  "belebung": [],
+  "zustand": ["gebraucht", "alt", "neu"],
+  "stil": ["einfach", "industrie", "modern", "rustikal", "klassisch"]
+}

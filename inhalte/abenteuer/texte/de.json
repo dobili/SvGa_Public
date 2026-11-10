@@ -1309,5 +1309,10 @@
   "fehler.paket.pruefsumme": "Die Spieldatei {pfad} ist beschädigt. Bitte das Spiel neu laden.",
   "fehler.paket.ohneSpeicher": "Dieser Browser hat keinen Speicher für das Spielpaket.",
   "fehler.paket.datei": "Die Spieldatei {pfad} fehlt ({status}).",
-  "fehler.welt.karteFehlt": "Die Karte {karte} gibt es im Spiel nicht."
+  "fehler.welt.karteFehlt": "Die Karte {karte} gibt es im Spiel nicht.",
+  "oberwelt.gedaechtnis.titel": "Gedächtnisstellung",
+  "oberwelt.gedaechtnis.einpraegen": "Präg dir die Stellung ein. Noch {sekunden} Sekunden.",
+  "oberwelt.gedaechtnis.aufbauen": "Bau die Stellung aus dem Gedächtnis auf.",
+  "oberwelt.gedaechtnis.bestanden": "Alles richtig: {richtig} von {gesamt} Figuren am richtigen Platz.",
+  "oberwelt.gedaechtnis.daneben": "{richtig} von {gesamt} Figuren am richtigen Platz. Fast!"
 }

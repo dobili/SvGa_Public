@@ -1,0 +1,65 @@
+{
+  "$schema": "https://json-schema.org/draft/2020-12/schema",
+  "$id": "https://schach-von-grund-auf.com/schemas/abenteuer-partieformen.schema.json",
+  "title": "Besondere Partieformen des Schach-Abenteuers",
+  "description": "Partieformen der Runde 6 (docs/spiel/15, Abschnitt 4), die keine einzelne Begegnung sind: Gedächtnisstellungen (Stellung kurz zeigen, dann aus dem Gedächtnis aufbauen; Ink: beginneGedaechtnis(kennung)) und Simultan (mehrere Stellungsduelle hintereinander mit Gesamtwertung; Ink: beginneSimultan(kennung)). Bestanden setzt die Dialogvariable <name>Bestanden wie bei Aufgabenrunden.",
+  "type": "object",
+  "additionalProperties": false,
+  "required": ["schemaVersion", "gedaechtnis", "simultan"],
+  "properties": {
+    "schemaVersion": { "const": 1 },
+    "gedaechtnis": {
+      "type": "array",
+      "items": {
+        "type": "object",
+        "additionalProperties": false,
+        "required": ["kennung", "fen", "sekunden"],
+        "properties": {
+          "kennung": {
+            "type": "string",
+            "pattern": "^[a-z][a-zA-Z0-9]*\\.[a-z][a-zA-Z0-9]*$"
+          },
+          "fen": {
+            "description": "Die gezeigte Stellung (FEN; nur die Figurenstellung wird verglichen)",
+            "type": "string",
+            "minLength": 10
+          },
+          "sekunden": {
+            "description": "So lange steht die Stellung da",
+            "type": "integer",
+            "minimum": 2,
+            "maximum": 30
+          }
+        }
+      }
+    },
+    "simultan": {
+      "type": "array",
+      "items": {
+        "type": "object",
+        "additionalProperties": false,
+        "required": ["kennung", "begegnungen", "mindestens"],
+        "properties": {
+          "kennung": {
+            "type": "string",
+            "pattern": "^[a-z][a-zA-Z0-9]*\\.[a-z][a-zA-Z0-9]*$"
+          },
+          "begegnungen": {
+            "description": "Begegnungen (begegnungen.json), die nacheinander gespielt werden, meist Stellungsduelle",
+            "type": "array",
+            "minItems": 2,
+            "items": {
+              "type": "string",
+              "pattern": "^[a-z][a-zA-Z0-9]*\\.[a-z][a-zA-Z0-9]*$"
+            }
+          },
+          "mindestens": {
+            "description": "So viele Siege braucht es zum Bestehen (Remis zählt halb)",
+            "type": "number",
+            "minimum": 0.5
+          }
+        }
+      }
+    }
+  }
+}

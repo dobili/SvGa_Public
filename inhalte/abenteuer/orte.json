@@ -38,7 +38,10 @@
           "kennung": "mapleFalls.park",
           "datei": "karten/maple-falls-park.json",
           "name": "ort.mapleFalls.park",
-          "innen": false
+          "innen": false,
+          "zustaende": {
+            "nadelMapleFalls >= 1": "karten/maple-falls-park-steg-neu.json"
+          }
         },
         {
           "kennung": "mapleFalls.diner",
@@ -598,7 +601,12 @@
           "datei": "karten/weg-maple-cedar-1.json",
           "name": "ort.wegMapleCedar.landstrasse",
           "innen": false,
-          "musik": "musik/landstrasse.ogg"
+          "musik": "musik/landstrasse.ogg",
+          "zustaende": {
+            "nadelMapleFalls < 1": "karten/weg-maple-cedar-landstrasse-flohmarkt-leer.json",
+            "wegMapleCedarTafelBestanden": "karten/weg-maple-cedar-landstrasse-gatter-offen.json",
+            "wegMapleCedarTafelBestanden und nadelMapleFalls < 1": "karten/weg-maple-cedar-landstrasse-gatter-offen-leer.json"
+          }
         },
         {
           "kennung": "wegMapleCedar.flussweg",
@@ -1292,7 +1300,11 @@
           "datei": "karten/lockport-aussen.json",
           "name": "ort.lockport.aussen",
           "innen": false,
-          "musik": "musik/landstrasse.ogg"
+          "musik": "musik/landstrasse.ogg",
+          "zustaende": {
+            "lockportSteg": "karten/lockport-aussen-steg-offen.json",
+            "taueErledigt": "karten/lockport-aussen-boot-an-land.json"
+          }
         },
         {
           "kennung": "lockport.gasthaus",

@@ -679,11 +679,13 @@ Katze. Die Kinder mit Kreide zeigen die Königsjagd Lasker gegen Thomas, London 
 - _Absperrung am kaputten Steg?_ Richtig so: Der morsche Steg ist Sperre S5. Der begehbare Steg führt
   zum Zedernpfad, an seinem Ende das Schild „Sturmschaden“ (S2).
 
-**Zustände (10.63), Szenen folgen, sobald mittel-2 die Technik meldet:**
+**Zustände (10.63), gebaut (Szenen `maple-falls-park-<zustand>.json`, Schlüssel in `orte.json`):**
 
-| Karte               | Zustand          | Bedingung                                              | Zustand: wann, was, warum                                                                                  |
-| ------------------- | ---------------- | ------------------------------------------------------ | ---------------------------------------------------------------------------------------------------------- |
-| `mapleFalls.park`   | `stegNeu`        | `nadelMapleFalls >= 1`                                 | Nach der ersten Clubnadel: Absperrbock weg, der morsche Steg ist durch Mr. Pratts neuen Steg ersetzt (S5). |
-| `mapleFalls.park`   | `schulbus`       | `aufbruchGesehen` und nicht `ankunftCedarCreekGesehen` | Szene 13: Der Schulbus wartet an der Haltestelle, mit dem Coach am Steuer; danach fährt er ab.             |
-| `mapleFalls.park`   | `zedernpfadFrei` | `nadelCedarCreek >= 1`                                 | Nach der Nadel von Cedar Creek: Das Schild „Sturmschaden“ am Ende des Stegs zum Zedernpfad ist weg (S2).   |
-| `mapleFalls.aussen` | –                | –                                                      | Kein fester Wechsel; Abend in Szene 4 nur als Tönung.                                                      |
+| Karte               | Zustand    | Bedingung                                            | Zustand: wann, was, warum                                                                                                |
+| ------------------- | ---------- | ---------------------------------------------------- | ------------------------------------------------------------------------------------------------------------------------ |
+| `mapleFalls.park`   | `steg-neu` | `nadelMapleFalls >= 1`                               | Nach der ersten Clubnadel: Absperrung weg, Mr. Pratts neuer Steg ersetzt den morschen (S5).                              |
+| `mapleFalls.park`   | `schulbus` | `aufbruchGesehen und nicht ankunftCedarCreekGesehen` | Szene 13 bis zur Ankunft in Cedar Creek: Der Schulbus wartet vor der Haltestelle; mit neuem Steg (liegt nach der Nadel). |
+| `mapleFalls.aussen` | –          | –                                                    | Kein fester Wechsel.                                                                                                     |
+
+Das Schild „Sturmschaden“ am Zedernpfad steht nicht als Bild auf der Parkkarte; S2 bleibt dort ein
+Übergang mit Dialog, darum kein Zustand.

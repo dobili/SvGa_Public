@@ -2,7 +2,7 @@
   "karte": "siliconBay.akademie",
   "datei": "karten/silicon-bay-akademie.json",
   "art": "innen",
-  "beschreibung": "Die Perfect Move Academy in Silicon Bay: hell, kühl und leise summend, alles Glas, Weiß und Bildschirm. Durch die gläserne Eingangstür im Süden kommt man ins Foyer mit grauen Fliesen: rechts der Empfangstisch mit Laptop, an dem die Empfangsdame Besucher begrüßt, links eine Sitzgruppe aus Sofa, zwei Stühlen und weißem Beistelltisch, ein Kübelbaum und die Vitrine mit dem Glaspokal. Eine Glaswand aus Scheiben zwischen schmalen Pfosten auf einer Schwelle trennt Foyer und Büro vom Trainingssaal; durch sie sieht man die Schüler an ihren Bildschirmen. Im Saal stehen vier weiße Stehpulte in zwei Reihen mit Gang dazwischen, an jedem zwei Flachbildschirme; an jedem Pult steht ein Schüler und spielt gegen die Maschine. An der Nordwand der Bildschirm mit der Rangliste der Schüler und eine Statistiktafel, zwei Fenster, die Stahltür zum Serverraum und der große Vortragsbildschirm mit drei Stuhlreihen davor; in der Ecke Wasserspender, Getränke- und Kaffeeautomat, daneben zwei Sessel an einem Beistelltisch. An der Westwand filmt Nova sich mit dem Ringlicht. Im Südosten das Büro von Dr. Lin mit blauem Teppich, zum Saal hin verglast, vom Foyer durch ein Bücherregal als Raumteiler getrennt und daneben offen: ein weißer Schreibtisch, auf dem als einziges ein altes Holzbrett steht, Lin dahinter, ein Besucherstuhl davor, ein Bücherregal.",
+  "beschreibung": "Die Perfect Move Academy in Silicon Bay: hell, kühl und leise summend, alles Glas, Weiß und Bildschirm. Durch die gläserne Eingangstür im Süden kommt man ins Foyer mit grauen Fliesen: rechts der Empfangstisch mit Laptop, an dem die Empfangsdame Besucher begrüßt, links eine Sitzgruppe aus Sofa, zwei Stühlen und weißem Beistelltisch, zwei Kübelpflanzen und die Vitrine mit dem Glaspokal. Eine Glaswand aus Scheiben zwischen schmalen Pfosten auf einer Schwelle trennt Foyer und Büro vom Trainingssaal; durch sie sieht man die Schüler an ihren Bildschirmen. Im Saal stehen vier weiße Stehpulte in zwei Reihen mit Gang dazwischen, an jedem zwei Flachbildschirme; an jedem Pult steht ein Schüler und spielt gegen die Maschine. An der Nordwand der Bildschirm mit der Rangliste der Schüler und eine Statistiktafel, zwei Fenster, die Stahltür zum Serverraum und der große Vortragsbildschirm mit zwei Stuhlreihen davor, dazwischen Platz für die Füße; in der Ecke Wasserspender, Getränke- und Kaffeeautomat, daneben zwei Sessel an einem Beistelltisch. An der Westwand filmt Nova sich mit dem Ringlicht. Im Südosten das Büro von Dr. Lin mit blauem Teppich, zum Saal hin verglast, vom Foyer durch ein Bücherregal als Raumteiler getrennt und daneben offen: ein weißer Schreibtisch, auf dem als einziges ein altes Holzbrett steht, Lin dahinter, ein Besucherstuhl davor, ein Bücherregal.",
   "wand": "hellgrau",
   "boden": "fliesenWeiss",
   "zustand": ["neu", "gebraucht"],
@@ -115,35 +115,19 @@
     },
     {
       "moebel": "sb8StuhlRuecken",
-      "feld": [14, 7]
+      "feld": [14, 8]
     },
     {
       "moebel": "sb8StuhlRuecken",
-      "feld": [15, 7]
+      "feld": [15, 8]
     },
     {
       "moebel": "sb8StuhlRuecken",
-      "feld": [17, 7]
+      "feld": [17, 8]
     },
     {
       "moebel": "sb8StuhlRuecken",
-      "feld": [18, 7]
-    },
-    {
-      "moebel": "sb8StuhlRuecken",
-      "feld": [14, 9]
-    },
-    {
-      "moebel": "sb8StuhlRuecken",
-      "feld": [15, 9]
-    },
-    {
-      "moebel": "sb8StuhlRuecken",
-      "feld": [17, 9]
-    },
-    {
-      "moebel": "sb8StuhlRuecken",
-      "feld": [18, 9]
+      "feld": [18, 8]
     },
     {
       "moebel": "sb5SesselRund",
@@ -155,7 +139,7 @@
     },
     {
       "moebel": "sb8Beistelltisch",
-      "feld": [22, 7]
+      "feld": [22, 8]
     },
     {
       "moebel": "sb8Pflanze",
@@ -238,8 +222,12 @@
       "auf": "empfang"
     },
     {
-      "moebel": "sbKuebelbaum",
-      "feld": [5, 13]
+      "moebel": "sb8Pflanze",
+      "feld": [5, 14]
+    },
+    {
+      "moebel": "sb8Pflanze",
+      "feld": [6, 16]
     },
     {
       "moebel": "sb8Pflanze",

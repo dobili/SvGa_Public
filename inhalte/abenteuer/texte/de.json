@@ -1315,5 +1315,9 @@
   "oberwelt.gedaechtnis.aufbauen": "Bau die Stellung aus dem Gedächtnis auf.",
   "oberwelt.gedaechtnis.bestanden": "Alles richtig: {richtig} von {gesamt} Figuren am richtigen Platz.",
   "oberwelt.gedaechtnis.daneben": "{richtig} von {gesamt} Figuren am richtigen Platz. Fast!",
-  "oberwelt.simultan.ende": "Simultan beendet: {punkte} Punkte aus {bretter} Partien."
+  "oberwelt.simultan.ende": "Simultan beendet: {punkte} Punkte aus {bretter} Partien.",
+  "tagebuch.finch.titel": "Finchs Buchsbaum",
+  "tagebuch.finch.stand": "{anzahl} von {gesamt} Figuren gefunden.",
+  "tagebuch.finch.gefunden": "gefunden",
+  "tagebuch.finch.offen": "noch versteckt"
 }

@@ -295,7 +295,10 @@ async function main() {
   ]) {
     await kopiereJson("daten", name, "daten");
   }
-  await kopiereJson("texte", "texte/de.json", "daten");
+  // Spieltexte und Dialoge aller vorhandenen Sprachen (Dokument 17); Deutsch ist die Quelle.
+  for (const name of (await readdir(join(QUELLE, "texte"))).filter((d) => d.endsWith(".json"))) {
+    await kopiereJson("texte", `texte/${name}`, "daten");
+  }
   for (const name of (await readdir(join(QUELLE, "karten"))).filter((d) => d.endsWith(".json"))) {
     await schreibe(
       `karten/${name}`,
@@ -303,7 +306,12 @@ async function main() {
       "karten",
     );
   }
-  await uebersetzeDialoge("de");
+  for (const sprache of (await readdir(join(QUELLE, "dialoge"), { withFileTypes: true }))
+    .filter((d) => d.isDirectory())
+    .map((d) => d.name)
+    .sort()) {
+    await uebersetzeDialoge(sprache);
+  }
   // Porträts (Q17-2): die erzeugten Pixel-Porträts; ein gleichnamiges Bild im privaten Ordner
   // (gekaufte oder gezeichnete Grafik) geht vor.
   for (const name of (await readdir(join(QUELLE, "portraets"))).filter((d) => d.endsWith(".svg"))) {

@@ -14,7 +14,9 @@ import {
   paketdateiAlsAdresse,
   paketdateiAlsAdresseOderNull,
 } from "../paket/paketlader";
-import { hatSpieltext, tSpiel } from "../texte/texte";
+import { Spielfehler } from "../schnittstelle/spielfehler";
+import { sprache } from "../../i18n/sprache";
+import { GRUNDSPRACHE, hatSpieltext, ladeSpieltexte, spielsprache, tSpiel } from "../texte/texte";
 import { liesBelebung, statistenbild, statistensatz } from "./belebung";
 import type { SprechblasenInhalt } from "./Sprechblase";
 import { ladeMoebel, type Moebel } from "./moebel";
@@ -26,7 +28,6 @@ const KACHELBILD = "grafik/platzhalter.png";
 const HELDBILD = "grafik/held.png";
 const FIGURBILD = "grafik/figur.png";
 export const KACHELSATZ = "platzhalter";
-export const SPRACHE = "de";
 
 /** Was zum Aufbau der Szene geladen wurde. */
 export interface Weltdaten {
@@ -138,9 +139,11 @@ function heldfigurpfad(erinnerung: boolean, variante: number): string {
 
 /** Lädt Spieldaten, Karte und Bilder für die Karte des Spielstands. */
 export async function ladeWelt(kartenkennung: string, heldvariante = 0): Promise<Weltdaten> {
+  // Spieltexte in der Sprache der App (Dokument 17); ohne Übersetzung im Paket bleibt Deutsch.
+  await ladeSpieltexte(sprache());
   const daten = await ladeSpieldaten();
   const fund = findeKarte(daten, kartenkennung);
-  if (!fund) throw new Error(`Karte ${kartenkennung} fehlt in orte.json`);
+  if (!fund) throw new Spielfehler("fehler.welt.karteFehlt", { karte: kartenkennung });
   const [karte, kachelbild, heldbild, figurbild] = await Promise.all([
     liesPaketJson<object>(fund.karte.datei),
     paketdateiAlsAdresse(KACHELBILD),
@@ -243,4 +246,21 @@ export function sprechblaseFuer(
       })
     : null;
   return { satz: tSpiel(s.satz, { held }), ambrose, zeigt: statist?.zeigt ?? null };
+}
+
+/**
+ * Ein Dialog („datei“ ohne Endung) in der Sprache des Spiels; fehlt er dort, der deutsche
+ * (Dokument 17, Abschnitt 3: Knoten und Variablen sind in allen Sprachen gleich).
+ * Beispiel: Spiel auf Englisch, „ambrose“ nur deutsch übersetzt → dialoge/de/ambrose.json.
+ */
+export async function ladeDialog(datei: string): Promise<object> {
+  const eigene = spielsprache();
+  if (eigene !== GRUNDSPRACHE) {
+    try {
+      return await liesPaketJson<object>(`dialoge/${eigene}/${datei}.json`);
+    } catch {
+      // Dieser Dialog ist noch nicht übersetzt: der deutsche gilt (gewollter Rückfall).
+    }
+  }
+  return liesPaketJson<object>(`dialoge/${GRUNDSPRACHE}/${datei}.json`);
 }

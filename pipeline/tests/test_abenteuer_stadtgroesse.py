@@ -55,3 +55,16 @@ def test_genug_gebaeude_und_andere_karten_still(tmp_path: Path) -> None:
 def test_viertel_zaehlt_als_stadtkarte(tmp_path: Path) -> None:
     befunde = pruefe_gebaeude(_szene("riverton.altstadt", viertel=True), [], {}, _orte(tmp_path))
     assert befunde
+
+
+def test_archiv_nach_wahl_wird_erkannt(tmp_path: Path) -> None:
+    from pipeline.abenteuer.kartenbau import ist_archiv
+
+    varianten = tmp_path / "varianten"
+    varianten.mkdir()
+    for name in ("ortA-aussen-a.json", "ortA-aussen-b.json", "ortB-aussen-b.json"):
+        (varianten / name).write_text("{}", encoding="utf-8")
+    assert ist_archiv(varianten / "ortA-aussen-b.json")
+    assert ist_archiv(varianten / "ortA-aussen-a.json")
+    assert not ist_archiv(varianten / "ortB-aussen-b.json")
+    assert not ist_archiv(tmp_path / "ortA-aussen.json")

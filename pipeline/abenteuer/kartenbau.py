@@ -259,6 +259,18 @@ def tiled(szene: dict, zeilen: list[str], gesetzt: list[dict], vorlage: dict) ->
     }
 
 
+def ist_archiv(pfad: Path) -> bool:
+    """Varianten einer Karte, für die der Autor schon gewählt hat (es gibt ``<karte>-a.json``).
+
+    Warum: Nach einer Wahl bleiben die alten A, B und C als Archiv liegen; sie werden nicht mehr
+    gepflegt, also prüfen die Regeln 10.51 und 10.53 sie nicht.
+    Beispiel: ``varianten/cedar-creek-aussen-b.json`` neben ``cedar-creek-aussen-a.json``.
+    """
+    if pfad.parent.name != "varianten" or len(pfad.stem) < 3 or pfad.stem[-2] != "-":
+        return False
+    return (pfad.parent / f"{pfad.stem[:-2]}-a.json").exists()
+
+
 def baue(pfad: Path) -> list[str]:
     """Baut eine Szene; gibt die Befunde zurück (leer = in Ordnung) und schreibt die Karte."""
     szene = lade(pfad)
@@ -272,7 +284,7 @@ def baue(pfad: Path) -> list[str]:
     from pipeline.abenteuer.zusammenhang import pruefe_zusammenhang
 
     befunde += pruefe_zusammenhang(szene, zeilen, gesetzt, moebel)
-    if not pfad.stem.endswith("-a"):  # frühere A nach einer Wahl: Archiv, wird nicht mehr gebaut
+    if not ist_archiv(pfad):
         befunde += pruefe_gebaeude(szene, gesetzt, moebel)
         ort = ortseintrag(szene["karte"]) or {}
         stadt = zaehlt_als_stadtkarte(szene) and "groesse" in ort

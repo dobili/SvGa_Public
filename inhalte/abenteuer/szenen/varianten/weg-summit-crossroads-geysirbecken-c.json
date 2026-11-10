@@ -1087,6 +1087,22 @@
     {
       "name": "fundBisonhaar",
       "feld": [11, 128]
+    },
+    {
+      "name": "ereignisGeysirblitz",
+      "feld": [21, 62]
+    },
+    {
+      "name": "spurPM5",
+      "feld": [18, 60]
+    },
+    {
+      "name": "finchBauerD",
+      "feld": [15, 63]
+    },
+    {
+      "name": "geysirAusbruch",
+      "feld": [24, 59]
     }
   ],
   "figuren": [

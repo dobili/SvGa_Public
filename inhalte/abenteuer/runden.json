@@ -649,6 +649,33 @@
         "endspiel"
       ],
       "anzahl": 3
+    },
+    {
+      "kennung": "wegIronwoodSilicon.stream",
+      "ort": "wegIronwoodSilicon",
+      "steller": "wegIronwoodSilicon.kiki",
+      "reihe": false,
+      "buchuebungen": [],
+      "themen": ["falle", "haengend"],
+      "anzahl": 3
+    },
+    {
+      "kennung": "wegSummitCrossroads.geysirblitz",
+      "ort": "wegSummitCrossroads",
+      "steller": "wegSummitCrossroads.bell",
+      "reihe": false,
+      "buchuebungen": [],
+      "themen": ["endspiel"],
+      "anzahl": 6
+    },
+    {
+      "kennung": "wegCrossroadsPinewood.lebendschach",
+      "ort": "wegCrossroadsPinewood",
+      "steller": "wegCrossroadsPinewood.ezra",
+      "reihe": false,
+      "buchuebungen": [],
+      "themen": ["matt2", "doppelangriff"],
+      "anzahl": 3
     }
   ]
 }

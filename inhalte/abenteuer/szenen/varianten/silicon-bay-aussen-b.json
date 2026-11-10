@@ -773,6 +773,14 @@
     {
       "name": "altstadt",
       "feld": [0, 22]
+    },
+    {
+      "name": "infosaeule",
+      "feld": [60, 21]
+    },
+    {
+      "name": "werbetafel",
+      "feld": [66, 9]
     }
   ],
   "figuren": [

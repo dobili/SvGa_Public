@@ -363,6 +363,10 @@
     {
       "name": "inselfaehre",
       "feld": [48, 35]
+    },
+    {
+      "name": "netze",
+      "feld": [8, 16]
     }
   ],
   "figuren": [],

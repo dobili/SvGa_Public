@@ -3090,6 +3090,14 @@
     {
       "name": "sturmkeller",
       "feld": [17, 95]
+    },
+    {
+      "name": "seite09",
+      "feld": [16, 95]
+    },
+    {
+      "name": "windrad",
+      "feld": [21, 80]
     }
   ],
   "figuren": [

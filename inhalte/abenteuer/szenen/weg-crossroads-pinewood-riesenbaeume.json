@@ -1126,6 +1126,14 @@
     {
       "name": "rangerhaus",
       "feld": [16, 45]
+    },
+    {
+      "name": "ereignisLebendschach",
+      "feld": [38, 85]
+    },
+    {
+      "name": "seite10",
+      "feld": [24, 106]
     }
   ],
   "figuren": [],
@@ -1248,5 +1256,6 @@
     "klassisch",
     "rustikal",
     "industrie"
-  ]
+  ],
+  "toenung": "nebel"
 }

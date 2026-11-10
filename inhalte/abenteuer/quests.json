@@ -2972,6 +2972,120 @@
           ]
         }
       ]
+    },
+    {
+      "kennung": "wegIronwoodSilicon.stream",
+      "titel": "quest.stream.titel",
+      "typ": "hilfe",
+      "ort": "wegIronwoodSilicon",
+      "haupt": false,
+      "start": {
+        "art": "ort",
+        "karte": "wegIronwoodSilicon.glasbruecke",
+        "ausloeser": "ereignisStream"
+      },
+      "schritte": [
+        {
+          "text": "quest.stream.schritt1",
+          "ereignis": {
+            "art": "aufgaben",
+            "runde": "wegIronwoodSilicon.stream"
+          }
+        },
+        {
+          "text": "quest.stream.schritt2",
+          "ereignis": {
+            "art": "dialog",
+            "knoten": "weg-ironwood-silicon.stream_ende"
+          }
+        }
+      ],
+      "klein": true
+    },
+    {
+      "kennung": "wegSummitCrossroads.geysirblitz",
+      "titel": "quest.geysirblitz.titel",
+      "typ": "hilfe",
+      "ort": "wegSummitCrossroads",
+      "haupt": false,
+      "start": {
+        "art": "ort",
+        "karte": "wegSummitCrossroads.geysirbecken",
+        "ausloeser": "ereignisGeysirblitz"
+      },
+      "schritte": [
+        {
+          "text": "quest.geysirblitz.schritt1",
+          "ereignis": {
+            "art": "aufgaben",
+            "runde": "wegSummitCrossroads.geysirblitz"
+          }
+        },
+        {
+          "text": "quest.geysirblitz.schritt2",
+          "ereignis": {
+            "art": "dialog",
+            "knoten": "weg-summit-crossroads.geysirblitz_ende"
+          }
+        }
+      ],
+      "klein": true
+    },
+    {
+      "kennung": "wegCrossroadsPinewood.lebendschach",
+      "titel": "quest.lebendschach.titel",
+      "typ": "hilfe",
+      "ort": "wegCrossroadsPinewood",
+      "haupt": false,
+      "start": {
+        "art": "ort",
+        "karte": "wegCrossroadsPinewood.riesenbaeume",
+        "ausloeser": "ereignisLebendschach"
+      },
+      "schritte": [
+        {
+          "text": "quest.lebendschach.schritt1",
+          "ereignis": {
+            "art": "aufgaben",
+            "runde": "wegCrossroadsPinewood.lebendschach"
+          }
+        },
+        {
+          "text": "quest.lebendschach.schritt2",
+          "ereignis": {
+            "art": "dialog",
+            "knoten": "weg-crossroads-pinewood.lebendschach_ende"
+          }
+        }
+      ],
+      "klein": true
+    },
+    {
+      "kennung": "crossroads.lieferung",
+      "titel": "quest.lieferung.titel",
+      "typ": "hilfe",
+      "ort": "crossroads",
+      "haupt": false,
+      "start": {
+        "art": "dialog",
+        "knoten": "crossroads-raststaette.darlene_lieferung"
+      },
+      "schritte": [
+        {
+          "text": "quest.lieferung.schritt1",
+          "ereignis": {
+            "art": "dialog",
+            "knoten": "jahrmarkt.dolores_lieferung"
+          },
+          "wirkungen": [
+            {
+              "art": "muenzen",
+              "anzahl": 20
+            }
+          ]
+        }
+      ],
+      "klein": true
     }
   ]
 }

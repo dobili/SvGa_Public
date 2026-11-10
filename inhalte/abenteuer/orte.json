@@ -1988,6 +1988,12 @@
           "sprite": "figuren/joggerin.png",
           "dialog": "weg-ironwood-silicon.joggerin",
           "gegner": "wegIronwoodSilicon.joggerin"
+        },
+        {
+          "kennung": "wegIronwoodSilicon.kiki",
+          "name": "figur.kiki.name",
+          "sprite": "figuren/kiki.png",
+          "dialog": "weg-ironwood-silicon.kiki"
         }
       ],
       "ausloeser": [
@@ -2050,6 +2056,42 @@
             "karte": "siliconBay.aussen",
             "ausloeser": "glasbruecke"
           }
+        },
+        {
+          "name": "ereignisStream",
+          "karte": "wegIronwoodSilicon.glasbruecke",
+          "art": "dialog",
+          "dialog": "weg-ironwood-silicon.ereignis_stream"
+        },
+        {
+          "name": "kreide2",
+          "karte": "wegIronwoodSilicon.raststaette",
+          "art": "gegenstand",
+          "dialog": "weg-ironwood-silicon.kreide2"
+        },
+        {
+          "name": "finchBauerB",
+          "karte": "wegIronwoodSilicon.raststaette",
+          "art": "gegenstand",
+          "dialog": "weg-ironwood-silicon.finch_bauer_b"
+        },
+        {
+          "name": "seite04",
+          "karte": "wegIronwoodSilicon.raststaette",
+          "art": "gegenstand",
+          "dialog": "weg-ironwood-silicon.seite04"
+        },
+        {
+          "name": "werbetafelZero",
+          "karte": "wegIronwoodSilicon.glasbruecke",
+          "art": "dialog",
+          "dialog": "weg-ironwood-silicon.werbetafel_zero"
+        },
+        {
+          "name": "schildSmartCity",
+          "karte": "wegIronwoodSilicon.glasbruecke",
+          "art": "dialog",
+          "dialog": "weg-ironwood-silicon.schild_smart_city"
         }
       ]
     },
@@ -2267,7 +2309,8 @@
           "ziel": {
             "karte": "pelikaninsel.dorf",
             "ausloeser": "faehre"
-          }
+          },
+          "dialog": "silicon-bay-aussen.inselfaehre"
         },
         {
           "name": "altstadt",
@@ -2286,6 +2329,24 @@
             "karte": "siliconBay.aussen",
             "ausloeser": "altstadt"
           }
+        },
+        {
+          "name": "infosaeule",
+          "karte": "siliconBay.aussen",
+          "art": "dialog",
+          "dialog": "silicon-bay-aussen.infosaeule"
+        },
+        {
+          "name": "werbetafel",
+          "karte": "siliconBay.aussen",
+          "art": "dialog",
+          "dialog": "silicon-bay-aussen.werbetafel"
+        },
+        {
+          "name": "netze",
+          "karte": "siliconBay.hafen",
+          "art": "dialog",
+          "dialog": "silicon-bay-aussen.netze"
         }
       ],
       "club": {
@@ -3692,6 +3753,42 @@
             "karte": "crossroads.aussen",
             "ausloeser": "wegSummit"
           }
+        },
+        {
+          "name": "ereignisGeysirblitz",
+          "karte": "wegSummitCrossroads.geysirbecken",
+          "art": "dialog",
+          "dialog": "weg-summit-crossroads.ereignis_geysirblitz"
+        },
+        {
+          "name": "spurPM5",
+          "karte": "wegSummitCrossroads.geysirbecken",
+          "art": "gegenstand",
+          "dialog": "weg-summit-crossroads.spur_pm5"
+        },
+        {
+          "name": "finchBauerD",
+          "karte": "wegSummitCrossroads.geysirbecken",
+          "art": "gegenstand",
+          "dialog": "weg-summit-crossroads.finch_bauer_d"
+        },
+        {
+          "name": "geysirAusbruch",
+          "karte": "wegSummitCrossroads.geysirbecken",
+          "art": "dialog",
+          "dialog": "weg-summit-crossroads.geysir_ausbruch"
+        },
+        {
+          "name": "seite09",
+          "karte": "wegSummitCrossroads.praerie",
+          "art": "gegenstand",
+          "dialog": "weg-summit-crossroads.seite09"
+        },
+        {
+          "name": "windrad",
+          "karte": "wegSummitCrossroads.praerie",
+          "art": "dialog",
+          "dialog": "weg-summit-crossroads.windrad"
         }
       ]
     },
@@ -3818,6 +3915,18 @@
             "karte": "jahrmarkt.festplatz",
             "ausloeser": "zurueckCrossroads"
           }
+        },
+        {
+          "name": "viehgatter",
+          "karte": "crossroads.aussen",
+          "art": "dialog",
+          "dialog": "crossroads-aussen.viehgatter"
+        },
+        {
+          "name": "fernbus",
+          "karte": "crossroads.aussen",
+          "art": "dialog",
+          "dialog": "crossroads-aussen.fernbus"
         }
       ]
     },
@@ -3835,7 +3944,14 @@
           "innen": false
         }
       ],
-      "figuren": [],
+      "figuren": [
+        {
+          "kennung": "jahrmarkt.dolores",
+          "name": "figur.dolores.name",
+          "sprite": "figuren/dolores.png",
+          "dialog": "jahrmarkt.dolores"
+        }
+      ],
       "ausloeser": [
         {
           "name": "start",
@@ -3849,6 +3965,24 @@
             "karte": "crossroads.aussen",
             "ausloeser": "jahrmarkt"
           }
+        },
+        {
+          "name": "schachautomat",
+          "karte": "jahrmarkt.festplatz",
+          "art": "dialog",
+          "dialog": "jahrmarkt.schachautomat"
+        },
+        {
+          "name": "riesenrad",
+          "karte": "jahrmarkt.festplatz",
+          "art": "dialog",
+          "dialog": "jahrmarkt.riesenrad"
+        },
+        {
+          "name": "losbude",
+          "karte": "jahrmarkt.festplatz",
+          "art": "dialog",
+          "dialog": "jahrmarkt.losbude"
         }
       ]
     },
@@ -3934,6 +4068,24 @@
             "karte": "pinewoodCamp.aussen",
             "ausloeser": "wegCrossroads"
           }
+        },
+        {
+          "name": "ereignisLebendschach",
+          "karte": "wegCrossroadsPinewood.riesenbaeume",
+          "art": "dialog",
+          "dialog": "weg-crossroads-pinewood.ereignis_lebendschach"
+        },
+        {
+          "name": "seite10",
+          "karte": "wegCrossroadsPinewood.riesenbaeume",
+          "art": "gegenstand",
+          "dialog": "weg-crossroads-pinewood.seite10"
+        },
+        {
+          "name": "kreide4",
+          "karte": "wegCrossroadsPinewood.huetten",
+          "art": "gegenstand",
+          "dialog": "weg-crossroads-pinewood.kreide4"
         }
       ]
     },

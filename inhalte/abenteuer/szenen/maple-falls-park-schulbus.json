@@ -48,367 +48,619 @@
   "objekte": [
     {
       "moebel": "mf9StrassenbrueckeGehwegQuer4",
-      "feld": [31, 14]
+      "feld": [
+        31,
+        14
+      ]
     },
     {
       "moebel": "mf9FussbrueckeLaengs3",
-      "feld": [10, 2]
+      "feld": [
+        10,
+        2
+      ]
     },
     {
       "moebel": "mf6Busch",
-      "feld": [1, 1]
+      "feld": [
+        1,
+        1
+      ]
     },
     {
       "moebel": "mf6Busch",
-      "feld": [2, 1]
+      "feld": [
+        2,
+        1
+      ]
     },
     {
       "moebel": "mf6Moos",
-      "feld": [3, 1]
+      "feld": [
+        3,
+        1
+      ]
     },
     {
       "moebel": "mf6Busch",
-      "feld": [4, 1]
+      "feld": [
+        4,
+        1
+      ]
     },
     {
       "moebel": "mf6Busch",
-      "feld": [5, 1]
+      "feld": [
+        5,
+        1
+      ]
     },
     {
       "moebel": "mf6Moos",
-      "feld": [6, 1]
+      "feld": [
+        6,
+        1
+      ]
     },
     {
       "moebel": "mf6Busch",
-      "feld": [7, 1]
+      "feld": [
+        7,
+        1
+      ]
     },
     {
       "moebel": "mf6Busch",
-      "feld": [8, 1]
+      "feld": [
+        8,
+        1
+      ]
     },
     {
       "moebel": "mf6Moos",
-      "feld": [9, 1]
+      "feld": [
+        9,
+        1
+      ]
     },
     {
       "moebel": "mf6Moos",
-      "feld": [12, 1]
+      "feld": [
+        12,
+        1
+      ]
     },
     {
       "moebel": "mf6Busch",
-      "feld": [13, 1]
+      "feld": [
+        13,
+        1
+      ]
     },
     {
       "moebel": "mf6Busch",
-      "feld": [14, 1]
+      "feld": [
+        14,
+        1
+      ]
     },
     {
       "moebel": "mf6Moos",
-      "feld": [15, 1]
+      "feld": [
+        15,
+        1
+      ]
     },
     {
       "moebel": "mf6Busch",
-      "feld": [16, 1]
+      "feld": [
+        16,
+        1
+      ]
     },
     {
       "moebel": "mf6Busch",
-      "feld": [17, 1]
+      "feld": [
+        17,
+        1
+      ]
     },
     {
       "moebel": "mf6Moos",
-      "feld": [18, 1]
+      "feld": [
+        18,
+        1
+      ]
     },
     {
       "moebel": "mf6Busch",
-      "feld": [19, 1]
+      "feld": [
+        19,
+        1
+      ]
     },
     {
       "moebel": "mf6Busch",
-      "feld": [20, 1]
+      "feld": [
+        20,
+        1
+      ]
     },
     {
       "moebel": "mf6Moos",
-      "feld": [21, 1]
+      "feld": [
+        21,
+        1
+      ]
     },
     {
       "moebel": "mf6Busch",
-      "feld": [22, 1]
+      "feld": [
+        22,
+        1
+      ]
     },
     {
       "moebel": "mf6Busch",
-      "feld": [23, 1]
+      "feld": [
+        23,
+        1
+      ]
     },
     {
       "moebel": "mf6Moos",
-      "feld": [24, 1]
+      "feld": [
+        24,
+        1
+      ]
     },
     {
       "moebel": "mf6Busch",
-      "feld": [25, 1]
+      "feld": [
+        25,
+        1
+      ]
     },
     {
       "moebel": "mf6Busch",
-      "feld": [26, 1]
+      "feld": [
+        26,
+        1
+      ]
     },
     {
       "moebel": "mf6Moos",
-      "feld": [27, 1]
+      "feld": [
+        27,
+        1
+      ]
     },
     {
       "moebel": "mf6Busch",
-      "feld": [28, 1]
+      "feld": [
+        28,
+        1
+      ]
     },
     {
       "moebel": "mf6Busch",
-      "feld": [35, 1]
+      "feld": [
+        35,
+        1
+      ]
     },
     {
       "moebel": "mf6Busch",
-      "feld": [37, 1]
+      "feld": [
+        37,
+        1
+      ]
     },
     {
       "moebel": "mf6Busch",
-      "feld": [39, 1]
+      "feld": [
+        39,
+        1
+      ]
     },
     {
       "moebel": "mf6Busch",
-      "feld": [41, 1]
+      "feld": [
+        41,
+        1
+      ]
     },
     {
       "moebel": "mf4Wegweiser",
-      "feld": [12, 5]
+      "feld": [
+        12,
+        5
+      ]
     },
     {
       "moebel": "mfBank",
-      "feld": [3, 11],
+      "feld": [
+        3,
+        11
+      ],
       "id": "bank"
     },
     {
       "moebel": "mfBank",
-      "feld": [1, 11]
+      "feld": [
+        1,
+        11
+      ]
     },
     {
       "moebel": "mf4Abfalleimer",
-      "feld": [5, 11]
+      "feld": [
+        5,
+        11
+      ]
     },
     {
       "moebel": "mfBaum",
-      "feld": [6, 9]
+      "feld": [
+        6,
+        9
+      ]
     },
     {
       "moebel": "mfAhorn",
-      "feld": [10, 9]
+      "feld": [
+        10,
+        9
+      ]
     },
     {
       "moebel": "mfAhorn",
-      "feld": [36, 3]
+      "feld": [
+        36,
+        3
+      ]
     },
     {
       "moebel": "mfBaum",
-      "feld": [38, 8]
+      "feld": [
+        38,
+        8
+      ]
     },
     {
       "moebel": "mf2BankLang",
-      "feld": [17, 11]
+      "feld": [
+        17,
+        11
+      ]
     },
     {
       "moebel": "mf4Abfalleimer",
-      "feld": [20, 12]
+      "feld": [
+        20,
+        12
+      ]
     },
     {
       "moebel": "mf9Limowagen",
-      "feld": [24, 10]
+      "feld": [
+        24,
+        10
+      ]
     },
     {
       "moebel": "mf4Laterne",
-      "feld": [2, 6],
+      "feld": [
+        2,
+        6
+      ],
       "vorn": true
     },
     {
       "moebel": "mf4Laterne",
-      "feld": [15, 6],
+      "feld": [
+        15,
+        6
+      ],
       "vorn": true
     },
     {
       "moebel": "mf4Laterne",
-      "feld": [24, 6],
+      "feld": [
+        24,
+        6
+      ],
       "vorn": true
     },
     {
       "moebel": "mf4Laterne",
-      "feld": [14, 10],
+      "feld": [
+        14,
+        10
+      ],
       "vorn": true
     },
     {
       "moebel": "mf4Laterne",
-      "feld": [22, 10],
+      "feld": [
+        22,
+        10
+      ],
       "vorn": true
     },
     {
       "moebel": "mf4Laterne",
-      "feld": [38, 10],
+      "feld": [
+        38,
+        10
+      ],
       "vorn": true
     },
     {
       "moebel": "mf4Laterne",
-      "feld": [9, 16],
+      "feld": [
+        9,
+        16
+      ],
       "vorn": true
     },
     {
       "moebel": "mf4Laterne",
-      "feld": [21, 16],
+      "feld": [
+        21,
+        16
+      ],
       "vorn": true
     },
     {
       "moebel": "mf4Laterne",
-      "feld": [38, 16],
+      "feld": [
+        38,
+        16
+      ],
       "vorn": true
     },
     {
       "moebel": "mf6Basketballplatz",
-      "feld": [1, 20],
+      "feld": [
+        1,
+        20
+      ],
       "id": "platz"
     },
     {
       "moebel": "mf6BankSeiteLinks",
-      "feld": [15, 22],
+      "feld": [
+        15,
+        22
+      ],
       "zu": "platz"
     },
     {
       "moebel": "mf6BankSeiteLinks",
-      "feld": [15, 26],
+      "feld": [
+        15,
+        26
+      ],
       "zu": "platz"
     },
     {
       "moebel": "mf6BankSeiteLinks",
-      "feld": [22, 22],
+      "feld": [
+        22,
+        22
+      ],
       "id": "bankPlatz"
     },
     {
       "moebel": "mf2Blumenbeet",
-      "feld": [18, 26]
+      "feld": [
+        18,
+        26
+      ]
     },
     {
       "moebel": "mf6Haltestelle",
-      "feld": [24, 22]
+      "feld": [
+        24,
+        22
+      ]
     },
     {
       "moebel": "mf4Abfalleimer",
-      "feld": [29, 22]
+      "feld": [
+        29,
+        22
+      ]
     },
     {
       "moebel": "mf6Seerose1",
-      "feld": [24, 27]
+      "feld": [
+        24,
+        27
+      ]
     },
     {
       "moebel": "mf6Seerose2",
-      "feld": [27, 26]
+      "feld": [
+        27,
+        26
+      ]
     },
     {
       "moebel": "mf6Seerose3",
-      "feld": [26, 28]
+      "feld": [
+        26,
+        28
+      ]
     },
     {
       "moebel": "mf4Strassenbaum",
-      "feld": [39, 25]
+      "feld": [
+        39,
+        25
+      ]
     },
     {
       "moebel": "mfAhorn",
-      "feld": [31, 26]
+      "feld": [
+        31,
+        26
+      ]
     },
     {
       "moebel": "mf9Halfpipe",
-      "feld": [16, 27]
+      "feld": [
+        16,
+        27
+      ]
     },
     {
       "moebel": "mf3BrettKlein",
       "auf": "bank",
-      "versatz": [6, -3]
+      "versatz": [
+        6,
+        -3
+      ]
     },
     {
       "moebel": "mf9StegNeu",
-      "feld": [5, 2],
+      "feld": [
+        5,
+        2
+      ],
       "id": "stegS5"
     },
     {
       "moebel": "caBus",
-      "feld": [21, 14],
+      "feld": [
+        21,
+        14
+      ],
       "bauteil_ok": true
     }
   ],
   "ausloeser": [
     {
       "name": "start",
-      "feld": [1, 16],
+      "feld": [
+        1,
+        16
+      ],
       "eigenschaften": {
         "richtung": "rechts"
       }
     },
     {
       "name": "park",
-      "feld": [0, 15]
+      "feld": [
+        0,
+        15
+      ]
     },
     {
       "name": "park",
-      "feld": [0, 16]
+      "feld": [
+        0,
+        16
+      ]
     },
     {
       "name": "park",
-      "feld": [0, 17]
+      "feld": [
+        0,
+        17
+      ]
     },
     {
       "name": "landstrasse",
-      "feld": [43, 15]
+      "feld": [
+        43,
+        15
+      ]
     },
     {
       "name": "landstrasse",
-      "feld": [43, 16]
+      "feld": [
+        43,
+        16
+      ]
     },
     {
       "name": "landstrasse",
-      "feld": [43, 17]
+      "feld": [
+        43,
+        17
+      ]
     },
     {
       "name": "zedernpfad",
-      "feld": [10, 0]
+      "feld": [
+        10,
+        0
+      ]
     },
     {
       "name": "zedernpfad",
-      "feld": [11, 0]
+      "feld": [
+        11,
+        0
+      ]
     },
     {
       "name": "bushaltestelle",
-      "feld": [26, 21]
+      "feld": [
+        26,
+        21
+      ]
     },
     {
       "name": "parkbank",
-      "feld": [4, 12],
+      "feld": [
+        4,
+        12
+      ],
       "auf_moebel": true
     },
     {
       "name": "kiosk",
-      "feld": [25, 13]
+      "feld": [
+        25,
+        13
+      ]
     },
     {
       "name": "steg",
-      "feld": [5, 7]
+      "feld": [
+        5,
+        7
+      ]
     }
   ],
   "figuren": [
     {
       "name": "skaterJo",
-      "feld": [17, 26]
+      "feld": [
+        17,
+        26
+      ]
     },
     {
       "name": "abernathy",
-      "feld": [5, 13]
+      "feld": [
+        5,
+        13
+      ]
     }
   ],
   "belebung": [
     {
       "name": "rentner",
       "typ": "statist",
-      "feld": [18, 12],
+      "feld": [
+        18,
+        12
+      ],
       "eigenschaften": {
         "von": "18,12",
         "bis": "18,12",
@@ -419,7 +671,10 @@
     {
       "name": "kioskbesucher",
       "typ": "statist",
-      "feld": [23, 13],
+      "feld": [
+        23,
+        13
+      ],
       "eigenschaften": {
         "von": "21,13",
         "bis": "27,13",
@@ -430,7 +685,10 @@
     {
       "name": "enten",
       "typ": "tier",
-      "feld": [24, 30],
+      "feld": [
+        24,
+        30
+      ],
       "eigenschaften": {
         "von": "21,30",
         "bis": "28,30",
@@ -440,7 +698,10 @@
     {
       "name": "kraehen",
       "typ": "tier",
-      "feld": [16, 5],
+      "feld": [
+        16,
+        5
+      ],
       "eigenschaften": {
         "von": "10,5",
         "bis": "24,5",
@@ -450,15 +711,28 @@
     {
       "name": "limoverkaeuferin",
       "typ": "statist",
-      "feld": [27, 12],
+      "feld": [
+        27,
+        12
+      ],
       "eigenschaften": {
         "tun": "verkauft Limonade und Süßes am Wagen",
         "wann": "tag"
       }
     }
   ],
-  "zustand": ["neu", "gebraucht", "alt"],
-  "stil": ["klassisch", "modern", "natur"],
-  "bruecken": ["h"],
+  "zustand": [
+    "neu",
+    "gebraucht",
+    "alt"
+  ],
+  "stil": [
+    "klassisch",
+    "modern",
+    "natur"
+  ],
+  "bruecken": [
+    "h"
+  ],
   "zustand_der_karte": "aufbruchGesehen und nicht ankunftCedarCreekGesehen"
 }

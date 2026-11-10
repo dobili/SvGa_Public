@@ -651,6 +651,43 @@
       "art": "zaun",
       "zustand": "gebraucht",
       "stil": "klassisch"
+    },
+    "wc8PlakatwandPM": {
+      "quelle": "spiel/eigene/plakatwand_perfect_move.png",
+      "breite": 80,
+      "hoehe": 96,
+      "kollision": true,
+      "art": "schild",
+      "blick": "unten",
+      "zustand": "gebraucht",
+      "stil": "modern"
+    },
+    "wc8TorOffen1": {
+      "quelle": "modern-farm/Single_Files_16x16/Fences_16x16/Wooden_Fence_Type_4_Brown_Gate_1_16x16.png",
+      "breite": 16,
+      "hoehe": 16,
+      "kollision": false,
+      "art": "zaun",
+      "zustand": "gebraucht",
+      "stil": "laendlich"
+    },
+    "wc8TorOffen2": {
+      "quelle": "modern-farm/Single_Files_16x16/Fences_16x16/Wooden_Fence_Type_4_Brown_Gate_2_16x16.png",
+      "breite": 16,
+      "hoehe": 16,
+      "kollision": false,
+      "art": "zaun",
+      "zustand": "gebraucht",
+      "stil": "laendlich"
+    },
+    "wc8Trittstein": {
+      "quelle": "modern-exteriors/Modern_Exteriors_16x16/ME_Theme_Sorter_16x16/11_Camping_Singles_16x16/ME_Singles_Camping_16x16_Rock_2.png",
+      "breite": 16,
+      "hoehe": 16,
+      "kollision": false,
+      "art": "stein",
+      "zustand": "neu",
+      "stil": "einfach"
     }
   }
 }

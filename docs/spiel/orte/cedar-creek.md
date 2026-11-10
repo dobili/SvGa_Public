@@ -723,3 +723,50 @@ statt des hängenden Schilds, Tiere im Zedernpfad nicht mehr in Bäumen.
 Keine Zustände: `cedarCreek.aussen` (die Brücke nach Riverton ist auf der Karte schon fertig, eine
 Baustelle gibt es nicht), `wegMapleCedar.zedernpfad` (der Stamm von S2 ist kein Bild, nur der
 Übergang mit Dialog), `wegMapleCedar.flussweg` (feste Tönung Nebel).
+
+## Gutachten Runde 8: Antworten (niedrig-1, 10.11.2026)
+
+Gutachten in `docs/spiel/auftraege/gutachten/`. „Technik“ heißt: zentral gelöst für alle Karten
+(Tierbilder, Laternenhöhe, Fußmatte, Stufendiagonalen), hier nicht einzeln umgebaut.
+
+**Cedar Creek außen** (Commit „Cedar Creek nach dem Gutachten“):
+
+- Behoben: 31–34, 23 (drei kleine Holzhäuser mit Beeten und Bäumen statt Flachdachhäusern, Laden
+  und Haus mit Satellitenschüsseln), 11 (Bus an der Haltestelle), 5 (Weg vom Stadthaus führt zum
+  Uferweg statt in die Rückwand des Wartehäuschens), 17 (Hundehütte als Bootsschuppen weg).
+- Technik: 8, 19, 29 (Tierbilder), 10 (Laternen), 20 (Stufen).
+- Perspektive: 1 (Bänke von vorn), 24 (Hausbilder haben die Tür unten; die Südreihe zeigt der
+  Straße darum die Gärten), 12, 21 (Figuren ohne Rad, Kinderwagen, Angel).
+- Fehlendes Bild: 3 (erkennbare Zeder), 7 (eigenes Bild für den Waschsalon), 13 (Markierung).
+- Zur Nachprüfung: 2, 4, 6, 9, 14–16, 18, 22, 25–28, 30.
+
+**Landstraße** (Commit „Weg 1 nach dem Gutachten“):
+
+- Behoben: 1–4, 7 (Felder als eigene Ackerbilder statt Pflanzen auf Wegerde; Pflanzenreihe am
+  Nordrand weg; der Acker endet vor dem Abzweig).
+- Technik: 9, 13, 29 (Tierbilder), 21 (Stufen).
+- Perspektive: 14, 19, 23 (Figuren stehend, ohne Rad).
+- Fehlendes Bild: 8 (Ortsschild mit Schrift), 16 (Schuppen statt Hundehütte; Bildwunsch), 18
+  (Schilder mit Aufschrift).
+- Gewollt: 25 (Flohmarkt und Hof gehören zur Quest S1 aus Runde 6; die Beschreibung wird
+  nachgezogen).
+- Zur Nachprüfung: 5, 6, 10–12, 15, 17, 20, 22, 24, 26–28, 30.
+
+**Flussweg** (Commit „Weg 1 nach dem Gutachten“):
+
+- Behoben: 1 (der Erdweg läuft über einen Schottervorplatz in die Straße aus).
+- Technik: 10, 11, 19 (Tierbilder), 2 (Stufen).
+- Perspektive: 20–22 (Figuren stehend, ohne Picknickdecke).
+- Gewollt: 13 (der Fluss läuft am Südrand aus der Karte).
+- Fehlendes Bild: 14 (Erlen), 8 (Vogelschild lesbar).
+- Zur Nachprüfung: 3–7, 9, 12, 15–18.
+
+**Zedernpfad** (Commit „Weg 1 nach dem Gutachten“):
+
+- Behoben: 2–4 (neun Steine als Kreis um die Baumstammbank, keine Steine mehr auf dem Weg), 9, 11,
+  15 (über 200 Zedern und Farne mehr).
+- Nicht machbar: 1 (Höhe; es gibt keine Hangkacheln für Wald, nur die Böschung des Bahndamms).
+- Technik: 16, 17, 18 (Tierbilder), 7 (Stufen).
+- Fehlendes Bild: 10 (erkennbare Zeder), 6 (Sturmholz mit Wurzelteller).
+- Perspektive: 19–22 (Figuren ohne Eimer, Leinwand, Farbe).
+- Zur Nachprüfung: 5, 8, 12–14.

@@ -35,13 +35,13 @@
     "#.....................................p........................#",
     "#.....................................p........................#",
     "#.....................................p........................#",
-    "#..pp........pp........pp.......pp....p......ppppp.............#",
-    "#.ssssppppppppppppppppppppppppppppppppppppppppppppppppppppppppp#",
-    "#.ssssssssssssssssssssssssssssssssssssssssssssssssssssssssssssss",
-    "#.ssssssssssssssssssssssssssssssssssssssssssssssssssssssssssssss",
-    "#.ssssssssssssssssssssssssssssssssssssssssssssssssssssssssssssss",
-    "#.ssssppppppppppppppppppppppppppppppppppppppppppppppppppppppppp#",
-    "#.ssssp...................pp..........................ee.......#",
+    "#..pp........pp........pp.......pp....p......pppppppppppp......#",
+    "#.psssppppppppppppppppppppppppppppppppppppppppppppppppppppppppp#",
+    "#.psssssssssssssssssssssssssssssssssssssssssssssssssssssssssssss",
+    "#.psssssssssssssssssssssssssssssssssssssssssssssssssssssssssssss",
+    "#.psssssssssssssssssssssssssssssssssssssssssssssssssssssssssssss",
+    "#.psssppppppppppppppppppppppppppppppppppppppppppppppppppppppppp#",
+    "#.ppppp...................pp..........................ee.......#",
     "#.........................pp..........................ee.......#",
     "#.........................pp..........................ee.......#",
     "#.........................pp......................dddddd.......#",
@@ -57,14 +57,6 @@
     "################################################################"
   ],
   "objekte": [
-    {
-      "moebel": "mfAhorn",
-      "feld": [1, 5]
-    },
-    {
-      "moebel": "mfBaum",
-      "feld": [5, 5]
-    },
     {
       "moebel": "mfBaum",
       "feld": [12, 5]
@@ -405,16 +397,6 @@
       "feld": [30, 23]
     },
     {
-      "moebel": "mf4TischLinks",
-      "feld": [35, 22],
-      "bauteil_ok": true
-    },
-    {
-      "moebel": "mf4TischRechts",
-      "feld": [36, 22],
-      "bauteil_ok": true
-    },
-    {
       "moebel": "mfBushaltestelle",
       "feld": [57, 21],
       "vorn": true
@@ -428,30 +410,6 @@
       "moebel": "mfMuelltonne",
       "feld": [62, 22],
       "vorn": true
-    },
-    {
-      "moebel": "mf4BaumGruen",
-      "feld": [8, 29]
-    },
-    {
-      "moebel": "mf4BaumRot",
-      "feld": [13, 29]
-    },
-    {
-      "moebel": "mf4BaumGruen",
-      "feld": [20, 29]
-    },
-    {
-      "moebel": "mf4BaumRot",
-      "feld": [29, 29]
-    },
-    {
-      "moebel": "mf4BaumGruen",
-      "feld": [35, 29]
-    },
-    {
-      "moebel": "mf4BaumRot",
-      "feld": [41, 29]
     },
     {
       "moebel": "mf4Laterne",
@@ -664,12 +622,8 @@
       "feld": [54, 37]
     },
     {
-      "moebel": "mf7HausFlach",
-      "feld": [32, 4]
-    },
-    {
-      "moebel": "mf8KulisseLaden",
-      "feld": [11, 32]
+      "moebel": "svHausGruen",
+      "feld": [33, 7]
     },
     {
       "moebel": "mf8KulisseStadthaus",
@@ -682,6 +636,178 @@
     {
       "moebel": "mf7HeckeSaeule",
       "feld": [1, 27]
+    },
+    {
+      "moebel": "svHausRot",
+      "feld": [12, 36]
+    },
+    {
+      "moebel": "mf4ZaunEckeLinks",
+      "feld": [7, 29]
+    },
+    {
+      "moebel": "mf4ZaunMitte",
+      "feld": [8, 29]
+    },
+    {
+      "moebel": "mf4ZaunMitte",
+      "feld": [9, 29]
+    },
+    {
+      "moebel": "mf4ZaunMitte",
+      "feld": [10, 29]
+    },
+    {
+      "moebel": "mf4ZaunMitte",
+      "feld": [11, 29]
+    },
+    {
+      "moebel": "mf4ZaunMitte",
+      "feld": [12, 29]
+    },
+    {
+      "moebel": "mf4ZaunMitte",
+      "feld": [13, 29]
+    },
+    {
+      "moebel": "mf4ZaunMitte",
+      "feld": [14, 29]
+    },
+    {
+      "moebel": "mf4ZaunMitte",
+      "feld": [15, 29]
+    },
+    {
+      "moebel": "mf4ZaunMitte",
+      "feld": [16, 29]
+    },
+    {
+      "moebel": "mf4ZaunMitte",
+      "feld": [17, 29]
+    },
+    {
+      "moebel": "mf4ZaunMitte",
+      "feld": [18, 29]
+    },
+    {
+      "moebel": "mf4ZaunMitte",
+      "feld": [19, 29]
+    },
+    {
+      "moebel": "mf4ZaunMitte",
+      "feld": [20, 29]
+    },
+    {
+      "moebel": "mf4ZaunMitte",
+      "feld": [21, 29]
+    },
+    {
+      "moebel": "mf4ZaunMitte",
+      "feld": [22, 29]
+    },
+    {
+      "moebel": "mf4ZaunMitte",
+      "feld": [23, 29]
+    },
+    {
+      "moebel": "mf4ZaunEckeRechts",
+      "feld": [24, 29]
+    },
+    {
+      "moebel": "mf4ZaunEckeLinks",
+      "feld": [28, 29]
+    },
+    {
+      "moebel": "mf4ZaunMitte",
+      "feld": [29, 29]
+    },
+    {
+      "moebel": "mf4ZaunMitte",
+      "feld": [30, 29]
+    },
+    {
+      "moebel": "mf4ZaunMitte",
+      "feld": [31, 29]
+    },
+    {
+      "moebel": "mf4ZaunMitte",
+      "feld": [32, 29]
+    },
+    {
+      "moebel": "mf4ZaunMitte",
+      "feld": [33, 29]
+    },
+    {
+      "moebel": "mf4ZaunMitte",
+      "feld": [34, 29]
+    },
+    {
+      "moebel": "mf4ZaunMitte",
+      "feld": [35, 29]
+    },
+    {
+      "moebel": "mf4ZaunMitte",
+      "feld": [36, 29]
+    },
+    {
+      "moebel": "mf4ZaunMitte",
+      "feld": [37, 29]
+    },
+    {
+      "moebel": "mf4ZaunMitte",
+      "feld": [38, 29]
+    },
+    {
+      "moebel": "mf4ZaunMitte",
+      "feld": [39, 29]
+    },
+    {
+      "moebel": "mf4ZaunMitte",
+      "feld": [40, 29]
+    },
+    {
+      "moebel": "mf4ZaunMitte",
+      "feld": [41, 29]
+    },
+    {
+      "moebel": "mf4ZaunMitte",
+      "feld": [42, 29]
+    },
+    {
+      "moebel": "mf4ZaunMitte",
+      "feld": [43, 29]
+    },
+    {
+      "moebel": "mf4ZaunMitte",
+      "feld": [44, 29]
+    },
+    {
+      "moebel": "mf4ZaunMitte",
+      "feld": [45, 29]
+    },
+    {
+      "moebel": "mf4ZaunMitte",
+      "feld": [46, 29]
+    },
+    {
+      "moebel": "mf4ZaunEckeRechts",
+      "feld": [47, 29]
+    },
+    {
+      "moebel": "mfBank",
+      "feld": [54, 32]
+    },
+    {
+      "moebel": "mf7Gartenhaus",
+      "feld": [14, 30]
+    },
+    {
+      "moebel": "mf4BaumGruen",
+      "feld": [11, 30]
+    },
+    {
+      "moebel": "mf7Gartenhaus",
+      "feld": [3, 3]
     }
   ],
   "ausloeser": [

@@ -18,7 +18,7 @@
     "~~~~~~~~~~hh~~~~~~~~~~~~~~~~~~~~~~~........#",
     "~~~~~~~~~~hh~~~~~~~~~~~~~~~~~~~~~~~........#",
     "#.........ee..~~~~~~~....~~~~~~~~~~........#",
-    "#.........ee..................~~~~~........#",
+    "#....ee...ee..................~~~~~........#",
     "#eeeeeeeeeeeeeeeeeeeeeeeeeeee.~~~~.........#",
     "#eeeeeeeeeeeeeeeeeeeeeeeeeeee~~~~..........#",
     "#..........................ee~~~~..........#",
@@ -31,9 +31,9 @@
     "ssssssssssssssssssssssssssssssshhhhsssssssss",
     "ssssssssssssssssssssssssssssssshhhhsssssssss",
     "#pppppppppppppppppppppppppppppphhhhpppppppp#",
-    "#.................pp...ppppppp.~~~~~.......#",
-    "#.................pp...ppppppp.~~~~~~~~~~~~~",
-    "#................ppppp.ppppppp.~~~~~~~~~~~~~",
+    "#......pp.........pp..pppppppp.~~~~~.......#",
+    "#.................pp..pppppppp.~~~~~~~~~~~~~",
+    "#................ppppppppppppp.~~~~~~~~~~~~~",
     "#................ppppp...........~~~~~~~~~~~",
     "#................ppppp...........~~~~~~~~~~~",
     "#................ppppp...............~~~~..#",
@@ -257,20 +257,6 @@
       ]
     },
     {
-      "moebel": "mf6Busch",
-      "feld": [
-        39,
-        1
-      ]
-    },
-    {
-      "moebel": "mf6Busch",
-      "feld": [
-        41,
-        1
-      ]
-    },
-    {
       "moebel": "mf4Wegweiser",
       "feld": [
         12,
@@ -281,7 +267,7 @@
       "moebel": "mf6StegMorsch",
       "feld": [
         5,
-        2
+        3
       ],
       "id": "stegS5",
       "versatz": [
@@ -334,13 +320,6 @@
       ]
     },
     {
-      "moebel": "mfAhorn",
-      "feld": [
-        36,
-        3
-      ]
-    },
-    {
       "moebel": "mfBaum",
       "feld": [
         38,
@@ -389,22 +368,6 @@
       "feld": [
         24,
         6
-      ],
-      "vorn": true
-    },
-    {
-      "moebel": "mf4Laterne",
-      "feld": [
-        14,
-        10
-      ],
-      "vorn": true
-    },
-    {
-      "moebel": "mf4Laterne",
-      "feld": [
-        22,
-        10
       ],
       "vorn": true
     },
@@ -522,13 +485,6 @@
       ]
     },
     {
-      "moebel": "mfAhorn",
-      "feld": [
-        31,
-        26
-      ]
-    },
-    {
       "moebel": "mf9Halfpipe",
       "feld": [
         16,
@@ -540,7 +496,35 @@
       "auf": "bank",
       "versatz": [
         6,
-        -3
+        2
+      ]
+    },
+    {
+      "moebel": "mf2Blumenbeet",
+      "feld": [
+        10,
+        13
+      ]
+    },
+    {
+      "moebel": "mfBaum",
+      "feld": [
+        34,
+        27
+      ]
+    },
+    {
+      "moebel": "mfAhorn",
+      "feld": [
+        39,
+        1
+      ]
+    },
+    {
+      "moebel": "mf4Strassenbaum",
+      "feld": [
+        33,
+        8
       ]
     }
   ],
@@ -652,8 +636,8 @@
     {
       "name": "abernathy",
       "feld": [
-        5,
-        13
+        2,
+        14
       ]
     }
   ],

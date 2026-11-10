@@ -1,6 +1,6 @@
 /**
  * Was ein Dialog in der Welt bewirkt (externe Funktionen in Ink, dialog/geschichte.ts): Fund,
- * Karte, Szene, Zustand, Steckbrief und Tönung wirken sofort auf den Spielstand; Partie, Runde,
+ * Karte, Szene, Zustand, Steckbrief, Tönung und Bezahlen wirken sofort auf den Spielstand; Partie, Runde,
  * Gedächtnisstellung, Simultan, Vorführung, Laden, Reise und Abspann merkt sich die Oberwelt und
  * startet sie, wenn der Dialog zu ist.
  *
@@ -13,6 +13,7 @@
 import type { Wirkungen } from "../dialog/geschichte";
 import { variablenNachFund } from "../regeln/dialogvariablen";
 import { mitFund } from "../regeln/funde";
+import { bezahle } from "../regeln/muenzen";
 import { wendeWirkungenAn } from "../regeln/quests";
 import type { Partieauftrag } from "../schnittstelle/partie";
 import type { Abenteuerstand } from "../schnittstelle/spielstand";
@@ -118,6 +119,11 @@ export function dialogwirkungen(k: Wirkungskontext): Wirkungen {
       m().reise.current = { karte, ausloeser };
     },
     setzeToenung: (name) => setzeToenung(k, name),
+    zahle: (muenzen) => {
+      const aktuell = k.stand();
+      const bezahlt = bezahle(aktuell, muenzen);
+      if (bezahlt !== aktuell) k.schreibe(bezahlt);
+    },
     setzeZustand: (gegner, faktor, grund) => mitWirkung({ art: "zustand", gegner, faktor, grund }),
     schalteSteckbrief: (gegner, zeile) => mitWirkung({ art: "steckbrief", gegner, zeile }),
   };

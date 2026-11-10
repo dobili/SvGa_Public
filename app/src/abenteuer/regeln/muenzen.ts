@@ -60,6 +60,17 @@ export function kaufe(
   return wendeWirkungenAn(bezahlt, [wirkung], jetzt);
 }
 
+/**
+ * Der Stand nach dem Bezahlen eines festen Preises (Fahrt mit dem Lastkahn, Ink `zahle`). Reicht
+ * das Geld nicht, bleibt der Stand unverändert: Der Dialog fragt vorher `muenzen` ab und sagt
+ * dann „nicht genug“; die App gerät so nie unter null. Beispiel: 12 Münzen, Preis 5 → 7 Münzen;
+ * 3 Münzen, Preis 5 → derselbe Stand. Ein Preis unter eins ändert nichts.
+ */
+export function bezahle(stand: Abenteuerstand, preis: number): Abenteuerstand {
+  if (!(preis >= 1) || stand.muenzen < preis) return stand;
+  return { ...stand, muenzen: stand.muenzen - preis };
+}
+
 /** Länge des Datums in einer ISO-Zeit („2026-11-08“). */
 const DATUMSLAENGE = 10;
 

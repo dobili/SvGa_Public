@@ -32,7 +32,12 @@ Hintergrund: `docs/spiel/04_Architektur.md`, Abschnitt 2 und 9.
   `#stimmung:streng` (Porträtvariante), `#klang:knarren` (Geräusch), `#pause`.
 - Externe Funktionen (`EXTERNAL`) führt die React-Hülle aus und schreibt in den Spielstand:
   `gibKarte(kennung)`, `setzeSzene(kennung)`, `beginnePartie(begegnung)`, `beginneAufgaben(runde)`,
-  `setzeZustand(gegner, faktor, grund)`, `schalteSteckbrief(gegner, zeile)`.
+  `setzeZustand(gegner, faktor, grund)`, `schalteSteckbrief(gegner, zeile)`, `gibFund(kennung)`,
+  `oeffneLaden(kennung)`, `reise(karte, ausloeser)`, `beginneGedaechtnis(kennung)`,
+  `beginneSimultan(kennung)`, `zeigeVorfuehrung(kennung)`, `setzeToenung(name)`, `zeigeAbspann()`
+  und `zahle(muenzen)`. `zahle` zieht einen festen Preis ab (Lastkahn: 5 Münzen); reicht das Geld
+  nicht, geschieht nichts. Deshalb fragt der Dialog vorher die Variable `muenzen` ab
+  (`VAR muenzen = 0`, beim Öffnen aus dem Spielstand gesetzt) und sagt sonst „nicht genug“.
 - Globale `VAR` liegen im Spielstand (`dialogvariablen`) und überleben Szenen; `held` ist der Name
   des Helden.
 - Beim Build übersetzt der JavaScript-Compiler von inkjs jede Datei nach JSON ins Zusatzpaket

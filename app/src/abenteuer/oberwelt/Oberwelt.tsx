@@ -49,6 +49,8 @@ const MONATSKARTE = "monatskarte";
 
 /** Gegenstand „Lupe des Uhrmachers“ (docs/spiel/11, I1): Steckbrief vor jeder Partie. */
 const LUPE = "lupe";
+/** Gegenstand für den Lichtkreis auf dunklen Karten (Sperren S4, S9, S11, S14). */
+const LATERNE = "laterne";
 
 /** Was die Lupe über einen Gegner verrät; leer ohne Lupe oder ohne Gegnerdaten. */
 function lupeFuer(
@@ -102,6 +104,7 @@ import {
 } from "./weltdaten";
 import { Sprechblase, type SprechblasenInhalt } from "./Sprechblase";
 import { Vorfuehrung } from "./Vorfuehrung";
+import { aktuelleToenung, toenungsvariable, type Toenung } from "./toenung";
 
 /** Ein offener Dialog: die übersetzte Geschichte, der Knoten und der Name der Datei. */
 interface OffenerDialog {
@@ -131,6 +134,8 @@ export function Oberwelt() {
   const angesprochen = useRef(new Map<string, number>());
   // Vorführung eines Statisten (Kennung aus `zeigt`), solange das kleine Brett offen ist.
   const [vorfuehrung, setzeVorfuehrung] = useState<string | null>(null);
+  // Tönung der Karte, die gerade gilt (toenung.ts); Sepia wirkt als CSS-Filter wie Erinnerungen.
+  const [toenung, setzeToenungZustand] = useState<Toenung | null>(null);
   const [ergebnis, setzeErgebnis] = useState<Partieergebnis | null>(null);
   const [offenePartie, setzeOffenePartie] = useState<string | null>(null);
   const [tagebuch, setzeTagebuch] = useState(false);
@@ -417,6 +422,8 @@ export function Oberwelt() {
         melde({ art: "ort", karte: w.kennung }, w);
         meldeErgebnis(w);
         meldeRunde(w);
+        const startToenung = aktuelleToenung(w.karte, w.kennung, stand.dialogvariablen);
+        setzeToenungZustand(startToenung);
         spiel.current = starteOberwelt(rahmen.current, {
           karte: w.karte,
           kachelbild: w.kachelbild,
@@ -427,6 +434,8 @@ export function Oberwelt() {
           moebel: w.moebel,
           hintergrund: w.hintergrund,
           belebungsbilder: w.belebungsbilder,
+          toenung: startToenung,
+          laterne: stand.gegenstaende.includes(LATERNE),
           kachelsatz: KACHELSATZ,
           start: stand.position,
           // Fahrrad (docs/spiel/08, W3): doppeltes Tempo draußen.
@@ -560,6 +569,17 @@ export function Oberwelt() {
     },
     reise: (karte, ausloeser) => {
       reiseInArbeit.current = { karte, ausloeser };
+    },
+    setzeToenung: (name) => {
+      const aktuell = standRef.current ?? stand;
+      if (!welt) return;
+      const variable = toenungsvariable(welt.kennung);
+      const neu = { ...aktuell.dialogvariablen, [variable]: name };
+      schreibe({ ...aktuell, dialogvariablen: neu });
+      const toenung = aktuelleToenung(welt.karte, welt.kennung, neu);
+      setzeToenungZustand(toenung);
+      const szene = spiel.current ? szeneVon(spiel.current) : null;
+      szene?.setzeToenung(toenung);
     },
     setzeZustand: (gegner, faktor, grund) => {
       const aktuell = standRef.current ?? stand;
@@ -708,7 +728,9 @@ export function Oberwelt() {
     const uebergang = uebergangNachDialog.current;
     uebergangNachDialog.current = null;
     // `wenn` gilt als erfüllt bei true, einer Zahl über 0 (Nadel) oder einem nicht leeren Text.
-    if (uebergang && (!uebergang.wenn || Boolean(neu.dialogvariablen[uebergang.wenn]))) {
+    // Besitz zählt mit (hatLaterne, hatGummistiefel: Sperren S4, S8, S9, S11, S14).
+    const bedingungen = { ...neu.dialogvariablen, ...variablenAusBesitz(neu) };
+    if (uebergang && (!uebergang.wenn || Boolean(bedingungen[uebergang.wenn]))) {
       wechsleKarte(uebergang.ziel.karte, uebergang.ziel.ausloeser);
     }
     const runde = rundeInArbeit.current;
@@ -741,8 +763,13 @@ export function Oberwelt() {
 
   return (
     <div
-      className={welt?.erinnerung ? "abenteuer-welt abenteuer-welt-erinnerung" : "abenteuer-welt"}
+      className={
+        welt?.erinnerung || toenung === "sepia"
+          ? "abenteuer-welt abenteuer-welt-erinnerung"
+          : "abenteuer-welt"
+      }
       data-testid="abenteuer-welt"
+      data-toenung={toenung ?? "keine"}
     >
       <div ref={rahmen} style={{ width: "100%", height: "100%" }} />
       <span ref={kachelanzeige} hidden data-testid="abenteuer-kachel" />

@@ -26,71 +26,44 @@
   "objekte": [
     {
       "moebel": "pd6SpielfeldQuer",
-      "feld": [
-        7,
-        4
-      ]
+      "feld": [7, 4]
     },
     {
       "moebel": "pd6Fenster",
-      "feld": [
-        3,
-        1
-      ],
+      "feld": [3, 1],
       "an_wand": true
     },
     {
       "moebel": "pd6Fenster",
-      "feld": [
-        21,
-        1
-      ],
+      "feld": [21, 1],
       "an_wand": true
     },
     {
       "moebel": "pd6Plakat",
-      "feld": [
-        12,
-        1
-      ],
+      "feld": [12, 1],
       "an_wand": true
     },
     {
       "moebel": "pd6Basketballkorb",
-      "feld": [
-        6,
-        1
-      ],
+      "feld": [6, 1],
       "an_wand": true
     },
     {
       "moebel": "pd6Basketballkorb",
-      "feld": [
-        17,
-        1
-      ],
+      "feld": [17, 1],
       "an_wand": true
     },
     {
       "moebel": "pd6Pult",
-      "feld": [
-        9,
-        1
-      ]
+      "feld": [9, 1]
     },
     {
       "moebel": "pd6Spendenkasse",
-      "feld": [
-        15,
-        3
-      ]
+      "feld": [15, 3]
     },
     {
       "moebel": "pd6Rundtisch",
-      "feld": [
-        5,
-        5
-      ],
+      "feld": [5, 5],
       "id": "r5_5"
     },
     {
@@ -99,26 +72,17 @@
     },
     {
       "moebel": "pd6StuhlRechts",
-      "feld": [
-        4,
-        5
-      ],
+      "feld": [4, 5],
       "zu": "r5_5"
     },
     {
       "moebel": "pd6StuhlLinks",
-      "feld": [
-        7,
-        5
-      ],
+      "feld": [7, 5],
       "zu": "r5_5"
     },
     {
       "moebel": "pd6Rundtisch",
-      "feld": [
-        11,
-        5
-      ],
+      "feld": [11, 5],
       "id": "r11_5"
     },
     {
@@ -127,26 +91,17 @@
     },
     {
       "moebel": "pd6StuhlRechts",
-      "feld": [
-        10,
-        5
-      ],
+      "feld": [10, 5],
       "zu": "r11_5"
     },
     {
       "moebel": "pd6StuhlLinks",
-      "feld": [
-        13,
-        5
-      ],
+      "feld": [13, 5],
       "zu": "r11_5"
     },
     {
       "moebel": "pd6Rundtisch",
-      "feld": [
-        17,
-        5
-      ],
+      "feld": [17, 5],
       "id": "r17_5"
     },
     {
@@ -155,26 +110,17 @@
     },
     {
       "moebel": "pd6StuhlRechts",
-      "feld": [
-        16,
-        5
-      ],
+      "feld": [16, 5],
       "zu": "r17_5"
     },
     {
       "moebel": "pd6StuhlLinks",
-      "feld": [
-        19,
-        5
-      ],
+      "feld": [19, 5],
       "zu": "r17_5"
     },
     {
       "moebel": "pd6Rundtisch",
-      "feld": [
-        5,
-        9
-      ],
+      "feld": [5, 9],
       "id": "r5_9"
     },
     {
@@ -183,26 +129,17 @@
     },
     {
       "moebel": "pd6StuhlRechts",
-      "feld": [
-        4,
-        9
-      ],
+      "feld": [4, 9],
       "zu": "r5_9"
     },
     {
       "moebel": "pd6StuhlLinks",
-      "feld": [
-        7,
-        9
-      ],
+      "feld": [7, 9],
       "zu": "r5_9"
     },
     {
       "moebel": "pd6Rundtisch",
-      "feld": [
-        17,
-        9
-      ],
+      "feld": [17, 9],
       "id": "r17_9"
     },
     {
@@ -211,223 +148,133 @@
     },
     {
       "moebel": "pd6StuhlRechts",
-      "feld": [
-        16,
-        9
-      ],
+      "feld": [16, 9],
       "zu": "r17_9"
     },
     {
       "moebel": "pd6StuhlLinks",
-      "feld": [
-        19,
-        9
-      ],
+      "feld": [19, 9],
       "zu": "r17_9"
     },
     {
       "moebel": "pd6Liege",
-      "feld": [
-        22,
-        4
-      ]
+      "feld": [22, 4]
     },
     {
       "moebel": "pd6Liege",
-      "feld": [
-        23,
-        4
-      ]
+      "feld": [23, 4]
     },
     {
       "moebel": "pd6Liege",
-      "feld": [
-        24,
-        4
-      ]
+      "feld": [24, 4]
     },
     {
       "moebel": "pd6Liege",
-      "feld": [
-        22,
-        9
-      ]
+      "feld": [22, 9]
     },
     {
       "moebel": "pd6Liege",
-      "feld": [
-        23,
-        9
-      ]
+      "feld": [23, 9]
     },
     {
       "moebel": "pd6Liege",
-      "feld": [
-        24,
-        9
-      ]
+      "feld": [24, 9]
     },
     {
       "moebel": "pd6Kistenstapel",
-      "feld": [
-        1,
-        2
-      ]
+      "feld": [1, 2]
     },
     {
       "moebel": "pd6Turnmatte",
-      "feld": [
-        1,
-        11
-      ]
+      "feld": [1, 11]
     },
     {
       "moebel": "pd6Ball",
-      "feld": [
-        3,
-        13
-      ]
+      "feld": [3, 13]
     },
     {
       "moebel": "pd6Bank",
-      "feld": [
-        6,
-        13
-      ]
+      "feld": [6, 13]
     },
     {
       "moebel": "pd6Bank",
-      "feld": [
-        15,
-        13
-      ]
+      "feld": [15, 13]
     },
     {
       "moebel": "pd6Brettregal",
-      "feld": [
-        5,
-        2
-      ]
+      "feld": [5, 2]
     },
     {
       "moebel": "pd6Brettregal",
-      "feld": [
-        3,
-        2
-      ]
+      "feld": [3, 2]
     },
     {
       "moebel": "pd6Liege",
-      "feld": [
-        22,
-        12
-      ]
+      "feld": [22, 12]
     },
     {
       "moebel": "pd6Liege",
-      "feld": [
-        23,
-        12
-      ]
+      "feld": [23, 12]
     },
     {
       "moebel": "pd6Kistenstapel",
-      "feld": [
-        19,
-        2
-      ]
+      "feld": [19, 2]
     },
     {
       "moebel": "pd6Kiste",
-      "feld": [
-        1,
-        6
-      ]
+      "feld": [1, 6]
     },
     {
       "moebel": "pd6Kiste",
-      "feld": [
-        1,
-        7
-      ]
+      "feld": [1, 7]
     },
     {
       "moebel": "pd6Figurenkiste",
-      "feld": [
-        9,
-        12
-      ]
+      "feld": [9, 12]
     },
     {
       "moebel": "pd6Fussmatte",
-      "feld": [
-        13,
-        14
-      ],
-      "versatz": [
-        0,
-        8
-      ]
+      "feld": [13, 14],
+      "versatz": [0, 8]
     },
     {
       "moebel": "pd6Tuer",
-      "feld": [
-        13,
-        15
-      ],
+      "feld": [13, 15],
       "an_wand": true
     }
   ],
   "ausloeser": [
     {
       "name": "start",
-      "feld": [
-        13,
-        14
-      ],
+      "feld": [13, 14],
       "eigenschaften": {
         "richtung": "oben"
       }
     },
     {
       "name": "turnhalleAusgang",
-      "feld": [
-        13,
-        15
-      ]
+      "feld": [13, 15]
     }
   ],
   "figuren": [
     {
       "name": "odile",
-      "feld": [
-        11,
-        4
-      ]
+      "feld": [11, 4]
     },
     {
       "name": "remy",
-      "feld": [
-        8,
-        7
-      ]
+      "feld": [8, 7]
     },
     {
       "name": "lou",
-      "feld": [
-        14,
-        8
-      ]
+      "feld": [14, 8]
     }
   ],
   "belebung": [
     {
       "name": "kinder",
       "typ": "statist",
-      "feld": [
-        11,
-        12
-      ],
+      "feld": [11, 12],
       "eigenschaften": {
         "von": "9,12",
         "bis": "13,12",
@@ -439,10 +286,7 @@
     {
       "name": "hausmeister",
       "typ": "statist",
-      "feld": [
-        5,
-        9
-      ],
+      "feld": [5, 9],
       "eigenschaften": {
         "von": "2,9",
         "bis": "8,9",
@@ -454,10 +298,7 @@
     {
       "name": "zuschauerin",
       "typ": "statist",
-      "feld": [
-        20,
-        9
-      ],
+      "feld": [20, 9],
       "eigenschaften": {
         "von": "20,9",
         "bis": "20,9",
@@ -469,10 +310,7 @@
     {
       "name": "alterHerr",
       "typ": "statist",
-      "feld": [
-        12,
-        9
-      ],
+      "feld": [12, 9],
       "eigenschaften": {
         "von": "12,9",
         "bis": "12,9",
@@ -482,15 +320,7 @@
       }
     }
   ],
-  "zustand": [
-    "neu",
-    "gebraucht",
-    "alt"
-  ],
-  "stil": [
-    "klassisch",
-    "rustikal",
-    "modern"
-  ],
+  "zustand": ["neu", "gebraucht", "alt"],
+  "stil": ["klassisch", "rustikal", "modern"],
   "variante": "c"
 }

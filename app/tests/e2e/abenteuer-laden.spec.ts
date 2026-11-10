@@ -5,7 +5,7 @@
  */
 import { readFileSync } from "node:fs";
 import { expect, test } from "@playwright/test";
-import { feldDarunter } from "./abenteuer-karte";
+import { feldDarunter, feldVon } from "./abenteuer-karte";
 import { starteImBrowser } from "./hilfen";
 
 /** So viele Zeichen eines Satzes vergleicht der Test (die Sprechblase bricht längere Sätze um). */
@@ -150,6 +150,27 @@ test("Vorführung im Bergladen: der Kunde zeigt das Schäfermatt Zug für Zug", 
   );
   await vorfuehrung.getByRole("button", { name: "Weiter" }).click();
   await expect(vorfuehrung).toHaveCount(0);
+});
+
+test("Dunkler Stollen: mit Laterne leuchtet ein Lichtkreis um den Helden", async ({ page }) => {
+  // Runde 6: Tönung „dunkel“ aus der Karte, Lichtkreis von vier Feldern mit Laterne (S4).
+  const stand = {
+    ...STAND,
+    gegenstaende: ["laterne"],
+    position: {
+      karte: "steinbruch.stollen",
+      ...feldVon("steinbruch-stollen", "start"),
+      richtung: "unten",
+    },
+  };
+  await starteImBrowser(page);
+  await expect.poll(() => page.evaluate(schreibeStand, stand)).toBe(true);
+  await page.reload();
+  await page.goto("/app/#abenteuer");
+  await page.getByTestId("abenteuer-laden").click();
+  const welt = page.getByTestId("abenteuer-welt");
+  await expect(page.locator(".abenteuer-welt canvas")).toBeVisible({ timeout: 30000 });
+  await expect(welt).toHaveAttribute("data-toenung", "dunkel");
 });
 
 test("Erinnerung London 1851: Sepia, kein Tagebuch, keine Münzen", async ({ page }) => {

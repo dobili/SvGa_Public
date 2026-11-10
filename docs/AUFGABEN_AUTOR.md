@@ -1205,6 +1205,29 @@ Zum Abhaken gibt es die Fragen zum Schach-Abenteuer auch als Seite mit „Empfeh
 und Notiz (Wunsch des Autors, 8.11.2026): https://claude.ai/artifact/Kumk513LwSbbDJ3wJ2aJC3 (privat,
 nur für dich). Der Spiel-Chat liest die Antworten von dort und arbeitet sie hier ein.
 
+### Q22 Schach-Abenteuer: Runde 7 (10.11.2026, schon umgesetzt, Widerspruch genügt)
+
+Die Karten dazu siehst du auf der Revisionsseite: https://claude.ai/artifact/XBUfFuwYQgovXvu7HWt5k1
+(privat, nur für dich). Dort wählst du je Karte eine Variante; über jeder Karte steht, was dort
+passiert.
+
+- [ ] Q22-1. **Der Wanderer mit dem gelben Rucksack:** - Wer: Auf jeder Route liegt eine Seite aus seinem Manuskript, Kapitel 0 bis 12. Er ist ein
+      stiller Gruß an dich und dein Buch und hat keinen Namen. In Capital schenkt er nach dem
+      Finale das fertige Buch. - Was zu tun ist: Bitte schreib je Kapitel einen Satz, warum du es geschrieben hast; den
+      sagt er, wenn man ihm die Seite zurückgibt. - Bis dahin: Die Seiten zeigen nur den Kapiteltitel. - Wenn du den Gruß nicht möchtest, wird er ein gewöhnlicher Wanderer.
+- [ ] Q22-2. **Buchseiten:** Eine Seite zeigt Kapitelnummer, Titel, einen Satz und die erste
+      Abbildung des Kapitels, ohne Lösungen. Ist dir das zu viel, bleibt nur der Titel.
+- [ ] Q22-3. **Finch-Jagd:** - Die Erfinderin von Schachproblemen Odette Finch hat 16 weiße Figuren entlang der Wege
+      versteckt. - Am Leuchtturm stellt sie damit ihr Meisterproblem: die Falle von Légal (1750). - Weiß zieht und gewinnt mit 5.Sxe5!, das die eigene Dame hängen lässt. - Wer die Dame nimmt, wird matt: 5…Lxd1 6.Lxf7+ Ke7 7.Sd5#. - Alle 16 weißen Figuren stehen dabei noch auf dem Brett. - Der Fährmann in Silicon Bay hieß bisher auch Finch; er heißt jetzt Silas Pike.
+- [ ] Q22-4. **Englische Schilder:** Nicht jetzt. Wie gewünscht, bleibt alles auf Deutsch, bis
+      das Spiel fertig ist. Dokument 17 führt die Bilder mit Schrift für später.
+- [ ] Q22-5. **Motel:** Damit die Türen eine volle Kachel breit sind, hat das Motel an der
+      Wüstenstraße vier Zimmer statt fünf.
+- [ ] Q22-6. **Silicon Bay hat Tiere:** Nach der alten Weltbeschreibung war die Stadt tierfrei.
+      Jetzt laufen dort Möwen, Tauben, Hunde an der Leine und eine Katze, weil du mehr Tiere
+      wolltest. Die Stadt wirkt trotzdem steril.
+- [ ] Q22-7. **Größere Karten:** - Cedar Creek ist nach Süden auf 60 × 50 gewachsen; das gewählte Bild oben bleibt. - Mittlere Städte sind jetzt bis 80 × 60 groß. - Die Größenregel ist entsprechend angepasst.
+
 ### Q17 Grafik für das Schach-Abenteuer (8.11.2026; deine Antworten vom 8.11. abends eingearbeitet)
 
 - [ ] Q17-1. **Kacheln und Figuren kaufen:** Deine Antwort: ja. Offen ist nur der Kauf: die Pixelpakete

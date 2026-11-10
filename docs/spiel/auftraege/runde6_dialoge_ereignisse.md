@@ -108,8 +108,8 @@ Danach Riverton, Ironwood und Weg 3 wie die anderen.
 - **Englisch** (Dokument 17): erst nach der fertigen deutschen Fassung.
 - **Neue Karten oder Umbauten:** Die Wahl des Autors steht noch aus; Auslöser kommen in alle
   Varianten.
-- **Das Meisterproblem der Finch-Jagd:** Der Haupt-Chat baut es mit der Engine. Die Felder stehen
-  in Dokument 15, Abschnitt 3.
+- **Das Meisterproblem der Finch-Jagd** ist fertig: die Falle von Légal (Dokument 15, 1.1,
+  Vorführung `finchFalle`). mittel-1 baut daraus die Aufgabe am Leuchtturm.
 
 ## Ende
 

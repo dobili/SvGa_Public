@@ -1477,7 +1477,7 @@
   "fund.geheimnisTuerke.name": "Das Geheimnis des Schachtürken",
   "fund.geheimnisTuerke.text": "Im Kasten des Schachtürken auf dem Jahrmarkt sitzt Ike, der Sohn von Dolores. Du hast es erraten, und er hat dir zum Dank eine Münze geschenkt.",
   "quest.stream.titel": "Live auf der Glasbrücke",
-  "quest.stream.schritt1": "Spiele in Kikis Stream mit und bestrafe die schlechten Vorschläge des Chats.",
+  "quest.stream.schritt1": "Wärm dich mit Kikis Fallen-Aufgaben auf.",
   "quest.stream.schritt2": "Sprich nach dem Stream mit Kiki.",
   "quest.geysirblitz.titel": "Der Geysirblitz",
   "quest.geysirblitz.schritt1": "Löse Bells Aufgaben, bevor Old Patience ausbricht.",
@@ -1564,5 +1564,6 @@
   "tagebuch.finch.titel": "Finchs Buchsbaum",
   "tagebuch.finch.stand": "{anzahl} von {gesamt} Figuren gefunden.",
   "tagebuch.finch.gefunden": "gefunden",
-  "tagebuch.finch.offen": "noch versteckt"
+  "tagebuch.finch.offen": "noch versteckt",
+  "quest.stream.schritt3": "Spiel live gegen Kiki. Der Chat wählt ihren ersten Zug, und einer der Vorschläge ist eine Falle für sie selbst."
 }

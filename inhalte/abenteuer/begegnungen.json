@@ -737,6 +737,24 @@
       },
       "kartenErlaubt": false,
       "zaehltFuerApp": false
+    },
+    {
+      "kennung": "wegIronwoodSilicon.stream",
+      "gegner": "wegIronwoodSilicon.kiki",
+      "farbe": "white",
+      "format": {
+        "art": "partie"
+      },
+      "startstellung": {
+        "art": "fen",
+        "fen": "r1bqkbnr/pppp1ppp/2n5/4p2Q/2B1P3/8/PPPP1PPP/RNB1K1NR b KQkq - 3 3"
+      },
+      "kartenErlaubt": true,
+      "zeit": {
+        "sekunden": 180,
+        "zuschlag": 2
+      },
+      "kandidaten": ["g6", "Qe7", "Nf6"]
     }
   ]
 }

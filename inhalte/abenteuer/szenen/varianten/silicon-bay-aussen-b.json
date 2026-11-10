@@ -1023,7 +1023,7 @@
       "typ": "tier",
       "feld": [66, 44],
       "eigenschaften": {
-        "von": "64,42",
+        "von": "66,42",
         "bis": "69,45",
         "verhalten": "schlafen"
       }

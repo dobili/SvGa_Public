@@ -3162,7 +3162,7 @@
       "typ": "tier",
       "feld": [12, 140],
       "eigenschaften": {
-        "von": "10,135",
+        "von": "10,136",
         "bis": "18,150",
         "verhalten": "flitzen"
       }

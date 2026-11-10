@@ -418,7 +418,7 @@
         "tun": "malt mit Kreide auf den Marktplatz",
         "wann": "tag",
         "von": "14,42",
-        "bis": "26,44",
+        "bis": "26,43",
         "sagt": "statist.siliconBay.altstadt.schuelerin"
       }
     },
@@ -454,7 +454,7 @@
         "tun": "prüft den Hydranten",
         "wann": "tag",
         "von": "58,41",
-        "bis": "66,44",
+        "bis": "68,44",
         "sagt": "statist.siliconBay.altstadt.feuerwehrmann"
       }
     },
@@ -465,7 +465,7 @@
       "eigenschaften": {
         "tun": "verkauft Eis, obwohl es schneit",
         "wann": "tag",
-        "von": "46,43",
+        "von": "46,42",
         "bis": "52,45",
         "sagt": "statist.siliconBay.altstadt.eisverkaeuferin"
       }
@@ -552,7 +552,7 @@
       "feld": [60, 4],
       "eigenschaften": {
         "von": "56,2",
-        "bis": "66,7",
+        "bis": "66,8",
         "verhalten": "schlafen"
       }
     },

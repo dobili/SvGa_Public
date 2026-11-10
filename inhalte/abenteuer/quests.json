@@ -2916,6 +2916,14 @@
           }
         },
         {
+          "text": "quest.stream.schritt3",
+          "ereignis": {
+            "art": "partie",
+            "begegnung": "wegIronwoodSilicon.stream",
+            "ausgang": ["sieg", "remis", "niederlage"]
+          }
+        },
+        {
           "text": "quest.stream.schritt2",
           "ereignis": {
             "art": "dialog",

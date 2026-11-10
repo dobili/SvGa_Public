@@ -385,10 +385,10 @@
     {
       "name": "pike",
       "typ": "statist",
-      "feld": [50, 23],
+      "feld": [49, 23],
       "eigenschaften": {
-        "von": "50,23",
-        "bis": "50,23",
+        "von": "49,23",
+        "bis": "49,23",
         "tun": "wartet am Fährhäuschen",
         "wann": "tag"
       }

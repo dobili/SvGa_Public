@@ -29,6 +29,7 @@ VAR joggerinGetroffen = false
 VAR ansteckerGefunden = false
 VAR ohrstoepselGefunden = false
 VAR wegIronwoodSiliconStreamBestanden = false
+VAR ausgangWegIronwoodSiliconStream = ""
 VAR streamGesehen = false
 VAR streamBelohnt = false
 VAR kreide2Gefunden = false
@@ -151,7 +152,8 @@ Für einen Ohrstöpsel ist er sehr schwer. Behalte ihn, {held}. #sprecher:ambros
 
 === ereignis_stream ===
 {streamBelohnt: -> stream_danach}
-{wegIronwoodSiliconStreamBestanden: -> stream_ende}
+{ausgangWegIronwoodSiliconStream != "": -> stream_ende}
+{wegIronwoodSiliconStreamBestanden: -> stream_partie}
 {streamGesehen: -> stream_angebot}
 ~ streamGesehen = true
 Auf der Aussichtsplattform steht ein Ringlicht, daneben ein Klapptisch mit Laptop. Eine junge Frau mit grüner Mütze spricht in eine Kamera. #sprecher:erzaehler
@@ -169,8 +171,25 @@ Kapitel 4, {held}: Fallen erkennen, bevor man hineintritt. #sprecher:ambrose
     Der Stream läuft bis heute Abend. Komm wieder! #sprecher:kiki
     -> END
 
+=== stream_partie ===
+// Partie mit Kandidatenwahl (mittel-2): Nach 1.e4 e5 2.Lc4 Sc6 3.Dh5 wählt der Chat zwischen g6, De7
+// und Sf6. Sf6 ist der Fehler: Dxf7 ist matt (Kapitel 4, Fallenkabinett).
+Aufgewärmt? Jetzt live. Weiß hat die Dame schon draußen, und der Chat stimmt über meinen Zug ab. #sprecher:kiki #stimmung:froh
+Einer der drei Vorschläge ist eine Falle, {held}. Nicht für dich. Für sie. #sprecher:ambrose
++ [„Los geht's.“]
+    ~ beginnePartie("wegIronwoodSilicon.stream")
+    -> END
++ [„Gleich.“]
+    Der Chat wartet nicht gern. Aber gut. #sprecher:kiki
+    -> END
+
 === stream_ende ===
 ~ streamBelohnt = true
+{ausgangWegIronwoodSiliconStream == "sieg":
+    Der Chat hat mich reingelegt. Und du hast es gesehen! #sprecher:kiki #stimmung:lacht
+- else:
+    Gut gespielt! Der Chat war heute auf meiner Seite. #sprecher:kiki #stimmung:froh
+}
 Der Chat jubelt. Dann friert das Bild auf dem Laptop ein. Am Funkmast neben der Brücke blinkt eine rote Leuchte: „Testfeld Signal“. #sprecher:erzaehler
 Das ist jedes Mal so, wenn die da testen. Perfect Move sponsert mich. Ich frage lieber nicht, was sie testen. #sprecher:kiki #stimmung:still
 Ein Mast, der blinkt, wenn Bilder abreißen. Merk ihn dir. #sprecher:ambrose

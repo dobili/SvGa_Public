@@ -1077,7 +1077,7 @@
       "feld": [52, 33],
       "eigenschaften": {
         "von": "48,30",
-        "bis": "58,36",
+        "bis": "58,37",
         "verhalten": "folgen"
       }
     },
@@ -1135,7 +1135,7 @@
         "tun": "fotografiert das Wasserspiel",
         "wann": "tag",
         "von": "44,34",
-        "bis": "52,38",
+        "bis": "54,38",
         "sagt": "statist.siliconBay.aussen.touristin"
       }
     },
@@ -1171,7 +1171,7 @@
         "tun": "wartet auf den Kaffeeautomaten",
         "wann": "tag",
         "von": "58,40",
-        "bis": "66,41",
+        "bis": "66,42",
         "sagt": "statist.siliconBay.aussen.barista"
       }
     },

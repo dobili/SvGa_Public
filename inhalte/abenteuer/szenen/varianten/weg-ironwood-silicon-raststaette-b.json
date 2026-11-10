@@ -740,7 +740,7 @@
         "tun": "zählt mit einem Klicker die Strandläufer",
         "wann": "tag",
         "von": "66,18",
-        "bis": "74,19",
+        "bis": "75,19",
         "sagt": "statist.wegIronwoodSilicon.raststaette.vogelzaehlerin"
       }
     },
@@ -770,7 +770,7 @@
       "feld": [20, 23],
       "eigenschaften": {
         "von": "14,23",
-        "bis": "26,25",
+        "bis": "26,22",
         "verhalten": "ausweichen"
       }
     },
@@ -780,7 +780,7 @@
       "feld": [150, 22],
       "eigenschaften": {
         "von": "146,20",
-        "bis": "156,24",
+        "bis": "156,23",
         "verhalten": "folgen"
       }
     }

@@ -1167,7 +1167,7 @@
       "typ": "tier",
       "feld": [120, 6],
       "eigenschaften": {
-        "von": "115,3",
+        "von": "115,5",
         "bis": "128,9",
         "verhalten": "ausweichen"
       }
@@ -1231,8 +1231,8 @@
       "eigenschaften": {
         "tun": "sucht unter den Kiefern nach Pfifferlingen",
         "wann": "tag",
-        "von": "105,18",
-        "bis": "115,23",
+        "von": "105,17",
+        "bis": "115,22",
         "sagt": "statist.wegCrossroadsPinewood.huetten.pilzsammlerin"
       }
     },

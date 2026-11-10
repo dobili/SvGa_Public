@@ -2840,7 +2840,7 @@
       "typ": "tier",
       "feld": [6, 60],
       "eigenschaften": {
-        "von": "5,58",
+        "von": "4,58",
         "bis": "8,62",
         "verhalten": "flitzen"
       }

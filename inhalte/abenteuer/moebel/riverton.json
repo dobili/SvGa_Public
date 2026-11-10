@@ -69,7 +69,7 @@
       "kollision": true
     },
     "rvZeitungsregal": {
-      "quelle": "modern-interiors/1_Interiors/16x16/Theme_Sorter_Black_Shadow_Singles/16_Grocery_Store_Black_Shadow_Singles_16x16/Grocery_Store_Black_Shadow_Singles_105.png",
+      "quelle": "modern-interiors/1_Interiors/16x16/Theme_Sorter_Black_Shadow_Singles/5_Classroom_and_Library_Black_Shadow_Singles_16x16/Classroom_and_Library_Singles_59.png",
       "breite": 16,
       "hoehe": 48,
       "kollision": true
@@ -405,11 +405,11 @@
       "blick": "unten"
     },
     "rv5Buecherregal": {
-      "quelle": "modern-interiors/1_Interiors/16x16/Theme_Sorter_Black_Shadow_Singles/5_Classroom_and_Library_Black_Shadow_Singles_16x16/Classroom_and_Library_Singles_43.png",
+      "quelle": "modern-interiors/1_Interiors/16x16/Theme_Sorter_Black_Shadow_Singles/5_Classroom_and_Library_Black_Shadow_Singles_16x16/Classroom_and_Library_Singles_71.png",
       "breite": 32,
       "hoehe": 48,
       "kollision": true,
-      "art": "regal",
+      "art": "buecherregal",
       "zustand": "gebraucht",
       "stil": "modern",
       "blick": "unten"
@@ -665,7 +665,7 @@
       "stil": "modern"
     },
     "rv5Zeitungsregal": {
-      "quelle": "modern-interiors/1_Interiors/16x16/Theme_Sorter_Black_Shadow_Singles/16_Grocery_Store_Black_Shadow_Singles_16x16/Grocery_Store_Black_Shadow_Singles_105.png",
+      "quelle": "modern-interiors/1_Interiors/16x16/Theme_Sorter_Black_Shadow_Singles/5_Classroom_and_Library_Black_Shadow_Singles_16x16/Classroom_and_Library_Singles_59.png",
       "breite": 16,
       "hoehe": 48,
       "kollision": true,

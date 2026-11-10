@@ -11,7 +11,7 @@
  "tilewidth": 16,
  "tileheight": 16,
  "nextlayerid": 5,
- "nextobjectid": 136,
+ "nextobjectid": 147,
  "layers": [
   {
    "id": 1,
@@ -1144,16 +1144,16 @@
     4,
     4,
     4,
-    0,
-    0,
-    0,
-    0,
-    0,
-    0,
-    0,
-    0,
-    0,
-    0,
+    4,
+    4,
+    4,
+    4,
+    4,
+    4,
+    4,
+    4,
+    4,
+    4,
     0,
     0,
     0,
@@ -1294,16 +1294,16 @@
     4,
     4,
     4,
-    0,
-    0,
-    0,
-    0,
-    0,
-    0,
-    0,
-    0,
-    0,
-    0,
+    4,
+    4,
+    4,
+    4,
+    4,
+    4,
+    4,
+    4,
+    4,
+    4,
     0,
     0,
     0,
@@ -1910,14 +1910,6 @@
     4,
     4,
     4,
-    1,
-    1,
-    1,
-    1,
-    1,
-    1,
-    1,
-    1,
     1,
     1,
     1,
@@ -1931,17 +1923,25 @@
     1,
     1,
     1,
-    1,
-    1,
-    1,
-    1,
-    1,
-    1,
-    1,
-    1,
-    1,
-    1,
-    1,
+    4,
+    4,
+    4,
+    4,
+    4,
+    4,
+    4,
+    4,
+    4,
+    4,
+    4,
+    4,
+    4,
+    4,
+    4,
+    4,
+    4,
+    4,
+    4,
     1,
     1,
     1,
@@ -2060,24 +2060,6 @@
     4,
     4,
     4,
-    1,
-    1,
-    1,
-    1,
-    1,
-    1,
-    1,
-    1,
-    1,
-    1,
-    1,
-    1,
-    1,
-    1,
-    1,
-    1,
-    1,
-    1,
     1,
     1,
     1,
@@ -2091,7 +2073,25 @@
     1,
     1,
     1,
-    1,
+    4,
+    4,
+    4,
+    4,
+    4,
+    4,
+    4,
+    4,
+    4,
+    4,
+    4,
+    4,
+    4,
+    4,
+    4,
+    4,
+    4,
+    4,
+    4,
     1,
     1,
     1,
@@ -2210,10 +2210,6 @@
     1,
     4,
     4,
-    1,
-    1,
-    1,
-    1,
     1,
     1,
     1,
@@ -2227,21 +2223,25 @@
     1,
     1,
     1,
-    1,
-    1,
-    1,
-    1,
-    1,
-    1,
-    1,
-    1,
-    1,
-    1,
-    1,
-    1,
-    1,
-    1,
-    1,
+    4,
+    4,
+    4,
+    4,
+    4,
+    4,
+    4,
+    4,
+    4,
+    4,
+    4,
+    4,
+    4,
+    4,
+    4,
+    4,
+    4,
+    4,
+    4,
     1,
     1,
     1,
@@ -2360,20 +2360,6 @@
     1,
     4,
     4,
-    1,
-    1,
-    1,
-    1,
-    1,
-    1,
-    1,
-    1,
-    1,
-    1,
-    1,
-    1,
-    1,
-    1,
     1,
     1,
     1,
@@ -2387,11 +2373,25 @@
     1,
     1,
     1,
-    1,
-    1,
-    1,
-    1,
-    1,
+    4,
+    4,
+    4,
+    4,
+    4,
+    4,
+    4,
+    4,
+    4,
+    4,
+    4,
+    4,
+    4,
+    4,
+    4,
+    4,
+    4,
+    4,
+    4,
     1,
     1,
     1,
@@ -5657,16 +5657,16 @@
     0,
     0,
     0,
-    2,
-    2,
-    2,
-    2,
-    2,
-    2,
-    2,
-    2,
-    2,
-    2,
+    0,
+    0,
+    0,
+    0,
+    0,
+    0,
+    0,
+    0,
+    0,
+    0,
     2,
     2,
     2,
@@ -5807,16 +5807,16 @@
     0,
     0,
     0,
-    2,
-    2,
-    2,
-    2,
-    2,
-    2,
-    2,
-    2,
-    2,
-    2,
+    0,
+    0,
+    0,
+    0,
+    0,
+    0,
+    0,
+    0,
+    0,
+    0,
     2,
     2,
     2,
@@ -13683,8 +13683,8 @@
      "id": 11,
      "name": "wachmann",
      "type": "statist",
-     "x": 64,
-     "y": 208,
+     "x": 80,
+     "y": 224,
      "width": 16,
      "height": 16,
      "rotation": 0,
@@ -13693,12 +13693,12 @@
       {
        "name": "von",
        "type": "string",
-       "value": "4,13"
+       "value": "5,14"
       },
       {
        "name": "bis",
        "type": "string",
-       "value": "4,13"
+       "value": "5,14"
       },
       {
        "name": "tun",
@@ -14029,6 +14029,178 @@
     },
     {
      "id": 22,
+     "name": "eisverkaeufer",
+     "type": "statist",
+     "x": 1648,
+     "y": 256,
+     "width": 16,
+     "height": 16,
+     "rotation": 0,
+     "visible": true,
+     "properties": [
+      {
+       "name": "von",
+       "type": "string",
+       "value": "103,16"
+      },
+      {
+       "name": "bis",
+       "type": "string",
+       "value": "103,16"
+      },
+      {
+       "name": "tun",
+       "type": "string",
+       "value": "verkauft Eis aus dem Wagen"
+      },
+      {
+       "name": "wann",
+       "type": "string",
+       "value": "tag"
+      },
+      {
+       "name": "bild",
+       "type": "string",
+       "value": "statist-05"
+      },
+      {
+       "name": "verhalten",
+       "type": "string",
+       "value": "sitzen"
+      }
+     ]
+    },
+    {
+     "id": 23,
+     "name": "tacokoechin",
+     "type": "statist",
+     "x": 1808,
+     "y": 256,
+     "width": 16,
+     "height": 16,
+     "rotation": 0,
+     "visible": true,
+     "properties": [
+      {
+       "name": "von",
+       "type": "string",
+       "value": "113,16"
+      },
+      {
+       "name": "bis",
+       "type": "string",
+       "value": "113,16"
+      },
+      {
+       "name": "tun",
+       "type": "string",
+       "value": "reicht Tacos aus dem Fenster"
+      },
+      {
+       "name": "wann",
+       "type": "string",
+       "value": "tag"
+      },
+      {
+       "name": "bild",
+       "type": "string",
+       "value": "statist-16"
+      },
+      {
+       "name": "verhalten",
+       "type": "string",
+       "value": "sitzen"
+      }
+     ]
+    },
+    {
+     "id": 24,
+     "name": "schachspielerin",
+     "type": "statist",
+     "x": 1952,
+     "y": 224,
+     "width": 16,
+     "height": 16,
+     "rotation": 0,
+     "visible": true,
+     "properties": [
+      {
+       "name": "von",
+       "type": "string",
+       "value": "122,14"
+      },
+      {
+       "name": "bis",
+       "type": "string",
+       "value": "122,14"
+      },
+      {
+       "name": "tun",
+       "type": "string",
+       "value": "sitzt am Klapptisch und spielt Blitz"
+      },
+      {
+       "name": "wann",
+       "type": "string",
+       "value": "tag"
+      },
+      {
+       "name": "bild",
+       "type": "string",
+       "value": "statist-11"
+      },
+      {
+       "name": "verhalten",
+       "type": "string",
+       "value": "sitzen"
+      }
+     ]
+    },
+    {
+     "id": 25,
+     "name": "schachspieler",
+     "type": "statist",
+     "x": 2048,
+     "y": 224,
+     "width": 16,
+     "height": 16,
+     "rotation": 0,
+     "visible": true,
+     "properties": [
+      {
+       "name": "von",
+       "type": "string",
+       "value": "128,14"
+      },
+      {
+       "name": "bis",
+       "type": "string",
+       "value": "128,14"
+      },
+      {
+       "name": "tun",
+       "type": "string",
+       "value": "sitzt am Klapptisch und grübelt"
+      },
+      {
+       "name": "wann",
+       "type": "string",
+       "value": "tag"
+      },
+      {
+       "name": "bild",
+       "type": "string",
+       "value": "statist-13"
+      },
+      {
+       "name": "verhalten",
+       "type": "string",
+       "value": "sitzen"
+      }
+     ]
+    },
+    {
+     "id": 26,
      "name": "gc7Steg",
      "type": "moebel",
      "x": 928,
@@ -14051,20 +14223,20 @@
      ]
     },
     {
-     "id": 23,
-     "name": "gc7Faehre",
+     "id": 27,
+     "name": "gc10Seefaehre",
      "type": "moebel",
      "x": 960,
-     "y": 48,
-     "width": 160,
-     "height": 64,
+     "y": 16,
+     "width": 320,
+     "height": 96,
      "rotation": 0,
      "visible": true,
      "properties": [
       {
        "name": "tiefe",
        "type": "int",
-       "value": 1
+       "value": 104
       },
       {
        "name": "kollision",
@@ -14074,7 +14246,7 @@
      ]
     },
     {
-     "id": 24,
+     "id": 28,
      "name": "gc9Faehrhaus",
      "type": "moebel",
      "x": 752,
@@ -14097,7 +14269,7 @@
      ]
     },
     {
-     "id": 25,
+     "id": 29,
      "name": "gc7Rettungsring",
      "type": "moebel",
      "x": 912,
@@ -14120,11 +14292,11 @@
      ]
     },
     {
-     "id": 26,
+     "id": 30,
      "name": "gc7Absperrbock",
      "type": "moebel",
-     "x": 32,
-     "y": 192,
+     "x": 48,
+     "y": 224,
      "width": 32,
      "height": 32,
      "rotation": 0,
@@ -14133,7 +14305,7 @@
       {
        "name": "tiefe",
        "type": "int",
-       "value": 216
+       "value": 248
       },
       {
        "name": "kollision",
@@ -14143,7 +14315,7 @@
      ]
     },
     {
-     "id": 27,
+     "id": 31,
      "name": "gc7Tafel",
      "type": "moebel",
      "x": 1408,
@@ -14166,7 +14338,7 @@
      ]
     },
     {
-     "id": 28,
+     "id": 32,
      "name": "gc7Muelleimer",
      "type": "moebel",
      "x": 1440,
@@ -14189,7 +14361,7 @@
      ]
     },
     {
-     "id": 29,
+     "id": 33,
      "name": "gc7Schirm",
      "type": "moebel",
      "x": 224,
@@ -14212,7 +14384,7 @@
      ]
     },
     {
-     "id": 30,
+     "id": 34,
      "name": "gc7Handtuch",
      "type": "moebel",
      "x": 288,
@@ -14235,7 +14407,7 @@
      ]
     },
     {
-     "id": 31,
+     "id": 35,
      "name": "gc7SchirmZu",
      "type": "moebel",
      "x": 384,
@@ -14258,7 +14430,7 @@
      ]
     },
     {
-     "id": 32,
+     "id": 36,
      "name": "gc7HandtuchGelb",
      "type": "moebel",
      "x": 1120,
@@ -14281,7 +14453,7 @@
      ]
     },
     {
-     "id": 33,
+     "id": 37,
      "name": "gc7Schirm",
      "type": "moebel",
      "x": 1184,
@@ -14304,7 +14476,7 @@
      ]
     },
     {
-     "id": 34,
+     "id": 38,
      "name": "gc7Schirm",
      "type": "moebel",
      "x": 1600,
@@ -14327,7 +14499,7 @@
      ]
     },
     {
-     "id": 35,
+     "id": 39,
      "name": "gc7Handtuch",
      "type": "moebel",
      "x": 1664,
@@ -14350,7 +14522,7 @@
      ]
     },
     {
-     "id": 36,
+     "id": 40,
      "name": "gc7Treibholz",
      "type": "moebel",
      "x": 576,
@@ -14373,7 +14545,7 @@
      ]
     },
     {
-     "id": 37,
+     "id": 41,
      "name": "gc7Treibholz",
      "type": "moebel",
      "x": 2016,
@@ -14396,7 +14568,7 @@
      ]
     },
     {
-     "id": 38,
+     "id": 42,
      "name": "gc7Kisten",
      "type": "moebel",
      "x": 992,
@@ -14419,7 +14591,7 @@
      ]
     },
     {
-     "id": 39,
+     "id": 43,
      "name": "gc7Picknicktisch",
      "type": "moebel",
      "x": 960,
@@ -14442,7 +14614,7 @@
      ]
     },
     {
-     "id": 40,
+     "id": 44,
      "name": "gc7Fels",
      "type": "moebel",
      "x": 912,
@@ -14465,7 +14637,7 @@
      ]
     },
     {
-     "id": 41,
+     "id": 45,
      "name": "gc7FelsFlach",
      "type": "moebel",
      "x": 1008,
@@ -14488,7 +14660,7 @@
      ]
     },
     {
-     "id": 42,
+     "id": 46,
      "name": "gc7Fels",
      "type": "moebel",
      "x": 928,
@@ -14511,7 +14683,7 @@
      ]
     },
     {
-     "id": 43,
+     "id": 47,
      "name": "gc7Bank",
      "type": "moebel",
      "x": 1728,
@@ -14534,7 +14706,7 @@
      ]
     },
     {
-     "id": 44,
+     "id": 48,
      "name": "gc7Bank",
      "type": "moebel",
      "x": 640,
@@ -14557,7 +14729,7 @@
      ]
     },
     {
-     "id": 45,
+     "id": 49,
      "name": "ca7Buehne",
      "type": "moebel",
      "x": 2208,
@@ -14580,7 +14752,7 @@
      ]
     },
     {
-     "id": 46,
+     "id": 50,
      "name": "ca8FahneWeiss",
      "type": "moebel",
      "x": 2192,
@@ -14603,7 +14775,7 @@
      ]
     },
     {
-     "id": 47,
+     "id": 51,
      "name": "ca8FahneSchwarz",
      "type": "moebel",
      "x": 2304,
@@ -14626,7 +14798,7 @@
      ]
     },
     {
-     "id": 48,
+     "id": 52,
      "name": "ca8Lautsprecher",
      "type": "moebel",
      "x": 2144,
@@ -14649,7 +14821,7 @@
      ]
     },
     {
-     "id": 49,
+     "id": 53,
      "name": "ca8Lautsprecher",
      "type": "moebel",
      "x": 2320,
@@ -14672,7 +14844,7 @@
      ]
     },
     {
-     "id": 50,
+     "id": 54,
      "name": "ca8Eiswagen",
      "type": "moebel",
      "x": 1600,
@@ -14695,7 +14867,7 @@
      ]
     },
     {
-     "id": 51,
+     "id": 55,
      "name": "ca8Tacowagen",
      "type": "moebel",
      "x": 1760,
@@ -14718,7 +14890,7 @@
      ]
     },
     {
-     "id": 52,
+     "id": 56,
      "name": "ca8KlapptischBrett",
      "type": "moebel",
      "x": 1952,
@@ -14741,7 +14913,7 @@
      ]
     },
     {
-     "id": 53,
+     "id": 57,
      "name": "ca8KlapptischBrett",
      "type": "moebel",
      "x": 2000,
@@ -14764,7 +14936,7 @@
      ]
     },
     {
-     "id": 54,
+     "id": 58,
      "name": "ca8KlapptischBrett",
      "type": "moebel",
      "x": 2048,
@@ -14787,7 +14959,7 @@
      ]
     },
     {
-     "id": 55,
+     "id": 59,
      "name": "ca8KlapptischBrett",
      "type": "moebel",
      "x": 2096,
@@ -14810,7 +14982,7 @@
      ]
     },
     {
-     "id": 56,
+     "id": 60,
      "name": "ca8KlapptischBrett",
      "type": "moebel",
      "x": 2144,
@@ -14833,7 +15005,7 @@
      ]
     },
     {
-     "id": 57,
+     "id": 61,
      "name": "ca8Lichtermast",
      "type": "moebel",
      "x": 1936,
@@ -14856,7 +15028,7 @@
      ]
     },
     {
-     "id": 58,
+     "id": 62,
      "name": "ca8Lichtermast",
      "type": "moebel",
      "x": 2128,
@@ -14879,7 +15051,7 @@
      ]
     },
     {
-     "id": 59,
+     "id": 63,
      "name": "ca8Lichterkette",
      "type": "moebel",
      "x": 1952,
@@ -14902,7 +15074,7 @@
      ]
     },
     {
-     "id": 60,
+     "id": 64,
      "name": "ca8Lichterkette",
      "type": "moebel",
      "x": 2016,
@@ -14925,7 +15097,7 @@
      ]
     },
     {
-     "id": 61,
+     "id": 65,
      "name": "ca8Lichterkette",
      "type": "moebel",
      "x": 2064,
@@ -14948,7 +15120,7 @@
      ]
     },
     {
-     "id": 62,
+     "id": 66,
      "name": "gc9StegQuer7",
      "type": "moebel",
      "x": 960,
@@ -14971,7 +15143,7 @@
      ]
     },
     {
-     "id": 63,
+     "id": 67,
      "name": "gc9StegQuer3",
      "type": "moebel",
      "x": 1072,
@@ -14994,7 +15166,7 @@
      ]
     },
     {
-     "id": 64,
+     "id": 68,
      "name": "gc7Kiefer",
      "type": "moebel",
      "x": 1856,
@@ -15017,7 +15189,7 @@
      ]
     },
     {
-     "id": 65,
+     "id": 69,
      "name": "gc7KieferB",
      "type": "moebel",
      "x": 1920,
@@ -15040,7 +15212,7 @@
      ]
     },
     {
-     "id": 66,
+     "id": 70,
      "name": "gc7Kiefer",
      "type": "moebel",
      "x": 2096,
@@ -15063,7 +15235,7 @@
      ]
     },
     {
-     "id": 67,
+     "id": 71,
      "name": "gc7Kiefer",
      "type": "moebel",
      "x": 784,
@@ -15086,7 +15258,7 @@
      ]
     },
     {
-     "id": 68,
+     "id": 72,
      "name": "gc7Kiefer",
      "type": "moebel",
      "x": 2112,
@@ -15109,7 +15281,7 @@
      ]
     },
     {
-     "id": 69,
+     "id": 73,
      "name": "gc7Kiefer",
      "type": "moebel",
      "x": 1840,
@@ -15132,7 +15304,7 @@
      ]
     },
     {
-     "id": 70,
+     "id": 74,
      "name": "gc7KieferB",
      "type": "moebel",
      "x": 592,
@@ -15155,7 +15327,7 @@
      ]
     },
     {
-     "id": 71,
+     "id": 75,
      "name": "gc7Kiefer",
      "type": "moebel",
      "x": 2208,
@@ -15178,7 +15350,7 @@
      ]
     },
     {
-     "id": 72,
+     "id": 76,
      "name": "gc7KieferB",
      "type": "moebel",
      "x": 176,
@@ -15201,7 +15373,7 @@
      ]
     },
     {
-     "id": 73,
+     "id": 77,
      "name": "gc7Kiefer",
      "type": "moebel",
      "x": 64,
@@ -15224,7 +15396,7 @@
      ]
     },
     {
-     "id": 74,
+     "id": 78,
      "name": "gc7Kiefer",
      "type": "moebel",
      "x": 272,
@@ -15247,7 +15419,7 @@
      ]
     },
     {
-     "id": 75,
+     "id": 79,
      "name": "gc7Kiefer",
      "type": "moebel",
      "x": 160,
@@ -15270,7 +15442,7 @@
      ]
     },
     {
-     "id": 76,
+     "id": 80,
      "name": "gc7Kiefer",
      "type": "moebel",
      "x": 992,
@@ -15293,7 +15465,7 @@
      ]
     },
     {
-     "id": 77,
+     "id": 81,
      "name": "gc7Kiefer",
      "type": "moebel",
      "x": 128,
@@ -15316,7 +15488,7 @@
      ]
     },
     {
-     "id": 78,
+     "id": 82,
      "name": "gc7Kiefer",
      "type": "moebel",
      "x": 1216,
@@ -15339,7 +15511,7 @@
      ]
     },
     {
-     "id": 79,
+     "id": 83,
      "name": "gc7KieferB",
      "type": "moebel",
      "x": 352,
@@ -15362,7 +15534,7 @@
      ]
     },
     {
-     "id": 80,
+     "id": 84,
      "name": "gc7KieferB",
      "type": "moebel",
      "x": 1152,
@@ -15385,7 +15557,7 @@
      ]
     },
     {
-     "id": 81,
+     "id": 85,
      "name": "gc7Kiefer",
      "type": "moebel",
      "x": 2272,
@@ -15408,7 +15580,7 @@
      ]
     },
     {
-     "id": 82,
+     "id": 86,
      "name": "gc7Kiefer",
      "type": "moebel",
      "x": 944,
@@ -15431,7 +15603,7 @@
      ]
     },
     {
-     "id": 83,
+     "id": 87,
      "name": "gc7Kiefer",
      "type": "moebel",
      "x": 1184,
@@ -15454,7 +15626,7 @@
      ]
     },
     {
-     "id": 84,
+     "id": 88,
      "name": "gc7Kiefer",
      "type": "moebel",
      "x": 288,
@@ -15477,7 +15649,7 @@
      ]
     },
     {
-     "id": 85,
+     "id": 89,
      "name": "gc7Kiefer",
      "type": "moebel",
      "x": 448,
@@ -15500,7 +15672,7 @@
      ]
     },
     {
-     "id": 86,
+     "id": 90,
      "name": "gc7Kiefer",
      "type": "moebel",
      "x": 1584,
@@ -15523,7 +15695,7 @@
      ]
     },
     {
-     "id": 87,
+     "id": 91,
      "name": "gc7Kiefer",
      "type": "moebel",
      "x": 16,
@@ -15546,7 +15718,7 @@
      ]
     },
     {
-     "id": 88,
+     "id": 92,
      "name": "gc7Kiefer",
      "type": "moebel",
      "x": 1632,
@@ -15569,7 +15741,7 @@
      ]
     },
     {
-     "id": 89,
+     "id": 93,
      "name": "gc7KieferB",
      "type": "moebel",
      "x": 816,
@@ -15592,7 +15764,7 @@
      ]
     },
     {
-     "id": 90,
+     "id": 94,
      "name": "gc7Kiefer",
      "type": "moebel",
      "x": 1392,
@@ -15615,7 +15787,7 @@
      ]
     },
     {
-     "id": 91,
+     "id": 95,
      "name": "gc7Kiefer",
      "type": "moebel",
      "x": 1280,
@@ -15638,7 +15810,7 @@
      ]
     },
     {
-     "id": 92,
+     "id": 96,
      "name": "gc7Kiefer",
      "type": "moebel",
      "x": 496,
@@ -15661,7 +15833,7 @@
      ]
     },
     {
-     "id": 93,
+     "id": 97,
      "name": "gc7Kiefer",
      "type": "moebel",
      "x": 736,
@@ -15684,7 +15856,7 @@
      ]
     },
     {
-     "id": 94,
+     "id": 98,
      "name": "gc7KieferB",
      "type": "moebel",
      "x": 784,
@@ -15707,7 +15879,7 @@
      ]
     },
     {
-     "id": 95,
+     "id": 99,
      "name": "gc7Kiefer",
      "type": "moebel",
      "x": 544,
@@ -15730,7 +15902,7 @@
      ]
     },
     {
-     "id": 96,
+     "id": 100,
      "name": "gc7KieferB",
      "type": "moebel",
      "x": 96,
@@ -15753,7 +15925,7 @@
      ]
     },
     {
-     "id": 97,
+     "id": 101,
      "name": "gc7Kiefer",
      "type": "moebel",
      "x": 416,
@@ -15776,7 +15948,7 @@
      ]
     },
     {
-     "id": 98,
+     "id": 102,
      "name": "gc7Kiefer",
      "type": "moebel",
      "x": 320,
@@ -15799,7 +15971,7 @@
      ]
     },
     {
-     "id": 99,
+     "id": 103,
      "name": "gc7Kiefer",
      "type": "moebel",
      "x": 1008,
@@ -15822,7 +15994,7 @@
      ]
     },
     {
-     "id": 100,
+     "id": 104,
      "name": "gc7Kiefer",
      "type": "moebel",
      "x": 1520,
@@ -15845,7 +16017,7 @@
      ]
     },
     {
-     "id": 101,
+     "id": 105,
      "name": "gc7KieferB",
      "type": "moebel",
      "x": 1984,
@@ -15868,7 +16040,7 @@
      ]
     },
     {
-     "id": 102,
+     "id": 106,
      "name": "gc7KieferB",
      "type": "moebel",
      "x": 640,
@@ -15891,7 +16063,7 @@
      ]
     },
     {
-     "id": 103,
+     "id": 107,
      "name": "gc7KieferB",
      "type": "moebel",
      "x": 208,
@@ -15914,7 +16086,7 @@
      ]
     },
     {
-     "id": 104,
+     "id": 108,
      "name": "gc7Kiefer",
      "type": "moebel",
      "x": 2016,
@@ -15937,7 +16109,7 @@
      ]
     },
     {
-     "id": 105,
+     "id": 109,
      "name": "gc7Kiefer",
      "type": "moebel",
      "x": 2144,
@@ -15960,7 +16132,7 @@
      ]
     },
     {
-     "id": 106,
+     "id": 110,
      "name": "gc7KieferB",
      "type": "moebel",
      "x": 1152,
@@ -15983,7 +16155,7 @@
      ]
     },
     {
-     "id": 107,
+     "id": 111,
      "name": "gc7Kiefer",
      "type": "moebel",
      "x": 1696,
@@ -16006,7 +16178,7 @@
      ]
     },
     {
-     "id": 108,
+     "id": 112,
      "name": "gc7KieferB",
      "type": "moebel",
      "x": 544,
@@ -16029,7 +16201,7 @@
      ]
     },
     {
-     "id": 109,
+     "id": 113,
      "name": "gc7KieferB",
      "type": "moebel",
      "x": 1488,
@@ -16052,7 +16224,7 @@
      ]
     },
     {
-     "id": 110,
+     "id": 114,
      "name": "gc7KieferB",
      "type": "moebel",
      "x": 1472,
@@ -16075,7 +16247,7 @@
      ]
     },
     {
-     "id": 111,
+     "id": 115,
      "name": "gc7Kiefer",
      "type": "moebel",
      "x": 1280,
@@ -16098,7 +16270,7 @@
      ]
     },
     {
-     "id": 112,
+     "id": 116,
      "name": "gc7Kiefer",
      "type": "moebel",
      "x": 320,
@@ -16121,7 +16293,7 @@
      ]
     },
     {
-     "id": 113,
+     "id": 117,
      "name": "gc7Kiefer",
      "type": "moebel",
      "x": 2240,
@@ -16144,7 +16316,7 @@
      ]
     },
     {
-     "id": 114,
+     "id": 118,
      "name": "gc7Kiefer",
      "type": "moebel",
      "x": 1952,
@@ -16167,7 +16339,7 @@
      ]
     },
     {
-     "id": 115,
+     "id": 119,
      "name": "gc7KieferB",
      "type": "moebel",
      "x": 2048,
@@ -16190,7 +16362,7 @@
      ]
     },
     {
-     "id": 116,
+     "id": 120,
      "name": "gc7KieferB",
      "type": "moebel",
      "x": 1568,
@@ -16213,7 +16385,7 @@
      ]
     },
     {
-     "id": 117,
+     "id": 121,
      "name": "gc7Kiefer",
      "type": "moebel",
      "x": 1360,
@@ -16236,7 +16408,7 @@
      ]
     },
     {
-     "id": 118,
+     "id": 122,
      "name": "gc7KieferB",
      "type": "moebel",
      "x": 2224,
@@ -16259,7 +16431,7 @@
      ]
     },
     {
-     "id": 119,
+     "id": 123,
      "name": "gc7Kiefer",
      "type": "moebel",
      "x": 2048,
@@ -16282,7 +16454,7 @@
      ]
     },
     {
-     "id": 120,
+     "id": 124,
      "name": "gc7Kiefer",
      "type": "moebel",
      "x": 1408,
@@ -16305,7 +16477,7 @@
      ]
     },
     {
-     "id": 121,
+     "id": 125,
      "name": "gc7KieferB",
      "type": "moebel",
      "x": 1440,
@@ -16328,7 +16500,7 @@
      ]
     },
     {
-     "id": 122,
+     "id": 126,
      "name": "gc7Kiefer",
      "type": "moebel",
      "x": 704,
@@ -16351,7 +16523,7 @@
      ]
     },
     {
-     "id": 123,
+     "id": 127,
      "name": "gc7Kiefer",
      "type": "moebel",
      "x": 1296,
@@ -16374,7 +16546,7 @@
      ]
     },
     {
-     "id": 124,
+     "id": 128,
      "name": "gc7Kiefer",
      "type": "moebel",
      "x": 1328,
@@ -16397,7 +16569,7 @@
      ]
     },
     {
-     "id": 125,
+     "id": 129,
      "name": "gc7Kiefer",
      "type": "moebel",
      "x": 2320,
@@ -16420,7 +16592,7 @@
      ]
     },
     {
-     "id": 126,
+     "id": 130,
      "name": "gc7Kiefer",
      "type": "moebel",
      "x": 1104,
@@ -16443,7 +16615,7 @@
      ]
     },
     {
-     "id": 127,
+     "id": 131,
      "name": "gc7KieferB",
      "type": "moebel",
      "x": 480,
@@ -16466,7 +16638,7 @@
      ]
     },
     {
-     "id": 128,
+     "id": 132,
      "name": "gc7KieferB",
      "type": "moebel",
      "x": 448,
@@ -16489,7 +16661,7 @@
      ]
     },
     {
-     "id": 129,
+     "id": 133,
      "name": "gc7KieferB",
      "type": "moebel",
      "x": 368,
@@ -16512,7 +16684,7 @@
      ]
     },
     {
-     "id": 130,
+     "id": 134,
      "name": "gc7Kiefer",
      "type": "moebel",
      "x": 1728,
@@ -16535,7 +16707,7 @@
      ]
     },
     {
-     "id": 131,
+     "id": 135,
      "name": "gc7Kiefer",
      "type": "moebel",
      "x": 896,
@@ -16558,7 +16730,7 @@
      ]
     },
     {
-     "id": 132,
+     "id": 136,
      "name": "gc7Kiefer",
      "type": "moebel",
      "x": 2192,
@@ -16581,7 +16753,7 @@
      ]
     },
     {
-     "id": 133,
+     "id": 137,
      "name": "gc7Kiefer",
      "type": "moebel",
      "x": 624,
@@ -16604,7 +16776,7 @@
      ]
     },
     {
-     "id": 134,
+     "id": 138,
      "name": "gc7Kiefer",
      "type": "moebel",
      "x": 1808,
@@ -16627,7 +16799,7 @@
      ]
     },
     {
-     "id": 135,
+     "id": 139,
      "name": "gc7Kiefer",
      "type": "moebel",
      "x": 2304,
@@ -16641,6 +16813,167 @@
        "name": "tiefe",
        "type": "int",
        "value": 392
+      },
+      {
+       "name": "kollision",
+       "type": "bool",
+       "value": true
+      }
+     ]
+    },
+    {
+     "id": 140,
+     "name": "gc9StegQuer7",
+     "type": "moebel",
+     "x": 1120,
+     "y": 112,
+     "width": 112,
+     "height": 36,
+     "rotation": 0,
+     "visible": true,
+     "properties": [
+      {
+       "name": "tiefe",
+       "type": "int",
+       "value": 1
+      },
+      {
+       "name": "kollision",
+       "type": "bool",
+       "value": false
+      }
+     ]
+    },
+    {
+     "id": 141,
+     "name": "gc9StegQuer3",
+     "type": "moebel",
+     "x": 1232,
+     "y": 112,
+     "width": 48,
+     "height": 36,
+     "rotation": 0,
+     "visible": true,
+     "properties": [
+      {
+       "name": "tiefe",
+       "type": "int",
+       "value": 1
+      },
+      {
+       "name": "kollision",
+       "type": "bool",
+       "value": false
+      }
+     ]
+    },
+    {
+     "id": 142,
+     "name": "gc10Hocker",
+     "type": "moebel",
+     "x": 1952,
+     "y": 224,
+     "width": 16,
+     "height": 16,
+     "rotation": 0,
+     "visible": true,
+     "properties": [
+      {
+       "name": "tiefe",
+       "type": "int",
+       "value": 232
+      },
+      {
+       "name": "kollision",
+       "type": "bool",
+       "value": true
+      }
+     ]
+    },
+    {
+     "id": 143,
+     "name": "gc10Hocker",
+     "type": "moebel",
+     "x": 2000,
+     "y": 224,
+     "width": 16,
+     "height": 16,
+     "rotation": 0,
+     "visible": true,
+     "properties": [
+      {
+       "name": "tiefe",
+       "type": "int",
+       "value": 232
+      },
+      {
+       "name": "kollision",
+       "type": "bool",
+       "value": true
+      }
+     ]
+    },
+    {
+     "id": 144,
+     "name": "gc10Hocker",
+     "type": "moebel",
+     "x": 2048,
+     "y": 224,
+     "width": 16,
+     "height": 16,
+     "rotation": 0,
+     "visible": true,
+     "properties": [
+      {
+       "name": "tiefe",
+       "type": "int",
+       "value": 232
+      },
+      {
+       "name": "kollision",
+       "type": "bool",
+       "value": true
+      }
+     ]
+    },
+    {
+     "id": 145,
+     "name": "gc10Hocker",
+     "type": "moebel",
+     "x": 2096,
+     "y": 224,
+     "width": 16,
+     "height": 16,
+     "rotation": 0,
+     "visible": true,
+     "properties": [
+      {
+       "name": "tiefe",
+       "type": "int",
+       "value": 232
+      },
+      {
+       "name": "kollision",
+       "type": "bool",
+       "value": true
+      }
+     ]
+    },
+    {
+     "id": 146,
+     "name": "gc10Hocker",
+     "type": "moebel",
+     "x": 2144,
+     "y": 224,
+     "width": 16,
+     "height": 16,
+     "rotation": 0,
+     "visible": true,
+     "properties": [
+      {
+       "name": "tiefe",
+       "type": "int",
+       "value": 232
       },
       {
        "name": "kollision",

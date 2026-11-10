@@ -2316,6 +2316,12 @@
           "karte": "siliconBay.hafen",
           "art": "dialog",
           "dialog": "silicon-bay-aussen.netze"
+        },
+        {
+          "name": "eisenwaren",
+          "karte": "siliconBay.altstadt",
+          "art": "dialog",
+          "dialog": "silicon-bay-aussen.eisenwaren"
         }
       ],
       "club": {

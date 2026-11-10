@@ -713,7 +713,23 @@ Nicht als eigene Szene: `schuppenOffen` (außen ist das Vorhängeschloss im Bild
 Lastkahn am Anleger (Objekt mit `wenn`, sobald es Objekte mit Bedingung gibt), Regen und Schnee
 (Tönung und Partikel; Schneebilder gibt es nicht, ENTSCHEIDUNGEN 10.11.2026), Wohnwagen (nur Szene 37).
 
-#### Runde 9: drittes Gutachten (mittel-3, 10.11.2026)
+#### Runde 9: viertes Gutachten (mittel-3, 10.11.2026)
+
+`gutachten/riverton-aussen-4.md`, `riverton-innen-4.md`. Außen, Zustände und Halle gelten als reif
+für den Autor; behoben sind die Restpunkte:
+
+- **Außen:** Zebrastreifen vom Vorplatz zum Markt; das Ruderboot liegt am Kai unter dem Poller;
+  Pfützen auf Vorplatz und Markt; das kleine weiße Haus steht als Pumpenhaus neben dem Wasserturm.
+  Offen: Brückenkörper (Steinbogenbrücke steht in der nächsten Gemini-Datei).
+- **Halle:** Der Glastresen steht direkt vor den Zeitungshaltern, Pops am Ende des Tresens (direkt
+  dahinter würde das Regal die Figur verdecken, Regel 10.55).
+- **Pavillon:** vier Tische, je zwei pro Seite, wie die Beschreibung meint; an der Stelle der
+  mittleren Tische je eine Zuschauerbank. Partie ohne Damen (sie lasen sich als zweite Könige).
+  Truhen als offene Holztruhen mit Eisenbändern (`figurentruhe.png`, Bildwunsch `grosse_figuren.py`).
+- **Wohnwagen:** eine Spalte länger (17 × 7); Nasszelle zwischen zwei kurzen Trennwänden;
+  Sitzecke als Nische mit zwei Sitzen und Tisch; zwei kleine Pokale, die nicht über die Wand ragen.
+
+### Runde 9: drittes Gutachten (mittel-3, 10.11.2026)
 
 `gutachten/riverton-aussen-3.md`, `riverton-innen-3.md`, `zustaende-runde8.md`:
 
@@ -1529,3 +1545,6 @@ nach Osten und führt am Ostufer hinunter zum Kai. Die alte flache Querung über
 die Auslöser auf der Brücke (Nietenkopf, Zeitnot-Trick, Aussicht) und der Brückenwärter sind
 mitgezogen, der Graffiti-Turm steht am östlichen Pfeiler. Damit ist der Befund „Brücke flach, kein
 Kahn käme darunter durch“ erledigt.
+
+**Restpunkte Eisenbrücke (10.11.2026):** Das Graffiti ist eine Krone ganz auf dem östlichen Widerlager,
+der Kai hat zum Rasen eine Kante aus Steinplatten.

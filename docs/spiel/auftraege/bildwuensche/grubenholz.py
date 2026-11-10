@@ -23,13 +23,13 @@ SCHATTEN = (20, 20, 30, 90)
 def tuerstock() -> Image.Image:
     bild = Image.new("RGBA", (32, 32))
     z = ImageDraw.Draw(bild)
-    for x in (1, 26):                                   # Stempel
+    for x in (1, 26):  # Stempel
         z.rectangle((x + 2, 8, x + 6, 31), fill=SCHATTEN)
         z.rectangle((x, 4, x + 4, 30), fill=RAND)
         z.rectangle((x + 1, 5, x + 3, 29), fill=HOLZ)
         z.line((x + 1, 5, x + 1, 29), fill=HOLZ_HELL)
         z.line((x + 3, 12, x + 3, 16), fill=HOLZ_DUNKEL)
-    z.rectangle((0, 1, 31, 7), fill=RAND)               # Kappe
+    z.rectangle((0, 1, 31, 7), fill=RAND)  # Kappe
     z.rectangle((1, 2, 30, 6), fill=HOLZ)
     z.line((1, 2, 30, 2), fill=HOLZ_HELL)
     z.line((1, 6, 30, 6), fill=HOLZ_DUNKEL)

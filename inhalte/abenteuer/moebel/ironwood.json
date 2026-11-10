@@ -1,5 +1,35 @@
 {
   "moebel": {
+    "iw9VitrineMuetze": {
+      "quelle": "spiel/eigene/vitrine_muetze.png",
+      "breite": 32,
+      "hoehe": 48,
+      "kollision": true,
+      "art": "vitrine",
+      "blick": "unten",
+      "zustand": "alt",
+      "stil": "klassisch"
+    },
+    "iw9VitrineLokmodell": {
+      "quelle": "spiel/eigene/vitrine_lokmodell.png",
+      "breite": 32,
+      "hoehe": 48,
+      "kollision": true,
+      "art": "vitrine",
+      "blick": "unten",
+      "zustand": "alt",
+      "stil": "klassisch"
+    },
+    "iw9VitrineFahrkarten": {
+      "quelle": "spiel/eigene/vitrine_fahrkarten.png",
+      "breite": 32,
+      "hoehe": 48,
+      "kollision": true,
+      "art": "vitrine",
+      "blick": "unten",
+      "zustand": "alt",
+      "stil": "klassisch"
+    },
     "iw9FotoBrueckeA": {
       "quelle": "spiel/eigene/foto_bruecke_a.png",
       "breite": 32,

@@ -1,5 +1,5 @@
 /**
- * Tönung einer Karte (Nebel, Nacht, Abend, Sepia, Dunkel) und Lichtkreis der Laterne.
+ * Tönung einer Karte (Nebel, Dunst, Nacht, Abend, Sepia, Dunkel) und Lichtkreis der Laterne.
  *
  * Rolle im Gesamtbild: Reine Logik für oberwelt/toenungsschicht.ts und weltdaten.ts (getestet in
  * toenung.test.ts). Die Tönung steht in der Szene (`toenung`, vom Kartenbauer als Eigenschaft der
@@ -10,9 +10,9 @@
  */
 
 /** Die Tönungen einer Karte. */
-export type Toenung = "nebel" | "nacht" | "abend" | "sepia" | "dunkel";
+export type Toenung = "nebel" | "dunst" | "nacht" | "abend" | "sepia" | "dunkel";
 
-const TOENUNGEN: readonly Toenung[] = ["nebel", "nacht", "abend", "sepia", "dunkel"];
+const TOENUNGEN: readonly Toenung[] = ["nebel", "dunst", "nacht", "abend", "sepia", "dunkel"];
 /** Wert der Dialogvariable, der eine Tönung aufhebt. */
 export const KEINE_TOENUNG = "keine";
 
@@ -27,6 +27,9 @@ export const SCHLEIER: Readonly<Partial<Record<Toenung, Schleier>>> = {
   // Nebel 0,30 statt 0,45 (10.11.2026): Bayou und Riesenbäume waren zu blass, um Dinge zu
   // unterscheiden; gleich wie pipeline/abenteuer/toenung.py.
   nebel: { farbe: 0xd8dde0, deckkraft: 0.3 },
+  // Dunst: Morgennebel im Wald, halb so dicht, damit Weg und Figuren lesbar bleiben (Gutachter
+  // zu den Riesenbäumen, Runde 9).
+  dunst: { farbe: 0xd8dde0, deckkraft: 0.22 },
   nacht: { farbe: 0x0b1530, deckkraft: 0.55 },
   abend: { farbe: 0xff8a3d, deckkraft: 0.18 },
 };

@@ -164,7 +164,7 @@ def pruefe(zeilen: list[str], gesetzt: list[dict], punkte: list[dict], aussen: b
 
 # Felder der Szene, die als Eigenschaft in die Tiled-Karte gehen.
 KARTENFELDER = ("toenung", "zustand_der_karte", "jahreszeit")
-TOENUNGEN = ("nebel", "nacht", "abend", "sepia", "dunkel")
+TOENUNGEN = ("nebel", "dunst", "nacht", "abend", "sepia", "dunkel")
 # Winter färbt kartenbild um und lässt in der App Schnee fallen (Entscheidung 10.11.2026).
 JAHRESZEITEN = ("winter",)
 
@@ -240,7 +240,7 @@ def tiled(szene: dict, zeilen: list[str], gesetzt: list[dict], vorlage: dict) ->
     eigenschaften += [
         {"name": k, "type": "string", "value": v} for k, v in szene.get("eigenschaften", {}).items()
     ]
-    # Tönung (nebel, nacht, abend, sepia, dunkel), Zustand und Jahreszeit liest die App aus den
+    # Tönung (nebel, dunst, nacht, abend, sepia, dunkel), Zustand und Jahreszeit liest die App aus den
     # Eigenschaften der Karte (oberwelt/toenung.ts, zustand_der_karte, oberwelt/winter.ts).
     eigenschaften += [
         {"name": k, "type": "string", "value": szene[k]}

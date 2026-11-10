@@ -427,7 +427,7 @@
       "quelle": "modern-office/Modern Office Singles/Modern_Office_Singles_155.png",
       "breite": 32,
       "hoehe": 48,
-      "kollision": false,
+      "kollision": true,
       "art": "deko",
       "zustand": "alt",
       "stil": "klassisch"

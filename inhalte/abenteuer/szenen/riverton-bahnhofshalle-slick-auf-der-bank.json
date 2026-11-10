@@ -90,15 +90,15 @@
     },
     {
       "moebel": "mf8GlasthekeLinks",
-      "feld": [1, 8]
+      "feld": [1, 6]
     },
     {
       "moebel": "mf8GlasthekeMitte",
-      "feld": [2, 8]
+      "feld": [2, 6]
     },
     {
       "moebel": "mf8GlasthekeRechts",
-      "feld": [3, 8]
+      "feld": [3, 6]
     },
     {
       "moebel": "rv8Schliessfach",
@@ -261,7 +261,7 @@
     },
     {
       "name": "pops",
-      "feld": [2, 7]
+      "feld": [4, 7]
     }
   ],
   "belebung": [

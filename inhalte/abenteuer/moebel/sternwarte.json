@@ -1,5 +1,15 @@
 {
   "moebel": {
+    "n9Kuppelspalt": {
+      "quelle": "spiel/eigene/kuppelspalt.png",
+      "breite": 32,
+      "hoehe": 32,
+      "kollision": false,
+      "art": "fenster",
+      "blick": "unten",
+      "zustand": "alt",
+      "stil": "klassisch"
+    },
     "n9Fernrohr": {
       "quelle": "spiel/eigene/fernrohr.png",
       "breite": 48,

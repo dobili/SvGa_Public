@@ -589,6 +589,246 @@
       "moebel": "mfBank",
       "feld": [80, 22],
       "id": "bankAussicht"
+    },
+    {
+      "moebel": "dd6SteinFlach",
+      "feld": [33, 22],
+      "vorn": true,
+      "bauteil_ok": true
+    },
+    {
+      "moebel": "dd6KaktusKlein",
+      "feld": [14, 6],
+      "vorn": true,
+      "bauteil_ok": true
+    },
+    {
+      "moebel": "dd6KaktusBluehend",
+      "feld": [82, 5],
+      "vorn": true,
+      "bauteil_ok": true
+    },
+    {
+      "moebel": "felsKlein",
+      "feld": [25, 23],
+      "vorn": true,
+      "bauteil_ok": true
+    },
+    {
+      "moebel": "dd6SteinFlach",
+      "feld": [123, 23],
+      "vorn": true,
+      "bauteil_ok": true
+    },
+    {
+      "moebel": "dd6SteinFlach",
+      "feld": [72, 9],
+      "vorn": true,
+      "bauteil_ok": true
+    },
+    {
+      "moebel": "dd6KaktusKlein",
+      "feld": [82, 8],
+      "vorn": true,
+      "bauteil_ok": true
+    },
+    {
+      "moebel": "felsKlein",
+      "feld": [99, 7],
+      "vorn": true,
+      "bauteil_ok": true
+    },
+    {
+      "moebel": "felsKlein",
+      "feld": [109, 21],
+      "vorn": true,
+      "bauteil_ok": true
+    },
+    {
+      "moebel": "felsKlein",
+      "feld": [89, 5],
+      "vorn": true,
+      "bauteil_ok": true
+    },
+    {
+      "moebel": "dd6SteinFlach",
+      "feld": [59, 5],
+      "vorn": true,
+      "bauteil_ok": true
+    },
+    {
+      "moebel": "felsKlein",
+      "feld": [132, 6],
+      "vorn": true,
+      "bauteil_ok": true
+    },
+    {
+      "moebel": "fels",
+      "feld": [67, 5],
+      "vorn": true,
+      "bauteil_ok": true
+    },
+    {
+      "moebel": "felsKlein",
+      "feld": [123, 21],
+      "vorn": true,
+      "bauteil_ok": true
+    },
+    {
+      "moebel": "dd6Saguaro",
+      "feld": [4, 5],
+      "vorn": true,
+      "bauteil_ok": true
+    },
+    {
+      "moebel": "dd6SteinFlach",
+      "feld": [126, 7],
+      "vorn": true,
+      "bauteil_ok": true
+    },
+    {
+      "moebel": "dd6KaktusBluehend",
+      "feld": [76, 5],
+      "vorn": true,
+      "bauteil_ok": true
+    },
+    {
+      "moebel": "felsKlein",
+      "feld": [8, 10],
+      "vorn": true,
+      "bauteil_ok": true
+    },
+    {
+      "moebel": "dd6SteinFlach",
+      "feld": [103, 22],
+      "vorn": true,
+      "bauteil_ok": true
+    },
+    {
+      "moebel": "felsKlein",
+      "feld": [113, 7],
+      "vorn": true,
+      "bauteil_ok": true
+    },
+    {
+      "moebel": "dd6KaktusBluehend",
+      "feld": [77, 8],
+      "vorn": true,
+      "bauteil_ok": true
+    },
+    {
+      "moebel": "felsKlein",
+      "feld": [63, 10],
+      "vorn": true,
+      "bauteil_ok": true
+    },
+    {
+      "moebel": "dd6KaktusBluehend",
+      "feld": [128, 22],
+      "vorn": true,
+      "bauteil_ok": true
+    },
+    {
+      "moebel": "dd6Saguaro",
+      "feld": [63, 5],
+      "vorn": true,
+      "bauteil_ok": true
+    },
+    {
+      "moebel": "fels",
+      "feld": [71, 6],
+      "vorn": true,
+      "bauteil_ok": true
+    },
+    {
+      "moebel": "dd6KaktusBluehend",
+      "feld": [121, 5],
+      "vorn": true,
+      "bauteil_ok": true
+    },
+    {
+      "moebel": "dd6KaktusKlein",
+      "feld": [59, 9],
+      "vorn": true,
+      "bauteil_ok": true
+    },
+    {
+      "moebel": "dd6SteinFlach",
+      "feld": [38, 23],
+      "vorn": true,
+      "bauteil_ok": true
+    },
+    {
+      "moebel": "felsKlein",
+      "feld": [59, 7],
+      "vorn": true,
+      "bauteil_ok": true
+    },
+    {
+      "moebel": "felsKlein",
+      "feld": [69, 8],
+      "vorn": true,
+      "bauteil_ok": true
+    },
+    {
+      "moebel": "dd6KaktusBluehend",
+      "feld": [95, 6],
+      "vorn": true,
+      "bauteil_ok": true
+    },
+    {
+      "moebel": "felsKlein",
+      "feld": [125, 5],
+      "vorn": true,
+      "bauteil_ok": true
+    },
+    {
+      "moebel": "fels",
+      "feld": [105, 7],
+      "vorn": true,
+      "bauteil_ok": true
+    },
+    {
+      "moebel": "dd6SteinFlach",
+      "feld": [88, 8],
+      "vorn": true,
+      "bauteil_ok": true
+    },
+    {
+      "moebel": "fels",
+      "feld": [9, 5],
+      "vorn": true,
+      "bauteil_ok": true
+    },
+    {
+      "moebel": "felsKlein",
+      "feld": [117, 7],
+      "vorn": true,
+      "bauteil_ok": true
+    },
+    {
+      "moebel": "fels",
+      "feld": [120, 23],
+      "vorn": true,
+      "bauteil_ok": true
+    },
+    {
+      "moebel": "fels",
+      "feld": [117, 21],
+      "vorn": true,
+      "bauteil_ok": true
+    },
+    {
+      "moebel": "fels",
+      "feld": [132, 22],
+      "vorn": true,
+      "bauteil_ok": true
+    },
+    {
+      "moebel": "fels",
+      "feld": [102, 7],
+      "vorn": true,
+      "bauteil_ok": true
     }
   ],
   "ausloeser": [

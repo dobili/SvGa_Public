@@ -104,3 +104,23 @@ test("vom Dachboden in die erste Partie und zurück", async ({ page }) => {
   await page.getByRole("button", { name: "Weiterspielen" }).click();
   await expect(page.getByTestId("partie")).toBeVisible({ timeout: 20000 });
 });
+
+test("Übergang von vorn: vom Dachboden über die Luke ins Wohnzimmer", async ({ page }) => {
+  // Befund des Autors (10.11.2026): Wer auf die Luke zuging und sie dann betrat, kam nicht hinunter,
+  // weil der Blick auf den Auslöser schon als derselbe Treffer galt. Ein echter Spieler geht immer
+  // von vorn auf einen Durchgang zu.
+  await page.goto("/app/#abenteuer");
+  await page.getByTestId("abenteuer-laden").click();
+  await expect(page.getByTestId("abenteuer-spielen")).toBeVisible({ timeout: 30000 });
+  await page.getByTestId("abenteuer-name").fill("Kim");
+  await page.getByTestId("abenteuer-spielen").click();
+  await expect(page.locator(".abenteuer-welt canvas")).toBeVisible({ timeout: 30000 });
+  await page.waitForTimeout(800);
+  await expect.poll(() => kachel(page), { timeout: 10000 }).toBe("2,5");
+  // Links neben die Luke, dann von unten auf die Luke (1,4): Der Held schaut sie vorher an.
+  await laufeBis(page, "ArrowLeft", "1,5");
+  await page.keyboard.down("ArrowUp");
+  // Im Wohnzimmer kommt der Held auf der Treppe (2,3) an.
+  await expect.poll(() => kachel(page), { timeout: 8000 }).toBe("2,3");
+  await page.keyboard.up("ArrowUp");
+});

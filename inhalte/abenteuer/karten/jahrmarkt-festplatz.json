@@ -9368,6 +9368,11 @@
    "name": "kennung",
    "type": "string",
    "value": "jahrmarkt.festplatz"
+  },
+  {
+   "name": "toenung",
+   "type": "string",
+   "value": "abend"
   }
  ]
 }

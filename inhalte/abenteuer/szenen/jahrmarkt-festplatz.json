@@ -1025,5 +1025,6 @@
     "rustikal",
     "landhaus"
   ],
-  "datei": "karten/jahrmarkt-festplatz.json"
+  "datei": "karten/jahrmarkt-festplatz.json",
+  "toenung": "abend"
 }

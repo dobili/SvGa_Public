@@ -101,9 +101,13 @@ Szene heißt die Datei in `inhalte/abenteuer/szenen/` ohne `.json`.
 - [ ] Gemini-Bilder in den Karten von niedrig-1 (Reh/Hirsch, Häuser und Bänke von hinten, Holzbrücke, London-Fronten, Postreiter, Ofen): maple-falls-aussen, maple-falls-park, cedar-creek-aussen, weg-cedar-riverton-bahndamm, -zedernwald, weg-maple-cedar-zedernpfad, -landstrasse, erinnerung-london-strand, erinnerung-siedlung-huette, lockport-gasthaus (Liste in cedar-creek.md „Gemini-Bilder eingebaut“; Figurenbogen postreiter und Tierbögen reh/hirsch erst bauen)
 - [ ] silicon-bay-aussen (Campus, erste Prüfung, mittel-3; mit Lieferroboter) und silicon-bay-hafen (alter Hafen, erste Prüfung, mittel-3)
 - [ ] silicon-bay-lobby, silicon-bay-serverraum (erste Prüfung, niedrig-1)
+- [ ] riverton-pavillon, riverton-wohnwagen, crossroads-raststaette, weg-summit-crossroads-geysirbecken, -praerie, weg-crossroads-pinewood-riesenbaeume (Nachprüfung der Restpunkte, mittel-3; Dunst statt Nebel, Durchreiche als Öffnung)
 
 - [ ] goldmine-stollen, kuerbishof-hof (dritte Prüfung), maple-falls-park, cedar-creek-aussen, weg-maple-cedar-landstrasse (fünfte Prüfung, nur Restpunkte; niedrig-1, Antworten in cedar-creek.md)
 - [ ] silicon-bay-lobby, silicon-bay-serverraum (erste Prüfung, niedrig-1; Stand in silicon-bay.md „Lobby und Serverraum nach den aktuellen Regeln“)
+
+- [ ] port-delacroix-aussen, capital-arena-innenstadt, bayou-steg, weg-ghost-capital-leuchtturm, weg-silicon-delacroix-deich (dritte Prüfung, mittel-1, nach `mittel-1-runde9-2.md`; Bild `bildwuensche/boje_frei.py`, Nebel 0,28)
+- [ ] weg-ironwood-silicon-raststaette (fünfte Prüfung, nur Waschstraße und Buchten, mittel-1)
 
 ## Erledigt
 
@@ -120,3 +124,6 @@ Szene heißt die Datei in `inhalte/abenteuer/szenen/` ohne `.json`.
 - [x] weg-riverton-ironwood-2 mit Zustand ohne-tische: Eisenbrücke mit Höhe (Gemini-Bild), Querung über den Nord-Süd-Arm (mittel-4)
 - [x] ironwood-museum, ironwood-umkleide, sternwarte-kuppel: Gemini-Bilder eingebaut (mittel-4)
 - [x] Runde-9-Karten nach dem Gutachten (summit-city-aussen, -bergstation, -bergladen, hochebene-felsentuerme, -schule, sternwarte-felsnase, weg-desert-summit-bergstrasse, -diner, weg-delacroix-desert-canyonpfad, -felsbogen) (mittel-4)
+
+- [ ] weg-riverton-ironwood-2 (+ ohne-tische), ironwood-museum, ironwood-umkleide, sternwarte-kuppel: Restpunkte des Nachtrags (mittel-4)
+- [ ] summit-city-aussen, hochebene-felsentuerme, weg-desert-summit-bergstrasse, weg-delacroix-desert-canyonpfad, weg-delacroix-desert-felsbogen: Restpunkte Runde 9, zweite Prüfung (mittel-4)

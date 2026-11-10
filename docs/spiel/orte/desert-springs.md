@@ -162,6 +162,9 @@ durch den Bogen über; die Bank steht am Rand des tiefen Tals mit Blick nach Sü
 - **Felsbogen:** Die Brücke steht mittig über dem Weg, die Pfeiler beiderseits. Nicht umgesetzt:
   **leere Hochfläche** – auf Wandfeldern dürfen keine Objekte stehen.
 
+**Restpunkte Weg 6 (10.11.2026):** Stahlprellböcke von mittel-2 an den Gleisenden (Canyonpfad und
+Felsbogen); auf den Hochflächen stehen Felsen, flache Steine und Kakteen.
+
 ### Weg 6 in Runde 7: Ereignisort und Leben
 
 **Ereignisort „Die Seilschaft“ (Dokument 15, 2.7):** Am Wandfuß beim Felsbogen hängen ein

@@ -154,6 +154,14 @@ Westen die Bucht; nur der Pfad öffnet den Westrand.
   seit dem zweiten Gutachten Asphalt vor dem Tor (6).
 - Offen: Laternen am Dünenfuß (1), Abfahrt ohne Verzögerungsstreifen (5), Vogelschild (10).
 
+**Viertes Gutachten (`gutachten/weg-ironwood-silicon-raststaette-4.md`, „reif für den Autor“):**
+
+- **Waschstraße (1):** Eine Zufahrt führt östlich um die Waschbox herum nach Norden (125–126,
+  6–13), man fährt von hinten hinein und vorn hinaus.
+- **Buchten (3, 4):** Die senkrechten Buchtlinien und das einzelne Auto sind weg. Lastwagen und
+  Bus stehen längs am Rand der Fahrgasse.
+- Offen: Abfahrt (2), Laternenabstand (5), Vogelschild (7).
+
 ### 1.2 Glasbrücke (`wegIronwoodSilicon.glasbruecke`, 140 × 26), Runde 8 neu gebaut
 
 **Neu gebaut nach der Revision des Autors (10.11.2026, „keine Variante passt“, mittel-1).** Die
@@ -392,7 +400,12 @@ Restpunkte: Die Laternen stehen an den Hausgrenzen statt vor den Schaufenstern; 
 rollt am Schneemann eine Schneekugel. Gemini-Bilder (Runde 9): Die Roboter
 (Liefer-, Staubsauger-, Schneeräumroboter in der Altstadt, Saugroboter in der Akademie, Lieferroboter
 und Roboterhund am Campus) zeigen jetzt den Lieferroboter von Perfect Move (Tierart `lieferroboter`
-in `tierarten.json`, Schnitt `ansichten` aus `lieferroboter_rechts/_oben/_unten`).
+in `tierarten.json`, Schnitt `ansichten` aus `lieferroboter_rechts/_oben/_unten`). In der Akademie heißt
+die Belebung jetzt `lieferroboter` und steht in der Beschreibung: Perfect Move erprobt seinen
+Lieferroboter im eigenen Haus; ein flacher Saugroboter hätte ein eigenes Bild gebraucht. Campus und
+alter Hafen sind für die erste Prüfung durchgesehen (10.64 bis 10.67): Der Asphalt des Campus ist das
+Gleisbett der Bahn, die Hafenstraße ein Plattenweg, deshalb keine Fahrbahnmarkierung; Kaimauer und
+Fähre in Normgröße stehen.
 
 **Belebung:** zwölf Statisten, acht davon mit Satz (`statist.siliconBay.altstadt.*`): Bäckerin,
 Uhrmacher, Musikhändler, Schülerin, Metzger (Perfect Move will die Straße kaufen), Rentnerpaar,

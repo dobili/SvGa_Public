@@ -364,13 +364,16 @@ export class Oberweltszene extends Phaser.Scene {
       })),
     ];
     const { treffer, darauf } = triffAusloeser(alle, this.position());
-    const name = treffer?.name ?? null;
+    // „Davor“ und „darauf“ sind zwei Zustände: Wer vor einer Luke oder Tür steht und dann
+    // hineingeht, muss den Übergang auslösen (Befund des Autors, 10.11.2026: vom Dachboden kam man
+    // nicht herunter, weil der Blick auf die Luke schon als derselbe Treffer galt).
+    const name = treffer ? `${treffer.name}|${treffer === darauf ? "darauf" : "davor"}` : null;
     if (name === this.letzterAusloeser) return;
     // Der Startauslöser (etwa die Tür, durch die der Held kam) zählt erst nach dem Verlassen.
     if (this.startAusloeserOffen) {
       this.startAusloeserOffen = false;
       if (darauf) {
-        this.letzterAusloeser = darauf.name;
+        this.letzterAusloeser = `${darauf.name}|darauf`;
         return;
       }
     }

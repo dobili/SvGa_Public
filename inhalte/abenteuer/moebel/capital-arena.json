@@ -1875,6 +1875,15 @@
       "zustand": "neu",
       "stil": "modern",
       "blick": "unten"
+    },
+    "ca10Zebrastreifen": {
+      "quelle": "spiel/eigene/zebrastreifen_3.png",
+      "breite": 32,
+      "hoehe": 48,
+      "kollision": false,
+      "art": "markierung",
+      "zustand": "neu",
+      "stil": "modern"
     }
   }
 }

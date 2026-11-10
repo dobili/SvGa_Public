@@ -841,12 +841,12 @@
     },
     {
      "id": 11,
-     "name": "iwSpind",
+     "name": "sb5Metallschrank",
      "type": "moebel",
      "x": 112,
-     "y": 32,
+     "y": 16,
      "width": 32,
-     "height": 32,
+     "height": 48,
      "rotation": 0,
      "visible": true,
      "properties": [
@@ -1096,8 +1096,8 @@
      "id": 22,
      "name": "ca7Muelleimer",
      "type": "moebel",
-     "x": 64,
-     "y": 112,
+     "x": 16,
+     "y": 80,
      "width": 16,
      "height": 32,
      "rotation": 0,
@@ -1106,7 +1106,7 @@
       {
        "name": "tiefe",
        "type": "int",
-       "value": 136
+       "value": 104
       },
       {
        "name": "kollision",
@@ -1211,7 +1211,7 @@
      "id": 27,
      "name": "iw8Trennwand",
      "type": "moebel",
-     "x": 224,
+     "x": 230,
      "y": 80,
      "width": 16,
      "height": 48,

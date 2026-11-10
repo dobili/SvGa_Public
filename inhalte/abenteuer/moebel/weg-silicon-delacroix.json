@@ -421,6 +421,24 @@
       "art": "geraet",
       "zustand": "gebraucht",
       "stil": "modern"
+    },
+    "dz10Boje": {
+      "quelle": "spiel/eigene/boje_frei.png",
+      "breite": 16,
+      "hoehe": 16,
+      "kollision": false,
+      "art": "deko",
+      "zustand": "gebraucht",
+      "stil": "einfach"
+    },
+    "dz10Pfahl": {
+      "quelle": "spiel/eigene/pfahl_frei.png",
+      "breite": 16,
+      "hoehe": 32,
+      "kollision": false,
+      "art": "deko",
+      "zustand": "gebraucht",
+      "stil": "rustikal"
     }
   }
 }

@@ -53,6 +53,8 @@ def _linien(bild: Image.Image, zeilen: list[str], zeichen: set[str]) -> None:
     Sonderfall: Kreuzungen (quer und längs Fahrbahn) bekommen keine Linie.
     """
     z = ImageDraw.Draw(bild)
+    # Mittellinie je gerades Fahrbahnfeld: (x, y) → Pixel der Linie quer zur Fahrtrichtung.
+    mitten: dict[bool, dict[tuple[int, int], float]] = {True: {}, False: {}}
     # Waagerechte Straßen: senkrechte Läufe je Spalte; senkrechte Straßen: waagerechte Läufe je Reihe.
     for senkrecht in (True, False):
         quer = {
@@ -69,12 +71,50 @@ def _linien(bild: Image.Image, zeilen: list[str], zeichen: set[str]) -> None:
                 anfang * K + RAND,
                 (anfang + laenge) * K - RAND - 1,
             )
+            for i in range(anfang, anfang + laenge):
+                mitten[senkrecht][(a, i) if senkrecht else (i, a)] = mitte
             for p in range(a * K, (a + 1) * K):
                 linien = [(oben, WEISS), (unten, WEISS)]
                 if p % (STRICH + LUECKE) < STRICH:
                     linien += [(mitte - 1, GELB), (mitte, GELB)]
                 for q, farbe in linien:
                     z.point((p, int(q)) if senkrecht else (int(q), p), fill=farbe)
+    _kehren(z, zeilen, zeichen, mitten)
+
+
+def _kehren(z: ImageDraw.ImageDraw, zeilen: list[str], zeichen: set[str], mitten: dict) -> None:
+    """Mittellinie durch Kehren: In jedem Eckstück (Fahrbahn ohne gerade Linie) läuft die gelbe Linie
+    vom waagerechten Ast zur Mitte und weiter zum senkrechten Ast, durchgezogen.
+
+    Warum: Sonst hört die Mittellinie an jeder Kehre auf (Gutachten Bergstraße, Runde 9).
+    Sonderfall: Eckstücke mit mehr als einem Ast je Richtung (Kreuzung, Einmündung) bleiben frei.
+    """
+    waag, senk = mitten[True], mitten[False]
+    ecken = {
+        (x, y)
+        for y, zeile in enumerate(zeilen)
+        for x, feld in enumerate(zeile)
+        if feld in zeichen and (x, y) not in waag and (x, y) not in senk
+    }
+    while ecken:
+        stapel, stueck = [ecken.pop()], set()
+        while stapel:
+            x, y = stapel.pop()
+            stueck.add((x, y))
+            for n in ((x + 1, y), (x - 1, y), (x, y + 1), (x, y - 1)):
+                if n in ecken:
+                    ecken.discard(n)
+                    stapel.append(n)
+        # Anschlüsse: gerade Felder links/rechts (waagerechter Ast) und oben/unten (senkrechter Ast).
+        seiten = {(n[0] > x, waag[n]) for x, y in stueck for n in ((x - 1, y), (x + 1, y)) if n in waag}
+        enden = {(n[1] > y, senk[n]) for x, y in stueck for n in ((x, y - 1), (x, y + 1)) if n in senk}
+        if len(seiten) != 1 or len(enden) != 1 or len(stueck) > max(SPUREN) ** 2:
+            continue
+        (rechts, my), (unten, mx) = next(iter(seiten)), next(iter(enden))
+        xs, ys = [x for x, _ in stueck], [y for _, y in stueck]
+        rand_x = (max(xs) + 1) * K if rechts else min(xs) * K
+        rand_y = (max(ys) + 1) * K if unten else min(ys) * K
+        z.line((rand_x, my - 1, mx, my - 1, mx, rand_y), fill=GELB, width=2)
 
 
 def _buchten(bild: Image.Image, zeilen: list[str], buchten: dict[str, int]) -> None:

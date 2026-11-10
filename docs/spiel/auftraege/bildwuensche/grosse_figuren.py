@@ -7,6 +7,10 @@ oben, KARTENREGELN 10.60): je Figur ein runder Sockel auf dem Feld, darüber der
 für eine Spielfigur (eine Kachel breit, anderthalb hoch). Weiß aus hellem Holz, Schwarz aus
 dunklem Holz, beide mit dunkler Umrisslinie wie bei LimeZu.
 
+Dazu ``figurentruhe.png`` (32 × 32): Die Truhen für die Figuren lasen sich im vierten Gutachten als
+Sitzbänke mit Kissen. Die neue Truhe hat einen gewölbten Deckel, Eisenbänder, ein Schloss und steht
+halb offen, zwei Figurenköpfe schauen heraus.
+
 Bilder: ``grossfigur_<farbe>_<figur>.png`` (16 × 24), Farbe ``weiss`` oder ``schwarz``, Figur
 ``bauer``, ``turm``, ``springer``, ``laeufer``, ``dame``, ``koenig``.
 Eingabe: Pfad zum privaten Repository. Aufruf: python grosse_figuren.py /home/user/schach-abenteuer-inhalte
@@ -73,12 +77,33 @@ def figur(farbe: str, art: str) -> Image.Image:
     return bild
 
 
+HOLZ, HOLZ_HELL, HOLZ_DUNKEL = (146, 96, 58, 255), (178, 124, 78, 255), (104, 66, 42, 255)
+EISEN, GOLD = (92, 96, 108, 255), (226, 188, 80, 255)
+
+
+def figurentruhe() -> Image.Image:
+    """Holztruhe mit Eisenbändern, Deckel nach hinten geklappt, darin ein weißer und ein schwarzer Kopf."""
+    bild = Image.new("RGBA", (32, 32))
+    z = ImageDraw.Draw(bild)
+    z.ellipse((2, 26, 29, 31), fill=SCHATTEN)
+    z.rectangle((3, 4, 28, 13), fill=HOLZ_DUNKEL, outline=UMRISS)  # offener Deckel von innen
+    z.ellipse((11, 6, 15, 13), fill=FARBEN["weiss"][0], outline=UMRISS)  # Bauernkopf weiß
+    z.ellipse((17, 6, 21, 13), fill=FARBEN["schwarz"][0], outline=UMRISS)  # Bauernkopf schwarz
+    z.rectangle((3, 14, 28, 28), fill=HOLZ, outline=UMRISS)  # Kasten
+    z.line((4, 15, 27, 15), fill=HOLZ_HELL)
+    for x in (8, 22):
+        z.rectangle((x, 4, x + 2, 28), fill=EISEN)  # Eisenbänder über Deckel und Kasten
+    z.rectangle((14, 17, 17, 21), fill=GOLD, outline=UMRISS)  # Schloss
+    return bild
+
+
 def main() -> None:
     ziel = Path(sys.argv[1]) / "spiel" / "eigene"
     for farbe in FARBEN:
         for art in ("bauer", "turm", "springer", "laeufer", "dame", "koenig"):
             figur(farbe, art).save(ziel / f"grossfigur_{farbe}_{art}.png")
-    print("12 große Figuren geschrieben")
+    figurentruhe().save(ziel / "figurentruhe.png")
+    print("12 große Figuren und die Figurentruhe geschrieben")
 
 
 if __name__ == "__main__":

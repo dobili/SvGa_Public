@@ -338,6 +338,20 @@ Gutachten `docs/spiel/auftraege/gutachten/capital-arena-bayou.md`.
 - Offen: schmale graue Häuser (außen 5), Allee in drei Stücken (Innenstadt 3), Stühle neben den
   Tischen in der Halle (2, 3), Treppe gestreift und Kreidespringer blass (U-Bahnhof 2, 3).
 
+### 3.7 Zweites Gutachten Runde 9: Antworten (mittel-1, 10.11.2026)
+
+Gutachten `docs/spiel/auftraege/gutachten/mittel-1-runde9-2.md`.
+
+- **Innenstadt, Allee (1):** Der Asphalt läuft durch, an den zwei Quergassen liegen Zebrastreifen
+  (Bild `zebrastreifen_3` von mittel-3) statt Kopfsteinstücken.
+- **Innenstadt, Bus (2) und Halle, „roter Saal“ (1):** Beide Beschreibungen sind seit der ersten
+  Antwort angepasst (kein Bus, helle Wände und dunkles Holz). Der Gutachter sah noch den alten
+  Text.
+- **Leuchtturm, Landzunge (1):** Links und rechts schneiden zwei Buchten ins Ufer (Westbucht bis
+  Reihe 11, Ostbucht bis Reihe 13). Die Landzunge ragt jetzt zwölf Reihen in den See.
+- Offen: Ausfahrt mit abgesenktem Bord an Feuerwache und Polizei, Kreidespringer blass, Platz
+  dünn, Turm in Seitenansicht, leere Wiese am Leuchtturm.
+
 ## 4. Bühnenbilder
 
 Möbel mit Vorsilbe `gc7` (Weg) in `moebel/weg-ghost-capital.json` und `ca7` (Arena) in

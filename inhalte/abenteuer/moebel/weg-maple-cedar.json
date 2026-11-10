@@ -669,6 +669,25 @@
       "blick": "unten",
       "zustand": "gebraucht",
       "stil": "laendlich"
+    },
+    "mf8FlohmarktPlakat": {
+      "quelle": "spiel/eigene/plakat_flohmarkt.png",
+      "breite": 32,
+      "hoehe": 48,
+      "kollision": true,
+      "art": "schild",
+      "blick": "unten",
+      "stil": "laendlich",
+      "zustand": "gebraucht"
+    },
+    "mf8Finkenzeichen": {
+      "quelle": "spiel/eigene/finkenzeichen_blech.png",
+      "breite": 16,
+      "hoehe": 16,
+      "kollision": false,
+      "art": "schild",
+      "stil": "laendlich",
+      "zustand": "alt"
     }
   }
 }

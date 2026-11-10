@@ -1207,6 +1207,10 @@
     {
       "moebel": "wg4Bank",
       "feld": [54, 20]
+    },
+    {
+      "moebel": "mf8Finkenzeichen",
+      "feld": [58, 21]
     }
   ],
   "ausloeser": [

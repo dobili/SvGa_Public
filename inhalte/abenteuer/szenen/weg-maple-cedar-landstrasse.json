@@ -2621,16 +2621,8 @@
       "feld": [80, 20]
     },
     {
-      "moebel": "wg4Busch",
-      "feld": [95, 12]
-    },
-    {
       "moebel": "wg4BuschB",
       "feld": [98, 12]
-    },
-    {
-      "moebel": "wg4Busch",
-      "feld": [96, 13]
     },
     {
       "moebel": "wg4BuschBreit",
@@ -3008,6 +3000,10 @@
     {
       "moebel": "mf8FlohmarktSchild",
       "feld": [92, 17]
+    },
+    {
+      "moebel": "mf8FlohmarktPlakat",
+      "feld": [95, 12]
     }
   ],
   "ausloeser": [

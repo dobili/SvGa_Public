@@ -12,7 +12,8 @@
     "damm": "spiel/eigene/damm.png",
     "felsRot": "spiel/eigene/fels_rot.png",
     "wasser_rumpf": "spiel/eigene/wasser_rumpf.png",
-    "sinter": "spiel/eigene/boden_sinter.png"
+    "sinter": "spiel/eigene/boden_sinter.png",
+    "klippeRot": "spiel/eigene/klippe_rot.png"
   },
   "boeden": {
     "holzHell": {
@@ -696,6 +697,17 @@
       "unten": [
         23,
         1
+      ]
+    },
+    "nachtblau": {
+      "bogen": "wand",
+      "oben": [
+        11,
+        34
+      ],
+      "unten": [
+        11,
+        35
       ]
     },
     "blau": {

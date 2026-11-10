@@ -3483,7 +3483,10 @@
           "kennung": "hochebene.schule",
           "datei": "karten/hochebene-schule.json",
           "name": "ort.hochebene.schule",
-          "innen": false
+          "innen": false,
+          "zustaende": {
+            "nicht annekSchachGelernt": "karten/hochebene-schule-vor-diplom.json"
+          }
         }
       ],
       "figuren": [

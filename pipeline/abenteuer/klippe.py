@@ -20,9 +20,13 @@ Mitte (Spalte 9). Liegt über der Kante kein Gras, nimmt die Klippe die Erdvaria
 Breite ``#``-Flächen ohne Boden darunter zeigen die obere Fläche (Reihe 43).
 """
 
+from pathlib import Path
+
+# Rot umgefärbte Erdklippe (Bogen „klippeRot“ in materialien.json), gleiche Kachellage.
+ROTE_KLIPPE = "spiel/eigene/klippe_rot.png"
 # Geländebogen (materialien.json „gelaende“): Spalte je Variante für links, Mitte, rechts.
 SPALTEN = {"gras": (8, 9, 10), "erde": (14, 15, 16)}
-REIHE_KANTE, REIHE_WAND, REIHE_FUSS, REIHE_OBEN = 44, 45, 46, 43
+REIHE_RAND, REIHE_KANTE, REIHE_WAND, REIHE_FUSS, REIHE_OBEN = 42, 44, 45, 46, 43
 # In den Fels geschlagene Treppe, eine Kachel breit: oben mit Kappe, Mitte, unten mit Grasfuß.
 TREPPE = {"oben": (25, 47), "mitte": (25, 46), "unten": (25, 48)}
 WAND = "#"
@@ -70,7 +74,7 @@ def klippenfeld(zeilen: list[str], x: int, y: int, grasboden: set[str]) -> tuple
     rolle = _rolle(zeilen, x, y)
     links, mitte, rechts = SPALTEN[_variante(zeilen, x, y, grasboden)]
     if rolle is None:
-        return (_flaechenvariante(zeilen, x, y, grasboden), REIHE_OBEN)
+        return None if _rand_neben_boden(zeilen, x, y) else _flaechenfeld(zeilen, x, y, grasboden)
     reihe = {"kante": REIHE_KANTE, "wand": REIHE_WAND, "fuss": REIHE_FUSS}[rolle]
     ende_links = _rolle(zeilen, x - 1, y) != rolle or not _ist_wand(zeilen, x - 1, y)
     ende_rechts = _rolle(zeilen, x + 1, y) != rolle or not _ist_wand(zeilen, x + 1, y)
@@ -78,14 +82,39 @@ def klippenfeld(zeilen: list[str], x: int, y: int, grasboden: set[str]) -> tuple
     return (spalte, reihe)
 
 
-def _flaechenvariante(zeilen: list[str], x: int, y: int, grasboden: set[str]) -> int:
-    """Mittelspalte für eine Wandfläche ohne Kante (dicker Rand): Gras, wenn Gras daneben liegt."""
+def _rand_neben_boden(zeilen: list[str], x: int, y: int) -> bool:
+    """Kartenrand mit Boden daneben: kein Fels, sondern (mit „wandart“) der Boden selbst.
+
+    Warum: Sonst umläuft eine Kante aus Hochfläche die ganze Karte wie ein Rahmen (Variantenwahl,
+    Muster „Höhen als Grundriss“). Ohne „wandart“ zeichnet ``kartenbild`` dort die Wandkrone.
+    """
+    hoehe, breite = len(zeilen), len(zeilen[0])
+    if 0 < x < breite - 1 and 0 < y < hoehe - 1:
+        return False
+    innen = [(x + 1, y), (x - 1, y), (x, y + 1), (x, y - 1)]
+    return any(0 < a < breite - 1 and 0 < b < hoehe - 1 and not _ist_wand(zeilen, a, b) for a, b in innen)
+
+
+def _flaechenfeld(zeilen: list[str], x: int, y: int, grasboden: set[str]) -> tuple[int, int]:
+    """Obere Fläche ohne Kante darunter (dicker Rand, Hochfläche über einer Schlucht).
+
+    Grenzt Boden oben an, ist das der Rand der Hochfläche mit gewellter Linie (Reihe 42), so
+    sieht man die Südkante einer Schlucht; grenzt Boden links oder rechts an, die Randspalte.
+    Gras, wenn Gras daneben liegt, sonst Erde.
+    """
     nachbarn = [
         zeilen[b][a]
         for a, b in ((x - 1, y), (x + 1, y), (x, y - 1), (x, y + 1))
         if 0 <= b < len(zeilen) and 0 <= a < len(zeilen[0])
     ]
-    return SPALTEN["gras" if any(n in grasboden for n in nachbarn) else "erde"][1]
+    links, mitte, rechts = SPALTEN["gras" if any(n in grasboden for n in nachbarn) else "erde"]
+    boden_links = 0 < x and not _ist_wand(zeilen, x - 1, y)
+    boden_rechts = x + 1 < len(zeilen[0]) and not _ist_wand(zeilen, x + 1, y)
+    spalte = (
+        links if boden_links and not boden_rechts else rechts if boden_rechts and not boden_links else mitte
+    )
+    reihe = REIHE_RAND if 0 < y and not _ist_wand(zeilen, x, y - 1) else REIHE_OBEN
+    return (spalte, reihe)
 
 
 def treppenfeld(zeilen: list[str], x: int, y: int, strasse: set[str] | None = None) -> tuple[int, int] | None:
@@ -106,6 +135,16 @@ def treppenfeld(zeilen: list[str], x: int, y: int, strasse: set[str] | None = No
     return TREPPE[{"kante": "oben", "wand": "mitte", "fuss": "unten"}[links]]
 
 
+def treppenfelder(zeilen: list[str], strasse: set[str]) -> list[tuple[int, int, tuple[int, int]]]:
+    """Alle Treppenfelder einer Szene als (x, y, Kachel) für ``kartenbild``; siehe ``treppenfeld``."""
+    return [
+        (x, y, feld)
+        for y in range(len(zeilen))
+        for x in range(len(zeilen[0]))
+        if (feld := treppenfeld(zeilen, x, y, strasse)) is not None
+    ]
+
+
 def _rolle_wand(zeilen: list[str], x: int, y: int) -> str | None:
     """Rolle eines Wandfelds in einer Kante; None für Boden oder Wand ohne Kante."""
     return _rolle(zeilen, x, y) if _ist_wand(zeilen, x, y) else None
@@ -115,6 +154,18 @@ def grasboden(szene: dict) -> set[str]:
     """Die Rasterzeichen, die in der Szene Gras sind (Grundboden „.“ oder Sonderböden)."""
     zeichen = {z for z, art in szene.get("boeden", {}).items() if art == "gras"}
     return zeichen | ({"."} if szene.get("boden") == "gras" else set())
+
+
+def klippenbogen(szene: dict, privat: Path) -> str:
+    """Bogen der Klippenkacheln: „klippeRot“ für roten Fels (Szene „fels“: „rot“), sonst „gelaende“.
+
+    Warum: Canyon, Sternwarte und Wüste liegen auf rotem Sandstein; ``klippe_rot.png`` (Bildwunsch
+    ``docs/spiel/auftraege/bildwuensche/klippe_rot.py``) hat die Erdklippe an derselben Kachellage rot
+    umgefärbt. Fehlt die Datei noch im privaten Repository, bleibt die braune Klippe.
+    """
+    if szene.get("fels") == "rot" and (privat / ROTE_KLIPPE).exists():
+        return "klippeRot"
+    return "gelaende"
 
 
 def strassenzeichen(szene: dict) -> set[str]:

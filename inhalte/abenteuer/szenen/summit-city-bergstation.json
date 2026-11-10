@@ -2,9 +2,9 @@
   "karte": "summitCity.bergstation",
   "datei": "karten/summit-city-bergstation.json",
   "art": "innen",
-  "beschreibung": "Die Bergstation der Seilbahn über den Wolken: eine Halle aus Holz und Glas, kühl und hell. In der Nordwand große Fenster, hinter denen Wolken und Gipfel stehen; davor die Bank am Fenster. Rechts die Plattform, an der die Gondel ankommt; mit ihr fährt man auch zurück ins Tal. Links Fahrkartenschalter, Fahrplan, Kaffeeautomat und Schließfächer. Variante C, die reichere: vier Fenster, zwei Bänke, Gondel rechts, Schalter mit Fahrplan, Kaffeeautomat, Schließfächer, Pflanzen und Rucksäcke von Wanderern.",
+  "beschreibung": "Die Bergstation der Seilbahn über den Wolken: eine Halle aus Holz und Glas, kühl und hell. In der Nordwand ein Band großer Fenster, hinter denen Wolken und Gipfel stehen; davor zwei Bänke und Pflanzen. Rechts die steinerne Plattform, an der die Gondel ankommt; das Seil läuft durch ein Glastor in der Wand hinaus, mit der Gondel fährt man auch zurück ins Tal. Links der Fahrkartenschalter mit Glas und Kasse und Schalterbeamtem, daneben der Fahrplan; der Kaffeeautomat steht an der Westwand neben dem Fenster, die Schließfächer an der Ostwand. Rucksäcke von Wanderern liegen in der Halle.",
   "wand": "hellgrau",
-  "boden": "fliesenGrau",
+  "boden": "holzHell",
   "zustand": ["neu", "gebraucht"],
   "stil": ["modern", "klassisch"],
   "raster": [
@@ -46,6 +46,12 @@
       "an_wand": true
     },
     {
+      "moebel": "sc7FensterWolken",
+      "feld": [14, 1],
+      "an_wand": true,
+      "id": "gondeltor"
+    },
+    {
       "moebel": "rvBahnsteigbank",
       "feld": [2, 3]
     },
@@ -63,28 +69,37 @@
       "feld": [13, 2]
     },
     {
-      "moebel": "rvTicketschalter",
-      "feld": [1, 8]
-    },
-    {
-      "moebel": "rvFahrplan",
-      "feld": [4, 8]
-    },
-    {
-      "moebel": "rvKaffeeautomat",
-      "feld": [10, 7]
-    },
-    {
-      "moebel": "iwSpind",
-      "feld": [7, 8]
-    },
-    {
       "moebel": "rvTopfpflanze",
       "feld": [11, 3]
     },
     {
-      "moebel": "rvTopfpflanze",
+      "moebel": "rv8SchalterA",
+      "feld": [1, 8],
+      "id": "schalter",
+      "bauteil_ok": true
+    },
+    {
+      "moebel": "rv8SchalterEnde",
+      "feld": [3, 8],
+      "bauteil_ok": true
+    },
+    {
+      "moebel": "rv5Kasse",
+      "feld": [0, 0],
+      "auf": "schalter",
+      "versatz": [8, 0]
+    },
+    {
+      "moebel": "cc4Fahrplan",
+      "feld": [5, 7]
+    },
+    {
+      "moebel": "rvKaffeeautomat",
       "feld": [1, 3]
+    },
+    {
+      "moebel": "iwSpind",
+      "feld": [15, 8]
     },
     {
       "moebel": "scRucksack",
@@ -113,7 +128,7 @@
     },
     {
       "name": "fahrplan",
-      "feld": [4, 10]
+      "feld": [6, 9]
     }
   ],
   "figuren": [
@@ -145,6 +160,17 @@
         "tun": "schaut durch das Fenster auf das Seil",
         "wann": "tag",
         "sagt": "statist.summitCity.bergstation.seilbahnfan"
+      }
+    },
+    {
+      "name": "schalterbeamter",
+      "typ": "statist",
+      "feld": [2, 7],
+      "eigenschaften": {
+        "von": "2,7",
+        "bis": "2,7",
+        "tun": "verkauft Fahrkarten hinter dem Schalter",
+        "wann": "tag"
       }
     }
   ]

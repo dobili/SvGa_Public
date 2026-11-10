@@ -11,7 +11,7 @@
  "tilewidth": 16,
  "tileheight": 16,
  "nextlayerid": 5,
- "nextobjectid": 25,
+ "nextobjectid": 24,
  "layers": [
   {
    "id": 1,
@@ -67,19 +67,6 @@
     0,
     0,
     0,
-    1,
-    1,
-    1,
-    1,
-    1,
-    1,
-    1,
-    1,
-    1,
-    1,
-    1,
-    1,
-    0,
     0,
     1,
     1,
@@ -91,8 +78,7 @@
     1,
     1,
     1,
-    1,
-    1,
+    0,
     0,
     0,
     1,
@@ -165,6 +151,7 @@
     1,
     0,
     0,
+    0,
     1,
     1,
     1,
@@ -175,8 +162,21 @@
     1,
     1,
     1,
+    0,
+    0,
+    0,
+    0,
+    0,
     1,
     1,
+    1,
+    1,
+    1,
+    1,
+    1,
+    1,
+    0,
+    0,
     0,
     0,
     0,
@@ -262,19 +262,6 @@
     2,
     2,
     2,
-    0,
-    0,
-    0,
-    0,
-    0,
-    0,
-    0,
-    0,
-    0,
-    0,
-    0,
-    0,
-    2,
     2,
     0,
     0,
@@ -286,8 +273,7 @@
     0,
     0,
     0,
-    0,
-    0,
+    2,
     2,
     2,
     0,
@@ -360,6 +346,7 @@
     0,
     2,
     2,
+    2,
     0,
     0,
     0,
@@ -370,8 +357,21 @@
     0,
     0,
     0,
+    2,
+    2,
+    2,
+    2,
+    2,
     0,
     0,
+    0,
+    0,
+    0,
+    0,
+    0,
+    0,
+    2,
+    2,
     2,
     2,
     2,
@@ -765,7 +765,7 @@
      "id": 11,
      "name": "n5Sternkarte",
      "type": "moebel",
-     "x": 96,
+     "x": 64,
      "y": 16,
      "width": 48,
      "height": 32,
@@ -788,7 +788,7 @@
      "id": 12,
      "name": "mf2Buecherregal",
      "type": "moebel",
-     "x": 16,
+     "x": 32,
      "y": 16,
      "width": 32,
      "height": 48,
@@ -809,29 +809,6 @@
     },
     {
      "id": 13,
-     "name": "cc4RegalC",
-     "type": "moebel",
-     "x": 48,
-     "y": 16,
-     "width": 32,
-     "height": 48,
-     "rotation": 0,
-     "visible": true,
-     "properties": [
-      {
-       "name": "tiefe",
-       "type": "int",
-       "value": 56
-      },
-      {
-       "name": "kollision",
-       "type": "bool",
-       "value": true
-      }
-     ]
-    },
-    {
-     "id": 14,
      "name": "mf2Buecherregal",
      "type": "moebel",
      "x": 160,
@@ -854,7 +831,7 @@
      ]
     },
     {
-     "id": 15,
+     "id": 14,
      "name": "cc3Schreibtisch",
      "type": "moebel",
      "x": 160,
@@ -877,7 +854,7 @@
      ]
     },
     {
-     "id": 16,
+     "id": 15,
      "name": "cc4StuhlVorn",
      "type": "moebel",
      "x": 160,
@@ -900,7 +877,7 @@
      ]
     },
     {
-     "id": 17,
+     "id": 16,
      "name": "mf9RadioAlt",
      "type": "moebel",
      "x": 176,
@@ -923,7 +900,7 @@
      ]
     },
     {
-     "id": 18,
+     "id": 17,
      "name": "iw5BettGrau",
      "type": "moebel",
      "x": 16,
@@ -946,11 +923,11 @@
      ]
     },
     {
-     "id": 19,
+     "id": 18,
      "name": "cc4PflanzeK",
      "type": "moebel",
-     "x": 16,
-     "y": 144,
+     "x": 192,
+     "y": 64,
      "width": 16,
      "height": 32,
      "rotation": 0,
@@ -959,7 +936,7 @@
       {
        "name": "tiefe",
        "type": "int",
-       "value": 168
+       "value": 88
       },
       {
        "name": "kollision",
@@ -969,30 +946,7 @@
      ]
     },
     {
-     "id": 20,
-     "name": "cc4KartonOffen",
-     "type": "moebel",
-     "x": 176,
-     "y": 144,
-     "width": 32,
-     "height": 32,
-     "rotation": 0,
-     "visible": true,
-     "properties": [
-      {
-       "name": "tiefe",
-       "type": "int",
-       "value": 168
-      },
-      {
-       "name": "kollision",
-       "type": "bool",
-       "value": true
-      }
-     ]
-    },
-    {
-     "id": 21,
+     "id": 19,
      "name": "cc5Anrichte",
      "type": "moebel",
      "x": 48,
@@ -1015,7 +969,7 @@
      ]
     },
     {
-     "id": 22,
+     "id": 20,
      "name": "cc4Hocker",
      "type": "moebel",
      "x": 128,
@@ -1038,7 +992,7 @@
      ]
     },
     {
-     "id": 23,
+     "id": 21,
      "name": "cc4Globus",
      "type": "moebel",
      "x": 64,
@@ -1061,7 +1015,7 @@
      ]
     },
     {
-     "id": 24,
+     "id": 22,
      "name": "ds8Finkenzeichen",
      "type": "moebel",
      "x": 192,
@@ -1075,6 +1029,29 @@
        "name": "tiefe",
        "type": "int",
        "value": 1
+      },
+      {
+       "name": "kollision",
+       "type": "bool",
+       "value": false
+      }
+     ]
+    },
+    {
+     "id": 23,
+     "name": "cc4Fenster",
+     "type": "moebel",
+     "x": 112,
+     "y": 16,
+     "width": 32,
+     "height": 32,
+     "rotation": 0,
+     "visible": true,
+     "properties": [
+      {
+       "name": "tiefe",
+       "type": "int",
+       "value": 0
       },
       {
        "name": "kollision",

@@ -2,21 +2,21 @@
   "karte": "sternwarte.kuppel",
   "datei": "karten/sternwarte-kuppel.json",
   "art": "innen",
-  "beschreibung": "Die Kuppel der Sternwarte (N5), 14 × 12 Kacheln, nachtblaue Wand, Dielen. In der Mitte das Teleskop auf dem Dreifuß, an der Nordwand die Sternkarte mit dem Springer-Sternbild zwischen Regalen, rechts der Schreibtisch mit dem Funkgerät, links die Liege und ein Globus. Tür in der Südwand.",
-  "wand": "blau",
+  "beschreibung": "Die Kuppel der Sternwarte (N5), 14 × 13 Kacheln, nachtblaue Wand mit abgeschrägten Ecken wie ein Rund, Dielen. In der Mitte das Teleskop auf dem Dreifuß, es zeigt auf den offenen Kuppelspalt in der Nordwand; daneben die Sternkarte mit dem Springer-Sternbild neben einem Regal, rechts der Schreibtisch mit dem Funkgerät, links die Liege und ein Globus. Am Boden das Finkenzeichen aus Kreide. Tür in der Südwand.",
+  "wand": "nachtblau",
   "boden": "dielen",
   "raster": [
     "##############",
     "##############",
     "##############",
+    "##..........##",
     "#............#",
     "#............#",
     "#............#",
     "#............#",
     "#............#",
-    "#............#",
-    "#............#",
-    "#............#",
+    "##..........##",
+    "###........###",
     "#######.######",
     "##############"
   ],
@@ -38,17 +38,13 @@
     },
     {
       "moebel": "n5Sternkarte",
-      "feld": [6, 1],
+      "feld": [4, 1],
       "an_wand": true,
       "id": "sternkarte"
     },
     {
       "moebel": "mf2Buecherregal",
-      "feld": [1, 1]
-    },
-    {
-      "moebel": "cc4RegalC",
-      "feld": [3, 1]
+      "feld": [2, 1]
     },
     {
       "moebel": "mf2Buecherregal",
@@ -76,11 +72,7 @@
     },
     {
       "moebel": "cc4PflanzeK",
-      "feld": [1, 9]
-    },
-    {
-      "moebel": "cc4KartonOffen",
-      "feld": [11, 9]
+      "feld": [12, 4]
     },
     {
       "moebel": "cc5Anrichte",
@@ -101,6 +93,12 @@
       "moebel": "ds8Finkenzeichen",
       "feld": [12, 8],
       "id": "ereignis16"
+    },
+    {
+      "moebel": "cc4Fenster",
+      "feld": [7, 1],
+      "an_wand": true,
+      "id": "kuppelspalt"
     }
   ],
   "ausloeser": [

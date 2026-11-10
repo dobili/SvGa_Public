@@ -2,9 +2,9 @@
   "karte": "summitCity.huette",
   "datei": "karten/summit-city-huette.json",
   "art": "innen",
-  "beschreibung": "Wards Hütte in Summit City: eine Blockhütte mit Holzwänden und dunklen Dielen, es riecht nach Holzrauch und Tee. An der Nordwand der steinerne Kamin mit Feuer, Bücherregale, Endspieldiagramme an der Wand und eine Vitrine mit dem Pokal von 1985. Vor dem Kamin zwei Ohrensessel und ein runder Tisch mit Wards altem Holzbrett. Im Süden stehen die Clubtische. Die Tür liegt in der Südwand. Variante C, die reichere: Kamin in der Mitte mit Holzstapeln links und rechts, zwei Bücherwände, Vitrine, Teppich, Leselampe und drei Clubtische.",
+  "beschreibung": "Wards Hütte in Summit City: eine Blockhütte mit Holzwänden und ruhigen Dielen, es riecht nach Holzrauch und Tee. An der Nordwand der steinerne Kamin mit Feuer und Holzstapeln links und rechts, ein Bücherregal, zwei gerahmte Endspieldiagramme und die Vitrine mit dem Pokal von 1985. Vor dem Kamin auf dem Teppich zwei Ohrensessel und ein runder Tisch mit Wards altem Holzbrett, daneben Leselampe und Stehlampe. Im Süden zwei Clubtische, an denen Kit und Haraldsen gegen zwei sitzende Clubmitglieder spielen; an der Ostwand ein zweites Regal. Die Tür liegt in der Südwand.",
   "wand": "holz",
-  "boden": "holzDunkel",
+  "boden": "dielen",
   "zustand": ["neu", "gebraucht", "alt"],
   "stil": ["klassisch", "laendlich", "natur", "rustikal", "einfach", "modern"],
   "raster": [
@@ -51,20 +51,12 @@
       "feld": [1, 1]
     },
     {
-      "moebel": "cc4RegalC",
-      "feld": [3, 1]
-    },
-    {
-      "moebel": "cc4RegalA",
-      "feld": [13, 1]
-    },
-    {
       "moebel": "cc4RegalB",
       "feld": [15, 1]
     },
     {
       "moebel": "iwVitrine",
-      "feld": [15, 5],
+      "feld": [13, 1],
       "id": "vitrine"
     },
     {
@@ -72,14 +64,13 @@
       "auf": "vitrine"
     },
     {
-      "moebel": "iw5Kreidebrett",
+      "moebel": "sc9EndspieldiagrammA",
       "feld": [5, 1],
-      "an_wand": true,
-      "versatz": [0, 16]
+      "an_wand": true
     },
     {
-      "moebel": "ldBild",
-      "feld": [12, 1],
+      "moebel": "sc9EndspieldiagrammB",
+      "feld": [3, 1],
       "an_wand": true
     },
     {
@@ -121,14 +112,6 @@
       "auf": "t1"
     },
     {
-      "moebel": "mf2StuhlR",
-      "feld": [5, 9]
-    },
-    {
-      "moebel": "mf2StuhlL",
-      "feld": [9, 9]
-    },
-    {
       "moebel": "mf2Schachtisch",
       "feld": [10, 9],
       "id": "t2"
@@ -144,6 +127,10 @@
     {
       "moebel": "mf2Stehlampe",
       "feld": [1, 5]
+    },
+    {
+      "moebel": "cc4RegalC",
+      "feld": [15, 4]
     }
   ],
   "ausloeser": [
@@ -160,7 +147,7 @@
     },
     {
       "name": "pokal",
-      "feld": [14, 7]
+      "feld": [14, 4]
     },
     {
       "name": "kaminfeuer",
@@ -168,7 +155,7 @@
     },
     {
       "name": "foto",
-      "feld": [15, 8]
+      "feld": [4, 4]
     },
     {
       "name": "teekanne",
@@ -182,11 +169,11 @@
     },
     {
       "name": "kit",
-      "feld": [7, 11]
+      "feld": [5, 10]
     },
     {
       "name": "haraldsen",
-      "feld": [15, 11]
+      "feld": [9, 10]
     }
   ],
   "belebung": [
@@ -198,6 +185,26 @@
         "von": "2,4",
         "bis": "2,4",
         "verhalten": "sitzen"
+      }
+    },
+    {
+      "name": "gegnerinKit",
+      "typ": "statist",
+      "feld": [1, 10],
+      "eigenschaften": {
+        "tun": "sitzt am Clubtisch und spielt gegen Kit",
+        "wann": "tag",
+        "bild": "statist-22"
+      }
+    },
+    {
+      "name": "gegnerHaraldsen",
+      "typ": "statist",
+      "feld": [13, 10],
+      "eigenschaften": {
+        "tun": "sitzt am Clubtisch und spielt gegen Haraldsen",
+        "wann": "tag",
+        "bild": "statist-27"
       }
     }
   ]

@@ -2,7 +2,7 @@
   "karte": "sternwarte.felsnase",
   "datei": "karten/sternwarte-felsnase.json",
   "art": "aussen",
-  "beschreibung": "Die Felsnase der Sternwarte (N5), 40 × 30 Kacheln, roter Fels, Nacht als Tönung der Szene. Vom Südrand steigt der Pfad in Kehren auf das Plateau; dort die weiße Sternwarte mit rostigem Kuppelspalt und Schild, Tür nach Süden, eine Bank an der Westkante mit Blick hinunter in den Canyon, ein alter Antennenmast, Säulenkakteen.",
+  "beschreibung": "Die Felsnase der Sternwarte (N5), 40 × 30 Kacheln, roter Fels mit Felskanten, Nacht als Tönung der Szene. Vom Canyonboden am Südrand steigt der Pfad aus Felsboden in zwei Kehren über Treppen in den Felsstufen auf die mittlere Stufe und weiter aufs Plateau; dort vor der höheren Felswand die weiße Sternwarte mit rostigem Kuppelspalt und Schild, Tür nach Süden, eine Bank an der Westkante mit Blick nach Westen hinunter in den Canyon, ein alter Antennenmast, Säulenkakteen auf allen Stufen.",
   "wand": "felsRot",
   "boden": "sandRot",
   "boeden": {
@@ -10,35 +10,35 @@
   },
   "raster": [
     "########################################",
-    "#cccccccccccccc#########ccccccccccccccc#",
-    "#ccc############.......#############ccc#",
-    "#c c#..............................#c c#",
-    "#c c#..............................#c c#",
-    "#c c#..............................#c c#",
-    "#c c#..............................#c c#",
-    "#c c#..............................#c c#",
-    "#c c#..............................#c c#",
-    "#c c#..............................#c c#",
-    "#c c#..............................#c c#",
-    "#c c#..............................#c c#",
-    "#c c#..............................#c c#",
-    "#c c#####...########################c c#",
-    "#c c#####...########################c c#",
-    "#c c#####...########################c c#",
-    "#c ccccc#...#cccccccccccccccccccccccc c#",
-    "#c ccccc#...#cccccccccccccccccccccccc c#",
-    "#c     c#...###########               c#",
-    "#c     c#.............#c              c#",
-    "#c     c#.............#c              c#",
-    "#c     c#.............#c              c#",
-    "#c     c###########...#c              c#",
-    "#c     c###########...#c              c#",
-    "#c     c###########...#c              c#",
-    "#c     ccccccccccc#...#c              c#",
-    "#c     ccccccccccc#...#c              c#",
-    "#c               c#...#c              c#",
-    "#c               c#...#c              c#",
-    "###################..###################"
+    "########################################",
+    "########################################",
+    "#......................................#",
+    "#......................................#",
+    "#......................................#",
+    "#......................................#",
+    "#......................................#",
+    "#......................................#",
+    "#..................cc..................#",
+    "#.......ccccccccccccc..................#",
+    "#.......ccccccccccccc..................#",
+    "#.......ccccccccccccc..................#",
+    "########ccc#############################",
+    "########ccc#############################",
+    "########ccc#############################",
+    "#.......ccc............................#",
+    "#.......ccc............................#",
+    "#.......cccccccccccccccccccccc.........#",
+    "#.......cccccccccccccccccccccc.........#",
+    "#.......cccccccccccccccccccccc.........#",
+    "###########################ccc##########",
+    "###########################ccc##########",
+    "###########################ccc##########",
+    "#..................ccccccccccc.........#",
+    "#..................ccccccccccc.........#",
+    "#..................cc..................#",
+    "#..................cc..................#",
+    "#..................cc..................#",
+    "###################cc###################"
   ],
   "objekte": [
     {
@@ -47,44 +47,77 @@
       "id": "sternwarte"
     },
     {
-      "moebel": "mfBank",
-      "feld": [7, 9]
+      "moebel": "mf9BankLinks",
+      "feld": [2, 5],
+      "id": "bankWest"
     },
     {
       "moebel": "iwStrommast",
-      "feld": [31, 3]
+      "feld": [33, 3]
     },
     {
       "moebel": "dd6Saguaro",
-      "feld": [7, 3]
+      "feld": [6, 3]
     },
     {
       "moebel": "dd6KaktusKlein",
-      "feld": [11, 4]
+      "feld": [12, 5]
     },
     {
       "moebel": "dd6KaktusBluehend",
-      "feld": [26, 3]
+      "feld": [26, 4]
     },
     {
       "moebel": "dd6Saguaro",
-      "feld": [23, 7]
+      "feld": [29, 7]
     },
     {
       "moebel": "dd6KaktusKlein",
-      "feld": [26, 8]
+      "feld": [35, 9]
     },
     {
       "moebel": "dd6KaktusBluehend",
-      "feld": [18, 11]
+      "feld": [4, 10]
     },
     {
       "moebel": "dd6Saguaro",
-      "feld": [10, 17]
+      "feld": [3, 17]
     },
     {
       "moebel": "dd6KaktusKlein",
-      "feld": [13, 20]
+      "feld": [33, 16]
+    },
+    {
+      "moebel": "dd6KaktusBluehend",
+      "feld": [14, 16]
+    },
+    {
+      "moebel": "dd6Saguaro",
+      "feld": [36, 24]
+    },
+    {
+      "moebel": "dd6KaktusKlein",
+      "feld": [6, 26]
+    },
+    {
+      "moebel": "dd6KaktusBluehend",
+      "feld": [12, 25]
+    },
+    {
+      "moebel": "felsKlein",
+      "feld": [23, 17]
+    },
+    {
+      "moebel": "fels",
+      "feld": [2, 24]
+    },
+    {
+      "moebel": "felsKlein",
+      "feld": [34, 27]
+    },
+    {
+      "moebel": "felsKlein",
+      "feld": [24, 6]
     }
   ],
   "ausloeser": [
@@ -109,11 +142,11 @@
     },
     {
       "name": "bank",
-      "feld": [7, 9]
+      "feld": [3, 6]
     },
     {
       "name": "antennenmast",
-      "feld": [31, 7]
+      "feld": [33, 7]
     }
   ],
   "figuren": [],
@@ -133,10 +166,10 @@
     {
       "name": "paar",
       "typ": "statist",
-      "feld": [12, 10],
+      "feld": [3, 8],
       "eigenschaften": {
-        "von": "12,10",
-        "bis": "12,10",
+        "von": "3,8",
+        "bis": "3,8",
         "tun": "sitzt in Decken auf der Bank",
         "wann": "abend",
         "sagt": "statist.sternwarte.felsnase.paar"
@@ -145,10 +178,10 @@
     {
       "name": "nachtwanderin",
       "typ": "statist",
-      "feld": [20, 24],
+      "feld": [28, 22],
       "eigenschaften": {
-        "von": "20,24",
-        "bis": "20,24",
+        "von": "28,22",
+        "bis": "28,22",
         "tun": "steigt mit Stirnlampe den Pfad hinauf",
         "wann": "abend",
         "sagt": "statist.sternwarte.felsnase.nachtwanderin"
@@ -168,10 +201,10 @@
     {
       "name": "eule",
       "typ": "tier",
-      "feld": [32, 6],
+      "feld": [34, 5],
       "eigenschaften": {
-        "von": "32,6",
-        "bis": "32,6",
+        "von": "34,5",
+        "bis": "34,5",
         "verhalten": "sitzen"
       }
     },
@@ -189,10 +222,10 @@
     {
       "name": "kojote",
       "typ": "tier",
-      "feld": [23, 26],
+      "feld": [10, 27],
       "eigenschaften": {
-        "von": "23,26",
-        "bis": "23,26",
+        "von": "10,27",
+        "bis": "10,27",
         "verhalten": "ausweichen",
         "wann": "nacht"
       }
@@ -200,10 +233,10 @@
     {
       "name": "wuestenfuchs",
       "typ": "tier",
-      "feld": [7, 22],
+      "feld": [16, 19],
       "eigenschaften": {
-        "von": "7,22",
-        "bis": "10,21",
+        "von": "16,19",
+        "bis": "19,18",
         "verhalten": "ausweichen",
         "wann": "nacht"
       }
@@ -211,10 +244,10 @@
     {
       "name": "nachtfalter",
       "typ": "tier",
-      "feld": [16, 9],
+      "feld": [16, 11],
       "eigenschaften": {
-        "von": "16,9",
-        "bis": "18,9",
+        "von": "16,11",
+        "bis": "18,11",
         "verhalten": "fliegen",
         "wann": "nacht"
       }
@@ -222,10 +255,10 @@
     {
       "name": "eidechse",
       "typ": "tier",
-      "feld": [23, 4],
+      "feld": [23, 26],
       "eigenschaften": {
-        "von": "23,4",
-        "bis": "23,4",
+        "von": "23,26",
+        "bis": "23,26",
         "verhalten": "schlafen"
       }
     }
@@ -242,5 +275,7 @@
     "schule",
     "landhaus"
   ],
-  "toenung": "nacht"
+  "toenung": "nacht",
+  "kante": "klippe",
+  "fels": "rot"
 }

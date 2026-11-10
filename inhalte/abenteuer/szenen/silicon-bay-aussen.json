@@ -2,39 +2,40 @@
   "karte": "siliconBay.aussen",
   "datei": "karten/silicon-bay-aussen.json",
   "art": "aussen",
-  "beschreibung": "Silicon Bay, der Campus am Morgen: Glas, Licht und Bildschirme auf hellen Platten. Oben die Gebäudezeile: links der Konzernturm von Perfect Move, acht Geschosse und mit Abstand das höchste Haus, daneben ein Gästehaus, in der Mitte die Akademie, rechts das Hotel Bayview mit Leuchtschild und ein Wohnhaus, dahinter eine Baumreihe; dazwischen und am Ostrand zwei Werbetafeln, auf denen ZERO wirbt. Davor der Gehweg, der Boulevard mit der Straßenbahn, die links aus dem Tunnelportal kommt und rechts am Prellbock der Endhaltestelle hält (die Gleise liegen offen im Asphalt, dahinter endet die Fahrbahn), und der Gehweg Süd. Am Ostrand kommt man über das gläserne Deck der Glasbrücke an. Südlich des Boulevards die Ladenzeile mit den Fronten zum Platz: Fitnessstudio, Plattenladen, Modeladen, Spielzeugladen, Sportladen, Café, Musikladen, Eisdiele und ein kleiner Supermarkt, in der Mitte ein Durchgang. Auf dem Platz der Wochenmarkt mit Obst und Gemüse, Marktfrau und Gemüsehändler, links das Innovation Lab als Gewächshaus aus Glas und der Infokiosk, dahinter der Baumplatz mit eigenem Steinboden, in seiner Mitte der Brunnen mit zwei Bänken, die zu ihm schauen; rechts der Kaffeekiosk und ein Fahrradschuppen. An der Südkante die Terrasse mit Hecke und gläserner Brüstung über dem Hafen; nur die Treppe in der Mitte führt hinunter.",
+  "beschreibung": "Silicon Bay, der Campus am Morgen: Glas, Licht und Bildschirme auf hellen Platten. Oben die Gebäudezeile: links der Konzernturm von Perfect Move, acht Geschosse und mit Abstand das höchste Haus, daneben ein Gästehaus, in der Mitte die Akademie, rechts das Hotel Bayview mit Leuchtschild und ein Wohnhaus, dahinter ein Park mit Rasen, Bäumen und Büschen, zwischen Hotel und Wohnhaus ein Gartenhof mit Statuenbrunnen und zwei Bänken; dazwischen und am Ostrand zwei Werbetafeln, auf denen ZERO wirbt. Davor der Gehweg, der Boulevard mit der Straßenbahn, die links aus dem Bogen des Tunnels kommt (ein Betonbau quer über der Fahrbahn am Westrand, Gleis und Asphalt verschwinden im Dunkel) und rechts am Prellbock der Endhaltestelle hält (die Gleise liegen offen im Asphalt, dahinter endet die Fahrbahn), und der Gehweg Süd. Am Ostrand kommt man über das gläserne Deck der Glasbrücke an. Südlich des Boulevards die Ladenzeile mit den Fronten zum Platz: Fitnessstudio, Plattenladen, Modeladen, Spielzeugladen, Sportladen, Café, Musikladen, Eisdiele und ein kleiner Supermarkt, in der Mitte ein Durchgang. Auf dem Platz der Wochenmarkt mit Obst und Gemüse, Marktfrau und Gemüsehändler, links das Innovation Lab als Gewächshaus aus Glas und der Infokiosk, dahinter der Baumplatz mit eigenem Steinboden, in seiner Mitte der Brunnen mit zwei Bänken, die zu ihm schauen; rechts der Kaffeekiosk und ein Fahrradschuppen. An der Südkante die Terrasse mit Hecke und gläserner Brüstung über dem Hafen; nur die Treppe in der Mitte führt hinunter.",
   "boden": "platten",
   "wandart": "stein",
   "boeden": {
     "g": "stein",
-    "s": "asphalt"
+    "s": "asphalt",
+    "w": "gras"
   },
   "zustand": ["neu", "gebraucht"],
   "raster": [
     "########################################################################",
     "########################################################################",
-    "#......................................................................#",
-    "#......................................................................#",
-    "#......................................................................#",
-    "#......................................................................#",
-    "#......................................................................#",
-    "#......................................................................#",
-    "#......................................................................#",
-    "#......................................................................#",
-    "#......................................................................#",
-    "#......................................................................#",
-    "#......................................................................#",
-    "#......................................................................#",
-    "#......................................................................#",
-    "#......................................................................#",
-    "#......................................................................#",
-    "#......................................................................#",
-    "#......................................................................#",
-    "#......................................................................#",
-    "#......................................................................#",
-    "#......................................................................#",
-    "#......................................................................#",
-    "#......................................................................#",
+    "#..............wwwwwwwwwwwwwwwwwwwwwwwwwwwwwwwwwwwwwwwwwwwwwwwwwwwwwwww#",
+    "#..............wwwwwwwwwwwwwwwwwwwwwwwwwwwwwwwwwwwwwwwwwwwwwwwwwwwwwwww#",
+    "#..............wwwwwwwwwwwwwwwwwwwwwwwwwwwwwwwwwwwwwwwwwwwwwwwwwwwwwwww#",
+    "#..............wwwwwwwwwwwwwwwwwwwwwwwwwwwwwwwwwwwwwwwwwwwwwwwwwwwwwwww#",
+    "#..............wwwwwwwwwwwwwwwwwwwwwwwwwwwwwwwwwwwwwwwwwwwwwwwwwwwwwwww#",
+    "#..............wwwwwwwwwwwwwwwwwwwwwwwwwwwwwwwwwwwwwwwwwwwwwwwwwwwwwwww#",
+    "#..............wwwwwwwwwwwwwwwwwwwwwwwwwwwwwwwwwwwwwwwwwwwwwwwwwwwwwwww#",
+    "#..............wwwwwwwwwwwwwwwwwwwwwwwwwwwwwwwwwwwwwwwwwwwwwwwwwwwwwwww#",
+    "#..............wwwwwwwwwwwwwwwwwwwwwwwwwwwwwwwwwwwwwwwwwwwwwwwwwwwwwwww#",
+    "#..............wwwwwwwwwwwwwwwwwwwwwwwwwwwwwwwwwwwwwwwwwwwwwwwwwwwwwwww#",
+    "#..............wwwwwww..............................wwwwwwwwwww........#",
+    "#..............wwwwwww..............................wwwwwwwwwww........#",
+    "#..............wwwwwww..............................wwwwwwwwwww........#",
+    "#..............wwwwwww..............................wwwwwwwwwww........#",
+    "#..............wwwwwww..............................wwwwwwwwwww........#",
+    "#..............wwwwwww..............................wwwwwwwwwww........#",
+    "#..............wwwwwww..............................wwwwwwwwwww........#",
+    "#...................................................wwwwwwwwwww........#",
+    "#...................................................wwwwwwwwwww........#",
+    "#...................................................wwwwwwwwwww........#",
+    "#...................................................wwwwwwwwwww........#",
+    "#...................................................wwwwwwwwwww........#",
     "#......................................................................#",
     "#......................................................................#",
     "#......................................................................#",
@@ -65,18 +66,18 @@
     "#......................................................................#",
     "#......................................................................#",
     "#......................................................................#",
-    "#.........ggggggggggggggggggggggggggggggggggggg........................#",
-    "#.........ggggggggggggggggggggggggggggggggggggg........................#",
-    "#.........ggggggggggggggggggggggggggggggggggggg........................#",
-    "#.........ggggggggggggggggggggggggggggggggggggg........................#",
-    "#.........ggggggggggggggggggggggggggggggggggggg........................#",
-    "#.........ggggggggggggggggggggggggggggggggggggg........................#",
-    "#.........ggggggggggggggggggggggggggggggggggggg........................#",
-    "#.........ggggggggggggggggggggggggggggggggggggg........................#",
-    "#.........ggggggggggggggggggggggggggggggggggggg........................#",
-    "#.........ggggggggggggggggggggggggggggggggggggg........................#",
-    "#.........ggggggggggggggggggggggggggggggggggggg........................#",
-    "#.........ggggggggggggggggggggggggggggggggggggg........................#",
+    "#.............gggggggggggggggggggggggggggggggggggggggg.................#",
+    "#.............gggggggggggggggggggggggggggggggggggggggg.................#",
+    "#.............gggggggggggggggggggggggggggggggggggggggg.................#",
+    "#.............gggggggggggggggggggggggggggggggggggggggg.................#",
+    "#.............gggggggggggggggggggggggggggggggggggggggg.................#",
+    "#.............gggggggggggggggggggggggggggggggggggggggg.................#",
+    "#.............gggggggggggggggggggggggggggggggggggggggg.................#",
+    "#.............gggggggggggggggggggggggggggggggggggggggg.................#",
+    "#.............gggggggggggggggggggggggggggggggggggggggg.................#",
+    "#.............gggggggggggggggggggggggggggggggggggggggg.................#",
+    "#.............gggggggggggggggggggggggggggggggggggggggg.................#",
+    "#.............gggggggggggggggggggggggggggggggggggggggg.................#",
     "#...............................gggg...................................#",
     "#...............................gggg...................................#",
     "#...............................gggg...................................#",
@@ -481,44 +482,12 @@
       "feld": [36, 49]
     },
     {
-      "moebel": "sb5Baum",
-      "feld": [13, 56]
-    },
-    {
-      "moebel": "sb5Baum",
-      "feld": [13, 60]
-    },
-    {
-      "moebel": "sb5Baum",
-      "feld": [19, 56]
-    },
-    {
-      "moebel": "sb5Baum",
-      "feld": [19, 60]
-    },
-    {
-      "moebel": "sb5Baum",
-      "feld": [25, 56]
-    },
-    {
-      "moebel": "sb5Baum",
-      "feld": [25, 60]
-    },
-    {
-      "moebel": "sb5Baum",
-      "feld": [43, 56]
-    },
-    {
-      "moebel": "sb5Baum",
-      "feld": [43, 60]
-    },
-    {
       "moebel": "sb5BrunnenWasser",
       "feld": [32, 56]
     },
     {
       "moebel": "sb5Kaffeekiosk",
-      "feld": [62, 52]
+      "feld": [62, 53]
     },
     {
       "moebel": "sbLaterne",
@@ -840,12 +809,6 @@
       "feld": [51, 25]
     },
     {
-      "moebel": "sb9Tunnelportal",
-      "feld": [1, 33],
-      "vorn": true,
-      "bauteil_ok": true
-    },
-    {
       "moebel": "wsgDeck4",
       "feld": [68, 29],
       "bauteil_ok": true
@@ -940,12 +903,146 @@
       "feld": [66, 6]
     },
     {
-      "moebel": "sb5Baum",
-      "feld": [56, 14]
+      "moebel": "sb9Tunnelportal",
+      "feld": [0, 32],
+      "vorn": true,
+      "bauteil_ok": true
     },
     {
       "moebel": "sb5Baum",
-      "feld": [60, 16]
+      "feld": [16, 56]
+    },
+    {
+      "moebel": "sb5Baum",
+      "feld": [16, 60]
+    },
+    {
+      "moebel": "sb5Baum",
+      "feld": [22, 56]
+    },
+    {
+      "moebel": "sb5Baum",
+      "feld": [22, 60]
+    },
+    {
+      "moebel": "sb5Baum",
+      "feld": [43, 56]
+    },
+    {
+      "moebel": "sb5Baum",
+      "feld": [43, 60]
+    },
+    {
+      "moebel": "sb5Baum",
+      "feld": [49, 56]
+    },
+    {
+      "moebel": "sb5Baum",
+      "feld": [49, 60]
+    },
+    {
+      "moebel": "sb5Baum",
+      "feld": [21, 8]
+    },
+    {
+      "moebel": "sb5Baum",
+      "feld": [27, 8]
+    },
+    {
+      "moebel": "sb5Baum",
+      "feld": [33, 8]
+    },
+    {
+      "moebel": "sb5Baum",
+      "feld": [39, 8]
+    },
+    {
+      "moebel": "sb5Baum",
+      "feld": [45, 8]
+    },
+    {
+      "moebel": "sb5Baum",
+      "feld": [17, 14]
+    },
+    {
+      "moebel": "cc3Busch",
+      "feld": [16, 3]
+    },
+    {
+      "moebel": "cc3Busch",
+      "feld": [28, 3]
+    },
+    {
+      "moebel": "cc3Busch",
+      "feld": [40, 3]
+    },
+    {
+      "moebel": "cc3Busch",
+      "feld": [52, 3]
+    },
+    {
+      "moebel": "cc3Busch",
+      "feld": [64, 3]
+    },
+    {
+      "moebel": "cc3BuschB",
+      "feld": [24, 10]
+    },
+    {
+      "moebel": "cc3BuschB",
+      "feld": [36, 10]
+    },
+    {
+      "moebel": "cc3BuschB",
+      "feld": [48, 10]
+    },
+    {
+      "moebel": "sb5Baum",
+      "feld": [52, 13]
+    },
+    {
+      "moebel": "sb5Baum",
+      "feld": [60, 13]
+    },
+    {
+      "moebel": "sb5Baum",
+      "feld": [52, 19]
+    },
+    {
+      "moebel": "sb5Baum",
+      "feld": [60, 19]
+    },
+    {
+      "moebel": "ca7Statuenbrunnen",
+      "feld": [56, 15]
+    },
+    {
+      "moebel": "mf9BankLinks",
+      "feld": [54, 17]
+    },
+    {
+      "moebel": "mf9BankRechts",
+      "feld": [60, 17]
+    },
+    {
+      "moebel": "cc4Hecke",
+      "feld": [52, 23],
+      "bauteil_ok": true
+    },
+    {
+      "moebel": "cc4Hecke",
+      "feld": [54, 23],
+      "bauteil_ok": true
+    },
+    {
+      "moebel": "cc4Hecke",
+      "feld": [59, 23],
+      "bauteil_ok": true
+    },
+    {
+      "moebel": "cc4Hecke",
+      "feld": [61, 23],
+      "bauteil_ok": true
     }
   ],
   "ausloeser": [
@@ -1084,10 +1181,10 @@
     {
       "name": "roboterhund",
       "typ": "tier",
-      "feld": [52, 55],
+      "feld": [55, 52],
       "eigenschaften": {
-        "von": "48,53",
-        "bis": "58,57",
+        "von": "53,50",
+        "bis": "60,52",
         "verhalten": "folgen"
       }
     },
@@ -1140,12 +1237,12 @@
     {
       "name": "touristin",
       "typ": "statist",
-      "feld": [50, 54],
+      "feld": [40, 56],
       "eigenschaften": {
         "tun": "fotografiert das Wasserspiel",
         "wann": "tag",
-        "von": "47,53",
-        "bis": "56,55",
+        "von": "38,54",
+        "bis": "41,56",
         "sagt": "statist.siliconBay.aussen.touristin"
       }
     },
@@ -1263,9 +1360,9 @@
     {
       "name": "katze",
       "typ": "tier",
-      "feld": [64, 62],
+      "feld": [64, 63],
       "eigenschaften": {
-        "von": "62,61",
+        "von": "62,62",
         "bis": "65,64",
         "verhalten": "schlafen"
       }

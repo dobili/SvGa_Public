@@ -142,3 +142,7 @@ Szene heißt die Datei in `inhalte/abenteuer/szenen/` ohne `.json`.
 - [x] hochebene-schule (+ vor-diplom), ironwood-aussen-vermietet: Busse in Vorderansicht nach 10.65 (mittel-4) → `mittel-4-busse.md`
 
 - [x] weg-desert-summit-diner (+ neon): Tür des Hinterzimmers am Diner; hochebene-schule (+ vor-diplom): Bucht mit Randlinie (mittel-4) → `mittel-4-diner-schule.md`
+
+- [ ] weg-desert-summit-diner (+ neon): Tür des Hinterzimmers am Diner; hochebene-schule (+ vor-diplom): Bucht mit Randlinie (mittel-4)
+- [ ] silicon-bay-aussen und silicon-bay-hafen (dritte Prüfung, mittel-3; Tunnelbogen am Kartenrand, Park im Norden, Gartenhof, Baumplatz symmetrisch; Kai mit Kran und Fischkisten, Fähre an der Kaimauer, Bäckerei in der Häuserzeile)
+- [ ] riverton-aussen (+ vier Zustände), crossroads-aussen (+ gatter-offen), jahrmarkt-festplatz: Gemini-Bilder Teil 2 eingebaut (Steinbrücke, Sattelzüge, Lastwagen, Imbisswagen von vorn; kurze Sichtprüfung, mittel-3)

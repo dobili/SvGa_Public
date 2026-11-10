@@ -1548,3 +1548,9 @@ Kahn käme darunter durch“ erledigt.
 
 **Restpunkte Eisenbrücke (10.11.2026):** Das Graffiti ist eine Krone ganz auf dem östlichen Widerlager,
 der Kai hat zum Rasen eine Kante aus Steinplatten.
+
+### Steinbrücke (Gemini-Bild, 10.11.2026, mittel-3)
+
+Die Brücke über den Fluss in Riverton außen ist jetzt das Gemini-Bild der Steinbrücke
+(`rv10Steinbruecke`, 80 × 116, begehbar); das alte Brückenbild und der eigene Schatten sind weg.
+Gilt für die Grundszene und alle vier Zustände.

@@ -286,7 +286,8 @@
     },
     {
       "moebel": "pd6Prellbock",
-      "feld": [1, 10]
+      "feld": [1, 10],
+      "versatz": [0, 4]
     },
     {
       "moebel": "pd6Gleis",

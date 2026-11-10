@@ -17325,9 +17325,9 @@
      "name": "cc8PrellbockQuer",
      "type": "moebel",
      "x": 320,
-     "y": 784,
+     "y": 768,
      "width": 16,
-     "height": 32,
+     "height": 48,
      "rotation": 0,
      "visible": true,
      "properties": [
@@ -18705,9 +18705,9 @@
      "name": "cc8PrellbockQuer",
      "type": "moebel",
      "x": 320,
-     "y": 816,
+     "y": 800,
      "width": 16,
-     "height": 32,
+     "height": 48,
      "rotation": 0,
      "visible": true,
      "properties": [

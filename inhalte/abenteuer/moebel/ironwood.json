@@ -593,13 +593,14 @@
       "blick": "unten"
     },
     "iw5Prellbock": {
-      "quelle": "spiel/eigene/prellbock.png",
+      "quelle": "spiel/eigene/prellbock_stahl_oben.png",
       "breite": 32,
       "hoehe": 32,
       "kollision": true,
       "art": "gleis",
       "zustand": "gebraucht",
-      "stil": "industrie"
+      "stil": "industrie",
+      "beschreibung": "Prellbock aus Stahl (eigenes Bild, prellbock_stahl.py): Bock mit Querbalken, zwei Puffern und Schutzhaltsignal; ersetzt die rot-weiße Straßenbake (Querauftrag m, 10.11.2026). Gleis senkrecht, endet oben."
     },
     "iw5Kreidebrett": {
       "quelle": "spiel/eigene/schachbrett.png",

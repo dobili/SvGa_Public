@@ -16308,12 +16308,12 @@
     },
     {
      "id": 143,
-     "name": "cc8PrellbockQuer",
+     "name": "cc8PrellbockQuerRechts",
      "type": "moebel",
      "x": 1056,
-     "y": 384,
+     "y": 368,
      "width": 16,
-     "height": 32,
+     "height": 48,
      "rotation": 0,
      "visible": true,
      "properties": [

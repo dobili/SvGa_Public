@@ -143,7 +143,7 @@
       "quelle": "modern-exteriors/Modern_Exteriors_16x16/ME_Theme_Sorter_16x16/15_Police_Station_Singles_16x16/ME_Singles_Police_Station_16x16_Barrier_1.png",
       "breite": 32,
       "hoehe": 16,
-      "kollision": false,
+      "kollision": true,
       "art": "absperrung",
       "zustand": "gebraucht",
       "stil": "modern"
@@ -411,7 +411,9 @@
       "art": "schild",
       "blick": "unten",
       "zustand": "gebraucht",
-      "stil": "modern"
+      "stil": "modern",
+      "begehbar": true,
+      "begehbar_grund": "hängt an der Wand"
     },
     "wds6NeonK": {
       "quelle": "spiel/eigene/neon_k.png",
@@ -421,7 +423,9 @@
       "art": "fund",
       "blick": "unten",
       "zustand": "gebraucht",
-      "stil": "modern"
+      "stil": "modern",
+      "begehbar": true,
+      "begehbar_grund": "liegt flach am Boden"
     },
     "wds6SattelzugRot": {
       "quelle": "spiel/eigene/sattelzug_rot.png",
@@ -507,7 +511,7 @@
       "quelle": "spiel/eigene/schachbrett_klein_figuren.png",
       "breite": 12,
       "hoehe": 9,
-      "kollision": false,
+      "kollision": true,
       "art": "spiel",
       "blick": "unten",
       "zustand": "gebraucht",
@@ -527,7 +531,7 @@
       "quelle": "spiel/eigene/cb_funkgeraet.png",
       "breite": 16,
       "hoehe": 16,
-      "kollision": false,
+      "kollision": true,
       "art": "geraet",
       "zustand": "gebraucht",
       "stil": "natur"
@@ -539,7 +543,9 @@
       "kollision": false,
       "art": "deko",
       "zustand": "gebraucht",
-      "stil": "natur"
+      "stil": "natur",
+      "begehbar": true,
+      "begehbar_grund": "liegt flach am Boden"
     },
     "sc8Kreidespringer": {
       "quelle": "spiel/eigene/kreidespringer.png",
@@ -548,7 +554,9 @@
       "kollision": false,
       "art": "deko",
       "zustand": "gebraucht",
-      "stil": "natur"
+      "stil": "natur",
+      "begehbar": true,
+      "begehbar_grund": "liegt flach am Boden"
     },
     "wds6SchildDinerHell": {
       "quelle": "spiel/eigene/schild_kings_diner_hell.png",
@@ -558,7 +566,9 @@
       "art": "schild",
       "blick": "unten",
       "zustand": "gebraucht",
-      "stil": "modern"
+      "stil": "modern",
+      "begehbar": true,
+      "begehbar_grund": "hängt an der Wand"
     }
   }
 }

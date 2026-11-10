@@ -1162,11 +1162,6 @@
       "feld": [12, 19]
     },
     {
-      "moebel": "n1Traktor",
-      "feld": [30, 20],
-      "bauteil_ok": true
-    },
-    {
       "moebel": "n1Heu",
       "feld": [35, 22]
     },
@@ -1656,6 +1651,11 @@
     {
       "moebel": "n1Heu",
       "feld": [13, 20]
+    },
+    {
+      "moebel": "fz11TraktorVorn",
+      "feld": [31, 19],
+      "bauteil_ok": true
     }
   ],
   "ausloeser": [

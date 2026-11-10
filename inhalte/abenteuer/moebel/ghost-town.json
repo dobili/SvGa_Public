@@ -190,7 +190,9 @@
       "hoehe": 32,
       "kollision": false,
       "stil": "rustikal",
-      "zustand": "alt"
+      "zustand": "alt",
+      "begehbar": true,
+      "begehbar_grund": "Schatten am Boden"
     },
     "gt7Bank": {
       "quelle": "modern-exteriors/Modern_Exteriors_16x16/ME_Theme_Sorter_16x16/17_Garden_Singles_16x16/ME_Singles_Garden_16x16_Medium_Bench_Horizontal.png",
@@ -265,7 +267,9 @@
       "kollision": false,
       "art": "busch",
       "zustand": "neu",
-      "stil": "klassisch"
+      "stil": "klassisch",
+      "begehbar": true,
+      "begehbar_grund": "niedrige Pflanze, man geht hindurch"
     },
     "gt7Tor1": {
       "quelle": "modern-farm/Single_Files_16x16/Fences_16x16/Wooden_Fence_Type_4_Brown_Gate_1_16x16.png",
@@ -485,7 +489,7 @@
       "quelle": "spiel/eigene/schachbrett_klein_figuren.png",
       "breite": 12,
       "hoehe": 9,
-      "kollision": false,
+      "kollision": true,
       "art": "deko",
       "zustand": "gebraucht",
       "stil": "klassisch"
@@ -497,7 +501,9 @@
       "kollision": false,
       "art": "deko",
       "zustand": "alt",
-      "stil": "klassisch"
+      "stil": "klassisch",
+      "begehbar": true,
+      "begehbar_grund": "hängt an der Wand"
     },
     "gt7Laterne": {
       "quelle": "modern-exteriors/Modern_Exteriors_16x16/ME_Theme_Sorter_16x16/11_Camping_Singles_16x16/ME_Singles_Camping_16x16_Lantern_1.png",
@@ -632,7 +638,9 @@
       "hoehe": 16,
       "kollision": false,
       "stil": "rustikal",
-      "zustand": "alt"
+      "zustand": "alt",
+      "begehbar": true,
+      "begehbar_grund": "rollt, man geht hindurch"
     },
     "gt7TumbleweedGross": {
       "quelle": "spiel/eigene/tumbleweed_gross.png",
@@ -640,13 +648,15 @@
       "hoehe": 32,
       "kollision": false,
       "stil": "rustikal",
-      "zustand": "alt"
+      "zustand": "alt",
+      "begehbar": true,
+      "begehbar_grund": "rollt, man geht hindurch"
     },
     "gt7Wagenrad": {
       "quelle": "spiel/eigene/wagenrad.png",
       "breite": 16,
       "hoehe": 16,
-      "kollision": false,
+      "kollision": true,
       "stil": "rustikal",
       "zustand": "alt"
     },
@@ -783,7 +793,9 @@
       "kollision": false,
       "art": "deko",
       "zustand": "alt",
-      "stil": "rustikal"
+      "stil": "rustikal",
+      "begehbar": true,
+      "begehbar_grund": "liegt flach am Boden"
     },
     "gt10TischDunkel": {
       "quelle": "spiel/eigene/tisch_rund_dunkel.png",

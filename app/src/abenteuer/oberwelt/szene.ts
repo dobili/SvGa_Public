@@ -11,7 +11,13 @@
  * Abhängigkeiten: phaser (MIT, docs/spiel/LIZENZEN.md), schnittstelle/spielstand.ts (Weltposition).
  */
 import Phaser from "phaser";
-import { liesAusloeser, triffAusloeser, type Ausloeser } from "./ausloeserebene";
+import {
+  liesAusloeser,
+  MELDE_START,
+  meldeschritt,
+  type Ausloeser,
+  type Meldezustand,
+} from "./ausloeserebene";
 import { kameragrenzen } from "./kamera";
 import type { Weltposition } from "../schnittstelle/spielstand";
 import {
@@ -119,11 +125,10 @@ export class Oberweltszene extends Phaser.Scene {
   private laufen = true;
   private blick: Richtung;
   private ausloeser: Ausloeser[] = [];
-  private letzterAusloeser: string | null = null;
+  /** Letzter Treffer und ob der Held noch auf seinem Startauslöser steht (ausloeserebene.ts). */
+  private meldezustand: Meldezustand = MELDE_START;
   /** Zuletzt gemeldete Kachel des Helden („x,y“), damit beiKachel nur bei Änderung feuert. */
   private letzteKachel: string | null = null;
-  /** Der Auslöser, auf dem der Held startet (Übergang zurück): erst melden, wenn er ihn verlässt. */
-  private startAusloeserOffen = true;
   private tasten!: Phaser.Types.Input.Keyboard.CursorKeys | null;
   /** Statisten und Tiere der Karte (aus der Objektebene) und ihre Schicht nach create(). */
   private belebung: Belebung[] = [];
@@ -265,8 +270,7 @@ export class Oberweltszene extends Phaser.Scene {
   versetze(x: number, y: number): void {
     if (!this.held) return;
     this.held.setPosition((x + 0.5) * KACHEL, (y + 0.5) * KACHEL);
-    this.startAusloeserOffen = true;
-    this.letzterAusloeser = null;
+    this.meldezustand = MELDE_START;
   }
 
   /** Wo der Held steht, in Kachelkoordinaten (für den Spielstand beim Verlassen). */
@@ -363,24 +367,11 @@ export class Oberweltszene extends Phaser.Scene {
         typ: "statist" as const,
       })),
     ];
-    const { treffer, darauf } = triffAusloeser(alle, this.position());
-    // „Davor“ und „darauf“ sind zwei Zustände: Wer vor einer Luke oder Tür steht und dann
-    // hineingeht, muss den Übergang auslösen (Befund des Autors, 10.11.2026: vom Dachboden kam man
-    // nicht herunter, weil der Blick auf die Luke schon als derselbe Treffer galt).
-    const name = treffer ? `${treffer.name}|${treffer === darauf ? "darauf" : "davor"}` : null;
-    if (name === this.letzterAusloeser) return;
-    // Der Startauslöser (etwa die Tür, durch die der Held kam) zählt erst nach dem Verlassen.
-    if (this.startAusloeserOffen) {
-      this.startAusloeserOffen = false;
-      if (darauf) {
-        this.letzterAusloeser = `${darauf.name}|darauf`;
-        return;
-      }
-    }
-    this.letzterAusloeser = name;
-    this.daten.melder.beiAusloeser(
-      treffer ? { name: treffer.name, typ: treffer.typ, darauf: treffer === darauf } : null,
-    );
+    // Die Regel (nur bei Änderung, „davor“ und „darauf“ getrennt, Startauslöser erst nach dem
+    // Verlassen) steht in ausloeserebene.ts, damit der Lauftest über alle Übergänge sie mitprüft.
+    const schritt = meldeschritt(this.meldezustand, alle, this.position());
+    this.meldezustand = schritt.zustand;
+    if (schritt.meldung !== undefined) this.daten.melder.beiAusloeser(schritt.meldung);
   }
 }
 

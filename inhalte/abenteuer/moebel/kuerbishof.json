@@ -4,7 +4,7 @@
       "quelle": "modern-farm/Single_Files_16x16/Crops_16x16/Crop_Corn_Ripe_16x16.png",
       "breite": 16,
       "hoehe": 32,
-      "kollision": false,
+      "kollision": true,
       "art": "feldfrucht",
       "zustand": "neu",
       "stil": "natur"
@@ -111,7 +111,9 @@
       "kollision": false,
       "art": "blume",
       "zustand": "neu",
-      "stil": "klassisch"
+      "stil": "klassisch",
+      "begehbar": true,
+      "begehbar_grund": "niedrige Pflanze, man geht hindurch"
     },
     "n1BlumeW": {
       "quelle": "spiel/serene/serene_18.png",
@@ -120,7 +122,9 @@
       "kollision": false,
       "art": "blume",
       "zustand": "neu",
-      "stil": "einfach"
+      "stil": "einfach",
+      "begehbar": true,
+      "begehbar_grund": "niedrige Pflanze, man geht hindurch"
     },
     "n1Gras": {
       "quelle": "modern-exteriors/Modern_Exteriors_16x16/ME_Theme_Sorter_16x16/17_Garden_Singles_16x16/ME_Singles_Garden_16x16_Medium_Sprout_1.png",
@@ -129,7 +133,9 @@
       "kollision": false,
       "art": "busch",
       "zustand": "neu",
-      "stil": "klassisch"
+      "stil": "klassisch",
+      "begehbar": true,
+      "begehbar_grund": "niedrige Pflanze, man geht hindurch"
     },
     "n1ZaunM": {
       "quelle": "modern-exteriors/Modern_Exteriors_16x16/ME_Theme_Sorter_16x16/24_Additional_Houses_Singles_16x16/24_Additional_Houses_Fence_4_Bottom_Middle_16x16.png",
@@ -174,7 +180,9 @@
       "kollision": false,
       "art": "deko",
       "zustand": "gebraucht",
-      "stil": "einfach"
+      "stil": "einfach",
+      "begehbar": true,
+      "begehbar_grund": "liegt flach am Boden"
     },
     "n1Hofhaus": {
       "quelle": "modern-farm/Single_Files_16x16/Props_and_Buildings_16x16/Farmer_House_1_16x16.png",
@@ -213,7 +221,9 @@
       "kollision": false,
       "art": "pflanze",
       "zustand": "neu",
-      "stil": "laendlich"
+      "stil": "laendlich",
+      "begehbar": true,
+      "begehbar_grund": "Kürbisfeld, man geht zwischen den Ranken"
     },
     "n1KuerbisKiste": {
       "quelle": "modern-farm/Single_Files_16x16/Crops_16x16/Crop_Pumpkin_Brown_Basket_16x16.png",

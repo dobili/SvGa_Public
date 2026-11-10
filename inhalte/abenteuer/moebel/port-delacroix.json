@@ -55,7 +55,9 @@
       "kollision": false,
       "art": "fenster",
       "zustand": "gebraucht",
-      "stil": "klassisch"
+      "stil": "klassisch",
+      "begehbar": true,
+      "begehbar_grund": "hängt an der Wand"
     },
     "pd6StuhlVorn": {
       "quelle": "modern-interiors/1_Interiors/16x16/Theme_Sorter_Black_Shadow_Singles/5_Classroom_and_Library_Black_Shadow_Singles_16x16/Classroom_and_Library_Singles_1.png",
@@ -81,7 +83,7 @@
       "quelle": "spiel/eigene/schachbrett_klein_figuren.png",
       "breite": 12,
       "hoehe": 9,
-      "kollision": false,
+      "kollision": true,
       "art": "deko",
       "zustand": "gebraucht",
       "stil": "klassisch"
@@ -103,7 +105,9 @@
       "kollision": false,
       "art": "deko",
       "zustand": "gebraucht",
-      "stil": "klassisch"
+      "stil": "klassisch",
+      "begehbar": true,
+      "begehbar_grund": "hängt an der Wand"
     },
     "pd6Tuer": {
       "quelle": "spiel/eigene/tuer_sued_holz.png",
@@ -168,7 +172,9 @@
       "kollision": false,
       "art": "deko",
       "zustand": "gebraucht",
-      "stil": "klassisch"
+      "stil": "klassisch",
+      "begehbar": true,
+      "begehbar_grund": "liegt flach am Boden"
     },
     "pd6Spendenkasse": {
       "quelle": "modern-exteriors/Modern_Exteriors_16x16/ME_Theme_Sorter_16x16/11_Camping_Singles_16x16/ME_Singles_Camping_16x16_Basket_1.png",
@@ -399,13 +405,15 @@
       "art": "bild",
       "zustand": "alt",
       "stil": "klassisch",
-      "blick": "unten"
+      "blick": "unten",
+      "begehbar": true,
+      "begehbar_grund": "hängt an der Wand"
     },
     "pd6Laptop": {
       "quelle": "spiel/eigene/laptop.png",
       "breite": 16,
       "hoehe": 16,
-      "kollision": false,
+      "kollision": true,
       "art": "geraet",
       "zustand": "gebraucht",
       "stil": "modern",
@@ -438,7 +446,9 @@
       "kollision": false,
       "art": "deko",
       "zustand": "kaputt",
-      "stil": "rustikal"
+      "stil": "rustikal",
+      "begehbar": true,
+      "begehbar_grund": "liegt flach am Boden"
     },
     "pd6PfuetzeKlein": {
       "quelle": "spiel/eigene/pfuetze_fels_klein.png",
@@ -447,7 +457,9 @@
       "kollision": false,
       "art": "deko",
       "zustand": "kaputt",
-      "stil": "rustikal"
+      "stil": "rustikal",
+      "begehbar": true,
+      "begehbar_grund": "liegt flach am Boden"
     },
     "pd6Truemmer": {
       "quelle": "modern-exteriors/Modern_Exteriors_16x16/ME_Theme_Sorter_16x16/3_City_Props_Singles_16x16/ME_Singles_City_Props_16x16_Small_Trash_Pile_4.png",
@@ -466,7 +478,9 @@
       "kollision": false,
       "art": "deko",
       "zustand": "kaputt",
-      "stil": "klassisch"
+      "stil": "klassisch",
+      "begehbar": true,
+      "begehbar_grund": "liegt flach am Boden"
     },
     "pd6KistenTuch": {
       "quelle": "modern-interiors/1_Interiors/16x16/Theme_Sorter_Black_Shadow_Singles/2_LivingRoom_Black_Shadow_Singles_16x16/Living_Room_Black_Shadow_Singles_98.png",
@@ -484,7 +498,9 @@
       "kollision": false,
       "art": "deko",
       "zustand": "kaputt",
-      "stil": "rustikal"
+      "stil": "rustikal",
+      "begehbar": true,
+      "begehbar_grund": "liegt flach am Boden"
     },
     "pd6Truemmer2": {
       "quelle": "modern-exteriors/Modern_Exteriors_16x16/ME_Theme_Sorter_16x16/3_City_Props_Singles_16x16/ME_Singles_City_Props_16x16_Small_Trash_Pile_2.png",
@@ -541,7 +557,9 @@
       "kollision": false,
       "art": "deko",
       "zustand": "gebraucht",
-      "stil": "klassisch"
+      "stil": "klassisch",
+      "begehbar": true,
+      "begehbar_grund": "hängt an der Wand"
     },
     "pd6Teppich": {
       "quelle": "spiel/generic/generic_015.png",
@@ -679,7 +697,9 @@
       "kollision": false,
       "art": "fahrzeug",
       "zustand": "alt",
-      "stil": "rustikal"
+      "stil": "rustikal",
+      "begehbar": true,
+      "begehbar_grund": "liegt im Wasser, dort läuft niemand"
     },
     "pd6Ruderboot": {
       "quelle": "modern-exteriors/Modern_Exteriors_16x16/ME_Theme_Sorter_16x16/10_Vehicles_Singles_16x16/ME_Singles_Vehicles_16x16_Boat_2_Left_1.png",
@@ -688,7 +708,9 @@
       "kollision": false,
       "art": "fahrzeug",
       "zustand": "gebraucht",
-      "stil": "rustikal"
+      "stil": "rustikal",
+      "begehbar": true,
+      "begehbar_grund": "liegt im Wasser, dort läuft niemand"
     },
     "pd6Gleis": {
       "quelle": "modern-exteriors/Modern_Exteriors_16x16/ME_Theme_Sorter_16x16/20_Subway_and_Train_Station_Singles_16x16/ME_Singles_Subway_and_Train_Station_16x16_Brown_Rail_Modular_Vertical.png",
@@ -937,7 +959,9 @@
       "art": "schild",
       "zustand": "gebraucht",
       "stil": "rustikal",
-      "blick": "unten"
+      "blick": "unten",
+      "begehbar": true,
+      "begehbar_grund": "hängt an der Wand"
     },
     "pd6Basketballkorb": {
       "quelle": "spiel/eigene/basketballkorb_wand.png",
@@ -947,7 +971,9 @@
       "art": "deko",
       "zustand": "gebraucht",
       "stil": "klassisch",
-      "blick": "unten"
+      "blick": "unten",
+      "begehbar": true,
+      "begehbar_grund": "hängt an der Wand"
     },
     "pd6DielenLoch": {
       "quelle": "spiel/eigene/dielen_loch.png",
@@ -965,7 +991,9 @@
       "kollision": false,
       "art": "deko",
       "zustand": "kaputt",
-      "stil": "rustikal"
+      "stil": "rustikal",
+      "begehbar": true,
+      "begehbar_grund": "liegt flach am Boden"
     },
     "pd6Liege": {
       "quelle": "modern-exteriors/Modern_Exteriors_16x16/ME_Theme_Sorter_16x16/11_Camping_Singles_16x16/ME_Singles_Camping_16x16_Armchair_1.png",
@@ -1023,7 +1051,9 @@
       "art": "schild",
       "blick": "unten",
       "zustand": "gebraucht",
-      "stil": "rustikal"
+      "stil": "rustikal",
+      "begehbar": true,
+      "begehbar_grund": "hängt an der Wand"
     },
     "pd6HausGross": {
       "quelle": "modern-farm/Single_Files_16x16/0_Complete_Tileset_Singles_16x16/Farmer_House_1_16x16.png",
@@ -1042,7 +1072,9 @@
       "kollision": false,
       "art": "deko",
       "zustand": "gebraucht",
-      "stil": "rustikal"
+      "stil": "rustikal",
+      "begehbar": true,
+      "begehbar_grund": "hängt über Kopfhöhe"
     },
     "pd6PlaneDachKlein": {
       "quelle": "spiel/eigene/plane_dach_klein.png",
@@ -1051,7 +1083,9 @@
       "kollision": false,
       "art": "deko",
       "zustand": "gebraucht",
-      "stil": "rustikal"
+      "stil": "rustikal",
+      "begehbar": true,
+      "begehbar_grund": "hängt über Kopfhöhe"
     },
     "pd7Villa1": {
       "quelle": "modern-exteriors/Modern_Exteriors_16x16/ME_Theme_Sorter_16x16/7_Villas_Singles_16x16/ME_Singles_Villas_16x16_Villa_1.png",
@@ -1472,7 +1506,7 @@
       "quelle": "modern-interiors/1_Interiors/16x16/Theme_Sorter_Black_Shadow_Singles/9_Fishing_Black_Shadow_Singles_16x16/Fishing_Shadow_Singles_12.png",
       "breite": 32,
       "hoehe": 48,
-      "kollision": false,
+      "kollision": true,
       "art": "deko",
       "zustand": "gebraucht",
       "stil": "rustikal",
@@ -1486,7 +1520,9 @@
       "breite": 96,
       "hoehe": 64,
       "art": "boot",
-      "gebaeude": false
+      "gebaeude": false,
+      "begehbar": true,
+      "begehbar_grund": "liegt im Wasser, dort läuft niemand"
     },
     "pd7Finkenzeichen": {
       "kollision": false,
@@ -1496,7 +1532,9 @@
       "breite": 16,
       "hoehe": 16,
       "art": "deko",
-      "blick": "unten"
+      "blick": "unten",
+      "begehbar": true,
+      "begehbar_grund": "liegt flach am Boden"
     },
     "pd9Linie4": {
       "quelle": "spiel/eigene/fahrbahn_linie_4.png",
@@ -1551,7 +1589,9 @@
       "kollision": false,
       "art": "deko",
       "zustand": "gebraucht",
-      "stil": "rustikal"
+      "stil": "rustikal",
+      "begehbar": true,
+      "begehbar_grund": "liegt flach am Boden"
     },
     "pd9Lehrertisch": {
       "quelle": "modern-interiors/1_Interiors/16x16/Theme_Sorter_Black_Shadow_Singles/5_Classroom_and_Library_Black_Shadow_Singles_16x16/Classroom_and_Library_Singles_25.png",
@@ -1570,7 +1610,9 @@
       "kollision": false,
       "art": "deko",
       "zustand": "gebraucht",
-      "stil": "klassisch"
+      "stil": "klassisch",
+      "begehbar": true,
+      "begehbar_grund": "Ziegelreste, flach am Boden"
     },
     "pd9LeiterKaputt": {
       "quelle": "modern-exteriors/Modern_Exteriors_16x16/ME_Theme_Sorter_16x16/3_City_Props_Singles_16x16/ME_Singles_City_Props_16x16_Broken_Ladder_1.png",
@@ -1589,7 +1631,9 @@
       "kollision": false,
       "art": "deko",
       "zustand": "gebraucht",
-      "stil": "rustikal"
+      "stil": "rustikal",
+      "begehbar": true,
+      "begehbar_grund": "liegt flach am Boden"
     },
     "pd9Stiefel": {
       "quelle": "modern-exteriors/Modern_Exteriors_16x16/ME_Theme_Sorter_16x16/3_City_Props_Singles_16x16/ME_Singles_City_Props_16x16_Trash_Pile_Props_11.png",
@@ -1598,7 +1642,9 @@
       "kollision": false,
       "art": "deko",
       "zustand": "gebraucht",
-      "stil": "rustikal"
+      "stil": "rustikal",
+      "begehbar": true,
+      "begehbar_grund": "liegt flach am Boden"
     },
     "pd9KlavierBeige": {
       "quelle": "modern-interiors/1_Interiors/16x16/Theme_Sorter_Black_Shadow_Singles/6_Music_and_Sport_Black_Shadow_Singles_16x16/Music_and_Sport_Black_Shadow_Singles_189.png",
@@ -1648,7 +1694,9 @@
       "art": "boot",
       "zustand": "gebraucht",
       "stil": "klassisch",
-      "blick": "unten"
+      "blick": "unten",
+      "begehbar": true,
+      "begehbar_grund": "liegt im Wasser, dort läuft niemand"
     },
     "pd9BootAuf": {
       "quelle": "modern-exteriors/Modern_Exteriors_16x16/ME_Theme_Sorter_16x16/10_Vehicles_Singles_16x16/ME_Singles_Vehicles_16x16_Boat_1_Up_2.png",
@@ -1658,7 +1706,9 @@
       "art": "boot",
       "zustand": "gebraucht",
       "stil": "klassisch",
-      "blick": "oben"
+      "blick": "oben",
+      "begehbar": true,
+      "begehbar_grund": "liegt im Wasser, dort läuft niemand"
     },
     "pd9Sturmschutt": {
       "quelle": "modern-exteriors/Modern_Exteriors_16x16/ME_Theme_Sorter_16x16/3_City_Props_Singles_16x16/ME_Singles_City_Props_16x16_Trash_Pile_1.png",

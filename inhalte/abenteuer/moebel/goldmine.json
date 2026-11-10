@@ -16,7 +16,9 @@
       "kollision": false,
       "art": "stuetze",
       "zustand": "alt",
-      "stil": "industrie"
+      "stil": "industrie",
+      "begehbar": true,
+      "begehbar_grund": "Durchgang, man geht hindurch"
     },
     "n7Grubenlampe": {
       "quelle": "spiel/eigene/grubenlampe_haken.png",
@@ -25,7 +27,9 @@
       "kollision": false,
       "art": "lampe",
       "zustand": "alt",
-      "stil": "industrie"
+      "stil": "industrie",
+      "begehbar": true,
+      "begehbar_grund": "hängt an der Wand"
     },
     "n7Goldader": {
       "quelle": "spiel/eigene/goldader.png",

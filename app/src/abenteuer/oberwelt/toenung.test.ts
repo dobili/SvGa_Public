@@ -23,8 +23,9 @@ describe("aktuelleToenung", () => {
     );
   });
 
-  it("kennt nur die fünf Tönungen", () => {
+  it("kennt nur die festen Tönungen", () => {
     expect(istToenung("dunkel")).toBe(true);
+    expect(istToenung("serverblau")).toBe(true);
     expect(istToenung("lila")).toBe(false);
     expect(
       aktuelleToenung({ properties: [{ name: "toenung", value: "lila" }] }, "x", {}),

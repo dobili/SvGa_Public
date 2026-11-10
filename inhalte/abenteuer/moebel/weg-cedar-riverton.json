@@ -34,7 +34,9 @@
       "kollision": false,
       "art": "busch",
       "zustand": "neu",
-      "stil": "klassisch"
+      "stil": "klassisch",
+      "begehbar": true,
+      "begehbar_grund": "niedrige Pflanze, man geht hindurch"
     },
     "wc5Pilze": {
       "quelle": "modern-exteriors/Modern_Exteriors_16x16/ME_Theme_Sorter_16x16/11_Camping_Singles_16x16/ME_Singles_Camping_16x16_Mushrooms_1.png",
@@ -43,7 +45,9 @@
       "kollision": false,
       "art": "blume",
       "zustand": "gebraucht",
-      "stil": "einfach"
+      "stil": "einfach",
+      "begehbar": true,
+      "begehbar_grund": "niedrige Pflanze, man geht hindurch"
     },
     "wc5PilzeB": {
       "quelle": "modern-exteriors/Modern_Exteriors_16x16/ME_Theme_Sorter_16x16/11_Camping_Singles_16x16/ME_Singles_Camping_16x16_Mushrooms_2.png",
@@ -52,7 +56,9 @@
       "kollision": false,
       "art": "blume",
       "zustand": "gebraucht",
-      "stil": "einfach"
+      "stil": "einfach",
+      "begehbar": true,
+      "begehbar_grund": "niedrige Pflanze, man geht hindurch"
     },
     "wc5Stein": {
       "quelle": "modern-exteriors/Modern_Exteriors_16x16/ME_Theme_Sorter_16x16/11_Camping_Singles_16x16/ME_Singles_Camping_16x16_Rock_2.png",
@@ -79,7 +85,9 @@
       "kollision": false,
       "art": "busch",
       "zustand": "neu",
-      "stil": "klassisch"
+      "stil": "klassisch",
+      "begehbar": true,
+      "begehbar_grund": "niedrige Pflanze, man geht hindurch"
     },
     "wc5BuschKlein": {
       "quelle": "modern-exteriors/Modern_Exteriors_16x16/ME_Theme_Sorter_16x16/17_Garden_Singles_16x16/ME_Singles_Garden_16x16_Bush_4.png",
@@ -133,7 +141,9 @@
       "kollision": false,
       "art": "blume",
       "zustand": "gebraucht",
-      "stil": "modern"
+      "stil": "modern",
+      "begehbar": true,
+      "begehbar_grund": "niedrige Pflanze, man geht hindurch"
     },
     "wc5BlumenWeiss": {
       "quelle": "spiel/serene/serene_18.png",
@@ -142,7 +152,9 @@
       "kollision": false,
       "art": "blume",
       "zustand": "neu",
-      "stil": "einfach"
+      "stil": "einfach",
+      "begehbar": true,
+      "begehbar_grund": "niedrige Pflanze, man geht hindurch"
     },
     "wc5BlumeBlau": {
       "quelle": "modern-exteriors/Modern_Exteriors_16x16/ME_Theme_Sorter_16x16/17_Garden_Singles_16x16/ME_Singles_Garden_16x16_Medium_White_Flower.png",
@@ -151,7 +163,9 @@
       "kollision": false,
       "art": "blume",
       "zustand": "neu",
-      "stil": "klassisch"
+      "stil": "klassisch",
+      "begehbar": true,
+      "begehbar_grund": "niedrige Pflanze, man geht hindurch"
     },
     "wc5BlumeGelb": {
       "quelle": "modern-exteriors/Modern_Exteriors_16x16/ME_Theme_Sorter_16x16/17_Garden_Singles_16x16/ME_Singles_Garden_16x16_Medium_Yellow_Flower.png",
@@ -160,7 +174,9 @@
       "kollision": false,
       "art": "blume",
       "zustand": "neu",
-      "stil": "klassisch"
+      "stil": "klassisch",
+      "begehbar": true,
+      "begehbar_grund": "niedrige Pflanze, man geht hindurch"
     },
     "wc5Stamm": {
       "quelle": "modern-exteriors/Modern_Exteriors_16x16/ME_Theme_Sorter_16x16/7_Villas_Singles_16x16/ME_Singles_Villas_16x16_Villa_Yard_Props_18.png",
@@ -216,7 +232,9 @@
       "kollision": false,
       "art": "deko",
       "zustand": "alt",
-      "stil": "modern"
+      "stil": "modern",
+      "begehbar": true,
+      "begehbar_grund": "liegt flach am Boden"
     },
     "wc5Birke": {
       "quelle": "modern-farm/Single_Files_16x16/Trees_16x16/Tree_Birch_Green_Big_16x16.png",
@@ -281,7 +299,9 @@
       "kollision": false,
       "art": "stein",
       "zustand": "neu",
-      "stil": "einfach"
+      "stil": "einfach",
+      "begehbar": true,
+      "begehbar_grund": "liegt flach am Boden"
     },
     "wc5Steg3": {
       "quelle": "spiel/eigene/bruecke_fuss_quer_3.png",
@@ -533,7 +553,9 @@
       "kollision": false,
       "art": "busch",
       "zustand": "neu",
-      "stil": "klassisch"
+      "stil": "klassisch",
+      "begehbar": true,
+      "begehbar_grund": "niedrige Pflanze, man geht hindurch"
     },
     "wc5Sonnenblume": {
       "quelle": "modern-exteriors/Modern_Exteriors_16x16/ME_Theme_Sorter_16x16/17_Garden_Singles_16x16/ME_Singles_Garden_16x16_Big_Sunflower.png",
@@ -570,7 +592,9 @@
       "kollision": false,
       "art": "blume",
       "zustand": "neu",
-      "stil": "klassisch"
+      "stil": "klassisch",
+      "begehbar": true,
+      "begehbar_grund": "niedrige Pflanze, man geht hindurch"
     },
     "wc5HohlerStamm": {
       "quelle": "modern-farm/Single_Files_16x16/Trees_16x16/Tree_Trunk_Oak_Huge_16x16.png",
@@ -585,7 +609,7 @@
       "quelle": "spiel/eigene/bahn_gueterwagen.png",
       "breite": 96,
       "hoehe": 64,
-      "kollision": false,
+      "kollision": true,
       "stil": "industrie",
       "zustand": "alt"
     },
@@ -593,7 +617,7 @@
       "quelle": "spiel/eigene/bahn_gueterwagen_leer.png",
       "breite": 96,
       "hoehe": 64,
-      "kollision": false,
+      "kollision": true,
       "stil": "industrie",
       "zustand": "alt"
     },
@@ -603,7 +627,9 @@
       "hoehe": 48,
       "kollision": false,
       "stil": "industrie",
-      "zustand": "alt"
+      "zustand": "alt",
+      "begehbar": true,
+      "begehbar_grund": "Durchgang, man geht hindurch"
     },
     "wc5Stufen": {
       "quelle": "modern-exteriors/Modern_Exteriors_16x16/ME_Theme_Sorter_16x16/21_Beach_Singles_16x16/21_Beach_16x16_Stage_Stairs_Up.png",
@@ -669,7 +695,9 @@
       "kollision": false,
       "art": "zaun",
       "zustand": "gebraucht",
-      "stil": "laendlich"
+      "stil": "laendlich",
+      "begehbar": true,
+      "begehbar_grund": "offenes Tor, man geht hindurch"
     },
     "wc8TorOffen2": {
       "quelle": "modern-farm/Single_Files_16x16/Fences_16x16/Wooden_Fence_Type_4_Brown_Gate_2_16x16.png",
@@ -678,7 +706,9 @@
       "kollision": false,
       "art": "zaun",
       "zustand": "gebraucht",
-      "stil": "laendlich"
+      "stil": "laendlich",
+      "begehbar": true,
+      "begehbar_grund": "offenes Tor, man geht hindurch"
     },
     "wc8Trittstein": {
       "quelle": "modern-exteriors/Modern_Exteriors_16x16/ME_Theme_Sorter_16x16/11_Camping_Singles_16x16/ME_Singles_Camping_16x16_Rock_2.png",
@@ -687,7 +717,9 @@
       "kollision": false,
       "art": "stein",
       "zustand": "neu",
-      "stil": "einfach"
+      "stil": "einfach",
+      "begehbar": true,
+      "begehbar_grund": "Trittstein, man steigt darüber"
     },
     "wc9BoeschungNord": {
       "quelle": "spiel/eigene/boeschung_nord.png",

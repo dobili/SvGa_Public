@@ -77,7 +77,9 @@
       "kollision": false,
       "art": "deko",
       "zustand": "neu",
-      "stil": "natur"
+      "stil": "natur",
+      "begehbar": true,
+      "begehbar_grund": "liegt flach am Boden"
     },
     "cp7Wegweiser": {
       "quelle": "spiel/eigene/wegweiser_trail.png",

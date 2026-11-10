@@ -819,3 +819,6 @@ grauem Inhalt ein Lokmodell, alte Fahrkarten und eine Schaffnermütze (Bildwunsc
 `museum_vitrinen.py`, erweitert), Pult von vorn. Umkleide: hoher Metallschrank als Doppelspind,
 Trennwand schließt den Spalt, Mülleimer an der Westwand. Nicht umgesetzt: **Läufer** – es gibt nur die
 zwei Teppichmaterialien mit Muster; **„TICKET“** – Bild des Pakets.
+
+**Fahrzeuge (10.65, 10.11.2026):** Im Zustand „vermietet“ steht der Werksbus in Vorderansicht
+(`fz11BusAb`) im Werkhof statt in Seitenansicht.

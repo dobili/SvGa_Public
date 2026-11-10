@@ -8,7 +8,9 @@
       "art": "fenster",
       "blick": "unten",
       "zustand": "alt",
-      "stil": "klassisch"
+      "stil": "klassisch",
+      "begehbar": true,
+      "begehbar_grund": "hängt an der Wand"
     },
     "n9Fernrohr": {
       "quelle": "spiel/eigene/fernrohr.png",
@@ -66,7 +68,9 @@
       "kollision": false,
       "art": "bild",
       "zustand": "alt",
-      "stil": "klassisch"
+      "stil": "klassisch",
+      "begehbar": true,
+      "begehbar_grund": "hängt an der Wand"
     }
   }
 }

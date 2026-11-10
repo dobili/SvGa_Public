@@ -187,6 +187,26 @@
       "feld": [2, 3]
     },
     {
+      "name": "treppeOben",
+      "feld": [1, 3]
+    },
+    {
+      "name": "treppeOben",
+      "feld": [1, 4]
+    },
+    {
+      "name": "treppeOben",
+      "feld": [2, 4]
+    },
+    {
+      "name": "treppeOben",
+      "feld": [3, 3]
+    },
+    {
+      "name": "treppeOben",
+      "feld": [3, 4]
+    },
+    {
       "name": "fotoGrandma",
       "feld": [6, 3]
     },

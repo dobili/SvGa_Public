@@ -198,7 +198,9 @@
       "art": "deko",
       "blick": "unten",
       "zustand": "neu",
-      "stil": "einfach"
+      "stil": "einfach",
+      "begehbar": true,
+      "begehbar_grund": "liegt flach am Boden"
     },
     "cr8Finkenzeichen": {
       "quelle": "spiel/eigene/finkenzeichen_kreide.png",
@@ -208,7 +210,9 @@
       "art": "deko",
       "blick": "unten",
       "zustand": "neu",
-      "stil": "einfach"
+      "stil": "einfach",
+      "begehbar": true,
+      "begehbar_grund": "liegt flach am Boden"
     },
     "cr9BordQ1": {
       "quelle": "spiel/eigene/einfassung_quer_1.png",
@@ -1110,7 +1114,9 @@
       "kollision": false,
       "art": "fenster",
       "zustand": "gebraucht",
-      "stil": "rustikal"
+      "stil": "rustikal",
+      "begehbar": true,
+      "begehbar_grund": "hängt an der Wand"
     }
   }
 }

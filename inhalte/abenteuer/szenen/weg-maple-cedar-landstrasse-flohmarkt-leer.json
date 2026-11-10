@@ -663,14 +663,6 @@
     },
     {
       "moebel": "ccKorn",
-      "feld": [31, 5]
-    },
-    {
-      "moebel": "ccKorn",
-      "feld": [33, 5]
-    },
-    {
-      "moebel": "ccKorn",
       "feld": [35, 5]
     },
     {
@@ -839,14 +831,6 @@
     },
     {
       "moebel": "ccKorn",
-      "feld": [32, 6]
-    },
-    {
-      "moebel": "ccKorn",
-      "feld": [34, 6]
-    },
-    {
-      "moebel": "ccKorn",
       "feld": [36, 6]
     },
     {
@@ -936,14 +920,6 @@
     {
       "moebel": "ccKorn",
       "feld": [29, 7]
-    },
-    {
-      "moebel": "ccKorn",
-      "feld": [31, 7]
-    },
-    {
-      "moebel": "ccKorn",
-      "feld": [33, 7]
     },
     {
       "moebel": "ccKorn",
@@ -1115,14 +1091,6 @@
     },
     {
       "moebel": "ccKorn",
-      "feld": [32, 8]
-    },
-    {
-      "moebel": "ccKorn",
-      "feld": [34, 8]
-    },
-    {
-      "moebel": "ccKorn",
       "feld": [42, 8]
     },
     {
@@ -1200,14 +1168,6 @@
     {
       "moebel": "ccKorn",
       "feld": [29, 9]
-    },
-    {
-      "moebel": "ccKorn",
-      "feld": [31, 9]
-    },
-    {
-      "moebel": "ccKorn",
-      "feld": [33, 9]
     },
     {
       "moebel": "ccKorn",
@@ -1379,14 +1339,6 @@
     },
     {
       "moebel": "ccKorn",
-      "feld": [32, 10]
-    },
-    {
-      "moebel": "ccKorn",
-      "feld": [34, 10]
-    },
-    {
-      "moebel": "ccKorn",
       "feld": [42, 10]
     },
     {
@@ -1408,11 +1360,6 @@
     {
       "moebel": "heVogelscheuche",
       "feld": [10, 4]
-    },
-    {
-      "moebel": "heTraktor",
-      "feld": [30, 7],
-      "bauteil_ok": true
     },
     {
       "moebel": "wg4ZaunBottomMiddle",
@@ -2758,6 +2705,11 @@
     {
       "moebel": "wg4Erle",
       "feld": [113, 7]
+    },
+    {
+      "moebel": "fz11TraktorHinten",
+      "feld": [31, 5],
+      "bauteil_ok": true
     }
   ],
   "ausloeser": [

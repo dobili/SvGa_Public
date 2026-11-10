@@ -63,7 +63,9 @@
       "kollision": false,
       "art": "fels",
       "zustand": "alt",
-      "stil": "natur"
+      "stil": "natur",
+      "begehbar": true,
+      "begehbar_grund": "Durchgang, man geht hindurch"
     },
     "dd6Bruecke1879": {
       "quelle": "spiel/eigene/eisenbahnbruecke_1879_quer.png",
@@ -117,7 +119,9 @@
       "kollision": false,
       "art": "deko",
       "zustand": "neu",
-      "stil": "natur"
+      "stil": "natur",
+      "begehbar": true,
+      "begehbar_grund": "Schatten am Boden"
     },
     "dd6Wuestenbahnhof": {
       "quelle": "spiel/eigene/wuestenbahnhof.png",
@@ -136,7 +140,9 @@
       "kollision": false,
       "art": "deko",
       "zustand": "gebraucht",
-      "stil": "natur"
+      "stil": "natur",
+      "begehbar": true,
+      "begehbar_grund": "hängt an der Wand"
     },
     "ds8Kreidebeutel": {
       "quelle": "spiel/eigene/kreidebeutel.png",
@@ -145,7 +151,9 @@
       "kollision": false,
       "art": "deko",
       "zustand": "gebraucht",
-      "stil": "natur"
+      "stil": "natur",
+      "begehbar": true,
+      "begehbar_grund": "liegt flach am Boden"
     },
     "ds8Finkenzeichen": {
       "quelle": "spiel/eigene/finkenzeichen_kreide.png",
@@ -154,7 +162,9 @@
       "kollision": false,
       "art": "deko",
       "zustand": "gebraucht",
-      "stil": "natur"
+      "stil": "natur",
+      "begehbar": true,
+      "begehbar_grund": "liegt flach am Boden"
     }
   }
 }

@@ -138,7 +138,9 @@
       "kollision": false,
       "art": "schild",
       "zustand": "alt",
-      "stil": "klassisch"
+      "stil": "klassisch",
+      "begehbar": true,
+      "begehbar_grund": "hängt an der Wand"
     },
     "ds6Diner": {
       "quelle": "spiel/eigene/diner_wagen.png",

@@ -11623,7 +11623,7 @@
     },
     {
      "id": 188,
-     "name": "wsgAutoAb21",
+     "name": "ws5AutoGruen",
      "type": "moebel",
      "x": 48,
      "y": 464,
@@ -11635,20 +11635,20 @@
       {
        "name": "tiefe",
        "type": "int",
-       "value": 1
+       "value": 536
       },
       {
        "name": "kollision",
        "type": "bool",
-       "value": false
+       "value": true
       }
      ]
     },
     {
      "id": 189,
-     "name": "wsgAutoAb14",
+     "name": "ws5AutoGrau",
      "type": "moebel",
-     "x": 128,
+     "x": 160,
      "y": 464,
      "width": 48,
      "height": 64,
@@ -11658,18 +11658,18 @@
       {
        "name": "tiefe",
        "type": "int",
-       "value": 1
+       "value": 520
       },
       {
        "name": "kollision",
        "type": "bool",
-       "value": false
+       "value": true
       }
      ]
     },
     {
      "id": 190,
-     "name": "wsgAutoAb1",
+     "name": "ws5AutoBlau",
      "type": "moebel",
      "x": 416,
      "y": 464,
@@ -11681,12 +11681,12 @@
       {
        "name": "tiefe",
        "type": "int",
-       "value": 1
+       "value": 520
       },
       {
        "name": "kollision",
        "type": "bool",
-       "value": false
+       "value": true
       }
      ]
     },

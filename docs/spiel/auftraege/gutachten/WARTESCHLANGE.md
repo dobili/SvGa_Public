@@ -6,9 +6,9 @@ Szene heißt die Datei in `inhalte/abenteuer/szenen/` ohne `.json`.
 
 ## Offen
 
-- [ ] maple-falls-clubraum (zweite Prüfung nach Nachbesserung, mittel-1)
-- [ ] lockport-gasthaus (Runde 8, niedrig-1)
-- [ ] lockport-aussen (Runde 8, niedrig-1)
+- [x] maple-falls-clubraum (zweite Prüfung nach Nachbesserung, mittel-1)
+- [x] lockport-gasthaus (Runde 8, niedrig-1)
+- [x] lockport-aussen (Runde 8, niedrig-1)
 - [ ] weg-cedar-riverton-bahndamm (Runde 8, niedrig-1)
 - [ ] weg-cedar-riverton-zedernwald (Runde 8, niedrig-1)
 - [ ] maple-falls-park (Runde 8, niedrig-1)

@@ -188,6 +188,28 @@ Häuserzeile am Hafen (Türen in Reihe 15), dazwischen die Gasse (32–35 / 6–
 **Ränder:** Norden Stützmauer mit Sitzstufen (nur die Treppe führt hinauf), Westen Zaun des
 Fährterminals, Osten Mole mit Geländer, Süden die Bucht. **Laufzeit:** Promenade 64 Kacheln, 18 s.
 
+### 1.4a Silicon Bay, Altstadt (`siliconBay.altstadt`, neu in Runde 7, 72 × 56)
+
+Das zweite Stadtviertel nach Regel 7a.3.6 und 10.51 (Szene mit `"viertel": true`): das Silicon Bay
+vor dem Campus, mit Bäckerei, Metzgerei, Uhrmacher und Musikladen. Man kommt vom Gehweg Nord des
+Campus herein: Übergang `altstadt` am Westrand des Campus (0, 21–22) ↔ `campus` am Ostrand der
+Altstadt (71, 21–22), Ankunft (70, 21).
+
+**Reihen:** 1–8 Hinterhöfe (Gras, Hecken); bis Reihe 20 Häuserzeile A mit Türen zum Gehweg (21–22);
+23–25 Hauptstraße; 26 Gehweg Süd; 27–30 Gärten hinter Zeile B; bis Reihe 40 Häuserzeile B mit
+Türen zum Marktplatz, zwei Gassen verbinden Straße und Platz; 41–50 Marktplatz mit Brunnen, Bänken,
+Ständen und Kaffeekiosk; 51–54 Park am Südrand. Der Westrand ist geschlossen.
+
+**Gebäude:** je Variante 21 bis 22 Kulissenhäuser ohne Innenraum: Läden (`sa8Laden1` bis
+`sa8Laden12`, „Market Medium“), Kaufhäuser (`sa8Kaufhaus1` bis `6`), Postamt (`sa8Postamt1` bis `4`),
+kleine Polizeiwache (`sa8Polizei1`, `2`), Eisenwarenladen (`sa8Eisenwaren`), Wohnhäuser (`sa8Condo9`,
+`sb8Condo44` bis `53`), Kapelle (`iw5Kirche`). A und C mit Wochenmarkt, B schlicht.
+
+**Belebung:** zwölf Statisten, acht davon mit Satz (`statist.siliconBay.altstadt.*`): Bäckerin,
+Uhrmacher, Musikhändler, Schülerin, Metzger (Perfect Move will die Straße kaufen), Rentnerpaar,
+Feuerwehrmann, Eisverkäuferin; dazu Briefträgerin, Straßenmusiker, Kinder und Ladenbesitzer. Tiere
+nur als Maschinen (Weltbeschreibung): Drohne, Lieferroboter, Mähroboter, Staubsaugerroboter.
+
 ### 1.5 Gebäude und Maße
 
 | Gebäude                       | Lage außen (Spalten / Reihen), Tür                      | Fassade                                         | Innen (7a.2)                                                                                   | Begehbar        |
@@ -210,18 +232,19 @@ man den Raum verlässt).
 
 ### 1.6 Übergänge (Felder auf beiden Seiten)
 
-| Von (Karte, Auslöser, Feld)                                    | Nach (Karte, Auslöser, Feld; Ankunft)                                    | Lage, Bedingung                                                                                                                               |
-| -------------------------------------------------------------- | ------------------------------------------------------------------------ | --------------------------------------------------------------------------------------------------------------------------------------------- |
-| ironwood.aussen `busSiliconBay` (15, 32), Dialog, Reise        | raststaette `start` (140, 20), Blick nach Westen                         | Busfahrt; erst nach Szene 50 (`akt2.einladung`); vorher Busfahrer Briggs: „Silicon Bay? Ohne Einladung lassen die dich nicht mal aussteigen.“ |
-| raststaette `zurueckIronwood` (139, 21), Dialog, Reise         | ironwood.aussen `bushaltestelle` (14, 32)                                | Busfahrt zurück (heute Ziel `busSiliconBay`; Vorschlag: Ziel `bushaltestelle`, weil dort der Start liegt)                                     |
-| raststaette `weiterGlasbruecke` Westrand (0, 18–19)            | glasbruecke `zurueckRaststaette` Ostrand (139, 18–19); Ankunft (138, 18) | Pfad je zwei Felder                                                                                                                           |
-| glasbruecke `weiterSilicon` Westrand (0, 18–19)                | siliconBay.aussen `glasbruecke` Ostrand (71, 21–22); Ankunft (70, 21)    | Platz geht in den Gehweg Nord über; Dialog `ankunft_zu_fuss` bleibt an `weiterSilicon`                                                        |
-| aussen `akademieTuer` (28, 20)                                 | akademie `akademieAusgang` (Südwand, Spalte 12); Ankunft (12, 14)        | 50 % ↔ 50 %                                                                                                                                   |
-| akademie `serverraumTuer` Nordwand (21, 2), Feld davor (21, 3) | serverraum `serverraumAusgang` (Südwand, Spalte 7); Ankunft (7, 8)       | wie heute `wenn: serverraumOffen` (Szene 56)                                                                                                  |
-| aussen `lobbyTuer` (9, 20)                                     | lobby `lobbyAusgang` (Südwand, Spalte 12); Ankunft (12, 12)              | 50 % ↔ 50 %                                                                                                                                   |
-| aussen `hafen` (neu) Südrand (32–35, 51); Ankunft (33, 50)     | hafen `campus` (neu) Nordrand (32–35, 0); Ankunft (33, 1)                | Treppe, vier Felder breit                                                                                                                     |
-| hafen `faehre` (6, 29), Dialog, Reise                          | wegSiliconDelacroix.faehre `start`                                       | heute auf `siliconBay.aussen`; zieht auf den Hafen um; `wenn: nadelSiliconBay` bleibt                                                         |
-| hafen `inselfaehre` (neu, 53, 22), Dialog, Reise               | Pelikaninsel (N4, Kennung bei Bau)                                       | S6: nach der Nadel von Silicon Bay dauerhaft offen (13 §4, Befund 16)                                                                         |
+| Von (Karte, Auslöser, Feld)                                             | Nach (Karte, Auslöser, Feld; Ankunft)                                    | Lage, Bedingung                                                                                                                               |
+| ----------------------------------------------------------------------- | ------------------------------------------------------------------------ | --------------------------------------------------------------------------------------------------------------------------------------------- |
+| ironwood.aussen `busSiliconBay` (15, 32), Dialog, Reise                 | raststaette `start` (140, 20), Blick nach Westen                         | Busfahrt; erst nach Szene 50 (`akt2.einladung`); vorher Busfahrer Briggs: „Silicon Bay? Ohne Einladung lassen die dich nicht mal aussteigen.“ |
+| raststaette `zurueckIronwood` (139, 21), Dialog, Reise                  | ironwood.aussen `bushaltestelle` (14, 32)                                | Busfahrt zurück (heute Ziel `busSiliconBay`; Vorschlag: Ziel `bushaltestelle`, weil dort der Start liegt)                                     |
+| raststaette `weiterGlasbruecke` Westrand (0, 18–19)                     | glasbruecke `zurueckRaststaette` Ostrand (139, 18–19); Ankunft (138, 18) | Pfad je zwei Felder                                                                                                                           |
+| glasbruecke `weiterSilicon` Westrand (0, 18–19)                         | siliconBay.aussen `glasbruecke` Ostrand (71, 21–22); Ankunft (70, 21)    | Platz geht in den Gehweg Nord über; Dialog `ankunft_zu_fuss` bleibt an `weiterSilicon`                                                        |
+| aussen `akademieTuer` (28, 20)                                          | akademie `akademieAusgang` (Südwand, Spalte 12); Ankunft (12, 14)        | 50 % ↔ 50 %                                                                                                                                   |
+| akademie `serverraumTuer` Nordwand (21, 2), Feld davor (21, 3)          | serverraum `serverraumAusgang` (Südwand, Spalte 7); Ankunft (7, 8)       | wie heute `wenn: serverraumOffen` (Szene 56)                                                                                                  |
+| aussen `lobbyTuer` (9, 20)                                              | lobby `lobbyAusgang` (Südwand, Spalte 12); Ankunft (12, 12)              | 50 % ↔ 50 %                                                                                                                                   |
+| aussen `altstadt` (Runde 7) Westrand (0, 21–22)                         | altstadt `campus` Ostrand (71, 21–22); Ankunft (70, 21)                  | Gehweg Nord, zwei Felder                                                                                                                      |
+| aussen `hafen` (neu) Südrand (32–35, 59 seit Runde 7); Ankunft (33, 58) | hafen `campus` (neu) Nordrand (32–35, 0); Ankunft (33, 1)                | Treppe, vier Felder breit                                                                                                                     |
+| hafen `faehre` (6, 29), Dialog, Reise                                   | wegSiliconDelacroix.faehre `start`                                       | heute auf `siliconBay.aussen`; zieht auf den Hafen um; `wenn: nadelSiliconBay` bleibt                                                         |
+| hafen `inselfaehre` (neu, 53, 22), Dialog, Reise                        | Pelikaninsel (N4, Kennung bei Bau)                                       | S6: nach der Nadel von Silicon Bay dauerhaft offen (13 §4, Befund 16)                                                                         |
 
 Änderungen in `orte.json` für den Haupt-Chat: neue Karte `siliconBay.hafen` mit `campus`, `faehre`
 (umgezogen), `inselfaehre`; neuer Auslöser `hafen` auf `siliconBay.aussen`; `busIronwood` entfällt

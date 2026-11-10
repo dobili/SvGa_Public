@@ -33,8 +33,8 @@
     "#......................................................................#",
     "#......................................................................#",
     "#......................................................................#",
-    "#ggggggggggggggggggggggggggggggggggggggggggggggggggggggggggggggggggggggg",
-    "#ggggggggggggggggggggggggggggggggggggggggggggggggggggggggggggggggggggggg",
+    "gggggggggggggggggggggggggggggggggggggggggggggggggggggggggggggggggggggggg",
+    "gggggggggggggggggggggggggggggggggggggggggggggggggggggggggggggggggggggggg",
     "#ssssssssssssssssssssssssssssssssssssssssssssssssssssssssssssssssssssss#",
     "#ssssssssssssssssssssssssssssssssssssssssssssssssssssssssssssssssssssss#",
     "#ssssssssssssssssssssssssssssssssssssssssssssssssssssssssssssssssssssss#",
@@ -765,6 +765,14 @@
     {
       "name": "hafen",
       "feld": [35, 59]
+    },
+    {
+      "name": "altstadt",
+      "feld": [0, 21]
+    },
+    {
+      "name": "altstadt",
+      "feld": [0, 22]
     }
   ],
   "figuren": [

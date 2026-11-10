@@ -140,3 +140,7 @@ Die übrigen Akt-1-Punkte (Maple Falls, Weg 1, Cedar Creek) hat niedrig-1 ebenfa
 ### `wegRivertonIronwood.bruecke` (Wahl A)
 
 - Bisher keine Notiz.
+
+### `wegRivertonIronwood.kanalweg` (Wahl A)
+
+- Bisher keine Notiz.

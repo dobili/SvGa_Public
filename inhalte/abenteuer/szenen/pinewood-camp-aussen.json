@@ -2,14 +2,15 @@
   "karte": "pinewoodCamp.aussen",
   "datei": "karten/pinewood-camp-aussen.json",
   "art": "aussen",
-  "beschreibung": "Variante C: großer Feuerplatz mitten auf einer Wiese mit Blumen, zwei Stege, viele Zelte in einer Reihe, Picknicktische am Strand, dichter Wald am Rand.",
+  "beschreibung": "Pinewood Camp am See: Vom Nordrand kommt der Weg aus Crossroads zwischen Mammutbäumen herein. Oben eine Reihe Blockhütten, links Zelte und die Schutzhütte, in der Mitte der runde Lagerfeuerplatz aus Erde mit Baumstämmen als Sitzen, daneben Fahnenmast, Kiosk und Rangerhaus; das Waschhaus ist eine Blockhütte wie die übrigen. Unten ein Sandstrand mit einer kleinen Bucht, zwei Stegen, Kanus und dem Bootsschuppen am Ufer; Bänke am Strand, Tannen am Rand.",
   "boden": "gras",
   "wandart": "hecke",
   "boeden": {
     "e": "erde",
     "d": "sand",
     "p": "pflaster",
-    "h": "dielen"
+    "h": "dielen",
+    "f": "sandplatz"
   },
   "bruecken": ["h"],
   "raster": [
@@ -25,14 +26,14 @@
     "#..................eeeeeeeeeeeeeeeeeeeeeeeeeeeeeeeeeeeeeee.#",
     "#..................eeeeeeeeeeeeeeeeeeeeeeeeeeeeeeeeeeeeeee.#",
     "#..................ee......................................#",
-    "#..................ee...dddddd.............................#",
-    "#......................dddddddd............................#",
-    "#.....................dddddddddd...........................#",
-    "#.....................dddddddddd...........................#",
-    "#.....................dddddddddd...........................#",
-    "#.....................dddddddddd...........................#",
-    "#......................dddddddd............................#",
-    "#.......................ddeedd.............................#",
+    "#..................ee....fffff.............................#",
+    "#......................fffffffff...........................#",
+    "#.....................fffffffffff..........................#",
+    "#.....................fffffffffff..........................#",
+    "#.....................fffffffffff..........................#",
+    "#.....................fffffffffff..........................#",
+    "#......................fffffffff...........................#",
+    "#........................fffff.............................#",
     "#.........................ee...............................#",
     "#.........................ee...............................#",
     "#.........................ee...............................#",
@@ -42,10 +43,10 @@
     "#...........................................ee.............#",
     "#...........................................ee.............#",
     "#...........................................ee.............#",
-    "#.............dddddddd.............dddddddddee..........ddd#",
-    "#dddddd....ddddddddddddddddd.....dddddddddddeeddd......dddd#",
-    "#ddddddddddddd~~~~~~~~ddddddddddddd~~~~~~~~~dddddddddddd~~~~",
-    "~~~~~~~dddd~hh~~~~~~~~~~~~~~ddddd~~~~~~~~~~~hh~~~dddddd~~~~~",
+    "#...........................................ee.............#",
+    "#dddddddddddddddddddddddddddddddddddddddddddeeddddddddddddd#",
+    "#ddddddddddddddd~~~~~~ddddddddddddddddddddddeeddddddddddddd~",
+    "~~~~~~~~~~~~hh~~~~~~~~~~~~~ddddddd~~~~~~~~~~hh~~~~~~~~~~~~~~",
     "~~~~~~~~~~~~hh~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~hh~~~~~~~~~~~~~~",
     "~~~~~~~~~~~~hh~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~hh~~~~~~~~~~~~~~",
     "~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~",
@@ -154,24 +155,12 @@
       "feld": [40, 18]
     },
     {
-      "moebel": "cp8Waschhaus",
-      "feld": [47, 19]
-    },
-    {
       "moebel": "cc4Bootsschuppen",
-      "feld": [56, 20]
-    },
-    {
-      "moebel": "cp8Schuppen",
-      "feld": [52, 3]
+      "feld": [50, 26]
     },
     {
       "moebel": "cp7Schutzhuette",
       "feld": [1, 17]
-    },
-    {
-      "moebel": "cp8WohnwagenKlein",
-      "feld": [9, 18]
     },
     {
       "moebel": "rv5Pavillon",
@@ -344,6 +333,27 @@
     {
       "moebel": "wg4BlumeGelb",
       "feld": [28, 38]
+    },
+    {
+      "moebel": "pw7Campbude",
+      "feld": [51, 4]
+    },
+    {
+      "moebel": "pw7Campbude",
+      "feld": [47, 18],
+      "id": "waschhaus"
+    },
+    {
+      "moebel": "pw7Tanne",
+      "feld": [10, 18]
+    },
+    {
+      "moebel": "pw7Kiefer",
+      "feld": [13, 19]
+    },
+    {
+      "moebel": "pw7Campbude",
+      "feld": [52, 10]
     }
   ],
   "ausloeser": [

@@ -1,5 +1,35 @@
 {
   "moebel": {
+    "n9Fernrohr": {
+      "quelle": "spiel/eigene/fernrohr.png",
+      "breite": 48,
+      "hoehe": 64,
+      "kollision": true,
+      "art": "geraet",
+      "blick": "unten",
+      "zustand": "alt",
+      "stil": "klassisch"
+    },
+    "n9Beobachterstuhl": {
+      "quelle": "spiel/eigene/beobachterstuhl.png",
+      "breite": 16,
+      "hoehe": 32,
+      "kollision": true,
+      "art": "stuhl",
+      "blick": "unten",
+      "zustand": "alt",
+      "stil": "klassisch"
+    },
+    "n9Sternatlas": {
+      "quelle": "spiel/eigene/sternatlas_tisch.png",
+      "breite": 32,
+      "hoehe": 32,
+      "kollision": true,
+      "art": "tisch",
+      "blick": "unten",
+      "zustand": "alt",
+      "stil": "klassisch"
+    },
     "n5Sternwarte": {
       "quelle": "spiel/eigene/sternwarte_aussen.png",
       "breite": 112,

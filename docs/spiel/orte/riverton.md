@@ -1520,3 +1520,12 @@ Gutachter sah noch den Frachtkahn 6 × 3. Seit 3e2bf4af misst der Kahn 24 × 5, 
   sind Wiese statt orange Platzhalter (`"hochflaeche": "gras"`); Graffiti-Turm am steinernen
   Brückenkopf statt der freien Mauer; Gatter in den Weiden; sechs Brückenbauer sitzen an den
   Klapptischen. Nicht umgesetzt: **Brücke flach** – Draufsicht.
+
+### Eisenbrücke mit Höhe (Gemini-Bild, 10.11.2026, mittel-4)
+
+Das Bild `eisenbruecke_hoch` zeigt die Brücke von der Seite mit steinernen Pfeilern und Höhe. Es
+überspannt deshalb den Nord-Süd-Arm des Kanals kurz vor der Biegung (Reihen 48–53); der Pfad quert dort
+nach Osten und führt am Ostufer hinunter zum Kai. Die alte flache Querung über den Westarm entfällt,
+die Auslöser auf der Brücke (Nietenkopf, Zeitnot-Trick, Aussicht) und der Brückenwärter sind
+mitgezogen, der Graffiti-Turm steht am östlichen Pfeiler. Damit ist der Befund „Brücke flach, kein
+Kahn käme darunter durch“ erledigt.

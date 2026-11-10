@@ -66,15 +66,31 @@ def wellenbild(art: dict, feld: list[int], x: int, y: int) -> str | None:
     return wellen["bilder"][(x * 13 + y * 7) % len(wellen["bilder"])]
 
 
-def flaechen(zeilen: list[str]) -> dict[tuple[int, int], str]:
-    """Wandflächen: die zwei Wandkacheln direkt über einem Boden werden Fläche (oben, unten)."""
+def flaechen(zeilen: list[str], innen: bool = False) -> dict[tuple[int, int], str]:
+    """Wandflächen: die zwei Wandkacheln direkt über einem Boden werden Fläche (oben, unten).
+
+    Innen (``innen``) nur, wo die Wand seitlich an Wand anschließt: Eine einzelne Wandsäule über
+    einem Durchgang in einer Nord-Süd-Wand bleibt Krone. Warum: Sonst steckt mitten in der von oben
+    gesehenen Trennwand ein Stück Wandfläche mit Fußleiste über dem Durchgang (Gutachten Runde 8,
+    Punkt f: Diner zwischen Küche und Lager, Wohnzimmer zur Küche).
+    Beispiel: Boden (24, 5), Wand (24, 4) und (24, 3), daneben Boden bei (23, 4) und (25, 4) → keine
+    Fläche, die Wand läuft als Krone bis an den Durchgang.
+    """
     flaeche = {}
     for y in range(2, len(zeilen)):
         for x, z in enumerate(zeilen[y]):
-            if z not in GESPERRT and zeilen[y - 1][x] == WAND and zeilen[y - 2][x] == WAND:
-                flaeche[(x, y - 1)] = "unten"
-                flaeche[(x, y - 2)] = "oben"
+            if z in GESPERRT or zeilen[y - 1][x] != WAND or zeilen[y - 2][x] != WAND:
+                continue
+            if innen and not _seitlich_wand(zeilen, x, y - 1):
+                continue
+            flaeche[(x, y - 1)] = "unten"
+            flaeche[(x, y - 2)] = "oben"
     return flaeche
+
+
+def _seitlich_wand(zeilen: list[str], x: int, y: int) -> bool:
+    """Ob links oder rechts von (x, y) eine Wand steht (Kartenrand zählt als Wand)."""
+    return any(not 0 <= nx < len(zeilen[y]) or zeilen[y][nx] == WAND for nx in (x - 1, x + 1))
 
 
 def hintergrund(szene: dict, privat: Path, gezeichnet: dict | None = None) -> Image.Image:
@@ -98,7 +114,7 @@ def hintergrund(szene: dict, privat: Path, gezeichnet: dict | None = None) -> Im
     ufer = f"wasser_{szene['ufer']}" if szene.get("ufer") else "wasser"
     # Wandstile mit eigener Krone (Fels, Damm) zeichnen ihre Flächen auch draußen neben „wandart“:
     # Der Rand bleibt dann Boden, nur „#“ über einem Boden wird Hang oder Felswand (10.45).
-    flaeche = flaechen(zeilen) if not wandart or "krone" in wand else {}
+    flaeche = flaechen(zeilen, szene.get("art") == "innen") if not wandart or "krone" in wand else {}
     # Felskanten aus LimeZus Klippenkacheln (Szene „kante“: „klippe“, pipeline/abenteuer/klippe.py).
     klippe = szene.get("kante") == "klippe"
     gras = grasboden(szene)

@@ -568,7 +568,7 @@ mit Vorsilbe `mf6` in `moebel/maple-falls.json`. Bühnenbild:
   am Weg oder Gehweg, ohne Kollision (`vorn`), damit der schmale Gehweg frei bleibt.
 - **Bushaltestelle** (10.17): Wartehäuschen von hinten (Bus_Stop_2, 24–28 / 22–24), offen nach Norden
   zur Straße; davor eine Wartefläche aus Pflaster (23–29 / 19–21) am Gehweg; Auslöser
-  `bushaltestelle` (26, 21) unverändert direkt vor der offenen Seite.
+  `bushaltestelle` (23, 20) neben dem Wartehäuschen; seit Runde 8 steht es auf dem Pflaster an der Straße (24, 19), offen nach Norden (Bild `wartehaus_hinten`).
 - **Basketballplatz** (10.22): ganzer Platz mit Linien, Rand und zwei Körben (Basketball_Court_5,
   1–14 / 20–30); zwei Seitenbänke (15, 22) und (15, 26) mit Blick nach links zum Feld; Jo (Figur
   `skaterJo`) an der oberen Bank (16, 24).

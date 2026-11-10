@@ -320,7 +320,7 @@
       "stil": "modern"
     },
     "sb5Faehrhaus": {
-      "quelle": "modern-exteriors/Modern_Exteriors_16x16/ME_Theme_Sorter_16x16/17_Garden_Singles_16x16/ME_Singles_Garden_16x16_Blue_White_Wood_Storage.png",
+      "quelle": "spiel/eigene/gartenhaus_weiss.png",
       "breite": 48,
       "hoehe": 64,
       "kollision": true,
@@ -1377,7 +1377,7 @@
       "gebaeude": true
     },
     "sa8Eisenwaren": {
-      "quelle": "modern-exteriors/Modern_Exteriors_16x16/ME_Theme_Sorter_16x16/4_Generic_Building_Singles_16x16/ME_Singles_Generic_Building_16x16_Hardware_Store.png",
+      "quelle": "spiel/eigene/fassade_eisenwaren.png",
       "breite": 128,
       "hoehe": 144,
       "kollision": true,

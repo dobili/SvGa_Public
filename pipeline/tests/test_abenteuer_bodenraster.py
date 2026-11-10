@@ -43,3 +43,11 @@ def test_gras_zwischen_wasser_ist_keine_bruecke():
     zeilen = ["~~.", "~..", "~~."]
     assert not ueberbrueckt(zeilen, 1, 0, 0, 1)
     assert bodenfeld(WASSER_ART, zeilen, 1, 0) == [2, 2]
+
+
+def test_schattenkachel_nur_direkt_unter_der_wand():
+    """Room-Builder-Böden: Schattenreihe unter der Wand, sonst die gleichmäßige Kachel (Punkt e)."""
+    dielen = {"feld": [5, 13], "unter_wand": [5, 12]}
+    zeilen = ["####", "#..#", "#..#"]
+    assert bodenfeld(dielen, zeilen, 1, 1) == [5, 12]
+    assert bodenfeld(dielen, zeilen, 1, 2) == [5, 13]

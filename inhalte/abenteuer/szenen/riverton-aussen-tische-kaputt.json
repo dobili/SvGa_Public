@@ -9,67 +9,67 @@
     "p": "pflaster",
     "s": "asphalt",
     "e": "erde",
-    "t": "stein",
-    "h": "wasser",
-    "w": "wasser_stein"
+    "t": "schotter",
+    "g": "stein",
+    "h": "wasser"
   },
   "beschreibung": "Zustand: in Akt 3 (nach der Nadel von Ironwood): Der Winter hat zwei Bildschirmtische kaputtgemacht, ihre Laptops sind abgebaut; das Schild und der Absperrbock am Pavillon bleiben. Riverton an einem Herbsttag, auf dem Pflaster stehen noch Pfützen. Ganz oben die Bahnlinie mit Schotter und einer Hecke am Bahnzaun. Vom Westrand kommt der Fußweg vom Bahndamm an zwei Laternen vorbei und biegt in einem Bogen auf den Vorplatz. Darüber steht der Bahnhof aus rotem Backstein mit dem Uhrturm und dem Bogenportal, links das kleine Stellwerk, rechts der Güterschuppen mit Holzstapel an der Laderampe, ganz rechts der Wasserturm, aus dem früher die Dampfloks Wasser nahmen; ein Trampelpfad führt vom Gehweg hin. Auf dem gepflasterten Vorplatz ein Brunnen, der Wegweiser, Laternen und das Wartehäuschen der Buslinie. Die Water Street läuft quer durch die Stadt, Gehwege rundherum. Südlich der Straße die Häuser mit der Front zum Fluss: zwei schmale Reihenhäuser, der Handyladen mit Leuchtschild, der Markt mit zwei Ständen unter Markisen voller Obst- und Gemüsekörbe, ein Obstkarren und ein Pommeskarren, an jedem ein Verkäufer, die Bäckerei mit rotem Ziegeldach, das Café mit gestreifter Markise und zwei Lagerschuppen am Kai. Davor die Uferpromenade mit Bank und Laternen. Der Ashford River fließt vom West- zum Ostrand; die Steinbrücke mit Gehwegen führt hinüber in den Riverside-Park. Dort am Uferweg ganz im Westen Slicks Wohnwagen, Albescus Werkstatt und der Schuppen mit Vorhängeschloss, auf der Wiese die sechs Bildschirmtische (Picknicktische mit aufgeklappten Laptops), der Pavillon aus Holz mit Platz davor, das Pegelhaus und Bäume. Im Osten öffnet sich das Kanalbecken, der Kanal läuft nach Süden aus der Karte, daneben der Treidelpfad.",
   "raster": [
     "########################################################################",
     "#tttttttttttttttttttttttttttttttttttttttttttttttttttttttttttttttttttttt#",
     "#tttttttttttttttttttttttttttttttttttttttttttttttttttttttttttttttttttttt#",
-    "#.................eeppppppppppppppppppppppppppppppppppppppppppp........#",
-    "#.................eeppppppppppppppppppppppppppppppppp........pp........#",
-    "#.................eeppppppppppppppppppppppppppppppppp........pp........#",
-    "#.................ee...................................................#",
-    "#.................ee...................................................#",
+    "#.................eegggggggggggggggggggggggggggggggggpppppppppp........#",
+    "#.................eeggggggggggggggggggggggggggggggggg........pp........#",
+    "#.................eeggggggggggggggggggggggggggggggggg........pp........#",
+    "#.................eeggggggggggggggggggggggggggggggggg..................#",
+    "#................eeeggggggggggggggggggggggggggggggggg..................#",
     "eeeeeeeeeeeeeeeeeeee...................................................#",
     "eeeeeeeeeeeeeeeeeeee...................................................#",
-    "#...............................................................ee.....#",
-    "#...............................................................ee.....#",
-    "#...............................................................ee.....#",
-    "#...............................................................ee.....#",
-    "#......................................................pp.......ee.....#",
-    "#......................................................pp.......ee.....#",
+    "#..............ee...............................................ee.....#",
+    "#..............ee...............................................ee.....#",
+    "#..............ee...............................................ee.....#",
+    "#..............ee...............................................ee.....#",
+    "#..............ee.....................................ppp.......ee.....#",
+    "#..............ee.....................................ppp.......ee.....#",
+    "#.............ppppppppppp......................pppppppppppp.....ee.....#",
+    "#.............ppppppppppp......................pppppppppppp.....ee.....#",
     "#.............ppppppppppppppppppppppppppppppppppppppppppppp.....ee.....#",
     "#.............ppppppppppppppppppppppppppppppppppppppppppppp.....ee.....#",
     "#.............ppppppppppppppppppppppppppppppppppppppppppppp.....ee.....#",
     "#.............ppppppppppppppppppppppppppppppppppppppppppppp.....ee.....#",
-    "#.............ppppppppppppppppppppppppppppppppppppppppppppp.....ee.....#",
-    "#.............ppppppppppppppppppppppppppppppppppppppppppppppppppee.....#",
-    "#pppppppppppppppppppppppppppppppppppppppppppppppppppppppppppppppppppppp#",
+    "#gggggggggggggggggggggggggggggggggggggggggggggggggggggggggggggggggggggg#",
     "#ssssssssssssssssssssssssssssssssssssssssssssssssssssssssssssssssssssss#",
     "#ssssssssssssssssssssssssssssssssssssssssssssssssssssssssssssssssssssss#",
     "#ssssssssssssssssssssssssssssssssssssssssssssssssssssssssssssssssssssss#",
-    "#pppppppppppppppppppppppppppppppppppppppppppppppppppppppppppppppppppppp#",
-    "#.............ppppppppppppppppppppppppppppppppppppppppppppppppppppppppp#",
-    "#.............ppppppppppppppppppppppppppppppppppppppppppppppppppppppppp#",
-    "#.............ppppppppppppppppppppppppppppppppppppppppppppppppppppppppp#",
-    "#.............ppppppppppppppppppppppppppppppppppppppppppppppppppppppppp#",
-    "#.............ppppppppppppppppppppppppppppppppppppppppppppppppppppppppp#",
-    "#.............ppppppppppppppppppppppppppppppppppppppppppppppppppppppppp#",
-    "#.............ppppppppppppppppppppppppppppppppppppppppppppppppppppppppp#",
-    "#.............ppppppppppppppppppppppppppppppppppppppppppppppppppppppppp#",
-    "#.............ppppppppppppppppppppppppppppppppppppppppppppppppppppppppp#",
-    "#pppppppppppppppppppppppppppppppppppppppppppppppppppppppppppppppppppppp#",
-    "#pppppppppppppppppppppppppppppppppppppppppppppppppppppppppppppppppppppp#",
-    "#pppppppppppppppppppppppppppppppppppppppppppppppppppppppppppppppppppppp#",
+    "#gggggggggggggggggggggggggggggggggggggggggggggggggggggggggggggggggggggg#",
+    "#gggggggggggggpppppppppppppppppgggggggggggggggggggpppppssssssssssssssss#",
+    "#gggggggggggggpppppppppppppppppgggggggggggggggggggpppppssssssssssssssss#",
+    "#gggggggggggggpppppppppppppppppgggggggggggggggggggpppppssssssssssssssss#",
+    "#gggggggggggggpppppppppppppppppgggggggggggggggggggpppppssssssssssssssss#",
+    "#gggggggggggggpppppppppppppppppgggggggggggggggggggpppppssssssssssssssss#",
+    "#gggggggggggggpppppppppppppppppgggggggggggggggggggpppppssssssssssssssss#",
+    "#gggggggggggggpppppppppppppppppgggggggggggggggggggpppppssssssssssssssss#",
+    "#gggggggggggggpppppppppppppppppgggggggggggggggggggpppppssssssssssssssss#",
+    "#gggggggggggggpppppppppppppppppgggggggggggggggggggpppppssssssssssssssss#",
+    "#ggggggggggggggggggggggggggggggggggggggggggggggggggggggssssssssssssssss#",
+    "#ggggggggggggggggggggggggggggggggggggggggggggggggggggggssssssssssssssss#",
+    "#ggggggggggggggggggggggggggggggggggggggggggggggggggggggssssssssssssssss#",
     "#~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~hhhhh~~~~~~~~~~~~~~~~#",
     "#~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~hhhhh~~~~~~~~~~~~~~~~#",
     "#~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~hhhhh~~~~~~~~~~~~~~~~#",
     "#~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~hhhhh~~~~~~~~~~~~~~~~#",
     "#~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~hhhhh~~~~~~~~~~~~~~~~#",
-    "#eeeeeeeeeeeeeeeeeeeee~~~~~~~~~~~~~eeeeeeeeeeeeeepppppppeeepwwwwwwwww..#",
-    "#eeeeeeeeeeeeeeeeeeeeeeeeeeeeeeeeeeeeeeeeeeeeeeeepppppppeeepwwwwwwwww..#",
-    "#...................eeeeeeeeeeeeeeee..........ee.........eepwwwwwwwww..#",
-    "#...................ee........................ee.........eepwwwwwwwww..#",
-    "#...................ee........................ee.........eepwwwwwww....#",
-    "#...................ee........................ee.........eepwwwwwww....#",
-    "#...................ee........................ee.........eepwwwwwww....#",
-    "#...................ee..............ppppppppppee.........eepwwwwwww....#",
-    "#...................ee..............ppppppppppee.........eepwwwwwww....#",
-    "#eeeeeeeeeeeeeeeeeeeeeeeeeeeeeeeeeeeeeeeeeeeeeee.........eepwwwwwww....#",
-    "#eeeeeeeeeeeeeeeeeeeeeeeeeeeeeeeeeeeeeeeeeeeeeee.........eepwwwwwww....#",
+    "#eeeeeeeeeeeeeeeeeeeee~~~~~~~~~~~~~eeeeeeeeeeeeeepppppppeeee~~~~~~~~~..#",
+    "#eeeeeeeeeeeeeeeeeeeeeeeeeeeeeeeeeeeeeeeeeeeeeeeepppppppeeee~~~~~~~~~..#",
+    "#...................eeeeeeeeeeeeeeee..........ee.........eee~~~~~~~~~..#",
+    "#...................ee........................ee.........eee~~~~~~~~~..#",
+    "#...................ee........................ee.........eee~~~~~~~....#",
+    "#...................ee........................ee.........eee~~~~~~~....#",
+    "#...................ee........................ee.........eee~~~~~~~....#",
+    "#...................ee............ppppppppppppee.........eee~~~~~~~....#",
+    "#...................ee............ppppppppppppee.........eee~~~~~~~....#",
+    "#eeeeeeeeeeeeeeeeeeeeeeeeeeeeeeeeeeeeeeeeeeeeeee.........eee~~~~~~~....#",
+    "#eeeeeeeeeeeeeeeeeeeeeeeeeeeeeeeeeeeeeeeeeeeeeee.........eee~~~~~~~....#",
     "#########################################################ee#############"
   ],
   "objekte": [
@@ -469,8 +469,8 @@
       "bauteil_ok": true
     },
     {
-      "moebel": "rv5Stellwerk",
-      "feld": [11, 3]
+      "moebel": "rv8Stellwerk",
+      "feld": [11, 4]
     },
     {
       "moebel": "rv5Gueterschuppen",
@@ -486,50 +486,51 @@
       "bauteil_ok": true
     },
     {
-      "moebel": "cc4Bahnbank",
-      "feld": [23, 3]
+      "moebel": "rv8Bahnsteigbank",
+      "feld": [21, 4]
     },
     {
-      "moebel": "cc4Bahnbank",
-      "feld": [46, 3]
+      "moebel": "rv8Bahnsteigbank",
+      "feld": [50, 4]
     },
     {
       "moebel": "rv8Bahnhof",
-      "feld": [26, 6]
-    },
-    {
-      "moebel": "rv5Brunnen",
-      "feld": [24, 16]
-    },
-    {
-      "moebel": "cc5BankZumBach",
-      "feld": [22, 17]
-    },
-    {
-      "moebel": "mf9BankLinks",
-      "feld": [28, 17]
-    },
-    {
-      "moebel": "rvWegweiser",
-      "feld": [18, 20]
-    },
-    {
-      "moebel": "mfBushaltestelle",
-      "feld": [50, 19],
-      "vorn": true
-    },
-    {
-      "moebel": "sb8Condo44",
-      "feld": [58, 13]
-    },
-    {
-      "moebel": "rv8Infokiosk",
-      "feld": [45, 16]
+      "feld": [25, 3]
     },
     {
       "moebel": "mf4Laterne",
-      "feld": [17, 18],
+      "feld": [4, 4],
       "vorn": true
+    },
+    {
+      "moebel": "mf4Laterne",
+      "feld": [9, 4],
+      "vorn": true
+    },
+    {
+      "moebel": "rv5Brunnen",
+      "feld": [19, 17]
+    },
+    {
+      "moebel": "cc5BankZumBach",
+      "feld": [17, 18]
+    },
+    {
+      "moebel": "mf9BankLinks",
+      "feld": [23, 18]
+    },
+    {
+      "moebel": "rvWegweiser",
+      "feld": [15, 19]
+    },
+    {
+      "moebel": "mfBushaltestelle",
+      "feld": [53, 19],
+      "vorn": true
+    },
+    {
+      "moebel": "rv8Infokiosk",
+      "feld": [47, 16]
     },
     {
       "moebel": "mf4Laterne",
@@ -543,22 +544,22 @@
     },
     {
       "moebel": "mf4Laterne",
-      "feld": [56, 18],
+      "feld": [58, 18],
       "vorn": true
     },
     {
       "moebel": "mf4Laterne",
-      "feld": [12, 42],
+      "feld": [12, 44],
       "vorn": true
     },
     {
       "moebel": "mf4Laterne",
-      "feld": [34, 43],
+      "feld": [34, 45],
       "vorn": true
     },
     {
       "moebel": "mf4Laterne",
-      "feld": [56, 42],
+      "feld": [56, 44],
       "vorn": true
     },
     {
@@ -566,12 +567,12 @@
       "feld": [18, 47]
     },
     {
-      "moebel": "sa8Angelladen",
+      "moebel": "sa8LadenC",
       "feld": [1, 13]
     },
     {
-      "moebel": "sb8Condo51",
-      "feld": [8, 11]
+      "moebel": "sa8LadenD",
+      "feld": [8, 13]
     },
     {
       "moebel": "wg4Busch",
@@ -722,6 +723,26 @@
     {
       "moebel": "sb5Fass",
       "feld": [64, 37]
+    },
+    {
+      "moebel": "caKisten",
+      "feld": [57, 27]
+    },
+    {
+      "moebel": "caKisten",
+      "feld": [59, 27]
+    },
+    {
+      "moebel": "caKisten",
+      "feld": [61, 27]
+    },
+    {
+      "moebel": "caKisten",
+      "feld": [63, 27]
+    },
+    {
+      "moebel": "caKisten",
+      "feld": [65, 27]
     },
     {
       "moebel": "rv8Poller",
@@ -1088,84 +1109,75 @@
       "feld": [15, 49]
     },
     {
-      "moebel": "rv8Holzdach",
-      "feld": [22, 46],
-      "bauteil_ok": true
-    },
-    {
       "moebel": "rvPicknicktisch",
-      "feld": [22, 49],
-      "id": "bt10"
-    },
-    {
-      "moebel": "rvPicknicktisch",
-      "feld": [24, 49],
-      "id": "bt12"
+      "feld": [23, 47],
+      "id": "bt1"
     },
     {
       "moebel": "pd6Laptop",
-      "auf": "bt12"
-    },
-    {
-      "moebel": "rv8Holzdach",
-      "feld": [26, 46],
-      "bauteil_ok": true
+      "auf": "bt1"
     },
     {
       "moebel": "rvPicknicktisch",
-      "feld": [26, 49],
-      "id": "bt20"
+      "feld": [26, 47],
+      "id": "bt2"
     },
     {
       "moebel": "pd6Laptop",
-      "auf": "bt20"
+      "auf": "bt2"
     },
     {
       "moebel": "rvPicknicktisch",
-      "feld": [28, 49],
-      "id": "bt22"
+      "feld": [29, 47],
+      "id": "bt3"
     },
     {
       "moebel": "pd6Laptop",
-      "auf": "bt22"
-    },
-    {
-      "moebel": "rv8Holzdach",
-      "feld": [30, 46],
-      "bauteil_ok": true
+      "auf": "bt3"
     },
     {
       "moebel": "rvPicknicktisch",
-      "feld": [30, 49],
-      "id": "bt30"
+      "feld": [23, 50],
+      "id": "bt4"
     },
     {
       "moebel": "pd6Laptop",
-      "auf": "bt30"
+      "auf": "bt4"
     },
     {
       "moebel": "rvPicknicktisch",
-      "feld": [32, 49],
-      "id": "bt32"
+      "feld": [26, 50],
+      "id": "bt5"
     },
     {
-      "moebel": "rv8Holzdach",
-      "feld": [37, 46],
-      "bauteil_ok": true
-    },
-    {
-      "moebel": "rv8Holzdach",
-      "feld": [41, 46],
-      "bauteil_ok": true
+      "moebel": "pd6Laptop",
+      "auf": "bt5"
     },
     {
       "moebel": "rvPicknicktisch",
-      "feld": [34, 52],
+      "feld": [29, 50],
+      "id": "bt6"
+    },
+    {
+      "moebel": "pd6Laptop",
+      "auf": "bt6"
+    },
+    {
+      "moebel": "rv8Pavillon",
+      "feld": [34, 47]
+    },
+    {
+      "moebel": "rvPicknicktisch",
+      "feld": [32, 52],
       "id": "schachtisch"
     },
     {
       "moebel": "rv5Brett",
       "auf": "schachtisch"
+    },
+    {
+      "moebel": "sb8Kreidespringer",
+      "feld": [40, 52]
     },
     {
       "moebel": "rvLaubbaumDunkel",
@@ -1178,10 +1190,6 @@
     {
       "moebel": "wg4Busch",
       "feld": [18, 51]
-    },
-    {
-      "moebel": "wg4Busch",
-      "feld": [44, 49]
     },
     {
       "moebel": "wg4Busch",
@@ -1205,18 +1213,18 @@
   "ausloeser": [
     {
       "name": "start",
-      "feld": [36, 17],
+      "feld": [36, 19],
       "eigenschaften": {
         "richtung": "unten"
       }
     },
     {
       "name": "bahnhof",
-      "feld": [36, 17]
+      "feld": [36, 19]
     },
     {
       "name": "bahnhofTuer",
-      "feld": [36, 16]
+      "feld": [36, 18]
     },
     {
       "name": "bahndamm",
@@ -1244,11 +1252,11 @@
     },
     {
       "name": "pavillonEingang",
-      "feld": [41, 51]
+      "feld": [40, 51]
     },
     {
       "name": "bildschirmtische",
-      "feld": [27, 51]
+      "feld": [28, 49]
     },
     {
       "name": "handyladen",
@@ -1270,21 +1278,21 @@
     },
     {
       "name": "nova",
-      "feld": [31, 18]
+      "feld": [28, 19]
     },
     {
       "name": "victor",
-      "feld": [44, 46]
+      "feld": [46, 46]
     }
   ],
   "belebung": [
     {
       "name": "pendler",
       "typ": "statist",
-      "feld": [20, 19],
+      "feld": [24, 20],
       "eigenschaften": {
-        "von": "20,19",
-        "bis": "35,17",
+        "von": "24,20",
+        "bis": "35,19",
         "tun": "eilt mit Schirm zum Zug",
         "wann": "morgen",
         "sagt": "statist.riverton.aussen.pendler"
@@ -1293,10 +1301,10 @@
     {
       "name": "parkschachspieler",
       "typ": "statist",
-      "feld": [35, 54],
+      "feld": [33, 54],
       "eigenschaften": {
-        "von": "35,54",
-        "bis": "35,54",
+        "von": "33,54",
+        "bis": "33,54",
         "tun": "klopft am Picknicktisch auf die Schachuhr",
         "wann": "tag",
         "sagt": "statist.riverton.aussen.parkschachspieler",
@@ -1330,10 +1338,10 @@
     {
       "name": "uhrmacher",
       "typ": "statist",
-      "feld": [33, 17],
+      "feld": [34, 18],
       "eigenschaften": {
-        "von": "33,17",
-        "bis": "33,17",
+        "von": "34,18",
+        "bis": "34,18",
         "tun": "steht unter der Bahnhofsuhr und prüft seine Taschenuhr",
         "wann": "tag",
         "sagt": "statist.riverton.aussen.uhrmacher"
@@ -1366,10 +1374,10 @@
     {
       "name": "kreidekinder",
       "typ": "statist",
-      "feld": [38, 53],
+      "feld": [41, 52],
       "eigenschaften": {
-        "von": "38,53",
-        "bis": "38,53",
+        "von": "41,52",
+        "bis": "41,52",
         "tun": "malen ein Brett mit Kreide auf den Weg",
         "wann": "tag"
       }
@@ -1388,9 +1396,9 @@
     {
       "name": "tauben",
       "typ": "tier",
-      "feld": [26, 19],
+      "feld": [26, 20],
       "eigenschaften": {
-        "von": "22,19",
+        "von": "24,19",
         "bis": "30,21",
         "verhalten": "fliegen"
       }
@@ -1471,6 +1479,7 @@
   ],
   "zustand": ["neu", "gebraucht", "alt"],
   "stil": [
+    "einfach",
     "industrie",
     "klassisch",
     "laendlich",
@@ -1479,5 +1488,6 @@
     "natur",
     "rustikal"
   ],
+  "ufer": "stein",
   "zustand_der_karte": "slickAbschiedGesehen und nadelIronwood >= 1"
 }

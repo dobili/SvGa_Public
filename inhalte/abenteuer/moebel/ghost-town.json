@@ -758,6 +758,14 @@
       "blick": "unten",
       "stil": "rustikal",
       "zustand": "verwittert"
+    },
+    "gt9StollenOffen": {
+      "quelle": "spiel/eigene/stollen_eingang_offen.png",
+      "breite": 64,
+      "hoehe": 64,
+      "kollision": true,
+      "stil": "rustikal",
+      "zustand": "verwittert"
     }
   }
 }

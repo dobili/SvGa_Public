@@ -13,6 +13,12 @@ Bilder (in ``spiel/eigene/``, Breite × Höhe in Pixeln):
   (Tankstelle Weg 10: „sieht nicht verlassen aus, sauber“). Flach, ohne Kollision.
 - ``spinnennetz_ecke.png`` (16 × 16): Spinnennetz für die obere Ecke einer Wand, links oben
   angeschlagen (rechts oben gespiegelt verwenden).
+- ``stollen_eingang_offen.png`` (64 × 64): ``stollen_eingang.png`` ohne Bretter und rotes Kreuz, die
+  Öffnung dunkel mit dem Gleis, das hineinführt. Zustand ``mine-offen`` von Ghost Town (Sperre S11:
+  nach Pruitts Geschichte ist die Goldmine offen).
+- ``vogelscheuche_morphy.png`` (48 × 48): die Vogelscheuche aus Modern Farm mit schwarzem Zylinder und
+  einem Schachbrettflicken auf der Brust: „Morphy“ im Maisirrgarten des Kürbishofs muss als solche zu
+  erkennen sein (Paul Morphy trug Zylinder).
 
 Aufruf: python niedrig1_runde9_karten.py /home/user/schach-abenteuer-inhalte
 """
@@ -99,12 +105,64 @@ def spinnennetz_ecke() -> Image.Image:
     return bild
 
 
+STOLLEN = "spiel/eigene/stollen_eingang.png"
+OEFFNUNG = (22, 23, 41, 50)  # links, oben, rechts, unten der Öffnung zwischen den Türstöcken
+DUNKEL_OBEN = (18, 14, 14, 255)
+DUNKEL_UNTEN = (52, 40, 34, 255)
+SCHIENE = (120, 124, 140, 255)
+SCHWELLE = (96, 70, 52, 255)
+
+
+def stollen_eingang_offen(haupt: Path) -> Image.Image:
+    """Stolleneingang ohne Absperrung: Die Öffnung zwischen den Türstöcken wird von oben nach unten
+    dunkel (Verlauf), darin laufen Schwellen und zwei Schienen in die Tiefe; Rahmen und Fels bleiben."""
+    bild = Image.open(haupt / STOLLEN).convert("RGBA")
+    z = ImageDraw.Draw(bild)
+    x0, y0, x1, y1 = OEFFNUNG
+    for y in range(y0, y1 + 1):
+        a = (y - y0) / (y1 - y0)
+        farbe = tuple(int(o + (u - o) * a) for o, u in zip(DUNKEL_OBEN, DUNKEL_UNTEN, strict=False))
+        z.line((x0, y, x1, y), fill=farbe)
+    mitte = (x0 + x1) // 2
+    for y in range(y1, y0 + 8, -4):
+        breite = 3 + (y - y0) // 6
+        z.line((mitte - breite - 1, y, mitte + breite + 1, y), fill=SCHWELLE)
+    z.line((mitte - 3, y0 + 8, mitte - 7, y1), fill=SCHIENE)
+    z.line((mitte + 3, y0 + 8, mitte + 7, y1), fill=SCHIENE)
+    return bild
+
+
+VOGELSCHEUCHE = "modern-farm/Single_Files_16x16/0_Complete_Tileset_Singles_16x16/Scarecrow_16x16.png"
+ZYLINDER = (30, 28, 36, 255)
+ZYLINDER_HELL = (70, 66, 80, 255)
+HUTBAND = (150, 40, 40, 255)
+FELD_HELL = (236, 230, 210, 255)
+
+
+def vogelscheuche_morphy(haupt: Path) -> Image.Image:
+    """Vogelscheuche mit Zylinder statt Schlapphut und einem Flicken aus 4 × 4 Schachfeldern auf der
+    Brust. Der Zylinder sitzt auf dem Kopf (Krempe über dem alten Hut), mit rotem Band."""
+    bild = Image.open(haupt / VOGELSCHEUCHE).convert("RGBA")
+    z = ImageDraw.Draw(bild)
+    z.rectangle((17, 1, 30, 12), fill=ZYLINDER)
+    z.line((18, 2, 18, 11), fill=ZYLINDER_HELL)
+    z.rectangle((17, 10, 30, 11), fill=HUTBAND)
+    z.rectangle((13, 12, 34, 14), fill=ZYLINDER)
+    for i in range(4):
+        for j in range(4):
+            farbe = FELD_HELL if (i + j) % 2 == 0 else ZYLINDER
+            z.rectangle((19 + 2 * i, 22 + 2 * j, 20 + 2 * i, 23 + 2 * j), fill=farbe)
+    return bild
+
+
 def main(haupt: Path) -> None:
     ziel = haupt / "spiel" / "eigene"
     fenster_nacht(haupt).save(ziel / "fenster_nacht.png")
     tisch_rund_dunkel(haupt).save(ziel / "tisch_rund_dunkel.png")
     staub_boden().save(ziel / "staub_boden.png")
     spinnennetz_ecke().save(ziel / "spinnennetz_ecke.png")
+    stollen_eingang_offen(haupt).save(ziel / "stollen_eingang_offen.png")
+    vogelscheuche_morphy(haupt).save(ziel / "vogelscheuche_morphy.png")
 
 
 if __name__ == "__main__":

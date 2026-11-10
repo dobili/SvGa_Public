@@ -46,6 +46,9 @@ Szene heißt die Datei in `inhalte/abenteuer/szenen/` ohne `.json`.
 - [ ] maple-falls-aussen, maple-falls-park, cedar-creek-aussen (zweite Prüfung, niedrig-1)
 - [ ] weg-maple-cedar-flussweg, -landstrasse, -zedernpfad (zweite Prüfung, niedrig-1; eine Datei `weg-maple-cedar-2.md`)
 - [ ] Zustände aus Runde 8 (`python -m pipeline.abenteuer.zustaende`): je Grundkarte eine kurze Prüfung, ob der Zustand zur Beschreibung „Zustand: …“ passt; eine Datei `zustaende-runde8.md`
+- [ ] ghost-town-aussen (Runde 9, niedrig-1, mit Zustand mine-offen), ghost-town-saloon, goldmine-stollen
+- [ ] erinnerung-siedlung-huette, erinnerung-london-kaffeehaus, erinnerung-london-strand (Runde 9, niedrig-1; Sepia aus der Tönung, im Vorschaubild nicht zu sehen)
+- [ ] kuerbishof-hof, weg-pinewood-ghost-tankstelle (Runde 9, niedrig-1)
 
 ## Erledigt
 

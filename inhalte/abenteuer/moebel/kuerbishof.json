@@ -232,6 +232,25 @@
       "art": "kiste",
       "zustand": "gebraucht",
       "stil": "laendlich"
+    },
+    "n9MaisWand": {
+      "quelle": "modern-farm/Single_Files_16x16/Crops_16x16/Crop_Corn_Ripe_16x16.png",
+      "breite": 16,
+      "hoehe": 32,
+      "kollision": true,
+      "art": "feldfrucht",
+      "zustand": "neu",
+      "stil": "natur"
+    },
+    "n9VogelscheucheMorphy": {
+      "quelle": "spiel/eigene/vogelscheuche_morphy.png",
+      "breite": 48,
+      "hoehe": 48,
+      "kollision": true,
+      "art": "deko",
+      "blick": "unten",
+      "zustand": "alt",
+      "stil": "rustikal"
     }
   }
 }

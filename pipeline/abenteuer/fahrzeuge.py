@@ -27,7 +27,8 @@ ANSICHTEN = (
     (re.compile(r"Vehicles_16x16_(Car|Bus|Camper|Ambulance)_(Up|Down)_\d"), LAENGS),
     (re.compile(r"Tractor_(Left|Right)_Side"), SEITE),
     (re.compile(r"Tractor_(Front|Back)_Side"), LAENGS),
-    (re.compile(r"spiel/eigene/(lkw_(links|rechts)|sattelzug)_"), SEITE),
+    (re.compile(r"spiel/eigene/(sattelzug|lastwagen|lieferwagen)_(vorn|hinten)"), LAENGS),
+    (re.compile(r"spiel/eigene/(lkw|sattelzug|lieferwagen|bagger)_(links|rechts|rot|blau)"), SEITE),
     (re.compile(r"Vehicles_16x16_(Ice_Cream_Truck|Tacos_Truck)_\d"), SEITE),
 )
 # Beläge, auf denen gefahren wird (Markierungen zählen zur Fahrbahn).
@@ -78,6 +79,20 @@ def fahrbahnrichtung(zeilen: list[str], fahrbahn: set[str], x: int, y: int) -> s
     if hoch >= EINDEUTIG * quer:
         return LAENGS
     return None
+
+
+def _buchtrichtung(szene: dict, zeilen: list[str], x: int, y: int) -> str | None:
+    """Richtung, in der ein Fahrzeug auf einem Platz mit gezeichneten Buchten steht, sonst None.
+
+    ``buchten`` (Linien von West nach Ost) → „seite“; ``buchten_laengs`` (Linien von Nord nach
+    Süd) → „laengs“. Beispiel: Fernfahrerplatz am Diner, 32 × 12 Felder mit ``buchten_laengs``:
+    Die Sattelzüge von vorn stehen richtig, obwohl der Platz breiter als tief ist.
+    """
+    if not (0 <= y < len(zeilen) and 0 <= x < len(zeilen[0])):
+        return None
+    if zeilen[y][x] in szene.get("buchten_laengs", {}):
+        return LAENGS
+    return SEITE if zeilen[y][x] in szene.get("buchten", {}) else None
 
 
 def linienrichtung(quelle: str) -> str | None:
@@ -132,7 +147,7 @@ def fahrzeughinweise(szene: dict, zeilen: list[str], gesetzt: list[dict], moebel
         # Eine halbe Kachel über der Unterkante: Dort stehen die Räder; ein Feinschub von wenigen
         # Pixeln schiebt die Unterkante sonst in die Reihe unter der Fahrbahn (Raststätte).
         x, y = (s["x"] + s["breite"] // 2) // K, (s["y"] + s["hoehe"] - 1 - K // 2) // K
-        bahn = fahrbahnrichtung(zeilen, fahrbahn, x, y)
+        bahn = _buchtrichtung(szene, zeilen, x, y) or fahrbahnrichtung(zeilen, fahrbahn, x, y)
         if bahn is not None and bahn != art:
             hinweise.append(
                 f"{s['name']} ({WORT[art]} gezeichnet) steht bei ({x}, {y}) auf einer Fahrbahn "

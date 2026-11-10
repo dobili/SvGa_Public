@@ -29,8 +29,8 @@ def test_jeder_stamm_zeigt_auf_eine_art_mit_bild():
 def test_vorschau_findet_dieselben_arten():
     from pipeline.abenteuer.belebungsvorschau import tierart
 
-    erwartet = {"moewen": "moewe", "specht": "kraehe", "wuestenfuchs": "hund", "praeriehunde": "hase"}
-    erwartet |= {"schwan": "gans", "enten": "ente", "eidechse": None}
+    erwartet = {"moewen": "moewe", "specht": "kraehe", "wuestenfuchs": "fuchs", "praeriehunde": "hase"}
+    erwartet |= {"schwan": "gans", "enten": "ente", "eidechse": None, "pony": "pferd", "kojote": "kojote"}
     assert {n: tierart(n) for n in erwartet} == erwartet
 
 

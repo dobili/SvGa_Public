@@ -326,6 +326,14 @@
     {
       "moebel": "wds6KaktusKlein",
       "feld": [78, 3]
+    },
+    {
+      "moebel": "tier12SchimmelGrast",
+      "feld": [66, 15]
+    },
+    {
+      "moebel": "tier12PferdGrast",
+      "feld": [61, 19]
     }
   ],
   "ausloeser": [

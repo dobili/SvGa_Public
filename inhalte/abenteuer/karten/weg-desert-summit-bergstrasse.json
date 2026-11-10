@@ -15772,8 +15772,8 @@
      "id": 10,
      "name": "spurPM4",
      "type": "ausloeser",
-     "x": 240,
-     "y": 1520,
+     "x": 288,
+     "y": 1504,
      "width": 16,
      "height": 16,
      "rotation": 0,
@@ -16233,8 +16233,8 @@
      "id": 28,
      "name": "parkbank",
      "type": "moebel",
-     "x": 320,
-     "y": 1408,
+     "x": 192,
+     "y": 1456,
      "width": 32,
      "height": 32,
      "rotation": 0,
@@ -16243,7 +16243,7 @@
       {
        "name": "tiefe",
        "type": "int",
-       "value": 1432
+       "value": 1480
       },
       {
        "name": "kollision",
@@ -18945,12 +18945,12 @@
     },
     {
      "id": 146,
-     "name": "wds6SattelzugBlau",
+     "name": "fz12LastwagenHinten",
      "type": "moebel",
-     "x": 176,
-     "y": 1440,
-     "width": 160,
-     "height": 64,
+     "x": 280,
+     "y": 1360,
+     "width": 48,
+     "height": 144,
      "rotation": 0,
      "visible": true,
      "properties": [

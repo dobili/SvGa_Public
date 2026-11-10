@@ -143,3 +143,4 @@ Szene heißt die Datei in `inhalte/abenteuer/szenen/` ohne `.json`.
 - [x] hochebene-schule (+ vor-diplom), ironwood-aussen-vermietet: Busse in Vorderansicht nach 10.65 (mittel-4) → `mittel-4-busse.md`
 
 - [ ] weg-desert-summit-diner (+ neon): Tür des Hinterzimmers am Diner; hochebene-schule (+ vor-diplom): Bucht mit Randlinie (mittel-4)
+- [ ] weg-desert-summit-diner (+ neon), weg-desert-summit-bergstrasse, hochebene-felsentuerme: Lastwagen von vorn und hinten in Buchten, Pferde auf der Koppel (Gemini Teil 2, mittel-4)

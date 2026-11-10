@@ -2,7 +2,7 @@
   "karte": "siliconBay.aussen",
   "datei": "karten/silicon-bay-aussen.json",
   "art": "aussen",
-  "beschreibung": "Silicon Bay, der Campus am Morgen: Glas, Licht und Bildschirme. Oben die Gebäudezeile: links der Konzernturm von Perfect Move, in der Mitte die Akademie, rechts das Hotel Bayview, daneben Werbetafeln, auf denen ZERO wirbt. Davor der helle Gehweg, der Boulevard mit der Straßenbahn, die links aus dem Tunnel kommt und rechts am Prellbock der Endhaltestelle hält (die Gleise liegen offen im Pflaster), und der Gehweg Süd. Rechts kommt man über die Glasbrücke an. Unten der Platz mit dem Brunnen, an der Südkante die Brüstung über dem Hafen; nur die Treppe in der Mitte führt hinunter. Variante C, die belebte: das Hotel ist ein flaches Glashaus mit Dachterrasse, das Innovation Lab ein Gewächshaus aus Glas links; über den Platz zieht ein Wochenmarkt, dahinter zwei Baumreihen, rechts Brunnen mit Bänken und Kaffeekiosk.",
+  "beschreibung": "Silicon Bay, der Campus am Morgen: Glas, Licht und Bildschirme. Oben die Gebäudezeile: links der Konzernturm von Perfect Move, in der Mitte die Akademie, rechts das Hotel Bayview, daneben Werbetafeln, auf denen ZERO wirbt. Davor der helle Gehweg, der Boulevard mit der Straßenbahn, die links aus dem Tunnel kommt und rechts am Prellbock der Endhaltestelle hält (die Gleise liegen offen im Pflaster), und der Gehweg Süd. Rechts kommt man über die Glasbrücke an. Unten der Platz mit dem Brunnen, an der Südkante die Brüstung über dem Hafen; nur die Treppe in der Mitte führt hinunter. die belebte: das Hotel ist ein flaches Glashaus mit Dachterrasse, das Innovation Lab ein Gewächshaus aus Glas links; über den Platz zieht ein Wochenmarkt, dahinter zwei Baumreihen, rechts Brunnen mit Bänken und Kaffeekiosk. Der Platz mit den Bäumen hat einen eigenen hellen Steinboden. Die Bahn steht auf den Gleisen, am Gleisende ein Prellbock. Die Marktstände tragen Obst und Gemüse, an ihnen stehen Marktfrau und Gemüsehändler; die Bänke am Wasserspiel schauen zu ihm. Unten die Ladenzeile: Fitnessstudio, Plattenladen, Modeladen, Spielzeugladen, Sportladen, Café, Musikladen, Eisdiele ein kleiner Supermarkt und ein Fahrradschuppen; links ein Infokiosk, oben rechts ein Wohnhaus hinter der Werbetafel; davor die Terrasse mit einer Hecke zum Hafen, in der Mitte die Treppe hinunter.",
   "boden": "pflaster",
   "wandart": "stein",
   "boeden": {
@@ -46,18 +46,18 @@
     "#......................................................................#",
     "#......................................................................#",
     "#......................................................................#",
-    "#......................................................................#",
-    "#......................................................................#",
-    "#......................................................................#",
-    "#......................................................................#",
-    "#......................................................................#",
-    "#......................................................................#",
-    "#......................................................................#",
-    "#......................................................................#",
-    "#......................................................................#",
-    "#......................................................................#",
-    "#......................................................................#",
-    "#......................................................................#",
+    "#..........ggggggggggggggggggggggggggggggggggggg.......................#",
+    "#..........ggggggggggggggggggggggggggggggggggggg.......................#",
+    "#..........ggggggggggggggggggggggggggggggggggggg.......................#",
+    "#..........ggggggggggggggggggggggggggggggggggggg.......................#",
+    "#..........ggggggggggggggggggggggggggggggggggggg.......................#",
+    "#..........ggggggggggggggggggggggggggggggggggggg.......................#",
+    "#..........ggggggggggggggggggggggggggggggggggggg.......................#",
+    "#..........ggggggggggggggggggggggggggggggggggggg.......................#",
+    "#..........ggggggggggggggggggggggggggggggggggggg.......................#",
+    "#..........ggggggggggggggggggggggggggggggggggggg.......................#",
+    "#..........ggggggggggggggggggggggggggggggggggggg.......................#",
+    "#..........ggggggggggggggggggggggggggggggggggggg.......................#",
     "#...............................gggg...................................#",
     "#...............................gggg...................................#",
     "#...............................gggg...................................#",
@@ -428,342 +428,8 @@
       "bauteil_ok": true
     },
     {
-      "moebel": "cc8Prellbock",
-      "feld": [66, 24]
-    },
-    {
-      "moebel": "sb5GlasLinks",
-      "feld": [1, 56],
-      "bauteil_ok": true
-    },
-    {
-      "moebel": "sb5GlasRechts",
-      "feld": [31, 56],
-      "bauteil_ok": true
-    },
-    {
-      "moebel": "sb5GlasMitte",
-      "feld": [2, 56],
-      "bauteil_ok": true
-    },
-    {
-      "moebel": "sb5GlasMitte",
-      "feld": [3, 56],
-      "bauteil_ok": true
-    },
-    {
-      "moebel": "sb5GlasMitte",
-      "feld": [4, 56],
-      "bauteil_ok": true
-    },
-    {
-      "moebel": "sb5GlasMitte",
-      "feld": [5, 56],
-      "bauteil_ok": true
-    },
-    {
-      "moebel": "sb5GlasMitte",
-      "feld": [6, 56],
-      "bauteil_ok": true
-    },
-    {
-      "moebel": "sb5GlasMitte",
-      "feld": [7, 56],
-      "bauteil_ok": true
-    },
-    {
-      "moebel": "sb5GlasMitte",
-      "feld": [8, 56],
-      "bauteil_ok": true
-    },
-    {
-      "moebel": "sb5GlasMitte",
-      "feld": [9, 56],
-      "bauteil_ok": true
-    },
-    {
-      "moebel": "sb5GlasMitte",
-      "feld": [10, 56],
-      "bauteil_ok": true
-    },
-    {
-      "moebel": "sb5GlasMitte",
-      "feld": [11, 56],
-      "bauteil_ok": true
-    },
-    {
-      "moebel": "sb5GlasMitte",
-      "feld": [12, 56],
-      "bauteil_ok": true
-    },
-    {
-      "moebel": "sb5GlasMitte",
-      "feld": [13, 56],
-      "bauteil_ok": true
-    },
-    {
-      "moebel": "sb5GlasMitte",
-      "feld": [14, 56],
-      "bauteil_ok": true
-    },
-    {
-      "moebel": "sb5GlasMitte",
-      "feld": [15, 56],
-      "bauteil_ok": true
-    },
-    {
-      "moebel": "sb5GlasMitte",
-      "feld": [16, 56],
-      "bauteil_ok": true
-    },
-    {
-      "moebel": "sb5GlasMitte",
-      "feld": [17, 56],
-      "bauteil_ok": true
-    },
-    {
-      "moebel": "sb5GlasMitte",
-      "feld": [18, 56],
-      "bauteil_ok": true
-    },
-    {
-      "moebel": "sb5GlasMitte",
-      "feld": [19, 56],
-      "bauteil_ok": true
-    },
-    {
-      "moebel": "sb5GlasMitte",
-      "feld": [20, 56],
-      "bauteil_ok": true
-    },
-    {
-      "moebel": "sb5GlasMitte",
-      "feld": [21, 56],
-      "bauteil_ok": true
-    },
-    {
-      "moebel": "sb5GlasMitte",
-      "feld": [22, 56],
-      "bauteil_ok": true
-    },
-    {
-      "moebel": "sb5GlasMitte",
-      "feld": [23, 56],
-      "bauteil_ok": true
-    },
-    {
-      "moebel": "sb5GlasMitte",
-      "feld": [24, 56],
-      "bauteil_ok": true
-    },
-    {
-      "moebel": "sb5GlasMitte",
-      "feld": [25, 56],
-      "bauteil_ok": true
-    },
-    {
-      "moebel": "sb5GlasMitte",
-      "feld": [26, 56],
-      "bauteil_ok": true
-    },
-    {
-      "moebel": "sb5GlasMitte",
-      "feld": [27, 56],
-      "bauteil_ok": true
-    },
-    {
-      "moebel": "sb5GlasMitte",
-      "feld": [28, 56],
-      "bauteil_ok": true
-    },
-    {
-      "moebel": "sb5GlasMitte",
-      "feld": [29, 56],
-      "bauteil_ok": true
-    },
-    {
-      "moebel": "sb5GlasMitte",
-      "feld": [30, 56],
-      "bauteil_ok": true
-    },
-    {
-      "moebel": "sb5GlasLinks",
-      "feld": [36, 56],
-      "bauteil_ok": true
-    },
-    {
-      "moebel": "sb5GlasRechts",
-      "feld": [70, 56],
-      "bauteil_ok": true
-    },
-    {
-      "moebel": "sb5GlasMitte",
-      "feld": [37, 56],
-      "bauteil_ok": true
-    },
-    {
-      "moebel": "sb5GlasMitte",
-      "feld": [38, 56],
-      "bauteil_ok": true
-    },
-    {
-      "moebel": "sb5GlasMitte",
-      "feld": [39, 56],
-      "bauteil_ok": true
-    },
-    {
-      "moebel": "sb5GlasMitte",
-      "feld": [40, 56],
-      "bauteil_ok": true
-    },
-    {
-      "moebel": "sb5GlasMitte",
-      "feld": [41, 56],
-      "bauteil_ok": true
-    },
-    {
-      "moebel": "sb5GlasMitte",
-      "feld": [42, 56],
-      "bauteil_ok": true
-    },
-    {
-      "moebel": "sb5GlasMitte",
-      "feld": [43, 56],
-      "bauteil_ok": true
-    },
-    {
-      "moebel": "sb5GlasMitte",
-      "feld": [44, 56],
-      "bauteil_ok": true
-    },
-    {
-      "moebel": "sb5GlasMitte",
-      "feld": [45, 56],
-      "bauteil_ok": true
-    },
-    {
-      "moebel": "sb5GlasMitte",
-      "feld": [46, 56],
-      "bauteil_ok": true
-    },
-    {
-      "moebel": "sb5GlasMitte",
-      "feld": [47, 56],
-      "bauteil_ok": true
-    },
-    {
-      "moebel": "sb5GlasMitte",
-      "feld": [48, 56],
-      "bauteil_ok": true
-    },
-    {
-      "moebel": "sb5GlasMitte",
-      "feld": [49, 56],
-      "bauteil_ok": true
-    },
-    {
-      "moebel": "sb5GlasMitte",
-      "feld": [50, 56],
-      "bauteil_ok": true
-    },
-    {
-      "moebel": "sb5GlasMitte",
-      "feld": [51, 56],
-      "bauteil_ok": true
-    },
-    {
-      "moebel": "sb5GlasMitte",
-      "feld": [52, 56],
-      "bauteil_ok": true
-    },
-    {
-      "moebel": "sb5GlasMitte",
-      "feld": [53, 56],
-      "bauteil_ok": true
-    },
-    {
-      "moebel": "sb5GlasMitte",
-      "feld": [54, 56],
-      "bauteil_ok": true
-    },
-    {
-      "moebel": "sb5GlasMitte",
-      "feld": [55, 56],
-      "bauteil_ok": true
-    },
-    {
-      "moebel": "sb5GlasMitte",
-      "feld": [56, 56],
-      "bauteil_ok": true
-    },
-    {
-      "moebel": "sb5GlasMitte",
-      "feld": [57, 56],
-      "bauteil_ok": true
-    },
-    {
-      "moebel": "sb5GlasMitte",
-      "feld": [58, 56],
-      "bauteil_ok": true
-    },
-    {
-      "moebel": "sb5GlasMitte",
-      "feld": [59, 56],
-      "bauteil_ok": true
-    },
-    {
-      "moebel": "sb5GlasMitte",
-      "feld": [60, 56],
-      "bauteil_ok": true
-    },
-    {
-      "moebel": "sb5GlasMitte",
-      "feld": [61, 56],
-      "bauteil_ok": true
-    },
-    {
-      "moebel": "sb5GlasMitte",
-      "feld": [62, 56],
-      "bauteil_ok": true
-    },
-    {
-      "moebel": "sb5GlasMitte",
-      "feld": [63, 56],
-      "bauteil_ok": true
-    },
-    {
-      "moebel": "sb5GlasMitte",
-      "feld": [64, 56],
-      "bauteil_ok": true
-    },
-    {
-      "moebel": "sb5GlasMitte",
-      "feld": [65, 56],
-      "bauteil_ok": true
-    },
-    {
-      "moebel": "sb5GlasMitte",
-      "feld": [66, 56],
-      "bauteil_ok": true
-    },
-    {
-      "moebel": "sb5GlasMitte",
-      "feld": [67, 56],
-      "bauteil_ok": true
-    },
-    {
-      "moebel": "sb5GlasMitte",
-      "feld": [68, 56],
-      "bauteil_ok": true
-    },
-    {
-      "moebel": "sb5GlasMitte",
-      "feld": [69, 56],
-      "bauteil_ok": true
-    },
-    {
       "moebel": "sb5WerbetafelB",
-      "feld": [65, 4]
+      "feld": [66, 13]
     },
     {
       "moebel": "sb5Infosaeule",
@@ -771,17 +437,17 @@
     },
     {
       "moebel": "sb5BahnLinks",
-      "feld": [30, 23],
+      "feld": [30, 22],
       "bauteil_ok": true
     },
     {
       "moebel": "sb5BahnMitte",
-      "feld": [34, 23],
+      "feld": [34, 22],
       "bauteil_ok": true
     },
     {
       "moebel": "sb5BahnRechts",
-      "feld": [44, 23],
+      "feld": [44, 22],
       "bauteil_ok": true
     },
     {
@@ -790,19 +456,23 @@
     },
     {
       "moebel": "wg6StandGross",
-      "feld": [13, 30]
+      "feld": [13, 30],
+      "id": "stand1"
     },
     {
       "moebel": "wg4Marktstand",
-      "feld": [19, 30]
+      "feld": [19, 30],
+      "id": "stand2"
     },
     {
       "moebel": "wg6StandGross",
-      "feld": [23, 30]
+      "feld": [23, 30],
+      "id": "stand3"
     },
     {
       "moebel": "wg4Marktstand",
-      "feld": [29, 30]
+      "feld": [29, 30],
+      "id": "stand4"
     },
     {
       "moebel": "sb5Marktkarren",
@@ -814,7 +484,7 @@
     },
     {
       "moebel": "sb5Baum",
-      "feld": [13, 43]
+      "feld": [13, 41]
     },
     {
       "moebel": "sb5Baum",
@@ -822,7 +492,7 @@
     },
     {
       "moebel": "sb5Baum",
-      "feld": [19, 43]
+      "feld": [19, 41]
     },
     {
       "moebel": "sb5Baum",
@@ -830,7 +500,7 @@
     },
     {
       "moebel": "sb5Baum",
-      "feld": [25, 43]
+      "feld": [25, 41]
     },
     {
       "moebel": "sb5Baum",
@@ -838,7 +508,7 @@
     },
     {
       "moebel": "sb5Baum",
-      "feld": [31, 43]
+      "feld": [31, 41]
     },
     {
       "moebel": "sb5Baum",
@@ -846,7 +516,7 @@
     },
     {
       "moebel": "sb5Baum",
-      "feld": [37, 43]
+      "feld": [37, 41]
     },
     {
       "moebel": "sb5Baum",
@@ -854,19 +524,11 @@
     },
     {
       "moebel": "sb5Baum",
-      "feld": [43, 43]
+      "feld": [43, 41]
     },
     {
       "moebel": "sb5BrunnenWasser",
       "feld": [50, 36]
-    },
-    {
-      "moebel": "mfBank",
-      "feld": [46, 38]
-    },
-    {
-      "moebel": "mfBank",
-      "feld": [55, 38]
     },
     {
       "moebel": "sb5Kaffeekiosk",
@@ -898,60 +560,292 @@
       "vorn": true
     },
     {
-      "moebel": "sb8Markt3",
-      "feld": [1, 47]
-    },
-    {
-      "moebel": "sb8Markt7",
-      "feld": [6, 47]
-    },
-    {
-      "moebel": "sb8Markt11",
-      "feld": [11, 47]
-    },
-    {
-      "moebel": "sb8Markt1",
-      "feld": [16, 47]
-    },
-    {
-      "moebel": "sb8Markt9",
-      "feld": [21, 47]
-    },
-    {
-      "moebel": "sb8Markt5",
-      "feld": [26, 47]
-    },
-    {
-      "moebel": "sb8Markt12",
-      "feld": [37, 47]
-    },
-    {
-      "moebel": "sb8Markt4",
-      "feld": [42, 47]
-    },
-    {
-      "moebel": "sb8Markt8",
-      "feld": [47, 47]
-    },
-    {
-      "moebel": "sb8Markt2",
-      "feld": [52, 47]
-    },
-    {
-      "moebel": "sb8Markt6",
-      "feld": [57, 47]
-    },
-    {
-      "moebel": "sb8Markt10",
-      "feld": [62, 47]
-    },
-    {
       "moebel": "sb8Condo52",
       "feld": [15, 10]
     },
     {
       "moebel": "sb8Condo44",
       "feld": [54, 29]
+    },
+    {
+      "moebel": "cc8PrellbockQuer",
+      "feld": [66, 24]
+    },
+    {
+      "moebel": "rv8KorbAepfel",
+      "auf": "stand1",
+      "versatz": [-24, 8]
+    },
+    {
+      "moebel": "rv8KorbBananen",
+      "auf": "stand1",
+      "versatz": [-8, 8]
+    },
+    {
+      "moebel": "rv8KorbTrauben",
+      "auf": "stand1",
+      "versatz": [8, 8]
+    },
+    {
+      "moebel": "rv8KorbMais",
+      "auf": "stand1",
+      "versatz": [24, 8]
+    },
+    {
+      "moebel": "rv8KorbMoehren",
+      "auf": "stand2",
+      "versatz": [-8, 8]
+    },
+    {
+      "moebel": "rv8KorbKohl",
+      "auf": "stand2",
+      "versatz": [8, 8]
+    },
+    {
+      "moebel": "rv8KorbAepfel",
+      "auf": "stand3",
+      "versatz": [-24, 8]
+    },
+    {
+      "moebel": "rv8KorbBananen",
+      "auf": "stand3",
+      "versatz": [-8, 8]
+    },
+    {
+      "moebel": "rv8KorbTrauben",
+      "auf": "stand3",
+      "versatz": [8, 8]
+    },
+    {
+      "moebel": "rv8KorbMais",
+      "auf": "stand3",
+      "versatz": [24, 8]
+    },
+    {
+      "moebel": "rv8KorbMoehren",
+      "auf": "stand4",
+      "versatz": [-8, 8]
+    },
+    {
+      "moebel": "rv8KorbKohl",
+      "auf": "stand4",
+      "versatz": [8, 8]
+    },
+    {
+      "moebel": "cc5BankZumBach",
+      "feld": [48, 36]
+    },
+    {
+      "moebel": "mf9BankLinks",
+      "feld": [54, 36]
+    },
+    {
+      "moebel": "sb8LadenFitness",
+      "feld": [1, 46]
+    },
+    {
+      "moebel": "sb8LadenGroove",
+      "feld": [8, 46]
+    },
+    {
+      "moebel": "sb8LadenCoolies",
+      "feld": [15, 46]
+    },
+    {
+      "moebel": "sb8LadenBimbum",
+      "feld": [22, 46]
+    },
+    {
+      "moebel": "sb8LadenDanger",
+      "feld": [37, 46]
+    },
+    {
+      "moebel": "sb8LadenPlume",
+      "feld": [44, 46]
+    },
+    {
+      "moebel": "sb8LadenMusik",
+      "feld": [51, 46]
+    },
+    {
+      "moebel": "sb8LadenEis",
+      "feld": [58, 46]
+    },
+    {
+      "moebel": "sb8Markt3",
+      "feld": [65, 47]
+    },
+    {
+      "moebel": "rv8Infokiosk",
+      "feld": [2, 40]
+    },
+    {
+      "moebel": "sb8Condo45",
+      "feld": [64, 2]
+    },
+    {
+      "moebel": "sb5Faehrhaus",
+      "feld": [67, 42]
+    },
+    {
+      "moebel": "cc4Hecke",
+      "feld": [1, 56],
+      "bauteil_ok": true
+    },
+    {
+      "moebel": "cc4Hecke",
+      "feld": [3, 56],
+      "bauteil_ok": true
+    },
+    {
+      "moebel": "cc4Hecke",
+      "feld": [5, 56],
+      "bauteil_ok": true
+    },
+    {
+      "moebel": "cc4Hecke",
+      "feld": [7, 56],
+      "bauteil_ok": true
+    },
+    {
+      "moebel": "cc4Hecke",
+      "feld": [9, 56],
+      "bauteil_ok": true
+    },
+    {
+      "moebel": "cc4Hecke",
+      "feld": [11, 56],
+      "bauteil_ok": true
+    },
+    {
+      "moebel": "cc4Hecke",
+      "feld": [13, 56],
+      "bauteil_ok": true
+    },
+    {
+      "moebel": "cc4Hecke",
+      "feld": [15, 56],
+      "bauteil_ok": true
+    },
+    {
+      "moebel": "cc4Hecke",
+      "feld": [17, 56],
+      "bauteil_ok": true
+    },
+    {
+      "moebel": "cc4Hecke",
+      "feld": [19, 56],
+      "bauteil_ok": true
+    },
+    {
+      "moebel": "cc4Hecke",
+      "feld": [21, 56],
+      "bauteil_ok": true
+    },
+    {
+      "moebel": "cc4Hecke",
+      "feld": [23, 56],
+      "bauteil_ok": true
+    },
+    {
+      "moebel": "cc4Hecke",
+      "feld": [25, 56],
+      "bauteil_ok": true
+    },
+    {
+      "moebel": "cc4Hecke",
+      "feld": [27, 56],
+      "bauteil_ok": true
+    },
+    {
+      "moebel": "cc4Hecke",
+      "feld": [29, 56],
+      "bauteil_ok": true
+    },
+    {
+      "moebel": "cc4Hecke",
+      "feld": [36, 56],
+      "bauteil_ok": true
+    },
+    {
+      "moebel": "cc4Hecke",
+      "feld": [38, 56],
+      "bauteil_ok": true
+    },
+    {
+      "moebel": "cc4Hecke",
+      "feld": [40, 56],
+      "bauteil_ok": true
+    },
+    {
+      "moebel": "cc4Hecke",
+      "feld": [42, 56],
+      "bauteil_ok": true
+    },
+    {
+      "moebel": "cc4Hecke",
+      "feld": [44, 56],
+      "bauteil_ok": true
+    },
+    {
+      "moebel": "cc4Hecke",
+      "feld": [46, 56],
+      "bauteil_ok": true
+    },
+    {
+      "moebel": "cc4Hecke",
+      "feld": [48, 56],
+      "bauteil_ok": true
+    },
+    {
+      "moebel": "cc4Hecke",
+      "feld": [50, 56],
+      "bauteil_ok": true
+    },
+    {
+      "moebel": "cc4Hecke",
+      "feld": [52, 56],
+      "bauteil_ok": true
+    },
+    {
+      "moebel": "cc4Hecke",
+      "feld": [54, 56],
+      "bauteil_ok": true
+    },
+    {
+      "moebel": "cc4Hecke",
+      "feld": [56, 56],
+      "bauteil_ok": true
+    },
+    {
+      "moebel": "cc4Hecke",
+      "feld": [58, 56],
+      "bauteil_ok": true
+    },
+    {
+      "moebel": "cc4Hecke",
+      "feld": [60, 56],
+      "bauteil_ok": true
+    },
+    {
+      "moebel": "cc4Hecke",
+      "feld": [62, 56],
+      "bauteil_ok": true
+    },
+    {
+      "moebel": "cc4Hecke",
+      "feld": [64, 56],
+      "bauteil_ok": true
+    },
+    {
+      "moebel": "cc4Hecke",
+      "feld": [66, 56],
+      "bauteil_ok": true
+    },
+    {
+      "moebel": "cc4Hecke",
+      "feld": [68, 56],
+      "bauteil_ok": true
     }
   ],
   "ausloeser": [
@@ -1012,7 +906,7 @@
     },
     {
       "name": "werbetafel",
-      "feld": [67, 10]
+      "feld": [68, 19]
     }
   ],
   "figuren": [
@@ -1118,12 +1012,12 @@
     {
       "name": "studentin",
       "typ": "statist",
-      "feld": [28, 23],
+      "feld": [24, 22],
       "eigenschaften": {
         "tun": "wartet mit Akademie-Ausweis auf die Bahn",
         "wann": "tag",
-        "von": "20,23",
-        "bis": "30,23",
+        "von": "18,22",
+        "bis": "28,22",
         "sagt": "statist.siliconBay.aussen.studentin"
       }
     },
@@ -1142,12 +1036,12 @@
     {
       "name": "rentner",
       "typ": "statist",
-      "feld": [39, 43],
+      "feld": [47, 39],
       "eigenschaften": {
-        "tun": "sitzt auf der Bank am Wasserspiel",
+        "tun": "sitzt neben der Bank am Wasserspiel",
         "wann": "tag",
-        "von": "39,43",
-        "bis": "39,43",
+        "von": "47,39",
+        "bis": "47,39",
         "sagt": "statist.siliconBay.aussen.rentner"
       }
     },
@@ -1188,25 +1082,25 @@
       }
     },
     {
-      "name": "angestellter",
+      "name": "marktfrau",
       "typ": "statist",
-      "feld": [12, 29],
+      "feld": [18, 34],
       "eigenschaften": {
-        "tun": "telefoniert mit Kopfhörer",
+        "tun": "verkauft Obst an den beiden linken Ständen",
         "wann": "tag",
-        "von": "4,29",
-        "bis": "20,29"
+        "von": "18,34",
+        "bis": "18,34"
       }
     },
     {
-      "name": "angestellte",
+      "name": "gemuesehaendler",
       "typ": "statist",
-      "feld": [50, 29],
+      "feld": [28, 34],
       "eigenschaften": {
-        "tun": "liest im Gehen Mails",
+        "tun": "wiegt Möhren ab",
         "wann": "tag",
-        "von": "46,29",
-        "bis": "56,29"
+        "von": "28,34",
+        "bis": "28,34"
       }
     },
     {
@@ -1216,8 +1110,8 @@
       "eigenschaften": {
         "tun": "Schulklasse mit Tablets auf Besichtigung",
         "wann": "tag",
-        "von": "22,38",
-        "bis": "30,42"
+        "von": "22,36",
+        "bis": "30,40"
       }
     },
     {
@@ -1253,10 +1147,10 @@
     {
       "name": "katze",
       "typ": "tier",
-      "feld": [66, 44],
+      "feld": [64, 43],
       "eigenschaften": {
-        "von": "64,42",
-        "bis": "69,45",
+        "von": "62,42",
+        "bis": "65,45",
         "verhalten": "schlafen"
       }
     },

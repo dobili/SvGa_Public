@@ -80,8 +80,11 @@ def klippenfeld(zeilen: list[str], x: int, y: int, grasboden: set[str]) -> tuple
 
 def _flaechenvariante(zeilen: list[str], x: int, y: int, grasboden: set[str]) -> int:
     """Mittelspalte für eine Wandfläche ohne Kante (dicker Rand): Gras, wenn Gras daneben liegt."""
-    nachbarn = [zeilen[b][a] for a, b in ((x - 1, y), (x + 1, y), (x, y - 1), (x, y + 1))
-                if 0 <= b < len(zeilen) and 0 <= a < len(zeilen[0])]
+    nachbarn = [
+        zeilen[b][a]
+        for a, b in ((x - 1, y), (x + 1, y), (x, y - 1), (x, y + 1))
+        if 0 <= b < len(zeilen) and 0 <= a < len(zeilen[0])
+    ]
     return SPALTEN["gras" if any(n in grasboden for n in nachbarn) else "erde"][1]
 
 
@@ -89,7 +92,8 @@ def treppenfeld(zeilen: list[str], x: int, y: int, strasse: set[str] | None = No
     """Treppenkachel für ein Bodenfeld, das eine Kante durchschneidet (Rampe), sonst None.
 
     Ein Feld gilt als Rampe in der Kante, wenn links und rechts in derselben Reihe (höchstens
-    ``BREITE_RAMPE`` Felder entfernt) eine Kantenreihe liegt; so bleibt das Ende eines Bands frei. Oben, Mitte und unten richten sich nach der Rolle dieser Nachbarn.
+    ``BREITE_RAMPE`` Felder entfernt) eine Kantenreihe liegt; so bleibt das Ende eines Bands frei.
+    Oben, Mitte und unten richten sich nach der Rolle dieser Nachbarn.
     Beispiel: Rampe von drei Feldern durch ein Band → Treppe oben, Mitte, unten.
     Sonderfall: Straßen (Zeichen in ``strasse``, etwa Asphalt) bekommen keine Treppe.
     """

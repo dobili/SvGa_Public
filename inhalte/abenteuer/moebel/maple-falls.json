@@ -500,7 +500,11 @@
       "quelle": "modern-interiors/1_Interiors/16x16/Theme_Sorter_Black_Shadow_Singles/6_Music_and_Sport_Black_Shadow_Singles_16x16/Music_and_Sport_Black_Shadow_Singles_163.png",
       "breite": 32,
       "hoehe": 48,
-      "kollision": true
+      "kollision": true,
+      "art": "pokal",
+      "blick": "unten",
+      "zustand": "gebraucht",
+      "stil": "klassisch"
     },
     "mf2Lehrerpult": {
       "quelle": "modern-interiors/1_Interiors/16x16/Theme_Sorter_Black_Shadow_Singles/5_Classroom_and_Library_Black_Shadow_Singles_16x16/Classroom_and_Library_Singles_25.png",
@@ -3040,6 +3044,220 @@
       "art": "steg",
       "zustand": "alt",
       "stil": "natur"
+    },
+    "mfc9TeppichLo": {
+      "quelle": "spiel/eigene/teppich_lo.png",
+      "breite": 16,
+      "hoehe": 16,
+      "kollision": false,
+      "art": "teppich",
+      "zustand": "gebraucht",
+      "stil": "schule"
+    },
+    "mfc9TeppichO": {
+      "quelle": "spiel/eigene/teppich_o.png",
+      "breite": 16,
+      "hoehe": 16,
+      "kollision": false,
+      "art": "teppich",
+      "zustand": "gebraucht",
+      "stil": "schule"
+    },
+    "mfc9TeppichRo": {
+      "quelle": "spiel/eigene/teppich_ro.png",
+      "breite": 16,
+      "hoehe": 16,
+      "kollision": false,
+      "art": "teppich",
+      "zustand": "gebraucht",
+      "stil": "schule"
+    },
+    "mfc9TeppichL": {
+      "quelle": "spiel/eigene/teppich_l.png",
+      "breite": 16,
+      "hoehe": 16,
+      "kollision": false,
+      "art": "teppich",
+      "zustand": "gebraucht",
+      "stil": "schule"
+    },
+    "mfc9TeppichM": {
+      "quelle": "spiel/eigene/teppich_m.png",
+      "breite": 16,
+      "hoehe": 16,
+      "kollision": false,
+      "art": "teppich",
+      "zustand": "gebraucht",
+      "stil": "schule"
+    },
+    "mfc9TeppichR": {
+      "quelle": "spiel/eigene/teppich_r.png",
+      "breite": 16,
+      "hoehe": 16,
+      "kollision": false,
+      "art": "teppich",
+      "zustand": "gebraucht",
+      "stil": "schule"
+    },
+    "mfc9TeppichLu": {
+      "quelle": "spiel/eigene/teppich_lu.png",
+      "breite": 16,
+      "hoehe": 16,
+      "kollision": false,
+      "art": "teppich",
+      "zustand": "gebraucht",
+      "stil": "schule"
+    },
+    "mfc9TeppichU": {
+      "quelle": "spiel/eigene/teppich_u.png",
+      "breite": 16,
+      "hoehe": 16,
+      "kollision": false,
+      "art": "teppich",
+      "zustand": "gebraucht",
+      "stil": "schule"
+    },
+    "mfc9TeppichRu": {
+      "quelle": "spiel/eigene/teppich_ru.png",
+      "breite": 16,
+      "hoehe": 16,
+      "kollision": false,
+      "art": "teppich",
+      "zustand": "gebraucht",
+      "stil": "schule"
+    },
+    "mfc9BrettFiguren": {
+      "quelle": "spiel/eigene/schachbrett_klein_figuren.png",
+      "breite": 12,
+      "hoehe": 9,
+      "kollision": false,
+      "art": "deko",
+      "zustand": "gebraucht",
+      "stil": "schule"
+    },
+    "mfc9BrettOhneDame": {
+      "quelle": "spiel/eigene/schachbrett_klein_ohne_dame.png",
+      "breite": 12,
+      "hoehe": 9,
+      "kollision": false,
+      "art": "deko",
+      "zustand": "gebraucht",
+      "stil": "schule"
+    },
+    "mfc9Schachuhr": {
+      "quelle": "spiel/eigene/schachuhr_klein.png",
+      "breite": 8,
+      "hoehe": 6,
+      "kollision": false,
+      "art": "deko",
+      "zustand": "gebraucht",
+      "stil": "schule"
+    },
+    "mfc9Pokal1994": {
+      "quelle": "spiel/eigene/pokal_1994.png",
+      "breite": 16,
+      "hoehe": 16,
+      "kollision": false,
+      "art": "pokal",
+      "zustand": "gebraucht",
+      "stil": "schule"
+    },
+    "mfc9PlakatZaehlen": {
+      "quelle": "spiel/eigene/plakat_erst_zaehlen.png",
+      "breite": 32,
+      "hoehe": 32,
+      "kollision": false,
+      "art": "deko",
+      "zustand": "gebraucht",
+      "stil": "schule"
+    },
+    "mfc9Wanduhr": {
+      "quelle": "spiel/eigene/wanduhr.png",
+      "breite": 16,
+      "hoehe": 16,
+      "kollision": false,
+      "art": "deko",
+      "zustand": "gebraucht",
+      "stil": "schule"
+    },
+    "mfc9Garderobe": {
+      "quelle": "spiel/eigene/garderobe_jacken.png",
+      "breite": 32,
+      "hoehe": 32,
+      "kollision": false,
+      "art": "garderobe",
+      "zustand": "gebraucht",
+      "stil": "schule"
+    },
+    "mfc9RegalSeiteLinks": {
+      "quelle": "spiel/eigene/buecherregal_schmal_links.png",
+      "breite": 16,
+      "hoehe": 48,
+      "kollision": true,
+      "art": "buecherregal",
+      "zustand": "gebraucht",
+      "stil": "schule",
+      "blick": "links"
+    },
+    "mfc9Lehrertisch": {
+      "quelle": "modern-interiors/1_Interiors/16x16/Theme_Sorter_Black_Shadow_Singles/5_Classroom_and_Library_Black_Shadow_Singles_16x16/Classroom_and_Library_Singles_25.png",
+      "breite": 32,
+      "hoehe": 32,
+      "kollision": true,
+      "art": "schreibtisch",
+      "zustand": "gebraucht",
+      "stil": "schule",
+      "blick": "unten"
+    },
+    "mfc9Doppelspind": {
+      "quelle": "modern-exteriors/Modern_Exteriors_16x16/ME_Theme_Sorter_16x16/20_Subway_and_Train_Station_Singles_16x16/ME_Singles_Subway_and_Train_Station_16x16_Small_Black_Locker.png",
+      "breite": 32,
+      "hoehe": 32,
+      "kollision": true,
+      "art": "schrank",
+      "zustand": "gebraucht",
+      "stil": "schule",
+      "blick": "unten"
+    },
+    "mfc9Glasschrank": {
+      "quelle": "modern-interiors/1_Interiors/16x16/Theme_Sorter_Black_Shadow_Singles/12_Kitchen_Black_Shadow_Singles_16x16/Kitchen_Shadow_Singles_344.png",
+      "breite": 16,
+      "hoehe": 32,
+      "kollision": true,
+      "art": "vitrine",
+      "zustand": "gebraucht",
+      "stil": "klassisch",
+      "blick": "unten"
+    },
+    "mfc9BankWest": {
+      "quelle": "modern-exteriors/Modern_Exteriors_16x16/ME_Theme_Sorter_16x16/3_City_Props_Singles_16x16/ME_Singles_City_Props_16x16_Bench_4.png",
+      "breite": 16,
+      "hoehe": 48,
+      "kollision": true,
+      "art": "bank",
+      "zustand": "gebraucht",
+      "stil": "schule",
+      "blick": "rechts"
+    },
+    "mfc9BankOst": {
+      "quelle": "modern-exteriors/Modern_Exteriors_16x16/ME_Theme_Sorter_16x16/3_City_Props_Singles_16x16/ME_Singles_City_Props_16x16_Bench_3.png",
+      "breite": 16,
+      "hoehe": 48,
+      "kollision": true,
+      "art": "bank",
+      "zustand": "gebraucht",
+      "stil": "schule",
+      "blick": "links"
+    },
+    "mfc9Kartons": {
+      "quelle": "modern-interiors/1_Interiors/16x16/Theme_Sorter_Black_Shadow_Singles/2_LivingRoom_Black_Shadow_Singles_16x16/Living_Room_Black_Shadow_Singles_100.png",
+      "breite": 32,
+      "hoehe": 48,
+      "kollision": true,
+      "art": "kiste",
+      "zustand": "gebraucht",
+      "stil": "schule",
+      "blick": "unten"
     }
   }
 }

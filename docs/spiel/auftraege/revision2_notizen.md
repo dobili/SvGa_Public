@@ -76,6 +76,27 @@ Quellen der Zustände:
     - Ein Wasserloch hat keine gemauerte Einfassung.
     - Türen werden nicht als Ausschnitt auf eine Erdfläche geklebt.
 19. **Loren und Gleise:** Die Spurweite passt zu den Loren. Türen öffnen sich nicht auf Gleise.
+20. **Straßen und Autobahnen:**
+    - Leitplanken und Grünstreifen als Lärm- und Sichtschutz.
+    - Fahrbahnmarkierungen; Spuren passen zur Breite der Autos (etwa 4 + 4 statt „18 Spuren“).
+    - Autos fahren in Fahrtrichtung, nicht gegen die Leitplanke, und haben Gegenverkehr.
+21. **Brücken sind als Brücken lesbar:** Rampen hinauf und hinunter, Pfeiler, Schatten auf die
+    Straße darunter. Glas ist teilweise durchsichtig. Die Ansicht ist schräg von oben, nicht reine
+    Vogelschau.
+22. **Plätze und Asphalt haben eine Einfassung** (Bordstein, Kante, Übergang zum Gras).
+23. **Bepflanzung ordentlich:**
+    - Hecken zusammenhängend, nicht in Stücken.
+    - Abwechslung statt immer desselben Bildes.
+    - Grünflächen gestaltet, nicht leer.
+24. **Laternen, Bänke, Mülleimer an Rastplätzen**, nicht drei Laternen am Anfang eines Wegs.
+25. **Gleiche Gebäude nicht zu oft:** Höchstens zweimal dasselbe Gebäudebild je Karte.
+26. **Stände und Buden zeigen ihre Öffnung zum Platz.** Bänke zeigen auf etwas Sehenswertes.
+27. **Alte Kirchen und Kapellen** stehen frei, mit Platz, Zaun und Grün oder Friedhof, nicht in
+    einer Häuserreihe. Ohne Rolle in der Geschichte kommen sie weg.
+28. **Holz in Stollen** (Stempel, Kappen) steht im Gang und nicht in den Wänden.
+29. **Anlegepfosten stehen direkt am Ufer.**
+30. **Winter:** Der Autor fragt, ob es Schnee-Bilder gibt; im Katalog gibt es keine. Antwort und
+    Empfehlung in `docs/spiel/ENTSCHEIDUNGEN.md` (10.11.2026).
 
 ## Akt 1 (alle Wahl A)
 
@@ -367,3 +388,62 @@ Die übrigen Akt-1-Punkte (Maple Falls, Weg 1, Cedar Creek) hat niedrig-1 ebenfa
 - Das Haus unten rechts besteht ganz aus Erde, die Tür ist als Ausschnitt aufgeklebt.
 - Grundfrage: Was soll die Karte darstellen? Gibt es verschiedene Höhen, geht der Weg hinunter?
   Das muss das Bild zeigen.
+
+### `steinbruch.stollen` (Wahl B)
+
+- Das Gleis reicht unten nicht bis zum Bildrand und bricht ab. Oben ist das wohl Absicht.
+- Im Hauptgang liegen links und rechts Holzstämme in den Wänden.
+- Sonst nichts aufgefallen.
+
+### `wegIronwoodSilicon.glasbruecke` (keine Variante passt, neu bauen)
+
+- Die Autobahn braucht Leitplanken und seitlich Bepflanzung als Lärm- und Sichtschutz.
+- Die gepflasterten Plätze haben keine Umrandung.
+- Die Grünflächen ringsum sind nicht gestaltet.
+- Die Glasbrücke sieht nicht wie eine Brücke aus:
+  - Sie ist über die Autobahn geklebt.
+  - Man sieht nicht, dass man hinauf- und hinuntergeht.
+  - Pfeiler und Träger fehlen.
+  - Die Ansicht ist Vogelschau statt schräg von oben.
+  - Das Glas sollte teils durchsichtig sein.
+- Die Autobahn hat keine Fahrbahnmarkierung und ist nach Autobreite etwa 18 Spuren breit. Alle
+  Autos fahren in eine Richtung. Besser etwa 4 + 4 Spuren.
+- „Hier muss wirklich nochmal ganz genau auf alles geguckt werden.“
+
+### `wegIronwoodSilicon.raststaette` (Wahl C)
+
+- Die Autos auf der Schnellstraße fahren gegen die Leitplanke (falsche Ausrichtung).
+- Die Lärmschutz-Bepflanzung ist immer dasselbe kopierte Bild.
+- Am Weg von links nach rechts stehen am Anfang drei Laternen, dann keine mehr. Laternen gehören an
+  Rastplätze mit Bank und Mülleimer.
+- Tiere stehen im Wasser (Vorschau noch alt, Regel 10.55 ist inzwischen umgesetzt).
+- Eine Hütte hat keinen Weg.
+- Die Anlegepfosten am Fluss stehen nicht alle am Ufer, weil der Fluss eine Einbuchtung macht.
+- Vor der Tankstelle steht ein LKW ohne Tiefe.
+- Der Asphalt hat keine Umrandung und keinen Übergang zum Gras.
+- Die Tische unten rechts sind zufällig verteilt; ein Tisch überlappt einen Mülleimer oder
+  Wasserspender.
+- Eine hölzerne Anschlagtafel zeigt von der Straße weg, Zettel sind nicht zu sehen. Leer ist in
+  Ordnung, wenn gewollt.
+
+### `siliconBay.akademie` (keine Variante passt, neu bauen)
+
+- Passt nicht zur Beschreibung: Die Glaswand fehlt, oben ist eine normale Wand mit Smartboards.
+- Überall Tische mit Kapsel-Kaffeemaschinen; warum?
+- Eine Akademie hat mehr als einen Raum.
+- Das Schachbrett am rechten Tisch steht nicht ganz auf dem Tisch; der Tisch wirkt oben
+  abgeschnitten.
+- Getränkeautomat und Wasserspender stehen mitten im Raum.
+- Unten stehen Sitzbänke, ein Doppelsitz und zwei Einzelsitze, nicht aneinander.
+- Alle Stühle zeigen nach unten statt zum Tisch.
+- „Braucht einen kompletten Overhaul, das Mobiliar ist komplett daneben.“
+
+### `siliconBay.altstadt` (Wahl C)
+
+- Die Bepflanzung ist zufällig: Heckenstücke einzeln statt zusammenhängend.
+- Dasselbe Market-Gebäude kommt vier- bis sechsmal vor, fast gleich.
+- Die Kapelle steht angereiht an einen Market. Alte Kirchen haben Platz, Zaun, Grün oder Friedhof.
+  Ohne Rolle in der Geschichte weglassen.
+- Der große Kaffeebecher-Stand zeigt mit seiner Öffnung vom Platz weg.
+- Die Bänke auf dem Platz schauen auf die Grünflächen hinaus; das ergibt wenig Sinn.
+- Die Übergänge zwischen Gras und Wegen sind unschön. Gibt es passende Bilder?

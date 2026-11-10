@@ -33,9 +33,9 @@ Szene heißt die Datei in `inhalte/abenteuer/szenen/` ohne `.json`.
 - [x] weg-ironwood-silicon-glasbruecke (neu gebaut, Runde 8, mittel-1)
 - [x] weg-ironwood-silicon-raststaette (Runde 8, mittel-1)
 
-- [ ] riverton-aussen (zweite Prüfung nach Nachbesserung, mittel-3; Bilder im privaten main ab b6c369b2)
-- [ ] riverton-bahnhofshalle, riverton-pavillon, riverton-wohnwagen, riverton-schuppen (zweite Prüfung, mittel-3, eine Datei `riverton-innen-2.md`)
-- [ ] maple-falls-clubraum (dritte Prüfung, mittel-1, Datei `maple-falls-clubraum-3.md`)
+- [x] riverton-aussen (zweite Prüfung nach Nachbesserung, mittel-3; Bilder im privaten main ab b6c369b2)
+- [x] riverton-bahnhofshalle, riverton-pavillon, riverton-wohnwagen, riverton-schuppen (zweite Prüfung, mittel-3, eine Datei `riverton-innen-2.md`)
+- [x] maple-falls-clubraum (dritte Prüfung, mittel-1, Datei `maple-falls-clubraum-3.md`)
 
 ## Erledigt
 

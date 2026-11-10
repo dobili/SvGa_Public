@@ -22,6 +22,33 @@ Quellen der Zustände:
 - Objekte, die nur in einer Szene erscheinen (Schulbus in Szene 13);
 - Tönung je Tageszeit.
 
+## Allgemeine Punkte (aus den Notizen, für alle Karten)
+
+1. **Kanäle bekommen befestigte Ufer.** Ein gerader, von Menschen gebauter Kanal hat eine
+   Steineinfassung wie in Lockport. Natürliche Ufer haben nur Flüsse, und die winden sich. Das gilt
+   besonders für die Wegkarten (Eisenbrücke, Kanalweg, Ironwood).
+2. **Maße von Wasser und Booten stimmen.** Ein Kanal mit Schleuse muss breit genug für
+   Frachtkähne sein. Ruderboote passen zu kleinen Flüssen. Boote liegen nicht quer und verstopfen
+   nicht das Wasser.
+3. **Innenräume nach der Logik des Gebäudes, nicht nach einer Höchstgröße.**
+   - Bisher gilt KARTENREGELN 7a.2 und 7b.5: „Räume auf etwa einem Bildschirm“, Wohnräume
+     8–11 × 8–9, öffentliche Räume 10–14 × 8–9.
+   - Der Autor will das nicht: Jeder Raum bekommt die Größe, die das Gebäude von außen und sein
+     Zweck nahelegen, abwechslungsreich und auch breiter als ein Bildschirm.
+   - Die App scrollt Innenräume wie Außenkarten mit dem Helden.
+   - Das bedeutet: Regel ändern, dann alle Innenräume nach logischer Größe prüfen und erweitern.
+4. **Gebäude haben einen Weg zur Tür.** Das fiel auf fast jeder Karte auf.
+5. **Stände tragen Waren**, an offenen Ständen steht jemand.
+6. **Bilder ohne Tiefe** (Fassaden von vorn, Lok auf Sockel, Industriehallen) passen nicht zur
+   Draufsicht schräg von oben und werden ersetzt.
+7. **Zäune** laufen bis zum Rand oder enden an einem Pfosten. Torpfosten passen zum Zaun.
+8. **Absperrungen an Gleisenden** stehen quer zum Gleis. Gleise führen irgendwohin.
+9. **Laternen und Pfosten** stehen in regelmäßigen Abständen, Laternen am Weg, nicht an Gleisen.
+10. **Jedes auffällige Objekt hat einen Grund** in der Welt oder in der Geschichte. Beispiele sind
+    Graffiti-Mauern, Silo, Mast, Spieltische auf der Wiese, Zickzackweg und Kapelle. Sonst kommt es
+    weg.
+11. **Grünflächen abwechslungsreicher** gestalten: Bäume, Büsche, Gras, kleine Gebäude.
+
 ## Akt 1 (alle Wahl A)
 
 ### `mapleFalls.aussen`
@@ -188,3 +215,52 @@ Die übrigen Akt-1-Punkte (Maple Falls, Weg 1, Cedar Creek) hat niedrig-1 ebenfa
 ### `wegRivertonIronwood.kanalweg` (Wahl A)
 
 - Bisher keine Notiz.
+
+### `lockport.aussen` (Wahl A, größte Wasserfläche)
+
+- Die Steineinfassung des Kanals ist schön (Vorbild für andere Kanäle).
+- Tiere stehen im Wasser. Inzwischen geprüft: Die Regel 10.55 ist auf allen Karten behoben; die
+  Vorschau auf der Seite ist noch alt.
+- Die Schleuse ist zu klein, gerade ein Ruderboot passt hindurch. Für Frachtkähne müssen Kanal und
+  Schleuse größer werden.
+- Frage: Gibt es eine Brücke über den Kanal? Eine fehlt.
+- Der gepflasterte Platz direkt unter der Schleuse wird ohne Grund von einem Grünstreifen
+  unterbrochen.
+- Gern mehr Häuser. Frage: Passt das Farmhaus unten zur Stadt und zur Geschichte?
+- Ein kleiner Schuppen unter dem Zugangskanal hat keinen Weg.
+- Das Schild „zur Schleuse“ am Gasthaus verdeckt die Tür.
+
+### `lockport.gasthaus` (Wahl C)
+
+- Unter dem rechten Stuhl am Tisch unten links liegt ein schwarzer Haken wie ein Rohr.
+- Die Kegelbahn liegt hinter der Theke. Die Gäste kämen dem Wirt in die Quere. Den Raum breiter
+  machen und die Kegelbahn von der Theke trennen. Die Länge der Bahn ist in Ordnung.
+- Die Barhocker stehen zu weit vom Tresen.
+- Die Kegelbahn braucht unten eine Bande, und neben dem Abwurf ein Regal für die Kugeln.
+- Siehe allgemeiner Punkt 3 (Innenraumgrößen).
+
+### `ironwood.aussen`
+
+- Der Kanal braucht ein befestigtes Ufer.
+- Das Gleis unten führt nirgendwohin: Es ist links und rechts abgesperrt, die Absperrungen stehen
+  waagerecht statt quer zum Gleis.
+- Die Hauptstraße (Mitte, links nach rechts) ist links nicht vollständig mit Pflaster eingefasst.
+- Die L-förmige Seitenstraße (nach oben, dann nach links vor die Häuser) ist nicht vollständig
+  eingefasst und von der Hauptstraße durch Pflaster getrennt; sie muss durchgehend anschließen.
+- Die Marktstände sind ohne Waren und ohne Leute (oder ist der Markt gerade zu?).
+- Industriegelände oben rechts:
+  - Die rotbraunen Hallen sind Fassaden von vorn ohne Tiefe, mit seltsamem Schatten; sie passen
+    nicht und werden ersetzt.
+  - Das gelbe kranartige Gebilde mit Fässern (Förderanlage über einem Loch?) ist nicht
+    erkennbar und hat keine Tiefe; es muss klarer dargestellt werden.
+  - Der Zaun ist nicht durchgehend: Oben links bricht er ohne Endpfosten ab, rechts reicht er nicht
+    bis zum Rand. Die Torpfosten passen nicht zum Zaun.
+- Drei kleine Pfosten am Kanal nahe der Hauptstraße stehen in unregelmäßigen Abständen.
+- Die Lok auf dem Sockel unter der Hauptstraße am Fluss hat keine Tiefe.
+- Die Kapelle rechts (christlich, kryptaähnlich) hat keinen Weg. Gehört sie zu einem Friedhof,
+  dann mit kleinem Friedhof, Zaun und Bepflanzung. Frage: Rolle in der Geschichte?
+- Der Fußgängerüberweg über die Gleise unten unterbricht die Gleise, als wäre er darübergelegt.
+- Laternen am Weg an den Gleisen stehen mal oben, mal unten, unregelmäßig. Besser oben am Weg; an
+  der Hauptstraße ist der Wechsel oben/unten in Ordnung.
+- Der Marktplatz endet schnurgerade im Gras; eine schönere Einfassung suchen.
+- Mehr Abwechslung bei Bäumen und Büschen.

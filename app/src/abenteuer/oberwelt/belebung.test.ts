@@ -88,6 +88,11 @@ describe("Satzfolge", () => {
     expect(saetzeVon("s.b", gibt)).toEqual(["s.b.1"]);
   });
 
+  it("überspringt Lücken (erster Satz, dann .2 und .3)", () => {
+    const luecke = new Set(["s.c", "s.c.2", "s.c.3"]);
+    expect(saetzeVon("s.c", (s) => luecke.has(s))).toEqual(["s.c", "s.c.2", "s.c.3"]);
+  });
+
   it("liefert Ambroses Antwort, wenn es sie gibt", () => {
     expect(statistensatz("s.a", 1, gibt)).toEqual({ satz: "s.a.1", ambrose: "s.a.ambrose" });
     expect(statistensatz("s.b", 0, gibt)).toEqual({ satz: "s.b.1", ambrose: null });

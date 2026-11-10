@@ -101,6 +101,7 @@ import {
   type Weltdaten,
 } from "./weltdaten";
 import { Sprechblase, type SprechblasenInhalt } from "./Sprechblase";
+import { Vorfuehrung } from "./Vorfuehrung";
 
 /** Ein offener Dialog: die übersetzte Geschichte, der Knoten und der Name der Datei. */
 interface OffenerDialog {
@@ -128,6 +129,8 @@ export function Oberwelt() {
   // Sprechblase eines Statisten und wie oft jeder schon angesprochen wurde (nur in dieser Sitzung).
   const [sprechblase, setzeSprechblase] = useState<SprechblasenInhalt | null>(null);
   const angesprochen = useRef(new Map<string, number>());
+  // Vorführung eines Statisten (Kennung aus `zeigt`), solange das kleine Brett offen ist.
+  const [vorfuehrung, setzeVorfuehrung] = useState<string | null>(null);
   const [ergebnis, setzeErgebnis] = useState<Partieergebnis | null>(null);
   const [offenePartie, setzeOffenePartie] = useState<string | null>(null);
   const [tagebuch, setzeTagebuch] = useState(false);
@@ -474,6 +477,7 @@ export function Oberwelt() {
         offeneRunde === null &&
         !tagebuch &&
         !deckwahl &&
+        vorfuehrung === null &&
         offenerLaden === null,
     );
   }, [
@@ -484,6 +488,7 @@ export function Oberwelt() {
     offeneRunde,
     tagebuch,
     deckwahl,
+    vorfuehrung,
     offenerLaden,
     welt,
   ]);
@@ -853,12 +858,23 @@ export function Oberwelt() {
       {tagebuch && welt && (
         <Tagebuch stand={stand} daten={welt.daten} beiSchliessen={() => setzeTagebuch(false)} />
       )}
-      {sprechblase && !dialog && (
+      {sprechblase && !dialog && !vorfuehrung && (
         <Sprechblase
           inhalt={sprechblase}
-          weiter={tSpiel("ergebnis.weiter")}
+          texte={{
+            weiter: tSpiel("ergebnis.weiter"),
+            frage: tSpiel("oberwelt.vorfuehrung.frage"),
+            zeigen: tSpiel("oberwelt.vorfuehrung.zeigen"),
+          }}
           beiSchliessen={() => setzeSprechblase(null)}
+          beiZeigen={(kennung) => {
+            setzeSprechblase(null);
+            setzeVorfuehrung(kennung);
+          }}
         />
+      )}
+      {vorfuehrung && (
+        <Vorfuehrung kennung={vorfuehrung} beiSchliessen={() => setzeVorfuehrung(null)} />
       )}
       {meldung && (
         <section className="abenteuer-ergebnis" role="status" data-testid="abenteuer-meldung">

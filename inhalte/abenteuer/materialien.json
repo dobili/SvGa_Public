@@ -15,7 +15,8 @@
     "sinter": "spiel/eigene/boden_sinter.png",
     "moor": "spiel/eigene/wasser_moor.png",
     "see": "spiel/eigene/wasser_see.png",
-    "strand": "modern-exteriors/Modern_Exteriors_16x16/ME_Theme_Sorter_16x16/21_Beach_16x16.png"
+    "strand": "modern-exteriors/Modern_Exteriors_16x16/ME_Theme_Sorter_16x16/21_Beach_16x16.png",
+    "watt": "spiel/eigene/wasser_watt.png"
   },
   "boeden": {
     "holzHell": {
@@ -638,6 +639,17 @@
       "unter_wand": [
         1,
         24
+      ]
+    },
+    "wasser_watt": {
+      "bogen": "watt",
+      "feld": [
+        1,
+        1
+      ],
+      "rand": [
+        0,
+        0
       ]
     }
   },

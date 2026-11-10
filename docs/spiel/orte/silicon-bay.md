@@ -120,6 +120,26 @@ Westen die Bucht; nur der Pfad öffnet den Westrand.
   - **Vögel:** Ringelgänse und Möwen zeichnet die Belebung nach dem Namen; das betrifft die
     Tierbilder aller Karten.
 
+**Zweites Gutachten (`gutachten/weg-ironwood-silicon-raststaette-2.md`, mittel-1):**
+
+- **Sand** (Befunde 1, 2, 4): Das Material `strand` zeigt jetzt LimeZus hellen Strandsand
+  (`21_Beach`) statt des orangen Bodens. Strand und Düne heben sich vom olivbraunen Pfad ab.
+- **Laternen** (3): Die drei Laternen am Ortsschild stehen am Südrand des Pfads (y 17–20), nicht
+  mehr auf der Düne.
+- **Rastbank** (7): Sie steht auf hellen Platten (eigenes Zeichen `q`) mit moderner Laterne.
+- **Watt** (9): Das Wasser ist grauer Schlick (`"ufer": "watt"`, Bildwunsch `wasser_watt.py`). Der
+  Austernfischer sitzt am Sandrand (60, 22), die Strandläufer sitzen, die Ringelgänse schwimmen.
+- **Parkplatz** (15, KARTENREGELN 10.65): Lastwagen und Auto stehen längs der Fahrgasse in Buchten
+  mit senkrechten Trennlinien, Stoßstange an Stoßstange. Die quer markierten Buchten und das
+  zweite Auto sind weg. Das Auto auf der Ausfahrt fährt weiter östlich (150, 17).
+- **Waschstraße** (17): Vor dem Tor liegt Asphalt (Reihe 13). Es ist eine Waschbox, in die man
+  vorwärts hinein- und wieder hinausfährt.
+- **Rasthausdach** (18): Das Dach ist eine glatte Fläche ohne das grüne Fugennetz
+  (`fassaden_zweck.py`, `GLATTES_DACH`).
+- **Bäume** (10, KARTENREGELN 10.67): Die Kugelbäume ohne Stamm sind Bäume mit Stamm.
+- Offen: Düne ohne Höhe (2), Priel mit Sandrahmen (5), Radfahrer ohne Rad (11), leerer Nordosten
+  (25), Bus in der Busbucht (22).
+
 ### 1.2 Glasbrücke (`wegIronwoodSilicon.glasbruecke`, 140 × 26), Runde 8 neu gebaut
 
 **Neu gebaut nach der Revision des Autors (10.11.2026, „keine Variante passt“, mittel-1).** Die

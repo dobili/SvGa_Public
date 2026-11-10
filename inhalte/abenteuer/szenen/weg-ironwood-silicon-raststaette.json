@@ -10,10 +10,17 @@
     "p": "pflaster",
     "a": "erde",
     "d": "strand",
-    "z": "asphalt"
+    "z": "asphalt",
+    "q": "platten"
   },
-  "bruecken": ["h"],
-  "zustand": ["neu", "gebraucht", "alt"],
+  "bruecken": [
+    "h"
+  ],
+  "zustand": [
+    "neu",
+    "gebraucht",
+    "alt"
+  ],
   "stil": [
     "natur",
     "modern",
@@ -37,9 +44,9 @@
     "#....................................................................................................ssss......................................................#",
     "#........ddddd.......................................................................................ssss......................................ppppppp.........#",
     "#...ddddddddddddddd..................................................................................ssss......................pppppp..........ppppppp.........#",
-    "#.ddddddddddddddddddd.......pppppp...................................................................ssss......................pppppp..........ppppppp.........#",
-    "#.ddddddddddddddddddd.......pppppp...................................................................ssss......................pppppp..........ppppppp.........#",
-    "#.ddddddddddddddddddd.......pppppp............dddd...................................................sssszzzzzzzzzzzzzzzzzzzzz.pppppp..........ppppppp.........#",
+    "#.ddddddddddddddddddd.......qqqqqq...................................................................ssss......................pppppp..........ppppppp.........#",
+    "#.ddddddddddddddddddd.......qqqqqq...................................................................ssss...............zzzzz..pppppp..........ppppppp.........#",
+    "#.ddddddddddddddddddd.......qqqqqq............dddd...................................................sssszzzzzzzzzzzzzzzzzzzzz.pppppp..........ppppppp.........#",
     "#.ddddddddddddddddddd...aaaaaaaaaaaaaa.......dddddd.................aaaaaaaaaaaaaaaaaa...............sssszzzzzzzzzzzzzzzzzzzzzppppppppppppppppppppppppp........#",
     "#...ddddddddddddddd..aaaaaaaaaaaaaaaaaaa....dd~~~~dd..............aaaaaaaaaaaaaaaaaaaaa..............sssszzzzzzzzzzzzzzzzzzzzzppppppppppppppppppppppppp........#",
     "#........ddddd......aaaaa............aaaa...dd~~~~dd.............aaaa..........aa....aaa.............sssszzzzzzzzzzzzzzzzzzzzzzzzzzzzzzzzzzzzzzzzzzzzzzzzzzzzzz#",
@@ -57,1225 +64,2245 @@
   "objekte": [
     {
       "moebel": "wsgBordQ7",
-      "feld": [143, 10],
-      "versatz": [0, -1]
+      "feld": [
+        143,
+        10
+      ],
+      "versatz": [
+        0,
+        -1
+      ]
     },
     {
       "moebel": "wsgBordQ6",
-      "feld": [127, 11],
-      "versatz": [0, -1]
+      "feld": [
+        127,
+        11
+      ],
+      "versatz": [
+        0,
+        -1
+      ]
     },
     {
       "moebel": "wsgBordQ6",
-      "feld": [28, 12],
-      "versatz": [0, -1]
+      "feld": [
+        28,
+        12
+      ],
+      "versatz": [
+        0,
+        -1
+      ]
     },
     {
       "moebel": "wsgBordQ16",
-      "feld": [105, 14],
-      "versatz": [0, -1]
+      "feld": [
+        105,
+        14
+      ],
+      "versatz": [
+        0,
+        -1
+      ]
     },
     {
       "moebel": "wsgBordQ5",
-      "feld": [121, 14],
-      "versatz": [0, -1]
+      "feld": [
+        121,
+        14
+      ],
+      "versatz": [
+        0,
+        -1
+      ]
     },
     {
       "moebel": "wsgBordQ1",
-      "feld": [126, 15],
-      "versatz": [0, -1]
+      "feld": [
+        126,
+        15
+      ],
+      "versatz": [
+        0,
+        -1
+      ]
     },
     {
       "moebel": "wsgBordQ10",
-      "feld": [133, 15],
-      "versatz": [0, -1]
+      "feld": [
+        133,
+        15
+      ],
+      "versatz": [
+        0,
+        -1
+      ]
     },
     {
       "moebel": "wsgBordQ1",
-      "feld": [150, 15],
-      "versatz": [0, -1]
+      "feld": [
+        150,
+        15
+      ],
+      "versatz": [
+        0,
+        -1
+      ]
     },
     {
       "moebel": "wsgBordQ8",
-      "feld": [151, 17],
-      "versatz": [0, -1]
+      "feld": [
+        151,
+        17
+      ],
+      "versatz": [
+        0,
+        -1
+      ]
     },
     {
       "moebel": "wsgBordQ3",
-      "feld": [129, 20],
-      "versatz": [0, -2]
+      "feld": [
+        129,
+        20
+      ],
+      "versatz": [
+        0,
+        -2
+      ]
     },
     {
       "moebel": "wsgBordQ1",
-      "feld": [158, 20],
-      "versatz": [0, -2]
+      "feld": [
+        158,
+        20
+      ],
+      "versatz": [
+        0,
+        -2
+      ]
     },
     {
       "moebel": "wsgBordQ5",
-      "feld": [132, 22],
-      "versatz": [0, -2]
+      "feld": [
+        132,
+        22
+      ],
+      "versatz": [
+        0,
+        -2
+      ]
     },
     {
       "moebel": "wsgBordQ9",
-      "feld": [137, 25],
-      "versatz": [0, -2]
+      "feld": [
+        137,
+        25
+      ],
+      "versatz": [
+        0,
+        -2
+      ]
     },
     {
       "moebel": "wsgBordL3",
-      "feld": [28, 12],
-      "versatz": [-1, 0]
+      "feld": [
+        28,
+        12
+      ],
+      "versatz": [
+        -1,
+        0
+      ]
     },
     {
       "moebel": "wsgBordL15",
-      "feld": [101, 5],
-      "versatz": [-1, 0]
+      "feld": [
+        101,
+        5
+      ],
+      "versatz": [
+        -1,
+        0
+      ]
     },
     {
       "moebel": "wsgBordL4",
-      "feld": [110, 23],
-      "versatz": [-1, 0]
+      "feld": [
+        110,
+        23
+      ],
+      "versatz": [
+        -1,
+        0
+      ]
     },
     {
       "moebel": "wsgBordL4",
-      "feld": [127, 11],
-      "versatz": [-1, 0]
+      "feld": [
+        127,
+        11
+      ],
+      "versatz": [
+        -1,
+        0
+      ]
     },
     {
       "moebel": "wsgBordL2",
-      "feld": [132, 20],
-      "versatz": [-1, 0]
+      "feld": [
+        132,
+        20
+      ],
+      "versatz": [
+        -1,
+        0
+      ]
     },
     {
       "moebel": "wsgBordL3",
-      "feld": [137, 22],
-      "versatz": [-1, 0]
+      "feld": [
+        137,
+        22
+      ],
+      "versatz": [
+        -1,
+        0
+      ]
     },
     {
       "moebel": "wsgBordL5",
-      "feld": [143, 10],
-      "versatz": [-1, 0]
+      "feld": [
+        143,
+        10
+      ],
+      "versatz": [
+        -1,
+        0
+      ]
     },
     {
       "moebel": "wsgBordL2",
-      "feld": [146, 25],
-      "versatz": [-1, 0]
+      "feld": [
+        146,
+        25
+      ],
+      "versatz": [
+        -1,
+        0
+      ]
     },
     {
       "moebel": "wsgBordL3",
-      "feld": [34, 12],
-      "versatz": [-2, 0]
+      "feld": [
+        34,
+        12
+      ],
+      "versatz": [
+        -2,
+        0
+      ]
     },
     {
       "moebel": "wsgBordL9",
-      "feld": [105, 5],
-      "versatz": [-2, 0]
+      "feld": [
+        105,
+        5
+      ],
+      "versatz": [
+        -2,
+        0
+      ]
     },
     {
       "moebel": "wsgBordL1",
-      "feld": [126, 14],
-      "versatz": [-2, 0]
+      "feld": [
+        126,
+        14
+      ],
+      "versatz": [
+        -2,
+        0
+      ]
     },
     {
       "moebel": "wsgBordL7",
-      "feld": [129, 20],
-      "versatz": [-2, 0]
+      "feld": [
+        129,
+        20
+      ],
+      "versatz": [
+        -2,
+        0
+      ]
     },
     {
       "moebel": "wsgBordL4",
-      "feld": [133, 11],
-      "versatz": [-2, 0]
+      "feld": [
+        133,
+        11
+      ],
+      "versatz": [
+        -2,
+        0
+      ]
     },
     {
       "moebel": "wsgBordL5",
-      "feld": [150, 10],
-      "versatz": [-2, 0]
+      "feld": [
+        150,
+        10
+      ],
+      "versatz": [
+        -2,
+        0
+      ]
     },
     {
       "moebel": "wsgBordL2",
-      "feld": [151, 15],
-      "versatz": [-2, 0]
+      "feld": [
+        151,
+        15
+      ],
+      "versatz": [
+        -2,
+        0
+      ]
     },
     {
       "moebel": "wsgBordL7",
-      "feld": [158, 20],
-      "versatz": [-2, 0]
+      "feld": [
+        158,
+        20
+      ],
+      "versatz": [
+        -2,
+        0
+      ]
     },
     {
       "moebel": "wsgLinieQ16",
-      "feld": [0, 0],
-      "versatz": [0, 2]
+      "feld": [
+        0,
+        0
+      ],
+      "versatz": [
+        0,
+        2
+      ]
     },
     {
       "moebel": "wsgLinieQ16",
-      "feld": [16, 0],
-      "versatz": [0, 2]
+      "feld": [
+        16,
+        0
+      ],
+      "versatz": [
+        0,
+        2
+      ]
     },
     {
       "moebel": "wsgLinieQ16",
-      "feld": [32, 0],
-      "versatz": [0, 2]
+      "feld": [
+        32,
+        0
+      ],
+      "versatz": [
+        0,
+        2
+      ]
     },
     {
       "moebel": "wsgLinieQ16",
-      "feld": [48, 0],
-      "versatz": [0, 2]
+      "feld": [
+        48,
+        0
+      ],
+      "versatz": [
+        0,
+        2
+      ]
     },
     {
       "moebel": "wsgLinieQ16",
-      "feld": [64, 0],
-      "versatz": [0, 2]
+      "feld": [
+        64,
+        0
+      ],
+      "versatz": [
+        0,
+        2
+      ]
     },
     {
       "moebel": "wsgLinieQ16",
-      "feld": [80, 0],
-      "versatz": [0, 2]
+      "feld": [
+        80,
+        0
+      ],
+      "versatz": [
+        0,
+        2
+      ]
     },
     {
       "moebel": "wsgLinieQ16",
-      "feld": [96, 0],
-      "versatz": [0, 2]
+      "feld": [
+        96,
+        0
+      ],
+      "versatz": [
+        0,
+        2
+      ]
     },
     {
       "moebel": "wsgLinieQ16",
-      "feld": [112, 0],
-      "versatz": [0, 2]
+      "feld": [
+        112,
+        0
+      ],
+      "versatz": [
+        0,
+        2
+      ]
     },
     {
       "moebel": "wsgLinieQ16",
-      "feld": [128, 0],
-      "versatz": [0, 2]
+      "feld": [
+        128,
+        0
+      ],
+      "versatz": [
+        0,
+        2
+      ]
     },
     {
       "moebel": "wsgLinieQ16",
-      "feld": [144, 0],
-      "versatz": [0, 2]
+      "feld": [
+        144,
+        0
+      ],
+      "versatz": [
+        0,
+        2
+      ]
     },
     {
       "moebel": "wsgStrichQ16",
-      "feld": [0, 2],
-      "versatz": [0, 8]
+      "feld": [
+        0,
+        2
+      ],
+      "versatz": [
+        0,
+        8
+      ]
     },
     {
       "moebel": "wsgStrichQ16",
-      "feld": [16, 2],
-      "versatz": [0, 8]
+      "feld": [
+        16,
+        2
+      ],
+      "versatz": [
+        0,
+        8
+      ]
     },
     {
       "moebel": "wsgStrichQ16",
-      "feld": [32, 2],
-      "versatz": [0, 8]
+      "feld": [
+        32,
+        2
+      ],
+      "versatz": [
+        0,
+        8
+      ]
     },
     {
       "moebel": "wsgStrichQ16",
-      "feld": [48, 2],
-      "versatz": [0, 8]
+      "feld": [
+        48,
+        2
+      ],
+      "versatz": [
+        0,
+        8
+      ]
     },
     {
       "moebel": "wsgStrichQ16",
-      "feld": [64, 2],
-      "versatz": [0, 8]
+      "feld": [
+        64,
+        2
+      ],
+      "versatz": [
+        0,
+        8
+      ]
     },
     {
       "moebel": "wsgStrichQ16",
-      "feld": [80, 2],
-      "versatz": [0, 8]
+      "feld": [
+        80,
+        2
+      ],
+      "versatz": [
+        0,
+        8
+      ]
     },
     {
       "moebel": "wsgStrichQ16",
-      "feld": [96, 2],
-      "versatz": [0, 8]
+      "feld": [
+        96,
+        2
+      ],
+      "versatz": [
+        0,
+        8
+      ]
     },
     {
       "moebel": "wsgStrichQ16",
-      "feld": [112, 2],
-      "versatz": [0, 8]
+      "feld": [
+        112,
+        2
+      ],
+      "versatz": [
+        0,
+        8
+      ]
     },
     {
       "moebel": "wsgStrichQ16",
-      "feld": [128, 2],
-      "versatz": [0, 8]
+      "feld": [
+        128,
+        2
+      ],
+      "versatz": [
+        0,
+        8
+      ]
     },
     {
       "moebel": "wsgStrichQ16",
-      "feld": [144, 2],
-      "versatz": [0, 8]
+      "feld": [
+        144,
+        2
+      ],
+      "versatz": [
+        0,
+        8
+      ]
     },
     {
       "moebel": "wsgLinieQ16",
-      "feld": [0, 4],
-      "versatz": [0, 12]
+      "feld": [
+        0,
+        4
+      ],
+      "versatz": [
+        0,
+        12
+      ]
     },
     {
       "moebel": "wsgLinieQ16",
-      "feld": [16, 4],
-      "versatz": [0, 12]
+      "feld": [
+        16,
+        4
+      ],
+      "versatz": [
+        0,
+        12
+      ]
     },
     {
       "moebel": "wsgLinieQ16",
-      "feld": [32, 4],
-      "versatz": [0, 12]
+      "feld": [
+        32,
+        4
+      ],
+      "versatz": [
+        0,
+        12
+      ]
     },
     {
       "moebel": "wsgLinieQ16",
-      "feld": [48, 4],
-      "versatz": [0, 12]
+      "feld": [
+        48,
+        4
+      ],
+      "versatz": [
+        0,
+        12
+      ]
     },
     {
       "moebel": "wsgLinieQ16",
-      "feld": [64, 4],
-      "versatz": [0, 12]
+      "feld": [
+        64,
+        4
+      ],
+      "versatz": [
+        0,
+        12
+      ]
     },
     {
       "moebel": "wsgLinieQ16",
-      "feld": [80, 4],
-      "versatz": [0, 12]
+      "feld": [
+        80,
+        4
+      ],
+      "versatz": [
+        0,
+        12
+      ]
     },
     {
       "moebel": "wsgLinieQ16",
-      "feld": [96, 4],
-      "versatz": [0, 12]
+      "feld": [
+        96,
+        4
+      ],
+      "versatz": [
+        0,
+        12
+      ]
     },
     {
       "moebel": "wsgLinieQ16",
-      "feld": [112, 4],
-      "versatz": [0, 12]
+      "feld": [
+        112,
+        4
+      ],
+      "versatz": [
+        0,
+        12
+      ]
     },
     {
       "moebel": "wsgLinieQ16",
-      "feld": [128, 4],
-      "versatz": [0, 12]
+      "feld": [
+        128,
+        4
+      ],
+      "versatz": [
+        0,
+        12
+      ]
     },
     {
       "moebel": "wsgLinieQ16",
-      "feld": [144, 4],
-      "versatz": [0, 12]
+      "feld": [
+        144,
+        4
+      ],
+      "versatz": [
+        0,
+        12
+      ]
     },
     {
       "moebel": "wsrAutoLinks1",
-      "feld": [22, 0],
-      "versatz": [0, 0],
+      "feld": [
+        22,
+        0
+      ],
+      "versatz": [
+        0,
+        0
+      ],
       "bauteil_ok": true
     },
     {
       "moebel": "wsrAutoLinks14",
-      "feld": [76, 0],
-      "versatz": [0, 0],
+      "feld": [
+        76,
+        0
+      ],
+      "versatz": [
+        0,
+        0
+      ],
       "bauteil_ok": true
     },
     {
       "moebel": "wsrAutoLinks21",
-      "feld": [131, 0],
-      "versatz": [0, 0],
+      "feld": [
+        131,
+        0
+      ],
+      "versatz": [
+        0,
+        0
+      ],
       "bauteil_ok": true
     },
     {
       "moebel": "wsrAutoRechts10",
-      "feld": [8, 2],
-      "versatz": [0, 4],
+      "feld": [
+        8,
+        2
+      ],
+      "versatz": [
+        0,
+        4
+      ],
       "bauteil_ok": true
     },
     {
       "moebel": "wsrAutoRechts2",
-      "feld": [52, 2],
-      "versatz": [0, 4],
+      "feld": [
+        52,
+        2
+      ],
+      "versatz": [
+        0,
+        4
+      ],
       "bauteil_ok": true
     },
     {
       "moebel": "wsrAutoRechts17",
-      "feld": [100, 2],
-      "versatz": [0, 4],
+      "feld": [
+        100,
+        2
+      ],
+      "versatz": [
+        0,
+        4
+      ],
       "bauteil_ok": true
     },
     {
       "moebel": "ws5Planke8",
-      "feld": [0, 5],
+      "feld": [
+        0,
+        5
+      ],
       "bauteil_ok": true
     },
     {
       "moebel": "ws5Planke8",
-      "feld": [8, 5],
+      "feld": [
+        8,
+        5
+      ],
       "bauteil_ok": true
     },
     {
       "moebel": "ws5Planke8",
-      "feld": [16, 5],
+      "feld": [
+        16,
+        5
+      ],
       "bauteil_ok": true
     },
     {
       "moebel": "ws5Planke8",
-      "feld": [24, 5],
+      "feld": [
+        24,
+        5
+      ],
       "bauteil_ok": true
     },
     {
       "moebel": "ws5Planke8",
-      "feld": [32, 5],
+      "feld": [
+        32,
+        5
+      ],
       "bauteil_ok": true
     },
     {
       "moebel": "ws5Planke8",
-      "feld": [40, 5],
+      "feld": [
+        40,
+        5
+      ],
       "bauteil_ok": true
     },
     {
       "moebel": "ws5Planke8",
-      "feld": [48, 5],
+      "feld": [
+        48,
+        5
+      ],
       "bauteil_ok": true
     },
     {
       "moebel": "ws5Planke8",
-      "feld": [56, 5],
+      "feld": [
+        56,
+        5
+      ],
       "bauteil_ok": true
     },
     {
       "moebel": "ws5Planke8",
-      "feld": [64, 5],
+      "feld": [
+        64,
+        5
+      ],
       "bauteil_ok": true
     },
     {
       "moebel": "ws5Planke8",
-      "feld": [72, 5],
+      "feld": [
+        72,
+        5
+      ],
       "bauteil_ok": true
     },
     {
       "moebel": "ws5Planke8",
-      "feld": [80, 5],
+      "feld": [
+        80,
+        5
+      ],
       "bauteil_ok": true
     },
     {
       "moebel": "ws5Planke8",
-      "feld": [88, 5],
+      "feld": [
+        88,
+        5
+      ],
       "bauteil_ok": true
     },
     {
       "moebel": "ws5Planke8",
-      "feld": [112, 5],
+      "feld": [
+        112,
+        5
+      ],
       "bauteil_ok": true
     },
     {
       "moebel": "ws5Planke8",
-      "feld": [120, 5],
+      "feld": [
+        120,
+        5
+      ],
       "bauteil_ok": true
     },
     {
       "moebel": "ws5Planke8",
-      "feld": [128, 5],
+      "feld": [
+        128,
+        5
+      ],
       "bauteil_ok": true
     },
     {
       "moebel": "ws5Planke8",
-      "feld": [136, 5],
+      "feld": [
+        136,
+        5
+      ],
       "bauteil_ok": true
     },
     {
       "moebel": "ws5Planke8",
-      "feld": [144, 5],
+      "feld": [
+        144,
+        5
+      ],
       "bauteil_ok": true
     },
     {
       "moebel": "ws5Planke8",
-      "feld": [152, 5],
+      "feld": [
+        152,
+        5
+      ],
       "bauteil_ok": true
     },
     {
       "moebel": "ws5TankstelleGross",
-      "feld": [108, 6]
+      "feld": [
+        108,
+        6
+      ]
     },
     {
       "moebel": "ws5Rasthaus",
-      "feld": [134, 7]
+      "feld": [
+        134,
+        7
+      ]
     },
     {
       "moebel": "ws5Imbiss",
-      "feld": [143, 9]
+      "feld": [
+        143,
+        9
+      ]
     },
     {
       "moebel": "ws5Wartehaus",
-      "feld": [140, 22]
+      "feld": [
+        140,
+        22
+      ]
     },
     {
       "moebel": "ws5Haltestelle",
-      "feld": [138, 22]
+      "feld": [
+        138,
+        22
+      ]
     },
     {
       "moebel": "ws5Wegweiser",
-      "feld": [103, 20]
+      "feld": [
+        103,
+        20
+      ]
     },
     {
       "moebel": "ws5Huette",
-      "feld": [75, 18]
+      "feld": [
+        75,
+        18
+      ]
     },
     {
       "moebel": "ws5Bank",
-      "feld": [30, 14]
+      "feld": [
+        30,
+        14
+      ]
     },
     {
       "moebel": "ws5Steg6",
-      "feld": [45, 19]
+      "feld": [
+        45,
+        19
+      ]
     },
     {
       "moebel": "ws5Schild",
-      "feld": [8, 15]
+      "feld": [
+        8,
+        15
+      ]
     },
     {
       "moebel": "ws5Strandgras",
-      "feld": [91, 13]
+      "feld": [
+        91,
+        13
+      ]
     },
     {
       "moebel": "ws5Strandgras",
-      "feld": [98, 14]
+      "feld": [
+        98,
+        14
+      ]
     },
     {
       "moebel": "ws5Strandgras",
-      "feld": [39, 14]
+      "feld": [
+        39,
+        14
+      ]
     },
     {
       "moebel": "ws5Schilf",
-      "feld": [73, 11]
+      "feld": [
+        73,
+        11
+      ]
     },
     {
       "moebel": "ws5Strandgras",
-      "feld": [18, 14]
+      "feld": [
+        18,
+        14
+      ]
     },
     {
       "moebel": "ws5Strandgras",
-      "feld": [39, 21]
+      "feld": [
+        39,
+        21
+      ]
     },
     {
       "moebel": "ws5Strandgras",
-      "feld": [22, 13]
+      "feld": [
+        22,
+        13
+      ]
     },
     {
       "moebel": "ws5Strandgras",
-      "feld": [93, 13]
+      "feld": [
+        93,
+        13
+      ]
     },
     {
       "moebel": "ws5Strandgras",
-      "feld": [67, 19]
+      "feld": [
+        67,
+        19
+      ]
     },
     {
       "moebel": "ws5Strandgras",
-      "feld": [85, 21]
+      "feld": [
+        85,
+        21
+      ]
     },
     {
       "moebel": "ws5Strandgras",
-      "feld": [59, 14]
+      "feld": [
+        59,
+        14
+      ]
     },
     {
       "moebel": "ws5Strandgras",
-      "feld": [90, 16]
+      "feld": [
+        90,
+        16
+      ]
     },
     {
       "moebel": "ws5Schilf",
-      "feld": [157, 11]
+      "feld": [
+        157,
+        11
+      ]
     },
     {
       "moebel": "ws5Strandgras",
-      "feld": [22, 21]
+      "feld": [
+        22,
+        21
+      ]
     },
     {
       "moebel": "ws5Strandgras",
-      "feld": [8, 13]
+      "feld": [
+        8,
+        13
+      ]
     },
     {
       "moebel": "ws5Schilf",
-      "feld": [34, 11]
+      "feld": [
+        34,
+        11
+      ]
     },
     {
       "moebel": "ws5Schilf",
-      "feld": [55, 15]
+      "feld": [
+        55,
+        15
+      ]
     },
     {
       "moebel": "ws5Schilf",
-      "feld": [91, 18]
+      "feld": [
+        91,
+        18
+      ]
     },
     {
       "moebel": "ws5Schilf",
-      "feld": [34, 19]
+      "feld": [
+        34,
+        19
+      ]
     },
     {
       "moebel": "ws5Strandgras",
-      "feld": [37, 18]
+      "feld": [
+        37,
+        18
+      ]
     },
     {
       "moebel": "ws5Strandgras",
-      "feld": [28, 19]
+      "feld": [
+        28,
+        19
+      ]
     },
     {
       "moebel": "ws5Schilf",
-      "feld": [52, 22]
+      "feld": [
+        52,
+        22
+      ]
     },
     {
       "moebel": "ws5Strandgras",
-      "feld": [92, 16]
+      "feld": [
+        92,
+        16
+      ]
     },
     {
       "moebel": "ws5Strandgras",
-      "feld": [5, 16]
+      "feld": [
+        5,
+        16
+      ]
     },
     {
       "moebel": "ws5Schilf",
-      "feld": [85, 19]
+      "feld": [
+        85,
+        19
+      ]
     },
     {
       "moebel": "ws5Strandgras",
-      "feld": [59, 12]
+      "feld": [
+        59,
+        12
+      ]
     },
     {
       "moebel": "ws5Schilf",
-      "feld": [84, 12]
+      "feld": [
+        84,
+        12
+      ]
     },
     {
       "moebel": "ws5Strandgras",
-      "feld": [5, 21]
+      "feld": [
+        5,
+        21
+      ]
     },
     {
       "moebel": "ws5Strandgras",
-      "feld": [57, 12]
+      "feld": [
+        57,
+        12
+      ]
     },
     {
       "moebel": "ws5Strandgras",
-      "feld": [68, 11]
+      "feld": [
+        68,
+        11
+      ]
     },
     {
       "moebel": "ws5Schilf",
-      "feld": [10, 11]
+      "feld": [
+        10,
+        11
+      ]
     },
     {
       "moebel": "ws5Schilf",
-      "feld": [56, 14]
+      "feld": [
+        56,
+        14
+      ]
     },
     {
       "moebel": "ws5Strandgras",
-      "feld": [4, 12]
+      "feld": [
+        4,
+        12
+      ]
     },
     {
       "moebel": "ws5Strandgras",
-      "feld": [15, 12]
+      "feld": [
+        15,
+        12
+      ]
     },
     {
       "moebel": "ws5Strandgras",
-      "feld": [73, 20]
+      "feld": [
+        73,
+        20
+      ]
     },
     {
       "moebel": "wr5Container",
-      "feld": [128, 8]
+      "feld": [
+        128,
+        8
+      ]
     },
     {
       "moebel": "sb5KuebelBluete",
-      "feld": [142, 15]
+      "feld": [
+        142,
+        15
+      ]
     },
     {
       "moebel": "sb8Kreidespringer",
-      "feld": [129, 9],
+      "feld": [
+        129,
+        9
+      ],
       "vorn": true,
-      "versatz": [0, 0]
+      "versatz": [
+        0,
+        0
+      ]
     },
     {
       "moebel": "sb8Finkenzeichen",
-      "feld": [143, 16],
+      "feld": [
+        143,
+        16
+      ],
       "vorn": true,
-      "versatz": [4, -2]
+      "versatz": [
+        4,
+        -2
+      ]
     },
     {
-      "moebel": "ws5Laterne",
-      "feld": [29, 11]
+      "moebel": "wsgLaterneModern",
+      "feld": [
+        27,
+        11
+      ]
     },
     {
       "moebel": "ws5Muell",
-      "feld": [32, 13]
+      "feld": [
+        32,
+        13
+      ]
     },
     {
       "moebel": "wsrLkw",
-      "feld": [110, 20]
+      "feld": [
+        110,
+        20
+      ]
     },
     {
       "moebel": "wsrTafel",
-      "feld": [131, 13]
+      "feld": [
+        131,
+        13
+      ]
     },
     {
       "moebel": "wsrPlanke5",
-      "feld": [96, 5]
+      "feld": [
+        96,
+        5
+      ]
     },
     {
       "moebel": "wsrPlanke7",
-      "feld": [105, 5]
+      "feld": [
+        105,
+        5
+      ]
     },
     {
       "moebel": "wsgSaeule10",
-      "feld": [2, 6]
+      "feld": [
+        2,
+        6
+      ]
     },
     {
       "moebel": "wsgSaeule6",
-      "feld": [3, 6]
+      "feld": [
+        3,
+        6
+      ]
     },
     {
       "moebel": "wsgSaeule7",
-      "feld": [4, 6]
+      "feld": [
+        4,
+        6
+      ]
     },
     {
       "moebel": "wsgSaeule6",
-      "feld": [5, 6]
+      "feld": [
+        5,
+        6
+      ]
     },
     {
       "moebel": "wsgSaeule7",
-      "feld": [6, 6]
+      "feld": [
+        6,
+        6
+      ]
     },
     {
       "moebel": "wsgSaeule10",
-      "feld": [7, 6]
+      "feld": [
+        7,
+        6
+      ]
     },
     {
       "moebel": "wsgSaeule6",
-      "feld": [8, 6]
+      "feld": [
+        8,
+        6
+      ]
     },
     {
       "moebel": "wsgSaeule7",
-      "feld": [9, 6]
+      "feld": [
+        9,
+        6
+      ]
     },
     {
       "moebel": "wsgSaeule6",
-      "feld": [10, 6]
+      "feld": [
+        10,
+        6
+      ]
     },
     {
       "moebel": "wsgSaeule7",
-      "feld": [11, 6]
+      "feld": [
+        11,
+        6
+      ]
     },
     {
       "moebel": "wsgSaeule10",
-      "feld": [12, 6]
+      "feld": [
+        12,
+        6
+      ]
     },
     {
       "moebel": "wsgSaeule6",
-      "feld": [13, 6]
+      "feld": [
+        13,
+        6
+      ]
     },
     {
       "moebel": "wsgSaeule7",
-      "feld": [14, 6]
+      "feld": [
+        14,
+        6
+      ]
     },
     {
       "moebel": "wsgSaeule6",
-      "feld": [15, 6]
+      "feld": [
+        15,
+        6
+      ]
     },
     {
       "moebel": "wsgSaeule7",
-      "feld": [16, 6]
+      "feld": [
+        16,
+        6
+      ]
     },
     {
       "moebel": "wsgSaeule7",
-      "feld": [19, 6]
+      "feld": [
+        19,
+        6
+      ]
     },
     {
       "moebel": "wsgSaeule6",
-      "feld": [20, 6]
+      "feld": [
+        20,
+        6
+      ]
     },
     {
       "moebel": "wsgSaeule7",
-      "feld": [21, 6]
+      "feld": [
+        21,
+        6
+      ]
     },
     {
       "moebel": "wsgSaeule10",
-      "feld": [22, 6]
+      "feld": [
+        22,
+        6
+      ]
     },
     {
       "moebel": "wsgSaeule6",
-      "feld": [23, 6]
+      "feld": [
+        23,
+        6
+      ]
     },
     {
       "moebel": "wsgSaeule7",
-      "feld": [24, 6]
+      "feld": [
+        24,
+        6
+      ]
     },
     {
       "moebel": "wsgSaeule6",
-      "feld": [25, 6]
+      "feld": [
+        25,
+        6
+      ]
     },
     {
       "moebel": "wsgSaeule7",
-      "feld": [26, 6]
+      "feld": [
+        26,
+        6
+      ]
     },
     {
       "moebel": "wsgSaeule10",
-      "feld": [27, 6]
+      "feld": [
+        27,
+        6
+      ]
     },
     {
       "moebel": "wsgSaeule6",
-      "feld": [28, 6]
+      "feld": [
+        28,
+        6
+      ]
     },
     {
       "moebel": "wsgSaeule7",
-      "feld": [29, 6]
+      "feld": [
+        29,
+        6
+      ]
     },
     {
       "moebel": "wsgSaeule6",
-      "feld": [30, 6]
+      "feld": [
+        30,
+        6
+      ]
     },
     {
       "moebel": "wsgSaeule7",
-      "feld": [31, 6]
+      "feld": [
+        31,
+        6
+      ]
     },
     {
       "moebel": "wsgSaeule10",
-      "feld": [32, 6]
+      "feld": [
+        32,
+        6
+      ]
     },
     {
       "moebel": "wsgSaeule6",
-      "feld": [33, 6]
+      "feld": [
+        33,
+        6
+      ]
     },
     {
       "moebel": "wsgSaeule7",
-      "feld": [36, 6]
+      "feld": [
+        36,
+        6
+      ]
     },
     {
       "moebel": "wsgSaeule10",
-      "feld": [37, 6]
+      "feld": [
+        37,
+        6
+      ]
     },
     {
       "moebel": "wsgSaeule6",
-      "feld": [38, 6]
+      "feld": [
+        38,
+        6
+      ]
     },
     {
       "moebel": "wsgSaeule7",
-      "feld": [39, 6]
+      "feld": [
+        39,
+        6
+      ]
     },
     {
       "moebel": "wsgSaeule6",
-      "feld": [40, 6]
+      "feld": [
+        40,
+        6
+      ]
     },
     {
       "moebel": "wsgSaeule7",
-      "feld": [41, 6]
+      "feld": [
+        41,
+        6
+      ]
     },
     {
       "moebel": "wsgSaeule10",
-      "feld": [42, 6]
+      "feld": [
+        42,
+        6
+      ]
     },
     {
       "moebel": "wsgSaeule6",
-      "feld": [43, 6]
+      "feld": [
+        43,
+        6
+      ]
     },
     {
       "moebel": "wsgSaeule7",
-      "feld": [44, 6]
+      "feld": [
+        44,
+        6
+      ]
     },
     {
       "moebel": "wsgSaeule6",
-      "feld": [45, 6]
+      "feld": [
+        45,
+        6
+      ]
     },
     {
       "moebel": "wsgSaeule7",
-      "feld": [46, 6]
+      "feld": [
+        46,
+        6
+      ]
     },
     {
       "moebel": "wsgSaeule10",
-      "feld": [47, 6]
+      "feld": [
+        47,
+        6
+      ]
     },
     {
       "moebel": "wsgSaeule6",
-      "feld": [48, 6]
+      "feld": [
+        48,
+        6
+      ]
     },
     {
       "moebel": "wsgSaeule7",
-      "feld": [49, 6]
+      "feld": [
+        49,
+        6
+      ]
     },
     {
       "moebel": "wsgSaeule6",
-      "feld": [50, 6]
+      "feld": [
+        50,
+        6
+      ]
     },
     {
       "moebel": "wsgSaeule6",
-      "feld": [53, 6]
+      "feld": [
+        53,
+        6
+      ]
     },
     {
       "moebel": "wsgSaeule7",
-      "feld": [54, 6]
+      "feld": [
+        54,
+        6
+      ]
     },
     {
       "moebel": "wsgSaeule6",
-      "feld": [55, 6]
+      "feld": [
+        55,
+        6
+      ]
     },
     {
       "moebel": "wsgSaeule7",
-      "feld": [56, 6]
+      "feld": [
+        56,
+        6
+      ]
     },
     {
       "moebel": "wsgSaeule10",
-      "feld": [57, 6]
+      "feld": [
+        57,
+        6
+      ]
     },
     {
       "moebel": "wsgSaeule6",
-      "feld": [58, 6]
+      "feld": [
+        58,
+        6
+      ]
     },
     {
       "moebel": "wsgSaeule7",
-      "feld": [59, 6]
+      "feld": [
+        59,
+        6
+      ]
     },
     {
       "moebel": "wsgSaeule6",
-      "feld": [60, 6]
+      "feld": [
+        60,
+        6
+      ]
     },
     {
       "moebel": "wsgSaeule7",
-      "feld": [61, 6]
+      "feld": [
+        61,
+        6
+      ]
     },
     {
       "moebel": "wsgSaeule10",
-      "feld": [62, 6]
+      "feld": [
+        62,
+        6
+      ]
     },
     {
       "moebel": "wsgSaeule6",
-      "feld": [63, 6]
+      "feld": [
+        63,
+        6
+      ]
     },
     {
       "moebel": "wsgSaeule7",
-      "feld": [64, 6]
+      "feld": [
+        64,
+        6
+      ]
     },
     {
       "moebel": "wsgSaeule6",
-      "feld": [65, 6]
+      "feld": [
+        65,
+        6
+      ]
     },
     {
       "moebel": "wsgSaeule7",
-      "feld": [66, 6]
+      "feld": [
+        66,
+        6
+      ]
     },
     {
       "moebel": "wsgSaeule10",
-      "feld": [67, 6]
+      "feld": [
+        67,
+        6
+      ]
     },
     {
       "moebel": "wsgSaeule6",
-      "feld": [70, 6]
+      "feld": [
+        70,
+        6
+      ]
     },
     {
       "moebel": "wsgSaeule7",
-      "feld": [71, 6]
+      "feld": [
+        71,
+        6
+      ]
     },
     {
       "moebel": "wsgSaeule10",
-      "feld": [72, 6]
+      "feld": [
+        72,
+        6
+      ]
     },
     {
       "moebel": "wsgSaeule6",
-      "feld": [73, 6]
+      "feld": [
+        73,
+        6
+      ]
     },
     {
       "moebel": "wsgSaeule7",
-      "feld": [74, 6]
+      "feld": [
+        74,
+        6
+      ]
     },
     {
       "moebel": "wsgSaeule6",
-      "feld": [75, 6]
+      "feld": [
+        75,
+        6
+      ]
     },
     {
       "moebel": "wsgSaeule7",
-      "feld": [76, 6]
+      "feld": [
+        76,
+        6
+      ]
     },
     {
       "moebel": "wsgSaeule10",
-      "feld": [77, 6]
+      "feld": [
+        77,
+        6
+      ]
     },
     {
       "moebel": "wsgSaeule6",
-      "feld": [78, 6]
+      "feld": [
+        78,
+        6
+      ]
     },
     {
       "moebel": "wsgSaeule7",
-      "feld": [79, 6]
+      "feld": [
+        79,
+        6
+      ]
     },
     {
       "moebel": "wsgSaeule6",
-      "feld": [80, 6]
+      "feld": [
+        80,
+        6
+      ]
     },
     {
       "moebel": "wsgSaeule7",
-      "feld": [81, 6]
+      "feld": [
+        81,
+        6
+      ]
     },
     {
       "moebel": "wsgSaeule10",
-      "feld": [82, 6]
+      "feld": [
+        82,
+        6
+      ]
     },
     {
       "moebel": "wsgSaeule6",
-      "feld": [83, 6]
+      "feld": [
+        83,
+        6
+      ]
     },
     {
       "moebel": "wsgSaeule7",
-      "feld": [84, 6]
+      "feld": [
+        84,
+        6
+      ]
     },
     {
       "moebel": "wsgSaeule10",
-      "feld": [87, 6]
+      "feld": [
+        87,
+        6
+      ]
     },
     {
       "moebel": "wsgSaeule6",
-      "feld": [88, 6]
+      "feld": [
+        88,
+        6
+      ]
     },
     {
       "moebel": "wsgSaeule7",
-      "feld": [89, 6]
+      "feld": [
+        89,
+        6
+      ]
     },
     {
       "moebel": "wsgSaeule6",
-      "feld": [90, 6]
+      "feld": [
+        90,
+        6
+      ]
     },
     {
       "moebel": "wsgSaeule7",
-      "feld": [91, 6]
+      "feld": [
+        91,
+        6
+      ]
     },
     {
       "moebel": "wsgSaeule10",
-      "feld": [92, 6]
+      "feld": [
+        92,
+        6
+      ]
     },
     {
       "moebel": "wsgSaeule6",
-      "feld": [93, 6]
+      "feld": [
+        93,
+        6
+      ]
     },
     {
       "moebel": "wsgSaeule7",
-      "feld": [94, 6]
+      "feld": [
+        94,
+        6
+      ]
     },
     {
       "moebel": "wsgSaeule6",
-      "feld": [95, 6]
+      "feld": [
+        95,
+        6
+      ]
     },
     {
       "moebel": "wsgSaeule7",
-      "feld": [96, 6]
+      "feld": [
+        96,
+        6
+      ]
     },
     {
       "moebel": "wsgSaeule10",
-      "feld": [97, 6]
+      "feld": [
+        97,
+        6
+      ]
     },
     {
       "moebel": "wsgSaeule6",
-      "feld": [98, 6]
+      "feld": [
+        98,
+        6
+      ]
     },
     {
       "moebel": "ws5BuschB",
-      "feld": [1, 8]
+      "feld": [
+        1,
+        8
+      ]
     },
     {
       "moebel": "ws5Erle",
-      "feld": [4, 9]
+      "feld": [
+        4,
+        9
+      ]
     },
     {
       "moebel": "ws5BuschB",
-      "feld": [10, 9]
-    },
-    {
-      "moebel": "wsgKugel",
-      "feld": [14, 8]
-    },
-    {
-      "moebel": "wsgBaum2",
-      "feld": [20, 8]
-    },
-    {
-      "moebel": "ws5BuschB",
-      "feld": [24, 9]
-    },
-    {
-      "moebel": "wsgBaum2",
-      "feld": [27, 9]
-    },
-    {
-      "moebel": "ws5BuschBreit",
-      "feld": [32, 9]
-    },
-    {
-      "moebel": "wsgKugel",
-      "feld": [38, 8]
-    },
-    {
-      "moebel": "ws5Busch",
-      "feld": [44, 8]
-    },
-    {
-      "moebel": "wsgKugel",
-      "feld": [50, 8]
-    },
-    {
-      "moebel": "ws5BuschBreit",
-      "feld": [53, 8]
-    },
-    {
-      "moebel": "ws5BuschBreit",
-      "feld": [58, 9]
-    },
-    {
-      "moebel": "ws5BuschBreit",
-      "feld": [65, 9]
-    },
-    {
-      "moebel": "wsgKugel",
-      "feld": [70, 9]
-    },
-    {
-      "moebel": "ws5BuschBreit",
-      "feld": [76, 8]
-    },
-    {
-      "moebel": "wsgBaum2",
-      "feld": [80, 9]
+      "feld": [
+        10,
+        9
+      ]
     },
     {
       "moebel": "wsgBaum1",
-      "feld": [86, 8]
+      "feld": [
+        14,
+        8
+      ]
     },
     {
       "moebel": "wsgBaum2",
-      "feld": [89, 8]
+      "feld": [
+        20,
+        8
+      ]
+    },
+    {
+      "moebel": "ws5BuschB",
+      "feld": [
+        24,
+        9
+      ]
+    },
+    {
+      "moebel": "wsgBaum2",
+      "feld": [
+        27,
+        9
+      ]
+    },
+    {
+      "moebel": "ws5BuschBreit",
+      "feld": [
+        32,
+        9
+      ]
+    },
+    {
+      "moebel": "wsgBaum1",
+      "feld": [
+        38,
+        8
+      ]
     },
     {
       "moebel": "ws5Busch",
-      "feld": [95, 9]
+      "feld": [
+        44,
+        8
+      ]
     },
     {
-      "moebel": "wsgLinieQ6",
-      "feld": [122, 20],
-      "versatz": [0, 0]
+      "moebel": "wsgBaum1",
+      "feld": [
+        50,
+        8
+      ]
     },
     {
-      "moebel": "wsgLinieQ6",
-      "feld": [122, 23],
-      "versatz": [0, 0]
+      "moebel": "ws5BuschBreit",
+      "feld": [
+        53,
+        8
+      ]
     },
     {
-      "moebel": "wsgLinieQ6",
-      "feld": [122, 26],
-      "versatz": [0, 0]
+      "moebel": "ws5BuschBreit",
+      "feld": [
+        58,
+        9
+      ]
+    },
+    {
+      "moebel": "ws5BuschBreit",
+      "feld": [
+        65,
+        9
+      ]
+    },
+    {
+      "moebel": "wsgBaum1",
+      "feld": [
+        70,
+        9
+      ]
+    },
+    {
+      "moebel": "ws5BuschBreit",
+      "feld": [
+        76,
+        8
+      ]
+    },
+    {
+      "moebel": "wsgBaum2",
+      "feld": [
+        80,
+        9
+      ]
+    },
+    {
+      "moebel": "wsgBaum1",
+      "feld": [
+        86,
+        8
+      ]
+    },
+    {
+      "moebel": "wsgBaum2",
+      "feld": [
+        89,
+        8
+      ]
+    },
+    {
+      "moebel": "ws5Busch",
+      "feld": [
+        95,
+        9
+      ]
     },
     {
       "moebel": "wsrAutoLinks14",
-      "feld": [123, 20],
-      "versatz": [0, 1],
-      "bauteil_ok": true
-    },
-    {
-      "moebel": "wsrAutoRechts10",
-      "feld": [123, 23],
-      "versatz": [0, 1],
+      "feld": [
+        122,
+        20
+      ],
+      "versatz": [
+        0,
+        1
+      ],
       "bauteil_ok": true
     },
     {
       "moebel": "wsrAutoRechts2",
-      "feld": [128, 17],
+      "feld": [
+        150,
+        17
+      ],
       "bauteil_ok": true
     },
     {
       "moebel": "ws5Picknick",
-      "feld": [148, 21]
+      "feld": [
+        148,
+        21
+      ]
     },
     {
       "moebel": "ws5Picknick",
-      "feld": [152, 21]
+      "feld": [
+        152,
+        21
+      ]
     },
     {
       "moebel": "ws5Picknick",
-      "feld": [148, 24]
+      "feld": [
+        148,
+        24
+      ]
     },
     {
       "moebel": "ws5Picknick",
-      "feld": [152, 24]
+      "feld": [
+        152,
+        24
+      ]
     },
     {
       "moebel": "ws5Muell",
-      "feld": [155, 21]
+      "feld": [
+        155,
+        21
+      ]
     },
     {
       "moebel": "ws5Muell",
-      "feld": [155, 24]
+      "feld": [
+        155,
+        24
+      ]
     },
     {
       "moebel": "wsgLaterneModern",
-      "feld": [150, 19]
+      "feld": [
+        150,
+        19
+      ]
     },
     {
       "moebel": "wsgLaterneModern",
-      "feld": [4, 14]
+      "feld": [
+        4,
+        17
+      ]
     },
     {
       "moebel": "wsgLaterneModern",
-      "feld": [11, 14]
+      "feld": [
+        11,
+        17
+      ]
     },
     {
       "moebel": "wsgLaterneModern",
-      "feld": [18, 14]
+      "feld": [
+        18,
+        17
+      ]
     },
     {
       "moebel": "ws5Erle",
-      "feld": [151, 6]
+      "feld": [
+        151,
+        6
+      ]
     },
     {
       "moebel": "wsgBaum1",
-      "feld": [154, 10]
+      "feld": [
+        154,
+        10
+      ]
     },
     {
-      "moebel": "wsgKugel",
-      "feld": [157, 6]
+      "moebel": "wsgBaum1",
+      "feld": [
+        157,
+        6
+      ]
+    },
+    {
+      "moebel": "wsrBuchtLinie",
+      "feld": [
+        110,
+        20
+      ]
+    },
+    {
+      "moebel": "wsrBuchtLinie",
+      "feld": [
+        121,
+        20
+      ]
+    },
+    {
+      "moebel": "wsrBuchtLinie",
+      "feld": [
+        127,
+        20
+      ]
     }
   ],
   "ausloeser": [
     {
       "name": "start",
-      "feld": [140, 20],
+      "feld": [
+        140,
+        20
+      ],
       "eigenschaften": {
         "richtung": "links"
       }
     },
     {
       "name": "zurueckIronwood",
-      "feld": [139, 21]
+      "feld": [
+        139,
+        21
+      ]
     },
     {
       "name": "weiterGlasbruecke",
-      "feld": [0, 18]
+      "feld": [
+        0,
+        18
+      ]
     },
     {
       "name": "weiterGlasbruecke",
-      "feld": [0, 19]
+      "feld": [
+        0,
+        19
+      ]
     },
     {
       "name": "tafel",
-      "feld": [131, 14],
+      "feld": [
+        131,
+        14
+      ],
       "auf_moebel": true
     },
     {
       "name": "fundAnstecker",
-      "feld": [150, 23]
+      "feld": [
+        150,
+        23
+      ]
     },
     {
       "name": "kreide2",
-      "feld": [129, 11]
+      "feld": [
+        129,
+        11
+      ]
     },
     {
       "name": "finchBauerB",
-      "feld": [142, 17]
+      "feld": [
+        142,
+        17
+      ]
     },
     {
       "name": "seite04",
-      "feld": [130, 14]
+      "feld": [
+        130,
+        14
+      ]
     }
   ],
   "figuren": [
     {
       "name": "kowalczyk",
-      "feld": [118, 26]
+      "feld": [
+        118,
+        26
+      ]
     }
   ],
   "belebung": [
     {
       "name": "austernfischer",
       "typ": "tier",
-      "feld": [60, 25],
+      "feld": [
+        60,
+        22
+      ],
       "eigenschaften": {
-        "von": "60,25",
-        "bis": "80,25",
-        "verhalten": "fliegen"
+        "von": "60,22",
+        "bis": "60,22",
+        "verhalten": "sitzen"
       }
     },
     {
       "name": "moewen",
       "typ": "tier",
-      "feld": [51, 23],
+      "feld": [
+        51,
+        23
+      ],
       "eigenschaften": {
         "verhalten": "fliegen"
       }
@@ -1283,7 +2310,10 @@
     {
       "name": "radfahrer",
       "typ": "statist",
-      "feld": [20, 18],
+      "feld": [
+        20,
+        18
+      ],
       "eigenschaften": {
         "von": "20,18",
         "bis": "90,18",
@@ -1295,7 +2325,10 @@
     {
       "name": "busfahrer",
       "typ": "statist",
-      "feld": [145, 22],
+      "feld": [
+        145,
+        22
+      ],
       "eigenschaften": {
         "tun": "Busfahrer Briggs macht Pause am Wartehäuschen",
         "wann": "tag",
@@ -1305,7 +2338,10 @@
     {
       "name": "oakes",
       "typ": "statist",
-      "feld": [78, 20],
+      "feld": [
+        78,
+        20
+      ],
       "eigenschaften": {
         "tun": "Mr. Oakes zählt Vögel im Watt",
         "wann": "tag"
@@ -1314,7 +2350,10 @@
     {
       "name": "vogelzaehlerin",
       "typ": "statist",
-      "feld": [70, 18],
+      "feld": [
+        70,
+        18
+      ],
       "eigenschaften": {
         "tun": "zählt mit einem Klicker die Strandläufer",
         "wann": "tag",
@@ -1326,17 +2365,23 @@
     {
       "name": "strandlaeufer",
       "typ": "tier",
-      "feld": [80, 23],
+      "feld": [
+        80,
+        23
+      ],
       "eigenschaften": {
         "von": "72,22",
         "bis": "88,23",
-        "verhalten": "flitzen"
+        "verhalten": "sitzen"
       }
     },
     {
       "name": "ringelgaense",
       "typ": "tier",
-      "feld": [40, 25],
+      "feld": [
+        40,
+        25
+      ],
       "eigenschaften": {
         "von": "30,24",
         "bis": "50,26",
@@ -1346,7 +2391,10 @@
     {
       "name": "krebse",
       "typ": "tier",
-      "feld": [18, 21],
+      "feld": [
+        18,
+        21
+      ],
       "eigenschaften": {
         "von": "12,21",
         "bis": "26,22",
@@ -1356,7 +2404,10 @@
     {
       "name": "hund",
       "typ": "tier",
-      "feld": [156, 22],
+      "feld": [
+        156,
+        22
+      ],
       "eigenschaften": {
         "von": "156,21",
         "bis": "157,25",
@@ -1364,5 +2415,6 @@
       }
     }
   ],
-  "jahreszeit": "winter"
+  "jahreszeit": "winter",
+  "ufer": "watt"
 }

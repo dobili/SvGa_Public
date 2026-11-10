@@ -2,12 +2,12 @@
   "karte": "wegIronwoodSilicon.glasbruecke",
   "datei": "karten/weg-ironwood-silicon-glasbruecke.json",
   "art": "aussen",
-  "beschreibung": "Die Glasbrücke vor Silicon Bay an einem hellen Wintertag (Runde 8, neu gebaut nach der Revision des Autors), 140 × 26, Ansicht schräg von oben. Unter der Brücke läuft die Autobahn von Nord nach Süd: vier Spuren je Richtung in Autobreite, gestrichelte Fahrbahnmarkierung, durchgezogene Randlinien, Leitplanken an beiden Rändern und auf dem Mittelstreifen aus Beton; die Autos fahren rechts, nach Süden auf der Westseite, nach Norden auf der Ostseite. Zu beiden Seiten ein Grünstreifen mit Bäumen und Heckensäulen als Lärm- und Sichtschutz. Der Pfad kommt am Ostrand in den Reihen 18–19 an, biegt nach Norden und steigt über eine Betonrampe mit Querrillen hinauf; deren Stirnwand wächst zur Brücke hin. Das Deck aus Glas, vier Felder breit, ruht auf einem Stahlträger und Betonpfeilern; durch das halb durchsichtige Glas sieht man Straße und Schatten, unter dem Träger den Schatten der Brücke auf der Fahrbahn. Glasgeländer auf beiden Seiten, auf dem Deck eine Bank, unter der jemand etwas verloren hat. Über der Mitte springt eine gläserne Aussichtsplattform nach Norden vor, mit Fernglas, dem Klapptisch und dem Ringlicht von Kikis Stream; daneben im Grünstreifen der Funkmast „Testfeld Signal“. Im Westen führt eine zweite Rampe hinunter auf den Stadtrand-Platz mit hellen Platten und Bordstein, zwei Rastplätzen mit Glaslaterne, Bank und Mülleimer, Pflanzkästen und der Werbetafel von ZERO. Der Platz öffnet sich nach Westen in den Reihen 18–19.",
+  "beschreibung": "Die Glasbrücke vor Silicon Bay an einem hellen Wintertag (Runde 8, nach dem Gutachten), 140 × 26, Ansicht schräg von oben; Schnee liegt auf Rasen und Bäumen. Unter der Brücke läuft die Autobahn von Nord nach Süd: vier Spuren je Richtung in Autobreite, gestrichelte Fahrbahnmarkierung, durchgezogene Randlinien, Leitplanken an beiden Rändern und auf dem Mittelstreifen aus Beton; die Autos fahren rechts. Zu beiden Seiten ein Grünstreifen mit Bäumen und Heckensäulen als Lärm- und Sichtschutz. Der Pfad kommt am Ostrand in den Reihen 18–19 an, biegt nach Norden und steigt über eine Betonrampe mit Querrillen hinauf; deren Stirnwand wächst zur Brücke hin, an der Fuge zum Glas liegt ein Querträger. Das Deck aus Glas, vier Felder breit, ruht auf einem Stahlträger und Betonpfeilern, die nur auf den Grünstreifen, den Seitenstreifen und dem Mittelstreifen stehen; durch das halb durchsichtige Glas sieht man Straße und Schatten. Glasgeländer auf beiden Seiten, auf dem Deck eine Bank, unter der zwei weiße Ohrstöpsel liegen. Über der Mitte springt eine gläserne Aussichtsplattform nach Norden vor, getragen von zwei Pfeilern auf dem Mittelstreifen, mit Kikis Tisch und Ringlicht; daneben im Grünstreifen der Funkmast „Testfeld Signal“. Im Westen führt eine zweite Rampe hinunter auf den Stadtrand-Platz aus hellen Platten mit Bordstein: zwei Rastplätze mit moderner Laterne, Bank und Mülleimer, in der Mitte Bäume in Pflanzbeeten und zwei Bänke, am Südrand Pflanzkästen, am Nordrand die Werbetafel von ZERO („ZERO – Nie wieder Fehler“). Der Platz öffnet sich nach Westen in den Reihen 18–19.",
   "boden": "gras",
   "wandart": "gras",
   "boeden": {
     "s": "asphalt",
-    "p": "pflaster",
+    "p": "platten",
     "k": "stein"
   },
   "zustand": [
@@ -38,9 +38,9 @@
     "#.pppppppppppppppppppppppppppp........................ssssssssssssskksssssssssssss........................pppp.............................#",
     "#.pppppppppppppppppppppppppppp........................ssssssssssssskksssssssssssss........................pppp.............................#",
     "#.pppppppppppppppppppppppppppp........................ssssssssssssskksssssssssssss..........................pp.............................#",
-    "#.pppppppppppppppppppppppppppp........................ssssssssssssskksssssssssssss..........................pp.............................#",
-    "#.pppppppppppppppppppppppppppp........................ssssssssssssskksssssssssssss..........................pp.............................#",
-    "#.pppppppppppppppppppppppppppp........................ssssssssssssskksssssssssssss..........................pp.............................#",
+    "#.pppppppppppppppppppppppppppp........................ssssssssssssskksssssssssssss..........................pp..pppppp.....................#",
+    "#.pppppppppppppppppppppppppppp........................ssssssssssssskksssssssssssss..........................pp..pppppp.....................#",
+    "#.pppppppppppppppppppppppppppp........................ssssssssssssskksssssssssssss..........................pp..pppppp.....................#",
     "pppppppppppppppppppppppppppppp........................ssssssssssssskksssssssssssss..........................pppppppppppppppppppppppppppppppp",
     "pppppppppppppppppppppppppppppp........................ssssssssssssskksssssssssssss..........................pppppppppppppppppppppppppppppppp",
     "#.pppppppppppppppppppppppppppp........................ssssssssssssskksssssssssssss.........................................................#",
@@ -556,98 +556,32 @@
       ]
     },
     {
+      "moebel": "wsgPfeiler",
+      "feld": [
+        67,
+        6
+      ],
+      "versatz": [
+        8,
+        0
+      ]
+    },
+    {
+      "moebel": "wsgPfeiler",
+      "feld": [
+        67,
+        8
+      ],
+      "versatz": [
+        8,
+        0
+      ]
+    },
+    {
       "moebel": "wsgPlatte",
       "feld": [
         63,
         5
-      ]
-    },
-    {
-      "moebel": "wsgPfeiler",
-      "feld": [
-        44,
-        14
-      ],
-      "versatz": [
-        0,
-        6
-      ]
-    },
-    {
-      "moebel": "wsgPfeiler",
-      "feld": [
-        51,
-        14
-      ],
-      "versatz": [
-        0,
-        6
-      ]
-    },
-    {
-      "moebel": "wsgPfeiler",
-      "feld": [
-        60,
-        14
-      ],
-      "versatz": [
-        0,
-        6
-      ]
-    },
-    {
-      "moebel": "wsgPfeiler",
-      "feld": [
-        67,
-        14
-      ],
-      "versatz": [
-        8,
-        6
-      ]
-    },
-    {
-      "moebel": "wsgPfeiler",
-      "feld": [
-        74,
-        14
-      ],
-      "versatz": [
-        0,
-        6
-      ]
-    },
-    {
-      "moebel": "wsgPfeiler",
-      "feld": [
-        84,
-        14
-      ],
-      "versatz": [
-        0,
-        6
-      ]
-    },
-    {
-      "moebel": "wsgPfeiler",
-      "feld": [
-        90,
-        14
-      ],
-      "versatz": [
-        0,
-        6
-      ]
-    },
-    {
-      "moebel": "wsgFernglas",
-      "feld": [
-        67,
-        5
-      ],
-      "versatz": [
-        8,
-        2
       ]
     },
     {
@@ -1367,13 +1301,6 @@
     {
       "moebel": "ws5Strandgras",
       "feld": [
-        118,
-        12
-      ]
-    },
-    {
-      "moebel": "ws5Strandgras",
-      "feld": [
         124,
         10
       ]
@@ -1383,13 +1310,6 @@
       "feld": [
         130,
         13
-      ]
-    },
-    {
-      "moebel": "ws5Strandgras",
-      "feld": [
-        113,
-        15
       ]
     },
     {
@@ -1407,58 +1327,16 @@
       ]
     },
     {
-      "moebel": "ws5Strandgras",
-      "feld": [
-        36,
-        13
-      ]
-    },
-    {
-      "moebel": "ws5Strandgras",
-      "feld": [
-        100,
-        13
-      ]
-    },
-    {
-      "moebel": "ws5BlumenWeiss",
-      "feld": [
-        8,
-        7
-      ]
-    },
-    {
-      "moebel": "ws5BlumenWeiss",
-      "feld": [
-        11,
-        7
-      ]
-    },
-    {
-      "moebel": "ws5BlumenWeiss",
-      "feld": [
-        22,
-        6
-      ]
-    },
-    {
-      "moebel": "ws5BlumenWeiss",
-      "feld": [
-        124,
-        6
-      ]
-    },
-    {
-      "moebel": "ws5Werbetafel",
+      "moebel": "wsgWerbetafelZero",
       "feld": [
         3,
         4
       ]
     },
     {
-      "moebel": "ws5Laterne",
+      "moebel": "wsgLaterneModern",
       "feld": [
-        12,
+        11,
         8
       ]
     },
@@ -1477,9 +1355,9 @@
       ]
     },
     {
-      "moebel": "ws5Laterne",
+      "moebel": "wsgLaterneModern",
       "feld": [
-        21,
+        20,
         8
       ]
     },
@@ -1547,9 +1425,9 @@
       ]
     },
     {
-      "moebel": "ws5Laterne",
+      "moebel": "wsgLaterneModern",
       "feld": [
-        113,
+        112,
         13
       ]
     },
@@ -1600,6 +1478,150 @@
       "feld": [
         136,
         21
+      ]
+    },
+    {
+      "moebel": "wsgPfeiler",
+      "feld": [
+        44,
+        14
+      ],
+      "versatz": [
+        0,
+        6
+      ]
+    },
+    {
+      "moebel": "wsgPfeiler",
+      "feld": [
+        53,
+        14
+      ],
+      "versatz": [
+        0,
+        6
+      ]
+    },
+    {
+      "moebel": "wsgPfeiler",
+      "feld": [
+        67,
+        14
+      ],
+      "versatz": [
+        8,
+        6
+      ]
+    },
+    {
+      "moebel": "wsgPfeiler",
+      "feld": [
+        82,
+        14
+      ],
+      "versatz": [
+        0,
+        6
+      ]
+    },
+    {
+      "moebel": "wsgPfeiler",
+      "feld": [
+        91,
+        14
+      ],
+      "versatz": [
+        0,
+        6
+      ]
+    },
+    {
+      "moebel": "wsgBordL4",
+      "feld": [
+        42,
+        10
+      ],
+      "versatz": [
+        -1,
+        0
+      ]
+    },
+    {
+      "moebel": "wsgBordL4",
+      "feld": [
+        94,
+        10
+      ],
+      "versatz": [
+        -1,
+        0
+      ]
+    },
+    {
+      "moebel": "wsgOhrstoepsel",
+      "feld": [
+        84,
+        10
+      ],
+      "versatz": [
+        8,
+        9
+      ]
+    },
+    {
+      "moebel": "wsgBeetBaum",
+      "feld": [
+        7,
+        14
+      ]
+    },
+    {
+      "moebel": "wsgBeetZypresse",
+      "feld": [
+        13,
+        14
+      ]
+    },
+    {
+      "moebel": "wsgBeetBaum",
+      "feld": [
+        19,
+        14
+      ]
+    },
+    {
+      "moebel": "wsgBeetBusch",
+      "feld": [
+        7,
+        18
+      ]
+    },
+    {
+      "moebel": "wsgBeetBusch",
+      "feld": [
+        19,
+        18
+      ]
+    },
+    {
+      "moebel": "ws5Bank",
+      "feld": [
+        12,
+        18
+      ]
+    },
+    {
+      "moebel": "ws5Bank",
+      "feld": [
+        15,
+        18
+      ]
+    },
+    {
+      "moebel": "ws5Kuebel",
+      "feld": [
+        23,
+        15
       ]
     }
   ],
@@ -1780,7 +1802,7 @@
       "typ": "tier",
       "feld": [
         10,
-        16
+        21
       ],
       "eigenschaften": {
         "von": "4,14",
@@ -1789,24 +1811,11 @@
       }
     },
     {
-      "name": "kraehe",
-      "typ": "tier",
-      "feld": [
-        83,
-        11
-      ],
-      "eigenschaften": {
-        "von": "78,11",
-        "bis": "92,12",
-        "verhalten": "ausweichen"
-      }
-    },
-    {
       "name": "spatzen",
       "typ": "tier",
       "feld": [
-        14,
-        19
+        22,
+        12
       ],
       "eigenschaften": {
         "von": "6,15",
@@ -1832,13 +1841,14 @@
       "typ": "tier",
       "feld": [
         126,
-        19
+        22
       ],
       "eigenschaften": {
-        "von": "120,18",
-        "bis": "134,19",
+        "von": "120,21",
+        "bis": "131,22",
         "verhalten": "flitzen"
       }
     }
-  ]
+  ],
+  "jahreszeit": "winter"
 }

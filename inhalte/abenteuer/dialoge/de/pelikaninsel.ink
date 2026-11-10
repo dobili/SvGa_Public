@@ -87,7 +87,10 @@ Netze hängen zum Trocknen am Gestell. In einem ist ein Loch, groß wie eine Fau
 - leuchtfeuerAn:
     Das Leuchtfeuer blinkt wieder über die Bucht. Die Pelikane schauen hin. #sprecher:erzaehler
     -> END
-- leuchtfeuerAuftrag: -> leuchtfeuer_einsetzen
+- leuchtfeuerAuftrag and hatBatterie: -> leuchtfeuer_einsetzen
+- leuchtfeuerAuftrag:
+    Ohne Batterie bleibt das Leuchtfeuer dunkel. Delphine sagt, drüben in Silicon Bay gibt es eine. #sprecher:erzaehler
+    -> END
 }
 -> leuchtfeuer_auftrag
 

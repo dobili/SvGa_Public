@@ -725,7 +725,7 @@ für den Autor; behoben sind die Restpunkte:
   dahinter würde das Regal die Figur verdecken, Regel 10.55).
 - **Pavillon:** vier Tische, je zwei pro Seite, wie die Beschreibung meint; an der Stelle der
   mittleren Tische je eine Zuschauerbank. Partie ohne Damen (sie lasen sich als zweite Könige).
-  Truhen als offene Holztruhen mit Eisenbändern (`figurentruhe.png`, Bildwunsch `grosse_figuren.py`).
+  Truhen als offene Holztruhen mit Eisenbändern (`figurentruhe.png`, Bildwunsch `grosse_figuren.py`). Zwei Leute sitzen: ein Zuschauer auf der Bank, einer am Brett.
 - **Wohnwagen:** eine Spalte länger (17 × 7); Nasszelle zwischen zwei kurzen Trennwänden;
   Sitzecke als Nische mit zwei Sitzen und Tisch; zwei kleine Pokale, die nicht über die Wand ragen.
 

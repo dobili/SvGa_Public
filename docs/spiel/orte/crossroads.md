@@ -249,6 +249,13 @@ Tellern darin). Geysirbecken: schmale senkrechte Quellen entfernt, jeder dritte 
 Fahrweg aus Sandplatz mit weichem Rand statt Kies in Stufen; der Traktor steht auf dem Hofplatz;
 die Sturmkellerklappe liegt direkt vor dem Scheunentor. Silo bleibt Seitenansicht (Gebäude).
 
+### 3.7 Fahrzeuge nach 10.65 und Restpunkte (mittel-3, 10.11.2026)
+
+Parkplatz Crossroads: Bus (`fz11BusAb`) und Autos (`wsgAutoAb1`, `wsgAutoAuf2`) stehen von vorn oder
+hinten gesehen in quer gelegten Buchten; Sattelzüge und Food-Truck bleiben Seitenansicht, bis die
+Gemini-Bilder da sind. Prärie: Traktor von vorn (`fz11TraktorVorn`) auf dem Hofplatz, der blinde
+Fahrweg hinter der Kellerklappe ist weg. Geysirbecken: die zwei Zaunstücke ohne Weide sind weg.
+
 ## 4. Bühnenbilder
 
 Die Inventare stehen in den Szenen (`beschreibung`) und folgen 1.1 bis 1.4; feste Felder sind die

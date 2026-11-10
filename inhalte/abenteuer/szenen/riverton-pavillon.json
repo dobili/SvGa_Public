@@ -2,27 +2,28 @@
   "karte": "riverton.pavillon",
   "datei": "karten/riverton-pavillon.json",
   "art": "innen",
-  "beschreibung": "Parkpavillon von Riverton, Slicks Club (Szenen 29 bis 37): achteckiges Holzdach, Dielen, Fenster ringsum. In der Mitte ist ein großes Schachbrett in den Boden eingelassen, acht mal acht Platten aus hellem Marmor und dunklem Holz, auf dem der Club seit Jahrzehnten an Sommerabenden mit großen Figuren spielt; die Figuren liegen in der Kiste daneben, davor eine lange Bank für Zuschauer. Links und rechts stehen vier rechteckige Holztische, auf jedem zwei Bretter nebeneinander, je zwei Stühle davor und dahinter. An der Nordwand die Gedenktafel des Clubs, an der Ostwand ein Tischchen mit Limonadengläsern und eine Bank, in den Ecken Pflanzen. Unten die Tür mit Fußmatte.",
+  "beschreibung": "Parkpavillon von Riverton, Slicks Club (Szenen 29 bis 37): ein Holzbau mit Dielen und einer Fensterreihe zum Fluss. In der Mitte ist ein großes Schachbrett in den Boden eingelassen, acht mal acht Platten aus hellem Marmor und dunklem Holz in einem Rahmen aus Stein, rundherum ein Laufweg, damit man die großen Figuren tragen kann. Die Figuren liegen in zwei Truhen südwestlich des Bretts. An der Nordwand hängt das Gründungsbild des Clubs, davor zwei lange Bänke für Zuschauer mit Blick aufs Brett. Links und rechts je zwei lange Holztische, auf jedem zwei Bretter nebeneinander, unter jedem Brett ein Stuhl davor und dahinter. Im Südosten der Limonadenstand mit Gläsern und Orangen, in den südlichen Ecken Pflanzen, unten die Tür mit Fußmatte.",
   "wand": "holz",
   "boden": "dielen",
   "raster": [
-    "####################",
-    "####################",
-    "####################",
-    "#..................#",
-    "#..................#",
-    "#.....wdwdwdwd.....#",
-    "#.....dwdwdwdw.....#",
-    "#.....wdwdwdwd.....#",
-    "#.....dwdwdwdw.....#",
-    "#.....wdwdwdwd.....#",
-    "#.....dwdwdwdw.....#",
-    "#.....wdwdwdwd.....#",
-    "#.....dwdwdwdw.....#",
-    "#..................#",
-    "#..................#",
-    "#..................#",
-    "##########.#########"
+    "########################",
+    "########################",
+    "########################",
+    "#......................#",
+    "#......................#",
+    "#......rrrrrrrrrr......#",
+    "#......rwdwdwdwdr......#",
+    "#......rdwdwdwdwr......#",
+    "#......rwdwdwdwdr......#",
+    "#......rdwdwdwdwr......#",
+    "#......rwdwdwdwdr......#",
+    "#......rdwdwdwdwr......#",
+    "#......rwdwdwdwdr......#",
+    "#......rdwdwdwdwr......#",
+    "#......rrrrrrrrrr......#",
+    "#......................#",
+    "#......................#",
+    "############.###########"
   ],
   "objekte": [
     {
@@ -36,290 +37,296 @@
       "an_wand": true
     },
     {
-      "moebel": "rv5Gedenktafel",
-      "feld": [9, 1],
-      "an_wand": true,
-      "versatz": [8, 4]
-    },
-    {
-      "moebel": "wzFenster",
-      "feld": [13, 1],
+      "moebel": "rv8Gruendungsbild",
+      "feld": [11, 1],
       "an_wand": true
     },
     {
       "moebel": "wzFenster",
-      "feld": [16, 1],
+      "feld": [17, 1],
       "an_wand": true
     },
     {
-      "moebel": "cr7LangtischL",
-      "feld": [2, 4],
-      "id": "t1",
-      "bauteil_ok": true
-    },
-    {
-      "moebel": "cr7LangtischM",
-      "feld": [4, 4],
-      "id": "t1m",
-      "bauteil_ok": true
-    },
-    {
-      "moebel": "cr7LangtischR",
-      "feld": [5, 4],
-      "id": "t1r",
-      "bauteil_ok": true
-    },
-    {
-      "moebel": "rv5Brett",
-      "auf": "t1",
-      "versatz": [0, 0]
-    },
-    {
-      "moebel": "rv5Brett",
-      "auf": "t1m",
-      "versatz": [6, 0]
-    },
-    {
-      "moebel": "rv5StuhlVorn",
-      "feld": [2, 3],
-      "zu": "t1"
-    },
-    {
-      "moebel": "rv5StuhlRuecken",
-      "feld": [2, 6],
-      "zu": "t1"
-    },
-    {
-      "moebel": "rv5StuhlVorn",
-      "feld": [5, 3],
-      "zu": "t1r"
-    },
-    {
-      "moebel": "rv5StuhlRuecken",
-      "feld": [5, 6],
-      "zu": "t1r"
-    },
-    {
-      "moebel": "cr7LangtischL",
-      "feld": [14, 4],
-      "id": "t2",
-      "bauteil_ok": true
-    },
-    {
-      "moebel": "cr7LangtischM",
-      "feld": [16, 4],
-      "id": "t2m",
-      "bauteil_ok": true
-    },
-    {
-      "moebel": "cr7LangtischR",
-      "feld": [17, 4],
-      "id": "t2r",
-      "bauteil_ok": true
-    },
-    {
-      "moebel": "rv5Brett",
-      "auf": "t2",
-      "versatz": [0, 0]
-    },
-    {
-      "moebel": "rv5Brett",
-      "auf": "t2m",
-      "versatz": [6, 0]
-    },
-    {
-      "moebel": "rv5StuhlVorn",
-      "feld": [14, 3],
-      "zu": "t2"
-    },
-    {
-      "moebel": "rv5StuhlRuecken",
-      "feld": [14, 6],
-      "zu": "t2"
-    },
-    {
-      "moebel": "rv5StuhlVorn",
-      "feld": [17, 3],
-      "zu": "t2r"
-    },
-    {
-      "moebel": "rv5StuhlRuecken",
-      "feld": [17, 6],
-      "zu": "t2r"
-    },
-    {
-      "moebel": "cr7LangtischL",
-      "feld": [2, 10],
-      "id": "t3",
-      "bauteil_ok": true
-    },
-    {
-      "moebel": "cr7LangtischM",
-      "feld": [4, 10],
-      "id": "t3m",
-      "bauteil_ok": true
-    },
-    {
-      "moebel": "cr7LangtischR",
-      "feld": [5, 10],
-      "id": "t3r",
-      "bauteil_ok": true
-    },
-    {
-      "moebel": "rv5Brett",
-      "auf": "t3",
-      "versatz": [0, 0]
-    },
-    {
-      "moebel": "rv5Brett",
-      "auf": "t3m",
-      "versatz": [6, 0]
-    },
-    {
-      "moebel": "rv5StuhlVorn",
-      "feld": [2, 9],
-      "zu": "t3"
-    },
-    {
-      "moebel": "rv5StuhlRuecken",
-      "feld": [2, 12],
-      "zu": "t3"
-    },
-    {
-      "moebel": "rv5StuhlVorn",
-      "feld": [5, 9],
-      "zu": "t3r"
-    },
-    {
-      "moebel": "rv5StuhlRuecken",
-      "feld": [5, 12],
-      "zu": "t3r"
-    },
-    {
-      "moebel": "cr7LangtischL",
-      "feld": [14, 10],
-      "id": "t4",
-      "bauteil_ok": true
-    },
-    {
-      "moebel": "cr7LangtischM",
-      "feld": [16, 10],
-      "id": "t4m",
-      "bauteil_ok": true
-    },
-    {
-      "moebel": "cr7LangtischR",
-      "feld": [17, 10],
-      "id": "t4r",
-      "bauteil_ok": true
-    },
-    {
-      "moebel": "rv5Brett",
-      "auf": "t4",
-      "versatz": [0, 0]
-    },
-    {
-      "moebel": "rv5Brett",
-      "auf": "t4m",
-      "versatz": [6, 0]
-    },
-    {
-      "moebel": "rv5StuhlVorn",
-      "feld": [14, 9],
-      "zu": "t4"
-    },
-    {
-      "moebel": "rv5StuhlRuecken",
-      "feld": [14, 12],
-      "zu": "t4"
-    },
-    {
-      "moebel": "rv5StuhlVorn",
-      "feld": [17, 9],
-      "zu": "t4r"
-    },
-    {
-      "moebel": "rv5StuhlRuecken",
-      "feld": [17, 12],
-      "zu": "t4r"
+      "moebel": "wzFenster",
+      "feld": [20, 1],
+      "an_wand": true
     },
     {
       "moebel": "rv5BankLang",
       "feld": [8, 3]
     },
     {
-      "moebel": "rv5Figurenkiste",
-      "feld": [14, 14]
+      "moebel": "rv5BankLang",
+      "feld": [13, 3]
     },
     {
-      "moebel": "rv5Limonade",
-      "feld": [18, 8]
+      "moebel": "cr7LangtischL",
+      "feld": [1, 5],
+      "id": "t1",
+      "bauteil_ok": true
     },
     {
-      "moebel": "rv5BankSeite",
-      "feld": [18, 9]
+      "moebel": "cr7LangtischM",
+      "feld": [3, 5],
+      "id": "t1m",
+      "bauteil_ok": true
+    },
+    {
+      "moebel": "cr7LangtischR",
+      "feld": [4, 5],
+      "id": "t1r",
+      "bauteil_ok": true
+    },
+    {
+      "moebel": "rv5Brett",
+      "auf": "t1",
+      "versatz": [0, -6]
+    },
+    {
+      "moebel": "rv5Brett",
+      "auf": "t1m",
+      "versatz": [8, -6]
+    },
+    {
+      "moebel": "rv5StuhlVorn",
+      "feld": [1, 4],
+      "zu": "t1",
+      "versatz": [8, 0]
+    },
+    {
+      "moebel": "rv5StuhlRuecken",
+      "feld": [1, 7],
+      "zu": "t1",
+      "versatz": [8, 0]
+    },
+    {
+      "moebel": "rv5StuhlVorn",
+      "feld": [3, 4],
+      "zu": "t1m",
+      "versatz": [8, 0]
+    },
+    {
+      "moebel": "rv5StuhlRuecken",
+      "feld": [3, 7],
+      "zu": "t1m",
+      "versatz": [8, 0]
+    },
+    {
+      "moebel": "cr7LangtischL",
+      "feld": [19, 5],
+      "id": "t2",
+      "bauteil_ok": true
+    },
+    {
+      "moebel": "cr7LangtischM",
+      "feld": [21, 5],
+      "id": "t2m",
+      "bauteil_ok": true
+    },
+    {
+      "moebel": "cr7LangtischR",
+      "feld": [22, 5],
+      "id": "t2r",
+      "bauteil_ok": true
+    },
+    {
+      "moebel": "rv5Brett",
+      "auf": "t2",
+      "versatz": [0, -6]
+    },
+    {
+      "moebel": "rv5Brett",
+      "auf": "t2m",
+      "versatz": [8, -6]
+    },
+    {
+      "moebel": "rv5StuhlVorn",
+      "feld": [19, 4],
+      "zu": "t2",
+      "versatz": [8, 0]
+    },
+    {
+      "moebel": "rv5StuhlRuecken",
+      "feld": [19, 7],
+      "zu": "t2",
+      "versatz": [8, 0]
+    },
+    {
+      "moebel": "rv5StuhlVorn",
+      "feld": [21, 4],
+      "zu": "t2m",
+      "versatz": [8, 0]
+    },
+    {
+      "moebel": "rv5StuhlRuecken",
+      "feld": [21, 7],
+      "zu": "t2m",
+      "versatz": [8, 0]
+    },
+    {
+      "moebel": "cr7LangtischL",
+      "feld": [1, 10],
+      "id": "t3",
+      "bauteil_ok": true
+    },
+    {
+      "moebel": "cr7LangtischM",
+      "feld": [3, 10],
+      "id": "t3m",
+      "bauteil_ok": true
+    },
+    {
+      "moebel": "cr7LangtischR",
+      "feld": [4, 10],
+      "id": "t3r",
+      "bauteil_ok": true
+    },
+    {
+      "moebel": "rv5Brett",
+      "auf": "t3",
+      "versatz": [0, -6]
+    },
+    {
+      "moebel": "rv5Brett",
+      "auf": "t3m",
+      "versatz": [8, -6]
+    },
+    {
+      "moebel": "rv5StuhlVorn",
+      "feld": [1, 9],
+      "zu": "t3",
+      "versatz": [8, 0]
+    },
+    {
+      "moebel": "rv5StuhlRuecken",
+      "feld": [1, 12],
+      "zu": "t3",
+      "versatz": [8, 0]
+    },
+    {
+      "moebel": "rv5StuhlVorn",
+      "feld": [3, 9],
+      "zu": "t3m",
+      "versatz": [8, 0]
+    },
+    {
+      "moebel": "rv5StuhlRuecken",
+      "feld": [3, 12],
+      "zu": "t3m",
+      "versatz": [8, 0]
+    },
+    {
+      "moebel": "cr7LangtischL",
+      "feld": [19, 10],
+      "id": "t4",
+      "bauteil_ok": true
+    },
+    {
+      "moebel": "cr7LangtischM",
+      "feld": [21, 10],
+      "id": "t4m",
+      "bauteil_ok": true
+    },
+    {
+      "moebel": "cr7LangtischR",
+      "feld": [22, 10],
+      "id": "t4r",
+      "bauteil_ok": true
+    },
+    {
+      "moebel": "rv5Brett",
+      "auf": "t4",
+      "versatz": [0, -6]
+    },
+    {
+      "moebel": "rv5Brett",
+      "auf": "t4m",
+      "versatz": [8, -6]
+    },
+    {
+      "moebel": "rv5StuhlVorn",
+      "feld": [19, 9],
+      "zu": "t4",
+      "versatz": [8, 0]
+    },
+    {
+      "moebel": "rv5StuhlRuecken",
+      "feld": [19, 12],
+      "zu": "t4",
+      "versatz": [8, 0]
+    },
+    {
+      "moebel": "rv5StuhlVorn",
+      "feld": [21, 9],
+      "zu": "t4m",
+      "versatz": [8, 0]
+    },
+    {
+      "moebel": "rv5StuhlRuecken",
+      "feld": [21, 12],
+      "zu": "t4m",
+      "versatz": [8, 0]
+    },
+    {
+      "moebel": "mf7Truhe",
+      "feld": [3, 14]
+    },
+    {
+      "moebel": "mf7Truhe",
+      "feld": [5, 14]
+    },
+    {
+      "moebel": "rv8Limonadenstand",
+      "feld": [20, 13]
     },
     {
       "moebel": "wzPflanze",
-      "feld": [1, 3]
-    },
-    {
-      "moebel": "wzPflanze",
-      "feld": [18, 3]
-    },
-    {
-      "moebel": "wzPflanze",
-      "feld": [1, 14]
-    },
-    {
-      "moebel": "wzPflanze",
-      "feld": [18, 14]
+      "feld": [22, 14]
     },
     {
       "moebel": "mf4Fussmatte",
-      "feld": [10, 15],
+      "feld": [12, 16],
       "versatz": [0, 8]
     },
     {
       "moebel": "mf5TuerSuedHolz",
-      "feld": [10, 16],
+      "feld": [12, 17],
       "an_wand": true
     }
   ],
   "ausloeser": [
     {
       "name": "start",
-      "feld": [10, 15],
+      "feld": [12, 16],
       "eigenschaften": {
         "richtung": "oben"
       }
     },
     {
       "name": "pavillonAusgang",
-      "feld": [10, 16]
+      "feld": [12, 17]
     },
     {
       "name": "gedenktafel",
-      "feld": [9, 4]
+      "feld": [11, 4]
     },
     {
       "name": "limonadenglas",
-      "feld": [18, 8],
-      "auf_moebel": true
+      "feld": [20, 16]
     }
   ],
   "figuren": [
     {
       "name": "slick",
-      "feld": [6, 4]
+      "feld": [5, 8]
     },
     {
       "name": "ray",
-      "feld": [13, 4]
+      "feld": [18, 8]
     },
     {
       "name": "tamsin",
-      "feld": [6, 14]
+      "feld": [8, 16]
     }
   ],
   "belebung": [
@@ -348,10 +355,11 @@
       }
     }
   ],
-  "zustand": ["neu", "gebraucht"],
-  "stil": ["klassisch", "modern"],
+  "zustand": ["alt", "gebraucht", "neu"],
+  "stil": ["klassisch", "modern", "rustikal"],
   "boeden": {
     "w": "fliesenWeiss",
-    "d": "holzDunkel"
+    "d": "holzDunkel",
+    "r": "stein"
   }
 }

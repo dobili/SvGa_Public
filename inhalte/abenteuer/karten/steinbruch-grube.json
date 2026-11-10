@@ -11,7 +11,7 @@
  "tilewidth": 16,
  "tileheight": 16,
  "nextlayerid": 5,
- "nextobjectid": 104,
+ "nextobjectid": 107,
  "layers": [
   {
    "id": 1,
@@ -12782,35 +12782,35 @@
     },
     {
      "id": 96,
-     "name": "felsKlein",
+     "name": "sd6Schilf",
      "type": "moebel",
-     "x": 224,
-     "y": 576,
+     "x": 464,
+     "y": 496,
      "width": 16,
-     "height": 16,
+     "height": 32,
      "rotation": 0,
      "visible": true,
      "properties": [
       {
        "name": "tiefe",
        "type": "int",
-       "value": 584
+       "value": 1
       },
       {
        "name": "kollision",
        "type": "bool",
-       "value": true
+       "value": false
       }
      ]
     },
     {
      "id": 97,
-     "name": "wg4GrasB",
+     "name": "sd6Schilf",
      "type": "moebel",
-     "x": 256,
-     "y": 528,
+     "x": 336,
+     "y": 512,
      "width": 16,
-     "height": 16,
+     "height": 32,
      "rotation": 0,
      "visible": true,
      "properties": [
@@ -12828,35 +12828,35 @@
     },
     {
      "id": 98,
-     "name": "felsKlein",
+     "name": "sd6Schilf",
      "type": "moebel",
-     "x": 608,
-     "y": 560,
+     "x": 368,
+     "y": 496,
      "width": 16,
-     "height": 16,
+     "height": 32,
      "rotation": 0,
      "visible": true,
      "properties": [
       {
        "name": "tiefe",
        "type": "int",
-       "value": 568
+       "value": 1
       },
       {
        "name": "kollision",
        "type": "bool",
-       "value": true
+       "value": false
       }
      ]
     },
     {
      "id": 99,
-     "name": "wg4Gras",
+     "name": "sd6Schilf",
      "type": "moebel",
-     "x": 576,
-     "y": 672,
+     "x": 240,
+     "y": 560,
      "width": 16,
-     "height": 16,
+     "height": 32,
      "rotation": 0,
      "visible": true,
      "properties": [
@@ -12874,10 +12874,10 @@
     },
     {
      "id": 100,
-     "name": "wg4GrasB",
+     "name": "mf6Seerose1",
      "type": "moebel",
-     "x": 320,
-     "y": 704,
+     "x": 416,
+     "y": 608,
      "width": 16,
      "height": 16,
      "rotation": 0,
@@ -12897,10 +12897,10 @@
     },
     {
      "id": 101,
-     "name": "wg4GrasB",
+     "name": "mf6Seerose3",
      "type": "moebel",
-     "x": 480,
-     "y": 704,
+     "x": 432,
+     "y": 592,
      "width": 16,
      "height": 16,
      "rotation": 0,
@@ -12920,10 +12920,10 @@
     },
     {
      "id": 102,
-     "name": "wg4Gras",
+     "name": "mf6Seerose1",
      "type": "moebel",
-     "x": 640,
-     "y": 624,
+     "x": 352,
+     "y": 576,
      "width": 16,
      "height": 16,
      "rotation": 0,
@@ -12943,6 +12943,75 @@
     },
     {
      "id": 103,
+     "name": "mf6Seerose3",
+     "type": "moebel",
+     "x": 496,
+     "y": 624,
+     "width": 16,
+     "height": 16,
+     "rotation": 0,
+     "visible": true,
+     "properties": [
+      {
+       "name": "tiefe",
+       "type": "int",
+       "value": 1
+      },
+      {
+       "name": "kollision",
+       "type": "bool",
+       "value": false
+      }
+     ]
+    },
+    {
+     "id": 104,
+     "name": "mf6Seerose1",
+     "type": "moebel",
+     "x": 464,
+     "y": 656,
+     "width": 16,
+     "height": 16,
+     "rotation": 0,
+     "visible": true,
+     "properties": [
+      {
+       "name": "tiefe",
+       "type": "int",
+       "value": 1
+      },
+      {
+       "name": "kollision",
+       "type": "bool",
+       "value": false
+      }
+     ]
+    },
+    {
+     "id": 105,
+     "name": "mf6Seerose3",
+     "type": "moebel",
+     "x": 320,
+     "y": 640,
+     "width": 16,
+     "height": 16,
+     "rotation": 0,
+     "visible": true,
+     "properties": [
+      {
+       "name": "tiefe",
+       "type": "int",
+       "value": 1
+      },
+      {
+       "name": "kollision",
+       "type": "bool",
+       "value": false
+      }
+     ]
+    },
+    {
+     "id": 106,
      "name": "st5GraffitiKrone",
      "type": "moebel",
      "x": 992,

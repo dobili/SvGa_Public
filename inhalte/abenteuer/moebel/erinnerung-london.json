@@ -67,9 +67,9 @@
       "kollision": true
     },
     "el7FassadeA": {
-      "quelle": "spiel/eigene/fassade_london_a.png",
+      "quelle": "spiel/eigene/fassade_london_a_tief.png",
       "breite": 80,
-      "hoehe": 112,
+      "hoehe": 144,
       "kollision": true,
       "art": "gebaeude",
       "blick": "unten",
@@ -77,9 +77,9 @@
       "stil": "klassisch"
     },
     "el7FassadeB": {
-      "quelle": "spiel/eigene/fassade_london_b.png",
+      "quelle": "spiel/eigene/fassade_london_b_tief.png",
       "breite": 80,
-      "hoehe": 112,
+      "hoehe": 144,
       "kollision": true,
       "art": "gebaeude",
       "blick": "unten",
@@ -87,9 +87,9 @@
       "stil": "klassisch"
     },
     "el7FassadeC": {
-      "quelle": "spiel/eigene/fassade_london_c.png",
+      "quelle": "spiel/eigene/fassade_london_c_tief.png",
       "breite": 80,
-      "hoehe": 112,
+      "hoehe": 144,
       "kollision": true,
       "art": "gebaeude",
       "blick": "unten",
@@ -97,9 +97,9 @@
       "stil": "klassisch"
     },
     "el7Kaffeehaus": {
-      "quelle": "spiel/eigene/kaffeehaus_fassade.png",
+      "quelle": "spiel/eigene/kaffeehaus_fassade_tief.png",
       "breite": 112,
-      "hoehe": 112,
+      "hoehe": 144,
       "kollision": true,
       "art": "gebaeude",
       "blick": "unten",

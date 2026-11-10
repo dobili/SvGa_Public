@@ -997,7 +997,7 @@
      "id": 8,
      "name": "touristMitKarte",
      "type": "statist",
-     "x": 80,
+     "x": 64,
      "y": 96,
      "width": 16,
      "height": 16,
@@ -1007,7 +1007,7 @@
       {
        "name": "tun",
        "type": "string",
-       "value": "lehnt an der Theke und liest das Schild darüber"
+       "value": "sitzt am Tresen und liest das Schild darüber"
       },
       {
        "name": "wann",
@@ -1018,6 +1018,11 @@
        "name": "sagt",
        "type": "string",
        "value": "statist.ghostTown.saloon.touristMitKarte"
+      },
+      {
+       "name": "verhalten",
+       "type": "string",
+       "value": "sitzen"
       }
      ]
     },

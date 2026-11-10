@@ -27,10 +27,19 @@ Bilder (in ``spiel/eigene/``, Breite × Höhe in Pixeln):
   Krone beginnt. Zweites Gutachten Bahndamm: Der Damm hatte keine Nordböschung.
 - ``schild_zu_verkaufen.png`` (48 × 32): Maklerschild „ZU VERKAUFEN“ an einem Holzpfosten mit Galgen,
   für das leere Hayes-Haus in der Birch Lane (Beschreibung Maple Falls außen).
+- ``fassade_london_<a|b|c>_tief.png`` (80 × 144) und ``kaffeehaus_fassade_tief.png`` (112 × 144): die
+  Londoner Fassaden mit Tiefe. Über die vorhandene Front kommt eine Dachfläche in Schrägansicht
+  von oben (zwei Kacheln, Schiefer in Reihen, oben der First, der Schornstein ragt hindurch).
+  Gutachten Strand: „flache Fassaden von vorn ohne Dach und Tiefe“.
+- Postreiter (``spiel/figuren/postreiter.png``): In ``werkzeuge/figuren.json`` trägt er
+  ``08_Detective_Hat_02``, einen rötlichen Hut, der im Spiel wie eine rote Zwergenmütze wirkt
+  (Variantenwahl Siedlungshütte). Wunsch: ``08_Detective_Hat_03`` (sandfarbener Krempenhut).
+  ``postreiter_figur()`` unten ändert nur diesen Eintrag.
 
 Aufruf: python niedrig1_runde9_karten.py /home/user/schach-abenteuer-inhalte
 """
 
+import json
 import random
 import sys
 from pathlib import Path
@@ -230,6 +239,40 @@ def schild_zu_verkaufen() -> Image.Image:
     return bild
 
 
+SCHIEFER = (70, 76, 92, 255)
+SCHIEFER_HELL = (98, 106, 124, 255)
+FIRST = (52, 56, 70, 255)
+DACH_H = 32
+
+
+def fassade_tief(haupt: Path, name: str) -> Image.Image:
+    """Fassade mit Dachfläche: Das alte Bild rückt 32 Pixel nach unten, darüber liegt die
+    Dachfläche von oben gesehen (Schieferreihen, nach oben dunkler, oben der First). Der Schornstein
+    des alten Bilds (oberste 16 Reihen, rechts) wird nach oben verlängert."""
+    alt = Image.open(haupt / "spiel" / "eigene" / f"{name}.png").convert("RGBA")
+    bild = Image.new("RGBA", (alt.width, alt.height + DACH_H))
+    z = ImageDraw.Draw(bild)
+    z.rectangle((0, 2, alt.width - 1, DACH_H + 1), fill=RAHMEN)
+    for y in range(3, DACH_H + 2):
+        z.line((1, y, alt.width - 2, y), fill=SCHIEFER if (y // 4) % 2 else SCHIEFER_HELL)
+        if y % 4 == 0:
+            for x in range(1 + (y // 4 % 2) * 4, alt.width - 2, 8):
+                z.point((x, y), fill=FIRST)
+    z.rectangle((0, 2, alt.width - 1, 4), fill=FIRST)
+    bild.alpha_composite(alt, (0, DACH_H))
+    return bild
+
+
+def postreiter_figur(haupt: Path) -> None:
+    """Ändert in werkzeuge/figuren.json den Postreiter: sandfarbener Krempenhut statt rotem Hut.
+    Danach baut ``python werkzeuge/figuren.py`` die Figur neu."""
+    pfad = haupt / "werkzeuge" / "figuren.json"
+    daten = json.loads(pfad.read_text(encoding="utf-8"))
+    figuren = daten.get("figuren", daten)
+    figuren["postreiter"]["zubehoer"] = "08_Detective_Hat_03"
+    pfad.write_text(json.dumps(daten, ensure_ascii=False, indent=2) + "\n", encoding="utf-8")
+
+
 def main(haupt: Path) -> None:
     ziel = haupt / "spiel" / "eigene"
     fenster_nacht(haupt).save(ziel / "fenster_nacht.png")
@@ -241,6 +284,8 @@ def main(haupt: Path) -> None:
     kugelfang().save(ziel / "kugelfang.png")
     boeschung_nord().save(ziel / "boeschung_nord.png")
     schild_zu_verkaufen().save(ziel / "schild_zu_verkaufen.png")
+    for name in ("fassade_london_a", "fassade_london_b", "fassade_london_c", "kaffeehaus_fassade"):
+        fassade_tief(haupt, name).save(ziel / f"{name}_tief.png")
 
 
 if __name__ == "__main__":

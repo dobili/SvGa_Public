@@ -367,21 +367,23 @@
     {
       "name": "fischerAmTresen",
       "typ": "statist",
-      "feld": [22, 7],
+      "feld": [23, 7],
       "eigenschaften": {
-        "tun": "trinkt ein Bier am Tresen",
+        "tun": "sitzt am Tresen und trinkt ein Bier",
         "wann": "tag",
-        "sagt": "statist.lockport.gasthaus.fischerAmTresen"
+        "sagt": "statist.lockport.gasthaus.fischerAmTresen",
+        "verhalten": "sitzen"
       }
     },
     {
       "name": "wanderinBeimEssen",
       "typ": "statist",
-      "feld": [6, 9],
+      "feld": [3, 7],
       "eigenschaften": {
-        "tun": "isst eine Suppe",
+        "tun": "sitzt am Tisch und isst eine Suppe",
         "wann": "tag",
-        "sagt": "statist.lockport.gasthaus.wanderinBeimEssen"
+        "sagt": "statist.lockport.gasthaus.wanderinBeimEssen",
+        "verhalten": "sitzen"
       }
     },
     {
@@ -390,6 +392,18 @@
       "feld": [24, 4],
       "eigenschaften": {
         "tun": "poliert Gläser hinter dem Tresen",
+        "wann": "tag"
+      }
+    },
+    {
+      "name": "stammgast",
+      "typ": "statist",
+      "feld": [15, 8],
+      "eigenschaften": {
+        "von": "15,8",
+        "bis": "15,8",
+        "verhalten": "sitzen",
+        "tun": "sitzt beim Kartenspiel",
         "wann": "tag"
       }
     }

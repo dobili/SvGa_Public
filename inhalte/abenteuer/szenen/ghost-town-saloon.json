@@ -188,11 +188,12 @@
     {
       "name": "touristMitKarte",
       "typ": "statist",
-      "feld": [5, 6],
+      "feld": [4, 6],
       "eigenschaften": {
-        "tun": "lehnt an der Theke und liest das Schild darüber",
+        "tun": "sitzt am Tresen und liest das Schild darüber",
         "wann": "tag",
-        "sagt": "statist.ghostTown.saloon.touristMitKarte"
+        "sagt": "statist.ghostTown.saloon.touristMitKarte",
+        "verhalten": "sitzen"
       }
     },
     {

@@ -364,3 +364,9 @@ Gutachten `gutachten/wege-mittel-4-runde9.md` und `gutachten/weg-desert-summit-h
 
 **Restpunkte Bergstraße (10.11.2026):** Die Mittellinie läuft durchgezogen durch die Kehren
 (`strasse.py`, `_kehren`); wo die Straße eine Felsstufe schneidet, fassen Stützmauern den Einschnitt.
+
+**Türprüfung und Kehren (10.11.2026, abends):** Das Möbel `wds6Diner` nennt seine Tür (`tuer`, Spalten 4
+und 5 unter dem Bild); der Übergang `hinterzimmerTuer` liegt in voller Türbreite genau davor (Regeln
+10.68, 10.69). Bergstraße: Eine zweite Abschrägung der Kehren machte die Fahrbahn zackig und schmaler als
+drei Felder und ist wieder entfernt; runde Kehren brauchen Asphaltkacheln mit Rand und Schrägen wie
+`piste_rot.png` (möglicher Bildwunsch).

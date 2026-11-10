@@ -822,3 +822,6 @@ zwei Teppichmaterialien mit Muster; **„TICKET“** – Bild des Pakets.
 
 **Fahrzeuge (10.65, 10.11.2026):** Im Zustand „vermietet“ steht der Werksbus in Vorderansicht
 (`fz11BusAb`) im Werkhof statt in Seitenansicht.
+
+**Werksbus (10.11.2026, abends):** Das Bild `fz11BusAb` ist 3 × 7 Kacheln, sichtbar etwa 6,5 lang; ein
+längeres Busbild in Vorderansicht gibt es im Katalog nicht (Soll 7–9 nach 10.64).

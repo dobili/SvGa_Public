@@ -48,3 +48,13 @@ def test_mittellinie_laeuft_durch_die_kehre():
     bild = Image.new("RGBA", (10 * K, 7 * K))
     markiere(bild, zeilen, {"markierung": ["s"]})
     assert bild.getpixel((7 * K, K - 1)) == GELB  # Mitte des Eckstücks
+
+
+def test_randlinie_um_die_haltebucht_offen_zur_fahrbahn():
+    """Regel: Gutachten Schule (Runde 9): Die Bucht des Schulbusses hat eine Randlinie."""
+    zeilen = ["ppbbpp", "ppbbpp", "ssssss", "ssssss"]
+    bild = Image.new("RGBA", (6 * K, 4 * K))
+    markiere(bild, zeilen, {"randlinie": ["b"], "markierung": ["s"]})
+    assert bild.getpixel((2 * K + 1, 8)) == WEISS  # linke Seite der Bucht
+    assert bild.getpixel((2 * K + 8, 1)) == WEISS  # Oberkante
+    assert bild.getpixel((2 * K + 8, 2 * K - 2)) != WEISS  # zur Fahrbahn offen

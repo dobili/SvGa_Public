@@ -393,3 +393,6 @@ gibt es kein Tierbild (es fällt auf den Esel zurück); als Gemini-Bild gemeldet
 
 **Fahrzeuge (10.65, 10.11.2026):** Der Schulbus steht in Vorderansicht (`fz11SchulbusAb`) in einer
 Querbucht östlich am Hof, mit der Front zur Straße; die Fahrerin daneben.
+
+**Haltebucht (10.11.2026, abends):** Die Bucht des Schulbusses hat ein eigenes Zeichen und eine weiße
+Randlinie, offen zur Straße (`"randlinie"`, `strasse.py`).

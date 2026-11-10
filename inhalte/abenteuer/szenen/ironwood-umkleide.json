@@ -2,7 +2,7 @@
   "karte": "ironwood.umkleide",
   "datei": "karten/ironwood-umkleide.json",
   "art": "innen",
-  "beschreibung": "Die Umkleide des Werks (Runde 8), 16 × 12, graue Fliesen. An der Nordwand sechs gleiche Spinde in einer Reihe, gleich daneben der große Doppelspind mit dem Schließfach, dann Wandspiegel über dem Handwaschbecken. In der Nordostecke die Duschen: zwei Kabinen mit Brause auf weißen Fliesen, zur Umkleide hin eine durchsichtige Trennwand mit Durchgang. In der Mitte zwei Umkleidebänke, eine Pflanze in der Südostecke. Die Tür liegt in der Südwand.",
+  "beschreibung": "Die Umkleide des Werks (Runde 8), 16 × 12, graue Fliesen. An der Nordwand sechs gleiche Spinde in einer Reihe, gleich daneben der große Doppelspind mit dem Schließfach, dann Wandspiegel über dem Handwaschbecken. In der Nordostecke die Duschen: zwei Kabinen mit Brause auf weißen Fliesen, jede Kabine mit Tür und Trennwand. In der Mitte zwei Umkleidebänke, eine dritte Bank vor der Trennwand, eine Pflanze in der Südostecke. Die Tür liegt in der Südwand.",
   "wand": "hellgrau",
   "boden": "fliesenGrau",
   "boeden": {
@@ -66,12 +66,19 @@
       ]
     },
     {
-      "moebel": "iwSpind",
+      "moebel": "mf2Spind",
       "feld": [
         7,
         2
       ],
       "id": "schliessfachSpind"
+    },
+    {
+      "moebel": "mf2Spind",
+      "feld": [
+        8,
+        2
+      ]
     },
     {
       "moebel": "iw8Wandspiegel",
@@ -103,34 +110,26 @@
       ]
     },
     {
-      "moebel": "ws5GlasL",
+      "moebel": "iw8Kabinentuer",
       "feld": [
-        11,
-        7
+        10,
+        4
       ],
       "bauteil_ok": true
     },
     {
-      "moebel": "ws5GlasM",
+      "moebel": "iw8KabinentuerB",
       "feld": [
         12,
-        7
+        4
       ],
       "bauteil_ok": true
     },
     {
-      "moebel": "ws5GlasM",
-      "feld": [
-        13,
-        7
-      ],
-      "bauteil_ok": true
-    },
-    {
-      "moebel": "ws5GlasR",
+      "moebel": "iw8Trennwand",
       "feld": [
         14,
-        7
+        4
       ],
       "bauteil_ok": true
     },
@@ -145,6 +144,13 @@
       "moebel": "cc4Bahnbank",
       "feld": [
         2,
+        8
+      ]
+    },
+    {
+      "moebel": "cc4Bahnbank",
+      "feld": [
+        11,
         8
       ]
     },

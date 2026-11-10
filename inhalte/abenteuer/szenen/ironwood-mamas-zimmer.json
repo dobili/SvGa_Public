@@ -2,7 +2,7 @@
   "karte": "ironwood.mamasZimmer",
   "datei": "karten/ironwood-mamas-zimmer.json",
   "art": "innen",
-  "beschreibung": "Wohnküche und Mamas Zimmer (Variante B, Runde 8). Küche mit weißen Fliesen: Kühlschrank, zwei Herde und Arbeitsplatte an der Nordwand, Fenster, der Ofen mit dem Rücken an der Wand, daneben die Leseecke mit Sessel und Stehlampe; runder Tisch mit zwei Stühlen, die zum Tisch zeigen. Mamas Zimmer mit hellem Holzboden: lila Bett mit Teddy unter dem Fenster, Rahmen mit dem Partieformular von 2001, Kleiderschrank an der Nordwand, Schreibtisch mit Stuhl und Lampe, runder Teppich. Karg, aber bewohnt.",
+  "beschreibung": "Wohnküche und Mamas Zimmer (Variante B, Runde 8). Küche mit weißen Fliesen: Kühlschrank, zwei Herde und Theke mit Spüle an der Nordwand, Fenster, der Ofen mit dem Rücken an der Wand, daneben die Leseecke mit Sessel und Stehlampe; runder Tisch mit zwei Stühlen für Mama und Oma Ruth. Mamas Zimmer mit hellem Holzboden: lila Bett mit Teddy unter dem Fenster, Rahmen mit dem Partieformular von 2001, Kleiderschrank an der Nordwand, Schreibtisch mit Stuhl und Lampe, runder Teppich. Karg, aber bewohnt.",
   "wand": "holz",
   "boden": "dielen",
   "raster": [
@@ -62,12 +62,20 @@
       ]
     },
     {
-      "moebel": "wzArbeitsplatte",
+      "moebel": "iw8Theke4",
       "feld": [
         4,
         2
       ],
       "id": "platte"
+    },
+    {
+      "moebel": "mf5Spuele",
+      "feld": [
+        0,
+        0
+      ],
+      "auf": "platte"
     },
     {
       "moebel": "wzFenster",
@@ -117,22 +125,6 @@
     {
       "moebel": "cc4StuhlRuecken",
       "feld": [
-        4,
-        7
-      ],
-      "zu": "kuechentisch"
-    },
-    {
-      "moebel": "cc4StuhlVorn",
-      "feld": [
-        5,
-        5
-      ],
-      "zu": "kuechentisch"
-    },
-    {
-      "moebel": "cc4StuhlRuecken",
-      "feld": [
         5,
         7
       ],
@@ -170,13 +162,17 @@
       "auf": "bett"
     },
     {
-      "moebel": "iwBild",
+      "moebel": "iw8Partieformular",
       "feld": [
         14,
         1
       ],
       "an_wand": true,
-      "id": "rahmen2001"
+      "id": "rahmen2001",
+      "versatz": [
+        0,
+        6
+      ]
     },
     {
       "moebel": "mf2Kleiderschrank",

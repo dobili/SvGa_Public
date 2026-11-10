@@ -11,7 +11,7 @@
  "tilewidth": 16,
  "tileheight": 16,
  "nextlayerid": 5,
- "nextobjectid": 33,
+ "nextobjectid": 32,
  "layers": [
   {
    "id": 1,
@@ -954,11 +954,11 @@
     },
     {
      "id": 12,
-     "name": "wzArbeitsplatte",
+     "name": "iw8Theke4",
      "type": "moebel",
      "x": 64,
      "y": 32,
-     "width": 32,
+     "width": 64,
      "height": 32,
      "rotation": 0,
      "visible": true,
@@ -977,6 +977,29 @@
     },
     {
      "id": 13,
+     "name": "mf5Spuele",
+     "type": "moebel",
+     "x": 80,
+     "y": 35,
+     "width": 32,
+     "height": 16,
+     "rotation": 0,
+     "visible": true,
+     "properties": [
+      {
+       "name": "tiefe",
+       "type": "int",
+       "value": 57
+      },
+      {
+       "name": "kollision",
+       "type": "bool",
+       "value": false
+      }
+     ]
+    },
+    {
+     "id": 14,
      "name": "wzFenster",
      "type": "moebel",
      "x": 96,
@@ -999,7 +1022,7 @@
      ]
     },
     {
-     "id": 14,
+     "id": 15,
      "name": "ldOfen",
      "type": "moebel",
      "x": 128,
@@ -1022,7 +1045,7 @@
      ]
     },
     {
-     "id": 15,
+     "id": 16,
      "name": "mf7SesselWeissLinks",
      "type": "moebel",
      "x": 112,
@@ -1045,7 +1068,7 @@
      ]
     },
     {
-     "id": 16,
+     "id": 17,
      "name": "cc4Stehlampe",
      "type": "moebel",
      "x": 144,
@@ -1068,7 +1091,7 @@
      ]
     },
     {
-     "id": 17,
+     "id": 18,
      "name": "mf3Rundtisch",
      "type": "moebel",
      "x": 64,
@@ -1091,7 +1114,7 @@
      ]
     },
     {
-     "id": 18,
+     "id": 19,
      "name": "cc4StuhlVorn",
      "type": "moebel",
      "x": 64,
@@ -1105,29 +1128,6 @@
        "name": "tiefe",
        "type": "int",
        "value": 104
-      },
-      {
-       "name": "kollision",
-       "type": "bool",
-       "value": true
-      }
-     ]
-    },
-    {
-     "id": 19,
-     "name": "cc4StuhlRuecken",
-     "type": "moebel",
-     "x": 64,
-     "y": 112,
-     "width": 16,
-     "height": 32,
-     "rotation": 0,
-     "visible": true,
-     "properties": [
-      {
-       "name": "tiefe",
-       "type": "int",
-       "value": 136
       },
       {
        "name": "kollision",
@@ -1138,29 +1138,6 @@
     },
     {
      "id": 20,
-     "name": "cc4StuhlVorn",
-     "type": "moebel",
-     "x": 80,
-     "y": 80,
-     "width": 16,
-     "height": 32,
-     "rotation": 0,
-     "visible": true,
-     "properties": [
-      {
-       "name": "tiefe",
-       "type": "int",
-       "value": 104
-      },
-      {
-       "name": "kollision",
-       "type": "bool",
-       "value": true
-      }
-     ]
-    },
-    {
-     "id": 21,
      "name": "cc4StuhlRuecken",
      "type": "moebel",
      "x": 80,
@@ -1183,7 +1160,7 @@
      ]
     },
     {
-     "id": 22,
+     "id": 21,
      "name": "cc4PflanzeK",
      "type": "moebel",
      "x": 16,
@@ -1206,7 +1183,7 @@
      ]
     },
     {
-     "id": 23,
+     "id": 22,
      "name": "wzFenster",
      "type": "moebel",
      "x": 192,
@@ -1229,7 +1206,7 @@
      ]
     },
     {
-     "id": 24,
+     "id": 23,
      "name": "iw5BettLila",
      "type": "moebel",
      "x": 176,
@@ -1252,7 +1229,7 @@
      ]
     },
     {
-     "id": 25,
+     "id": 24,
      "name": "mf7Teddy",
      "type": "moebel",
      "x": 192,
@@ -1275,11 +1252,11 @@
      ]
     },
     {
-     "id": 26,
-     "name": "iwBild",
+     "id": 25,
+     "name": "iw8Partieformular",
      "type": "moebel",
      "x": 224,
-     "y": 16,
+     "y": 22,
      "width": 16,
      "height": 32,
      "rotation": 0,
@@ -1298,7 +1275,7 @@
      ]
     },
     {
-     "id": 27,
+     "id": 26,
      "name": "mf2Kleiderschrank",
      "type": "moebel",
      "x": 240,
@@ -1321,7 +1298,7 @@
      ]
     },
     {
-     "id": 28,
+     "id": 27,
      "name": "cc3Schreibtisch",
      "type": "moebel",
      "x": 240,
@@ -1344,7 +1321,7 @@
      ]
     },
     {
-     "id": 29,
+     "id": 28,
      "name": "cc4StuhlVorn",
      "type": "moebel",
      "x": 240,
@@ -1367,7 +1344,7 @@
      ]
     },
     {
-     "id": 30,
+     "id": 29,
      "name": "cc4Leselampe",
      "type": "moebel",
      "x": 256,
@@ -1390,7 +1367,7 @@
      ]
     },
     {
-     "id": 31,
+     "id": 30,
      "name": "mf7TeppichRund",
      "type": "moebel",
      "x": 192,
@@ -1413,7 +1390,7 @@
      ]
     },
     {
-     "id": 32,
+     "id": 31,
      "name": "cc4PflanzeK",
      "type": "moebel",
      "x": 176,

@@ -2,19 +2,19 @@
   "karte": "ironwood.museum",
   "datei": "karten/ironwood-museum.json",
   "art": "innen",
-  "beschreibung": "Heimatmuseum im alten Bahnhof (Runde 8, Notiz 17): zwei Räume, 34 × 18. Die alte Schalterhalle mit dem Fahrkartenschalter an der Nordwand, drei hohen Fenstern und dem Fahrplan davor; roter Teppich als Mittelgang von der Tür zum Pult von Mr. Teague. Zwei große Vitrinen mit Platz ringsum, an der Südseite eine Reihe gefüllter Vitrinen, darunter die Zeitung von 1858 und ein freies Fach für Brief und Umschlag. Die Postsäcke von 1866 liegen als Ausstellungsstück auf dem Gepäckkarren hinter Absperrpfosten. Durch einen Durchgang der Nebenraum über Werk und Stadt: Bilder an der Wand, das Foto vom Brückenbau, eine große Vitrine in der Mitte und eine Reihe Schaukästen, darunter der Glasfunke. Bank, Infotafeln, Pflanzen.",
+  "beschreibung": "Heimatmuseum im alten Bahnhof (Runde 8, Notiz 17): zwei Räume, 34 × 18. Die alte Schalterhalle mit dem Fahrkartenschalter an der Nordwand, drei hohen Fenstern und dem Fahrplan davor; blauer Läufer von der Tür bis vor das Pult von Mr. Teague. Zwei große Vitrinen mit Platz ringsum, an der Südseite eine Reihe gefüllter Vitrinen, darunter die Zeitung von 1858 und ein freies Fach für Brief und Umschlag. Die Postsäcke von 1866 liegen als Ausstellungsstück auf dem Gepäckkarren. Durch einen Durchgang der Nebenraum über Werk und Stadt: Bilder an der Wand, das Foto vom Brückenbau, eine große Vitrine in der Mitte und eine Reihe Schaukästen, darunter der Glasfunke. Bank, Infotafeln, Pflanzen.",
   "wand": "creme",
   "boden": "fliesenGrau",
   "raster": [
     "##################################",
     "##################################",
     "##################################",
-    "#.........ttt.........#..........#",
-    "#.........ttt.........#..........#",
-    "#.........ttt.........#..........#",
-    "#.........ttt.........#..........#",
-    "#.........ttt.........#..........#",
-    "#.........ttt.........#..........#",
+    "#.....................#..........#",
+    "#.....................#..........#",
+    "#.....................#..........#",
+    "#.....................#..........#",
+    "#.....................#..........#",
+    "#.....................#..........#",
     "#.........ttt....................#",
     "#.........ttt....................#",
     "#.........ttt.........#..........#",
@@ -87,10 +87,10 @@
       ]
     },
     {
-      "moebel": "iw8VitrineGross2",
+      "moebel": "iw8Museumsbank",
       "feld": [
         16,
-        8
+        9
       ]
     },
     {
@@ -150,25 +150,12 @@
       ]
     },
     {
-      "moebel": "iw8Absperrpfosten",
-      "feld": [
-        18,
-        4
-      ]
-    },
-    {
-      "moebel": "iw8Absperrpfosten",
-      "feld": [
-        18,
-        6
-      ]
-    },
-    {
       "moebel": "iw8Infotafel",
       "feld": [
-        7,
-        9
-      ]
+        6,
+        1
+      ],
+      "an_wand": true
     },
     {
       "moebel": "iw8Museumsbank",
@@ -228,10 +215,31 @@
       ]
     },
     {
-      "moebel": "iw8VitrineGross3",
+      "moebel": "iw8Museumsbank",
       "feld": [
-        26,
-        6
+        27,
+        7
+      ]
+    },
+    {
+      "moebel": "iw8Pflanze",
+      "feld": [
+        24,
+        4
+      ]
+    },
+    {
+      "moebel": "iw8Pflanze",
+      "feld": [
+        20,
+        9
+      ]
+    },
+    {
+      "moebel": "iw8Museumsbank",
+      "feld": [
+        7,
+        9
       ]
     },
     {
@@ -259,8 +267,9 @@
       "moebel": "iw8Infotafel",
       "feld": [
         23,
-        4
-      ]
+        1
+      ],
+      "an_wand": true
     },
     {
       "moebel": "iw8Pflanze",
@@ -383,6 +392,6 @@
     "schule"
   ],
   "boeden": {
-    "t": "teppichRot"
+    "t": "teppichBlau"
   }
 }

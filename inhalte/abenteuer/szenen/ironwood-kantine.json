@@ -134,43 +134,28 @@
       "auf": "ausgabe"
     },
     {
-      "moebel": "mf8GlasthekeLinks",
+      "moebel": "iw8Theke4",
       "feld": [
         9,
         7
       ],
-      "bauteil_ok": true
+      "id": "warmhalten"
     },
     {
-      "moebel": "mf8GlasthekeMitte",
+      "moebel": "mf5Kuchenvitrine",
       "feld": [
-        10,
-        7
+        0,
+        0
       ],
-      "bauteil_ok": true
-    },
-    {
-      "moebel": "mf8GlasthekeMitte",
-      "feld": [
-        11,
-        7
-      ],
-      "bauteil_ok": true
-    },
-    {
-      "moebel": "mf8GlasthekeRechts",
-      "feld": [
-        12,
-        7
-      ],
-      "bauteil_ok": true
+      "auf": "warmhalten"
     },
     {
       "moebel": "cc4Kasse",
       "feld": [
-        13,
-        9
-      ]
+        6,
+        0
+      ],
+      "auf": "ausgabe"
     },
     {
       "moebel": "ca7Muelleimer",
@@ -178,6 +163,14 @@
         15,
         8
       ]
+    },
+    {
+      "moebel": "mf8Tafel",
+      "feld": [
+        10,
+        1
+      ],
+      "an_wand": true
     },
     {
       "moebel": "mf2Spind",
@@ -211,6 +204,14 @@
       "moebel": "rv5Bahnhofsuhr",
       "feld": [
         20,
+        1
+      ],
+      "an_wand": true
+    },
+    {
+      "moebel": "cc4Fenster",
+      "feld": [
+        24,
         1
       ],
       "an_wand": true
@@ -1054,34 +1055,18 @@
       "id": "clubtisch"
     },
     {
-      "moebel": "cc4StuhlVorn",
+      "moebel": "wzStuhlRechts",
       "feld": [
-        30,
-        5
+        29,
+        6
       ],
       "zu": "clubtisch"
     },
     {
-      "moebel": "cc4StuhlRuecken",
+      "moebel": "wzStuhlLinks",
       "feld": [
-        30,
-        7
-      ],
-      "zu": "clubtisch"
-    },
-    {
-      "moebel": "cc4StuhlVorn",
-      "feld": [
-        31,
-        5
-      ],
-      "zu": "clubtisch"
-    },
-    {
-      "moebel": "cc4StuhlRuecken",
-      "feld": [
-        31,
-        7
+        32,
+        6
       ],
       "zu": "clubtisch"
     },
@@ -1109,34 +1094,18 @@
       "id": "clubtisch2"
     },
     {
-      "moebel": "cc4StuhlVorn",
+      "moebel": "wzStuhlRechts",
       "feld": [
-        27,
-        10
+        26,
+        11
       ],
       "zu": "clubtisch2"
     },
     {
-      "moebel": "cc4StuhlRuecken",
+      "moebel": "wzStuhlLinks",
       "feld": [
-        27,
-        12
-      ],
-      "zu": "clubtisch2"
-    },
-    {
-      "moebel": "cc4StuhlVorn",
-      "feld": [
-        28,
-        10
-      ],
-      "zu": "clubtisch2"
-    },
-    {
-      "moebel": "cc4StuhlRuecken",
-      "feld": [
-        28,
-        12
+        29,
+        11
       ],
       "zu": "clubtisch2"
     },
@@ -1164,34 +1133,18 @@
       "id": "clubtisch3"
     },
     {
-      "moebel": "cc4StuhlVorn",
+      "moebel": "wzStuhlRechts",
       "feld": [
-        31,
-        10
+        30,
+        11
       ],
       "zu": "clubtisch3"
     },
     {
-      "moebel": "cc4StuhlRuecken",
+      "moebel": "wzStuhlLinks",
       "feld": [
-        31,
-        12
-      ],
-      "zu": "clubtisch3"
-    },
-    {
-      "moebel": "cc4StuhlVorn",
-      "feld": [
-        32,
-        10
-      ],
-      "zu": "clubtisch3"
-    },
-    {
-      "moebel": "cc4StuhlRuecken",
-      "feld": [
-        32,
-        12
+        33,
+        11
       ],
       "zu": "clubtisch3"
     },
@@ -1265,8 +1218,8 @@
     {
       "name": "stahlbrett",
       "feld": [
-        32,
-        7
+        30,
+        8
       ]
     }
   ],
@@ -1348,7 +1301,8 @@
     "klassisch",
     "einfach",
     "rustikal",
-    "modern"
+    "modern",
+    "schule"
   ],
   "boeden": {
     "d": "dielen"

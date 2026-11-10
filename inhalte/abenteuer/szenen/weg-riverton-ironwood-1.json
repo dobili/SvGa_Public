@@ -10,9 +10,7 @@
     "s": "asphalt",
     "k": "schotter"
   },
-  "bruecken": [
-    "h"
-  ],
+  "bruecken": ["h"],
   "raster": [
     "#################ee#~~~~~~~~########",
     "#................ee.~~~~~~~~.......#",
@@ -208,2215 +206,1303 @@
   "objekte": [
     {
       "moebel": "mf4Poller",
-      "feld": [
-        19,
-        4
-      ]
+      "feld": [19, 4]
     },
     {
       "moebel": "svSchild",
-      "feld": [
-        16,
-        8
-      ]
+      "feld": [16, 8]
     },
     {
       "moebel": "wr5MauerLinks",
-      "feld": [
-        3,
-        16
-      ],
+      "feld": [3, 16],
       "bauteil_ok": true
     },
     {
       "moebel": "wr5Mauer",
-      "feld": [
-        4,
-        16
-      ],
+      "feld": [4, 16],
       "bauteil_ok": true
     },
     {
       "moebel": "wr5Mauer",
-      "feld": [
-        5,
-        16
-      ],
+      "feld": [5, 16],
       "bauteil_ok": true
     },
     {
       "moebel": "wr5Mauer2",
-      "feld": [
-        6,
-        16
-      ],
+      "feld": [6, 16],
       "bauteil_ok": true
     },
     {
       "moebel": "wr5Mauer",
-      "feld": [
-        7,
-        16
-      ],
+      "feld": [7, 16],
       "bauteil_ok": true
     },
     {
       "moebel": "wr5Mauer",
-      "feld": [
-        8,
-        16
-      ],
+      "feld": [8, 16],
       "bauteil_ok": true
     },
     {
       "moebel": "wr5Mauer2",
-      "feld": [
-        9,
-        16
-      ],
+      "feld": [9, 16],
       "bauteil_ok": true
     },
     {
       "moebel": "wr5Mauer",
-      "feld": [
-        10,
-        16
-      ],
+      "feld": [10, 16],
       "bauteil_ok": true
     },
     {
       "moebel": "wr5Mauer",
-      "feld": [
-        11,
-        16
-      ],
+      "feld": [11, 16],
       "bauteil_ok": true
     },
     {
       "moebel": "wr5Mauer2",
-      "feld": [
-        12,
-        16
-      ],
+      "feld": [12, 16],
       "bauteil_ok": true
     },
     {
       "moebel": "wr5Mauer",
-      "feld": [
-        13,
-        16
-      ],
+      "feld": [13, 16],
       "bauteil_ok": true
     },
     {
       "moebel": "wr5MauerRechts",
-      "feld": [
-        14,
-        16
-      ],
+      "feld": [14, 16],
       "bauteil_ok": true
     },
     {
       "moebel": "wr5GraffitiKrone",
-      "feld": [
-        5,
-        17
-      ],
+      "feld": [5, 17],
       "vorn": true
     },
     {
       "moebel": "wr5GraffitiWolf",
-      "feld": [
-        8,
-        17
-      ],
+      "feld": [8, 17],
       "vorn": true
     },
     {
       "moebel": "wr5GraffitiGelb",
-      "feld": [
-        11,
-        17
-      ],
+      "feld": [11, 17],
       "vorn": true
     },
     {
       "moebel": "rvLeiter",
-      "feld": [
-        15,
-        17
-      ]
+      "feld": [15, 17]
     },
     {
       "moebel": "svSchild",
-      "feld": [
-        2,
-        18
-      ]
+      "feld": [2, 18]
     },
     {
       "moebel": "wr5Fabrikhalle",
-      "feld": [
-        1,
-        28
-      ]
+      "feld": [1, 28]
     },
     {
       "moebel": "wr5Container",
-      "feld": [
-        3,
-        39
-      ]
+      "feld": [3, 39]
     },
     {
       "moebel": "wr5Autowrack",
-      "feld": [
-        10,
-        39
-      ]
+      "feld": [10, 39]
     },
     {
       "moebel": "cc3ZaunEnde",
-      "feld": [
-        2,
-        44
-      ],
+      "feld": [2, 44],
       "bauteil_ok": true
     },
     {
       "moebel": "ccZaun",
-      "feld": [
-        3,
-        44
-      ],
+      "feld": [3, 44],
       "bauteil_ok": true
     },
     {
       "moebel": "ccZaun",
-      "feld": [
-        4,
-        44
-      ],
+      "feld": [4, 44],
       "bauteil_ok": true
     },
     {
       "moebel": "ccZaun",
-      "feld": [
-        5,
-        44
-      ],
+      "feld": [5, 44],
       "bauteil_ok": true
     },
     {
       "moebel": "ccZaun",
-      "feld": [
-        6,
-        44
-      ],
+      "feld": [6, 44],
       "bauteil_ok": true
     },
     {
       "moebel": "ccZaun",
-      "feld": [
-        7,
-        44
-      ],
+      "feld": [7, 44],
       "bauteil_ok": true
     },
     {
       "moebel": "ccZaun",
-      "feld": [
-        8,
-        44
-      ],
+      "feld": [8, 44],
       "bauteil_ok": true
     },
     {
       "moebel": "ccZaun",
-      "feld": [
-        9,
-        44
-      ],
+      "feld": [9, 44],
       "bauteil_ok": true
     },
     {
       "moebel": "ccZaun",
-      "feld": [
-        10,
-        44
-      ],
+      "feld": [10, 44],
       "bauteil_ok": true
     },
     {
       "moebel": "ccZaun",
-      "feld": [
-        11,
-        44
-      ],
+      "feld": [11, 44],
       "bauteil_ok": true
     },
     {
       "moebel": "ccZaun",
-      "feld": [
-        12,
-        44
-      ],
+      "feld": [12, 44],
       "bauteil_ok": true
     },
     {
       "moebel": "ccZaun",
-      "feld": [
-        13,
-        44
-      ],
+      "feld": [13, 44],
       "bauteil_ok": true
     },
     {
       "moebel": "cc3ZaunEndeR",
-      "feld": [
-        14,
-        44
-      ],
+      "feld": [14, 44],
       "bauteil_ok": true
     },
     {
       "moebel": "cc3Raetseltafel",
-      "feld": [
-        13,
-        47
-      ]
+      "feld": [13, 47]
     },
     {
       "moebel": "haltestellenschild",
-      "feld": [
-        16,
-        47
-      ]
+      "feld": [16, 47]
     },
     {
       "moebel": "mf4Laterne",
-      "feld": [
-        3,
-        46
-      ]
+      "feld": [3, 46]
     },
     {
       "moebel": "mf4Laterne",
-      "feld": [
-        10,
-        46
-      ]
+      "feld": [10, 46]
     },
     {
       "moebel": "wc5Gartenhaus",
-      "feld": [
-        3,
-        60
-      ]
+      "feld": [3, 60]
     },
     {
       "moebel": "mf4Gemuesebeet",
-      "feld": [
-        6,
-        61
-      ]
+      "feld": [6, 61]
     },
     {
       "moebel": "wc5GartenhausB",
-      "feld": [
-        9,
-        60
-      ]
+      "feld": [9, 60]
     },
     {
       "moebel": "mf4Gemuesebeet",
-      "feld": [
-        12,
-        61
-      ]
+      "feld": [12, 61]
     },
     {
       "moebel": "wc5Gartenhaus",
-      "feld": [
-        3,
-        72
-      ]
+      "feld": [3, 72]
     },
     {
       "moebel": "mf4Gemuesebeet",
-      "feld": [
-        6,
-        73
-      ]
+      "feld": [6, 73]
     },
     {
       "moebel": "wc5GartenhausB",
-      "feld": [
-        9,
-        72
-      ]
+      "feld": [9, 72]
     },
     {
       "moebel": "mf4Gemuesebeet",
-      "feld": [
-        12,
-        73
-      ]
+      "feld": [12, 73]
     },
     {
       "moebel": "wg4BuschBreit",
-      "feld": [
-        2,
-        66
-      ]
+      "feld": [2, 66]
     },
     {
       "moebel": "wg4BuschBreit",
-      "feld": [
-        5,
-        66
-      ]
+      "feld": [5, 66]
     },
     {
       "moebel": "wg4BuschBreit",
-      "feld": [
-        8,
-        66
-      ]
+      "feld": [8, 66]
     },
     {
       "moebel": "wg4BuschBreit",
-      "feld": [
-        11,
-        66
-      ]
+      "feld": [11, 66]
     },
     {
       "moebel": "wg4BuschBreit",
-      "feld": [
-        14,
-        66
-      ]
+      "feld": [14, 66]
     },
     {
       "moebel": "wg4BuschBreit",
-      "feld": [
-        2,
-        78
-      ]
+      "feld": [2, 78]
     },
     {
       "moebel": "wg4BuschBreit",
-      "feld": [
-        5,
-        78
-      ]
+      "feld": [5, 78]
     },
     {
       "moebel": "wg4BuschBreit",
-      "feld": [
-        8,
-        78
-      ]
+      "feld": [8, 78]
     },
     {
       "moebel": "wg4BuschBreit",
-      "feld": [
-        11,
-        78
-      ]
+      "feld": [11, 78]
     },
     {
       "moebel": "wg4BuschBreit",
-      "feld": [
-        14,
-        78
-      ]
+      "feld": [14, 78]
     },
     {
       "moebel": "mf4Laterne",
-      "feld": [
-        2,
-        61
-      ]
+      "feld": [2, 61]
     },
     {
       "moebel": "mf4Laterne",
-      "feld": [
-        15,
-        61
-      ]
+      "feld": [15, 61]
     },
     {
       "moebel": "cc5BootUfer",
-      "feld": [
-        20,
-        84
-      ],
+      "feld": [20, 84],
       "vorn": true
     },
     {
       "moebel": "mf4Wegweiser",
-      "feld": [
-        15,
-        95
-      ]
+      "feld": [15, 95]
     },
     {
       "moebel": "by6StegLaengs9",
-      "feld": [
-        17,
-        98
-      ]
+      "feld": [17, 98]
     },
     {
       "moebel": "mf9BankRechts",
-      "feld": [
-        15,
-        109
-      ]
+      "feld": [15, 109]
     },
     {
       "moebel": "wg4GrasB",
-      "feld": [
-        19,
-        107
-      ]
+      "feld": [19, 107]
     },
     {
       "moebel": "wg4GrasB",
-      "feld": [
-        19,
-        110
-      ]
+      "feld": [19, 110]
     },
     {
       "moebel": "wg4GrasB",
-      "feld": [
-        19,
-        113
-      ]
+      "feld": [19, 113]
     },
     {
       "moebel": "wg4GrasB",
-      "feld": [
-        19,
-        116
-      ]
+      "feld": [19, 116]
     },
     {
       "moebel": "wr5Huehnerstall",
-      "feld": [
-        3,
-        111
-      ]
+      "feld": [3, 111]
     },
     {
       "moebel": "cc3ZaunEnde",
-      "feld": [
-        2,
-        110
-      ],
+      "feld": [2, 110],
       "bauteil_ok": true
     },
     {
       "moebel": "ccZaun",
-      "feld": [
-        3,
-        110
-      ],
+      "feld": [3, 110],
       "bauteil_ok": true
     },
     {
       "moebel": "ccZaun",
-      "feld": [
-        4,
-        110
-      ],
+      "feld": [4, 110],
       "bauteil_ok": true
     },
     {
       "moebel": "ccZaun",
-      "feld": [
-        5,
-        110
-      ],
+      "feld": [5, 110],
       "bauteil_ok": true
     },
     {
       "moebel": "ccZaun",
-      "feld": [
-        6,
-        110
-      ],
+      "feld": [6, 110],
       "bauteil_ok": true
     },
     {
       "moebel": "ccZaun",
-      "feld": [
-        7,
-        110
-      ],
+      "feld": [7, 110],
       "bauteil_ok": true
     },
     {
       "moebel": "ccZaun",
-      "feld": [
-        8,
-        110
-      ],
+      "feld": [8, 110],
       "bauteil_ok": true
     },
     {
       "moebel": "ccZaun",
-      "feld": [
-        9,
-        110
-      ],
+      "feld": [9, 110],
       "bauteil_ok": true
     },
     {
       "moebel": "ccZaun",
-      "feld": [
-        9,
-        111
-      ],
+      "feld": [9, 111],
       "bauteil_ok": true
     },
     {
       "moebel": "ccZaun",
-      "feld": [
-        2,
-        111
-      ],
+      "feld": [2, 111],
       "bauteil_ok": true
     },
     {
       "moebel": "ccZaun",
-      "feld": [
-        9,
-        112
-      ],
+      "feld": [9, 112],
       "bauteil_ok": true
     },
     {
       "moebel": "ccZaun",
-      "feld": [
-        2,
-        112
-      ],
+      "feld": [2, 112],
       "bauteil_ok": true
     },
     {
       "moebel": "ccZaun",
-      "feld": [
-        9,
-        113
-      ],
+      "feld": [9, 113],
       "bauteil_ok": true
     },
     {
       "moebel": "ccZaun",
-      "feld": [
-        2,
-        113
-      ],
+      "feld": [2, 113],
       "bauteil_ok": true
     },
     {
       "moebel": "ccZaun",
-      "feld": [
-        9,
-        114
-      ],
+      "feld": [9, 114],
       "bauteil_ok": true
     },
     {
       "moebel": "ccZaun",
-      "feld": [
-        2,
-        114
-      ],
+      "feld": [2, 114],
       "bauteil_ok": true
     },
     {
       "moebel": "ccZaun",
-      "feld": [
-        9,
-        115
-      ],
+      "feld": [9, 115],
       "bauteil_ok": true
     },
     {
       "moebel": "ccZaun",
-      "feld": [
-        2,
-        115
-      ],
+      "feld": [2, 115],
       "bauteil_ok": true
     },
     {
       "moebel": "ccZaun",
-      "feld": [
-        9,
-        116
-      ],
+      "feld": [9, 116],
       "bauteil_ok": true
     },
     {
       "moebel": "ccZaun",
-      "feld": [
-        2,
-        116
-      ],
+      "feld": [2, 116],
       "bauteil_ok": true
     },
     {
       "moebel": "ccZaun",
-      "feld": [
-        2,
-        117
-      ],
+      "feld": [2, 117],
       "bauteil_ok": true
     },
     {
       "moebel": "ccZaun",
-      "feld": [
-        3,
-        117
-      ],
+      "feld": [3, 117],
       "bauteil_ok": true
     },
     {
       "moebel": "ccZaun",
-      "feld": [
-        4,
-        117
-      ],
+      "feld": [4, 117],
       "bauteil_ok": true
     },
     {
       "moebel": "ccZaun",
-      "feld": [
-        5,
-        117
-      ],
+      "feld": [5, 117],
       "bauteil_ok": true
     },
     {
       "moebel": "ccZaun",
-      "feld": [
-        6,
-        117
-      ],
+      "feld": [6, 117],
       "bauteil_ok": true
     },
     {
       "moebel": "cc3ZaunEndeR",
-      "feld": [
-        7,
-        117
-      ],
+      "feld": [7, 117],
       "bauteil_ok": true
     },
     {
       "moebel": "cc3ZaunEnde",
-      "feld": [
-        9,
-        117
-      ],
+      "feld": [9, 117],
       "bauteil_ok": true
     },
     {
       "moebel": "mf8FlohmarktHof",
-      "feld": [
-        1,
-        121
-      ]
+      "feld": [1, 121]
     },
     {
       "moebel": "wr5Scheune",
-      "feld": [
-        2,
-        132
-      ]
+      "feld": [2, 132]
     },
     {
       "moebel": "wr5Ziegelturm",
-      "feld": [
-        11,
-        128
-      ]
+      "feld": [11, 128]
     },
     {
       "moebel": "wr5Leiterwagen",
-      "feld": [
-        13,
-        144
-      ]
+      "feld": [13, 144]
     },
     {
       "moebel": "wr5Heu",
-      "feld": [
-        11,
-        144
-      ]
+      "feld": [11, 144]
     },
     {
       "moebel": "wr8Acker6x5",
-      "feld": [
-        1,
-        148
-      ],
+      "feld": [1, 148],
       "id": "acker1_148"
     },
     {
       "moebel": "wr5Kohl",
-      "feld": [
-        1,
-        149
-      ]
+      "feld": [1, 149]
     },
     {
       "moebel": "wr5Kohl",
-      "feld": [
-        2,
-        149
-      ]
+      "feld": [2, 149]
     },
     {
       "moebel": "wr5Kohl",
-      "feld": [
-        3,
-        149
-      ]
+      "feld": [3, 149]
     },
     {
       "moebel": "wr5Kohl",
-      "feld": [
-        4,
-        149
-      ]
+      "feld": [4, 149]
     },
     {
       "moebel": "wr5Kohl",
-      "feld": [
-        5,
-        149
-      ]
+      "feld": [5, 149]
     },
     {
       "moebel": "wr5Kohl",
-      "feld": [
-        6,
-        149
-      ]
+      "feld": [6, 149]
     },
     {
       "moebel": "wr5Kohl",
-      "feld": [
-        1,
-        150
-      ]
+      "feld": [1, 150]
     },
     {
       "moebel": "wr5Kohl",
-      "feld": [
-        2,
-        150
-      ]
+      "feld": [2, 150]
     },
     {
       "moebel": "wr5Kohl",
-      "feld": [
-        3,
-        150
-      ]
+      "feld": [3, 150]
     },
     {
       "moebel": "wr5Kohl",
-      "feld": [
-        4,
-        150
-      ]
+      "feld": [4, 150]
     },
     {
       "moebel": "wr5Kohl",
-      "feld": [
-        5,
-        150
-      ]
+      "feld": [5, 150]
     },
     {
       "moebel": "wr5Kohl",
-      "feld": [
-        6,
-        150
-      ]
+      "feld": [6, 150]
     },
     {
       "moebel": "wr5Kohl",
-      "feld": [
-        1,
-        151
-      ]
+      "feld": [1, 151]
     },
     {
       "moebel": "wr5Kohl",
-      "feld": [
-        2,
-        151
-      ]
+      "feld": [2, 151]
     },
     {
       "moebel": "wr5Kohl",
-      "feld": [
-        3,
-        151
-      ]
+      "feld": [3, 151]
     },
     {
       "moebel": "wr5Kohl",
-      "feld": [
-        4,
-        151
-      ]
+      "feld": [4, 151]
     },
     {
       "moebel": "wr5Kohl",
-      "feld": [
-        5,
-        151
-      ]
+      "feld": [5, 151]
     },
     {
       "moebel": "wr5Kohl",
-      "feld": [
-        6,
-        151
-      ]
+      "feld": [6, 151]
     },
     {
       "moebel": "wr5Kohl",
-      "feld": [
-        1,
-        152
-      ]
+      "feld": [1, 152]
     },
     {
       "moebel": "wr5Kohl",
-      "feld": [
-        2,
-        152
-      ]
+      "feld": [2, 152]
     },
     {
       "moebel": "wr5Kohl",
-      "feld": [
-        3,
-        152
-      ]
+      "feld": [3, 152]
     },
     {
       "moebel": "wr5Kohl",
-      "feld": [
-        4,
-        152
-      ]
+      "feld": [4, 152]
     },
     {
       "moebel": "wr5Kohl",
-      "feld": [
-        5,
-        152
-      ]
+      "feld": [5, 152]
     },
     {
       "moebel": "wr5Kohl",
-      "feld": [
-        6,
-        152
-      ]
+      "feld": [6, 152]
     },
     {
       "moebel": "wr8Acker6x5",
-      "feld": [
-        9,
-        148
-      ],
+      "feld": [9, 148],
       "id": "acker9_148"
     },
     {
       "moebel": "wr8Mais",
-      "feld": [
-        9,
-        149
-      ]
+      "feld": [9, 149]
     },
     {
       "moebel": "wr8Mais",
-      "feld": [
-        10,
-        149
-      ]
+      "feld": [10, 149]
     },
     {
       "moebel": "wr8Mais",
-      "feld": [
-        11,
-        149
-      ]
+      "feld": [11, 149]
     },
     {
       "moebel": "wr8Mais",
-      "feld": [
-        12,
-        149
-      ]
+      "feld": [12, 149]
     },
     {
       "moebel": "wr8Mais",
-      "feld": [
-        13,
-        149
-      ]
+      "feld": [13, 149]
     },
     {
       "moebel": "wr8Mais",
-      "feld": [
-        14,
-        149
-      ]
+      "feld": [14, 149]
     },
     {
       "moebel": "wr8Mais",
-      "feld": [
-        9,
-        151
-      ]
+      "feld": [9, 151]
     },
     {
       "moebel": "wr8Mais",
-      "feld": [
-        10,
-        151
-      ]
+      "feld": [10, 151]
     },
     {
       "moebel": "wr8Mais",
-      "feld": [
-        11,
-        151
-      ]
+      "feld": [11, 151]
     },
     {
       "moebel": "wr8Mais",
-      "feld": [
-        12,
-        151
-      ]
+      "feld": [12, 151]
     },
     {
       "moebel": "wr8Mais",
-      "feld": [
-        13,
-        151
-      ]
+      "feld": [13, 151]
     },
     {
       "moebel": "wr8Mais",
-      "feld": [
-        14,
-        151
-      ]
+      "feld": [14, 151]
     },
     {
       "moebel": "wr8Acker6x5",
-      "feld": [
-        1,
-        155
-      ],
+      "feld": [1, 155],
       "id": "acker1_155"
     },
     {
       "moebel": "wr5Kuerbis",
-      "feld": [
-        1,
-        156
-      ]
+      "feld": [1, 156]
     },
     {
       "moebel": "wr5Kuerbis",
-      "feld": [
-        2,
-        156
-      ]
+      "feld": [2, 156]
     },
     {
       "moebel": "wr5Kuerbis",
-      "feld": [
-        3,
-        156
-      ]
+      "feld": [3, 156]
     },
     {
       "moebel": "wr5Kuerbis",
-      "feld": [
-        4,
-        156
-      ]
+      "feld": [4, 156]
     },
     {
       "moebel": "wr5Kuerbis",
-      "feld": [
-        5,
-        156
-      ]
+      "feld": [5, 156]
     },
     {
       "moebel": "wr5Kuerbis",
-      "feld": [
-        6,
-        156
-      ]
+      "feld": [6, 156]
     },
     {
       "moebel": "wr5Kuerbis",
-      "feld": [
-        1,
-        158
-      ]
+      "feld": [1, 158]
     },
     {
       "moebel": "wr5Kuerbis",
-      "feld": [
-        2,
-        158
-      ]
+      "feld": [2, 158]
     },
     {
       "moebel": "wr5Kuerbis",
-      "feld": [
-        3,
-        158
-      ]
+      "feld": [3, 158]
     },
     {
       "moebel": "wr5Kuerbis",
-      "feld": [
-        4,
-        158
-      ]
+      "feld": [4, 158]
     },
     {
       "moebel": "wr5Kuerbis",
-      "feld": [
-        5,
-        158
-      ]
+      "feld": [5, 158]
     },
     {
       "moebel": "wr5Kuerbis",
-      "feld": [
-        6,
-        158
-      ]
+      "feld": [6, 158]
     },
     {
       "moebel": "wr8Acker6x5",
-      "feld": [
-        9,
-        155
-      ],
+      "feld": [9, 155],
       "id": "acker9_155"
     },
     {
       "moebel": "wr8Karotte",
-      "feld": [
-        9,
-        156
-      ]
+      "feld": [9, 156]
     },
     {
       "moebel": "wr8Karotte",
-      "feld": [
-        10,
-        156
-      ]
+      "feld": [10, 156]
     },
     {
       "moebel": "wr8Karotte",
-      "feld": [
-        11,
-        156
-      ]
+      "feld": [11, 156]
     },
     {
       "moebel": "wr8Karotte",
-      "feld": [
-        12,
-        156
-      ]
+      "feld": [12, 156]
     },
     {
       "moebel": "wr8Karotte",
-      "feld": [
-        13,
-        156
-      ]
+      "feld": [13, 156]
     },
     {
       "moebel": "wr8Karotte",
-      "feld": [
-        14,
-        156
-      ]
+      "feld": [14, 156]
     },
     {
       "moebel": "wr8Karotte",
-      "feld": [
-        9,
-        157
-      ]
+      "feld": [9, 157]
     },
     {
       "moebel": "wr8Karotte",
-      "feld": [
-        10,
-        157
-      ]
+      "feld": [10, 157]
     },
     {
       "moebel": "wr8Karotte",
-      "feld": [
-        11,
-        157
-      ]
+      "feld": [11, 157]
     },
     {
       "moebel": "wr8Karotte",
-      "feld": [
-        12,
-        157
-      ]
+      "feld": [12, 157]
     },
     {
       "moebel": "wr8Karotte",
-      "feld": [
-        13,
-        157
-      ]
+      "feld": [13, 157]
     },
     {
       "moebel": "wr8Karotte",
-      "feld": [
-        14,
-        157
-      ]
+      "feld": [14, 157]
     },
     {
       "moebel": "wr8Karotte",
-      "feld": [
-        9,
-        158
-      ]
+      "feld": [9, 158]
     },
     {
       "moebel": "wr8Karotte",
-      "feld": [
-        10,
-        158
-      ]
+      "feld": [10, 158]
     },
     {
       "moebel": "wr8Karotte",
-      "feld": [
-        11,
-        158
-      ]
+      "feld": [11, 158]
     },
     {
       "moebel": "wr8Karotte",
-      "feld": [
-        12,
-        158
-      ]
+      "feld": [12, 158]
     },
     {
       "moebel": "wr8Karotte",
-      "feld": [
-        13,
-        158
-      ]
+      "feld": [13, 158]
     },
     {
       "moebel": "wr8Karotte",
-      "feld": [
-        14,
-        158
-      ]
+      "feld": [14, 158]
     },
     {
       "moebel": "wr8Karotte",
-      "feld": [
-        9,
-        159
-      ]
+      "feld": [9, 159]
     },
     {
       "moebel": "wr8Karotte",
-      "feld": [
-        10,
-        159
-      ]
+      "feld": [10, 159]
     },
     {
       "moebel": "wr8Karotte",
-      "feld": [
-        11,
-        159
-      ]
+      "feld": [11, 159]
     },
     {
       "moebel": "wr8Karotte",
-      "feld": [
-        12,
-        159
-      ]
+      "feld": [12, 159]
     },
     {
       "moebel": "wr8Karotte",
-      "feld": [
-        13,
-        159
-      ]
+      "feld": [13, 159]
     },
     {
       "moebel": "wr8Karotte",
-      "feld": [
-        14,
-        159
-      ]
+      "feld": [14, 159]
     },
     {
       "moebel": "ccZaun",
-      "feld": [
-        1,
-        161
-      ],
+      "feld": [1, 161],
       "bauteil_ok": true
     },
     {
       "moebel": "ccZaun",
-      "feld": [
-        2,
-        161
-      ],
+      "feld": [2, 161],
       "bauteil_ok": true
     },
     {
       "moebel": "ccZaun",
-      "feld": [
-        3,
-        161
-      ],
+      "feld": [3, 161],
       "bauteil_ok": true
     },
     {
       "moebel": "ccZaun",
-      "feld": [
-        4,
-        161
-      ],
+      "feld": [4, 161],
       "bauteil_ok": true
     },
     {
       "moebel": "ccZaun",
-      "feld": [
-        5,
-        161
-      ],
+      "feld": [5, 161],
       "bauteil_ok": true
     },
     {
       "moebel": "cc3ZaunEndeR",
-      "feld": [
-        6,
-        161
-      ],
+      "feld": [6, 161],
       "bauteil_ok": true
     },
     {
       "moebel": "cc3ZaunEnde",
-      "feld": [
-        9,
-        161
-      ],
+      "feld": [9, 161],
       "bauteil_ok": true
     },
     {
       "moebel": "ccZaun",
-      "feld": [
-        10,
-        161
-      ],
+      "feld": [10, 161],
       "bauteil_ok": true
     },
     {
       "moebel": "ccZaun",
-      "feld": [
-        11,
-        161
-      ],
+      "feld": [11, 161],
       "bauteil_ok": true
     },
     {
       "moebel": "ccZaun",
-      "feld": [
-        12,
-        161
-      ],
+      "feld": [12, 161],
       "bauteil_ok": true
     },
     {
       "moebel": "ccZaun",
-      "feld": [
-        13,
-        161
-      ],
+      "feld": [13, 161],
       "bauteil_ok": true
     },
     {
       "moebel": "ccZaun",
-      "feld": [
-        14,
-        161
-      ],
+      "feld": [14, 161],
       "bauteil_ok": true
     },
     {
       "moebel": "ccZaun",
-      "feld": [
-        15,
-        161
-      ],
+      "feld": [15, 161],
       "bauteil_ok": true
     },
     {
       "moebel": "mfBank",
-      "feld": [
-        14,
-        153
-      ]
+      "feld": [14, 153]
     },
     {
       "moebel": "cc5BootUfer",
-      "feld": [
-        22,
-        152
-      ],
+      "feld": [22, 152],
       "vorn": true
     },
     {
       "moebel": "wr5Pappel",
-      "feld": [
-        13,
-        163
-      ]
+      "feld": [13, 163]
     },
     {
       "moebel": "wr5Pappel",
-      "feld": [
-        13,
-        168
-      ]
+      "feld": [13, 168]
     },
     {
       "moebel": "wr5Pappel",
-      "feld": [
-        13,
-        173
-      ]
+      "feld": [13, 173]
     },
     {
       "moebel": "wr5Pappel",
-      "feld": [
-        13,
-        178
-      ]
+      "feld": [13, 178]
     },
     {
       "moebel": "wr5Pappel",
-      "feld": [
-        13,
-        183
-      ]
+      "feld": [13, 183]
     },
     {
       "moebel": "wg4Laubbaum",
-      "feld": [
-        29,
-        4
-      ]
+      "feld": [29, 4]
     },
     {
       "moebel": "wg4Laubbaum",
-      "feld": [
-        30,
-        16
-      ]
+      "feld": [30, 16]
     },
     {
       "moebel": "wg4Laubbaum",
-      "feld": [
-        31,
-        28
-      ]
+      "feld": [31, 28]
     },
     {
       "moebel": "wg4Laubbaum",
-      "feld": [
-        29,
-        40
-      ]
+      "feld": [29, 40]
     },
     {
       "moebel": "wr5Eiche",
-      "feld": [
-        30,
-        52
-      ]
+      "feld": [30, 52]
     },
     {
       "moebel": "wr5Eiche",
-      "feld": [
-        31,
-        64
-      ]
+      "feld": [31, 64]
     },
     {
       "moebel": "wr5Eiche",
-      "feld": [
-        29,
-        76
-      ]
+      "feld": [29, 76]
     },
     {
       "moebel": "wg4Laubbaum",
-      "feld": [
-        30,
-        88
-      ]
+      "feld": [30, 88]
     },
     {
       "moebel": "wr5Eiche",
-      "feld": [
-        31,
-        100
-      ]
+      "feld": [31, 100]
     },
     {
       "moebel": "wg4Laubbaum",
-      "feld": [
-        29,
-        112
-      ]
+      "feld": [29, 112]
     },
     {
       "moebel": "wg4Laubbaum",
-      "feld": [
-        30,
-        124
-      ]
+      "feld": [30, 124]
     },
     {
       "moebel": "wg4Laubbaum",
-      "feld": [
-        31,
-        136
-      ]
+      "feld": [31, 136]
     },
     {
       "moebel": "wr5Eiche",
-      "feld": [
-        29,
-        148
-      ]
+      "feld": [29, 148]
     },
     {
       "moebel": "wg4Laubbaum",
-      "feld": [
-        30,
-        160
-      ]
+      "feld": [30, 160]
     },
     {
       "moebel": "wr5Eiche",
-      "feld": [
-        31,
-        172
-      ]
+      "feld": [31, 172]
     },
     {
       "moebel": "wr5Eiche",
-      "feld": [
-        29,
-        184
-      ]
+      "feld": [29, 184]
     },
     {
       "moebel": "wg4Busch",
-      "feld": [
-        31,
-        10
-      ]
+      "feld": [31, 10]
     },
     {
       "moebel": "wg4BuschBreit",
-      "feld": [
-        31,
-        22
-      ]
+      "feld": [31, 22]
     },
     {
       "moebel": "wg4BuschB",
-      "feld": [
-        31,
-        34
-      ]
+      "feld": [31, 34]
     },
     {
       "moebel": "wg4BuschBreit",
-      "feld": [
-        31,
-        46
-      ]
+      "feld": [31, 46]
     },
     {
       "moebel": "wg4BuschBreit",
-      "feld": [
-        31,
-        58
-      ]
+      "feld": [31, 58]
     },
     {
       "moebel": "wg4Busch",
-      "feld": [
-        31,
-        70
-      ]
+      "feld": [31, 70]
     },
     {
       "moebel": "wg4BuschBreit",
-      "feld": [
-        31,
-        82
-      ]
+      "feld": [31, 82]
     },
     {
       "moebel": "wg4BuschB",
-      "feld": [
-        31,
-        94
-      ]
+      "feld": [31, 94]
     },
     {
       "moebel": "wg4Busch",
-      "feld": [
-        31,
-        106
-      ]
+      "feld": [31, 106]
     },
     {
       "moebel": "wg4BuschB",
-      "feld": [
-        31,
-        118
-      ]
+      "feld": [31, 118]
     },
     {
       "moebel": "wg4Busch",
-      "feld": [
-        31,
-        130
-      ]
+      "feld": [31, 130]
     },
     {
       "moebel": "wg4BuschBreit",
-      "feld": [
-        31,
-        142
-      ]
+      "feld": [31, 142]
     },
     {
       "moebel": "wg4BuschB",
-      "feld": [
-        31,
-        154
-      ]
+      "feld": [31, 154]
     },
     {
       "moebel": "wg4Busch",
-      "feld": [
-        31,
-        166
-      ]
+      "feld": [31, 166]
     },
     {
       "moebel": "wg4BuschBreit",
-      "feld": [
-        31,
-        178
-      ]
+      "feld": [31, 178]
     },
     {
       "moebel": "cc4Bootsschuppen",
-      "feld": [
-        28,
-        58
-      ]
+      "feld": [28, 58]
     },
     {
       "moebel": "wg4Gras",
-      "feld": [
-        28,
-        144
-      ]
+      "feld": [28, 144]
     },
     {
       "moebel": "wg4Gras",
-      "feld": [
-        30,
-        76
-      ]
+      "feld": [30, 76]
     },
     {
       "moebel": "wg4BlumeGelb",
-      "feld": [
-        33,
-        72
-      ]
+      "feld": [33, 72]
     },
     {
       "moebel": "wg4GrasB",
-      "feld": [
-        30,
-        186
-      ]
+      "feld": [30, 186]
     },
     {
       "moebel": "wg4BlumenWeiss",
-      "feld": [
-        29,
-        17
-      ]
+      "feld": [29, 17]
     },
     {
       "moebel": "wg4Gras",
-      "feld": [
-        33,
-        80
-      ]
+      "feld": [33, 80]
     },
     {
       "moebel": "wg4BlumeGelb",
-      "feld": [
-        34,
-        48
-      ]
+      "feld": [34, 48]
     },
     {
       "moebel": "wg4BlumeBlau",
-      "feld": [
-        31,
-        27
-      ]
+      "feld": [31, 27]
     },
     {
       "moebel": "wg4BlumeBlau",
-      "feld": [
-        29,
-        31
-      ]
+      "feld": [29, 31]
     },
     {
       "moebel": "wg4BlumeBlau",
-      "feld": [
-        32,
-        187
-      ]
+      "feld": [32, 187]
     },
     {
       "moebel": "wg4BlumeGelb",
-      "feld": [
-        31,
-        11
-      ]
+      "feld": [31, 11]
     },
     {
       "moebel": "wg4BlumenWeiss",
-      "feld": [
-        31,
-        139
-      ]
+      "feld": [31, 139]
     },
     {
       "moebel": "wg4BlumeBlau",
-      "feld": [
-        29,
-        33
-      ]
+      "feld": [29, 33]
     },
     {
       "moebel": "wg4Gras",
-      "feld": [
-        31,
-        63
-      ]
+      "feld": [31, 63]
     },
     {
       "moebel": "wg4BlumenWeiss",
-      "feld": [
-        32,
-        91
-      ]
+      "feld": [32, 91]
     },
     {
       "moebel": "wg4BlumenWeiss",
-      "feld": [
-        33,
-        60
-      ]
+      "feld": [33, 60]
     },
     {
       "moebel": "wg4BlumeGelb",
-      "feld": [
-        31,
-        109
-      ]
+      "feld": [31, 109]
     },
     {
       "moebel": "wg4BlumeGelb",
-      "feld": [
-        28,
-        109
-      ]
+      "feld": [28, 109]
     },
     {
       "moebel": "wg4BlumenWeiss",
-      "feld": [
-        31,
-        52
-      ]
+      "feld": [31, 52]
     },
     {
       "moebel": "wg4BlumenWeiss",
-      "feld": [
-        28,
-        136
-      ]
+      "feld": [28, 136]
     },
     {
       "moebel": "wg4Gras",
-      "feld": [
-        33,
-        50
-      ]
+      "feld": [33, 50]
     },
     {
       "moebel": "wg4BlumeGelb",
-      "feld": [
-        34,
-        75
-      ]
+      "feld": [34, 75]
     },
     {
       "moebel": "wg4GrasB",
-      "feld": [
-        32,
-        6
-      ]
+      "feld": [32, 6]
     },
     {
       "moebel": "wg4Gras",
-      "feld": [
-        34,
-        133
-      ]
+      "feld": [34, 133]
     },
     {
       "moebel": "wg4Gras",
-      "feld": [
-        32,
-        87
-      ]
+      "feld": [32, 87]
     },
     {
       "moebel": "wg4BlumeBlau",
-      "feld": [
-        30,
-        105
-      ]
+      "feld": [30, 105]
     },
     {
       "moebel": "wg4BlumeGelb",
-      "feld": [
-        31,
-        177
-      ]
+      "feld": [31, 177]
     },
     {
       "moebel": "wg4GrasB",
-      "feld": [
-        34,
-        153
-      ]
+      "feld": [34, 153]
     },
     {
       "moebel": "wg4BlumeBlau",
-      "feld": [
-        32,
-        182
-      ]
+      "feld": [32, 182]
     },
     {
       "moebel": "wg4BlumenWeiss",
-      "feld": [
-        32,
-        12
-      ]
+      "feld": [32, 12]
     },
     {
       "moebel": "wr5Eiche",
-      "feld": [
-        3,
-        166
-      ]
+      "feld": [3, 166]
     },
     {
       "moebel": "wr5Eiche",
-      "feld": [
-        8,
-        172
-      ]
+      "feld": [8, 172]
     },
     {
       "moebel": "wr5Eiche",
-      "feld": [
-        3,
-        179
-      ]
+      "feld": [3, 179]
     },
     {
       "moebel": "wg4Laubbaum",
-      "feld": [
-        9,
-        182
-      ]
+      "feld": [9, 182]
     },
     {
       "moebel": "wg4BlumenWeiss",
-      "feld": [
-        11,
-        187
-      ]
+      "feld": [11, 187]
     },
     {
       "moebel": "wg4BlumeGelb",
-      "feld": [
-        9,
-        169
-      ]
+      "feld": [9, 169]
     },
     {
       "moebel": "wg4BlumeBlau",
-      "feld": [
-        11,
-        177
-      ]
+      "feld": [11, 177]
     },
     {
       "moebel": "wg4BlumeBlau",
-      "feld": [
-        12,
-        165
-      ]
+      "feld": [12, 165]
     },
     {
       "moebel": "wg4BlumeBlau",
-      "feld": [
-        10,
-        175
-      ]
+      "feld": [10, 175]
     },
     {
       "moebel": "wg4BlumeGelb",
-      "feld": [
-        6,
-        185
-      ]
+      "feld": [6, 185]
     },
     {
       "moebel": "wg4BlumeBlau",
-      "feld": [
-        13,
-        170
-      ]
+      "feld": [13, 170]
     },
     {
       "moebel": "wg4BlumeBlau",
-      "feld": [
-        6,
-        186
-      ]
+      "feld": [6, 186]
     },
     {
       "moebel": "wg4BlumeGelb",
-      "feld": [
-        13,
-        179
-      ]
+      "feld": [13, 179]
     },
     {
       "moebel": "wg4BlumenWeiss",
-      "feld": [
-        5,
-        175
-      ]
+      "feld": [5, 175]
     },
     {
       "moebel": "wg4BlumeGelb",
-      "feld": [
-        8,
-        165
-      ]
+      "feld": [8, 165]
     },
     {
       "moebel": "wg4Gras",
-      "feld": [
-        2,
-        165
-      ]
+      "feld": [2, 165]
     },
     {
       "moebel": "wg4BlumeBlau",
-      "feld": [
-        6,
-        169
-      ]
+      "feld": [6, 169]
     },
     {
       "moebel": "wg4BlumeGelb",
-      "feld": [
-        9,
-        181
-      ]
+      "feld": [9, 181]
     },
     {
       "moebel": "wg4Gras",
-      "feld": [
-        3,
-        86
-      ]
+      "feld": [3, 86]
     },
     {
       "moebel": "wg4BlumenWeiss",
-      "feld": [
-        12,
-        93
-      ]
+      "feld": [12, 93]
     },
     {
       "moebel": "wg4BlumeBlau",
-      "feld": [
-        8,
-        95
-      ]
+      "feld": [8, 95]
     },
     {
       "moebel": "wg4BlumenWeiss",
-      "feld": [
-        5,
-        85
-      ]
+      "feld": [5, 85]
     },
     {
       "moebel": "wg4Gras",
-      "feld": [
-        12,
-        81
-      ]
+      "feld": [12, 81]
     },
     {
       "moebel": "wg4BlumeBlau",
-      "feld": [
-        4,
-        85
-      ]
+      "feld": [4, 85]
     },
     {
       "moebel": "wg4Gras",
-      "feld": [
-        8,
-        93
-      ]
+      "feld": [8, 93]
     },
     {
       "moebel": "wg4Gras",
-      "feld": [
-        13,
-        87
-      ]
+      "feld": [13, 87]
     },
     {
       "moebel": "wg4BlumeBlau",
-      "feld": [
-        15,
-        83
-      ]
+      "feld": [15, 83]
     },
     {
       "moebel": "wg4Gras",
-      "feld": [
-        13,
-        94
-      ]
+      "feld": [13, 94]
     },
     {
       "moebel": "wg4BuschBreit",
-      "feld": [
-        3,
-        82
-      ]
+      "feld": [3, 82]
     },
     {
       "moebel": "wg4BuschBreit",
-      "feld": [
-        9,
-        86
-      ]
+      "feld": [9, 86]
     },
     {
       "moebel": "wg4BuschBreit",
-      "feld": [
-        5,
-        90
-      ]
+      "feld": [5, 90]
     },
     {
       "moebel": "wr5Eiche",
-      "feld": [
-        10,
-        79
-      ]
+      "feld": [10, 79]
     }
   ],
   "ausloeser": [
     {
       "name": "start",
-      "feld": [
-        17,
-        1
-      ],
+      "feld": [17, 1],
       "eigenschaften": {
         "richtung": "unten"
       }
     },
     {
       "name": "zurueckRiverton",
-      "feld": [
-        17,
-        0
-      ]
+      "feld": [17, 0]
     },
     {
       "name": "zurueckRiverton",
-      "feld": [
-        18,
-        0
-      ]
+      "feld": [18, 0]
     },
     {
       "name": "weiterBruecke",
-      "feld": [
-        17,
-        189
-      ]
+      "feld": [17, 189]
     },
     {
       "name": "weiterBruecke",
-      "feld": [
-        18,
-        189
-      ]
+      "feld": [18, 189]
     },
     {
       "name": "lockport",
-      "feld": [
-        0,
-        97
-      ]
+      "feld": [0, 97]
     },
     {
       "name": "lockport",
-      "feld": [
-        0,
-        98
-      ]
+      "feld": [0, 98]
     },
     {
       "name": "tafel",
-      "feld": [
-        15,
-        50
-      ]
+      "feld": [15, 50]
     },
     {
       "name": "fundZahnrad",
-      "feld": [
-        12,
-        43
-      ]
+      "feld": [12, 43]
     },
     {
       "name": "meilenstein",
-      "feld": [
-        16,
-        10
-      ]
+      "feld": [16, 10]
     },
     {
       "name": "rastKanal",
-      "feld": [
-        16,
-        110
-      ]
+      "feld": [16, 110]
     },
     {
       "name": "fundKonservendose",
-      "feld": [
-        19,
-        157
-      ]
+      "feld": [19, 157]
     }
   ],
   "figuren": [
     {
       "name": "dale",
-      "feld": [
-        8,
-        147
-      ]
+      "feld": [8, 147]
     }
   ],
   "belebung": [
     {
       "name": "angler",
       "typ": "statist",
-      "feld": [
-        19,
-        12
-      ],
+      "feld": [19, 12],
       "eigenschaften": {
         "von": "19,12",
         "bis": "19,12",
@@ -2428,10 +1514,7 @@
     {
       "name": "radfahrerin",
       "typ": "statist",
-      "feld": [
-        17,
-        2
-      ],
+      "feld": [17, 2],
       "eigenschaften": {
         "von": "17,2",
         "bis": "17,68",
@@ -2442,10 +1525,7 @@
     {
       "name": "kind",
       "typ": "statist",
-      "feld": [
-        19,
-        34
-      ],
+      "feld": [19, 34],
       "eigenschaften": {
         "von": "19,34",
         "bis": "19,34",
@@ -2457,10 +1537,7 @@
     {
       "name": "landvermesser",
       "typ": "statist",
-      "feld": [
-        5,
-        64
-      ],
+      "feld": [5, 64],
       "eigenschaften": {
         "von": "5,64",
         "bis": "14,64",
@@ -2472,10 +1549,7 @@
     {
       "name": "enten",
       "typ": "tier",
-      "feld": [
-        23,
-        30
-      ],
+      "feld": [23, 30],
       "eigenschaften": {
         "von": "23,30",
         "bis": "23,44",
@@ -2485,10 +1559,7 @@
     {
       "name": "ratten",
       "typ": "tier",
-      "feld": [
-        6,
-        88
-      ],
+      "feld": [6, 88],
       "eigenschaften": {
         "von": "6,88",
         "bis": "9,88",
@@ -2498,10 +1569,7 @@
     {
       "name": "gaense",
       "typ": "tier",
-      "feld": [
-        23,
-        168
-      ],
+      "feld": [23, 168],
       "eigenschaften": {
         "von": "23,168",
         "bis": "23,176",
@@ -2511,10 +1579,7 @@
     {
       "name": "kraehen",
       "typ": "tier",
-      "feld": [
-        7,
-        42
-      ],
+      "feld": [7, 42],
       "eigenschaften": {
         "von": "7,42",
         "bis": "7,42",
@@ -2524,10 +1589,7 @@
     {
       "name": "reiher",
       "typ": "tier",
-      "feld": [
-        19,
-        94
-      ],
+      "feld": [19, 94],
       "eigenschaften": {
         "von": "19,94",
         "bis": "19,94",
@@ -2537,10 +1599,7 @@
     {
       "name": "hase",
       "typ": "tier",
-      "feld": [
-        31,
-        170
-      ],
+      "feld": [31, 170],
       "eigenschaften": {
         "von": "31,170",
         "bis": "33,170",
@@ -2550,10 +1609,7 @@
     {
       "name": "huehner",
       "typ": "tier",
-      "feld": [
-        5,
-        116
-      ],
+      "feld": [5, 116],
       "eigenschaften": {
         "von": "4,116",
         "bis": "8,116",
@@ -2563,10 +1619,7 @@
     {
       "name": "sprayerin",
       "typ": "statist",
-      "feld": [
-        6,
-        19
-      ],
+      "feld": [6, 19],
       "eigenschaften": {
         "von": "6,19",
         "bis": "12,19",
@@ -2577,10 +1630,7 @@
     {
       "name": "gaertner",
       "typ": "statist",
-      "feld": [
-        8,
-        64
-      ],
+      "feld": [8, 64],
       "eigenschaften": {
         "von": "8,64",
         "bis": "8,64",
@@ -2589,11 +1639,7 @@
       }
     }
   ],
-  "zustand": [
-    "neu",
-    "gebraucht",
-    "alt"
-  ],
+  "zustand": ["neu", "gebraucht", "alt"],
   "stil": [
     "rustikal",
     "einfach",

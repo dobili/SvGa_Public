@@ -23,193 +23,112 @@
   "objekte": [
     {
       "moebel": "mf4Treppe",
-      "feld": [
-        1,
-        1
-      ],
+      "feld": [1, 1],
       "id": "treppe"
     },
     {
       "moebel": "mf4Anrichte",
-      "feld": [
-        7,
-        2
-      ],
+      "feld": [7, 2],
       "id": "tvboard"
     },
     {
       "moebel": "wzFenster",
-      "feld": [
-        4,
-        1
-      ],
+      "feld": [4, 1],
       "an_wand": true
     },
     {
       "moebel": "wzBild",
-      "feld": [
-        6,
-        1
-      ],
+      "feld": [6, 1],
       "an_wand": true,
-      "versatz": [
-        0,
-        4
-      ]
+      "versatz": [0, 4]
     },
     {
       "moebel": "mf4Lowboard",
-      "feld": [
-        4,
-        2
-      ],
+      "feld": [4, 2],
       "id": "anrichte"
     },
     {
       "moebel": "wzTuer",
-      "feld": [
-        10,
-        1
-      ],
+      "feld": [10, 1],
       "an_wand": true
     },
     {
       "moebel": "wzTeppich",
-      "feld": [
-        6,
-        4
-      ]
+      "feld": [6, 4]
     },
     {
       "moebel": "mf4SesselHinten",
-      "feld": [
-        6,
-        6
-      ],
+      "feld": [6, 6],
       "zu": "tvboard"
     },
     {
       "moebel": "mf4SesselHinten",
-      "feld": [
-        8,
-        6
-      ],
+      "feld": [8, 6],
       "zu": "tvboard"
     },
     {
       "moebel": "wzStehlampe",
-      "feld": [
-        10,
-        5
-      ]
+      "feld": [10, 5]
     },
     {
       "moebel": "wzPflanze",
-      "feld": [
-        1,
-        10
-      ]
+      "feld": [1, 10]
     },
     {
       "moebel": "wzFenster",
-      "feld": [
-        14,
-        1
-      ],
+      "feld": [14, 1],
       "an_wand": true
     },
     {
       "moebel": "wzArbeitsplatte",
-      "feld": [
-        13,
-        2
-      ],
-      "versatz": [
-        2,
-        6
-      ]
+      "feld": [13, 2],
+      "versatz": [2, 6]
     },
     {
       "moebel": "wzArbeitsplatte",
-      "feld": [
-        15,
-        2
-      ],
-      "versatz": [
-        0,
-        6
-      ]
+      "feld": [15, 2],
+      "versatz": [0, 6]
     },
     {
       "moebel": "wzHerd",
-      "feld": [
-        17,
-        2
-      ]
+      "feld": [17, 2]
     },
     {
       "moebel": "wzKuehlschrank",
-      "feld": [
-        18,
-        1
-      ]
+      "feld": [18, 1]
     },
     {
       "moebel": "mf4Esstisch",
-      "feld": [
-        14,
-        6
-      ],
+      "feld": [14, 6],
       "id": "esstisch"
     },
     {
       "moebel": "mf3StuhlHellRechts",
-      "feld": [
-        13,
-        6
-      ],
+      "feld": [13, 6],
       "zu": "esstisch"
     },
     {
       "moebel": "mf3StuhlHellLinks",
-      "feld": [
-        16,
-        6
-      ],
+      "feld": [16, 6],
       "zu": "esstisch"
     },
     {
       "moebel": "mf4KartonBreit",
-      "feld": [
-        12,
-        9
-      ],
+      "feld": [12, 9],
       "id": "kartonKuecheBox"
     },
     {
       "moebel": "mf4Palme",
-      "feld": [
-        17,
-        10
-      ]
+      "feld": [17, 10]
     },
     {
       "moebel": "mf4Fussmatte",
-      "feld": [
-        5,
-        11
-      ],
-      "versatz": [
-        0,
-        8
-      ]
+      "feld": [5, 11],
+      "versatz": [0, 8]
     },
     {
       "moebel": "mf4RegalSchmal",
-      "feld": [
-        9,
-        1
-      ]
+      "feld": [9, 1]
     },
     {
       "moebel": "mf4FernseherStand",
@@ -217,106 +136,64 @@
     },
     {
       "moebel": "mf5TuerSuedHolz",
-      "feld": [
-        5,
-        12
-      ],
+      "feld": [5, 12],
       "an_wand": true
     },
     {
       "moebel": "mf3SofaL",
-      "feld": [
-        1,
-        6
-      ]
+      "feld": [1, 6]
     },
     {
       "moebel": "mf3SofaM",
-      "feld": [
-        2,
-        6
-      ]
+      "feld": [2, 6]
     },
     {
       "moebel": "mf3SofaR",
-      "feld": [
-        3,
-        6
-      ]
+      "feld": [3, 6]
     },
     {
       "moebel": "mf7CouchtischRund",
-      "feld": [
-        2,
-        8
-      ]
+      "feld": [2, 8]
     },
     {
       "moebel": "mf4RegalNiedrig",
-      "feld": [
-        9,
-        8
-      ]
+      "feld": [9, 8]
     }
   ],
   "ausloeser": [
     {
       "name": "start",
-      "feld": [
-        5,
-        11
-      ],
+      "feld": [5, 11],
       "eigenschaften": {
         "richtung": "oben"
       }
     },
     {
       "name": "haustuer",
-      "feld": [
-        5,
-        12
-      ]
+      "feld": [5, 12]
     },
     {
       "name": "treppeOben",
-      "feld": [
-        2,
-        3
-      ]
+      "feld": [2, 3]
     },
     {
       "name": "fotoGrandma",
-      "feld": [
-        6,
-        3
-      ]
+      "feld": [6, 3]
     },
     {
       "name": "kartonKueche",
-      "feld": [
-        12,
-        10
-      ],
+      "feld": [12, 10],
       "auf_moebel": true
     }
   ],
   "figuren": [
     {
       "name": "mutter",
-      "feld": [
-        17,
-        7
-      ]
+      "feld": [17, 7]
     }
   ],
-  "zustand": [
-    "neu",
-    "gebraucht"
-  ],
-  "stil": [
-    "modern",
-    "klassisch"
-  ],
+  "zustand": ["neu", "gebraucht"],
+  "stil": ["modern", "klassisch"],
   "boeden": {
     "f": "fliesenWeiss"
   },

@@ -1,0 +1,805 @@
+{
+  "karte": "wegDesertSummit.bergstrasse",
+  "datei": "karten/varianten/weg-desert-summit-bergstrasse-a.json",
+  "art": "aussen",
+  "beschreibung": "Weg 7, die Bergstraße: Hinter dem Diner endet die Wüste an einem Viehgitter im Asphalt, und die Straße steigt in Kehren nach Norden in die Berge. Felsstufen aus rotem Stein trennen die Kehren, Rampen führen hindurch. Unten Sand, Kakteen und Wacholder, in der Mitte Erde und erste Pinien, oben Gras, dichter Pinienwald und kühler Wind. Auf halber Höhe zweigt ein Schotterweg nach Westen zur Hochebene ab, mit Wegweiser und offener Schranke. Am Nordrand geht es nach Summit City. Drei Kehren wie im Ortsplan, Quelle mit Steintrog bei den ersten Pinien, Aussichtsbank an der letzten Kehre, Holzstapel im Wald.",
+  "wand": "fels",
+  "kante": "klippe",
+  "boden": "sand",
+  "boeden": {
+    "r": "gras",
+    "e": "erde",
+    "s": "asphalt",
+    "k": "schotter"
+  },
+  "zustand": ["neu", "gebraucht", "alt"],
+  "stil": ["natur", "klassisch", "modern", "laendlich"],
+  "raster": [
+    "##################sss###################",
+    "#rrrrrrrrrrrrrrrrrsssrrrrrrrrrrrrrrrrrr#",
+    "#rrrrrrrrrrrrrrrrrsssrrrrrrrrrrrrrrrrrr#",
+    "#rrrrrrrrrrrrrrrrrsssrrrrrrrrrrrrrrrrrr#",
+    "#rrrrrrrrrrrrrrrrrsssrrrrrrrrrrrrrrrrrr#",
+    "#rrrrrrrrrrrrrrrrrsssrrrrrrrrrrrrrrrrrr#",
+    "#rrrrrrrrrrrrrrrrrsssrrrrrrrrrrrrrrrrrr#",
+    "#rrrrrrrrrrrrrrrrrsssrrrrrrrrrrrrrrrrrr#",
+    "#rrrrrrrrrrrrrrrrrsssrrrrrrrrrrrrrrrrrr#",
+    "#rrrrrrrrrrrrrrrrrsssrrrrrrrrrrrrrrrrrr#",
+    "#rrrrrrrrrrrrrrrrrsssrrrrrrrrrrrrrrrrrr#",
+    "#rrrrrrrrrrrrrrrrrsssrrrrrrrrrrrrrrrrrr#",
+    "#rrrrrrrrrrrrrrrrrsssrrrrrrrrrrrrrrrrrr#",
+    "#rrrrrrrrrrrrrrrrrsssrrrrrrrrrrrrrrrrrr#",
+    "#rrrrrrrrrrrrrrrrrsssrrrrrrrrrrrrrrrrrr#",
+    "#rrrrrrrrrrrrrrrrrsssrrrrrrrrrrrrrrrrrr#",
+    "#rrrrrrrrrrrrrrrrrsssrrrrrrrrrrrrrrrrrr#",
+    "#rrrrrrrrrrrrrrrrrsssrrrrrrrrrrrrrrrrrr#",
+    "#rrrrrrrrrrrrrrrrrsssrrrrrrrrrrrrrrrrrr#",
+    "#rrrrrrrrrrrrrrrrrsssrrrrrrrrrrrrrrrrrr#",
+    "#rrrrrrrrrrrrrrrrrsssrrrrrrrrrrrrrrrrrr#",
+    "#rrrrrrrrrrrrrrrrrsssrrrrrrrrrrrrrrrrrr#",
+    "#rrrrrrrrrrrrrrrrrsssrrrrrrrrrrrrrrrrrr#",
+    "#rrrrrrrrrrrrrrrrrsssrrrrrrrrrrrrrrrrrr#",
+    "#rrrrrrrrrrrrrrrrrsssrrrrrrrrrrrrrrrrrr#",
+    "#rrrrrrrrrrrrrrrrrsssrrrrrrrrrrrrrrrrrr#",
+    "#rrrrrrrrrrrrrrrrrsssrrrrrrrrrrrrrrrrrr#",
+    "#rrrrrrrrrrrrrrrrrsssrrrrrrrrrrrrrrrrrr#",
+    "#rrrrrrrrrrrrrrrrrsssrrrrrrrrrrrrrrrrrr#",
+    "#rrrrrrrrrrrrrrrrrsssrrrrrrrrrrrrrrrrrr#",
+    "#rrrrrrrrrrrrrrrrrsssrrrrrrrrrrrrrrrrrr#",
+    "#rrrrrrrrrrrrrrrrrsssrrrrrrrrrrrrrrrrrr#",
+    "#rrrrrrrrrrrrrrrrrsssrrrrrrrrrrrrrrrrrr#",
+    "#rrrrrrrrrrrrrrrrrsssrrrrrrrrrrrrrrrrrr#",
+    "#rrrrrsssssssssssssssrrrrrrrrrrrrrrrrrr#",
+    "#rrrrrsssssssssssssssrrrrrrrrrrrrrrrrrr#",
+    "#rrrrrsssssssssssssssrrrrrrrrrrrrrrrrrr#",
+    "#rrrrrsssrrrrrrrrrrrrrrrrrrrrrrrrrrrrrr#",
+    "#rrrrrsssrrrrrrrrrrrrrrrrrrrrrrrrrrrrrr#",
+    "#rrrrrsssrrrrrrrrrrrrrrrrrrrrrrrrrrrrrr#",
+    "#rrrrrsssrrrrrrrrrrrrrrrrrrrrrrrrrrrrrr#",
+    "#rrrrrsssrrrrrrrrrrrrrrrrrrrrrrrrrrrrrr#",
+    "#rrrrrsssrrrrrrrrrrrrrrrrrrrrrrrrrrrrrr#",
+    "#rrrrrsssrrrrrrrrrrrrrrrrrrrrrrrrrrrrrr#",
+    "#rrrrrsssrrrrrrrrrrrrrrrrrrrrrrrrrrrrrr#",
+    "#rrrrrsssrrrrrrrrrrrrrrrrrrrrrrrrrrrrrr#",
+    "#rrrrrsssrrrrrrrrrrrrrrrrrrrrrrrrrrrrrr#",
+    "#rrrrrsssrrrrrrrrrrrrrrrrrrrrrrrrrrrrrr#",
+    "######sss###############################",
+    "######sss###############################",
+    "######sss###############################",
+    "#rrrrrsssrrrrrrrrrrrrrrrrrrrrrrrrrrrrrr#",
+    "#rrrrrsssrrrrrrrrrrrrrrrrrrrrrrrrrrrrrr#",
+    "#rrrrrsssrrrrrrrrrrrrrrrrrrrrrrrrrrrrrr#",
+    "#rrrrrsssrrrrrrrrrrrrrrrrrrrrrrrrrrrrrr#",
+    "#rrrrrsssrrrrrrrrrrrrrrrrrrrrrrrrrrrrrr#",
+    "#eeeeessseeeeeeeeeeeeeeeeeeeeeeeeeeeeee#",
+    "#eeeeessseeeeeeeeeeeeeeeeeeeeeeeeeeeeee#",
+    "#eeeeessseeeeeeeeeeeeeeeeeeeeeeeeeeeeee#",
+    "#eeeeessseeeeeeeeeeeeeeeeeeeeeeeeeeeeee#",
+    "#eeeeessseeeeeeeeeeeeeeeeeeeeeeeeeeeeee#",
+    "#eeeeessseeeeeeeeeeeeeeeeeeeeeeeeeeeeee#",
+    "#eeeeessseeeeeeeeeeeeeeeeeeeeeeeeeeeeee#",
+    "#eeeeessseeeeeeeeeeeeeeeeeeeeeeeeeeeeee#",
+    "#eeeeesssssssssssssssssssssssssssseeeee#",
+    "#eeeeesssssssssssssssssssssssssssseeeee#",
+    "#eeeeesssssssssssssssssssssssssssseeeee#",
+    "#eeeeeeeeeeeeeeeeeeeeeeeeeeeeeessseeeee#",
+    "#eeeeeeeeeeeeeeeeeeeeeeeeeeeeeessseeeee#",
+    "#eeeeeeeeeeeeeeeeeeeeeeeeeeeeeessseeeee#",
+    "kkkkkkkkkkkkkkkkkkkkkkkkkkkkkkkssseeeee#",
+    "kkkkkkkkkkkkkkkkkkkkkkkkkkkkkkkssseeeee#",
+    "#eeeeeeeeeeeeeeeeeeeeeeeeeeeeeessseeeee#",
+    "#eeeeeeeeeeeeeeeeeeeeeeeeeeeeeessseeeee#",
+    "#eeeeeeeeeeeeeeeeeeeeeeeeeeeeeessseeeee#",
+    "#eeeeeeeeeeeeeeeeeeeeeeeeeeeeeessseeeee#",
+    "#eeeeeeeeeeeeeeeeeeeeeeeeeeeeeessseeeee#",
+    "#eeeeeeeeeeeeeeeeeeeeeeeeeeeeeessseeeee#",
+    "###############################sss######",
+    "###############################sss######",
+    "###############################sss######",
+    "#eeeeeeeeeeeeeeeeeeeeeeeeeeeeeessseeeee#",
+    "#eeeeeeeeeeeeeeeeeeeeeeeeeeeeeessseeeee#",
+    "#eeeeeeeeeeeeeeeeeeeeeeeeeeeeeessseeeee#",
+    "#eeeeeeeeeeeeeeeeeeeeeeeeeeeeeessseeeee#",
+    "#eeeeeeeeeeeeeeeeeeeeeeeeeeeeeessseeeee#",
+    "#eeeeeeeeeeeeeeeeeeeeeeeeeeeeeessseeeee#",
+    "#eeeeeeeeeeeeeeeeeeeeeeeeeeeeeessseeeee#",
+    "#eeeeeeeeeeeeeeeeeeeeeeeeeeeeeessseeeee#",
+    "#eeeeeeeeeeeeeeeeeeeeeeeeeeeeeessseeeee#",
+    "#eeeeeeeeeeeeeeeeeeeeeeeeeeeeeessseeeee#",
+    "#eeeeeeeeeeeeeeeeeeeeeeeeeeeeeessseeeee#",
+    "#eeeeeeeeeeeeeeeeeeeeeeeeeeeeeessseeeee#",
+    "#eeeeeeeeeeeeeeeeeeeeeeeeeeeeeessseeeee#",
+    "#eeeeesssssssssssssssssssssssssssseeeee#",
+    "#eeeeesssssssssssssssssssssssssssseeeee#",
+    "#eeeeesssssssssssssssssssssssssssseeeee#",
+    "#eeeeessseeeeeeeeeeeeeeeeeeeeeeeeeeeeee#",
+    "#eeeeessseeeeeeeeeeeeeeeeeeeeeeeeeeeeee#",
+    "#eeeeessseeeeeeeeeeeeeeeeeeeeeeeeeeeeee#",
+    "#eeeeessseeeeeeeeeeeeeeeeeeeeeeeeeeeeee#",
+    "#.....sss..............................#",
+    "#.....sss..............................#",
+    "#.....sss..............................#",
+    "#.....sss..............................#",
+    "######sss###############################",
+    "######sss###############################",
+    "######sss###############################",
+    "#.....sss..............................#",
+    "#.....sss..............................#",
+    "#.....sss..............................#",
+    "#.....sss..............................#",
+    "#.....ssskkkkkkkkkk....................#",
+    "#.....ssskkkkkkkkkk....................#",
+    "#.....ssskkkkkkkkkk....................#",
+    "#.....ssskkkkkkkkkk....................#",
+    "#.....sss..............................#",
+    "#.....sss..............................#",
+    "#.....sss..............................#",
+    "#.....sss..............................#",
+    "#.....sssssssssssssssssssssssssssssssss#",
+    "#.....sssssssssssssssssssssssssssssssss#",
+    "#.....sssssssssssssssssssssssssssssssss#",
+    "#......................................#",
+    "#......................................#",
+    "#......................................#",
+    "#......................................#",
+    "#......................................#",
+    "#......................................#",
+    "########################################"
+  ],
+  "objekte": [
+    {
+      "moebel": "wds6Warnschild",
+      "feld": [30, 117]
+    },
+    {
+      "moebel": "wds6Quelle",
+      "feld": [12, 84]
+    },
+    {
+      "moebel": "wds6Wegweiser",
+      "feld": [28, 68]
+    },
+    {
+      "moebel": "wds6Schranke",
+      "feld": [2, 69]
+    },
+    {
+      "moebel": "wds6Bank",
+      "feld": [24, 38]
+    },
+    {
+      "moebel": "wds6Holzstapel",
+      "feld": [10, 22]
+    },
+    {
+      "moebel": "wds6Briefkasten",
+      "feld": [21, 4]
+    },
+    {
+      "moebel": "wds6LeitplankeL8",
+      "feld": [9, 97],
+      "bauteil_ok": true
+    },
+    {
+      "moebel": "wds6LeitplankeL8",
+      "feld": [17, 97],
+      "bauteil_ok": true
+    },
+    {
+      "moebel": "wds6LeitplankeL7",
+      "feld": [25, 97],
+      "bauteil_ok": true
+    },
+    {
+      "moebel": "wds6LeitplankeL2",
+      "feld": [32, 97],
+      "bauteil_ok": true
+    },
+    {
+      "moebel": "wds6LeitplankeQ3",
+      "feld": [5, 94],
+      "bauteil_ok": true
+    },
+    {
+      "moebel": "wds6LeitplankeQ3",
+      "feld": [34, 94],
+      "bauteil_ok": true
+    },
+    {
+      "moebel": "wds6LeitplankeL8",
+      "feld": [6, 67],
+      "bauteil_ok": true
+    },
+    {
+      "moebel": "wds6LeitplankeL8",
+      "feld": [14, 67],
+      "bauteil_ok": true
+    },
+    {
+      "moebel": "wds6LeitplankeL7",
+      "feld": [22, 67],
+      "bauteil_ok": true
+    },
+    {
+      "moebel": "wds6LeitplankeL2",
+      "feld": [29, 67],
+      "bauteil_ok": true
+    },
+    {
+      "moebel": "wds6LeitplankeQ3",
+      "feld": [5, 64],
+      "bauteil_ok": true
+    },
+    {
+      "moebel": "wds6LeitplankeQ3",
+      "feld": [34, 64],
+      "bauteil_ok": true
+    },
+    {
+      "moebel": "wds6LeitplankeL8",
+      "feld": [9, 37],
+      "bauteil_ok": true
+    },
+    {
+      "moebel": "wds6LeitplankeL4",
+      "feld": [17, 37],
+      "bauteil_ok": true
+    },
+    {
+      "moebel": "wds6LeitplankeQ3",
+      "feld": [5, 34],
+      "bauteil_ok": true
+    },
+    {
+      "moebel": "wds6LeitplankeQ3",
+      "feld": [21, 34],
+      "bauteil_ok": true
+    },
+    {
+      "moebel": "wds6Kegelbaum",
+      "feld": [26, 19]
+    },
+    {
+      "moebel": "wds6Kegelbaum",
+      "feld": [32, 25]
+    },
+    {
+      "moebel": "wds6Pinie",
+      "feld": [5, 2]
+    },
+    {
+      "moebel": "wds6Kegelbaum",
+      "feld": [5, 13]
+    },
+    {
+      "moebel": "wds6Pinie",
+      "feld": [36, 17]
+    },
+    {
+      "moebel": "wds6Pinie",
+      "feld": [23, 26]
+    },
+    {
+      "moebel": "wds6PinieB",
+      "feld": [15, 5]
+    },
+    {
+      "moebel": "wds6Kegelbaum",
+      "feld": [15, 15]
+    },
+    {
+      "moebel": "wds6Kegelbaum",
+      "feld": [2, 19]
+    },
+    {
+      "moebel": "wds6Pinie",
+      "feld": [28, 14]
+    },
+    {
+      "moebel": "wds6Pinie",
+      "feld": [32, 17]
+    },
+    {
+      "moebel": "wds6Kegelbaum",
+      "feld": [30, 30]
+    },
+    {
+      "moebel": "wds6Kegelbaum",
+      "feld": [2, 5]
+    },
+    {
+      "moebel": "wds6Pinie",
+      "feld": [32, 3]
+    },
+    {
+      "moebel": "wds6Kegelbaum",
+      "feld": [8, 4]
+    },
+    {
+      "moebel": "wds6PinieB",
+      "feld": [28, 24]
+    },
+    {
+      "moebel": "wds6Pinie",
+      "feld": [23, 10]
+    },
+    {
+      "moebel": "wds6PinieB",
+      "feld": [22, 21]
+    },
+    {
+      "moebel": "wds6Kegelbaum",
+      "feld": [35, 12]
+    },
+    {
+      "moebel": "wds6PinieB",
+      "feld": [12, 8]
+    },
+    {
+      "moebel": "wds6Pinie",
+      "feld": [11, 14]
+    },
+    {
+      "moebel": "wds6Kegelbaum",
+      "feld": [2, 27]
+    },
+    {
+      "moebel": "wds6Pinie",
+      "feld": [6, 19]
+    },
+    {
+      "moebel": "wds6Pinie",
+      "feld": [7, 30]
+    },
+    {
+      "moebel": "wds6PinieB",
+      "feld": [36, 22]
+    },
+    {
+      "moebel": "wds6Pinie",
+      "feld": [15, 22]
+    },
+    {
+      "moebel": "wds6Pinie",
+      "feld": [22, 15]
+    },
+    {
+      "moebel": "wds6PinieB",
+      "feld": [30, 10]
+    },
+    {
+      "moebel": "wds6PinieB",
+      "feld": [2, 11]
+    },
+    {
+      "moebel": "wds6PinieB",
+      "feld": [11, 2]
+    },
+    {
+      "moebel": "wds6PinieB",
+      "feld": [14, 30]
+    },
+    {
+      "moebel": "wds6Pinie",
+      "feld": [36, 3]
+    },
+    {
+      "moebel": "wds6PinieB",
+      "feld": [10, 27]
+    },
+    {
+      "moebel": "wds6Pinie",
+      "feld": [27, 4]
+    },
+    {
+      "moebel": "wds6PinieB",
+      "feld": [15, 10]
+    },
+    {
+      "moebel": "wds6Pinie",
+      "feld": [6, 26]
+    },
+    {
+      "moebel": "wds6PinieB",
+      "feld": [26, 8]
+    },
+    {
+      "moebel": "wds6Pinie",
+      "feld": [8, 13]
+    },
+    {
+      "moebel": "wds6PinieB",
+      "feld": [33, 31]
+    },
+    {
+      "moebel": "wds6Pinie",
+      "feld": [34, 7]
+    },
+    {
+      "moebel": "wds6Kegelbaum",
+      "feld": [36, 26]
+    },
+    {
+      "moebel": "wds6Pinie",
+      "feld": [5, 6]
+    },
+    {
+      "moebel": "wds6PinieB",
+      "feld": [25, 30]
+    },
+    {
+      "moebel": "wds6Pinie",
+      "feld": [22, 30]
+    },
+    {
+      "moebel": "wds6Pinie",
+      "feld": [32, 21]
+    },
+    {
+      "moebel": "wds6Pinie",
+      "feld": [2, 15]
+    },
+    {
+      "moebel": "wds6Kegelbaum",
+      "feld": [29, 18]
+    },
+    {
+      "moebel": "wds6PinieB",
+      "feld": [9, 9]
+    },
+    {
+      "moebel": "wds6Kegelbaum",
+      "feld": [10, 42]
+    },
+    {
+      "moebel": "wds6Wacholder",
+      "feld": [36, 52]
+    },
+    {
+      "moebel": "wds6Wacholder",
+      "feld": [3, 55]
+    },
+    {
+      "moebel": "wds6Wacholder",
+      "feld": [18, 54]
+    },
+    {
+      "moebel": "wds6Pinie",
+      "feld": [17, 41]
+    },
+    {
+      "moebel": "wds6Kegelbaum",
+      "feld": [14, 53]
+    },
+    {
+      "moebel": "wds6Pinie",
+      "feld": [10, 55]
+    },
+    {
+      "moebel": "wds6Wacholder",
+      "feld": [15, 73]
+    },
+    {
+      "moebel": "wds6Kegelbaum",
+      "feld": [20, 57]
+    },
+    {
+      "moebel": "wds6Wacholder",
+      "feld": [19, 45]
+    },
+    {
+      "moebel": "wds6Wacholder",
+      "feld": [13, 42]
+    },
+    {
+      "moebel": "wds6Pinie",
+      "feld": [35, 39]
+    },
+    {
+      "moebel": "wds6Wacholder",
+      "feld": [22, 45]
+    },
+    {
+      "moebel": "wds6Pinie",
+      "feld": [3, 44]
+    },
+    {
+      "moebel": "wds6Pinie",
+      "feld": [28, 59]
+    },
+    {
+      "moebel": "wds6Kegelbaum",
+      "feld": [29, 43]
+    },
+    {
+      "moebel": "wds6Kegelbaum",
+      "feld": [31, 37]
+    },
+    {
+      "moebel": "wds6Wacholder",
+      "feld": [27, 52]
+    },
+    {
+      "moebel": "wds6Brocken",
+      "feld": [17, 86]
+    },
+    {
+      "moebel": "wds6Brocken",
+      "feld": [28, 99]
+    },
+    {
+      "moebel": "wds6Brocken",
+      "feld": [10, 99]
+    },
+    {
+      "moebel": "wds6WacholderB",
+      "feld": [19, 99]
+    },
+    {
+      "moebel": "wds6Wacholder",
+      "feld": [26, 87]
+    },
+    {
+      "moebel": "wds6Fels",
+      "feld": [19, 102]
+    },
+    {
+      "moebel": "wds6Wacholder",
+      "feld": [21, 83]
+    },
+    {
+      "moebel": "wds6Fels",
+      "feld": [15, 91]
+    },
+    {
+      "moebel": "wds6Fels",
+      "feld": [3, 94]
+    },
+    {
+      "moebel": "wds6WacholderB",
+      "feld": [24, 101]
+    },
+    {
+      "moebel": "wds6Fels",
+      "feld": [17, 101]
+    },
+    {
+      "moebel": "wds6WacholderB",
+      "feld": [27, 83]
+    },
+    {
+      "moebel": "wds6Fels",
+      "feld": [11, 111]
+    },
+    {
+      "moebel": "wds6Fels",
+      "feld": [17, 111]
+    },
+    {
+      "moebel": "wds6Wacholder",
+      "feld": [23, 109]
+    },
+    {
+      "moebel": "wds6BrockenMittel",
+      "feld": [28, 126]
+    },
+    {
+      "moebel": "wds6BrockenMittel",
+      "feld": [15, 125]
+    },
+    {
+      "moebel": "wds6Wacholder",
+      "feld": [25, 115]
+    },
+    {
+      "moebel": "wds6Wacholder",
+      "feld": [20, 115]
+    },
+    {
+      "moebel": "wds6Fels",
+      "feld": [32, 113]
+    },
+    {
+      "moebel": "wds6Fels",
+      "feld": [18, 116]
+    },
+    {
+      "moebel": "wds6Fels",
+      "feld": [35, 126]
+    },
+    {
+      "moebel": "wds6SattelzugBlau",
+      "feld": [9, 112],
+      "id": "ereignis111"
+    },
+    {
+      "moebel": "wg6Kisten",
+      "feld": [20, 113],
+      "id": "ereignis112"
+    },
+    {
+      "moebel": "wg6Kisten",
+      "feld": [21, 110],
+      "id": "ereignis113"
+    }
+  ],
+  "ausloeser": [
+    {
+      "name": "start",
+      "feld": [38, 121],
+      "eigenschaften": {
+        "richtung": "links"
+      }
+    },
+    {
+      "name": "zurueckDiner",
+      "feld": [39, 120]
+    },
+    {
+      "name": "zurueckDiner",
+      "feld": [39, 121]
+    },
+    {
+      "name": "zurueckDiner",
+      "feld": [39, 122]
+    },
+    {
+      "name": "abzweigHochebene",
+      "feld": [0, 70]
+    },
+    {
+      "name": "abzweigHochebene",
+      "feld": [0, 71]
+    },
+    {
+      "name": "weiterSummit",
+      "feld": [18, 0]
+    },
+    {
+      "name": "weiterSummit",
+      "feld": [19, 0]
+    },
+    {
+      "name": "weiterSummit",
+      "feld": [20, 0]
+    },
+    {
+      "name": "spurPM4",
+      "feld": [16, 116]
+    },
+    {
+      "name": "aussichtBerg",
+      "feld": [25, 39]
+    },
+    {
+      "name": "wegweiserHochebene",
+      "feld": [28, 70]
+    },
+    {
+      "name": "quelle",
+      "feld": [13, 86]
+    }
+  ],
+  "figuren": [],
+  "belebung": [
+    {
+      "name": "radler",
+      "typ": "statist",
+      "feld": [19, 20],
+      "eigenschaften": {
+        "von": "19,20",
+        "bis": "19,20",
+        "tun": "fährt bergauf",
+        "wann": "tag"
+      }
+    },
+    {
+      "name": "radfahrerin",
+      "typ": "statist",
+      "feld": [20, 40],
+      "eigenschaften": {
+        "von": "20,40",
+        "bis": "20,32",
+        "tun": "schiebt ihr Rennrad bergauf",
+        "wann": "tag",
+        "sagt": "statist.wegDesertSummit.bergstrasse.radfahrerin"
+      }
+    },
+    {
+      "name": "schaeferin",
+      "typ": "statist",
+      "feld": [25, 65],
+      "eigenschaften": {
+        "von": "25,65",
+        "bis": "25,65",
+        "tun": "treibt ihre Ziegen über den Hang",
+        "wann": "tag",
+        "sagt": "statist.wegDesertSummit.bergstrasse.schaeferin"
+      }
+    },
+    {
+      "name": "wanderer",
+      "typ": "statist",
+      "feld": [30, 100],
+      "eigenschaften": {
+        "von": "30,100",
+        "bis": "30,100",
+        "tun": "macht Rast auf einem Stein",
+        "wann": "tag",
+        "sagt": "statist.wegDesertSummit.bergstrasse.wanderer"
+      }
+    },
+    {
+      "name": "fotograf",
+      "typ": "statist",
+      "feld": [20, 10],
+      "eigenschaften": {
+        "von": "20,10",
+        "bis": "20,10",
+        "tun": "fotografiert die Kehren von oben",
+        "wann": "tag"
+      }
+    },
+    {
+      "name": "ziegen",
+      "typ": "tier",
+      "feld": [28, 66],
+      "eigenschaften": {
+        "von": "28,66",
+        "bis": "32,66",
+        "verhalten": "sitzen"
+      }
+    },
+    {
+      "name": "murmeltier",
+      "typ": "tier",
+      "feld": [31, 20],
+      "eigenschaften": {
+        "von": "31,20",
+        "bis": "34,20",
+        "verhalten": "ausweichen"
+      }
+    },
+    {
+      "name": "adler",
+      "typ": "tier",
+      "feld": [20, 51],
+      "eigenschaften": {
+        "von": "20,51",
+        "bis": "20,71",
+        "verhalten": "fliegen"
+      }
+    },
+    {
+      "name": "reh",
+      "typ": "tier",
+      "feld": [10, 81],
+      "eigenschaften": {
+        "von": "10,81",
+        "bis": "14,81",
+        "verhalten": "ausweichen"
+      }
+    },
+    {
+      "name": "eichhoernchen",
+      "typ": "tier",
+      "feld": [30, 88],
+      "eigenschaften": {
+        "von": "30,88",
+        "bis": "35,88",
+        "verhalten": "flitzen"
+      }
+    },
+    {
+      "name": "schmetterlinge",
+      "typ": "tier",
+      "feld": [15, 124],
+      "eigenschaften": {
+        "von": "15,124",
+        "bis": "23,124",
+        "verhalten": "fliegen"
+      }
+    }
+  ],
+  "variante": "a"
+}

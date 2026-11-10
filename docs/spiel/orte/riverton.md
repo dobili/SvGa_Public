@@ -768,7 +768,7 @@ Behoben (Gutachten `docs/spiel/auftraege/gutachten/riverton-aussen.md`, Nummern 
   die zu ihm schauen, in der Mitte der Westhälfte; die Achse zur Bahnhofstür bleibt frei. Bäckerei,
   Café und Lagerhäuser stehen auf Pflaster; die Brückenstraße ist Fußgängerzone und endet am
   gepflasterten Brückenkopf im Park.
-- **Fluss, Kai, Kanal (23–31):** Nordufer als gerade Kaimauer mit drei Reihen Promenade, vier Bänken
+- **Fluss, Kai, Kanal (23–31):** Nordufer als gerade Kaimauer (von vorn gesehen mit Leitern und Reifenfendern aus dem Hafenpaket) mit drei Reihen Promenade, vier Bänken
   mit Blick aufs Wasser und Laternen in festen Abständen. Am Kai im Osten Kisten, Fässer,
   Poller mit Tau, ein Motorboot am Kai (5 × 2 Kacheln, 10.64) und der Gabelstaplerfahrer bei der Arbeit; das Pegelhaus steht am
   Ende des Kais direkt am Wasser. Das Südufer schwingt aus. Der Kanal und sein Becken haben Steinufer

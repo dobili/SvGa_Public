@@ -2,7 +2,7 @@
   "karte": "wegDesertSummit.diner",
   "datei": "karten/weg-desert-summit-diner.json",
   "art": "aussen",
-  "beschreibung": "Weg 7, die Wüstenstraße: Die Old Mother Road kommt am Ostrand aus Desert Springs und läuft durch roten Sand nach Westen. Kakteen am Bankett, Tafelberge aus rotem Fels am Nord- und Südrand. In der Mitte liegt King's Diner, ein silberner Speisewagen mit dem Neonschild, dem das K fehlt, daneben das Starlight Motel mit fünf Zimmern; davor ein Parkplatz. Südlich der Straße stehen Sattelzüge auf dem Fernfahrerplatz, unter einem Sonnenschirm spielt Earl Dubois Königsrennen. Hinter dem Diner liegt das Neon-K im Sand. Im Westen Wacholder und Kakteen, die Straße führt zur Bergstraße. Diner links vom Motel, alte Zapfsäule mit Autowrack und ein roter Felsbogen im Westen, Wasserturm und Reklametafel im Osten, zwei Sattelzüge.",
+  "beschreibung": "Weg 7, die Wüstenstraße: Die Old Mother Road kommt am Ostrand aus Desert Springs und läuft durch roten Sand nach Westen. Kakteen am Bankett, Tafelberge aus rotem Fels am Nord- und Südrand. In der Mitte liegt King's Diner, ein silberner Speisewagen mit dem Neonschild, dem das K fehlt, daneben das Starlight Motel mit fünf Zimmern; davor ein Parkplatz. Südlich der Straße stehen Sattelzüge auf dem Fernfahrerplatz, unter einem Sonnenschirm spielt Earl Dubois Königsrennen. Hinter dem Diner liegt das Neon-K im Sand. Im Westen Wacholder und Kakteen, die Straße führt zur Bergstraße. Variante C, die reichere: Diner und Motel enger zusammen, ein Campingplatz mit Wohnwagen am Wasserturm, zwei Sattelzüge und viele blühende Kakteen, der Felsbogen weiter im Westen, die alte Zapfsäule am Felsbogen.",
   "wand": "felsRot",
   "boden": "sandRot",
   "boeden": {
@@ -10,30 +10,21 @@
     "s": "asphalt",
     "k": "schotter"
   },
-  "zustand": [
-    "neu",
-    "gebraucht",
-    "alt"
-  ],
-  "stil": [
-    "natur",
-    "klassisch",
-    "modern",
-    "einfach"
-  ],
+  "zustand": ["neu", "gebraucht", "alt"],
+  "stil": ["natur", "klassisch", "modern"],
   "raster": [
     "######################################################################################################################################################",
     "######################################################################################################################################################",
-    "########################################################################.................................#############################################",
-    "#...................................................###################..............................................................................#",
-    "#...................................................###################..............................................................................#",
+    "######################################################################.................................###############################################",
+    "#.....................................................#############..................................................................................#",
+    "#.....................................................#############..................................................................................#",
     "#....................................................................................................................................................#",
     "#....................................................................................................................................................#",
     "#....................................................................................................................................................#",
     "#....................................................................................................................................................#",
     "#....................................................................................................................................................#",
-    "#.......................................................................ssssssssssssssssssssssssssssssss.............................................#",
-    "#.......................................................................ssssssssssssssssssssssssssssssss.............................................#",
+    "#.....................................................................ssssssssssssssssssssssssssssssssss.............................................#",
+    "#.....................................................................ssssssssssssssssssssssssssssssssss.............................................#",
     "#.................................................sssssssssssssssssssssssssssssssssssssssssssssssssssssssss..........................................#",
     "#.................................................sssssssssssssssssssssssssssssssssssssssssssssssssssssssss..........................................#",
     "#.................................................sssssssssssssssssssssssssssssssssssssssssssssssssssssssss..........................................#",
@@ -46,9 +37,9 @@
     "sssssssssssssssssssssssssssssssssssssssssssssssssssss..sssssssssssssssssssssssss.....................................................................#",
     "#kkkkkkkkkkkkkkkkkkkkkkkkkkkkkkkkkkkkkkkkkkkkkkkkk.....sssssssssssssssssssssssss.....................................................................#",
     "#......................................................sssssssssssssssssssssssss.....................................................................#",
-    "#......................................................sssssssssssssssssssssssss....................#############################....................#",
-    "#......................................................sssssssssssssssssssssssss....................#############################....................#",
-    "#...................................................................................................#############################....................#",
+    "#......................................................sssssssssssssssssssssssss..................#############################......................#",
+    "#......................................................sssssssssssssssssssssssss..................#############################......................#",
+    "#.................................................................................................#############################......................#",
     "######################################################################################################################################################",
     "######################################################################################################################################################",
     "######################################################################################################################################################"
@@ -56,727 +47,457 @@
   "objekte": [
     {
       "moebel": "wds6Diner",
-      "feld": [
-        76,
-        3
-      ],
+      "feld": [74, 3],
       "id": "diner"
     },
     {
       "moebel": "wds6SchildDiner",
       "auf": "diner",
-      "versatz": [
-        0,
-        -24
-      ]
+      "versatz": [0, -24]
     },
     {
       "moebel": "wds6Motel",
-      "feld": [
-        88,
-        3
-      ]
+      "feld": [86, 3]
     },
     {
       "moebel": "wds6SchildMotel",
-      "feld": [
-        102,
-        5
-      ]
+      "feld": [100, 5]
     },
     {
       "moebel": "wds6Tafel",
-      "feld": [
-        86,
-        8
-      ]
+      "feld": [84, 8]
     },
     {
       "moebel": "wds6NeonK",
-      "feld": [
-        80,
-        2
-      ]
+      "feld": [78, 2]
     },
     {
       "moebel": "wds6Container",
-      "feld": [
-        73,
-        3
-      ]
+      "feld": [71, 3]
     },
     {
       "moebel": "wds6Wasserturm",
-      "feld": [
-        124,
-        4
-      ]
+      "feld": [120, 4]
     },
     {
       "moebel": "wds6Windrad",
-      "feld": [
-        130,
-        4
-      ]
+      "feld": [115, 4]
+    },
+    {
+      "moebel": "wds6Wohnwagen",
+      "feld": [128, 6]
     },
     {
       "moebel": "wds6Reklame",
-      "feld": [
-        112,
-        4
-      ]
-    },
-    {
-      "moebel": "wds6SattelzugRot",
-      "feld": [
-        57,
-        16
-      ]
+      "feld": [110, 4]
     },
     {
       "moebel": "wds6SattelzugBlau",
-      "feld": [
-        57,
-        21
-      ]
+      "feld": [56, 16]
+    },
+    {
+      "moebel": "wds6SattelzugRot",
+      "feld": [56, 21]
     },
     {
       "moebel": "wds6Spieltisch",
-      "feld": [
-        70,
-        19
-      ],
+      "feld": [71, 20],
       "id": "tisch"
     },
     {
       "moebel": "wds6Brett",
       "auf": "tisch",
-      "versatz": [
-        0,
-        -2
-      ]
+      "versatz": [0, -2]
     },
     {
       "moebel": "wds6Reifen",
-      "feld": [
-        77,
-        16
-      ]
+      "feld": [76, 16]
     },
     {
       "moebel": "wds6Reifen",
-      "feld": [
-        78,
-        17
-      ]
+      "feld": [77, 16]
     },
     {
-      "moebel": "wds6Tankstelle",
-      "feld": [
-        38,
-        12
-      ]
-    },
-    {
-      "moebel": "wr5Autowrack",
-      "feld": [
-        45,
-        14
-      ]
+      "moebel": "wds6Reifen",
+      "feld": [76, 17]
     },
     {
       "moebel": "wds6Felsbogen",
-      "feld": [
-        24,
-        3
-      ]
+      "feld": [20, 3]
+    },
+    {
+      "moebel": "wds6Tankstelle",
+      "feld": [32, 12]
+    },
+    {
+      "moebel": "wds6Autowrack",
+      "feld": [40, 16]
     },
     {
       "moebel": "wds6Ortsschild",
-      "feld": [
-        140,
-        13
-      ]
+      "feld": [142, 13]
     },
     {
       "moebel": "wds6Bank",
-      "feld": [
-        6,
-        17
-      ]
+      "feld": [5, 17]
     },
     {
       "moebel": "wds6Wegweiser",
-      "feld": [
-        2,
-        17
-      ]
+      "feld": [2, 17]
     },
     {
       "moebel": "wds6Saguaro",
-      "feld": [
-        3,
-        4
-      ]
+      "feld": [2, 4]
     },
     {
       "moebel": "wds6Wacholder",
-      "feld": [
-        9,
-        6
-      ]
+      "feld": [7, 4]
     },
     {
       "moebel": "wds6Saguaro",
-      "feld": [
-        14,
-        4
-      ]
+      "feld": [12, 6]
     },
     {
       "moebel": "wds6Wacholder",
-      "feld": [
-        4,
-        11
-      ]
+      "feld": [3, 9]
     },
     {
       "moebel": "wds6KaktusBluehend",
-      "feld": [
-        15,
-        10
-      ]
+      "feld": [9, 11]
+    },
+    {
+      "moebel": "wds6Saguaro",
+      "feld": [14, 13]
     },
     {
       "moebel": "wds6SteinRot",
-      "feld": [
-        20,
-        9
-      ]
+      "feld": [16, 9]
     },
     {
       "moebel": "wds6SteinRot",
-      "feld": [
-        35,
-        9
-      ]
+      "feld": [31, 9]
     },
     {
       "moebel": "wds6Geierkreis",
-      "feld": [
-        30,
-        22
-      ]
+      "feld": [44, 23]
     },
     {
       "moebel": "wds6Geierkreis",
-      "feld": [
-        120,
-        21
-      ]
+      "feld": [90, 21]
+    },
+    {
+      "moebel": "wds6Geierkreis",
+      "feld": [136, 22]
+    },
+    {
+      "moebel": "wds6KaktusBluehend",
+      "feld": [141, 8]
     },
     {
       "moebel": "wds6SteinRot",
-      "feld": [
-        141,
-        5
-      ]
+      "feld": [138, 5]
     },
     {
       "moebel": "wds6KaktusKlein",
-      "feld": [
-        116,
-        12
-      ]
+      "feld": [147, 7]
+    },
+    {
+      "moebel": "wds6KaktusKlein",
+      "feld": [125, 11]
+    },
+    {
+      "moebel": "wds6SteinRot",
+      "feld": [114, 12]
+    },
+    {
+      "moebel": "wds6KaktusBluehend",
+      "feld": [136, 8]
+    },
+    {
+      "moebel": "wds6KaktusBluehend",
+      "feld": [144, 7]
+    },
+    {
+      "moebel": "wds6KaktusBluehend",
+      "feld": [108, 12]
+    },
+    {
+      "moebel": "wds6KaktusKlein",
+      "feld": [146, 10]
+    },
+    {
+      "moebel": "wds6KaktusBluehend",
+      "feld": [145, 4]
+    },
+    {
+      "moebel": "wds6KaktusKlein",
+      "feld": [125, 6]
+    },
+    {
+      "moebel": "wds6KaktusKlein",
+      "feld": [136, 5]
+    },
+    {
+      "moebel": "wds6KaktusKlein",
+      "feld": [107, 6]
+    },
+    {
+      "moebel": "wds6SteinRot",
+      "feld": [136, 11]
+    },
+    {
+      "moebel": "wds6KaktusKlein",
+      "feld": [142, 4]
+    },
+    {
+      "moebel": "wds6KaktusKlein",
+      "feld": [144, 20]
+    },
+    {
+      "moebel": "wds6KaktusBluehend",
+      "feld": [86, 21]
+    },
+    {
+      "moebel": "wds6KaktusKlein",
+      "feld": [100, 19]
+    },
+    {
+      "moebel": "wds6KaktusKlein",
+      "feld": [130, 22]
+    },
+    {
+      "moebel": "wds6KaktusKlein",
+      "feld": [83, 24]
+    },
+    {
+      "moebel": "wds6KaktusBluehend",
+      "feld": [82, 19]
+    },
+    {
+      "moebel": "wds6KaktusKlein",
+      "feld": [87, 24]
+    },
+    {
+      "moebel": "wds6KaktusBluehend",
+      "feld": [86, 18]
     },
     {
       "moebel": "wds6Saguaro",
-      "feld": [
-        144,
-        9
-      ]
+      "feld": [132, 22]
     },
     {
       "moebel": "wds6KaktusKlein",
-      "feld": [
-        109,
-        5
-      ]
+      "feld": [96, 23]
+    },
+    {
+      "moebel": "wds6KaktusBluehend",
+      "feld": [103, 19]
+    },
+    {
+      "moebel": "wds6KaktusKlein",
+      "feld": [146, 21]
+    },
+    {
+      "moebel": "wds6KaktusKlein",
+      "feld": [109, 20]
+    },
+    {
+      "moebel": "wds6KaktusKlein",
+      "feld": [113, 21]
     },
     {
       "moebel": "wds6Saguaro",
-      "feld": [
-        120,
-        6
-      ]
-    },
-    {
-      "moebel": "wds6KaktusKlein",
-      "feld": [
-        107,
-        7
-      ]
-    },
-    {
-      "moebel": "wds6KaktusKlein",
-      "feld": [
-        135,
-        5
-      ]
-    },
-    {
-      "moebel": "wds6SteinRot",
-      "feld": [
-        131,
-        12
-      ]
-    },
-    {
-      "moebel": "wds6KaktusKlein",
-      "feld": [
-        121,
-        12
-      ]
-    },
-    {
-      "moebel": "wds6KaktusBluehend",
-      "feld": [
-        108,
-        10
-      ]
-    },
-    {
-      "moebel": "wds6KaktusKlein",
-      "feld": [
-        147,
-        7
-      ]
-    },
-    {
-      "moebel": "wds6KaktusKlein",
-      "feld": [
-        114,
-        12
-      ]
-    },
-    {
-      "moebel": "wds6SteinRot",
-      "feld": [
-        140,
-        9
-      ]
-    },
-    {
-      "moebel": "wds6KaktusBluehend",
-      "feld": [
-        137,
-        7
-      ]
-    },
-    {
-      "moebel": "wds6KaktusKlein",
-      "feld": [
-        100,
-        19
-      ]
+      "feld": [47, 14]
     },
     {
       "moebel": "wds6Saguaro",
-      "feld": [
-        88,
-        21
-      ]
-    },
-    {
-      "moebel": "wds6KaktusBluehend",
-      "feld": [
-        126,
-        20
-      ]
-    },
-    {
-      "moebel": "wds6KaktusBluehend",
-      "feld": [
-        144,
-        21
-      ]
-    },
-    {
-      "moebel": "wds6KaktusBluehend",
-      "feld": [
-        83,
-        21
-      ]
-    },
-    {
-      "moebel": "wds6KaktusKlein",
-      "feld": [
-        115,
-        20
-      ]
-    },
-    {
-      "moebel": "wds6KaktusBluehend",
-      "feld": [
-        97,
-        24
-      ]
-    },
-    {
-      "moebel": "wds6KaktusBluehend",
-      "feld": [
-        104,
-        20
-      ]
-    },
-    {
-      "moebel": "wds6KaktusKlein",
-      "feld": [
-        94,
-        22
-      ]
-    },
-    {
-      "moebel": "wds6KaktusBluehend",
-      "feld": [
-        97,
-        18
-      ]
-    },
-    {
-      "moebel": "wds6SteinRot",
-      "feld": [
-        21,
-        14
-      ]
+      "feld": [28, 14]
     },
     {
       "moebel": "wds6Saguaro",
-      "feld": [
-        43,
-        5
-      ]
+      "feld": [44, 14]
     },
     {
-      "moebel": "wds6SteinRot",
-      "feld": [
-        32,
-        15
-      ]
+      "moebel": "wds6KaktusBluehend",
+      "feld": [41, 12]
     },
     {
       "moebel": "wds6KaktusKlein",
-      "feld": [
-        46,
-        4
-      ]
+      "feld": [32, 24]
     },
     {
-      "moebel": "wds6KaktusKlein",
-      "feld": [
-        49,
-        5
-      ]
-    },
-    {
-      "moebel": "wds6KaktusKlein",
-      "feld": [
-        47,
-        7
-      ]
-    },
-    {
-      "moebel": "wds6KaktusKlein",
-      "feld": [
-        40,
-        5
-      ]
-    },
-    {
-      "moebel": "wds6KaktusKlein",
-      "feld": [
-        48,
-        11
-      ]
-    },
-    {
-      "moebel": "wds6KaktusKlein",
-      "feld": [
-        38,
-        5
-      ]
-    },
-    {
-      "moebel": "wds6KaktusKlein",
-      "feld": [
-        36,
-        4
-      ]
+      "moebel": "wds6KaktusBluehend",
+      "feld": [36, 24]
     },
     {
       "moebel": "wds6Wacholder",
-      "feld": [
-        51,
-        23
-      ]
+      "feld": [25, 24]
     },
     {
       "moebel": "wds6KaktusKlein",
-      "feld": [
-        42,
-        24
-      ]
-    },
-    {
-      "moebel": "wds6SteinRot",
-      "feld": [
-        38,
-        24
-      ]
-    },
-    {
-      "moebel": "wds6SteinRot",
-      "feld": [
-        34,
-        24
-      ]
-    },
-    {
-      "moebel": "wds6SteinRot",
-      "feld": [
-        24,
-        24
-      ]
+      "feld": [30, 24]
     },
     {
       "moebel": "wds6KaktusKlein",
-      "feld": [
-        49,
-        24
-      ]
+      "feld": [50, 24]
+    },
+    {
+      "moebel": "wds6Wacholder",
+      "feld": [40, 24]
+    },
+    {
+      "moebel": "wds6KaktusBluehend",
+      "feld": [52, 24]
+    },
+    {
+      "moebel": "wds6Wacholder",
+      "feld": [21, 24]
     },
     {
       "moebel": "wds6KaktusKlein",
-      "feld": [
-        22,
-        24
-      ]
+      "feld": [48, 24]
+    },
+    {
+      "moebel": "wds6KaktusKlein",
+      "feld": [28, 24]
     },
     {
       "moebel": "sc8Funkgeraet",
-      "feld": [
-        78,
-        7
-      ],
+      "feld": [76, 7],
       "vorn": true,
-      "id": "ereignis72"
+      "id": "ereignis78"
     },
     {
       "moebel": "sc8Kreidespringer",
-      "feld": [
-        87,
-        9
-      ],
-      "id": "ereignis73"
+      "feld": [85, 9],
+      "id": "ereignis79"
     },
     {
       "moebel": "mf2Blumenbeet",
-      "feld": [
-        91,
-        10
-      ],
-      "id": "ereignis74"
+      "feld": [89, 10],
+      "id": "ereignis80"
     },
     {
       "moebel": "sc8Finkenzeichen",
-      "feld": [
-        89,
-        10
-      ],
-      "id": "ereignis75"
+      "feld": [87, 10],
+      "id": "ereignis81"
     }
   ],
   "ausloeser": [
     {
       "name": "start",
-      "feld": [
-        147,
-        16
-      ],
+      "feld": [147, 16],
       "eigenschaften": {
         "richtung": "links"
       }
     },
     {
       "name": "zurueckDesert",
-      "feld": [
-        149,
-        15
-      ]
+      "feld": [149, 15]
     },
     {
       "name": "zurueckDesert",
-      "feld": [
-        149,
-        16
-      ]
+      "feld": [149, 16]
     },
     {
       "name": "zurueckDesert",
-      "feld": [
-        149,
-        17
-      ]
+      "feld": [149, 17]
     },
     {
       "name": "weiterBergstrasse",
-      "feld": [
-        0,
-        19
-      ]
+      "feld": [0, 19]
     },
     {
       "name": "weiterBergstrasse",
-      "feld": [
-        0,
-        20
-      ]
+      "feld": [0, 20]
     },
     {
       "name": "weiterBergstrasse",
-      "feld": [
-        0,
-        21
-      ]
+      "feld": [0, 21]
     },
     {
       "name": "tafel",
-      "feld": [
-        86,
-        10
-      ]
+      "feld": [84, 10]
     },
     {
       "name": "fundNeonK",
-      "feld": [
-        80,
-        2
-      ]
+      "feld": [78, 2]
     },
     {
       "name": "ereignisFunkschach",
-      "feld": [
-        79,
-        11
-      ]
+      "feld": [77, 11]
     },
     {
       "name": "kreide3",
-      "feld": [
-        87,
-        9
-      ]
+      "feld": [85, 9]
     },
     {
       "name": "finchSpringerB",
-      "feld": [
-        89,
-        10
-      ]
+      "feld": [87, 10]
     },
     {
       "name": "seite08",
-      "feld": [
-        55,
-        22
-      ]
+      "feld": [54, 17]
     },
     {
       "name": "hinterzimmerTuer",
-      "feld": [
-        86,
-        7
-      ]
+      "feld": [84, 7]
     },
     {
       "name": "reklame",
-      "feld": [
-        114,
-        10
-      ]
+      "feld": [112, 10]
     },
     {
       "name": "motelschild",
-      "feld": [
-        102,
-        10
-      ]
+      "feld": [100, 10]
     },
     {
       "name": "aussicht",
-      "feld": [
-        7,
-        18
-      ]
+      "feld": [6, 18]
     }
   ],
   "figuren": [
     {
       "name": "earl",
-      "feld": [
-        72,
-        25
-      ]
+      "feld": [73, 26]
     }
   ],
   "belebung": [
     {
       "name": "trucker",
       "typ": "statist",
-      "feld": [
-        68,
-        18
-      ],
+      "feld": [68, 15],
       "eigenschaften": {
-        "von": "68,18",
-        "bis": "68,18",
-        "tun": "trinkt Kaffee am Sattelzug",
+        "von": "68,15",
+        "bis": "68,15",
+        "tun": "lehnt am Führerhaus",
         "wann": "tag"
       }
     },
     {
       "name": "kojote",
       "typ": "tier",
-      "feld": [
-        46,
-        23
-      ],
+      "feld": [44, 20],
       "eigenschaften": {
-        "von": "46,23",
-        "bis": "50,23",
+        "von": "44,20",
+        "bis": "48,20",
         "verhalten": "ausweichen"
       }
     },
     {
       "name": "roadrunner",
       "typ": "tier",
-      "feld": [
-        26,
-        17
-      ],
+      "feld": [23, 17],
       "eigenschaften": {
-        "von": "26,17",
-        "bis": "30,17",
+        "von": "23,17",
+        "bis": "27,17",
         "verhalten": "ausweichen"
       }
     },
     {
       "name": "kellnerin",
       "typ": "statist",
-      "feld": [
-        80,
-        11
-      ],
+      "feld": [80, 11],
       "eigenschaften": {
         "von": "80,11",
         "bis": "80,11",
@@ -788,10 +509,7 @@
     {
       "name": "fernfahrer",
       "typ": "statist",
-      "feld": [
-        62,
-        20
-      ],
+      "feld": [62, 20],
       "eigenschaften": {
         "von": "62,20",
         "bis": "62,20",
@@ -803,10 +521,7 @@
     {
       "name": "motelgast",
       "typ": "statist",
-      "feld": [
-        98,
-        11
-      ],
+      "feld": [98, 11],
       "eigenschaften": {
         "von": "98,11",
         "bis": "98,11",
@@ -818,10 +533,7 @@
     {
       "name": "tankwart",
       "typ": "statist",
-      "feld": [
-        42,
-        18
-      ],
+      "feld": [42, 18],
       "eigenschaften": {
         "von": "42,18",
         "bis": "42,18",
@@ -832,10 +544,7 @@
     {
       "name": "praeriehunde",
       "typ": "tier",
-      "feld": [
-        105,
-        15
-      ],
+      "feld": [105, 15],
       "eigenschaften": {
         "von": "105,15",
         "bis": "109,15",
@@ -845,10 +554,7 @@
     {
       "name": "eidechse",
       "typ": "tier",
-      "feld": [
-        30,
-        22
-      ],
+      "feld": [30, 22],
       "eigenschaften": {
         "von": "30,22",
         "bis": "35,22",
@@ -858,10 +564,7 @@
     {
       "name": "geier",
       "typ": "tier",
-      "feld": [
-        70,
-        6
-      ],
+      "feld": [70, 6],
       "eigenschaften": {
         "von": "70,6",
         "bis": "90,3",
@@ -871,10 +574,7 @@
     {
       "name": "hund",
       "typ": "tier",
-      "feld": [
-        96,
-        12
-      ],
+      "feld": [96, 12],
       "eigenschaften": {
         "von": "96,12",
         "bis": "96,12",
@@ -884,10 +584,7 @@
     {
       "name": "kraehen",
       "typ": "tier",
-      "feld": [
-        120,
-        20
-      ],
+      "feld": [120, 20],
       "eigenschaften": {
         "von": "120,20",
         "bis": "130,20",
@@ -897,10 +594,7 @@
     {
       "name": "hase",
       "typ": "tier",
-      "feld": [
-        135,
-        12
-      ],
+      "feld": [135, 12],
       "eigenschaften": {
         "von": "135,12",
         "bis": "129,12",

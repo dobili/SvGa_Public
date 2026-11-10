@@ -11,6 +11,7 @@
  * Abhängigkeiten: phaser (MIT, docs/spiel/LIZENZEN.md), schnittstelle/spielstand.ts (Weltposition).
  */
 import Phaser from "phaser";
+import { liesAusloeser, triffAusloeser, type Ausloeser } from "./ausloeserebene";
 import { kameragrenzen } from "./kamera";
 import type { Weltposition } from "../schnittstelle/spielstand";
 import {
@@ -100,15 +101,6 @@ export interface Szenendaten {
   readonly laterne?: boolean;
 }
 
-/** Ein Auslöser der Karte in Kachelkoordinaten. */
-interface Ausloeser {
-  readonly name: string;
-  readonly typ: Ausloesertreffer["typ"];
-  readonly x: number;
-  readonly y: number;
-}
-
-const FIGUR_TYP = "figur";
 /** Tiefe des Hintergrundbilds: unter Möbeln an der Wand (Tiefe 0) und allem anderen. */
 const HINTERGRUND_TIEFE = -1;
 /** Höchstens so viele Kachelpixel je Bild rückt die Laufhilfe den Helden zur Kachelmitte. */
@@ -202,7 +194,7 @@ export class Oberweltszene extends Phaser.Scene {
     kamera.setBounds(g.x, g.y, g.breite, g.hoehe);
     this.cameras.main.startFollow(held, true);
     this.cameras.main.setRoundPixels(true);
-    this.ausloeser = this.liesAusloeser(karte);
+    this.ausloeser = liesAusloeserAus(karte);
     this.stelleFigurenAuf(held);
     const moebel = stelleMoebelAuf(this, this.daten.moebel ?? [], KACHEL);
     this.physics.add.collider(held, moebel);
@@ -220,7 +212,7 @@ export class Oberweltszene extends Phaser.Scene {
   private stelleFigurenAuf(held: Phaser.Physics.Arcade.Sprite): void {
     const gruppe = this.physics.add.staticGroup();
     for (const a of this.ausloeser) {
-      if (a.typ !== FIGUR_TYP) continue;
+      if (a.typ !== "figur") continue;
       const eigenes = this.daten.figurenbilder?.[a.name] !== undefined;
       const figur = gruppe.create(
         a.x * KACHEL + KACHEL / 2,
@@ -234,23 +226,6 @@ export class Oberweltszene extends Phaser.Scene {
       figur.setDepth(figur.y);
     }
     this.physics.add.collider(held, gruppe);
-  }
-
-  /** Die Objekte der Ebene „ausloeser“ als Kachelkoordinaten. */
-  private liesAusloeser(karte: Phaser.Tilemaps.Tilemap): Ausloeser[] {
-    const ebene = karte.getObjectLayer(AUSLOESER_EBENE);
-    return (
-      (ebene?.objects ?? [])
-        .filter((o) => typeof o.name === "string" && o.name.length > 0)
-        // Statisten und Tiere (type statist/tier) bewegen sich; sie meldet die Belebungsschicht.
-        .filter((o) => o.type !== "statist" && o.type !== "tier" && o.type !== "moebel")
-        .map((o) => ({
-          name: o.name,
-          typ: o.type === FIGUR_TYP ? ("figur" as const) : ("ausloeser" as const),
-          x: Math.round((o.x ?? 0) / KACHEL),
-          y: Math.round((o.y ?? 0) / KACHEL),
-        }))
-    );
   }
 
   /** Das Steuerkreuz: Richtung gedrückt oder losgelassen. */
@@ -368,8 +343,6 @@ export class Oberweltszene extends Phaser.Scene {
    * man steht davor und schaut sie an (wie in Rollenspielen in Draufsicht).
    */
   private meldeAusloeser(): void {
-    const { x, y, richtung } = this.position();
-    const vorne = KACHEL_VOR[richtung];
     const alle: readonly Ausloeser[] = [
       ...this.ausloeser,
       ...(this.belebungsschicht?.ansprechbare() ?? []).map((s) => ({
@@ -377,9 +350,7 @@ export class Oberweltszene extends Phaser.Scene {
         typ: "statist" as const,
       })),
     ];
-    const darauf = alle.find((a) => a.x === x && a.y === y) ?? null;
-    const davor = alle.find((a) => a.x === x + vorne.x && a.y === y + vorne.y) ?? null;
-    const treffer = darauf ?? davor;
+    const { treffer, darauf } = triffAusloeser(alle, this.position());
     const name = treffer?.name ?? null;
     if (name === this.letzterAusloeser) return;
     // Der Startauslöser (etwa die Tür, durch die der Held kam) zählt erst nach dem Verlassen.
@@ -397,10 +368,7 @@ export class Oberweltszene extends Phaser.Scene {
   }
 }
 
-/** Versatz der Kachel vor dem Helden je Blickrichtung. */
-const KACHEL_VOR: Readonly<Record<Richtung, { readonly x: number; readonly y: number }>> = {
-  oben: { x: 0, y: -1 },
-  unten: { x: 0, y: 1 },
-  links: { x: -1, y: 0 },
-  rechts: { x: 1, y: 0 },
-};
+/** Die Auslöser der Ebene „ausloeser“ einer geladenen Karte (ausloeserebene.ts). */
+function liesAusloeserAus(karte: Phaser.Tilemaps.Tilemap): Ausloeser[] {
+  return liesAusloeser(karte.getObjectLayer(AUSLOESER_EBENE)?.objects ?? [], KACHEL);
+}

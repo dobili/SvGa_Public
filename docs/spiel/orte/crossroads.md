@@ -88,6 +88,20 @@ auf einem Schotterplatz. Der Highway läuft bis an beide Ränder (Fernbus nach W
 Minenstraße nach Osten mit dem geschlossenen Viehgatter S13 bei Spalte 58; ein Übergang dorthin kommt
 mit Q4 in Runde 6). Wegweiser in alle Städte an der Kreuzung (`wegweiser` (29, 20)).
 
+**Ortsteil (Runde 7, Regel 10.51):** Crossroads ist ein kleiner Ort und hat in jeder Variante
+mindestens zwölf Gebäude, die meisten Kulissenhäuser ohne Innenraum. Südöstlich des Highways führen
+zwei Schottergassen zu Motel, Garage, Hühnerstall, Bauernhaus, Kapelle, Eisenwarenladen und Lagerhaus;
+im Norden steht eine Scheune auf dem Feld beim Jahrmarktweg, neben der Tankstelle ein Wohnwagen,
+südlich des Parkplatzes zwei Wohnwagen (A). B legt die Häuser südwestlich an eine Gasse unter dem
+Schotterplatz, Motel und Wohnwagen nordöstlich; C hat die Gassen wie A, aber andere Häuser.
+
+**Belebung (Regel 10.53):** 13 Statisten in allen Varianten gleich, neun davon ansprechbar
+(`statist.crossroads.aussen.*`): Fernfahrerin, Mechaniker, Motelwirtin, Küsterin, Kreidekind, Postbote,
+Rentner, Farmer, Anhalterin; dazu Tankwart, Tomás, Autowäscher und Hundebesitzerin ohne Satz. Tiere:
+Hund, Rinder auf dem Feld, Krähen, Motelkatze, Spatzen. In der Raststätte vier ansprechbare
+Statisten (`statist.crossroads.raststaette.*`): Kellnerin, Fernfahrer, Variantenspielerin,
+Schausteller.
+
 ### 1.4 Raststätte innen (24 × 18)
 
 Nordwand (Reihen 0–2), dahinter die Hinterräume (3–5): die Großküche mit Kühlschränken, Herden unter

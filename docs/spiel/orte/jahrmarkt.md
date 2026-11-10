@@ -42,3 +42,11 @@ Lichterketten hängen zwischen Holzmasten (`n6Lichtermast`, nur der Fuß sperrt)
 A: Riesenrad oben Mitte, Karussell links, Bühne mit Gerüst, Lautsprechern und Tribüne rechts,
 Schachautomat in der Mitte, Lichterketten vor den Buden, Budenreihe unten. B: schlicht mittags, Bühne
 links ohne Gerüst, Losbude, Dosenwerfen und zwei Stände. C: reich am Abend, zwei Tribünen, zwei Laternenreihen, zwei Lichterketten, alle Buden, Süßigkeitenwagen und beide Imbisswagen.
+
+## 5. Belebung (Runde 7)
+
+Der Jahrmarkt ist ein Ort der Art `weg` und braucht nach Regel 10.53 vier Statisten, drei davon
+ansprechbar, und sechs Tiere. Er hat sieben Statisten: Juno, Buster und die Band ohne Satz (ihre
+Dialoge kommen mit Runde 6), Besucher, Karussellbetreiber, Zuckerwattefrau und Ponykind mit Satz
+(`statist.jahrmarkt.festplatz.*`; das Ponykind erzählt die kleine Tiergeschichte). Tiere: Pony,
+Tauben, Spatzen, Hund, Katze, Krähen.

@@ -11,7 +11,7 @@
  "tilewidth": 16,
  "tileheight": 16,
  "nextlayerid": 5,
- "nextobjectid": 77,
+ "nextobjectid": 69,
  "layers": [
   {
    "id": 1,
@@ -2997,8 +2997,8 @@
      "id": 5,
      "name": "lore",
      "type": "ausloeser",
-     "x": 480,
-     "y": 176,
+     "x": 336,
+     "y": 144,
      "width": 16,
      "height": 16,
      "rotation": 0,
@@ -3045,144 +3045,6 @@
     },
     {
      "id": 8,
-     "name": "n9GleisQuer",
-     "type": "moebel",
-     "x": 448,
-     "y": 144,
-     "width": 16,
-     "height": 32,
-     "rotation": 0,
-     "visible": true,
-     "properties": [
-      {
-       "name": "tiefe",
-       "type": "int",
-       "value": 1
-      },
-      {
-       "name": "kollision",
-       "type": "bool",
-       "value": false
-      }
-     ]
-    },
-    {
-     "id": 9,
-     "name": "n9GleisQuer",
-     "type": "moebel",
-     "x": 464,
-     "y": 144,
-     "width": 16,
-     "height": 32,
-     "rotation": 0,
-     "visible": true,
-     "properties": [
-      {
-       "name": "tiefe",
-       "type": "int",
-       "value": 1
-      },
-      {
-       "name": "kollision",
-       "type": "bool",
-       "value": false
-      }
-     ]
-    },
-    {
-     "id": 10,
-     "name": "n9GleisQuer",
-     "type": "moebel",
-     "x": 480,
-     "y": 144,
-     "width": 16,
-     "height": 32,
-     "rotation": 0,
-     "visible": true,
-     "properties": [
-      {
-       "name": "tiefe",
-       "type": "int",
-       "value": 1
-      },
-      {
-       "name": "kollision",
-       "type": "bool",
-       "value": false
-      }
-     ]
-    },
-    {
-     "id": 11,
-     "name": "n9GleisQuer",
-     "type": "moebel",
-     "x": 496,
-     "y": 144,
-     "width": 16,
-     "height": 32,
-     "rotation": 0,
-     "visible": true,
-     "properties": [
-      {
-       "name": "tiefe",
-       "type": "int",
-       "value": 1
-      },
-      {
-       "name": "kollision",
-       "type": "bool",
-       "value": false
-      }
-     ]
-    },
-    {
-     "id": 12,
-     "name": "n9GleisQuer",
-     "type": "moebel",
-     "x": 512,
-     "y": 144,
-     "width": 16,
-     "height": 32,
-     "rotation": 0,
-     "visible": true,
-     "properties": [
-      {
-       "name": "tiefe",
-       "type": "int",
-       "value": 1
-      },
-      {
-       "name": "kollision",
-       "type": "bool",
-       "value": false
-      }
-     ]
-    },
-    {
-     "id": 13,
-     "name": "n9GleisQuer",
-     "type": "moebel",
-     "x": 528,
-     "y": 144,
-     "width": 16,
-     "height": 32,
-     "rotation": 0,
-     "visible": true,
-     "properties": [
-      {
-       "name": "tiefe",
-       "type": "int",
-       "value": 1
-      },
-      {
-       "name": "kollision",
-       "type": "bool",
-       "value": false
-      }
-     ]
-    },
-    {
-     "id": 14,
      "name": "gm9PrellbockHolz",
      "type": "moebel",
      "x": 304,
@@ -3205,11 +3067,149 @@
      ]
     },
     {
-     "id": 15,
+     "id": 9,
      "name": "st5GleisSenkrecht",
      "type": "moebel",
      "x": 304,
      "y": 112,
+     "width": 32,
+     "height": 16,
+     "rotation": 0,
+     "visible": true,
+     "properties": [
+      {
+       "name": "tiefe",
+       "type": "int",
+       "value": 1
+      },
+      {
+       "name": "kollision",
+       "type": "bool",
+       "value": false
+      }
+     ]
+    },
+    {
+     "id": 10,
+     "name": "st5GleisSenkrecht",
+     "type": "moebel",
+     "x": 304,
+     "y": 128,
+     "width": 32,
+     "height": 16,
+     "rotation": 0,
+     "visible": true,
+     "properties": [
+      {
+       "name": "tiefe",
+       "type": "int",
+       "value": 1
+      },
+      {
+       "name": "kollision",
+       "type": "bool",
+       "value": false
+      }
+     ]
+    },
+    {
+     "id": 11,
+     "name": "st5GleisSenkrecht",
+     "type": "moebel",
+     "x": 304,
+     "y": 144,
+     "width": 32,
+     "height": 16,
+     "rotation": 0,
+     "visible": true,
+     "properties": [
+      {
+       "name": "tiefe",
+       "type": "int",
+       "value": 1
+      },
+      {
+       "name": "kollision",
+       "type": "bool",
+       "value": false
+      }
+     ]
+    },
+    {
+     "id": 12,
+     "name": "st5GleisSenkrecht",
+     "type": "moebel",
+     "x": 304,
+     "y": 160,
+     "width": 32,
+     "height": 16,
+     "rotation": 0,
+     "visible": true,
+     "properties": [
+      {
+       "name": "tiefe",
+       "type": "int",
+       "value": 1
+      },
+      {
+       "name": "kollision",
+       "type": "bool",
+       "value": false
+      }
+     ]
+    },
+    {
+     "id": 13,
+     "name": "st5GleisSenkrecht",
+     "type": "moebel",
+     "x": 304,
+     "y": 176,
+     "width": 32,
+     "height": 16,
+     "rotation": 0,
+     "visible": true,
+     "properties": [
+      {
+       "name": "tiefe",
+       "type": "int",
+       "value": 1
+      },
+      {
+       "name": "kollision",
+       "type": "bool",
+       "value": false
+      }
+     ]
+    },
+    {
+     "id": 14,
+     "name": "st5GleisSenkrecht",
+     "type": "moebel",
+     "x": 304,
+     "y": 192,
+     "width": 32,
+     "height": 16,
+     "rotation": 0,
+     "visible": true,
+     "properties": [
+      {
+       "name": "tiefe",
+       "type": "int",
+       "value": 1
+      },
+      {
+       "name": "kollision",
+       "type": "bool",
+       "value": false
+      }
+     ]
+    },
+    {
+     "id": 15,
+     "name": "st5GleisSenkrecht",
+     "type": "moebel",
+     "x": 304,
+     "y": 208,
      "width": 32,
      "height": 16,
      "rotation": 0,
@@ -3232,7 +3232,7 @@
      "name": "st5GleisSenkrecht",
      "type": "moebel",
      "x": 304,
-     "y": 128,
+     "y": 224,
      "width": 32,
      "height": 16,
      "rotation": 0,
@@ -3255,7 +3255,7 @@
      "name": "st5GleisSenkrecht",
      "type": "moebel",
      "x": 304,
-     "y": 144,
+     "y": 240,
      "width": 32,
      "height": 16,
      "rotation": 0,
@@ -3278,7 +3278,7 @@
      "name": "st5GleisSenkrecht",
      "type": "moebel",
      "x": 304,
-     "y": 160,
+     "y": 256,
      "width": 32,
      "height": 16,
      "rotation": 0,
@@ -3301,7 +3301,7 @@
      "name": "st5GleisSenkrecht",
      "type": "moebel",
      "x": 304,
-     "y": 176,
+     "y": 272,
      "width": 32,
      "height": 16,
      "rotation": 0,
@@ -3324,7 +3324,7 @@
      "name": "st5GleisSenkrecht",
      "type": "moebel",
      "x": 304,
-     "y": 192,
+     "y": 288,
      "width": 32,
      "height": 16,
      "rotation": 0,
@@ -3347,7 +3347,7 @@
      "name": "st5GleisSenkrecht",
      "type": "moebel",
      "x": 304,
-     "y": 208,
+     "y": 304,
      "width": 32,
      "height": 16,
      "rotation": 0,
@@ -3370,7 +3370,7 @@
      "name": "st5GleisSenkrecht",
      "type": "moebel",
      "x": 304,
-     "y": 224,
+     "y": 320,
      "width": 32,
      "height": 16,
      "rotation": 0,
@@ -3393,7 +3393,7 @@
      "name": "st5GleisSenkrecht",
      "type": "moebel",
      "x": 304,
-     "y": 240,
+     "y": 336,
      "width": 32,
      "height": 16,
      "rotation": 0,
@@ -3416,144 +3416,6 @@
      "name": "st5GleisSenkrecht",
      "type": "moebel",
      "x": 304,
-     "y": 256,
-     "width": 32,
-     "height": 16,
-     "rotation": 0,
-     "visible": true,
-     "properties": [
-      {
-       "name": "tiefe",
-       "type": "int",
-       "value": 1
-      },
-      {
-       "name": "kollision",
-       "type": "bool",
-       "value": false
-      }
-     ]
-    },
-    {
-     "id": 25,
-     "name": "st5GleisSenkrecht",
-     "type": "moebel",
-     "x": 304,
-     "y": 272,
-     "width": 32,
-     "height": 16,
-     "rotation": 0,
-     "visible": true,
-     "properties": [
-      {
-       "name": "tiefe",
-       "type": "int",
-       "value": 1
-      },
-      {
-       "name": "kollision",
-       "type": "bool",
-       "value": false
-      }
-     ]
-    },
-    {
-     "id": 26,
-     "name": "st5GleisSenkrecht",
-     "type": "moebel",
-     "x": 304,
-     "y": 288,
-     "width": 32,
-     "height": 16,
-     "rotation": 0,
-     "visible": true,
-     "properties": [
-      {
-       "name": "tiefe",
-       "type": "int",
-       "value": 1
-      },
-      {
-       "name": "kollision",
-       "type": "bool",
-       "value": false
-      }
-     ]
-    },
-    {
-     "id": 27,
-     "name": "st5GleisSenkrecht",
-     "type": "moebel",
-     "x": 304,
-     "y": 304,
-     "width": 32,
-     "height": 16,
-     "rotation": 0,
-     "visible": true,
-     "properties": [
-      {
-       "name": "tiefe",
-       "type": "int",
-       "value": 1
-      },
-      {
-       "name": "kollision",
-       "type": "bool",
-       "value": false
-      }
-     ]
-    },
-    {
-     "id": 28,
-     "name": "st5GleisSenkrecht",
-     "type": "moebel",
-     "x": 304,
-     "y": 320,
-     "width": 32,
-     "height": 16,
-     "rotation": 0,
-     "visible": true,
-     "properties": [
-      {
-       "name": "tiefe",
-       "type": "int",
-       "value": 1
-      },
-      {
-       "name": "kollision",
-       "type": "bool",
-       "value": false
-      }
-     ]
-    },
-    {
-     "id": 29,
-     "name": "st5GleisSenkrecht",
-     "type": "moebel",
-     "x": 304,
-     "y": 336,
-     "width": 32,
-     "height": 16,
-     "rotation": 0,
-     "visible": true,
-     "properties": [
-      {
-       "name": "tiefe",
-       "type": "int",
-       "value": 1
-      },
-      {
-       "name": "kollision",
-       "type": "bool",
-       "value": false
-      }
-     ]
-    },
-    {
-     "id": 30,
-     "name": "st5GleisSenkrecht",
-     "type": "moebel",
-     "x": 304,
      "y": 352,
      "width": 32,
      "height": 16,
@@ -3573,7 +3435,7 @@
      ]
     },
     {
-     "id": 31,
+     "id": 25,
      "name": "n7Stuetze",
      "type": "moebel",
      "x": 288,
@@ -3596,7 +3458,7 @@
      ]
     },
     {
-     "id": 32,
+     "id": 26,
      "name": "n7Grubenlampe",
      "type": "moebel",
      "x": 320,
@@ -3619,7 +3481,7 @@
      ]
     },
     {
-     "id": 33,
+     "id": 27,
      "name": "n7Stuetze",
      "type": "moebel",
      "x": 288,
@@ -3642,7 +3504,7 @@
      ]
     },
     {
-     "id": 34,
+     "id": 28,
      "name": "n7Stuetze",
      "type": "moebel",
      "x": 288,
@@ -3665,7 +3527,7 @@
      ]
     },
     {
-     "id": 35,
+     "id": 29,
      "name": "n7Grubenlampe",
      "type": "moebel",
      "x": 320,
@@ -3688,7 +3550,7 @@
      ]
     },
     {
-     "id": 36,
+     "id": 30,
      "name": "n7Stuetze",
      "type": "moebel",
      "x": 288,
@@ -3711,7 +3573,7 @@
      ]
     },
     {
-     "id": 37,
+     "id": 31,
      "name": "cc5Tisch",
      "type": "moebel",
      "x": 80,
@@ -3734,7 +3596,7 @@
      ]
     },
     {
-     "id": 38,
+     "id": 32,
      "name": "cc4Hocker",
      "type": "moebel",
      "x": 64,
@@ -3757,7 +3619,7 @@
      ]
     },
     {
-     "id": 39,
+     "id": 33,
      "name": "cc4Hocker",
      "type": "moebel",
      "x": 112,
@@ -3780,7 +3642,7 @@
      ]
     },
     {
-     "id": 40,
+     "id": 34,
      "name": "n7Goldader",
      "type": "moebel",
      "x": 528,
@@ -3803,7 +3665,7 @@
      ]
     },
     {
-     "id": 41,
+     "id": 35,
      "name": "n7Goldader",
      "type": "moebel",
      "x": 576,
@@ -3826,30 +3688,7 @@
      ]
     },
     {
-     "id": 42,
-     "name": "n7Lore",
-     "type": "moebel",
-     "x": 480,
-     "y": 144,
-     "width": 32,
-     "height": 32,
-     "rotation": 0,
-     "visible": true,
-     "properties": [
-      {
-       "name": "tiefe",
-       "type": "int",
-       "value": 168
-      },
-      {
-       "name": "kollision",
-       "type": "bool",
-       "value": true
-      }
-     ]
-    },
-    {
-     "id": 43,
+     "id": 36,
      "name": "st5PfuetzeGross",
      "type": "moebel",
      "x": 496,
@@ -3872,7 +3711,7 @@
      ]
     },
     {
-     "id": 44,
+     "id": 37,
      "name": "st5PfuetzeKlein",
      "type": "moebel",
      "x": 544,
@@ -3895,7 +3734,7 @@
      ]
     },
     {
-     "id": 45,
+     "id": 38,
      "name": "st5PfuetzeKlein",
      "type": "moebel",
      "x": 464,
@@ -3918,7 +3757,7 @@
      ]
     },
     {
-     "id": 46,
+     "id": 39,
      "name": "st5Schotterhaufen",
      "type": "moebel",
      "x": 560,
@@ -3941,7 +3780,7 @@
      ]
     },
     {
-     "id": 47,
+     "id": 40,
      "name": "cc4Holzstapel",
      "type": "moebel",
      "x": 176,
@@ -3964,30 +3803,7 @@
      ]
     },
     {
-     "id": 48,
-     "name": "cc4Gleisende",
-     "type": "moebel",
-     "x": 544,
-     "y": 144,
-     "width": 16,
-     "height": 16,
-     "rotation": 0,
-     "visible": true,
-     "properties": [
-      {
-       "name": "tiefe",
-       "type": "int",
-       "value": 152
-      },
-      {
-       "name": "kollision",
-       "type": "bool",
-       "value": true
-      }
-     ]
-    },
-    {
-     "id": 49,
+     "id": 41,
      "name": "mf7Truhe",
      "type": "moebel",
      "x": 128,
@@ -4010,7 +3826,7 @@
      ]
     },
     {
-     "id": 50,
+     "id": 42,
      "name": "st5Schotterhaufen",
      "type": "moebel",
      "x": 48,
@@ -4033,7 +3849,7 @@
      ]
     },
     {
-     "id": 51,
+     "id": 43,
      "name": "rv8Werkzeugkiste",
      "type": "moebel",
      "x": 160,
@@ -4056,7 +3872,7 @@
      ]
     },
     {
-     "id": 52,
+     "id": 44,
      "name": "cc4Holzstapel",
      "type": "moebel",
      "x": 176,
@@ -4079,7 +3895,7 @@
      ]
     },
     {
-     "id": 53,
+     "id": 45,
      "name": "iwFass",
      "type": "moebel",
      "x": 64,
@@ -4102,7 +3918,7 @@
      ]
     },
     {
-     "id": 54,
+     "id": 46,
      "name": "iwFass",
      "type": "moebel",
      "x": 80,
@@ -4125,7 +3941,7 @@
      ]
     },
     {
-     "id": 55,
+     "id": 47,
      "name": "cc4Holzstapel",
      "type": "moebel",
      "x": 448,
@@ -4148,7 +3964,7 @@
      ]
     },
     {
-     "id": 56,
+     "id": 48,
      "name": "cc4Holzstapel",
      "type": "moebel",
      "x": 576,
@@ -4171,7 +3987,7 @@
      ]
     },
     {
-     "id": 57,
+     "id": 49,
      "name": "iwFass",
      "type": "moebel",
      "x": 592,
@@ -4194,7 +4010,7 @@
      ]
     },
     {
-     "id": 58,
+     "id": 50,
      "name": "n7Stuetze",
      "type": "moebel",
      "x": 224,
@@ -4217,7 +4033,7 @@
      ]
     },
     {
-     "id": 59,
+     "id": 51,
      "name": "n7Stuetze",
      "type": "moebel",
      "x": 384,
@@ -4240,7 +4056,7 @@
      ]
     },
     {
-     "id": 60,
+     "id": 52,
      "name": "n7Grubenlampe",
      "type": "moebel",
      "x": 256,
@@ -4263,30 +4079,7 @@
      ]
     },
     {
-     "id": 61,
-     "name": "cc4Holzstapel",
-     "type": "moebel",
-     "x": 64,
-     "y": 96,
-     "width": 32,
-     "height": 32,
-     "rotation": 0,
-     "visible": true,
-     "properties": [
-      {
-       "name": "tiefe",
-       "type": "int",
-       "value": 120
-      },
-      {
-       "name": "kollision",
-       "type": "bool",
-       "value": true
-      }
-     ]
-    },
-    {
-     "id": 62,
+     "id": 53,
      "name": "st5Schotterhaufen",
      "type": "moebel",
      "x": 528,
@@ -4309,99 +4102,7 @@
      ]
     },
     {
-     "id": 63,
-     "name": "n7Lore",
-     "type": "moebel",
-     "x": 304,
-     "y": 256,
-     "width": 32,
-     "height": 32,
-     "rotation": 0,
-     "visible": true,
-     "properties": [
-      {
-       "name": "tiefe",
-       "type": "int",
-       "value": 280
-      },
-      {
-       "name": "kollision",
-       "type": "bool",
-       "value": true
-      }
-     ]
-    },
-    {
-     "id": 64,
-     "name": "cc4Holzstapel",
-     "type": "moebel",
-     "x": 128,
-     "y": 128,
-     "width": 32,
-     "height": 32,
-     "rotation": 0,
-     "visible": true,
-     "properties": [
-      {
-       "name": "tiefe",
-       "type": "int",
-       "value": 152
-      },
-      {
-       "name": "kollision",
-       "type": "bool",
-       "value": true
-      }
-     ]
-    },
-    {
-     "id": 65,
-     "name": "cc4Holzstapel",
-     "type": "moebel",
-     "x": 544,
-     "y": 192,
-     "width": 32,
-     "height": 32,
-     "rotation": 0,
-     "visible": true,
-     "properties": [
-      {
-       "name": "tiefe",
-       "type": "int",
-       "value": 216
-      },
-      {
-       "name": "kollision",
-       "type": "bool",
-       "value": true
-      }
-     ]
-    },
-    {
-     "id": 66,
-     "name": "cc4Holzstapel",
-     "type": "moebel",
-     "x": 560,
-     "y": 272,
-     "width": 32,
-     "height": 32,
-     "rotation": 0,
-     "visible": true,
-     "properties": [
-      {
-       "name": "tiefe",
-       "type": "int",
-       "value": 296
-      },
-      {
-       "name": "kollision",
-       "type": "bool",
-       "value": true
-      }
-     ]
-    },
-    {
-     "id": 67,
+     "id": 54,
      "name": "n7Stuetze",
      "type": "moebel",
      "x": 480,
@@ -4424,7 +4125,7 @@
      ]
     },
     {
-     "id": 68,
+     "id": 55,
      "name": "n7Stuetze",
      "type": "moebel",
      "x": 560,
@@ -4447,53 +4148,7 @@
      ]
     },
     {
-     "id": 69,
-     "name": "iwFass",
-     "type": "moebel",
-     "x": 192,
-     "y": 96,
-     "width": 16,
-     "height": 16,
-     "rotation": 0,
-     "visible": true,
-     "properties": [
-      {
-       "name": "tiefe",
-       "type": "int",
-       "value": 104
-      },
-      {
-       "name": "kollision",
-       "type": "bool",
-       "value": true
-      }
-     ]
-    },
-    {
-     "id": 70,
-     "name": "iwFass",
-     "type": "moebel",
-     "x": 464,
-     "y": 272,
-     "width": 16,
-     "height": 16,
-     "rotation": 0,
-     "visible": true,
-     "properties": [
-      {
-       "name": "tiefe",
-       "type": "int",
-       "value": 280
-      },
-      {
-       "name": "kollision",
-       "type": "bool",
-       "value": true
-      }
-     ]
-    },
-    {
-     "id": 71,
+     "id": 56,
      "name": "st5Schotterhaufen",
      "type": "moebel",
      "x": 480,
@@ -4516,11 +4171,11 @@
      ]
     },
     {
-     "id": 72,
-     "name": "cc4Holzstapel",
+     "id": 57,
+     "name": "n10LoreVorn",
      "type": "moebel",
-     "x": 528,
-     "y": 272,
+     "x": 304,
+     "y": 128,
      "width": 32,
      "height": 32,
      "rotation": 0,
@@ -4529,7 +4184,7 @@
       {
        "name": "tiefe",
        "type": "int",
-       "value": 296
+       "value": 152
       },
       {
        "name": "kollision",
@@ -4539,12 +4194,127 @@
      ]
     },
     {
-     "id": 73,
-     "name": "iwFass",
+     "id": 58,
+     "name": "n7Grubenlampe",
      "type": "moebel",
-     "x": 208,
-     "y": 144,
+     "x": 96,
+     "y": 64,
      "width": 16,
+     "height": 32,
+     "rotation": 0,
+     "visible": true,
+     "properties": [
+      {
+       "name": "tiefe",
+       "type": "int",
+       "value": 0
+      },
+      {
+       "name": "kollision",
+       "type": "bool",
+       "value": false
+      }
+     ]
+    },
+    {
+     "id": 59,
+     "name": "n7Grubenlampe",
+     "type": "moebel",
+     "x": 496,
+     "y": 112,
+     "width": 16,
+     "height": 32,
+     "rotation": 0,
+     "visible": true,
+     "properties": [
+      {
+       "name": "tiefe",
+       "type": "int",
+       "value": 0
+      },
+      {
+       "name": "kollision",
+       "type": "bool",
+       "value": false
+      }
+     ]
+    },
+    {
+     "id": 60,
+     "name": "n7Grubenlampe",
+     "type": "moebel",
+     "x": 400,
+     "y": 208,
+     "width": 16,
+     "height": 32,
+     "rotation": 0,
+     "visible": true,
+     "properties": [
+      {
+       "name": "tiefe",
+       "type": "int",
+       "value": 0
+      },
+      {
+       "name": "kollision",
+       "type": "bool",
+       "value": false
+      }
+     ]
+    },
+    {
+     "id": 61,
+     "name": "n7Stuetze",
+     "type": "moebel",
+     "x": 112,
+     "y": 112,
+     "width": 48,
+     "height": 48,
+     "rotation": 0,
+     "visible": true,
+     "properties": [
+      {
+       "name": "tiefe",
+       "type": "int",
+       "value": 1
+      },
+      {
+       "name": "kollision",
+       "type": "bool",
+       "value": false
+      }
+     ]
+    },
+    {
+     "id": 62,
+     "name": "st5Schotterhaufen",
+     "type": "moebel",
+     "x": 48,
+     "y": 96,
+     "width": 48,
+     "height": 16,
+     "rotation": 0,
+     "visible": true,
+     "properties": [
+      {
+       "name": "tiefe",
+       "type": "int",
+       "value": 104
+      },
+      {
+       "name": "kollision",
+       "type": "bool",
+       "value": true
+      }
+     ]
+    },
+    {
+     "id": 63,
+     "name": "st5Schotterhaufen",
+     "type": "moebel",
+     "x": 448,
+     "y": 144,
+     "width": 48,
      "height": 16,
      "rotation": 0,
      "visible": true,
@@ -4562,20 +4332,43 @@
      ]
     },
     {
-     "id": 74,
-     "name": "cc4Holzstapel",
+     "id": 64,
+     "name": "st5Schotterhaufen",
      "type": "moebel",
-     "x": 432,
+     "x": 528,
+     "y": 144,
+     "width": 48,
+     "height": 16,
+     "rotation": 0,
+     "visible": true,
+     "properties": [
+      {
+       "name": "tiefe",
+       "type": "int",
+       "value": 152
+      },
+      {
+       "name": "kollision",
+       "type": "bool",
+       "value": true
+      }
+     ]
+    },
+    {
+     "id": 65,
+     "name": "st5Schotterhaufen",
+     "type": "moebel",
+     "x": 528,
      "y": 192,
-     "width": 32,
-     "height": 32,
+     "width": 48,
+     "height": 16,
      "rotation": 0,
      "visible": true,
      "properties": [
       {
        "name": "tiefe",
        "type": "int",
-       "value": 216
+       "value": 200
       },
       {
        "name": "kollision",
@@ -4585,12 +4378,12 @@
      ]
     },
     {
-     "id": 75,
-     "name": "iwFass",
+     "id": 66,
+     "name": "st5Schotterhaufen",
      "type": "moebel",
-     "x": 48,
-     "y": 48,
-     "width": 16,
+     "x": 448,
+     "y": 240,
+     "width": 48,
      "height": 16,
      "rotation": 0,
      "visible": true,
@@ -4598,7 +4391,7 @@
       {
        "name": "tiefe",
        "type": "int",
-       "value": 56
+       "value": 248
       },
       {
        "name": "kollision",
@@ -4608,12 +4401,12 @@
      ]
     },
     {
-     "id": 76,
-     "name": "iwFass",
+     "id": 67,
+     "name": "st5Schotterhaufen",
      "type": "moebel",
-     "x": 64,
-     "y": 48,
-     "width": 16,
+     "x": 448,
+     "y": 288,
+     "width": 48,
      "height": 16,
      "rotation": 0,
      "visible": true,
@@ -4621,7 +4414,30 @@
       {
        "name": "tiefe",
        "type": "int",
-       "value": 56
+       "value": 296
+      },
+      {
+       "name": "kollision",
+       "type": "bool",
+       "value": true
+      }
+     ]
+    },
+    {
+     "id": 68,
+     "name": "st5Schotterhaufen",
+     "type": "moebel",
+     "x": 528,
+     "y": 288,
+     "width": 48,
+     "height": 16,
+     "rotation": 0,
+     "visible": true,
+     "properties": [
+      {
+       "name": "tiefe",
+       "type": "int",
+       "value": 296
       },
       {
        "name": "kollision",

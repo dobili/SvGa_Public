@@ -1848,6 +1848,18 @@
           "karte": "wegIronwoodSilicon.raststaette",
           "art": "gegenstand",
           "dialog": "weg-ironwood-silicon.seite04"
+        },
+        {
+          "name": "werbetafelZero",
+          "karte": "wegIronwoodSilicon.glasbruecke",
+          "art": "dialog",
+          "dialog": "weg-ironwood-silicon.werbetafel_zero"
+        },
+        {
+          "name": "schildSmartCity",
+          "karte": "wegIronwoodSilicon.glasbruecke",
+          "art": "dialog",
+          "dialog": "weg-ironwood-silicon.schild_smart_city"
         }
       ]
     },
@@ -2085,6 +2097,24 @@
             "karte": "siliconBay.aussen",
             "ausloeser": "altstadt"
           }
+        },
+        {
+          "name": "infosaeule",
+          "karte": "siliconBay.aussen",
+          "art": "dialog",
+          "dialog": "silicon-bay-aussen.infosaeule"
+        },
+        {
+          "name": "werbetafel",
+          "karte": "siliconBay.aussen",
+          "art": "dialog",
+          "dialog": "silicon-bay-aussen.werbetafel"
+        },
+        {
+          "name": "netze",
+          "karte": "siliconBay.hafen",
+          "art": "dialog",
+          "dialog": "silicon-bay-aussen.netze"
         }
       ],
       "club": {
@@ -3387,6 +3417,12 @@
           "karte": "crossroads.aussen",
           "art": "dialog",
           "dialog": "crossroads-aussen.viehgatter"
+        },
+        {
+          "name": "fernbus",
+          "karte": "crossroads.aussen",
+          "art": "dialog",
+          "dialog": "crossroads-aussen.fernbus"
         }
       ]
     },

@@ -218,5 +218,8 @@ Dialog `crossroads-aussen.viehgatter`. Nach Novas Bitte gibt Darlene eine Liefer
 den Gatterschlüssel mit (`darlene_lieferung`, Variablen `lieferungFuerDolores`,
 `gatterschluessel`; Quest `crossroads.lieferung`, Lohn 20 Münzen bei Dolores). Mit dem Schlüssel
 reist {held} über die Alte Minenstraße nach Ghost Town (vorerst `reise` nach
-`ghostTown.aussen`, Auslöser `wegPinewood`; die Karte der Minenstraße Q4 fehlt noch). Der Fernbus Q3
-ist noch offen.
+`ghostTown.aussen`, Auslöser `wegPinewood`; die Karte der Minenstraße Q4 fehlt noch). Fernbus Q3: Wartehäuschen am Highway West (1, 17),
+Auslöser `fernbus` (3, 20) in allen Varianten. Der Dialog `crossroads-aussen.fernbus` fährt zu den
+Haltestellen und Bahnhöfen von Maple Falls, Cedar Creek, Riverton, Ironwood, Port Delacroix, Desert
+Springs, zur Raststätte vor Silicon Bay und an den Südrand von Summit City; zurück geht es mit den
+Bussen und Zügen der Städte.

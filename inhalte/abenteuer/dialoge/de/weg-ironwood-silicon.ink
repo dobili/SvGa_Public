@@ -219,3 +219,15 @@ Eine Seite aus einem Handbuch. Jemand vermisst sie bestimmt. #sprecher:ambrose
 ~ buchseiten = buchseiten + 1
 -> END
 
+// ---------------------------------------------------------------- Ansehen auf der Glasbrücke (Runde 6)
+
+=== schild_smart_city ===
+Am Fuß der Rampe steht ein Schild: „Ab hier: Smart City. Bitte Sensoren nicht verdecken.“ #sprecher:erzaehler
+Welche Sensoren? Ich sehe nur Möwen. #sprecher:ambrose
+-> END
+
+=== werbetafel_zero ===
+Auf der Werbetafel am Stadtrand dreht sich ein gläserner König, dann erscheint die Schrift: „ZERO. Nie wieder Fehler.“ #sprecher:erzaehler
+Aus Fehlern habe ich alles gelernt, was ich weiß. Was lernt man aus gar nichts? #sprecher:ambrose
+-> END
+

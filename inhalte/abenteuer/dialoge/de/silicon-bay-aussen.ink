@@ -178,3 +178,19 @@ Am Fährhäuschen hängt ein Fahrplan: „Pelikaninsel. Sonntags.“ Der Fährma
 Heute ist nicht Sonntag. Und für die Insel brauchst du einen Grund. Hol dir erst die Nadel im Club. #sprecher:faehrmann
 -> END
 
+// ---------------------------------------------------------------- Ansehen (Runde 6)
+
+=== infosaeule ===
+{~Die Infosäule zeigt einen Stadtplan, der sich dreht, sobald man hinsieht: „Sie sind hier.“|Auf der Infosäule läuft die Wettervorhersage: klar, kalt, Empfang ausgezeichnet.|Die Infosäule fragt: „Brauchen Sie Hilfe?“ Bevor du antworten kannst, schlägt sie drei Cafés vor.} #sprecher:erzaehler
+-> END
+
+=== werbetafel ===
+Auf der Werbetafel leuchtet ZERO in weißer Schrift auf schwarzem Grund: „Nie wieder Fehler.“ #sprecher:erzaehler
+Nie wieder Fehler. Und nie wieder ein Grund, etwas Neues zu probieren. #sprecher:ambrose
+-> END
+
+=== netze ===
+An der Fassade der alten Fischhalle hängen Netze zum Trocknen, steif vor Salz. Über dem Tor steht verblichen: „Fresh Fish Daily“. #sprecher:erzaehler
+Bevor die Bildschirme kamen, roch diese Stadt nach Fisch. Ein ehrlicher Geruch. #sprecher:ambrose
+-> END
+

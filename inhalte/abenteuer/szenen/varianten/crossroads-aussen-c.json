@@ -413,10 +413,6 @@
       "feld": [53, 1]
     },
     {
-      "moebel": "wg4Wildblumen",
-      "feld": [4, 18]
-    },
-    {
       "moebel": "wg4BlumeGelb",
       "feld": [50, 1]
     },
@@ -499,10 +495,6 @@
     {
       "moebel": "wg4Wildblumen",
       "feld": [58, 10]
-    },
-    {
-      "moebel": "wg4BlumeGelb",
-      "feld": [2, 18]
     },
     {
       "moebel": "wg4Wildblumen",
@@ -591,6 +583,10 @@
     {
       "moebel": "wg4Busch",
       "feld": [29, 26]
+    },
+    {
+      "moebel": "ws5Wartehaus",
+      "feld": [1, 17]
     }
   ],
   "ausloeser": [
@@ -640,6 +636,10 @@
     {
       "name": "viehgatter",
       "feld": [57, 23]
+    },
+    {
+      "name": "fernbus",
+      "feld": [3, 20]
     }
   ],
   "figuren": [

@@ -1070,6 +1070,14 @@
     {
       "name": "ereignisStream",
       "feld": [71, 8]
+    },
+    {
+      "name": "werbetafelZero",
+      "feld": [10, 14]
+    },
+    {
+      "name": "schildSmartCity",
+      "feld": [136, 17]
     }
   ],
   "figuren": [

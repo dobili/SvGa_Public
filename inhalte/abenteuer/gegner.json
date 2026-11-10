@@ -1696,6 +1696,37 @@
           "wert": "schlagreflex"
         }
       ]
+    },
+    {
+      "kennung": "wegRivertonIronwood.dime",
+      "name": "figur.dime.name",
+      "rolle": "strasse",
+      "portraet": "portraets/dime.svg",
+      "staerke": {
+        "art": "aktuell",
+        "versatz": -50
+      },
+      "gewichte": {
+        "drohungIgnoriert": 1.3,
+        "schlagreflex": 1.2
+      },
+      "stil": {
+        "angreifer": 120,
+        "taktiker": 100
+      },
+      "eroeffnung": {
+        "art": "frei"
+      },
+      "steckbrief": [
+        {
+          "art": "stil",
+          "wert": "angreifer"
+        },
+        {
+          "art": "fehlerart",
+          "wert": "drohungIgnoriert"
+        }
+      ]
     }
   ]
 }

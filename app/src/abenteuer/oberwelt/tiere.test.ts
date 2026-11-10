@@ -1,6 +1,13 @@
 /** Tests für tiere.ts: Ersatztabelle, Scharen (Auftrag Runde 7, Dokument 16, Abschnitt 5.2). */
 import { describe, expect, it } from "vitest";
-import { scharGroesse, tierartVon, TIERBILDER } from "./tiere";
+import {
+  scharGroesse,
+  schwimmversatz,
+  tierAnsicht,
+  tierartVon,
+  TIERBILDER,
+  WASSERLINIE,
+} from "./tiere";
 
 describe("tierartVon", () => {
   it("findet eigene Bilder und nahen Ersatz", () => {
@@ -40,5 +47,28 @@ describe("scharGroesse", () => {
     }
     expect(scharGroesse("hund")).toBe(1);
     expect(scharGroesse("ziege")).toBe(1);
+  });
+});
+
+describe("tierAnsicht", () => {
+  it("zeigt Landtiere ganz, den Fuß eine halbe Kachel unter dem Ursprung", () => {
+    expect(tierAnsicht(32, 16, false)).toEqual({ sichtbar: 32, ursprungY: 24 / 32 });
+  });
+
+  it("schneidet Schwimmer an der Wasserlinie ab und lässt sie um den Rest sinken", () => {
+    const { sichtbar, ursprungY } = tierAnsicht(32, 16, true);
+    expect(sichtbar).toBe(Math.round(32 * WASSERLINIE));
+    // Der sichtbare Unterrand liegt um den abgeschnittenen Teil tiefer als beim Landtier.
+    const unterrandLand = 32 - 32 * (24 / 32);
+    const unterrandSchwimmer = sichtbar - 32 * ursprungY;
+    expect(unterrandSchwimmer).toBe(unterrandLand);
+    expect(32 * ursprungY).toBeLessThan(24);
+  });
+});
+
+describe("schwimmversatz", () => {
+  it("reiht Schwimmer entlang des Wegs auf, nicht seitlich ans Ufer", () => {
+    expect(schwimmversatz({ x: 22, y: 30 }, { x: 22, y: 44 }, 2, 2)).toEqual({ x: 0, y: 4 });
+    expect(schwimmversatz({ x: 5, y: 41 }, { x: 15, y: 41 }, 1, 2)).toEqual({ x: 2, y: 0 });
   });
 });

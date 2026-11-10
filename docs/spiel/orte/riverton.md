@@ -649,6 +649,16 @@ der Story-Bibel und die Wege.
    | `bruecke` | `seite07`                | (27, 66) | Kanalufer                              |
    | `bruecke` | `finchLaeuferA`          | (16, 67) | unter dem Finkenzeichen am Brückenfuß  |
 
+   **Umgesetzt in Runde 6 (mittel-2):** Auslöser in A, B und C (Felder wie oben; `meilenstein` in A
+   (15, 9), `fundKonservendose` (19, 157), `waerterhaus` (19, 23), `rastKanal` in C (9, 113)), Dialoge
+   in `weg-riverton-ironwood.ink`: `meilenstein`, `rast_kanal`, `fund_konservendose`, `waerterhaus`,
+   `aussicht_tal`, `kreidespringer` (Rätsel: Grundreihenmatt, Losungswort „Td8“),
+   `kreidespringer_geloest`, `brueckenbauern` (Dime, Figur bei (22, 70); Blitz 3 + 2, Begegnung
+   `wegRivertonIronwood.dime`), `drohne` (Spur P1), `seite07`, `finch_laeufer_a`. Quest
+   `wegRivertonIronwood.brueckenbauern` (`klein`, Lohn 20 Münzen nach der Partie). Funde
+   `konservendose`, `kreide1`, `spurPM1`, `seite07`, `finchLaeuferA`. Das Feld des Läufers im
+   Meisterproblem fehlt noch (`feld` in funde.json, Haupt-Chat).
+
    **Leben (Regel 10.53):** Kanalweg: Angler, Radfahrerin, Kind mit der Entenfamilie (Dokument 16,
    5.3; Ambrose antwortet), Landvermesser; Tiere Enten, Gänse, Ratten, Krähen, Reiher, Hase. Brücke:
    Brückenwärter, Kiebitz an den Tischen (Washington Square Park, 16 Nr. 36), Vogelbeobachterin

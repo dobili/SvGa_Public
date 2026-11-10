@@ -1564,5 +1564,18 @@
   "tagebuch.finch.stand": "{anzahl} von {gesamt} Figuren gefunden.",
   "tagebuch.finch.gefunden": "gefunden",
   "tagebuch.finch.offen": "noch versteckt",
-  "quest.stream.schritt3": "Spiel live gegen Kiki. Der Chat wählt ihren ersten Zug, und einer der Vorschläge ist eine Falle für sie selbst."
+  "quest.stream.schritt3": "Spiel live gegen Kiki. Der Chat wählt ihren ersten Zug, und einer der Vorschläge ist eine Falle für sie selbst.",
+  "quest.brueckenbauern.titel": "Die Brückenbauern",
+  "quest.brueckenbauern.schritt1": "Das Losungswort am Kreidespringer herausfinden.",
+  "quest.brueckenbauern.schritt2": "Eine Blitzpartie gegen Dime unter der Brücke.",
+  "fund.konservendose.name": "Konservendose mit Zettel",
+  "fund.konservendose.text": "Eine Dose mit Deckel, darin ein Zettel: „Wer das findet: komm nach Lockport. Ich hab schon 41 Flaschen. Finn“",
+  "fund.finchLaeuferA.name": "Läufer aus Buchsbaum",
+  "fund.finchLaeuferA.text": "Ein weißer Läufer aus hellem Holz, unter dem Fuß ist ein Feld eingebrannt. Daneben ein kleiner Fink aus Blech.",
+  "fund.seite07.name": "Seite aus einem Handbuch, Kapitel 7",
+  "fund.seite07.text": "Kapitel 7: „Taktik: Wie man aus kleinen Vorteilen Material gewinnt“. Eine Seite aus einem Handbuch, Kapitel 7.",
+  "fund.spurPM1.name": "Foto der Drohne",
+  "fund.spurPM1.text": "Eine Drohne mit dem Logo von Perfect Move über dem Kanal. Sie filmt jede Partie unter der Brücke.",
+  "fund.kreide1.name": "Kreidespringer unter der Brücke",
+  "fund.kreide1.text": "Ein Springer aus Kreide am Brückenfuß. Wer ihn findet und das Wort kennt, darf mitspielen."
 }

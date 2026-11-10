@@ -215,6 +215,35 @@ test("Tagebuch: Sammelkarte der Finch-Jagd zeigt die gefundene Figur", async ({ 
   await expect(page.getByTestId("abenteuer-tagebuch")).toContainText("1 von 16 Figuren gefunden.");
 });
 
+test("Weg 3: Kreidespringer an der Brücke, Rätsel lösen, Losungswort", async ({ page }) => {
+  // Runde 6, Ereignis „Die Brückenbauern“ (Dokument 15, 2.3): Td8 ist das Wort.
+  const stand = {
+    ...STAND,
+    position: {
+      karte: "wegRivertonIronwood.bruecke",
+      ...feldDarunter("weg-riverton-ironwood-2", "kreide1"),
+      richtung: "oben",
+    },
+  };
+  await starteImBrowser(page);
+  await expect.poll(() => page.evaluate(schreibeStand, stand)).toBe(true);
+  await page.reload();
+  await page.goto("/app/#abenteuer");
+  await page.getByTestId("abenteuer-laden").click();
+  await expect(page.getByTestId("abenteuer-welt")).toBeVisible({ timeout: 30000 });
+  const aktion = page.getByTestId("abenteuer-aktion");
+  await expect(aktion).toHaveText("Ansehen", { timeout: 30000 });
+  await aktion.click();
+  const td8 = page.locator(".abenteuer-dialog-wahlen button", { hasText: "Td8" });
+  for (let i = 0; i < 10 && !(await td8.isVisible()); i++) {
+    const weiter = page.locator(".abenteuer-dialog-weiter");
+    if (await weiter.isVisible()) await weiter.click();
+    else await page.waitForTimeout(100);
+  }
+  await td8.click();
+  await expect(page.locator(".abenteuer-dialog")).toContainText("Matt auf der Grundreihe");
+});
+
 test("Erinnerung London 1851: Sepia, kein Tagebuch, keine Münzen", async ({ page }) => {
   const stand = {
     ...STAND,

@@ -1324,7 +1324,7 @@
       {
        "name": "bis",
        "type": "string",
-       "value": "11,12"
+       "value": "10,12"
       },
       {
        "name": "tun",

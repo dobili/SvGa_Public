@@ -147,3 +147,36 @@ const SCHARVERSATZ: readonly { readonly x: number; readonly y: number }[] = [
 export function scharversatz(i: number): { readonly x: number; readonly y: number } {
   return SCHARVERSATZ[i % SCHARVERSATZ.length] ?? { x: 0, y: 0 };
 }
+
+/** Schwimmer zeigen nur den Teil über der Wasserlinie (Regel 10.55; wie belebungsvorschau.py). */
+export const WASSERLINIE = 0.85;
+
+/**
+ * Sichtbare Höhe und Ursprung eines Tiers in Pixeln (Ursprung y als Anteil der Bildhöhe): Der
+ * Ursprung liegt eine halbe Kachel über dem Fuß; ein Schwimmer verliert unten den Teil unter der
+ * Wasserlinie und sinkt um genau diesen Teil tiefer, damit er im Wasser liegt statt darauf steht.
+ * Beispiel: Ente 32 hoch, Kachel 16, schwimmend → sichtbar 27, Ursprung (27 − 8) / 32.
+ */
+export function tierAnsicht(
+  hoehe: number,
+  kachel: number,
+  schwimmt: boolean,
+): { readonly sichtbar: number; readonly ursprungY: number } {
+  const sichtbar = schwimmt ? Math.round(hoehe * WASSERLINIE) : hoehe;
+  return { sichtbar, ursprungY: (sichtbar - kachel / 2) / hoehe };
+}
+
+/**
+ * Versatz des i-ten Schwimmers einer Schar: in einer Reihe entlang des Schwimmwegs (von → bis),
+ * damit keiner ans Ufer gerät (Kanal von Norden nach Süden: untereinander).
+ * Beispiel: von (22, 30), bis (22, 44), i = 2, Abstand 2 → (0, 4).
+ */
+export function schwimmversatz(
+  von: { readonly x: number; readonly y: number },
+  bis: { readonly x: number; readonly y: number },
+  i: number,
+  abstand: number,
+): { readonly x: number; readonly y: number } {
+  const senkrecht = Math.abs(bis.y - von.y) >= Math.abs(bis.x - von.x);
+  return senkrecht ? { x: 0, y: i * abstand } : { x: i * abstand, y: 0 };
+}

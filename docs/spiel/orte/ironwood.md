@@ -554,3 +554,9 @@ mit Finkenzeichen aus Kreide.
 - **Ansehen:** `graffiti` (Wolf und Krone an der Felswand), `bagger`.
 - **Offen:** Sperre S4 (Laterne) am Übergang in Ironwood gehört zu mittel-2, ebenso Tönung und
   Lichtkreis im Stollen.
+
+**Sperre S4, umgesetzt in Runde 6 (mittel-2):** Der Übergang `steinbruch` in Ironwood hat
+`wenn: hatLaterne` und den Dialog `ironwood-aussen.steinbruch_sperre` (dunkler Hohlweg; ohne Laterne
+der Hinweis auf Edna). Der Stollen ist dunkel (`toenung: dunkel`); mit Laterne sieht {held} vier
+Felder weit. Offen: Abendtönung und Schnee in Ironwood ab Szene 50 (Tönung über `setzeToenung` im
+Dialog der Szene; Schnee braucht eine Objektebene).

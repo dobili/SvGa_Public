@@ -63,6 +63,17 @@ Wir sind ja schon da. Wir gucken uns nur um. Gucken ist kein Turnier. #sprecher:
 Zurück zur Eisenbrücke und dem Kanalweg nach Riverton. #sprecher:erzaehler
 -> END
 
+// Sperre S4 (Runde 6, 13_Wegenetz §3): Zum Alten Steinbruch geht es nur mit Laterne; die Hülle
+// prüft „wenn: hatLaterne“ am Übergang, dieser Knoten nennt den Grund in der Welt.
+=== steinbruch_sperre ===
+{hatLaterne:
+    Der Weg zum Alten Steinbruch führt durch einen dunklen Hohlweg. Du hältst die Laterne hoch und gehst los. #sprecher:erzaehler
+- else:
+    Hinter dem Werk führt ein Hohlweg zum Alten Steinbruch, so dunkel, dass du die eigenen Füße nicht siehst. #sprecher:erzaehler
+    Ohne Licht kommst du da nicht hinunter. Bei Edna gibt es Laternen. #sprecher:erzaehler
+}
+-> END
+
 === haustuer_ruth ===
 {elmStreetBekannt:
     Elm Street, ein Reihenhaus mit grüner Tür. Du klingelst. #sprecher:erzaehler

@@ -186,7 +186,7 @@
       "feld": [8, 12],
       "eigenschaften": {
         "von": "8,12",
-        "bis": "11,12",
+        "bis": "10,12",
         "tun": "liest die Schilder",
         "wann": "tag",
         "sagt": "statist.ironwood.museum.besucherin"

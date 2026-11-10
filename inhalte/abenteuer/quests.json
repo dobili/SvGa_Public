@@ -3321,6 +3321,42 @@
           }
         }
       ]
+    },
+    {
+      "kennung": "wegRivertonIronwood.brueckenbauern",
+      "titel": "quest.brueckenbauern.titel",
+      "typ": "begegnung",
+      "ort": "wegRivertonIronwood",
+      "klein": true,
+      "haupt": false,
+      "start": {
+        "art": "ort",
+        "karte": "wegRivertonIronwood.bruecke",
+        "ausloeser": "ereignisBrueckenbauern"
+      },
+      "schritte": [
+        {
+          "text": "quest.brueckenbauern.schritt1",
+          "ereignis": {
+            "art": "dialog",
+            "knoten": "weg-riverton-ironwood.kreidespringer_geloest"
+          }
+        },
+        {
+          "text": "quest.brueckenbauern.schritt2",
+          "ereignis": {
+            "art": "partie",
+            "begegnung": "wegRivertonIronwood.dime",
+            "ausgang": ["sieg", "remis", "niederlage"]
+          },
+          "wirkungen": [
+            {
+              "art": "muenzen",
+              "anzahl": 20
+            }
+          ]
+        }
+      ]
     }
   ]
 }

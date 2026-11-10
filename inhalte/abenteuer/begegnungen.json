@@ -756,6 +756,22 @@
         "zuschlag": 2
       },
       "kandidaten": ["g6", "Qe7", "Nf6"]
+    },
+    {
+      "kennung": "wegRivertonIronwood.dime",
+      "gegner": "wegRivertonIronwood.dime",
+      "farbe": "zufall",
+      "format": {
+        "art": "partie"
+      },
+      "startstellung": {
+        "art": "grundstellung"
+      },
+      "kartenErlaubt": true,
+      "zeit": {
+        "sekunden": 180,
+        "zuschlag": 2
+      }
     }
   ]
 }

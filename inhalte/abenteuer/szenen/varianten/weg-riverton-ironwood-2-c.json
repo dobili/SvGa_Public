@@ -1364,9 +1364,42 @@
     {
       "name": "zeitnotTrick",
       "feld": [17, 64]
+    },
+    {
+      "name": "waerterhaus",
+      "feld": [19, 23]
+    },
+    {
+      "name": "aussichtTal",
+      "feld": [16, 68]
+    },
+    {
+      "name": "ereignisBrueckenbauern",
+      "feld": [23, 69]
+    },
+    {
+      "name": "kreide1",
+      "feld": [19, 67]
+    },
+    {
+      "name": "spurPM1",
+      "feld": [25, 66]
+    },
+    {
+      "name": "seite07",
+      "feld": [27, 66]
+    },
+    {
+      "name": "finchLaeuferA",
+      "feld": [16, 67]
     }
   ],
-  "figuren": [],
+  "figuren": [
+    {
+      "name": "dime",
+      "feld": [22, 70]
+    }
+  ],
   "belebung": [
     {
       "name": "brueckenwaerter",

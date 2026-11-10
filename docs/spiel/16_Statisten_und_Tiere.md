@@ -38,9 +38,9 @@ Die Zahlen sind Mindestwerte. Eine Stadt im Sommerfest oder ein Markttag darf vo
 
 - **Länge:** ein bis drei kurze Sätze (Stilregeln 5.1 der Story-Bibel), in der Sprechweise der
   Figur.
-- **Schlüssel:** `statist.<karte>.<name>` in `inhalte/abenteuer/texte/de.json`. Mehrere Sätze
-  einer Figur stehen nacheinander als `…<name>.1`, `…<name>.2`. Die App zeigt beim ersten
-  Ansprechen den ersten, danach reihum.
+- **Schlüssel:** `statist.<karte>.<name>` in `inhalte/abenteuer/texte/de.json`. Der Schlüssel
+  selbst ist der erste Satz; weitere Sätze stehen als `…<name>.2`, `…<name>.3`. Die App zeigt beim
+  ersten Ansprechen den ersten, danach reihum.
 - **Jeder Statist ist ein Mensch dieser Welt:** Name oder Rolle („die Briefträgerin“), Alter
   ungefähr, Tätigkeit passend zum Ort und zur Tageszeit.
 - **Ambrose** antwortet manchmal mit einem Satz (`statist.<karte>.<name>.ambrose`), höchstens bei

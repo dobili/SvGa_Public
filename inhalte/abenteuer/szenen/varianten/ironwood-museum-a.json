@@ -205,5 +205,6 @@
     }
   ],
   "zustand": ["gebraucht", "alt", "neu"],
-  "stil": ["klassisch", "einfach", "industrie", "rustikal", "modern", "schule"]
+  "stil": ["klassisch", "einfach", "industrie", "rustikal", "modern", "schule"],
+  "variante": "a"
 }

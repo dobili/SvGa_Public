@@ -163,5 +163,6 @@
     }
   ],
   "zustand": ["gebraucht", "alt", "neu"],
-  "stil": ["klassisch", "einfach", "rustikal", "modern", "industrie"]
+  "stil": ["klassisch", "einfach", "rustikal", "modern", "industrie"],
+  "variante": "a"
 }

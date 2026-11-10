@@ -235,6 +235,15 @@ Geprüft nach Gebäude außen und Zweck:
 Zustände (10.63) folgen, sobald mittel-2 die Technik meldet: Dachboden mit und ohne das alte Brett
 (nachdem {held} es gefunden hat, liegt es nicht mehr dort).
 
+### 3.4 Runde 8: Zustände der Innenräume (KARTENREGELN 10.63, mittel-1)
+
+| Karte                   | Zustand      | Bedingung              | Zustand: wann, was, warum                                                                                                                                              |
+| ----------------------- | ------------ | ---------------------- | ---------------------------------------------------------------------------------------------------------------------------------------------------------------------- |
+| `mapleFalls.dachboden`  | `ohne-brett` | `ersterAbendGesehen`   | Ab Szene 4 steht der runde Tisch leer: Der Held trägt das Brett von da an bei sich. Der Auslöser `brett` bleibt, Ambrose spricht aus dem Gepäck.                       |
+| `mapleFalls.wohnzimmer` | `ausgepackt` | `aufbruchGesehen`      | Ab Szene 13 sind die Umzugskartons ausgepackt; Sofa, Couchtisch und ein niedriges Regal stehen an ihrer Stelle. Die Kiste in der Küche bleibt, `pizzakarton` entfällt. |
+| `mapleFalls.clubraum`   | `pokal`      | `nadelMapleFalls >= 1` | Nach dem gewonnenen Clubkampf steht neben der Vitrine ein zweiter Ausstellungstisch mit den Pokalen.                                                                   |
+| `mapleFalls.diner`      | –            | –                      | Kein fester Wechsel in der Geschichte.                                                                                                                                 |
+
 ## 4. Bühnenbilder
 
 ### 4.0a Varianten B und C (KARTENREGELN 10.37)

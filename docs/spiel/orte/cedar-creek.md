@@ -333,6 +333,15 @@ Geprüft nach Gebäude außen und Zweck; alle Räume bleiben, wie sie sind:
 | Waschsalon  | Waschsalon 8 × 9                 | 14 × 11 | Zwei Reihen Maschinen, Bank, Getränkeautomat; so groß wie ein kleiner Waschsalon an der Hauptstraße. |
 | Drechslerei | Werkstatt 8 × 10                 | 16 × 11 | Werkbank, Drehbank, Holzlager; eine Werkstatt für einen Handwerker.                                  |
 
+### 3.4 Runde 8: Zustände der Innenräume (KARTENREGELN 10.63, mittel-1)
+
+| Karte                    | Zustand    | Bedingung        | Zustand: wann, was, warum                                                                                                 |
+| ------------------------ | ---------- | ---------------- | ------------------------------------------------------------------------------------------------------------------------- |
+| `cedarCreek.archiv`      | `geordnet` | `archivGeordnet` | Nach der Nebenaufgabe „Das Archiv“ (Szene 18) stehen statt der nassen Kartons trockene, geschlossene Kartons.             |
+| `cedarCreek.bibliothek`  | –          | –                | Kein fester Wechsel.                                                                                                      |
+| `cedarCreek.waschsalon`  | –          | –                | Boateng klebt nach dem Rätsel eine neue Stellung auf; das ist ein Zettel auf dem Trockner, zu klein für ein eigenes Bild. |
+| `cedarCreek.drechslerei` | –          | –                | Kein fester Wechsel.                                                                                                      |
+
 ## 4. Bühnenbilder
 
 Runde 4 (9.11.2026). Je Karte Größe, Wände, Böden, Laufwege, Zonen und Inventar; die Möbel stehen in

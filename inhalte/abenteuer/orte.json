@@ -13,13 +13,19 @@
           "datei": "karten/maple-falls-dachboden.json",
           "name": "ort.mapleFalls.dachboden",
           "innen": true,
-          "musik": "musik/dachboden.ogg"
+          "musik": "musik/dachboden.ogg",
+          "zustaende": {
+            "ersterAbendGesehen": "karten/maple-falls-dachboden-ohne-brett.json"
+          }
         },
         {
           "kennung": "mapleFalls.wohnzimmer",
           "datei": "karten/maple-falls-wohnzimmer.json",
           "name": "ort.mapleFalls.wohnzimmer",
-          "innen": true
+          "innen": true,
+          "zustaende": {
+            "aufbruchGesehen": "karten/maple-falls-wohnzimmer-ausgepackt.json"
+          }
         },
         {
           "kennung": "mapleFalls.aussen",
@@ -32,7 +38,10 @@
           "kennung": "mapleFalls.clubraum",
           "datei": "karten/maple-falls-clubraum.json",
           "name": "ort.mapleFalls.clubraum",
-          "innen": true
+          "innen": true,
+          "zustaende": {
+            "nadelMapleFalls >= 1": "karten/maple-falls-clubraum-pokal.json"
+          }
         },
         {
           "kennung": "mapleFalls.park",
@@ -329,7 +338,10 @@
           "kennung": "cedarCreek.archiv",
           "datei": "karten/cedar-creek-archiv.json",
           "name": "ort.cedarCreek.archiv",
-          "innen": true
+          "innen": true,
+          "zustaende": {
+            "archivGeordnet": "karten/cedar-creek-archiv-geordnet.json"
+          }
         },
         {
           "kennung": "cedarCreek.waschsalon",

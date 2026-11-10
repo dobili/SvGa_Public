@@ -430,5 +430,6 @@
     "landhaus",
     "maritim"
   ],
-  "datei": "karten/bayou-steg.json"
+  "datei": "karten/bayou-steg.json",
+  "toenung": "nebel"
 }

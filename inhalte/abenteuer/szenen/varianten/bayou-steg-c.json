@@ -572,5 +572,6 @@
     "landhaus",
     "maritim"
   ],
-  "datei": "karten/varianten/bayou-steg-c.json"
+  "datei": "karten/varianten/bayou-steg-c.json",
+  "toenung": "nebel"
 }

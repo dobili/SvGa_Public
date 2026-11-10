@@ -1649,6 +1649,26 @@
           "wert": "verteidiger"
         }
       ]
+    },
+    {
+      "kennung": "wegGhostCapital.odette",
+      "name": "figur.odette.name",
+      "rolle": "story",
+      "portraet": "portraets/odette.svg",
+      "staerke": {
+        "art": "aktuell",
+        "versatz": 0
+      },
+      "stil": "taktiker",
+      "eroeffnung": {
+        "art": "frei"
+      },
+      "steckbrief": [
+        {
+          "art": "stil",
+          "wert": "taktiker"
+        }
+      ]
     }
   ]
 }

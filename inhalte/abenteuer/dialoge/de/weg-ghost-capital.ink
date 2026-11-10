@@ -13,11 +13,12 @@
 // Den Fund merkt sich Ink zusätzlich selbst.
 
 EXTERNAL beginneAufgaben(runde)
+EXTERNAL beginnePartie(begegnung)
 EXTERNAL gibFund(kennung)
 
 VAR wegGhostCapitalTafelBestanden = false
-VAR simultanBestanden = false
-VAR meisterproblemBestanden = false
+VAR wegGhostCapitalSimultanBestanden = false
+VAR ausgangWegGhostCapitalMeisterproblem = ""
 VAR weltschachtagBegonnen = false
 VAR weltschachtagErledigt = false
 VAR abeFunkpartie = false
@@ -97,7 +98,7 @@ Der Weg führt zurück nach Süden, nach Ghost Town. #sprecher:erzaehler
 === ereignis_weltschachtag ===
 {
 - weltschachtagErledigt: -> weltschachtag_danach
-- simultanBestanden: -> weltschachtag_abschluss
+- wegGhostCapitalSimultanBestanden: -> weltschachtag_abschluss
 - weltschachtagBegonnen: -> weltschachtag_angebot
 }
 ~ weltschachtagBegonnen = true
@@ -146,13 +147,15 @@ Am Fuß des Leuchtturms steht ein Aufsteller: „20. Juli. Weltschachtag am Leuc
 
 // ---------------------------------------------------------------- Odette Finch (Ende der Finch-Jagd, 15, 1.1)
 // Vierzehn Figuren liegen an den Wegen, eine im Steinbruch, eine in der Sternwarte, eine auf der
-// Pelikaninsel; den König gibt Odette selbst. Ab 15 Figuren stellt sie Schwarz auf (Meisterproblem,
-// Runde wegGhostCapital.meisterproblem, baut der Haupt-Chat mit der Engine).
+// Pelikaninsel; den König gibt Odette selbst. Ab 15 Figuren stellt sie Schwarz auf: das Meisterproblem
+// ist die Falle von Légal mit allen 16 weißen Figuren (Vorführung finchFalle, Lösung 5.Sxe5!), hier als
+// Stellungsduell wegGhostCapital.meisterproblem, bis die Form „Weiß zieht und gewinnt“ fertig ist.
 
 === odette ===
 {
 - finchErledigt: -> odette_danach
-- meisterproblemBestanden: -> odette_geloest
+- ausgangWegGhostCapitalMeisterproblem == "sieg": -> odette_geloest
+- finchKoenigErhalten: -> odette_nochmal
 - finchFiguren >= 15: -> odette_koenig
 - not odetteGetroffen: -> odette_erstes
 - else: -> odette_hinweis
@@ -177,12 +180,20 @@ Odette Finch. Mein Wohnmobil heißt Gambit, und ich warte hier auf jemanden, der
 Alle fünfzehn! Du bist schneller als die letzten drei zusammen. #sprecher:odette
 Sie legt einen weißen König auf das Brett. Den hatte ich die ganze Zeit in der Tasche. Jetzt stelle ich Schwarz auf. #sprecher:odette
 ~ gibFund("finchKoenig")
-Matt in drei. Finchs letzte Falle. #sprecher:odette
+Weiß zieht und gewinnt. Finchs letzte Falle, und die älteste. #sprecher:odette
 + [Das Meisterproblem lösen]
-    ~ beginneAufgaben("wegGhostCapital.meisterproblem")
+    ~ beginnePartie("wegGhostCapital.meisterproblem")
     -> END
 + [„Ich komme wieder.“]
     Ich laufe nicht weg. Mein Wohnmobil auch nicht, es springt schlecht an. #sprecher:odette
+    -> END
+
+=== odette_nochmal ===
+Noch einmal? Weiß zieht und gewinnt. Sieh dir den Springer an, und dann sieh dir meine Dame an. #sprecher:odette
++ [Das Meisterproblem noch einmal versuchen]
+    ~ beginnePartie("wegGhostCapital.meisterproblem")
+    -> END
++ [„Später.“]
     -> END
 
 === odette_geloest ===

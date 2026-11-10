@@ -349,6 +349,8 @@ Gutachten `docs/spiel/auftraege/gutachten/mittel-1-runde9-2.md`.
   Text.
 - **Leuchtturm, Landzunge (1):** Links und rechts schneiden zwei Buchten ins Ufer (Westbucht bis
   Reihe 11, Ostbucht bis Reihe 13). Die Landzunge ragt jetzt zwölf Reihen in den See.
+- **Leuchtturm, Wohnmobil (10.65):** Es steht auf der Wiese jetzt von vorn (`fz11WohnmobilAb`,
+  (82, 8)) statt in Seitenansicht.
 - Offen: Ausfahrt mit abgesenktem Bord an Feuerwache und Polizei, Kreidespringer blass, Platz
   dünn, Turm in Seitenansicht, leere Wiese am Leuchtturm.
 

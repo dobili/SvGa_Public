@@ -93,12 +93,11 @@
       "runde7": true
     },
     {
-      "moebel": "ca8Wohnmobil",
+      "moebel": "fz11WohnmobilAb",
       "feld": [
-        78,
-        9
+        82,
+        8
       ],
-      "bauteil_ok": true,
       "runde7": true
     },
     {

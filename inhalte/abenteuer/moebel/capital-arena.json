@@ -109,7 +109,9 @@
       "kollision": false,
       "art": "fenster",
       "zustand": "neu",
-      "stil": "klassisch"
+      "stil": "klassisch",
+      "begehbar": true,
+      "begehbar_grund": "hängt an der Wand"
     },
     "ca7Tisch": {
       "quelle": "modern-interiors/1_Interiors/16x16/Theme_Sorter_Black_Shadow_Singles/14_Basement_Black_Shadow_Singles_16x16/Basement_Shadow_Singles_1.png",
@@ -164,7 +166,7 @@
       "quelle": "spiel/eigene/schachbrett_klein_figuren.png",
       "breite": 12,
       "hoehe": 9,
-      "kollision": false,
+      "kollision": true,
       "art": "deko",
       "zustand": "gebraucht",
       "stil": "klassisch"
@@ -230,7 +232,9 @@
       "kollision": false,
       "art": "buehne",
       "zustand": "neu",
-      "stil": "klassisch"
+      "stil": "klassisch",
+      "begehbar": true,
+      "begehbar_grund": "Bühne, auf der Tische und Figuren stehen"
     },
     "ca7Banner": {
       "quelle": "spiel/eigene/banner_meisterschaft.png",
@@ -240,7 +244,9 @@
       "art": "bild",
       "zustand": "neu",
       "stil": "klassisch",
-      "blick": "unten"
+      "blick": "unten",
+      "begehbar": true,
+      "begehbar_grund": "hängt über Kopfhöhe"
     },
     "ca7Pressetisch": {
       "quelle": "spiel/eigene/pressetisch.png",
@@ -488,7 +494,7 @@
       "quelle": "modern-interiors/1_Interiors/16x16/Theme_Sorter_Black_Shadow_Singles/5_Classroom_and_Library_Black_Shadow_Singles_16x16/Classroom_and_Library_Singles_36.png",
       "breite": 32,
       "hoehe": 32,
-      "kollision": false,
+      "kollision": true,
       "art": "deko",
       "zustand": "neu",
       "stil": "klassisch"
@@ -1239,7 +1245,9 @@
       "breite": 16,
       "hoehe": 16,
       "art": "deko",
-      "blick": "unten"
+      "blick": "unten",
+      "begehbar": true,
+      "begehbar_grund": "liegt flach am Boden"
     },
     "ci8PlakatBald": {
       "kollision": true,
@@ -1269,7 +1277,9 @@
       "stil": "modern",
       "blick": "unten",
       "breite": 64,
-      "hoehe": 16
+      "hoehe": 16,
+      "begehbar": true,
+      "begehbar_grund": "hängt über Kopfhöhe"
     },
     "ci8ZugGraffiti": {
       "quelle": "modern-exteriors/Modern_Exteriors_16x16/ME_Theme_Sorter_16x16/20_Subway_and_Train_Station_Singles_16x16/ME_Singles_Subway_and_Train_Station_16x16_Example_Graffiti_Train.png",
@@ -1348,7 +1358,9 @@
       "art": "bild",
       "zustand": "alt",
       "stil": "industrie",
-      "blick": "unten"
+      "blick": "unten",
+      "begehbar": true,
+      "begehbar_grund": "hängt an der Wand"
     },
     "ci8GraffitiSchriftB": {
       "quelle": "modern-exteriors/Modern_Exteriors_16x16/ME_Theme_Sorter_16x16/20_Subway_and_Train_Station_Singles_16x16/ME_Singles_Subway_and_Train_Station_16x16_Writing_Graffiti_2.png",
@@ -1358,7 +1370,9 @@
       "art": "bild",
       "zustand": "alt",
       "stil": "industrie",
-      "blick": "unten"
+      "blick": "unten",
+      "begehbar": true,
+      "begehbar_grund": "hängt an der Wand"
     },
     "ci8GraffitiBlume": {
       "quelle": "modern-exteriors/Modern_Exteriors_16x16/ME_Theme_Sorter_16x16/20_Subway_and_Train_Station_Singles_16x16/ME_Singles_Subway_and_Train_Station_16x16_Flower_Graffiti.png",
@@ -1368,7 +1382,9 @@
       "art": "bild",
       "zustand": "alt",
       "stil": "industrie",
-      "blick": "unten"
+      "blick": "unten",
+      "begehbar": true,
+      "begehbar_grund": "hängt an der Wand"
     },
     "ci8GraffitiWolf": {
       "quelle": "modern-exteriors/Modern_Exteriors_16x16/ME_Theme_Sorter_16x16/20_Subway_and_Train_Station_Singles_16x16/ME_Singles_Subway_and_Train_Station_16x16_Black_Wolf_Clean_Graffiti.png",
@@ -1378,7 +1394,9 @@
       "art": "bild",
       "zustand": "alt",
       "stil": "industrie",
-      "blick": "unten"
+      "blick": "unten",
+      "begehbar": true,
+      "begehbar_grund": "hängt an der Wand"
     },
     "ci8GraffitiFrosch": {
       "quelle": "modern-exteriors/Modern_Exteriors_16x16/ME_Theme_Sorter_16x16/20_Subway_and_Train_Station_Singles_16x16/ME_Singles_Subway_and_Train_Station_16x16_Frog_Clean_Graffiti.png",
@@ -1388,7 +1406,9 @@
       "art": "bild",
       "zustand": "alt",
       "stil": "industrie",
-      "blick": "unten"
+      "blick": "unten",
+      "begehbar": true,
+      "begehbar_grund": "hängt an der Wand"
     },
     "ci8Plakate3": {
       "quelle": "modern-exteriors/Modern_Exteriors_16x16/ME_Theme_Sorter_16x16/20_Subway_and_Train_Station_Singles_16x16/ME_Singles_Subway_and_Train_Station_16x16_Three_Posters.png",
@@ -1398,7 +1418,9 @@
       "art": "bild",
       "zustand": "alt",
       "stil": "industrie",
-      "blick": "unten"
+      "blick": "unten",
+      "begehbar": true,
+      "begehbar_grund": "hängt an der Wand"
     },
     "ci8Leuchte": {
       "quelle": "modern-exteriors/Modern_Exteriors_16x16/ME_Theme_Sorter_16x16/20_Subway_and_Train_Station_Singles_16x16/ME_Singles_Subway_and_Train_Station_16x16_Led_Light_On.png",
@@ -1408,7 +1430,9 @@
       "art": "bild",
       "zustand": "alt",
       "stil": "industrie",
-      "blick": "unten"
+      "blick": "unten",
+      "begehbar": true,
+      "begehbar_grund": "hängt an der Wand"
     },
     "ca9Treppe": {
       "quelle": "modern-exteriors/Modern_Exteriors_16x16/ME_Theme_Sorter_16x16/20_Subway_and_Train_Station_Singles_16x16/ME_Singles_Subway_and_Train_Station_16x16_Stairs_1.png",
@@ -1432,7 +1456,7 @@
       "quelle": "modern-interiors/1_Interiors/16x16/Theme_Sorter_Black_Shadow_Singles/5_Classroom_and_Library_Black_Shadow_Singles_16x16/Classroom_and_Library_Singles_36.png",
       "breite": 32,
       "hoehe": 32,
-      "kollision": false,
+      "kollision": true,
       "art": "tafel",
       "zustand": "gebraucht",
       "stil": "modern",

@@ -38,7 +38,9 @@
       "art": "bild",
       "blick": "unten",
       "zustand": "alt",
-      "stil": "klassisch"
+      "stil": "klassisch",
+      "begehbar": true,
+      "begehbar_grund": "hängt an der Wand"
     },
     "iw9FotoBrueckeB": {
       "quelle": "spiel/eigene/foto_bruecke_b.png",
@@ -48,7 +50,9 @@
       "art": "bild",
       "blick": "unten",
       "zustand": "alt",
-      "stil": "klassisch"
+      "stil": "klassisch",
+      "begehbar": true,
+      "begehbar_grund": "hängt an der Wand"
     },
     "iw9FotoWerkA": {
       "quelle": "spiel/eigene/foto_werk_a.png",
@@ -58,7 +62,9 @@
       "art": "bild",
       "blick": "unten",
       "zustand": "alt",
-      "stil": "klassisch"
+      "stil": "klassisch",
+      "begehbar": true,
+      "begehbar_grund": "hängt an der Wand"
     },
     "iw9FotoWerkB": {
       "quelle": "spiel/eigene/foto_werk_b.png",
@@ -68,7 +74,9 @@
       "art": "bild",
       "blick": "unten",
       "zustand": "alt",
-      "stil": "klassisch"
+      "stil": "klassisch",
+      "begehbar": true,
+      "begehbar_grund": "hängt an der Wand"
     },
     "iw9FotoBahnhofA": {
       "quelle": "spiel/eigene/foto_bahnhof_a.png",
@@ -78,7 +86,9 @@
       "art": "bild",
       "blick": "unten",
       "zustand": "alt",
-      "stil": "klassisch"
+      "stil": "klassisch",
+      "begehbar": true,
+      "begehbar_grund": "hängt an der Wand"
     },
     "iw9FotoBahnhofB": {
       "quelle": "spiel/eigene/foto_bahnhof_b.png",
@@ -88,7 +98,9 @@
       "art": "bild",
       "blick": "unten",
       "zustand": "alt",
-      "stil": "klassisch"
+      "stil": "klassisch",
+      "begehbar": true,
+      "begehbar_grund": "hängt an der Wand"
     },
     "iw9FotoArbeiterA": {
       "quelle": "spiel/eigene/foto_arbeiter_a.png",
@@ -98,7 +110,9 @@
       "art": "bild",
       "blick": "unten",
       "zustand": "alt",
-      "stil": "klassisch"
+      "stil": "klassisch",
+      "begehbar": true,
+      "begehbar_grund": "hängt an der Wand"
     },
     "iw9FotoArbeiterB": {
       "quelle": "spiel/eigene/foto_arbeiter_b.png",
@@ -108,7 +122,9 @@
       "art": "bild",
       "blick": "unten",
       "zustand": "alt",
-      "stil": "klassisch"
+      "stil": "klassisch",
+      "begehbar": true,
+      "begehbar_grund": "hängt an der Wand"
     },
     "iw9UmkleidebankWaagrecht": {
       "quelle": "spiel/eigene/umkleidebank_waagrecht.png",
@@ -138,7 +154,9 @@
       "art": "garderobe",
       "blick": "unten",
       "zustand": "gebraucht",
-      "stil": "industrie"
+      "stil": "industrie",
+      "begehbar": true,
+      "begehbar_grund": "hängt an der Wand"
     },
     "iw8Garderobe": {
       "quelle": "spiel/eigene/garderobe_jacken.png",
@@ -147,7 +165,9 @@
       "kollision": false,
       "art": "garderobe",
       "zustand": "gebraucht",
-      "stil": "industrie"
+      "stil": "industrie",
+      "begehbar": true,
+      "begehbar_grund": "hängt an der Wand"
     },
     "iw8Partieformular": {
       "quelle": "modern-interiors/1_Interiors/16x16/Theme_Sorter_Black_Shadow_Singles/22_Museum_Black_Shadow_Singles_16x16/Museum_Black_Shadow_Singles_88.png",
@@ -156,7 +176,9 @@
       "kollision": false,
       "art": "bild",
       "zustand": "alt",
-      "stil": "klassisch"
+      "stil": "klassisch",
+      "begehbar": true,
+      "begehbar_grund": "hängt an der Wand"
     },
     "iw8Kabinentuer": {
       "quelle": "modern-interiors/1_Interiors/16x16/Theme_Sorter_Black_Shadow_Singles/3_Bathroom_Black_Shadow_Singles_16x16/Bathroom_Black_Shadow_Singles_61.png",
@@ -225,7 +247,9 @@
       "art": "spiegel",
       "blick": "unten",
       "zustand": "gebraucht",
-      "stil": "industrie"
+      "stil": "industrie",
+      "begehbar": true,
+      "begehbar_grund": "hängt an der Wand"
     },
     "iw8Schalter": {
       "quelle": "modern-interiors/1_Interiors/16x16/Theme_Sorter_Black_Shadow_Singles/22_Museum_Black_Shadow_Singles_16x16/Museum_Black_Shadow_Singles_1.png",
@@ -365,7 +389,9 @@
       "art": "bild",
       "blick": "unten",
       "zustand": "gebraucht",
-      "stil": "klassisch"
+      "stil": "klassisch",
+      "begehbar": true,
+      "begehbar_grund": "hängt an der Wand"
     },
     "iw8BildB": {
       "quelle": "modern-interiors/1_Interiors/16x16/Theme_Sorter_Black_Shadow_Singles/22_Museum_Black_Shadow_Singles_16x16/Museum_Black_Shadow_Singles_113.png",
@@ -375,7 +401,9 @@
       "art": "bild",
       "blick": "unten",
       "zustand": "gebraucht",
-      "stil": "klassisch"
+      "stil": "klassisch",
+      "begehbar": true,
+      "begehbar_grund": "hängt an der Wand"
     },
     "iw8BildC": {
       "quelle": "modern-interiors/1_Interiors/16x16/Theme_Sorter_Black_Shadow_Singles/22_Museum_Black_Shadow_Singles_16x16/Museum_Black_Shadow_Singles_117.png",
@@ -385,7 +413,9 @@
       "art": "bild",
       "blick": "unten",
       "zustand": "gebraucht",
-      "stil": "klassisch"
+      "stil": "klassisch",
+      "begehbar": true,
+      "begehbar_grund": "hängt an der Wand"
     },
     "iw8Museumsbank": {
       "quelle": "modern-interiors/1_Interiors/16x16/Theme_Sorter_Black_Shadow_Singles/22_Museum_Black_Shadow_Singles_16x16/Museum_Black_Shadow_Singles_36.png",
@@ -440,7 +470,7 @@
       "quelle": "modern-farm/Single_Files_16x16/Crops_16x16/Crop_Pumpkin_Brown_Basket_16x16.png",
       "breite": 32,
       "hoehe": 32,
-      "kollision": false,
+      "kollision": true,
       "art": "ware",
       "zustand": "neu",
       "stil": "laendlich"
@@ -449,7 +479,7 @@
       "quelle": "modern-farm/Single_Files_16x16/Crops_16x16/Crop_Cabbage_Brown_Basket_16x16.png",
       "breite": 32,
       "hoehe": 32,
-      "kollision": false,
+      "kollision": true,
       "art": "ware",
       "zustand": "neu",
       "stil": "laendlich"
@@ -458,7 +488,7 @@
       "quelle": "modern-farm/Single_Files_16x16/Crops_16x16/Crop_Corn_Brown_Basket_16x16.png",
       "breite": 32,
       "hoehe": 32,
-      "kollision": false,
+      "kollision": true,
       "art": "ware",
       "zustand": "neu",
       "stil": "laendlich"
@@ -467,7 +497,7 @@
       "quelle": "modern-farm/Single_Files_16x16/Crops_16x16/Crop_Berry_Brown_Basket_16x16.png",
       "breite": 32,
       "hoehe": 32,
-      "kollision": false,
+      "kollision": true,
       "art": "ware",
       "zustand": "neu",
       "stil": "laendlich"
@@ -476,7 +506,7 @@
       "quelle": "modern-farm/Single_Files_16x16/Crops_16x16/Crop_Carrot_Small_Basket_16x16.png",
       "breite": 16,
       "hoehe": 16,
-      "kollision": false,
+      "kollision": true,
       "art": "ware",
       "zustand": "neu",
       "stil": "laendlich"
@@ -749,7 +779,9 @@
       "kollision": false,
       "art": "deko",
       "zustand": "gebraucht",
-      "stil": "einfach"
+      "stil": "einfach",
+      "begehbar": true,
+      "begehbar_grund": "liegt flach am Boden"
     },
     "iw5StrassenbrueckeGehwegQuer6": {
       "quelle": "spiel/eigene/bruecke_strasse_gehweg_quer_6.png",
@@ -831,7 +863,9 @@
       "kollision": false,
       "art": "gebaeude",
       "zustand": "gebraucht",
-      "stil": "industrie"
+      "stil": "industrie",
+      "begehbar": true,
+      "begehbar_grund": "hängt über Kopfhöhe"
     },
     "iw5Lok": {
       "quelle": "spiel/eigene/werk_lok.png",

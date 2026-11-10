@@ -7,7 +7,9 @@
       "kollision": false,
       "art": "fahrzeug",
       "zustand": "gebraucht",
-      "stil": "modern"
+      "stil": "modern",
+      "begehbar": true,
+      "begehbar_grund": "liegt im Wasser, dort läuft niemand"
     },
     "gc7Faehrterminal": {
       "quelle": "spiel/eigene/faehrterminal.png",
@@ -90,7 +92,9 @@
       "kollision": false,
       "art": "deko",
       "zustand": "gebraucht",
-      "stil": "natur"
+      "stil": "natur",
+      "begehbar": true,
+      "begehbar_grund": "liegt flach am Boden"
     },
     "gc7Kiefer": {
       "quelle": "modern-exteriors/Modern_Exteriors_16x16/ME_Theme_Sorter_16x16/11_Camping_Singles_16x16/ME_Singles_Camping_16x16_Tree_182.png",
@@ -193,7 +197,9 @@
       "kollision": false,
       "art": "pflanze",
       "zustand": "gebraucht",
-      "stil": "natur"
+      "stil": "natur",
+      "begehbar": true,
+      "begehbar_grund": "Schilf am Ufer, man geht hindurch"
     },
     "gc7Fels": {
       "quelle": "modern-exteriors/Modern_Exteriors_16x16/ME_Theme_Sorter_16x16/11_Camping_Singles_16x16/ME_Singles_Camping_16x16_Rock_2.png",
@@ -308,7 +314,9 @@
       "kollision": false,
       "art": "fahrzeug",
       "zustand": "gebraucht",
-      "stil": "modern"
+      "stil": "modern",
+      "begehbar": true,
+      "begehbar_grund": "liegt im Wasser, dort läuft niemand"
     },
     "gc10Hocker": {
       "quelle": "modern-interiors/1_Interiors/16x16/Theme_Sorter_Black_Shadow_Singles/6_Music_and_Sport_Black_Shadow_Singles_16x16/Music_and_Sport_Black_Shadow_Singles_171.png",

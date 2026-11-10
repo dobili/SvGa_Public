@@ -113,11 +113,48 @@ function pruefeKarte(
       }
     }
   }
+  return [...befunde, ...unerreichbare(datei, alle, frei, namen, stege)];
+}
+
+/**
+ * Figuren und Gegenstände, an die der Held nicht herankommt: Von irgendeiner Ankunft aus muss er
+ * auf ihrer Kachel oder auf einer Nachbarkachel stehen können (ansprechen und ansehen geht von
+ * davor). Warum: Neue Kollisionen an Möbeln dürfen niemanden einsperren (Auftrag 10.11.2026).
+ */
+function unerreichbare(
+  datei: string,
+  alle: readonly Ausloeser[],
+  frei: (x: number, y: number) => boolean,
+  uebergaenge: readonly string[],
+  stege: readonly { readonly von: readonly Kachelort[]; readonly nach: Kachelort }[],
+): string[] {
+  const starts = (uebergaenge.length > 0 ? uebergaenge : ["start"]).flatMap((n) => {
+    const feld = alle.find((a) => a.name === n);
+    return feld ? [feld] : [];
+  });
+  const befunde: string[] = [];
+  for (const ziel of alle) {
+    if (uebergaenge.includes(ziel.name) || ziel.name === "start") continue;
+    const um = [ziel, ...NACHBARN.map((n) => ({ x: ziel.x + n.x, y: ziel.y + n.y }))];
+    const erreicht = starts.some(
+      (s) => um.some((u) => u.x === s.x && u.y === s.y) || wegMitStegen(frei, s, um, stege),
+    );
+    if (starts.length > 0 && !erreicht) {
+      befunde.push(`${datei} ${ziel.name} (${ziel.x}, ${ziel.y}): nicht erreichbar`);
+    }
+  }
   return befunde;
 }
 
+const NACHBARN = [
+  { x: 0, y: -1 },
+  { x: 0, y: 1 },
+  { x: -1, y: 0 },
+  { x: 1, y: 0 },
+];
+
 describe("Übergänge zu Fuß", () => {
-  it("jeder Übergang jeder Karte ist von jeder Ankunft erreichbar und löst aus", () => {
+  it("jeder Übergang ist von jeder Ankunft erreichbar und löst aus; jede Figur ist erreichbar", () => {
     const orte = lies<{ orte: Ortseintrag[] }>("orte.json").orte;
     const moebel = moebelliste();
     const befunde: string[] = [];

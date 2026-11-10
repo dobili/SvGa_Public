@@ -187,7 +187,9 @@
       "kollision": false,
       "art": "boot",
       "zustand": "alt",
-      "stil": "rustikal"
+      "stil": "rustikal",
+      "begehbar": true,
+      "begehbar_grund": "liegt im Wasser, dort läuft niemand"
     },
     "by6LuftbootRechts": {
       "quelle": "spiel/eigene/luftboot_rechts.png",
@@ -196,7 +198,9 @@
       "kollision": false,
       "art": "boot",
       "zustand": "alt",
-      "stil": "rustikal"
+      "stil": "rustikal",
+      "begehbar": true,
+      "begehbar_grund": "liegt im Wasser, dort läuft niemand"
     },
     "by9HuetteTheron": {
       "quelle": "spiel/eigene/huette_bretter_a.png",

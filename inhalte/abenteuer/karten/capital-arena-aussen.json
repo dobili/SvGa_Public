@@ -11,7 +11,7 @@
  "tilewidth": 16,
  "tileheight": 16,
  "nextlayerid": 5,
- "nextobjectid": 86,
+ "nextobjectid": 90,
  "layers": [
   {
    "id": 1,
@@ -14506,7 +14506,7 @@
      "id": 4,
      "name": "halleTuer",
      "type": "ausloeser",
-     "x": 624,
+     "x": 592,
      "y": 480,
      "width": 16,
      "height": 16,
@@ -14515,6 +14515,50 @@
     },
     {
      "id": 5,
+     "name": "halleTuer",
+     "type": "ausloeser",
+     "x": 608,
+     "y": 480,
+     "width": 16,
+     "height": 16,
+     "rotation": 0,
+     "visible": true
+    },
+    {
+     "id": 6,
+     "name": "halleTuer",
+     "type": "ausloeser",
+     "x": 624,
+     "y": 480,
+     "width": 16,
+     "height": 16,
+     "rotation": 0,
+     "visible": true
+    },
+    {
+     "id": 7,
+     "name": "halleTuer",
+     "type": "ausloeser",
+     "x": 640,
+     "y": 480,
+     "width": 16,
+     "height": 16,
+     "rotation": 0,
+     "visible": true
+    },
+    {
+     "id": 8,
+     "name": "halleTuer",
+     "type": "ausloeser",
+     "x": 656,
+     "y": 480,
+     "width": 16,
+     "height": 16,
+     "rotation": 0,
+     "visible": true
+    },
+    {
+     "id": 9,
      "name": "treppe",
      "type": "ausloeser",
      "x": 624,
@@ -14525,7 +14569,7 @@
      "visible": true
     },
     {
-     "id": 6,
+     "id": 10,
      "name": "innenstadt",
      "type": "ausloeser",
      "x": 1264,
@@ -14536,7 +14580,7 @@
      "visible": true
     },
     {
-     "id": 7,
+     "id": 11,
      "name": "innenstadt",
      "type": "ausloeser",
      "x": 1264,
@@ -14547,7 +14591,7 @@
      "visible": true
     },
     {
-     "id": 8,
+     "id": 12,
      "name": "fahnen",
      "type": "ausloeser",
      "x": 544,
@@ -14558,7 +14602,7 @@
      "visible": true
     },
     {
-     "id": 9,
+     "id": 13,
      "name": "wanderer",
      "type": "figur",
      "x": 256,
@@ -14569,7 +14613,7 @@
      "visible": true
     },
     {
-     "id": 10,
+     "id": 14,
      "name": "fans",
      "type": "statist",
      "x": 320,
@@ -14602,7 +14646,7 @@
      ]
     },
     {
-     "id": 11,
+     "id": 15,
      "name": "reporterin",
      "type": "statist",
      "x": 704,
@@ -14635,7 +14679,7 @@
      ]
     },
     {
-     "id": 12,
+     "id": 16,
      "name": "polizist",
      "type": "statist",
      "x": 1120,
@@ -14668,7 +14712,7 @@
      ]
     },
     {
-     "id": 13,
+     "id": 17,
      "name": "eisverkaeuferin",
      "type": "statist",
      "x": 768,
@@ -14706,7 +14750,7 @@
      ]
     },
     {
-     "id": 14,
+     "id": 18,
      "name": "tourist",
      "type": "statist",
      "x": 128,
@@ -14744,7 +14788,7 @@
      ]
     },
     {
-     "id": 15,
+     "id": 19,
      "name": "rentnerin",
      "type": "statist",
      "x": 448,
@@ -14782,7 +14826,7 @@
      ]
     },
     {
-     "id": 16,
+     "id": 20,
      "name": "student",
      "type": "statist",
      "x": 960,
@@ -14820,7 +14864,7 @@
      ]
     },
     {
-     "id": 17,
+     "id": 21,
      "name": "busfahrer",
      "type": "statist",
      "x": 160,
@@ -14858,7 +14902,7 @@
      ]
     },
     {
-     "id": 18,
+     "id": 22,
      "name": "strassenmusiker",
      "type": "statist",
      "x": 640,
@@ -14896,7 +14940,7 @@
      ]
     },
     {
-     "id": 19,
+     "id": 23,
      "name": "schachlehrer",
      "type": "statist",
      "x": 544,
@@ -14939,7 +14983,7 @@
      ]
     },
     {
-     "id": 20,
+     "id": 24,
      "name": "vater",
      "type": "statist",
      "x": 1056,
@@ -14977,7 +15021,7 @@
      ]
     },
     {
-     "id": 21,
+     "id": 25,
      "name": "schuelerin",
      "type": "statist",
      "x": 480,
@@ -15015,7 +15059,7 @@
      ]
     },
     {
-     "id": 22,
+     "id": 26,
      "name": "autogrammjunge",
      "type": "statist",
      "x": 832,
@@ -15053,7 +15097,7 @@
      ]
     },
     {
-     "id": 23,
+     "id": 27,
      "name": "tauben",
      "type": "tier",
      "x": 704,
@@ -15081,7 +15125,7 @@
      ]
     },
     {
-     "id": 24,
+     "id": 28,
      "name": "spatzen",
      "type": "tier",
      "x": 224,
@@ -15109,7 +15153,7 @@
      ]
     },
     {
-     "id": 25,
+     "id": 29,
      "name": "hund",
      "type": "tier",
      "x": 384,
@@ -15137,7 +15181,7 @@
      ]
     },
     {
-     "id": 26,
+     "id": 30,
      "name": "katze",
      "type": "tier",
      "x": 1216,
@@ -15165,7 +15209,7 @@
      ]
     },
     {
-     "id": 27,
+     "id": 31,
      "name": "eichhoernchen",
      "type": "tier",
      "x": 960,
@@ -15193,7 +15237,7 @@
      ]
     },
     {
-     "id": 28,
+     "id": 32,
      "name": "amseln",
      "type": "tier",
      "x": 1056,
@@ -15221,7 +15265,7 @@
      ]
     },
     {
-     "id": 29,
+     "id": 33,
      "name": "ca9BordQ2",
      "type": "moebel",
      "x": 400,
@@ -15244,7 +15288,7 @@
      ]
     },
     {
-     "id": 30,
+     "id": 34,
      "name": "ca9BordQ2",
      "type": "moebel",
      "x": 832,
@@ -15267,7 +15311,7 @@
      ]
     },
     {
-     "id": 31,
+     "id": 35,
      "name": "ca9BordQ1",
      "type": "moebel",
      "x": 384,
@@ -15290,7 +15334,7 @@
      ]
     },
     {
-     "id": 32,
+     "id": 36,
      "name": "ca9BordQ16",
      "type": "moebel",
      "x": 432,
@@ -15313,7 +15357,7 @@
      ]
     },
     {
-     "id": 33,
+     "id": 37,
      "name": "ca9BordQ9",
      "type": "moebel",
      "x": 688,
@@ -15336,7 +15380,7 @@
      ]
     },
     {
-     "id": 34,
+     "id": 38,
      "name": "ca9BordQ1",
      "type": "moebel",
      "x": 384,
@@ -15359,7 +15403,7 @@
      ]
     },
     {
-     "id": 35,
+     "id": 39,
      "name": "ca9BordL16",
      "type": "moebel",
      "x": 399,
@@ -15382,7 +15426,7 @@
      ]
     },
     {
-     "id": 36,
+     "id": 40,
      "name": "ca9BordL4",
      "type": "moebel",
      "x": 399,
@@ -15405,7 +15449,7 @@
      ]
     },
     {
-     "id": 37,
+     "id": 41,
      "name": "ca9BordL16",
      "type": "moebel",
      "x": 831,
@@ -15428,7 +15472,7 @@
      ]
     },
     {
-     "id": 38,
+     "id": 42,
      "name": "ca9BordL6",
      "type": "moebel",
      "x": 831,
@@ -15451,7 +15495,7 @@
      ]
     },
     {
-     "id": 39,
+     "id": 43,
      "name": "ca9BordL13",
      "type": "moebel",
      "x": 863,
@@ -15474,7 +15518,7 @@
      ]
     },
     {
-     "id": 40,
+     "id": 44,
      "name": "ca9BordL16",
      "type": "moebel",
      "x": 382,
@@ -15497,7 +15541,7 @@
      ]
     },
     {
-     "id": 41,
+     "id": 45,
      "name": "ca9BordL4",
      "type": "moebel",
      "x": 382,
@@ -15520,7 +15564,7 @@
      ]
     },
     {
-     "id": 42,
+     "id": 46,
      "name": "ca9BordL13",
      "type": "moebel",
      "x": 398,
@@ -15543,7 +15587,7 @@
      ]
     },
     {
-     "id": 43,
+     "id": 47,
      "name": "ca9BordL16",
      "type": "moebel",
      "x": 430,
@@ -15566,7 +15610,7 @@
      ]
     },
     {
-     "id": 44,
+     "id": 48,
      "name": "ca9BordL6",
      "type": "moebel",
      "x": 430,
@@ -15589,7 +15633,7 @@
      ]
     },
     {
-     "id": 45,
+     "id": 49,
      "name": "ca7Arena",
      "type": "moebel",
      "x": 432,
@@ -15612,7 +15656,7 @@
      ]
     },
     {
-     "id": 46,
+     "id": 50,
      "name": "ca7Fahne",
      "type": "moebel",
      "x": 496,
@@ -15635,7 +15679,7 @@
      ]
     },
     {
-     "id": 47,
+     "id": 51,
      "name": "ca7Fahne",
      "type": "moebel",
      "x": 720,
@@ -15658,7 +15702,7 @@
      ]
     },
     {
-     "id": 48,
+     "id": 52,
      "name": "ca7Brunnen",
      "type": "moebel",
      "x": 592,
@@ -15681,7 +15725,7 @@
      ]
     },
     {
-     "id": 49,
+     "id": 53,
      "name": "ca7Imbiss",
      "type": "moebel",
      "x": 80,
@@ -15704,7 +15748,7 @@
      ]
     },
     {
-     "id": 50,
+     "id": 54,
      "name": "ca7Limonadenwagen",
      "type": "moebel",
      "x": 992,
@@ -15727,7 +15771,7 @@
      ]
     },
     {
-     "id": 51,
+     "id": 55,
      "name": "ca7Bank",
      "type": "moebel",
      "x": 336,
@@ -15750,7 +15794,7 @@
      ]
     },
     {
-     "id": 52,
+     "id": 56,
      "name": "ca7Bank",
      "type": "moebel",
      "x": 864,
@@ -15773,7 +15817,7 @@
      ]
     },
     {
-     "id": 53,
+     "id": 57,
      "name": "ca7Laterne",
      "type": "moebel",
      "x": 320,
@@ -15796,7 +15840,7 @@
      ]
     },
     {
-     "id": 54,
+     "id": 58,
      "name": "ca7Laterne",
      "type": "moebel",
      "x": 928,
@@ -15819,7 +15863,7 @@
      ]
     },
     {
-     "id": 55,
+     "id": 59,
      "name": "ca7Laterne",
      "type": "moebel",
      "x": 560,
@@ -15842,7 +15886,7 @@
      ]
     },
     {
-     "id": 56,
+     "id": 60,
      "name": "ca7Laterne",
      "type": "moebel",
      "x": 688,
@@ -15865,7 +15909,7 @@
      ]
     },
     {
-     "id": 57,
+     "id": 61,
      "name": "ca7Nadelbaum",
      "type": "moebel",
      "x": 368,
@@ -15888,7 +15932,7 @@
      ]
     },
     {
-     "id": 58,
+     "id": 62,
      "name": "ca7Blumenbeet",
      "type": "moebel",
      "x": 352,
@@ -15911,7 +15955,7 @@
      ]
     },
     {
-     "id": 59,
+     "id": 63,
      "name": "ca7Blumenbeet",
      "type": "moebel",
      "x": 1216,
@@ -15934,7 +15978,7 @@
      ]
     },
     {
-     "id": 60,
+     "id": 64,
      "name": "ca10Post",
      "type": "moebel",
      "x": 16,
@@ -15957,7 +16001,7 @@
      ]
     },
     {
-     "id": 61,
+     "id": 65,
      "name": "ca8Kaufhaus1",
      "type": "moebel",
      "x": 144,
@@ -15980,7 +16024,7 @@
      ]
     },
     {
-     "id": 62,
+     "id": 66,
      "name": "ca8Wohnhaus9",
      "type": "moebel",
      "x": 256,
@@ -16003,7 +16047,7 @@
      ]
     },
     {
-     "id": 63,
+     "id": 67,
      "name": "ca8Reihenhaus2",
      "type": "moebel",
      "x": 352,
@@ -16026,7 +16070,7 @@
      ]
     },
     {
-     "id": 64,
+     "id": 68,
      "name": "ca10Feuerwache",
      "type": "moebel",
      "x": 16,
@@ -16049,7 +16093,7 @@
      ]
     },
     {
-     "id": 65,
+     "id": 69,
      "name": "ca8Hochhaus",
      "type": "moebel",
      "x": 272,
@@ -16072,7 +16116,7 @@
      ]
     },
     {
-     "id": 66,
+     "id": 70,
      "name": "ca8Wohnhaus9B",
      "type": "moebel",
      "x": 864,
@@ -16095,7 +16139,7 @@
      ]
     },
     {
-     "id": 67,
+     "id": 71,
      "name": "ca8Kaufhaus3",
      "type": "moebel",
      "x": 976,
@@ -16118,7 +16162,7 @@
      ]
     },
     {
-     "id": 68,
+     "id": 72,
      "name": "ca8Wohnhaus5_2",
      "type": "moebel",
      "x": 1088,
@@ -16141,7 +16185,7 @@
      ]
     },
     {
-     "id": 69,
+     "id": 73,
      "name": "ca8Laden1",
      "type": "moebel",
      "x": 1184,
@@ -16164,7 +16208,7 @@
      ]
     },
     {
-     "id": 70,
+     "id": 74,
      "name": "ca10Polizei",
      "type": "moebel",
      "x": 864,
@@ -16187,7 +16231,7 @@
      ]
     },
     {
-     "id": 71,
+     "id": 75,
      "name": "ca8Reihenhaus3",
      "type": "moebel",
      "x": 1200,
@@ -16210,7 +16254,7 @@
      ]
     },
     {
-     "id": 72,
+     "id": 76,
      "name": "ca8Markt2",
      "type": "moebel",
      "x": 32,
@@ -16233,7 +16277,7 @@
      ]
     },
     {
-     "id": 73,
+     "id": 77,
      "name": "ca8Eisenwaren",
      "type": "moebel",
      "x": 160,
@@ -16256,7 +16300,7 @@
      ]
     },
     {
-     "id": 74,
+     "id": 78,
      "name": "ca8Markt6",
      "type": "moebel",
      "x": 352,
@@ -16279,7 +16323,7 @@
      ]
     },
     {
-     "id": 75,
+     "id": 79,
      "name": "ca8Stadthaus45",
      "type": "moebel",
      "x": 464,
@@ -16302,7 +16346,7 @@
      ]
     },
     {
-     "id": 76,
+     "id": 80,
      "name": "ca8Laden2",
      "type": "moebel",
      "x": 560,
@@ -16325,7 +16369,7 @@
      ]
     },
     {
-     "id": 77,
+     "id": 81,
      "name": "ca10Cafe",
      "type": "moebel",
      "x": 656,
@@ -16348,7 +16392,7 @@
      ]
     },
     {
-     "id": 78,
+     "id": 82,
      "name": "ca8Markt9",
      "type": "moebel",
      "x": 800,
@@ -16371,7 +16415,7 @@
      ]
     },
     {
-     "id": 79,
+     "id": 83,
      "name": "ca8Stadthaus44",
      "type": "moebel",
      "x": 960,
@@ -16394,7 +16438,7 @@
      ]
     },
     {
-     "id": 80,
+     "id": 84,
      "name": "ca8Markt11",
      "type": "moebel",
      "x": 1056,
@@ -16417,7 +16461,7 @@
      ]
     },
     {
-     "id": 81,
+     "id": 85,
      "name": "ca8Laden5",
      "type": "moebel",
      "x": 1168,
@@ -16440,7 +16484,7 @@
      ]
     },
     {
-     "id": 82,
+     "id": 86,
      "name": "ca9BeetBaum",
      "type": "moebel",
      "x": 1216,
@@ -16463,7 +16507,7 @@
      ]
     },
     {
-     "id": 83,
+     "id": 87,
      "name": "ca9BeetZypresse",
      "type": "moebel",
      "x": 64,
@@ -16486,7 +16530,7 @@
      ]
     },
     {
-     "id": 84,
+     "id": 88,
      "name": "ca9BeetBaum",
      "type": "moebel",
      "x": 192,
@@ -16509,7 +16553,7 @@
      ]
     },
     {
-     "id": 85,
+     "id": 89,
      "name": "ca9BeetZypresse",
      "type": "moebel",
      "x": 1216,

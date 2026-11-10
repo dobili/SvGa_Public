@@ -50,7 +50,13 @@
       "art": "gebaeude",
       "zustand": "alt",
       "stil": "klassisch",
-      "blick": "unten"
+      "blick": "unten",
+      "tuer": [
+        [
+          3,
+          8
+        ]
+      ]
     },
     "n5Teleskop": {
       "quelle": "spiel/eigene/teleskop.png",

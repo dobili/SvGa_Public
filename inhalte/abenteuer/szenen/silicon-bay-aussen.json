@@ -866,11 +866,27 @@
     },
     {
       "name": "lobbyTuer",
+      "feld": [8, 21]
+    },
+    {
+      "name": "lobbyTuer",
       "feld": [9, 21]
+    },
+    {
+      "name": "lobbyTuer",
+      "feld": [10, 21]
+    },
+    {
+      "name": "akademieTuer",
+      "feld": [27, 21]
     },
     {
       "name": "akademieTuer",
       "feld": [28, 21]
+    },
+    {
+      "name": "akademieTuer",
+      "feld": [29, 21]
     },
     {
       "name": "hotel",

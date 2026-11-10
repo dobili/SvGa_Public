@@ -169,7 +169,13 @@
       "kollision": false,
       "art": "tuer",
       "zustand": "alt",
-      "stil": "industrie"
+      "stil": "industrie",
+      "tuer": [
+        [
+          1,
+          3
+        ]
+      ]
     },
     "st5Stuetzbalken": {
       "quelle": "modern-farm/Single_Files_16x16/Props_and_Buildings_16x16/Trunk_Big_Vertical_16x16.png",

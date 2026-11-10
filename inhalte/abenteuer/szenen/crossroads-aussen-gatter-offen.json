@@ -1037,6 +1037,10 @@
       "feld": [14, 19]
     },
     {
+      "name": "raststaetteTuer",
+      "feld": [15, 19]
+    },
+    {
       "name": "wegweiser",
       "feld": [29, 20]
     },

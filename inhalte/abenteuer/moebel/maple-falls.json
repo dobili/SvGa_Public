@@ -678,7 +678,17 @@
       "art": "gebaeude",
       "blick": "unten",
       "zustand": "gebraucht",
-      "stil": "klassisch"
+      "stil": "klassisch",
+      "tuer": [
+        [
+          1,
+          9
+        ],
+        [
+          2,
+          9
+        ]
+      ]
     },
     "mf2Plakatwand": {
       "quelle": "modern-exteriors/Modern_Exteriors_16x16/ME_Theme_Sorter_16x16/3_City_Props_Singles_16x16/ME_Singles_City_Props_16x16_Billboard_8.png",
@@ -1080,7 +1090,28 @@
       "art": "gebaeude",
       "blick": "unten",
       "zustand": "gebraucht",
-      "stil": "klassisch"
+      "stil": "klassisch",
+      "tuer": [
+        [
+          2,
+          10
+        ]
+      ],
+      "maske": [
+        ".........",
+        "#########",
+        "#########",
+        "#########",
+        "#########",
+        "#########",
+        "#########",
+        "#########",
+        "#########",
+        "#########",
+        "##.######",
+        "#...#####",
+        "#...#####"
+      ]
     },
     "mf4VillaLila": {
       "quelle": "modern-exteriors/Modern_Exteriors_16x16/ME_Theme_Sorter_16x16/7_Villas_Singles_16x16/ME_Singles_Villas_16x16_Villa_3.png",
@@ -1110,7 +1141,17 @@
       "art": "gebaeude",
       "blick": "unten",
       "zustand": "gebraucht",
-      "stil": "klassisch"
+      "stil": "klassisch",
+      "tuer": [
+        [
+          1,
+          9
+        ],
+        [
+          2,
+          9
+        ]
+      ]
     },
     "mf4Schule": {
       "quelle": "modern-exteriors/Modern_Exteriors_16x16/ME_Theme_Sorter_16x16/13_School_Singles_16x16/ME_Singles_School_16x16_School_1.png",
@@ -1120,7 +1161,42 @@
       "art": "gebaeude",
       "blick": "unten",
       "zustand": "gebraucht",
-      "stil": "klassisch"
+      "stil": "klassisch",
+      "tuer": [
+        [
+          8,
+          20
+        ],
+        [
+          9,
+          20
+        ]
+      ],
+      "maske": [
+        "........................",
+        "########################",
+        "########################",
+        "########################",
+        "########################",
+        "########################",
+        "########################",
+        "########################",
+        "########################",
+        "########################",
+        "########################",
+        "########################",
+        "########################",
+        "########################",
+        "########################",
+        "########################",
+        "########################",
+        "########################",
+        "########################",
+        "########################",
+        "#######..........#######",
+        "#######..........#######",
+        "#######..........#######"
+      ]
     },
     "mf4Bauernhaus": {
       "quelle": "modern-farm/Single_Files_16x16/0_Complete_Tileset_Singles_16x16/Farmer_House_1_16x16.png",
@@ -1140,7 +1216,13 @@
       "art": "gebaeude",
       "blick": "unten",
       "zustand": "gebraucht",
-      "stil": "klassisch"
+      "stil": "klassisch",
+      "tuer": [
+        [
+          7,
+          9
+        ]
+      ]
     },
     "mf4Briefkasten": {
       "quelle": "modern-exteriors/Modern_Exteriors_16x16/ME_Theme_Sorter_16x16/22_Post_Office_Singles_16x16/22_Post_Office_16x16_Black_Mailbox_1_Front.png",

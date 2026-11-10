@@ -11,7 +11,7 @@
  "tilewidth": 16,
  "tileheight": 16,
  "nextlayerid": 5,
- "nextobjectid": 152,
+ "nextobjectid": 153,
  "layers": [
   {
    "id": 1,
@@ -6857,6 +6857,17 @@
     },
     {
      "id": 7,
+     "name": "saloonTuer",
+     "type": "ausloeser",
+     "x": 368,
+     "y": 320,
+     "width": 16,
+     "height": 16,
+     "rotation": 0,
+     "visible": true
+    },
+    {
+     "id": 8,
      "name": "grab",
      "type": "ausloeser",
      "x": 800,
@@ -6867,7 +6878,7 @@
      "visible": true
     },
     {
-     "id": 8,
+     "id": 9,
      "name": "sternenhimmel",
      "type": "ausloeser",
      "x": 128,
@@ -6878,7 +6889,7 @@
      "visible": true
     },
     {
-     "id": 9,
+     "id": 10,
      "name": "goldmine",
      "type": "ausloeser",
      "x": 464,
@@ -6889,7 +6900,7 @@
      "visible": true
     },
     {
-     "id": 10,
+     "id": 11,
      "name": "goldmine",
      "type": "ausloeser",
      "x": 480,
@@ -6900,7 +6911,7 @@
      "visible": true
     },
     {
-     "id": 11,
+     "id": 12,
      "name": "ortsschild",
      "type": "ausloeser",
      "x": 128,
@@ -6911,7 +6922,7 @@
      "visible": true
     },
     {
-     "id": 12,
+     "id": 13,
      "name": "steckbrief",
      "type": "ausloeser",
      "x": 544,
@@ -6922,7 +6933,7 @@
      "visible": true
     },
     {
-     "id": 13,
+     "id": 14,
      "name": "amboss",
      "type": "ausloeser",
      "x": 176,
@@ -6933,7 +6944,7 @@
      "visible": true
     },
     {
-     "id": 14,
+     "id": 15,
      "name": "victor",
      "type": "figur",
      "x": 800,
@@ -6944,7 +6955,7 @@
      "visible": true
     },
     {
-     "id": 15,
+     "id": 16,
      "name": "metallsucher",
      "type": "statist",
      "x": 128,
@@ -6977,7 +6988,7 @@
      ]
     },
     {
-     "id": 16,
+     "id": 17,
      "name": "geier",
      "type": "tier",
      "x": 656,
@@ -6995,7 +7006,7 @@
      ]
     },
     {
-     "id": 17,
+     "id": 18,
      "name": "eule",
      "type": "tier",
      "x": 784,
@@ -7018,7 +7029,7 @@
      ]
     },
     {
-     "id": 18,
+     "id": 19,
      "name": "echse",
      "type": "tier",
      "x": 48,
@@ -7051,7 +7062,7 @@
      ]
     },
     {
-     "id": 19,
+     "id": 20,
      "name": "touristin",
      "type": "statist",
      "x": 192,
@@ -7089,7 +7100,7 @@
      ]
     },
     {
-     "id": 20,
+     "id": 21,
      "name": "bikerin",
      "type": "statist",
      "x": 704,
@@ -7117,7 +7128,7 @@
      ]
     },
     {
-     "id": 21,
+     "id": 22,
      "name": "geschichtslehrer",
      "type": "statist",
      "x": 416,
@@ -7145,7 +7156,7 @@
      ]
     },
     {
-     "id": 22,
+     "id": 23,
      "name": "schulkind",
      "type": "statist",
      "x": 432,
@@ -7173,7 +7184,7 @@
      ]
     },
     {
-     "id": 23,
+     "id": 24,
      "name": "urenkelPostkutscher",
      "type": "statist",
      "x": 752,
@@ -7201,7 +7212,7 @@
      ]
     },
     {
-     "id": 24,
+     "id": 25,
      "name": "fotograf",
      "type": "statist",
      "x": 320,
@@ -7229,7 +7240,7 @@
      ]
     },
     {
-     "id": 25,
+     "id": 26,
      "name": "goldwaescherin",
      "type": "statist",
      "x": 48,
@@ -7257,7 +7268,7 @@
      ]
     },
     {
-     "id": 26,
+     "id": 27,
      "name": "wanderin",
      "type": "statist",
      "x": 128,
@@ -7285,7 +7296,7 @@
      ]
     },
     {
-     "id": 27,
+     "id": 28,
      "name": "radfahrer",
      "type": "statist",
      "x": 16,
@@ -7318,7 +7329,7 @@
      ]
     },
     {
-     "id": 28,
+     "id": 29,
      "name": "bikerFreund",
      "type": "statist",
      "x": 720,
@@ -7341,7 +7352,7 @@
      ]
     },
     {
-     "id": 29,
+     "id": 30,
      "name": "malerin",
      "type": "statist",
      "x": 480,
@@ -7364,7 +7375,7 @@
      ]
     },
     {
-     "id": 30,
+     "id": 31,
      "name": "mannMitHut",
      "type": "statist",
      "x": 256,
@@ -7387,7 +7398,7 @@
      ]
     },
     {
-     "id": 31,
+     "id": 32,
      "name": "alterHund",
      "type": "tier",
      "x": 576,
@@ -7415,7 +7426,7 @@
      ]
     },
     {
-     "id": 32,
+     "id": 33,
      "name": "gt7FassadeLaden",
      "type": "moebel",
      "x": 16,
@@ -7438,7 +7449,7 @@
      ]
     },
     {
-     "id": 33,
+     "id": 34,
      "name": "gt7FassadeSchmiede",
      "type": "moebel",
      "x": 144,
@@ -7461,7 +7472,7 @@
      ]
     },
     {
-     "id": 34,
+     "id": 35,
      "name": "gt7SaloonFassade",
      "type": "moebel",
      "x": 288,
@@ -7484,7 +7495,7 @@
      ]
     },
     {
-     "id": 35,
+     "id": 36,
      "name": "gt7FassadeSheriff",
      "type": "moebel",
      "x": 512,
@@ -7507,7 +7518,7 @@
      ]
     },
     {
-     "id": 36,
+     "id": 37,
      "name": "gt7FassadePruefamt",
      "type": "moebel",
      "x": 640,
@@ -7530,7 +7541,7 @@
      ]
     },
     {
-     "id": 37,
+     "id": 38,
      "name": "gt7Wagenrad",
      "type": "moebel",
      "x": 256,
@@ -7553,7 +7564,7 @@
      ]
     },
     {
-     "id": 38,
+     "id": 39,
      "name": "gt8HuetteA",
      "type": "moebel",
      "x": 32,
@@ -7576,7 +7587,7 @@
      ]
     },
     {
-     "id": 39,
+     "id": 40,
      "name": "gt8Post",
      "type": "moebel",
      "x": 160,
@@ -7599,7 +7610,7 @@
      ]
     },
     {
-     "id": 40,
+     "id": 41,
      "name": "gt8HuetteB",
      "type": "moebel",
      "x": 528,
@@ -7622,7 +7633,7 @@
      ]
     },
     {
-     "id": 41,
+     "id": 42,
      "name": "gt8Barbier",
      "type": "moebel",
      "x": 640,
@@ -7645,7 +7656,7 @@
      ]
     },
     {
-     "id": 42,
+     "id": 43,
      "name": "gt8Hotel",
      "type": "moebel",
      "x": 192,
@@ -7668,7 +7679,7 @@
      ]
     },
     {
-     "id": 43,
+     "id": 44,
      "name": "gt8Mietstall",
      "type": "moebel",
      "x": 320,
@@ -7691,7 +7702,7 @@
      ]
     },
     {
-     "id": 44,
+     "id": 45,
      "name": "gt7Wasserturm",
      "type": "moebel",
      "x": 768,
@@ -7714,7 +7725,7 @@
      ]
     },
     {
-     "id": 45,
+     "id": 46,
      "name": "gt7Traenke",
      "type": "moebel",
      "x": 208,
@@ -7737,7 +7748,7 @@
      ]
     },
     {
-     "id": 46,
+     "id": 47,
      "name": "gt7PlanwagenKaputt",
      "type": "moebel",
      "x": 704,
@@ -7760,7 +7771,7 @@
      ]
     },
     {
-     "id": 47,
+     "id": 48,
      "name": "gt9StollenOffen",
      "type": "moebel",
      "x": 448,
@@ -7783,7 +7794,7 @@
      ]
     },
     {
-     "id": 48,
+     "id": 49,
      "name": "gt7Lore",
      "type": "moebel",
      "x": 496,
@@ -7806,33 +7817,10 @@
      ]
     },
     {
-     "id": 49,
-     "name": "gt7ZaunUM",
-     "type": "moebel",
-     "x": 656,
-     "y": 592,
-     "width": 16,
-     "height": 16,
-     "rotation": 0,
-     "visible": true,
-     "properties": [
-      {
-       "name": "tiefe",
-       "type": "int",
-       "value": 600
-      },
-      {
-       "name": "kollision",
-       "type": "bool",
-       "value": true
-      }
-     ]
-    },
-    {
      "id": 50,
      "name": "gt7ZaunUM",
      "type": "moebel",
-     "x": 672,
+     "x": 656,
      "y": 592,
      "width": 16,
      "height": 16,
@@ -7855,7 +7843,7 @@
      "id": 51,
      "name": "gt7ZaunUM",
      "type": "moebel",
-     "x": 688,
+     "x": 672,
      "y": 592,
      "width": 16,
      "height": 16,
@@ -7878,7 +7866,7 @@
      "id": 52,
      "name": "gt7ZaunUM",
      "type": "moebel",
-     "x": 704,
+     "x": 688,
      "y": 592,
      "width": 16,
      "height": 16,
@@ -7901,7 +7889,7 @@
      "id": 53,
      "name": "gt7ZaunUM",
      "type": "moebel",
-     "x": 720,
+     "x": 704,
      "y": 592,
      "width": 16,
      "height": 16,
@@ -7924,7 +7912,7 @@
      "id": 54,
      "name": "gt7ZaunUM",
      "type": "moebel",
-     "x": 736,
+     "x": 720,
      "y": 592,
      "width": 16,
      "height": 16,
@@ -7945,6 +7933,29 @@
     },
     {
      "id": 55,
+     "name": "gt7ZaunUM",
+     "type": "moebel",
+     "x": 736,
+     "y": 592,
+     "width": 16,
+     "height": 16,
+     "rotation": 0,
+     "visible": true,
+     "properties": [
+      {
+       "name": "tiefe",
+       "type": "int",
+       "value": 600
+      },
+      {
+       "name": "kollision",
+       "type": "bool",
+       "value": true
+      }
+     ]
+    },
+    {
+     "id": 56,
      "name": "gt7ZaunOM",
      "type": "moebel",
      "x": 736,
@@ -7967,7 +7978,7 @@
      ]
     },
     {
-     "id": 56,
+     "id": 57,
      "name": "gt7ZaunUM",
      "type": "moebel",
      "x": 752,
@@ -7981,29 +7992,6 @@
        "name": "tiefe",
        "type": "int",
        "value": 600
-      },
-      {
-       "name": "kollision",
-       "type": "bool",
-       "value": true
-      }
-     ]
-    },
-    {
-     "id": 57,
-     "name": "gt7ZaunOM",
-     "type": "moebel",
-     "x": 752,
-     "y": 464,
-     "width": 16,
-     "height": 16,
-     "rotation": 0,
-     "visible": true,
-     "properties": [
-      {
-       "name": "tiefe",
-       "type": "int",
-       "value": 472
       },
       {
        "name": "kollision",
@@ -8014,10 +8002,10 @@
     },
     {
      "id": 58,
-     "name": "gt7ZaunUM",
+     "name": "gt7ZaunOM",
      "type": "moebel",
-     "x": 768,
-     "y": 592,
+     "x": 752,
+     "y": 464,
      "width": 16,
      "height": 16,
      "rotation": 0,
@@ -8026,7 +8014,7 @@
       {
        "name": "tiefe",
        "type": "int",
-       "value": 600
+       "value": 472
       },
       {
        "name": "kollision",
@@ -8037,6 +8025,29 @@
     },
     {
      "id": 59,
+     "name": "gt7ZaunUM",
+     "type": "moebel",
+     "x": 768,
+     "y": 592,
+     "width": 16,
+     "height": 16,
+     "rotation": 0,
+     "visible": true,
+     "properties": [
+      {
+       "name": "tiefe",
+       "type": "int",
+       "value": 600
+      },
+      {
+       "name": "kollision",
+       "type": "bool",
+       "value": true
+      }
+     ]
+    },
+    {
+     "id": 60,
      "name": "gt7ZaunOM",
      "type": "moebel",
      "x": 768,
@@ -8059,7 +8070,7 @@
      ]
     },
     {
-     "id": 60,
+     "id": 61,
      "name": "gt7ZaunUM",
      "type": "moebel",
      "x": 784,
@@ -8073,29 +8084,6 @@
        "name": "tiefe",
        "type": "int",
        "value": 600
-      },
-      {
-       "name": "kollision",
-       "type": "bool",
-       "value": true
-      }
-     ]
-    },
-    {
-     "id": 61,
-     "name": "gt7ZaunOM",
-     "type": "moebel",
-     "x": 784,
-     "y": 464,
-     "width": 16,
-     "height": 16,
-     "rotation": 0,
-     "visible": true,
-     "properties": [
-      {
-       "name": "tiefe",
-       "type": "int",
-       "value": 472
       },
       {
        "name": "kollision",
@@ -8106,10 +8094,10 @@
     },
     {
      "id": 62,
-     "name": "gt7ZaunUM",
+     "name": "gt7ZaunOM",
      "type": "moebel",
-     "x": 800,
-     "y": 592,
+     "x": 784,
+     "y": 464,
      "width": 16,
      "height": 16,
      "rotation": 0,
@@ -8118,7 +8106,7 @@
       {
        "name": "tiefe",
        "type": "int",
-       "value": 600
+       "value": 472
       },
       {
        "name": "kollision",
@@ -8129,6 +8117,29 @@
     },
     {
      "id": 63,
+     "name": "gt7ZaunUM",
+     "type": "moebel",
+     "x": 800,
+     "y": 592,
+     "width": 16,
+     "height": 16,
+     "rotation": 0,
+     "visible": true,
+     "properties": [
+      {
+       "name": "tiefe",
+       "type": "int",
+       "value": 600
+      },
+      {
+       "name": "kollision",
+       "type": "bool",
+       "value": true
+      }
+     ]
+    },
+    {
+     "id": 64,
      "name": "gt7ZaunOM",
      "type": "moebel",
      "x": 800,
@@ -8151,7 +8162,7 @@
      ]
     },
     {
-     "id": 64,
+     "id": 65,
      "name": "gt7ZaunUM",
      "type": "moebel",
      "x": 816,
@@ -8174,7 +8185,7 @@
      ]
     },
     {
-     "id": 65,
+     "id": 66,
      "name": "gt7ZaunOM",
      "type": "moebel",
      "x": 816,
@@ -8197,7 +8208,7 @@
      ]
     },
     {
-     "id": 66,
+     "id": 67,
      "name": "gt7ZaunUR",
      "type": "moebel",
      "x": 832,
@@ -8220,7 +8231,7 @@
      ]
     },
     {
-     "id": 67,
+     "id": 68,
      "name": "gt7ZaunOR",
      "type": "moebel",
      "x": 832,
@@ -8243,7 +8254,7 @@
      ]
     },
     {
-     "id": 68,
+     "id": 69,
      "name": "gt7ZaunMR",
      "type": "moebel",
      "x": 832,
@@ -8266,7 +8277,7 @@
      ]
     },
     {
-     "id": 69,
+     "id": 70,
      "name": "gt7ZaunMR",
      "type": "moebel",
      "x": 832,
@@ -8289,7 +8300,7 @@
      ]
     },
     {
-     "id": 70,
+     "id": 71,
      "name": "gt7ZaunMR",
      "type": "moebel",
      "x": 832,
@@ -8312,7 +8323,7 @@
      ]
     },
     {
-     "id": 71,
+     "id": 72,
      "name": "gt7ZaunMR",
      "type": "moebel",
      "x": 832,
@@ -8335,7 +8346,7 @@
      ]
     },
     {
-     "id": 72,
+     "id": 73,
      "name": "gt7ZaunMR",
      "type": "moebel",
      "x": 832,
@@ -8358,7 +8369,7 @@
      ]
     },
     {
-     "id": 73,
+     "id": 74,
      "name": "gt7ZaunMR",
      "type": "moebel",
      "x": 832,
@@ -8381,7 +8392,7 @@
      ]
     },
     {
-     "id": 74,
+     "id": 75,
      "name": "gt7ZaunMR",
      "type": "moebel",
      "x": 832,
@@ -8404,7 +8415,7 @@
      ]
     },
     {
-     "id": 75,
+     "id": 76,
      "name": "gt7GrabOhneName",
      "type": "moebel",
      "x": 816,
@@ -8427,7 +8438,7 @@
      ]
     },
     {
-     "id": 76,
+     "id": 77,
      "name": "gt7Grabstein",
      "type": "moebel",
      "x": 736,
@@ -8450,7 +8461,7 @@
      ]
     },
     {
-     "id": 77,
+     "id": 78,
      "name": "gt7GrabOffen",
      "type": "moebel",
      "x": 656,
@@ -8473,7 +8484,7 @@
      ]
     },
     {
-     "id": 78,
+     "id": 79,
      "name": "gt7Grabstein",
      "type": "moebel",
      "x": 736,
@@ -8496,7 +8507,7 @@
      ]
     },
     {
-     "id": 79,
+     "id": 80,
      "name": "gt7Grabstein",
      "type": "moebel",
      "x": 704,
@@ -8519,7 +8530,7 @@
      ]
     },
     {
-     "id": 80,
+     "id": 81,
      "name": "gt7GrabsteinB",
      "type": "moebel",
      "x": 752,
@@ -8542,7 +8553,7 @@
      ]
     },
     {
-     "id": 81,
+     "id": 82,
      "name": "gt7Grabstein",
      "type": "moebel",
      "x": 688,
@@ -8565,7 +8576,7 @@
      ]
     },
     {
-     "id": 82,
+     "id": 83,
      "name": "gt7Grabhuegel",
      "type": "moebel",
      "x": 720,
@@ -8588,7 +8599,7 @@
      ]
     },
     {
-     "id": 83,
+     "id": 84,
      "name": "gt7Kreuz",
      "type": "moebel",
      "x": 768,
@@ -8611,7 +8622,7 @@
      ]
     },
     {
-     "id": 84,
+     "id": 85,
      "name": "gt7GrabsteinGrau",
      "type": "moebel",
      "x": 784,
@@ -8634,7 +8645,7 @@
      ]
     },
     {
-     "id": 85,
+     "id": 86,
      "name": "gt7Kreuz",
      "type": "moebel",
      "x": 752,
@@ -8657,7 +8668,7 @@
      ]
     },
     {
-     "id": 86,
+     "id": 87,
      "name": "gt7Geierkreis",
      "type": "moebel",
      "x": 656,
@@ -8680,7 +8691,7 @@
      ]
     },
     {
-     "id": 87,
+     "id": 88,
      "name": "gt7Bank",
      "type": "moebel",
      "x": 112,
@@ -8703,7 +8714,7 @@
      ]
     },
     {
-     "id": 88,
+     "id": 89,
      "name": "gt7Haltestelle",
      "type": "moebel",
      "x": 832,
@@ -8726,7 +8737,7 @@
      ]
     },
     {
-     "id": 89,
+     "id": 90,
      "name": "gt7Kiste",
      "type": "moebel",
      "x": 512,
@@ -8749,7 +8760,7 @@
      ]
     },
     {
-     "id": 90,
+     "id": 91,
      "name": "gt7Kaktus",
      "type": "moebel",
      "x": 384,
@@ -8772,7 +8783,7 @@
      ]
     },
     {
-     "id": 91,
+     "id": 92,
      "name": "gt7Stein",
      "type": "moebel",
      "x": 64,
@@ -8795,7 +8806,7 @@
      ]
     },
     {
-     "id": 92,
+     "id": 93,
      "name": "gt7Felsgruppe",
      "type": "moebel",
      "x": 608,
@@ -8818,7 +8829,7 @@
      ]
     },
     {
-     "id": 93,
+     "id": 94,
      "name": "gt7KaktusBluete",
      "type": "moebel",
      "x": 112,
@@ -8841,7 +8852,7 @@
      ]
     },
     {
-     "id": 94,
+     "id": 95,
      "name": "gt7Stein",
      "type": "moebel",
      "x": 32,
@@ -8864,7 +8875,7 @@
      ]
     },
     {
-     "id": 95,
+     "id": 96,
      "name": "gt7Saguaro",
      "type": "moebel",
      "x": 272,
@@ -8887,7 +8898,7 @@
      ]
     },
     {
-     "id": 96,
+     "id": 97,
      "name": "gt7Kaktus",
      "type": "moebel",
      "x": 320,
@@ -8910,7 +8921,7 @@
      ]
     },
     {
-     "id": 97,
+     "id": 98,
      "name": "gt7Tumbleweed",
      "type": "moebel",
      "x": 416,
@@ -8933,7 +8944,7 @@
      ]
     },
     {
-     "id": 98,
+     "id": 99,
      "name": "gt7KaktusBluete",
      "type": "moebel",
      "x": 416,
@@ -8956,7 +8967,7 @@
      ]
     },
     {
-     "id": 99,
+     "id": 100,
      "name": "gt7Tumbleweed",
      "type": "moebel",
      "x": 832,
@@ -8979,7 +8990,7 @@
      ]
     },
     {
-     "id": 100,
+     "id": 101,
      "name": "gt7Stein",
      "type": "moebel",
      "x": 720,
@@ -9002,7 +9013,7 @@
      ]
     },
     {
-     "id": 101,
+     "id": 102,
      "name": "gt7Stein",
      "type": "moebel",
      "x": 800,
@@ -9025,7 +9036,7 @@
      ]
     },
     {
-     "id": 102,
+     "id": 103,
      "name": "gt7Tumbleweed",
      "type": "moebel",
      "x": 736,
@@ -9048,7 +9059,7 @@
      ]
     },
     {
-     "id": 103,
+     "id": 104,
      "name": "gt7Felsgruppe",
      "type": "moebel",
      "x": 384,
@@ -9071,7 +9082,7 @@
      ]
     },
     {
-     "id": 104,
+     "id": 105,
      "name": "gt7Stein",
      "type": "moebel",
      "x": 96,
@@ -9094,7 +9105,7 @@
      ]
     },
     {
-     "id": 105,
+     "id": 106,
      "name": "gt7Tumbleweed",
      "type": "moebel",
      "x": 400,
@@ -9117,7 +9128,7 @@
      ]
     },
     {
-     "id": 106,
+     "id": 107,
      "name": "gt7Saguaro",
      "type": "moebel",
      "x": 256,
@@ -9140,7 +9151,7 @@
      ]
     },
     {
-     "id": 107,
+     "id": 108,
      "name": "gt7KaktusBluete",
      "type": "moebel",
      "x": 448,
@@ -9163,7 +9174,7 @@
      ]
     },
     {
-     "id": 108,
+     "id": 109,
      "name": "gt7Stein",
      "type": "moebel",
      "x": 128,
@@ -9186,7 +9197,7 @@
      ]
     },
     {
-     "id": 109,
+     "id": 110,
      "name": "gt7Felsgruppe",
      "type": "moebel",
      "x": 304,
@@ -9209,7 +9220,7 @@
      ]
     },
     {
-     "id": 110,
+     "id": 111,
      "name": "gt7Tumbleweed",
      "type": "moebel",
      "x": 784,
@@ -9232,7 +9243,7 @@
      ]
     },
     {
-     "id": 111,
+     "id": 112,
      "name": "gt7Felsgruppe",
      "type": "moebel",
      "x": 784,
@@ -9255,7 +9266,7 @@
      ]
     },
     {
-     "id": 112,
+     "id": 113,
      "name": "gt7Stein",
      "type": "moebel",
      "x": 512,
@@ -9278,7 +9289,7 @@
      ]
     },
     {
-     "id": 113,
+     "id": 114,
      "name": "gt7Stein",
      "type": "moebel",
      "x": 528,
@@ -9301,7 +9312,7 @@
      ]
     },
     {
-     "id": 114,
+     "id": 115,
      "name": "gt7Stein",
      "type": "moebel",
      "x": 800,
@@ -9324,7 +9335,7 @@
      ]
     },
     {
-     "id": 115,
+     "id": 116,
      "name": "gt7Stein",
      "type": "moebel",
      "x": 416,
@@ -9347,7 +9358,7 @@
      ]
     },
     {
-     "id": 116,
+     "id": 117,
      "name": "gt7Tumbleweed",
      "type": "moebel",
      "x": 32,
@@ -9370,7 +9381,7 @@
      ]
     },
     {
-     "id": 117,
+     "id": 118,
      "name": "gt7Stein",
      "type": "moebel",
      "x": 688,
@@ -9393,7 +9404,7 @@
      ]
     },
     {
-     "id": 118,
+     "id": 119,
      "name": "gt7TumbleweedGross",
      "type": "moebel",
      "x": 16,
@@ -9416,7 +9427,7 @@
      ]
     },
     {
-     "id": 119,
+     "id": 120,
      "name": "gt7Stein",
      "type": "moebel",
      "x": 80,
@@ -9439,7 +9450,7 @@
      ]
     },
     {
-     "id": 120,
+     "id": 121,
      "name": "gt7Kaktus",
      "type": "moebel",
      "x": 336,
@@ -9462,7 +9473,7 @@
      ]
     },
     {
-     "id": 121,
+     "id": 122,
      "name": "gt7TumbleweedGross",
      "type": "moebel",
      "x": 624,
@@ -9485,7 +9496,7 @@
      ]
     },
     {
-     "id": 122,
+     "id": 123,
      "name": "gt7Felsgruppe",
      "type": "moebel",
      "x": 176,
@@ -9508,7 +9519,7 @@
      ]
     },
     {
-     "id": 123,
+     "id": 124,
      "name": "gt7Saguaro",
      "type": "moebel",
      "x": 448,
@@ -9531,7 +9542,7 @@
      ]
     },
     {
-     "id": 124,
+     "id": 125,
      "name": "gt7KaktusBluete",
      "type": "moebel",
      "x": 752,
@@ -9554,7 +9565,7 @@
      ]
     },
     {
-     "id": 125,
+     "id": 126,
      "name": "gt7Tumbleweed",
      "type": "moebel",
      "x": 176,
@@ -9577,7 +9588,7 @@
      ]
     },
     {
-     "id": 126,
+     "id": 127,
      "name": "gt7KaktusBluete",
      "type": "moebel",
      "x": 432,
@@ -9600,7 +9611,7 @@
      ]
     },
     {
-     "id": 127,
+     "id": 128,
      "name": "gt7KaktusBluete",
      "type": "moebel",
      "x": 288,
@@ -9623,7 +9634,7 @@
      ]
     },
     {
-     "id": 128,
+     "id": 129,
      "name": "gt7Schild",
      "type": "moebel",
      "x": 128,
@@ -9646,7 +9657,7 @@
      ]
     },
     {
-     "id": 129,
+     "id": 130,
      "name": "gt7ZaunOL",
      "type": "moebel",
      "x": 640,
@@ -9669,7 +9680,7 @@
      ]
     },
     {
-     "id": 130,
+     "id": 131,
      "name": "gt7ZaunOM",
      "type": "moebel",
      "x": 656,
@@ -9692,7 +9703,7 @@
      ]
     },
     {
-     "id": 131,
+     "id": 132,
      "name": "gt7ZaunEndeLinks",
      "type": "moebel",
      "x": 672,
@@ -9715,7 +9726,7 @@
      ]
     },
     {
-     "id": 132,
+     "id": 133,
      "name": "gt7ZaunEndeRechts",
      "type": "moebel",
      "x": 720,
@@ -9738,7 +9749,7 @@
      ]
     },
     {
-     "id": 133,
+     "id": 134,
      "name": "gt7ZaunUL",
      "type": "moebel",
      "x": 640,
@@ -9761,7 +9772,7 @@
      ]
     },
     {
-     "id": 134,
+     "id": 135,
      "name": "gt7ZaunML",
      "type": "moebel",
      "x": 640,
@@ -9784,7 +9795,7 @@
      ]
     },
     {
-     "id": 135,
+     "id": 136,
      "name": "gt7ZaunML",
      "type": "moebel",
      "x": 640,
@@ -9807,7 +9818,7 @@
      ]
     },
     {
-     "id": 136,
+     "id": 137,
      "name": "gt7ZaunML",
      "type": "moebel",
      "x": 640,
@@ -9830,7 +9841,7 @@
      ]
     },
     {
-     "id": 137,
+     "id": 138,
      "name": "gt7ZaunML",
      "type": "moebel",
      "x": 640,
@@ -9853,7 +9864,7 @@
      ]
     },
     {
-     "id": 138,
+     "id": 139,
      "name": "gt7ZaunML",
      "type": "moebel",
      "x": 640,
@@ -9876,7 +9887,7 @@
      ]
     },
     {
-     "id": 139,
+     "id": 140,
      "name": "gt7ZaunML",
      "type": "moebel",
      "x": 640,
@@ -9899,7 +9910,7 @@
      ]
     },
     {
-     "id": 140,
+     "id": 141,
      "name": "gt7ZaunML",
      "type": "moebel",
      "x": 640,
@@ -9922,7 +9933,7 @@
      ]
     },
     {
-     "id": 141,
+     "id": 142,
      "name": "gt8Bestatter",
      "type": "moebel",
      "x": 496,
@@ -9945,7 +9956,7 @@
      ]
     },
     {
-     "id": 142,
+     "id": 143,
      "name": "gtHeu",
      "type": "moebel",
      "x": 32,
@@ -9968,7 +9979,7 @@
      ]
     },
     {
-     "id": 143,
+     "id": 144,
      "name": "gtHeu",
      "type": "moebel",
      "x": 32,
@@ -9991,7 +10002,7 @@
      ]
     },
     {
-     "id": 144,
+     "id": 145,
      "name": "gt7Traenke",
      "type": "moebel",
      "x": 80,
@@ -10014,7 +10025,7 @@
      ]
     },
     {
-     "id": 145,
+     "id": 146,
      "name": "gt7Fass",
      "type": "moebel",
      "x": 64,
@@ -10037,7 +10048,7 @@
      ]
     },
     {
-     "id": 146,
+     "id": 147,
      "name": "gt7Windrad",
      "type": "moebel",
      "x": 816,
@@ -10060,7 +10071,7 @@
      ]
     },
     {
-     "id": 147,
+     "id": 148,
      "name": "gt7Kreuz",
      "type": "moebel",
      "x": 688,
@@ -10083,7 +10094,7 @@
      ]
     },
     {
-     "id": 148,
+     "id": 149,
      "name": "gt7Grabstein",
      "type": "moebel",
      "x": 720,
@@ -10106,7 +10117,7 @@
      ]
     },
     {
-     "id": 149,
+     "id": 150,
      "name": "gt7Saguaro",
      "type": "moebel",
      "x": 48,
@@ -10129,7 +10140,7 @@
      ]
     },
     {
-     "id": 150,
+     "id": 151,
      "name": "gt7Felsgruppe",
      "type": "moebel",
      "x": 176,
@@ -10152,7 +10163,7 @@
      ]
     },
     {
-     "id": 151,
+     "id": 152,
      "name": "gt7KaktusBluete",
      "type": "moebel",
      "x": 576,

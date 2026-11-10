@@ -857,7 +857,13 @@
       "art": "gebaeude",
       "zustand": "gebraucht",
       "stil": "modern",
-      "blick": "unten"
+      "blick": "unten",
+      "tuer": [
+        [
+          2,
+          6
+        ]
+      ]
     },
     "rv5Werkstatt": {
       "quelle": "modern-exteriors/Modern_Exteriors_16x16/ME_Theme_Sorter_16x16/3_City_Props_Singles_16x16/ME_Singles_City_Props_16x16_Orange_Structure.png",
@@ -877,7 +883,13 @@
       "art": "gebaeude",
       "zustand": "alt",
       "stil": "rustikal",
-      "blick": "unten"
+      "blick": "unten",
+      "tuer": [
+        [
+          1,
+          4
+        ]
+      ]
     },
     "rv5Pegelhaus": {
       "quelle": "spiel/eigene/gartenhaus_weiss.png",
@@ -1733,7 +1745,17 @@
       "art": "gebaeude",
       "zustand": "gebraucht",
       "stil": "klassisch",
-      "blick": "unten"
+      "blick": "unten",
+      "tuer": [
+        [
+          10,
+          15
+        ],
+        [
+          11,
+          15
+        ]
+      ]
     },
     "rv8Brueckenschatten": {
       "quelle": "spiel/eigene/riverton_brueckenschatten.png",
@@ -1891,7 +1913,13 @@
       "art": "gebaeude",
       "zustand": "gebraucht",
       "stil": "klassisch",
-      "blick": "unten"
+      "blick": "unten",
+      "tuer": [
+        [
+          5,
+          4
+        ]
+      ]
     },
     "rv8Stellwerk": {
       "quelle": "modern-exteriors/Modern_Exteriors_16x16/ME_Theme_Sorter_16x16/7_Villas_Singles_16x16/ME_Singles_Villas_16x16_Tree_House_House_1.png",

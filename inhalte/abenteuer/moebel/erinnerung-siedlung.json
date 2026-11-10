@@ -132,7 +132,7 @@
       "zustand": "alt"
     },
     "es7Fussmatte": {
-      "quelle": "modern-exteriors/Modern_Exteriors_16x16/ME_Theme_Sorter_16x16/10_Vehicles_Singles_16x16/ME_Singles_Vehicles_16x16_Gas_Station_Doormat_1.png",
+      "quelle": "modern-interiors/1_Interiors/16x16/Theme_Sorter_Singles/26_Condominium_Singles/Condominium_Singles_66.png",
       "breite": 16,
       "hoehe": 16,
       "kollision": false,
@@ -164,6 +164,25 @@
       "kollision": false,
       "art": "lampe",
       "zustand": "alt",
+      "stil": "rustikal"
+    },
+    "es9FensterNacht": {
+      "quelle": "spiel/eigene/fenster_nacht.png",
+      "breite": 32,
+      "hoehe": 32,
+      "kollision": false,
+      "art": "fenster",
+      "blick": "unten",
+      "zustand": "gebraucht",
+      "stil": "rustikal"
+    },
+    "es9TischDunkel": {
+      "quelle": "spiel/eigene/tisch_rund_dunkel.png",
+      "breite": 32,
+      "hoehe": 32,
+      "kollision": true,
+      "art": "tisch",
+      "zustand": "gebraucht",
       "stil": "rustikal"
     }
   }

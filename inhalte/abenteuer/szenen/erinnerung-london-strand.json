@@ -2,7 +2,7 @@
   "karte": "erinnerungLondon.strand",
   "datei": "karten/erinnerung-london-strand.json",
   "art": "aussen",
-  "beschreibung": "Der Strand in London, Herbst 1851 (Erinnerung, als Szene in Sepia): eine Straße mit Kopfsteinpflaster zwischen Gehwegen aus Steinplatten. Im Norden stehen Reihenhäuser aus Ziegel und Putz dicht an dicht, unten Läden, in der Mitte das Kaffeehaus mit dunkler Holzfront und Kerzenlicht. Gaslaternen, eine Pferdedroschke, Händlerkarren und Fässer, ein Zeitungsjunge. Im Süden ein breiter Gehweg, dahinter verliert sich die Erinnerung im Dunkel. Fünf Hausfronten, Kaffeehaus in der Mitte, Droschke auf der Fahrbahn, Karren und Fässer an der Mauer.",
+  "beschreibung": "Der Strand in London, Herbst 1851 (Erinnerung, als Szene in Sepia): eine Straße mit Kopfsteinpflaster zwischen Gehwegen aus Steinplatten. Im Norden stehen Reihenhäuser aus Ziegel und Putz dicht an dicht, unten Läden, in der Mitte das Kaffeehaus mit dunkler Holzfront und Kerzenlicht. Gaslaternen an den Hausgrenzen, eine Pferdedroschke, Händlerkarren und Fässer, ein Zeitungsjunge. Im Süden ein breiter Gehweg, dahinter verliert sich die Erinnerung im Dunkel. Fünf Hausfronten, Kaffeehaus in der Mitte, Droschke auf der Fahrbahn, Karren und Fässer an der Mauer.",
   "boden": "pflaster",
   "wandart": "stein",
   "boeden": {
@@ -11,28 +11,28 @@
   "zustand": ["neu", "gebraucht", "alt"],
   "stil": ["klassisch", "rustikal", "laendlich"],
   "raster": [
-    "                                            ",
-    "                                            ",
-    " .......................................... ",
-    " .......................................... ",
-    " .......................................... ",
-    " .......................................... ",
-    " .......................................... ",
-    " .......................................... ",
-    " .......................................... ",
-    " gggggggggggggggggggggggggggggggggggggggggg ",
-    " gggggggggggggggggggggggggggggggggggggggggg ",
-    " .......................................... ",
-    " .......................................... ",
-    " .......................................... ",
-    " .......................................... ",
-    " gggggggggggggggggggggggggggggggggggggggggg ",
-    " gggggggggggggggggggggggggggggggggggggggggg ",
-    " gggggggggggggggggggggggggggggggggggggggggg ",
-    "                                            ",
-    "                                            ",
-    "                                            ",
-    "                                            "
+    "                             ",
+    "                             ",
+    " ........................... ",
+    " ........................... ",
+    " ........................... ",
+    " ........................... ",
+    " ........................... ",
+    " ........................... ",
+    " ........................... ",
+    " ggggggggggggggggggggggggggg ",
+    " ggggggggggggggggggggggggggg ",
+    " ........................... ",
+    " ........................... ",
+    " ........................... ",
+    " ........................... ",
+    " ggggggggggggggggggggggggggg ",
+    " ggggggggggggggggggggggggggg ",
+    " ggggggggggggggggggggggggggg ",
+    "                             ",
+    "                             ",
+    "                             ",
+    "                             "
   ],
   "objekte": [
     {
@@ -44,115 +44,111 @@
       "feld": [6, 2]
     },
     {
-      "moebel": "el7FassadeC",
+      "moebel": "el7Kaffeehaus",
       "feld": [11, 2]
     },
     {
-      "moebel": "el7Kaffeehaus",
-      "feld": [16, 2]
+      "moebel": "el7FassadeC",
+      "feld": [18, 2]
     },
     {
       "moebel": "el7FassadeA",
       "feld": [23, 2]
     },
     {
-      "moebel": "el7FassadeB",
-      "feld": [28, 2]
-    },
-    {
-      "moebel": "el7FassadeC",
-      "feld": [33, 2]
-    },
-    {
-      "moebel": "el7FassadeA",
-      "feld": [38, 2]
+      "moebel": "el7Gaslaterne",
+      "feld": [5, 8],
+      "vorn": true,
+      "versatz": [8, 0]
     },
     {
       "moebel": "el7Gaslaterne",
-      "feld": [7, 6],
+      "feld": [10, 8],
+      "vorn": true,
+      "versatz": [8, 0]
+    },
+    {
+      "moebel": "el7Gaslaterne",
+      "feld": [17, 8],
+      "vorn": true,
+      "versatz": [8, 0]
+    },
+    {
+      "moebel": "el7Gaslaterne",
+      "feld": [22, 8],
+      "vorn": true,
+      "versatz": [8, 0]
+    },
+    {
+      "moebel": "el7Gaslaterne",
+      "feld": [7, 15],
       "vorn": true
     },
     {
       "moebel": "el7Gaslaterne",
-      "feld": [15, 6],
-      "vorn": true
-    },
-    {
-      "moebel": "el7Gaslaterne",
-      "feld": [30, 6],
-      "vorn": true
-    },
-    {
-      "moebel": "el7Gaslaterne",
-      "feld": [36, 6],
-      "vorn": true
-    },
-    {
-      "moebel": "el7Gaslaterne",
-      "feld": [12, 14],
-      "vorn": true
-    },
-    {
-      "moebel": "el7Gaslaterne",
-      "feld": [30, 14],
+      "feld": [21, 15],
       "vorn": true
     },
     {
       "moebel": "el7Droschke",
-      "feld": [6, 11]
+      "feld": [3, 11]
+    },
+    {
+      "moebel": "el7Zeitungskarren",
+      "feld": [13, 15]
     },
     {
       "moebel": "ldKarren",
-      "feld": [20, 16]
+      "feld": [17, 16]
+    },
+    {
+      "moebel": "ldFass",
+      "feld": [24, 16]
+    },
+    {
+      "moebel": "ldFass",
+      "feld": [25, 16]
     },
     {
       "moebel": "ldFass",
       "feld": [26, 16]
-    },
-    {
-      "moebel": "ldFass",
-      "feld": [27, 16]
-    },
-    {
-      "moebel": "el7Zeitungskarren",
-      "feld": [14, 15]
     }
   ],
   "ausloeser": [
     {
       "name": "start",
-      "feld": [2, 12],
+      "feld": [2, 10],
       "eigenschaften": {
         "richtung": "rechts"
       }
     },
     {
       "name": "ankunft",
-      "feld": [3, 12]
+      "feld": [3, 10]
     },
     {
       "name": "kaffeehausTuer",
-      "feld": [19, 9]
+      "feld": [14, 9]
     },
     {
       "name": "droschke",
-      "feld": [9, 15]
+      "feld": [6, 15]
     }
   ],
   "figuren": [
     {
       "name": "zeitungsjunge",
-      "feld": [16, 10]
+      "feld": [12, 10]
     }
   ],
   "belebung": [
     {
       "name": "passanten",
       "typ": "statist",
-      "feld": [30, 10],
+      "feld": [20, 10],
       "eigenschaften": {
-        "von": "30,10",
-        "bis": "30,10",
+        "von": "17,10",
+        "bis": "26,10",
         "tun": "gehen vorbei",
         "wann": "tag"
       }
@@ -160,23 +156,46 @@
     {
       "name": "tauben",
       "typ": "tier",
-      "feld": [24, 14],
+      "feld": [10, 16],
       "eigenschaften": {
-        "von": "24,14",
-        "bis": "27,14",
+        "von": "9,16",
+        "bis": "11,16",
         "verhalten": "ausweichen"
       }
     },
     {
       "name": "laternenanzuender",
       "typ": "statist",
-      "feld": [36, 10],
+      "feld": [23, 10],
       "eigenschaften": {
-        "von": "36,10",
-        "bis": "36,10",
+        "von": "23,10",
+        "bis": "23,10",
         "tun": "zündet die Laternen an",
         "wann": "tag"
       }
+    },
+    {
+      "name": "blumenmaedchen",
+      "typ": "statist",
+      "feld": [19, 16],
+      "eigenschaften": {
+        "von": "19,16",
+        "bis": "19,16",
+        "tun": "verkauft Veilchen am Karren",
+        "wann": "tag"
+      }
+    },
+    {
+      "name": "schuhputzer",
+      "typ": "statist",
+      "feld": [4, 16],
+      "eigenschaften": {
+        "von": "4,16",
+        "bis": "4,16",
+        "tun": "putzt Schuhe am Gehwegrand",
+        "wann": "tag"
+      }
     }
-  ]
+  ],
+  "toenung": "sepia"
 }

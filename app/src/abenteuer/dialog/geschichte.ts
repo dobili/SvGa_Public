@@ -70,9 +70,15 @@ export function tagsAus(tags: readonly string[] | null): Readonly<Record<string,
  */
 export class Geschichte {
   private readonly story: Story;
+  /** Knoten der Datei (ohne die Deklarationen) und ihre zuletzt gesehene Besuchszahl. */
+  private readonly knotennamen: readonly string[];
+  private readonly besuche = new Map<string, number>();
 
   constructor(json: string, wirkungen: Wirkungen, variablen: Dialogvariablen, heldname: string) {
     this.story = new Story(json);
+    this.knotennamen = [...this.story.mainContentContainer.namedContent.keys()].filter(
+      (n) => !n.includes(" "),
+    );
     this.story.BindExternalFunction("gibKarte", (k: string) => wirkungen.gibKarte(k), false);
     this.story.BindExternalFunction("gibFund", (k: string) => wirkungen.gibFund(k), false);
     this.story.BindExternalFunction("oeffneLaden", (k: string) => wirkungen.oeffneLaden(k), false);
@@ -154,13 +160,19 @@ export class Geschichte {
   }
 
   /**
-   * Der Knoten, in dem die Geschichte gerade steht (erster Teil des Ink-Pfads, etwa
-   * „ambrose_erwacht“ aus „ambrose_erwacht.0.3“); null am Ende. Quests warten auf Knoten.
+   * Die Knoten, die seit dem letzten Aufruf (neu) besucht wurden, in der Reihenfolge der Datei.
+   * Warum: Der Zeiger der Geschichte steht nach der letzten Zeile vor END auf nichts; ein Knoten mit
+   * nur einer Zeile (Leuchtfeuer einsetzen) ginge so verloren. Die Besuchszahl bleibt. Quests
+   * warten auf Knoten. Braucht Dialoge, die mit „alle Besuche zählen“ übersetzt sind (Paketbau).
    */
-  knoten(): string | null {
-    const pfad = this.story.state.currentPathString;
-    if (!pfad) return null;
-    return pfad.split(".")[0] ?? null;
+  neueKnoten(): string[] {
+    const neu: string[] = [];
+    for (const name of this.knotennamen) {
+      const anzahl = this.story.state.VisitCountAtPathString(name) ?? 0;
+      if (anzahl > (this.besuche.get(name) ?? 0)) neu.push(name);
+      this.besuche.set(name, anzahl);
+    }
+    return neu;
   }
 
   /** Wählt eine der angebotenen Antworten (Index wie in `weiter()`). */

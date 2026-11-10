@@ -1218,7 +1218,7 @@
       "stil": "rustikal"
     },
     "mf4Fussmatte": {
-      "quelle": "modern-exteriors/Modern_Exteriors_16x16/ME_Theme_Sorter_16x16/10_Vehicles_Singles_16x16/ME_Singles_Vehicles_16x16_Gas_Station_Doormat_1.png",
+      "quelle": "modern-interiors/1_Interiors/16x16/Theme_Sorter_Singles/26_Condominium_Singles/Condominium_Singles_66.png",
       "breite": 16,
       "hoehe": 16,
       "kollision": false,
@@ -3258,6 +3258,45 @@
       "art": "steg",
       "zustand": "alt",
       "stil": "natur"
+    },
+    "mfc10Pokalregal": {
+      "quelle": "spiel/eigene/pokalregal.png",
+      "breite": 32,
+      "hoehe": 48,
+      "kollision": true,
+      "art": "pokal",
+      "zustand": "gebraucht",
+      "stil": "schule",
+      "blick": "unten"
+    },
+    "mfc10SpindeHoch": {
+      "quelle": "spiel/eigene/spinde_hoch.png",
+      "breite": 48,
+      "hoehe": 48,
+      "kollision": true,
+      "art": "spind",
+      "zustand": "gebraucht",
+      "stil": "schule",
+      "blick": "unten"
+    },
+    "mfc10RegalSeiteRechts": {
+      "quelle": "spiel/eigene/buecherregal_schmal_rechts.png",
+      "breite": 16,
+      "hoehe": 48,
+      "kollision": true,
+      "art": "buecherregal",
+      "zustand": "gebraucht",
+      "stil": "schule",
+      "blick": "rechts"
+    },
+    "mfc10Zettel": {
+      "quelle": "spiel/eigene/zettel_fragezeichen.png",
+      "breite": 8,
+      "hoehe": 8,
+      "kollision": false,
+      "art": "deko",
+      "zustand": "gebraucht",
+      "stil": "schule"
     }
   }
 }

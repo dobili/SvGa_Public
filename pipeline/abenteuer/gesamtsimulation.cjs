@@ -36,8 +36,6 @@ const {
   figurenOhneKarte,
   neuerStand,
   zustand,
-  dialog,
-  wendeFolgenAn,
   betrete,
   ausloeserFuer,
   melde,
@@ -49,7 +47,9 @@ const {
   RUHE_ENDE,
   gilt,
 } = require("./gesamtsimulation-regeln.cjs");
+const { dialog, wendeFolgenAn } = require("./gesamtsimulation-dialoge.cjs");
 const { berichtWirtschaft } = require("./gesamtsimulation-wirtschaft.cjs");
+const { berichtSammlung } = require("./gesamtsimulation-sammlung.cjs");
 const {
   nebenorte,
   rueckkehr,
@@ -382,6 +382,7 @@ function hauptprogramm(liste) {
   const rueck = rueckkehr(welt, st, frist, SCHRITTE);
   console.log(bericht(welt, st, ohneKarte, rueck));
   console.log(`Nachgeholte Orte: ${geholt.join(", ") || "keine"}`);
+  for (const zeile of berichtSammlung(st)) console.log(zeile);
   process.exitCode = sackgasse(welt, st) ? 1 : 0;
 }
 

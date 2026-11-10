@@ -331,3 +331,17 @@ für die Brettansicht) und Quest gleichen Namens, Lohn Fund `fotoLebendschach`; 
 
 Nachtrag: Die Fundknoten heißen wie die Auslöser (`seite10`, `kreide4`) und zählen die Sammelstränge
 mit (`buchseiten`, `kreideTreffpunkte`). Die Riesenbäume haben in allen Varianten die Tönung `nebel`.
+
+## Runde 9 (10.11.2026): Tankstelle an der Staubstraße (niedrig-1)
+
+Antworten auf die Mängel der Variantenwahl (Wahl A):
+
+1. _Sieht nicht verlassen aus:_ Auf dem Steinboden liegen Staub- und Ölflecken (Bildwunsch
+   `staub_boden.png`), daneben ein offener Karton, Reifen in der Ecke und ein Fass.
+2. _Bunte Dosen statt Ölkanister:_ Die Bücherregale sind weg. An der Nordwand stehen ein
+   Werkzeugschrank und rote Kanister aus dem Tankstellen-Thema des Pakets, davor ein blaues Ölfass.
+3. _Zwei Tische mit Brett:_ Es bleibt der Tisch, der zum Greifarm gehört, davor ein Hocker.
+4. _Nichts erinnert an eine Tankstelle:_ An der Ostseite steht die alte Kassentheke mit Kasse. Eine
+   Werkstattgrube passt nicht in den Verkaufsraum von 12 × 11 Kacheln.
+
+Zustände: keine. Z-1 bleibt nach der Partie stehen („Lasst ihn spielen“, 15_Routen_Ereignisse 2.12).

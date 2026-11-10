@@ -204,7 +204,8 @@
       "rand": [
         0,
         30
-      ]
+      ],
+      "diagonalen": true
     },
     "sand": {
       "bogen": "gelaende",
@@ -587,12 +588,21 @@
     },
     "platten": {
       "bogen": "stadt",
-      "feld": [10, 2]
+      "feld": [
+        10,
+        2
+      ]
     },
     "strand": {
       "bogen": "gelaende",
-      "feld": [9, 31],
-      "rand": [8, 30]
+      "feld": [
+        9,
+        31
+      ],
+      "rand": [
+        8,
+        30
+      ]
     }
   },
   "waende": {

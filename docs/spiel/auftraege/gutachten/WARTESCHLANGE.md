@@ -74,7 +74,7 @@ Szene heißt die Datei in `inhalte/abenteuer/szenen/` ohne `.json`.
 
 - [x] riverton-aussen und die vier Innenräume (dritte Prüfung, mittel-3; Bahnhof mit Uhrturm, Glastüren; Bilder privat ab c0febaac; seit Runde 9 Bildschirmtische `rv9Bildschirmtisch` im Park, in den Zuständen und im Pavillon `perfect-move`; Dateien `riverton-aussen-3.md`, `riverton-innen-3.md`)
 
-- [ ] lockport-aussen, lockport-gasthaus, weg-cedar-riverton-bahndamm, -zedernwald, maple-falls-aussen, maple-falls-park, cedar-creek-aussen, weg-maple-cedar-flussweg, -landstrasse, -zedernpfad (dritte Prüfung, niedrig-1; Antworten in riverton.md, maple-falls.md, cedar-creek.md, Abschnitt „Zweites Gutachten Runde 8“; Bilder aus `niedrig1_runde9_karten.py` und das neue Stemmtor erst rendern)
+- [x] lockport-aussen, lockport-gasthaus, weg-cedar-riverton-bahndamm, -zedernwald, maple-falls-aussen, maple-falls-park, cedar-creek-aussen, weg-maple-cedar-flussweg, -landstrasse, -zedernpfad (dritte Prüfung, niedrig-1; Antworten in riverton.md, maple-falls.md, cedar-creek.md, Abschnitt „Zweites Gutachten Runde 8“; Bilder aus `niedrig1_runde9_karten.py` und das neue Stemmtor erst rendern)
 - [x] ghost-town-aussen (Runde 9, niedrig-1, mit Zustand mine-offen), ghost-town-saloon, goldmine-stollen
 - [x] erinnerung-siedlung-huette, erinnerung-london-kaffeehaus, erinnerung-london-strand (Runde 9, niedrig-1; Sepia aus der Tönung, im Vorschaubild nicht zu sehen)
 - [x] kuerbishof-hof, weg-pinewood-ghost-tankstelle (Runde 9, niedrig-1)

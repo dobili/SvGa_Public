@@ -1437,7 +1437,8 @@
     },
     {
       "moebel": "wc5Plakatwand",
-      "feld": [128, 10]
+      "feld": [128, 10],
+      "id": "plakatwand"
     },
     {
       "moebel": "wc5BirkeHerbst",

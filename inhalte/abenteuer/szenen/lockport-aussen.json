@@ -140,21 +140,6 @@
       "feld": [8, 32]
     },
     {
-      "moebel": "mf4Laterne",
-      "feld": [6, 9],
-      "vorn": true
-    },
-    {
-      "moebel": "mf4Laterne",
-      "feld": [17, 9],
-      "vorn": true
-    },
-    {
-      "moebel": "mf4Laterne",
-      "feld": [36, 9],
-      "vorn": true
-    },
-    {
       "moebel": "wg4Stein",
       "feld": [24, 1]
     },
@@ -369,6 +354,31 @@
     {
       "moebel": "mf4BaumRot",
       "feld": [51, 47]
+    },
+    {
+      "moebel": "mf4Laterne",
+      "feld": [6, 9],
+      "vorn": true
+    },
+    {
+      "moebel": "mf4Laterne",
+      "feld": [17, 9],
+      "vorn": true
+    },
+    {
+      "moebel": "mf4Laterne",
+      "feld": [28, 9],
+      "vorn": true
+    },
+    {
+      "moebel": "mf4Laterne",
+      "feld": [39, 9],
+      "vorn": true
+    },
+    {
+      "moebel": "mf4Laterne",
+      "feld": [50, 9],
+      "vorn": true
     }
   ],
   "ausloeser": [

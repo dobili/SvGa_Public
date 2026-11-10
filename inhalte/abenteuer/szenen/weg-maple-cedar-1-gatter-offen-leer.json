@@ -22,16 +22,16 @@
   ],
   "raster": [
     "####################################################ee##################################################################",
-    "#ffffffffffffffffffffffffffffffffffffffffffffffffff.eefffffffffffffffffffffffffffffffffffffffffffffffffffffffffffffffff#",
-    "#ffffffffffffffffffffffffffffffffffffffffffffffffff.eefffffffffffffffffffffffffffffffffffffffffffffffffffffffffffffffff#",
-    "#ffffffffffffffffffffffffffffffffffffffffffffffffff.eefffffffffffffffffffffffffffffffffffffffffffffffffffffffffffffffff#",
-    "#ffffffffffffffffffffffffffffffffffffffffffffffffff.eefffffffffffffffffffffffffffffffffffffffffffffffffffffffffffffffff#",
-    "#ffffffffffffffffffffffffffffffffffffffffffffffffff.eefffffffffffffffffffffffffffffffffffffffffffffffffffffffffffffffff#",
-    "#ffffffffffffffffffffffffffffffffffffffffffffffffff.eefffffffffffffffffffffffffffffffffffffffffffffffffffffffffffffffff#",
-    "#ffffffffffffffffffffffffffffffffffffffffffffffffff.eefffffffffffffffffffffffffffffffffffffffffffffffffffffffffffffffff#",
-    "#ffffffffffffffffffffffffffffffffffffffffffffffffff.eefffffffffffffffffffffffffffffffffffffffffffffffffffffffffffffffff#",
-    "#ffffffffffffffffffffffffffffffffffffffffffffffffff.eefffffffffffffffffffffffffffffffffffffffffffffffffffffffffffffffff#",
-    "#ffffffffffffffffffffffffffffffffffffffffffffffffff.eefffffffffffffffffffffffffffffffffffffffffffffffffffffffffffffffff#",
+    "#...................................................ee.................................................................#",
+    "#...................................................ee.................................................................#",
+    "#...................................................ee.................................................................#",
+    "#...................................................ee.................................................................#",
+    "#...................................................ee.................................................................#",
+    "#...................................................ee.................................................................#",
+    "#...................................................ee.................................................................#",
+    "#...................................................ee.................................................................#",
+    "#...................................................ee.................................................................#",
+    "#...................................................ee.................................................................#",
     "#....................................eee............ee.................................................................#",
     "#....................................eee............ee.................................................................#",
     "#.................eeeeeeeeeee........eee............ee.................................................................#",
@@ -54,108 +54,100 @@
   ],
   "objekte": [
     {
-      "moebel": "ccKorn",
-      "feld": [0, 0]
+      "moebel": "lm8Acker10x5",
+      "feld": [1, 1]
     },
     {
-      "moebel": "ccKorn",
-      "feld": [2, 0]
+      "moebel": "lm8Acker10x5",
+      "feld": [11, 1]
     },
     {
-      "moebel": "ccKorn",
-      "feld": [4, 0]
+      "moebel": "lm8Acker10x5",
+      "feld": [21, 1]
     },
     {
-      "moebel": "ccKorn",
-      "feld": [6, 0]
+      "moebel": "lm8Acker10x5",
+      "feld": [31, 1]
     },
     {
-      "moebel": "ccKorn",
-      "feld": [8, 0]
+      "moebel": "lm8Acker10x5",
+      "feld": [41, 1]
     },
     {
-      "moebel": "ccKorn",
-      "feld": [10, 0]
+      "moebel": "lm8Acker10x5",
+      "feld": [54, 1]
     },
     {
-      "moebel": "ccKorn",
-      "feld": [12, 0]
+      "moebel": "lm8Acker10x5",
+      "feld": [64, 1]
     },
     {
-      "moebel": "ccKorn",
-      "feld": [14, 0]
+      "moebel": "lm8Acker10x5",
+      "feld": [74, 1]
     },
     {
-      "moebel": "ccKorn",
-      "feld": [16, 0]
+      "moebel": "lm8Acker10x5",
+      "feld": [84, 1]
     },
     {
-      "moebel": "ccKorn",
-      "feld": [18, 0]
+      "moebel": "lm8Acker10x5",
+      "feld": [94, 1]
     },
     {
-      "moebel": "ccKorn",
-      "feld": [20, 0]
+      "moebel": "lm8Acker10x5",
+      "feld": [104, 1]
     },
     {
-      "moebel": "ccKorn",
-      "feld": [22, 0]
+      "moebel": "lm8Acker5x5",
+      "feld": [114, 1]
     },
     {
-      "moebel": "ccKorn",
-      "feld": [24, 0]
+      "moebel": "lm8Acker10x5",
+      "feld": [1, 6]
     },
     {
-      "moebel": "ccKorn",
-      "feld": [26, 0]
+      "moebel": "lm8Acker10x5",
+      "feld": [11, 6]
     },
     {
-      "moebel": "ccKorn",
-      "feld": [28, 0]
+      "moebel": "lm8Acker10x5",
+      "feld": [21, 6]
     },
     {
-      "moebel": "ccKorn",
-      "feld": [30, 0]
+      "moebel": "lm8Acker10x5",
+      "feld": [31, 6]
     },
     {
-      "moebel": "ccKorn",
-      "feld": [32, 0]
+      "moebel": "lm8Acker10x5",
+      "feld": [41, 6]
     },
     {
-      "moebel": "ccKorn",
-      "feld": [34, 0]
+      "moebel": "lm8Acker10x5",
+      "feld": [54, 6]
     },
     {
-      "moebel": "ccKorn",
-      "feld": [36, 0]
+      "moebel": "lm8Acker10x5",
+      "feld": [64, 6]
     },
     {
-      "moebel": "ccKorn",
-      "feld": [38, 0]
+      "moebel": "lm8Acker10x5",
+      "feld": [74, 6]
     },
     {
-      "moebel": "ccKorn",
-      "feld": [40, 0]
+      "moebel": "lm8Acker10x5",
+      "feld": [84, 6]
     },
     {
-      "moebel": "ccKorn",
-      "feld": [42, 0]
+      "moebel": "lm8Acker10x5",
+      "feld": [94, 6]
     },
     {
-      "moebel": "ccKorn",
-      "feld": [44, 0]
+      "moebel": "lm8Acker10x5",
+      "feld": [104, 6]
     },
     {
-      "moebel": "ccKorn",
-      "feld": [46, 0]
-    },
-    {
-      "moebel": "ccKorn",
-      "feld": [48, 0]
-    },
-    {
-      "moebel": "ccKorn",
-      "feld": [50, 0]
+      "moebel": "lm8Acker5x5",
+      "feld": [114, 6]
     },
     {
       "moebel": "ccKorn",
@@ -256,138 +248,6 @@
     {
       "moebel": "ccKorn",
       "feld": [49, 1]
-    },
-    {
-      "moebel": "ccMais",
-      "feld": [54, 0]
-    },
-    {
-      "moebel": "ccMais",
-      "feld": [56, 0]
-    },
-    {
-      "moebel": "ccMais",
-      "feld": [58, 0]
-    },
-    {
-      "moebel": "ccMais",
-      "feld": [60, 0]
-    },
-    {
-      "moebel": "ccMais",
-      "feld": [62, 0]
-    },
-    {
-      "moebel": "ccMais",
-      "feld": [64, 0]
-    },
-    {
-      "moebel": "ccMais",
-      "feld": [66, 0]
-    },
-    {
-      "moebel": "ccMais",
-      "feld": [68, 0]
-    },
-    {
-      "moebel": "ccMais",
-      "feld": [70, 0]
-    },
-    {
-      "moebel": "ccMais",
-      "feld": [72, 0]
-    },
-    {
-      "moebel": "ccMais",
-      "feld": [74, 0]
-    },
-    {
-      "moebel": "ccMais",
-      "feld": [76, 0]
-    },
-    {
-      "moebel": "ccMais",
-      "feld": [78, 0]
-    },
-    {
-      "moebel": "ccMais",
-      "feld": [80, 0]
-    },
-    {
-      "moebel": "ccMais",
-      "feld": [82, 0]
-    },
-    {
-      "moebel": "ccMais",
-      "feld": [84, 0]
-    },
-    {
-      "moebel": "ccMais",
-      "feld": [86, 0]
-    },
-    {
-      "moebel": "ccMais",
-      "feld": [88, 0]
-    },
-    {
-      "moebel": "ccMais",
-      "feld": [90, 0]
-    },
-    {
-      "moebel": "ccMais",
-      "feld": [92, 0]
-    },
-    {
-      "moebel": "ccMais",
-      "feld": [94, 0]
-    },
-    {
-      "moebel": "ccMais",
-      "feld": [96, 0]
-    },
-    {
-      "moebel": "ccMais",
-      "feld": [98, 0]
-    },
-    {
-      "moebel": "ccMais",
-      "feld": [100, 0]
-    },
-    {
-      "moebel": "ccMais",
-      "feld": [102, 0]
-    },
-    {
-      "moebel": "ccMais",
-      "feld": [104, 0]
-    },
-    {
-      "moebel": "ccMais",
-      "feld": [106, 0]
-    },
-    {
-      "moebel": "ccMais",
-      "feld": [108, 0]
-    },
-    {
-      "moebel": "ccMais",
-      "feld": [110, 0]
-    },
-    {
-      "moebel": "ccMais",
-      "feld": [112, 0]
-    },
-    {
-      "moebel": "ccMais",
-      "feld": [114, 0]
-    },
-    {
-      "moebel": "ccMais",
-      "feld": [116, 0]
-    },
-    {
-      "moebel": "ccMais",
-      "feld": [118, 0]
     },
     {
       "moebel": "ccKorn",

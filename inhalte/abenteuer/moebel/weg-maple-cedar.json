@@ -688,6 +688,24 @@
       "art": "schild",
       "stil": "laendlich",
       "zustand": "alt"
+    },
+    "lm8Acker10x5": {
+      "quelle": "spiel/eigene/acker_10x5.png",
+      "breite": 160,
+      "hoehe": 80,
+      "kollision": false,
+      "art": "boden",
+      "zustand": "gebraucht",
+      "stil": "laendlich"
+    },
+    "lm8Acker5x5": {
+      "quelle": "spiel/eigene/acker_5x5.png",
+      "breite": 80,
+      "hoehe": 80,
+      "kollision": false,
+      "art": "boden",
+      "zustand": "gebraucht",
+      "stil": "laendlich"
     }
   }
 }

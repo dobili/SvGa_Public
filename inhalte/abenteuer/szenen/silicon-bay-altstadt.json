@@ -2,7 +2,7 @@
   "karte": "siliconBay.altstadt",
   "art": "aussen",
   "viertel": true,
-  "beschreibung": "Altstadt von Silicon Bay (Variante A): das alte Viertel, bevor der Campus kam. Am Ostrand kommt man vom Gehweg des Campus herein. An der Hauptstraße eine dichte Häuserzeile mit Läden, Wohnhäusern, Postamt, Kaufhaus und Reihenhaus, dahinter Hinterhöfe. Südlich der Straße eine zweite Zeile mit Polizeiwache, Kapelle und Eisenwarenladen, durch zwei Gassen erreicht man den Marktplatz mit Brunnen, Bänken, Ständen und Kaffeekiosk. Am Südrand ein kleiner Park.",
+  "beschreibung": "Variante C, reich: andere Häuser in beiden Zeilen, ein großer Wochenmarkt mit vier Ständen, Brunnen und Bänken, ein dichter Park mit Bäumen am Südrand.",
   "boden": "pflaster",
   "wandart": "stein",
   "boeden": {
@@ -70,240 +70,244 @@
   ],
   "objekte": [
     {
-      "moebel": "sa8Laden1",
+      "moebel": "sa8Laden5",
       "feld": [1, 12]
     },
     {
-      "moebel": "sb8Condo51",
-      "feld": [8, 10]
+      "moebel": "sa8Polizei2",
+      "feld": [8, 8]
     },
     {
-      "moebel": "sa8Postamt1",
-      "feld": [14, 8]
+      "moebel": "sa8Kaufhaus5",
+      "feld": [15, 9]
     },
     {
-      "moebel": "sa8Laden4",
-      "feld": [22, 12]
+      "moebel": "sb8Condo53",
+      "feld": [22, 10]
     },
     {
-      "moebel": "sb8Markt2",
-      "feld": [29, 13]
+      "moebel": "sa8Laden8",
+      "feld": [28, 12]
     },
     {
-      "moebel": "sa8Kaufhaus1",
-      "feld": [34, 9]
+      "moebel": "sa8Postamt3",
+      "feld": [35, 8]
     },
     {
-      "moebel": "sa8Condo9",
-      "feld": [41, 9]
-    },
-    {
-      "moebel": "sa8Laden7",
-      "feld": [47, 12]
-    },
-    {
-      "moebel": "sb8Condo45",
-      "feld": [54, 11]
-    },
-    {
-      "moebel": "sa8Laden11",
-      "feld": [60, 12]
+      "moebel": "sb8Markt11",
+      "feld": [43, 13]
     },
     {
       "moebel": "sa8Laden2",
-      "feld": [1, 32]
+      "feld": [48, 12]
+    },
+    {
+      "moebel": "sa8Condo9",
+      "feld": [55, 9]
+    },
+    {
+      "moebel": "sa8Laden4",
+      "feld": [61, 12]
     },
     {
       "moebel": "sa8Polizei1",
-      "feld": [8, 28]
+      "feld": [1, 28]
     },
     {
-      "moebel": "sb8Markt8",
+      "moebel": "sa8Laden12",
+      "feld": [8, 32]
+    },
+    {
+      "moebel": "sb8Markt9",
       "feld": [15, 33]
     },
     {
-      "moebel": "iw5Kirche",
+      "moebel": "sa8Eisenwaren",
       "feld": [22, 32]
     },
     {
-      "moebel": "sa8Laden9",
-      "feld": [27, 32]
+      "moebel": "sa8Laden6",
+      "feld": [30, 32]
     },
     {
-      "moebel": "sa8Eisenwaren",
-      "feld": [34, 32]
+      "moebel": "iw5Kirche",
+      "feld": [37, 32]
     },
     {
-      "moebel": "sa8Kaufhaus3",
+      "moebel": "sa8Kaufhaus6",
       "feld": [44, 29]
     },
     {
-      "moebel": "sa8Laden5",
-      "feld": [51, 32]
-    },
-    {
       "moebel": "sb8Condo44",
-      "feld": [58, 33]
+      "feld": [51, 33]
     },
     {
-      "moebel": "sa8Laden3",
+      "moebel": "sa8Laden1",
+      "feld": [57, 32]
+    },
+    {
+      "moebel": "sa8Laden10",
       "feld": [64, 32]
     },
     {
       "moebel": "sb5BrunnenWasser",
-      "feld": [34, 42]
+      "feld": [46, 42]
     },
     {
       "moebel": "mfBank",
-      "feld": [36, 48]
+      "feld": [44, 48]
     },
     {
       "moebel": "mfBank",
-      "feld": [30, 48]
+      "feld": [52, 48]
     },
     {
       "moebel": "n6Marktstand",
-      "feld": [8, 43]
+      "feld": [6, 43]
     },
     {
       "moebel": "n6Marktstand",
-      "feld": [14, 43]
+      "feld": [12, 43]
     },
     {
       "moebel": "n6Marktstand",
-      "feld": [20, 43]
+      "feld": [18, 43]
+    },
+    {
+      "moebel": "n6Marktstand",
+      "feld": [24, 43]
     },
     {
       "moebel": "rv5Kaffeekiosk",
-      "feld": [52, 41]
-    },
-    {
-      "moebel": "mf4Strassenbaum",
-      "feld": [63, 51]
+      "feld": [62, 41]
     },
     {
       "moebel": "wg4Laubbaum",
-      "feld": [56, 51]
+      "feld": [61, 51]
     },
     {
       "moebel": "wg4Busch",
-      "feld": [30, 51]
+      "feld": [2, 51]
     },
     {
       "moebel": "wg4Laubbaum",
-      "feld": [4, 51]
+      "feld": [13, 51]
+    },
+    {
+      "moebel": "wg4Busch",
+      "feld": [30, 53]
+    },
+    {
+      "moebel": "wg4Busch",
+      "feld": [4, 53]
+    },
+    {
+      "moebel": "wg4Busch",
+      "feld": [21, 53]
+    },
+    {
+      "moebel": "wg4Busch",
+      "feld": [35, 53]
     },
     {
       "moebel": "wg4Laubbaum",
-      "feld": [38, 51]
+      "feld": [54, 51]
     },
     {
       "moebel": "wg4Busch",
-      "feld": [25, 53]
+      "feld": [43, 53]
     },
     {
       "moebel": "wg4Busch",
-      "feld": [48, 51]
+      "feld": [31, 51]
+    },
+    {
+      "moebel": "cc4Hecke",
+      "feld": [1, 2]
     },
     {
       "moebel": "wg4Busch",
-      "feld": [51, 52]
+      "feld": [69, 1]
+    },
+    {
+      "moebel": "wg4Busch",
+      "feld": [53, 5]
     },
     {
       "moebel": "mf4Strassenbaum",
-      "feld": [33, 51]
-    },
-    {
-      "moebel": "wg4Busch",
-      "feld": [10, 51]
-    },
-    {
-      "moebel": "wg4Busch",
-      "feld": [58, 1]
-    },
-    {
-      "moebel": "cc4Hecke",
-      "feld": [32, 5]
-    },
-    {
-      "moebel": "wg4Busch",
-      "feld": [24, 6]
-    },
-    {
-      "moebel": "cc4Hecke",
-      "feld": [9, 3]
-    },
-    {
-      "moebel": "wg4Busch",
-      "feld": [33, 3]
+      "feld": [34, 3]
     },
     {
       "moebel": "mf4Strassenbaum",
-      "feld": [35, 5]
+      "feld": [6, 6]
     },
     {
       "moebel": "cc4Hecke",
-      "feld": [42, 8]
+      "feld": [47, 3]
     },
     {
       "moebel": "cc4Hecke",
-      "feld": [15, 1]
+      "feld": [49, 8]
+    },
+    {
+      "moebel": "mf4Strassenbaum",
+      "feld": [50, 2]
+    },
+    {
+      "moebel": "mf4Strassenbaum",
+      "feld": [65, 5]
     },
     {
       "moebel": "cc4Hecke",
-      "feld": [50, 6]
+      "feld": [31, 5]
+    },
+    {
+      "moebel": "mf4Strassenbaum",
+      "feld": [44, 1]
     },
     {
       "moebel": "cc4Hecke",
-      "feld": [25, 5]
+      "feld": [41, 1]
+    },
+    {
+      "moebel": "cc4Hecke",
+      "feld": [18, 27]
+    },
+    {
+      "moebel": "cc4Hecke",
+      "feld": [60, 29]
+    },
+    {
+      "moebel": "cc4Hecke",
+      "feld": [36, 30]
     },
     {
       "moebel": "wg4Busch",
-      "feld": [3, 7]
+      "feld": [8, 27]
+    },
+    {
+      "moebel": "cc4Hecke",
+      "feld": [33, 30]
+    },
+    {
+      "moebel": "cc4Hecke",
+      "feld": [24, 29]
+    },
+    {
+      "moebel": "cc4Hecke",
+      "feld": [34, 29]
+    },
+    {
+      "moebel": "cc4Hecke",
+      "feld": [14, 27]
     },
     {
       "moebel": "wg4Busch",
-      "feld": [5, 3]
+      "feld": [40, 28]
     },
     {
       "moebel": "cc4Hecke",
-      "feld": [65, 30]
-    },
-    {
-      "moebel": "wg4Busch",
-      "feld": [68, 27]
-    },
-    {
-      "moebel": "wg4Busch",
-      "feld": [39, 28]
-    },
-    {
-      "moebel": "cc4Hecke",
-      "feld": [17, 27]
-    },
-    {
-      "moebel": "wg4Busch",
-      "feld": [66, 27]
-    },
-    {
-      "moebel": "cc4Hecke",
-      "feld": [26, 29]
-    },
-    {
-      "moebel": "wg4Busch",
-      "feld": [64, 27]
-    },
-    {
-      "moebel": "cc4Hecke",
-      "feld": [38, 30]
-    },
-    {
-      "moebel": "cc4Hecke",
-      "feld": [3, 28]
-    },
-    {
-      "moebel": "cc4Hecke",
-      "feld": [55, 28]
+      "feld": [31, 29]
     }
   ],
   "ausloeser": [
@@ -324,7 +328,7 @@
     },
     {
       "name": "eisenwaren",
-      "feld": [37, 41]
+      "feld": [25, 41]
     }
   ],
   "figuren": [],
@@ -354,7 +358,7 @@
       "typ": "tier",
       "feld": [20, 53],
       "eigenschaften": {
-        "von": "3,52",
+        "von": "4,52",
         "bis": "66,54",
         "verhalten": "ausweichen"
       }
@@ -413,7 +417,7 @@
         "tun": "malt mit Kreide auf den Marktplatz",
         "wann": "tag",
         "von": "14,42",
-        "bis": "26,44",
+        "bis": "26,43",
         "sagt": "statist.siliconBay.altstadt.schuelerin"
       }
     },
@@ -432,36 +436,36 @@
     {
       "name": "rentnerpaar",
       "typ": "statist",
-      "feld": [36, 47],
+      "feld": [36, 46],
       "eigenschaften": {
         "tun": "sitzt auf der Bank am Brunnen",
         "wann": "tag",
-        "von": "36,47",
-        "bis": "36,47",
+        "von": "36,46",
+        "bis": "36,46",
         "sagt": "statist.siliconBay.altstadt.rentnerpaar"
       }
     },
     {
       "name": "feuerwehrmann",
       "typ": "statist",
-      "feld": [62, 42],
+      "feld": [61, 42],
       "eigenschaften": {
         "tun": "prüft den Hydranten",
         "wann": "tag",
         "von": "58,41",
-        "bis": "66,44",
+        "bis": "68,44",
         "sagt": "statist.siliconBay.altstadt.feuerwehrmann"
       }
     },
     {
       "name": "eisverkaeuferin",
       "typ": "statist",
-      "feld": [48, 44],
+      "feld": [50, 44],
       "eigenschaften": {
         "tun": "verkauft Eis, obwohl es schneit",
         "wann": "tag",
-        "von": "46,43",
-        "bis": "51,45",
+        "von": "46,42",
+        "bis": "52,45",
         "sagt": "statist.siliconBay.altstadt.eisverkaeuferin"
       }
     },
@@ -492,7 +496,7 @@
     {
       "name": "kinder",
       "typ": "statist",
-      "feld": [40, 51],
+      "feld": [40, 52],
       "eigenschaften": {
         "tun": "bauen einen Schneemann im Park",
         "wann": "tag",
@@ -547,7 +551,7 @@
       "feld": [60, 4],
       "eigenschaften": {
         "von": "56,2",
-        "bis": "66,7",
+        "bis": "66,8",
         "verhalten": "schlafen"
       }
     },

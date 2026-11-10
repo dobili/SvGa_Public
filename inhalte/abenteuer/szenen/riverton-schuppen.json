@@ -81,6 +81,5 @@
     }
   ],
   "zustand": ["gebraucht", "alt"],
-  "stil": ["rustikal", "industrie"],
-  "variante": "c"
+  "stil": ["rustikal", "industrie"]
 }

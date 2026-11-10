@@ -3,7 +3,7 @@
   "datei": "karten/steinbruch-grube.json",
   "art": "aussen",
   "toenung": "nebel",
-  "beschreibung": "Der alte Steinbruch Hargrove & Söhne hinter Ironwood, ein kühler Morgen. Die Zufahrt aus Schotter kommt am Westrand oben an der Bruchkante an, an Birken und einer Kette mit altem Schild vorbei. Oben steht die Vorarbeiterbude aus Wellblech mit einer Bank davor, ein Aussichtspunkt blickt in die Tiefe. Zwei Felskanten fallen in Stufen ab, Rampen führen in Serpentinen hinunter. Unten auf der Sohle aus Schotter liegt ein stilles Wasserloch, in dem sich der Himmel spiegelt; ein Lorengleis läuft vom Stollenmund im Südosten quer über die Sohle zu einem alten Radlader, der dort seit Jahren steht. An der Felswand im Nordosten Graffiti von 1980. Felswände schließen die Grube ringsum. Der Stollenmund ist in einen Felsblock gebaut; sein Bild ist ein Bauteil und wirkt deshalb an den Seiten angeschnitten, der Fels deckt das ab. Rampen in der Mitte, Wasserloch mit Steinkante links auf der Sohle, Radlader, Bauholz, Bohlen und Werkzeugschuppen im Westen, Granitblöcke in Reihen auf Sohle und Zwischenstufe, Schotterhaufen und Steinpaletten, zwei Loren am Gleis.",
+  "beschreibung": "Der alte Steinbruch Hargrove & Söhne hinter Ironwood, ein kühler Morgen. Die Zufahrt aus Schotter kommt am Westrand oben an der Bruchkante an, an Birken und einer Kette mit altem Schild vorbei. Oben steht die Vorarbeiterbude aus Wellblech mit einer Bank davor, ein Aussichtspunkt blickt in die Tiefe. Zwei Felskanten fallen in Stufen ab, Rampen führen in Serpentinen hinunter. Unten auf der Sohle aus Schotter liegt ein stilles Wasserloch, in dem sich der Himmel spiegelt; ein Lorengleis läuft vom Stollenmund im Südosten quer über die Sohle zu einem alten Radlader, der dort seit Jahren steht. An der Felswand im Nordosten Graffiti von 1980. Felswände schließen die Grube ringsum. Der Stollenmund ist in einen Felsblock gebaut; sein Bild ist ein Bauteil und wirkt deshalb an den Seiten angeschnitten, der Fels deckt das ab. Variante C, die reichere: Rampen weit im Osten, großes Wasserloch in der Mitte der Sohle, Radlader, Lichtmast, Bauholz, Bohlen und Werkzeugschuppen, Granitblöcke in Reihen, Schotterhaufen, zwei Loren, viele Birken an der Kante, Geröll überall.",
   "wand": "fels",
   "boden": "schotter",
   "ufer": "stein",
@@ -19,42 +19,42 @@
     "#rrrrrrrrrrrrrrrrrrrrrrrrrrrrrrrrrrrrrrrrrrrrrrrrrrrrrrrrrrrrrrrrrrrr#",
     "#rrrrrrrrrrrrrrrrrrrrrrrrrrrrrrrrrrrrrrrrrrrrrrrrrrrrrrrrrrrrrrrrrrrr#",
     "#rrrrrrrrrrrrrrrrrrrrrrrrrrrrrrrrrrrrrrrrrrrrrrrrrrrrrrrrrrrrrrrrrrrr#",
-    ".............................................rrrrrrrrrrrrrrrrrrrrrrrr#",
-    ".............................................rrrrrrrrrrrrrrrrrrrrrrrr#",
-    "#rrrrrrrrrrrrrrrrrrrrrrrrrrrrrrrrrrrrrrrrr...rrrrrrrrrrrrrrrrrrrrrrrr#",
-    "#rrrrrrrrrrrrrrrrrrrrrrrrrrrrrrrrrrrrrrrrr...rrrrrrrrrrrrrrrrrrrrrrrr#",
-    "##########################################...#########################",
-    "##########################################...#########################",
-    "##########################################...#########################",
-    "#fffffffffffffffffffffffffffffffffffffffff.........ffffffffffffffffff#",
-    "#fffffffffffffffffffffffffffffffffffffffff.........ffffffffffffffffff#",
-    "#fffffffffffffffffffffffffffffffffffffffff.........ffffffffffffffffff#",
-    "#fffffffffffffffffffffffffffffffffffffffffffffff...ffffffffffffffffff#",
-    "#fffffffffffffffffffffffffffffffffffffffffffffff...ffffffffffffffffff#",
-    "#fffffffffffffffffffffffffffffffffffffffffffffff...ffffffffffffffffff#",
-    "#fffffffffffffffffffffffffffffffffffffffffffffff...ffffffffffffffffff#",
-    "#fffffffffffffffffffffffffffffffffffffffffffffff...ffffffffffffffffff#",
-    "#fffffffffffffffffffffffffffffffffffffffffffffff...ffffffffffffffffff#",
-    "################################################...###################",
-    "################################################...###################",
-    "################################################...###################",
+    ".............................................................rrrrrrrr#",
+    ".............................................................rrrrrrrr#",
+    "#rrrrrrrrrrrrrrrrrrrrrrrrrrrrrrrrrrrrrrrrrrrrrrrrrrrrrrrrr...rrrrrrrr#",
+    "#rrrrrrrrrrrrrrrrrrrrrrrrrrrrrrrrrrrrrrrrrrrrrrrrrrrrrrrrr...rrrrrrrr#",
+    "##########################################################...#########",
+    "##########################################################...#########",
+    "##########################################################...#########",
+    "#fffffffffffffffffffffffffffffffffffffffffffffffffff.........ffffffff#",
+    "#fffffffffffffffffffffffffffffffffffffffffffffffffff.........ffffffff#",
+    "#fffffffffffffffffffffffffffffffffffffffffffffffffff.........ffffffff#",
+    "#fffffffffffffffffffffffffffffffffffffffffffffffffff...ffffffffffffff#",
+    "#fffffffffffffffffffffffffffffffffffffffffffffffffff...ffffffffffffff#",
+    "#fffffffffffffffffffffffffffffffffffffffffffffffffff...ffffffffffffff#",
+    "#fffffffffffffffffffffffffffffffffffffffffffffffffff...ffffffffffffff#",
+    "#fffffffffffffffffffffffffffffffffffffffffffffffffff...ffffffffffffff#",
+    "#fffffffffffffffffffffffffffffffffffffffffffffffffff...ffffffffffffff#",
+    "####################################################...###############",
+    "####################################################...###############",
+    "####################################################...###############",
     "#....................................................................#",
     "#....................................................................#",
     "#....................................................................#",
     "#....................................................................#",
     "#....................................................................#",
-    "#....................................................................#",
-    "#................~~~~~~~~~~~.........................................#",
-    "#..............~~~~~~~~~~~~~~~.......................................#",
-    "#.............~~~~~~~~~~~~~~~~~......................................#",
-    "#............~~~~~~~~~~~~~~~~~~~......................###########....#",
-    "#............~~~~~~~~~~~~~~~~~~~......................###########....#",
-    "#............~~~~~~~~~~~~~~~~~~~......................###########....#",
-    "#............~~~~~~~~~~~~~~~~~~~......................###########....#",
-    "#............~~~~~~~~~~~~~~~~~~~......................###########....#",
-    "#.............~~~~~~~~~~~~~~~~~.......................###########....#",
-    "#..............~~~~~~~~~~~~~~~........................###########....#",
-    "#................~~~~~~~~~~~..........................###########....#",
+    "#....................~~~~~~~~~~~~~~~.................................#",
+    "#..................~~~~~~~~~~~~~~~~~~~...............................#",
+    "#................~~~~~~~~~~~~~~~~~~~~~~~.............................#",
+    "#...............~~~~~~~~~~~~~~~~~~~~~~~~~............................#",
+    "#...............~~~~~~~~~~~~~~~~~~~~~~~~~.............###########....#",
+    "#...............~~~~~~~~~~~~~~~~~~~~~~~~~.............###########....#",
+    "#...............~~~~~~~~~~~~~~~~~~~~~~~~~.............###########....#",
+    "#...............~~~~~~~~~~~~~~~~~~~~~~~~~.............###########....#",
+    "#................~~~~~~~~~~~~~~~~~~~~~~~..............###########....#",
+    "#..................~~~~~~~~~~~~~~~~~~~................###########....#",
+    "#....................~~~~~~~~~~~~~~~..................###########....#",
+    "#.....................................................###########....#",
     "#....................................................................#",
     "#....................................................................#",
     "#....................................................................#",
@@ -75,263 +75,283 @@
     },
     {
       "moebel": "st5Bude",
-      "feld": [52, 3]
+      "feld": [40, 3]
     },
     {
       "moebel": "cc4Stammbank",
-      "feld": [49, 8]
+      "feld": [37, 8]
     },
     {
       "moebel": "st5Werkzeugkiste",
-      "feld": [59, 7]
+      "feld": [47, 7]
     },
     {
       "moebel": "cc4Stammbank",
-      "feld": [26, 8]
-    },
-    {
-      "moebel": "st5Birke",
-      "feld": [2, 1]
+      "feld": [20, 8]
     },
     {
       "moebel": "st5BirkeKlein",
-      "feld": [6, 2]
+      "feld": [2, 1]
     },
     {
       "moebel": "st5Birke",
+      "feld": [6, 1]
+    },
+    {
+      "moebel": "st5BirkeKlein",
       "feld": [10, 1]
     },
     {
+      "moebel": "st5Birke",
+      "feld": [14, 1]
+    },
+    {
+      "moebel": "st5BirkeKlein",
+      "feld": [62, 1]
+    },
+    {
       "moebel": "st5Bagger",
-      "feld": [4, 29]
+      "feld": [4, 27]
     },
     {
       "moebel": "st5Bauholz",
       "feld": [9, 27]
     },
     {
+      "moebel": "st5Bauholz",
+      "feld": [11, 27]
+    },
+    {
+      "moebel": "st5Werkzeugkiste",
+      "feld": [8, 32]
+    },
+    {
       "moebel": "st5GleisWaagerecht",
-      "feld": [12, 44],
+      "feld": [12, 46],
       "bauteil_ok": true
     },
     {
       "moebel": "st5GleisWaagerecht",
-      "feld": [13, 44],
+      "feld": [13, 46],
       "bauteil_ok": true
     },
     {
       "moebel": "st5GleisWaagerecht",
-      "feld": [14, 44],
+      "feld": [14, 46],
       "bauteil_ok": true
     },
     {
       "moebel": "st5GleisWaagerecht",
-      "feld": [15, 44],
+      "feld": [15, 46],
       "bauteil_ok": true
     },
     {
       "moebel": "st5GleisWaagerecht",
-      "feld": [16, 44],
+      "feld": [16, 46],
       "bauteil_ok": true
     },
     {
       "moebel": "st5GleisWaagerecht",
-      "feld": [17, 44],
+      "feld": [17, 46],
       "bauteil_ok": true
     },
     {
       "moebel": "st5GleisWaagerecht",
-      "feld": [18, 44],
+      "feld": [18, 46],
       "bauteil_ok": true
     },
     {
       "moebel": "st5GleisWaagerecht",
-      "feld": [19, 44],
+      "feld": [19, 46],
       "bauteil_ok": true
     },
     {
       "moebel": "st5GleisWaagerecht",
-      "feld": [20, 44],
+      "feld": [20, 46],
       "bauteil_ok": true
     },
     {
       "moebel": "st5GleisWaagerecht",
-      "feld": [21, 44],
+      "feld": [21, 46],
       "bauteil_ok": true
     },
     {
       "moebel": "st5GleisWaagerecht",
-      "feld": [22, 44],
+      "feld": [22, 46],
       "bauteil_ok": true
     },
     {
       "moebel": "st5GleisWaagerecht",
-      "feld": [23, 44],
+      "feld": [23, 46],
       "bauteil_ok": true
     },
     {
       "moebel": "st5GleisWaagerecht",
-      "feld": [24, 44],
+      "feld": [24, 46],
       "bauteil_ok": true
     },
     {
       "moebel": "st5GleisWaagerecht",
-      "feld": [25, 44],
+      "feld": [25, 46],
       "bauteil_ok": true
     },
     {
       "moebel": "st5GleisWaagerecht",
-      "feld": [26, 44],
+      "feld": [26, 46],
       "bauteil_ok": true
     },
     {
       "moebel": "st5GleisWaagerecht",
-      "feld": [27, 44],
+      "feld": [27, 46],
       "bauteil_ok": true
     },
     {
       "moebel": "st5GleisWaagerecht",
-      "feld": [28, 44],
+      "feld": [28, 46],
       "bauteil_ok": true
     },
     {
       "moebel": "st5GleisWaagerecht",
-      "feld": [29, 44],
+      "feld": [29, 46],
       "bauteil_ok": true
     },
     {
       "moebel": "st5GleisWaagerecht",
-      "feld": [30, 44],
+      "feld": [30, 46],
       "bauteil_ok": true
     },
     {
       "moebel": "st5GleisWaagerecht",
-      "feld": [31, 44],
+      "feld": [31, 46],
       "bauteil_ok": true
     },
     {
       "moebel": "st5GleisWaagerecht",
-      "feld": [32, 44],
+      "feld": [32, 46],
       "bauteil_ok": true
     },
     {
       "moebel": "st5GleisWaagerecht",
-      "feld": [33, 44],
+      "feld": [33, 46],
       "bauteil_ok": true
     },
     {
       "moebel": "st5GleisWaagerecht",
-      "feld": [34, 44],
+      "feld": [34, 46],
       "bauteil_ok": true
     },
     {
       "moebel": "st5GleisWaagerecht",
-      "feld": [35, 44],
+      "feld": [35, 46],
       "bauteil_ok": true
     },
     {
       "moebel": "st5GleisWaagerecht",
-      "feld": [36, 44],
+      "feld": [36, 46],
       "bauteil_ok": true
     },
     {
       "moebel": "st5GleisWaagerecht",
-      "feld": [37, 44],
+      "feld": [37, 46],
       "bauteil_ok": true
     },
     {
       "moebel": "st5GleisWaagerecht",
-      "feld": [38, 44],
+      "feld": [38, 46],
       "bauteil_ok": true
     },
     {
       "moebel": "st5GleisWaagerecht",
-      "feld": [39, 44],
+      "feld": [39, 46],
       "bauteil_ok": true
     },
     {
       "moebel": "st5GleisWaagerecht",
-      "feld": [40, 44],
+      "feld": [40, 46],
       "bauteil_ok": true
     },
     {
       "moebel": "st5GleisWaagerecht",
-      "feld": [41, 44],
+      "feld": [41, 46],
       "bauteil_ok": true
     },
     {
       "moebel": "st5GleisWaagerecht",
-      "feld": [42, 44],
+      "feld": [42, 46],
       "bauteil_ok": true
     },
     {
       "moebel": "st5GleisWaagerecht",
-      "feld": [43, 44],
+      "feld": [43, 46],
       "bauteil_ok": true
     },
     {
       "moebel": "st5GleisWaagerecht",
-      "feld": [44, 44],
+      "feld": [44, 46],
       "bauteil_ok": true
     },
     {
       "moebel": "st5GleisWaagerecht",
-      "feld": [45, 44],
+      "feld": [45, 46],
       "bauteil_ok": true
     },
     {
       "moebel": "st5GleisWaagerecht",
-      "feld": [46, 44],
+      "feld": [46, 46],
       "bauteil_ok": true
     },
     {
       "moebel": "st5GleisWaagerecht",
-      "feld": [47, 44],
+      "feld": [47, 46],
       "bauteil_ok": true
     },
     {
       "moebel": "st5GleisWaagerecht",
-      "feld": [48, 44],
+      "feld": [48, 46],
       "bauteil_ok": true
     },
     {
       "moebel": "st5GleisWaagerecht",
-      "feld": [49, 44],
+      "feld": [49, 46],
       "bauteil_ok": true
     },
     {
       "moebel": "st5GleisWaagerecht",
-      "feld": [50, 44],
+      "feld": [50, 46],
       "bauteil_ok": true
     },
     {
       "moebel": "st5GleisWaagerecht",
-      "feld": [51, 44],
+      "feld": [51, 46],
       "bauteil_ok": true
     },
     {
       "moebel": "st5GleisWaagerecht",
-      "feld": [52, 44],
+      "feld": [52, 46],
       "bauteil_ok": true
     },
     {
       "moebel": "st5GleisWaagerecht",
-      "feld": [53, 44],
+      "feld": [53, 46],
       "bauteil_ok": true
     },
     {
       "moebel": "st5GleisWaagerecht",
-      "feld": [54, 44],
+      "feld": [54, 46],
       "bauteil_ok": true
     },
     {
       "moebel": "st5GleisWaagerecht",
-      "feld": [55, 44],
+      "feld": [55, 46],
       "bauteil_ok": true
     },
     {
       "moebel": "cc8Prellbock",
-      "feld": [10, 44]
+      "feld": [10, 46]
+    },
+    {
+      "moebel": "st5Lore",
+      "feld": [30, 45]
     },
     {
       "moebel": "st5GraffitiWolf",
@@ -346,105 +366,119 @@
       "versatz": [0, 4]
     },
     {
+      "moebel": "st5GraffitiKrone",
+      "feld": [4, 22],
+      "an_wand": true,
+      "versatz": [0, 4]
+    },
+    {
       "moebel": "scFelsGross",
-      "feld": [36, 28]
+      "feld": [46, 28]
     },
     {
       "moebel": "scFelsMittel",
-      "feld": [40, 30]
+      "feld": [50, 32]
     },
     {
       "moebel": "fels",
-      "feld": [34, 40]
+      "feld": [44, 40]
     },
     {
       "moebel": "felsKlein",
-      "feld": [12, 30]
+      "feld": [16, 42]
     },
     {
       "moebel": "wg4Felsgruppe",
-      "feld": [46, 46]
+      "feld": [8, 40]
     },
     {
       "moebel": "scFelsKlein",
-      "feld": [20, 16]
+      "feld": [30, 16]
     },
     {
       "moebel": "wg4FelsgruppeB",
-      "feld": [60, 17]
-    },
-    {
-      "moebel": "scFelsGross",
-      "feld": [36, 26]
+      "feld": [10, 17]
     },
     {
       "moebel": "scFelsMittel",
-      "feld": [39, 26]
+      "feld": [40, 18]
+    },
+    {
+      "moebel": "fels",
+      "feld": [66, 30]
+    },
+    {
+      "moebel": "st5Lichtmast",
+      "feld": [62, 26]
     },
     {
       "moebel": "scFelsGross",
-      "feld": [42, 26]
+      "feld": [18, 26]
     },
     {
       "moebel": "scFelsMittel",
-      "feld": [45, 26]
+      "feld": [21, 26]
     },
     {
       "moebel": "scFelsGross",
-      "feld": [8, 15]
+      "feld": [24, 26]
     },
     {
       "moebel": "scFelsMittel",
-      "feld": [11, 15]
+      "feld": [27, 26]
     },
     {
       "moebel": "scFelsGross",
-      "feld": [14, 15]
+      "feld": [20, 14]
+    },
+    {
+      "moebel": "scFelsMittel",
+      "feld": [23, 14]
+    },
+    {
+      "moebel": "scFelsGross",
+      "feld": [26, 14]
     },
     {
       "moebel": "st5Schotterhaufen",
-      "feld": [44, 36]
+      "feld": [47, 38]
     },
     {
       "moebel": "st5Schotterhaufen",
-      "feld": [48, 38]
+      "feld": [44, 34]
     },
     {
       "moebel": "st5Schotterhaufen",
-      "feld": [26, 18]
+      "feld": [34, 19]
     },
     {
       "moebel": "st5Steinpalette",
-      "feld": [36, 34]
+      "feld": [2, 36]
     },
     {
       "moebel": "st5Steinpalette",
-      "feld": [38, 34]
-    },
-    {
-      "moebel": "st5Steinpalette",
-      "feld": [30, 14]
+      "feld": [4, 36]
     },
     {
       "moebel": "st5Lore",
-      "feld": [47, 43]
+      "feld": [33, 45]
     },
     {
       "moebel": "st5Bohlen",
-      "feld": [2, 38]
+      "feld": [12, 32]
     },
     {
       "moebel": "st5Bohlen",
-      "feld": [3, 38]
+      "feld": [13, 32]
     },
     {
       "moebel": "st5Schuppen",
-      "feld": [6, 36]
+      "feld": [11, 42]
     },
     {
       "moebel": "ds8Finkenzeichen",
       "feld": [59, 42],
-      "id": "ereignis82"
+      "id": "ereignis90"
     }
   ],
   "ausloeser": [
@@ -477,7 +511,7 @@
     },
     {
       "name": "bagger",
-      "feld": [3, 33]
+      "feld": [3, 31]
     }
   ],
   "figuren": [],
@@ -485,10 +519,10 @@
     {
       "name": "hargrove",
       "typ": "statist",
-      "feld": [54, 9],
+      "feld": [42, 9],
       "eigenschaften": {
-        "von": "54,9",
-        "bis": "54,9",
+        "von": "42,9",
+        "bis": "42,9",
         "tun": "",
         "wann": "tag"
       }
@@ -496,10 +530,10 @@
     {
       "name": "lena",
       "typ": "statist",
-      "feld": [24, 9],
+      "feld": [20, 9],
       "eigenschaften": {
-        "von": "24,9",
-        "bis": "24,9",
+        "von": "20,9",
+        "bis": "20,9",
         "tun": "",
         "wann": "tag"
       }
@@ -528,10 +562,10 @@
     {
       "name": "steinmetz",
       "typ": "statist",
-      "feld": [30, 30],
+      "feld": [30, 29],
       "eigenschaften": {
-        "von": "30,30",
-        "bis": "30,30",
+        "von": "30,29",
+        "bis": "30,29",
         "tun": "behaut einen Block in der Grube",
         "wann": "tag",
         "sagt": "statist.steinbruch.grube.steinmetz"
@@ -595,9 +629,9 @@
     {
       "name": "falke",
       "typ": "tier",
-      "feld": [40, 8],
+      "feld": [40, 9],
       "eigenschaften": {
-        "von": "40,8",
+        "von": "40,9",
         "bis": "56,9",
         "verhalten": "fliegen"
       }
@@ -605,10 +639,10 @@
     {
       "name": "eidechse",
       "typ": "tier",
-      "feld": [28, 31],
+      "feld": [25, 41],
       "eigenschaften": {
-        "von": "28,31",
-        "bis": "32,31",
+        "von": "25,41",
+        "bis": "29,41",
         "verhalten": "flitzen"
       }
     }

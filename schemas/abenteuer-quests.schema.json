@@ -199,6 +199,10 @@
         "titel": { "$ref": "#/$defs/textschluessel" },
         "typ": { "enum": ["raetsel", "hilfe", "begegnung", "haupt"] },
         "ort": { "type": "string", "pattern": "^[a-z][a-zA-Z0-9]*$" },
+        "klein": {
+          "description": "Kleine Aufgabe oder Ereignis eines Wegs (Runde 6, docs/spiel/14 Grundsatz 2, 15 Grundsatz 3): zählt nicht für „alle Nebenquests einer Stadt“ (R27), gibt keine Nadel und keine Karte",
+          "type": "boolean"
+        },
         "haupt": {
           "description": "Teil der Haupthandlung?",
           "type": "boolean"

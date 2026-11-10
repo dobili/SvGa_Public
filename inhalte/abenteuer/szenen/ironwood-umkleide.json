@@ -25,180 +25,108 @@
   "objekte": [
     {
       "moebel": "mf2Spind",
-      "feld": [
-        1,
-        2
-      ]
+      "feld": [1, 2]
     },
     {
       "moebel": "mf2Spind",
-      "feld": [
-        2,
-        2
-      ]
+      "feld": [2, 2]
     },
     {
       "moebel": "mf2Spind",
-      "feld": [
-        3,
-        2
-      ]
+      "feld": [3, 2]
     },
     {
       "moebel": "mf2Spind",
-      "feld": [
-        4,
-        2
-      ]
+      "feld": [4, 2]
     },
     {
       "moebel": "mf2Spind",
-      "feld": [
-        5,
-        2
-      ]
+      "feld": [5, 2]
     },
     {
       "moebel": "mf2Spind",
-      "feld": [
-        6,
-        2
-      ]
+      "feld": [6, 2]
     },
     {
       "moebel": "iwSpind",
-      "feld": [
-        7,
-        2
-      ],
+      "feld": [7, 2],
       "id": "schliessfachSpind"
     },
     {
       "moebel": "iw8Wandspiegel",
-      "feld": [
-        9,
-        1
-      ],
+      "feld": [9, 1],
       "an_wand": true
     },
     {
       "moebel": "mf5Handwaschbecken",
-      "feld": [
-        9,
-        3
-      ]
+      "feld": [9, 3]
     },
     {
       "moebel": "iw8Duschkabine",
-      "feld": [
-        10,
-        1
-      ]
+      "feld": [10, 1]
     },
     {
       "moebel": "iw8DuschkabineB",
-      "feld": [
-        12,
-        1
-      ]
+      "feld": [12, 1]
     },
     {
       "moebel": "ws5GlasL",
-      "feld": [
-        11,
-        7
-      ],
+      "feld": [11, 7],
       "bauteil_ok": true
     },
     {
       "moebel": "ws5GlasM",
-      "feld": [
-        12,
-        7
-      ],
+      "feld": [12, 7],
       "bauteil_ok": true
     },
     {
       "moebel": "ws5GlasM",
-      "feld": [
-        13,
-        7
-      ],
+      "feld": [13, 7],
       "bauteil_ok": true
     },
     {
       "moebel": "ws5GlasR",
-      "feld": [
-        14,
-        7
-      ],
+      "feld": [14, 7],
       "bauteil_ok": true
     },
     {
       "moebel": "cc4Bahnbank",
-      "feld": [
-        2,
-        5
-      ]
+      "feld": [2, 5]
     },
     {
       "moebel": "cc4Bahnbank",
-      "feld": [
-        2,
-        8
-      ]
+      "feld": [2, 8]
     },
     {
       "moebel": "cc4PflanzeK",
-      "feld": [
-        14,
-        8
-      ]
+      "feld": [14, 8]
     },
     {
       "moebel": "cc6TuerSued",
-      "feld": [
-        6,
-        11
-      ],
+      "feld": [6, 11],
       "an_wand": true
     },
     {
       "moebel": "cc5Fussmatte",
-      "feld": [
-        6,
-        9
-      ],
-      "versatz": [
-        0,
-        24
-      ]
+      "feld": [6, 9],
+      "versatz": [0, 24]
     }
   ],
   "ausloeser": [
     {
       "name": "start",
-      "feld": [
-        6,
-        9
-      ],
+      "feld": [6, 9],
       "eigenschaften": {
         "richtung": "oben"
       }
     },
     {
       "name": "umkleideAusgang",
-      "feld": [
-        6,
-        10
-      ]
+      "feld": [6, 10]
     },
     {
       "name": "schliessfach",
-      "feld": [
-        8,
-        4
-      ]
+      "feld": [8, 4]
     }
   ],
   "figuren": [],
@@ -206,10 +134,7 @@
     {
       "name": "arbeiter",
       "typ": "statist",
-      "feld": [
-        4,
-        7
-      ],
+      "feld": [4, 7],
       "eigenschaften": {
         "von": "4,7",
         "bis": "6,7",
@@ -218,16 +143,6 @@
       }
     }
   ],
-  "zustand": [
-    "gebraucht",
-    "alt",
-    "neu"
-  ],
-  "stil": [
-    "industrie",
-    "klassisch",
-    "einfach",
-    "modern",
-    "rustikal"
-  ]
+  "zustand": ["gebraucht", "alt", "neu"],
+  "stil": ["industrie", "klassisch", "einfach", "modern", "rustikal"]
 }

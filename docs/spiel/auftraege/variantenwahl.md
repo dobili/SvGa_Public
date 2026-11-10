@@ -17,6 +17,15 @@ Autors als Regeln angewandt (`docs/spiel/KARTENPRUEFUNG.md`), und jede Karte bek
 
 Die Varianten-Kennungen `musikhaus-neu` und `diner-neon` folgen der Wahl ihrer Grundkarte.
 
+## Umgesetzt (Haupt-Chat, 10.11.2026)
+
+Die 22 Wahlen C sind zur Hauptfassung gemacht: Die alte A liegt als `varianten/<szene>-a.json`, die
+gewählte C steht in `szenen/<szene>.json` ohne `variante`. Bei den 26 Wahlen A ändert sich nichts.
+Gebaut wird nur noch an der Hauptfassung. Was die Helfer in Runde 8 an einer alten A geändert haben,
+gilt für die neue Hauptfassung nachzuziehen (etwa `"kante": "klippe"` an der Bergstraße, schon
+gesetzt; Haltestelle in Crossroads; Autowrack am Diner). Der Zustand `diner-neon` beruht noch auf der
+alten A und wird aus der neuen Hauptfassung neu abgeleitet.
+
 ## Karten (48)
 
 - [x] `bayou-steg` (bayou.steg): **C**

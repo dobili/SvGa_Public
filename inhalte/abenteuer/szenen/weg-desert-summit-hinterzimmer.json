@@ -2,9 +2,9 @@
   "karte": "wegDesertSummit.hinterzimmer",
   "datei": "karten/weg-desert-summit-hinterzimmer.json",
   "art": "innen",
-  "beschreibung": "Das Hinterzimmer des Diners (Weg 7), 14 × 12 Kacheln: Treffpunkt K3 der Kreidespringer. Drei Tische mit Brettern und Hockern, an der Nordwand eine Tafel mit Kreide, ein Regal mit alten Schachheften, Kisten und ein Fass. Kein Bildschirm. Tür in der Südwand.",
+  "beschreibung": "Variante C: Tafel in der Mitte, zwei Tische untereinander, einer rechts.",
   "wand": "holz",
-  "boden": "holzDunkel",
+  "boden": "dielen",
   "raster": [
     "##############",
     "##############",
@@ -32,12 +32,12 @@
     },
     {
       "moebel": "mf2Tafel",
-      "feld": [2, 1],
+      "feld": [5, 1],
       "an_wand": true
     },
     {
       "moebel": "cc5Tisch",
-      "feld": [3, 5],
+      "feld": [5, 4],
       "id": "brett0"
     },
     {
@@ -47,15 +47,15 @@
     },
     {
       "moebel": "cc4Hocker",
-      "feld": [2, 6]
+      "feld": [4, 5]
     },
     {
       "moebel": "cc4Hocker",
-      "feld": [5, 6]
+      "feld": [7, 5]
     },
     {
       "moebel": "cc5Tisch",
-      "feld": [8, 5],
+      "feld": [5, 7],
       "id": "brett1"
     },
     {
@@ -65,15 +65,15 @@
     },
     {
       "moebel": "cc4Hocker",
-      "feld": [7, 6]
+      "feld": [4, 8]
     },
     {
       "moebel": "cc4Hocker",
-      "feld": [10, 6]
+      "feld": [7, 8]
     },
     {
       "moebel": "cc5Tisch",
-      "feld": [3, 8],
+      "feld": [10, 5],
       "id": "brett2"
     },
     {
@@ -83,11 +83,11 @@
     },
     {
       "moebel": "cc4Hocker",
-      "feld": [2, 9]
+      "feld": [9, 6]
     },
     {
       "moebel": "cc4Hocker",
-      "feld": [5, 9]
+      "feld": [12, 6]
     },
     {
       "moebel": "cc4RegalA",
@@ -95,15 +95,15 @@
     },
     {
       "moebel": "cc4KisteLeer",
-      "feld": [11, 3]
+      "feld": [1, 3]
     },
     {
       "moebel": "iwFass",
-      "feld": [12, 6]
+      "feld": [1, 8]
     },
     {
       "moebel": "cc4PflanzeK",
-      "feld": [1, 3]
+      "feld": [12, 8]
     }
   ],
   "ausloeser": [
@@ -122,7 +122,7 @@
   "figuren": [
     {
       "name": "mags",
-      "feld": [6, 4]
+      "feld": [7, 4]
     },
     {
       "name": "ruthKeene",

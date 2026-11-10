@@ -1,9 +1,8 @@
 {
   "karte": "wegCrossroadsPinewood.riesenbaeume",
-  "datei": "karten/varianten/weg-crossroads-pinewood-riesenbaeume-c.json",
-  "variante": "c",
+  "datei": "karten/varianten/weg-crossroads-pinewood-riesenbaeume-a.json",
   "art": "aussen",
-  "beschreibung": "Variante C: ganz dichter, dunkler Hain mit Farnen und Pilzen, der Weg schwingt weiter, das Ranger-Häuschen tief im Wald.",
+  "beschreibung": "Der Hain der Riesenbäume auf dem Fernwanderweg, 40 × 130 Kacheln, kühler Morgen. Der Weg kommt oben am Ostrand aus den Hütten und windet sich in Kehren nach Süden: Mammutbäume links und rechts und mitten im Hain, das Ranger-Häuschen mit Fahne, ein dichter Hain mit Farnen, ein Bach mit Holzsteg, zuletzt lichter Wald und der Abstieg zum Südrand ins Camp.",
   "boden": "gras",
   "wandart": "hecke",
   "boeden": {
@@ -17,102 +16,58 @@
     "#......................................#",
     "#......................................#",
     "#......................................#",
-    "#...........eeeeeeeeeeeeeeeeeeeeeeeeeeee",
-    "#...........eeeeeeeeeeeeeeeeeeeeeeeeeeee",
-    "#...........ee.........................#",
-    "#...........ee.........................#",
-    "#...........ee.........................#",
-    "#...........ee.........................#",
-    "#...........ee.........................#",
-    "#...........ee.........................#",
-    "#...........ee.........................#",
-    "#...........ee.........................#",
-    "#...........ee.........................#",
-    "#...........ee.........................#",
-    "#...........ee.........................#",
-    "#...........ee.........................#",
-    "#...........ee.........................#",
-    "#...........ee.........................#",
-    "#...........ee.........................#",
-    "#...........ee.........................#",
-    "#...........ee.........................#",
-    "#...........ee.........................#",
-    "#...........ee.........................#",
-    "#...........ee.........................#",
-    "#...........ee.........................#",
-    "#...........ee.........................#",
-    "#...........ee.........................#",
-    "#...........ee.........................#",
-    "#...........ee.........................#",
-    "#...........ee.........................#",
-    "#...........ee.........................#",
-    "#...........ee.........................#",
-    "#...........ee.........................#",
-    "#...........eeeeeeeeeeeeee.............#",
-    "#...........eeeeeeeeeeeeee.............#",
-    "#.......................ee.............#",
-    "#.......................ee.............#",
-    "#.......................ee.............#",
-    "#.......................ee.............#",
-    "#.......................ee.............#",
-    "#.......................ee.............#",
-    "#.......................ee.............#",
-    "#.......................ee.............#",
-    "#.......................ee.............#",
-    "#.......................ee.............#",
-    "#.......................ee.............#",
-    "#.......................ee.............#",
-    "#.......................ee.............#",
-    "#.......................ee.............#",
-    "#...................eeeeee.............#",
-    "#...................eeeeee.............#",
-    "#.......................ee.............#",
-    "#.......................ee.............#",
-    "#.......................ee.............#",
-    "#.......................ee.............#",
-    "#.......................ee.............#",
-    "#.......................ee.............#",
-    "#...............eeeeeeeeee.............#",
-    "#...............eeeeeeeeee.............#",
-    "#...............ee.....................#",
-    "#...............ee.....................#",
-    "#...............ee.....................#",
-    "#...............ee.....................#",
-    "#...............ee.....................#",
-    "#...............ee.....................#",
-    "#...............ee.....................#",
-    "#...............ee.....................#",
-    "#...............ee.....................#",
-    "#...............ee.....................#",
-    "#...............ee.....................#",
-    "#...............ee.....................#",
-    "#...............ee.....................#",
-    "#...............ee.....................#",
-    "#...............ee.....................#",
-    "#...............ee.....................#",
-    "#...............ee.....................#",
-    "#...............ee.....................#",
-    "#...............ee.....................#",
-    "#...............ee.....................#",
-    "#...............ee.....................#",
-    "#...............ee.....................#",
-    "#...............eeeeeeeeeeee...........#",
-    "#...............eeeeeeeeeeee...........#",
-    "#.........................ee...........#",
-    "#.........................ee...........#",
-    "#.........................ee...........#",
-    "#.........k.k.k.k.........ee...........#",
-    "#........k.k.k.k..........ee...........#",
-    "#.........k.k.k.k.........ee...........#",
-    "#........k.k.k.k..........ee...........#",
-    "#.........k.k.k.k.........ee...........#",
-    "#........k.k.k.k..........ee...........#",
-    "#.........k.k.k.k.........ee...........#",
-    "#........k.k.k.k..........ee...........#",
-    "#.........................ee...........#",
-    "#.........................ee...........#",
-    "~~~~~~~~~~~~~~~~~~~~~~~~~~hh~~~~~~~~~~~~",
-    "~~~~~~~~~~~~~~~~~~~~~~~~~~hh~~~~~~~~~~~~",
+    "#...................eeeeeeeeeeeeeeeeeeee",
+    "#...................eeeeeeeeeeeeeeeeeeee",
+    "#...................ee.................#",
+    "#...................ee.................#",
+    "#...................ee.................#",
+    "#...................ee.................#",
+    "#...................ee.................#",
+    "#...................ee.................#",
+    "#...................ee.................#",
+    "#...................ee.................#",
+    "#...................ee.................#",
+    "#...................ee.................#",
+    "#...................ee.................#",
+    "#...................ee.................#",
+    "#...................ee.................#",
+    "#...................ee.................#",
+    "#...................ee.................#",
+    "#...................ee.................#",
+    "#...................ee.................#",
+    "#...................ee.................#",
+    "#...................ee.................#",
+    "#...................ee.................#",
+    "#...................ee.................#",
+    "#...................ee.................#",
+    "#...................ee.................#",
+    "#.........eeeeeeeeeeee.................#",
+    "#.........eeeeeeeeeeee.................#",
+    "#.........ee...........................#",
+    "#.........ee...........................#",
+    "#.........ee...........................#",
+    "#.........ee...........................#",
+    "#.........ee...........................#",
+    "#.........ee...........................#",
+    "#.........ee...........................#",
+    "#.........ee...........................#",
+    "#.........ee...........................#",
+    "#.........ee...........................#",
+    "#.........ee...........................#",
+    "#.........ee...........................#",
+    "#.........ee...........................#",
+    "#.........ee...........................#",
+    "#.........eeeeeeee.....................#",
+    "#.........eeeeeeee.....................#",
+    "#.........ee...........................#",
+    "#.........ee...........................#",
+    "#.........ee...........................#",
+    "#.........ee...........................#",
+    "#.........ee...........................#",
+    "#.........ee...........................#",
+    "#.........ee...........................#",
+    "#.........eeeeeeeeeeeeeeeeee...........#",
+    "#.........eeeeeeeeeeeeeeeeee...........#",
     "#.........................ee...........#",
     "#.........................ee...........#",
     "#.........................ee...........#",
@@ -122,8 +77,52 @@
     "#.........................ee...........#",
     "#.........................ee...........#",
     "#.........................ee...........#",
-    "#..................eeeeeeeee...........#",
-    "#..................eeeeeeeee...........#",
+    "#.........................ee...........#",
+    "#.........................ee...........#",
+    "#.........................ee...........#",
+    "#.........................ee...........#",
+    "#.........................ee...........#",
+    "#.........................ee...........#",
+    "#.........................ee...........#",
+    "#.........................ee...........#",
+    "#.........................ee...........#",
+    "#.........................ee...........#",
+    "#.........................ee...........#",
+    "#.........................ee...........#",
+    "#.........................ee...........#",
+    "#.........................ee...........#",
+    "#.............eeeeeeeeeeeeee...........#",
+    "#.............eeeeeeeeeeeeee...........#",
+    "#.............ee.......................#",
+    "#.............ee..............k.k.k.k..#",
+    "#.............ee.............k.k.k.k...#",
+    "#.............ee..............k.k.k.k..#",
+    "#.............ee.............k.k.k.k...#",
+    "#.............ee..............k.k.k.k..#",
+    "#.............ee.............k.k.k.k...#",
+    "#.............ee..............k.k.k.k..#",
+    "#.............ee.............k.k.k.k...#",
+    "#.............ee.......................#",
+    "#.............ee.......................#",
+    "~~~~~~~~~~~~~~hh~~~~~~~~~~~~~~~~~~~~~~~~",
+    "~~~~~~~~~~~~~~hh~~~~~~~~~~~~~~~~~~~~~~~~",
+    "#.............ee.......................#",
+    "#.............ee.......................#",
+    "#.............ee.......................#",
+    "#.............ee.......................#",
+    "#.............ee.......................#",
+    "#.............ee.......................#",
+    "#.............ee.......................#",
+    "#.............ee.......................#",
+    "#.............ee.......................#",
+    "#.............eeeeeee..................#",
+    "#.............eeeeeee..................#",
+    "#..................ee..................#",
+    "#..................ee..................#",
+    "#..................ee..................#",
+    "#..................ee..................#",
+    "#..................ee..................#",
+    "#..................ee..................#",
     "#..................ee..................#",
     "#..................ee..................#",
     "#..................ee..................#",
@@ -147,173 +146,129 @@
   "objekte": [
     {
       "moebel": "cp7StegLaengs",
-      "feld": [26, 97],
+      "feld": [14, 91],
       "id": "steg"
     },
     {
       "moebel": "cp7Rangerhaus",
-      "feld": [17, 45],
+      "feld": [13, 39],
       "id": "rangerhaus"
     },
     {
       "moebel": "mf4Wegweiser",
-      "feld": [15, 2]
+      "feld": [23, 2]
     },
     {
       "moebel": "cp7Mammutbaum",
-      "feld": [4, 4]
+      "feld": [12, 4]
     },
     {
       "moebel": "cp7Mammutbaum",
-      "feld": [15, 6]
+      "feld": [23, 6]
     },
     {
       "moebel": "cp7Mammutbaum",
-      "feld": [4, 18]
+      "feld": [2, 22]
     },
     {
       "moebel": "cp7Mammutbaum",
-      "feld": [15, 18]
+      "feld": [2, 40]
     },
     {
       "moebel": "cp7Mammutbaum",
-      "feld": [27, 32]
+      "feld": [29, 49]
     },
     {
       "moebel": "cp7Mammutbaum",
-      "feld": [27, 46]
+      "feld": [18, 58]
     },
     {
       "moebel": "cp7Mammutbaum",
-      "feld": [8, 53]
+      "feld": [29, 67]
     },
     {
       "moebel": "cp7Mammutbaum",
-      "feld": [19, 62]
+      "feld": [6, 76]
     },
     {
       "moebel": "cp7Mammutbaum",
-      "feld": [8, 67]
+      "feld": [22, 94]
     },
     {
       "moebel": "cp7Mammutbaum",
-      "feld": [29, 74]
+      "feld": [11, 105]
     },
     {
       "moebel": "cp7Mammutbaum",
-      "feld": [11, 102]
+      "feld": [22, 112]
     },
     {
       "moebel": "cp7Mammutbaum",
-      "feld": [22, 111]
+      "feld": [1, 6]
     },
     {
       "moebel": "cp7Mammutbaum",
-      "feld": [1, 34]
+      "feld": [1, 54]
     },
     {
       "moebel": "cp7Mammutbaum",
-      "feld": [1, 46]
+      "feld": [1, 94]
     },
     {
       "moebel": "cp7Mammutbaum",
-      "feld": [1, 58]
-    },
-    {
-      "moebel": "cp7Mammutbaum",
-      "feld": [1, 70]
-    },
-    {
-      "moebel": "cp7Mammutbaum",
-      "feld": [1, 82]
-    },
-    {
-      "moebel": "cp7Mammutbaum",
-      "feld": [1, 100]
-    },
-    {
-      "moebel": "cp7Mammutbaum",
-      "feld": [1, 112]
+      "feld": [1, 110]
     },
     {
       "moebel": "cp7Baerenspur",
-      "feld": [27, 60]
+      "feld": [17, 87]
     },
     {
       "moebel": "cp7Baerenspur",
-      "feld": [19, 78]
-    },
-    {
-      "moebel": "cp7Baerenspur",
-      "feld": [29, 87]
-    },
-    {
-      "moebel": "cp7Baerenspur",
-      "feld": [29, 96]
-    },
-    {
-      "moebel": "pw7TanneHoch",
-      "feld": [22, 9]
+      "feld": [17, 96]
     },
     {
       "moebel": "pw7Tanne",
-      "feld": [25, 8]
+      "feld": [4, 1]
     },
     {
-      "moebel": "pw7TanneHoch",
-      "feld": [28, 8]
+      "moebel": "pw7Kiefer",
+      "feld": [7, 1]
     },
     {
       "moebel": "wg4Busch",
-      "feld": [31, 8]
+      "feld": [17, 2]
     },
     {
       "moebel": "pw7TanneHoch",
-      "feld": [36, 7]
+      "feld": [8, 7]
     },
     {
       "moebel": "pw7Tanne",
-      "feld": [2, 12]
+      "feld": [35, 12]
     },
     {
-      "moebel": "pw7TanneHoch",
-      "feld": [32, 11]
+      "moebel": "pw7Kiefer",
+      "feld": [8, 13]
     },
     {
       "moebel": "wg4Busch",
-      "feld": [36, 12]
+      "feld": [10, 16]
     },
     {
       "moebel": "pw7TanneHoch",
-      "feld": [23, 13]
+      "feld": [10, 18]
     },
     {
       "moebel": "pw7Tanne",
-      "feld": [25, 14]
+      "feld": [15, 19]
     },
     {
-      "moebel": "pw7TanneHoch",
-      "feld": [30, 13]
-    },
-    {
-      "moebel": "wg4Busch",
-      "feld": [33, 15]
-    },
-    {
-      "moebel": "pw7TanneHoch",
-      "feld": [1, 18]
-    },
-    {
-      "moebel": "pw7Tanne",
-      "feld": [23, 17]
-    },
-    {
-      "moebel": "pw7TanneHoch",
-      "feld": [27, 16]
+      "moebel": "pw7Kiefer",
+      "feld": [28, 18]
     },
     {
       "moebel": "wg4Busch",
-      "feld": [32, 17]
+      "feld": [32, 20]
     },
     {
       "moebel": "pw7TanneHoch",
@@ -321,395 +276,303 @@
     },
     {
       "moebel": "pw7Tanne",
-      "feld": [37, 16]
+      "feld": [13, 24]
     },
     {
-      "moebel": "pw7TanneHoch",
-      "feld": [23, 21]
+      "moebel": "pw7Kiefer",
+      "feld": [25, 21]
     },
     {
       "moebel": "wg4Busch",
-      "feld": [25, 19]
+      "feld": [31, 23]
     },
     {
       "moebel": "pw7TanneHoch",
-      "feld": [29, 20]
+      "feld": [34, 22]
     },
     {
       "moebel": "pw7Tanne",
-      "feld": [32, 20]
+      "feld": [23, 27]
     },
     {
-      "moebel": "pw7TanneHoch",
-      "feld": [1, 24]
+      "moebel": "pw7Kiefer",
+      "feld": [28, 28]
     },
     {
       "moebel": "wg4Busch",
-      "feld": [26, 24]
+      "feld": [30, 25]
     },
     {
       "moebel": "pw7TanneHoch",
-      "feld": [32, 24]
+      "feld": [34, 27]
     },
     {
       "moebel": "pw7Tanne",
-      "feld": [36, 22]
+      "feld": [20, 32]
     },
     {
-      "moebel": "pw7TanneHoch",
-      "feld": [23, 25]
-    },
-    {
-      "moebel": "wg4Busch",
-      "feld": [26, 27]
-    },
-    {
-      "moebel": "pw7TanneHoch",
-      "feld": [29, 27]
-    },
-    {
-      "moebel": "pw7Tanne",
-      "feld": [35, 26]
-    },
-    {
-      "moebel": "pw7TanneHoch",
-      "feld": [3, 30]
-    },
-    {
-      "moebel": "wg4Busch",
-      "feld": [26, 29]
-    },
-    {
-      "moebel": "pw7TanneHoch",
+      "moebel": "pw7Kiefer",
       "feld": [36, 30]
     },
     {
-      "moebel": "pw7Tanne",
-      "feld": [9, 33]
+      "moebel": "wg4Busch",
+      "feld": [5, 36]
     },
     {
       "moebel": "pw7TanneHoch",
-      "feld": [34, 34]
+      "feld": [20, 36]
+    },
+    {
+      "moebel": "pw7Tanne",
+      "feld": [27, 33]
+    },
+    {
+      "moebel": "pw7Kiefer",
+      "feld": [29, 34]
     },
     {
       "moebel": "wg4Busch",
-      "feld": [9, 39]
+      "feld": [34, 35]
     },
     {
       "moebel": "pw7TanneHoch",
-      "feld": [16, 39]
+      "feld": [23, 39]
     },
     {
       "moebel": "pw7Tanne",
-      "feld": [36, 37]
+      "feld": [26, 38]
     },
     {
-      "moebel": "pw7TanneHoch",
-      "feld": [10, 42]
+      "moebel": "pw7Kiefer",
+      "feld": [32, 40]
     },
     {
       "moebel": "wg4Busch",
-      "feld": [13, 40]
+      "feld": [37, 37]
     },
     {
       "moebel": "pw7TanneHoch",
-      "feld": [34, 40]
+      "feld": [19, 41]
     },
     {
       "moebel": "pw7Tanne",
-      "feld": [8, 43]
+      "feld": [36, 42]
     },
     {
-      "moebel": "pw7TanneHoch",
-      "feld": [12, 44]
+      "moebel": "pw7Kiefer",
+      "feld": [19, 46]
     },
     {
       "moebel": "wg4Busch",
-      "feld": [17, 43]
+      "feld": [22, 46]
     },
     {
       "moebel": "pw7TanneHoch",
-      "feld": [35, 45]
+      "feld": [25, 46]
     },
     {
       "moebel": "pw7Tanne",
-      "feld": [10, 46]
+      "feld": [36, 51]
     },
     {
-      "moebel": "pw7TanneHoch",
-      "feld": [14, 46]
+      "moebel": "pw7Kiefer",
+      "feld": [10, 59]
     },
     {
       "moebel": "wg4Busch",
-      "feld": [14, 51]
+      "feld": [16, 57]
     },
     {
       "moebel": "pw7TanneHoch",
-      "feld": [34, 51]
+      "feld": [11, 63]
     },
     {
       "moebel": "pw7Tanne",
-      "feld": [16, 54]
+      "feld": [16, 64]
     },
     {
-      "moebel": "pw7TanneHoch",
-      "feld": [21, 54]
+      "moebel": "pw7Kiefer",
+      "feld": [30, 61]
     },
     {
       "moebel": "wg4Busch",
-      "feld": [36, 57]
+      "feld": [36, 61]
     },
     {
       "moebel": "pw7TanneHoch",
-      "feld": [30, 58]
+      "feld": [3, 67]
     },
     {
       "moebel": "pw7Tanne",
-      "feld": [33, 58]
+      "feld": [6, 68]
     },
     {
-      "moebel": "pw7TanneHoch",
-      "feld": [36, 60]
+      "moebel": "pw7Kiefer",
+      "feld": [13, 68]
     },
     {
       "moebel": "wg4Busch",
-      "feld": [29, 63]
+      "feld": [31, 65]
     },
     {
       "moebel": "pw7TanneHoch",
-      "feld": [32, 62]
+      "feld": [4, 71]
     },
     {
       "moebel": "pw7Tanne",
-      "feld": [36, 65]
+      "feld": [6, 72]
     },
     {
-      "moebel": "pw7TanneHoch",
-      "feld": [27, 67]
+      "moebel": "pw7Kiefer",
+      "feld": [21, 72]
     },
     {
       "moebel": "wg4Busch",
-      "feld": [29, 68]
+      "feld": [36, 70]
     },
     {
       "moebel": "pw7TanneHoch",
-      "feld": [31, 69]
-    },
-    {
-      "moebel": "pw7Tanne",
-      "feld": [35, 69]
-    },
-    {
-      "moebel": "pw7TanneHoch",
-      "feld": [20, 74]
+      "feld": [1, 74]
     },
     {
       "moebel": "wg4Busch",
-      "feld": [26, 73]
+      "feld": [1, 81]
     },
     {
       "moebel": "pw7TanneHoch",
-      "feld": [37, 75]
+      "feld": [23, 82]
     },
     {
       "moebel": "pw7Tanne",
-      "feld": [23, 77]
+      "feld": [25, 82]
     },
     {
-      "moebel": "pw7TanneHoch",
-      "feld": [27, 76]
+      "moebel": "pw7Tanne",
+      "feld": [3, 87]
+    },
+    {
+      "moebel": "pw7Kiefer",
+      "feld": [20, 87]
     },
     {
       "moebel": "wg4Busch",
-      "feld": [9, 79]
+      "feld": [25, 88]
     },
     {
       "moebel": "pw7TanneHoch",
-      "feld": [12, 81]
+      "feld": [30, 95]
     },
     {
       "moebel": "pw7Tanne",
-      "feld": [36, 79]
+      "feld": [8, 97]
     },
     {
-      "moebel": "pw7TanneHoch",
-      "feld": [34, 86]
-    },
-    {
-      "moebel": "pw7Tanne",
-      "feld": [37, 85]
-    },
-    {
-      "moebel": "pw7Tanne",
-      "feld": [20, 89]
-    },
-    {
-      "moebel": "pw7TanneHoch",
-      "feld": [22, 90]
+      "moebel": "pw7Kiefer",
+      "feld": [30, 100]
     },
     {
       "moebel": "wg4Busch",
-      "feld": [30, 89]
+      "feld": [33, 100]
     },
     {
       "moebel": "pw7TanneHoch",
-      "feld": [32, 89]
-    },
-    {
-      "moebel": "pw7TanneHoch",
-      "feld": [36, 92]
-    },
-    {
-      "moebel": "wg4Busch",
-      "feld": [2, 96]
-    },
-    {
-      "moebel": "pw7TanneHoch",
-      "feld": [4, 94]
-    },
-    {
-      "moebel": "pw7TanneHoch",
-      "feld": [19, 94]
+      "feld": [9, 103]
     },
     {
       "moebel": "pw7Tanne",
-      "feld": [9, 102]
+      "feld": [5, 106]
     },
     {
-      "moebel": "pw7TanneHoch",
-      "feld": [18, 101]
-    },
-    {
-      "moebel": "wg4Busch",
-      "feld": [30, 101]
-    },
-    {
-      "moebel": "pw7TanneHoch",
-      "feld": [35, 102]
-    },
-    {
-      "moebel": "pw7Tanne",
-      "feld": [22, 104]
-    },
-    {
-      "moebel": "pw7TanneHoch",
-      "feld": [29, 104]
+      "moebel": "pw7Kiefer",
+      "feld": [24, 106]
     },
     {
       "moebel": "wg4Busch",
-      "feld": [32, 105]
+      "feld": [26, 106]
     },
     {
       "moebel": "pw7TanneHoch",
-      "feld": [9, 107]
+      "feld": [29, 105]
     },
     {
       "moebel": "pw7Tanne",
-      "feld": [33, 108]
+      "feld": [36, 107]
     },
     {
-      "moebel": "pw7TanneHoch",
-      "feld": [35, 107]
+      "moebel": "pw7Kiefer",
+      "feld": [8, 110]
     },
     {
       "moebel": "wg4Busch",
-      "feld": [9, 112]
+      "feld": [30, 111]
     },
     {
       "moebel": "pw7TanneHoch",
-      "feld": [31, 114]
+      "feld": [34, 109]
     },
     {
       "moebel": "pw7Tanne",
-      "feld": [34, 113]
-    },
-    {
-      "moebel": "pw7TanneHoch",
       "feld": [8, 115]
     },
     {
+      "moebel": "pw7Kiefer",
+      "feld": [31, 113]
+    },
+    {
       "moebel": "wg4Busch",
-      "feld": [11, 115]
-    },
-    {
-      "moebel": "pw7TanneHoch",
-      "feld": [13, 116]
-    },
-    {
-      "moebel": "pw7Tanne",
-      "feld": [37, 115]
+      "feld": [36, 115]
     },
     {
       "moebel": "pw7TanneHoch",
       "feld": [8, 120]
     },
     {
+      "moebel": "pw7Tanne",
+      "feld": [10, 117]
+    },
+    {
+      "moebel": "pw7Kiefer",
+      "feld": [14, 118]
+    },
+    {
       "moebel": "wg4Busch",
-      "feld": [11, 118]
+      "feld": [31, 119]
     },
     {
       "moebel": "pw7TanneHoch",
-      "feld": [29, 118]
+      "feld": [33, 119]
     },
     {
       "moebel": "pw7Tanne",
-      "feld": [32, 120]
-    },
-    {
-      "moebel": "pw7TanneHoch",
-      "feld": [35, 119]
-    },
-    {
-      "moebel": "wg4Busch",
       "feld": [37, 119]
     },
     {
-      "moebel": "pw7TanneHoch",
+      "moebel": "pw7Kiefer",
+      "feld": [1, 123]
+    },
+    {
+      "moebel": "wg4Busch",
       "feld": [11, 121]
     },
     {
-      "moebel": "pw7Tanne",
-      "feld": [13, 122]
-    },
-    {
       "moebel": "pw7TanneHoch",
-      "feld": [16, 122]
-    },
-    {
-      "moebel": "wg4Busch",
-      "feld": [22, 123]
-    },
-    {
-      "moebel": "pw7TanneHoch",
-      "feld": [29, 123]
-    },
-    {
-      "moebel": "pw7Tanne",
-      "feld": [35, 123]
-    },
-    {
-      "moebel": "pw7TanneHoch",
-      "feld": [1, 125]
-    },
-    {
-      "moebel": "wg4Busch",
-      "feld": [4, 125]
-    },
-    {
-      "moebel": "pw7TanneHoch",
-      "feld": [9, 125]
+      "feld": [14, 123]
     },
     {
       "moebel": "pw7Tanne",
       "feld": [27, 124]
     },
     {
-      "moebel": "pw7TanneHoch",
-      "feld": [31, 125]
+      "moebel": "pw7Kiefer",
+      "feld": [33, 123]
     },
     {
       "moebel": "wg4Busch",
-      "feld": [4, 127]
+      "feld": [2, 127]
+    },
+    {
+      "moebel": "pw7TanneHoch",
+      "feld": [31, 125]
     },
     {
       "moebel": "wg4Gras",
@@ -745,23 +608,35 @@
     },
     {
       "moebel": "wg4Pilze",
-      "feld": [27, 8]
+      "feld": [5, 5]
     },
     {
       "moebel": "wg4Gras",
-      "feld": [34, 8]
+      "feld": [32, 8]
     },
     {
       "moebel": "wg4Farn",
-      "feld": [1, 12]
+      "feld": [34, 8]
     },
     {
       "moebel": "wg4Pilze",
-      "feld": [34, 12]
+      "feld": [10, 12]
     },
     {
       "moebel": "wg4Gras",
+      "feld": [31, 9]
+    },
+    {
+      "moebel": "wg4Farn",
+      "feld": [34, 12]
+    },
+    {
+      "moebel": "wg4Pilze",
       "feld": [37, 11]
+    },
+    {
+      "moebel": "wg4Gras",
+      "feld": [10, 15]
     },
     {
       "moebel": "wg4Farn",
@@ -769,11 +644,23 @@
     },
     {
       "moebel": "wg4Pilze",
-      "feld": [4, 17]
+      "feld": [33, 16]
     },
     {
       "moebel": "wg4Gras",
-      "feld": [22, 19]
+      "feld": [7, 19]
+    },
+    {
+      "moebel": "wg4Farn",
+      "feld": [9, 18]
+    },
+    {
+      "moebel": "wg4Pilze",
+      "feld": [13, 18]
+    },
+    {
+      "moebel": "wg4Gras",
+      "feld": [17, 19]
     },
     {
       "moebel": "wg4Farn",
@@ -785,55 +672,55 @@
     },
     {
       "moebel": "wg4Gras",
-      "feld": [28, 21]
+      "feld": [9, 22]
     },
     {
       "moebel": "wg4Farn",
-      "feld": [31, 24]
+      "feld": [24, 24]
     },
     {
       "moebel": "wg4Pilze",
-      "feld": [34, 24]
+      "feld": [11, 27]
     },
     {
       "moebel": "wg4Gras",
-      "feld": [22, 25]
+      "feld": [16, 25]
     },
     {
       "moebel": "wg4Farn",
-      "feld": [28, 28]
+      "feld": [17, 25]
     },
     {
       "moebel": "wg4Pilze",
-      "feld": [31, 25]
+      "feld": [33, 25]
     },
     {
       "moebel": "wg4Gras",
-      "feld": [7, 31]
-    },
-    {
-      "moebel": "wg4Farn",
-      "feld": [9, 32]
-    },
-    {
-      "moebel": "wg4Pilze",
       "feld": [16, 32]
     },
     {
-      "moebel": "wg4Gras",
-      "feld": [20, 32]
-    },
-    {
       "moebel": "wg4Farn",
-      "feld": [24, 30]
+      "feld": [32, 31]
     },
     {
       "moebel": "wg4Pilze",
-      "feld": [28, 31]
+      "feld": [33, 32]
     },
     {
       "moebel": "wg4Gras",
-      "feld": [32, 31]
+      "feld": [7, 35]
+    },
+    {
+      "moebel": "wg4Farn",
+      "feld": [14, 36]
+    },
+    {
+      "moebel": "wg4Pilze",
+      "feld": [19, 34]
+    },
+    {
+      "moebel": "wg4Gras",
+      "feld": [25, 36]
     },
     {
       "moebel": "wg4Farn",
@@ -841,19 +728,31 @@
     },
     {
       "moebel": "wg4Pilze",
-      "feld": [17, 38]
+      "feld": [6, 39]
     },
     {
       "moebel": "wg4Gras",
-      "feld": [12, 43]
+      "feld": [17, 38]
     },
     {
       "moebel": "wg4Farn",
-      "feld": [15, 42]
+      "feld": [31, 38]
     },
     {
       "moebel": "wg4Pilze",
-      "feld": [19, 43]
+      "feld": [35, 37]
+    },
+    {
+      "moebel": "wg4Gras",
+      "feld": [23, 44]
+    },
+    {
+      "moebel": "wg4Farn",
+      "feld": [25, 43]
+    },
+    {
+      "moebel": "wg4Pilze",
+      "feld": [29, 42]
     },
     {
       "moebel": "wg4Gras",
@@ -865,7 +764,19 @@
     },
     {
       "moebel": "wg4Pilze",
+      "feld": [21, 48]
+    },
+    {
+      "moebel": "wg4Gras",
+      "feld": [27, 47]
+    },
+    {
+      "moebel": "wg4Farn",
       "feld": [31, 45]
+    },
+    {
+      "moebel": "wg4Pilze",
+      "feld": [33, 46]
     },
     {
       "moebel": "wg4Gras",
@@ -873,31 +784,31 @@
     },
     {
       "moebel": "wg4Farn",
-      "feld": [8, 49]
+      "feld": [1, 50]
     },
     {
       "moebel": "wg4Pilze",
-      "feld": [10, 51]
-    },
-    {
-      "moebel": "wg4Gras",
       "feld": [16, 50]
     },
     {
+      "moebel": "wg4Gras",
+      "feld": [21, 50]
+    },
+    {
       "moebel": "wg4Farn",
-      "feld": [34, 49]
+      "feld": [1, 53]
     },
     {
       "moebel": "wg4Pilze",
-      "feld": [15, 53]
+      "feld": [8, 53]
     },
     {
       "moebel": "wg4Gras",
-      "feld": [18, 56]
+      "feld": [9, 58]
     },
     {
       "moebel": "wg4Farn",
-      "feld": [36, 54]
+      "feld": [14, 57]
     },
     {
       "moebel": "wg4Pilze",
@@ -905,115 +816,159 @@
     },
     {
       "moebel": "wg4Gras",
-      "feld": [12, 65]
+      "feld": [16, 61]
     },
     {
       "moebel": "wg4Farn",
-      "feld": [27, 66]
+      "feld": [17, 63]
     },
     {
       "moebel": "wg4Pilze",
-      "feld": [31, 68]
+      "feld": [32, 64]
     },
     {
       "moebel": "wg4Gras",
-      "feld": [35, 67]
+      "feld": [33, 64]
     },
     {
       "moebel": "wg4Farn",
-      "feld": [30, 71]
+      "feld": [1, 68]
     },
     {
       "moebel": "wg4Pilze",
-      "feld": [37, 70]
+      "feld": [37, 66]
     },
     {
       "moebel": "wg4Gras",
-      "feld": [22, 75]
+      "feld": [3, 71]
     },
     {
       "moebel": "wg4Farn",
-      "feld": [26, 75]
+      "feld": [10, 72]
     },
     {
       "moebel": "wg4Pilze",
-      "feld": [31, 73]
+      "feld": [15, 71]
     },
     {
       "moebel": "wg4Gras",
+      "feld": [18, 70]
+    },
+    {
+      "moebel": "wg4Farn",
+      "feld": [4, 76]
+    },
+    {
+      "moebel": "wg4Pilze",
+      "feld": [9, 73]
+    },
+    {
+      "moebel": "wg4Gras",
+      "feld": [13, 75]
+    },
+    {
+      "moebel": "wg4Farn",
+      "feld": [17, 73]
+    },
+    {
+      "moebel": "wg4Pilze",
       "feld": [36, 76]
     },
     {
-      "moebel": "wg4Farn",
+      "moebel": "wg4Gras",
       "feld": [38, 73]
     },
     {
-      "moebel": "wg4Pilze",
-      "feld": [12, 80]
-    },
-    {
-      "moebel": "wg4Gras",
-      "feld": [19, 80]
-    },
-    {
       "moebel": "wg4Farn",
+      "feld": [3, 79]
+    },
+    {
+      "moebel": "wg4Pilze",
       "feld": [22, 77]
     },
     {
       "moebel": "wg4Pilze",
-      "feld": [8, 82]
+      "feld": [37, 77]
     },
     {
       "moebel": "wg4Gras",
-      "feld": [10, 81]
+      "feld": [1, 83]
     },
     {
       "moebel": "wg4Farn",
-      "feld": [14, 81]
+      "feld": [19, 83]
+    },
+    {
+      "moebel": "wg4Pilze",
+      "feld": [12, 88]
     },
     {
       "moebel": "wg4Gras",
       "feld": [20, 86]
     },
     {
+      "moebel": "wg4Gras",
+      "feld": [3, 91]
+    },
+    {
+      "moebel": "wg4Farn",
+      "feld": [7, 91]
+    },
+    {
       "moebel": "wg4Pilze",
-      "feld": [29, 90]
+      "feld": [9, 90]
     },
     {
       "moebel": "wg4Gras",
+      "feld": [20, 91]
+    },
+    {
+      "moebel": "wg4Farn",
+      "feld": [23, 90]
+    },
+    {
+      "moebel": "wg4Farn",
       "feld": [35, 91]
     },
     {
-      "moebel": "wg4Farn",
-      "feld": [1, 95]
+      "moebel": "wg4Pilze",
+      "feld": [9, 96]
     },
     {
-      "moebel": "wg4Pilze",
+      "moebel": "wg4Gras",
+      "feld": [20, 95]
+    },
+    {
+      "moebel": "wg4Farn",
       "feld": [21, 95]
     },
     {
-      "moebel": "wg4Gras",
+      "moebel": "wg4Pilze",
       "feld": [31, 94]
     },
     {
-      "moebel": "wg4Farn",
+      "moebel": "wg4Gras",
       "feld": [33, 95]
     },
     {
+      "moebel": "wg4Farn",
+      "feld": [11, 99]
+    },
+    {
       "moebel": "wg4Pilze",
-      "feld": [14, 100]
+      "feld": [19, 99]
     },
     {
       "moebel": "wg4Gras",
-      "feld": [37, 100]
+      "feld": [33, 98]
     },
     {
       "moebel": "wg4Farn",
-      "feld": [24, 102]
+      "feld": [37, 100]
     },
     {
       "moebel": "wg4Pilze",
-      "feld": [34, 101]
+      "feld": [12, 104]
     },
     {
       "moebel": "wg4Gras",
@@ -1021,67 +976,91 @@
     },
     {
       "moebel": "wg4Farn",
+      "feld": [4, 108]
+    },
+    {
+      "moebel": "wg4Pilze",
+      "feld": [32, 106]
+    },
+    {
+      "moebel": "wg4Gras",
       "feld": [33, 107]
     },
     {
+      "moebel": "wg4Farn",
+      "feld": [24, 111]
+    },
+    {
       "moebel": "wg4Pilze",
-      "feld": [37, 107]
+      "feld": [25, 111]
     },
     {
       "moebel": "wg4Gras",
-      "feld": [8, 110]
-    },
-    {
-      "moebel": "wg4Farn",
       "feld": [32, 110]
     },
     {
-      "moebel": "wg4Pilze",
+      "moebel": "wg4Farn",
       "feld": [33, 112]
     },
     {
+      "moebel": "wg4Pilze",
+      "feld": [35, 116]
+    },
+    {
       "moebel": "wg4Gras",
-      "feld": [14, 114]
+      "feld": [38, 115]
     },
     {
       "moebel": "wg4Farn",
-      "feld": [32, 113]
-    },
-    {
-      "moebel": "wg4Pilze",
-      "feld": [10, 120]
-    },
-    {
-      "moebel": "wg4Gras",
       "feld": [17, 120]
     },
     {
-      "moebel": "wg4Farn",
+      "moebel": "wg4Pilze",
       "feld": [32, 118]
     },
     {
+      "moebel": "wg4Gras",
+      "feld": [35, 120]
+    },
+    {
+      "moebel": "wg4Farn",
+      "feld": [37, 117]
+    },
+    {
       "moebel": "wg4Pilze",
+      "feld": [2, 122]
+    },
+    {
+      "moebel": "wg4Gras",
+      "feld": [5, 123]
+    },
+    {
+      "moebel": "wg4Farn",
       "feld": [9, 124]
     },
     {
-      "moebel": "wg4Gras",
+      "moebel": "wg4Pilze",
       "feld": [15, 122]
     },
     {
-      "moebel": "wg4Farn",
+      "moebel": "wg4Gras",
       "feld": [17, 121]
     },
     {
-      "moebel": "wg4Pilze",
+      "moebel": "wg4Farn",
       "feld": [32, 124]
     },
     {
+      "moebel": "wg4Pilze",
+      "feld": [4, 128]
+    },
+    {
       "moebel": "wg4Gras",
-      "feld": [33, 124]
+      "feld": [5, 127]
     },
     {
       "moebel": "wg4Farn",
-      "feld": [38, 122]
+      "feld": [10, 125]
     },
     {
       "moebel": "wg4Pilze",
@@ -1100,28 +1079,24 @@
       "feld": [26, 127]
     },
     {
-      "moebel": "wg4Gras",
-      "feld": [34, 125]
-    },
-    {
       "moebel": "n6Tribuene",
-      "feld": [11, 85]
+      "feld": [31, 79]
     },
     {
       "moebel": "cr8FahneWeiss",
-      "feld": [8, 87]
+      "feld": [28, 81]
     },
     {
       "moebel": "cr8FahneWeiss",
-      "feld": [8, 93]
+      "feld": [28, 87]
     },
     {
       "moebel": "cr8FahneSchwarz",
-      "feld": [17, 87]
+      "feld": [37, 81]
     },
     {
       "moebel": "cr8FahneSchwarz",
-      "feld": [17, 93]
+      "feld": [37, 87]
     }
   ],
   "ausloeser": [
@@ -1150,19 +1125,19 @@
     },
     {
       "name": "rangerhaus",
-      "feld": [20, 51]
+      "feld": [16, 45]
     },
     {
       "name": "ereignisLebendschach",
-      "feld": [18, 91]
+      "feld": [38, 85]
     },
     {
       "name": "seite10",
-      "feld": [17, 18]
+      "feld": [24, 106]
     },
     {
       "name": "finchDame",
-      "feld": [30, 58]
+      "feld": [32, 61]
     }
   ],
   "figuren": [],
@@ -1202,8 +1177,8 @@
       "typ": "tier",
       "feld": [14, 100],
       "eigenschaften": {
-        "von": "10,97",
-        "bis": "18,105",
+        "von": "10,98",
+        "bis": "18,104",
         "verhalten": "flitzen"
       }
     },
@@ -1266,12 +1241,12 @@
     {
       "name": "fotografin",
       "typ": "statist",
-      "feld": [10, 120],
+      "feld": [10, 121],
       "eigenschaften": {
         "tun": "legt sich auf den Rücken, um den Baum aufs Bild zu bekommen",
         "wann": "tag",
         "von": "8,119",
-        "bis": "15,124",
+        "bis": "13,124",
         "sagt": "statist.wegCrossroadsPinewood.riesenbaeume.fotografin"
       }
     }
@@ -1286,5 +1261,6 @@
     "rustikal",
     "industrie"
   ],
-  "toenung": "nebel"
+  "toenung": "nebel",
+  "variante": "a"
 }

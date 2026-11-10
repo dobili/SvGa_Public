@@ -1,8 +1,8 @@
 {
   "karte": "wegDesertSummit.diner",
-  "datei": "karten/varianten/weg-desert-summit-diner-c.json",
+  "datei": "karten/varianten/weg-desert-summit-diner-a.json",
   "art": "aussen",
-  "beschreibung": "Weg 7, die Wüstenstraße: Die Old Mother Road kommt am Ostrand aus Desert Springs und läuft durch roten Sand nach Westen. Kakteen am Bankett, Tafelberge aus rotem Fels am Nord- und Südrand. In der Mitte liegt King's Diner, ein silberner Speisewagen mit dem Neonschild, dem das K fehlt, daneben das Starlight Motel mit fünf Zimmern; davor ein Parkplatz. Südlich der Straße stehen Sattelzüge auf dem Fernfahrerplatz, unter einem Sonnenschirm spielt Earl Dubois Königsrennen. Hinter dem Diner liegt das Neon-K im Sand. Im Westen Wacholder und Kakteen, die Straße führt zur Bergstraße. Variante C, die reichere: Diner und Motel enger zusammen, ein Campingplatz mit Wohnwagen am Wasserturm, zwei Sattelzüge und viele blühende Kakteen, der Felsbogen weiter im Westen, die alte Zapfsäule am Felsbogen.",
+  "beschreibung": "Weg 7, die Wüstenstraße: Die Old Mother Road kommt am Ostrand aus Desert Springs und läuft durch roten Sand nach Westen. Kakteen am Bankett, Tafelberge aus rotem Fels am Nord- und Südrand. In der Mitte liegt King's Diner, ein silberner Speisewagen mit dem Neonschild, dem das K fehlt, daneben das Starlight Motel mit fünf Zimmern; davor ein Parkplatz. Südlich der Straße stehen Sattelzüge auf dem Fernfahrerplatz, unter einem Sonnenschirm spielt Earl Dubois Königsrennen. Hinter dem Diner liegt das Neon-K im Sand. Im Westen Wacholder und Kakteen, die Straße führt zur Bergstraße. Diner links vom Motel, alte Zapfsäule mit Autowrack und ein roter Felsbogen im Westen, Wasserturm und Reklametafel im Osten, zwei Sattelzüge.",
   "wand": "felsRot",
   "boden": "sandRot",
   "boeden": {
@@ -11,20 +11,20 @@
     "k": "schotter"
   },
   "zustand": ["neu", "gebraucht", "alt"],
-  "stil": ["natur", "klassisch", "modern"],
+  "stil": ["natur", "klassisch", "modern", "einfach"],
   "raster": [
     "######################################################################################################################################################",
     "######################################################################################################################################################",
-    "######################################################################.................................###############################################",
-    "#.....................................................#############..................................................................................#",
-    "#.....................................................#############..................................................................................#",
+    "########################################################################.................................#############################################",
+    "#...................................................###################..............................................................................#",
+    "#...................................................###################..............................................................................#",
     "#....................................................................................................................................................#",
     "#....................................................................................................................................................#",
     "#....................................................................................................................................................#",
     "#....................................................................................................................................................#",
     "#....................................................................................................................................................#",
-    "#.....................................................................ssssssssssssssssssssssssssssssssss.............................................#",
-    "#.....................................................................ssssssssssssssssssssssssssssssssss.............................................#",
+    "#.......................................................................ssssssssssssssssssssssssssssssss.............................................#",
+    "#.......................................................................ssssssssssssssssssssssssssssssss.............................................#",
     "#.................................................sssssssssssssssssssssssssssssssssssssssssssssssssssssssss..........................................#",
     "#.................................................sssssssssssssssssssssssssssssssssssssssssssssssssssssssss..........................................#",
     "#.................................................sssssssssssssssssssssssssssssssssssssssssssssssssssssssss..........................................#",
@@ -37,9 +37,9 @@
     "sssssssssssssssssssssssssssssssssssssssssssssssssssss..sssssssssssssssssssssssss.....................................................................#",
     "#kkkkkkkkkkkkkkkkkkkkkkkkkkkkkkkkkkkkkkkkkkkkkkkkk.....sssssssssssssssssssssssss.....................................................................#",
     "#......................................................sssssssssssssssssssssssss.....................................................................#",
-    "#......................................................sssssssssssssssssssssssss..................#############################......................#",
-    "#......................................................sssssssssssssssssssssssss..................#############################......................#",
-    "#.................................................................................................#############################......................#",
+    "#......................................................sssssssssssssssssssssssss....................#############################....................#",
+    "#......................................................sssssssssssssssssssssssss....................#############################....................#",
+    "#...................................................................................................#############################....................#",
     "######################################################################################################################################################",
     "######################################################################################################################################################",
     "######################################################################################################################################################"
@@ -47,7 +47,7 @@
   "objekte": [
     {
       "moebel": "wds6Diner",
-      "feld": [74, 3],
+      "feld": [76, 3],
       "id": "diner"
     },
     {
@@ -57,51 +57,47 @@
     },
     {
       "moebel": "wds6Motel",
-      "feld": [86, 3]
+      "feld": [88, 3]
     },
     {
       "moebel": "wds6SchildMotel",
-      "feld": [100, 5]
+      "feld": [102, 5]
     },
     {
       "moebel": "wds6Tafel",
-      "feld": [84, 8]
+      "feld": [86, 8]
     },
     {
       "moebel": "wds6NeonK",
-      "feld": [78, 2]
+      "feld": [80, 2]
     },
     {
       "moebel": "wds6Container",
-      "feld": [71, 3]
+      "feld": [73, 3]
     },
     {
       "moebel": "wds6Wasserturm",
-      "feld": [120, 4]
+      "feld": [124, 4]
     },
     {
       "moebel": "wds6Windrad",
-      "feld": [115, 4]
-    },
-    {
-      "moebel": "wds6Wohnwagen",
-      "feld": [128, 6]
+      "feld": [130, 4]
     },
     {
       "moebel": "wds6Reklame",
-      "feld": [110, 4]
-    },
-    {
-      "moebel": "wds6SattelzugBlau",
-      "feld": [56, 16]
+      "feld": [112, 4]
     },
     {
       "moebel": "wds6SattelzugRot",
-      "feld": [56, 21]
+      "feld": [57, 16]
+    },
+    {
+      "moebel": "wds6SattelzugBlau",
+      "feld": [57, 21]
     },
     {
       "moebel": "wds6Spieltisch",
-      "feld": [71, 20],
+      "feld": [70, 19],
       "id": "tisch"
     },
     {
@@ -111,35 +107,31 @@
     },
     {
       "moebel": "wds6Reifen",
-      "feld": [76, 16]
-    },
-    {
-      "moebel": "wds6Reifen",
       "feld": [77, 16]
     },
     {
       "moebel": "wds6Reifen",
-      "feld": [76, 17]
-    },
-    {
-      "moebel": "wds6Felsbogen",
-      "feld": [20, 3]
+      "feld": [78, 17]
     },
     {
       "moebel": "wds6Tankstelle",
-      "feld": [32, 12]
+      "feld": [38, 12]
     },
     {
-      "moebel": "wds6Autowrack",
-      "feld": [40, 16]
+      "moebel": "wr5Autowrack",
+      "feld": [45, 14]
+    },
+    {
+      "moebel": "wds6Felsbogen",
+      "feld": [24, 3]
     },
     {
       "moebel": "wds6Ortsschild",
-      "feld": [142, 13]
+      "feld": [140, 13]
     },
     {
       "moebel": "wds6Bank",
-      "feld": [5, 17]
+      "feld": [6, 17]
     },
     {
       "moebel": "wds6Wegweiser",
@@ -147,55 +139,79 @@
     },
     {
       "moebel": "wds6Saguaro",
-      "feld": [2, 4]
+      "feld": [3, 4]
     },
     {
       "moebel": "wds6Wacholder",
-      "feld": [7, 4]
+      "feld": [9, 6]
     },
     {
       "moebel": "wds6Saguaro",
-      "feld": [12, 6]
+      "feld": [14, 4]
     },
     {
       "moebel": "wds6Wacholder",
-      "feld": [3, 9]
+      "feld": [4, 11]
     },
     {
       "moebel": "wds6KaktusBluehend",
-      "feld": [9, 11]
+      "feld": [15, 10]
+    },
+    {
+      "moebel": "wds6SteinRot",
+      "feld": [20, 9]
+    },
+    {
+      "moebel": "wds6SteinRot",
+      "feld": [35, 9]
+    },
+    {
+      "moebel": "wds6Geierkreis",
+      "feld": [30, 22]
+    },
+    {
+      "moebel": "wds6Geierkreis",
+      "feld": [120, 21]
+    },
+    {
+      "moebel": "wds6SteinRot",
+      "feld": [141, 5]
+    },
+    {
+      "moebel": "wds6KaktusKlein",
+      "feld": [116, 12]
     },
     {
       "moebel": "wds6Saguaro",
-      "feld": [14, 13]
+      "feld": [144, 9]
+    },
+    {
+      "moebel": "wds6KaktusKlein",
+      "feld": [109, 5]
+    },
+    {
+      "moebel": "wds6Saguaro",
+      "feld": [120, 6]
+    },
+    {
+      "moebel": "wds6KaktusKlein",
+      "feld": [107, 7]
+    },
+    {
+      "moebel": "wds6KaktusKlein",
+      "feld": [135, 5]
     },
     {
       "moebel": "wds6SteinRot",
-      "feld": [16, 9]
+      "feld": [131, 12]
     },
     {
-      "moebel": "wds6SteinRot",
-      "feld": [31, 9]
-    },
-    {
-      "moebel": "wds6Geierkreis",
-      "feld": [44, 23]
-    },
-    {
-      "moebel": "wds6Geierkreis",
-      "feld": [90, 21]
-    },
-    {
-      "moebel": "wds6Geierkreis",
-      "feld": [136, 22]
+      "moebel": "wds6KaktusKlein",
+      "feld": [121, 12]
     },
     {
       "moebel": "wds6KaktusBluehend",
-      "feld": [141, 8]
-    },
-    {
-      "moebel": "wds6SteinRot",
-      "feld": [138, 5]
+      "feld": [108, 10]
     },
     {
       "moebel": "wds6KaktusKlein",
@@ -203,184 +219,144 @@
     },
     {
       "moebel": "wds6KaktusKlein",
-      "feld": [125, 11]
-    },
-    {
-      "moebel": "wds6SteinRot",
       "feld": [114, 12]
     },
     {
-      "moebel": "wds6KaktusBluehend",
-      "feld": [136, 8]
-    },
-    {
-      "moebel": "wds6KaktusBluehend",
-      "feld": [144, 7]
-    },
-    {
-      "moebel": "wds6KaktusBluehend",
-      "feld": [108, 12]
-    },
-    {
-      "moebel": "wds6KaktusKlein",
-      "feld": [146, 10]
-    },
-    {
-      "moebel": "wds6KaktusBluehend",
-      "feld": [145, 4]
-    },
-    {
-      "moebel": "wds6KaktusKlein",
-      "feld": [125, 6]
-    },
-    {
-      "moebel": "wds6KaktusKlein",
-      "feld": [136, 5]
-    },
-    {
-      "moebel": "wds6KaktusKlein",
-      "feld": [107, 6]
-    },
-    {
       "moebel": "wds6SteinRot",
-      "feld": [136, 11]
-    },
-    {
-      "moebel": "wds6KaktusKlein",
-      "feld": [142, 4]
-    },
-    {
-      "moebel": "wds6KaktusKlein",
-      "feld": [144, 20]
+      "feld": [140, 9]
     },
     {
       "moebel": "wds6KaktusBluehend",
-      "feld": [86, 21]
+      "feld": [137, 7]
     },
     {
       "moebel": "wds6KaktusKlein",
       "feld": [100, 19]
     },
     {
-      "moebel": "wds6KaktusKlein",
-      "feld": [130, 22]
-    },
-    {
-      "moebel": "wds6KaktusKlein",
-      "feld": [83, 24]
+      "moebel": "wds6Saguaro",
+      "feld": [88, 21]
     },
     {
       "moebel": "wds6KaktusBluehend",
-      "feld": [82, 19]
-    },
-    {
-      "moebel": "wds6KaktusKlein",
-      "feld": [87, 24]
+      "feld": [126, 20]
     },
     {
       "moebel": "wds6KaktusBluehend",
-      "feld": [86, 18]
+      "feld": [144, 21]
+    },
+    {
+      "moebel": "wds6KaktusBluehend",
+      "feld": [83, 21]
+    },
+    {
+      "moebel": "wds6KaktusKlein",
+      "feld": [115, 20]
+    },
+    {
+      "moebel": "wds6KaktusBluehend",
+      "feld": [97, 24]
+    },
+    {
+      "moebel": "wds6KaktusBluehend",
+      "feld": [104, 20]
+    },
+    {
+      "moebel": "wds6KaktusKlein",
+      "feld": [94, 22]
+    },
+    {
+      "moebel": "wds6KaktusBluehend",
+      "feld": [97, 18]
+    },
+    {
+      "moebel": "wds6SteinRot",
+      "feld": [21, 14]
     },
     {
       "moebel": "wds6Saguaro",
-      "feld": [132, 22]
+      "feld": [43, 5]
+    },
+    {
+      "moebel": "wds6SteinRot",
+      "feld": [32, 15]
     },
     {
       "moebel": "wds6KaktusKlein",
-      "feld": [96, 23]
-    },
-    {
-      "moebel": "wds6KaktusBluehend",
-      "feld": [103, 19]
+      "feld": [46, 4]
     },
     {
       "moebel": "wds6KaktusKlein",
-      "feld": [146, 21]
+      "feld": [49, 5]
     },
     {
       "moebel": "wds6KaktusKlein",
-      "feld": [109, 20]
+      "feld": [47, 7]
     },
     {
       "moebel": "wds6KaktusKlein",
-      "feld": [113, 21]
-    },
-    {
-      "moebel": "wds6Saguaro",
-      "feld": [47, 14]
-    },
-    {
-      "moebel": "wds6Saguaro",
-      "feld": [28, 14]
-    },
-    {
-      "moebel": "wds6Saguaro",
-      "feld": [44, 14]
-    },
-    {
-      "moebel": "wds6KaktusBluehend",
-      "feld": [41, 12]
+      "feld": [40, 5]
     },
     {
       "moebel": "wds6KaktusKlein",
-      "feld": [32, 24]
+      "feld": [48, 11]
     },
     {
-      "moebel": "wds6KaktusBluehend",
-      "feld": [36, 24]
+      "moebel": "wds6KaktusKlein",
+      "feld": [38, 5]
+    },
+    {
+      "moebel": "wds6KaktusKlein",
+      "feld": [36, 4]
     },
     {
       "moebel": "wds6Wacholder",
-      "feld": [25, 24]
+      "feld": [51, 23]
     },
     {
       "moebel": "wds6KaktusKlein",
-      "feld": [30, 24]
+      "feld": [42, 24]
+    },
+    {
+      "moebel": "wds6SteinRot",
+      "feld": [38, 24]
+    },
+    {
+      "moebel": "wds6SteinRot",
+      "feld": [34, 24]
+    },
+    {
+      "moebel": "wds6SteinRot",
+      "feld": [24, 24]
     },
     {
       "moebel": "wds6KaktusKlein",
-      "feld": [50, 24]
-    },
-    {
-      "moebel": "wds6Wacholder",
-      "feld": [40, 24]
-    },
-    {
-      "moebel": "wds6KaktusBluehend",
-      "feld": [52, 24]
-    },
-    {
-      "moebel": "wds6Wacholder",
-      "feld": [21, 24]
+      "feld": [49, 24]
     },
     {
       "moebel": "wds6KaktusKlein",
-      "feld": [48, 24]
-    },
-    {
-      "moebel": "wds6KaktusKlein",
-      "feld": [28, 24]
+      "feld": [22, 24]
     },
     {
       "moebel": "sc8Funkgeraet",
-      "feld": [76, 7],
+      "feld": [78, 7],
       "vorn": true,
-      "id": "ereignis78"
+      "id": "ereignis72"
     },
     {
       "moebel": "sc8Kreidespringer",
-      "feld": [85, 9],
-      "id": "ereignis79"
+      "feld": [87, 9],
+      "id": "ereignis73"
     },
     {
       "moebel": "mf2Blumenbeet",
-      "feld": [89, 10],
-      "id": "ereignis80"
+      "feld": [91, 10],
+      "id": "ereignis74"
     },
     {
       "moebel": "sc8Finkenzeichen",
-      "feld": [87, 10],
-      "id": "ereignis81"
+      "feld": [89, 10],
+      "id": "ereignis75"
     }
   ],
   "ausloeser": [
@@ -417,80 +393,80 @@
     },
     {
       "name": "tafel",
-      "feld": [84, 10]
+      "feld": [86, 10]
     },
     {
       "name": "fundNeonK",
-      "feld": [78, 2]
+      "feld": [80, 2]
     },
     {
       "name": "ereignisFunkschach",
-      "feld": [77, 11]
+      "feld": [79, 11]
     },
     {
       "name": "kreide3",
-      "feld": [85, 9]
+      "feld": [87, 9]
     },
     {
       "name": "finchSpringerB",
-      "feld": [87, 10]
+      "feld": [89, 10]
     },
     {
       "name": "seite08",
-      "feld": [54, 17]
+      "feld": [55, 22]
     },
     {
       "name": "hinterzimmerTuer",
-      "feld": [84, 7]
+      "feld": [86, 7]
     },
     {
       "name": "reklame",
-      "feld": [112, 10]
+      "feld": [114, 10]
     },
     {
       "name": "motelschild",
-      "feld": [100, 10]
+      "feld": [102, 10]
     },
     {
       "name": "aussicht",
-      "feld": [6, 18]
+      "feld": [7, 18]
     }
   ],
   "figuren": [
     {
       "name": "earl",
-      "feld": [73, 26]
+      "feld": [72, 25]
     }
   ],
   "belebung": [
     {
       "name": "trucker",
       "typ": "statist",
-      "feld": [68, 15],
+      "feld": [68, 18],
       "eigenschaften": {
-        "von": "68,15",
-        "bis": "68,15",
-        "tun": "lehnt am Führerhaus",
+        "von": "68,18",
+        "bis": "68,18",
+        "tun": "trinkt Kaffee am Sattelzug",
         "wann": "tag"
       }
     },
     {
       "name": "kojote",
       "typ": "tier",
-      "feld": [44, 20],
+      "feld": [46, 23],
       "eigenschaften": {
-        "von": "44,20",
-        "bis": "48,20",
+        "von": "46,23",
+        "bis": "50,23",
         "verhalten": "ausweichen"
       }
     },
     {
       "name": "roadrunner",
       "typ": "tier",
-      "feld": [23, 17],
+      "feld": [26, 17],
       "eigenschaften": {
-        "von": "23,17",
-        "bis": "27,17",
+        "von": "26,17",
+        "bis": "30,17",
         "verhalten": "ausweichen"
       }
     },
@@ -602,5 +578,5 @@
       }
     }
   ],
-  "variante": "c"
+  "variante": "a"
 }

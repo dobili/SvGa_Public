@@ -1,7 +1,7 @@
 {
   "karte": "crossroads.aussen",
   "art": "aussen",
-  "beschreibung": "Crossroads (Variante A, nach dem Ortsdokument): Der Highway läuft von West nach Ost über die ganze Karte, von Norden kommt die Schotterstraße aus der Prärie. An der Ecke steht der Wegweiser in alle Städte. Nordwestlich Darlenes Raststätte, ein silberner Diner-Wagen mit asphaltiertem Vorplatz; dahinter ein eingezäuntes Feld, durch das ein Erdweg nach Norden zum Sommerjahrmarkt führt. Nordöstlich die große Tankstelle. Südlich des Highways der Parkplatz mit dem Werksbus aus Ironwood, Rosies Food-Truck, einem Sattelzug und einem Auto, Picknicktische, eine Zufahrt vom Highway. Nach Westen geht der Wanderweg nach Pinewood ab, im Osten sperrt ein Viehgatter die Alte Minenstraße; dahinter weiden Rinder. Wegweiser mit allen Städten, Schild „Crossroads – Diner + Gas“ vor der Raststätte, geschlossenes Viehgatter vor der Alten Minenstraße (S13).",
+  "beschreibung": "Variante C, reich: Diner-Wagen mit asphaltiertem Vorplatz und das eingezäunte Feld mit dem Erdweg zum Jahrmarkt, die große Tankstelle mit einer weiteren Zapfsäule. Südwestlich ein großer Parkplatz mit Werksbus, Food-Truck, zwei Sattelzügen und zwei Autos, daneben Picknicktische; südöstlich ein Motel mit fünf Zimmern unter Bäumen. Im Osten das Viehgatter. Wegweiser mit allen Städten, Schild „Crossroads – Diner + Gas“ vor der Raststätte, geschlossenes Viehgatter vor der Alten Minenstraße (S13).",
   "boden": "gras",
   "wandart": "gras",
   "boeden": {
@@ -51,11 +51,11 @@
     "#.aaaaaaaaaaaaaaaaaaaaaaaaa.......kk...........................#",
     "#.aaaaaaaaaaaaaaaaaaaaaaaaa.......kk...........................#",
     "#.aaaaaaaaaaaaaaaaaaaaaaaaa.......kk...........................#",
-    "#.................................kk...........................#",
-    "#.................................kk...........................#",
-    "#.................................kk...........................#",
-    "#.................................kk...........................#",
-    "#.................................kk...........................#",
+    "#.aaaaaaaaaaaaaaaaaaaaaaaaa.......kk...........................#",
+    "#.aaaaaaaaaaaaaaaaaaaaaaaaa.......kk...........................#",
+    "#.aaaaaaaaaaaaaaaaaaaaaaaaa.......kk...........................#",
+    "#.aaaaaaaaaaaaaaaaaaaaaaaaa.......kk...........................#",
+    "#.aaaaaaaaaaaaaaaaaaaaaaaaa.......kk...........................#",
     "#.................................kkkkkkkkkkkkkkkkkkkkkkkkkkkk.#",
     "#.................................kkkkkkkkkkkkkkkkkkkkkkkkkkkk.#",
     "################################################################"
@@ -63,857 +63,607 @@
   "objekte": [
     {
       "moebel": "cr7Raststaette",
-      "feld": [
-        10,
-        12
-      ]
+      "feld": [10, 12]
     },
     {
       "moebel": "cr7SchildCrossroads",
-      "feld": [
-        20,
-        16
-      ]
+      "feld": [20, 16]
     },
     {
       "moebel": "ws5TankstelleGross",
-      "feld": [
-        36,
-        8
-      ]
+      "feld": [36, 8]
+    },
+    {
+      "moebel": "crZapfsaeule",
+      "feld": [54, 12]
     },
     {
       "moebel": "crBus",
-      "feld": [
-        4,
-        30
-      ],
+      "feld": [4, 30],
       "bauteil_ok": true
     },
     {
       "moebel": "sbFoodtruck",
-      "feld": [
-        18,
-        29
-      ]
+      "feld": [18, 29]
     },
     {
       "moebel": "cr7Sattelzug",
-      "feld": [
-        4,
-        36
-      ]
+      "feld": [4, 36]
+    },
+    {
+      "moebel": "cr7SattelzugBlau",
+      "feld": [4, 40]
+    },
+    {
+      "moebel": "rvAutoBlau",
+      "feld": [16, 37],
+      "bauteil_ok": true
     },
     {
       "moebel": "rvAutoGruen",
-      "feld": [
-        15,
-        37
-      ],
+      "feld": [20, 37],
       "bauteil_ok": true
-    },
-    {
-      "moebel": "cr7WegweiserStaedte",
-      "feld": [
-        28,
-        16
-      ]
-    },
-    {
-      "moebel": "cc3ZaunEnde",
-      "feld": [
-        2,
-        10
-      ],
-      "bauteil_ok": true
-    },
-    {
-      "moebel": "ccZaun",
-      "feld": [
-        3,
-        10
-      ],
-      "bauteil_ok": true
-    },
-    {
-      "moebel": "ccZaun",
-      "feld": [
-        4,
-        10
-      ],
-      "bauteil_ok": true
-    },
-    {
-      "moebel": "cc3ZaunEndeR",
-      "feld": [
-        5,
-        10
-      ],
-      "bauteil_ok": true
-    },
-    {
-      "moebel": "cc3ZaunEnde",
-      "feld": [
-        8,
-        10
-      ],
-      "bauteil_ok": true
-    },
-    {
-      "moebel": "ccZaun",
-      "feld": [
-        9,
-        10
-      ],
-      "bauteil_ok": true
-    },
-    {
-      "moebel": "ccZaun",
-      "feld": [
-        10,
-        10
-      ],
-      "bauteil_ok": true
-    },
-    {
-      "moebel": "ccZaun",
-      "feld": [
-        11,
-        10
-      ],
-      "bauteil_ok": true
-    },
-    {
-      "moebel": "ccZaun",
-      "feld": [
-        12,
-        10
-      ],
-      "bauteil_ok": true
-    },
-    {
-      "moebel": "ccZaun",
-      "feld": [
-        13,
-        10
-      ],
-      "bauteil_ok": true
-    },
-    {
-      "moebel": "ccZaun",
-      "feld": [
-        14,
-        10
-      ],
-      "bauteil_ok": true
-    },
-    {
-      "moebel": "ccZaun",
-      "feld": [
-        15,
-        10
-      ],
-      "bauteil_ok": true
-    },
-    {
-      "moebel": "ccZaun",
-      "feld": [
-        16,
-        10
-      ],
-      "bauteil_ok": true
-    },
-    {
-      "moebel": "ccZaun",
-      "feld": [
-        17,
-        10
-      ],
-      "bauteil_ok": true
-    },
-    {
-      "moebel": "ccZaun",
-      "feld": [
-        18,
-        10
-      ],
-      "bauteil_ok": true
-    },
-    {
-      "moebel": "ccZaun",
-      "feld": [
-        19,
-        10
-      ],
-      "bauteil_ok": true
-    },
-    {
-      "moebel": "ccZaun",
-      "feld": [
-        20,
-        10
-      ],
-      "bauteil_ok": true
-    },
-    {
-      "moebel": "ccZaun",
-      "feld": [
-        21,
-        10
-      ],
-      "bauteil_ok": true
-    },
-    {
-      "moebel": "ccZaun",
-      "feld": [
-        22,
-        10
-      ],
-      "bauteil_ok": true
-    },
-    {
-      "moebel": "ccZaun",
-      "feld": [
-        23,
-        10
-      ],
-      "bauteil_ok": true
-    },
-    {
-      "moebel": "ccZaun",
-      "feld": [
-        24,
-        10
-      ],
-      "bauteil_ok": true
-    },
-    {
-      "moebel": "ccZaun",
-      "feld": [
-        25,
-        10
-      ],
-      "bauteil_ok": true
-    },
-    {
-      "moebel": "cc3ZaunEndeR",
-      "feld": [
-        26,
-        10
-      ],
-      "bauteil_ok": true
-    },
-    {
-      "moebel": "cr7ViehgatterQuer",
-      "feld": [
-        58,
-        22
-      ]
     },
     {
       "moebel": "cr7Motel",
-      "feld": [
-        37,
-        26
-      ]
+      "feld": [44, 26]
+    },
+    {
+      "moebel": "cr7WegweiserStaedte",
+      "feld": [28, 16]
+    },
+    {
+      "moebel": "cc3ZaunEnde",
+      "feld": [2, 10],
+      "bauteil_ok": true
+    },
+    {
+      "moebel": "ccZaun",
+      "feld": [3, 10],
+      "bauteil_ok": true
+    },
+    {
+      "moebel": "ccZaun",
+      "feld": [4, 10],
+      "bauteil_ok": true
+    },
+    {
+      "moebel": "cc3ZaunEndeR",
+      "feld": [5, 10],
+      "bauteil_ok": true
+    },
+    {
+      "moebel": "cc3ZaunEnde",
+      "feld": [8, 10],
+      "bauteil_ok": true
+    },
+    {
+      "moebel": "ccZaun",
+      "feld": [9, 10],
+      "bauteil_ok": true
+    },
+    {
+      "moebel": "ccZaun",
+      "feld": [10, 10],
+      "bauteil_ok": true
+    },
+    {
+      "moebel": "ccZaun",
+      "feld": [11, 10],
+      "bauteil_ok": true
+    },
+    {
+      "moebel": "ccZaun",
+      "feld": [12, 10],
+      "bauteil_ok": true
+    },
+    {
+      "moebel": "ccZaun",
+      "feld": [13, 10],
+      "bauteil_ok": true
+    },
+    {
+      "moebel": "ccZaun",
+      "feld": [14, 10],
+      "bauteil_ok": true
+    },
+    {
+      "moebel": "ccZaun",
+      "feld": [15, 10],
+      "bauteil_ok": true
+    },
+    {
+      "moebel": "ccZaun",
+      "feld": [16, 10],
+      "bauteil_ok": true
+    },
+    {
+      "moebel": "ccZaun",
+      "feld": [17, 10],
+      "bauteil_ok": true
+    },
+    {
+      "moebel": "ccZaun",
+      "feld": [18, 10],
+      "bauteil_ok": true
+    },
+    {
+      "moebel": "ccZaun",
+      "feld": [19, 10],
+      "bauteil_ok": true
+    },
+    {
+      "moebel": "ccZaun",
+      "feld": [20, 10],
+      "bauteil_ok": true
+    },
+    {
+      "moebel": "ccZaun",
+      "feld": [21, 10],
+      "bauteil_ok": true
+    },
+    {
+      "moebel": "ccZaun",
+      "feld": [22, 10],
+      "bauteil_ok": true
+    },
+    {
+      "moebel": "ccZaun",
+      "feld": [23, 10],
+      "bauteil_ok": true
+    },
+    {
+      "moebel": "ccZaun",
+      "feld": [24, 10],
+      "bauteil_ok": true
+    },
+    {
+      "moebel": "ccZaun",
+      "feld": [25, 10],
+      "bauteil_ok": true
+    },
+    {
+      "moebel": "cc3ZaunEndeR",
+      "feld": [26, 10],
+      "bauteil_ok": true
+    },
+    {
+      "moebel": "rvPicknicktisch",
+      "feld": [28, 28]
+    },
+    {
+      "moebel": "rvPicknicktisch",
+      "feld": [28, 32]
+    },
+    {
+      "moebel": "rvPicknicktisch",
+      "feld": [28, 40]
+    },
+    {
+      "moebel": "cr7ViehgatterQuer",
+      "feld": [58, 22]
     },
     {
       "moebel": "ds6Garage",
-      "feld": [
-        52,
-        27
-      ]
-    },
-    {
-      "moebel": "wr5Huehnerstall",
-      "feld": [
-        58,
-        28
-      ]
-    },
-    {
-      "moebel": "mf4Bauernhaus",
-      "feld": [
-        37,
-        35
-      ]
-    },
-    {
-      "moebel": "iw5Kirche",
-      "feld": [
-        46,
-        36
-      ]
+      "feld": [37, 27]
     },
     {
       "moebel": "iw5Eisenwaren",
-      "feld": [
-        52,
-        36
-      ]
+      "feld": [38, 36]
     },
     {
-      "moebel": "ds6WohnwagenMittel",
-      "feld": [
-        55,
-        10
-      ]
+      "moebel": "iw5Kirche",
+      "feld": [47, 36]
+    },
+    {
+      "moebel": "rv5Lagerhaus",
+      "feld": [53, 39]
+    },
+    {
+      "moebel": "wr5Huehnerstall",
+      "feld": [59, 40]
+    },
+    {
+      "moebel": "ds6Wohnwagen",
+      "feld": [57, 1]
     },
     {
       "moebel": "cc4Drechslerei",
-      "feld": [
-        17,
-        0
-      ]
+      "feld": [17, 0]
     },
     {
-      "moebel": "rv5Wohnwagen",
-      "feld": [
-        3,
-        40
-      ]
+      "moebel": "wr5Huehnerstall",
+      "feld": [35, 3]
     },
     {
-      "moebel": "rv5WohnwagenGross",
-      "feld": [
-        18,
-        40
-      ]
+      "moebel": "iw5Umkleide",
+      "feld": [40, 3]
     },
     {
-      "moebel": "rvPicknicktisch",
-      "feld": [
-        29,
-        30
-      ]
-    },
-    {
-      "moebel": "rvPicknicktisch",
-      "feld": [
-        29,
-        36
-      ]
+      "moebel": "wg4GrasB",
+      "feld": [38, 35]
     },
     {
       "moebel": "wg4Gras",
-      "feld": [
-        37,
-        5
-      ]
+      "feld": [39, 1]
     },
     {
       "moebel": "wg4GrasB",
-      "feld": [
-        31,
-        42
-      ]
+      "feld": [13, 46]
     },
     {
-      "moebel": "wg4GrasB",
-      "feld": [
-        28,
-        39
-      ]
+      "moebel": "wg4Wildblumen",
+      "feld": [48, 1]
     },
     {
       "moebel": "wg4BlumeGelb",
-      "feld": [
-        61,
-        7
-      ]
+      "feld": [31, 39]
     },
     {
-      "moebel": "wg4GrasB",
-      "feld": [
-        2,
-        2
-      ]
+      "moebel": "wg4BlumeGelb",
+      "feld": [27, 33]
+    },
+    {
+      "moebel": "wg4BlumeGelb",
+      "feld": [44, 2]
     },
     {
       "moebel": "wg4Gras",
-      "feld": [
-        42,
-        35
-      ]
-    },
-    {
-      "moebel": "wg4GrasB",
-      "feld": [
-        15,
-        44
-      ]
-    },
-    {
-      "moebel": "wg4GrasB",
-      "feld": [
-        60,
-        2
-      ]
-    },
-    {
-      "moebel": "wg4GrasB",
-      "feld": [
-        54,
-        36
-      ]
-    },
-    {
-      "moebel": "wg4GrasB",
-      "feld": [
-        33,
-        43
-      ]
-    },
-    {
-      "moebel": "wg4BlumeGelb",
-      "feld": [
-        52,
-        26
-      ]
+      "feld": [46, 42]
     },
     {
       "moebel": "wg4Gras",
-      "feld": [
-        29,
-        43
-      ]
-    },
-    {
-      "moebel": "wg4BlumeGelb",
-      "feld": [
-        54,
-        26
-      ]
-    },
-    {
-      "moebel": "wg4GrasB",
-      "feld": [
-        3,
-        20
-      ]
-    },
-    {
-      "moebel": "wg4BlumeGelb",
-      "feld": [
-        38,
-        26
-      ]
-    },
-    {
-      "moebel": "wg4BlumeGelb",
-      "feld": [
-        11,
-        11
-      ]
-    },
-    {
-      "moebel": "wg4BlumeGelb",
-      "feld": [
-        15,
-        1
-      ]
-    },
-    {
-      "moebel": "wg4GrasB",
-      "feld": [
-        61,
-        37
-      ]
-    },
-    {
-      "moebel": "wg4BlumeGelb",
-      "feld": [
-        36,
-        39
-      ]
-    },
-    {
-      "moebel": "wg4BlumeGelb",
-      "feld": [
-        33,
-        9
-      ]
-    },
-    {
-      "moebel": "wg4BlumeGelb",
-      "feld": [
-        50,
-        36
-      ]
+      "feld": [31, 41]
     },
     {
       "moebel": "wg4Gras",
-      "feld": [
-        28,
-        4
-      ]
-    },
-    {
-      "moebel": "wg4BlumeGelb",
-      "feld": [
-        27,
-        32
-      ]
-    },
-    {
-      "moebel": "wg4BlumeGelb",
-      "feld": [
-        51,
-        40
-      ]
-    },
-    {
-      "moebel": "wg4GrasB",
-      "feld": [
-        30,
-        39
-      ]
-    },
-    {
-      "moebel": "wg4BlumeGelb",
-      "feld": [
-        12,
-        6
-      ]
-    },
-    {
-      "moebel": "wg4GrasB",
-      "feld": [
-        5,
-        11
-      ]
-    },
-    {
-      "moebel": "wg4GrasB",
-      "feld": [
-        27,
-        13
-      ]
-    },
-    {
-      "moebel": "wg4BlumeGelb",
-      "feld": [
-        33,
-        14
-      ]
-    },
-    {
-      "moebel": "wg4BlumeGelb",
-      "feld": [
-        28,
-        2
-      ]
+      "feld": [27, 10]
     },
     {
       "moebel": "wg4Gras",
-      "feld": [
-        2,
-        26
-      ]
-    },
-    {
-      "moebel": "wg4Gras",
-      "feld": [
-        3,
-        11
-      ]
-    },
-    {
-      "moebel": "wg4BlumeGelb",
-      "feld": [
-        28,
-        35
-      ]
-    },
-    {
-      "moebel": "wg4BlumeGelb",
-      "feld": [
-        29,
-        15
-      ]
-    },
-    {
-      "moebel": "wg4BlumeGelb",
-      "feld": [
-        42,
-        2
-      ]
+      "feld": [25, 46]
     },
     {
       "moebel": "wg4GrasB",
-      "feld": [
-        4,
-        20
-      ]
+      "feld": [3, 20]
     },
     {
       "moebel": "wg4Gras",
-      "feld": [
-        36,
-        3
-      ]
+      "feld": [5, 7]
+    },
+    {
+      "moebel": "wg4Gras",
+      "feld": [61, 13]
     },
     {
       "moebel": "wg4BlumeGelb",
-      "feld": [
-        53,
-        14
-      ]
-    },
-    {
-      "moebel": "wg4Gras",
-      "feld": [
-        25,
-        13
-      ]
-    },
-    {
-      "moebel": "wg4Gras",
-      "feld": [
-        61,
-        43
-      ]
+      "feld": [10, 45]
     },
     {
       "moebel": "wg4GrasB",
-      "feld": [
-        2,
-        21
-      ]
+      "feld": [60, 20]
+    },
+    {
+      "moebel": "wg4Gras",
+      "feld": [50, 2]
+    },
+    {
+      "moebel": "wg4GrasB",
+      "feld": [21, 12]
+    },
+    {
+      "moebel": "wg4GrasB",
+      "feld": [29, 11]
+    },
+    {
+      "moebel": "wg4GrasB",
+      "feld": [57, 37]
+    },
+    {
+      "moebel": "wg4GrasB",
+      "feld": [56, 18]
     },
     {
       "moebel": "wg4BlumeGelb",
-      "feld": [
-        56,
-        26
-      ]
+      "feld": [52, 42]
+    },
+    {
+      "moebel": "wg4Gras",
+      "feld": [52, 40]
     },
     {
       "moebel": "wg4GrasB",
-      "feld": [
-        2,
-        11
-      ]
+      "feld": [13, 1]
     },
     {
       "moebel": "wg4GrasB",
-      "feld": [
-        28,
-        14
-      ]
-    },
-    {
-      "moebel": "wg4GrasB",
-      "feld": [
-        44,
-        7
-      ]
-    },
-    {
-      "moebel": "wg4GrasB",
-      "feld": [
-        60,
-        36
-      ]
+      "feld": [56, 5]
     },
     {
       "moebel": "wg4BlumeGelb",
-      "feld": [
-        32,
-        35
-      ]
+      "feld": [8, 16]
     },
     {
       "moebel": "wg4Gras",
-      "feld": [
-        5,
-        3
-      ]
+      "feld": [3, 45]
+    },
+    {
+      "moebel": "wg4GrasB",
+      "feld": [58, 28]
     },
     {
       "moebel": "wg4Gras",
-      "feld": [
-        9,
-        11
-      ]
+      "feld": [1, 31]
+    },
+    {
+      "moebel": "wg4BlumeGelb",
+      "feld": [56, 35]
+    },
+    {
+      "moebel": "wg4Wildblumen",
+      "feld": [52, 4]
+    },
+    {
+      "moebel": "wg4Gras",
+      "feld": [35, 8]
+    },
+    {
+      "moebel": "wg4GrasB",
+      "feld": [53, 1]
+    },
+    {
+      "moebel": "wg4BlumeGelb",
+      "feld": [50, 1]
+    },
+    {
+      "moebel": "wg4Gras",
+      "feld": [8, 4]
+    },
+    {
+      "moebel": "wg4Gras",
+      "feld": [33, 33]
+    },
+    {
+      "moebel": "wg4Wildblumen",
+      "feld": [21, 11]
+    },
+    {
+      "moebel": "wg4Wildblumen",
+      "feld": [42, 25]
+    },
+    {
+      "moebel": "wg4BlumeGelb",
+      "feld": [27, 45]
+    },
+    {
+      "moebel": "wg4GrasB",
+      "feld": [28, 9]
+    },
+    {
+      "moebel": "wg4Gras",
+      "feld": [60, 21]
+    },
+    {
+      "moebel": "wg4BlumeGelb",
+      "feld": [58, 36]
+    },
+    {
+      "moebel": "wg4BlumeGelb",
+      "feld": [37, 35]
+    },
+    {
+      "moebel": "wg4Gras",
+      "feld": [52, 38]
+    },
+    {
+      "moebel": "wg4Gras",
+      "feld": [34, 6]
+    },
+    {
+      "moebel": "wg4GrasB",
+      "feld": [53, 2]
+    },
+    {
+      "moebel": "wg4BlumeGelb",
+      "feld": [54, 8]
+    },
+    {
+      "moebel": "wg4Gras",
+      "feld": [55, 8]
+    },
+    {
+      "moebel": "wg4Gras",
+      "feld": [60, 36]
+    },
+    {
+      "moebel": "wg4GrasB",
+      "feld": [53, 5]
+    },
+    {
+      "moebel": "wg4GrasB",
+      "feld": [30, 40]
+    },
+    {
+      "moebel": "wg4Wildblumen",
+      "feld": [33, 16]
+    },
+    {
+      "moebel": "wg4Wildblumen",
+      "feld": [54, 11]
+    },
+    {
+      "moebel": "wg4Wildblumen",
+      "feld": [58, 10]
+    },
+    {
+      "moebel": "wg4Wildblumen",
+      "feld": [52, 25]
+    },
+    {
+      "moebel": "wg4GrasB",
+      "feld": [30, 38]
+    },
+    {
+      "moebel": "wg4Wildblumen",
+      "feld": [51, 3]
+    },
+    {
+      "moebel": "wg4Gras",
+      "feld": [62, 14]
+    },
+    {
+      "moebel": "wg4BlumeGelb",
+      "feld": [9, 12]
+    },
+    {
+      "moebel": "wg4GrasB",
+      "feld": [56, 3]
+    },
+    {
+      "moebel": "wg4Gras",
+      "feld": [47, 6]
+    },
+    {
+      "moebel": "wg4BlumeGelb",
+      "feld": [1, 2]
+    },
+    {
+      "moebel": "wg4BlumeGelb",
+      "feld": [8, 18]
+    },
+    {
+      "moebel": "wg4Gras",
+      "feld": [43, 28]
+    },
+    {
+      "moebel": "wg4Gras",
+      "feld": [29, 34]
+    },
+    {
+      "moebel": "wg4Gras",
+      "feld": [43, 32]
+    },
+    {
+      "moebel": "wg4BlumeGelb",
+      "feld": [4, 46]
+    },
+    {
+      "moebel": "wg4Wildblumen",
+      "feld": [8, 7]
+    },
+    {
+      "moebel": "wg4Laubbaum",
+      "feld": [28, 36]
+    },
+    {
+      "moebel": "wg4Laubbaum",
+      "feld": [30, 43]
     },
     {
       "moebel": "wg4Busch",
-      "feld": [
-        31,
-        34
-      ]
-    },
-    {
-      "moebel": "mf4Strassenbaum",
-      "feld": [
-        29,
-        44
-      ]
-    },
-    {
-      "moebel": "mf4Strassenbaum",
-      "feld": [
-        29,
-        38
-      ]
+      "feld": [32, 31]
     },
     {
       "moebel": "wg4Busch",
-      "feld": [
-        29,
-        29
-      ]
+      "feld": [27, 30]
     },
     {
       "moebel": "wg4Busch",
-      "feld": [
-        28,
-        35
-      ]
+      "feld": [31, 28]
     },
     {
       "moebel": "wg4Busch",
-      "feld": [
-        32,
-        31
-      ]
+      "feld": [32, 41]
     },
     {
-      "moebel": "mfBushaltestelle",
-      "feld": [
-        1,
-        17
-      ]
+      "moebel": "wg4Busch",
+      "feld": [31, 33]
+    },
+    {
+      "moebel": "wg4Busch",
+      "feld": [29, 26]
+    },
+    {
+      "moebel": "ws5Wartehaus",
+      "feld": [1, 17]
     }
   ],
   "ausloeser": [
     {
       "name": "start",
-      "feld": [
-        31,
-        1
-      ],
+      "feld": [31, 1],
       "eigenschaften": {
         "richtung": "unten"
       }
     },
     {
       "name": "wegSummit",
-      "feld": [
-        30,
-        0
-      ]
+      "feld": [30, 0]
     },
     {
       "name": "wegSummit",
-      "feld": [
-        31,
-        0
-      ]
+      "feld": [31, 0]
     },
     {
       "name": "wegSummit",
-      "feld": [
-        32,
-        0
-      ]
+      "feld": [32, 0]
     },
     {
       "name": "wegPinewood",
-      "feld": [
-        0,
-        14
-      ]
+      "feld": [0, 14]
     },
     {
       "name": "wegPinewood",
-      "feld": [
-        0,
-        15
-      ]
+      "feld": [0, 15]
     },
     {
       "name": "jahrmarkt",
-      "feld": [
-        6,
-        0
-      ]
+      "feld": [6, 0]
     },
     {
       "name": "jahrmarkt",
-      "feld": [
-        7,
-        0
-      ]
+      "feld": [7, 0]
     },
     {
       "name": "raststaetteTuer",
-      "feld": [
-        14,
-        19
-      ]
+      "feld": [14, 19]
     },
     {
       "name": "wegweiser",
-      "feld": [
-        29,
-        20
-      ]
+      "feld": [29, 20]
     },
     {
       "name": "viehgatter",
-      "feld": [
-        57,
-        23
-      ]
+      "feld": [57, 23]
     },
     {
       "name": "fernbus",
-      "feld": [
-        3,
-        20
-      ]
+      "feld": [3, 20]
     }
   ],
   "figuren": [
     {
       "name": "rosie",
-      "feld": [
-        25,
-        33
-      ]
+      "feld": [25, 33]
     },
     {
       "name": "bigJoe",
-      "feld": [
-        11,
-        33
-      ]
+      "feld": [11, 33]
     },
     {
       "name": "slick",
-      "feld": [
-        16,
-        41
-      ]
+      "feld": [16, 41]
     },
     {
       "name": "mira",
-      "feld": [
-        34,
-        27
-      ]
+      "feld": [34, 27]
     }
   ],
   "belebung": [
     {
       "name": "hund",
       "typ": "tier",
-      "feld": [
-        20,
-        20
-      ],
+      "feld": [20, 20],
       "eigenschaften": {
         "von": "8,20",
         "bis": "26,20",
@@ -923,10 +673,7 @@
     {
       "name": "rinder",
       "typ": "tier",
-      "feld": [
-        12,
-        5
-      ],
+      "feld": [12, 5],
       "eigenschaften": {
         "von": "9,2",
         "bis": "15,8",
@@ -936,10 +683,7 @@
     {
       "name": "kraehen",
       "typ": "tier",
-      "feld": [
-        40,
-        4
-      ],
+      "feld": [40, 4],
       "eigenschaften": {
         "von": "34,1",
         "bis": "60,6",
@@ -949,10 +693,7 @@
     {
       "name": "motelkatze",
       "typ": "tier",
-      "feld": [
-        30,
-        24
-      ],
+      "feld": [30, 24],
       "eigenschaften": {
         "von": "28,24",
         "bis": "32,24",
@@ -962,10 +703,7 @@
     {
       "name": "spatzen",
       "typ": "tier",
-      "feld": [
-        24,
-        30
-      ],
+      "feld": [24, 30],
       "eigenschaften": {
         "von": "20,27",
         "bis": "30,34",
@@ -975,10 +713,7 @@
     {
       "name": "tankwart",
       "typ": "statist",
-      "feld": [
-        44,
-        20
-      ],
+      "feld": [44, 20],
       "eigenschaften": {
         "tun": "tankt einen Wagen voll",
         "wann": "tag",
@@ -989,10 +724,7 @@
     {
       "name": "tomas",
       "typ": "statist",
-      "feld": [
-        35,
-        27
-      ],
+      "feld": [35, 27],
       "eigenschaften": {
         "tun": "Tomás zeigt Mira die Windräder am Horizont",
         "wann": "tag",
@@ -1003,10 +735,7 @@
     {
       "name": "autowaescher",
       "typ": "statist",
-      "feld": [
-        52,
-        20
-      ],
+      "feld": [52, 20],
       "eigenschaften": {
         "tun": "spritzt einen Pick-up ab",
         "wann": "tag",
@@ -1017,10 +746,7 @@
     {
       "name": "hundebesitzerin",
       "typ": "statist",
-      "feld": [
-        22,
-        21
-      ],
+      "feld": [22, 21],
       "eigenschaften": {
         "tun": "geht mit dem Hund über den Vorplatz",
         "wann": "tag",
@@ -1033,10 +759,7 @@
     {
       "name": "fernfahrerin",
       "typ": "statist",
-      "feld": [
-        9,
-        26
-      ],
+      "feld": [9, 26],
       "eigenschaften": {
         "tun": "prüft die Reifen ihres Sattelzugs",
         "wann": "tag",
@@ -1048,10 +771,7 @@
     {
       "name": "mechaniker",
       "typ": "statist",
-      "feld": [
-        55,
-        33
-      ],
+      "feld": [55, 33],
       "eigenschaften": {
         "tun": "wischt sich die Hände an einem Lappen ab",
         "wann": "tag",
@@ -1063,10 +783,7 @@
     {
       "name": "motelwirtin",
       "typ": "statist",
-      "feld": [
-        42,
-        33
-      ],
+      "feld": [42, 33],
       "eigenschaften": {
         "tun": "fegt den Gang vor den Zimmern",
         "wann": "tag",
@@ -1078,10 +795,7 @@
     {
       "name": "kuesterin",
       "typ": "statist",
-      "feld": [
-        48,
-        45
-      ],
+      "feld": [48, 45],
       "eigenschaften": {
         "tun": "gießt die Blumen vor der Kapelle",
         "wann": "tag",
@@ -1093,10 +807,7 @@
     {
       "name": "kreidekind",
       "typ": "statist",
-      "feld": [
-        20,
-        27
-      ],
+      "feld": [20, 27],
       "eigenschaften": {
         "tun": "malt mit Kreide ein Brett auf den Asphalt",
         "wann": "tag",
@@ -1108,10 +819,7 @@
     {
       "name": "postbote",
       "typ": "statist",
-      "feld": [
-        31,
-        18
-      ],
+      "feld": [31, 18],
       "eigenschaften": {
         "tun": "bringt Pakete die Schotterstraße hinunter",
         "wann": "tag",
@@ -1123,14 +831,11 @@
     {
       "name": "rentner",
       "typ": "statist",
-      "feld": [
-        30,
-        32
-      ],
+      "feld": [30, 31],
       "eigenschaften": {
         "tun": "sitzt am Picknicktisch und löst ein Rätsel aus der Zeitung",
         "wann": "tag",
-        "von": "28,30",
+        "von": "29,30",
         "bis": "30,33",
         "sagt": "statist.crossroads.aussen.rentner"
       }
@@ -1138,10 +843,7 @@
     {
       "name": "farmer",
       "typ": "statist",
-      "feld": [
-        10,
-        9
-      ],
+      "feld": [10, 9],
       "eigenschaften": {
         "tun": "wirft Heu über den Zaun",
         "wann": "tag",
@@ -1153,10 +855,7 @@
     {
       "name": "anhalterin",
       "typ": "statist",
-      "feld": [
-        2,
-        24
-      ],
+      "feld": [2, 24],
       "eigenschaften": {
         "tun": "hält ein Pappschild mit „Capital“ hoch",
         "wann": "tag",
@@ -1166,11 +865,7 @@
       }
     }
   ],
-  "zustand": [
-    "neu",
-    "gebraucht",
-    "alt"
-  ],
+  "zustand": ["neu", "gebraucht", "alt"],
   "stil": [
     "einfach",
     "klassisch",

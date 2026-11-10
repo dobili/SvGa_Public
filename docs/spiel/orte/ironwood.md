@@ -808,3 +808,8 @@ Gutachten `ironwood-aussen-2.md`, `ironwood-kantine-3.md`, `ironwood-innen-2.md`
 - **Stollen:** Wandmaterial `felsStollen`: Über den Felswänden ist es dunkel (keine Bodenkästen mehr);
   der lose Stein ist ein flacher Stein, anders als die Brocken; die Grubenlampen hängen an der Wand;
   Brocken nicht mehr in Reihe.
+
+**Gemini-Bilder (10.11.2026):** Im Museum hängen alte Fotos von Brücke, Werk, Bahnhof und Arbeitern
+statt der Kunstdrucke (Nebenraum) und zwei weitere zwischen den Fenstern der Halle. In der Umkleide
+stehen Bänke ohne Lehne und ein Haken mit Jacke und Schutzhelm. Damit sind „Parkbänke“, „Kunstdrucke“
+und „Brückenfoto unleserlich“ aus den Gutachten erledigt.

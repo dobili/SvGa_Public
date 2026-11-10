@@ -2,7 +2,7 @@
   "karte": "sternwarte.kuppel",
   "datei": "karten/sternwarte-kuppel.json",
   "art": "innen",
-  "beschreibung": "Die Kuppel der Sternwarte (N5), 14 × 13 Kacheln, nachtblaue Wand mit abgeschrägten Ecken wie ein Rund, Dielen. In der Mitte das Teleskop auf dem Dreifuß, es zeigt auf den offenen Kuppelspalt in der Nordwand; daneben die Sternkarte mit dem Springer-Sternbild neben einem Regal, rechts der Schreibtisch mit dem Funkgerät, links die Liege und ein Globus. Am Boden das Finkenzeichen aus Kreide. Tür in der Südwand.",
+  "beschreibung": "Die Kuppel der Sternwarte (N5), 14 × 13 Kacheln, nachtblaue Wand mit abgeschrägten Ecken wie ein Rund, Dielen. In der Mitte das Messingfernrohr auf seiner Säule mit dem Beobachterstuhl, es zeigt auf den offenen Kuppelspalt in der Nordwand; daneben die Sternkarte mit dem Springer-Sternbild neben einem Regal, rechts der Schreibtisch mit dem Funkgerät, links die Liege und ein Tisch mit aufgeschlagenem Sternatlas. Am Boden das Finkenzeichen aus Kreide. Tür in der Südwand.",
   "wand": "nachtblau",
   "boden": "dielen",
   "raster": [
@@ -29,11 +29,11 @@
     {
       "moebel": "cc5Fussmatte",
       "feld": [7, 10],
-      "versatz": [0, 24]
+      "versatz": [0, 19]
     },
     {
-      "moebel": "n5Teleskop",
-      "feld": [5, 4],
+      "moebel": "n9Fernrohr",
+      "feld": [5, 5],
       "id": "teleskop"
     },
     {
@@ -75,19 +75,13 @@
       "feld": [12, 4]
     },
     {
-      "moebel": "cc5Anrichte",
+      "moebel": "n9Sternatlas",
       "feld": [3, 8],
       "id": "anrichte"
     },
     {
-      "moebel": "cc4Hocker",
+      "moebel": "n9Beobachterstuhl",
       "feld": [8, 7]
-    },
-    {
-      "moebel": "cc4Globus",
-      "feld": [0, 0],
-      "auf": "anrichte",
-      "versatz": [8, 0]
     },
     {
       "moebel": "ds8Finkenzeichen",

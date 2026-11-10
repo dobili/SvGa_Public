@@ -4,7 +4,7 @@
   "art": "innen",
   "beschreibung": "Die Bergstation der Seilbahn über den Wolken: eine Halle aus Holz und Glas, kühl und hell. In der Nordwand ein Band großer Fenster, hinter denen Wolken und Gipfel stehen; davor zwei Bänke und Pflanzen. Rechts die steinerne Plattform, an der die Gondel ankommt; das Seil läuft durch ein Glastor in der Wand hinaus, mit der Gondel fährt man auch zurück ins Tal. Links der Fahrkartenschalter mit Glas und Kasse und Schalterbeamtem, daneben der Fahrplan; der Kaffeeautomat steht an der Westwand neben dem Fenster, die Schließfächer an der Ostwand. Rucksäcke von Wanderern liegen in der Halle.",
   "wand": "hellgrau",
-  "boden": "holzHell",
+  "boden": "dielen",
   "zustand": ["neu", "gebraucht"],
   "stil": ["modern", "klassisch"],
   "raster": [
@@ -91,7 +91,7 @@
     },
     {
       "moebel": "cc4Fahrplan",
-      "feld": [5, 7]
+      "feld": [5, 8]
     },
     {
       "moebel": "rvKaffeeautomat",
@@ -128,7 +128,7 @@
     },
     {
       "name": "fahrplan",
-      "feld": [6, 9]
+      "feld": [6, 10]
     }
   ],
   "figuren": [

@@ -1,5 +1,115 @@
 {
   "moebel": {
+    "iw9FotoBrueckeA": {
+      "quelle": "spiel/eigene/foto_bruecke_a.png",
+      "breite": 32,
+      "hoehe": 32,
+      "kollision": false,
+      "art": "bild",
+      "blick": "unten",
+      "zustand": "alt",
+      "stil": "klassisch"
+    },
+    "iw9FotoBrueckeB": {
+      "quelle": "spiel/eigene/foto_bruecke_b.png",
+      "breite": 32,
+      "hoehe": 32,
+      "kollision": false,
+      "art": "bild",
+      "blick": "unten",
+      "zustand": "alt",
+      "stil": "klassisch"
+    },
+    "iw9FotoWerkA": {
+      "quelle": "spiel/eigene/foto_werk_a.png",
+      "breite": 32,
+      "hoehe": 32,
+      "kollision": false,
+      "art": "bild",
+      "blick": "unten",
+      "zustand": "alt",
+      "stil": "klassisch"
+    },
+    "iw9FotoWerkB": {
+      "quelle": "spiel/eigene/foto_werk_b.png",
+      "breite": 32,
+      "hoehe": 32,
+      "kollision": false,
+      "art": "bild",
+      "blick": "unten",
+      "zustand": "alt",
+      "stil": "klassisch"
+    },
+    "iw9FotoBahnhofA": {
+      "quelle": "spiel/eigene/foto_bahnhof_a.png",
+      "breite": 32,
+      "hoehe": 32,
+      "kollision": false,
+      "art": "bild",
+      "blick": "unten",
+      "zustand": "alt",
+      "stil": "klassisch"
+    },
+    "iw9FotoBahnhofB": {
+      "quelle": "spiel/eigene/foto_bahnhof_b.png",
+      "breite": 32,
+      "hoehe": 32,
+      "kollision": false,
+      "art": "bild",
+      "blick": "unten",
+      "zustand": "alt",
+      "stil": "klassisch"
+    },
+    "iw9FotoArbeiterA": {
+      "quelle": "spiel/eigene/foto_arbeiter_a.png",
+      "breite": 32,
+      "hoehe": 32,
+      "kollision": false,
+      "art": "bild",
+      "blick": "unten",
+      "zustand": "alt",
+      "stil": "klassisch"
+    },
+    "iw9FotoArbeiterB": {
+      "quelle": "spiel/eigene/foto_arbeiter_b.png",
+      "breite": 32,
+      "hoehe": 32,
+      "kollision": false,
+      "art": "bild",
+      "blick": "unten",
+      "zustand": "alt",
+      "stil": "klassisch"
+    },
+    "iw9UmkleidebankWaagrecht": {
+      "quelle": "spiel/eigene/umkleidebank_waagrecht.png",
+      "breite": 48,
+      "hoehe": 16,
+      "kollision": true,
+      "art": "bank",
+      "blick": "unten",
+      "zustand": "gebraucht",
+      "stil": "industrie"
+    },
+    "iw9UmkleidebankSenkrecht": {
+      "quelle": "spiel/eigene/umkleidebank_senkrecht.png",
+      "breite": 16,
+      "hoehe": 48,
+      "kollision": true,
+      "art": "bank",
+      "blick": "unten",
+      "zustand": "gebraucht",
+      "stil": "industrie"
+    },
+    "iw9GarderobeHelm": {
+      "quelle": "spiel/eigene/garderobe_helm.png",
+      "breite": 32,
+      "hoehe": 32,
+      "kollision": false,
+      "art": "garderobe",
+      "blick": "unten",
+      "zustand": "gebraucht",
+      "stil": "industrie"
+    },
     "iw8Garderobe": {
       "quelle": "spiel/eigene/garderobe_jacken.png",
       "breite": 32,

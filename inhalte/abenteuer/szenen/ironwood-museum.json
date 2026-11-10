@@ -2,7 +2,7 @@
   "karte": "ironwood.museum",
   "datei": "karten/ironwood-museum.json",
   "art": "innen",
-  "beschreibung": "Heimatmuseum im alten Bahnhof (Runde 8, Notiz 17): zwei Räume, 34 × 18. Die alte Schalterhalle mit dem Fahrkartenschalter an der Nordwand, drei hohen Fenstern und dem Fahrplan davor; dunkle Dielen, blauer Läufer auf ruhigen Dielen von der Tür bis vor das Pult von Mr. Teague. Zwei große Vitrinen mit Platz ringsum, an der Südseite eine Reihe gefüllter Vitrinen, darunter die Zeitung von 1858, eine alte Bahnlaterne und ein leeres Fach für Brief und Umschlag. Die Postsäcke von 1866 liegen als Ausstellungsstück auf dem Gepäckkarren. Durch einen Durchgang der Nebenraum über Werk und Stadt: Bilder an der Wand, das Foto vom Brückenbau, eine große Vitrine mit Bank davor und eine Reihe Schaukästen, darunter Werkzeug aus dem Werk und der Glasfunke. Bank, Infotafeln, Pflanzen.",
+  "beschreibung": "Heimatmuseum im alten Bahnhof (Runde 8, Notiz 17): zwei Räume, 34 × 18. Die alte Schalterhalle mit dem Fahrkartenschalter an der Nordwand, drei hohen Fenstern und dem Fahrplan davor; dunkle Dielen, blauer Läufer auf ruhigen Dielen von der Tür bis vor das Pult von Mr. Teague. Zwei große Vitrinen mit Platz ringsum, an der Südseite eine Reihe gefüllter Vitrinen, darunter die Zeitung von 1858, eine alte Bahnlaterne und ein leeres Fach für Brief und Umschlag. Die Postsäcke von 1866 liegen als Ausstellungsstück auf dem Gepäckkarren. Durch einen Durchgang der Nebenraum über Werk und Stadt: alte Fotos an der Wand: Brückenbau, Werk, Bahnhof und Arbeiter, eine große Vitrine mit Bank davor und eine Reihe Schaukästen, darunter Werkzeug aus dem Werk und der Glasfunke. Bank, Infotafeln, Pflanzen. In der Halle zwei weitere alte Fotos zwischen den Fenstern.",
   "wand": "creme",
   "boden": "fliesenGrau",
   "raster": [
@@ -108,25 +108,24 @@
       "feld": [1, 9]
     },
     {
-      "moebel": "iw8BildA",
+      "moebel": "iw9FotoBrueckeA",
       "feld": [24, 1],
       "an_wand": true
     },
     {
-      "moebel": "iw8BildB",
+      "moebel": "iw9FotoWerkA",
       "feld": [27, 1],
       "an_wand": true
     },
     {
-      "moebel": "iw8BildC",
+      "moebel": "iw9FotoBahnhofA",
       "feld": [30, 1],
       "an_wand": true
     },
     {
-      "moebel": "wzBild",
+      "moebel": "iw9FotoArbeiterA",
       "feld": [32, 1],
-      "an_wand": true,
-      "versatz": [0, 6]
+      "an_wand": true
     },
     {
       "moebel": "iw8VitrineC",
@@ -178,6 +177,16 @@
     {
       "moebel": "iw8Museumsbank",
       "feld": [29, 10]
+    },
+    {
+      "moebel": "iw9FotoBrueckeB",
+      "feld": [11, 1],
+      "an_wand": true
+    },
+    {
+      "moebel": "iw9FotoWerkB",
+      "feld": [15, 1],
+      "an_wand": true
     }
   ],
   "ausloeser": [

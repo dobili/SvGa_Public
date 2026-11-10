@@ -1,5 +1,5 @@
 {
-  "erklaerung": "Tiere der Oberwelt, gemeinsam für App (oberwelt/tiere.ts), Bogenbau (pipeline/abenteuer/belebungsbilder.py) und Vorschau (pipeline/abenteuer/belebungsvorschau.py). arten: Art → Quelle im privaten Repository, Rahmengröße und Schnitt (reihen: Standbilder oben, Laufen darunter; streifen: eine Reihe, alle Richtungen gleich; richtungen: eine Reihe mit 4 × 6 Bildern; baender und fest:<stand_y>:<lauf_y> für Bögen mit Beschriftungen). staemme: Wortstamm im Objektnamen → Art (längster gewinnt). Ohne passenden Stamm wird nichts gezeichnet (Eidechse, Delfin, Libellen). Eine Art ohne eigenes Bild bekommt die nächstliegende darstellbare (Gutachter 10.11.2026): dunkle Greif- und Waldvögel die Krähe, weiße Wasservögel die Möwe oder Gans, Nager das braune Kaninchen, Fuchs und Kojote den Hund. Der Bison ist ein Einzelbild von mittel-3 (Schnitt „standbild“: gespiegelt, Laufen als Wippen).",
+  "erklaerung": "Tiere der Oberwelt, gemeinsam für App (oberwelt/tiere.ts), Bogenbau (pipeline/abenteuer/belebungsbilder.py) und Vorschau (pipeline/abenteuer/belebungsvorschau.py). arten: Art → Quelle im privaten Repository, Rahmengröße und Schnitt (reihen: Standbilder oben, Laufen darunter; streifen: eine Reihe, alle Richtungen gleich; richtungen: eine Reihe mit 4 × 6 Bildern; baender und fest:<stand_y>:<lauf_y> für Bögen mit Beschriftungen). staemme: Wortstamm im Objektnamen → Art (längster gewinnt). Ohne passenden Stamm wird nichts gezeichnet (Eidechse, Delfin, Libellen). Eine Art ohne eigenes Bild bekommt die nächstliegende darstellbare (Gutachter 10.11.2026): dunkle Greif- und Waldvögel die Krähe, weiße Wasservögel die Möwe oder Gans, Nager das braune Kaninchen, Fuchs und Kojote den Hund. Der Reiher ist ein Gemini-Bild des Autors, zu Reihen gelegt mit bildwuensche/reiher_reihen.py (mittel-1). Der Bison ist ein Einzelbild von mittel-3 (Schnitt „standbild“: gespiegelt, Laufen als Wippen).",
   "arten": {
     "taube": {
       "quelle": "modern-exteriors/Modern_Exteriors_16x16/Animated_16x16/Animated_sheets_16x16/Pigeon_16x16.png",
@@ -96,6 +96,12 @@
       "breite": 32,
       "hoehe": 32,
       "schnitt": "fest:0:192"
+    },
+    "reiher": {
+      "quelle": "spiel/eigene/reiher_reihen.png",
+      "breite": 32,
+      "hoehe": 32,
+      "schnitt": "reihen"
     }
   },
   "staemme": {
@@ -114,7 +120,7 @@
     "kormoran": "kraehe",
     "moewe": "moewe",
     "pelikan": "moewe",
-    "reiher": "moewe",
+    "reiher": "reiher",
     "austernfischer": "moewe",
     "seeschwalbe": "moewe",
     "strandlaeufer": "moewe",

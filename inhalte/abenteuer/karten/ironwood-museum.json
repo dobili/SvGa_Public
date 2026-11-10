@@ -11,7 +11,7 @@
  "tilewidth": 16,
  "tileheight": 16,
  "nextlayerid": 5,
- "nextobjectid": 47,
+ "nextobjectid": 49,
  "layers": [
   {
    "id": 1,
@@ -2595,7 +2595,7 @@
     },
     {
      "id": 31,
-     "name": "iw8BildA",
+     "name": "iw9FotoBrueckeA",
      "type": "moebel",
      "x": 384,
      "y": 16,
@@ -2618,7 +2618,7 @@
     },
     {
      "id": 32,
-     "name": "iw8BildB",
+     "name": "iw9FotoWerkA",
      "type": "moebel",
      "x": 432,
      "y": 16,
@@ -2641,7 +2641,7 @@
     },
     {
      "id": 33,
-     "name": "iw8BildC",
+     "name": "iw9FotoBahnhofA",
      "type": "moebel",
      "x": 480,
      "y": 16,
@@ -2664,12 +2664,12 @@
     },
     {
      "id": 34,
-     "name": "wzBild",
+     "name": "iw9FotoArbeiterA",
      "type": "moebel",
      "x": 512,
-     "y": 22,
-     "width": 16,
-     "height": 16,
+     "y": 16,
+     "width": 32,
+     "height": 32,
      "rotation": 0,
      "visible": true,
      "properties": [
@@ -2958,6 +2958,52 @@
        "name": "kollision",
        "type": "bool",
        "value": true
+      }
+     ]
+    },
+    {
+     "id": 47,
+     "name": "iw9FotoBrueckeB",
+     "type": "moebel",
+     "x": 176,
+     "y": 16,
+     "width": 32,
+     "height": 32,
+     "rotation": 0,
+     "visible": true,
+     "properties": [
+      {
+       "name": "tiefe",
+       "type": "int",
+       "value": 0
+      },
+      {
+       "name": "kollision",
+       "type": "bool",
+       "value": false
+      }
+     ]
+    },
+    {
+     "id": 48,
+     "name": "iw9FotoWerkB",
+     "type": "moebel",
+     "x": 240,
+     "y": 16,
+     "width": 32,
+     "height": 32,
+     "rotation": 0,
+     "visible": true,
+     "properties": [
+      {
+       "name": "tiefe",
+       "type": "int",
+       "value": 0
+      },
+      {
+       "name": "kollision",
+       "type": "bool",
+       "value": false
       }
      ]
     }

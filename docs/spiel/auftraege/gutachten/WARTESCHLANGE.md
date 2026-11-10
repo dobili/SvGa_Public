@@ -109,3 +109,6 @@ Szene heißt die Datei in `inhalte/abenteuer/szenen/` ohne `.json`.
 - [x] weg-desert-summit-bergstrasse, weg-desert-summit-diner mit Zustand neon, weg-desert-summit-hinterzimmer (Runde 9, mittel-4)
 - [x] sternwarte-felsnase, sternwarte-kuppel (Runde 9, mittel-4)
 - [x] weg-delacroix-desert-canyonpfad, weg-delacroix-desert-felsbogen (Runde 9, mittel-4)
+- [ ] weg-riverton-ironwood-2 mit Zustand ohne-tische: Eisenbrücke mit Höhe (Gemini-Bild), Querung über den Nord-Süd-Arm (mittel-4)
+- [ ] ironwood-museum, ironwood-umkleide, sternwarte-kuppel: Gemini-Bilder eingebaut (mittel-4)
+- [ ] Runde-9-Karten nach dem Gutachten (summit-city-aussen, -bergstation, -bergladen, hochebene-felsentuerme, -schule, sternwarte-felsnase, weg-desert-summit-bergstrasse, -diner, weg-delacroix-desert-canyonpfad, -felsbogen) (mittel-4)

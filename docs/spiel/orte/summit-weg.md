@@ -350,3 +350,14 @@ Kreidespringer auf der Tafel zeigt den Treffpunkt. Die Dielen sind das Material 
 
 Der Zustand ist aus der neuen Hauptfassung (C) neu abgeleitet. Bergstraße und Hinterzimmer haben keine
 Zustände: Die Geschichte ändert dort keine festen Objekte.
+
+### Gutachten Runde 9 (10.11.2026, mittel-4)
+
+Gutachten `gutachten/wege-mittel-4-runde9.md` und `gutachten/weg-desert-summit-hinterzimmer.md`.
+
+- **Bergstraße:** keine orangen Kacheln mehr an den Enden der Felsstufen (Randspalte setzt das Band
+  fort); Ziegen nicht mehr auf der Fahrbahn; der Schotterabzweig schließt an den Asphalt an. Nicht
+  umgesetzt: **Kehren** bleiben aus geraden Stücken mit abgeschrägter Ecke, eine geschwungene Straße
+  bräuchte Kurvenkacheln; die Straße läuft durch einen Einschnitt in den Stufen.
+- **Diner:** echtes Autowrack (4 × 4) hinter der Tankstelle statt des kleinen heilen Autos, auch im
+  Zustand neonRepariert. Nicht umgesetzt: **Bordstein** – die weißen Randlinien begrenzen die Fahrbahn.

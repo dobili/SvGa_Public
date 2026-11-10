@@ -150,6 +150,7 @@ export function auftragFuer(
     ...(b.abgelenktAb ? { abgelenktAb: b.abgelenktAb } : {}),
     ...(b.variante ? { variante: b.variante } : {}),
     ...(b.kandidaten ? { kandidaten: b.kandidaten } : {}),
+    ...(b.kulisse ? { kulisse: b.kulisse } : {}),
     ...(b.buchbruch
       ? { buchbruch: { linie: b.buchbruch.linie, stufe: alsStufe(b.buchbruch.stufe) } }
       : {}),

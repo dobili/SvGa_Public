@@ -108,6 +108,7 @@ export function partieeinstellungAus(
       ...(auftrag.abgelenktAb ? { abgelenktAb: auftrag.abgelenktAb } : {}),
       ...(auftrag.variante ? { variante: auftrag.variante } : {}),
       ...(auftrag.kandidaten ? { kandidaten: auftrag.kandidaten } : {}),
+      ...(auftrag.kulisse ? { kulisse: auftrag.kulisse } : {}),
       ...(auftrag.buchbruch ? { buchbruch: auftrag.buchbruch } : {}),
     },
   };

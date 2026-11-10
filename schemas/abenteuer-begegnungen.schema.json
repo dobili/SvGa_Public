@@ -132,6 +132,11 @@
             "stufe": { "type": "integer", "minimum": 1, "maximum": 10 }
           }
         },
+        "kulisse": {
+          "description": "Lebendschach (Runde 6, Weg 9): Kennung einer Karte (orte.json); ihr Hintergrundbild steht in der Partie hinter dem Brett",
+          "type": "string",
+          "pattern": "^[a-z][a-zA-Z0-9]*\\.[a-z][a-zA-Z0-9]*$"
+        },
         "freieKarten": {
           "description": "Karten, die in dieser Begegnung ohne Besitz zusätzlich im Deck liegen, nicht verbraucht werden und nicht für Nadel und Wertung zählen (R29: Mentor-Zug im Halbfinale); Kennungen aus karten.json",
           "type": "array",

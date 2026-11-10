@@ -98,6 +98,8 @@ export interface Partieauftrag {
   readonly kandidaten?: readonly string[];
   /** Buch und Bruch: Linie des Gegners, danach diese Stufe (spiel/vorgabezug.ts). */
   readonly buchbruch?: { readonly linie: readonly string[]; readonly stufe: Stufennummer };
+  /** Lebendschach: Karte, deren Hintergrundbild hinter dem Brett steht (anbindung/Kulisse.tsx). */
+  readonly kulisse?: string;
 }
 
 /**

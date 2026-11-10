@@ -1608,6 +1608,10 @@
     {
       "name": "steinbruch",
       "feld": [79, 58]
+    },
+    {
+      "name": "anleger",
+      "feld": [12, 22]
     }
   ],
   "figuren": [

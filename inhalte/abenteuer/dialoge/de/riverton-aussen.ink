@@ -16,6 +16,9 @@
 
 EXTERNAL gibFund(kennung)
 
+EXTERNAL reise(karte, ausloeser)
+// Lastkahn (L3, 14_Akt2_Leben_teil1 4.3): lastkahnFrei setzt Lockport, wenn Ruben Big Joes Brief liest.
+VAR lastkahnFrei = false
 VAR held = "Du"
 VAR ankunftRivertonGesehen = false
 VAR novaGesehen = false
@@ -187,4 +190,20 @@ Unter der Brücke spielt ein Straßenmusiker Gitarre. Neben seinem Hut liegt ein
 „Den hab ich hier gefunden“, sagt er. „Behalt ihn, ich spiele nur Gitarre.“ #sprecher:erzaehler
 ~ gibFund("holzlaeufer")
 Noch ein Holzstück. Jemand hat einen ganzen Satz verloren. #sprecher:ambrose
+-> END
+
+// ---------------------------------------------------------------- Anleger am Kanalbecken (Runde 6)
+
+=== anleger_schild ===
+Am Anleger hängt ein Blechschild: „Lastkahn Ashford Belle: Riverton – Lockport – Ironwood. Fahrten nach Ansage.“ #sprecher:erzaehler
+{lastkahnFrei:
+    Die Belle liegt am Anleger, Kapitän Ruben winkt vom Deck. #sprecher:erzaehler
+    * [Mit der Ashford Belle nach Lockport]
+        ~ reise("lockport.aussen", "kai")
+        -> END
+    * [Hierbleiben]
+        -> END
+- else:
+    Der Anleger ist leer. Niemand hat eine Ansage gemacht. #sprecher:erzaehler
+}
 -> END

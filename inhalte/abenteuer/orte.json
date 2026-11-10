@@ -1100,6 +1100,11 @@
           "name": "fahrrad",
           "art": "gegenstand",
           "dialog": "riverton-schuppen.fahrrad"
+        },
+        {
+          "name": "anlegerSchild",
+          "art": "gegenstand",
+          "dialog": "riverton-aussen.anleger_schild"
         }
       ],
       "club": {
@@ -1256,12 +1261,12 @@
         {
           "name": "kreide1",
           "art": "gegenstand",
-          "dialog": "weg-riverton-ironwood.kreidespringer"
+          "dialog": "weg-riverton-ironwood.kreide1"
         },
         {
           "name": "spurPM1",
           "art": "gegenstand",
-          "dialog": "weg-riverton-ironwood.drohne"
+          "dialog": "weg-riverton-ironwood.spur_pm1"
         },
         {
           "name": "seite07",
@@ -1667,6 +1672,11 @@
           "name": "fundGlasfunke",
           "art": "gegenstand",
           "dialog": "ironwood-museum.fund_glasfunke"
+        },
+        {
+          "name": "anleger",
+          "art": "gegenstand",
+          "dialog": "ironwood-aussen.anleger"
         }
       ],
       "club": {

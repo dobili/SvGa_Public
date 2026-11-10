@@ -730,6 +730,10 @@
     {
       "name": "fundLaeufer",
       "feld": [49, 37]
+    },
+    {
+      "name": "anlegerSchild",
+      "feld": [59, 47]
     }
   ],
   "figuren": [

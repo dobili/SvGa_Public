@@ -12,7 +12,7 @@
 // Ambrose schweigt nach dem Vorwurf bis zu den Nachfahren (ambroseSprichtWieder, gesetzt in
 // port-delacroix-werkstatt.ink), außer einem Satz je Szene. Statt der Karte Schutzengel (Szene 69,
 // keine eigene Wirkung) gibt Miss Odile „Was droht?“.
-// Variablen: reiheRemyBestanden, reiheLouBestanden, simultanBestanden,
+// Variablen: reiheRemyBestanden, reiheLouBestanden, portDelacroixSimultanBestanden,
 // ausgangPortDelacroixClubkampf und nadelPortDelacroix setzt die Hülle (R42); bretterGesammelt
 // zählt port-delacroix-aussen.ink; die übrigen setzt diese Datei.
 
@@ -26,7 +26,7 @@ VAR brettersammelnBegonnen = false
 VAR bretterGesammelt = 0
 VAR reiheRemyBestanden = false
 VAR reiheLouBestanden = false
-VAR simultanBestanden = false
+VAR portDelacroixSimultanBestanden = false
 VAR simultanGedankt = false
 VAR ausgangPortDelacroixClubkampf = ""
 VAR nadelPortDelacroix = 0
@@ -61,7 +61,7 @@ Ich weiß, wie sich das anfühlt. Fast. #sprecher:mutter
 === odile ===
 {
 - not tiefpunktGesehen: -> vorwurf
-- simultanBestanden and not simultanGedankt: -> odile_nach_simultan
+- portDelacroixSimultanBestanden and not simultanGedankt: -> odile_nach_simultan
 - nadelPortDelacroix > clubkampfPortDelacroixNadel: -> odile_nach_partie
 - ausgangPortDelacroixClubkampf == "niederlage" and not odileHandGegeben: -> odile_nach_partie
 - not brettersammelnBegonnen: -> odile_bretter
@@ -83,7 +83,7 @@ Und wenn du um die Nadel spielen willst: erst Remy, dann Lou, dann ich. #spreche
     -> odile_clubkampf
 + {nadelPortDelacroix > 0 and nadelPortDelacroix < 3} [„Revanche um eine bessere Nadel?“]
     -> odile_clubkampf
-+ {bretterGesammelt >= 4 and not simultanBestanden} [„Was kann ich noch für das Musikhaus tun?“]
++ {bretterGesammelt >= 4 and not portDelacroixSimultanBestanden} [„Was kann ich noch für das Musikhaus tun?“]
     -> odile_simultan
 + [„Bis später, Miss Odile.“]
     -> END

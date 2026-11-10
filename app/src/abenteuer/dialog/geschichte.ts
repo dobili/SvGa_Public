@@ -34,6 +34,8 @@ export interface Wirkungen {
   readonly reise: (karte: string, ausloeser: string) => void;
   /** Gedächtnisstellung aus partieformen.json (Runde 6), sobald der Dialog zu ist. */
   readonly beginneGedaechtnis: (kennung: string) => void;
+  /** Vorführung aus vorfuehrungen.json (wie ein Statist mit `zeigt`), sobald der Dialog zu ist. */
+  readonly zeigeVorfuehrung: (kennung: string) => void;
   /** Simultan aus partieformen.json (Runde 6): Duelle hintereinander, sobald der Dialog zu ist. */
   readonly beginneSimultan: (kennung: string) => void;
   /** Tönung der aktuellen Karte: nebel, nacht, abend, sepia, dunkel oder „keine“ (toenung.ts). */
@@ -92,6 +94,21 @@ export class Geschichte {
     this.story.BindExternalFunction(
       "setzeToenung",
       (t: string) => wirkungen.setzeToenung(t),
+      false,
+    );
+    this.story.BindExternalFunction(
+      "beginneGedaechtnis",
+      (k: string) => wirkungen.beginneGedaechtnis(k),
+      false,
+    );
+    this.story.BindExternalFunction(
+      "beginneSimultan",
+      (k: string) => wirkungen.beginneSimultan(k),
+      false,
+    );
+    this.story.BindExternalFunction(
+      "zeigeVorfuehrung",
+      (k: string) => wirkungen.zeigeVorfuehrung(k),
       false,
     );
     this.story.BindExternalFunction(

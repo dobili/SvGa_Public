@@ -829,5 +829,19 @@
   "statist.summitCity.bergladen.ladenhilfe.1": "Im Winter verkaufen wir Schneeschuhe, im Sommer Sonnencreme. Die Berge bleiben dieselben.",
   "statist.summitCity.bergladen.kunde": "Mein Lieblingszug? Der Turm auf die vorletzte Reihe. Von dort oben sieht man alles, wie vom Gipfel.",
   "statist.summitCity.bergladen.kunde.1": "Dieser Rucksack hat vierzehn Fächer. Ich werde nie wieder etwas finden.",
-  "oberwelt.ambroseSagt": "{name}: {satz}"
+  "oberwelt.ambroseSagt": "{name}: {satz}",
+  "statist.riverton.aussen.pendler": "Jeden Morgen spiele ich im Zug eine Partie gegen die App. Die Fahrt dauert neunzehn Minuten, die Partie zwölf. Den Rest ärgere ich mich.",
+  "statist.riverton.aussen.pendler.1": "Die Uhr am Turm sagt, mein Zug ist pünktlich. Der Zug sagt etwas anderes.",
+  "statist.riverton.aussen.parkschachspieler": "Im Turnier dürfen Kiebitze nicht reden. Hier im Park reden sie mehr als wir. Ich spiele trotzdem lieber hier.",
+  "statist.riverton.aussen.parkschachspieler.1": "Vor dem Schlagen zählen: Wer greift an, wer deckt? Ich zähle immer. Nur manchmal falsch.",
+  "statist.riverton.aussen.brieftraegerin": "Seit die Bildschirmtische da sind, schreibt mir niemand mehr Schachzüge auf Postkarten. Ich vermisse die Postkarten.",
+  "statist.riverton.aussen.brieftraegerin.1": "Früher spielten manche Leute Fernschach per Post, Dutzende Partien zugleich, jede mit eigener Karte. Eine Partie dauerte Jahre. Ich hätte sie alle getragen.",
+  "statist.riverton.aussen.taubenmann": "Siebzehn. Gestern waren es achtzehn. Die achtzehnte ist eine Dame, die macht, was sie will.",
+  "statist.riverton.aussen.taubenmann.1": "Die auf dem Wasserturm sitzen in einer Reihe, acht Stück. Wie Bauern vor dem ersten Zug.",
+  "statist.riverton.aussen.uhrmacher": "Die Uhr am Turm geht richtig. Alle anderen Uhren in Riverton gehen falsch.",
+  "statist.riverton.aussen.uhrmacher.1": "Früher maß man beim Schach die Bedenkzeit mit Sanduhren. Dann kamen Uhren mit zwei Zifferblättern. Auf diese Erfindung bin ich heute noch neidisch.",
+  "statist.riverton.aussen.uhrmacher.ambrose": "Sand ist ehrlicher als ein Zeiger. Man sieht, wie die Zeit wegläuft.",
+  "statist.riverton.aussen.gabelstaplerfahrer": "Gabeln. Den ganzen Tag hebe ich Kisten mit der Gabel. Abends am Brett mache ich dasselbe mit dem Springer: zwei auf einmal.",
+  "statist.riverton.aussen.anglerin": "Den Läufer verstehe ich nicht. Der läuft doch gar nicht, der schleicht schräg übers Brett. Bei uns hieße er Schleicher.",
+  "statist.riverton.aussen.anglerin.ambrose": "Im alten Schach war er ein Elefant und sprang zwei Felder schräg. Elefanten schleichen auch nicht."
 }

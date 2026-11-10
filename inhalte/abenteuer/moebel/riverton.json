@@ -1262,6 +1262,66 @@
       "zustand": "gebraucht",
       "stil": "klassisch",
       "blick": "unten"
+    },
+    "rv8StadthausBlau": {
+      "quelle": "modern-exteriors/Modern_Exteriors_16x16/ME_Theme_Sorter_16x16/4_Generic_Building_Singles_16x16/ME_Singles_Generic_Building_16x16_Condo_5_2.png",
+      "breite": 96,
+      "hoehe": 176,
+      "kollision": true,
+      "art": "gebaeude",
+      "blick": "unten",
+      "zustand": "gebraucht",
+      "stil": "klassisch"
+    },
+    "rv8StadthausBlauB": {
+      "quelle": "modern-exteriors/Modern_Exteriors_16x16/ME_Theme_Sorter_16x16/4_Generic_Building_Singles_16x16/ME_Singles_Generic_Building_16x16_Condo_5_3.png",
+      "breite": 96,
+      "hoehe": 176,
+      "kollision": true,
+      "art": "gebaeude",
+      "blick": "unten",
+      "zustand": "gebraucht",
+      "stil": "klassisch"
+    },
+    "rv8WohnhausBraun": {
+      "quelle": "modern-exteriors/Modern_Exteriors_16x16/ME_Theme_Sorter_16x16/4_Generic_Building_Singles_16x16/ME_Singles_Generic_Building_16x16_Condo_3_45.png",
+      "breite": 96,
+      "hoehe": 160,
+      "kollision": true,
+      "art": "gebaeude",
+      "blick": "unten",
+      "zustand": "gebraucht",
+      "stil": "klassisch"
+    },
+    "rv8HolzhausRot": {
+      "quelle": "spiel/serene/serene_71.png",
+      "breite": 80,
+      "hoehe": 64,
+      "kollision": true,
+      "art": "gebaeude",
+      "blick": "unten",
+      "zustand": "neu",
+      "stil": "rustikal"
+    },
+    "rv8HolzhausGruen": {
+      "quelle": "spiel/serene/serene_77.png",
+      "breite": 80,
+      "hoehe": 64,
+      "kollision": true,
+      "art": "gebaeude",
+      "blick": "unten",
+      "zustand": "neu",
+      "stil": "rustikal"
+    },
+    "rv8HolzhausRotB": {
+      "quelle": "spiel/serene/serene_82.png",
+      "breite": 80,
+      "hoehe": 64,
+      "kollision": true,
+      "art": "gebaeude",
+      "blick": "unten",
+      "zustand": "neu",
+      "stil": "rustikal"
     }
   }
 }

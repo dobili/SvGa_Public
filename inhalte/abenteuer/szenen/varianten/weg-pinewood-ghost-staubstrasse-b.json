@@ -161,10 +161,6 @@
       "feld": [62, 2]
     },
     {
-      "moebel": "wg4Felsgruppe",
-      "feld": [66, 3]
-    },
-    {
       "moebel": "felsKlein",
       "feld": [78, 5]
     },
@@ -223,14 +219,6 @@
     {
       "moebel": "wg4Felsgruppe",
       "feld": [38, 7]
-    },
-    {
-      "moebel": "felsKlein",
-      "feld": [63, 7]
-    },
-    {
-      "moebel": "fels",
-      "feld": [68, 6]
     },
     {
       "moebel": "wg4Felsgruppe",
@@ -435,6 +423,38 @@
     {
       "moebel": "fels",
       "feld": [140, 26]
+    },
+    {
+      "moebel": "cp8Schuppen",
+      "feld": [51, 3],
+      "id": "ereignisTankstelleHaus"
+    },
+    {
+      "moebel": "cp8Solarpaneel",
+      "feld": [53, 4],
+      "vorn": true,
+      "id": "ereignis95"
+    },
+    {
+      "moebel": "cp8Zapfsaeule",
+      "feld": [40, 6],
+      "id": "ereignis96"
+    },
+    {
+      "moebel": "cp8Zapfsaeule",
+      "feld": [43, 6],
+      "id": "ereignis97"
+    },
+    {
+      "moebel": "cp8Vordach",
+      "feld": [39, 4],
+      "vorn": true,
+      "id": "ereignis98"
+    },
+    {
+      "moebel": "wr5Autowrack",
+      "feld": [57, 4],
+      "id": "ereignis99"
     }
   ],
   "ausloeser": [
@@ -475,22 +495,109 @@
       }
     },
     {
+      "name": "kinder",
+      "typ": "statist",
+      "feld": [20, 13],
+      "eigenschaften": {
+        "von": "20,13",
+        "bis": "26,13",
+        "tun": "zwei Kinder aus dem Camp, mit Taschenlampen",
+        "wann": "tag",
+        "sagt": "statist.wegPinewoodGhost.staubstrasse.kinder"
+      }
+    },
+    {
+      "name": "truckerin",
+      "typ": "statist",
+      "feld": [40, 20],
+      "eigenschaften": {
+        "von": "40,20",
+        "bis": "40,20",
+        "tun": "wartet neben ihrem Lastwagen auf Hilfe",
+        "wann": "tag",
+        "sagt": "statist.wegPinewoodGhost.staubstrasse.truckerin"
+      }
+    },
+    {
+      "name": "landvermesser",
+      "typ": "statist",
+      "feld": [119, 12],
+      "eigenschaften": {
+        "von": "119,12",
+        "bis": "119,12",
+        "tun": "misst die Straße mit einem Stativ aus",
+        "wann": "tag",
+        "sagt": "statist.wegPinewoodGhost.staubstrasse.landvermesser"
+      }
+    },
+    {
+      "name": "motorradfahrer",
+      "typ": "statist",
+      "feld": [140, 14],
+      "eigenschaften": {
+        "von": "140,14",
+        "bis": "140,14",
+        "tun": "trinkt Wasser im Schatten eines Mastes",
+        "wann": "tag"
+      }
+    },
+    {
       "name": "eidechse",
       "typ": "tier",
-      "feld": [30, 17],
+      "feld": [30, 22],
       "eigenschaften": {
-        "von": "28,17",
-        "bis": "34,17",
+        "von": "30,22",
+        "bis": "35,22",
         "verhalten": "flitzen"
       }
     },
     {
       "name": "geier",
       "typ": "tier",
-      "feld": [120, 6],
+      "feld": [59, 8],
       "eigenschaften": {
-        "von": "110,6",
-        "bis": "130,6",
+        "von": "59,8",
+        "bis": "79,8",
+        "verhalten": "fliegen"
+      }
+    },
+    {
+      "name": "roadrunner",
+      "typ": "tier",
+      "feld": [100, 21],
+      "eigenschaften": {
+        "von": "100,21",
+        "bis": "92,21",
+        "verhalten": "flitzen"
+      }
+    },
+    {
+      "name": "kojote",
+      "typ": "tier",
+      "feld": [130, 22],
+      "eigenschaften": {
+        "von": "130,22",
+        "bis": "134,22",
+        "verhalten": "ausweichen"
+      }
+    },
+    {
+      "name": "hase",
+      "typ": "tier",
+      "feld": [10, 6],
+      "eigenschaften": {
+        "von": "10,6",
+        "bis": "16,6",
+        "verhalten": "flitzen"
+      }
+    },
+    {
+      "name": "kraehen",
+      "typ": "tier",
+      "feld": [85, 6],
+      "eigenschaften": {
+        "von": "85,6",
+        "bis": "95,6",
         "verhalten": "fliegen"
       }
     }

@@ -109,22 +109,22 @@
     {
       "name": "ladenhilfe",
       "typ": "statist",
-      "feld": [2, 6],
+      "feld": [4, 6],
       "eigenschaften": {
-        "von": "2,6",
-        "bis": "2,6",
-        "tun": "räumt Karten ins Regal",
+        "von": "4,6",
+        "bis": "4,6",
+        "tun": "räumt Wanderkarten ins Regal",
         "sagt": "statist.summitCity.bergladen.ladenhilfe"
       }
     },
     {
       "name": "kunde",
       "typ": "statist",
-      "feld": [8, 8],
+      "feld": [9, 6],
       "eigenschaften": {
-        "von": "8,8",
-        "bis": "8,8",
-        "tun": "probiert einen Rucksack",
+        "von": "9,6",
+        "bis": "9,6",
+        "tun": "probiert einen Wanderstock aus",
         "sagt": "statist.summitCity.bergladen.kunde"
       }
     }

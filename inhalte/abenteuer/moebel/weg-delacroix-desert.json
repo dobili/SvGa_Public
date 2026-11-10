@@ -128,6 +128,33 @@
       "zustand": "alt",
       "stil": "einfach",
       "blick": "unten"
+    },
+    "ds8Kletterseil": {
+      "quelle": "spiel/eigene/kletterseil.png",
+      "breite": 16,
+      "hoehe": 64,
+      "kollision": false,
+      "art": "deko",
+      "zustand": "gebraucht",
+      "stil": "natur"
+    },
+    "ds8Kreidebeutel": {
+      "quelle": "spiel/eigene/kreidebeutel.png",
+      "breite": 16,
+      "hoehe": 16,
+      "kollision": false,
+      "art": "deko",
+      "zustand": "gebraucht",
+      "stil": "natur"
+    },
+    "ds8Finkenzeichen": {
+      "quelle": "spiel/eigene/finkenzeichen_kreide.png",
+      "breite": 16,
+      "hoehe": 16,
+      "kollision": false,
+      "art": "deko",
+      "zustand": "gebraucht",
+      "stil": "natur"
     }
   }
 }

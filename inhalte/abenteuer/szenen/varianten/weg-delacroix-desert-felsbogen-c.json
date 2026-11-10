@@ -202,6 +202,38 @@
     {
       "moebel": "dd6Geierkreis",
       "feld": [30, 17]
+    },
+    {
+      "moebel": "ds8Kletterseil",
+      "feld": [98, 9],
+      "id": "ereignis40",
+      "vorn": true
+    },
+    {
+      "moebel": "pg7SeilHaken",
+      "feld": [102, 11],
+      "id": "ereignis41",
+      "vorn": true
+    },
+    {
+      "moebel": "scRucksack",
+      "feld": [99, 14],
+      "id": "ereignis42"
+    },
+    {
+      "moebel": "scRucksackRot",
+      "feld": [102, 13],
+      "id": "ereignis43"
+    },
+    {
+      "moebel": "ds8Kreidebeutel",
+      "feld": [101, 14],
+      "id": "ereignis44"
+    },
+    {
+      "moebel": "ds8Finkenzeichen",
+      "feld": [61, 7],
+      "id": "ereignis45"
     }
   ],
   "ausloeser": [
@@ -240,23 +272,110 @@
   "figuren": [],
   "belebung": [
     {
+      "name": "rangerin",
+      "typ": "statist",
+      "feld": [115, 15],
+      "eigenschaften": {
+        "von": "115,15",
+        "bis": "115,15",
+        "tun": "zählt die Besucher am Bogen",
+        "wann": "tag",
+        "sagt": "statist.wegDelacroixDesert.felsbogen.rangerin"
+      }
+    },
+    {
+      "name": "goldsucher",
+      "typ": "statist",
+      "feld": [70, 7],
+      "eigenschaften": {
+        "von": "70,7",
+        "bis": "70,7",
+        "tun": "siebt Sand im trockenen Bach",
+        "wann": "tag",
+        "sagt": "statist.wegDelacroixDesert.felsbogen.goldsucher"
+      }
+    },
+    {
+      "name": "radfahrerin",
+      "typ": "statist",
+      "feld": [30, 19],
+      "eigenschaften": {
+        "von": "30,19",
+        "bis": "30,19",
+        "tun": "macht Pause im Schatten",
+        "wann": "tag",
+        "sagt": "statist.wegDelacroixDesert.felsbogen.radfahrerin"
+      }
+    },
+    {
+      "name": "fotograf",
+      "typ": "statist",
+      "feld": [100, 16],
+      "eigenschaften": {
+        "von": "100,16",
+        "bis": "100,16",
+        "tun": "fotografiert den Felsbogen",
+        "wann": "tag"
+      }
+    },
+    {
       "name": "roadrunner",
       "typ": "tier",
-      "feld": [118, 14],
+      "feld": [18, 16],
       "eigenschaften": {
-        "von": "112,14",
-        "bis": "124,14",
-        "verhalten": "rennen"
+        "von": "18,16",
+        "bis": "24,16",
+        "verhalten": "flitzen"
       }
     },
     {
       "name": "eidechse",
       "typ": "tier",
-      "feld": [36, 17],
+      "feld": [35, 16],
       "eigenschaften": {
-        "von": "34,17",
-        "bis": "40,17",
+        "von": "35,16",
+        "bis": "42,16",
         "verhalten": "flitzen"
+      }
+    },
+    {
+      "name": "geier",
+      "typ": "tier",
+      "feld": [53, 18],
+      "eigenschaften": {
+        "von": "53,18",
+        "bis": "59,18",
+        "verhalten": "fliegen"
+      }
+    },
+    {
+      "name": "wuestenhase",
+      "typ": "tier",
+      "feld": [78, 7],
+      "eigenschaften": {
+        "von": "78,7",
+        "bis": "84,7",
+        "verhalten": "flitzen"
+      }
+    },
+    {
+      "name": "kojote",
+      "typ": "tier",
+      "feld": [100, 14],
+      "eigenschaften": {
+        "von": "100,14",
+        "bis": "106,14",
+        "verhalten": "ausweichen"
+      }
+    },
+    {
+      "name": "falke",
+      "typ": "tier",
+      "feld": [122, 16],
+      "eigenschaften": {
+        "von": "122,16",
+        "bis": "128,16",
+        "verhalten": "fliegen"
       }
     }
   ],

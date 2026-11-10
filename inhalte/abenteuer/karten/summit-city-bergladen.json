@@ -526,7 +526,7 @@
      "id": 4,
      "name": "ladenhilfe",
      "type": "statist",
-     "x": 32,
+     "x": 64,
      "y": 96,
      "width": 16,
      "height": 16,
@@ -536,17 +536,17 @@
       {
        "name": "von",
        "type": "string",
-       "value": "2,6"
+       "value": "4,6"
       },
       {
        "name": "bis",
        "type": "string",
-       "value": "2,6"
+       "value": "4,6"
       },
       {
        "name": "tun",
        "type": "string",
-       "value": "räumt Karten ins Regal"
+       "value": "räumt Wanderkarten ins Regal"
       },
       {
        "name": "sagt",
@@ -559,8 +559,8 @@
      "id": 5,
      "name": "kunde",
      "type": "statist",
-     "x": 128,
-     "y": 128,
+     "x": 144,
+     "y": 96,
      "width": 16,
      "height": 16,
      "rotation": 0,
@@ -569,17 +569,17 @@
       {
        "name": "von",
        "type": "string",
-       "value": "8,8"
+       "value": "9,6"
       },
       {
        "name": "bis",
        "type": "string",
-       "value": "8,8"
+       "value": "9,6"
       },
       {
        "name": "tun",
        "type": "string",
-       "value": "probiert einen Rucksack"
+       "value": "probiert einen Wanderstock aus"
       },
       {
        "name": "sagt",

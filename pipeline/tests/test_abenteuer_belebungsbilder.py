@@ -5,9 +5,13 @@ Die Vorlagen sind unterschiedlich gebaut; die Tests prüfen jede Art mit kleinen
 weil die gekaufte Grafik nicht im öffentlichen Repository liegt.
 """
 
-from PIL import Image
+import pytest
 
-from pipeline.abenteuer.belebungsbilder import RAHMEN_JE_REIHE, _baender, tierbogen
+# Pillow steht nicht in pipeline/requirements.txt (nur die Bildwerkzeuge brauchen es, lokal);
+# ohne Pillow, etwa in GitHub Actions, wird diese Datei übersprungen.
+Image = pytest.importorskip("PIL.Image")
+
+from pipeline.abenteuer.belebungsbilder import RAHMEN_JE_REIHE, _baender, tierbogen  # noqa: E402
 
 ROT = (255, 0, 0, 255)
 BLAU = (0, 0, 255, 255)

@@ -38,9 +38,9 @@ Die Zahlen sind Mindestwerte. Eine Stadt im Sommerfest oder ein Markttag darf vo
 
 - **Länge:** ein bis drei kurze Sätze (Stilregeln 5.1 der Story-Bibel), in der Sprechweise der
   Figur.
-- **Schlüssel:** `statist.<karte>.<name>` in `inhalte/abenteuer/texte/de.json`. Mehrere Sätze
-  einer Figur stehen nacheinander als `…<name>.1`, `…<name>.2`. Die App zeigt beim ersten
-  Ansprechen den ersten, danach reihum.
+- **Schlüssel:** `statist.<karte>.<name>` in `inhalte/abenteuer/texte/de.json`. Der Schlüssel
+  selbst ist der erste Satz; weitere Sätze stehen als `…<name>.2`, `…<name>.3`. Die App zeigt beim
+  ersten Ansprechen den ersten, danach reihum.
 - **Jeder Statist ist ein Mensch dieser Welt:** Name oder Rolle („die Briefträgerin“), Alter
   ungefähr, Tätigkeit passend zum Ort und zur Tageszeit.
 - **Ambrose** antwortet manchmal mit einem Satz (`statist.<karte>.<name>.ambrose`), höchstens bei
@@ -108,6 +108,29 @@ Dazu passen kurze **Sätze berühmter Spielerinnen und Spieler** aus Interviews 
 - **Akt und Jahreszeit:** Akt 1 und 2 Herbst, Akt 3 Winter (Schal, Schneeschaufel), Akt 4 Sommer
   (Eis, Badesachen). Ein Statist wiederholt sich nie über zwei Orte hinweg, außer er reist
   (Wanderer, Lkw-Fahrer, Odette Finch).
+
+### 3.4 Vorführen statt nur erzählen (Wunsch des Autors, 10.11.2026)
+
+Wer von einem brillanten Zug erzählt, kann ihn auch zeigen.
+
+- **In der App:** Nach dem Satz fragt der Statist: „Soll ich ihn dir zeigen?“ Dann öffnet sich ein
+  kleines Brett mit der Stellung vor dem Zug. Er spielt den Zug und die Fortsetzung Zug für Zug
+  vor, mit einem kurzen Satz je Zug, wie der Folgespieler der Trainer
+  (`ui/trainer/Folgespieler.tsx`).
+- **Daten:**
+  - Die Vorführung steht in `inhalte/abenteuer/vorfuehrungen.json`, mit Partie, Quelle und Zügen.
+  - Der Statist bekommt `"zeigt": "<kennung>"`.
+  - Die Texte stehen in `texte/de.json`: `vorfuehrung.<kennung>.titel` und ein Satz je Zug
+    (`vorfuehrung.<kennung>.1`, `.2` …; der Satz zum letzten Zug ist Pflicht).
+- **Prüfung** (`python -m pipeline.abenteuer.vorfuehrungen`, auch in pytest):
+  - Die Partie ergibt nach `ab` Halbzügen genau die Stellung.
+  - Jeder Zug ist legal.
+  - Texte und Verweise sind da.
+- **Erste Vorführung:** die Opernpartie, Morphy 1858, die letzten fünf Züge bis zum Matt
+  (`operPartie`). Weitere kommen aus dem Vorrat 4.5. Höchstens eine Vorführung je Karte, damit sie
+  etwas Besonderes bleibt.
+- **Auch Lieblingsmotive und Eröffnungen** lassen sich so zeigen. Dafür genügt eine kurze, selbst
+  gebaute Zugfolge mit Quelle „eigenes Beispiel“, ebenfalls geprüft.
 
 ## 4. Vorrat: Schachgeschichte (nur das hier, oder vom Haupt-Chat geprüft)
 
@@ -201,15 +224,17 @@ stehen.
 
 ### 4.5 Zitate, brillante Züge, Interviews, Eröffnungen, Motive
 
-Eine Recherche mit Quellen läuft (Haupt-Chat, 10.11.2026). Ihr Ergebnis wird hier eingefügt:
+Steht mit Quellen in `16a_Vorrat_Zitate_Zuege.md`:
 
-- 30 Zitate von Weltmeistern und Großmeistern;
-- 20 berühmte Züge;
-- 15 Interview-Schnipsel heutiger Spitzenspieler;
-- 15 Eröffnungen mit Vor- und Nachteil;
-- 10 taktische Motive mit berühmtem Beispiel.
+- 36 Zitate mit Status gesichert, überliefert oder zugeschrieben, dazu bekannte
+  Falschzuschreibungen;
+- 20 berühmte Züge (davon zwei Studien);
+- 19 Interview-Schnipsel heutiger Spitzenspieler;
+- 15 Eröffnungen mit Vorteil und Nachteil;
+- 10 taktische Motive mit echtem Beispiel.
 
-Bis dahin gelten nur 4.1 bis 4.4.
+Die Regeln für den Gebrauch stehen dort am Anfang. Aus dem Vorrat darf jeder Statist schöpfen; je
+Karte höchstens zwei Zitate, damit es nicht wie ein Kalender klingt.
 
 ## 5. Tiere
 

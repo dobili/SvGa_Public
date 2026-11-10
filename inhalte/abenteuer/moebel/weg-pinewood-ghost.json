@@ -35,6 +35,52 @@
       "art": "deko",
       "zustand": "neu",
       "stil": "natur"
+    },
+    "cp8Vordach": {
+      "quelle": "spiel/eigene/tankstelle_vordach.png",
+      "breite": 96,
+      "hoehe": 64,
+      "kollision": true,
+      "art": "gebaeude_teil",
+      "zustand": "gebraucht",
+      "stil": "natur",
+      "maske": ["......", "......", "......", "#....#"]
+    },
+    "cp8Zapfsaeule": {
+      "quelle": "spiel/eigene/zapfsaeule_alt.png",
+      "breite": 16,
+      "hoehe": 32,
+      "kollision": true,
+      "art": "geraet",
+      "zustand": "gebraucht",
+      "stil": "natur"
+    },
+    "cp8Solarpaneel": {
+      "quelle": "spiel/eigene/solarpaneel.png",
+      "breite": 32,
+      "hoehe": 16,
+      "kollision": false,
+      "art": "deko",
+      "zustand": "gebraucht",
+      "stil": "natur"
+    },
+    "cp8Finkenzeichen": {
+      "quelle": "spiel/eigene/finkenzeichen_blech.png",
+      "breite": 16,
+      "hoehe": 16,
+      "kollision": false,
+      "art": "deko",
+      "zustand": "gebraucht",
+      "stil": "natur"
+    },
+    "cp8PlakatBald": {
+      "quelle": "spiel/eigene/plakat_bald.png",
+      "breite": 32,
+      "hoehe": 48,
+      "kollision": true,
+      "art": "schild",
+      "zustand": "gebraucht",
+      "stil": "natur"
     }
   }
 }

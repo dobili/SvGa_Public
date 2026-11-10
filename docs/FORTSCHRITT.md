@@ -1,3 +1,22 @@
+Stand: 10.11.2026, 13:20 UTC (Haupt-Chat, Schach-Abenteuer): **Runde 8 läuft.**
+
+- Die Notizen des Autors zur Revision 2 (`docs/spiel/auftraege/revision2_notizen.md`) sind in die
+  gewählten Karten eingearbeitet, von niedrig-1, mittel-1, mittel-3 und mittel-4 gemeldet und
+  zusammengeführt (c30126a9, auf beta).
+- **Prüfregelwerk:** `docs/spiel/KARTENPRUEFUNG.md`.
+- **Unabhängiger Gutachter:** eigener Chat „Schach-Abenteuer Fable-Mittel“, Warteschlange in
+  `auftraege/gutachten/WARTESCHLANGE.md`, danach die Variantenwahl für 48 Karten in
+  `auftraege/variantenwahl.md`.
+- **Vorbilder** der LimeZu-Pakete: `docs/spiel/vorbilder/`, Bilder privat unter `vorbilder/`.
+- **mittel-2** baut die Technik der Zustände, danach Winter und Bodenvariation.
+
+**Nächster Schritt:**
+
+1. Gutachten an die Helfer verteilen, Nachbesserung.
+2. Zustandsszenen, sobald die Technik da ist.
+3. Neue Seite für den Autor mit den überarbeiteten Karten und allen Zuständen (neues Artefakt, nicht
+   die Revisionsseite).
+
 Stand: 10.11.2026, 10:15 UTC (Haupt-Chat, Schach-Abenteuer): **Runde 6** aller fünf Helfer zusammengeführt (dfd78f10, auf beta, alle Prüfungen grün). **Neue Regel 10.55**: Statisten und Tiere nicht im Wasser oder in Bäumen; Prüfung im Kartenbauer, Befunde je Helfer in `docs/spiel/auftraege/nacharbeit_10_55.md`. Der Autor wählt auf der Revisionsseite (Sammlung `varianten2`). Akt 1 bleibt A; seine Notizen sind an niedrig-1 verteilt, die Antworten stehen in `docs/spiel/ENTSCHEIDUNGEN.md`. **Nächster Schritt:** Meldungen der Helfer zusammenführen und weitere Wahlen des Autors (Akt 2 bis 4) einarbeiten. Die gewählte Variante wird A, die alte A wird `-a`.
 
 Stand: 10.11.2026, vormittags (Haupt-Chat, Schach-Abenteuer): Runde 7 ist abgeschlossen. Städte haben genug Gebäude (Regel 10.51), Silicon Bay und Capital je ein zweites Viertel, jede Route einen Ereignisort (Dokument 15), alle Karten Statisten und Tiere mit Sätzen und Vorführungen (Dokumente 16, 16a, `vorfuehrungen.json`). Die App zeichnet Statisten und Tiere und spielt Vorführungen vor; Türen eigener Gebäude sind auf volle Kacheln korrigiert (Regel 10.54); die Mehrsprachigkeit ist vorbereitet (Dokument 17, Englisch erst nach der fertigen deutschen Fassung). Revisionsseite der Karten: https://claude.ai/artifact/XBUfFuwYQgovXvu7HWt5k1 (der Autor wählt dort). **Nächster Schritt:** Runde 6 nach `docs/spiel/auftraege/runde6_dialoge_ereignisse.md` (Auslöser, Dialoge, Quests, Sperren, Sammelstränge, neue Partieformen); danach die Wahl des Autors einarbeiten (Varianten zu Szenen machen wie am 9.11.).

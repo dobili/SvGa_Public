@@ -56,6 +56,25 @@ Hintergrund: `docs/spiel/04_Architektur.md`, Abschnitt 2 und 9.
   Mattführungen fallen derzeit heraus.
 - Quests warten mit `{ "art": "aufgaben", "runde": "ort.runde" }` auf die bestandene Runde.
 
+## Bedingungen und Zustände der Karten (Runde 8)
+
+- **Bedingungen** stehen in `wenn` an Übergängen und als Schlüssel in `zustaende` einer Karte
+  (`orte.json`). Sprache: eine Variable (`musikhausOffen`, Besitz wie `hatLaterne`), ein Vergleich
+  mit Zahl, `"Text"` oder `wahr`/`falsch` (`nadelMapleFalls >= 1`, `ausgangIronwoodGus == "sieg"`),
+  verknüpft mit `nicht`, `und`, `oder` und Klammern; `und` bindet stärker als `oder`. Eine fehlende
+  Variable zählt als 0, leerer Text oder falsch. Dieselbe Sprache steht in
+  `app/src/abenteuer/regeln/bedingung.ts`, `pipeline/abenteuer/bedingung.py` und
+  `pipeline/abenteuer/bedingung.cjs` (Gesamtsimulation).
+- **Zustände:** `"zustaende": { "<bedingung>": "karten/<basis>-<zustand>.json", … }`. Der letzte
+  Eintrag, dessen Bedingung gilt, wird geladen; ohne passenden die Grundkarte. Je Zustand eine
+  Szene `szenen/<basis>-<zustand>.json` mit `zustand_der_karte` = derselben Bedingung und einer
+  `beschreibung`, die mit „Zustand: …“ beginnt (wann in der Geschichte, was sich ändert, warum).
+  `kartenbild` zeichnet dazu `grafik/karten/<kennung>-<zustand>.png`. Beispiel Park:
+  `"nadelMapleFalls < 1": "karten/maple-falls-park-steg-gesperrt.json"`.
+- **Liste für den Autor:** `python -m pipeline.abenteuer.zustaende` (Text) oder `--json`.
+  `pipeline/tests/test_abenteuer_zustaende.py` prüft Lesbarkeit, bekannte Variablen, Dateinamen und
+  den „Zustand:“-Satz.
+
 ## Tiled-Karten (`karten/<ort>-<karte>.json`)
 
 - Orthogonal, 16-px-Kacheln, JSON-Export von Tiled 1.11 (Claude schreibt die Dateien direkt; der

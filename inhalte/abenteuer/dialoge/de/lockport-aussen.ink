@@ -15,6 +15,7 @@
 EXTERNAL beginneAufgaben(runde)
 EXTERNAL gibKarte(kennung)
 EXTERNAL reise(karte, ausloeser)
+EXTERNAL zahle(muenzen)
 
 VAR held = "Du"
 VAR lockportTafelSchleuseBestanden = false
@@ -29,6 +30,7 @@ VAR taueErledigt = false
 VAR briefFuerRuben = false
 VAR postErledigt = false
 VAR lastkahnFrei = false
+VAR muenzen = 0
 VAR auszeitErhalten = false
 
 // ---------------------------------------------------------------- Rätseltafel und Imogen (S3)
@@ -168,12 +170,17 @@ An einem Pfosten am Ufer hängt eine Messingglocke. Imogen läutet sie für jede
     Die Ashford Belle liegt vertäut unter ihrer Plane. Ohne Fracht fährt sie nirgendwohin. #sprecher:erzaehler
     -> END
 }
-Ruben steht an der Gangway. „Die Belle legt gleich ab. Wohin?“ #sprecher:erzaehler
-* [Nach Riverton]
+Ruben steht an der Gangway. „Die Belle legt gleich ab. 5 Münzen die Fahrt. Wohin?“ #sprecher:erzaehler
+* {muenzen < 5} [Mitfahren (5 Münzen)]
+    Du hast nicht genug Münzen. Ruben zuckt die Schultern: „Komm wieder, wenn die Kasse stimmt.“ #sprecher:erzaehler
+    -> END
+* {muenzen >= 5} [Nach Riverton (5 Münzen)]
+    ~ zahle(5)
     Der Kahn gleitet aus der Schleuse in den Kanal. Die Pappeln ziehen langsam vorbei. #sprecher:erzaehler
     ~ reise("riverton.aussen", "anlegerSchild")
     -> END
-* [Nach Ironwood]
+* {muenzen >= 5} [Nach Ironwood (5 Münzen)]
+    ~ zahle(5)
     Der Kahn folgt dem Kanal nach Osten, bis die Schlote des Werks auftauchen. #sprecher:erzaehler
     ~ reise("ironwood.aussen", "anleger")
     -> END

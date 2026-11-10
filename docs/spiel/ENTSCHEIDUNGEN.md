@@ -4,6 +4,20 @@ Jede Entscheidung zum Spiel steht hier, damit spätere Sitzungen (auch mit Opus)
 können. Neueste Einträge oben. Offene Fragen stehen unten in „Offen“; der Autor antwortet über
 die Entscheidungsseite (Claude-Artefakt „Schach-Abenteuer Entscheidungen“) oder im Chat.
 
+## 10.11.2026 – Spielhülle: Funktionen der App nur aufs Nötigste gespiegelt
+
+- **Wunsch des Autors** (Chat 10.11.2026, nach dem ersten Spielen): Partie, Aufgaben und Trainer
+  öffnen bisher die Ansichten der App mit ihrem ganzen Layout. Das reißt aus der Geschichte.
+  Im Spiel soll je Aufgabe nur das gezeigt werden, was sie braucht, im Layout des Spiels
+  (Pixelrahmen, Navy und Gold); die App rechnet im Hintergrund weiter. Beispiele des Autors:
+  - Partie: Brett, Uhr, ziehen. Kein Knopf „Spielen“, der auf die Spielen-Seite der App führt;
+    nach der Partie zurück ins Spiel.
+  - Auswertung nach der Partie: fraglich, ob sie am Anfang überhaupt erscheint; höchstens knapp.
+  - Werkzeugtrainer: kein Knopf „Variante“ und nichts, was mit der Aufgabe im Spiel nichts zu
+    tun hat.
+  - Wer mehr will, nutzt später die App; die Partien des Spiels stehen dort.
+- **Umsetzung:** Konzept und Bau durch mittel-1 (`docs/spiel/18_Spielhuelle.md`).
+
 ## 10.11.2026 – Keine Lernübersicht für Eltern
 
 - **Gestrichen** (Autor, Chat 10.11.2026): Die im Projektplan (Schritt 8) vorgesehene

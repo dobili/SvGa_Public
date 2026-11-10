@@ -279,8 +279,6 @@ function geschichte(welt, st, datei) {
   binde("oeffneLaden", (l) => {
     st.folgen.laden = l;
   });
-  // Tönung (Runde 6, oberwelt/toenung.ts): ändert nur das Bild, nicht den Spielstand.
-  binde("setzeToenung", () => {});
   binde("zeigeAbspann", () => {
     st.folgen.abspann = true;
   });

@@ -47,9 +47,6 @@ Szene heißt die Datei in `inhalte/abenteuer/szenen/` ohne `.json`.
 - [x] maple-falls-aussen, maple-falls-park, cedar-creek-aussen (zweite Prüfung, niedrig-1; Datei `maple-falls-cedar-creek-2.md`)
 - [x] weg-maple-cedar-flussweg, -landstrasse, -zedernpfad (zweite Prüfung, niedrig-1; eine Datei `weg-maple-cedar-2.md`)
 - [ ] Zustände aus Runde 8 (`python -m pipeline.abenteuer.zustaende`): je Grundkarte eine kurze Prüfung, ob der Zustand zur Beschreibung „Zustand: …“ passt; eine Datei `zustaende-runde8.md`
-- [ ] ghost-town-aussen (Runde 9, niedrig-1, mit Zustand mine-offen), ghost-town-saloon, goldmine-stollen
-- [ ] erinnerung-siedlung-huette, erinnerung-london-kaffeehaus, erinnerung-london-strand (Runde 9, niedrig-1; Sepia aus der Tönung, im Vorschaubild nicht zu sehen)
-- [ ] kuerbishof-hof, weg-pinewood-ghost-tankstelle (Runde 9, niedrig-1)
 - [ ] weg-riverton-ironwood-1, weg-riverton-ironwood-2 (zweite Prüfung, mittel-4, mit Zuständen graffiti und ohne-tische; Dateien `…-2.md`)
 - [ ] ironwood-aussen (zweite Prüfung, mittel-4, mit Zuständen meisterschaft und vermietet; `ironwood-aussen-2.md`)
 - [ ] ironwood-kantine (dritte Prüfung, mit Zustand logo; `ironwood-kantine-3.md`), ironwood-museum, ironwood-umkleide, ironwood-mamas-zimmer (zweite Prüfung, mittel-4; eine Datei `ironwood-innen-2.md`)
@@ -57,6 +54,16 @@ Szene heißt die Datei in `inhalte/abenteuer/szenen/` ohne `.json`.
 - [ ] riverton-aussen und die vier Innenräume (dritte Prüfung, mittel-3; Bahnhof mit Uhrturm, Glastüren; Bilder privat ab c0febaac; Dateien `riverton-aussen-3.md`, `riverton-innen-3.md`)
 
 - [ ] lockport-aussen, lockport-gasthaus, weg-cedar-riverton-bahndamm, -zedernwald, maple-falls-aussen, maple-falls-park, cedar-creek-aussen, weg-maple-cedar-flussweg, -landstrasse, -zedernpfad (dritte Prüfung, niedrig-1; Antworten in riverton.md, maple-falls.md, cedar-creek.md, Abschnitt „Zweites Gutachten Runde 8“; Bilder aus `niedrig1_runde9_karten.py` und das neue Stemmtor erst rendern)
+- [ ] ghost-town-aussen (Runde 9, niedrig-1, mit Zustand mine-offen), ghost-town-saloon, goldmine-stollen
+- [ ] erinnerung-siedlung-huette, erinnerung-london-kaffeehaus, erinnerung-london-strand (Runde 9, niedrig-1; Sepia aus der Tönung, im Vorschaubild nicht zu sehen)
+- [ ] kuerbishof-hof, weg-pinewood-ghost-tankstelle (Runde 9, niedrig-1)
+
+- [ ] crossroads-aussen mit Zustand gatter-offen (Runde 9, mittel-3)
+- [ ] crossroads-raststaette (Runde 9, mittel-3)
+- [ ] weg-summit-crossroads-geysirbecken, weg-summit-crossroads-praerie (Runde 9, mittel-3)
+- [ ] jahrmarkt-festplatz (Runde 9, mittel-3)
+- [ ] weg-crossroads-pinewood-huetten, weg-crossroads-pinewood-riesenbaeume (Runde 9, mittel-3)
+- [ ] pelikaninsel-dorf im Winter (Runde 9, mittel-3)
 
 ## Erledigt
 

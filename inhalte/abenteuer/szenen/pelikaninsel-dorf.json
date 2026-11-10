@@ -2,9 +2,9 @@
   "karte": "pelikaninsel.dorf",
   "datei": "karten/pelikaninsel-dorf.json",
   "art": "aussen",
-  "beschreibung": "Variante C (reicher): ein breites Watt fast über die ganze Südseite, viele Muscheln, Seesterne und Möwen. Auf dem Dorfplatz zwei Netzgestelle, vier Boote im Sand, Kistenstapel und Fässer; sechs Pelikane auf Pfählen; ein Fischkutter liegt vor den Pfahlhäusern, ein zweites Boot am Anleger.",
-  "boden": "erde",
-  "wandart": "erde",
+  "beschreibung": "Winter auf der Pelikaninsel: Schnee auf der ganzen Insel, kalter Wind von See. Im Norden der Anleger mit der kleinen Inselfähre, im Westen das Leuchtfeuer auf einer felsigen Landzunge. Der verschneite Dorfplatz mit zwei Netztrocknern, Kisten und Fässern, Booten im Sand; fünf Pfahlhäuser im Osten auf Stegen, Pelikane auf den Pfählen. Im Süden ein breites Watt mit Muscheln und Seesternen, ein Fischerboot mit Fischer am Strand.",
+  "boden": "gras",
+  "wandart": "gras",
   "boeden": {
     "g": "gras",
     "k": "felsboden",
@@ -30,15 +30,15 @@
     "~~~~~~.................bb........~~~~~~~~~~~~~~~~~",
     "~~................................~~~~~~~~~~~~~~~~",
     "~~................................~~~~~~~~~~~~~~~~",
-    "~~...kkkkk........................~~~~~~~~~~~~~~~~",
-    "~~~.kkkkkkk.......................~~~~~~~~~~~~~~~~",
-    "~~~kkkkkkkkk......................~~~~~~~~~~~~~~~~",
-    "~~~kkkkkkkkk......................~~~~~~~~~~~~~~~~",
-    "~~.kkkkkkkkk......................~~~~~~~~~~~~~~~~",
-    "~~.kkkkkkkkk......................bbbbbbbbbbbbbbb~",
-    "~~.kkkkkkkkk......................bbbbbbbbbbbbbbb~",
-    "~~~.kkkkkkk.......................bbbbbbbbbbbbbbb~",
-    "~~~..kkkkk........................~~~~~~~~~~~~bb~~",
+    "~~...kkkk.........................~~~~~~~~~~~~~~~~",
+    "~~kkkkkkkkk.......................~~~~~~~~~~~~~~~~",
+    "~kkkkkkkkkkk......................~~~~~~~~~~~~~~~~",
+    "~kkkkkkkkkkk......................~~~~~~~~~~~~~~~~",
+    "~kkkkkkkkkk.......................~~~~~~~~~~~~~~~~",
+    "~kkkkkkkkkk.......................bbbbbbbbbbbbbbb~",
+    "~~kkkkkkkkk.......................bbbbbbbbbbbbbbb~",
+    "~~kkkkkkkk........................bbbbbbbbbbbbbbb~",
+    "~~~k.kkkk.........................~~~~~~~~~~~~bb~~",
     "~~~...............................~~~~~~~~~~~~bb~~",
     "~~................................~~~~~~~~~~~~bb~~",
     "~~................................~~~~~~~~~~~~bb~~",
@@ -156,20 +156,15 @@
     },
     {
       "moebel": "n4PelikanLinks",
-      "feld": [31, 2]
+      "feld": [38, 2]
     },
     {
-      "moebel": "n4Netzgestell",
+      "moebel": "pk9Netztrockner",
       "feld": [19, 11]
     },
     {
-      "moebel": "n4Netzgestell",
+      "moebel": "pk9Netztrockner",
       "feld": [25, 17]
-    },
-    {
-      "moebel": "n4FaehrbootWasser",
-      "feld": [26, 1],
-      "bauteil_ok": true
     },
     {
       "moebel": "n4Wegweiser",
@@ -249,14 +244,6 @@
       "feld": [30, 30]
     },
     {
-      "moebel": "n4Spross",
-      "feld": [9, 23]
-    },
-    {
-      "moebel": "n4SprossGross",
-      "feld": [24, 9]
-    },
-    {
       "moebel": "n4SeesternLila",
       "feld": [41, 33]
     },
@@ -274,16 +261,8 @@
       "feld": [23, 11]
     },
     {
-      "moebel": "n4SprossGross",
-      "feld": [24, 21]
-    },
-    {
       "moebel": "n4MuschelBraun",
       "feld": [14, 26]
-    },
-    {
-      "moebel": "n4SprossB",
-      "feld": [3, 16]
     },
     {
       "moebel": "n4MuschelWeiss",
@@ -298,17 +277,9 @@
       "feld": [36, 34]
     },
     {
-      "moebel": "n4Spross",
-      "feld": [22, 7]
-    },
-    {
       "moebel": "n4MoeweLinks",
       "feld": [20, 8],
       "bauteil_ok": true
-    },
-    {
-      "moebel": "n4SprossB",
-      "feld": [24, 6]
     },
     {
       "moebel": "n4MuschelGold",
@@ -329,10 +300,6 @@
     {
       "moebel": "n4MuschelWeiss",
       "feld": [23, 29]
-    },
-    {
-      "moebel": "n4Spross",
-      "feld": [14, 16]
     },
     {
       "moebel": "n4MuschelGold",
@@ -365,10 +332,6 @@
       "feld": [32, 33]
     },
     {
-      "moebel": "n4SprossB",
-      "feld": [28, 6]
-    },
-    {
       "moebel": "n4MuschelGold",
       "feld": [9, 26]
     },
@@ -395,10 +358,6 @@
     {
       "moebel": "n4MuschelRosa",
       "feld": [7, 34]
-    },
-    {
-      "moebel": "n4Spross",
-      "feld": [11, 24]
     },
     {
       "moebel": "n4MuschelBraun",
@@ -445,16 +404,8 @@
       "feld": [30, 31]
     },
     {
-      "moebel": "n4SprossGross",
-      "feld": [23, 12]
-    },
-    {
       "moebel": "n4SeesternGelb",
       "feld": [42, 28]
-    },
-    {
-      "moebel": "n4SprossB",
-      "feld": [2, 19]
     },
     {
       "moebel": "n4SeesternGelb",
@@ -498,14 +449,6 @@
       "feld": [23, 26]
     },
     {
-      "moebel": "n4SprossB",
-      "feld": [12, 7]
-    },
-    {
-      "moebel": "n4Spross",
-      "feld": [20, 18]
-    },
-    {
       "moebel": "n4MuschelGold",
       "feld": [19, 34]
     },
@@ -538,16 +481,8 @@
       "feld": [8, 26]
     },
     {
-      "moebel": "n4Spross",
-      "feld": [27, 22]
-    },
-    {
       "moebel": "n4MuschelWeiss",
       "feld": [40, 32]
-    },
-    {
-      "moebel": "n4Spross",
-      "feld": [26, 15]
     },
     {
       "moebel": "n4MoeweVorn",
@@ -560,24 +495,12 @@
       "bauteil_ok": true
     },
     {
-      "moebel": "n4Spross",
-      "feld": [26, 24]
-    },
-    {
       "moebel": "n4MuschelWeiss",
       "feld": [28, 32]
     },
     {
       "moebel": "n4MuschelBraun",
       "feld": [15, 29]
-    },
-    {
-      "moebel": "n4Spross",
-      "feld": [14, 6]
-    },
-    {
-      "moebel": "n4SprossB",
-      "feld": [9, 19]
     },
     {
       "moebel": "n4MuschelBraun",
@@ -642,6 +565,27 @@
       "moebel": "sc8Finkenzeichen",
       "feld": [40, 13],
       "id": "ereignis139"
+    },
+    {
+      "moebel": "pk9Inselfaehre",
+      "feld": [26, 0],
+      "bauteil_ok": true
+    },
+    {
+      "moebel": "n4Fels",
+      "feld": [2, 10]
+    },
+    {
+      "moebel": "n4Fels",
+      "feld": [9, 16]
+    },
+    {
+      "moebel": "n4Fels",
+      "feld": [11, 10]
+    },
+    {
+      "moebel": "n4Fels",
+      "feld": [2, 13]
     }
   ],
   "ausloeser": [
@@ -792,5 +736,6 @@
         "verhalten": "schwimmen"
       }
     }
-  ]
+  ],
+  "jahreszeit": "winter"
 }

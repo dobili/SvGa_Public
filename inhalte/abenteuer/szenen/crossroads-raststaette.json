@@ -1,7 +1,7 @@
 {
   "karte": "crossroads.raststaette",
   "art": "innen",
-  "beschreibung": "Darlenes Raststätte in Crossroads (Variante A): Holzwände, Dielen. Im Norden hinter einer Innenwand die Großküche mit Kühlschränken, drei Herden unter Hauben, Grill, Fritteuse und Spültisch, rechts daneben das WC. In der Küchenwand die Durchreiche, davor der lange Holztresen mit Kaffeemaschine, Gläsern und Flaschen und vier Hockern; Darlene dahinter, die Kasse am Ende zum Gast hin. Rechts Darlenes Laden mit Postkartenständer und Regalen vor der Wand, davor der lange Varianten-Tisch mit drei Brettern und Hockern ringsum. Links unten zwei runde Tische mit Stühlen, rechts unten Novas Ecktisch, ein Spielautomat. Unten die Glastür mit Fußmatte.",
+  "beschreibung": "Darlenes Raststätte in Crossroads: Holzwände, Dielen. Im Norden hinter einer Innenwand die Großküche mit Kühlschränken, drei Herden unter Hauben, Grill, Fritteuse und Spültisch, in der Mitte ein Arbeitstisch mit Brett und Geschirr, an der Wand der Geschirrschrank; rechts daneben das WC. In der Küchenwand die Durchreiche, davor der lange Holztresen mit Kaffeemaschine, Gläsern und Flaschen und vier Hockern; Darlene dahinter, die Kasse am rechten Tresenende zum Gast hin. Rechts Darlenes Laden mit Postkartenständer und Regalen vor der Wand, davor der lange Varianten-Tisch mit drei Brettern und Hockern ringsum. Links unten zwei runde Tische mit Stühlen, rechts unten Novas Ecktisch, ein Spielautomat. Unten die Glastür mit Fußmatte.",
   "wand": "holz",
   "boden": "dielen",
   "raster": [
@@ -90,16 +90,6 @@
       "versatz": [0, 2]
     },
     {
-      "moebel": "mf9Vorrat99",
-      "feld": [12, 1],
-      "bauteil_ok": true
-    },
-    {
-      "moebel": "mf9Vorrat102",
-      "feld": [13, 1],
-      "bauteil_ok": true
-    },
-    {
       "moebel": "wzTuer",
       "feld": [15, 8],
       "an_wand": true
@@ -147,19 +137,19 @@
       "moebel": "ld5Glaeser",
       "feld": [0, 0],
       "auf": "theke",
-      "versatz": [-10, 1]
+      "versatz": [-16, 1]
     },
     {
       "moebel": "ld5Flaschen",
       "feld": [0, 0],
       "auf": "theke",
-      "versatz": [20, 1]
+      "versatz": [10, 1]
     },
     {
       "moebel": "ld5Glaeser",
       "feld": [0, 0],
       "auf": "theke",
-      "versatz": [44, 1]
+      "versatz": [30, 1]
     },
     {
       "moebel": "ld5Barhocker",
@@ -184,15 +174,6 @@
       "feld": [9, 12],
       "vorn": true,
       "versatz": [0, -9]
-    },
-    {
-      "moebel": "mf5Kassentheke",
-      "feld": [10, 9]
-    },
-    {
-      "moebel": "rvZeitungsregal",
-      "feld": [16, 7],
-      "bauteil_ok": true
     },
     {
       "moebel": "mf9Vorrat100",
@@ -325,6 +306,38 @@
     {
       "moebel": "mf8Spielautomat",
       "feld": [22, 9]
+    },
+    {
+      "moebel": "mf5Buffet",
+      "feld": [12, 2]
+    },
+    {
+      "moebel": "cr9Arbeitstisch",
+      "feld": [11, 4],
+      "id": "arbeit"
+    },
+    {
+      "moebel": "mf5Brotbrett",
+      "feld": [0, 0],
+      "auf": "arbeit",
+      "versatz": [-6, 0]
+    },
+    {
+      "moebel": "mf5Geschirr",
+      "feld": [0, 0],
+      "auf": "arbeit",
+      "versatz": [8, 0]
+    },
+    {
+      "moebel": "cc4Kasse",
+      "feld": [0, 0],
+      "auf": "theke",
+      "versatz": [52, 1]
+    },
+    {
+      "moebel": "cr9Postkartenstaender",
+      "feld": [16, 8],
+      "bauteil_ok": true
     }
   ],
   "ausloeser": [
@@ -374,12 +387,12 @@
     {
       "name": "fernfahrer",
       "typ": "statist",
-      "feld": [12, 12],
+      "feld": [6, 12],
       "eigenschaften": {
-        "tun": "sitzt am Tresen über einem Kaffee",
+        "tun": "steht zwischen den Hockern am Tresen über einem Kaffee",
         "wann": "tag",
-        "von": "12,12",
-        "bis": "12,12",
+        "von": "6,12",
+        "bis": "6,12",
         "sagt": "statist.crossroads.raststaette.fernfahrer"
       }
     },
@@ -398,12 +411,12 @@
     {
       "name": "schausteller",
       "typ": "statist",
-      "feld": [10, 15],
+      "feld": [21, 10],
       "eigenschaften": {
-        "tun": "isst Pfannkuchen und zählt Lose",
+        "tun": "steht am Spielautomaten und zählt seine Lose",
         "wann": "tag",
-        "von": "10,15",
-        "bis": "10,15",
+        "von": "21,10",
+        "bis": "21,10",
         "sagt": "statist.crossroads.raststaette.schausteller"
       }
     }

@@ -1,10 +1,10 @@
 {
   "karte": "wegSummitCrossroads.geysirbecken",
   "art": "aussen",
-  "beschreibung": "Variante C, reich: Dichter Kiefernwald, die Ranger-Station mit Häuschen, Rätseltafel, Bank und Warnschild am offenen Tor (S10). Sechs Sinterinseln mit vielen Geysirkegeln, die Stege springen von Insel zu Insel; die Bisons stehen auf der großen Insel in der Mitte. Im Süden zwei Weiden mit Zäunen, Wildblumen, Bänke unter Kiefern. Sinterinseln mit Geysirkegeln, Dampf über dem Wasser, Bisons auf der Insel und der Weide.",
+  "beschreibung": "Dichter Kiefernwald, die Ranger-Station mit Häuschen, Rätseltafel, Bank und Warnschild am offenen Tor (S10). Dahinter das Geysirbecken: heiße Quellen mit hellem Sinterwulst, orangem Bakteriensaum und flachem, türkisem Rand, dazwischen weite Sinterflächen mit vielen Geysirkegeln. Ein Bohlenweg läuft im Zickzack zwischen den Becken hindurch, über zwei Abflussrinnen führen kurze Stege. In der Mitte der Infoplatz mit Bänken und Tafel am Bootsschuppen, auf der Sinterinsel östlich des Wegs grasen Bisons. Im Süden zwei Weiden mit Zäunen, Wildblumen, Bänke unter Kiefern.",
   "boden": "gras",
   "wandart": "gras",
-  "ufer": "stein",
+  "ufer": "sinter",
   "boeden": {
     "e": "erde",
     "s": "sinter",
@@ -32,112 +32,112 @@
     "#.............ee.............#",
     "#.............ee.............#",
     "#.............ee.............#",
-    "#.............ee.............#",
-    "#.............ee.............#",
+    "#......s......ee.....s.......#",
+    "#......ss..s..ee.s..sss......#",
+    "#.s...sssssss.ddssssssss..ss.#",
+    "#sss.sssssssssddsssssssssssss#",
+    "#sssss~~ssssssddsssssssssssss#",
+    "#ssss~~~~~ssssddsssssssssssss#",
+    "#ss~~~~~~~ssssddsssssssssssss#",
+    "#ss~~~~~~~ssssddsssssssssssss#",
+    "#ss~~~~~~~ssssddsssssssssssss#",
+    "#ss~~~~~~~ssssddddddddddsssss#",
+    "#ss~~~~~~sssssddddddddddsssss#",
+    "#sss~~~~sssssssssssssddssssss#",
+    "#ssssssssssssssssssssddssssss#",
+    "#ssssssssssssssssssssddss~~ss#",
+    "#sssssssssss~~sssssssdds~~~ss#",
+    "#ssssssssss~~~~~sssssdds~~~ss#",
+    "#ssssssssss~~~~~~ssssdds~~~ss#",
+    "#ssssssssss~~~~~~~sssdds~~~ss#",
+    "#ssssssssss~~~~~~~sssdds~~~ss#",
+    "#ssssssssss~~~~~~~sssdds~~~ss#",
+    "#sssssssssss~~~ssssssdds~~~ss#",
+    "#ssssssssssssssssssssddssssss#",
+    "#ssssssssssssssssssssddssssss#",
+    "#sssssssddddddddddddddddsssss#",
+    "#sssssssddddddddddddddddsssss#",
+    "#ss~~sssddsssssssssssssssssss#",
+    "#ss~~~ssddsssssssssssssssssss#",
+    "#ss~~~ssddsss~~~~~~ssssssssss#",
+    "#ss~~~ssddss~~~~~~~~sssssssss#",
+    "#ss~~~ssddss~~~~~~~~~ssssssss#",
+    "#ss~~~ssddss~~~~~~~~~ssssssss#",
+    "#ss~~~ssddss~~~~~~~~sssssssss#",
+    "#ss~~~~sddsss~~~~~~~sssssssss#",
+    "#ss~~~~sddssss~~~~~ssssssssss#",
+    "#ss~~~~sddsssssssssssssssssss#",
+    "#ss~~~ssddsssssssssssssssssss#",
+    "#sssssssddsssssssssssssssssss#",
+    "#sssssssddddddddddddddsssssss#",
+    "#sssssssddddddddddddddsssssss#",
+    "#ssssssssssssssssssddssssssss#",
+    "#ssssssssssssssssssddssssssss#",
     "#ssssssssssssssssssssssssssss#",
     "#ssssssssssssssssssssssssssss#",
-    "#sssssssss~~~~hh~~~~sssssssss#",
-    "#sssssssss~~~~hh~~~~sssssssss#",
-    "#sssssssss~~~~hh~~~~sssssssss#",
-    "#sssssssss~~~~hh~~~~sssssssss#",
-    "#sssssssss~~~~hh~~~~sssssssss#",
-    "#sssssssss~~~~hh~~~~sssssssss#",
-    "#sssssssss~~~~hh~~~~sssssssss#",
-    "#sssssssss~~~~hh~~~~sssssssss#",
-    "#sssssssss~~~~hh~~~~sssssssss#",
-    "#sssssssss~~~~hh~~~~sssssssss#",
-    "#sssssssss~~~~hh~~~~sssssssss#",
-    "#sssssssss~~~~hh~~~~sssssssss#",
-    "#ssssssssssssssssssssssssssss#",
-    "#ssssssssssssssssssssssssssss#",
-    "#ssssssssssssssssssssssssssss#",
-    "#ssssssssssssssssssssssssssss#",
-    "#ssssssssssssssssssssssssssss#",
-    "#ssssssssssssssssssssssssssss#",
-    "#ssssssssssssssssssssssssssss#",
-    "#ssssssssssssssssssssssssssss#",
-    "#ssssssssssssssssssssssssssss#",
-    "#ssssssssssssssssssssssssssss#",
-    "#~~~~~hh~~~~sssss~~~~~~~~~~~~#",
-    "#~~~~~hh~~~~sssss~~~~~~~~~~~~#",
-    "#~~~~~hh~~~~sssss~~~~~~~~~~~~#",
-    "#~~~~~hh~~~~sssss~~~~~~~~~~~~#",
-    "#~~~~~hh~~~~sssss~~~~~~~~~~~~#",
-    "#~~~~~hh~~~~sssss~~~~~~~~~~~~#",
-    "#~~~~~hh~~~~sssss~~~~~~~~~~~~#",
-    "#~~~~~hh~~~~sssss~~~~~~~~~~~~#",
-    "#~~~~~hh~~~~sssss~~~~~~~~~~~~#",
-    "#~~~~~hh~~~~sssss~~~~~~~~~~~~#",
-    "#ssssssssssssssssssssssssssss#",
-    "#ssssssssssssssssssssssssssss#",
-    "#ssssssssssssssssssssssssssss#",
-    "#ssssssssssssssssssssssssssss#",
-    "#ssssssssssssssssssdddddddsss#",
-    "#ssssssssssssssssssdddddddsss#",
-    "#ssssssssssssssssssdddddddsss#",
-    "#ssssssssssssssssssdddddddsss#",
-    "#~~~~~~sssss~~~~hh~~~~sssssss#",
-    "#~~~~~~sssss~~~~hh~~~~sssssss#",
-    "#~~~~~~sssss~~~~hh~~~~sssssss#",
-    "#~~~~~~sssss~~~~hh~~~~sssssss#",
-    "#~~~~~~sssss~~~~hh~~~~sssssss#",
-    "#~~~~~~sssss~~~~hh~~~~sssssss#",
-    "#~~~~~~sssss~~~~hh~~~~sssssss#",
-    "#~~~~~~sssss~~~~hh~~~~sssssss#",
-    "#~~~~~~sssss~~~~hh~~~~sssssss#",
-    "#~~~~~~sssss~~~~hh~~~~sssssss#",
-    "#ssssssssssssssssssssssssssss#",
-    "#ssssssssssssssssssssssssssss#",
-    "#ssssssssssssssssssssssssssss#",
-    "#ssssssssssssssssssssssssssss#",
-    "#ssssssssssssssssssssssssssss#",
-    "#ssssssssssssssssssssssssssss#",
-    "#ssssssssssssssssssssssssssss#",
-    "#ssssssssssssssssssssssssssss#",
-    "#sss~~~~hh~~~~sssssssssssssss#",
-    "#sss~~~~hh~~~~sssssssssssssss#",
-    "#sss~~~~hh~~~~sssssssssssssss#",
-    "#sss~~~~hh~~~~sssssssssssssss#",
-    "#ssssssssssssssssssssssssssss#",
-    "#ssssssssssssssssssssssssssss#",
-    "#ssssssssssssssssssssssssssss#",
-    "#ssssssssssssssssssssssssssss#",
-    "#ssssssssssssssssssssssssssss#",
-    "#ssssssssssssssssssssssssssss#",
-    "#ssssssssssssssssssssssssssss#",
-    "#ssssssssssssssssssssssssssss#",
-    "#ssssssssssssssssssssssssssss#",
-    "#ssssssssssssssssssssssssssss#",
-    "#ssssssssssssssssssssssssssss#",
-    "#ssssssssssssssssssssssssssss#",
-    "#ssssssssssssssssssssssssssss#",
-    "#~~~~~~~sssss~~~~hh~~~~ssssss#",
-    "#~~~~~~~sssss~~~~hh~~~~ssssss#",
-    "#~~~~~~~sssss~~~~hh~~~~ssssss#",
-    "#~~~~~~~sssss~~~~hh~~~~ssssss#",
-    "#~~~~~~~sssss~~~~hh~~~~ssssss#",
-    "#~~~~~~~sssss~~~~hh~~~~ssssss#",
-    "#~~~~~~~sssss~~~~hh~~~~ssssss#",
-    "#~~~~~~~sssss~~~~hh~~~~ssssss#",
-    "#~~~~~~~sssss~~~~hh~~~~ssssss#",
-    "#ssssssssssssssssssssssssssss#",
-    "#ssssssssssssssssssssssssssss#",
-    "#ssssssssssssssssssssssssssss#",
-    "#ssssssssssssssssssssssssssss#",
-    "#ssssssssssssssssssssssssssss#",
-    "#ssssssssssssssssssssssssssss#",
-    "#ssssssssssssssssssssssssssss#",
-    "#~~~~~~sssss~~~~hh~~~~sssssss#",
-    "#~~~~~~sssss~~~~hh~~~~sssssss#",
-    "#~~~~~~sssss~~~~hh~~~~sssssss#",
-    "#~~~~~~sssss~~~~hh~~~~sssssss#",
-    "#~~~~~~sssss~~~~hh~~~~sssssss#",
-    "#~~~~~~sssss~~~~hh~~~~sssssss#",
-    "#~~~~~~sssss~~~~hh~~~~sssssss#",
-    "#~~~~~~sssss~~~~hh~~~~sssssss#",
-    "#~~~~~~sssss~~~~hh~~~~sssssss#",
-    "#...........ee...............#",
-    "#...........ee...............#",
+    "#sssssssssssssssssssssddsssss#",
+    "#sss~~~~ssssssssssssssddsssss#",
+    "#ss~~~~~~sssssssssssssddsssss#",
+    "#ss~~~~~~~ssssssssssssddsssss#",
+    "#ss~~~~~~~~sssssssssssdds~~ss#",
+    "#ss~~~~~~~~sssssssssssdds~~ss#",
+    "#ss~~~~~~~~sssssssssssdds~~ss#",
+    "#ss~~~~~sssss~~~~sssssdds~~ss#",
+    "#ss~~~~ssssss~~~~~~sssdds~~ss#",
+    "#sss~~~ssssss~~~~~~sssdds~~ss#",
+    "#ssssssssssss~~~~~~sssdds~~ss#",
+    "#ssssssssssss~~~~~~sssdds~~ss#",
+    "#ssssssssssss~~~~~ssssdds~~ss#",
+    "#sssssssssssssssssssssddsssss#",
+    "#sssssssssssssssssssssddsssss#",
+    "#sssssssssssssssssssssddsssss#",
+    "#sssssssssdddddddddddddddssss#",
+    "#sssssssssdddddddddddddddssss#",
+    "#sssssssssddsssssssssssssssss#",
+    "#sssssssssddssssssssssss~~~ss#",
+    "#sssssssssddsssssssssss~~~~ss#",
+    "#sss~~ssssddssssssssss~~~~~ss#",
+    "#ss~~~~~ssddssssssssss~~~~~ss#",
+    "#ss~~~~~~~hh~~sssssssss~~~~ss#",
+    "#ss~~~~~~~hh~~sssssssssss~~ss#",
+    "#ss~~~~~~~hh~~sssssssssssssss#",
+    "#ss~~~~~ssddsssssssssssssssss#",
+    "#ss~~~~~ssddsssssssssssssssss#",
+    "#sss~~~~ssddsssssssssssssssss#",
+    "#ssss~~~ssddsssssssssssssssss#",
+    "#sssssssssddsssssssssssssssss#",
+    "#sssssssssddsssssssssssssssss#",
+    "#sssssssssddddddddddsssssssss#",
+    "#sssssssssddddddddddsssssssss#",
+    "#ssssssssssssssssddssssssssss#",
+    "#ssssssssssssssssddssssssssss#",
+    "#ssssssssssssssssddssssssssss#",
+    "#sss~~~sssss~~~ssddsss~~~~sss#",
+    "#ss~~~~sssss~~~ssddss~~~~~~ss#",
+    "#ss~~~~sssss~~~ssdds~~~~~~~ss#",
+    "#ss~~~~sssss~~~ssdds~~~~~~~ss#",
+    "#ss~~~~ssssss~~~sddss~~~~~~ss#",
+    "#ss~~~~ssssss~~~sddsss~~~~~ss#",
+    "#ss~~~~~~sssss~~sddsss~~~~~ss#",
+    "#ss~~~~~~ssssssssddsss~~~~~ss#",
+    "#ssss~~ssssssssssddssssssssss#",
+    "#sssssssssssddddddddsssssssss#",
+    "#sssssssssssddddddddsssssssss#",
+    "#sssssssssssddsssssssssssssss#",
+    "#sssssssssssddssssss~~sssssss#",
+    "#sssssssssssddsssss~~~~~sssss#",
+    "#ss~~~~~~sssddssss~~~~~~~~~ss#",
+    "#ss~~~~~~~~~hh~~~~~~~~~~~~~ss#",
+    "#ss~~~~~~~~~hh~~~~~~~~~~~~~ss#",
+    "#ss~~~~~~~~~hh~~~~~~~~~~~~sss#",
+    "#ss~~~~~~~ssddsssss~~~~~~~sss#",
+    "#sss~~~~~sssddssssss~~~~~ssss#",
+    "#ssss~~~ssssddssssssss~~sssss#",
+    "#sssssssssssddsssssssssssssss#",
+    "#sssssssssssddsssssss..ssssss#",
+    "#ssss..s...sddssssss....sssss#",
+    "#sss........eess..s......s..s#",
+    "#ss.........ee...............#",
     "#...........ee...............#",
     "#...........ee...............#",
     "#...........ee...............#",
@@ -184,34 +184,6 @@
     "##############ee##############"
   ],
   "objekte": [
-    {
-      "moebel": "by6StegLaengs10",
-      "feld": [14, 24]
-    },
-    {
-      "moebel": "by6StegLaengs2",
-      "feld": [14, 34]
-    },
-    {
-      "moebel": "by6StegLaengs10",
-      "feld": [6, 46]
-    },
-    {
-      "moebel": "by6StegLaengs10",
-      "feld": [16, 64]
-    },
-    {
-      "moebel": "by6StegLaengs4",
-      "feld": [8, 82]
-    },
-    {
-      "moebel": "by6StegLaengs9",
-      "feld": [17, 99]
-    },
-    {
-      "moebel": "by6StegLaengs9",
-      "feld": [16, 115]
-    },
     {
       "moebel": "cc3ZaunEnde",
       "feld": [1, 12],
@@ -353,10 +325,6 @@
       "feld": [20, 16]
     },
     {
-      "moebel": "sx7Geysir",
-      "feld": [21, 56]
-    },
-    {
       "moebel": "cc4Bootsschuppen",
       "feld": [17, 56]
     },
@@ -371,58 +339,6 @@
     {
       "moebel": "cr8InfotafelDach",
       "feld": [24, 60]
-    },
-    {
-      "moebel": "sx7Geysir",
-      "feld": [4, 38]
-    },
-    {
-      "moebel": "sx7Geysir",
-      "feld": [9, 40]
-    },
-    {
-      "moebel": "sx7Geysir",
-      "feld": [13, 42]
-    },
-    {
-      "moebel": "sx7Geysir",
-      "feld": [4, 76]
-    },
-    {
-      "moebel": "sx7Geysir",
-      "feld": [10, 78]
-    },
-    {
-      "moebel": "sx7Geysir",
-      "feld": [12, 90]
-    },
-    {
-      "moebel": "sx7Geysir",
-      "feld": [23, 92]
-    },
-    {
-      "moebel": "sx7Geysir",
-      "feld": [17, 110]
-    },
-    {
-      "moebel": "sx7Geysir",
-      "feld": [25, 111]
-    },
-    {
-      "moebel": "felsKlein",
-      "feld": [7, 37]
-    },
-    {
-      "moebel": "felsKlein",
-      "feld": [16, 57]
-    },
-    {
-      "moebel": "felsKlein",
-      "feld": [3, 77]
-    },
-    {
-      "moebel": "felsKlein",
-      "feld": [25, 96]
     },
     {
       "moebel": "cc3ZaunEnde",
@@ -755,10 +671,6 @@
     },
     {
       "moebel": "wg4Wildblumen",
-      "feld": [26, 126]
-    },
-    {
-      "moebel": "wg4Wildblumen",
       "feld": [8, 139]
     },
     {
@@ -788,10 +700,6 @@
     {
       "moebel": "wg4Gras",
       "feld": [3, 140]
-    },
-    {
-      "moebel": "wg4BlumeGelb",
-      "feld": [1, 125]
     },
     {
       "moebel": "wg4BlumeGelb",
@@ -922,133 +830,174 @@
       "feld": [18, 161]
     },
     {
-      "moebel": "sx7Dampf",
-      "feld": [15, 118],
-      "vorn": true
-    },
-    {
-      "moebel": "sx7Dampf",
-      "feld": [13, 115],
-      "vorn": true
-    },
-    {
-      "moebel": "sx7Dampf",
-      "feld": [6, 84],
-      "vorn": true
-    },
-    {
-      "moebel": "sx7Geysir",
-      "feld": [23, 31]
-    },
-    {
-      "moebel": "felsKlein",
-      "feld": [24, 28]
-    },
-    {
-      "moebel": "felsKlein",
-      "feld": [9, 32]
-    },
-    {
-      "moebel": "sx7Geysir",
-      "feld": [24, 35]
-    },
-    {
-      "moebel": "felsKlein",
-      "feld": [7, 42]
-    },
-    {
-      "moebel": "felsKlein",
-      "feld": [3, 45]
-    },
-    {
-      "moebel": "sx7Geysir",
-      "feld": [13, 53]
-    },
-    {
-      "moebel": "sx7Geysir",
-      "feld": [13, 49]
-    },
-    {
-      "moebel": "felsKlein",
-      "feld": [5, 62]
-    },
-    {
-      "moebel": "sx7Geysir",
-      "feld": [23, 63]
-    },
-    {
-      "moebel": "sx7Geysir",
-      "feld": [25, 70]
-    },
-    {
-      "moebel": "sx7Geysir",
-      "feld": [8, 71]
-    },
-    {
-      "moebel": "sx7Geysir",
-      "feld": [17, 77]
-    },
-    {
-      "moebel": "felsKlein",
-      "feld": [15, 75]
-    },
-    {
-      "moebel": "sx7Geysir",
-      "feld": [7, 87]
-    },
-    {
-      "moebel": "felsKlein",
-      "feld": [15, 82]
-    },
-    {
-      "moebel": "felsKlein",
-      "feld": [3, 90]
-    },
-    {
-      "moebel": "sx7Geysir",
-      "feld": [18, 90]
-    },
-    {
-      "moebel": "sx7Geysir",
-      "feld": [10, 97]
-    },
-    {
-      "moebel": "felsKlein",
-      "feld": [16, 97]
-    },
-    {
-      "moebel": "sx7Geysir",
-      "feld": [8, 104]
-    },
-    {
-      "moebel": "sx7Geysir",
-      "feld": [4, 107]
-    },
-    {
-      "moebel": "sx7Geysir",
-      "feld": [8, 118]
-    },
-    {
-      "moebel": "sx7Geysir",
-      "feld": [23, 117]
-    },
-    {
-      "moebel": "felsKlein",
-      "feld": [9, 123]
-    },
-    {
-      "moebel": "sx7BisonRechts",
-      "feld": [10, 94]
-    },
-    {
-      "moebel": "sx7BisonLiegend",
-      "feld": [3, 140]
-    },
-    {
       "moebel": "cr8Finkenzeichen",
       "feld": [15, 63],
       "vorn": true,
       "versatz": [0, 0]
+    },
+    {
+      "moebel": "by6StegLaengs3",
+      "feld": [10, 86]
+    },
+    {
+      "moebel": "by6StegLaengs3",
+      "feld": [12, 115]
+    },
+    {
+      "moebel": "sx7Geysir",
+      "feld": [25, 28]
+    },
+    {
+      "moebel": "sx7Geysir",
+      "feld": [16, 32]
+    },
+    {
+      "moebel": "sx7Geysir",
+      "feld": [8, 34]
+    },
+    {
+      "moebel": "sx7Geysir",
+      "feld": [22, 46]
+    },
+    {
+      "moebel": "sx7Geysir",
+      "feld": [21, 52]
+    },
+    {
+      "moebel": "sx7Geysir",
+      "feld": [2, 60]
+    },
+    {
+      "moebel": "sx7Geysir",
+      "feld": [10, 61]
+    },
+    {
+      "moebel": "sx7Geysir",
+      "feld": [25, 63]
+    },
+    {
+      "moebel": "sx7Geysir",
+      "feld": [17, 65]
+    },
+    {
+      "moebel": "sx7Geysir",
+      "feld": [12, 66]
+    },
+    {
+      "moebel": "sx7Geysir",
+      "feld": [3, 73]
+    },
+    {
+      "moebel": "sx7Geysir",
+      "feld": [9, 74]
+    },
+    {
+      "moebel": "sx7Geysir",
+      "feld": [2, 80]
+    },
+    {
+      "moebel": "sx7Geysir",
+      "feld": [6, 80]
+    },
+    {
+      "moebel": "sx7Geysir",
+      "feld": [15, 82]
+    },
+    {
+      "moebel": "sx7Geysir",
+      "feld": [22, 87]
+    },
+    {
+      "moebel": "sx7Geysir",
+      "feld": [15, 88]
+    },
+    {
+      "moebel": "sx7Geysir",
+      "feld": [21, 96]
+    },
+    {
+      "moebel": "sx7Geysir",
+      "feld": [4, 96]
+    },
+    {
+      "moebel": "sx7Geysir",
+      "feld": [10, 104]
+    },
+    {
+      "moebel": "sx7Geysir",
+      "feld": [8, 110]
+    },
+    {
+      "moebel": "sx7Geysir",
+      "feld": [25, 110]
+    },
+    {
+      "moebel": "sx7Geysir",
+      "feld": [15, 118]
+    },
+    {
+      "moebel": "sx7Geysir",
+      "feld": [25, 119]
+    },
+    {
+      "moebel": "sx9Bison",
+      "feld": [15, 86]
+    },
+    {
+      "moebel": "sx9BisonLiegend",
+      "feld": [19, 86]
+    },
+    {
+      "moebel": "sx9Bison",
+      "feld": [25, 88]
+    },
+    {
+      "moebel": "felsKlein",
+      "feld": [7, 37]
+    },
+    {
+      "moebel": "felsKlein",
+      "feld": [19, 85]
+    },
+    {
+      "moebel": "felsKlein",
+      "feld": [7, 73]
+    },
+    {
+      "moebel": "felsKlein",
+      "feld": [10, 60]
+    },
+    {
+      "moebel": "felsKlein",
+      "feld": [6, 79]
+    },
+    {
+      "moebel": "felsKlein",
+      "feld": [21, 48]
+    },
+    {
+      "moebel": "felsKlein",
+      "feld": [10, 70]
+    },
+    {
+      "moebel": "felsKlein",
+      "feld": [14, 87]
+    },
+    {
+      "moebel": "felsKlein",
+      "feld": [21, 88]
+    },
+    {
+      "moebel": "felsKlein",
+      "feld": [8, 72]
+    },
+    {
+      "moebel": "sx9BisonLiegend",
+      "feld": [4, 140]
+    },
+    {
+      "moebel": "sx9Bison",
+      "feld": [6, 135]
     }
   ],
   "ausloeser": [
@@ -1111,26 +1060,6 @@
     }
   ],
   "belebung": [
-    {
-      "name": "bisonherde",
-      "typ": "tier",
-      "feld": [21, 92],
-      "eigenschaften": {
-        "von": "18,90",
-        "bis": "24,96",
-        "verhalten": "ausweichen"
-      }
-    },
-    {
-      "name": "bisonWeide",
-      "typ": "tier",
-      "feld": [5, 135],
-      "eigenschaften": {
-        "von": "3,130",
-        "bis": "9,145",
-        "verhalten": "sitzen"
-      }
-    },
     {
       "name": "raben",
       "typ": "tier",
@@ -1230,6 +1159,36 @@
         "bis": "20,158",
         "sagt": "statist.wegSummitCrossroads.geysirbecken.schachlehrerin",
         "zeigt": "unzickerSarapu"
+      }
+    },
+    {
+      "name": "falke",
+      "typ": "tier",
+      "feld": [20, 70],
+      "eigenschaften": {
+        "von": "4,60",
+        "bis": "26,80",
+        "verhalten": "fliegen"
+      }
+    },
+    {
+      "name": "kojote",
+      "typ": "tier",
+      "feld": [22, 135],
+      "eigenschaften": {
+        "von": "17,130",
+        "bis": "25,139",
+        "verhalten": "ausweichen"
+      }
+    },
+    {
+      "name": "praeriehunde",
+      "typ": "tier",
+      "feld": [24, 128],
+      "eigenschaften": {
+        "von": "20,126",
+        "bis": "27,130",
+        "verhalten": "flitzen"
       }
     }
   ],

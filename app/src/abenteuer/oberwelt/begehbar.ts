@@ -144,3 +144,52 @@ export function begehbar(
   return (x, y) =>
     x >= 0 && y >= 0 && x < karte.width && y < karte.height && !gesperrt.has(`${x},${y}`);
 }
+
+/** „12,7“ → { x: 12, y: 7 }; null bei fehlender oder kaputter Angabe. */
+function feldAus(wert: unknown): { readonly x: number; readonly y: number } | null {
+  if (typeof wert !== "string") return null;
+  const [x, y] = wert.split(",").map(Number);
+  return x !== undefined && y !== undefined && Number.isFinite(x) && Number.isFinite(y)
+    ? { x, y }
+    : null;
+}
+
+/** Laufweg eines Statisten oder Tiers: sein Feld und alle Kacheln, auf denen es je stehen kann. */
+export interface Laufweg {
+  readonly name: string;
+  readonly start: { readonly x: number; readonly y: number };
+  readonly felder: readonly { readonly x: number; readonly y: number }[];
+}
+
+/**
+ * Die Laufwege aller Statisten und Tiere, die den Helden aufhalten können (Wunsch des Autors,
+ * 10.11.2026: „Eine Figur darf nie den Weg auf Dauer versperren“). Ein Laufweg ist das Feld des
+ * Objekts und der Weg zwischen `von` und `bis`, erst waagerecht, dann senkrecht, in beiden
+ * Richtungen (belebungsbewegung.ts). Fliegende Tiere sperren nie, schwimmende liegen im Wasser,
+ * folgende halten den Helden nicht auf (haeltAuf); sie fehlen hier. Figuren stehen schon in `sperrkacheln`.
+ * Beispiel: Statist von 3,5 bis 6,7 → (3..6, 5), (6, 5..7), (3..6, 7), (3, 5..7).
+ */
+export function laufwege(karte: Tiledkarte, kachel: number): Laufweg[] {
+  const wege: Laufweg[] = [];
+  for (const o of karte.layers.flatMap((e) => e.objects ?? [])) {
+    if (o.type !== "statist" && o.type !== "tier") continue;
+    const wert = (n: string) => o.properties?.find((e) => e.name === n)?.value;
+    const frei = ["fliegen", "schwimmen", "folgen"].includes(String(wert("verhalten")));
+    if (o.type === "tier" && frei) continue;
+    const start = { x: Math.round((o.x ?? 0) / kachel), y: Math.round((o.y ?? 0) / kachel) };
+    const von = feldAus(wert("von")) ?? start;
+    const bis = feldAus(wert("bis")) ?? start;
+    const felder = new Map<string, { x: number; y: number }>([[`${start.x},${start.y}`, start]]);
+    const merke = (x: number, y: number) => felder.set(`${x},${y}`, { x, y });
+    for (let x = Math.min(von.x, bis.x); x <= Math.max(von.x, bis.x); x++) {
+      merke(x, von.y);
+      merke(x, bis.y);
+    }
+    for (let y = Math.min(von.y, bis.y); y <= Math.max(von.y, bis.y); y++) {
+      merke(von.x, y);
+      merke(bis.x, y);
+    }
+    wege.push({ name: o.name ?? "", start, felder: [...felder.values()] });
+  }
+  return wege;
+}

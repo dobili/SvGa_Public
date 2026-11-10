@@ -9536,7 +9536,7 @@
      "id": 30,
      "name": "drechslergeselle",
      "type": "statist",
-     "x": 48,
+     "x": 32,
      "y": 304,
      "width": 16,
      "height": 16,
@@ -9556,12 +9556,12 @@
       {
        "name": "von",
        "type": "string",
-       "value": "2,19"
+       "value": "1,19"
       },
       {
        "name": "bis",
        "type": "string",
-       "value": "5,19"
+       "value": "3,19"
       },
       {
        "name": "sagt",
@@ -9701,7 +9701,7 @@
      "id": 35,
      "name": "zeitungsjunge",
      "type": "statist",
-     "x": 0,
+     "x": 32,
      "y": 368,
      "width": 16,
      "height": 16,
@@ -9721,7 +9721,7 @@
       {
        "name": "von",
        "type": "string",
-       "value": "1,23"
+       "value": "2,23"
       },
       {
        "name": "bis",

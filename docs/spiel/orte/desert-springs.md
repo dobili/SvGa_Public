@@ -95,7 +95,7 @@ in B ein Pumpenhaus am Bahnsteig. Ihre Türen zeigen zum Gehweg, zum Hof oder zu
 
 **Leben (Regel 10.53):** 12 Statisten, 8 davon ansprechbar (`statist.desertSprings.aussen.*`):
 Touristen am Bahnhof, Busgast, Postbotin (Fernschach per Postkarte), Hilfssheriff (Läufer in
-Schlangenlinien, mit Antwort von Ambrose), Tankwart (Rochade), Rentnerin (Schah und schachmatt),
+Schlangenlinien, mit Antwort von Ambrose), Tankwart (Läufer quer übers Brett), Rentnerin (Schah und schachmatt),
 Kind (Gabel), Händlerin vor dem Antiquariat (Saavedra-Stellung 1895, zeigt die Vorführung
 `saavedraStellung`). Ohne Satz: Mechaniker, Trucker, Motelgast, Wanderin. Tiere: Hund,
 Eidechse, Geier, Roadrunner, Katze, Hühner.

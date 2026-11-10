@@ -118,6 +118,8 @@ Szene heißt die Datei in `inhalte/abenteuer/szenen/` ohne `.json`.
 - [ ] silicon-bay-aussen (Campus, jetzt 72 × 70) und silicon-bay-hafen (zweite Prüfung, mittel-3; Turm, Tunnel, Glasdeck, Läden zum Platz, Brüstung; Fähre schattiert, Hafenläden, Stützmauer; Datei `silicon-bay-aussen-hafen-2.md`)
 - [ ] crossroads-aussen, weg-summit-crossroads-praerie (Fahrzeuge nach 10.65: kurze Sichtprüfung, mittel-3)
 
+- [ ] silicon-bay-lobby, silicon-bay-serverraum (dritte Prüfung, nur Restpunkte, niedrig-1; Antworten in silicon-bay.md; `serverreihe_6` aus `niedrig1_runde9_karten.py` neu rendern, jetzt 160 px breit) und cedar-creek-aussen (nur Haltestelle: Wartehaus südlich der Busbucht, Antworten in cedar-creek.md)
+
 ## Erledigt
 
 - [x] ironwood-kantine (Test, Haupt-Chat)

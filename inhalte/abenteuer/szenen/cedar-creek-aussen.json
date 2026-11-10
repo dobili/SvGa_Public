@@ -108,8 +108,8 @@
       "versatz": [13, 0]
     },
     {
-      "moebel": "mfBushaltestelle",
-      "feld": [42, 16]
+      "moebel": "mf6Haltestelle",
+      "feld": [32, 28]
     },
     {
       "moebel": "cc5Poller",
@@ -511,7 +511,7 @@
     },
     {
       "moebel": "mf2ZederSchmal",
-      "feld": [35, 29]
+      "feld": [43, 16]
     },
     {
       "moebel": "mf2Zeder",
@@ -677,18 +677,18 @@
   "ausloeser": [
     {
       "name": "start",
-      "feld": [44, 19],
+      "feld": [34, 27],
       "eigenschaften": {
-        "richtung": "unten"
+        "richtung": "oben"
       }
     },
     {
       "name": "bushaltestelle",
-      "feld": [44, 19]
+      "feld": [34, 27]
     },
     {
       "name": "busZurueck",
-      "feld": [43, 19]
+      "feld": [33, 27]
     },
     {
       "name": "drechslereiTuer",
@@ -773,12 +773,12 @@
     {
       "name": "busfahrer",
       "typ": "statist",
-      "feld": [42, 21],
+      "feld": [38, 27],
       "eigenschaften": {
         "tun": "trinkt Kaffee aus der Thermoskanne",
         "wann": "tag",
-        "von": "42,21",
-        "bis": "44,21",
+        "von": "38,27",
+        "bis": "40,27",
         "sagt": "statist.cedarCreek.aussen.busfahrer"
       }
     },
@@ -946,11 +946,11 @@
     {
       "name": "eichhoernchen",
       "typ": "tier",
-      "feld": [31, 29],
+      "feld": [30, 31],
       "eigenschaften": {
         "verhalten": "flitzen",
-        "von": "30,29",
-        "bis": "32,29"
+        "von": "29,31",
+        "bis": "31,31"
       }
     }
   ],

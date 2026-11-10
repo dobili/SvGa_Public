@@ -1982,7 +1982,7 @@
     {
       "name": "leif",
       "typ": "statist",
-      "feld": [22, 11],
+      "feld": [21, 12],
       "eigenschaften": {
         "tun": "Leif Sorensen erklärt den Kindern die Schnitzeljagd",
         "wann": "tag"
@@ -1991,12 +1991,60 @@
     {
       "name": "pfadfinder",
       "typ": "statist",
-      "feld": [24, 11],
+      "feld": [25, 10],
       "eigenschaften": {
-        "von": "24,11",
+        "von": "25,10",
         "bis": "27,11",
         "tun": "drei Pfadfinderkinder suchen Kreidepfeile",
         "wann": "tag"
+      }
+    },
+    {
+      "name": "jaegerMitKamera",
+      "typ": "statist",
+      "feld": [86, 14],
+      "eigenschaften": {
+        "tun": "wartet mit der Kamera auf den Hirsch",
+        "wann": "morgen",
+        "sagt": "statist.wegCedarRiverton.zedernwald.jaegerMitKamera"
+      }
+    },
+    {
+      "name": "wanderpaar",
+      "typ": "statist",
+      "feld": [40, 13],
+      "eigenschaften": {
+        "tun": "streitet freundlich über die Karte",
+        "wann": "tag",
+        "sagt": "statist.wegCedarRiverton.zedernwald.wanderpaar"
+      }
+    },
+    {
+      "name": "vogelstimmenSammlerin",
+      "typ": "statist",
+      "feld": [120, 13],
+      "eigenschaften": {
+        "tun": "nimmt mit einem Mikrofon Vogelstimmen auf",
+        "wann": "morgen",
+        "sagt": "statist.wegCedarRiverton.zedernwald.vogelstimmenSammlerin"
+      }
+    },
+    {
+      "name": "hirsch",
+      "typ": "tier",
+      "feld": [95, 10],
+      "eigenschaften": {
+        "verhalten": "sitzen"
+      }
+    },
+    {
+      "name": "fuchs",
+      "typ": "tier",
+      "feld": [30, 16],
+      "eigenschaften": {
+        "verhalten": "flitzen",
+        "von": "27,16",
+        "bis": "33,16"
       }
     }
   ],

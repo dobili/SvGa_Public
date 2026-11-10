@@ -114,7 +114,6 @@
         "von": "4,6",
         "bis": "4,6",
         "tun": "räumt Wanderkarten ins Regal",
-        "wann": "tag",
         "sagt": "statist.summitCity.bergladen.ladenhilfe"
       }
     },
@@ -126,7 +125,6 @@
         "von": "9,6",
         "bis": "9,6",
         "tun": "probiert einen Wanderstock aus",
-        "wann": "tag",
         "sagt": "statist.summitCity.bergladen.kunde"
       }
     }

@@ -38,27 +38,27 @@
     "#aaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaa#",
     "#aaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaa#",
     "#aaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaa#",
-    "#.........aaaaaa...............................................#",
-    "#.aaaaaaaaaaaaaaaaaaaaaaaaa....................................#",
-    "#.aaaaaaaaaaaaaaaaaaaaaaaaa....................................#",
-    "#.aaaaaaaaaaaaaaaaaaaaaaaaa....................................#",
-    "#.aaaaaaaaaaaaaaaaaaaaaaaaa....................................#",
-    "#.aaaaaaaaaaaaaaaaaaaaaaaaa....................................#",
-    "#.aaaaaaaaaaaaaaaaaaaaaaaaa....................................#",
-    "#.aaaaaaaaaaaaaaaaaaaaaaaaa....................................#",
-    "#.aaaaaaaaaaaaaaaaaaaaaaaaa....................................#",
-    "#.aaaaaaaaaaaaaaaaaaaaaaaaa....................................#",
-    "#.aaaaaaaaaaaaaaaaaaaaaaaaa....................................#",
-    "#.aaaaaaaaaaaaaaaaaaaaaaaaa....................................#",
-    "#.aaaaaaaaaaaaaaaaaaaaaaaaa....................................#",
-    "#.aaaaaaaaaaaaaaaaaaaaaaaaa....................................#",
-    "#.aaaaaaaaaaaaaaaaaaaaaaaaa....................................#",
-    "#.aaaaaaaaaaaaaaaaaaaaaaaaa....................................#",
-    "#.aaaaaaaaaaaaaaaaaaaaaaaaa....................................#",
-    "#.aaaaaaaaaaaaaaaaaaaaaaaaa....................................#",
-    "#.aaaaaaaaaaaaaaaaaaaaaaaaa....................................#",
-    "#..............................................................#",
-    "#..............................................................#",
+    "#.........aaaaaa..................kk...........................#",
+    "#.aaaaaaaaaaaaaaaaaaaaaaaaa.......kk...........................#",
+    "#.aaaaaaaaaaaaaaaaaaaaaaaaa.......kk...........................#",
+    "#.aaaaaaaaaaaaaaaaaaaaaaaaa.......kk...........................#",
+    "#.aaaaaaaaaaaaaaaaaaaaaaaaa.......kk...........................#",
+    "#.aaaaaaaaaaaaaaaaaaaaaaaaa.......kk...........................#",
+    "#.aaaaaaaaaaaaaaaaaaaaaaaaa.......kk...........................#",
+    "#.aaaaaaaaaaaaaaaaaaaaaaaaa.......kkkkkkkkkkkkkkkkkkkkkkkkkkkk.#",
+    "#.aaaaaaaaaaaaaaaaaaaaaaaaa.......kkkkkkkkkkkkkkkkkkkkkkkkkkkk.#",
+    "#.aaaaaaaaaaaaaaaaaaaaaaaaa.......kk...........................#",
+    "#.aaaaaaaaaaaaaaaaaaaaaaaaa.......kk...........................#",
+    "#.aaaaaaaaaaaaaaaaaaaaaaaaa.......kk...........................#",
+    "#.aaaaaaaaaaaaaaaaaaaaaaaaa.......kk...........................#",
+    "#.aaaaaaaaaaaaaaaaaaaaaaaaa.......kk...........................#",
+    "#.aaaaaaaaaaaaaaaaaaaaaaaaa.......kk...........................#",
+    "#.aaaaaaaaaaaaaaaaaaaaaaaaa.......kk...........................#",
+    "#.aaaaaaaaaaaaaaaaaaaaaaaaa.......kk...........................#",
+    "#.aaaaaaaaaaaaaaaaaaaaaaaaa.......kk...........................#",
+    "#.aaaaaaaaaaaaaaaaaaaaaaaaa.......kk...........................#",
+    "#.................................kkkkkkkkkkkkkkkkkkkkkkkkkkkk.#",
+    "#.................................kkkkkkkkkkkkkkkkkkkkkkkkkkkk.#",
     "################################################################"
   ],
   "objekte": [
@@ -107,7 +107,7 @@
     },
     {
       "moebel": "cr7Motel",
-      "feld": [40, 30]
+      "feld": [44, 26]
     },
     {
       "moebel": "cr7WegweiserStaedte",
@@ -238,19 +238,51 @@
     },
     {
       "moebel": "rvPicknicktisch",
-      "feld": [34, 40]
+      "feld": [28, 40]
     },
     {
       "moebel": "cr7ViehgatterQuer",
       "feld": [58, 22]
     },
     {
-      "moebel": "wg4GrasB",
-      "feld": [38, 35]
+      "moebel": "ds6Garage",
+      "feld": [37, 27]
     },
     {
-      "moebel": "wg4Wildblumen",
-      "feld": [41, 38]
+      "moebel": "iw5Eisenwaren",
+      "feld": [38, 36]
+    },
+    {
+      "moebel": "iw5Kirche",
+      "feld": [47, 36]
+    },
+    {
+      "moebel": "rv5Lagerhaus",
+      "feld": [53, 39]
+    },
+    {
+      "moebel": "wr5Huehnerstall",
+      "feld": [59, 40]
+    },
+    {
+      "moebel": "ds6Wohnwagen",
+      "feld": [57, 1]
+    },
+    {
+      "moebel": "cc4Drechslerei",
+      "feld": [17, 0]
+    },
+    {
+      "moebel": "wr5Huehnerstall",
+      "feld": [35, 3]
+    },
+    {
+      "moebel": "iw5Umkleide",
+      "feld": [40, 3]
+    },
+    {
+      "moebel": "wg4GrasB",
+      "feld": [38, 35]
     },
     {
       "moebel": "wg4Gras",
@@ -262,39 +294,11 @@
     },
     {
       "moebel": "wg4Wildblumen",
-      "feld": [35, 36]
-    },
-    {
-      "moebel": "wg4GrasB",
-      "feld": [56, 34]
-    },
-    {
-      "moebel": "wg4Wildblumen",
       "feld": [48, 1]
-    },
-    {
-      "moebel": "wg4Gras",
-      "feld": [20, 2]
     },
     {
       "moebel": "wg4BlumeGelb",
       "feld": [31, 39]
-    },
-    {
-      "moebel": "wg4Wildblumen",
-      "feld": [46, 28]
-    },
-    {
-      "moebel": "wg4Wildblumen",
-      "feld": [47, 37]
-    },
-    {
-      "moebel": "wg4BlumeGelb",
-      "feld": [62, 44]
-    },
-    {
-      "moebel": "wg4Wildblumen",
-      "feld": [50, 41]
     },
     {
       "moebel": "wg4BlumeGelb",
@@ -305,20 +309,8 @@
       "feld": [44, 2]
     },
     {
-      "moebel": "wg4BlumeGelb",
-      "feld": [39, 43]
-    },
-    {
       "moebel": "wg4Gras",
       "feld": [46, 42]
-    },
-    {
-      "moebel": "wg4GrasB",
-      "feld": [41, 37]
-    },
-    {
-      "moebel": "wg4BlumeGelb",
-      "feld": [19, 8]
     },
     {
       "moebel": "wg4Gras",
@@ -327,14 +319,6 @@
     {
       "moebel": "wg4Gras",
       "feld": [27, 10]
-    },
-    {
-      "moebel": "wg4Wildblumen",
-      "feld": [56, 8]
-    },
-    {
-      "moebel": "wg4Gras",
-      "feld": [39, 40]
     },
     {
       "moebel": "wg4Gras",
@@ -357,40 +341,8 @@
       "feld": [10, 45]
     },
     {
-      "moebel": "wg4BlumeGelb",
-      "feld": [24, 9]
-    },
-    {
-      "moebel": "wg4Wildblumen",
-      "feld": [42, 39]
-    },
-    {
-      "moebel": "wg4BlumeGelb",
-      "feld": [28, 41]
-    },
-    {
       "moebel": "wg4GrasB",
       "feld": [60, 20]
-    },
-    {
-      "moebel": "wg4Gras",
-      "feld": [51, 27]
-    },
-    {
-      "moebel": "wg4BlumeGelb",
-      "feld": [39, 46]
-    },
-    {
-      "moebel": "wg4Gras",
-      "feld": [38, 4]
-    },
-    {
-      "moebel": "wg4BlumeGelb",
-      "feld": [41, 30]
-    },
-    {
-      "moebel": "wg4BlumeGelb",
-      "feld": [38, 39]
     },
     {
       "moebel": "wg4Gras",
@@ -399,10 +351,6 @@
     {
       "moebel": "wg4GrasB",
       "feld": [21, 12]
-    },
-    {
-      "moebel": "wg4Wildblumen",
-      "feld": [42, 45]
     },
     {
       "moebel": "wg4GrasB",
@@ -429,10 +377,6 @@
       "feld": [13, 1]
     },
     {
-      "moebel": "wg4Wildblumen",
-      "feld": [61, 40]
-    },
-    {
       "moebel": "wg4GrasB",
       "feld": [56, 5]
     },
@@ -453,14 +397,6 @@
       "feld": [1, 31]
     },
     {
-      "moebel": "wg4Gras",
-      "feld": [34, 35]
-    },
-    {
-      "moebel": "wg4Gras",
-      "feld": [22, 9]
-    },
-    {
       "moebel": "wg4BlumeGelb",
       "feld": [56, 35]
     },
@@ -475,10 +411,6 @@
     {
       "moebel": "wg4GrasB",
       "feld": [53, 1]
-    },
-    {
-      "moebel": "wg4Wildblumen",
-      "feld": [41, 37]
     },
     {
       "moebel": "wg4Wildblumen",
@@ -505,72 +437,160 @@
       "feld": [42, 25]
     },
     {
-      "moebel": "wg4Wildblumen",
-      "feld": [41, 3]
-    },
-    {
-      "moebel": "wg4Wildblumen",
-      "feld": [49, 45]
-    },
-    {
       "moebel": "wg4BlumeGelb",
       "feld": [27, 45]
     },
     {
-      "moebel": "wg4BlumeGelb",
-      "feld": [45, 38]
+      "moebel": "wg4GrasB",
+      "feld": [28, 9]
     },
     {
       "moebel": "wg4Gras",
-      "feld": [52, 28]
+      "feld": [60, 21]
     },
     {
-      "moebel": "mf4Strassenbaum",
-      "feld": [55, 30]
+      "moebel": "wg4BlumeGelb",
+      "feld": [58, 36]
     },
     {
-      "moebel": "mf4Strassenbaum",
-      "feld": [48, 37]
+      "moebel": "wg4BlumeGelb",
+      "feld": [37, 35]
     },
     {
-      "moebel": "wg4Busch",
-      "feld": [35, 42]
+      "moebel": "wg4Gras",
+      "feld": [52, 38]
     },
     {
-      "moebel": "wg4Busch",
-      "feld": [34, 36]
+      "moebel": "wg4Gras",
+      "feld": [34, 6]
+    },
+    {
+      "moebel": "wg4GrasB",
+      "feld": [53, 2]
+    },
+    {
+      "moebel": "wg4BlumeGelb",
+      "feld": [54, 8]
+    },
+    {
+      "moebel": "wg4Gras",
+      "feld": [55, 8]
+    },
+    {
+      "moebel": "wg4Gras",
+      "feld": [60, 36]
+    },
+    {
+      "moebel": "wg4GrasB",
+      "feld": [53, 5]
+    },
+    {
+      "moebel": "wg4GrasB",
+      "feld": [30, 40]
+    },
+    {
+      "moebel": "wg4Wildblumen",
+      "feld": [33, 16]
+    },
+    {
+      "moebel": "wg4Wildblumen",
+      "feld": [54, 11]
+    },
+    {
+      "moebel": "wg4Wildblumen",
+      "feld": [58, 10]
+    },
+    {
+      "moebel": "wg4BlumeGelb",
+      "feld": [2, 18]
+    },
+    {
+      "moebel": "wg4Wildblumen",
+      "feld": [52, 25]
+    },
+    {
+      "moebel": "wg4GrasB",
+      "feld": [30, 38]
+    },
+    {
+      "moebel": "wg4Wildblumen",
+      "feld": [51, 3]
+    },
+    {
+      "moebel": "wg4Gras",
+      "feld": [62, 14]
+    },
+    {
+      "moebel": "wg4BlumeGelb",
+      "feld": [9, 12]
+    },
+    {
+      "moebel": "wg4GrasB",
+      "feld": [56, 3]
+    },
+    {
+      "moebel": "wg4Gras",
+      "feld": [47, 6]
+    },
+    {
+      "moebel": "wg4BlumeGelb",
+      "feld": [1, 2]
+    },
+    {
+      "moebel": "wg4BlumeGelb",
+      "feld": [8, 18]
+    },
+    {
+      "moebel": "wg4Gras",
+      "feld": [43, 28]
+    },
+    {
+      "moebel": "wg4Gras",
+      "feld": [29, 34]
+    },
+    {
+      "moebel": "wg4Gras",
+      "feld": [43, 32]
+    },
+    {
+      "moebel": "wg4BlumeGelb",
+      "feld": [4, 46]
+    },
+    {
+      "moebel": "wg4Wildblumen",
+      "feld": [8, 7]
     },
     {
       "moebel": "wg4Laubbaum",
-      "feld": [28, 41]
-    },
-    {
-      "moebel": "mf4Strassenbaum",
-      "feld": [43, 38]
-    },
-    {
-      "moebel": "mf4Strassenbaum",
-      "feld": [29, 36]
+      "feld": [28, 36]
     },
     {
       "moebel": "wg4Laubbaum",
-      "feld": [58, 35]
-    },
-    {
-      "moebel": "mf4Strassenbaum",
-      "feld": [60, 42]
-    },
-    {
-      "moebel": "mf4Strassenbaum",
-      "feld": [48, 44]
-    },
-    {
-      "moebel": "mf4Strassenbaum",
-      "feld": [32, 33]
+      "feld": [30, 43]
     },
     {
       "moebel": "wg4Busch",
-      "feld": [53, 37]
+      "feld": [32, 31]
+    },
+    {
+      "moebel": "wg4Busch",
+      "feld": [27, 30]
+    },
+    {
+      "moebel": "wg4Busch",
+      "feld": [31, 28]
+    },
+    {
+      "moebel": "wg4Busch",
+      "feld": [32, 41]
+    },
+    {
+      "moebel": "wg4Busch",
+      "feld": [31, 33]
+    },
+    {
+      "moebel": "wg4Busch",
+      "feld": [29, 26]
     }
   ],
   "ausloeser": [
@@ -650,11 +670,41 @@
     {
       "name": "rinder",
       "typ": "tier",
-      "feld": [52, 38],
+      "feld": [12, 5],
       "eigenschaften": {
-        "von": "46,34",
-        "bis": "60,44",
+        "von": "9,2",
+        "bis": "15,8",
         "verhalten": "ausweichen"
+      }
+    },
+    {
+      "name": "kraehen",
+      "typ": "tier",
+      "feld": [40, 4],
+      "eigenschaften": {
+        "von": "34,1",
+        "bis": "60,6",
+        "verhalten": "fliegen"
+      }
+    },
+    {
+      "name": "motelkatze",
+      "typ": "tier",
+      "feld": [30, 24],
+      "eigenschaften": {
+        "von": "28,24",
+        "bis": "32,24",
+        "verhalten": "schlafen"
+      }
+    },
+    {
+      "name": "spatzen",
+      "typ": "tier",
+      "feld": [24, 30],
+      "eigenschaften": {
+        "von": "20,27",
+        "bis": "30,34",
+        "verhalten": "fliegen"
       }
     },
     {
@@ -662,10 +712,10 @@
       "typ": "statist",
       "feld": [44, 20],
       "eigenschaften": {
-        "von": "38,20",
-        "bis": "50,20",
         "tun": "tankt einen Wagen voll",
-        "wann": "tag"
+        "wann": "tag",
+        "von": "38,20",
+        "bis": "50,20"
       }
     },
     {
@@ -673,10 +723,140 @@
       "typ": "statist",
       "feld": [35, 27],
       "eigenschaften": {
-        "von": "35,27",
-        "bis": "35,27",
         "tun": "Tomás zeigt Mira die Windräder am Horizont",
-        "wann": "tag"
+        "wann": "tag",
+        "von": "35,27",
+        "bis": "35,27"
+      }
+    },
+    {
+      "name": "autowaescher",
+      "typ": "statist",
+      "feld": [52, 20],
+      "eigenschaften": {
+        "tun": "spritzt einen Pick-up ab",
+        "wann": "tag",
+        "von": "51,19",
+        "bis": "55,21"
+      }
+    },
+    {
+      "name": "hundebesitzerin",
+      "typ": "statist",
+      "feld": [22, 21],
+      "eigenschaften": {
+        "tun": "geht mit dem Hund über den Vorplatz",
+        "wann": "tag",
+        "von": "8,21",
+        "bis": "27,21"
+      }
+    },
+    {
+      "name": "fernfahrerin",
+      "typ": "statist",
+      "feld": [9, 26],
+      "eigenschaften": {
+        "tun": "prüft die Reifen ihres Sattelzugs",
+        "wann": "tag",
+        "von": "6,26",
+        "bis": "16,26",
+        "sagt": "statist.crossroads.aussen.fernfahrerin"
+      }
+    },
+    {
+      "name": "mechaniker",
+      "typ": "statist",
+      "feld": [55, 33],
+      "eigenschaften": {
+        "tun": "wischt sich die Hände an einem Lappen ab",
+        "wann": "tag",
+        "von": "52,33",
+        "bis": "58,34",
+        "sagt": "statist.crossroads.aussen.mechaniker"
+      }
+    },
+    {
+      "name": "motelwirtin",
+      "typ": "statist",
+      "feld": [42, 33],
+      "eigenschaften": {
+        "tun": "fegt den Gang vor den Zimmern",
+        "wann": "tag",
+        "von": "38,33",
+        "bis": "48,33",
+        "sagt": "statist.crossroads.aussen.motelwirtin"
+      }
+    },
+    {
+      "name": "kuesterin",
+      "typ": "statist",
+      "feld": [48, 45],
+      "eigenschaften": {
+        "tun": "gießt die Blumen vor der Kapelle",
+        "wann": "tag",
+        "von": "46,45",
+        "bis": "51,46",
+        "sagt": "statist.crossroads.aussen.kuesterin"
+      }
+    },
+    {
+      "name": "kreidekind",
+      "typ": "statist",
+      "feld": [20, 27],
+      "eigenschaften": {
+        "tun": "malt mit Kreide ein Brett auf den Asphalt",
+        "wann": "tag",
+        "von": "18,27",
+        "bis": "24,27",
+        "sagt": "statist.crossroads.aussen.kreidekind"
+      }
+    },
+    {
+      "name": "postbote",
+      "typ": "statist",
+      "feld": [31, 18],
+      "eigenschaften": {
+        "tun": "bringt Pakete die Schotterstraße hinunter",
+        "wann": "tag",
+        "von": "31,10",
+        "bis": "31,21",
+        "sagt": "statist.crossroads.aussen.postbote"
+      }
+    },
+    {
+      "name": "rentner",
+      "typ": "statist",
+      "feld": [30, 31],
+      "eigenschaften": {
+        "tun": "sitzt am Picknicktisch und löst ein Rätsel aus der Zeitung",
+        "wann": "tag",
+        "von": "29,30",
+        "bis": "30,33",
+        "sagt": "statist.crossroads.aussen.rentner"
+      }
+    },
+    {
+      "name": "farmer",
+      "typ": "statist",
+      "feld": [10, 9],
+      "eigenschaften": {
+        "tun": "wirft Heu über den Zaun",
+        "wann": "tag",
+        "von": "9,8",
+        "bis": "15,9",
+        "sagt": "statist.crossroads.aussen.farmer"
+      }
+    },
+    {
+      "name": "anhalterin",
+      "typ": "statist",
+      "feld": [2, 24],
+      "eigenschaften": {
+        "tun": "hält ein Pappschild mit „Capital“ hoch",
+        "wann": "tag",
+        "von": "1,24",
+        "bis": "4,24",
+        "sagt": "statist.crossroads.aussen.anhalterin"
       }
     }
   ],
@@ -688,7 +868,8 @@
     "rustikal",
     "laendlich",
     "natur",
-    "landhaus"
+    "landhaus",
+    "industrie"
   ],
   "datei": "karten/varianten/crossroads-aussen-c.json"
 }

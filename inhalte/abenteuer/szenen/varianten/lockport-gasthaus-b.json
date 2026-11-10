@@ -218,12 +218,31 @@
     {
       "name": "kegler",
       "typ": "statist",
-      "feld": [1, 10],
+      "feld": [2, 4],
       "eigenschaften": {
-        "von": "1,10",
-        "bis": "1,5",
-        "tun": "schiebt die Kugel",
-        "wann": "tag"
+        "tun": "schiebt eine Kugel auf der Kegelbahn",
+        "wann": "tag",
+        "sagt": "statist.lockport.gasthaus.kegler"
+      }
+    },
+    {
+      "name": "fischerAmTresen",
+      "typ": "statist",
+      "feld": [11, 5],
+      "eigenschaften": {
+        "tun": "trinkt ein Bier am Tresen",
+        "wann": "tag",
+        "sagt": "statist.lockport.gasthaus.fischerAmTresen"
+      }
+    },
+    {
+      "name": "wanderinBeimEssen",
+      "typ": "statist",
+      "feld": [8, 9],
+      "eigenschaften": {
+        "tun": "isst eine Suppe",
+        "wann": "tag",
+        "sagt": "statist.lockport.gasthaus.wanderinBeimEssen"
       }
     }
   ],

@@ -364,10 +364,47 @@
       "typ": "statist",
       "feld": [8, 13],
       "eigenschaften": {
+        "tun": "bringt Kaffee und Pfannkuchen",
+        "wann": "tag",
         "von": "2,13",
         "bis": "14,13",
-        "tun": "bringt Kaffee und Pfannkuchen",
-        "wann": "tag"
+        "sagt": "statist.crossroads.raststaette.kellnerin"
+      }
+    },
+    {
+      "name": "fernfahrer",
+      "typ": "statist",
+      "feld": [12, 12],
+      "eigenschaften": {
+        "tun": "sitzt am Tresen über einem Kaffee",
+        "wann": "tag",
+        "von": "12,12",
+        "bis": "12,12",
+        "sagt": "statist.crossroads.raststaette.fernfahrer"
+      }
+    },
+    {
+      "name": "variantenspielerin",
+      "typ": "statist",
+      "feld": [17, 12],
+      "eigenschaften": {
+        "tun": "baut am Varianten-Tisch Atomschach auf",
+        "wann": "tag",
+        "von": "17,12",
+        "bis": "17,12",
+        "sagt": "statist.crossroads.raststaette.variantenspielerin"
+      }
+    },
+    {
+      "name": "schausteller",
+      "typ": "statist",
+      "feld": [10, 15],
+      "eigenschaften": {
+        "tun": "isst Pfannkuchen und zählt Lose",
+        "wann": "tag",
+        "von": "10,15",
+        "bis": "10,15",
+        "sagt": "statist.crossroads.raststaette.schausteller"
       }
     }
   ],

@@ -1491,6 +1491,66 @@
       "art": "geraet",
       "zustand": "gebraucht",
       "stil": "rustikal"
+    },
+    "cc8KulisseHausBlau": {
+      "quelle": "spiel/serene/serene_77.png",
+      "breite": 80,
+      "hoehe": 64,
+      "kollision": true,
+      "art": "gebaeude",
+      "zustand": "gebraucht",
+      "stil": "rustikal",
+      "blick": "unten"
+    },
+    "cc8KulisseHausGruen": {
+      "quelle": "spiel/serene/serene_59.png",
+      "breite": 80,
+      "hoehe": 64,
+      "kollision": true,
+      "art": "gebaeude",
+      "zustand": "gebraucht",
+      "stil": "rustikal",
+      "blick": "unten"
+    },
+    "cc8KulisseHausRot": {
+      "quelle": "spiel/serene/serene_51.png",
+      "breite": 80,
+      "hoehe": 64,
+      "kollision": true,
+      "art": "gebaeude",
+      "zustand": "gebraucht",
+      "stil": "rustikal",
+      "blick": "unten"
+    },
+    "cc8KulisseHausKleinHell": {
+      "quelle": "spiel/serene/serene_41.png",
+      "breite": 48,
+      "hoehe": 64,
+      "kollision": true,
+      "art": "gebaeude",
+      "zustand": "gebraucht",
+      "stil": "rustikal",
+      "blick": "unten"
+    },
+    "cc8KulisseHausKleinRot": {
+      "quelle": "spiel/serene/serene_48.png",
+      "breite": 48,
+      "hoehe": 64,
+      "kollision": true,
+      "art": "gebaeude",
+      "zustand": "gebraucht",
+      "stil": "rustikal",
+      "blick": "unten"
+    },
+    "cc8KulisseHausKleinHell2": {
+      "quelle": "spiel/serene/serene_42.png",
+      "breite": 48,
+      "hoehe": 64,
+      "kollision": true,
+      "art": "gebaeude",
+      "zustand": "gebraucht",
+      "stil": "rustikal",
+      "blick": "unten"
     }
   }
 }

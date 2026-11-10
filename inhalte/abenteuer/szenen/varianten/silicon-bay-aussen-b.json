@@ -33,8 +33,8 @@
     "#......................................................................#",
     "#......................................................................#",
     "#......................................................................#",
-    "#ggggggggggggggggggggggggggggggggggggggggggggggggggggggggggggggggggggggg",
-    "#ggggggggggggggggggggggggggggggggggggggggggggggggggggggggggggggggggggggg",
+    "gggggggggggggggggggggggggggggggggggggggggggggggggggggggggggggggggggggggg",
+    "gggggggggggggggggggggggggggggggggggggggggggggggggggggggggggggggggggggggg",
     "#ssssssssssssssssssssssssssssssssssssssssssssssssssssssssssssssssssssss#",
     "#ssssssssssssssssssssssssssssssssssssssssssssssssssssssssssssssssssssss#",
     "#ssssssssssssssssssssssssssssssssssssssssssssssssssssssssssssssssssssss#",
@@ -59,6 +59,14 @@
     "#rrrrrrrrrrrrr..rrrrrrrrrrrrrr........rrrrrrrrrrrrrrrr..rrrrrrrrrrrrrrr#",
     "#rrrrrrrrrrrrr..rrrrrrrrrrrrrr........rrrrrrrrrrrrrrrr..rrrrrrrrrrrrrrr#",
     "#rrrrrrrrrrrrr..rrrrrrrrrrrrrr........rrrrrrrrrrrrrrrr..rrrrrrrrrrrrrrr#",
+    "#...............................gggg...................................#",
+    "#...............................gggg...................................#",
+    "#...............................gggg...................................#",
+    "#...............................gggg...................................#",
+    "#...............................gggg...................................#",
+    "#...............................gggg...................................#",
+    "#...............................gggg...................................#",
+    "#...............................gggg...................................#",
     "#rrrrrrrrrrrrr..rrrrrrrrrrrrrr..gggg..rrrrrrrrrrrrrrrr..rrrrrrrrrrrrrrr#",
     "#rrrrrrrrrrrrrrrrrrrrrrrrrrrrrr.gggg.rrrrrrrrrrrrrrrrrrrrrrrrrrrrrrrrrr#",
     "#...............................gggg...................................#",
@@ -426,162 +434,162 @@
     },
     {
       "moebel": "cc4Hecke",
-      "feld": [1, 48],
+      "feld": [1, 56],
       "bauteil_ok": true
     },
     {
       "moebel": "cc4Hecke",
-      "feld": [3, 48],
+      "feld": [3, 56],
       "bauteil_ok": true
     },
     {
       "moebel": "cc4Hecke",
-      "feld": [5, 48],
+      "feld": [5, 56],
       "bauteil_ok": true
     },
     {
       "moebel": "cc4Hecke",
-      "feld": [7, 48],
+      "feld": [7, 56],
       "bauteil_ok": true
     },
     {
       "moebel": "cc4Hecke",
-      "feld": [9, 48],
+      "feld": [9, 56],
       "bauteil_ok": true
     },
     {
       "moebel": "cc4Hecke",
-      "feld": [11, 48],
+      "feld": [11, 56],
       "bauteil_ok": true
     },
     {
       "moebel": "cc4Hecke",
-      "feld": [13, 48],
+      "feld": [13, 56],
       "bauteil_ok": true
     },
     {
       "moebel": "cc4Hecke",
-      "feld": [15, 48],
+      "feld": [15, 56],
       "bauteil_ok": true
     },
     {
       "moebel": "cc4Hecke",
-      "feld": [17, 48],
+      "feld": [17, 56],
       "bauteil_ok": true
     },
     {
       "moebel": "cc4Hecke",
-      "feld": [19, 48],
+      "feld": [19, 56],
       "bauteil_ok": true
     },
     {
       "moebel": "cc4Hecke",
-      "feld": [21, 48],
+      "feld": [21, 56],
       "bauteil_ok": true
     },
     {
       "moebel": "cc4Hecke",
-      "feld": [23, 48],
+      "feld": [23, 56],
       "bauteil_ok": true
     },
     {
       "moebel": "cc4Hecke",
-      "feld": [25, 48],
+      "feld": [25, 56],
       "bauteil_ok": true
     },
     {
       "moebel": "cc4Hecke",
-      "feld": [27, 48],
+      "feld": [27, 56],
       "bauteil_ok": true
     },
     {
       "moebel": "cc4Hecke",
-      "feld": [29, 48],
+      "feld": [29, 56],
       "bauteil_ok": true
     },
     {
       "moebel": "cc4Hecke",
-      "feld": [37, 48],
+      "feld": [37, 56],
       "bauteil_ok": true
     },
     {
       "moebel": "cc4Hecke",
-      "feld": [39, 48],
+      "feld": [39, 56],
       "bauteil_ok": true
     },
     {
       "moebel": "cc4Hecke",
-      "feld": [41, 48],
+      "feld": [41, 56],
       "bauteil_ok": true
     },
     {
       "moebel": "cc4Hecke",
-      "feld": [43, 48],
+      "feld": [43, 56],
       "bauteil_ok": true
     },
     {
       "moebel": "cc4Hecke",
-      "feld": [45, 48],
+      "feld": [45, 56],
       "bauteil_ok": true
     },
     {
       "moebel": "cc4Hecke",
-      "feld": [47, 48],
+      "feld": [47, 56],
       "bauteil_ok": true
     },
     {
       "moebel": "cc4Hecke",
-      "feld": [49, 48],
+      "feld": [49, 56],
       "bauteil_ok": true
     },
     {
       "moebel": "cc4Hecke",
-      "feld": [51, 48],
+      "feld": [51, 56],
       "bauteil_ok": true
     },
     {
       "moebel": "cc4Hecke",
-      "feld": [53, 48],
+      "feld": [53, 56],
       "bauteil_ok": true
     },
     {
       "moebel": "cc4Hecke",
-      "feld": [55, 48],
+      "feld": [55, 56],
       "bauteil_ok": true
     },
     {
       "moebel": "cc4Hecke",
-      "feld": [57, 48],
+      "feld": [57, 56],
       "bauteil_ok": true
     },
     {
       "moebel": "cc4Hecke",
-      "feld": [59, 48],
+      "feld": [59, 56],
       "bauteil_ok": true
     },
     {
       "moebel": "cc4Hecke",
-      "feld": [61, 48],
+      "feld": [61, 56],
       "bauteil_ok": true
     },
     {
       "moebel": "cc4Hecke",
-      "feld": [63, 48],
+      "feld": [63, 56],
       "bauteil_ok": true
     },
     {
       "moebel": "cc4Hecke",
-      "feld": [65, 48],
+      "feld": [65, 56],
       "bauteil_ok": true
     },
     {
       "moebel": "cc4Hecke",
-      "feld": [67, 48],
+      "feld": [67, 56],
       "bauteil_ok": true
     },
     {
       "moebel": "cc4Hecke",
-      "feld": [69, 48],
+      "feld": [69, 56],
       "bauteil_ok": true
     },
     {
@@ -656,6 +664,62 @@
       "moebel": "sbLaterne",
       "feld": [40, 25],
       "vorn": true
+    },
+    {
+      "moebel": "sb8Markt4",
+      "feld": [1, 47]
+    },
+    {
+      "moebel": "sb8Markt8",
+      "feld": [6, 47]
+    },
+    {
+      "moebel": "sb8Markt12",
+      "feld": [11, 47]
+    },
+    {
+      "moebel": "sb8Markt2",
+      "feld": [16, 47]
+    },
+    {
+      "moebel": "sb8Markt10",
+      "feld": [21, 47]
+    },
+    {
+      "moebel": "sb8Markt6",
+      "feld": [26, 47]
+    },
+    {
+      "moebel": "sb8Markt1",
+      "feld": [37, 47]
+    },
+    {
+      "moebel": "sb8Markt5",
+      "feld": [42, 47]
+    },
+    {
+      "moebel": "sb8Markt9",
+      "feld": [47, 47]
+    },
+    {
+      "moebel": "sb8Markt3",
+      "feld": [52, 47]
+    },
+    {
+      "moebel": "sb8Markt11",
+      "feld": [57, 47]
+    },
+    {
+      "moebel": "sb8Markt7",
+      "feld": [62, 47]
+    },
+    {
+      "moebel": "sb8Condo53",
+      "feld": [15, 10]
+    },
+    {
+      "moebel": "sb8Condo51",
+      "feld": [63, 10]
     }
   ],
   "ausloeser": [
@@ -688,19 +752,27 @@
     },
     {
       "name": "hafen",
-      "feld": [32, 51]
+      "feld": [32, 59]
     },
     {
       "name": "hafen",
-      "feld": [33, 51]
+      "feld": [33, 59]
     },
     {
       "name": "hafen",
-      "feld": [34, 51]
+      "feld": [34, 59]
     },
     {
       "name": "hafen",
-      "feld": [35, 51]
+      "feld": [35, 59]
+    },
+    {
+      "name": "altstadt",
+      "feld": [0, 21]
+    },
+    {
+      "name": "altstadt",
+      "feld": [0, 22]
     }
   ],
   "figuren": [
@@ -734,9 +806,178 @@
       "typ": "tier",
       "feld": [44, 22],
       "eigenschaften": {
-        "von": "38,22",
-        "bis": "54,22",
+        "von": "10,22",
+        "bis": "66,22",
+        "verhalten": "ausweichen"
+      }
+    },
+    {
+      "name": "drohne",
+      "typ": "tier",
+      "feld": [9, 24],
+      "eigenschaften": {
+        "von": "3,20",
+        "bis": "15,30",
+        "verhalten": "fliegen"
+      }
+    },
+    {
+      "name": "staubsaugerroboter",
+      "typ": "tier",
+      "feld": [40, 44],
+      "eigenschaften": {
+        "von": "30,40",
+        "bis": "50,46",
+        "verhalten": "ausweichen"
+      }
+    },
+    {
+      "name": "roboterhund",
+      "typ": "tier",
+      "feld": [52, 33],
+      "eigenschaften": {
+        "von": "48,30",
+        "bis": "58,36",
         "verhalten": "folgen"
+      }
+    },
+    {
+      "name": "fensterputzdrohne",
+      "typ": "tier",
+      "feld": [28, 12],
+      "eigenschaften": {
+        "von": "22,6",
+        "bis": "34,18",
+        "verhalten": "fliegen"
+      }
+    },
+    {
+      "name": "entwicklerin",
+      "typ": "statist",
+      "feld": [30, 29],
+      "eigenschaften": {
+        "tun": "tippt im Gehen auf ihrem Telefon",
+        "wann": "tag",
+        "von": "26,29",
+        "bis": "36,29",
+        "sagt": "statist.siliconBay.aussen.entwicklerin"
+      }
+    },
+    {
+      "name": "kurier",
+      "typ": "statist",
+      "feld": [60, 28],
+      "eigenschaften": {
+        "tun": "schiebt ein Lastenrad voller Pakete",
+        "wann": "tag",
+        "von": "54,28",
+        "bis": "68,28",
+        "sagt": "statist.siliconBay.aussen.kurier"
+      }
+    },
+    {
+      "name": "studentin",
+      "typ": "statist",
+      "feld": [28, 23],
+      "eigenschaften": {
+        "tun": "wartet mit Akademie-Ausweis auf die Bahn",
+        "wann": "tag",
+        "von": "20,23",
+        "bis": "30,23",
+        "sagt": "statist.siliconBay.aussen.studentin"
+      }
+    },
+    {
+      "name": "touristin",
+      "typ": "statist",
+      "feld": [48, 36],
+      "eigenschaften": {
+        "tun": "fotografiert das Wasserspiel",
+        "wann": "tag",
+        "von": "44,34",
+        "bis": "52,38",
+        "sagt": "statist.siliconBay.aussen.touristin"
+      }
+    },
+    {
+      "name": "rentner",
+      "typ": "statist",
+      "feld": [39, 43],
+      "eigenschaften": {
+        "tun": "sitzt auf der Bank am Wasserspiel",
+        "wann": "tag",
+        "von": "39,43",
+        "bis": "39,43",
+        "sagt": "statist.siliconBay.aussen.rentner"
+      }
+    },
+    {
+      "name": "hausmeister",
+      "typ": "statist",
+      "feld": [18, 22],
+      "eigenschaften": {
+        "tun": "poliert die Glastür der Akademie",
+        "wann": "tag",
+        "von": "14,21",
+        "bis": "22,22",
+        "sagt": "statist.siliconBay.aussen.hausmeister"
+      }
+    },
+    {
+      "name": "barista",
+      "typ": "statist",
+      "feld": [62, 40],
+      "eigenschaften": {
+        "tun": "wartet auf den Kaffeeautomaten",
+        "wann": "tag",
+        "von": "58,40",
+        "bis": "66,41",
+        "sagt": "statist.siliconBay.aussen.barista"
+      }
+    },
+    {
+      "name": "joggerin",
+      "typ": "statist",
+      "feld": [10, 55],
+      "eigenschaften": {
+        "tun": "läuft die Terrasse entlang",
+        "wann": "tag",
+        "von": "2,55",
+        "bis": "30,55",
+        "sagt": "statist.siliconBay.aussen.joggerin"
+      }
+    },
+    {
+      "name": "angestellter",
+      "typ": "statist",
+      "feld": [12, 29],
+      "eigenschaften": {
+        "tun": "telefoniert mit Kopfhörer",
+        "wann": "tag",
+        "von": "4,29",
+        "bis": "20,29"
+      }
+    },
+    {
+      "name": "angestellte",
+      "typ": "statist",
+      "feld": [50, 29],
+      "eigenschaften": {
+        "tun": "liest im Gehen Mails",
+        "wann": "tag",
+        "von": "46,29",
+        "bis": "56,29"
+      }
+    },
+    {
+      "name": "schulklasse",
+      "typ": "statist",
+      "feld": [26, 40],
+      "eigenschaften": {
+        "tun": "Schulklasse mit Tablets auf Besichtigung",
+        "wann": "tag",
+        "von": "22,38",
+        "bis": "30,42"
       }
     }
   ],

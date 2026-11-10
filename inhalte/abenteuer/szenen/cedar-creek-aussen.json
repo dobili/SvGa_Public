@@ -51,8 +51,8 @@
     "#pp.............................................ee..~~~~~..#",
     "#pp.............................................ee~~~~~....#",
     "#pp.............................................ee~~~~~....#",
-    "#pppppppppp.....................................ee~~~~~....#",
-    "#pppppppppp.....................................ee~~~~~....#",
+    "#pppppppppppppppppppppppppppppppppppppppppppppppee~~~~~....#",
+    "#pppppppppppppppppppppppppppppppppppppppppppppppee~~~~~....#",
     "##################################################~~~~~#####"
   ],
   "objekte": [
@@ -132,10 +132,6 @@
     {
       "moebel": "cc4NadelbaumB",
       "feld": [2, 6]
-    },
-    {
-      "moebel": "mf2Zeder",
-      "feld": [13, 5]
     },
     {
       "moebel": "cc4NadelbaumB",
@@ -502,11 +498,6 @@
       "bauteil_ok": true
     },
     {
-      "moebel": "cc8HeckeSenkrecht",
-      "feld": [21, 36],
-      "bauteil_ok": true
-    },
-    {
       "moebel": "mf2BlumenbeetKlein",
       "feld": [19, 30]
     },
@@ -553,14 +544,6 @@
       "feld": [38, 24]
     },
     {
-      "moebel": "cc4Nadelbaum",
-      "feld": [40, 34]
-    },
-    {
-      "moebel": "mf2ZederSchmal",
-      "feld": [27, 35]
-    },
-    {
       "moebel": "cc4NadelbaumB",
       "feld": [56, 35]
     },
@@ -574,11 +557,11 @@
     },
     {
       "moebel": "cc7Picknicktisch",
-      "feld": [31, 33]
+      "feld": [24, 28]
     },
     {
       "moebel": "cc7Picknicktisch",
-      "feld": [35, 33]
+      "feld": [37, 28]
     },
     {
       "moebel": "cc7Blumenkasten",
@@ -629,6 +612,30 @@
     {
       "moebel": "cc5BootUfer",
       "feld": [52, 25]
+    },
+    {
+      "moebel": "cc8KulisseHausKleinHell",
+      "feld": [12, 5]
+    },
+    {
+      "moebel": "cc8KulisseHausKleinRot",
+      "feld": [19, 5]
+    },
+    {
+      "moebel": "cc8KulisseHausBlau",
+      "feld": [23, 34]
+    },
+    {
+      "moebel": "cc8KulisseHausKleinHell2",
+      "feld": [29, 34]
+    },
+    {
+      "moebel": "cc8KulisseHausGruen",
+      "feld": [36, 34]
+    },
+    {
+      "moebel": "cc8KulisseHausRot",
+      "feld": [42, 34]
     }
   ],
   "ausloeser": [
@@ -724,10 +731,11 @@
       "typ": "statist",
       "feld": [42, 21],
       "eigenschaften": {
+        "tun": "trinkt Kaffee aus der Thermoskanne",
+        "wann": "tag",
         "von": "42,21",
         "bis": "44,21",
-        "tun": "trinkt Kaffee aus der Thermoskanne",
-        "wann": "tag"
+        "sagt": "statist.cedarCreek.aussen.busfahrer"
       }
     },
     {
@@ -735,10 +743,11 @@
       "typ": "statist",
       "feld": [51, 15],
       "eigenschaften": {
+        "tun": "erneuert Bretter am Steg",
+        "wann": "tag",
         "von": "51,15",
         "bis": "52,15",
-        "tun": "erneuert Bretter am Steg",
-        "wann": "tag"
+        "sagt": "statist.cedarCreek.aussen.stegbauer"
       }
     },
     {
@@ -770,6 +779,133 @@
         "bis": "9,7",
         "wann": "morgen",
         "verhalten": "fliegen"
+      }
+    },
+    {
+      "name": "waschsalonfrau",
+      "typ": "statist",
+      "feld": [14, 19],
+      "eigenschaften": {
+        "tun": "faltet vor dem Waschsalon Handtücher",
+        "wann": "tag",
+        "sagt": "statist.cedarCreek.aussen.waschsalonfrau"
+      }
+    },
+    {
+      "name": "bibliothekarin",
+      "typ": "statist",
+      "feld": [29, 19],
+      "eigenschaften": {
+        "tun": "macht Pause vor der Bibliothek",
+        "wann": "tag",
+        "sagt": "statist.cedarCreek.aussen.bibliothekarin"
+      }
+    },
+    {
+      "name": "drechslergeselle",
+      "typ": "statist",
+      "feld": [3, 19],
+      "eigenschaften": {
+        "tun": "fegt Späne vom Gehweg",
+        "wann": "tag",
+        "von": "2,19",
+        "bis": "5,19",
+        "sagt": "statist.cedarCreek.aussen.drechslergeselle"
+      }
+    },
+    {
+      "name": "anglerin",
+      "typ": "statist",
+      "feld": [48, 35],
+      "eigenschaften": {
+        "tun": "angelt am Uferweg",
+        "wann": "morgen",
+        "sagt": "statist.cedarCreek.aussen.anglerin"
+      }
+    },
+    {
+      "name": "kindMitHuette",
+      "typ": "statist",
+      "feld": [31, 28],
+      "eigenschaften": {
+        "tun": "baut unter der Zeder eine Hütte aus Ästen",
+        "wann": "tag",
+        "sagt": "statist.cedarCreek.aussen.kindMitHuette"
+      }
+    },
+    {
+      "name": "rentnerPicknick",
+      "typ": "statist",
+      "feld": [26, 29],
+      "eigenschaften": {
+        "tun": "sitzt am Picknicktisch und liest Zeitung",
+        "wann": "tag",
+        "sagt": "statist.cedarCreek.aussen.rentnerPicknick"
+      }
+    },
+    {
+      "name": "brueckenbauer",
+      "typ": "statist",
+      "feld": [48, 9],
+      "eigenschaften": {
+        "tun": "misst die Bretter der Brücke nach",
+        "wann": "tag",
+        "von": "48,8",
+        "bis": "48,9",
+        "sagt": "statist.cedarCreek.aussen.brueckenbauer"
+      }
+    },
+    {
+      "name": "zeitungsjunge",
+      "typ": "statist",
+      "feld": [0, 23],
+      "eigenschaften": {
+        "tun": "trägt Zeitungen aus",
+        "wann": "morgen",
+        "von": "1,23",
+        "bis": "39,23"
+      }
+    },
+    {
+      "name": "mutterMitKinderwagen",
+      "typ": "statist",
+      "feld": [30, 23],
+      "eigenschaften": {
+        "tun": "schiebt einen Kinderwagen",
+        "wann": "tag",
+        "von": "30,23",
+        "bis": "10,23"
+      }
+    },
+    {
+      "name": "radfahrer",
+      "typ": "statist",
+      "feld": [1, 20],
+      "eigenschaften": {
+        "tun": "fährt mit dem Rad durch den Ort",
+        "wann": "tag",
+        "von": "1,20",
+        "bis": "44,21"
+      }
+    },
+    {
+      "name": "enten",
+      "typ": "tier",
+      "feld": [53, 24],
+      "eigenschaften": {
+        "verhalten": "schwimmen",
+        "von": "53,20",
+        "bis": "54,34"
+      }
+    },
+    {
+      "name": "eichhoernchen",
+      "typ": "tier",
+      "feld": [38, 30],
+      "eigenschaften": {
+        "verhalten": "flitzen",
+        "von": "36,26",
+        "bis": "40,32"
       }
     }
   ],

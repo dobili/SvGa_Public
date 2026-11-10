@@ -1415,8 +1415,78 @@
       "feld": [95, 13]
     },
     {
-      "moebel": "sb5WerbetafelB",
+      "moebel": "wc5Plakatwand",
       "feld": [126, 10]
+    },
+    {
+      "moebel": "wc5ZaunUM",
+      "feld": [121, 9],
+      "bauteil_ok": true
+    },
+    {
+      "moebel": "wc5ZaunUM",
+      "feld": [122, 9],
+      "bauteil_ok": true
+    },
+    {
+      "moebel": "wc5ZaunUM",
+      "feld": [123, 9],
+      "bauteil_ok": true
+    },
+    {
+      "moebel": "wc5ZaunUM",
+      "feld": [124, 9],
+      "bauteil_ok": true
+    },
+    {
+      "moebel": "wc5ZaunUM",
+      "feld": [125, 9],
+      "bauteil_ok": true
+    },
+    {
+      "moebel": "wc5ZaunUM",
+      "feld": [126, 9],
+      "bauteil_ok": true
+    },
+    {
+      "moebel": "wc5ZaunUM",
+      "feld": [127, 9],
+      "bauteil_ok": true
+    },
+    {
+      "moebel": "wc5ZaunUM",
+      "feld": [128, 9],
+      "bauteil_ok": true
+    },
+    {
+      "moebel": "wc5ZaunUM",
+      "feld": [129, 9],
+      "bauteil_ok": true
+    },
+    {
+      "moebel": "wc5ZaunUM",
+      "feld": [130, 9],
+      "bauteil_ok": true
+    },
+    {
+      "moebel": "wc5ZaunUM",
+      "feld": [131, 9],
+      "bauteil_ok": true
+    },
+    {
+      "moebel": "wc5ZaunUM",
+      "feld": [132, 9],
+      "bauteil_ok": true
+    },
+    {
+      "moebel": "wc5ZaunUM",
+      "feld": [133, 9],
+      "bauteil_ok": true
+    },
+    {
+      "moebel": "wc5ZaunUR",
+      "feld": [134, 9],
+      "bauteil_ok": true
     },
     {
       "moebel": "wc5BirkeHerbst",
@@ -1831,18 +1901,6 @@
       "feld": [131, 27]
     },
     {
-      "moebel": "wc5Loewenzahn",
-      "feld": [40, 13]
-    },
-    {
-      "moebel": "wc5BlumenWeiss",
-      "feld": [46, 12]
-    },
-    {
-      "moebel": "wc5BlumenWeiss",
-      "feld": [46, 13]
-    },
-    {
       "moebel": "wc5BlumenWeiss",
       "feld": [47, 13]
     },
@@ -1869,10 +1927,6 @@
     {
       "moebel": "wc5BlumenWeiss",
       "feld": [106, 21]
-    },
-    {
-      "moebel": "wc5Stein",
-      "feld": [44, 11]
     },
     {
       "moebel": "wc5BlumeBlau",
@@ -2049,6 +2103,18 @@
     {
       "moebel": "wc5Loewenzahn",
       "feld": [44, 25]
+    },
+    {
+      "moebel": "wc8Stellwerk",
+      "feld": [40, 11]
+    },
+    {
+      "moebel": "wc8StellwerkTafel",
+      "feld": [45, 12]
+    },
+    {
+      "moebel": "wc8StellwerkBank",
+      "feld": [36, 11]
     }
   ],
   "ausloeser": [
@@ -2112,10 +2178,9 @@
       "typ": "statist",
       "feld": [95, 18],
       "eigenschaften": {
-        "von": "95,18",
-        "bis": "98,18",
         "tun": "gießt die Beete",
-        "wann": "tag"
+        "wann": "tag",
+        "sagt": "statist.wegCedarRiverton.bahndamm.gaertnerin"
       }
     },
     {
@@ -2154,6 +2219,46 @@
         "von": "78,22",
         "bis": "88,22",
         "verhalten": "fliegen"
+      }
+    },
+    {
+      "name": "trainspotter",
+      "typ": "statist",
+      "feld": [39, 10],
+      "eigenschaften": {
+        "tun": "notiert die Nummern der Güterwagen",
+        "wann": "tag",
+        "sagt": "statist.wegCedarRiverton.bahndamm.trainspotter"
+      }
+    },
+    {
+      "name": "radlerin",
+      "typ": "statist",
+      "feld": [50, 9],
+      "eigenschaften": {
+        "tun": "schiebt das Rad den Damm entlang",
+        "wann": "morgen",
+        "sagt": "statist.wegCedarRiverton.bahndamm.radlerin",
+        "von": "50,9",
+        "bis": "78,9"
+      }
+    },
+    {
+      "name": "katzeImWaggon",
+      "typ": "tier",
+      "feld": [111, 1],
+      "eigenschaften": {
+        "verhalten": "sitzen"
+      }
+    },
+    {
+      "name": "fasan",
+      "typ": "tier",
+      "feld": [20, 20],
+      "eigenschaften": {
+        "verhalten": "ausweichen",
+        "von": "16,20",
+        "bis": "26,21"
       }
     }
   ]

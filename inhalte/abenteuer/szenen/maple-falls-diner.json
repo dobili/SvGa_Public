@@ -402,11 +402,31 @@
     {
       "name": "kellnerin",
       "typ": "statist",
-      "feld": [8, 14],
+      "feld": [9, 13],
       "eigenschaften": {
-        "von": "8,14",
-        "bis": "26,14",
-        "tun": "bringt Teller"
+        "tun": "bringt Kaffee an die Tische",
+        "wann": "tag",
+        "sagt": "statist.mapleFalls.diner.kellnerin"
+      }
+    },
+    {
+      "name": "lkwFahrer",
+      "typ": "statist",
+      "feld": [13, 6],
+      "eigenschaften": {
+        "tun": "sitzt am Tresen und isst Pfannkuchen",
+        "wann": "tag",
+        "sagt": "statist.mapleFalls.diner.lkwFahrer"
+      }
+    },
+    {
+      "name": "rentnerinnen",
+      "typ": "statist",
+      "feld": [22, 10],
+      "eigenschaften": {
+        "tun": "teilen sich ein Stück Apfelkuchen",
+        "wann": "tag",
+        "sagt": "statist.mapleFalls.diner.rentnerinnen"
       }
     }
   ],

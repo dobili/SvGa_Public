@@ -549,11 +549,6 @@
        "value": "räumt Wanderkarten ins Regal"
       },
       {
-       "name": "wann",
-       "type": "string",
-       "value": "tag"
-      },
-      {
        "name": "sagt",
        "type": "string",
        "value": "statist.summitCity.bergladen.ladenhilfe"
@@ -585,11 +580,6 @@
        "name": "tun",
        "type": "string",
        "value": "probiert einen Wanderstock aus"
-      },
-      {
-       "name": "wann",
-       "type": "string",
-       "value": "tag"
       },
       {
        "name": "sagt",

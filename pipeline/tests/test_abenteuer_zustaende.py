@@ -12,7 +12,7 @@ import re
 from pathlib import Path
 
 from pipeline.abenteuer.bedingung import Bedingungsfehler, variablen
-from pipeline.abenteuer.zustaende import zustandsname
+from pipeline.abenteuer.zustaende import zustandsname, zustandssatz
 
 INHALTE = Path(__file__).resolve().parents[2] / "inhalte" / "abenteuer"
 # Variablen, die die App selbst setzt (regeln/dialogvariablen.ts) und nicht als VAR im Ink stehen.
@@ -103,3 +103,10 @@ def test_bedingungen_sind_lesbar_und_kennen_ihre_variablen():
         if unbekannt:
             befunde.append(f"{stelle}: unbekannte Variable {', '.join(unbekannt)} in „{bedingung}“")
     assert not befunde, "\n".join(befunde)
+
+
+def test_zustandssatz_endet_nicht_an_abkuerzungen():
+    """„Mr. Pratt“ ist kein Satzende (Gutachten der Zustände aus Runde 8)."""
+    text = "Zustand: Nach der ersten Nadel: Mr. Pratt hat den Steg erneuert. Der Park liegt am Fluss."
+    assert zustandssatz(text) == "Nach der ersten Nadel: Mr. Pratt hat den Steg erneuert."
+    assert zustandssatz("Ohne Zustand.") is None

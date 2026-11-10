@@ -45,6 +45,14 @@
           "description": "Musikstück im Zusatzpaket; fehlend: das des Ortes",
           "type": "string",
           "pattern": "^musik/[a-z0-9-]+\\.(ogg|m4a)$"
+        },
+        "zustaende": {
+          "description": "Zweite Fassungen der Karte (zustand_der_karte, Runde 6): Dialogvariable → Tiled-JSON. Ist die Variable wahr, lädt die App diese Datei und den Hintergrund grafik/karten/<kennung>-<variable>.png (Musikhaus: musikhausOffen).",
+          "type": "object",
+          "additionalProperties": {
+            "type": "string",
+            "pattern": "^karten/[a-z0-9-]+\\.json$"
+          }
         }
       }
     },

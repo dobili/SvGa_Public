@@ -97,7 +97,9 @@
           "additionalProperties": false,
           "required": ["art"],
           "properties": {
-            "art": { "enum": ["drohung", "waage", "remis", "schmeichelei", "farbwahl"] }
+            "art": {
+              "enum": ["drohung", "waage", "remis", "schmeichelei", "farbwahl"]
+            }
           }
         }
       ]

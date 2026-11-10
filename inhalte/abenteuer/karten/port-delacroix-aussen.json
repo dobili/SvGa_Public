@@ -15744,7 +15744,7 @@
      "name": "pd6Prellbock",
      "type": "moebel",
      "x": 16,
-     "y": 164,
+     "y": 160,
      "width": 32,
      "height": 32,
      "rotation": 0,
@@ -15753,7 +15753,7 @@
       {
        "name": "tiefe",
        "type": "int",
-       "value": 188
+       "value": 184
       },
       {
        "name": "kollision",

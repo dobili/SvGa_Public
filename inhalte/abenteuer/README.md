@@ -71,6 +71,12 @@ Hintergrund: `docs/spiel/04_Architektur.md`, Abschnitt 2 und 9.
   `beschreibung`, die mit „Zustand: …“ beginnt (wann in der Geschichte, was sich ändert, warum).
   `kartenbild` zeichnet dazu `grafik/karten/<kennung>-<zustand>.png`. Beispiel Park:
   `"nadelMapleFalls < 1": "karten/maple-falls-park-steg-gesperrt.json"`.
+- **Winter** (Entscheidung 10.11.2026): Eine Zustandsszene mit `"jahreszeit": "winter"` wird
+  umgefärbt, ohne eigene Schneebilder. `kartenbild` färbt den Hintergrund (Gras und Laub werden
+  Schnee, Erde entsättigt, Wasser kühler; `pipeline/abenteuer/winter.py`). Die App färbt die
+  Möbel beim Laden genauso um, aber ohne die Wasserregel (`oberwelt/winter.ts`), und lässt Schnee
+  fallen (`oberwelt/schneefall.ts`). Blumen und Pilze bleiben bunt; `kartenbild` meldet sie in
+  Winterszenen, sie gehören dort weg.
 - **Liste für den Autor:** `python -m pipeline.abenteuer.zustaende` (Text) oder `--json`.
   `pipeline/tests/test_abenteuer_zustaende.py` prüft Lesbarkeit, bekannte Variablen, Dateinamen und
   den „Zustand:“-Satz.

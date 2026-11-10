@@ -610,7 +610,7 @@
       "karten": [
         {
           "kennung": "wegMapleCedar.landstrasse",
-          "datei": "karten/weg-maple-cedar-1.json",
+          "datei": "karten/weg-maple-cedar-landstrasse.json",
           "name": "ort.wegMapleCedar.landstrasse",
           "innen": false,
           "musik": "musik/landstrasse.ogg",

@@ -24,7 +24,9 @@ import {
 import { ladeMoebelbilder, stelleMoebelAuf, type Moebel } from "./moebel";
 import { baueSperrkarte } from "./sperrkarte";
 import type { Toenung } from "./toenung";
+import { Schneeschicht } from "./schneefall";
 import { Toenungsschicht } from "./toenungsschicht";
+import { faerbeWinterlich } from "./winter";
 import { liesBelebung, type Belebung, type Feld } from "./belebung";
 import { Belebungsschicht, ladeBelebungsbilder, type Belebungsbilder } from "./belebungsschicht";
 
@@ -99,6 +101,8 @@ export interface Szenendaten {
   /** Tönung der Karte (toenung.ts) und ob der Held eine Laterne trägt (Lichtkreis bei „dunkel“). */
   readonly toenung?: Toenung | null;
   readonly laterne?: boolean;
+  /** Winterkarte (winter.ts): Möbel umfärben, Schnee fallen lassen. */
+  readonly winter?: boolean;
 }
 
 /** Tiefe des Hintergrundbilds: unter Möbeln an der Wand (Tiefe 0) und allem anderen. */
@@ -125,6 +129,7 @@ export class Oberweltszene extends Phaser.Scene {
   private belebung: Belebung[] = [];
   private belebungsschicht: Belebungsschicht | null = null;
   private toenungsschicht: Toenungsschicht | null = null;
+  private schnee: Schneeschicht | null = null;
   /** Ist eine Kachel für Tiere begehbar (sperrkarte.ts)? Vor create() ist nichts frei. */
   private frei: (x: number, y: number) => boolean = () => false;
 
@@ -196,7 +201,13 @@ export class Oberweltszene extends Phaser.Scene {
     this.cameras.main.setRoundPixels(true);
     this.ausloeser = liesAusloeserAus(karte);
     this.stelleFigurenAuf(held);
-    const moebel = stelleMoebelAuf(this, this.daten.moebel ?? [], KACHEL);
+    const liste = this.daten.moebel ?? [];
+    if (this.daten.winter)
+      faerbeWinterlich(
+        this,
+        liste.map((m) => `moebel:${m.name}`),
+      );
+    const moebel = stelleMoebelAuf(this, liste, KACHEL);
     this.physics.add.collider(held, moebel);
     this.frei = baueSperrkarte(karte, feste, moebel, KACHEL);
     const stunde = this.daten.stunde ?? new Date().getHours();
@@ -205,6 +216,7 @@ export class Oberweltszene extends Phaser.Scene {
     this.belebungsschicht = schicht;
     this.toenungsschicht = new Toenungsschicht(this, KACHEL);
     this.setzeToenung(this.daten.toenung ?? null);
+    this.schnee = this.daten.winter ? new Schneeschicht(this) : null;
     this.tasten = this.input.keyboard?.createCursorKeys() ?? null;
   }
 
@@ -298,6 +310,7 @@ export class Oberweltszene extends Phaser.Scene {
     }
     this.held.setDepth(this.held.y);
     this.toenungsschicht?.folge(this.held.x, this.held.y);
+    this.schnee?.aktualisiere(delta);
     this.meldeAusloeser();
     this.meldeKachel();
   }

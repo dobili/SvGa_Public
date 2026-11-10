@@ -2,7 +2,7 @@
   "karte": "wegPinewoodGhost.tankstelle",
   "datei": "karten/weg-pinewood-ghost-tankstelle.json",
   "art": "innen",
-  "beschreibung": "Die verlassene Tankstelle an der Staubstraße (Weg 10), 12 × 11 Kacheln: In der Mitte steht der Greifarm Z-1 mit dem Logo von Perfect Move vor einem Tisch mit Brett und einem Hocker. Regale mit Ölkanistern, alte Reifen, ein Fass. Tür in der Südwand.",
+  "beschreibung": "Die verlassene Tankstelle an der Staubstraße (Weg 10), 12 × 11 Kacheln, der Verkaufsraum mit Werkstattecke: In der Mitte steht der Greifarm Z-1 mit dem Logo von Perfect Move an seinem Tisch mit Brett, davor ein Hocker. Rechts die alte Kassentheke mit Kasse, links ein Werkzeugschrank und rote Ölkanister an der Wand, alte Reifen in der Ecke, ein Fass und ein offener Karton. Staub und Flecken auf dem Steinboden. Tür in der Südwand.",
   "wand": "backstein",
   "boden": "stein",
   "raster": [
@@ -20,6 +20,18 @@
   ],
   "objekte": [
     {
+      "moebel": "tk9Staub",
+      "feld": [2, 4]
+    },
+    {
+      "moebel": "tk9Staub",
+      "feld": [7, 7]
+    },
+    {
+      "moebel": "tk9Staub",
+      "feld": [4, 6]
+    },
+    {
       "moebel": "cc6TuerSued",
       "feld": [6, 10],
       "an_wand": true
@@ -30,26 +42,29 @@
       "id": "z1"
     },
     {
-      "moebel": "cc5Tisch",
-      "feld": [5, 6],
-      "id": "brettZ1"
-    },
-    {
-      "moebel": "cc4Brett",
-      "feld": [0, 0],
-      "auf": "brettZ1"
-    },
-    {
       "moebel": "cc4Hocker",
-      "feld": [5, 8]
+      "feld": [5, 6]
     },
     {
-      "moebel": "cc4RegalA",
+      "moebel": "pd6Werkzeugschrank",
       "feld": [1, 1]
     },
     {
-      "moebel": "cc4RegalA",
-      "feld": [9, 1]
+      "moebel": "tk9Kanister",
+      "feld": [3, 2]
+    },
+    {
+      "moebel": "tk9Kanister",
+      "feld": [4, 2]
+    },
+    {
+      "moebel": "rv5Kanister",
+      "feld": [3, 4]
+    },
+    {
+      "moebel": "mf5Kassentheke",
+      "feld": [9, 3],
+      "id": "theke"
     },
     {
       "moebel": "dsReifen",
@@ -60,8 +75,16 @@
       "feld": [2, 7]
     },
     {
+      "moebel": "dsReifen",
+      "feld": [1, 8]
+    },
+    {
+      "moebel": "mf2KartonOffen",
+      "feld": [9, 7]
+    },
+    {
       "moebel": "iwFass",
-      "feld": [9, 6]
+      "feld": [3, 8]
     }
   ],
   "ausloeser": [

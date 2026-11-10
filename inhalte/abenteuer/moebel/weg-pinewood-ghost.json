@@ -90,6 +90,33 @@
       "art": "geraet",
       "zustand": "gebraucht",
       "stil": "modern"
+    },
+    "tk9Kanister": {
+      "quelle": "modern-exteriors/Modern_Exteriors_16x16/Modern_Exteriors_Complete_Singles_16x16/ME_Singles_Vehicles_16x16_Gas_Station_Petrol_Pump_Props_5.png",
+      "breite": 16,
+      "hoehe": 32,
+      "kollision": true,
+      "art": "deko",
+      "zustand": "alt",
+      "stil": "industrie"
+    },
+    "tk9Staub": {
+      "quelle": "spiel/eigene/staub_boden.png",
+      "breite": 32,
+      "hoehe": 32,
+      "kollision": false,
+      "art": "boden",
+      "zustand": "alt",
+      "stil": "industrie"
+    },
+    "tk9Spinnennetz": {
+      "quelle": "spiel/eigene/spinnennetz_ecke.png",
+      "breite": 16,
+      "hoehe": 16,
+      "kollision": false,
+      "art": "deko",
+      "zustand": "alt",
+      "stil": "industrie"
     }
   }
 }

@@ -11,7 +11,7 @@ from pathlib import Path
 import pytest
 
 DATEI = Path(__file__).resolve().parents[2] / "app/src/abenteuer/oberwelt/tierarten.json"
-SCHNITTE = ("reihen", "streifen", "richtungen", "baender")
+SCHNITTE = ("reihen", "streifen", "richtungen", "baender", "standbild")
 
 
 def _daten() -> dict:
@@ -45,3 +45,17 @@ def test_richtungen_nimmt_je_richtung_das_erste_bild():
     bogen = tierbogen(quelle, 2, 2, "richtungen")
     assert [bogen.getpixel((i * 2, 0))[0] for i in range(4)] == [0, 6, 12, 18]
     assert [bogen.getpixel((i * 2, 2))[0] for i in range(24)] == list(range(24))
+
+
+def test_standbild_spiegelt_und_wippt():
+    """Bison (Einzelbild nach rechts): links gespiegelt, Laufbilder wippen um ein Pixel."""
+    image = pytest.importorskip("PIL.Image")
+    from pipeline.abenteuer.belebungsbilder import tierbogen
+
+    quelle = image.new("RGBA", (4, 4))
+    quelle.putpixel((0, 3), (255, 0, 0, 255))  # Schwanz links unten, Kopf rechts
+    bogen = tierbogen(quelle, 4, 4, "standbild")
+    assert bogen.size == (24 * 4, 8)
+    assert bogen.getpixel((0, 3))[0] == 255  # rechts wie die Quelle
+    assert bogen.getpixel((2 * 4 + 3, 3))[0] == 255  # links gespiegelt
+    assert bogen.getpixel((2 * 4, 4 + 2))[0] == 255  # drittes Laufbild ein Pixel höher

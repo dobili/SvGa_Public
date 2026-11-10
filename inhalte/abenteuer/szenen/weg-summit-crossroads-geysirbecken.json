@@ -1,7 +1,7 @@
 {
   "karte": "wegSummitCrossroads.geysirbecken",
   "art": "aussen",
-  "beschreibung": "Dichter Kiefernwald, die Ranger-Station mit Häuschen, Rätseltafel, Bank und Warnschild am offenen Tor (S10). Dahinter das Geysirbecken: heiße Quellen mit hellem Sinterwulst, orangem Bakteriensaum und flachem, türkisem Rand, dazwischen weite Sinterflächen mit großen und kleinen Geysirkegeln. Ein Bohlenweg läuft im Zickzack zwischen den Becken hindurch, über zwei Abflussrinnen führen kurze Stege. In der Mitte der Infoplatz mit Bänken und Tafel, auf der Sinterinsel östlich des Wegs stehen Bisons, größer als jede Kuh. Im Süden zwei Weiden mit Zäunen, Wildblumen, Bänke unter Kiefern.",
+  "beschreibung": "Dichter Kiefernwald, die Ranger-Station mit Häuschen, Rätseltafel, Bank und Warnschild am offenen Tor (S10). Dahinter das Geysirbecken: heiße Quellen mit hellem Sinterwulst, orangem Bakteriensaum und flachem, türkisem Rand, dazwischen weite Sinterflächen mit großen und kleinen Geysirkegeln. Ein Bohlenweg läuft im Zickzack zwischen den Becken hindurch, über zwei Abflussrinnen führen kurze Stege. In der Mitte der Infoplatz mit Bänken und Tafel, auf der Sinterinsel östlich des Wegs stehen Bisons, größer als jede Kuh. Im Süden eine offene Bisonweide, Wildblumen, Bänke unter Kiefern.",
   "boden": "gras",
   "wandart": "gras",
   "ufer": "sinter",
@@ -335,111 +335,6 @@
     {
       "moebel": "cr8InfotafelDach",
       "feld": [24, 60]
-    },
-    {
-      "moebel": "cc3ZaunEnde",
-      "feld": [2, 126],
-      "bauteil_ok": true
-    },
-    {
-      "moebel": "ccZaun",
-      "feld": [3, 126],
-      "bauteil_ok": true
-    },
-    {
-      "moebel": "ccZaun",
-      "feld": [4, 126],
-      "bauteil_ok": true
-    },
-    {
-      "moebel": "ccZaun",
-      "feld": [5, 126],
-      "bauteil_ok": true
-    },
-    {
-      "moebel": "ccZaun",
-      "feld": [6, 126],
-      "bauteil_ok": true
-    },
-    {
-      "moebel": "ccZaun",
-      "feld": [7, 126],
-      "bauteil_ok": true
-    },
-    {
-      "moebel": "ccZaun",
-      "feld": [8, 126],
-      "bauteil_ok": true
-    },
-    {
-      "moebel": "ccZaun",
-      "feld": [9, 126],
-      "bauteil_ok": true
-    },
-    {
-      "moebel": "cc3ZaunEndeR",
-      "feld": [10, 126],
-      "bauteil_ok": true
-    },
-    {
-      "moebel": "cc3ZaunEnde",
-      "feld": [16, 140],
-      "bauteil_ok": true
-    },
-    {
-      "moebel": "ccZaun",
-      "feld": [17, 140],
-      "bauteil_ok": true
-    },
-    {
-      "moebel": "ccZaun",
-      "feld": [18, 140],
-      "bauteil_ok": true
-    },
-    {
-      "moebel": "ccZaun",
-      "feld": [19, 140],
-      "bauteil_ok": true
-    },
-    {
-      "moebel": "ccZaun",
-      "feld": [20, 140],
-      "bauteil_ok": true
-    },
-    {
-      "moebel": "ccZaun",
-      "feld": [21, 140],
-      "bauteil_ok": true
-    },
-    {
-      "moebel": "ccZaun",
-      "feld": [22, 140],
-      "bauteil_ok": true
-    },
-    {
-      "moebel": "ccZaun",
-      "feld": [23, 140],
-      "bauteil_ok": true
-    },
-    {
-      "moebel": "ccZaun",
-      "feld": [24, 140],
-      "bauteil_ok": true
-    },
-    {
-      "moebel": "ccZaun",
-      "feld": [25, 140],
-      "bauteil_ok": true
-    },
-    {
-      "moebel": "ccZaun",
-      "feld": [26, 140],
-      "bauteil_ok": true
-    },
-    {
-      "moebel": "cc3ZaunEndeR",
-      "feld": [27, 140],
-      "bauteil_ok": true
     },
     {
       "moebel": "mfBank",

@@ -271,6 +271,21 @@ frei begehbar; die Auslöser kommen mit den Dialogen.
   „reiher“), nicht mehr als Huhn. Ein eigenes Reiherbild wäre ein Bildwunsch für später.
 - Zustände: keine neuen. Das Hochwasser (S8) zeigt schon der halb überflutete Steg.
 
+**Fähre (`wegSiliconDelacroix.faehre`, A):**
+
+- Die Fähre hat einen spitzen Bug nach Süden (Reihen 74–79, begehbar bis zur Spitze), mit
+  weißer Bordwand und Reling (Bildwunsch `faehre_aufbau.py`, Bild `faehre_bug.png`). Das Heck
+  bleibt gerade, mit dem Fallreep in der Lücke der Reling.
+- Der Salon ist ein weißes Deckhaus mit blauem Streifen, Fenstern und Tür (10, 28). Auf seinem
+  Dach stehen die Brücke mit Fensterband nach vorn und der rote Schornstein. Die Rätseltafel hängt
+  rechts neben der Tür, der Auslöser `tafel` steht davor (17, 35). Das graue Steuerhaus am Bug ist
+  weg.
+- Die Bordbar ist ein kleines Deckhaus mit gestreifter Markise, Luke und Theke (8, 20) statt der
+  Fischbude mit Hai.
+- Statt zehn grüner Bahnsteigbänke in fünf gleichen Reihen stehen sechs Holzbänke versetzt auf
+  dem Vorderdeck, alle mit Blick zum Bug. Das Deck ist die ruhige dunkle Diele (`holzDunkel`).
+- Zustände: keine. Die Fahrt hat in der Geschichte nur einen Zustand.
+
 ## 4. Bühnenbilder
 
 ### 4.1 Fährdeck

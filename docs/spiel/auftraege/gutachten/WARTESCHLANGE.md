@@ -70,6 +70,13 @@ Szene heißt die Datei in `inhalte/abenteuer/szenen/` ohne `.json`.
 - [ ] erinnerung-siedlung-huette, erinnerung-london-kaffeehaus, erinnerung-london-strand (Runde 9, niedrig-1; Sepia aus der Tönung, im Vorschaubild nicht zu sehen)
 - [ ] kuerbishof-hof, weg-pinewood-ghost-tankstelle (Runde 9, niedrig-1)
 
+- [ ] crossroads-aussen mit Zustand gatter-offen (Runde 9, mittel-3)
+- [ ] crossroads-raststaette (Runde 9, mittel-3)
+- [ ] weg-summit-crossroads-geysirbecken, weg-summit-crossroads-praerie (Runde 9, mittel-3)
+- [ ] jahrmarkt-festplatz (Runde 9, mittel-3)
+- [ ] weg-crossroads-pinewood-huetten, weg-crossroads-pinewood-riesenbaeume (Runde 9, mittel-3)
+- [ ] pelikaninsel-dorf im Winter (Runde 9, mittel-3)
+
 ## Erledigt
 
 - [x] ironwood-kantine (Test, Haupt-Chat)

@@ -151,5 +151,31 @@
   "boeden": {
     "t": "teppichRot"
   },
-  "variante": "b"
+  "variante": "b",
+  "belebung": [
+    {
+      "name": "sammler",
+      "typ": "statist",
+      "feld": [6, 8],
+      "eigenschaften": {
+        "von": "6,8",
+        "bis": "6,8",
+        "tun": "blättert in einem alten Schachbuch",
+        "wann": "tag",
+        "sagt": "statist.desertSprings.antiquariat.sammler"
+      }
+    },
+    {
+      "name": "leserin",
+      "typ": "statist",
+      "feld": [12, 10],
+      "eigenschaften": {
+        "von": "12,10",
+        "bis": "12,10",
+        "tun": "sitzt mit einem Buch in der Leseecke",
+        "wann": "tag",
+        "sagt": "statist.desertSprings.antiquariat.leserin"
+      }
+    }
+  ]
 }

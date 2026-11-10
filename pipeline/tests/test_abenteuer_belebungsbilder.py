@@ -54,3 +54,38 @@ def test_baender_finden_belegte_streifen():
     bild.paste(ROT, (0, 2, 10, 5))
     bild.paste(ROT, (0, 10, 10, 20))
     assert _baender(bild) == [(2, 5), (10, 20)]
+
+
+def _speichere(tmp_path, name: str, bild: Image.Image):
+    pfad = tmp_path / name
+    bild.save(pfad)
+    return pfad
+
+
+def test_gesicht_bedeckt_erkennt_masken(tmp_path):
+    from pipeline.abenteuer.belebungsbilder import _gesicht_bedeckt
+
+    bogen = Image.new("RGBA", (96, 32))
+    assert not _gesicht_bedeckt(_speichere(tmp_path, "frei.png", bogen))
+    bogen.putpixel((48 + 7, 17), ROT)
+    assert _gesicht_bedeckt(_speichere(tmp_path, "maske.png", bogen))
+
+
+def test_haarfarbe_trennt_grau_natuerlich_bunt(tmp_path):
+    from pipeline.abenteuer.belebungsbilder import _haarfarbe
+
+    assert (
+        _haarfarbe(_speichere(tmp_path, "grau.png", Image.new("RGBA", (4, 4), (200, 200, 205, 255))))
+        == "grau"
+    )
+    assert (
+        _haarfarbe(_speichere(tmp_path, "braun.png", Image.new("RGBA", (4, 4), (120, 80, 40, 255))))
+        == "natürlich"
+    )
+    assert (
+        _haarfarbe(_speichere(tmp_path, "rosa.png", Image.new("RGBA", (4, 4), (240, 150, 200, 255))))
+        == "bunt"
+    )
+    assert (
+        _haarfarbe(_speichere(tmp_path, "blau.png", Image.new("RGBA", (4, 4), (60, 80, 200, 255)))) == "bunt"
+    )

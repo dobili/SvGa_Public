@@ -35,6 +35,8 @@ export interface Belebung {
   readonly wann: Tageszeit;
   /** Textschlüssel des ersten Satzes (nur ansprechbare Statisten), sonst null. */
   readonly sagt: string | null;
+  /** Kennung einer Vorführung (Eigenschaft `zeigt`, Dokument 16, 3.4), sonst null. */
+  readonly zeigt: string | null;
   /** Eigenes Bild (Eigenschaft `bild`, etwa „statist-07“ oder „hund“), sonst null. */
   readonly bild: string | null;
   readonly verhalten: Tierverhalten;
@@ -89,6 +91,7 @@ function alsBelebung(o: Tiledobjekt): Belebung | null {
     bis: liesFeld(eigenschaft(o, "bis")) ?? feld,
     wann: wann && TAGESZEITEN.includes(wann) ? wann : "immer",
     sagt: o.type === "statist" ? (eigenschaft(o, "sagt") ?? null) : null,
+    zeigt: o.type === "statist" ? (eigenschaft(o, "zeigt") ?? null) : null,
     bild: eigenschaft(o, "bild") ?? null,
     // Unbekanntes Verhalten (etwa „wirbeln“ beim Staubteufel) steht still wie „sitzen“.
     verhalten: verhalten && VERHALTEN.includes(verhalten) ? verhalten : "sitzen",
@@ -129,18 +132,18 @@ export function passtZurStunde(wann: Tageszeit, stunde: number): boolean {
   return von < bis ? stunde >= von && stunde < bis : stunde >= von || stunde < bis;
 }
 
-/** Höchste Nummer weiterer Sätze eines Statisten (`.1` bis `.9`). */
-const MEISTE_SAETZE = 9;
+/** So viele weitere Sätze (`.1` bis `.9`) sucht die App je Statist. */
+const HOECHSTENS_SAETZE = 9;
 
 /**
  * Die Sätze eines Statisten in der Reihenfolge des Ansprechens: der Schlüssel selbst (wenn es ihn
- * gibt), dann `.1` bis `.9`, soweit vorhanden (Dokument 16, Abschnitt 3.1). Lücken werden
- * übersprungen, weil die Helfer den zweiten Satz meist `.2` nennen und `.1` weglassen.
+ * gibt), dann die vorhandenen unter `.1` bis `.9`. Lücken werden übersprungen: Die Helfer schreiben
+ * den ersten Satz unter den Grundschlüssel und weitere als `.2`, `.3` (Dokument 16, Abschnitt 3.1).
  * Beispiel: „statist.x.a“ mit Texten für „statist.x.a“ und „statist.x.a.2“ → beide, in dieser Folge.
  */
 export function saetzeVon(schluessel: string, gibt: (s: string) => boolean): string[] {
   const saetze = gibt(schluessel) ? [schluessel] : [];
-  for (let i = 1; i <= MEISTE_SAETZE; i++) {
+  for (let i = 1; i <= HOECHSTENS_SAETZE; i++) {
     if (gibt(`${schluessel}.${i}`)) saetze.push(`${schluessel}.${i}`);
   }
   return saetze;

@@ -260,12 +260,12 @@
       "stil": "klassisch"
     },
     "ri8Klapptisch": {
-      "quelle": "modern-exteriors/Modern_Exteriors_16x16/ME_Theme_Sorter_16x16/11_Camping_Singles_16x16/ME_Singles_Camping_16x16_Table_5.png",
+      "quelle": "spiel/eigene/klapptisch_brett.png",
       "breite": 32,
       "hoehe": 32,
       "kollision": true,
       "art": "tisch",
-      "zustand": "neu",
+      "zustand": "gebraucht",
       "stil": "klassisch"
     },
     "ri8Kreidespringer": {
@@ -285,6 +285,15 @@
       "art": "deko",
       "zustand": "gebraucht",
       "stil": "natur"
+    },
+    "ri8Klapphocker": {
+      "quelle": "spiel/eigene/klapphocker.png",
+      "breite": 16,
+      "hoehe": 16,
+      "kollision": false,
+      "art": "stuhl",
+      "zustand": "gebraucht",
+      "stil": "klassisch"
     }
   }
 }

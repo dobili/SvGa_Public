@@ -232,7 +232,8 @@ export function sprechblaseFuer(
   besuch: number,
   held: string,
 ): SprechblasenInhalt | null {
-  const sagt = liesBelebung(w.karte).find((b) => b.typ === "statist" && b.name === name)?.sagt;
+  const statist = liesBelebung(w.karte).find((b) => b.typ === "statist" && b.name === name);
+  const sagt = statist?.sagt;
   const s = sagt ? statistensatz(sagt, besuch, hatSpieltext) : null;
   if (!s) return null;
   const ambrose = s.ambrose
@@ -241,5 +242,5 @@ export function sprechblaseFuer(
         satz: tSpiel(s.ambrose, { held }),
       })
     : null;
-  return { satz: tSpiel(s.satz, { held }), ambrose };
+  return { satz: tSpiel(s.satz, { held }), ambrose, zeigt: statist?.zeigt ?? null };
 }

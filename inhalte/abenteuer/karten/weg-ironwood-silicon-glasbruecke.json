@@ -11069,7 +11069,7 @@
     {
      "id": 8,
      "name": "lieferroboter",
-     "type": "statist",
+     "type": "tier",
      "x": 416,
      "y": 208,
      "width": 16,
@@ -11088,14 +11088,9 @@
        "value": "26,20"
       },
       {
-       "name": "tun",
+       "name": "verhalten",
        "type": "string",
-       "value": "Lieferroboter rollt die Rampe hinunter"
-      },
-      {
-       "name": "wann",
-       "type": "string",
-       "value": "tag"
+       "value": "ausweichen"
       }
      ]
     },

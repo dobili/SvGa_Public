@@ -15037,6 +15037,11 @@
        "name": "sagt",
        "type": "string",
        "value": "statist.ironwood.aussen.wirt"
+      },
+      {
+       "name": "zeigt",
+       "type": "string",
+       "value": "botwinnikCapablanca"
       }
      ]
     },

@@ -585,6 +585,11 @@
        "name": "sagt",
        "type": "string",
        "value": "statist.summitCity.bergladen.kunde"
+      },
+      {
+       "name": "zeigt",
+       "type": "string",
+       "value": "schaefermatt"
       }
      ]
     },

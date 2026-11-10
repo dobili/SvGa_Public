@@ -1443,11 +1443,6 @@
        "value": "zieht einen Koffer zum Bahnsteig"
       },
       {
-       "name": "wann",
-       "type": "string",
-       "value": "morgen"
-      },
-      {
        "name": "sagt",
        "type": "string",
        "value": "statist.riverton.bahnhofshalle.reisende"

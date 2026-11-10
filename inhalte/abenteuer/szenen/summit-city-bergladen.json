@@ -125,7 +125,8 @@
         "von": "9,6",
         "bis": "9,6",
         "tun": "probiert einen Wanderstock aus",
-        "sagt": "statist.summitCity.bergladen.kunde"
+        "sagt": "statist.summitCity.bergladen.kunde",
+        "zeigt": "schaefermatt"
       }
     }
   ]

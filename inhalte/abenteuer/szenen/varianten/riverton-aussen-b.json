@@ -663,8 +663,8 @@
       "feld": [1, 10]
     },
     {
-      "moebel": "rv8HolzhausRotB",
-      "feld": [14, 4]
+      "moebel": "rv8WohnhausKlein",
+      "feld": [40, 4]
     }
   ],
   "ausloeser": [
@@ -760,7 +760,8 @@
         "bis": "44,53",
         "tun": "klopft auf die Schachuhr",
         "wann": "tag",
-        "sagt": "statist.riverton.aussen.parkschachspieler"
+        "sagt": "statist.riverton.aussen.parkschachspieler",
+        "zeigt": "partieDesJahrhunderts"
       }
     },
     {

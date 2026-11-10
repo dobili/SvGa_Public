@@ -12414,6 +12414,11 @@
        "name": "sagt",
        "type": "string",
        "value": "statist.riverton.aussen.parkschachspieler"
+      },
+      {
+       "name": "zeigt",
+       "type": "string",
+       "value": "partieDesJahrhunderts"
       }
      ]
     },
@@ -12535,7 +12540,7 @@
      "id": 22,
      "name": "gabelstaplerfahrer",
      "type": "statist",
-     "x": 832,
+     "x": 880,
      "y": 272,
      "width": 16,
      "height": 16,
@@ -12545,12 +12550,12 @@
       {
        "name": "von",
        "type": "string",
-       "value": "52,17"
+       "value": "55,17"
       },
       {
        "name": "bis",
        "type": "string",
-       "value": "53,12"
+       "value": "61,17"
       },
       {
        "name": "tun",
@@ -15812,19 +15817,19 @@
     },
     {
      "id": 160,
-     "name": "rv8HolzhausRot",
+     "name": "rv8WohnhausKlein",
      "type": "moebel",
-     "x": 224,
-     "y": 64,
-     "width": 80,
-     "height": 64,
+     "x": 832,
+     "y": 128,
+     "width": 96,
+     "height": 128,
      "rotation": 0,
      "visible": true,
      "properties": [
       {
        "name": "tiefe",
        "type": "int",
-       "value": 120
+       "value": 248
       },
       {
        "name": "kollision",
@@ -15835,19 +15840,19 @@
     },
     {
      "id": 161,
-     "name": "rv8HolzhausGruen",
+     "name": "rv8MietshausB",
      "type": "moebel",
-     "x": 384,
+     "x": 256,
      "y": 64,
-     "width": 80,
-     "height": 64,
+     "width": 48,
+     "height": 192,
      "rotation": 0,
      "visible": true,
      "properties": [
       {
        "name": "tiefe",
        "type": "int",
-       "value": 120
+       "value": 248
       },
       {
        "name": "kollision",

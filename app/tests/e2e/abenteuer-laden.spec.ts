@@ -121,6 +121,37 @@ test("Statist im Bergladen: ansprechen, Satz erscheint, beim nächsten Mal der n
   await expect(blase).toHaveCount(0);
 });
 
+test("Vorführung im Bergladen: der Kunde zeigt das Schäfermatt Zug für Zug", async ({ page }) => {
+  // Dokument 16, 3.4: Ein Statist mit `zeigt` bietet nach seinem Satz ein kleines Brett an.
+  const stand = {
+    ...STAND,
+    position: {
+      karte: "summitCity.bergladen",
+      ...feldDarunter("summit-city-bergladen", "kunde"),
+      richtung: "oben",
+    },
+  };
+  await starteImBrowser(page);
+  await expect.poll(() => page.evaluate(schreibeStand, stand)).toBe(true);
+  await page.reload();
+  await page.goto("/app/#abenteuer");
+  await page.getByTestId("abenteuer-laden").click();
+  await expect(page.getByTestId("abenteuer-welt")).toBeVisible({ timeout: 30000 });
+  const aktion = page.getByTestId("abenteuer-aktion");
+  await expect(aktion).toHaveText("Sprechen", { timeout: 30000 });
+  await aktion.click();
+  await expect(page.getByTestId("abenteuer-sprechblase")).toContainText("Soll ich ihn dir zeigen?");
+  await page.getByTestId("abenteuer-vorfuehrung-zeigen").click();
+  const vorfuehrung = page.getByTestId("abenteuer-vorfuehrung");
+  await expect(vorfuehrung).toContainText("Das Schäfermatt");
+  await page.getByTestId("abenteuer-vorfuehrung-vor").click();
+  await expect(page.getByTestId("abenteuer-vorfuehrung-satz")).toContainText(
+    "Weiß zieht den Königsbauern",
+  );
+  await vorfuehrung.getByRole("button", { name: "Weiter" }).click();
+  await expect(vorfuehrung).toHaveCount(0);
+});
+
 test("Erinnerung London 1851: Sepia, kein Tagebuch, keine Münzen", async ({ page }) => {
   const stand = {
     ...STAND,

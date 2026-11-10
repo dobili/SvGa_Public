@@ -290,6 +290,8 @@ async function main() {
     "runden.json",
     "funde.json",
     "laeden.json",
+    // Vorführungen der Statisten (Dokument 16, 3.4); die App liest fen und zuege.
+    "vorfuehrungen.json",
   ]) {
     await kopiereJson("daten", name, "daten");
   }

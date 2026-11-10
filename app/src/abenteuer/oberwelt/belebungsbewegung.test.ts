@@ -15,6 +15,7 @@ function eintrag(typ: "statist" | "tier", verhalten: Tierverhalten = "sitzen"): 
     bis: { x: 8, y: 5 },
     wann: "immer",
     sagt: null,
+    zeigt: null,
     bild: null,
     verhalten,
   };

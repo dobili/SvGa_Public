@@ -1293,35 +1293,35 @@
       "zustand": "gebraucht",
       "stil": "klassisch"
     },
-    "rv8HolzhausRot": {
-      "quelle": "spiel/serene/serene_71.png",
-      "breite": 80,
-      "hoehe": 64,
+    "rv8WohnhausKlein": {
+      "quelle": "modern-exteriors/Modern_Exteriors_16x16/ME_Theme_Sorter_16x16/4_Generic_Building_Singles_16x16/ME_Singles_Generic_Building_16x16_Condo_3_44.png",
+      "breite": 96,
+      "hoehe": 128,
       "kollision": true,
       "art": "gebaeude",
       "blick": "unten",
-      "zustand": "neu",
-      "stil": "rustikal"
+      "zustand": "gebraucht",
+      "stil": "klassisch"
     },
-    "rv8HolzhausGruen": {
-      "quelle": "spiel/serene/serene_77.png",
-      "breite": 80,
-      "hoehe": 64,
+    "rv8MietshausB": {
+      "quelle": "modern-exteriors/Modern_Exteriors_16x16/ME_Theme_Sorter_16x16/4_Generic_Building_Singles_16x16/ME_Singles_Generic_Building_16x16_Condo_7_Example_2.png",
+      "breite": 48,
+      "hoehe": 192,
       "kollision": true,
       "art": "gebaeude",
       "blick": "unten",
-      "zustand": "neu",
-      "stil": "rustikal"
+      "zustand": "gebraucht",
+      "stil": "klassisch"
     },
-    "rv8HolzhausRotB": {
-      "quelle": "spiel/serene/serene_82.png",
-      "breite": 80,
-      "hoehe": 64,
+    "rv8MietshausC": {
+      "quelle": "modern-exteriors/Modern_Exteriors_16x16/ME_Theme_Sorter_16x16/4_Generic_Building_Singles_16x16/ME_Singles_Generic_Building_16x16_Condo_7_Example_3.png",
+      "breite": 48,
+      "hoehe": 192,
       "kollision": true,
       "art": "gebaeude",
       "blick": "unten",
-      "zustand": "neu",
-      "stil": "rustikal"
+      "zustand": "gebraucht",
+      "stil": "klassisch"
     }
   }
 }

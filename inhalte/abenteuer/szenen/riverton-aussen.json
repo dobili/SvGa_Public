@@ -667,12 +667,12 @@
       "feld": [1, 10]
     },
     {
-      "moebel": "rv8HolzhausRot",
-      "feld": [14, 4]
+      "moebel": "rv8WohnhausKlein",
+      "feld": [52, 8]
     },
     {
-      "moebel": "rv8HolzhausGruen",
-      "feld": [24, 4]
+      "moebel": "rv8MietshausB",
+      "feld": [16, 4]
     }
   ],
   "ausloeser": [
@@ -768,7 +768,8 @@
         "bis": "44,53",
         "tun": "klopft auf die Schachuhr",
         "wann": "tag",
-        "sagt": "statist.riverton.aussen.parkschachspieler"
+        "sagt": "statist.riverton.aussen.parkschachspieler",
+        "zeigt": "partieDesJahrhunderts"
       }
     },
     {
@@ -810,10 +811,10 @@
     {
       "name": "gabelstaplerfahrer",
       "typ": "statist",
-      "feld": [52, 17],
+      "feld": [55, 17],
       "eigenschaften": {
-        "von": "52,17",
-        "bis": "53,12",
+        "von": "55,17",
+        "bis": "61,17",
         "tun": "fährt Kisten zum Güterschuppen",
         "wann": "tag",
         "sagt": "statist.riverton.aussen.gabelstaplerfahrer"

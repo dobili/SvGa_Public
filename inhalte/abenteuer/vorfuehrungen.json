@@ -259,6 +259,16 @@
         "Ra4"
       ],
       "aus_sicht": "weiss"
+    },
+    {
+      "kennung": "schaefermatt",
+      "partie": "Schäfermatt (Lehrbeispiel)",
+      "quelle": "eigenes Beispiel (Dokument 16, 3.4: kurze, selbst gebaute Zugfolge)",
+      "pgn": "1.e4 e5 2.Bc4 Nc6 3.Qh5 Nf6 4.Qxf7#",
+      "ab": 0,
+      "fen": "rnbqkbnr/pppppppp/8/8/8/8/PPPPPPPP/RNBQKBNR w KQkq - 0 1",
+      "zuege": ["e4", "e5", "Bc4", "Nc6", "Qh5", "Nf6", "Qxf7#"],
+      "aus_sicht": "weiss"
     }
   ]
 }

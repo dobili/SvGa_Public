@@ -1906,6 +1906,132 @@
       "art": "tisch",
       "zustand": "kaputt",
       "stil": "modern"
+    },
+    "rv9Bogenfenster": {
+      "quelle": "spiel/eigene/bogenfenster_halle.png",
+      "breite": 32,
+      "hoehe": 32,
+      "kollision": false,
+      "art": "fenster",
+      "zustand": "gebraucht",
+      "stil": "klassisch"
+    },
+    "rv9Abfahrtsmonitor": {
+      "quelle": "spiel/eigene/abfahrtsmonitor_halle.png",
+      "breite": 32,
+      "hoehe": 32,
+      "kollision": false,
+      "art": "geraet",
+      "zustand": "neu",
+      "stil": "modern"
+    },
+    "rv9GrossWeissBauer": {
+      "quelle": "spiel/eigene/grossfigur_weiss_bauer.png",
+      "breite": 16,
+      "hoehe": 24,
+      "kollision": true,
+      "art": "deko",
+      "zustand": "gebraucht",
+      "stil": "klassisch"
+    },
+    "rv9GrossWeissTurm": {
+      "quelle": "spiel/eigene/grossfigur_weiss_turm.png",
+      "breite": 16,
+      "hoehe": 24,
+      "kollision": true,
+      "art": "deko",
+      "zustand": "gebraucht",
+      "stil": "klassisch"
+    },
+    "rv9GrossWeissSpringer": {
+      "quelle": "spiel/eigene/grossfigur_weiss_springer.png",
+      "breite": 16,
+      "hoehe": 24,
+      "kollision": true,
+      "art": "deko",
+      "zustand": "gebraucht",
+      "stil": "klassisch"
+    },
+    "rv9GrossWeissLaeufer": {
+      "quelle": "spiel/eigene/grossfigur_weiss_laeufer.png",
+      "breite": 16,
+      "hoehe": 24,
+      "kollision": true,
+      "art": "deko",
+      "zustand": "gebraucht",
+      "stil": "klassisch"
+    },
+    "rv9GrossWeissDame": {
+      "quelle": "spiel/eigene/grossfigur_weiss_dame.png",
+      "breite": 16,
+      "hoehe": 24,
+      "kollision": true,
+      "art": "deko",
+      "zustand": "gebraucht",
+      "stil": "klassisch"
+    },
+    "rv9GrossWeissKoenig": {
+      "quelle": "spiel/eigene/grossfigur_weiss_koenig.png",
+      "breite": 16,
+      "hoehe": 24,
+      "kollision": true,
+      "art": "deko",
+      "zustand": "gebraucht",
+      "stil": "klassisch"
+    },
+    "rv9GrossSchwarzBauer": {
+      "quelle": "spiel/eigene/grossfigur_schwarz_bauer.png",
+      "breite": 16,
+      "hoehe": 24,
+      "kollision": true,
+      "art": "deko",
+      "zustand": "gebraucht",
+      "stil": "klassisch"
+    },
+    "rv9GrossSchwarzTurm": {
+      "quelle": "spiel/eigene/grossfigur_schwarz_turm.png",
+      "breite": 16,
+      "hoehe": 24,
+      "kollision": true,
+      "art": "deko",
+      "zustand": "gebraucht",
+      "stil": "klassisch"
+    },
+    "rv9GrossSchwarzSpringer": {
+      "quelle": "spiel/eigene/grossfigur_schwarz_springer.png",
+      "breite": 16,
+      "hoehe": 24,
+      "kollision": true,
+      "art": "deko",
+      "zustand": "gebraucht",
+      "stil": "klassisch"
+    },
+    "rv9GrossSchwarzLaeufer": {
+      "quelle": "spiel/eigene/grossfigur_schwarz_laeufer.png",
+      "breite": 16,
+      "hoehe": 24,
+      "kollision": true,
+      "art": "deko",
+      "zustand": "gebraucht",
+      "stil": "klassisch"
+    },
+    "rv9GrossSchwarzDame": {
+      "quelle": "spiel/eigene/grossfigur_schwarz_dame.png",
+      "breite": 16,
+      "hoehe": 24,
+      "kollision": true,
+      "art": "deko",
+      "zustand": "gebraucht",
+      "stil": "klassisch"
+    },
+    "rv9GrossSchwarzKoenig": {
+      "quelle": "spiel/eigene/grossfigur_schwarz_koenig.png",
+      "breite": 16,
+      "hoehe": 24,
+      "kollision": true,
+      "art": "deko",
+      "zustand": "gebraucht",
+      "stil": "klassisch"
     }
   }
 }

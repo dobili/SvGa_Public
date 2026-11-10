@@ -2,7 +2,7 @@
   "karte": "capitalArena.halle",
   "datei": "karten/capital-arena-halle.json",
   "art": "innen",
-  "beschreibung": "Variante C, roter Saal: Die Turnierhalle mit dunkelroten Wänden und rotem Teppichboden, festlich. Oben das Banner und die Bühne mit dem Finaltisch, links und rechts je zwei Holztribünen übereinander an den Seitenwänden. Neun runde Tische mit Brett in drei Reihen füllen die Mitte. Links der Pressetisch, rechts der Fanshop, die Turniertafel an der Ostwand unten, Pflanze und Mülleimer links vor dem Ausgang.",
+  "beschreibung": "Variante C: Die Turnierhalle mit hellen Wänden und dunklem Holzboden, festlich. Oben das Banner und die Bühne mit dem Finaltisch, links und rechts davon je eine Holztribüne an der Nordwand; die Turniertafel hängt an der Nordwand über dem Saal. Neun Tische mit Brett in drei Reihen füllen die Mitte. Links der Pressetisch, rechts der Fanshop, Pflanzen in den Ecken und vor dem Ausgang, ein Mülleimer neben der Tür.",
   "wand": "creme",
   "boden": "holzDunkel",
   "raster": [
@@ -30,26 +30,41 @@
   "objekte": [
     {
       "moebel": "ca7Fenster",
-      "feld": [2, 1],
+      "feld": [
+        2,
+        1
+      ],
       "an_wand": true
     },
     {
       "moebel": "ca7Fenster",
-      "feld": [26, 1],
+      "feld": [
+        26,
+        1
+      ],
       "an_wand": true
     },
     {
       "moebel": "ca7Banner",
-      "feld": [12, 1],
+      "feld": [
+        12,
+        1
+      ],
       "an_wand": true
     },
     {
       "moebel": "ca7Buehne",
-      "feld": [12, 3]
+      "feld": [
+        12,
+        3
+      ]
     },
     {
       "moebel": "ca7Tisch",
-      "feld": [14, 3],
+      "feld": [
+        14,
+        3
+      ],
       "id": "fin"
     },
     {
@@ -58,33 +73,54 @@
     },
     {
       "moebel": "ca7StuhlRechts",
-      "feld": [13, 3],
+      "feld": [
+        13,
+        3
+      ],
       "zu": "fin"
     },
     {
       "moebel": "ca7StuhlLinks",
-      "feld": [16, 3],
+      "feld": [
+        16,
+        3
+      ],
       "zu": "fin"
     },
     {
       "moebel": "ca7Tribuene",
-      "feld": [1, 3]
+      "feld": [
+        1,
+        3
+      ]
     },
     {
       "moebel": "ca7Tribuene",
-      "feld": [5, 3]
+      "feld": [
+        5,
+        3
+      ]
     },
     {
       "moebel": "ca7Tribuene",
-      "feld": [21, 3]
+      "feld": [
+        21,
+        3
+      ]
     },
     {
       "moebel": "ca7Tribuene",
-      "feld": [25, 3]
+      "feld": [
+        25,
+        3
+      ]
     },
     {
       "moebel": "ca7Rundtisch",
-      "feld": [8, 9],
+      "feld": [
+        8,
+        9
+      ],
       "id": "r8_9"
     },
     {
@@ -93,17 +129,26 @@
     },
     {
       "moebel": "ca7StuhlRechts",
-      "feld": [7, 9],
+      "feld": [
+        7,
+        9
+      ],
       "zu": "r8_9"
     },
     {
       "moebel": "ca7StuhlLinks",
-      "feld": [10, 9],
+      "feld": [
+        10,
+        9
+      ],
       "zu": "r8_9"
     },
     {
       "moebel": "ca7Rundtisch",
-      "feld": [13, 9],
+      "feld": [
+        13,
+        9
+      ],
       "id": "r13_9"
     },
     {
@@ -112,17 +157,26 @@
     },
     {
       "moebel": "ca7StuhlRechts",
-      "feld": [12, 9],
+      "feld": [
+        12,
+        9
+      ],
       "zu": "r13_9"
     },
     {
       "moebel": "ca7StuhlLinks",
-      "feld": [15, 9],
+      "feld": [
+        15,
+        9
+      ],
       "zu": "r13_9"
     },
     {
       "moebel": "ca7Rundtisch",
-      "feld": [18, 9],
+      "feld": [
+        18,
+        9
+      ],
       "id": "r18_9"
     },
     {
@@ -131,17 +185,26 @@
     },
     {
       "moebel": "ca7StuhlRechts",
-      "feld": [17, 9],
+      "feld": [
+        17,
+        9
+      ],
       "zu": "r18_9"
     },
     {
       "moebel": "ca7StuhlLinks",
-      "feld": [20, 9],
+      "feld": [
+        20,
+        9
+      ],
       "zu": "r18_9"
     },
     {
       "moebel": "ca7Rundtisch",
-      "feld": [8, 12],
+      "feld": [
+        8,
+        12
+      ],
       "id": "r8_12"
     },
     {
@@ -150,17 +213,26 @@
     },
     {
       "moebel": "ca7StuhlRechts",
-      "feld": [7, 12],
+      "feld": [
+        7,
+        12
+      ],
       "zu": "r8_12"
     },
     {
       "moebel": "ca7StuhlLinks",
-      "feld": [10, 12],
+      "feld": [
+        10,
+        12
+      ],
       "zu": "r8_12"
     },
     {
       "moebel": "ca7Rundtisch",
-      "feld": [13, 12],
+      "feld": [
+        13,
+        12
+      ],
       "id": "r13_12"
     },
     {
@@ -169,17 +241,26 @@
     },
     {
       "moebel": "ca7StuhlRechts",
-      "feld": [12, 12],
+      "feld": [
+        12,
+        12
+      ],
       "zu": "r13_12"
     },
     {
       "moebel": "ca7StuhlLinks",
-      "feld": [15, 12],
+      "feld": [
+        15,
+        12
+      ],
       "zu": "r13_12"
     },
     {
       "moebel": "ca7Rundtisch",
-      "feld": [18, 12],
+      "feld": [
+        18,
+        12
+      ],
       "id": "r18_12"
     },
     {
@@ -188,17 +269,26 @@
     },
     {
       "moebel": "ca7StuhlRechts",
-      "feld": [17, 12],
+      "feld": [
+        17,
+        12
+      ],
       "zu": "r18_12"
     },
     {
       "moebel": "ca7StuhlLinks",
-      "feld": [20, 12],
+      "feld": [
+        20,
+        12
+      ],
       "zu": "r18_12"
     },
     {
       "moebel": "ca7Rundtisch",
-      "feld": [8, 15],
+      "feld": [
+        8,
+        15
+      ],
       "id": "r8_15"
     },
     {
@@ -207,17 +297,26 @@
     },
     {
       "moebel": "ca7StuhlRechts",
-      "feld": [7, 15],
+      "feld": [
+        7,
+        15
+      ],
       "zu": "r8_15"
     },
     {
       "moebel": "ca7StuhlLinks",
-      "feld": [10, 15],
+      "feld": [
+        10,
+        15
+      ],
       "zu": "r8_15"
     },
     {
       "moebel": "ca7Rundtisch",
-      "feld": [13, 15],
+      "feld": [
+        13,
+        15
+      ],
       "id": "r13_15"
     },
     {
@@ -226,17 +325,26 @@
     },
     {
       "moebel": "ca7StuhlRechts",
-      "feld": [12, 15],
+      "feld": [
+        12,
+        15
+      ],
       "zu": "r13_15"
     },
     {
       "moebel": "ca7StuhlLinks",
-      "feld": [15, 15],
+      "feld": [
+        15,
+        15
+      ],
       "zu": "r13_15"
     },
     {
       "moebel": "ca7Rundtisch",
-      "feld": [18, 15],
+      "feld": [
+        18,
+        15
+      ],
       "id": "r18_15"
     },
     {
@@ -245,150 +353,252 @@
     },
     {
       "moebel": "ca7StuhlRechts",
-      "feld": [17, 15],
+      "feld": [
+        17,
+        15
+      ],
       "zu": "r18_15"
     },
     {
       "moebel": "ca7StuhlLinks",
-      "feld": [20, 15],
+      "feld": [
+        20,
+        15
+      ],
       "zu": "r18_15"
     },
     {
       "moebel": "ca7Pressetisch",
-      "feld": [1, 11]
+      "feld": [
+        1,
+        11
+      ]
     },
     {
       "moebel": "ca7Fanshop",
-      "feld": [25, 11]
+      "feld": [
+        25,
+        11
+      ]
     },
     {
       "moebel": "ca7Pflanzekl",
-      "feld": [1, 16]
+      "feld": [
+        1,
+        16
+      ]
     },
     {
       "moebel": "ca7Muelleimer",
-      "feld": [5, 16]
+      "feld": [
+        5,
+        16
+      ]
     },
     {
       "moebel": "ca7Fussmatte",
-      "feld": [15, 18],
-      "versatz": [0, 8]
+      "feld": [
+        15,
+        18
+      ],
+      "versatz": [
+        0,
+        8
+      ]
     },
     {
       "moebel": "ca7Tuer",
-      "feld": [15, 19],
+      "feld": [
+        15,
+        19
+      ],
       "an_wand": true
     },
     {
       "moebel": "ca9Turniertafel",
-      "feld": [19, 1],
+      "feld": [
+        19,
+        1
+      ],
       "an_wand": true,
-      "versatz": [0, -2]
+      "versatz": [
+        0,
+        -2
+      ]
     },
     {
       "moebel": "ca7Pflanzekl",
-      "feld": [25, 16]
+      "feld": [
+        25,
+        16
+      ]
     },
     {
       "moebel": "ca7Pflanzekl",
-      "feld": [28, 16]
+      "feld": [
+        28,
+        16
+      ]
     },
     {
       "moebel": "ca7Muelleimer",
-      "feld": [23, 16]
+      "feld": [
+        23,
+        16
+      ]
     },
     {
       "moebel": "ca7Pflanze",
-      "feld": [1, 7]
+      "feld": [
+        1,
+        7
+      ]
     },
     {
       "moebel": "ca7Pflanze",
-      "feld": [27, 7]
+      "feld": [
+        27,
+        7
+      ]
     }
   ],
   "ausloeser": [
     {
       "name": "start",
-      "feld": [15, 18],
+      "feld": [
+        15,
+        18
+      ],
       "eigenschaften": {
         "richtung": "oben"
       }
     },
     {
       "name": "halleAusgang",
-      "feld": [15, 19]
+      "feld": [
+        15,
+        19
+      ]
     },
     {
       "name": "turniertafel",
-      "feld": [19, 3],
+      "feld": [
+        19,
+        3
+      ],
       "auf_moebel": true
     },
     {
       "name": "pressetisch",
-      "feld": [2, 12],
+      "feld": [
+        2,
+        12
+      ],
       "auf_moebel": true
     },
     {
       "name": "fanshop",
-      "feld": [26, 12],
+      "feld": [
+        26,
+        12
+      ],
       "auf_moebel": true
     },
     {
       "name": "banner",
-      "feld": [12, 3]
+      "feld": [
+        12,
+        3
+      ]
     }
   ],
   "figuren": [
     {
       "name": "victor",
-      "feld": [16, 6]
+      "feld": [
+        16,
+        6
+      ]
     },
     {
       "name": "turnierleiterin",
-      "feld": [11, 7]
+      "feld": [
+        11,
+        7
+      ]
     },
     {
       "name": "nova",
-      "feld": [11, 11]
+      "feld": [
+        11,
+        11
+      ]
     },
     {
       "name": "bea",
-      "feld": [16, 13]
+      "feld": [
+        16,
+        13
+      ]
     },
     {
       "name": "marcus",
-      "feld": [6, 12]
+      "feld": [
+        6,
+        12
+      ]
     },
     {
       "name": "tobias",
-      "feld": [21, 14]
+      "feld": [
+        21,
+        14
+      ]
     },
     {
       "name": "kade",
-      "feld": [11, 16]
+      "feld": [
+        11,
+        16
+      ]
     },
     {
       "name": "lin",
-      "feld": [5, 14]
+      "feld": [
+        5,
+        14
+      ]
     },
     {
       "name": "grahamHale",
-      "feld": [23, 10]
+      "feld": [
+        23,
+        10
+      ]
     },
     {
       "name": "mama",
-      "feld": [13, 18]
+      "feld": [
+        13,
+        18
+      ]
     },
     {
       "name": "juno",
-      "feld": [17, 18]
+      "feld": [
+        17,
+        18
+      ]
     }
   ],
   "belebung": [
     {
       "name": "zuschauer",
       "typ": "statist",
-      "feld": [3, 17],
+      "feld": [
+        3,
+        17
+      ],
       "eigenschaften": {
         "von": "7,15",
         "bis": "7,15",
@@ -400,7 +610,10 @@
     {
       "name": "reporter",
       "typ": "statist",
-      "feld": [22, 16],
+      "feld": [
+        22,
+        16
+      ],
       "eigenschaften": {
         "von": "20,15",
         "bis": "20,15",
@@ -412,7 +625,10 @@
     {
       "name": "vereinsmutter",
       "typ": "statist",
-      "feld": [5, 3],
+      "feld": [
+        5,
+        3
+      ],
       "eigenschaften": {
         "von": "5,3",
         "bis": "5,3",
@@ -424,7 +640,10 @@
     {
       "name": "ordner",
       "typ": "statist",
-      "feld": [25, 6],
+      "feld": [
+        25,
+        6
+      ],
       "eigenschaften": {
         "von": "25,6",
         "bis": "25,6",
@@ -434,6 +653,12 @@
       }
     }
   ],
-  "zustand": ["neu", "gebraucht"],
-  "stil": ["klassisch", "modern"]
+  "zustand": [
+    "neu",
+    "gebraucht"
+  ],
+  "stil": [
+    "klassisch",
+    "modern"
+  ]
 }

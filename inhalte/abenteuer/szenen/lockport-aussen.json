@@ -114,10 +114,6 @@
       "feld": [36, 20]
     },
     {
-      "moebel": "ld5Seil",
-      "feld": [17, 20]
-    },
-    {
       "moebel": "wg4Gras",
       "feld": [18, 8]
     },
@@ -128,10 +124,6 @@
     {
       "moebel": "wg4Gras",
       "feld": [2, 1]
-    },
-    {
-      "moebel": "wg4BlumenWeiss",
-      "feld": [27, 25]
     },
     {
       "moebel": "wg4BuschKlein",
@@ -178,11 +170,7 @@
     },
     {
       "moebel": "ld8Frachtkahn",
-      "feld": [3, 14]
-    },
-    {
-      "moebel": "ld5Seil",
-      "feld": [9, 20]
+      "feld": [3, 15]
     },
     {
       "moebel": "ld5Rettungsring",
@@ -402,14 +390,6 @@
       "feld": [16, 41]
     },
     {
-      "moebel": "wc5Gartenhaus",
-      "feld": [23, 41]
-    },
-    {
-      "moebel": "mf7Gartenhaus",
-      "feld": [60, 41]
-    },
-    {
       "moebel": "mf7Gartenhaus",
       "feld": [66, 41]
     },
@@ -434,10 +414,6 @@
       "feld": [42, 40]
     },
     {
-      "moebel": "wc5Gartenhaus",
-      "feld": [48, 40]
-    },
-    {
       "moebel": "ld9SchildAnkerTaue",
       "auf": "ausruester",
       "versatz": [0, 10]
@@ -453,6 +429,26 @@
     {
       "moebel": "rv8Baeckerei",
       "feld": [3, 36]
+    },
+    {
+      "moebel": "ld5Seil",
+      "feld": [5, 20]
+    },
+    {
+      "moebel": "ld5Seil",
+      "feld": [23, 20]
+    },
+    {
+      "moebel": "mf4Gemuesebeet",
+      "feld": [23, 41]
+    },
+    {
+      "moebel": "mf4BaumRot",
+      "feld": [60, 41]
+    },
+    {
+      "moebel": "mf2Blumenbeet",
+      "feld": [48, 42]
     }
   ],
   "ausloeser": [

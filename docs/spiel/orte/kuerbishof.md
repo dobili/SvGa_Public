@@ -118,3 +118,13 @@ Hof (Wahl C):
 
 Zustände: keine. Das Herbstfest steht in der Geschichte noch bevor, Walt öffnet nur das Gatter an der
 Landstraße (Zustand dort).
+
+## Gutachten Runde 9: Antworten (niedrig-1, 10.11.2026)
+
+- **Irrgarten:**
+  - Der Mais steht jetzt auf Ackerboden (Ackerbilder unter dem Feld).
+  - Außen herum ist eine geschlossene Maiswand; die Gänge berühren den Rand nicht.
+  - Zwei Heuballen markieren den Eingang am Hofweg.
+- **Traktor:** Er steht längs auf dem Hofweg (West–Ost), so passt die Seitenansicht (Regel 10.65).
+  Der Traktorfahrer steht daneben.
+- **Blaue Kiste beim Schwein:** Das war die kleine Tränke, jetzt steht dort ein Holztrog.

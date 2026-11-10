@@ -432,21 +432,21 @@
     {
       "name": "enten",
       "typ": "tier",
-      "feld": [24, 30],
+      "feld": [25, 27],
       "eigenschaften": {
-        "von": "21,30",
-        "bis": "28,30",
-        "verhalten": "folgen"
+        "von": "24,27",
+        "bis": "27,27",
+        "verhalten": "schwimmen"
       }
     },
     {
       "name": "kraehen",
       "typ": "tier",
-      "feld": [16, 5],
+      "feld": [16, 9],
       "eigenschaften": {
-        "von": "10,5",
-        "bis": "24,5",
-        "verhalten": "fliegen"
+        "von": "10,9",
+        "bis": "24,9",
+        "verhalten": "ausweichen"
       }
     },
     {
@@ -462,5 +462,6 @@
   "zustand": ["neu", "gebraucht", "alt"],
   "stil": ["klassisch", "modern", "natur"],
   "bruecken": ["h"],
+  "markierung": ["s"],
   "zustand_der_karte": "aufbruchGesehen und nicht ankunftCedarCreekGesehen"
 }

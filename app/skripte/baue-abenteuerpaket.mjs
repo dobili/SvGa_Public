@@ -14,6 +14,7 @@ import { createRequire } from "node:module";
 import { dirname, join, resolve } from "node:path";
 import { fileURLToPath } from "node:url";
 import { deflateSync } from "node:zlib";
+import { genutzteMoebel, kompakteKarte, ladbareKarten } from "./abenteuerpaket-auswahl.mjs";
 
 const require = createRequire(import.meta.url);
 const { Compiler } = require("inkjs/compiler/Compiler");
@@ -55,6 +56,8 @@ const FIGUR_KOERPER = [120, 60, 90];
 
 /** Die Dateien des Pakets mit Gruppe und Staffel (schnittstelle/paket.ts). */
 const dateien = [];
+/** Texte der geschriebenen Daten, Karten und Dialoge: Danach richtet sich, welche Möbel ins Paket kommen. */
+const texte = [];
 
 async function kopiereJson(unterordner, name, gruppe) {
   const inhalt = await readFile(join(QUELLE, name), "utf8");
@@ -87,10 +90,11 @@ async function kopiereOberflaeche() {
  * Bilder, die es nur mit der gekauften Grafik gibt (Figuren im Format von LimeZu): alle PNG aus
  * dem privaten Ordner; ohne ihn nichts, das Spiel nimmt dann die Platzhalter.
  */
-async function kopierePrivatordner(ordner) {
+async function kopierePrivatordner(ordner, behalte = () => true) {
   const quelle = join(PRIVAT, ordner);
   if (!existsSync(quelle)) return;
-  for (const name of (await readdir(quelle)).filter((d) => d.endsWith(".png")).sort()) {
+  const namen = (await readdir(quelle)).filter((d) => d.endsWith(".png") && behalte(d));
+  for (const name of namen.sort()) {
     await schreibe(`${ordner}/${name}`, await readFile(join(quelle, name)), "grafik");
   }
 }
@@ -128,7 +132,8 @@ async function ladeMoebelliste() {
  * damit Karten immer vollständig laden.
  */
 async function schreibeMoebel() {
-  const moebel = await ladeMoebelliste();
+  // Nur Möbel, die eine Karte, die Daten oder ein Dialog nennen (abenteuerpaket-auswahl.mjs).
+  const moebel = genutzteMoebel(await ladeMoebelliste(), texte);
   await schreibe("daten/moebel.json", JSON.stringify({ moebel }, null, 2) + "\n", "daten");
   for (const [name, angabe] of Object.entries(moebel)) {
     // Umgefärbte Fassung zuerst: durchscheinender statt grauer Festschatten (werkzeuge/schatten.py
@@ -167,6 +172,7 @@ async function schreibeGrafik(pfad, platzhalter) {
 async function schreibe(pfad, inhalt, gruppe, staffel = 1) {
   const voll = join(ZIEL, pfad);
   await mkdir(dirname(voll), { recursive: true });
+  if (typeof inhalt === "string") texte.push(inhalt);
   const bytes = typeof inhalt === "string" ? Buffer.from(inhalt, "utf8") : inhalt;
   await writeFile(voll, bytes);
   dateien.push({
@@ -304,12 +310,11 @@ async function main() {
   for (const name of (await readdir(join(QUELLE, "texte"))).filter((d) => d.endsWith(".json"))) {
     await kopiereJson("texte", `texte/${name}`, "daten");
   }
-  for (const name of (await readdir(join(QUELLE, "karten"))).filter((d) => d.endsWith(".json"))) {
-    await schreibe(
-      `karten/${name}`,
-      await readFile(join(QUELLE, "karten", name), "utf8"),
-      "karten",
-    );
+  // Nur Karten und Hintergründe, die orte.json erreicht; Karten ohne Einrückung (Paketgröße).
+  const ladbar = ladbareKarten(JSON.parse(await readFile(join(QUELLE, "orte.json"), "utf8")));
+  for (const name of (await readdir(join(QUELLE, "karten"))).filter((d) => ladbar.dateien.has(d))) {
+    const text = await readFile(join(QUELLE, "karten", name), "utf8");
+    await schreibe(`karten/${name}`, kompakteKarte(text), "karten");
   }
   for (const sprache of (await readdir(join(QUELLE, "dialoge"), { withFileTypes: true }))
     .filter((d) => d.isDirectory())
@@ -330,7 +335,7 @@ async function main() {
   await kopierePrivatordner("tiere");
   await kopierePrivatordner("portraets");
   await kopierePrivatordner("grafik");
-  await kopierePrivatordner("grafik/karten");
+  await kopierePrivatordner("grafik/karten", (name) => ladbar.hintergruende.has(name));
   await schreibeMoebel();
   await schreibeGrafik("grafik/platzhalter.png", platzhalterKacheln);
   await schreibeGrafik("grafik/held.png", () => platzhalterHeld());

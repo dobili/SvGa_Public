@@ -52,7 +52,7 @@
       "feld": [18, 0]
     },
     {
-      "moebel": "el7FassadeA",
+      "moebel": "el7FassadeD",
       "feld": [23, 0]
     },
     {
@@ -193,6 +193,17 @@
         "von": "4,16",
         "bis": "4,16",
         "tun": "putzt Schuhe am Gehwegrand",
+        "wann": "tag"
+      }
+    },
+    {
+      "name": "kutscher",
+      "typ": "statist",
+      "feld": [9, 13],
+      "eigenschaften": {
+        "von": "9,13",
+        "bis": "9,13",
+        "tun": "wartet neben seiner Droschke auf Fahrgäste",
         "wann": "tag"
       }
     }

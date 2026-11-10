@@ -140,6 +140,20 @@ Westen die Bucht; nur der Pfad öffnet den Westrand.
 - Offen: Düne ohne Höhe (2), Priel mit Sandrahmen (5), Radfahrer ohne Rad (11), leerer Nordosten
   (25), Bus in der Busbucht (22).
 
+**Drittes Gutachten (`gutachten/weg-ironwood-silicon-raststaette-3.md`, mittel-1):**
+
+- **Priel und Watt (2, 3):** Das Watt ist jetzt ein Boden (`w`: `wasser_watt`), kein Wasser. Der
+  Priel bleibt blaues Wasser und läuft ins Watt aus. Austernfischer und Ringelgänse sitzen im
+  Watt.
+- **Parkplatz (7):** Das zweite Auto auf der Fahrgasse ist weg. In der Busbucht hält ein Bus,
+  längs zur Fahrgasse (10.65).
+- **Container (8):** Er steht auf Pflaster.
+- **Imbisswagen (9):** Ein Verkäufer steht an der Klappe.
+- **Begründet:** Die Autos auf der Schnellstraße bleiben in Seitenansicht (4). Auf Ost-West-Straßen
+  zeichnet LimeZu Fahrzeuge so (10.60), der Haupt-Chat hat das bestätigt. Die Waschstraße hat
+  seit dem zweiten Gutachten Asphalt vor dem Tor (6).
+- Offen: Laternen am Dünenfuß (1), Abfahrt ohne Verzögerungsstreifen (5), Vogelschild (10).
+
 ### 1.2 Glasbrücke (`wegIronwoodSilicon.glasbruecke`, 140 × 26), Runde 8 neu gebaut
 
 **Neu gebaut nach der Revision des Autors (10.11.2026, „keine Variante passt“, mittel-1).** Die
@@ -373,7 +387,9 @@ geräumter Weg aus Steinplatten mit Schneewall statt brauner Erde. Statt der gra
 Metzgerei rückt eine Spalte nach Osten, die Laterne steht in der Lücke. Der Marktplatz hat einen
 Rand aus hellen Platten (`platten`). Der Mähroboter heißt im Winter Schneeräumroboter. Offen: Die
 Roboter bleiben ohne Bild, bis der Lieferroboter des Autors (Gemini, `ki-roh/lieferroboter.png`)
-kommt; der Gitarrenkoffer ist ein Bild mit zwei Koffern.
+kommt; der Gitarrenkoffer ist ein Bild mit zwei Koffern. Drittes Gutachten (`silicon-bay-altstadt-3.md`, „bereit für den Autor“),
+Restpunkte: Die Laternen stehen an den Hausgrenzen statt vor den Schaufenstern; ein zweites Kind
+rollt am Schneemann eine Schneekugel.
 
 **Belebung:** zwölf Statisten, acht davon mit Satz (`statist.siliconBay.altstadt.*`): Bäckerin,
 Uhrmacher, Musikhändler, Schülerin, Metzger (Perfect Move will die Straße kaufen), Rentnerpaar,
@@ -721,7 +737,9 @@ eine Schwelle darunter (Bordsteinbilder `cr9BordL2`/`cr9BordQ…`). Der weiße W
 Foyer und Büro ist weg; ein Bücherregal steht dort als Raumteiler, daneben eine Pflanze. Im Büro
 steht ein Regal mit Büchern statt Dosen. Die Eingangstür ist die Glastür `sb8GlastuerSued`
 (Bild seit Runde 8 im privaten Repository). Offen: Saugroboter (Bild des Autors aus Gemini kommt),
-Sofa von hinten und Kübelbaum (nicht im Auftrag des Haupt-Chats).
+Sofa von hinten und Kübelbaum (nicht im Auftrag des Haupt-Chats). Drittes Gutachten (`silicon-bay-akademie-3.md`, „bereit für den Autor“), Restpunkte: zwei
+Kübelpflanzen statt des großen Kübelbaums, zwei Stuhlreihen mit Fußraum statt drei dichter, der
+Beistelltisch steht mittig vor den beiden Sesseln.
 
 ### 4.6 Serverraum (`siliconBay.serverraum`)
 

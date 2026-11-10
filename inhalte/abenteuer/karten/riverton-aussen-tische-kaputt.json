@@ -11,7 +11,7 @@
  "tilewidth": 16,
  "tileheight": 16,
  "nextlayerid": 5,
- "nextobjectid": 268,
+ "nextobjectid": 271,
  "layers": [
   {
    "id": 1,
@@ -18107,8 +18107,8 @@
      "id": 260,
      "name": "sb5SchildPerfectMove",
      "type": "moebel",
-     "x": 608,
-     "y": 740,
+     "x": 596,
+     "y": 772,
      "width": 88,
      "height": 16,
      "rotation": 0,
@@ -18117,7 +18117,7 @@
       {
        "name": "tiefe",
        "type": "int",
-       "value": 748
+       "value": 809
       },
       {
        "name": "kollision",
@@ -18286,6 +18286,75 @@
        "value": true
       }
      ]
+    },
+    {
+     "id": 268,
+     "name": "cr9BordL12",
+     "type": "moebel",
+     "x": 800,
+     "y": 432,
+     "width": 16,
+     "height": 192,
+     "rotation": 0,
+     "visible": true,
+     "properties": [
+      {
+       "name": "tiefe",
+       "type": "int",
+       "value": 1
+      },
+      {
+       "name": "kollision",
+       "type": "bool",
+       "value": false
+      }
+     ]
+    },
+    {
+     "id": 269,
+     "name": "cr9BordL3",
+     "type": "moebel",
+     "x": 880,
+     "y": 432,
+     "width": 16,
+     "height": 48,
+     "rotation": 0,
+     "visible": true,
+     "properties": [
+      {
+       "name": "tiefe",
+       "type": "int",
+       "value": 1
+      },
+      {
+       "name": "kollision",
+       "type": "bool",
+       "value": false
+      }
+     ]
+    },
+    {
+     "id": 270,
+     "name": "cr9BordL6",
+     "type": "moebel",
+     "x": 880,
+     "y": 528,
+     "width": 16,
+     "height": 96,
+     "rotation": 0,
+     "visible": true,
+     "properties": [
+      {
+       "name": "tiefe",
+       "type": "int",
+       "value": 1
+      },
+      {
+       "name": "kollision",
+       "type": "bool",
+       "value": false
+      }
+     ]
     }
    ]
   }
@@ -18367,6 +18436,11 @@
    "name": "zustand_der_karte",
    "type": "string",
    "value": "slickAbschiedGesehen und nadelIronwood >= 1"
+  },
+  {
+   "name": "jahreszeit",
+   "type": "string",
+   "value": "winter"
   }
  ]
 }

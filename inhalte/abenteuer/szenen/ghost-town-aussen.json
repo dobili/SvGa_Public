@@ -3,7 +3,7 @@
   "datei": "karten/ghost-town-aussen.json",
   "art": "aussen",
   "wand": "felsRot",
-  "beschreibung": "Variante C (reicher): Die Front Street weitet sich vor dem Saloon zu einem kleinen Platz mit Fässern und Kisten; vier Holzhäuser, Wasserturm und Windrad stehen an der Nordseite. Der Weg zur gesperrten Mine zweigt zwischen Saloon und Sheriff ab. Der Friedhof im Südosten ist groß, mit Kreuzen, Grabsteinen und einem offenen Grab, das Grab ohne Namen am Ostrand. Viele Kakteen, rote Felsen und Geröll.",
+  "beschreibung": "Variante C (reicher): Die Front Street weitet sich vor dem Saloon zu einem kleinen Platz mit Fässern und Kisten; vier Holzhäuser, Wasserturm und Windrad stehen an der Nordseite. Der Weg zur gesperrten Mine zweigt zwischen Saloon und Sheriff ab. Der Friedhof im Südosten ist groß, mit Kreuzen, Grabsteinen und einem offenen Grab, das Grab ohne Namen am Ostrand. Viele Kakteen, rote Felsen und Geröll. Vor dem Saloon weitet sich die Straße zu einem kleinen Platz. Südlich der Front Street stehen Hotel, Mietstall mit Heu und Tränken und der Bestatter, hinter ihnen eine Gasse.",
   "boden": "sandRot",
   "wandart": "sandRot",
   "boeden": {
@@ -46,8 +46,8 @@
     "eeeeeeeeeeeeeeeeeeeeeeeeeeeeeeeeeeeeeeeeeeeeeeeeeeeeeeee",
     "eeeeeeeeeeeeeeeeeeeeeeeeeeeeeeeeeeeeeeeeeeeeeeeeeeeeeeee",
     "#.eeeeeeeeeeeeeeeeeeeeeeeeeeeeeeeeeeeeeeeeeeeeeeeeeeee.#",
-    "#.......ee............eeeeeeeeeeeee........kk..........#",
-    "#.......ee.............eeeeeeeeeee.........kk..........#",
+    "#.......ee........eeeeeeeeeeeeeeeee........kk..........#",
+    "#.......ee........eeeeeeeeeeeeeeee.........kk..........#",
     "#.......ee.................................kk..........#",
     "#.......ee.................................kk..........#",
     "#.......ee.................................kk..........#",
@@ -117,7 +117,7 @@
       "feld": [48, 13]
     },
     {
-      "moebel": "gt7Traenke",
+      "moebel": "gt10Traenke",
       "feld": [13, 25]
     },
     {
@@ -551,7 +551,7 @@
       "feld": [2, 27]
     },
     {
-      "moebel": "gt7Traenke",
+      "moebel": "gt10Traenke",
       "feld": [5, 26]
     },
     {
@@ -650,10 +650,10 @@
     {
       "name": "metallsucher",
       "typ": "statist",
-      "feld": [8, 22],
+      "feld": [20, 23],
       "eigenschaften": {
-        "von": "8,22",
-        "bis": "40,22",
+        "von": "20,23",
+        "bis": "20,23",
         "tun": "Mr. Pruitt sucht mit dem Metalldetektor die Straße ab",
         "wann": "tag"
       }
@@ -689,19 +689,19 @@
     {
       "name": "touristin",
       "typ": "statist",
-      "feld": [12, 22],
+      "feld": [25, 21],
       "eigenschaften": {
         "tun": "fotografiert die Fassaden",
         "wann": "tag",
-        "von": "12,22",
-        "bis": "18,22",
+        "von": "25,21",
+        "bis": "25,21",
         "sagt": "statist.ghostTown.aussen.touristin"
       }
     },
     {
       "name": "bikerin",
       "typ": "statist",
-      "feld": [44, 23],
+      "feld": [10, 21],
       "eigenschaften": {
         "tun": "macht Pause neben ihrem Motorrad",
         "wann": "tag",
@@ -711,7 +711,7 @@
     {
       "name": "geschichtslehrer",
       "typ": "statist",
-      "feld": [26, 23],
+      "feld": [31, 23],
       "eigenschaften": {
         "tun": "erklärt einer Schulklasse die Stadt",
         "wann": "tag",
@@ -721,7 +721,7 @@
     {
       "name": "schulkind",
       "typ": "statist",
-      "feld": [27, 22],
+      "feld": [37, 23],
       "eigenschaften": {
         "tun": "hört dem Lehrer halb zu",
         "wann": "tag",
@@ -731,7 +731,7 @@
     {
       "name": "urenkelPostkutscher",
       "typ": "statist",
-      "feld": [47, 22],
+      "feld": [14, 23],
       "eigenschaften": {
         "tun": "sucht einen Namen auf alten Listen",
         "wann": "tag",
@@ -741,7 +741,7 @@
     {
       "name": "fotograf",
       "typ": "statist",
-      "feld": [20, 22],
+      "feld": [9, 22],
       "eigenschaften": {
         "tun": "wartet auf ein Bild ohne Menschen",
         "wann": "tag",
@@ -751,7 +751,7 @@
     {
       "name": "goldwaescherin",
       "typ": "statist",
-      "feld": [3, 22],
+      "feld": [7, 23],
       "eigenschaften": {
         "tun": "siebt Sand in einer Pfanne",
         "wann": "tag",
@@ -761,7 +761,7 @@
     {
       "name": "wanderin",
       "typ": "statist",
-      "feld": [8, 21],
+      "feld": [3, 23],
       "eigenschaften": {
         "tun": "füllt ihre Wasserflasche auf",
         "wann": "morgen",
@@ -771,18 +771,18 @@
     {
       "name": "radfahrer",
       "typ": "statist",
-      "feld": [1, 21],
+      "feld": [33, 21],
       "eigenschaften": {
         "tun": "fährt staubig durch die Stadt",
         "wann": "tag",
-        "von": "1,21",
-        "bis": "54,21"
+        "von": "33,21",
+        "bis": "33,21"
       }
     },
     {
       "name": "bikerFreund",
       "typ": "statist",
-      "feld": [45, 22],
+      "feld": [45, 23],
       "eigenschaften": {
         "tun": "putzt den Helm",
         "wann": "tag"
@@ -791,7 +791,7 @@
     {
       "name": "malerin",
       "typ": "statist",
-      "feld": [30, 23],
+      "feld": [25, 24],
       "eigenschaften": {
         "tun": "zeichnet den Saloon",
         "wann": "tag"
@@ -800,7 +800,7 @@
     {
       "name": "mannMitHut",
       "typ": "statist",
-      "feld": [16, 20],
+      "feld": [7, 22],
       "eigenschaften": {
         "tun": "döst im Schatten auf dem Bretterweg",
         "wann": "tag"

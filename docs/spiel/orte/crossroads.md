@@ -220,6 +220,24 @@ Auftrag `runde9_uebrige_karten.md`: drei Mängel aus `variantenwahl.md`, die fü
 - Mangel 3: Weg in vier weiten Bögen (eine Spalte je zwei bis drei Reihen) statt rechtwinkliger Versprünge; Felder halten zwei Kacheln Abstand zum Weg.
 - Zustände: keine (das Gewitter ist Wetter, keine feste Änderung).
 
+### 3.5 Runde 9: Gutachten zu Crossroads und Weg 8 (mittel-3, 10.11.2026)
+
+`gutachten/crossroads.md`, `gutachten/wege-mittel-3-runde9.md`:
+
+- **Außen:** Asphalttrichter an den Einmündungen der Schotterstraßen in den Highway, Bordsteine neu
+  erzeugt; lange gedeckte Picknicktische am Rastplatz (die alten lasen sich als Bänke); Motel mit
+  vier Zimmern und Eisautomat in der Beschreibung. Fahrzeuge bleiben Seitenansicht und stehen längs
+  in ihren Buchten (10.65). Das geschlossene Gatter steht quer zur Straße und ist von Süden nur als
+  Kante zu sehen, das offene liegt längs am Rand und zeigt seine Fläche: dasselbe Gatter.
+- **Raststätte:** offene Durchreiche mit Blick in die Küche (Bildwunsch `durchreiche.py`), weiße
+  Fliesen in der Küche, gläserne Eingangstür (`sb8GlastuerSued`), Bretter liegen auf der Platte,
+  Hocker gleich verteilt; Fernfahrer und Schausteller sitzen (`tun`: „sitzt …“).
+- **Geysirbecken:** Grenze Wiese–Sinter in längeren Bögen statt Zinnen; Bootsschuppen weg; Bisons
+  größer (52 Pixel, Bildwunsch `bison_klein.py`) und die Herde mit dem neuen Tierbild Bison zurück;
+  der Wapiti (zeigte eine Kuh) ist weg, die Weide hat Bisons.
+- **Prärie:** Weizen auf Ackerboden; gekiester Hofplatz zwischen Farmhaus, Windrad und Scheune, Fahrweg
+  zu Traktor und Silo; Sturmkellerklappe als zweiflügelige Tür im Gras (`sturmkeller_wiese.png`).
+
 ## 4. Bühnenbilder
 
 Die Inventare stehen in den Szenen (`beschreibung`) und folgen 1.1 bis 1.4; feste Felder sind die

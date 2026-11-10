@@ -13177,19 +13177,19 @@
     },
     {
      "id": 24,
-     "name": "gc7LinsenKiste",
+     "name": "gc10Linse",
      "type": "moebel",
      "x": 1024,
      "y": 272,
-     "width": 16,
-     "height": 16,
+     "width": 32,
+     "height": 32,
      "rotation": 0,
      "visible": true,
      "properties": [
       {
        "name": "tiefe",
        "type": "int",
-       "value": 280
+       "value": 296
       },
       {
        "name": "kollision",

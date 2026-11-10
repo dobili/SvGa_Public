@@ -12376,12 +12376,12 @@
     },
     {
      "id": 69,
-     "name": "wg5BootAb",
+     "name": "wg6BootLaengs",
      "type": "moebel",
-     "x": 864,
-     "y": 352,
-     "width": 32,
-     "height": 64,
+     "x": 832,
+     "y": 368,
+     "width": 64,
+     "height": 32,
      "rotation": 0,
      "visible": true,
      "properties": [
@@ -12399,12 +12399,12 @@
     },
     {
      "id": 70,
-     "name": "wg5BootAuf",
+     "name": "wg6BootLaengs",
      "type": "moebel",
      "x": 928,
-     "y": 352,
-     "width": 32,
-     "height": 64,
+     "y": 368,
+     "width": 64,
+     "height": 32,
      "rotation": 0,
      "visible": true,
      "properties": [
@@ -18038,11 +18038,6 @@
    "name": "kennung",
    "type": "string",
    "value": "wegMapleCedar.flussweg"
-  },
-  {
-   "name": "toenung",
-   "type": "string",
-   "value": "nebel"
   }
  ]
 }

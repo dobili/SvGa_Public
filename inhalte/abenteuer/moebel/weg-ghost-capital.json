@@ -300,6 +300,35 @@
       "art": "steg",
       "zustand": "gebraucht",
       "stil": "natur"
+    },
+    "gc10Seefaehre": {
+      "quelle": "spiel/eigene/seefaehre.png",
+      "breite": 320,
+      "hoehe": 96,
+      "kollision": false,
+      "art": "fahrzeug",
+      "zustand": "gebraucht",
+      "stil": "modern"
+    },
+    "gc10Hocker": {
+      "quelle": "modern-interiors/1_Interiors/16x16/Theme_Sorter_Black_Shadow_Singles/6_Music_and_Sport_Black_Shadow_Singles_16x16/Music_and_Sport_Black_Shadow_Singles_171.png",
+      "breite": 16,
+      "hoehe": 16,
+      "kollision": true,
+      "art": "bank",
+      "zustand": "gebraucht",
+      "stil": "natur",
+      "blick": "unten"
+    },
+    "gc10Linse": {
+      "quelle": "spiel/eigene/alte_linse.png",
+      "breite": 32,
+      "hoehe": 32,
+      "kollision": true,
+      "art": "kiste",
+      "zustand": "gebraucht",
+      "stil": "natur",
+      "blick": "unten"
     }
   }
 }

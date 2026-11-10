@@ -983,7 +983,7 @@
      "id": 11,
      "name": "herrMitZylinder",
      "type": "statist",
-     "x": 96,
+     "x": 176,
      "y": 160,
      "width": 16,
      "height": 16,
@@ -1159,7 +1159,7 @@
     },
     {
      "id": 17,
-     "name": "ldBild",
+     "name": "gt7Bild",
      "type": "moebel",
      "x": 160,
      "y": 16,

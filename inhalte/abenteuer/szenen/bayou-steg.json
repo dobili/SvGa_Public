@@ -1,8 +1,8 @@
 {
   "karte": "bayou.steg",
   "art": "aussen",
-  "beschreibung": "Variante C, reich: Schwarzes, stehendes Wasser mit ausgefransten Inseln und dichten Zypressen. Therons Bretterhütte mit Fässern und Brennholz steht auf der großen Insel, sein Luftboot am Südsteg. Nördlich eine Zypresseninsel mit Steg, im Osten eine Baumgruppe. Südöstlich die Hütte der Krebsfischerin mit Kisten, über einen langen Steg zu erreichen. Ein kurzer Steg führt zur kleinen Südwestinsel, wo der Angler neben seinem Kahn sitzt. Eingangssteg mit überflutetem Stück (S8) und Nebelsteg bleiben; Sumpfzypressen mit Moos und Schilf an den Ufern.",
-  "boden": "gras",
+  "beschreibung": "Variante C, reich: Schwarzes, stehendes Wasser mit Seerosen mit ausgefransten Inseln aus nassem, dunklem Boden und dichten Zypressen. Therons Bretterhütte mit Fässern und Brennholz steht auf der großen Insel, sein Luftboot am Südsteg. Nördlich eine Zypresseninsel mit Steg, im Osten eine Baumgruppe. Südöstlich die Hütte der Krebsfischerin mit Kisten, über einen langen Steg zu erreichen. Ein kurzer Steg führt zur kleinen Südwestinsel, wo der Angler neben seinem hölzernen Kahn sitzt. Eingangssteg mit überflutetem Stück (S8) und Nebelsteg bleiben; Sumpfzypressen mit Moos und Schilf an den Ufern.",
+  "boden": "sumpfboden",
   "wandart": "gras",
   "bruecken": [
     "h"
@@ -110,7 +110,7 @@
       ]
     },
     {
-      "moebel": "ld5Kahn",
+      "moebel": "ld5Ruderboot",
       "feld": [
         4,
         32
@@ -160,9 +160,9 @@
       ]
     },
     {
-      "moebel": "wr5Eiche",
+      "moebel": "sd6Zypresse",
       "feld": [
-        13,
+        14,
         19
       ]
     },

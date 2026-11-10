@@ -35,6 +35,19 @@ Bilder (in ``spiel/eigene/``, Breite × Höhe in Pixeln):
   ``08_Detective_Hat_02``, einen rötlichen Hut, der im Spiel wie eine rote Zwergenmütze wirkt
   (Variantenwahl Siedlungshütte). Wunsch: ``08_Detective_Hat_03`` (sandfarbener Krempenhut).
   ``postreiter_figur()`` unten ändert nur diesen Eintrag.
+- ``prellbock_holz.png`` (32 × 16): Prellbock einer Grubenbahn, ein dicker Holzbalken quer über
+  schmaler Spur auf zwei Pfosten (Gutachten Goldmine: der rot-weiße Bock war eine Straßenbake).
+- ``lore_vorn.png`` (32 × 32): Lore von vorn auf senkrechtem Gleis, Kasten mit Golderz, zwei Räder
+  (Gutachten Goldmine: Lore in Seitenansicht quer über dem Gleis, Regel 10.65).
+- ``schwingtuer.png`` (16 × 16): Saloon-Schwingtür, zwei halbhohe Lattenflügel in der Türöffnung.
+- ``abzeichen_postreiter.png`` (16 × 16): Messingstern des Postreiters, im Staub am Treppenfuß,
+  mit einem kleinen Glanzpunkt, damit man ihn findet.
+- ``fassade_london_d_tief.png`` (80 × 144): Front A mit Ladenschild „HUETE“ statt „TABAK“ (Hutmacher),
+  damit am Strand kein Laden doppelt steht.
+- ``tafel_kegelkoenig.png`` (32 × 32): Wandtafel des Gasthauses mit „KEGEL-KOENIG“ und drei
+  Kreidezeilen (Namen mit Strichen), Holzrahmen (Gutachten: Tafel leer).
+- ``schild_sackgasse.png`` (16 × 32): Verkehrsschild Sackgasse (blaues Quadrat, weißer Balken mit
+  rotem Querbalken oben) an einem grauen Pfosten, für den Wendehammer der Birch Lane.
 
 Aufruf: python niedrig1_runde9_karten.py /home/user/schach-abenteuer-inhalte
 """
@@ -273,6 +286,118 @@ def postreiter_figur(haupt: Path) -> None:
     pfad.write_text(json.dumps(daten, ensure_ascii=False, indent=2) + "\n", encoding="utf-8")
 
 
+MESSING = (214, 172, 70, 255)
+MESSING_DUNKEL = (150, 110, 40, 255)
+GLANZ = (255, 250, 220, 255)
+HOLZ_PB = (120, 84, 52, 255)
+HOLZ_PB_HELL = (160, 116, 72, 255)
+ERZ = (200, 160, 60, 255)
+STAHL_LORE = (110, 112, 124, 255)
+
+
+def prellbock_holz() -> Image.Image:
+    """Holzprellbock 32 × 16: zwei Pfosten, darüber ein dicker Querbalken mit Maserung."""
+    bild = Image.new("RGBA", (32, 16))
+    z = ImageDraw.Draw(bild)
+    for x in (6, 23):
+        z.rectangle((x, 6, x + 3, 15), fill=RAHMEN)
+        z.rectangle((x + 1, 7, x + 2, 15), fill=HOLZ_PB)
+    z.rectangle((2, 3, 29, 9), fill=RAHMEN)
+    z.rectangle((3, 4, 28, 8), fill=HOLZ_PB)
+    z.line((4, 5, 27, 5), fill=HOLZ_PB_HELL)
+    return bild
+
+
+def lore_vorn() -> Image.Image:
+    """Lore von vorn 32 × 32: Kasten oben breiter als unten, darin Golderz, unten zwei Räder."""
+    bild = Image.new("RGBA", (32, 32))
+    z = ImageDraw.Draw(bild)
+    z.ellipse((6, 25, 13, 31), fill=RAHMEN)
+    z.ellipse((18, 25, 25, 31), fill=RAHMEN)
+    z.polygon([(3, 8), (28, 8), (25, 26), (6, 26)], fill=RAHMEN)
+    z.polygon([(5, 10), (26, 10), (24, 24), (7, 24)], fill=STAHL_LORE)
+    z.line((6, 16, 25, 16), fill=RAHMEN)
+    for x, y in ((8, 6), (13, 5), (18, 6), (22, 7), (11, 8), (16, 8)):
+        z.rectangle((x, y, x + 3, y + 2), fill=ERZ)
+    return bild
+
+
+def schwingtuer() -> Image.Image:
+    """Schwingtür 16 × 16: zwei halbhohe Flügel mit Latten, oben gewellt, unten frei."""
+    bild = Image.new("RGBA", (16, 16))
+    z = ImageDraw.Draw(bild)
+    for x0 in (1, 8):
+        z.rectangle((x0, 4, x0 + 6, 12), fill=RAHMEN)
+        z.rectangle((x0 + 1, 5, x0 + 5, 11), fill=HOLZ_PB)
+        for x in range(x0 + 2, x0 + 6, 2):
+            z.line((x, 6, x, 10), fill=HOLZ_PB_HELL)
+    return bild
+
+
+def abzeichen_postreiter() -> Image.Image:
+    """Messingstern 16 × 16 (sechs Zacken), mitten im Bild, mit Glanzpunkt oben links."""
+    bild = Image.new("RGBA", (16, 16))
+    z = ImageDraw.Draw(bild)
+    stern = [(8, 3), (10, 6), (13, 6), (11, 9), (12, 12), (8, 10), (4, 12), (5, 9), (3, 6), (6, 6)]
+    z.polygon(stern, fill=MESSING, outline=MESSING_DUNKEL)
+    z.point((7, 6), fill=GLANZ)
+    z.point((6, 7), fill=GLANZ)
+    return bild
+
+
+def fassade_london_d(haupt: Path) -> Image.Image:
+    """Front A mit anderem Ladenschild: Das Schildfeld (dunkles Band unter dem ersten Stock) wird
+    neu gefüllt und mit „HUETE“ beschriftet; dazu wie bei den anderen die Dachfläche."""
+    bild = fassade_tief(haupt, "fassade_london_a")
+    px = bild.load()
+    # Das Schildband liegt im alten Bild etwa bei y 72–84 (hier + DACH_H); Schrift ist gelb.
+    y0, y1 = DACH_H + 72, DACH_H + 84
+    hinter = px[4, y0 + 4]
+    z = ImageDraw.Draw(bild)
+    z.rectangle((6, y0, bild.width - 7, y1), fill=hinter)
+    schreibe(z, "HUETE", (bild.width - textbreite("HUETE")) // 2, y0 + 1, (232, 186, 64, 255))
+    return bild
+
+
+TAFEL_GRUEN = (40, 64, 52, 255)
+KREIDE = (226, 226, 214, 255)
+BLAU_SCHILD = (40, 92, 170, 255)
+ROT_SCHILD = (196, 40, 40, 255)
+WEISS_SCHILD = (245, 245, 245, 255)
+GRAU_PFOSTEN = (140, 142, 150, 255)
+
+
+def tafel_kegelkoenig() -> Image.Image:
+    """Wandtafel 32 × 32: Holzrahmen, grüne Fläche, oben „KEGEL“, darunter „KOENIG“, dann drei
+    Zeilen aus Kreidestrichen (Namen und Wurfzahlen)."""
+    bild = Image.new("RGBA", (32, 32))
+    z = ImageDraw.Draw(bild)
+    z.rectangle((1, 2, 30, 29), fill=RAHMEN)
+    z.rectangle((2, 3, 29, 28), fill=HOLZ_PB)
+    z.rectangle((4, 5, 27, 26), fill=TAFEL_GRUEN)
+    for wort, y in (("KEGEL", 6), ("KOENIG", 12)):
+        schreibe(z, wort, 4 + (24 - textbreite(wort)) // 2, y, KREIDE)
+    for y in (19, 22, 25):
+        z.line((6, y, 15, y), fill=KREIDE)
+        for x in range(18, 26, 2):
+            z.line((x, y - 1, x, y), fill=KREIDE)
+    return bild
+
+
+def schild_sackgasse() -> Image.Image:
+    """Verkehrsschild Sackgasse 16 × 32: grauer Pfosten, oben ein blaues Quadrat mit weißem
+    senkrechtem Balken und rotem Querbalken an seinem Ende."""
+    bild = Image.new("RGBA", (16, 32))
+    z = ImageDraw.Draw(bild)
+    z.rectangle((7, 12, 8, 31), fill=GRAU_PFOSTEN)
+    z.rectangle((2, 1, 13, 12), fill=RAHMEN)
+    z.rectangle((3, 2, 12, 11), fill=BLAU_SCHILD)
+    z.rectangle((7, 5, 8, 10), fill=WEISS_SCHILD)
+    z.rectangle((5, 3, 10, 4), fill=ROT_SCHILD)
+    z.rectangle((6, 30, 9, 31), fill=(58, 58, 80, 90))
+    return bild
+
+
 def main(haupt: Path) -> None:
     ziel = haupt / "spiel" / "eigene"
     fenster_nacht(haupt).save(ziel / "fenster_nacht.png")
@@ -286,6 +411,13 @@ def main(haupt: Path) -> None:
     schild_zu_verkaufen().save(ziel / "schild_zu_verkaufen.png")
     for name in ("fassade_london_a", "fassade_london_b", "fassade_london_c", "kaffeehaus_fassade"):
         fassade_tief(haupt, name).save(ziel / f"{name}_tief.png")
+    fassade_london_d(haupt).save(ziel / "fassade_london_d_tief.png")
+    prellbock_holz().save(ziel / "prellbock_holz.png")
+    lore_vorn().save(ziel / "lore_vorn.png")
+    schwingtuer().save(ziel / "schwingtuer.png")
+    abzeichen_postreiter().save(ziel / "abzeichen_postreiter.png")
+    tafel_kegelkoenig().save(ziel / "tafel_kegelkoenig.png")
+    schild_sackgasse().save(ziel / "schild_sackgasse.png")
 
 
 if __name__ == "__main__":

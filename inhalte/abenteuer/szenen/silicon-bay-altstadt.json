@@ -518,22 +518,22 @@
     },
     {
       "moebel": "mf4Laterne",
-      "feld": [11, 19],
+      "feld": [14, 19],
       "vorn": true
     },
     {
       "moebel": "mf4Laterne",
-      "feld": [23, 19],
+      "feld": [27, 19],
       "vorn": true
     },
     {
       "moebel": "mf4Laterne",
-      "feld": [35, 19],
+      "feld": [42, 19],
       "vorn": true
     },
     {
       "moebel": "mf4Laterne",
-      "feld": [47, 19],
+      "feld": [56, 19],
       "vorn": true
     },
     {
@@ -1122,7 +1122,7 @@
       "typ": "statist",
       "feld": [39, 52],
       "eigenschaften": {
-        "tun": "bauen einen Schneemann im Park",
+        "tun": "baut einen Schneemann im Park",
         "wann": "tag",
         "von": "36,52",
         "bis": "42,53"
@@ -1178,6 +1178,17 @@
         "wann": "tag",
         "von": "20,43",
         "bis": "20,43"
+      }
+    },
+    {
+      "name": "kind2",
+      "typ": "statist",
+      "feld": [42, 52],
+      "eigenschaften": {
+        "tun": "rollt eine Schneekugel für den Schneemann",
+        "wann": "tag",
+        "von": "41,53",
+        "bis": "44,53"
       }
     }
   ],

@@ -1,7 +1,7 @@
 {
   "karte": "wegSummitCrossroads.geysirbecken",
   "art": "aussen",
-  "beschreibung": "Dichter Kiefernwald, die Ranger-Station mit Häuschen, Rätseltafel, Bank und Warnschild am offenen Tor (S10). Dahinter das Geysirbecken: heiße Quellen mit hellem Sinterwulst, orangem Bakteriensaum und flachem, türkisem Rand, dazwischen weite Sinterflächen mit vielen Geysirkegeln. Ein Bohlenweg läuft im Zickzack zwischen den Becken hindurch, über zwei Abflussrinnen führen kurze Stege. In der Mitte der Infoplatz mit Bänken und Tafel am Bootsschuppen, auf der Sinterinsel östlich des Wegs grasen Bisons. Im Süden zwei Weiden mit Zäunen, Wildblumen, Bänke unter Kiefern.",
+  "beschreibung": "Dichter Kiefernwald, die Ranger-Station mit Häuschen, Rätseltafel, Bank und Warnschild am offenen Tor (S10). Dahinter das Geysirbecken: heiße Quellen mit hellem Sinterwulst, orangem Bakteriensaum und flachem, türkisem Rand, dazwischen weite Sinterflächen mit vielen Geysirkegeln. Ein Bohlenweg läuft im Zickzack zwischen den Becken hindurch, über zwei Abflussrinnen führen kurze Stege. In der Mitte der Infoplatz mit Bänken und Tafel, auf der Sinterinsel östlich des Wegs stehen Bisons, größer als jede Kuh. Im Süden zwei Weiden mit Zäunen, Wildblumen, Bänke unter Kiefern.",
   "boden": "gras",
   "wandart": "gras",
   "ufer": "sinter",
@@ -32,10 +32,10 @@
     "#.............ee.............#",
     "#.............ee.............#",
     "#.............ee.............#",
-    "#......s......ee.....s.......#",
-    "#......ss..s..ee.s..sss......#",
-    "#.s...sssssss.ddssssssss..ss.#",
-    "#sss.sssssssssddsssssssssssss#",
+    "#.............ee....s........#",
+    "#.........sssseessssssss.....#",
+    "#.......ssssssddssssssssss...#",
+    "#.....ssssssssddssssssssssss.#",
     "#sssss~~ssssssddsssssssssssss#",
     "#ssss~~~~~ssssddsssssssssssss#",
     "#ss~~~~~~~ssssddsssssssssssss#",
@@ -134,10 +134,10 @@
     "#sss~~~~~sssddssssss~~~~~ssss#",
     "#ssss~~~ssssddssssssss~~sssss#",
     "#sssssssssssddsssssssssssssss#",
-    "#sssssssssssddsssssss..ssssss#",
-    "#ssss..s...sddssssss....sssss#",
-    "#sss........eess..s......s..s#",
-    "#ss.........ee...............#",
+    "#sssssssss..dd.ssssssssssssss#",
+    "#sssssss....dd.....ssssssssss#",
+    "#sssss......ee...........ssss#",
+    "#s..........ee..............s#",
     "#...........ee...............#",
     "#...........ee...............#",
     "#...........ee...............#",
@@ -323,10 +323,6 @@
     {
       "moebel": "mfBank",
       "feld": [20, 16]
-    },
-    {
-      "moebel": "cc4Bootsschuppen",
-      "feld": [17, 56]
     },
     {
       "moebel": "mfBank",
@@ -925,7 +921,11 @@
     },
     {
       "moebel": "sx7Geysir",
-      "feld": [8, 110]
+      "feld": [3, 109]
+    },
+    {
+      "moebel": "sx7Geysir",
+      "feld": [7, 110]
     },
     {
       "moebel": "sx7Geysir",
@@ -933,23 +933,19 @@
     },
     {
       "moebel": "sx7Geysir",
-      "feld": [15, 118]
-    },
-    {
-      "moebel": "sx7Geysir",
-      "feld": [25, 119]
+      "feld": [17, 119]
     },
     {
       "moebel": "sx9Bison",
-      "feld": [15, 86]
+      "feld": [18, 86]
     },
     {
       "moebel": "sx9BisonLiegend",
-      "feld": [19, 86]
+      "feld": [25, 88]
     },
     {
       "moebel": "sx9Bison",
-      "feld": [25, 88]
+      "feld": [18, 89]
     },
     {
       "moebel": "felsKlein",
@@ -985,11 +981,11 @@
     },
     {
       "moebel": "felsKlein",
-      "feld": [21, 88]
+      "feld": [8, 72]
     },
     {
       "moebel": "felsKlein",
-      "feld": [8, 72]
+      "feld": [16, 66]
     },
     {
       "moebel": "sx9BisonLiegend",
@@ -1061,6 +1057,16 @@
   ],
   "belebung": [
     {
+      "name": "bisonherde",
+      "typ": "tier",
+      "feld": [24, 92],
+      "eigenschaften": {
+        "von": "22,91",
+        "bis": "26,94",
+        "verhalten": "ausweichen"
+      }
+    },
+    {
       "name": "raben",
       "typ": "tier",
       "feld": [20, 8],
@@ -1088,16 +1094,6 @@
         "von": "18,155",
         "bis": "25,165",
         "verhalten": "flitzen"
-      }
-    },
-    {
-      "name": "wapiti",
-      "typ": "tier",
-      "feld": [24, 145],
-      "eigenschaften": {
-        "von": "20,142",
-        "bis": "27,150",
-        "verhalten": "ausweichen"
       }
     },
     {
@@ -1159,6 +1155,16 @@
         "bis": "20,158",
         "sagt": "statist.wegSummitCrossroads.geysirbecken.schachlehrerin",
         "zeigt": "unzickerSarapu"
+      }
+    },
+    {
+      "name": "bisonWeide",
+      "typ": "tier",
+      "feld": [8, 129],
+      "eigenschaften": {
+        "von": "6,128",
+        "bis": "11,131",
+        "verhalten": "ausweichen"
       }
     },
     {

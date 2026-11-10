@@ -3333,6 +3333,15 @@
       "art": "schild",
       "zustand": "gebraucht",
       "stil": "klassisch"
+    },
+    "mf10SchildSackgasse": {
+      "quelle": "spiel/eigene/schild_sackgasse.png",
+      "breite": 16,
+      "hoehe": 32,
+      "kollision": true,
+      "art": "schild",
+      "zustand": "gebraucht",
+      "stil": "klassisch"
     }
   }
 }

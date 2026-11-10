@@ -1,16 +1,16 @@
 {
   "karte": "crossroads.raststaette",
   "art": "innen",
-  "beschreibung": "Darlenes Raststätte in Crossroads: Holzwände, Dielen. Im Norden hinter einer Innenwand die Großküche mit Kühlschränken, drei Herden unter Hauben, Grill, Fritteuse und Spültisch, in der Mitte ein Arbeitstisch mit Brett und Geschirr, an der Wand der Geschirrschrank; rechts daneben das WC. In der Küchenwand die Durchreiche, davor der lange Holztresen mit Kaffeemaschine, Gläsern und Flaschen und vier Hockern; Darlene dahinter, die Kasse am rechten Tresenende zum Gast hin. Rechts Darlenes Laden mit Postkartenständer und Regalen vor der Wand, davor der lange Varianten-Tisch mit drei Brettern und Hockern ringsum. Links unten zwei runde Tische mit Stühlen, rechts unten Novas Ecktisch, ein Spielautomat. Unten die Glastür mit Fußmatte.",
+  "beschreibung": "Darlenes Raststätte in Crossroads: Holzwände, Dielen. Im Norden hinter einer Innenwand die Großküche mit weißen Fliesen, Kühlschränken, drei Herden unter Hauben, Grill, Fritteuse und Spültisch, in der Mitte ein Arbeitstisch mit Brett und Geschirr, an der Wand der Geschirrschrank; rechts daneben das WC. In der Küchenwand die Durchreiche, davor der lange Holztresen mit Kaffeemaschine, Gläsern und Flaschen und vier Hockern; Darlene dahinter, die Kasse am rechten Tresenende zum Gast hin. Rechts Darlenes Laden mit Postkartenständer und Regalen vor der Wand, davor der lange Varianten-Tisch mit drei Brettern und Hockern ringsum. Links unten zwei runde Tische mit Stühlen, rechts unten Novas Ecktisch, ein Spielautomat. Unten die Glastür mit Fußmatte.",
   "wand": "holz",
   "boden": "dielen",
   "raster": [
     "########################",
     "########################",
     "########################",
-    "#...............##.....#",
-    "#...............##.....#",
-    "#...............##.....#",
+    "#fffffffffffffff##.....#",
+    "#fffffffffffffff##.....#",
+    "#fffffffffffffff##.....#",
     "###############.###.####",
     "###############.###.####",
     "###############.###.####",
@@ -28,10 +28,10 @@
     {
       "moebel": "mf4Fussmatte",
       "feld": [12, 16],
-      "versatz": [0, 8]
+      "versatz": [0, 2]
     },
     {
-      "moebel": "mf9TuerSuedGlas",
+      "moebel": "sb8GlastuerSued",
       "feld": [12, 17],
       "an_wand": true
     },
@@ -95,7 +95,7 @@
       "an_wand": true
     },
     {
-      "moebel": "mf9Durchreiche",
+      "moebel": "cr9Durchreiche",
       "feld": [6, 8],
       "an_wand": true
     },
@@ -223,7 +223,8 @@
     {
       "moebel": "mf2SchachbrettFiguren",
       "feld": [0, 0],
-      "auf": "vtL"
+      "auf": "vtL",
+      "versatz": [6, 0]
     },
     {
       "moebel": "ccSchachbrettKlein",
@@ -233,23 +234,17 @@
     {
       "moebel": "ccSchachbrettKlein",
       "feld": [0, 0],
-      "auf": "vtR"
+      "auf": "vtM2"
     },
     {
       "moebel": "cr7Hocker",
-      "feld": [15, 15],
+      "feld": [16, 15],
       "vorn": true,
       "versatz": [0, -10]
     },
     {
       "moebel": "cr7Hocker",
-      "feld": [17, 15],
-      "vorn": true,
-      "versatz": [0, -10]
-    },
-    {
-      "moebel": "cr7Hocker",
-      "feld": [19, 15],
+      "feld": [18, 15],
       "vorn": true,
       "versatz": [0, -10]
     },
@@ -387,12 +382,10 @@
     {
       "name": "fernfahrer",
       "typ": "statist",
-      "feld": [6, 12],
+      "feld": [5, 12],
       "eigenschaften": {
-        "tun": "steht zwischen den Hockern am Tresen über einem Kaffee",
+        "tun": "sitzt am Tresen über einem Kaffee",
         "wann": "tag",
-        "von": "6,12",
-        "bis": "6,12",
         "sagt": "statist.crossroads.raststaette.fernfahrer"
       }
     },
@@ -411,12 +404,10 @@
     {
       "name": "schausteller",
       "typ": "statist",
-      "feld": [21, 10],
+      "feld": [9, 14],
       "eigenschaften": {
-        "tun": "steht am Spielautomaten und zählt seine Lose",
+        "tun": "sitzt am runden Tisch, isst Pfannkuchen und zählt Lose",
         "wann": "tag",
-        "von": "21,10",
-        "bis": "21,10",
         "sagt": "statist.crossroads.raststaette.schausteller"
       }
     }
@@ -430,5 +421,8 @@
     "laendlich",
     "industrie"
   ],
-  "datei": "karten/crossroads-raststaette.json"
+  "datei": "karten/crossroads-raststaette.json",
+  "boeden": {
+    "f": "fliesenWeiss"
+  }
 }

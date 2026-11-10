@@ -74,11 +74,10 @@ Szene heißt die Datei in `inhalte/abenteuer/szenen/` ohne `.json`.
 
 - [x] riverton-aussen und die vier Innenräume (dritte Prüfung, mittel-3; Bahnhof mit Uhrturm, Glastüren; Bilder privat ab c0febaac; seit Runde 9 Bildschirmtische `rv9Bildschirmtisch` im Park, in den Zuständen und im Pavillon `perfect-move`; Dateien `riverton-aussen-3.md`, `riverton-innen-3.md`)
 
-- [ ] lockport-aussen, lockport-gasthaus, weg-cedar-riverton-bahndamm, -zedernwald, maple-falls-aussen, maple-falls-park, cedar-creek-aussen, weg-maple-cedar-flussweg, -landstrasse, -zedernpfad (dritte Prüfung, niedrig-1; Antworten in riverton.md, maple-falls.md, cedar-creek.md, Abschnitt „Zweites Gutachten Runde 8“; Bilder aus `niedrig1_runde9_karten.py` und das neue Stemmtor erst rendern)
+- [x] lockport-aussen, lockport-gasthaus, weg-cedar-riverton-bahndamm, -zedernwald, maple-falls-aussen, maple-falls-park, cedar-creek-aussen, weg-maple-cedar-flussweg, -landstrasse, -zedernpfad (dritte Prüfung, niedrig-1; Antworten in riverton.md, maple-falls.md, cedar-creek.md, Abschnitt „Zweites Gutachten Runde 8“; Bilder aus `niedrig1_runde9_karten.py` und das neue Stemmtor erst rendern)
 - [x] ghost-town-aussen (Runde 9, niedrig-1, mit Zustand mine-offen), ghost-town-saloon, goldmine-stollen
 - [x] erinnerung-siedlung-huette, erinnerung-london-kaffeehaus, erinnerung-london-strand (Runde 9, niedrig-1; Sepia aus der Tönung, im Vorschaubild nicht zu sehen)
 - [x] kuerbishof-hof, weg-pinewood-ghost-tankstelle (Runde 9, niedrig-1)
-
 
 - [x] crossroads-aussen mit Zustand gatter-offen (Runde 9, mittel-3)
 - [x] crossroads-raststaette (Runde 9, mittel-3)
@@ -88,6 +87,16 @@ Szene heißt die Datei in `inhalte/abenteuer/szenen/` ohne `.json`.
 - [x] pelikaninsel-dorf im Winter (Runde 9, mittel-3)
 
 - [x] silicon-bay-akademie, silicon-bay-altstadt (dritte Prüfung, mittel-3; Stehpulte, Glaswand mit Pfosten, geräumte Straße mit Schneewällen; Dateien `silicon-bay-akademie-3.md`, `silicon-bay-altstadt-3.md`)
+- [ ] silicon-bay-akademie, silicon-bay-altstadt (dritte Prüfung, mittel-3; Stehpulte, Glaswand mit Pfosten, geräumte Straße mit Schneewällen; Dateien `silicon-bay-akademie-3.md`, `silicon-bay-altstadt-3.md`)
+- [ ] riverton-aussen mit Zuständen, riverton-bahnhofshalle, riverton-pavillon, riverton-wohnwagen (vierte Prüfung, mittel-3; Markierung, Straße zur Brücke, Bogenfenster, große Figuren; `riverton-aussen-4.md`, `riverton-innen-4.md`)
+- [ ] crossroads-aussen, crossroads-raststaette, jahrmarkt-festplatz, pelikaninsel-dorf, Weg 8 und Weg 9 (zweite Prüfung, mittel-3; Dateien `…-2.md`)
+
+- [ ] ghost-town-aussen, ghost-town-saloon, goldmine-stollen, erinnerung-london-kaffeehaus, erinnerung-london-strand, kuerbishof-hof (zweite Prüfung, niedrig-1; Antworten in ghost-town.md, erinnerung-london.md, kuerbishof.md, Abschnitt „Gutachten Runde 9: Antworten“; Bilder aus `niedrig1_runde9_karten.py` erst rendern)
+
+- [ ] lockport-aussen, lockport-gasthaus, weg-cedar-riverton-bahndamm, maple-falls-aussen, maple-falls-park, cedar-creek-aussen, weg-maple-cedar-flussweg, -landstrasse, -zedernpfad (vierte Prüfung, nur die Restpunkte, niedrig-1; Antworten in cedar-creek.md „Drittes Gutachten Runde 8“; Bilder tafel_kegelkoenig, schild_sackgasse aus `niedrig1_runde9_karten.py`)
+
+- [ ] Runde-9-Karten von mittel-1, zweite Prüfung nach `port-delacroix.md`, `capital-arena-bayou.md`, `weg-ghost-capital.md`, `weg-silicon-delacroix.md` (Antworten in den Ortsdokumenten; Bilder `haeuser_varianten.py`, `schilder_deutsch.py`, `sumpfboden.py`, `wasser_moor.py` neu, `weg11_bilder.py`, `klippe_gras.py`)
+- [ ] weg-ironwood-silicon-raststaette (vierte Prüfung, mittel-1, Datei `weg-ironwood-silicon-raststaette-4.md`)
 
 ## Erledigt
 

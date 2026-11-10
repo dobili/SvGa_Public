@@ -1,7 +1,7 @@
 {
   "karte": "wegSiliconDelacroix.faehre",
   "art": "aussen",
-  "beschreibung": "Die Küstenfähre „Gulf Star“ auf offener See (Variante A, nach dem Ortsdokument): Deck aus dunklem Holz mit heller Metallreling, Bug nach Süden. Hinten das Achterdeck mit Containern, Kisten, Fässern und dem Rettungsboot, am Heck das Fallreep. Dann die Bordbar, wo der Schiffskoch Mr. Ruiz am runden Tisch mit Schachbrett wartet, und der Salon als weißes Deckhaus mit der Rätseltafel an der Wand; auf seinem Dach die Brücke mit Fensterband nach vorn und der rote Schornstein. Auf dem Vorderdeck versetzte Holzbänke mit Blick zum Bug, zwei Liegestühle und Rettungsringe; am spitzen Bug Poller, Taue und die Rampe zum Anleger. Ringsum die weiße Bordwand mit Bullaugen.",
+  "beschreibung": "Die Küstenfähre „Gulf Star“ auf offener See (Variante A, nach dem Ortsdokument): Deck aus dunklem Holz mit heller Metallreling, Bug nach Süden. Hinten das Achterdeck mit Containern, Kisten, Fässern und dem Rettungsboot, am Heck das Fallreep. Dann die Bordbar, wo der Schiffskoch Mr. Ruiz am runden Tisch mit Schachbrett wartet, und der Salon als weißes Deckhaus mit der Rätseltafel an der Wand; auf seinem Dach die Brücke mit Fensterband nach vorn und der rote Schornstein. Auf dem Vorderdeck versetzte Holzbänke mit Blick zum Bug, vier Liegestühle, Koffer, zwei Münzferngläser an der Reling und Rettungsringe; am spitzen Bug Poller, Taue und die Rampe zum Anleger. Ringsum die weiße Bordwand mit Bullaugen.",
   "boden": "gras",
   "wandart": "gras",
   "ufer": "rumpf",
@@ -1428,12 +1428,20 @@
       ]
     },
     {
-      "moebel": "pd7KapitaensBrett",
+      "moebel": "mf9Rundtisch",
       "feld": [
         17,
-        65
+        64
       ],
-      "runde7": true
+      "id": "kapitaenstisch"
+    },
+    {
+      "moebel": "mf2SchachbrettFiguren",
+      "feld": [
+        0,
+        0
+      ],
+      "auf": "kapitaenstisch"
     },
     {
       "moebel": "pd7Finkenzeichen",
@@ -1483,6 +1491,69 @@
       "feld": [
         12,
         57
+      ]
+    },
+    {
+      "moebel": "sd6Liegestuhl",
+      "feld": [
+        9,
+        58
+      ]
+    },
+    {
+      "moebel": "sd6LiegestuhlGrau",
+      "feld": [
+        19,
+        58
+      ]
+    },
+    {
+      "moebel": "fz10Koffer",
+      "feld": [
+        13,
+        38
+      ]
+    },
+    {
+      "moebel": "fz10Koffer",
+      "feld": [
+        19,
+        47
+      ]
+    },
+    {
+      "moebel": "fz10Fernglas",
+      "feld": [
+        21,
+        56
+      ]
+    },
+    {
+      "moebel": "fz10Fernglas",
+      "feld": [
+        8,
+        46
+      ]
+    },
+    {
+      "moebel": "wg6Kisten",
+      "feld": [
+        18,
+        70
+      ]
+    },
+    {
+      "moebel": "ld5Rettungsring",
+      "feld": [
+        8,
+        62
+      ]
+    },
+    {
+      "moebel": "ld5Rettungsring",
+      "feld": [
+        21,
+        62
       ]
     }
   ],

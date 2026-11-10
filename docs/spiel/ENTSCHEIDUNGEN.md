@@ -4,6 +4,12 @@ Jede Entscheidung zum Spiel steht hier, damit spätere Sitzungen (auch mit Opus)
 können. Neueste Einträge oben. Offene Fragen stehen unten in „Offen“; der Autor antwortet über
 die Entscheidungsseite (Claude-Artefakt „Schach-Abenteuer Entscheidungen“) oder im Chat.
 
+## 10.11.2026 – Keine Lernübersicht für Eltern
+
+- **Gestrichen** (Autor, Chat 10.11.2026): Die im Projektplan (Schritt 8) vorgesehene
+  „Lernübersicht für Eltern“ entfällt ganz. Begründung des Autors: Das Spiel ist für die Kinder,
+  sie sollen spielen, wie sie wollen, ohne Kontrolle durch die Eltern.
+
 ## 07.11.2026 – Teil A abgeschlossen
 
 - **Stellungnahme** `03_Technische_Stellungnahme.md` geschrieben: Abgleich Konzept gegen Code,

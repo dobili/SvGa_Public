@@ -334,3 +334,28 @@ Zustände: keine. Das Logbuch ist ein Fund, kein festes Objekt.
    darauf die Petroleumlampe. Der Kleiderhaufen ist weg, der Ofen steht an der Wand.
 
 Zustände: keine (eine Erinnerung, ein Abend).
+
+## Gutachten Runde 9: Antworten (niedrig-1, 10.11.2026)
+
+Gutachten `docs/spiel/auftraege/gutachten/ghost-town.md`.
+
+- **Ghost Town außen:**
+  - Hotel, Mietstall und Bestatter stehen jetzt in der Beschreibung.
+  - Vor dem Saloon weitet sich die Straße zu einem kleinen Platz.
+  - Die „Bildschirme“ waren kleine Tränken. Jetzt stehen dort Holztröge (2 × 1, Modern Farm).
+  - Die Figuren auf der Straße sind verstreut statt in einer Reihe.
+- **Saloon:**
+  - Die Treppe beginnt am Boden und führt in die Decke; sie ragt nicht mehr über die Wand.
+  - Der Spieltisch ist dunkel.
+  - Das Postreiterabzeichen liegt als Messingstern am Treppenfuß.
+  - Die Tür ist eine Schwingtür.
+  - Eine Touristin sitzt am Tisch.
+    Neue Bilder als Bildwunsch: `schwingtuer.png`, `abzeichen_postreiter.png`.
+- **Goldmine:**
+  - Die Wände liegen wie im Steinbruch-Stollen im Dunkeln, nur die Nordwände zeigen Fels. Der
+    Boden ist wieder Felsboden.
+  - Der Prellbock ist ein Holzbalken (`prellbock_holz.png`).
+  - Das Abstellgleis in Normalspur ist weg. Die Lore steht von vorn auf dem Hauptgleis vor dem
+    Prellbock (`lore_vorn.png`, Regel 10.65).
+  - Holz und Fässer sind auf je vier und drei begrenzt, dazu kommen Türstöcke und Grubenlampen.
+  - Das moderne Verbotsschild ist weg.

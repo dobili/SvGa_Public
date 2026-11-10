@@ -251,6 +251,14 @@ Auftrag `runde9_uebrige_karten.md`: drei Mängel aus `variantenwahl.md`, die fü
     Tankstelle steht direkt an der Piste, ihr Türauslöser auf dem Bankett.
   - **Zustände:** keine (nur Akt 4).
 
+### 3.7 Runde 9: Gutachten Weg 9 (mittel-3, 10.11.2026)
+
+`gutachten/wege-mittel-3-runde9.md`: Hütten mit zweiter Feuerstelle an der Lichtung und dem
+Kreidezeichen auf einer Steinplatte vor der Holzfällerhütte; die Beschreibung ist neu geschrieben
+(ohne „Variante C“). Riesenbäume: Die Blässe ist die Tönung `nebel` (Nebel am Morgen, Runde 6),
+Weg und Figuren bleiben lesbar; die Tribüne steht nördlich des Bretts mit Blick darauf, im
+Gutachterbild war sie nur am Rand angeschnitten. Offen: Reh statt Ziege (Gemini-Prompt 11).
+
 ## 4. Bühnenbilder
 
 ### 4.1 Hütten

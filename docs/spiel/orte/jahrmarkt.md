@@ -48,6 +48,12 @@ Auftrag `runde9_uebrige_karten.md`: drei Mängel aus `variantenwahl.md`, die fü
 - Mangel 3: Platz unregelmäßig mit gewellten Rändern und Grasbuchten, Strohballen, Holzzaun hinten und vorn mit Pfosten und Lücke am Torbogen. Fahrspuren: kein Bodenbild (offen).
 - Zustände: keine.
 
+### 3.2 Runde 9: Gutachten (mittel-3, 10.11.2026)
+
+`gutachten/jahrmarkt-pelikaninsel.md`: Riesenrad und Bühne eine Reihe tiefer, dahinter ein
+durchgehender Zaun; die Bühne ist begehbar (`n9BuehneBegehbar`, flach), darauf die Band mit
+Sängerin, Gitarre und Fiedel; Hot-Dog- und Eisverkäuferin stehen an der Klappe ihres Wagens.
+
 ## 4. Bühnenbild
 
 A: Riesenrad oben Mitte, Karussell links, Bühne mit Gerüst, Lautsprechern und Tribüne rechts,

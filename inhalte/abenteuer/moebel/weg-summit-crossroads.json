@@ -103,8 +103,8 @@
     },
     "sx9Bison": {
       "quelle": "spiel/eigene/bison_klein_rechts.png",
-      "breite": 48,
-      "hoehe": 32,
+      "breite": 64,
+      "hoehe": 48,
       "kollision": true,
       "art": "tier_deko",
       "zustand": "neu",
@@ -112,8 +112,8 @@
     },
     "sx9BisonLiegend": {
       "quelle": "spiel/eigene/bison_klein_liegend.png",
-      "breite": 48,
-      "hoehe": 32,
+      "breite": 64,
+      "hoehe": 48,
       "kollision": true,
       "art": "tier_deko",
       "zustand": "neu",
@@ -126,6 +126,15 @@
       "kollision": true,
       "art": "gebaeude",
       "blick": "unten",
+      "zustand": "gebraucht",
+      "stil": "laendlich"
+    },
+    "sx9SturmkellerWiese": {
+      "quelle": "spiel/eigene/sturmkeller_wiese.png",
+      "breite": 32,
+      "hoehe": 32,
+      "kollision": false,
+      "art": "deko",
       "zustand": "gebraucht",
       "stil": "laendlich"
     }

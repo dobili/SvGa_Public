@@ -2,7 +2,6 @@
   "karte": "wegMapleCedar.flussweg",
   "datei": "karten/weg-maple-cedar-flussweg.json",
   "art": "aussen",
-  "toenung": "nebel",
   "beschreibung": "Variante C (reicher): Der Uferweg schlängelt sich: im Westen hoch nach Norden unter die Bäume, in der Mitte tief zum Wasser, wo der Steg mit zwei Booten, Fässern und Kisten liegt, im Osten über eine Wiese voller Wildblumen. An der Fährstelle im Osten liegt ein Boot längs am Ufer am Pfahl. Zwei Baumreihen im Norden, Erlen am Ufer, viel Kleinkram.",
   "boden": "gras",
   "wandart": "gras",
@@ -245,14 +244,16 @@
       "versatz": [0, -7]
     },
     {
-      "moebel": "wg5BootAb",
-      "feld": [54, 22],
-      "an_wand": false
+      "moebel": "wg6BootLaengs",
+      "feld": [52, 23],
+      "an_wand": false,
+      "bauteil_ok": true
     },
     {
-      "moebel": "wg5BootAuf",
-      "feld": [58, 22],
-      "an_wand": false
+      "moebel": "wg6BootLaengs",
+      "feld": [58, 23],
+      "an_wand": false,
+      "bauteil_ok": true
     },
     {
       "moebel": "wg6Faesser",
@@ -1394,5 +1395,6 @@
         "bis": "66,21"
       }
     }
-  ]
+  ],
+  "markierung": ["s"]
 }

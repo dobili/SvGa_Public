@@ -14550,7 +14550,7 @@
      "id": 8,
      "name": "fahnen",
      "type": "ausloeser",
-     "x": 496,
+     "x": 544,
      "y": 704,
      "width": 16,
      "height": 16,
@@ -15616,7 +15616,7 @@
      "name": "ca7Fahne",
      "type": "moebel",
      "x": 496,
-     "y": 560,
+     "y": 608,
      "width": 48,
      "height": 144,
      "rotation": 0,
@@ -15625,7 +15625,7 @@
       {
        "name": "tiefe",
        "type": "int",
-       "value": 696
+       "value": 744
       },
       {
        "name": "kollision",
@@ -15639,7 +15639,7 @@
      "name": "ca7Fahne",
      "type": "moebel",
      "x": 720,
-     "y": 560,
+     "y": 608,
      "width": 48,
      "height": 144,
      "rotation": 0,
@@ -15648,7 +15648,7 @@
       {
        "name": "tiefe",
        "type": "int",
-       "value": 696
+       "value": 744
       },
       {
        "name": "kollision",
@@ -15684,8 +15684,8 @@
      "id": 49,
      "name": "ca7Imbiss",
      "type": "moebel",
-     "x": 192,
-     "y": 576,
+     "x": 80,
+     "y": 640,
      "width": 96,
      "height": 80,
      "rotation": 0,
@@ -15694,7 +15694,7 @@
       {
        "name": "tiefe",
        "type": "int",
-       "value": 648
+       "value": 712
       },
       {
        "name": "kollision",
@@ -15708,7 +15708,7 @@
      "name": "ca7Limonadenwagen",
      "type": "moebel",
      "x": 992,
-     "y": 608,
+     "y": 640,
      "width": 48,
      "height": 48,
      "rotation": 0,
@@ -15717,7 +15717,7 @@
       {
        "name": "tiefe",
        "type": "int",
-       "value": 648
+       "value": 680
       },
       {
        "name": "kollision",
@@ -15777,7 +15777,7 @@
      "name": "ca7Laterne",
      "type": "moebel",
      "x": 320,
-     "y": 592,
+     "y": 624,
      "width": 16,
      "height": 64,
      "rotation": 0,
@@ -15786,7 +15786,7 @@
       {
        "name": "tiefe",
        "type": "int",
-       "value": 648
+       "value": 680
       },
       {
        "name": "kollision",
@@ -15800,7 +15800,7 @@
      "name": "ca7Laterne",
      "type": "moebel",
      "x": 928,
-     "y": 592,
+     "y": 624,
      "width": 16,
      "height": 64,
      "rotation": 0,
@@ -15809,7 +15809,7 @@
       {
        "name": "tiefe",
        "type": "int",
-       "value": 648
+       "value": 680
       },
       {
        "name": "kollision",
@@ -15935,7 +15935,7 @@
     },
     {
      "id": 60,
-     "name": "ca8Post1",
+     "name": "ca10Post",
      "type": "moebel",
      "x": 16,
      "y": 16,
@@ -16027,7 +16027,7 @@
     },
     {
      "id": 64,
-     "name": "ca8Feuerwache",
+     "name": "ca10Feuerwache",
      "type": "moebel",
      "x": 16,
      "y": 304,
@@ -16165,7 +16165,7 @@
     },
     {
      "id": 70,
-     "name": "ca8Polizei",
+     "name": "ca10Polizei",
      "type": "moebel",
      "x": 864,
      "y": 256,
@@ -16326,7 +16326,7 @@
     },
     {
      "id": 77,
-     "name": "ca8EisenwarenB",
+     "name": "ca10Cafe",
      "type": "moebel",
      "x": 656,
      "y": 768,

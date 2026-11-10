@@ -427,6 +427,15 @@
       "art": "deko",
       "zustand": "gebraucht",
       "stil": "rustikal"
+    },
+    "ld10TafelKegelkoenig": {
+      "quelle": "spiel/eigene/tafel_kegelkoenig.png",
+      "breite": 32,
+      "hoehe": 32,
+      "kollision": false,
+      "art": "deko",
+      "zustand": "gebraucht",
+      "stil": "rustikal"
     }
   }
 }

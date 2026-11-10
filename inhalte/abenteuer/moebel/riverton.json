@@ -1422,6 +1422,292 @@
       "zustand": "gebraucht",
       "stil": "klassisch",
       "blick": "unten"
+    },
+    "rv8Querbett": {
+      "quelle": "modern-interiors/1_Interiors/16x16/Theme_Sorter_Black_Shadow_Singles/4_Bedroom_Black_Shadow_SIngles_16x16/Bedroom_Black_Shadow_Singles_87.png",
+      "breite": 32,
+      "hoehe": 48,
+      "kollision": true,
+      "art": "bett",
+      "zustand": "gebraucht",
+      "stil": "klassisch",
+      "blick": "unten"
+    },
+    "rv8Nasszelle": {
+      "quelle": "modern-interiors/1_Interiors/16x16/Theme_Sorter_Black_Shadow_Singles/3_Bathroom_Black_Shadow_Singles_16x16/Bathroom_Black_Shadow_Singles_63.png",
+      "breite": 32,
+      "hoehe": 48,
+      "kollision": true,
+      "art": "dusche",
+      "zustand": "gebraucht",
+      "stil": "klassisch",
+      "blick": "unten"
+    },
+    "rv8Arbeitsplatte": {
+      "quelle": "modern-interiors/1_Interiors/16x16/Theme_Sorter_Black_Shadow_Singles/12_Kitchen_Black_Shadow_Singles_16x16/Kitchen_Shadow_Singles_121.png",
+      "breite": 32,
+      "hoehe": 32,
+      "kollision": true,
+      "art": "kuechenzeile",
+      "zustand": "gebraucht",
+      "stil": "klassisch",
+      "blick": "unten",
+      "sichtbar_breite": 32
+    },
+    "rv8Kocher": {
+      "quelle": "modern-interiors/1_Interiors/16x16/Theme_Sorter_Black_Shadow_Singles/12_Kitchen_Black_Shadow_Singles_16x16/Kitchen_Shadow_Singles_137.png",
+      "breite": 16,
+      "hoehe": 16,
+      "kollision": false,
+      "art": "geraet",
+      "zustand": "gebraucht",
+      "stil": "klassisch",
+      "blick": "unten"
+    },
+    "rv8Sitzbank": {
+      "quelle": "modern-interiors/1_Interiors/16x16/Theme_Sorter_Black_Shadow_Singles/6_Music_and_Sport_Black_Shadow_Singles_16x16/Music_and_Sport_Black_Shadow_Singles_34.png",
+      "breite": 32,
+      "hoehe": 16,
+      "kollision": true,
+      "art": "bank",
+      "zustand": "gebraucht",
+      "stil": "klassisch",
+      "blick": "keine"
+    },
+    "rv8Wandbord": {
+      "quelle": "spiel/eigene/wohnwagen_wandbord.png",
+      "breite": 64,
+      "hoehe": 16,
+      "kollision": false,
+      "art": "regal",
+      "zustand": "gebraucht",
+      "stil": "klassisch",
+      "blick": "unten",
+      "befestigung": "wand"
+    },
+    "rv8Limonadenstand": {
+      "quelle": "modern-exteriors/Modern_Exteriors_16x16/ME_Theme_Sorter_16x16/7_Villas_Singles_16x16/ME_Singles_Villas_16x16_Lemonade_Stand_2.png",
+      "breite": 32,
+      "hoehe": 48,
+      "kollision": true,
+      "art": "stand",
+      "zustand": "gebraucht",
+      "stil": "klassisch",
+      "blick": "unten"
+    },
+    "rv8Gruendungsbild": {
+      "quelle": "modern-interiors/1_Interiors/16x16/Theme_Sorter_Black_Shadow_Singles/22_Museum_Black_Shadow_Singles_16x16/Museum_Black_Shadow_Singles_111.png",
+      "breite": 32,
+      "hoehe": 32,
+      "kollision": false,
+      "art": "bild",
+      "zustand": "gebraucht",
+      "stil": "klassisch",
+      "blick": "unten"
+    },
+    "rv8Werkzeugbord": {
+      "quelle": "modern-exteriors/Modern_Exteriors_16x16/ME_Theme_Sorter_16x16/17_Garden_Singles_16x16/ME_Singles_Garden_16x16_Big_Shelf.png",
+      "breite": 48,
+      "hoehe": 16,
+      "kollision": false,
+      "art": "regal",
+      "zustand": "gebraucht",
+      "stil": "rustikal",
+      "blick": "keine",
+      "befestigung": "wand"
+    },
+    "rv8Werkzeugkiste": {
+      "quelle": "modern-exteriors/Modern_Exteriors_16x16/ME_Theme_Sorter_16x16/8_Worksite_Singles_16x16/ME_Singles_Worksite_16x16_Tool_Box_1.png",
+      "breite": 32,
+      "hoehe": 32,
+      "kollision": true,
+      "art": "kiste",
+      "zustand": "gebraucht",
+      "stil": "rustikal",
+      "blick": "keine"
+    },
+    "rv8Bretterstapel": {
+      "quelle": "modern-farm/Single_Files_16x16/Props_and_Buildings_16x16/Wood_Board_Load_16x16.png",
+      "breite": 32,
+      "hoehe": 32,
+      "kollision": true,
+      "art": "kiste",
+      "zustand": "gebraucht",
+      "stil": "rustikal",
+      "blick": "keine"
+    },
+    "rv8Brennholz": {
+      "quelle": "modern-interiors/1_Interiors/16x16/Theme_Sorter_Black_Shadow_Singles/2_LivingRoom_Black_Shadow_Singles_16x16/Living_Room_Black_Shadow_Singles_121.png",
+      "breite": 16,
+      "hoehe": 32,
+      "kollision": true,
+      "art": "kiste",
+      "zustand": "gebraucht",
+      "stil": "rustikal",
+      "blick": "keine"
+    },
+    "rv8Farbdose": {
+      "quelle": "modern-farm/Single_Files_16x16/Props_and_Buildings_16x16/Color_Can_Empty_DIY_Crafting_Table_16x16.png",
+      "breite": 16,
+      "hoehe": 16,
+      "kollision": true,
+      "art": "geraet",
+      "zustand": "gebraucht",
+      "stil": "rustikal",
+      "blick": "keine"
+    },
+    "rv8SchalterA": {
+      "quelle": "modern-interiors/1_Interiors/16x16/Theme_Sorter_Black_Shadow_Singles/22_Museum_Black_Shadow_Singles_16x16/Museum_Black_Shadow_Singles_8.png",
+      "breite": 32,
+      "hoehe": 32,
+      "kollision": false,
+      "art": "theke",
+      "zustand": "gebraucht",
+      "stil": "klassisch",
+      "blick": "unten",
+      "befestigung": "wand"
+    },
+    "rv8SchalterB": {
+      "quelle": "modern-interiors/1_Interiors/16x16/Theme_Sorter_Black_Shadow_Singles/22_Museum_Black_Shadow_Singles_16x16/Museum_Black_Shadow_Singles_6.png",
+      "breite": 32,
+      "hoehe": 32,
+      "kollision": false,
+      "art": "theke",
+      "zustand": "gebraucht",
+      "stil": "klassisch",
+      "blick": "unten",
+      "befestigung": "wand"
+    },
+    "rv8SchalterEnde": {
+      "quelle": "modern-interiors/1_Interiors/16x16/Theme_Sorter_Black_Shadow_Singles/22_Museum_Black_Shadow_Singles_16x16/Museum_Black_Shadow_Singles_9.png",
+      "breite": 16,
+      "hoehe": 32,
+      "kollision": false,
+      "art": "theke",
+      "zustand": "gebraucht",
+      "stil": "klassisch",
+      "blick": "unten",
+      "befestigung": "wand"
+    },
+    "rv8Abfahrtsmonitor": {
+      "quelle": "modern-exteriors/Modern_Exteriors_16x16/ME_Theme_Sorter_16x16/20_Subway_and_Train_Station_Singles_16x16/ME_Singles_Subway_and_Train_Station_16x16_Monitor.png",
+      "breite": 32,
+      "hoehe": 32,
+      "kollision": false,
+      "art": "bild",
+      "zustand": "gebraucht",
+      "stil": "klassisch",
+      "blick": "unten"
+    },
+    "rv8Doppeltuer": {
+      "quelle": "modern-exteriors/Modern_Exteriors_16x16/ME_Theme_Sorter_16x16/20_Subway_and_Train_Station_Singles_16x16/ME_Singles_Subway_and_Train_Station_16x16_Black_Double_Door.png",
+      "breite": 32,
+      "hoehe": 32,
+      "kollision": false,
+      "art": "tuer",
+      "zustand": "gebraucht",
+      "stil": "klassisch",
+      "blick": "unten"
+    },
+    "rv8Saeule": {
+      "quelle": "modern-exteriors/Modern_Exteriors_16x16/ME_Theme_Sorter_16x16/20_Subway_and_Train_Station_Singles_16x16/ME_Singles_Subway_and_Train_Station_16x16_Small_Pillar.png",
+      "breite": 16,
+      "hoehe": 64,
+      "kollision": true,
+      "art": "saeule",
+      "zustand": "gebraucht",
+      "stil": "klassisch",
+      "blick": "keine"
+    },
+    "rv8Getraenkeautomat": {
+      "quelle": "modern-exteriors/Modern_Exteriors_16x16/ME_Theme_Sorter_16x16/20_Subway_and_Train_Station_Singles_16x16/ME_Singles_Subway_and_Train_Station_16x16_Drink_Machine_Left.png",
+      "breite": 16,
+      "hoehe": 64,
+      "kollision": true,
+      "art": "automat",
+      "zustand": "gebraucht",
+      "stil": "klassisch",
+      "blick": "links"
+    },
+    "rv8Kaffeeautomat": {
+      "quelle": "modern-exteriors/Modern_Exteriors_16x16/ME_Theme_Sorter_16x16/20_Subway_and_Train_Station_Singles_16x16/ME_Singles_Subway_and_Train_Station_16x16_Coffee_Machine_Left.png",
+      "breite": 16,
+      "hoehe": 48,
+      "kollision": true,
+      "art": "automat",
+      "zustand": "gebraucht",
+      "stil": "klassisch",
+      "blick": "links"
+    },
+    "rv8Schliessfach": {
+      "quelle": "modern-exteriors/Modern_Exteriors_16x16/ME_Theme_Sorter_16x16/20_Subway_and_Train_Station_Singles_16x16/ME_Singles_Subway_and_Train_Station_16x16_Small_Black_Locker.png",
+      "breite": 32,
+      "hoehe": 32,
+      "kollision": true,
+      "art": "schrank",
+      "zustand": "gebraucht",
+      "stil": "klassisch",
+      "blick": "unten"
+    },
+    "rv8Pflanze": {
+      "quelle": "modern-exteriors/Modern_Exteriors_16x16/ME_Theme_Sorter_16x16/20_Subway_and_Train_Station_Singles_16x16/ME_Singles_Subway_and_Train_Station_16x16_Plant_Vase_1.png",
+      "breite": 16,
+      "hoehe": 32,
+      "kollision": true,
+      "art": "pflanze",
+      "zustand": "gebraucht",
+      "stil": "klassisch",
+      "blick": "keine"
+    },
+    "rv8Wartebank": {
+      "quelle": "modern-exteriors/Modern_Exteriors_16x16/ME_Theme_Sorter_16x16/20_Subway_and_Train_Station_Singles_16x16/ME_Singles_Subway_and_Train_Station_16x16_Orange_Triple_Wait_Seat_1.png",
+      "breite": 48,
+      "hoehe": 32,
+      "kollision": true,
+      "art": "bank",
+      "zustand": "gebraucht",
+      "stil": "klassisch",
+      "blick": "unten"
+    },
+    "rv8Zweierbank": {
+      "quelle": "modern-exteriors/Modern_Exteriors_16x16/ME_Theme_Sorter_16x16/20_Subway_and_Train_Station_Singles_16x16/ME_Singles_Subway_and_Train_Station_16x16_Orange_Couple_Wait_Seat_1.png",
+      "breite": 32,
+      "hoehe": 32,
+      "kollision": true,
+      "art": "bank",
+      "zustand": "gebraucht",
+      "stil": "klassisch",
+      "blick": "unten"
+    },
+    "rv8Koffer": {
+      "quelle": "modern-exteriors/Modern_Exteriors_16x16/ME_Theme_Sorter_16x16/20_Subway_and_Train_Station_Singles_16x16/ME_Singles_Subway_and_Train_Station_16x16_Brown_Baggage_1.png",
+      "breite": 16,
+      "hoehe": 16,
+      "kollision": true,
+      "art": "koffer",
+      "zustand": "gebraucht",
+      "stil": "klassisch",
+      "blick": "keine"
+    },
+    "rv8Sackkarre": {
+      "quelle": "modern-interiors/1_Interiors/16x16/Theme_Sorter_Black_Shadow_Singles/9_Fishing_Black_Shadow_Singles_16x16/Fishing_Shadow_Singles_71.png",
+      "breite": 32,
+      "hoehe": 32,
+      "kollision": true,
+      "art": "geraet",
+      "zustand": "gebraucht",
+      "stil": "klassisch",
+      "blick": "unten"
+    },
+    "rv8Rollkoffer": {
+      "quelle": "modern-exteriors/Modern_Exteriors_16x16/ME_Theme_Sorter_16x16/20_Subway_and_Train_Station_Singles_16x16/ME_Singles_Subway_and_Train_Station_16x16_Blue_Trolley_1.png",
+      "breite": 16,
+      "hoehe": 32,
+      "kollision": true,
+      "art": "koffer",
+      "zustand": "gebraucht",
+      "stil": "klassisch",
+      "blick": "keine"
     }
   }
 }

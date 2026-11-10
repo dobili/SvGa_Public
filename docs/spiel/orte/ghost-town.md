@@ -273,3 +273,64 @@ Alte Minenstraße bleiben bei mittel-4.
 
 Die Erinnerung `erinnerungSiedlung.huette` hat in allen drei Varianten die Tönung `sepia`; Ghost Town
 selbst bleibt farbig (Bibel 28, nur die Szene).
+
+## Runde 9 (10.11.2026): Antworten auf die Mängel der Variantenwahl (niedrig-1)
+
+**Ghost Town außen (Wahl C):**
+
+1. _Front Street hebt sich nicht vom Sand ab, ohne Rand:_ Die Straße ist jetzt heller Staubsand
+   (`sand`) auf rotem Wüstensand, davor durchgehend der Bretterweg der Nordseite. Erde mit Rand
+   (`erde`) ging nicht: Ihr Rand ist Gras.
+2. _Häuser der hinteren Reihe ohne Weg:_ Hinter der vorderen Reihe läuft eine Gasse aus rotem
+   Felsboden (Reihe 12) mit Stichen zu Post, Barbier und den zwei Hütten. Sie mündet in den Weg zur
+   Mine und damit in die Front Street. Hinter Hotel, Mietstall und Bestatter liegt ebenso eine Gasse
+   (Reihe 35), die über den Weg zum Sternenhimmel an die Straße anschließt. Die Häuser haben ihre Tür
+   im Bild unten, deshalb liegen die Gassen hinter den Häusern.
+3. _Friedhof größer als der Ort, Südwesten leer:_ Der Friedhof ist auf 13 × 9 Kacheln verkleinert
+   (x 40–52). Das Tor liegt mit eigenem Weg im Norden, das offene Grab und das Grab ohne Namen sind
+   drin. Auf der frei gewordenen Fläche steht der Bestatter (Undertaker) neben dem Friedhof. Im
+   Südwesten stehen Heu, Tränke und ein Fass beim Mietstall, das Windrad aus der Beschreibung ist im
+   Nordosten ergänzt.
+
+**Zustand `mine-offen` (`goldmineOffen`, Sperre S11):** Am Stolleneingang sind die Bretter mit dem
+roten Kreuz weg, das Gleis führt ins Dunkel. Das Bild steht als Bildwunsch in
+`niedrig1_runde9_karten.py` (`stollen_eingang_offen.png`).
+
+**Saloon (Wahl A):**
+
+1. _Treppe frei im Raum, kommt nirgends an:_ Die Treppe steht in der Nordostecke und führt durch die
+   Decke zu den Zimmern. An ihrem Fuß liegt im Dunkel das Postreiterabzeichen (Auslöser 18, 4).
+2. _Nur zwei Barhocker:_ Es sind jetzt vier. Ein Tourist lehnt an der Theke. Sitzen können Figuren
+   nicht, sie haben nur Bilder im Stehen.
+3. _Fässer in drei Ecken ohne Grund:_ Es bleiben zwei Bierfässer am Ende der Theke. Die Dielen sind
+   der Boden des Pakets und bleiben, wie sie sind.
+
+Zustände: keine. Die Fernpartie ändert nichts Festes im Raum.
+
+**Goldmine, Stollen (Wahl A):**
+
+1. _Wand und Boden dieselbe Felstextur:_ Der Boden ist jetzt festgetretener Schotter, die Wände
+   bleiben roher Fels.
+2. _Steine mit Grasrand in Ketten an den Wänden:_ Die Steine sind weg. Es liegen einzelne
+   Schotterhaufen da, dazu Grubenholz und Fässer.
+3. _Grubenholz von der Seite, Lore ohne Gleis, keine Kiste für das Logbuch:_
+   - Das Grubenholz liegt als Stapel.
+   - Die Lore steht auf einem kurzen Abstellgleis mit Gleisende.
+   - Neben dem Tisch steht eine Truhe.
+   - Eine zweite Lore steht auf dem Hauptgleis.
+   - Der Gang hinter dem Prellbock ist zu, der Prellbock steht am Stollenende.
+
+Zustände: keine. Das Logbuch ist ein Fund, kein festes Objekt.
+
+**Siedlungshütte 1866 (Wahl A):**
+
+1. _Postreiter mitten im Raum, Zwergenfigur:_ Er wartet jetzt an der Tür (7, 8). Das Figurenbild
+   `figuren/postreiter.png` stammt von der Figurentechnik. Ein Postreiter mit Hut und Staubmantel ist
+   ein Wunsch an den Haupt-Chat.
+2. _Heller Tisch, keine Kerze, Tageslicht im Fenster:_ Der Tisch ist dunkles Holz, das Fenster zeigt
+   den Nachthimmel mit Sternen (Bildwunsch `tisch_rund_dunkel.png`, `fenster_nacht.png`). Die Kerze
+   steht auf dem Tisch.
+3. _Kisten, Lampe und Kleiderhaufen ineinander, Ofen vor der Wand:_ Drei Kisten sind gestapelt,
+   darauf die Petroleumlampe. Der Kleiderhaufen ist weg, der Ofen steht an der Wand.
+
+Zustände: keine (eine Erinnerung, ein Abend).

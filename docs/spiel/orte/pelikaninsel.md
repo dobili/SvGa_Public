@@ -77,6 +77,17 @@ Bildschirme, nur Wind, Möwen und das Klappern der Leinen an den Masten.
 **Für Runde 6:** Auslöser `leuchtfeuer`, `netze`, `watt` (Bedingung Gummistiefel); Figuren Delphine, Old
 Pete, Coral, Bishop mit Dialogen; Dialog für die geschlossene Fähre am Hafen („fährt nur sonntags“).
 
+### 3.1 Runde 9: Winter, Mängel, Zustände (mittel-3, 10.11.2026)
+
+Auftrag `runde9_uebrige_karten.md`: drei Mängel aus `variantenwahl.md`, die fünf Muster, Zustände (10.63).
+
+**Inseldorf** (`pelikaninsel-dorf`)
+
+- Mangel 1: Winter (`"jahreszeit": "winter"`): Tropenpflanzen entfernt, Gras wird Schnee, der Dorfplatz ist verschneit; das Grasufer wird zum Schneeufer.
+- Mangel 2: Leuchtfeuer auf einer felsigen Landzunge (Felsboden als Rundung mit Spitze nach Westen ins Meer, Felsen ringsum) statt eckigem Kiesfleck; Inselfähre 11 × 4 (Bildwunsch inselfaehre.py, Regel 10.64 Kutter) statt Motorboot, am Anleger.
+- Mangel 3: Sand: Unter der Winterfärbung sieht Sand wie Erde aus; der Platz ist deshalb Schnee. Netzgestell ersetzt durch Netztrockner (Bildwunsch netztrockner.py: Böcke, Stange, durchhängendes Netz mit Schwimmern).
+- Zustände: keine.
+
 ## 4. Bühnenbilder
 
 **Größe** 50 × 36. **Boden** Strand und Dorfplatz Erde (der Sandboden zeichnet sich fleckig), Felsspitze

@@ -4,7 +4,7 @@
   "art": "innen",
   "wand": "holz",
   "boden": "dielen",
-  "beschreibung": "Der Saloon von Ghost Town (Variante A, nach dem Ortsdokument), 20 × 14: kühler, staubiger Gastraum mit Dielenboden und Holzwänden. An der Nordwand links die lange Theke mit Barhockern davor und dem Flaschenregal mit Spiegel dahinter, rechts das Klavier, an der Ostwand die Treppe zu den Zimmern oben; unter der Treppe im Dunkel liegt das Postreiterabzeichen. Mitten im Raum der dunkle Spieltisch mit dem Brett, an dem die Fernpartie zu Ende gespielt wird, zwei weitere Tische mit Stühlen, Fässer in der Ecke, ein Bild an der Wand. Die Schwingtür in der Südwand führt hinaus auf die Front Street.",
+  "beschreibung": "Der Saloon von Ghost Town (Variante A, nach dem Ortsdokument), 20 × 14: kühler, staubiger Gastraum mit Dielenboden und Holzwänden. An der Nordwand links die lange Theke mit Barhockern davor und dem Flaschenregal mit Spiegel dahinter, rechts daneben das Klavier, in der Nordostecke die Treppe, die durch die Decke zu den Zimmern oben führt; an ihrem Fuß im Dunkel liegt das Postreiterabzeichen. Mitten im Raum der dunkle Spieltisch mit dem Brett, an dem die Fernpartie zu Ende gespielt wird, zwei weitere Tische mit Stühlen, zwei Bierfässer am Ende der Theke, vier Barhocker, ein Bild an der Wand. Die Schwingtür in der Südwand führt hinaus auf die Front Street.",
   "zustand": ["alt", "verwittert", "gebraucht", "neu"],
   "stil": ["rustikal", "klassisch", "laendlich", "einfach"],
   "raster": [
@@ -37,22 +37,12 @@
       "feld": [2, 4]
     },
     {
-      "moebel": "gt7Barhocker",
-      "feld": [3, 6],
-      "versatz": [0, -8]
-    },
-    {
-      "moebel": "gt7Barhocker",
-      "feld": [5, 6],
-      "versatz": [0, -8]
-    },
-    {
       "moebel": "gt7Klavier",
-      "feld": [15, 1]
+      "feld": [12, 1]
     },
     {
       "moebel": "gt7Treppe",
-      "feld": [16, 6]
+      "feld": [16, 0]
     },
     {
       "moebel": "gt7TischDunkel",
@@ -100,49 +90,21 @@
     },
     {
       "moebel": "gt7Tisch",
-      "feld": [12, 5],
+      "feld": [13, 6],
       "id": "t3"
     },
     {
       "moebel": "gt7StuhlR",
-      "feld": [11, 5]
+      "feld": [12, 6]
     },
     {
       "moebel": "gt7StuhlL",
-      "feld": [14, 5]
-    },
-    {
-      "moebel": "gt7FassKlein",
-      "feld": [1, 11]
-    },
-    {
-      "moebel": "gt7FassKlein",
-      "feld": [1, 12]
-    },
-    {
-      "moebel": "gt7FassKlein",
-      "feld": [18, 11]
-    },
-    {
-      "moebel": "gt7FassKlein",
-      "feld": [18, 12]
+      "feld": [15, 6]
     },
     {
       "moebel": "gt7Bild",
-      "feld": [11, 1],
+      "feld": [9, 1],
       "an_wand": true
-    },
-    {
-      "moebel": "gt7Fass",
-      "feld": [1, 7]
-    },
-    {
-      "moebel": "gt7Kiste",
-      "feld": [18, 8]
-    },
-    {
-      "moebel": "gt7Kiste",
-      "feld": [18, 7]
     },
     {
       "moebel": "gt7Fussmatte",
@@ -152,6 +114,34 @@
     {
       "moebel": "gt7TuerHolz",
       "feld": [10, 13]
+    },
+    {
+      "moebel": "gt7Barhocker",
+      "feld": [3, 6],
+      "versatz": [0, -8]
+    },
+    {
+      "moebel": "gt7Barhocker",
+      "feld": [4, 6],
+      "versatz": [0, -8]
+    },
+    {
+      "moebel": "gt7Barhocker",
+      "feld": [6, 6],
+      "versatz": [0, -8]
+    },
+    {
+      "moebel": "gt7Barhocker",
+      "feld": [7, 6],
+      "versatz": [0, -8]
+    },
+    {
+      "moebel": "gt7FassKlein",
+      "feld": [9, 4]
+    },
+    {
+      "moebel": "gt7FassKlein",
+      "feld": [9, 5]
     }
   ],
   "ausloeser": [
@@ -173,11 +163,11 @@
     },
     {
       "name": "abzeichen",
-      "feld": [17, 10]
+      "feld": [18, 4]
     },
     {
       "name": "klavier",
-      "feld": [15, 4]
+      "feld": [12, 4]
     }
   ],
   "figuren": [
@@ -198,9 +188,9 @@
     {
       "name": "touristMitKarte",
       "typ": "statist",
-      "feld": [6, 10],
+      "feld": [5, 6],
       "eigenschaften": {
-        "tun": "liest das Schild über der Theke",
+        "tun": "lehnt an der Theke und liest das Schild darüber",
         "wann": "tag",
         "sagt": "statist.ghostTown.saloon.touristMitKarte"
       }

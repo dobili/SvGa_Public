@@ -1,7 +1,7 @@
 {
   "karte": "jahrmarkt.festplatz",
   "art": "aussen",
-  "beschreibung": "Variante C, reich und am Abend: Links das Riesenrad und das Karussell, in der Mitte die Bühne mit Gerüst, Lautsprechern und zwei Tribünen. Davor der Schachautomat neben dem Zuckerwattestand. Drei Buden, Süßigkeiten, Limonade, Hot Dogs und Eiswagen, zwei Lichterketten zwischen Holzmasten über den Gängen, drei Flutlichtmasten. Am Eingang der Torbogen „Summer Fair“.",
+  "beschreibung": "Am Abend: Der festgetretene Platz mit Strohballen, hinten und vorn ein Holzzaun, vorn der Torbogen „Summer Fair“. Oben in der Mitte das Riesenrad mit Kartenhäuschen und Warteschlange, links das Karussell, rechts die Bühne mit Gerüst, Lautsprechern und zwei Tribünen, davor die Band. In der Mitte der Schachautomat neben dem Zuckerwattestand. Lose- und Dosenbude, Honigstand, Süßigkeiten, Limonade, Hot Dogs und Eiswagen, an jedem Stand jemand, der verkauft. Zwei Lichterketten zwischen Holzmasten über den Gängen, drei Flutlichtmasten.",
   "boden": "gras",
   "wandart": "gras",
   "boeden": {
@@ -13,31 +13,31 @@
     "#..............................................#",
     "#..............................................#",
     "#..............................................#",
+    "#.....ddddddddddd...dddddddddddddddddddddd.....#",
+    "#....dddddddddddddddddddddddddddddddddddddd....#",
+    "#...dddddddddddddddddddddddddddddddddddddddd...#",
+    "#...ddddddddddddddddddddddddddddddddddddddddd..#",
+    "#...ddddddddddddddddddddddddddddddddddddddddd..#",
+    "#...ddddddddddddddddddddddddddddddddddddddddd..#",
+    "#...ddddddddddddddddddddddddddddddddddddddddd..#",
     "#..dddddddddddddddddddddddddddddddddddddddddd..#",
     "#..dddddddddddddddddddddddddddddddddddddddddd..#",
     "#..dddddddddddddddddddddddddddddddddddddddddd..#",
+    "#...ddddddddddddddddddddddddddddddddddddddddd..#",
+    "#...ddddddddddddddddddddddddddddddddddddddddd..#",
+    "#...ddddddddddddddddddddddddddddddddddddddddd..#",
+    "#...ddddddddddddddddddddddddddddddddddddddddd..#",
     "#..dddddddddddddddddddddddddddddddddddddddddd..#",
     "#..dddddddddddddddddddddddddddddddddddddddddd..#",
     "#..dddddddddddddddddddddddddddddddddddddddddd..#",
-    "#..dddddddddddddddddddddddddddddddddddddddddd..#",
-    "#..dddddddddddddddddddddddddddddddddddddddddd..#",
-    "#..dddddddddddddddddddddddddddddddddddddddddd..#",
-    "#..dddddddddddddddddddddddddddddddddddddddddd..#",
-    "#..dddddddddddddddddddddddddddddddddddddddddd..#",
-    "#..dddddddddddddddddddddddddddddddddddddddddd..#",
-    "#..dddddddddddddddddddddddddddddddddddddddddd..#",
-    "#..dddddddddddddddddddddddddddddddddddddddddd..#",
-    "#..dddddddddddddddddddddddddddddddddddddddddd..#",
-    "#..dddddddddddddddddddddddddddddddddddddddddd..#",
-    "#..dddddddddddddddddddddddddddddddddddddddddd..#",
-    "#..dddddddddddddddddddddddddddddddddddddddddd..#",
-    "#..dddddddddddddddddddddddddddddddddddddddddd..#",
-    "#..dddddddddddddddddddddddddddddddddddddddddd..#",
-    "#..dddddddddddddddddddddddddddddddddddddddddd..#",
-    "#..dddddddddddddddddddddddddddddddddddddddddd..#",
-    "#..dddddddddddddddddddddddddddddddddddddddddd..#",
-    "#..dddddddddddddddddddddddddddddddddddddddddd..#",
-    "#..dddddddddddddddddddddddddddddddddddddddddd..#",
+    "#...ddddddddddddddddddddddddddddddddddddddddd..#",
+    "#...ddddddddddddddddddddddddddddddddddddddddd..#",
+    "#...ddddddddddddddddddddddddddddddddddddddddd..#",
+    "#...ddddddddddddddddddddddddddddddddddddddddd..#",
+    "#...ddddddddddddddddddddddddddddddddddddddddd..#",
+    "#...dddddddddddddddddddddddddddddddddddddddd...#",
+    "#....dddddddddddddddddddddddddddddddddddddd....#",
+    "#.....ddddd..ddddddd..ddddddd..ddddddd..dd.....#",
     "#......................ee......................#",
     "#......................ee......................#",
     "#......................ee......................#",
@@ -54,38 +54,38 @@
     },
     {
       "moebel": "n6Riesenrad",
-      "feld": [4, 4]
+      "feld": [20, 1]
     },
     {
       "moebel": "n6Karussell",
-      "feld": [13, 6]
+      "feld": [10, 5]
     },
     {
       "moebel": "n6Buehne",
-      "feld": [26, 5],
+      "feld": [33, 5],
       "bauteil_ok": true
     },
     {
       "moebel": "n6Gestell",
-      "feld": [26, 0],
+      "feld": [33, 0],
       "vorn": true,
       "bauteil_ok": true
     },
     {
       "moebel": "n6Lautsprecher",
-      "feld": [24, 8]
+      "feld": [31, 8]
     },
     {
       "moebel": "n6Lautsprecher",
-      "feld": [35, 8]
+      "feld": [41, 8]
     },
     {
       "moebel": "n6Tribuene",
-      "feld": [26, 13]
+      "feld": [32, 12]
     },
     {
       "moebel": "n6Tribuene",
-      "feld": [31, 13]
+      "feld": [37, 12]
     },
     {
       "moebel": "n6Schachautomat",
@@ -105,7 +105,7 @@
     },
     {
       "moebel": "n6Marktstand",
-      "feld": [38, 10]
+      "feld": [8, 23]
     },
     {
       "moebel": "n6Suessigkeiten",
@@ -125,11 +125,11 @@
     },
     {
       "moebel": "n6Flutlicht",
-      "feld": [3, 24]
+      "feld": [2, 24]
     },
     {
       "moebel": "n6Flutlicht",
-      "feld": [42, 3]
+      "feld": [43, 2]
     },
     {
       "moebel": "n6Flutlicht",
@@ -208,20 +208,12 @@
       "feld": [41, 33]
     },
     {
-      "moebel": "wg4Busch",
-      "feld": [39, 29]
-    },
-    {
       "moebel": "wg4Wildblumen",
       "feld": [17, 33]
     },
     {
       "moebel": "wg4Wildblumen",
       "feld": [35, 33]
-    },
-    {
-      "moebel": "wg4Busch",
-      "feld": [43, 29]
     },
     {
       "moebel": "wg4Laubbaum",
@@ -236,20 +228,8 @@
       "feld": [41, 31]
     },
     {
-      "moebel": "wg4Laubbaum",
-      "feld": [19, 29]
-    },
-    {
       "moebel": "wg4Busch",
       "feld": [27, 30]
-    },
-    {
-      "moebel": "wg4Wildblumen",
-      "feld": [8, 29]
-    },
-    {
-      "moebel": "wg4Busch",
-      "feld": [5, 29]
     },
     {
       "moebel": "wg4Busch",
@@ -268,12 +248,344 @@
       "feld": [20, 33]
     },
     {
-      "moebel": "mf4Strassenbaum",
-      "feld": [13, 29]
-    },
-    {
       "moebel": "wg4Wildblumen",
       "feld": [45, 31]
+    },
+    {
+      "moebel": "cc3ZaunEnde",
+      "feld": [2, 3],
+      "bauteil_ok": true
+    },
+    {
+      "moebel": "ccZaun",
+      "feld": [3, 3],
+      "bauteil_ok": true
+    },
+    {
+      "moebel": "ccZaun",
+      "feld": [4, 3],
+      "bauteil_ok": true
+    },
+    {
+      "moebel": "ccZaun",
+      "feld": [5, 3],
+      "bauteil_ok": true
+    },
+    {
+      "moebel": "ccZaun",
+      "feld": [6, 3],
+      "bauteil_ok": true
+    },
+    {
+      "moebel": "ccZaun",
+      "feld": [7, 3],
+      "bauteil_ok": true
+    },
+    {
+      "moebel": "ccZaun",
+      "feld": [8, 3],
+      "bauteil_ok": true
+    },
+    {
+      "moebel": "ccZaun",
+      "feld": [9, 3],
+      "bauteil_ok": true
+    },
+    {
+      "moebel": "ccZaun",
+      "feld": [10, 3],
+      "bauteil_ok": true
+    },
+    {
+      "moebel": "ccZaun",
+      "feld": [11, 3],
+      "bauteil_ok": true
+    },
+    {
+      "moebel": "ccZaun",
+      "feld": [12, 3],
+      "bauteil_ok": true
+    },
+    {
+      "moebel": "ccZaun",
+      "feld": [13, 3],
+      "bauteil_ok": true
+    },
+    {
+      "moebel": "ccZaun",
+      "feld": [14, 3],
+      "bauteil_ok": true
+    },
+    {
+      "moebel": "ccZaun",
+      "feld": [15, 3],
+      "bauteil_ok": true
+    },
+    {
+      "moebel": "cc3ZaunEndeR",
+      "feld": [16, 3],
+      "bauteil_ok": true
+    },
+    {
+      "moebel": "cc3ZaunEnde",
+      "feld": [28, 3],
+      "bauteil_ok": true
+    },
+    {
+      "moebel": "ccZaun",
+      "feld": [29, 3],
+      "bauteil_ok": true
+    },
+    {
+      "moebel": "ccZaun",
+      "feld": [30, 3],
+      "bauteil_ok": true
+    },
+    {
+      "moebel": "cc3ZaunEndeR",
+      "feld": [31, 3],
+      "bauteil_ok": true
+    },
+    {
+      "moebel": "cc3ZaunEnde",
+      "feld": [36, 3],
+      "bauteil_ok": true
+    },
+    {
+      "moebel": "ccZaun",
+      "feld": [37, 3],
+      "bauteil_ok": true
+    },
+    {
+      "moebel": "ccZaun",
+      "feld": [38, 3],
+      "bauteil_ok": true
+    },
+    {
+      "moebel": "ccZaun",
+      "feld": [39, 3],
+      "bauteil_ok": true
+    },
+    {
+      "moebel": "ccZaun",
+      "feld": [40, 3],
+      "bauteil_ok": true
+    },
+    {
+      "moebel": "cc3ZaunEndeR",
+      "feld": [41, 3],
+      "bauteil_ok": true
+    },
+    {
+      "moebel": "cc3ZaunEnde",
+      "feld": [2, 29],
+      "bauteil_ok": true
+    },
+    {
+      "moebel": "ccZaun",
+      "feld": [3, 29],
+      "bauteil_ok": true
+    },
+    {
+      "moebel": "ccZaun",
+      "feld": [4, 29],
+      "bauteil_ok": true
+    },
+    {
+      "moebel": "ccZaun",
+      "feld": [5, 29],
+      "bauteil_ok": true
+    },
+    {
+      "moebel": "ccZaun",
+      "feld": [6, 29],
+      "bauteil_ok": true
+    },
+    {
+      "moebel": "ccZaun",
+      "feld": [7, 29],
+      "bauteil_ok": true
+    },
+    {
+      "moebel": "ccZaun",
+      "feld": [8, 29],
+      "bauteil_ok": true
+    },
+    {
+      "moebel": "ccZaun",
+      "feld": [9, 29],
+      "bauteil_ok": true
+    },
+    {
+      "moebel": "ccZaun",
+      "feld": [10, 29],
+      "bauteil_ok": true
+    },
+    {
+      "moebel": "ccZaun",
+      "feld": [11, 29],
+      "bauteil_ok": true
+    },
+    {
+      "moebel": "ccZaun",
+      "feld": [12, 29],
+      "bauteil_ok": true
+    },
+    {
+      "moebel": "ccZaun",
+      "feld": [13, 29],
+      "bauteil_ok": true
+    },
+    {
+      "moebel": "ccZaun",
+      "feld": [14, 29],
+      "bauteil_ok": true
+    },
+    {
+      "moebel": "ccZaun",
+      "feld": [15, 29],
+      "bauteil_ok": true
+    },
+    {
+      "moebel": "ccZaun",
+      "feld": [16, 29],
+      "bauteil_ok": true
+    },
+    {
+      "moebel": "ccZaun",
+      "feld": [17, 29],
+      "bauteil_ok": true
+    },
+    {
+      "moebel": "ccZaun",
+      "feld": [18, 29],
+      "bauteil_ok": true
+    },
+    {
+      "moebel": "ccZaun",
+      "feld": [19, 29],
+      "bauteil_ok": true
+    },
+    {
+      "moebel": "cc3ZaunEndeR",
+      "feld": [20, 29],
+      "bauteil_ok": true
+    },
+    {
+      "moebel": "cc3ZaunEnde",
+      "feld": [26, 29],
+      "bauteil_ok": true
+    },
+    {
+      "moebel": "ccZaun",
+      "feld": [27, 29],
+      "bauteil_ok": true
+    },
+    {
+      "moebel": "ccZaun",
+      "feld": [28, 29],
+      "bauteil_ok": true
+    },
+    {
+      "moebel": "ccZaun",
+      "feld": [29, 29],
+      "bauteil_ok": true
+    },
+    {
+      "moebel": "ccZaun",
+      "feld": [30, 29],
+      "bauteil_ok": true
+    },
+    {
+      "moebel": "ccZaun",
+      "feld": [31, 29],
+      "bauteil_ok": true
+    },
+    {
+      "moebel": "ccZaun",
+      "feld": [32, 29],
+      "bauteil_ok": true
+    },
+    {
+      "moebel": "ccZaun",
+      "feld": [33, 29],
+      "bauteil_ok": true
+    },
+    {
+      "moebel": "ccZaun",
+      "feld": [34, 29],
+      "bauteil_ok": true
+    },
+    {
+      "moebel": "ccZaun",
+      "feld": [35, 29],
+      "bauteil_ok": true
+    },
+    {
+      "moebel": "ccZaun",
+      "feld": [36, 29],
+      "bauteil_ok": true
+    },
+    {
+      "moebel": "ccZaun",
+      "feld": [37, 29],
+      "bauteil_ok": true
+    },
+    {
+      "moebel": "ccZaun",
+      "feld": [38, 29],
+      "bauteil_ok": true
+    },
+    {
+      "moebel": "ccZaun",
+      "feld": [39, 29],
+      "bauteil_ok": true
+    },
+    {
+      "moebel": "ccZaun",
+      "feld": [40, 29],
+      "bauteil_ok": true
+    },
+    {
+      "moebel": "ccZaun",
+      "feld": [41, 29],
+      "bauteil_ok": true
+    },
+    {
+      "moebel": "ccZaun",
+      "feld": [42, 29],
+      "bauteil_ok": true
+    },
+    {
+      "moebel": "ccZaun",
+      "feld": [43, 29],
+      "bauteil_ok": true
+    },
+    {
+      "moebel": "ccZaun",
+      "feld": [44, 29],
+      "bauteil_ok": true
+    },
+    {
+      "moebel": "cc3ZaunEndeR",
+      "feld": [45, 29],
+      "bauteil_ok": true
+    },
+    {
+      "moebel": "wr5Heu",
+      "feld": [16, 26]
+    },
+    {
+      "moebel": "wr5Heu",
+      "feld": [32, 26]
+    },
+    {
+      "moebel": "wr5Heu",
+      "feld": [42, 27]
+    },
+    {
+      "moebel": "wr5Heu",
+      "feld": [4, 12]
     }
   ],
   "ausloeser": [
@@ -298,7 +610,7 @@
     },
     {
       "name": "riesenrad",
-      "feld": [7, 14]
+      "feld": [23, 11]
     },
     {
       "name": "losbude",
@@ -326,46 +638,46 @@
     {
       "name": "buster",
       "typ": "statist",
-      "feld": [10, 17],
+      "feld": [8, 20],
       "eigenschaften": {
-        "tun": "Buster verkauft Lose",
+        "tun": "Buster verkauft Lose neben seiner Bude",
         "wann": "tag",
-        "von": "10,17",
-        "bis": "10,17"
+        "von": "8,20",
+        "bis": "8,20"
       }
     },
     {
       "name": "band",
       "typ": "statist",
-      "feld": [36, 8],
+      "feld": [36, 11],
       "eigenschaften": {
-        "tun": "eine Country-Band spielt",
+        "tun": "eine Country-Band spielt vor der Bühne",
         "wann": "abend",
-        "von": "34,8",
-        "bis": "40,8"
+        "von": "34,11",
+        "bis": "39,11"
       }
     },
     {
       "name": "besucher",
       "typ": "statist",
-      "feld": [30, 16],
+      "feld": [27, 16],
       "eigenschaften": {
         "tun": "schlendert mit Zuckerwatte über den Platz",
         "wann": "tag",
-        "von": "25,14",
-        "bis": "38,18",
+        "von": "24,12",
+        "bis": "30,17",
         "sagt": "statist.jahrmarkt.festplatz.besucher"
       }
     },
     {
       "name": "karussellbetreiber",
       "typ": "statist",
-      "feld": [12, 13],
+      "feld": [12, 11],
       "eigenschaften": {
         "tun": "ölt die Pferde des Karussells",
         "wann": "tag",
-        "von": "10,14",
-        "bis": "16,13",
+        "von": "10,11",
+        "bis": "16,12",
         "sagt": "statist.jahrmarkt.festplatz.karussellbetreiber"
       }
     },
@@ -384,11 +696,11 @@
     {
       "name": "ponykind",
       "typ": "statist",
-      "feld": [8, 27],
+      "feld": [5, 28],
       "eigenschaften": {
         "tun": "führt ein Pony am Strick über die Wiese",
         "wann": "tag",
-        "von": "5,26",
+        "von": "4,28",
         "bis": "14,28",
         "sagt": "statist.jahrmarkt.festplatz.ponykind"
       }
@@ -396,10 +708,10 @@
     {
       "name": "pony",
       "typ": "tier",
-      "feld": [9, 28],
+      "feld": [6, 28],
       "eigenschaften": {
-        "von": "5,27",
-        "bis": "15,29",
+        "von": "4,28",
+        "bis": "14,28",
         "verhalten": "folgen"
       }
     },
@@ -426,9 +738,9 @@
     {
       "name": "hund",
       "typ": "tier",
-      "feld": [24, 30],
+      "feld": [24, 31],
       "eigenschaften": {
-        "von": "20,29",
+        "von": "20,30",
         "bis": "28,33",
         "verhalten": "folgen"
       }
@@ -438,8 +750,8 @@
       "typ": "tier",
       "feld": [40, 28],
       "eigenschaften": {
-        "von": "38,27",
-        "bis": "43,29",
+        "von": "39,27",
+        "bis": "41,28",
         "verhalten": "schlafen"
       }
     },
@@ -451,6 +763,138 @@
         "von": "3,30",
         "bis": "20,33",
         "verhalten": "ausweichen"
+      }
+    },
+    {
+      "name": "dosenwirt",
+      "typ": "statist",
+      "feld": [13, 20],
+      "eigenschaften": {
+        "tun": "stellt die Dosenpyramide wieder auf",
+        "wann": "tag",
+        "von": "13,20",
+        "bis": "13,20"
+      }
+    },
+    {
+      "name": "hotdogverkaeufer",
+      "typ": "statist",
+      "feld": [26, 24],
+      "eigenschaften": {
+        "tun": "reicht Hot Dogs über den Wagen",
+        "wann": "tag",
+        "von": "26,24",
+        "bis": "26,24"
+      }
+    },
+    {
+      "name": "eisverkaeuferin",
+      "typ": "statist",
+      "feld": [42, 22],
+      "eigenschaften": {
+        "tun": "füllt Eiswaffeln",
+        "wann": "tag",
+        "von": "42,22",
+        "bis": "42,22"
+      }
+    },
+    {
+      "name": "limonadenkind",
+      "typ": "statist",
+      "feld": [21, 22],
+      "eigenschaften": {
+        "tun": "verkauft Limonade aus dem Krug",
+        "wann": "tag",
+        "von": "21,22",
+        "bis": "21,22"
+      }
+    },
+    {
+      "name": "suessigkeitenmann",
+      "typ": "statist",
+      "feld": [18, 23],
+      "eigenschaften": {
+        "tun": "schaufelt Bonbons in Tüten",
+        "wann": "tag",
+        "von": "18,23",
+        "bis": "18,23"
+      }
+    },
+    {
+      "name": "marktfrau",
+      "typ": "statist",
+      "feld": [13, 26],
+      "eigenschaften": {
+        "tun": "bietet Honig und Marmelade an",
+        "wann": "tag",
+        "von": "13,26",
+        "bis": "13,26"
+      }
+    },
+    {
+      "name": "warteschlange1",
+      "typ": "statist",
+      "feld": [22, 12],
+      "eigenschaften": {
+        "tun": "wartet auf eine Gondel im Riesenrad",
+        "wann": "tag",
+        "von": "22,12",
+        "bis": "22,12"
+      }
+    },
+    {
+      "name": "warteschlange2",
+      "typ": "statist",
+      "feld": [21, 13],
+      "eigenschaften": {
+        "tun": "wartet mit Papa auf das Riesenrad",
+        "wann": "tag",
+        "von": "21,13",
+        "bis": "21,13"
+      }
+    },
+    {
+      "name": "karussellkind",
+      "typ": "statist",
+      "feld": [16, 8],
+      "eigenschaften": {
+        "tun": "winkt vom Rand des Karussells",
+        "wann": "tag",
+        "von": "16,8",
+        "bis": "16,10"
+      }
+    },
+    {
+      "name": "familie",
+      "typ": "statist",
+      "feld": [25, 19],
+      "eigenschaften": {
+        "tun": "teilt sich eine Portion Pommes",
+        "wann": "tag",
+        "von": "25,19",
+        "bis": "26,19"
+      }
+    },
+    {
+      "name": "teenager",
+      "typ": "statist",
+      "feld": [38, 18],
+      "eigenschaften": {
+        "tun": "macht Fotos von der Bühne",
+        "wann": "tag",
+        "von": "38,18",
+        "bis": "35,19"
+      }
+    },
+    {
+      "name": "opa",
+      "typ": "statist",
+      "feld": [41, 13],
+      "eigenschaften": {
+        "tun": "steht neben der Tribüne und klatscht im Takt",
+        "wann": "tag",
+        "von": "41,13",
+        "bis": "41,15"
       }
     }
   ],

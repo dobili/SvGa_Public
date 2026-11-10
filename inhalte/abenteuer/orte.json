@@ -3977,7 +3977,10 @@
           "kennung": "crossroads.aussen",
           "datei": "karten/crossroads-aussen.json",
           "name": "ort.crossroads.aussen",
-          "innen": false
+          "innen": false,
+          "zustaende": {
+            "gatterschluessel": "karten/crossroads-aussen-gatter-offen.json"
+          }
         },
         {
           "kennung": "crossroads.raststaette",
@@ -4525,7 +4528,10 @@
           "kennung": "ghostTown.aussen",
           "datei": "karten/ghost-town-aussen.json",
           "name": "ort.ghostTown.aussen",
-          "innen": false
+          "innen": false,
+          "zustaende": {
+            "goldmineOffen": "karten/ghost-town-aussen-mine-offen.json"
+          }
         },
         {
           "kennung": "ghostTown.saloon",

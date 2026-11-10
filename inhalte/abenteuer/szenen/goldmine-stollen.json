@@ -3,18 +3,18 @@
   "datei": "karten/goldmine-stollen.json",
   "art": "innen",
   "toenung": "dunkel",
-  "beschreibung": "Der Stollen der Goldmine (N7), 40 × 24 Kacheln, Fels. Vom Eingang am Südrand läuft der Hauptgang mit Gleis, Stützrahmen aus Holz und Grubenlampen nach Norden bis zum Prellbock; nach Westen die Kammer der Bergleute mit Tisch, Hockern und Kiste (auf dem Tisch ist Platz für das Logbuch von 1866), nach Osten die glänzende Goldader mit abgestellter Lore und Pfützen. Der Fels jenseits der Wände liegt im Dunkeln.",
+  "beschreibung": "Der Stollen der Goldmine (N7), 40 × 24 Kacheln, Fels. Vom Eingang am Südrand läuft der Hauptgang mit Gleis, Stützrahmen aus Holz und Grubenlampen nach Norden bis zum Prellbock; nach Westen die Kammer der Bergleute mit Tisch, Hockern, einer Truhe und gestapeltem Grubenholz (auf dem Tisch ist Platz für das Logbuch von 1866), nach Osten die glänzende Goldader mit einer Lore auf einem kurzen Abstellgleis und Pfützen. Der Fels jenseits der Wände liegt im Dunkeln. Der Boden ist festgetretener Schotter, die Wände sind roher Fels.",
   "wand": "fels",
-  "boden": "felsboden",
+  "boden": "schotter",
   "boeden": {
-    "f": "felsboden"
+    "f": "schotter"
   },
   "raster": [
     "  ############                          ",
     "  ############   ######                 ",
     "  ############   ######                 ",
     "  #ffffffffff#   ######    ############ ",
-    "  #ffffffffff#####ffff#    ############ ",
+    "  #ffffffffff##########    ############ ",
     "  #ffffffffff#####ffff#    ############ ",
     "  #ffffffffff#####ffff#    #ffffffffff# ",
     "  #fffffffffffffffffff#    #ffffffffff# ",
@@ -36,6 +36,36 @@
     "                 ##ff##                 "
   ],
   "objekte": [
+    {
+      "moebel": "n9GleisQuer",
+      "feld": [28, 9],
+      "bauteil_ok": true
+    },
+    {
+      "moebel": "n9GleisQuer",
+      "feld": [29, 9],
+      "bauteil_ok": true
+    },
+    {
+      "moebel": "n9GleisQuer",
+      "feld": [30, 9],
+      "bauteil_ok": true
+    },
+    {
+      "moebel": "n9GleisQuer",
+      "feld": [31, 9],
+      "bauteil_ok": true
+    },
+    {
+      "moebel": "n9GleisQuer",
+      "feld": [32, 9],
+      "bauteil_ok": true
+    },
+    {
+      "moebel": "n9GleisQuer",
+      "feld": [33, 9],
+      "bauteil_ok": true
+    },
     {
       "moebel": "iw5Prellbock",
       "feld": [19, 5]
@@ -127,7 +157,8 @@
     {
       "moebel": "n7Grubenlampe",
       "feld": [20, 6],
-      "vorn": true
+      "vorn": true,
+      "an_wand": true
     },
     {
       "moebel": "n7Stuetze",
@@ -140,7 +171,8 @@
     {
       "moebel": "n7Grubenlampe",
       "feld": [20, 14],
-      "vorn": true
+      "vorn": true,
+      "an_wand": true
     },
     {
       "moebel": "n7Stuetze",
@@ -160,10 +192,6 @@
       "feld": [7, 5]
     },
     {
-      "moebel": "cc4Holzkiste",
-      "feld": [9, 4]
-    },
-    {
       "moebel": "n7Goldader",
       "feld": [33, 6]
     },
@@ -173,7 +201,8 @@
     },
     {
       "moebel": "n7Lore",
-      "feld": [30, 9]
+      "feld": [30, 9],
+      "bauteil_ok": true
     },
     {
       "moebel": "st5PfuetzeGross",
@@ -188,10 +217,6 @@
       "feld": [29, 12]
     },
     {
-      "moebel": "st5Bohlen",
-      "feld": [3, 8]
-    },
-    {
       "moebel": "st5Schotterhaufen",
       "feld": [35, 15]
     },
@@ -200,164 +225,123 @@
       "feld": [11, 8]
     },
     {
-      "moebel": "felsKlein",
-      "feld": [3, 3]
+      "moebel": "cc4Gleisende",
+      "feld": [34, 9]
     },
     {
-      "moebel": "felsKlein",
-      "feld": [5, 3]
+      "moebel": "mf7Truhe",
+      "feld": [8, 4]
     },
     {
-      "moebel": "felsKlein",
-      "feld": [7, 3]
+      "moebel": "st5Schotterhaufen",
+      "feld": [3, 9]
     },
     {
-      "moebel": "felsKlein",
-      "feld": [9, 3]
+      "moebel": "rv8Werkzeugkiste",
+      "feld": [10, 6]
     },
     {
-      "moebel": "felsKlein",
-      "feld": [11, 3]
+      "moebel": "cc4Holzstapel",
+      "feld": [11, 4]
     },
     {
-      "moebel": "felsKlein",
-      "feld": [3, 4]
+      "moebel": "iwFass",
+      "feld": [4, 8]
     },
     {
-      "moebel": "felsKlein",
-      "feld": [18, 4]
+      "moebel": "iwFass",
+      "feld": [5, 8]
     },
     {
-      "moebel": "felsKlein",
-      "feld": [3, 5]
-    },
-    {
-      "moebel": "felsKlein",
-      "feld": [18, 5]
-    },
-    {
-      "moebel": "felsKlein",
-      "feld": [3, 6]
-    },
-    {
-      "moebel": "felsKlein",
+      "moebel": "cc4Holzstapel",
       "feld": [28, 6]
     },
     {
-      "moebel": "felsKlein",
-      "feld": [30, 6]
+      "moebel": "cc4Holzstapel",
+      "feld": [36, 12]
     },
     {
-      "moebel": "felsKlein",
-      "feld": [32, 6]
-    },
-    {
-      "moebel": "felsKlein",
-      "feld": [36, 6]
-    },
-    {
-      "moebel": "felsKlein",
-      "feld": [3, 7]
-    },
-    {
-      "moebel": "felsKlein",
-      "feld": [14, 7]
-    },
-    {
-      "moebel": "felsKlein",
-      "feld": [16, 7]
-    },
-    {
-      "moebel": "felsKlein",
-      "feld": [21, 7]
-    },
-    {
-      "moebel": "felsKlein",
-      "feld": [37, 7]
-    },
-    {
-      "moebel": "felsKlein",
-      "feld": [21, 8]
-    },
-    {
-      "moebel": "felsKlein",
-      "feld": [37, 8]
-    },
-    {
-      "moebel": "felsKlein",
-      "feld": [21, 9]
-    },
-    {
-      "moebel": "felsKlein",
-      "feld": [21, 10]
-    },
-    {
-      "moebel": "felsKlein",
-      "feld": [21, 11]
-    },
-    {
-      "moebel": "felsKlein",
-      "feld": [37, 11]
-    },
-    {
-      "moebel": "felsKlein",
-      "feld": [21, 12]
-    },
-    {
-      "moebel": "felsKlein",
-      "feld": [37, 12]
-    },
-    {
-      "moebel": "felsKlein",
-      "feld": [22, 13]
-    },
-    {
-      "moebel": "felsKlein",
-      "feld": [24, 13]
-    },
-    {
-      "moebel": "felsKlein",
-      "feld": [26, 13]
-    },
-    {
-      "moebel": "felsKlein",
-      "feld": [37, 13]
-    },
-    {
-      "moebel": "felsKlein",
-      "feld": [37, 14]
-    },
-    {
-      "moebel": "felsKlein",
+      "moebel": "iwFass",
       "feld": [37, 16]
     },
     {
-      "moebel": "felsKlein",
-      "feld": [21, 17]
+      "moebel": "n7Stuetze",
+      "feld": [14, 7]
     },
     {
-      "moebel": "felsKlein",
-      "feld": [37, 17]
+      "moebel": "n7Stuetze",
+      "feld": [24, 13]
     },
     {
-      "moebel": "felsKlein",
-      "feld": [21, 18]
+      "moebel": "n7Grubenlampe",
+      "feld": [16, 7],
+      "vorn": true,
+      "an_wand": true
     },
     {
-      "moebel": "felsKlein",
-      "feld": [37, 18]
+      "moebel": "cc4Holzstapel",
+      "feld": [4, 6]
     },
     {
-      "moebel": "felsKlein",
-      "feld": [21, 19]
+      "moebel": "st5Schotterhaufen",
+      "feld": [33, 11]
     },
     {
-      "moebel": "felsKlein",
-      "feld": [21, 20]
+      "moebel": "n7Lore",
+      "feld": [19, 16],
+      "bauteil_ok": true
     },
     {
-      "moebel": "felsKlein",
-      "feld": [21, 21]
+      "moebel": "cc4Holzstapel",
+      "feld": [8, 8]
+    },
+    {
+      "moebel": "cc4Holzstapel",
+      "feld": [34, 12]
+    },
+    {
+      "moebel": "cc4Holzstapel",
+      "feld": [35, 17]
+    },
+    {
+      "moebel": "n7Stuetze",
+      "feld": [30, 6]
+    },
+    {
+      "moebel": "n7Stuetze",
+      "feld": [35, 6]
+    },
+    {
+      "moebel": "iwFass",
+      "feld": [12, 6]
+    },
+    {
+      "moebel": "iwFass",
+      "feld": [29, 17]
+    },
+    {
+      "moebel": "st5Schotterhaufen",
+      "feld": [30, 17]
+    },
+    {
+      "moebel": "cc4Holzstapel",
+      "feld": [33, 17]
+    },
+    {
+      "moebel": "iwFass",
+      "feld": [13, 9]
+    },
+    {
+      "moebel": "cc4Holzstapel",
+      "feld": [27, 12]
+    },
+    {
+      "moebel": "iwFass",
+      "feld": [3, 3]
+    },
+    {
+      "moebel": "iwFass",
+      "feld": [4, 3]
     }
   ],
   "ausloeser": [

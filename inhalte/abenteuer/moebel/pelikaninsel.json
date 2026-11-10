@@ -301,6 +301,25 @@
       "stil": "maritim",
       "zustand": "alt",
       "blick": "unten"
+    },
+    "pk9Inselfaehre": {
+      "quelle": "spiel/eigene/inselfaehre.png",
+      "breite": 176,
+      "hoehe": 64,
+      "kollision": false,
+      "art": "fahrzeug",
+      "blick": "keine",
+      "zustand": "gebraucht",
+      "stil": "maritim"
+    },
+    "pk9Netztrockner": {
+      "quelle": "spiel/eigene/netztrockner.png",
+      "breite": 48,
+      "hoehe": 32,
+      "kollision": true,
+      "art": "deko",
+      "zustand": "gebraucht",
+      "stil": "maritim"
     }
   }
 }

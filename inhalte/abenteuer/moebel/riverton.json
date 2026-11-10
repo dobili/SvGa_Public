@@ -1332,6 +1332,96 @@
       "blick": "unten",
       "zustand": "gebraucht",
       "stil": "klassisch"
+    },
+    "rv8Baeckerei": {
+      "quelle": "spiel/eigene/baeckerei_haus.png",
+      "breite": 112,
+      "hoehe": 144,
+      "kollision": true,
+      "art": "gebaeude",
+      "zustand": "gebraucht",
+      "stil": "klassisch",
+      "blick": "unten"
+    },
+    "rv8Obstkarren": {
+      "quelle": "modern-exteriors/Modern_Exteriors_16x16/ME_Theme_Sorter_16x16/10_Vehicles_Singles_16x16/ME_Singles_Vehicles_16x16_Fruit_Flowers_Cart_2.png",
+      "breite": 48,
+      "hoehe": 64,
+      "kollision": true,
+      "art": "strassenmoebel",
+      "zustand": "gebraucht",
+      "stil": "klassisch",
+      "blick": "unten"
+    },
+    "rv8Imbisskarren": {
+      "quelle": "modern-exteriors/Modern_Exteriors_16x16/ME_Theme_Sorter_16x16/10_Vehicles_Singles_16x16/ME_Singles_Vehicles_16x16_Street_Food_Cart_2.png",
+      "breite": 48,
+      "hoehe": 48,
+      "kollision": true,
+      "art": "strassenmoebel",
+      "zustand": "gebraucht",
+      "stil": "klassisch",
+      "blick": "unten"
+    },
+    "rv8KorbAepfel": {
+      "quelle": "modern-farm/Single_Files_16x16/0_Complete_Tileset_Singles_16x16/Basket_Apple_16x16.png",
+      "breite": 16,
+      "hoehe": 16,
+      "kollision": false,
+      "art": "deko",
+      "zustand": "gebraucht",
+      "stil": "klassisch",
+      "blick": "unten"
+    },
+    "rv8KorbBananen": {
+      "quelle": "modern-farm/Single_Files_16x16/0_Complete_Tileset_Singles_16x16/Basket_Bananas_16x16.png",
+      "breite": 16,
+      "hoehe": 16,
+      "kollision": false,
+      "art": "deko",
+      "zustand": "gebraucht",
+      "stil": "klassisch",
+      "blick": "unten"
+    },
+    "rv8KorbMoehren": {
+      "quelle": "modern-farm/Single_Files_16x16/0_Complete_Tileset_Singles_16x16/Crop_Carrot_Small_Basket_16x16.png",
+      "breite": 16,
+      "hoehe": 16,
+      "kollision": false,
+      "art": "deko",
+      "zustand": "gebraucht",
+      "stil": "klassisch",
+      "blick": "unten"
+    },
+    "rv8KorbKohl": {
+      "quelle": "modern-farm/Single_Files_16x16/0_Complete_Tileset_Singles_16x16/Crop_Cabbage_1_Small_Basket_16x16.png",
+      "breite": 16,
+      "hoehe": 16,
+      "kollision": false,
+      "art": "deko",
+      "zustand": "gebraucht",
+      "stil": "klassisch",
+      "blick": "unten"
+    },
+    "rv8KorbTrauben": {
+      "quelle": "modern-farm/Single_Files_16x16/0_Complete_Tileset_Singles_16x16/Crop_Grapes_Small_Basket_16x16.png",
+      "breite": 16,
+      "hoehe": 16,
+      "kollision": false,
+      "art": "deko",
+      "zustand": "gebraucht",
+      "stil": "klassisch",
+      "blick": "unten"
+    },
+    "rv8KorbMais": {
+      "quelle": "modern-farm/Single_Files_16x16/0_Complete_Tileset_Singles_16x16/Crop_Corn_Small_Basket_16x16.png",
+      "breite": 16,
+      "hoehe": 16,
+      "kollision": false,
+      "art": "deko",
+      "zustand": "gebraucht",
+      "stil": "klassisch",
+      "blick": "unten"
     }
   }
 }

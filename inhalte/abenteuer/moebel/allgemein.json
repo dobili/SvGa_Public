@@ -334,6 +334,166 @@
       "breite": 32,
       "hoehe": 48,
       "kollision": true
+    },
+    "fz11BusRechts": {
+      "quelle": "modern-exteriors/Modern_Exteriors_16x16/ME_Theme_Sorter_16x16/10_Vehicles_Singles_16x16/ME_Singles_Vehicles_16x16_Bus_Right_4.png",
+      "breite": 112,
+      "hoehe": 64,
+      "kollision": true,
+      "art": "fahrzeug",
+      "blick": "rechts",
+      "zustand": "gebraucht",
+      "stil": "modern"
+    },
+    "fz11BusAb": {
+      "quelle": "modern-exteriors/Modern_Exteriors_16x16/ME_Theme_Sorter_16x16/10_Vehicles_Singles_16x16/ME_Singles_Vehicles_16x16_Bus_Down_4.png",
+      "breite": 48,
+      "hoehe": 112,
+      "kollision": true,
+      "art": "fahrzeug",
+      "blick": "unten",
+      "zustand": "gebraucht",
+      "stil": "modern"
+    },
+    "fz11BusAuf": {
+      "quelle": "modern-exteriors/Modern_Exteriors_16x16/ME_Theme_Sorter_16x16/10_Vehicles_Singles_16x16/ME_Singles_Vehicles_16x16_Bus_Up_4.png",
+      "breite": 48,
+      "hoehe": 112,
+      "kollision": true,
+      "art": "fahrzeug",
+      "blick": "oben",
+      "zustand": "gebraucht",
+      "stil": "modern"
+    },
+    "fz11SchulbusRechts": {
+      "quelle": "modern-exteriors/Modern_Exteriors_16x16/ME_Theme_Sorter_16x16/10_Vehicles_Singles_16x16/ME_Singles_Vehicles_16x16_Bus_Right_1.png",
+      "breite": 112,
+      "hoehe": 64,
+      "kollision": true,
+      "art": "fahrzeug",
+      "blick": "rechts",
+      "zustand": "gebraucht",
+      "stil": "modern"
+    },
+    "fz11SchulbusAb": {
+      "quelle": "modern-exteriors/Modern_Exteriors_16x16/ME_Theme_Sorter_16x16/10_Vehicles_Singles_16x16/ME_Singles_Vehicles_16x16_Bus_Down_1.png",
+      "breite": 48,
+      "hoehe": 112,
+      "kollision": true,
+      "art": "fahrzeug",
+      "blick": "unten",
+      "zustand": "gebraucht",
+      "stil": "modern"
+    },
+    "fz11SchulbusAuf": {
+      "quelle": "modern-exteriors/Modern_Exteriors_16x16/ME_Theme_Sorter_16x16/10_Vehicles_Singles_16x16/ME_Singles_Vehicles_16x16_Bus_Up_1.png",
+      "breite": 48,
+      "hoehe": 112,
+      "kollision": true,
+      "art": "fahrzeug",
+      "blick": "oben",
+      "zustand": "gebraucht",
+      "stil": "modern"
+    },
+    "fz11TraktorRechts": {
+      "quelle": "modern-farm/Single_Files_16x16/0_Complete_Tileset_Singles_16x16/Tractor_Right_Side_16x16.png",
+      "breite": 80,
+      "hoehe": 64,
+      "kollision": true,
+      "art": "fahrzeug",
+      "blick": "rechts",
+      "zustand": "gebraucht",
+      "stil": "modern"
+    },
+    "fz11TraktorVorn": {
+      "quelle": "modern-farm/Single_Files_16x16/0_Complete_Tileset_Singles_16x16/Tractor_Front_Side_16x16.png",
+      "breite": 64,
+      "hoehe": 96,
+      "kollision": true,
+      "art": "fahrzeug",
+      "blick": "unten",
+      "zustand": "gebraucht",
+      "stil": "modern"
+    },
+    "fz11TraktorHinten": {
+      "quelle": "modern-farm/Single_Files_16x16/0_Complete_Tileset_Singles_16x16/Tractor_Back_Side_16x16.png",
+      "breite": 64,
+      "hoehe": 96,
+      "kollision": true,
+      "art": "fahrzeug",
+      "blick": "oben",
+      "zustand": "gebraucht",
+      "stil": "modern"
+    },
+    "fz11WohnmobilAb": {
+      "quelle": "modern-exteriors/Modern_Exteriors_16x16/ME_Theme_Sorter_16x16/10_Vehicles_Singles_16x16/ME_Singles_Vehicles_16x16_Camper_Down_1.png",
+      "breite": 32,
+      "hoehe": 96,
+      "kollision": true,
+      "art": "fahrzeug",
+      "blick": "unten",
+      "zustand": "gebraucht",
+      "stil": "modern"
+    },
+    "fz11WohnmobilAuf": {
+      "quelle": "modern-exteriors/Modern_Exteriors_16x16/ME_Theme_Sorter_16x16/10_Vehicles_Singles_16x16/ME_Singles_Vehicles_16x16_Camper_Up_1.png",
+      "breite": 32,
+      "hoehe": 96,
+      "kollision": true,
+      "art": "fahrzeug",
+      "blick": "oben",
+      "zustand": "gebraucht",
+      "stil": "modern"
+    },
+    "fz11KrankenwagenLinks": {
+      "quelle": "modern-exteriors/Modern_Exteriors_16x16/ME_Theme_Sorter_16x16/10_Vehicles_Singles_16x16/ME_Singles_Vehicles_16x16_Ambulance_Left_1.png",
+      "breite": 128,
+      "hoehe": 80,
+      "kollision": true,
+      "art": "fahrzeug",
+      "blick": "links",
+      "zustand": "gebraucht",
+      "stil": "modern"
+    },
+    "fz11KrankenwagenRechts": {
+      "quelle": "modern-exteriors/Modern_Exteriors_16x16/ME_Theme_Sorter_16x16/10_Vehicles_Singles_16x16/ME_Singles_Vehicles_16x16_Ambulance_Right_1.png",
+      "breite": 128,
+      "hoehe": 80,
+      "kollision": true,
+      "art": "fahrzeug",
+      "blick": "rechts",
+      "zustand": "gebraucht",
+      "stil": "modern"
+    },
+    "fz11KrankenwagenAb": {
+      "quelle": "modern-exteriors/Modern_Exteriors_16x16/ME_Theme_Sorter_16x16/10_Vehicles_Singles_16x16/ME_Singles_Vehicles_16x16_Ambulance_Down_1.png",
+      "breite": 48,
+      "hoehe": 112,
+      "kollision": true,
+      "art": "fahrzeug",
+      "blick": "unten",
+      "zustand": "gebraucht",
+      "stil": "modern"
+    },
+    "fz11KrankenwagenAuf": {
+      "quelle": "modern-exteriors/Modern_Exteriors_16x16/ME_Theme_Sorter_16x16/10_Vehicles_Singles_16x16/ME_Singles_Vehicles_16x16_Ambulance_Up_1.png",
+      "breite": 48,
+      "hoehe": 112,
+      "kollision": true,
+      "art": "fahrzeug",
+      "blick": "oben",
+      "zustand": "gebraucht",
+      "stil": "modern"
+    },
+    "fz11LkwRechts": {
+      "quelle": "spiel/eigene/lkw_rechts_rot.png",
+      "breite": 176,
+      "hoehe": 80,
+      "kollision": true,
+      "art": "fahrzeug",
+      "blick": "rechts",
+      "zustand": "gebraucht",
+      "stil": "modern"
     }
   }
 }

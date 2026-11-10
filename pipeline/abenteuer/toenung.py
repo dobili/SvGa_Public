@@ -10,7 +10,9 @@ from PIL import Image
 
 # Farbe und Deckkraft je Tönung, gleich wie SCHLEIER in app/src/abenteuer/oberwelt/toenung.ts.
 SCHLEIER = {
-    "nebel": ((0xD8, 0xDD, 0xE0), 0.45),
+    # Nebel 0,30 statt 0,45 (10.11.2026): Bayou und Riesenbäume waren so blass, dass der Gutachter
+    # kaum etwas unterschied; bei 0,30 bleibt der Dunst sichtbar und die Karte lesbar.
+    "nebel": ((0xD8, 0xDD, 0xE0), 0.30),
     "nacht": ((0x0B, 0x15, 0x30), 0.55),
     "abend": ((0xFF, 0x8A, 0x3D), 0.18),
 }

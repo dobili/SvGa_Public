@@ -2358,7 +2358,9 @@
       "kollision": false,
       "art": "schild",
       "zustand": "neu",
-      "stil": "modern"
+      "stil": "modern",
+      "begehbar": true,
+      "begehbar_grund": "Schild an der Fassade über Kopfhöhe, hängt am Haus und versperrt nichts"
     },
     "sb9SchildFishHall": {
       "quelle": "spiel/eigene/schild_fish_hall.png",
@@ -2367,7 +2369,9 @@
       "kollision": false,
       "art": "schild",
       "zustand": "gebraucht",
-      "stil": "modern"
+      "stil": "modern",
+      "begehbar": true,
+      "begehbar_grund": "Schild an der Fassade über Kopfhöhe, hängt am Haus und versperrt nichts"
     },
     "sb9SchildHarborMaster": {
       "quelle": "spiel/eigene/schild_harbor_master.png",
@@ -2376,7 +2380,9 @@
       "kollision": false,
       "art": "schild",
       "zustand": "gebraucht",
-      "stil": "modern"
+      "stil": "modern",
+      "begehbar": true,
+      "begehbar_grund": "Schild an der Fassade über Kopfhöhe, hängt am Haus und versperrt nichts"
     },
     "sb9SchildComingSoon": {
       "quelle": "spiel/eigene/schild_coming_soon.png",
@@ -2385,7 +2391,9 @@
       "kollision": false,
       "art": "schild",
       "zustand": "gebraucht",
-      "stil": "modern"
+      "stil": "modern",
+      "begehbar": true,
+      "begehbar_grund": "Schild an der Fassade über Kopfhöhe, hängt am Haus und versperrt nichts"
     }
   }
 }

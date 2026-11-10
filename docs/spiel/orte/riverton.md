@@ -696,22 +696,22 @@ der Story-Bibel und die Wege.
 - Kleiner blau-grauer Tisch im Pavillon: der Getränketisch `rv5Limonade` mit dem Limonadenglas
   (Auslöser `limonadenglas`), nur Deko.
 
-**Zustände (Liste für die Zustandsszenen, gebaut wird nach der Meldung von mittel-2):**
+**Zustände (gebaut, Technik von mittel-2; Liste: `python -m pipeline.abenteuer.zustaende`):**
 
-| Karte                    | Zustand (`<basis>-<zustand>.json`) | wann                                       | was sich ändert                                                                           |
-| ------------------------ | ---------------------------------- | ------------------------------------------ | ----------------------------------------------------------------------------------------- |
-| `riverton.aussen`        | Grundfassung                       | Akt 2 bis Szene 37                         | Regen, Pfützen (Tönung und Partikel), Schuppen mit Vorhängeschloss                        |
-| `riverton.aussen`        | `schuppenOffen`                    | nach Szene 33 (Schlüssel, E4)              | Vorhängeschloss weg, Schuppentür angelehnt                                                |
-| `riverton.aussen`        | `trainingszentrum`                 | nach Szene 37                              | Gitter vor der Pavillontreppe, Schild „Trainingszentrum – demnächst“, Banner Perfect Move |
-| `riverton.aussen`        | `winter`                           | Akt 3                                      | Bildschirmtische verschneit, zwei kaputt; Eiszapfen am Anleger (Fund)                     |
-| `riverton.aussen`        | `unterschriften`                   | Akt 4                                      | Bildschirmtische abgedeckt; Tisch für Slicks Unterschriftenliste vor dem Pavillon         |
-| `riverton.aussen`        | `nachspiel`                        | nach dem Abspann                           | Bildschirmtische weg, Wiese wieder frei                                                   |
-| `riverton.aussen`        | Objekt mit `wenn`                  | nach L3                                    | Lastkahn am Anleger (kein eigenes Bild nötig)                                             |
-| `riverton.bahnhofshalle` | `slickAufDerBank`                  | Akt 3                                      | Slick spielt auf der Bank weiter, Brett neben ihm                                         |
-| `riverton.bahnhofshalle` | `plakat`                           | Akt 4                                      | Plakat der Landesmeisterschaft an der freien Wand                                         |
-| `riverton.pavillon`      | `perfectMove`                      | nach Szene 37                              | Bildschirmtische auf den langen Tischen, Bretter in Kisten                                |
-| `riverton.wohnwagen`     | –                                  | nur Szene 37                               | keiner                                                                                    |
-| `riverton.schuppen`      | `ohneFahrrad`                      | nach Szene 33, wenn das Fahrrad geholt ist | Plane liegt leer auf dem Boden, Fahrrad fehlt                                             |
+| Karte                    | Szene                                       | Bedingung                               | was sich ändert                                                    |
+| ------------------------ | ------------------------------------------- | --------------------------------------- | ------------------------------------------------------------------ |
+| `riverton.aussen`        | `riverton-aussen-trainingszentrum`          | `slickAbschiedGesehen` (nach Szene 37)  | Schild von Perfect Move über dem Pavillon, Absperrbock „Gesperrt“  |
+| `riverton.aussen`        | `riverton-aussen-tische-kaputt`             | dazu `nadelIronwood >= 1` (Akt 3)       | zwei Bildschirmtische ohne Laptop (im Winter kaputt)               |
+| `riverton.aussen`        | `riverton-aussen-unterschriften`            | dazu `nadelDesertSprings >= 1` (Akt 4)  | alle Laptops abgebaut, Tisch für Slicks Unterschriftenliste        |
+| `riverton.aussen`        | `riverton-aussen-nachspiel`                 | `nicht ausgangCapitalArenaFinale == ""` | Bildschirmtische und ihre Dächer weg, Schild ab                    |
+| `riverton.bahnhofshalle` | `riverton-bahnhofshalle-slick-auf-der-bank` | `nadelIronwood >= 1` (Akt 3)            | Slicks Brett auf der Bank, Kuriertasche daneben                    |
+| `riverton.bahnhofshalle` | `riverton-bahnhofshalle-plakat`             | `nadelDesertSprings >= 1` (Akt 4)       | Plakat der Landesmeisterschaft neben dem Kiosk                     |
+| `riverton.pavillon`      | `riverton-pavillon-perfect-move`            | `slickAbschiedGesehen` (nach Szene 37)  | Laptops statt Bretter, Limonadenstand weg, Schild von Perfect Move |
+| `riverton.schuppen`      | `riverton-schuppen-ohne-fahrrad`            | `fahrradErhalten` (Szene 33)            | Fahrrad weg, nur die gefaltete Plane                               |
+
+Nicht als eigene Szene: `schuppenOffen` (außen ist das Vorhängeschloss im Bild nicht zu sehen), der
+Lastkahn am Anleger (Objekt mit `wenn`, sobald es Objekte mit Bedingung gibt), Regen und Schnee
+(Tönung und Partikel; Schneebilder gibt es nicht, ENTSCHEIDUNGEN 10.11.2026), Wohnwagen (nur Szene 37).
 
 ### 3.5 Gutachten Runde 8 (10.11.2026, mittel-3): Innenräume
 

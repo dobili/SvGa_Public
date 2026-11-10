@@ -50,6 +50,11 @@ const {
   gilt,
 } = require("./gesamtsimulation-regeln.cjs");
 const { berichtWirtschaft } = require("./gesamtsimulation-wirtschaft.cjs");
+const {
+  nebenorte,
+  rueckkehr,
+  nachholen,
+} = require("./gesamtsimulation-rueckkehr.cjs");
 
 // ---------------------------------------------------------------- Aufruf
 
@@ -167,10 +172,10 @@ function wegeVon(welt, karte) {
     .filter((a) => a && a.art === "uebergang" && a.ziel);
 }
 
-/** Bei der Rückkehr bleibt die Suche im Zielort und seinen Erinnerungen. */
+/** Bei Rückkehr und Nachholen bleibt die Suche in den Zielorten und ihren Erinnerungen. */
 function imZiel(welt, st, karte) {
   const o = welt.karteZuOrt[karte];
-  return o && (o.kennung === st.zielOrt || o.art === "erinnerung");
+  return Boolean(o && (st.zielOrte?.has(o.kennung) || o.art === "erinnerung"));
 }
 
 /** Erster Übergang zu jeder erreichbaren Karte (Breitensuche über offene, erlaubte Wege). */
@@ -193,7 +198,7 @@ function ersteSchritte(welt, st) {
         !erlaubt(welt, st, welt.karteZuOrt[z]?.kennung)
       )
         continue;
-      if (st.zielOrt && !imZiel(welt, st, z)) continue;
+      if (st.zielOrte && !imZiel(welt, st, z)) continue;
       gesehen.add(z);
       erster[z] = k === st.karte ? a : erster[k];
       schlange.push(z);
@@ -204,9 +209,11 @@ function ersteSchritte(welt, st) {
 
 /** Ziel: erreichbare Karte des Gebiets, zuerst unbesucht, sonst die am längsten nicht besuchte. */
 function naechsterWeg(welt, st) {
-  const gebiet = st.zielOrt
-    ? [st.zielOrt]
-    : [FOLGE[st.phase], FOLGE[st.phase - 1]].filter(Boolean);
+  // Angrenzende Nebenorte (Jahrmarkt an Crossroads) gehören zum Gebiet.
+  const folge = [FOLGE[st.phase], FOLGE[st.phase - 1]].filter(Boolean);
+  const gebiet = st.zielOrte
+    ? [...st.zielOrte]
+    : [...folge, ...nebenorte(welt, folge)];
   const erster = ersteSchritte(welt, st);
   // Erinnerungen gehören zum Gebiet, aus dem man sie erreicht.
   const karten = welt.orte
@@ -289,38 +296,8 @@ function erkunde(welt, st, frist) {
   st.meldungen.add("Zeitbudget erreicht (der Lauf ist nicht zu Ende gekommen)");
 }
 
-const RUECKKEHR_SCHRITTE = 6000;
-
-/** Mit der Monatskarte (oberwelt/Reisen.tsx) zu jedem Ort mit offener Quest, bis sie fertig ist. */
-function rueckkehr(welt, st, frist) {
-  const ziele = [];
-  for (let runde = 0; runde < 3; runde++)
-    for (const q of welt.quests) {
-      const s = st.staende.find((x) => x.k === q.kennung);
-      const ort = welt.orte.find((x) => x.kennung === q.ort);
-      if (!s || s.fertig || !ort || ort.art === "weg" || Date.now() > frist)
-        continue;
-      ziele.push(q.ort);
-      betrete(welt, st, ort.karten[0].kennung);
-      st.zielOrt = q.ort;
-      // Bis die Quest fertig ist, höchstens RUECKKEHR_SCHRITTE (Quests mit mehreren Partien wie
-      // die drei Sets Schach960 brauchen je Partie mehrere Anläufe).
-      for (let n = 0; n < RUECKKEHR_SCHRITTE && !s.fertig; n++) {
-        // Nur Wege innerhalb des Ortes; wer doch hinausgerät (etwa durch einen Dialog), reist zurück.
-        if (welt.karteZuOrt[st.karte]?.kennung !== q.ort)
-          betrete(welt, st, ort.karten[0].kennung);
-        const drinnen = besucheKarte(welt, st).filter((w) =>
-          imZiel(welt, st, w.ziel?.karte),
-        );
-        waehleWeg(welt, st, drinnen, n + 1e6);
-        if (n % 200 === 0)
-          for (const k of Object.keys(st.versuche))
-            st.versuche[k] = VERSUCHE_JE_ZUSTAND - 1;
-      }
-    }
-  st.zielOrt = null;
-  return [...new Set(ziele)];
-}
+/** Die Schritte für Rückkehr und Nachholen (gesamtsimulation-rueckkehr.cjs). */
+const SCHRITTE = { besucheKarte, waehleWeg, imZiel };
 
 // ---------------------------------------------------------------- Bericht
 
@@ -387,7 +364,7 @@ function wirtschaft(welt, arg) {
     const st = neuerStand(startwert);
     const frist = Date.now() + arg.sekunden * 1000;
     erkunde(welt, st, frist);
-    rueckkehr(welt, st, frist);
+    rueckkehr(welt, st, frist, SCHRITTE);
     zeitachsen.push(st.zeitachse);
   }
   console.log(berichtWirtschaft(welt, zeitachsen, MUENZEN_ERSTE_NADEL));
@@ -401,8 +378,10 @@ function hauptprogramm(liste) {
   const st = neuerStand(arg.startwert);
   const frist = Date.now() + arg.sekunden * 1000;
   erkunde(welt, st, frist);
-  const rueck = rueckkehr(welt, st, frist);
+  const geholt = nachholen(welt, st, frist, SCHRITTE);
+  const rueck = rueckkehr(welt, st, frist, SCHRITTE);
   console.log(bericht(welt, st, ohneKarte, rueck));
+  console.log(`Nachgeholte Orte: ${geholt.join(", ") || "keine"}`);
   process.exitCode = sackgasse(welt, st) ? 1 : 0;
 }
 

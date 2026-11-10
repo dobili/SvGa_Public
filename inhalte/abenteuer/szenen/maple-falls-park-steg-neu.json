@@ -1,0 +1,459 @@
+{
+  "karte": "mapleFalls.park",
+  "datei": "karten/maple-falls-park-steg-neu.json",
+  "art": "aussen",
+  "beschreibung": "Zustand: Nach der ersten Clubnadel (S5): Mr. Pratt hat den morschen Steg am Wochenende selbst erneuert; die Absperrung ist weg, der neue Steg führt zur Aussicht auf den Wasserfall. Der Stadtpark von Maple Falls am Nachmittag, 44 × 32 Kacheln. Am Nordrand fließt der Fluss breit und ruhig; ganz links ragt ein alter Holzsteg gerade vom Ufer ins Wasser, davor eine Absperrbock mit Schild „GESPERRT“ der Stadt. Daneben führt ein schmaler Holzsteg auf Pfählen über den Fluss zum Waldrand, wo der Zedernpfad beginnt; ein Schild an seinem Ende. Am Ufer entlang läuft ein Erdweg nach Osten und biegt in einer Kurve zur Straße hinunter. Links unter der großen Eiche steht Mr. Abernathys Bank, daneben eine zweite Bank und eine Mülltonne; in der Mitte ein Ahorn, eine lange Bank mit Rentner. Am Hauptweg der Verkaufswagen von Mr. Patel mit gestreiftem Dach und eine Laterne. Die Parkstraße kommt von links aus der Birch Lane, überquert im Osten den Fluss, der hier nach Süden abbiegt, und führt rechts aus der Karte zur Landstraße. Südlich der Straße die Bushaltestelle, ein Weg mit Kurve zu einem gepflasterten Platz mit Bank, ein Teich mit Enten und Bäume. Südöstlich der Haltestelle ein kleiner Basketballplatz aus Asphalt mit einem Korb; Jo sitzt daneben auf einer langen Bank am Fluss und spielt Blitzpartien. Die Parkstraße überquert den Fluss auf einer Holzbrücke mit Geländer auf beiden Seiten; der Fluss läuft ohne Lücke darunter durch. Am Uferweg stehen vier Bäume in gleichen Abständen mit Laternen dazwischen; Blumenbeete an Bank und Weg, kleine Abfalleimer an den Bänken.",
+  "boden": "gras",
+  "wandart": "hecke",
+  "boeden": {
+    "p": "pflaster",
+    "e": "erde",
+    "s": "asphalt",
+    "h": "dielen"
+  },
+  "raster": [
+    "##########ee################################",
+    "#.........ee...............................#",
+    "~~~~~hh~~~hh~~~~~~~~~~~~~~~~~~~~~~.........#",
+    "~~~~~hh~~~hh~~~~~~~~~~~~~~~~~~~~~~~........#",
+    "~~~~~hh~~~hh~~~~~~~~~~~~~~~~~~~~~~~........#",
+    "#.........ee..~~~~~~~....~~~~~~~~~~........#",
+    "#.........ee..................~~~~~........#",
+    "#eeeeeeeeeeeeeeeeeeeeeeeeeeee.~~~~.........#",
+    "#eeeeeeeeeeeeeeeeeeeeeeeeeeee~~~~..........#",
+    "#..........................ee~~~~..........#",
+    "#..........................ee~~~~..........#",
+    "#..........................ee.~~~~.........#",
+    "#..........................ee.~~~~~........#",
+    "#..........................ee..~~~~........#",
+    "#pppppppppppppppppppppppppppppphhhhpppppppp#",
+    "ssssssssssssssssssssssssssssssshhhhsssssssss",
+    "ssssssssssssssssssssssssssssssshhhhsssssssss",
+    "ssssssssssssssssssssssssssssssshhhhsssssssss",
+    "#pppppppppppppppppppppppppppppphhhhpppppppp#",
+    "#.................pp...ppppppp.~~~~~.......#",
+    "#.................pp...ppppppp.~~~~~~~~~~~~~",
+    "#................ppppp.ppppppp.~~~~~~~~~~~~~",
+    "#................ppppp...........~~~~~~~~~~~",
+    "#................ppppp...........~~~~~~~~~~~",
+    "#................ppppp...............~~~~..#",
+    "#................ppppp...~~~...............#",
+    "#......................~~~~~~..............#",
+    "#......................~~~~~~~.............#",
+    "#......................~~~~~~~.............#",
+    "#........................~~~...............#",
+    "#..........................................#",
+    "############################################"
+  ],
+  "objekte": [
+    {
+      "moebel": "mf9StrassenbrueckeGehwegQuer4",
+      "feld": [31, 14]
+    },
+    {
+      "moebel": "mf9FussbrueckeLaengs3",
+      "feld": [10, 2]
+    },
+    {
+      "moebel": "mf6Busch",
+      "feld": [1, 1]
+    },
+    {
+      "moebel": "mf6Busch",
+      "feld": [2, 1]
+    },
+    {
+      "moebel": "mf6Moos",
+      "feld": [3, 1]
+    },
+    {
+      "moebel": "mf6Busch",
+      "feld": [4, 1]
+    },
+    {
+      "moebel": "mf6Busch",
+      "feld": [5, 1]
+    },
+    {
+      "moebel": "mf6Moos",
+      "feld": [6, 1]
+    },
+    {
+      "moebel": "mf6Busch",
+      "feld": [7, 1]
+    },
+    {
+      "moebel": "mf6Busch",
+      "feld": [8, 1]
+    },
+    {
+      "moebel": "mf6Moos",
+      "feld": [9, 1]
+    },
+    {
+      "moebel": "mf6Moos",
+      "feld": [12, 1]
+    },
+    {
+      "moebel": "mf6Busch",
+      "feld": [13, 1]
+    },
+    {
+      "moebel": "mf6Busch",
+      "feld": [14, 1]
+    },
+    {
+      "moebel": "mf6Moos",
+      "feld": [15, 1]
+    },
+    {
+      "moebel": "mf6Busch",
+      "feld": [16, 1]
+    },
+    {
+      "moebel": "mf6Busch",
+      "feld": [17, 1]
+    },
+    {
+      "moebel": "mf6Moos",
+      "feld": [18, 1]
+    },
+    {
+      "moebel": "mf6Busch",
+      "feld": [19, 1]
+    },
+    {
+      "moebel": "mf6Busch",
+      "feld": [20, 1]
+    },
+    {
+      "moebel": "mf6Moos",
+      "feld": [21, 1]
+    },
+    {
+      "moebel": "mf6Busch",
+      "feld": [22, 1]
+    },
+    {
+      "moebel": "mf6Busch",
+      "feld": [23, 1]
+    },
+    {
+      "moebel": "mf6Moos",
+      "feld": [24, 1]
+    },
+    {
+      "moebel": "mf6Busch",
+      "feld": [25, 1]
+    },
+    {
+      "moebel": "mf6Busch",
+      "feld": [26, 1]
+    },
+    {
+      "moebel": "mf6Moos",
+      "feld": [27, 1]
+    },
+    {
+      "moebel": "mf6Busch",
+      "feld": [28, 1]
+    },
+    {
+      "moebel": "mf6Busch",
+      "feld": [35, 1]
+    },
+    {
+      "moebel": "mf6Busch",
+      "feld": [37, 1]
+    },
+    {
+      "moebel": "mf6Busch",
+      "feld": [39, 1]
+    },
+    {
+      "moebel": "mf6Busch",
+      "feld": [41, 1]
+    },
+    {
+      "moebel": "mf4Wegweiser",
+      "feld": [12, 5]
+    },
+    {
+      "moebel": "mfBank",
+      "feld": [3, 11],
+      "id": "bank"
+    },
+    {
+      "moebel": "mfBank",
+      "feld": [1, 11]
+    },
+    {
+      "moebel": "mf4Abfalleimer",
+      "feld": [5, 11]
+    },
+    {
+      "moebel": "mfBaum",
+      "feld": [6, 9]
+    },
+    {
+      "moebel": "mfAhorn",
+      "feld": [10, 9]
+    },
+    {
+      "moebel": "mfAhorn",
+      "feld": [36, 3]
+    },
+    {
+      "moebel": "mfBaum",
+      "feld": [38, 8]
+    },
+    {
+      "moebel": "mf2BankLang",
+      "feld": [17, 11]
+    },
+    {
+      "moebel": "mf4Abfalleimer",
+      "feld": [20, 12]
+    },
+    {
+      "moebel": "mf9Limowagen",
+      "feld": [24, 10]
+    },
+    {
+      "moebel": "mf4Laterne",
+      "feld": [2, 6],
+      "vorn": true
+    },
+    {
+      "moebel": "mf4Laterne",
+      "feld": [15, 6],
+      "vorn": true
+    },
+    {
+      "moebel": "mf4Laterne",
+      "feld": [24, 6],
+      "vorn": true
+    },
+    {
+      "moebel": "mf4Laterne",
+      "feld": [14, 10],
+      "vorn": true
+    },
+    {
+      "moebel": "mf4Laterne",
+      "feld": [22, 10],
+      "vorn": true
+    },
+    {
+      "moebel": "mf4Laterne",
+      "feld": [38, 10],
+      "vorn": true
+    },
+    {
+      "moebel": "mf4Laterne",
+      "feld": [9, 16],
+      "vorn": true
+    },
+    {
+      "moebel": "mf4Laterne",
+      "feld": [21, 16],
+      "vorn": true
+    },
+    {
+      "moebel": "mf4Laterne",
+      "feld": [38, 16],
+      "vorn": true
+    },
+    {
+      "moebel": "mf6Basketballplatz",
+      "feld": [1, 20],
+      "id": "platz"
+    },
+    {
+      "moebel": "mf6BankSeiteLinks",
+      "feld": [15, 22],
+      "zu": "platz"
+    },
+    {
+      "moebel": "mf6BankSeiteLinks",
+      "feld": [15, 26],
+      "zu": "platz"
+    },
+    {
+      "moebel": "mf6BankSeiteLinks",
+      "feld": [22, 22],
+      "id": "bankPlatz"
+    },
+    {
+      "moebel": "mf2Blumenbeet",
+      "feld": [18, 26]
+    },
+    {
+      "moebel": "mf6Haltestelle",
+      "feld": [24, 22]
+    },
+    {
+      "moebel": "mf4Abfalleimer",
+      "feld": [29, 22]
+    },
+    {
+      "moebel": "mf6Seerose1",
+      "feld": [24, 27]
+    },
+    {
+      "moebel": "mf6Seerose2",
+      "feld": [27, 26]
+    },
+    {
+      "moebel": "mf6Seerose3",
+      "feld": [26, 28]
+    },
+    {
+      "moebel": "mf4Strassenbaum",
+      "feld": [39, 25]
+    },
+    {
+      "moebel": "mfAhorn",
+      "feld": [31, 26]
+    },
+    {
+      "moebel": "mf9Halfpipe",
+      "feld": [16, 27]
+    },
+    {
+      "moebel": "mf3BrettKlein",
+      "auf": "bank",
+      "versatz": [6, -3]
+    },
+    {
+      "moebel": "mf9StegNeu",
+      "feld": [5, 2],
+      "id": "stegS5"
+    }
+  ],
+  "ausloeser": [
+    {
+      "name": "start",
+      "feld": [1, 16],
+      "eigenschaften": {
+        "richtung": "rechts"
+      }
+    },
+    {
+      "name": "park",
+      "feld": [0, 15]
+    },
+    {
+      "name": "park",
+      "feld": [0, 16]
+    },
+    {
+      "name": "park",
+      "feld": [0, 17]
+    },
+    {
+      "name": "landstrasse",
+      "feld": [43, 15]
+    },
+    {
+      "name": "landstrasse",
+      "feld": [43, 16]
+    },
+    {
+      "name": "landstrasse",
+      "feld": [43, 17]
+    },
+    {
+      "name": "zedernpfad",
+      "feld": [10, 0]
+    },
+    {
+      "name": "zedernpfad",
+      "feld": [11, 0]
+    },
+    {
+      "name": "bushaltestelle",
+      "feld": [26, 21]
+    },
+    {
+      "name": "parkbank",
+      "feld": [4, 12],
+      "auf_moebel": true
+    },
+    {
+      "name": "kiosk",
+      "feld": [25, 13]
+    },
+    {
+      "name": "steg",
+      "feld": [5, 7]
+    }
+  ],
+  "figuren": [
+    {
+      "name": "skaterJo",
+      "feld": [17, 26]
+    },
+    {
+      "name": "abernathy",
+      "feld": [5, 13]
+    }
+  ],
+  "belebung": [
+    {
+      "name": "rentner",
+      "typ": "statist",
+      "feld": [18, 12],
+      "eigenschaften": {
+        "von": "18,12",
+        "bis": "18,12",
+        "tun": "sitzt auf der Bank und füttert Tauben",
+        "wann": "tag"
+      }
+    },
+    {
+      "name": "kioskbesucher",
+      "typ": "statist",
+      "feld": [23, 13],
+      "eigenschaften": {
+        "von": "21,13",
+        "bis": "27,13",
+        "tun": "holt sich ein Eis",
+        "wann": "tag"
+      }
+    },
+    {
+      "name": "enten",
+      "typ": "tier",
+      "feld": [24, 30],
+      "eigenschaften": {
+        "von": "21,30",
+        "bis": "28,30",
+        "verhalten": "folgen"
+      }
+    },
+    {
+      "name": "kraehen",
+      "typ": "tier",
+      "feld": [16, 5],
+      "eigenschaften": {
+        "von": "10,5",
+        "bis": "24,5",
+        "verhalten": "fliegen"
+      }
+    },
+    {
+      "name": "limoverkaeuferin",
+      "typ": "statist",
+      "feld": [27, 12],
+      "eigenschaften": {
+        "tun": "verkauft Limonade und Süßes am Wagen",
+        "wann": "tag"
+      }
+    }
+  ],
+  "zustand": ["neu", "gebraucht", "alt"],
+  "stil": ["klassisch", "modern", "natur"],
+  "bruecken": ["h"],
+  "zustand_der_karte": "nadelMapleFalls >= 1"
+}

@@ -48,6 +48,34 @@ Quellen der Zustände:
     Graffiti-Mauern, Silo, Mast, Spieltische auf der Wiese, Zickzackweg und Kapelle. Sonst kommt es
     weg.
 11. **Grünflächen abwechslungsreicher** gestalten: Bäume, Büsche, Gras, kleine Gebäude.
+12. **Küche getrennt vom Gastraum** (Kantine, Diner, Mensa):
+    - Die Küche steht nie mitten im Raum.
+    - Sie hat genug Geräte, Arbeitsflächen und Schränke für ihren Zweck.
+    - Der Gastraum ist voll mit Tischreihen.
+    - Aufenthalts- oder Schachecken sind abgesetzt, etwa durch Teppich, anderen Boden oder Pflanzen.
+13. **Möbel stehen richtig:**
+    - Rücken an die Wand (Ofen, Herd, Schränke); Türen von Spinden und Schränken zeigen in den Raum.
+    - Kamine stehen an der Wand.
+    - Stühle zum Tisch (alte Regel).
+    - Kein Schrank vor der Tür.
+    - Kein Möbel allein ohne Zusammenhang an der Wand, etwa ein Sessel ohne Tisch oder Lampe.
+14. **Dinge passen auf ihre Unterlage:** Kaffeemaschine nicht breiter als der Tresen, Pokal nicht in
+    der Luft über einem zu schmalen Regal, Tellergestell auf dem Tresen, Fußmatte vor der Tür, nicht
+    auf ihr.
+15. **Wandbilder an die Wand, Standbilder davor:** Ein Schild mit Füßen hängt nicht an der Wand.
+    Für Umkleiden einen Wandspiegel statt eines Standspiegels.
+16. **Räume voll nutzen:** keine großen leeren Flächen ohne Grund.
+17. **Räume mit eigener Logik:**
+    - Museum: Vitrinen in Reihen, gefüllt, große Vitrinen mit Platz ringsum. Keine Kisten, Fässer
+      oder Koffer ohne Grund. Mehrere Räume, wenn das Gebäude es hergibt.
+    - Umkleide: Duschen hinter einer Trennwand, mit Brause.
+    - Schlafzimmer: mit Kleiderschrank.
+18. **Gelände mit Höhen erkennbar machen:** Eine Grube, die in Stufen abfällt, darf nicht wie drei
+    Räume mit Erdwänden aussehen. Kanten und Rampen müssen Tiefe zeigen.
+    - Graffiti gibt es nicht auf Erde.
+    - Ein Wasserloch hat keine gemauerte Einfassung.
+    - Türen werden nicht als Ausschnitt auf eine Erdfläche geklebt.
+19. **Loren und Gleise:** Die Spurweite passt zu den Loren. Türen öffnen sich nicht auf Gleise.
 
 ## Akt 1 (alle Wahl A)
 
@@ -264,3 +292,78 @@ Die übrigen Akt-1-Punkte (Maple Falls, Weg 1, Cedar Creek) hat niedrig-1 ebenfa
   der Hauptstraße ist der Wechsel oben/unten in Ordnung.
 - Der Marktplatz endet schnurgerade im Gras; eine schönere Einfassung suchen.
 - Mehr Abwechslung bei Bäumen und Büschen.
+
+### `ironwood.kantine` (Wahl A, meiste Tische)
+
+- Die Küche steht mitten im Raum (wie im Diner); sie gehört getrennt vom Gastraum. Genug Geräte,
+  Tresen und Schränke für eine Werkskantine.
+- Die Kaffeemaschine steht auf einem zu schmalen Tresen und ragt über.
+- Das Tellergestell oben in der Mitte steht vor dem Tresen statt darauf.
+- Im Pokalregal daneben hängt der goldene Pokal in der Luft (Regal zu schmal).
+- Der Kamin oben rechts steht mitten im Raum.
+- Die Spinde unten links stehen falsch herum vor der Wand und lassen sich nicht öffnen.
+- Nur auf einem der zwei runden Tische liegt ein Schachbrett. Absicht?
+- Viel ungenutzte Fläche in der Mitte und rechts. Eine Kantine ist voll mit Tischreihen. Die
+  Schachecke soll ein abgesetzter Aufenthaltsbereich sein, mit Teppich oder anderem Boden.
+- Mehr Pflanzen.
+- Gilt genauso für das Diner in Maple Falls.
+
+### `ironwood.mamasZimmer` (Wahl B)
+
+- Der Ofen steht mit der Seite an der linken Wand statt mit dem Rücken.
+- Die Stühle sind nicht zum Tisch gedreht.
+- Der alte Schrank steht mitten im Raum, fast vor der Eingangstür.
+- Schlafzimmer: Der Schreibtisch mit Stuhl und Lampe ist in Ordnung. Der untere ist eine Art
+  Couchtisch, mit Sitzkissen ginge das. Es fehlt ein Kleiderschrank. Oder soll das Zimmer karg sein
+  (Geschichte)?
+- Erster Raum: Der Sessel an der Innenwand steht allein. Wozu dient die Ecke oben?
+
+### `ironwood.museum` (Wahl B, Heimatmuseum im alten Bahnhof)
+
+- Zu klein für ein Museum: Es braucht mehrere Räume oder einen größeren Raum, wenn das Gebäude
+  außen es hergibt.
+- Die Beschreibung spricht von drei hohen Fenstern; zu sehen sind zwei Standardfenster.
+- Die Vitrinen sind leer und zufällig verteilt. Sie gehören in Reihen; um die zwei großen Vitrinen
+  links und rechts muss Platz zum Herumgehen sein.
+- Ohne erkennbaren Grund stehen dort:
+  - rechts ein Trolley-Koffer mit drei gleichen Bildern;
+  - eine Kiste mit Brettern;
+  - ein Tisch mit Stuhl und Schemel;
+  - ein Fass.
+- Welche Möbel erwartet man in einem Museum? Den Raum danach überarbeiten.
+- Die alten Fahrkartenschalter sind alte Computer. Gibt es ein besseres Bild?
+- Das alte Fahrplanschild hat Füße, steht aber in der Wand; es gehört davor.
+
+### `ironwood.umkleide` (Wahl A)
+
+- Insgesamt gut.
+- Den großen Doppelspind in die Ecke oder neben die übrigen Schließfächer.
+- Die Duschwannen unten rechts haben keine Brause. Besser an die Nordwand, mit einer Trennwand (gern
+  durchsichtig) zur Umkleide.
+- Ein Standspiegel steht frei an der Wand. Besser ein Wandspiegel, es sei denn, die Geschichte
+  braucht ihn.
+- Die Fußmatte unten liegt auf der Tür.
+
+### `steinbruch.grube` (Wahl C)
+
+- Der Schotterweg der Zufahrt hat keine Übergangskante zum Gras und wirkt aufgeklebt.
+- Die Karte wirkt wie drei übereinanderliegende Räume mit Erdwänden. Frage: Sollen das Höhenstufen
+  sein? Dann muss die Tiefe sichtbar werden, etwa über einen Weg, der hinunterführt.
+- Zufahrt oben:
+  - Die Hütte steht ganz auf dem Weg.
+  - Die Bänke zeigen in die falsche Richtung.
+  - Figuren stehen in den Erdwänden. Schauen sie hinunter?
+- Mittlerer Abschnitt: zufällig verteilte Steine auf einer Fläche, wirkt hingeklatscht.
+- Unten:
+  - Graffiti auf Erdwänden geht nicht.
+  - Fahrzeuge und Holzstapel sind in Ordnung.
+  - Der Teich hat eine gemauerte, symmetrische Einfassung wie ein Pool. Ist er ein vollgelaufenes
+    Loch? Dann ohne Einfassung.
+- Gleise und Loren:
+  - Die Gleise sind viel breiter als die Loren.
+  - Links steht ein Absperrschild statt eines Prellbocks.
+  - Die Gleise enden links und rechts im Nichts.
+  - Die Tür eines Hauses öffnet sich direkt auf die Gleise.
+- Das Haus unten rechts besteht ganz aus Erde, die Tür ist als Ausschnitt aufgeklebt.
+- Grundfrage: Was soll die Karte darstellen? Gibt es verschiedene Höhen, geht der Weg hinunter?
+  Das muss das Bild zeigen.

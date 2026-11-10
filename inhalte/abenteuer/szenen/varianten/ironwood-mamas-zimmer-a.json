@@ -1,23 +1,23 @@
 {
   "karte": "ironwood.mamasZimmer",
-  "datei": "karten/varianten/ironwood-mamas-zimmer-b.json",
+  "datei": "karten/varianten/ironwood-mamas-zimmer-a.json",
   "art": "innen",
-  "beschreibung": "Variante B: Küche mit weißen Fliesen und weißem Kühlschrank, runder Tisch in der Mitte, Ofen an der Westwand. Mamas Zimmer mit hellem Holzboden, lila Bett links, Schreibtisch rechts, Kommode an der Südwand.",
-  "wand": "holz",
+  "beschreibung": "Oma Ruths Haus in der Elm Street, 18 × 12 Kacheln. Links die Wohnküche: Kühlschrank, Herd und Arbeitsplatte mit Spüle an der Nordwand, ein Fenster, der Küchentisch mit zwei Stühlen, ein Kohleofen an der Innenwand, ein Sessel, eine Pflanze und ein Kleiderschrank als Garderobe neben der Haustür. Durch eine offene Tür in der Innenwand geht es nach rechts in Mamas altes Zimmer: Bild und Fenster an der Wand, ein Bild im Rahmen an der Innenwand, das Bett mit grauer Decke, ein Schreibtisch mit Lampe und Stuhl, eine Kommode mit Teddy, eine Pflanze. Kein Schachbrett ist zu sehen.",
+  "wand": "creme",
   "boden": "dielen",
   "raster": [
     "##################",
     "##################",
     "##################",
-    "#kkkkkkkkk#zzzzzz#",
-    "#kkkkkkkkk#zzzzzz#",
-    "#kkkkkkkkk#zzzzzz#",
-    "#kkkkkkkkk#zzzzzz#",
-    "#kkkkkkkkkzzzzzzz#",
-    "#kkkkkkkkk#zzzzzz#",
-    "#kkkkkkkkk#zzzzzz#",
-    "#kkkkkkkkk#zzzzzz#",
-    "########k#########",
+    "#.........#......#",
+    "#.........#......#",
+    "#.........#......#",
+    "#.........#......#",
+    "#................#",
+    "#.........#......#",
+    "#.........#......#",
+    "#.........#......#",
+    "########.#########",
     "##################"
   ],
   "objekte": [
@@ -32,86 +32,82 @@
       "versatz": [0, 24]
     },
     {
-      "moebel": "mf8KuehlschrankWeiss",
+      "moebel": "wzKuehlschrank",
       "feld": [1, 1]
     },
     {
-      "moebel": "mf8Herd",
+      "moebel": "wzHerd",
       "feld": [2, 2]
     },
     {
-      "moebel": "mf8Herd",
-      "feld": [3, 2]
-    },
-    {
       "moebel": "wzArbeitsplatte",
-      "feld": [4, 2],
+      "feld": [3, 2],
       "id": "platte"
     },
     {
       "moebel": "wzFenster",
-      "feld": [7, 1],
+      "feld": [6, 1],
       "an_wand": true
     },
     {
-      "moebel": "mf3Rundtisch",
-      "feld": [4, 6],
+      "moebel": "wzEsstisch",
+      "feld": [3, 5],
       "id": "kuechentisch"
     },
     {
       "moebel": "wzStuhlRechts",
-      "feld": [3, 6],
+      "feld": [2, 5],
       "zu": "kuechentisch"
     },
     {
       "moebel": "wzStuhlLinks",
-      "feld": [6, 6],
+      "feld": [5, 5],
       "zu": "kuechentisch"
     },
     {
       "moebel": "ldOfen",
-      "feld": [1, 5]
+      "feld": [8, 3]
     },
     {
-      "moebel": "mf7SesselWeissLinks",
-      "feld": [8, 4]
+      "moebel": "mf7SesselAlt",
+      "feld": [6, 8]
     },
     {
       "moebel": "cc4PflanzeK",
-      "feld": [1, 9]
+      "feld": [4, 9]
     },
     {
       "moebel": "mf2Kleiderschrank",
-      "feld": [7, 7]
-    },
-    {
-      "moebel": "wzFenster",
-      "feld": [12, 1],
-      "an_wand": true
+      "feld": [1, 7]
     },
     {
       "moebel": "mf2BildWald",
-      "feld": [15, 1],
+      "feld": [11, 1],
       "an_wand": true
     },
     {
-      "moebel": "iw5BettLila",
-      "feld": [11, 3]
+      "moebel": "wzFenster",
+      "feld": [14, 1],
+      "an_wand": true
     },
     {
       "moebel": "iwBild",
-      "feld": [14, 1],
+      "feld": [13, 1],
       "an_wand": true,
       "id": "rahmen2001"
     },
     {
+      "moebel": "iw5BettGrau",
+      "feld": [14, 3]
+    },
+    {
       "moebel": "cc3Schreibtisch",
-      "feld": [15, 5],
+      "feld": [14, 7],
       "id": "schreibtisch"
     },
     {
       "moebel": "cc4StuhlVorn",
-      "feld": [15, 4],
+      "feld": [14, 6],
       "zu": "schreibtisch"
     },
     {
@@ -121,8 +117,8 @@
       "versatz": [8, 0]
     },
     {
-      "moebel": "mf7Stoffkommode",
-      "feld": [13, 8],
+      "moebel": "mf4Kommode",
+      "feld": [11, 8],
       "id": "kommode"
     },
     {
@@ -153,24 +149,19 @@
     },
     {
       "name": "partieformular2001",
-      "feld": [14, 3]
+      "feld": [13, 3]
     }
   ],
   "figuren": [
     {
       "name": "omaRuth",
-      "feld": [4, 9]
+      "feld": [5, 8]
     },
     {
       "name": "mama",
-      "feld": [15, 9]
+      "feld": [13, 9]
     }
   ],
   "zustand": ["gebraucht", "alt", "neu"],
-  "stil": ["klassisch", "einfach", "rustikal", "modern", "industrie"],
-  "boeden": {
-    "k": "fliesenWeiss",
-    "z": "holzHell"
-  },
-  "variante": "b"
+  "stil": ["klassisch", "einfach", "rustikal", "modern", "industrie"]
 }

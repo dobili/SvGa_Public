@@ -320,6 +320,14 @@ def baue(pfad: Path) -> list[str]:
     return befunde
 
 
+def hinweise(pfad: Path) -> list[str]:
+    """Hinweise, die nicht als Befund zählen: Fahrzeuge quer zu ihrer Fahrbahn (Regel 10.65)."""
+    from pipeline.abenteuer.fahrzeuge import fahrzeughinweise
+
+    szene, moebel = lade(pfad), lade_moebel()
+    return fahrzeughinweise(szene, raster(szene), platziere(szene, moebel)[0], moebel)
+
+
 def main() -> int:
     fehler = 0
     for name in sys.argv[1:]:
@@ -327,6 +335,8 @@ def main() -> int:
         print(f"{name}: {'in Ordnung' if not befunde else ''}")
         for b in befunde:
             print(f"  - {b}")
+        for h in hinweise(Path(name)):
+            print(f"  ~ Hinweis: {h}")
         fehler += len(befunde)
     return 1 if fehler else 0
 

@@ -33,7 +33,7 @@ Häusern das Marschland mit dem Pfad zum Bayou.
 
 | Karte                     | Größe   | Hauptweg                                | Zeit zu Fuß |
 | ------------------------- | ------- | --------------------------------------- | ----------- |
-| `portDelacroix.aussen`    | 70 × 58 | Westrand (Deich) → Rampe → Turnhalle 45 | ≈ 13 s      |
+| `portDelacroix.aussen`    | 80 × 58 | Westrand (Deich) → Rampe → Turnhalle 45 | ≈ 13 s      |
 |                           |         | Rampe → Kai → Musikhaus 52              | ≈ 15 s      |
 |                           |         | Bahnsteig → Bayou (Ostrand) 80          | ≈ 23 s      |
 | `portDelacroix.turnhalle` | 26 × 16 | Tür → Lehrertisch 12                    | ≈ 3 s       |
@@ -242,6 +242,26 @@ Möbel `pd6` in `moebel/port-delacroix.json`. Ersatz für bestellte Bilder steht
 musikhausOffen`): A Spieltische und Henris Klavier; B Musikschule mit Klapptischen; C Wohnzimmer der
   Stadt mit Sessel und runden Tischen. Hinweis für Runde 6: `kartenbild` schreibt beide Zustände unter
   derselben Kennung; der Hintergrund des Clubraums braucht einen eigenen Namen.
+
+### 4.0b Runde 7: mehr Häuser, mehr Leben (mittel-1, 10.11.2026)
+
+- **Karte wächst auf 80 × 58** (Regel 10.51, mittlere Stadt). Das Hafenbecken ist jetzt 8 Spalten breit
+  (x 56 bis 63); östlich davon liegt der **Ostkai**: ein gepflasterter Kai an der Wasserkante (x 64 bis 65) und drei Querwege vor Kulissenhäusern. Erreichbar über den Marschpfad im Süden. Deich (Westrand,
+  Reihen 5 und 6) und Bayou-Ausgang (jetzt Ostrand x 79, Reihen 53 und 54) bleiben in denselben Reihen.
+- **Gebäude je Variante 21** (Zelte zählen nicht mehr, `"gebaeude": false`): neu sind Läden mit Markise
+  (`pd7Laden1` bis `12`), Märkte (`pd7Markt…`), eine Holzvilla mit Veranda (`pd7Villa…`), schmale
+  Reihenhäuser und Stadthäuser (`pd7Reihenhaus…`, `pd7Stadthaus…`). Sie stehen am Ostkai, im Westblock
+  zwischen Bahnsteig und Platz (A, B) oder zwischen Platz und Gasse (C), im Südosten an der Rue des
+  Facteurs und in zweiter Reihe am Kai. Alle sind Kulissen ohne Innenraum.
+- **Belebung außen (alle Varianten gleich):** 12 Statisten, davon 9 ansprechbar, und 5 Tiere
+  (Pelikane, Möwen, Reiher, Katze, ein Hund, der ein Stück mitläuft). Ansprechbar: Handwerker
+  (Fesselung), Sandsackhelfer (Lieblingszug), Briefträgerin (Welt), Rentner am Uferweg (Morphy 1858,
+  Vorrat 4.3 Nr. 16, mit Antwort von Ambrose), Fischer am Kai (Weltmeisterschaft 1886, Nr. 19),
+  Mutter am Gebäckwagen (Perfect Move), Großmutter (Missverständnis), Bootsbauer am Ostkai (Rat,
+  Kapitel 1), Kind in Gummistiefeln (Geschichte in zwei Teilen). Ohne Satz: Ballkinder, Kehrerin,
+  Angler. Sätze in `texte/de.json` unter `statist.portDelacroix.aussen.*`.
+- **Turnhalle:** vier Statisten mit Satz (Kinder, Hausmeister, Zuschauerin mit den Kiebitzen,
+  alter Herr mit der langen Rochade).
 
 ### 4.1 Turnhalle (`portDelacroix.turnhalle`)
 

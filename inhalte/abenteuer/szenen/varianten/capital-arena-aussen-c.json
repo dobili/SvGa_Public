@@ -6,165 +6,361 @@
   "wandart": "hecke",
   "boeden": {
     "p": "pflaster",
-    "k": "sand"
+    "k": "sand",
+    "s": "asphalt",
+    "t": "stein"
   },
-  "beschreibung": "Variante C, Bau am Teich: Die Capital Arena steht links, ihre Freitreppe führt auf einen breiten gepflasterten Platz mit Brunnen und zwei Fahnen. Rechts liegt ein Teich mit Steinkante zwischen Bäumen; ein Weg mit Laternen führt am Teich entlang nach Norden, Bänke mit Blick aufs Wasser. Auf dem Platz ein Hotdog-Wagen und ein Limonadenwagen. Am Westrand kommt der Weg vom Leuchtturm an.",
+  "beschreibung": "Variante C, Arena am Westrand: Die Capital Arena steht links, ihre Freitreppe führt auf einen breiten gepflasterten Platz mit Brunnen und zwei Fahnen, darauf ein Hotdog-Wagen und ein Limonadenwagen. Rechts der Arena zwei Häuserreihen an einer Querstraße: Wache, Post, Kaufhäuser, Wohnhäuser und ein Laden, dahinter Feuerwache, Polizeirevier und zwei Hochhäuser. Südlich eine Reihe Märkte, Läden, Eisenwarenhandlungen und Stadthäuser mit zwei Gassen zur Fußgängerstraße. Am Westrand kommt der Weg vom Leuchtturm an.",
   "raster": [
-    "################################################################",
-    "#..............................................................#",
-    "#..............................................................#",
-    "#..............................................................#",
-    "#.....................................pp.......................#",
-    "#.....................................pp.......................#",
-    "#.....................................pp.......................#",
-    "#.....................................pp.......................#",
-    "#.....................................pp.......................#",
-    "#.....................................pp.......................#",
-    "#.....................................pp~~~~~~~~~~~~~~~~~~~~...#",
-    "#.....................................pp~~~~~~~~~~~~~~~~~~~~...#",
-    "#.....................................pp~~~~~~~~~~~~~~~~~~~~...#",
-    "#.....................................pp~~~~~~~~~~~~~~~~~~~~...#",
-    "#.....................................pp~~~~~~~~~~~~~~~~~~~~...#",
-    "#.....................................pp~~~~~~~~~~~~~~~~~~~~...#",
-    "#.....................................pp~~~~~~~~~~~~~~~~~~~~...#",
-    "#.....................................pp~~~~~~~~~~~~~~~~~~~~...#",
-    "#.....................................pp~~~~~~~~~~~~~~~~~~~~...#",
-    "#.....................................pp~~~~~~~~~~~~~~~~~~~~...#",
-    "#.....................................pp~~~~~~~~~~~~~~~~~~~~...#",
-    "#.....................................pp~~~~~~~~~~~~~~~~~~~~...#",
-    "#.....................................pp~~~~~~~~~~~~~~~~~~~~...#",
-    "#.....................................pp~~~~~~~~~~~~~~~~~~~~...#",
-    "#.....................................pp~~~~~~~~~~~~~~~~~~~~...#",
-    "#.....................................pp~~~~~~~~~~~~~~~~~~~~...#",
-    "#.....................................pp.......................#",
-    "#.....................................pp.......................#",
-    "#.....................................pp.......................#",
-    "#.....................................pp.......................#",
-    "#.....................................pp.......................#",
-    "#.....................................pp.......................#",
-    "#.....................................pp.......................#",
-    "#.....................................pp.......................#",
-    "#.....................................pp.......................#",
-    "#.....................................pp.......................#",
-    "#pppppppppppppppppppppppppppppppppppppppppppppppppppppppppppppp#",
-    "#pppppppppppppppppppppppppppppppppppppppppppppppppppppppppppppp#",
-    "#pppppppppppppppppppppppppppppppppppppppppppppppppppppppppppppp#",
-    "#pppppppppppppppppppppppppppppppppppppppppppppppppppppppppppppp#",
-    "ppppppppppppppppppppppppppppppppppppppppppppppppppppppppppppppp#",
-    "ppppppppppppppppppppppppppppppppppppppppppppppppppppppppppppppp#",
-    "#pppppppppppppppppppppppppppppppppppppppppppppppppppppppppppppp#",
-    "#pppppppppppppppppppppppppppppppppppppppppppppppppppppppppppppp#",
-    "#pppppppppppppppppppppppppppppppppppppppppppppppppppppppppppppp#",
-    "#pppppppppppppppppppppppppppppppppppppppppppppppppppppppppppppp#",
-    "#pppppppppppppppppppppppppppppppppppppppppppppppppppppppppppppp#",
-    "################################################################"
+    "################################################################################",
+    "#..............................................................................#",
+    "#..............................................................................#",
+    "#..............................................................................#",
+    "#..............................................................................#",
+    "#..............................................................................#",
+    "#..............................................................................#",
+    "#..............................................................................#",
+    "#..............................................................................#",
+    "#..............................................................................#",
+    "#..............................................................................#",
+    "#..............................................................................#",
+    "#..............................................................................#",
+    "#..............................................................................#",
+    "#.........................ppppppppppppppppppppppppppppppppppppppppppppppppppppp#",
+    "#.........................ppppppppppppppppppppppppppppppppppppppppppppppppppppp#",
+    "#.........................pp...................................................#",
+    "#.........................pp...................................................#",
+    "#.........................pp...................................................#",
+    "#.........................pp...................................................#",
+    "#.........................pp...................................................#",
+    "#.........................pp...................................................#",
+    "#.........................pp...................................................#",
+    "#.........................pp...................................................#",
+    "#.........................pp...................................................#",
+    "#.........................pp...................................................#",
+    "#.........................pp...................................................#",
+    "#.........................pp...................................................#",
+    "#.........................pp...................................................#",
+    "#.........................pp...................................................#",
+    "#.........................pp...................................................#",
+    "#.........................pp...................................................#",
+    "#.........................pp...................................................#",
+    "#.........................pp...................................................#",
+    "#.........................pp...................................................#",
+    "#.........................pp...................................................#",
+    "#pppppppppppppppppppppppppppppppppppppppppppppppppppppppppppppppppppppppppppppp#",
+    "#pppppppppppppppppppppppppppppppppppppppppppppppppppppppppppppppppppppppppppppp#",
+    "#pppppppppppppppppppppppppppppppppppppppppppppppppppppppppppppppppppppppppppppp#",
+    "#pppppppppppppppppppppppppppppppppppppppppppppppppppppppppppppppppppppppppppppp#",
+    "ppppppppppppppppppppppppppppppppppppppppppppppppppppppppppppppppppppppppppppppp#",
+    "ppppppppppppppppppppppppppppppppppppppppppppppppppppppppppppppppppppppppppppppp#",
+    "#pppppppppppppppppppppppppppppppppppppppppppppppppppppppppppppppppppppppppppppp#",
+    "#pppppppppppppppppppppppppppppppppppppppppppppppppppppppppppppppppppppppppppppp#",
+    "#pppppppppppppppppppppppppppppppppppppppppppppppppppppppppppppppppppppppppppppp#",
+    "#pppppppppppppppppppppppppppppppppppppppppppppppppppppppppppppppppppppppppppppp#",
+    "#pppppppppppppppppppppppppppppppppppppppppppppppppppppppppppppppppppppppppppppp#",
+    "#.............pp..................................pp...........................#",
+    "#.............pp..................................pp...........................#",
+    "#.............pp..................................pp...........................#",
+    "#.............pp..................................pp...........................#",
+    "#.............pp..................................pp...........................#",
+    "#.............pp..................................pp...........................#",
+    "#.............pp..................................pp...........................#",
+    "#.............pp..................................pp...........................#",
+    "#.............pp..................................pp...........................#",
+    "#.............pp..................................pp...........................#",
+    "#ppppppppppppppppppppppppppppppppppppppppppppppppppppppppppppppppppppppppppppppp",
+    "#ppppppppppppppppppppppppppppppppppppppppppppppppppppppppppppppppppppppppppppppp",
+    "################################################################################"
   ],
   "objekte": [
     {
       "moebel": "ca7Arena",
-      "feld": [8, 2]
+      "feld": [
+        1,
+        2
+      ]
     },
     {
       "moebel": "ca7Fahne",
-      "feld": [12, 35]
+      "feld": [
+        5,
+        35
+      ]
     },
     {
       "moebel": "ca7Fahne2",
-      "feld": [26, 35]
+      "feld": [
+        19,
+        35
+      ]
     },
     {
       "moebel": "ca7Brunnen",
-      "feld": [18, 40]
+      "feld": [
+        11,
+        40
+      ]
     },
     {
       "moebel": "ca7Imbiss",
-      "feld": [44, 37]
+      "feld": [
+        44,
+        37
+      ]
     },
     {
       "moebel": "ca7Limonadenwagen",
-      "feld": [54, 38]
-    },
-    {
-      "moebel": "ca7Bank",
-      "feld": [42, 27]
-    },
-    {
-      "moebel": "ca7Bank",
-      "feld": [52, 27]
+      "feld": [
+        56,
+        38
+      ]
     },
     {
       "moebel": "ca7BankGarten",
-      "feld": [30, 44]
+      "feld": [
+        30,
+        44
+      ]
     },
     {
       "moebel": "ca7Laterne",
-      "feld": [37, 30],
+      "feld": [
+        30,
+        38
+      ],
       "vorn": true
     },
     {
       "moebel": "ca7Laterne",
-      "feld": [37, 20],
+      "feld": [
+        40,
+        38
+      ],
       "vorn": true
     },
     {
       "moebel": "ca7Laterne",
-      "feld": [37, 10],
+      "feld": [
+        70,
+        38
+      ],
       "vorn": true
     },
     {
-      "moebel": "ca7Laterne",
-      "feld": [6, 38],
-      "vorn": true
+      "moebel": "ca8Wache1",
+      "feld": [
+        28,
+        1
+      ]
     },
     {
-      "moebel": "ca7Laterne",
-      "feld": [34, 38],
-      "vorn": true
+      "moebel": "ca8Post3",
+      "feld": [
+        35,
+        1
+      ]
     },
     {
-      "moebel": "ca7BaumRund",
-      "feld": [41, 4]
+      "moebel": "ca8Kaufhaus6",
+      "feld": [
+        43,
+        2
+      ]
     },
     {
-      "moebel": "ca7Baum",
-      "feld": [48, 4]
+      "moebel": "ca8Wohnhaus5_3",
+      "feld": [
+        50,
+        3
+      ]
     },
     {
-      "moebel": "ca7BaumRund",
-      "feld": [55, 4]
+      "moebel": "ca8Wohnhaus9",
+      "feld": [
+        56,
+        2
+      ]
     },
     {
-      "moebel": "ca7BaumRund",
-      "feld": [47, 29]
+      "moebel": "ca8Kaufhaus1",
+      "feld": [
+        62,
+        2
+      ]
     },
     {
-      "moebel": "ca7BaumRund",
-      "feld": [57, 30]
+      "moebel": "ca8Reihenhaus2",
+      "feld": [
+        69,
+        2
+      ]
+    },
+    {
+      "moebel": "ca8Laden12",
+      "feld": [
+        73,
+        6
+      ]
+    },
+    {
+      "moebel": "ca8Feuerwache",
+      "feld": [
+        28,
+        19
+      ]
+    },
+    {
+      "moebel": "ca8Polizei",
+      "feld": [
+        44,
+        16
+      ]
+    },
+    {
+      "moebel": "ca8Hochhaus46",
+      "feld": [
+        65,
+        16
+      ]
+    },
+    {
+      "moebel": "ca8Hochhaus",
+      "feld": [
+        72,
+        17
+      ]
+    },
+    {
+      "moebel": "ca8Markt4",
+      "feld": [
+        1,
+        48
+      ]
+    },
+    {
+      "moebel": "ca8Stadthaus45",
+      "feld": [
+        8,
+        47
+      ]
+    },
+    {
+      "moebel": "ca8Eisenwaren",
+      "feld": [
+        16,
+        48
+      ]
+    },
+    {
+      "moebel": "ca8Markt8",
+      "feld": [
+        24,
+        48
+      ]
+    },
+    {
+      "moebel": "ca8Laden3",
+      "feld": [
+        31,
+        49
+      ]
+    },
+    {
+      "moebel": "ca8Stadthaus44",
+      "feld": [
+        36,
+        49
+      ]
+    },
+    {
+      "moebel": "ca8Markt12",
+      "feld": [
+        43,
+        48
+      ]
+    },
+    {
+      "moebel": "ca8EisenwarenB",
+      "feld": [
+        52,
+        48
+      ]
+    },
+    {
+      "moebel": "ca8Laden6",
+      "feld": [
+        60,
+        49
+      ]
+    },
+    {
+      "moebel": "ca8Markt5",
+      "feld": [
+        65,
+        48
+      ]
+    },
+    {
+      "moebel": "ca8Stadthaus45",
+      "feld": [
+        72,
+        47
+      ]
     }
   ],
   "ausloeser": [
     {
       "name": "start",
-      "feld": [1, 40],
+      "feld": [
+        1,
+        40
+      ],
       "eigenschaften": {
         "richtung": "rechts"
       }
     },
     {
       "name": "wegGhost",
-      "feld": [0, 40]
+      "feld": [
+        0,
+        40
+      ]
     },
     {
       "name": "wegGhost",
-      "feld": [0, 41]
+      "feld": [
+        0,
+        41
+      ]
     },
     {
       "name": "halleTuer",
-      "feld": [20, 30]
+      "feld": [
+        13,
+        30
+      ]
     },
     {
       "name": "treppe",
-      "feld": [20, 33]
+      "feld": [
+        13,
+        33
+      ]
+    },
+    {
+      "name": "innenstadt",
+      "feld": [
+        79,
+        57
+      ]
+    },
+    {
+      "name": "innenstadt",
+      "feld": [
+        79,
+        58
+      ]
     }
   ],
   "figuren": [],
@@ -172,10 +368,13 @@
     {
       "name": "fans",
       "typ": "statist",
-      "feld": [20, 42],
+      "feld": [
+        20,
+        45
+      ],
       "eigenschaften": {
-        "von": "12,42",
-        "bis": "26,42",
+        "von": "12,45",
+        "bis": "26,45",
         "tun": "laufen mit Schals zur Halle",
         "wann": "tag"
       }
@@ -183,27 +382,228 @@
     {
       "name": "reporterin",
       "typ": "statist",
-      "feld": [36, 38],
+      "feld": [
+        46,
+        37
+      ],
       "eigenschaften": {
-        "von": "34,38",
-        "bis": "40,38",
+        "von": "44,37",
+        "bis": "50,37",
         "tun": "filmt die Freitreppe",
         "wann": "tag"
       }
     },
     {
+      "name": "polizist",
+      "typ": "statist",
+      "feld": [
+        70,
+        57
+      ],
+      "eigenschaften": {
+        "von": "70,57",
+        "bis": "70,57",
+        "tun": "regelt den Verkehr vor dem Platz",
+        "wann": "tag"
+      }
+    },
+    {
+      "name": "eisverkaeuferin",
+      "typ": "statist",
+      "feld": [
+        48,
+        45
+      ],
+      "eigenschaften": {
+        "von": "48,45",
+        "bis": "48,45",
+        "tun": "verkauft Eis aus einer Kühlbox",
+        "wann": "tag",
+        "sagt": "statist.capitalArena.aussen.eisverkaeuferin"
+      }
+    },
+    {
+      "name": "tourist",
+      "typ": "statist",
+      "feld": [
+        8,
+        45
+      ],
+      "eigenschaften": {
+        "von": "8,45",
+        "bis": "8,45",
+        "tun": "hält einen Stadtplan verkehrt herum",
+        "wann": "tag",
+        "sagt": "statist.capitalArena.aussen.tourist"
+      }
+    },
+    {
+      "name": "rentnerin",
+      "typ": "statist",
+      "feld": [
+        28,
+        46
+      ],
+      "eigenschaften": {
+        "von": "28,46",
+        "bis": "28,46",
+        "tun": "sitzt mit Sonnenhut im Schatten",
+        "wann": "tag",
+        "sagt": "statist.capitalArena.aussen.rentnerin"
+      }
+    },
+    {
+      "name": "student",
+      "typ": "statist",
+      "feld": [
+        60,
+        45
+      ],
+      "eigenschaften": {
+        "von": "60,45",
+        "bis": "60,45",
+        "tun": "liest im Stehen ein dickes Buch",
+        "wann": "tag",
+        "sagt": "statist.capitalArena.aussen.student"
+      }
+    },
+    {
+      "name": "busfahrer",
+      "typ": "statist",
+      "feld": [
+        10,
+        57
+      ],
+      "eigenschaften": {
+        "von": "10,57",
+        "bis": "10,57",
+        "tun": "macht Pause neben seinem Bus",
+        "wann": "tag",
+        "sagt": "statist.capitalArena.aussen.busfahrer"
+      }
+    },
+    {
+      "name": "strassenmusiker",
+      "typ": "statist",
+      "feld": [
+        40,
+        58
+      ],
+      "eigenschaften": {
+        "von": "40,58",
+        "bis": "40,58",
+        "tun": "spielt Saxofon für Kleingeld",
+        "wann": "tag",
+        "sagt": "statist.capitalArena.aussen.strassenmusiker"
+      }
+    },
+    {
+      "name": "vater",
+      "typ": "statist",
+      "feld": [
+        66,
+        45
+      ],
+      "eigenschaften": {
+        "von": "66,45",
+        "bis": "66,45",
+        "tun": "erklärt seiner Tochter die Freitreppe",
+        "wann": "tag",
+        "sagt": "statist.capitalArena.aussen.vater"
+      }
+    },
+    {
+      "name": "schuelerin",
+      "typ": "statist",
+      "feld": [
+        30,
+        58
+      ],
+      "eigenschaften": {
+        "von": "26,58",
+        "bis": "34,58",
+        "tun": "balanciert auf dem Bordstein, Eis in der Hand",
+        "wann": "tag",
+        "sagt": "statist.capitalArena.aussen.schuelerin"
+      }
+    },
+    {
+      "name": "autogrammjunge",
+      "typ": "statist",
+      "feld": [
+        52,
+        40
+      ],
+      "eigenschaften": {
+        "von": "52,39",
+        "bis": "52,42",
+        "tun": "wartet mit einem Heft und einem Stift",
+        "wann": "tag",
+        "sagt": "statist.capitalArena.aussen.autogrammjunge"
+      }
+    },
+    {
       "name": "tauben",
       "typ": "tier",
-      "feld": [44, 44],
+      "feld": [
+        44,
+        44
+      ],
       "eigenschaften": {
-        "von": "40,44",
-        "bis": "50,45",
+        "von": "38,43",
+        "bis": "54,45",
         "verhalten": "fliegen"
+      }
+    },
+    {
+      "name": "spatzen",
+      "typ": "tier",
+      "feld": [
+        14,
+        38
+      ],
+      "eigenschaften": {
+        "von": "10,37",
+        "bis": "18,39",
+        "verhalten": "fliegen"
+      }
+    },
+    {
+      "name": "hund",
+      "typ": "tier",
+      "feld": [
+        24,
+        57
+      ],
+      "eigenschaften": {
+        "von": "18,57",
+        "bis": "30,57",
+        "verhalten": "folgen"
+      }
+    },
+    {
+      "name": "katze",
+      "typ": "tier",
+      "feld": [
+        76,
+        57
+      ],
+      "eigenschaften": {
+        "von": "76,57",
+        "bis": "76,57",
+        "verhalten": "schlafen"
       }
     }
   ],
-  "zustand": ["neu", "gebraucht"],
-  "stil": ["klassisch", "modern", "natur"],
+  "zustand": [
+    "neu",
+    "gebraucht"
+  ],
+  "stil": [
+    "klassisch",
+    "modern",
+    "natur"
+  ],
   "variante": "c",
-  "ufer": "stein"
+  "ufer": null
 }

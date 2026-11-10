@@ -209,6 +209,32 @@ Nebel so dicht, dass man nur sieht, was man erreichen kann: Nebelschach.
   `schilf_breit.png`, `sumpfzypresse.png`, `luftboot.png`. Bis sie kommen: Ersatz nach den
   Beschreibungen der Szenen.
 
+**Runde 7 (mittel-1, 10.11.2026): Ereignisorte aus Dokument 15 und Belebung.** Die Felder bleiben
+frei begehbar; die Auslöser kommen mit den Dialogen.
+
+- **Fähre, Kapitänsproblem (15, 2.5):** Kajüte ist das Steuerhaus mit dem gerahmten Brett daneben
+  (`pd7KapitaensBrett`, Ersatz: Aushangtafel; bestellt: `kapitaensbrett.png`, gerahmtes Schachbrett
+  mit drei angesteckten Zetteln, 2 × 2). A: neues Steuerhaus am Bug (13, 63), Brett (17, 65); B: Brett
+  neben dem Steuerhaus (19, 21); C: Brett neben Steuerhaus und Salon (17, 30).
+  - `ereignisKapitaen`: A (17, 67), B (19, 23), C (17, 32);
+  - `seite02` an der Reling: A und B (21, 44), C (21, 39);
+  - `finchTurmA` am Rettungsringkasten: A (9, 40), B (9, 46), C (9, 64).
+- **Deich, Spur P3:** Messwagen in der Marsch unter der Krone, zwischen Sandsäcken (`pd7Messwagen`,
+  Ersatz: Wohnmobil; bestellt: `messwagen.png`, weißer Lieferwagen mit Messmast, 6 × 4). A (134, 11),
+  B (136, 11), C (138, 11).
+  - `spurPM3` (liegengelassene Mappe): A (140, 15), B (142, 15), C (144, 15).
+- **Bayou, Kiste im Hausboot (15, 2.6):** neuer Steg (Spalten 7–11, Reihen 12–13) von der ersten Insel
+  nach Westen zum Hausboot (Ersatz: Pfahlhaus weiß, blau, rot; bestellt: `hausboot.png`, 6 × 4), Laterne
+  am Steg, Blechkiste auf der Insel (16, 14). Alle Varianten gleich.
+  - `ereignisHausboot`: (8, 12); `finchBauerC` in der Reuse am Steg: (10, 13);
+  - `seite05`: Nordostufer der ersten Insel (22, 10), später an einer Sumpfzypresse.
+- **Belebung (alle Varianten gleich, Winter):** Fähre: Matrose (Rochade), Passagierin (Welt), Angler
+  (Delfin, Tiergeschichte), Kind (Turm oder Fähre); Möwen, Pelikan, Delfin, Kormoran, fliegende Fische,
+  Quallen. Deich: Helfer (Rat), Techniker (Perfect Move), Vogelbeobachterin (Reiher, Tiergeschichte),
+  alter Fischer (Fernschach per Post); Möwen, Reiher, Pelikan, Krabben, Enten, Bisamratte. Bayou:
+  Angler (Alligator Fernand, Tiergeschichte), Krebsfischerin (Welt), Mann mit Mundharmonika (die
+  Unsterbliche), Fotografin ohne Satz; Reiher, Alligator, Libellen, Frosch, Schildkröte, Nutria.
+
 ## 4. Bühnenbilder
 
 ### 4.1 Fährdeck

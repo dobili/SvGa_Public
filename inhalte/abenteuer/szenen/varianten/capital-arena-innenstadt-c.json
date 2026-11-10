@@ -1,0 +1,681 @@
+{
+  "karte": "capitalArena.innenstadt",
+  "datei": "karten/varianten/capital-arena-innenstadt-c.json",
+  "art": "aussen",
+  "viertel": true,
+  "boden": "gras",
+  "wandart": "hecke",
+  "boeden": {
+    "p": "pflaster",
+    "k": "sand",
+    "s": "asphalt",
+    "t": "stein"
+  },
+  "beschreibung": "Variante C, Platz im Osten: Die Innenstadt von Capital mit drei Häuserreihen; oben Wache, Post, Kaufhäuser und Läden, darunter Feuerwache, Märkte und Wohnhäuser an der Allee mit einem Bus. Im Süden links das Polizeirevier und Hochhäuser, ganz im Osten der U-Bahn-Platz mit Kaffeekiosk, Haltestelle, Bänken und Bäumen; in der Mitte zwei alte Treppen hinab zum stillgelegten U-Bahnhof hinter einem Bauzaun mit Plane. Die Fußgängerstraße im Süden führt nach Westen zur Arena.",
+  "raster": [
+    "################################################################################",
+    "#..............................................................................#",
+    "#..............................................................................#",
+    "#..............................................................................#",
+    "#..............................................................................#",
+    "#..............................................................................#",
+    "#..............................................................................#",
+    "#..............................................................................#",
+    "#..............................................................................#",
+    "#..............................................................................#",
+    "#..............................................................................#",
+    "#..............................................................................#",
+    "#..............................................................................#",
+    "#..............................................................................#",
+    "#pppppppppppppppppppppppppppppppppppppppppppppppppppppppppppppppppppppppppppppp#",
+    "#pppppppppppppppppppppppppppppppppppppppppppppppppppppppppppppppppppppppppppppp#",
+    "#.......................pp............................pp.......................#",
+    "#.......................pp............................pp.......................#",
+    "#.......................pp............................pp.......................#",
+    "#.......................pp............................pp.......................#",
+    "#.......................pp............................pp.......................#",
+    "#.......................pp............................pp.......................#",
+    "#.......................pp............................pp.......................#",
+    "#.......................pp............................pp.......................#",
+    "#.......................pp............................pp.......................#",
+    "#.......................pp............................pp.......................#",
+    "#.......................pp............................pp.......................#",
+    "#.......................pp............................pp.......................#",
+    "#.......................pp............................pp.......................#",
+    "#.......................pp............................pp.......................#",
+    "#.......................pp............................pp.......................#",
+    "#.......................pp............................pp.......................#",
+    "#pppppppppppppppppppppppppppppppppppppppppppppppppppppppppppppppppppppppppppppp#",
+    "#sssssssssssssssssssssssppssssssssssssssssssssssssssssppsssssssssssssssssssssss#",
+    "#sssssssssssssssssssssssppssssssssssssssssssssssssssssppsssssssssssssssssssssss#",
+    "#sssssssssssssssssssssssppssssssssssssssssssssssssssssppsssssssssssssssssssssss#",
+    "#pppppppppppppppppppppppppppppppppppppppppppppppppppppppppppppppppppppppppppppp#",
+    "#.......................pp.........................tttttttttttttttttttttttttttt#",
+    "#.......................pp.........................tttttttttttttttttttttttttttt#",
+    "#.......................pp.........................tttttttttttttttttttttttttttt#",
+    "#.......................pp.........................tttttttttttttttttttttttttttt#",
+    "#.......................pp.........................tttttttttttttttttttttttttttt#",
+    "#.......................pp.........................tttttttttttttttttttttttttttt#",
+    "#.......................pp.........................tttttttttttttttttttttttttttt#",
+    "#.......................pp.........................tttttttttttttttttttttttttttt#",
+    "#.......................pp.........................tttttttttttttttttttttttttttt#",
+    "#.......................pp.........................tttttttttttttttttttttttttttt#",
+    "#.......................pp.........................tttttttttttttttttttttttttttt#",
+    "#.......................pp.........................tttttttttttttttttttttttttttt#",
+    "#.......................pp.........................tttttttttttttttttttttttttttt#",
+    "#.......................pp.........................tttttttttttttttttttttttttttt#",
+    "#.......................pp.........................tttttttttttttttttttttttttttt#",
+    "#.......................pp.........................tttttttttttttttttttttttttttt#",
+    "#.......................pp.........................tttttttttttttttttttttttttttt#",
+    "#.......................pp.........................tttttttttttttttttttttttttttt#",
+    "#.......................pp.........................tttttttttttttttttttttttttttt#",
+    "#pppppppppppppppppppppppppppppppppppppppppppppppppppppppppppppppppppppppppppppp#",
+    "ppppppppppppppppppppppppppppppppppppppppppppppppppppppppppppppppppppppppppppppp#",
+    "ppppppppppppppppppppppppppppppppppppppppppppppppppppppppppppppppppppppppppppppp#",
+    "################################################################################"
+  ],
+  "objekte": [
+    {
+      "moebel": "ca8Wache1",
+      "feld": [
+        1,
+        1
+      ]
+    },
+    {
+      "moebel": "ca8Kaufhaus4",
+      "feld": [
+        8,
+        2
+      ]
+    },
+    {
+      "moebel": "ca8Wohnhaus5_2",
+      "feld": [
+        15,
+        3
+      ]
+    },
+    {
+      "moebel": "ca8Post2",
+      "feld": [
+        26,
+        1
+      ]
+    },
+    {
+      "moebel": "ca8Kaufhaus5",
+      "feld": [
+        34,
+        2
+      ]
+    },
+    {
+      "moebel": "ca8Wohnhaus9",
+      "feld": [
+        41,
+        2
+      ]
+    },
+    {
+      "moebel": "ca8Laden6",
+      "feld": [
+        47,
+        6
+      ]
+    },
+    {
+      "moebel": "ca8Kaufhaus2",
+      "feld": [
+        56,
+        2
+      ]
+    },
+    {
+      "moebel": "ca8Wohnhaus9B",
+      "feld": [
+        63,
+        2
+      ]
+    },
+    {
+      "moebel": "ca8Laden12",
+      "feld": [
+        69,
+        6
+      ]
+    },
+    {
+      "moebel": "ca8Reihenhaus2",
+      "feld": [
+        74,
+        2
+      ]
+    },
+    {
+      "moebel": "ca8Feuerwache",
+      "feld": [
+        1,
+        17
+      ]
+    },
+    {
+      "moebel": "ca8Wohnhaus5_1",
+      "feld": [
+        17,
+        21
+      ]
+    },
+    {
+      "moebel": "ca8Kaufhaus6",
+      "feld": [
+        26,
+        20
+      ]
+    },
+    {
+      "moebel": "ca8Markt8",
+      "feld": [
+        33,
+        23
+      ]
+    },
+    {
+      "moebel": "ca8Wohnhaus5_3",
+      "feld": [
+        40,
+        21
+      ]
+    },
+    {
+      "moebel": "ca8Laden3",
+      "feld": [
+        46,
+        24
+      ]
+    },
+    {
+      "moebel": "ca8Reihenhaus3",
+      "feld": [
+        51,
+        20
+      ]
+    },
+    {
+      "moebel": "ca8Kaufhaus1",
+      "feld": [
+        56,
+        20
+      ]
+    },
+    {
+      "moebel": "ca8Markt12",
+      "feld": [
+        63,
+        23
+      ]
+    },
+    {
+      "moebel": "ca8Wohnhaus8",
+      "feld": [
+        70,
+        16
+      ]
+    },
+    {
+      "moebel": "ca8Reihenhaus2",
+      "feld": [
+        75,
+        20
+      ]
+    },
+    {
+      "moebel": "ca8Polizei",
+      "feld": [
+        1,
+        38
+      ]
+    },
+    {
+      "moebel": "ca8Hochhaus46",
+      "feld": [
+        27,
+        38
+      ]
+    },
+    {
+      "moebel": "ca8Hochhaus",
+      "feld": [
+        34,
+        39
+      ]
+    },
+    {
+      "moebel": "ca8Wohnhaus8",
+      "feld": [
+        40,
+        40
+      ]
+    },
+    {
+      "moebel": "ca8Reihenhaus3",
+      "feld": [
+        45,
+        44
+      ]
+    },
+    {
+      "moebel": "ci8UBahnAbgang",
+      "feld": [
+        63,
+        42
+      ]
+    },
+    {
+      "moebel": "ci8UBahnAbgangB",
+      "feld": [
+        66,
+        42
+      ]
+    },
+    {
+      "moebel": "pd6BauzaunEndeLinks",
+      "feld": [
+        62,
+        47
+      ],
+      "bauteil_ok": true
+    },
+    {
+      "moebel": "pd6BauzaunMitte",
+      "feld": [
+        63,
+        47
+      ],
+      "bauteil_ok": true
+    },
+    {
+      "moebel": "pd6BauzaunMitte",
+      "feld": [
+        64,
+        47
+      ],
+      "bauteil_ok": true
+    },
+    {
+      "moebel": "pd6BauzaunMitte",
+      "feld": [
+        65,
+        47
+      ],
+      "bauteil_ok": true
+    },
+    {
+      "moebel": "pd6BauzaunMitte",
+      "feld": [
+        66,
+        47
+      ],
+      "bauteil_ok": true
+    },
+    {
+      "moebel": "pd6BauzaunMitte",
+      "feld": [
+        67,
+        47
+      ],
+      "bauteil_ok": true
+    },
+    {
+      "moebel": "pd6BauzaunMitte",
+      "feld": [
+        68,
+        47
+      ],
+      "bauteil_ok": true
+    },
+    {
+      "moebel": "pd6BauzaunEndeRechts",
+      "feld": [
+        69,
+        47
+      ],
+      "bauteil_ok": true
+    },
+    {
+      "moebel": "ci8Kaffeekiosk",
+      "feld": [
+        52,
+        38
+      ]
+    },
+    {
+      "moebel": "ca7Bank",
+      "feld": [
+        54,
+        50
+      ]
+    },
+    {
+      "moebel": "ca7Bank",
+      "feld": [
+        70,
+        50
+      ]
+    },
+    {
+      "moebel": "ca7Baum",
+      "feld": [
+        52,
+        51
+      ]
+    },
+    {
+      "moebel": "ca7BaumRund",
+      "feld": [
+        72,
+        51
+      ]
+    },
+    {
+      "moebel": "ca7Laterne",
+      "feld": [
+        65,
+        38
+      ],
+      "vorn": true
+    },
+    {
+      "moebel": "ca7Laterne",
+      "feld": [
+        70,
+        44
+      ],
+      "vorn": true
+    },
+    {
+      "moebel": "ci8Haltestelle",
+      "feld": [
+        59,
+        37
+      ]
+    },
+    {
+      "moebel": "caBus",
+      "feld": [
+        10,
+        33
+      ],
+      "bauteil_ok": true
+    }
+  ],
+  "ausloeser": [
+    {
+      "name": "start",
+      "feld": [
+        1,
+        57
+      ],
+      "eigenschaften": {
+        "richtung": "rechts"
+      }
+    },
+    {
+      "name": "arena",
+      "feld": [
+        0,
+        57
+      ]
+    },
+    {
+      "name": "arena",
+      "feld": [
+        0,
+        58
+      ]
+    }
+  ],
+  "figuren": [],
+  "belebung": [
+    {
+      "name": "zeitungsverkaeuferin",
+      "typ": "statist",
+      "feld": [
+        10,
+        32
+      ],
+      "eigenschaften": {
+        "von": "10,32",
+        "bis": "10,32",
+        "tun": "verkauft Zeitungen vom Stapel",
+        "wann": "tag",
+        "sagt": "statist.capitalArena.innenstadt.zeitungsverkaeuferin"
+      }
+    },
+    {
+      "name": "kellner",
+      "typ": "statist",
+      "feld": [
+        40,
+        32
+      ],
+      "eigenschaften": {
+        "von": "36,32",
+        "bis": "46,32",
+        "tun": "trägt ein Tablett mit Eiskaffee",
+        "wann": "tag",
+        "sagt": "statist.capitalArena.innenstadt.kellner"
+      }
+    },
+    {
+      "name": "bauarbeiter",
+      "typ": "statist",
+      "feld": [
+        64,
+        15
+      ],
+      "eigenschaften": {
+        "von": "64,15",
+        "bis": "64,15",
+        "tun": "macht Mittagspause auf dem Bordstein",
+        "wann": "tag",
+        "sagt": "statist.capitalArena.innenstadt.bauarbeiter"
+      }
+    },
+    {
+      "name": "hundefrau",
+      "typ": "statist",
+      "feld": [
+        30,
+        57
+      ],
+      "eigenschaften": {
+        "von": "26,57",
+        "bis": "40,57",
+        "tun": "geht mit einem Dackel spazieren",
+        "wann": "tag",
+        "sagt": "statist.capitalArena.innenstadt.hundefrau"
+      }
+    },
+    {
+      "name": "sprayer",
+      "typ": "statist",
+      "feld": [
+        24,
+        40
+      ],
+      "eigenschaften": {
+        "von": "24,38",
+        "bis": "24,44",
+        "tun": "lehnt mit Kapuze an der Ecke",
+        "wann": "tag",
+        "sagt": "statist.capitalArena.innenstadt.sprayer"
+      }
+    },
+    {
+      "name": "geschaeftsfrau",
+      "typ": "statist",
+      "feld": [
+        60,
+        36
+      ],
+      "eigenschaften": {
+        "von": "56,36",
+        "bis": "70,36",
+        "tun": "telefoniert im Gehen",
+        "wann": "tag",
+        "sagt": "statist.capitalArena.innenstadt.geschaeftsfrau"
+      }
+    },
+    {
+      "name": "schueler",
+      "typ": "statist",
+      "feld": [
+        12,
+        15
+      ],
+      "eigenschaften": {
+        "von": "4,15",
+        "bis": "20,15",
+        "tun": "spielt im Gehen auf dem Handy Schach",
+        "wann": "tag",
+        "sagt": "statist.capitalArena.innenstadt.schueler"
+      }
+    },
+    {
+      "name": "strassenkehrer",
+      "typ": "statist",
+      "feld": [
+        50,
+        58
+      ],
+      "eigenschaften": {
+        "von": "44,58",
+        "bis": "60,58",
+        "tun": "fegt die Fußgängerstraße",
+        "wann": "morgen",
+        "sagt": "statist.capitalArena.innenstadt.strassenkehrer"
+      }
+    },
+    {
+      "name": "taxifahrer",
+      "typ": "statist",
+      "feld": [
+        72,
+        34
+      ],
+      "eigenschaften": {
+        "von": "72,34",
+        "bis": "72,34",
+        "tun": "wartet am Steuer",
+        "wann": "tag"
+      }
+    },
+    {
+      "name": "touristen",
+      "typ": "statist",
+      "feld": [
+        66,
+        57
+      ],
+      "eigenschaften": {
+        "von": "62,57",
+        "bis": "72,57",
+        "tun": "fotografieren die Hochhäuser",
+        "wann": "tag"
+      }
+    },
+    {
+      "name": "jogger",
+      "typ": "statist",
+      "feld": [
+        40,
+        14
+      ],
+      "eigenschaften": {
+        "von": "4,14",
+        "bis": "76,14",
+        "tun": "joggt die Gasse entlang",
+        "wann": "morgen"
+      }
+    },
+    {
+      "name": "lieferfahrer",
+      "typ": "statist",
+      "feld": [
+        55,
+        40
+      ],
+      "eigenschaften": {
+        "von": "55,38",
+        "bis": "55,52",
+        "tun": "schiebt eine Sackkarre mit Kisten",
+        "wann": "tag"
+      }
+    },
+    {
+      "name": "tauben",
+      "typ": "tier",
+      "feld": [
+        45,
+        57
+      ],
+      "eigenschaften": {
+        "von": "40,56",
+        "bis": "52,58",
+        "verhalten": "fliegen"
+      }
+    },
+    {
+      "name": "dackel",
+      "typ": "tier",
+      "feld": [
+        32,
+        57
+      ],
+      "eigenschaften": {
+        "von": "28,57",
+        "bis": "40,57",
+        "verhalten": "folgen"
+      }
+    },
+    {
+      "name": "katze",
+      "typ": "tier",
+      "feld": [
+        25,
+        20
+      ],
+      "eigenschaften": {
+        "von": "25,20",
+        "bis": "25,20",
+        "verhalten": "schlafen"
+      }
+    },
+    {
+      "name": "spatzen",
+      "typ": "tier",
+      "feld": [
+        8,
+        36
+      ],
+      "eigenschaften": {
+        "von": "4,36",
+        "bis": "14,36",
+        "verhalten": "fliegen"
+      }
+    }
+  ],
+  "zustand": [
+    "neu",
+    "gebraucht",
+    "alt"
+  ],
+  "stil": [
+    "modern",
+    "industrie",
+    "klassisch",
+    "natur"
+  ],
+  "variante": "c"
+}

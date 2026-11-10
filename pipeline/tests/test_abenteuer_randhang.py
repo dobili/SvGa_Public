@@ -4,7 +4,11 @@ Warum: Rückmeldung des Autors (Runde 8): Am linken Rand des Bahndamms fehlte ei
 weil das Randfeld den Boden des Nachbarn zeigte statt des Hangs.
 """
 
-from pipeline.abenteuer.kartenbild import randhang
+import pytest
+
+pytest.importorskip("PIL.Image")  # kartenbild braucht Pillow; in Actions fehlt es
+
+from pipeline.abenteuer.kartenbild import randhang  # noqa: E402
 
 ZEILEN = ["#####", "#...#", "#####", "#...#"]
 

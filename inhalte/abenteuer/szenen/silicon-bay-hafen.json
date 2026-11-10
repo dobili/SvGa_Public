@@ -2,7 +2,7 @@
   "karte": "siliconBay.hafen",
   "datei": "karten/silicon-bay-hafen.json",
   "art": "aussen",
-  "beschreibung": "Der alte Hafen von Silicon Bay unter dem Campus: Hier war die Stadt, bevor sie so hieß. Von der Terrasse führt eine breite Treppe zwischen Sitzstufen und Stützmauer herunter. Unten stehen alte Häuser: die geschlossene Fischhalle, Ames Kurzwaren mit leerem Schaufenster, die Hafenmeisterei und der Perfect Move Store. Davor läuft eine Promenade aus hellen Steinplatten, darunter der gepflasterte Kai bis zur Kaimauer aus Stein. Im Westen das Fährterminal mit der Küstenfähre am Kai, im Osten das Fährhäuschen und der Steg der Inselfähre. Die Bucht reicht bis an den West-, Süd- und Ostrand. Variante C, die belebte: Leuchtturm auf der Mole im Osten, Marktkarren auf der Promenade, am Kai ein großer Kran, Fischkisten, Fässer und Kisten, Bänke zum Wasser, Laternen in dichter Reihe.",
+  "beschreibung": "Der alte Hafen von Silicon Bay unterhalb der Terrasse des Campus. Von der Treppe in der Mitte kommt man auf die Hafenstraße. Oben die alten Häuser: die Fischhalle, ein Laden, Ames leerer Kurzwarenladen mit dem Schild „Bald geöffnet“ und die Hafenmeisterei. Am Südrand der Straße Laternen in festen Abständen, am Kai ein Gemüsekarren mit Händlerin. Links das Fährhäuschen, davor am Kai die Küstenfähre, viel größer als die Ruderboote. In der Mitte Ladebetrieb am Kutter: Kisten und Fässer in Reihen, Hafenarbeiter tragen sie zur Kaikante. Bänke mit Blick aufs Wasser, Poller an der Kaikante. Rechts der Steg der Inselfähre und der rot-weiße Leuchtturm auf einer Landzunge, zu dessen Tür ein Weg um den Turm führt.",
   "boden": "pflaster",
   "wandart": "stein",
   "ufer": "stein",
@@ -45,25 +45,17 @@
     "#..............................................................#",
     "#..............................................................#",
     "#.............................................bbbb.............#",
-    "~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~bbbb~~~~~~.......~",
-    "~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~bbbb~~~~~~.......~",
-    "~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~bbbb~~~~~~.......~",
-    "~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~bbbb~~~~~~.......~",
-    "~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~bbbb~~~~~~.......~",
-    "~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~.......~",
-    "~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~.......~",
-    "~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~.......~",
+    "~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~bbbb~~...........~",
+    "~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~bbbb~~...........~",
+    "~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~bbbb~~...........~",
+    "~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~bbbb~~...........~",
+    "~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~bbbb~~...........~",
+    "~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~...........~",
+    "~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~...........~",
+    "~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~...........~",
     "~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~"
   ],
   "objekte": [
-    {
-      "moebel": "sb5Faehrterminal",
-      "feld": [1, 21]
-    },
-    {
-      "moebel": "sb5Kuestenfaehre",
-      "feld": [1, 31]
-    },
     {
       "moebel": "sb5StegPlanke",
       "feld": [46, 30],
@@ -224,88 +216,12 @@
       "bauteil_ok": true
     },
     {
-      "moebel": "cc5BootUfer",
-      "feld": [51, 31]
-    },
-    {
-      "moebel": "sb5Marktkarren",
-      "feld": [12, 16]
-    },
-    {
-      "moebel": "sb5Marktkarren",
-      "feld": [46, 16]
-    },
-    {
-      "moebel": "caKisten",
-      "feld": [20, 17]
-    },
-    {
-      "moebel": "caFaesser",
-      "feld": [36, 22]
-    },
-    {
-      "moebel": "sb5Kran",
-      "feld": [18, 23]
-    },
-    {
-      "moebel": "sb5Fischkiste",
-      "feld": [9, 25]
-    },
-    {
-      "moebel": "sb5FischkisteB",
-      "feld": [10, 25]
-    },
-    {
-      "moebel": "sb5Fischkiste",
-      "feld": [11, 25]
-    },
-    {
-      "moebel": "sb5Fischeimer",
-      "feld": [13, 25]
-    },
-    {
-      "moebel": "sb5Fass",
-      "feld": [28, 22]
-    },
-    {
-      "moebel": "sb5FassB",
-      "feld": [29, 22]
-    },
-    {
-      "moebel": "sb5Kiste",
-      "feld": [30, 22]
-    },
-    {
-      "moebel": "sb5Kiste",
-      "feld": [28, 23]
-    },
-    {
       "moebel": "mfBank",
       "feld": [30, 27]
     },
     {
       "moebel": "mfBank",
       "feld": [38, 27]
-    },
-    {
-      "moebel": "sbLaterne",
-      "feld": [10, 20]
-    },
-    {
-      "moebel": "sbLaterne",
-      "feld": [26, 20]
-    },
-    {
-      "moebel": "sbLaterne",
-      "feld": [34, 20]
-    },
-    {
-      "moebel": "sbLaterne",
-      "feld": [42, 20]
-    },
-    {
-      "moebel": "sbLaterne",
-      "feld": [50, 20]
     },
     {
       "moebel": "cc5Poller",
@@ -326,6 +242,83 @@
     {
       "moebel": "cc5Poller",
       "feld": [42, 29]
+    },
+    {
+      "moebel": "sb5Marktkarren",
+      "feld": [12, 20]
+    },
+    {
+      "moebel": "sb8Faehrhaeuschen",
+      "feld": [2, 23]
+    },
+    {
+      "moebel": "sb8Faehre",
+      "feld": [1, 31]
+    },
+    {
+      "moebel": "sbLaterne",
+      "feld": [8, 17],
+      "vorn": true
+    },
+    {
+      "moebel": "sbLaterne",
+      "feld": [18, 17],
+      "vorn": true
+    },
+    {
+      "moebel": "sbLaterne",
+      "feld": [28, 17],
+      "vorn": true
+    },
+    {
+      "moebel": "sbLaterne",
+      "feld": [38, 17],
+      "vorn": true
+    },
+    {
+      "moebel": "sbLaterne",
+      "feld": [48, 17],
+      "vorn": true
+    },
+    {
+      "moebel": "caKisten",
+      "feld": [20, 24]
+    },
+    {
+      "moebel": "caKisten",
+      "feld": [20, 26]
+    },
+    {
+      "moebel": "caKisten",
+      "feld": [22, 24]
+    },
+    {
+      "moebel": "caKisten",
+      "feld": [22, 26]
+    },
+    {
+      "moebel": "caKisten",
+      "feld": [24, 24]
+    },
+    {
+      "moebel": "caKisten",
+      "feld": [24, 26]
+    },
+    {
+      "moebel": "caFaesser",
+      "feld": [34, 24]
+    },
+    {
+      "moebel": "caFaesser",
+      "feld": [34, 26]
+    },
+    {
+      "moebel": "caFaesser",
+      "feld": [36, 24]
+    },
+    {
+      "moebel": "caFaesser",
+      "feld": [36, 26]
     }
   ],
   "ausloeser": [
@@ -354,7 +347,7 @@
     },
     {
       "name": "faehre",
-      "feld": [4, 29]
+      "feld": [4, 28]
     },
     {
       "name": "inselfaehre",
@@ -374,22 +367,22 @@
     {
       "name": "ames",
       "typ": "statist",
-      "feld": [27, 17],
+      "feld": [26, 16],
       "eigenschaften": {
-        "von": "27,17",
-        "bis": "27,17",
-        "tun": "sitzt auf einer Kiste vor seinem Laden",
+        "von": "26,16",
+        "bis": "26,16",
+        "tun": "steht vor seinem leeren Laden",
         "wann": "tag"
       }
     },
     {
       "name": "pike",
       "typ": "statist",
-      "feld": [49, 23],
+      "feld": [50, 29],
       "eigenschaften": {
-        "von": "49,23",
-        "bis": "49,23",
-        "tun": "wartet am Fährhäuschen",
+        "von": "50,29",
+        "bis": "50,29",
+        "tun": "wartet am Steg der Inselfähre",
         "wann": "tag"
       }
     },
@@ -401,6 +394,50 @@
         "von": "26,36",
         "bis": "36,36",
         "verhalten": "fliegen"
+      }
+    },
+    {
+      "name": "gemuesehaendlerin",
+      "typ": "statist",
+      "feld": [15, 21],
+      "eigenschaften": {
+        "von": "15,21",
+        "bis": "15,21",
+        "tun": "verkauft Gemüse vom Karren",
+        "wann": "tag"
+      }
+    },
+    {
+      "name": "hafenarbeiter",
+      "typ": "statist",
+      "feld": [26, 28],
+      "eigenschaften": {
+        "von": "20,28",
+        "bis": "30,28",
+        "tun": "trägt Kisten zum Kutter",
+        "wann": "tag"
+      }
+    },
+    {
+      "name": "schauermann",
+      "typ": "statist",
+      "feld": [32, 28],
+      "eigenschaften": {
+        "von": "32,25",
+        "bis": "33,28",
+        "tun": "rollt Fässer an die Kaikante",
+        "wann": "tag"
+      }
+    },
+    {
+      "name": "fischerin",
+      "typ": "statist",
+      "feld": [30, 30],
+      "eigenschaften": {
+        "von": "29,30",
+        "bis": "31,30",
+        "tun": "nimmt die Kisten auf dem Kutter an",
+        "wann": "tag"
       }
     }
   ]

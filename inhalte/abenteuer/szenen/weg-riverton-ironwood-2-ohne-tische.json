@@ -1,7 +1,7 @@
 {
   "karte": "wegRivertonIronwood.bruecke",
   "art": "aussen",
-  "beschreibung": "Zustand: nach dem Clubkampf in Ironwood (nadelIronwood ≥ 1, Ende Akt 2): Die Brückenbauern haben ihre Klapptische für den Winter weggeräumt, Corwin ist mit dem Streichen fertig und prüft nur noch das Geländer, Farbeimer und Leiter sind weg. Eisenbrücke und Abhang (Runde 8 nach den Notizen des Autors): Der Kanal von Riverton (derselbe wie am Kanalweg, acht Felder breit für Frachtkähne, Steinufer) läuft gerade nach Süden, westlich davon der Treidelpfad mit Laternen in gleichem Abstand und das Wärterhäuschen mit eigenem Weg. In Reihe 54–61 biegt der Kanal nach Westen; der Pfad quert ihn auf der eisernen Fachwerkbrücke (Brückenköpfe aus Stein, Bohlen, genietete Träger). Unter der Brücke am Südufer liegt der Kai mit den drei Klapptischen, an denen Brückenbauer sitzen und spielen, dem Kreidespringer und einem gesprühten Turm am steinernen Brückenkopf. Danach fällt der Pfad in Kehren den Hang hinab: Zwischen den Kehren liegen Felskanten mit Versprüngen und Treppen, die bis an den Kanal reichen; der Kanal steigt dort über eine Schleusentreppe ab, wo der Pfad sie quert, und auf den Terrassen eingezäunte Weiden mit Gattern des Hofs am Hang (Schafe, Ziegen, Streuobst). Am Südrand führt eine Treppe durch die letzte Kante hinunter nach Ironwood (Runde 8, nach dem Gutachten überarbeitet).",
+  "beschreibung": "Zustand: nach dem Clubkampf in Ironwood (nadelIronwood ≥ 1, Ende Akt 2): Die Brückenbauern haben ihre Klapptische für den Winter weggeräumt, Corwin ist mit dem Streichen fertig und prüft nur noch das Geländer, Farbeimer und Leiter sind weg. Eisenbrücke und Abhang (Runde 8 nach den Notizen des Autors): Der Kanal von Riverton (derselbe wie am Kanalweg, acht Felder breit für Frachtkähne, Steinufer) läuft gerade nach Süden, westlich davon der Treidelpfad mit Laternen in gleichem Abstand und das Wärterhäuschen mit eigenem Weg. Kurz vor der Biegung nach Westen quert der Pfad den Kanal auf der eisernen Fachwerkbrücke, hoch über dem Wasser auf steinernen Pfeilern; am Ostufer führt er hinunter zum Kai. Unter der Brücke am Südufer liegt der Kai mit den drei Klapptischen, an denen Brückenbauer sitzen und spielen, dem Kreidespringer; am östlichen Brückenpfeiler ein gesprühter Turm. Danach fällt der Pfad in Kehren den Hang hinab: Zwischen den Kehren liegen Felskanten mit Versprüngen und Treppen, die bis an den Kanal reichen; der Kanal steigt dort über eine Schleusentreppe ab, wo der Pfad sie quert, und auf den Terrassen eingezäunte Weiden mit Gattern des Hofs am Hang (Schafe, Ziegen, Streuobst). Am Südrand führt eine Treppe durch die letzte Kante hinunter nach Ironwood (Runde 8, nach dem Gutachten überarbeitet).",
   "boden": "gras",
   "wandart": "gras",
   "boeden": {
@@ -62,21 +62,21 @@
     "#................ee.~~~~~~~~.......#",
     "#................ee.~~~~~~~~.......#",
     "#................ee.~~~~~~~~.......#",
-    "#................ee.~~~~~~~~.......#",
-    "#................ee.~~~~~~~~.......#",
-    "#................ee.~~~~~~~~.......#",
-    "#................ee.~~~~~~~~.......#",
-    "#.~~~~~~~~~~~~~~~hh~~~~~~~~~.......#",
-    "#.~~~~~~~~~~~~~~~hh~~~~~~~~~.......#",
-    "#.~~~~~~~~~~~~~~~hh~~~~~~~~~.......#",
-    "#.~~~~~~~~~~~~~~~hh~~~~~~~~~.......#",
-    "#.~~~~~~~~~~~~~~~hh~~~~~~~~~.......#",
-    "#.~~~~~~~~~~~~~~~hh~~~~~~~~~.......#",
-    "#.~~~~~~~~~~~~~~~hh~~~~~~~~~.......#",
-    "#.~~~~~~~~~~~~~~~hh~~~~~~~~~.......#",
-    "#.~~~~~~~~.pppppppppppppppppp......#",
-    "#.~~~~~~~~.pppppppppppppppppp......#",
-    "#.~~~~~~~~.pppppppppppppppppp......#",
+    "#................eeehhhhhhhhee.....#",
+    "#................eeehhhhhhhhee.....#",
+    "#...................~~~~~~~~ee.....#",
+    "#...................~~~~~~~~ee.....#",
+    "#.~~~~~~~~~~~~~~~~~~~~~~~~~~ee.....#",
+    "#.~~~~~~~~~~~~~~~~~~~~~~~~~~ee.....#",
+    "#.~~~~~~~~~~~~~~~~~~~~~~~~~~ee.....#",
+    "#.~~~~~~~~~~~~~~~~~~~~~~~~~~ee.....#",
+    "#.~~~~~~~~~~~~~~~~~~~~~~~~~~ee.....#",
+    "#.~~~~~~~~~~~~~~~~~~~~~~~~~~ee.....#",
+    "#.~~~~~~~~~~~~~~~~~~~~~~~~~~ee.....#",
+    "#.~~~~~~~~~~~~~~~~~~~~~~~~~~ee.....#",
+    "#.~~~~~~~~.ppppppppppppppppppp.....#",
+    "#.~~~~~~~~.ppppppppppppppppppp.....#",
+    "#.~~~~~~~~.ppppppppppppppppppp.....#",
     "#.~~~~~~~~.......ee................#",
     "#.~~~~~~~~.......ee................#",
     "#.~~~~~~~~.......ee................#",
@@ -175,17 +175,17 @@
   ],
   "objekte": [
     {
-      "moebel": "wr8BrueckeEisen8",
+      "moebel": "wr9EisenbrueckeHoch",
       "feld": [
-        16,
-        53
+        18,
+        48
       ]
     },
     {
       "moebel": "ri8Finkenzeichen",
       "feld": [
-        16,
-        60
+        30,
+        54
       ],
       "vorn": true
     },
@@ -248,8 +248,8 @@
     {
       "moebel": "wr8GraffitiTurm",
       "feld": [
-        16,
-        61
+        27,
+        51
       ],
       "vorn": true
     },
@@ -2648,22 +2648,22 @@
     {
       "name": "fundNietenkopf",
       "feld": [
-        18,
-        56
+        22,
+        50
       ]
     },
     {
       "name": "zeitnotTrick",
       "feld": [
-        17,
-        58
+        24,
+        51
       ]
     },
     {
       "name": "aussichtTal",
       "feld": [
-        18,
-        60
+        26,
+        50
       ]
     },
     {
@@ -2723,12 +2723,12 @@
       "name": "brueckenwaerter",
       "typ": "statist",
       "feld": [
-        18,
-        53
+        21,
+        51
       ],
       "eigenschaften": {
-        "von": "18,53",
-        "bis": "18,53",
+        "von": "21,51",
+        "bis": "21,51",
         "tun": "prüft am Brückenkopf das frisch gestrichene Geländer",
         "wann": "tag",
         "sagt": "statist.wegRivertonIronwood.bruecke.brueckenwaerter"

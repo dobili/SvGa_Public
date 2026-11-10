@@ -359,6 +359,15 @@
       "zustand": "gebraucht",
       "stil": "laendlich"
     },
+    "wr9EisenbrueckeHoch": {
+      "quelle": "spiel/eigene/eisenbruecke_hoch.png",
+      "breite": 192,
+      "hoehe": 92,
+      "kollision": false,
+      "art": "bruecke",
+      "zustand": "alt",
+      "stil": "klassisch"
+    },
     "wr8BrueckeEisen8": {
       "quelle": "spiel/eigene/bruecke_eisen_laengs_8.png",
       "breite": 64,

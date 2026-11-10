@@ -70,29 +70,53 @@ Laufzeit: Haltestelle → Westrand etwa 150 Kacheln, 43 s. Ränder: Norden Schne
 Wall und der Leitplanke (Kraftfahrstraße), Osten Auffahrt mit Schild „Keine Fußgänger“, Süden und
 Westen die Bucht; nur der Pfad öffnet den Westrand.
 
-### 1.2 Glasbrücke (`wegIronwoodSilicon.glasbruecke`, 140 × 26)
+### 1.2 Glasbrücke (`wegIronwoodSilicon.glasbruecke`, 140 × 26), Runde 8 neu gebaut
 
-Von Ost nach West: Der Pfad kommt am **Ostrand** in den Reihen 18–19 an und steigt auf einer
-**Rampe** mit zwei Kehren (112–135 / 10–20) auf die Höhe der Brücke. Das **Brückendeck** aus Glas
-(vier Felder breit, Glasgeländer beidseitig) liegt in den Reihen 10–13 von Spalte 111 bis 30 und
-überspannt die **Autobahn**, die von Nord nach Süd unter der Brücke durchläuft (Spalten 48–92,
-sechs Fahrstreifen, bis Nord- und Südrand, Autos animiert, ohne Kollision für das Deck). In der Mitte
-springt nach Norden eine **Aussichtsplattform** vor (**Abzweig 3**, 66–74 / 5–9). Im Westen der
-**Brückenkopf** mit Aufzugsturm (24–29 / 6–12) und Treppe hinunter (22–29 / 13–20) auf den
-**Stadtrand-Platz** (0–21 / 14–25); der Weg verlässt den Westrand in den Reihen 18–19.
+**Neu gebaut nach der Revision des Autors (10.11.2026, „keine Variante passt“, mittel-1).** Die
+Brücke war über die Autobahn geklebt, ohne Rampen, Pfeiler und Schatten; die Autobahn war nach
+Autobreite etwa 18 Spuren breit und alle Autos fuhren in eine Richtung. Jetzt (Revision 2, Punkte
+20–24):
 
-| Abschnitt (Spalten)        | Thema                | Inhalt                                                                       | Zum Entdecken                                                           |
-| -------------------------- | -------------------- | ---------------------------------------------------------------------------- | ----------------------------------------------------------------------- |
-| B1 (120–139) Rampe         | Aufstieg             | Rampe mit Kehren, Grasböschung mit Strandhafer, letzte Möwe auf dem Geländer | Schild „Ab hier: Smart City – Bitte Sensoren nicht verdecken“ (Ansehen) |
-| B2 (100–119) Brückenanfang | Glas unter den Füßen | Deck beginnt, durch das Glas sieht man die Autobahn                          | Joggerin Skye beginnt ihre Runde                                        |
-| B3 (80–99) Autobahn Ost    | Verkehr              | Deck über den östlichen Fahrstreifen, Glasbank (84, 9) zum Deck              | **verlorener Ohrstöpsel** unter der Glasbank (`fundOhrstoepsel`)        |
-| B4 (60–79) Plattform       | Aussicht             | Aussichtsplattform mit Fernglas auf einer Säule (70, 6)                      | Blick auf das Autobahnkreuz und den Campus (`aussichtPlattform`)        |
-| B5 (40–59) Autobahn West   | Stellungsduell       | Deck über den westlichen Fahrstreifen; Joggerin wartet am Geländer           | Skye fordert zum Duell (Stellungsduell mit Uhr 3 + 2, Szene 52)         |
-| B6 (20–39) Brückenkopf     | Ankunft in der Stadt | Brückenkopf, Aufzugsturm (Kulisse, Tür „Außer Betrieb“), Treppe              | Lieferroboter rollt die Rampe neben der Treppe hinunter                 |
-| B7 (0–19) Stadtrand-Platz  | erster Platz         | Platz mit Glaslaternen, Kübel mit Gräsern, Werbetafel mit ZERO (10, 12)      | Werbetafel (Ansehen: „ZERO – Nie wieder Fehler.“)                       |
+- **Autobahn** von Nord nach Süd in den Spalten 54–81, bis an Nord- und Südrand: Seitenstreifen
+  54 und 81 mit Leitplanke, vier Spuren nach Süden (55–66, je drei Kacheln, Autos von vorn), ein
+  Mittelstreifen aus Beton mit Leitplanke (67–68), vier Spuren nach Norden (69–80, Autos von
+  hinten). Rechtsverkehr: nach Süden fährt man im Bild links. Gestrichelte Linien zwischen den
+  Spuren, durchgezogene am Rand und am Mittelstreifen (eigene Bilder `fahrbahn_*`).
+- **Lärm- und Sichtschutz:** Grünstreifen 44–53 und 82–93 mit einer dichten Reihe Heckensäulen
+  direkt an der Fahrbahn (52 und 83), dahinter verschiedene Bäume und Kugelbüsche.
+- **Brücke** (eigene Bilder `glasbruecke.py`, Bildwunsch an den Haupt-Chat): Glasdeck vier Felder
+  breit in den Reihen 10–13 von Spalte 42 bis 93, halb durchsichtig, Mittelstreifen matt; darunter
+  ein Stahlträger und sieben Betonpfeiler (44, 51, 60, 67, 74, 84, 90); der Schatten liegt um
+  anderthalb Kacheln nach Süden versetzt auf Fahrbahn und Gras. Glasgeländer auf beiden Seiten
+  sperren (Südgeländer sperrt die Reihe 14 unter der Kante).
+- **Rampen:** Betonrampen mit Querrillen im Westen (30–41) und Osten (94–105), deren Stirnwand zur
+  Brücke hin von null auf die volle Höhe wächst; so sieht man, dass man hinauf- und hinuntergeht.
+  Der Aufzugsturm und die Treppe fallen weg (Regel 10.61: ohne Treppe kein Grund für einen Aufzug).
+- **Aussichtsplattform** (Abzweig 3) über dem Mittelstreifen, 63–71 / 5–9, Glas mit Geländer an
+  drei Seiten; darauf Kikis Streamtisch (64, 6) mit Laptop, Ringlicht (63, 5), Fernglas.
+  Daneben im östlichen Grünstreifen der Funkmast „Testfeld Signal“ (84, 1), der Kikis Stream stört
+  (Fund `spurPM2`).
+- **Plätze mit Einfassung:** Stadtrand-Platz 2–29 / 10–22 mit Bordstein rundum (eigene Bilder
+  `einfassung_*`), zwei Rastplätze mit Laterne, Bank und Mülleimer (12 und 21, Reihen 8–11),
+  vier Pflanzkästen am Südrand, zwei Kübel an der Rampe, Werbetafel von ZERO (3, 4) am Nordrand.
+  Im Osten Pflasterweg mit Bordstein vom Rampenfuß (106–109 / 10–13) nach Süden und in den
+  Reihen 18–19 zum Ostrand, ein Rastplatz mit Blick auf die Brücke (Laterne 113, Bank 114/16).
+- Die Flächen unter und neben der Brücke (30–105 außer Deck und Rampen) erreicht man nicht: Das
+  Geländer sperrt, der Boden dort ist Kulisse.
 
-Laufzeit: etwa 155 Kacheln mit den Kehren, 44 s. Ränder: Autobahn nach Nord und Süd unter der Brücke
-(kein Weg hinunter), Böschung und Lärmschutzwand an den Rändern, nur Ost- und Westende offen.
+| Auslöser / Figur     | Feld                 | Hinweis                                     |
+| -------------------- | -------------------- | ------------------------------------------- |
+| `start`              | (138, 18)            | Blick nach Westen                           |
+| `zurueckRaststaette` | (139, 18), (139, 19) | Ostrand                                     |
+| `weiterSilicon`      | (0, 18), (0, 19)     | Westrand, Ankunftsdialog                    |
+| `fundOhrstoepsel`    | (84, 10)             | auf der Bank am Nordgeländer des Decks      |
+| `ereignisStream`     | (68, 8)              | auf der Plattform, Kiki (66, 8)             |
+| `werbetafelZero`     | (5, 10)              | vor der Werbetafel am Platz                 |
+| `schildSmartCity`    | (135, 17)            | vor dem Schild am Ostweg (Schild (135, 15)) |
+| Joggerin Skye        | (50, 11)             | auf dem Deck über dem westlichen Grün       |
+
+Laufzeit: Ostrand → Westrand etwa 150 Kacheln, gut 40 s. Die Varianten B und C unter
+`szenen/varianten/` sind der alte Stand; sie gelten nicht mehr, Wahl ist dieser Neubau.
 
 ### 1.3 Silicon Bay, Campus (`siliconBay.aussen`, 72 × 60 seit Runde 7)
 
@@ -392,8 +416,8 @@ Blumenkübel nahe der Tür mit Finkenzeichen (`sb8Finkenzeichen`, Finch-Bauer B)
 
 | Auslöser         | A         | B         | C         | Ort                                              |
 | ---------------- | --------- | --------- | --------- | ------------------------------------------------ |
-| `ereignisStream` | (71, 8)   | (70, 8)   | (66, 7)   | glasbruecke, vor dem Klapptisch                  |
-| `spurPM2`        | (86, 10)  | (82, 10)  | (86, 10)  | glasbruecke, gleiches Feld wie `fundOhrstoepsel` |
+| `ereignisStream` | (68, 8)   | (68, 8)   | (68, 8)   | glasbruecke, vor dem Klapptisch                  |
+| `spurPM2`        | (84, 10)  | (84, 10)  | (84, 10)  | glasbruecke, gleiches Feld wie `fundOhrstoepsel` |
 | `kreide2`        | (127, 11) | (124, 11) | (129, 11) | raststaette, vor dem Container                   |
 | `finchBauerB`    | (140, 16) | (122, 16) | (142, 17) | raststaette, am Blumenkübel                      |
 | `seite04`        | (128, 14) | (110, 14) | (130, 14) | raststaette, neben der Rätseltafel               |
@@ -406,7 +430,7 @@ Hund.
 
 ### 3.4 Runde 6: Weg 4 und Silicon Bay spielbar (mittel-3)
 
-Ereignis `ereignisStream` (Kiki Blitz, als Figur `wegIronwoodSilicon.kiki` am Stream-Tisch: A (70, 7), B (73, 11), C (65, 6)) mit Aufgabenrunde `wegIronwoodSilicon.stream` (Fallen,
+Ereignis `ereignisStream` (Kiki Blitz, als Figur `wegIronwoodSilicon.kiki` am Stream-Tisch: seit Runde 8 (66, 8)) mit Aufgabenrunde `wegIronwoodSilicon.stream` (Fallen,
 Kapitel 4) als Aufwärmen und danach der Begegnung `wegIronwoodSilicon.stream` gegen Kiki (Gegner
 `wegIronwoodSilicon.kiki`): Partie 3 + 2 ab 1.e4 e5 2.Lc4 Sc6 3.Dh5, der Chat wählt Kikis Zug aus g6,
 De7 und Sf6 (`kandidaten`); Sf6 ist der Fehler, Dxf7 matt und Quest gleichen Namens, Lohn Fund
@@ -421,7 +445,7 @@ Fundknoten zählen die Sammelstränge mit (`finchFiguren`, `buchseiten`, `spuren
 
 | Auslöser         | A       | B       | C       |
 | ---------------- | ------- | ------- | ------- |
-| `ereignisStream` | (71, 8) | (71, 8) | (66, 7) |
+| `ereignisStream` | (68, 8) | (68, 8) | (68, 8) |
 
 | Auslöser      | A         | B         | C         |
 | ------------- | --------- | --------- | --------- |

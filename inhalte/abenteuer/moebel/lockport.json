@@ -354,6 +354,15 @@
       "art": "brunnen",
       "zustand": "gebraucht",
       "stil": "laendlich"
+    },
+    "lp6Glocke": {
+      "quelle": "spiel/eigene/glocke_pfosten.png",
+      "breite": 16,
+      "hoehe": 32,
+      "kollision": true,
+      "art": "deko",
+      "zustand": "gebraucht",
+      "stil": "rustikal"
     }
   }
 }

@@ -374,10 +374,6 @@
       "feld": [24, 25]
     },
     {
-      "moebel": "wg4Stein",
-      "feld": [37, 9]
-    },
-    {
       "moebel": "wg4Gras",
       "feld": [24, 12]
     },
@@ -496,6 +492,10 @@
     {
       "moebel": "lp6Brunnen",
       "feld": [30, 36]
+    },
+    {
+      "moebel": "lp6Glocke",
+      "feld": [37, 8]
     }
   ],
   "ausloeser": [
@@ -555,6 +555,10 @@
     {
       "name": "pumpe",
       "feld": [31, 36]
+    },
+    {
+      "name": "glocke",
+      "feld": [37, 10]
     }
   ],
   "figuren": [],

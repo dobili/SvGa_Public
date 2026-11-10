@@ -1345,6 +1345,12 @@
           "karte": "lockport.aussen",
           "art": "dialog",
           "dialog": "lockport-aussen.pumpe"
+        },
+        {
+          "name": "glocke",
+          "karte": "lockport.aussen",
+          "art": "dialog",
+          "dialog": "lockport-aussen.glocke"
         }
       ]
     },

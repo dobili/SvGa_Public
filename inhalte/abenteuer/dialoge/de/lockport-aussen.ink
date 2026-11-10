@@ -154,3 +154,7 @@ Henriks Boot liegt kieloben auf dem Kai, bereit für den Winter. #sprecher:erzae
 === pumpe ===
 Der alte Dorfbrunnen mit Kurbel. Wer dreht, bekommt kaltes Wasser und quietschende Ohren. #sprecher:erzaehler
 -> END
+
+=== glocke ===
+An einem Pfosten am Ufer hängt eine Messingglocke. Imogen läutet sie für jeden Kahn, der kommt. #sprecher:erzaehler
+-> END

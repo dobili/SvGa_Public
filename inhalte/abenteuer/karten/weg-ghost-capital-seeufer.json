@@ -13731,7 +13731,7 @@
       {
        "name": "von",
        "type": "string",
-       "value": "16,10"
+       "value": "17,9"
       },
       {
        "name": "bis",
@@ -13906,7 +13906,7 @@
       {
        "name": "bis",
        "type": "string",
-       "value": "48,5"
+       "value": "46,3"
       },
       {
        "name": "verhalten",
@@ -13929,7 +13929,7 @@
       {
        "name": "von",
        "type": "string",
-       "value": "96,5"
+       "value": "97,4"
       },
       {
        "name": "bis",
@@ -13957,7 +13957,7 @@
       {
        "name": "von",
        "type": "string",
-       "value": "30,20"
+       "value": "29,19"
       },
       {
        "name": "bis",

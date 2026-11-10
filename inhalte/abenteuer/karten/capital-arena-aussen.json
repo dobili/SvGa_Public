@@ -14605,8 +14605,8 @@
      "id": 11,
      "name": "reporterin",
      "type": "statist",
-     "x": 736,
-     "y": 592,
+     "x": 704,
+     "y": 560,
      "width": 16,
      "height": 16,
      "rotation": 0,
@@ -15178,7 +15178,7 @@
       {
        "name": "von",
        "type": "string",
-       "value": "56,43"
+       "value": "55,44"
       },
       {
        "name": "bis",

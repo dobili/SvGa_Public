@@ -402,10 +402,10 @@
     {
       "name": "lieferfahrer",
       "typ": "statist",
-      "feld": [55, 40],
+      "feld": [53, 38],
       "eigenschaften": {
         "von": "55,38",
-        "bis": "55,52",
+        "bis": "53,50",
         "tun": "schiebt eine Sackkarre mit Kisten",
         "wann": "tag"
       }

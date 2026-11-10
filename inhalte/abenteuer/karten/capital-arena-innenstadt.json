@@ -14931,8 +14931,8 @@
      "id": 17,
      "name": "lieferfahrer",
      "type": "statist",
-     "x": 880,
-     "y": 640,
+     "x": 848,
+     "y": 608,
      "width": 16,
      "height": 16,
      "rotation": 0,
@@ -14946,7 +14946,7 @@
       {
        "name": "bis",
        "type": "string",
-       "value": "55,52"
+       "value": "53,50"
       },
       {
        "name": "tun",

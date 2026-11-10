@@ -673,3 +673,10 @@ Kappe, `bildwuensche/grubenholz.py`) stehen im Gang, die Stämme in den Wänden 
 
 **Allgemeine Punkte an Ironwood außen:** Kein Hausbild mehr als zweimal (die Kneipe ist jetzt grau),
 keine Heckenstücke am Markt (die Bäume am Rand fassen den Platz ein).
+
+**Abgleich mit den LimeZu-Vorbildern (Modern Exteriors 048, 050, 015):** Das Wasserloch der Grube hat
+jetzt wie im Vorbild 048 Schilf am Rand und Seerosen. Die Felskanten zeichnet der Kartenbauer mit dem
+Material `fels` als gerade Bänder; LimeZu zeigt Kanten mit gewellter Oberkante, Leitern und Stufen im
+Fels. Das braucht ein Kantenmaterial im Kartenbild (Haupt-Chat oder mittel-2); vorgeschlagen in der
+Meldung an den Haupt-Chat. Friedhof (050) und Werkhof (015) passen in Aufbau (Zaun ringsum, Wege, Kapelle
+am Rand; Container, Fässer, Wellblech) zu den Vorbildern.

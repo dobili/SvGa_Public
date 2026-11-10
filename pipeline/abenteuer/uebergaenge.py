@@ -23,11 +23,14 @@ GEGENUEBER = {"west": "ost", "ost": "west", "nord": "sued", "sued": "nord"}
 
 
 def szenen() -> dict[str, dict]:
-    """Kennung der Karte → Szene."""
+    """Kennung der Karte → Szene der Grundkarte (Zustände wie „-neu“ zählen nicht, Runde 8)."""
+    orte = json.loads((INHALTE / "orte.json").read_text(encoding="utf-8"))["orte"]
+    zustandsdateien = {d for o in orte for k in o["karten"] for d in k.get("zustaende", {}).values()}
     ergebnis = {}
     for pfad in sorted((INHALTE / "szenen").glob("*.json")):
         szene = json.loads(pfad.read_text(encoding="utf-8"))
-        ergebnis[szene["karte"]] = szene
+        if szene.get("datei") not in zustandsdateien:
+            ergebnis[szene["karte"]] = szene
     return ergebnis
 
 

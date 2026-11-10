@@ -1,7 +1,7 @@
 {
   "karte": "wegRivertonIronwood.kanalweg",
   "art": "aussen",
-  "beschreibung": "Kanalweg (Runde 8 nach den Notizen des Autors): Treidelpfad am Westufer eines geraden Kanals mit Steinufer, acht Felder breit für Frachtkähne nach Lockport; derselbe Kanal läuft auf der Karte Eisenbrücke weiter. Im Norden die freie Wand an der alten Fabrikmauer (die Stadt hat sie für Graffiti freigegeben, eine Sprayerin malt Schachfiguren), die Fabrikhalle mit Hof und Tor zum Pfad, die Werkstraße mit der Haltestelle ohne Bus und der Rätseltafel, dann Kleingärten mit Gartenhäuschen. An der Kreuzung führt die Treidelbrücke über den Seitenarm nach Lockport. Im Süden der Hof von Mr. Dale: Hühnerhof, Farmhaus und Scheune am Hofplatz, das Silo für das Korn, vier Äcker mit Kohl, Mais, Kürbis und Karotten. Rastanleger mit Steg und Bank, Pappelallee, kleine Boote liegen längs am Ufer.",
+  "beschreibung": "Kanalweg (Runde 8 nach den Notizen des Autors): Treidelpfad am Westufer eines geraden Kanals mit Steinufer, acht Felder breit für Frachtkähne nach Lockport; derselbe Kanal läuft auf der Karte Eisenbrücke weiter. Im Norden die freie Wand an der alten Fabrikmauer (die Stadt hat sie für Graffiti freigegeben, eine Sprayerin malt Schachfiguren), die Fabrikhalle mit Hof und Tor zum Pfad, die Werkstraße mit der Haltestelle ohne Bus und der Rätseltafel, dann Kleingärten mit Gartenhäuschen. An der Kreuzung führt die Treidelbrücke über den Seitenarm nach Lockport (sieben Reihen Wasser für Frachtkähne, Regel 10.64). Im Süden der Hof von Mr. Dale: Hühnerhof, Farmhaus und Scheune am Hofplatz, das Silo für das Korn, vier Äcker mit Kohl, Mais, Kürbis und Karotten. Rastanleger mit Steg und Bank, Pappelallee, kleine Boote liegen längs am Ufer.",
   "boden": "gras",
   "wandart": "gras",
   "boeden": {
@@ -113,7 +113,7 @@
     "#................ee.~~~~~~~~.......#",
     "eeeeeeeeeeeeeeeeeee.~~~~~~~~.......#",
     "eeeeeeeeeeeeeeeeeee.~~~~~~~~.......#",
-    "#................ee.~~~~~~~~.......#",
+    "~~~~~~~~~~~~~~~~~hh~~~~~~~~~.......#",
     "~~~~~~~~~~~~~~~~~hh~~~~~~~~~.......#",
     "~~~~~~~~~~~~~~~~~hh~~~~~~~~~.......#",
     "~~~~~~~~~~~~~~~~~hh~~~~~~~~~.......#",
@@ -663,10 +663,10 @@
       ]
     },
     {
-      "moebel": "by6StegLaengs8",
+      "moebel": "by6StegLaengs9",
       "feld": [
         17,
-        99
+        98
       ]
     },
     {

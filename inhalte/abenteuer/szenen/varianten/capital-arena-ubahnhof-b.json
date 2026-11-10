@@ -1,0 +1,380 @@
+{
+  "karte": "capitalArena.ubahnhof",
+  "datei": "karten/varianten/capital-arena-ubahnhof-b.json",
+  "art": "innen",
+  "beschreibung": "Variante B: der stillgelegte U-Bahnhof mit dem Graffitizug weiter rechts, die drei Turniertische in einer Reihe links der Mitte, Pfeiler näher zur Mitte, Bänke an den Seitenwänden, Frosch-Graffiti und alte Plakate an der Wand, der Kreidespringer rechts auf den Fliesen, Drehkreuze vor der Treppe. Graue Fliesen, Backsteinwand.",
+  "wand": "backstein",
+  "boden": "fliesenGrau",
+  "boeden": {
+    "g": "schotter"
+  },
+  "raster": [
+    "####################################",
+    "####################################",
+    "####################################",
+    "##ggggggggggggggggggggggggggggggggg#",
+    "##ggggggggggggggggggggggggggggggggg#",
+    "##ggggggggggggggggggggggggggggggggg#",
+    "##ggggggggggggggggggggggggggggggggg#",
+    "##.................................#",
+    "#..................................#",
+    "#..................................#",
+    "#..................................#",
+    "#..................................#",
+    "#..................................#",
+    "#..................................#",
+    "#..................................#",
+    "#..................................#",
+    "#..................................#",
+    "#..................................#",
+    "#..................................#",
+    "##################.#################"
+  ],
+  "objekte": [
+    {
+      "moebel": "ci8Schiene",
+      "feld": [2, 5],
+      "bauteil_ok": true
+    },
+    {
+      "moebel": "ci8Schiene",
+      "feld": [3, 5],
+      "bauteil_ok": true
+    },
+    {
+      "moebel": "ci8Schiene",
+      "feld": [4, 5],
+      "bauteil_ok": true
+    },
+    {
+      "moebel": "ci8Schiene",
+      "feld": [5, 5],
+      "bauteil_ok": true
+    },
+    {
+      "moebel": "ci8Schiene",
+      "feld": [6, 5],
+      "bauteil_ok": true
+    },
+    {
+      "moebel": "ci8Schiene",
+      "feld": [7, 5],
+      "bauteil_ok": true
+    },
+    {
+      "moebel": "ci8Schiene",
+      "feld": [8, 5],
+      "bauteil_ok": true
+    },
+    {
+      "moebel": "ci8Schiene",
+      "feld": [9, 5],
+      "bauteil_ok": true
+    },
+    {
+      "moebel": "ci8Schiene",
+      "feld": [10, 5],
+      "bauteil_ok": true
+    },
+    {
+      "moebel": "ci8Schiene",
+      "feld": [11, 5],
+      "bauteil_ok": true
+    },
+    {
+      "moebel": "ci8Schiene",
+      "feld": [12, 5],
+      "bauteil_ok": true
+    },
+    {
+      "moebel": "ci8Schiene",
+      "feld": [13, 5],
+      "bauteil_ok": true
+    },
+    {
+      "moebel": "ci8Schiene",
+      "feld": [14, 5],
+      "bauteil_ok": true
+    },
+    {
+      "moebel": "ci8Schiene",
+      "feld": [15, 5],
+      "bauteil_ok": true
+    },
+    {
+      "moebel": "ci8Schiene",
+      "feld": [16, 5],
+      "bauteil_ok": true
+    },
+    {
+      "moebel": "ci8Schiene",
+      "feld": [17, 5],
+      "bauteil_ok": true
+    },
+    {
+      "moebel": "ci8Schiene",
+      "feld": [18, 5],
+      "bauteil_ok": true
+    },
+    {
+      "moebel": "ci8Schiene",
+      "feld": [19, 5],
+      "bauteil_ok": true
+    },
+    {
+      "moebel": "ci8Schiene",
+      "feld": [20, 5],
+      "bauteil_ok": true
+    },
+    {
+      "moebel": "ci8Schiene",
+      "feld": [21, 5],
+      "bauteil_ok": true
+    },
+    {
+      "moebel": "ci8Schiene",
+      "feld": [22, 5],
+      "bauteil_ok": true
+    },
+    {
+      "moebel": "ci8Schiene",
+      "feld": [23, 5],
+      "bauteil_ok": true
+    },
+    {
+      "moebel": "ci8Schiene",
+      "feld": [24, 5],
+      "bauteil_ok": true
+    },
+    {
+      "moebel": "ci8Schiene",
+      "feld": [25, 5],
+      "bauteil_ok": true
+    },
+    {
+      "moebel": "ci8Schiene",
+      "feld": [26, 5],
+      "bauteil_ok": true
+    },
+    {
+      "moebel": "ci8Schiene",
+      "feld": [27, 5],
+      "bauteil_ok": true
+    },
+    {
+      "moebel": "ci8Schiene",
+      "feld": [28, 5],
+      "bauteil_ok": true
+    },
+    {
+      "moebel": "ci8Schiene",
+      "feld": [29, 5],
+      "bauteil_ok": true
+    },
+    {
+      "moebel": "ci8Schiene",
+      "feld": [30, 5],
+      "bauteil_ok": true
+    },
+    {
+      "moebel": "ci8Schiene",
+      "feld": [31, 5],
+      "bauteil_ok": true
+    },
+    {
+      "moebel": "ci8Schiene",
+      "feld": [32, 5],
+      "bauteil_ok": true
+    },
+    {
+      "moebel": "ci8Schiene",
+      "feld": [33, 5],
+      "bauteil_ok": true
+    },
+    {
+      "moebel": "ci8Schiene",
+      "feld": [34, 5],
+      "bauteil_ok": true
+    },
+    {
+      "moebel": "ci8ZugGraffiti",
+      "feld": [16, 3]
+    },
+    {
+      "moebel": "ci8Gelaender",
+      "feld": [2, 7]
+    },
+    {
+      "moebel": "ci8Gelaender",
+      "feld": [5, 7]
+    },
+    {
+      "moebel": "ci8Gelaender",
+      "feld": [8, 7]
+    },
+    {
+      "moebel": "ci8Gelaender",
+      "feld": [11, 7]
+    },
+    {
+      "moebel": "ci8Gelaender",
+      "feld": [14, 7]
+    },
+    {
+      "moebel": "ci8Gelaender",
+      "feld": [17, 7]
+    },
+    {
+      "moebel": "ci8Gelaender",
+      "feld": [20, 7]
+    },
+    {
+      "moebel": "ci8Gelaender",
+      "feld": [23, 7]
+    },
+    {
+      "moebel": "ci8Gelaender",
+      "feld": [26, 7]
+    },
+    {
+      "moebel": "ci8Gelaender",
+      "feld": [29, 7]
+    },
+    {
+      "moebel": "ci8Gelaender",
+      "feld": [32, 7]
+    },
+    {
+      "moebel": "ca7Fussmatte",
+      "feld": [18, 18],
+      "versatz": [0, 8]
+    },
+    {
+      "moebel": "ca7Tuer",
+      "feld": [18, 19],
+      "an_wand": true
+    },
+    {
+      "moebel": "ca8KlapptischBrett",
+      "feld": [6, 12]
+    },
+    {
+      "moebel": "ca8KlapptischBrett",
+      "feld": [14, 12]
+    },
+    {
+      "moebel": "ca8KlapptischBrett",
+      "feld": [22, 12]
+    },
+    {
+      "moebel": "ci8Pfeiler",
+      "feld": [11, 8]
+    },
+    {
+      "moebel": "ci8Pfeiler",
+      "feld": [24, 8]
+    },
+    {
+      "moebel": "ci8BankB",
+      "feld": [1, 12]
+    },
+    {
+      "moebel": "ci8Bank",
+      "feld": [31, 12]
+    },
+    {
+      "moebel": "ci8GraffitiFrosch",
+      "feld": [4, 0],
+      "an_wand": true
+    },
+    {
+      "moebel": "ci8Plakate3",
+      "feld": [13, 1],
+      "an_wand": true
+    },
+    {
+      "moebel": "ci8GraffitiSchriftB",
+      "feld": [20, 0],
+      "an_wand": true
+    },
+    {
+      "moebel": "ci8Leuchte",
+      "feld": [30, 1],
+      "an_wand": true
+    },
+    {
+      "moebel": "ci8Drehkreuz",
+      "feld": [15, 14]
+    },
+    {
+      "moebel": "ci8Drehkreuz",
+      "feld": [20, 14]
+    },
+    {
+      "moebel": "ci8Kreidespringer",
+      "feld": [28, 15]
+    }
+  ],
+  "ausloeser": [
+    {
+      "name": "start",
+      "feld": [18, 18],
+      "eigenschaften": {
+        "richtung": "oben"
+      }
+    },
+    {
+      "name": "ubahnAusgang",
+      "feld": [18, 19]
+    },
+    {
+      "name": "ereignisKreidenacht",
+      "feld": [18, 14]
+    }
+  ],
+  "figuren": [
+    {
+      "name": "mo",
+      "feld": [18, 10]
+    }
+  ],
+  "belebung": [
+    {
+      "name": "zuschauer",
+      "typ": "statist",
+      "feld": [12, 16],
+      "eigenschaften": {
+        "von": "10,16",
+        "bis": "26,16",
+        "tun": "stehen mit Kapuzen um die Tische",
+        "wann": "abend",
+        "sagt": "statist.capitalArena.ubahnhof.zuschauer"
+      }
+    },
+    {
+      "name": "uhrwart",
+      "typ": "statist",
+      "feld": [25, 14],
+      "eigenschaften": {
+        "von": "25,14",
+        "bis": "25,14",
+        "tun": "stellt die Schachuhren auf drei Minuten",
+        "wann": "abend",
+        "sagt": "statist.capitalArena.ubahnhof.uhrwart"
+      }
+    },
+    {
+      "name": "ratte",
+      "typ": "tier",
+      "feld": [3, 16],
+      "eigenschaften": {
+        "von": "2,16",
+        "bis": "6,17",
+        "verhalten": "flitzen"
+      }
+    }
+  ],
+  "zustand": ["alt", "kaputt", "gebraucht", "neu"],
+  "stil": ["industrie", "modern", "klassisch"],
+  "variante": "b"
+}

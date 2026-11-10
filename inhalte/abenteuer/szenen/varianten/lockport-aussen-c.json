@@ -234,10 +234,6 @@
       "feld": [10, 36]
     },
     {
-      "moebel": "mf4BaumRot",
-      "feld": [32, 36]
-    },
-    {
       "moebel": "mf4BaumGruen",
       "feld": [18, 36]
     },
@@ -324,10 +320,6 @@
     {
       "moebel": "wg4BlumeGelb",
       "feld": [17, 23]
-    },
-    {
-      "moebel": "wg4BuschKlein",
-      "feld": [31, 36]
     },
     {
       "moebel": "wg4BlumenWeiss",
@@ -500,6 +492,10 @@
     {
       "moebel": "ccZaun",
       "feld": [1, 13]
+    },
+    {
+      "moebel": "lp6Brunnen",
+      "feld": [30, 36]
     }
   ],
   "ausloeser": [
@@ -555,6 +551,10 @@
     {
       "name": "henriksBoot",
       "feld": [23, 20]
+    },
+    {
+      "name": "pumpe",
+      "feld": [31, 36]
     }
   ],
   "figuren": [],

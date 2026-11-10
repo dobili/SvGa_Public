@@ -270,3 +270,6 @@ Wasserturm (nachts), Eidechse und ein alter Hund, der {held} folgt (Dokument 16,
 
 Alle als `art: dialog` in `ghost-town-aussen.ink` und `ghost-town-saloon.ink`. `stollen` (S11) und die
 Alte Minenstraße bleiben bei mittel-4.
+
+Die Erinnerung `erinnerungSiedlung.huette` hat in allen drei Varianten die Tönung `sepia`; Ghost Town
+selbst bleibt farbig (Bibel 28, nur die Szene).

@@ -3154,6 +3154,179 @@
           ]
         }
       ]
+    },
+    {
+      "kennung": "capitalArena.kreidenacht",
+      "titel": "quest.kreidenacht.titel",
+      "typ": "hilfe",
+      "ort": "capitalArena",
+      "haupt": false,
+      "klein": true,
+      "start": {
+        "art": "dialog",
+        "knoten": "capital-arena-ubahnhof.mo_erstes"
+      },
+      "schritte": [
+        {
+          "text": "quest.kreidenacht.schritt1",
+          "ereignis": {
+            "art": "partie",
+            "begegnung": "capitalArena.kreidenacht1",
+            "ausgang": ["sieg", "remis", "niederlage"]
+          }
+        },
+        {
+          "text": "quest.kreidenacht.schritt2",
+          "ereignis": {
+            "art": "partie",
+            "begegnung": "capitalArena.kreidenacht2",
+            "ausgang": ["sieg", "remis", "niederlage"]
+          }
+        },
+        {
+          "text": "quest.kreidenacht.schritt3",
+          "ereignis": {
+            "art": "partie",
+            "begegnung": "capitalArena.kreidenacht3",
+            "ausgang": ["sieg", "remis", "niederlage"]
+          }
+        },
+        {
+          "text": "quest.kreidenacht.schritt4",
+          "ereignis": {
+            "art": "dialog",
+            "knoten": "capital-arena-ubahnhof.mo_victor"
+          },
+          "wirkungen": [
+            {
+              "art": "muenzen",
+              "anzahl": 30
+            }
+          ]
+        }
+      ]
+    },
+    {
+      "kennung": "wegGhostCapital.finchJagd",
+      "titel": "quest.finchJagd.titel",
+      "typ": "raetsel",
+      "ort": "wegGhostCapital",
+      "haupt": false,
+      "klein": true,
+      "start": {
+        "art": "ort",
+        "karte": "wegMapleCedar.landstrasse",
+        "ausloeser": "ereignisFlohmarkt"
+      },
+      "schritte": [
+        {
+          "text": "quest.finchJagd.schritt1",
+          "ereignis": {
+            "art": "dialog",
+            "knoten": "weg-ghost-capital.odette_koenig"
+          }
+        },
+        {
+          "text": "quest.finchJagd.schritt2",
+          "ereignis": {
+            "art": "aufgaben",
+            "runde": "wegGhostCapital.meisterproblem"
+          }
+        },
+        {
+          "text": "quest.finchJagd.schritt3",
+          "ereignis": {
+            "art": "dialog",
+            "knoten": "weg-ghost-capital.odette_geloest"
+          },
+          "wirkungen": [
+            {
+              "art": "muenzen",
+              "anzahl": 50
+            }
+          ]
+        }
+      ]
+    },
+    {
+      "kennung": "capitalArena.verloreneSeiten",
+      "titel": "quest.verloreneSeiten.titel",
+      "typ": "hilfe",
+      "ort": "capitalArena",
+      "haupt": false,
+      "klein": true,
+      "start": {
+        "art": "ort",
+        "karte": "wegMapleCedar.landstrasse",
+        "ausloeser": "seite00"
+      },
+      "schritte": [
+        {
+          "text": "quest.verloreneSeiten.schritt1",
+          "ereignis": {
+            "art": "dialog",
+            "knoten": "weg-ghost-capital.wanderer_seiten"
+          }
+        },
+        {
+          "text": "quest.verloreneSeiten.schritt2",
+          "ereignis": {
+            "art": "dialog",
+            "knoten": "capital-arena-aussen.wanderer_buch"
+          }
+        }
+      ]
+    },
+    {
+      "kennung": "capitalArena.spurenPerfectMove",
+      "titel": "quest.spurenPerfectMove.titel",
+      "typ": "hilfe",
+      "ort": "capitalArena",
+      "haupt": false,
+      "klein": true,
+      "start": {
+        "art": "ort",
+        "karte": "wegRivertonIronwood.bruecke",
+        "ausloeser": "spurPM1"
+      },
+      "schritte": [
+        {
+          "text": "quest.spurenPerfectMove.schritt1",
+          "ereignis": {
+            "art": "dialog",
+            "knoten": "capital-arena-halle.lin_mappe"
+          }
+        }
+      ]
+    },
+    {
+      "kennung": "capitalArena.kreidespringer",
+      "titel": "quest.kreidespringer.titel",
+      "typ": "hilfe",
+      "ort": "capitalArena",
+      "haupt": false,
+      "klein": true,
+      "start": {
+        "art": "ort",
+        "karte": "wegRivertonIronwood.bruecke",
+        "ausloeser": "kreide1"
+      },
+      "schritte": [
+        {
+          "text": "quest.kreidespringer.schritt1",
+          "ereignis": {
+            "art": "dialog",
+            "knoten": "capital-arena-innenstadt.kreide5"
+          }
+        },
+        {
+          "text": "quest.kreidespringer.schritt2",
+          "ereignis": {
+            "art": "dialog",
+            "knoten": "capital-arena-ubahnhof.mo_victor"
+          }
+        }
+      ]
     }
   ]
 }

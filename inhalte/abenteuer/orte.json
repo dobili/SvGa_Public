@@ -731,13 +731,13 @@
           "name": "seite00",
           "karte": "wegMapleCedar.landstrasse",
           "art": "gegenstand",
-          "dialog": "weg-maple-cedar.fund_seite00"
+          "dialog": "weg-maple-cedar.seite00"
         },
         {
           "name": "finchBauerA",
           "karte": "wegMapleCedar.flussweg",
           "art": "gegenstand",
-          "dialog": "weg-maple-cedar.fund_finch_bauer_a"
+          "dialog": "weg-maple-cedar.finch_bauer_a"
         }
       ]
     },
@@ -846,7 +846,7 @@
           "name": "seite01",
           "karte": "wegCedarRiverton.bahndamm",
           "art": "gegenstand",
-          "dialog": "weg-cedar-riverton.fund_seite01"
+          "dialog": "weg-cedar-riverton.seite01"
         },
         {
           "name": "durchlass",
@@ -1339,6 +1339,12 @@
           "karte": "lockport.gasthaus",
           "art": "dialog",
           "dialog": "lockport-gasthaus.kegelkoenig"
+        },
+        {
+          "name": "pumpe",
+          "karte": "lockport.aussen",
+          "art": "dialog",
+          "dialog": "lockport-aussen.pumpe"
         }
       ]
     },
@@ -1672,7 +1678,7 @@
           "name": "finchBauerF",
           "karte": "steinbruch.grube",
           "art": "gegenstand",
-          "dialog": "steinbruch.fund_finch_bauer_f"
+          "dialog": "steinbruch.finch_bauer_f"
         },
         {
           "name": "graffiti",
@@ -1770,7 +1776,7 @@
           "name": "finchBauerG",
           "karte": "sternwarte.kuppel",
           "art": "gegenstand",
-          "dialog": "sternwarte.fund_finch_bauer_g"
+          "dialog": "sternwarte.finch_bauer_g"
         },
         {
           "name": "bank",
@@ -2405,7 +2411,7 @@
           "name": "finchBauerH",
           "karte": "pelikaninsel.dorf",
           "art": "gegenstand",
-          "dialog": "pelikaninsel.fund_finch_bauer_h"
+          "dialog": "pelikaninsel.finch_bauer_h"
         }
       ]
     },
@@ -2945,13 +2951,13 @@
           "name": "seite06",
           "karte": "wegDelacroixDesert.felsbogen",
           "art": "gegenstand",
-          "dialog": "weg-delacroix-desert.fund_seite06"
+          "dialog": "weg-delacroix-desert.seite06"
         },
         {
           "name": "finchLaeuferB",
           "karte": "wegDelacroixDesert.felsbogen",
           "art": "gegenstand",
-          "dialog": "weg-delacroix-desert.fund_finch_laeufer_b"
+          "dialog": "weg-delacroix-desert.finch_laeufer_b"
         },
         {
           "name": "sternwarte",
@@ -3127,7 +3133,10 @@
           "kennung": "wegDesertSummit.diner",
           "datei": "karten/weg-desert-summit-diner.json",
           "name": "ort.wegDesertSummit.diner",
-          "innen": false
+          "innen": false,
+          "zustaende": {
+            "neonRepariert": "karten/weg-desert-summit-diner-neon.json"
+          }
         },
         {
           "kennung": "wegDesertSummit.bergstrasse",
@@ -3238,19 +3247,19 @@
           "name": "kreide3",
           "karte": "wegDesertSummit.diner",
           "art": "gegenstand",
-          "dialog": "weg-desert-summit.fund_kreide3"
+          "dialog": "weg-desert-summit.kreide3"
         },
         {
           "name": "finchSpringerB",
           "karte": "wegDesertSummit.diner",
           "art": "gegenstand",
-          "dialog": "weg-desert-summit.fund_finch_springer_b"
+          "dialog": "weg-desert-summit.finch_springer_b"
         },
         {
           "name": "seite08",
           "karte": "wegDesertSummit.diner",
           "art": "gegenstand",
-          "dialog": "weg-desert-summit.fund_seite08"
+          "dialog": "weg-desert-summit.seite08"
         },
         {
           "name": "reklame",
@@ -3294,7 +3303,7 @@
           "name": "spurPM4",
           "karte": "wegDesertSummit.bergstrasse",
           "art": "gegenstand",
-          "dialog": "weg-desert-summit.fund_spur_pm4"
+          "dialog": "weg-desert-summit.spur_pm4"
         },
         {
           "name": "aussichtBerg",
@@ -3435,13 +3444,13 @@
           "name": "seite03",
           "karte": "hochebene.schule",
           "art": "gegenstand",
-          "dialog": "hochebene.fund_seite03"
+          "dialog": "hochebene.seite03"
         },
         {
           "name": "finchTurmB",
           "karte": "hochebene.schule",
           "art": "gegenstand",
-          "dialog": "hochebene.fund_finch_turm_b"
+          "dialog": "hochebene.finch_turm_b"
         }
       ]
     },
@@ -4306,13 +4315,13 @@
           "name": "spurPM6",
           "karte": "wegPinewoodGhost.staubstrasse",
           "art": "gegenstand",
-          "dialog": "weg-pinewood-ghost.fund_spur_pm6"
+          "dialog": "weg-pinewood-ghost.spur_pm6"
         },
         {
           "name": "seite11",
           "karte": "wegPinewoodGhost.staubstrasse",
           "art": "gegenstand",
-          "dialog": "weg-pinewood-ghost.fund_seite11"
+          "dialog": "weg-pinewood-ghost.seite11"
         },
         {
           "name": "wagen",
@@ -4348,7 +4357,7 @@
           "name": "finchBauerE",
           "karte": "wegPinewoodGhost.canyonrand",
           "art": "gegenstand",
-          "dialog": "weg-pinewood-ghost.fund_finch_bauer_e"
+          "dialog": "weg-pinewood-ghost.finch_bauer_e"
         },
         {
           "name": "kletterwand",
@@ -4658,6 +4667,12 @@
           "karte": "wegGhostCapital.leuchtturm",
           "art": "dialog",
           "dialog": "weg-ghost-capital.plakat_weltschachtag"
+        },
+        {
+          "name": "faehrterminal",
+          "karte": "wegGhostCapital.seeufer",
+          "art": "dialog",
+          "dialog": "weg-ghost-capital.faehrterminal"
         }
       ]
     },
@@ -4679,6 +4694,12 @@
           "datei": "karten/capital-arena-innenstadt.json",
           "name": "ort.capitalArena.innenstadt",
           "innen": false
+        },
+        {
+          "kennung": "capitalArena.ubahnhof",
+          "datei": "karten/capital-arena-ubahnhof.json",
+          "name": "ort.capitalArena.ubahnhof",
+          "innen": true
         },
         {
           "kennung": "capitalArena.halle",
@@ -4759,6 +4780,18 @@
           "sprite": "figuren/victor.png",
           "dialog": "capital-arena-halle.victor",
           "gegner": "capitalArena.victor"
+        },
+        {
+          "kennung": "capitalArena.mo",
+          "name": "figur.mo.name",
+          "sprite": "figuren/mo.png",
+          "dialog": "capital-arena-ubahnhof.mo"
+        },
+        {
+          "kennung": "capitalArena.wanderer",
+          "name": "figur.wanderer.name",
+          "sprite": "figuren/wanderer.png",
+          "dialog": "capital-arena-aussen.wanderer"
         }
       ],
       "ausloeser": [
@@ -4832,6 +4865,51 @@
           "karte": "capitalArena.aussen",
           "art": "gegenstand",
           "dialog": "capital-arena-aussen.treppe"
+        },
+        {
+          "name": "ubahn",
+          "karte": "capitalArena.innenstadt",
+          "art": "uebergang",
+          "dialog": "capital-arena-innenstadt.ubahn",
+          "wenn": "ubahnOffen",
+          "ziel": {
+            "karte": "capitalArena.ubahnhof",
+            "ausloeser": "ubahnAusgang"
+          }
+        },
+        {
+          "name": "ubahnAusgang",
+          "karte": "capitalArena.ubahnhof",
+          "art": "uebergang",
+          "dialog": "capital-arena-ubahnhof.ausgang",
+          "ziel": {
+            "karte": "capitalArena.innenstadt",
+            "ausloeser": "ubahn"
+          }
+        },
+        {
+          "name": "kreide5",
+          "karte": "capitalArena.innenstadt",
+          "art": "gegenstand",
+          "dialog": "capital-arena-innenstadt.kreide5"
+        },
+        {
+          "name": "ereignisKreidenacht",
+          "karte": "capitalArena.ubahnhof",
+          "art": "dialog",
+          "dialog": "capital-arena-ubahnhof.ereignis_kreidenacht"
+        },
+        {
+          "name": "fahnen",
+          "karte": "capitalArena.aussen",
+          "art": "dialog",
+          "dialog": "capital-arena-aussen.fahnen"
+        },
+        {
+          "name": "banner",
+          "karte": "capitalArena.halle",
+          "art": "dialog",
+          "dialog": "capital-arena-halle.banner"
         }
       ]
     },

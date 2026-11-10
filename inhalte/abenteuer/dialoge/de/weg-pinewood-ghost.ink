@@ -46,6 +46,9 @@ Der Pfad führt zurück in den Wald, zum Pinewood Camp. #sprecher:erzaehler
 -> END
 
 // >>> Runde 6 (mittel-4)
+VAR spurenPM = 0
+VAR finchFiguren = 0
+VAR buchseiten = 0
 EXTERNAL beginnePartie(begegnung)
 EXTERNAL gibFund(kennung)
 VAR held = "Du"
@@ -60,7 +63,8 @@ VAR gefundenFinchBauerE = false
 
 // ---------------------------------------------------------------- Ereignis: Das Gespenst der Tankstelle (Dokument 15, 2.12)
 // Akt 4. Draußen die verlassene Tankstelle, drinnen der Greifarm Z-1 (Innenraum wegPinewoodGhost.tankstelle).
-// Gegner mit Buch und Bruch kommt von mittel-2; bis dahin spielt Z-1 fest Italienisch (Gegner wegPinewoodGhost.z1).
+// Buch und Bruch (begegnungen.json, wegPinewoodGhost.z1): Z-1 spielt die Hauptvariante des Italieners
+// (Giuoco Pianissimo, 20 Halbzüge) in voller Stärke; weicht {held} ab, zittert der Arm und spielt auf Stufe 2.
 
 === ereignis_tankstelle ===
 {tankstelleGesehen:
@@ -114,7 +118,7 @@ Der Arm zittert, als die Partie das Buch verlassen hat. Dann legt er einen Bauer
 
 // ---------------------------------------------------------------- Funde und Ansehen
 
-=== fund_spur_pm6 ===
+=== spur_pm6 ===
 {gefundenSpurPM6:
     An der Tür klebt noch der Rest eines Etiketts. #sprecher:erzaehler
     -> END
@@ -122,9 +126,10 @@ Der Arm zittert, als die Partie das Buch verlassen hat. Dann legt er einen Bauer
 ~ gefundenSpurPM6 = true
 An der Tür klebt ein Typenschild: „Prototyp Z-1, Testlabor Perfect Move. Nicht entfernen.“ Es ist schon halb abgelöst. #sprecher:erzaehler
 ~ gibFund("spurPM6")
+~ spurenPM = spurenPM + 1
 -> END
 
-=== fund_seite11 ===
+=== seite11 ===
 {gefundenSeite11:
     Im Ölwechsel-Graben liegt nur noch Staub. #sprecher:erzaehler
     -> END
@@ -132,9 +137,10 @@ An der Tür klebt ein Typenschild: „Prototyp Z-1, Testlabor Perfect Move. Nich
 ~ gefundenSeite11 = true
 Im alten Ölwechsel-Graben liegt eine Buchseite, kaum ölig. Oben steht: Kapitel 11, Beispielpartien. #sprecher:erzaehler
 ~ gibFund("seite11")
+~ buchseiten = buchseiten + 1
 -> END
 
-=== fund_finch_bauer_e ===
+=== finch_bauer_e ===
 {gefundenFinchBauerE:
     An der Aussicht ist nur noch das Finkenzeichen aus Blech. #sprecher:erzaehler
     -> END
@@ -142,6 +148,7 @@ Im alten Ölwechsel-Graben liegt eine Buchseite, kaum ölig. Oben steht: Kapitel
 ~ gefundenFinchBauerE = true
 Neben der Bank an der Aussicht hängt ein kleiner Fink aus Blech. Darunter, zwischen zwei Steinen, liegt ein weißer Bauer aus Buchsbaum. #sprecher:erzaehler
 ~ gibFund("finchBauerE")
+~ finchFiguren = finchFiguren + 1
 -> END
 
 === kletterwand ===

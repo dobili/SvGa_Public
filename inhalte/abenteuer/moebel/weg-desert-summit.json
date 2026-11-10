@@ -549,6 +549,16 @@
       "art": "deko",
       "zustand": "gebraucht",
       "stil": "natur"
+    },
+    "wds6SchildDinerHell": {
+      "quelle": "spiel/eigene/schild_kings_diner_hell.png",
+      "breite": 96,
+      "hoehe": 32,
+      "kollision": false,
+      "art": "schild",
+      "blick": "unten",
+      "zustand": "gebraucht",
+      "stil": "modern"
     }
   }
 }

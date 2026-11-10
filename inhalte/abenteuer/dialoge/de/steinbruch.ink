@@ -3,10 +3,11 @@
 VAR held = "Du"
 
 // >>> Runde 6 (mittel-4)
+VAR finchFiguren = 0
 EXTERNAL gibFund(kennung)
 VAR gefundenFinchBauerF = false
 
-=== fund_finch_bauer_f ===
+=== finch_bauer_f ===
 {gefundenFinchBauerF:
     Am Fels ist nur noch der Fink aus Kreide. #sprecher:erzaehler
     -> END
@@ -14,6 +15,7 @@ VAR gefundenFinchBauerF = false
 ~ gefundenFinchBauerF = true
 Am Fuß der Felswand ist ein Fink aus Kreide gemalt. In einer Ritze darunter steckt ein weißer Bauer aus Buchsbaum. #sprecher:erzaehler
 ~ gibFund("finchBauerF")
+~ finchFiguren = finchFiguren + 1
 -> END
 
 === graffiti ===

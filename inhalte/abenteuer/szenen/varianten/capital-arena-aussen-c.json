@@ -241,9 +241,18 @@
     {
       "name": "innenstadt",
       "feld": [79, 58]
+    },
+    {
+      "name": "fahnen",
+      "feld": [5, 44]
     }
   ],
-  "figuren": [],
+  "figuren": [
+    {
+      "name": "wanderer",
+      "feld": [16, 43]
+    }
+  ],
   "belebung": [
     {
       "name": "fans",

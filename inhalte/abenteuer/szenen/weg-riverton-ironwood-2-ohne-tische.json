@@ -1,8 +1,7 @@
 {
   "karte": "wegRivertonIronwood.bruecke",
   "art": "aussen",
-  "zustand_der_karte": "nadelIronwood >= 1",
-  "beschreibung": "Zustand: nach dem Clubkampf in Ironwood (nadelIronwood ≥ 1, Ende Akt 2): Die Brückenbauern haben ihre Klapptische für den Winter weggeräumt, Corwin ist mit dem Streichen fertig und prüft nur noch das Geländer, Farbeimer und Leiter sind weg. Eisenbrücke und Abhang (Runde 8 nach den Notizen des Autors): Der Kanal von Riverton (derselbe wie am Kanalweg, acht Felder breit für Frachtkähne, Steinufer) läuft gerade nach Süden, westlich davon der Treidelpfad mit Laternen in gleichem Abstand und das Wärterhäuschen mit eigenem Weg. In Reihe 54–61 biegt der Kanal nach Westen; der Pfad quert ihn auf der eisernen Fachwerkbrücke (Brückenköpfe aus Stein, Bohlen, genietete Träger). Unter der Brücke am Südufer liegt der Kai mit den drei Klapptischen der Brückenbauern, dem Kreidespringer am Brückenkopf und Graffiti am Widerlager. Das Widerlager aus Ziegeln am Brückenkopf trägt Graffiti. Danach fällt der Pfad in Kehren den Hang hinab: Zwischen den Kehren liegen Felskanten mit Treppen, wo der Pfad sie quert, und auf den Terrassen eingezäunte Weiden des Hofs am Hang (Schafe, Ziegen, Streuobst). Am Südrand führt eine Treppe durch die letzte Kante hinunter nach Ironwood (Runde 8, nach dem Gutachten überarbeitet).",
+  "beschreibung": "Zustand: nach dem Clubkampf in Ironwood (nadelIronwood ≥ 1, Ende Akt 2): Die Brückenbauern haben ihre Klapptische für den Winter weggeräumt, Corwin ist mit dem Streichen fertig und prüft nur noch das Geländer, Farbeimer und Leiter sind weg. Eisenbrücke und Abhang (Runde 8 nach den Notizen des Autors): Der Kanal von Riverton (derselbe wie am Kanalweg, acht Felder breit für Frachtkähne, Steinufer) läuft gerade nach Süden, westlich davon der Treidelpfad mit Laternen in gleichem Abstand und das Wärterhäuschen mit eigenem Weg. In Reihe 54–61 biegt der Kanal nach Westen; der Pfad quert ihn auf der eisernen Fachwerkbrücke (Brückenköpfe aus Stein, Bohlen, genietete Träger). Unter der Brücke am Südufer liegt der Kai mit den drei Klapptischen, an denen Brückenbauer sitzen und spielen, dem Kreidespringer und einem gesprühten Turm am steinernen Brückenkopf. Danach fällt der Pfad in Kehren den Hang hinab: Zwischen den Kehren liegen Felskanten mit Versprüngen und Treppen, die bis an den Kanal reichen; der Kanal steigt dort über eine Schleusentreppe ab, wo der Pfad sie quert, und auf den Terrassen eingezäunte Weiden mit Gattern des Hofs am Hang (Schafe, Ziegen, Streuobst). Am Südrand führt eine Treppe durch die letzte Kante hinunter nach Ironwood (Runde 8, nach dem Gutachten überarbeitet).",
   "boden": "gras",
   "wandart": "gras",
   "boeden": {
@@ -106,9 +105,9 @@
     "#.~~~~~~~~....................ee...#",
     "#.~~~~~~~~....................ee...#",
     "#.~~~~~~~~....................ee...#",
-    "#.~~~~~~~~..##################ee####",
-    "#.~~~~~~~~..##################ee####",
-    "#.~~~~~~~~..##################ee####",
+    "##~~~~~~~~####################ee####",
+    "##~~~~~~~~####################ee####",
+    "##~~~~~~~~####################ee####",
     "#.~~~~~~~~...eeeeeeeeeeeeeeeeeee...#",
     "#.~~~~~~~~...eeeeeeeeeeeeeeeeeee...#",
     "#.~~~~~~~~...ee....................#",
@@ -124,9 +123,9 @@
     "#.~~~~~~~~...ee....................#",
     "#.~~~~~~~~...ee....................#",
     "#.~~~~~~~~...ee....................#",
-    "#.~~~~~~~~..#ee#####################",
-    "#.~~~~~~~~..#ee#####################",
-    "#.~~~~~~~~..#ee#####################",
+    "##~~~~~~~~###ee#####################",
+    "##~~~~~~~~###ee#####################",
+    "##~~~~~~~~###ee#####################",
     "#.~~~~~~~~...eeeeeeeeeeeeeeeeeee...#",
     "#.~~~~~~~~...eeeeeeeeeeeeeeeeeee...#",
     "#.~~~~~~~~....................ee...#",
@@ -142,9 +141,9 @@
     "#.~~~~~~~~....................ee...#",
     "#.~~~~~~~~....................ee...#",
     "#.~~~~~~~~....................ee...#",
-    "#.~~~~~~~~..##################ee####",
-    "#.~~~~~~~~..##################ee####",
-    "#.~~~~~~~~..##################ee####",
+    "##~~~~~~~~####################ee####",
+    "##~~~~~~~~####################ee####",
+    "##~~~~~~~~####################ee####",
     "#.~~~~~~~~...eeeeeeeeeeeeeeeeeee...#",
     "#.~~~~~~~~...eeeeeeeeeeeeeeeeeee...#",
     "#.~~~~~~~~...ee....................#",
@@ -155,18 +154,18 @@
     "#.~~~~~~~~...ee....................#",
     "#.~~~~~~~~...ee....................#",
     "#.~~~~~~~~...ee....................#",
-    "#.~~~~~~~~..#ee#####################",
-    "#.~~~~~~~~..#ee#####################",
-    "#.~~~~~~~~..#ee#####################",
-    "#.~~~~~~~~...ee....................#",
+    "##~~~~~~~~###ee#########......######",
+    "##~~~~~~~~###ee#####################",
+    "##~~~~~~~~###ee#####################",
+    "#.~~~~~~~~...ee.........######.....#",
     "#.~~~~~~~~...eeeeeeeeeeeee.........#",
     "#.~~~~~~~~...eeeeeeeeeeeee.........#",
     "#.~~~~~~~~..............ee.........#",
     "#.~~~~~~~~..............ee.........#",
     "#.~~~~~~~~..............ee.........#",
-    "#.~~~~~~~~..############ee##########",
-    "#.~~~~~~~~..############ee##########",
-    "#.~~~~~~~~..############ee##########",
+    "##~~~~~~~~##############ee##########",
+    "##~~~~~~~~##############ee##########",
+    "##~~~~~~~~##############ee##########",
     "#.~~~~~~~~..............ee.........#",
     "#.~~~~~~~~..............ee.........#",
     "#.~~~~~~~~..............ee.........#",
@@ -215,33 +214,13 @@
       "feld": [19, 62]
     },
     {
-      "moebel": "wr5MauerLinks",
-      "feld": [12, 62],
-      "bauteil_ok": true
-    },
-    {
-      "moebel": "wr5Mauer",
-      "feld": [13, 62],
-      "bauteil_ok": true
-    },
-    {
-      "moebel": "wr5Mauer",
-      "feld": [14, 62],
-      "bauteil_ok": true
-    },
-    {
-      "moebel": "wr5MauerRechts",
-      "feld": [15, 62],
-      "bauteil_ok": true
-    },
-    {
-      "moebel": "wr5GraffitiWolf",
-      "feld": [12, 63],
+      "moebel": "wr8GraffitiTurm",
+      "feld": [16, 61],
       "vorn": true
     },
     {
       "moebel": "mf4Laterne",
-      "feld": [28, 61]
+      "feld": [29, 61]
     },
     {
       "moebel": "mf4Laterne",
@@ -1483,7 +1462,7 @@
     },
     {
       "moebel": "felsKlein",
-      "feld": [10, 96]
+      "feld": [14, 99]
     },
     {
       "moebel": "mf4Fels",
@@ -1536,6 +1515,136 @@
     {
       "moebel": "gtKreuz",
       "feld": [32, 128]
+    },
+    {
+      "moebel": "ld5Schleusentor",
+      "feld": [2, 95],
+      "vorn": true
+    },
+    {
+      "moebel": "ld5Schleusentor",
+      "feld": [4, 95],
+      "vorn": true
+    },
+    {
+      "moebel": "ld5Schleusentor",
+      "feld": [6, 95],
+      "vorn": true
+    },
+    {
+      "moebel": "ld5Schleusentor",
+      "feld": [8, 95],
+      "vorn": true
+    },
+    {
+      "moebel": "ld5Schleusentor",
+      "feld": [2, 113],
+      "vorn": true
+    },
+    {
+      "moebel": "ld5Schleusentor",
+      "feld": [4, 113],
+      "vorn": true
+    },
+    {
+      "moebel": "ld5Schleusentor",
+      "feld": [6, 113],
+      "vorn": true
+    },
+    {
+      "moebel": "ld5Schleusentor",
+      "feld": [8, 113],
+      "vorn": true
+    },
+    {
+      "moebel": "ld5Schleusentor",
+      "feld": [2, 131],
+      "vorn": true
+    },
+    {
+      "moebel": "ld5Schleusentor",
+      "feld": [4, 131],
+      "vorn": true
+    },
+    {
+      "moebel": "ld5Schleusentor",
+      "feld": [6, 131],
+      "vorn": true
+    },
+    {
+      "moebel": "ld5Schleusentor",
+      "feld": [8, 131],
+      "vorn": true
+    },
+    {
+      "moebel": "ld5Schleusentor",
+      "feld": [2, 144],
+      "vorn": true
+    },
+    {
+      "moebel": "ld5Schleusentor",
+      "feld": [4, 144],
+      "vorn": true
+    },
+    {
+      "moebel": "ld5Schleusentor",
+      "feld": [6, 144],
+      "vorn": true
+    },
+    {
+      "moebel": "ld5Schleusentor",
+      "feld": [8, 144],
+      "vorn": true
+    },
+    {
+      "moebel": "ld5Schleusentor",
+      "feld": [2, 153],
+      "vorn": true
+    },
+    {
+      "moebel": "ld5Schleusentor",
+      "feld": [4, 153],
+      "vorn": true
+    },
+    {
+      "moebel": "ld5Schleusentor",
+      "feld": [6, 153],
+      "vorn": true
+    },
+    {
+      "moebel": "ld5Schleusentor",
+      "feld": [8, 153],
+      "vorn": true
+    },
+    {
+      "moebel": "wc5Tor1",
+      "feld": [21, 83],
+      "bauteil_ok": true
+    },
+    {
+      "moebel": "wc5Tor2",
+      "feld": [22, 83],
+      "bauteil_ok": true
+    },
+    {
+      "moebel": "wc5Tor1",
+      "feld": [21, 101],
+      "bauteil_ok": true
+    },
+    {
+      "moebel": "wc5Tor2",
+      "feld": [22, 101],
+      "bauteil_ok": true
+    },
+    {
+      "moebel": "wc5Tor1",
+      "feld": [21, 119],
+      "bauteil_ok": true
+    },
+    {
+      "moebel": "wc5Tor2",
+      "feld": [22, 119],
+      "bauteil_ok": true
     }
   ],
   "ausloeser": [
@@ -1609,11 +1718,11 @@
     {
       "name": "brueckenwaerter",
       "typ": "statist",
-      "feld": [17, 55],
+      "feld": [18, 53],
       "eigenschaften": {
-        "von": "17,55",
-        "bis": "17,57",
-        "tun": "prüft das frisch gestrichene Geländer",
+        "von": "18,53",
+        "bis": "18,53",
+        "tun": "prüft am Brückenkopf das frisch gestrichene Geländer",
         "wann": "tag",
         "sagt": "statist.wegRivertonIronwood.bruecke.brueckenwaerter"
       }
@@ -1625,7 +1734,7 @@
       "eigenschaften": {
         "von": "26,62",
         "bis": "26,62",
-        "tun": "steht am Kai, wo im Sommer die Tische standen",
+        "tun": "schaut an den Klapptischen zu",
         "wann": "tag",
         "sagt": "statist.wegRivertonIronwood.bruecke.kiebitz",
         "zeigt": "timmanShort"
@@ -1768,5 +1877,7 @@
   ],
   "datei": "karten/weg-riverton-ironwood-2-ohne-tische.json",
   "ufer": "stein",
-  "kante": "klippe"
+  "kante": "klippe",
+  "hochflaeche": "gras",
+  "zustand_der_karte": "nadelIronwood >= 1"
 }

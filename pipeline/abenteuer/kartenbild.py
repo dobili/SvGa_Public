@@ -186,7 +186,7 @@ def hintergrund(szene: dict, privat: Path, gezeichnet: dict | None = None) -> Im
     if klippe:
         for x, y, feld in treppenfelder(zeilen, strassenzeichen(szene)):
             bild.alpha_composite(kachel(privat, boegen, klippenart, list(feld)), (x * K, y * K))
-    elif not wandart:
+    elif not wandart and not wand.get("ohne_rand"):  # „ohne_rand“: dunkle Krone im Stollen
         _kronenrand(zeichner, zeilen, flaeche)
     return bild
 

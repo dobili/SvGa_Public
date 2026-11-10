@@ -1,7 +1,7 @@
 {
   "karte": "wegRivertonIronwood.kanalweg",
   "art": "aussen",
-  "beschreibung": "Kanalweg (Runde 8, überarbeitet nach dem Gutachten): gerader Kanal mit Steinufer, acht Reihen Wasser für Frachtkähne, der befestigte Treidelpfad liegt direkt an der Kaimauer, Poller in gleichem Abstand; derselbe Kanal läuft auf der Eisenbrücke weiter. Im Norden die Fabrik: Halle mit Rolltor, Hof mit Containern und Fässern, Zaun und Tor zum Pfad; die Hofmauer im Süden ist die freie Wand, an der eine Sprayerin Noors Schachfiguren (Turm, Springer) sprüht. Die Werkstraße mit der Haltestelle ohne Bus (Schild, Bank, Mülleimer) und der Rätseltafel. Ein Frachtkahn liegt längs an der Kaimauer. Obstwiese mit Picknicktisch, vier umzäunte Kleingärten, jeder anders. An der Kreuzung führt eine eiserne Brücke mit Durchfahrt über den Seitenarm (sieben Reihen) nach Lockport. Hof von Mr. Dale mit Hühnerhof, Farmhaus, Scheune und Silo am Hofplatz, vier umzäunte Äcker mit Weg zum Pfad. Rastanleger mit Steg, Ruderboot und Bank, Birkenreihe am Pfad; das Ostufer ist bewachsene Böschung.",
+  "beschreibung": "Kanalweg (Runde 8, überarbeitet nach dem Gutachten): gerader Kanal mit Steinufer, acht Reihen Wasser für Frachtkähne, der befestigte Treidelpfad liegt direkt an der Kaimauer, Poller in gleichem Abstand; derselbe Kanal läuft auf der Eisenbrücke weiter. Im Norden die Fabrik: Halle mit Rolltor, Hof mit Containern und Fässern, Zaun und Tor zum Pfad; die Hofmauer im Süden ist die freie Wand, an der eine Sprayerin Noors Schachfiguren (Turm, Springer) sprüht. Die Werkstraße mit Mittellinie und Gehweg mit der Haltestelle ohne Bus (Schild, Bank, Mülleimer) und der Rätseltafel. Ein Frachtkahn liegt längs an der Kaimauer. Obstwiese mit Picknicktisch, vier umzäunte Kleingärten, jeder anders. An der Kreuzung führt eine eiserne Brücke mit Durchfahrt über den Seitenarm (sieben Reihen) nach Lockport. Hof von Mr. Dale mit Hühnerhof, Farmhaus, Scheune und Silo am Hofplatz, vier umzäunte Äcker mit Weg zum Pfad. Rastanleger mit Steg, Ruderboot und Bank, Birkenreihe am Pfad; das Ostufer ist bewachsene Böschung.",
   "boden": "gras",
   "wandart": "gras",
   "boeden": {
@@ -51,7 +51,7 @@
     "#................ppp~~~~~~~~.......#",
     "#................ppp~~~~~~~~.......#",
     "#................ppp~~~~~~~~.......#",
-    "#................ppp~~~~~~~~.......#",
+    "#ppppppppppppppppppp~~~~~~~~.......#",
     "#ssssssssssssssssppp~~~~~~~~.......#",
     "#ssssssssssssssssppp~~~~~~~~.......#",
     "#ssssssssssssssssppp~~~~~~~~.......#",
@@ -476,10 +476,6 @@
       "moebel": "wr5GraffitiKrone",
       "feld": [11, 31],
       "vorn": true
-    },
-    {
-      "moebel": "svSchild",
-      "feld": [16, 31]
     },
     {
       "moebel": "wr5Container",
@@ -2345,10 +2341,10 @@
     {
       "name": "enten",
       "typ": "tier",
-      "feld": [25, 120],
+      "feld": [23, 120],
       "eigenschaften": {
-        "von": "25,120",
-        "bis": "25,140",
+        "von": "23,120",
+        "bis": "23,140",
         "verhalten": "schwimmen"
       }
     },
@@ -2437,5 +2433,6 @@
     "industrie"
   ],
   "datei": "karten/weg-riverton-ironwood-1.json",
-  "ufer": "stein"
+  "ufer": "stein",
+  "markierung": ["s"]
 }

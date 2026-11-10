@@ -3,8 +3,8 @@
   "datei": "karten/steinbruch-stollen.json",
   "art": "innen",
   "toenung": "dunkel",
-  "beschreibung": "Stollen 2 im alten Steinbruch (Runde 8, nach dem Gutachten): enge Gänge im Dunkel des Bergs, kalt und still. Vom Eingang im Süden, wo Tageslicht auf den Boden fällt, läuft der Hauptgang mit der Feldbahn nach Norden; zwei Loren stehen auf dem Gleis, Türstöcke aus Grubenholz stützen die Decke in gleichem Abstand. An der Gabelung führt links ein Quergang zum Seitenstollen und weiter zu einer kleinen Nische; vor ihr liegt der lose Stein, hinter dem Mama als Kind ihre Blechdose versteckt hat. Rechts weitet sich der Gang zur unregelmäßigen Kaverne mit Pfützen, Brocken und einem Stapel Grubenholz; das Gleis endet dort am Prellbock.",
-  "wand": "fels",
+  "beschreibung": "Stollen 2 im alten Steinbruch (Runde 8, nach dem Gutachten): enge Gänge im Dunkel des Bergs, kalt und still. Vom Eingang im Süden, wo Tageslicht auf den Boden fällt, läuft der Hauptgang mit der Feldbahn nach Norden; zwei Loren stehen auf dem Gleis, Türstöcke aus Grubenholz stützen die Decke in gleichem Abstand. An der Gabelung führt links ein Quergang zum Seitenstollen und weiter zu einer kleinen Nische; vor ihr liegt der lose Stein, hinter dem Mama als Kind ihre Blechdose versteckt hat. Rechts weitet sich der Gang zur unregelmäßigen Kaverne mit Pfützen, Brocken und einem Stapel Grubenholz; das Gleis endet dort am Prellbock. Zweite Prüfung: Über den Felswänden ist es dunkel, die zwei Grubenlampen hängen an der Wand, der lose Stein vor Mamas Versteck ist ein flacher Stein, anders als die Brocken.",
+  "wand": "felsStollen",
   "boden": "felsboden",
   "boeden": {
     "f": "felsboden",
@@ -154,11 +154,13 @@
     },
     {
       "moebel": "gt7Laterne",
-      "feld": [19, 4]
+      "feld": [19, 2],
+      "an_wand": true
     },
     {
       "moebel": "gt7Laterne",
-      "feld": [7, 6]
+      "feld": [7, 3],
+      "an_wand": true
     },
     {
       "moebel": "scFelsGross",
@@ -178,7 +180,7 @@
     },
     {
       "moebel": "scFelsKlein",
-      "feld": [12, 17]
+      "feld": [13, 17]
     },
     {
       "moebel": "scFelsKlein",
@@ -198,15 +200,24 @@
     },
     {
       "moebel": "scFelsKlein",
-      "feld": [15, 17]
+      "feld": [16, 17]
     },
     {
       "moebel": "scFelsKlein",
-      "feld": [24, 3]
+      "feld": [20, 7]
+    },
+    {
+      "moebel": "gc7FelsFlach",
+      "feld": [7, 4],
+      "id": "loserStein"
+    },
+    {
+      "moebel": "scFelsMittel",
+      "feld": [15, 5]
     },
     {
       "moebel": "scFelsKlein",
-      "feld": [7, 4]
+      "feld": [26, 3]
     }
   ],
   "ausloeser": [

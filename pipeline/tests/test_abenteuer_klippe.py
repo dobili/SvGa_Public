@@ -100,3 +100,17 @@ def test_kartenrand_neben_boden_ist_kein_fels():
     raster = ["#####", "#...#", "#...#", "#####"]
     assert klippenfeld(raster, 0, 1, GRAS) is None
     assert klippenfeld(raster, 2, 3, GRAS) is None
+
+
+def test_hochflaeche_gras_macht_dicke_raender_zur_wiese():
+    """Regel: Gutachten Steinbruchgrube (dritte Prüfung), kein oranger Rahmen um die Grube."""
+    szene = {"boden": "sand", "hochflaeche": "gras"}
+    raster = ["######", "######", "##..##", "######"]
+    assert klippenfeld(raster, 0, 2, grasboden(szene))[0] in SPALTEN["gras"]
+    assert klippenfeld(raster, 0, 2, grasboden({"boden": "sand"}))[0] in SPALTEN["erde"]
+
+
+def test_einbuchtung_der_kante_ist_keine_treppe():
+    """Regel: Gutachten Steinbruchgrube (dritte Prüfung), Treppen nur auf Rampen mit Weg."""
+    raster = ["rrrrrrrr", "##rr####", "########", "########", "........"]
+    assert treppenfeld(raster, 2, 1) is None

@@ -3,10 +3,10 @@
   "datei": "karten/steinbruch-grube.json",
   "art": "aussen",
   "toenung": "nebel",
-  "beschreibung": "Der alte Steinbruch Hargrove & Söhne hinter Ironwood (Runde 8), ein kühler Morgen. Die Karte zeigt die Grube von oben in drei Höhen: oben die Wiese an der Bruchkante, darunter die Abbaustufe aus Felsboden, ganz unten die Sohle aus Schotter. Die Kanten verlaufen unregelmäßig, am Fuß liegt Geröll; Rampen führen schräg hinunter, oben im Osten, auf der Stufe zurück nach Westen und dort zur Sohle. Die Zufahrt kommt am Westrand zwischen zwei Pollern mit Schild herein, die Bude hat ihre Tür zur Zufahrt, Aussichtspunkt mit Eisengeländer und Bank blicken in die Tiefe, Birken stehen an der Kante. Auf der Stufe lagern gesägte Blöcke in Reihen, dazu Abraum, Pfützen und Grubenholz. Auf der Sohle liegt ein natürliches Wasserloch mit Schilf und Seerosen; die gepflasterte Rampe im Westen ist die alte Fahrrampe der Laster. Der Stollenmund sitzt in der unteren Felskante; die Feldbahn läuft von dort mit zwei Loren nach Süden bis zum Prellbock am Verladeplatz, wo der alte Radlader steht. Blechhütte für Werkzeug im Westen, Graffiti an der Felswand im Nordosten.",
+  "beschreibung": "Der alte Steinbruch Hargrove & Söhne hinter Ironwood (Runde 8), ein kühler Morgen. Die Karte zeigt die Grube von oben in drei Höhen: oben die Wiese an der Bruchkante, darunter die Abbaustufe aus Felsboden, ganz unten die Sohle aus Schotter. Die Kanten verlaufen unregelmäßig, am Fuß liegt Geröll; Rampen führen schräg hinunter, oben im Osten, auf der Stufe zurück nach Westen und dort zur Sohle. Die Zufahrt kommt am Westrand zwischen zwei Pollern mit Schild herein, die Bude hat ihre Tür zur Zufahrt, Aussichtspunkt mit Eisengeländer und Bank blicken in die Tiefe, Birken stehen an der Kante. Auf der Stufe lagern gesägte Blöcke in Reihen, dazu Abraum, Pfützen und Grubenholz. Auf der Sohle liegt ein natürliches Wasserloch mit Schilf und Seerosen; die gepflasterte Rampe im Westen ist die alte Fahrrampe der Laster. Der Stollenmund sitzt in der unteren Felskante; die Feldbahn läuft von dort mit zwei Loren nach Süden bis zum Prellbock am Verladeplatz, wo der alte Radlader steht. Bretterhütte für Werkzeug im Westen, Graffiti an der Felswand im Nordosten.",
   "wand": "fels",
   "kante": "klippe",
-  "boden": "schotter",
+  "boden": "gras",
   "boeden": {
     "r": "gras",
     "f": "felsboden",
@@ -14,21 +14,21 @@
     "k": "schotter",
     "p": "pflaster"
   },
-  "zustand": ["neu", "gebraucht", "alt"],
+  "zustand": ["neu", "gebraucht", "alt", "verwittert"],
   "raster": [
     "######################################################################",
-    "#rrrrrrrrrrrrrrrrrrrrrrrrrrrrrrrrrrrrrrrrrrrrrrrrrrrrrrrrrrrrrrrrrrrr#",
-    "#rrrrrrrrrrrrrrrrrrrrrrrrrrrrrrrrrrrrrrrrrrrrrrrrrrrrrrrrrrrrrrrrrrrr#",
-    "#rrrrrrrrrrrrrrrrrrrrrrrrrrrrrrrrrrrrrrrrrrrrrrrrrrrrrrrrrrrrrrrrrrrr#",
-    "#rrrrrrrrrrrrrrrrrrrrrrrrrrrrrrrrrrrrrrrrrrrrrrrrrrrrrrrrrrrrrrrrrrrr#",
-    "#rrrrrrrrrrrrrrrrrrrrrrrrrrrrrrrrrrrrrrrrrrrrrrrrrrrrrrrrrrrrrrrrrrrr#",
-    "#rrrrrrrrrrrrrrrrrrrrrrrrrrrrrrrrrrrrrrrrrrrrrrrrrrrrrrrrrrrrrrrrrrrr#",
-    "eeeeeeeeeeeeeeeeeeeeeeeeeeeeeeeeeeeeeeeeeeeeeeeeeeeeeeeeeeeerrrrrrrrr#",
-    "eeeeeeeeeeeeeeeeeeeeeeeeeeeeeeeeeeeeeeeeeeeeeeeeeeeeeeeeeeeerrrrrrrrr#",
-    "#rrrrrrrrrrrrrrrrrrppppppprrrrrrrrrrrrrrrrrrrrrrrrrrrrrrreeerrrrrrrrr#",
-    "#rrrrrrrrrrrrrrrrrrppppppprrrrrrrrrrrrrrrrrrrrrrrrrrrrrrreeeeerrrrrrr#",
-    "######rrrrrr##########rrrrrrrrrrr#########rrrrrr##########eeeerrrrrrr#",
-    "########################rrrrrr##########################eeee##########",
+    "#....................................................................#",
+    "#....................................................................#",
+    "#....................................................................#",
+    "#....................................................................#",
+    "#....................................................................#",
+    "#....................................................................#",
+    "eeeeeeeeeeeeeeeeeeeeeeeeeeeeeeeeeeeeeeeeeeeeeeeeeeeeeeeeeeee.........#",
+    "eeeeeeeeeeeeeeeeeeeeeeeeeeeeeeeeeeeeeeeeeeeeeeeeeeeeeeeeeeee.........#",
+    "#..................ppppppp...............................eee.........#",
+    "#..................ppppppp...............................eeeee.......#",
+    "######......##########...........#########......##########eeee.......#",
+    "########################......##########################eeee##########",
     "########################################################eeee##########",
     "#fffff######ffffffffff###########fffffffff######ffffffeeeeff##########",
     "#fffffffffffffffffffffff######ffffffffffffffffffffffffeeeefffffffffff#",
@@ -43,28 +43,28 @@
     "#######ppppffffffffffffffffffffffffffff#fffff#######fffffffffffffffff#",
     "#######pppp##ff##########fffff#########################fffff##########",
     "#########pppp#########################################################",
-    "###......pppp##########################.#####.......##################",
-    "###........pppp..........#####.........................#####.......###",
-    "###........pppp....................................................###",
-    "###................................................................###",
-    "###................................................................###",
-    "###......................~~~~~~~~..................................###",
-    "###....................~~~~~~~~~~~.................................###",
-    "###...................~~~~~~~~~~~~~................................###",
-    "###..................~~~~~~~~~~~~~~~...............................###",
-    "###..................~~~~~~~~~~~~~~~~..............................###",
-    "###..................~~~~~~~~~~~~~~~~..............................###",
-    "###..................~~~~~~~~~~~~~~~...............................###",
-    "###...................~~~~~~~~~~~~~................................###",
-    "###.......................~~~~~....................................###",
-    "###................................................................###",
-    "###................................................................###",
-    "###................................................................###",
-    "###................................................................###",
-    "###................................................................###",
-    "###................................................................###",
-    "###................................................................###",
-    "###................................................................###",
+    "###kkkkkkpppp##########################k#####kkkkkkk##################",
+    "###kkkkkkkkppppkkkkkkkkkk#####kkkkkkkkkkkkkkkkkkkkkkkkk#####kkkkkkk###",
+    "###kkkkkkkkppppkkkkkkkkkkkkkkkkkkkkkkkkkkkkkkkkkkkkkkkkkkkkkkkkkkkk###",
+    "###kkkkkkkkkkkkkkkkkkkkkkkkkkkkkkkkkkkkkkkkkkkkkkkkkkkkkkkkkkkkkkkk###",
+    "###kkkkkkkkkkkkkkkkkkkkkkkkkkkkkkkkkkkkkkkkkkkkkkkkkkkkkkkkkkkkkkkk###",
+    "###kkkkkkkkkkkkkkkkkkkkkk~~~~~~~~kkkkkkkkkkkkkkkkkkkkkkkkkkkkkkkkkk###",
+    "###kkkkkkkkkkkkkkkkkkkk~~~~~~~~~~~kkkkkkkkkkkkkkkkkkkkkkkkkkkkkkkkk###",
+    "###kkkkkkkkkkkkkkkkkkk~~~~~~~~~~~~~kkkkkkkkkkkkkkkkkkkkkkkkkkkkkkkk###",
+    "###kkkkkkkkkkkkkkkkkk~~~~~~~~~~~~~~~kkkkkkkkkkkkkkkkkkkkkkkkkkkkkkk###",
+    "###kkkkkkkkkkkkkkkkkk~~~~~~~~~~~~~~~~kkkkkkkkkkkkkkkkkkkkkkkkkkkkkk###",
+    "###kkkkkkkkkkkkkkkkkk~~~~~~~~~~~~~~~~kkkkkkkkkkkkkkkkkkkkkkkkkkkkkk###",
+    "###kkkkkkkkkkkkkkkkkk~~~~~~~~~~~~~~~kkkkkkkkkkkkkkkkkkkkkkkkkkkkkkk###",
+    "###kkkkkkkkkkkkkkkkkkk~~~~~~~~~~~~~kkkkkkkkkkkkkkkkkkkkkkkkkkkkkkkk###",
+    "###kkkkkkkkkkkkkkkkkkkkkkk~~~~~kkkkkkkkkkkkkkkkkkkkkkkkkkkkkkkkkkkk###",
+    "###kkkkkkkkkkkkkkkkkkkkkkkkkkkkkkkkkkkkkkkkkkkkkkkkkkkkkkkkkkkkkkkk###",
+    "###kkkkkkkkkkkkkkkkkkkkkkkkkkkkkkkkkkkkkkkkkkkkkkkkkkkkkkkkkkkkkkkk###",
+    "###kkkkkkkkkkkkkkkkkkkkkkkkkkkkkkkkkkkkkkkkkkkkkkkkkkkkkkkkkkkkkkkk###",
+    "###kkkkkkkkkkkkkkkkkkkkkkkkkkkkkkkkkkkkkkkkkkkkkkkkkkkkkkkkkkkkkkkk###",
+    "###kkkkkkkkkkkkkkkkkkkkkkkkkkkkkkkkkkkkkkkkkkkkkkkkkkkkkkkkkkkkkkkk###",
+    "###kkkkkkkkkkkkkkkkkkkkkkkkkkkkkkkkkkkkkkkkkkkkkkkkkkkkkkkkkkkkkkkk###",
+    "###kkkkkkkkkkkkkkkkkkkkkkkkkkkkkkkkkkkkkkkkkkkkkkkkkkkkkkkkkkkkkkkk###",
+    "###kkkkkkkkkkkkkkkkkkkkkkkkkkkkkkkkkkkkkkkkkkkkkkkkkkkkkkkkkkkkkkkk###",
     "######################################################################"
   ],
   "objekte": [
@@ -140,30 +140,6 @@
       "feld": [63, 2]
     },
     {
-      "moebel": "st5BirkeKlein",
-      "feld": [7, 7]
-    },
-    {
-      "moebel": "st5BirkeKlein",
-      "feld": [13, 7]
-    },
-    {
-      "moebel": "st5BirkeKlein",
-      "feld": [31, 7]
-    },
-    {
-      "moebel": "st5BirkeKlein",
-      "feld": [37, 7]
-    },
-    {
-      "moebel": "st5BirkeKlein",
-      "feld": [46, 7]
-    },
-    {
-      "moebel": "st5BirkeKlein",
-      "feld": [52, 7]
-    },
-    {
       "moebel": "wg4Busch",
       "feld": [15, 3]
     },
@@ -232,10 +208,6 @@
       "feld": [26, 3]
     },
     {
-      "moebel": "wg4Gras",
-      "feld": [58, 4]
-    },
-    {
       "moebel": "scFelsMittel",
       "feld": [3, 14]
     },
@@ -277,7 +249,7 @@
     },
     {
       "moebel": "st8Granitquader",
-      "feld": [16, 16]
+      "feld": [16, 17]
     },
     {
       "moebel": "st8Granitquader",
@@ -285,11 +257,11 @@
     },
     {
       "moebel": "st8Granitquader",
-      "feld": [19, 16]
+      "feld": [20, 17]
     },
     {
       "moebel": "st8Granitquader",
-      "feld": [19, 21]
+      "feld": [18, 22]
     },
     {
       "moebel": "st8GranitquaderStapel",
@@ -297,11 +269,11 @@
     },
     {
       "moebel": "st8Granitquader",
-      "feld": [22, 21]
+      "feld": [21, 21]
     },
     {
       "moebel": "st8Granitquader",
-      "feld": [25, 16]
+      "feld": [25, 17]
     },
     {
       "moebel": "st8Granitquader",
@@ -309,11 +281,11 @@
     },
     {
       "moebel": "st8Granitquader",
-      "feld": [28, 16]
+      "feld": [29, 17]
     },
     {
       "moebel": "st8Granitquader",
-      "feld": [28, 21]
+      "feld": [29, 21]
     },
     {
       "moebel": "st8Granitquader",
@@ -321,23 +293,23 @@
     },
     {
       "moebel": "st8Granitquader",
-      "feld": [40, 21]
+      "feld": [40, 22]
     },
     {
       "moebel": "st8Granitquader",
-      "feld": [43, 16]
+      "feld": [44, 17]
     },
     {
       "moebel": "st8Granitquader",
-      "feld": [43, 21]
+      "feld": [42, 22]
     },
     {
       "moebel": "st8Granitquader",
-      "feld": [46, 16]
+      "feld": [45, 16]
     },
     {
       "moebel": "st8Granitquader",
-      "feld": [46, 21]
+      "feld": [45, 21]
     },
     {
       "moebel": "cc7Bretterstapel",
@@ -458,8 +430,8 @@
       "feld": [50, 43]
     },
     {
-      "moebel": "iw8Blechhuette",
-      "feld": [5, 30]
+      "moebel": "gt8HuetteB",
+      "feld": [4, 29]
     },
     {
       "moebel": "scFelsGross",
@@ -541,6 +513,66 @@
       "moebel": "st5GraffitiKrone",
       "feld": [62, 25],
       "vorn": true
+    },
+    {
+      "moebel": "st5Birke",
+      "feld": [20, 1]
+    },
+    {
+      "moebel": "st5BirkeKlein",
+      "feld": [57, 1]
+    },
+    {
+      "moebel": "scFelsGross",
+      "feld": [6, 21]
+    },
+    {
+      "moebel": "scFelsKlein",
+      "feld": [9, 22]
+    },
+    {
+      "moebel": "scFelsMittel",
+      "feld": [57, 16]
+    },
+    {
+      "moebel": "scFelsKlein",
+      "feld": [61, 15]
+    },
+    {
+      "moebel": "st8GranitquaderStapel",
+      "feld": [64, 19]
+    },
+    {
+      "moebel": "scFelsGross",
+      "feld": [8, 36]
+    },
+    {
+      "moebel": "scFelsKlein",
+      "feld": [11, 38]
+    },
+    {
+      "moebel": "scFelsMittel",
+      "feld": [6, 44]
+    },
+    {
+      "moebel": "scFelsGross",
+      "feld": [14, 45]
+    },
+    {
+      "moebel": "scFelsKlein",
+      "feld": [40, 45]
+    },
+    {
+      "moebel": "scFelsMittel",
+      "feld": [62, 34]
+    },
+    {
+      "moebel": "scFelsKlein",
+      "feld": [65, 40]
+    },
+    {
+      "moebel": "st8Granitquader",
+      "feld": [44, 44]
     }
   ],
   "ausloeser": [
@@ -708,5 +740,7 @@
         "verhalten": "flitzen"
       }
     }
-  ]
+  ],
+  "hochflaeche": "gras",
+  "wandart": "gras"
 }

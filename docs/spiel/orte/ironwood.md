@@ -769,3 +769,42 @@ Grubenholz als Stapel statt Zaunstück, Kiste und Fässer entfernt (9–11); Kav
 (12); kleine Nische mit dem losen Stein vor Mamas Versteck (14, 15); Karte auf 33 Spalten gekürzt (17).
 Nicht umgesetzt: **Gleis links im Gang (8)** ist gewollt (rechts der Laufweg); **Fledermaus (13)** hat
 noch kein Tierbild.
+
+### Gutachten Runde 8, zweite und dritte Prüfung (10.11.2026, mittel-4)
+
+Gutachten `ironwood-aussen-2.md`, `ironwood-kantine-3.md`, `ironwood-innen-2.md`,
+`steinbruch-grube-3.md`, `steinbruch-stollen-2.md`, `zustaende-runde8.md`.
+
+- **Ironwood außen:** Straßen mit Mittel- und Randlinien; zwei der sechs gleichen Wohnblöcke ersetzt
+  (Reihenhaus, Laden), jedes Bild höchstens zweimal; der alte Bahnhof steht am Bahnsteig vor den
+  Prellböcken (statt der Gartenhäuschen); im Bahnübergang liegen Bohlen, die Schienen sind dort
+  unterbrochen; Haus des Schrankenwärters am Übergang; Hecke um den Markt mit Zugängen; Schranke im
+  Werkstor; in den Zuständen hängt das Schild „PERFECT MOVE“ an der Fassade der Werkshalle. Nicht
+  umgesetzt: **Straßenbrücke** – die Hauptstraße endet an der Kaimauer (Beschreibung angepasst); eine
+  Brücke über den Kanal bräuchte ein eigenes Bild. **Verkäufer vor den Ständen** – das Standbild hat
+  hinter der Auslage keinen Platz. **Werkshalle, Schuppen, Kiosk** – Bilder des Pakets, das gleiche
+  Steinhaus am Kanalweg ist die Fabrik desselben Werks. **Werksbus** – Seitenansicht des Pakets.
+- **Kantine:** Kaffeemaschine, Geschirr und Kasse stehen nebeneinander auf der Ausgabe (bei „auf“
+  zählt nur der Versatz); Speiseplan an der Nordwand des Gastraums; Gäste sitzen an sieben Tischen;
+  Zustand „logo“: Schild über der Ausgabe, die Pokale liegen im Karton. Nicht umgesetzt: **Spinde,
+  Haube, Uhr, Automat, Stuhlbilder** – Bilder des Pakets; **Warmhaltetheke** bleibt die Glasvitrine.
+- **Museum:** ruhige Dielen; eigene Vitrinen mit Zeitung von 1858, Bahnlaterne, leerem Fach für Brief
+  und Umschlag, Werkzeug und dem Glasfunken (Bildwunsch `bildwuensche/museum_vitrinen.py`); große
+  Vitrine mit Bank im Nebenraum; Pflanze aus der Hallenmitte entfernt. Nicht umgesetzt: **Läufer** –
+  das Material „teppichBlau“ ist das einzige blaue; **Kunstdrucke, Postsäcke, „TICKET“** – Bilder des
+  Pakets.
+- **Umkleide:** schwarzer Doppelspind mit dem Schließfach, Kabinen eine Reihe tiefer (Brausen nicht
+  mehr über der Wand), Türen direkt davor, Trennwand schließt den Streifen; Mülleimer zur Tür hin;
+  der Arbeiter sitzt auf der Bank. Nicht umgesetzt: **Spinde wie Kühlschränke, Waschbecken, Bänke,
+  Garderobe von vorn** – Bilder des Pakets.
+- **Mamas Zimmer:** Obstschale steht auf dem Tisch, Stühle mittig, Küchenschrank statt rosa Läufer,
+  Garderobe an der Tür. Nicht umgesetzt: **Kleiderschrank** ist höher als die Wandfläche (Bild).
+- **Steinbruchgrube:** Kein oranger Rahmen mehr: Dicke Ränder zeigen die Wiese (`"hochflaeche":
+"gras"`, `klippe.py` nimmt Gras oder Erde nach dem nächsten Boden); Grundboden Gras, damit die
+  Zufahrt ihren Grasrand bekommt; Treppen nur noch auf echten Rampen (keine Tritte in
+  Einbuchtungen); Birken nicht mehr am Weg; Bretterhütte statt Automatenhäuschen; Blöcke
+  unregelmäßig, Abraum auf Stufe und Sohle. Nicht umgesetzt: **Fuchs** – das Tierbild „fuchs“ aus
+  `belebungsbilder.py`; **Feldbahn** endet am Verladeplatz, Laster fuhren über die Westrampe.
+- **Stollen:** Wandmaterial `felsStollen`: Über den Felswänden ist es dunkel (keine Bodenkästen mehr);
+  der lose Stein ist ein flacher Stein, anders als die Brocken; die Grubenlampen hängen an der Wand;
+  Brocken nicht mehr in Reihe.

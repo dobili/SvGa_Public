@@ -446,9 +446,9 @@
       "blick": "unten"
     },
     "iw5HalleB": {
-      "quelle": "modern-exteriors/Modern_Exteriors_16x16/ME_Theme_Sorter_16x16/4_Generic_Building_Singles_16x16/ME_Singles_Generic_Building_16x16_Condo_9.png",
-      "breite": 96,
-      "hoehe": 192,
+      "quelle": "modern-exteriors/Modern_Exteriors_16x16/ME_Theme_Sorter_16x16/4_Generic_Building_Singles_16x16/ME_Singles_Generic_Building_16x16_Condo_4_12.png",
+      "breite": 80,
+      "hoehe": 160,
       "kollision": true,
       "art": "gebaeude",
       "zustand": "gebraucht",
@@ -709,6 +709,56 @@
       "art": "gebaeude",
       "zustand": "gebraucht",
       "blick": "unten",
+      "stil": "klassisch"
+    },
+    "iw9VitrineZeitung": {
+      "quelle": "spiel/eigene/vitrine_zeitung.png",
+      "breite": 32,
+      "hoehe": 48,
+      "kollision": true,
+      "art": "vitrine",
+      "blick": "unten",
+      "zustand": "alt",
+      "stil": "klassisch"
+    },
+    "iw9VitrineLaterne": {
+      "quelle": "spiel/eigene/vitrine_laterne.png",
+      "breite": 32,
+      "hoehe": 48,
+      "kollision": true,
+      "art": "vitrine",
+      "blick": "unten",
+      "zustand": "alt",
+      "stil": "klassisch"
+    },
+    "iw9VitrineWerkzeug": {
+      "quelle": "spiel/eigene/vitrine_werkzeug.png",
+      "breite": 32,
+      "hoehe": 48,
+      "kollision": true,
+      "art": "vitrine",
+      "blick": "unten",
+      "zustand": "alt",
+      "stil": "klassisch"
+    },
+    "iw9VitrineGlasfunke": {
+      "quelle": "spiel/eigene/vitrine_glasfunke.png",
+      "breite": 32,
+      "hoehe": 48,
+      "kollision": true,
+      "art": "vitrine",
+      "blick": "unten",
+      "zustand": "alt",
+      "stil": "klassisch"
+    },
+    "iw9VitrineLeer": {
+      "quelle": "spiel/eigene/vitrine_leer.png",
+      "breite": 32,
+      "hoehe": 48,
+      "kollision": true,
+      "art": "vitrine",
+      "blick": "unten",
+      "zustand": "alt",
       "stil": "klassisch"
     },
     "iw5StadthausBlau": {

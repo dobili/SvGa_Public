@@ -2,7 +2,7 @@
   "karte": "ironwood.umkleide",
   "datei": "karten/ironwood-umkleide.json",
   "art": "innen",
-  "beschreibung": "Die Umkleide des Werks (Runde 8), 16 × 12, graue Fliesen. An der Nordwand sechs gleiche Spinde in einer Reihe, gleich daneben der große Doppelspind mit dem Schließfach, dann Wandspiegel über dem Handwaschbecken. In der Nordostecke die Duschen: zwei Kabinen mit Brause auf weißen Fliesen, jede Kabine mit Tür und Trennwand. In der Mitte zwei Umkleidebänke, eine dritte Bank vor der Trennwand, an der Westwand Haken mit Jacken, an der Tür ein Mülleimer, eine Pflanze in der Südostecke. Die Tür liegt in der Südwand.",
+  "beschreibung": "Die Umkleide des Werks (Runde 8), 16 × 12, graue Fliesen. An der Nordwand sechs gleiche Spinde in einer Reihe, gleich daneben der schwarze Doppelspind mit dem Schließfach, dann Wandspiegel über dem Handwaschbecken. In der Nordostecke die Duschen: zwei Kabinen mit Brause auf weißen Fliesen, jede Kabine mit Tür und Trennwand. In der Mitte zwei Umkleidebänke, eine dritte Bank vor der Trennwand, an der Westwand Haken mit Jacken, an der Tür ein Mülleimer, eine Pflanze in der Südostecke. Die Tür liegt in der Südwand.",
   "wand": "hellgrau",
   "boden": "fliesenGrau",
   "boeden": {
@@ -48,13 +48,9 @@
       "feld": [6, 2]
     },
     {
-      "moebel": "mf2Spind",
+      "moebel": "iwSpind",
       "feld": [7, 2],
       "id": "schliessfachSpind"
-    },
-    {
-      "moebel": "mf2Spind",
-      "feld": [8, 2]
     },
     {
       "moebel": "iw8Wandspiegel",
@@ -67,25 +63,25 @@
     },
     {
       "moebel": "iw8Duschkabine",
-      "feld": [10, 1]
+      "feld": [10, 2]
     },
     {
       "moebel": "iw8DuschkabineB",
-      "feld": [12, 1]
+      "feld": [12, 2]
     },
     {
       "moebel": "iw8Kabinentuer",
-      "feld": [10, 4],
+      "feld": [10, 5],
       "bauteil_ok": true
     },
     {
       "moebel": "iw8KabinentuerB",
-      "feld": [12, 4],
+      "feld": [12, 5],
       "bauteil_ok": true
     },
     {
       "moebel": "iw8Trennwand",
-      "feld": [14, 4],
+      "feld": [14, 2],
       "bauteil_ok": true
     },
     {
@@ -102,7 +98,7 @@
     },
     {
       "moebel": "ca7Muelleimer",
-      "feld": [9, 7]
+      "feld": [4, 7]
     },
     {
       "moebel": "cc4Bahnbank",
@@ -120,7 +116,12 @@
     {
       "moebel": "cc5Fussmatte",
       "feld": [6, 9],
-      "versatz": [0, 24]
+      "versatz": [0, 19]
+    },
+    {
+      "moebel": "iw8Trennwand",
+      "feld": [14, 5],
+      "bauteil_ok": true
     }
   ],
   "ausloeser": [
@@ -137,7 +138,7 @@
     },
     {
       "name": "schliessfach",
-      "feld": [8, 4]
+      "feld": [7, 4]
     }
   ],
   "figuren": [],
@@ -145,11 +146,9 @@
     {
       "name": "arbeiter",
       "typ": "statist",
-      "feld": [5, 7],
+      "feld": [6, 6],
       "eigenschaften": {
-        "von": "5,7",
-        "bis": "8,7",
-        "tun": "zieht sich nach der Schicht um",
+        "tun": "sitzt auf der Bank und zieht nach der Schicht die Schuhe aus",
         "wann": "morgen"
       }
     }

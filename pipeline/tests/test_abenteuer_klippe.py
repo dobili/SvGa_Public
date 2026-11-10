@@ -51,8 +51,8 @@ def test_ohne_gras_darueber_nimmt_die_klippe_erde():
 
 
 def test_dicker_rand_zeigt_die_obere_flaeche():
-    raster = ["####", "#rr#", "#rr#", "####"]
-    assert klippenfeld(raster, 0, 1, GRAS) == (SPALTEN["gras"][2], REIHE_OBEN)
+    raster = ["######", "##rr##", "##rr##", "######"]
+    assert klippenfeld(raster, 1, 1, GRAS) == (SPALTEN["gras"][2], REIHE_OBEN)
     assert klippenfeld(["####", "####", "####"], 1, 1, GRAS) == (SPALTEN["erde"][1], REIHE_OBEN)
 
 
@@ -93,3 +93,10 @@ def test_roter_fels_nimmt_die_rote_klippe_nur_wenn_das_bild_da_ist(tmp_path):
     (tmp_path / ROTE_KLIPPE).write_bytes(b"")
     assert klippenbogen(szene, tmp_path) == "klippeRot"
     assert klippenbogen({"kante": "klippe"}, tmp_path) == "gelaende"
+
+
+def test_kartenrand_neben_boden_ist_kein_fels():
+    """Regel: Runde 9, kein Rahmen um die Karte; „wandart“ zeichnet dort den Boden."""
+    raster = ["#####", "#...#", "#...#", "#####"]
+    assert klippenfeld(raster, 0, 1, GRAS) is None
+    assert klippenfeld(raster, 2, 3, GRAS) is None

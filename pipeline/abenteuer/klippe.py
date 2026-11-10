@@ -74,12 +74,25 @@ def klippenfeld(zeilen: list[str], x: int, y: int, grasboden: set[str]) -> tuple
     rolle = _rolle(zeilen, x, y)
     links, mitte, rechts = SPALTEN[_variante(zeilen, x, y, grasboden)]
     if rolle is None:
-        return _flaechenfeld(zeilen, x, y, grasboden)
+        return None if _rand_neben_boden(zeilen, x, y) else _flaechenfeld(zeilen, x, y, grasboden)
     reihe = {"kante": REIHE_KANTE, "wand": REIHE_WAND, "fuss": REIHE_FUSS}[rolle]
     ende_links = _rolle(zeilen, x - 1, y) != rolle or not _ist_wand(zeilen, x - 1, y)
     ende_rechts = _rolle(zeilen, x + 1, y) != rolle or not _ist_wand(zeilen, x + 1, y)
     spalte = links if ende_links and not ende_rechts else rechts if ende_rechts and not ende_links else mitte
     return (spalte, reihe)
+
+
+def _rand_neben_boden(zeilen: list[str], x: int, y: int) -> bool:
+    """Kartenrand mit Boden daneben: kein Fels, sondern (mit „wandart“) der Boden selbst.
+
+    Warum: Sonst umläuft eine Kante aus Hochfläche die ganze Karte wie ein Rahmen (Variantenwahl,
+    Muster „Höhen als Grundriss“). Ohne „wandart“ zeichnet ``kartenbild`` dort die Wandkrone.
+    """
+    hoehe, breite = len(zeilen), len(zeilen[0])
+    if 0 < x < breite - 1 and 0 < y < hoehe - 1:
+        return False
+    innen = [(x + 1, y), (x - 1, y), (x, y + 1), (x, y - 1)]
+    return any(0 < a < breite - 1 and 0 < b < hoehe - 1 and not _ist_wand(zeilen, a, b) for a, b in innen)
 
 
 def _flaechenfeld(zeilen: list[str], x: int, y: int, grasboden: set[str]) -> tuple[int, int]:

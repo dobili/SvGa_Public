@@ -2,7 +2,7 @@
   "karte": "wegDesertSummit.hinterzimmer",
   "datei": "karten/weg-desert-summit-hinterzimmer.json",
   "art": "innen",
-  "beschreibung": "Variante C: Tafel in der Mitte, zwei Tische untereinander, einer rechts.",
+  "beschreibung": "Hinterzimmer des Diners, Treffpunkt der Schachspieler (Variante C): an der Nordwand die Tafel mit einem Kreidespringer und ein Regal, drei Tische mit Brettern und Hockern, Mags und Ruth Keene stehen je an einem Brett. In der Westecke gestapelte Kisten, Fass und Kiste, eine Pflanze im Südosten.",
   "wand": "holz",
   "boden": "dielen",
   "raster": [
@@ -33,7 +33,8 @@
     {
       "moebel": "mf2Tafel",
       "feld": [5, 1],
-      "an_wand": true
+      "an_wand": true,
+      "id": "tafel"
     },
     {
       "moebel": "cc5Tisch",
@@ -44,10 +45,6 @@
       "moebel": "cc4Brett",
       "feld": [0, 0],
       "auf": "brett0"
-    },
-    {
-      "moebel": "cc4Hocker",
-      "feld": [4, 5]
     },
     {
       "moebel": "cc4Hocker",
@@ -86,15 +83,11 @@
       "feld": [9, 6]
     },
     {
-      "moebel": "cc4Hocker",
-      "feld": [12, 6]
-    },
-    {
       "moebel": "cc4RegalA",
       "feld": [11, 1]
     },
     {
-      "moebel": "cc4KisteLeer",
+      "moebel": "pd6Kistenstapel",
       "feld": [1, 3]
     },
     {
@@ -104,6 +97,20 @@
     {
       "moebel": "cc4PflanzeK",
       "feld": [12, 8]
+    },
+    {
+      "moebel": "pd6Fass",
+      "feld": [2, 8]
+    },
+    {
+      "moebel": "pd6Kiste",
+      "feld": [1, 7]
+    },
+    {
+      "moebel": "cr8Kreidespringer",
+      "feld": [0, 0],
+      "auf": "tafel",
+      "versatz": [8, 12]
     }
   ],
   "ausloeser": [
@@ -122,11 +129,11 @@
   "figuren": [
     {
       "name": "mags",
-      "feld": [7, 4]
+      "feld": [4, 5]
     },
     {
       "name": "ruthKeene",
-      "feld": [10, 9]
+      "feld": [12, 6]
     }
   ],
   "belebung": [],

@@ -282,6 +282,7 @@
       "oben": [23, 0],
       "unten": [23, 1]
     },
+    "nachtblau": { "bogen": "wand", "oben": [11, 34], "unten": [11, 35] },
     "blau": {
       "bogen": "wand",
       "oben": [23, 8],

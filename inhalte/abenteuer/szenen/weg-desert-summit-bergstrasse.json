@@ -3,14 +3,15 @@
   "datei": "karten/weg-desert-summit-bergstrasse.json",
   "kante": "klippe",
   "art": "aussen",
-  "beschreibung": "Weg 7, die Bergstraße: Hinter dem Diner endet die Wüste an einem Viehgitter im Asphalt, und die Straße steigt in Kehren nach Norden in die Berge. Felsstufen aus rotem Stein trennen die Kehren, Rampen führen hindurch. Unten Sand, Kakteen und Wacholder, in der Mitte Erde und erste Pinien, oben Gras, dichter Pinienwald und kühler Wind. Auf halber Höhe zweigt ein Schotterweg nach Westen zur Hochebene ab, mit Wegweiser und offener Schranke. Am Nordrand geht es nach Summit City. Variante C, die reichere: drei weite Kehren, Picknickplatz mit Bänken an der Quelle, dichter Pinienwald oben mit Holzstapeln, viele Felsbrocken an den Stufen.",
+  "beschreibung": "Weg 7, die Bergstraße: Hinter dem Diner endet die Wüste an einem Viehgitter im Asphalt, und die Straße steigt in Kehren nach Norden in die Berge. Felsstufen aus rotem Stein trennen die Kehren, Rampen führen hindurch. Unten Sand, Kakteen und Wacholder, in der Mitte Erde und erste Pinien, oben Gras, dichter Pinienwald und kühler Wind. Auf halber Höhe zweigt ein Schotterweg nach Westen zur Hochebene ab, mit Wegweiser und offener Schranke. Am Nordrand geht es nach Summit City. Die Straße hat gelbe Mittellinie, weiße Randlinien und abgeschrägte Kehren; die Zonen wechseln an den Felsstufen, der Rastplatz ist eine Haltebucht aus Asphalt. Variante C, die reichere: drei weite Kehren, Picknickplatz mit Bänken an der Quelle, dichter Pinienwald oben mit Holzstapeln, viele Felsbrocken an den Stufen.",
   "wand": "fels",
   "boden": "sand",
   "boeden": {
     "r": "gras",
     "e": "erde",
     "s": "asphalt",
-    "k": "schotter"
+    "k": "schotter",
+    "a": "asphalt"
   },
   "zustand": ["neu", "gebraucht", "alt"],
   "stil": ["natur", "klassisch", "modern", "laendlich"],
@@ -48,11 +49,11 @@
     "#rrrrrrrrrrrrrrrrrsssrrrrrrrrrrrrrrrrrr#",
     "#rrrrrrrrrrrrrrrrrsssrrrrrrrrrrrrrrrrrr#",
     "#rrrrrrrrrrrrrrrrrsssrrrrrrrrrrrrrrrrrr#",
-    "#rrrrrrrrrrrrrrrrrsssrrrrrrrrrrrrrrrrrr#",
+    "#rrrrrrrrrrrrrrrrssssrrrrrrrrrrrrrrrrrr#",
+    "#rrrrssssssssssssssssrrrrrrrrrrrrrrrrrr#",
     "#rrrsssssssssssssssssrrrrrrrrrrrrrrrrrr#",
-    "#rrrsssssssssssssssssrrrrrrrrrrrrrrrrrr#",
-    "#rrrsssssssssssssssssrrrrrrrrrrrrrrrrrr#",
-    "#rrrsssrrrrrrrrrrrrrrrrrrrrrrrrrrrrrrrr#",
+    "#rrrssssssssssssssssrrrrrrrrrrrrrrrrrrr#",
+    "#rrrssssrrrrrrrrrrrrrrrrrrrrrrrrrrrrrrr#",
     "#rrrsssrrrrrrrrrrrrrrrrrrrrrrrrrrrrrrrr#",
     "#rrrsssrrrrrrrrrrrrrrrrrrrrrrrrrrrrrrrr#",
     "#rrrsssrrrrrrrrrrrrrrrrrrrrrrrrrrrrrrrr#",
@@ -68,21 +69,21 @@
     "####sss#################################",
     "####sss#################################",
     "####sss#################################",
-    "#rrrsssrrrrrrrrrrrrrrrrrrrrrrrrrrrrrrrr#",
-    "#rrrsssrrrrrrrrrrrrrrrrrrrrrrrrrrrrrrrr#",
-    "#rrrsssrrrrrrrrrrrrrrrrrrrrrrrrrrrrrrrr#",
-    "#rrrsssrrrrrrrrrrrrrrrrrrrrrrrrrrrrrrrr#",
-    "#rrrsssrrrrrrrrrrrrrrrrrrrrrrrrrrrrrrrr#",
-    "#rrrsssrrrrrrrrrrrrrrrrrrrrrrrrrrrrrrrr#",
-    "#rrrsssrrrrrrrrrrrrrrrrrrrrrrrrrrrrrrrr#",
-    "#rrrsssrrrrrrrrrrrrrrrrrrrrrrrrrrrrrrrr#",
     "#eeessseeeeeeeeeeeeeeeeeeeeeeeeeeeeeeee#",
     "#eeessseeeeeeeeeeeeeeeeeeeeeeeeeeeeeeee#",
     "#eeessseeeeeeeeeeeeeeeeeeeeeeeeeeeeeeee#",
+    "#eeessseeeeeeeeeeeeeeeeeeeeeeeeeeeeeeee#",
+    "#eeessseeeeeeeeeeeeeeeeeeeeeeeeeeeeeeee#",
+    "#eeessseeeeeeeeeeeeeeeeeeeeeeeeeeeeeeee#",
+    "#eeessseeeeeeeeeeeeeeeeeeeeeeeeeeeeeeee#",
+    "#eeessseeeeeeeeeeeeeeeeeeeeeeeeeeeeeeee#",
+    "#eeessseeeeeeeeeeeeeeeeeeeeeeeeeeeeeeee#",
+    "#eeessseeeeeeeeeeeeeeeeeeeeeeeeeeeeeeee#",
+    "#eeesssseeeeeeeeeeeeeeeeeeeeeeeeeeeeeee#",
+    "#eeessssssssssssssssssssssssssssssseeee#",
     "#eeesssssssssssssssssssssssssssssssseee#",
-    "#eeesssssssssssssssssssssssssssssssseee#",
-    "#eeesssssssssssssssssssssssssssssssseee#",
-    "#eeeeeeeeeeeeeeeeeeeeeeeeeeeeeeeessseee#",
+    "#eeeessssssssssssssssssssssssssssssseee#",
+    "#eeeeeeeeeeeeeeeeeeeeeeeeeeeeeeesssseee#",
     "#eeeeeeeeeeeeeeeeeeeeeeeeeeeeeeeessseee#",
     "#eeeeeeeeeeeeeeeeeeeeeeeeeeeeeeeessseee#",
     "kkkkkkkkkkkkkkkkkkkkkkkkkkkkkkkkkssseee#",
@@ -105,22 +106,22 @@
     "#eeeeeeeeeeeeeeeeeeeeeeeeeeeeeeeessseee#",
     "#eeeeeeeeeeeeeeeeeeeeeeeeeeeeeeeessseee#",
     "#eeeeeeeeeeeeeeeeeeeeeeeeeeeeeeeessseee#",
-    "#eeeeeeeeeekkkkkkkkkkeeeeeeeeeeeessseee#",
-    "#eeeeeeeeeekkkkkkkkkkeeeeeeeeeeeessseee#",
-    "#eeeeeeeeeekkkkkkkkkkeeeeeeeeeeeessseee#",
-    "#eeeeeeeeeekkkkkkkkkkeeeeeeeeeeeessseee#",
+    "#eeeeeeeeeeaaaaaaaaaaeeeeeeeeeeeessseee#",
+    "#eeeeeeeeeeaaaaaaaaaaeeeeeeeeeeeessseee#",
+    "#eeeeeeeeeeaaaaaaaaaaeeeeeeeeeeeessseee#",
+    "#eeeeeeeeeeaaaaaaaaaaeeeeeeeeeeesssseee#",
+    "#eeeessssssssssssssssssssssssssssssseee#",
     "#eeesssssssssssssssssssssssssssssssseee#",
-    "#eeesssssssssssssssssssssssssssssssseee#",
-    "#eeesssssssssssssssssssssssssssssssseee#",
+    "#eeessssssssssssssssssssssssssssssseeee#",
+    "#eeesssseeeeeeeeeeeeeeeeeeeeeeeeeeeeeee#",
     "#eeessseeeeeeeeeeeeeeeeeeeeeeeeeeeeeeee#",
     "#eeessseeeeeeeeeeeeeeeeeeeeeeeeeeeeeeee#",
     "#eeessseeeeeeeeeeeeeeeeeeeeeeeeeeeeeeee#",
     "#eeessseeeeeeeeeeeeeeeeeeeeeeeeeeeeeeee#",
-    "#...sss................................#",
-    "#...sss................................#",
-    "#...sss................................#",
-    "#...sss................................#",
-    "#...sss................................#",
+    "#eeessseeeeeeeeeeeeeeeeeeeeeeeeeeeeeeee#",
+    "#eeessseeeeeeeeeeeeeeeeeeeeeeeeeeeeeeee#",
+    "#eeessseeeeeeeeeeeeeeeeeeeeeeeeeeeeeeee#",
+    "#eeessseeeeeeeeeeeeeeeeeeeeeeeeeeeeeeee#",
     "####sss#################################",
     "####sss#################################",
     "####sss#################################",
@@ -134,10 +135,10 @@
     "#...sss................................#",
     "#...sss................................#",
     "#...sss................................#",
-    "#...sss................................#",
+    "#...ssss...............................#",
     "#...sssssssssssssssssssssssssssssssssss#",
     "#...sssssssssssssssssssssssssssssssssss#",
-    "#...sssssssssssssssssssssssssssssssssss#",
+    "#....ssssssssssssssssssssssssssssssssss#",
     "#......................................#",
     "#......................................#",
     "#......................................#",
@@ -189,11 +190,6 @@
     },
     {
       "moebel": "wds6LeitplankeL8",
-      "feld": [7, 97],
-      "bauteil_ok": true
-    },
-    {
-      "moebel": "wds6LeitplankeL8",
       "feld": [15, 97],
       "bauteil_ok": true
     },
@@ -233,11 +229,6 @@
       "bauteil_ok": true
     },
     {
-      "moebel": "wds6LeitplankeL5",
-      "feld": [28, 67],
-      "bauteil_ok": true
-    },
-    {
       "moebel": "wds6LeitplankeQ3",
       "feld": [3, 64],
       "bauteil_ok": true
@@ -245,11 +236,6 @@
     {
       "moebel": "wds6LeitplankeQ3",
       "feld": [36, 64],
-      "bauteil_ok": true
-    },
-    {
-      "moebel": "wds6LeitplankeL8",
-      "feld": [7, 37],
       "bauteil_ok": true
     },
     {
@@ -852,5 +838,7 @@
         "verhalten": "fliegen"
       }
     }
-  ]
+  ],
+  "markierung": ["s"],
+  "wandart": "gras"
 }

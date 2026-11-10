@@ -1659,6 +1659,86 @@
       "zustand": "alt",
       "stil": "klassisch",
       "blick": "unten"
+    },
+    "sb8LadenFitness": {
+      "quelle": "spiel/eigene/altstadt_campus_fitness.png",
+      "breite": 112,
+      "hoehe": 144,
+      "kollision": true,
+      "art": "gebaeude",
+      "zustand": "neu",
+      "stil": "modern",
+      "blick": "unten"
+    },
+    "sb8LadenGroove": {
+      "quelle": "spiel/eigene/altstadt_campus_groove.png",
+      "breite": 112,
+      "hoehe": 144,
+      "kollision": true,
+      "art": "gebaeude",
+      "zustand": "neu",
+      "stil": "modern",
+      "blick": "unten"
+    },
+    "sb8LadenCoolies": {
+      "quelle": "spiel/eigene/altstadt_campus_coolies.png",
+      "breite": 112,
+      "hoehe": 144,
+      "kollision": true,
+      "art": "gebaeude",
+      "zustand": "neu",
+      "stil": "modern",
+      "blick": "unten"
+    },
+    "sb8LadenBimbum": {
+      "quelle": "spiel/eigene/altstadt_campus_bimbum.png",
+      "breite": 112,
+      "hoehe": 144,
+      "kollision": true,
+      "art": "gebaeude",
+      "zustand": "neu",
+      "stil": "modern",
+      "blick": "unten"
+    },
+    "sb8LadenDanger": {
+      "quelle": "spiel/eigene/altstadt_campus_danger.png",
+      "breite": 112,
+      "hoehe": 144,
+      "kollision": true,
+      "art": "gebaeude",
+      "zustand": "neu",
+      "stil": "modern",
+      "blick": "unten"
+    },
+    "sb8LadenPlume": {
+      "quelle": "spiel/eigene/altstadt_campus_plume.png",
+      "breite": 112,
+      "hoehe": 144,
+      "kollision": true,
+      "art": "gebaeude",
+      "zustand": "neu",
+      "stil": "modern",
+      "blick": "unten"
+    },
+    "sb8LadenMusik": {
+      "quelle": "spiel/eigene/altstadt_campus_musik.png",
+      "breite": 112,
+      "hoehe": 144,
+      "kollision": true,
+      "art": "gebaeude",
+      "zustand": "neu",
+      "stil": "modern",
+      "blick": "unten"
+    },
+    "sb8LadenEis": {
+      "quelle": "spiel/eigene/altstadt_campus_eis.png",
+      "breite": 112,
+      "hoehe": 144,
+      "kollision": true,
+      "art": "gebaeude",
+      "zustand": "neu",
+      "stil": "modern",
+      "blick": "unten"
     }
   }
 }

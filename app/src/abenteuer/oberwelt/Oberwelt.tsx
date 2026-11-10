@@ -25,11 +25,10 @@ import type Phaser from "phaser";
 import { liesPaketJson } from "../paket/paketlader";
 import { findeKarte, ladeSpieldaten } from "../daten/laden";
 import { Dialog } from "../dialog/Dialog";
-import type { Dialogvariablen, Wirkungen } from "../dialog/geschichte";
+import type { Dialogvariablen } from "../dialog/geschichte";
 import { appdienste } from "../modul/abenteuer";
 import { deckgroesse, mentorzugGesperrt, mitLernkarten, vorgabeFen } from "../regeln/karten";
 import { wendeWirkungenAn, werteEreignisAus, type Questereignis } from "../regeln/quests";
-import { mitFund } from "../regeln/funde";
 import { kaufe } from "../regeln/muenzen";
 import { standNachPartie, standNachRunde, type Rundenrueckweg } from "../regeln/rueckweg";
 import { mitAppWertung, zaehltFuerA } from "../regeln/wertung";
@@ -37,7 +36,6 @@ import {
   variablenAusBesitz,
   variablenNachDialog,
   variablenNachBesuch,
-  variablenNachFund,
   variablenNachRunde,
 } from "../regeln/dialogvariablen";
 import { laufendesSimultan, nachSimultanpartie, starteSimultan } from "../regeln/simultan";
@@ -109,8 +107,9 @@ import { Sprechblase, type SprechblasenInhalt } from "./Sprechblase";
 import { Vorfuehrung } from "./Vorfuehrung";
 import { Gedaechtnisstellung } from "./Gedaechtnisstellung";
 import { Kopfleiste } from "./Kopfleiste";
+import { dialogwirkungen } from "./dialogwirkungen";
 import { Fortsetzungskarte, Partieergebniskarte, Rundenergebniskarte } from "./Ergebniskarten";
-import { aktuelleToenung, toenungsvariable, type Toenung } from "./toenung";
+import { aktuelleToenung, type Toenung } from "./toenung";
 
 /** Ein offener Dialog: die übersetzte Geschichte, der Knoten und der Name der Datei. */
 interface OffenerDialog {
@@ -557,6 +556,7 @@ export function Oberwelt() {
       schreibe(neu);
       const auftrag = r.naechste ? auftragFuer(r.naechste, welt.daten, neu) : null;
       if (auftrag) startePartie(auftrag, []);
+      if (r.ende?.bestanden) melde({ art: "aufgaben", runde: eintrag.kennung });
       if (r.ende) {
         setzeMeldung(
           tSpiel("oberwelt.simultan.ende", {
@@ -577,6 +577,8 @@ export function Oberwelt() {
       ...aktuell,
       dialogvariablen: { ...aktuell.dialogvariablen, ...variablenNachRunde(kennung, bestanden) },
     });
+    // Quests warten darauf wie auf eine bestandene Aufgabenrunde (Vorschlag mittel-1).
+    if (bestanden) melde({ art: "aufgaben", runde: kennung });
   };
 
   /** Der Aktionsknopf: Dialog des Auslösers oder der Figur öffnen. */
@@ -600,77 +602,30 @@ export function Oberwelt() {
 
   if (!stand) return <p className="fehlertext">{tSpiel("oberwelt.keinSpielstand")}</p>;
 
-  const wirkungen: Wirkungen = {
-    zeigeAbspann: () => {
-      abspannInArbeit.current = true;
-    },
-    oeffneLaden: (kennung) => {
-      ladenInArbeit.current = kennung;
-    },
-    gibFund: (kennung) => {
-      const aktuell = standRef.current ?? stand;
-      const fund = welt?.daten.funde.find((f) => f.kennung === kennung);
-      const mit = mitFund(aktuell, kennung, new Date(), fund?.muenzen ?? 0);
-      if (mit === aktuell) return;
-      // Dialogvariable `gefunden<Fund>` für spätere Bedingungen (übergreifende Quests, E4).
-      const neu = {
-        ...mit,
-        dialogvariablen: { ...mit.dialogvariablen, ...variablenNachFund(kennung) },
-      };
-      schreibe(neu);
-      setzeMeldung(
-        tSpiel(fund?.extra ? "fund.gefundenExtra" : "fund.gefunden", {
-          name: tSpiel(fund?.name ?? kennung),
-        }),
-      );
-    },
-    gibKarte: (kennung) => {
-      const aktuell = standRef.current ?? stand;
-      schreibe(wendeWirkungenAn(aktuell, [{ art: "karte", karte: kennung }], new Date()));
-    },
-    setzeSzene: (szene) => {
-      const aktuell = standRef.current ?? stand;
-      schreibe({ ...aktuell, handlung: { ...aktuell.handlung, szene } });
-    },
-    beginnePartie: (begegnung) => {
-      const aktuell = standRef.current ?? stand;
-      if (welt) auftragInArbeit.current = auftragFuer(begegnung, welt.daten, aktuell);
-    },
-    beginneAufgaben: (runde) => {
-      rundeInArbeit.current = runde;
-    },
-    beginneGedaechtnis: (kennung) => {
-      gedaechtnisInArbeit.current = kennung;
-    },
-    beginneSimultan: (kennung) => {
-      simultanInArbeit.current = kennung;
-    },
-    zeigeVorfuehrung: (kennung) => {
-      vorfuehrungInArbeit.current = kennung;
-    },
-    reise: (karte, ausloeser) => {
-      reiseInArbeit.current = { karte, ausloeser };
-    },
-    setzeToenung: (name) => {
-      const aktuell = standRef.current ?? stand;
-      if (!welt) return;
-      const variable = toenungsvariable(welt.kennung);
-      const neu = { ...aktuell.dialogvariablen, [variable]: name };
-      schreibe({ ...aktuell, dialogvariablen: neu });
-      const toenung = aktuelleToenung(welt.karte, welt.kennung, neu);
-      setzeToenungZustand(toenung);
+  // Die Refs (Spielstand, Merker) liest dialogwirkungen erst, wenn Ink eine Funktion aufruft,
+  // also nach dem Zeichnen; die Regel react-hooks/refs kann das nicht erkennen.
+  // eslint-disable-next-line react-hooks/refs
+  const wirkungen = dialogwirkungen({
+    stand: () => standRef.current ?? stand,
+    welt,
+    schreibe,
+    meldung: setzeMeldung,
+    toenung: (t) => {
+      setzeToenungZustand(t);
       const szene = spiel.current ? szeneVon(spiel.current) : null;
-      szene?.setzeToenung(toenung);
+      szene?.setzeToenung(t);
     },
-    setzeZustand: (gegner, faktor, grund) => {
-      const aktuell = standRef.current ?? stand;
-      schreibe(wendeWirkungenAn(aktuell, [{ art: "zustand", gegner, faktor, grund }], new Date()));
-    },
-    schalteSteckbrief: (gegner, zeile) => {
-      const aktuell = standRef.current ?? stand;
-      schreibe(wendeWirkungenAn(aktuell, [{ art: "steckbrief", gegner, zeile }], new Date()));
-    },
-  };
+    merker: () => ({
+      abspann: abspannInArbeit,
+      laden: ladenInArbeit,
+      auftrag: auftragInArbeit,
+      runde: rundeInArbeit,
+      gedaechtnis: gedaechtnisInArbeit,
+      simultan: simultanInArbeit,
+      vorfuehrung: vorfuehrungInArbeit,
+      reise: reiseInArbeit,
+    }),
+  });
 
   /**
    * Startet die Partie zu einem Auftrag mit dem gewählten Deck: Vorgaben ändern die Startstellung

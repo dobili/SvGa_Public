@@ -51,7 +51,7 @@ Szene heißt die Datei in `inhalte/abenteuer/szenen/` ohne `.json`.
 - [ ] ironwood-aussen (zweite Prüfung, mittel-4, mit Zuständen meisterschaft und vermietet; `ironwood-aussen-2.md`)
 - [ ] ironwood-kantine (dritte Prüfung, mit Zustand logo; `ironwood-kantine-3.md`), ironwood-museum, ironwood-umkleide, ironwood-mamas-zimmer (zweite Prüfung, mittel-4; eine Datei `ironwood-innen-2.md`)
 - [ ] steinbruch-grube (dritte Prüfung, jetzt mit Felskanten; `steinbruch-grube-3.md`), steinbruch-stollen (zweite Prüfung; `steinbruch-stollen-2.md`)
-- [ ] riverton-aussen und die vier Innenräume (dritte Prüfung, mittel-3; Bahnhof mit Uhrturm, Glastüren; Bilder privat ab c0febaac; Dateien `riverton-aussen-3.md`, `riverton-innen-3.md`)
+- [ ] riverton-aussen und die vier Innenräume (dritte Prüfung, mittel-3; Bahnhof mit Uhrturm, Glastüren; Bilder privat ab c0febaac; seit Runde 9 Bildschirmtische `rv9Bildschirmtisch` im Park, in den Zuständen und im Pavillon `perfect-move`; Dateien `riverton-aussen-3.md`, `riverton-innen-3.md`)
 
 - [ ] ghost-town-aussen (Runde 9, niedrig-1, mit Zustand mine-offen), ghost-town-saloon, goldmine-stollen
 - [ ] erinnerung-siedlung-huette, erinnerung-london-kaffeehaus, erinnerung-london-strand (Runde 9, niedrig-1; Sepia aus der Tönung, im Vorschaubild nicht zu sehen)
@@ -62,6 +62,7 @@ Szene heißt die Datei in `inhalte/abenteuer/szenen/` ohne `.json`.
 - [ ] jahrmarkt-festplatz (Runde 9, mittel-3)
 - [ ] weg-crossroads-pinewood-huetten, weg-crossroads-pinewood-riesenbaeume (Runde 9, mittel-3)
 - [ ] pelikaninsel-dorf im Winter (Runde 9, mittel-3)
+- [ ] silicon-bay-akademie, silicon-bay-altstadt (dritte Prüfung, mittel-3; Stehpulte, Glaswand mit Pfosten, geräumte Straße mit Schneewällen; Dateien `silicon-bay-akademie-3.md`, `silicon-bay-altstadt-3.md`)
 
 ## Erledigt
 

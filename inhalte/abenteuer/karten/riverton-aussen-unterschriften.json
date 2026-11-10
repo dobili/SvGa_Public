@@ -12279,8 +12279,8 @@
      "id": 11,
      "name": "bildschirmtische",
      "type": "ausloeser",
-     "x": 448,
-     "y": 784,
+     "x": 416,
+     "y": 816,
      "width": 16,
      "height": 16,
      "rotation": 0,
@@ -12394,8 +12394,8 @@
      "id": 19,
      "name": "parkschachspieler",
      "type": "statist",
-     "x": 528,
-     "y": 864,
+     "x": 608,
+     "y": 848,
      "width": 16,
      "height": 16,
      "rotation": 0,
@@ -12404,12 +12404,12 @@
       {
        "name": "von",
        "type": "string",
-       "value": "33,54"
+       "value": "38,53"
       },
       {
        "name": "bis",
        "type": "string",
-       "value": "33,54"
+       "value": "38,53"
       },
       {
        "name": "tun",
@@ -17898,144 +17898,6 @@
     },
     {
      "id": 251,
-     "name": "rvPicknicktisch",
-     "type": "moebel",
-     "x": 368,
-     "y": 752,
-     "width": 32,
-     "height": 32,
-     "rotation": 0,
-     "visible": true,
-     "properties": [
-      {
-       "name": "tiefe",
-       "type": "int",
-       "value": 776
-      },
-      {
-       "name": "kollision",
-       "type": "bool",
-       "value": true
-      }
-     ]
-    },
-    {
-     "id": 252,
-     "name": "rvPicknicktisch",
-     "type": "moebel",
-     "x": 416,
-     "y": 752,
-     "width": 32,
-     "height": 32,
-     "rotation": 0,
-     "visible": true,
-     "properties": [
-      {
-       "name": "tiefe",
-       "type": "int",
-       "value": 776
-      },
-      {
-       "name": "kollision",
-       "type": "bool",
-       "value": true
-      }
-     ]
-    },
-    {
-     "id": 253,
-     "name": "rvPicknicktisch",
-     "type": "moebel",
-     "x": 464,
-     "y": 752,
-     "width": 32,
-     "height": 32,
-     "rotation": 0,
-     "visible": true,
-     "properties": [
-      {
-       "name": "tiefe",
-       "type": "int",
-       "value": 776
-      },
-      {
-       "name": "kollision",
-       "type": "bool",
-       "value": true
-      }
-     ]
-    },
-    {
-     "id": 254,
-     "name": "rvPicknicktisch",
-     "type": "moebel",
-     "x": 368,
-     "y": 800,
-     "width": 32,
-     "height": 32,
-     "rotation": 0,
-     "visible": true,
-     "properties": [
-      {
-       "name": "tiefe",
-       "type": "int",
-       "value": 824
-      },
-      {
-       "name": "kollision",
-       "type": "bool",
-       "value": true
-      }
-     ]
-    },
-    {
-     "id": 255,
-     "name": "rvPicknicktisch",
-     "type": "moebel",
-     "x": 416,
-     "y": 800,
-     "width": 32,
-     "height": 32,
-     "rotation": 0,
-     "visible": true,
-     "properties": [
-      {
-       "name": "tiefe",
-       "type": "int",
-       "value": 824
-      },
-      {
-       "name": "kollision",
-       "type": "bool",
-       "value": true
-      }
-     ]
-    },
-    {
-     "id": 256,
-     "name": "rvPicknicktisch",
-     "type": "moebel",
-     "x": 464,
-     "y": 800,
-     "width": 32,
-     "height": 32,
-     "rotation": 0,
-     "visible": true,
-     "properties": [
-      {
-       "name": "tiefe",
-       "type": "int",
-       "value": 824
-      },
-      {
-       "name": "kollision",
-       "type": "bool",
-       "value": true
-      }
-     ]
-    },
-    {
-     "id": 257,
      "name": "rv8Pavillon",
      "type": "moebel",
      "x": 544,
@@ -18058,11 +17920,11 @@
      ]
     },
     {
-     "id": 258,
+     "id": 252,
      "name": "rvPicknicktisch",
      "type": "moebel",
-     "x": 512,
-     "y": 832,
+     "x": 608,
+     "y": 816,
      "width": 32,
      "height": 32,
      "rotation": 0,
@@ -18071,7 +17933,7 @@
       {
        "name": "tiefe",
        "type": "int",
-       "value": 856
+       "value": 840
       },
       {
        "name": "kollision",
@@ -18081,11 +17943,11 @@
      ]
     },
     {
-     "id": 259,
+     "id": 253,
      "name": "rv5Brett",
      "type": "moebel",
-     "x": 522,
-     "y": 842,
+     "x": 618,
+     "y": 826,
      "width": 12,
      "height": 9,
      "rotation": 0,
@@ -18094,7 +17956,7 @@
       {
        "name": "tiefe",
        "type": "int",
-       "value": 857
+       "value": 841
       },
       {
        "name": "kollision",
@@ -18104,7 +17966,7 @@
      ]
     },
     {
-     "id": 260,
+     "id": 254,
      "name": "sb8Kreidespringer",
      "type": "moebel",
      "x": 640,
@@ -18127,7 +17989,7 @@
      ]
     },
     {
-     "id": 261,
+     "id": 255,
      "name": "rvLaubbaumDunkel",
      "type": "moebel",
      "x": 768,
@@ -18150,7 +18012,7 @@
      ]
     },
     {
-     "id": 262,
+     "id": 256,
      "name": "rvLaubbaum",
      "type": "moebel",
      "x": 832,
@@ -18173,7 +18035,7 @@
      ]
     },
     {
-     "id": 263,
+     "id": 257,
      "name": "wg4Busch",
      "type": "moebel",
      "x": 288,
@@ -18196,7 +18058,7 @@
      ]
     },
     {
-     "id": 264,
+     "id": 258,
      "name": "wg4Busch",
      "type": "moebel",
      "x": 800,
@@ -18219,7 +18081,7 @@
      ]
     },
     {
-     "id": 265,
+     "id": 259,
      "name": "wg4Busch",
      "type": "moebel",
      "x": 1088,
@@ -18242,7 +18104,7 @@
      ]
     },
     {
-     "id": 266,
+     "id": 260,
      "name": "sb5SchildPerfectMove",
      "type": "moebel",
      "x": 608,
@@ -18265,7 +18127,7 @@
      ]
     },
     {
-     "id": 267,
+     "id": 261,
      "name": "gc7Absperrbock",
      "type": "moebel",
      "x": 688,
@@ -18288,13 +18150,151 @@
      ]
     },
     {
-     "id": 268,
+     "id": 262,
      "name": "rvPicknicktisch",
      "type": "moebel",
      "x": 576,
      "y": 816,
      "width": 32,
      "height": 32,
+     "rotation": 0,
+     "visible": true,
+     "properties": [
+      {
+       "name": "tiefe",
+       "type": "int",
+       "value": 840
+      },
+      {
+       "name": "kollision",
+       "type": "bool",
+       "value": true
+      }
+     ]
+    },
+    {
+     "id": 263,
+     "name": "rv9Bildschirmtisch",
+     "type": "moebel",
+     "x": 368,
+     "y": 752,
+     "width": 48,
+     "height": 48,
+     "rotation": 0,
+     "visible": true,
+     "properties": [
+      {
+       "name": "tiefe",
+       "type": "int",
+       "value": 792
+      },
+      {
+       "name": "kollision",
+       "type": "bool",
+       "value": true
+      }
+     ]
+    },
+    {
+     "id": 264,
+     "name": "rv9Bildschirmtisch",
+     "type": "moebel",
+     "x": 432,
+     "y": 752,
+     "width": 48,
+     "height": 48,
+     "rotation": 0,
+     "visible": true,
+     "properties": [
+      {
+       "name": "tiefe",
+       "type": "int",
+       "value": 792
+      },
+      {
+       "name": "kollision",
+       "type": "bool",
+       "value": true
+      }
+     ]
+    },
+    {
+     "id": 265,
+     "name": "rv9Bildschirmtisch",
+     "type": "moebel",
+     "x": 496,
+     "y": 752,
+     "width": 48,
+     "height": 48,
+     "rotation": 0,
+     "visible": true,
+     "properties": [
+      {
+       "name": "tiefe",
+       "type": "int",
+       "value": 792
+      },
+      {
+       "name": "kollision",
+       "type": "bool",
+       "value": true
+      }
+     ]
+    },
+    {
+     "id": 266,
+     "name": "rv9Bildschirmtisch",
+     "type": "moebel",
+     "x": 368,
+     "y": 800,
+     "width": 48,
+     "height": 48,
+     "rotation": 0,
+     "visible": true,
+     "properties": [
+      {
+       "name": "tiefe",
+       "type": "int",
+       "value": 840
+      },
+      {
+       "name": "kollision",
+       "type": "bool",
+       "value": true
+      }
+     ]
+    },
+    {
+     "id": 267,
+     "name": "rv9Bildschirmtisch",
+     "type": "moebel",
+     "x": 432,
+     "y": 800,
+     "width": 48,
+     "height": 48,
+     "rotation": 0,
+     "visible": true,
+     "properties": [
+      {
+       "name": "tiefe",
+       "type": "int",
+       "value": 840
+      },
+      {
+       "name": "kollision",
+       "type": "bool",
+       "value": true
+      }
+     ]
+    },
+    {
+     "id": 268,
+     "name": "rv9Bildschirmtisch",
+     "type": "moebel",
+     "x": 496,
+     "y": 800,
+     "width": 48,
+     "height": 48,
      "rotation": 0,
      "visible": true,
      "properties": [

@@ -7,7 +7,6 @@ und eine Vorschau mit Möbeln und Figuren für die Bildprüfung.
 Aufruf: ``python -m pipeline.abenteuer.kartenbild PRIVAT VORSCHAUORDNER inhalte/abenteuer/szenen/*.json``
 """
 
-import re
 import sys
 from pathlib import Path
 
@@ -21,7 +20,7 @@ from pipeline.abenteuer.katalog import katalogbefund, katalogeintraege
 from pipeline.abenteuer.klippe import grasboden, klippenfeld, strassenzeichen, treppenfeld
 from pipeline.abenteuer.moebelliste import lade_moebel
 from pipeline.abenteuer.randspur import randluecken
-from pipeline.abenteuer.winter import winterlich
+from pipeline.abenteuer.winter import ist_winter, winterbefunde, winterlich
 from pipeline.abenteuer.zusammenhang import HOLZ
 from pipeline.abenteuer.zustaende import zustandsname
 
@@ -337,23 +336,6 @@ def randhang(x: int, y: int, zeilen: list[str], flaeche: dict) -> tuple[int, int
     breite = len(zeilen[0])
     nachbar = (1, y) if x == 0 else (breite - 2, y) if x == breite - 1 else None
     return nachbar if nachbar in flaeche else None
-
-
-def ist_winter(szene: dict) -> bool:
-    """Szene im Winterzustand (``"jahreszeit": "winter"``, Entscheidung 10.11.2026)."""
-    return szene.get("jahreszeit") == "winter"
-
-
-# Blumen und Pilze bleiben beim Umfärben bunt; in Winterszenen kommen sie weg (Entscheidung Winter).
-BLUEHT = re.compile(r"blume|pilz(?!kiosk)", re.I)
-
-
-def winterbefunde(szene: dict) -> list[str]:
-    """Blumen und Pilze in einer Winterszene (sie gehören weg); sonst nichts."""
-    if not ist_winter(szene):
-        return []
-    namen = sorted({o["moebel"] for o in szene.get("objekte", []) if BLUEHT.search(o.get("moebel", ""))})
-    return [f"{n}: Blumen und Pilze gehören nicht in eine Winterszene" for n in namen]
 
 
 def bildname(szene: dict) -> tuple[str, bool]:

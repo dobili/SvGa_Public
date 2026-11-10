@@ -8,7 +8,8 @@ Dachkante. Größe, Tür und Schaufenster bleiben gleich (128 × 144, Tür x 16�
 deshalb ändern sich in den Szenen weder Lage noch Übergänge, nur die Bildquelle der Möbel.
 
 Bilder (128 × 144): ``fassade_diner``, ``fassade_waschsalon``, ``fassade_rasthaus``,
-``fassade_cafe``, ``fassade_laden``, ``fassade_eisenwaren``.
+``fassade_cafe``, ``fassade_kramladen``, ``fassade_eisenwaren`` (nicht ``fassade_laden``: so heißt
+schon der Western-Laden von Ghost Town).
 
 Aufruf: ``python fassaden_zweck.py <Pfad zum privaten Repository>``. Liest die Vorlage aus
 ``modern-exteriors`` (nicht im öffentlichen Repository) und schreibt nach ``spiel/eigene/``.
@@ -56,7 +57,7 @@ ZWECKE = {
     "waschsalon": ((52, 112, 196), (236, 244, 252), 205, (246, 248, 252), (40, 90, 170), "WASCHSALON"),
     "rasthaus": ((52, 128, 72), (226, 220, 180), 95, (60, 96, 60), (246, 240, 210), "RASTHAUS"),
     "cafe": ((120, 78, 52), (232, 214, 182), 25, (92, 60, 44), (246, 230, 200), "CAFÉ"),
-    "laden": ((216, 168, 40), (250, 244, 220), 45, (246, 240, 220), (120, 80, 30), "LADEN"),
+    "kramladen": ((216, 168, 40), (250, 244, 220), 45, (246, 240, 220), (120, 80, 30), "LADEN"),
     "eisenwaren": ((167, 96, 74), (208, 190, 156), None, (70, 70, 94), (230, 230, 236), "EISENWAREN"),
 }
 

@@ -483,3 +483,36 @@ Die übrigen Akt-1-Punkte (Maple Falls, Weg 1, Cedar Creek) hat niedrig-1 ebenfa
 - Ein Eimer mit Fischen steht zufällig auf dem Kai.
 - Kisten und Fässer am Kai sind in Ordnung, wenn verladen wird. Dann aber in größerer Menge und
   geordnet, mit Ladebetrieb: Figuren, die arbeiten.
+
+### `siliconBay.lobby` (Wahl C)
+
+- Die Beschreibung nennt eine wartende Besuchergruppe am Empfang. Zu sehen ist nur eine einzelne
+  Figur.
+- Die Vitrine in der Mitte ist für die Geschichte wichtig, aber sie ist die einzige im Raum.
+- Der Tisch steht weit weg von der Sitzgruppe.
+- Unten rechts stehen zwei Pflanzen; der einzelne Blumentopf könnte woanders hin.
+- Drei Aufzüge sind in Ordnung, wenn das Gebäude mehrere Etagen hat.
+- Das größte Bild Mitte rechts mit Glasfront und Tür ist links und rechts abgeschnitten, wie aus
+  einem Gebäude oder Zug gerissen. Man kann um es herumgehen. Soll es der Empfang des
+  Besucherroboters sein? So sieht es nicht aus.
+
+### `siliconBay.serverraum` (Wahl A)
+
+- Am Tisch links scheinen die Bildschirme in der Luft zu schweben. Das Bild gehört wohl an eine
+  Wand: den Tisch nach oben an die Wand und einen der Server von dort unten in die Reihe stellen.
+- Sonst in Ordnung.
+
+## Ab hier: neuer Ablauf (Wunsch des Autors, 10.11.2026, 12:45)
+
+Der Autor hat etwa die Hälfte der Seite durch.
+
+1. Für alle Karten, die er gewählt hat, wird sein Feedback eingearbeitet (Runde 8).
+2. Aus seinem Feedback entsteht ein Prüfregelwerk (`docs/spiel/KARTENPRUEFUNG.md`), damit
+   die Fehler beim Bauen nicht mehr entstehen.
+3. Keine drei Varianten mehr für den Autor. Für die übrigen Karten wählt der Haupt-Chat die
+   sinnvollste Variante.
+4. Jede Karte bekommt ihre Zustände aus der Geschichte.
+5. Jedes fertige Bild prüft ein Gutachter Abschnitt für Abschnitt nach dem Prüfregelwerk; erst
+   danach sieht der Autor es.
+6. Zuerst kommen die Karten, die der Autor schon angesehen hat, mit allen Zuständen, auf eine neue
+   Seite.

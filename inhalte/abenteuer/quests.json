@@ -1107,7 +1107,10 @@
       "typ": "begegnung",
       "ort": "ironwood",
       "haupt": false,
-      "start": { "art": "ort", "karte": "ironwood.mamasZimmer" },
+      "start": {
+        "art": "ort",
+        "karte": "ironwood.mamasZimmer"
+      },
       "schritte": [
         {
           "text": "quest.turnierheft.schritt1",
@@ -2407,6 +2410,67 @@
             {
               "art": "muenzen",
               "anzahl": 30
+            }
+          ]
+        }
+      ]
+    },
+    {
+      "kennung": "wegDelacroixDesert.seilschaft",
+      "titel": "quest.seilschaft.titel",
+      "typ": "hilfe",
+      "ort": "wegDelacroixDesert",
+      "haupt": false,
+      "klein": true,
+      "start": {
+        "art": "dialog",
+        "knoten": "weg-delacroix-desert.seilschaft_start"
+      },
+      "schritte": [
+        {
+          "text": "quest.seilschaft.schritt1",
+          "ereignis": {
+            "art": "aufgaben",
+            "runde": "wegDelacroixDesert.seilschaft"
+          }
+        },
+        {
+          "text": "quest.seilschaft.schritt2",
+          "ereignis": {
+            "art": "dialog",
+            "knoten": "weg-delacroix-desert.seilschaft_ende"
+          },
+          "wirkungen": [
+            {
+              "art": "muenzen",
+              "anzahl": 20
+            }
+          ]
+        }
+      ]
+    },
+    {
+      "kennung": "sternwarte.koenigsangriff",
+      "titel": "quest.koenigsangriffSterne.titel",
+      "typ": "raetsel",
+      "ort": "sternwarte",
+      "haupt": false,
+      "klein": true,
+      "start": {
+        "art": "dialog",
+        "knoten": "sternwarte.ngata_angebot"
+      },
+      "schritte": [
+        {
+          "text": "quest.koenigsangriffSterne.schritt1",
+          "ereignis": {
+            "art": "aufgaben",
+            "runde": "sternwarte.sterne"
+          },
+          "wirkungen": [
+            {
+              "art": "muenzen",
+              "anzahl": 25
             }
           ]
         }

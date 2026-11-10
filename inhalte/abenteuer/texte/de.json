@@ -1309,5 +1309,22 @@
   "fehler.paket.pruefsumme": "Die Spieldatei {pfad} ist beschädigt. Bitte das Spiel neu laden.",
   "fehler.paket.ohneSpeicher": "Dieser Browser hat keinen Speicher für das Spielpaket.",
   "fehler.paket.datei": "Die Spieldatei {pfad} fehlt ({status}).",
-  "fehler.welt.karteFehlt": "Die Karte {karte} gibt es im Spiel nicht."
+  "fehler.welt.karteFehlt": "Die Karte {karte} gibt es im Spiel nicht.",
+  "fund.karabiner.name": "Karabiner",
+  "fund.karabiner.text": "Von Wren Okoro, nach der Partie in der Wand. Er hält mehr, als er wiegt.",
+  "fund.seite06.name": "Buchseite, Kapitel 6",
+  "fund.seite06.text": "Mittelspielstrategie. Eine Seite aus einem Handbuch, Kapitel 6.",
+  "fund.finchLaeuferB.name": "Weißer Läufer aus Buchsbaum",
+  "fund.finchLaeuferB.text": "Aus einem Felsspalt am Felsbogen, neben einem Finkenzeichen aus Kreide. Unter dem Fuß ist ein Feld eingebrannt.",
+  "figur.wren.name": "Wren Okoro",
+  "figur.ferris.name": "Sol Ferris",
+  "quest.seilschaft.titel": "Die Seilschaft",
+  "quest.seilschaft.schritt1": "Merk dir die Stellung aus der Wand und ruf Wren die Züge zu.",
+  "quest.seilschaft.schritt2": "Erzähl Wren, wie die Partie ausgegangen ist.",
+  "fund.finchBauerG.name": "Weißer Bauer aus Buchsbaum (G)",
+  "fund.finchBauerG.text": "Aus der Kuppel der Sternwarte, unter dem Finkenzeichen. Unter dem Fuß ist ein Feld eingebrannt.",
+  "figur.ngata.name": "Dr. Ngata",
+  "figur.lucia.name": "Lucía",
+  "quest.koenigsangriffSterne.titel": "Königsangriff unter Sternen",
+  "quest.koenigsangriffSterne.schritt1": "Löse Dr. Ngatas Mattbilder, bevor der Mond hinter dem Canyon versinkt."
 }

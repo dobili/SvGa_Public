@@ -243,6 +243,31 @@
       "ort": "portDelacroix",
       "name": "fund.setliste960.name",
       "text": "fund.setliste960.text"
+    },
+    {
+      "kennung": "karabiner",
+      "ort": "wegDelacroixDesert",
+      "name": "fund.karabiner.name",
+      "text": "fund.karabiner.text"
+    },
+    {
+      "kennung": "seite06",
+      "ort": "wegDelacroixDesert",
+      "name": "fund.seite06.name",
+      "text": "fund.seite06.text",
+      "muenzen": 5
+    },
+    {
+      "kennung": "finchLaeuferB",
+      "ort": "wegDelacroixDesert",
+      "name": "fund.finchLaeuferB.name",
+      "text": "fund.finchLaeuferB.text"
+    },
+    {
+      "kennung": "finchBauerG",
+      "ort": "sternwarte",
+      "name": "fund.finchBauerG.name",
+      "text": "fund.finchBauerG.text"
     }
   ]
 }

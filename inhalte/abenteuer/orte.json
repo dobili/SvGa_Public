@@ -1574,7 +1574,20 @@
           "innen": true
         }
       ],
-      "figuren": [],
+      "figuren": [
+        {
+          "kennung": "sternwarte.ngata",
+          "name": "figur.ngata.name",
+          "sprite": "figuren/ngata.png",
+          "dialog": "sternwarte.ngata"
+        },
+        {
+          "kennung": "sternwarte.lucia",
+          "name": "figur.lucia.name",
+          "sprite": "figuren/lucia.png",
+          "dialog": "sternwarte.lucia"
+        }
+      ],
       "ausloeser": [
         {
           "name": "start",
@@ -1606,6 +1619,36 @@
             "karte": "sternwarte.felsnase",
             "ausloeser": "kuppelTuer"
           }
+        },
+        {
+          "name": "teleskop",
+          "karte": "sternwarte.kuppel",
+          "art": "gegenstand",
+          "dialog": "sternwarte.teleskop"
+        },
+        {
+          "name": "sternkarte",
+          "karte": "sternwarte.kuppel",
+          "art": "gegenstand",
+          "dialog": "sternwarte.sternkarte"
+        },
+        {
+          "name": "finchBauerG",
+          "karte": "sternwarte.kuppel",
+          "art": "gegenstand",
+          "dialog": "sternwarte.fund_finch_bauer_g"
+        },
+        {
+          "name": "bank",
+          "karte": "sternwarte.felsnase",
+          "art": "dialog",
+          "dialog": "sternwarte.bank"
+        },
+        {
+          "name": "antennenmast",
+          "karte": "sternwarte.felsnase",
+          "art": "dialog",
+          "dialog": "sternwarte.antennenmast"
         }
       ]
     },
@@ -2538,9 +2581,29 @@
           }
         },
         {
+          "name": "ereignisSeilschaft",
+          "karte": "wegDelacroixDesert.felsbogen",
+          "art": "dialog",
+          "dialog": "weg-delacroix-desert.ereignis_seilschaft"
+        },
+        {
+          "name": "seite06",
+          "karte": "wegDelacroixDesert.felsbogen",
+          "art": "gegenstand",
+          "dialog": "weg-delacroix-desert.fund_seite06"
+        },
+        {
+          "name": "finchLaeuferB",
+          "karte": "wegDelacroixDesert.felsbogen",
+          "art": "gegenstand",
+          "dialog": "weg-delacroix-desert.fund_finch_laeufer_b"
+        },
+        {
           "name": "sternwarte",
           "karte": "wegDelacroixDesert.canyonpfad",
           "art": "uebergang",
+          "dialog": "weg-delacroix-desert.sternwarte_abzweig",
+          "wenn": "sternwarteOffen",
           "ziel": {
             "karte": "sternwarte.felsnase",
             "ausloeser": "zurueckCanyon"

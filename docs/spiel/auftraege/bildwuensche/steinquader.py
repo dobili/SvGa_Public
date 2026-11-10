@@ -29,9 +29,9 @@ def quader(z: ImageDraw.ImageDraw, x: int, y: int, b: int = 30, oben: int = 12, 
     z.rectangle((x + 1, y + 1, x + b - 2, y + oben - 1), fill=OBEN)
     z.line((x + 1, y + 1, x + b - 2, y + 1), fill=OBEN_HELL)
     z.rectangle((x + 1, y + oben, x + b - 2, y + oben + vorn - 2), fill=VORN)
-    for i in range(y + oben + 3, y + oben + vorn - 2, 4):        # Sägespuren
+    for i in range(y + oben + 3, y + oben + vorn - 2, 4):  # Sägespuren
         z.line((x + 2, i, x + b - 3, i), fill=VORN_DUNKEL)
-    for px, py in ((5, 4), (13, 7), (21, 3), (25, 8), (9, 9)):    # Körnung der Oberseite
+    for px, py in ((5, 4), (13, 7), (21, 3), (25, 8), (9, 9)):  # Körnung der Oberseite
         if px < b - 2 and py < oben - 1:
             z.point((x + px, y + py), fill=KORN)
 

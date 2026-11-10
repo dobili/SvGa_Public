@@ -2,7 +2,7 @@
   "karte": "ironwood.museum",
   "datei": "karten/ironwood-museum.json",
   "art": "innen",
-  "beschreibung": "Heimatmuseum im alten Bahnhof (Runde 8, Notiz 17): zwei Räume, 34 × 18. Die alte Schalterhalle mit dem Fahrkartenschalter an der Nordwand, drei hohen Fenstern und dem Fahrplan davor; dunkle Dielen, blauer Läufer auf ruhigen Dielen von der Tür bis vor das Pult von Mr. Teague. Zwei große Vitrinen mit Platz ringsum, an der Südseite eine Reihe gefüllter Vitrinen, darunter die Zeitung von 1858, eine alte Bahnlaterne und ein leeres Fach für Brief und Umschlag. Die Postsäcke von 1866 liegen als Ausstellungsstück auf dem Gepäckkarren. Durch einen Durchgang der Nebenraum über Werk und Stadt: alte Fotos an der Wand: Brückenbau, Werk, Bahnhof und Arbeiter, eine große Vitrine mit Bank davor und eine Reihe Schaukästen, darunter Werkzeug aus dem Werk und der Glasfunke. Bank, Infotafeln, Pflanzen. In der Halle zwei weitere alte Fotos zwischen den Fenstern.",
+  "beschreibung": "Heimatmuseum im alten Bahnhof (Runde 8, Notiz 17): zwei Räume, 34 × 18. Die alte Schalterhalle mit dem Fahrkartenschalter an der Nordwand, drei hohen Fenstern und dem Fahrplan davor; dunkle Dielen, blauer Läufer auf ruhigen Dielen von der Tür bis vor das Pult von Mr. Teague. Zwei große Vitrinen mit Platz ringsum, an der Südseite eine Reihe gefüllter Vitrinen, darunter die Zeitung von 1858, eine alte Bahnlaterne und ein leeres Fach für Brief und Umschlag. Die Postsäcke von 1866 liegen als Ausstellungsstück auf dem Gepäckkarren. Durch einen Durchgang der Nebenraum über Werk und Stadt: alte Fotos an der Wand: Brückenbau, Werk, Bahnhof und Arbeiter, eine große Vitrine mit Bank davor und eine Reihe Schaukästen, darunter Werkzeug aus dem Werk und der Glasfunke. Bank, Infotafeln, Pflanzen. In der Halle zwei weitere alte Fotos zwischen den Fenstern. Weitere Vitrinen zeigen ein Lokmodell, alte Fahrkarten und eine Schaffnermütze.",
   "wand": "creme",
   "boden": "fliesenGrau",
   "raster": [
@@ -50,7 +50,7 @@
       "feld": [19, 2]
     },
     {
-      "moebel": "mf8Lehrerpult",
+      "moebel": "pd9Lehrertisch",
       "feld": [14, 4],
       "id": "pult"
     },
@@ -59,7 +59,7 @@
       "feld": [16, 5]
     },
     {
-      "moebel": "iw8VitrineGross1",
+      "moebel": "iw9VitrineLokmodell",
       "feld": [3, 6]
     },
     {
@@ -75,7 +75,7 @@
       "feld": [5, 12]
     },
     {
-      "moebel": "iw8VitrineB",
+      "moebel": "iw9VitrineFahrkarten",
       "feld": [14, 12]
     },
     {
@@ -128,7 +128,7 @@
       "an_wand": true
     },
     {
-      "moebel": "iw8VitrineC",
+      "moebel": "iw9VitrineMuetze",
       "feld": [27, 6]
     },
     {

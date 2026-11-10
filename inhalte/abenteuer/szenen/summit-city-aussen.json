@@ -202,28 +202,12 @@
       "feld": [61, 39]
     },
     {
-      "moebel": "wds6PinieB",
-      "feld": [19, 8]
-    },
-    {
-      "moebel": "wds6PinieB",
-      "feld": [7, 8]
-    },
-    {
-      "moebel": "wds6PinieB",
-      "feld": [22, 9]
-    },
-    {
       "moebel": "wds6Pinie",
       "feld": [2, 42]
     },
     {
       "moebel": "wds6PinieB",
       "feld": [13, 36]
-    },
-    {
-      "moebel": "wds6Kegelbaum",
-      "feld": [16, 8]
     },
     {
       "moebel": "wds6Kegelbaum",
@@ -266,8 +250,8 @@
       "feld": [58, 49]
     },
     {
-      "moebel": "pd6HausRot",
-      "feld": [70, 52]
+      "moebel": "pw7Kiosk",
+      "feld": [70, 51]
     },
     {
       "moebel": "sc8Hof",
@@ -278,8 +262,8 @@
       "feld": [18, 33]
     },
     {
-      "moebel": "pd6HausGruen",
-      "feld": [46, 52]
+      "moebel": "cp8Schuppen",
+      "feld": [46, 50]
     },
     {
       "moebel": "sc8Stall",
@@ -450,6 +434,26 @@
     {
       "moebel": "scFelsGross",
       "feld": [9, 6]
+    },
+    {
+      "moebel": "scFelsGross",
+      "feld": [6, 8]
+    },
+    {
+      "moebel": "scFelsMittel",
+      "feld": [16, 8]
+    },
+    {
+      "moebel": "scFelsGross",
+      "feld": [19, 10]
+    },
+    {
+      "moebel": "scFelsMittel",
+      "feld": [22, 7]
+    },
+    {
+      "moebel": "scFelsKlein",
+      "feld": [14, 11]
     }
   ],
   "ausloeser": [

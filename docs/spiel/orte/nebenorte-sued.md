@@ -150,3 +150,6 @@ kein Springer; der Karton ohne Grund ist weg. Die Dielen sind das Material des K
 
 **Gemini-Bilder (10.11.2026):** In der Kuppel steht das Messingfernrohr auf seiner Säule mit dem
 Beobachterstuhl, links ein Tisch mit aufgeschlagenem Sternatlas statt Anrichte und Globus.
+
+**Restpunkt Kuppel (10.11.2026):** Der Kuppelspalt ist ein eigenes Bild mit Schienen und Nachthimmel
+(Bildwunsch `bildwuensche/kuppelspalt.py`).

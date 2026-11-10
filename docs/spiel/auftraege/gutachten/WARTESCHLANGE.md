@@ -117,3 +117,6 @@ Szene heißt die Datei in `inhalte/abenteuer/szenen/` ohne `.json`.
 - [x] weg-riverton-ironwood-2 mit Zustand ohne-tische: Eisenbrücke mit Höhe (Gemini-Bild), Querung über den Nord-Süd-Arm (mittel-4)
 - [x] ironwood-museum, ironwood-umkleide, sternwarte-kuppel: Gemini-Bilder eingebaut (mittel-4)
 - [x] Runde-9-Karten nach dem Gutachten (summit-city-aussen, -bergstation, -bergladen, hochebene-felsentuerme, -schule, sternwarte-felsnase, weg-desert-summit-bergstrasse, -diner, weg-delacroix-desert-canyonpfad, -felsbogen) (mittel-4)
+
+- [ ] weg-riverton-ironwood-2 (+ ohne-tische), ironwood-museum, ironwood-umkleide, sternwarte-kuppel: Restpunkte des Nachtrags (mittel-4)
+- [ ] summit-city-aussen, hochebene-felsentuerme, weg-desert-summit-bergstrasse, weg-delacroix-desert-canyonpfad, weg-delacroix-desert-felsbogen: Restpunkte Runde 9, zweite Prüfung (mittel-4)

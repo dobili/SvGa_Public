@@ -50,7 +50,7 @@ def lore() -> Image.Image:
     """Kipplore von oben schräg: Kasten 14 × 14 über den Rädern, oben Bruchsteine."""
     bild = Image.new("RGBA", (K, 24))
     z = ImageDraw.Draw(bild)
-    for y in (6, 18):                                   # Räder auf den Schienen
+    for y in (6, 18):  # Räder auf den Schienen
         for x in (LINKS, RECHTS):
             z.rectangle((x - 1, y, x + 2, y + 4), fill=RAND)
     z.rectangle((1, 2, K - 2, 20), fill=RAND)
@@ -78,8 +78,12 @@ def prellbock() -> Image.Image:
 def main() -> None:
     ziel = Path(sys.argv[1] if len(sys.argv) > 1 else ".")
     ziel.mkdir(parents=True, exist_ok=True)
-    for name, bauer in (("feldbahn_laengs", laengs), ("feldbahn_quer", quer), ("lore_laengs", lore),
-                        ("prellbock_feldbahn", prellbock)):
+    for name, bauer in (
+        ("feldbahn_laengs", laengs),
+        ("feldbahn_quer", quer),
+        ("lore_laengs", lore),
+        ("prellbock_feldbahn", prellbock),
+    ):
         bauer().save(ziel / f"{name}.png")
     print("Feldbahn nach", ziel)
 

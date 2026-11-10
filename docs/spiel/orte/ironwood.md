@@ -813,3 +813,9 @@ Gutachten `ironwood-aussen-2.md`, `ironwood-kantine-3.md`, `ironwood-innen-2.md`
 statt der Kunstdrucke (Nebenraum) und zwei weitere zwischen den Fenstern der Halle. In der Umkleide
 stehen Bänke ohne Lehne und ein Haken mit Jacke und Schutzhelm. Damit sind „Parkbänke“, „Kunstdrucke“
 und „Brückenfoto unleserlich“ aus den Gutachten erledigt.
+
+**Restpunkte (Gutachten `mittel-4-nachtrag.md`, 10.11.2026):** Museum: statt der drei Vitrinen mit
+grauem Inhalt ein Lokmodell, alte Fahrkarten und eine Schaffnermütze (Bildwunsch
+`museum_vitrinen.py`, erweitert), Pult von vorn. Umkleide: hoher Metallschrank als Doppelspind,
+Trennwand schließt den Spalt, Mülleimer an der Westwand. Nicht umgesetzt: **Läufer** – es gibt nur die
+zwei Teppichmaterialien mit Muster; **„TICKET“** – Bild des Pakets.

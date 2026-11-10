@@ -361,3 +361,6 @@ Gutachten `gutachten/wege-mittel-4-runde9.md` und `gutachten/weg-desert-summit-h
   bräuchte Kurvenkacheln; die Straße läuft durch einen Einschnitt in den Stufen.
 - **Diner:** echtes Autowrack (4 × 4) hinter der Tankstelle statt des kleinen heilen Autos, auch im
   Zustand neonRepariert. Nicht umgesetzt: **Bordstein** – die weißen Randlinien begrenzen die Fahrbahn.
+
+**Restpunkte Bergstraße (10.11.2026):** Die Mittellinie läuft durchgezogen durch die Kehren
+(`strasse.py`, `_kehren`); wo die Straße eine Felsstufe schneidet, fassen Stützmauern den Einschnitt.

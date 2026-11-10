@@ -384,3 +384,9 @@ Gutachten `gutachten/summit-city.md` und `gutachten/hochebene-sternwarte.md`.
   `belebungsbilder.py`.
 - **Schule:** Der Schulbus steht in der Bucht am Hof, nicht quer über der Straße (10.65); im Zustand
   „vor-diplom“ stehen Annek und die Kinder nicht mehr am leeren Platz der Steintische.
+
+**Restpunkte (Gutachten `mittel-4-runde9-2.md`, 10.11.2026):** Summit City: auf den Gipfelfelsen
+Felsbrocken statt Tannen; die zwei kleinen Häuser im Süden sind Schuppen und Kiosk (10.66). Felstürme:
+Weg als Piste mit Rand und Schrägen an den Bögen (Material `pisteRot` von mittel-2); unter der
+Südstufe liegt tieferer Boden, so zeigt sie ihre Felswand. Nicht umgesetzt: **Esel** – für „pferd“
+gibt es kein Tierbild (es fällt auf den Esel zurück); als Gemini-Bild gemeldet.

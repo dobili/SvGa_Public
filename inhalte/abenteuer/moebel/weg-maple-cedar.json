@@ -706,6 +706,15 @@
       "art": "boden",
       "zustand": "gebraucht",
       "stil": "laendlich"
+    },
+    "wg9SturmholzFlach": {
+      "quelle": "modern-exteriors/Modern_Exteriors_16x16/ME_Theme_Sorter_16x16/7_Villas_Singles_16x16/ME_Singles_Villas_16x16_Villa_Yard_Props_19.png",
+      "breite": 32,
+      "hoehe": 16,
+      "kollision": false,
+      "art": "deko",
+      "zustand": "alt",
+      "stil": "natur"
     }
   }
 }

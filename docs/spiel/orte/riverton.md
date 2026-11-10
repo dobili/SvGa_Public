@@ -1414,3 +1414,55 @@ und Büsche am Hang, Hase entfernt.
   in der Schrägansicht mitzeigt.
 - **Gefüllt nach dem Verbreitern:** drei Wohnhäuser mit Gärten am Nordufer, drei an der mittleren
   Reihe, zwei in der Südreihe. Der Dorfplatz ist wieder 12 Kacheln breit.
+
+## Zweites Gutachten Runde 8: Antworten (niedrig-1, 10.11.2026)
+
+Gutachten `docs/spiel/auftraege/gutachten/lockport-2.md` und `weg-cedar-riverton-2.md`. Der
+Gutachter sah noch den Frachtkahn 6 × 3. Seit 3e2bf4af misst der Kahn 24 × 5, die Kammer ist 28 lang.
+
+**Lockport außen:**
+
+- **Spielzeughäuser (Regel 10.66):** Alle 18 Häuser von 4–5 × 4 sind weg. Es gibt keine Wohnhausbilder
+  ab 5 × 5 außer den Blockhütten A und B, der Holzfällerhütte (alle 5 × 5) und dem Blockhaus
+  (8 × 7). Diese stehen je zweimal an Nordufer und mittlerer Reihe. Die übrigen Plätze sind Gärten mit
+  Gartenhäusern von mittel-1. In der Südreihe steht die Bäckerei.
+- **Tore mit einem Flügel und ohne Laufsteg:** Das Stemmtor ist im Bildwunsch neu gezeichnet: zwei
+  breite Flügel im V und darüber über die ganze Länge ein Bohlensteg mit Geländer.
+- **Eisenwaren statt Schiffsausrüster:** Der Kramladen trägt jetzt das Schild „ANKER TAUE“.
+- **Ruderboot:** Henriks Boot ist ein Holzruderboot (Boat 1), 4 × 2, im Oberwasser. Ein Motorboot
+  gibt es nicht mehr.
+- **Uferweg doppelt:** Erdweg und Pflaster sind jetzt ein gepflasterter Kai.
+- **Rätseltafel im Gras zwischen Häusern:** Sie steht vor dem Haus der Schleusenwärterin.
+- **Bank vom Brunnen weg:** Sie steht jetzt nördlich des Brunnens und schaut zu ihm.
+- **Wasserstand in Kammer und Becken gleich:** Es gibt keine Kacheln für verschiedene Wasserstände.
+
+**Gasthaus:**
+
+- **Prallbretter wie ein Holzstapel:** Ein Kugelfang (Bildwunsch `kugelfang.png`: Bohlen,
+  Lederpolster, Gummimatte) steht direkt am Bahnende.
+- **Ofen nicht erkennbar:** Es ist jetzt der Kanonenofen aus der Siedlungshütte, vor der Wand.
+- **Foto eine graue Platte:** Dort hängt jetzt ein gerahmtes Bild.
+- **Fassgruppen ohne Grund:** Es bleiben nur die Bierfässer hinter der Theke; Milchkanne weg.
+- **Leere Mitte:** Dort steht ein sechster Tisch mit Gläsern.
+- **Kegler mit dem Rücken zur Bahn:** Er steht am Bahnanfang.
+
+**Bahndamm:**
+
+- **Abstellgleis ohne Weiche, Güterwagen quer und zu kurz:** Abstellgleis, Prellbock und Wagen sind
+  weg. 15_Routen_Ereignisse nennt den Güterwagen mit Katze nur als Belebung bei der Vorbeifahrt eines
+  Zuges, nicht als abgestellten Wagen.
+- **Keine Nordböschung:** Die Krone hat vier Reihen (6–9), das Gleis liegt mittig. Nördlich davon
+  zeigt ein Streifen dunkleren Grases mit heller Kante die Böschung, die vom Betrachter wegfällt
+  (Bildwunsch `boeschung_nord.png`).
+- **Bänke vom Gleis weg:** Der Bahnsteig ist drei Reihen tief. Die Bänke stehen längs zum Gleis
+  (Seitenansicht), weil es keine Bank von hinten gibt.
+
+**Zedernwald:**
+
+- **Bach im Osten breit und gerade:** Er ist dort jetzt zwei Kacheln schmal und gewunden. Die Brücke
+  ist vier statt fünf Kacheln lang.
+- **Trittsteine am Ufer:** Je Feld liegt ein Stein, ins Wasser gerückt. Der Abzweig führt weiter nach
+  Norden zu einer Bank.
+- **Fahnenmast auf großem Sockel:** Es ist jetzt eine schlichte Fahne, daneben eine Feuerstelle.
+- **Ziegen statt Rehe:** Die Szene nennt Reh und Hirsch. Welches Bild ein Tier bekommt, legt die
+  gemeinsame Tierzuordnung (`tierarten.json`) fest; Wunsch an den Haupt-Chat.

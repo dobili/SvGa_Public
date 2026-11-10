@@ -56,6 +56,8 @@ Szene heißt die Datei in `inhalte/abenteuer/szenen/` ohne `.json`.
 - [ ] steinbruch-grube (dritte Prüfung, jetzt mit Felskanten; `steinbruch-grube-3.md`), steinbruch-stollen (zweite Prüfung; `steinbruch-stollen-2.md`)
 - [ ] riverton-aussen und die vier Innenräume (dritte Prüfung, mittel-3; Bahnhof mit Uhrturm, Glastüren; Bilder privat ab c0febaac; Dateien `riverton-aussen-3.md`, `riverton-innen-3.md`)
 
+- [ ] lockport-aussen, lockport-gasthaus, weg-cedar-riverton-bahndamm, -zedernwald, maple-falls-aussen, maple-falls-park, cedar-creek-aussen, weg-maple-cedar-flussweg, -landstrasse, -zedernpfad (dritte Prüfung, niedrig-1; Antworten in riverton.md, maple-falls.md, cedar-creek.md, Abschnitt „Zweites Gutachten Runde 8“; Bilder aus `niedrig1_runde9_karten.py` und das neue Stemmtor erst rendern)
+
 ## Erledigt
 
 - [x] ironwood-kantine (Test, Haupt-Chat)

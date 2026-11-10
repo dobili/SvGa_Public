@@ -1010,6 +1010,86 @@
         "bis": "78,14",
         "verhalten": "ausweichen"
       }
+    },
+    {
+      "name": "pilzsammlerin",
+      "typ": "statist",
+      "feld": [14, 19],
+      "eigenschaften": {
+        "tun": "sucht Pilze unter den Zedern",
+        "wann": "morgen",
+        "von": "12,19",
+        "bis": "22,19",
+        "sagt": "statist.wegMapleCedar.zedernpfad.pilzsammlerin"
+      }
+    },
+    {
+      "name": "foersterin",
+      "typ": "statist",
+      "feld": [30, 12],
+      "eigenschaften": {
+        "tun": "markiert kranke Bäume mit Kreide",
+        "wann": "tag",
+        "sagt": "statist.wegMapleCedar.zedernpfad.foersterin"
+      }
+    },
+    {
+      "name": "landschaftsmaler",
+      "typ": "statist",
+      "feld": [55, 6],
+      "eigenschaften": {
+        "tun": "malt die Zedern auf eine kleine Leinwand",
+        "wann": "tag",
+        "sagt": "statist.wegMapleCedar.zedernpfad.landschaftsmaler"
+      }
+    },
+    {
+      "name": "kinderMitZapfen",
+      "typ": "statist",
+      "feld": [45, 11],
+      "eigenschaften": {
+        "tun": "sammeln Zapfen in einen Eimer",
+        "wann": "tag",
+        "von": "45,11",
+        "bis": "47,9"
+      }
+    },
+    {
+      "name": "reh",
+      "typ": "tier",
+      "feld": [60, 15],
+      "eigenschaften": {
+        "verhalten": "sitzen"
+      }
+    },
+    {
+      "name": "kraehen",
+      "typ": "tier",
+      "feld": [20, 8],
+      "eigenschaften": {
+        "verhalten": "fliegen",
+        "von": "20,8",
+        "bis": "30,8"
+      }
+    },
+    {
+      "name": "hase",
+      "typ": "tier",
+      "feld": [85, 15],
+      "eigenschaften": {
+        "verhalten": "ausweichen",
+        "von": "83,15",
+        "bis": "90,15"
+      }
+    },
+    {
+      "name": "eule",
+      "typ": "tier",
+      "feld": [40, 3],
+      "eigenschaften": {
+        "verhalten": "sitzen",
+        "wann": "nacht"
+      }
     }
   ]
 }

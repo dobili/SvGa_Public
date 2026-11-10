@@ -308,10 +308,29 @@
       "typ": "statist",
       "feld": [3, 13],
       "eigenschaften": {
-        "von": "3,13",
-        "bis": "9,13",
-        "tun": "trägt einen Bücherstapel",
-        "wann": "tag"
+        "tun": "liest in einem alten Buch",
+        "wann": "tag",
+        "sagt": "statist.cedarCreek.bibliothek.leserin"
+      }
+    },
+    {
+      "name": "student",
+      "typ": "statist",
+      "feld": [14, 9],
+      "eigenschaften": {
+        "tun": "schreibt an einer Hausarbeit",
+        "wann": "tag",
+        "sagt": "statist.cedarCreek.bibliothek.student"
+      }
+    },
+    {
+      "name": "rentnerZeitung",
+      "typ": "statist",
+      "feld": [8, 11],
+      "eigenschaften": {
+        "tun": "blättert in den Zeitungen",
+        "wann": "tag",
+        "sagt": "statist.cedarCreek.bibliothek.rentnerZeitung"
       }
     }
   ],

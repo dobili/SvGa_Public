@@ -37,10 +37,10 @@ Szene heißt die Datei in `inhalte/abenteuer/szenen/` ohne `.json`.
 - [x] riverton-bahnhofshalle, riverton-pavillon, riverton-wohnwagen, riverton-schuppen (zweite Prüfung, mittel-3, eine Datei `riverton-innen-2.md`)
 - [x] maple-falls-clubraum (dritte Prüfung, mittel-1, Datei `maple-falls-clubraum-3.md`)
 
-- [ ] silicon-bay-akademie (zweite Prüfung, mittel-3; Bilder privat ab a579b56c; Datei `silicon-bay-akademie-2.md`)
-- [ ] silicon-bay-altstadt (zweite Prüfung, jetzt Winter, mittel-3; Datei `silicon-bay-altstadt-2.md`)
-- [ ] lockport-aussen, lockport-gasthaus (zweite Prüfung, niedrig-1; Antworten in den Ortsdokumenten, Abschnitt „Gutachten Runde 8: Antworten“)
-- [ ] weg-cedar-riverton-bahndamm, weg-cedar-riverton-zedernwald (zweite Prüfung, niedrig-1)
+- [x] silicon-bay-akademie (zweite Prüfung, mittel-3; Bilder privat ab a579b56c; Datei `silicon-bay-akademie-2.md`)
+- [x] silicon-bay-altstadt (zweite Prüfung, jetzt Winter, mittel-3; Datei `silicon-bay-altstadt-2.md`)
+- [x] lockport-aussen, lockport-gasthaus (zweite Prüfung, niedrig-1; Datei `lockport-2.md`; Antworten in den Ortsdokumenten, Abschnitt „Gutachten Runde 8: Antworten“)
+- [x] weg-cedar-riverton-bahndamm, weg-cedar-riverton-zedernwald (zweite Prüfung, niedrig-1; Datei `weg-cedar-riverton-2.md`)
 - [ ] maple-falls-aussen, maple-falls-park, cedar-creek-aussen (zweite Prüfung, niedrig-1)
 - [ ] weg-maple-cedar-flussweg, -landstrasse, -zedernpfad (zweite Prüfung, niedrig-1; eine Datei `weg-maple-cedar-2.md`)
 - [ ] Zustände aus Runde 8 (`python -m pipeline.abenteuer.zustaende`): je Grundkarte eine kurze Prüfung, ob der Zustand zur Beschreibung „Zustand: …“ passt; eine Datei `zustaende-runde8.md`

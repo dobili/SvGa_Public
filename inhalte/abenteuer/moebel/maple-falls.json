@@ -2853,6 +2853,36 @@
       "art": "geraet",
       "zustand": "gebraucht",
       "stil": "klassisch"
+    },
+    "mf8KulisseHausBlau": {
+      "quelle": "spiel/serene/serene_77.png",
+      "breite": 80,
+      "hoehe": 64,
+      "kollision": true,
+      "art": "gebaeude",
+      "zustand": "gebraucht",
+      "stil": "klassisch",
+      "blick": "unten"
+    },
+    "mf8KulisseHausRot": {
+      "quelle": "spiel/serene/serene_52.png",
+      "breite": 80,
+      "hoehe": 64,
+      "kollision": true,
+      "art": "gebaeude",
+      "zustand": "gebraucht",
+      "stil": "klassisch",
+      "blick": "unten"
+    },
+    "mf8KulisseHausKlein": {
+      "quelle": "spiel/serene/serene_47.png",
+      "breite": 48,
+      "hoehe": 64,
+      "kollision": true,
+      "art": "gebaeude",
+      "zustand": "gebraucht",
+      "stil": "klassisch",
+      "blick": "unten"
     }
   }
 }

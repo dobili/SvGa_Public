@@ -102,10 +102,6 @@
       "feld": [29, 9]
     },
     {
-      "moebel": "mf4Busch",
-      "feld": [34, 10]
-    },
-    {
       "moebel": "mf4BuschKlein",
       "feld": [31, 12]
     },
@@ -567,10 +563,6 @@
       "feld": [12, 34]
     },
     {
-      "moebel": "mf4Busch",
-      "feld": [14, 37]
-    },
-    {
       "moebel": "mf4BuschKlein",
       "feld": [28, 38]
     },
@@ -850,6 +842,18 @@
     {
       "moebel": "mf4BuschKlein",
       "feld": [60, 32]
+    },
+    {
+      "moebel": "mf8KulisseHausRot",
+      "feld": [12, 37]
+    },
+    {
+      "moebel": "mf8KulisseHausBlau",
+      "feld": [33, 10]
+    },
+    {
+      "moebel": "mf8KulisseHausKlein",
+      "feld": [36, 5]
     }
   ],
   "ausloeser": [
@@ -901,10 +905,11 @@
       "typ": "statist",
       "feld": [6, 24],
       "eigenschaften": {
+        "tun": "trägt Briefe aus",
+        "wann": "morgen",
         "von": "6,24",
         "bis": "30,24",
-        "tun": "trägt Briefe aus",
-        "wann": "morgen"
+        "sagt": "statist.mapleFalls.aussen.brieftraegerin"
       }
     },
     {
@@ -912,10 +917,11 @@
       "typ": "statist",
       "feld": [23, 9],
       "eigenschaften": {
+        "tun": "harkt Laub im Garten",
+        "wann": "tag",
         "von": "23,9",
         "bis": "25,9",
-        "tun": "harkt Laub im Garten",
-        "wann": "tag"
+        "sagt": "statist.mapleFalls.aussen.laubharker"
       }
     },
     {
@@ -923,10 +929,11 @@
       "typ": "statist",
       "feld": [55, 39],
       "eigenschaften": {
+        "tun": "spielt Ball auf dem Spielplatz",
+        "wann": "tag",
         "von": "51,39",
         "bis": "60,39",
-        "tun": "spielt Ball auf dem Spielplatz",
-        "wann": "tag"
+        "sagt": "statist.mapleFalls.aussen.kindMitBall"
       }
     },
     {
@@ -947,6 +954,121 @@
         "von": "4,24",
         "bis": "4,24",
         "verhalten": "sitzen"
+      }
+    },
+    {
+      "name": "kellnerin",
+      "typ": "statist",
+      "feld": [36, 24],
+      "eigenschaften": {
+        "tun": "macht Pause vor dem Diner",
+        "wann": "tag",
+        "sagt": "statist.mapleFalls.aussen.kellnerin"
+      }
+    },
+    {
+      "name": "rentnerHaltestelle",
+      "typ": "statist",
+      "feld": [56, 24],
+      "eigenschaften": {
+        "tun": "wartet an der Haltestelle auf den Bus",
+        "wann": "tag",
+        "sagt": "statist.mapleFalls.aussen.rentnerHaltestelle"
+      }
+    },
+    {
+      "name": "hundebesitzerin",
+      "typ": "statist",
+      "feld": [4, 28],
+      "eigenschaften": {
+        "tun": "geht mit dem Hund spazieren",
+        "wann": "tag",
+        "von": "4,28",
+        "bis": "46,28",
+        "sagt": "statist.mapleFalls.aussen.hundebesitzerin"
+      }
+    },
+    {
+      "name": "schuelerin",
+      "typ": "statist",
+      "feld": [47, 24],
+      "eigenschaften": {
+        "tun": "geht von der Schule nach Hause",
+        "wann": "tag",
+        "von": "47,24",
+        "bis": "20,24",
+        "sagt": "statist.mapleFalls.aussen.schuelerin"
+      }
+    },
+    {
+      "name": "lehrer",
+      "typ": "statist",
+      "feld": [46, 23],
+      "eigenschaften": {
+        "tun": "steht vor der Schule und schaut auf die Uhr",
+        "wann": "morgen",
+        "sagt": "statist.mapleFalls.aussen.lehrer"
+      }
+    },
+    {
+      "name": "kinderKreide",
+      "typ": "statist",
+      "feld": [61, 34],
+      "eigenschaften": {
+        "tun": "malt mit Kreide ein Brett auf den Boden",
+        "wann": "tag",
+        "sagt": "statist.mapleFalls.aussen.kinderKreide"
+      }
+    },
+    {
+      "name": "joggerin",
+      "typ": "statist",
+      "feld": [2, 41],
+      "eigenschaften": {
+        "tun": "joggt die Gasse hinter den Gärten entlang",
+        "wann": "morgen",
+        "von": "2,41",
+        "bis": "60,41"
+      }
+    },
+    {
+      "name": "maler",
+      "typ": "statist",
+      "feld": [9, 24],
+      "eigenschaften": {
+        "tun": "streicht den Gartenzaun",
+        "wann": "tag"
+      }
+    },
+    {
+      "name": "frauMitEinkauf",
+      "typ": "statist",
+      "feld": [26, 30],
+      "eigenschaften": {
+        "tun": "trägt Einkaufstaschen nach Hause",
+        "wann": "tag",
+        "von": "26,30",
+        "bis": "26,40"
+      }
+    },
+    {
+      "name": "hund",
+      "typ": "tier",
+      "feld": [5, 28],
+      "eigenschaften": {
+        "verhalten": "folgen",
+        "von": "5,28",
+        "bis": "46,28"
+      }
+    },
+    {
+      "name": "tauben",
+      "typ": "tier",
+      "feld": [52, 24],
+      "eigenschaften": {
+        "verhalten": "fliegen",
+        "von": "50,24",
+        "bis": "54,24"
       }
     }
   ],

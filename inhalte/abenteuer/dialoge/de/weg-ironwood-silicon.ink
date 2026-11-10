@@ -18,6 +18,10 @@ EXTERNAL beginneAufgaben(runde)
 EXTERNAL gibFund(kennung)
 
 VAR held = "Du"
+VAR buchseiten = 0
+VAR finchFiguren = 0
+VAR kreideTreffpunkte = 0
+VAR spurenPM = 0
 VAR wegIronwoodSiliconTafelBestanden = false
 VAR ausgangWegIronwoodSiliconJoggerin = ""
 VAR kowalczykGetroffen = false
@@ -132,6 +136,7 @@ Gratis. Natürlich. #sprecher:juno
 ~ ohrstoepselGefunden = true
 ~ gibFund("ohrstoepsel")
 ~ gibFund("spurPM2")
+~ spurenPM = spurenPM + 1
 Am Geländer klemmt ein winziger, schwarzer Ohrstöpsel. Er ist schwerer, als er aussieht. #sprecher:erzaehler
 Für einen Ohrstöpsel ist er sehr schwer. Behalte ihn, {held}. #sprecher:ambrose
 -> END
@@ -176,7 +181,7 @@ Hier, ein Foto vom Ringlicht, signiert. Der Chat mochte dich. #sprecher:kiki #st
 
 // ---------------------------------------------------------------- Sammelstellen an der Raststätte
 
-=== kreide_2 ===
+=== kreide2 ===
 {kreide2Gefunden:
     Der Kreidespringer am Container ist ein wenig verwischt. Das Wort darunter auch. #sprecher:erzaehler
     -> END
@@ -185,6 +190,7 @@ Hier, ein Foto vom Ringlicht, signiert. Der Chat mochte dich. #sprecher:kiki #st
 An der Wand des Containers hinter dem Rasthaus ist ein Springer aus Kreide gemalt. Darunter, ganz klein: „K2. Wer das Wort kennt, spielt mit.“ #sprecher:erzaehler
 Ein Club ohne Haus. Die besten Clubs, die ich kannte, hatten nur einen Tisch und einen Ofen. #sprecher:ambrose
 ~ gibFund("kreide2")
+~ kreideTreffpunkte = kreideTreffpunkte + 1
 -> END
 
 === finch_bauer_b ===
@@ -195,9 +201,10 @@ Ein Club ohne Haus. Die besten Clubs, die ich kannte, hatten nur einen Tisch und
 ~ finchBauerBGefunden = true
 Am Rand des Blumenkübels klebt ein kleiner Fink aus Blech. Zwischen den Stielen steckt ein weißer Bauer aus Buchsbaum. Unter seinem Fuß ist ein Feld eingebrannt. #sprecher:erzaehler
 ~ gibFund("finchBauerB")
+~ finchFiguren = finchFiguren + 1
 -> END
 
-=== seite_04 ===
+=== seite04 ===
 {seite04Gefunden:
     Hier lag die Buchseite. Der Wind hat nichts mehr dagelassen. #sprecher:erzaehler
     -> END
@@ -206,5 +213,6 @@ Am Rand des Blumenkübels klebt ein kleiner Fink aus Blech. Zwischen den Stielen
 Unter der Rätseltafel klemmt ein Blatt Papier, vom Wind hergeweht. Oben steht: Kapitel 4, „Das Fallenkabinett“. #sprecher:erzaehler
 Eine Seite aus einem Handbuch. Jemand vermisst sie bestimmt. #sprecher:ambrose
 ~ gibFund("seite04")
+~ buchseiten = buchseiten + 1
 -> END
 

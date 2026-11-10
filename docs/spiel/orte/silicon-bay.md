@@ -392,7 +392,8 @@ Ereignis `ereignisStream` (Kiki Blitz) mit Aufgabenrunde `wegIronwoodSilicon.str
 Kapitel 4; Platzhalter für die Partie mit Kandidatenwahl) und Quest gleichen Namens, Lohn Fund
 `fotoLive`. Spur P2 gibt der Ohrstöpsel (`fund_ohrstoepsel` gibt jetzt auch `spurPM2`).
 Fundstellen an der Raststätte `kreide2`, `finchBauerB`, `seite04`. Sperre S6: Die Inselfähre hat den
-Dialog `silicon-bay-aussen.inselfaehre` (Fahrplan „sonntags“, nach der Nadel jeden Tag).
+Dialog `silicon-bay-aussen.inselfaehre` (Fahrplan „sonntags“, nach der Nadel jeden Tag). Die Nacht im Hotel (Szene 61) setzt die Tönung `nacht` und am Morgen wieder `keine`. Die
+Fundknoten zählen die Sammelstränge mit (`finchFiguren`, `buchseiten`, `spurenPM`, `kreideTreffpunkte`).
 
 | Auslöser         | A       | B       | C       |
 | ---------------- | ------- | ------- | ------- |

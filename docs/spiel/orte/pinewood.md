@@ -286,3 +286,6 @@ für die Brettansicht) und Quest gleichen Namens, Lohn Fund `fotoLebendschach`; 
 | Auslöser  | A        | B       | C       |
 | --------- | -------- | ------- | ------- |
 | `kreide4` | (100, 8) | (34, 8) | (42, 8) |
+
+Nachtrag: Die Fundknoten heißen wie die Auslöser (`seite10`, `kreide4`) und zählen die Sammelstränge
+mit (`buchseiten`, `kreideTreffpunkte`). Die Riesenbäume haben in allen Varianten die Tönung `nebel`.

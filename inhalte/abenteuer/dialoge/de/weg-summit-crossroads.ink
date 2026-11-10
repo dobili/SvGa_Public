@@ -16,6 +16,9 @@ EXTERNAL beginneAufgaben(runde)
 EXTERNAL gibFund(kennung)
 
 VAR held = "Du"
+VAR buchseiten = 0
+VAR finchFiguren = 0
+VAR spurenPM = 0
 VAR wegSummitCrossroadsTafelBestanden = false
 VAR bellGetroffen = false
 VAR rayGetroffen = false
@@ -199,6 +202,7 @@ Am Infobrett des Rangerhäuschens hängt ein Antrag mit dem Logo von Perfect Mov
 Über meine Leiche. Und über die der Bisons. #sprecher:bell
 Wer Rechner mit Geysiren kühlen will, braucht sehr viele Rechner. #sprecher:ambrose
 ~ gibFund("spurPM5")
+~ spurenPM = spurenPM + 1
 -> END
 
 === finch_bauer_d ===
@@ -209,11 +213,12 @@ Wer Rechner mit Geysiren kühlen will, braucht sehr viele Rechner. #sprecher:amb
 ~ finchBauerDGefunden = true
 Am Pfosten des Stegs ist ein Fink aus Kreide gemalt. Darunter, im Schatten der Bohlen, liegt ein weißer Bauer aus Buchsbaum. Unter seinem Fuß ist ein Feld eingebrannt. #sprecher:erzaehler
 ~ gibFund("finchBauerD")
+~ finchFiguren = finchFiguren + 1
 -> END
 
 // ---------------------------------------------------------------- Prärie: Sturmkeller und Windrad
 
-=== seite_09 ===
+=== seite09 ===
 {seite09Gefunden:
     Hier lag die Buchseite. Der Wind hat nichts mehr dagelassen. #sprecher:erzaehler
     -> END
@@ -222,6 +227,7 @@ Am Pfosten des Stegs ist ein Fink aus Kreide gemalt. Darunter, im Schatten der B
 An der Klappe des Sturmkellers hat sich ein Blatt Papier verfangen. Oben steht: Kapitel 9, „Endspiel-Vertiefung“. #sprecher:erzaehler
 Eine Seite aus einem Handbuch. Der Sturm trägt alles irgendwohin, sogar Bücher. #sprecher:ambrose
 ~ gibFund("seite09")
+~ buchseiten = buchseiten + 1
 -> END
 
 === windrad ===

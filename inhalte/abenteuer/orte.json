@@ -1829,7 +1829,7 @@
           "name": "kreide2",
           "karte": "wegIronwoodSilicon.raststaette",
           "art": "gegenstand",
-          "dialog": "weg-ironwood-silicon.kreide_2"
+          "dialog": "weg-ironwood-silicon.kreide2"
         },
         {
           "name": "finchBauerB",
@@ -1841,7 +1841,7 @@
           "name": "seite04",
           "karte": "wegIronwoodSilicon.raststaette",
           "art": "gegenstand",
-          "dialog": "weg-ironwood-silicon.seite_04"
+          "dialog": "weg-ironwood-silicon.seite04"
         }
       ]
     },
@@ -3242,7 +3242,7 @@
           "name": "seite09",
           "karte": "wegSummitCrossroads.praerie",
           "art": "gegenstand",
-          "dialog": "weg-summit-crossroads.seite_09"
+          "dialog": "weg-summit-crossroads.seite09"
         },
         {
           "name": "windrad",
@@ -3526,13 +3526,13 @@
           "name": "seite10",
           "karte": "wegCrossroadsPinewood.riesenbaeume",
           "art": "gegenstand",
-          "dialog": "weg-crossroads-pinewood.seite_10"
+          "dialog": "weg-crossroads-pinewood.seite10"
         },
         {
           "name": "kreide4",
           "karte": "wegCrossroadsPinewood.huetten",
           "art": "gegenstand",
-          "dialog": "weg-crossroads-pinewood.kreide_4"
+          "dialog": "weg-crossroads-pinewood.kreide4"
         }
       ]
     },

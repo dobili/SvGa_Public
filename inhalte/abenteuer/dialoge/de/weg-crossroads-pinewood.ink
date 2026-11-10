@@ -18,6 +18,8 @@ EXTERNAL beginneAufgaben(runde)
 EXTERNAL gibFund(kennung)
 
 VAR held = "Du"
+VAR buchseiten = 0
+VAR kreideTreffpunkte = 0
 VAR wegCrossroadsPinewoodTafelBestanden = false
 VAR ausgangWegCrossroadsPinewoodBlindschach = ""
 VAR gretaGetroffen = false
@@ -131,7 +133,7 @@ Gut kommandiert. Die Kinder wollen ein Foto mit dir. #sprecher:ezra #stimmung:fr
 {~Die Kinder fragen, wann du wieder kommandierst.|Der Feldherr ist wieder gesund. Er sagt, du warst zu streng mit den Bauern.|Das Sommerfest wird groß. Komm, wenn du kannst.} #sprecher:ezra
 -> END
 
-=== seite_10 ===
+=== seite10 ===
 {seite10Gefunden:
     Hier lag die Buchseite. Zwischen den Wurzeln ist nichts mehr. #sprecher:erzaehler
     -> END
@@ -140,11 +142,12 @@ Gut kommandiert. Die Kinder wollen ein Foto mit dir. #sprecher:ezra #stimmung:fr
 Zwischen den Wurzeln eines Mammutbaums steckt ein Blatt Papier. Oben steht: Kapitel 10, „Studien und Kuriositäten“. #sprecher:erzaehler
 Eine Seite aus einem Handbuch, an einem Baum, der älter ist als jedes Buch. #sprecher:ambrose
 ~ gibFund("seite10")
+~ buchseiten = buchseiten + 1
 -> END
 
 // ---------------------------------------------------------------- Holzfällerhütte: Kreidespringer K4
 
-=== kreide_4 ===
+=== kreide4 ===
 {kreide4Gefunden:
     Der Kreidespringer an der Hütte ist noch da. Jemand hat ihn nachgezogen. #sprecher:erzaehler
     -> END
@@ -153,5 +156,6 @@ Eine Seite aus einem Handbuch, an einem Baum, der älter ist als jedes Buch. #sp
 An der Wand der Holzfällerhütte ist ein Springer aus Kreide gemalt. Darunter, klein: „K4. Wer das Wort kennt, spielt mit.“ #sprecher:erzaehler
 Wieder dieser Springer. Er reist schneller als wir. #sprecher:ambrose
 ~ gibFund("kreide4")
+~ kreideTreffpunkte = kreideTreffpunkte + 1
 -> END
 

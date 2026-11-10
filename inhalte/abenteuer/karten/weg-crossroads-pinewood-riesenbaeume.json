@@ -6677,6 +6677,11 @@
       "name": "kennung",
       "type": "string",
       "value": "wegCrossroadsPinewood.riesenbaeume"
+    },
+    {
+      "name": "toenung",
+      "type": "string",
+      "value": "nebel"
     }
   ]
 }

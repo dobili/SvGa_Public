@@ -14,6 +14,7 @@ EXTERNAL beginnePartie(begegnung)
 EXTERNAL gibKarte(kennung)
 EXTERNAL reise(karte, ausloeser)
 EXTERNAL oeffneLaden(laden)
+EXTERNAL setzeToenung(name)
 
 VAR held = "Du"
 VAR ausgangSiliconBayDash = ""
@@ -129,6 +130,7 @@ Eine Köchin, die lacht. In dieser Stadt aus Glas ist das ein Wunder. #sprecher:
 
 === hotel_nacht ===
 ~ tabletNachtGesehen = true
+~ setzeToenung("nacht")
 Mitten in der Nacht wachst du auf. Das Tablet leuchtet neben dem Brett. #sprecher:erzaehler
 Die Maschine spielt gegen sich selbst. Partie um Partie, ohne Pause. #sprecher:erzaehler
 Ich habe zugesehen. Die ganze Nacht. #sprecher:ambrose #stimmung:gebannt
@@ -138,7 +140,8 @@ Sie spielt, wie ich immer spielen wollte. Kein einziger Zweifel. #sprecher:ambro
 * [„Mach das aus.“]
     Gleich. Nur noch diese eine Partie. #sprecher:ambrose #stimmung:gebannt
     Er sagt es dreimal in dieser Nacht. #sprecher:erzaehler
-- Am Morgen fährt Juno zurück nach Hause. „Pass auf ihn auf“, sagt sie leise. „Er klingt komisch.“ #sprecher:erzaehler
+- ~ setzeToenung("keine")
+Am Morgen fährt Juno zurück nach Hause. „Pass auf ihn auf“, sagt sie leise. „Er klingt komisch.“ #sprecher:erzaehler
 -> END
 
 // ---------------------------------------------------------------- Bus und Fähre

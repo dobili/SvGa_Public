@@ -2441,6 +2441,33 @@
           }
         }
       ]
+    },
+    {
+      "kennung": "wegCedarRiverton.zugpartie",
+      "titel": "quest.zugpartie.titel",
+      "typ": "raetsel",
+      "ort": "wegCedarRiverton",
+      "haupt": false,
+      "start": {
+        "art": "dialog",
+        "knoten": "weg-cedar-riverton.zugpartie_angebot"
+      },
+      "schritte": [
+        {
+          "text": "quest.zugpartie.schritt1",
+          "ereignis": {
+            "art": "aufgaben",
+            "runde": "wegCedarRiverton.zugpartie"
+          }
+        },
+        {
+          "text": "quest.zugpartie.schritt2",
+          "ereignis": {
+            "art": "dialog",
+            "knoten": "weg-cedar-riverton.zugpartie_geloest"
+          }
+        }
+      ]
     }
   ]
 }

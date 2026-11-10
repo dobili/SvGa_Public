@@ -965,3 +965,15 @@ zum Signal (A 38, B 24, C 40): Stellwerk bei (Signal + 2, 10), Tür in Spalte Si
 Radlerin, Gärtnerin (jetzt ansprechbar), Katze im Güterwagen, Fasan; Zedernwald mit Jäger mit
 Kamera (Hirsch), Wanderpaar (Springer heißt knight und Pferd), Vogelstimmensammlerin, Hirsch und
 Fuchs. Gwen, Juno, Leif und die Pfadfinder bleiben ohne Satz, weil ihre Dialoge in Runde 6 kommen.
+
+## Runde 6 (10.11.2026): Weg 2 spielbar (niedrig-1)
+
+| Auslöser            | Art                 | Feld A   | Feld B   | Feld C   | Inhalt                                                                                 |
+| ------------------- | ------------------- | -------- | -------- | -------- | -------------------------------------------------------------------------------------- |
+| `ereignisZugpartie` | dialog              | (42, 15) | (28, 15) | (44, 15) | Rosalind Kettering, Rätsel `wegCedarRiverton.zugpartie` (2 Aufgaben, hängende Figuren) |
+| `seite01`           | gegenstand          | (44, 5)  | (28, 5)  | (46, 5)  | Buchseite Kapitel 1 (Fund `seite01`)                                                   |
+| `durchlass`         | gegenstand, S14     | (66, 7)  | (52, 7)  | (64, 7)  | ohne Laterne zu dunkel; mit `hatLaterne` Gwens Thermoskanne (Fund `thermoskanneGwen`)  |
+| `fundHolzspringer`  | gegenstand (vorher) | –        | –        | –        | gibt zusätzlich `finchSpringerA` (Finch-Figur Springer a)                              |
+
+Quest `wegCedarRiverton.zugpartie` (Rätsel): Dialog `zugpartie_angebot`, dann die Aufgaben, dann
+`zugpartie_geloest` mit der Bahnwärterlaterne (Fund `bahnwaerterlaterne`), die den Durchlass öffnet.

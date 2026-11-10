@@ -273,6 +273,30 @@
       "ort": "mapleFalls",
       "name": "fund.initialen1952.name",
       "text": "fund.initialen1952.text"
+    },
+    {
+      "kennung": "finchSpringerA",
+      "ort": "wegCedarRiverton",
+      "name": "fund.finchSpringerA.name",
+      "text": "fund.finchSpringerA.text"
+    },
+    {
+      "kennung": "bahnwaerterlaterne",
+      "ort": "wegCedarRiverton",
+      "name": "fund.bahnwaerterlaterne.name",
+      "text": "fund.bahnwaerterlaterne.text"
+    },
+    {
+      "kennung": "seite01",
+      "ort": "wegCedarRiverton",
+      "name": "fund.seite01.name",
+      "text": "fund.seite01.text"
+    },
+    {
+      "kennung": "thermoskanneGwen",
+      "ort": "wegCedarRiverton",
+      "name": "fund.thermoskanneGwen.name",
+      "text": "fund.thermoskanneGwen.text"
     }
   ]
 }

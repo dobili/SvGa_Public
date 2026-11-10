@@ -410,6 +410,15 @@
       "buchuebungen": [],
       "themen": ["matt1"],
       "anzahl": 3
+    },
+    {
+      "kennung": "wegCedarRiverton.zugpartie",
+      "ort": "wegCedarRiverton",
+      "steller": "wegCedarRiverton.rosalind",
+      "reihe": false,
+      "buchuebungen": [],
+      "themen": ["haengend"],
+      "anzahl": 2
     }
   ]
 }

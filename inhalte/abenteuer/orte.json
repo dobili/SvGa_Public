@@ -835,6 +835,24 @@
             "ausloeser": "bahndamm"
           },
           "dialog": "riverton-aussen.ankunft_zu_fuss"
+        },
+        {
+          "name": "ereignisZugpartie",
+          "karte": "wegCedarRiverton.bahndamm",
+          "art": "dialog",
+          "dialog": "weg-cedar-riverton.ereignis_zugpartie"
+        },
+        {
+          "name": "seite01",
+          "karte": "wegCedarRiverton.bahndamm",
+          "art": "gegenstand",
+          "dialog": "weg-cedar-riverton.fund_seite01"
+        },
+        {
+          "name": "durchlass",
+          "karte": "wegCedarRiverton.bahndamm",
+          "art": "gegenstand",
+          "dialog": "weg-cedar-riverton.durchlass"
         }
       ]
     },

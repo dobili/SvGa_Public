@@ -1323,5 +1323,17 @@
   "fund.initialen1952.text": "Am neuen Steg im Park von Maple Falls ist ins alte Geländer geritzt: „M. W. + E. C. 1952“.",
   "quest.flohmarkt.titel": "Finchs Fallen",
   "quest.flohmarkt.schritt1": "Löse die drei Fallen von Odette Finch auf dem Flohmarkt an der Landstraße.",
-  "quest.flohmarkt.schritt2": "Hol dir bei Odette die Karte der Finch-Jagd ab."
+  "quest.flohmarkt.schritt2": "Hol dir bei Odette die Karte der Finch-Jagd ab.",
+  "figur.rosalind.name": "Rosalind Kettering",
+  "fund.finchSpringerA.name": "Finchs Springer A",
+  "fund.finchSpringerA.text": "Der Springer aus Holz aus dem hohlen Stamm im Zedernwald gehört zu Odette Finchs Satz. Unter dem Fuß ist ein Feld eingebrannt.",
+  "fund.bahnwaerterlaterne.name": "Bahnwärter-Laterne",
+  "fund.bahnwaerterlaterne.text": "Die alte Laterne aus dem Stellwerk am Bahndamm, ein Dank von Rosalind Kettering für den Zug am Signal.",
+  "fund.seite01.name": "Buchseite: Kapitel 1",
+  "fund.seite01.text": "Eine Seite aus einem Handbuch, Kapitel 1: „Grundprinzipien des Schachs“. Gefunden im Schotter am Bahndamm.",
+  "fund.thermoskanneGwen.name": "Gwens Thermoskanne",
+  "fund.thermoskanneGwen.text": "Eine verbeulte Thermoskanne mit dem Namen „G. Tolliver“, vergessen im Durchlass unter dem Bahndamm.",
+  "quest.zugpartie.titel": "Die Zugpartie",
+  "quest.zugpartie.schritt1": "Hilf Rosalind am Stellwerk: Was hängt in ihrer Stellung?",
+  "quest.zugpartie.schritt2": "Häng den besseren Zug ans Signal, bevor der Güterzug kommt."
 }

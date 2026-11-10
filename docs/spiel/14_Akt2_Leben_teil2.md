@@ -300,7 +300,7 @@ Hafenviertel mit dem leeren Laden und dem Fährmann der Inselfähre.
 | Ellis Navarro        | 41, er          | Wachmann des Campus, bewacht Bildschirme und verliert in jeder Pause auf dem Handy gegen ZERO.                                   | Campus: Runde über den Boulevard              | Tagsüber Runde, nachts im Hotel-Eingang (Szene 61, Statist).             |
 | Kendra Kerrigan        | 29, sie         | Datenanalystin bei Perfect Move, Tochter von Mr. Kerrigan aus Ironwood, hat seit einem Jahr keinen freien Tag bekommen.               | Campus: Stufe vor dem Innovation Lab (7, 47)  | Mittagspause auf der Stufe, sonst hinter der Glasscheibe.                |
 | Wendell Ames       | 79, er          | Hatte den Kurzwarenladen am Hafen seit 1952 (vom Vater), hat ihn nie an Perfect Move verkauft und hängt jede Woche „Bald geöffnet“ neu ins Fenster. | Hafen: Kiste vor dem Laden (20, 16) | Sitzt vor dem Laden, sieht aufs Wasser, schließt abends die leere Tür ab. |
-| Silas Finch         | 66, er          | Fährmann der Inselfähre, fährt „nur sonntags“ und sagt nie, welcher Tag heute ist (Sperre S6).                                   | Hafen: Fährhäuschen (58, 21)                  | Flickt Seile, bis die Fähre fährt.                                      |
+| Silas Pike         | 66, er          | Fährmann der Inselfähre, fährt „nur sonntags“ und sagt nie, welcher Tag heute ist (Sperre S6).                                   | Hafen: Fährhäuschen (58, 21)                  | Flickt Seile, bis die Fähre fährt.                                      |
 
 Sprechweise und Beispielsätze:
 
@@ -316,7 +316,7 @@ Sprechweise und Beispielsätze:
 - **Mr. Ames:** langsam, Hafenbilder. „Bald geöffnet. Hab ich selbst hingehängt. Man soll die
   Hoffnung nicht in den Keller räumen.“ – Ab Akt 4: „Eine Frau von der Akademie fragt jede Woche, ob der
   Laden noch frei ist. Ich sag immer: Bald.“ (Andeutung auf Dr. Lins Club im Post-Game, 13 §7.2.)
-- **Mr. Finch:** einsilbig. „Sonntags.“ – „Heute? Frag den Pelikan.“ – Nach der Nadel: „Ist
+- **Mr. Pike:** einsilbig. „Sonntags.“ – „Heute? Frag den Pelikan.“ – Nach der Nadel: „Ist
   Sonntag. Steig ein.“
 
 ### 4.2 Neue Nebenaufgaben
@@ -371,7 +371,7 @@ Sprechweise und Beispielsätze:
 | Ames Kurzwaren           | Kulisse (leerer Laden)   | Mr. Ames              | `schaufenster` (ein Holzbrett, Zettel „Bald geöffnet“)                                                |
 | Fischhalle               | Kulisse                  | –                     | `netze`                                                                                               |
 | Perfect Move Store       | Kulisse                  | –                     | Bildschirm mit Novas Gesicht (Ansehen: „Mit Perfect Move trainiert jeder wie ein Champion!“, ihr Werbesatz aus 9.2) |
-| Fährhäuschen             | Kulisse                  | Mr. Finch             | Fahrplan „Pelikaninsel – sonntags“                                                                    |
+| Fährhäuschen             | Kulisse                  | Mr. Pike             | Fahrplan „Pelikaninsel – sonntags“                                                                    |
 
 ### 4.4 Funde und Entdeckungen
 
@@ -385,7 +385,7 @@ Sprechweise und Beispielsätze:
 | Campus D3            | `aussichtBucht`: Fähren und Pelikaninsel                                                                                           |
 | Hafen B1             | Mr. Ames, Schaufenster                                                                                                             |
 | Hafen C2             | `fernrohr` (Pelikaninsel); **„Seeglas, grün“** an der Kaikante (`fundSeeglas`, 5 Münzen; Ambrose: „Glas, das das Meer rund geschliffen hat. Das einzige Glas hier, das mir gefällt.“) |
-| Hafen D1, D2         | Mr. Finch, Inselfähre (S6)                                                                                                         |
+| Hafen D1, D2         | Mr. Pike, Inselfähre (S6)                                                                                                         |
 
 ## 5. Brücken zur Hauptgeschichte (ohne Änderung der Hauptszenen)
 
@@ -422,7 +422,7 @@ geprüft (Spalte „Gebraucht ab“).
 | –   | Stollen, Nische                             | nur Steine                                                                                     | `mamaSpielt` (Szene 43), Big Joe erzählt          | nie          | „Mamas altes Steckschach“                                                              |
 | –   | Ironwood, Bus nach Silicon Bay              | Mr. Briggs: „Ohne Einladung lassen die dich nicht mal aussteigen.“                            | nach Szene 50 (`einladungGesehen`)               | Szene 51     | Akt 3                                                                                  |
 | –   | Ironwood, Bus nach Riverton                 | Fahrschein 10 Münzen                                                                           | `besuchtIronwood`; frei nach der Clubnadel        | nie          | Schnellreise                                                                           |
-| S6  | Silicon Bay, Inselfähre                     | Mr. Finch: „Sonntags.“                                                                        | `nadelSiliconBay` (13 §4)                         | nie          | Nebenort N4                                                                            |
+| S6  | Silicon Bay, Inselfähre                     | Mr. Pike: „Sonntags.“                                                                        | `nadelSiliconBay` (13 §4)                         | nie          | Nebenort N4                                                                            |
 | –   | Silicon Bay, Küstenfähre                    | Fährterminal „Nur mit Ticket“                                                                  | `nadelSiliconBay` (heute)                         | Szene 62     | Akt 3 weiter                                                                           |
 
 **Rückwege mit Lohn** (13 §0.5 und §7):

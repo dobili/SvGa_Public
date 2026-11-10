@@ -379,7 +379,7 @@
       }
     },
     {
-      "name": "finch",
+      "name": "pike",
       "typ": "statist",
       "feld": [50, 23],
       "eigenschaften": {

@@ -774,7 +774,7 @@ fertigen Karten und beim Spielen die Geschichte.
   über `pipeline/abenteuer/moebelliste.py`, der Paketbau führt die Dateien zu einer
   `daten/moebel.json` im Paket zusammen, die App bleibt unverändert.
 - Prüfung der Akt-2-Dokumente (Bericht `pruefberichte/2026-11-09_akt2.md`): neue Namen gegen
-  Verwechslung (Margie Pell, Walt und Kendra Kerrigan, Ellis Navarro, Henrik Dahl, Silas Finch,
+  Verwechslung (Margie Pell, Walt und Kendra Kerrigan, Ellis Navarro, Henrik Dahl, Silas Pike,
   Benny); das Lieferbuch im Steinbruch nennt nur „J. H.“; Cedar Creek bekommt einen Haltepunkt der
   Bahn; kein Bus in Silicon Bay; Fragen zu einer Stellung als Aufgabenrunde mit einer Aufgabe.
 - Rückmeldung des Autors zu Runde 4 (Bericht `pruefberichte/2026-11-09_runde4_autor.md`): Die

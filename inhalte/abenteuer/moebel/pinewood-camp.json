@@ -226,6 +226,16 @@
       "art": "gebaeude",
       "zustand": "gebraucht",
       "stil": "rustikal"
+    },
+    "pw9KanuSee": {
+      "quelle": "spiel/eigene/kanu_quer.png",
+      "breite": 64,
+      "hoehe": 32,
+      "kollision": false,
+      "art": "boot",
+      "zustand": "gebraucht",
+      "stil": "natur",
+      "blick": "keine"
     }
   }
 }

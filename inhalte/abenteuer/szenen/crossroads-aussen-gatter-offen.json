@@ -1,7 +1,7 @@
 {
   "karte": "crossroads.aussen",
   "art": "aussen",
-  "beschreibung": "Zustand: Darlene hat den Gatterschlüssel gegeben (S13). Das Viehgatter steht offen am Straßenrand, die Alte Minenstraße ist frei. Diner-Wagen mit asphaltiertem Vorplatz und das eingezäunte Feld mit dem Erdweg zum Jahrmarkt, die große Tankstelle mit Waschanlage und einer Dieselsäule für Lastwagen. Der Highway hat Mittellinie und Bordsteine, Vorplätze und Parkplatz haben Einfahrten. Südwestlich der Parkplatz mit markierten Buchten, Bus und Autos stehen quer in ihren Buchten und zeigen Front oder Heck: Werksbus, Food-Truck, zwei Sattelzüge, zwei Autos; daneben der Rastplatz mit langen Picknicktischen, Mülleimer und Laterne. Südöstlich ein Motel mit vier Zimmern und Eisautomat, die Werkstatt, der Eisenwarenladen und die kleine Kapelle mit eingezäuntem Friedhof. Östlich der Tankstelle das Farmhaus des Rinderzüchters. Im Osten das offene Viehgatter vor der Alten Minenstraße (S13). Wegweiser mit allen Städten, Schild „Crossroads – Diner + Gas“ vor der Raststätte, Fernbus-Haltestelle mit Gehweg am Highway West.",
+  "beschreibung": "Zustand: Darlene hat den Gatterschlüssel gegeben (S13). Das Viehgatter steht offen am Straßenrand, die Alte Minenstraße ist frei. Diner-Wagen mit asphaltiertem Vorplatz und das eingezäunte Feld mit dem Erdweg zum Jahrmarkt, die große Tankstelle mit Waschanlage und einer Dieselsäule für Lastwagen. Der Highway hat Mittellinie und Bordsteine, Vorplätze und Parkplatz haben Einfahrten. Südwestlich der Parkplatz mit markierten Buchten, Bus und Autos stehen quer in ihren Buchten und zeigen Front oder Heck: Werksbus, zwei Sattelzüge, ein Lastwagen, ein Imbisswagen und zwei Autos, alle von vorn oder hinten gesehen; daneben der Rastplatz mit langen Picknicktischen, Mülleimer und Laterne. Südöstlich ein Motel mit vier Zimmern und Eisautomat, die Werkstatt, der Eisenwarenladen und die kleine Kapelle mit eingezäuntem Friedhof. Hinter der Tankstelle der Wohnwagen des Tankwarts, östlich das Farmhaus des Rinderzüchters. Im Osten das offene Viehgatter vor der Alten Minenstraße (S13). Wegweiser mit allen Städten, Schild „Crossroads – Diner + Gas“ vor der Raststätte, Fernbus-Haltestelle mit Gehweg am Highway West.",
   "boden": "gras",
   "wandart": "gras",
   "boeden": {
@@ -72,18 +72,6 @@
     {
       "moebel": "ws5TankstelleGross",
       "feld": [36, 8]
-    },
-    {
-      "moebel": "sbFoodtruck",
-      "feld": [18, 29]
-    },
-    {
-      "moebel": "cr7Sattelzug",
-      "feld": [4, 36]
-    },
-    {
-      "moebel": "cr7SattelzugBlau",
-      "feld": [4, 40]
     },
     {
       "moebel": "cr7Motel",
@@ -257,10 +245,6 @@
       "feld": [13, 46]
     },
     {
-      "moebel": "wg4Wildblumen",
-      "feld": [48, 1]
-    },
-    {
       "moebel": "wg4BlumeGelb",
       "feld": [31, 39]
     },
@@ -305,10 +289,6 @@
       "feld": [60, 20]
     },
     {
-      "moebel": "wg4Gras",
-      "feld": [50, 2]
-    },
-    {
       "moebel": "wg4GrasB",
       "feld": [21, 12]
     },
@@ -341,20 +321,8 @@
       "feld": [1, 31]
     },
     {
-      "moebel": "wg4Wildblumen",
-      "feld": [52, 4]
-    },
-    {
       "moebel": "wg4Gras",
       "feld": [35, 8]
-    },
-    {
-      "moebel": "wg4GrasB",
-      "feld": [53, 1]
-    },
-    {
-      "moebel": "wg4BlumeGelb",
-      "feld": [50, 1]
     },
     {
       "moebel": "wg4Gras",
@@ -393,20 +361,12 @@
       "feld": [34, 6]
     },
     {
-      "moebel": "wg4GrasB",
-      "feld": [53, 2]
-    },
-    {
       "moebel": "wg4BlumeGelb",
       "feld": [54, 8]
     },
     {
       "moebel": "wg4Gras",
       "feld": [55, 8]
-    },
-    {
-      "moebel": "wg4GrasB",
-      "feld": [53, 5]
     },
     {
       "moebel": "wg4GrasB",
@@ -425,20 +385,12 @@
       "feld": [30, 38]
     },
     {
-      "moebel": "wg4Wildblumen",
-      "feld": [51, 3]
-    },
-    {
       "moebel": "wg4BlumeGelb",
       "feld": [9, 12]
     },
     {
       "moebel": "wg4GrasB",
       "feld": [56, 3]
-    },
-    {
-      "moebel": "wg4Gras",
-      "feld": [47, 6]
     },
     {
       "moebel": "wg4BlumeGelb",
@@ -712,21 +664,6 @@
       "bauteil_ok": true
     },
     {
-      "moebel": "cr9LinieQ12",
-      "feld": [3, 36],
-      "bauteil_ok": true
-    },
-    {
-      "moebel": "cr9LinieQ12",
-      "feld": [3, 40],
-      "bauteil_ok": true
-    },
-    {
-      "moebel": "cr9LinieQ12",
-      "feld": [3, 44],
-      "bauteil_ok": true
-    },
-    {
       "moebel": "cr7Viehgatter",
       "feld": [59, 26]
     },
@@ -986,6 +923,55 @@
       "moebel": "cr9LinieQ9",
       "feld": [16, 41],
       "bauteil_ok": true
+    },
+    {
+      "moebel": "cr10SattelzugVorn",
+      "feld": [8, 28],
+      "bauteil_ok": true
+    },
+    {
+      "moebel": "cr10SattelzugHinten",
+      "feld": [11, 28],
+      "bauteil_ok": true
+    },
+    {
+      "moebel": "cr10LastwagenVorn",
+      "feld": [4, 36],
+      "bauteil_ok": true
+    },
+    {
+      "moebel": "cr10HotdogwagenVorn",
+      "feld": [20, 28],
+      "bauteil_ok": true
+    },
+    {
+      "moebel": "cr9LinieL11",
+      "feld": [8, 28],
+      "bauteil_ok": true
+    },
+    {
+      "moebel": "cr9LinieL11",
+      "feld": [11, 28],
+      "bauteil_ok": true
+    },
+    {
+      "moebel": "cr9LinieL11",
+      "feld": [14, 28],
+      "bauteil_ok": true
+    },
+    {
+      "moebel": "cr9LinieL9",
+      "feld": [4, 36],
+      "bauteil_ok": true
+    },
+    {
+      "moebel": "cr9LinieL9",
+      "feld": [7, 36],
+      "bauteil_ok": true
+    },
+    {
+      "moebel": "cp8WohnwagenKlein",
+      "feld": [47, 1]
     }
   ],
   "ausloeser": [
@@ -1052,7 +1038,7 @@
     },
     {
       "name": "bigJoe",
-      "feld": [11, 33]
+      "feld": [15, 33]
     },
     {
       "name": "slick",

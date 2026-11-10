@@ -5,9 +5,9 @@ Warum: Erstes Gutachten zu Campus und altem Hafen (gutachten/silicon-bay-aussen-
   stockt LimeZus Bürohaus (Office Example 1, 12 × 19 Kacheln) um vier Geschosse auf: Das Band der
   beiden mittleren Geschosse wird zweimal eingefügt, Dach und Erdgeschoss bleiben (12 × 29).
 - Die Straßenbahn „kommt links aus dem Tunnel“, aber es gab keinen. ``tunnelportal_west`` zeichnet
-  ein Betonportal in unserer Ansicht (schräg von oben, 10.60): oben die Decke des Tunnels mit Kante,
-  rechts die dunkle Mündung, aus der die Gleise kommen (4 × 4 Kacheln, genau über den vier Reihen der
-  Fahrbahn, damit der Gehweg daneben frei bleibt).
+  einen Betonbau quer über der Fahrbahn mit einem dunklen Bogen nach Osten, in dem Gleis und Asphalt
+  verschwinden (5 × 5 Kacheln am Kartenrand; zweites Gutachten: Das erste Portal war eine graue
+  Platte, links davon liefen Gleis und Asphalt weiter).
 - Hotel, Fischhalle und Hafenmeisterei hatten kein Schild. ``schild_<name>`` sind dunkle
   Leuchtschilder wie das von Perfect Move (helle Schrift 5 × 7 auf dunklem Grund, 16 hoch).
 
@@ -79,18 +79,41 @@ def konzernturm(privat: Path) -> Image.Image:
 
 
 def tunnelportal() -> Image.Image:
-    """Betonportal: Tunneldecke von oben, davor die Stirnwand mit dunkler Mündung nach Osten."""
-    bild = Image.new("RGBA", (64, 64))
+    """Tunnelmund nach Osten: Betonbau quer über der Fahrbahn, darin ein dunkler Bogen mit Bogensteinen.
+
+    Das Bild steht am Kartenrand (5 × 5 Kacheln: eine Reihe Gehweg, vier Reihen Fahrbahn). Links der
+    Bau mit Dachkante und Südwand, rechts der Bogen: Die Öffnung ist durchsichtig-dunkel, sodass Gleis
+    und Asphalt der Karte darunter zu sehen sind und nach links im Schwarz verschwinden.
+    """
+    bild = Image.new("RGBA", (80, 80))
     z = ImageDraw.Draw(bild)
-    z.rectangle((0, 0, 50, 63), fill=BETON, outline=UMRISS)  # Decke des Tunnels
-    for y in range(8, 64, 16):
-        z.line((1, y, 49, y), fill=BETON_DUNKEL)
-    z.line((1, 1, 49, 1), fill=BETON_HELL)
-    z.rectangle((50, 0, 63, 63), fill=BETON_DUNKEL, outline=UMRISS)  # Stirnwand
-    z.rectangle((53, 18, 63, 58), fill=DUNKEL)  # Mündung über den Gleisen
-    z.line((50, 0, 50, 63), fill=BETON_HELL)
-    z.rectangle((52, 4, 62, 14), fill=BETON, outline=UMRISS)  # Kämpferstein mit Lampe
-    z.point((57, 9), fill=(250, 220, 120, 255))
+    z.rectangle((0, 0, 79, 67), fill=BETON, outline=UMRISS)  # Dach des Baus
+    z.rectangle((0, 68, 79, 79), fill=BETON_DUNKEL, outline=UMRISS)  # Südwand
+    z.line((1, 1, 78, 1), fill=BETON_HELL)
+    for x in range(16, 80, 16):
+        z.line((x, 69, x, 78), fill=UMRISS)
+    for y in range(4, 16, 4):  # Brüstung über dem Bogen
+        z.line((2, y, 77, y), fill=BETON_DUNKEL)
+    # Bogen: Öffnung von der Ostkante nach Westen, oben und unten rund (liegendes Tor)
+    mund = Image.new("L", (80, 80), 0)
+    ImageDraw.Draw(mund).pieslice((20, 22, 140, 66), 90, 270, fill=255)
+    rand = Image.new("L", (80, 80), 0)
+    ImageDraw.Draw(rand).pieslice((14, 17, 146, 71), 90, 270, fill=255)
+    for y in range(80):
+        for x in range(80):
+            if mund.getpixel((x, y)):
+                tiefe = min(1.0, (79 - x) / 30)  # nach Westen immer dunkler
+                bild.putpixel((x, y), (*DUNKEL[:3], int(110 + 145 * tiefe)))
+            elif rand.getpixel((x, y)):
+                stein = BETON_HELL if (x // 6 + y // 6) % 2 else BETON
+                bild.putpixel((x, y), stein)
+    for y in range(17, 72):  # Umriss der Bogensteine
+        for x in range(1, 80):
+            if rand.getpixel((x, y)) and not rand.getpixel((x - 1, y)):
+                bild.putpixel((x - 1, y), UMRISS)
+    z.rectangle((70, 6, 77, 13), fill=BETON_DUNKEL, outline=UMRISS)  # Lampe über dem Scheitel
+    z.point((73, 9), fill=(250, 220, 120, 255))
+    z.point((74, 10), fill=(250, 220, 120, 255))
     return bild
 
 

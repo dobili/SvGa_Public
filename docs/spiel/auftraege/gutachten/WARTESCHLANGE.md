@@ -111,7 +111,6 @@ Szene heißt die Datei in `inhalte/abenteuer/szenen/` ohne `.json`.
 
 - [x] silicon-bay-lobby, silicon-bay-serverraum (zweite Prüfung, niedrig-1; Antworten in silicon-bay.md; Bilder klimageraet_serverraum, schubladenschrank_metall, serverreihe_6 aus `niedrig1_runde9_karten.py` erst rendern; neue Tönung serverblau) → `silicon-bay-lobby-serverraum-2.md`
 
-
 - [ ] silicon-bay-lobby, silicon-bay-serverraum (zweite Prüfung, niedrig-1; Antworten in silicon-bay.md; Bilder klimageraet_serverraum, schubladenschrank_metall, serverreihe_6 aus `niedrig1_runde9_karten.py` erst rendern; neue Tönung serverblau)
 - [ ] port-delacroix-aussen, capital-arena-innenstadt, bayou-steg, weg-ghost-capital-leuchtturm, weg-silicon-delacroix-deich (dritte Prüfung, mittel-1, nach `mittel-1-runde9-2.md`; Bild `bildwuensche/boje_frei.py`, Nebel 0,28)
 - [ ] weg-ironwood-silicon-raststaette (fünfte Prüfung, nur Waschstraße und Buchten, mittel-1)
@@ -142,3 +141,5 @@ Szene heißt die Datei in `inhalte/abenteuer/szenen/` ohne `.json`.
 - [x] weg-riverton-ironwood-2 (+ ohne-tische), ironwood-museum, ironwood-umkleide, sternwarte-kuppel: Restpunkte des Nachtrags (mittel-4) → `mittel-4-restpunkte.md`
 - [x] summit-city-aussen, hochebene-felsentuerme, weg-desert-summit-bergstrasse, weg-delacroix-desert-canyonpfad, weg-delacroix-desert-felsbogen: Restpunkte Runde 9, zweite Prüfung (mittel-4) → `mittel-4-restpunkte.md`
 - [x] hochebene-schule (+ vor-diplom), ironwood-aussen-vermietet: Busse in Vorderansicht nach 10.65 (mittel-4) → `mittel-4-busse.md`
+- [ ] silicon-bay-aussen und silicon-bay-hafen (dritte Prüfung, mittel-3; Tunnelbogen am Kartenrand, Park im Norden, Gartenhof, Baumplatz symmetrisch; Kai mit Kran und Fischkisten, Fähre an der Kaimauer, Bäckerei in der Häuserzeile)
+- [ ] riverton-aussen (+ vier Zustände), crossroads-aussen (+ gatter-offen), jahrmarkt-festplatz: Gemini-Bilder Teil 2 eingebaut (Steinbrücke, Sattelzüge, Lastwagen, Imbisswagen von vorn; kurze Sichtprüfung, mittel-3)

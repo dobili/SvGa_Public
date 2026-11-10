@@ -858,12 +858,7 @@
       "zustand": "gebraucht",
       "stil": "modern",
       "blick": "unten",
-      "tuer": [
-        [
-          2,
-          6
-        ]
-      ]
+      "tuer": [[2, 6]]
     },
     "rv5Werkstatt": {
       "quelle": "modern-exteriors/Modern_Exteriors_16x16/ME_Theme_Sorter_16x16/3_City_Props_Singles_16x16/ME_Singles_City_Props_16x16_Orange_Structure.png",
@@ -884,12 +879,7 @@
       "zustand": "alt",
       "stil": "rustikal",
       "blick": "unten",
-      "tuer": [
-        [
-          1,
-          4
-        ]
-      ]
+      "tuer": [[1, 4]]
     },
     "rv5Pegelhaus": {
       "quelle": "spiel/eigene/gartenhaus_weiss.png",
@@ -1747,14 +1737,8 @@
       "stil": "klassisch",
       "blick": "unten",
       "tuer": [
-        [
-          10,
-          15
-        ],
-        [
-          11,
-          15
-        ]
+        [10, 15],
+        [11, 15]
       ]
     },
     "rv8Brueckenschatten": {
@@ -1914,12 +1898,7 @@
       "zustand": "gebraucht",
       "stil": "klassisch",
       "blick": "unten",
-      "tuer": [
-        [
-          5,
-          4
-        ]
-      ]
+      "tuer": [[5, 4]]
     },
     "rv8Stellwerk": {
       "quelle": "modern-exteriors/Modern_Exteriors_16x16/ME_Theme_Sorter_16x16/7_Villas_Singles_16x16/ME_Singles_Villas_16x16_Tree_House_House_1.png",
@@ -2119,6 +2098,15 @@
       "stil": "klassisch",
       "begehbar": true,
       "begehbar_grund": "liegt flach am Boden"
+    },
+    "rv10Steinbruecke": {
+      "quelle": "spiel/eigene/steinbruecke_laengs.png",
+      "breite": 80,
+      "hoehe": 116,
+      "kollision": false,
+      "art": "bruecke",
+      "zustand": "alt",
+      "stil": "klassisch"
     }
   }
 }

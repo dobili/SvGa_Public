@@ -256,6 +256,14 @@ hinten gesehen in quer gelegten Buchten; Sattelzüge und Food-Truck bleiben Seit
 Gemini-Bilder da sind. Prärie: Traktor von vorn (`fz11TraktorVorn`) auf dem Hofplatz, der blinde
 Fahrweg hinter der Kellerklappe ist weg. Geysirbecken: die zwei Zaunstücke ohne Weide sind weg.
 
+### 3.8 Sattelzüge und Imbisswagen von vorn (mittel-3, 10.11.2026)
+
+Die Gemini-Bilder (Teil 2) sind eingebaut: Auf dem Parkplatz stehen zwei Sattelzüge
+(`cr10SattelzugVorn`, `cr10SattelzugHinten`), ein Lastwagen (`cr10LastwagenVorn`) und der
+Hotdog-Wagen (`cr10HotdogwagenVorn`) von vorn oder hinten gesehen in Buchten; Seitenansichten gibt
+es auf dem Platz nicht mehr (10.65). Big Joe steht neben seinem Sattelzug, ein kleiner Wohnwagen
+am Nordrand hält die Zahl der Bauten.
+
 ## 4. Bühnenbilder
 
 Die Inventare stehen in den Szenen (`beschreibung`) und folgen 1.1 bis 1.4; feste Felder sind die

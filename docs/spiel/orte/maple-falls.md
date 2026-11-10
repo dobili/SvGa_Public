@@ -689,3 +689,36 @@ Katze. Die Kinder mit Kreide zeigen die Königsjagd Lasker gegen Thomas, London 
 
 Das Schild „Sturmschaden“ am Zedernpfad steht nicht als Bild auf der Parkkarte; S2 bleibt dort ein
 Übergang mit Dialog, darum kein Zustand.
+
+## Gutachten Runde 8: Antworten (niedrig-1, 10.11.2026)
+
+Gutachten in `docs/spiel/auftraege/gutachten/`. „Technik“ heißt: zentral gelöst für alle Karten
+(Tierbilder, Laternenhöhe, Fußmatte, Stufendiagonalen), hier nicht einzeln umgebaut.
+
+**Park** (Commit „Park nach dem Gutachten“):
+
+- Behoben: 1, 2 (der morsche Steg ragt vom Südufer ins Wasser, ein Pfad führt zur Absperrung), 9
+  (zwei überzählige Laternen weg), 11, 12 (Brett auf der Sitzfläche, Abernathy vor seiner Bank),
+  22 (Weg zum Basketballplatz), 25, 26 (die zwei Pflasterflecken sind ein Platz), 29 (Blumenbeete),
+  17, 30 (Bäume im Osten und Südosten). Der neue Steg ist Zustand `steg-neu`.
+- Technik: 4, 28 (Enten und Krähen sind dasselbe Bild), 8 (Laternenhöhe).
+- Perspektive: 14, 27 (Bänke und Wartehäuschen gibt es nur von vorn; das Häuschen zeigt seine Front
+  nach Süden, die Haltestelle liegt darum südlich der Straße), 16, 24 (Figuren nur stehend).
+- Fehlendes Bild: 18 (Holzbrücke; die Straßenbrücke nutzt das Brückenbild aus dem Paket), 19, 20
+  (Fahrbahnmarkierung, Zebrastreifen), 21 (kleines Feld mit einem Korb; Bildwunsch), 23 (die
+  Halfpipe ist schwer zu erkennen; Bildwunsch).
+- Zur Nachprüfung: 3, 5, 6, 7, 10, 13, 15.
+
+**Maple Falls außen** (Commit „Maple Falls Straße nach dem Gutachten“):
+
+- Behoben: 25, 27–31 (die Südhäuser zeigen der Birch Lane eingezäunte Gärten mit Gartenhaus, Beet
+  und Baum; die Türen liegen an der Gasse dahinter, weil jedes Hausbild seine Tür unten hat), 26
+  (Wohnhaus statt „MARKET“), 9 (Holzhaus statt Flachdachhaus hinter dem Diner), 11 (Wendehammer
+  mit Gehweg rundherum), 17 (Freitreppe bis zum Gehweg gepflastert), 15 (Tisch ohne Stühle weg),
+  33 (zweite Elternbank).
+- Technik: 3, 13, 20 (Tierbilder), 22, 23 (Laternen), 2 (Stufen).
+- Perspektive: 6 (Bänke von vorn), 8, 14, 37, 38 (Figuren ohne Werkzeug in der Hand).
+- Fehlendes Bild: 21 (Markierung), 24 (Auto und Rad; der Schulbus kommt als Zustand `schulbus` in
+  den Park), 16 (eigenes Diner-Bild), 32 (Rutsche), 35 (Sandboden).
+- Gewollt: 1 (der Bach läuft am Nordrand aus der Karte).
+- Zur Nachprüfung: 4, 5, 7, 10, 12, 18, 19, 34, 36.

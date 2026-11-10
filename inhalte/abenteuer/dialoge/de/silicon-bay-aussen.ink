@@ -66,7 +66,7 @@ Wenn er redet, darfst du zurückreden. Mit einem Spruch. Aber nie gemein. #sprec
 
 === dash_angebot ===
 Tick, tack, dein König hat Angst. Spielen wir? #sprecher:dash
-* [„Los, drei Minuten.“]
++ [„Los, drei Minuten.“]
     ~ beginnePartie("siliconBay.dash")
     -> END
 * [„Nach dem Essen.“]
@@ -76,7 +76,7 @@ Tick, tack, dein König hat Angst. Spielen wir? #sprecher:dash
 === dash_nach_niederlage ===
 Burrito für mich! Denkst du noch oder verlierst du schon? #sprecher:dash
 Er redet, damit du nicht denkst. Mach das Gegenteil. #sprecher:ambrose
-* [„Revanche.“]
++ [„Revanche.“]
     ~ beginnePartie("siliconBay.dash")
     -> END
 * [„Später.“]
@@ -198,7 +198,7 @@ Bevor die Bildschirme kamen, roch diese Stadt nach Fisch. Ein ehrlicher Geruch. 
 // ---------------------------------------------------------------- Altstadt: Eisenwarenladen (Batterie)
 // Runde 6, Bitte von mittel-4: Das Leuchtfeuer auf der Pelikaninsel braucht eine Batterie
 // (Gegenstand batterie). Der alte Eisenwarenladen der Altstadt führt noch Bootsbatterien.
-// Quest siliconBay.batterie; die Wirkung gibt den Gegenstand.
+// Quest siliconBay.batterie (Start beim Laden, Schritt eisenwaren_batterie); die Wirkung gibt den Gegenstand.
 
 === eisenwaren ===
 {batterieErhalten:
@@ -215,11 +215,8 @@ Der Eisenwarenladen riecht nach Öl und Holz. Hinter der Theke sortiert ein alte
 
 === eisenwaren_batterie ===
 „Das Leuchtfeuer? Das hat seit Jahren keiner mehr gewartet. Die Leute auf dem Campus wissen nicht mal, dass es da draußen brennt.“ #sprecher:erzaehler
-Er zieht unter der Theke eine schwere Bootsbatterie hervor. „Die hab ich für genau so einen Tag aufgehoben. Nimm sie.“ #sprecher:erzaehler
--> eisenwaren_batterie_mitgenommen
-
-=== eisenwaren_batterie_mitgenommen ===
 ~ batterieErhalten = true
+Er zieht unter der Theke eine schwere Bootsbatterie hervor. „Die hab ich für genau so einen Tag aufgehoben. Nimm sie.“ #sprecher:erzaehler
 Ein Licht für die Insel. Manche Züge macht man für andere. #sprecher:ambrose
 -> END
 

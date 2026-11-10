@@ -4083,6 +4083,12 @@
           "name": "figur.mo.name",
           "sprite": "figuren/mo.png",
           "dialog": "capital-arena-ubahnhof.mo"
+        },
+        {
+          "kennung": "capitalArena.wanderer",
+          "name": "figur.wanderer.name",
+          "sprite": "figuren/wanderer.png",
+          "dialog": "capital-arena-aussen.wanderer"
         }
       ],
       "ausloeser": [

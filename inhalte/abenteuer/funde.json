@@ -326,6 +326,19 @@
       "ort": "capitalArena",
       "name": "fund.fotoKreidenacht.name",
       "text": "fund.fotoKreidenacht.text"
+    },
+    {
+      "kennung": "fotoMappe",
+      "ort": "capitalArena",
+      "name": "fund.fotoMappe.name",
+      "text": "fund.fotoMappe.text"
+    },
+    {
+      "kennung": "buchVonGrundAuf",
+      "ort": "capitalArena",
+      "name": "fund.buchVonGrundAuf.name",
+      "text": "fund.buchVonGrundAuf.text",
+      "extra": "brett:manuskript"
     }
   ]
 }

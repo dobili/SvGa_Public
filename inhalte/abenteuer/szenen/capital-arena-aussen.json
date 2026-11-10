@@ -399,7 +399,15 @@
       ]
     }
   ],
-  "figuren": [],
+  "figuren": [
+    {
+      "name": "wanderer",
+      "feld": [
+        16,
+        43
+      ]
+    }
+  ],
   "belebung": [
     {
       "name": "fans",

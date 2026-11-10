@@ -1360,5 +1360,21 @@
   "quest.kreidenacht.schritt1": "Runde eins des Blitzturniers im alten U-Bahnhof gegen Dime spielen",
   "quest.kreidenacht.schritt2": "Runde zwei gegen Mama Bear spielen",
   "quest.kreidenacht.schritt3": "Runde drei gegen den Jungen mit der Kapuze spielen",
-  "quest.kreidenacht.schritt4": "Mit Mo das Turnier beschließen"
+  "quest.kreidenacht.schritt4": "Mit Mo das Turnier beschließen",
+  "fund.fotoMappe.name": "Foto „Die Mappe“",
+  "fund.fotoMappe.text": "Dr. Lin blättert in deiner Mappe mit den sechs Spuren von Perfect Move.",
+  "fund.buchVonGrundAuf.name": "Das gedruckte Handbuch",
+  "fund.buchVonGrundAuf.text": "Das Buch des Wanderers, dreizehn Kapitel, ein Geschenk nach dem Finale. Dazu der Bretthintergrund „Manuskript“.",
+  "quest.finchJagd.titel": "Die Finch-Jagd",
+  "quest.finchJagd.schritt1": "Finchs fünfzehn weiße Figuren an den Wegen suchen; Odette Finch wartet am Leuchtturm",
+  "quest.finchJagd.schritt2": "Finchs Meisterproblem lösen: Matt in drei",
+  "quest.finchJagd.schritt3": "Odette die Lösung zeigen",
+  "quest.verloreneSeiten.titel": "Die verlorenen Seiten",
+  "quest.verloreneSeiten.schritt1": "Die Seiten des Wanderers auf den Wegen aufheben und ihm am Seeufer zurückgeben",
+  "quest.verloreneSeiten.schritt2": "Nach dem Finale den Wanderer vor der Arena treffen",
+  "quest.spurenPerfectMove.titel": "Die Spuren von Perfect Move",
+  "quest.spurenPerfectMove.schritt1": "Sechs Spuren von Perfect Move an den Wegen sammeln und Dr. Lin in Capital zeigen",
+  "quest.kreidespringer.titel": "Die Kreidespringer",
+  "quest.kreidespringer.schritt1": "Den Kreidespringern folgen: unter der Brücke, an der Raststätte, im Diner, bei den Holzfällern und in Capital",
+  "quest.kreidespringer.schritt2": "In der Nacht der Kreidespringer im alten U-Bahnhof mitspielen"
 }

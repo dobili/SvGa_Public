@@ -32,3 +32,19 @@ def test_buchten_alle_vier_reihen():
     markiere(bild, zeilen, {"buchten": {"b": 4}})
     assert bild.getpixel((5, 4 * K)) == WEISS
     assert bild.getpixel((5, 2 * K)) == (0, 0, 0, 0)
+
+
+def test_mittellinie_laeuft_durch_die_kehre():
+    """Regel: Gutachten Bergstraße (Runde 9): Die Mittellinie hört an der Kehre nicht auf."""
+    zeilen = [
+        "ssssssss..",
+        "ssssssss..",
+        "......ss..",
+        "......ss..",
+        "......ss..",
+        "......ss..",
+        "......ss..",
+    ]
+    bild = Image.new("RGBA", (10 * K, 7 * K))
+    markiere(bild, zeilen, {"markierung": ["s"]})
+    assert bild.getpixel((7 * K, K - 1)) == GELB  # Mitte des Eckstücks

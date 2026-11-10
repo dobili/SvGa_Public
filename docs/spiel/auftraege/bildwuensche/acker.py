@@ -28,7 +28,13 @@ def acker(breite: int, hoehe: int) -> Image.Image:
     for y in range(hoehe):
         zeile = "Upper" if y == 0 else "Bottom" if y == hoehe - 1 else "Middle"
         for x in range(breite):
-            spalte = "Left" if x == 0 else "Right" if x == breite - 1 else ("Central" if zeile == "Middle" else "Middle")
+            spalte = (
+                "Left"
+                if x == 0
+                else "Right"
+                if x == breite - 1
+                else ("Central" if zeile == "Middle" else "Middle")
+            )
             bild.alpha_composite(teil(zeile, spalte), (x * K, y * K))
     return bild
 

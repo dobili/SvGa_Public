@@ -1529,3 +1529,6 @@ nach Osten und führt am Ostufer hinunter zum Kai. Die alte flache Querung über
 die Auslöser auf der Brücke (Nietenkopf, Zeitnot-Trick, Aussicht) und der Brückenwärter sind
 mitgezogen, der Graffiti-Turm steht am östlichen Pfeiler. Damit ist der Befund „Brücke flach, kein
 Kahn käme darunter durch“ erledigt.
+
+**Restpunkte Eisenbrücke (10.11.2026):** Das Graffiti ist eine Krone ganz auf dem östlichen Widerlager,
+der Kai hat zum Rasen eine Kante aus Steinplatten.

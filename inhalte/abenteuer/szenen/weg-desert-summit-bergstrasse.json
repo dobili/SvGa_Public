@@ -3,7 +3,7 @@
   "datei": "karten/weg-desert-summit-bergstrasse.json",
   "kante": "klippe",
   "art": "aussen",
-  "beschreibung": "Weg 7, die Bergstraße: Hinter dem Diner endet die Wüste an einem Viehgitter im Asphalt, und die Straße steigt in Kehren nach Norden in die Berge. Felsstufen aus rotem Stein trennen die Kehren, Rampen führen hindurch. Unten Sand, Kakteen und Wacholder, in der Mitte Erde und erste Pinien, oben Gras, dichter Pinienwald und kühler Wind. Auf halber Höhe zweigt ein Schotterweg nach Westen zur Hochebene ab, mit Wegweiser und offener Schranke. Am Nordrand geht es nach Summit City. Die Straße hat gelbe Mittellinie, weiße Randlinien und abgeschrägte Kehren; die Zonen wechseln an den Felsstufen, der Rastplatz ist eine Haltebucht aus Asphalt. Variante C, die reichere: drei weite Kehren, Picknickplatz mit Bänken an der Quelle, dichter Pinienwald oben mit Holzstapeln, viele Felsbrocken an den Stufen.",
+  "beschreibung": "Weg 7, die Bergstraße: Hinter dem Diner endet die Wüste an einem Viehgitter im Asphalt, und die Straße steigt in Kehren nach Norden in die Berge. Felsstufen aus rotem Stein trennen die Kehren, Rampen führen hindurch. Unten Sand, Kakteen und Wacholder, in der Mitte Erde und erste Pinien, oben Gras, dichter Pinienwald und kühler Wind. Auf halber Höhe zweigt ein Schotterweg nach Westen zur Hochebene ab, mit Wegweiser und offener Schranke. Am Nordrand geht es nach Summit City. Die Straße hat gelbe Mittellinie, weiße Randlinien und abgeschrägte Kehren; die Zonen wechseln an den Felsstufen, der Rastplatz ist eine Haltebucht aus Asphalt. Variante C, die reichere: drei weite Kehren, Picknickplatz mit Bänken an der Quelle, dichter Pinienwald oben mit Holzstapeln, viele Felsbrocken an den Stufen. Wo die Straße eine Felsstufe schneidet, fassen Stützmauern aus Ziegeln den Einschnitt; die Mittellinie läuft durch die Kehren.",
   "wand": "fels",
   "boden": "sand",
   "boeden": {
@@ -14,7 +14,7 @@
     "a": "asphalt"
   },
   "zustand": ["neu", "gebraucht", "alt"],
-  "stil": ["natur", "klassisch", "modern", "laendlich"],
+  "stil": ["natur", "klassisch", "modern", "laendlich", "rustikal"],
   "raster": [
     "##################sss###################",
     "#rrrrrrrrrrrrrrrrrsssrrrrrrrrrrrrrrrrrr#",
@@ -659,6 +659,42 @@
       "moebel": "wg6Kisten",
       "feld": [23, 89],
       "id": "ereignis126"
+    },
+    {
+      "moebel": "wr5Mauer",
+      "feld": [3, 50],
+      "vorn": true,
+      "bauteil_ok": true
+    },
+    {
+      "moebel": "wr5Mauer",
+      "feld": [7, 50],
+      "vorn": true,
+      "bauteil_ok": true
+    },
+    {
+      "moebel": "wr5Mauer",
+      "feld": [32, 80],
+      "vorn": true,
+      "bauteil_ok": true
+    },
+    {
+      "moebel": "wr5Mauer",
+      "feld": [36, 80],
+      "vorn": true,
+      "bauteil_ok": true
+    },
+    {
+      "moebel": "wr5Mauer",
+      "feld": [3, 106],
+      "vorn": true,
+      "bauteil_ok": true
+    },
+    {
+      "moebel": "wr5Mauer",
+      "feld": [7, 106],
+      "vorn": true,
+      "bauteil_ok": true
     }
   ],
   "ausloeser": [

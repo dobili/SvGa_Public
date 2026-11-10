@@ -9,6 +9,8 @@ Je 32 × 48, Holzsockel, Glaskasten mit Lichtreflex, darin ein Stück:
 - ``vitrine_laterne.png``: alte Eisenbahnlaterne mit rotem Glas;
 - ``vitrine_werkzeug.png``: Hammer und Zange aus dem Werk;
 - ``vitrine_glasfunke.png``: ein leuchtender Glassplitter auf Samt (der Glasfunke);
+- ``vitrine_muetze.png``, ``vitrine_lokmodell.png``, ``vitrine_fahrkarten.png`` (Nachtrag: statt der
+  drei Vitrinen mit grauem, unklarem Inhalt): Schaffnermütze, Modell einer Dampflok, alte Fahrkarten;
 - ``vitrine_leer.png``: Samt mit einem leeren, beschrifteten Fach (für Brief und Umschlag).
 
 Aufruf: ``python museum_vitrinen.py <privates Repository>`` (schreibt nach ``spiel/eigene/``).
@@ -82,6 +84,40 @@ def glasfunke() -> Image.Image:
     return bild
 
 
+def muetze() -> Image.Image:
+    """Schaffnermütze der Bahn: dunkelblau mit Schirm und goldenem Abzeichen."""
+    bild, z = gehaeuse()
+    z.ellipse((9, 14, 22, 23), fill=(40, 54, 96, 255))
+    z.rectangle((9, 20, 22, 23), fill=(28, 36, 70, 255))
+    z.rectangle((7, 23, 20, 25), fill=(20, 20, 26, 255))
+    z.point((15, 18), fill=(236, 196, 80, 255))
+    z.point((16, 18), fill=(236, 196, 80, 255))
+    glanz(z)
+    return bild
+
+
+def lokmodell() -> Image.Image:
+    """Modell einer Dampflok: schwarzer Kessel, rote Räder, Schornstein."""
+    bild, z = gehaeuse()
+    z.rectangle((8, 18, 21, 23), fill=(36, 36, 44, 255))
+    z.rectangle((18, 14, 23, 23), fill=(60, 60, 72, 255))
+    z.rectangle((10, 14, 12, 18), fill=(36, 36, 44, 255))
+    for x in (9, 14, 19):
+        z.ellipse((x, 23, x + 3, 26), fill=(190, 50, 44, 255))
+    glanz(z)
+    return bild
+
+
+def fahrkarten() -> Image.Image:
+    """Alte Fahrkarten aus Pappe, aufgefächert, mit Lochzange."""
+    bild, z = gehaeuse()
+    for i, farbe in enumerate(((226, 200, 150, 255), (200, 220, 190, 255), (230, 180, 170, 255))):
+        z.rectangle((7 + i * 4, 17 + i, 13 + i * 4, 21 + i), fill=farbe, outline=(120, 100, 80, 255))
+    z.line((19, 26, 24, 22), fill=(110, 110, 120, 255), width=2)
+    glanz(z)
+    return bild
+
+
 def leer() -> Image.Image:
     bild, z = gehaeuse()
     z.rectangle((9, 19, 22, 26), outline=(200, 170, 110, 255))
@@ -98,6 +134,9 @@ def main() -> None:
         ("werkzeug", werkzeug()),
         ("glasfunke", glasfunke()),
         ("leer", leer()),
+        ("muetze", muetze()),
+        ("lokmodell", lokmodell()),
+        ("fahrkarten", fahrkarten()),
     ):
         bild.save(ziel / f"vitrine_{name}.png")
     print("Museumsvitrinen nach", ziel)

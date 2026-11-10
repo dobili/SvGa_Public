@@ -2273,19 +2273,19 @@
     },
     {
      "id": 17,
-     "name": "mf8Lehrerpult",
+     "name": "pd9Lehrertisch",
      "type": "moebel",
      "x": 224,
      "y": 64,
      "width": 32,
-     "height": 48,
+     "height": 32,
      "rotation": 0,
      "visible": true,
      "properties": [
       {
        "name": "tiefe",
        "type": "int",
-       "value": 104
+       "value": 88
       },
       {
        "name": "kollision",
@@ -2319,7 +2319,7 @@
     },
     {
      "id": 19,
-     "name": "iw8VitrineGross1",
+     "name": "iw9VitrineLokmodell",
      "type": "moebel",
      "x": 48,
      "y": 96,
@@ -2411,7 +2411,7 @@
     },
     {
      "id": 23,
-     "name": "iw8VitrineB",
+     "name": "iw9VitrineFahrkarten",
      "type": "moebel",
      "x": 224,
      "y": 192,
@@ -2687,7 +2687,7 @@
     },
     {
      "id": 35,
-     "name": "iw8VitrineC",
+     "name": "iw9VitrineMuetze",
      "type": "moebel",
      "x": 432,
      "y": 96,

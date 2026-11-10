@@ -858,3 +858,22 @@ Empfehlung, gilt nach Regel 9 (Widerspruch genügt):
 - **Eigene Bilder nur, wo die Umfärbung nicht reicht:** etwa Schneemann oder verschneite Dächer,
   falls gewünscht.
 - **Umsetzung:** mittel-2, nach der Technik der Zustände.
+
+## 10.11.2026 – Dialoge: glaubwürdig, keine Buchverweise
+
+Der Autor beim ersten Spielen auf der Beta: Ambrose sagt gleich am Anfang zu dem Jungen, den er
+gerade als Geist heimsucht, das könne er „in Kapitel … meines Buches nachlesen“. So spricht kein
+Geist, der vor langer Zeit gelebt hat und ein Kind findet. Das Spiel ist keine Werbung für das Buch.
+
+- **Keine Verweise auf das Buch in Dialogen und Spieltexten:** keine Kapitel, Abschnitte, Seiten,
+  kein „lies nach“, kein „in meinem Buch steht“. Das gilt für Figuren, Karten, Ergebnistexte,
+  Tagebuch und Hinweise.
+- **Erlaubt bleibt die Schnitzeljagd:** Hin und wieder findet der Held eine Seite aus Ambroses altem
+  Buch. Dort kann er sie lesen, und Ambrose sagt höchstens, dass es eine seiner Seiten ist.
+- **Jeder Satz passt zur Figur:** zu ihrem Charakter laut Story-Bibel, zu ihrer Zeit, zu ihrem Ort
+  und zu der Lage, in der sie gerade spricht. Ambrose spricht wie ein Mann aus dem 19. Jahrhundert,
+  der staunt, tastet und sich erinnert, nicht wie ein Lehrbuch.
+- Die Zuordnung der Aufgaben und Karten zu Buchkapiteln bleibt in den Daten (für die Pipeline und
+  die Buch-App), sie erscheint nur nicht mehr im Spiel.
+
+Auftrag: `docs/spiel/auftraege/runde10_dialoge.md` (mittel-2).

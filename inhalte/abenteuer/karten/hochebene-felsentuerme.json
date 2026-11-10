@@ -11188,15 +11188,15 @@
      "type": "moebel",
      "x": 1056,
      "y": 240,
-     "width": 32,
-     "height": 32,
+     "width": 40,
+     "height": 40,
      "rotation": 0,
      "visible": true,
      "properties": [
       {
        "name": "tiefe",
        "type": "int",
-       "value": 264
+       "value": 272
       },
       {
        "name": "kollision",
@@ -11211,15 +11211,15 @@
      "type": "moebel",
      "x": 976,
      "y": 304,
-     "width": 32,
-     "height": 32,
+     "width": 40,
+     "height": 40,
      "rotation": 0,
      "visible": true,
      "properties": [
       {
        "name": "tiefe",
        "type": "int",
-       "value": 328
+       "value": 336
       },
       {
        "name": "kollision",

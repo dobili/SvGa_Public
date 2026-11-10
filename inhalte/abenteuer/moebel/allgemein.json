@@ -607,8 +607,8 @@
     },
     "tier12PferdGrast": {
       "quelle": "spiel/eigene/pferd_braun_grast.png",
-      "breite": 32,
-      "hoehe": 32,
+      "breite": 40,
+      "hoehe": 40,
       "kollision": true,
       "art": "tier_deko",
       "zustand": "neu",
@@ -616,8 +616,8 @@
     },
     "tier12SchimmelGrast": {
       "quelle": "spiel/eigene/pferd_grau_grast.png",
-      "breite": 32,
-      "hoehe": 32,
+      "breite": 40,
+      "hoehe": 40,
       "kollision": true,
       "art": "tier_deko",
       "zustand": "neu",

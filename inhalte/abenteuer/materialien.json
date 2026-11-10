@@ -89,7 +89,8 @@
     "erde": {
       "bogen": "gelaende",
       "feld": [1, 31],
-      "rand": [0, 30]
+      "rand": [0, 30],
+      "diagonalen": true
     },
     "sand": {
       "bogen": "gelaende",

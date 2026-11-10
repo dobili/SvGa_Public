@@ -1522,5 +1522,15 @@
   "fund.fotoWeltschachtag.text": "Die lange Tafel am Seeufer, fünf Bretter, die Bühne mit den zwei Fahnen und Abe mit dem Funkgerät.",
   "quest.weltschachtag.titel": "Weltschachtag am Leuchtturm",
   "quest.weltschachtag.schritt1": "Das Simultan an der langen Tafel spielen: fünf Bretter, fünf Bekannte",
-  "quest.weltschachtag.schritt2": "Bei Abes Partie gegen die Welt einen Zug vorschlagen"
+  "quest.weltschachtag.schritt2": "Bei Abes Partie gegen die Welt einen Zug vorschlagen",
+  "oberwelt.gedaechtnis.titel": "Gedächtnisstellung",
+  "oberwelt.gedaechtnis.einpraegen": "Präg dir die Stellung ein. Noch {sekunden} Sekunden.",
+  "oberwelt.gedaechtnis.aufbauen": "Bau die Stellung aus dem Gedächtnis auf.",
+  "oberwelt.gedaechtnis.bestanden": "Alles richtig: {richtig} von {gesamt} Figuren am richtigen Platz.",
+  "oberwelt.gedaechtnis.daneben": "{richtig} von {gesamt} Figuren am richtigen Platz. Fast!",
+  "oberwelt.simultan.ende": "Simultan beendet: {punkte} Punkte aus {bretter} Partien.",
+  "tagebuch.finch.titel": "Finchs Buchsbaum",
+  "tagebuch.finch.stand": "{anzahl} von {gesamt} Figuren gefunden.",
+  "tagebuch.finch.gefunden": "gefunden",
+  "tagebuch.finch.offen": "noch versteckt"
 }

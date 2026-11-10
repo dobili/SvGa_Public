@@ -80,12 +80,12 @@ Szene heißt die Datei in `inhalte/abenteuer/szenen/` ohne `.json`.
 - [x] kuerbishof-hof, weg-pinewood-ghost-tankstelle (Runde 9, niedrig-1)
 
 
-- [ ] crossroads-aussen mit Zustand gatter-offen (Runde 9, mittel-3)
-- [ ] crossroads-raststaette (Runde 9, mittel-3)
-- [ ] weg-summit-crossroads-geysirbecken, weg-summit-crossroads-praerie (Runde 9, mittel-3)
-- [ ] jahrmarkt-festplatz (Runde 9, mittel-3)
-- [ ] weg-crossroads-pinewood-huetten, weg-crossroads-pinewood-riesenbaeume (Runde 9, mittel-3)
-- [ ] pelikaninsel-dorf im Winter (Runde 9, mittel-3)
+- [x] crossroads-aussen mit Zustand gatter-offen (Runde 9, mittel-3)
+- [x] crossroads-raststaette (Runde 9, mittel-3)
+- [x] weg-summit-crossroads-geysirbecken, weg-summit-crossroads-praerie (Runde 9, mittel-3)
+- [x] jahrmarkt-festplatz (Runde 9, mittel-3)
+- [x] weg-crossroads-pinewood-huetten, weg-crossroads-pinewood-riesenbaeume (Runde 9, mittel-3)
+- [x] pelikaninsel-dorf im Winter (Runde 9, mittel-3)
 
 - [ ] silicon-bay-akademie, silicon-bay-altstadt (dritte Prüfung, mittel-3; Stehpulte, Glaswand mit Pfosten, geräumte Straße mit Schneewällen; Dateien `silicon-bay-akademie-3.md`, `silicon-bay-altstadt-3.md`)
 

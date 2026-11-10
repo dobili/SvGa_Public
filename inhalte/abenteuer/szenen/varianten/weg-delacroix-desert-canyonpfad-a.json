@@ -1,0 +1,566 @@
+{
+  "karte": "wegDelacroixDesert.canyonpfad",
+  "datei": "karten/varianten/weg-delacroix-desert-canyonpfad-a.json",
+  "art": "aussen",
+  "beschreibung": "Der Canyonpfad von Weg 6, 160 × 30 Kacheln, roter Fels. Ganz im Osten hält der Wüstenzug an einem einsamen Bahnsteig mit Prellbock, Holzhäuschen mit Vordach, Wasserturm und Bank. Der Pfad fällt über eine Rampe in den Canyon und läuft in Stufen nach Westen: Wanderschild mit Rätseltafel, trockenes Bachbett mit Kieseln, eine Engstelle, ein Hang mit Säulen- und blühenden Kakteen, Miras flacher roter Stein, Mrs. Holloway an einem Felsblock, eine Seitenschlucht nach Norden, durch die der Pfad zur Sternwarte abzweigt, dann öffnet sich der Canyon zum Westrand.",
+  "wand": "felsRot",
+  "boden": "sandRot",
+  "boeden": {
+    "e": "erde",
+    "k": "schotter",
+    "p": "pflaster",
+    "f": "felsbodenRot"
+  },
+  "raster": [
+    "##############################..################################################################################################################################",
+    "#############################....###############################################################################################################################",
+    "#############################....###############################################################################################################################",
+    "#############################....###############################################################################################################################",
+    "#############################....#####################################################################################################....kkkkkkkkkkkkkkkkkkkkk#",
+    "#############################....#####################################################################################################....kkkkkkkkkkkkkkkkkkkkk#",
+    "#############################....#####################################################################################################....kkkkkkkkkkkkkkkkkkkkk#",
+    "#############################....#####################################################################################################....kkkkkkkkkkkkkkkkkkkkk#",
+    "#############################....#####################################################################################################.....pppppppppppppppppppp#",
+    "#############################....####################################################################.........................########.....pppppppppppppppppppp#",
+    "#############################....#############.........................###########################.............................#######.........................#",
+    "#############################....##########.............................##########################.............................#######.........................#",
+    "##....................#######....##########.............................##########################.............................#######.........................#",
+    "#......................######....##########.............................##########################.............................................................#",
+    ".......................######....##########...........................................############.............................................................#",
+    ".......................######....##########....................................................................................................................#",
+    "#.....................................................................................................#####################....................................#",
+    "##.............................................#####################..................................#####################....................................#",
+    "##.............................................#####################..................................########################.............#####################",
+    "###################............................########################..............................#########################.............#####################",
+    "###################............................########################...............##########################################################################",
+    "######################........................##################################################################################################################",
+    "######################........................##################################################################################################################",
+    "################################################################################################################################################################",
+    "################################################################################################################################################################",
+    "################################################################################################################################################################",
+    "################################################################################################################################################################",
+    "################################################################################################################################################################",
+    "################################################################################################################################################################",
+    "################################################################################################################################################################"
+  ],
+  "objekte": [
+    {
+      "moebel": "iw5Prellbock",
+      "feld": [138, 4]
+    },
+    {
+      "moebel": "iw5Prellbock",
+      "feld": [138, 6]
+    },
+    {
+      "moebel": "cc4Gleis",
+      "feld": [140, 4],
+      "bauteil_ok": true
+    },
+    {
+      "moebel": "cc4Gleis",
+      "feld": [140, 6],
+      "bauteil_ok": true
+    },
+    {
+      "moebel": "cc4Gleis",
+      "feld": [141, 4],
+      "bauteil_ok": true
+    },
+    {
+      "moebel": "cc4Gleis",
+      "feld": [141, 6],
+      "bauteil_ok": true
+    },
+    {
+      "moebel": "cc4Gleis",
+      "feld": [142, 4],
+      "bauteil_ok": true
+    },
+    {
+      "moebel": "cc4Gleis",
+      "feld": [142, 6],
+      "bauteil_ok": true
+    },
+    {
+      "moebel": "cc4Gleis",
+      "feld": [143, 4],
+      "bauteil_ok": true
+    },
+    {
+      "moebel": "cc4Gleis",
+      "feld": [143, 6],
+      "bauteil_ok": true
+    },
+    {
+      "moebel": "cc4Gleis",
+      "feld": [144, 4],
+      "bauteil_ok": true
+    },
+    {
+      "moebel": "cc4Gleis",
+      "feld": [144, 6],
+      "bauteil_ok": true
+    },
+    {
+      "moebel": "cc4Gleis",
+      "feld": [145, 4],
+      "bauteil_ok": true
+    },
+    {
+      "moebel": "cc4Gleis",
+      "feld": [145, 6],
+      "bauteil_ok": true
+    },
+    {
+      "moebel": "cc4Gleis",
+      "feld": [146, 4],
+      "bauteil_ok": true
+    },
+    {
+      "moebel": "cc4Gleis",
+      "feld": [146, 6],
+      "bauteil_ok": true
+    },
+    {
+      "moebel": "cc4Gleis",
+      "feld": [147, 4],
+      "bauteil_ok": true
+    },
+    {
+      "moebel": "cc4Gleis",
+      "feld": [147, 6],
+      "bauteil_ok": true
+    },
+    {
+      "moebel": "cc4Gleis",
+      "feld": [148, 4],
+      "bauteil_ok": true
+    },
+    {
+      "moebel": "cc4Gleis",
+      "feld": [148, 6],
+      "bauteil_ok": true
+    },
+    {
+      "moebel": "cc4Gleis",
+      "feld": [149, 4],
+      "bauteil_ok": true
+    },
+    {
+      "moebel": "cc4Gleis",
+      "feld": [149, 6],
+      "bauteil_ok": true
+    },
+    {
+      "moebel": "cc4Gleis",
+      "feld": [150, 4],
+      "bauteil_ok": true
+    },
+    {
+      "moebel": "cc4Gleis",
+      "feld": [150, 6],
+      "bauteil_ok": true
+    },
+    {
+      "moebel": "cc4Gleis",
+      "feld": [151, 4],
+      "bauteil_ok": true
+    },
+    {
+      "moebel": "cc4Gleis",
+      "feld": [151, 6],
+      "bauteil_ok": true
+    },
+    {
+      "moebel": "cc4Gleis",
+      "feld": [152, 4],
+      "bauteil_ok": true
+    },
+    {
+      "moebel": "cc4Gleis",
+      "feld": [152, 6],
+      "bauteil_ok": true
+    },
+    {
+      "moebel": "cc4Gleis",
+      "feld": [153, 4],
+      "bauteil_ok": true
+    },
+    {
+      "moebel": "cc4Gleis",
+      "feld": [153, 6],
+      "bauteil_ok": true
+    },
+    {
+      "moebel": "cc4Gleis",
+      "feld": [154, 4],
+      "bauteil_ok": true
+    },
+    {
+      "moebel": "cc4Gleis",
+      "feld": [154, 6],
+      "bauteil_ok": true
+    },
+    {
+      "moebel": "cc4Gleis",
+      "feld": [155, 4],
+      "bauteil_ok": true
+    },
+    {
+      "moebel": "cc4Gleis",
+      "feld": [155, 6],
+      "bauteil_ok": true
+    },
+    {
+      "moebel": "cc4Gleis",
+      "feld": [156, 4],
+      "bauteil_ok": true
+    },
+    {
+      "moebel": "cc4Gleis",
+      "feld": [156, 6],
+      "bauteil_ok": true
+    },
+    {
+      "moebel": "cc4Gleis",
+      "feld": [157, 4],
+      "bauteil_ok": true
+    },
+    {
+      "moebel": "cc4Gleis",
+      "feld": [157, 6],
+      "bauteil_ok": true
+    },
+    {
+      "moebel": "cc4Gleis",
+      "feld": [158, 4],
+      "bauteil_ok": true
+    },
+    {
+      "moebel": "cc4Gleis",
+      "feld": [158, 6],
+      "bauteil_ok": true
+    },
+    {
+      "moebel": "mfBank",
+      "feld": [145, 8]
+    },
+    {
+      "moebel": "dd6Wuestenbahnhof",
+      "feld": [141, 10],
+      "id": "wuestenbahnhof"
+    },
+    {
+      "moebel": "dd6Wasserturm",
+      "feld": [150, 10]
+    },
+    {
+      "moebel": "wg4Schild",
+      "feld": [120, 9]
+    },
+    {
+      "moebel": "dd6SteinFlach",
+      "feld": [61, 15],
+      "id": "miraStein"
+    },
+    {
+      "moebel": "felsKlein",
+      "feld": [29, 3]
+    },
+    {
+      "moebel": "fels",
+      "feld": [32, 5]
+    },
+    {
+      "moebel": "fels",
+      "feld": [29, 7]
+    },
+    {
+      "moebel": "dd6Saguaro",
+      "feld": [4, 15]
+    },
+    {
+      "moebel": "dd6KaktusKlein",
+      "feld": [11, 12]
+    },
+    {
+      "moebel": "dd6KaktusBluehend",
+      "feld": [18, 17]
+    },
+    {
+      "moebel": "dd6Saguaro",
+      "feld": [39, 16]
+    },
+    {
+      "moebel": "dd6KaktusKlein",
+      "feld": [46, 15]
+    },
+    {
+      "moebel": "dd6KaktusBluehend",
+      "feld": [53, 10]
+    },
+    {
+      "moebel": "dd6Saguaro",
+      "feld": [60, 10]
+    },
+    {
+      "moebel": "dd6KaktusKlein",
+      "feld": [67, 10]
+    },
+    {
+      "moebel": "dd6KaktusBluehend",
+      "feld": [74, 19]
+    },
+    {
+      "moebel": "dd6Saguaro",
+      "feld": [81, 14]
+    },
+    {
+      "moebel": "dd6KaktusKlein",
+      "feld": [102, 14]
+    },
+    {
+      "moebel": "dd6KaktusBluehend",
+      "feld": [109, 9]
+    },
+    {
+      "moebel": "dd6Saguaro",
+      "feld": [116, 12]
+    },
+    {
+      "moebel": "dd6KaktusKlein",
+      "feld": [123, 9]
+    },
+    {
+      "moebel": "dd6KaktusBluehend",
+      "feld": [130, 18]
+    },
+    {
+      "moebel": "fels",
+      "feld": [7, 12]
+    },
+    {
+      "moebel": "felsKlein",
+      "feld": [18, 16]
+    },
+    {
+      "moebel": "felsKlein",
+      "feld": [40, 21]
+    },
+    {
+      "moebel": "fels",
+      "feld": [51, 10]
+    },
+    {
+      "moebel": "fels",
+      "feld": [73, 14]
+    },
+    {
+      "moebel": "felsKlein",
+      "feld": [84, 19]
+    },
+    {
+      "moebel": "fels",
+      "feld": [95, 18]
+    },
+    {
+      "moebel": "felsKlein",
+      "feld": [106, 14]
+    },
+    {
+      "moebel": "fels",
+      "feld": [117, 9]
+    },
+    {
+      "moebel": "felsKlein",
+      "feld": [128, 18]
+    },
+    {
+      "moebel": "cc3Kiesel",
+      "feld": [105, 14]
+    },
+    {
+      "moebel": "cc3Kiesel",
+      "feld": [108, 14]
+    },
+    {
+      "moebel": "cc3Kiesel",
+      "feld": [111, 14]
+    },
+    {
+      "moebel": "cc3Kiesel",
+      "feld": [114, 14]
+    },
+    {
+      "moebel": "dd6Geierkreis",
+      "feld": [18, 15]
+    }
+  ],
+  "ausloeser": [
+    {
+      "name": "start",
+      "feld": [152, 9],
+      "eigenschaften": {
+        "richtung": "links"
+      }
+    },
+    {
+      "name": "zurueckDelacroix",
+      "feld": [157, 9]
+    },
+    {
+      "name": "weiterFelsbogen",
+      "feld": [0, 14]
+    },
+    {
+      "name": "weiterFelsbogen",
+      "feld": [0, 15]
+    },
+    {
+      "name": "sternwarte",
+      "feld": [30, 0]
+    },
+    {
+      "name": "sternwarte",
+      "feld": [31, 0]
+    },
+    {
+      "name": "tafel",
+      "feld": [121, 11]
+    },
+    {
+      "name": "stein",
+      "feld": [62, 14]
+    },
+    {
+      "name": "fundEidechsenhaut",
+      "feld": [80, 18]
+    }
+  ],
+  "figuren": [
+    {
+      "name": "holloway",
+      "feld": [48, 11]
+    }
+  ],
+  "belebung": [
+    {
+      "name": "vogelbeobachterin",
+      "typ": "statist",
+      "feld": [40, 16],
+      "eigenschaften": {
+        "von": "40,16",
+        "bis": "40,16",
+        "tun": "schaut durch ihr Fernglas",
+        "wann": "tag",
+        "sagt": "statist.wegDelacroixDesert.canyonpfad.vogelbeobachterin"
+      }
+    },
+    {
+      "name": "geologe",
+      "typ": "statist",
+      "feld": [90, 15],
+      "eigenschaften": {
+        "von": "90,15",
+        "bis": "90,15",
+        "tun": "klopft Steine aus der Felswand",
+        "wann": "tag",
+        "sagt": "statist.wegDelacroixDesert.canyonpfad.geologe"
+      }
+    },
+    {
+      "name": "wanderpaar",
+      "typ": "statist",
+      "feld": [125, 15],
+      "eigenschaften": {
+        "von": "125,15",
+        "bis": "118,15",
+        "tun": "steigt langsam den Pfad hinab",
+        "wann": "tag",
+        "sagt": "statist.wegDelacroixDesert.canyonpfad.wanderpaar"
+      }
+    },
+    {
+      "name": "fotograf",
+      "typ": "statist",
+      "feld": [149, 15],
+      "eigenschaften": {
+        "von": "149,15",
+        "bis": "149,15",
+        "tun": "fotografiert die Felswände",
+        "wann": "tag"
+      }
+    },
+    {
+      "name": "roadrunner",
+      "typ": "tier",
+      "feld": [15, 12],
+      "eigenschaften": {
+        "von": "15,12",
+        "bis": "21,12",
+        "verhalten": "flitzen"
+      }
+    },
+    {
+      "name": "eidechse",
+      "typ": "tier",
+      "feld": [39, 16],
+      "eigenschaften": {
+        "von": "39,16",
+        "bis": "45,16",
+        "verhalten": "flitzen"
+      }
+    },
+    {
+      "name": "geier",
+      "typ": "tier",
+      "feld": [65, 16],
+      "eigenschaften": {
+        "von": "65,16",
+        "bis": "71,16",
+        "verhalten": "fliegen"
+      }
+    },
+    {
+      "name": "wuestenhase",
+      "typ": "tier",
+      "feld": [89, 15],
+      "eigenschaften": {
+        "von": "89,15",
+        "bis": "95,15",
+        "verhalten": "flitzen"
+      }
+    },
+    {
+      "name": "kojote",
+      "typ": "tier",
+      "feld": [115, 14],
+      "eigenschaften": {
+        "von": "115,14",
+        "bis": "121,14",
+        "verhalten": "ausweichen"
+      }
+    },
+    {
+      "name": "falke",
+      "typ": "tier",
+      "feld": [140, 17],
+      "eigenschaften": {
+        "von": "140,17",
+        "bis": "146,17",
+        "verhalten": "fliegen"
+      }
+    }
+  ],
+  "zustand": ["neu", "gebraucht", "alt"],
+  "stil": [
+    "natur",
+    "einfach",
+    "industrie",
+    "klassisch",
+    "laendlich",
+    "landhaus"
+  ],
+  "variante": "a"
+}

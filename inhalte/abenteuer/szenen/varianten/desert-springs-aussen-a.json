@@ -1,0 +1,1036 @@
+{
+  "karte": "desertSprings.aussen",
+  "datei": "karten/varianten/desert-springs-aussen-a.json",
+  "art": "aussen",
+  "beschreibung": "Desert Springs am Nachmittag, 60 × 40 Kacheln, roter Sand. Oben am Felsrand läuft die alte Bahnlinie; davor der Bahnsteig und der alte Bahnhof, ein gelbes Stadthaus mit Veranda-Tür, in dem das Antiquariat ist. Links ein Wasserturm und das Diner (braunes Haus mit Schild „DINER“), rechts die Tankstelle mit Zapfsäulen; davor auf dem Gehweg Bucks alter Wagen. Die Old Mother Road kommt vom Westrand und biegt am Ostende nach Süden in den gepflasterten Hof. Südlich der Straße das Motel (zwei braune Flügel, Ersatz) und daneben Tomás’ Garage (Container mit Tür, Ersatz für die Garage mit Rolltor). Vom Ostrand kommt der Schotterpfad aus dem Canyon, davor das Postamt am Vorplatz. Wohnwagen, eine Blechhütte und Containerhäuser hinter dem Hof, ein Wohnwagen am Gehweg im Nordosten. Feigenkakteen, Felsen am Südrand, Laternen an der Straße.",
+  "wand": "felsRot",
+  "wandart": "sandRot",
+  "boden": "sandRot",
+  "boeden": {
+    "k": "schotter",
+    "p": "pflaster",
+    "s": "asphalt",
+    "q": "stein"
+  },
+  "raster": [
+    "############################################################",
+    "############################################################",
+    "#kkkkkkkkkkkkkkkkkkkkkkkkkkkkkkkkkkkkkkkkkkkkkkkkkkkkkkkkkk#",
+    "#kkkkkkkkkkkkkkkkkkkkkkkkkkkkkkkkkkkkkkkkkkkkkkkkkkkkkkkkkk#",
+    "#kkkkkkkkkkkkkkkkkkkkkkkkkkkkkkkkkkkkkkkkkkkkkkkkkkkkkkkkkk#",
+    "#kkkkkkkkkkkkkkkkkkkkkkkkkkkkkkkkkkkkkkkkkkkkkkkkkkkkkkkkkk#",
+    "#.............ppppppppppppppppppppppp......................#",
+    "#.............ppppppppppppppppppppppp......................#",
+    "#..........................................................#",
+    "#..........................................................#",
+    "#..........................................................#",
+    "#..........................................................#",
+    "#..........................................................#",
+    "#..........................................................#",
+    "#..........................................................#",
+    "#..........................................................#",
+    "#pppppppppppppppppppppppppppppppppppppppppppppppppppppppppp#",
+    "#pppppppppppppppppppppppppppppppppppppppppppppppppppppppppp#",
+    "ssssssssssssssssssssssssssssssssssssssssssssss.............#",
+    "ssssssssssssssssssssssssssssssssssssssssssssss.............#",
+    "ssssssssssssssssssssssssssssssssssssssssssssss.............#",
+    "#ppppppppppppppppppppppppppppppppppppppppppsss.............#",
+    "#..........................................sss.............#",
+    "#..........................................sss.............#",
+    "#..........................................sss.............#",
+    "#..........................................sss.............#",
+    "#..........................................sss.............#",
+    "#..........................................sss.............#",
+    "#..........................................sss.............#",
+    "#..ppppppppppppppppppppppppppppppppppppppppppp.............#",
+    "#..ppppppppppppppppppppppppppppppppppppppppppp.............#",
+    "#..pppppppppppppppppppppppppppppppppppppppppppppppppppppppp#",
+    "#..pppppppppppppppppppppppppppppppppppppppppppkkkkkkkkkkkkkk",
+    "#..pppppppppppppppppppppppppppppppppppppppppppkkkkkkkkkkkkkk",
+    "#..........................................................#",
+    "#..........................................................#",
+    "#..........................................................#",
+    "############################################################",
+    "############################################################",
+    "############################################################"
+  ],
+  "objekte": [
+    {
+      "moebel": "cc4Gleis",
+      "feld": [1, 2],
+      "bauteil_ok": true
+    },
+    {
+      "moebel": "cc4Gleis",
+      "feld": [1, 4],
+      "bauteil_ok": true
+    },
+    {
+      "moebel": "cc4Gleis",
+      "feld": [2, 2],
+      "bauteil_ok": true
+    },
+    {
+      "moebel": "cc4Gleis",
+      "feld": [2, 4],
+      "bauteil_ok": true
+    },
+    {
+      "moebel": "cc4Gleis",
+      "feld": [3, 2],
+      "bauteil_ok": true
+    },
+    {
+      "moebel": "cc4Gleis",
+      "feld": [3, 4],
+      "bauteil_ok": true
+    },
+    {
+      "moebel": "cc4Gleis",
+      "feld": [4, 2],
+      "bauteil_ok": true
+    },
+    {
+      "moebel": "cc4Gleis",
+      "feld": [4, 4],
+      "bauteil_ok": true
+    },
+    {
+      "moebel": "cc4Gleis",
+      "feld": [5, 2],
+      "bauteil_ok": true
+    },
+    {
+      "moebel": "cc4Gleis",
+      "feld": [5, 4],
+      "bauteil_ok": true
+    },
+    {
+      "moebel": "cc4Gleis",
+      "feld": [6, 2],
+      "bauteil_ok": true
+    },
+    {
+      "moebel": "cc4Gleis",
+      "feld": [6, 4],
+      "bauteil_ok": true
+    },
+    {
+      "moebel": "cc4Gleis",
+      "feld": [7, 2],
+      "bauteil_ok": true
+    },
+    {
+      "moebel": "cc4Gleis",
+      "feld": [7, 4],
+      "bauteil_ok": true
+    },
+    {
+      "moebel": "cc4Gleis",
+      "feld": [8, 2],
+      "bauteil_ok": true
+    },
+    {
+      "moebel": "cc4Gleis",
+      "feld": [8, 4],
+      "bauteil_ok": true
+    },
+    {
+      "moebel": "cc4Gleis",
+      "feld": [9, 2],
+      "bauteil_ok": true
+    },
+    {
+      "moebel": "cc4Gleis",
+      "feld": [9, 4],
+      "bauteil_ok": true
+    },
+    {
+      "moebel": "cc4Gleis",
+      "feld": [10, 2],
+      "bauteil_ok": true
+    },
+    {
+      "moebel": "cc4Gleis",
+      "feld": [10, 4],
+      "bauteil_ok": true
+    },
+    {
+      "moebel": "cc4Gleis",
+      "feld": [11, 2],
+      "bauteil_ok": true
+    },
+    {
+      "moebel": "cc4Gleis",
+      "feld": [11, 4],
+      "bauteil_ok": true
+    },
+    {
+      "moebel": "cc4Gleis",
+      "feld": [12, 2],
+      "bauteil_ok": true
+    },
+    {
+      "moebel": "cc4Gleis",
+      "feld": [12, 4],
+      "bauteil_ok": true
+    },
+    {
+      "moebel": "cc4Gleis",
+      "feld": [13, 2],
+      "bauteil_ok": true
+    },
+    {
+      "moebel": "cc4Gleis",
+      "feld": [13, 4],
+      "bauteil_ok": true
+    },
+    {
+      "moebel": "cc4Gleis",
+      "feld": [14, 2],
+      "bauteil_ok": true
+    },
+    {
+      "moebel": "cc4Gleis",
+      "feld": [14, 4],
+      "bauteil_ok": true
+    },
+    {
+      "moebel": "cc4Gleis",
+      "feld": [15, 2],
+      "bauteil_ok": true
+    },
+    {
+      "moebel": "cc4Gleis",
+      "feld": [15, 4],
+      "bauteil_ok": true
+    },
+    {
+      "moebel": "cc4Gleis",
+      "feld": [16, 2],
+      "bauteil_ok": true
+    },
+    {
+      "moebel": "cc4Gleis",
+      "feld": [16, 4],
+      "bauteil_ok": true
+    },
+    {
+      "moebel": "cc4Gleis",
+      "feld": [17, 2],
+      "bauteil_ok": true
+    },
+    {
+      "moebel": "cc4Gleis",
+      "feld": [17, 4],
+      "bauteil_ok": true
+    },
+    {
+      "moebel": "cc4Gleis",
+      "feld": [18, 2],
+      "bauteil_ok": true
+    },
+    {
+      "moebel": "cc4Gleis",
+      "feld": [18, 4],
+      "bauteil_ok": true
+    },
+    {
+      "moebel": "cc4Gleis",
+      "feld": [19, 2],
+      "bauteil_ok": true
+    },
+    {
+      "moebel": "cc4Gleis",
+      "feld": [19, 4],
+      "bauteil_ok": true
+    },
+    {
+      "moebel": "cc4Gleis",
+      "feld": [20, 2],
+      "bauteil_ok": true
+    },
+    {
+      "moebel": "cc4Gleis",
+      "feld": [20, 4],
+      "bauteil_ok": true
+    },
+    {
+      "moebel": "cc4Gleis",
+      "feld": [21, 2],
+      "bauteil_ok": true
+    },
+    {
+      "moebel": "cc4Gleis",
+      "feld": [21, 4],
+      "bauteil_ok": true
+    },
+    {
+      "moebel": "cc4Gleis",
+      "feld": [22, 2],
+      "bauteil_ok": true
+    },
+    {
+      "moebel": "cc4Gleis",
+      "feld": [22, 4],
+      "bauteil_ok": true
+    },
+    {
+      "moebel": "cc4Gleis",
+      "feld": [23, 2],
+      "bauteil_ok": true
+    },
+    {
+      "moebel": "cc4Gleis",
+      "feld": [23, 4],
+      "bauteil_ok": true
+    },
+    {
+      "moebel": "cc4Gleis",
+      "feld": [24, 2],
+      "bauteil_ok": true
+    },
+    {
+      "moebel": "cc4Gleis",
+      "feld": [24, 4],
+      "bauteil_ok": true
+    },
+    {
+      "moebel": "cc4Gleis",
+      "feld": [25, 2],
+      "bauteil_ok": true
+    },
+    {
+      "moebel": "cc4Gleis",
+      "feld": [25, 4],
+      "bauteil_ok": true
+    },
+    {
+      "moebel": "cc4Gleis",
+      "feld": [26, 2],
+      "bauteil_ok": true
+    },
+    {
+      "moebel": "cc4Gleis",
+      "feld": [26, 4],
+      "bauteil_ok": true
+    },
+    {
+      "moebel": "cc4Gleis",
+      "feld": [27, 2],
+      "bauteil_ok": true
+    },
+    {
+      "moebel": "cc4Gleis",
+      "feld": [27, 4],
+      "bauteil_ok": true
+    },
+    {
+      "moebel": "cc4Gleis",
+      "feld": [28, 2],
+      "bauteil_ok": true
+    },
+    {
+      "moebel": "cc4Gleis",
+      "feld": [28, 4],
+      "bauteil_ok": true
+    },
+    {
+      "moebel": "cc4Gleis",
+      "feld": [29, 2],
+      "bauteil_ok": true
+    },
+    {
+      "moebel": "cc4Gleis",
+      "feld": [29, 4],
+      "bauteil_ok": true
+    },
+    {
+      "moebel": "cc4Gleis",
+      "feld": [30, 2],
+      "bauteil_ok": true
+    },
+    {
+      "moebel": "cc4Gleis",
+      "feld": [30, 4],
+      "bauteil_ok": true
+    },
+    {
+      "moebel": "cc4Gleis",
+      "feld": [31, 2],
+      "bauteil_ok": true
+    },
+    {
+      "moebel": "cc4Gleis",
+      "feld": [31, 4],
+      "bauteil_ok": true
+    },
+    {
+      "moebel": "cc4Gleis",
+      "feld": [32, 2],
+      "bauteil_ok": true
+    },
+    {
+      "moebel": "cc4Gleis",
+      "feld": [32, 4],
+      "bauteil_ok": true
+    },
+    {
+      "moebel": "cc4Gleis",
+      "feld": [33, 2],
+      "bauteil_ok": true
+    },
+    {
+      "moebel": "cc4Gleis",
+      "feld": [33, 4],
+      "bauteil_ok": true
+    },
+    {
+      "moebel": "cc4Gleis",
+      "feld": [34, 2],
+      "bauteil_ok": true
+    },
+    {
+      "moebel": "cc4Gleis",
+      "feld": [34, 4],
+      "bauteil_ok": true
+    },
+    {
+      "moebel": "cc4Gleis",
+      "feld": [35, 2],
+      "bauteil_ok": true
+    },
+    {
+      "moebel": "cc4Gleis",
+      "feld": [35, 4],
+      "bauteil_ok": true
+    },
+    {
+      "moebel": "cc4Gleis",
+      "feld": [36, 2],
+      "bauteil_ok": true
+    },
+    {
+      "moebel": "cc4Gleis",
+      "feld": [36, 4],
+      "bauteil_ok": true
+    },
+    {
+      "moebel": "cc4Gleis",
+      "feld": [37, 2],
+      "bauteil_ok": true
+    },
+    {
+      "moebel": "cc4Gleis",
+      "feld": [37, 4],
+      "bauteil_ok": true
+    },
+    {
+      "moebel": "cc4Gleis",
+      "feld": [38, 2],
+      "bauteil_ok": true
+    },
+    {
+      "moebel": "cc4Gleis",
+      "feld": [38, 4],
+      "bauteil_ok": true
+    },
+    {
+      "moebel": "cc4Gleis",
+      "feld": [39, 2],
+      "bauteil_ok": true
+    },
+    {
+      "moebel": "cc4Gleis",
+      "feld": [39, 4],
+      "bauteil_ok": true
+    },
+    {
+      "moebel": "cc4Gleis",
+      "feld": [40, 2],
+      "bauteil_ok": true
+    },
+    {
+      "moebel": "cc4Gleis",
+      "feld": [40, 4],
+      "bauteil_ok": true
+    },
+    {
+      "moebel": "cc4Gleis",
+      "feld": [41, 2],
+      "bauteil_ok": true
+    },
+    {
+      "moebel": "cc4Gleis",
+      "feld": [41, 4],
+      "bauteil_ok": true
+    },
+    {
+      "moebel": "cc4Gleis",
+      "feld": [42, 2],
+      "bauteil_ok": true
+    },
+    {
+      "moebel": "cc4Gleis",
+      "feld": [42, 4],
+      "bauteil_ok": true
+    },
+    {
+      "moebel": "cc4Gleis",
+      "feld": [43, 2],
+      "bauteil_ok": true
+    },
+    {
+      "moebel": "cc4Gleis",
+      "feld": [43, 4],
+      "bauteil_ok": true
+    },
+    {
+      "moebel": "cc4Gleis",
+      "feld": [44, 2],
+      "bauteil_ok": true
+    },
+    {
+      "moebel": "cc4Gleis",
+      "feld": [44, 4],
+      "bauteil_ok": true
+    },
+    {
+      "moebel": "cc4Gleis",
+      "feld": [45, 2],
+      "bauteil_ok": true
+    },
+    {
+      "moebel": "cc4Gleis",
+      "feld": [45, 4],
+      "bauteil_ok": true
+    },
+    {
+      "moebel": "cc4Gleis",
+      "feld": [46, 2],
+      "bauteil_ok": true
+    },
+    {
+      "moebel": "cc4Gleis",
+      "feld": [46, 4],
+      "bauteil_ok": true
+    },
+    {
+      "moebel": "cc4Gleis",
+      "feld": [47, 2],
+      "bauteil_ok": true
+    },
+    {
+      "moebel": "cc4Gleis",
+      "feld": [47, 4],
+      "bauteil_ok": true
+    },
+    {
+      "moebel": "cc4Gleis",
+      "feld": [48, 2],
+      "bauteil_ok": true
+    },
+    {
+      "moebel": "cc4Gleis",
+      "feld": [48, 4],
+      "bauteil_ok": true
+    },
+    {
+      "moebel": "cc4Gleis",
+      "feld": [49, 2],
+      "bauteil_ok": true
+    },
+    {
+      "moebel": "cc4Gleis",
+      "feld": [49, 4],
+      "bauteil_ok": true
+    },
+    {
+      "moebel": "cc4Gleis",
+      "feld": [50, 2],
+      "bauteil_ok": true
+    },
+    {
+      "moebel": "cc4Gleis",
+      "feld": [50, 4],
+      "bauteil_ok": true
+    },
+    {
+      "moebel": "cc4Gleis",
+      "feld": [51, 2],
+      "bauteil_ok": true
+    },
+    {
+      "moebel": "cc4Gleis",
+      "feld": [51, 4],
+      "bauteil_ok": true
+    },
+    {
+      "moebel": "cc4Gleis",
+      "feld": [52, 2],
+      "bauteil_ok": true
+    },
+    {
+      "moebel": "cc4Gleis",
+      "feld": [52, 4],
+      "bauteil_ok": true
+    },
+    {
+      "moebel": "cc4Gleis",
+      "feld": [53, 2],
+      "bauteil_ok": true
+    },
+    {
+      "moebel": "cc4Gleis",
+      "feld": [53, 4],
+      "bauteil_ok": true
+    },
+    {
+      "moebel": "cc4Gleis",
+      "feld": [54, 2],
+      "bauteil_ok": true
+    },
+    {
+      "moebel": "cc4Gleis",
+      "feld": [54, 4],
+      "bauteil_ok": true
+    },
+    {
+      "moebel": "cc4Gleis",
+      "feld": [55, 2],
+      "bauteil_ok": true
+    },
+    {
+      "moebel": "cc4Gleis",
+      "feld": [55, 4],
+      "bauteil_ok": true
+    },
+    {
+      "moebel": "cc4Gleis",
+      "feld": [56, 2],
+      "bauteil_ok": true
+    },
+    {
+      "moebel": "cc4Gleis",
+      "feld": [56, 4],
+      "bauteil_ok": true
+    },
+    {
+      "moebel": "cc4Gleis",
+      "feld": [57, 2],
+      "bauteil_ok": true
+    },
+    {
+      "moebel": "cc4Gleis",
+      "feld": [57, 4],
+      "bauteil_ok": true
+    },
+    {
+      "moebel": "cc4Gleis",
+      "feld": [58, 2],
+      "bauteil_ok": true
+    },
+    {
+      "moebel": "cc4Gleis",
+      "feld": [58, 4],
+      "bauteil_ok": true
+    },
+    {
+      "moebel": "ds6BahnhofAlt",
+      "feld": [20, 9],
+      "id": "bahnhof"
+    },
+    {
+      "moebel": "ds6SchildAntiquariat",
+      "feld": [22, 12],
+      "vorn": true
+    },
+    {
+      "moebel": "ds6Diner",
+      "feld": [7, 9],
+      "id": "diner"
+    },
+    {
+      "moebel": "mf4SchildDiner",
+      "feld": [10, 9],
+      "vorn": true
+    },
+    {
+      "moebel": "dd6Wasserturm",
+      "feld": [1, 8]
+    },
+    {
+      "moebel": "ds6Tankstelle",
+      "feld": [38, 6],
+      "id": "tankstelle"
+    },
+    {
+      "moebel": "iw5AutoB",
+      "feld": [35, 13],
+      "id": "bucksWagen"
+    },
+    {
+      "moebel": "ds6Motel",
+      "feld": [4, 22],
+      "id": "motel"
+    },
+    {
+      "moebel": "ds6SchildMotel",
+      "feld": [1, 22]
+    },
+    {
+      "moebel": "ds6Garage",
+      "feld": [18, 23],
+      "id": "garage"
+    },
+    {
+      "moebel": "dsReifen",
+      "feld": [24, 28]
+    },
+    {
+      "moebel": "dsReifen",
+      "feld": [25, 28]
+    },
+    {
+      "moebel": "ds8WohnwagenMittel",
+      "feld": [50, 10]
+    },
+    {
+      "moebel": "ds8WohnwagenKlein",
+      "feld": [26, 23]
+    },
+    {
+      "moebel": "ds8Huette",
+      "feld": [32, 23]
+    },
+    {
+      "moebel": "ds8Containerhaus",
+      "feld": [38, 24]
+    },
+    {
+      "moebel": "ds8Post",
+      "feld": [46, 18]
+    },
+    {
+      "moebel": "ds8Containerhaus",
+      "feld": [54, 26]
+    },
+    {
+      "moebel": "mf4Laterne",
+      "feld": [12, 13],
+      "vorn": true
+    },
+    {
+      "moebel": "mf4Laterne",
+      "feld": [30, 13],
+      "vorn": true
+    },
+    {
+      "moebel": "mf4Laterne",
+      "feld": [20, 18],
+      "vorn": true
+    },
+    {
+      "moebel": "mf4Laterne",
+      "feld": [38, 18],
+      "vorn": true
+    },
+    {
+      "moebel": "iw5AutoA",
+      "feld": [30, 29]
+    },
+    {
+      "moebel": "iw5AutoB",
+      "feld": [33, 29]
+    },
+    {
+      "moebel": "dd6Saguaro",
+      "feld": [30, 8]
+    },
+    {
+      "moebel": "dd6KaktusBluehend",
+      "feld": [28, 34]
+    },
+    {
+      "moebel": "dd6KaktusKlein",
+      "feld": [50, 35]
+    },
+    {
+      "moebel": "dd6KaktusBluehend",
+      "feld": [3, 34]
+    },
+    {
+      "moebel": "wg4Felsgruppe",
+      "feld": [8, 35]
+    },
+    {
+      "moebel": "wg4Felsgruppe",
+      "feld": [20, 35]
+    },
+    {
+      "moebel": "wg4FelsgruppeB",
+      "feld": [33, 35]
+    }
+  ],
+  "ausloeser": [
+    {
+      "name": "start",
+      "feld": [57, 32],
+      "eigenschaften": {
+        "richtung": "links"
+      }
+    },
+    {
+      "name": "canyon",
+      "feld": [59, 32]
+    },
+    {
+      "name": "canyon",
+      "feld": [59, 33]
+    },
+    {
+      "name": "highway",
+      "feld": [0, 18]
+    },
+    {
+      "name": "highway",
+      "feld": [0, 19]
+    },
+    {
+      "name": "highway",
+      "feld": [0, 20]
+    },
+    {
+      "name": "antiquariatTuer",
+      "feld": [24, 17]
+    },
+    {
+      "name": "garageTuer",
+      "feld": [22, 29]
+    },
+    {
+      "name": "motel",
+      "feld": [12, 29]
+    },
+    {
+      "name": "bahnhof",
+      "feld": [32, 7]
+    }
+  ],
+  "figuren": [
+    {
+      "name": "buck",
+      "feld": [34, 17]
+    },
+    {
+      "name": "dot",
+      "feld": [17, 30]
+    }
+  ],
+  "belebung": [
+    {
+      "name": "touristen",
+      "typ": "statist",
+      "feld": [16, 7],
+      "eigenschaften": {
+        "von": "16,7",
+        "bis": "20,7",
+        "tun": "fotografieren den alten Bahnhof",
+        "wann": "tag",
+        "sagt": "statist.desertSprings.aussen.touristen"
+      }
+    },
+    {
+      "name": "busgast",
+      "typ": "statist",
+      "feld": [3, 21],
+      "eigenschaften": {
+        "von": "3,21",
+        "bis": "3,21",
+        "tun": "wartet auf den Bus",
+        "wann": "tag",
+        "sagt": "statist.desertSprings.aussen.busgast"
+      }
+    },
+    {
+      "name": "postbotin",
+      "typ": "statist",
+      "feld": [50, 31],
+      "eigenschaften": {
+        "von": "50,31",
+        "bis": "42,31",
+        "tun": "trägt Pakete zum Postamt",
+        "wann": "tag",
+        "sagt": "statist.desertSprings.aussen.postbotin"
+      }
+    },
+    {
+      "name": "hilfssheriff",
+      "typ": "statist",
+      "feld": [40, 17],
+      "eigenschaften": {
+        "von": "40,17",
+        "bis": "46,17",
+        "tun": "dreht seine Runde auf dem Gehweg",
+        "wann": "tag",
+        "sagt": "statist.desertSprings.aussen.hilfssheriff"
+      }
+    },
+    {
+      "name": "tankwart",
+      "typ": "statist",
+      "feld": [44, 17],
+      "eigenschaften": {
+        "von": "44,17",
+        "bis": "44,17",
+        "tun": "wischt die Zapfsäule ab",
+        "wann": "tag",
+        "sagt": "statist.desertSprings.aussen.tankwart"
+      }
+    },
+    {
+      "name": "rentnerin",
+      "typ": "statist",
+      "feld": [32, 31],
+      "eigenschaften": {
+        "von": "32,31",
+        "bis": "32,31",
+        "tun": "sitzt mit einer Decke in der Wintersonne",
+        "wann": "tag",
+        "sagt": "statist.desertSprings.aussen.rentnerin"
+      }
+    },
+    {
+      "name": "kind",
+      "typ": "statist",
+      "feld": [28, 30],
+      "eigenschaften": {
+        "von": "28,30",
+        "bis": "34,29",
+        "tun": "kickt eine Blechdose über den Hof",
+        "wann": "tag",
+        "sagt": "statist.desertSprings.aussen.kind"
+      }
+    },
+    {
+      "name": "haendlerin",
+      "typ": "statist",
+      "feld": [25, 17],
+      "eigenschaften": {
+        "von": "25,17",
+        "bis": "25,17",
+        "tun": "fegt den Sand von der Veranda des Antiquariats",
+        "wann": "tag",
+        "sagt": "statist.desertSprings.aussen.haendlerin",
+        "zeigt": "saavedraStellung"
+      }
+    },
+    {
+      "name": "mechaniker",
+      "typ": "statist",
+      "feld": [20, 30],
+      "eigenschaften": {
+        "von": "20,30",
+        "bis": "20,30",
+        "tun": "schraubt an einem alten Pick-up",
+        "wann": "tag"
+      }
+    },
+    {
+      "name": "trucker",
+      "typ": "statist",
+      "feld": [12, 17],
+      "eigenschaften": {
+        "von": "12,17",
+        "bis": "12,17",
+        "tun": "trinkt Kaffee vor dem Diner",
+        "wann": "morgen"
+      }
+    },
+    {
+      "name": "motelgast",
+      "typ": "statist",
+      "feld": [8, 30],
+      "eigenschaften": {
+        "von": "8,30",
+        "bis": "8,30",
+        "tun": "sitzt in Jacke vor seinem Zimmer",
+        "wann": "morgen"
+      }
+    },
+    {
+      "name": "wanderin",
+      "typ": "statist",
+      "feld": [55, 33],
+      "eigenschaften": {
+        "von": "55,33",
+        "bis": "49,33",
+        "tun": "kommt staubig aus dem Canyon",
+        "wann": "tag"
+      }
+    },
+    {
+      "name": "hund",
+      "typ": "tier",
+      "feld": [10, 17],
+      "eigenschaften": {
+        "von": "10,17",
+        "bis": "10,17",
+        "verhalten": "schlafen"
+      }
+    },
+    {
+      "name": "eidechse",
+      "typ": "tier",
+      "feld": [50, 35],
+      "eigenschaften": {
+        "von": "50,35",
+        "bis": "54,35",
+        "verhalten": "flitzen"
+      }
+    },
+    {
+      "name": "geier",
+      "typ": "tier",
+      "feld": [28, 9],
+      "eigenschaften": {
+        "von": "28,9",
+        "bis": "36,9",
+        "verhalten": "fliegen"
+      }
+    },
+    {
+      "name": "roadrunner",
+      "typ": "tier",
+      "feld": [54, 35],
+      "eigenschaften": {
+        "von": "54,35",
+        "bis": "48,35",
+        "verhalten": "flitzen"
+      }
+    },
+    {
+      "name": "katze",
+      "typ": "tier",
+      "feld": [14, 30],
+      "eigenschaften": {
+        "von": "14,30",
+        "bis": "14,30",
+        "verhalten": "sitzen"
+      }
+    },
+    {
+      "name": "huehner",
+      "typ": "tier",
+      "feld": [30, 35],
+      "eigenschaften": {
+        "von": "30,35",
+        "bis": "34,35",
+        "verhalten": "ausweichen"
+      }
+    }
+  ],
+  "zustand": ["neu", "gebraucht", "alt"],
+  "stil": ["natur", "einfach", "industrie", "klassisch", "modern", "laendlich"],
+  "variante": "a"
+}

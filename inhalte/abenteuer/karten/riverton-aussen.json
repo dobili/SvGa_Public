@@ -11,7 +11,7 @@
  "tilewidth": 16,
  "tileheight": 16,
  "nextlayerid": 5,
- "nextobjectid": 207,
+ "nextobjectid": 271,
  "layers": [
   {
    "id": 1,
@@ -3545,8 +3545,8 @@
     4,
     4,
     4,
-    1,
-    1,
+    4,
+    4,
     1,
     1,
     1,
@@ -3617,8 +3617,8 @@
     4,
     4,
     4,
-    1,
-    1,
+    4,
+    4,
     1,
     1,
     1,
@@ -3689,8 +3689,8 @@
     4,
     4,
     4,
-    1,
-    1,
+    4,
+    4,
     1,
     1,
     1,
@@ -3761,8 +3761,8 @@
     4,
     4,
     4,
-    1,
-    1,
+    4,
+    4,
     1,
     1,
     1,
@@ -3833,8 +3833,8 @@
     4,
     4,
     4,
-    1,
-    1,
+    4,
+    4,
     1,
     1,
     1,
@@ -3905,8 +3905,8 @@
     4,
     4,
     4,
-    1,
-    1,
+    4,
+    4,
     1,
     1,
     1,
@@ -3977,8 +3977,8 @@
     4,
     4,
     4,
-    1,
-    1,
+    4,
+    4,
     1,
     1,
     1,
@@ -15345,11 +15345,11 @@
     },
     {
      "id": 140,
-     "name": "pw7Kiefer",
+     "name": "sb5Faehrhaus",
      "type": "moebel",
-     "x": 1088,
-     "y": 256,
-     "width": 32,
+     "x": 1072,
+     "y": 272,
+     "width": 48,
      "height": 64,
      "rotation": 0,
      "visible": true,
@@ -15357,7 +15357,7 @@
       {
        "name": "tiefe",
        "type": "int",
-       "value": 312
+       "value": 328
       },
       {
        "name": "kollision",
@@ -15989,29 +15989,6 @@
     },
     {
      "id": 168,
-     "name": "sb5Kran",
-     "type": "moebel",
-     "x": 928,
-     "y": 560,
-     "width": 112,
-     "height": 80,
-     "rotation": 0,
-     "visible": true,
-     "properties": [
-      {
-       "name": "tiefe",
-       "type": "int",
-       "value": 632
-      },
-      {
-       "name": "kollision",
-       "type": "bool",
-       "value": false
-      }
-     ]
-    },
-    {
-     "id": 169,
      "name": "caKisten",
      "type": "moebel",
      "x": 896,
@@ -16034,7 +16011,7 @@
      ]
     },
     {
-     "id": 170,
+     "id": 169,
      "name": "caKisten",
      "type": "moebel",
      "x": 1056,
@@ -16057,7 +16034,7 @@
      ]
     },
     {
-     "id": 171,
+     "id": 170,
      "name": "sb5Fass",
      "type": "moebel",
      "x": 1040,
@@ -16080,7 +16057,7 @@
      ]
     },
     {
-     "id": 172,
+     "id": 171,
      "name": "sb5Fass",
      "type": "moebel",
      "x": 1024,
@@ -16103,7 +16080,7 @@
      ]
     },
     {
-     "id": 173,
+     "id": 172,
      "name": "rv8Poller",
      "type": "moebel",
      "x": 960,
@@ -16126,7 +16103,7 @@
      ]
     },
     {
-     "id": 174,
+     "id": 173,
      "name": "rv8Poller",
      "type": "moebel",
      "x": 1056,
@@ -16149,11 +16126,11 @@
      ]
     },
     {
-     "id": 175,
+     "id": 174,
      "name": "rv8Ruderboot",
      "type": "moebel",
      "x": 944,
-     "y": 640,
+     "y": 656,
      "width": 80,
      "height": 32,
      "rotation": 0,
@@ -16172,7 +16149,7 @@
      ]
     },
     {
-     "id": 176,
+     "id": 175,
      "name": "rv5Pegelhaus",
      "type": "moebel",
      "x": 1088,
@@ -16195,7 +16172,1502 @@
      ]
     },
     {
+     "id": 176,
+     "name": "sb8Kaimauer",
+     "type": "moebel",
+     "x": 16,
+     "y": 624,
+     "width": 16,
+     "height": 16,
+     "rotation": 0,
+     "visible": true,
+     "properties": [
+      {
+       "name": "tiefe",
+       "type": "int",
+       "value": 1
+      },
+      {
+       "name": "kollision",
+       "type": "bool",
+       "value": false
+      }
+     ]
+    },
+    {
      "id": 177,
+     "name": "sb8KaimauerReifen",
+     "type": "moebel",
+     "x": 32,
+     "y": 624,
+     "width": 16,
+     "height": 16,
+     "rotation": 0,
+     "visible": true,
+     "properties": [
+      {
+       "name": "tiefe",
+       "type": "int",
+       "value": 1
+      },
+      {
+       "name": "kollision",
+       "type": "bool",
+       "value": false
+      }
+     ]
+    },
+    {
+     "id": 178,
+     "name": "sb8Kaimauer",
+     "type": "moebel",
+     "x": 48,
+     "y": 624,
+     "width": 16,
+     "height": 16,
+     "rotation": 0,
+     "visible": true,
+     "properties": [
+      {
+       "name": "tiefe",
+       "type": "int",
+       "value": 1
+      },
+      {
+       "name": "kollision",
+       "type": "bool",
+       "value": false
+      }
+     ]
+    },
+    {
+     "id": 179,
+     "name": "sb8Kaimauer",
+     "type": "moebel",
+     "x": 64,
+     "y": 624,
+     "width": 16,
+     "height": 16,
+     "rotation": 0,
+     "visible": true,
+     "properties": [
+      {
+       "name": "tiefe",
+       "type": "int",
+       "value": 1
+      },
+      {
+       "name": "kollision",
+       "type": "bool",
+       "value": false
+      }
+     ]
+    },
+    {
+     "id": 180,
+     "name": "sb8KaimauerLeiter",
+     "type": "moebel",
+     "x": 80,
+     "y": 624,
+     "width": 16,
+     "height": 16,
+     "rotation": 0,
+     "visible": true,
+     "properties": [
+      {
+       "name": "tiefe",
+       "type": "int",
+       "value": 1
+      },
+      {
+       "name": "kollision",
+       "type": "bool",
+       "value": false
+      }
+     ]
+    },
+    {
+     "id": 181,
+     "name": "sb8Kaimauer",
+     "type": "moebel",
+     "x": 96,
+     "y": 624,
+     "width": 16,
+     "height": 16,
+     "rotation": 0,
+     "visible": true,
+     "properties": [
+      {
+       "name": "tiefe",
+       "type": "int",
+       "value": 1
+      },
+      {
+       "name": "kollision",
+       "type": "bool",
+       "value": false
+      }
+     ]
+    },
+    {
+     "id": 182,
+     "name": "sb8Kaimauer",
+     "type": "moebel",
+     "x": 112,
+     "y": 624,
+     "width": 16,
+     "height": 16,
+     "rotation": 0,
+     "visible": true,
+     "properties": [
+      {
+       "name": "tiefe",
+       "type": "int",
+       "value": 1
+      },
+      {
+       "name": "kollision",
+       "type": "bool",
+       "value": false
+      }
+     ]
+    },
+    {
+     "id": 183,
+     "name": "sb8KaimauerReifen",
+     "type": "moebel",
+     "x": 128,
+     "y": 624,
+     "width": 16,
+     "height": 16,
+     "rotation": 0,
+     "visible": true,
+     "properties": [
+      {
+       "name": "tiefe",
+       "type": "int",
+       "value": 1
+      },
+      {
+       "name": "kollision",
+       "type": "bool",
+       "value": false
+      }
+     ]
+    },
+    {
+     "id": 184,
+     "name": "sb8Kaimauer",
+     "type": "moebel",
+     "x": 144,
+     "y": 624,
+     "width": 16,
+     "height": 16,
+     "rotation": 0,
+     "visible": true,
+     "properties": [
+      {
+       "name": "tiefe",
+       "type": "int",
+       "value": 1
+      },
+      {
+       "name": "kollision",
+       "type": "bool",
+       "value": false
+      }
+     ]
+    },
+    {
+     "id": 185,
+     "name": "sb8Kaimauer",
+     "type": "moebel",
+     "x": 160,
+     "y": 624,
+     "width": 16,
+     "height": 16,
+     "rotation": 0,
+     "visible": true,
+     "properties": [
+      {
+       "name": "tiefe",
+       "type": "int",
+       "value": 1
+      },
+      {
+       "name": "kollision",
+       "type": "bool",
+       "value": false
+      }
+     ]
+    },
+    {
+     "id": 186,
+     "name": "sb8Kaimauer",
+     "type": "moebel",
+     "x": 176,
+     "y": 624,
+     "width": 16,
+     "height": 16,
+     "rotation": 0,
+     "visible": true,
+     "properties": [
+      {
+       "name": "tiefe",
+       "type": "int",
+       "value": 1
+      },
+      {
+       "name": "kollision",
+       "type": "bool",
+       "value": false
+      }
+     ]
+    },
+    {
+     "id": 187,
+     "name": "sb8Kaimauer",
+     "type": "moebel",
+     "x": 192,
+     "y": 624,
+     "width": 16,
+     "height": 16,
+     "rotation": 0,
+     "visible": true,
+     "properties": [
+      {
+       "name": "tiefe",
+       "type": "int",
+       "value": 1
+      },
+      {
+       "name": "kollision",
+       "type": "bool",
+       "value": false
+      }
+     ]
+    },
+    {
+     "id": 188,
+     "name": "sb8Kaimauer",
+     "type": "moebel",
+     "x": 208,
+     "y": 624,
+     "width": 16,
+     "height": 16,
+     "rotation": 0,
+     "visible": true,
+     "properties": [
+      {
+       "name": "tiefe",
+       "type": "int",
+       "value": 1
+      },
+      {
+       "name": "kollision",
+       "type": "bool",
+       "value": false
+      }
+     ]
+    },
+    {
+     "id": 189,
+     "name": "sb8KaimauerReifen",
+     "type": "moebel",
+     "x": 224,
+     "y": 624,
+     "width": 16,
+     "height": 16,
+     "rotation": 0,
+     "visible": true,
+     "properties": [
+      {
+       "name": "tiefe",
+       "type": "int",
+       "value": 1
+      },
+      {
+       "name": "kollision",
+       "type": "bool",
+       "value": false
+      }
+     ]
+    },
+    {
+     "id": 190,
+     "name": "sb8Kaimauer",
+     "type": "moebel",
+     "x": 240,
+     "y": 624,
+     "width": 16,
+     "height": 16,
+     "rotation": 0,
+     "visible": true,
+     "properties": [
+      {
+       "name": "tiefe",
+       "type": "int",
+       "value": 1
+      },
+      {
+       "name": "kollision",
+       "type": "bool",
+       "value": false
+      }
+     ]
+    },
+    {
+     "id": 191,
+     "name": "sb8Kaimauer",
+     "type": "moebel",
+     "x": 256,
+     "y": 624,
+     "width": 16,
+     "height": 16,
+     "rotation": 0,
+     "visible": true,
+     "properties": [
+      {
+       "name": "tiefe",
+       "type": "int",
+       "value": 1
+      },
+      {
+       "name": "kollision",
+       "type": "bool",
+       "value": false
+      }
+     ]
+    },
+    {
+     "id": 192,
+     "name": "sb8KaimauerLeiter",
+     "type": "moebel",
+     "x": 272,
+     "y": 624,
+     "width": 16,
+     "height": 16,
+     "rotation": 0,
+     "visible": true,
+     "properties": [
+      {
+       "name": "tiefe",
+       "type": "int",
+       "value": 1
+      },
+      {
+       "name": "kollision",
+       "type": "bool",
+       "value": false
+      }
+     ]
+    },
+    {
+     "id": 193,
+     "name": "sb8Kaimauer",
+     "type": "moebel",
+     "x": 288,
+     "y": 624,
+     "width": 16,
+     "height": 16,
+     "rotation": 0,
+     "visible": true,
+     "properties": [
+      {
+       "name": "tiefe",
+       "type": "int",
+       "value": 1
+      },
+      {
+       "name": "kollision",
+       "type": "bool",
+       "value": false
+      }
+     ]
+    },
+    {
+     "id": 194,
+     "name": "sb8Kaimauer",
+     "type": "moebel",
+     "x": 304,
+     "y": 624,
+     "width": 16,
+     "height": 16,
+     "rotation": 0,
+     "visible": true,
+     "properties": [
+      {
+       "name": "tiefe",
+       "type": "int",
+       "value": 1
+      },
+      {
+       "name": "kollision",
+       "type": "bool",
+       "value": false
+      }
+     ]
+    },
+    {
+     "id": 195,
+     "name": "sb8KaimauerReifen",
+     "type": "moebel",
+     "x": 320,
+     "y": 624,
+     "width": 16,
+     "height": 16,
+     "rotation": 0,
+     "visible": true,
+     "properties": [
+      {
+       "name": "tiefe",
+       "type": "int",
+       "value": 1
+      },
+      {
+       "name": "kollision",
+       "type": "bool",
+       "value": false
+      }
+     ]
+    },
+    {
+     "id": 196,
+     "name": "sb8Kaimauer",
+     "type": "moebel",
+     "x": 336,
+     "y": 624,
+     "width": 16,
+     "height": 16,
+     "rotation": 0,
+     "visible": true,
+     "properties": [
+      {
+       "name": "tiefe",
+       "type": "int",
+       "value": 1
+      },
+      {
+       "name": "kollision",
+       "type": "bool",
+       "value": false
+      }
+     ]
+    },
+    {
+     "id": 197,
+     "name": "sb8Kaimauer",
+     "type": "moebel",
+     "x": 352,
+     "y": 624,
+     "width": 16,
+     "height": 16,
+     "rotation": 0,
+     "visible": true,
+     "properties": [
+      {
+       "name": "tiefe",
+       "type": "int",
+       "value": 1
+      },
+      {
+       "name": "kollision",
+       "type": "bool",
+       "value": false
+      }
+     ]
+    },
+    {
+     "id": 198,
+     "name": "sb8Kaimauer",
+     "type": "moebel",
+     "x": 368,
+     "y": 624,
+     "width": 16,
+     "height": 16,
+     "rotation": 0,
+     "visible": true,
+     "properties": [
+      {
+       "name": "tiefe",
+       "type": "int",
+       "value": 1
+      },
+      {
+       "name": "kollision",
+       "type": "bool",
+       "value": false
+      }
+     ]
+    },
+    {
+     "id": 199,
+     "name": "sb8Kaimauer",
+     "type": "moebel",
+     "x": 384,
+     "y": 624,
+     "width": 16,
+     "height": 16,
+     "rotation": 0,
+     "visible": true,
+     "properties": [
+      {
+       "name": "tiefe",
+       "type": "int",
+       "value": 1
+      },
+      {
+       "name": "kollision",
+       "type": "bool",
+       "value": false
+      }
+     ]
+    },
+    {
+     "id": 200,
+     "name": "sb8Kaimauer",
+     "type": "moebel",
+     "x": 400,
+     "y": 624,
+     "width": 16,
+     "height": 16,
+     "rotation": 0,
+     "visible": true,
+     "properties": [
+      {
+       "name": "tiefe",
+       "type": "int",
+       "value": 1
+      },
+      {
+       "name": "kollision",
+       "type": "bool",
+       "value": false
+      }
+     ]
+    },
+    {
+     "id": 201,
+     "name": "sb8KaimauerReifen",
+     "type": "moebel",
+     "x": 416,
+     "y": 624,
+     "width": 16,
+     "height": 16,
+     "rotation": 0,
+     "visible": true,
+     "properties": [
+      {
+       "name": "tiefe",
+       "type": "int",
+       "value": 1
+      },
+      {
+       "name": "kollision",
+       "type": "bool",
+       "value": false
+      }
+     ]
+    },
+    {
+     "id": 202,
+     "name": "sb8Kaimauer",
+     "type": "moebel",
+     "x": 432,
+     "y": 624,
+     "width": 16,
+     "height": 16,
+     "rotation": 0,
+     "visible": true,
+     "properties": [
+      {
+       "name": "tiefe",
+       "type": "int",
+       "value": 1
+      },
+      {
+       "name": "kollision",
+       "type": "bool",
+       "value": false
+      }
+     ]
+    },
+    {
+     "id": 203,
+     "name": "sb8Kaimauer",
+     "type": "moebel",
+     "x": 448,
+     "y": 624,
+     "width": 16,
+     "height": 16,
+     "rotation": 0,
+     "visible": true,
+     "properties": [
+      {
+       "name": "tiefe",
+       "type": "int",
+       "value": 1
+      },
+      {
+       "name": "kollision",
+       "type": "bool",
+       "value": false
+      }
+     ]
+    },
+    {
+     "id": 204,
+     "name": "sb8KaimauerLeiter",
+     "type": "moebel",
+     "x": 464,
+     "y": 624,
+     "width": 16,
+     "height": 16,
+     "rotation": 0,
+     "visible": true,
+     "properties": [
+      {
+       "name": "tiefe",
+       "type": "int",
+       "value": 1
+      },
+      {
+       "name": "kollision",
+       "type": "bool",
+       "value": false
+      }
+     ]
+    },
+    {
+     "id": 205,
+     "name": "sb8Kaimauer",
+     "type": "moebel",
+     "x": 480,
+     "y": 624,
+     "width": 16,
+     "height": 16,
+     "rotation": 0,
+     "visible": true,
+     "properties": [
+      {
+       "name": "tiefe",
+       "type": "int",
+       "value": 1
+      },
+      {
+       "name": "kollision",
+       "type": "bool",
+       "value": false
+      }
+     ]
+    },
+    {
+     "id": 206,
+     "name": "sb8Kaimauer",
+     "type": "moebel",
+     "x": 496,
+     "y": 624,
+     "width": 16,
+     "height": 16,
+     "rotation": 0,
+     "visible": true,
+     "properties": [
+      {
+       "name": "tiefe",
+       "type": "int",
+       "value": 1
+      },
+      {
+       "name": "kollision",
+       "type": "bool",
+       "value": false
+      }
+     ]
+    },
+    {
+     "id": 207,
+     "name": "sb8KaimauerReifen",
+     "type": "moebel",
+     "x": 512,
+     "y": 624,
+     "width": 16,
+     "height": 16,
+     "rotation": 0,
+     "visible": true,
+     "properties": [
+      {
+       "name": "tiefe",
+       "type": "int",
+       "value": 1
+      },
+      {
+       "name": "kollision",
+       "type": "bool",
+       "value": false
+      }
+     ]
+    },
+    {
+     "id": 208,
+     "name": "sb8Kaimauer",
+     "type": "moebel",
+     "x": 528,
+     "y": 624,
+     "width": 16,
+     "height": 16,
+     "rotation": 0,
+     "visible": true,
+     "properties": [
+      {
+       "name": "tiefe",
+       "type": "int",
+       "value": 1
+      },
+      {
+       "name": "kollision",
+       "type": "bool",
+       "value": false
+      }
+     ]
+    },
+    {
+     "id": 209,
+     "name": "sb8Kaimauer",
+     "type": "moebel",
+     "x": 544,
+     "y": 624,
+     "width": 16,
+     "height": 16,
+     "rotation": 0,
+     "visible": true,
+     "properties": [
+      {
+       "name": "tiefe",
+       "type": "int",
+       "value": 1
+      },
+      {
+       "name": "kollision",
+       "type": "bool",
+       "value": false
+      }
+     ]
+    },
+    {
+     "id": 210,
+     "name": "sb8Kaimauer",
+     "type": "moebel",
+     "x": 560,
+     "y": 624,
+     "width": 16,
+     "height": 16,
+     "rotation": 0,
+     "visible": true,
+     "properties": [
+      {
+       "name": "tiefe",
+       "type": "int",
+       "value": 1
+      },
+      {
+       "name": "kollision",
+       "type": "bool",
+       "value": false
+      }
+     ]
+    },
+    {
+     "id": 211,
+     "name": "sb8Kaimauer",
+     "type": "moebel",
+     "x": 576,
+     "y": 624,
+     "width": 16,
+     "height": 16,
+     "rotation": 0,
+     "visible": true,
+     "properties": [
+      {
+       "name": "tiefe",
+       "type": "int",
+       "value": 1
+      },
+      {
+       "name": "kollision",
+       "type": "bool",
+       "value": false
+      }
+     ]
+    },
+    {
+     "id": 212,
+     "name": "sb8Kaimauer",
+     "type": "moebel",
+     "x": 592,
+     "y": 624,
+     "width": 16,
+     "height": 16,
+     "rotation": 0,
+     "visible": true,
+     "properties": [
+      {
+       "name": "tiefe",
+       "type": "int",
+       "value": 1
+      },
+      {
+       "name": "kollision",
+       "type": "bool",
+       "value": false
+      }
+     ]
+    },
+    {
+     "id": 213,
+     "name": "sb8KaimauerReifen",
+     "type": "moebel",
+     "x": 608,
+     "y": 624,
+     "width": 16,
+     "height": 16,
+     "rotation": 0,
+     "visible": true,
+     "properties": [
+      {
+       "name": "tiefe",
+       "type": "int",
+       "value": 1
+      },
+      {
+       "name": "kollision",
+       "type": "bool",
+       "value": false
+      }
+     ]
+    },
+    {
+     "id": 214,
+     "name": "sb8Kaimauer",
+     "type": "moebel",
+     "x": 624,
+     "y": 624,
+     "width": 16,
+     "height": 16,
+     "rotation": 0,
+     "visible": true,
+     "properties": [
+      {
+       "name": "tiefe",
+       "type": "int",
+       "value": 1
+      },
+      {
+       "name": "kollision",
+       "type": "bool",
+       "value": false
+      }
+     ]
+    },
+    {
+     "id": 215,
+     "name": "sb8Kaimauer",
+     "type": "moebel",
+     "x": 640,
+     "y": 624,
+     "width": 16,
+     "height": 16,
+     "rotation": 0,
+     "visible": true,
+     "properties": [
+      {
+       "name": "tiefe",
+       "type": "int",
+       "value": 1
+      },
+      {
+       "name": "kollision",
+       "type": "bool",
+       "value": false
+      }
+     ]
+    },
+    {
+     "id": 216,
+     "name": "sb8KaimauerLeiter",
+     "type": "moebel",
+     "x": 656,
+     "y": 624,
+     "width": 16,
+     "height": 16,
+     "rotation": 0,
+     "visible": true,
+     "properties": [
+      {
+       "name": "tiefe",
+       "type": "int",
+       "value": 1
+      },
+      {
+       "name": "kollision",
+       "type": "bool",
+       "value": false
+      }
+     ]
+    },
+    {
+     "id": 217,
+     "name": "sb8Kaimauer",
+     "type": "moebel",
+     "x": 672,
+     "y": 624,
+     "width": 16,
+     "height": 16,
+     "rotation": 0,
+     "visible": true,
+     "properties": [
+      {
+       "name": "tiefe",
+       "type": "int",
+       "value": 1
+      },
+      {
+       "name": "kollision",
+       "type": "bool",
+       "value": false
+      }
+     ]
+    },
+    {
+     "id": 218,
+     "name": "sb8Kaimauer",
+     "type": "moebel",
+     "x": 688,
+     "y": 624,
+     "width": 16,
+     "height": 16,
+     "rotation": 0,
+     "visible": true,
+     "properties": [
+      {
+       "name": "tiefe",
+       "type": "int",
+       "value": 1
+      },
+      {
+       "name": "kollision",
+       "type": "bool",
+       "value": false
+      }
+     ]
+    },
+    {
+     "id": 219,
+     "name": "sb8KaimauerReifen",
+     "type": "moebel",
+     "x": 704,
+     "y": 624,
+     "width": 16,
+     "height": 16,
+     "rotation": 0,
+     "visible": true,
+     "properties": [
+      {
+       "name": "tiefe",
+       "type": "int",
+       "value": 1
+      },
+      {
+       "name": "kollision",
+       "type": "bool",
+       "value": false
+      }
+     ]
+    },
+    {
+     "id": 220,
+     "name": "sb8Kaimauer",
+     "type": "moebel",
+     "x": 720,
+     "y": 624,
+     "width": 16,
+     "height": 16,
+     "rotation": 0,
+     "visible": true,
+     "properties": [
+      {
+       "name": "tiefe",
+       "type": "int",
+       "value": 1
+      },
+      {
+       "name": "kollision",
+       "type": "bool",
+       "value": false
+      }
+     ]
+    },
+    {
+     "id": 221,
+     "name": "sb8Kaimauer",
+     "type": "moebel",
+     "x": 736,
+     "y": 624,
+     "width": 16,
+     "height": 16,
+     "rotation": 0,
+     "visible": true,
+     "properties": [
+      {
+       "name": "tiefe",
+       "type": "int",
+       "value": 1
+      },
+      {
+       "name": "kollision",
+       "type": "bool",
+       "value": false
+      }
+     ]
+    },
+    {
+     "id": 222,
+     "name": "sb8Kaimauer",
+     "type": "moebel",
+     "x": 752,
+     "y": 624,
+     "width": 16,
+     "height": 16,
+     "rotation": 0,
+     "visible": true,
+     "properties": [
+      {
+       "name": "tiefe",
+       "type": "int",
+       "value": 1
+      },
+      {
+       "name": "kollision",
+       "type": "bool",
+       "value": false
+      }
+     ]
+    },
+    {
+     "id": 223,
+     "name": "sb8Kaimauer",
+     "type": "moebel",
+     "x": 768,
+     "y": 624,
+     "width": 16,
+     "height": 16,
+     "rotation": 0,
+     "visible": true,
+     "properties": [
+      {
+       "name": "tiefe",
+       "type": "int",
+       "value": 1
+      },
+      {
+       "name": "kollision",
+       "type": "bool",
+       "value": false
+      }
+     ]
+    },
+    {
+     "id": 224,
+     "name": "sb8Kaimauer",
+     "type": "moebel",
+     "x": 784,
+     "y": 624,
+     "width": 16,
+     "height": 16,
+     "rotation": 0,
+     "visible": true,
+     "properties": [
+      {
+       "name": "tiefe",
+       "type": "int",
+       "value": 1
+      },
+      {
+       "name": "kollision",
+       "type": "bool",
+       "value": false
+      }
+     ]
+    },
+    {
+     "id": 225,
+     "name": "sb8Kaimauer",
+     "type": "moebel",
+     "x": 880,
+     "y": 624,
+     "width": 16,
+     "height": 16,
+     "rotation": 0,
+     "visible": true,
+     "properties": [
+      {
+       "name": "tiefe",
+       "type": "int",
+       "value": 1
+      },
+      {
+       "name": "kollision",
+       "type": "bool",
+       "value": false
+      }
+     ]
+    },
+    {
+     "id": 226,
+     "name": "sb8KaimauerReifen",
+     "type": "moebel",
+     "x": 896,
+     "y": 624,
+     "width": 16,
+     "height": 16,
+     "rotation": 0,
+     "visible": true,
+     "properties": [
+      {
+       "name": "tiefe",
+       "type": "int",
+       "value": 1
+      },
+      {
+       "name": "kollision",
+       "type": "bool",
+       "value": false
+      }
+     ]
+    },
+    {
+     "id": 227,
+     "name": "sb8Kaimauer",
+     "type": "moebel",
+     "x": 912,
+     "y": 624,
+     "width": 16,
+     "height": 16,
+     "rotation": 0,
+     "visible": true,
+     "properties": [
+      {
+       "name": "tiefe",
+       "type": "int",
+       "value": 1
+      },
+      {
+       "name": "kollision",
+       "type": "bool",
+       "value": false
+      }
+     ]
+    },
+    {
+     "id": 228,
+     "name": "sb8Kaimauer",
+     "type": "moebel",
+     "x": 928,
+     "y": 624,
+     "width": 16,
+     "height": 16,
+     "rotation": 0,
+     "visible": true,
+     "properties": [
+      {
+       "name": "tiefe",
+       "type": "int",
+       "value": 1
+      },
+      {
+       "name": "kollision",
+       "type": "bool",
+       "value": false
+      }
+     ]
+    },
+    {
+     "id": 229,
+     "name": "sb8Kaimauer",
+     "type": "moebel",
+     "x": 944,
+     "y": 624,
+     "width": 16,
+     "height": 16,
+     "rotation": 0,
+     "visible": true,
+     "properties": [
+      {
+       "name": "tiefe",
+       "type": "int",
+       "value": 1
+      },
+      {
+       "name": "kollision",
+       "type": "bool",
+       "value": false
+      }
+     ]
+    },
+    {
+     "id": 230,
+     "name": "sb8Kaimauer",
+     "type": "moebel",
+     "x": 960,
+     "y": 624,
+     "width": 16,
+     "height": 16,
+     "rotation": 0,
+     "visible": true,
+     "properties": [
+      {
+       "name": "tiefe",
+       "type": "int",
+       "value": 1
+      },
+      {
+       "name": "kollision",
+       "type": "bool",
+       "value": false
+      }
+     ]
+    },
+    {
+     "id": 231,
+     "name": "sb8Kaimauer",
+     "type": "moebel",
+     "x": 976,
+     "y": 624,
+     "width": 16,
+     "height": 16,
+     "rotation": 0,
+     "visible": true,
+     "properties": [
+      {
+       "name": "tiefe",
+       "type": "int",
+       "value": 1
+      },
+      {
+       "name": "kollision",
+       "type": "bool",
+       "value": false
+      }
+     ]
+    },
+    {
+     "id": 232,
+     "name": "sb8KaimauerReifen",
+     "type": "moebel",
+     "x": 992,
+     "y": 624,
+     "width": 16,
+     "height": 16,
+     "rotation": 0,
+     "visible": true,
+     "properties": [
+      {
+       "name": "tiefe",
+       "type": "int",
+       "value": 1
+      },
+      {
+       "name": "kollision",
+       "type": "bool",
+       "value": false
+      }
+     ]
+    },
+    {
+     "id": 233,
+     "name": "sb8Kaimauer",
+     "type": "moebel",
+     "x": 1008,
+     "y": 624,
+     "width": 16,
+     "height": 16,
+     "rotation": 0,
+     "visible": true,
+     "properties": [
+      {
+       "name": "tiefe",
+       "type": "int",
+       "value": 1
+      },
+      {
+       "name": "kollision",
+       "type": "bool",
+       "value": false
+      }
+     ]
+    },
+    {
+     "id": 234,
+     "name": "sb8Kaimauer",
+     "type": "moebel",
+     "x": 1024,
+     "y": 624,
+     "width": 16,
+     "height": 16,
+     "rotation": 0,
+     "visible": true,
+     "properties": [
+      {
+       "name": "tiefe",
+       "type": "int",
+       "value": 1
+      },
+      {
+       "name": "kollision",
+       "type": "bool",
+       "value": false
+      }
+     ]
+    },
+    {
+     "id": 235,
+     "name": "sb8KaimauerLeiter",
+     "type": "moebel",
+     "x": 1040,
+     "y": 624,
+     "width": 16,
+     "height": 16,
+     "rotation": 0,
+     "visible": true,
+     "properties": [
+      {
+       "name": "tiefe",
+       "type": "int",
+       "value": 1
+      },
+      {
+       "name": "kollision",
+       "type": "bool",
+       "value": false
+      }
+     ]
+    },
+    {
+     "id": 236,
+     "name": "sb8Kaimauer",
+     "type": "moebel",
+     "x": 1056,
+     "y": 624,
+     "width": 16,
+     "height": 16,
+     "rotation": 0,
+     "visible": true,
+     "properties": [
+      {
+       "name": "tiefe",
+       "type": "int",
+       "value": 1
+      },
+      {
+       "name": "kollision",
+       "type": "bool",
+       "value": false
+      }
+     ]
+    },
+    {
+     "id": 237,
+     "name": "sb8Kaimauer",
+     "type": "moebel",
+     "x": 1072,
+     "y": 624,
+     "width": 16,
+     "height": 16,
+     "rotation": 0,
+     "visible": true,
+     "properties": [
+      {
+       "name": "tiefe",
+       "type": "int",
+       "value": 1
+      },
+      {
+       "name": "kollision",
+       "type": "bool",
+       "value": false
+      }
+     ]
+    },
+    {
+     "id": 238,
+     "name": "sb8KaimauerReifen",
+     "type": "moebel",
+     "x": 1088,
+     "y": 624,
+     "width": 16,
+     "height": 16,
+     "rotation": 0,
+     "visible": true,
+     "properties": [
+      {
+       "name": "tiefe",
+       "type": "int",
+       "value": 1
+      },
+      {
+       "name": "kollision",
+       "type": "bool",
+       "value": false
+      }
+     ]
+    },
+    {
+     "id": 239,
+     "name": "sb8Kaimauer",
+     "type": "moebel",
+     "x": 1104,
+     "y": 624,
+     "width": 16,
+     "height": 16,
+     "rotation": 0,
+     "visible": true,
+     "properties": [
+      {
+       "name": "tiefe",
+       "type": "int",
+       "value": 1
+      },
+      {
+       "name": "kollision",
+       "type": "bool",
+       "value": false
+      }
+     ]
+    },
+    {
+     "id": 240,
+     "name": "sb8Kaimauer",
+     "type": "moebel",
+     "x": 1120,
+     "y": 624,
+     "width": 16,
+     "height": 16,
+     "rotation": 0,
+     "visible": true,
+     "properties": [
+      {
+       "name": "tiefe",
+       "type": "int",
+       "value": 1
+      },
+      {
+       "name": "kollision",
+       "type": "bool",
+       "value": false
+      }
+     ]
+    },
+    {
+     "id": 241,
      "name": "rv5Bruecke",
      "type": "moebel",
      "x": 800,
@@ -16218,7 +17690,7 @@
      ]
     },
     {
-     "id": 178,
+     "id": 242,
      "name": "rv8Brueckenschatten",
      "type": "moebel",
      "x": 880,
@@ -16241,7 +17713,7 @@
      ]
     },
     {
-     "id": 179,
+     "id": 243,
      "name": "rv5Wohnwagen",
      "type": "moebel",
      "x": 32,
@@ -16264,7 +17736,7 @@
      ]
     },
     {
-     "id": 180,
+     "id": 244,
      "name": "rv5Werkstatt",
      "type": "moebel",
      "x": 144,
@@ -16287,7 +17759,7 @@
      ]
     },
     {
-     "id": 181,
+     "id": 245,
      "name": "rv5Schuppen",
      "type": "moebel",
      "x": 240,
@@ -16310,7 +17782,7 @@
      ]
     },
     {
-     "id": 182,
+     "id": 246,
      "name": "rv8Holzdach",
      "type": "moebel",
      "x": 352,
@@ -16333,7 +17805,7 @@
      ]
     },
     {
-     "id": 183,
+     "id": 247,
      "name": "rvPicknicktisch",
      "type": "moebel",
      "x": 352,
@@ -16356,7 +17828,7 @@
      ]
     },
     {
-     "id": 184,
+     "id": 248,
      "name": "pd6Laptop",
      "type": "moebel",
      "x": 360,
@@ -16379,7 +17851,7 @@
      ]
     },
     {
-     "id": 185,
+     "id": 249,
      "name": "rvPicknicktisch",
      "type": "moebel",
      "x": 384,
@@ -16402,7 +17874,7 @@
      ]
     },
     {
-     "id": 186,
+     "id": 250,
      "name": "pd6Laptop",
      "type": "moebel",
      "x": 392,
@@ -16425,7 +17897,7 @@
      ]
     },
     {
-     "id": 187,
+     "id": 251,
      "name": "rv8Holzdach",
      "type": "moebel",
      "x": 416,
@@ -16448,7 +17920,7 @@
      ]
     },
     {
-     "id": 188,
+     "id": 252,
      "name": "rvPicknicktisch",
      "type": "moebel",
      "x": 416,
@@ -16471,7 +17943,7 @@
      ]
     },
     {
-     "id": 189,
+     "id": 253,
      "name": "pd6Laptop",
      "type": "moebel",
      "x": 424,
@@ -16494,7 +17966,7 @@
      ]
     },
     {
-     "id": 190,
+     "id": 254,
      "name": "rvPicknicktisch",
      "type": "moebel",
      "x": 448,
@@ -16517,7 +17989,7 @@
      ]
     },
     {
-     "id": 191,
+     "id": 255,
      "name": "pd6Laptop",
      "type": "moebel",
      "x": 456,
@@ -16540,7 +18012,7 @@
      ]
     },
     {
-     "id": 192,
+     "id": 256,
      "name": "rv8Holzdach",
      "type": "moebel",
      "x": 480,
@@ -16563,7 +18035,7 @@
      ]
     },
     {
-     "id": 193,
+     "id": 257,
      "name": "rvPicknicktisch",
      "type": "moebel",
      "x": 480,
@@ -16586,7 +18058,7 @@
      ]
     },
     {
-     "id": 194,
+     "id": 258,
      "name": "pd6Laptop",
      "type": "moebel",
      "x": 488,
@@ -16609,7 +18081,7 @@
      ]
     },
     {
-     "id": 195,
+     "id": 259,
      "name": "rvPicknicktisch",
      "type": "moebel",
      "x": 512,
@@ -16632,7 +18104,7 @@
      ]
     },
     {
-     "id": 196,
+     "id": 260,
      "name": "pd6Laptop",
      "type": "moebel",
      "x": 520,
@@ -16655,7 +18127,7 @@
      ]
     },
     {
-     "id": 197,
+     "id": 261,
      "name": "rv8Holzdach",
      "type": "moebel",
      "x": 592,
@@ -16678,7 +18150,7 @@
      ]
     },
     {
-     "id": 198,
+     "id": 262,
      "name": "rv8Holzdach",
      "type": "moebel",
      "x": 656,
@@ -16701,7 +18173,7 @@
      ]
     },
     {
-     "id": 199,
+     "id": 263,
      "name": "rvPicknicktisch",
      "type": "moebel",
      "x": 544,
@@ -16724,7 +18196,7 @@
      ]
     },
     {
-     "id": 200,
+     "id": 264,
      "name": "rv5Brett",
      "type": "moebel",
      "x": 554,
@@ -16747,7 +18219,7 @@
      ]
     },
     {
-     "id": 201,
+     "id": 265,
      "name": "rvLaubbaumDunkel",
      "type": "moebel",
      "x": 768,
@@ -16770,7 +18242,7 @@
      ]
     },
     {
-     "id": 202,
+     "id": 266,
      "name": "rvLaubbaum",
      "type": "moebel",
      "x": 832,
@@ -16793,7 +18265,7 @@
      ]
     },
     {
-     "id": 203,
+     "id": 267,
      "name": "wg4Busch",
      "type": "moebel",
      "x": 288,
@@ -16816,7 +18288,7 @@
      ]
     },
     {
-     "id": 204,
+     "id": 268,
      "name": "wg4Busch",
      "type": "moebel",
      "x": 704,
@@ -16839,7 +18311,7 @@
      ]
     },
     {
-     "id": 205,
+     "id": 269,
      "name": "wg4Busch",
      "type": "moebel",
      "x": 800,
@@ -16862,20 +18334,20 @@
      ]
     },
     {
-     "id": 206,
-     "name": "rvLaubbaumDunkel",
+     "id": 270,
+     "name": "wg4Busch",
      "type": "moebel",
-     "x": 1056,
-     "y": 800,
-     "width": 64,
-     "height": 64,
+     "x": 1088,
+     "y": 816,
+     "width": 32,
+     "height": 32,
      "rotation": 0,
      "visible": true,
      "properties": [
       {
        "name": "tiefe",
        "type": "int",
-       "value": 856
+       "value": 840
       },
       {
        "name": "kollision",

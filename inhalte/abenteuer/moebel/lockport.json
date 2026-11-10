@@ -381,6 +381,34 @@
       "art": "regal",
       "zustand": "gebraucht",
       "stil": "rustikal"
+    },
+    "ld8Frachtkahn": {
+      "quelle": "spiel/eigene/frachtkahn.png",
+      "breite": 96,
+      "hoehe": 48,
+      "kollision": false,
+      "art": "boot",
+      "blick": "links",
+      "zustand": "gebraucht",
+      "stil": "rustikal"
+    },
+    "ld8Stemmtor": {
+      "quelle": "spiel/eigene/schleusentor_stemm.png",
+      "breite": 32,
+      "hoehe": 80,
+      "kollision": false,
+      "art": "bruecke",
+      "zustand": "gebraucht",
+      "stil": "rustikal"
+    },
+    "ld8Garderobe": {
+      "quelle": "spiel/eigene/garderobe_jacken.png",
+      "breite": 32,
+      "hoehe": 32,
+      "kollision": false,
+      "art": "wandschmuck",
+      "zustand": "gebraucht",
+      "stil": "rustikal"
     }
   }
 }

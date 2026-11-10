@@ -15,9 +15,7 @@
     "u": "holzDunkel",
     "g": "erde"
   },
-  "bruecken": [
-    "h"
-  ],
+  "bruecken": ["h"],
   "raster": [
     "##~~~~~~~~##############pp######################################################",
     "##~~~~~~~~##############pp######################qqqqq###########################",
@@ -83,2828 +81,1730 @@
   "objekte": [
     {
       "moebel": "iw5StadthausBlau",
-      "feld": [
-        12,
-        0
-      ]
+      "feld": [12, 0]
     },
     {
       "moebel": "iw5StadthausGelb",
-      "feld": [
-        18,
-        0
-      ]
+      "feld": [18, 0]
     },
     {
       "moebel": "iw5StadthausBlau",
-      "feld": [
-        26,
-        0
-      ]
+      "feld": [26, 0]
     },
     {
       "moebel": "iw5StadthausGelb",
-      "feld": [
-        32,
-        0
-      ]
+      "feld": [32, 0]
     },
     {
       "moebel": "iw5ReihenhausHoch",
-      "feld": [
-        40,
-        0
-      ],
+      "feld": [40, 0],
       "id": "hausRuth"
     },
     {
       "moebel": "iw5Kreidebrett",
-      "feld": [
-        29,
-        15
-      ]
+      "feld": [29, 15]
     },
     {
       "moebel": "mf4Strassenbaum",
-      "feld": [
-        19,
-        16
-      ]
+      "feld": [19, 16]
     },
     {
       "moebel": "mf4Strassenbaum",
-      "feld": [
-        33,
-        16
-      ]
+      "feld": [33, 16]
     },
     {
       "moebel": "mf4Strassenbaum",
-      "feld": [
-        39,
-        16
-      ]
+      "feld": [39, 16]
     },
     {
       "moebel": "iw5Laden",
-      "feld": [
-        16,
-        19
-      ],
+      "feld": [16, 19],
       "id": "eisenwaren"
     },
     {
       "moebel": "iw5StadthausGrau",
-      "feld": [
-        27,
-        17
-      ],
+      "feld": [27, 17],
       "id": "kneipe"
     },
     {
       "moebel": "iw5Schuppen",
-      "feld": [
-        35,
-        24
-      ]
+      "feld": [35, 24]
     },
     {
       "moebel": "iw5Karren",
-      "feld": [
-        38,
-        26
-      ]
+      "feld": [38, 26]
     },
     {
       "moebel": "iwFass",
-      "feld": [
-        14,
-        18
-      ]
+      "feld": [14, 18]
     },
     {
       "moebel": "iwFass",
-      "feld": [
-        14,
-        19
-      ]
+      "feld": [14, 19]
     },
     {
       "moebel": "iw5Kantine",
-      "feld": [
-        53,
-        1
-      ],
+      "feld": [53, 1],
       "id": "kantine"
     },
     {
       "moebel": "iw5Umkleide",
-      "feld": [
-        67,
-        12
-      ],
+      "feld": [67, 12],
       "id": "umkleide"
     },
     {
       "moebel": "iw5Pfoertner",
-      "feld": [
-        61,
-        21
-      ],
+      "feld": [61, 21],
       "id": "pfoertner"
     },
     {
       "moebel": "iw5Schornstein",
-      "feld": [
-        48,
-        2
-      ]
+      "feld": [48, 2]
     },
     {
       "moebel": "iw5Schornstein",
-      "feld": [
-        51,
-        5
-      ]
+      "feld": [51, 5]
     },
     {
       "moebel": "iwFassGross",
-      "feld": [
-        75,
-        20
-      ]
+      "feld": [75, 20]
     },
     {
       "moebel": "iw5StadthausGrau",
-      "feld": [
-        21,
-        35
-      ],
+      "feld": [21, 35],
       "id": "museum"
     },
     {
       "moebel": "iw5Kirche",
-      "feld": [
-        70,
-        35
-      ],
+      "feld": [70, 35],
       "id": "kirche"
     },
     {
       "moebel": "wg4Marktstand",
-      "feld": [
-        40,
-        35
-      ]
+      "feld": [40, 35]
     },
     {
       "moebel": "wg4Marktstand",
-      "feld": [
-        45,
-        35
-      ]
+      "feld": [45, 35]
     },
     {
       "moebel": "wg4Marktstand",
-      "feld": [
-        40,
-        40
-      ]
+      "feld": [40, 40]
     },
     {
       "moebel": "wg4Marktstand",
-      "feld": [
-        45,
-        40
-      ]
+      "feld": [45, 40]
     },
     {
       "moebel": "wg6StandGross",
-      "feld": [
-        51,
-        35
-      ]
+      "feld": [51, 35]
     },
     {
       "moebel": "wg6StandGross",
-      "feld": [
-        51,
-        40
-      ]
+      "feld": [51, 40]
     },
     {
       "moebel": "wg6Kisten",
-      "feld": [
-        57,
-        36
-      ]
+      "feld": [57, 36]
     },
     {
       "moebel": "wg6Faesser",
-      "feld": [
-        57,
-        41
-      ]
+      "feld": [57, 41]
     },
     {
       "moebel": "mf2Blumenbeet",
-      "feld": [
-        33,
-        44
-      ]
+      "feld": [33, 44]
     },
     {
       "moebel": "mfBaum",
-      "feld": [
-        31,
-        33
-      ]
+      "feld": [31, 33]
     },
     {
       "moebel": "wr5Eiche",
-      "feld": [
-        63,
-        34
-      ]
+      "feld": [63, 34]
     },
     {
       "moebel": "wg4Laubbaum",
-      "feld": [
-        63,
-        40
-      ]
+      "feld": [63, 40]
     },
     {
       "moebel": "mf2BankLang",
-      "feld": [
-        65,
-        44
-      ]
+      "feld": [65, 44]
     },
     {
       "moebel": "mfBank",
-      "feld": [
-        30,
-        46
-      ]
+      "feld": [30, 46]
     },
     {
       "moebel": "wg4Wildblumen",
-      "feld": [
-        14,
-        55
-      ]
+      "feld": [14, 55]
     },
     {
       "moebel": "wg4Wildblumen",
-      "feld": [
-        16,
-        56
-      ]
+      "feld": [16, 56]
     },
     {
       "moebel": "wg4BlumeRot",
-      "feld": [
-        16,
-        55
-      ]
+      "feld": [16, 55]
     },
     {
       "moebel": "wg4BlumeGelb",
-      "feld": [
-        17,
-        55
-      ]
+      "feld": [17, 55]
     },
     {
       "moebel": "wg4BlumeBlau",
-      "feld": [
-        14,
-        57
-      ]
+      "feld": [14, 57]
     },
     {
       "moebel": "wg4Busch",
-      "feld": [
-        18,
-        55
-      ]
+      "feld": [18, 55]
     },
     {
       "moebel": "wg4Wildblumen",
-      "feld": [
-        23,
-        55
-      ]
+      "feld": [23, 55]
     },
     {
       "moebel": "wg4Wildblumen",
-      "feld": [
-        25,
-        56
-      ]
+      "feld": [25, 56]
     },
     {
       "moebel": "wg4BlumeRot",
-      "feld": [
-        25,
-        55
-      ]
+      "feld": [25, 55]
     },
     {
       "moebel": "wg4BlumeGelb",
-      "feld": [
-        26,
-        55
-      ]
+      "feld": [26, 55]
     },
     {
       "moebel": "wg4BlumeBlau",
-      "feld": [
-        23,
-        57
-      ]
+      "feld": [23, 57]
     },
     {
       "moebel": "wg4Busch",
-      "feld": [
-        27,
-        55
-      ]
+      "feld": [27, 55]
     },
     {
       "moebel": "wg4Wildblumen",
-      "feld": [
-        32,
-        55
-      ]
+      "feld": [32, 55]
     },
     {
       "moebel": "wg4Wildblumen",
-      "feld": [
-        34,
-        56
-      ]
+      "feld": [34, 56]
     },
     {
       "moebel": "wg4BlumeRot",
-      "feld": [
-        34,
-        55
-      ]
+      "feld": [34, 55]
     },
     {
       "moebel": "wg4BlumeGelb",
-      "feld": [
-        35,
-        55
-      ]
+      "feld": [35, 55]
     },
     {
       "moebel": "wg4BlumeBlau",
-      "feld": [
-        32,
-        57
-      ]
+      "feld": [32, 57]
     },
     {
       "moebel": "wg4Busch",
-      "feld": [
-        36,
-        55
-      ]
+      "feld": [36, 55]
     },
     {
       "moebel": "wg4Wildblumen",
-      "feld": [
-        41,
-        55
-      ]
+      "feld": [41, 55]
     },
     {
       "moebel": "wg4Wildblumen",
-      "feld": [
-        43,
-        56
-      ]
+      "feld": [43, 56]
     },
     {
       "moebel": "wg4BlumeRot",
-      "feld": [
-        43,
-        55
-      ]
+      "feld": [43, 55]
     },
     {
       "moebel": "wg4BlumeGelb",
-      "feld": [
-        44,
-        55
-      ]
+      "feld": [44, 55]
     },
     {
       "moebel": "wg4BlumeBlau",
-      "feld": [
-        41,
-        57
-      ]
+      "feld": [41, 57]
     },
     {
       "moebel": "wg4Busch",
-      "feld": [
-        45,
-        55
-      ]
+      "feld": [45, 55]
     },
     {
       "moebel": "cc7Picknicktisch",
-      "feld": [
-        47,
-        55
-      ]
+      "feld": [47, 55]
     },
     {
       "moebel": "iwFassGross",
-      "feld": [
-        56,
-        55
-      ]
+      "feld": [56, 55]
     },
     {
       "moebel": "iwFassGross",
-      "feld": [
-        58,
-        56
-      ]
+      "feld": [58, 56]
     },
     {
       "moebel": "iwFassGross",
-      "feld": [
-        52,
-        55
-      ]
+      "feld": [52, 55]
     },
     {
       "moebel": "mfBaum",
-      "feld": [
-        66,
-        53
-      ]
+      "feld": [66, 53]
     },
     {
       "moebel": "mfAhorn",
-      "feld": [
-        71,
-        53
-      ]
+      "feld": [71, 53]
     },
     {
       "moebel": "mf9Absperrbock",
-      "feld": [
-        75,
-        56
-      ],
+      "feld": [75, 56],
       "id": "torSteinbruch"
     },
     {
       "moebel": "iw8Werkstatt",
-      "feld": [
-        31,
-        38
-      ]
+      "feld": [31, 38]
     },
     {
       "moebel": "cc5Poller",
-      "feld": [
-        10,
-        4
-      ]
+      "feld": [10, 4]
     },
     {
       "moebel": "cc5Poller",
-      "feld": [
-        10,
-        8
-      ]
+      "feld": [10, 8]
     },
     {
       "moebel": "cc5Poller",
-      "feld": [
-        10,
-        12
-      ]
+      "feld": [10, 12]
     },
     {
       "moebel": "cc5Poller",
-      "feld": [
-        10,
-        16
-      ]
+      "feld": [10, 16]
     },
     {
       "moebel": "cc5Poller",
-      "feld": [
-        10,
-        20
-      ]
+      "feld": [10, 20]
     },
     {
       "moebel": "cc5Poller",
-      "feld": [
-        10,
-        24
-      ]
+      "feld": [10, 24]
     },
     {
       "moebel": "cc5Poller",
-      "feld": [
-        10,
-        36
-      ]
+      "feld": [10, 36]
     },
     {
       "moebel": "cc5Poller",
-      "feld": [
-        10,
-        40
-      ]
+      "feld": [10, 40]
     },
     {
       "moebel": "cc5Poller",
-      "feld": [
-        10,
-        44
-      ]
+      "feld": [10, 44]
     },
     {
       "moebel": "cc5Poller",
-      "feld": [
-        10,
-        48
-      ]
+      "feld": [10, 48]
     },
     {
       "moebel": "cc5Poller",
-      "feld": [
-        10,
-        52
-      ]
+      "feld": [10, 52]
     },
     {
       "moebel": "cc5Poller",
-      "feld": [
-        10,
-        56
-      ]
+      "feld": [10, 56]
     },
     {
       "moebel": "cc8PrellbockQuer",
-      "feld": [
-        20,
-        49
-      ]
+      "feld": [20, 49]
     },
     {
       "moebel": "iw5GleisGrau",
-      "feld": [
-        21,
-        49
-      ],
+      "feld": [21, 49],
       "bauteil_ok": true
     },
     {
       "moebel": "iw5GleisGrau",
-      "feld": [
-        22,
-        49
-      ],
+      "feld": [22, 49],
       "bauteil_ok": true
     },
     {
       "moebel": "iw5GleisGrau",
-      "feld": [
-        23,
-        49
-      ],
+      "feld": [23, 49],
       "bauteil_ok": true
     },
     {
       "moebel": "iw5GleisGrau",
-      "feld": [
-        24,
-        49
-      ],
+      "feld": [24, 49],
       "bauteil_ok": true
     },
     {
       "moebel": "iw5GleisGrau",
-      "feld": [
-        25,
-        49
-      ],
+      "feld": [25, 49],
       "bauteil_ok": true
     },
     {
       "moebel": "iw5GleisGrau",
-      "feld": [
-        26,
-        49
-      ],
+      "feld": [26, 49],
       "bauteil_ok": true
     },
     {
       "moebel": "iw5GleisGrau",
-      "feld": [
-        27,
-        49
-      ],
+      "feld": [27, 49],
       "bauteil_ok": true
     },
     {
       "moebel": "iw5GleisGrau",
-      "feld": [
-        28,
-        49
-      ],
+      "feld": [28, 49],
       "bauteil_ok": true
     },
     {
       "moebel": "iw5GleisGrau",
-      "feld": [
-        29,
-        49
-      ],
+      "feld": [29, 49],
       "bauteil_ok": true
     },
     {
       "moebel": "iw5GleisGrau",
-      "feld": [
-        30,
-        49
-      ],
+      "feld": [30, 49],
       "bauteil_ok": true
     },
     {
       "moebel": "iw5GleisGrau",
-      "feld": [
-        31,
-        49
-      ],
+      "feld": [31, 49],
       "bauteil_ok": true
     },
     {
       "moebel": "iw5GleisGrau",
-      "feld": [
-        32,
-        49
-      ],
+      "feld": [32, 49],
       "bauteil_ok": true
     },
     {
       "moebel": "iw5GleisGrau",
-      "feld": [
-        33,
-        49
-      ],
+      "feld": [33, 49],
       "bauteil_ok": true
     },
     {
       "moebel": "iw5GleisGrau",
-      "feld": [
-        34,
-        49
-      ],
+      "feld": [34, 49],
       "bauteil_ok": true
     },
     {
       "moebel": "iw5GleisGrau",
-      "feld": [
-        35,
-        49
-      ],
+      "feld": [35, 49],
       "bauteil_ok": true
     },
     {
       "moebel": "iw5GleisGrau",
-      "feld": [
-        36,
-        49
-      ],
+      "feld": [36, 49],
       "bauteil_ok": true
     },
     {
       "moebel": "iw5GleisGrau",
-      "feld": [
-        37,
-        49
-      ],
+      "feld": [37, 49],
       "bauteil_ok": true
     },
     {
       "moebel": "iw5GleisGrau",
-      "feld": [
-        38,
-        49
-      ],
+      "feld": [38, 49],
       "bauteil_ok": true
     },
     {
       "moebel": "iw5GleisGrau",
-      "feld": [
-        39,
-        49
-      ],
+      "feld": [39, 49],
       "bauteil_ok": true
     },
     {
       "moebel": "iw5GleisGrau",
-      "feld": [
-        40,
-        49
-      ],
+      "feld": [40, 49],
       "bauteil_ok": true
     },
     {
       "moebel": "iw5GleisGrau",
-      "feld": [
-        41,
-        49
-      ],
+      "feld": [41, 49],
       "bauteil_ok": true
     },
     {
       "moebel": "iw5GleisGrau",
-      "feld": [
-        42,
-        49
-      ],
+      "feld": [42, 49],
       "bauteil_ok": true
     },
     {
       "moebel": "iw5GleisGrau",
-      "feld": [
-        43,
-        49
-      ],
+      "feld": [43, 49],
       "bauteil_ok": true
     },
     {
       "moebel": "iw5GleisGrau",
-      "feld": [
-        44,
-        49
-      ],
+      "feld": [44, 49],
       "bauteil_ok": true
     },
     {
       "moebel": "iw5GleisGrau",
-      "feld": [
-        45,
-        49
-      ],
+      "feld": [45, 49],
       "bauteil_ok": true
     },
     {
       "moebel": "iw5GleisGrau",
-      "feld": [
-        46,
-        49
-      ],
+      "feld": [46, 49],
       "bauteil_ok": true
     },
     {
       "moebel": "iw5GleisGrau",
-      "feld": [
-        47,
-        49
-      ],
+      "feld": [47, 49],
       "bauteil_ok": true
     },
     {
       "moebel": "iw5GleisGrau",
-      "feld": [
-        48,
-        49
-      ],
+      "feld": [48, 49],
       "bauteil_ok": true
     },
     {
       "moebel": "iw5GleisGrau",
-      "feld": [
-        49,
-        49
-      ],
+      "feld": [49, 49],
       "bauteil_ok": true
     },
     {
       "moebel": "iw5GleisGrau",
-      "feld": [
-        50,
-        49
-      ],
+      "feld": [50, 49],
       "bauteil_ok": true
     },
     {
       "moebel": "iw5GleisGrau",
-      "feld": [
-        51,
-        49
-      ],
+      "feld": [51, 49],
       "bauteil_ok": true
     },
     {
       "moebel": "iw5GleisGrau",
-      "feld": [
-        52,
-        49
-      ],
+      "feld": [52, 49],
       "bauteil_ok": true
     },
     {
       "moebel": "iw5GleisGrau",
-      "feld": [
-        53,
-        49
-      ],
+      "feld": [53, 49],
       "bauteil_ok": true
     },
     {
       "moebel": "iw5GleisGrau",
-      "feld": [
-        54,
-        49
-      ],
+      "feld": [54, 49],
       "bauteil_ok": true
     },
     {
       "moebel": "iw5GleisGrau",
-      "feld": [
-        55,
-        49
-      ],
+      "feld": [55, 49],
       "bauteil_ok": true
     },
     {
       "moebel": "iw5GleisGrau",
-      "feld": [
-        56,
-        49
-      ],
+      "feld": [56, 49],
       "bauteil_ok": true
     },
     {
       "moebel": "iw5GleisGrau",
-      "feld": [
-        57,
-        49
-      ],
+      "feld": [57, 49],
       "bauteil_ok": true
     },
     {
       "moebel": "iw5GleisGrau",
-      "feld": [
-        58,
-        49
-      ],
+      "feld": [58, 49],
       "bauteil_ok": true
     },
     {
       "moebel": "iw5GleisGrau",
-      "feld": [
-        59,
-        49
-      ],
+      "feld": [59, 49],
       "bauteil_ok": true
     },
     {
       "moebel": "iw5GleisGrau",
-      "feld": [
-        60,
-        49
-      ],
+      "feld": [60, 49],
       "bauteil_ok": true
     },
     {
       "moebel": "iw5GleisGrau",
-      "feld": [
-        61,
-        49
-      ],
+      "feld": [61, 49],
       "bauteil_ok": true
     },
     {
       "moebel": "iw5GleisGrau",
-      "feld": [
-        62,
-        49
-      ],
+      "feld": [62, 49],
       "vorn": true,
       "bauteil_ok": true
     },
     {
       "moebel": "iw5GleisGrau",
-      "feld": [
-        63,
-        49
-      ],
+      "feld": [63, 49],
       "vorn": true,
       "bauteil_ok": true
     },
     {
       "moebel": "iw5GleisGrau",
-      "feld": [
-        64,
-        49
-      ],
+      "feld": [64, 49],
       "bauteil_ok": true
     },
     {
       "moebel": "iw5GleisGrau",
-      "feld": [
-        65,
-        49
-      ],
+      "feld": [65, 49],
       "bauteil_ok": true
     },
     {
       "moebel": "iw5GleisGrau",
-      "feld": [
-        66,
-        49
-      ],
+      "feld": [66, 49],
       "bauteil_ok": true
     },
     {
       "moebel": "iw5GleisGrau",
-      "feld": [
-        67,
-        49
-      ],
+      "feld": [67, 49],
       "bauteil_ok": true
     },
     {
       "moebel": "iw5GleisGrau",
-      "feld": [
-        68,
-        49
-      ],
+      "feld": [68, 49],
       "bauteil_ok": true
     },
     {
       "moebel": "iw5GleisGrau",
-      "feld": [
-        69,
-        49
-      ],
+      "feld": [69, 49],
       "bauteil_ok": true
     },
     {
       "moebel": "iw5GleisGrau",
-      "feld": [
-        70,
-        49
-      ],
+      "feld": [70, 49],
       "bauteil_ok": true
     },
     {
       "moebel": "iw5GleisGrau",
-      "feld": [
-        71,
-        49
-      ],
+      "feld": [71, 49],
       "bauteil_ok": true
     },
     {
       "moebel": "iw5GleisGrau",
-      "feld": [
-        72,
-        49
-      ],
+      "feld": [72, 49],
       "bauteil_ok": true
     },
     {
       "moebel": "iw5GleisGrau",
-      "feld": [
-        73,
-        49
-      ],
+      "feld": [73, 49],
       "bauteil_ok": true
     },
     {
       "moebel": "iw5GleisGrau",
-      "feld": [
-        74,
-        49
-      ],
+      "feld": [74, 49],
       "bauteil_ok": true
     },
     {
       "moebel": "iw5GleisGrau",
-      "feld": [
-        75,
-        49
-      ],
+      "feld": [75, 49],
       "bauteil_ok": true
     },
     {
       "moebel": "iw5GleisGrau",
-      "feld": [
-        76,
-        49
-      ],
+      "feld": [76, 49],
       "bauteil_ok": true
     },
     {
       "moebel": "iw5GleisGrau",
-      "feld": [
-        77,
-        49
-      ],
+      "feld": [77, 49],
       "bauteil_ok": true
     },
     {
       "moebel": "iw5GleisGrau",
-      "feld": [
-        78,
-        49
-      ],
+      "feld": [78, 49],
       "bauteil_ok": true
     },
     {
       "moebel": "iw5GleisGrau",
-      "feld": [
-        79,
-        49
-      ],
+      "feld": [79, 49],
       "vorn": true,
       "bauteil_ok": true
     },
     {
       "moebel": "cc8PrellbockQuer",
-      "feld": [
-        20,
-        51
-      ]
+      "feld": [20, 51]
     },
     {
       "moebel": "iw5GleisGrau",
-      "feld": [
-        21,
-        51
-      ],
+      "feld": [21, 51],
       "bauteil_ok": true
     },
     {
       "moebel": "iw5GleisGrau",
-      "feld": [
-        22,
-        51
-      ],
+      "feld": [22, 51],
       "bauteil_ok": true
     },
     {
       "moebel": "iw5GleisGrau",
-      "feld": [
-        23,
-        51
-      ],
+      "feld": [23, 51],
       "bauteil_ok": true
     },
     {
       "moebel": "iw5GleisGrau",
-      "feld": [
-        24,
-        51
-      ],
+      "feld": [24, 51],
       "bauteil_ok": true
     },
     {
       "moebel": "iw5GleisGrau",
-      "feld": [
-        25,
-        51
-      ],
+      "feld": [25, 51],
       "bauteil_ok": true
     },
     {
       "moebel": "iw5GleisGrau",
-      "feld": [
-        26,
-        51
-      ],
+      "feld": [26, 51],
       "bauteil_ok": true
     },
     {
       "moebel": "iw5GleisGrau",
-      "feld": [
-        27,
-        51
-      ],
+      "feld": [27, 51],
       "bauteil_ok": true
     },
     {
       "moebel": "iw5GleisGrau",
-      "feld": [
-        28,
-        51
-      ],
+      "feld": [28, 51],
       "bauteil_ok": true
     },
     {
       "moebel": "iw5GleisGrau",
-      "feld": [
-        29,
-        51
-      ],
+      "feld": [29, 51],
       "bauteil_ok": true
     },
     {
       "moebel": "iw5GleisGrau",
-      "feld": [
-        30,
-        51
-      ],
+      "feld": [30, 51],
       "bauteil_ok": true
     },
     {
       "moebel": "iw5GleisGrau",
-      "feld": [
-        31,
-        51
-      ],
+      "feld": [31, 51],
       "bauteil_ok": true
     },
     {
       "moebel": "iw5GleisGrau",
-      "feld": [
-        32,
-        51
-      ],
+      "feld": [32, 51],
       "bauteil_ok": true
     },
     {
       "moebel": "iw5GleisGrau",
-      "feld": [
-        33,
-        51
-      ],
+      "feld": [33, 51],
       "bauteil_ok": true
     },
     {
       "moebel": "iw5GleisGrau",
-      "feld": [
-        34,
-        51
-      ],
+      "feld": [34, 51],
       "bauteil_ok": true
     },
     {
       "moebel": "iw5GleisGrau",
-      "feld": [
-        35,
-        51
-      ],
+      "feld": [35, 51],
       "bauteil_ok": true
     },
     {
       "moebel": "iw5GleisGrau",
-      "feld": [
-        36,
-        51
-      ],
+      "feld": [36, 51],
       "bauteil_ok": true
     },
     {
       "moebel": "iw5GleisGrau",
-      "feld": [
-        37,
-        51
-      ],
+      "feld": [37, 51],
       "bauteil_ok": true
     },
     {
       "moebel": "iw5GleisGrau",
-      "feld": [
-        38,
-        51
-      ],
+      "feld": [38, 51],
       "bauteil_ok": true
     },
     {
       "moebel": "iw5GleisGrau",
-      "feld": [
-        39,
-        51
-      ],
+      "feld": [39, 51],
       "bauteil_ok": true
     },
     {
       "moebel": "iw5GleisGrau",
-      "feld": [
-        40,
-        51
-      ],
+      "feld": [40, 51],
       "bauteil_ok": true
     },
     {
       "moebel": "iw5GleisGrau",
-      "feld": [
-        41,
-        51
-      ],
+      "feld": [41, 51],
       "bauteil_ok": true
     },
     {
       "moebel": "iw5GleisGrau",
-      "feld": [
-        42,
-        51
-      ],
+      "feld": [42, 51],
       "bauteil_ok": true
     },
     {
       "moebel": "iw5GleisGrau",
-      "feld": [
-        43,
-        51
-      ],
+      "feld": [43, 51],
       "bauteil_ok": true
     },
     {
       "moebel": "iw5GleisGrau",
-      "feld": [
-        44,
-        51
-      ],
+      "feld": [44, 51],
       "bauteil_ok": true
     },
     {
       "moebel": "iw5GleisGrau",
-      "feld": [
-        45,
-        51
-      ],
+      "feld": [45, 51],
       "bauteil_ok": true
     },
     {
       "moebel": "iw5GleisGrau",
-      "feld": [
-        46,
-        51
-      ],
+      "feld": [46, 51],
       "bauteil_ok": true
     },
     {
       "moebel": "iw5GleisGrau",
-      "feld": [
-        47,
-        51
-      ],
+      "feld": [47, 51],
       "bauteil_ok": true
     },
     {
       "moebel": "iw5GleisGrau",
-      "feld": [
-        48,
-        51
-      ],
+      "feld": [48, 51],
       "bauteil_ok": true
     },
     {
       "moebel": "iw5GleisGrau",
-      "feld": [
-        49,
-        51
-      ],
+      "feld": [49, 51],
       "bauteil_ok": true
     },
     {
       "moebel": "iw5GleisGrau",
-      "feld": [
-        50,
-        51
-      ],
+      "feld": [50, 51],
       "bauteil_ok": true
     },
     {
       "moebel": "iw5GleisGrau",
-      "feld": [
-        51,
-        51
-      ],
+      "feld": [51, 51],
       "bauteil_ok": true
     },
     {
       "moebel": "iw5GleisGrau",
-      "feld": [
-        52,
-        51
-      ],
+      "feld": [52, 51],
       "bauteil_ok": true
     },
     {
       "moebel": "iw5GleisGrau",
-      "feld": [
-        53,
-        51
-      ],
+      "feld": [53, 51],
       "bauteil_ok": true
     },
     {
       "moebel": "iw5GleisGrau",
-      "feld": [
-        54,
-        51
-      ],
+      "feld": [54, 51],
       "bauteil_ok": true
     },
     {
       "moebel": "iw5GleisGrau",
-      "feld": [
-        55,
-        51
-      ],
+      "feld": [55, 51],
       "bauteil_ok": true
     },
     {
       "moebel": "iw5GleisGrau",
-      "feld": [
-        56,
-        51
-      ],
+      "feld": [56, 51],
       "bauteil_ok": true
     },
     {
       "moebel": "iw5GleisGrau",
-      "feld": [
-        57,
-        51
-      ],
+      "feld": [57, 51],
       "bauteil_ok": true
     },
     {
       "moebel": "iw5GleisGrau",
-      "feld": [
-        58,
-        51
-      ],
+      "feld": [58, 51],
       "bauteil_ok": true
     },
     {
       "moebel": "iw5GleisGrau",
-      "feld": [
-        59,
-        51
-      ],
+      "feld": [59, 51],
       "bauteil_ok": true
     },
     {
       "moebel": "iw5GleisGrau",
-      "feld": [
-        60,
-        51
-      ],
+      "feld": [60, 51],
       "bauteil_ok": true
     },
     {
       "moebel": "iw5GleisGrau",
-      "feld": [
-        61,
-        51
-      ],
+      "feld": [61, 51],
       "bauteil_ok": true
     },
     {
       "moebel": "iw5GleisGrau",
-      "feld": [
-        62,
-        51
-      ],
+      "feld": [62, 51],
       "vorn": true,
       "bauteil_ok": true
     },
     {
       "moebel": "iw5GleisGrau",
-      "feld": [
-        63,
-        51
-      ],
+      "feld": [63, 51],
       "vorn": true,
       "bauteil_ok": true
     },
     {
       "moebel": "iw5GleisGrau",
-      "feld": [
-        64,
-        51
-      ],
+      "feld": [64, 51],
       "bauteil_ok": true
     },
     {
       "moebel": "iw5GleisGrau",
-      "feld": [
-        65,
-        51
-      ],
+      "feld": [65, 51],
       "bauteil_ok": true
     },
     {
       "moebel": "iw5GleisGrau",
-      "feld": [
-        66,
-        51
-      ],
+      "feld": [66, 51],
       "bauteil_ok": true
     },
     {
       "moebel": "iw5GleisGrau",
-      "feld": [
-        67,
-        51
-      ],
+      "feld": [67, 51],
       "bauteil_ok": true
     },
     {
       "moebel": "iw5GleisGrau",
-      "feld": [
-        68,
-        51
-      ],
+      "feld": [68, 51],
       "bauteil_ok": true
     },
     {
       "moebel": "iw5GleisGrau",
-      "feld": [
-        69,
-        51
-      ],
+      "feld": [69, 51],
       "bauteil_ok": true
     },
     {
       "moebel": "iw5GleisGrau",
-      "feld": [
-        70,
-        51
-      ],
+      "feld": [70, 51],
       "bauteil_ok": true
     },
     {
       "moebel": "iw5GleisGrau",
-      "feld": [
-        71,
-        51
-      ],
+      "feld": [71, 51],
       "bauteil_ok": true
     },
     {
       "moebel": "iw5GleisGrau",
-      "feld": [
-        72,
-        51
-      ],
+      "feld": [72, 51],
       "bauteil_ok": true
     },
     {
       "moebel": "iw5GleisGrau",
-      "feld": [
-        73,
-        51
-      ],
+      "feld": [73, 51],
       "bauteil_ok": true
     },
     {
       "moebel": "iw5GleisGrau",
-      "feld": [
-        74,
-        51
-      ],
+      "feld": [74, 51],
       "bauteil_ok": true
     },
     {
       "moebel": "iw5GleisGrau",
-      "feld": [
-        75,
-        51
-      ],
+      "feld": [75, 51],
       "bauteil_ok": true
     },
     {
       "moebel": "iw5GleisGrau",
-      "feld": [
-        76,
-        51
-      ],
+      "feld": [76, 51],
       "bauteil_ok": true
     },
     {
       "moebel": "iw5GleisGrau",
-      "feld": [
-        77,
-        51
-      ],
+      "feld": [77, 51],
       "bauteil_ok": true
     },
     {
       "moebel": "iw5GleisGrau",
-      "feld": [
-        78,
-        51
-      ],
+      "feld": [78, 51],
       "bauteil_ok": true
     },
     {
       "moebel": "iw5GleisGrau",
-      "feld": [
-        79,
-        51
-      ],
+      "feld": [79, 51],
       "vorn": true,
       "bauteil_ok": true
     },
     {
       "moebel": "mf9LaterneLang",
-      "feld": [
-        34,
-        25
-      ],
+      "feld": [34, 25],
       "vorn": true
     },
     {
       "moebel": "mf9LaterneLang",
-      "feld": [
-        52,
-        25
-      ],
+      "feld": [52, 25],
       "vorn": true
     },
     {
       "moebel": "mf9LaterneLang",
-      "feld": [
-        70,
-        25
-      ],
+      "feld": [70, 25],
       "vorn": true
     },
     {
       "moebel": "mf9LaterneLang",
-      "feld": [
-        22,
-        29
-      ],
+      "feld": [22, 29],
       "vorn": true
     },
     {
       "moebel": "mf9LaterneLang",
-      "feld": [
-        40,
-        29
-      ],
+      "feld": [40, 29],
       "vorn": true
     },
     {
       "moebel": "mf9LaterneLang",
-      "feld": [
-        58,
-        29
-      ],
+      "feld": [58, 29],
       "vorn": true
     },
     {
       "moebel": "mf9LaterneLang",
-      "feld": [
-        74,
-        29
-      ],
+      "feld": [74, 29],
       "vorn": true
     },
     {
       "moebel": "mf9LaterneLang",
-      "feld": [
-        19,
-        12
-      ],
+      "feld": [19, 12],
       "vorn": true
     },
     {
       "moebel": "mf9LaterneLang",
-      "feld": [
-        29,
-        12
-      ],
+      "feld": [29, 12],
       "vorn": true
     },
     {
       "moebel": "mf9LaterneLang",
-      "feld": [
-        38,
-        12
-      ],
+      "feld": [38, 12],
       "vorn": true
     },
     {
       "moebel": "mf9LaterneLang",
-      "feld": [
-        13,
-        43
-      ],
+      "feld": [13, 43],
       "vorn": true
     },
     {
       "moebel": "mf9LaterneLang",
-      "feld": [
-        25,
-        43
-      ],
+      "feld": [25, 43],
       "vorn": true
     },
     {
       "moebel": "mf9LaterneLang",
-      "feld": [
-        37,
-        43
-      ],
+      "feld": [37, 43],
       "vorn": true
     },
     {
       "moebel": "mf9LaterneLang",
-      "feld": [
-        49,
-        43
-      ],
+      "feld": [49, 43],
       "vorn": true
     },
     {
       "moebel": "mf9LaterneLang",
-      "feld": [
-        61,
-        43
-      ],
+      "feld": [61, 43],
       "vorn": true
     },
     {
       "moebel": "mf9LaterneLang",
-      "feld": [
-        75,
-        43
-      ],
+      "feld": [75, 43],
       "vorn": true
     },
     {
       "moebel": "wr5FabrikhalleB",
-      "feld": [
-        66,
-        1
-      ]
+      "feld": [66, 1]
     },
     {
       "moebel": "wr5Container",
-      "feld": [
-        69,
-        20
-      ]
+      "feld": [69, 20]
     },
     {
       "moebel": "wr5Container",
-      "feld": [
-        69,
-        23
-      ]
+      "feld": [69, 23]
     },
     {
       "moebel": "iwFassGross",
-      "feld": [
-        74,
-        23
-      ]
+      "feld": [74, 23]
     },
     {
       "moebel": "wg4ZaunTopLeft",
-      "feld": [
-        47,
-        2
-      ],
+      "feld": [47, 2],
       "bauteil_ok": true
     },
     {
       "moebel": "wg4ZaunMiddleLeft",
-      "feld": [
-        47,
-        3
-      ],
+      "feld": [47, 3],
       "bauteil_ok": true
     },
     {
       "moebel": "wg4ZaunMiddleLeft",
-      "feld": [
-        47,
-        4
-      ],
+      "feld": [47, 4],
       "bauteil_ok": true
     },
     {
       "moebel": "wg4ZaunMiddleLeft",
-      "feld": [
-        47,
-        5
-      ],
+      "feld": [47, 5],
       "bauteil_ok": true
     },
     {
       "moebel": "wg4ZaunMiddleLeft",
-      "feld": [
-        47,
-        6
-      ],
+      "feld": [47, 6],
       "bauteil_ok": true
     },
     {
       "moebel": "wg4ZaunMiddleLeft",
-      "feld": [
-        47,
-        7
-      ],
+      "feld": [47, 7],
       "bauteil_ok": true
     },
     {
       "moebel": "wg4ZaunMiddleLeft",
-      "feld": [
-        47,
-        8
-      ],
+      "feld": [47, 8],
       "bauteil_ok": true
     },
     {
       "moebel": "wg4ZaunMiddleLeft",
-      "feld": [
-        47,
-        9
-      ],
+      "feld": [47, 9],
       "bauteil_ok": true
     },
     {
       "moebel": "wg4ZaunMiddleLeft",
-      "feld": [
-        47,
-        10
-      ],
+      "feld": [47, 10],
       "bauteil_ok": true
     },
     {
       "moebel": "wg4ZaunMiddleLeft",
-      "feld": [
-        47,
-        11
-      ],
+      "feld": [47, 11],
       "bauteil_ok": true
     },
     {
       "moebel": "wg4ZaunMiddleLeft",
-      "feld": [
-        47,
-        12
-      ],
+      "feld": [47, 12],
       "bauteil_ok": true
     },
     {
       "moebel": "wg4ZaunMiddleLeft",
-      "feld": [
-        47,
-        13
-      ],
+      "feld": [47, 13],
       "bauteil_ok": true
     },
     {
       "moebel": "wg4ZaunMiddleLeft",
-      "feld": [
-        47,
-        14
-      ],
+      "feld": [47, 14],
       "bauteil_ok": true
     },
     {
       "moebel": "wg4ZaunMiddleLeft",
-      "feld": [
-        47,
-        15
-      ],
+      "feld": [47, 15],
       "bauteil_ok": true
     },
     {
       "moebel": "wg4ZaunMiddleLeft",
-      "feld": [
-        47,
-        16
-      ],
+      "feld": [47, 16],
       "bauteil_ok": true
     },
     {
       "moebel": "wg4ZaunMiddleLeft",
-      "feld": [
-        47,
-        17
-      ],
+      "feld": [47, 17],
       "bauteil_ok": true
     },
     {
       "moebel": "wg4ZaunMiddleLeft",
-      "feld": [
-        47,
-        18
-      ],
+      "feld": [47, 18],
       "bauteil_ok": true
     },
     {
       "moebel": "wg4ZaunMiddleLeft",
-      "feld": [
-        47,
-        19
-      ],
+      "feld": [47, 19],
       "bauteil_ok": true
     },
     {
       "moebel": "wg4ZaunMiddleLeft",
-      "feld": [
-        47,
-        20
-      ],
+      "feld": [47, 20],
       "bauteil_ok": true
     },
     {
       "moebel": "wg4ZaunMiddleLeft",
-      "feld": [
-        47,
-        21
-      ],
+      "feld": [47, 21],
       "bauteil_ok": true
     },
     {
       "moebel": "wg4ZaunMiddleLeft",
-      "feld": [
-        47,
-        22
-      ],
+      "feld": [47, 22],
       "bauteil_ok": true
     },
     {
       "moebel": "wg4ZaunMiddleLeft",
-      "feld": [
-        47,
-        23
-      ],
+      "feld": [47, 23],
       "bauteil_ok": true
     },
     {
       "moebel": "wg4ZaunMiddleLeft",
-      "feld": [
-        47,
-        24
-      ],
+      "feld": [47, 24],
       "bauteil_ok": true
     },
     {
       "moebel": "wg4ZaunMiddleLeft",
-      "feld": [
-        47,
-        25
-      ],
+      "feld": [47, 25],
       "bauteil_ok": true
     },
     {
       "moebel": "wg4ZaunMiddleLeft",
-      "feld": [
-        47,
-        26
-      ],
+      "feld": [47, 26],
       "bauteil_ok": true
     },
     {
       "moebel": "wg4ZaunBottomLeft",
-      "feld": [
-        47,
-        27
-      ],
+      "feld": [47, 27],
       "bauteil_ok": true
     },
     {
       "moebel": "wg4ZaunBottomMiddle",
-      "feld": [
-        48,
-        27
-      ],
+      "feld": [48, 27],
       "bauteil_ok": true
     },
     {
       "moebel": "wg4ZaunBottomMiddle",
-      "feld": [
-        49,
-        27
-      ],
+      "feld": [49, 27],
       "bauteil_ok": true
     },
     {
       "moebel": "wg4ZaunBottomMiddle",
-      "feld": [
-        50,
-        27
-      ],
+      "feld": [50, 27],
       "bauteil_ok": true
     },
     {
       "moebel": "wg4ZaunBottomMiddle",
-      "feld": [
-        51,
-        27
-      ],
+      "feld": [51, 27],
       "bauteil_ok": true
     },
     {
       "moebel": "wg4ZaunBottomMiddle",
-      "feld": [
-        52,
-        27
-      ],
+      "feld": [52, 27],
       "bauteil_ok": true
     },
     {
       "moebel": "wg4ZaunBottomMiddle",
-      "feld": [
-        53,
-        27
-      ],
+      "feld": [53, 27],
       "bauteil_ok": true
     },
     {
       "moebel": "wg4ZaunBottomRight",
-      "feld": [
-        54,
-        27
-      ],
+      "feld": [54, 27],
       "bauteil_ok": true
     },
     {
       "moebel": "wg4ZaunBottomLeft",
-      "feld": [
-        62,
-        27
-      ],
+      "feld": [62, 27],
       "bauteil_ok": true
     },
     {
       "moebel": "wg4ZaunBottomMiddle",
-      "feld": [
-        63,
-        27
-      ],
+      "feld": [63, 27],
       "bauteil_ok": true
     },
     {
       "moebel": "wg4ZaunBottomMiddle",
-      "feld": [
-        64,
-        27
-      ],
+      "feld": [64, 27],
       "bauteil_ok": true
     },
     {
       "moebel": "wg4ZaunBottomMiddle",
-      "feld": [
-        65,
-        27
-      ],
+      "feld": [65, 27],
       "bauteil_ok": true
     },
     {
       "moebel": "wg4ZaunBottomMiddle",
-      "feld": [
-        66,
-        27
-      ],
+      "feld": [66, 27],
       "bauteil_ok": true
     },
     {
       "moebel": "wg4ZaunBottomMiddle",
-      "feld": [
-        67,
-        27
-      ],
+      "feld": [67, 27],
       "bauteil_ok": true
     },
     {
       "moebel": "wg4ZaunBottomMiddle",
-      "feld": [
-        68,
-        27
-      ],
+      "feld": [68, 27],
       "bauteil_ok": true
     },
     {
       "moebel": "wg4ZaunBottomMiddle",
-      "feld": [
-        69,
-        27
-      ],
+      "feld": [69, 27],
       "bauteil_ok": true
     },
     {
       "moebel": "wg4ZaunBottomMiddle",
-      "feld": [
-        70,
-        27
-      ],
+      "feld": [70, 27],
       "bauteil_ok": true
     },
     {
       "moebel": "wg4ZaunBottomMiddle",
-      "feld": [
-        71,
-        27
-      ],
+      "feld": [71, 27],
       "bauteil_ok": true
     },
     {
       "moebel": "wg4ZaunBottomMiddle",
-      "feld": [
-        72,
-        27
-      ],
+      "feld": [72, 27],
       "bauteil_ok": true
     },
     {
       "moebel": "wg4ZaunBottomMiddle",
-      "feld": [
-        73,
-        27
-      ],
+      "feld": [73, 27],
       "bauteil_ok": true
     },
     {
       "moebel": "wg4ZaunBottomMiddle",
-      "feld": [
-        74,
-        27
-      ],
+      "feld": [74, 27],
       "bauteil_ok": true
     },
     {
       "moebel": "wg4ZaunBottomMiddle",
-      "feld": [
-        75,
-        27
-      ],
+      "feld": [75, 27],
       "bauteil_ok": true
     },
     {
       "moebel": "wg4ZaunBottomMiddle",
-      "feld": [
-        76,
-        27
-      ],
+      "feld": [76, 27],
       "bauteil_ok": true
     },
     {
       "moebel": "wg4ZaunBottomMiddle",
-      "feld": [
-        77,
-        27
-      ],
+      "feld": [77, 27],
       "bauteil_ok": true
     },
     {
       "moebel": "wg4ZaunBottomMiddle",
-      "feld": [
-        78,
-        27
-      ],
+      "feld": [78, 27],
       "bauteil_ok": true
     },
     {
       "moebel": "mf2Blumenbeet",
-      "feld": [
-        12,
-        42
-      ]
+      "feld": [12, 42]
     },
     {
       "moebel": "mfBank",
-      "feld": [
-        15,
-        42
-      ]
+      "feld": [15, 42]
     },
     {
       "moebel": "iw8KorbKohl",
-      "feld": [
-        40,
-        37
-      ],
+      "feld": [40, 37],
       "vorn": true
     },
     {
       "moebel": "iw8KorbKarotte",
-      "feld": [
-        42,
-        37
-      ],
+      "feld": [42, 37],
       "vorn": true
     },
     {
       "moebel": "iw8KorbMais",
-      "feld": [
-        45,
-        37
-      ],
+      "feld": [45, 37],
       "vorn": true
     },
     {
       "moebel": "iw8KorbKarotte",
-      "feld": [
-        47,
-        37
-      ],
+      "feld": [47, 37],
       "vorn": true
     },
     {
       "moebel": "iw8KorbBeeren",
-      "feld": [
-        40,
-        42
-      ],
+      "feld": [40, 42],
       "vorn": true
     },
     {
       "moebel": "iw8KorbKarotte",
-      "feld": [
-        42,
-        42
-      ],
+      "feld": [42, 42],
       "vorn": true
     },
     {
       "moebel": "iw8KorbKohl",
-      "feld": [
-        45,
-        42
-      ],
+      "feld": [45, 42],
       "vorn": true
     },
     {
       "moebel": "iw8KorbKarotte",
-      "feld": [
-        47,
-        42
-      ],
+      "feld": [47, 42],
       "vorn": true
     },
     {
       "moebel": "iw8KorbKohl",
-      "feld": [
-        51,
-        37
-      ],
+      "feld": [51, 37],
       "vorn": true
     },
     {
       "moebel": "iw8KorbKuerbis",
-      "feld": [
-        53,
-        37
-      ],
+      "feld": [53, 37],
       "vorn": true
     },
     {
       "moebel": "iw8KorbKuerbis",
-      "feld": [
-        51,
-        42
-      ],
+      "feld": [51, 42],
       "vorn": true
     },
     {
       "moebel": "iw8KorbKohl",
-      "feld": [
-        53,
-        42
-      ],
+      "feld": [53, 42],
       "vorn": true
     },
     {
       "moebel": "cc3ZaunEnde",
-      "feld": [
-        67,
-        33
-      ],
+      "feld": [67, 33],
       "bauteil_ok": true
     },
     {
       "moebel": "cc3ZaunEnde",
-      "feld": [
-        67,
-        44
-      ],
+      "feld": [67, 44],
       "bauteil_ok": true
     },
     {
       "moebel": "ccZaun",
-      "feld": [
-        68,
-        33
-      ],
+      "feld": [68, 33],
       "bauteil_ok": true
     },
     {
       "moebel": "ccZaun",
-      "feld": [
-        68,
-        44
-      ],
+      "feld": [68, 44],
       "bauteil_ok": true
     },
     {
       "moebel": "ccZaun",
-      "feld": [
-        69,
-        33
-      ],
+      "feld": [69, 33],
       "bauteil_ok": true
     },
     {
       "moebel": "ccZaun",
-      "feld": [
-        69,
-        44
-      ],
+      "feld": [69, 44],
       "bauteil_ok": true
     },
     {
       "moebel": "ccZaun",
-      "feld": [
-        70,
-        33
-      ],
+      "feld": [70, 33],
       "bauteil_ok": true
     },
     {
       "moebel": "ccZaun",
-      "feld": [
-        70,
-        44
-      ],
+      "feld": [70, 44],
       "bauteil_ok": true
     },
     {
       "moebel": "ccZaun",
-      "feld": [
-        71,
-        33
-      ],
+      "feld": [71, 33],
       "bauteil_ok": true
     },
     {
       "moebel": "cc3ZaunEndeR",
-      "feld": [
-        71,
-        44
-      ],
+      "feld": [71, 44],
       "bauteil_ok": true
     },
     {
       "moebel": "ccZaun",
-      "feld": [
-        72,
-        33
-      ],
+      "feld": [72, 33],
       "bauteil_ok": true
     },
     {
       "moebel": "ccZaun",
-      "feld": [
-        73,
-        33
-      ],
+      "feld": [73, 33],
       "bauteil_ok": true
     },
     {
       "moebel": "ccZaun",
-      "feld": [
-        74,
-        33
-      ],
+      "feld": [74, 33],
       "bauteil_ok": true
     },
     {
       "moebel": "cc3ZaunEnde",
-      "feld": [
-        74,
-        44
-      ],
+      "feld": [74, 44],
       "bauteil_ok": true
     },
     {
       "moebel": "ccZaun",
-      "feld": [
-        75,
-        33
-      ],
+      "feld": [75, 33],
       "bauteil_ok": true
     },
     {
       "moebel": "ccZaun",
-      "feld": [
-        75,
-        44
-      ],
+      "feld": [75, 44],
       "bauteil_ok": true
     },
     {
       "moebel": "ccZaun",
-      "feld": [
-        76,
-        33
-      ],
+      "feld": [76, 33],
       "bauteil_ok": true
     },
     {
       "moebel": "ccZaun",
-      "feld": [
-        76,
-        44
-      ],
+      "feld": [76, 44],
       "bauteil_ok": true
     },
     {
       "moebel": "ccZaun",
-      "feld": [
-        77,
-        33
-      ],
+      "feld": [77, 33],
       "bauteil_ok": true
     },
     {
       "moebel": "ccZaun",
-      "feld": [
-        77,
-        44
-      ],
+      "feld": [77, 44],
       "bauteil_ok": true
     },
     {
       "moebel": "cc3ZaunEndeR",
-      "feld": [
-        78,
-        33
-      ],
+      "feld": [78, 33],
       "bauteil_ok": true
     },
     {
       "moebel": "cc3ZaunEndeR",
-      "feld": [
-        78,
-        44
-      ],
+      "feld": [78, 44],
       "bauteil_ok": true
     },
     {
       "moebel": "ccZaun",
-      "feld": [
-        67,
-        34
-      ],
+      "feld": [67, 34],
       "bauteil_ok": true
     },
     {
       "moebel": "ccZaun",
-      "feld": [
-        78,
-        34
-      ],
+      "feld": [78, 34],
       "bauteil_ok": true
     },
     {
       "moebel": "ccZaun",
-      "feld": [
-        67,
-        35
-      ],
+      "feld": [67, 35],
       "bauteil_ok": true
     },
     {
       "moebel": "ccZaun",
-      "feld": [
-        78,
-        35
-      ],
+      "feld": [78, 35],
       "bauteil_ok": true
     },
     {
       "moebel": "ccZaun",
-      "feld": [
-        67,
-        36
-      ],
+      "feld": [67, 36],
       "bauteil_ok": true
     },
     {
       "moebel": "ccZaun",
-      "feld": [
-        78,
-        36
-      ],
+      "feld": [78, 36],
       "bauteil_ok": true
     },
     {
       "moebel": "ccZaun",
-      "feld": [
-        67,
-        37
-      ],
+      "feld": [67, 37],
       "bauteil_ok": true
     },
     {
       "moebel": "ccZaun",
-      "feld": [
-        78,
-        37
-      ],
+      "feld": [78, 37],
       "bauteil_ok": true
     },
     {
       "moebel": "ccZaun",
-      "feld": [
-        67,
-        38
-      ],
+      "feld": [67, 38],
       "bauteil_ok": true
     },
     {
       "moebel": "ccZaun",
-      "feld": [
-        78,
-        38
-      ],
+      "feld": [78, 38],
       "bauteil_ok": true
     },
     {
       "moebel": "ccZaun",
-      "feld": [
-        67,
-        39
-      ],
+      "feld": [67, 39],
       "bauteil_ok": true
     },
     {
       "moebel": "ccZaun",
-      "feld": [
-        78,
-        39
-      ],
+      "feld": [78, 39],
       "bauteil_ok": true
     },
     {
       "moebel": "ccZaun",
-      "feld": [
-        67,
-        40
-      ],
+      "feld": [67, 40],
       "bauteil_ok": true
     },
     {
       "moebel": "ccZaun",
-      "feld": [
-        78,
-        40
-      ],
+      "feld": [78, 40],
       "bauteil_ok": true
     },
     {
       "moebel": "ccZaun",
-      "feld": [
-        67,
-        41
-      ],
+      "feld": [67, 41],
       "bauteil_ok": true
     },
     {
       "moebel": "ccZaun",
-      "feld": [
-        78,
-        41
-      ],
+      "feld": [78, 41],
       "bauteil_ok": true
     },
     {
       "moebel": "ccZaun",
-      "feld": [
-        67,
-        42
-      ],
+      "feld": [67, 42],
       "bauteil_ok": true
     },
     {
       "moebel": "ccZaun",
-      "feld": [
-        78,
-        42
-      ],
+      "feld": [78, 42],
       "bauteil_ok": true
     },
     {
       "moebel": "ccZaun",
-      "feld": [
-        67,
-        43
-      ],
+      "feld": [67, 43],
       "bauteil_ok": true
     },
     {
       "moebel": "ccZaun",
-      "feld": [
-        78,
-        43
-      ],
+      "feld": [78, 43],
       "bauteil_ok": true
     },
     {
       "moebel": "gt7Grabstein",
-      "feld": [
-        68,
-        36
-      ]
+      "feld": [68, 36]
     },
     {
       "moebel": "gt7GrabsteinB",
-      "feld": [
-        68,
-        39
-      ]
+      "feld": [68, 39]
     },
     {
       "moebel": "gt7Grabstein",
-      "feld": [
-        68,
-        42
-      ]
+      "feld": [68, 42]
     },
     {
       "moebel": "gt7GrabsteinGrau",
-      "feld": [
-        76,
-        36
-      ]
+      "feld": [76, 36]
     },
     {
       "moebel": "gt7GrabsteinB",
-      "feld": [
-        76,
-        39
-      ]
+      "feld": [76, 39]
     },
     {
       "moebel": "gt7Grabstein",
-      "feld": [
-        76,
-        42
-      ]
+      "feld": [76, 42]
     },
     {
       "moebel": "wg4Busch",
-      "feld": [
-        69,
-        34
-      ]
+      "feld": [69, 34]
     },
     {
       "moebel": "wg4Busch",
-      "feld": [
-        75,
-        34
-      ]
+      "feld": [75, 34]
     },
     {
       "moebel": "wg4BuschBluete",
-      "feld": [
-        36,
-        33
-      ]
+      "feld": [36, 33]
     },
     {
       "moebel": "ws5Huette",
-      "feld": [
-        13,
-        37
-      ]
+      "feld": [13, 37]
     },
     {
       "moebel": "wc5Gartenhaus",
-      "feld": [
-        17,
-        37
-      ]
+      "feld": [17, 37]
     },
     {
       "moebel": "sd6Steuerhaus",
-      "feld": [
-        49,
-        18
-      ]
+      "feld": [49, 18]
     },
     {
       "moebel": "iw8Andreaskreuz",
-      "feld": [
-        61,
-        46
-      ]
+      "feld": [61, 46]
     },
     {
       "moebel": "iw8Andreaskreuz",
-      "feld": [
-        64,
-        53
-      ]
+      "feld": [64, 53]
     },
     {
       "moebel": "mf6Haltestelle",
-      "feld": [
-        11,
-        25
-      ]
+      "feld": [11, 25]
     },
     {
       "moebel": "iw5Haltestellenschild",
-      "feld": [
-        10,
-        25
-      ]
+      "feld": [10, 25]
     },
     {
       "moebel": "iwFassGross",
-      "feld": [
-        52,
-        22
-      ]
+      "feld": [52, 22]
     },
     {
       "moebel": "wr5Container",
-      "feld": [
-        74,
-        18
-      ]
+      "feld": [74, 18]
     },
     {
       "moebel": "cc7Bretterstapel",
-      "feld": [
-        62,
-        19
-      ]
+      "feld": [62, 19]
     }
   ],
   "ausloeser": [
     {
       "name": "start",
-      "feld": [
-        15,
-        28
-      ],
+      "feld": [15, 28],
       "eigenschaften": {
         "richtung": "links"
       }
     },
     {
       "name": "bushaltestelle",
-      "feld": [
-        13,
-        28
-      ]
+      "feld": [13, 28]
     },
     {
       "name": "kanalweg",
-      "feld": [
-        24,
-        0
-      ]
+      "feld": [24, 0]
     },
     {
       "name": "kanalweg",
-      "feld": [
-        25,
-        0
-      ]
+      "feld": [25, 0]
     },
     {
       "name": "busRiverton",
-      "feld": [
-        12,
-        28
-      ]
+      "feld": [12, 28]
     },
     {
       "name": "busSiliconBay",
-      "feld": [
-        14,
-        28
-      ]
+      "feld": [14, 28]
     },
     {
       "name": "kantineTuer",
-      "feld": [
-        56,
-        17
-      ]
+      "feld": [56, 17]
     },
     {
       "name": "umkleideTuer",
-      "feld": [
-        69,
-        17
-      ]
+      "feld": [69, 17]
     },
     {
       "name": "haustuerRuth",
-      "feld": [
-        42,
-        10
-      ]
+      "feld": [42, 10]
     },
     {
       "name": "museumTuer",
-      "feld": [
-        24,
-        46
-      ]
+      "feld": [24, 46]
     },
     {
       "name": "eisenwarenfenster",
-      "feld": [
-        20,
-        28
-      ]
+      "feld": [20, 28]
     },
     {
       "name": "kreidebrett",
-      "feld": [
-        30,
-        15
-      ]
+      "feld": [30, 15]
     },
     {
       "name": "steinbruch",
-      "feld": [
-        79,
-        57
-      ]
+      "feld": [79, 57]
     },
     {
       "name": "steinbruch",
-      "feld": [
-        79,
-        58
-      ]
+      "feld": [79, 58]
     },
     {
       "name": "anleger",
-      "feld": [
-        12,
-        22
-      ]
+      "feld": [12, 22]
     }
   ],
   "figuren": [
     {
       "name": "gus",
-      "feld": [
-        58,
-        55
-      ]
+      "feld": [58, 55]
     },
     {
       "name": "edna",
-      "feld": [
-        24,
-        28
-      ]
+      "feld": [24, 28]
     },
     {
       "name": "victor",
-      "feld": [
-        12,
-        33
-      ]
+      "feld": [12, 33]
     },
     {
       "name": "grahamHale",
-      "feld": [
-        32,
-        47
-      ]
+      "feld": [32, 47]
     }
   ],
   "belebung": [
     {
       "name": "schichtwechsel",
       "typ": "statist",
-      "feld": [
-        58,
-        24
-      ],
+      "feld": [58, 24],
       "eigenschaften": {
         "von": "58,24",
         "bis": "58,33",
@@ -2915,10 +1815,7 @@
     {
       "name": "kohlentraegerin",
       "typ": "statist",
-      "feld": [
-        36,
-        16
-      ],
+      "feld": [36, 16],
       "eigenschaften": {
         "von": "36,16",
         "bis": "36,11",
@@ -2929,10 +1826,7 @@
     {
       "name": "taubenfuetterer",
       "typ": "statist",
-      "feld": [
-        40,
-        47
-      ],
+      "feld": [40, 47],
       "eigenschaften": {
         "von": "40,47",
         "bis": "46,47",
@@ -2944,10 +1838,7 @@
     {
       "name": "kraehen",
       "typ": "tier",
-      "feld": [
-        30,
-        49
-      ],
+      "feld": [30, 49],
       "eigenschaften": {
         "von": "30,49",
         "bis": "40,49",
@@ -2957,10 +1848,7 @@
     {
       "name": "fledermaeuse",
       "typ": "tier",
-      "feld": [
-        20,
-        47
-      ],
+      "feld": [20, 47],
       "eigenschaften": {
         "von": "20,47",
         "bis": "28,47",
@@ -2971,10 +1859,7 @@
     {
       "name": "werkskatzeAussen",
       "typ": "tier",
-      "feld": [
-        52,
-        18
-      ],
+      "feld": [52, 18],
       "eigenschaften": {
         "von": "52,18",
         "bis": "52,18",
@@ -2984,10 +1869,7 @@
     {
       "name": "kreidekinder",
       "typ": "statist",
-      "feld": [
-        32,
-        15
-      ],
+      "feld": [32, 15],
       "eigenschaften": {
         "von": "31,15",
         "bis": "35,15",
@@ -2998,10 +1880,7 @@
     {
       "name": "kranfuehrer",
       "typ": "statist",
-      "feld": [
-        69,
-        28
-      ],
+      "feld": [69, 28],
       "eigenschaften": {
         "von": "69,28",
         "bis": "76,28",
@@ -3012,10 +1891,7 @@
     {
       "name": "rangierer",
       "typ": "statist",
-      "feld": [
-        50,
-        53
-      ],
+      "feld": [50, 53],
       "eigenschaften": {
         "von": "50,53",
         "bis": "60,53",
@@ -3027,10 +1903,7 @@
     {
       "name": "lieferfahrer",
       "typ": "statist",
-      "feld": [
-        60,
-        28
-      ],
+      "feld": [60, 28],
       "eigenschaften": {
         "von": "60,28",
         "bis": "66,28",
@@ -3042,10 +1915,7 @@
     {
       "name": "wirt",
       "typ": "statist",
-      "feld": [
-        27,
-        28
-      ],
+      "feld": [27, 28],
       "eigenschaften": {
         "von": "27,28",
         "bis": "27,28",
@@ -3058,10 +1928,7 @@
     {
       "name": "schuelerin",
       "typ": "statist",
-      "feld": [
-        29,
-        11
-      ],
+      "feld": [29, 11],
       "eigenschaften": {
         "von": "29,11",
         "bis": "43,12",
@@ -3073,10 +1940,7 @@
     {
       "name": "busfahrerin",
       "typ": "statist",
-      "feld": [
-        16,
-        28
-      ],
+      "feld": [16, 28],
       "eigenschaften": {
         "von": "16,28",
         "bis": "16,28",
@@ -3088,10 +1952,7 @@
     {
       "name": "arbeiterinPause",
       "typ": "statist",
-      "feld": [
-        52,
-        16
-      ],
+      "feld": [52, 16],
       "eigenschaften": {
         "von": "52,16",
         "bis": "52,16",
@@ -3103,10 +1964,7 @@
     {
       "name": "nachbar",
       "typ": "statist",
-      "feld": [
-        19,
-        11
-      ],
+      "feld": [19, 11],
       "eigenschaften": {
         "von": "19,11",
         "bis": "39,11",
@@ -3117,10 +1975,7 @@
     {
       "name": "tauben",
       "typ": "tier",
-      "feld": [
-        42,
-        44
-      ],
+      "feld": [42, 44],
       "eigenschaften": {
         "von": "42,44",
         "bis": "46,44",
@@ -3130,10 +1985,7 @@
     {
       "name": "ratten",
       "typ": "tier",
-      "feld": [
-        11,
-        44
-      ],
+      "feld": [11, 44],
       "eigenschaften": {
         "von": "11,44",
         "bis": "11,48",
@@ -3143,10 +1995,7 @@
     {
       "name": "marktstand1",
       "typ": "statist",
-      "feld": [
-        41,
-        39
-      ],
+      "feld": [41, 39],
       "eigenschaften": {
         "von": "41,39",
         "bis": "41,39",
@@ -3157,10 +2006,7 @@
     {
       "name": "marktstand2",
       "typ": "statist",
-      "feld": [
-        46,
-        39
-      ],
+      "feld": [46, 39],
       "eigenschaften": {
         "von": "46,39",
         "bis": "46,39",
@@ -3171,10 +2017,7 @@
     {
       "name": "marktstand3",
       "typ": "statist",
-      "feld": [
-        52,
-        39
-      ],
+      "feld": [52, 39],
       "eigenschaften": {
         "von": "52,39",
         "bis": "52,39",
@@ -3185,10 +2028,7 @@
     {
       "name": "marktstand4",
       "typ": "statist",
-      "feld": [
-        41,
-        44
-      ],
+      "feld": [41, 44],
       "eigenschaften": {
         "von": "41,44",
         "bis": "41,44",
@@ -3199,10 +2039,7 @@
     {
       "name": "marktstand5",
       "typ": "statist",
-      "feld": [
-        46,
-        44
-      ],
+      "feld": [46, 44],
       "eigenschaften": {
         "von": "46,44",
         "bis": "46,44",
@@ -3213,10 +2050,7 @@
     {
       "name": "marktstand6",
       "typ": "statist",
-      "feld": [
-        52,
-        44
-      ],
+      "feld": [52, 44],
       "eigenschaften": {
         "von": "52,44",
         "bis": "52,44",
@@ -3225,11 +2059,7 @@
       }
     }
   ],
-  "zustand": [
-    "neu",
-    "gebraucht",
-    "alt"
-  ],
+  "zustand": ["neu", "gebraucht", "alt"],
   "stil": [
     "industrie",
     "klassisch",

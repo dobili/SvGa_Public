@@ -2,7 +2,7 @@
   "karte": "summitCity.huette",
   "datei": "karten/summit-city-huette.json",
   "art": "innen",
-  "beschreibung": "Wards Hütte in Summit City: eine Blockhütte mit Holzwänden und dunklen Dielen, es riecht nach Holzrauch und Tee. An der Nordwand der steinerne Kamin mit Feuer, Bücherregale, Endspieldiagramme an der Wand und eine Vitrine mit dem Pokal von 1985. Vor dem Kamin zwei Ohrensessel und ein runder Tisch mit Wards altem Holzbrett. Im Süden stehen die Clubtische. Die Tür liegt in der Südwand. Kamin in der Mitte der Nordwand, Bücherregale links, Vitrine rechts, zwei Clubtische im Süden.",
+  "beschreibung": "Wards Hütte in Summit City: eine Blockhütte mit Holzwänden und dunklen Dielen, es riecht nach Holzrauch und Tee. An der Nordwand der steinerne Kamin mit Feuer, Bücherregale, Endspieldiagramme an der Wand und eine Vitrine mit dem Pokal von 1985. Vor dem Kamin zwei Ohrensessel und ein runder Tisch mit Wards altem Holzbrett. Im Süden stehen die Clubtische. Die Tür liegt in der Südwand. Variante C, die reichere: Kamin in der Mitte mit Holzstapeln links und rechts, zwei Bücherwände, Vitrine, Teppich, Leselampe und drei Clubtische.",
   "wand": "holz",
   "boden": "holzDunkel",
   "zustand": ["neu", "gebraucht", "alt"],
@@ -39,16 +39,32 @@
       "an_wand": true
     },
     {
+      "moebel": "cc4Holzstapel",
+      "feld": [6, 2]
+    },
+    {
+      "moebel": "cc4Holzstapel",
+      "feld": [11, 2]
+    },
+    {
       "moebel": "mf2Buecherregal",
-      "feld": [2, 1]
+      "feld": [1, 1]
     },
     {
       "moebel": "cc4RegalC",
-      "feld": [4, 1]
+      "feld": [3, 1]
+    },
+    {
+      "moebel": "cc4RegalA",
+      "feld": [13, 1]
+    },
+    {
+      "moebel": "cc4RegalB",
+      "feld": [15, 1]
     },
     {
       "moebel": "iwVitrine",
-      "feld": [14, 1],
+      "feld": [15, 5],
       "id": "vitrine"
     },
     {
@@ -57,31 +73,26 @@
     },
     {
       "moebel": "iw5Kreidebrett",
-      "feld": [11, 1],
+      "feld": [5, 1],
       "an_wand": true,
       "versatz": [0, 16]
     },
     {
-      "moebel": "iw5Kreidebrett",
-      "feld": [6, 1],
-      "an_wand": true,
-      "versatz": [0, 16]
+      "moebel": "ldBild",
+      "feld": [12, 1],
+      "an_wand": true
     },
     {
-      "moebel": "cc4Holzstapel",
-      "feld": [11, 2]
-    },
-    {
-      "moebel": "mf2TeppichAlt",
+      "moebel": "wzTeppich",
       "feld": [7, 5]
     },
     {
       "moebel": "mf2Ohrensessel",
-      "feld": [5, 6]
+      "feld": [5, 5]
     },
     {
       "moebel": "mf2Rundtisch",
-      "feld": [8, 6],
+      "feld": [8, 5],
       "id": "ward"
     },
     {
@@ -90,15 +101,19 @@
     },
     {
       "moebel": "mf2Ohrensessel",
-      "feld": [11, 6]
+      "feld": [11, 5]
+    },
+    {
+      "moebel": "cc4Leselampe",
+      "feld": [13, 5]
     },
     {
       "moebel": "mf2StuhlL",
-      "feld": [2, 9]
+      "feld": [1, 9]
     },
     {
       "moebel": "mf2Schachtisch",
-      "feld": [3, 9],
+      "feld": [2, 9],
       "id": "t1"
     },
     {
@@ -107,15 +122,15 @@
     },
     {
       "moebel": "mf2StuhlR",
-      "feld": [6, 9]
+      "feld": [5, 9]
     },
     {
       "moebel": "mf2StuhlL",
-      "feld": [11, 9]
+      "feld": [9, 9]
     },
     {
       "moebel": "mf2Schachtisch",
-      "feld": [12, 9],
+      "feld": [10, 9],
       "id": "t2"
     },
     {
@@ -124,35 +139,11 @@
     },
     {
       "moebel": "mf2StuhlR",
-      "feld": [15, 9]
+      "feld": [13, 9]
     },
     {
       "moebel": "mf2Stehlampe",
-      "feld": [16, 3]
-    },
-    {
-      "moebel": "wzTeppich",
-      "feld": [7, 9]
-    },
-    {
-      "moebel": "cc4Leselampe",
-      "feld": [13, 6]
-    },
-    {
-      "moebel": "cc4PflanzeK",
-      "feld": [1, 3]
-    },
-    {
-      "moebel": "kisteRot",
-      "feld": [16, 7]
-    },
-    {
-      "moebel": "wzSofa",
-      "feld": [14, 4]
-    },
-    {
-      "moebel": "cc4Holzstapel",
-      "feld": [4, 4]
+      "feld": [1, 5]
     }
   ],
   "ausloeser": [
@@ -169,33 +160,33 @@
     },
     {
       "name": "pokal",
-      "feld": [14, 4]
+      "feld": [14, 7]
     },
     {
       "name": "kaminfeuer",
-      "feld": [9, 4]
+      "feld": [10, 4]
     },
     {
       "name": "foto",
-      "feld": [13, 3]
+      "feld": [15, 8]
     },
     {
       "name": "teekanne",
-      "feld": [10, 7]
+      "feld": [10, 6]
     }
   ],
   "figuren": [
     {
       "name": "ward",
-      "feld": [9, 9]
+      "feld": [9, 8]
     },
     {
       "name": "kit",
-      "feld": [1, 11]
+      "feld": [7, 11]
     },
     {
       "name": "haraldsen",
-      "feld": [16, 11]
+      "feld": [15, 11]
     }
   ],
   "belebung": [

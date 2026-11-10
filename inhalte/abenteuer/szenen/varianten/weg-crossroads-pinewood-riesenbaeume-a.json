@@ -1,0 +1,1266 @@
+{
+  "karte": "wegCrossroadsPinewood.riesenbaeume",
+  "datei": "karten/varianten/weg-crossroads-pinewood-riesenbaeume-a.json",
+  "art": "aussen",
+  "beschreibung": "Der Hain der Riesenbäume auf dem Fernwanderweg, 40 × 130 Kacheln, kühler Morgen. Der Weg kommt oben am Ostrand aus den Hütten und windet sich in Kehren nach Süden: Mammutbäume links und rechts und mitten im Hain, das Ranger-Häuschen mit Fahne, ein dichter Hain mit Farnen, ein Bach mit Holzsteg, zuletzt lichter Wald und der Abstieg zum Südrand ins Camp.",
+  "boden": "gras",
+  "wandart": "hecke",
+  "boeden": {
+    "e": "erde",
+    "h": "dielen",
+    "k": "schotter"
+  },
+  "bruecken": ["h"],
+  "raster": [
+    "########################################",
+    "#......................................#",
+    "#......................................#",
+    "#......................................#",
+    "#...................eeeeeeeeeeeeeeeeeeee",
+    "#...................eeeeeeeeeeeeeeeeeeee",
+    "#...................ee.................#",
+    "#...................ee.................#",
+    "#...................ee.................#",
+    "#...................ee.................#",
+    "#...................ee.................#",
+    "#...................ee.................#",
+    "#...................ee.................#",
+    "#...................ee.................#",
+    "#...................ee.................#",
+    "#...................ee.................#",
+    "#...................ee.................#",
+    "#...................ee.................#",
+    "#...................ee.................#",
+    "#...................ee.................#",
+    "#...................ee.................#",
+    "#...................ee.................#",
+    "#...................ee.................#",
+    "#...................ee.................#",
+    "#...................ee.................#",
+    "#...................ee.................#",
+    "#...................ee.................#",
+    "#...................ee.................#",
+    "#...................ee.................#",
+    "#.........eeeeeeeeeeee.................#",
+    "#.........eeeeeeeeeeee.................#",
+    "#.........ee...........................#",
+    "#.........ee...........................#",
+    "#.........ee...........................#",
+    "#.........ee...........................#",
+    "#.........ee...........................#",
+    "#.........ee...........................#",
+    "#.........ee...........................#",
+    "#.........ee...........................#",
+    "#.........ee...........................#",
+    "#.........ee...........................#",
+    "#.........ee...........................#",
+    "#.........ee...........................#",
+    "#.........ee...........................#",
+    "#.........ee...........................#",
+    "#.........eeeeeeee.....................#",
+    "#.........eeeeeeee.....................#",
+    "#.........ee...........................#",
+    "#.........ee...........................#",
+    "#.........ee...........................#",
+    "#.........ee...........................#",
+    "#.........ee...........................#",
+    "#.........ee...........................#",
+    "#.........ee...........................#",
+    "#.........eeeeeeeeeeeeeeeeee...........#",
+    "#.........eeeeeeeeeeeeeeeeee...........#",
+    "#.........................ee...........#",
+    "#.........................ee...........#",
+    "#.........................ee...........#",
+    "#.........................ee...........#",
+    "#.........................ee...........#",
+    "#.........................ee...........#",
+    "#.........................ee...........#",
+    "#.........................ee...........#",
+    "#.........................ee...........#",
+    "#.........................ee...........#",
+    "#.........................ee...........#",
+    "#.........................ee...........#",
+    "#.........................ee...........#",
+    "#.........................ee...........#",
+    "#.........................ee...........#",
+    "#.........................ee...........#",
+    "#.........................ee...........#",
+    "#.........................ee...........#",
+    "#.........................ee...........#",
+    "#.........................ee...........#",
+    "#.........................ee...........#",
+    "#.........................ee...........#",
+    "#.........................ee...........#",
+    "#.............eeeeeeeeeeeeee...........#",
+    "#.............eeeeeeeeeeeeee...........#",
+    "#.............ee.......................#",
+    "#.............ee..............k.k.k.k..#",
+    "#.............ee.............k.k.k.k...#",
+    "#.............ee..............k.k.k.k..#",
+    "#.............ee.............k.k.k.k...#",
+    "#.............ee..............k.k.k.k..#",
+    "#.............ee.............k.k.k.k...#",
+    "#.............ee..............k.k.k.k..#",
+    "#.............ee.............k.k.k.k...#",
+    "#.............ee.......................#",
+    "#.............ee.......................#",
+    "~~~~~~~~~~~~~~hh~~~~~~~~~~~~~~~~~~~~~~~~",
+    "~~~~~~~~~~~~~~hh~~~~~~~~~~~~~~~~~~~~~~~~",
+    "#.............ee.......................#",
+    "#.............ee.......................#",
+    "#.............ee.......................#",
+    "#.............ee.......................#",
+    "#.............ee.......................#",
+    "#.............ee.......................#",
+    "#.............ee.......................#",
+    "#.............ee.......................#",
+    "#.............ee.......................#",
+    "#.............eeeeeee..................#",
+    "#.............eeeeeee..................#",
+    "#..................ee..................#",
+    "#..................ee..................#",
+    "#..................ee..................#",
+    "#..................ee..................#",
+    "#..................ee..................#",
+    "#..................ee..................#",
+    "#..................ee..................#",
+    "#..................ee..................#",
+    "#..................ee..................#",
+    "#..................ee..................#",
+    "#..................ee..................#",
+    "#..................ee..................#",
+    "#..................ee..................#",
+    "#..................ee..................#",
+    "#..................ee..................#",
+    "#..................ee..................#",
+    "#..................ee..................#",
+    "#..................ee..................#",
+    "#..................ee..................#",
+    "#..................ee..................#",
+    "#..................ee..................#",
+    "#..................ee..................#",
+    "#..................ee..................#",
+    "#..................ee..................#",
+    "###################ee###################"
+  ],
+  "objekte": [
+    {
+      "moebel": "cp7StegLaengs",
+      "feld": [14, 91],
+      "id": "steg"
+    },
+    {
+      "moebel": "cp7Rangerhaus",
+      "feld": [13, 39],
+      "id": "rangerhaus"
+    },
+    {
+      "moebel": "mf4Wegweiser",
+      "feld": [23, 2]
+    },
+    {
+      "moebel": "cp7Mammutbaum",
+      "feld": [12, 4]
+    },
+    {
+      "moebel": "cp7Mammutbaum",
+      "feld": [23, 6]
+    },
+    {
+      "moebel": "cp7Mammutbaum",
+      "feld": [2, 22]
+    },
+    {
+      "moebel": "cp7Mammutbaum",
+      "feld": [2, 40]
+    },
+    {
+      "moebel": "cp7Mammutbaum",
+      "feld": [29, 49]
+    },
+    {
+      "moebel": "cp7Mammutbaum",
+      "feld": [18, 58]
+    },
+    {
+      "moebel": "cp7Mammutbaum",
+      "feld": [29, 67]
+    },
+    {
+      "moebel": "cp7Mammutbaum",
+      "feld": [6, 76]
+    },
+    {
+      "moebel": "cp7Mammutbaum",
+      "feld": [22, 94]
+    },
+    {
+      "moebel": "cp7Mammutbaum",
+      "feld": [11, 105]
+    },
+    {
+      "moebel": "cp7Mammutbaum",
+      "feld": [22, 112]
+    },
+    {
+      "moebel": "cp7Mammutbaum",
+      "feld": [1, 6]
+    },
+    {
+      "moebel": "cp7Mammutbaum",
+      "feld": [1, 54]
+    },
+    {
+      "moebel": "cp7Mammutbaum",
+      "feld": [1, 94]
+    },
+    {
+      "moebel": "cp7Mammutbaum",
+      "feld": [1, 110]
+    },
+    {
+      "moebel": "cp7Baerenspur",
+      "feld": [17, 87]
+    },
+    {
+      "moebel": "cp7Baerenspur",
+      "feld": [17, 96]
+    },
+    {
+      "moebel": "pw7Tanne",
+      "feld": [4, 1]
+    },
+    {
+      "moebel": "pw7Kiefer",
+      "feld": [7, 1]
+    },
+    {
+      "moebel": "wg4Busch",
+      "feld": [17, 2]
+    },
+    {
+      "moebel": "pw7TanneHoch",
+      "feld": [8, 7]
+    },
+    {
+      "moebel": "pw7Tanne",
+      "feld": [35, 12]
+    },
+    {
+      "moebel": "pw7Kiefer",
+      "feld": [8, 13]
+    },
+    {
+      "moebel": "wg4Busch",
+      "feld": [10, 16]
+    },
+    {
+      "moebel": "pw7TanneHoch",
+      "feld": [10, 18]
+    },
+    {
+      "moebel": "pw7Tanne",
+      "feld": [15, 19]
+    },
+    {
+      "moebel": "pw7Kiefer",
+      "feld": [28, 18]
+    },
+    {
+      "moebel": "wg4Busch",
+      "feld": [32, 20]
+    },
+    {
+      "moebel": "pw7TanneHoch",
+      "feld": [34, 17]
+    },
+    {
+      "moebel": "pw7Tanne",
+      "feld": [13, 24]
+    },
+    {
+      "moebel": "pw7Kiefer",
+      "feld": [25, 21]
+    },
+    {
+      "moebel": "wg4Busch",
+      "feld": [31, 23]
+    },
+    {
+      "moebel": "pw7TanneHoch",
+      "feld": [34, 22]
+    },
+    {
+      "moebel": "pw7Tanne",
+      "feld": [23, 27]
+    },
+    {
+      "moebel": "pw7Kiefer",
+      "feld": [28, 28]
+    },
+    {
+      "moebel": "wg4Busch",
+      "feld": [30, 25]
+    },
+    {
+      "moebel": "pw7TanneHoch",
+      "feld": [34, 27]
+    },
+    {
+      "moebel": "pw7Tanne",
+      "feld": [20, 32]
+    },
+    {
+      "moebel": "pw7Kiefer",
+      "feld": [36, 30]
+    },
+    {
+      "moebel": "wg4Busch",
+      "feld": [5, 36]
+    },
+    {
+      "moebel": "pw7TanneHoch",
+      "feld": [20, 36]
+    },
+    {
+      "moebel": "pw7Tanne",
+      "feld": [27, 33]
+    },
+    {
+      "moebel": "pw7Kiefer",
+      "feld": [29, 34]
+    },
+    {
+      "moebel": "wg4Busch",
+      "feld": [34, 35]
+    },
+    {
+      "moebel": "pw7TanneHoch",
+      "feld": [23, 39]
+    },
+    {
+      "moebel": "pw7Tanne",
+      "feld": [26, 38]
+    },
+    {
+      "moebel": "pw7Kiefer",
+      "feld": [32, 40]
+    },
+    {
+      "moebel": "wg4Busch",
+      "feld": [37, 37]
+    },
+    {
+      "moebel": "pw7TanneHoch",
+      "feld": [19, 41]
+    },
+    {
+      "moebel": "pw7Tanne",
+      "feld": [36, 42]
+    },
+    {
+      "moebel": "pw7Kiefer",
+      "feld": [19, 46]
+    },
+    {
+      "moebel": "wg4Busch",
+      "feld": [22, 46]
+    },
+    {
+      "moebel": "pw7TanneHoch",
+      "feld": [25, 46]
+    },
+    {
+      "moebel": "pw7Tanne",
+      "feld": [36, 51]
+    },
+    {
+      "moebel": "pw7Kiefer",
+      "feld": [10, 59]
+    },
+    {
+      "moebel": "wg4Busch",
+      "feld": [16, 57]
+    },
+    {
+      "moebel": "pw7TanneHoch",
+      "feld": [11, 63]
+    },
+    {
+      "moebel": "pw7Tanne",
+      "feld": [16, 64]
+    },
+    {
+      "moebel": "pw7Kiefer",
+      "feld": [30, 61]
+    },
+    {
+      "moebel": "wg4Busch",
+      "feld": [36, 61]
+    },
+    {
+      "moebel": "pw7TanneHoch",
+      "feld": [3, 67]
+    },
+    {
+      "moebel": "pw7Tanne",
+      "feld": [6, 68]
+    },
+    {
+      "moebel": "pw7Kiefer",
+      "feld": [13, 68]
+    },
+    {
+      "moebel": "wg4Busch",
+      "feld": [31, 65]
+    },
+    {
+      "moebel": "pw7TanneHoch",
+      "feld": [4, 71]
+    },
+    {
+      "moebel": "pw7Tanne",
+      "feld": [6, 72]
+    },
+    {
+      "moebel": "pw7Kiefer",
+      "feld": [21, 72]
+    },
+    {
+      "moebel": "wg4Busch",
+      "feld": [36, 70]
+    },
+    {
+      "moebel": "pw7TanneHoch",
+      "feld": [1, 74]
+    },
+    {
+      "moebel": "wg4Busch",
+      "feld": [1, 81]
+    },
+    {
+      "moebel": "pw7TanneHoch",
+      "feld": [23, 82]
+    },
+    {
+      "moebel": "pw7Tanne",
+      "feld": [25, 82]
+    },
+    {
+      "moebel": "pw7Tanne",
+      "feld": [3, 87]
+    },
+    {
+      "moebel": "pw7Kiefer",
+      "feld": [20, 87]
+    },
+    {
+      "moebel": "wg4Busch",
+      "feld": [25, 88]
+    },
+    {
+      "moebel": "pw7TanneHoch",
+      "feld": [30, 95]
+    },
+    {
+      "moebel": "pw7Tanne",
+      "feld": [8, 97]
+    },
+    {
+      "moebel": "pw7Kiefer",
+      "feld": [30, 100]
+    },
+    {
+      "moebel": "wg4Busch",
+      "feld": [33, 100]
+    },
+    {
+      "moebel": "pw7TanneHoch",
+      "feld": [9, 103]
+    },
+    {
+      "moebel": "pw7Tanne",
+      "feld": [5, 106]
+    },
+    {
+      "moebel": "pw7Kiefer",
+      "feld": [24, 106]
+    },
+    {
+      "moebel": "wg4Busch",
+      "feld": [26, 106]
+    },
+    {
+      "moebel": "pw7TanneHoch",
+      "feld": [29, 105]
+    },
+    {
+      "moebel": "pw7Tanne",
+      "feld": [36, 107]
+    },
+    {
+      "moebel": "pw7Kiefer",
+      "feld": [8, 110]
+    },
+    {
+      "moebel": "wg4Busch",
+      "feld": [30, 111]
+    },
+    {
+      "moebel": "pw7TanneHoch",
+      "feld": [34, 109]
+    },
+    {
+      "moebel": "pw7Tanne",
+      "feld": [8, 115]
+    },
+    {
+      "moebel": "pw7Kiefer",
+      "feld": [31, 113]
+    },
+    {
+      "moebel": "wg4Busch",
+      "feld": [36, 115]
+    },
+    {
+      "moebel": "pw7TanneHoch",
+      "feld": [8, 120]
+    },
+    {
+      "moebel": "pw7Tanne",
+      "feld": [10, 117]
+    },
+    {
+      "moebel": "pw7Kiefer",
+      "feld": [14, 118]
+    },
+    {
+      "moebel": "wg4Busch",
+      "feld": [31, 119]
+    },
+    {
+      "moebel": "pw7TanneHoch",
+      "feld": [33, 119]
+    },
+    {
+      "moebel": "pw7Tanne",
+      "feld": [37, 119]
+    },
+    {
+      "moebel": "pw7Kiefer",
+      "feld": [1, 123]
+    },
+    {
+      "moebel": "wg4Busch",
+      "feld": [11, 121]
+    },
+    {
+      "moebel": "pw7TanneHoch",
+      "feld": [14, 123]
+    },
+    {
+      "moebel": "pw7Tanne",
+      "feld": [27, 124]
+    },
+    {
+      "moebel": "pw7Kiefer",
+      "feld": [33, 123]
+    },
+    {
+      "moebel": "wg4Busch",
+      "feld": [2, 127]
+    },
+    {
+      "moebel": "pw7TanneHoch",
+      "feld": [31, 125]
+    },
+    {
+      "moebel": "wg4Gras",
+      "feld": [2, 1]
+    },
+    {
+      "moebel": "wg4Farn",
+      "feld": [6, 1]
+    },
+    {
+      "moebel": "wg4Pilze",
+      "feld": [9, 3]
+    },
+    {
+      "moebel": "wg4Gras",
+      "feld": [13, 2]
+    },
+    {
+      "moebel": "wg4Farn",
+      "feld": [23, 1]
+    },
+    {
+      "moebel": "wg4Pilze",
+      "feld": [25, 1]
+    },
+    {
+      "moebel": "wg4Gras",
+      "feld": [30, 1]
+    },
+    {
+      "moebel": "wg4Farn",
+      "feld": [37, 2]
+    },
+    {
+      "moebel": "wg4Pilze",
+      "feld": [5, 5]
+    },
+    {
+      "moebel": "wg4Gras",
+      "feld": [32, 8]
+    },
+    {
+      "moebel": "wg4Farn",
+      "feld": [34, 8]
+    },
+    {
+      "moebel": "wg4Pilze",
+      "feld": [10, 12]
+    },
+    {
+      "moebel": "wg4Gras",
+      "feld": [31, 9]
+    },
+    {
+      "moebel": "wg4Farn",
+      "feld": [34, 12]
+    },
+    {
+      "moebel": "wg4Pilze",
+      "feld": [37, 11]
+    },
+    {
+      "moebel": "wg4Gras",
+      "feld": [10, 15]
+    },
+    {
+      "moebel": "wg4Farn",
+      "feld": [32, 15]
+    },
+    {
+      "moebel": "wg4Pilze",
+      "feld": [33, 16]
+    },
+    {
+      "moebel": "wg4Gras",
+      "feld": [7, 19]
+    },
+    {
+      "moebel": "wg4Farn",
+      "feld": [9, 18]
+    },
+    {
+      "moebel": "wg4Pilze",
+      "feld": [13, 18]
+    },
+    {
+      "moebel": "wg4Gras",
+      "feld": [17, 19]
+    },
+    {
+      "moebel": "wg4Farn",
+      "feld": [31, 18]
+    },
+    {
+      "moebel": "wg4Pilze",
+      "feld": [1, 22]
+    },
+    {
+      "moebel": "wg4Gras",
+      "feld": [9, 22]
+    },
+    {
+      "moebel": "wg4Farn",
+      "feld": [24, 24]
+    },
+    {
+      "moebel": "wg4Pilze",
+      "feld": [11, 27]
+    },
+    {
+      "moebel": "wg4Gras",
+      "feld": [16, 25]
+    },
+    {
+      "moebel": "wg4Farn",
+      "feld": [17, 25]
+    },
+    {
+      "moebel": "wg4Pilze",
+      "feld": [33, 25]
+    },
+    {
+      "moebel": "wg4Gras",
+      "feld": [16, 32]
+    },
+    {
+      "moebel": "wg4Farn",
+      "feld": [32, 31]
+    },
+    {
+      "moebel": "wg4Pilze",
+      "feld": [33, 32]
+    },
+    {
+      "moebel": "wg4Gras",
+      "feld": [7, 35]
+    },
+    {
+      "moebel": "wg4Farn",
+      "feld": [14, 36]
+    },
+    {
+      "moebel": "wg4Pilze",
+      "feld": [19, 34]
+    },
+    {
+      "moebel": "wg4Gras",
+      "feld": [25, 36]
+    },
+    {
+      "moebel": "wg4Farn",
+      "feld": [37, 36]
+    },
+    {
+      "moebel": "wg4Pilze",
+      "feld": [6, 39]
+    },
+    {
+      "moebel": "wg4Gras",
+      "feld": [17, 38]
+    },
+    {
+      "moebel": "wg4Farn",
+      "feld": [31, 38]
+    },
+    {
+      "moebel": "wg4Pilze",
+      "feld": [35, 37]
+    },
+    {
+      "moebel": "wg4Gras",
+      "feld": [23, 44]
+    },
+    {
+      "moebel": "wg4Farn",
+      "feld": [25, 43]
+    },
+    {
+      "moebel": "wg4Pilze",
+      "feld": [29, 42]
+    },
+    {
+      "moebel": "wg4Gras",
+      "feld": [36, 41]
+    },
+    {
+      "moebel": "wg4Farn",
+      "feld": [38, 43]
+    },
+    {
+      "moebel": "wg4Pilze",
+      "feld": [21, 48]
+    },
+    {
+      "moebel": "wg4Gras",
+      "feld": [27, 47]
+    },
+    {
+      "moebel": "wg4Farn",
+      "feld": [31, 45]
+    },
+    {
+      "moebel": "wg4Pilze",
+      "feld": [33, 46]
+    },
+    {
+      "moebel": "wg4Gras",
+      "feld": [37, 46]
+    },
+    {
+      "moebel": "wg4Farn",
+      "feld": [1, 50]
+    },
+    {
+      "moebel": "wg4Pilze",
+      "feld": [16, 50]
+    },
+    {
+      "moebel": "wg4Gras",
+      "feld": [21, 50]
+    },
+    {
+      "moebel": "wg4Farn",
+      "feld": [1, 53]
+    },
+    {
+      "moebel": "wg4Pilze",
+      "feld": [8, 53]
+    },
+    {
+      "moebel": "wg4Gras",
+      "feld": [9, 58]
+    },
+    {
+      "moebel": "wg4Farn",
+      "feld": [14, 57]
+    },
+    {
+      "moebel": "wg4Pilze",
+      "feld": [38, 57]
+    },
+    {
+      "moebel": "wg4Gras",
+      "feld": [16, 61]
+    },
+    {
+      "moebel": "wg4Farn",
+      "feld": [17, 63]
+    },
+    {
+      "moebel": "wg4Pilze",
+      "feld": [32, 64]
+    },
+    {
+      "moebel": "wg4Gras",
+      "feld": [33, 64]
+    },
+    {
+      "moebel": "wg4Farn",
+      "feld": [1, 68]
+    },
+    {
+      "moebel": "wg4Pilze",
+      "feld": [37, 66]
+    },
+    {
+      "moebel": "wg4Gras",
+      "feld": [3, 71]
+    },
+    {
+      "moebel": "wg4Farn",
+      "feld": [10, 72]
+    },
+    {
+      "moebel": "wg4Pilze",
+      "feld": [15, 71]
+    },
+    {
+      "moebel": "wg4Gras",
+      "feld": [18, 70]
+    },
+    {
+      "moebel": "wg4Farn",
+      "feld": [4, 76]
+    },
+    {
+      "moebel": "wg4Pilze",
+      "feld": [9, 73]
+    },
+    {
+      "moebel": "wg4Gras",
+      "feld": [13, 75]
+    },
+    {
+      "moebel": "wg4Farn",
+      "feld": [17, 73]
+    },
+    {
+      "moebel": "wg4Pilze",
+      "feld": [36, 76]
+    },
+    {
+      "moebel": "wg4Gras",
+      "feld": [38, 73]
+    },
+    {
+      "moebel": "wg4Farn",
+      "feld": [3, 79]
+    },
+    {
+      "moebel": "wg4Pilze",
+      "feld": [22, 77]
+    },
+    {
+      "moebel": "wg4Pilze",
+      "feld": [37, 77]
+    },
+    {
+      "moebel": "wg4Gras",
+      "feld": [1, 83]
+    },
+    {
+      "moebel": "wg4Farn",
+      "feld": [19, 83]
+    },
+    {
+      "moebel": "wg4Pilze",
+      "feld": [12, 88]
+    },
+    {
+      "moebel": "wg4Gras",
+      "feld": [20, 86]
+    },
+    {
+      "moebel": "wg4Gras",
+      "feld": [3, 91]
+    },
+    {
+      "moebel": "wg4Farn",
+      "feld": [7, 91]
+    },
+    {
+      "moebel": "wg4Pilze",
+      "feld": [9, 90]
+    },
+    {
+      "moebel": "wg4Gras",
+      "feld": [20, 91]
+    },
+    {
+      "moebel": "wg4Farn",
+      "feld": [23, 90]
+    },
+    {
+      "moebel": "wg4Farn",
+      "feld": [35, 91]
+    },
+    {
+      "moebel": "wg4Pilze",
+      "feld": [9, 96]
+    },
+    {
+      "moebel": "wg4Gras",
+      "feld": [20, 95]
+    },
+    {
+      "moebel": "wg4Farn",
+      "feld": [21, 95]
+    },
+    {
+      "moebel": "wg4Pilze",
+      "feld": [31, 94]
+    },
+    {
+      "moebel": "wg4Gras",
+      "feld": [33, 95]
+    },
+    {
+      "moebel": "wg4Farn",
+      "feld": [11, 99]
+    },
+    {
+      "moebel": "wg4Pilze",
+      "feld": [19, 99]
+    },
+    {
+      "moebel": "wg4Gras",
+      "feld": [33, 98]
+    },
+    {
+      "moebel": "wg4Farn",
+      "feld": [37, 100]
+    },
+    {
+      "moebel": "wg4Pilze",
+      "feld": [12, 104]
+    },
+    {
+      "moebel": "wg4Gras",
+      "feld": [37, 103]
+    },
+    {
+      "moebel": "wg4Farn",
+      "feld": [4, 108]
+    },
+    {
+      "moebel": "wg4Pilze",
+      "feld": [32, 106]
+    },
+    {
+      "moebel": "wg4Gras",
+      "feld": [33, 107]
+    },
+    {
+      "moebel": "wg4Farn",
+      "feld": [24, 111]
+    },
+    {
+      "moebel": "wg4Pilze",
+      "feld": [25, 111]
+    },
+    {
+      "moebel": "wg4Gras",
+      "feld": [32, 110]
+    },
+    {
+      "moebel": "wg4Farn",
+      "feld": [33, 112]
+    },
+    {
+      "moebel": "wg4Pilze",
+      "feld": [35, 116]
+    },
+    {
+      "moebel": "wg4Gras",
+      "feld": [38, 115]
+    },
+    {
+      "moebel": "wg4Farn",
+      "feld": [17, 120]
+    },
+    {
+      "moebel": "wg4Pilze",
+      "feld": [32, 118]
+    },
+    {
+      "moebel": "wg4Gras",
+      "feld": [35, 120]
+    },
+    {
+      "moebel": "wg4Farn",
+      "feld": [37, 117]
+    },
+    {
+      "moebel": "wg4Pilze",
+      "feld": [2, 122]
+    },
+    {
+      "moebel": "wg4Gras",
+      "feld": [5, 123]
+    },
+    {
+      "moebel": "wg4Farn",
+      "feld": [9, 124]
+    },
+    {
+      "moebel": "wg4Pilze",
+      "feld": [15, 122]
+    },
+    {
+      "moebel": "wg4Gras",
+      "feld": [17, 121]
+    },
+    {
+      "moebel": "wg4Farn",
+      "feld": [32, 124]
+    },
+    {
+      "moebel": "wg4Pilze",
+      "feld": [4, 128]
+    },
+    {
+      "moebel": "wg4Gras",
+      "feld": [5, 127]
+    },
+    {
+      "moebel": "wg4Farn",
+      "feld": [10, 125]
+    },
+    {
+      "moebel": "wg4Pilze",
+      "feld": [16, 127]
+    },
+    {
+      "moebel": "wg4Gras",
+      "feld": [17, 126]
+    },
+    {
+      "moebel": "wg4Farn",
+      "feld": [22, 128]
+    },
+    {
+      "moebel": "wg4Pilze",
+      "feld": [26, 127]
+    },
+    {
+      "moebel": "n6Tribuene",
+      "feld": [31, 79]
+    },
+    {
+      "moebel": "cr8FahneWeiss",
+      "feld": [28, 81]
+    },
+    {
+      "moebel": "cr8FahneWeiss",
+      "feld": [28, 87]
+    },
+    {
+      "moebel": "cr8FahneSchwarz",
+      "feld": [37, 81]
+    },
+    {
+      "moebel": "cr8FahneSchwarz",
+      "feld": [37, 87]
+    }
+  ],
+  "ausloeser": [
+    {
+      "name": "start",
+      "feld": [37, 4],
+      "eigenschaften": {
+        "richtung": "links"
+      }
+    },
+    {
+      "name": "zurueckHuetten",
+      "feld": [39, 4]
+    },
+    {
+      "name": "zurueckHuetten",
+      "feld": [39, 5]
+    },
+    {
+      "name": "weiterCamp",
+      "feld": [19, 129]
+    },
+    {
+      "name": "weiterCamp",
+      "feld": [20, 129]
+    },
+    {
+      "name": "rangerhaus",
+      "feld": [16, 45]
+    },
+    {
+      "name": "ereignisLebendschach",
+      "feld": [38, 85]
+    },
+    {
+      "name": "seite10",
+      "feld": [24, 106]
+    },
+    {
+      "name": "finchDame",
+      "feld": [32, 61]
+    }
+  ],
+  "figuren": [],
+  "belebung": [
+    {
+      "name": "libellen",
+      "typ": "tier",
+      "feld": [20, 92],
+      "eigenschaften": {
+        "von": "10,90",
+        "bis": "30,94",
+        "verhalten": "fliegen"
+      }
+    },
+    {
+      "name": "specht",
+      "typ": "tier",
+      "feld": [10, 40],
+      "eigenschaften": {
+        "von": "5,30",
+        "bis": "15,50",
+        "verhalten": "fliegen"
+      }
+    },
+    {
+      "name": "eichhoernchen",
+      "typ": "tier",
+      "feld": [22, 60],
+      "eigenschaften": {
+        "von": "18,55",
+        "bis": "26,66",
+        "verhalten": "flitzen"
+      }
+    },
+    {
+      "name": "streifenhoernchen",
+      "typ": "tier",
+      "feld": [14, 100],
+      "eigenschaften": {
+        "von": "10,98",
+        "bis": "18,104",
+        "verhalten": "flitzen"
+      }
+    },
+    {
+      "name": "eule",
+      "typ": "tier",
+      "feld": [6, 20],
+      "eigenschaften": {
+        "von": "6,20",
+        "bis": "6,20",
+        "verhalten": "schlafen"
+      }
+    },
+    {
+      "name": "reh",
+      "typ": "tier",
+      "feld": [32, 112],
+      "eigenschaften": {
+        "von": "28,108",
+        "bis": "36,118",
+        "verhalten": "ausweichen"
+      }
+    },
+    {
+      "name": "pfadfinderin",
+      "typ": "statist",
+      "feld": [16, 30],
+      "eigenschaften": {
+        "tun": "übt mit einer weißen Weste Schritte vorwärts",
+        "wann": "tag",
+        "von": "15,28",
+        "bis": "18,34",
+        "sagt": "statist.wegCrossroadsPinewood.riesenbaeume.pfadfinderin"
+      }
+    },
+    {
+      "name": "eichhoernchenjunge",
+      "typ": "statist",
+      "feld": [22, 62],
+      "eigenschaften": {
+        "tun": "starrt in die Baumkrone",
+        "wann": "tag",
+        "von": "20,60",
+        "bis": "24,64",
+        "sagt": "statist.wegCrossroadsPinewood.riesenbaeume.eichhoernchenjunge"
+      }
+    },
+    {
+      "name": "betreuerin",
+      "typ": "statist",
+      "feld": [28, 100],
+      "eigenschaften": {
+        "tun": "zählt Westen in einem Wäschekorb",
+        "wann": "tag",
+        "von": "26,98",
+        "bis": "30,104",
+        "sagt": "statist.wegCrossroadsPinewood.riesenbaeume.betreuerin"
+      }
+    },
+    {
+      "name": "fotografin",
+      "typ": "statist",
+      "feld": [10, 121],
+      "eigenschaften": {
+        "tun": "legt sich auf den Rücken, um den Baum aufs Bild zu bekommen",
+        "wann": "tag",
+        "von": "8,119",
+        "bis": "13,124",
+        "sagt": "statist.wegCrossroadsPinewood.riesenbaeume.fotografin"
+      }
+    }
+  ],
+  "zustand": ["neu", "gebraucht", "alt"],
+  "stil": [
+    "natur",
+    "einfach",
+    "laendlich",
+    "landhaus",
+    "klassisch",
+    "rustikal",
+    "industrie"
+  ],
+  "toenung": "nebel",
+  "variante": "a"
+}

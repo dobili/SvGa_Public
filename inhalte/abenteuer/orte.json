@@ -49,7 +49,8 @@
           "name": "ort.mapleFalls.park",
           "innen": false,
           "zustaende": {
-            "nadelMapleFalls >= 1": "karten/maple-falls-park-steg-neu.json"
+            "nadelMapleFalls >= 1": "karten/maple-falls-park-steg-neu.json",
+            "aufbruchGesehen und nicht ankunftCedarCreekGesehen": "karten/maple-falls-park-schulbus.json"
           }
         },
         {
@@ -770,14 +771,14 @@
       "karten": [
         {
           "kennung": "wegCedarRiverton.zedernwald",
-          "datei": "karten/weg-cedar-riverton-1.json",
+          "datei": "karten/weg-cedar-riverton-zedernwald.json",
           "name": "ort.wegCedarRiverton.zedernwald",
           "innen": false,
           "musik": "musik/landstrasse.ogg"
         },
         {
           "kennung": "wegCedarRiverton.bahndamm",
-          "datei": "karten/weg-cedar-riverton-2.json",
+          "datei": "karten/weg-cedar-riverton-bahndamm.json",
           "name": "ort.wegCedarRiverton.bahndamm",
           "innen": false,
           "musik": "musik/landstrasse.ogg"
@@ -888,19 +889,32 @@
           "datei": "karten/riverton-aussen.json",
           "name": "ort.riverton.aussen",
           "innen": false,
-          "musik": "musik/riverton.ogg"
+          "musik": "musik/riverton.ogg",
+          "zustaende": {
+            "slickAbschiedGesehen": "karten/riverton-aussen-trainingszentrum.json",
+            "slickAbschiedGesehen und nadelIronwood >= 1": "karten/riverton-aussen-tische-kaputt.json",
+            "slickAbschiedGesehen und nadelDesertSprings >= 1": "karten/riverton-aussen-unterschriften.json",
+            "nicht ausgangCapitalArenaFinale == \"\"": "karten/riverton-aussen-nachspiel.json"
+          }
         },
         {
           "kennung": "riverton.pavillon",
           "datei": "karten/riverton-pavillon.json",
           "name": "ort.riverton.pavillon",
-          "innen": true
+          "innen": true,
+          "zustaende": {
+            "slickAbschiedGesehen": "karten/riverton-pavillon-perfect-move.json"
+          }
         },
         {
           "kennung": "riverton.bahnhofshalle",
           "datei": "karten/riverton-bahnhofshalle.json",
           "name": "ort.riverton.bahnhofshalle",
-          "innen": true
+          "innen": true,
+          "zustaende": {
+            "nadelIronwood >= 1": "karten/riverton-bahnhofshalle-slick-auf-der-bank.json",
+            "nadelDesertSprings >= 1": "karten/riverton-bahnhofshalle-plakat.json"
+          }
         },
         {
           "kennung": "riverton.wohnwagen",
@@ -912,7 +926,10 @@
           "kennung": "riverton.schuppen",
           "datei": "karten/riverton-schuppen.json",
           "name": "ort.riverton.schuppen",
-          "innen": true
+          "innen": true,
+          "zustaende": {
+            "fahrradErhalten": "karten/riverton-schuppen-ohne-fahrrad.json"
+          }
         }
       ],
       "figuren": [

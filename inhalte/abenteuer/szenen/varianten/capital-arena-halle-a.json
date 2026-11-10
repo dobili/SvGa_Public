@@ -1,0 +1,416 @@
+{
+  "karte": "capitalArena.halle",
+  "datei": "karten/varianten/capital-arena-halle-a.json",
+  "art": "innen",
+  "beschreibung": "Die Turnierhalle der Capital Arena bei der Landesmeisterschaft (Szenen 103 bis 108). Helle Wände, ein dunkler, glänzender Holzboden, zwei hohe Fenster. Über der Mitte der Nordwand das blau-goldene Banner „Landesmeisterschaft“, darunter die Holzbühne mit rotem Teppich und dem Finaltisch mit zwei Stühlen. Links und rechts der Bühne vier Holztribünen für das Publikum aus allen Städten. Davor zwei Reihen mit je vier Brettern für die Vorrunde, links und rechts eines Mittelgangs. An der Nordwand links der Bühne die Turniertafel mit den Paarungen, unten links neben dem Eingang der Fanshop mit Schals und Hemden, unten rechts der Pressetisch mit Laptops und Mikrofonen, große Pflanzen an den Seitenwänden, zwei Mikrofone neben der Bühne. Die Glastür liegt in der Mitte der Südwand, davor eine Matte.",
+  "wand": "creme",
+  "boden": "holzDunkel",
+  "raster": [
+    "##############################",
+    "##############################",
+    "##############################",
+    "#............................#",
+    "#............................#",
+    "#............................#",
+    "#............................#",
+    "#............................#",
+    "#............................#",
+    "#............................#",
+    "#............................#",
+    "#............................#",
+    "#............................#",
+    "#............................#",
+    "#............................#",
+    "#............................#",
+    "#............................#",
+    "#............................#",
+    "#............................#",
+    "###############.##############"
+  ],
+  "objekte": [
+    {
+      "moebel": "ca7Fenster",
+      "feld": [3, 1],
+      "an_wand": true
+    },
+    {
+      "moebel": "ca7Fenster",
+      "feld": [25, 1],
+      "an_wand": true
+    },
+    {
+      "moebel": "ca7Banner",
+      "feld": [12, 1],
+      "an_wand": true
+    },
+    {
+      "moebel": "ca7Buehne",
+      "feld": [12, 3]
+    },
+    {
+      "moebel": "ca7Tisch",
+      "feld": [14, 3],
+      "id": "fin"
+    },
+    {
+      "moebel": "ca7Brett",
+      "auf": "fin"
+    },
+    {
+      "moebel": "ca7StuhlRechts",
+      "feld": [13, 3],
+      "zu": "fin"
+    },
+    {
+      "moebel": "ca7StuhlLinks",
+      "feld": [16, 3],
+      "zu": "fin"
+    },
+    {
+      "moebel": "ca7Tribuene",
+      "feld": [2, 3]
+    },
+    {
+      "moebel": "ca7Tribuene",
+      "feld": [6, 3]
+    },
+    {
+      "moebel": "ca7Tribuene",
+      "feld": [20, 3]
+    },
+    {
+      "moebel": "ca7Tribuene",
+      "feld": [24, 3]
+    },
+    {
+      "moebel": "ca7Klapptisch",
+      "feld": [4, 9],
+      "id": "b4_9"
+    },
+    {
+      "moebel": "ca7Brett",
+      "auf": "b4_9"
+    },
+    {
+      "moebel": "ca7StuhlVorn",
+      "feld": [4, 8],
+      "zu": "b4_9"
+    },
+    {
+      "moebel": "ca7StuhlRuecken",
+      "feld": [4, 10],
+      "zu": "b4_9"
+    },
+    {
+      "moebel": "ca7Klapptisch",
+      "feld": [4, 13],
+      "id": "b4_13"
+    },
+    {
+      "moebel": "ca7Brett",
+      "auf": "b4_13"
+    },
+    {
+      "moebel": "ca7StuhlVorn",
+      "feld": [4, 12],
+      "zu": "b4_13"
+    },
+    {
+      "moebel": "ca7StuhlRuecken",
+      "feld": [4, 14],
+      "zu": "b4_13"
+    },
+    {
+      "moebel": "ca7Klapptisch",
+      "feld": [8, 9],
+      "id": "b8_9"
+    },
+    {
+      "moebel": "ca7Brett",
+      "auf": "b8_9"
+    },
+    {
+      "moebel": "ca7StuhlVorn",
+      "feld": [8, 8],
+      "zu": "b8_9"
+    },
+    {
+      "moebel": "ca7StuhlRuecken",
+      "feld": [8, 10],
+      "zu": "b8_9"
+    },
+    {
+      "moebel": "ca7Klapptisch",
+      "feld": [8, 13],
+      "id": "b8_13"
+    },
+    {
+      "moebel": "ca7Brett",
+      "auf": "b8_13"
+    },
+    {
+      "moebel": "ca7StuhlVorn",
+      "feld": [8, 12],
+      "zu": "b8_13"
+    },
+    {
+      "moebel": "ca7StuhlRuecken",
+      "feld": [8, 14],
+      "zu": "b8_13"
+    },
+    {
+      "moebel": "ca7Klapptisch",
+      "feld": [20, 9],
+      "id": "b20_9"
+    },
+    {
+      "moebel": "ca7Brett",
+      "auf": "b20_9"
+    },
+    {
+      "moebel": "ca7StuhlVorn",
+      "feld": [20, 8],
+      "zu": "b20_9"
+    },
+    {
+      "moebel": "ca7StuhlRuecken",
+      "feld": [20, 10],
+      "zu": "b20_9"
+    },
+    {
+      "moebel": "ca7Klapptisch",
+      "feld": [20, 13],
+      "id": "b20_13"
+    },
+    {
+      "moebel": "ca7Brett",
+      "auf": "b20_13"
+    },
+    {
+      "moebel": "ca7StuhlVorn",
+      "feld": [20, 12],
+      "zu": "b20_13"
+    },
+    {
+      "moebel": "ca7StuhlRuecken",
+      "feld": [20, 14],
+      "zu": "b20_13"
+    },
+    {
+      "moebel": "ca7Klapptisch",
+      "feld": [24, 9],
+      "id": "b24_9"
+    },
+    {
+      "moebel": "ca7Brett",
+      "auf": "b24_9"
+    },
+    {
+      "moebel": "ca7StuhlVorn",
+      "feld": [24, 8],
+      "zu": "b24_9"
+    },
+    {
+      "moebel": "ca7StuhlRuecken",
+      "feld": [24, 10],
+      "zu": "b24_9"
+    },
+    {
+      "moebel": "ca7Klapptisch",
+      "feld": [24, 13],
+      "id": "b24_13"
+    },
+    {
+      "moebel": "ca7Brett",
+      "auf": "b24_13"
+    },
+    {
+      "moebel": "ca7StuhlVorn",
+      "feld": [24, 12],
+      "zu": "b24_13"
+    },
+    {
+      "moebel": "ca7StuhlRuecken",
+      "feld": [24, 14],
+      "zu": "b24_13"
+    },
+    {
+      "moebel": "ca7Turnierwand",
+      "feld": [10, 1],
+      "an_wand": true
+    },
+    {
+      "moebel": "ca7Pressetisch",
+      "feld": [24, 16]
+    },
+    {
+      "moebel": "ca7Fanshop",
+      "feld": [2, 15]
+    },
+    {
+      "moebel": "ca7Muelleimer",
+      "feld": [18, 16]
+    },
+    {
+      "moebel": "ca7Pflanze",
+      "feld": [27, 6]
+    },
+    {
+      "moebel": "ca7Pflanze",
+      "feld": [27, 12]
+    },
+    {
+      "moebel": "ca7Pflanze",
+      "feld": [1, 11]
+    },
+    {
+      "moebel": "ca7Mikrofon2",
+      "feld": [18, 4]
+    },
+    {
+      "moebel": "ca7Mikrofon2",
+      "feld": [11, 4]
+    },
+    {
+      "moebel": "ca7Fussmatte",
+      "feld": [15, 18],
+      "versatz": [0, 8]
+    },
+    {
+      "moebel": "ca7Tuer",
+      "feld": [15, 19],
+      "an_wand": true
+    }
+  ],
+  "ausloeser": [
+    {
+      "name": "start",
+      "feld": [15, 18],
+      "eigenschaften": {
+        "richtung": "oben"
+      }
+    },
+    {
+      "name": "halleAusgang",
+      "feld": [15, 19]
+    },
+    {
+      "name": "turniertafel",
+      "feld": [10, 3],
+      "auf_moebel": true
+    },
+    {
+      "name": "pressetisch",
+      "feld": [26, 17],
+      "auf_moebel": true
+    },
+    {
+      "name": "fanshop",
+      "feld": [3, 16],
+      "auf_moebel": true
+    },
+    {
+      "name": "banner",
+      "feld": [12, 3]
+    }
+  ],
+  "figuren": [
+    {
+      "name": "victor",
+      "feld": [16, 6]
+    },
+    {
+      "name": "nova",
+      "feld": [11, 11]
+    },
+    {
+      "name": "bea",
+      "feld": [5, 8]
+    },
+    {
+      "name": "marcus",
+      "feld": [19, 8]
+    },
+    {
+      "name": "tobias",
+      "feld": [23, 12]
+    },
+    {
+      "name": "kade",
+      "feld": [17, 11]
+    },
+    {
+      "name": "turnierleiterin",
+      "feld": [14, 7]
+    },
+    {
+      "name": "lin",
+      "feld": [22, 16]
+    },
+    {
+      "name": "grahamHale",
+      "feld": [26, 10]
+    },
+    {
+      "name": "mama",
+      "feld": [11, 16]
+    },
+    {
+      "name": "juno",
+      "feld": [12, 16]
+    }
+  ],
+  "belebung": [
+    {
+      "name": "zuschauer",
+      "typ": "statist",
+      "feld": [7, 15],
+      "eigenschaften": {
+        "von": "7,15",
+        "bis": "7,15",
+        "tun": "schaut gebannt auf die Bretter",
+        "wann": "immer",
+        "sagt": "statist.capitalArena.halle.zuschauer"
+      }
+    },
+    {
+      "name": "reporter",
+      "typ": "statist",
+      "feld": [20, 15],
+      "eigenschaften": {
+        "von": "20,15",
+        "bis": "20,15",
+        "tun": "tippt leise auf einem Laptop",
+        "wann": "immer",
+        "sagt": "statist.capitalArena.halle.reporter"
+      }
+    },
+    {
+      "name": "vereinsmutter",
+      "typ": "statist",
+      "feld": [5, 3],
+      "eigenschaften": {
+        "von": "5,3",
+        "bis": "5,3",
+        "tun": "hält eine Brotdose voller Brote",
+        "wann": "immer",
+        "sagt": "statist.capitalArena.halle.vereinsmutter"
+      }
+    },
+    {
+      "name": "ordner",
+      "typ": "statist",
+      "feld": [25, 6],
+      "eigenschaften": {
+        "von": "25,6",
+        "bis": "25,6",
+        "tun": "steht mit Weste an der Wand und passt auf",
+        "wann": "immer",
+        "sagt": "statist.capitalArena.halle.ordner"
+      }
+    }
+  ],
+  "zustand": ["neu", "gebraucht"],
+  "stil": ["klassisch", "modern"],
+  "variante": "a"
+}

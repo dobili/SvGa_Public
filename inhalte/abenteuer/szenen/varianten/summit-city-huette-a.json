@@ -1,0 +1,214 @@
+{
+  "karte": "summitCity.huette",
+  "datei": "karten/varianten/summit-city-huette-a.json",
+  "art": "innen",
+  "beschreibung": "Wards Hütte in Summit City: eine Blockhütte mit Holzwänden und dunklen Dielen, es riecht nach Holzrauch und Tee. An der Nordwand der steinerne Kamin mit Feuer, Bücherregale, Endspieldiagramme an der Wand und eine Vitrine mit dem Pokal von 1985. Vor dem Kamin zwei Ohrensessel und ein runder Tisch mit Wards altem Holzbrett. Im Süden stehen die Clubtische. Die Tür liegt in der Südwand. Kamin in der Mitte der Nordwand, Bücherregale links, Vitrine rechts, zwei Clubtische im Süden.",
+  "wand": "holz",
+  "boden": "holzDunkel",
+  "zustand": ["neu", "gebraucht", "alt"],
+  "stil": ["klassisch", "laendlich", "natur", "rustikal", "einfach", "modern"],
+  "raster": [
+    "##################",
+    "##################",
+    "##################",
+    "#................#",
+    "#................#",
+    "#................#",
+    "#................#",
+    "#................#",
+    "#................#",
+    "#................#",
+    "#................#",
+    "#................#",
+    "########.#########"
+  ],
+  "objekte": [
+    {
+      "moebel": "cc8TuerSuedHolz",
+      "feld": [8, 12],
+      "an_wand": true
+    },
+    {
+      "moebel": "cc4Fussmatte",
+      "feld": [8, 11],
+      "versatz": [0, 8]
+    },
+    {
+      "moebel": "sc7Kamin",
+      "feld": [7, 0],
+      "an_wand": true
+    },
+    {
+      "moebel": "mf2Buecherregal",
+      "feld": [2, 1]
+    },
+    {
+      "moebel": "cc4RegalC",
+      "feld": [4, 1]
+    },
+    {
+      "moebel": "iwVitrine",
+      "feld": [14, 1],
+      "id": "vitrine"
+    },
+    {
+      "moebel": "pokal",
+      "auf": "vitrine"
+    },
+    {
+      "moebel": "iw5Kreidebrett",
+      "feld": [11, 1],
+      "an_wand": true,
+      "versatz": [0, 16]
+    },
+    {
+      "moebel": "iw5Kreidebrett",
+      "feld": [6, 1],
+      "an_wand": true,
+      "versatz": [0, 16]
+    },
+    {
+      "moebel": "cc4Holzstapel",
+      "feld": [11, 2]
+    },
+    {
+      "moebel": "mf2TeppichAlt",
+      "feld": [7, 5]
+    },
+    {
+      "moebel": "mf2Ohrensessel",
+      "feld": [5, 6]
+    },
+    {
+      "moebel": "mf2Rundtisch",
+      "feld": [8, 6],
+      "id": "ward"
+    },
+    {
+      "moebel": "mf2SchachbrettFiguren",
+      "auf": "ward"
+    },
+    {
+      "moebel": "mf2Ohrensessel",
+      "feld": [11, 6]
+    },
+    {
+      "moebel": "mf2StuhlL",
+      "feld": [2, 9]
+    },
+    {
+      "moebel": "mf2Schachtisch",
+      "feld": [3, 9],
+      "id": "t1"
+    },
+    {
+      "moebel": "cc4Brett",
+      "auf": "t1"
+    },
+    {
+      "moebel": "mf2StuhlR",
+      "feld": [6, 9]
+    },
+    {
+      "moebel": "mf2StuhlL",
+      "feld": [11, 9]
+    },
+    {
+      "moebel": "mf2Schachtisch",
+      "feld": [12, 9],
+      "id": "t2"
+    },
+    {
+      "moebel": "cc4Brett",
+      "auf": "t2"
+    },
+    {
+      "moebel": "mf2StuhlR",
+      "feld": [15, 9]
+    },
+    {
+      "moebel": "mf2Stehlampe",
+      "feld": [16, 3]
+    },
+    {
+      "moebel": "wzTeppich",
+      "feld": [7, 9]
+    },
+    {
+      "moebel": "cc4Leselampe",
+      "feld": [13, 6]
+    },
+    {
+      "moebel": "cc4PflanzeK",
+      "feld": [1, 3]
+    },
+    {
+      "moebel": "kisteRot",
+      "feld": [16, 7]
+    },
+    {
+      "moebel": "wzSofa",
+      "feld": [14, 4]
+    },
+    {
+      "moebel": "cc4Holzstapel",
+      "feld": [4, 4]
+    }
+  ],
+  "ausloeser": [
+    {
+      "name": "start",
+      "feld": [8, 11],
+      "eigenschaften": {
+        "richtung": "oben"
+      }
+    },
+    {
+      "name": "huetteAusgang",
+      "feld": [8, 12]
+    },
+    {
+      "name": "pokal",
+      "feld": [14, 4]
+    },
+    {
+      "name": "kaminfeuer",
+      "feld": [9, 4]
+    },
+    {
+      "name": "foto",
+      "feld": [13, 3]
+    },
+    {
+      "name": "teekanne",
+      "feld": [10, 7]
+    }
+  ],
+  "figuren": [
+    {
+      "name": "ward",
+      "feld": [9, 9]
+    },
+    {
+      "name": "kit",
+      "feld": [1, 11]
+    },
+    {
+      "name": "haraldsen",
+      "feld": [16, 11]
+    }
+  ],
+  "belebung": [
+    {
+      "name": "katze",
+      "typ": "tier",
+      "feld": [2, 4],
+      "eigenschaften": {
+        "von": "2,4",
+        "bis": "2,4",
+        "verhalten": "sitzen"
+      }
+    }
+  ],
+  "variante": "a"
+}

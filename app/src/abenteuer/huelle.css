@@ -102,3 +102,16 @@
 .abenteuer-huelle-blind .brett-figur {
   visibility: hidden;
 }
+
+/* Aufgabenrunde: Die Trainerkomponenten der App stehen auf einer hellen Karte im Navy der Hülle. */
+.abenteuer-huelle-aufgaben .abenteuer-huelle-inhalt > * {
+  padding: calc(var(--raster) * 1.5);
+  border-radius: var(--radius);
+  background: var(--flaeche);
+  color: var(--navy);
+}
+
+/* „Brett drehen“ braucht die Aufgabe im Spiel nicht; wer am Zug ist, bleibt stehen. */
+.abenteuer-huelle .brettschalter-gruppe {
+  display: none;
+}

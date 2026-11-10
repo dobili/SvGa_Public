@@ -4,7 +4,7 @@
  */
 import { describe, expect, it } from "vitest";
 import type { Partie } from "../../spiel/partie";
-import { gegnerName, sprecherAusPfad, statustext } from "./huellentexte";
+import { gegnerName, sprecherAusPfad, sprecherAusSchluessel, statustext } from "./huellentexte";
 
 describe("Spielhülle: Texte", () => {
   it("nennt den Gegner beim Namen, wenn er am Zug ist", () => {
@@ -24,6 +24,11 @@ describe("Spielhülle: Texte", () => {
   it("liest die Sprecherkennung aus dem Porträtpfad", () => {
     expect(sprecherAusPfad("portraets/coach-delgado.svg")).toBe("coach-delgado");
     expect(sprecherAusPfad(undefined)).toBeNull();
+  });
+
+  it("liest die Sprecherkennung aus dem Namensschlüssel dessen, der die Aufgaben stellt", () => {
+    expect(sprecherAusSchluessel("figur.coachDelgado.name")).toBe("coachDelgado");
+    expect(sprecherAusSchluessel("ort.mapleFalls.name")).toBeNull();
   });
 
   it("nimmt den Namen aus der Partie, sonst „Gegner“", () => {

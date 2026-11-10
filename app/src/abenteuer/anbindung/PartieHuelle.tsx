@@ -28,7 +28,7 @@ import { usePartie, type Partiesteuerung } from "../../ui/komponenten/partie/use
 import { ANSICHT_ABENTEUER } from "../schnittstelle/modul";
 import { tSpiel } from "../texte/texte";
 import { Huelle } from "./Huelle";
-import { gegnerName, statustext } from "./huellentexte";
+import { gegnerName, sprecherAusPfad, statustext } from "./huellentexte";
 
 /** Unter so viel Restzeit (ms) wird die Uhr rot, wie in der App. */
 const KNAPP_MS = 10_000;
@@ -176,7 +176,7 @@ export function PartieHuelle({ wert }: { readonly wert: string | null }) {
   return (
     <Huelle
       figur={gegnerName(partie)}
-      portraet={partie?.einstellung.abenteuer?.portraet}
+      sprecher={sprecherAusPfad(partie?.einstellung.abenteuer?.portraet)}
       testid="partie"
       klasse={`abenteuer-huelle-partie ${blind ? "abenteuer-huelle-blind" : ""}`}
     >

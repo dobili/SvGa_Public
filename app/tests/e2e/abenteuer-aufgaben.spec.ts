@@ -65,6 +65,10 @@ async function loeseFalsch(seite: Page): Promise<void> {
   await seite.getByRole("button", { name: "Lösung zeigen" }).click();
   const weiter = seite.getByRole("button", { name: /^(Weiter|Runde auswerten)$/ });
   await expect(weiter).toBeVisible({ timeout: 10000 });
+  // Im Spiel fehlen die Knöpfe der App nach der Antwort (Wunsch des Autors, 10.11.2026).
+  await expect(seite.getByRole("button", { name: "Als Variante öffnen" })).toHaveCount(0);
+  await expect(seite.getByText("In die Lernsammlung")).toHaveCount(0);
+  await expect(seite.getByRole("button", { name: "Aufgabe wiederholen" })).toHaveCount(0);
   await weiter.click();
 }
 
@@ -83,11 +87,13 @@ test("Aufgabenrunde von Sam: weitermachen, durchspielen, Ergebnis in der Stadt",
   await page.getByRole("button", { name: "Weitermachen" }).click();
 
   await expect(page.getByTestId("abenteuer-aufgaben")).toBeVisible();
-  await expect(page.getByRole("heading", { name: "Aufgaben von Sam" })).toBeVisible();
+  // Spielhülle (docs/spiel/18): Kopf mit Sam, der die Aufgaben stellt; keine Knöpfe der App.
+  await expect(page.getByTestId("abenteuer-huelle-kopf")).toContainText("Sam");
   // Eine Buchübung (Abb. 1.40) und zwei Hängeaufgaben: „Aufgabe 1 von 3“.
   await expect(page.getByTestId("trainerrunde")).toContainText("Aufgabe 1 von 3", {
     timeout: 20000,
   });
+  await expect(page.getByRole("button", { name: "Brett drehen" })).toBeHidden();
   for (let i = 0; i < 3; i++) await loeseFalsch(page);
   await expect(page.getByTestId("abenteuer-aufgaben-ende")).toBeVisible();
   await expect(page.getByTestId("abenteuer-aufgaben-ende")).toContainText("0 von 3");

@@ -14,7 +14,6 @@ import "../huelle.css";
 import { Portraet } from "../dialog/Portraet";
 import { tSpiel } from "../texte/texte";
 import { useAbenteuerstand } from "./dienste";
-import { sprecherAusPfad } from "./huellentexte";
 import { usePixelrahmen } from "./pixelrahmen";
 
 /** Name des Ortes, an dem der Held steht („Maple Falls, Hauptstraße“); leer ohne Spielstand. */
@@ -28,27 +27,27 @@ function useOrtsname(): string {
 
 /**
  * Der Rahmen der Hülle.
- * Eingaben: Name der Figur (Gegner oder wer die Aufgaben stellt), ihr Porträtpfad im Paket,
+ * Eingaben: Name der Figur (Gegner oder wer die Aufgaben stellt), ihre Sprecherkennung für das
+ * Porträt („sam“, „coachDelgado“ oder „coach-delgado“; null ohne Bild),
  * Testkennung des Wurzelelements, zusätzliche Klasse (etwa für Blindschach), der Inhalt.
  * Beispiel: Partie gegen Skater Jo auf der Hauptstraße → Kopf „Skater Jo / Maple Falls,
  * Hauptstraße“, darunter Brett und Uhren.
  */
 export function Huelle({
   figur,
-  portraet,
+  sprecher,
   testid,
   klasse = "",
   children,
 }: {
   readonly figur: string;
-  readonly portraet?: string | undefined;
+  readonly sprecher: string | null;
   readonly testid: string;
   readonly klasse?: string;
   readonly children: ReactNode;
 }) {
   const pixelrahmen = usePixelrahmen();
   const ort = useOrtsname();
-  const sprecher = sprecherAusPfad(portraet);
   return (
     <div
       className={`bildschirm abenteuer-huelle ${pixelrahmen?.klasse ?? ""} ${klasse}`}

@@ -13,6 +13,9 @@
  * training/zusatzaufgaben.ts, anbindung/dienste.ts (Spielstand), schnittstelle/aufgaben.ts.
  * Erinnerungen (Auftrag mit `erinnerung`) spielen statt der Runde das Zugerraten einer
  * Klassikerpartie (ErinnerungsRunde.tsx, docs/spiel/08, F1).
+ * Seit der Spielhülle (docs/spiel/18_Spielhuelle.md) steht die Runde im Rahmen des Spiels: Kopf mit
+ * der Figur, die die Aufgaben stellt, und der Rundenrahmen mit `imSpiel` (ohne Lernsammlung,
+ * „Als Variante öffnen“, „Aufgabe wiederholen“, Kombo).
  * Sonderfall: Taktikaufgaben melden nur richtig oder falsch; „mit Hilfe“ (halber Punkt) bleibt
  * den Buchübungen der App vorbehalten und kommt hier noch nicht vor.
  */
@@ -31,21 +34,20 @@ import { Strukturaufgabe } from "../../ui/trainer/Strukturaufgabe";
 import { Taktikaufgabe } from "../../ui/trainer/Taktikaufgabe";
 import { useRunde, type Runde } from "../../ui/trainer/useRunde";
 import type { Massstab } from "../../training/endspieltrainer";
-import type { Aufgabenauftrag } from "../schnittstelle/aufgaben";
 import { ANSICHT_ABENTEUER } from "../schnittstelle/modul";
 import { tSpiel } from "../texte/texte";
 import { useAbenteuerstand } from "./dienste";
 import { ErinnerungsRunde } from "./ErinnerungsRunde";
+import { Huelle } from "./Huelle";
+import { sprecherAusSchluessel } from "./huellentexte";
 import { rundenaufgaben, type Rundenaufgabe } from "./rundenaufgaben";
 
 /** Die Runde selbst; eigene Komponente, damit `useRunde` die fertige Aufgabenliste bekommt. */
 function Runde({
-  auftrag,
   aufgaben,
   massstab,
   beiEnde,
 }: {
-  auftrag: Aufgabenauftrag;
   aufgaben: readonly Rundenaufgabe[];
   /** Maßstab des Endspieltrainers (nur für Endspielaufgaben nötig). */
   massstab: Massstab | null;
@@ -79,7 +81,13 @@ function Runde({
     },
   };
   return (
-    <Rundenrahmen kennung="taktik" runde={mitProtokoll} nochmal={() => {}} zurAuswahl={null}>
+    <Rundenrahmen
+      kennung="taktik"
+      runde={mitProtokoll}
+      nochmal={() => {}}
+      zurAuswahl={null}
+      imSpiel
+    >
       <div key={runde.index} className="trainer-aufgabe">
         {aktuelle.art === "endspiel" ? (
           massstab ? (
@@ -109,9 +117,6 @@ function Runde({
           />
         )}
       </div>
-      <p className="hinweis">
-        {t("abenteuer.aufgaben.steller", { steller: tSpiel(auftrag.steller) })}
-      </p>
     </Rundenrahmen>
   );
 }
@@ -125,7 +130,7 @@ function ZurueckKnopf() {
       data-testid="abenteuer-aufgaben-zurueck"
       onClick={() => navigiere({ bildschirm: "zusatz", kennung: ANSICHT_ABENTEUER })}
     >
-      {t("partie.zurueckZurStadt")}
+      {tSpiel("huelle.weiter")}
     </button>
   );
 }
@@ -175,10 +180,12 @@ export function AufgabenAnsicht({ wert }: { readonly wert: string | null }) {
     }));
   };
   return (
-    <div className="bildschirm bildschirm-abenteuer-aufgaben" data-testid="abenteuer-aufgaben">
-      <h1 className="karte-titel">
-        {t("abenteuer.aufgaben.titel", { steller: auftrag ? tSpiel(auftrag.steller) : "" })}
-      </h1>
+    <Huelle
+      figur={auftrag ? tSpiel(auftrag.steller) : ""}
+      sprecher={auftrag ? sprecherAusSchluessel(auftrag.steller) : null}
+      testid="abenteuer-aufgaben"
+      klasse="abenteuer-huelle-aufgaben"
+    >
       {!auftrag && (
         <section className="karte">
           <p className="fehlertext">{t("abenteuer.aufgaben.keinAuftrag")}</p>
@@ -203,12 +210,11 @@ export function AufgabenAnsicht({ wert }: { readonly wert: string | null }) {
       )}
       {auftrag && !auftrag.erinnerung && aufgaben && aufgaben.length > 0 && (
         <Runde
-          auftrag={auftrag}
           aufgaben={aufgaben}
           massstab={endspiele.art === "fertig" ? endspiele.wert.massstab : null}
           beiEnde={beiEnde}
         />
       )}
-    </div>
+    </Huelle>
   );
 }

@@ -19,6 +19,7 @@ import { Fortschrittsbalken } from "../komponenten/bausteine/Fortschrittsbalken"
 import { Kombo } from "../komponenten/bausteine/Kombo";
 import { SammelKnopf } from "../komponenten/lernsammlung/SammelFormular";
 import { AufgabenGabel } from "../komponenten/varianten/VariantenHinweis";
+import { ImSpielKontext } from "./imSpiel";
 import { SammelstellungKontext, type Loesungslinie } from "./sammelstellung";
 import { NACH_DER_RUNDE } from "./nachDerRunde";
 import type { Runde } from "./useRunde";
@@ -80,18 +81,22 @@ function Ende({
  *
  * Eingaben: Kennung des Trainers (Fundstelle in der Lernsammlung), Runde, die aktuelle Aufgabe
  * als Kinder, „Noch eine Runde“ und „Zur Auswahl“ (null, wenn der Trainer nur eine Übungsart hat).
+ * `imSpiel` (Vorgabe aus): Runde des Schach-Abenteuers; dann fehlen Kombo, „In die Lernsammlung“,
+ * „Als Variante öffnen“ und „Aufgabe wiederholen“ (docs/spiel/18_Spielhuelle.md, ui/trainer/imSpiel.ts).
  */
 export function Rundenrahmen({
   kennung,
   runde,
   nochmal,
   zurAuswahl,
+  imSpiel = false,
   children,
 }: {
   kennung: TrainerKennung;
   runde: Runde;
   nochmal: () => void;
   zurAuswahl: (() => void) | null;
+  imSpiel?: boolean;
   children: React.ReactNode;
 }) {
   const [stellung, setzeStellung] = useState<string | null>(null);
@@ -112,7 +117,7 @@ export function Rundenrahmen({
             richtig: runde.richtig,
           })}
         </p>
-        <Kombo folge={runde.folge} />
+        {!imSpiel && <Kombo folge={runde.folge} />}
       </div>
       {/* Wie weit die Runde ist, auf einen Blick (DS6); der Satz darüber bleibt für Vorleser. */}
       <Fortschrittsbalken
@@ -121,16 +126,18 @@ export function Rundenrahmen({
       />
       {/* Der Schlüssel setzt die Aufgabe bei „Aufgabe wiederholen“ auf den Anfang zurück. */}
       <SammelstellungKontext value={melde}>
-        <Fragment key={runde.versuch}>{children}</Fragment>
+        <ImSpielKontext value={imSpiel}>
+          <Fragment key={runde.versuch}>{children}</Fragment>
+        </ImSpielKontext>
       </SammelstellungKontext>
-      {runde.ergebnis !== null && stellung && (
+      {!imSpiel && runde.ergebnis !== null && stellung && (
         <SammelKnopf
           key={`${runde.index} ${stellung}`}
           fen={stellung}
           herkunft={{ herkunft: "trainer", quelle: kennung }}
         />
       )}
-      {runde.ergebnis !== null && stellung && (
+      {!imSpiel && runde.ergebnis !== null && stellung && (
         <AufgabenGabel titel={t(`trainer.${kennung}.name`)} fen={stellung} linie={linie} />
       )}
       {runde.ergebnis !== null && (
@@ -138,10 +145,12 @@ export function Rundenrahmen({
           <button type="button" className="knopf-haupt" onClick={runde.weiter}>
             {runde.index + 1 < runde.anzahl ? t("trainer.weiter") : t("trainer.auswerten")}
           </button>
-          <button type="button" className="knopf-zweit" onClick={runde.wiederhole}>
-            <RotateCcw size={SYMBOLGROESSE} aria-hidden="true" />
-            {t("trainer.aufgabeWiederholen")}
-          </button>
+          {!imSpiel && (
+            <button type="button" className="knopf-zweit" onClick={runde.wiederhole}>
+              <RotateCcw size={SYMBOLGROESSE} aria-hidden="true" />
+              {t("trainer.aufgabeWiederholen")}
+            </button>
+          )}
         </div>
       )}
     </div>

@@ -41,6 +41,7 @@ import { Falschzugmeldung } from "./Falschzugmeldung";
 import { falschzugpfeile, useFalschzug } from "./useFalschzug";
 import { useVorzug } from "./useVorzug";
 import { Warnhinweis } from "./Warnhinweis";
+import { useImSpiel } from "./imSpiel";
 
 const HILFEN = 3;
 const KEINE_WAHL = () => undefined;
@@ -185,6 +186,8 @@ export function Taktikaufgabe({
   zusatz?: Zusatzanzeige | null;
 }) {
   useSammelstellung(aufgabe.fen, { fen: aufgabe.fen, zuege: aufgabe.loesung });
+  // Im Schach-Abenteuer ohne Herkunftszeile und ohne „Freunde herausfordern“ (imSpiel.ts).
+  const imSpiel = useImSpiel();
   const zugaufgabe = useMemo(() => alsZugaufgabe(aufgabe), [aufgabe]);
   const [zuege, setzeZuege] = useState<readonly string[]>([]);
   const [stufe, setzeStufe] = useState(0);
@@ -253,7 +256,7 @@ export function Taktikaufgabe({
           anfangsGedreht={aufgabe.amZug === "b"}
         />
       )}
-      <Herkunft aufgabe={aufgabe} zusatz={zusatz !== null} />
+      {!imSpiel && <Herkunft aufgabe={aufgabe} zusatz={zusatz !== null} />}
       {!fertig && fehler && (
         <Antwortmeldung richtig={false}>{t("taktiktrainer.falsch")}</Antwortmeldung>
       )}
@@ -276,7 +279,7 @@ export function Taktikaufgabe({
       )}
       {fertig && motivAbfragen && <MotivBenennen aufgabe={aufgabe} />}
       {/* P9: gelöste Aufgabe aus freier Quelle als Herausforderung teilen (nur Lichess, E7). */}
-      {fertig && <TaktikHerausforderungsknopf aufgabe={aufgabe} />}
+      {fertig && !imSpiel && <TaktikHerausforderungsknopf aufgabe={aufgabe} />}
     </>
   );
 }

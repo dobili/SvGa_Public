@@ -40,3 +40,12 @@ export function statustext(
     ? tSpiel("huelle.gegnerUeberlegt", { gegner })
     : tSpiel("huelle.duBistAmZug");
 }
+
+/**
+ * Sprecherkennung aus dem Textschlüssel eines Figurennamens (Aufgabenrunde: wer die Aufgaben stellt).
+ * Beispiel: „figur.coachDelgado.name“ → „coachDelgado“; ein anderer Schlüssel → null.
+ */
+export function sprecherAusSchluessel(schluessel: string): string | null {
+  const teile = schluessel.split(".");
+  return teile[0] === "figur" && teile[1] ? teile[1] : null;
+}

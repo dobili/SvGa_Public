@@ -12,11 +12,11 @@ Szene heißt die Datei in `inhalte/abenteuer/szenen/` ohne `.json`.
 - [x] weg-cedar-riverton-bahndamm (Runde 8, niedrig-1)
 - [x] weg-cedar-riverton-zedernwald (Runde 8, niedrig-1)
 - [x] maple-falls-park (Runde 8, niedrig-1)
-- [ ] maple-falls-aussen (Runde 8, niedrig-1)
-- [ ] cedar-creek-aussen (Runde 8, niedrig-1)
-- [ ] weg-maple-cedar-flussweg (Runde 8, niedrig-1)
-- [ ] weg-maple-cedar-landstrasse (Runde 8, niedrig-1)
-- [ ] weg-maple-cedar-zedernpfad (Runde 8, niedrig-1)
+- [x] maple-falls-aussen (Runde 8, niedrig-1)
+- [x] cedar-creek-aussen (Runde 8, niedrig-1)
+- [x] weg-maple-cedar-flussweg (Runde 8, niedrig-1)
+- [x] weg-maple-cedar-landstrasse (Runde 8, niedrig-1)
+- [x] weg-maple-cedar-zedernpfad (Runde 8, niedrig-1)
 
 ## Erledigt
 

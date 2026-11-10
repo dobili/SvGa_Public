@@ -368,6 +368,18 @@
     {
       "name": "stollenAusgang",
       "feld": [20, 23]
+    },
+    {
+      "name": "logbuch",
+      "feld": [6, 16]
+    },
+    {
+      "name": "lore",
+      "feld": [25, 8]
+    },
+    {
+      "name": "goldader",
+      "feld": [25, 7]
     }
   ],
   "figuren": [],

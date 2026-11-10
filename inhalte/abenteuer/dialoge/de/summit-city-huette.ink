@@ -243,3 +243,13 @@ Auf dem Regal steht ein Pokal: „Landesmeisterin 1985 – E. Ward“. Daneben e
 === kaminfeuer ===
 {~Das Feuer knackt. Daneben stapelt sich Holz bis unter die Decke.|Über dem Kamin hängt ein Diagramm: König und Bauer gegen König. Darunter steht „Opposition!“.|Eine Teekanne mit Sprung steht warm auf dem Kaminsims.} #sprecher:erzaehler
 -> END
+
+// >>> Runde 6 (mittel-4)
+=== foto ===
+In der Vitrine steht ein altes Foto: eine Mannschaft vor dieser Hütte, die Spieler mit Wollmützen und einem Pokal in der Mitte. #sprecher:erzaehler
+-> END
+
+=== teekanne ===
+Auf dem runden Tisch steht eine Teekanne, noch warm. Daneben ein Brett, auf dem eine Partie wartet. #sprecher:erzaehler
+-> END
+// <<< Runde 6 (mittel-4)

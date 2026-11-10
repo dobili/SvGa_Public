@@ -290,9 +290,14 @@
       ],
       "club": {
         "name": "club.mapleFalls.name",
-        "kapitel": [0, 1],
+        "kapitel": [
+          0,
+          1
+        ],
         "chef": "mapleFalls.coachDelgado",
-        "mitglieder": ["mapleFalls.sam"],
+        "mitglieder": [
+          "mapleFalls.sam"
+        ],
         "aufgaben": {
           "minuten": 12,
           "buchuebungen": [
@@ -300,7 +305,11 @@
             "ueb:zaehlen-vorstoss",
             "ueb:angriff-zaehlen"
           ],
-          "themen": ["zaehlen", "haengend", "matt1"]
+          "themen": [
+            "zaehlen",
+            "haengend",
+            "matt1"
+          ]
         }
       }
     },
@@ -566,9 +575,15 @@
       ],
       "club": {
         "name": "club.cedarCreek.name",
-        "kapitel": [7, 8],
+        "kapitel": [
+          7,
+          8
+        ],
         "chef": "cedarCreek.okafor",
-        "mitglieder": ["cedarCreek.dex", "cedarCreek.mae"],
+        "mitglieder": [
+          "cedarCreek.dex",
+          "cedarCreek.mae"
+        ],
         "aufgaben": {
           "minuten": 15,
           "buchuebungen": [
@@ -582,7 +597,12 @@
             "ueb:damenmatt",
             "ueb:turmmatt"
           ],
-          "themen": ["matt1", "matt2", "mattbilder", "grundreihenmatt"]
+          "themen": [
+            "matt1",
+            "matt2",
+            "mattbilder",
+            "grundreihenmatt"
+          ]
         }
       }
     },
@@ -1104,9 +1124,15 @@
       ],
       "club": {
         "name": "club.riverton.name",
-        "kapitel": [7, 4],
+        "kapitel": [
+          7,
+          4
+        ],
         "chef": "riverton.slick",
-        "mitglieder": ["riverton.tamsin", "riverton.ray"],
+        "mitglieder": [
+          "riverton.tamsin",
+          "riverton.ray"
+        ],
         "aufgaben": {
           "minuten": 15,
           "buchuebungen": [
@@ -1115,7 +1141,9 @@
             "ueb:droh-ignorieren",
             "ueb:k2-zweispringer-la4"
           ],
-          "themen": ["doppelangriff"]
+          "themen": [
+            "doppelangriff"
+          ]
         }
       }
     },
@@ -1600,9 +1628,15 @@
       ],
       "club": {
         "name": "club.ironwood.name",
-        "kapitel": [7, 4],
+        "kapitel": [
+          7,
+          4
+        ],
         "chef": "ironwood.bigJoe",
-        "mitglieder": ["ironwood.hank", "ironwood.priya"],
+        "mitglieder": [
+          "ironwood.hank",
+          "ironwood.priya"
+        ],
         "aufgaben": {
           "minuten": 15,
           "buchuebungen": [
@@ -1611,7 +1645,10 @@
             "ueb:elefant",
             "ueb:legal-verteidigung"
           ],
-          "themen": ["fesselung", "spiess"]
+          "themen": [
+            "fesselung",
+            "spiess"
+          ]
         }
       }
     },
@@ -1667,6 +1704,24 @@
             "karte": "steinbruch.grube",
             "ausloeser": "stollen"
           }
+        },
+        {
+          "name": "finchBauerF",
+          "karte": "steinbruch.grube",
+          "art": "gegenstand",
+          "dialog": "steinbruch.fund_finch_bauer_f"
+        },
+        {
+          "name": "graffiti",
+          "karte": "steinbruch.grube",
+          "art": "dialog",
+          "dialog": "steinbruch.graffiti"
+        },
+        {
+          "name": "bagger",
+          "karte": "steinbruch.grube",
+          "art": "dialog",
+          "dialog": "steinbruch.bagger"
         }
       ]
     },
@@ -1690,7 +1745,20 @@
           "innen": true
         }
       ],
-      "figuren": [],
+      "figuren": [
+        {
+          "kennung": "sternwarte.ngata",
+          "name": "figur.ngata.name",
+          "sprite": "figuren/ngata.png",
+          "dialog": "sternwarte.ngata"
+        },
+        {
+          "kennung": "sternwarte.lucia",
+          "name": "figur.lucia.name",
+          "sprite": "figuren/lucia.png",
+          "dialog": "sternwarte.lucia"
+        }
+      ],
       "ausloeser": [
         {
           "name": "start",
@@ -1722,6 +1790,36 @@
             "karte": "sternwarte.felsnase",
             "ausloeser": "kuppelTuer"
           }
+        },
+        {
+          "name": "teleskop",
+          "karte": "sternwarte.kuppel",
+          "art": "gegenstand",
+          "dialog": "sternwarte.teleskop"
+        },
+        {
+          "name": "sternkarte",
+          "karte": "sternwarte.kuppel",
+          "art": "gegenstand",
+          "dialog": "sternwarte.sternkarte"
+        },
+        {
+          "name": "finchBauerG",
+          "karte": "sternwarte.kuppel",
+          "art": "gegenstand",
+          "dialog": "sternwarte.fund_finch_bauer_g"
+        },
+        {
+          "name": "bank",
+          "karte": "sternwarte.felsnase",
+          "art": "dialog",
+          "dialog": "sternwarte.bank"
+        },
+        {
+          "name": "antennenmast",
+          "karte": "sternwarte.felsnase",
+          "art": "dialog",
+          "dialog": "sternwarte.antennenmast"
         }
       ]
     },
@@ -1753,6 +1851,24 @@
             "karte": "ghostTown.aussen",
             "ausloeser": "goldmine"
           }
+        },
+        {
+          "name": "logbuch",
+          "karte": "goldmine.stollen",
+          "art": "gegenstand",
+          "dialog": "goldmine.logbuch"
+        },
+        {
+          "name": "lore",
+          "karte": "goldmine.stollen",
+          "art": "dialog",
+          "dialog": "goldmine.lore"
+        },
+        {
+          "name": "goldader",
+          "karte": "goldmine.stollen",
+          "art": "gegenstand",
+          "dialog": "goldmine.goldader"
         }
       ]
     },
@@ -2174,9 +2290,16 @@
       ],
       "club": {
         "name": "club.siliconBay.name",
-        "kapitel": [1, 2, 4],
+        "kapitel": [
+          1,
+          2,
+          4
+        ],
         "chef": "siliconBay.lin",
-        "mitglieder": ["siliconBay.theo", "siliconBay.nova"],
+        "mitglieder": [
+          "siliconBay.theo",
+          "siliconBay.nova"
+        ],
         "aufgaben": {
           "minuten": 15,
           "buchuebungen": [
@@ -2185,7 +2308,10 @@
             "ueb:k2-carokann-h4",
             "ueb:lasker-falle"
           ],
-          "themen": ["haengend", "gefangen"]
+          "themen": [
+            "haengend",
+            "gefangen"
+          ]
         }
       }
     },
@@ -2203,7 +2329,26 @@
           "innen": false
         }
       ],
-      "figuren": [],
+      "figuren": [
+        {
+          "kennung": "pelikaninsel.delphine",
+          "name": "figur.delphine.name",
+          "sprite": "figuren/delphine.png",
+          "dialog": "pelikaninsel.delphine"
+        },
+        {
+          "kennung": "pelikaninsel.oldPete",
+          "name": "figur.oldPete.name",
+          "sprite": "figuren/old-pete.png",
+          "dialog": "pelikaninsel.old_pete"
+        },
+        {
+          "kennung": "pelikaninsel.coral",
+          "name": "figur.coral.name",
+          "sprite": "figuren/coral.png",
+          "dialog": "pelikaninsel.coral"
+        }
+      ],
       "ausloeser": [
         {
           "name": "start",
@@ -2217,6 +2362,30 @@
             "karte": "siliconBay.hafen",
             "ausloeser": "inselfaehre"
           }
+        },
+        {
+          "name": "leuchtfeuer",
+          "karte": "pelikaninsel.dorf",
+          "art": "dialog",
+          "dialog": "pelikaninsel.leuchtfeuer"
+        },
+        {
+          "name": "netze",
+          "karte": "pelikaninsel.dorf",
+          "art": "dialog",
+          "dialog": "pelikaninsel.netze"
+        },
+        {
+          "name": "watt",
+          "karte": "pelikaninsel.dorf",
+          "art": "dialog",
+          "dialog": "pelikaninsel.watt"
+        },
+        {
+          "name": "finchBauerH",
+          "karte": "pelikaninsel.dorf",
+          "art": "gegenstand",
+          "dialog": "pelikaninsel.fund_finch_bauer_h"
         }
       ]
     },
@@ -2537,9 +2706,15 @@
       ],
       "club": {
         "name": "club.portDelacroix.name",
-        "kapitel": [5, 6],
+        "kapitel": [
+          5,
+          6
+        ],
         "chef": "portDelacroix.odile",
-        "mitglieder": ["portDelacroix.remy", "portDelacroix.lou"],
+        "mitglieder": [
+          "portDelacroix.remy",
+          "portDelacroix.lou"
+        ],
         "aufgaben": {
           "minuten": 15,
           "buchuebungen": [
@@ -2548,7 +2723,9 @@
             "ueb:skelett-roentgen",
             "ueb:lap-spanisch"
           ],
-          "themen": ["umwandlung"]
+          "themen": [
+            "umwandlung"
+          ]
         }
       }
     },
@@ -2654,9 +2831,29 @@
           }
         },
         {
+          "name": "ereignisSeilschaft",
+          "karte": "wegDelacroixDesert.felsbogen",
+          "art": "dialog",
+          "dialog": "weg-delacroix-desert.ereignis_seilschaft"
+        },
+        {
+          "name": "seite06",
+          "karte": "wegDelacroixDesert.felsbogen",
+          "art": "gegenstand",
+          "dialog": "weg-delacroix-desert.fund_seite06"
+        },
+        {
+          "name": "finchLaeuferB",
+          "karte": "wegDelacroixDesert.felsbogen",
+          "art": "gegenstand",
+          "dialog": "weg-delacroix-desert.fund_finch_laeufer_b"
+        },
+        {
           "name": "sternwarte",
           "karte": "wegDelacroixDesert.canyonpfad",
           "art": "uebergang",
+          "dialog": "weg-delacroix-desert.sternwarte_abzweig",
+          "wenn": "sternwarteOffen",
           "ziel": {
             "karte": "sternwarte.felsnase",
             "ausloeser": "zurueckCanyon"
@@ -2799,9 +2996,15 @@
       ],
       "club": {
         "name": "club.desertSprings.name",
-        "kapitel": [7, 1],
+        "kapitel": [
+          7,
+          1
+        ],
         "chef": "desertSprings.mira",
-        "mitglieder": ["desertSprings.tomas", "desertSprings.dot"],
+        "mitglieder": [
+          "desertSprings.tomas",
+          "desertSprings.dot"
+        ],
         "aufgaben": {
           "minuten": 15,
           "buchuebungen": [
@@ -2810,7 +3013,12 @@
             "ueb:taktik-a11",
             "ueb:taktik-a14"
           ],
-          "themen": ["hinlenkung", "beseitigung", "abzug", "doppelschach"]
+          "themen": [
+            "hinlenkung",
+            "beseitigung",
+            "abzug",
+            "doppelschach"
+          ]
         }
       }
     },
@@ -2832,6 +3040,12 @@
           "datei": "karten/weg-desert-summit-bergstrasse.json",
           "name": "ort.wegDesertSummit.bergstrasse",
           "innen": false
+        },
+        {
+          "kennung": "wegDesertSummit.hinterzimmer",
+          "datei": "karten/weg-desert-summit-hinterzimmer.json",
+          "name": "ort.wegDesertSummit.hinterzimmer",
+          "innen": true
         }
       ],
       "figuren": [
@@ -2840,6 +3054,19 @@
           "name": "figur.earl.name",
           "sprite": "figuren/earl.png",
           "dialog": "weg-desert-summit.earl"
+        },
+        {
+          "kennung": "wegDesertSummit.mags",
+          "name": "figur.mags.name",
+          "sprite": "figuren/mags.png",
+          "dialog": "weg-desert-summit.mags",
+          "gegner": "wegDesertSummit.mags"
+        },
+        {
+          "kennung": "wegDesertSummit.ruthKeene",
+          "name": "figur.ruthKeene.name",
+          "sprite": "figuren/ruth-keene.png",
+          "dialog": "weg-desert-summit.ruth_keene"
         }
       ],
       "ausloeser": [
@@ -2906,6 +3133,92 @@
             "karte": "summitCity.aussen",
             "ausloeser": "wegDesert"
           }
+        },
+        {
+          "name": "ereignisFunkschach",
+          "karte": "wegDesertSummit.diner",
+          "art": "dialog",
+          "dialog": "weg-desert-summit.ereignis_funkschach"
+        },
+        {
+          "name": "kreide3",
+          "karte": "wegDesertSummit.diner",
+          "art": "gegenstand",
+          "dialog": "weg-desert-summit.fund_kreide3"
+        },
+        {
+          "name": "finchSpringerB",
+          "karte": "wegDesertSummit.diner",
+          "art": "gegenstand",
+          "dialog": "weg-desert-summit.fund_finch_springer_b"
+        },
+        {
+          "name": "seite08",
+          "karte": "wegDesertSummit.diner",
+          "art": "gegenstand",
+          "dialog": "weg-desert-summit.fund_seite08"
+        },
+        {
+          "name": "reklame",
+          "karte": "wegDesertSummit.diner",
+          "art": "dialog",
+          "dialog": "weg-desert-summit.reklame"
+        },
+        {
+          "name": "motelschild",
+          "karte": "wegDesertSummit.diner",
+          "art": "dialog",
+          "dialog": "weg-desert-summit.motelschild"
+        },
+        {
+          "name": "aussicht",
+          "karte": "wegDesertSummit.diner",
+          "art": "dialog",
+          "dialog": "weg-desert-summit.aussicht"
+        },
+        {
+          "name": "hinterzimmerTuer",
+          "karte": "wegDesertSummit.diner",
+          "art": "uebergang",
+          "dialog": "weg-desert-summit.hinterzimmer_tuer",
+          "wenn": "hinterzimmerOffen",
+          "ziel": {
+            "karte": "wegDesertSummit.hinterzimmer",
+            "ausloeser": "hinterzimmerAusgang"
+          }
+        },
+        {
+          "name": "hinterzimmerAusgang",
+          "karte": "wegDesertSummit.hinterzimmer",
+          "art": "uebergang",
+          "ziel": {
+            "karte": "wegDesertSummit.diner",
+            "ausloeser": "hinterzimmerTuer"
+          }
+        },
+        {
+          "name": "spurPM4",
+          "karte": "wegDesertSummit.bergstrasse",
+          "art": "gegenstand",
+          "dialog": "weg-desert-summit.fund_spur_pm4"
+        },
+        {
+          "name": "aussichtBerg",
+          "karte": "wegDesertSummit.bergstrasse",
+          "art": "dialog",
+          "dialog": "weg-desert-summit.aussicht_berg"
+        },
+        {
+          "name": "wegweiserHochebene",
+          "karte": "wegDesertSummit.bergstrasse",
+          "art": "dialog",
+          "dialog": "weg-desert-summit.wegweiser_hochebene"
+        },
+        {
+          "name": "quelle",
+          "karte": "wegDesertSummit.bergstrasse",
+          "art": "dialog",
+          "dialog": "weg-desert-summit.quelle"
         }
       ]
     },
@@ -2999,6 +3312,42 @@
           "karte": "hochebene.schule",
           "art": "gegenstand",
           "dialog": "hochebene.aushang"
+        },
+        {
+          "name": "pferd",
+          "karte": "hochebene.felsentuerme",
+          "art": "dialog",
+          "dialog": "hochebene.pferd"
+        },
+        {
+          "name": "schildSchule",
+          "karte": "hochebene.felsentuerme",
+          "art": "dialog",
+          "dialog": "hochebene.schild_schule"
+        },
+        {
+          "name": "bus",
+          "karte": "hochebene.schule",
+          "art": "dialog",
+          "dialog": "hochebene.bus"
+        },
+        {
+          "name": "ereignisDiplom",
+          "karte": "hochebene.schule",
+          "art": "dialog",
+          "dialog": "hochebene.ereignis_diplom"
+        },
+        {
+          "name": "seite03",
+          "karte": "hochebene.schule",
+          "art": "gegenstand",
+          "dialog": "hochebene.fund_seite03"
+        },
+        {
+          "name": "finchTurmB",
+          "karte": "hochebene.schule",
+          "art": "gegenstand",
+          "dialog": "hochebene.fund_finch_turm_b"
         }
       ]
     },
@@ -3177,13 +3526,49 @@
             "karte": "wegSummitCrossroads.geysirbecken",
             "ausloeser": "zurueckSummit"
           }
+        },
+        {
+          "name": "plakat",
+          "karte": "summitCity.aussen",
+          "art": "dialog",
+          "dialog": "summit-city-aussen.plakat"
+        },
+        {
+          "name": "fernrohr",
+          "karte": "summitCity.aussen",
+          "art": "dialog",
+          "dialog": "summit-city-aussen.fernrohr"
+        },
+        {
+          "name": "foto",
+          "karte": "summitCity.huette",
+          "art": "gegenstand",
+          "dialog": "summit-city-huette.foto"
+        },
+        {
+          "name": "teekanne",
+          "karte": "summitCity.huette",
+          "art": "gegenstand",
+          "dialog": "summit-city-huette.teekanne"
+        },
+        {
+          "name": "fahrplan",
+          "karte": "summitCity.bergstation",
+          "art": "dialog",
+          "dialog": "summit-city-bergstation.fahrplan"
         }
       ],
       "club": {
         "name": "club.summitCity.name",
-        "kapitel": [8, 9],
+        "kapitel": [
+          8,
+          9
+        ],
         "chef": "summitCity.ward",
-        "mitglieder": ["summitCity.kit", "summitCity.haraldsen"],
+        "mitglieder": [
+          "summitCity.kit",
+          "summitCity.haraldsen"
+        ],
         "aufgaben": {
           "minuten": 15,
           "buchuebungen": [
@@ -3200,7 +3585,10 @@
             "ueb:abschneiden-reihe",
             "ueb:falscher-laeufer"
           ],
-          "themen": ["endspiel", "umwandlung"]
+          "themen": [
+            "endspiel",
+            "umwandlung"
+          ]
         }
       }
     },
@@ -3634,6 +4022,18 @@
             "karte": "wegPinewoodGhost.canyonrand",
             "ausloeser": "zurueckCamp"
           }
+        },
+        {
+          "name": "steg",
+          "karte": "pinewoodCamp.aussen",
+          "art": "dialog",
+          "dialog": "pinewood-camp-aussen.steg"
+        },
+        {
+          "name": "kanus",
+          "karte": "pinewoodCamp.aussen",
+          "art": "dialog",
+          "dialog": "pinewood-camp-aussen.kanus"
         }
       ]
     },
@@ -3655,6 +4055,12 @@
           "datei": "karten/weg-pinewood-ghost-staubstrasse.json",
           "name": "ort.wegPinewoodGhost.staubstrasse",
           "innen": false
+        },
+        {
+          "kennung": "wegPinewoodGhost.tankstelle",
+          "datei": "karten/weg-pinewood-ghost-tankstelle.json",
+          "name": "ort.wegPinewoodGhost.tankstelle",
+          "innen": true
         }
       ],
       "figuren": [
@@ -3713,6 +4119,66 @@
             "karte": "ghostTown.aussen",
             "ausloeser": "wegPinewood"
           }
+        },
+        {
+          "name": "ereignisTankstelle",
+          "karte": "wegPinewoodGhost.staubstrasse",
+          "art": "dialog",
+          "dialog": "weg-pinewood-ghost.ereignis_tankstelle"
+        },
+        {
+          "name": "spurPM6",
+          "karte": "wegPinewoodGhost.staubstrasse",
+          "art": "gegenstand",
+          "dialog": "weg-pinewood-ghost.fund_spur_pm6"
+        },
+        {
+          "name": "seite11",
+          "karte": "wegPinewoodGhost.staubstrasse",
+          "art": "gegenstand",
+          "dialog": "weg-pinewood-ghost.fund_seite11"
+        },
+        {
+          "name": "wagen",
+          "karte": "wegPinewoodGhost.staubstrasse",
+          "art": "dialog",
+          "dialog": "weg-pinewood-ghost.wagen"
+        },
+        {
+          "name": "tankstelleTuer",
+          "karte": "wegPinewoodGhost.staubstrasse",
+          "art": "uebergang",
+          "ziel": {
+            "karte": "wegPinewoodGhost.tankstelle",
+            "ausloeser": "tankstelleAusgang"
+          }
+        },
+        {
+          "name": "tankstelleAusgang",
+          "karte": "wegPinewoodGhost.tankstelle",
+          "art": "uebergang",
+          "ziel": {
+            "karte": "wegPinewoodGhost.staubstrasse",
+            "ausloeser": "tankstelleTuer"
+          }
+        },
+        {
+          "name": "greifarm",
+          "karte": "wegPinewoodGhost.tankstelle",
+          "art": "dialog",
+          "dialog": "weg-pinewood-ghost.greifarm"
+        },
+        {
+          "name": "finchBauerE",
+          "karte": "wegPinewoodGhost.canyonrand",
+          "art": "gegenstand",
+          "dialog": "weg-pinewood-ghost.fund_finch_bauer_e"
+        },
+        {
+          "name": "kletterwand",
+          "karte": "wegPinewoodGhost.canyonrand",
+          "art": "dialog",
+          "dialog": "weg-pinewood-ghost.kletterwand"
         }
       ]
     },
@@ -3827,7 +4293,9 @@
           "ziel": {
             "karte": "goldmine.stollen",
             "ausloeser": "stollenAusgang"
-          }
+          },
+          "dialog": "goldmine.eingang",
+          "wenn": "goldmineOffen"
         },
         {
           "name": "ortsschild",
@@ -4218,7 +4686,26 @@
           "innen": false
         }
       ],
-      "figuren": [],
+      "figuren": [
+        {
+          "kennung": "kuerbishof.walt",
+          "name": "figur.walt.name",
+          "sprite": "figuren/walt.png",
+          "dialog": "kuerbishof.walt"
+        },
+        {
+          "kennung": "kuerbishof.clover",
+          "name": "figur.clover.name",
+          "sprite": "figuren/clover.png",
+          "dialog": "kuerbishof.clover"
+        },
+        {
+          "kennung": "kuerbishof.omaMiller",
+          "name": "figur.omaMiller.name",
+          "sprite": "figuren/oma-miller.png",
+          "dialog": "kuerbishof.oma_miller"
+        }
+      ],
       "ausloeser": [
         {
           "name": "start",
@@ -4232,6 +4719,24 @@
             "karte": "wegMapleCedar.landstrasse",
             "ausloeser": "kuerbishof"
           }
+        },
+        {
+          "name": "irrgarten",
+          "karte": "kuerbishof.hof",
+          "art": "dialog",
+          "dialog": "kuerbishof.irrgarten"
+        },
+        {
+          "name": "vogelscheuche",
+          "karte": "kuerbishof.hof",
+          "art": "dialog",
+          "dialog": "kuerbishof.vogelscheuche"
+        },
+        {
+          "name": "kuerbiswaage",
+          "karte": "kuerbishof.hof",
+          "art": "dialog",
+          "dialog": "kuerbishof.kuerbiswaage"
         }
       ]
     }

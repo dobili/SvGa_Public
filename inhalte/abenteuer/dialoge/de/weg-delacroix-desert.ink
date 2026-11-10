@@ -148,3 +148,92 @@ Unter dem Felsbogen läuft eine alte Eisenbahnbrücke. Auf jeder Niete stehen di
     Ambrose sagt nichts. Aber du spürst, dass er hinsieht. #sprecher:erzaehler
 }
 -> END
+
+// >>> Runde 6 (mittel-4)
+VAR hatLaterne = false
+VAR sternwarteOffen = false
+VAR seilschaftBegonnen = false
+VAR seilschaftFertig = false
+VAR wegDelacroixDesertSeilschaftBestanden = false
+VAR gefundenSeite06 = false
+VAR gefundenFinchLaeuferB = false
+
+// ---------------------------------------------------------------- Ereignis: Die Seilschaft (Dokument 15, 2.7)
+// Erst nach der Versöhnung (Akt 3, bei der Rückkehr). Vorher liegen nur Seile, Rucksäcke und ein Kreidebeutel
+// am Wandfuß. Gedächtnisstellung kommt von mittel-2; bis dahin eine Aufgabenrunde (wegDelacroixDesert.seilschaft).
+
+=== ereignis_seilschaft ===
+{not versoehnungGesehen:
+    Am Fuß der Wand liegen zwei Rucksäcke, ein Kreidebeutel und ein Seil, das nach oben führt. Niemand ist zu sehen. #sprecher:erzaehler
+    -> END
+}
+{seilschaftFertig:
+    Wren winkt von unten, Sol von weit oben. Das Seil ist straff. #sprecher:erzaehler
+    -> END
+}
+{wegDelacroixDesertSeilschaftBestanden: -> seilschaft_ende}
+{seilschaftBegonnen: -> seilschaft_runde}
+-> seilschaft_start
+
+=== seilschaft_start ===
+~ seilschaftBegonnen = true
+Zwei Kletterinnen hängen in der Wand am Felsbogen, eine unten, eine hoch oben. Zwischen ihnen pfeift der Wind. #sprecher:erzaehler
+Wir spielen eine Partie, ein Zug pro Seillänge. Aber ich höre Sol nicht mehr! #sprecher:wren
+Ich zeige dir oben die Stellung. Merk sie dir und ruf sie Wren zu! #sprecher:ferris
+-> seilschaft_runde
+
+=== seilschaft_runde ===
+Schau genau hin. Unten sieht Wren das Brett nicht. #sprecher:ferris
+~ beginneAufgaben("wegDelacroixDesert.seilschaft")
+-> END
+
+=== seilschaft_ende ===
+{seilschaftFertig: -> END}
+~ seilschaftFertig = true
+Das Echo trägt deine Züge durch den Canyon. Unten nickt Wren, oben jubelt Sol. #sprecher:erzaehler
+Du hast die Stellung im Kopf behalten. Hier, der gehört dir. Er hält mehr, als er wiegt. #sprecher:wren
+~ gibFund("karabiner")
+{ambroseSprichtWieder:
+    Blind spielen heißt: das Brett tragen, ohne es zu sehen. #sprecher:ambrose
+}
+-> END
+
+// ---------------------------------------------------------------- Funde am Felsbogen
+
+=== fund_seite06 ===
+{gefundenSeite06:
+    Unter dem Bogen ist nur noch Sand. #sprecher:erzaehler
+    -> END
+}
+~ gefundenSeite06 = true
+Unter dem Felsbogen klemmt eine Buchseite zwischen zwei Steinen. Oben steht: Kapitel 6, Mittelspielstrategie. #sprecher:erzaehler
+~ gibFund("seite06")
+-> END
+
+=== fund_finch_laeufer_b ===
+{gefundenFinchLaeuferB:
+    Im Felsspalt ist nur noch das Finkenzeichen aus Kreide. #sprecher:erzaehler
+    -> END
+}
+~ gefundenFinchLaeuferB = true
+Neben einem kleinen Fink aus Kreide steckt etwas im Felsspalt: ein weißer Läufer aus Buchsbaum. #sprecher:erzaehler
+Unter seinem Fuß ist ein Feld eingebrannt. #sprecher:erzaehler
+~ gibFund("finchLaeuferB")
+-> END
+
+// ---------------------------------------------------------------- Sperre S9: Abzweig zur Sternwarte
+// Öffnet mit Laterne und Versöhnung (13_Wegenetz, S9). Der Dialog setzt sternwarteOffen, die Hülle
+// prüft danach `wenn` am Übergang.
+
+=== sternwarte_abzweig ===
+{
+- hatLaterne and versoehnungGesehen:
+    ~ sternwarteOffen = true
+    Die Laterne zeigt den schmalen Pfad zwischen dem Geröll. Oben auf der Felsnase schimmert eine weiße Kuppel. #sprecher:erzaehler
+- not versoehnungGesehen:
+    Geröll liegt quer über dem Pfad nach oben. Allein und mit dem Streit im Kopf will {held} hier nicht klettern. #sprecher:erzaehler
+- else:
+    Der Pfad zur Felsnase führt steil zwischen Geröll hinauf, und es wird schon dunkel. Ohne Licht ist das zu gefährlich. #sprecher:erzaehler
+}
+-> END
+// <<< Runde 6 (mittel-4)

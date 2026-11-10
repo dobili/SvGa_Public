@@ -114,9 +114,30 @@
     {
       "name": "kuppelAusgang",
       "feld": [7, 11]
+    },
+    {
+      "name": "teleskop",
+      "feld": [6, 9]
+    },
+    {
+      "name": "sternkarte",
+      "feld": [7, 3]
+    },
+    {
+      "name": "finchBauerG",
+      "feld": [12, 8]
     }
   ],
-  "figuren": [],
+  "figuren": [
+    {
+      "name": "ngata",
+      "feld": [11, 5]
+    },
+    {
+      "name": "lucia",
+      "feld": [5, 10]
+    }
+  ],
   "zustand": ["neu", "gebraucht", "alt"],
   "stil": [
     "natur",

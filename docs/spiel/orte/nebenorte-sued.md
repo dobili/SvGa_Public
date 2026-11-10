@@ -98,3 +98,31 @@ Tiere: Eule, Fledermäuse, Kojote, Wüstenfuchs, Nachtfalter, Eidechse.
 
 **3.3 Feld für Runde 6:** `finchBauerG` in der Kuppel bei A (12, 8), B (12, 9), C (12, 8),
 begehbar, mit Finkenzeichen aus Kreide.
+
+## 6. Runde 6: Sternwarte spielbar (10.11.2026)
+
+- **Figuren in der Kuppel:**
+  - Dr. Ngata (`sternwarte.ngata`) am Schreibtisch mit Funkgerät;
+  - Lucía (`sternwarte.lucia`) am Teleskop.
+- **Nebenquest** `sternwarte.koenigsangriff` (klein): Mattbilder von Dr. Ngata, Runde
+  `sternwarte.sterne`, 25 Münzen.
+- **Ansehen:** `teleskop` und `sternkarte` (Kuppel), `bank` und `antennenmast` (Felsnase).
+- **Fund:** `finchBauerG` am Feld aus 3.3.
+- **Erreichbar über Sperre S9** auf dem Canyonpfad (Laterne und Versöhnung).
+- **Offen für mittel-2:** feste Nachttönung (`toenung`).
+- **Offen:** Mira kommt nach der Versöhnung nicht als Figur dazu; sie steht schon in der Garage von
+  Desert Springs.
+
+## 7. Runde 6: Goldmine spielbar (10.11.2026)
+
+- **Sperre S11:** Der Übergang `goldmine` in Ghost Town hat den Dialog `goldmine.eingang` und
+  `wenn: goldmineOffen`. Der Dialog setzt die Variable bei `hatLaterne` und `grabGesehen` (Pruitts
+  Geschichte nach dem Grab). Sonst nennt er den Grund: vernagelt oder zu dunkel.
+- **Nebenquest `goldmine.letzteSchicht`** (klein):
+  - Auf dem Tisch der Kammer liegt das Logbuch von 1866 (`logbuch`).
+  - Funde `logbuch1866` und `grubenlampe1866` (30 Münzen).
+- **Nebenquest `goldmine.lorenendspiel`** (klein): Turmendspiele als Aufgabenrunde an der Lore
+  (`lore`), 20 Münzen.
+- **Goldader** (`goldader`): Fund `goldkorn`.
+- **Offen für mittel-2:** Lichtkreis der Laterne. Pruitt und Juniper bleiben bei ihren Orten (Ghost
+  Town, Weg 10).

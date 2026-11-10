@@ -863,39 +863,35 @@
     {
       "name": "zurueckLandstrasse",
       "feld": [24, 33]
+    },
+    {
+      "name": "irrgarten",
+      "feld": [14, 21]
+    },
+    {
+      "name": "vogelscheuche",
+      "feld": [6, 13]
+    },
+    {
+      "name": "kuerbiswaage",
+      "feld": [4, 25]
     }
   ],
-  "figuren": [],
-  "belebung": [
+  "figuren": [
     {
       "name": "walt",
-      "typ": "statist",
-      "feld": [40, 23],
-      "eigenschaften": {
-        "tun": "Walt Miller prüft die Kürbisse",
-        "wann": "tag"
-      }
+      "feld": [40, 23]
     },
     {
       "name": "clover",
-      "typ": "statist",
-      "feld": [12, 22],
-      "eigenschaften": {
-        "von": "12,22",
-        "bis": "12,20",
-        "tun": "Clover rennt zum Irrgarten",
-        "wann": "tag"
-      }
+      "feld": [12, 22]
     },
     {
-      "name": "oma",
-      "typ": "statist",
-      "feld": [7, 25],
-      "eigenschaften": {
-        "tun": "Oma Miller verkauft Kuchen am Hofladen",
-        "wann": "tag"
-      }
-    },
+      "name": "omaMiller",
+      "feld": [9, 27]
+    }
+  ],
+  "belebung": [
     {
       "name": "katze",
       "typ": "tier",
@@ -946,6 +942,18 @@
         "tun": "stapelt Apfelkisten für das Fest",
         "wann": "tag",
         "sagt": "statist.kuerbishof.hof.marktfrau"
+      }
+    },
+    {
+      "name": "traktorfahrer",
+      "typ": "statist",
+      "feld": [30, 26],
+      "eigenschaften": {
+        "von": "30,26",
+        "bis": "36,26",
+        "tun": "fährt Heu mit dem Traktor",
+        "wann": "tag",
+        "sagt": "statist.kuerbishof.hof.traktorfahrer"
       }
     },
     {

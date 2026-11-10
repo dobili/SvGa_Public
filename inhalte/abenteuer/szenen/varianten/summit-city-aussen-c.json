@@ -361,6 +361,14 @@
     {
       "name": "drachenbrunnen",
       "feld": [35, 35]
+    },
+    {
+      "name": "plakat",
+      "feld": [37, 48]
+    },
+    {
+      "name": "fernrohr",
+      "feld": [18, 8]
     }
   ],
   "figuren": [

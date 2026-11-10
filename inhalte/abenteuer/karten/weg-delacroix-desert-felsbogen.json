@@ -11,7 +11,7 @@
  "tilewidth": 16,
  "tileheight": 16,
  "nextlayerid": 5,
- "nextobjectid": 56,
+ "nextobjectid": 59,
  "layers": [
   {
    "id": 1,
@@ -12748,6 +12748,39 @@
     },
     {
      "id": 8,
+     "name": "ereignisSeilschaft",
+     "type": "ausloeser",
+     "x": 1584,
+     "y": 336,
+     "width": 16,
+     "height": 16,
+     "rotation": 0,
+     "visible": true
+    },
+    {
+     "id": 9,
+     "name": "seite06",
+     "type": "ausloeser",
+     "x": 1488,
+     "y": 336,
+     "width": 16,
+     "height": 16,
+     "rotation": 0,
+     "visible": true
+    },
+    {
+     "id": 10,
+     "name": "finchLaeuferB",
+     "type": "ausloeser",
+     "x": 1040,
+     "y": 336,
+     "width": 16,
+     "height": 16,
+     "rotation": 0,
+     "visible": true
+    },
+    {
+     "id": 11,
      "name": "rangerin",
      "type": "statist",
      "x": 1840,
@@ -12785,7 +12818,7 @@
      ]
     },
     {
-     "id": 9,
+     "id": 12,
      "name": "goldsucher",
      "type": "statist",
      "x": 1120,
@@ -12823,7 +12856,7 @@
      ]
     },
     {
-     "id": 10,
+     "id": 13,
      "name": "radfahrerin",
      "type": "statist",
      "x": 336,
@@ -12861,7 +12894,7 @@
      ]
     },
     {
-     "id": 11,
+     "id": 14,
      "name": "fotograf",
      "type": "statist",
      "x": 1584,
@@ -12894,7 +12927,7 @@
      ]
     },
     {
-     "id": 12,
+     "id": 15,
      "name": "roadrunner",
      "type": "tier",
      "x": 288,
@@ -12922,7 +12955,7 @@
      ]
     },
     {
-     "id": 13,
+     "id": 16,
      "name": "eidechse",
      "type": "tier",
      "x": 544,
@@ -12950,7 +12983,7 @@
      ]
     },
     {
-     "id": 14,
+     "id": 17,
      "name": "geier",
      "type": "tier",
      "x": 880,
@@ -12978,7 +13011,7 @@
      ]
     },
     {
-     "id": 15,
+     "id": 18,
      "name": "wuestenhase",
      "type": "tier",
      "x": 1248,
@@ -13006,7 +13039,7 @@
      ]
     },
     {
-     "id": 16,
+     "id": 19,
      "name": "kojote",
      "type": "tier",
      "x": 1600,
@@ -13034,7 +13067,7 @@
      ]
     },
     {
-     "id": 17,
+     "id": 20,
      "name": "falke",
      "type": "tier",
      "x": 1952,
@@ -13062,7 +13095,7 @@
      ]
     },
     {
-     "id": 18,
+     "id": 21,
      "name": "dd6Felsbogen",
      "type": "moebel",
      "x": 1424,
@@ -13085,7 +13118,7 @@
      ]
     },
     {
-     "id": 19,
+     "id": 22,
      "name": "dd6Bruecke1879",
      "type": "moebel",
      "x": 736,
@@ -13108,7 +13141,7 @@
      ]
     },
     {
-     "id": 20,
+     "id": 23,
      "name": "mfBank",
      "type": "moebel",
      "x": 1312,
@@ -13131,7 +13164,7 @@
      ]
     },
     {
-     "id": 21,
+     "id": 24,
      "name": "wg5Wegweiser",
      "type": "moebel",
      "x": 96,
@@ -13154,7 +13187,7 @@
      ]
     },
     {
-     "id": 22,
+     "id": 25,
      "name": "dd6KaktusKlein",
      "type": "moebel",
      "x": 1648,
@@ -13177,7 +13210,7 @@
      ]
     },
     {
-     "id": 23,
+     "id": 26,
      "name": "dd6KaktusBluehend",
      "type": "moebel",
      "x": 1760,
@@ -13200,7 +13233,7 @@
      ]
     },
     {
-     "id": 24,
+     "id": 27,
      "name": "dd6KaktusKlein",
      "type": "moebel",
      "x": 1872,
@@ -13223,7 +13256,7 @@
      ]
     },
     {
-     "id": 25,
+     "id": 28,
      "name": "dd6KaktusBluehend",
      "type": "moebel",
      "x": 1984,
@@ -13246,7 +13279,7 @@
      ]
     },
     {
-     "id": 26,
+     "id": 29,
      "name": "dd6KaktusKlein",
      "type": "moebel",
      "x": 2096,
@@ -13269,7 +13302,7 @@
      ]
     },
     {
-     "id": 27,
+     "id": 30,
      "name": "dd6KaktusBluehend",
      "type": "moebel",
      "x": 944,
@@ -13292,7 +13325,7 @@
      ]
     },
     {
-     "id": 28,
+     "id": 31,
      "name": "dd6KaktusKlein",
      "type": "moebel",
      "x": 1056,
@@ -13315,7 +13348,7 @@
      ]
     },
     {
-     "id": 29,
+     "id": 32,
      "name": "dd6KaktusBluehend",
      "type": "moebel",
      "x": 1168,
@@ -13338,7 +13371,7 @@
      ]
     },
     {
-     "id": 30,
+     "id": 33,
      "name": "dd6KaktusKlein",
      "type": "moebel",
      "x": 1280,
@@ -13361,7 +13394,7 @@
      ]
     },
     {
-     "id": 31,
+     "id": 34,
      "name": "dd6KaktusBluehend",
      "type": "moebel",
      "x": 1392,
@@ -13384,7 +13417,7 @@
      ]
     },
     {
-     "id": 32,
+     "id": 35,
      "name": "dd6KaktusKlein",
      "type": "moebel",
      "x": 368,
@@ -13407,7 +13440,7 @@
      ]
     },
     {
-     "id": 33,
+     "id": 36,
      "name": "dd6KaktusBluehend",
      "type": "moebel",
      "x": 480,
@@ -13430,7 +13463,7 @@
      ]
     },
     {
-     "id": 34,
+     "id": 37,
      "name": "dd6KaktusKlein",
      "type": "moebel",
      "x": 592,
@@ -13453,7 +13486,7 @@
      ]
     },
     {
-     "id": 35,
+     "id": 38,
      "name": "dd6KaktusBluehend",
      "type": "moebel",
      "x": 704,
@@ -13476,7 +13509,7 @@
      ]
     },
     {
-     "id": 36,
+     "id": 39,
      "name": "dd6KaktusKlein",
      "type": "moebel",
      "x": 48,
@@ -13499,7 +13532,7 @@
      ]
     },
     {
-     "id": 37,
+     "id": 40,
      "name": "dd6KaktusBluehend",
      "type": "moebel",
      "x": 160,
@@ -13522,7 +13555,7 @@
      ]
     },
     {
-     "id": 38,
+     "id": 41,
      "name": "fels",
      "type": "moebel",
      "x": 1680,
@@ -13545,7 +13578,7 @@
      ]
     },
     {
-     "id": 39,
+     "id": 42,
      "name": "felsKlein",
      "type": "moebel",
      "x": 1856,
@@ -13568,7 +13601,7 @@
      ]
     },
     {
-     "id": 40,
+     "id": 43,
      "name": "fels",
      "type": "moebel",
      "x": 2032,
@@ -13591,7 +13624,7 @@
      ]
     },
     {
-     "id": 41,
+     "id": 44,
      "name": "felsKlein",
      "type": "moebel",
      "x": 976,
@@ -13614,7 +13647,7 @@
      ]
     },
     {
-     "id": 42,
+     "id": 45,
      "name": "fels",
      "type": "moebel",
      "x": 1152,
@@ -13637,7 +13670,7 @@
      ]
     },
     {
-     "id": 43,
+     "id": 46,
      "name": "felsKlein",
      "type": "moebel",
      "x": 1328,
@@ -13660,7 +13693,7 @@
      ]
     },
     {
-     "id": 44,
+     "id": 47,
      "name": "felsKlein",
      "type": "moebel",
      "x": 400,
@@ -13683,7 +13716,7 @@
      ]
     },
     {
-     "id": 45,
+     "id": 48,
      "name": "fels",
      "type": "moebel",
      "x": 576,
@@ -13706,7 +13739,7 @@
      ]
     },
     {
-     "id": 46,
+     "id": 49,
      "name": "felsKlein",
      "type": "moebel",
      "x": 752,
@@ -13729,7 +13762,7 @@
      ]
     },
     {
-     "id": 47,
+     "id": 50,
      "name": "fels",
      "type": "moebel",
      "x": 80,
@@ -13752,7 +13785,7 @@
      ]
     },
     {
-     "id": 48,
+     "id": 51,
      "name": "felsKlein",
      "type": "moebel",
      "x": 256,
@@ -13775,7 +13808,7 @@
      ]
     },
     {
-     "id": 49,
+     "id": 52,
      "name": "dd6Geierkreis",
      "type": "moebel",
      "x": 480,
@@ -13798,7 +13831,7 @@
      ]
     },
     {
-     "id": 50,
+     "id": 53,
      "name": "ds8Kletterseil",
      "type": "moebel",
      "x": 1584,
@@ -13821,7 +13854,7 @@
      ]
     },
     {
-     "id": 51,
+     "id": 54,
      "name": "pg7SeilHaken",
      "type": "moebel",
      "x": 1568,
@@ -13844,7 +13877,7 @@
      ]
     },
     {
-     "id": 52,
+     "id": 55,
      "name": "scRucksack",
      "type": "moebel",
      "x": 1536,
@@ -13867,7 +13900,7 @@
      ]
     },
     {
-     "id": 53,
+     "id": 56,
      "name": "scRucksackRot",
      "type": "moebel",
      "x": 1568,
@@ -13890,7 +13923,7 @@
      ]
     },
     {
-     "id": 54,
+     "id": 57,
      "name": "ds8Kreidebeutel",
      "type": "moebel",
      "x": 1552,
@@ -13913,7 +13946,7 @@
      ]
     },
     {
-     "id": 55,
+     "id": 58,
      "name": "ds8Finkenzeichen",
      "type": "moebel",
      "x": 1040,

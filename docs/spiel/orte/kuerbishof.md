@@ -85,3 +85,17 @@ Zu Walt, Clover und Oma kommen drei ansprechbare Statisten (`statist.kuerbishof.
 - Marktfrau (Weizenkorn-Legende, Dokument 16, 4.1 Nr. 8).
 
 Tiere: Katze, Krähen, Kühe, wilde Pferde, Hühner, Schwein.
+
+## Runde 6: spielbar (10.11.2026, mittel-4)
+
+- **Figuren** statt Statisten:
+  - Walt Miller (`kuerbishof.walt`);
+  - Clover (`kuerbishof.clover`, Irrgarten);
+  - Oma Miller (`kuerbishof.omaMiller`, Hofladen, steht jetzt vor dem Laden statt darunter).
+- **Statisten:** Dafür kommt der Traktorfahrer dazu (Regel 10.53).
+- **Nebenquest `kuerbishof.irrgarten`** (klein): Aufgabenrunde mit Matt in einem Zug an jeder
+  Kreuzung, statt eines begehbaren Irrgartens. Lohn 15 Münzen.
+- **Ansehen:** `irrgarten` (Schild), `vogelscheuche` („Morphy“).
+- **Kürbiswaage** (`kuerbiswaage`): Dialogwahl zwischen drei Kürbissen; der richtige Tipp gibt den
+  Fund `kuerbisschleife`.
+- **Tor S1:** Es liegt auf der Landstraße von Weg 1 und gehört zu niedrig-1.

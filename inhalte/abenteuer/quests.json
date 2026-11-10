@@ -42,7 +42,11 @@
           "ereignis": {
             "art": "partie",
             "begegnung": "mapleFalls.ersteLektion",
-            "ausgang": ["sieg", "remis", "niederlage"]
+            "ausgang": [
+              "sieg",
+              "remis",
+              "niederlage"
+            ]
           },
           "wirkungen": [
             {
@@ -64,7 +68,9 @@
         "art": "dialog",
         "knoten": "maple-falls-dachboden.nach_erster_partie"
       },
-      "voraussetzung": ["mapleFalls.dasBrett"],
+      "voraussetzung": [
+        "mapleFalls.dasBrett"
+      ],
       "schritte": [
         {
           "text": "quest.ersterAbend.schritt1",
@@ -118,7 +124,10 @@
           "ereignis": {
             "art": "partie",
             "begegnung": "mapleFalls.clubkampf",
-            "ausgang": ["sieg", "remis"]
+            "ausgang": [
+              "sieg",
+              "remis"
+            ]
           },
           "wirkungen": [
             {
@@ -166,7 +175,11 @@
           "ereignis": {
             "art": "partie",
             "begegnung": "mapleFalls.victor",
-            "ausgang": ["sieg", "remis", "niederlage"]
+            "ausgang": [
+              "sieg",
+              "remis",
+              "niederlage"
+            ]
           }
         },
         {
@@ -235,7 +248,9 @@
           "ereignis": {
             "art": "partie",
             "begegnung": "mapleFalls.samRevanche",
-            "ausgang": ["sieg"]
+            "ausgang": [
+              "sieg"
+            ]
           },
           "wirkungen": [
             {
@@ -246,7 +261,9 @@
           ]
         }
       ],
-      "voraussetzung": ["mapleFalls.dasBrett"]
+      "voraussetzung": [
+        "mapleFalls.dasBrett"
+      ]
     },
     {
       "kennung": "mapleFalls.verlorenesBrett",
@@ -425,7 +442,10 @@
           "ereignis": {
             "art": "partie",
             "begegnung": "cedarCreek.clubkampf",
-            "ausgang": ["sieg", "remis"]
+            "ausgang": [
+              "sieg",
+              "remis"
+            ]
           },
           "wirkungen": [
             {
@@ -551,7 +571,9 @@
         "karte": "cedarCreek.archiv",
         "ausloeser": "programmheft"
       },
-      "voraussetzung": ["cedarCreek.archiv1858"],
+      "voraussetzung": [
+        "cedarCreek.archiv1858"
+      ],
       "schritte": [
         {
           "text": "quest.erinnerungNewYork.schritt1",
@@ -650,7 +672,10 @@
           "ereignis": {
             "art": "partie",
             "begegnung": "riverton.clubkampf",
-            "ausgang": ["sieg", "remis"]
+            "ausgang": [
+              "sieg",
+              "remis"
+            ]
           },
           "wirkungen": [
             {
@@ -884,7 +909,11 @@
           "ereignis": {
             "art": "partie",
             "begegnung": "ironwood.mama",
-            "ausgang": ["sieg", "remis", "niederlage"]
+            "ausgang": [
+              "sieg",
+              "remis",
+              "niederlage"
+            ]
           },
           "wirkungen": [
             {
@@ -939,7 +968,10 @@
           "ereignis": {
             "art": "partie",
             "begegnung": "ironwood.clubkampf",
-            "ausgang": ["sieg", "remis"]
+            "ausgang": [
+              "sieg",
+              "remis"
+            ]
           },
           "wirkungen": [
             {
@@ -1029,7 +1061,9 @@
         "art": "dialog",
         "knoten": "ironwood-kantine.feier_einladung"
       },
-      "voraussetzung": ["ironwood.mamasFinale"],
+      "voraussetzung": [
+        "ironwood.mamasFinale"
+      ],
       "schritte": [
         {
           "text": "quest.feier.schritt1",
@@ -1271,7 +1305,10 @@
           "ereignis": {
             "art": "partie",
             "begegnung": "siliconBay.clubkampf",
-            "ausgang": ["sieg", "remis"]
+            "ausgang": [
+              "sieg",
+              "remis"
+            ]
           },
           "wirkungen": [
             {
@@ -1472,7 +1509,10 @@
           "ereignis": {
             "art": "partie",
             "begegnung": "portDelacroix.clubkampf",
-            "ausgang": ["sieg", "remis"]
+            "ausgang": [
+              "sieg",
+              "remis"
+            ]
           },
           "wirkungen": [
             {
@@ -1553,7 +1593,11 @@
           "ereignis": {
             "art": "partie",
             "begegnung": "portDelacroix.celeste",
-            "ausgang": ["sieg", "remis", "niederlage"]
+            "ausgang": [
+              "sieg",
+              "remis",
+              "niederlage"
+            ]
           }
         },
         {
@@ -1693,7 +1737,10 @@
           "ereignis": {
             "art": "partie",
             "begegnung": "desertSprings.clubkampf",
-            "ausgang": ["sieg", "remis"]
+            "ausgang": [
+              "sieg",
+              "remis"
+            ]
           },
           "wirkungen": [
             {
@@ -1876,7 +1923,11 @@
           "ereignis": {
             "art": "partie",
             "begegnung": "ghostTown.fernpartie",
-            "ausgang": ["sieg", "remis", "niederlage"]
+            "ausgang": [
+              "sieg",
+              "remis",
+              "niederlage"
+            ]
           }
         },
         {
@@ -1981,7 +2032,9 @@
           "ereignis": {
             "art": "partie",
             "begegnung": "capitalArena.halbfinale",
-            "ausgang": ["sieg"]
+            "ausgang": [
+              "sieg"
+            ]
           },
           "wirkungen": [
             {
@@ -2010,7 +2063,11 @@
           "ereignis": {
             "art": "partie",
             "begegnung": "capitalArena.finale",
-            "ausgang": ["sieg", "remis", "niederlage"]
+            "ausgang": [
+              "sieg",
+              "remis",
+              "niederlage"
+            ]
           },
           "wirkungen": [
             {
@@ -2128,7 +2185,10 @@
           "ereignis": {
             "art": "partie",
             "begegnung": "summitCity.clubkampf",
-            "ausgang": ["sieg", "remis"]
+            "ausgang": [
+              "sieg",
+              "remis"
+            ]
           },
           "wirkungen": [
             {
@@ -2376,7 +2436,10 @@
           "ereignis": {
             "art": "partie",
             "begegnung": "portDelacroix.schach960Set1",
-            "ausgang": ["sieg", "remis"]
+            "ausgang": [
+              "sieg",
+              "remis"
+            ]
           },
           "wirkungen": [
             {
@@ -2390,7 +2453,10 @@
           "ereignis": {
             "art": "partie",
             "begegnung": "portDelacroix.schach960Set2",
-            "ausgang": ["sieg", "remis"]
+            "ausgang": [
+              "sieg",
+              "remis"
+            ]
           },
           "wirkungen": [
             {
@@ -2404,7 +2470,10 @@
           "ereignis": {
             "art": "partie",
             "begegnung": "portDelacroix.schach960Set3",
-            "ausgang": ["sieg", "remis"]
+            "ausgang": [
+              "sieg",
+              "remis"
+            ]
           },
           "wirkungen": [
             {
@@ -2593,6 +2662,312 @@
             {
               "art": "muenzen",
               "anzahl": 10
+            }
+          ]
+        }
+      ]
+    },
+    {
+      "kennung": "wegDelacroixDesert.seilschaft",
+      "titel": "quest.seilschaft.titel",
+      "typ": "hilfe",
+      "ort": "wegDelacroixDesert",
+      "haupt": false,
+      "klein": true,
+      "start": {
+        "art": "dialog",
+        "knoten": "weg-delacroix-desert.seilschaft_start"
+      },
+      "schritte": [
+        {
+          "text": "quest.seilschaft.schritt1",
+          "ereignis": {
+            "art": "aufgaben",
+            "runde": "wegDelacroixDesert.seilschaft"
+          }
+        },
+        {
+          "text": "quest.seilschaft.schritt2",
+          "ereignis": {
+            "art": "dialog",
+            "knoten": "weg-delacroix-desert.seilschaft_ende"
+          },
+          "wirkungen": [
+            {
+              "art": "muenzen",
+              "anzahl": 20
+            }
+          ]
+        }
+      ]
+    },
+    {
+      "kennung": "sternwarte.koenigsangriff",
+      "titel": "quest.koenigsangriffSterne.titel",
+      "typ": "raetsel",
+      "ort": "sternwarte",
+      "haupt": false,
+      "klein": true,
+      "start": {
+        "art": "dialog",
+        "knoten": "sternwarte.ngata_angebot"
+      },
+      "schritte": [
+        {
+          "text": "quest.koenigsangriffSterne.schritt1",
+          "ereignis": {
+            "art": "aufgaben",
+            "runde": "sternwarte.sterne"
+          },
+          "wirkungen": [
+            {
+              "art": "muenzen",
+              "anzahl": 25
+            }
+          ]
+        }
+      ]
+    },
+    {
+      "kennung": "wegDesertSummit.funkschach",
+      "titel": "quest.funkschach.titel",
+      "typ": "hilfe",
+      "ort": "wegDesertSummit",
+      "haupt": false,
+      "klein": true,
+      "start": {
+        "art": "dialog",
+        "knoten": "weg-desert-summit.funkschach_start"
+      },
+      "schritte": [
+        {
+          "text": "quest.funkschach.schritt1",
+          "ereignis": {
+            "art": "partie",
+            "begegnung": "wegDesertSummit.funkschach",
+            "ausgang": [
+              "sieg",
+              "remis",
+              "niederlage"
+            ]
+          }
+        },
+        {
+          "text": "quest.funkschach.schritt2",
+          "ereignis": {
+            "art": "dialog",
+            "knoten": "weg-desert-summit.funkschach_ende"
+          },
+          "wirkungen": [
+            {
+              "art": "muenzen",
+              "anzahl": 30
+            }
+          ]
+        }
+      ]
+    },
+    {
+      "kennung": "hochebene.bauerndiplom",
+      "titel": "quest.bauerndiplom.titel",
+      "typ": "hilfe",
+      "ort": "hochebene",
+      "haupt": false,
+      "klein": true,
+      "start": {
+        "art": "dialog",
+        "knoten": "hochebene.diplom_start"
+      },
+      "schritte": [
+        {
+          "text": "quest.bauerndiplom.schritt1",
+          "ereignis": {
+            "art": "aufgaben",
+            "runde": "hochebene.diplom"
+          }
+        },
+        {
+          "text": "quest.bauerndiplom.schritt2",
+          "ereignis": {
+            "art": "dialog",
+            "knoten": "hochebene.diplom_ende"
+          },
+          "wirkungen": [
+            {
+              "art": "muenzen",
+              "anzahl": 20
+            }
+          ]
+        }
+      ]
+    },
+    {
+      "kennung": "wegPinewoodGhost.gespenst",
+      "titel": "quest.gespenstTankstelle.titel",
+      "typ": "begegnung",
+      "ort": "wegPinewoodGhost",
+      "haupt": false,
+      "klein": true,
+      "start": {
+        "art": "dialog",
+        "knoten": "weg-pinewood-ghost.greifarm_start"
+      },
+      "schritte": [
+        {
+          "text": "quest.gespenstTankstelle.schritt1",
+          "ereignis": {
+            "art": "partie",
+            "begegnung": "wegPinewoodGhost.z1",
+            "ausgang": [
+              "sieg",
+              "remis",
+              "niederlage"
+            ]
+          }
+        },
+        {
+          "text": "quest.gespenstTankstelle.schritt2",
+          "ereignis": {
+            "art": "dialog",
+            "knoten": "weg-pinewood-ghost.greifarm_ende"
+          },
+          "wirkungen": [
+            {
+              "art": "muenzen",
+              "anzahl": 25
+            }
+          ]
+        }
+      ]
+    },
+    {
+      "kennung": "kuerbishof.irrgarten",
+      "titel": "quest.irrgarten.titel",
+      "typ": "raetsel",
+      "ort": "kuerbishof",
+      "haupt": false,
+      "klein": true,
+      "start": {
+        "art": "dialog",
+        "knoten": "kuerbishof.clover_irrgarten"
+      },
+      "schritte": [
+        {
+          "text": "quest.irrgarten.schritt1",
+          "ereignis": {
+            "art": "aufgaben",
+            "runde": "kuerbishof.irrgarten"
+          },
+          "wirkungen": [
+            {
+              "art": "muenzen",
+              "anzahl": 15
+            }
+          ]
+        }
+      ]
+    },
+    {
+      "kennung": "pelikaninsel.netze",
+      "titel": "quest.netzeFlicken.titel",
+      "typ": "raetsel",
+      "ort": "pelikaninsel",
+      "haupt": false,
+      "klein": true,
+      "start": {
+        "art": "dialog",
+        "knoten": "pelikaninsel.old_pete_netze"
+      },
+      "schritte": [
+        {
+          "text": "quest.netzeFlicken.schritt1",
+          "ereignis": {
+            "art": "aufgaben",
+            "runde": "pelikaninsel.netze"
+          },
+          "wirkungen": [
+            {
+              "art": "muenzen",
+              "anzahl": 15
+            }
+          ]
+        }
+      ]
+    },
+    {
+      "kennung": "pelikaninsel.leuchtfeuer",
+      "titel": "quest.leuchtfeuer.titel",
+      "typ": "hilfe",
+      "ort": "pelikaninsel",
+      "haupt": false,
+      "klein": true,
+      "start": {
+        "art": "dialog",
+        "knoten": "pelikaninsel.leuchtfeuer_auftrag"
+      },
+      "schritte": [
+        {
+          "text": "quest.leuchtfeuer.schritt1",
+          "ereignis": {
+            "art": "dialog",
+            "knoten": "pelikaninsel.leuchtfeuer_einsetzen"
+          },
+          "wirkungen": [
+            {
+              "art": "gegenstandWeg",
+              "gegenstand": "batterie"
+            },
+            {
+              "art": "muenzen",
+              "anzahl": 35
+            }
+          ]
+        }
+      ]
+    },
+    {
+      "kennung": "goldmine.letzteSchicht",
+      "titel": "quest.letzteSchicht.titel",
+      "typ": "hilfe",
+      "ort": "goldmine",
+      "haupt": false,
+      "klein": true,
+      "start": {
+        "art": "dialog",
+        "knoten": "goldmine.eingang"
+      },
+      "schritte": [
+        {
+          "text": "quest.letzteSchicht.schritt1",
+          "ereignis": {
+            "art": "dialog",
+            "knoten": "goldmine.logbuch_gefunden"
+          }
+        }
+      ]
+    },
+    {
+      "kennung": "goldmine.lorenendspiel",
+      "titel": "quest.lorenendspiel.titel",
+      "typ": "raetsel",
+      "ort": "goldmine",
+      "haupt": false,
+      "klein": true,
+      "start": {
+        "art": "dialog",
+        "knoten": "goldmine.lore"
+      },
+      "schritte": [
+        {
+          "text": "quest.lorenendspiel.schritt1",
+          "ereignis": {
+            "art": "aufgaben",
+            "runde": "goldmine.loren"
+          },
+          "wirkungen": [
+            {
+              "art": "muenzen",
+              "anzahl": 20
             }
           ]
         }

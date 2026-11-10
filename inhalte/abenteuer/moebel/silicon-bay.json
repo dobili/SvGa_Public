@@ -1739,6 +1739,26 @@
       "zustand": "neu",
       "stil": "modern",
       "blick": "unten"
+    },
+    "sb8Faehre": {
+      "quelle": "spiel/eigene/hafen_faehre.png",
+      "breite": 224,
+      "hoehe": 80,
+      "kollision": false,
+      "art": "fahrzeug",
+      "zustand": "gebraucht",
+      "stil": "modern",
+      "blick": "keine"
+    },
+    "sb8Faehrhaeuschen": {
+      "quelle": "modern-exteriors/Modern_Exteriors_16x16/ME_Theme_Sorter_16x16/15_Police_Station_Singles_16x16/ME_Singles_Police_Station_16x16_Police_Station_Roof_Cabin_1.png",
+      "breite": 64,
+      "hoehe": 80,
+      "kollision": true,
+      "art": "gebaeude",
+      "zustand": "gebraucht",
+      "stil": "modern",
+      "blick": "unten"
     }
   }
 }

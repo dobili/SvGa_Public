@@ -1198,8 +1198,8 @@
       "typ": "tier",
       "feld": [14, 100],
       "eigenschaften": {
-        "von": "10,98",
-        "bis": "18,104",
+        "von": "10,97",
+        "bis": "18,105",
         "verhalten": "flitzen"
       }
     },
@@ -1266,8 +1266,8 @@
       "eigenschaften": {
         "tun": "legt sich auf den Rücken, um den Baum aufs Bild zu bekommen",
         "wann": "tag",
-        "von": "8,118",
-        "bis": "14,124",
+        "von": "8,119",
+        "bis": "15,124",
         "sagt": "statist.wegCrossroadsPinewood.riesenbaeume.fotografin"
       }
     }

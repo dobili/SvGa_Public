@@ -143,10 +143,10 @@
     {
       "name": "besuchergruppe",
       "typ": "statist",
-      "feld": [7, 10],
+      "feld": [6, 10],
       "eigenschaften": {
-        "von": "7,10",
-        "bis": "10,10",
+        "von": "6,10",
+        "bis": "9,10",
         "tun": "Besuchergruppe mit Namensschildern wartet auf die Führung",
         "wann": "tag"
       }

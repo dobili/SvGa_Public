@@ -1499,7 +1499,7 @@
       "feld": [60, 10],
       "eigenschaften": {
         "von": "55,8",
-        "bis": "66,13",
+        "bis": "66,12",
         "verhalten": "flitzen"
       }
     },
@@ -1509,7 +1509,7 @@
       "feld": [119, 6],
       "eigenschaften": {
         "von": "115,3",
-        "bis": "128,9",
+        "bis": "127,9",
         "verhalten": "ausweichen"
       }
     },
@@ -1519,7 +1519,7 @@
       "feld": [130, 20],
       "eigenschaften": {
         "von": "125,20",
-        "bis": "140,26",
+        "bis": "140,25",
         "verhalten": "flitzen"
       }
     },
@@ -1529,7 +1529,7 @@
       "feld": [80, 24],
       "eigenschaften": {
         "von": "76,22",
-        "bis": "86,26",
+        "bis": "85,26",
         "verhalten": "ausweichen"
       }
     },
@@ -1573,7 +1573,7 @@
         "tun": "sucht unter den Kiefern nach Pfifferlingen",
         "wann": "tag",
         "von": "105,18",
-        "bis": "115,23",
+        "bis": "114,23",
         "sagt": "statist.wegCrossroadsPinewood.huetten.pilzsammlerin"
       }
     },
@@ -1584,8 +1584,8 @@
       "eigenschaften": {
         "tun": "schreibt Vogelstimmen in ein Heft",
         "wann": "tag",
-        "von": "20,8",
-        "bis": "30,12",
+        "von": "21,8",
+        "bis": "29,12",
         "sagt": "statist.wegCrossroadsPinewood.huetten.vogelkundler"
       }
     }

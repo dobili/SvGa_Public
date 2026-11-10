@@ -1145,7 +1145,7 @@
       "feld": [120, 6],
       "eigenschaften": {
         "von": "115,3",
-        "bis": "128,9",
+        "bis": "127,9",
         "verhalten": "ausweichen"
       }
     },
@@ -1164,7 +1164,7 @@
       "typ": "tier",
       "feld": [80, 24],
       "eigenschaften": {
-        "von": "76,22",
+        "von": "75,22",
         "bis": "86,26",
         "verhalten": "ausweichen"
       }

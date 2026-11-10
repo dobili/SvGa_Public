@@ -813,15 +813,15 @@
       "feld": [56, 22]
     },
     {
-      "moebel": "wsgAutoAb21",
+      "moebel": "ws5AutoGruen",
       "feld": [3, 29]
     },
     {
-      "moebel": "wsgAutoAb14",
-      "feld": [8, 29]
+      "moebel": "ws5AutoGrau",
+      "feld": [10, 29]
     },
     {
-      "moebel": "wsgAutoAb1",
+      "moebel": "ws5AutoBlau",
       "feld": [26, 29]
     },
     {

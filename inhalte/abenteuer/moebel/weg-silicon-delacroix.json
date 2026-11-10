@@ -282,7 +282,9 @@
       "kollision": false,
       "art": "deko",
       "zustand": "gebraucht",
-      "stil": "einfach"
+      "stil": "einfach",
+      "begehbar": true,
+      "begehbar_grund": "liegt im Wasser, dort läuft niemand"
     },
     "sd6Pfahl": {
       "quelle": "modern-exteriors/Modern_Exteriors_16x16/ME_Theme_Sorter_16x16/11_Camping_Singles_16x16/ME_Singles_Camping_16x16_Pier_Pole_1.png",
@@ -291,7 +293,9 @@
       "kollision": false,
       "art": "deko",
       "zustand": "gebraucht",
-      "stil": "rustikal"
+      "stil": "rustikal",
+      "begehbar": true,
+      "begehbar_grund": "liegt im Wasser, dort läuft niemand"
     },
     "sd6Sandsack": {
       "quelle": "spiel/eigene/sandsaecke_reihe.png",
@@ -336,7 +340,9 @@
       "kollision": false,
       "art": "pflanze",
       "zustand": "gebraucht",
-      "stil": "natur"
+      "stil": "natur",
+      "begehbar": true,
+      "begehbar_grund": "Schilf am Ufer, man geht hindurch"
     },
     "sd6SchilfBreit": {
       "quelle": "spiel/eigene/schilf_breit.png",
@@ -345,7 +351,9 @@
       "kollision": false,
       "art": "pflanze",
       "zustand": "gebraucht",
-      "stil": "natur"
+      "stil": "natur",
+      "begehbar": true,
+      "begehbar_grund": "Schilf am Ufer, man geht hindurch"
     },
     "sd6Zypresse": {
       "quelle": "spiel/eigene/sumpfzypresse.png",
@@ -373,7 +381,9 @@
       "kollision": false,
       "art": "boot",
       "zustand": "gebraucht",
-      "stil": "modern"
+      "stil": "modern",
+      "begehbar": true,
+      "begehbar_grund": "Schiffsdeck, auf dem man steht"
     },
     "fz9Deckhaus": {
       "quelle": "spiel/eigene/faehre_deckhaus.png",
@@ -417,7 +427,7 @@
       "quelle": "modern-exteriors/Modern_Exteriors_16x16/ME_Theme_Sorter_16x16/11_Camping_Singles_16x16/ME_Singles_Camping_16x16_Binoculars_1.png",
       "breite": 16,
       "hoehe": 16,
-      "kollision": false,
+      "kollision": true,
       "art": "geraet",
       "zustand": "gebraucht",
       "stil": "modern"
@@ -429,7 +439,9 @@
       "kollision": false,
       "art": "deko",
       "zustand": "gebraucht",
-      "stil": "einfach"
+      "stil": "einfach",
+      "begehbar": true,
+      "begehbar_grund": "liegt im Wasser, dort läuft niemand"
     },
     "dz10Pfahl": {
       "quelle": "spiel/eigene/pfahl_frei.png",
@@ -438,7 +450,9 @@
       "kollision": false,
       "art": "deko",
       "zustand": "gebraucht",
-      "stil": "rustikal"
+      "stil": "rustikal",
+      "begehbar": true,
+      "begehbar_grund": "liegt im Wasser, dort läuft niemand"
     }
   }
 }

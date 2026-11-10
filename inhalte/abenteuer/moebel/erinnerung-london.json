@@ -180,7 +180,7 @@
       "quelle": "spiel/eigene/kerzenleuchter.png",
       "breite": 16,
       "hoehe": 16,
-      "kollision": false,
+      "kollision": true,
       "art": "kerze",
       "blick": "unten",
       "zustand": "gebraucht",
@@ -213,7 +213,9 @@
       "kollision": false,
       "art": "gebaeude",
       "zustand": "gebraucht",
-      "stil": "klassisch"
+      "stil": "klassisch",
+      "begehbar": true,
+      "begehbar_grund": "Fassade als Kulisse auf der Wandfläche"
     },
     "el11Schneider": {
       "quelle": "spiel/eigene/london_schneider.png",
@@ -222,7 +224,9 @@
       "kollision": false,
       "art": "gebaeude",
       "zustand": "gebraucht",
-      "stil": "klassisch"
+      "stil": "klassisch",
+      "begehbar": true,
+      "begehbar_grund": "Fassade als Kulisse auf der Wandfläche"
     },
     "el11Kaffeehaus": {
       "quelle": "spiel/eigene/london_kaffeehaus.png",
@@ -231,7 +235,9 @@
       "kollision": false,
       "art": "gebaeude",
       "zustand": "gebraucht",
-      "stil": "klassisch"
+      "stil": "klassisch",
+      "begehbar": true,
+      "begehbar_grund": "Fassade als Kulisse auf der Wandfläche"
     },
     "el11Schachsalon": {
       "quelle": "spiel/eigene/london_schachsalon.png",
@@ -240,7 +246,9 @@
       "kollision": false,
       "art": "gebaeude",
       "zustand": "gebraucht",
-      "stil": "klassisch"
+      "stil": "klassisch",
+      "begehbar": true,
+      "begehbar_grund": "Fassade als Kulisse auf der Wandfläche"
     },
     "el11Pub": {
       "quelle": "spiel/eigene/london_pub.png",
@@ -249,7 +257,9 @@
       "kollision": false,
       "art": "gebaeude",
       "zustand": "gebraucht",
-      "stil": "klassisch"
+      "stil": "klassisch",
+      "begehbar": true,
+      "begehbar_grund": "Fassade als Kulisse auf der Wandfläche"
     }
   }
 }

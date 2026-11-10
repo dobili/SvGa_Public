@@ -146,7 +146,7 @@
       "quelle": "spiel/eigene/schachbrett_klein_figuren.png",
       "breite": 12,
       "hoehe": 9,
-      "kollision": false,
+      "kollision": true,
       "art": "spiel",
       "blick": "unten",
       "zustand": "gebraucht",
@@ -160,7 +160,9 @@
       "art": "sport",
       "blick": "unten",
       "zustand": "gebraucht",
-      "stil": "modern"
+      "stil": "modern",
+      "begehbar": true,
+      "begehbar_grund": "hängt an der Wand"
     },
     "hb7Felsturm": {
       "quelle": "spiel/eigene/felsturm_rot.png",
@@ -227,7 +229,9 @@
       "kollision": false,
       "art": "deko",
       "zustand": "gebraucht",
-      "stil": "natur"
+      "stil": "natur",
+      "begehbar": true,
+      "begehbar_grund": "liegt flach am Boden"
     },
     "sc8TribueneLinks": {
       "quelle": "modern-exteriors/Modern_Exteriors_16x16/ME_Theme_Sorter_16x16/13_School_Singles_16x16/ME_Singles_School_16x16_Stands_2.png",

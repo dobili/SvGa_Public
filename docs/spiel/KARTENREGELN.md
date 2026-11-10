@@ -905,3 +905,39 @@ auf jeder soll etwas passieren, das man entdecken kann. Die Geschichten dazu ste
     behält jeder Baum einen sichtbaren Stamm. Laubbäume sind kahl oder tragen Schnee auf der Krone,
     Nadelbäume bleiben dunkelgrün mit Schneekappen. Ein weißer Kreis ohne Stamm liest sich als
     Schneeball und ist ein Befund.
+68. **Übergänge, die ein Spieler trifft** (Befund des Autors beim ersten Spielen, 10.11.2026: vom
+    Dachboden kam man nicht herunter). Ein Übergang löst nur aus, wenn der Held AUF einer Kachel
+    des Auslösers steht. Deshalb:
+    - Der Auslöser deckt den ganzen Durchgang. Unter einer Treppe, Luke oder Leiter trägt ihn jede
+      begehbare Kachel des Möbels; unter Tür, Steg, Brücke oder Fußmatte die ganze Reihe; am
+      Kartenrand die volle Breite des Wegs oder der Straße; in einer Wandlücke die ganze Lücke.
+    - Mehrere Felder bekommt ein Auslöser durch mehrere Einträge gleichen Namens in der Szene
+      (`{"name": "treppe", "feld": [1, 4]}, {"name": "treppe", "feld": [2, 4]}`); der Held kommt
+      auf dem ersten an.
+    - Kein Feld des Auslösers ist gesperrt, auch nicht halb (ein Haus mit Feinschub von 8 Pixeln
+      sperrt die Nachbarkachel mit). Am Kartenrand steht dort der Belag des Wegs, nicht „#“.
+    - **Prüfung im Werkzeug:** `python -m pipeline.abenteuer.uebergaenge` (mit
+      `pipeline/abenteuer/durchgang.py`, für Grundkarten und Zustände) und der Lauftest
+      `app/src/abenteuer/oberwelt/uebergangslauf.test.ts`: Auf jeder gebauten Karte geht der Held
+      von jeder Ankunft zu jedem Übergang und muss ihn auslösen; jede Figur und jeder Gegenstand
+      muss erreichbar sein (davor stehen genügt).
+69. **Kollision der Möbel** (Befund des Autors, 10.11.2026: Er lief durch den Zeitungsstapel).
+    Kann ein Mensch darüber laufen? Nur dann hat ein Möbel keine Kollision.
+    - **Ohne Kollision:** flache Dinge am Boden (Teppich, Markierung, Bordstein, Fußmatte, Pfütze,
+      Kreidezeichnung, Schatten, Trittstein, Belag von Brücke und Steg), niedrige Pflanzen
+      (Blumen, Gras, Farn, Schilf), alles an der Wand oder über Kopfhöhe (Bilder, Fenster,
+      Schilder, Wimpel, Leitungen) und was im Wasser liegt (Boote, Bojen, Seerosen: Dort läuft
+      niemand, und der Kartenbau meldet Kollision auf Wasser als Fehler).
+    - **Mit Kollision:** alles mit Höhe: Stapel, Kisten, Körbe, Fahrzeuge, Topfpflanzen, Möbel,
+      Felsen, Geräte, Zäune, Leitplanken, Tiere als Schmuck. Auch kleine Dinge, die sonst nur auf
+      Tischen stehen (auf einer Unterlage gilt die Kollision ohnehin nicht).
+    - **Hohe Dinge sperren nur ihren Fuß**, damit der Held dahinter durchgehen kann: Ohne Angabe
+      sperrt ein Möbel alles außer der obersten Kachelreihe; für Masten, Bäume und offene
+      Gestelle gibt `maske` die gesperrten Kacheln an (`pipeline/abenteuer/maske.py`).
+    - **Ausnahme mit Begründung:** Ein Möbel ohne Kollision, dessen `art` nicht flach ist
+      (bordstein, markierung, teppich, boden, boden_teil, schatten, steg, bruecke, gleis, treppe,
+      tuer), braucht `"begehbar": true` und einen Satz in `"begehbar_grund"` („hängt an der
+      Wand“, „Bühne, auf der Figuren stehen“). Sonst ist es ein Befund
+      (`pipeline/tests/test_abenteuer_moebelbilder.py`).
+    - Nach jeder neuen Kollision laufen Kartenbau, `uebergaenge` und der Lauftest: Kein Weg, keine
+      Tür und keine Figur darf zugestellt sein.

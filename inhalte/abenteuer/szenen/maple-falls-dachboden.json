@@ -119,6 +119,18 @@
       "feld": [1, 4]
     },
     {
+      "name": "treppe",
+      "feld": [1, 3]
+    },
+    {
+      "name": "treppe",
+      "feld": [2, 3]
+    },
+    {
+      "name": "treppe",
+      "feld": [2, 4]
+    },
+    {
       "name": "brett",
       "feld": [4, 7],
       "auf_moebel": true

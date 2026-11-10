@@ -95,7 +95,7 @@
       "quelle": "modern-exteriors/Modern_Exteriors_16x16/ME_Theme_Sorter_16x16/11_Camping_Singles_16x16/ME_Singles_Camping_16x16_Lantern_1.png",
       "breite": 16,
       "hoehe": 16,
-      "kollision": false,
+      "kollision": true,
       "art": "lampe",
       "zustand": "neu",
       "stil": "einfach"
@@ -174,7 +174,9 @@
       "kollision": false,
       "art": "lampe",
       "zustand": "neu",
-      "stil": "modern"
+      "stil": "modern",
+      "begehbar": true,
+      "begehbar_grund": "hängt über Kopfhöhe"
     },
     "n6Torbogen": {
       "quelle": "spiel/eigene/schild_jahrmarkt.png",
@@ -183,7 +185,9 @@
       "kollision": false,
       "art": "schild",
       "zustand": "neu",
-      "stil": "modern"
+      "stil": "modern",
+      "begehbar": true,
+      "begehbar_grund": "Durchgang, man geht hindurch"
     },
     "n6Lichtermast": {
       "quelle": "spiel/eigene/lichtermast.png",
@@ -211,7 +215,9 @@
       "kollision": false,
       "art": "buehne",
       "zustand": "neu",
-      "stil": "modern"
+      "stil": "modern",
+      "begehbar": true,
+      "begehbar_grund": "Bühne, auf der man steht"
     }
   }
 }

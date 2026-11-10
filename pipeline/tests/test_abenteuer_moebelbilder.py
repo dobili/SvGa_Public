@@ -42,3 +42,28 @@ def test_pruefung_erkennt_die_alten_fehlgriffe():
     assert VERSPRICHT_INHALT.search("pd6Notenregal") and DOSENREGAL.search(dosen)
     assert STRASSENBAKE.search("spiel/eigene/prellbock.png")
     assert not STRASSENBAKE.search("spiel/eigene/prellbock_stahl_oben.png")
+
+
+# Arten, über die man läuft (KARTENREGELN 10.69): Sie brauchen keine Kollision und keine Begründung.
+FLACH = {
+    "bordstein", "markierung", "teppich", "boden", "boden_teil", "schatten",
+    "steg", "bruecke", "gleis", "treppe", "tuer",
+}  # fmt: skip
+
+
+def test_ohne_kollision_nur_flach_oder_mit_begruendung():
+    """Regel 10.69: Der Autor lief durch einen Zeitungsstapel. Ein Möbel ohne Kollision ist flach
+    (nach ``art``) oder trägt ``begehbar`` mit einem Grund."""
+    falsch = [
+        f"{name} ({angabe.get('art')})"
+        for name, angabe in lade_moebel().items()
+        if not angabe.get("kollision")
+        and angabe.get("art") not in FLACH
+        and not (angabe.get("begehbar") is True and angabe.get("begehbar_grund"))
+    ]
+    assert falsch == []
+
+
+def test_begehbar_und_kollision_schliessen_sich_aus():
+    beides = [n for n, a in lade_moebel().items() if a.get("kollision") and a.get("begehbar")]
+    assert beides == []

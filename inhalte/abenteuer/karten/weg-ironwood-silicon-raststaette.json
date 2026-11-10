@@ -15318,12 +15318,12 @@
       {
        "name": "tiefe",
        "type": "int",
-       "value": 1
+       "value": 40
       },
       {
        "name": "kollision",
        "type": "bool",
-       "value": false
+       "value": true
       }
      ]
     },
@@ -15341,12 +15341,12 @@
       {
        "name": "tiefe",
        "type": "int",
-       "value": 1
+       "value": 40
       },
       {
        "name": "kollision",
        "type": "bool",
-       "value": false
+       "value": true
       }
      ]
     },
@@ -15364,12 +15364,12 @@
       {
        "name": "tiefe",
        "type": "int",
-       "value": 1
+       "value": 40
       },
       {
        "name": "kollision",
        "type": "bool",
-       "value": false
+       "value": true
       }
      ]
     },
@@ -15387,12 +15387,12 @@
       {
        "name": "tiefe",
        "type": "int",
-       "value": 1
+       "value": 76
       },
       {
        "name": "kollision",
        "type": "bool",
-       "value": false
+       "value": true
       }
      ]
     },
@@ -15410,12 +15410,12 @@
       {
        "name": "tiefe",
        "type": "int",
-       "value": 1
+       "value": 76
       },
       {
        "name": "kollision",
        "type": "bool",
-       "value": false
+       "value": true
       }
      ]
     },
@@ -15433,12 +15433,12 @@
       {
        "name": "tiefe",
        "type": "int",
-       "value": 1
+       "value": 76
       },
       {
        "name": "kollision",
        "type": "bool",
-       "value": false
+       "value": true
       }
      ]
     },
@@ -17089,12 +17089,12 @@
       {
        "name": "tiefe",
        "type": "int",
-       "value": 1
+       "value": 88
       },
       {
        "name": "kollision",
        "type": "bool",
-       "value": false
+       "value": true
       }
      ]
     },
@@ -17112,12 +17112,12 @@
       {
        "name": "tiefe",
        "type": "int",
-       "value": 1
+       "value": 88
       },
       {
        "name": "kollision",
        "type": "bool",
-       "value": false
+       "value": true
       }
      ]
     },

@@ -79,7 +79,9 @@
       "kollision": false,
       "art": "deko",
       "zustand": "neu",
-      "stil": "natur"
+      "stil": "natur",
+      "begehbar": true,
+      "begehbar_grund": "hängt über Kopfhöhe"
     },
     "sx7RangerTor": {
       "quelle": "spiel/eigene/ranger_tor_offen.png",
@@ -136,7 +138,9 @@
       "kollision": false,
       "art": "deko",
       "zustand": "gebraucht",
-      "stil": "laendlich"
+      "stil": "laendlich",
+      "begehbar": true,
+      "begehbar_grund": "liegt flach am Boden"
     },
     "sx9SturmkellerZu": {
       "quelle": "spiel/eigene/sturmkeller_zu.png",
@@ -145,7 +149,9 @@
       "kollision": false,
       "art": "deko",
       "zustand": "gebraucht",
-      "stil": "laendlich"
+      "stil": "laendlich",
+      "begehbar": true,
+      "begehbar_grund": "liegt flach am Boden"
     },
     "sx9GeysirKlein": {
       "quelle": "spiel/eigene/geysir_klein.png",

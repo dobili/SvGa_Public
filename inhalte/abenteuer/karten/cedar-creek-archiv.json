@@ -11,7 +11,7 @@
  "tilewidth": 16,
  "tileheight": 16,
  "nextlayerid": 5,
- "nextobjectid": 25,
+ "nextobjectid": 30,
  "layers": [
   {
    "id": 1,
@@ -555,6 +555,61 @@
     },
     {
      "id": 3,
+     "name": "kellerAusgang",
+     "type": "ausloeser",
+     "x": 160,
+     "y": 48,
+     "width": 16,
+     "height": 16,
+     "rotation": 0,
+     "visible": true
+    },
+    {
+     "id": 4,
+     "name": "kellerAusgang",
+     "type": "ausloeser",
+     "x": 160,
+     "y": 64,
+     "width": 16,
+     "height": 16,
+     "rotation": 0,
+     "visible": true
+    },
+    {
+     "id": 5,
+     "name": "kellerAusgang",
+     "type": "ausloeser",
+     "x": 176,
+     "y": 64,
+     "width": 16,
+     "height": 16,
+     "rotation": 0,
+     "visible": true
+    },
+    {
+     "id": 6,
+     "name": "kellerAusgang",
+     "type": "ausloeser",
+     "x": 192,
+     "y": 48,
+     "width": 16,
+     "height": 16,
+     "rotation": 0,
+     "visible": true
+    },
+    {
+     "id": 7,
+     "name": "kellerAusgang",
+     "type": "ausloeser",
+     "x": 192,
+     "y": 64,
+     "width": 16,
+     "height": 16,
+     "rotation": 0,
+     "visible": true
+    },
+    {
+     "id": 8,
      "name": "boxerfoto",
      "type": "ausloeser",
      "x": 80,
@@ -565,7 +620,7 @@
      "visible": true
     },
     {
-     "id": 4,
+     "id": 9,
      "name": "programmheft",
      "type": "ausloeser",
      "x": 176,
@@ -576,7 +631,7 @@
      "visible": true
     },
     {
-     "id": 5,
+     "id": 10,
      "name": "karton1858",
      "type": "ausloeser",
      "x": 144,
@@ -587,7 +642,7 @@
      "visible": true
     },
     {
-     "id": 6,
+     "id": 11,
      "name": "wasserfleck",
      "type": "ausloeser",
      "x": 96,
@@ -598,7 +653,7 @@
      "visible": true
     },
     {
-     "id": 7,
+     "id": 12,
      "name": "cc4Archivregal",
      "type": "moebel",
      "x": 16,
@@ -621,7 +676,7 @@
      ]
     },
     {
-     "id": 8,
+     "id": 13,
      "name": "cc4ArchivregalB",
      "type": "moebel",
      "x": 48,
@@ -644,7 +699,7 @@
      ]
     },
     {
-     "id": 9,
+     "id": 14,
      "name": "cc4Boxerfoto",
      "type": "moebel",
      "x": 80,
@@ -667,7 +722,7 @@
      ]
     },
     {
-     "id": 10,
+     "id": 15,
      "name": "cc4Archivregal",
      "type": "moebel",
      "x": 96,
@@ -690,7 +745,7 @@
      ]
     },
     {
-     "id": 11,
+     "id": 16,
      "name": "cc4ArchivregalB",
      "type": "moebel",
      "x": 128,
@@ -713,7 +768,7 @@
      ]
     },
     {
-     "id": 12,
+     "id": 17,
      "name": "cc4Treppe",
      "type": "moebel",
      "x": 160,
@@ -736,7 +791,7 @@
      ]
     },
     {
-     "id": 13,
+     "id": 18,
      "name": "cc4ArchivregalB",
      "type": "moebel",
      "x": 20,
@@ -759,7 +814,7 @@
      ]
     },
     {
-     "id": 14,
+     "id": 19,
      "name": "cc4Archivregal",
      "type": "moebel",
      "x": 48,
@@ -782,7 +837,7 @@
      ]
     },
     {
-     "id": 15,
+     "id": 20,
      "name": "cc4ArchivregalB",
      "type": "moebel",
      "x": 84,
@@ -805,7 +860,7 @@
      ]
     },
     {
-     "id": 16,
+     "id": 21,
      "name": "cc4Archivregal",
      "type": "moebel",
      "x": 112,
@@ -828,7 +883,7 @@
      ]
     },
     {
-     "id": 17,
+     "id": 22,
      "name": "cc4KartonHoch",
      "type": "moebel",
      "x": 16,
@@ -851,7 +906,7 @@
      ]
     },
     {
-     "id": 18,
+     "id": 23,
      "name": "cc4KartonHoch",
      "type": "moebel",
      "x": 16,
@@ -874,7 +929,7 @@
      ]
     },
     {
-     "id": 19,
+     "id": 24,
      "name": "cc4KartonHoch",
      "type": "moebel",
      "x": 48,
@@ -897,7 +952,7 @@
      ]
     },
     {
-     "id": 20,
+     "id": 25,
      "name": "cc4KartonHoch",
      "type": "moebel",
      "x": 48,
@@ -920,7 +975,7 @@
      ]
     },
     {
-     "id": 21,
+     "id": 26,
      "name": "cc4KartonOffen",
      "type": "moebel",
      "x": 144,
@@ -943,7 +998,7 @@
      ]
     },
     {
-     "id": 22,
+     "id": 27,
      "name": "cc4StuhlHinten",
      "type": "moebel",
      "x": 176,
@@ -966,7 +1021,7 @@
      ]
     },
     {
-     "id": 23,
+     "id": 28,
      "name": "cc5Tisch",
      "type": "moebel",
      "x": 176,
@@ -989,7 +1044,7 @@
      ]
     },
     {
-     "id": 24,
+     "id": 29,
      "name": "cc4Leselampe",
      "type": "moebel",
      "x": 191,

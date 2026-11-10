@@ -4,7 +4,7 @@
   "art": "innen",
   "wand": "hellgrau",
   "boden": "stein",
-  "beschreibung": "Variante C (reicher): Drei Aufzüge, eine lange Zeitleiste auf drei Bildschirmen, in der Mitte eine kleine Ausstellung: die Hale-Vitrine zwischen zwei Sockeln mit Vasen. Rechts der Empfangstresen mit dem Roboter, davor zwei Kübelpflanzen; links eine Lounge mit Sofa, Tisch und zwei Sesseln. Pflanzen in allen Ecken.",
+  "beschreibung": "Variante C (reicher): Die Lobby von Perfect Move. An der Nordwand drei Aufzüge und die Zeitleiste der Firma auf drei Bildschirmen. In der Mitte eine kleine Ausstellung: die Hale-Vitrine zwischen zwei Sockeln mit Vasen. Rechts der Empfangstresen mit dem Roboter dahinter, davor wartet eine Besuchergruppe mit Namensschildern. Links die Lounge auf blauem Teppich: Sofa und Sessel nebeneinander, davor ein Couchtisch; ein Besucher sitzt auf dem Sofa. Pflanzen in den Ecken, Glastür in der Südwand.",
   "zustand": ["neu", "gebraucht"],
   "stil": ["modern", "klassisch", "japanisch", "einfach"],
   "raster": [
@@ -12,12 +12,12 @@
     "########################",
     "########################",
     "#......................#",
-    "#......................#",
-    "#......................#",
-    "#......................#",
-    "#......................#",
-    "#......................#",
-    "#......................#",
+    "#.ttttttt..............#",
+    "#.ttttttt..............#",
+    "#.ttttttt..............#",
+    "#.ttttttt..............#",
+    "#.ttttttt..............#",
+    "#.ttttttt..............#",
     "#......................#",
     "#......................#",
     "#......................#",
@@ -71,22 +71,6 @@
       "feld": [15, 5]
     },
     {
-      "moebel": "sb5Sofa",
-      "feld": [3, 4]
-    },
-    {
-      "moebel": "sb5Tisch",
-      "feld": [3, 7]
-    },
-    {
-      "moebel": "sb5SesselRund",
-      "feld": [6, 4]
-    },
-    {
-      "moebel": "sb5SesselRund",
-      "feld": [6, 7]
-    },
-    {
       "moebel": "sb5Topfpflanze",
       "feld": [1, 3]
     },
@@ -103,17 +87,26 @@
       "feld": [21, 10]
     },
     {
-      "moebel": "sb5Topfpflanze",
-      "feld": [18, 10]
+      "moebel": "sb5GlastuerSued",
+      "feld": [12, 13]
+    },
+    {
+      "moebel": "sb5Sofa",
+      "feld": [3, 4],
+      "id": "sofa"
+    },
+    {
+      "moebel": "sb5SesselRund",
+      "feld": [6, 4]
+    },
+    {
+      "moebel": "sb8Couchtisch",
+      "feld": [4, 7]
     },
     {
       "moebel": "sb5Fussmatte",
       "feld": [12, 12],
-      "versatz": [0, 8]
-    },
-    {
-      "moebel": "sb5GlastuerSued",
-      "feld": [12, 13]
+      "versatz": [0, 13]
     }
   ],
   "ausloeser": [
@@ -141,15 +134,52 @@
   ],
   "belebung": [
     {
-      "name": "besuchergruppe",
+      "name": "besucherin",
       "typ": "statist",
-      "feld": [6, 10],
+      "feld": [18, 9],
       "eigenschaften": {
-        "von": "6,10",
-        "bis": "9,10",
-        "tun": "Besuchergruppe mit Namensschildern wartet auf die Führung",
+        "von": "18,9",
+        "bis": "18,9",
+        "tun": "wartet mit Namensschild am Empfang auf die Führung",
+        "wann": "tag"
+      }
+    },
+    {
+      "name": "besucher",
+      "typ": "statist",
+      "feld": [19, 10],
+      "eigenschaften": {
+        "von": "19,10",
+        "bis": "19,10",
+        "tun": "liest den Besucherausweis",
+        "wann": "tag"
+      }
+    },
+    {
+      "name": "besucherMitTasche",
+      "typ": "statist",
+      "feld": [20, 9],
+      "eigenschaften": {
+        "von": "20,9",
+        "bis": "20,9",
+        "tun": "schaut zur Zeitleiste an der Wand",
+        "wann": "tag"
+      }
+    },
+    {
+      "name": "wartender",
+      "typ": "statist",
+      "feld": [3, 5],
+      "eigenschaften": {
+        "von": "3,5",
+        "bis": "3,5",
+        "verhalten": "sitzen",
+        "tun": "sitzt auf dem Sofa und wartet auf seinen Termin",
         "wann": "tag"
       }
     }
-  ]
+  ],
+  "boeden": {
+    "t": "teppichBlau"
+  }
 }

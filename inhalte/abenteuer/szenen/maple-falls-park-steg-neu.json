@@ -47,6 +47,10 @@
   ],
   "objekte": [
     {
+      "moebel": "mf12Zebrastreifen",
+      "feld": [27, 15]
+    },
+    {
       "moebel": "mf10Basketball",
       "feld": [3, 22],
       "id": "platz"

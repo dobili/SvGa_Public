@@ -48,6 +48,9 @@ Bilder (in ``spiel/eigene/``, Breite × Höhe in Pixeln):
   Kreidezeilen (Namen mit Strichen), Holzrahmen (Gutachten: Tafel leer).
 - ``schild_sackgasse.png`` (16 × 32): Verkehrsschild Sackgasse (blaues Quadrat, weißer Balken mit
   rotem Querbalken oben) an einem grauen Pfosten, für den Wendehammer der Birch Lane.
+- ``zebrastreifen_quer.png`` (32 × 48): Fußgängerüberweg über eine West-Ost-Straße von drei Reihen,
+  sechs weiße Balken längs zur Fahrtrichtung, durchscheinend wie die Linien von ``strasse.py``
+  (Gutachten Park: kein Überweg vom Uferweg zur Haltestelle).
 - ``spiel/figuren/postreiter.png`` (384 × 64, Figurenbogen): aus den Gemini-Bildern
   ``postreiter_ki_rechts/_oben/_links/_unten.png`` (je 16 × 32). Obere Reihe vier Standbilder
   (rechts, oben, links, unten); untere Reihe Laufen, je Richtung sechs Bilder. Weil es nur
@@ -420,6 +423,15 @@ def postreiter_bogen(haupt: Path) -> Image.Image:
     return bogen
 
 
+def zebrastreifen_quer() -> Image.Image:
+    """Überweg 32 × 48: sechs weiße Balken (je 3 Pixel breit, 40 hoch) mit 2 Pixeln Abstand."""
+    bild = Image.new("RGBA", (32, 48))
+    z = ImageDraw.Draw(bild)
+    for x in range(1, 31, 5):
+        z.rectangle((x, 4, x + 2, 43), fill=(240, 240, 235, 230))
+    return bild
+
+
 def main(haupt: Path) -> None:
     ziel = haupt / "spiel" / "eigene"
     fenster_nacht(haupt).save(ziel / "fenster_nacht.png")
@@ -440,6 +452,7 @@ def main(haupt: Path) -> None:
     abzeichen_postreiter().save(ziel / "abzeichen_postreiter.png")
     tafel_kegelkoenig().save(ziel / "tafel_kegelkoenig.png")
     schild_sackgasse().save(ziel / "schild_sackgasse.png")
+    zebrastreifen_quer().save(ziel / "zebrastreifen_quer.png")
     postreiter_bogen(haupt).save(haupt / "spiel" / "figuren" / "postreiter.png")
 
 

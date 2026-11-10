@@ -115,6 +115,10 @@ BELEGUNG_MIN, BELEGUNG_MAX = 0.20, 0.45  # Anteil der Bodenkacheln unter Möbeln
 # Lager und Archive leben von dichten Regalreihen (Rückmeldung des Autors zum Archiv, 9.11.2026):
 # Szenen mit "dicht": true dürfen bis zu diesem Anteil belegt sein.
 BELEGUNG_DICHT = 0.60
+# Stollen und Höhlen sind Gänge, keine eingerichteten Räume: Mit "stollen": true genügt dieser
+# Anteil. Sonst erzwingt die Regel Stapel und Fässer ohne Grund (Gutachten Goldmine, Runde 9:
+# „elf Holzstapel und zehn Fässer“).
+BELEGUNG_STOLLEN = 0.10
 GANG_TIEFE = 2  # freie Kacheln vor jedem Eingang am Kartenrand (8.2.1)
 BLICK_MIN, BLICK_MAX = 2, 4  # Abstand Sofa oder Sessel zu Fernseher oder Kamin in Kacheln (8.2.5)
 SITZ = {"sofa", "sessel"}
@@ -138,7 +142,7 @@ def _art(s: dict, moebel: dict) -> str | None:
 
 def pruefe_belegung(szene: dict, zeilen: list[str], gesetzt: list[dict]) -> list[str]:
     """Innenräume: 20–45 % der Bodenkacheln unter Möbeln (Lager und Archive mit "dicht": true bis
-    60 %), sonst „karg“ oder „vollgestellt“.
+    60 %, Stollen mit "stollen": true ab 10 %), sonst „karg“ oder „vollgestellt“.
 
     Beispiel: Generic Home des Zeichners, etwa ein Drittel der Bodenkacheln belegt.
     """
@@ -149,7 +153,8 @@ def pruefe_belegung(szene: dict, zeilen: list[str], gesetzt: list[dict]) -> list
         return []
     anteil = len(_sperrfelder(gesetzt) & boden) / len(boden)
     hoechstens = BELEGUNG_DICHT if szene.get("dicht") else BELEGUNG_MAX
-    if anteil < BELEGUNG_MIN:
+    mindestens = BELEGUNG_STOLLEN if szene.get("stollen") else BELEGUNG_MIN
+    if anteil < mindestens:
         return [f"Raum wirkt karg: {anteil:.0%} der Bodenkacheln belegt (Vorbild 20–45 %)"]
     if anteil > hoechstens:
         return [f"Raum wirkt vollgestellt: {anteil:.0%} der Bodenkacheln belegt (höchstens {hoechstens:.0%})"]

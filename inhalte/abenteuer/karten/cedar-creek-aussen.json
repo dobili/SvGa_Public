@@ -11,7 +11,7 @@
  "tilewidth": 16,
  "tileheight": 16,
  "nextlayerid": 5,
- "nextobjectid": 173,
+ "nextobjectid": 170,
  "layers": [
   {
    "id": 1,
@@ -1494,15 +1494,6 @@
     1,
     1,
     1,
-    1,
-    1,
-    1,
-    1,
-    1,
-    1,
-    1,
-    1,
-    1,
     4,
     4,
     4,
@@ -1512,57 +1503,6 @@
     4,
     4,
     4,
-    4,
-    4,
-    1,
-    1,
-    0,
-    0,
-    0,
-    0,
-    0,
-    1,
-    1,
-    0,
-    0,
-    4,
-    4,
-    1,
-    1,
-    1,
-    1,
-    1,
-    1,
-    1,
-    1,
-    1,
-    1,
-    1,
-    1,
-    1,
-    1,
-    1,
-    1,
-    1,
-    1,
-    1,
-    1,
-    1,
-    1,
-    1,
-    1,
-    1,
-    1,
-    1,
-    1,
-    1,
-    1,
-    1,
-    1,
-    1,
-    1,
-    1,
-    1,
     4,
     4,
     4,
@@ -1586,6 +1526,7 @@
     0,
     0,
     4,
+    4,
     1,
     1,
     1,
@@ -1613,25 +1554,24 @@
     1,
     1,
     1,
-    1,
-    1,
-    1,
-    1,
-    1,
-    1,
-    1,
-    1,
-    1,
-    1,
-    1,
-    1,
-    1,
-    1,
-    1,
-    1,
-    1,
-    1,
-    1,
+    4,
+    4,
+    4,
+    4,
+    4,
+    4,
+    4,
+    4,
+    4,
+    4,
+    4,
+    4,
+    4,
+    4,
+    4,
+    4,
+    4,
+    4,
     4,
     4,
     1,
@@ -1674,6 +1614,38 @@
     1,
     1,
     1,
+    4,
+    4,
+    4,
+    4,
+    4,
+    4,
+    4,
+    4,
+    4,
+    4,
+    1,
+    1,
+    1,
+    1,
+    1,
+    1,
+    1,
+    1,
+    4,
+    4,
+    1,
+    1,
+    0,
+    0,
+    0,
+    0,
+    0,
+    1,
+    1,
+    0,
+    0,
+    4,
     1,
     1,
     1,
@@ -1685,6 +1657,34 @@
     1,
     1,
     1,
+    1,
+    1,
+    1,
+    1,
+    1,
+    1,
+    1,
+    1,
+    1,
+    1,
+    1,
+    1,
+    1,
+    1,
+    1,
+    1,
+    4,
+    4,
+    4,
+    4,
+    4,
+    4,
+    4,
+    4,
+    4,
+    4,
+    4,
+    4,
     1,
     1,
     1,
@@ -9806,8 +9806,8 @@
      "id": 37,
      "name": "eichhoernchen",
      "type": "tier",
-     "x": 608,
-     "y": 480,
+     "x": 496,
+     "y": 464,
      "width": 16,
      "height": 16,
      "rotation": 0,
@@ -9821,12 +9821,12 @@
       {
        "name": "von",
        "type": "string",
-       "value": "36,26"
+       "value": "30,29"
       },
       {
        "name": "bis",
        "type": "string",
-       "value": "40,32"
+       "value": "32,29"
       }
      ]
     },
@@ -11950,29 +11950,6 @@
      "id": 130,
      "name": "cc4Nadelbaum",
      "type": "moebel",
-     "x": 512,
-     "y": 384,
-     "width": 32,
-     "height": 48,
-     "rotation": 0,
-     "visible": true,
-     "properties": [
-      {
-       "name": "tiefe",
-       "type": "int",
-       "value": 424
-      },
-      {
-       "name": "kollision",
-       "type": "bool",
-       "value": true
-      }
-     ]
-    },
-    {
-     "id": 131,
-     "name": "cc4Nadelbaum",
-     "type": "moebel",
      "x": 400,
      "y": 496,
      "width": 32,
@@ -11993,7 +11970,7 @@
      ]
     },
     {
-     "id": 132,
+     "id": 131,
      "name": "mf2ZederSchmal",
      "type": "moebel",
      "x": 560,
@@ -12016,7 +11993,7 @@
      ]
     },
     {
-     "id": 133,
+     "id": 132,
      "name": "mf2Zeder",
      "type": "moebel",
      "x": 528,
@@ -12039,30 +12016,7 @@
      ]
     },
     {
-     "id": 134,
-     "name": "cc4NadelbaumB",
-     "type": "moebel",
-     "x": 608,
-     "y": 384,
-     "width": 32,
-     "height": 48,
-     "rotation": 0,
-     "visible": true,
-     "properties": [
-      {
-       "name": "tiefe",
-       "type": "int",
-       "value": 424
-      },
-      {
-       "name": "kollision",
-       "type": "bool",
-       "value": true
-      }
-     ]
-    },
-    {
-     "id": 135,
+     "id": 133,
      "name": "cc4NadelbaumB",
      "type": "moebel",
      "x": 896,
@@ -12085,7 +12039,7 @@
      ]
     },
     {
-     "id": 136,
+     "id": 134,
      "name": "cc4Stammbank",
      "type": "moebel",
      "x": 464,
@@ -12108,7 +12062,7 @@
      ]
     },
     {
-     "id": 137,
+     "id": 135,
      "name": "cc7Picknicktisch",
      "type": "moebel",
      "x": 384,
@@ -12131,7 +12085,7 @@
      ]
     },
     {
-     "id": 138,
+     "id": 136,
      "name": "cc7Picknicktisch",
      "type": "moebel",
      "x": 592,
@@ -12154,30 +12108,7 @@
      ]
     },
     {
-     "id": 139,
-     "name": "cc7Blumenkasten",
-     "type": "moebel",
-     "x": 576,
-     "y": 432,
-     "width": 48,
-     "height": 16,
-     "rotation": 0,
-     "visible": true,
-     "properties": [
-      {
-       "name": "tiefe",
-       "type": "int",
-       "value": 440
-      },
-      {
-       "name": "kollision",
-       "type": "bool",
-       "value": true
-      }
-     ]
-    },
-    {
-     "id": 140,
+     "id": 137,
      "name": "cc7Fussbruecke",
      "type": "moebel",
      "x": 816,
@@ -12200,11 +12131,80 @@
      ]
     },
     {
-     "id": 141,
+     "id": 138,
      "name": "cc5Planke",
      "type": "moebel",
      "x": 800,
      "y": 224,
+     "width": 32,
+     "height": 16,
+     "rotation": 0,
+     "visible": true,
+     "properties": [
+      {
+       "name": "tiefe",
+       "type": "int",
+       "value": 1
+      },
+      {
+       "name": "kollision",
+       "type": "bool",
+       "value": false
+      }
+     ]
+    },
+    {
+     "id": 139,
+     "name": "cc5PlankeB",
+     "type": "moebel",
+     "x": 832,
+     "y": 224,
+     "width": 32,
+     "height": 16,
+     "rotation": 0,
+     "visible": true,
+     "properties": [
+      {
+       "name": "tiefe",
+       "type": "int",
+       "value": 1
+      },
+      {
+       "name": "kollision",
+       "type": "bool",
+       "value": false
+      }
+     ]
+    },
+    {
+     "id": 140,
+     "name": "cc5Planke",
+     "type": "moebel",
+     "x": 800,
+     "y": 240,
+     "width": 32,
+     "height": 16,
+     "rotation": 0,
+     "visible": true,
+     "properties": [
+      {
+       "name": "tiefe",
+       "type": "int",
+       "value": 1
+      },
+      {
+       "name": "kollision",
+       "type": "bool",
+       "value": false
+      }
+     ]
+    },
+    {
+     "id": 141,
+     "name": "cc5PlankeB",
+     "type": "moebel",
+     "x": 832,
+     "y": 240,
      "width": 32,
      "height": 16,
      "rotation": 0,
@@ -12224,10 +12224,10 @@
     },
     {
      "id": 142,
-     "name": "cc5PlankeB",
+     "name": "cc5StegPfaehle",
      "type": "moebel",
-     "x": 832,
-     "y": 224,
+     "x": 800,
+     "y": 256,
      "width": 32,
      "height": 16,
      "rotation": 0,
@@ -12247,10 +12247,10 @@
     },
     {
      "id": 143,
-     "name": "cc5Planke",
+     "name": "cc5StegPfaehle",
      "type": "moebel",
-     "x": 800,
-     "y": 240,
+     "x": 832,
+     "y": 256,
      "width": 32,
      "height": 16,
      "rotation": 0,
@@ -12270,75 +12270,6 @@
     },
     {
      "id": 144,
-     "name": "cc5PlankeB",
-     "type": "moebel",
-     "x": 832,
-     "y": 240,
-     "width": 32,
-     "height": 16,
-     "rotation": 0,
-     "visible": true,
-     "properties": [
-      {
-       "name": "tiefe",
-       "type": "int",
-       "value": 1
-      },
-      {
-       "name": "kollision",
-       "type": "bool",
-       "value": false
-      }
-     ]
-    },
-    {
-     "id": 145,
-     "name": "cc5StegPfaehle",
-     "type": "moebel",
-     "x": 800,
-     "y": 256,
-     "width": 32,
-     "height": 16,
-     "rotation": 0,
-     "visible": true,
-     "properties": [
-      {
-       "name": "tiefe",
-       "type": "int",
-       "value": 1
-      },
-      {
-       "name": "kollision",
-       "type": "bool",
-       "value": false
-      }
-     ]
-    },
-    {
-     "id": 146,
-     "name": "cc5StegPfaehle",
-     "type": "moebel",
-     "x": 832,
-     "y": 256,
-     "width": 32,
-     "height": 16,
-     "rotation": 0,
-     "visible": true,
-     "properties": [
-      {
-       "name": "tiefe",
-       "type": "int",
-       "value": 1
-      },
-      {
-       "name": "kollision",
-       "type": "bool",
-       "value": false
-      }
-     ]
-    },
-    {
-     "id": 147,
      "name": "cc5BootAmSteg",
      "type": "moebel",
      "x": 848,
@@ -12361,7 +12292,7 @@
      ]
     },
     {
-     "id": 148,
+     "id": 145,
      "name": "cc8KulisseBauernhaus",
      "type": "moebel",
      "x": 368,
@@ -12384,7 +12315,7 @@
      ]
     },
     {
-     "id": 149,
+     "id": 146,
      "name": "cc8KulisseBauernhausBreit",
      "type": "moebel",
      "x": 512,
@@ -12407,7 +12338,7 @@
      ]
     },
     {
-     "id": 150,
+     "id": 147,
      "name": "cc4Nadelbaum",
      "type": "moebel",
      "x": 704,
@@ -12430,7 +12361,7 @@
      ]
     },
     {
-     "id": 151,
+     "id": 148,
      "name": "mf2Blumenbeet",
      "type": "moebel",
      "x": 64,
@@ -12453,7 +12384,7 @@
      ]
     },
     {
-     "id": 152,
+     "id": 149,
      "name": "mf2Blumenbeet",
      "type": "moebel",
      "x": 176,
@@ -12476,7 +12407,7 @@
      ]
     },
     {
-     "id": 153,
+     "id": 150,
      "name": "mf2Blumenbeet",
      "type": "moebel",
      "x": 272,
@@ -12499,11 +12430,11 @@
      ]
     },
     {
-     "id": 154,
+     "id": 151,
      "name": "caBus",
      "type": "moebel",
      "x": 496,
-     "y": 320,
+     "y": 368,
      "width": 112,
      "height": 64,
      "rotation": 0,
@@ -12512,7 +12443,7 @@
       {
        "name": "tiefe",
        "type": "int",
-       "value": 376
+       "value": 424
       },
       {
        "name": "kollision",
@@ -12522,7 +12453,7 @@
      ]
     },
     {
-     "id": 155,
+     "id": 152,
      "name": "cc5BankZumBach",
      "type": "moebel",
      "x": 800,
@@ -12545,7 +12476,7 @@
      ]
     },
     {
-     "id": 156,
+     "id": 153,
      "name": "cc4Bootsschuppen",
      "type": "moebel",
      "x": 800,
@@ -12568,7 +12499,7 @@
      ]
     },
     {
-     "id": 157,
+     "id": 154,
      "name": "cc5BootUfer",
      "type": "moebel",
      "x": 864,
@@ -12591,7 +12522,7 @@
      ]
     },
     {
-     "id": 158,
+     "id": 155,
      "name": "cr8Holzfaellerhuette",
      "type": "moebel",
      "x": 672,
@@ -12614,7 +12545,7 @@
      ]
     },
     {
-     "id": 159,
+     "id": 156,
      "name": "sc7Ferienhuette",
      "type": "moebel",
      "x": 64,
@@ -12637,7 +12568,7 @@
      ]
     },
     {
-     "id": 160,
+     "id": 157,
      "name": "sc7FerienhuetteB",
      "type": "moebel",
      "x": 176,
@@ -12660,7 +12591,7 @@
      ]
     },
     {
-     "id": 161,
+     "id": 158,
      "name": "cr8Holzfaellerhuette",
      "type": "moebel",
      "x": 272,
@@ -12683,7 +12614,7 @@
      ]
     },
     {
-     "id": 162,
+     "id": 159,
      "name": "wc5Gartenhaus",
      "type": "moebel",
      "x": 704,
@@ -12706,7 +12637,7 @@
      ]
     },
     {
-     "id": 163,
+     "id": 160,
      "name": "mf4Gemuesebeet",
      "type": "moebel",
      "x": 128,
@@ -12729,7 +12660,7 @@
      ]
     },
     {
-     "id": 164,
+     "id": 161,
      "name": "mf2Blumenbeet",
      "type": "moebel",
      "x": 48,
@@ -12752,7 +12683,7 @@
      ]
     },
     {
-     "id": 165,
+     "id": 162,
      "name": "cc8HeckeSenkrecht",
      "type": "moebel",
      "x": 352,
@@ -12775,7 +12706,7 @@
      ]
     },
     {
-     "id": 166,
+     "id": 163,
      "name": "cc8HeckeSenkrecht",
      "type": "moebel",
      "x": 352,
@@ -12798,7 +12729,7 @@
      ]
     },
     {
-     "id": 167,
+     "id": 164,
      "name": "cc8HeckeSenkrecht",
      "type": "moebel",
      "x": 352,
@@ -12821,7 +12752,7 @@
      ]
     },
     {
-     "id": 168,
+     "id": 165,
      "name": "cc8HeckeSenkrecht",
      "type": "moebel",
      "x": 352,
@@ -12844,7 +12775,7 @@
      ]
     },
     {
-     "id": 169,
+     "id": 166,
      "name": "cc8HeckeSenkrecht",
      "type": "moebel",
      "x": 352,
@@ -12867,7 +12798,7 @@
      ]
     },
     {
-     "id": 170,
+     "id": 167,
      "name": "cc8HeckeSenkrecht",
      "type": "moebel",
      "x": 352,
@@ -12890,7 +12821,7 @@
      ]
     },
     {
-     "id": 171,
+     "id": 168,
      "name": "cc11HausHintenRot",
      "type": "moebel",
      "x": 80,
@@ -12913,7 +12844,7 @@
      ]
     },
     {
-     "id": 172,
+     "id": 169,
      "name": "cc11HausHintenBBraun",
      "type": "moebel",
      "x": 208,

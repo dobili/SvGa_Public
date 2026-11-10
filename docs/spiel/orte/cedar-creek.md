@@ -883,3 +883,27 @@ der Gutachter noch nicht.
   `postreiter_bogen`); beim Laufen wippt er.
 - **Gasthaus:** Kanonenofen aus Gemini, daneben Brennholz. Der Küchenherd bleibt ungenutzt, weil
   die Küche nicht auf der Karte liegt.
+
+## Viertes Gutachten Runde 8 und zweites Gutachten Runde 9: Antworten (niedrig-1, 10.11.2026)
+
+Gutachten `niedrig-1-4.md` und `niedrig-1-runde9-2.md`. Der Gutachter sah die Karten noch ohne
+die Gemini-Bilder.
+
+- **Park:** Die Holzbrücke (Gemini) ersetzt die grauen Brüstungen, ein Überweg führt vom Uferweg
+  zur Haltestelle (Bildwunsch `zebrastreifen_quer.png`).
+- **Cedar Creek:** Der Bus steht in einer eigenen Bucht südlich neben der Fahrbahn (Rasterzeichen
+  `b`, ohne Markierung), nicht mehr auf der Mittellinie.
+- **Landstraße:** Der Traktor von Otis steht am Feldrand im abgeernteten Schlag, längs zum Weg,
+  wie die Beschreibung sagt.
+- **Kürbishof:**
+  - Der Irrgarten ist dicht. Jedes Feld außerhalb der Gänge trägt Mais, die Gänge sind eine Kachel
+    breit, um Morphy liegt eine Lichtung.
+  - Der Traktor steht neben dem Hofweg vor der Scheune.
+- **Goldmine:**
+  - Das Wandmaterial ist `felsStollen` wie im Steinbruch-Stollen; die Bodenstreifen über den
+    Wänden entfallen.
+  - Ein Abzweiggleis führt vom Hauptgang in die Goldkammer. Die Lore steht längs darauf (Bild von
+    der Seite, Regel 10.65).
+  - Die orange Werkzeugkiste ist weg, das Geröll auf fünf Haufen begrenzt.
+  - Für Stollen gilt die neue Szenenangabe `"stollen": true`: Mindestbelegung 10 % statt 20 %.
+    Die alte Grenze hatte die vielen Holzstapel erzwungen.

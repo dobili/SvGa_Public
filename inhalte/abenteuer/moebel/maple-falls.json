@@ -3442,6 +3442,15 @@
       "art": "bruecke",
       "zustand": "gebraucht",
       "stil": "klassisch"
+    },
+    "mf12Zebrastreifen": {
+      "quelle": "spiel/eigene/zebrastreifen_quer.png",
+      "breite": 32,
+      "hoehe": 48,
+      "kollision": false,
+      "art": "boden",
+      "zustand": "gebraucht",
+      "stil": "klassisch"
     }
   }
 }

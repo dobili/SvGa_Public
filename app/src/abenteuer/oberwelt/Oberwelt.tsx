@@ -264,6 +264,8 @@ export function Oberwelt() {
         const pos = objektposition(json, ausloeser) ?? objektposition(json, "start");
         if (!pos) throw new Error(`Auslöser ${ausloeser} fehlt auf ${karte}`);
         const position: Weltposition = { karte, x: pos.x, y: pos.y, richtung };
+        // Dieselbe Karte (Steg über die Schleuse): nur versetzen, die Szene bleibt geladen.
+        if (karte === aktuell.position.karte) szene?.versetze(pos.x, pos.y);
         schreibe({ ...aktuell, position });
       })
       .catch(() => setzeMeldung(tSpiel("oberwelt.karteFehlt", { karte })));
@@ -400,7 +402,7 @@ export function Oberwelt() {
     let aktiv = true;
     // Beginn dieser Sitzung in der Welt, für die Spielzeit im Spielstand.
     const begonnen = Date.now();
-    ladeWelt(stand.position.karte, stand.held.variante)
+    ladeWelt(stand.position.karte, stand.held.variante, stand.dialogvariablen)
       .then((w) => {
         if (!aktiv || !rahmen.current) return;
         setzeTreffer(null);
@@ -770,6 +772,7 @@ export function Oberwelt() {
       }
       data-testid="abenteuer-welt"
       data-toenung={toenung ?? "keine"}
+      data-fassung={welt?.zustand ?? "grund"}
     >
       <div ref={rahmen} style={{ width: "100%", height: "100%" }} />
       <span ref={kachelanzeige} hidden data-testid="abenteuer-kachel" />

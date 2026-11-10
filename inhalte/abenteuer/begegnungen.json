@@ -589,6 +589,62 @@
       "kartenErlaubt": false,
       "zaehltFuerApp": false,
       "variante": "schach960"
+    },
+    {
+      "kennung": "wegDesertSummit.funkschach",
+      "gegner": "wegDesertSummit.mamaBear",
+      "farbe": "zufall",
+      "format": {
+        "art": "partie"
+      },
+      "startstellung": {
+        "art": "grundstellung"
+      },
+      "kartenErlaubt": true,
+      "zeit": "wahl"
+    },
+    {
+      "kennung": "wegDesertSummit.kreideblitz",
+      "gegner": "wegDesertSummit.mags",
+      "farbe": "zufall",
+      "format": {
+        "art": "partie"
+      },
+      "startstellung": {
+        "art": "grundstellung"
+      },
+      "kartenErlaubt": true,
+      "zeit": {
+        "sekunden": 180,
+        "zuschlag": 2
+      }
+    },
+    {
+      "kennung": "wegPinewoodGhost.z1",
+      "gegner": "wegPinewoodGhost.z1",
+      "farbe": "black",
+      "format": {
+        "art": "partie"
+      },
+      "startstellung": {
+        "art": "grundstellung"
+      },
+      "kartenErlaubt": true,
+      "zeit": "wahl"
+    },
+    {
+      "kennung": "bayou.hausboot",
+      "gegner": "bayou.hafenarbeiter",
+      "farbe": "white",
+      "format": {
+        "art": "partie"
+      },
+      "startstellung": {
+        "art": "fen",
+        "fen": "r1b2k1r/pp3qpp/1bp3n1/3pP3/3P1p2/2NQ1N1P/P4PPB/1R2R1K1 w - - 2 21"
+      },
+      "kartenErlaubt": false,
+      "zaehltFuerApp": false
     }
   ]
 }

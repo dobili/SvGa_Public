@@ -272,6 +272,28 @@ kommt in Runde 6 der kleine Raum mit Z-1), zwei alte Zapfsäulen unter einem Vor
   Motorradfahrer.
   Tiere: Eidechse, Geier, Roadrunner, Kojote, Hase, Krähen.
 
+## Runde 6: spielbar (10.11.2026, mittel-4)
+
+- **Gespenst der Tankstelle** (`ereignisTankstelle` vor der alten Tankstelle): Draußen klackt es.
+  Die Kinder reden von einem Gespenst, Ambrose widerspricht.
+- **Neuer Innenraum `wegPinewoodGhost.tankstelle`** (12 × 11, A/B/C):
+  - Tür `tankstelleTuer` am Blechhäuschen.
+  - Drinnen steht der Greifarm Z-1 (`cp8Greifarm`, Bild `greifarm_z1`) vor einem Tisch mit Brett.
+- **Quest `wegPinewoodGhost.gespenst`** (klein):
+  - Partie gegen Z-1 (Gegner `wegPinewoodGhost.z1`).
+  - Z-1 spielt fest Italienisch ohne Abweichung. Den Bruch nach dem Buch baut mittel-2.
+  - Lohn: Fund `bauerZ1` (Bauer aus Metall) und 25 Münzen.
+  - Das Porträt `z1.svg` ist eine eigene Pixelzeichnung.
+- **Funde:**
+  - `spurPM6`: Typenschild an der Tür;
+  - `seite11`: Ölwechsel-Graben, Kapitel 11;
+  - `finchBauerE`: Aussicht am Canyonrand.
+- **Ansehen:**
+  - Weg 10: `kletterwand` (Canyonrand), `wagen` (Autowrack, Staubstraße);
+  - Camp: `steg` und `kanus`.
+- **Nicht von mir:** Wegweiser, Bärenspur und die Nebelzeit auf Weg 9 gehören zu mittel-3.
+- **Offen für mittel-2:** Sepia-Tönung der Staubstraße.
+
 ### 3.5 Runde 6: Weg 9 spielbar (mittel-3)
 
 Ereignis `ereignisLebendschach` mit Aufgabenrunde `wegCrossroadsPinewood.lebendschach` (Platzhalter

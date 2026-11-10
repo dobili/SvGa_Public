@@ -254,6 +254,18 @@
     {
       "name": "turnhalleAusgang",
       "feld": [13, 15]
+    },
+    {
+      "name": "spendenkasse",
+      "feld": [15, 4]
+    },
+    {
+      "name": "notenheft",
+      "feld": [9, 4]
+    },
+    {
+      "name": "plakatTurnhalle",
+      "feld": [12, 3]
     }
   ],
   "figuren": [

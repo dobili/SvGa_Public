@@ -1,0 +1,144 @@
+{
+  "karte": "wegDesertSummit.hinterzimmer",
+  "datei": "karten/varianten/weg-desert-summit-hinterzimmer-b.json",
+  "variante": "b",
+  "art": "innen",
+  "beschreibung": "Variante B: Tafel rechts, Regal links, die Tische in einer Reihe.",
+  "wand": "backstein",
+  "boden": "stein",
+  "raster": [
+    "##############",
+    "##############",
+    "##############",
+    "#............#",
+    "#............#",
+    "#............#",
+    "#............#",
+    "#............#",
+    "#............#",
+    "#............#",
+    "#######.######",
+    "##############"
+  ],
+  "objekte": [
+    {
+      "moebel": "cc6TuerSued",
+      "feld": [7, 11],
+      "an_wand": true
+    },
+    {
+      "moebel": "cc5Fussmatte",
+      "feld": [7, 9],
+      "versatz": [0, 24]
+    },
+    {
+      "moebel": "mf2Tafel",
+      "feld": [9, 1],
+      "an_wand": true
+    },
+    {
+      "moebel": "cc5Tisch",
+      "feld": [2, 5],
+      "id": "brett0"
+    },
+    {
+      "moebel": "cc4Brett",
+      "feld": [0, 0],
+      "auf": "brett0"
+    },
+    {
+      "moebel": "cc4Hocker",
+      "feld": [1, 6]
+    },
+    {
+      "moebel": "cc4Hocker",
+      "feld": [4, 6]
+    },
+    {
+      "moebel": "cc5Tisch",
+      "feld": [6, 5],
+      "id": "brett1"
+    },
+    {
+      "moebel": "cc4Brett",
+      "feld": [0, 0],
+      "auf": "brett1"
+    },
+    {
+      "moebel": "cc4Hocker",
+      "feld": [5, 6]
+    },
+    {
+      "moebel": "cc4Hocker",
+      "feld": [8, 6]
+    },
+    {
+      "moebel": "cc5Tisch",
+      "feld": [10, 7],
+      "id": "brett2"
+    },
+    {
+      "moebel": "cc4Brett",
+      "feld": [0, 0],
+      "auf": "brett2"
+    },
+    {
+      "moebel": "cc4Hocker",
+      "feld": [9, 8]
+    },
+    {
+      "moebel": "cc4Hocker",
+      "feld": [12, 8]
+    },
+    {
+      "moebel": "cc4RegalA",
+      "feld": [1, 1]
+    },
+    {
+      "moebel": "cc4KisteLeer",
+      "feld": [1, 6]
+    },
+    {
+      "moebel": "iwFass",
+      "feld": [12, 3]
+    },
+    {
+      "moebel": "cc4PflanzeK",
+      "feld": [12, 8]
+    }
+  ],
+  "ausloeser": [
+    {
+      "name": "start",
+      "feld": [7, 9],
+      "eigenschaften": {
+        "richtung": "oben"
+      }
+    },
+    {
+      "name": "hinterzimmerAusgang",
+      "feld": [7, 10]
+    }
+  ],
+  "figuren": [
+    {
+      "name": "mags",
+      "feld": [6, 4]
+    },
+    {
+      "name": "ruthKeene",
+      "feld": [8, 9]
+    }
+  ],
+  "belebung": [],
+  "zustand": ["gebraucht", "alt", "neu"],
+  "stil": [
+    "einfach",
+    "klassisch",
+    "industrie",
+    "rustikal",
+    "modern",
+    "laendlich",
+    "schule"
+  ]
+}

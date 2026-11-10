@@ -270,6 +270,18 @@ export class Oberweltszene extends Phaser.Scene {
     if (!erlaubt) this.gedrueckt.clear();
   }
 
+  /**
+   * Versetzt den Helden auf derselben Karte (Übergang innerhalb einer Karte, etwa der Steg über
+   * die Schleuse in Lockport, Sperre S3). Der Zielauslöser zählt wie beim Kartenwechsel erst nach
+   * dem Verlassen, sonst schickte er den Helden gleich zurück.
+   */
+  versetze(x: number, y: number): void {
+    if (!this.held) return;
+    this.held.setPosition((x + 0.5) * KACHEL, (y + 0.5) * KACHEL);
+    this.startAusloeserOffen = true;
+    this.letzterAusloeser = null;
+  }
+
   /** Wo der Held steht, in Kachelkoordinaten (für den Spielstand beim Verlassen). */
   position(): Weltposition {
     // Vor create() (Verlassen während des Hochfahrens) gilt die Startposition weiter.

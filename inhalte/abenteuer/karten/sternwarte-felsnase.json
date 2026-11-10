@@ -11,7 +11,7 @@
  "tilewidth": 16,
  "tileheight": 16,
  "nextlayerid": 5,
- "nextobjectid": 26,
+ "nextobjectid": 28,
  "layers": [
   {
    "id": 1,
@@ -3715,6 +3715,28 @@
     },
     {
      "id": 5,
+     "name": "bank",
+     "type": "ausloeser",
+     "x": 112,
+     "y": 144,
+     "width": 16,
+     "height": 16,
+     "rotation": 0,
+     "visible": true
+    },
+    {
+     "id": 6,
+     "name": "antennenmast",
+     "type": "ausloeser",
+     "x": 496,
+     "y": 112,
+     "width": 16,
+     "height": 16,
+     "rotation": 0,
+     "visible": true
+    },
+    {
+     "id": 7,
      "name": "hobbyastronom",
      "type": "statist",
      "x": 400,
@@ -3752,7 +3774,7 @@
      ]
     },
     {
-     "id": 6,
+     "id": 8,
      "name": "paar",
      "type": "statist",
      "x": 192,
@@ -3790,7 +3812,7 @@
      ]
     },
     {
-     "id": 7,
+     "id": 9,
      "name": "nachtwanderin",
      "type": "statist",
      "x": 320,
@@ -3828,7 +3850,7 @@
      ]
     },
     {
-     "id": 8,
+     "id": 10,
      "name": "kind",
      "type": "statist",
      "x": 448,
@@ -3861,7 +3883,7 @@
      ]
     },
     {
-     "id": 9,
+     "id": 11,
      "name": "eule",
      "type": "tier",
      "x": 512,
@@ -3889,7 +3911,7 @@
      ]
     },
     {
-     "id": 10,
+     "id": 12,
      "name": "fledermaeuse",
      "type": "tier",
      "x": 368,
@@ -3922,7 +3944,7 @@
      ]
     },
     {
-     "id": 11,
+     "id": 13,
      "name": "kojote",
      "type": "tier",
      "x": 368,
@@ -3955,7 +3977,7 @@
      ]
     },
     {
-     "id": 12,
+     "id": 14,
      "name": "wuestenfuchs",
      "type": "tier",
      "x": 112,
@@ -3988,7 +4010,7 @@
      ]
     },
     {
-     "id": 13,
+     "id": 15,
      "name": "nachtfalter",
      "type": "tier",
      "x": 256,
@@ -4021,7 +4043,7 @@
      ]
     },
     {
-     "id": 14,
+     "id": 16,
      "name": "eidechse",
      "type": "tier",
      "x": 368,
@@ -4049,7 +4071,7 @@
      ]
     },
     {
-     "id": 15,
+     "id": 17,
      "name": "n5Sternwarte",
      "type": "moebel",
      "x": 256,
@@ -4072,7 +4094,7 @@
      ]
     },
     {
-     "id": 16,
+     "id": 18,
      "name": "mfBank",
      "type": "moebel",
      "x": 112,
@@ -4095,7 +4117,7 @@
      ]
     },
     {
-     "id": 17,
+     "id": 19,
      "name": "iwStrommast",
      "type": "moebel",
      "x": 496,
@@ -4118,7 +4140,7 @@
      ]
     },
     {
-     "id": 18,
+     "id": 20,
      "name": "dd6Saguaro",
      "type": "moebel",
      "x": 112,
@@ -4141,7 +4163,7 @@
      ]
     },
     {
-     "id": 19,
+     "id": 21,
      "name": "dd6KaktusKlein",
      "type": "moebel",
      "x": 176,
@@ -4164,7 +4186,7 @@
      ]
     },
     {
-     "id": 20,
+     "id": 22,
      "name": "dd6KaktusBluehend",
      "type": "moebel",
      "x": 416,
@@ -4187,7 +4209,7 @@
      ]
     },
     {
-     "id": 21,
+     "id": 23,
      "name": "dd6Saguaro",
      "type": "moebel",
      "x": 368,
@@ -4210,7 +4232,7 @@
      ]
     },
     {
-     "id": 22,
+     "id": 24,
      "name": "dd6KaktusKlein",
      "type": "moebel",
      "x": 416,
@@ -4233,7 +4255,7 @@
      ]
     },
     {
-     "id": 23,
+     "id": 25,
      "name": "dd6KaktusBluehend",
      "type": "moebel",
      "x": 288,
@@ -4256,7 +4278,7 @@
      ]
     },
     {
-     "id": 24,
+     "id": 26,
      "name": "dd6Saguaro",
      "type": "moebel",
      "x": 160,
@@ -4279,7 +4301,7 @@
      ]
     },
     {
-     "id": 25,
+     "id": 27,
      "name": "dd6KaktusKlein",
      "type": "moebel",
      "x": 208,

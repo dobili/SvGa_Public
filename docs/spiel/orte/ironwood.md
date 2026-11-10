@@ -547,3 +547,10 @@ Tiere: Krähe, Fledermäuse, Fuchs, Hasen, Falke, Eidechse.
 
 **3.3 Feld für Runde 6:** `finchBauerF` in `steinbruch.grube` bei (59, 42) in A, B und C, begehbar,
 mit Finkenzeichen aus Kreide.
+
+## Runde 6: Steinbruch (10.11.2026, mittel-4)
+
+- **Fund:** `finchBauerF` (59, 42).
+- **Ansehen:** `graffiti` (Wolf und Krone an der Felswand), `bagger`.
+- **Offen:** Sperre S4 (Laterne) am Übergang in Ironwood gehört zu mittel-2, ebenso Tönung und
+  Lichtkreis im Stollen.

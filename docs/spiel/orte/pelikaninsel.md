@@ -100,3 +100,17 @@ Tiere: Bishop, Pelikane, Möwen, Krebs, Reiher, Alligator.
 
 **3.3 Feld für Runde 6:** `finchBauerH` bei A (40, 13), B (40, 10), C (40, 13), begehbar, mit
 Finkenzeichen aus Blech.
+
+## Runde 6: spielbar (10.11.2026, mittel-4)
+
+- **Figuren** statt Statisten: Delphine, Old Pete, Coral. Der Pelikan Bishop bleibt Belebung. Dafür
+  kommt der Muschelsammler als Statist dazu (Weiß beginnt erst seit dem 19. Jahrhundert, 16, 4.1
+  Nr. 7).
+- **Nebenquest `pelikaninsel.netze`** (klein): Aufgabenrunde „Welche Figur hängt?“ mit Old Pete,
+  15 Münzen. Danach liegt am Netz der Fund `treibholzTurm`.
+- **Nebenquest `pelikaninsel.leuchtfeuer`** (klein): Das Leuchtfeuer braucht eine Batterie
+  (Gegenstand `batterie`). Lohn 35 Münzen. **Offen:** Die Batterie muss es in Silicon Bay geben
+  (mittel-3), etwa als Wirkung `gegenstand: batterie` am Hafen.
+- **Watt:** `watt` und Coral prüfen `hatGummistiefel`. Mit Stiefeln schenkt Coral den Fund
+  `muschelCoral`. Die Gummistiefel gibt es in Lockport (niedrig-1).
+- **Fund:** `finchBauerH`.

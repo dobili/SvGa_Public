@@ -59,6 +59,8 @@ STAEMME = {
     "fuchs": "hund",
     **{art: art for art in TIERBILDER},
 }
+# Schwimmer zeigen nur den Teil über der Wasserlinie (Regel 10.55), wie in der App.
+WASSERLINIE = 0.85
 SCHAR = ("tauben", "moewen", "kraehen", "enten", "gaense", "huehner", "ziegen", "schafe", "kuehe", "herde")
 
 
@@ -78,7 +80,8 @@ def teile(szene: dict, privat: Path, oeffne) -> list[tuple[int, int, int, object
     """Bildteile (tiefe, x, y, bild) für alle Statisten und Tiere einer Szene.
 
     Eingaben: Szene, privates Repository, ``oeffne(pfad) -> Image`` (RGBA).
-    Sonderfall: Ohne Bogen (Art unbekannt oder Datei fehlt) wird nichts gezeichnet, wie in der App.
+    Sonderfall: Ohne Bogen (Art unbekannt oder Datei fehlt) wird nichts gezeichnet, wie in der App;
+    Schwimmer (``verhalten: schwimmen``) nur bis zur Wasserlinie.
     """
     ergebnis = []
     for b in szene.get("belebung", []):
@@ -92,9 +95,13 @@ def teile(szene: dict, privat: Path, oeffne) -> list[tuple[int, int, int, object
             pfad, (breite, hoehe) = privat / "spiel" / "tiere" / f"{art}.png", TIERBILDER[art]
         if not pfad.exists():
             continue
-        bild = oeffne(pfad).crop((VORN * breite, 0, (VORN + 1) * breite, hoehe))
+        sichtbar = hoehe
+        if b.get("eigenschaften", {}).get("verhalten") == "schwimmen":
+            sichtbar = round(hoehe * WASSERLINIE)
+        bild = oeffne(pfad).crop((VORN * breite, 0, (VORN + 1) * breite, sichtbar))
         anzahl = 3 if any(w in b["name"].lower() for w in SCHAR) else 1
         for i in range(anzahl):
             dx, dy = i * (breite // 2 + 4), (i % 2) * 6
-            ergebnis.append((y + K + dy, x + dx, y + K - hoehe + dy, bild))
+            # Schwimmer sinken um den abgeschnittenen Teil tiefer ins Wasser.
+            ergebnis.append((y + K + dy, x + dx, y + K - sichtbar + dy, bild))
     return ergebnis

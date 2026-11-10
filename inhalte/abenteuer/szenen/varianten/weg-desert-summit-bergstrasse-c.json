@@ -713,6 +713,22 @@
     {
       "name": "weiterSummit",
       "feld": [20, 0]
+    },
+    {
+      "name": "spurPM4",
+      "feld": [15, 95]
+    },
+    {
+      "name": "aussichtBerg",
+      "feld": [11, 90]
+    },
+    {
+      "name": "wegweiserHochebene",
+      "feld": [30, 70]
+    },
+    {
+      "name": "quelle",
+      "feld": [15, 88]
     }
   ],
   "figuren": [],

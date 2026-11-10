@@ -342,6 +342,26 @@
     {
       "moebel": "lp8Schuppen",
       "feld": [47, 26]
+    },
+    {
+      "moebel": "ccZaun",
+      "feld": [30, 14]
+    },
+    {
+      "moebel": "ccZaun",
+      "feld": [31, 14]
+    },
+    {
+      "moebel": "ccZaun",
+      "feld": [36, 14]
+    },
+    {
+      "moebel": "ccZaun",
+      "feld": [37, 14]
+    },
+    {
+      "moebel": "ccZaun",
+      "feld": [1, 13]
     }
   ],
   "ausloeser": [
@@ -363,6 +383,40 @@
     {
       "name": "gasthausTuer",
       "feld": [21, 32]
+    },
+    {
+      "name": "tafelSchleuse",
+      "feld": [37, 10]
+    },
+    {
+      "name": "steg",
+      "feld": [30, 13]
+    },
+    {
+      "name": "steg",
+      "feld": [31, 13]
+    },
+    {
+      "name": "stegSued",
+      "feld": [30, 17],
+      "eigenschaften": {
+        "richtung": "unten"
+      }
+    },
+    {
+      "name": "stegSued",
+      "feld": [31, 17],
+      "eigenschaften": {
+        "richtung": "unten"
+      }
+    },
+    {
+      "name": "kai",
+      "feld": [13, 20]
+    },
+    {
+      "name": "henriksBoot",
+      "feld": [23, 20]
     }
   ],
   "figuren": [],
@@ -542,6 +596,24 @@
         "verhalten": "ausweichen",
         "von": "44,37",
         "bis": "52,37"
+      }
+    },
+    {
+      "name": "imogen",
+      "typ": "statist",
+      "feld": [39, 9],
+      "eigenschaften": {
+        "tun": "steht mit dem Schlüsselbund an der Tafel",
+        "wann": "tag"
+      }
+    },
+    {
+      "name": "ruben",
+      "typ": "statist",
+      "feld": [13, 20],
+      "eigenschaften": {
+        "tun": "sitzt auf dem Poller und sieht auf den Kahn",
+        "wann": "tag"
       }
     }
   ],

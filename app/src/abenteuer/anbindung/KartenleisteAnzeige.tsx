@@ -34,6 +34,7 @@ import type { Abenteuerstand } from "../schnittstelle/spielstand";
 import type { Leisteneigenschaften } from "../schnittstelle/modul";
 import { tSpiel } from "../texte/texte";
 import { useAbenteuerstand } from "./dienste";
+import { Funkansage } from "./Funkansage";
 import { usePixelrahmen } from "./pixelrahmen";
 
 /** Rechenzeiten der Karten in Millisekunden (R23: Fingerzeig Tiefe 12, Mentor-Zug Tiefe 14). */
@@ -153,6 +154,7 @@ export function KartenleisteAnzeige({
       >
         <strong>{t("abenteuer.kartenleiste")}</strong>
         {zustandszeile}
+        <Funkansage partiekennung={partiekennung} />
         <span>{t("abenteuer.kartenleisteHinweis", { begegnung })}</span>
       </aside>
     );
@@ -250,6 +252,7 @@ export function KartenleisteAnzeige({
     <aside className={leistenklasse} style={pixelrahmen?.stil} data-testid="abenteuer-kartenleiste">
       <strong>{t("abenteuer.kartenleiste")}</strong>
       {zustandszeile}
+      <Funkansage partiekennung={partiekennung} />
       {karten.deck.map((kennung) => {
         const sorte = sorten.find((s) => s.kennung === kennung) as Kartensorte | undefined;
         if (!sorte) return null;

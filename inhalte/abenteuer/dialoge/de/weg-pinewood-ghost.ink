@@ -44,3 +44,111 @@ An einem Pfosten am Canyonrand hängt eine Tafel mit drei Diagrammen: „Ein Sch
 === zurueck_camp ===
 Der Pfad führt zurück in den Wald, zum Pinewood Camp. #sprecher:erzaehler
 -> END
+
+// >>> Runde 6 (mittel-4)
+EXTERNAL beginnePartie(begegnung)
+EXTERNAL gibFund(kennung)
+VAR held = "Du"
+VAR ambroseSprichtWieder = false
+VAR tankstelleGesehen = false
+VAR ausgangWegPinewoodGhostZ1 = ""
+VAR z1Fertig = false
+VAR z1Gesehen = false
+VAR gefundenSpurPM6 = false
+VAR gefundenSeite11 = false
+VAR gefundenFinchBauerE = false
+
+// ---------------------------------------------------------------- Ereignis: Das Gespenst der Tankstelle (Dokument 15, 2.12)
+// Akt 4. Draußen die verlassene Tankstelle, drinnen der Greifarm Z-1 (Innenraum wegPinewoodGhost.tankstelle).
+// Gegner mit Buch und Bruch kommt von mittel-2; bis dahin spielt Z-1 fest Italienisch (Gegner wegPinewoodGhost.z1).
+
+=== ereignis_tankstelle ===
+{tankstelleGesehen:
+    Die alte Tankstelle. Auf dem Dach glänzt ein Solarpaneel, viel zu neu für das Blech darunter. #sprecher:erzaehler
+    -> END
+}
+~ tankstelleGesehen = true
+Eine verlassene Tankstelle, die Zapfsäulen voller Staub. Auf dem Dach glänzt ein nagelneues Solarpaneel. #sprecher:erzaehler
+Von drinnen kommt ein Geräusch: klack. Pause. Klack. #sprecher:erzaehler
+Die Kinder im Camp reden von einem Gespenst, das hier nachts Schach spielt. #sprecher:erzaehler
+{ambroseSprichtWieder:
+    Gespenster spielen nicht in Tankstellen. Ich muss es wissen. #sprecher:ambrose
+}
+-> END
+
+=== greifarm ===
+{
+- z1Fertig:
+    Z-1 hat die Figuren wieder aufgestellt. Auf dem kleinen Bildschirm steht: „Nächste Partie?“ #sprecher:erzaehler
+    -> END
+- ausgangWegPinewoodGhostZ1 != "" and ausgangWegPinewoodGhostZ1 != "abgebrochen": -> greifarm_ende
+- z1Gesehen: -> greifarm_angebot
+}
+-> greifarm_start
+
+=== greifarm_start ===
+~ z1Gesehen = true
+Vor einem Tisch mit Brett steht ein Greifarm mit dem Logo von Perfect Move. Ein Kabel führt hinauf zum Solarpaneel. #sprecher:erzaehler
+Auf seinem kleinen Bildschirm leuchtet: „Prototyp Z-1. Bereit. Weiß beginnt.“ #sprecher:greifarm
+-> greifarm_angebot
+
+=== greifarm_angebot ===
++ [Sich an den Tisch setzen.]
+    Der Arm zuckt, dann setzt er einen Bauern nach e4. Klack. #sprecher:greifarm
+    ~ beginnePartie("wegPinewoodGhost.z1")
+    -> END
++ [Lieber nicht.]
+    Der Arm senkt sich wieder. Auf dem Bildschirm steht: „Warte.“ #sprecher:greifarm
+    -> END
+
+=== greifarm_ende ===
+{z1Fertig: -> END}
+~ z1Fertig = true
+Der Arm zittert, als die Partie das Buch verlassen hat. Dann legt er einen Bauern aus Metall vor {held} hin. #sprecher:erzaehler
+„Danke für die Partie.“ #sprecher:greifarm
+~ gibFund("bauerZ1")
+{ambroseSprichtWieder:
+    Eine Nähmaschine mit Ehrgeiz. Lasst ihn spielen, er hat sonst niemanden. #sprecher:ambrose
+}
+-> END
+
+// ---------------------------------------------------------------- Funde und Ansehen
+
+=== fund_spur_pm6 ===
+{gefundenSpurPM6:
+    An der Tür klebt noch der Rest eines Etiketts. #sprecher:erzaehler
+    -> END
+}
+~ gefundenSpurPM6 = true
+An der Tür klebt ein Typenschild: „Prototyp Z-1, Testlabor Perfect Move. Nicht entfernen.“ Es ist schon halb abgelöst. #sprecher:erzaehler
+~ gibFund("spurPM6")
+-> END
+
+=== fund_seite11 ===
+{gefundenSeite11:
+    Im Ölwechsel-Graben liegt nur noch Staub. #sprecher:erzaehler
+    -> END
+}
+~ gefundenSeite11 = true
+Im alten Ölwechsel-Graben liegt eine Buchseite, kaum ölig. Oben steht: Kapitel 11, Beispielpartien. #sprecher:erzaehler
+~ gibFund("seite11")
+-> END
+
+=== fund_finch_bauer_e ===
+{gefundenFinchBauerE:
+    An der Aussicht ist nur noch das Finkenzeichen aus Blech. #sprecher:erzaehler
+    -> END
+}
+~ gefundenFinchBauerE = true
+Neben der Bank an der Aussicht hängt ein kleiner Fink aus Blech. Darunter, zwischen zwei Steinen, liegt ein weißer Bauer aus Buchsbaum. #sprecher:erzaehler
+~ gibFund("finchBauerE")
+-> END
+
+=== kletterwand ===
+Eine Kletterwand mit zwei Routen ragt über die Kante. Die Griffe sind bunt, die Seile frisch. #sprecher:erzaehler
+-> END
+
+=== wagen ===
+Ein Autowrack, rot vom Rost und vom Sand. Im Handschuhfach liegt eine Straßenkarte von 1962. #sprecher:erzaehler
+-> END
+// <<< Runde 6 (mittel-4)

@@ -69,7 +69,7 @@ Ich hab nur ein Brett, und das liegt noch in der Station. Wenn du wiederkommst, 
 ~ rayGetroffen = true
 Am Rand der Weizenfelder steht ein verbeulter Wagen voller Antennen. Ein Mann sieht durch ein Fernglas zum Horizont. #sprecher:erzaehler
 Ray Castillo. Sturmjäger. Da hinten braut sich was zusammen. #sprecher:rayCastillo
-Castillo? Wie Mira und Tomás in Desert Springs? #sprecher:ambrose
+Castillo? So heißen auch Mira und Tomás in Desert Springs. Du fragst ihn danach. #sprecher:erzaehler
 Du kennst meine Nichte und meinen Neffen? Dann bist du der Grund, warum Mira am Telefon nur noch von Opfern redet. #sprecher:rayCastillo #stimmung:lacht
 Wenn der Sturm kommt, gehen wir in den Keller. Und im Keller spielen wir Entenschach. #sprecher:rayCastillo
 -> ray_regel

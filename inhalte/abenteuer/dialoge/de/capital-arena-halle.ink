@@ -187,7 +187,7 @@ Wer ehrlich spielt, hat nichts zu fürchten. Das gilt auch für Erwachsene. #spr
     {ausgangCapitalArenaHalbfinale == "remis":
         Remis. Im Halbfinale braucht es einen Sieger. Ihr spielt noch einmal. #sprecher:turnierleiterin
     - else:
-        Verloren. Aber das Turnier erlaubt einen Neustart. Noch einmal gegen Kade? #sprecher:turnierleiterin
+        Verloren. Aber das Turnier erlaubt eine Wiederholungspartie. Noch einmal gegen Kade? #sprecher:turnierleiterin
     }
 - else:
     Halbfinale gegen Kade Sterling. Ein Funkprüfer läuft mit. #sprecher:turnierleiterin

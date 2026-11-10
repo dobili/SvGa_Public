@@ -188,7 +188,7 @@ Ich hab nichts gesagt. Zahlen lügen nicht. Ich auch nicht. #sprecher:theo
 ~ novaGetroffen = true
 Das Mädchen am Fenster springt auf und lächelt. „Nova! Champion der Akademie. Ein Foto?“ #sprecher:erzaehler
 Mit Perfect Move trainiert jeder wie ein Champion! #sprecher:nova #stimmung:froh
-Als niemand mehr hinsieht, setzt sie sich wieder hin. „Kann ich jetzt kurz sitzen?“ #sprecher:nova
+Sieht gerade jemand her? Nein? Kann ich jetzt kurz sitzen? #sprecher:nova
 -> END
 
 === nova_erst_theo ===

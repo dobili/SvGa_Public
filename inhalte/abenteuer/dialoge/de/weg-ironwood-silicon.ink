@@ -80,7 +80,7 @@ Hängende Figuren. Die erste Frage vor jedem Zug, {held}. Du kennst sie. #sprech
 ~ joggerinGetroffen = true
 Auf der Glasbrücke läuft eine Frau auf der Stelle. Ihre Uhr am Handgelenk piept ohne Pause. #sprecher:erzaehler
 Schach? Klar. Drei Minuten, plus zwei Sekunden. Mein Puls bleibt oben. #sprecher:joggerin
-Juno hält dir die Daumen hoch: „Sie ist schneller als du. Aber du bist schlauer. Vielleicht.“ #sprecher:juno
+Sie ist schneller als du. Aber du bist schlauer. Vielleicht. #sprecher:juno
 -> joggerin_angebot
 
 === joggerin_angebot ===

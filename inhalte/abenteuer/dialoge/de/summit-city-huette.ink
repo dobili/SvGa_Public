@@ -161,7 +161,7 @@ Nach jedem Zug brummt etwas in Victors Tasche. Er sieht nicht aufs Brett, er war
 Nach zwei Stunden steht ein Turmendspiel auf dem Brett. Victor hat einen Bauern mehr. Dann brummt es zweimal, und er zieht den König in die falsche Richtung. #sprecher:erzaehler
 Drei Züge später gibt er auf. #sprecher:erzaehler
 Sein Telefon klingelt. Er nimmt ab, ohne etwas zu sagen. #sprecher:erzaehler
-Victor? Was sagt die Bewertung? Hast du dem Coach gefolgt? #sprecher:grahamHale
+Victor? Was sagt die Bewertung? Bist du dem Coach gefolgt? #sprecher:grahamHale
 Victor legt auf. Er zieht ein kleines schwarzes Gerät aus der Tasche, wirft es auf den Tisch und läuft hinaus. #sprecher:erzaehler
 Er spielt, als wäre er nicht da. #sprecher:ward
 Kopf und Ruhe, {held}. Wer einer Maschine in der Tasche glaubt, sieht das Brett nicht mehr. #sprecher:ambrose #stimmung:still

@@ -58,7 +58,7 @@ Ein Bericht über Partien. Man liest ihn wie einen Brief: Was steht zwischen den
 === victor_falsch ===
 ~ victorFalschGesagt = true
 Achtundneunzig Prozent im Turnier, vierundsiebzig im Training. Das ist kein Talent. #sprecher:erzaehler
-Victor schweigt lange. Dann sagt er leise: „Das ist falsch.“ #sprecher:victor #stimmung:ernst
+… Das ist falsch. #sprecher:victor #stimmung:ernst
 Vor einer Partie hab ich gesehen, wie sie etwas ins Ohr gesteckt hat. Ich dachte, ein Kopfhörer. #sprecher:victor
 Sag meinem Vater nichts. Noch nicht. Ich muss nachdenken. #sprecher:victor #stimmung:muede
 Ein Hale, der zweifelt. Das habe ich nicht kommen sehen. #sprecher:ambrose
@@ -93,7 +93,7 @@ In einer Vitrine steht: „Hale – Ingenieure seit 1850“. Ein Rechenschieber,
 Auf der linken Seite stehen Schachzüge in altmodischer Schrift. Die rechte Seite ist herausgerissen. #sprecher:erzaehler
 Das sind meine Züge. #sprecher:ambrose #pause
 Und das … das war seine Antwort. Auf der Seite, die fehlt. #sprecher:ambrose #stimmung:traurig
-Victor ist herübergekommen. „Mein Vater sagt, die Seite war schon immer weg.“ #sprecher:victor
+Mein Vater sagt, die Seite war schon immer weg. #sprecher:victor
 * [Ein Foto machen]
     -> vitrine_foto
 * [Nur ansehen]

@@ -118,8 +118,6 @@ Szene heißt die Datei in `inhalte/abenteuer/szenen/` ohne `.json`.
 
 - [x] silicon-bay-lobby, silicon-bay-serverraum (dritte Prüfung, nur Restpunkte, niedrig-1; Antworten in silicon-bay.md; `serverreihe_6` aus `niedrig1_runde9_karten.py` neu rendern, jetzt 160 px breit) und cedar-creek-aussen (nur Haltestelle: Wartehaus südlich der Busbucht, Antworten in cedar-creek.md) → `silicon-bay-lobby-serverraum-3.md`
 
-- [ ] ghost-town-aussen (nur neue Bilder: Planwagen von vorn neben dem Mietstall, Pferd an der Tränke, niedrig-1; Antworten in ghost-town.md; Bögen fuchs, pferd, schimmel erst bauen)
-
 ## Erledigt
 
 - [x] ironwood-kantine (Test, Haupt-Chat)
@@ -143,5 +141,4 @@ Szene heißt die Datei in `inhalte/abenteuer/szenen/` ohne `.json`.
 - [x] summit-city-aussen, hochebene-felsentuerme, weg-desert-summit-bergstrasse, weg-delacroix-desert-canyonpfad, weg-delacroix-desert-felsbogen: Restpunkte Runde 9, zweite Prüfung (mittel-4) → `mittel-4-restpunkte.md`
 - [x] hochebene-schule (+ vor-diplom), ironwood-aussen-vermietet: Busse in Vorderansicht nach 10.65 (mittel-4) → `mittel-4-busse.md`
 
-- [ ] weg-desert-summit-diner (+ neon): Tür des Hinterzimmers am Diner; hochebene-schule (+ vor-diplom): Bucht mit Randlinie (mittel-4)
-- [ ] weg-silicon-delacroix-deich, weg-ghost-capital-seeufer, weg-ghost-capital-leuchtturm, capital-arena-aussen, port-delacroix-aussen (+ musikhaus-neu), weg-ironwood-silicon-raststaette: neue Fahrzeuge aus Gemini Teil 2 und Stellfläche unter dem Wohnmobil (kurze Sichtprüfung, mittel-1)
+- [x] weg-desert-summit-diner (+ neon): Tür des Hinterzimmers am Diner; hochebene-schule (+ vor-diplom): Bucht mit Randlinie (mittel-4) → `mittel-4-diner-schule.md`

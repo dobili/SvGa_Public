@@ -15,35 +15,43 @@
   "boeden": {
     "holzHell": {
       "bogen": "boden",
-      "feld": [1, 12]
+      "feld": [1, 13],
+      "unter_wand": [1, 12]
     },
     "holzDunkel": {
       "bogen": "boden",
-      "feld": [1, 16]
+      "feld": [1, 17],
+      "unter_wand": [1, 16]
     },
     "dielen": {
       "bogen": "boden",
-      "feld": [5, 12]
+      "feld": [5, 13],
+      "unter_wand": [5, 12]
     },
     "fliesenWeiss": {
       "bogen": "boden",
-      "feld": [1, 4]
+      "feld": [1, 5],
+      "unter_wand": [1, 4]
     },
     "fliesenGrau": {
       "bogen": "boden",
-      "feld": [13, 4]
+      "feld": [13, 5],
+      "unter_wand": [13, 4]
     },
     "teppichRot": {
       "bogen": "boden",
-      "feld": [5, 8]
+      "feld": [5, 9],
+      "unter_wand": [5, 8]
     },
     "teppichBlau": {
       "bogen": "boden",
-      "feld": [9, 18]
+      "feld": [9, 19],
+      "unter_wand": [9, 18]
     },
     "stein": {
       "bogen": "boden",
-      "feld": [13, 34]
+      "feld": [13, 35],
+      "unter_wand": [13, 34]
     },
     "gras": {
       "bogen": "gelaende",

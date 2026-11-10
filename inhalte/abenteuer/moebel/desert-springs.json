@@ -137,7 +137,7 @@
       "stil": "modern"
     },
     "ds8Gemischtwaren": {
-      "quelle": "modern-exteriors/Modern_Exteriors_16x16/ME_Theme_Sorter_16x16/4_Generic_Building_Singles_16x16/ME_Singles_Generic_Building_16x16_Hardware_Store.png",
+      "quelle": "spiel/eigene/fassade_laden.png",
       "breite": 128,
       "hoehe": 144,
       "kollision": true,

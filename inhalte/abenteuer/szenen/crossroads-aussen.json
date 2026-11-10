@@ -1,7 +1,7 @@
 {
   "karte": "crossroads.aussen",
   "art": "aussen",
-  "beschreibung": "Diner-Wagen mit asphaltiertem Vorplatz und das eingezäunte Feld mit dem Erdweg zum Jahrmarkt, die große Tankstelle mit Waschanlage und einer Dieselsäule für Lastwagen. Der Highway hat Mittellinie und Bordsteine, Vorplätze und Parkplatz haben Einfahrten. Südwestlich der Parkplatz mit markierten Buchten: Werksbus, Food-Truck, zwei Sattelzüge, zwei Autos; daneben der Rastplatz mit langen Picknicktischen, Mülleimer und Laterne. Südöstlich ein Motel mit vier Zimmern und Eisautomat, die Werkstatt, der Eisenwarenladen und die kleine Kapelle mit eingezäuntem Friedhof. Östlich der Tankstelle das Farmhaus des Rinderzüchters. Im Osten das geschlossene Viehgatter vor der Alten Minenstraße (S13), dahinter Rinder auf dem Asphalt. Wegweiser mit allen Städten, Schild „Crossroads – Diner + Gas“ vor der Raststätte, Fernbus-Haltestelle mit Gehweg am Highway West.",
+  "beschreibung": "Diner-Wagen mit asphaltiertem Vorplatz und das eingezäunte Feld mit dem Erdweg zum Jahrmarkt, die große Tankstelle mit Waschanlage und einer Dieselsäule für Lastwagen. Der Highway hat Mittellinie und Bordsteine, Vorplätze und Parkplatz haben Einfahrten. Südwestlich der Parkplatz mit markierten Buchten, Bus und Autos stehen quer in ihren Buchten und zeigen Front oder Heck: Werksbus, Food-Truck, zwei Sattelzüge, zwei Autos; daneben der Rastplatz mit langen Picknicktischen, Mülleimer und Laterne. Südöstlich ein Motel mit vier Zimmern und Eisautomat, die Werkstatt, der Eisenwarenladen und die kleine Kapelle mit eingezäuntem Friedhof. Östlich der Tankstelle das Farmhaus des Rinderzüchters. Im Osten das geschlossene Viehgatter vor der Alten Minenstraße (S13), dahinter Rinder auf dem Asphalt. Wegweiser mit allen Städten, Schild „Crossroads – Diner + Gas“ vor der Raststätte, Fernbus-Haltestelle mit Gehweg am Highway West.",
   "boden": "gras",
   "wandart": "gras",
   "boeden": {
@@ -74,11 +74,6 @@
       "feld": [36, 8]
     },
     {
-      "moebel": "crBus",
-      "feld": [4, 30],
-      "bauteil_ok": true
-    },
-    {
       "moebel": "sbFoodtruck",
       "feld": [18, 29]
     },
@@ -89,16 +84,6 @@
     {
       "moebel": "cr7SattelzugBlau",
       "feld": [4, 40]
-    },
-    {
-      "moebel": "rvAutoBlau",
-      "feld": [16, 37],
-      "bauteil_ok": true
-    },
-    {
-      "moebel": "rvAutoGruen",
-      "feld": [20, 37],
-      "bauteil_ok": true
     },
     {
       "moebel": "cr7Motel",
@@ -731,16 +716,6 @@
       "bauteil_ok": true
     },
     {
-      "moebel": "cr9LinieQ9",
-      "feld": [3, 30],
-      "bauteil_ok": true
-    },
-    {
-      "moebel": "cr9LinieQ9",
-      "feld": [3, 34],
-      "bauteil_ok": true
-    },
-    {
       "moebel": "cr9LinieQ12",
       "feld": [3, 36],
       "bauteil_ok": true
@@ -753,41 +728,6 @@
     {
       "moebel": "cr9LinieQ12",
       "feld": [3, 44],
-      "bauteil_ok": true
-    },
-    {
-      "moebel": "cr9LinieL3",
-      "feld": [16, 37],
-      "bauteil_ok": true
-    },
-    {
-      "moebel": "cr9LinieL3",
-      "feld": [16, 41],
-      "bauteil_ok": true
-    },
-    {
-      "moebel": "cr9LinieL3",
-      "feld": [20, 37],
-      "bauteil_ok": true
-    },
-    {
-      "moebel": "cr9LinieL3",
-      "feld": [20, 41],
-      "bauteil_ok": true
-    },
-    {
-      "moebel": "cr9LinieL3",
-      "feld": [24, 37],
-      "bauteil_ok": true
-    },
-    {
-      "moebel": "cr9LinieL3",
-      "feld": [24, 41],
-      "bauteil_ok": true
-    },
-    {
-      "moebel": "cr9LinieQ8",
-      "feld": [16, 40],
       "bauteil_ok": true
     },
     {
@@ -993,6 +933,58 @@
     {
       "moebel": "cr9BordL3",
       "feld": [57, 19],
+      "bauteil_ok": true
+    },
+    {
+      "moebel": "fz11BusAb",
+      "feld": [4, 28],
+      "bauteil_ok": true
+    },
+    {
+      "moebel": "wsgAutoAb1",
+      "feld": [16, 37],
+      "versatz": [8, 0],
+      "bauteil_ok": true
+    },
+    {
+      "moebel": "wsgAutoAuf2",
+      "feld": [19, 37],
+      "versatz": [8, 0],
+      "bauteil_ok": true
+    },
+    {
+      "moebel": "cr9LinieL7",
+      "feld": [4, 28],
+      "bauteil_ok": true
+    },
+    {
+      "moebel": "cr9LinieL7",
+      "feld": [7, 28],
+      "bauteil_ok": true
+    },
+    {
+      "moebel": "cr9LinieL4",
+      "feld": [16, 37],
+      "bauteil_ok": true
+    },
+    {
+      "moebel": "cr9LinieL4",
+      "feld": [19, 37],
+      "bauteil_ok": true
+    },
+    {
+      "moebel": "cr9LinieL4",
+      "feld": [22, 37],
+      "bauteil_ok": true
+    },
+    {
+      "moebel": "cr9LinieL4",
+      "feld": [25, 37],
+      "bauteil_ok": true
+    },
+    {
+      "moebel": "cr9LinieQ9",
+      "feld": [16, 41],
       "bauteil_ok": true
     }
   ],

@@ -757,6 +757,33 @@ Sofa von hinten und Kübelbaum (nicht im Auftrag des Haupt-Chats). Drittes Gutac
 Kübelpflanzen statt des großen Kübelbaums, zwei Stuhlreihen mit Fußraum statt drei dichter, der
 Beistelltisch steht mittig vor den beiden Sesseln.
 
+### Runde 9: erstes Gutachten zu Campus und altem Hafen (mittel-3, 10.11.2026)
+
+`gutachten/silicon-bay-aussen-hafen.md`:
+
+- **Campus (jetzt 72 × 70):**
+  - Heller Plattenboden statt dunklem Kopfstein.
+  - Konzernturm acht Geschosse hoch (Bildwunsch `campus.py`, `konzernturm_hoch`: das Bürohaus mit
+    zweimal eingefügtem Geschossband); dafür zehn Reihen mehr im Norden, dahinter eine Baumreihe.
+  - Tunnelportal am Westrand über der Fahrbahn (`tunnelportal_west`), der Gehweg daneben bleibt frei.
+  - Am Ostrand das gläserne Deck der Glasbrücke mit Geländern; die Fahrbahn endet am Prellbock.
+  - Hotel Bayview als hohes Haus mit Leuchtschild statt des Hauses mit Pultdach.
+  - Zwei Werbetafeln ZERO (`wsgWerbetafelZero`) statt der Burgerwerbung.
+  - Die Ladenzeile steht jetzt direkt südlich des Boulevards, ihre Fronten zeigen auf den Platz;
+    Markt, Baumplatz mit dem Brunnen in der Mitte, Kaffeekiosk und Lab liegen davor.
+  - Terrasse mit Hecke und gläserner Brüstung, Treppe mit Stufen in der Mitte. Das Wohnhaus auf dem
+    Platz ist weg.
+- **Alter Hafen:**
+  - Fähre neu gezeichnet (`hafen_faehre.py`): Schlagschatten, Scheuerleiste, Wasserpass,
+    Bullaugen, Decksplanken, Reling mit Pfosten, Gangway zum Kai.
+  - Häuser mit Hafenbezug: Fischladen und Hafenbedarf (Bilder von mittel-1) statt Stadthaus und
+    Bürohaus; Ames Laden mit Schild „Coming soon“ und Plakat „Bald geöffnet“; Hafenmeisterei mit
+    Schild und Flagge; Netztrockner und Kisten auf der freien Fläche.
+  - Treppe vom Campus in zwei Läufen, darunter eine Stützmauer über die ganze Breite.
+  - Ladung am Ruderboot auf zwei Kisten und eine Fassgruppe verkleinert; ein Kutter kommt über die
+    nächste Gemini-Datei. Am Steg der Inselfähre liegt ein Motorboot. Die Hafenstraße reicht bis zum
+    Westrand.
+
 ### 4.6 Serverraum (`siliconBay.serverraum`)
 
 **Größe:** 14 × 10. Nordwand Reihen 0–2 grau, Boden Doppelboden mit Lochplatten, Südwand Reihe 9 mit

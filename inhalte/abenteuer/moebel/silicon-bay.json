@@ -2330,6 +2330,70 @@
       "blick": "unten",
       "zustand": "neu",
       "stil": "modern"
+    },
+    "sb9KonzernturmHoch": {
+      "quelle": "spiel/eigene/konzernturm_hoch.png",
+      "breite": 192,
+      "hoehe": 464,
+      "kollision": true,
+      "art": "gebaeude",
+      "blick": "unten",
+      "zustand": "neu",
+      "stil": "modern"
+    },
+    "sb9Tunnelportal": {
+      "quelle": "spiel/eigene/tunnelportal_west.png",
+      "breite": 64,
+      "hoehe": 64,
+      "kollision": true,
+      "art": "gebaeude",
+      "blick": "keine",
+      "zustand": "neu",
+      "stil": "modern"
+    },
+    "sb9SchildHotel": {
+      "quelle": "spiel/eigene/schild_hotel_bayview.png",
+      "breite": 80,
+      "hoehe": 16,
+      "kollision": false,
+      "begehbar": true,
+      "begehbar_grund": "hängt an der Fassade",
+      "art": "schild",
+      "zustand": "neu",
+      "stil": "modern"
+    },
+    "sb9SchildFishHall": {
+      "quelle": "spiel/eigene/schild_fish_hall.png",
+      "breite": 56,
+      "hoehe": 16,
+      "kollision": false,
+      "begehbar": true,
+      "begehbar_grund": "hängt an der Fassade",
+      "art": "schild",
+      "zustand": "gebraucht",
+      "stil": "modern"
+    },
+    "sb9SchildHarborMaster": {
+      "quelle": "spiel/eigene/schild_harbor_master.png",
+      "breite": 88,
+      "hoehe": 16,
+      "kollision": false,
+      "begehbar": true,
+      "begehbar_grund": "hängt an der Fassade",
+      "art": "schild",
+      "zustand": "gebraucht",
+      "stil": "modern"
+    },
+    "sb9SchildComingSoon": {
+      "quelle": "spiel/eigene/schild_coming_soon.png",
+      "breite": 72,
+      "hoehe": 16,
+      "kollision": false,
+      "begehbar": true,
+      "begehbar_grund": "hängt an der Fassade",
+      "art": "schild",
+      "zustand": "gebraucht",
+      "stil": "modern"
     }
   }
 }

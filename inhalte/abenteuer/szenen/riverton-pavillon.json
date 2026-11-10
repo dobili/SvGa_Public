@@ -372,11 +372,9 @@
     {
       "name": "zuschauer",
       "typ": "statist",
-      "feld": [6, 10],
+      "feld": [9, 3],
       "eigenschaften": {
-        "von": "6,10",
-        "bis": "6,10",
-        "tun": "schaut einer Blitzpartie zu",
+        "tun": "sitzt auf der Bank und schaut der Partie auf dem Bodenbrett zu",
         "wann": "tag",
         "sagt": "statist.riverton.pavillon.zuschauer"
       }
@@ -384,11 +382,9 @@
     {
       "name": "wettender",
       "typ": "statist",
-      "feld": [16, 8],
+      "feld": [21, 4],
       "eigenschaften": {
-        "von": "16,8",
-        "bis": "16,10",
-        "tun": "wettet um eine Limonade",
+        "tun": "sitzt am Brett und wettet um eine Limonade",
         "wann": "tag",
         "sagt": "statist.riverton.pavillon.wettender"
       }

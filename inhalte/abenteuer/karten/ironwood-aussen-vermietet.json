@@ -23141,19 +23141,19 @@
     },
     {
      "id": 377,
-     "name": "caBus",
+     "name": "fz11BusAb",
      "type": "moebel",
-     "x": 848,
-     "y": 304,
-     "width": 112,
-     "height": 64,
+     "x": 880,
+     "y": 288,
+     "width": 48,
+     "height": 112,
      "rotation": 0,
      "visible": true,
      "properties": [
       {
        "name": "tiefe",
        "type": "int",
-       "value": 360
+       "value": 392
       },
       {
        "name": "kollision",

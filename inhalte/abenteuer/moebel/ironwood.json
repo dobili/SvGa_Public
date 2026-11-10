@@ -1,5 +1,14 @@
 {
   "moebel": {
+    "iw8Andreaskreuz": {
+      "quelle": "spiel/eigene/andreaskreuz.png",
+      "breite": 16,
+      "hoehe": 32,
+      "kollision": true,
+      "art": "schild",
+      "zustand": "gebraucht",
+      "stil": "industrie"
+    },
     "iw8Duschkabine": {
       "quelle": "modern-interiors/1_Interiors/16x16/Theme_Sorter_Black_Shadow_Singles/3_Bathroom_Black_Shadow_Singles_16x16/Bathroom_Black_Shadow_Singles_152.png",
       "breite": 32,

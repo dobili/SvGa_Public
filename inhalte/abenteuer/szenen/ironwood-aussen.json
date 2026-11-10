@@ -20,18 +20,18 @@
   ],
   "raster": [
     "##~~~~~~~~##############pp######################################################",
-    "##~~~~~~~~##############pp######################################################",
-    "##~~~~~~~~pp............pp.....................................................#",
-    "##~~~~~~~~pp............pp.....................................................#",
-    "##~~~~~~~~pp............pp.....................................................#",
-    "##~~~~~~~~pp............pp.....................................................#",
-    "##~~~~~~~~pp............pp.....................................................#",
-    "##~~~~~~~~pp............pp.....................................................#",
-    "##~~~~~~~~pp............pp.....................................................#",
-    "##~~~~~~~~pp............pp.....................................................#",
-    "##~~~~~~~~ppppppppppppppppppppppppppppppppppppp................................#",
-    "##~~~~~~~~ppssssspppppppppppppppppppppppppppppp..........................qq....#",
-    "##~~~~~~~~ppssssssssssssssssssssssssssssssssssp..........................qq....#",
+    "##~~~~~~~~##############pp######################qqqqq###########################",
+    "##~~~~~~~~pp............pp......................qqqqq..........................#",
+    "##~~~~~~~~pp............pp......................qqqqq..........................#",
+    "##~~~~~~~~pp............pp......................qqqqq..........................#",
+    "##~~~~~~~~pp............pp......................qqqqq..........................#",
+    "##~~~~~~~~pp............pp......................qqqqq..........................#",
+    "##~~~~~~~~pp............pp......................qqqqq..........................#",
+    "##~~~~~~~~pp............pp......................qqqqq..........................#",
+    "##~~~~~~~~pp............pp......................qqqqq..........................#",
+    "##~~~~~~~~ppppppppppppppppppppppppppppppppppppp.qqqqq..........................#",
+    "##~~~~~~~~ppssssspppppppppppppppppppppppppppppp.qqqqq....................qq....#",
+    "##~~~~~~~~ppssssssssssssssssssssssssssssssssssp.qqqqq....................qq....#",
     "##~~~~~~~~ppssssssssssssssssssssssssssssssssssp..........................qq....#",
     "##~~~~~~~~ppssssssssssssssssssssssssssssssssssp..........................qq....#",
     "##~~~~~~~~ppsssssppppppppppppppppppppppppppsssp..........................qq....#",
@@ -47,11 +47,11 @@
     "##~~~~~~~~ppppp.........pp................psssp.qqqqqqqqqqqqqqqqqqqqqqqqqqqqqqq#",
     "##~~~~~~~~ppppp.........pp................psssp.qqqqqqqqqqqqqqqqqqqqqqqqqqqqqqq#",
     "##~~~~~~~~pp............pp................psssp.........qqqqq..................#",
-    "#hhhhhhhhhpppppppppppppppppppppppppppppppppsssppppppppppppppppppppppppppppppppp#",
-    "#hhhhhhhhhsssssssssssssssssssssssssssssssssssssssssssssssssssssssssssssssssssss#",
-    "#hhhhhhhhhsssssssssssssssssssssssssssssssssssssssssssssssssssssssssssssssssssss#",
-    "#hhhhhhhhhsssssssssssssssssssssssssssssssssssssssssssssssssssssssssssssssssssss#",
-    "#hhhhhhhhhppppppppppppppppppppppppppppppppppppppppppppppppppppppppppppppppppppp#",
+    "##~~~~~~~~pppppppppppppppppppppppppppppppppsssppppppppppppppppppppppppppppppppp#",
+    "##~~~~~~~~sssssssssssssssssssssssssssssssssssssssssssssssssssssssssssssssssssss#",
+    "##~~~~~~~~sssssssssssssssssssssssssssssssssssssssssssssssssssssssssssssssssssss#",
+    "##~~~~~~~~sssssssssssssssssssssssssssssssssssssssssssssssssssssssssssssssssssss#",
+    "##~~~~~~~~ppppppppppppppppppppppppppppppppppppppppppppppppppppppppppppppppppppp#",
     "##~~~~~~~~pp......pp........pp........qqqqqqqqqqqqqqqqqqqqqqq..................#",
     "##~~~~~~~~pp......pp........pp........qqqqqqqqqqqqqqqqqqqqqqq..................#",
     "##~~~~~~~~pp......pp........pp........qqqqqqqqqqqqqqqqqqqqqqq..................#",
@@ -68,10 +68,10 @@
     "##~~~~~~~~ppppppppppppppppppppppppppppppppppppppppppppppppppppppppppppppppppppp#",
     "##~~~~~~~~ppppppppppppppppppppppppppppppppppppppppppppppppppppppppppppppppppppp#",
     "##~~~~~~~~ppppppppppppppppppppppppppppppppppppppppppppppppppppppppppppppppppppp#",
-    "##~~~~~~~~kkkkkkkkkkkkkkkkkkkkkkkkkkkkkkkkkkkkkkkkkkkkkkkkkkkkkkkkkkkkkkkkkkkkk#",
-    "##~~~~~~~~kkkkkkkkkkkkkkkkkkkkkkkkkkkkkkkkkkkkkkkkkkkkkkkkkkkkkkkkkkkkkkkkkkkkk#",
-    "##~~~~~~~~kkkkkkkkkkkkkkkkkkkkkkkkkkkkkkkkkkkkkkkkkkkkkkkkkkkkkkkkkkkkkkkkkkkkk#",
-    "##~~~~~~~~kkkkkkkkkkkkkkkkkkkkkkkkkkkkkkkkkkkkkkkkkkkkkkkkkkkkkkkkkkkkkkkkkkkkk#",
+    "##~~~~~~~~kkkkkkkkkkkkkkkkkkkkkkkkkkkkkkkkkkkkkkkkkkkkkkkkkkkkuukkkkkkkkkkkkkkk#",
+    "##~~~~~~~~kkkkkkkkkkkkkkkkkkkkkkkkkkkkkkkkkkkkkkkkkkkkkkkkkkkkuukkkkkkkkkkkkkkk#",
+    "##~~~~~~~~kkkkkkkkkkkkkkkkkkkkkkkkkkkkkkkkkkkkkkkkkkkkkkkkkkkkuukkkkkkkkkkkkkkk#",
+    "##~~~~~~~~kkkkkkkkkkkkkkkkkkkkkkkkkkkkkkkkkkkkkkkkkkkkkkkkkkkkuukkkkkkkkkkkkkkk#",
     "##~~~~~~~~...eeeeeeeeeeeeeeeeeeeeeeeeeeeeeeeeeeeeeeeeeeeeeeeeeee...............#",
     "##~~~~~~~~...eeeeeeeeeeeeeeeeeeeeeeeeeeeeeeeeeeeeeeeeeeeeeeeeeee...............#",
     "##~~~~~~~~....gggg.....gggg.....gggg.....gggg.................ee...............#",
@@ -232,20 +232,6 @@
       "feld": [
         75,
         20
-      ]
-    },
-    {
-      "moebel": "mf6Haltestelle",
-      "feld": [
-        12,
-        33
-      ]
-    },
-    {
-      "moebel": "iw5Haltestellenschild",
-      "feld": [
-        17,
-        32
       ]
     },
     {
@@ -588,13 +574,6 @@
       ]
     },
     {
-      "moebel": "iw8StrassenbrueckeGehwegQuer10",
-      "feld": [
-        1,
-        28
-      ]
-    },
-    {
       "moebel": "cc5Poller",
       "feld": [
         10,
@@ -681,73 +660,9 @@
     {
       "moebel": "cc8PrellbockQuer",
       "feld": [
-        12,
-        49
-      ]
-    },
-    {
-      "moebel": "iw5GleisGrau",
-      "feld": [
-        13,
-        49
-      ],
-      "bauteil_ok": true
-    },
-    {
-      "moebel": "iw5GleisGrau",
-      "feld": [
-        14,
-        49
-      ],
-      "bauteil_ok": true
-    },
-    {
-      "moebel": "iw5GleisGrau",
-      "feld": [
-        15,
-        49
-      ],
-      "bauteil_ok": true
-    },
-    {
-      "moebel": "iw5GleisGrau",
-      "feld": [
-        16,
-        49
-      ],
-      "bauteil_ok": true
-    },
-    {
-      "moebel": "iw5GleisGrau",
-      "feld": [
-        17,
-        49
-      ],
-      "bauteil_ok": true
-    },
-    {
-      "moebel": "iw5GleisGrau",
-      "feld": [
-        18,
-        49
-      ],
-      "bauteil_ok": true
-    },
-    {
-      "moebel": "iw5GleisGrau",
-      "feld": [
-        19,
-        49
-      ],
-      "bauteil_ok": true
-    },
-    {
-      "moebel": "iw5GleisGrau",
-      "feld": [
         20,
         49
-      ],
-      "bauteil_ok": true
+      ]
     },
     {
       "moebel": "iw5GleisGrau",
@@ -1227,73 +1142,9 @@
     {
       "moebel": "cc8PrellbockQuer",
       "feld": [
-        12,
-        51
-      ]
-    },
-    {
-      "moebel": "iw5GleisGrau",
-      "feld": [
-        13,
-        51
-      ],
-      "bauteil_ok": true
-    },
-    {
-      "moebel": "iw5GleisGrau",
-      "feld": [
-        14,
-        51
-      ],
-      "bauteil_ok": true
-    },
-    {
-      "moebel": "iw5GleisGrau",
-      "feld": [
-        15,
-        51
-      ],
-      "bauteil_ok": true
-    },
-    {
-      "moebel": "iw5GleisGrau",
-      "feld": [
-        16,
-        51
-      ],
-      "bauteil_ok": true
-    },
-    {
-      "moebel": "iw5GleisGrau",
-      "feld": [
-        17,
-        51
-      ],
-      "bauteil_ok": true
-    },
-    {
-      "moebel": "iw5GleisGrau",
-      "feld": [
-        18,
-        51
-      ],
-      "bauteil_ok": true
-    },
-    {
-      "moebel": "iw5GleisGrau",
-      "feld": [
-        19,
-        51
-      ],
-      "bauteil_ok": true
-    },
-    {
-      "moebel": "iw5GleisGrau",
-      "feld": [
         20,
         51
-      ],
-      "bauteil_ok": true
+      ]
     },
     {
       "moebel": "iw5GleisGrau",
@@ -1769,14 +1620,6 @@
       ],
       "vorn": true,
       "bauteil_ok": true
-    },
-    {
-      "moebel": "mf9LaterneLang",
-      "feld": [
-        15,
-        25
-      ],
-      "vorn": true
     },
     {
       "moebel": "mf9LaterneLang",
@@ -2863,14 +2706,42 @@
         49,
         18
       ]
+    },
+    {
+      "moebel": "iw8Andreaskreuz",
+      "feld": [
+        61,
+        46
+      ]
+    },
+    {
+      "moebel": "iw8Andreaskreuz",
+      "feld": [
+        64,
+        53
+      ]
+    },
+    {
+      "moebel": "mf6Haltestelle",
+      "feld": [
+        11,
+        25
+      ]
+    },
+    {
+      "moebel": "iw5Haltestellenschild",
+      "feld": [
+        10,
+        25
+      ]
     }
   ],
   "ausloeser": [
     {
       "name": "start",
       "feld": [
-        16,
-        32
+        15,
+        28
       ],
       "eigenschaften": {
         "richtung": "links"
@@ -2879,8 +2750,8 @@
     {
       "name": "bushaltestelle",
       "feld": [
-        14,
-        32
+        13,
+        28
       ]
     },
     {
@@ -2901,14 +2772,14 @@
       "name": "busRiverton",
       "feld": [
         12,
-        32
+        28
       ]
     },
     {
       "name": "busSiliconBay",
       "feld": [
-        15,
-        32
+        14,
+        28
       ]
     },
     {
@@ -2993,8 +2864,8 @@
     {
       "name": "victor",
       "feld": [
-        11,
-        28
+        12,
+        33
       ]
     },
     {
@@ -3183,11 +3054,11 @@
       "typ": "statist",
       "feld": [
         16,
-        33
+        28
       ],
       "eigenschaften": {
-        "von": "16,33",
-        "bis": "16,33",
+        "von": "16,28",
+        "bis": "16,28",
         "tun": "macht Pause an der Haltestelle",
         "wann": "tag",
         "sagt": "statist.ironwood.aussen.busfahrerin"

@@ -4398,6 +4398,11 @@
    "name": "kennung",
    "type": "string",
    "value": "sternwarte.felsnase"
+  },
+  {
+   "name": "toenung",
+   "type": "string",
+   "value": "nacht"
   }
  ]
 }

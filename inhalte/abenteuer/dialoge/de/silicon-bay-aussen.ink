@@ -24,6 +24,7 @@ VAR dashGetroffen = false
 VAR dashKarteGegeben = false
 VAR rosieGetroffen = false
 VAR tabletNachtGesehen = false
+VAR batterieErhalten = false
 
 // ---------------------------------------------------------------- Ankunft
 
@@ -192,5 +193,33 @@ Nie wieder Fehler. Und nie wieder ein Grund, etwas Neues zu probieren. #sprecher
 === netze ===
 An der Fassade der alten Fischhalle hängen Netze zum Trocknen, steif vor Salz. Über dem Tor steht verblichen: „Fresh Fish Daily“. #sprecher:erzaehler
 Bevor die Bildschirme kamen, roch diese Stadt nach Fisch. Ein ehrlicher Geruch. #sprecher:ambrose
+-> END
+
+// ---------------------------------------------------------------- Altstadt: Eisenwarenladen (Batterie)
+// Runde 6, Bitte von mittel-4: Das Leuchtfeuer auf der Pelikaninsel braucht eine Batterie
+// (Gegenstand batterie). Der alte Eisenwarenladen der Altstadt führt noch Bootsbatterien.
+// Quest siliconBay.batterie; die Wirkung gibt den Gegenstand.
+
+=== eisenwaren ===
+{batterieErhalten:
+    Im Schaufenster des Eisenwarenladens liegen Schrauben, Taschenlampen und ein Schild: „Wir reparieren noch selbst.“ #sprecher:erzaehler
+    -> END
+}
+Der Eisenwarenladen riecht nach Öl und Holz. Hinter der Theke sortiert ein alter Mann Schrauben in Gläser. #sprecher:erzaehler
+„Was brauchst du? Bei mir gibt es noch Dinge, die man mit den Händen repariert.“ #sprecher:erzaehler
++ [„Eine Batterie für das Leuchtfeuer auf der Pelikaninsel.“]
+    -> eisenwaren_batterie
++ [„Ich schaue nur.“]
+    „Schauen ist umsonst. Das ist das Letzte in dieser Stadt, was umsonst ist.“ #sprecher:erzaehler
+    -> END
+
+=== eisenwaren_batterie ===
+„Das Leuchtfeuer? Das hat seit Jahren keiner mehr gewartet. Die Leute auf dem Campus wissen nicht mal, dass es da draußen brennt.“ #sprecher:erzaehler
+Er zieht unter der Theke eine schwere Bootsbatterie hervor. „Die hab ich für genau so einen Tag aufgehoben. Nimm sie.“ #sprecher:erzaehler
+-> eisenwaren_batterie_mitgenommen
+
+=== eisenwaren_batterie_mitgenommen ===
+~ batterieErhalten = true
+Ein Licht für die Insel. Manche Züge macht man für andere. #sprecher:ambrose
 -> END
 

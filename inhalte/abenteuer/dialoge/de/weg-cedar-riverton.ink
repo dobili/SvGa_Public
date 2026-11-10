@@ -18,6 +18,8 @@ EXTERNAL beginneAufgaben(runde)
 EXTERNAL gibFund(kennung)
 EXTERNAL gibKarte(kennung)
 
+VAR buchseiten = 0
+VAR finchFiguren = 0
 VAR wegCedarRivertonTafelBestanden = false
 VAR fenwickGetroffen = false
 VAR quinnGetroffen = false
@@ -141,6 +143,7 @@ In einem hohlen Baumstamm liegt ein Springer aus hellem Holz, glatt gegriffen. #
 ~ gibFund("holzspringer")
 Unter dem Fuß ist ein Feld eingebrannt, daneben ein winziger Fink. #sprecher:erzaehler
 ~ gibFund("finchSpringerA")
+~ finchFiguren = finchFiguren + 1
 Ein Springer, allein im Wald. Er hüpft wohl noch. #sprecher:ambrose #stimmung:lacht
 -> END
 
@@ -194,7 +197,7 @@ Sie warten aufeinander. Und es macht sie nicht unglücklich. #sprecher:ambrose
 
 // ---------------------------------------------------------------- Runde 6: Buchseite und Durchlass S14
 
-=== fund_seite01 ===
+=== seite01 ===
 {seite01Gefunden:
     Im Schotter neben dem Bahnsteig liegen nur Steine. #sprecher:erzaehler
     -> END
@@ -203,6 +206,7 @@ Sie warten aufeinander. Und es macht sie nicht unglücklich. #sprecher:ambrose
 Zwischen den Schottersteinen neben dem Bahnsteig flattert ein Blatt Papier. #sprecher:erzaehler
 Eine Seite aus einem Handbuch, Kapitel 1: „Grundprinzipien des Schachs“. #sprecher:erzaehler
 ~ gibFund("seite01")
+~ buchseiten = buchseiten + 1
 -> END
 
 // Durchlass unter dem Damm (13_Wegenetz.md, S14): stockdunkel, nur mit der Laterne aus Ironwood.

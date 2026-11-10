@@ -264,6 +264,10 @@
       "moebel": "ld5Ruderboot",
       "feld": [21, 18],
       "bauteil_ok": true
+    },
+    {
+      "moebel": "lp6Brunnen",
+      "feld": [30, 36]
     }
   ],
   "ausloeser": [
@@ -319,6 +323,10 @@
     {
       "name": "henriksBoot",
       "feld": [23, 20]
+    },
+    {
+      "name": "pumpe",
+      "feld": [31, 36]
     }
   ],
   "figuren": [],

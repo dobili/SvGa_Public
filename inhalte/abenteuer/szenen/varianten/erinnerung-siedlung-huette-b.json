@@ -2,6 +2,7 @@
   "karte": "erinnerungSiedlung.huette",
   "datei": "karten/varianten/erinnerung-siedlung-huette-b.json",
   "art": "innen",
+  "toenung": "sepia",
   "wand": "holz",
   "boden": "dielen",
   "beschreibung": "Variante B (schlichter): Fast leer: die Pritsche an der Ostwand, der Tisch mit Brett und Kerze an der Westseite, ein Stuhl, der Kanonenofen in der Nordwestecke, eine einzelne Kiste. Der Postreiter steht an der Tür.",

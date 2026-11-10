@@ -47,7 +47,7 @@ Vor der Schutzhütte hackt eine Frau Holz. Auf der Bank daneben sitzen zwei Wand
 Greta. Mir gehört die Hütte. Wer wochenlang wandert, trägt kein Brett. Also spielt man im Kopf. #sprecher:greta
 Blindschach. Du sagst deinen Zug, ich sage meinen. Wer sich verzählt, verliert. #sprecher:greta
 Ich habe zwölf Jahre lang Partien in Briefen gespielt. Das hier ist meine Heimat. #sprecher:ambrose #stimmung:friedlich
-Kapitel 11, {held}: Varianten berechnen. Das Brett im Kopf ist dasselbe Brett. Nur leiser. #sprecher:ambrose
+Kapitel 7, {held}: Rechnen statt hoffen. Das Brett im Kopf ist dasselbe Brett. Nur leiser. #sprecher:ambrose
 -> greta_angebot
 
 === greta_angebot ===

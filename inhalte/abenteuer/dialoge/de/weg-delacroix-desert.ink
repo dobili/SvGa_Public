@@ -150,6 +150,8 @@ Unter dem Felsbogen läuft eine alte Eisenbahnbrücke. Auf jeder Niete stehen di
 -> END
 
 // >>> Runde 6 (mittel-4)
+VAR finchFiguren = 0
+VAR buchseiten = 0
 VAR hatLaterne = false
 VAR sternwarteOffen = false
 VAR seilschaftBegonnen = false
@@ -200,7 +202,7 @@ Du hast die Stellung im Kopf behalten. Hier, der gehört dir. Er hält mehr, als
 
 // ---------------------------------------------------------------- Funde am Felsbogen
 
-=== fund_seite06 ===
+=== seite06 ===
 {gefundenSeite06:
     Unter dem Bogen ist nur noch Sand. #sprecher:erzaehler
     -> END
@@ -208,9 +210,10 @@ Du hast die Stellung im Kopf behalten. Hier, der gehört dir. Er hält mehr, als
 ~ gefundenSeite06 = true
 Unter dem Felsbogen klemmt eine Buchseite zwischen zwei Steinen. Oben steht: Kapitel 6, Mittelspielstrategie. #sprecher:erzaehler
 ~ gibFund("seite06")
+~ buchseiten = buchseiten + 1
 -> END
 
-=== fund_finch_laeufer_b ===
+=== finch_laeufer_b ===
 {gefundenFinchLaeuferB:
     Im Felsspalt ist nur noch das Finkenzeichen aus Kreide. #sprecher:erzaehler
     -> END
@@ -219,6 +222,7 @@ Unter dem Felsbogen klemmt eine Buchseite zwischen zwei Steinen. Oben steht: Kap
 Neben einem kleinen Fink aus Kreide steckt etwas im Felsspalt: ein weißer Läufer aus Buchsbaum. #sprecher:erzaehler
 Unter seinem Fuß ist ein Feld eingebrannt. #sprecher:erzaehler
 ~ gibFund("finchLaeuferB")
+~ finchFiguren = finchFiguren + 1
 -> END
 
 // ---------------------------------------------------------------- Sperre S9: Abzweig zur Sternwarte

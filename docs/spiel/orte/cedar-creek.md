@@ -680,3 +680,7 @@ Quest `wegMapleCedar.flohmarkt` („Finchs Fallen“): Fallen lösen, dann bei O
 Finch-Jagd abholen (Funde `finchKarte`, `problemheft`). Die Karten von Flussweg und Zedernpfad in
 `orte.json` zeigen jetzt auf die gewählten Fassungen (`weg-maple-cedar-flussweg.json`,
 `weg-maple-cedar-zedernpfad.json`); `weg-maple-cedar-2.json` und `-3.json` sind die alten Stände.
+
+**Nachtrag Runde 6 (niedrig-1):** Der Flussweg hat die feste Tönung `nebel` (F1, Nebel am Morgen).
+Die Fundknoten heißen wie ihre Auslöser (`seite00`, `finch_bauer_a`) und zählen `buchseiten` und
+`finchFiguren` hoch (Vereinbarung der Sammelstränge).

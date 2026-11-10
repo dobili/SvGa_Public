@@ -326,6 +326,10 @@
     {
       "name": "campus",
       "feld": [71, 22]
+    },
+    {
+      "name": "eisenwaren",
+      "feld": [25, 41]
     }
   ],
   "figuren": [],

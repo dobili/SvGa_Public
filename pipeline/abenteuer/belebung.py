@@ -76,3 +76,64 @@ def pruefe_belebung(szene: dict, art_des_orts: str | None, stadtkarte: bool, tex
             f"mindestens {soll[0]} ({soll[1]} ansprechbar) und {soll[2]} Tiere (Regel 10.53)"
         )
     return befunde
+
+
+# Verhalten, die nicht auf begehbarem Boden stehen müssen: Vögel in der Luft, Tiere im Wasser.
+IN_DER_LUFT = {"fliegen"}
+IM_WASSER = {"schwimmen"}
+# Möbel, auf denen Statisten sitzen oder stehen dürfen (Wortteile im Namen, klein geschrieben).
+SITZPLAETZE = ("bank", "stuhl", "sessel", "sofa", "hocker", "couch", "buehne")
+
+
+def _standfelder(b: dict) -> list[tuple[int, int]]:
+    """Startfeld und, falls angegeben, die Wegpunkte ``von`` und ``bis`` („26,4“) einer Belebung."""
+    felder = [tuple(b["feld"])]
+    for schluessel in ("von", "bis"):
+        wert = b.get("eigenschaften", {}).get(schluessel)
+        if isinstance(wert, str) and "," in wert:
+            x, y = wert.split(",", 1)
+            felder.append((int(x), int(y)))
+    return felder
+
+
+def _sitzplatz(b: dict, moebelname: str) -> bool:
+    """Ein Statist auf einer Bank, einem Stuhl oder einer Bühne steht dort mit Absicht."""
+    return b.get("typ") == "statist" and any(w in moebelname.lower() for w in SITZPLAETZE)
+
+
+def pruefe_standorte(
+    szene: dict, zeilen: list[str], gesperrt: set[str], belegt: dict[tuple[int, int], str]
+) -> list[str]:
+    """Statisten und Tiere stehen auf begehbarem Boden; Schwimmer im Wasser (Regel 10.55).
+
+    Warum: Rückmeldung des Autors zu Akt 1 (10.11.2026): „Die Tiere und eine Figur stehen in der
+    Mitte der Karte im Wasser“ (Flussweg), „Ein Tier hängt auf der rechten Seite in einem Baum“
+    (Zedernpfad). Die App zeichnet sie dort, wo die Daten sie hinstellen; laufen können sie dort nicht.
+    Eingaben: Szene, Raster, gesperrte Rasterzeichen (Wand, Wasser, leer), von Möbeln gesperrte
+    Felder mit dem Namen des Möbels.
+    Ausgabe: Befundliste, je Belebung höchstens ein Befund.
+    Sonderfälle: ``fliegen`` darf überall sein; ``schwimmen`` muss auf Wasser „~“ stehen; Statisten
+    dürfen auf Bänken, Stühlen und Bühnen stehen (``SITZPLAETZE``).
+    """
+    befunde = []
+    for b in szene.get("belebung", []):
+        verhalten = b.get("eigenschaften", {}).get("verhalten")
+        if verhalten in IN_DER_LUFT:
+            continue
+        for x, y in _standfelder(b):
+            innen = 0 <= y < len(zeilen) and 0 <= x < len(zeilen[0])
+            zeichen = zeilen[y][x] if innen else " "
+            if verhalten in IM_WASSER:
+                fehler = None if zeichen == "~" else "schwimmt an Land"
+            elif zeichen == "~":
+                fehler = "steht im Wasser"
+            elif zeichen in gesperrt:
+                fehler = "steht auf Wand oder außerhalb"
+            elif (x, y) in belegt and not _sitzplatz(b, belegt[(x, y)]):
+                fehler = f"steht in {belegt[(x, y)]}"
+            else:
+                fehler = None
+            if fehler:
+                befunde.append(f"{b['name']} {fehler} bei ({x}, {y}) (Regel 10.55)")
+                break
+    return befunde

@@ -18,6 +18,8 @@ EXTERNAL beginnePartie(begegnung)
 EXTERNAL beginneAufgaben(runde)
 EXTERNAL gibFund(kennung)
 
+VAR buchseiten = 0
+VAR finchFiguren = 0
 VAR held = "Du"
 VAR wegMapleCedarTafelBestanden = false
 VAR wandererBesuche = 0
@@ -228,7 +230,7 @@ Odette packt eine Lampe in Zeitungspapier. „Am Leuchtturm bei Capital sehen wi
 
 // ---------------------------------------------------------------- Runde 6: Sammelstellen
 
-=== fund_seite00 ===
+=== seite00 ===
 {seite00Gefunden:
     Im Graben liegt nur noch Laub. #sprecher:erzaehler
     -> END
@@ -237,10 +239,11 @@ Odette packt eine Lampe in Zeitungspapier. „Am Leuchtturm bei Capital sehen wi
 Im Graben neben dem Hof steckt ein Blatt Papier, feucht vom Tau. #sprecher:erzaehler
 Eine Seite aus einem Handbuch, Kapitel 0: „Dein Einstieg ins Schachbuch“. #sprecher:erzaehler
 ~ gibFund("seite00")
+~ buchseiten = buchseiten + 1
 Eine Seite aus einem Buch, das es zu meiner Zeit noch nicht gab. Heb sie auf. #sprecher:ambrose
 -> END
 
-=== fund_finch_bauer_a ===
+=== finch_bauer_a ===
 {finchBauerAGefunden:
     Unter der Bank ist nichts mehr, nur das Blechschild mit dem Finken am Pfosten. #sprecher:erzaehler
     -> END
@@ -249,6 +252,7 @@ Eine Seite aus einem Buch, das es zu meiner Zeit noch nicht gab. Heb sie auf. #s
 Am Pfosten neben der Bank hängt ein Blechschild mit einem Finken. Unter der Bank klemmt etwas. #sprecher:erzaehler
 Ein weißer Bauer aus hellem Holz. Unter dem Fuß ist ein Feld eingebrannt. #sprecher:erzaehler
 ~ gibFund("finchBauerA")
+~ finchFiguren = finchFiguren + 1
 -> END
 
 // ---------------------------------------------------------------- Runde 6: Stamm auf dem Zedernpfad (S2)

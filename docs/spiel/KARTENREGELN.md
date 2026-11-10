@@ -773,3 +773,11 @@ auf jeder soll etwas passieren, das man entdecken kann. Die Geschichten dazu ste
     Spalten. Eine Tür zwischen zwei Spalten (etwa x 54–73) oder schmaler als eine Kachel (etwa
     x 34–45) wird neu gezeichnet. Die Werkzeuge im privaten Repository nennen die Türlage im
     Dateikopf („Tür x 48–63“). Der Übergang liegt auf der Kachel direkt unter der Tür.
+
+55. **Statisten und Tiere stehen dort, wo man stehen kann** (Rückmeldung des Autors zu Akt 1,
+    10.11.2026: „Die Tiere und eine Figur stehen in der Mitte der Karte im Wasser“, „Ein Tier hängt
+    in einem Baum“). Startfeld und Wegpunkte (`von`, `bis`) jeder Belebung liegen auf begehbarem
+    Boden, nicht im Wasser und nicht im Sperrbereich eines Möbels oder Baums. Ausnahmen: `fliegen`
+    darf überall sein; `schwimmen` steht im Wasser `~` (die App und die Vorschau zeigen Schwimmer
+    nur bis zur Wasserlinie); Statisten dürfen auf Bänken, Stühlen, Sesseln und Bühnen stehen. Ein
+    Angler steht auf dem letzten Feld des Stegs, nicht davor. Der Kartenbauer meldet Verstöße.

@@ -1002,8 +1002,8 @@ Quest `wegCedarRiverton.zugpartie` (Rätsel): Dialog `zugpartie_angebot`, dann d
 
 Quests (alle `klein`): `lockport.tafelSchleuse` (5 Münzen), `.kahnrennen` (3 Aufgaben Doppelangriff,
 10), `.taue` (2 Aufgaben Fesselung, 10 und Gegenstand `gummistiefel`), `.post` (10, setzt
-`lastkahnFrei`). Den Brief gibt Big Joe in Ironwood mit der Variable `briefFuerRuben` (mittel-4 setzt
+`lastkahnFrei`). Den Brief gibt Big Joe in Ironwood mit der Variable `briefFuerRuben` (mittel-2 setzt
 sie in seinem Dialog). Imogen, Ruben und Henrik stehen als Statisten ohne Satz an ihren Auslösern; in B
-liegt das Ruderboot neu bei (21, 18). **Offen:** Glocke und Pumpe haben kein Bild auf der Karte und
-bleiben ohne Auslöser; die Schnellreise mit dem Lastkahn (`reise`) braucht Anleger in Riverton und
+liegt das Ruderboot neu bei (21, 18). Statt der Pumpe steht ein Dorfbrunnen mit Kurbel (`lp6Brunnen`, Modern Farm) bei (30, 36), Auslöser
+`pumpe` (31, 36), in allen drei Varianten. **Offen:** Die Glocke hat noch kein Bild; die Schnellreise mit dem Lastkahn (`reise`) braucht Anleger in Riverton und
 Ironwood.

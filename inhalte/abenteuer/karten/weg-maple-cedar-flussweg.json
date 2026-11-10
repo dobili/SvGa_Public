@@ -18015,6 +18015,11 @@
    "name": "kennung",
    "type": "string",
    "value": "wegMapleCedar.flussweg"
+  },
+  {
+   "name": "toenung",
+   "type": "string",
+   "value": "nebel"
   }
  ]
 }

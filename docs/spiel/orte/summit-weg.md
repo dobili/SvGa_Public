@@ -314,6 +314,8 @@ Kehren. **Ränder** offen nur Ost (39, 120–122), West (0, 70–71), Nord (18�
 - **Ansehen:**
   - Diner: `reklame` (D3), `motelschild` (D4), `aussicht` (Rastbank D11);
   - Bergstraße: `aussichtBerg` (B3), `wegweiserHochebene` (B5), `quelle` (B6).
-- **Offen:**
-  - repariertes Neonschild als Szenenvariante nach `fundNeonK`;
-  - Tönung Hitze (beides mittel-2).
+- **Repariertes Neonschild:** Wer das K gefunden hat, kann es Earl geben (`earl_k`, Wahl in
+  `earl_alltag`). Das setzt `neonRepariert`; orte.json lädt dann über `zustaende` die zweite Fassung
+  `weg-desert-summit-diner-neon` (A, B, C) mit leuchtendem Schild `wds6SchildDinerHell`
+  (`schild_kings_diner_hell.png`) und ohne das K im Hinterhof.
+- **Offen:** Tönung Hitze (mittel-2).

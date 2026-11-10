@@ -15,7 +15,7 @@ import json
 import sys
 from pathlib import Path
 
-from pipeline.abenteuer.belebung import lade_texte, pruefe_belebung
+from pipeline.abenteuer.belebung import lade_texte, pruefe_belebung, pruefe_standorte
 from pipeline.abenteuer.kartenregeln import pruefe_regeln
 from pipeline.abenteuer.maske import maskenfelder
 from pipeline.abenteuer.moebelliste import lade_moebel
@@ -301,6 +301,8 @@ def baue(pfad: Path) -> list[str]:
         ort = ortseintrag(szene["karte"]) or {}
         stadt = zaehlt_als_stadtkarte(szene) and "groesse" in ort
         befunde += pruefe_belebung(szene, ort.get("art", "stadt"), stadt, lade_texte())
+        belegt = {feld: s["name"] for s in gesetzt for feld in sperrfelder(s)}
+        befunde += pruefe_standorte(szene, zeilen, GESPERRT, belegt)
     befunde += vergleiche_mit_a(pfad.resolve(), szene, lade)
     if "toenung" in szene and szene["toenung"] not in TOENUNGEN:
         befunde.append(f"Tönung {szene['toenung']!r} unbekannt (erlaubt: {', '.join(TOENUNGEN)})")

@@ -252,6 +252,25 @@ frei begehbar; die Auslöser kommen mit den Dialogen.
 - **Sammelstränge:** Fundknoten zählen die gemeinsamen Ink-Variablen `buchseiten`, `finchFiguren`,
   `spurenPM` hoch (zusätzlich zu `gibFund`).
 
+### 3.4 Runde 9 (mittel-1, 10.11.2026): Mängel aus der Variantenwahl
+
+**Bayou (`bayou.steg`, C):**
+
+- Das Wasser ist schwarz und steht (`"ufer": "moor"`, Material `wasser_moor`): LimeZus Uferblock
+  mit umgefärbtem Wasser, braunschwarz mit grünem Schimmer, ohne Wellen (Bildwunsch
+  `wasser_moor.py`). Die Flüsse der anderen Karten bleiben türkis.
+- Die Inseln sind ausgefranst statt rechteckig: Ecken abgerundet, Ufer in Stücken von drei Feldern
+  eingebuchtet oder vorgeschoben. Stegenden, Hütten, Auslöser und Figuren bleiben, wo sie waren.
+  Von den weißen Blumen bleibt ein Drittel, damit die Inseln nicht wie Rasen wirken.
+- Therons Hütte ist eine verwitterte Bretterhütte (13, 10) mit Fässern, Blechkiste und Brennholz.
+  Das blaue Haus ist jetzt die Bretterhütte der Krebsfischerin (31, 25), sie steht mit ihrer Reuse
+  am Ufer davor (30, 30).
+- Die Südwestinsel ist über einen kurzen Steg (9–11, 24) erreichbar. Dort sitzt der Angler neben
+  seinem Kahn (6, 30).
+- Der Reiher wird wie alle weißen Wasservögel als Möwe gezeichnet (`tierarten.json`, Stamm
+  „reiher“), nicht mehr als Huhn. Ein eigenes Reiherbild wäre ein Bildwunsch für später.
+- Zustände: keine neuen. Das Hochwasser (S8) zeigt schon der halb überflutete Steg.
+
 ## 4. Bühnenbilder
 
 ### 4.1 Fährdeck

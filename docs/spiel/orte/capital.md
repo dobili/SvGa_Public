@@ -362,6 +362,9 @@ Kollision.
 - **Seeufer:** Eiswagen (`gc12Eiswagen`, (102, 10)) und Hotdogwagen (`gc12Hotdogwagen`, (112, 10))
   ersetzen die zwei Wagen in Seitenansicht. Der Sonnenschirm steht dazwischen (106, 9).
 - **Arena außen:** Der Imbisswagen ist der Hotdogwagen von vorn (`ca12Hotdogwagen`, (6, 39)).
+- **Verkäufer (Sichtprüfung `gemini-fahrzeuge-teil2.md`):** Sie stehen an der Längsseite der
+  Wagen: Eisverkäufer (105, 13), Hotdogköchin unter der Markise (115, 12), an der Arena ein
+  neuer Hotdogverkäufer unter der Markise (9, 41). Der Tourist steht bei (11, 44).
 - **Leuchtturm, Wohnmobil:** Es steht auf einer Schotterfläche (81–84, 8–13), eine Schotterspur
   (82–83, 14–15) führt zum Weg.
 

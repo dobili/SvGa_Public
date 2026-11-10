@@ -347,7 +347,8 @@ frei begehbar; die Auslöser kommen mit den Dialogen.
 
 - **Deich, Messwagen (Gemini Teil 2, 10.11.2026):** Der Messwagen ist jetzt der Lieferwagen von
   vorn (`dz12Lieferwagen`, Bild `spiel/eigene/lieferwagen_vorn.png`, (139, 11)) auf einer
-  Pflasterfläche (138–142, 11–15). Der Längsstreifen ist wieder Wiese.
+  Pflasterfläche (138–142, 11–16). Der Längsstreifen ist wieder Wiese. Baum, Schilf und Gras
+  stehen neben der Fläche (Sichtprüfung `gemini-fahrzeuge-teil2.md`).
 
 ## 4. Bühnenbilder
 

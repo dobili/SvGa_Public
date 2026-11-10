@@ -1150,13 +1150,13 @@
       "name": "eisverkaeufer",
       "typ": "statist",
       "feld": [
-        103,
-        16
+        105,
+        13
       ],
       "eigenschaften": {
-        "von": "103,16",
-        "bis": "103,16",
-        "tun": "verkauft Eis aus dem Wagen",
+        "von": "105,13",
+        "bis": "105,13",
+        "tun": "verkauft Eis neben dem Wagen",
         "wann": "tag",
         "bild": "statist-05",
         "verhalten": "sitzen"
@@ -1166,13 +1166,13 @@
       "name": "tacokoechin",
       "typ": "statist",
       "feld": [
-        113,
-        16
+        115,
+        12
       ],
       "eigenschaften": {
-        "von": "113,16",
-        "bis": "113,16",
-        "tun": "reicht Tacos aus dem Fenster",
+        "von": "115,12",
+        "bis": "115,12",
+        "tun": "reicht Hotdogs unter der Markise heraus",
         "wann": "tag",
         "bild": "statist-16",
         "verhalten": "sitzen"

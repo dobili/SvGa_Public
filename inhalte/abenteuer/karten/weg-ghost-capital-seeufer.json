@@ -14031,8 +14031,8 @@
      "id": 22,
      "name": "eisverkaeufer",
      "type": "statist",
-     "x": 1648,
-     "y": 256,
+     "x": 1680,
+     "y": 208,
      "width": 16,
      "height": 16,
      "rotation": 0,
@@ -14041,17 +14041,17 @@
       {
        "name": "von",
        "type": "string",
-       "value": "103,16"
+       "value": "105,13"
       },
       {
        "name": "bis",
        "type": "string",
-       "value": "103,16"
+       "value": "105,13"
       },
       {
        "name": "tun",
        "type": "string",
-       "value": "verkauft Eis aus dem Wagen"
+       "value": "verkauft Eis neben dem Wagen"
       },
       {
        "name": "wann",
@@ -14074,8 +14074,8 @@
      "id": 23,
      "name": "tacokoechin",
      "type": "statist",
-     "x": 1808,
-     "y": 256,
+     "x": 1840,
+     "y": 192,
      "width": 16,
      "height": 16,
      "rotation": 0,
@@ -14084,17 +14084,17 @@
       {
        "name": "von",
        "type": "string",
-       "value": "113,16"
+       "value": "115,12"
       },
       {
        "name": "bis",
        "type": "string",
-       "value": "113,16"
+       "value": "115,12"
       },
       {
        "name": "tun",
        "type": "string",
-       "value": "reicht Tacos aus dem Fenster"
+       "value": "reicht Hotdogs unter der Markise heraus"
       },
       {
        "name": "wann",

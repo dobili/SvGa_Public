@@ -94,1025 +94,1726 @@
   "objekte": [
     {
       "moebel": "sd6RelingCObenLinks",
-      "feld": [7, 4],
+      "feld": [
+        7,
+        4
+      ],
       "bauteil_ok": true
     },
     {
       "moebel": "sd6RelingCObenRechts",
-      "feld": [22, 4],
+      "feld": [
+        22,
+        4
+      ],
       "bauteil_ok": true
     },
     {
       "moebel": "sd6RelingCUntenLinks",
-      "feld": [7, 73],
+      "feld": [
+        7,
+        73
+      ],
       "bauteil_ok": true
     },
     {
       "moebel": "sd6RelingCUntenRechts",
-      "feld": [22, 73],
+      "feld": [
+        22,
+        73
+      ],
       "bauteil_ok": true
     },
     {
       "moebel": "sd6RelingCOben",
-      "feld": [8, 4],
+      "feld": [
+        8,
+        4
+      ],
       "bauteil_ok": true
     },
     {
       "moebel": "sd6RelingCUnten",
-      "feld": [8, 73],
+      "feld": [
+        8,
+        73
+      ],
       "bauteil_ok": true
     },
     {
       "moebel": "sd6RelingCOben",
-      "feld": [9, 4],
+      "feld": [
+        9,
+        4
+      ],
       "bauteil_ok": true
     },
     {
       "moebel": "sd6RelingCUnten",
-      "feld": [9, 73],
+      "feld": [
+        9,
+        73
+      ],
       "bauteil_ok": true
     },
     {
       "moebel": "sd6RelingCOben",
-      "feld": [10, 4],
+      "feld": [
+        10,
+        4
+      ],
       "bauteil_ok": true
     },
     {
       "moebel": "sd6RelingCUnten",
-      "feld": [10, 73],
+      "feld": [
+        10,
+        73
+      ],
       "bauteil_ok": true
     },
     {
       "moebel": "sd6RelingCOben",
-      "feld": [11, 4],
+      "feld": [
+        11,
+        4
+      ],
       "bauteil_ok": true
     },
     {
       "moebel": "sd6RelingCUnten",
-      "feld": [11, 73],
+      "feld": [
+        11,
+        73
+      ],
       "bauteil_ok": true
     },
     {
       "moebel": "sd6RelingCOben",
-      "feld": [12, 4],
+      "feld": [
+        12,
+        4
+      ],
       "bauteil_ok": true
     },
     {
       "moebel": "sd6RelingCUnten",
-      "feld": [12, 73],
+      "feld": [
+        12,
+        73
+      ],
       "bauteil_ok": true
     },
     {
       "moebel": "sd6RelingCObenRechts",
-      "feld": [13, 4],
+      "feld": [
+        13,
+        4
+      ],
       "bauteil_ok": true
     },
     {
       "moebel": "sd6RelingCUntenRechts",
-      "feld": [13, 73],
+      "feld": [
+        13,
+        73
+      ],
       "bauteil_ok": true
     },
     {
       "moebel": "sd6RelingCObenLinks",
-      "feld": [16, 4],
+      "feld": [
+        16,
+        4
+      ],
       "bauteil_ok": true
     },
     {
       "moebel": "sd6RelingCUntenLinks",
-      "feld": [16, 73],
+      "feld": [
+        16,
+        73
+      ],
       "bauteil_ok": true
     },
     {
       "moebel": "sd6RelingCOben",
-      "feld": [17, 4],
+      "feld": [
+        17,
+        4
+      ],
       "bauteil_ok": true
     },
     {
       "moebel": "sd6RelingCUnten",
-      "feld": [17, 73],
+      "feld": [
+        17,
+        73
+      ],
       "bauteil_ok": true
     },
     {
       "moebel": "sd6RelingCOben",
-      "feld": [18, 4],
+      "feld": [
+        18,
+        4
+      ],
       "bauteil_ok": true
     },
     {
       "moebel": "sd6RelingCUnten",
-      "feld": [18, 73],
+      "feld": [
+        18,
+        73
+      ],
       "bauteil_ok": true
     },
     {
       "moebel": "sd6RelingCOben",
-      "feld": [19, 4],
+      "feld": [
+        19,
+        4
+      ],
       "bauteil_ok": true
     },
     {
       "moebel": "sd6RelingCUnten",
-      "feld": [19, 73],
+      "feld": [
+        19,
+        73
+      ],
       "bauteil_ok": true
     },
     {
       "moebel": "sd6RelingCOben",
-      "feld": [20, 4],
+      "feld": [
+        20,
+        4
+      ],
       "bauteil_ok": true
     },
     {
       "moebel": "sd6RelingCUnten",
-      "feld": [20, 73],
+      "feld": [
+        20,
+        73
+      ],
       "bauteil_ok": true
     },
     {
       "moebel": "sd6RelingCOben",
-      "feld": [21, 4],
+      "feld": [
+        21,
+        4
+      ],
       "bauteil_ok": true
     },
     {
       "moebel": "sd6RelingCUnten",
-      "feld": [21, 73],
+      "feld": [
+        21,
+        73
+      ],
       "bauteil_ok": true
     },
     {
       "moebel": "sd6RelingCSeiteLinks",
-      "feld": [7, 5],
+      "feld": [
+        7,
+        5
+      ],
       "bauteil_ok": true
     },
     {
       "moebel": "sd6RelingCSeiteRechts",
-      "feld": [22, 5],
+      "feld": [
+        22,
+        5
+      ],
       "bauteil_ok": true
     },
     {
       "moebel": "sd6RelingCSeiteLinks",
-      "feld": [7, 6],
+      "feld": [
+        7,
+        6
+      ],
       "bauteil_ok": true
     },
     {
       "moebel": "sd6RelingCSeiteRechts",
-      "feld": [22, 6],
+      "feld": [
+        22,
+        6
+      ],
       "bauteil_ok": true
     },
     {
       "moebel": "sd6RelingCSeiteLinks",
-      "feld": [7, 7],
+      "feld": [
+        7,
+        7
+      ],
       "bauteil_ok": true
     },
     {
       "moebel": "sd6RelingCSeiteRechts",
-      "feld": [22, 7],
+      "feld": [
+        22,
+        7
+      ],
       "bauteil_ok": true
     },
     {
       "moebel": "sd6RelingCSeiteLinks",
-      "feld": [7, 8],
+      "feld": [
+        7,
+        8
+      ],
       "bauteil_ok": true
     },
     {
       "moebel": "sd6RelingCSeiteRechts",
-      "feld": [22, 8],
+      "feld": [
+        22,
+        8
+      ],
       "bauteil_ok": true
     },
     {
       "moebel": "sd6RelingCSeiteLinks",
-      "feld": [7, 9],
+      "feld": [
+        7,
+        9
+      ],
       "bauteil_ok": true
     },
     {
       "moebel": "sd6RelingCSeiteRechts",
-      "feld": [22, 9],
+      "feld": [
+        22,
+        9
+      ],
       "bauteil_ok": true
     },
     {
       "moebel": "sd6RelingCSeiteLinks",
-      "feld": [7, 10],
+      "feld": [
+        7,
+        10
+      ],
       "bauteil_ok": true
     },
     {
       "moebel": "sd6RelingCSeiteRechts",
-      "feld": [22, 10],
+      "feld": [
+        22,
+        10
+      ],
       "bauteil_ok": true
     },
     {
       "moebel": "sd6RelingCSeiteLinks",
-      "feld": [7, 11],
+      "feld": [
+        7,
+        11
+      ],
       "bauteil_ok": true
     },
     {
       "moebel": "sd6RelingCSeiteRechts",
-      "feld": [22, 11],
+      "feld": [
+        22,
+        11
+      ],
       "bauteil_ok": true
     },
     {
       "moebel": "sd6RelingCSeiteLinks",
-      "feld": [7, 12],
+      "feld": [
+        7,
+        12
+      ],
       "bauteil_ok": true
     },
     {
       "moebel": "sd6RelingCSeiteRechts",
-      "feld": [22, 12],
+      "feld": [
+        22,
+        12
+      ],
       "bauteil_ok": true
     },
     {
       "moebel": "sd6RelingCSeiteLinks",
-      "feld": [7, 13],
+      "feld": [
+        7,
+        13
+      ],
       "bauteil_ok": true
     },
     {
       "moebel": "sd6RelingCSeiteRechts",
-      "feld": [22, 13],
+      "feld": [
+        22,
+        13
+      ],
       "bauteil_ok": true
     },
     {
       "moebel": "sd6RelingCSeiteLinks",
-      "feld": [7, 14],
+      "feld": [
+        7,
+        14
+      ],
       "bauteil_ok": true
     },
     {
       "moebel": "sd6RelingCSeiteRechts",
-      "feld": [22, 14],
+      "feld": [
+        22,
+        14
+      ],
       "bauteil_ok": true
     },
     {
       "moebel": "sd6RelingCSeiteLinks",
-      "feld": [7, 15],
+      "feld": [
+        7,
+        15
+      ],
       "bauteil_ok": true
     },
     {
       "moebel": "sd6RelingCSeiteRechts",
-      "feld": [22, 15],
+      "feld": [
+        22,
+        15
+      ],
       "bauteil_ok": true
     },
     {
       "moebel": "sd6RelingCSeiteLinks",
-      "feld": [7, 16],
+      "feld": [
+        7,
+        16
+      ],
       "bauteil_ok": true
     },
     {
       "moebel": "sd6RelingCSeiteRechts",
-      "feld": [22, 16],
+      "feld": [
+        22,
+        16
+      ],
       "bauteil_ok": true
     },
     {
       "moebel": "sd6RelingCSeiteLinks",
-      "feld": [7, 17],
+      "feld": [
+        7,
+        17
+      ],
       "bauteil_ok": true
     },
     {
       "moebel": "sd6RelingCSeiteRechts",
-      "feld": [22, 17],
+      "feld": [
+        22,
+        17
+      ],
       "bauteil_ok": true
     },
     {
       "moebel": "sd6RelingCSeiteLinks",
-      "feld": [7, 18],
+      "feld": [
+        7,
+        18
+      ],
       "bauteil_ok": true
     },
     {
       "moebel": "sd6RelingCSeiteRechts",
-      "feld": [22, 18],
+      "feld": [
+        22,
+        18
+      ],
       "bauteil_ok": true
     },
     {
       "moebel": "sd6RelingCSeiteLinks",
-      "feld": [7, 19],
+      "feld": [
+        7,
+        19
+      ],
       "bauteil_ok": true
     },
     {
       "moebel": "sd6RelingCSeiteRechts",
-      "feld": [22, 19],
+      "feld": [
+        22,
+        19
+      ],
       "bauteil_ok": true
     },
     {
       "moebel": "sd6RelingCSeiteLinks",
-      "feld": [7, 20],
+      "feld": [
+        7,
+        20
+      ],
       "bauteil_ok": true
     },
     {
       "moebel": "sd6RelingCSeiteRechts",
-      "feld": [22, 20],
+      "feld": [
+        22,
+        20
+      ],
       "bauteil_ok": true
     },
     {
       "moebel": "sd6RelingCSeiteLinks",
-      "feld": [7, 21],
+      "feld": [
+        7,
+        21
+      ],
       "bauteil_ok": true
     },
     {
       "moebel": "sd6RelingCSeiteRechts",
-      "feld": [22, 21],
+      "feld": [
+        22,
+        21
+      ],
       "bauteil_ok": true
     },
     {
       "moebel": "sd6RelingCSeiteLinks",
-      "feld": [7, 22],
+      "feld": [
+        7,
+        22
+      ],
       "bauteil_ok": true
     },
     {
       "moebel": "sd6RelingCSeiteRechts",
-      "feld": [22, 22],
+      "feld": [
+        22,
+        22
+      ],
       "bauteil_ok": true
     },
     {
       "moebel": "sd6RelingCSeiteLinks",
-      "feld": [7, 23],
+      "feld": [
+        7,
+        23
+      ],
       "bauteil_ok": true
     },
     {
       "moebel": "sd6RelingCSeiteRechts",
-      "feld": [22, 23],
+      "feld": [
+        22,
+        23
+      ],
       "bauteil_ok": true
     },
     {
       "moebel": "sd6RelingCSeiteLinks",
-      "feld": [7, 24],
+      "feld": [
+        7,
+        24
+      ],
       "bauteil_ok": true
     },
     {
       "moebel": "sd6RelingCSeiteRechts",
-      "feld": [22, 24],
+      "feld": [
+        22,
+        24
+      ],
       "bauteil_ok": true
     },
     {
       "moebel": "sd6RelingCSeiteLinks",
-      "feld": [7, 25],
+      "feld": [
+        7,
+        25
+      ],
       "bauteil_ok": true
     },
     {
       "moebel": "sd6RelingCSeiteRechts",
-      "feld": [22, 25],
+      "feld": [
+        22,
+        25
+      ],
       "bauteil_ok": true
     },
     {
       "moebel": "sd6RelingCSeiteLinks",
-      "feld": [7, 26],
+      "feld": [
+        7,
+        26
+      ],
       "bauteil_ok": true
     },
     {
       "moebel": "sd6RelingCSeiteRechts",
-      "feld": [22, 26],
+      "feld": [
+        22,
+        26
+      ],
       "bauteil_ok": true
     },
     {
       "moebel": "sd6RelingCSeiteLinks",
-      "feld": [7, 27],
+      "feld": [
+        7,
+        27
+      ],
       "bauteil_ok": true
     },
     {
       "moebel": "sd6RelingCSeiteRechts",
-      "feld": [22, 27],
+      "feld": [
+        22,
+        27
+      ],
       "bauteil_ok": true
     },
     {
       "moebel": "sd6RelingCSeiteLinks",
-      "feld": [7, 28],
+      "feld": [
+        7,
+        28
+      ],
       "bauteil_ok": true
     },
     {
       "moebel": "sd6RelingCSeiteRechts",
-      "feld": [22, 28],
+      "feld": [
+        22,
+        28
+      ],
       "bauteil_ok": true
     },
     {
       "moebel": "sd6RelingCSeiteLinks",
-      "feld": [7, 29],
+      "feld": [
+        7,
+        29
+      ],
       "bauteil_ok": true
     },
     {
       "moebel": "sd6RelingCSeiteRechts",
-      "feld": [22, 29],
+      "feld": [
+        22,
+        29
+      ],
       "bauteil_ok": true
     },
     {
       "moebel": "sd6RelingCSeiteLinks",
-      "feld": [7, 30],
+      "feld": [
+        7,
+        30
+      ],
       "bauteil_ok": true
     },
     {
       "moebel": "sd6RelingCSeiteRechts",
-      "feld": [22, 30],
+      "feld": [
+        22,
+        30
+      ],
       "bauteil_ok": true
     },
     {
       "moebel": "sd6RelingCSeiteLinks",
-      "feld": [7, 31],
+      "feld": [
+        7,
+        31
+      ],
       "bauteil_ok": true
     },
     {
       "moebel": "sd6RelingCSeiteRechts",
-      "feld": [22, 31],
+      "feld": [
+        22,
+        31
+      ],
       "bauteil_ok": true
     },
     {
       "moebel": "sd6RelingCSeiteLinks",
-      "feld": [7, 32],
+      "feld": [
+        7,
+        32
+      ],
       "bauteil_ok": true
     },
     {
       "moebel": "sd6RelingCSeiteRechts",
-      "feld": [22, 32],
+      "feld": [
+        22,
+        32
+      ],
       "bauteil_ok": true
     },
     {
       "moebel": "sd6RelingCSeiteLinks",
-      "feld": [7, 33],
+      "feld": [
+        7,
+        33
+      ],
       "bauteil_ok": true
     },
     {
       "moebel": "sd6RelingCSeiteRechts",
-      "feld": [22, 33],
+      "feld": [
+        22,
+        33
+      ],
       "bauteil_ok": true
     },
     {
       "moebel": "sd6RelingCSeiteLinks",
-      "feld": [7, 34],
+      "feld": [
+        7,
+        34
+      ],
       "bauteil_ok": true
     },
     {
       "moebel": "sd6RelingCSeiteRechts",
-      "feld": [22, 34],
+      "feld": [
+        22,
+        34
+      ],
       "bauteil_ok": true
     },
     {
       "moebel": "sd6RelingCSeiteLinks",
-      "feld": [7, 35],
+      "feld": [
+        7,
+        35
+      ],
       "bauteil_ok": true
     },
     {
       "moebel": "sd6RelingCSeiteRechts",
-      "feld": [22, 35],
+      "feld": [
+        22,
+        35
+      ],
       "bauteil_ok": true
     },
     {
       "moebel": "sd6RelingCSeiteLinks",
-      "feld": [7, 36],
+      "feld": [
+        7,
+        36
+      ],
       "bauteil_ok": true
     },
     {
       "moebel": "sd6RelingCSeiteRechts",
-      "feld": [22, 36],
+      "feld": [
+        22,
+        36
+      ],
       "bauteil_ok": true
     },
     {
       "moebel": "sd6RelingCSeiteLinks",
-      "feld": [7, 37],
+      "feld": [
+        7,
+        37
+      ],
       "bauteil_ok": true
     },
     {
       "moebel": "sd6RelingCSeiteRechts",
-      "feld": [22, 37],
+      "feld": [
+        22,
+        37
+      ],
       "bauteil_ok": true
     },
     {
       "moebel": "sd6RelingCSeiteLinks",
-      "feld": [7, 38],
+      "feld": [
+        7,
+        38
+      ],
       "bauteil_ok": true
     },
     {
       "moebel": "sd6RelingCSeiteRechts",
-      "feld": [22, 38],
+      "feld": [
+        22,
+        38
+      ],
       "bauteil_ok": true
     },
     {
       "moebel": "sd6RelingCSeiteLinks",
-      "feld": [7, 39],
+      "feld": [
+        7,
+        39
+      ],
       "bauteil_ok": true
     },
     {
       "moebel": "sd6RelingCSeiteRechts",
-      "feld": [22, 39],
+      "feld": [
+        22,
+        39
+      ],
       "bauteil_ok": true
     },
     {
       "moebel": "sd6RelingCSeiteLinks",
-      "feld": [7, 40],
+      "feld": [
+        7,
+        40
+      ],
       "bauteil_ok": true
     },
     {
       "moebel": "sd6RelingCSeiteRechts",
-      "feld": [22, 40],
+      "feld": [
+        22,
+        40
+      ],
       "bauteil_ok": true
     },
     {
       "moebel": "sd6RelingCSeiteLinks",
-      "feld": [7, 41],
+      "feld": [
+        7,
+        41
+      ],
       "bauteil_ok": true
     },
     {
       "moebel": "sd6RelingCSeiteRechts",
-      "feld": [22, 41],
+      "feld": [
+        22,
+        41
+      ],
       "bauteil_ok": true
     },
     {
       "moebel": "sd6RelingCSeiteLinks",
-      "feld": [7, 42],
+      "feld": [
+        7,
+        42
+      ],
       "bauteil_ok": true
     },
     {
       "moebel": "sd6RelingCSeiteRechts",
-      "feld": [22, 42],
+      "feld": [
+        22,
+        42
+      ],
       "bauteil_ok": true
     },
     {
       "moebel": "sd6RelingCSeiteLinks",
-      "feld": [7, 43],
+      "feld": [
+        7,
+        43
+      ],
       "bauteil_ok": true
     },
     {
       "moebel": "sd6RelingCSeiteRechts",
-      "feld": [22, 43],
+      "feld": [
+        22,
+        43
+      ],
       "bauteil_ok": true
     },
     {
       "moebel": "sd6RelingCSeiteLinks",
-      "feld": [7, 44],
+      "feld": [
+        7,
+        44
+      ],
       "bauteil_ok": true
     },
     {
       "moebel": "sd6RelingCSeiteRechts",
-      "feld": [22, 44],
+      "feld": [
+        22,
+        44
+      ],
       "bauteil_ok": true
     },
     {
       "moebel": "sd6RelingCSeiteLinks",
-      "feld": [7, 45],
+      "feld": [
+        7,
+        45
+      ],
       "bauteil_ok": true
     },
     {
       "moebel": "sd6RelingCSeiteRechts",
-      "feld": [22, 45],
+      "feld": [
+        22,
+        45
+      ],
       "bauteil_ok": true
     },
     {
       "moebel": "sd6RelingCSeiteLinks",
-      "feld": [7, 46],
+      "feld": [
+        7,
+        46
+      ],
       "bauteil_ok": true
     },
     {
       "moebel": "sd6RelingCSeiteRechts",
-      "feld": [22, 46],
+      "feld": [
+        22,
+        46
+      ],
       "bauteil_ok": true
     },
     {
       "moebel": "sd6RelingCSeiteLinks",
-      "feld": [7, 47],
+      "feld": [
+        7,
+        47
+      ],
       "bauteil_ok": true
     },
     {
       "moebel": "sd6RelingCSeiteRechts",
-      "feld": [22, 47],
+      "feld": [
+        22,
+        47
+      ],
       "bauteil_ok": true
     },
     {
       "moebel": "sd6RelingCSeiteLinks",
-      "feld": [7, 48],
+      "feld": [
+        7,
+        48
+      ],
       "bauteil_ok": true
     },
     {
       "moebel": "sd6RelingCSeiteRechts",
-      "feld": [22, 48],
+      "feld": [
+        22,
+        48
+      ],
       "bauteil_ok": true
     },
     {
       "moebel": "sd6RelingCSeiteLinks",
-      "feld": [7, 49],
+      "feld": [
+        7,
+        49
+      ],
       "bauteil_ok": true
     },
     {
       "moebel": "sd6RelingCSeiteRechts",
-      "feld": [22, 49],
+      "feld": [
+        22,
+        49
+      ],
       "bauteil_ok": true
     },
     {
       "moebel": "sd6RelingCSeiteLinks",
-      "feld": [7, 50],
+      "feld": [
+        7,
+        50
+      ],
       "bauteil_ok": true
     },
     {
       "moebel": "sd6RelingCSeiteRechts",
-      "feld": [22, 50],
+      "feld": [
+        22,
+        50
+      ],
       "bauteil_ok": true
     },
     {
       "moebel": "sd6RelingCSeiteLinks",
-      "feld": [7, 51],
+      "feld": [
+        7,
+        51
+      ],
       "bauteil_ok": true
     },
     {
       "moebel": "sd6RelingCSeiteRechts",
-      "feld": [22, 51],
+      "feld": [
+        22,
+        51
+      ],
       "bauteil_ok": true
     },
     {
       "moebel": "sd6RelingCSeiteLinks",
-      "feld": [7, 52],
+      "feld": [
+        7,
+        52
+      ],
       "bauteil_ok": true
     },
     {
       "moebel": "sd6RelingCSeiteRechts",
-      "feld": [22, 52],
+      "feld": [
+        22,
+        52
+      ],
       "bauteil_ok": true
     },
     {
       "moebel": "sd6RelingCSeiteLinks",
-      "feld": [7, 53],
+      "feld": [
+        7,
+        53
+      ],
       "bauteil_ok": true
     },
     {
       "moebel": "sd6RelingCSeiteRechts",
-      "feld": [22, 53],
+      "feld": [
+        22,
+        53
+      ],
       "bauteil_ok": true
     },
     {
       "moebel": "sd6RelingCSeiteLinks",
-      "feld": [7, 54],
+      "feld": [
+        7,
+        54
+      ],
       "bauteil_ok": true
     },
     {
       "moebel": "sd6RelingCSeiteRechts",
-      "feld": [22, 54],
+      "feld": [
+        22,
+        54
+      ],
       "bauteil_ok": true
     },
     {
       "moebel": "sd6RelingCSeiteLinks",
-      "feld": [7, 55],
+      "feld": [
+        7,
+        55
+      ],
       "bauteil_ok": true
     },
     {
       "moebel": "sd6RelingCSeiteRechts",
-      "feld": [22, 55],
+      "feld": [
+        22,
+        55
+      ],
       "bauteil_ok": true
     },
     {
       "moebel": "sd6RelingCSeiteLinks",
-      "feld": [7, 56],
+      "feld": [
+        7,
+        56
+      ],
       "bauteil_ok": true
     },
     {
       "moebel": "sd6RelingCSeiteRechts",
-      "feld": [22, 56],
+      "feld": [
+        22,
+        56
+      ],
       "bauteil_ok": true
     },
     {
       "moebel": "sd6RelingCSeiteLinks",
-      "feld": [7, 57],
+      "feld": [
+        7,
+        57
+      ],
       "bauteil_ok": true
     },
     {
       "moebel": "sd6RelingCSeiteRechts",
-      "feld": [22, 57],
+      "feld": [
+        22,
+        57
+      ],
       "bauteil_ok": true
     },
     {
       "moebel": "sd6RelingCSeiteLinks",
-      "feld": [7, 58],
+      "feld": [
+        7,
+        58
+      ],
       "bauteil_ok": true
     },
     {
       "moebel": "sd6RelingCSeiteRechts",
-      "feld": [22, 58],
+      "feld": [
+        22,
+        58
+      ],
       "bauteil_ok": true
     },
     {
       "moebel": "sd6RelingCSeiteLinks",
-      "feld": [7, 59],
+      "feld": [
+        7,
+        59
+      ],
       "bauteil_ok": true
     },
     {
       "moebel": "sd6RelingCSeiteRechts",
-      "feld": [22, 59],
+      "feld": [
+        22,
+        59
+      ],
       "bauteil_ok": true
     },
     {
       "moebel": "sd6RelingCSeiteLinks",
-      "feld": [7, 60],
+      "feld": [
+        7,
+        60
+      ],
       "bauteil_ok": true
     },
     {
       "moebel": "sd6RelingCSeiteRechts",
-      "feld": [22, 60],
+      "feld": [
+        22,
+        60
+      ],
       "bauteil_ok": true
     },
     {
       "moebel": "sd6RelingCSeiteLinks",
-      "feld": [7, 61],
+      "feld": [
+        7,
+        61
+      ],
       "bauteil_ok": true
     },
     {
       "moebel": "sd6RelingCSeiteRechts",
-      "feld": [22, 61],
+      "feld": [
+        22,
+        61
+      ],
       "bauteil_ok": true
     },
     {
       "moebel": "sd6RelingCSeiteLinks",
-      "feld": [7, 62],
+      "feld": [
+        7,
+        62
+      ],
       "bauteil_ok": true
     },
     {
       "moebel": "sd6RelingCSeiteRechts",
-      "feld": [22, 62],
+      "feld": [
+        22,
+        62
+      ],
       "bauteil_ok": true
     },
     {
       "moebel": "sd6RelingCSeiteLinks",
-      "feld": [7, 63],
+      "feld": [
+        7,
+        63
+      ],
       "bauteil_ok": true
     },
     {
       "moebel": "sd6RelingCSeiteRechts",
-      "feld": [22, 63],
+      "feld": [
+        22,
+        63
+      ],
       "bauteil_ok": true
     },
     {
       "moebel": "sd6RelingCSeiteLinks",
-      "feld": [7, 64],
+      "feld": [
+        7,
+        64
+      ],
       "bauteil_ok": true
     },
     {
       "moebel": "sd6RelingCSeiteRechts",
-      "feld": [22, 64],
+      "feld": [
+        22,
+        64
+      ],
       "bauteil_ok": true
     },
     {
       "moebel": "sd6RelingCSeiteLinks",
-      "feld": [7, 65],
+      "feld": [
+        7,
+        65
+      ],
       "bauteil_ok": true
     },
     {
       "moebel": "sd6RelingCSeiteRechts",
-      "feld": [22, 65],
+      "feld": [
+        22,
+        65
+      ],
       "bauteil_ok": true
     },
     {
       "moebel": "sd6RelingCSeiteLinks",
-      "feld": [7, 66],
+      "feld": [
+        7,
+        66
+      ],
       "bauteil_ok": true
     },
     {
       "moebel": "sd6RelingCSeiteRechts",
-      "feld": [22, 66],
+      "feld": [
+        22,
+        66
+      ],
       "bauteil_ok": true
     },
     {
       "moebel": "sd6RelingCSeiteLinks",
-      "feld": [7, 67],
+      "feld": [
+        7,
+        67
+      ],
       "bauteil_ok": true
     },
     {
       "moebel": "sd6RelingCSeiteRechts",
-      "feld": [22, 67],
+      "feld": [
+        22,
+        67
+      ],
       "bauteil_ok": true
     },
     {
       "moebel": "sd6RelingCSeiteLinks",
-      "feld": [7, 68],
+      "feld": [
+        7,
+        68
+      ],
       "bauteil_ok": true
     },
     {
       "moebel": "sd6RelingCSeiteRechts",
-      "feld": [22, 68],
+      "feld": [
+        22,
+        68
+      ],
       "bauteil_ok": true
     },
     {
       "moebel": "sd6RelingCSeiteLinks",
-      "feld": [7, 69],
+      "feld": [
+        7,
+        69
+      ],
       "bauteil_ok": true
     },
     {
       "moebel": "sd6RelingCSeiteRechts",
-      "feld": [22, 69],
+      "feld": [
+        22,
+        69
+      ],
       "bauteil_ok": true
     },
     {
       "moebel": "sd6RelingCSeiteLinks",
-      "feld": [7, 70],
+      "feld": [
+        7,
+        70
+      ],
       "bauteil_ok": true
     },
     {
       "moebel": "sd6RelingCSeiteRechts",
-      "feld": [22, 70],
+      "feld": [
+        22,
+        70
+      ],
       "bauteil_ok": true
     },
     {
       "moebel": "sd6RelingCSeiteLinks",
-      "feld": [7, 71],
+      "feld": [
+        7,
+        71
+      ],
       "bauteil_ok": true
     },
     {
       "moebel": "sd6RelingCSeiteRechts",
-      "feld": [22, 71],
+      "feld": [
+        22,
+        71
+      ],
       "bauteil_ok": true
     },
     {
       "moebel": "sd6RelingCSeiteLinks",
-      "feld": [7, 72],
+      "feld": [
+        7,
+        72
+      ],
       "bauteil_ok": true
     },
     {
       "moebel": "sd6RelingCSeiteRechts",
-      "feld": [22, 72],
+      "feld": [
+        22,
+        72
+      ],
       "bauteil_ok": true
     },
     {
       "moebel": "wr5Container",
-      "feld": [9, 7]
+      "feld": [
+        9,
+        7
+      ]
     },
     {
       "moebel": "wg6Faesser",
-      "feld": [15, 8]
+      "feld": [
+        15,
+        8
+      ]
     },
     {
       "moebel": "wg6Kisten",
-      "feld": [18, 8]
+      "feld": [
+        18,
+        8
+      ]
     },
     {
       "moebel": "wg6Faesser",
-      "feld": [18, 12]
+      "feld": [
+        18,
+        12
+      ]
     },
     {
       "moebel": "wg6Kisten",
-      "feld": [15, 12]
+      "feld": [
+        15,
+        12
+      ]
     },
     {
       "moebel": "ld5Ruderboot",
-      "feld": [9, 12],
+      "feld": [
+        9,
+        12
+      ],
       "bauteil_ok": true
     },
     {
       "moebel": "ld5Kahn",
-      "feld": [9, 15],
+      "feld": [
+        9,
+        15
+      ],
       "bauteil_ok": true
     },
     {
       "moebel": "sd6Bordbar",
-      "feld": [13, 40]
+      "feld": [
+        13,
+        40
+      ]
     },
     {
       "moebel": "mf9Rundtisch",
-      "feld": [18, 24],
+      "feld": [
+        18,
+        24
+      ],
       "id": "brett"
     },
     {
       "moebel": "mf2SchachbrettFiguren",
-      "feld": [0, 0],
+      "feld": [
+        0,
+        0
+      ],
       "auf": "brett"
     },
     {
       "moebel": "sd6Liegestuhl",
-      "feld": [9, 20]
+      "feld": [
+        9,
+        20
+      ]
     },
     {
       "moebel": "sd6LiegestuhlGrau",
-      "feld": [11, 20]
+      "feld": [
+        11,
+        20
+      ]
     },
     {
       "moebel": "sbKuebelbaum",
-      "feld": [19, 20]
+      "feld": [
+        19,
+        20
+      ]
     },
     {
       "moebel": "sd6Salon",
-      "feld": [12, 29]
+      "feld": [
+        12,
+        29
+      ]
     },
     {
       "moebel": "sd6Steuerhaus",
-      "feld": [8, 28]
+      "feld": [
+        8,
+        28
+      ]
     },
     {
       "moebel": "cc3Raetseltafel",
-      "feld": [17, 33]
+      "feld": [
+        17,
+        33
+      ]
     },
     {
       "moebel": "rvBahnsteigbank",
-      "feld": [9, 48]
+      "feld": [
+        9,
+        48
+      ]
     },
     {
       "moebel": "rvBahnsteigbank",
-      "feld": [17, 48]
+      "feld": [
+        17,
+        48
+      ]
     },
     {
       "moebel": "rvBahnsteigbank",
-      "feld": [9, 52]
+      "feld": [
+        9,
+        52
+      ]
     },
     {
       "moebel": "rvBahnsteigbank",
-      "feld": [17, 52]
+      "feld": [
+        17,
+        52
+      ]
     },
     {
       "moebel": "rvBahnsteigbank",
-      "feld": [9, 56]
+      "feld": [
+        9,
+        56
+      ]
     },
     {
       "moebel": "rvBahnsteigbank",
-      "feld": [17, 56]
+      "feld": [
+        17,
+        56
+      ]
     },
     {
       "moebel": "sd6Liegestuhl",
-      "feld": [9, 61]
+      "feld": [
+        9,
+        61
+      ]
     },
     {
       "moebel": "sd6LiegestuhlGrau",
-      "feld": [12, 61]
+      "feld": [
+        12,
+        61
+      ]
     },
     {
       "moebel": "sd6Liegestuhl",
-      "feld": [15, 61]
+      "feld": [
+        15,
+        61
+      ]
     },
     {
       "moebel": "sd6LiegestuhlGrau",
-      "feld": [18, 61]
+      "feld": [
+        18,
+        61
+      ]
     },
     {
       "moebel": "ld5Rettungsring",
-      "feld": [8, 24]
+      "feld": [
+        8,
+        24
+      ]
     },
     {
       "moebel": "ld5Rettungsring",
-      "feld": [21, 24]
+      "feld": [
+        21,
+        24
+      ]
     },
     {
       "moebel": "ld5Rettungsring",
-      "feld": [8, 46]
+      "feld": [
+        8,
+        46
+      ]
     },
     {
       "moebel": "ld5Rettungsring",
-      "feld": [21, 46]
+      "feld": [
+        21,
+        46
+      ]
     },
     {
       "moebel": "ld5Rettungsring",
-      "feld": [8, 64]
+      "feld": [
+        8,
+        64
+      ]
     },
     {
       "moebel": "ld5Rettungsring",
-      "feld": [21, 64]
+      "feld": [
+        21,
+        64
+      ]
     },
     {
       "moebel": "cc5Poller",
-      "feld": [10, 68]
+      "feld": [
+        10,
+        68
+      ]
     },
     {
       "moebel": "cc5Poller",
-      "feld": [19, 68]
+      "feld": [
+        19,
+        68
+      ]
     },
     {
       "moebel": "ld5Seil",
-      "feld": [12, 69]
+      "feld": [
+        12,
+        69
+      ]
     },
     {
       "moebel": "ld5Seil",
-      "feld": [17, 69]
+      "feld": [
+        17,
+        69
+      ]
     },
     {
       "moebel": "sbKuebelbaum",
-      "feld": [9, 43]
+      "feld": [
+        9,
+        43
+      ]
     },
     {
       "moebel": "sbKuebelbaum",
-      "feld": [20, 43]
+      "feld": [
+        20,
+        43
+      ]
+    },
+    {
+      "moebel": "pd7KapitaensBrett",
+      "feld": [
+        17,
+        30
+      ],
+      "runde7": true
     }
   ],
   "ausloeser": [
     {
       "name": "start",
-      "feld": [14, 6],
+      "feld": [
+        14,
+        6
+      ],
       "eigenschaften": {
         "richtung": "unten"
       }
     },
     {
       "name": "zurueckSilicon",
-      "feld": [14, 4]
+      "feld": [
+        14,
+        4
+      ]
     },
     {
       "name": "zurueckSilicon",
-      "feld": [15, 4]
+      "feld": [
+        15,
+        4
+      ]
     },
     {
       "name": "weiterDeich",
-      "feld": [14, 73]
+      "feld": [
+        14,
+        73
+      ]
     },
     {
       "name": "weiterDeich",
-      "feld": [15, 73]
+      "feld": [
+        15,
+        73
+      ]
     },
     {
       "name": "tafel",
-      "feld": [17, 36]
+      "feld": [
+        17,
+        36
+      ]
     },
     {
       "name": "fundFlaschenpost",
-      "feld": [8, 52]
+      "feld": [
+        8,
+        52
+      ]
     }
   ],
   "figuren": [
     {
       "name": "schiffskoch",
-      "feld": [17, 25]
+      "feld": [
+        17,
+        25
+      ]
     }
   ],
   "belebung": [
     {
+      "name": "matrose",
+      "typ": "statist",
+      "feld": [
+        19,
+        10
+      ],
+      "eigenschaften": {
+        "von": "19,8",
+        "bis": "19,18",
+        "tun": "prüft die Ladungsgurte",
+        "wann": "tag",
+        "sagt": "statist.wegSiliconDelacroix.faehre.matrose"
+      }
+    },
+    {
+      "name": "passagierin",
+      "typ": "statist",
+      "feld": [
+        12,
+        38
+      ],
+      "eigenschaften": {
+        "von": "12,38",
+        "bis": "12,38",
+        "tun": "sitzt im Wintermantel auf ihrem Koffer",
+        "wann": "tag",
+        "sagt": "statist.wegSiliconDelacroix.faehre.passagierin"
+      }
+    },
+    {
+      "name": "angler",
+      "typ": "statist",
+      "feld": [
+        20,
+        70
+      ],
+      "eigenschaften": {
+        "von": "20,70",
+        "bis": "20,70",
+        "tun": "hält eine Angel über die Reling",
+        "wann": "tag",
+        "sagt": "statist.wegSiliconDelacroix.faehre.angler"
+      }
+    },
+    {
+      "name": "kind",
+      "typ": "statist",
+      "feld": [
+        10,
+        26
+      ],
+      "eigenschaften": {
+        "von": "10,26",
+        "bis": "10,26",
+        "tun": "drückt die Nase an die Reling",
+        "wann": "tag",
+        "sagt": "statist.wegSiliconDelacroix.faehre.kind"
+      }
+    },
+    {
       "name": "moewen",
       "typ": "tier",
-      "feld": [12, 1],
+      "feld": [
+        12,
+        1
+      ],
       "eigenschaften": {
         "von": "8,1",
         "bis": "22,1",
@@ -1122,7 +1823,10 @@
     {
       "name": "pelikan",
       "typ": "tier",
-      "feld": [20, 72],
+      "feld": [
+        20,
+        72
+      ],
       "eigenschaften": {
         "von": "20,72",
         "bis": "20,72",
@@ -1132,7 +1836,10 @@
     {
       "name": "delfin",
       "typ": "tier",
-      "feld": [25, 60],
+      "feld": [
+        25,
+        60
+      ],
       "eigenschaften": {
         "von": "25,70",
         "bis": "25,45",
@@ -1140,18 +1847,57 @@
       }
     },
     {
-      "name": "matrose",
-      "typ": "statist",
-      "feld": [19, 10],
+      "name": "kormoran",
+      "typ": "tier",
+      "feld": [
+        21,
+        6
+      ],
       "eigenschaften": {
-        "von": "19,8",
-        "bis": "19,18",
-        "tun": "prüft die Ladungsgurte",
-        "wann": "tag"
+        "von": "21,6",
+        "bis": "21,6",
+        "verhalten": "sitzen"
+      }
+    },
+    {
+      "name": "fliegendeFische",
+      "typ": "tier",
+      "feld": [
+        26,
+        30
+      ],
+      "eigenschaften": {
+        "von": "26,20",
+        "bis": "27,40",
+        "verhalten": "schwimmen"
+      }
+    },
+    {
+      "name": "quallen",
+      "typ": "tier",
+      "feld": [
+        3,
+        50
+      ],
+      "eigenschaften": {
+        "von": "2,44",
+        "bis": "4,56",
+        "verhalten": "schwimmen"
       }
     }
   ],
-  "zustand": ["neu", "gebraucht", "alt"],
-  "stil": ["einfach", "modern", "rustikal", "klassisch", "natur", "laendlich"],
+  "zustand": [
+    "neu",
+    "gebraucht",
+    "alt"
+  ],
+  "stil": [
+    "einfach",
+    "modern",
+    "rustikal",
+    "klassisch",
+    "natur",
+    "laendlich"
+  ],
   "datei": "karten/varianten/weg-silicon-delacroix-faehre-c.json"
 }

@@ -11,7 +11,7 @@
  "tilewidth": 16,
  "tileheight": 16,
  "nextlayerid": 5,
- "nextobjectid": 228,
+ "nextobjectid": 230,
  "layers": [
   {
    "id": 1,
@@ -3996,10 +3996,10 @@
     1,
     1,
     1,
-    1,
-    1,
-    1,
-    1,
+    4,
+    4,
+    4,
+    4,
     1,
     1,
     1,
@@ -4076,10 +4076,10 @@
     1,
     1,
     1,
-    1,
-    1,
-    1,
-    1,
+    4,
+    4,
+    4,
+    4,
     1,
     1,
     1,
@@ -4156,10 +4156,10 @@
     1,
     1,
     1,
-    1,
-    1,
-    1,
-    1,
+    4,
+    4,
+    4,
+    4,
     1,
     1,
     1,
@@ -14403,8 +14403,8 @@
      "id": 26,
      "name": "fischer",
      "type": "statist",
-     "x": 864,
-     "y": 704,
+     "x": 848,
+     "y": 608,
      "width": 16,
      "height": 16,
      "rotation": 0,
@@ -14413,12 +14413,12 @@
       {
        "name": "von",
        "type": "string",
-       "value": "54,44"
+       "value": "53,38"
       },
       {
        "name": "bis",
        "type": "string",
-       "value": "54,44"
+       "value": "53,38"
       },
       {
        "name": "tun",
@@ -14715,8 +14715,8 @@
      "id": 35,
      "name": "reiher",
      "type": "tier",
-     "x": 880,
-     "y": 720,
+     "x": 864,
+     "y": 608,
      "width": 16,
      "height": 16,
      "rotation": 0,
@@ -14725,12 +14725,12 @@
       {
        "name": "von",
        "type": "string",
-       "value": "55,44"
+       "value": "54,37"
       },
       {
        "name": "bis",
        "type": "string",
-       "value": "54,46"
+       "value": "55,39"
       },
       {
        "name": "verhalten",
@@ -15329,7 +15329,7 @@
      "name": "pd9BordQ4",
      "type": "moebel",
      "x": 832,
-     "y": 782,
+     "y": 830,
      "width": 64,
      "height": 16,
      "rotation": 0,
@@ -19157,6 +19157,52 @@
        "name": "tiefe",
        "type": "int",
        "value": 296
+      },
+      {
+       "name": "kollision",
+       "type": "bool",
+       "value": true
+      }
+     ]
+    },
+    {
+     "id": 228,
+     "name": "pd12Bagger",
+     "type": "moebel",
+     "x": 464,
+     "y": 192,
+     "width": 112,
+     "height": 78,
+     "rotation": 0,
+     "visible": true,
+     "properties": [
+      {
+       "name": "tiefe",
+       "type": "int",
+       "value": 262
+      },
+      {
+       "name": "kollision",
+       "type": "bool",
+       "value": true
+      }
+     ]
+    },
+    {
+     "id": 229,
+     "name": "pd12Lastwagen",
+     "type": "moebel",
+     "x": 832,
+     "y": 688,
+     "width": 48,
+     "height": 144,
+     "rotation": 0,
+     "visible": true,
+     "properties": [
+      {
+       "name": "tiefe",
+       "type": "int",
+       "value": 824
       },
       {
        "name": "kollision",

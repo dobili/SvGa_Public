@@ -1987,6 +1987,15 @@
       "art": "markierung",
       "zustand": "neu",
       "stil": "modern"
+    },
+    "ca12Hotdogwagen": {
+      "quelle": "spiel/eigene/hotdogwagen_vorn.png",
+      "breite": 48,
+      "hoehe": 96,
+      "kollision": true,
+      "art": "fahrzeug",
+      "zustand": "neu",
+      "stil": "modern"
     }
   }
 }

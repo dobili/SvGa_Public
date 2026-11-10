@@ -453,6 +453,15 @@
       "stil": "rustikal",
       "begehbar": true,
       "begehbar_grund": "liegt im Wasser, dort läuft niemand"
+    },
+    "dz12Lieferwagen": {
+      "quelle": "spiel/eigene/lieferwagen_vorn.png",
+      "breite": 48,
+      "hoehe": 84,
+      "kollision": true,
+      "art": "fahrzeug",
+      "zustand": "gebraucht",
+      "stil": "einfach"
     }
   }
 }

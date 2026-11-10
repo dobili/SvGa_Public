@@ -354,6 +354,17 @@ Gutachten `docs/spiel/auftraege/gutachten/mittel-1-runde9-2.md`.
 - Offen: Ausfahrt mit abgesenktem Bord an Feuerwache und Polizei, Kreidespringer blass, Platz
   dünn, Turm in Seitenansicht, leere Wiese am Leuchtturm.
 
+### 3.8 Fahrzeuge aus Gemini Teil 2 (mittel-1, 10.11.2026)
+
+Bilder aus `spiel/eigene/` (privat f285318f), alle in Vorder- oder Heckansicht nach 10.65, mit
+Kollision.
+
+- **Seeufer:** Eiswagen (`gc12Eiswagen`, (102, 10)) und Hotdogwagen (`gc12Hotdogwagen`, (112, 10))
+  ersetzen die zwei Wagen in Seitenansicht. Der Sonnenschirm steht dazwischen (106, 9).
+- **Arena außen:** Der Imbisswagen ist der Hotdogwagen von vorn (`ca12Hotdogwagen`, (6, 39)).
+- **Leuchtturm, Wohnmobil:** Es steht auf einer Schotterfläche (81–84, 8–13), eine Schotterspur
+  (82–83, 14–15) führt zum Weg.
+
 ## 4. Bühnenbilder
 
 Möbel mit Vorsilbe `gc7` (Weg) in `moebel/weg-ghost-capital.json` und `ca7` (Arena) in

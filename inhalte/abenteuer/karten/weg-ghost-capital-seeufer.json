@@ -14479,8 +14479,8 @@
      "id": 38,
      "name": "gc7Schirm",
      "type": "moebel",
-     "x": 1600,
-     "y": 128,
+     "x": 1696,
+     "y": 144,
      "width": 48,
      "height": 64,
      "rotation": 0,
@@ -14489,7 +14489,7 @@
       {
        "name": "tiefe",
        "type": "int",
-       "value": 184
+       "value": 200
       },
       {
        "name": "kollision",
@@ -14845,12 +14845,12 @@
     },
     {
      "id": 54,
-     "name": "ca8Eiswagen",
+     "name": "gc12Eiswagen",
      "type": "moebel",
-     "x": 1600,
-     "y": 192,
-     "width": 112,
-     "height": 64,
+     "x": 1632,
+     "y": 160,
+     "width": 48,
+     "height": 96,
      "rotation": 0,
      "visible": true,
      "properties": [
@@ -14868,12 +14868,12 @@
     },
     {
      "id": 55,
-     "name": "ca8Tacowagen",
+     "name": "gc12Hotdogwagen",
      "type": "moebel",
-     "x": 1760,
-     "y": 192,
-     "width": 112,
-     "height": 64,
+     "x": 1792,
+     "y": 160,
+     "width": 48,
+     "height": 96,
      "rotation": 0,
      "visible": true,
      "properties": [

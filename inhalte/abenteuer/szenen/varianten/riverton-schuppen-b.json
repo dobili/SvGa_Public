@@ -72,9 +72,9 @@
     {
       "name": "maus",
       "typ": "tier",
-      "feld": [2, 6],
+      "feld": [2, 5],
       "eigenschaften": {
-        "von": "2,6",
+        "von": "2,5",
         "bis": "4,6",
         "verhalten": "ausweichen"
       }

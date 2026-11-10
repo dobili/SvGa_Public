@@ -163,3 +163,6 @@ Dicke Wandflächen ohne Boden darunter zeigen die obere Fläche. Ohne den Schlü
 bisher. Logik: `pipeline/abenteuer/klippe.py`, Test: `pipeline/tests/test_abenteuer_klippe.py`.
 Benutzt von: `steinbruch-grube`, `weg-desert-summit-bergstrasse`. Nicht bei roten Felsen (`felsRot`,
 Sternwarte, Wüste): LimeZus Klippe hat nur Gras- und Erdfuß, der grüne Fuß passt nicht auf roten Sand.
+Dafür gibt es seit Runde 9 `"fels": "rot"` neben `"kante": "klippe"`: Die Kanten kommen dann aus
+`spiel/eigene/klippe_rot.png` (Bildwunsch `docs/spiel/auftraege/bildwuensche/klippe_rot.py`, die
+Erdklippe rot umgefärbt, Fuß aus rotem Sand). Fehlt das Bild, bleibt die braune Klippe.

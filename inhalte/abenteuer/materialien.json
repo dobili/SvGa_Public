@@ -10,181 +10,82 @@
     "wasser_stein": "spiel/eigene/wasser_stein.png",
     "damm": "spiel/eigene/damm.png",
     "felsRot": "spiel/eigene/fels_rot.png",
+    "klippeRot": "spiel/eigene/klippe_rot.png",
     "wasser_rumpf": "spiel/eigene/wasser_rumpf.png",
     "sinter": "spiel/eigene/boden_sinter.png"
   },
   "boeden": {
     "holzHell": {
       "bogen": "boden",
-      "feld": [
-        1,
-        13
-      ],
-      "unter_wand": [
-        1,
-        12
-      ]
+      "feld": [1, 13],
+      "unter_wand": [1, 12]
     },
     "holzDunkel": {
       "bogen": "boden",
-      "feld": [
-        1,
-        17
-      ],
-      "unter_wand": [
-        1,
-        16
-      ]
+      "feld": [1, 17],
+      "unter_wand": [1, 16]
     },
     "dielen": {
       "bogen": "boden",
-      "feld": [
-        5,
-        13
-      ],
-      "unter_wand": [
-        5,
-        12
-      ]
+      "feld": [5, 13],
+      "unter_wand": [5, 12]
     },
     "fliesenWeiss": {
       "bogen": "boden",
-      "feld": [
-        1,
-        5
-      ],
-      "unter_wand": [
-        1,
-        4
-      ]
+      "feld": [1, 5],
+      "unter_wand": [1, 4]
     },
     "fliesenGrau": {
       "bogen": "boden",
-      "feld": [
-        13,
-        5
-      ],
-      "unter_wand": [
-        13,
-        4
-      ]
+      "feld": [13, 5],
+      "unter_wand": [13, 4]
     },
     "teppichRot": {
       "bogen": "boden",
-      "feld": [
-        5,
-        9
-      ],
-      "unter_wand": [
-        5,
-        8
-      ]
+      "feld": [5, 9],
+      "unter_wand": [5, 8]
     },
     "teppichBlau": {
       "bogen": "boden",
-      "feld": [
-        9,
-        19
-      ],
-      "unter_wand": [
-        9,
-        18
-      ]
+      "feld": [9, 19],
+      "unter_wand": [9, 18]
     },
     "stein": {
       "bogen": "boden",
-      "feld": [
-        13,
-        35
-      ],
+      "feld": [13, 35],
       "variation": {
         "flecken": 0.025,
         "risse": 0.02,
         "moos": 0.03,
         "farbe": 0.06
       },
-      "unter_wand": [
-        13,
-        34
-      ]
+      "unter_wand": [13, 34]
     },
     "gras": {
       "bogen": "gelaende",
-      "feld": [
-        3,
-        8
-      ],
+      "feld": [3, 8],
       "varianten": [
-        [
-          3,
-          8
-        ],
-        [
-          3,
-          8
-        ],
-        [
-          3,
-          8
-        ],
-        [
-          3,
-          8
-        ],
-        [
-          17,
-          7
-        ],
-        [
-          1,
-          7
-        ],
-        [
-          4,
-          7
-        ],
-        [
-          3,
-          6
-        ],
-        [
-          4,
-          6
-        ],
-        [
-          9,
-          7
-        ]
+        [3, 8],
+        [3, 8],
+        [3, 8],
+        [3, 8],
+        [17, 7],
+        [1, 7],
+        [4, 7],
+        [3, 6],
+        [4, 6],
+        [9, 7]
       ]
     },
     "pflaster": {
       "bogen": "gelaende",
-      "feld": [
-        25,
-        9
-      ],
+      "feld": [25, 9],
       "variation": {
         "kacheln": [
-          [
-            25,
-            9,
-            20
-          ],
-          [
-            26,
-            9,
-            2
-          ],
-          [
-            25,
-            10,
-            1
-          ],
-          [
-            26,
-            10,
-            1
-          ]
+          [25, 9, 20],
+          [26, 9, 2],
+          [25, 10, 1],
+          [26, 10, 1]
         ],
         "flecken": 0.05,
         "risse": 0.02,
@@ -196,32 +97,17 @@
     },
     "erde": {
       "bogen": "gelaende",
-      "feld": [
-        1,
-        31
-      ],
-      "rand": [
-        0,
-        30
-      ]
+      "feld": [1, 31],
+      "rand": [0, 30]
     },
     "sand": {
       "bogen": "gelaende",
-      "feld": [
-        9,
-        31
-      ]
+      "feld": [9, 31]
     },
     "wasser": {
       "bogen": "gelaende",
-      "feld": [
-        1,
-        36
-      ],
-      "rand": [
-        0,
-        35
-      ],
+      "feld": [1, 36],
+      "rand": [0, 35],
       "wellen": {
         "bilder": [
           "modern-exteriors/Modern_Exteriors_16x16/Modern_Exteriors_Complete_Singles_16x16/ME_Singles_Terrains_and_Fences_16x16_Props_Water_1.png",
@@ -237,112 +123,29 @@
     },
     "asphalt": {
       "bogen": "stadt",
-      "feld": [
-        0,
-        4
-      ],
+      "feld": [0, 4],
       "variation": {
         "kacheln": [
-          [
-            0,
-            4,
-            24
-          ],
-          [
-            1,
-            4,
-            1
-          ],
-          [
-            2,
-            4,
-            1
-          ],
-          [
-            3,
-            4,
-            1
-          ],
-          [
-            4,
-            4,
-            1
-          ],
-          [
-            0,
-            5,
-            1
-          ],
-          [
-            1,
-            5,
-            1
-          ],
-          [
-            2,
-            5,
-            1
-          ],
-          [
-            3,
-            5,
-            1
-          ],
-          [
-            4,
-            5,
-            1
-          ],
-          [
-            0,
-            6,
-            1
-          ],
-          [
-            1,
-            6,
-            1
-          ],
-          [
-            2,
-            6,
-            1
-          ],
-          [
-            3,
-            6,
-            1
-          ],
-          [
-            4,
-            6,
-            1
-          ],
-          [
-            0,
-            7,
-            1
-          ],
-          [
-            1,
-            7,
-            1
-          ],
-          [
-            2,
-            7,
-            1
-          ],
-          [
-            3,
-            7,
-            1
-          ],
-          [
-            4,
-            7,
-            1
-          ]
+          [0, 4, 24],
+          [1, 4, 1],
+          [2, 4, 1],
+          [3, 4, 1],
+          [4, 4, 1],
+          [0, 5, 1],
+          [1, 5, 1],
+          [2, 5, 1],
+          [3, 5, 1],
+          [4, 5, 1],
+          [0, 6, 1],
+          [1, 6, 1],
+          [2, 6, 1],
+          [3, 6, 1],
+          [4, 6, 1],
+          [0, 7, 1],
+          [1, 7, 1],
+          [2, 7, 1],
+          [3, 7, 1],
+          [4, 7, 1]
         ],
         "flecken": 0.06,
         "risse": 0.03,
@@ -353,63 +156,30 @@
     },
     "hecke": {
       "bogen": "gelaende",
-      "feld": [
-        1,
-        7
-      ]
+      "feld": [1, 7]
     },
     "schotter": {
       "bogen": "fels",
-      "feld": [
-        2,
-        0
-      ],
+      "feld": [2, 0],
       "varianten": [
-        [
-          2,
-          0
-        ],
-        [
-          3,
-          0
-        ],
-        [
-          2,
-          1
-        ],
-        [
-          3,
-          1
-        ]
+        [2, 0],
+        [3, 0],
+        [2, 1],
+        [3, 1]
       ]
     },
     "felsboden": {
       "bogen": "fels",
-      "feld": [
-        1,
-        0
-      ],
+      "feld": [1, 0],
       "varianten": [
-        [
-          1,
-          0
-        ],
-        [
-          1,
-          1
-        ]
+        [1, 0],
+        [1, 1]
       ]
     },
     "wasser_stein": {
       "bogen": "wasser_stein",
-      "feld": [
-        1,
-        1
-      ],
-      "rand": [
-        0,
-        0
-      ],
+      "feld": [1, 1],
+      "rand": [0, 0],
       "wellen": {
         "bilder": [
           "modern-exteriors/Modern_Exteriors_16x16/Modern_Exteriors_Complete_Singles_16x16/ME_Singles_Terrains_and_Fences_16x16_Props_Water_1.png",
@@ -425,56 +195,26 @@
     },
     "sandRot": {
       "bogen": "felsRot",
-      "feld": [
-        2,
-        0
-      ],
+      "feld": [2, 0],
       "varianten": [
-        [
-          2,
-          0
-        ],
-        [
-          3,
-          0
-        ],
-        [
-          2,
-          1
-        ],
-        [
-          3,
-          1
-        ]
+        [2, 0],
+        [3, 0],
+        [2, 1],
+        [3, 1]
       ]
     },
     "felsbodenRot": {
       "bogen": "felsRot",
-      "feld": [
-        1,
-        0
-      ],
+      "feld": [1, 0],
       "varianten": [
-        [
-          1,
-          0
-        ],
-        [
-          1,
-          1
-        ]
+        [1, 0],
+        [1, 1]
       ]
     },
     "wasser_rumpf": {
       "bogen": "wasser_rumpf",
-      "feld": [
-        1,
-        1
-      ],
-      "rand": [
-        0,
-        0
-      ],
+      "feld": [1, 1],
+      "rand": [0, 0],
       "wellen": {
         "bilder": [
           "modern-exteriors/Modern_Exteriors_16x16/Modern_Exteriors_Complete_Singles_16x16/ME_Singles_Terrains_and_Fences_16x16_Props_Water_1.png",
@@ -490,228 +230,93 @@
     },
     "sinter": {
       "bogen": "sinter",
-      "feld": [
-        2,
-        0
-      ],
+      "feld": [2, 0],
       "varianten": [
-        [
-          2,
-          0
-        ],
-        [
-          3,
-          0
-        ],
-        [
-          0,
-          0
-        ],
-        [
-          2,
-          0
-        ],
-        [
-          3,
-          0
-        ],
-        [
-          0,
-          0
-        ],
-        [
-          2,
-          0
-        ],
-        [
-          3,
-          0
-        ],
-        [
-          0,
-          0
-        ],
-        [
-          2,
-          0
-        ],
-        [
-          3,
-          0
-        ],
-        [
-          0,
-          0
-        ],
-        [
-          1,
-          0
-        ],
-        [
-          0,
-          1
-        ],
-        [
-          1,
-          1
-        ],
-        [
-          2,
-          1
-        ]
+        [2, 0],
+        [3, 0],
+        [0, 0],
+        [2, 0],
+        [3, 0],
+        [0, 0],
+        [2, 0],
+        [3, 0],
+        [0, 0],
+        [2, 0],
+        [3, 0],
+        [0, 0],
+        [1, 0],
+        [0, 1],
+        [1, 1],
+        [2, 1]
       ]
     }
   },
   "waende": {
     "creme": {
       "bogen": "wand",
-      "oben": [
-        1,
-        6
-      ],
-      "unten": [
-        1,
-        7
-      ]
+      "oben": [1, 6],
+      "unten": [1, 7]
     },
     "hellgrau": {
       "bogen": "wand",
-      "oben": [
-        1,
-        4
-      ],
-      "unten": [
-        1,
-        5
-      ]
+      "oben": [1, 4],
+      "unten": [1, 5]
     },
     "rauten": {
       "bogen": "wand",
-      "oben": [
-        1,
-        0
-      ],
-      "unten": [
-        1,
-        1
-      ]
+      "oben": [1, 0],
+      "unten": [1, 1]
     },
     "holz": {
       "bogen": "wand",
-      "oben": [
-        12,
-        0
-      ],
-      "unten": [
-        12,
-        1
-      ]
+      "oben": [12, 0],
+      "unten": [12, 1]
     },
     "backstein": {
       "bogen": "wand",
-      "oben": [
-        1,
-        16
-      ],
-      "unten": [
-        1,
-        17
-      ]
+      "oben": [1, 16],
+      "unten": [1, 17]
     },
     "rot": {
       "bogen": "wand",
-      "oben": [
-        23,
-        0
-      ],
-      "unten": [
-        23,
-        1
-      ]
+      "oben": [23, 0],
+      "unten": [23, 1]
     },
     "blau": {
       "bogen": "wand",
-      "oben": [
-        23,
-        8
-      ],
-      "unten": [
-        23,
-        9
-      ]
+      "oben": [23, 8],
+      "unten": [23, 9]
     },
     "gruen": {
       "bogen": "wand",
-      "oben": [
-        23,
-        12
-      ],
-      "unten": [
-        23,
-        13
-      ]
+      "oben": [23, 12],
+      "unten": [23, 13]
     },
     "fels": {
       "bogen": "fels",
-      "oben": [
-        0,
-        0
-      ],
-      "unten": [
-        0,
-        1
-      ],
+      "oben": [0, 0],
+      "unten": [0, 1],
       "krone": [
-        [
-          1,
-          0
-        ],
-        [
-          1,
-          1
-        ]
+        [1, 0],
+        [1, 1]
       ]
     },
     "damm": {
       "bogen": "damm",
-      "oben": [
-        0,
-        0
-      ],
-      "unten": [
-        0,
-        1
-      ],
+      "oben": [0, 0],
+      "unten": [0, 1],
       "krone": [
-        [
-          1,
-          0
-        ],
-        [
-          1,
-          1
-        ]
+        [1, 0],
+        [1, 1]
       ]
     },
     "felsRot": {
       "bogen": "felsRot",
-      "oben": [
-        0,
-        0
-      ],
-      "unten": [
-        0,
-        1
-      ],
+      "oben": [0, 0],
+      "unten": [0, 1],
       "krone": [
-        [
-          1,
-          0
-        ],
-        [
-          1,
-          1
-        ]
+        [1, 0],
+        [1, 1]
       ]
     }
   }

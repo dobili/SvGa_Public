@@ -2,7 +2,7 @@
   "karte": "wegDelacroixDesert.felsbogen",
   "datei": "karten/weg-delacroix-desert-felsbogen.json",
   "art": "aussen",
-  "beschreibung": "Der Felsbogen von Weg 6, 140 × 30 Kacheln, roter Fels. Der Talboden kommt am Ostrand aus dem Canyon und fällt durch den roten Felsbogen nach Süden in ein tieferes Tal; dort ein Felsabsatz mit Bank als Aussichtspunkt. Dann steigt der Weg unter der genieteten Eisenbahnbrücke von 1879 hindurch nach Norden, am linken Pfeiler das Gussschild „J. H. 1879“. Oben ein langer Absatz mit Säulenkakteen, zuletzt der Abstieg zum Westrand Richtung Desert Springs mit Wegweiser.",
+  "beschreibung": "Der Felsbogen von Weg 6, 140 × 30 Kacheln, roter Fels mit Felswänden und Kanten. Der Talboden kommt am Ostrand aus dem Canyon und fällt durch den roten Felsbogen nach Süden in ein tieferes Tal; dort am Rand eine Bank als Aussichtspunkt. Dann steigt der Weg unter der genieteten Eisenbahnbrücke von 1879 hindurch nach Norden, am linken Pfeiler das Gussschild „J. H. 1879“. Die alte Strecke läuft oben in einem Einschnitt über die Hochfläche: nach Westen bis an den Kartenrand, mit Übergang und Andreaskreuzen am Abstieg, nach Osten endet sie stillgelegt am Prellbock vor dem Bogen. Oben ein langer Absatz mit Säulenkakteen, zuletzt der Abstieg zum Westrand Richtung Desert Springs mit Wegweiser.",
   "wand": "felsRot",
   "boden": "sandRot",
   "raster": [
@@ -19,11 +19,11 @@
     "##################......................................####################################################################################",
     "##################....##############################....####################################################################################",
     "##################....##############################....####################################################################################",
-    "##################....##############################....############################################.......................................#",
-    "##################....##############################....####################################...#####........................................",
-    "##################....##############################....####################################...#####........................................",
-    "##################....##############################....####################################...#####.......................................#",
-    "##################....##############################....####################################...#############################################",
+    "##################....##############################....#######################################............................................#",
+    "##################....##############################....####################################................................................",
+    "##################....##############################....####################################................................................",
+    "#fffffffffffffffff....ffffffffffffffffffffffff######....##ffffffffffffffffffffffffffffff####...............................................#",
+    "#fffffffffffffffff....ffffffffffffffffffffffff######....##ffffffffffffffffffffffffffffff####...#############################################",
     "##################....##############################....######################........######...#############################################",
     "#.....................##############################....######################........######...#############################################",
     "......................##############################....######################........######...#############################################",
@@ -49,11 +49,6 @@
       "feld": [46, 15],
       "vorn": true,
       "id": "bruecke1879"
-    },
-    {
-      "moebel": "mfBank",
-      "feld": [82, 18],
-      "id": "bankAussicht"
     },
     {
       "moebel": "wg5Wegweiser",
@@ -202,6 +197,398 @@
       "moebel": "ds8Finkenzeichen",
       "feld": [65, 21],
       "id": "ereignis37"
+    },
+    {
+      "moebel": "cc4Gleis",
+      "feld": [0, 16],
+      "bauteil_ok": true,
+      "vorn": true
+    },
+    {
+      "moebel": "cc4Gleis",
+      "feld": [1, 16],
+      "bauteil_ok": true
+    },
+    {
+      "moebel": "cc4Gleis",
+      "feld": [2, 16],
+      "bauteil_ok": true
+    },
+    {
+      "moebel": "cc4Gleis",
+      "feld": [3, 16],
+      "bauteil_ok": true
+    },
+    {
+      "moebel": "cc4Gleis",
+      "feld": [4, 16],
+      "bauteil_ok": true
+    },
+    {
+      "moebel": "cc4Gleis",
+      "feld": [5, 16],
+      "bauteil_ok": true
+    },
+    {
+      "moebel": "cc4Gleis",
+      "feld": [6, 16],
+      "bauteil_ok": true
+    },
+    {
+      "moebel": "cc4Gleis",
+      "feld": [7, 16],
+      "bauteil_ok": true
+    },
+    {
+      "moebel": "cc4Gleis",
+      "feld": [8, 16],
+      "bauteil_ok": true
+    },
+    {
+      "moebel": "cc4Gleis",
+      "feld": [9, 16],
+      "bauteil_ok": true
+    },
+    {
+      "moebel": "cc4Gleis",
+      "feld": [10, 16],
+      "bauteil_ok": true
+    },
+    {
+      "moebel": "cc4Gleis",
+      "feld": [11, 16],
+      "bauteil_ok": true
+    },
+    {
+      "moebel": "cc4Gleis",
+      "feld": [12, 16],
+      "bauteil_ok": true
+    },
+    {
+      "moebel": "cc4Gleis",
+      "feld": [13, 16],
+      "bauteil_ok": true
+    },
+    {
+      "moebel": "cc4Gleis",
+      "feld": [14, 16],
+      "bauteil_ok": true
+    },
+    {
+      "moebel": "cc4Gleis",
+      "feld": [15, 16],
+      "bauteil_ok": true
+    },
+    {
+      "moebel": "cc4Gleis",
+      "feld": [16, 16],
+      "bauteil_ok": true
+    },
+    {
+      "moebel": "cc4Gleis",
+      "feld": [17, 16],
+      "bauteil_ok": true
+    },
+    {
+      "moebel": "cc4Gleis",
+      "feld": [18, 16],
+      "bauteil_ok": true,
+      "vorn": true
+    },
+    {
+      "moebel": "cc4Gleis",
+      "feld": [19, 16],
+      "bauteil_ok": true,
+      "vorn": true
+    },
+    {
+      "moebel": "cc4Gleis",
+      "feld": [20, 16],
+      "bauteil_ok": true,
+      "vorn": true
+    },
+    {
+      "moebel": "cc4Gleis",
+      "feld": [21, 16],
+      "bauteil_ok": true,
+      "vorn": true
+    },
+    {
+      "moebel": "cc4Gleis",
+      "feld": [22, 16],
+      "bauteil_ok": true
+    },
+    {
+      "moebel": "cc4Gleis",
+      "feld": [23, 16],
+      "bauteil_ok": true
+    },
+    {
+      "moebel": "cc4Gleis",
+      "feld": [24, 16],
+      "bauteil_ok": true
+    },
+    {
+      "moebel": "cc4Gleis",
+      "feld": [25, 16],
+      "bauteil_ok": true
+    },
+    {
+      "moebel": "cc4Gleis",
+      "feld": [26, 16],
+      "bauteil_ok": true
+    },
+    {
+      "moebel": "cc4Gleis",
+      "feld": [27, 16],
+      "bauteil_ok": true
+    },
+    {
+      "moebel": "cc4Gleis",
+      "feld": [28, 16],
+      "bauteil_ok": true
+    },
+    {
+      "moebel": "cc4Gleis",
+      "feld": [29, 16],
+      "bauteil_ok": true
+    },
+    {
+      "moebel": "cc4Gleis",
+      "feld": [30, 16],
+      "bauteil_ok": true
+    },
+    {
+      "moebel": "cc4Gleis",
+      "feld": [31, 16],
+      "bauteil_ok": true
+    },
+    {
+      "moebel": "cc4Gleis",
+      "feld": [32, 16],
+      "bauteil_ok": true
+    },
+    {
+      "moebel": "cc4Gleis",
+      "feld": [33, 16],
+      "bauteil_ok": true
+    },
+    {
+      "moebel": "cc4Gleis",
+      "feld": [34, 16],
+      "bauteil_ok": true
+    },
+    {
+      "moebel": "cc4Gleis",
+      "feld": [35, 16],
+      "bauteil_ok": true
+    },
+    {
+      "moebel": "cc4Gleis",
+      "feld": [36, 16],
+      "bauteil_ok": true
+    },
+    {
+      "moebel": "cc4Gleis",
+      "feld": [37, 16],
+      "bauteil_ok": true
+    },
+    {
+      "moebel": "cc4Gleis",
+      "feld": [38, 16],
+      "bauteil_ok": true
+    },
+    {
+      "moebel": "cc4Gleis",
+      "feld": [39, 16],
+      "bauteil_ok": true
+    },
+    {
+      "moebel": "cc4Gleis",
+      "feld": [40, 16],
+      "bauteil_ok": true
+    },
+    {
+      "moebel": "cc4Gleis",
+      "feld": [41, 16],
+      "bauteil_ok": true
+    },
+    {
+      "moebel": "cc4Gleis",
+      "feld": [42, 16],
+      "bauteil_ok": true
+    },
+    {
+      "moebel": "cc4Gleis",
+      "feld": [43, 16],
+      "bauteil_ok": true
+    },
+    {
+      "moebel": "cc4Gleis",
+      "feld": [44, 16],
+      "bauteil_ok": true
+    },
+    {
+      "moebel": "cc4Gleis",
+      "feld": [45, 16],
+      "bauteil_ok": true
+    },
+    {
+      "moebel": "cc4Gleis",
+      "feld": [58, 16],
+      "bauteil_ok": true
+    },
+    {
+      "moebel": "cc4Gleis",
+      "feld": [59, 16],
+      "bauteil_ok": true
+    },
+    {
+      "moebel": "cc4Gleis",
+      "feld": [60, 16],
+      "bauteil_ok": true
+    },
+    {
+      "moebel": "cc4Gleis",
+      "feld": [61, 16],
+      "bauteil_ok": true
+    },
+    {
+      "moebel": "cc4Gleis",
+      "feld": [62, 16],
+      "bauteil_ok": true
+    },
+    {
+      "moebel": "cc4Gleis",
+      "feld": [63, 16],
+      "bauteil_ok": true
+    },
+    {
+      "moebel": "cc4Gleis",
+      "feld": [64, 16],
+      "bauteil_ok": true
+    },
+    {
+      "moebel": "cc4Gleis",
+      "feld": [65, 16],
+      "bauteil_ok": true
+    },
+    {
+      "moebel": "cc4Gleis",
+      "feld": [66, 16],
+      "bauteil_ok": true
+    },
+    {
+      "moebel": "cc4Gleis",
+      "feld": [67, 16],
+      "bauteil_ok": true
+    },
+    {
+      "moebel": "cc4Gleis",
+      "feld": [68, 16],
+      "bauteil_ok": true
+    },
+    {
+      "moebel": "cc4Gleis",
+      "feld": [69, 16],
+      "bauteil_ok": true
+    },
+    {
+      "moebel": "cc4Gleis",
+      "feld": [70, 16],
+      "bauteil_ok": true
+    },
+    {
+      "moebel": "cc4Gleis",
+      "feld": [71, 16],
+      "bauteil_ok": true
+    },
+    {
+      "moebel": "cc4Gleis",
+      "feld": [72, 16],
+      "bauteil_ok": true
+    },
+    {
+      "moebel": "cc4Gleis",
+      "feld": [73, 16],
+      "bauteil_ok": true
+    },
+    {
+      "moebel": "cc4Gleis",
+      "feld": [74, 16],
+      "bauteil_ok": true
+    },
+    {
+      "moebel": "cc4Gleis",
+      "feld": [75, 16],
+      "bauteil_ok": true
+    },
+    {
+      "moebel": "cc4Gleis",
+      "feld": [76, 16],
+      "bauteil_ok": true
+    },
+    {
+      "moebel": "cc4Gleis",
+      "feld": [77, 16],
+      "bauteil_ok": true
+    },
+    {
+      "moebel": "cc4Gleis",
+      "feld": [78, 16],
+      "bauteil_ok": true
+    },
+    {
+      "moebel": "cc4Gleis",
+      "feld": [79, 16],
+      "bauteil_ok": true
+    },
+    {
+      "moebel": "cc4Gleis",
+      "feld": [80, 16],
+      "bauteil_ok": true
+    },
+    {
+      "moebel": "cc4Gleis",
+      "feld": [81, 16],
+      "bauteil_ok": true
+    },
+    {
+      "moebel": "cc4Gleis",
+      "feld": [82, 16],
+      "bauteil_ok": true
+    },
+    {
+      "moebel": "cc4Gleis",
+      "feld": [83, 16],
+      "bauteil_ok": true
+    },
+    {
+      "moebel": "cc4Gleis",
+      "feld": [84, 16],
+      "bauteil_ok": true
+    },
+    {
+      "moebel": "cc4Gleis",
+      "feld": [85, 16],
+      "bauteil_ok": true
+    },
+    {
+      "moebel": "iw5Prellbock",
+      "feld": [86, 16]
+    },
+    {
+      "moebel": "iw8Andreaskreuz",
+      "feld": [18, 14]
+    },
+    {
+      "moebel": "iw8Andreaskreuz",
+      "feld": [21, 14]
+    },
+    {
+      "moebel": "mfBank",
+      "feld": [80, 22],
+      "id": "bankAussicht"
     }
   ],
   "ausloeser": [
@@ -230,7 +617,7 @@
     },
     {
       "name": "aussichtspunkt",
-      "feld": [81, 20]
+      "feld": [81, 24]
     },
     {
       "name": "fundNieten",
@@ -360,5 +747,10 @@
     }
   ],
   "zustand": ["neu", "gebraucht", "alt"],
-  "stil": ["natur", "einfach", "industrie", "klassisch", "laendlich"]
+  "stil": ["natur", "einfach", "industrie", "klassisch", "laendlich"],
+  "kante": "klippe",
+  "fels": "rot",
+  "boeden": {
+    "f": "felsbodenRot"
+  }
 }

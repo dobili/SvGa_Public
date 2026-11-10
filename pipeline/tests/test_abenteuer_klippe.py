@@ -9,10 +9,13 @@ from pipeline.abenteuer.klippe import (
     REIHE_FUSS,
     REIHE_KANTE,
     REIHE_OBEN,
+    REIHE_RAND,
     REIHE_WAND,
+    ROTE_KLIPPE,
     SPALTEN,
     TREPPE,
     grasboden,
+    klippenbogen,
     klippenfeld,
     strassenzeichen,
     treppenfeld,
@@ -49,7 +52,14 @@ def test_ohne_gras_darueber_nimmt_die_klippe_erde():
 
 def test_dicker_rand_zeigt_die_obere_flaeche():
     raster = ["####", "#rr#", "#rr#", "####"]
-    assert klippenfeld(raster, 0, 1, GRAS) == (SPALTEN["gras"][1], REIHE_OBEN)
+    assert klippenfeld(raster, 0, 1, GRAS) == (SPALTEN["gras"][2], REIHE_OBEN)
+    assert klippenfeld(["####", "####", "####"], 1, 1, GRAS) == (SPALTEN["erde"][1], REIHE_OBEN)
+
+
+def test_suedrand_einer_schlucht_zeigt_die_kante_der_hochflaeche():
+    """Regel: Runde 9, Muster „Höhen als Grundriss“: Wand unter Boden ist der Rand der Hochfläche."""
+    raster = ["....", "####", "####"]
+    assert klippenfeld(raster, 1, 1, GRAS) == (SPALTEN["erde"][1], REIHE_RAND)
 
 
 def test_boden_ist_keine_kante():
@@ -73,3 +83,13 @@ def test_zeichen_aus_der_szene():
     szene = {"boden": "gras", "boeden": {"r": "gras", "s": "asphalt", "k": "schotter"}}
     assert grasboden(szene) == {".", "r"}
     assert strassenzeichen(szene) == {"s"}
+
+
+def test_roter_fels_nimmt_die_rote_klippe_nur_wenn_das_bild_da_ist(tmp_path):
+    """Regel: Runde 9, roter Fels (Canyon, Sternwarte) mit rot umgefärbter Erdklippe."""
+    szene = {"kante": "klippe", "fels": "rot"}
+    assert klippenbogen(szene, tmp_path) == "gelaende"
+    (tmp_path / ROTE_KLIPPE).parent.mkdir(parents=True)
+    (tmp_path / ROTE_KLIPPE).write_bytes(b"")
+    assert klippenbogen(szene, tmp_path) == "klippeRot"
+    assert klippenbogen({"kante": "klippe"}, tmp_path) == "gelaende"

@@ -322,6 +322,17 @@ Tabelle hinzu; hier stehen die Szenen der Story-Bibel und die Wege.
 | Teleskop, Sternennacht                   | nur Dialog (Szene 22, Abend am Steg)                                                              | kein eigenes Bild nötig.                                                                                                            |
 | Schlüssel im Schilf                      | über den Dialog am Steg (`steg`, `gibFund("schluessel")`), kein eigenes Objekt                    | wie heute; das Schilf am Westufer neben dem Steg ist der Ort.                                                                       |
 
+### 3.3a Runde 8: Größe der Innenräume (KARTENREGELN 10.56, mittel-1)
+
+Geprüft nach Gebäude außen und Zweck; alle Räume bleiben, wie sie sind:
+
+| Raum        | Gebäude außen (Kacheln)          | Größe   | Begründung                                                                                           |
+| ----------- | -------------------------------- | ------- | ---------------------------------------------------------------------------------------------------- |
+| Bibliothek  | Bibliotheksbau mit Seiteneingang | 22 × 17 | Lesesaal mit Regalreihen, Spieltischen und Ausleihe; der größte Raum des Orts.                       |
+| Archiv      | Keller der Bibliothek            | 14 × 11 | Ein Kellerarchiv ist eng: Regale, Kisten, Treppe nach oben.                                          |
+| Waschsalon  | Waschsalon 8 × 9                 | 14 × 11 | Zwei Reihen Maschinen, Bank, Getränkeautomat; so groß wie ein kleiner Waschsalon an der Hauptstraße. |
+| Drechslerei | Werkstatt 8 × 10                 | 16 × 11 | Werkbank, Drehbank, Holzlager; eine Werkstatt für einen Handwerker.                                  |
+
 ## 4. Bühnenbilder
 
 Runde 4 (9.11.2026). Je Karte Größe, Wände, Böden, Laufwege, Zonen und Inventar; die Möbel stehen in

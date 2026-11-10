@@ -18,24 +18,39 @@
   "objekte": [
     {
       "moebel": "rv8Wandbord",
-      "feld": [0, 1],
+      "feld": [
+        0,
+        1
+      ],
       "an_wand": true,
       "id": "bord",
-      "versatz": [4, 18]
+      "versatz": [
+        4,
+        18
+      ]
     },
     {
       "moebel": "rv5PokalKlein",
       "auf": "bord",
-      "versatz": [-8, -2]
+      "versatz": [
+        -8,
+        -2
+      ]
     },
     {
       "moebel": "rv5PokalSilber",
       "auf": "bord",
-      "versatz": [8, -2]
+      "versatz": [
+        8,
+        -2
+      ]
     },
     {
       "moebel": "rv8Querbett",
-      "feld": [1, 3],
+      "feld": [
+        1,
+        3
+      ],
       "id": "bett"
     },
     {
@@ -44,20 +59,32 @@
     },
     {
       "moebel": "rv8Nasszelle",
-      "feld": [3, 2]
+      "feld": [
+        3,
+        2
+      ]
     },
     {
       "moebel": "rv5Kuriertasche",
-      "feld": [5, 1],
+      "feld": [
+        5,
+        1
+      ],
       "an_wand": true
     },
     {
       "moebel": "mf8KuehlschrankWeiss",
-      "feld": [6, 1]
+      "feld": [
+        6,
+        1
+      ]
     },
     {
       "moebel": "rv8Arbeitsplatte",
-      "feld": [7, 2],
+      "feld": [
+        7,
+        2
+      ],
       "id": "platte"
     },
     {
@@ -66,66 +93,112 @@
     },
     {
       "moebel": "rv8Arbeitsplatte",
-      "feld": [9, 2],
+      "feld": [
+        9,
+        2
+      ],
       "id": "koch"
     },
     {
       "moebel": "rv8Kocher",
       "auf": "koch",
-      "versatz": [-6, 0]
+      "versatz": [
+        -6,
+        0
+      ]
     },
     {
       "moebel": "rv8Kocher",
       "auf": "koch",
-      "versatz": [6, 0]
+      "versatz": [
+        6,
+        0
+      ]
     },
     {
       "moebel": "wzFenster",
-      "feld": [11, 1],
+      "feld": [
+        11,
+        1
+      ],
       "an_wand": true
     },
     {
       "moebel": "rv8Sitzbank",
-      "feld": [11, 3]
+      "feld": [
+        11,
+        3
+      ]
     },
     {
       "moebel": "pd6Tisch",
-      "feld": [11, 4]
+      "feld": [
+        11,
+        4
+      ]
     },
     {
       "moebel": "rv8Sitzbank",
-      "feld": [11, 6]
+      "feld": [
+        11,
+        6
+      ]
     },
     {
       "moebel": "mf4Fussmatte",
-      "feld": [8, 6],
-      "versatz": [0, 8]
+      "feld": [
+        8,
+        6
+      ],
+      "versatz": [
+        0,
+        8
+      ]
     },
     {
       "moebel": "rv5TuerSuedHell",
-      "feld": [8, 7],
+      "feld": [
+        8,
+        7
+      ],
       "an_wand": true
     }
   ],
   "ausloeser": [
     {
       "name": "start",
-      "feld": [8, 6],
+      "feld": [
+        8,
+        6
+      ],
       "eigenschaften": {
         "richtung": "oben"
       }
     },
     {
       "name": "wohnwagenAusgang",
-      "feld": [8, 7]
+      "feld": [
+        8,
+        7
+      ]
     },
     {
       "name": "dosentrophaeen",
-      "feld": [2, 6]
+      "feld": [
+        2,
+        6
+      ]
     }
   ],
   "figuren": [],
   "belebung": [],
-  "zustand": ["neu", "gebraucht"],
-  "stil": ["industrie", "klassisch", "modern"]
+  "zustand": [
+    "neu",
+    "gebraucht"
+  ],
+  "stil": [
+    "industrie",
+    "klassisch",
+    "modern"
+  ]
 }

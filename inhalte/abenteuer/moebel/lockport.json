@@ -436,6 +436,15 @@
       "art": "deko",
       "zustand": "gebraucht",
       "stil": "rustikal"
+    },
+    "ld11Kanonenofen": {
+      "quelle": "spiel/eigene/kanonenofen_ki.png",
+      "breite": 16,
+      "hoehe": 48,
+      "kollision": true,
+      "art": "ofen",
+      "zustand": "gebraucht",
+      "stil": "rustikal"
     }
   }
 }

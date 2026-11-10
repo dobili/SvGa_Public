@@ -13132,12 +13132,12 @@
     },
     {
      "id": 24,
-     "name": "wc5Steg4",
+     "name": "wc11HolzbrueckeQuer",
      "type": "moebel",
-     "x": 1376,
-     "y": 224,
-     "width": 64,
-     "height": 36,
+     "x": 1360,
+     "y": 208,
+     "width": 80,
+     "height": 48,
      "rotation": 0,
      "visible": true,
      "properties": [

@@ -205,6 +205,51 @@
       "blick": "unten",
       "zustand": "gebraucht",
       "stil": "klassisch"
+    },
+    "el11Buchladen": {
+      "quelle": "spiel/eigene/london_buchladen.png",
+      "breite": 112,
+      "hoehe": 192,
+      "kollision": false,
+      "art": "gebaeude",
+      "zustand": "gebraucht",
+      "stil": "klassisch"
+    },
+    "el11Schneider": {
+      "quelle": "spiel/eigene/london_schneider.png",
+      "breite": 112,
+      "hoehe": 192,
+      "kollision": false,
+      "art": "gebaeude",
+      "zustand": "gebraucht",
+      "stil": "klassisch"
+    },
+    "el11Kaffeehaus": {
+      "quelle": "spiel/eigene/london_kaffeehaus.png",
+      "breite": 112,
+      "hoehe": 192,
+      "kollision": false,
+      "art": "gebaeude",
+      "zustand": "gebraucht",
+      "stil": "klassisch"
+    },
+    "el11Schachsalon": {
+      "quelle": "spiel/eigene/london_schachsalon.png",
+      "breite": 112,
+      "hoehe": 192,
+      "kollision": false,
+      "art": "gebaeude",
+      "zustand": "gebraucht",
+      "stil": "klassisch"
+    },
+    "el11Pub": {
+      "quelle": "spiel/eigene/london_pub.png",
+      "breite": 112,
+      "hoehe": 192,
+      "kollision": false,
+      "art": "gebaeude",
+      "zustand": "gebraucht",
+      "stil": "klassisch"
     }
   }
 }

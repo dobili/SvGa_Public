@@ -245,7 +245,7 @@ test("Weg 3: Kreidespringer an der Brücke, Rätsel lösen, Losungswort", async 
 test("Erinnerung London 1851: Sepia, kein Tagebuch, keine Münzen", async ({ page }) => {
   const stand = {
     ...STAND,
-    position: { karte: "erinnerungLondon.strand", x: 2, y: 10, richtung: "rechts" },
+    position: { karte: "erinnerungLondon.strand", x: 2, y: 12, richtung: "rechts" },
   };
   await starteImBrowser(page);
   await expect.poll(() => page.evaluate(schreibeStand, stand)).toBe(true);

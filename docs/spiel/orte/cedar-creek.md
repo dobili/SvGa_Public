@@ -862,3 +862,24 @@ der Gutachter noch nicht.
   - Der „Esel“ ist das Bild der Wildpferde; das gehört zur Tierzuordnung wie die Ziegen.
 - **Zedernpfad:** Der Steinkreis ist geschlossen (zwölf Steine um die Bank). Die orangen
   Platzhalter an den Stufenenden löst mittel-4 zentral.
+
+## Gemini-Bilder eingebaut (niedrig-1, 10.11.2026)
+
+- **Reh und Hirsch:** Beide sind eigene Tierarten in `tierarten.json` (Schnitt „standbild“ wie
+  der Bison). Damit zeigen Zedernwald, Zedernpfad und Landstraße keine Ziegen mehr.
+- **Häuser von hinten (10.66):**
+  - Maple Falls: Die vier Südhäuser der Birch Lane zeigen jetzt ihre Rückseite mit Hintertür. Oben
+    sieht man den Vorbau mit Briefkasten zur Straße.
+  - Cedar Creek: die beiden Häuser direkt südlich der Straße.
+- **Bänke von hinten:**
+  - Bahndamm: zwei Bahnsteigbänke, die zum Gleis schauen.
+  - Cedar Creek: die Bahnsteigbank.
+  - Park: die lange Bank am Uferweg schaut zum Fluss.
+- **Holzbrücke:** Die Parkstraße überquert den Fluss auf der Holzbrücke (Beschreibung wie
+  ursprünglich). Im Zedernwald steht sie statt des Stegs.
+- **London:** Der Strand hat fünf schmale Fronten dicht an dicht: Buchladen, Schneider, Kaffeehaus,
+  Schachsalon, Pub. Die Karte ist dafür 24 × 25 Kacheln groß; der Ladetest beginnt bei (2, 12).
+- **Postreiter:** Der Figurenbogen entsteht aus den vier Gemini-Standbildern (Bildwunsch
+  `postreiter_bogen`); beim Laufen wippt er.
+- **Gasthaus:** Kanonenofen aus Gemini, daneben Brennholz. Der Küchenherd bleibt ungenutzt, weil
+  die Küche nicht auf der Karte liegt.

@@ -3,7 +3,7 @@
   "datei": "karten/weg-cedar-riverton-bahndamm.json",
   "art": "aussen",
   "wand": "damm",
-  "beschreibung": "Hauptfassung (früher C). Der Bahndamm: Gleis mitten auf einer Schotterkrone (Reihen 6–9), Böschung nach Süden; die Nordböschung fällt vom Betrachter weg und zeigt sich als dunklerer Grasstreifen mit Kante; im Norden Wiese mit Hecke, Stellwerk mit Blick aufs Gleis, Signal und eine Kuhweide hinter dem Viehdurchlass. Der Bahnsteigrest oben auf dem Damm mit zwei Bänken längs zum Gleis, Laternen und Treppe. Südlich der Weg durch Wiese und Birkenwald, zum Fluss mit Bank, an Kleingärten mit Kürbis und Sonnenblumen vorbei, am Stadtrand Lagerzaun und Lagerhalle hinter der Plakatwand von Perfect Move.",
+  "beschreibung": "Hauptfassung (früher C). Der Bahndamm: Gleis mitten auf einer Schotterkrone (Reihen 6–9), Böschung nach Süden; die Nordböschung fällt vom Betrachter weg und zeigt sich als dunklerer Grasstreifen mit Kante; im Norden Wiese mit Hecke, Stellwerk mit Blick aufs Gleis, Signal und eine Kuhweide hinter dem Viehdurchlass. Der Bahnsteigrest oben auf dem Damm mit zwei Bänken, die zum Gleis schauen, Laternen und Treppe. Südlich der Weg durch Wiese und Birkenwald, zum Fluss mit Bank, an Kleingärten mit Kürbis und Sonnenblumen vorbei, am Stadtrand Lagerzaun und Lagerhalle hinter der Plakatwand von Perfect Move.",
   "boden": "gras",
   "wandart": "gras",
   "boeden": {
@@ -2863,14 +2863,6 @@
       "feld": [2, 30]
     },
     {
-      "moebel": "scBankSeitlich",
-      "feld": [49, 9]
-    },
-    {
-      "moebel": "scBankSeitlich",
-      "feld": [57, 9]
-    },
-    {
       "moebel": "wc5ZaunML",
       "feld": [57, 2],
       "bauteil_ok": true
@@ -2969,6 +2961,14 @@
       "moebel": "n1ZaunEndeLinks",
       "feld": [72, 4],
       "bauteil_ok": true
+    },
+    {
+      "moebel": "wc11BahnsteigbankHinten",
+      "feld": [48, 9]
+    },
+    {
+      "moebel": "wc11BahnsteigbankHinten",
+      "feld": [51, 9]
     }
   ],
   "ausloeser": [

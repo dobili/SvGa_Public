@@ -31028,19 +31028,19 @@
     },
     {
      "id": 665,
-     "name": "scBankSeitlich",
+     "name": "wc5ZaunML",
      "type": "moebel",
-     "x": 784,
-     "y": 144,
+     "x": 912,
+     "y": 32,
      "width": 16,
-     "height": 48,
+     "height": 16,
      "rotation": 0,
      "visible": true,
      "properties": [
       {
        "name": "tiefe",
        "type": "int",
-       "value": 184
+       "value": 40
       },
       {
        "name": "kollision",
@@ -31051,19 +31051,19 @@
     },
     {
      "id": 666,
-     "name": "scBankSeitlich",
+     "name": "wc5ZaunML",
      "type": "moebel",
      "x": 912,
-     "y": 144,
+     "y": 48,
      "width": 16,
-     "height": 48,
+     "height": 16,
      "rotation": 0,
      "visible": true,
      "properties": [
       {
        "name": "tiefe",
        "type": "int",
-       "value": 184
+       "value": 56
       },
       {
        "name": "kollision",
@@ -31074,9 +31074,9 @@
     },
     {
      "id": 667,
-     "name": "wc5ZaunML",
+     "name": "wc5ZaunMR",
      "type": "moebel",
-     "x": 912,
+     "x": 1152,
      "y": 32,
      "width": 16,
      "height": 16,
@@ -31097,9 +31097,9 @@
     },
     {
      "id": 668,
-     "name": "wc5ZaunML",
+     "name": "wc5ZaunMR",
      "type": "moebel",
-     "x": 912,
+     "x": 1152,
      "y": 48,
      "width": 16,
      "height": 16,
@@ -31120,52 +31120,6 @@
     },
     {
      "id": 669,
-     "name": "wc5ZaunMR",
-     "type": "moebel",
-     "x": 1152,
-     "y": 32,
-     "width": 16,
-     "height": 16,
-     "rotation": 0,
-     "visible": true,
-     "properties": [
-      {
-       "name": "tiefe",
-       "type": "int",
-       "value": 40
-      },
-      {
-       "name": "kollision",
-       "type": "bool",
-       "value": true
-      }
-     ]
-    },
-    {
-     "id": 670,
-     "name": "wc5ZaunMR",
-     "type": "moebel",
-     "x": 1152,
-     "y": 48,
-     "width": 16,
-     "height": 16,
-     "rotation": 0,
-     "visible": true,
-     "properties": [
-      {
-       "name": "tiefe",
-       "type": "int",
-       "value": 56
-      },
-      {
-       "name": "kollision",
-       "type": "bool",
-       "value": true
-      }
-     ]
-    },
-    {
-     "id": 671,
      "name": "n1ZaunEndeRechts",
      "type": "moebel",
      "x": 912,
@@ -31188,7 +31142,7 @@
      ]
     },
     {
-     "id": 672,
+     "id": 670,
      "name": "n1ZaunM",
      "type": "moebel",
      "x": 928,
@@ -31211,7 +31165,7 @@
      ]
     },
     {
-     "id": 673,
+     "id": 671,
      "name": "n1ZaunM",
      "type": "moebel",
      "x": 944,
@@ -31234,7 +31188,7 @@
      ]
     },
     {
-     "id": 674,
+     "id": 672,
      "name": "n1ZaunM",
      "type": "moebel",
      "x": 960,
@@ -31257,7 +31211,7 @@
      ]
     },
     {
-     "id": 675,
+     "id": 673,
      "name": "n1ZaunM",
      "type": "moebel",
      "x": 976,
@@ -31280,7 +31234,7 @@
      ]
     },
     {
-     "id": 676,
+     "id": 674,
      "name": "n1ZaunM",
      "type": "moebel",
      "x": 992,
@@ -31303,7 +31257,7 @@
      ]
     },
     {
-     "id": 677,
+     "id": 675,
      "name": "n1ZaunEndeLinks",
      "type": "moebel",
      "x": 1008,
@@ -31326,7 +31280,7 @@
      ]
     },
     {
-     "id": 678,
+     "id": 676,
      "name": "wc5Tor1",
      "type": "moebel",
      "x": 1024,
@@ -31349,7 +31303,7 @@
      ]
     },
     {
-     "id": 679,
+     "id": 677,
      "name": "wc5Tor2",
      "type": "moebel",
      "x": 1040,
@@ -31372,7 +31326,7 @@
      ]
     },
     {
-     "id": 680,
+     "id": 678,
      "name": "n1ZaunEndeRechts",
      "type": "moebel",
      "x": 1056,
@@ -31395,7 +31349,7 @@
      ]
     },
     {
-     "id": 681,
+     "id": 679,
      "name": "n1ZaunM",
      "type": "moebel",
      "x": 1072,
@@ -31418,7 +31372,7 @@
      ]
     },
     {
-     "id": 682,
+     "id": 680,
      "name": "n1ZaunM",
      "type": "moebel",
      "x": 1088,
@@ -31441,7 +31395,7 @@
      ]
     },
     {
-     "id": 683,
+     "id": 681,
      "name": "n1ZaunM",
      "type": "moebel",
      "x": 1104,
@@ -31464,7 +31418,7 @@
      ]
     },
     {
-     "id": 684,
+     "id": 682,
      "name": "n1ZaunM",
      "type": "moebel",
      "x": 1120,
@@ -31487,7 +31441,7 @@
      ]
     },
     {
-     "id": 685,
+     "id": 683,
      "name": "n1ZaunM",
      "type": "moebel",
      "x": 1136,
@@ -31510,7 +31464,7 @@
      ]
     },
     {
-     "id": 686,
+     "id": 684,
      "name": "n1ZaunEndeLinks",
      "type": "moebel",
      "x": 1152,
@@ -31524,6 +31478,52 @@
        "name": "tiefe",
        "type": "int",
        "value": 72
+      },
+      {
+       "name": "kollision",
+       "type": "bool",
+       "value": true
+      }
+     ]
+    },
+    {
+     "id": 685,
+     "name": "wc11BahnsteigbankHinten",
+     "type": "moebel",
+     "x": 768,
+     "y": 144,
+     "width": 48,
+     "height": 32,
+     "rotation": 0,
+     "visible": true,
+     "properties": [
+      {
+       "name": "tiefe",
+       "type": "int",
+       "value": 168
+      },
+      {
+       "name": "kollision",
+       "type": "bool",
+       "value": true
+      }
+     ]
+    },
+    {
+     "id": 686,
+     "name": "wc11BahnsteigbankHinten",
+     "type": "moebel",
+     "x": 816,
+     "y": 144,
+     "width": 48,
+     "height": 32,
+     "rotation": 0,
+     "visible": true,
+     "properties": [
+      {
+       "name": "tiefe",
+       "type": "int",
+       "value": 168
       },
       {
        "name": "kollision",

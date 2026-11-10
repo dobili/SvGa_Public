@@ -457,22 +457,6 @@
       "vorn": true
     },
     {
-      "moebel": "mf4BauernhausBreit",
-      "feld": [1, 32]
-    },
-    {
-      "moebel": "mf4Bauernhaus",
-      "feld": [18, 31]
-    },
-    {
-      "moebel": "mf4BauernhausBreit",
-      "feld": [29, 32]
-    },
-    {
-      "moebel": "mf4Bauernhaus",
-      "feld": [40, 31]
-    },
-    {
       "moebel": "mf4BuschKlein",
       "feld": [28, 38]
     },
@@ -916,6 +900,22 @@
     {
       "moebel": "mf10SchildSackgasse",
       "feld": [2, 29]
+    },
+    {
+      "moebel": "mf11HausHintenBlau",
+      "feld": [3, 32]
+    },
+    {
+      "moebel": "mf11HausHintenBRot",
+      "feld": [18, 33]
+    },
+    {
+      "moebel": "mf11HausHintenBraun",
+      "feld": [30, 32]
+    },
+    {
+      "moebel": "mf11HausHintenBBlau",
+      "feld": [41, 33]
     }
   ],
   "ausloeser": [

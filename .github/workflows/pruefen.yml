@@ -92,7 +92,9 @@ jobs:
         run: npm ci
       - name: Browser
         # Zeitgrenze: In der Nacht zum 26.10.2026 hing dieser Schritt 21 Minuten; so bricht er ab.
-        timeout-minutes: 5
+        # Am 10.11.2026 lief er dreimal in die alte Grenze von 5 Minuten, weil der Ubuntu-Spiegel
+        # einzelne Pakete erst nach 30 Sekunden lieferte; 12 Minuten reichen dafür und fangen ein Hängen ab.
+        timeout-minutes: 12
         run: npx playwright install --with-deps chromium webkit
       - name: Build
         run: npm run build

@@ -72,8 +72,9 @@ Erst danach sieht der Autor die Karte. Neue Notizen des Autors kommen als neue P
 - Natürliche Flüsse und Bäche winden sich und haben natürliche Ufer.
 - Kanäle sind gerade und gemauert, breit genug für ihre Boote. Eine Schleuse fasst ihre Boote.
 - Wasserlöcher haben keine gemauerte Einfassung.
-- Boote liegen längs, festgemacht, in passender Größe (Fähre größer als ein Ruderboot), und
-  verstopfen das Wasser nicht.
+- Boote liegen längs, festgemacht, und verstopfen das Wasser nicht. Ihre Größe folgt der Tabelle in
+  KARTENREGELN 10.64 (Figur 2 Kacheln hoch, Auto 4–5, Bus 7–9, Kutter 9–12, Fähre 16–20,
+  Frachtkahn 24–30 Kacheln lang).
 - Anlegepfosten stehen direkt am Ufer.
 - Wo Wege auf beiden Seiten liegen, gibt es eine Brücke. Brücken sind als Brücken lesbar: Rampen,
   Pfeiler, Schatten; Glas teils durchsichtig.

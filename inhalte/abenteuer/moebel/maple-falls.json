@@ -3249,6 +3249,15 @@
       "zustand": "gebraucht",
       "stil": "schule",
       "blick": "unten"
+    },
+    "mf9StegNeu": {
+      "quelle": "spiel/eigene/bruecke_fuss_laengs_3.png",
+      "breite": 32,
+      "hoehe": 52,
+      "kollision": false,
+      "art": "steg",
+      "zustand": "alt",
+      "stil": "natur"
     }
   }
 }

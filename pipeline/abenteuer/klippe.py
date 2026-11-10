@@ -95,19 +95,29 @@ def _rand_neben_boden(zeilen: list[str], x: int, y: int) -> bool:
     return any(0 < a < breite - 1 and 0 < b < hoehe - 1 and not _ist_wand(zeilen, a, b) for a, b in innen)
 
 
+def _naechster_boden(zeilen: list[str], x: int, y: int) -> str:
+    """Zeichen des nächsten Nicht-Wand-Felds geradeaus nach oben, links, rechts oder unten."""
+    bester, zeichen = None, WAND
+    for dx, dy in ((0, -1), (-1, 0), (1, 0), (0, 1)):
+        a, b, schritte = x + dx, y + dy, 1
+        while 0 <= a < len(zeilen[0]) and 0 <= b < len(zeilen) and zeilen[b][a] == WAND:
+            a, b, schritte = a + dx, b + dy, schritte + 1
+        if 0 <= a < len(zeilen[0]) and 0 <= b < len(zeilen) and (bester is None or schritte < bester):
+            bester, zeichen = schritte, zeilen[b][a]
+    return zeichen
+
+
 def _flaechenfeld(zeilen: list[str], x: int, y: int, grasboden: set[str]) -> tuple[int, int]:
     """Obere Fläche ohne Kante darunter (dicker Rand, Hochfläche über einer Schlucht).
 
     Grenzt Boden oben an, ist das der Rand der Hochfläche mit gewellter Linie (Reihe 42), so
     sieht man die Südkante einer Schlucht; grenzt Boden links oder rechts an, die Randspalte.
-    Gras, wenn Gras daneben liegt, sonst Erde.
+    Gras oder Erde nach dem nächsten Boden in den vier Richtungen: Ein dicker Rand neben einer
+    Wiese bleibt Wiese, statt als erdige Fläche wie ein Rahmen um die Karte zu laufen (Gutachten
+    Steinbruchgrube, dritte Prüfung).
     """
-    nachbarn = [
-        zeilen[b][a]
-        for a, b in ((x - 1, y), (x + 1, y), (x, y - 1), (x, y + 1))
-        if 0 <= b < len(zeilen) and 0 <= a < len(zeilen[0])
-    ]
-    links, mitte, rechts = SPALTEN["gras" if any(n in grasboden for n in nachbarn) else "erde"]
+    gras = WAND in grasboden or _naechster_boden(zeilen, x, y) in grasboden
+    links, mitte, rechts = SPALTEN["gras" if gras else "erde"]
     boden_links = 0 < x and not _ist_wand(zeilen, x - 1, y)
     boden_rechts = x + 1 < len(zeilen[0]) and not _ist_wand(zeilen, x + 1, y)
     spalte = (
@@ -127,6 +137,10 @@ def treppenfeld(zeilen: list[str], x: int, y: int, strasse: set[str] | None = No
     Sonderfall: Straßen (Zeichen in ``strasse``, etwa Asphalt) bekommen keine Treppe.
     """
     if _ist_wand(zeilen, x, y) or zeilen[y][x] in (strasse or set()):
+        return None
+    # Nur echte Rampen: Boden darüber und darunter. Eine Einbuchtung der Kante ist keine Treppe
+    # (Gutachten Steinbruchgrube, dritte Prüfung: Tritte ohne Weg auf der Kantenkrone).
+    if _ist_wand(zeilen, x, y - 1) or _ist_wand(zeilen, x, y + 1) or y == 0 or y + 1 >= len(zeilen):
         return None
     links = next((r for d in range(1, BREITE_RAMPE + 1) if (r := _rolle_wand(zeilen, x - d, y))), None)
     rechts = next((r for d in range(1, BREITE_RAMPE + 1) if (r := _rolle_wand(zeilen, x + d, y))), None)
@@ -151,8 +165,13 @@ def _rolle_wand(zeilen: list[str], x: int, y: int) -> str | None:
 
 
 def grasboden(szene: dict) -> set[str]:
-    """Die Rasterzeichen, die in der Szene Gras sind (Grundboden „.“ oder Sonderböden)."""
+    """Die Rasterzeichen, die in der Szene Gras sind (Grundboden „.“ oder Sonderböden).
+
+    Mit „hochflaeche“: „gras“ zählt auch die Wand selbst als Gras: Dicke Ränder und Kanten ohne
+    Boden darüber zeigen dann Wiese statt Erde (Steinbruchgrube: Wiese rings um die Grube).
+    """
     zeichen = {z for z, art in szene.get("boeden", {}).items() if art == "gras"}
+    zeichen |= {WAND} if szene.get("hochflaeche") == "gras" else set()
     return zeichen | ({"."} if szene.get("boden") == "gras" else set())
 
 

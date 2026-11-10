@@ -14,6 +14,7 @@
 
 EXTERNAL beginneAufgaben(runde)
 EXTERNAL beginneSimultan(kennung)
+EXTERNAL zeigeVorfuehrung(kennung)
 EXTERNAL beginnePartie(begegnung)
 EXTERNAL gibFund(kennung)
 
@@ -209,6 +210,8 @@ Noch einmal? Weiß zieht und gewinnt. Sieh dir den Springer an, und dann sieh di
 ~ finchErledigt = true
 Odette klatscht in die Hände. Gelöst! Dann gehört der Satz dir. Finchs Buchsbaum, sechzehn Weiße, sechzehn Schwarze. #sprecher:odette
 ~ gibFund("finchsBuchsbaum")
+Und jetzt zeige ich dir, woher die Falle kommt. Légal hat sie um 1750 in Paris gestellt. #sprecher:odette
+~ zeigeVorfuehrung("finchFalle")
 Ein Problem, das gelöst wird, ist nicht verloren. Es ist angekommen. #sprecher:ambrose #stimmung:friedlich
 -> END
 

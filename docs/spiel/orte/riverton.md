@@ -713,6 +713,43 @@ der Story-Bibel und die Wege.
 | `riverton.wohnwagen`     | –                                  | nur Szene 37                               | keiner                                                                                    |
 | `riverton.schuppen`      | `ohneFahrrad`                      | nach Szene 33, wenn das Fahrrad geholt ist | Plane liegt leer auf dem Boden, Fahrrad fehlt                                             |
 
+### 3.5 Gutachten Runde 8 (10.11.2026, mittel-3): Innenräume
+
+Behoben (Gutachten `docs/spiel/auftraege/gutachten/riverton-innen.md`):
+
+- **Wohnwagen**, jetzt 14 × 8 statt 17 × 8, ohne leere Südhälfte: Querbett (Doppelbett von oben) über
+  die ganze Breite im Heck, darüber ein schmales Wandbord mit den Pokalen (Bildwunsch
+  `riverton_innen.py`), Kuriertasche an der Wand, Nasszelle hinter einer Milchglastür,
+  Küchenzeile mit Spüle und Zweiflammer auf zwei Arbeitsplatten neben dem Kühlschrank, Sitzecke mit
+  zwei Bänken um den Tisch, zwei Fenster.
+- **Pavillon**, jetzt 24 × 18: Bodenbrett mit Steinrahmen und Laufweg ringsum; Bretter liegen ganz auf
+  den Tischen, je ein Stuhl davor und dahinter genau unter jedem Brett; zwischen den Tischreihen eine
+  Reihe Abstand; zwei Truhen für die großen Figuren; Gründungsbild statt winziger Tafel;
+  Limonadenstand mit Gläsern statt eines unkenntlichen Tischchens; Zuschauerbänke an der Nordwand mit
+  Blick aufs Brett.
+- **Schuppen**: Brennholz in Gestellen statt Holzscheiten mit Gras, Bretterstapel statt Zaunfeld,
+  Farbdose statt Fass als „Kanister“, Werkzeugbord mit Haken und Werkzeugkiste statt Ladenvitrine.
+- **Bahnhofshalle**: drei Schalterfenster mit Ablage in der Nordwand statt einer flachen Ladenfront;
+  Kiosk in der Ecke mit Zeitungshaltern und Pops hinter dem Tresen; Abfahrtsmonitor an der Wand statt
+  Tafel auf Beinen; schwarze Doppeltür zum Bahnsteig, gläserne Doppeltür als Haupteingang;
+  Getränke- und Kaffeeautomat nebeneinander an der Ostwand; vier gleiche Säulen, Pflanzen
+  einheitlich an den Säulen und am Eingang, keine mehr vor einer Tür; nur noch eine Bankart; der
+  „Wasserspender“ ist weg; Sackkarre mit Gepäck und Koffer in den Ecken.
+
+Begründet nicht geändert:
+
+- Pavillon „rechteckig statt achteckig“: Die Innenkarte ist im Raster rechteckig; die Beschreibung
+  nennt kein Achteck mehr. Fenster nur in der Nordwand, weil Seitenwände in der Draufsicht keine
+  Fenster zeigen können.
+- Pavillon „Brett ohne Koordinaten“: Es gibt keine Bodenbilder mit Buchstaben und Zahlen; der Rahmen
+  aus Stein grenzt das Brett ab.
+- Bahnhofshalle „Personal am Schalter“: Die Schalter sind Fenster in der Wand, der Beamte sitzt
+  dahinter und ist in der Draufsicht nicht zu sehen. „Niedrige Wände“: Die Wandhöhe ist für alle
+  Innenräume gleich (drei Kacheln).
+- Schuppen „Fahrrad unter der Plane wie ein Zelt“: Das Fahrrad ist absichtlich abgedeckt (Szene 33);
+  das Hinterrad schaut hervor. „Kein Staub, kein Licht durch Ritzen“: Partikel und Lichtstreifen sind
+  Sache der Laufzeit, nicht des Kartenbilds.
+
 ## 4. Bühnenbilder
 
 Je Karte Größe, Wände, Böden, Laufwege, Zonen und Inventar. Feld = linke obere Kachel. Möbel und Bilder

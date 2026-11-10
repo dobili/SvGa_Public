@@ -44,353 +44,684 @@
   "objekte": [
     {
       "moebel": "gc7Leuchtturm",
-      "feld": [60, 1]
+      "feld": [
+        60,
+        1
+      ]
     },
     {
       "moebel": "gc7Waerterhaus2",
-      "feld": [67, 3]
+      "feld": [
+        67,
+        3
+      ]
     },
     {
       "moebel": "gc7Bank",
-      "feld": [75, 14]
+      "feld": [
+        75,
+        14
+      ]
     },
     {
       "moebel": "gc7Rettungsring",
-      "feld": [67, 13]
+      "feld": [
+        67,
+        13
+      ]
     },
     {
       "moebel": "gc7LinsenKiste",
-      "feld": [64, 17]
+      "feld": [
+        64,
+        17
+      ]
     },
     {
       "moebel": "gc7Fels",
-      "feld": [55, 8]
+      "feld": [
+        55,
+        8
+      ]
     },
     {
       "moebel": "gc7Fels",
-      "feld": [56, 4]
+      "feld": [
+        56,
+        4
+      ]
     },
     {
       "moebel": "gc7Fels",
-      "feld": [56, 9]
+      "feld": [
+        56,
+        9
+      ]
     },
     {
       "moebel": "gc7FelsFlach",
-      "feld": [77, 9]
+      "feld": [
+        77,
+        9
+      ]
     },
     {
       "moebel": "gc7Fels",
-      "feld": [20, 10]
+      "feld": [
+        20,
+        10
+      ]
     },
     {
       "moebel": "gc7FelsFlach",
-      "feld": [108, 10]
+      "feld": [
+        108,
+        10
+      ]
     },
     {
       "moebel": "gc7Treibholz",
-      "feld": [40, 10]
+      "feld": [
+        40,
+        10
+      ]
     },
     {
       "moebel": "gc7Kisten",
-      "feld": [76, 12]
+      "feld": [
+        76,
+        12
+      ]
     },
     {
       "moebel": "gc7Kiefer",
-      "feld": [4, 26]
+      "feld": [
+        4,
+        26
+      ]
     },
     {
       "moebel": "gc7Kiefer",
-      "feld": [101, 21]
+      "feld": [
+        101,
+        21
+      ]
     },
     {
       "moebel": "gc7Kiefer",
-      "feld": [36, 20]
+      "feld": [
+        36,
+        20
+      ]
     },
     {
       "moebel": "gc7Kiefer",
-      "feld": [9, 19]
+      "feld": [
+        9,
+        19
+      ]
     },
     {
       "moebel": "gc7KieferB",
-      "feld": [60, 26]
+      "feld": [
+        60,
+        26
+      ]
     },
     {
       "moebel": "gc7Kiefer",
-      "feld": [53, 20]
+      "feld": [
+        53,
+        20
+      ]
     },
     {
       "moebel": "gc7Kiefer",
-      "feld": [88, 22]
+      "feld": [
+        88,
+        22
+      ]
     },
     {
       "moebel": "gc7KieferB",
-      "feld": [85, 25]
+      "feld": [
+        85,
+        25
+      ]
     },
     {
       "moebel": "gc7Kiefer",
-      "feld": [56, 25]
+      "feld": [
+        56,
+        25
+      ]
     },
     {
       "moebel": "gc7KieferB",
-      "feld": [14, 21]
+      "feld": [
+        14,
+        21
+      ]
     },
     {
       "moebel": "gc7Kiefer",
-      "feld": [38, 25]
+      "feld": [
+        38,
+        25
+      ]
     },
     {
       "moebel": "gc7Kiefer",
-      "feld": [23, 26]
+      "feld": [
+        23,
+        26
+      ]
     },
     {
       "moebel": "gc7KieferB",
-      "feld": [95, 22]
+      "feld": [
+        95,
+        22
+      ]
     },
     {
       "moebel": "gc7Kiefer",
-      "feld": [124, 24]
+      "feld": [
+        124,
+        24
+      ]
     },
     {
       "moebel": "gc7Kiefer",
-      "feld": [25, 23]
+      "feld": [
+        25,
+        23
+      ]
     },
     {
       "moebel": "gc7Kiefer",
-      "feld": [76, 20]
+      "feld": [
+        76,
+        20
+      ]
     },
     {
       "moebel": "gc7Kiefer",
-      "feld": [30, 26]
+      "feld": [
+        30,
+        26
+      ]
     },
     {
       "moebel": "gc7Kiefer",
-      "feld": [31, 23]
+      "feld": [
+        31,
+        23
+      ]
     },
     {
       "moebel": "gc7Kiefer",
-      "feld": [52, 24]
+      "feld": [
+        52,
+        24
+      ]
     },
     {
       "moebel": "gc7KieferB",
-      "feld": [15, 26]
+      "feld": [
+        15,
+        26
+      ]
     },
     {
       "moebel": "gc7Kiefer",
-      "feld": [96, 26]
+      "feld": [
+        96,
+        26
+      ]
     },
     {
       "moebel": "gc7KieferB",
-      "feld": [7, 23]
+      "feld": [
+        7,
+        23
+      ]
     },
     {
       "moebel": "gc7Kiefer",
-      "feld": [73, 26]
+      "feld": [
+        73,
+        26
+      ]
     },
     {
       "moebel": "gc7Kiefer",
-      "feld": [32, 19]
+      "feld": [
+        32,
+        19
+      ]
     },
     {
       "moebel": "gc7KieferB",
-      "feld": [48, 26]
+      "feld": [
+        48,
+        26
+      ]
     },
     {
       "moebel": "gc7KieferB",
-      "feld": [119, 23]
+      "feld": [
+        119,
+        23
+      ]
     },
     {
       "moebel": "gc7KieferB",
-      "feld": [84, 21]
+      "feld": [
+        84,
+        21
+      ]
     },
     {
       "moebel": "gc7Kiefer",
-      "feld": [109, 22]
+      "feld": [
+        109,
+        22
+      ]
     },
     {
       "moebel": "gc7Kiefer",
-      "feld": [63, 23]
+      "feld": [
+        63,
+        23
+      ]
     },
     {
       "moebel": "gc7KieferB",
-      "feld": [9, 26]
+      "feld": [
+        9,
+        26
+      ]
     },
     {
       "moebel": "gc7Kiefer",
-      "feld": [77, 24]
+      "feld": [
+        77,
+        24
+      ]
     },
     {
       "moebel": "gc7KieferB",
-      "feld": [64, 26]
+      "feld": [
+        64,
+        26
+      ]
     },
     {
       "moebel": "gc7KieferB",
-      "feld": [124, 21]
+      "feld": [
+        124,
+        21
+      ]
     },
     {
       "moebel": "gc7KieferB",
-      "feld": [1, 23]
+      "feld": [
+        1,
+        23
+      ]
     },
     {
       "moebel": "gc7KieferB",
-      "feld": [70, 23]
+      "feld": [
+        70,
+        23
+      ]
     },
     {
       "moebel": "gc7KieferB",
-      "feld": [49, 19]
+      "feld": [
+        49,
+        19
+      ]
     },
     {
       "moebel": "gc7KieferB",
-      "feld": [105, 22]
+      "feld": [
+        105,
+        22
+      ]
     },
     {
       "moebel": "gc7KieferB",
-      "feld": [44, 20]
+      "feld": [
+        44,
+        20
+      ]
     },
     {
       "moebel": "gc7KieferB",
-      "feld": [92, 19]
+      "feld": [
+        92,
+        19
+      ]
     },
     {
       "moebel": "gc7KieferB",
-      "feld": [57, 19]
+      "feld": [
+        57,
+        19
+      ]
     },
     {
       "moebel": "gc7Kiefer",
-      "feld": [117, 19]
+      "feld": [
+        117,
+        19
+      ]
     },
     {
       "moebel": "gc7KieferB",
-      "feld": [113, 25]
+      "feld": [
+        113,
+        25
+      ]
     },
     {
       "moebel": "gc7Kiefer",
-      "feld": [18, 21]
+      "feld": [
+        18,
+        21
+      ]
     },
     {
       "moebel": "gc7KieferB",
-      "feld": [131, 20]
+      "feld": [
+        131,
+        20
+      ]
     },
     {
       "moebel": "gc7KieferB",
-      "feld": [40, 19]
+      "feld": [
+        40,
+        19
+      ]
     },
     {
       "moebel": "gc7KieferB",
-      "feld": [137, 21]
+      "feld": [
+        137,
+        21
+      ]
     },
     {
       "moebel": "gc7KieferB",
-      "feld": [92, 25]
+      "feld": [
+        92,
+        25
+      ]
     },
     {
       "moebel": "gc7Kiefer",
-      "feld": [128, 24]
+      "feld": [
+        128,
+        24
+      ]
     },
     {
       "moebel": "gc7KieferB",
-      "feld": [119, 26]
+      "feld": [
+        119,
+        26
+      ]
     },
     {
       "moebel": "gc7KieferB",
-      "feld": [5, 19]
+      "feld": [
+        5,
+        19
+      ]
     },
     {
       "moebel": "gc7KieferB",
-      "feld": [19, 24]
+      "feld": [
+        19,
+        24
+      ]
     },
     {
       "moebel": "gc7Kiefer",
-      "feld": [26, 20]
+      "feld": [
+        26,
+        20
+      ]
     },
     {
       "moebel": "gc7Kiefer",
-      "feld": [132, 23]
+      "feld": [
+        132,
+        23
+      ]
     },
     {
       "moebel": "gc7KieferB",
-      "feld": [69, 26]
+      "feld": [
+        69,
+        26
+      ]
     },
     {
       "moebel": "gc7KieferB",
-      "feld": [136, 26]
+      "feld": [
+        136,
+        26
+      ]
     },
     {
       "moebel": "gc7KieferB",
-      "feld": [115, 22]
+      "feld": [
+        115,
+        22
+      ]
     },
     {
       "moebel": "gc7KieferB",
-      "feld": [42, 23]
+      "feld": [
+        42,
+        23
+      ]
     },
     {
       "moebel": "gc7Kiefer",
-      "feld": [101, 24]
+      "feld": [
+        101,
+        24
+      ]
     },
     {
       "moebel": "gc7KieferB",
-      "feld": [88, 19]
+      "feld": [
+        88,
+        19
+      ]
     },
     {
       "moebel": "gc7KieferB",
-      "feld": [1, 20]
+      "feld": [
+        1,
+        20
+      ]
     },
     {
       "moebel": "gc7KieferB",
-      "feld": [109, 26]
+      "feld": [
+        109,
+        26
+      ]
     },
     {
       "moebel": "gc7KieferB",
-      "feld": [108, 19]
+      "feld": [
+        108,
+        19
+      ]
     },
     {
       "moebel": "gc7KieferB",
-      "feld": [48, 22]
+      "feld": [
+        48,
+        22
+      ]
     },
     {
       "moebel": "gc7KieferB",
-      "feld": [112, 19]
+      "feld": [
+        112,
+        19
+      ]
+    },
+    {
+      "moebel": "ca8PlakatJuli",
+      "feld": [
+        58,
+        10
+      ],
+      "runde7": true
+    },
+    {
+      "moebel": "ca8Wohnmobil",
+      "feld": [
+        78,
+        9
+      ],
+      "bauteil_ok": true,
+      "runde7": true
     }
   ],
   "ausloeser": [
     {
       "name": "start",
-      "feld": [1, 16],
+      "feld": [
+        1,
+        16
+      ],
       "eigenschaften": {
         "richtung": "rechts"
       }
     },
     {
       "name": "zurueckSeeufer",
-      "feld": [0, 16]
+      "feld": [
+        0,
+        16
+      ]
     },
     {
       "name": "zurueckSeeufer",
-      "feld": [0, 17]
+      "feld": [
+        0,
+        17
+      ]
     },
     {
       "name": "weiterCapital",
-      "feld": [139, 20]
+      "feld": [
+        139,
+        20
+      ]
     },
     {
       "name": "weiterCapital",
-      "feld": [139, 21]
+      "feld": [
+        139,
+        21
+      ]
     },
     {
       "name": "fundLinse",
-      "feld": [63, 17]
+      "feld": [
+        63,
+        17
+      ]
     }
   ],
   "figuren": [
     {
       "name": "abe",
-      "feld": [68, 15]
+      "feld": [
+        68,
+        15
+      ]
     }
   ],
   "belebung": [
     {
+      "name": "spaziergaenger",
+      "typ": "statist",
+      "feld": [
+        121,
+        15
+      ],
+      "eigenschaften": {
+        "von": "117,13",
+        "bis": "124,21",
+        "tun": "geht mit dem Hund am See spazieren",
+        "wann": "tag",
+        "sagt": "statist.wegGhostCapital.leuchtturm.spaziergaenger"
+      }
+    },
+    {
+      "name": "fotograf",
+      "typ": "statist",
+      "feld": [
+        43,
+        14
+      ],
+      "eigenschaften": {
+        "von": "43,14",
+        "bis": "43,14",
+        "tun": "fotografiert den Leuchtturm",
+        "wann": "tag",
+        "sagt": "statist.wegGhostCapital.leuchtturm.fotograf"
+      }
+    },
+    {
+      "name": "radfahrerin",
+      "typ": "statist",
+      "feld": [
+        80,
+        13
+      ],
+      "eigenschaften": {
+        "von": "71,15",
+        "bis": "91,16",
+        "tun": "schiebt ihr Rad und macht Pause",
+        "wann": "tag",
+        "sagt": "statist.wegGhostCapital.leuchtturm.radfahrerin"
+      }
+    },
+    {
+      "name": "angler",
+      "typ": "statist",
+      "feld": [
+        10,
+        12
+      ],
+      "eigenschaften": {
+        "von": "10,12",
+        "bis": "10,12",
+        "tun": "angelt vom Ufer aus",
+        "wann": "tag"
+      }
+    },
+    {
       "name": "moewen",
       "typ": "tier",
-      "feld": [80, 5],
+      "feld": [
+        80,
+        5
+      ],
       "eigenschaften": {
         "von": "70,3",
         "bis": "100,7",
@@ -398,17 +729,80 @@
       }
     },
     {
-      "name": "spaziergaenger",
-      "typ": "statist",
-      "feld": [100, 21],
+      "name": "hund",
+      "typ": "tier",
+      "feld": [
+        122,
+        15
+      ],
       "eigenschaften": {
-        "von": "96,21",
+        "von": "117,13",
         "bis": "124,21",
-        "tun": "geht mit dem Hund am See spazieren",
-        "wann": "tag"
+        "verhalten": "folgen"
+      }
+    },
+    {
+      "name": "robbe",
+      "typ": "tier",
+      "feld": [
+        85,
+        2
+      ],
+      "eigenschaften": {
+        "von": "80,2",
+        "bis": "92,3",
+        "verhalten": "schwimmen"
+      }
+    },
+    {
+      "name": "kormoran",
+      "typ": "tier",
+      "feld": [
+        94,
+        14
+      ],
+      "eigenschaften": {
+        "von": "94,14",
+        "bis": "94,14",
+        "verhalten": "sitzen"
+      }
+    },
+    {
+      "name": "krebs",
+      "typ": "tier",
+      "feld": [
+        16,
+        15
+      ],
+      "eigenschaften": {
+        "von": "13,17",
+        "bis": "20,15",
+        "verhalten": "flitzen"
+      }
+    },
+    {
+      "name": "seeadler",
+      "typ": "tier",
+      "feld": [
+        71,
+        15
+      ],
+      "eigenschaften": {
+        "von": "60,12",
+        "bis": "90,16",
+        "verhalten": "fliegen"
       }
     }
   ],
-  "zustand": ["neu", "gebraucht", "alt"],
-  "stil": ["natur", "klassisch", "rustikal", "modern"]
+  "zustand": [
+    "neu",
+    "gebraucht",
+    "alt"
+  ],
+  "stil": [
+    "natur",
+    "klassisch",
+    "rustikal",
+    "modern"
+  ]
 }

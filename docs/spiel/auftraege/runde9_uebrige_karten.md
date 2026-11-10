@@ -43,8 +43,22 @@ Der Autor sieht die übrigen Karten nicht mehr in drei Varianten. Sein Ablauf (R
    - **Felskanten:** `"kante": "klippe"` in der Szene (mittel-4, `inhalte/abenteuer/szenen/README.md`).
      Sie gibt Höhen eine Felswand mit Kante, Fuß und Treppen auf den Rampen. Gilt für Gras- und
      Erdboden.
-   - **Roter Fels (Canyon, Sternwarte):** mittel-4 schreibt dafür einen Bildwunsch, der die
-     Klippenkacheln rot umfärbt.
+   - **Roter Fels (Canyon, Sternwarte):** `"fels": "rot"` neben `"kante": "klippe"` (Bild
+     `klippe_rot.png`, mittel-4). Der Kartenrand neben Boden ist kein Fels mehr; mit `wandart` zeigt
+     er den Boden.
+   - **Straßen** (`pipeline/abenteuer/strasse.py`, mittel-4): `"markierung": ["s"]` zeichnet auf
+     Fahrbahnen von 2 bis 4 Feldern eine gelbe gestrichelte Mittellinie und weiße Randlinien;
+     Kreuzungen und Plätze bleiben frei. `"buchten": {"b": 4}` zeichnet Parkbuchten (10.65).
+     Bordsteine und Striche als Möbel: `cr9Bord…`, `cr9Strich…`, `cr9Linie…` (moebel/crossroads.json).
+   - **Tönung in der Vorschau** (`pipeline/abenteuer/toenung.py`): Nacht und Sepia sieht man jetzt
+     auch im Vorschaubild, wie in der App.
+   - **Sitzen:** Figuren sitzen auf Stuhl, Bank oder Hocker, wenn sie auf deren Feld stehen, mit
+     `"verhalten": "sitzen"` und `"tun": "sitzt …"` (Vorbild `maple-falls-clubraum.json`).
+   - **Neue Ufer und Böden:** `ufer`: `moor` (schwarzes Wasser), `see` (graues Meer), `watt`,
+     `sinter`; Böden `sandplatz`, `platten`, `strand` (21_Beach), `hallenboden`.
+   - **Gemini:** Fehlt ein Bild in allen Paketen, einen Prompt in `gemini_prompts.md` ergänzen und
+     dem Haupt-Chat Bescheid geben. Der Autor erzeugt das Bild, `werkzeuge/ki_bild.py` macht ein
+     Spielbild daraus.
    - **Winter:** `"jahreszeit": "winter"` (mittel-2). Der Hintergrund wird umgefärbt, in der App
      schneit es. Blumen und Pilze gehören weg; kartenbild meldet sie. Wo Winter ist, sagt die
      Story-Bibel. Port Delacroix und die Pelikaninsel liegen nach dem Gutachten im Winter.

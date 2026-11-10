@@ -1322,6 +1322,16 @@
       "blick": "unten",
       "zustand": "gebraucht",
       "stil": "klassisch"
+    },
+    "rv8Fahrkartenschalter": {
+      "quelle": "modern-interiors/1_Interiors/16x16/Theme_Sorter_Black_Shadow_Singles/22_Museum_Black_Shadow_Singles_16x16/Museum_Black_Shadow_Singles_1.png",
+      "breite": 96,
+      "hoehe": 64,
+      "kollision": true,
+      "art": "tresen",
+      "blick": "unten",
+      "zustand": "gebraucht",
+      "stil": "klassisch"
     }
   }
 }

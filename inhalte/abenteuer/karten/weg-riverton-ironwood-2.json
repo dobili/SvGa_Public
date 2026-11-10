@@ -11,7 +11,7 @@
  "tilewidth": 16,
  "tileheight": 16,
  "nextlayerid": 5,
- "nextobjectid": 233,
+ "nextobjectid": 234,
  "layers": [
   {
    "id": 1,
@@ -19657,29 +19657,6 @@
     },
     {
      "id": 226,
-     "name": "cc4Brett",
-     "type": "moebel",
-     "x": 330,
-     "y": 1084,
-     "width": 12,
-     "height": 9,
-     "rotation": 0,
-     "visible": true,
-     "properties": [
-      {
-       "name": "tiefe",
-       "type": "int",
-       "value": 1097
-      },
-      {
-       "name": "kollision",
-       "type": "bool",
-       "value": false
-      }
-     ]
-    },
-    {
-     "id": 227,
      "name": "ri8Klapptisch",
      "type": "moebel",
      "x": 368,
@@ -19702,30 +19679,7 @@
      ]
     },
     {
-     "id": 228,
-     "name": "cc4Brett",
-     "type": "moebel",
-     "x": 378,
-     "y": 1084,
-     "width": 12,
-     "height": 9,
-     "rotation": 0,
-     "visible": true,
-     "properties": [
-      {
-       "name": "tiefe",
-       "type": "int",
-       "value": 1097
-      },
-      {
-       "name": "kollision",
-       "type": "bool",
-       "value": false
-      }
-     ]
-    },
-    {
-     "id": 229,
+     "id": 227,
      "name": "ri8Klapptisch",
      "type": "moebel",
      "x": 416,
@@ -19748,30 +19702,7 @@
      ]
     },
     {
-     "id": 230,
-     "name": "cc4Brett",
-     "type": "moebel",
-     "x": 426,
-     "y": 1084,
-     "width": 12,
-     "height": 9,
-     "rotation": 0,
-     "visible": true,
-     "properties": [
-      {
-       "name": "tiefe",
-       "type": "int",
-       "value": 1097
-      },
-      {
-       "name": "kollision",
-       "type": "bool",
-       "value": false
-      }
-     ]
-    },
-    {
-     "id": 231,
+     "id": 228,
      "name": "ri8Kreidespringer",
      "type": "moebel",
      "x": 304,
@@ -19794,11 +19725,103 @@
      ]
     },
     {
-     "id": 232,
+     "id": 229,
      "name": "ri8Finkenzeichen",
      "type": "moebel",
      "x": 256,
      "y": 1056,
+     "width": 16,
+     "height": 16,
+     "rotation": 0,
+     "visible": true,
+     "properties": [
+      {
+       "name": "tiefe",
+       "type": "int",
+       "value": 1
+      },
+      {
+       "name": "kollision",
+       "type": "bool",
+       "value": false
+      }
+     ]
+    },
+    {
+     "id": 230,
+     "name": "ri8Klapphocker",
+     "type": "moebel",
+     "x": 304,
+     "y": 1072,
+     "width": 16,
+     "height": 16,
+     "rotation": 0,
+     "visible": true,
+     "properties": [
+      {
+       "name": "tiefe",
+       "type": "int",
+       "value": 1
+      },
+      {
+       "name": "kollision",
+       "type": "bool",
+       "value": false
+      }
+     ]
+    },
+    {
+     "id": 231,
+     "name": "ri8Klapphocker",
+     "type": "moebel",
+     "x": 352,
+     "y": 1072,
+     "width": 16,
+     "height": 16,
+     "rotation": 0,
+     "visible": true,
+     "properties": [
+      {
+       "name": "tiefe",
+       "type": "int",
+       "value": 1
+      },
+      {
+       "name": "kollision",
+       "type": "bool",
+       "value": false
+      }
+     ]
+    },
+    {
+     "id": 232,
+     "name": "ri8Klapphocker",
+     "type": "moebel",
+     "x": 400,
+     "y": 1072,
+     "width": 16,
+     "height": 16,
+     "rotation": 0,
+     "visible": true,
+     "properties": [
+      {
+       "name": "tiefe",
+       "type": "int",
+       "value": 1
+      },
+      {
+       "name": "kollision",
+       "type": "bool",
+       "value": false
+      }
+     ]
+    },
+    {
+     "id": 233,
+     "name": "ri8Klapphocker",
+     "type": "moebel",
+     "x": 448,
+     "y": 1072,
      "width": 16,
      "height": 16,
      "rotation": 0,

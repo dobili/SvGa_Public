@@ -1087,29 +1087,14 @@
       "id": "bb1"
     },
     {
-      "moebel": "cc4Brett",
-      "auf": "bb1",
-      "versatz": [0, 2]
-    },
-    {
       "moebel": "ri8Klapptisch",
       "feld": [23, 67],
       "id": "bb2"
     },
     {
-      "moebel": "cc4Brett",
-      "auf": "bb2",
-      "versatz": [0, 2]
-    },
-    {
       "moebel": "ri8Klapptisch",
       "feld": [26, 67],
       "id": "bb3"
-    },
-    {
-      "moebel": "cc4Brett",
-      "auf": "bb3",
-      "versatz": [0, 2]
     },
     {
       "moebel": "ri8Kreidespringer",
@@ -1118,6 +1103,22 @@
     {
       "moebel": "ri8Finkenzeichen",
       "feld": [16, 66]
+    },
+    {
+      "moebel": "ri8Klapphocker",
+      "feld": [19, 67]
+    },
+    {
+      "moebel": "ri8Klapphocker",
+      "feld": [22, 67]
+    },
+    {
+      "moebel": "ri8Klapphocker",
+      "feld": [25, 67]
+    },
+    {
+      "moebel": "ri8Klapphocker",
+      "feld": [28, 67]
     }
   ],
   "ausloeser": [

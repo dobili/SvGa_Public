@@ -209,11 +209,11 @@ Laufzeit: Ostrand → Westrand etwa 150 Kacheln, gut 40 s. Die Varianten B und C
 **Zweites Gutachten (`gutachten/weg-ironwood-silicon-glasbruecke-2.md`, mittel-1):**
 
 - **Matschsaum** (Befund 1): grauer, zur Wiese hin ausfransender Schneematsch an beiden Rändern
-  der Autobahn (x 53 und x 81), Bildwunsch `winterstrasse.py`.
+  der Autobahn (x 53 und x 81), Bildwunsch `matschsaum.py`.
 - **Plattform** (2): Die zwei Pfeilerköpfe auf dem Mittelstreifen liegen jetzt sichtbar über dem
   Glas (`vorn`).
 - **Lieferroboter** (5): Er steht als kleiner weißer Kastenroboter mit Fähnchen am Platz (28, 12),
-  Bildwunsch `winterstrasse.py`. Als Belebung zeichnet ihn die App nicht (keine Tierart), deshalb
+  Bildwunsch `matschsaum.py`. Als Belebung zeichnet ihn die App nicht (keine Tierart), deshalb
   ist er ein Objekt; dafür laufen Krähen in der Nordostwiese (Regel 10.53, sechs Tiere).
 - **Bäume** (8, KARTENREGELN 10.67): Die Kugelbäume ohne Stamm sind Bäume mit Stamm.
 - Offen: Blickrichtung der Figuren, Stativ (4), Fußspuren im Schnee (7), Tauben und Spatzen mit

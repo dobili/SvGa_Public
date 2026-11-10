@@ -13,7 +13,7 @@ Bilder:
 - ``lieferroboter.png`` (16 × 16): kleiner weißer Kastenroboter auf sechs Rädern mit
   orangefarbenem Fähnchen, von schräg oben wie LimeZus Fahrzeuge.
 
-Aufruf: ``python winterstrasse.py <Pfad zum privaten Repository>``. Nur PIL.
+Aufruf: ``python matschsaum.py <Pfad zum privaten Repository>``. Nur PIL.
 """
 
 import random

@@ -14,8 +14,11 @@ import {
   paketdateiAlsAdresse,
   paketdateiAlsAdresseOderNull,
 } from "../paket/paketlader";
-import { tSpiel } from "../texte/texte";
+import { hatSpieltext, tSpiel } from "../texte/texte";
+import { liesBelebung, statistenbild, statistensatz } from "./belebung";
+import type { SprechblasenInhalt } from "./Sprechblase";
 import { ladeMoebel, type Moebel } from "./moebel";
+import { tierartVon } from "./tiere";
 import type { Ausloesertreffer } from "./szene";
 
 /** Bilder des Prototyps im Paket (bis die LimeZu-Kacheln da sind, Entscheidung A10). */
@@ -50,6 +53,26 @@ export interface Weltdaten {
   readonly moebel: readonly Moebel[];
   /** Hintergrundbild aus dem Kartenbauer (grafik/karten/<kennung>.png), sonst null. */
   readonly hintergrund: string | null;
+  /** Bögen der Statisten und Tiere dieser Karte, Pfad im Paket → Adresse (nur vorhandene). */
+  readonly belebungsbilder: Readonly<Record<string, string>>;
+}
+
+/**
+ * Die Bögen der Belebung einer Karte: Statisten aus dem Vorrat (`figuren/statist-NN.png`), Tiere
+ * nach Art (`tiere/<art>.png`), nur wo das Paket ein Bild hat (ohne private Grafik: keins).
+ */
+async function belebungsbilderFuer(karte: object): Promise<Record<string, string>> {
+  const pfade = new Set(
+    liesBelebung(karte).flatMap((b) => {
+      if (b.typ === "statist") return [statistenbild(b)];
+      const art = tierartVon(b.name, b.bild);
+      return art ? [`tiere/${art}.png`] : [];
+    }),
+  );
+  const paare = await Promise.all(
+    [...pfade].map(async (pfad) => [pfad, await paketdateiAlsAdresseOderNull(pfad)] as const),
+  );
+  return Object.fromEntries(paare.filter((p): p is readonly [string, string] => p[1] !== null));
 }
 
 /** Objektnamen der Figuren einer Tiled-Karte (Objekte mit type „figur“). */
@@ -125,15 +148,17 @@ export async function ladeWelt(kartenkennung: string, heldvariante = 0): Promise
     paketdateiAlsAdresse(FIGURBILD),
   ]);
   const erinnerung = fund.ort.art === "erinnerung";
-  const [stilbild, heldfigur, figurenbilder, moebel, hintergrund] = await Promise.all([
-    paketdateiAlsAdresseOderNull(
-      `grafik/stil-${kachelstil(fund.ort, fund.karte.innen, karte)}.png`,
-    ),
-    paketdateiAlsAdresseOderNull(heldfigurpfad(erinnerung, heldvariante)),
-    figurenbilderFuer(fund.ort, karte),
-    ladeMoebel(karte),
-    paketdateiAlsAdresseOderNull(`grafik/karten/${kartenkennung}.png`),
-  ]);
+  const [stilbild, heldfigur, figurenbilder, moebel, hintergrund, belebungsbilder] =
+    await Promise.all([
+      paketdateiAlsAdresseOderNull(
+        `grafik/stil-${kachelstil(fund.ort, fund.karte.innen, karte)}.png`,
+      ),
+      paketdateiAlsAdresseOderNull(heldfigurpfad(erinnerung, heldvariante)),
+      figurenbilderFuer(fund.ort, karte),
+      ladeMoebel(karte),
+      paketdateiAlsAdresseOderNull(`grafik/karten/${kartenkennung}.png`),
+      belebungsbilderFuer(karte),
+    ]);
   return {
     kennung: kartenkennung,
     daten,
@@ -148,6 +173,7 @@ export async function ladeWelt(kartenkennung: string, heldvariante = 0): Promise
     figurenbilder,
     moebel,
     hintergrund,
+    belebungsbilder,
   };
 }
 
@@ -184,6 +210,7 @@ export function figurZu(ort: Ortdaten, name: string) {
 /** Der Knopftext zu einem Treffer der Karte; null, wenn er nichts auslöst. */
 export function aktionFuer(w: Weltdaten, treffer: Ausloesertreffer | null): string | null {
   if (!treffer) return null;
+  if (treffer.typ === "statist") return tSpiel("oberwelt.aktion.sprechen");
   if (treffer.typ === "figur") {
     return figurZu(w.ort, treffer.name) ? tSpiel("oberwelt.aktion.sprechen") : null;
   }
@@ -192,4 +219,27 @@ export function aktionFuer(w: Weltdaten, treffer: Ausloesertreffer | null): stri
   if (a.art === "gegenstand") return tSpiel("oberwelt.aktion.ansehen");
   if (a.art === "dialog") return tSpiel("oberwelt.aktion.sprechen");
   return null;
+}
+
+/**
+ * Was ein ansprechbarer Statist beim n-ten Ansprechen (ab 0) sagt, fertig übersetzt; {held} wird
+ * durch den Namen des Helden ersetzt. Null, wenn der Statist keinen Satz hat.
+ * Beispiel: Ladenhilfe im Bergladen, erstes Ansprechen → Satz „statist.summitCity.bergladen.ladenhilfe“.
+ */
+export function sprechblaseFuer(
+  w: Weltdaten,
+  name: string,
+  besuch: number,
+  held: string,
+): SprechblasenInhalt | null {
+  const sagt = liesBelebung(w.karte).find((b) => b.typ === "statist" && b.name === name)?.sagt;
+  const s = sagt ? statistensatz(sagt, besuch, hatSpieltext) : null;
+  if (!s) return null;
+  const ambrose = s.ambrose
+    ? tSpiel("oberwelt.ambroseSagt", {
+        name: tSpiel("figur.ambrose.name"),
+        satz: tSpiel(s.ambrose, { held }),
+      })
+    : null;
+  return { satz: tSpiel(s.satz, { held }), ambrose };
 }

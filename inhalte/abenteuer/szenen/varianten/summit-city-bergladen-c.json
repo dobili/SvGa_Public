@@ -119,7 +119,7 @@
         "von": "2,6",
         "bis": "2,6",
         "tun": "räumt Karten ins Regal",
-        "wann": "tag"
+        "sagt": "statist.summitCity.bergladen.ladenhilfe"
       }
     },
     {
@@ -130,7 +130,7 @@
         "von": "8,8",
         "bis": "8,8",
         "tun": "probiert einen Rucksack",
-        "wann": "tag"
+        "sagt": "statist.summitCity.bergladen.kunde"
       }
     }
   ],

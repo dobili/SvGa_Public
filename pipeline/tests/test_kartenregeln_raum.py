@@ -87,6 +87,18 @@ def test_belegung_karg_und_vollgestellt():
     assert pruefe_belegung(szene, zeilen, gesetzt) == []
 
 
+def test_belegung_stollen_darf_leerer_sein():
+    """Ein Stollen mit 12 % Belegung ist kein karger Raum (Gutachten Goldmine, Runde 9)."""
+    zeilen = ["#" * 12] + ["#" + "." * 10 + "#"] * 5 + ["#" * 12]
+    szene = {
+        "art": "innen",
+        "objekte": [{"moebel": "tisch", "feld": [x, 1]} for x in (1, 4, 7)],
+    }
+    gesetzt, _ = platziere(szene, MOEBEL)
+    assert pruefe_belegung(szene, zeilen, gesetzt)
+    assert not pruefe_belegung({**szene, "stollen": True}, zeilen, gesetzt)
+
+
 def test_belegung_nur_innen():
     szene, zeilen, gesetzt = _szene([], art="aussen")
     assert pruefe_belegung(szene, zeilen, gesetzt) == []

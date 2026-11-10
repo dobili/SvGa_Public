@@ -770,3 +770,19 @@ polierter Stein, Südwand Reihe 13 mit dem Glasportal bei Spalte 12.
 | Ostseite  | Empfangstresen mit Empfangsroboter                                                    | (18, 6), 4 × 1                      | Vorderseite unten | weiß, modern         | Empfangsroboter (19, 5)                                                                   |
 | Westseite | Sitzgruppe aus zwei Sofas und Glastisch                                               | Sofas (2, 8), (2, 11); Tisch (3, 9) | zum Tisch         | Leder, modern        | Victor wartet hier (Szene 57)                                                             |
 | Ecken     | Kunstpflanzen in Kübeln                                                               | (1, 4), (22, 4), (1, 12), (22, 12)  | –                 | Kunststoff           | Regel 4.4, symmetrisch                                                                    |
+
+## Lobby und Serverraum nach den aktuellen Regeln (niedrig-1, 10.11.2026)
+
+- **Lobby (`siliconBay.lobby`):**
+  - Die Lounge liegt auf blauem Teppich (abgesetzte Aufenthaltsecke). Sofa und Sessel stehen
+    nebeneinander, davor ein Couchtisch statt des Schreibtischs.
+  - Ein Besucher sitzt auf dem Sofa.
+  - Die Besuchergruppe sind drei Figuren vor dem Empfang; der Roboter steht hinter dem Tresen.
+  - Eine Pflanze mitten im Raum ist weg, die vier in den Ecken bleiben.
+  - Größe 24 × 14: Eingangshalle eines Firmensitzes mit drei Aufzügen (10.56).
+- **Serverraum (`siliconBay.serverraum`):**
+  - Ruhiger Steinboden statt des lauten Schachbrettmusters.
+  - Die zweite Schrankreihe hat zwei Schränke; ein dritter stellte den Gang vor der Tür zu. Die
+    Beschreibung sagt das jetzt.
+  - Keine Figuren, wie die Story-Bibel vorgibt: {held} findet die Schummelgeräte allein.
+  - 14 × 10 passt zu einem Nebenraum der Akademie.

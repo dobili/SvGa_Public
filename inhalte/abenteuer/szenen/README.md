@@ -30,6 +30,7 @@ nachträgliches Möblieren:
   // "rumpf": Bordwand eines Schiffs, das Deck ist dann das Land (Fährdeck)
   // "sinter": Sinterrand heißer Quellen (Geysirbecken)
   "dicht": true, // nur Lager und Archive: Belegung bis 60 % statt 45 % (dichte Regalreihen)
+  "stollen": true, // nur Stollen und Höhlen: Belegung ab 10 % statt 20 % (Gänge, keine Räume)
   // Fels (Steinbruch, Stollen): "wand": "fels" zeichnet Wände als Felskrone und zwei Reihen
   // Felswand (auch draußen, mit oder ohne "wandart"); Böden "schotter" und "felsboden".
   // Damm (Bahndamm, Deich): "wand": "damm" zeichnet "#" über einem Boden als Grashang (Regel 10.49).

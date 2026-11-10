@@ -102,6 +102,9 @@ Szene heißt die Datei in `inhalte/abenteuer/szenen/` ohne `.json`.
 - [ ] silicon-bay-aussen (Campus, erste Prüfung, mittel-3; mit Lieferroboter) und silicon-bay-hafen (alter Hafen, erste Prüfung, mittel-3)
 - [ ] silicon-bay-lobby, silicon-bay-serverraum (erste Prüfung, niedrig-1)
 
+- [ ] goldmine-stollen, kuerbishof-hof (dritte Prüfung), maple-falls-park, cedar-creek-aussen, weg-maple-cedar-landstrasse (fünfte Prüfung, nur Restpunkte; niedrig-1, Antworten in cedar-creek.md)
+- [ ] silicon-bay-lobby, silicon-bay-serverraum (erste Prüfung, niedrig-1; Stand in silicon-bay.md „Lobby und Serverraum nach den aktuellen Regeln“)
+
 ## Erledigt
 
 - [x] ironwood-kantine (Test, Haupt-Chat)

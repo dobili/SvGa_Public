@@ -462,5 +462,6 @@
   ],
   "zustand": ["neu", "gebraucht", "alt"],
   "stil": ["klassisch", "modern", "natur"],
-  "bruecken": ["h"]
+  "bruecken": ["h"],
+  "markierung": ["s"]
 }

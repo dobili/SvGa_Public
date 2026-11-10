@@ -937,5 +937,6 @@
       }
     }
   ],
-  "zustand": ["neu", "gebraucht", "alt"]
+  "zustand": ["neu", "gebraucht", "alt"],
+  "markierung": ["s"]
 }

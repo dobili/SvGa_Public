@@ -1128,5 +1128,6 @@
     }
   ],
   "zustand": ["neu", "gebraucht"],
-  "stil": ["klassisch", "modern", "natur"]
+  "stil": ["klassisch", "modern", "natur"],
+  "markierung": ["s"]
 }

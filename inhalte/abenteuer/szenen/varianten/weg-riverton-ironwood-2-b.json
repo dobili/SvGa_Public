@@ -1028,6 +1028,44 @@
       "moebel": "wr5GraffitiGelb",
       "feld": [18, 155],
       "vorn": true
+    },
+    {
+      "moebel": "ri8Klapptisch",
+      "feld": [20, 67],
+      "id": "bb1"
+    },
+    {
+      "moebel": "cc4Brett",
+      "auf": "bb1",
+      "versatz": [0, 2]
+    },
+    {
+      "moebel": "ri8Klapptisch",
+      "feld": [23, 67],
+      "id": "bb2"
+    },
+    {
+      "moebel": "cc4Brett",
+      "auf": "bb2",
+      "versatz": [0, 2]
+    },
+    {
+      "moebel": "ri8Klapptisch",
+      "feld": [26, 67],
+      "id": "bb3"
+    },
+    {
+      "moebel": "cc4Brett",
+      "auf": "bb3",
+      "versatz": [0, 2]
+    },
+    {
+      "moebel": "ri8Kreidespringer",
+      "feld": [19, 66]
+    },
+    {
+      "moebel": "ri8Finkenzeichen",
+      "feld": [16, 66]
     }
   ],
   "ausloeser": [
@@ -1071,25 +1109,61 @@
       "feld": [16, 57],
       "eigenschaften": {
         "von": "16,57",
-        "bis": "16,59",
+        "bis": "16,58",
         "tun": "streicht das Geländer",
-        "wann": "tag"
+        "wann": "tag",
+        "sagt": "statist.wegRivertonIronwood.bruecke.brueckenwaerter"
+      }
+    },
+    {
+      "name": "kiebitz",
+      "typ": "statist",
+      "feld": [21, 70],
+      "eigenschaften": {
+        "von": "21,70",
+        "bis": "21,70",
+        "tun": "schaut an den Klapptischen zu",
+        "wann": "tag",
+        "sagt": "statist.wegRivertonIronwood.bruecke.kiebitz"
+      }
+    },
+    {
+      "name": "vogelbeobachterin",
+      "typ": "statist",
+      "feld": [12, 82],
+      "eigenschaften": {
+        "von": "12,82",
+        "bis": "12,82",
+        "tun": "beobachtet den Reiher mit dem Fernglas",
+        "wann": "tag",
+        "sagt": "statist.wegRivertonIronwood.bruecke.vogelbeobachterin"
+      }
+    },
+    {
+      "name": "joggerin",
+      "typ": "statist",
+      "feld": [17, 70],
+      "eigenschaften": {
+        "von": "17,70",
+        "bis": "17,140",
+        "tun": "läuft den Pfad hinunter",
+        "wann": "morgen"
       }
     },
     {
       "name": "kraehen",
       "typ": "tier",
-      "feld": [21, 84],
+      "feld": [21, 83],
       "eigenschaften": {
-        "von": "21,84",
-        "bis": "21,84",
+        "von": "21,83",
+        "bis": "21,83",
         "verhalten": "sitzen"
       }
     },
     {
       "name": "moewe",
       "typ": "tier",
-      "feld": [14, 63],
+      "feld": [10, 63],
       "eigenschaften": {
         "von": "10,63",
         "bis": "22,63",
@@ -1103,8 +1177,47 @@
       "eigenschaften": {
         "von": "20,95",
         "bis": "23,95",
-        "verhalten": "ausweichen",
-        "wann": "tag"
+        "verhalten": "ausweichen"
+      }
+    },
+    {
+      "name": "reiher",
+      "typ": "tier",
+      "feld": [10, 85],
+      "eigenschaften": {
+        "von": "10,85",
+        "bis": "10,85",
+        "verhalten": "sitzen"
+      }
+    },
+    {
+      "name": "enten",
+      "typ": "tier",
+      "feld": [6, 90],
+      "eigenschaften": {
+        "von": "6,90",
+        "bis": "6,100",
+        "verhalten": "schwimmen"
+      }
+    },
+    {
+      "name": "hase",
+      "typ": "tier",
+      "feld": [24, 109],
+      "eigenschaften": {
+        "von": "24,109",
+        "bis": "27,109",
+        "verhalten": "flitzen"
+      }
+    },
+    {
+      "name": "drohne",
+      "typ": "tier",
+      "feld": [8, 63],
+      "eigenschaften": {
+        "von": "8,63",
+        "bis": "24,63",
+        "verhalten": "fliegen"
       }
     }
   ],

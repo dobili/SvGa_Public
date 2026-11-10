@@ -306,7 +306,8 @@
         "von": "18,4",
         "bis": "20,4",
         "tun": "rührt in der Suppe",
-        "wann": "tag"
+        "wann": "tag",
+        "sagt": "statist.ironwood.kantine.kantinenkoch"
       }
     },
     {
@@ -318,6 +319,17 @@
         "bis": "20,9",
         "tun": "sitzen",
         "wann": "immer"
+      }
+    },
+    {
+      "name": "schichtarbeiter",
+      "typ": "statist",
+      "feld": [12, 12],
+      "eigenschaften": {
+        "von": "12,12",
+        "bis": "12,12",
+        "tun": "isst Eintopf nach der Schicht",
+        "sagt": "statist.ironwood.kantine.schichtarbeiter"
       }
     }
   ],

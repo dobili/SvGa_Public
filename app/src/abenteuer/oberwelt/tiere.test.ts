@@ -10,6 +10,7 @@ describe("tierartVon", () => {
     expect(tierartVon("moewen")).toBe("taube");
     expect(tierartVon("bisonherde")).toBe("kuh");
     expect(tierartVon("eichhoernchen")).toBe("hase");
+    expect(tierartVon("drohne")).toBe("drohne");
   });
 
   it("zeichnet nichts ohne passenden Ersatz", () => {

@@ -219,7 +219,8 @@
         "von": "13,12",
         "bis": "8,4",
         "tun": "zieht einen Koffer zum Bahnsteig",
-        "wann": "morgen"
+        "wann": "morgen",
+        "sagt": "statist.riverton.bahnhofshalle.reisende"
       }
     },
     {
@@ -230,6 +231,17 @@
         "von": "15,7",
         "bis": "16,9",
         "verhalten": "ausweichen"
+      }
+    },
+    {
+      "name": "schaffnerin",
+      "typ": "statist",
+      "feld": [9, 12],
+      "eigenschaften": {
+        "von": "9,12",
+        "bis": "9,12",
+        "tun": "wartet mit der Kelle auf den nächsten Zug",
+        "sagt": "statist.riverton.bahnhofshalle.schaffnerin"
       }
     }
   ],

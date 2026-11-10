@@ -631,6 +631,29 @@ der Story-Bibel und die Wege.
    `lastkahnFrei` (gesetzt in L3). Anleger in Ironwood: `anleger` (12, 22), abgestimmt (1.8).
 7. **Übergang Weg 3 ↔ Ironwood:** abgestimmt (1.8): Spalten 24–25 auf beiden Seiten, Kanal 4–9.
 
+8. **Ereignisort Weg 3 „Die Brückenbauern“** (Dokument 15, 2.3; Runde 7, mittel-2): am Südufer gleich
+   östlich der Kanalbrücke (`bruecke`, Spalten 19–28, Reihen 66–70, in A, B und C gleich). Drei Klapptische
+   mit Brett (`ri8Klapptisch`), davor Platz für drei bis sechs Figuren; Kreidespringer am Brückenfuß
+   (`ri8Kreidespringer`, 19, 66), Finkenzeichen aus Blech westlich des Brückenfußes (`ri8Finkenzeichen`,
+   16, 66). Die Drohne mit dem Logo von Perfect Move fliegt als Belebung `drohne` über dem Wasser
+   (Reihe 63); ihr Bogen kommt aus `pipeline/abenteuer/belebungsbilder.py`. „Unter der Brücke“ geht in
+   der Draufsicht nicht; das Ufer neben der Brücke steht dafür.
+
+   **Felder für Runde 6 (begehbar, A, B und C gleich):**
+
+   | Karte     | Auslöser                 | Feld     | Hinweis                                |
+   | --------- | ------------------------ | -------- | -------------------------------------- |
+   | `bruecke` | `ereignisBrueckenbauern` | (23, 69) | vor dem mittleren Klapptisch (Dime)    |
+   | `bruecke` | `kreide1`                | (19, 67) | unter dem Kreidespringer am Brückenfuß |
+   | `bruecke` | `spurPM1`                | (25, 66) | Ufer, Blick auf die Drohne             |
+   | `bruecke` | `seite07`                | (27, 66) | Kanalufer                              |
+   | `bruecke` | `finchLaeuferA`          | (16, 67) | unter dem Finkenzeichen am Brückenfuß  |
+
+   **Leben (Regel 10.53):** Kanalweg: Angler, Radfahrerin, Kind mit der Entenfamilie (Dokument 16,
+   5.3; Ambrose antwortet), Landvermesser; Tiere Enten, Gänse, Ratten, Krähen, Reiher, Hase. Brücke:
+   Brückenwärter, Kiebitz an den Tischen (Washington Square Park, 16 Nr. 36), Vogelbeobachterin
+   (Reiher und Fesselung), Joggerin; Tiere Krähen, Möwe, Eidechse, Reiher, Enten, Hase, dazu die Drohne.
+
 ## 4. Bühnenbilder
 
 Je Karte Größe, Wände, Böden, Laufwege, Zonen und Inventar. Feld = linke obere Kachel. Möbel und Bilder

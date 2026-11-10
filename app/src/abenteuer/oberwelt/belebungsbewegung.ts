@@ -28,6 +28,8 @@ export interface Bewegung {
   flieht: boolean;
   /** Kacheln, die ein folgendes Tier dem Helden schon nachgelaufen ist. */
   gefolgt: number;
+  /** Sekunden, die ein Statist schon wartet, weil der Held ihm im Weg steht. */
+  wartet: number;
 }
 
 /** Was ein Schritt von der Welt wissen muss. */
@@ -88,6 +90,7 @@ export function neueBewegung(feld: Feld): Bewegung {
     zumBis: true,
     flieht: false,
     gefolgt: 0,
+    wartet: 0,
   };
 }
 
@@ -132,6 +135,10 @@ const VOR: Readonly<Record<Richtung, Feld>> = {
 };
 /** Steht der Held näher als so viele Kacheln vor einem Statisten, wartet dieser. */
 const IM_WEG = 0.9;
+/** So viele Sekunden wartet ein Statist vor dem Helden, dann kehrt er um. */
+const WARTEN_HOECHSTENS = 1.5;
+/** Winziger Schritt in Kacheln, mit dem sich ein Statist beim Umkehren zum neuen Ziel dreht. */
+const UMDREHEN = 0.01;
 
 /** Steht der Held direkt vor dem Statisten in Laufrichtung? Dann wartet der Statist. */
 function heldImWeg(b: Bewegung, u: Umgebung): boolean {
@@ -198,8 +205,20 @@ export function schritt(b: Bewegung, v: Belebung, dt: number, u: Umgebung): void
     if (!b.ziel) b.pause = zufallspause(g, u.zufall);
     return;
   }
-  // Statisten laufen nicht in den Helden hinein; sie warten, bis er Platz macht.
-  if (v.typ === "statist" && heldImWeg(b, u)) return;
+  // Statisten laufen nicht in den Helden hinein; sie warten kurz, ob er Platz macht, und kehren
+  // dann um. Sonst stünden sich beide in einem engen Gang für immer gegenüber (Wunsch des Autors,
+  // 10.11.2026: Eine Figur darf nie den Weg auf Dauer versperren).
+  if (v.typ === "statist" && heldImWeg(b, u)) {
+    b.wartet += dt;
+    if (b.wartet >= WARTEN_HOECHSTENS) {
+      b.wartet = 0;
+      b.ziel = naechstesWegziel(b, v.von, v.bis);
+      // Gleich umdrehen: Mit dem alten Blick stünde der Held weiter „im Weg“.
+      if (b.ziel) geheZu(b, b.ziel, UMDREHEN);
+    }
+    return;
+  }
+  b.wartet = 0;
   const vorher = { x: b.x, y: b.y };
   const angekommen = geheZu(b, b.ziel, (b.flieht ? g.fluchttempo : g.tempo) * dt);
   if (v.verhalten === "folgen") b.gefolgt += abstand(vorher, b);
@@ -212,4 +231,24 @@ export function schritt(b: Bewegung, v: Belebung, dt: number, u: Umgebung): void
 /** Steht der Statist oder das Tier gerade (für Standbild und Sperre)? */
 export function steht(b: Bewegung): boolean {
   return b.ziel === null;
+}
+
+/**
+ * Hält dieser Statist oder dieses Tier den Helden auf (Wunsch des Autors, 10.11.2026: Der Held
+ * soll nicht durch Figuren und Tiere laufen)? Statisten immer, Tiere am Boden auch. Ausnahmen:
+ * fliegende Tiere (über Kopfhöhe), schwimmende (im Wasser, dort läuft niemand) und folgende
+ * (ein Hund, der dem Helden in eine Sackgasse nachläuft, sperrte ihn sonst ein).
+ */
+export function haeltAuf(v: Belebung): boolean {
+  if (v.typ === "statist") return true;
+  return !["fliegen", "schwimmen", "folgen"].includes(v.verhalten);
+}
+
+/**
+ * Ist die Sperre auf Kachel (x, y) gerade an? Nur, wenn der Held sie nicht berührt: Eine Sperre,
+ * die auf dem Helden einschaltet, schöbe ihn weg oder hielte ihn fest. Held in Kacheln (Mitte
+ * ganzzahlig); die Flächen überlappen, wenn beide Abstände unter einer Kachel liegen.
+ */
+export function sperreAn(held: Feld, x: number, y: number): boolean {
+  return Math.max(Math.abs(held.x - x), Math.abs(held.y - y)) >= 1;
 }

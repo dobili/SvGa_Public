@@ -90,3 +90,26 @@ export function gehe(alle: readonly Ausloeser[], weg: readonly Kachelort[]): Mel
 export function loestAus(meldungen: readonly Meldung[], name: string): boolean {
   return meldungen.some((m) => m?.name === name && m.typ === "ausloeser" && m.darauf);
 }
+
+/**
+ * Alle Kacheln, die der Held von den Startfeldern aus zu Fuß erreicht („x,y“). Die Startfelder
+ * zählen mit, auch wenn sie selbst gesperrt sind (der Held steht dort schon).
+ */
+export function erreichbar(
+  frei: (x: number, y: number) => boolean,
+  starts: readonly Kachelort[],
+): Set<string> {
+  const gesehen = new Set(starts.map((s) => `${s.x},${s.y}`));
+  const offen = [...starts];
+  for (let i = 0; i < offen.length; i++) {
+    const hier = offen[i] as Kachelort;
+    for (const s of SCHRITTE) {
+      const x = hier.x + s.x;
+      const y = hier.y + s.y;
+      if (gesehen.has(`${x},${y}`) || !frei(x, y)) continue;
+      gesehen.add(`${x},${y}`);
+      offen.push({ x, y });
+    }
+  }
+  return gesehen;
+}

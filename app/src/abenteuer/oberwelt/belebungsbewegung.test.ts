@@ -4,7 +4,15 @@
  */
 import { describe, expect, it } from "vitest";
 import type { Belebung, Tierverhalten } from "./belebung";
-import { fluchtziel, neueBewegung, schritt, steht, type Umgebung } from "./belebungsbewegung";
+import {
+  fluchtziel,
+  haeltAuf,
+  neueBewegung,
+  schritt,
+  sperreAn,
+  steht,
+  type Umgebung,
+} from "./belebungsbewegung";
 
 function eintrag(typ: "statist" | "tier", verhalten: Tierverhalten = "sitzen"): Belebung {
   return {
@@ -46,6 +54,36 @@ describe("Statisten", () => {
     b.richtung = "rechts";
     laufe(b, v, 1, umgebung({ x: 6, y: 5 }));
     expect(b.x).toBeCloseTo(5);
+  });
+});
+
+describe("Hindernisse für den Helden", () => {
+  it("Statist kehrt um, wenn der Held ihm länger im Weg steht", () => {
+    const v = eintrag("statist");
+    const b = neueBewegung(v.feld);
+    // Der Held steht auf (7, 5) mitten im Laufweg nach (8, 5): Der Statist kommt bis kurz davor,
+    // wartet anderthalb Sekunden und geht dann zurück zum Anfang, statt für immer zu warten.
+    laufe(b, v, 1.2, umgebung({ x: 7, y: 5 }));
+    expect(b.richtung).toBe("rechts");
+    expect(b.x).toBeGreaterThan(5);
+    laufe(b, v, 0.8, umgebung({ x: 7, y: 5 }));
+    expect(b.richtung).toBe("links");
+    expect(b.x).toBeCloseTo(5, 1);
+  });
+
+  it("Statisten und Tiere am Boden halten auf, fliegende, schwimmende und folgende nicht", () => {
+    expect(haeltAuf(eintrag("statist"))).toBe(true);
+    expect(haeltAuf(eintrag("tier", "sitzen"))).toBe(true);
+    expect(haeltAuf(eintrag("tier", "ausweichen"))).toBe(true);
+    expect(haeltAuf(eintrag("tier", "fliegen"))).toBe(false);
+    expect(haeltAuf(eintrag("tier", "schwimmen"))).toBe(false);
+    expect(haeltAuf(eintrag("tier", "folgen"))).toBe(false);
+  });
+
+  it("die Sperre ist aus, solange der Held sie berührt", () => {
+    expect(sperreAn({ x: 5, y: 5 }, 6, 5)).toBe(true);
+    expect(sperreAn({ x: 5.4, y: 5.6 }, 6, 6)).toBe(false);
+    expect(sperreAn({ x: 5, y: 5 }, 5, 5)).toBe(false);
   });
 });
 

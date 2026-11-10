@@ -60,10 +60,12 @@ function schreibeStand(stand: object): Promise<boolean> {
   });
 }
 
-/** Beantwortet die aktuelle Aufgabe mit „Lösung zeigen“ und geht weiter. */
+/** Beantwortet die aktuelle Aufgabe mit „Ich komme nicht drauf“ (Lösung zeigen) und geht weiter. */
 async function loeseFalsch(seite: Page): Promise<void> {
-  await seite.getByRole("button", { name: "Lösung zeigen" }).click();
-  const weiter = seite.getByRole("button", { name: /^(Weiter|Runde auswerten)$/ });
+  // Im Spiel sprechen die Knöpfe die Sprache der Geschichte (docs/spiel/18, Abschnitt 6).
+  await expect(seite.getByRole("button", { name: "Ambrose fragen" })).toBeVisible();
+  await seite.getByRole("button", { name: "Ich komme nicht drauf" }).click();
+  const weiter = seite.getByRole("button", { name: "Weiter", exact: true });
   await expect(weiter).toBeVisible({ timeout: 10000 });
   // Im Spiel fehlen die Knöpfe der App nach der Antwort (Wunsch des Autors, 10.11.2026).
   await expect(seite.getByRole("button", { name: "Als Variante öffnen" })).toHaveCount(0);

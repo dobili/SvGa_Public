@@ -184,9 +184,18 @@ Jeder Schritt ist lauffähig und geprüft; jeder Rückweg führt in die Oberwelt
   - Endspiel und Struktur: ohne Herkunftszeile, Endspiel ohne „Die Engine denkt …“.
   - Vorführung und Gedächtnisstellung: ohne „Brett drehen“; der Stellungseditor hat die
     Eigenschaft `nurSetzen` (nur Figurenwahl, „Brett leeren“, „Fertig“, „Abbrechen“).
-- **Noch offen:**
-  - Die Kartenleiste trägt das Wort „Schach-Abenteuer“; in der Hülle ist es überflüssig.
-  - Falle oder Köder: Der Folgespieler nach der Antwort hat noch Zugknöpfe und Bewertungsbalken.
-  - Texte der Trainer („Lösung zeigen“, „Hinweis 1“) kommen aus der App, nicht aus dem Mund
-    einer Figur.
-  - Eintrag „Meine Partien“ im Tagebuch als Weg zur Partienliste der App.
+- **Offene Punkte, entschieden nach Regel 9 (10.11.2026, Widerspruch genügt):**
+  - **Kartenleiste:** Das Wort „Schach-Abenteuer“ und der Hinweis „Nach der Partie: Zurück zur
+    Stadt“ sind weg. Ohne Karten und ohne Zustand des Gegners gibt es keine Leiste.
+  - **Trainertexte:** Im Spiel heißt „Hinweis 1“ jetzt „Ambrose fragen“ und „Lösung zeigen“ „Ich
+    komme nicht drauf“; der Stand lautet „Aufgabe 2 von 4“ ohne „· 1 richtig“, der letzte Knopf
+    „Weiter“ statt „Runde auswerten“. Grund: Ambrose begleitet den Helden, seine Hilfe ist Teil
+    der Geschichte; die Wertung nennt die Ergebniskarte. Die Texte stehen in der App-Sprachdatei
+    (`imSpiel.*`), weil die Trainerkomponenten sie zeichnen.
+  - **„Meine Partien“ im Tagebuch:** nicht gebaut. Die Partienliste der App hat das Aussehen der
+    App; ein Sprung dorthin wäre genau der Bruch, den die Hülle vermeidet. Wer die Partien
+    ansehen will, findet sie in der App unter „Spielen“. Später möglich: eine eigene, knappe
+    Liste im Tagebuch mit Nachspielen in der Hülle.
+  - **Ergebniskarte der Oberwelt:** knapp, nur Ausgang, Nadel und Ambroses Satz zum Kipppunkt.
+  - **Falle oder Köder:** Der Folgespieler nach der Antwort bleibt. Er zeigt, was nach dem
+    Nehmen geschieht, und ist damit die Auflösung der Aufgabe.

@@ -765,3 +765,11 @@ auf jeder soll etwas passieren, das man entdecken kann. Die Geschichten dazu ste
     Statisten mit denselben Sätzen.
     **[auto]** Prüfung „Stadt wirkt leer“, „Weg wirkt leer“ und „Satz fehlt“
     (`pipeline/abenteuer/belebung.py`).
+
+54. **Türen sind breit genug für unsere Figuren** (Wunsch des Autors, 10.11.2026). Eine begehbare
+    Tür eines Gebäudebilds überdeckt mindestens eine volle Kachelspalte (x von 16·k bis 16·k + 15,
+    genau an den Kachelgrenzen) und ist mindestens 24 Pixel hoch. Unsere Figuren sind 16 Pixel
+    breit. Öffentliche Gebäude (Halle, Bahnhof, Seilbahn, Saloon) und Tore haben zwei volle
+    Spalten. Eine Tür zwischen zwei Spalten (etwa x 54–73) oder schmaler als eine Kachel (etwa
+    x 34–45) wird neu gezeichnet. Die Werkzeuge im privaten Repository nennen die Türlage im
+    Dateikopf („Tür x 48–63“). Der Übergang liegt auf der Kachel direkt unter der Tür.

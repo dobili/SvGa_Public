@@ -1299,3 +1299,7 @@ Reiher ist weg, am Wärterhaus stehen kleine Laternen statt Straßenlaternen. Ni
 liegt flach:** Das Fachwerk mit steinernen Brückenköpfen ist in der Draufsicht gezeichnet; eine Brücke mit
 sichtbarer Höhe über einem Einschnitt bräuchte ein eigenes Bild mit Unterseite und Schatten
 (Bildwunsch).
+
+Zweiter Durchgang an der Eisenbrücke (Detailbefunde, 10.11.2026): mehr Hocker am Imbiss, Dime am
+Brückenkopf, Koppeln mit Gattern, Stall in der ersten Koppel, Schafherde, Felsen unregelmäßig, mehr Bäume
+und Büsche am Hang, Hase entfernt.

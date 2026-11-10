@@ -53,19 +53,19 @@
     "##~~~~~~~~sssssssssssssssssssssssssssssssssssssssssssssssssssssssssssssssssssss#",
     "##~~~~~~~~sssssssssssssssssssssssssssssssssssssssssssssssssssssssssssssssssssss#",
     "##~~~~~~~~ppppppppppppppppppppppppppppppppppppppppppppppppppppppppppppppppppppp#",
-    "##~~~~~~~~pp......pp........pp........qqqqqqqqqqqqqqqqqqqqqqq..................#",
-    "##~~~~~~~~pp......pp........pp........qqqqqqqqqqqqqqqqqqqqqqq..................#",
-    "##~~~~~~~~pp......pp........pp........qqqqqqqqqqqqqqqqqqqqqqq..................#",
-    "##~~~~~~~~pp......pp........pp........qqqqqqqqqqqqqqqqqqqqqqq..................#",
-    "##~~~~~~~~pp......pp........pp........qqqqqqqqqqqqqqqqqqqqqqq..................#",
-    "##~~~~~~~~pp......pp........pp........qqqqqqqqqqqqqqqqqqqqqqq..................#",
-    "##~~~~~~~~pp......pp........pp........qqqqqqqqqqqqqqqqqqqqqqq..................#",
-    "##~~~~~~~~pp......pp........pp........qqqqqqqqqqqqqqqqqqqqqqq..................#",
-    "##~~~~~~~~pp......pp........pp........qqqqqqqqqqqqqqqqqqqqqqq..................#",
-    "##~~~~~~~~pp......pp........pp........qqqqqqqqqqqqqqqqqqqqqqq..................#",
-    "##~~~~~~~~pp......pp........pp........qqqqqqqqqqqqqqqqqqqqqqq..................#",
-    "##~~~~~~~~pp......pp........pp........qqqqqqqqqqqqqqqqqqqqqqq...........pp.....#",
-    "##~~~~~~~~pp......pp........pp........qqqqqqqqqqqqqqqqqqqqqqq...........pp.....#",
+    "##~~~~~~~~pp......pp........pp........ppppppppppppppppppppppp..................#",
+    "##~~~~~~~~pp......pp........pp........ppppppppppppppppppppppp..................#",
+    "##~~~~~~~~pp......pp........pp........ppppppppppppppppppppppp..................#",
+    "##~~~~~~~~pp......pp........pp........ppppppppppppppppppppppp..................#",
+    "##~~~~~~~~pp......pp........pp........ppppppppppppppppppppppp..................#",
+    "##~~~~~~~~pp......pp........pp........ppppppppppppppppppppppp..................#",
+    "##~~~~~~~~pp......pp........pp........ppppppppppppppppppppppp..................#",
+    "##~~~~~~~~pp......pp........pp........ppppppppppppppppppppppp..................#",
+    "##~~~~~~~~pp......pp........pp........ppppppppppppppppppppppp..................#",
+    "##~~~~~~~~pp......pp........pp........ppppppppppppppppppppppp..................#",
+    "##~~~~~~~~pp......pp........pp........ppppppppppppppppppppppp..................#",
+    "##~~~~~~~~pp......pp........pp........ppppppppppppppppppppppp...........pp.....#",
+    "##~~~~~~~~pp......pp........pp........ppppppppppppppppppppppp...........pp.....#",
     "##~~~~~~~~ppppppppppppppppppppppppppppppppppppppppppppppppppppppppppppppppppppp#",
     "##~~~~~~~~ppppppppppppppppppppppppppppppppppppppppppppppppppppppppppppppppppppp#",
     "##~~~~~~~~ppppppppppppppppppppppppppppppppppppppppppppppppppppppppppppppppppppp#",
@@ -1745,7 +1745,7 @@
     {
       "moebel": "mf9LaterneLang",
       "feld": [
-        73,
+        75,
         43
       ],
       "vorn": true
@@ -2737,6 +2737,27 @@
       ]
     },
     {
+      "moebel": "iwFassGross",
+      "feld": [
+        52,
+        22
+      ]
+    },
+    {
+      "moebel": "wr5Container",
+      "feld": [
+        74,
+        18
+      ]
+    },
+    {
+      "moebel": "cc7Bretterstapel",
+      "feld": [
+        62,
+        19
+      ]
+    },
+    {
       "moebel": "sb5SchildPerfectMove",
       "feld": [
         55,
@@ -3014,7 +3035,7 @@
       "eigenschaften": {
         "von": "50,53",
         "bis": "60,53",
-        "tun": "kuppelt Güterwagen am Schuppen",
+        "tun": "prüft die Weichen am Gleis",
         "wann": "tag",
         "sagt": "statist.ironwood.aussen.rangierer"
       }
@@ -3029,7 +3050,7 @@
       "eigenschaften": {
         "von": "60,28",
         "bis": "66,28",
-        "tun": "wartet mit dem Lieferwagen an der Schranke",
+        "tun": "wartet am Werkstor auf den Pförtner",
         "wann": "tag",
         "sagt": "statist.ironwood.aussen.lieferfahrer"
       }
@@ -3038,12 +3059,12 @@
       "name": "wirt",
       "typ": "statist",
       "feld": [
-        28,
-        29
+        27,
+        28
       ],
       "eigenschaften": {
-        "von": "28,29",
-        "bis": "28,29",
+        "von": "27,28",
+        "bis": "27,28",
         "tun": "fegt vor der Kneipe „Zum Hoch“",
         "wann": "abend",
         "sagt": "statist.ironwood.aussen.wirt",
@@ -3054,12 +3075,12 @@
       "name": "schuelerin",
       "typ": "statist",
       "feld": [
-        30,
-        12
+        29,
+        11
       ],
       "eigenschaften": {
-        "von": "30,12",
-        "bis": "44,13",
+        "von": "29,11",
+        "bis": "43,12",
         "tun": "geht mit Ranzen von der Schule heim",
         "wann": "tag",
         "sagt": "statist.ironwood.aussen.schuelerin"
@@ -3099,12 +3120,12 @@
       "name": "nachbar",
       "typ": "statist",
       "feld": [
-        20,
-        12
+        19,
+        11
       ],
       "eigenschaften": {
-        "von": "20,12",
-        "bis": "40,12",
+        "von": "19,11",
+        "bis": "39,11",
         "tun": "trägt Einkaufstüten die Elm Street hinauf",
         "wann": "abend"
       }
@@ -3114,11 +3135,11 @@
       "typ": "tier",
       "feld": [
         42,
-        48
+        44
       ],
       "eigenschaften": {
-        "von": "42,48",
-        "bis": "46,48",
+        "von": "42,44",
+        "bis": "46,44",
         "verhalten": "fliegen"
       }
     },

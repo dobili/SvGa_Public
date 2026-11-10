@@ -254,6 +254,13 @@
       ]
     },
     {
+      "moebel": "ri8Klapphocker",
+      "feld": [
+        19,
+        64
+      ]
+    },
+    {
       "moebel": "ri8Klapptisch",
       "feld": [
         23,
@@ -266,6 +273,13 @@
       "feld": [
         25,
         63
+      ]
+    },
+    {
+      "moebel": "ri8Klapphocker",
+      "feld": [
+        22,
+        64
       ]
     },
     {
@@ -286,7 +300,7 @@
     {
       "moebel": "ri8Klapphocker",
       "feld": [
-        19,
+        25,
         64
       ]
     },
@@ -479,7 +493,7 @@
       "bauteil_ok": true
     },
     {
-      "moebel": "ccZaun",
+      "moebel": "cc3ZaunEndeR",
       "feld": [
         20,
         83
@@ -498,23 +512,7 @@
       "moebel": "ccZaun",
       "feld": [
         21,
-        83
-      ],
-      "bauteil_ok": true
-    },
-    {
-      "moebel": "ccZaun",
-      "feld": [
-        21,
         94
-      ],
-      "bauteil_ok": true
-    },
-    {
-      "moebel": "ccZaun",
-      "feld": [
-        22,
-        83
       ],
       "bauteil_ok": true
     },
@@ -527,7 +525,7 @@
       "bauteil_ok": true
     },
     {
-      "moebel": "ccZaun",
+      "moebel": "cc3ZaunEnde",
       "feld": [
         23,
         83
@@ -847,7 +845,7 @@
       "bauteil_ok": true
     },
     {
-      "moebel": "ccZaun",
+      "moebel": "cc3ZaunEndeR",
       "feld": [
         20,
         101
@@ -866,23 +864,7 @@
       "moebel": "ccZaun",
       "feld": [
         21,
-        101
-      ],
-      "bauteil_ok": true
-    },
-    {
-      "moebel": "ccZaun",
-      "feld": [
-        21,
         112
-      ],
-      "bauteil_ok": true
-    },
-    {
-      "moebel": "ccZaun",
-      "feld": [
-        22,
-        101
       ],
       "bauteil_ok": true
     },
@@ -895,7 +877,7 @@
       "bauteil_ok": true
     },
     {
-      "moebel": "ccZaun",
+      "moebel": "cc3ZaunEnde",
       "feld": [
         23,
         101
@@ -1231,7 +1213,7 @@
       "bauteil_ok": true
     },
     {
-      "moebel": "ccZaun",
+      "moebel": "cc3ZaunEndeR",
       "feld": [
         20,
         119
@@ -1250,23 +1232,7 @@
       "moebel": "ccZaun",
       "feld": [
         21,
-        119
-      ],
-      "bauteil_ok": true
-    },
-    {
-      "moebel": "ccZaun",
-      "feld": [
-        21,
         130
-      ],
-      "bauteil_ok": true
-    },
-    {
-      "moebel": "ccZaun",
-      "feld": [
-        22,
-        119
       ],
       "bauteil_ok": true
     },
@@ -1279,7 +1245,7 @@
       "bauteil_ok": true
     },
     {
-      "moebel": "ccZaun",
+      "moebel": "cc3ZaunEnde",
       "feld": [
         23,
         119
@@ -1599,7 +1565,7 @@
       "bauteil_ok": true
     },
     {
-      "moebel": "ccZaun",
+      "moebel": "cc3ZaunEndeR",
       "feld": [
         20,
         137
@@ -1618,23 +1584,7 @@
       "moebel": "ccZaun",
       "feld": [
         21,
-        137
-      ],
-      "bauteil_ok": true
-    },
-    {
-      "moebel": "ccZaun",
-      "feld": [
-        21,
         143
-      ],
-      "bauteil_ok": true
-    },
-    {
-      "moebel": "ccZaun",
-      "feld": [
-        22,
-        137
       ],
       "bauteil_ok": true
     },
@@ -1647,7 +1597,7 @@
       "bauteil_ok": true
     },
     {
-      "moebel": "ccZaun",
+      "moebel": "cc3ZaunEnde",
       "feld": [
         23,
         137
@@ -1837,6 +1787,13 @@
         142
       ],
       "bauteil_ok": true
+    },
+    {
+      "moebel": "wr5Huehnerstall",
+      "feld": [
+        23,
+        84
+      ]
     },
     {
       "moebel": "wg4ObstbaumKlein",
@@ -2175,87 +2132,38 @@
       ]
     },
     {
-      "moebel": "mf4FelsHoch",
+      "moebel": "scFelsKlein",
       "feld": [
         28,
         30
       ]
     },
     {
-      "moebel": "mf4FelsHoch",
-      "feld": [
-        34,
-        31
-      ]
-    },
-    {
-      "moebel": "mf4Fels",
+      "moebel": "scFelsMittel",
       "feld": [
         28,
-        34
+        33
       ]
     },
     {
-      "moebel": "mf4FelsHoch",
-      "feld": [
-        34,
-        35
-      ]
-    },
-    {
-      "moebel": "felsKlein",
+      "moebel": "scFelsMittel",
       "feld": [
         28,
-        38
-      ]
-    },
-    {
-      "moebel": "mf4FelsHoch",
-      "feld": [
-        34,
         39
       ]
     },
     {
-      "moebel": "mf4Fels",
+      "moebel": "scFelsMittel",
       "feld": [
-        28,
-        42
+        30,
+        44
       ]
     },
     {
-      "moebel": "mf4FelsHoch",
+      "moebel": "scFelsMittel",
       "feld": [
-        34,
-        43
-      ]
-    },
-    {
-      "moebel": "mf4Fels",
-      "feld": [
-        28,
-        46
-      ]
-    },
-    {
-      "moebel": "mf4FelsHoch",
-      "feld": [
-        34,
-        47
-      ]
-    },
-    {
-      "moebel": "mf4Fels",
-      "feld": [
-        28,
+        30,
         50
-      ]
-    },
-    {
-      "moebel": "mf4FelsHoch",
-      "feld": [
-        34,
-        51
       ]
     },
     {
@@ -2291,6 +2199,48 @@
       "feld": [
         5,
         22
+      ]
+    },
+    {
+      "moebel": "wg4Busch",
+      "feld": [
+        9,
+        8
+      ]
+    },
+    {
+      "moebel": "wg4Busch",
+      "feld": [
+        13,
+        26
+      ]
+    },
+    {
+      "moebel": "wg4Busch",
+      "feld": [
+        2,
+        47
+      ]
+    },
+    {
+      "moebel": "wg4Laubbaum",
+      "feld": [
+        7,
+        36
+      ]
+    },
+    {
+      "moebel": "wg4Laubbaum",
+      "feld": [
+        11,
+        44
+      ]
+    },
+    {
+      "moebel": "wg4Laubbaum",
+      "feld": [
+        2,
+        26
       ]
     },
     {
@@ -2667,8 +2617,8 @@
     {
       "name": "dime",
       "feld": [
-        21,
-        62
+        22,
+        65
       ]
     }
   ],
@@ -2786,16 +2736,16 @@
       }
     },
     {
-      "name": "hase",
+      "name": "schafherde",
       "typ": "tier",
       "feld": [
-        22,
-        150
+        18,
+        104
       ],
       "eigenschaften": {
-        "von": "22,150",
-        "bis": "18,150",
-        "verhalten": "flitzen"
+        "von": "18,104",
+        "bis": "24,106",
+        "verhalten": "ausweichen"
       }
     },
     {
@@ -2815,13 +2765,13 @@
       "name": "schafe",
       "typ": "tier",
       "eigenschaften": {
-        "von": "20,86",
-        "bis": "25,90",
+        "von": "18,91",
+        "bis": "22,91",
         "verhalten": "ausweichen"
       },
       "feld": [
-        20,
-        86
+        18,
+        91
       ]
     },
     {

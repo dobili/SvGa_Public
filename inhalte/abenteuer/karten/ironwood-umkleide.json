@@ -11,7 +11,7 @@
  "tilewidth": 16,
  "tileheight": 16,
  "nextlayerid": 5,
- "nextobjectid": 26,
+ "nextobjectid": 28,
  "layers": [
   {
    "id": 1,
@@ -682,7 +682,7 @@
      "id": 4,
      "name": "arbeiter",
      "type": "statist",
-     "x": 64,
+     "x": 80,
      "y": 112,
      "width": 16,
      "height": 16,
@@ -692,17 +692,17 @@
       {
        "name": "von",
        "type": "string",
-       "value": "4,7"
+       "value": "5,7"
       },
       {
        "name": "bis",
        "type": "string",
-       "value": "6,7"
+       "value": "8,7"
       },
       {
        "name": "tun",
        "type": "string",
-       "value": "zieht sich für die Schicht um"
+       "value": "zieht sich nach der Schicht um"
       },
       {
        "name": "wann",
@@ -1060,8 +1060,8 @@
      "id": 20,
      "name": "cc4Bahnbank",
      "type": "moebel",
-     "x": 32,
-     "y": 80,
+     "x": 96,
+     "y": 96,
      "width": 48,
      "height": 16,
      "rotation": 0,
@@ -1070,7 +1070,7 @@
       {
        "name": "tiefe",
        "type": "int",
-       "value": 88
+       "value": 104
       },
       {
        "name": "kollision",
@@ -1083,7 +1083,7 @@
      "id": 21,
      "name": "cc4Bahnbank",
      "type": "moebel",
-     "x": 32,
+     "x": 96,
      "y": 128,
      "width": 48,
      "height": 16,
@@ -1104,6 +1104,52 @@
     },
     {
      "id": 22,
+     "name": "iw8Garderobe",
+     "type": "moebel",
+     "x": 16,
+     "y": 112,
+     "width": 32,
+     "height": 32,
+     "rotation": 0,
+     "visible": true,
+     "properties": [
+      {
+       "name": "tiefe",
+       "type": "int",
+       "value": 1
+      },
+      {
+       "name": "kollision",
+       "type": "bool",
+       "value": false
+      }
+     ]
+    },
+    {
+     "id": 23,
+     "name": "ca7Muelleimer",
+     "type": "moebel",
+     "x": 144,
+     "y": 112,
+     "width": 16,
+     "height": 32,
+     "rotation": 0,
+     "visible": true,
+     "properties": [
+      {
+       "name": "tiefe",
+       "type": "int",
+       "value": 136
+      },
+      {
+       "name": "kollision",
+       "type": "bool",
+       "value": true
+      }
+     ]
+    },
+    {
+     "id": 24,
      "name": "cc4Bahnbank",
      "type": "moebel",
      "x": 176,
@@ -1126,7 +1172,7 @@
      ]
     },
     {
-     "id": 23,
+     "id": 25,
      "name": "cc4PflanzeK",
      "type": "moebel",
      "x": 224,
@@ -1149,7 +1195,7 @@
      ]
     },
     {
-     "id": 24,
+     "id": 26,
      "name": "cc6TuerSued",
      "type": "moebel",
      "x": 96,
@@ -1172,7 +1218,7 @@
      ]
     },
     {
-     "id": 25,
+     "id": 27,
      "name": "cc5Fussmatte",
      "type": "moebel",
      "x": 96,

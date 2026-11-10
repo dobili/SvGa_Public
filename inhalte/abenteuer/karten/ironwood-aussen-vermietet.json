@@ -11,7 +11,7 @@
  "tilewidth": 16,
  "tileheight": 16,
  "nextlayerid": 5,
- "nextobjectid": 388,
+ "nextobjectid": 391,
  "layers": [
   {
    "id": 1,
@@ -14961,7 +14961,7 @@
       {
        "name": "tun",
        "type": "string",
-       "value": "kuppelt Güterwagen am Schuppen"
+       "value": "prüft die Weichen am Gleis"
       },
       {
        "name": "wann",
@@ -14999,7 +14999,7 @@
       {
        "name": "tun",
        "type": "string",
-       "value": "wartet mit dem Lieferwagen an der Schranke"
+       "value": "wartet am Werkstor auf den Pförtner"
       },
       {
        "name": "wann",
@@ -15017,8 +15017,8 @@
      "id": 30,
      "name": "wirt",
      "type": "statist",
-     "x": 448,
-     "y": 464,
+     "x": 432,
+     "y": 448,
      "width": 16,
      "height": 16,
      "rotation": 0,
@@ -15027,12 +15027,12 @@
       {
        "name": "von",
        "type": "string",
-       "value": "28,29"
+       "value": "27,28"
       },
       {
        "name": "bis",
        "type": "string",
-       "value": "28,29"
+       "value": "27,28"
       },
       {
        "name": "tun",
@@ -15060,8 +15060,8 @@
      "id": 31,
      "name": "schuelerin",
      "type": "statist",
-     "x": 480,
-     "y": 192,
+     "x": 464,
+     "y": 176,
      "width": 16,
      "height": 16,
      "rotation": 0,
@@ -15070,12 +15070,12 @@
       {
        "name": "von",
        "type": "string",
-       "value": "30,12"
+       "value": "29,11"
       },
       {
        "name": "bis",
        "type": "string",
-       "value": "44,13"
+       "value": "43,12"
       },
       {
        "name": "tun",
@@ -15174,8 +15174,8 @@
      "id": 34,
      "name": "nachbar",
      "type": "statist",
-     "x": 320,
-     "y": 192,
+     "x": 304,
+     "y": 176,
      "width": 16,
      "height": 16,
      "rotation": 0,
@@ -15184,12 +15184,12 @@
       {
        "name": "von",
        "type": "string",
-       "value": "20,12"
+       "value": "19,11"
       },
       {
        "name": "bis",
        "type": "string",
-       "value": "40,12"
+       "value": "39,11"
       },
       {
        "name": "tun",
@@ -15208,7 +15208,7 @@
      "name": "tauben",
      "type": "tier",
      "x": 672,
-     "y": 768,
+     "y": 704,
      "width": 16,
      "height": 16,
      "rotation": 0,
@@ -15217,12 +15217,12 @@
       {
        "name": "von",
        "type": "string",
-       "value": "42,48"
+       "value": "42,44"
       },
       {
        "name": "bis",
        "type": "string",
-       "value": "46,48"
+       "value": "46,44"
       },
       {
        "name": "verhalten",
@@ -20429,7 +20429,7 @@
      "id": 259,
      "name": "mf9LaterneLang",
      "type": "moebel",
-     "x": 1168,
+     "x": 1200,
      "y": 688,
      "width": 32,
      "height": 64,
@@ -23348,6 +23348,75 @@
     },
     {
      "id": 386,
+     "name": "iwFassGross",
+     "type": "moebel",
+     "x": 832,
+     "y": 352,
+     "width": 32,
+     "height": 32,
+     "rotation": 0,
+     "visible": true,
+     "properties": [
+      {
+       "name": "tiefe",
+       "type": "int",
+       "value": 376
+      },
+      {
+       "name": "kollision",
+       "type": "bool",
+       "value": true
+      }
+     ]
+    },
+    {
+     "id": 387,
+     "name": "wr5Container",
+     "type": "moebel",
+     "x": 1184,
+     "y": 288,
+     "width": 64,
+     "height": 48,
+     "rotation": 0,
+     "visible": true,
+     "properties": [
+      {
+       "name": "tiefe",
+       "type": "int",
+       "value": 328
+      },
+      {
+       "name": "kollision",
+       "type": "bool",
+       "value": true
+      }
+     ]
+    },
+    {
+     "id": 388,
+     "name": "cc7Bretterstapel",
+     "type": "moebel",
+     "x": 992,
+     "y": 304,
+     "width": 32,
+     "height": 32,
+     "rotation": 0,
+     "visible": true,
+     "properties": [
+      {
+       "name": "tiefe",
+       "type": "int",
+       "value": 328
+      },
+      {
+       "name": "kollision",
+       "type": "bool",
+       "value": true
+      }
+     ]
+    },
+    {
+     "id": 389,
      "name": "sb5SchildPerfectMove",
      "type": "moebel",
      "x": 880,
@@ -23370,7 +23439,7 @@
      ]
     },
     {
-     "id": 387,
+     "id": 390,
      "name": "caBus",
      "type": "moebel",
      "x": 848,

@@ -2,26 +2,26 @@
   "karte": "ironwood.museum",
   "datei": "karten/ironwood-museum.json",
   "art": "innen",
-  "beschreibung": "Heimatmuseum im alten Bahnhof (Runde 8, Notiz 17): zwei Räume, 34 × 18. Die alte Schalterhalle mit dem Fahrkartenschalter an der Nordwand, drei hohen Fenstern und dem Fahrplan davor; blauer Läufer von der Tür bis vor das Pult von Mr. Teague. Zwei große Vitrinen mit Platz ringsum, an der Südseite eine Reihe gefüllter Vitrinen, darunter die Zeitung von 1858 und ein freies Fach für Brief und Umschlag. Die Postsäcke von 1866 liegen als Ausstellungsstück auf dem Gepäckkarren. Durch einen Durchgang der Nebenraum über Werk und Stadt: Bilder an der Wand, das Foto vom Brückenbau, eine große Vitrine in der Mitte und eine Reihe Schaukästen, darunter der Glasfunke. Bank, Infotafeln, Pflanzen.",
+  "beschreibung": "Heimatmuseum im alten Bahnhof (Runde 8, Notiz 17): zwei Räume, 34 × 18. Die alte Schalterhalle mit dem Fahrkartenschalter an der Nordwand, drei hohen Fenstern und dem Fahrplan davor; dunkle Dielen, blauer Läufer von der Tür bis vor das Pult von Mr. Teague. Zwei große Vitrinen mit Platz ringsum, an der Südseite eine Reihe gefüllter Vitrinen, darunter die Zeitung von 1858 und ein freies Fach für Brief und Umschlag. Die Postsäcke von 1866 liegen als Ausstellungsstück auf dem Gepäckkarren. Durch einen Durchgang der Nebenraum über Werk und Stadt: Bilder an der Wand, das Foto vom Brückenbau, eine große Vitrine in der Mitte und eine Reihe Schaukästen, darunter der Glasfunke. Bank, Infotafeln, Pflanzen.",
   "wand": "creme",
   "boden": "fliesenGrau",
   "raster": [
     "##################################",
     "##################################",
     "##################################",
-    "#.....................#..........#",
-    "#.....................#..........#",
-    "#.....................#..........#",
-    "#.....................#..........#",
-    "#.....................#..........#",
-    "#.....................#..........#",
-    "#.........ttt....................#",
-    "#.........ttt....................#",
-    "#.........ttt.........#..........#",
-    "#.........ttt.........#..........#",
-    "#.........ttt.........#..........#",
-    "#.........ttt.........#..........#",
-    "#.........ttt.........#..........#",
+    "#hhhhhhhhhhhhhhhhhhhhh#hhhhhhhhhh#",
+    "#hhhhhhhhhhhhhhhhhhhhh#hhhhhhhhhh#",
+    "#hhhhhhhhhhhhhhhhhhhhh#hhhhhhhhhh#",
+    "#hhhhhhhhhhhhhhhhhhhhh#hhhhhhhhhh#",
+    "#hhhhhhhhhtttttthhhhhh#hhhhhhhhhh#",
+    "#hhhhhhhhhtttttthhhhhh#hhhhhhhhhh#",
+    "#hhhhhhhhhttthhhhhhhhhhhhhhhhhhhh#",
+    "#hhhhhhhhhttthhhhhhhhhhhhhhhhhhhh#",
+    "#hhhhhhhhhttthhhhhhhhh#hhhhhhhhhh#",
+    "#hhhhhhhhhttthhhhhhhhh#hhhhhhhhhh#",
+    "#hhhhhhhhhttthhhhhhhhh#hhhhhhhhhh#",
+    "#hhhhhhhhhttthhhhhhhhh#hhhhhhhhhh#",
+    "#hhhhhhhhhttthhhhhhhhh#hhhhhhhhhh#",
     "###########.######################",
     "##################################"
   ],
@@ -376,6 +376,51 @@
         "tun": "führt eine Schulklasse durch das Museum",
         "sagt": "statist.ironwood.museum.lehrer"
       }
+    },
+    {
+      "name": "schulkindA",
+      "typ": "statist",
+      "feld": [
+        4,
+        10
+      ],
+      "eigenschaften": {
+        "von": "4,10",
+        "bis": "4,10",
+        "tun": "hört dem Lehrer zu",
+        "wann": "tag",
+        "bild": "statist-02"
+      }
+    },
+    {
+      "name": "schulkindB",
+      "typ": "statist",
+      "feld": [
+        5,
+        11
+      ],
+      "eigenschaften": {
+        "von": "5,11",
+        "bis": "5,11",
+        "tun": "hört dem Lehrer zu",
+        "wann": "tag",
+        "bild": "statist-05"
+      }
+    },
+    {
+      "name": "schulkindC",
+      "typ": "statist",
+      "feld": [
+        8,
+        11
+      ],
+      "eigenschaften": {
+        "von": "8,11",
+        "bis": "8,11",
+        "tun": "hört dem Lehrer zu",
+        "wann": "tag",
+        "bild": "statist-07"
+      }
     }
   ],
   "zustand": [
@@ -392,6 +437,7 @@
     "schule"
   ],
   "boeden": {
-    "t": "teppichBlau"
+    "t": "teppichBlau",
+    "h": "holzDunkel"
   }
 }

@@ -714,6 +714,41 @@ Räume.
 
 **Mamas Zimmer:** gerahmtes Partieformular, zwei Stühle (Mama und Oma Ruth), Spüle auf der Theke.
 
+**Zweiter Durchgang (Detailbefunde, 10.11.2026):**
+
+- **Ironwood außen:** Marktplatz gepflastert, Statisten von der Fahrbahn auf den nächsten Gehweg,
+  Laterne aus der Einfahrt gerückt, Rangierer am Gleis, Lieferfahrer am Laden, Tauben auf dem Platz,
+  mehr Lager (Fässer, Container, Bretter) im Werkhof.
+- **Kantine** (`gutachten/ironwood-kantine-2.md`): Herde mit gleicher Vorderkante (3), Koch vor dem
+  Herd mit Suppentopf (5), Arbeitstisch in der Küche (6), Geschirr auf dem Tresen (9), Mülleimer aus dem
+  Gang in die Südwestecke (11), vierter Clubtisch auf den leeren Dielen (26), zwei Pflanzensorten an der
+  Kante (27); die Beschreibung nennt keine Bank mehr (21). Nicht umgesetzt: **Hauben (4)** – das Paket hat
+  nur die schmale Haube; **leere Tische, niemand sitzt (12)** – es gibt kein Bild für Tabletts oder
+  sitzende Statisten, das Geschirrbild ist ein Abtropfgestell; **Stühle an der Südwand (13)** – der Raum ist
+  nach Regel 10.56 so groß wie das Gebäude, die Reihe dahinter bleibt frei; **Uhr (14)** – einzige
+  Wanduhr im Paket; **Spinde (15)** – einziges Spindbild, Bildwunsch an mittel-1; **Mittelgang (16)** –
+  er führt zur Querstraße vor der Ausgabe; **Getränkeautomat (18)** – nur als Frontbild vorhanden;
+  **Pokal, Foto, Katze (22–24)** – Bilder des Pakets; **Dielen unscharf (25)** – Material des Kartenbilds;
+  **Fußmatte und Tür (28)** – gilt für alle Karten.
+- **Museum** (`gutachten/ironwood-museum.md`): Läufer mit Knick bis vor das Pult (1), Holzbank statt
+  Metalltisch (7, 19), dunkle Dielen statt Kantinenfliesen (13), drei Schulkinder beim Lehrer (11).
+  Nicht umgesetzt: **Läufer rot (1)** – die Beschreibung sagt blau; **Postsäcke (4)** und **Schalter
+  „TICKET“ (12)** – Bilder des Pakets, ein deutsches Schalterbild ist ein Bildwunsch; **Südreihe (9)** –
+  der Läufer teilt sie; **Bilder und Brückenfoto (14, 15)** – Ansichten von Hütte, Kanal und Brücke wären
+  eigene Bilder (Bildwunsch); **Glasfunke (16)** – der Fund ist ein Auslöser vor dem Schaukasten;
+  **Wandstück im Durchgang (18)** – so zeichnet das Kartenbild jede Wandöffnung.
+- **Umkleide** (`gutachten/ironwood-umkleide.md`): Bänke in der Mitte (10), der Arbeiter zieht sich nach
+  der Schicht um (11), Haken mit Jacken an der Westwand und ein Mülleimer (12). Nicht umgesetzt:
+  **Fliesen unscharf (6)** – Material; **Spinde (8)** – wie Kantine; **Bänke mit Lehne (9)** – eine
+  niedrige Bank ohne Lehne gibt es im Paket nicht; **Fenster (12)** – die Umkleide liegt innen im Werk;
+  **Fußmatte und Tür (13)** – alle Karten.
+- **Mamas Zimmer** (`gutachten/ironwood-mamas-zimmer.md`): Obstschale auf dem Tisch (3), zwei verschiedene
+  Herde (6), Läufer im leeren Westen (8), Teddy entfernt (11), Mama steht neben dem Bett statt auf dem
+  Teppichrand (13). Nicht umgesetzt: **Arbeitsplatte (5)** – eigenes Thekenbild; **Leseecke (7)** – Sessel
+  und Stehlampe reichen für „karg“; **Fliesen und Dielen unscharf (9, 14)** – Material; **Bett (12)** –
+  Bild des Pakets; **Durchgang (15)** – Kartenbild; **Holzwand (16)** – eine Wandart je Szene;
+  **Fußmatte und Tür (17)** – alle Karten.
+
 **Steinbruchgrube** (`gutachten/steinbruch-grube-2.md`, geprüft war noch die Fassung ohne
 Klippenkacheln): Kanten jetzt aus Klippenkacheln ohne Kästen (2, 3), Rampen mit Treppen bzw. als
 gepflasterte Fahrrampe (4), Seitenwände gleich breit (5), Geröll ohne Grasrand in unregelmäßigem Abstand

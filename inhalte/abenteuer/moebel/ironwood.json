@@ -1,5 +1,14 @@
 {
   "moebel": {
+    "iw8Garderobe": {
+      "quelle": "spiel/eigene/garderobe_jacken.png",
+      "breite": 32,
+      "hoehe": 32,
+      "kollision": false,
+      "art": "garderobe",
+      "zustand": "gebraucht",
+      "stil": "industrie"
+    },
     "iw8Partieformular": {
       "quelle": "modern-interiors/1_Interiors/16x16/Theme_Sorter_Black_Shadow_Singles/22_Museum_Black_Shadow_Singles_16x16/Museum_Black_Shadow_Singles_88.png",
       "breite": 16,
@@ -239,9 +248,9 @@
       "stil": "klassisch"
     },
     "iw8Museumsbank": {
-      "quelle": "modern-interiors/1_Interiors/16x16/Theme_Sorter_Black_Shadow_Singles/22_Museum_Black_Shadow_Singles_16x16/Museum_Black_Shadow_Singles_41.png",
+      "quelle": "modern-interiors/1_Interiors/16x16/Theme_Sorter_Black_Shadow_Singles/22_Museum_Black_Shadow_Singles_16x16/Museum_Black_Shadow_Singles_36.png",
       "breite": 32,
-      "hoehe": 32,
+      "hoehe": 16,
       "kollision": true,
       "art": "bank",
       "blick": "unten",

@@ -89,12 +89,32 @@
       "feld": [16, 19]
     },
     {
-      "moebel": "gt7Wasserturm",
-      "feld": [48, 13]
+      "moebel": "gt8Bretterbude",
+      "feld": [2, 6]
     },
     {
-      "moebel": "gt7Windrad",
-      "feld": [20, 27]
+      "moebel": "gt8Station",
+      "feld": [10, 6]
+    },
+    {
+      "moebel": "gt8Blockhaus",
+      "feld": [33, 6]
+    },
+    {
+      "moebel": "gt8Bretterbude",
+      "feld": [40, 6]
+    },
+    {
+      "moebel": "gt8HausVerwittertB",
+      "feld": [13, 26]
+    },
+    {
+      "moebel": "gt8Blockhaus",
+      "feld": [2, 27]
+    },
+    {
+      "moebel": "gt7Wasserturm",
+      "feld": [48, 13]
     },
     {
       "moebel": "gt7Traenke",
@@ -492,39 +512,15 @@
     },
     {
       "moebel": "gt7Kiste",
-      "feld": [23, 26]
-    },
-    {
-      "moebel": "gt7Fass",
       "feld": [32, 26]
     },
     {
-      "moebel": "gt7Kiste",
+      "moebel": "gt7Fass",
       "feld": [26, 26]
-    },
-    {
-      "moebel": "gt7Tumbleweed",
-      "feld": [47, 36]
-    },
-    {
-      "moebel": "gt7Kaktus",
-      "feld": [3, 10]
-    },
-    {
-      "moebel": "gt7Stein",
-      "feld": [4, 31]
     },
     {
       "moebel": "gt7Felsgruppe",
       "feld": [38, 9]
-    },
-    {
-      "moebel": "gt7Saguaro",
-      "feld": [13, 7]
-    },
-    {
-      "moebel": "gt7Saguaro",
-      "feld": [5, 6]
     },
     {
       "moebel": "gt7KaktusBluete",
@@ -533,30 +529,6 @@
     {
       "moebel": "gt7Saguaro",
       "feld": [46, 9]
-    },
-    {
-      "moebel": "gt7Felsgruppe",
-      "feld": [9, 11]
-    },
-    {
-      "moebel": "gt7Kaktus",
-      "feld": [15, 11]
-    },
-    {
-      "moebel": "gt7KaktusBluete",
-      "feld": [7, 6]
-    },
-    {
-      "moebel": "gt7KaktusBluete",
-      "feld": [41, 10]
-    },
-    {
-      "moebel": "gt7Stein",
-      "feld": [2, 11]
-    },
-    {
-      "moebel": "gt7Saguaro",
-      "feld": [17, 35]
     },
     {
       "moebel": "gt7Kaktus",
@@ -583,32 +555,12 @@
       "feld": [26, 8]
     },
     {
-      "moebel": "gt7KaktusBluete",
-      "feld": [35, 6]
-    },
-    {
-      "moebel": "gt7Kaktus",
-      "feld": [14, 28]
-    },
-    {
-      "moebel": "gt7Saguaro",
-      "feld": [2, 31]
-    },
-    {
-      "moebel": "gt7Felsgruppe",
-      "feld": [15, 25]
-    },
-    {
       "moebel": "gt7Tumbleweed",
       "feld": [52, 11]
     },
     {
       "moebel": "gt7Felsgruppe",
       "feld": [46, 5]
-    },
-    {
-      "moebel": "gt7Saguaro",
-      "feld": [15, 5]
     },
     {
       "moebel": "gt7TumbleweedGross",
@@ -624,15 +576,7 @@
     },
     {
       "moebel": "gt7KaktusBluete",
-      "feld": [44, 6]
-    },
-    {
-      "moebel": "gt7KaktusBluete",
       "feld": [31, 32]
-    },
-    {
-      "moebel": "gt7Stein",
-      "feld": [18, 27]
     },
     {
       "moebel": "gt7Stein",
@@ -643,20 +587,12 @@
       "feld": [44, 32]
     },
     {
-      "moebel": "gt7Saguaro",
-      "feld": [36, 8]
-    },
-    {
       "moebel": "gt7Tumbleweed",
       "feld": [46, 27]
     },
     {
       "moebel": "gt7Felsgruppe",
       "feld": [24, 8]
-    },
-    {
-      "moebel": "gt7Stein",
-      "feld": [6, 27]
     },
     {
       "moebel": "gt7Stein",
@@ -669,14 +605,6 @@
     {
       "moebel": "gt7Tumbleweed",
       "feld": [25, 7]
-    },
-    {
-      "moebel": "gt7Tumbleweed",
-      "feld": [43, 11]
-    },
-    {
-      "moebel": "gt7KaktusBluete",
-      "feld": [24, 27]
     },
     {
       "moebel": "gt7TumbleweedGross",
@@ -695,24 +623,12 @@
       "feld": [28, 32]
     },
     {
-      "moebel": "gt7Felsgruppe",
-      "feld": [17, 28]
-    },
-    {
       "moebel": "gt7Stein",
       "feld": [8, 5]
     },
     {
-      "moebel": "gt7Felsgruppe",
-      "feld": [19, 35]
-    },
-    {
       "moebel": "gt7Tumbleweed",
       "feld": [49, 25]
-    },
-    {
-      "moebel": "gt7Tumbleweed",
-      "feld": [6, 10]
     },
     {
       "moebel": "gt7Felsgruppe",
@@ -725,10 +641,6 @@
     {
       "moebel": "gt7Stein",
       "feld": [33, 5]
-    },
-    {
-      "moebel": "gt7KaktusBluete",
-      "feld": [1, 26]
     },
     {
       "moebel": "gt7Stein",
@@ -748,27 +660,11 @@
     },
     {
       "moebel": "gt7Tumbleweed",
-      "feld": [25, 33]
-    },
-    {
-      "moebel": "gt7Stein",
-      "feld": [5, 10]
-    },
-    {
-      "moebel": "gt7Tumbleweed",
       "feld": [4, 33]
     },
     {
       "moebel": "gt7Felsgruppe",
-      "feld": [16, 30]
-    },
-    {
-      "moebel": "gt7Tumbleweed",
-      "feld": [2, 29]
-    },
-    {
-      "moebel": "gt7Stein",
-      "feld": [5, 30]
+      "feld": [8, 6]
     },
     {
       "moebel": "gt7Stein",
@@ -795,14 +691,6 @@
       "feld": [21, 7]
     },
     {
-      "moebel": "gt7Kaktus",
-      "feld": [4, 7]
-    },
-    {
-      "moebel": "gt7Kaktus",
-      "feld": [2, 8]
-    },
-    {
       "moebel": "gt7TumbleweedGross",
       "feld": [39, 33]
     },
@@ -820,47 +708,11 @@
     },
     {
       "moebel": "gt7Tumbleweed",
-      "feld": [17, 34]
-    },
-    {
-      "moebel": "gt7Stein",
-      "feld": [19, 27]
-    },
-    {
-      "moebel": "gt7Tumbleweed",
       "feld": [11, 31]
-    },
-    {
-      "moebel": "gt7Kaktus",
-      "feld": [4, 28]
-    },
-    {
-      "moebel": "gt7Felsgruppe",
-      "feld": [26, 27]
-    },
-    {
-      "moebel": "gt7Stein",
-      "feld": [41, 9]
     },
     {
       "moebel": "gt7KaktusBluete",
       "feld": [27, 35]
-    },
-    {
-      "moebel": "gt7Tumbleweed",
-      "feld": [4, 9]
-    },
-    {
-      "moebel": "gt7KaktusBluete",
-      "feld": [13, 11]
-    },
-    {
-      "moebel": "gt7Stein",
-      "feld": [15, 30]
-    },
-    {
-      "moebel": "gt7Tumbleweed",
-      "feld": [16, 33]
     },
     {
       "moebel": "gt7Kaktus",
@@ -869,10 +721,6 @@
     {
       "moebel": "gt7KaktusBluete",
       "feld": [18, 8]
-    },
-    {
-      "moebel": "gt7Saguaro",
-      "feld": [42, 5]
     }
   ],
   "ausloeser": [
@@ -958,12 +806,142 @@
     {
       "name": "echse",
       "typ": "tier",
-      "feld": [30, 30],
+      "feld": [3, 24],
       "eigenschaften": {
-        "von": "30,30",
-        "bis": "34,30",
-        "verhalten": "ausweichen",
+        "verhalten": "flitzen",
+        "von": "3,24",
+        "bis": "6,24",
         "wann": "tag"
+      }
+    },
+    {
+      "name": "touristin",
+      "typ": "statist",
+      "feld": [12, 22],
+      "eigenschaften": {
+        "tun": "fotografiert die Fassaden",
+        "wann": "tag",
+        "von": "12,22",
+        "bis": "18,22",
+        "sagt": "statist.ghostTown.aussen.touristin"
+      }
+    },
+    {
+      "name": "bikerin",
+      "typ": "statist",
+      "feld": [44, 23],
+      "eigenschaften": {
+        "tun": "macht Pause neben ihrem Motorrad",
+        "wann": "tag",
+        "sagt": "statist.ghostTown.aussen.bikerin"
+      }
+    },
+    {
+      "name": "geschichtslehrer",
+      "typ": "statist",
+      "feld": [26, 23],
+      "eigenschaften": {
+        "tun": "erklärt einer Schulklasse die Stadt",
+        "wann": "tag",
+        "sagt": "statist.ghostTown.aussen.geschichtslehrer"
+      }
+    },
+    {
+      "name": "schulkind",
+      "typ": "statist",
+      "feld": [27, 22],
+      "eigenschaften": {
+        "tun": "hört dem Lehrer halb zu",
+        "wann": "tag",
+        "sagt": "statist.ghostTown.aussen.schulkind"
+      }
+    },
+    {
+      "name": "urenkelPostkutscher",
+      "typ": "statist",
+      "feld": [47, 22],
+      "eigenschaften": {
+        "tun": "sucht einen Namen auf alten Listen",
+        "wann": "tag",
+        "sagt": "statist.ghostTown.aussen.urenkelPostkutscher"
+      }
+    },
+    {
+      "name": "fotograf",
+      "typ": "statist",
+      "feld": [20, 22],
+      "eigenschaften": {
+        "tun": "wartet auf ein Bild ohne Menschen",
+        "wann": "tag",
+        "sagt": "statist.ghostTown.aussen.fotograf"
+      }
+    },
+    {
+      "name": "goldwaescherin",
+      "typ": "statist",
+      "feld": [3, 22],
+      "eigenschaften": {
+        "tun": "siebt Sand in einer Pfanne",
+        "wann": "tag",
+        "sagt": "statist.ghostTown.aussen.goldwaescherin"
+      }
+    },
+    {
+      "name": "wanderin",
+      "typ": "statist",
+      "feld": [8, 21],
+      "eigenschaften": {
+        "tun": "füllt ihre Wasserflasche auf",
+        "wann": "morgen",
+        "sagt": "statist.ghostTown.aussen.wanderin"
+      }
+    },
+    {
+      "name": "radfahrer",
+      "typ": "statist",
+      "feld": [1, 21],
+      "eigenschaften": {
+        "tun": "fährt staubig durch die Stadt",
+        "wann": "tag",
+        "von": "1,21",
+        "bis": "54,21"
+      }
+    },
+    {
+      "name": "bikerFreund",
+      "typ": "statist",
+      "feld": [45, 22],
+      "eigenschaften": {
+        "tun": "putzt den Helm",
+        "wann": "tag"
+      }
+    },
+    {
+      "name": "malerin",
+      "typ": "statist",
+      "feld": [30, 23],
+      "eigenschaften": {
+        "tun": "zeichnet den Saloon",
+        "wann": "tag"
+      }
+    },
+    {
+      "name": "mannMitHut",
+      "typ": "statist",
+      "feld": [16, 20],
+      "eigenschaften": {
+        "tun": "döst im Schatten auf dem Bretterweg",
+        "wann": "tag"
+      }
+    },
+    {
+      "name": "alterHund",
+      "typ": "tier",
+      "feld": [36, 23],
+      "eigenschaften": {
+        "verhalten": "folgen",
+        "von": "36,23",
+        "bis": "40,23"
       }
     }
   ],

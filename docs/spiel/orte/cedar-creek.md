@@ -626,3 +626,38 @@ Die Bibliothek baut mittel-4. Das Archiv ist in allen drei Varianten `"dicht": t
 | Archiv      | zwei versetzte Querreihen (links vorn, rechts hinten), Kartonstapel an der Südwand, Arbeitsplatz Südostecke | zwei Längsreihen mit Gang in der Mitte, Kartonsäule an der Ostwand, Arbeitsplatz Südwestecke                                       | Doppelreihe Rücken an Rücken mitten im Raum, Gänge ringsum, Kartons an der Südwand, Arbeitsplatz am Fuß der Treppe                  |
 | Waschsalon  | Maschinenreihe an der Nordwand, Falttische in der Mitte, Wartesitze links                                   | Maschinen und Getränkeautomat an der Nordwand, Falttische an der Westwand, Sitzecke in der Südostecke                              | zweite Reihe Maschinen in der Mitte, Falttisch und Wartesitze unten, mehr Körbe und Pflanzen                                        |
 | Drechslerei | Hobelbank links, Regal am Werktisch rechts, Arbeitstisch mit Werkstück in der Mitte                         | große Bank als Drehbank mitten im Raum, Werktisch und Regal an der Nordwand, Holzlager an der Ostwand                              | zwei Holztische als Werkbänke mit Werkzeug, Regal und Holzkiste, Hobelbank rechts, Werkstück in der Mitte, Holzlager an der Südwand |
+
+## Runde 7 (10.11.2026): Gebäude und Belebung in `cedarCreek.aussen`
+
+Nach Regel 10.51 und 10.53, das gewählte Bild bleibt. Sechs Kulissenhäuser ohne Innenraum: zwei
+kleine in zweiter Reihe zwischen Bahnsteig und den Rückseiten von Waschsalon und Seiteneingang
+(12, 5) und (19, 5); vier an einer neuen Gasse aus Pflaster am Südrand (Reihen 38–39, vom
+Vordachhaus bis zum Uferweg), Türen zur Gasse, Rücken zur Zedernwiese: (23, 34), (29, 34),
+(36, 34), (42, 34). Dafür sind eine Zeder, eine schmale Zeder, eine Tanne und das letzte
+Heckenstück weg, die Picknicktische stehen weiter nördlich (24, 28) und (37, 28). Damit 12
+Gebäude. Belebung: 12 Statisten, 9 ansprechbar (`statist.cedarCreek.aussen.*`), dazu Hund,
+Reiher, Eichelhäher, Enten auf dem Bach und ein Eichhörnchen auf der Wiese.
+
+## Runde 7 (10.11.2026): Weg 1 mit Ereignisort und Belebung
+
+**Flohmarkt an der Landstraße** (Dokument 15, 2.1) in L7 südlich der Straße: Bauernhaus der
+Verkäuferin (99, 17), davor ein Hof aus Schotter (Spalten 88–98, Reihen 19–24) mit Einfahrt von der
+Straße (95–96, 17–18), Odettes Wohnmobil „Gambit“ (88, 19), drei Tische mit Kram, Kartons, Schild
+„Garage Sales“ an der Straße (92, 17). Platz für drei bis sechs Figuren auf dem Hof. Möbel
+`mf8Flohmarkt…`, `mf8Wohnmobil`.
+
+### 3.3 Für Runde 6 (Felder bleiben begehbar)
+
+| Auslöser            | Karte                       | Feld     | Was dort ist                                |
+| ------------------- | --------------------------- | -------- | ------------------------------------------- |
+| `ereignisFlohmarkt` | `wegMapleCedar.landstrasse` | (95, 21) | Odette Finch vor dem Wohnmobil              |
+| `seite00`           | `wegMapleCedar.landstrasse` | (87, 17) | Buchseite Kapitel 0 im Graben neben dem Hof |
+| `finchBauerA`       | `wegMapleCedar.flussweg`    | (54, 21) | unter der neuen Bank am Steg (54, 20)       |
+
+Das Finkenzeichen am Pfosten und das Schild „Flohmarkt Samstag“ (vor dem Ereignis) sind beim
+Haupt-Chat bestellt. **Belebung:** Landstraße mit der Frau, die die wilden Pferde beobachtet
+(Dokument 16, 3.2, Beispiel 4, mit Ambroses Antwort), Verkäuferin und Kunde auf dem Hof, Pferde und
+Eichhörnchen; Flussweg mit Vogelbeobachterin, Picknickvater, Kind beim Steinehüpfen, Enten, Eisvogel;
+Zedernpfad mit Pilzsammlerin, Försterin, Landschaftsmaler, Kindern, Reh, Krähen, Hase, Eule. Jede
+Karte hat mindestens 4 Statisten (3 ansprechbar) und 6 Tiere. Weg 1 ist vom Autor gewählt; die
+Varianten in `szenen/varianten/` bleiben unverändert zum Nachschlagen.

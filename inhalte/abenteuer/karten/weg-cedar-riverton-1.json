@@ -11,7 +11,7 @@
  "tilewidth": 16,
  "tileheight": 16,
  "nextlayerid": 5,
- "nextobjectid": 444,
+ "nextobjectid": 449,
  "layers": [
   {
    "id": 1,
@@ -12912,8 +12912,8 @@
      "id": 15,
      "name": "pfadfinder",
      "type": "statist",
-     "x": 384,
-     "y": 144,
+     "x": 368,
+     "y": 128,
      "width": 16,
      "height": 16,
      "rotation": 0,
@@ -12922,7 +12922,7 @@
       {
        "name": "von",
        "type": "string",
-       "value": "24,9"
+       "value": "23,8"
       },
       {
        "name": "bis",
@@ -12943,6 +12943,136 @@
     },
     {
      "id": 16,
+     "name": "jaegerMitKamera",
+     "type": "statist",
+     "x": 1408,
+     "y": 96,
+     "width": 16,
+     "height": 16,
+     "rotation": 0,
+     "visible": true,
+     "properties": [
+      {
+       "name": "tun",
+       "type": "string",
+       "value": "wartet mit der Kamera auf den Hirsch"
+      },
+      {
+       "name": "wann",
+       "type": "string",
+       "value": "morgen"
+      },
+      {
+       "name": "sagt",
+       "type": "string",
+       "value": "statist.wegCedarRiverton.zedernwald.jaegerMitKamera"
+      }
+     ]
+    },
+    {
+     "id": 17,
+     "name": "wanderpaar",
+     "type": "statist",
+     "x": 640,
+     "y": 192,
+     "width": 16,
+     "height": 16,
+     "rotation": 0,
+     "visible": true,
+     "properties": [
+      {
+       "name": "tun",
+       "type": "string",
+       "value": "streitet freundlich über die Karte"
+      },
+      {
+       "name": "wann",
+       "type": "string",
+       "value": "tag"
+      },
+      {
+       "name": "sagt",
+       "type": "string",
+       "value": "statist.wegCedarRiverton.zedernwald.wanderpaar"
+      }
+     ]
+    },
+    {
+     "id": 18,
+     "name": "vogelstimmenSammlerin",
+     "type": "statist",
+     "x": 1920,
+     "y": 224,
+     "width": 16,
+     "height": 16,
+     "rotation": 0,
+     "visible": true,
+     "properties": [
+      {
+       "name": "tun",
+       "type": "string",
+       "value": "nimmt mit einem Mikrofon Vogelstimmen auf"
+      },
+      {
+       "name": "wann",
+       "type": "string",
+       "value": "morgen"
+      },
+      {
+       "name": "sagt",
+       "type": "string",
+       "value": "statist.wegCedarRiverton.zedernwald.vogelstimmenSammlerin"
+      }
+     ]
+    },
+    {
+     "id": 19,
+     "name": "hirsch",
+     "type": "tier",
+     "x": 1520,
+     "y": 32,
+     "width": 16,
+     "height": 16,
+     "rotation": 0,
+     "visible": true,
+     "properties": [
+      {
+       "name": "verhalten",
+       "type": "string",
+       "value": "sitzen"
+      }
+     ]
+    },
+    {
+     "id": 20,
+     "name": "fuchs",
+     "type": "tier",
+     "x": 480,
+     "y": 240,
+     "width": 16,
+     "height": 16,
+     "rotation": 0,
+     "visible": true,
+     "properties": [
+      {
+       "name": "verhalten",
+       "type": "string",
+       "value": "flitzen"
+      },
+      {
+       "name": "von",
+       "type": "string",
+       "value": "27,15"
+      },
+      {
+       "name": "bis",
+       "type": "string",
+       "value": "33,15"
+      }
+     ]
+    },
+    {
+     "id": 21,
      "name": "wc5Steg6",
      "type": "moebel",
      "x": 1120,
@@ -12965,7 +13095,7 @@
      ]
     },
     {
-     "id": 17,
+     "id": 22,
      "name": "wc5FelsgruppeB",
      "type": "moebel",
      "x": 80,
@@ -12988,7 +13118,7 @@
      ]
     },
     {
-     "id": 18,
+     "id": 23,
      "name": "wc5Wegweiser",
      "type": "moebel",
      "x": 880,
@@ -13011,7 +13141,7 @@
      ]
     },
     {
-     "id": 19,
+     "id": 24,
      "name": "wc5Tafel",
      "type": "moebel",
      "x": 832,
@@ -13034,7 +13164,7 @@
      ]
     },
     {
-     "id": 20,
+     "id": 25,
      "name": "wc5Trittstein",
      "type": "moebel",
      "x": 976,
@@ -13057,7 +13187,7 @@
      ]
     },
     {
-     "id": 21,
+     "id": 26,
      "name": "wc5Farn",
      "type": "moebel",
      "x": 944,
@@ -13080,7 +13210,7 @@
      ]
     },
     {
-     "id": 22,
+     "id": 27,
      "name": "wc5Stumpf",
      "type": "moebel",
      "x": 752,
@@ -13103,7 +13233,7 @@
      ]
     },
     {
-     "id": 23,
+     "id": 28,
      "name": "wc5ToteZeder",
      "type": "moebel",
      "x": 528,
@@ -13126,126 +13256,11 @@
      ]
     },
     {
-     "id": 24,
-     "name": "wc5Pilze",
-     "type": "moebel",
-     "x": 1424,
-     "y": 144,
-     "width": 16,
-     "height": 16,
-     "rotation": 0,
-     "visible": true,
-     "properties": [
-      {
-       "name": "tiefe",
-       "type": "int",
-       "value": 1
-      },
-      {
-       "name": "kollision",
-       "type": "bool",
-       "value": false
-      }
-     ]
-    },
-    {
-     "id": 25,
-     "name": "wc5PilzeB",
-     "type": "moebel",
-     "x": 1440,
-     "y": 144,
-     "width": 16,
-     "height": 16,
-     "rotation": 0,
-     "visible": true,
-     "properties": [
-      {
-       "name": "tiefe",
-       "type": "int",
-       "value": 1
-      },
-      {
-       "name": "kollision",
-       "type": "bool",
-       "value": false
-      }
-     ]
-    },
-    {
-     "id": 26,
-     "name": "wc5PilzeB",
-     "type": "moebel",
-     "x": 1456,
-     "y": 160,
-     "width": 16,
-     "height": 16,
-     "rotation": 0,
-     "visible": true,
-     "properties": [
-      {
-       "name": "tiefe",
-       "type": "int",
-       "value": 1
-      },
-      {
-       "name": "kollision",
-       "type": "bool",
-       "value": false
-      }
-     ]
-    },
-    {
-     "id": 27,
-     "name": "wc5Pilze",
-     "type": "moebel",
-     "x": 1456,
-     "y": 176,
-     "width": 16,
-     "height": 16,
-     "rotation": 0,
-     "visible": true,
-     "properties": [
-      {
-       "name": "tiefe",
-       "type": "int",
-       "value": 1
-      },
-      {
-       "name": "kollision",
-       "type": "bool",
-       "value": false
-      }
-     ]
-    },
-    {
-     "id": 28,
-     "name": "wc5Pilze",
-     "type": "moebel",
-     "x": 1440,
-     "y": 192,
-     "width": 16,
-     "height": 16,
-     "rotation": 0,
-     "visible": true,
-     "properties": [
-      {
-       "name": "tiefe",
-       "type": "int",
-       "value": 1
-      },
-      {
-       "name": "kollision",
-       "type": "bool",
-       "value": false
-      }
-     ]
-    },
-    {
      "id": 29,
      "name": "wc5Pilze",
      "type": "moebel",
      "x": 1424,
-     "y": 192,
+     "y": 144,
      "width": 16,
      "height": 16,
      "rotation": 0,
@@ -13267,6 +13282,121 @@
      "id": 30,
      "name": "wc5PilzeB",
      "type": "moebel",
+     "x": 1440,
+     "y": 144,
+     "width": 16,
+     "height": 16,
+     "rotation": 0,
+     "visible": true,
+     "properties": [
+      {
+       "name": "tiefe",
+       "type": "int",
+       "value": 1
+      },
+      {
+       "name": "kollision",
+       "type": "bool",
+       "value": false
+      }
+     ]
+    },
+    {
+     "id": 31,
+     "name": "wc5PilzeB",
+     "type": "moebel",
+     "x": 1456,
+     "y": 160,
+     "width": 16,
+     "height": 16,
+     "rotation": 0,
+     "visible": true,
+     "properties": [
+      {
+       "name": "tiefe",
+       "type": "int",
+       "value": 1
+      },
+      {
+       "name": "kollision",
+       "type": "bool",
+       "value": false
+      }
+     ]
+    },
+    {
+     "id": 32,
+     "name": "wc5Pilze",
+     "type": "moebel",
+     "x": 1456,
+     "y": 176,
+     "width": 16,
+     "height": 16,
+     "rotation": 0,
+     "visible": true,
+     "properties": [
+      {
+       "name": "tiefe",
+       "type": "int",
+       "value": 1
+      },
+      {
+       "name": "kollision",
+       "type": "bool",
+       "value": false
+      }
+     ]
+    },
+    {
+     "id": 33,
+     "name": "wc5Pilze",
+     "type": "moebel",
+     "x": 1440,
+     "y": 192,
+     "width": 16,
+     "height": 16,
+     "rotation": 0,
+     "visible": true,
+     "properties": [
+      {
+       "name": "tiefe",
+       "type": "int",
+       "value": 1
+      },
+      {
+       "name": "kollision",
+       "type": "bool",
+       "value": false
+      }
+     ]
+    },
+    {
+     "id": 34,
+     "name": "wc5Pilze",
+     "type": "moebel",
+     "x": 1424,
+     "y": 192,
+     "width": 16,
+     "height": 16,
+     "rotation": 0,
+     "visible": true,
+     "properties": [
+      {
+       "name": "tiefe",
+       "type": "int",
+       "value": 1
+      },
+      {
+       "name": "kollision",
+       "type": "bool",
+       "value": false
+      }
+     ]
+    },
+    {
+     "id": 35,
+     "name": "wc5PilzeB",
+     "type": "moebel",
      "x": 1408,
      "y": 176,
      "width": 16,
@@ -13287,7 +13417,7 @@
      ]
     },
     {
-     "id": 31,
+     "id": 36,
      "name": "wc5PilzeB",
      "type": "moebel",
      "x": 1408,
@@ -13310,7 +13440,7 @@
      ]
     },
     {
-     "id": 32,
+     "id": 37,
      "name": "wc5Stamm",
      "type": "moebel",
      "x": 1280,
@@ -13333,7 +13463,7 @@
      ]
     },
     {
-     "id": 33,
+     "id": 38,
      "name": "wc5HohlerStamm",
      "type": "moebel",
      "x": 1664,
@@ -13356,7 +13486,7 @@
      ]
     },
     {
-     "id": 34,
+     "id": 39,
      "name": "wc5Bank",
      "type": "moebel",
      "x": 1712,
@@ -13379,7 +13509,7 @@
      ]
     },
     {
-     "id": 35,
+     "id": 40,
      "name": "wc5ZeltB",
      "type": "moebel",
      "x": 1920,
@@ -13402,126 +13532,11 @@
      ]
     },
     {
-     "id": 36,
-     "name": "wc5Kegelbaum",
-     "type": "moebel",
-     "x": 0,
-     "y": 0,
-     "width": 32,
-     "height": 64,
-     "rotation": 0,
-     "visible": true,
-     "properties": [
-      {
-       "name": "tiefe",
-       "type": "int",
-       "value": 56
-      },
-      {
-       "name": "kollision",
-       "type": "bool",
-       "value": true
-      }
-     ]
-    },
-    {
-     "id": 37,
-     "name": "wc5ZederSchmal",
-     "type": "moebel",
-     "x": 0,
-     "y": 416,
-     "width": 32,
-     "height": 64,
-     "rotation": 0,
-     "visible": true,
-     "properties": [
-      {
-       "name": "tiefe",
-       "type": "int",
-       "value": 472
-      },
-      {
-       "name": "kollision",
-       "type": "bool",
-       "value": true
-      }
-     ]
-    },
-    {
-     "id": 38,
-     "name": "wc5Zeder",
-     "type": "moebel",
-     "x": 32,
-     "y": 0,
-     "width": 32,
-     "height": 64,
-     "rotation": 0,
-     "visible": true,
-     "properties": [
-      {
-       "name": "tiefe",
-       "type": "int",
-       "value": 56
-      },
-      {
-       "name": "kollision",
-       "type": "bool",
-       "value": true
-      }
-     ]
-    },
-    {
-     "id": 39,
-     "name": "wc5Kegelbaum",
-     "type": "moebel",
-     "x": 32,
-     "y": 416,
-     "width": 32,
-     "height": 64,
-     "rotation": 0,
-     "visible": true,
-     "properties": [
-      {
-       "name": "tiefe",
-       "type": "int",
-       "value": 472
-      },
-      {
-       "name": "kollision",
-       "type": "bool",
-       "value": true
-      }
-     ]
-    },
-    {
-     "id": 40,
-     "name": "wc5Kegelbaum",
-     "type": "moebel",
-     "x": 64,
-     "y": 0,
-     "width": 32,
-     "height": 64,
-     "rotation": 0,
-     "visible": true,
-     "properties": [
-      {
-       "name": "tiefe",
-       "type": "int",
-       "value": 56
-      },
-      {
-       "name": "kollision",
-       "type": "bool",
-       "value": true
-      }
-     ]
-    },
-    {
      "id": 41,
-     "name": "wc5Zeder",
+     "name": "wc5Kegelbaum",
      "type": "moebel",
-     "x": 64,
-     "y": 416,
+     "x": 0,
+     "y": 0,
      "width": 32,
      "height": 64,
      "rotation": 0,
@@ -13530,7 +13545,7 @@
       {
        "name": "tiefe",
        "type": "int",
-       "value": 472
+       "value": 56
       },
       {
        "name": "kollision",
@@ -13541,10 +13556,10 @@
     },
     {
      "id": 42,
-     "name": "wc5Zeder",
+     "name": "wc5ZederSchmal",
      "type": "moebel",
-     "x": 96,
-     "y": 0,
+     "x": 0,
+     "y": 416,
      "width": 32,
      "height": 64,
      "rotation": 0,
@@ -13553,7 +13568,7 @@
       {
        "name": "tiefe",
        "type": "int",
-       "value": 56
+       "value": 472
       },
       {
        "name": "kollision",
@@ -13564,32 +13579,9 @@
     },
     {
      "id": 43,
-     "name": "wc5ZederSchmal",
-     "type": "moebel",
-     "x": 96,
-     "y": 416,
-     "width": 32,
-     "height": 64,
-     "rotation": 0,
-     "visible": true,
-     "properties": [
-      {
-       "name": "tiefe",
-       "type": "int",
-       "value": 472
-      },
-      {
-       "name": "kollision",
-       "type": "bool",
-       "value": true
-      }
-     ]
-    },
-    {
-     "id": 44,
      "name": "wc5Zeder",
      "type": "moebel",
-     "x": 128,
+     "x": 32,
      "y": 0,
      "width": 32,
      "height": 64,
@@ -13609,10 +13601,10 @@
      ]
     },
     {
-     "id": 45,
-     "name": "wc5Zeder",
+     "id": 44,
+     "name": "wc5Kegelbaum",
      "type": "moebel",
-     "x": 128,
+     "x": 32,
      "y": 416,
      "width": 32,
      "height": 64,
@@ -13623,6 +13615,29 @@
        "name": "tiefe",
        "type": "int",
        "value": 472
+      },
+      {
+       "name": "kollision",
+       "type": "bool",
+       "value": true
+      }
+     ]
+    },
+    {
+     "id": 45,
+     "name": "wc5Kegelbaum",
+     "type": "moebel",
+     "x": 64,
+     "y": 0,
+     "width": 32,
+     "height": 64,
+     "rotation": 0,
+     "visible": true,
+     "properties": [
+      {
+       "name": "tiefe",
+       "type": "int",
+       "value": 56
       },
       {
        "name": "kollision",
@@ -13635,8 +13650,8 @@
      "id": 46,
      "name": "wc5Zeder",
      "type": "moebel",
-     "x": 160,
-     "y": 0,
+     "x": 64,
+     "y": 416,
      "width": 32,
      "height": 64,
      "rotation": 0,
@@ -13645,7 +13660,7 @@
       {
        "name": "tiefe",
        "type": "int",
-       "value": 56
+       "value": 472
       },
       {
        "name": "kollision",
@@ -13658,6 +13673,121 @@
      "id": 47,
      "name": "wc5Zeder",
      "type": "moebel",
+     "x": 96,
+     "y": 0,
+     "width": 32,
+     "height": 64,
+     "rotation": 0,
+     "visible": true,
+     "properties": [
+      {
+       "name": "tiefe",
+       "type": "int",
+       "value": 56
+      },
+      {
+       "name": "kollision",
+       "type": "bool",
+       "value": true
+      }
+     ]
+    },
+    {
+     "id": 48,
+     "name": "wc5ZederSchmal",
+     "type": "moebel",
+     "x": 96,
+     "y": 416,
+     "width": 32,
+     "height": 64,
+     "rotation": 0,
+     "visible": true,
+     "properties": [
+      {
+       "name": "tiefe",
+       "type": "int",
+       "value": 472
+      },
+      {
+       "name": "kollision",
+       "type": "bool",
+       "value": true
+      }
+     ]
+    },
+    {
+     "id": 49,
+     "name": "wc5Zeder",
+     "type": "moebel",
+     "x": 128,
+     "y": 0,
+     "width": 32,
+     "height": 64,
+     "rotation": 0,
+     "visible": true,
+     "properties": [
+      {
+       "name": "tiefe",
+       "type": "int",
+       "value": 56
+      },
+      {
+       "name": "kollision",
+       "type": "bool",
+       "value": true
+      }
+     ]
+    },
+    {
+     "id": 50,
+     "name": "wc5Zeder",
+     "type": "moebel",
+     "x": 128,
+     "y": 416,
+     "width": 32,
+     "height": 64,
+     "rotation": 0,
+     "visible": true,
+     "properties": [
+      {
+       "name": "tiefe",
+       "type": "int",
+       "value": 472
+      },
+      {
+       "name": "kollision",
+       "type": "bool",
+       "value": true
+      }
+     ]
+    },
+    {
+     "id": 51,
+     "name": "wc5Zeder",
+     "type": "moebel",
+     "x": 160,
+     "y": 0,
+     "width": 32,
+     "height": 64,
+     "rotation": 0,
+     "visible": true,
+     "properties": [
+      {
+       "name": "tiefe",
+       "type": "int",
+       "value": 56
+      },
+      {
+       "name": "kollision",
+       "type": "bool",
+       "value": true
+      }
+     ]
+    },
+    {
+     "id": 52,
+     "name": "wc5Zeder",
+     "type": "moebel",
      "x": 160,
      "y": 416,
      "width": 32,
@@ -13678,126 +13808,11 @@
      ]
     },
     {
-     "id": 48,
-     "name": "wc5Zeder",
-     "type": "moebel",
-     "x": 192,
-     "y": 0,
-     "width": 32,
-     "height": 64,
-     "rotation": 0,
-     "visible": true,
-     "properties": [
-      {
-       "name": "tiefe",
-       "type": "int",
-       "value": 56
-      },
-      {
-       "name": "kollision",
-       "type": "bool",
-       "value": true
-      }
-     ]
-    },
-    {
-     "id": 49,
-     "name": "wc5Zeder",
-     "type": "moebel",
-     "x": 192,
-     "y": 416,
-     "width": 32,
-     "height": 64,
-     "rotation": 0,
-     "visible": true,
-     "properties": [
-      {
-       "name": "tiefe",
-       "type": "int",
-       "value": 472
-      },
-      {
-       "name": "kollision",
-       "type": "bool",
-       "value": true
-      }
-     ]
-    },
-    {
-     "id": 50,
-     "name": "wc5ZederSchmal",
-     "type": "moebel",
-     "x": 224,
-     "y": 0,
-     "width": 32,
-     "height": 64,
-     "rotation": 0,
-     "visible": true,
-     "properties": [
-      {
-       "name": "tiefe",
-       "type": "int",
-       "value": 56
-      },
-      {
-       "name": "kollision",
-       "type": "bool",
-       "value": true
-      }
-     ]
-    },
-    {
-     "id": 51,
-     "name": "wc5Zeder",
-     "type": "moebel",
-     "x": 224,
-     "y": 416,
-     "width": 32,
-     "height": 64,
-     "rotation": 0,
-     "visible": true,
-     "properties": [
-      {
-       "name": "tiefe",
-       "type": "int",
-       "value": 472
-      },
-      {
-       "name": "kollision",
-       "type": "bool",
-       "value": true
-      }
-     ]
-    },
-    {
-     "id": 52,
-     "name": "wc5Kegelbaum",
-     "type": "moebel",
-     "x": 256,
-     "y": 0,
-     "width": 32,
-     "height": 64,
-     "rotation": 0,
-     "visible": true,
-     "properties": [
-      {
-       "name": "tiefe",
-       "type": "int",
-       "value": 56
-      },
-      {
-       "name": "kollision",
-       "type": "bool",
-       "value": true
-      }
-     ]
-    },
-    {
      "id": 53,
      "name": "wc5Zeder",
      "type": "moebel",
-     "x": 256,
-     "y": 416,
+     "x": 192,
+     "y": 0,
      "width": 32,
      "height": 64,
      "rotation": 0,
@@ -13806,7 +13821,7 @@
       {
        "name": "tiefe",
        "type": "int",
-       "value": 472
+       "value": 56
       },
       {
        "name": "kollision",
@@ -13817,9 +13832,9 @@
     },
     {
      "id": 54,
-     "name": "wc5Kegelbaum",
+     "name": "wc5Zeder",
      "type": "moebel",
-     "x": 288,
+     "x": 192,
      "y": 416,
      "width": 32,
      "height": 64,
@@ -13840,10 +13855,10 @@
     },
     {
      "id": 55,
-     "name": "wc5Kegelbaum",
+     "name": "wc5ZederSchmal",
      "type": "moebel",
-     "x": 320,
-     "y": 416,
+     "x": 224,
+     "y": 0,
      "width": 32,
      "height": 64,
      "rotation": 0,
@@ -13852,7 +13867,7 @@
       {
        "name": "tiefe",
        "type": "int",
-       "value": 472
+       "value": 56
       },
       {
        "name": "kollision",
@@ -13865,7 +13880,7 @@
      "id": 56,
      "name": "wc5Zeder",
      "type": "moebel",
-     "x": 352,
+     "x": 224,
      "y": 416,
      "width": 32,
      "height": 64,
@@ -13886,9 +13901,9 @@
     },
     {
      "id": 57,
-     "name": "wc5Zeder",
+     "name": "wc5Kegelbaum",
      "type": "moebel",
-     "x": 384,
+     "x": 256,
      "y": 0,
      "width": 32,
      "height": 64,
@@ -13909,9 +13924,9 @@
     },
     {
      "id": 58,
-     "name": "wc5ZederSchmal",
+     "name": "wc5Zeder",
      "type": "moebel",
-     "x": 384,
+     "x": 256,
      "y": 416,
      "width": 32,
      "height": 64,
@@ -13934,8 +13949,8 @@
      "id": 59,
      "name": "wc5Kegelbaum",
      "type": "moebel",
-     "x": 416,
-     "y": 0,
+     "x": 288,
+     "y": 416,
      "width": 32,
      "height": 64,
      "rotation": 0,
@@ -13944,7 +13959,7 @@
       {
        "name": "tiefe",
        "type": "int",
-       "value": 56
+       "value": 472
       },
       {
        "name": "kollision",
@@ -13955,9 +13970,9 @@
     },
     {
      "id": 60,
-     "name": "wc5Zeder",
+     "name": "wc5Kegelbaum",
      "type": "moebel",
-     "x": 416,
+     "x": 320,
      "y": 416,
      "width": 32,
      "height": 64,
@@ -13978,10 +13993,10 @@
     },
     {
      "id": 61,
-     "name": "wc5ZederSchmal",
+     "name": "wc5Zeder",
      "type": "moebel",
-     "x": 448,
-     "y": 0,
+     "x": 352,
+     "y": 416,
      "width": 32,
      "height": 64,
      "rotation": 0,
@@ -13990,7 +14005,7 @@
       {
        "name": "tiefe",
        "type": "int",
-       "value": 56
+       "value": 472
       },
       {
        "name": "kollision",
@@ -14003,6 +14018,121 @@
      "id": 62,
      "name": "wc5Zeder",
      "type": "moebel",
+     "x": 384,
+     "y": 0,
+     "width": 32,
+     "height": 64,
+     "rotation": 0,
+     "visible": true,
+     "properties": [
+      {
+       "name": "tiefe",
+       "type": "int",
+       "value": 56
+      },
+      {
+       "name": "kollision",
+       "type": "bool",
+       "value": true
+      }
+     ]
+    },
+    {
+     "id": 63,
+     "name": "wc5ZederSchmal",
+     "type": "moebel",
+     "x": 384,
+     "y": 416,
+     "width": 32,
+     "height": 64,
+     "rotation": 0,
+     "visible": true,
+     "properties": [
+      {
+       "name": "tiefe",
+       "type": "int",
+       "value": 472
+      },
+      {
+       "name": "kollision",
+       "type": "bool",
+       "value": true
+      }
+     ]
+    },
+    {
+     "id": 64,
+     "name": "wc5Kegelbaum",
+     "type": "moebel",
+     "x": 416,
+     "y": 0,
+     "width": 32,
+     "height": 64,
+     "rotation": 0,
+     "visible": true,
+     "properties": [
+      {
+       "name": "tiefe",
+       "type": "int",
+       "value": 56
+      },
+      {
+       "name": "kollision",
+       "type": "bool",
+       "value": true
+      }
+     ]
+    },
+    {
+     "id": 65,
+     "name": "wc5Zeder",
+     "type": "moebel",
+     "x": 416,
+     "y": 416,
+     "width": 32,
+     "height": 64,
+     "rotation": 0,
+     "visible": true,
+     "properties": [
+      {
+       "name": "tiefe",
+       "type": "int",
+       "value": 472
+      },
+      {
+       "name": "kollision",
+       "type": "bool",
+       "value": true
+      }
+     ]
+    },
+    {
+     "id": 66,
+     "name": "wc5ZederSchmal",
+     "type": "moebel",
+     "x": 448,
+     "y": 0,
+     "width": 32,
+     "height": 64,
+     "rotation": 0,
+     "visible": true,
+     "properties": [
+      {
+       "name": "tiefe",
+       "type": "int",
+       "value": 56
+      },
+      {
+       "name": "kollision",
+       "type": "bool",
+       "value": true
+      }
+     ]
+    },
+    {
+     "id": 67,
+     "name": "wc5Zeder",
+     "type": "moebel",
      "x": 448,
      "y": 416,
      "width": 32,
@@ -14023,126 +14153,11 @@
      ]
     },
     {
-     "id": 63,
-     "name": "wc5Kegelbaum",
-     "type": "moebel",
-     "x": 480,
-     "y": 0,
-     "width": 32,
-     "height": 64,
-     "rotation": 0,
-     "visible": true,
-     "properties": [
-      {
-       "name": "tiefe",
-       "type": "int",
-       "value": 56
-      },
-      {
-       "name": "kollision",
-       "type": "bool",
-       "value": true
-      }
-     ]
-    },
-    {
-     "id": 64,
-     "name": "wc5Zeder",
-     "type": "moebel",
-     "x": 480,
-     "y": 416,
-     "width": 32,
-     "height": 64,
-     "rotation": 0,
-     "visible": true,
-     "properties": [
-      {
-       "name": "tiefe",
-       "type": "int",
-       "value": 472
-      },
-      {
-       "name": "kollision",
-       "type": "bool",
-       "value": true
-      }
-     ]
-    },
-    {
-     "id": 65,
-     "name": "wc5ZederSchmal",
-     "type": "moebel",
-     "x": 512,
-     "y": 0,
-     "width": 32,
-     "height": 64,
-     "rotation": 0,
-     "visible": true,
-     "properties": [
-      {
-       "name": "tiefe",
-       "type": "int",
-       "value": 56
-      },
-      {
-       "name": "kollision",
-       "type": "bool",
-       "value": true
-      }
-     ]
-    },
-    {
-     "id": 66,
-     "name": "wc5Zeder",
-     "type": "moebel",
-     "x": 512,
-     "y": 416,
-     "width": 32,
-     "height": 64,
-     "rotation": 0,
-     "visible": true,
-     "properties": [
-      {
-       "name": "tiefe",
-       "type": "int",
-       "value": 472
-      },
-      {
-       "name": "kollision",
-       "type": "bool",
-       "value": true
-      }
-     ]
-    },
-    {
-     "id": 67,
-     "name": "wc5Kegelbaum",
-     "type": "moebel",
-     "x": 544,
-     "y": 0,
-     "width": 32,
-     "height": 64,
-     "rotation": 0,
-     "visible": true,
-     "properties": [
-      {
-       "name": "tiefe",
-       "type": "int",
-       "value": 56
-      },
-      {
-       "name": "kollision",
-       "type": "bool",
-       "value": true
-      }
-     ]
-    },
-    {
      "id": 68,
-     "name": "wc5ZederSchmal",
+     "name": "wc5Kegelbaum",
      "type": "moebel",
-     "x": 544,
-     "y": 416,
+     "x": 480,
+     "y": 0,
      "width": 32,
      "height": 64,
      "rotation": 0,
@@ -14151,7 +14166,7 @@
       {
        "name": "tiefe",
        "type": "int",
-       "value": 472
+       "value": 56
       },
       {
        "name": "kollision",
@@ -14164,30 +14179,7 @@
      "id": 69,
      "name": "wc5Zeder",
      "type": "moebel",
-     "x": 576,
-     "y": 0,
-     "width": 32,
-     "height": 64,
-     "rotation": 0,
-     "visible": true,
-     "properties": [
-      {
-       "name": "tiefe",
-       "type": "int",
-       "value": 56
-      },
-      {
-       "name": "kollision",
-       "type": "bool",
-       "value": true
-      }
-     ]
-    },
-    {
-     "id": 70,
-     "name": "wc5Zeder",
-     "type": "moebel",
-     "x": 576,
+     "x": 480,
      "y": 416,
      "width": 32,
      "height": 64,
@@ -14198,6 +14190,29 @@
        "name": "tiefe",
        "type": "int",
        "value": 472
+      },
+      {
+       "name": "kollision",
+       "type": "bool",
+       "value": true
+      }
+     ]
+    },
+    {
+     "id": 70,
+     "name": "wc5ZederSchmal",
+     "type": "moebel",
+     "x": 512,
+     "y": 0,
+     "width": 32,
+     "height": 64,
+     "rotation": 0,
+     "visible": true,
+     "properties": [
+      {
+       "name": "tiefe",
+       "type": "int",
+       "value": 56
       },
       {
        "name": "kollision",
@@ -14210,30 +14225,7 @@
      "id": 71,
      "name": "wc5Zeder",
      "type": "moebel",
-     "x": 608,
-     "y": 0,
-     "width": 32,
-     "height": 64,
-     "rotation": 0,
-     "visible": true,
-     "properties": [
-      {
-       "name": "tiefe",
-       "type": "int",
-       "value": 56
-      },
-      {
-       "name": "kollision",
-       "type": "bool",
-       "value": true
-      }
-     ]
-    },
-    {
-     "id": 72,
-     "name": "wc5Zeder",
-     "type": "moebel",
-     "x": 608,
+     "x": 512,
      "y": 416,
      "width": 32,
      "height": 64,
@@ -14253,10 +14245,10 @@
      ]
     },
     {
-     "id": 73,
+     "id": 72,
      "name": "wc5Kegelbaum",
      "type": "moebel",
-     "x": 640,
+     "x": 544,
      "y": 0,
      "width": 32,
      "height": 64,
@@ -14267,6 +14259,29 @@
        "name": "tiefe",
        "type": "int",
        "value": 56
+      },
+      {
+       "name": "kollision",
+       "type": "bool",
+       "value": true
+      }
+     ]
+    },
+    {
+     "id": 73,
+     "name": "wc5ZederSchmal",
+     "type": "moebel",
+     "x": 544,
+     "y": 416,
+     "width": 32,
+     "height": 64,
+     "rotation": 0,
+     "visible": true,
+     "properties": [
+      {
+       "name": "tiefe",
+       "type": "int",
+       "value": 472
       },
       {
        "name": "kollision",
@@ -14279,6 +14294,121 @@
      "id": 74,
      "name": "wc5Zeder",
      "type": "moebel",
+     "x": 576,
+     "y": 0,
+     "width": 32,
+     "height": 64,
+     "rotation": 0,
+     "visible": true,
+     "properties": [
+      {
+       "name": "tiefe",
+       "type": "int",
+       "value": 56
+      },
+      {
+       "name": "kollision",
+       "type": "bool",
+       "value": true
+      }
+     ]
+    },
+    {
+     "id": 75,
+     "name": "wc5Zeder",
+     "type": "moebel",
+     "x": 576,
+     "y": 416,
+     "width": 32,
+     "height": 64,
+     "rotation": 0,
+     "visible": true,
+     "properties": [
+      {
+       "name": "tiefe",
+       "type": "int",
+       "value": 472
+      },
+      {
+       "name": "kollision",
+       "type": "bool",
+       "value": true
+      }
+     ]
+    },
+    {
+     "id": 76,
+     "name": "wc5Zeder",
+     "type": "moebel",
+     "x": 608,
+     "y": 0,
+     "width": 32,
+     "height": 64,
+     "rotation": 0,
+     "visible": true,
+     "properties": [
+      {
+       "name": "tiefe",
+       "type": "int",
+       "value": 56
+      },
+      {
+       "name": "kollision",
+       "type": "bool",
+       "value": true
+      }
+     ]
+    },
+    {
+     "id": 77,
+     "name": "wc5Zeder",
+     "type": "moebel",
+     "x": 608,
+     "y": 416,
+     "width": 32,
+     "height": 64,
+     "rotation": 0,
+     "visible": true,
+     "properties": [
+      {
+       "name": "tiefe",
+       "type": "int",
+       "value": 472
+      },
+      {
+       "name": "kollision",
+       "type": "bool",
+       "value": true
+      }
+     ]
+    },
+    {
+     "id": 78,
+     "name": "wc5Kegelbaum",
+     "type": "moebel",
+     "x": 640,
+     "y": 0,
+     "width": 32,
+     "height": 64,
+     "rotation": 0,
+     "visible": true,
+     "properties": [
+      {
+       "name": "tiefe",
+       "type": "int",
+       "value": 56
+      },
+      {
+       "name": "kollision",
+       "type": "bool",
+       "value": true
+      }
+     ]
+    },
+    {
+     "id": 79,
+     "name": "wc5Zeder",
+     "type": "moebel",
      "x": 640,
      "y": 416,
      "width": 32,
@@ -14299,126 +14429,11 @@
      ]
     },
     {
-     "id": 75,
-     "name": "wc5Zeder",
-     "type": "moebel",
-     "x": 672,
-     "y": 0,
-     "width": 32,
-     "height": 64,
-     "rotation": 0,
-     "visible": true,
-     "properties": [
-      {
-       "name": "tiefe",
-       "type": "int",
-       "value": 56
-      },
-      {
-       "name": "kollision",
-       "type": "bool",
-       "value": true
-      }
-     ]
-    },
-    {
-     "id": 76,
-     "name": "wc5Zeder",
-     "type": "moebel",
-     "x": 672,
-     "y": 416,
-     "width": 32,
-     "height": 64,
-     "rotation": 0,
-     "visible": true,
-     "properties": [
-      {
-       "name": "tiefe",
-       "type": "int",
-       "value": 472
-      },
-      {
-       "name": "kollision",
-       "type": "bool",
-       "value": true
-      }
-     ]
-    },
-    {
-     "id": 77,
-     "name": "wc5ZederSchmal",
-     "type": "moebel",
-     "x": 704,
-     "y": 0,
-     "width": 32,
-     "height": 64,
-     "rotation": 0,
-     "visible": true,
-     "properties": [
-      {
-       "name": "tiefe",
-       "type": "int",
-       "value": 56
-      },
-      {
-       "name": "kollision",
-       "type": "bool",
-       "value": true
-      }
-     ]
-    },
-    {
-     "id": 78,
-     "name": "wc5ZederSchmal",
-     "type": "moebel",
-     "x": 704,
-     "y": 416,
-     "width": 32,
-     "height": 64,
-     "rotation": 0,
-     "visible": true,
-     "properties": [
-      {
-       "name": "tiefe",
-       "type": "int",
-       "value": 472
-      },
-      {
-       "name": "kollision",
-       "type": "bool",
-       "value": true
-      }
-     ]
-    },
-    {
-     "id": 79,
-     "name": "wc5ZederSchmal",
-     "type": "moebel",
-     "x": 736,
-     "y": 0,
-     "width": 32,
-     "height": 64,
-     "rotation": 0,
-     "visible": true,
-     "properties": [
-      {
-       "name": "tiefe",
-       "type": "int",
-       "value": 56
-      },
-      {
-       "name": "kollision",
-       "type": "bool",
-       "value": true
-      }
-     ]
-    },
-    {
      "id": 80,
      "name": "wc5Zeder",
      "type": "moebel",
-     "x": 736,
-     "y": 416,
+     "x": 672,
+     "y": 0,
      "width": 32,
      "height": 64,
      "rotation": 0,
@@ -14427,7 +14442,7 @@
       {
        "name": "tiefe",
        "type": "int",
-       "value": 472
+       "value": 56
       },
       {
        "name": "kollision",
@@ -14438,32 +14453,9 @@
     },
     {
      "id": 81,
-     "name": "wc5ZederSchmal",
-     "type": "moebel",
-     "x": 768,
-     "y": 0,
-     "width": 32,
-     "height": 64,
-     "rotation": 0,
-     "visible": true,
-     "properties": [
-      {
-       "name": "tiefe",
-       "type": "int",
-       "value": 56
-      },
-      {
-       "name": "kollision",
-       "type": "bool",
-       "value": true
-      }
-     ]
-    },
-    {
-     "id": 82,
      "name": "wc5Zeder",
      "type": "moebel",
-     "x": 768,
+     "x": 672,
      "y": 416,
      "width": 32,
      "height": 64,
@@ -14474,6 +14466,29 @@
        "name": "tiefe",
        "type": "int",
        "value": 472
+      },
+      {
+       "name": "kollision",
+       "type": "bool",
+       "value": true
+      }
+     ]
+    },
+    {
+     "id": 82,
+     "name": "wc5ZederSchmal",
+     "type": "moebel",
+     "x": 704,
+     "y": 0,
+     "width": 32,
+     "height": 64,
+     "rotation": 0,
+     "visible": true,
+     "properties": [
+      {
+       "name": "tiefe",
+       "type": "int",
+       "value": 56
       },
       {
        "name": "kollision",
@@ -14486,8 +14501,8 @@
      "id": 83,
      "name": "wc5ZederSchmal",
      "type": "moebel",
-     "x": 800,
-     "y": 0,
+     "x": 704,
+     "y": 416,
      "width": 32,
      "height": 64,
      "rotation": 0,
@@ -14496,7 +14511,7 @@
       {
        "name": "tiefe",
        "type": "int",
-       "value": 56
+       "value": 472
       },
       {
        "name": "kollision",
@@ -14507,32 +14522,9 @@
     },
     {
      "id": 84,
-     "name": "wc5Kegelbaum",
+     "name": "wc5ZederSchmal",
      "type": "moebel",
-     "x": 800,
-     "y": 416,
-     "width": 32,
-     "height": 64,
-     "rotation": 0,
-     "visible": true,
-     "properties": [
-      {
-       "name": "tiefe",
-       "type": "int",
-       "value": 472
-      },
-      {
-       "name": "kollision",
-       "type": "bool",
-       "value": true
-      }
-     ]
-    },
-    {
-     "id": 85,
-     "name": "wc5Kegelbaum",
-     "type": "moebel",
-     "x": 832,
+     "x": 736,
      "y": 0,
      "width": 32,
      "height": 64,
@@ -14552,10 +14544,10 @@
      ]
     },
     {
-     "id": 86,
+     "id": 85,
      "name": "wc5Zeder",
      "type": "moebel",
-     "x": 832,
+     "x": 736,
      "y": 416,
      "width": 32,
      "height": 64,
@@ -14566,6 +14558,29 @@
        "name": "tiefe",
        "type": "int",
        "value": 472
+      },
+      {
+       "name": "kollision",
+       "type": "bool",
+       "value": true
+      }
+     ]
+    },
+    {
+     "id": 86,
+     "name": "wc5ZederSchmal",
+     "type": "moebel",
+     "x": 768,
+     "y": 0,
+     "width": 32,
+     "height": 64,
+     "rotation": 0,
+     "visible": true,
+     "properties": [
+      {
+       "name": "tiefe",
+       "type": "int",
+       "value": 56
       },
       {
        "name": "kollision",
@@ -14578,30 +14593,7 @@
      "id": 87,
      "name": "wc5Zeder",
      "type": "moebel",
-     "x": 864,
-     "y": 0,
-     "width": 32,
-     "height": 64,
-     "rotation": 0,
-     "visible": true,
-     "properties": [
-      {
-       "name": "tiefe",
-       "type": "int",
-       "value": 56
-      },
-      {
-       "name": "kollision",
-       "type": "bool",
-       "value": true
-      }
-     ]
-    },
-    {
-     "id": 88,
-     "name": "wc5Zeder",
-     "type": "moebel",
-     "x": 864,
+     "x": 768,
      "y": 416,
      "width": 32,
      "height": 64,
@@ -14612,6 +14604,29 @@
        "name": "tiefe",
        "type": "int",
        "value": 472
+      },
+      {
+       "name": "kollision",
+       "type": "bool",
+       "value": true
+      }
+     ]
+    },
+    {
+     "id": 88,
+     "name": "wc5ZederSchmal",
+     "type": "moebel",
+     "x": 800,
+     "y": 0,
+     "width": 32,
+     "height": 64,
+     "rotation": 0,
+     "visible": true,
+     "properties": [
+      {
+       "name": "tiefe",
+       "type": "int",
+       "value": 56
       },
       {
        "name": "kollision",
@@ -14624,30 +14639,7 @@
      "id": 89,
      "name": "wc5Kegelbaum",
      "type": "moebel",
-     "x": 896,
-     "y": 0,
-     "width": 32,
-     "height": 64,
-     "rotation": 0,
-     "visible": true,
-     "properties": [
-      {
-       "name": "tiefe",
-       "type": "int",
-       "value": 56
-      },
-      {
-       "name": "kollision",
-       "type": "bool",
-       "value": true
-      }
-     ]
-    },
-    {
-     "id": 90,
-     "name": "wc5Zeder",
-     "type": "moebel",
-     "x": 896,
+     "x": 800,
      "y": 416,
      "width": 32,
      "height": 64,
@@ -14658,6 +14650,29 @@
        "name": "tiefe",
        "type": "int",
        "value": 472
+      },
+      {
+       "name": "kollision",
+       "type": "bool",
+       "value": true
+      }
+     ]
+    },
+    {
+     "id": 90,
+     "name": "wc5Kegelbaum",
+     "type": "moebel",
+     "x": 832,
+     "y": 0,
+     "width": 32,
+     "height": 64,
+     "rotation": 0,
+     "visible": true,
+     "properties": [
+      {
+       "name": "tiefe",
+       "type": "int",
+       "value": 56
       },
       {
        "name": "kollision",
@@ -14670,30 +14685,7 @@
      "id": 91,
      "name": "wc5Zeder",
      "type": "moebel",
-     "x": 928,
-     "y": 0,
-     "width": 32,
-     "height": 64,
-     "rotation": 0,
-     "visible": true,
-     "properties": [
-      {
-       "name": "tiefe",
-       "type": "int",
-       "value": 56
-      },
-      {
-       "name": "kollision",
-       "type": "bool",
-       "value": true
-      }
-     ]
-    },
-    {
-     "id": 92,
-     "name": "wc5ZederSchmal",
-     "type": "moebel",
-     "x": 928,
+     "x": 832,
      "y": 416,
      "width": 32,
      "height": 64,
@@ -14713,10 +14705,10 @@
      ]
     },
     {
-     "id": 93,
-     "name": "wc5Kegelbaum",
+     "id": 92,
+     "name": "wc5Zeder",
      "type": "moebel",
-     "x": 960,
+     "x": 864,
      "y": 0,
      "width": 32,
      "height": 64,
@@ -14727,6 +14719,29 @@
        "name": "tiefe",
        "type": "int",
        "value": 56
+      },
+      {
+       "name": "kollision",
+       "type": "bool",
+       "value": true
+      }
+     ]
+    },
+    {
+     "id": 93,
+     "name": "wc5Zeder",
+     "type": "moebel",
+     "x": 864,
+     "y": 416,
+     "width": 32,
+     "height": 64,
+     "rotation": 0,
+     "visible": true,
+     "properties": [
+      {
+       "name": "tiefe",
+       "type": "int",
+       "value": 472
       },
       {
        "name": "kollision",
@@ -14739,6 +14754,121 @@
      "id": 94,
      "name": "wc5Kegelbaum",
      "type": "moebel",
+     "x": 896,
+     "y": 0,
+     "width": 32,
+     "height": 64,
+     "rotation": 0,
+     "visible": true,
+     "properties": [
+      {
+       "name": "tiefe",
+       "type": "int",
+       "value": 56
+      },
+      {
+       "name": "kollision",
+       "type": "bool",
+       "value": true
+      }
+     ]
+    },
+    {
+     "id": 95,
+     "name": "wc5Zeder",
+     "type": "moebel",
+     "x": 896,
+     "y": 416,
+     "width": 32,
+     "height": 64,
+     "rotation": 0,
+     "visible": true,
+     "properties": [
+      {
+       "name": "tiefe",
+       "type": "int",
+       "value": 472
+      },
+      {
+       "name": "kollision",
+       "type": "bool",
+       "value": true
+      }
+     ]
+    },
+    {
+     "id": 96,
+     "name": "wc5Zeder",
+     "type": "moebel",
+     "x": 928,
+     "y": 0,
+     "width": 32,
+     "height": 64,
+     "rotation": 0,
+     "visible": true,
+     "properties": [
+      {
+       "name": "tiefe",
+       "type": "int",
+       "value": 56
+      },
+      {
+       "name": "kollision",
+       "type": "bool",
+       "value": true
+      }
+     ]
+    },
+    {
+     "id": 97,
+     "name": "wc5ZederSchmal",
+     "type": "moebel",
+     "x": 928,
+     "y": 416,
+     "width": 32,
+     "height": 64,
+     "rotation": 0,
+     "visible": true,
+     "properties": [
+      {
+       "name": "tiefe",
+       "type": "int",
+       "value": 472
+      },
+      {
+       "name": "kollision",
+       "type": "bool",
+       "value": true
+      }
+     ]
+    },
+    {
+     "id": 98,
+     "name": "wc5Kegelbaum",
+     "type": "moebel",
+     "x": 960,
+     "y": 0,
+     "width": 32,
+     "height": 64,
+     "rotation": 0,
+     "visible": true,
+     "properties": [
+      {
+       "name": "tiefe",
+       "type": "int",
+       "value": 56
+      },
+      {
+       "name": "kollision",
+       "type": "bool",
+       "value": true
+      }
+     ]
+    },
+    {
+     "id": 99,
+     "name": "wc5Kegelbaum",
+     "type": "moebel",
      "x": 960,
      "y": 416,
      "width": 32,
@@ -14759,126 +14889,11 @@
      ]
     },
     {
-     "id": 95,
-     "name": "wc5Zeder",
-     "type": "moebel",
-     "x": 992,
-     "y": 0,
-     "width": 32,
-     "height": 64,
-     "rotation": 0,
-     "visible": true,
-     "properties": [
-      {
-       "name": "tiefe",
-       "type": "int",
-       "value": 56
-      },
-      {
-       "name": "kollision",
-       "type": "bool",
-       "value": true
-      }
-     ]
-    },
-    {
-     "id": 96,
-     "name": "wc5Kegelbaum",
-     "type": "moebel",
-     "x": 992,
-     "y": 416,
-     "width": 32,
-     "height": 64,
-     "rotation": 0,
-     "visible": true,
-     "properties": [
-      {
-       "name": "tiefe",
-       "type": "int",
-       "value": 472
-      },
-      {
-       "name": "kollision",
-       "type": "bool",
-       "value": true
-      }
-     ]
-    },
-    {
-     "id": 97,
-     "name": "wc5ZederSchmal",
-     "type": "moebel",
-     "x": 1024,
-     "y": 0,
-     "width": 32,
-     "height": 64,
-     "rotation": 0,
-     "visible": true,
-     "properties": [
-      {
-       "name": "tiefe",
-       "type": "int",
-       "value": 56
-      },
-      {
-       "name": "kollision",
-       "type": "bool",
-       "value": true
-      }
-     ]
-    },
-    {
-     "id": 98,
-     "name": "wc5Kegelbaum",
-     "type": "moebel",
-     "x": 1024,
-     "y": 416,
-     "width": 32,
-     "height": 64,
-     "rotation": 0,
-     "visible": true,
-     "properties": [
-      {
-       "name": "tiefe",
-       "type": "int",
-       "value": 472
-      },
-      {
-       "name": "kollision",
-       "type": "bool",
-       "value": true
-      }
-     ]
-    },
-    {
-     "id": 99,
-     "name": "wc5Zeder",
-     "type": "moebel",
-     "x": 1056,
-     "y": 0,
-     "width": 32,
-     "height": 64,
-     "rotation": 0,
-     "visible": true,
-     "properties": [
-      {
-       "name": "tiefe",
-       "type": "int",
-       "value": 56
-      },
-      {
-       "name": "kollision",
-       "type": "bool",
-       "value": true
-      }
-     ]
-    },
-    {
      "id": 100,
-     "name": "wc5ZederSchmal",
+     "name": "wc5Zeder",
      "type": "moebel",
-     "x": 1056,
-     "y": 416,
+     "x": 992,
+     "y": 0,
      "width": 32,
      "height": 64,
      "rotation": 0,
@@ -14887,7 +14902,7 @@
       {
        "name": "tiefe",
        "type": "int",
-       "value": 472
+       "value": 56
       },
       {
        "name": "kollision",
@@ -14898,32 +14913,9 @@
     },
     {
      "id": 101,
-     "name": "wc5Zeder",
+     "name": "wc5Kegelbaum",
      "type": "moebel",
-     "x": 1088,
-     "y": 0,
-     "width": 32,
-     "height": 64,
-     "rotation": 0,
-     "visible": true,
-     "properties": [
-      {
-       "name": "tiefe",
-       "type": "int",
-       "value": 56
-      },
-      {
-       "name": "kollision",
-       "type": "bool",
-       "value": true
-      }
-     ]
-    },
-    {
-     "id": 102,
-     "name": "wc5Zeder",
-     "type": "moebel",
-     "x": 1088,
+     "x": 992,
      "y": 416,
      "width": 32,
      "height": 64,
@@ -14934,6 +14926,29 @@
        "name": "tiefe",
        "type": "int",
        "value": 472
+      },
+      {
+       "name": "kollision",
+       "type": "bool",
+       "value": true
+      }
+     ]
+    },
+    {
+     "id": 102,
+     "name": "wc5ZederSchmal",
+     "type": "moebel",
+     "x": 1024,
+     "y": 0,
+     "width": 32,
+     "height": 64,
+     "rotation": 0,
+     "visible": true,
+     "properties": [
+      {
+       "name": "tiefe",
+       "type": "int",
+       "value": 56
       },
       {
        "name": "kollision",
@@ -14946,6 +14961,121 @@
      "id": 103,
      "name": "wc5Kegelbaum",
      "type": "moebel",
+     "x": 1024,
+     "y": 416,
+     "width": 32,
+     "height": 64,
+     "rotation": 0,
+     "visible": true,
+     "properties": [
+      {
+       "name": "tiefe",
+       "type": "int",
+       "value": 472
+      },
+      {
+       "name": "kollision",
+       "type": "bool",
+       "value": true
+      }
+     ]
+    },
+    {
+     "id": 104,
+     "name": "wc5Zeder",
+     "type": "moebel",
+     "x": 1056,
+     "y": 0,
+     "width": 32,
+     "height": 64,
+     "rotation": 0,
+     "visible": true,
+     "properties": [
+      {
+       "name": "tiefe",
+       "type": "int",
+       "value": 56
+      },
+      {
+       "name": "kollision",
+       "type": "bool",
+       "value": true
+      }
+     ]
+    },
+    {
+     "id": 105,
+     "name": "wc5ZederSchmal",
+     "type": "moebel",
+     "x": 1056,
+     "y": 416,
+     "width": 32,
+     "height": 64,
+     "rotation": 0,
+     "visible": true,
+     "properties": [
+      {
+       "name": "tiefe",
+       "type": "int",
+       "value": 472
+      },
+      {
+       "name": "kollision",
+       "type": "bool",
+       "value": true
+      }
+     ]
+    },
+    {
+     "id": 106,
+     "name": "wc5Zeder",
+     "type": "moebel",
+     "x": 1088,
+     "y": 0,
+     "width": 32,
+     "height": 64,
+     "rotation": 0,
+     "visible": true,
+     "properties": [
+      {
+       "name": "tiefe",
+       "type": "int",
+       "value": 56
+      },
+      {
+       "name": "kollision",
+       "type": "bool",
+       "value": true
+      }
+     ]
+    },
+    {
+     "id": 107,
+     "name": "wc5Zeder",
+     "type": "moebel",
+     "x": 1088,
+     "y": 416,
+     "width": 32,
+     "height": 64,
+     "rotation": 0,
+     "visible": true,
+     "properties": [
+      {
+       "name": "tiefe",
+       "type": "int",
+       "value": 472
+      },
+      {
+       "name": "kollision",
+       "type": "bool",
+       "value": true
+      }
+     ]
+    },
+    {
+     "id": 108,
+     "name": "wc5Kegelbaum",
+     "type": "moebel",
      "x": 1120,
      "y": 0,
      "width": 32,
@@ -14966,7 +15096,7 @@
      ]
     },
     {
-     "id": 104,
+     "id": 109,
      "name": "wc5ZederSchmal",
      "type": "moebel",
      "x": 1120,
@@ -14989,7 +15119,7 @@
      ]
     },
     {
-     "id": 105,
+     "id": 110,
      "name": "wc5Zeder",
      "type": "moebel",
      "x": 1152,
@@ -15012,7 +15142,7 @@
      ]
     },
     {
-     "id": 106,
+     "id": 111,
      "name": "wc5Kegelbaum",
      "type": "moebel",
      "x": 1152,
@@ -15035,7 +15165,7 @@
      ]
     },
     {
-     "id": 107,
+     "id": 112,
      "name": "wc5ZederSchmal",
      "type": "moebel",
      "x": 1184,
@@ -15058,125 +15188,10 @@
      ]
     },
     {
-     "id": 108,
+     "id": 113,
      "name": "wc5Zeder",
      "type": "moebel",
      "x": 1216,
-     "y": 0,
-     "width": 32,
-     "height": 64,
-     "rotation": 0,
-     "visible": true,
-     "properties": [
-      {
-       "name": "tiefe",
-       "type": "int",
-       "value": 56
-      },
-      {
-       "name": "kollision",
-       "type": "bool",
-       "value": true
-      }
-     ]
-    },
-    {
-     "id": 109,
-     "name": "wc5Zeder",
-     "type": "moebel",
-     "x": 1248,
-     "y": 0,
-     "width": 32,
-     "height": 64,
-     "rotation": 0,
-     "visible": true,
-     "properties": [
-      {
-       "name": "tiefe",
-       "type": "int",
-       "value": 56
-      },
-      {
-       "name": "kollision",
-       "type": "bool",
-       "value": true
-      }
-     ]
-    },
-    {
-     "id": 110,
-     "name": "wc5Zeder",
-     "type": "moebel",
-     "x": 1248,
-     "y": 416,
-     "width": 32,
-     "height": 64,
-     "rotation": 0,
-     "visible": true,
-     "properties": [
-      {
-       "name": "tiefe",
-       "type": "int",
-       "value": 472
-      },
-      {
-       "name": "kollision",
-       "type": "bool",
-       "value": true
-      }
-     ]
-    },
-    {
-     "id": 111,
-     "name": "wc5Kegelbaum",
-     "type": "moebel",
-     "x": 1280,
-     "y": 0,
-     "width": 32,
-     "height": 64,
-     "rotation": 0,
-     "visible": true,
-     "properties": [
-      {
-       "name": "tiefe",
-       "type": "int",
-       "value": 56
-      },
-      {
-       "name": "kollision",
-       "type": "bool",
-       "value": true
-      }
-     ]
-    },
-    {
-     "id": 112,
-     "name": "wc5ZederSchmal",
-     "type": "moebel",
-     "x": 1280,
-     "y": 416,
-     "width": 32,
-     "height": 64,
-     "rotation": 0,
-     "visible": true,
-     "properties": [
-      {
-       "name": "tiefe",
-       "type": "int",
-       "value": 472
-      },
-      {
-       "name": "kollision",
-       "type": "bool",
-       "value": true
-      }
-     ]
-    },
-    {
-     "id": 113,
-     "name": "wc5Kegelbaum",
-     "type": "moebel",
-     "x": 1312,
      "y": 0,
      "width": 32,
      "height": 64,
@@ -15199,6 +15214,121 @@
      "id": 114,
      "name": "wc5Zeder",
      "type": "moebel",
+     "x": 1248,
+     "y": 0,
+     "width": 32,
+     "height": 64,
+     "rotation": 0,
+     "visible": true,
+     "properties": [
+      {
+       "name": "tiefe",
+       "type": "int",
+       "value": 56
+      },
+      {
+       "name": "kollision",
+       "type": "bool",
+       "value": true
+      }
+     ]
+    },
+    {
+     "id": 115,
+     "name": "wc5Zeder",
+     "type": "moebel",
+     "x": 1248,
+     "y": 416,
+     "width": 32,
+     "height": 64,
+     "rotation": 0,
+     "visible": true,
+     "properties": [
+      {
+       "name": "tiefe",
+       "type": "int",
+       "value": 472
+      },
+      {
+       "name": "kollision",
+       "type": "bool",
+       "value": true
+      }
+     ]
+    },
+    {
+     "id": 116,
+     "name": "wc5Kegelbaum",
+     "type": "moebel",
+     "x": 1280,
+     "y": 0,
+     "width": 32,
+     "height": 64,
+     "rotation": 0,
+     "visible": true,
+     "properties": [
+      {
+       "name": "tiefe",
+       "type": "int",
+       "value": 56
+      },
+      {
+       "name": "kollision",
+       "type": "bool",
+       "value": true
+      }
+     ]
+    },
+    {
+     "id": 117,
+     "name": "wc5ZederSchmal",
+     "type": "moebel",
+     "x": 1280,
+     "y": 416,
+     "width": 32,
+     "height": 64,
+     "rotation": 0,
+     "visible": true,
+     "properties": [
+      {
+       "name": "tiefe",
+       "type": "int",
+       "value": 472
+      },
+      {
+       "name": "kollision",
+       "type": "bool",
+       "value": true
+      }
+     ]
+    },
+    {
+     "id": 118,
+     "name": "wc5Kegelbaum",
+     "type": "moebel",
+     "x": 1312,
+     "y": 0,
+     "width": 32,
+     "height": 64,
+     "rotation": 0,
+     "visible": true,
+     "properties": [
+      {
+       "name": "tiefe",
+       "type": "int",
+       "value": 56
+      },
+      {
+       "name": "kollision",
+       "type": "bool",
+       "value": true
+      }
+     ]
+    },
+    {
+     "id": 119,
+     "name": "wc5Zeder",
+     "type": "moebel",
      "x": 1312,
      "y": 416,
      "width": 32,
@@ -15219,126 +15349,11 @@
      ]
     },
     {
-     "id": 115,
-     "name": "wc5ZederSchmal",
-     "type": "moebel",
-     "x": 1344,
-     "y": 0,
-     "width": 32,
-     "height": 64,
-     "rotation": 0,
-     "visible": true,
-     "properties": [
-      {
-       "name": "tiefe",
-       "type": "int",
-       "value": 56
-      },
-      {
-       "name": "kollision",
-       "type": "bool",
-       "value": true
-      }
-     ]
-    },
-    {
-     "id": 116,
-     "name": "wc5Kegelbaum",
-     "type": "moebel",
-     "x": 1344,
-     "y": 416,
-     "width": 32,
-     "height": 64,
-     "rotation": 0,
-     "visible": true,
-     "properties": [
-      {
-       "name": "tiefe",
-       "type": "int",
-       "value": 472
-      },
-      {
-       "name": "kollision",
-       "type": "bool",
-       "value": true
-      }
-     ]
-    },
-    {
-     "id": 117,
-     "name": "wc5Kegelbaum",
-     "type": "moebel",
-     "x": 1376,
-     "y": 0,
-     "width": 32,
-     "height": 64,
-     "rotation": 0,
-     "visible": true,
-     "properties": [
-      {
-       "name": "tiefe",
-       "type": "int",
-       "value": 56
-      },
-      {
-       "name": "kollision",
-       "type": "bool",
-       "value": true
-      }
-     ]
-    },
-    {
-     "id": 118,
-     "name": "wc5Zeder",
-     "type": "moebel",
-     "x": 1376,
-     "y": 416,
-     "width": 32,
-     "height": 64,
-     "rotation": 0,
-     "visible": true,
-     "properties": [
-      {
-       "name": "tiefe",
-       "type": "int",
-       "value": 472
-      },
-      {
-       "name": "kollision",
-       "type": "bool",
-       "value": true
-      }
-     ]
-    },
-    {
-     "id": 119,
-     "name": "wc5ZederSchmal",
-     "type": "moebel",
-     "x": 1408,
-     "y": 0,
-     "width": 32,
-     "height": 64,
-     "rotation": 0,
-     "visible": true,
-     "properties": [
-      {
-       "name": "tiefe",
-       "type": "int",
-       "value": 56
-      },
-      {
-       "name": "kollision",
-       "type": "bool",
-       "value": true
-      }
-     ]
-    },
-    {
      "id": 120,
-     "name": "wc5Kegelbaum",
+     "name": "wc5ZederSchmal",
      "type": "moebel",
-     "x": 1408,
-     "y": 416,
+     "x": 1344,
+     "y": 0,
      "width": 32,
      "height": 64,
      "rotation": 0,
@@ -15347,7 +15362,7 @@
       {
        "name": "tiefe",
        "type": "int",
-       "value": 472
+       "value": 56
       },
       {
        "name": "kollision",
@@ -15360,8 +15375,8 @@
      "id": 121,
      "name": "wc5Kegelbaum",
      "type": "moebel",
-     "x": 1440,
-     "y": 0,
+     "x": 1344,
+     "y": 416,
      "width": 32,
      "height": 64,
      "rotation": 0,
@@ -15370,7 +15385,7 @@
       {
        "name": "tiefe",
        "type": "int",
-       "value": 56
+       "value": 472
       },
       {
        "name": "kollision",
@@ -15383,6 +15398,121 @@
      "id": 122,
      "name": "wc5Kegelbaum",
      "type": "moebel",
+     "x": 1376,
+     "y": 0,
+     "width": 32,
+     "height": 64,
+     "rotation": 0,
+     "visible": true,
+     "properties": [
+      {
+       "name": "tiefe",
+       "type": "int",
+       "value": 56
+      },
+      {
+       "name": "kollision",
+       "type": "bool",
+       "value": true
+      }
+     ]
+    },
+    {
+     "id": 123,
+     "name": "wc5Zeder",
+     "type": "moebel",
+     "x": 1376,
+     "y": 416,
+     "width": 32,
+     "height": 64,
+     "rotation": 0,
+     "visible": true,
+     "properties": [
+      {
+       "name": "tiefe",
+       "type": "int",
+       "value": 472
+      },
+      {
+       "name": "kollision",
+       "type": "bool",
+       "value": true
+      }
+     ]
+    },
+    {
+     "id": 124,
+     "name": "wc5ZederSchmal",
+     "type": "moebel",
+     "x": 1408,
+     "y": 0,
+     "width": 32,
+     "height": 64,
+     "rotation": 0,
+     "visible": true,
+     "properties": [
+      {
+       "name": "tiefe",
+       "type": "int",
+       "value": 56
+      },
+      {
+       "name": "kollision",
+       "type": "bool",
+       "value": true
+      }
+     ]
+    },
+    {
+     "id": 125,
+     "name": "wc5Kegelbaum",
+     "type": "moebel",
+     "x": 1408,
+     "y": 416,
+     "width": 32,
+     "height": 64,
+     "rotation": 0,
+     "visible": true,
+     "properties": [
+      {
+       "name": "tiefe",
+       "type": "int",
+       "value": 472
+      },
+      {
+       "name": "kollision",
+       "type": "bool",
+       "value": true
+      }
+     ]
+    },
+    {
+     "id": 126,
+     "name": "wc5Kegelbaum",
+     "type": "moebel",
+     "x": 1440,
+     "y": 0,
+     "width": 32,
+     "height": 64,
+     "rotation": 0,
+     "visible": true,
+     "properties": [
+      {
+       "name": "tiefe",
+       "type": "int",
+       "value": 56
+      },
+      {
+       "name": "kollision",
+       "type": "bool",
+       "value": true
+      }
+     ]
+    },
+    {
+     "id": 127,
+     "name": "wc5Kegelbaum",
+     "type": "moebel",
      "x": 1440,
      "y": 416,
      "width": 32,
@@ -15403,126 +15533,11 @@
      ]
     },
     {
-     "id": 123,
-     "name": "wc5Zeder",
-     "type": "moebel",
-     "x": 1472,
-     "y": 0,
-     "width": 32,
-     "height": 64,
-     "rotation": 0,
-     "visible": true,
-     "properties": [
-      {
-       "name": "tiefe",
-       "type": "int",
-       "value": 56
-      },
-      {
-       "name": "kollision",
-       "type": "bool",
-       "value": true
-      }
-     ]
-    },
-    {
-     "id": 124,
-     "name": "wc5Zeder",
-     "type": "moebel",
-     "x": 1472,
-     "y": 416,
-     "width": 32,
-     "height": 64,
-     "rotation": 0,
-     "visible": true,
-     "properties": [
-      {
-       "name": "tiefe",
-       "type": "int",
-       "value": 472
-      },
-      {
-       "name": "kollision",
-       "type": "bool",
-       "value": true
-      }
-     ]
-    },
-    {
-     "id": 125,
-     "name": "wc5Zeder",
-     "type": "moebel",
-     "x": 1504,
-     "y": 0,
-     "width": 32,
-     "height": 64,
-     "rotation": 0,
-     "visible": true,
-     "properties": [
-      {
-       "name": "tiefe",
-       "type": "int",
-       "value": 56
-      },
-      {
-       "name": "kollision",
-       "type": "bool",
-       "value": true
-      }
-     ]
-    },
-    {
-     "id": 126,
-     "name": "wc5ZederSchmal",
-     "type": "moebel",
-     "x": 1504,
-     "y": 416,
-     "width": 32,
-     "height": 64,
-     "rotation": 0,
-     "visible": true,
-     "properties": [
-      {
-       "name": "tiefe",
-       "type": "int",
-       "value": 472
-      },
-      {
-       "name": "kollision",
-       "type": "bool",
-       "value": true
-      }
-     ]
-    },
-    {
-     "id": 127,
-     "name": "wc5Zeder",
-     "type": "moebel",
-     "x": 1536,
-     "y": 0,
-     "width": 32,
-     "height": 64,
-     "rotation": 0,
-     "visible": true,
-     "properties": [
-      {
-       "name": "tiefe",
-       "type": "int",
-       "value": 56
-      },
-      {
-       "name": "kollision",
-       "type": "bool",
-       "value": true
-      }
-     ]
-    },
-    {
      "id": 128,
-     "name": "wc5ZederSchmal",
+     "name": "wc5Zeder",
      "type": "moebel",
-     "x": 1536,
-     "y": 416,
+     "x": 1472,
+     "y": 0,
      "width": 32,
      "height": 64,
      "rotation": 0,
@@ -15531,7 +15546,7 @@
       {
        "name": "tiefe",
        "type": "int",
-       "value": 472
+       "value": 56
       },
       {
        "name": "kollision",
@@ -15542,10 +15557,10 @@
     },
     {
      "id": 129,
-     "name": "wc5ZederSchmal",
+     "name": "wc5Zeder",
      "type": "moebel",
-     "x": 1568,
-     "y": 0,
+     "x": 1472,
+     "y": 416,
      "width": 32,
      "height": 64,
      "rotation": 0,
@@ -15554,7 +15569,7 @@
       {
        "name": "tiefe",
        "type": "int",
-       "value": 56
+       "value": 472
       },
       {
        "name": "kollision",
@@ -15567,6 +15582,121 @@
      "id": 130,
      "name": "wc5Zeder",
      "type": "moebel",
+     "x": 1504,
+     "y": 0,
+     "width": 32,
+     "height": 64,
+     "rotation": 0,
+     "visible": true,
+     "properties": [
+      {
+       "name": "tiefe",
+       "type": "int",
+       "value": 56
+      },
+      {
+       "name": "kollision",
+       "type": "bool",
+       "value": true
+      }
+     ]
+    },
+    {
+     "id": 131,
+     "name": "wc5ZederSchmal",
+     "type": "moebel",
+     "x": 1504,
+     "y": 416,
+     "width": 32,
+     "height": 64,
+     "rotation": 0,
+     "visible": true,
+     "properties": [
+      {
+       "name": "tiefe",
+       "type": "int",
+       "value": 472
+      },
+      {
+       "name": "kollision",
+       "type": "bool",
+       "value": true
+      }
+     ]
+    },
+    {
+     "id": 132,
+     "name": "wc5Zeder",
+     "type": "moebel",
+     "x": 1536,
+     "y": 0,
+     "width": 32,
+     "height": 64,
+     "rotation": 0,
+     "visible": true,
+     "properties": [
+      {
+       "name": "tiefe",
+       "type": "int",
+       "value": 56
+      },
+      {
+       "name": "kollision",
+       "type": "bool",
+       "value": true
+      }
+     ]
+    },
+    {
+     "id": 133,
+     "name": "wc5ZederSchmal",
+     "type": "moebel",
+     "x": 1536,
+     "y": 416,
+     "width": 32,
+     "height": 64,
+     "rotation": 0,
+     "visible": true,
+     "properties": [
+      {
+       "name": "tiefe",
+       "type": "int",
+       "value": 472
+      },
+      {
+       "name": "kollision",
+       "type": "bool",
+       "value": true
+      }
+     ]
+    },
+    {
+     "id": 134,
+     "name": "wc5ZederSchmal",
+     "type": "moebel",
+     "x": 1568,
+     "y": 0,
+     "width": 32,
+     "height": 64,
+     "rotation": 0,
+     "visible": true,
+     "properties": [
+      {
+       "name": "tiefe",
+       "type": "int",
+       "value": 56
+      },
+      {
+       "name": "kollision",
+       "type": "bool",
+       "value": true
+      }
+     ]
+    },
+    {
+     "id": 135,
+     "name": "wc5Zeder",
+     "type": "moebel",
      "x": 1568,
      "y": 416,
      "width": 32,
@@ -15587,7 +15717,7 @@
      ]
     },
     {
-     "id": 131,
+     "id": 136,
      "name": "wc5ZederSchmal",
      "type": "moebel",
      "x": 1600,
@@ -15601,121 +15731,6 @@
        "name": "tiefe",
        "type": "int",
        "value": 56
-      },
-      {
-       "name": "kollision",
-       "type": "bool",
-       "value": true
-      }
-     ]
-    },
-    {
-     "id": 132,
-     "name": "wc5Kegelbaum",
-     "type": "moebel",
-     "x": 1600,
-     "y": 416,
-     "width": 32,
-     "height": 64,
-     "rotation": 0,
-     "visible": true,
-     "properties": [
-      {
-       "name": "tiefe",
-       "type": "int",
-       "value": 472
-      },
-      {
-       "name": "kollision",
-       "type": "bool",
-       "value": true
-      }
-     ]
-    },
-    {
-     "id": 133,
-     "name": "wc5Zeder",
-     "type": "moebel",
-     "x": 1632,
-     "y": 0,
-     "width": 32,
-     "height": 64,
-     "rotation": 0,
-     "visible": true,
-     "properties": [
-      {
-       "name": "tiefe",
-       "type": "int",
-       "value": 56
-      },
-      {
-       "name": "kollision",
-       "type": "bool",
-       "value": true
-      }
-     ]
-    },
-    {
-     "id": 134,
-     "name": "wc5Kegelbaum",
-     "type": "moebel",
-     "x": 1632,
-     "y": 416,
-     "width": 32,
-     "height": 64,
-     "rotation": 0,
-     "visible": true,
-     "properties": [
-      {
-       "name": "tiefe",
-       "type": "int",
-       "value": 472
-      },
-      {
-       "name": "kollision",
-       "type": "bool",
-       "value": true
-      }
-     ]
-    },
-    {
-     "id": 135,
-     "name": "wc5Zeder",
-     "type": "moebel",
-     "x": 1664,
-     "y": 0,
-     "width": 32,
-     "height": 64,
-     "rotation": 0,
-     "visible": true,
-     "properties": [
-      {
-       "name": "tiefe",
-       "type": "int",
-       "value": 56
-      },
-      {
-       "name": "kollision",
-       "type": "bool",
-       "value": true
-      }
-     ]
-    },
-    {
-     "id": 136,
-     "name": "wc5Zeder",
-     "type": "moebel",
-     "x": 1664,
-     "y": 416,
-     "width": 32,
-     "height": 64,
-     "rotation": 0,
-     "visible": true,
-     "properties": [
-      {
-       "name": "tiefe",
-       "type": "int",
-       "value": 472
       },
       {
        "name": "kollision",
@@ -15726,10 +15741,10 @@
     },
     {
      "id": 137,
-     "name": "wc5ZederSchmal",
+     "name": "wc5Kegelbaum",
      "type": "moebel",
-     "x": 1696,
-     "y": 0,
+     "x": 1600,
+     "y": 416,
      "width": 32,
      "height": 64,
      "rotation": 0,
@@ -15738,7 +15753,7 @@
       {
        "name": "tiefe",
        "type": "int",
-       "value": 56
+       "value": 472
       },
       {
        "name": "kollision",
@@ -15749,32 +15764,9 @@
     },
     {
      "id": 138,
-     "name": "wc5Kegelbaum",
+     "name": "wc5Zeder",
      "type": "moebel",
-     "x": 1696,
-     "y": 416,
-     "width": 32,
-     "height": 64,
-     "rotation": 0,
-     "visible": true,
-     "properties": [
-      {
-       "name": "tiefe",
-       "type": "int",
-       "value": 472
-      },
-      {
-       "name": "kollision",
-       "type": "bool",
-       "value": true
-      }
-     ]
-    },
-    {
-     "id": 139,
-     "name": "wc5ZederSchmal",
-     "type": "moebel",
-     "x": 1728,
+     "x": 1632,
      "y": 0,
      "width": 32,
      "height": 64,
@@ -15794,10 +15786,10 @@
      ]
     },
     {
-     "id": 140,
-     "name": "wc5ZederSchmal",
+     "id": 139,
+     "name": "wc5Kegelbaum",
      "type": "moebel",
-     "x": 1728,
+     "x": 1632,
      "y": 416,
      "width": 32,
      "height": 64,
@@ -15808,6 +15800,29 @@
        "name": "tiefe",
        "type": "int",
        "value": 472
+      },
+      {
+       "name": "kollision",
+       "type": "bool",
+       "value": true
+      }
+     ]
+    },
+    {
+     "id": 140,
+     "name": "wc5Zeder",
+     "type": "moebel",
+     "x": 1664,
+     "y": 0,
+     "width": 32,
+     "height": 64,
+     "rotation": 0,
+     "visible": true,
+     "properties": [
+      {
+       "name": "tiefe",
+       "type": "int",
+       "value": 56
       },
       {
        "name": "kollision",
@@ -15820,6 +15835,121 @@
      "id": 141,
      "name": "wc5Zeder",
      "type": "moebel",
+     "x": 1664,
+     "y": 416,
+     "width": 32,
+     "height": 64,
+     "rotation": 0,
+     "visible": true,
+     "properties": [
+      {
+       "name": "tiefe",
+       "type": "int",
+       "value": 472
+      },
+      {
+       "name": "kollision",
+       "type": "bool",
+       "value": true
+      }
+     ]
+    },
+    {
+     "id": 142,
+     "name": "wc5ZederSchmal",
+     "type": "moebel",
+     "x": 1696,
+     "y": 0,
+     "width": 32,
+     "height": 64,
+     "rotation": 0,
+     "visible": true,
+     "properties": [
+      {
+       "name": "tiefe",
+       "type": "int",
+       "value": 56
+      },
+      {
+       "name": "kollision",
+       "type": "bool",
+       "value": true
+      }
+     ]
+    },
+    {
+     "id": 143,
+     "name": "wc5Kegelbaum",
+     "type": "moebel",
+     "x": 1696,
+     "y": 416,
+     "width": 32,
+     "height": 64,
+     "rotation": 0,
+     "visible": true,
+     "properties": [
+      {
+       "name": "tiefe",
+       "type": "int",
+       "value": 472
+      },
+      {
+       "name": "kollision",
+       "type": "bool",
+       "value": true
+      }
+     ]
+    },
+    {
+     "id": 144,
+     "name": "wc5ZederSchmal",
+     "type": "moebel",
+     "x": 1728,
+     "y": 0,
+     "width": 32,
+     "height": 64,
+     "rotation": 0,
+     "visible": true,
+     "properties": [
+      {
+       "name": "tiefe",
+       "type": "int",
+       "value": 56
+      },
+      {
+       "name": "kollision",
+       "type": "bool",
+       "value": true
+      }
+     ]
+    },
+    {
+     "id": 145,
+     "name": "wc5ZederSchmal",
+     "type": "moebel",
+     "x": 1728,
+     "y": 416,
+     "width": 32,
+     "height": 64,
+     "rotation": 0,
+     "visible": true,
+     "properties": [
+      {
+       "name": "tiefe",
+       "type": "int",
+       "value": 472
+      },
+      {
+       "name": "kollision",
+       "type": "bool",
+       "value": true
+      }
+     ]
+    },
+    {
+     "id": 146,
+     "name": "wc5Zeder",
+     "type": "moebel",
      "x": 1760,
      "y": 0,
      "width": 32,
@@ -15840,7 +15970,7 @@
      ]
     },
     {
-     "id": 142,
+     "id": 147,
      "name": "wc5Kegelbaum",
      "type": "moebel",
      "x": 1760,
@@ -15863,7 +15993,7 @@
      ]
     },
     {
-     "id": 143,
+     "id": 148,
      "name": "wc5BirkeKlein",
      "type": "moebel",
      "x": 1792,
@@ -15886,7 +16016,7 @@
      ]
     },
     {
-     "id": 144,
+     "id": 149,
      "name": "wc5BirkeHerbst",
      "type": "moebel",
      "x": 1792,
@@ -15909,7 +16039,7 @@
      ]
     },
     {
-     "id": 145,
+     "id": 150,
      "name": "wc5Birke",
      "type": "moebel",
      "x": 1856,
@@ -15932,7 +16062,7 @@
      ]
     },
     {
-     "id": 146,
+     "id": 151,
      "name": "wc5BirkeKlein",
      "type": "moebel",
      "x": 1920,
@@ -15955,7 +16085,7 @@
      ]
     },
     {
-     "id": 147,
+     "id": 152,
      "name": "wc5BirkeHerbst",
      "type": "moebel",
      "x": 1984,
@@ -15978,7 +16108,7 @@
      ]
     },
     {
-     "id": 148,
+     "id": 153,
      "name": "wc5BirkeKlein",
      "type": "moebel",
      "x": 2016,
@@ -16001,7 +16131,7 @@
      ]
     },
     {
-     "id": 149,
+     "id": 154,
      "name": "wc5BirkeKlein",
      "type": "moebel",
      "x": 2048,
@@ -16024,7 +16154,7 @@
      ]
     },
     {
-     "id": 150,
+     "id": 155,
      "name": "wc5BirkeHerbst",
      "type": "moebel",
      "x": 2080,
@@ -16047,7 +16177,7 @@
      ]
     },
     {
-     "id": 151,
+     "id": 156,
      "name": "wc5BirkeHerbst",
      "type": "moebel",
      "x": 2112,
@@ -16070,7 +16200,7 @@
      ]
     },
     {
-     "id": 152,
+     "id": 157,
      "name": "wc5BirkeHerbst",
      "type": "moebel",
      "x": 2144,
@@ -16093,7 +16223,7 @@
      ]
     },
     {
-     "id": 153,
+     "id": 158,
      "name": "wc5BirkeKlein",
      "type": "moebel",
      "x": 2176,
@@ -16116,7 +16246,7 @@
      ]
     },
     {
-     "id": 154,
+     "id": 159,
      "name": "wc5Kegelbaum",
      "type": "moebel",
      "x": 64,
@@ -16139,7 +16269,7 @@
      ]
     },
     {
-     "id": 155,
+     "id": 160,
      "name": "wc5Zeder",
      "type": "moebel",
      "x": 592,
@@ -16162,7 +16292,7 @@
      ]
     },
     {
-     "id": 156,
+     "id": 161,
      "name": "wc5Zeder",
      "type": "moebel",
      "x": 160,
@@ -16185,7 +16315,7 @@
      ]
     },
     {
-     "id": 157,
+     "id": 162,
      "name": "wc5Kegelbaum",
      "type": "moebel",
      "x": 368,
@@ -16208,7 +16338,7 @@
      ]
     },
     {
-     "id": 158,
+     "id": 163,
      "name": "wc5ZederSchmal",
      "type": "moebel",
      "x": 960,
@@ -16231,7 +16361,7 @@
      ]
     },
     {
-     "id": 159,
+     "id": 164,
      "name": "wc5ZederSchmal",
      "type": "moebel",
      "x": 720,
@@ -16254,7 +16384,7 @@
      ]
     },
     {
-     "id": 160,
+     "id": 165,
      "name": "wc5ZederSchmal",
      "type": "moebel",
      "x": 1840,
@@ -16277,7 +16407,7 @@
      ]
     },
     {
-     "id": 161,
+     "id": 166,
      "name": "wc5ZederSchmal",
      "type": "moebel",
      "x": 2096,
@@ -16300,7 +16430,7 @@
      ]
     },
     {
-     "id": 162,
+     "id": 167,
      "name": "wc5Zeder",
      "type": "moebel",
      "x": 1376,
@@ -16323,7 +16453,7 @@
      ]
     },
     {
-     "id": 163,
+     "id": 168,
      "name": "wc5ZederSchmal",
      "type": "moebel",
      "x": 1840,
@@ -16346,7 +16476,7 @@
      ]
     },
     {
-     "id": 164,
+     "id": 169,
      "name": "wc5ZederSchmal",
      "type": "moebel",
      "x": 1600,
@@ -16369,7 +16499,7 @@
      ]
     },
     {
-     "id": 165,
+     "id": 170,
      "name": "wc5Kegelbaum",
      "type": "moebel",
      "x": 1376,
@@ -16392,7 +16522,7 @@
      ]
     },
     {
-     "id": 166,
+     "id": 171,
      "name": "wc5ZederSchmal",
      "type": "moebel",
      "x": 1600,
@@ -16415,7 +16545,7 @@
      ]
     },
     {
-     "id": 167,
+     "id": 172,
      "name": "wc5BirkeKlein",
      "type": "moebel",
      "x": 1808,
@@ -16438,7 +16568,7 @@
      ]
     },
     {
-     "id": 168,
+     "id": 173,
      "name": "wc5Kegelbaum",
      "type": "moebel",
      "x": 1056,
@@ -16461,7 +16591,7 @@
      ]
     },
     {
-     "id": 169,
+     "id": 174,
      "name": "wc5BirkeKlein",
      "type": "moebel",
      "x": 1888,
@@ -16484,7 +16614,7 @@
      ]
     },
     {
-     "id": 170,
+     "id": 175,
      "name": "wc5Zeder",
      "type": "moebel",
      "x": 240,
@@ -16507,7 +16637,7 @@
      ]
     },
     {
-     "id": 171,
+     "id": 176,
      "name": "wc5ZederSchmal",
      "type": "moebel",
      "x": 192,
@@ -16530,7 +16660,7 @@
      ]
     },
     {
-     "id": 172,
+     "id": 177,
      "name": "wc5Zeder",
      "type": "moebel",
      "x": 1728,
@@ -16553,7 +16683,7 @@
      ]
     },
     {
-     "id": 173,
+     "id": 178,
      "name": "wc5ZederSchmal",
      "type": "moebel",
      "x": 2128,
@@ -16576,7 +16706,7 @@
      ]
     },
     {
-     "id": 174,
+     "id": 179,
      "name": "wc5ZederSchmal",
      "type": "moebel",
      "x": 1728,
@@ -16599,7 +16729,7 @@
      ]
     },
     {
-     "id": 175,
+     "id": 180,
      "name": "wc5Kegelbaum",
      "type": "moebel",
      "x": 400,
@@ -16622,7 +16752,7 @@
      ]
     },
     {
-     "id": 176,
+     "id": 181,
      "name": "wc5Zeder",
      "type": "moebel",
      "x": 320,
@@ -16645,125 +16775,10 @@
      ]
     },
     {
-     "id": 177,
-     "name": "wc5Zeder",
-     "type": "moebel",
-     "x": 1536,
-     "y": 368,
-     "width": 32,
-     "height": 64,
-     "rotation": 0,
-     "visible": true,
-     "properties": [
-      {
-       "name": "tiefe",
-       "type": "int",
-       "value": 424
-      },
-      {
-       "name": "kollision",
-       "type": "bool",
-       "value": true
-      }
-     ]
-    },
-    {
-     "id": 178,
-     "name": "wc5Kegelbaum",
-     "type": "moebel",
-     "x": 2176,
-     "y": 64,
-     "width": 32,
-     "height": 64,
-     "rotation": 0,
-     "visible": true,
-     "properties": [
-      {
-       "name": "tiefe",
-       "type": "int",
-       "value": 120
-      },
-      {
-       "name": "kollision",
-       "type": "bool",
-       "value": true
-      }
-     ]
-    },
-    {
-     "id": 179,
-     "name": "wc5ZederSchmal",
-     "type": "moebel",
-     "x": 2176,
-     "y": 288,
-     "width": 32,
-     "height": 64,
-     "rotation": 0,
-     "visible": true,
-     "properties": [
-      {
-       "name": "tiefe",
-       "type": "int",
-       "value": 344
-      },
-      {
-       "name": "kollision",
-       "type": "bool",
-       "value": true
-      }
-     ]
-    },
-    {
-     "id": 180,
-     "name": "wc5ZederSchmal",
-     "type": "moebel",
-     "x": 2048,
-     "y": 144,
-     "width": 32,
-     "height": 64,
-     "rotation": 0,
-     "visible": true,
-     "properties": [
-      {
-       "name": "tiefe",
-       "type": "int",
-       "value": 200
-      },
-      {
-       "name": "kollision",
-       "type": "bool",
-       "value": true
-      }
-     ]
-    },
-    {
-     "id": 181,
-     "name": "wc5ZederSchmal",
-     "type": "moebel",
-     "x": 656,
-     "y": 240,
-     "width": 32,
-     "height": 64,
-     "rotation": 0,
-     "visible": true,
-     "properties": [
-      {
-       "name": "tiefe",
-       "type": "int",
-       "value": 296
-      },
-      {
-       "name": "kollision",
-       "type": "bool",
-       "value": true
-      }
-     ]
-    },
-    {
      "id": 182,
      "name": "wc5Zeder",
      "type": "moebel",
-     "x": 656,
+     "x": 1536,
      "y": 368,
      "width": 32,
      "height": 64,
@@ -16786,6 +16801,121 @@
      "id": 183,
      "name": "wc5Kegelbaum",
      "type": "moebel",
+     "x": 2176,
+     "y": 64,
+     "width": 32,
+     "height": 64,
+     "rotation": 0,
+     "visible": true,
+     "properties": [
+      {
+       "name": "tiefe",
+       "type": "int",
+       "value": 120
+      },
+      {
+       "name": "kollision",
+       "type": "bool",
+       "value": true
+      }
+     ]
+    },
+    {
+     "id": 184,
+     "name": "wc5ZederSchmal",
+     "type": "moebel",
+     "x": 2176,
+     "y": 288,
+     "width": 32,
+     "height": 64,
+     "rotation": 0,
+     "visible": true,
+     "properties": [
+      {
+       "name": "tiefe",
+       "type": "int",
+       "value": 344
+      },
+      {
+       "name": "kollision",
+       "type": "bool",
+       "value": true
+      }
+     ]
+    },
+    {
+     "id": 185,
+     "name": "wc5ZederSchmal",
+     "type": "moebel",
+     "x": 2048,
+     "y": 144,
+     "width": 32,
+     "height": 64,
+     "rotation": 0,
+     "visible": true,
+     "properties": [
+      {
+       "name": "tiefe",
+       "type": "int",
+       "value": 200
+      },
+      {
+       "name": "kollision",
+       "type": "bool",
+       "value": true
+      }
+     ]
+    },
+    {
+     "id": 186,
+     "name": "wc5ZederSchmal",
+     "type": "moebel",
+     "x": 656,
+     "y": 240,
+     "width": 32,
+     "height": 64,
+     "rotation": 0,
+     "visible": true,
+     "properties": [
+      {
+       "name": "tiefe",
+       "type": "int",
+       "value": 296
+      },
+      {
+       "name": "kollision",
+       "type": "bool",
+       "value": true
+      }
+     ]
+    },
+    {
+     "id": 187,
+     "name": "wc5Zeder",
+     "type": "moebel",
+     "x": 656,
+     "y": 368,
+     "width": 32,
+     "height": 64,
+     "rotation": 0,
+     "visible": true,
+     "properties": [
+      {
+       "name": "tiefe",
+       "type": "int",
+       "value": 424
+      },
+      {
+       "name": "kollision",
+       "type": "bool",
+       "value": true
+      }
+     ]
+    },
+    {
+     "id": 188,
+     "name": "wc5Kegelbaum",
+     "type": "moebel",
      "x": 1008,
      "y": 320,
      "width": 32,
@@ -16806,7 +16936,7 @@
      ]
     },
     {
-     "id": 184,
+     "id": 189,
      "name": "wc5ZederSchmal",
      "type": "moebel",
      "x": 1440,
@@ -16829,7 +16959,7 @@
      ]
     },
     {
-     "id": 185,
+     "id": 190,
      "name": "wc5ZederSchmal",
      "type": "moebel",
      "x": 48,
@@ -16852,7 +16982,7 @@
      ]
     },
     {
-     "id": 186,
+     "id": 191,
      "name": "wc5Birke",
      "type": "moebel",
      "x": 2064,
@@ -16875,7 +17005,7 @@
      ]
     },
     {
-     "id": 187,
+     "id": 192,
      "name": "wc5ZederSchmal",
      "type": "moebel",
      "x": 1456,
@@ -16898,7 +17028,7 @@
      ]
     },
     {
-     "id": 188,
+     "id": 193,
      "name": "wc5Kegelbaum",
      "type": "moebel",
      "x": 1504,
@@ -16921,7 +17051,7 @@
      ]
     },
     {
-     "id": 189,
+     "id": 194,
      "name": "wc5ZederSchmal",
      "type": "moebel",
      "x": 1440,
@@ -16944,7 +17074,7 @@
      ]
     },
     {
-     "id": 190,
+     "id": 195,
      "name": "wc5ZederSchmal",
      "type": "moebel",
      "x": 1504,
@@ -16967,7 +17097,7 @@
      ]
     },
     {
-     "id": 191,
+     "id": 196,
      "name": "wc5ZederSchmal",
      "type": "moebel",
      "x": 1552,
@@ -16990,7 +17120,7 @@
      ]
     },
     {
-     "id": 192,
+     "id": 197,
      "name": "wc5ZederSchmal",
      "type": "moebel",
      "x": 720,
@@ -17013,7 +17143,7 @@
      ]
     },
     {
-     "id": 193,
+     "id": 198,
      "name": "wc5ZederSchmal",
      "type": "moebel",
      "x": 2128,
@@ -17036,7 +17166,7 @@
      ]
     },
     {
-     "id": 194,
+     "id": 199,
      "name": "wc5Kegelbaum",
      "type": "moebel",
      "x": 752,
@@ -17059,7 +17189,7 @@
      ]
     },
     {
-     "id": 195,
+     "id": 200,
      "name": "wc5Zeder",
      "type": "moebel",
      "x": 320,
@@ -17082,7 +17212,7 @@
      ]
     },
     {
-     "id": 196,
+     "id": 201,
      "name": "wc5Kegelbaum",
      "type": "moebel",
      "x": 1264,
@@ -17105,7 +17235,7 @@
      ]
     },
     {
-     "id": 197,
+     "id": 202,
      "name": "wc5ZederSchmal",
      "type": "moebel",
      "x": 80,
@@ -17128,7 +17258,7 @@
      ]
     },
     {
-     "id": 198,
+     "id": 203,
      "name": "wc5ZederSchmal",
      "type": "moebel",
      "x": 352,
@@ -17151,7 +17281,7 @@
      ]
     },
     {
-     "id": 199,
+     "id": 204,
      "name": "wc5ZederSchmal",
      "type": "moebel",
      "x": 2016,
@@ -17174,7 +17304,7 @@
      ]
     },
     {
-     "id": 200,
+     "id": 205,
      "name": "wc5Kegelbaum",
      "type": "moebel",
      "x": 32,
@@ -17197,7 +17327,7 @@
      ]
     },
     {
-     "id": 201,
+     "id": 206,
      "name": "wc5ZederSchmal",
      "type": "moebel",
      "x": 976,
@@ -17220,7 +17350,7 @@
      ]
     },
     {
-     "id": 202,
+     "id": 207,
      "name": "wc5ZederSchmal",
      "type": "moebel",
      "x": 880,
@@ -17243,7 +17373,7 @@
      ]
     },
     {
-     "id": 203,
+     "id": 208,
      "name": "wc5Kegelbaum",
      "type": "moebel",
      "x": 2032,
@@ -17266,7 +17396,7 @@
      ]
     },
     {
-     "id": 204,
+     "id": 209,
      "name": "wc5ZederSchmal",
      "type": "moebel",
      "x": 224,
@@ -17289,7 +17419,7 @@
      ]
     },
     {
-     "id": 205,
+     "id": 210,
      "name": "wc5ZederSchmal",
      "type": "moebel",
      "x": 1136,
@@ -17312,7 +17442,7 @@
      ]
     },
     {
-     "id": 206,
+     "id": 211,
      "name": "wc5Zeder",
      "type": "moebel",
      "x": 160,
@@ -17335,7 +17465,7 @@
      ]
     },
     {
-     "id": 207,
+     "id": 212,
      "name": "wc5Zeder",
      "type": "moebel",
      "x": 576,
@@ -17358,7 +17488,7 @@
      ]
     },
     {
-     "id": 208,
+     "id": 213,
      "name": "wc5Kegelbaum",
      "type": "moebel",
      "x": 528,
@@ -17381,7 +17511,7 @@
      ]
     },
     {
-     "id": 209,
+     "id": 214,
      "name": "wc5ZederSchmal",
      "type": "moebel",
      "x": 1792,
@@ -17404,7 +17534,7 @@
      ]
     },
     {
-     "id": 210,
+     "id": 215,
      "name": "wc5ZederSchmal",
      "type": "moebel",
      "x": 1408,
@@ -17427,7 +17557,7 @@
      ]
     },
     {
-     "id": 211,
+     "id": 216,
      "name": "wc5Kegelbaum",
      "type": "moebel",
      "x": 1328,
@@ -17450,7 +17580,7 @@
      ]
     },
     {
-     "id": 212,
+     "id": 217,
      "name": "wc5Kegelbaum",
      "type": "moebel",
      "x": 752,
@@ -17473,7 +17603,7 @@
      ]
     },
     {
-     "id": 213,
+     "id": 218,
      "name": "wc5Kegelbaum",
      "type": "moebel",
      "x": 1696,
@@ -17496,7 +17626,7 @@
      ]
     },
     {
-     "id": 214,
+     "id": 219,
      "name": "wc5ZederSchmal",
      "type": "moebel",
      "x": 80,
@@ -17519,7 +17649,7 @@
      ]
     },
     {
-     "id": 215,
+     "id": 220,
      "name": "wc5Zeder",
      "type": "moebel",
      "x": 432,
@@ -17542,7 +17672,7 @@
      ]
     },
     {
-     "id": 216,
+     "id": 221,
      "name": "wc5Zeder",
      "type": "moebel",
      "x": 1488,
@@ -17565,7 +17695,7 @@
      ]
     },
     {
-     "id": 217,
+     "id": 222,
      "name": "wc5Kegelbaum",
      "type": "moebel",
      "x": 1680,
@@ -17588,7 +17718,7 @@
      ]
     },
     {
-     "id": 218,
+     "id": 223,
      "name": "wc5Zeder",
      "type": "moebel",
      "x": 1312,
@@ -17611,7 +17741,7 @@
      ]
     },
     {
-     "id": 219,
+     "id": 224,
      "name": "wc5Zeder",
      "type": "moebel",
      "x": 1264,
@@ -17634,7 +17764,7 @@
      ]
     },
     {
-     "id": 220,
+     "id": 225,
      "name": "wc5ZederSchmal",
      "type": "moebel",
      "x": 1952,
@@ -17657,7 +17787,7 @@
      ]
     },
     {
-     "id": 221,
+     "id": 226,
      "name": "wc5Kegelbaum",
      "type": "moebel",
      "x": 192,
@@ -17680,7 +17810,7 @@
      ]
     },
     {
-     "id": 222,
+     "id": 227,
      "name": "wc5BirkeKlein",
      "type": "moebel",
      "x": 1872,
@@ -17703,7 +17833,7 @@
      ]
     },
     {
-     "id": 223,
+     "id": 228,
      "name": "wc5Kegelbaum",
      "type": "moebel",
      "x": 1328,
@@ -17726,7 +17856,7 @@
      ]
     },
     {
-     "id": 224,
+     "id": 229,
      "name": "wc5BirkeHerbst",
      "type": "moebel",
      "x": 1984,
@@ -17749,7 +17879,7 @@
      ]
     },
     {
-     "id": 225,
+     "id": 230,
      "name": "wc5ZederSchmal",
      "type": "moebel",
      "x": 1984,
@@ -17772,7 +17902,7 @@
      ]
     },
     {
-     "id": 226,
+     "id": 231,
      "name": "wc5ZederSchmal",
      "type": "moebel",
      "x": 304,
@@ -17795,7 +17925,7 @@
      ]
     },
     {
-     "id": 227,
+     "id": 232,
      "name": "wc5ZederSchmal",
      "type": "moebel",
      "x": 1696,
@@ -17818,7 +17948,7 @@
      ]
     },
     {
-     "id": 228,
+     "id": 233,
      "name": "wc5Kegelbaum",
      "type": "moebel",
      "x": 1232,
@@ -17841,7 +17971,7 @@
      ]
     },
     {
-     "id": 229,
+     "id": 234,
      "name": "wc5ZederSchmal",
      "type": "moebel",
      "x": 800,
@@ -17864,7 +17994,7 @@
      ]
     },
     {
-     "id": 230,
+     "id": 235,
      "name": "wc5ZederSchmal",
      "type": "moebel",
      "x": 912,
@@ -17887,7 +18017,7 @@
      ]
     },
     {
-     "id": 231,
+     "id": 236,
      "name": "wc5Kegelbaum",
      "type": "moebel",
      "x": 720,
@@ -17910,7 +18040,7 @@
      ]
     },
     {
-     "id": 232,
+     "id": 237,
      "name": "wc5Zeder",
      "type": "moebel",
      "x": 560,
@@ -17933,7 +18063,7 @@
      ]
     },
     {
-     "id": 233,
+     "id": 238,
      "name": "wc5Kegelbaum",
      "type": "moebel",
      "x": 1088,
@@ -17956,7 +18086,7 @@
      ]
     },
     {
-     "id": 234,
+     "id": 239,
      "name": "wc5ZederSchmal",
      "type": "moebel",
      "x": 16,
@@ -17979,7 +18109,7 @@
      ]
     },
     {
-     "id": 235,
+     "id": 240,
      "name": "wc5Kegelbaum",
      "type": "moebel",
      "x": 400,
@@ -18002,7 +18132,7 @@
      ]
     },
     {
-     "id": 236,
+     "id": 241,
      "name": "wc5BirkeKlein",
      "type": "moebel",
      "x": 2128,
@@ -18025,7 +18155,7 @@
      ]
     },
     {
-     "id": 237,
+     "id": 242,
      "name": "wc5Kegelbaum",
      "type": "moebel",
      "x": 224,
@@ -18048,7 +18178,7 @@
      ]
     },
     {
-     "id": 238,
+     "id": 243,
      "name": "wc5Kegelbaum",
      "type": "moebel",
      "x": 2096,
@@ -18071,7 +18201,7 @@
      ]
     },
     {
-     "id": 239,
+     "id": 244,
      "name": "wc5Kegelbaum",
      "type": "moebel",
      "x": 2176,
@@ -18094,7 +18224,7 @@
      ]
     },
     {
-     "id": 240,
+     "id": 245,
      "name": "wc5ZederSchmal",
      "type": "moebel",
      "x": 800,
@@ -18117,7 +18247,7 @@
      ]
     },
     {
-     "id": 241,
+     "id": 246,
      "name": "wc5Kegelbaum",
      "type": "moebel",
      "x": 16,
@@ -18140,7 +18270,7 @@
      ]
     },
     {
-     "id": 242,
+     "id": 247,
      "name": "wc5ZederSchmal",
      "type": "moebel",
      "x": 1200,
@@ -18163,7 +18293,7 @@
      ]
     },
     {
-     "id": 243,
+     "id": 248,
      "name": "wc5Zeder",
      "type": "moebel",
      "x": 112,
@@ -18186,7 +18316,7 @@
      ]
     },
     {
-     "id": 244,
+     "id": 249,
      "name": "wc5ZederSchmal",
      "type": "moebel",
      "x": 160,
@@ -18209,7 +18339,7 @@
      ]
     },
     {
-     "id": 245,
+     "id": 250,
      "name": "wc5ZederSchmal",
      "type": "moebel",
      "x": 1120,
@@ -18232,7 +18362,7 @@
      ]
     },
     {
-     "id": 246,
+     "id": 251,
      "name": "wc5ZederSchmal",
      "type": "moebel",
      "x": 1920,
@@ -18255,7 +18385,7 @@
      ]
     },
     {
-     "id": 247,
+     "id": 252,
      "name": "wc5Zeder",
      "type": "moebel",
      "x": 1616,
@@ -18278,7 +18408,7 @@
      ]
     },
     {
-     "id": 248,
+     "id": 253,
      "name": "wc5Zeder",
      "type": "moebel",
      "x": 480,
@@ -18301,7 +18431,7 @@
      ]
     },
     {
-     "id": 249,
+     "id": 254,
      "name": "wc5ZederSchmal",
      "type": "moebel",
      "x": 1056,
@@ -18324,7 +18454,7 @@
      ]
     },
     {
-     "id": 250,
+     "id": 255,
      "name": "wc5Kegelbaum",
      "type": "moebel",
      "x": 608,
@@ -18347,7 +18477,7 @@
      ]
     },
     {
-     "id": 251,
+     "id": 256,
      "name": "wc5Kegelbaum",
      "type": "moebel",
      "x": 2176,
@@ -18370,7 +18500,7 @@
      ]
     },
     {
-     "id": 252,
+     "id": 257,
      "name": "wc5Kegelbaum",
      "type": "moebel",
      "x": 96,
@@ -18393,7 +18523,7 @@
      ]
     },
     {
-     "id": 253,
+     "id": 258,
      "name": "wc5Kegelbaum",
      "type": "moebel",
      "x": 432,
@@ -18416,7 +18546,7 @@
      ]
     },
     {
-     "id": 254,
+     "id": 259,
      "name": "wc5ZederSchmal",
      "type": "moebel",
      "x": 944,
@@ -18439,7 +18569,7 @@
      ]
     },
     {
-     "id": 255,
+     "id": 260,
      "name": "wc5Kegelbaum",
      "type": "moebel",
      "x": 1760,
@@ -18462,7 +18592,7 @@
      ]
     },
     {
-     "id": 256,
+     "id": 261,
      "name": "wc5ZederSchmal",
      "type": "moebel",
      "x": 1264,
@@ -18485,7 +18615,7 @@
      ]
     },
     {
-     "id": 257,
+     "id": 262,
      "name": "wc5ZederSchmal",
      "type": "moebel",
      "x": 1776,
@@ -18508,7 +18638,7 @@
      ]
     },
     {
-     "id": 258,
+     "id": 263,
      "name": "wc5Zeder",
      "type": "moebel",
      "x": 272,
@@ -18531,7 +18661,7 @@
      ]
     },
     {
-     "id": 259,
+     "id": 264,
      "name": "wc5Kegelbaum",
      "type": "moebel",
      "x": 1616,
@@ -18554,7 +18684,7 @@
      ]
     },
     {
-     "id": 260,
+     "id": 265,
      "name": "wc5ZederSchmal",
      "type": "moebel",
      "x": 288,
@@ -18577,7 +18707,7 @@
      ]
     },
     {
-     "id": 261,
+     "id": 266,
      "name": "wc5Kegelbaum",
      "type": "moebel",
      "x": 1808,
@@ -18600,7 +18730,7 @@
      ]
     },
     {
-     "id": 262,
+     "id": 267,
      "name": "wc5Kegelbaum",
      "type": "moebel",
      "x": 1648,
@@ -18623,7 +18753,7 @@
      ]
     },
     {
-     "id": 263,
+     "id": 268,
      "name": "wc5ZederSchmal",
      "type": "moebel",
      "x": 1488,
@@ -18646,7 +18776,7 @@
      ]
     },
     {
-     "id": 264,
+     "id": 269,
      "name": "wc5Kegelbaum",
      "type": "moebel",
      "x": 848,
@@ -18669,7 +18799,7 @@
      ]
     },
     {
-     "id": 265,
+     "id": 270,
      "name": "wc5ZederSchmal",
      "type": "moebel",
      "x": 112,
@@ -18692,7 +18822,7 @@
      ]
     },
     {
-     "id": 266,
+     "id": 271,
      "name": "wc5ZederSchmal",
      "type": "moebel",
      "x": 1760,
@@ -18715,7 +18845,7 @@
      ]
     },
     {
-     "id": 267,
+     "id": 272,
      "name": "wc5ZederSchmal",
      "type": "moebel",
      "x": 1584,
@@ -18738,7 +18868,7 @@
      ]
     },
     {
-     "id": 268,
+     "id": 273,
      "name": "wc5Kegelbaum",
      "type": "moebel",
      "x": 1344,
@@ -18761,7 +18891,7 @@
      ]
     },
     {
-     "id": 269,
+     "id": 274,
      "name": "wc5Kegelbaum",
      "type": "moebel",
      "x": 112,
@@ -18784,7 +18914,7 @@
      ]
     },
     {
-     "id": 270,
+     "id": 275,
      "name": "wc5Zeder",
      "type": "moebel",
      "x": 624,
@@ -18807,7 +18937,7 @@
      ]
     },
     {
-     "id": 271,
+     "id": 276,
      "name": "wc5Kegelbaum",
      "type": "moebel",
      "x": 192,
@@ -18830,7 +18960,7 @@
      ]
     },
     {
-     "id": 272,
+     "id": 277,
      "name": "wc5ZederSchmal",
      "type": "moebel",
      "x": 896,
@@ -18853,7 +18983,7 @@
      ]
     },
     {
-     "id": 273,
+     "id": 278,
      "name": "wc5Zeder",
      "type": "moebel",
      "x": 1280,
@@ -18876,7 +19006,7 @@
      ]
     },
     {
-     "id": 274,
+     "id": 279,
      "name": "wc5Kegelbaum",
      "type": "moebel",
      "x": 752,
@@ -18899,7 +19029,7 @@
      ]
     },
     {
-     "id": 275,
+     "id": 280,
      "name": "wc5ZederSchmal",
      "type": "moebel",
      "x": 624,
@@ -18922,7 +19052,7 @@
      ]
     },
     {
-     "id": 276,
+     "id": 281,
      "name": "wc5BirkeKlein",
      "type": "moebel",
      "x": 1936,
@@ -18945,7 +19075,7 @@
      ]
     },
     {
-     "id": 277,
+     "id": 282,
      "name": "wc5Kegelbaum",
      "type": "moebel",
      "x": 1376,
@@ -18968,7 +19098,7 @@
      ]
     },
     {
-     "id": 278,
+     "id": 283,
      "name": "wc5ZederSchmal",
      "type": "moebel",
      "x": 784,
@@ -18991,7 +19121,7 @@
      ]
     },
     {
-     "id": 279,
+     "id": 284,
      "name": "wc5ZederSchmal",
      "type": "moebel",
      "x": 960,
@@ -19014,7 +19144,7 @@
      ]
     },
     {
-     "id": 280,
+     "id": 285,
      "name": "wc5Zeder",
      "type": "moebel",
      "x": 1232,
@@ -19037,7 +19167,7 @@
      ]
     },
     {
-     "id": 281,
+     "id": 286,
      "name": "wc5Kegelbaum",
      "type": "moebel",
      "x": 688,
@@ -19060,7 +19190,7 @@
      ]
     },
     {
-     "id": 282,
+     "id": 287,
      "name": "wc5ZederSchmal",
      "type": "moebel",
      "x": 256,
@@ -19083,7 +19213,7 @@
      ]
     },
     {
-     "id": 283,
+     "id": 288,
      "name": "wc5Zeder",
      "type": "moebel",
      "x": 1408,
@@ -19106,7 +19236,7 @@
      ]
     },
     {
-     "id": 284,
+     "id": 289,
      "name": "wc5Zeder",
      "type": "moebel",
      "x": 1248,
@@ -19129,7 +19259,7 @@
      ]
     },
     {
-     "id": 285,
+     "id": 290,
      "name": "wc5ZederSchmal",
      "type": "moebel",
      "x": 144,
@@ -19152,7 +19282,7 @@
      ]
     },
     {
-     "id": 286,
+     "id": 291,
      "name": "wc5ZederSchmal",
      "type": "moebel",
      "x": 2128,
@@ -19175,7 +19305,7 @@
      ]
     },
     {
-     "id": 287,
+     "id": 292,
      "name": "wc5ZederSchmal",
      "type": "moebel",
      "x": 208,
@@ -19198,7 +19328,7 @@
      ]
     },
     {
-     "id": 288,
+     "id": 293,
      "name": "wc5ZederSchmal",
      "type": "moebel",
      "x": 464,
@@ -19221,7 +19351,7 @@
      ]
     },
     {
-     "id": 289,
+     "id": 294,
      "name": "wc5Zeder",
      "type": "moebel",
      "x": 1168,
@@ -19244,7 +19374,7 @@
      ]
     },
     {
-     "id": 290,
+     "id": 295,
      "name": "wc5Kegelbaum",
      "type": "moebel",
      "x": 944,
@@ -19267,7 +19397,7 @@
      ]
     },
     {
-     "id": 291,
+     "id": 296,
      "name": "wc5Kegelbaum",
      "type": "moebel",
      "x": 1024,
@@ -19290,7 +19420,7 @@
      ]
     },
     {
-     "id": 292,
+     "id": 297,
      "name": "wc5Zeder",
      "type": "moebel",
      "x": 1360,
@@ -19313,7 +19443,7 @@
      ]
     },
     {
-     "id": 293,
+     "id": 298,
      "name": "wc5ZederSchmal",
      "type": "moebel",
      "x": 1216,
@@ -19336,7 +19466,7 @@
      ]
     },
     {
-     "id": 294,
+     "id": 299,
      "name": "wc5ZederSchmal",
      "type": "moebel",
      "x": 256,
@@ -19359,7 +19489,7 @@
      ]
     },
     {
-     "id": 295,
+     "id": 300,
      "name": "wc5Zeder",
      "type": "moebel",
      "x": 992,
@@ -19382,7 +19512,7 @@
      ]
     },
     {
-     "id": 296,
+     "id": 301,
      "name": "wc5Kegelbaum",
      "type": "moebel",
      "x": 2080,
@@ -19405,7 +19535,7 @@
      ]
     },
     {
-     "id": 297,
+     "id": 302,
      "name": "wc5Zeder",
      "type": "moebel",
      "x": 1568,
@@ -19428,7 +19558,7 @@
      ]
     },
     {
-     "id": 298,
+     "id": 303,
      "name": "wc5ZederSchmal",
      "type": "moebel",
      "x": 528,
@@ -19451,7 +19581,7 @@
      ]
     },
     {
-     "id": 299,
+     "id": 304,
      "name": "wc5Zeder",
      "type": "moebel",
      "x": 1040,
@@ -19474,7 +19604,7 @@
      ]
     },
     {
-     "id": 300,
+     "id": 305,
      "name": "wc5Zeder",
      "type": "moebel",
      "x": 976,
@@ -19497,7 +19627,7 @@
      ]
     },
     {
-     "id": 301,
+     "id": 306,
      "name": "wc5ZederSchmal",
      "type": "moebel",
      "x": 1696,
@@ -19520,7 +19650,7 @@
      ]
     },
     {
-     "id": 302,
+     "id": 307,
      "name": "wc5Kegelbaum",
      "type": "moebel",
      "x": 464,
@@ -19543,7 +19673,7 @@
      ]
     },
     {
-     "id": 303,
+     "id": 308,
      "name": "wc5Zeder",
      "type": "moebel",
      "x": 1536,
@@ -19566,7 +19696,7 @@
      ]
     },
     {
-     "id": 304,
+     "id": 309,
      "name": "wc5ZederSchmal",
      "type": "moebel",
      "x": 704,
@@ -19589,7 +19719,7 @@
      ]
     },
     {
-     "id": 305,
+     "id": 310,
      "name": "wc5ZederSchmal",
      "type": "moebel",
      "x": 1024,
@@ -19612,7 +19742,7 @@
      ]
     },
     {
-     "id": 306,
+     "id": 311,
      "name": "wc5Kegelbaum",
      "type": "moebel",
      "x": 912,
@@ -19635,7 +19765,7 @@
      ]
     },
     {
-     "id": 307,
+     "id": 312,
      "name": "wc5Kegelbaum",
      "type": "moebel",
      "x": 1952,
@@ -19658,7 +19788,7 @@
      ]
     },
     {
-     "id": 308,
+     "id": 313,
      "name": "wc5ZederSchmal",
      "type": "moebel",
      "x": 912,
@@ -19681,7 +19811,7 @@
      ]
     },
     {
-     "id": 309,
+     "id": 314,
      "name": "wc5Kegelbaum",
      "type": "moebel",
      "x": 656,
@@ -19704,7 +19834,7 @@
      ]
     },
     {
-     "id": 310,
+     "id": 315,
      "name": "wc5Kegelbaum",
      "type": "moebel",
      "x": 2000,
@@ -19727,7 +19857,7 @@
      ]
     },
     {
-     "id": 311,
+     "id": 316,
      "name": "wc5Zeder",
      "type": "moebel",
      "x": 16,
@@ -19750,7 +19880,7 @@
      ]
     },
     {
-     "id": 312,
+     "id": 317,
      "name": "wc5Zeder",
      "type": "moebel",
      "x": 432,
@@ -19773,7 +19903,7 @@
      ]
     },
     {
-     "id": 313,
+     "id": 318,
      "name": "wc5Birke",
      "type": "moebel",
      "x": 1856,
@@ -19796,7 +19926,7 @@
      ]
     },
     {
-     "id": 314,
+     "id": 319,
      "name": "wc5ZederSchmal",
      "type": "moebel",
      "x": 928,
@@ -19819,7 +19949,7 @@
      ]
     },
     {
-     "id": 315,
+     "id": 320,
      "name": "wc5ZederSchmal",
      "type": "moebel",
      "x": 2048,
@@ -19842,7 +19972,7 @@
      ]
     },
     {
-     "id": 316,
+     "id": 321,
      "name": "wc5ZederSchmal",
      "type": "moebel",
      "x": 544,
@@ -19865,7 +19995,7 @@
      ]
     },
     {
-     "id": 317,
+     "id": 322,
      "name": "wc5Kegelbaum",
      "type": "moebel",
      "x": 1712,
@@ -19888,7 +20018,7 @@
      ]
     },
     {
-     "id": 318,
+     "id": 323,
      "name": "wc5ZederSchmal",
      "type": "moebel",
      "x": 512,
@@ -19911,7 +20041,7 @@
      ]
     },
     {
-     "id": 319,
+     "id": 324,
      "name": "wc5Kegelbaum",
      "type": "moebel",
      "x": 1328,
@@ -19934,7 +20064,7 @@
      ]
     },
     {
-     "id": 320,
+     "id": 325,
      "name": "wc5Kegelbaum",
      "type": "moebel",
      "x": 16,
@@ -19957,7 +20087,7 @@
      ]
     },
     {
-     "id": 321,
+     "id": 326,
      "name": "wc5ZederSchmal",
      "type": "moebel",
      "x": 1552,
@@ -19980,7 +20110,7 @@
      ]
     },
     {
-     "id": 322,
+     "id": 327,
      "name": "wc5Zeder",
      "type": "moebel",
      "x": 1776,
@@ -20003,7 +20133,7 @@
      ]
     },
     {
-     "id": 323,
+     "id": 328,
      "name": "wc5ZederSchmal",
      "type": "moebel",
      "x": 1312,
@@ -20026,7 +20156,7 @@
      ]
     },
     {
-     "id": 324,
+     "id": 329,
      "name": "wc5Zeder",
      "type": "moebel",
      "x": 800,
@@ -20049,7 +20179,7 @@
      ]
     },
     {
-     "id": 325,
+     "id": 330,
      "name": "wc5Zeder",
      "type": "moebel",
      "x": 640,
@@ -20072,7 +20202,7 @@
      ]
     },
     {
-     "id": 326,
+     "id": 331,
      "name": "wc5ZederSchmal",
      "type": "moebel",
      "x": 192,
@@ -20095,7 +20225,7 @@
      ]
     },
     {
-     "id": 327,
+     "id": 332,
      "name": "wc5Kegelbaum",
      "type": "moebel",
      "x": 1008,
@@ -20118,7 +20248,7 @@
      ]
     },
     {
-     "id": 328,
+     "id": 333,
      "name": "wc5Kegelbaum",
      "type": "moebel",
      "x": 320,
@@ -20141,7 +20271,7 @@
      ]
     },
     {
-     "id": 329,
+     "id": 334,
      "name": "wc5ZederSchmal",
      "type": "moebel",
      "x": 1728,
@@ -20164,7 +20294,7 @@
      ]
     },
     {
-     "id": 330,
+     "id": 335,
      "name": "wc5Zeder",
      "type": "moebel",
      "x": 1152,
@@ -20187,7 +20317,7 @@
      ]
     },
     {
-     "id": 331,
+     "id": 336,
      "name": "wc5Kegelbaum",
      "type": "moebel",
      "x": 1632,
@@ -20210,7 +20340,7 @@
      ]
     },
     {
-     "id": 332,
+     "id": 337,
      "name": "wc5Kegelbaum",
      "type": "moebel",
      "x": 1200,
@@ -20233,7 +20363,7 @@
      ]
     },
     {
-     "id": 333,
+     "id": 338,
      "name": "wc5Kegelbaum",
      "type": "moebel",
      "x": 2016,
@@ -20256,7 +20386,7 @@
      ]
     },
     {
-     "id": 334,
+     "id": 339,
      "name": "wc5ZederSchmal",
      "type": "moebel",
      "x": 272,
@@ -20279,7 +20409,7 @@
      ]
     },
     {
-     "id": 335,
+     "id": 340,
      "name": "wc5Zeder",
      "type": "moebel",
      "x": 1376,
@@ -20302,7 +20432,7 @@
      ]
     },
     {
-     "id": 336,
+     "id": 341,
      "name": "wc5Kegelbaum",
      "type": "moebel",
      "x": 1568,
@@ -20325,7 +20455,7 @@
      ]
     },
     {
-     "id": 337,
+     "id": 342,
      "name": "wc5Kegelbaum",
      "type": "moebel",
      "x": 432,
@@ -20348,7 +20478,7 @@
      ]
     },
     {
-     "id": 338,
+     "id": 343,
      "name": "wc5Kegelbaum",
      "type": "moebel",
      "x": 400,
@@ -20371,7 +20501,7 @@
      ]
     },
     {
-     "id": 339,
+     "id": 344,
      "name": "wc5Kegelbaum",
      "type": "moebel",
      "x": 2032,
@@ -20394,7 +20524,7 @@
      ]
     },
     {
-     "id": 340,
+     "id": 345,
      "name": "wc5Kegelbaum",
      "type": "moebel",
      "x": 336,
@@ -20417,7 +20547,7 @@
      ]
     },
     {
-     "id": 341,
+     "id": 346,
      "name": "wc5ZederSchmal",
      "type": "moebel",
      "x": 496,
@@ -20440,7 +20570,7 @@
      ]
     },
     {
-     "id": 342,
+     "id": 347,
      "name": "wc5ZederSchmal",
      "type": "moebel",
      "x": 1472,
@@ -20463,7 +20593,7 @@
      ]
     },
     {
-     "id": 343,
+     "id": 348,
      "name": "wc5Kegelbaum",
      "type": "moebel",
      "x": 1632,
@@ -20486,7 +20616,7 @@
      ]
     },
     {
-     "id": 344,
+     "id": 349,
      "name": "wc5ZederSchmal",
      "type": "moebel",
      "x": 688,
@@ -20509,7 +20639,7 @@
      ]
     },
     {
-     "id": 345,
+     "id": 350,
      "name": "wc5Zeder",
      "type": "moebel",
      "x": 48,
@@ -20532,7 +20662,7 @@
      ]
     },
     {
-     "id": 346,
+     "id": 351,
      "name": "wc5BirkeKlein",
      "type": "moebel",
      "x": 2160,
@@ -20555,7 +20685,7 @@
      ]
     },
     {
-     "id": 347,
+     "id": 352,
      "name": "wc5ZederSchmal",
      "type": "moebel",
      "x": 1904,
@@ -20578,7 +20708,7 @@
      ]
     },
     {
-     "id": 348,
+     "id": 353,
      "name": "wc5Kegelbaum",
      "type": "moebel",
      "x": 192,
@@ -20601,7 +20731,7 @@
      ]
     },
     {
-     "id": 349,
+     "id": 354,
      "name": "wc5Zeder",
      "type": "moebel",
      "x": 784,
@@ -20624,7 +20754,7 @@
      ]
     },
     {
-     "id": 350,
+     "id": 355,
      "name": "wc5Kegelbaum",
      "type": "moebel",
      "x": 1488,
@@ -20647,7 +20777,7 @@
      ]
     },
     {
-     "id": 351,
+     "id": 356,
      "name": "wc5ZederSchmal",
      "type": "moebel",
      "x": 48,
@@ -20670,7 +20800,7 @@
      ]
     },
     {
-     "id": 352,
+     "id": 357,
      "name": "wc5ZederSchmal",
      "type": "moebel",
      "x": 1520,
@@ -20693,7 +20823,7 @@
      ]
     },
     {
-     "id": 353,
+     "id": 358,
      "name": "wc5Zeder",
      "type": "moebel",
      "x": 288,
@@ -20716,7 +20846,7 @@
      ]
     },
     {
-     "id": 354,
+     "id": 359,
      "name": "wc5Kegelbaum",
      "type": "moebel",
      "x": 1824,
@@ -20739,7 +20869,7 @@
      ]
     },
     {
-     "id": 355,
+     "id": 360,
      "name": "wc5ZederSchmal",
      "type": "moebel",
      "x": 368,
@@ -20762,7 +20892,7 @@
      ]
     },
     {
-     "id": 356,
+     "id": 361,
      "name": "wc5ZederSchmal",
      "type": "moebel",
      "x": 1120,
@@ -20785,7 +20915,7 @@
      ]
     },
     {
-     "id": 357,
+     "id": 362,
      "name": "wc5ZederSchmal",
      "type": "moebel",
      "x": 560,
@@ -20808,7 +20938,7 @@
      ]
     },
     {
-     "id": 358,
+     "id": 363,
      "name": "wc5ZederSchmal",
      "type": "moebel",
      "x": 224,
@@ -20831,7 +20961,7 @@
      ]
     },
     {
-     "id": 359,
+     "id": 364,
      "name": "wc5ZederSchmal",
      "type": "moebel",
      "x": 864,
@@ -20854,7 +20984,7 @@
      ]
     },
     {
-     "id": 360,
+     "id": 365,
      "name": "wc5ZederSchmal",
      "type": "moebel",
      "x": 480,
@@ -20877,7 +21007,7 @@
      ]
     },
     {
-     "id": 361,
+     "id": 366,
      "name": "wc5ZederSchmal",
      "type": "moebel",
      "x": 1824,
@@ -20900,7 +21030,7 @@
      ]
     },
     {
-     "id": 362,
+     "id": 367,
      "name": "wc5Kegelbaum",
      "type": "moebel",
      "x": 2064,
@@ -20923,7 +21053,7 @@
      ]
     },
     {
-     "id": 363,
+     "id": 368,
      "name": "wc5ZederSchmal",
      "type": "moebel",
      "x": 624,
@@ -20946,7 +21076,7 @@
      ]
     },
     {
-     "id": 364,
+     "id": 369,
      "name": "wc5Kegelbaum",
      "type": "moebel",
      "x": 1472,
@@ -20969,7 +21099,7 @@
      ]
     },
     {
-     "id": 365,
+     "id": 370,
      "name": "wc5ZederSchmal",
      "type": "moebel",
      "x": 1952,
@@ -20992,7 +21122,7 @@
      ]
     },
     {
-     "id": 366,
+     "id": 371,
      "name": "wc5Kegelbaum",
      "type": "moebel",
      "x": 608,
@@ -21015,7 +21145,7 @@
      ]
     },
     {
-     "id": 367,
+     "id": 372,
      "name": "wc5Kegelbaum",
      "type": "moebel",
      "x": 160,
@@ -21038,7 +21168,7 @@
      ]
     },
     {
-     "id": 368,
+     "id": 373,
      "name": "wc5Zeder",
      "type": "moebel",
      "x": 816,
@@ -21061,7 +21191,7 @@
      ]
     },
     {
-     "id": 369,
+     "id": 374,
      "name": "wc5Kegelbaum",
      "type": "moebel",
      "x": 1840,
@@ -21084,7 +21214,7 @@
      ]
     },
     {
-     "id": 370,
+     "id": 375,
      "name": "wc5Kegelbaum",
      "type": "moebel",
      "x": 1744,
@@ -21107,7 +21237,7 @@
      ]
     },
     {
-     "id": 371,
+     "id": 376,
      "name": "wc5ZederSchmal",
      "type": "moebel",
      "x": 1296,
@@ -21130,7 +21260,7 @@
      ]
     },
     {
-     "id": 372,
+     "id": 377,
      "name": "wc5Kegelbaum",
      "type": "moebel",
      "x": 80,
@@ -21153,7 +21283,7 @@
      ]
     },
     {
-     "id": 373,
+     "id": 378,
      "name": "wc5ZederSchmal",
      "type": "moebel",
      "x": 1632,
@@ -21176,7 +21306,7 @@
      ]
     },
     {
-     "id": 374,
+     "id": 379,
      "name": "wc5ZederSchmal",
      "type": "moebel",
      "x": 688,
@@ -21199,7 +21329,7 @@
      ]
     },
     {
-     "id": 375,
+     "id": 380,
      "name": "wc5Zeder",
      "type": "moebel",
      "x": 1440,
@@ -21222,7 +21352,7 @@
      ]
     },
     {
-     "id": 376,
+     "id": 381,
      "name": "wc5ZederSchmal",
      "type": "moebel",
      "x": 944,
@@ -21245,7 +21375,7 @@
      ]
     },
     {
-     "id": 377,
+     "id": 382,
      "name": "wc5ZederSchmal",
      "type": "moebel",
      "x": 832,
@@ -21268,7 +21398,7 @@
      ]
     },
     {
-     "id": 378,
+     "id": 383,
      "name": "wc5Kegelbaum",
      "type": "moebel",
      "x": 1664,
@@ -21291,7 +21421,7 @@
      ]
     },
     {
-     "id": 379,
+     "id": 384,
      "name": "wc5ZederSchmal",
      "type": "moebel",
      "x": 2032,
@@ -21314,7 +21444,7 @@
      ]
     },
     {
-     "id": 380,
+     "id": 385,
      "name": "wc5Kegelbaum",
      "type": "moebel",
      "x": 848,
@@ -21337,7 +21467,7 @@
      ]
     },
     {
-     "id": 381,
+     "id": 386,
      "name": "wc5Kegelbaum",
      "type": "moebel",
      "x": 880,
@@ -21360,7 +21490,7 @@
      ]
     },
     {
-     "id": 382,
+     "id": 387,
      "name": "wc5Kegelbaum",
      "type": "moebel",
      "x": 112,
@@ -21383,7 +21513,7 @@
      ]
     },
     {
-     "id": 383,
+     "id": 388,
      "name": "wc5ZederSchmal",
      "type": "moebel",
      "x": 384,
@@ -21406,7 +21536,7 @@
      ]
     },
     {
-     "id": 384,
+     "id": 389,
      "name": "wc5Zeder",
      "type": "moebel",
      "x": 432,
@@ -21429,7 +21559,7 @@
      ]
     },
     {
-     "id": 385,
+     "id": 390,
      "name": "wc5Gras",
      "type": "moebel",
      "x": 1952,
@@ -21452,7 +21582,7 @@
      ]
     },
     {
-     "id": 386,
+     "id": 391,
      "name": "wc5Gras",
      "type": "moebel",
      "x": 1936,
@@ -21475,7 +21605,7 @@
      ]
     },
     {
-     "id": 387,
+     "id": 392,
      "name": "wc5Gras",
      "type": "moebel",
      "x": 1936,
@@ -21498,7 +21628,7 @@
      ]
     },
     {
-     "id": 388,
+     "id": 393,
      "name": "wc5PilzeB",
      "type": "moebel",
      "x": 1808,
@@ -21521,7 +21651,7 @@
      ]
     },
     {
-     "id": 389,
+     "id": 394,
      "name": "wc5Gras",
      "type": "moebel",
      "x": 1920,
@@ -21544,7 +21674,7 @@
      ]
     },
     {
-     "id": 390,
+     "id": 395,
      "name": "wc5Gras",
      "type": "moebel",
      "x": 1296,
@@ -21567,7 +21697,7 @@
      ]
     },
     {
-     "id": 391,
+     "id": 396,
      "name": "wc5BuschKlein",
      "type": "moebel",
      "x": 1680,
@@ -21590,7 +21720,7 @@
      ]
     },
     {
-     "id": 392,
+     "id": 397,
      "name": "wc5BuschKlein",
      "type": "moebel",
      "x": 1664,
@@ -21613,7 +21743,7 @@
      ]
     },
     {
-     "id": 393,
+     "id": 398,
      "name": "wc5SteinB",
      "type": "moebel",
      "x": 672,
@@ -21636,7 +21766,7 @@
      ]
     },
     {
-     "id": 394,
+     "id": 399,
      "name": "wc5Gras",
      "type": "moebel",
      "x": 1456,
@@ -21659,7 +21789,7 @@
      ]
     },
     {
-     "id": 395,
+     "id": 400,
      "name": "wc5Farn",
      "type": "moebel",
      "x": 144,
@@ -21682,7 +21812,7 @@
      ]
     },
     {
-     "id": 396,
+     "id": 401,
      "name": "wc5Farn",
      "type": "moebel",
      "x": 144,
@@ -21705,7 +21835,7 @@
      ]
     },
     {
-     "id": 397,
+     "id": 402,
      "name": "wc5SteinB",
      "type": "moebel",
      "x": 1616,
@@ -21728,7 +21858,7 @@
      ]
     },
     {
-     "id": 398,
+     "id": 403,
      "name": "wc5Gras",
      "type": "moebel",
      "x": 672,
@@ -21751,7 +21881,7 @@
      ]
     },
     {
-     "id": 399,
+     "id": 404,
      "name": "wc5Gras",
      "type": "moebel",
      "x": 672,
@@ -21774,7 +21904,7 @@
      ]
     },
     {
-     "id": 400,
+     "id": 405,
      "name": "wc5BlumenWeiss",
      "type": "moebel",
      "x": 1056,
@@ -21797,7 +21927,7 @@
      ]
     },
     {
-     "id": 401,
+     "id": 406,
      "name": "wc5BlumenWeiss",
      "type": "moebel",
      "x": 1072,
@@ -21820,7 +21950,7 @@
      ]
     },
     {
-     "id": 402,
+     "id": 407,
      "name": "wc5SteinB",
      "type": "moebel",
      "x": 816,
@@ -21843,7 +21973,7 @@
      ]
     },
     {
-     "id": 403,
+     "id": 408,
      "name": "wc5BlumenWeiss",
      "type": "moebel",
      "x": 576,
@@ -21866,7 +21996,7 @@
      ]
     },
     {
-     "id": 404,
+     "id": 409,
      "name": "wc5BlumenWeiss",
      "type": "moebel",
      "x": 592,
@@ -21889,7 +22019,7 @@
      ]
     },
     {
-     "id": 405,
+     "id": 410,
      "name": "wc5SteinB",
      "type": "moebel",
      "x": 240,
@@ -21912,7 +22042,7 @@
      ]
     },
     {
-     "id": 406,
+     "id": 411,
      "name": "wc5PilzeB",
      "type": "moebel",
      "x": 768,
@@ -21935,7 +22065,7 @@
      ]
     },
     {
-     "id": 407,
+     "id": 412,
      "name": "wc5BuschKlein",
      "type": "moebel",
      "x": 1008,
@@ -21958,7 +22088,7 @@
      ]
     },
     {
-     "id": 408,
+     "id": 413,
      "name": "wc5Farn",
      "type": "moebel",
      "x": 400,
@@ -21981,7 +22111,7 @@
      ]
     },
     {
-     "id": 409,
+     "id": 414,
      "name": "wc5Stein",
      "type": "moebel",
      "x": 544,
@@ -22004,7 +22134,7 @@
      ]
     },
     {
-     "id": 410,
+     "id": 415,
      "name": "wc5Stein",
      "type": "moebel",
      "x": 544,
@@ -22027,7 +22157,7 @@
      ]
     },
     {
-     "id": 411,
+     "id": 416,
      "name": "wc5Pilze",
      "type": "moebel",
      "x": 2144,
@@ -22050,7 +22180,7 @@
      ]
     },
     {
-     "id": 412,
+     "id": 417,
      "name": "wc5Pilze",
      "type": "moebel",
      "x": 2128,
@@ -22073,7 +22203,7 @@
      ]
     },
     {
-     "id": 413,
+     "id": 418,
      "name": "wc5BlumenWeiss",
      "type": "moebel",
      "x": 1856,
@@ -22096,7 +22226,7 @@
      ]
     },
     {
-     "id": 414,
+     "id": 419,
      "name": "wc5Pilze",
      "type": "moebel",
      "x": 1328,
@@ -22119,7 +22249,7 @@
      ]
     },
     {
-     "id": 415,
+     "id": 420,
      "name": "wc5Gras",
      "type": "moebel",
      "x": 992,
@@ -22142,7 +22272,7 @@
      ]
     },
     {
-     "id": 416,
+     "id": 421,
      "name": "wc5PilzeB",
      "type": "moebel",
      "x": 224,
@@ -22165,7 +22295,7 @@
      ]
     },
     {
-     "id": 417,
+     "id": 422,
      "name": "wc5PilzeB",
      "type": "moebel",
      "x": 272,
@@ -22188,7 +22318,7 @@
      ]
     },
     {
-     "id": 418,
+     "id": 423,
      "name": "wc5Gras",
      "type": "moebel",
      "x": 192,
@@ -22211,7 +22341,7 @@
      ]
     },
     {
-     "id": 419,
+     "id": 424,
      "name": "wc5Stein",
      "type": "moebel",
      "x": 192,
@@ -22234,7 +22364,7 @@
      ]
     },
     {
-     "id": 420,
+     "id": 425,
      "name": "wc5Farn",
      "type": "moebel",
      "x": 512,
@@ -22257,7 +22387,7 @@
      ]
     },
     {
-     "id": 421,
+     "id": 426,
      "name": "wc5Farn",
      "type": "moebel",
      "x": 576,
@@ -22280,7 +22410,7 @@
      ]
     },
     {
-     "id": 422,
+     "id": 427,
      "name": "wc5Farn",
      "type": "moebel",
      "x": 592,
@@ -22303,7 +22433,7 @@
      ]
     },
     {
-     "id": 423,
+     "id": 428,
      "name": "wc5BlumenWeiss",
      "type": "moebel",
      "x": 1408,
@@ -22326,7 +22456,7 @@
      ]
     },
     {
-     "id": 424,
+     "id": 429,
      "name": "wc5Pilze",
      "type": "moebel",
      "x": 2192,
@@ -22349,7 +22479,7 @@
      ]
     },
     {
-     "id": 425,
+     "id": 430,
      "name": "wc5Pilze",
      "type": "moebel",
      "x": 2208,
@@ -22372,7 +22502,7 @@
      ]
     },
     {
-     "id": 426,
+     "id": 431,
      "name": "wc5Farn",
      "type": "moebel",
      "x": 640,
@@ -22395,7 +22525,7 @@
      ]
     },
     {
-     "id": 427,
+     "id": 432,
      "name": "wc5BlumenWeiss",
      "type": "moebel",
      "x": 1232,
@@ -22418,7 +22548,7 @@
      ]
     },
     {
-     "id": 428,
+     "id": 433,
      "name": "wc5BlumenWeiss",
      "type": "moebel",
      "x": 1232,
@@ -22441,7 +22571,7 @@
      ]
     },
     {
-     "id": 429,
+     "id": 434,
      "name": "wc5SteinB",
      "type": "moebel",
      "x": 1600,
@@ -22464,7 +22594,7 @@
      ]
     },
     {
-     "id": 430,
+     "id": 435,
      "name": "wc5SteinB",
      "type": "moebel",
      "x": 1600,
@@ -22487,7 +22617,7 @@
      ]
     },
     {
-     "id": 431,
+     "id": 436,
      "name": "wc5PilzeB",
      "type": "moebel",
      "x": 304,
@@ -22510,7 +22640,7 @@
      ]
     },
     {
-     "id": 432,
+     "id": 437,
      "name": "wc5PilzeB",
      "type": "moebel",
      "x": 304,
@@ -22533,7 +22663,7 @@
      ]
     },
     {
-     "id": 433,
+     "id": 438,
      "name": "wc5PilzeB",
      "type": "moebel",
      "x": 880,
@@ -22556,7 +22686,7 @@
      ]
     },
     {
-     "id": 434,
+     "id": 439,
      "name": "wc5Gras",
      "type": "moebel",
      "x": 640,
@@ -22579,7 +22709,7 @@
      ]
     },
     {
-     "id": 435,
+     "id": 440,
      "name": "wc5PilzeB",
      "type": "moebel",
      "x": 480,
@@ -22602,7 +22732,7 @@
      ]
     },
     {
-     "id": 436,
+     "id": 441,
      "name": "wc5PilzeB",
      "type": "moebel",
      "x": 464,
@@ -22625,7 +22755,7 @@
      ]
     },
     {
-     "id": 437,
+     "id": 442,
      "name": "wc5PilzeB",
      "type": "moebel",
      "x": 464,
@@ -22648,7 +22778,7 @@
      ]
     },
     {
-     "id": 438,
+     "id": 443,
      "name": "wc5BlumenWeiss",
      "type": "moebel",
      "x": 1120,
@@ -22671,7 +22801,7 @@
      ]
     },
     {
-     "id": 439,
+     "id": 444,
      "name": "wc5PilzeB",
      "type": "moebel",
      "x": 880,
@@ -22694,7 +22824,7 @@
      ]
     },
     {
-     "id": 440,
+     "id": 445,
      "name": "wc5Stein",
      "type": "moebel",
      "x": 1376,
@@ -22717,7 +22847,7 @@
      ]
     },
     {
-     "id": 441,
+     "id": 446,
      "name": "wc5Stein",
      "type": "moebel",
      "x": 1360,
@@ -22740,7 +22870,7 @@
      ]
     },
     {
-     "id": 442,
+     "id": 447,
      "name": "wc5Stein",
      "type": "moebel",
      "x": 1376,
@@ -22763,7 +22893,7 @@
      ]
     },
     {
-     "id": 443,
+     "id": 448,
      "name": "wc5Farn",
      "type": "moebel",
      "x": 1920,

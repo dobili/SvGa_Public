@@ -568,3 +568,13 @@ Damit die Karten die Rückkehr in späteren Akten tragen, ohne neu gezeichnet zu
 | park       | freier Platz für das öffentliche Brett   | 9–13 / 22–25 am Ende des Hauptwegs Süd                                         | Post-Game                                       |
 | clubraum   | freie Wandfläche für das Nadel-Plakat    | Nordwand (13, 1)–(14, 2) über dem Pult (4.3)                                   | Nadeln des Helden                               |
 | wohnzimmer | Platz auf der Anrichte                   | (4, 3), Platte frei                                                            | Mamas altes Turnierfoto ab Akt 2                |
+
+## Runde 7 (10.11.2026): Gebäude und Belebung
+
+Nach Regel 10.51 und 10.53, ohne das gewählte Bild zu ändern. Drei Kulissenhäuser ohne Innenraum:
+`mf8KulisseHausRot` im Garten zwischen den beiden Bauernhäusern im Süden (12, 37), dazu in zweiter
+Reihe hinter dem Diner `mf8KulisseHausBlau` (33, 10) und `mf8KulisseHausKlein` (36, 5). Damit 12
+Gebäude. Belebung: 12 Statisten, 9 davon ansprechbar (Sätze unter `statist.mapleFalls.aussen.*`,
+gemischt nach Dokument 16, 3.2: Welt, Lieblingszug, Geschichte in zwei Teilen, Rat, zweimal
+Schachgeschichte, Missverständnis, Perfect Move, Motiv), dazu Hund, Tauben, Eichhörnchen und
+Katze.

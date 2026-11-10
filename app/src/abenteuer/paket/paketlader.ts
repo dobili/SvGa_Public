@@ -116,6 +116,33 @@ async function ladeDatei(
 }
 
 /**
+ * So viele Dateien lädt das Paket gleichzeitig. Warum: Das Paket hat rund 2000 kleine Dateien
+ * (Möbel, Porträts); einzeln nacheinander kostete jede eine ganze Netzrunde, das Laden dauerte
+ * dadurch auf dem Handy Minuten (Prüfung nach dem großen Merge, 10.11.2026). Sechs entspricht den
+ * gleichzeitigen Verbindungen eines Browsers je Server unter HTTP/1.1.
+ */
+const GLEICHZEITIG = 6;
+
+/**
+ * Führt `aufgabe` für alle Einträge aus, höchstens `anzahl` zugleich; der erste Fehler bricht ab
+ * (die übrigen laufenden Aufgaben enden noch, ihr Ergebnis bleibt im Cache).
+ * Beispiel: 2000 Dateien, anzahl 6 → sechs Arbeiter nehmen sich der Reihe nach die nächste Datei.
+ */
+export async function jeGleichzeitig<T>(
+  eintraege: readonly T[],
+  anzahl: number,
+  aufgabe: (eintrag: T) => Promise<void>,
+): Promise<void> {
+  let naechster = 0;
+  const arbeiter = async (): Promise<void> => {
+    for (let i = naechster++; i < eintraege.length; i = naechster++) {
+      await aufgabe(eintraege[i] as T);
+    }
+  };
+  await Promise.all(Array.from({ length: Math.min(anzahl, eintraege.length) }, arbeiter));
+}
+
+/**
  * Lädt das Paket der aktuellen Version (nur Fehlendes), legt zuletzt das Verzeichnis ab (das
  * heißt „vollständig“), löscht ältere Versionen und bittet den Service Worker um den Code.
  * Wirft bei Netzfehlern; Geladenes bleibt für den nächsten Versuch erhalten.
@@ -125,12 +152,12 @@ export async function ladePaket(fortschritt: Ladefortschritt): Promise<void> {
   const verzeichnis = await verzeichnisVomServer();
   const speicher = await caches.open(cachename(verzeichnis.version));
   let geladen = 0;
-  for (const datei of verzeichnis.dateien) {
-    await ladeDatei(speicher, datei, (bytes) => {
+  await jeGleichzeitig(verzeichnis.dateien, GLEICHZEITIG, (datei) =>
+    ladeDatei(speicher, datei, (bytes) => {
       geladen += bytes;
       fortschritt(Math.min(geladen, verzeichnis.bytes), verzeichnis.bytes);
-    });
-  }
+    }),
+  );
   await speicher.put(adresse(VERZEICHNIS_DATEI), new Response(JSON.stringify(verzeichnis)));
   for (const name of await caches.keys()) {
     if (name.startsWith(CACHE_PRAEFIX) && name !== cachename(verzeichnis.version)) {

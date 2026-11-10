@@ -3971,7 +3971,10 @@
           "kennung": "crossroads.aussen",
           "datei": "karten/crossroads-aussen.json",
           "name": "ort.crossroads.aussen",
-          "innen": false
+          "innen": false,
+          "zustaende": {
+            "gatterschluessel": "karten/crossroads-aussen-gatter-offen.json"
+          }
         },
         {
           "kennung": "crossroads.raststaette",

@@ -8,20 +8,27 @@ from pipeline.abenteuer.kartenbau import LEER, WAND, WASSER
 
 # Längste Überquerung, die das Wasser darunter weiterlaufen lässt (Brücke, Gleis auf einer Brücke).
 BRUECKE_MAX = 4
+# Böden aus Holz, die über Wasser eine Brücke sind (wie HOLZ in zusammenhang.py).
+HOLZ_BOEDEN = frozenset({"dielen", "holzDunkel", "holzHell"})
 
 
-def ueberbrueckt(zeilen: list[str], x: int, y: int, dx: int, dy: int) -> bool:
+def ueberbrueckt(
+    zeilen: list[str], x: int, y: int, dx: int, dy: int, bruecken: frozenset[str] = frozenset()
+) -> bool:
     """Ob vom Wasserfeld (x, y) in Richtung (dx, dy) eine Brücke liegt, hinter der wieder Wasser kommt.
 
     Warum: Eine Brücke ist im Raster ein begehbarer Boden („h“) quer über dem Bach. Ohne diese Prüfung
     bekäme das Wasser an jeder Brücke ein Ufer, und der Bach sähe aus wie eine Kette von Teichen
     (Bildprüfung Cedar Creek, 9.11.2026).
-    Eingaben: Raster, Wasserfeld, Richtung zum Nachbarn. Ausgabe: True, wenn nach höchstens
-    BRUECKE_MAX Feldern desselben begehbaren Zeichens wieder Wasser (oder der Kartenrand hinter
-    Wasser) folgt.
-    Beispiel: Spalte „~hh~“ von oben nach unten: Das obere Wasser läuft unter der Brücke weiter.
-    Sonderfälle: Wand, Leere, Gras und Wasser selbst sind keine Brücke; ein Steg, der im Wasser endet,
-    hat kein Wasser dahinter und bekommt deshalb weiter sein Ufer.
+    Eingaben: Raster, Wasserfeld, Richtung zum Nachbarn, ``bruecken``: Zeichen, die eine Brücke sein
+    dürfen (Holzböden der Szene, siehe ``brueckenzeichen``). Ausgabe: True, wenn nach höchstens
+    BRUECKE_MAX Feldern desselben Brückenzeichens wieder Wasser folgt.
+    Beispiel: Spalte „~hh~“ mit „h“ = Dielen von oben nach unten: Das obere Wasser läuft unter der
+    Brücke weiter.
+    Sonderfälle: Nur Brückenzeichen zählen. Vorher galt jeder Boden außer Gras als Brücke, und
+    Sinter, Erde, Sand oder Pflaster zwischen zwei Wassern nahmen dem Ufer seine Innenecken
+    (Geysirbecken, Riverton, Seeufer; Hinweis des Haupt-Chats, 10.11.2026). Ein Steg, der im Wasser
+    endet, hat kein Wasser dahinter und bekommt deshalb weiter sein Ufer.
     """
     hoehe, breite = len(zeilen), len(zeilen[0])
     nx, ny = x + dx, y + dy
@@ -29,8 +36,8 @@ def ueberbrueckt(zeilen: list[str], x: int, y: int, dx: int, dy: int) -> bool:
         return False
     bruecke = zeilen[ny][nx]
     # Gras ist nie eine Brücke: Sonst verlor ein Bach, der um eine Spalte versetzt weiterläuft,
-    # seine Uferecken (Park, Bildprüfung 9.11.2026).
-    if bruecke in (WASSER, WAND, LEER, "."):
+    # seine Uferecken (Park, Bildprüfung 9.11.2026). Dasselbe gilt für jeden anderen Nicht-Holzboden.
+    if bruecke not in bruecken:
         return False
     for schritt in range(1, BRUECKE_MAX + 1):
         nx, ny = x + dx * schritt, y + dy * schritt
@@ -66,7 +73,18 @@ def wirksames_zeichen(zeilen: list[str], x: int, y: int) -> str:
     return zeilen[y][x]
 
 
-def gleicher_boden(zeilen: list[str], x: int, y: int, dx: int, dy: int) -> bool:
+def brueckenzeichen(szene: dict) -> frozenset[str]:
+    """Zeichen, die als Brücke über Wasser gelten: Holzböden der Szene (Dielen, Steg, Bohlen).
+
+    Warum: Brücken sind im Raster ein Holzboden quer über dem Bach; Felder aus „bruecken“ sind
+    in ``kartenbild`` schon Wasser. Beispiel: Pelikaninsel „b“ = holzDunkel → {"b"}.
+    """
+    return frozenset(z for z, art in szene.get("boeden", {}).items() if art in HOLZ_BOEDEN)
+
+
+def gleicher_boden(
+    zeilen: list[str], x: int, y: int, dx: int, dy: int, bruecken: frozenset[str] = frozenset()
+) -> bool:
     """Ob der Boden an (x, y) in Richtung (dx, dy) ohne Rand weiterläuft.
 
     Warum: Der Autor sah Wege ohne Rand am Kartenrand, Grasnähte zwischen Trampelpfad und Gehweg
@@ -80,11 +98,13 @@ def gleicher_boden(zeilen: list[str], x: int, y: int, dx: int, dy: int) -> bool:
         return True
     nachbar = wirksames_zeichen(zeilen, nx, ny)
     if zeichen == WASSER:
-        return nachbar == WASSER or ueberbrueckt(zeilen, x, y, dx, dy)
+        return nachbar == WASSER or ueberbrueckt(zeilen, x, y, dx, dy, bruecken)
     return nachbar == zeichen or nachbar not in TRENNT
 
 
-def bodenfeld(art: dict, zeilen: list[str], x: int, y: int) -> list[int]:
+def bodenfeld(
+    art: dict, zeilen: list[str], x: int, y: int, bruecken: frozenset[str] = frozenset()
+) -> list[int]:
     """Die Kachel eines Bodens an (x, y): mit „rand“ Rand-, Eck- oder Innenecken-Stück je nach
     Nachbarn (3×3-Block von LimeZu und die vier Innenecken rechts daneben), mit „unter_wand“ direkt
     unter einer Wand die Schattenkachel, mit „varianten“ eine feste Zufallsauswahl, sonst „feld“.
@@ -95,7 +115,7 @@ def bodenfeld(art: dict, zeilen: list[str], x: int, y: int) -> list[int]:
     if "rand" in art:
 
         def gleich(dx: int, dy: int) -> bool:
-            return gleicher_boden(zeilen, x, y, dx, dy)
+            return gleicher_boden(zeilen, x, y, dx, dy, bruecken)
 
         spalte = 1 if gleich(-1, 0) == gleich(1, 0) else 0 if not gleich(-1, 0) else 2
         reihe = 1 if gleich(0, -1) == gleich(0, 1) else 0 if not gleich(0, -1) else 2

@@ -13,7 +13,7 @@ from pathlib import Path
 from PIL import Image, ImageDraw
 
 from pipeline.abenteuer.belebungsvorschau import teile as belebungsteile
-from pipeline.abenteuer.bodenraster import bodenfeld, randnachbar
+from pipeline.abenteuer.bodenraster import bodenfeld, brueckenzeichen, randnachbar
 from pipeline.abenteuer.bodenvariation import lade_kachel, variiere
 from pipeline.abenteuer.kartenbau import GESPERRT, INHALTE, LEER, WAND, WASSER, K, lade, platziere, raster
 from pipeline.abenteuer.katalog import katalogbefund, katalogeintraege
@@ -117,6 +117,7 @@ def hintergrund(szene: dict, privat: Path, gezeichnet: dict | None = None) -> Im
     # Felskanten aus LimeZus Klippenkacheln (Szene „kante“: „klippe“, pipeline/abenteuer/klippe.py).
     klippe = szene.get("kante") == "klippe"
     gras = grasboden(szene)
+    ueber = brueckenzeichen(szene)  # Holzböden, unter denen das Wasser weiterläuft
     for y, zeile in enumerate(zeilen):
         for x, z in enumerate(zeile):
             ort = (x * K, y * K)
@@ -126,7 +127,7 @@ def hintergrund(szene: dict, privat: Path, gezeichnet: dict | None = None) -> Im
             if z == WASSER:
                 # Ufer aus Stein (Szene „ufer“: „stein“, KARTENREGELN 10.6): dieselbe Kachelwahl,
                 # gezeichnet aus dem eigenen Bogen; die Randspur rechnet mit LimeZus Wasser.
-                feld = bodenfeld(boeden["wasser"], zeilen, x, y)
+                feld = bodenfeld(boeden["wasser"], zeilen, x, y, ueber)
                 art = boeden[ufer]
                 eigen = [art["rand"][i] + feld[i] - boeden["wasser"]["rand"][i] for i in (0, 1)]
                 bild.alpha_composite(kachel(privat, boegen, art, eigen), ort)
@@ -140,7 +141,7 @@ def hintergrund(szene: dict, privat: Path, gezeichnet: dict | None = None) -> Im
                 nz = zeilen[innen[1]][innen[0]]
                 artname = "wasser" if nz == WASSER else sonder.get(nz, grund)
                 art, quelle = boeden[artname], zeilen if nz == WASSER else roh
-                feld = bodenfeld(art, quelle, *innen)
+                feld = bodenfeld(art, quelle, *innen, ueber)
                 bild.alpha_composite(kachel(privat, boegen, art, feld), ort)
                 if gezeichnet is not None:
                     gezeichnet[(x, y)] = (artname, feld)

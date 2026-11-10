@@ -8,6 +8,7 @@ kartenbild.py verfolgt zusätzlich die gezeichneten Ränder.
 
 import re
 
+from pipeline.abenteuer.bodenraster import HOLZ_BOEDEN
 from pipeline.abenteuer.kartenbau import LEER, WAND, WASSER, K
 
 # Mindestbreiten in Kacheln (KARTENREGELN 10.33): Straße zwei Spuren, Weg zwei Leute nebeneinander.
@@ -25,7 +26,7 @@ WASSER_MINDEST = 2
 # Ein Fluss darf von Feld zu Feld um so viel breiter oder schmaler werden, ein Weg nur um eins.
 WASSER_SPRUNG = 2
 # Holzböden über Wasser (Brücken, Stege) gehören für den Zusammenhang zum Wasserlauf.
-HOLZ = {"dielen", "holzDunkel", "holzHell"}
+HOLZ = HOLZ_BOEDEN
 ENDSTUECK = re.compile(r"Ecke|Ende|Pfosten|Tor|Links|Rechts|Seite|Rand|Left|Right|End|Corner|Post|Gate", re.I)
 
 

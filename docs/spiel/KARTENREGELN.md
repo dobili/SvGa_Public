@@ -825,3 +825,33 @@ auf jeder soll etwas passieren, das man entdecken kann. Die Geschichten dazu ste
     - Figuren und Tiere zählen nicht als Zustand.
     - Die `beschreibung` der Zustandsszene beginnt mit dem Satz „Zustand: wann in der Geschichte,
       was sich ändert, warum“.
+
+64. **Größenverhältnisse von Fahrzeugen und Schiffen** (Wunsch des Autors, 10.11.2026: „Bei den
+    Schiffen und Fahrzeugen achte bitte auf die Größenverhältnisse, sie sollten zur Realität passen“).
+    - **Maßstab:** Eine Figur ist 2 Kacheln hoch (etwa 1,8 m). Bis etwa 6 m gilt 1 Kachel ≈ 1 m, wie
+      bei LimeZus Autos (4–5 × 2 Kacheln).
+    - **Größere Dinge:** Sie werden gestaucht, wie bei LimeZus Bus (7 statt 12 Kacheln). Die
+      Reihenfolge bleibt aber immer erhalten: Ein Kutter ist größer als ein Motorboot, eine Fähre
+      größer als ein Kutter, ein Frachtkahn größer als eine Fähre.
+    - **Richtmaße (Länge × Breite in Kacheln, Draufsicht):**
+
+      | Ding                  | Kacheln       | Ding                     | Kacheln                      |
+      | --------------------- | ------------- | ------------------------ | ---------------------------- |
+      | Fahrrad               | 2 × 1         | Ruderboot, Kanu          | 3–4 × 1,5                    |
+      | Auto                  | 4–5 × 2       | Motorboot                | 5–6 × 2                      |
+      | Lieferwagen, Pick-up  | 5–6 × 2,5     | Fischkutter, Schlepper   | 9–12 × 3–4                   |
+      | Bus, Wohnmobil        | 7–9 × 3       | Hausboot                 | 8–12 × 4                     |
+      | Lastwagen             | 9–11 × 3      | Personenfähre            | 16–20 × 6                    |
+      | Traktor               | 3–4 × 2       | Frachtkahn, Binnenschiff | 24–30 × 5                    |
+      | Güterwagen, Waggon    | 8–10 × 3      | Containerschiff          | ≥ 40 × 10, nur angeschnitten |
+      | Container 20 / 40 Fuß | 4 × 2 / 8 × 2 | Portalkran (Höhe)        | 10–14                        |
+
+    - **Wasser passt zu den Booten:** Ein Kanal für Frachtkähne hat mindestens 7 Reihen Wasser. Eine
+      Schleusenkammer ist mindestens 2 Kacheln länger und 2 breiter als der größte Kahn. Ein Kai für
+      eine Fähre ist mindestens so lang wie die Fähre.
+    - **Zu kleine Bilder:** Bilder aus Paketen, die zu klein sind (Frachter der Hafenpakete nur gut
+      zwei Figuren lang), werden nicht so eingesetzt. Ihr Rumpf wird an einer gleichförmigen Stelle
+      geschnitten und das Mittelstück wiederholt, bis die Länge stimmt. Masten, Kräne und Brücken
+      werden ebenso verlängert.
+    - **Prüfung:** Der Gutachter prüft die Maße gegen diese Tabelle (KARTENPRUEFUNG 3,
+      „Wasser, Ufer, Boote“ und „Gleise und Straßen“).

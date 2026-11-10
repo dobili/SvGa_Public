@@ -333,6 +333,15 @@ Geprüft nach Gebäude außen und Zweck; alle Räume bleiben, wie sie sind:
 | Waschsalon  | Waschsalon 8 × 9                 | 14 × 11 | Zwei Reihen Maschinen, Bank, Getränkeautomat; so groß wie ein kleiner Waschsalon an der Hauptstraße. |
 | Drechslerei | Werkstatt 8 × 10                 | 16 × 11 | Werkbank, Drehbank, Holzlager; eine Werkstatt für einen Handwerker.                                  |
 
+### 3.4 Runde 8: Zustände der Innenräume (KARTENREGELN 10.63, mittel-1)
+
+| Karte                    | Zustand    | Bedingung        | Zustand: wann, was, warum                                                                                                 |
+| ------------------------ | ---------- | ---------------- | ------------------------------------------------------------------------------------------------------------------------- |
+| `cedarCreek.archiv`      | `geordnet` | `archivGeordnet` | Nach der Nebenaufgabe „Das Archiv“ (Szene 18) stehen statt der nassen Kartons trockene, geschlossene Kartons.             |
+| `cedarCreek.bibliothek`  | –          | –                | Kein fester Wechsel.                                                                                                      |
+| `cedarCreek.waschsalon`  | –          | –                | Boateng klebt nach dem Rätsel eine neue Stellung auf; das ist ein Zettel auf dem Trockner, zu klein für ein eigenes Bild. |
+| `cedarCreek.drechslerei` | –          | –                | Kein fester Wechsel.                                                                                                      |
+
 ## 4. Bühnenbilder
 
 Runde 4 (9.11.2026). Je Karte Größe, Wände, Böden, Laufwege, Zonen und Inventar; die Möbel stehen in
@@ -703,12 +712,14 @@ Tiere aus dem Wasser (Akt-1-Nacharbeit); dazu ein Pflasterweg zum Stadthaus hint
 (10.58). Weg 1: Angler auf dem Steg, Trampelweg weitet sich vor der Straße, Aufsteller „FLOHMARKT SA“
 statt des hängenden Schilds, Tiere im Zedernpfad nicht mehr in Bäumen.
 
-**Zustände (10.63):**
+**Zustände (10.63), gebaut (Szenen `weg-maple-cedar-landstrasse-<zustand>.json`):**
 
-| Karte                       | Zustand         | Bedingung                     | Zustand: wann, was, warum                                                                                                |
-| --------------------------- | --------------- | ----------------------------- | ------------------------------------------------------------------------------------------------------------------------ |
-| `cedarCreek.aussen`         | `brueckeFertig` | `endeAkt1Gesehen`             | Ende von Akt 1: Die Brücke über den Bach nach Riverton ist fertig, Baustelle und Absperrung sind weg.                    |
-| `wegMapleCedar.landstrasse` | `gatterOffen`   | `wegMapleCedarTafelBestanden` | Nach der Rätseltafel: Walt Miller hat das Gatter zum Kürbishof geöffnet (S1).                                            |
-| `wegMapleCedar.landstrasse` | `flohmarkt`     | `nadelMapleFalls >= 1`        | Ab der ersten Nadel: Auf dem Hof stehen Tische mit Kram und Odettes Wohnmobil; vorher nur das Plakat und ein leerer Hof. |
-| `wegMapleCedar.zedernpfad`  | `stammWeg`      | `nadelCedarCreek >= 1`        | Nach der Nadel von Cedar Creek: Mr. Dunmore hat die umgestürzte Zeder beiseitegezogen, der Pfad ist frei (S2).           |
-| `wegMapleCedar.flussweg`    | –               | –                             | Feste Tönung Nebel (F1), kein Wechsel.                                                                                   |
+| Karte                       | Zustand             | Bedingung                                             | Zustand: wann, was, warum                                                             |
+| --------------------------- | ------------------- | ----------------------------------------------------- | ------------------------------------------------------------------------------------- |
+| `wegMapleCedar.landstrasse` | `flohmarkt-leer`    | `nadelMapleFalls < 1`                                 | Vor der ersten Nadel: nur das Wohnmobil auf dem Hof, die Tische mit Kram fehlen noch. |
+| `wegMapleCedar.landstrasse` | `gatter-offen`      | `wegMapleCedarTafelBestanden`                         | Nach der Rätseltafel: Walt Miller hat das Gatter zum Kürbishof geöffnet (S1).         |
+| `wegMapleCedar.landstrasse` | `gatter-offen-leer` | `wegMapleCedarTafelBestanden und nadelMapleFalls < 1` | Beides zugleich (letzter passender Eintrag gilt).                                     |
+
+Keine Zustände: `cedarCreek.aussen` (die Brücke nach Riverton ist auf der Karte schon fertig, eine
+Baustelle gibt es nicht), `wegMapleCedar.zedernpfad` (der Stamm von S2 ist kein Bild, nur der
+Übergang mit Dialog), `wegMapleCedar.flussweg` (feste Tönung Nebel).

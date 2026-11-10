@@ -680,3 +680,17 @@ Material `fels` als gerade Bänder; LimeZu zeigt Kanten mit gewellter Oberkante,
 Fels. Das braucht ein Kantenmaterial im Kartenbild (Haupt-Chat oder mittel-2); vorgeschlagen in der
 Meldung an den Haupt-Chat. Friedhof (050) und Werkhof (015) passen in Aufbau (Zaun ringsum, Wege, Kapelle
 am Rand; Container, Fässer, Wellblech) zu den Vorbildern.
+
+**Zustände (gebaut, Technik von mittel-2; `python -m pipeline.abenteuer.zustaende`):**
+
+| Karte   | Zustand       | Bedingung         | Was sich ändert                                                                    |
+| ------- | ------------- | ----------------- | ---------------------------------------------------------------------------------- |
+| aussen  | vermietet     | `kaufGesehen`     | Akt 3: Schild von Perfect Move am Werkstor, Werksbus im Werkhof                    |
+| aussen  | meisterschaft | `endeAkt3Gesehen` | Akt 4: Schild bleibt, der Werksbus ist zur Meisterschaft nach Crossroads unterwegs |
+| kantine | logo          | `kaufGesehen`     | Akt 3: Logo von Perfect Move über der Ausgabe, Karton mit Pokalen an der Tür       |
+
+Nicht gebaut, mit Grund: **Winter** (Szene 50) kommt mit der Schneefärbung von mittel-2 (Entscheidung
+vom 10.11.2026), nicht als eigene Szene. **Lastkahn am Kai:** Der Kanal läuft in Ironwood von Nord nach
+Süd; den Lastkahn gibt es nur in Ost-West-Ansicht, er läge quer im Kanal (Regel 24). **Rückkauf des
+Clubs** (nach dem Spiel): Dafür gibt es noch keine Variable. **Gittertor zum Steinbruch:** Die Sperre
+S4 betrifft den Stollen (Laterne), nicht die Zufahrt; der Absperrbock bleibt Ortsbild.

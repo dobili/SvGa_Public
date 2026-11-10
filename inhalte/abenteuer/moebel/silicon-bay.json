@@ -158,7 +158,9 @@
       "art": "deko",
       "blick": "unten",
       "zustand": "neu",
-      "stil": "modern"
+      "stil": "modern",
+      "begehbar": true,
+      "begehbar_grund": "hängt an der Wand"
     },
     "sb5DatenwandB": {
       "quelle": "modern-office/Modern Office Singles/Modern_Office_Singles_170.png",
@@ -168,7 +170,9 @@
       "art": "deko",
       "blick": "unten",
       "zustand": "neu",
-      "stil": "modern"
+      "stil": "modern",
+      "begehbar": true,
+      "begehbar_grund": "hängt an der Wand"
     },
     "sb5Winkeltisch": {
       "quelle": "modern-office/Modern Office Singles/Modern_Office_Singles_249.png",
@@ -217,7 +221,9 @@
       "art": "deko",
       "blick": "unten",
       "zustand": "neu",
-      "stil": "modern"
+      "stil": "modern",
+      "begehbar": true,
+      "begehbar_grund": "hängt an der Wand"
     },
     "sb5Automat": {
       "quelle": "modern-office/Modern Office Singles/Modern_Office_Singles_175.png",
@@ -343,7 +349,7 @@
       "quelle": "modern-exteriors/Modern_Exteriors_16x16/ME_Theme_Sorter_16x16/21_Beach_Singles_16x16/21_Beach_16x16_Ship_Bar.png",
       "breite": 112,
       "hoehe": 80,
-      "kollision": false,
+      "kollision": true,
       "art": "fahrzeug",
       "blick": "unten",
       "zustand": "gebraucht",
@@ -357,7 +363,9 @@
       "art": "fahrzeug",
       "blick": "links",
       "zustand": "gebraucht",
-      "stil": "klassisch"
+      "stil": "klassisch",
+      "begehbar": true,
+      "begehbar_grund": "liegt im Wasser, dort läuft niemand"
     },
     "sb5StegPlanke": {
       "quelle": "modern-exteriors/Modern_Exteriors_16x16/ME_Theme_Sorter_16x16/11_Camping_Singles_16x16/ME_Singles_Camping_16x16_Pier_8.png",
@@ -542,7 +550,9 @@
       "art": "schild",
       "blick": "unten",
       "zustand": "neu",
-      "stil": "modern"
+      "stil": "modern",
+      "begehbar": true,
+      "begehbar_grund": "hängt an der Wand"
     },
     "sb5SchildAcademy": {
       "quelle": "spiel/eigene/schild_academy.png",
@@ -552,7 +562,9 @@
       "art": "schild",
       "blick": "unten",
       "zustand": "neu",
-      "stil": "modern"
+      "stil": "modern",
+      "begehbar": true,
+      "begehbar_grund": "hängt an der Wand"
     },
     "sb5BrunnenWasser": {
       "quelle": "modern-exteriors/Modern_Exteriors_16x16/ME_Theme_Sorter_16x16/17_Garden_Singles_16x16/ME_Singles_Garden_16x16_Fountain_3_4.png",
@@ -666,7 +678,9 @@
       "art": "fahrzeug",
       "blick": "unten",
       "zustand": "gebraucht",
-      "stil": "modern"
+      "stil": "modern",
+      "begehbar": true,
+      "begehbar_grund": "liegt im Wasser, dort läuft niemand"
     },
     "sb5Lab": {
       "quelle": "spiel/eigene/werk_halle.png",
@@ -844,7 +858,9 @@
       "kollision": false,
       "art": "deko",
       "zustand": "neu",
-      "stil": "modern"
+      "stil": "modern",
+      "begehbar": true,
+      "begehbar_grund": "liegt flach am Boden"
     },
     "sb5BildschirmB": {
       "quelle": "modern-office/Modern Office Singles/Modern_Office_Singles_171.png",
@@ -1428,7 +1444,9 @@
       "art": "deko",
       "blick": "unten",
       "zustand": "neu",
-      "stil": "einfach"
+      "stil": "einfach",
+      "begehbar": true,
+      "begehbar_grund": "liegt flach am Boden"
     },
     "sb8Finkenzeichen": {
       "quelle": "spiel/eigene/finkenzeichen_blech.png",
@@ -1438,7 +1456,9 @@
       "art": "deko",
       "blick": "unten",
       "zustand": "neu",
-      "stil": "einfach"
+      "stil": "einfach",
+      "begehbar": true,
+      "begehbar_grund": "liegt flach am Boden"
     },
     "sb8Bildschirmtisch": {
       "quelle": "spiel/eigene/akademie_bildschirmtisch.png",
@@ -1548,7 +1568,9 @@
       "art": "bild",
       "zustand": "neu",
       "stil": "modern",
-      "blick": "unten"
+      "blick": "unten",
+      "begehbar": true,
+      "begehbar_grund": "hängt an der Wand"
     },
     "sb8Rangliste": {
       "quelle": "spiel/eigene/akademie_rangliste.png",
@@ -1558,7 +1580,9 @@
       "art": "bild",
       "zustand": "neu",
       "stil": "modern",
-      "blick": "unten"
+      "blick": "unten",
+      "begehbar": true,
+      "begehbar_grund": "hängt an der Wand"
     },
     "sb8Statistik": {
       "quelle": "spiel/eigene/akademie_statistik.png",
@@ -1568,7 +1592,9 @@
       "art": "bild",
       "zustand": "neu",
       "stil": "modern",
-      "blick": "unten"
+      "blick": "unten",
+      "begehbar": true,
+      "begehbar_grund": "hängt an der Wand"
     },
     "sb8Pflanze": {
       "quelle": "spiel/eigene/akademie_pflanze.png",
@@ -1748,7 +1774,9 @@
       "art": "fahrzeug",
       "zustand": "gebraucht",
       "stil": "modern",
-      "blick": "keine"
+      "blick": "keine",
+      "begehbar": true,
+      "begehbar_grund": "liegt im Wasser, dort läuft niemand"
     },
     "sb8Faehrhaeuschen": {
       "quelle": "modern-exteriors/Modern_Exteriors_16x16/ME_Theme_Sorter_16x16/15_Police_Station_Singles_16x16/ME_Singles_Police_Station_16x16_Police_Station_Roof_Cabin_1.png",
@@ -1768,7 +1796,9 @@
       "art": "fenster",
       "zustand": "neu",
       "stil": "modern",
-      "blick": "keine"
+      "blick": "keine",
+      "begehbar": true,
+      "begehbar_grund": "hängt an der Wand"
     },
     "sb8RanglisteTafel": {
       "quelle": "spiel/eigene/akademie_rangliste_tafel.png",
@@ -1778,7 +1808,9 @@
       "art": "bild",
       "zustand": "neu",
       "stil": "modern",
-      "blick": "unten"
+      "blick": "unten",
+      "begehbar": true,
+      "begehbar_grund": "hängt an der Wand"
     },
     "sb8Grossbildschirm": {
       "quelle": "spiel/eigene/akademie_grossbildschirm.png",
@@ -1788,7 +1820,9 @@
       "art": "bild",
       "zustand": "neu",
       "stil": "modern",
-      "blick": "unten"
+      "blick": "unten",
+      "begehbar": true,
+      "begehbar_grund": "hängt an der Wand"
     },
     "sb8Beistelltisch": {
       "quelle": "spiel/eigene/akademie_beistelltisch.png",
@@ -1914,7 +1948,7 @@
       "quelle": "modern-exteriors/Modern_Exteriors_16x16/ME_Theme_Sorter_16x16/20_Subway_and_Train_Station_Singles_16x16/ME_Singles_Subway_and_Train_Station_16x16_Guitar_Case_Money.png",
       "breite": 32,
       "hoehe": 16,
-      "kollision": false,
+      "kollision": true,
       "art": "deko",
       "zustand": "gebraucht",
       "stil": "klassisch",
@@ -2264,6 +2298,36 @@
       "hoehe": 48,
       "kollision": false,
       "art": "markierung",
+      "zustand": "neu",
+      "stil": "modern"
+    },
+    "sb12Klimageraet": {
+      "quelle": "spiel/eigene/klimageraet_serverraum.png",
+      "breite": 32,
+      "hoehe": 48,
+      "kollision": true,
+      "art": "geraet",
+      "blick": "unten",
+      "zustand": "neu",
+      "stil": "modern"
+    },
+    "sb12Schubladenschrank": {
+      "quelle": "spiel/eigene/schubladenschrank_metall.png",
+      "breite": 32,
+      "hoehe": 48,
+      "kollision": true,
+      "art": "schrank",
+      "blick": "unten",
+      "zustand": "neu",
+      "stil": "modern"
+    },
+    "sb12Serverreihe": {
+      "quelle": "spiel/eigene/serverreihe_6.png",
+      "breite": 144,
+      "hoehe": 48,
+      "kollision": true,
+      "art": "geraet",
+      "blick": "unten",
       "zustand": "neu",
       "stil": "modern"
     },

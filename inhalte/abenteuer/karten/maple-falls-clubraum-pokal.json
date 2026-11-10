@@ -4488,12 +4488,12 @@
       {
        "name": "tiefe",
        "type": "int",
-       "value": 1
+       "value": 38
       },
       {
        "name": "kollision",
        "type": "bool",
-       "value": false
+       "value": true
       }
      ]
     },

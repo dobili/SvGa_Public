@@ -208,10 +208,10 @@
     {
       "name": "zuschauer",
       "typ": "statist",
-      "feld": [9, 7],
+      "feld": [6, 7],
       "eigenschaften": {
-        "von": "9,7",
-        "bis": "9,7",
+        "von": "6,7",
+        "bis": "6,7",
         "tun": "beugt sich über das Brett",
         "wann": "tag"
       }

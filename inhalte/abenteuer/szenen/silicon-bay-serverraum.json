@@ -4,7 +4,7 @@
   "art": "innen",
   "wand": "hellgrau",
   "boden": "stein",
-  "beschreibung": "Der Serverraum hinter der Akademie (Variante A, nach dem Ortsdokument), 14 × 10: kalt, blaues Licht, das Rauschen der Lüfter. An der Nordwand stehen fünf Serverschränke lückenlos nebeneinander, in der Mitte eine zweite Reihe aus zwei Schränken mit freiem Gang dahinter. In der Nordostecke das Klimagerät, an der Ostwand ein Metallschrank mit Schubladen, in dem die Schummelgeräte liegen. In der Südwestecke ein Arbeitsplatz mit Bildschirmen. Die Glastür in der Südwand führt zurück in die Akademie.",
+  "beschreibung": "Der Serverraum hinter der Akademie (Variante A, nach dem Ortsdokument), 14 × 10: kalt, blaues Licht, das Rauschen der Lüfter. An der Nordwand stehen sechs Serverschränke lückenlos nebeneinander, in der Mitte eine zweite Reihe aus zwei Schränken mit freiem Gang dahinter. In der Nordostecke das Klimagerät, an der Ostwand ein Metallschrank mit Schubladen, in dem die Schummelgeräte liegen. An der Westwand ein Arbeitsplatz mit Bildschirmen und Stuhl. Die Glastür in der Südwand führt zurück in die Akademie.",
   "zustand": ["neu", "gebraucht"],
   "stil": ["modern", "japanisch"],
   "raster": [
@@ -21,24 +21,8 @@
   ],
   "objekte": [
     {
-      "moebel": "sb5Server",
+      "moebel": "sb12Serverreihe",
       "feld": [1, 1]
-    },
-    {
-      "moebel": "sb5ServerB",
-      "feld": [3, 1]
-    },
-    {
-      "moebel": "sb5ServerC",
-      "feld": [5, 1]
-    },
-    {
-      "moebel": "sb5Server",
-      "feld": [7, 1]
-    },
-    {
-      "moebel": "sb5ServerB",
-      "feld": [9, 1]
     },
     {
       "moebel": "sb5ServerB",
@@ -49,25 +33,30 @@
       "feld": [5, 5]
     },
     {
-      "moebel": "sb5Metallschrank",
-      "feld": [11, 5]
-    },
-    {
-      "moebel": "sb5Klima",
-      "feld": [11, 2]
-    },
-    {
-      "moebel": "sb5Messplatz",
-      "feld": [1, 5]
-    },
-    {
-      "moebel": "sb5GlastuerSued",
-      "feld": [7, 9]
-    },
-    {
       "moebel": "sb5Fussmatte",
       "feld": [7, 8],
       "versatz": [0, 13]
+    },
+    {
+      "moebel": "sb12Klimageraet",
+      "feld": [11, 1]
+    },
+    {
+      "moebel": "sb12Schubladenschrank",
+      "feld": [11, 5]
+    },
+    {
+      "moebel": "sb5Messplatz",
+      "feld": [1, 4],
+      "id": "messplatz"
+    },
+    {
+      "moebel": "sb8StuhlRuecken",
+      "feld": [1, 7]
+    },
+    {
+      "moebel": "sb8GlastuerSued",
+      "feld": [7, 9]
     }
   ],
   "ausloeser": [
@@ -89,5 +78,6 @@
     }
   ],
   "figuren": [],
-  "belebung": []
+  "belebung": [],
+  "toenung": "serverblau"
 }

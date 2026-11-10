@@ -7,7 +7,9 @@
       "kollision": false,
       "art": "deko",
       "zustand": "gebraucht",
-      "stil": "natur"
+      "stil": "natur",
+      "begehbar": true,
+      "begehbar_grund": "liegt flach am Boden"
     },
     "pg7Kletterwand": {
       "quelle": "spiel/eigene/kletterwand.png",
@@ -25,7 +27,9 @@
       "kollision": false,
       "art": "deko",
       "zustand": "gebraucht",
-      "stil": "natur"
+      "stil": "natur",
+      "begehbar": true,
+      "begehbar_grund": "hängt an der Wand"
     },
     "pg7Staubteufel": {
       "quelle": "spiel/eigene/staubteufel.png",
@@ -34,7 +38,9 @@
       "kollision": false,
       "art": "deko",
       "zustand": "neu",
-      "stil": "natur"
+      "stil": "natur",
+      "begehbar": true,
+      "begehbar_grund": "Staubwirbel, man geht hindurch"
     },
     "cp8Vordach": {
       "quelle": "spiel/eigene/tankstelle_vordach.png",
@@ -62,7 +68,9 @@
       "kollision": false,
       "art": "deko",
       "zustand": "gebraucht",
-      "stil": "natur"
+      "stil": "natur",
+      "begehbar": true,
+      "begehbar_grund": "hängt über Kopfhöhe"
     },
     "cp8Finkenzeichen": {
       "quelle": "spiel/eigene/finkenzeichen_blech.png",
@@ -71,7 +79,9 @@
       "kollision": false,
       "art": "deko",
       "zustand": "gebraucht",
-      "stil": "natur"
+      "stil": "natur",
+      "begehbar": true,
+      "begehbar_grund": "liegt flach am Boden"
     },
     "cp8PlakatBald": {
       "quelle": "spiel/eigene/plakat_bald.png",
@@ -116,7 +126,9 @@
       "kollision": false,
       "art": "deko",
       "zustand": "alt",
-      "stil": "industrie"
+      "stil": "industrie",
+      "begehbar": true,
+      "begehbar_grund": "hängt an der Wand"
     },
     "pg9Telegrafenleitung": {
       "quelle": "spiel/eigene/telegrafenleitung.png",
@@ -125,7 +137,9 @@
       "kollision": false,
       "art": "deko",
       "zustand": "alt",
-      "stil": "industrie"
+      "stil": "industrie",
+      "begehbar": true,
+      "begehbar_grund": "hängt über Kopfhöhe"
     },
     "pg9Autowrack": {
       "quelle": "modern-exteriors/Modern_Exteriors_16x16/ME_Theme_Sorter_16x16/3_City_Props_Singles_16x16/ME_Singles_City_Props_16x16_Car_Wreck_3.png",

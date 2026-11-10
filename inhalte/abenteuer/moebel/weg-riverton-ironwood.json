@@ -7,7 +7,9 @@
       "kollision": false,
       "art": "boot",
       "zustand": "gebraucht",
-      "stil": "industrie"
+      "stil": "industrie",
+      "begehbar": true,
+      "begehbar_grund": "liegt im Wasser, dort läuft niemand"
     },
     "wr8SiloKurz": {
       "quelle": "spiel/eigene/silo_kurz.png",
@@ -26,7 +28,9 @@
       "kollision": false,
       "art": "deko",
       "zustand": "neu",
-      "stil": "modern"
+      "stil": "modern",
+      "begehbar": true,
+      "begehbar_grund": "hängt an der Wand"
     },
     "wr8GraffitiTurm": {
       "quelle": "spiel/eigene/graffiti_turm.png",
@@ -35,7 +39,9 @@
       "kollision": false,
       "art": "deko",
       "zustand": "neu",
-      "stil": "modern"
+      "stil": "modern",
+      "begehbar": true,
+      "begehbar_grund": "hängt an der Wand"
     },
     "wr8BrueckeEisen7": {
       "quelle": "spiel/eigene/bruecke_eisen_laengs_7.png",
@@ -267,7 +273,9 @@
       "kollision": false,
       "art": "deko",
       "zustand": "alt",
-      "stil": "modern"
+      "stil": "modern",
+      "begehbar": true,
+      "begehbar_grund": "hängt an der Wand"
     },
     "wr5GraffitiWolf": {
       "quelle": "modern-exteriors/Modern_Exteriors_16x16/ME_Theme_Sorter_16x16/20_Subway_and_Train_Station_Singles_16x16/ME_Singles_Subway_and_Train_Station_16x16_Blue_Wolf_Clean_Graffiti.png",
@@ -276,7 +284,9 @@
       "kollision": false,
       "art": "deko",
       "zustand": "alt",
-      "stil": "modern"
+      "stil": "modern",
+      "begehbar": true,
+      "begehbar_grund": "hängt an der Wand"
     },
     "wr5GraffitiGelb": {
       "quelle": "modern-exteriors/Modern_Exteriors_16x16/ME_Theme_Sorter_16x16/20_Subway_and_Train_Station_Singles_16x16/ME_Singles_Subway_and_Train_Station_16x16_Yellow_Writing_Graffiti.png",
@@ -285,7 +295,9 @@
       "kollision": false,
       "art": "deko",
       "zustand": "alt",
-      "stil": "modern"
+      "stil": "modern",
+      "begehbar": true,
+      "begehbar_grund": "hängt an der Wand"
     },
     "wr5GraffitiBlau": {
       "quelle": "modern-exteriors/Modern_Exteriors_16x16/ME_Theme_Sorter_16x16/20_Subway_and_Train_Station_Singles_16x16/ME_Singles_Subway_and_Train_Station_16x16_Blue_Writing_Graffiti.png",
@@ -294,7 +306,9 @@
       "kollision": false,
       "art": "deko",
       "zustand": "alt",
-      "stil": "modern"
+      "stil": "modern",
+      "begehbar": true,
+      "begehbar_grund": "hängt an der Wand"
     },
     "wr8Acker6x5": {
       "quelle": "spiel/eigene/acker_6x5.png",
@@ -402,7 +416,9 @@
       "kollision": false,
       "art": "deko",
       "zustand": "gebraucht",
-      "stil": "natur"
+      "stil": "natur",
+      "begehbar": true,
+      "begehbar_grund": "liegt flach am Boden"
     },
     "ri8Finkenzeichen": {
       "quelle": "spiel/eigene/finkenzeichen_blech.png",
@@ -411,7 +427,9 @@
       "kollision": false,
       "art": "deko",
       "zustand": "gebraucht",
-      "stil": "natur"
+      "stil": "natur",
+      "begehbar": true,
+      "begehbar_grund": "liegt flach am Boden"
     },
     "ri8Klapphocker": {
       "quelle": "spiel/eigene/klapphocker.png",
@@ -420,7 +438,9 @@
       "kollision": false,
       "art": "stuhl",
       "zustand": "gebraucht",
-      "stil": "klassisch"
+      "stil": "klassisch",
+      "begehbar": true,
+      "begehbar_grund": "Hocker, auf dem eine Figur sitzt"
     }
   }
 }

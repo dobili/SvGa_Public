@@ -235,7 +235,9 @@
       "art": "boot",
       "zustand": "gebraucht",
       "stil": "natur",
-      "blick": "keine"
+      "blick": "keine",
+      "begehbar": true,
+      "begehbar_grund": "liegt im Wasser, dort läuft niemand"
     }
   }
 }

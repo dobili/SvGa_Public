@@ -37,7 +37,9 @@
       "kollision": false,
       "art": "deko",
       "zustand": "gebraucht",
-      "stil": "rustikal"
+      "stil": "rustikal",
+      "begehbar": true,
+      "begehbar_grund": "liegt flach am Boden"
     },
     "ld5TuerSued": {
       "quelle": "spiel/eigene/tuer_sued_holz.png",
@@ -126,7 +128,9 @@
       "art": "boot",
       "blick": "links",
       "zustand": "gebraucht",
-      "stil": "rustikal"
+      "stil": "rustikal",
+      "begehbar": true,
+      "begehbar_grund": "liegt im Wasser, dort läuft niemand"
     },
     "ld5LastkahnRechts": {
       "quelle": "modern-exteriors/Modern_Exteriors_16x16/ME_Theme_Sorter_16x16/10_Vehicles_Singles_16x16/ME_Singles_Vehicles_16x16_Boat_3_Right_1.png",
@@ -136,7 +140,9 @@
       "art": "boot",
       "blick": "rechts",
       "zustand": "gebraucht",
-      "stil": "rustikal"
+      "stil": "rustikal",
+      "begehbar": true,
+      "begehbar_grund": "liegt im Wasser, dort läuft niemand"
     },
     "ld5Ruderboot": {
       "quelle": "modern-exteriors/Modern_Exteriors_16x16/ME_Theme_Sorter_16x16/10_Vehicles_Singles_16x16/ME_Singles_Vehicles_16x16_Boat_1_Left_2.png",
@@ -146,7 +152,9 @@
       "art": "boot",
       "blick": "links",
       "zustand": "gebraucht",
-      "stil": "rustikal"
+      "stil": "rustikal",
+      "begehbar": true,
+      "begehbar_grund": "liegt im Wasser, dort läuft niemand"
     },
     "ld5Kahn": {
       "quelle": "modern-exteriors/Modern_Exteriors_16x16/ME_Theme_Sorter_16x16/10_Vehicles_Singles_16x16/ME_Singles_Vehicles_16x16_Boat_2_Left_1.png",
@@ -156,7 +164,9 @@
       "art": "boot",
       "blick": "links",
       "zustand": "gebraucht",
-      "stil": "rustikal"
+      "stil": "rustikal",
+      "begehbar": true,
+      "begehbar_grund": "liegt im Wasser, dort läuft niemand"
     },
     "ld5Waesche": {
       "quelle": "modern-exteriors/Modern_Exteriors_16x16/ME_Theme_Sorter_16x16/3_City_Props_Singles_16x16/ME_Singles_City_Props_16x16_Hanging_Clothes_5.png",
@@ -201,7 +211,9 @@
       "kollision": false,
       "art": "deko",
       "zustand": "gebraucht",
-      "stil": "rustikal"
+      "stil": "rustikal",
+      "begehbar": true,
+      "begehbar_grund": "liegt flach am Boden"
     },
     "ld5Schleusentor": {
       "quelle": "spiel/eigene/schleusentor_laengs_3.png",
@@ -228,7 +240,9 @@
       "kollision": false,
       "art": "schild",
       "zustand": "gebraucht",
-      "stil": "rustikal"
+      "stil": "rustikal",
+      "begehbar": true,
+      "begehbar_grund": "hängt an der Wand"
     },
     "ld5Kegel": {
       "quelle": "spiel/eigene/kegel.png",
@@ -237,7 +251,9 @@
       "kollision": false,
       "art": "sport",
       "zustand": "gebraucht",
-      "stil": "rustikal"
+      "stil": "rustikal",
+      "begehbar": true,
+      "begehbar_grund": "Kegel auf der Bahn, der Held steigt darüber"
     },
     "ld5Kegelkugel": {
       "quelle": "spiel/eigene/kegelkugel.png",
@@ -246,13 +262,15 @@
       "kollision": false,
       "art": "sport",
       "zustand": "gebraucht",
-      "stil": "rustikal"
+      "stil": "rustikal",
+      "begehbar": true,
+      "begehbar_grund": "Kugel auf der Bahn, der Held steigt darüber"
     },
     "ld5Glaeser": {
       "quelle": "modern-interiors/1_Interiors/16x16/Theme_Sorter_Black_Shadow_Singles/12_Kitchen_Black_Shadow_Singles_16x16/Kitchen_Shadow_Singles_397.png",
       "breite": 16,
       "hoehe": 16,
-      "kollision": false,
+      "kollision": true,
       "art": "deko",
       "zustand": "gebraucht",
       "stil": "rustikal"
@@ -261,7 +279,7 @@
       "quelle": "modern-interiors/1_Interiors/16x16/Theme_Sorter_Black_Shadow_Singles/12_Kitchen_Black_Shadow_Singles_16x16/Kitchen_Shadow_Singles_173.png",
       "breite": 16,
       "hoehe": 16,
-      "kollision": false,
+      "kollision": true,
       "art": "deko",
       "zustand": "gebraucht",
       "stil": "rustikal"
@@ -390,7 +408,9 @@
       "art": "boot",
       "blick": "links",
       "zustand": "gebraucht",
-      "stil": "rustikal"
+      "stil": "rustikal",
+      "begehbar": true,
+      "begehbar_grund": "liegt im Wasser, dort läuft niemand"
     },
     "ld8Stemmtor": {
       "quelle": "spiel/eigene/schleusentor_stemm.png",
@@ -408,7 +428,9 @@
       "kollision": false,
       "art": "wandschmuck",
       "zustand": "gebraucht",
-      "stil": "rustikal"
+      "stil": "rustikal",
+      "begehbar": true,
+      "begehbar_grund": "hängt an der Wand"
     },
     "ld9SchildAnkerTaue": {
       "quelle": "spiel/eigene/schild_anker_taue.png",
@@ -417,7 +439,9 @@
       "kollision": false,
       "art": "schild",
       "zustand": "gebraucht",
-      "stil": "klassisch"
+      "stil": "klassisch",
+      "begehbar": true,
+      "begehbar_grund": "hängt an der Wand"
     },
     "ld9Kugelfang": {
       "quelle": "spiel/eigene/kugelfang.png",
@@ -435,7 +459,9 @@
       "kollision": false,
       "art": "deko",
       "zustand": "gebraucht",
-      "stil": "rustikal"
+      "stil": "rustikal",
+      "begehbar": true,
+      "begehbar_grund": "hängt an der Wand"
     },
     "ld11Kanonenofen": {
       "quelle": "spiel/eigene/kanonenofen_ki.png",

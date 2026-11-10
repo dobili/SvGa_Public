@@ -11441,12 +11441,12 @@
       {
        "name": "tiefe",
        "type": "int",
-       "value": 1
+       "value": 200
       },
       {
        "name": "kollision",
        "type": "bool",
-       "value": false
+       "value": true
       }
      ]
     },
@@ -11464,12 +11464,12 @@
       {
        "name": "tiefe",
        "type": "int",
-       "value": 1
+       "value": 216
       },
       {
        "name": "kollision",
        "type": "bool",
-       "value": false
+       "value": true
       }
      ]
     },
@@ -11487,12 +11487,12 @@
       {
        "name": "tiefe",
        "type": "int",
-       "value": 1
+       "value": 200
       },
       {
        "name": "kollision",
        "type": "bool",
-       "value": false
+       "value": true
       }
      ]
     },

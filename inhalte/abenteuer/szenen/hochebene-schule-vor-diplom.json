@@ -2,7 +2,7 @@
   "karte": "hochebene.schule",
   "datei": "karten/hochebene-schule-vor-diplom.json",
   "art": "aussen",
-  "beschreibung": "Zustand: Bevor Annek Schach gelernt hat, ist der Diplomtag noch nicht vorbereitet: Auf dem Schulhof stehen weder Tribüne noch Steintische, nur das Plakat „Diplomtag – bald!“ kündigt ihn an. Sonst wie die gewöhnliche Karte: Die Schule der Hochebene: ein gewöhnliches Schulhaus von heute mit rotem Walmdach, davor der gepflasterte Schulhof mit Spielgeräten, Steintischen, Tribüne und Fahnenmast, am Eingang das Schwarze Brett. Rechts auf eigenem Pflaster das Basketballfeld, mit dem Hof durch einen Weg verbunden; links die Turnhalle mit Weg zum Hof. An der Straße mit Mittellinie die Haltestelle mit dem gelben Schulbus am Bordstein und der Haltestelle, daneben die Werkstatt von Joss Vell mit Rolltor, Zufahrt, Werkbank und Reifen. Der Schotterweg von den Felstürmen kommt am Ostrand an. Wiese ringsum, eine Hecke schließt das Gelände, offen nur an Straße und Weg.",
+  "beschreibung": "Zustand: Bevor Annek Schach gelernt hat, ist der Diplomtag noch nicht vorbereitet: Auf dem Schulhof stehen weder Tribüne noch Steintische, nur das Plakat „Diplomtag – bald!“ kündigt ihn an. Sonst wie die gewöhnliche Karte: Die Schule der Hochebene: ein gewöhnliches Schulhaus von heute mit rotem Walmdach, davor der gepflasterte Schulhof mit Spielgeräten, Steintischen, Tribüne und Fahnenmast, am Eingang das Schwarze Brett. Rechts auf eigenem Pflaster das Basketballfeld, mit dem Hof durch einen Weg verbunden; links die Turnhalle mit Weg zum Hof. An der Straße mit Mittellinie die Haltebucht quer am Hof, darin der gelbe Schulbus mit der Front zur Straße und der Haltestelle, daneben die Werkstatt von Joss Vell mit Rolltor, Zufahrt, Werkbank und Reifen. Der Schotterweg von den Felstürmen kommt am Ostrand an. Wiese ringsum, eine Hecke schließt das Gelände, offen nur an Straße und Weg.",
   "boden": "gras",
   "wandart": "hecke",
   "boeden": {
@@ -33,20 +33,20 @@
     "#..........pp..............................ppppppppppppppp.#",
     "#..........pp..............................ppppppppppppppp.#",
     "#..........pp...............................pp.............#",
-    "#..........pp...............................pp....kkkkkkkkk#",
-    "#..........pp...............................pp....kkkkkkkkk#",
+    "#..........pp...............................pp....kkkkkkkkkk",
+    "#..........pp...............................pp....kkkkkkkkkk",
     "#..........pp...............................pp....kk.......#",
     "#..........pp...............................pp....kk.......#",
     "#..........pp...............................pp....kk.......#",
     "#..........ppppppppppppppppppppppppppppppppppp....kk.......#",
-    "#..........ppppppppppppppppppppppppppppppppppp....kk.......#",
-    "#.............pppppppppppppppppppppppppppppppp....kk.......#",
-    "#.............pppppppppppppppppppppppppppppppp....kk.......#",
-    "#.............pppppppppppppppppppppppppppppppp....kk.......#",
-    "#..aaaa.......pppppppppppppppppppppppppppppppp....kk.......#",
-    "#..aaaa.......pppppppppppppppppppppppppppppppp....kk.......#",
-    "#..aaaa.......pppppppppppppppppppppppppppppppp....kk.......#",
-    "#..aaaa.....................pppppppppp............kk.......#",
+    "#..........pppppppppppppppppppppppppppppppppppppp.kk.......#",
+    "#.............ppppppppppppppppppppppppppppppppppp.kk.......#",
+    "#.............ppppppppppppppppppppppppppppppppppp.kk.......#",
+    "#.............ppppppppppppppppppppppppppppppppppp.kk.......#",
+    "#..aaaa.......ppppppppppppppppppppppppppppppppppp.kk.......#",
+    "#..aaaa.......ppppppppppppppppppppppppppppppppppp.kk.......#",
+    "#..aaaa.......ppppppppppppppppppppppppppppppppppp.kk.......#",
+    "#..aaaa.....................pppppppppp........ppp.kk.......#",
     "#ssssssssssssssssssssssssssssssssssssssssssssssssssssssssss#",
     "#ssssssssssssssssssssssssssssssssssssssssssssssssssssssssss#",
     "#ssssssssssssssssssssssssssssssssssssssssssssssssssssssssss#",
@@ -102,9 +102,8 @@
       "feld": [9, 29]
     },
     {
-      "moebel": "heSchulbus",
-      "feld": [30, 28],
-      "bauteil_ok": true
+      "moebel": "fz11SchulbusAb",
+      "feld": [46, 25]
     },
     {
       "moebel": "haltestellenschild",
@@ -112,15 +111,11 @@
     },
     {
       "moebel": "wds6Briefkasten",
-      "feld": [47, 31]
+      "feld": [49, 30]
     },
     {
       "moebel": "wds6Pinie",
       "feld": [7, 2]
-    },
-    {
-      "moebel": "cc3Busch",
-      "feld": [47, 26]
     },
     {
       "moebel": "cc3Busch",
@@ -527,10 +522,10 @@
     {
       "name": "busfahrerin",
       "typ": "statist",
-      "feld": [37, 32],
+      "feld": [45, 31],
       "eigenschaften": {
-        "von": "37,32",
-        "bis": "37,32",
+        "von": "45,31",
+        "bis": "45,31",
         "tun": "wartet am Schulbus",
         "wann": "tag",
         "sagt": "statist.hochebene.schule.busfahrerin"

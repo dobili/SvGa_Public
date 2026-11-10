@@ -697,6 +697,20 @@
       ]
     },
     {
+      "name": "ubahn",
+      "feld": [
+        39,
+        47
+      ]
+    },
+    {
+      "name": "ubahn",
+      "feld": [
+        41,
+        47
+      ]
+    },
+    {
       "name": "kreide5",
       "feld": [
         38,

@@ -7,7 +7,9 @@
       "kollision": false,
       "art": "deko",
       "zustand": "alt",
-      "stil": "industrie"
+      "stil": "industrie",
+      "begehbar": true,
+      "begehbar_grund": "Durchgang, man geht hindurch"
     },
     "st8Granitquader": {
       "quelle": "spiel/eigene/granitquader.png",
@@ -89,7 +91,9 @@
       "kollision": false,
       "art": "deko",
       "zustand": "alt",
-      "stil": "industrie"
+      "stil": "industrie",
+      "begehbar": true,
+      "begehbar_grund": "hängt an der Wand"
     },
     "st5GraffitiKrone": {
       "quelle": "modern-exteriors/Modern_Exteriors_16x16/ME_Theme_Sorter_16x16/20_Subway_and_Train_Station_Singles_16x16/ME_Singles_Subway_and_Train_Station_16x16_Big_White_Crown_Graffiti.png",
@@ -98,7 +102,9 @@
       "kollision": false,
       "art": "deko",
       "zustand": "alt",
-      "stil": "industrie"
+      "stil": "industrie",
+      "begehbar": true,
+      "begehbar_grund": "hängt an der Wand"
     },
     "st5GleisSenkrecht": {
       "quelle": "modern-exteriors/Modern_Exteriors_16x16/ME_Theme_Sorter_16x16/20_Subway_and_Train_Station_Singles_16x16/ME_Singles_Subway_and_Train_Station_16x16_Brown_Rail_Modular_Vertical.png",
@@ -172,7 +178,9 @@
       "kollision": false,
       "art": "deko",
       "zustand": "alt",
-      "stil": "industrie"
+      "stil": "industrie",
+      "begehbar": true,
+      "begehbar_grund": "hängt an der Wand"
     },
     "st5PfuetzeKlein": {
       "quelle": "spiel/eigene/pfuetze_fels_klein.png",

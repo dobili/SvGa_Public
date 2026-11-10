@@ -23,7 +23,7 @@
       "quelle": "spiel/eigene/schachbrett_klein_figuren.png",
       "breite": 12,
       "hoehe": 9,
-      "kollision": false,
+      "kollision": true,
       "art": "deko",
       "zustand": "gebraucht",
       "stil": "rustikal"
@@ -73,7 +73,9 @@
       "art": "fenster",
       "blick": "unten",
       "zustand": "gebraucht",
-      "stil": "rustikal"
+      "stil": "rustikal",
+      "begehbar": true,
+      "begehbar_grund": "hängt an der Wand"
     },
     "es7Hocker": {
       "quelle": "modern-farm/Single_Files_16x16/Props_and_Buildings_16x16/Stool_Wood_1_16x16.png",
@@ -153,7 +155,7 @@
       "quelle": "modern-exteriors/Modern_Exteriors_16x16/ME_Theme_Sorter_16x16/19_Graveyard_Singles_16x16/ME_Singles_Graveyard_16x16_Consumed_Candle_1.png",
       "breite": 16,
       "hoehe": 16,
-      "kollision": false,
+      "kollision": true,
       "stil": "rustikal",
       "zustand": "alt"
     },
@@ -161,7 +163,7 @@
       "quelle": "spiel/eigene/petroleumlampe.png",
       "breite": 16,
       "hoehe": 16,
-      "kollision": false,
+      "kollision": true,
       "art": "lampe",
       "zustand": "alt",
       "stil": "rustikal"
@@ -174,7 +176,9 @@
       "art": "fenster",
       "blick": "unten",
       "zustand": "gebraucht",
-      "stil": "rustikal"
+      "stil": "rustikal",
+      "begehbar": true,
+      "begehbar_grund": "hängt an der Wand"
     },
     "es9TischDunkel": {
       "quelle": "spiel/eigene/tisch_rund_dunkel.png",

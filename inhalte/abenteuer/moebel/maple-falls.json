@@ -84,7 +84,7 @@
       "quelle": "modern-interiors/1_Interiors/16x16/Theme_Sorter_Black_Shadow_Singles/2_LivingRoom_Black_Shadow_Singles_16x16/Living_Room_Black_Shadow_Singles_97.png",
       "breite": 16,
       "hoehe": 32,
-      "kollision": false,
+      "kollision": true,
       "art": "deko",
       "zustand": "neu",
       "stil": "modern"
@@ -156,7 +156,9 @@
       "kollision": false,
       "art": "fenster",
       "zustand": "neu",
-      "stil": "modern"
+      "stil": "modern",
+      "begehbar": true,
+      "begehbar_grund": "hängt an der Wand"
     },
     "wzVorhang": {
       "quelle": "spiel/generic/generic_093.png",
@@ -165,7 +167,9 @@
       "kollision": false,
       "art": "deko",
       "zustand": "neu",
-      "stil": "modern"
+      "stil": "modern",
+      "begehbar": true,
+      "begehbar_grund": "hängt an der Wand"
     },
     "wzTuer": {
       "quelle": "spiel/generic/generic_073.png",
@@ -184,13 +188,15 @@
       "kollision": false,
       "art": "deko",
       "zustand": "gebraucht",
-      "stil": "klassisch"
+      "stil": "klassisch",
+      "begehbar": true,
+      "begehbar_grund": "hängt an der Wand"
     },
     "wzFernseher": {
       "quelle": "modern-interiors/1_Interiors/16x16/Theme_Sorter_Singles/14_Basement_Singles/Basement_Singles_164.png",
       "breite": 32,
       "hoehe": 32,
-      "kollision": false,
+      "kollision": true,
       "art": "fernseher"
     },
     "mfReihenhaus": {
@@ -304,7 +310,9 @@
       "kollision": false,
       "art": "fenster",
       "zustand": "alt",
-      "stil": "rustikal"
+      "stil": "rustikal",
+      "begehbar": true,
+      "begehbar_grund": "hängt an der Wand"
     },
     "mf2BildWald": {
       "quelle": "spiel/generic/generic_037.png",
@@ -313,7 +321,9 @@
       "kollision": false,
       "art": "deko",
       "zustand": "alt",
-      "stil": "klassisch"
+      "stil": "klassisch",
+      "begehbar": true,
+      "begehbar_grund": "hängt an der Wand"
     },
     "mf2Rundtisch": {
       "quelle": "modern-interiors/1_Interiors/16x16/Theme_Sorter_Singles/14_Basement_Singles/Basement_Singles_2.png",
@@ -325,13 +335,15 @@
       "quelle": "spiel/eigene/schachbrett.png",
       "breite": 18,
       "hoehe": 14,
-      "kollision": false
+      "kollision": false,
+      "begehbar": true,
+      "begehbar_grund": "liegt flach am Boden"
     },
     "mf2SchachbrettFiguren": {
       "quelle": "spiel/eigene/schachbrett_figuren.png",
       "breite": 18,
       "hoehe": 14,
-      "kollision": false
+      "kollision": true
     },
     "mf2Ohrensessel": {
       "quelle": "modern-interiors/1_Interiors/16x16/Theme_Sorter_Singles/14_Basement_Singles/Basement_Singles_204.png",
@@ -467,7 +479,7 @@
       "quelle": "modern-interiors/1_Interiors/16x16/Theme_Sorter_Black_Shadow_Singles/5_Classroom_and_Library_Black_Shadow_Singles_16x16/Classroom_and_Library_Singles_36.png",
       "breite": 32,
       "hoehe": 32,
-      "kollision": false,
+      "kollision": true,
       "art": "deko",
       "zustand": "gebraucht",
       "stil": "klassisch"
@@ -479,7 +491,9 @@
       "kollision": false,
       "art": "deko",
       "zustand": "neu",
-      "stil": "klassisch"
+      "stil": "klassisch",
+      "begehbar": true,
+      "begehbar_grund": "hängt an der Wand"
     },
     "mf2Weltkarte": {
       "quelle": "modern-interiors/1_Interiors/16x16/Theme_Sorter_Black_Shadow_Singles/5_Classroom_and_Library_Black_Shadow_Singles_16x16/Classroom_and_Library_Singles_31.png",
@@ -488,13 +502,17 @@
       "kollision": false,
       "art": "deko",
       "zustand": "gebraucht",
-      "stil": "klassisch"
+      "stil": "klassisch",
+      "begehbar": true,
+      "begehbar_grund": "hängt an der Wand"
     },
     "mf2Urkunde": {
       "quelle": "modern-interiors/1_Interiors/16x16/Theme_Sorter_Black_Shadow_Singles/6_Music_and_Sport_Black_Shadow_Singles_16x16/Music_and_Sport_Black_Shadow_Singles_108.png",
       "breite": 32,
       "hoehe": 32,
-      "kollision": false
+      "kollision": false,
+      "begehbar": true,
+      "begehbar_grund": "hängt an der Wand"
     },
     "mf2Pokaltisch": {
       "quelle": "modern-interiors/1_Interiors/16x16/Theme_Sorter_Black_Shadow_Singles/6_Music_and_Sport_Black_Shadow_Singles_16x16/Music_and_Sport_Black_Shadow_Singles_163.png",
@@ -520,7 +538,7 @@
       "quelle": "modern-interiors/1_Interiors/16x16/Theme_Sorter_Black_Shadow_Singles/5_Classroom_and_Library_Black_Shadow_Singles_16x16/Classroom_and_Library_Singles_34.png",
       "breite": 16,
       "hoehe": 32,
-      "kollision": false,
+      "kollision": true,
       "art": "deko",
       "zustand": "gebraucht",
       "stil": "klassisch"
@@ -576,7 +594,9 @@
       "kollision": false,
       "art": "fenster",
       "zustand": "gebraucht",
-      "stil": "klassisch"
+      "stil": "klassisch",
+      "begehbar": true,
+      "begehbar_grund": "hängt an der Wand"
     },
     "mf2Kiosk": {
       "quelle": "modern-exteriors/Modern_Exteriors_16x16/ME_Theme_Sorter_16x16/3_City_Props_Singles_16x16/ME_Singles_City_Props_16x16_Candies_Cart_1.png",
@@ -698,7 +718,7 @@
       "quelle": "spiel/eigene/schachbrett_klein.png",
       "breite": 12,
       "hoehe": 9,
-      "kollision": false,
+      "kollision": true,
       "art": "deko",
       "zustand": "alt",
       "stil": "klassisch"
@@ -707,7 +727,7 @@
       "quelle": "spiel/eigene/schachbrett_klein_figuren.png",
       "breite": 12,
       "hoehe": 9,
-      "kollision": false,
+      "kollision": true,
       "art": "deko",
       "zustand": "gebraucht",
       "stil": "klassisch"
@@ -822,7 +842,7 @@
       "quelle": "modern-interiors/1_Interiors/16x16/Theme_Sorter_Black_Shadow_Singles/6_Music_and_Sport_Black_Shadow_Singles_16x16/Music_and_Sport_Black_Shadow_Singles_140.png",
       "breite": 16,
       "hoehe": 16,
-      "kollision": false,
+      "kollision": true,
       "art": "deko",
       "zustand": "gebraucht",
       "stil": "klassisch"
@@ -831,7 +851,7 @@
       "quelle": "modern-interiors/1_Interiors/16x16/Theme_Sorter_Black_Shadow_Singles/6_Music_and_Sport_Black_Shadow_Singles_16x16/Music_and_Sport_Black_Shadow_Singles_132.png",
       "breite": 16,
       "hoehe": 16,
-      "kollision": false,
+      "kollision": true,
       "art": "deko",
       "zustand": "gebraucht",
       "stil": "klassisch"
@@ -850,7 +870,7 @@
       "quelle": "modern-interiors/1_Interiors/16x16/Theme_Sorter_Singles/14_Basement_Singles/Basement_Singles_164.png",
       "breite": 32,
       "hoehe": 32,
-      "kollision": false,
+      "kollision": true,
       "art": "fernseher",
       "zustand": "neu",
       "stil": "modern",
@@ -969,7 +989,9 @@
       "kollision": false,
       "art": "deko",
       "zustand": "neu",
-      "stil": "klassisch"
+      "stil": "klassisch",
+      "begehbar": true,
+      "begehbar_grund": "hängt an der Wand"
     },
     "mf4Treppe": {
       "quelle": "spiel/generic/generic_134.png",
@@ -1016,7 +1038,9 @@
       "kollision": false,
       "art": "deko",
       "zustand": "gebraucht",
-      "stil": "klassisch"
+      "stil": "klassisch",
+      "begehbar": true,
+      "begehbar_grund": "hängt an der Wand"
     },
     "mf4Vitrine": {
       "quelle": "modern-interiors/1_Interiors/16x16/Theme_Sorter_Black_Shadow_Singles/12_Kitchen_Black_Shadow_Singles_16x16/Kitchen_Shadow_Singles_407.png",
@@ -1136,7 +1160,9 @@
       "art": "deko",
       "blick": "unten",
       "zustand": "gebraucht",
-      "stil": "klassisch"
+      "stil": "klassisch",
+      "begehbar": true,
+      "begehbar_grund": "liegt flach am Boden"
     },
     "mf4Schaukel": {
       "quelle": "modern-exteriors/Modern_Exteriors_16x16/ME_Theme_Sorter_16x16/13_School_Singles_16x16/ME_Singles_School_16x16_School_Yard_Toy_3.png",
@@ -1317,7 +1343,9 @@
       "kollision": false,
       "art": "pflanze",
       "zustand": "gebraucht",
-      "stil": "klassisch"
+      "stil": "klassisch",
+      "begehbar": true,
+      "begehbar_grund": "flaches Beet am Boden"
     },
     "mf4Gartenbank": {
       "quelle": "modern-exteriors/Modern_Exteriors_16x16/ME_Theme_Sorter_16x16/7_Villas_Singles_16x16/ME_Singles_Villas_16x16_Armchair_2.png",
@@ -1354,16 +1382,29 @@
       "kollision": false,
       "art": "deko",
       "zustand": "neu",
-      "stil": "natur"
+      "stil": "natur",
+      "begehbar": true,
+      "begehbar_grund": "liegt im Wasser, dort läuft niemand"
     },
     "mf4Fahnenmast": {
       "quelle": "spiel/eigene/fahnenmast_schule.png",
       "breite": 48,
       "hoehe": 144,
-      "kollision": false,
+      "kollision": true,
       "art": "deko",
       "zustand": "gebraucht",
-      "stil": "klassisch"
+      "stil": "klassisch",
+      "maske": [
+        "...",
+        "...",
+        "...",
+        "...",
+        "...",
+        "...",
+        "...",
+        "...",
+        "###"
+      ]
     },
     "mf4StegLinks": {
       "quelle": "modern-exteriors/Modern_Exteriors_16x16/ME_Theme_Sorter_16x16/11_Camping_Singles_16x16/ME_Singles_Camping_16x16_Pier_Bridge_1.png",
@@ -1399,7 +1440,7 @@
       "quelle": "modern-exteriors/Modern_Exteriors_16x16/ME_Theme_Sorter_16x16/1_Terrains_and_Fences_Singles_16x16/ME_Singles_Terrains_and_Fences_16x16_Fence_1_2.png",
       "breite": 16,
       "hoehe": 16,
-      "kollision": false,
+      "kollision": true,
       "art": "zaun",
       "zustand": "gebraucht",
       "stil": "klassisch"
@@ -1421,7 +1462,9 @@
       "kollision": false,
       "art": "deko",
       "zustand": "neu",
-      "stil": "klassisch"
+      "stil": "klassisch",
+      "begehbar": true,
+      "begehbar_grund": "hängt über Kopfhöhe"
     },
     "mf4Poller": {
       "quelle": "modern-exteriors/Modern_Exteriors_16x16/ME_Theme_Sorter_16x16/3_City_Props_Singles_16x16/ME_Singles_City_Props_16x16_Pedestrian_Barrier_Post_1.png",
@@ -1446,7 +1489,7 @@
       "quelle": "modern-interiors/1_Interiors/16x16/Theme_Sorter_Singles/14_Basement_Singles/Basement_Singles_164.png",
       "breite": 32,
       "hoehe": 32,
-      "kollision": false,
+      "kollision": true,
       "art": "fernseher",
       "zustand": "neu",
       "stil": "modern",
@@ -1475,7 +1518,7 @@
       "quelle": "modern-exteriors/Modern_Exteriors_16x16/ME_Theme_Sorter_16x16/11_Camping_Singles_16x16/ME_Singles_Camping_16x16_Rock_2.png",
       "breite": 16,
       "hoehe": 16,
-      "kollision": false,
+      "kollision": true,
       "art": "stein",
       "zustand": "gebraucht",
       "stil": "natur"
@@ -1484,7 +1527,7 @@
       "quelle": "modern-exteriors/Modern_Exteriors_16x16/ME_Theme_Sorter_16x16/11_Camping_Singles_16x16/ME_Singles_Camping_16x16_Rock_8.png",
       "breite": 16,
       "hoehe": 16,
-      "kollision": false,
+      "kollision": true,
       "art": "stein",
       "zustand": "gebraucht",
       "stil": "natur"
@@ -1600,7 +1643,7 @@
       "quelle": "modern-interiors/1_Interiors/16x16/Theme_Sorter_Singles/12_Kitchen_Singles/Kitchen_Singles_177.png",
       "breite": 16,
       "hoehe": 32,
-      "kollision": false,
+      "kollision": true,
       "art": "geraet",
       "blick": "unten",
       "zustand": "gebraucht",
@@ -1610,7 +1653,7 @@
       "quelle": "modern-interiors/1_Interiors/16x16/Theme_Sorter_Singles/12_Kitchen_Singles/Kitchen_Singles_184.png",
       "breite": 16,
       "hoehe": 32,
-      "kollision": false,
+      "kollision": true,
       "art": "geraet",
       "blick": "unten",
       "zustand": "gebraucht",
@@ -1664,7 +1707,9 @@
       "art": "geraet",
       "blick": "unten",
       "zustand": "gebraucht",
-      "stil": "industrie"
+      "stil": "industrie",
+      "begehbar": true,
+      "begehbar_grund": "hängt an der Wand"
     },
     "mf5Stahltisch": {
       "quelle": "modern-interiors/1_Interiors/16x16/Theme_Sorter_Singles/16_Grocery_Store_Singles/Grocery_Store_Singles_261.png",
@@ -1680,7 +1725,7 @@
       "quelle": "modern-interiors/1_Interiors/16x16/Theme_Sorter_Black_Shadow_Singles/12_Kitchen_Black_Shadow_Singles_16x16/Kitchen_Shadow_Singles_143.png",
       "breite": 32,
       "hoehe": 16,
-      "kollision": false,
+      "kollision": true,
       "art": "geraet",
       "blick": "unten",
       "zustand": "gebraucht",
@@ -1759,7 +1804,7 @@
       "quelle": "modern-interiors/1_Interiors/16x16/Theme_Sorter_Black_Shadow_Singles/12_Kitchen_Black_Shadow_Singles_16x16/Kitchen_Shadow_Singles_208.png",
       "breite": 16,
       "hoehe": 16,
-      "kollision": false,
+      "kollision": true,
       "art": "deko",
       "zustand": "gebraucht",
       "stil": "klassisch"
@@ -1816,7 +1861,9 @@
       "kollision": false,
       "art": "sport",
       "zustand": "neu",
-      "stil": "modern"
+      "stil": "modern",
+      "begehbar": true,
+      "begehbar_grund": "Spielfeld am Boden"
     },
     "mf6BankSeiteLinks": {
       "quelle": "modern-exteriors/Modern_Exteriors_16x16/ME_Theme_Sorter_16x16/3_City_Props_Singles_16x16/ME_Singles_City_Props_16x16_Bench_5.png",
@@ -1845,7 +1892,9 @@
       "kollision": false,
       "art": "pflanze",
       "zustand": "neu",
-      "stil": "natur"
+      "stil": "natur",
+      "begehbar": true,
+      "begehbar_grund": "liegt im Wasser, dort läuft niemand"
     },
     "mf6Seerose2": {
       "quelle": "modern-exteriors/Modern_Exteriors_16x16/ME_Theme_Sorter_16x16/1_Terrains_and_Fences_Singles_16x16/ME_Singles_Terrains_and_Fences_16x16_Props_Water_12.png",
@@ -1854,7 +1903,9 @@
       "kollision": false,
       "art": "pflanze",
       "zustand": "neu",
-      "stil": "natur"
+      "stil": "natur",
+      "begehbar": true,
+      "begehbar_grund": "liegt im Wasser, dort läuft niemand"
     },
     "mf6Seerose3": {
       "quelle": "modern-exteriors/Modern_Exteriors_16x16/ME_Theme_Sorter_16x16/1_Terrains_and_Fences_Singles_16x16/ME_Singles_Terrains_and_Fences_16x16_Props_Water_13.png",
@@ -1863,7 +1914,9 @@
       "kollision": false,
       "art": "pflanze",
       "zustand": "neu",
-      "stil": "natur"
+      "stil": "natur",
+      "begehbar": true,
+      "begehbar_grund": "liegt im Wasser, dort läuft niemand"
     },
     "mf7TeppichRund": {
       "quelle": "modern-interiors/1_Interiors/16x16/Theme_Sorter_Black_Shadow_Singles/4_Bedroom_Black_Shadow_SIngles_16x16/Bedroom_Black_Shadow_Singles_252.png",
@@ -1944,7 +1997,7 @@
       "quelle": "modern-interiors/1_Interiors/16x16/Theme_Sorter_Black_Shadow_Singles/2_LivingRoom_Black_Shadow_Singles_16x16/Living_Room_Black_Shadow_Singles_76.png",
       "breite": 16,
       "hoehe": 32,
-      "kollision": false,
+      "kollision": true,
       "art": "lampe",
       "zustand": "gebraucht",
       "stil": "klassisch"
@@ -1953,7 +2006,7 @@
       "quelle": "modern-interiors/1_Interiors/16x16/Theme_Sorter_Black_Shadow_Singles/2_LivingRoom_Black_Shadow_Singles_16x16/Living_Room_Black_Shadow_Singles_49.png",
       "breite": 16,
       "hoehe": 32,
-      "kollision": false,
+      "kollision": true,
       "art": "deko",
       "zustand": "gebraucht",
       "stil": "klassisch"
@@ -2220,7 +2273,9 @@
       "art": "bild",
       "blick": "unten",
       "zustand": "gebraucht",
-      "stil": "klassisch"
+      "stil": "klassisch",
+      "begehbar": true,
+      "begehbar_grund": "hängt an der Wand"
     },
     "mf8BildPflanze": {
       "quelle": "modern-interiors/1_Interiors/16x16/Theme_Sorter_Black_Shadow_Singles/12_Kitchen_Black_Shadow_Singles_16x16/Kitchen_Shadow_Singles_271.png",
@@ -2230,7 +2285,9 @@
       "art": "bild",
       "blick": "unten",
       "zustand": "gebraucht",
-      "stil": "klassisch"
+      "stil": "klassisch",
+      "begehbar": true,
+      "begehbar_grund": "hängt an der Wand"
     },
     "mf8HerdOffen": {
       "quelle": "modern-interiors/1_Interiors/16x16/Theme_Sorter_Black_Shadow_Singles/12_Kitchen_Black_Shadow_Singles_16x16/Kitchen_Shadow_Singles_155.png",
@@ -2280,7 +2337,9 @@
       "art": "pinnwand",
       "blick": "unten",
       "zustand": "gebraucht",
-      "stil": "klassisch"
+      "stil": "klassisch",
+      "begehbar": true,
+      "begehbar_grund": "hängt an der Wand"
     },
     "mf8Kommode": {
       "quelle": "modern-interiors/1_Interiors/16x16/Theme_Sorter_Black_Shadow_Singles/12_Kitchen_Black_Shadow_Singles_16x16/Kitchen_Shadow_Singles_311.png",
@@ -2595,7 +2654,7 @@
       "quelle": "modern-interiors/1_Interiors/16x16/Theme_Sorter_Black_Shadow_Singles/4_Bedroom_Black_Shadow_SIngles_16x16/Bedroom_Black_Shadow_Singles_170.png",
       "breite": 16,
       "hoehe": 32,
-      "kollision": false,
+      "kollision": true,
       "art": "deko",
       "zustand": "alt",
       "stil": "rustikal"
@@ -2788,7 +2847,9 @@
       "kollision": false,
       "art": "fenster",
       "zustand": "gebraucht",
-      "stil": "klassisch"
+      "stil": "klassisch",
+      "begehbar": true,
+      "begehbar_grund": "hängt an der Wand"
     },
     "mf9TuerSuedGlas": {
       "quelle": "spiel/eigene/tuer_sued_glas.png",
@@ -2854,7 +2915,7 @@
       "quelle": "spiel/eigene/radio_alt.png",
       "breite": 16,
       "hoehe": 16,
-      "kollision": false,
+      "kollision": true,
       "art": "geraet",
       "zustand": "gebraucht",
       "stil": "klassisch"
@@ -2931,7 +2992,7 @@
       "quelle": "modern-interiors/1_Interiors/16x16/Theme_Sorter_Black_Shadow_Singles/5_Classroom_and_Library_Black_Shadow_Singles_16x16/Classroom_and_Library_Singles_36.png",
       "breite": 32,
       "hoehe": 32,
-      "kollision": false,
+      "kollision": true,
       "art": "tafel",
       "zustand": "gebraucht",
       "stil": "schule",
@@ -2982,7 +3043,7 @@
       "quelle": "modern-interiors/1_Interiors/16x16/Theme_Sorter_Black_Shadow_Singles/6_Music_and_Sport_Black_Shadow_Singles_16x16/Music_and_Sport_Black_Shadow_Singles_132.png",
       "breite": 16,
       "hoehe": 16,
-      "kollision": false,
+      "kollision": true,
       "art": "pokal",
       "zustand": "gebraucht",
       "stil": "klassisch",
@@ -2992,7 +3053,7 @@
       "quelle": "modern-interiors/1_Interiors/16x16/Theme_Sorter_Singles/6_Music_and_Sport/Music_and_Sport_Singles_135.png",
       "breite": 16,
       "hoehe": 16,
-      "kollision": false,
+      "kollision": true,
       "art": "pokal",
       "zustand": "gebraucht",
       "stil": "klassisch",
@@ -3012,7 +3073,7 @@
       "quelle": "spiel/eigene/schachbrett_klein.png",
       "breite": 12,
       "hoehe": 9,
-      "kollision": false,
+      "kollision": true,
       "art": "deko",
       "zustand": "gebraucht",
       "stil": "klassisch"
@@ -3122,7 +3183,7 @@
       "quelle": "spiel/eigene/schachbrett_klein_figuren.png",
       "breite": 12,
       "hoehe": 9,
-      "kollision": false,
+      "kollision": true,
       "art": "deko",
       "zustand": "gebraucht",
       "stil": "schule"
@@ -3131,7 +3192,7 @@
       "quelle": "spiel/eigene/schachbrett_klein_ohne_dame.png",
       "breite": 12,
       "hoehe": 9,
-      "kollision": false,
+      "kollision": true,
       "art": "deko",
       "zustand": "gebraucht",
       "stil": "schule"
@@ -3140,7 +3201,7 @@
       "quelle": "spiel/eigene/schachuhr_klein.png",
       "breite": 8,
       "hoehe": 6,
-      "kollision": false,
+      "kollision": true,
       "art": "deko",
       "zustand": "gebraucht",
       "stil": "schule"
@@ -3149,7 +3210,7 @@
       "quelle": "spiel/eigene/pokal_1994.png",
       "breite": 16,
       "hoehe": 16,
-      "kollision": false,
+      "kollision": true,
       "art": "pokal",
       "zustand": "gebraucht",
       "stil": "schule"
@@ -3161,7 +3222,9 @@
       "kollision": false,
       "art": "deko",
       "zustand": "gebraucht",
-      "stil": "schule"
+      "stil": "schule",
+      "begehbar": true,
+      "begehbar_grund": "hängt an der Wand"
     },
     "mfc9Wanduhr": {
       "quelle": "spiel/eigene/wanduhr.png",
@@ -3170,7 +3233,9 @@
       "kollision": false,
       "art": "deko",
       "zustand": "gebraucht",
-      "stil": "schule"
+      "stil": "schule",
+      "begehbar": true,
+      "begehbar_grund": "hängt an der Wand"
     },
     "mfc9Garderobe": {
       "quelle": "spiel/eigene/garderobe_jacken.png",
@@ -3179,7 +3244,9 @@
       "kollision": false,
       "art": "garderobe",
       "zustand": "gebraucht",
-      "stil": "schule"
+      "stil": "schule",
+      "begehbar": true,
+      "begehbar_grund": "hängt an der Wand"
     },
     "mfc9RegalSeiteLinks": {
       "quelle": "spiel/eigene/buecherregal_schmal_links.png",
@@ -3294,7 +3361,7 @@
       "quelle": "spiel/eigene/zettel_fragezeichen.png",
       "breite": 8,
       "hoehe": 8,
-      "kollision": false,
+      "kollision": true,
       "art": "deko",
       "zustand": "gebraucht",
       "stil": "schule"
@@ -3315,7 +3382,9 @@
       "kollision": false,
       "art": "zaun",
       "zustand": "gebraucht",
-      "stil": "klassisch"
+      "stil": "klassisch",
+      "begehbar": true,
+      "begehbar_grund": "offenes Tor, man geht hindurch"
     },
     "mf10TorOffen2": {
       "quelle": "modern-farm/Single_Files_16x16/Fences_16x16/Wooden_Fence_Type_4_Brown_Gate_2_16x16.png",
@@ -3324,7 +3393,9 @@
       "kollision": false,
       "art": "zaun",
       "zustand": "gebraucht",
-      "stil": "klassisch"
+      "stil": "klassisch",
+      "begehbar": true,
+      "begehbar_grund": "offenes Tor, man geht hindurch"
     },
     "mf10SchildVerkauf": {
       "quelle": "spiel/eigene/schild_zu_verkaufen.png",

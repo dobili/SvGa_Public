@@ -98,14 +98,18 @@ Szene heißt die Datei in `inhalte/abenteuer/szenen/` ohne `.json`.
 - [x] weg-ironwood-silicon-raststaette (vierte Prüfung, mittel-1, Datei `weg-ironwood-silicon-raststaette-4.md`)
 - [x] Gemini-Bilder eingebaut (mittel-3; Datei `mittel-3-gemini-sichtpruefung.md`, silicon-bay-aussen ungeprüft): Roboter in silicon-bay-altstadt, -akademie, -aussen; Reh in weg-crossroads-pinewood-huetten, -riesenbaeume; Sturmkeller in weg-summit-crossroads-praerie (kurze Sichtprüfung)
 
-- [ ] Gemini-Bilder in den Karten von niedrig-1 (Reh/Hirsch, Häuser und Bänke von hinten, Holzbrücke, London-Fronten, Postreiter, Ofen): maple-falls-aussen, maple-falls-park, cedar-creek-aussen, weg-cedar-riverton-bahndamm, -zedernwald, weg-maple-cedar-zedernpfad, -landstrasse, erinnerung-london-strand, erinnerung-siedlung-huette, lockport-gasthaus (Liste in cedar-creek.md „Gemini-Bilder eingebaut“; Figurenbogen postreiter und Tierbögen reh/hirsch erst bauen)
-- [ ] silicon-bay-aussen (Campus, erste Prüfung, mittel-3; mit Lieferroboter) und silicon-bay-hafen (alter Hafen, erste Prüfung, mittel-3)
-- [ ] silicon-bay-lobby, silicon-bay-serverraum (erste Prüfung, niedrig-1)
-- [ ] riverton-pavillon, riverton-wohnwagen, crossroads-raststaette, weg-summit-crossroads-geysirbecken, -praerie, weg-crossroads-pinewood-riesenbaeume (Nachprüfung der Restpunkte, mittel-3; Dunst statt Nebel, Durchreiche als Öffnung)
+- [x] Gemini-Bilder in den Karten von niedrig-1 (Reh/Hirsch, Häuser und Bänke von hinten, Holzbrücke, London-Fronten, Postreiter, Ofen): maple-falls-aussen, maple-falls-park, cedar-creek-aussen, weg-cedar-riverton-bahndamm, -zedernwald, weg-maple-cedar-zedernpfad, -landstrasse, erinnerung-london-strand, erinnerung-siedlung-huette, lockport-gasthaus (Liste in cedar-creek.md „Gemini-Bilder eingebaut“; Figurenbogen postreiter und Tierbögen reh/hirsch erst bauen) → `niedrig-1-5.md`
+- [x] silicon-bay-aussen (Campus, erste Prüfung, mittel-3; mit Lieferroboter) und silicon-bay-hafen (alter Hafen, erste Prüfung, mittel-3) → `silicon-bay-aussen-hafen.md`
+- [x] silicon-bay-lobby, silicon-bay-serverraum (erste Prüfung, niedrig-1) → `silicon-bay-lobby-serverraum.md`
+- [x] riverton-pavillon, riverton-wohnwagen, crossroads-raststaette, weg-summit-crossroads-geysirbecken, -praerie, weg-crossroads-pinewood-riesenbaeume (Nachprüfung der Restpunkte, mittel-3; Dunst statt Nebel, Durchreiche als Öffnung) → `mittel-3-restpunkte.md`
 
-- [ ] goldmine-stollen, kuerbishof-hof (dritte Prüfung), maple-falls-park, cedar-creek-aussen, weg-maple-cedar-landstrasse (fünfte Prüfung, nur Restpunkte; niedrig-1, Antworten in cedar-creek.md)
-- [ ] silicon-bay-lobby, silicon-bay-serverraum (erste Prüfung, niedrig-1; Stand in silicon-bay.md „Lobby und Serverraum nach den aktuellen Regeln“)
+- [x] goldmine-stollen, kuerbishof-hof (dritte Prüfung), maple-falls-park, cedar-creek-aussen, weg-maple-cedar-landstrasse (fünfte Prüfung, nur Restpunkte; niedrig-1, Antworten in cedar-creek.md) → `niedrig-1-5.md`
+- [x] silicon-bay-lobby, silicon-bay-serverraum (erste Prüfung, niedrig-1; Stand in silicon-bay.md „Lobby und Serverraum nach den aktuellen Regeln“) → `silicon-bay-lobby-serverraum.md`
 
+- [x] port-delacroix-aussen, capital-arena-innenstadt, bayou-steg, weg-ghost-capital-leuchtturm, weg-silicon-delacroix-deich (dritte Prüfung, mittel-1, nach `mittel-1-runde9-2.md`; Bild `bildwuensche/boje_frei.py`, Nebel 0,28) → `mittel-1-runde9-3.md`
+- [x] weg-ironwood-silicon-raststaette (fünfte Prüfung, nur Waschstraße und Buchten, mittel-1) → `mittel-1-runde9-3.md`
+
+- [ ] silicon-bay-lobby, silicon-bay-serverraum (zweite Prüfung, niedrig-1; Antworten in silicon-bay.md; Bilder klimageraet_serverraum, schubladenschrank_metall, serverreihe_6 aus `niedrig1_runde9_karten.py` erst rendern; neue Tönung serverblau)
 - [ ] port-delacroix-aussen, capital-arena-innenstadt, bayou-steg, weg-ghost-capital-leuchtturm, weg-silicon-delacroix-deich (dritte Prüfung, mittel-1, nach `mittel-1-runde9-2.md`; Bild `bildwuensche/boje_frei.py`, Nebel 0,28)
 - [ ] weg-ironwood-silicon-raststaette (fünfte Prüfung, nur Waschstraße und Buchten, mittel-1)
 - [ ] silicon-bay-aussen (Campus, jetzt 72 × 70) und silicon-bay-hafen (zweite Prüfung, mittel-3; Turm, Tunnel, Glasdeck, Läden zum Platz, Brüstung; Fähre schattiert, Hafenläden, Stützmauer; Datei `silicon-bay-aussen-hafen-2.md`)
@@ -127,5 +131,9 @@ Szene heißt die Datei in `inhalte/abenteuer/szenen/` ohne `.json`.
 - [x] ironwood-museum, ironwood-umkleide, sternwarte-kuppel: Gemini-Bilder eingebaut (mittel-4)
 - [x] Runde-9-Karten nach dem Gutachten (summit-city-aussen, -bergstation, -bergladen, hochebene-felsentuerme, -schule, sternwarte-felsnase, weg-desert-summit-bergstrasse, -diner, weg-delacroix-desert-canyonpfad, -felsbogen) (mittel-4)
 
+- [x] weg-riverton-ironwood-2 (+ ohne-tische), ironwood-museum, ironwood-umkleide, sternwarte-kuppel: Restpunkte des Nachtrags (mittel-4) → `mittel-4-restpunkte.md`
+- [x] summit-city-aussen, hochebene-felsentuerme, weg-desert-summit-bergstrasse, weg-delacroix-desert-canyonpfad, weg-delacroix-desert-felsbogen: Restpunkte Runde 9, zweite Prüfung (mittel-4) → `mittel-4-restpunkte.md`
+
 - [ ] weg-riverton-ironwood-2 (+ ohne-tische), ironwood-museum, ironwood-umkleide, sternwarte-kuppel: Restpunkte des Nachtrags (mittel-4)
 - [ ] summit-city-aussen, hochebene-felsentuerme, weg-desert-summit-bergstrasse, weg-delacroix-desert-canyonpfad, weg-delacroix-desert-felsbogen: Restpunkte Runde 9, zweite Prüfung (mittel-4)
+- [ ] hochebene-schule (+ vor-diplom), ironwood-aussen-vermietet: Busse in Vorderansicht nach 10.65 (mittel-4)

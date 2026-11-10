@@ -9,6 +9,9 @@ Regeln (``docs/spiel/orte/README.md``, Ortsplan):
 - Liegt ein Übergang am Kartenrand, liegt sein Gegenstück am gegenüberliegenden Rand (Ost ↔ West,
   Nord ↔ Süd); Wege laufen über den Rand weiter, also gleich viele Felder auf beiden Seiten.
 - Eine Tür auf der Südwand einer Innenkarte führt nach draußen zu einer Tür, nicht an einen Rand.
+- Der Auslöser deckt den ganzen Durchgang (``durchgang.py``, Befund des Autors beim ersten Spielen,
+  10.11.2026): jede begehbare Kachel der Luke, Treppe oder Tür, die ganze Breite des Wegs am
+  Kartenrand, die ganze Lücke in der Wand. Kein Feld des Auslösers ist gesperrt.
 
 Aufruf: ``python -m pipeline.abenteuer.uebergaenge`` (Befunde, Rückgabewert 1 bei Befunden).
 """
@@ -124,7 +127,10 @@ def pruefe(alle: dict[str, dict], liste: list[dict]) -> list[str]:
 
 
 def main() -> int:
-    befunde = pruefe(szenen(), uebergaenge())
+    from pipeline.abenteuer.durchgang import pruefe_durchgaenge
+
+    alle, liste = szenen(), uebergaenge()
+    befunde = pruefe(alle, liste) + pruefe_durchgaenge(alle, liste)
     for b in befunde:
         print(f"- {b}")
     print("Übergänge in Ordnung" if not befunde else f"{len(befunde)} Befunde")

@@ -4,20 +4,20 @@
   "art": "innen",
   "wand": "hellgrau",
   "boden": "stein",
-  "beschreibung": "Variante C (reicher): Die Lobby von Perfect Move. An der Nordwand drei Aufzüge und die Zeitleiste der Firma auf drei Bildschirmen. In der Mitte eine kleine Ausstellung: die Hale-Vitrine zwischen zwei Sockeln mit Vasen. Rechts der Empfangstresen mit dem Roboter dahinter, davor wartet eine Besuchergruppe mit Namensschildern. Links die Lounge auf blauem Teppich: Sofa und Sessel nebeneinander, davor ein Couchtisch; ein Besucher sitzt auf dem Sofa. Pflanzen in den Ecken, Glastür in der Südwand.",
+  "beschreibung": "Variante C (reicher): Die Lobby von Perfect Move. An der Nordwand drei Aufzüge und drei Bildschirme mit den Kennzahlen der Firma. Mitten im Raum, mit Abstand zur Tür, eine kleine Ausstellung: die Hale-Vitrine zwischen zwei Sockeln mit Pokalen. Rechts der Empfangstresen mit dem Roboter dahinter, davor wartet eine Besuchergruppe mit Namensschildern. Links die Lounge auf gemustertem Teppich: ein Sofa an der Wand zwischen zwei Sesseln, davor ein runder Couchtisch; ein Besucher sitzt auf dem Sofa. Pflanzen in den Ecken, Glastür in der Südwand.",
   "zustand": ["neu", "gebraucht"],
   "stil": ["modern", "klassisch", "japanisch", "einfach"],
   "raster": [
     "########################",
     "########################",
     "########################",
+    "#..tttttt..............#",
+    "#..tttttt..............#",
+    "#..tttttt..............#",
+    "#..tttttt..............#",
+    "#..tttttt..............#",
     "#......................#",
-    "#.ttttttt..............#",
-    "#.ttttttt..............#",
-    "#.ttttttt..............#",
-    "#.ttttttt..............#",
-    "#.ttttttt..............#",
-    "#.ttttttt..............#",
+    "#......................#",
     "#......................#",
     "#......................#",
     "#......................#",
@@ -55,18 +55,6 @@
       "an_wand": true
     },
     {
-      "moebel": "sb5Sockel",
-      "feld": [7, 9]
-    },
-    {
-      "moebel": "sb5VitrineHale",
-      "feld": [10, 9]
-    },
-    {
-      "moebel": "sb5SockelB",
-      "feld": [15, 9]
-    },
-    {
       "moebel": "sb5Empfang",
       "feld": [15, 5]
     },
@@ -87,26 +75,42 @@
       "feld": [21, 10]
     },
     {
-      "moebel": "sb5GlastuerSued",
-      "feld": [12, 13]
+      "moebel": "sb5Sessel",
+      "feld": [3, 3]
     },
     {
-      "moebel": "sb5Sofa",
-      "feld": [3, 4],
+      "moebel": "sb8Sofa",
+      "feld": [5, 3],
       "id": "sofa"
     },
     {
-      "moebel": "sb5SesselRund",
-      "feld": [6, 4]
+      "moebel": "sb5Sessel",
+      "feld": [7, 3]
     },
     {
-      "moebel": "sb8Couchtisch",
-      "feld": [4, 7]
+      "moebel": "pd6Couchtisch",
+      "feld": [5, 6]
+    },
+    {
+      "moebel": "sb5Sockel",
+      "feld": [9, 6]
+    },
+    {
+      "moebel": "sb5VitrineHale",
+      "feld": [11, 6]
+    },
+    {
+      "moebel": "sb5SockelB",
+      "feld": [13, 6]
     },
     {
       "moebel": "sb5Fussmatte",
       "feld": [12, 12],
       "versatz": [0, 13]
+    },
+    {
+      "moebel": "sb8GlastuerSued",
+      "feld": [12, 13]
     }
   ],
   "ausloeser": [
@@ -123,7 +127,7 @@
     },
     {
       "name": "vitrineHale",
-      "feld": [11, 12]
+      "feld": [11, 9]
     }
   ],
   "figuren": [
@@ -169,10 +173,10 @@
     {
       "name": "wartender",
       "typ": "statist",
-      "feld": [3, 5],
+      "feld": [5, 4],
       "eigenschaften": {
-        "von": "3,5",
-        "bis": "3,5",
+        "von": "5,4",
+        "bis": "5,4",
         "verhalten": "sitzen",
         "tun": "sitzt auf dem Sofa und wartet auf seinen Termin",
         "wann": "tag"

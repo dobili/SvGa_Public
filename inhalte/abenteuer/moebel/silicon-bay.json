@@ -2266,6 +2266,36 @@
       "art": "markierung",
       "zustand": "neu",
       "stil": "modern"
+    },
+    "sb12Klimageraet": {
+      "quelle": "spiel/eigene/klimageraet_serverraum.png",
+      "breite": 32,
+      "hoehe": 48,
+      "kollision": true,
+      "art": "geraet",
+      "blick": "unten",
+      "zustand": "neu",
+      "stil": "modern"
+    },
+    "sb12Schubladenschrank": {
+      "quelle": "spiel/eigene/schubladenschrank_metall.png",
+      "breite": 32,
+      "hoehe": 48,
+      "kollision": true,
+      "art": "schrank",
+      "blick": "unten",
+      "zustand": "neu",
+      "stil": "modern"
+    },
+    "sb12Serverreihe": {
+      "quelle": "spiel/eigene/serverreihe_6.png",
+      "breite": 144,
+      "hoehe": 48,
+      "kollision": true,
+      "art": "geraet",
+      "blick": "unten",
+      "zustand": "neu",
+      "stil": "modern"
     }
   }
 }

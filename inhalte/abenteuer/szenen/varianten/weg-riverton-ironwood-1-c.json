@@ -1255,6 +1255,18 @@
     {
       "name": "fundZahnrad",
       "feld": [12, 42]
+    },
+    {
+      "name": "meilenstein",
+      "feld": [16, 9]
+    },
+    {
+      "name": "rastKanal",
+      "feld": [9, 113]
+    },
+    {
+      "name": "fundKonservendose",
+      "feld": [19, 157]
     }
   ],
   "figuren": [

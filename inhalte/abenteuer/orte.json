@@ -1099,6 +1099,13 @@
           "name": "figur.dale.name",
           "sprite": "figuren/dale.png",
           "dialog": "weg-riverton-ironwood.dale"
+        },
+        {
+          "kennung": "wegRivertonIronwood.dime",
+          "name": "figur.dime.name",
+          "sprite": "figuren/dime.png",
+          "dialog": "weg-riverton-ironwood.brueckenbauern",
+          "gegner": "wegRivertonIronwood.dime"
         }
       ],
       "ausloeser": [
@@ -1167,6 +1174,56 @@
             "karte": "lockport.aussen",
             "ausloeser": "kanalweg"
           }
+        },
+        {
+          "name": "meilenstein",
+          "art": "gegenstand",
+          "dialog": "weg-riverton-ironwood.meilenstein"
+        },
+        {
+          "name": "rastKanal",
+          "art": "gegenstand",
+          "dialog": "weg-riverton-ironwood.rast_kanal"
+        },
+        {
+          "name": "fundKonservendose",
+          "art": "gegenstand",
+          "dialog": "weg-riverton-ironwood.fund_konservendose"
+        },
+        {
+          "name": "waerterhaus",
+          "art": "gegenstand",
+          "dialog": "weg-riverton-ironwood.waerterhaus"
+        },
+        {
+          "name": "aussichtTal",
+          "art": "gegenstand",
+          "dialog": "weg-riverton-ironwood.aussicht_tal"
+        },
+        {
+          "name": "ereignisBrueckenbauern",
+          "art": "dialog",
+          "dialog": "weg-riverton-ironwood.brueckenbauern"
+        },
+        {
+          "name": "kreide1",
+          "art": "gegenstand",
+          "dialog": "weg-riverton-ironwood.kreidespringer"
+        },
+        {
+          "name": "spurPM1",
+          "art": "gegenstand",
+          "dialog": "weg-riverton-ironwood.drohne"
+        },
+        {
+          "name": "seite07",
+          "art": "gegenstand",
+          "dialog": "weg-riverton-ironwood.seite07"
+        },
+        {
+          "name": "finchLaeuferA",
+          "art": "gegenstand",
+          "dialog": "weg-riverton-ironwood.finch_laeufer_a"
         }
       ]
     },
@@ -1429,7 +1486,9 @@
           "ziel": {
             "karte": "steinbruch.grube",
             "ausloeser": "zurueckIronwood"
-          }
+          },
+          "wenn": "hatLaterne",
+          "dialog": "ironwood-aussen.steinbruch_sperre"
         },
         {
           "name": "eisenwarenfenster",
@@ -1551,6 +1610,12 @@
             "karte": "steinbruch.grube",
             "ausloeser": "stollen"
           }
+        },
+        {
+          "name": "finchBauerF",
+          "karte": "steinbruch.grube",
+          "art": "gegenstand",
+          "dialog": "steinbruch.finch_bauer_f"
         }
       ]
     },

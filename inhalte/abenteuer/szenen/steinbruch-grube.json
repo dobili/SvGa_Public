@@ -465,6 +465,10 @@
     {
       "name": "stollen",
       "feld": [57, 42]
+    },
+    {
+      "name": "finchBauerF",
+      "feld": [59, 42]
     }
   ],
   "figuren": [],

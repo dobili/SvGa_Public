@@ -13,6 +13,7 @@
 // Variablen: wegRivertonIronwoodTafelBestanden setzt die Hülle (Langform, R42).
 
 EXTERNAL beginneAufgaben(runde)
+EXTERNAL beginnePartie(begegnung)
 EXTERNAL gibFund(kennung)
 EXTERNAL gibKarte(kennung)
 
@@ -21,6 +22,14 @@ VAR daleGetroffen = false
 VAR zahnradGefunden = false
 VAR nietenkopfGefunden = false
 VAR zeitnotTrickErhalten = false
+// Runde 6: Ereignis „Brückenbauern“ (Dokument 15, 2.3) und Sammelstränge. gefunden<Fund> setzt die
+// Hülle nach gibFund, ausgangWegRivertonIronwoodDime nach der Partie (R42).
+VAR gefundenKonservendose = false
+VAR gefundenKreide1 = false
+VAR gefundenSpurPM1 = false
+VAR gefundenSeite07 = false
+VAR gefundenFinchLaeuferA = false
+VAR ausgangWegRivertonIronwoodDime = ""
 
 // ---------------------------------------------------------------- Mr. Dale
 
@@ -98,4 +107,129 @@ Er glaubte es, und er eilte. Wer eilt, übersieht. #sprecher:ambrose
 Nimm diese Karte. Einmal, und nur wenn die Uhr läuft. #sprecher:ambrose
 Eine Goldnadel bekommst du damit nicht. #sprecher:ambrose
 ~ gibKarte("grossesMaul")
+-> END
+
+// ---------------------------------------------------------------- Kanalweg: Ansehen (Runde 6)
+
+=== meilenstein ===
+Ein Meilenstein aus rotem Sandstein, halb im Gras: „Meile 0“. Von hier an zählt der Kanal. #sprecher:erzaehler
+-> END
+
+=== rast_kanal ===
+Eine Bank am Schilf. Über dem Wasser stehen Libellen in der Luft, als hätten sie alle Zeit der Welt. #sprecher:erzaehler
+-> END
+
+=== fund_konservendose ===
+{gefundenKonservendose:
+    Am Anleger schwappt nur noch Wasser gegen das Holz. #sprecher:erzaehler
+    -> END
+}
+Am Rastanleger treibt eine Konservendose mit Deckel. Darin steckt ein trockener Zettel. #sprecher:erzaehler
+„Wer das findet: komm nach Lockport. Ich hab schon 41 Flaschen. Finn“ #sprecher:erzaehler
+~ gibFund("konservendose")
+-> END
+
+// ---------------------------------------------------------------- Brücke: Ansehen (Runde 6)
+
+=== waerterhaus ===
+Ein Häuschen mit vernagelter Tür. Auf dem Schild steht „Brückenwärter. Bitte klopfen.“ Niemand klopft hier mehr. #sprecher:erzaehler
+-> END
+
+=== aussicht_tal ===
+Tief unten liegt ein graues Tal. Aus zwei Schornsteinen steigt Rauch, und der Wind trägt ein fernes Hämmern herauf. #sprecher:erzaehler
+Von hier oben sieht jede Stadt aus wie eine Stellung. Man erkennt erst unten, wer wo steht. #sprecher:ambrose
+-> END
+
+// ---------------------------------------------------------------- Ereignis „Die Brückenbauern“
+
+=== kreidespringer ===
+{gefundenKreide1:
+    Der Springer aus Kreide am Brückenfuß. Das Wort kennst du schon: Td8. #sprecher:erzaehler
+    -> END
+}
+Am Brückenfuß ist ein Springer aus Kreide gezeichnet. Darunter, kleiner: #sprecher:erzaehler
+„Weiß: König g1, Turm d1. Schwarz: König g8, Bauern f7, g7 und h7. Weiß am Zug. Ein Zug, und es ist vorbei. Der Zug ist das Wort.“ #sprecher:erzaehler
+-> raten
+
+= raten
+* [Td8]
+    -> kreidespringer_geloest
+* [Td7]
+    Der Turm steht schön auf der siebten Reihe. Aber der König hat noch Luft. #sprecher:erzaehler
+    -> raten
+* [Kf2]
+    Der König geht spazieren. Ein Matt ist das nicht. #sprecher:erzaehler
+    -> raten
+* [Später nachdenken]
+    -> END
+
+=== kreidespringer_geloest ===
+Td8. Der König steckt hinter seinen eigenen Bauern fest: Matt auf der Grundreihe. #sprecher:erzaehler
+Das Wort ist „Td8“. #sprecher:erzaehler
+~ gibFund("kreide1")
+-> END
+
+=== brueckenbauern ===
+{gefundenKreide1 == false:
+    Unter der Brücke stehen drei Klapptische. Ein Mann mit Schiebermütze redet, ohne Luft zu holen. #sprecher:erzaehler
+    Zehn Cent die Partie, drei Minuten, zwei Sekunden dazu. Aber erst das Wort. #sprecher:dime
+    Das Wort steht am Pfeiler, wenn man richtig hinschaut. Die meisten schauen nicht richtig. #sprecher:dime
+    -> END
+}
+{ausgangWegRivertonIronwoodDime != "":
+    -> nach_der_partie
+}
+„Td8“? Richtig. Setz dich. Ich bin Dime, wie die Münze, und ich verliere nie. Fast nie. #sprecher:dime
+Über dem Kanal surrt etwas. Eine kleine Drohne steht in der Luft und dreht sich zum Tisch. #sprecher:erzaehler
+Die da? Seit zwei Wochen. Filmt jede Partie. Fragt keiner, wozu. #sprecher:dime
+-> spielen
+
+= spielen
+* [Spielen]
+    Dime stellt die Uhr. Bevor du den ersten Zug machst, hat er schon drei Sätze gesagt. #sprecher:erzaehler
+    ~ beginnePartie("wegRivertonIronwood.dime")
+    -> END
+* [Später]
+    Ich bin hier. Die Brücke auch. #sprecher:dime
+    -> END
+
+= nach_der_partie
+{ausgangWegRivertonIronwoodDime:
+- "sieg":
+    Gewonnen hast du. Zehn Cent? Sagen wir zwanzig. Ich übertreibe immer, das ist mein Stil. #sprecher:dime
+- "remis":
+    Remis. Fünf Cent für jeden. Ich schreib's an. #sprecher:dime
+- else:
+    Gewonnen hab ich. Aber du hast gespielt, und das zählt hier. Wer spielt, kennt den nächsten Springer. #sprecher:dime
+}
+Noch eine? #sprecher:dime
+-> spielen
+
+=== drohne ===
+{gefundenSpurPM1:
+    Die Drohne steht wieder über dem Wasser. Sie hat Geduld. #sprecher:erzaehler
+    -> END
+}
+Über dem Kanal steht eine Drohne. Auf der Unterseite leuchtet ein Logo: Perfect Move. #sprecher:erzaehler
+Sie dreht sich langsam zu den Klapptischen, als würde sie zuschauen. #sprecher:erzaehler
+~ gibFund("spurPM1")
+-> END
+
+=== seite07 ===
+{gefundenSeite07:
+    Am Ufer liegt nur noch Kies. #sprecher:erzaehler
+    -> END
+}
+Zwischen den Steinen am Kanalufer klemmt ein Blatt, trocken und sauber. #sprecher:erzaehler
+Kapitel 7: „Taktik: Wie man aus kleinen Vorteilen Material gewinnt“. Eine Seite aus einem Handbuch. #sprecher:erzaehler
+~ gibFund("seite07")
+-> END
+
+=== finch_laeufer_a ===
+{gefundenFinchLaeuferA:
+    Am Brückenfuß hängt nur noch der kleine Fink aus Blech. #sprecher:erzaehler
+    -> END
+}
+Am Brückenfuß hängt ein kleiner Fink aus Blech. Darunter, im Spalt zwischen zwei Steinen, steckt ein weißer Läufer aus hellem Holz. #sprecher:erzaehler
+~ gibFund("finchLaeuferA")
 -> END

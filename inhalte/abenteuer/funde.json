@@ -243,6 +243,42 @@
       "ort": "portDelacroix",
       "name": "fund.setliste960.name",
       "text": "fund.setliste960.text"
+    },
+    {
+      "kennung": "konservendose",
+      "ort": "wegRivertonIronwood",
+      "name": "fund.konservendose.name",
+      "text": "fund.konservendose.text"
+    },
+    {
+      "kennung": "finchLaeuferA",
+      "ort": "wegRivertonIronwood",
+      "name": "fund.finchLaeuferA.name",
+      "text": "fund.finchLaeuferA.text"
+    },
+    {
+      "kennung": "seite07",
+      "ort": "wegRivertonIronwood",
+      "name": "fund.seite07.name",
+      "text": "fund.seite07.text"
+    },
+    {
+      "kennung": "spurPM1",
+      "ort": "wegRivertonIronwood",
+      "name": "fund.spurPM1.name",
+      "text": "fund.spurPM1.text"
+    },
+    {
+      "kennung": "kreide1",
+      "ort": "wegRivertonIronwood",
+      "name": "fund.kreide1.name",
+      "text": "fund.kreide1.text"
+    },
+    {
+      "kennung": "finchBauerF",
+      "ort": "steinbruch",
+      "name": "fund.finchBauerF.name",
+      "text": "fund.finchBauerF.text"
     }
   ]
 }

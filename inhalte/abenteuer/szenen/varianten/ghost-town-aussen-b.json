@@ -77,44 +77,40 @@
       "feld": [40, 13]
     },
     {
-      "moebel": "gt8Bretterbude",
-      "feld": [12, 14]
+      "moebel": "gt8Bank",
+      "feld": [11, 13]
     },
     {
-      "moebel": "gt8Station",
-      "feld": [31, 14]
+      "moebel": "gt8Post",
+      "feld": [31, 13]
     },
     {
-      "moebel": "gt8Blockhaus",
-      "feld": [48, 14]
+      "moebel": "gt8Barbier",
+      "feld": [47, 13]
     },
     {
-      "moebel": "gt8Bretterbude",
-      "feld": [5, 6]
+      "moebel": "gt8HuetteA",
+      "feld": [5, 7]
     },
     {
-      "moebel": "gt8Blockhaus",
-      "feld": [13, 6]
+      "moebel": "gt8HuetteB",
+      "feld": [34, 6]
     },
     {
-      "moebel": "gt8Bretterbude",
-      "feld": [35, 6]
+      "moebel": "gt8Bestatter",
+      "feld": [20, 25]
+    },
+    {
+      "moebel": "gt8Hotel",
+      "feld": [28, 24]
     },
     {
       "moebel": "gt8Mietstall",
-      "feld": [21, 25]
+      "feld": [37, 25]
     },
     {
-      "moebel": "gt8HausVerwittertA",
-      "feld": [29, 26]
-    },
-    {
-      "moebel": "gt8Station",
-      "feld": [49, 27]
-    },
-    {
-      "moebel": "gt7Traenke",
-      "feld": [36, 25]
+      "moebel": "gt8HuetteA",
+      "feld": [48, 6]
     },
     {
       "moebel": "gt7Stollen",
@@ -407,8 +403,20 @@
       "feld": [3, 17]
     },
     {
+      "moebel": "gt7Kaktus",
+      "feld": [31, 35]
+    },
+    {
+      "moebel": "gt7TumbleweedGross",
+      "feld": [12, 8]
+    },
+    {
       "moebel": "gt7Tumbleweed",
       "feld": [26, 6]
+    },
+    {
+      "moebel": "gt7Stein",
+      "feld": [51, 31]
     },
     {
       "moebel": "gt7Stein",
@@ -419,40 +427,32 @@
       "feld": [17, 34]
     },
     {
-      "moebel": "gt7Felsgruppe",
-      "feld": [11, 8]
+      "moebel": "gt7KaktusBluete",
+      "feld": [12, 10]
     },
     {
       "moebel": "gt7Saguaro",
       "feld": [41, 7]
     },
     {
-      "moebel": "gt7Tumbleweed",
-      "feld": [14, 13]
-    },
-    {
-      "moebel": "gt7TumbleweedGross",
-      "feld": [37, 13]
-    },
-    {
       "moebel": "gt7Saguaro",
       "feld": [11, 32]
+    },
+    {
+      "moebel": "gt7KaktusBluete",
+      "feld": [10, 8]
     },
     {
       "moebel": "gt7Stein",
       "feld": [30, 36]
     },
     {
-      "moebel": "gt7Tumbleweed",
-      "feld": [20, 28]
+      "moebel": "gt7Saguaro",
+      "feld": [51, 27]
     },
     {
       "moebel": "gt7Stein",
       "feld": [1, 35]
-    },
-    {
-      "moebel": "gt7Stein",
-      "feld": [11, 17]
     },
     {
       "moebel": "gt7Tumbleweed",
@@ -463,8 +463,8 @@
       "feld": [45, 10]
     },
     {
-      "moebel": "gt7TumbleweedGross",
-      "feld": [43, 31]
+      "moebel": "gt7Kaktus",
+      "feld": [38, 33]
     },
     {
       "moebel": "gt7TumbleweedGross",
@@ -545,7 +545,7 @@
     {
       "name": "eule",
       "typ": "tier",
-      "feld": [37, 27],
+      "feld": [11, 27],
       "eigenschaften": {
         "verhalten": "sitzen",
         "wann": "nacht"

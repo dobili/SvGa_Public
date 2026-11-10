@@ -89,28 +89,28 @@
       "feld": [16, 19]
     },
     {
-      "moebel": "gt8Bretterbude",
+      "moebel": "gt8HuetteA",
       "feld": [2, 6]
     },
     {
-      "moebel": "gt8Station",
-      "feld": [10, 6]
+      "moebel": "gt8Post",
+      "feld": [10, 5]
     },
     {
-      "moebel": "gt8Blockhaus",
+      "moebel": "gt8HuetteB",
       "feld": [33, 6]
     },
     {
-      "moebel": "gt8Bretterbude",
-      "feld": [40, 6]
+      "moebel": "gt8Barbier",
+      "feld": [40, 5]
     },
     {
-      "moebel": "gt8HausVerwittertB",
-      "feld": [13, 26]
+      "moebel": "gt8Hotel",
+      "feld": [12, 26]
     },
     {
-      "moebel": "gt8Blockhaus",
-      "feld": [2, 27]
+      "moebel": "gt8Mietstall",
+      "feld": [20, 26]
     },
     {
       "moebel": "gt7Wasserturm",
@@ -515,8 +515,12 @@
       "feld": [32, 26]
     },
     {
-      "moebel": "gt7Fass",
-      "feld": [26, 26]
+      "moebel": "gt7Kaktus",
+      "feld": [24, 36]
+    },
+    {
+      "moebel": "gt7Stein",
+      "feld": [4, 31]
     },
     {
       "moebel": "gt7Felsgruppe",
@@ -527,16 +531,20 @@
       "feld": [40, 35]
     },
     {
+      "moebel": "gt7KaktusBluete",
+      "feld": [7, 6]
+    },
+    {
+      "moebel": "gt7Stein",
+      "feld": [2, 11]
+    },
+    {
       "moebel": "gt7Saguaro",
-      "feld": [46, 9]
+      "feld": [17, 35]
     },
     {
       "moebel": "gt7Kaktus",
       "feld": [20, 7]
-    },
-    {
-      "moebel": "gt7Tumbleweed",
-      "feld": [12, 27]
     },
     {
       "moebel": "gt7Tumbleweed",
@@ -547,32 +555,20 @@
       "feld": [37, 27]
     },
     {
-      "moebel": "gt7Tumbleweed",
-      "feld": [26, 32]
-    },
-    {
       "moebel": "gt7KaktusBluete",
       "feld": [26, 8]
+    },
+    {
+      "moebel": "gt7Saguaro",
+      "feld": [2, 31]
     },
     {
       "moebel": "gt7Tumbleweed",
       "feld": [52, 11]
     },
     {
-      "moebel": "gt7Felsgruppe",
-      "feld": [46, 5]
-    },
-    {
-      "moebel": "gt7TumbleweedGross",
-      "feld": [26, 29]
-    },
-    {
       "moebel": "gt7Stein",
       "feld": [45, 27]
-    },
-    {
-      "moebel": "gt7Stein",
-      "feld": [11, 5]
     },
     {
       "moebel": "gt7KaktusBluete",
@@ -596,7 +592,7 @@
     },
     {
       "moebel": "gt7Stein",
-      "feld": [12, 5]
+      "feld": [6, 27]
     },
     {
       "moebel": "gt7TumbleweedGross",
@@ -627,6 +623,10 @@
       "feld": [8, 5]
     },
     {
+      "moebel": "gt7Felsgruppe",
+      "feld": [19, 35]
+    },
+    {
       "moebel": "gt7Tumbleweed",
       "feld": [49, 25]
     },
@@ -641,6 +641,10 @@
     {
       "moebel": "gt7Stein",
       "feld": [33, 5]
+    },
+    {
+      "moebel": "gt7KaktusBluete",
+      "feld": [1, 26]
     },
     {
       "moebel": "gt7Stein",
@@ -663,8 +667,12 @@
       "feld": [4, 33]
     },
     {
-      "moebel": "gt7Felsgruppe",
-      "feld": [8, 6]
+      "moebel": "gt7Tumbleweed",
+      "feld": [2, 29]
+    },
+    {
+      "moebel": "gt7Stein",
+      "feld": [5, 30]
     },
     {
       "moebel": "gt7Stein",
@@ -703,6 +711,10 @@
       "feld": [28, 28]
     },
     {
+      "moebel": "gt7KaktusBluete",
+      "feld": [47, 9]
+    },
+    {
       "moebel": "gt7Tumbleweed",
       "feld": [47, 33]
     },
@@ -711,12 +723,12 @@
       "feld": [11, 31]
     },
     {
-      "moebel": "gt7KaktusBluete",
-      "feld": [27, 35]
+      "moebel": "gt7Kaktus",
+      "feld": [4, 28]
     },
     {
-      "moebel": "gt7Kaktus",
-      "feld": [12, 28]
+      "moebel": "gt7KaktusBluete",
+      "feld": [27, 35]
     },
     {
       "moebel": "gt7KaktusBluete",

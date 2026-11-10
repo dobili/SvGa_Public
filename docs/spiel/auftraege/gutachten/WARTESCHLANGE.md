@@ -96,7 +96,7 @@ Szene heißt die Datei in `inhalte/abenteuer/szenen/` ohne `.json`.
 
 - [x] Runde-9-Karten von mittel-1, zweite Prüfung (Datei `mittel-1-runde9-2.md`) nach `port-delacroix.md`, `capital-arena-bayou.md`, `weg-ghost-capital.md`, `weg-silicon-delacroix.md` (Antworten in den Ortsdokumenten; Bilder `haeuser_varianten.py`, `schilder_deutsch.py`, `sumpfboden.py`, `wasser_moor.py` neu, `weg11_bilder.py`, `klippe_gras.py`)
 - [x] weg-ironwood-silicon-raststaette (vierte Prüfung, mittel-1, Datei `weg-ironwood-silicon-raststaette-4.md`)
-- [ ] Gemini-Bilder eingebaut (mittel-3): Roboter in silicon-bay-altstadt, -akademie, -aussen; Reh in weg-crossroads-pinewood-huetten, -riesenbaeume; Sturmkeller in weg-summit-crossroads-praerie (kurze Sichtprüfung)
+- [x] Gemini-Bilder eingebaut (mittel-3; Datei `mittel-3-gemini-sichtpruefung.md`, silicon-bay-aussen ungeprüft): Roboter in silicon-bay-altstadt, -akademie, -aussen; Reh in weg-crossroads-pinewood-huetten, -riesenbaeume; Sturmkeller in weg-summit-crossroads-praerie (kurze Sichtprüfung)
 
 ## Erledigt
 
@@ -110,6 +110,6 @@ Szene heißt die Datei in `inhalte/abenteuer/szenen/` ohne `.json`.
 - [x] weg-desert-summit-bergstrasse, weg-desert-summit-diner mit Zustand neon, weg-desert-summit-hinterzimmer (Runde 9, mittel-4)
 - [x] sternwarte-felsnase, sternwarte-kuppel (Runde 9, mittel-4)
 - [x] weg-delacroix-desert-canyonpfad, weg-delacroix-desert-felsbogen (Runde 9, mittel-4)
-- [ ] weg-riverton-ironwood-2 mit Zustand ohne-tische: Eisenbrücke mit Höhe (Gemini-Bild), Querung über den Nord-Süd-Arm (mittel-4)
-- [ ] ironwood-museum, ironwood-umkleide, sternwarte-kuppel: Gemini-Bilder eingebaut (mittel-4)
-- [ ] Runde-9-Karten nach dem Gutachten (summit-city-aussen, -bergstation, -bergladen, hochebene-felsentuerme, -schule, sternwarte-felsnase, weg-desert-summit-bergstrasse, -diner, weg-delacroix-desert-canyonpfad, -felsbogen) (mittel-4)
+- [x] weg-riverton-ironwood-2 mit Zustand ohne-tische: Eisenbrücke mit Höhe (Gemini-Bild), Querung über den Nord-Süd-Arm (mittel-4)
+- [x] ironwood-museum, ironwood-umkleide, sternwarte-kuppel: Gemini-Bilder eingebaut (mittel-4)
+- [x] Runde-9-Karten nach dem Gutachten (summit-city-aussen, -bergstation, -bergladen, hochebene-felsentuerme, -schule, sternwarte-felsnase, weg-desert-summit-bergstrasse, -diner, weg-delacroix-desert-canyonpfad, -felsbogen) (mittel-4)

@@ -33,3 +33,12 @@ export function feldDarunter(karte: string, name: string): { x: number; y: numbe
   if (!objekt) throw new Error(`${name} fehlt auf der Karte ${karte}`);
   return { x: Math.floor(objekt.x / KACHEL), y: Math.floor(objekt.y / KACHEL) + 1 };
 }
+
+/**
+ * Das Feld eines Auslösers oder einer Figur selbst (etwa „start“): dort beginnt der Held.
+ * Beispiel: feldVon("steinbruch-stollen", "start") → Feld des Startauslösers im Stollen.
+ */
+export function feldVon(karte: string, name: string): { x: number; y: number } {
+  const darunter = feldDarunter(karte, name);
+  return { x: darunter.x, y: darunter.y - 1 };
+}

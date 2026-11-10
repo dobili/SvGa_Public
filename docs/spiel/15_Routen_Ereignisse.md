@@ -63,9 +63,21 @@ vor sich. Schwarz stellt sie selbst auf, am Leuchtturm von Weg 11.
   selbst am Leuchtturm.
 - **Verstecke:** Die Figuren liegen nicht offen herum, aber nie ganz ohne Hinweis. Jede Fundstelle
   hat ein kleines Zeichen, das Odette hinterlässt: ein Finkenpiktogramm aus Kreide oder Blech.
-- **Ende:** Am Leuchtturm stellt sie Schwarz auf. Das Problem ist Matt in drei. Es wird in Runde 6
-  mit der Engine gebaut, aus den 16 vorgegebenen Feldern; legal und eindeutig, wie bei
-  `pipeline.zugfolgen.konstruieren`.
+- **Ende:** Am Leuchtturm stellt Odette Schwarz auf. Ihr Meisterproblem ist eine Falle, keine
+  Mattaufgabe: Weiß hat alle 16 Figuren noch auf dem Brett, so wie {held} sie gefunden hat, die
+  meisten auf ihren Startfeldern.
+  - **Stellung:** nach 1.e4 e5 2.Sf3 d6 3.Lc4 Lg4 4.Sc3 g6, die Falle von Légal (Seekadettenmatt,
+    Paris um 1750).
+  - **Felder unter den Figuren:**
+    - Türme a1 und h1, Springer c3 und f3, Läufer c1 und c4, Dame d1, König e1;
+    - Bauern a2, b2, c2, d2, e4, f2, g2, h2.
+  - **Aufgabe:** „Weiß zieht und gewinnt.“ Die Lösung 5.Sxe5! lässt die eigene Dame hängen:
+    - 5…Lxd1 6.Lxf7+ Ke7 7.Sd5# ist Matt;
+    - 5…dxe5 6.Dxg4 gewinnt einen Bauern.
+  - **Geprüft** mit python-chess. Nach dem Lösen spielt Odette die Falle vor (Vorführung
+    `finchFalle`).
+  - Odette: „Die Dame ist die teuerste Figur. Deshalb nimmt sie jeder. Deshalb ist sie der beste
+    Köder.“
 - **Lohn:** der Figurensatz „Finchs Buchsbaum“ als Extra der App (E3) und ein Platz im Album.
 - **Später:** Wer weniger als 16 Figuren hat, bekommt am Leuchtturm einen Hinweis auf die fehlenden
   Wege. Odette wartet bis zum Ende des Spiels dort.
@@ -530,7 +542,7 @@ Jeder Abschnitt nennt:
      ab, gegen ihn. {held} darf einmal vorschlagen.
 - **Schach:**
   - Simultan gegen fünf, je eine kurze Stellung mit Vorteil (Kapitel 12);
-  - Finch-Problem Matt in drei.
+  - Finchs Falle: Weiß zieht und gewinnt (1.1).
 - **Lohn:**
   - Album-Foto „Weltschachtag“;
   - der König von Finch und das Problem (1.1);
@@ -599,18 +611,19 @@ Das meiste geht mit dem, was es schon gibt:
 Neu oder zu erweitern:
 
 1. **Sammelkarte der Finch-Jagd:** eine Seite wie das Album mit 16 Kästchen und Feldnamen. Das
-   Meisterproblem baut die Pipeline mit der Engine (Runde 6).
-2. **Partie mit Kandidatenwahl** (Stream, 2.4): Der Gegner zieht zufällig einen von drei
+   Meisterproblem steht in Abschnitt 1.1, mit python-chess geprüft.
+2. **Finchs Falle** als Aufgabe „Weiß zieht und gewinnt“ mit beiden Antworten von Schwarz (Daten oben, Abschnitt 1.1).
+3. **Partie mit Kandidatenwahl** (Stream, 2.4): Der Gegner zieht zufällig einen von drei
    vorgegebenen Zügen. Das ist ein kleiner Zusatz zur Engine-Stufe.
-3. **Partie nach Gehör** (Funkschach, 2.8): Gegnerzüge erscheinen erst als Notation und dann auf
+4. **Partie nach Gehör** (Funkschach, 2.8): Gegnerzüge erscheinen erst als Notation und dann auf
    dem Brett.
-4. **Simultan** (2.13): fünf kurze Stellungsduelle hintereinander auf einer Tafel. Das reicht als
+5. **Simultan** (2.13): fünf kurze Stellungsduelle hintereinander auf einer Tafel. Das reicht als
    erste Fassung.
-5. **Gedächtnisstellung** (Seilschaft, 2.7): Stellung 5 Sekunden zeigen, dann leeres Brett zum
+6. **Gedächtnisstellung** (Seilschaft, 2.7): Stellung 5 Sekunden zeigen, dann leeres Brett zum
    Aufbauen. Das ist neu, aber klein.
-6. **Gegner mit Eröffnungsbuch und Bruch** (Z-1, 2.12): stark im Buch, danach schwach. Das ist eine
+7. **Gegner mit Eröffnungsbuch und Bruch** (Z-1, 2.12): stark im Buch, danach schwach. Das ist eine
    Fehlerprofil-Einstellung der vorhandenen Engine-Stufen (AP 11).
-7. **Lebendschach** (2.11): Figuren als Kinder auf der Karte. Bis zur Animation reicht die normale
+8. **Lebendschach** (2.11): Figuren als Kinder auf der Karte. Bis zur Animation reicht die normale
    Brettansicht mit dem Bild der Lichtung dahinter.
 
 ## 5. Offene Punkte für den Autor (Widerspruch genügt)

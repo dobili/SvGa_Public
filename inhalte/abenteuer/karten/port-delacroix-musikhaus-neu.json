@@ -1774,6 +1774,11 @@
    "name": "kennung",
    "type": "string",
    "value": "portDelacroix.musikhaus"
+  },
+  {
+   "name": "zustand_der_karte",
+   "type": "string",
+   "value": "musikhausOffen"
   }
  ]
 }

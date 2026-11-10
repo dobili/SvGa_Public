@@ -1335,5 +1335,11 @@
   "fund.thermoskanneGwen.text": "Eine verbeulte Thermoskanne mit dem Namen „G. Tolliver“, vergessen im Durchlass unter dem Bahndamm.",
   "quest.zugpartie.titel": "Die Zugpartie",
   "quest.zugpartie.schritt1": "Hilf Rosalind am Stellwerk: Was hängt in ihrer Stellung?",
-  "quest.zugpartie.schritt2": "Häng den besseren Zug ans Signal, bevor der Güterzug kommt."
+  "quest.zugpartie.schritt2": "Häng den besseren Zug ans Signal, bevor der Güterzug kommt.",
+  "vorfuehrung.finchFalle.titel": "Finchs letzte Falle",
+  "vorfuehrung.finchFalle.1": "Der Springer schlägt auf e5 und lässt die eigene Dame stehen. Mit Absicht.",
+  "vorfuehrung.finchFalle.2": "Schwarz greift zu und nimmt die Dame. Genau das wollte Odette.",
+  "vorfuehrung.finchFalle.3": "Läufer schlägt auf f7, Schach. Der König muss einen Schritt vor.",
+  "vorfuehrung.finchFalle.4": "Ke7 ist das einzige Feld.",
+  "vorfuehrung.finchFalle.5": "Der zweite Springer setzt matt, mit drei leichten Figuren gegen den König. Wer die Dame nicht genommen hätte, hätte nur einen Bauern verloren."
 }

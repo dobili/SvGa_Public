@@ -4,9 +4,7 @@
   "art": "aussen",
   "boden": "sand",
   "wandart": "hecke",
-  "bruecken": [
-    "h"
-  ],
+  "bruecken": ["h"],
   "boeden": {
     "e": "erde",
     "a": "sand",
@@ -48,793 +46,463 @@
   "objekte": [
     {
       "moebel": "gc7Steg",
-      "feld": [
-        32,
-        2
-      ]
+      "feld": [32, 2]
     },
     {
       "moebel": "gc7Faehre",
-      "feld": [
-        34,
-        3
-      ]
+      "feld": [34, 3]
     },
     {
       "moebel": "gc7Faehrterminal",
-      "feld": [
-        22,
-        4
-      ]
+      "feld": [22, 4]
     },
     {
       "moebel": "gc7Rettungsring",
-      "feld": [
-        31,
-        10
-      ]
+      "feld": [31, 10]
     },
     {
       "moebel": "gc7Absperrbock",
-      "feld": [
-        2,
-        11
-      ]
+      "feld": [2, 11]
     },
     {
       "moebel": "gc7Tafel",
-      "feld": [
-        70,
-        13
-      ]
+      "feld": [70, 13]
     },
     {
       "moebel": "gc7Muelleimer",
-      "feld": [
-        73,
-        14
-      ]
+      "feld": [73, 14]
     },
     {
       "moebel": "gc7SchirmZu",
-      "feld": [
-        60,
-        8
-      ]
+      "feld": [60, 8]
     },
     {
       "moebel": "gc7Handtuch",
-      "feld": [
-        62,
-        10
-      ]
+      "feld": [62, 10]
     },
     {
       "moebel": "gc7Treibholz",
-      "feld": [
-        84,
-        10
-      ]
+      "feld": [84, 10]
     },
     {
       "moebel": "gc7Treibholz",
-      "feld": [
-        110,
-        11
-      ]
+      "feld": [110, 11]
     },
     {
       "moebel": "gc7Kiefer",
-      "feld": [
-        119,
-        24
-      ]
+      "feld": [119, 24]
     },
     {
       "moebel": "gc7Kiefer",
-      "feld": [
-        36,
-        21
-      ]
+      "feld": [36, 21]
     },
     {
       "moebel": "gc7Kiefer",
-      "feld": [
-        87,
-        26
-      ]
+      "feld": [87, 26]
     },
     {
       "moebel": "gc7Kiefer",
-      "feld": [
-        86,
-        19
-      ]
+      "feld": [86, 19]
     },
     {
       "moebel": "gc7Kiefer",
-      "feld": [
-        44,
-        26
-      ]
+      "feld": [44, 26]
     },
     {
       "moebel": "gc7Kiefer",
-      "feld": [
-        41,
-        21
-      ]
+      "feld": [41, 21]
     },
     {
       "moebel": "gc7Kiefer",
-      "feld": [
-        14,
-        20
-      ]
+      "feld": [14, 20]
     },
     {
       "moebel": "gc7Kiefer",
-      "feld": [
-        130,
-        20
-      ]
+      "feld": [130, 20]
     },
     {
       "moebel": "gc7Kiefer",
-      "feld": [
-        27,
-        23
-      ]
+      "feld": [27, 23]
     },
     {
       "moebel": "gc7Kiefer",
-      "feld": [
-        58,
-        25
-      ]
+      "feld": [58, 25]
     },
     {
       "moebel": "gc7Kiefer",
-      "feld": [
-        69,
-        22
-      ]
+      "feld": [69, 22]
     },
     {
       "moebel": "gc7Kiefer",
-      "feld": [
-        2,
-        25
-      ]
+      "feld": [2, 25]
     },
     {
       "moebel": "gc7Kiefer",
-      "feld": [
-        97,
-        26
-      ]
+      "feld": [97, 26]
     },
     {
       "moebel": "gc7Kiefer",
-      "feld": [
-        7,
-        22
-      ]
+      "feld": [7, 22]
     },
     {
       "moebel": "gc7Kiefer",
-      "feld": [
-        29,
-        19
-      ]
+      "feld": [29, 19]
     },
     {
       "moebel": "gc7Kiefer",
-      "feld": [
-        51,
-        22
-      ]
+      "feld": [51, 22]
     },
     {
       "moebel": "gc7Kiefer",
-      "feld": [
-        3,
-        20
-      ]
+      "feld": [3, 20]
     },
     {
       "moebel": "gc7Kiefer",
-      "feld": [
-        139,
-        19
-      ]
+      "feld": [139, 19]
     },
     {
       "moebel": "gc7Kiefer",
-      "feld": [
-        147,
-        26
-      ]
+      "feld": [147, 26]
     },
     {
       "moebel": "gc7Kiefer",
-      "feld": [
-        108,
-        20
-      ]
+      "feld": [108, 20]
     },
     {
       "moebel": "gc7Kiefer",
-      "feld": [
-        69,
-        19
-      ]
+      "feld": [69, 19]
     },
     {
       "moebel": "gc7Kiefer",
-      "feld": [
-        104,
-        22
-      ]
+      "feld": [104, 22]
     },
     {
       "moebel": "gc7Kiefer",
-      "feld": [
-        94,
-        20
-      ]
+      "feld": [94, 20]
     },
     {
       "moebel": "gc7Kiefer",
-      "feld": [
-        55,
-        22
-      ]
+      "feld": [55, 22]
     },
     {
       "moebel": "gc7Kiefer",
-      "feld": [
-        23,
-        23
-      ]
+      "feld": [23, 23]
     },
     {
       "moebel": "gc7Kiefer",
-      "feld": [
-        7,
-        25
-      ]
+      "feld": [7, 25]
     },
     {
       "moebel": "gc7Kiefer",
-      "feld": [
-        128,
-        24
-      ]
+      "feld": [128, 24]
     },
     {
       "moebel": "gc7Kiefer",
-      "feld": [
-        145,
-        20
-      ]
+      "feld": [145, 20]
     },
     {
       "moebel": "gc7Kiefer",
-      "feld": [
-        60,
-        20
-      ]
+      "feld": [60, 20]
     },
     {
       "moebel": "gc7Kiefer",
-      "feld": [
-        8,
-        19
-      ]
+      "feld": [8, 19]
     },
     {
       "moebel": "gc7Kiefer",
-      "feld": [
-        16,
-        26
-      ]
+      "feld": [16, 26]
     },
     {
       "moebel": "gc7Kiefer",
-      "feld": [
-        100,
-        23
-      ]
+      "feld": [100, 23]
     },
     {
       "moebel": "gc7Kiefer",
-      "feld": [
-        91,
-        23
-      ]
+      "feld": [91, 23]
     },
     {
       "moebel": "gc7Kiefer",
-      "feld": [
-        124,
-        23
-      ]
+      "feld": [124, 23]
     },
     {
       "moebel": "gc7Kiefer",
-      "feld": [
-        108,
-        26
-      ]
+      "feld": [108, 26]
     },
     {
       "moebel": "gc7Schilf",
-      "feld": [
-        66,
-        24
-      ]
+      "feld": [66, 24]
     },
     {
       "moebel": "gc7FelsFlach",
-      "feld": [
-        136,
-        19
-      ]
+      "feld": [136, 19]
     },
     {
       "moebel": "gc7Fels",
-      "feld": [
-        64,
-        19
-      ]
+      "feld": [64, 19]
     },
     {
       "moebel": "gc7Schilf",
-      "feld": [
-        98,
-        20
-      ]
+      "feld": [98, 20]
     },
     {
       "moebel": "gc7Schilf",
-      "feld": [
-        19,
-        21
-      ]
+      "feld": [19, 21]
     },
     {
       "moebel": "gc7Fels",
-      "feld": [
-        114,
-        21
-      ]
+      "feld": [114, 21]
     },
     {
       "moebel": "gc7Fels",
-      "feld": [
-        75,
-        24
-      ]
+      "feld": [75, 24]
     },
     {
       "moebel": "gc7Fels",
-      "feld": [
-        139,
-        22
-      ]
+      "feld": [139, 22]
     },
     {
       "moebel": "gc7FelsFlach",
-      "feld": [
-        51,
-        25
-      ]
+      "feld": [51, 25]
     },
     {
       "moebel": "gc7Schilf",
-      "feld": [
-        78,
-        19
-      ]
+      "feld": [78, 19]
     },
     {
       "moebel": "gc7FelsFlach",
-      "feld": [
-        80,
-        24
-      ]
+      "feld": [80, 24]
     },
     {
       "moebel": "gc7FelsFlach",
-      "feld": [
-        48,
-        26
-      ]
+      "feld": [48, 26]
     },
     {
       "moebel": "gc7FelsFlach",
-      "feld": [
-        46,
-        19
-      ]
+      "feld": [46, 19]
     },
     {
       "moebel": "gc7Schilf",
-      "feld": [
-        104,
-        19
-      ]
+      "feld": [104, 19]
     },
     {
       "moebel": "gc7Fels",
-      "feld": [
-        47,
-        22
-      ]
+      "feld": [47, 22]
     },
     {
       "moebel": "gc7FelsFlach",
-      "feld": [
-        63,
-        26
-      ]
+      "feld": [63, 26]
     },
     {
       "moebel": "gc7Schilf",
-      "feld": [
-        132,
-        24
-      ]
+      "feld": [132, 24]
     },
     {
       "moebel": "gc7FelsFlach",
-      "feld": [
-        38,
-        24
-      ]
+      "feld": [38, 24]
     },
     {
       "moebel": "gc7Fels",
-      "feld": [
-        86,
-        22
-      ]
+      "feld": [86, 22]
     },
     {
       "moebel": "gc7Schilf",
-      "feld": [
-        117,
-        21
-      ]
+      "feld": [117, 21]
     },
     {
       "moebel": "gc7FelsFlach",
-      "feld": [
-        116,
-        24
-      ]
+      "feld": [116, 24]
     },
     {
       "moebel": "gc7Schilf",
-      "feld": [
-        41,
-        26
-      ]
+      "feld": [41, 26]
     },
     {
       "moebel": "gc7FelsFlach",
-      "feld": [
-        82,
-        21
-      ]
+      "feld": [82, 21]
     },
     {
       "moebel": "gc7FelsFlach",
-      "feld": [
-        50,
-        19
-      ]
+      "feld": [50, 19]
     },
     {
       "moebel": "gc7Fels",
-      "feld": [
-        72,
-        25
-      ]
+      "feld": [72, 25]
     },
     {
       "moebel": "gc7FelsFlach",
-      "feld": [
-        34,
-        25
-      ]
+      "feld": [34, 25]
     },
     {
       "moebel": "gc7Fels",
-      "feld": [
-        120,
-        21
-      ]
+      "feld": [120, 21]
     },
     {
       "moebel": "gc7FelsFlach",
-      "feld": [
-        84,
-        25
-      ]
+      "feld": [84, 25]
     },
     {
       "moebel": "gc7FelsFlach",
-      "feld": [
-        141,
-        26
-      ]
+      "feld": [141, 26]
     },
     {
       "moebel": "gc7Fels",
-      "feld": [
-        125,
-        19
-      ]
+      "feld": [125, 19]
     },
     {
       "moebel": "gc7Schilf",
-      "feld": [
-        32,
-        22
-      ]
+      "feld": [32, 22]
     },
     {
       "moebel": "gc7Schilf",
-      "feld": [
-        55,
-        19
-      ]
+      "feld": [55, 19]
     },
     {
       "moebel": "gc7Schilf",
-      "feld": [
-        146,
-        23
-      ]
+      "feld": [146, 23]
     },
     {
       "moebel": "gc7FelsFlach",
-      "feld": [
-        142,
-        22
-      ]
+      "feld": [142, 22]
     },
     {
       "moebel": "gc7Fels",
-      "feld": [
-        73,
-        21
-      ]
+      "feld": [73, 21]
     },
     {
       "moebel": "gc7Schilf",
-      "feld": [
-        24,
-        20
-      ]
+      "feld": [24, 20]
     },
     {
       "moebel": "gc7FelsFlach",
-      "feld": [
-        90,
-        19
-      ]
+      "feld": [90, 19]
     },
     {
       "moebel": "gc7Schilf",
-      "feld": [
-        12,
-        25
-      ]
+      "feld": [12, 25]
     },
     {
       "moebel": "gc7Fels",
-      "feld": [
-        24,
-        26
-      ]
+      "feld": [24, 26]
     },
     {
       "moebel": "gc7Fels",
-      "feld": [
-        110,
-        23
-      ]
+      "feld": [110, 23]
     },
     {
       "moebel": "gc7Fels",
-      "feld": [
-        101,
-        26
-      ]
+      "feld": [101, 26]
     },
     {
       "moebel": "gc7Schilf",
-      "feld": [
-        101,
-        19
-      ]
+      "feld": [101, 19]
     },
     {
       "moebel": "gc7Fels",
-      "feld": [
-        20,
-        25
-      ]
+      "feld": [20, 25]
     },
     {
       "moebel": "gc7FelsFlach",
-      "feld": [
-        136,
-        22
-      ]
+      "feld": [136, 22]
     },
     {
       "moebel": "gc7FelsFlach",
-      "feld": [
-        144,
-        26
-      ]
+      "feld": [144, 26]
     },
     {
       "moebel": "gc7FelsFlach",
-      "feld": [
-        96,
-        23
-      ]
+      "feld": [96, 23]
     },
     {
       "moebel": "gc7Fels",
-      "feld": [
-        123,
-        26
-      ]
+      "feld": [123, 26]
     },
     {
       "moebel": "ca7Buehne",
-      "feld": [
-        138,
-        9
-      ],
+      "feld": [138, 9],
       "runde7": true
     },
     {
       "moebel": "ca8FahneWeiss",
-      "feld": [
-        137,
-        9
-      ],
+      "feld": [137, 9],
       "runde7": true
     },
     {
       "moebel": "ca8FahneSchwarz",
-      "feld": [
-        144,
-        9
-      ],
+      "feld": [144, 9],
       "runde7": true
     },
     {
       "moebel": "ca8Lautsprecher",
-      "feld": [
-        134,
-        9
-      ],
+      "feld": [134, 9],
       "runde7": true
     },
     {
       "moebel": "ca8Lautsprecher",
-      "feld": [
-        145,
-        9
-      ],
+      "feld": [145, 9],
       "runde7": true
     },
     {
       "moebel": "ca8Eiswagen",
-      "feld": [
-        100,
-        10
-      ],
+      "feld": [100, 10],
       "bauteil_ok": true,
       "runde7": true
     },
     {
       "moebel": "ca8Tacowagen",
-      "feld": [
-        110,
-        10
-      ],
+      "feld": [110, 10],
       "bauteil_ok": true,
       "runde7": true
     },
     {
       "moebel": "ca8KlapptischBrett",
-      "feld": [
-        122,
-        12
-      ],
+      "feld": [122, 12],
       "runde7": true
     },
     {
       "moebel": "ca8KlapptischBrett",
-      "feld": [
-        125,
-        12
-      ],
+      "feld": [125, 12],
       "runde7": true
     },
     {
       "moebel": "ca8KlapptischBrett",
-      "feld": [
-        128,
-        12
-      ],
+      "feld": [128, 12],
       "runde7": true
     },
     {
       "moebel": "ca8KlapptischBrett",
-      "feld": [
-        131,
-        12
-      ],
+      "feld": [131, 12],
       "runde7": true
     },
     {
       "moebel": "ca8KlapptischBrett",
-      "feld": [
-        134,
-        12
-      ],
+      "feld": [134, 12],
       "runde7": true
     },
     {
       "moebel": "ca8Lichtermast",
-      "feld": [
-        121,
-        9
-      ],
+      "feld": [121, 9],
       "runde7": true
     },
     {
       "moebel": "ca8Lichtermast",
-      "feld": [
-        133,
-        9
-      ],
+      "feld": [133, 9],
       "runde7": true
     },
     {
       "moebel": "ca8Lichterkette",
-      "feld": [
-        122,
-        9
-      ],
+      "feld": [122, 9],
       "vorn": true,
       "runde7": true
     },
     {
       "moebel": "ca8Lichterkette",
-      "feld": [
-        126,
-        9
-      ],
+      "feld": [126, 9],
       "vorn": true,
       "runde7": true
     },
     {
       "moebel": "ca8Lichterkette",
-      "feld": [
-        129,
-        9
-      ],
+      "feld": [129, 9],
       "vorn": true,
       "runde7": true
     }
@@ -842,48 +510,30 @@
   "ausloeser": [
     {
       "name": "start",
-      "feld": [
-        1,
-        14
-      ],
+      "feld": [1, 14],
       "eigenschaften": {
         "richtung": "rechts"
       }
     },
     {
       "name": "zurueckGhost",
-      "feld": [
-        0,
-        14
-      ]
+      "feld": [0, 14]
     },
     {
       "name": "zurueckGhost",
-      "feld": [
-        0,
-        15
-      ]
+      "feld": [0, 15]
     },
     {
       "name": "weiterLeuchtturm",
-      "feld": [
-        149,
-        16
-      ]
+      "feld": [149, 16]
     },
     {
       "name": "weiterLeuchtturm",
-      "feld": [
-        149,
-        17
-      ]
+      "feld": [149, 17]
     },
     {
       "name": "tafel",
-      "feld": [
-        71,
-        15
-      ]
+      "feld": [71, 15]
     }
   ],
   "figuren": [],
@@ -891,10 +541,7 @@
     {
       "name": "wachmann",
       "typ": "statist",
-      "feld": [
-        4,
-        13
-      ],
+      "feld": [4, 13],
       "eigenschaften": {
         "von": "4,13",
         "bis": "4,13",
@@ -906,10 +553,7 @@
     {
       "name": "drachenkind",
       "typ": "statist",
-      "feld": [
-        20,
-        10
-      ],
+      "feld": [20, 10],
       "eigenschaften": {
         "von": "16,10",
         "bis": "28,10",
@@ -920,10 +564,7 @@
     {
       "name": "schwimmerin",
       "typ": "statist",
-      "feld": [
-        40,
-        12
-      ],
+      "feld": [40, 12],
       "eigenschaften": {
         "von": "40,12",
         "bis": "40,12",
@@ -935,10 +576,7 @@
     {
       "name": "geschwister",
       "typ": "statist",
-      "feld": [
-        70,
-        13
-      ],
+      "feld": [70, 13],
       "eigenschaften": {
         "von": "70,13",
         "bis": "70,13",
@@ -950,10 +588,7 @@
     {
       "name": "picknickfamilie",
       "typ": "statist",
-      "feld": [
-        54,
-        21
-      ],
+      "feld": [54, 21],
       "eigenschaften": {
         "von": "54,21",
         "bis": "54,21",
@@ -964,10 +599,7 @@
     {
       "name": "moewen",
       "typ": "tier",
-      "feld": [
-        30,
-        6
-      ],
+      "feld": [30, 6],
       "eigenschaften": {
         "von": "20,4",
         "bis": "50,8",
@@ -977,10 +609,7 @@
     {
       "name": "enten",
       "typ": "tier",
-      "feld": [
-        40,
-        4
-      ],
+      "feld": [40, 4],
       "eigenschaften": {
         "von": "34,4",
         "bis": "48,5",
@@ -990,10 +619,7 @@
     {
       "name": "hecht",
       "typ": "tier",
-      "feld": [
-        100,
-        5
-      ],
+      "feld": [100, 5],
       "eigenschaften": {
         "von": "96,5",
         "bis": "110,6",
@@ -1003,10 +629,7 @@
     {
       "name": "eichhoernchen",
       "typ": "tier",
-      "feld": [
-        34,
-        20
-      ],
+      "feld": [34, 20],
       "eigenschaften": {
         "von": "30,20",
         "bis": "40,21",
@@ -1016,10 +639,7 @@
     {
       "name": "specht",
       "typ": "tier",
-      "feld": [
-        48,
-        24
-      ],
+      "feld": [48, 24],
       "eigenschaften": {
         "von": "48,24",
         "bis": "48,24",
@@ -1029,10 +649,7 @@
     {
       "name": "schwan",
       "typ": "tier",
-      "feld": [
-        130,
-        3
-      ],
+      "feld": [130, 3],
       "eigenschaften": {
         "von": "124,3",
         "bis": "136,4",
@@ -1040,14 +657,7 @@
       }
     }
   ],
-  "zustand": [
-    "neu",
-    "gebraucht"
-  ],
-  "stil": [
-    "natur",
-    "modern",
-    "klassisch"
-  ],
+  "zustand": ["neu", "gebraucht"],
+  "stil": ["natur", "modern", "klassisch"],
   "variante": "c"
 }

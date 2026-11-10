@@ -2,7 +2,7 @@
   "karte": "siliconBay.hafen",
   "datei": "karten/silicon-bay-hafen.json",
   "art": "aussen",
-  "beschreibung": "Der alte Hafen von Silicon Bay unterhalb der Terrasse des Campus. Von der Treppe in der Mitte kommt man auf die Hafenstraße. Oben die alten Häuser: die Fischhalle, ein Laden, Ames leerer Kurzwarenladen mit dem Schild „Bald geöffnet“ und die Hafenmeisterei. Am Südrand der Straße Laternen in festen Abständen, am Kai ein Gemüsekarren mit Händlerin. Links das Fährhäuschen, davor am Kai die Küstenfähre, 18 Kacheln lang, dreimal so lang wie das Fischerboot. In der Mitte Ladebetrieb am kleinen Fischerboot: Kisten und Fässer in Reihen, Hafenarbeiter tragen sie zur Kaikante. Bänke mit Blick aufs Wasser, Poller an der Kaikante; die Kaimauer fällt mit Leitern und Reifenfendern zum Wasser ab. Rechts der Steg der Inselfähre und der rot-weiße Leuchtturm auf einer Landzunge, zu dessen Tür ein Weg um den Turm führt.",
+  "beschreibung": "Der alte Hafen von Silicon Bay unterhalb der Terrasse des Campus; eine Stützmauer trägt die Terrasse, in der Mitte führt die Treppe in zwei Läufen herunter auf die Hafenstraße. Oben die alten Häuser: der Fischladen der Fischhalle, der Laden für Hafenbedarf, Ames leerer Kurzwarenladen mit dem Schild „Coming soon“ und dem Plakat „Bald geöffnet“ und die Hafenmeisterei mit Schild und Flagge; daneben trocknen Netze. Am Südrand der Straße Laternen in festen Abständen, am Kai ein Gemüsekarren mit Händlerin. Links das Fährhäuschen, davor am Kai die Küstenfähre, 18 Kacheln lang, mit Gangway zum Kai. In der Mitte das kleine Fischerboot, ein Ruderboot mit Angel; davor ein paar Kisten und Fässer, die Hafenarbeiter zur Kaikante tragen. Bänke mit Blick aufs Wasser, Poller an der Kaikante; die Kaimauer fällt mit Leitern und Reifenfendern zum Wasser ab. Rechts der Steg der Inselfähre mit einem Motorboot und der rot-weiße Leuchtturm auf einer Mole, zu dessen Tür ein Weg um den Turm führt.",
   "boden": "pflaster",
   "wandart": "stein",
   "ufer": "stein",
@@ -30,10 +30,10 @@
     "#...............................pppp...........................#",
     "#...............................pppp...........................#",
     "#...............................pppp...........................#",
-    "#.......hhhhhhhhhhhhhhhhhhhhhhhhhhhhhhhhhhhhhhhhhhhhhhhhhhhhhhh#",
-    "#.......hhhhhhhhhhhhhhhhhhhhhhhhhhhhhhhhhhhhhhhhhhhhhhhhhhhhhhh#",
-    "#.......hhhhhhhhhhhhhhhhhhhhhhhhhhhhhhhhhhhhhhhhhhhhhhhhhhhhhhh#",
-    "#.......hhhhhhhhhhhhhhhhhhhhhhhhhhhhhhhhhhhhhhhhhhhhhhhhhhhhhhh#",
+    "#hhhhhhhhhhhhhhhhhhhhhhhhhhhhhhhhhhhhhhhhhhhhhhhhhhhhhhhhhhhhhh#",
+    "#hhhhhhhhhhhhhhhhhhhhhhhhhhhhhhhhhhhhhhhhhhhhhhhhhhhhhhhhhhhhhh#",
+    "#hhhhhhhhhhhhhhhhhhhhhhhhhhhhhhhhhhhhhhhhhhhhhhhhhhhhhhhhhhhhhh#",
+    "#hhhhhhhhhhhhhhhhhhhhhhhhhhhhhhhhhhhhhhhhhhhhhhhhhhhhhhhhhhhhhh#",
     "#..............................................................#",
     "#..............................................................#",
     "#..............................................................#",
@@ -187,20 +187,14 @@
       "bauteil_ok": true
     },
     {
-      "moebel": "sb5Fischhalle",
-      "feld": [2, 0]
-    },
-    {
-      "moebel": "sb5Store",
-      "feld": [17, 5]
-    },
-    {
       "moebel": "sb5Kurzwaren",
-      "feld": [24, 8]
+      "feld": [24, 8],
+      "id": "ame"
     },
     {
       "moebel": "sb5Hafenmeisterei",
-      "feld": [40, 6]
+      "feld": [40, 6],
+      "id": "meisterei"
     },
     {
       "moebel": "sb5Leuchtturm",
@@ -289,36 +283,8 @@
       "feld": [20, 26]
     },
     {
-      "moebel": "caKisten",
-      "feld": [22, 24]
-    },
-    {
-      "moebel": "caKisten",
-      "feld": [22, 26]
-    },
-    {
-      "moebel": "caKisten",
-      "feld": [24, 24]
-    },
-    {
-      "moebel": "caKisten",
-      "feld": [24, 26]
-    },
-    {
       "moebel": "caFaesser",
       "feld": [34, 24]
-    },
-    {
-      "moebel": "caFaesser",
-      "feld": [34, 26]
-    },
-    {
-      "moebel": "caFaesser",
-      "feld": [36, 24]
-    },
-    {
-      "moebel": "caFaesser",
-      "feld": [36, 26]
     },
     {
       "moebel": "sb8Kaimauer",
@@ -544,6 +510,367 @@
       "moebel": "sb8Kaimauer",
       "feld": [45, 31],
       "bauteil_ok": true
+    },
+    {
+      "moebel": "pd7Laden1",
+      "feld": [3, 8]
+    },
+    {
+      "moebel": "pd7Markt2",
+      "feld": [10, 7]
+    },
+    {
+      "moebel": "sb9SchildComingSoon",
+      "auf": "ame",
+      "versatz": [0, 18]
+    },
+    {
+      "moebel": "ci8PlakatBald",
+      "feld": [30, 13]
+    },
+    {
+      "moebel": "sb9SchildHarborMaster",
+      "auf": "meisterei",
+      "versatz": [0, 30]
+    },
+    {
+      "moebel": "cr8FahneWeiss",
+      "feld": [47, 13]
+    },
+    {
+      "moebel": "pk9Netztrockner",
+      "feld": [50, 10]
+    },
+    {
+      "moebel": "pk9Netztrockner",
+      "feld": [55, 12]
+    },
+    {
+      "moebel": "caKisten",
+      "feld": [51, 13]
+    },
+    {
+      "moebel": "rv8Ruderboot",
+      "feld": [40, 33],
+      "bauteil_ok": true
+    },
+    {
+      "moebel": "caFaesser",
+      "feld": [18, 13]
+    },
+    {
+      "moebel": "caKisten",
+      "feld": [20, 13]
+    },
+    {
+      "moebel": "ca9Treppe",
+      "feld": [32, 0],
+      "bauteil_ok": true
+    },
+    {
+      "moebel": "ca9Treppe",
+      "feld": [34, 0],
+      "bauteil_ok": true
+    },
+    {
+      "moebel": "ca9Treppe",
+      "feld": [32, 3],
+      "bauteil_ok": true
+    },
+    {
+      "moebel": "ca9Treppe",
+      "feld": [34, 3],
+      "bauteil_ok": true
+    },
+    {
+      "moebel": "sb8Kaimauer",
+      "feld": [1, 5],
+      "bauteil_ok": true
+    },
+    {
+      "moebel": "sb8Kaimauer",
+      "feld": [2, 5],
+      "bauteil_ok": true
+    },
+    {
+      "moebel": "sb8Kaimauer",
+      "feld": [3, 5],
+      "bauteil_ok": true
+    },
+    {
+      "moebel": "sb8Kaimauer",
+      "feld": [4, 5],
+      "bauteil_ok": true
+    },
+    {
+      "moebel": "sb8Kaimauer",
+      "feld": [5, 5],
+      "bauteil_ok": true
+    },
+    {
+      "moebel": "sb8Kaimauer",
+      "feld": [6, 5],
+      "bauteil_ok": true
+    },
+    {
+      "moebel": "sb8Kaimauer",
+      "feld": [7, 5],
+      "bauteil_ok": true
+    },
+    {
+      "moebel": "sb8Kaimauer",
+      "feld": [8, 5],
+      "bauteil_ok": true
+    },
+    {
+      "moebel": "sb8Kaimauer",
+      "feld": [9, 5],
+      "bauteil_ok": true
+    },
+    {
+      "moebel": "sb8Kaimauer",
+      "feld": [10, 5],
+      "bauteil_ok": true
+    },
+    {
+      "moebel": "sb8Kaimauer",
+      "feld": [11, 5],
+      "bauteil_ok": true
+    },
+    {
+      "moebel": "sb8Kaimauer",
+      "feld": [12, 5],
+      "bauteil_ok": true
+    },
+    {
+      "moebel": "sb8Kaimauer",
+      "feld": [13, 5],
+      "bauteil_ok": true
+    },
+    {
+      "moebel": "sb8Kaimauer",
+      "feld": [14, 5],
+      "bauteil_ok": true
+    },
+    {
+      "moebel": "sb8Kaimauer",
+      "feld": [15, 5],
+      "bauteil_ok": true
+    },
+    {
+      "moebel": "sb8Kaimauer",
+      "feld": [16, 5],
+      "bauteil_ok": true
+    },
+    {
+      "moebel": "sb8Kaimauer",
+      "feld": [17, 5],
+      "bauteil_ok": true
+    },
+    {
+      "moebel": "sb8Kaimauer",
+      "feld": [18, 5],
+      "bauteil_ok": true
+    },
+    {
+      "moebel": "sb8Kaimauer",
+      "feld": [19, 5],
+      "bauteil_ok": true
+    },
+    {
+      "moebel": "sb8Kaimauer",
+      "feld": [20, 5],
+      "bauteil_ok": true
+    },
+    {
+      "moebel": "sb8Kaimauer",
+      "feld": [21, 5],
+      "bauteil_ok": true
+    },
+    {
+      "moebel": "sb8Kaimauer",
+      "feld": [22, 5],
+      "bauteil_ok": true
+    },
+    {
+      "moebel": "sb8Kaimauer",
+      "feld": [23, 5],
+      "bauteil_ok": true
+    },
+    {
+      "moebel": "sb8Kaimauer",
+      "feld": [24, 5],
+      "bauteil_ok": true
+    },
+    {
+      "moebel": "sb8Kaimauer",
+      "feld": [25, 5],
+      "bauteil_ok": true
+    },
+    {
+      "moebel": "sb8Kaimauer",
+      "feld": [26, 5],
+      "bauteil_ok": true
+    },
+    {
+      "moebel": "sb8Kaimauer",
+      "feld": [27, 5],
+      "bauteil_ok": true
+    },
+    {
+      "moebel": "sb8Kaimauer",
+      "feld": [28, 5],
+      "bauteil_ok": true
+    },
+    {
+      "moebel": "sb8Kaimauer",
+      "feld": [29, 5],
+      "bauteil_ok": true
+    },
+    {
+      "moebel": "sb8Kaimauer",
+      "feld": [30, 5],
+      "bauteil_ok": true
+    },
+    {
+      "moebel": "sb8Kaimauer",
+      "feld": [31, 5],
+      "bauteil_ok": true
+    },
+    {
+      "moebel": "sb8Kaimauer",
+      "feld": [36, 5],
+      "bauteil_ok": true
+    },
+    {
+      "moebel": "sb8Kaimauer",
+      "feld": [37, 5],
+      "bauteil_ok": true
+    },
+    {
+      "moebel": "sb8Kaimauer",
+      "feld": [38, 5],
+      "bauteil_ok": true
+    },
+    {
+      "moebel": "sb8Kaimauer",
+      "feld": [39, 5],
+      "bauteil_ok": true
+    },
+    {
+      "moebel": "sb8Kaimauer",
+      "feld": [40, 5],
+      "bauteil_ok": true
+    },
+    {
+      "moebel": "sb8Kaimauer",
+      "feld": [41, 5],
+      "bauteil_ok": true
+    },
+    {
+      "moebel": "sb8Kaimauer",
+      "feld": [42, 5],
+      "bauteil_ok": true
+    },
+    {
+      "moebel": "sb8Kaimauer",
+      "feld": [43, 5],
+      "bauteil_ok": true
+    },
+    {
+      "moebel": "sb8Kaimauer",
+      "feld": [44, 5],
+      "bauteil_ok": true
+    },
+    {
+      "moebel": "sb8Kaimauer",
+      "feld": [45, 5],
+      "bauteil_ok": true
+    },
+    {
+      "moebel": "sb8Kaimauer",
+      "feld": [46, 5],
+      "bauteil_ok": true
+    },
+    {
+      "moebel": "sb8Kaimauer",
+      "feld": [47, 5],
+      "bauteil_ok": true
+    },
+    {
+      "moebel": "sb8Kaimauer",
+      "feld": [48, 5],
+      "bauteil_ok": true
+    },
+    {
+      "moebel": "sb8Kaimauer",
+      "feld": [49, 5],
+      "bauteil_ok": true
+    },
+    {
+      "moebel": "sb8Kaimauer",
+      "feld": [50, 5],
+      "bauteil_ok": true
+    },
+    {
+      "moebel": "sb8Kaimauer",
+      "feld": [51, 5],
+      "bauteil_ok": true
+    },
+    {
+      "moebel": "sb8Kaimauer",
+      "feld": [52, 5],
+      "bauteil_ok": true
+    },
+    {
+      "moebel": "sb8Kaimauer",
+      "feld": [53, 5],
+      "bauteil_ok": true
+    },
+    {
+      "moebel": "sb8Kaimauer",
+      "feld": [54, 5],
+      "bauteil_ok": true
+    },
+    {
+      "moebel": "sb8Kaimauer",
+      "feld": [55, 5],
+      "bauteil_ok": true
+    },
+    {
+      "moebel": "sb8Kaimauer",
+      "feld": [56, 5],
+      "bauteil_ok": true
+    },
+    {
+      "moebel": "sb8Kaimauer",
+      "feld": [57, 5],
+      "bauteil_ok": true
+    },
+    {
+      "moebel": "sb8Kaimauer",
+      "feld": [58, 5],
+      "bauteil_ok": true
+    },
+    {
+      "moebel": "sb8Kaimauer",
+      "feld": [59, 5],
+      "bauteil_ok": true
+    },
+    {
+      "moebel": "sb8Kaimauer",
+      "feld": [60, 5],
+      "bauteil_ok": true
+    },
+    {
+      "moebel": "sb8Kaimauer",
+      "feld": [61, 5],
+      "bauteil_ok": true
+    },
+    {
+      "moebel": "sb8Kaimauer",
+      "feld": [62, 5],
+      "bauteil_ok": true
     }
   ],
   "ausloeser": [
@@ -638,7 +965,7 @@
       "feld": [26, 28],
       "eigenschaften": {
         "von": "20,28",
-        "bis": "30,28",
+        "bis": "28,28",
         "tun": "trägt Kisten zum Fischerboot",
         "wann": "tag"
       }

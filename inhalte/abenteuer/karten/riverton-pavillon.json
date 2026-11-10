@@ -1446,27 +1446,17 @@
      "id": 8,
      "name": "zuschauer",
      "type": "statist",
-     "x": 96,
-     "y": 160,
+     "x": 144,
+     "y": 48,
      "width": 16,
      "height": 16,
      "rotation": 0,
      "visible": true,
      "properties": [
       {
-       "name": "von",
-       "type": "string",
-       "value": "6,10"
-      },
-      {
-       "name": "bis",
-       "type": "string",
-       "value": "6,10"
-      },
-      {
        "name": "tun",
        "type": "string",
-       "value": "schaut einer Blitzpartie zu"
+       "value": "sitzt auf der Bank und schaut der Partie auf dem Bodenbrett zu"
       },
       {
        "name": "wann",
@@ -1484,27 +1474,17 @@
      "id": 9,
      "name": "wettender",
      "type": "statist",
-     "x": 256,
-     "y": 128,
+     "x": 336,
+     "y": 64,
      "width": 16,
      "height": 16,
      "rotation": 0,
      "visible": true,
      "properties": [
       {
-       "name": "von",
-       "type": "string",
-       "value": "16,8"
-      },
-      {
-       "name": "bis",
-       "type": "string",
-       "value": "16,10"
-      },
-      {
        "name": "tun",
        "type": "string",
-       "value": "wettet um eine Limonade"
+       "value": "sitzt am Brett und wettet um eine Limonade"
       },
       {
        "name": "wann",

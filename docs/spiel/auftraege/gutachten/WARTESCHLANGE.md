@@ -19,8 +19,8 @@ Szene heißt die Datei in `inhalte/abenteuer/szenen/` ohne `.json`.
 - [x] weg-maple-cedar-zedernpfad (Runde 8, niedrig-1)
 
 - [x] weg-riverton-ironwood-1 (Kanalweg, Runde 8, mittel-4)
-- [ ] weg-riverton-ironwood-2 (Eisenbrücke, Runde 8, mittel-4)
-- [ ] ironwood-aussen (Runde 8, mittel-4)
+- [x] weg-riverton-ironwood-2 (Eisenbrücke, Runde 8, mittel-4)
+- [x] ironwood-aussen (Runde 8, mittel-4)
 - [ ] ironwood-kantine (zweite Prüfung, Runde 8, mittel-4)
 - [ ] ironwood-museum (Runde 8, mittel-4)
 - [ ] ironwood-umkleide (Runde 8, mittel-4)

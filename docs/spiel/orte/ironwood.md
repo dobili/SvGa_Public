@@ -560,3 +560,52 @@ mit Finkenzeichen aus Kreide.
 der Hinweis auf Edna). Der Stollen ist dunkel (`toenung: dunkel`); mit Laterne sieht {held} vier
 Felder weit. Offen: Abendtönung und Schnee in Ironwood ab Szene 50 (Tönung über `setzeToenung` im
 Dialog der Szene; Schnee braucht eine Objektebene).
+
+## Runde 8 (10.11.2026): Ironwood außen und Kantine nach den Notizen des Autors (mittel-4)
+
+Variante C ist die Hauptfassung (`ironwood-aussen.json`, ohne Feld `variante`), A und B bleiben als
+Archiv liegen.
+
+**Außen, umgesetzt:**
+
+- Kanal am Westrand acht Felder breit (Spalten 2–9, wie auf der Eisenbrücke) mit Steinufer; Poller am
+  Kai alle vier Reihen. Die Hauptstraße quert ihn auf einer Straßenbrücke mit Gehwegen
+  (`iw8StrassenbrueckeGehwegQuer10`) und führt nach Westen aus der Stadt.
+- Hauptstraße und Seitenstraße durchgehend mit Pflaster eingefasst; die Seitenstraße mündet ohne
+  Pflasterstreifen in die Hauptstraße, der Parkplatz oben links hat einen Gehweg.
+- Gleise: Im Westen enden sie am alten Bahnhof (Heimatmuseum) an einem Prellbock quer zum Gleis,
+  im Osten laufen sie bis an den Rand, zum Werk und zum Steinbruch. Der Übergang ist ins Gleis
+  eingelassen (begehbar, Schienen durchgehend). Die waagerechten Absperrungen sind weg.
+- Laternen an der Promenade über den Gleisen stehen alle oben, alle 12 Spalten; an der Hauptstraße
+  bleibt der Wechsel oben/unten.
+- Industrie: Statt der flachen Hallenfassaden eine Werkshalle mit Dach (`wr5FabrikhalleB`) mit Weg in
+  den Werkhof; statt des unklaren Krans Container und Fässer; eine Werkstattbude im Hof. Der Zaun ist
+  durchgehend, beginnt oben mit Endstück und hat am Werkstor Endpfosten aus demselben Zaun.
+- Lok-Denkmal ohne Tiefe entfernt; an seiner Stelle Beet und Bank, daneben das Stellwerkhäuschen
+  am Prellbock und ein Gerätehaus des Museums.
+- Markt: Waren auf jedem Stand (Körbe mit Kürbis, Kohl, Mais, Beeren, Karotten), an jedem Stand ein
+  Händler (`marktstand1`–`6`). Der Platz reicht bis an die Promenade, eine Hecke fasst ihn im Osten ein.
+- Kapelle: Weg von der Tür zur Promenade, kleiner Friedhof mit Zaun, Gräbern und Büschen.
+- Mehr Abwechslung: Eiche und Laubbaum statt zweier gleicher Bäume, ein blühender Busch.
+
+**Antwort auf die Frage des Autors zur Kapelle:** Es ist die Kirche St. Barbara aus dem Ortsplan
+(1.3, 3.2). Barbara ist die Schutzpatronin der Hütten- und Bergleute; sie passt zu Werk und
+Steinbruch. In der Handlung hat sie keine Szene; sie ist Ortsbild, mit Friedhof der Werksleute.
+Der Markt hat geöffnet (Händler und Waren); in Akt 3 ist er verschneit (Zustand, siehe unten).
+
+**Kantine (Regel 10.56):** 36 × 20 statt 24 × 16, so breit wie das Kantinengebäude außen (13 Kacheln
+Fassade, Speisesaal und Clubraum). Links drei lange Tische der Schicht mit Stühlen, Wasserspender und
+Getränkeautomat am Mittelgang (Spalten 16–20 frei bis zur Ausgabe); rechts Big Joes Clubtisch vor dem
+Ofen und zwei weitere Clubtische, Spinde an der Südwand. Tür (18, 19), Start (18, 17),
+`pokalregal` (21, 4), `stahlbrett` (25, 7); Big Joe (26, 6), Hank (16, 16), Priya (16, 9).
+
+**Zustände (Regel 10.63), gebaut, sobald mittel-2 die Technik meldet:**
+
+| Karte   | Zustand           | Wann und warum                                                                      |
+| ------- | ----------------- | ----------------------------------------------------------------------------------- |
+| aussen  | Kantine vermietet | ab Szene 49 (`kaufGesehen`): Schild am Werkstor, Logo von Perfect Move über der Tür |
+| aussen  | Winter            | ab Szene 50: Schnee auf Dächern und Gehwegen, Markt verschneit ohne Händler         |
+| aussen  | Werksbus          | Akt 4 (`endeAkt3Gesehen`): Werksbus im Werkhof, Big Joe fährt zur Meisterschaft     |
+| aussen  | Lastkahn          | nach der Öffnung (`lastkahnFrei`): Lastkahn am Kai                                  |
+| aussen  | Steinbruch offen  | mit Laterne (`hatLaterne`, S4): Gittertor zum Steinbruch steht offen                |
+| kantine | Logo              | Akt 3 (`kaufGesehen`): Logo von Perfect Move über der Ausgabe, Karton mit Pokalen   |

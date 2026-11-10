@@ -2,376 +2,1191 @@
   "karte": "ironwood.kantine",
   "datei": "karten/ironwood-kantine.json",
   "art": "innen",
-  "beschreibung": "Die Kantine des Werks, zugleich Clubraum des Werksclubs, 24 × 16 Kacheln, graue Fliesen, helle Wände. An der Nordwand links die lange Essensausgabe mit Kaffeemaschine, daneben die Pinnwand mit dem Schichtplan, in der Mitte das Pokalregal mit einer Lücke, rechts ein Foto der Werksmannschaft und zwei Fenster. Links zwei lange Tische der Schicht mit Bänken, rechts der Clubtisch mit Big Joes dunklem Brett vor dem Ofen und ein zweiter Clubtisch. Südlich Spinde als Garderobe, Gummibaum. Die Küchenzeile läuft lückenlos vom Kühlschrank bis zur Ablage mit dem Abtropfgestell. Die Tür liegt in der Mitte der Südwand.",
+  "beschreibung": "Die Kantine des Werks, zugleich Clubraum des Werksclubs (Runde 8, Regel 10.56): so breit wie das Kantinengebäude außen, 36 × 20 Kacheln, die App scrollt mit. An der Nordwand links Küche und Essensausgabe mit Kaffeemaschine, daneben Pinnwand mit Schichtplan, Fenster, das Pokalregal mit einer Lücke, das Foto der Werksmannschaft. Links der Speisesaal mit drei langen Tischen der Schicht, Wasserspender und Getränkeautomat am Mittelgang. Rechts der Clubraum: Big Joes Clubtisch mit dem dunklen Brett vor dem Ofen und zwei weitere Clubtische für Aufgabenreihen und Feiern. Spinde als Garderobe an der Südwand, Pflanzen. Die Tür liegt in der Mitte der Südwand, der Mittelgang ist frei.",
   "wand": "hellgrau",
   "boden": "fliesenGrau",
   "raster": [
-    "########################",
-    "########################",
-    "########################",
-    "#......................#",
-    "#......................#",
-    "#......................#",
-    "#......................#",
-    "#......................#",
-    "#......................#",
-    "#......................#",
-    "#......................#",
-    "#......................#",
-    "#......................#",
-    "#......................#",
-    "#......................#",
-    "############.###########",
-    "########################"
+    "####################################",
+    "####################################",
+    "####################################",
+    "#..................................#",
+    "#..................................#",
+    "#..................................#",
+    "#..................................#",
+    "#..................................#",
+    "#..................................#",
+    "#..................................#",
+    "#..................................#",
+    "#..................................#",
+    "#..................................#",
+    "#..................................#",
+    "#..................................#",
+    "#..................................#",
+    "#..................................#",
+    "#..................................#",
+    "##################.#################",
+    "####################################"
   ],
   "objekte": [
     {
-      "moebel": "mf8Pokaltisch",
-      "feld": [13, 1],
-      "id": "pokale"
-    },
-    {
-      "moebel": "mf3Pokal",
-      "feld": [0, 0],
-      "auf": "pokale"
-    },
-    {
-      "moebel": "cc6TischDunkel",
-      "feld": [15, 6],
-      "id": "clubtisch"
-    },
-    {
-      "moebel": "cc4StuhlVorn",
-      "feld": [15, 5],
-      "zu": "clubtisch"
-    },
-    {
-      "moebel": "cc4StuhlRuecken",
-      "feld": [15, 7],
-      "zu": "clubtisch"
-    },
-    {
-      "moebel": "cc4StuhlVorn",
-      "feld": [16, 5],
-      "zu": "clubtisch"
-    },
-    {
-      "moebel": "cc4StuhlRuecken",
-      "feld": [16, 7],
-      "zu": "clubtisch"
-    },
-    {
-      "moebel": "cc4Brett",
-      "feld": [0, 0],
-      "auf": "clubtisch"
-    },
-    {
-      "moebel": "cc6TuerSued",
-      "feld": [12, 16],
-      "an_wand": true
-    },
-    {
-      "moebel": "cc5Fussmatte",
-      "feld": [12, 14],
-      "versatz": [0, 24]
-    },
-    {
       "moebel": "mf5Kuehlschrank",
-      "feld": [1, 1]
+      "feld": [
+        1,
+        1
+      ]
     },
     {
       "moebel": "wzArbeitsplatte",
-      "feld": [2, 2],
+      "feld": [
+        2,
+        2
+      ],
       "id": "ausgabe"
     },
     {
       "moebel": "mf5Kaffeemaschine",
-      "feld": [0, 0],
+      "feld": [
+        0,
+        0
+      ],
       "auf": "ausgabe"
     },
     {
       "moebel": "wzHerd",
-      "feld": [4, 2]
+      "feld": [
+        4,
+        2
+      ]
     },
     {
       "moebel": "mf8Herd",
-      "feld": [5, 2]
+      "feld": [
+        5,
+        2
+      ]
     },
     {
       "moebel": "mf5Grillplatte",
-      "feld": [6, 2]
+      "feld": [
+        6,
+        2
+      ]
     },
     {
       "moebel": "mf5Kuchenvitrine",
-      "feld": [8, 2]
+      "feld": [
+        8,
+        2
+      ]
     },
     {
       "moebel": "wzArbeitsplatte",
-      "feld": [10, 2],
+      "feld": [
+        10,
+        2
+      ],
       "id": "ablage"
     },
     {
       "moebel": "mf5Geschirr",
-      "feld": [0, 0],
+      "feld": [
+        0,
+        0
+      ],
       "auf": "ablage"
     },
     {
       "moebel": "mf8Pinnwand",
-      "feld": [9, 1],
+      "feld": [
+        13,
+        1
+      ],
       "an_wand": true,
-      "versatz": [0, 6]
+      "versatz": [
+        0,
+        6
+      ]
     },
     {
       "moebel": "cc4Fenster",
-      "feld": [11, 1],
+      "feld": [
+        15,
+        1
+      ],
       "an_wand": true
     },
     {
       "moebel": "cc4Fenster",
-      "feld": [20, 1],
+      "feld": [
+        24,
+        1
+      ],
       "an_wand": true
+    },
+    {
+      "moebel": "cc4Fenster",
+      "feld": [
+        31,
+        1
+      ],
+      "an_wand": true
+    },
+    {
+      "moebel": "mf8Pokaltisch",
+      "feld": [
+        20,
+        1
+      ],
+      "id": "pokale"
+    },
+    {
+      "moebel": "mf3Pokal",
+      "feld": [
+        0,
+        0
+      ],
+      "auf": "pokale"
     },
     {
       "moebel": "cc4FotoRahmen",
-      "feld": [18, 1],
+      "feld": [
+        27,
+        1
+      ],
       "an_wand": true,
-      "versatz": [0, 6]
-    },
-    {
-      "moebel": "ldOfen",
-      "feld": [21, 4]
-    },
-    {
-      "moebel": "mf5Stahltisch",
-      "feld": [2, 6],
-      "id": "lang02"
-    },
-    {
-      "moebel": "cc4StuhlVorn",
-      "feld": [2, 5],
-      "zu": "lang02"
-    },
-    {
-      "moebel": "cc4StuhlRuecken",
-      "feld": [2, 7],
-      "zu": "lang02"
-    },
-    {
-      "moebel": "cc4StuhlVorn",
-      "feld": [3, 5],
-      "zu": "lang02"
-    },
-    {
-      "moebel": "cc4StuhlRuecken",
-      "feld": [3, 7],
-      "zu": "lang02"
+      "versatz": [
+        0,
+        6
+      ]
     },
     {
       "moebel": "mf5Stahltisch",
-      "feld": [4, 6],
-      "id": "lang04"
+      "feld": [
+        2,
+        7
+      ],
+      "id": "lang7_2"
     },
     {
       "moebel": "cc4StuhlVorn",
-      "feld": [4, 5],
-      "zu": "lang04"
+      "feld": [
+        2,
+        6
+      ],
+      "zu": "lang7_2"
     },
     {
       "moebel": "cc4StuhlRuecken",
-      "feld": [4, 7],
-      "zu": "lang04"
+      "feld": [
+        2,
+        8
+      ],
+      "zu": "lang7_2"
     },
     {
       "moebel": "cc4StuhlVorn",
-      "feld": [5, 5],
-      "zu": "lang04"
+      "feld": [
+        3,
+        6
+      ],
+      "zu": "lang7_2"
     },
     {
       "moebel": "cc4StuhlRuecken",
-      "feld": [5, 7],
-      "zu": "lang04"
+      "feld": [
+        3,
+        8
+      ],
+      "zu": "lang7_2"
     },
     {
       "moebel": "mf5Stahltisch",
-      "feld": [6, 6],
-      "id": "lang06"
+      "feld": [
+        4,
+        7
+      ],
+      "id": "lang7_4"
     },
     {
       "moebel": "cc4StuhlVorn",
-      "feld": [6, 5],
-      "zu": "lang06"
+      "feld": [
+        4,
+        6
+      ],
+      "zu": "lang7_4"
     },
     {
       "moebel": "cc4StuhlRuecken",
-      "feld": [6, 7],
-      "zu": "lang06"
+      "feld": [
+        4,
+        8
+      ],
+      "zu": "lang7_4"
     },
     {
       "moebel": "cc4StuhlVorn",
-      "feld": [7, 5],
-      "zu": "lang06"
+      "feld": [
+        5,
+        6
+      ],
+      "zu": "lang7_4"
     },
     {
       "moebel": "cc4StuhlRuecken",
-      "feld": [7, 7],
-      "zu": "lang06"
+      "feld": [
+        5,
+        8
+      ],
+      "zu": "lang7_4"
     },
     {
       "moebel": "mf5Stahltisch",
-      "feld": [2, 10],
-      "id": "lang12"
+      "feld": [
+        6,
+        7
+      ],
+      "id": "lang7_6"
     },
     {
       "moebel": "cc4StuhlVorn",
-      "feld": [2, 9],
-      "zu": "lang12"
+      "feld": [
+        6,
+        6
+      ],
+      "zu": "lang7_6"
     },
     {
       "moebel": "cc4StuhlRuecken",
-      "feld": [2, 11],
-      "zu": "lang12"
+      "feld": [
+        6,
+        8
+      ],
+      "zu": "lang7_6"
     },
     {
       "moebel": "cc4StuhlVorn",
-      "feld": [3, 9],
-      "zu": "lang12"
+      "feld": [
+        7,
+        6
+      ],
+      "zu": "lang7_6"
     },
     {
       "moebel": "cc4StuhlRuecken",
-      "feld": [3, 11],
-      "zu": "lang12"
+      "feld": [
+        7,
+        8
+      ],
+      "zu": "lang7_6"
     },
     {
       "moebel": "mf5Stahltisch",
-      "feld": [4, 10],
-      "id": "lang14"
+      "feld": [
+        8,
+        7
+      ],
+      "id": "lang7_8"
     },
     {
       "moebel": "cc4StuhlVorn",
-      "feld": [4, 9],
-      "zu": "lang14"
+      "feld": [
+        8,
+        6
+      ],
+      "zu": "lang7_8"
     },
     {
       "moebel": "cc4StuhlRuecken",
-      "feld": [4, 11],
-      "zu": "lang14"
+      "feld": [
+        8,
+        8
+      ],
+      "zu": "lang7_8"
     },
     {
       "moebel": "cc4StuhlVorn",
-      "feld": [5, 9],
-      "zu": "lang14"
+      "feld": [
+        9,
+        6
+      ],
+      "zu": "lang7_8"
     },
     {
       "moebel": "cc4StuhlRuecken",
-      "feld": [5, 11],
-      "zu": "lang14"
+      "feld": [
+        9,
+        8
+      ],
+      "zu": "lang7_8"
     },
     {
       "moebel": "mf5Stahltisch",
-      "feld": [6, 10],
-      "id": "lang16"
+      "feld": [
+        10,
+        7
+      ],
+      "id": "lang7_10"
     },
     {
       "moebel": "cc4StuhlVorn",
-      "feld": [6, 9],
-      "zu": "lang16"
+      "feld": [
+        10,
+        6
+      ],
+      "zu": "lang7_10"
     },
     {
       "moebel": "cc4StuhlRuecken",
-      "feld": [6, 11],
-      "zu": "lang16"
+      "feld": [
+        10,
+        8
+      ],
+      "zu": "lang7_10"
     },
     {
       "moebel": "cc4StuhlVorn",
-      "feld": [7, 9],
-      "zu": "lang16"
+      "feld": [
+        11,
+        6
+      ],
+      "zu": "lang7_10"
     },
     {
       "moebel": "cc4StuhlRuecken",
-      "feld": [7, 11],
-      "zu": "lang16"
+      "feld": [
+        11,
+        8
+      ],
+      "zu": "lang7_10"
+    },
+    {
+      "moebel": "mf5Stahltisch",
+      "feld": [
+        12,
+        7
+      ],
+      "id": "lang7_12"
+    },
+    {
+      "moebel": "cc4StuhlVorn",
+      "feld": [
+        12,
+        6
+      ],
+      "zu": "lang7_12"
+    },
+    {
+      "moebel": "cc4StuhlRuecken",
+      "feld": [
+        12,
+        8
+      ],
+      "zu": "lang7_12"
+    },
+    {
+      "moebel": "cc4StuhlVorn",
+      "feld": [
+        13,
+        6
+      ],
+      "zu": "lang7_12"
+    },
+    {
+      "moebel": "cc4StuhlRuecken",
+      "feld": [
+        13,
+        8
+      ],
+      "zu": "lang7_12"
+    },
+    {
+      "moebel": "mf5Stahltisch",
+      "feld": [
+        2,
+        11
+      ],
+      "id": "lang11_2"
+    },
+    {
+      "moebel": "cc4StuhlVorn",
+      "feld": [
+        2,
+        10
+      ],
+      "zu": "lang11_2"
+    },
+    {
+      "moebel": "cc4StuhlRuecken",
+      "feld": [
+        2,
+        12
+      ],
+      "zu": "lang11_2"
+    },
+    {
+      "moebel": "cc4StuhlVorn",
+      "feld": [
+        3,
+        10
+      ],
+      "zu": "lang11_2"
+    },
+    {
+      "moebel": "cc4StuhlRuecken",
+      "feld": [
+        3,
+        12
+      ],
+      "zu": "lang11_2"
+    },
+    {
+      "moebel": "mf5Stahltisch",
+      "feld": [
+        4,
+        11
+      ],
+      "id": "lang11_4"
+    },
+    {
+      "moebel": "cc4StuhlVorn",
+      "feld": [
+        4,
+        10
+      ],
+      "zu": "lang11_4"
+    },
+    {
+      "moebel": "cc4StuhlRuecken",
+      "feld": [
+        4,
+        12
+      ],
+      "zu": "lang11_4"
+    },
+    {
+      "moebel": "cc4StuhlVorn",
+      "feld": [
+        5,
+        10
+      ],
+      "zu": "lang11_4"
+    },
+    {
+      "moebel": "cc4StuhlRuecken",
+      "feld": [
+        5,
+        12
+      ],
+      "zu": "lang11_4"
+    },
+    {
+      "moebel": "mf5Stahltisch",
+      "feld": [
+        6,
+        11
+      ],
+      "id": "lang11_6"
+    },
+    {
+      "moebel": "cc4StuhlVorn",
+      "feld": [
+        6,
+        10
+      ],
+      "zu": "lang11_6"
+    },
+    {
+      "moebel": "cc4StuhlRuecken",
+      "feld": [
+        6,
+        12
+      ],
+      "zu": "lang11_6"
+    },
+    {
+      "moebel": "cc4StuhlVorn",
+      "feld": [
+        7,
+        10
+      ],
+      "zu": "lang11_6"
+    },
+    {
+      "moebel": "cc4StuhlRuecken",
+      "feld": [
+        7,
+        12
+      ],
+      "zu": "lang11_6"
+    },
+    {
+      "moebel": "mf5Stahltisch",
+      "feld": [
+        8,
+        11
+      ],
+      "id": "lang11_8"
+    },
+    {
+      "moebel": "cc4StuhlVorn",
+      "feld": [
+        8,
+        10
+      ],
+      "zu": "lang11_8"
+    },
+    {
+      "moebel": "cc4StuhlRuecken",
+      "feld": [
+        8,
+        12
+      ],
+      "zu": "lang11_8"
+    },
+    {
+      "moebel": "cc4StuhlVorn",
+      "feld": [
+        9,
+        10
+      ],
+      "zu": "lang11_8"
+    },
+    {
+      "moebel": "cc4StuhlRuecken",
+      "feld": [
+        9,
+        12
+      ],
+      "zu": "lang11_8"
+    },
+    {
+      "moebel": "mf5Stahltisch",
+      "feld": [
+        10,
+        11
+      ],
+      "id": "lang11_10"
+    },
+    {
+      "moebel": "cc4StuhlVorn",
+      "feld": [
+        10,
+        10
+      ],
+      "zu": "lang11_10"
+    },
+    {
+      "moebel": "cc4StuhlRuecken",
+      "feld": [
+        10,
+        12
+      ],
+      "zu": "lang11_10"
+    },
+    {
+      "moebel": "cc4StuhlVorn",
+      "feld": [
+        11,
+        10
+      ],
+      "zu": "lang11_10"
+    },
+    {
+      "moebel": "cc4StuhlRuecken",
+      "feld": [
+        11,
+        12
+      ],
+      "zu": "lang11_10"
+    },
+    {
+      "moebel": "mf5Stahltisch",
+      "feld": [
+        12,
+        11
+      ],
+      "id": "lang11_12"
+    },
+    {
+      "moebel": "cc4StuhlVorn",
+      "feld": [
+        12,
+        10
+      ],
+      "zu": "lang11_12"
+    },
+    {
+      "moebel": "cc4StuhlRuecken",
+      "feld": [
+        12,
+        12
+      ],
+      "zu": "lang11_12"
+    },
+    {
+      "moebel": "cc4StuhlVorn",
+      "feld": [
+        13,
+        10
+      ],
+      "zu": "lang11_12"
+    },
+    {
+      "moebel": "cc4StuhlRuecken",
+      "feld": [
+        13,
+        12
+      ],
+      "zu": "lang11_12"
+    },
+    {
+      "moebel": "mf5Stahltisch",
+      "feld": [
+        2,
+        15
+      ],
+      "id": "lang15_2"
+    },
+    {
+      "moebel": "cc4StuhlVorn",
+      "feld": [
+        2,
+        14
+      ],
+      "zu": "lang15_2"
+    },
+    {
+      "moebel": "cc4StuhlRuecken",
+      "feld": [
+        2,
+        16
+      ],
+      "zu": "lang15_2"
+    },
+    {
+      "moebel": "cc4StuhlVorn",
+      "feld": [
+        3,
+        14
+      ],
+      "zu": "lang15_2"
+    },
+    {
+      "moebel": "cc4StuhlRuecken",
+      "feld": [
+        3,
+        16
+      ],
+      "zu": "lang15_2"
+    },
+    {
+      "moebel": "mf5Stahltisch",
+      "feld": [
+        4,
+        15
+      ],
+      "id": "lang15_4"
+    },
+    {
+      "moebel": "cc4StuhlVorn",
+      "feld": [
+        4,
+        14
+      ],
+      "zu": "lang15_4"
+    },
+    {
+      "moebel": "cc4StuhlRuecken",
+      "feld": [
+        4,
+        16
+      ],
+      "zu": "lang15_4"
+    },
+    {
+      "moebel": "cc4StuhlVorn",
+      "feld": [
+        5,
+        14
+      ],
+      "zu": "lang15_4"
+    },
+    {
+      "moebel": "cc4StuhlRuecken",
+      "feld": [
+        5,
+        16
+      ],
+      "zu": "lang15_4"
+    },
+    {
+      "moebel": "mf5Stahltisch",
+      "feld": [
+        6,
+        15
+      ],
+      "id": "lang15_6"
+    },
+    {
+      "moebel": "cc4StuhlVorn",
+      "feld": [
+        6,
+        14
+      ],
+      "zu": "lang15_6"
+    },
+    {
+      "moebel": "cc4StuhlRuecken",
+      "feld": [
+        6,
+        16
+      ],
+      "zu": "lang15_6"
+    },
+    {
+      "moebel": "cc4StuhlVorn",
+      "feld": [
+        7,
+        14
+      ],
+      "zu": "lang15_6"
+    },
+    {
+      "moebel": "cc4StuhlRuecken",
+      "feld": [
+        7,
+        16
+      ],
+      "zu": "lang15_6"
+    },
+    {
+      "moebel": "mf5Stahltisch",
+      "feld": [
+        8,
+        15
+      ],
+      "id": "lang15_8"
+    },
+    {
+      "moebel": "cc4StuhlVorn",
+      "feld": [
+        8,
+        14
+      ],
+      "zu": "lang15_8"
+    },
+    {
+      "moebel": "cc4StuhlRuecken",
+      "feld": [
+        8,
+        16
+      ],
+      "zu": "lang15_8"
+    },
+    {
+      "moebel": "cc4StuhlVorn",
+      "feld": [
+        9,
+        14
+      ],
+      "zu": "lang15_8"
+    },
+    {
+      "moebel": "cc4StuhlRuecken",
+      "feld": [
+        9,
+        16
+      ],
+      "zu": "lang15_8"
+    },
+    {
+      "moebel": "mf5Stahltisch",
+      "feld": [
+        10,
+        15
+      ],
+      "id": "lang15_10"
+    },
+    {
+      "moebel": "cc4StuhlVorn",
+      "feld": [
+        10,
+        14
+      ],
+      "zu": "lang15_10"
+    },
+    {
+      "moebel": "cc4StuhlRuecken",
+      "feld": [
+        10,
+        16
+      ],
+      "zu": "lang15_10"
+    },
+    {
+      "moebel": "cc4StuhlVorn",
+      "feld": [
+        11,
+        14
+      ],
+      "zu": "lang15_10"
+    },
+    {
+      "moebel": "cc4StuhlRuecken",
+      "feld": [
+        11,
+        16
+      ],
+      "zu": "lang15_10"
+    },
+    {
+      "moebel": "mf5Stahltisch",
+      "feld": [
+        12,
+        15
+      ],
+      "id": "lang15_12"
+    },
+    {
+      "moebel": "cc4StuhlVorn",
+      "feld": [
+        12,
+        14
+      ],
+      "zu": "lang15_12"
+    },
+    {
+      "moebel": "cc4StuhlRuecken",
+      "feld": [
+        12,
+        16
+      ],
+      "zu": "lang15_12"
+    },
+    {
+      "moebel": "cc4StuhlVorn",
+      "feld": [
+        13,
+        14
+      ],
+      "zu": "lang15_12"
+    },
+    {
+      "moebel": "cc4StuhlRuecken",
+      "feld": [
+        13,
+        16
+      ],
+      "zu": "lang15_12"
+    },
+    {
+      "moebel": "sbWasserspender",
+      "feld": [
+        14,
+        7
+      ]
+    },
+    {
+      "moebel": "cc7AutomatFront",
+      "feld": [
+        14,
+        12
+      ]
     },
     {
       "moebel": "cc6TischDunkel",
-      "feld": [15, 10],
+      "feld": [
+        23,
+        6
+      ],
+      "id": "clubtisch"
+    },
+    {
+      "moebel": "cc4StuhlVorn",
+      "feld": [
+        23,
+        5
+      ],
+      "zu": "clubtisch"
+    },
+    {
+      "moebel": "cc4StuhlRuecken",
+      "feld": [
+        23,
+        7
+      ],
+      "zu": "clubtisch"
+    },
+    {
+      "moebel": "cc4StuhlVorn",
+      "feld": [
+        24,
+        5
+      ],
+      "zu": "clubtisch"
+    },
+    {
+      "moebel": "cc4StuhlRuecken",
+      "feld": [
+        24,
+        7
+      ],
+      "zu": "clubtisch"
+    },
+    {
+      "moebel": "cc4Brett",
+      "feld": [
+        0,
+        0
+      ],
+      "auf": "clubtisch"
+    },
+    {
+      "moebel": "cc6TischDunkel",
+      "feld": [
+        23,
+        11
+      ],
       "id": "clubtisch2"
     },
     {
       "moebel": "cc4StuhlVorn",
-      "feld": [15, 9],
+      "feld": [
+        23,
+        10
+      ],
       "zu": "clubtisch2"
     },
     {
       "moebel": "cc4StuhlRuecken",
-      "feld": [15, 11],
+      "feld": [
+        23,
+        12
+      ],
       "zu": "clubtisch2"
     },
     {
       "moebel": "cc4StuhlVorn",
-      "feld": [16, 9],
+      "feld": [
+        24,
+        10
+      ],
       "zu": "clubtisch2"
     },
     {
       "moebel": "cc4StuhlRuecken",
-      "feld": [16, 11],
+      "feld": [
+        24,
+        12
+      ],
       "zu": "clubtisch2"
     },
     {
-      "moebel": "iwSpind",
-      "feld": [2, 13]
+      "moebel": "cc4Brett",
+      "feld": [
+        0,
+        0
+      ],
+      "auf": "clubtisch2"
     },
     {
-      "moebel": "iwSpind",
-      "feld": [4, 13]
+      "moebel": "cc6TischDunkel",
+      "feld": [
+        28,
+        11
+      ],
+      "id": "clubtisch3"
+    },
+    {
+      "moebel": "cc4StuhlVorn",
+      "feld": [
+        28,
+        10
+      ],
+      "zu": "clubtisch3"
+    },
+    {
+      "moebel": "cc4StuhlRuecken",
+      "feld": [
+        28,
+        12
+      ],
+      "zu": "clubtisch3"
+    },
+    {
+      "moebel": "cc4StuhlVorn",
+      "feld": [
+        29,
+        10
+      ],
+      "zu": "clubtisch3"
+    },
+    {
+      "moebel": "cc4StuhlRuecken",
+      "feld": [
+        29,
+        12
+      ],
+      "zu": "clubtisch3"
+    },
+    {
+      "moebel": "cc4Brett",
+      "feld": [
+        0,
+        0
+      ],
+      "auf": "clubtisch3"
+    },
+    {
+      "moebel": "ldOfen",
+      "feld": [
+        32,
+        4
+      ]
+    },
+    {
+      "moebel": "mf5Kuehlschrank",
+      "feld": [
+        34,
+        12
+      ]
     },
     {
       "moebel": "cc4PflanzeK",
-      "feld": [22, 12]
+      "feld": [
+        34,
+        3
+      ]
+    },
+    {
+      "moebel": "cc4PflanzeK",
+      "feld": [
+        34,
+        16
+      ]
+    },
+    {
+      "moebel": "cc4PflanzeK",
+      "feld": [
+        1,
+        4
+      ]
+    },
+    {
+      "moebel": "iwSpind",
+      "feld": [
+        24,
+        16
+      ]
+    },
+    {
+      "moebel": "iwSpind",
+      "feld": [
+        26,
+        16
+      ]
+    },
+    {
+      "moebel": "iwSpind",
+      "feld": [
+        28,
+        16
+      ]
+    },
+    {
+      "moebel": "iwSpind",
+      "feld": [
+        30,
+        16
+      ]
+    },
+    {
+      "moebel": "cc6TuerSued",
+      "feld": [
+        18,
+        19
+      ],
+      "an_wand": true
+    },
+    {
+      "moebel": "cc5Fussmatte",
+      "feld": [
+        18,
+        17
+      ],
+      "versatz": [
+        0,
+        24
+      ]
     }
   ],
   "ausloeser": [
     {
       "name": "start",
-      "feld": [12, 14],
+      "feld": [
+        18,
+        17
+      ],
       "eigenschaften": {
         "richtung": "oben"
       }
     },
     {
       "name": "kantineAusgang",
-      "feld": [12, 15]
+      "feld": [
+        18,
+        18
+      ]
     },
     {
       "name": "pokalregal",
-      "feld": [14, 4]
+      "feld": [
+        21,
+        4
+      ]
     },
     {
       "name": "stahlbrett",
-      "feld": [17, 7]
+      "feld": [
+        25,
+        7
+      ]
     }
   ],
   "figuren": [
     {
       "name": "bigJoe",
-      "feld": [18, 6]
+      "feld": [
+        26,
+        6
+      ]
     },
     {
       "name": "hank",
-      "feld": [8, 12]
+      "feld": [
+        16,
+        16
+      ]
     },
     {
       "name": "priya",
-      "feld": [8, 8]
+      "feld": [
+        16,
+        9
+      ]
     }
   ],
   "belebung": [
     {
       "name": "kantinenkoch",
       "typ": "statist",
-      "feld": [3, 4],
+      "feld": [
+        3,
+        4
+      ],
       "eigenschaften": {
         "von": "3,4",
-        "bis": "5,4",
+        "bis": "9,4",
         "tun": "rührt in der Suppe",
         "wann": "tag",
         "sagt": "statist.ironwood.kantine.kantinenkoch"
@@ -380,10 +1195,13 @@
     {
       "name": "werkskatze",
       "typ": "tier",
-      "feld": [20, 9],
+      "feld": [
+        31,
+        8
+      ],
       "eigenschaften": {
-        "von": "20,9",
-        "bis": "20,9",
+        "von": "31,8",
+        "bis": "31,8",
         "tun": "sitzen",
         "wann": "immer"
       }
@@ -391,15 +1209,28 @@
     {
       "name": "schichtarbeiter",
       "typ": "statist",
-      "feld": [12, 12],
+      "feld": [
+        20,
+        12
+      ],
       "eigenschaften": {
-        "von": "12,12",
-        "bis": "12,12",
+        "von": "20,12",
+        "bis": "20,12",
         "tun": "isst Eintopf nach der Schicht",
         "sagt": "statist.ironwood.kantine.schichtarbeiter"
       }
     }
   ],
-  "zustand": ["gebraucht", "alt", "neu"],
-  "stil": ["industrie", "klassisch", "einfach", "rustikal", "modern"]
+  "zustand": [
+    "gebraucht",
+    "alt",
+    "neu"
+  ],
+  "stil": [
+    "industrie",
+    "klassisch",
+    "einfach",
+    "rustikal",
+    "modern"
+  ]
 }

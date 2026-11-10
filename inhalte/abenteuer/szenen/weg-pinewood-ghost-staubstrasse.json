@@ -2,12 +2,11 @@
   "karte": "wegPinewoodGhost.staubstrasse",
   "datei": "karten/weg-pinewood-ghost-staubstrasse.json",
   "art": "aussen",
-  "beschreibung": "Weg 10, die Staubstraße durch die rote Wüste: Eine Schotterpiste mit Bankett aus Felsboden schwingt in weiten Bögen von West nach Ost. Am Nordrand der Piste stehen Telegrafenmasten in gleichen Abständen. Ringsum Säulen- und blühende Kakteen, Felsen und Staubteufel; nördlich ein Autowrack, südlich ein zerbrochener Planwagen. In der Mitte liegt die verlassene Tankstelle mit Vordach, Zapfsäulen und Schuppen direkt an der Piste.",
+  "beschreibung": "Weg 10, die Staubstraße durch die rote Wüste: Eine Schotterpiste mit dunklerem Bankett schwingt in weichen Bögen von West nach Ost; ihre Ränder laufen schräg statt in Stufen. Nördlich der Piste stehen Telegrafenmasten in einer Reihe, alle 14 Kacheln, mit durchhängenden Drähten dazwischen. Ringsum Säulen- und blühende Kakteen, Felsen und Staubteufel; nördlich ein einzelnes Autowrack, südlich ein zerbrochener Planwagen. In der Mitte liegt die verlassene Tankstelle mit Vordach, Zapfsäulen und Schuppen mit Holztür (Eingang zum Verkaufsraum) direkt an der Piste.",
   "boden": "sandRot",
   "wandart": "sandRot",
   "boeden": {
-    "k": "schotter",
-    "r": "felsbodenRot"
+    "k": "pisteRot"
   },
   "raster": [
     "######################################################################################################################################################",
@@ -20,16 +19,16 @@
     "#....................................................................................................................................................#",
     "#....................................................................................................................................................#",
     "#....................................................................................................................................................#",
-    "#.............................................................................................rrrrrrrrrrrrrrrrrrrrrr.................................#",
-    "#.....................................................rrrrrrrrrrrrrrrrrrrrrrrrrrrrrrrrrrrrrrrrkkkkkkkkkkkkkkkkkkkkkkrrrrrrrrrr.......................#",
-    "#...............................................rrrrrrkkkkkkkkkkkkkkkkkkkkkkkkkkkkkkkkkkkkkkkkkkkkkkkkkkkkkkkkkkkkkkkkkkkkkkkkrrrrrrrrrr.............#",
-    "#rrrrrrrrrrrrrrrrrrr......................rrrrrrkkkkkkkkkkkkkkkkkkkkkkkkkkkkkkkkkkkkkkkkkkkkkkkkkkkkkkkkkkkkkkkkkkkkkkkkkkkkkkkkkkkkkkkkrrrrrrrrrrrrr#",
-    "kkkkkkkkkkkkkkkkkkkkrrrrrrrr........rrrrrrkkkkkkkkkkkkkkkkkkkkkkkkkkkkkkkkkkkkkkkkkkkkkkkkkkkkrrrrrrrrrrrrrrrrrrrrrrkkkkkkkkkkkkkkkkkkkkkkkkkkkkkkkkkk",
-    "kkkkkkkkkkkkkkkkkkkkkkkkkkkkrrrrrrrrkkkkkkkkkkkkkkkkkkrrrrrrrrrrrrrrrrrrrrrrrrrrrrrrrrrrrrrrrr......................rrrrrrrrrrkkkkkkkkkkkkkkkkkkkkkkkk",
-    "#kkkkkkkkkkkkkkkkkkkkkkkkkkkkkkkkkkkkkkkkkkkkkkkrrrrrr........................................................................rrrrrrrrrrkkkkkkkkkkkkk#",
-    "#rrrrrrrrrrrrrrrrrrrkkkkkkkkkkkkkkkkkkkkkkrrrrrr........................................................................................rrrrrrrrrrrrr#",
-    "#...................rrrrrrrrkkkkkkkkrrrrrr...........................................................................................................#",
-    "#...........................rrrrrrrr.................................................................................................................#",
+    "#...............................................................................kkkkkkkkkkkkkkkkkkkkkkkkkkkkkk.......................................#",
+    "#........................................................kkkkkkkkkkkkkkkkkkkkkkkkkkkkkkkkkkkkkkkkkkkkkkkkkkkkkkkkkkkkkkkkkkk.........................#",
+    "#................................................kkkkkkkkkkkkkkkkkkkkkkkkkkkkkkkkkkkkkkkkkkkkkkkkkkkkkkkkkkkkkkkkkkkkkkkkkkkkkkkk....................#",
+    "#kkkkkkkk.........................kkkkkkkkkkkkkkkkkkkkkkkkkkkkkkkkkkkkkkkkkkkkkkkkkkkkkkkkkkkkkkkkkkkkkkkkkkkkkkkkkkkkkkkkkkkkkkkkkkkkkkkkkkkkkkkkkkk#",
+    "kkkkkkkkkkkkkkkkkkkkkkkkkkkkkkkkkkkkkkkkkkkkkkkkkkkkkkkkkkkkkkkkkkkkkkkkkkkkkkkk..............................kkkkkkkkkkkkkkkkkkkkkkkkkkkkkkkkkkkkkkkk",
+    "kkkkkkkkkkkkkkkkkkkkkkkkkkkkkkkkkkkkkkkkkkkkkkkkkkkkkkkkk...................................................................kkkkkkkkkkkkkkkkkkkkkkkkkk",
+    "#kkkkkkkkkkkkkkkkkkkkkkkkkkkkkkkkkkkkkkkkkkkkkkkk................................................................................kkkkkkkkkkkkkkkkkkkk#",
+    "#........kkkkkkkkkkkkkkkkkkkkkkkkk...................................................................................................................#",
+    "#....................................................................................................................................................#",
+    "#....................................................................................................................................................#",
     "#....................................................................................................................................................#",
     "#....................................................................................................................................................#",
     "#....................................................................................................................................................#",
@@ -43,8 +42,8 @@
   ],
   "objekte": [
     {
-      "moebel": "wr5Autowrack",
-      "feld": [50, 3]
+      "moebel": "pg9Autowrack",
+      "feld": [50, 4]
     },
     {
       "moebel": "gt7PlanwagenKaputt",
@@ -52,7 +51,7 @@
     },
     {
       "moebel": "iwFassGross",
-      "feld": [90, 18]
+      "feld": [103, 8]
     },
     {
       "moebel": "pg7Staubteufel",
@@ -232,7 +231,7 @@
     },
     {
       "moebel": "dd6KaktusKlein",
-      "feld": [138, 6]
+      "feld": [140, 6]
     },
     {
       "moebel": "fels",
@@ -252,7 +251,7 @@
     },
     {
       "moebel": "dd6KaktusBluehend",
-      "feld": [33, 12]
+      "feld": [33, 9]
     },
     {
       "moebel": "dd6Saguaro",
@@ -541,38 +540,6 @@
       "id": "ereignis187"
     },
     {
-      "moebel": "iwStrommast",
-      "feld": [6, 9]
-    },
-    {
-      "moebel": "iwStrommast",
-      "feld": [22, 10]
-    },
-    {
-      "moebel": "iwStrommast",
-      "feld": [36, 11]
-    },
-    {
-      "moebel": "iwStrommast",
-      "feld": [48, 8]
-    },
-    {
-      "moebel": "iwStrommast",
-      "feld": [62, 7]
-    },
-    {
-      "moebel": "iwStrommast",
-      "feld": [76, 7]
-    },
-    {
-      "moebel": "iwStrommast",
-      "feld": [120, 7]
-    },
-    {
-      "moebel": "iwStrommast",
-      "feld": [132, 8]
-    },
-    {
       "moebel": "cp8Schuppen",
       "feld": [97, 4],
       "id": "ereignisTankstelleHaus"
@@ -580,6 +547,105 @@
     {
       "moebel": "mf4Wegweiser",
       "feld": [143, 10]
+    },
+    {
+      "moebel": "iwStrommast",
+      "feld": [12, 5]
+    },
+    {
+      "moebel": "iwStrommast",
+      "feld": [26, 5]
+    },
+    {
+      "moebel": "iwStrommast",
+      "feld": [40, 5]
+    },
+    {
+      "moebel": "iwStrommast",
+      "feld": [54, 5]
+    },
+    {
+      "moebel": "iwStrommast",
+      "feld": [68, 5]
+    },
+    {
+      "moebel": "iwStrommast",
+      "feld": [82, 5]
+    },
+    {
+      "moebel": "iwStrommast",
+      "feld": [96, 5]
+    },
+    {
+      "moebel": "iwStrommast",
+      "feld": [110, 5]
+    },
+    {
+      "moebel": "iwStrommast",
+      "feld": [124, 5]
+    },
+    {
+      "moebel": "iwStrommast",
+      "feld": [138, 5]
+    },
+    {
+      "moebel": "pg9Telegrafenleitung",
+      "feld": [12, 5],
+      "versatz": [8, 3],
+      "vorn": true
+    },
+    {
+      "moebel": "pg9Telegrafenleitung",
+      "feld": [26, 5],
+      "versatz": [8, 3],
+      "vorn": true
+    },
+    {
+      "moebel": "pg9Telegrafenleitung",
+      "feld": [40, 5],
+      "versatz": [8, 3],
+      "vorn": true
+    },
+    {
+      "moebel": "pg9Telegrafenleitung",
+      "feld": [54, 5],
+      "versatz": [8, 3],
+      "vorn": true
+    },
+    {
+      "moebel": "pg9Telegrafenleitung",
+      "feld": [68, 5],
+      "versatz": [8, 3],
+      "vorn": true
+    },
+    {
+      "moebel": "pg9Telegrafenleitung",
+      "feld": [82, 5],
+      "versatz": [8, 3],
+      "vorn": true
+    },
+    {
+      "moebel": "pg9Telegrafenleitung",
+      "feld": [96, 5],
+      "versatz": [8, 3],
+      "vorn": true
+    },
+    {
+      "moebel": "pg9Telegrafenleitung",
+      "feld": [110, 5],
+      "versatz": [8, 3],
+      "vorn": true
+    },
+    {
+      "moebel": "pg9Telegrafenleitung",
+      "feld": [124, 5],
+      "versatz": [8, 3],
+      "vorn": true
+    },
+    {
+      "moebel": "gt7TuerHolz",
+      "feld": [101, 9],
+      "vorn": true
     }
   ],
   "ausloeser": [
@@ -632,9 +698,9 @@
     {
       "name": "staubteufel",
       "typ": "tier",
-      "feld": [60, 8],
+      "feld": [60, 9],
       "eigenschaften": {
-        "von": "40,8",
+        "von": "43,9",
         "bis": "90,22",
         "verhalten": "wirbeln"
       }
@@ -739,23 +805,15 @@
     {
       "name": "kraehen",
       "typ": "tier",
-      "feld": [86, 6],
+      "feld": [78, 3],
       "eigenschaften": {
-        "von": "86,6",
-        "bis": "96,6",
+        "von": "78,3",
+        "bis": "112,8",
         "verhalten": "fliegen"
       }
     }
   ],
   "zustand": ["neu", "gebraucht", "alt", "verwittert"],
-  "stil": [
-    "natur",
-    "einfach",
-    "laendlich",
-    "klassisch",
-    "industrie",
-    "modern",
-    "rustikal"
-  ],
+  "stil": ["natur", "einfach", "laendlich", "klassisch", "industrie", "modern", "rustikal"],
   "toenung": "sepia"
 }

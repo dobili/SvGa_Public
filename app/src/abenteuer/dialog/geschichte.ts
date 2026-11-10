@@ -34,6 +34,8 @@ export interface Wirkungen {
   readonly reise: (karte: string, ausloeser: string) => void;
   /** Gedächtnisstellung aus partieformen.json (Runde 6), sobald der Dialog zu ist. */
   readonly beginneGedaechtnis: (kennung: string) => void;
+  /** Simultan aus partieformen.json (Runde 6): Duelle hintereinander, sobald der Dialog zu ist. */
+  readonly beginneSimultan: (kennung: string) => void;
   /** Tönung der aktuellen Karte: nebel, nacht, abend, sepia, dunkel oder „keine“ (toenung.ts). */
   readonly setzeToenung: (name: string) => void;
 }

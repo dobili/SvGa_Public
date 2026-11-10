@@ -1314,5 +1314,6 @@
   "oberwelt.gedaechtnis.einpraegen": "Präg dir die Stellung ein. Noch {sekunden} Sekunden.",
   "oberwelt.gedaechtnis.aufbauen": "Bau die Stellung aus dem Gedächtnis auf.",
   "oberwelt.gedaechtnis.bestanden": "Alles richtig: {richtig} von {gesamt} Figuren am richtigen Platz.",
-  "oberwelt.gedaechtnis.daneben": "{richtig} von {gesamt} Figuren am richtigen Platz. Fast!"
+  "oberwelt.gedaechtnis.daneben": "{richtig} von {gesamt} Figuren am richtigen Platz. Fast!",
+  "oberwelt.simultan.ende": "Simultan beendet: {punkte} Punkte aus {bretter} Partien."
 }

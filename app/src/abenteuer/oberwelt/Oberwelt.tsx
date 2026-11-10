@@ -173,6 +173,8 @@ export function Oberwelt() {
   const gedaechtnisInArbeit = useRef<string | null>(null);
   // Ein Simultan, das ein Dialog angestoßen hat (Runde 6); das erste Brett beginnt nach dem Dialog.
   const simultanInArbeit = useRef<string | null>(null);
+  // Eine Vorführung, die ein Dialog angestoßen hat (Odette am Leuchtturm); sie folgt dem Dialog.
+  const vorfuehrungInArbeit = useRef<string | null>(null);
   const [gedaechtnis, setzeGedaechtnis] = useState<string | null>(null);
 
   // Ergebnis der zuletzt gespielten Aufgabenrunde für die Ergebniskarte (R31).
@@ -641,6 +643,9 @@ export function Oberwelt() {
     beginneSimultan: (kennung) => {
       simultanInArbeit.current = kennung;
     },
+    zeigeVorfuehrung: (kennung) => {
+      vorfuehrungInArbeit.current = kennung;
+    },
     reise: (karte, ausloeser) => {
       reiseInArbeit.current = { karte, ausloeser };
     },
@@ -806,6 +811,12 @@ export function Oberwelt() {
     const bedingungen = { ...neu.dialogvariablen, ...variablenAusBesitz(neu) };
     if (uebergang && (!uebergang.wenn || Boolean(bedingungen[uebergang.wenn]))) {
       wechsleKarte(uebergang.ziel.karte, uebergang.ziel.ausloeser);
+    }
+    const zeigen = vorfuehrungInArbeit.current;
+    vorfuehrungInArbeit.current = null;
+    if (zeigen) {
+      setzeVorfuehrung(zeigen);
+      return;
     }
     const simultan = simultanInArbeit.current;
     simultanInArbeit.current = null;

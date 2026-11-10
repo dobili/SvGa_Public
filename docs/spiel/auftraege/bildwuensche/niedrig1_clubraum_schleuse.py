@@ -15,9 +15,9 @@ Bilder (in ``spiel/eigene/``, Breite × Höhe in Pixeln):
 - ``teppich_<teil>.png`` (je 16 × 16, Teile lo, o, ro, l, m, r, lu, u, ru): roter Teppich mit
   goldenem Rand als Bodenbelag in neun Teilen.
 - ``buecherregal_schmal_links.png`` (16 × 48): schmales Bücherregal in Seitenansicht, Blick nach links.
-- ``frachtkahn.png`` (96 × 48): flacher Frachtkahn von oben schräg, Laderaum mit Luken, Steuerhaus
-  hinten rechts (für die „Ashford Belle“ in Lockport).
-- ``schleusentor_stemm.png`` (32 × 80): Stemmtor für eine 5 Kacheln breite Kammer: zwei Torflügel
+- ``frachtkahn.png`` (384 × 80, 24 × 5 Kacheln nach Regel 10.64): flacher Frachtkahn von oben
+  schräg, Laderaum mit Luken, Steuerhaus hinten rechts (für die „Ashford Belle“ in Lockport).
+- ``schleusentor_stemm.png`` (32 × 144): Stemmtor für eine Kammer mit 7 Reihen Wasser: zwei Torflügel
   treffen sich in einem flachen V, oben ein Steg mit Geländer, links und rechts die Drehbalken.
 """
 
@@ -184,49 +184,63 @@ def buecherregal_schmal_links() -> Image.Image:
     return bild
 
 
+KAHN_B, KAHN_H = 384, 80  # 24 x 5 Kacheln (KARTENREGELN 10.64: Frachtkahn 24–30 x 5)
+TOR_H = 144  # Stemmtor über 7 Reihen Wasser und je eine Reihe Mauer oben und unten
+
+
 def frachtkahn() -> Image.Image:
-    """Flacher Frachtkahn 96 × 48 längs nach links (Bug links): dunkler Rumpf mit Scheuerleiste,
-    Laderaum mit drei Lukendeckeln, Steuerhaus hinten rechts, Poller an Bug und Heck."""
-    bild = Image.new("RGBA", (96, 48))
+    """Flacher Frachtkahn 384 × 80 längs nach links (Bug links): dunkler Rumpf mit roter Scheuerleiste,
+    langer Laderaum mit sieben Lukendeckeln, Steuerhaus hinten rechts, Poller an Bug und Heck.
+    Warum so lang: Regel 10.64 (Figur 2 Kacheln, Frachtkahn 24–30 × 5); der alte Kahn mit 6 × 3
+    war kaum länger als ein Ruderboot."""
+    bild = Image.new("RGBA", (KAHN_B, KAHN_H))
     z = ImageDraw.Draw(bild)
-    z.rectangle((6, 42, 92, 46), fill=SCHATTEN)
-    z.polygon([(1, 22), (10, 8), (90, 8), (94, 12), (94, 38), (90, 42), (10, 42)], fill=RAHMEN)
-    z.polygon([(3, 22), (11, 10), (89, 10), (92, 13), (92, 37), (89, 40), (11, 40)], fill=WASSERFEST)
-    z.line((11, 10, 89, 10), fill=(150, 60, 50, 255), width=2)
-    z.line((11, 40, 89, 40), fill=(150, 60, 50, 255), width=2)
-    z.rectangle((14, 14, 68, 36), fill=RAHMEN)
-    for x in (15, 33, 51):
-        z.rectangle((x, 15, x + 16, 35), fill=(70, 110, 90, 255))
-        z.line((x, 25, x + 16, 25), fill=(50, 80, 66, 255))
-    z.rectangle((74, 14, 89, 34), fill=RAHMEN)
-    z.rectangle((75, 15, 88, 22), fill=(220, 214, 200, 255))
-    z.rectangle((75, 23, 88, 33), fill=(200, 192, 176, 255))
-    z.rectangle((77, 25, 86, 28), fill=(120, 160, 200, 255))
-    for x, y in ((8, 20), (8, 26), (91, 15), (91, 35)):
-        z.rectangle((x, y, x + 1, y + 1), fill=STAHL)
+    r, u, m = KAHN_B - 4, KAHN_H - 8, (KAHN_H - 8) // 2 + 2
+    z.rectangle((10, u + 2, r - 2, u + 6), fill=SCHATTEN)
+    z.polygon([(1, m), (22, 6), (r - 6, 6), (r, 12), (r, u - 2), (r - 6, u + 2), (22, u + 2)], fill=RAHMEN)
+    z.polygon(
+        [(4, m), (23, 8), (r - 7, 8), (r - 2, 13), (r - 2, u - 3), (r - 7, u), (23, u)], fill=WASSERFEST
+    )
+    for y in (8, u):
+        z.line((23, y, r - 7, y), fill=(150, 60, 50, 255), width=2)
+    luke_b, luke_x0, luken = 38, 30, 7
+    z.rectangle((luke_x0 - 2, 14, luke_x0 + luken * (luke_b + 2) + 1, u - 6), fill=RAHMEN)
+    for i in range(luken):
+        x = luke_x0 + i * (luke_b + 2)
+        z.rectangle((x, 15, x + luke_b, u - 7), fill=(70, 110, 90, 255))
+        z.line((x, m, x + luke_b, m), fill=(50, 80, 66, 255))
+        z.line((x + luke_b // 2, 15, x + luke_b // 2, u - 7), fill=(60, 96, 78, 255))
+    hx = r - 52
+    z.rectangle((hx, 14, r - 8, u - 8), fill=RAHMEN)
+    z.rectangle((hx + 1, 15, r - 9, 30), fill=(220, 214, 200, 255))
+    z.rectangle((hx + 1, 31, r - 9, u - 9), fill=(200, 192, 176, 255))
+    for fx in range(hx + 5, r - 14, 10):
+        z.rectangle((fx, 36, fx + 6, 42), fill=(120, 160, 200, 255))
+    z.rectangle((hx + 30, 6, hx + 36, 16), fill=(60, 60, 70, 255))  # Schornstein
+    for x, y in ((12, m - 8), (12, m + 6), (r - 4, 16), (r - 4, u - 6)):
+        z.rectangle((x, y, x + 2, y + 2), fill=STAHL)
     return bild
 
 
 def schleusentor_stemm() -> Image.Image:
-    """Stemmtor 32 × 80 für eine Kammer von 5 Kacheln Breite (Wasser in den Reihen 1–4, Mauer oben
-    und unten): zwei Holzflügel treffen sich in der Mitte in einem flachen V gegen den Wasserdruck,
-    darauf ein Laufsteg mit Geländer, oben und unten auf der Mauer je ein Drehbalken."""
-    bild = Image.new("RGBA", (32, 80))
+    """Stemmtor 32 × 144 für eine Kammer mit 7 Reihen Wasser (Mauer oben und unten je eine Kachel):
+    zwei Holzflügel treffen sich in der Mitte in einem flachen V gegen den Wasserdruck, darauf ein
+    Laufsteg mit Geländer, oben und unten auf der Mauer je ein Drehbalken."""
+    bild = Image.new("RGBA", (32, TOR_H))
     z = ImageDraw.Draw(bild)
-    for oben in (True, False):
-        y0, y1 = (8, 40) if oben else (40, 72)
-        mitte_x = 20
-        z.polygon([(8, y0), (14, y0), (mitte_x + 2, 40), (mitte_x - 4, 40)] if oben else
-                  [(mitte_x - 4, 40), (mitte_x + 2, 40), (14, y1), (8, y1)], fill=RAHMEN)  # fmt: skip
-        z.polygon([(9, y0), (13, y0), (mitte_x + 1, 40), (mitte_x - 3, 40)] if oben else
-                  [(mitte_x - 3, 40), (mitte_x + 1, 40), (13, y1), (9, y1)], fill=HOLZ_DUNKEL)  # fmt: skip
-    for y in range(10, 72, 6):
+    mitte_y, mitte_x, oben_y, unten_y = TOR_H // 2, 20, 16, TOR_H - 16
+    for y0, y1 in ((oben_y, mitte_y), (mitte_y, unten_y)):
+        spitze = y1 if y0 == oben_y else y0
+        rand = y0 if y0 == oben_y else y1
+        z.polygon([(8, rand), (14, rand), (mitte_x + 2, spitze), (mitte_x - 4, spitze)], fill=RAHMEN)
+        z.polygon([(9, rand), (13, rand), (mitte_x + 1, spitze), (mitte_x - 3, spitze)], fill=HOLZ_DUNKEL)
+    for y in range(oben_y + 2, unten_y, 6):
         z.line((10, y, 12, y), fill=HOLZ_HELL)
-    for y in (2, 74):
+    for y in (oben_y - 8, unten_y + 2):
         z.rectangle((2, y, 29, y + 4), fill=RAHMEN)
         z.rectangle((3, y + 1, 28, y + 3), fill=HOLZ_HELL)
         z.rectangle((26, y + 1, 28, y + 3), fill=(90, 90, 100, 255))
-    z.line((7, 6, 7, 74), fill=STAHL)
+    z.line((7, oben_y - 4, 7, unten_y + 2), fill=STAHL)
     return bild
 
 

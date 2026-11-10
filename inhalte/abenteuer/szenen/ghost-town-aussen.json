@@ -823,10 +823,10 @@
     {
       "name": "pferdAmStall",
       "typ": "tier",
-      "feld": [16, 25],
+      "feld": [26, 25],
       "eigenschaften": {
-        "von": "15,25",
-        "bis": "17,25",
+        "von": "25,25",
+        "bis": "27,25",
         "verhalten": "grasen"
       }
     }

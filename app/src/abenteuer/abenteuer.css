@@ -487,3 +487,8 @@ body.abenteuer-mit-kulisse {
   background-attachment: fixed;
   image-rendering: pixelated;
 }
+
+/* Vorführung und Gedächtnisstellung (docs/spiel/18): „Brett drehen“ braucht die Geschichte nicht. */
+.abenteuer-vorfuehrung .brettschalter-gruppe {
+  display: none;
+}

@@ -171,3 +171,22 @@ Offen für später: ein Eintrag „Meine Partien“ im Tagebuch, der die Partien
 3. **Erinnerung, Falle, Struktur, Endspiel**; danach Vorführung und Gedächtnisstellung.
 
 Jeder Schritt ist lauffähig und geprüft; jeder Rückweg führt in die Oberwelt.
+
+## 6. Stand des Baus (10.11.2026)
+
+- **Schritt 1, Partie:** fertig. `anbindung/PartieHuelle.tsx`, `Huelle.tsx`, `huellentexte.ts`,
+  `huelle.css`; die Dienste öffnen die Zusatzansicht `abenteuer-partie`.
+- **Schritt 2, Aufgabenrunden:** fertig. `AufgabenAnsicht.tsx` im Rahmen der Hülle;
+  `ui/trainer/imSpiel.ts` als Schalter, `Rundenrahmen` mit der Eigenschaft `imSpiel`.
+- **Schritt 3, Rest:** fertig.
+  - Erinnerung: ohne „Analysieren“ und früheren Durchgang, Quellen ohne Link, eigene Endkarte
+    statt „Noch eine Runde“.
+  - Endspiel und Struktur: ohne Herkunftszeile, Endspiel ohne „Die Engine denkt …“.
+  - Vorführung und Gedächtnisstellung: ohne „Brett drehen“; der Stellungseditor hat die
+    Eigenschaft `nurSetzen` (nur Figurenwahl, „Brett leeren“, „Fertig“, „Abbrechen“).
+- **Noch offen:**
+  - Die Kartenleiste trägt das Wort „Schach-Abenteuer“; in der Hülle ist es überflüssig.
+  - Falle oder Köder: Der Folgespieler nach der Antwort hat noch Zugknöpfe und Bewertungsbalken.
+  - Texte der Trainer („Lösung zeigen“, „Hinweis 1“) kommen aus der App, nicht aus dem Mund
+    einer Figur.
+  - Eintrag „Meine Partien“ im Tagebuch als Weg zur Partienliste der App.

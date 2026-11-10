@@ -56,7 +56,7 @@ Stand: 10.11.2026.
 | weg-desert-summit-diner                        | 10.11.2026 | `mittel-4-runde9-2.md`                  |
 | weg-delacroix-desert-felsbogen                 | 10.11.2026 | `mittel-4-restpunkte.md`                |
 | maple-falls-park                               | 10.11.2026 | `niedrig-1-5.md`                        |
-| cedar-creek-aussen                             | 10.11.2026 | `niedrig-1-5.md`                        |
+| cedar-creek-aussen                             | 10.11.2026 | `silicon-bay-lobby-serverraum-3.md`     |
 | weg-cedar-riverton-zedernwald                  | 10.11.2026 | `niedrig-1-5.md`                        |
 | weg-maple-cedar-landstrasse (mit Zuständen)    | 10.11.2026 | `nachpruefung-neubau-13a5891d.md`       |
 | goldmine-stollen                               | 10.11.2026 | `niedrig-1-5.md`                        |
@@ -74,7 +74,8 @@ Stand: 10.11.2026.
 | weg-silicon-delacroix-deich                    | 10.11.2026 | `mittel-1-runde9-3.md`                  |
 | hochebene-felsentuerme                         | 10.11.2026 | `mittel-4-restpunkte.md`                |
 | weg-delacroix-desert-canyonpfad                | 10.11.2026 | `mittel-4-restpunkte.md`                |
-| silicon-bay-serverraum                         | 10.11.2026 | `silicon-bay-lobby-serverraum-2.md`     |
+| silicon-bay-serverraum                         | 10.11.2026 | `silicon-bay-lobby-serverraum-3.md`     |
+| silicon-bay-lobby                              | 10.11.2026 | `silicon-bay-lobby-serverraum-3.md`     |
 | ironwood-aussen-vermietet (nur Bus und Schild) | 10.11.2026 | `mittel-4-busse.md`                     |
 
 Hinweise:
@@ -85,10 +86,9 @@ Hinweise:
 
 ## Fast reif (ein oder zwei benannte Punkte fehlen)
 
-| Szene                         | Datum      | Letztes Gutachten                   | Was fehlt                      |
-| ----------------------------- | ---------- | ----------------------------------- | ------------------------------ |
-| ironwood-kantine              | 10.11.2026 | `ironwood-kantine-3.md`             | Kasse, Speiseplan im Gastraum  |
-| weg-desert-summit-bergstrasse | 10.11.2026 | `mittel-4-restpunkte.md`            | Kehren als rechte Winkel       |
-| silicon-bay-lobby             | 10.11.2026 | `silicon-bay-lobby-serverraum-2.md` | Lounge steht vor den Aufzügen  |
-| silicon-bay-aussen            | 10.11.2026 | `silicon-bay-aussen-hafen-2.md`     | Tunnelportal, leere Nordfläche |
-| silicon-bay-hafen             | 10.11.2026 | `silicon-bay-aussen-hafen-2.md`     | leere Kaifläche in der Mitte   |
+| Szene                         | Datum      | Letztes Gutachten               | Was fehlt                      |
+| ----------------------------- | ---------- | ------------------------------- | ------------------------------ |
+| ironwood-kantine              | 10.11.2026 | `ironwood-kantine-3.md`         | Kasse, Speiseplan im Gastraum  |
+| weg-desert-summit-bergstrasse | 10.11.2026 | `mittel-4-restpunkte.md`        | Kehren als rechte Winkel       |
+| silicon-bay-aussen            | 10.11.2026 | `silicon-bay-aussen-hafen-2.md` | Tunnelportal, leere Nordfläche |
+| silicon-bay-hafen             | 10.11.2026 | `silicon-bay-aussen-hafen-2.md` | leere Kaifläche in der Mitte   |

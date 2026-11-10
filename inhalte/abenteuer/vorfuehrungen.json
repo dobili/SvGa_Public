@@ -1,0 +1,264 @@
+{
+  "schemaVersion": 1,
+  "vorfuehrungen": [
+    {
+      "kennung": "operPartie",
+      "partie": "Paul Morphy – Herzog Karl von Braunschweig und Graf Isouard, Paris 1858",
+      "quelle": "https://en.wikipedia.org/wiki/Opera_Game",
+      "pgn": "1.e4 e5 2.Nf3 d6 3.d4 Bg4 4.dxe5 Bxf3 5.Qxf3 dxe5 6.Bc4 Nf6 7.Qb3 Qe7 8.Nc3 c6 9.Bg5 b5 10.Nxb5 cxb5 11.Bxb5+ Nbd7 12.O-O-O Rd8 13.Rxd7 Rxd7 14.Rd1 Qe6 15.Bxd7+ Nxd7 16.Qb8+ Nxb8 17.Rd8#",
+      "ab": 24,
+      "fen": "3rkb1r/p2nqppp/5n2/1B2p1B1/4P3/1Q6/PPP2PPP/2KR3R w k - 3 13",
+      "zuege": [
+        "Rxd7",
+        "Rxd7",
+        "Rd1",
+        "Qe6",
+        "Bxd7+",
+        "Nxd7",
+        "Qb8+",
+        "Nxb8",
+        "Rd8#"
+      ],
+      "aus_sicht": "weiss"
+    },
+    {
+      "kennung": "unsterblichePartie",
+      "partie": "Adolf Anderssen – Lionel Kieseritzky, London 1851",
+      "quelle": "https://en.wikipedia.org/wiki/Immortal_Game",
+      "pgn": "1.e4 e5 2.f4 exf4 3.Bc4 Qh4+ 4.Kf1 b5 5.Bxb5 Nf6 6.Nf3 Qh6 7.d3 Nh5 8.Nh4 Qg5 9.Nf5 c6 10.g4 Nf6 11.Rg1 cxb5 12.h4 Qg6 13.h5 Qg5 14.Qf3 Ng8 15.Bxf4 Qf6 16.Nc3 Bc5 17.Nd5 Qxb2 18.Bd6 Bxg1 19.e5 Qxa1+ 20.Ke2 Na6 21.Nxg7+ Kd8 22.Qf6+ Nxf6 23.Be7#",
+      "ab": 34,
+      "fen": "rnb1k1nr/p2p1ppp/8/1pbN1N1P/4PBP1/3P1Q2/PqP5/R4KR1 w kq - 0 18",
+      "zuege": [
+        "Bd6",
+        "Bxg1",
+        "e5",
+        "Qxa1+",
+        "Ke2",
+        "Na6",
+        "Nxg7+",
+        "Kd8",
+        "Qf6+",
+        "Nxf6",
+        "Be7#"
+      ],
+      "aus_sicht": "weiss"
+    },
+    {
+      "kennung": "immergruenePartie",
+      "partie": "Adolf Anderssen – Jean Dufresne, Berlin 1852",
+      "quelle": "https://en.wikipedia.org/wiki/Evergreen_Game",
+      "pgn": "1.e4 e5 2.Nf3 Nc6 3.Bc4 Bc5 4.b4 Bxb4 5.c3 Ba5 6.d4 exd4 7.O-O d3 8.Qb3 Qf6 9.e5 Qg6 10.Re1 Nge7 11.Ba3 b5 12.Qxb5 Rb8 13.Qa4 Bb6 14.Nbd2 Bb7 15.Ne4 Qf5 16.Bxd3 Qh5 17.Nf6+ gxf6 18.exf6 Rg8 19.Rad1 Qxf3 20.Rxe7+ Nxe7 21.Qxd7+ Kxd7 22.Bf5+ Ke8 23.Bd7+ Kf8 24.Bxe7#",
+      "ab": 36,
+      "fen": "1r2k1r1/pbppnp1p/1bn2P2/7q/Q7/B1PB1N2/P4PPP/R3R1K1 w - - 1 19",
+      "zuege": [
+        "Rad1",
+        "Qxf3",
+        "Rxe7+",
+        "Nxe7",
+        "Qxd7+",
+        "Kxd7",
+        "Bf5+",
+        "Ke8",
+        "Bd7+",
+        "Kf8",
+        "Bxe7#"
+      ],
+      "aus_sicht": "weiss"
+    },
+    {
+      "kennung": "rubinsteinsUnsterbliche",
+      "partie": "Gersz Rotlewi – Akiba Rubinstein, Łódź 1907",
+      "quelle": "https://en.wikipedia.org/wiki/Rotlewi_versus_Rubinstein",
+      "pgn": "1.d4 d5 2.Nf3 e6 3.e3 c5 4.c4 Nc6 5.Nc3 Nf6 6.dxc5 Bxc5 7.a3 a6 8.b4 Bd6 9.Bb2 O-O 10.Qd2 Qe7 11.Bd3 dxc4 12.Bxc4 b5 13.Bd3 Rd8 14.Qe2 Bb7 15.O-O Ne5 16.Nxe5 Bxe5 17.f4 Bc7 18.e4 Rac8 19.e5 Bb6+ 20.Kh1 Ng4 21.Be4 Qh4 22.g3 Rxc3 23.gxh4 Rd2 24.Qxd2 Bxe4+ 25.Qg2 Rh3",
+      "ab": 43,
+      "fen": "2rr2k1/1b3ppp/pb2p3/1p2P3/1P2BPnq/P1N3P1/1B2Q2P/R4R1K b - - 0 22",
+      "zuege": ["Rxc3", "gxh4", "Rd2", "Qxd2", "Bxe4+", "Qg2", "Rh3"],
+      "aus_sicht": "schwarz"
+    },
+    {
+      "kennung": "goldmuenzenPartie",
+      "partie": "Stepan Levitsky – Frank Marshall, Breslau 1912",
+      "quelle": "https://en.wikipedia.org/wiki/Levitsky_versus_Marshall",
+      "pgn": "1.d4 e6 2.e4 d5 3.Nc3 c5 4.Nf3 Nc6 5.exd5 exd5 6.Be2 Nf6 7.O-O Be7 8.Bg5 O-O 9.dxc5 Be6 10.Nd4 Bxc5 11.Nxe6 fxe6 12.Bg4 Qd6 13.Bh3 Rae8 14.Qd2 Bb4 15.Bxf6 Rxf6 16.Rad1 Qc5 17.Qe2 Bxc3 18.bxc3 Qxc3 19.Rxd5 Nd4 20.Qh5 Ref8 21.Re5 Rh6 22.Qg5 Rxh3 23.Rc5 Qg3",
+      "ab": 43,
+      "fen": "5rk1/pp4pp/4p2r/4R1Q1/3n4/2q4B/P1P2PPP/5RK1 b - - 6 22",
+      "zuege": ["Rxh3", "Rc5", "Qg3"],
+      "aus_sicht": "schwarz"
+    },
+    {
+      "kennung": "laskerThomas",
+      "partie": "Edward Lasker – George Alan Thomas, London 1912",
+      "quelle": "https://en.wikipedia.org/wiki/Edward_Lasker",
+      "pgn": "1.d4 e6 2.Nf3 f5 3.Nc3 Nf6 4.Bg5 Be7 5.Bxf6 Bxf6 6.e4 fxe4 7.Nxe4 b6 8.Ne5 O-O 9.Bd3 Bb7 10.Qh5 Qe7 11.Qxh7+ Kxh7 12.Nxf6+ Kh6 13.Neg4+ Kg5 14.h4+ Kf4 15.g3+ Kf3 16.Be2+ Kg2 17.Rh2+ Kg1 18.Kd2#",
+      "ab": 20,
+      "fen": "rn3rk1/pbppq1pp/1p2pb2/4N2Q/3PN3/3B4/PPP2PPP/R3K2R w KQ - 6 11",
+      "zuege": [
+        "Qxh7+",
+        "Kxh7",
+        "Nxf6+",
+        "Kh6",
+        "Neg4+",
+        "Kg5",
+        "h4+",
+        "Kf4",
+        "g3+",
+        "Kf3",
+        "Be2+",
+        "Kg2",
+        "Rh2+",
+        "Kg1",
+        "Kd2#"
+      ],
+      "aus_sicht": "weiss"
+    },
+    {
+      "kennung": "botwinnikCapablanca",
+      "partie": "Mikhail Botvinnik – José Raúl Capablanca, AVRO 1938",
+      "quelle": "https://en.wikipedia.org/wiki/Botvinnik_versus_Capablanca,_AVRO_1938",
+      "pgn": "1.d4 Nf6 2.c4 e6 3.Nc3 Bb4 4.e3 d5 5.a3 Bxc3+ 6.bxc3 c5 7.cxd5 exd5 8.Bd3 O-O 9.Ne2 b6 10.O-O Ba6 11.Bxa6 Nxa6 12.Bb2 Qd7 13.a4 Rfe8 14.Qd3 c4 15.Qc2 Nb8 16.Rae1 Nc6 17.Ng3 Na5 18.f3 Nb3 19.e4 Qxa4 20.e5 Nd7 21.Qf2 g6 22.f4 f5 23.exf6 Nxf6 24.f5 Rxe1 25.Rxe1 Re8 26.Re6 Rxe6 27.fxe6 Kg7 28.Qf4 Qe8 29.Qe5 Qe7 30.Ba3 Qxa3 31.Nh5+ gxh5 32.Qg5+ Kf8 33.Qxf6+ Kg8 34.e7 Qc1+ 35.Kf2 Qc2+ 36.Kg3 Qd3+ 37.Kh4 Qe4+ 38.Kxh5 Qe2+ 39.Kh4 Qe4+ 40.g4 Qe1+ 41.Kh5",
+      "ab": 58,
+      "fen": "8/p3q1kp/1p2Pnp1/3pQ3/2pP4/1nP3N1/1B4PP/6K1 w - - 5 30",
+      "zuege": [
+        "Ba3",
+        "Qxa3",
+        "Nh5+",
+        "gxh5",
+        "Qg5+",
+        "Kf8",
+        "Qxf6+",
+        "Kg8",
+        "e7"
+      ],
+      "aus_sicht": "weiss"
+    },
+    {
+      "kennung": "partieDesJahrhunderts",
+      "partie": "Donald Byrne – Robert James Fischer, New York 1956",
+      "quelle": "https://en.wikipedia.org/wiki/Game_of_the_Century_(chess)",
+      "pgn": "1.Nf3 Nf6 2.c4 g6 3.Nc3 Bg7 4.d4 O-O 5.Bf4 d5 6.Qb3 dxc4 7.Qxc4 c6 8.e4 Nbd7 9.Rd1 Nb6 10.Qc5 Bg4 11.Bg5 Na4 12.Qa3 Nxc3 13.bxc3 Nxe4 14.Bxe7 Qb6 15.Bc4 Nxc3 16.Bc5 Rfe8+ 17.Kf1 Be6 18.Bxb6 Bxc4+ 19.Kg1 Ne2+ 20.Kf1 Nxd4+ 21.Kg1 Ne2+ 22.Kf1 Nc3+ 23.Kg1 axb6 24.Qb4 Ra4 25.Qxb6 Nxd1 26.h3 Rxa2 27.Kh2 Nxf2 28.Re1 Rxe1 29.Qd8+ Bf8 30.Nxe1 Bd5 31.Nf3 Ne4 32.Qb8 b5 33.h4 h5 34.Ne5 Kg7 35.Kg1 Bc5+ 36.Kf1 Ng3+ 37.Ke1 Bb4+ 38.Kd1 Bb3+ 39.Kc1 Ne2+ 40.Kb1 Nc3+ 41.Kc1 Rc2#",
+      "ab": 33,
+      "fen": "r3r1k1/pp3pbp/1qp3p1/2B5/2BP2b1/Q1n2N2/P4PPP/3R1K1R b - - 3 17",
+      "zuege": [
+        "Be6",
+        "Bxb6",
+        "Bxc4+",
+        "Kg1",
+        "Ne2+",
+        "Kf1",
+        "Nxd4+",
+        "Kg1",
+        "Ne2+",
+        "Kf1",
+        "Nc3+",
+        "Kg1"
+      ],
+      "aus_sicht": "schwarz"
+    },
+    {
+      "kennung": "schirowLh3",
+      "partie": "Veselin Topalov – Alexei Shirov, Linares 1998",
+      "quelle": "https://en.wikipedia.org/wiki/Alexei_Shirov",
+      "pgn": "1.d4 Nf6 2.c4 g6 3.Nc3 d5 4.cxd5 Nxd5 5.e4 Nxc3 6.bxc3 Bg7 7.Bb5+ c6 8.Ba4 O-O 9.Ne2 Nd7 10.O-O e5 11.f3 Qe7 12.Be3 Rd8 13.Qc2 Nb6 14.Bb3 Be6 15.Rad1 Nc4 16.Bc1 b5 17.f4 exd4 18.Nxd4 Bg4 19.Rde1 Qc5 20.Kh1 a5 21.h3 Bd7 22.a4 bxa4 23.Ba2 Be8 24.e5 Nb6 25.f5 Nd5 26.Bd2 Nb4 27.Qxa4 Nxa2 28.Qxa2 Bxe5 29.fxg6 hxg6 30.Bg5 Rd5 31.Re3 Qd6 32.Qe2 Bd7 33.c4 Bxd4 34.cxd5 Bxe3 35.Qxe3 Re8 36.Qc3 Qxd5 37.Bh6 Re5 38.Rf3 Qc5 39.Qa1 Bf5 40.Re3 f6 41.Rxe5 Qxe5 42.Qa2+ Qd5 43.Qxd5+ cxd5 44.Bd2 a4 45.Bc3 Kf7 46.h4 Ke6 47.Kg1 Bh3 48.gxh3 Kf5 49.Kf2 Ke4 50.Bxf6 d4 51.Be7 Kd3 52.Bc5 Kc4 53.Be7 Kb3",
+      "ab": 93,
+      "fen": "8/8/4kpp1/3p1b2/p6P/2B5/6P1/6K1 b - - 2 47",
+      "zuege": [
+        "Bh3",
+        "gxh3",
+        "Kf5",
+        "Kf2",
+        "Ke4",
+        "Bxf6",
+        "d4",
+        "Be7",
+        "Kd3",
+        "Bc5",
+        "Kc4",
+        "Be7"
+      ],
+      "aus_sicht": "schwarz"
+    },
+    {
+      "kennung": "unzickerSarapu",
+      "partie": "Wolfgang Unzicker – Ortvin Sarapu, Olympiade Siegen 1970",
+      "quelle": "https://en.wikipedia.org/wiki/Smothered_mate",
+      "pgn": "1.e4 c5 2.Nf3 Nf6 3.e5 Nd5 4.Nc3 e6 5.Nxd5 exd5 6.d4 Nc6 7.dxc5 Bxc5 8.Qxd5 Qb6 9.Bc4 Bxf2+ 10.Ke2 O-O 11.Rf1 Bc5 12.Ng5 Nd4+ 13.Kd1 Ne6 14.Ne4 d6 15.exd6 Bxd6 16.Nxd6 Rd8 17.Bf4 Nxf4 18.Qxf7+ Kh8 19.Qg8+",
+      "ab": 32,
+      "fen": "r1br2k1/pp3ppp/1q1Nn3/3Q4/2B5/8/PPP3PP/R1BK1R2 w - - 1 17",
+      "zuege": ["Bf4", "Nxf4", "Qxf7+", "Kh8", "Qg8+"],
+      "aus_sicht": "weiss"
+    },
+    {
+      "kennung": "timmanShort",
+      "partie": "Jan Timman – Nigel Short, Tilburg 1990",
+      "quelle": "https://en.wikipedia.org/wiki/Smothered_mate",
+      "pgn": "[SetUp \"1\"]\n[FEN \"4r2k/2pRP1pp/2p5/p4pN1/2Q3n1/q5P1/P3PP1P/6K1 w - - 0 27\"]\n\n27.Nf7+ Kg8 28.Nh6+ Kh8 29.Qg8+ Rxg8 30.Nf7#",
+      "ab": 0,
+      "fen": "4r2k/2pRP1pp/2p5/p4pN1/2Q3n1/q5P1/P3PP1P/6K1 w - - 0 27",
+      "zuege": ["Nf7+", "Kg8", "Nh6+", "Kh8", "Qg8+", "Rxg8", "Nf7#"],
+      "aus_sicht": "weiss"
+    },
+    {
+      "kennung": "tissirDreev",
+      "partie": "Mohamed Tissir – Alexey Dreev, Tripoli 2004",
+      "quelle": "https://en.wikipedia.org/wiki/Fork_(chess)",
+      "pgn": "[SetUp \"1\"]\n[FEN \"r5k1/1p1q1pbp/6p1/2Pp4/p3nQ2/P4P2/B2B2PP/2R4K b - - 0 33\"]\n\n33...Nf2+ 34.Kg1 Nd3",
+      "ab": 0,
+      "fen": "r5k1/1p1q1pbp/6p1/2Pp4/p3nQ2/P4P2/B2B2PP/2R4K b - - 0 33",
+      "zuege": ["Nf2+", "Kg1", "Nd3"],
+      "aus_sicht": "schwarz"
+    },
+    {
+      "kennung": "rosenthalDeVere",
+      "partie": "Samuel Rosenthal – Cecil De Vere, Paris 1867",
+      "quelle": "https://en.wikipedia.org/wiki/Zwischenzug",
+      "pgn": "[SetUp \"1\"]\n[FEN \"2r2rk1/pp1b1ppp/1q2p3/3pP3/1B3Pn1/3B1N2/P3Q1PP/RN2KR2 b - - 0 16\"]\n\n16...Rc1+ 17.Kd2 Rxf1 18.Qxf1 Qxb4+ 19.Ke2 Qxf4 20.Qg1 Nxe5",
+      "ab": 0,
+      "fen": "2r2rk1/pp1b1ppp/1q2p3/3pP3/1B3Pn1/3B1N2/P3Q1PP/RN2KR2 b - - 0 16",
+      "zuege": [
+        "Rc1+",
+        "Kd2",
+        "Rxf1",
+        "Qxf1",
+        "Qxb4+",
+        "Ke2",
+        "Qxf4",
+        "Qg1",
+        "Nxe5"
+      ],
+      "aus_sicht": "schwarz"
+    },
+    {
+      "kennung": "retiStudie",
+      "partie": "Richard Réti, Studie 1921 (Kagans Neueste Schachnachrichten)",
+      "quelle": "https://en.wikipedia.org/wiki/R%C3%A9ti_endgame_study",
+      "pgn": "[SetUp \"1\"]\n[FEN \"7K/8/k1P5/7p/8/8/8/8 w - - 0 1\"]\n\n1.Kg7 h4 2.Kf6 Kb6 3.Ke5 Kxc6 4.Kf4",
+      "ab": 0,
+      "fen": "7K/8/k1P5/7p/8/8/8/8 w - - 0 1",
+      "zuege": ["Kg7", "h4", "Kf6", "Kb6", "Ke5", "Kxc6", "Kf4"],
+      "aus_sicht": "weiss"
+    },
+    {
+      "kennung": "saavedraStellung",
+      "partie": "Fernando Saavedra, Studie 1895 (Glasgow Weekly Citizen)",
+      "quelle": "https://en.wikipedia.org/wiki/Saavedra_position",
+      "pgn": "[SetUp \"1\"]\n[FEN \"8/8/1KP5/3r4/8/8/8/k7 w - - 0 1\"]\n\n1.c7 Rd6+ 2.Kb5 Rd5+ 3.Kb4 Rd4+ 4.Kb3 Rd3+ 5.Kc2 Rd4 6.c8=R Ra4",
+      "ab": 0,
+      "fen": "8/8/1KP5/3r4/8/8/8/k7 w - - 0 1",
+      "zuege": [
+        "c7",
+        "Rd6+",
+        "Kb5",
+        "Rd5+",
+        "Kb4",
+        "Rd4+",
+        "Kb3",
+        "Rd3+",
+        "Kc2",
+        "Rd4",
+        "c8=R",
+        "Ra4"
+      ],
+      "aus_sicht": "weiss"
+    }
+  ]
+}

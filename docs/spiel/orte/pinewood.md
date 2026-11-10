@@ -230,3 +230,44 @@ mit Seilen, Geländer an der Kante, Bank, Rätseltafel, Kiefern im Westen, Felse
 
 Boden Sand, Piste Schotter (2 breit). Inventar: schiefe Zäune, Telegrafenmasten, liegengebliebener
 Wagen, Kakteen, Felsen, ein Schild „GHOST TOWN 2 MI“.
+
+## Runde 7: Camp als Ort und Leben (10.11.2026)
+
+**Camp (Regel 10.51, klein: 12 Gebäude):** Zu den Campbuden und dem Kiosk kommen
+Kulissenhäuser ohne Innenraum am Uferweg: Ranger-Häuschen, Waschhaus, zwei Wohnwagen,
+Schutzhütte, Pavillon und Bootsschuppen. Dazu ein Badehäuschen am Strand und ein Holzschuppen im
+Nordosten. Ein Erdweg führt im Westen am Ufer entlang und im Nordosten bis zum Schuppen. In B
+stehen die Hütten im Norden am Hüttenweg, weil der Westen dort Strand ist.
+
+**Leben (Regel 10.53):** 12 Statisten, 7 davon ansprechbar (`statist.pinewoodCamp.aussen.*`):
+Betreuer, Köchin am Kiosk (Bauer schlägt Dame, mit Antwort von Ambrose), Rangerin
+(Lewis-Figuren), Wanderin, Anglerin (Italienisch), Bademeister (Perfect Move im Alltag) und Opa
+am Wohnwagen (Bobby Fischer mit 14). Ohne Satz: Holzhacker, zwei Kinder beim Wettlauf,
+Fotografin, Gitarrist am Abend, Kanufahrer. Tiere: Libellen, Reh, Eichhörnchen, Enten, Hund,
+Specht.
+
+### Weg 10 in Runde 7: Ereignisort und Leben
+
+**Ereignisort „Das Gespenst der Tankstelle“ (Dokument 15, 2.12):** An der Staubstraße steht eine
+verlassene Tankstelle direkt an der Piste: ein Blechhäuschen mit Solarpaneel auf dem Dach (darin
+kommt in Runde 6 der kleine Raum mit Z-1), zwei alte Zapfsäulen unter einem Vordach mit Schild
+„GAS“ und ein Autowrack. Davor ist Platz für drei bis sechs Figuren.
+
+**3.3 Felder für Runde 6 (begehbar):**
+
+| Karte          | Auslöser             | A        | B        | C         | Hinweis                              |
+| -------------- | -------------------- | -------- | -------- | --------- | ------------------------------------ |
+| `staubstrasse` | `ereignisTankstelle` | (88, 15) | (49, 9)  | (99, 11)  | vor der Tür des Häuschens            |
+| `staubstrasse` | `spurPM6`            | (89, 15) | (51, 9)  | (100, 11) | an der Tür                           |
+| `staubstrasse` | `seite11`            | (84, 14) | (45, 8)  | (94, 10)  | Ölwechsel-Graben neben dem Dach      |
+| `canyonrand`   | `finchBauerE`        | (99, 17) | (99, 16) | (43, 17)  | Aussicht bei der Bank, Finkenzeichen |
+
+**Leben (Regel 10.53):**
+
+- **Canyonrand:** Kletterer (Fesselung), Wanderin (Eichhörnchen mit einem Bauern aus dem Camp),
+  Campbetreuerin (Tag des Schachs am 20. Juli, FIDE 1924), Fotograf.
+  Tiere: Adler, Eichhörnchen, Eidechse, Geier, Hase, Specht.
+- **Staubstraße:** zwei Kinder aus dem Camp (das Gespenst, mit Ambroses „Gespenster spielen nicht
+  in Tankstellen“), Truckerin (der Türke), Landvermesser (Eidechsen vor den Staubteufeln),
+  Motorradfahrer.
+  Tiere: Eidechse, Geier, Roadrunner, Kojote, Hase, Krähen.

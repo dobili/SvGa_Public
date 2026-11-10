@@ -72,7 +72,7 @@ nachträgliches Möblieren:
   der Kachel direkt unter der Haustür. Bäume ganz (nicht Krone oder Stamm allein).
 - **Belebung** (Regel 10.53, `docs/spiel/16_Statisten_und_Tiere.md`):
   - Statisten: `"typ": "statist"`, Eigenschaften `von`, `bis`, `tun`, `wann`. Ansprechbare Statisten
-    haben zusätzlich `sagt` mit dem Textschlüssel `statist.<karte>.<name>`.
+    haben zusätzlich `sagt` mit dem Textschlüssel `statist.<karte>.<name>`. Wer einen Zug vorspielt, hat `zeigt` mit der Kennung aus `inhalte/abenteuer/vorfuehrungen.json`.
   - Tiere: `"typ": "tier"` mit `verhalten` (`sitzen`, `fliegen`, `ausweichen`, `flitzen`, `folgen`,
     `rennen`, `schwimmen`, `schlafen`).
 - **Auslöser** und Figuren behalten ihre Namen aus orte.json; Übergänge anderer Karten zeigen auf sie.

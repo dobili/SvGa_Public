@@ -83,6 +83,35 @@ test("Patels Kiosk: Dialog öffnet den Laden, Kauf zieht Münzen ab", async ({ p
   await expect(page.getByTestId("abenteuer-muenzen")).toHaveText("30 Münzen");
 });
 
+test("Statist im Bergladen: ansprechen, Satz erscheint, beim nächsten Mal der nächste", async ({
+  page,
+}) => {
+  // Runde 7: Statisten mit `sagt` sind ansprechbar (Dokument 16, Abschnitt 3.1).
+  const stand = {
+    ...STAND,
+    position: {
+      karte: "summitCity.bergladen",
+      ...feldDarunter("summit-city-bergladen", "ladenhilfe"),
+      richtung: "oben",
+    },
+  };
+  await starteImBrowser(page);
+  await expect.poll(() => page.evaluate(schreibeStand, stand)).toBe(true);
+  await page.reload();
+  await page.goto("/app/#abenteuer");
+  await page.getByTestId("abenteuer-laden").click();
+  await expect(page.getByTestId("abenteuer-welt")).toBeVisible({ timeout: 30000 });
+  const aktion = page.getByTestId("abenteuer-aktion");
+  await expect(aktion).toHaveText("Sprechen", { timeout: 30000 });
+  await aktion.click();
+  const blase = page.getByTestId("abenteuer-sprechblase");
+  await expect(blase).toContainText("Die Karten vom Gipfelweg gehen am besten.");
+  await aktion.click();
+  await expect(blase).toContainText("Im Winter verkaufen wir Schneeschuhe");
+  await blase.getByRole("button", { name: "Weiter" }).click();
+  await expect(blase).toHaveCount(0);
+});
+
 test("Erinnerung London 1851: Sepia, kein Tagebuch, keine Münzen", async ({ page }) => {
   const stand = {
     ...STAND,

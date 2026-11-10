@@ -345,6 +345,15 @@
       "zustand": "gebraucht",
       "stil": "rustikal",
       "blick": "unten"
+    },
+    "lp6Brunnen": {
+      "quelle": "modern-farm/Single_Files_16x16/Props_and_Buildings_16x16/Well_Usable_16x16.png",
+      "breite": 48,
+      "hoehe": 32,
+      "kollision": true,
+      "art": "brunnen",
+      "zustand": "gebraucht",
+      "stil": "laendlich"
     }
   }
 }

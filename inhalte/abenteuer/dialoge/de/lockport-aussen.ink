@@ -148,3 +148,9 @@ Er drückt dir ein Paar Gummistiefel in die Hand. #sprecher:erzaehler
 === boot_danach ===
 Henriks Boot liegt kieloben auf dem Kai, bereit für den Winter. #sprecher:erzaehler
 -> END
+
+// ---------------------------------------------------------------- Ansehen
+
+=== pumpe ===
+Der alte Dorfbrunnen mit Kurbel. Wer dreht, bekommt kaltes Wasser und quietschende Ohren. #sprecher:erzaehler
+-> END

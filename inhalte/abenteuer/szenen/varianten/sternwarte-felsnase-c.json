@@ -132,13 +132,114 @@
   "figuren": [],
   "belebung": [
     {
+      "name": "hobbyastronom",
+      "typ": "statist",
+      "feld": [25, 8],
+      "eigenschaften": {
+        "von": "25,8",
+        "bis": "25,8",
+        "tun": "baut sein Fernrohr auf",
+        "wann": "nacht",
+        "sagt": "statist.sternwarte.felsnase.hobbyastronom"
+      }
+    },
+    {
+      "name": "paar",
+      "typ": "statist",
+      "feld": [12, 10],
+      "eigenschaften": {
+        "von": "12,10",
+        "bis": "12,10",
+        "tun": "sitzt in Decken auf der Bank",
+        "wann": "abend",
+        "sagt": "statist.sternwarte.felsnase.paar"
+      }
+    },
+    {
+      "name": "nachtwanderin",
+      "typ": "statist",
+      "feld": [20, 24],
+      "eigenschaften": {
+        "von": "20,24",
+        "bis": "20,24",
+        "tun": "steigt mit Stirnlampe den Pfad hinauf",
+        "wann": "abend",
+        "sagt": "statist.sternwarte.felsnase.nachtwanderin"
+      }
+    },
+    {
+      "name": "kind",
+      "typ": "statist",
+      "feld": [28, 9],
+      "eigenschaften": {
+        "von": "28,9",
+        "bis": "28,9",
+        "tun": "schaut durch ein kleines Fernrohr",
+        "wann": "abend"
+      }
+    },
+    {
       "name": "eule",
       "typ": "tier",
-      "feld": [32, 6],
+      "feld": [32, 7],
       "eigenschaften": {
-        "von": "32,6",
-        "bis": "32,6",
+        "von": "32,7",
+        "bis": "32,7",
         "verhalten": "sitzen"
+      }
+    },
+    {
+      "name": "fledermaeuse",
+      "typ": "tier",
+      "feld": [23, 5],
+      "eigenschaften": {
+        "von": "23,5",
+        "bis": "34,5",
+        "verhalten": "fliegen",
+        "wann": "nacht"
+      }
+    },
+    {
+      "name": "kojote",
+      "typ": "tier",
+      "feld": [30, 22],
+      "eigenschaften": {
+        "von": "30,22",
+        "bis": "30,22",
+        "verhalten": "ausweichen",
+        "wann": "nacht"
+      }
+    },
+    {
+      "name": "wuestenfuchs",
+      "typ": "tier",
+      "feld": [8, 22],
+      "eigenschaften": {
+        "von": "8,22",
+        "bis": "11,22",
+        "verhalten": "ausweichen",
+        "wann": "nacht"
+      }
+    },
+    {
+      "name": "nachtfalter",
+      "typ": "tier",
+      "feld": [16, 9],
+      "eigenschaften": {
+        "von": "16,9",
+        "bis": "20,9",
+        "verhalten": "fliegen",
+        "wann": "nacht"
+      }
+    },
+    {
+      "name": "eidechse",
+      "typ": "tier",
+      "feld": [23, 4],
+      "eigenschaften": {
+        "von": "23,4",
+        "bis": "23,4",
+        "verhalten": "schlafen"
       }
     }
   ],

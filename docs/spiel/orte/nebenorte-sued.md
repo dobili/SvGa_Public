@@ -84,3 +84,17 @@ Bergleute steht noch ein Tisch, auf dem jemand einmal einen Brief geschrieben ha
 - **Stollen:** Boden Felsboden, Wand Fels, Gleis im Hauptgang mit Prellbock, Lore (`lore.png`),
   Goldader (`goldader.png`), Pfützen (`pfuetze_fels_*`), Holzstützen (`stollen_stuetze.png`), Kiste,
   Tisch mit Hockern, Gesteinsbrocken an den Wänden.
+
+## 5. Runde 7: Leben und Finch-Figur (10.11.2026)
+
+**Felsnase:** Am Abend und in der Nacht sind dort:
+
+- ein Hobbyastronom (Arpad Elo, 16, 4.3 Nr. 25);
+- ein Paar auf der Bank (Kojoten wie Züge einer Blitzpartie);
+- eine Nachtwanderin (Sternbild Springer als L);
+- ein Kind am Fernrohr.
+
+Tiere: Eule, Fledermäuse, Kojote, Wüstenfuchs, Nachtfalter, Eidechse.
+
+**3.3 Feld für Runde 6:** `finchBauerG` in der Kuppel bei A (12, 8), B (12, 9), C (12, 8),
+begehbar, mit Finkenzeichen aus Kreide.

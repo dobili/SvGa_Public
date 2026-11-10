@@ -11,7 +11,7 @@
  "tilewidth": 16,
  "tileheight": 16,
  "nextlayerid": 5,
- "nextobjectid": 17,
+ "nextobjectid": 26,
  "layers": [
   {
    "id": 1,
@@ -3715,6 +3715,153 @@
     },
     {
      "id": 5,
+     "name": "hobbyastronom",
+     "type": "statist",
+     "x": 400,
+     "y": 128,
+     "width": 16,
+     "height": 16,
+     "rotation": 0,
+     "visible": true,
+     "properties": [
+      {
+       "name": "von",
+       "type": "string",
+       "value": "25,8"
+      },
+      {
+       "name": "bis",
+       "type": "string",
+       "value": "25,8"
+      },
+      {
+       "name": "tun",
+       "type": "string",
+       "value": "baut sein Fernrohr auf"
+      },
+      {
+       "name": "wann",
+       "type": "string",
+       "value": "nacht"
+      },
+      {
+       "name": "sagt",
+       "type": "string",
+       "value": "statist.sternwarte.felsnase.hobbyastronom"
+      }
+     ]
+    },
+    {
+     "id": 6,
+     "name": "paar",
+     "type": "statist",
+     "x": 192,
+     "y": 160,
+     "width": 16,
+     "height": 16,
+     "rotation": 0,
+     "visible": true,
+     "properties": [
+      {
+       "name": "von",
+       "type": "string",
+       "value": "12,10"
+      },
+      {
+       "name": "bis",
+       "type": "string",
+       "value": "12,10"
+      },
+      {
+       "name": "tun",
+       "type": "string",
+       "value": "sitzt in Decken auf der Bank"
+      },
+      {
+       "name": "wann",
+       "type": "string",
+       "value": "abend"
+      },
+      {
+       "name": "sagt",
+       "type": "string",
+       "value": "statist.sternwarte.felsnase.paar"
+      }
+     ]
+    },
+    {
+     "id": 7,
+     "name": "nachtwanderin",
+     "type": "statist",
+     "x": 320,
+     "y": 384,
+     "width": 16,
+     "height": 16,
+     "rotation": 0,
+     "visible": true,
+     "properties": [
+      {
+       "name": "von",
+       "type": "string",
+       "value": "20,24"
+      },
+      {
+       "name": "bis",
+       "type": "string",
+       "value": "20,24"
+      },
+      {
+       "name": "tun",
+       "type": "string",
+       "value": "steigt mit Stirnlampe den Pfad hinauf"
+      },
+      {
+       "name": "wann",
+       "type": "string",
+       "value": "abend"
+      },
+      {
+       "name": "sagt",
+       "type": "string",
+       "value": "statist.sternwarte.felsnase.nachtwanderin"
+      }
+     ]
+    },
+    {
+     "id": 8,
+     "name": "kind",
+     "type": "statist",
+     "x": 448,
+     "y": 160,
+     "width": 16,
+     "height": 16,
+     "rotation": 0,
+     "visible": true,
+     "properties": [
+      {
+       "name": "von",
+       "type": "string",
+       "value": "28,10"
+      },
+      {
+       "name": "bis",
+       "type": "string",
+       "value": "28,10"
+      },
+      {
+       "name": "tun",
+       "type": "string",
+       "value": "schaut durch ein kleines Fernrohr"
+      },
+      {
+       "name": "wann",
+       "type": "string",
+       "value": "abend"
+      }
+     ]
+    },
+    {
+     "id": 9,
      "name": "eule",
      "type": "tier",
      "x": 512,
@@ -3742,7 +3889,167 @@
      ]
     },
     {
-     "id": 6,
+     "id": 10,
+     "name": "fledermaeuse",
+     "type": "tier",
+     "x": 368,
+     "y": 80,
+     "width": 16,
+     "height": 16,
+     "rotation": 0,
+     "visible": true,
+     "properties": [
+      {
+       "name": "von",
+       "type": "string",
+       "value": "23,5"
+      },
+      {
+       "name": "bis",
+       "type": "string",
+       "value": "33,5"
+      },
+      {
+       "name": "verhalten",
+       "type": "string",
+       "value": "fliegen"
+      },
+      {
+       "name": "wann",
+       "type": "string",
+       "value": "nacht"
+      }
+     ]
+    },
+    {
+     "id": 11,
+     "name": "kojote",
+     "type": "tier",
+     "x": 368,
+     "y": 416,
+     "width": 16,
+     "height": 16,
+     "rotation": 0,
+     "visible": true,
+     "properties": [
+      {
+       "name": "von",
+       "type": "string",
+       "value": "23,26"
+      },
+      {
+       "name": "bis",
+       "type": "string",
+       "value": "23,26"
+      },
+      {
+       "name": "verhalten",
+       "type": "string",
+       "value": "ausweichen"
+      },
+      {
+       "name": "wann",
+       "type": "string",
+       "value": "nacht"
+      }
+     ]
+    },
+    {
+     "id": 12,
+     "name": "wuestenfuchs",
+     "type": "tier",
+     "x": 112,
+     "y": 352,
+     "width": 16,
+     "height": 16,
+     "rotation": 0,
+     "visible": true,
+     "properties": [
+      {
+       "name": "von",
+       "type": "string",
+       "value": "7,22"
+      },
+      {
+       "name": "bis",
+       "type": "string",
+       "value": "10,21"
+      },
+      {
+       "name": "verhalten",
+       "type": "string",
+       "value": "ausweichen"
+      },
+      {
+       "name": "wann",
+       "type": "string",
+       "value": "nacht"
+      }
+     ]
+    },
+    {
+     "id": 13,
+     "name": "nachtfalter",
+     "type": "tier",
+     "x": 256,
+     "y": 144,
+     "width": 16,
+     "height": 16,
+     "rotation": 0,
+     "visible": true,
+     "properties": [
+      {
+       "name": "von",
+       "type": "string",
+       "value": "16,9"
+      },
+      {
+       "name": "bis",
+       "type": "string",
+       "value": "18,9"
+      },
+      {
+       "name": "verhalten",
+       "type": "string",
+       "value": "fliegen"
+      },
+      {
+       "name": "wann",
+       "type": "string",
+       "value": "nacht"
+      }
+     ]
+    },
+    {
+     "id": 14,
+     "name": "eidechse",
+     "type": "tier",
+     "x": 368,
+     "y": 64,
+     "width": 16,
+     "height": 16,
+     "rotation": 0,
+     "visible": true,
+     "properties": [
+      {
+       "name": "von",
+       "type": "string",
+       "value": "23,4"
+      },
+      {
+       "name": "bis",
+       "type": "string",
+       "value": "23,4"
+      },
+      {
+       "name": "verhalten",
+       "type": "string",
+       "value": "schlafen"
+      }
+     ]
+    },
+    {
+     "id": 15,
      "name": "n5Sternwarte",
      "type": "moebel",
      "x": 256,
@@ -3765,7 +4072,7 @@
      ]
     },
     {
-     "id": 7,
+     "id": 16,
      "name": "mfBank",
      "type": "moebel",
      "x": 112,
@@ -3788,7 +4095,7 @@
      ]
     },
     {
-     "id": 8,
+     "id": 17,
      "name": "iwStrommast",
      "type": "moebel",
      "x": 496,
@@ -3811,7 +4118,7 @@
      ]
     },
     {
-     "id": 9,
+     "id": 18,
      "name": "dd6Saguaro",
      "type": "moebel",
      "x": 112,
@@ -3834,7 +4141,7 @@
      ]
     },
     {
-     "id": 10,
+     "id": 19,
      "name": "dd6KaktusKlein",
      "type": "moebel",
      "x": 176,
@@ -3857,7 +4164,7 @@
      ]
     },
     {
-     "id": 11,
+     "id": 20,
      "name": "dd6KaktusBluehend",
      "type": "moebel",
      "x": 416,
@@ -3880,7 +4187,7 @@
      ]
     },
     {
-     "id": 12,
+     "id": 21,
      "name": "dd6Saguaro",
      "type": "moebel",
      "x": 368,
@@ -3903,7 +4210,7 @@
      ]
     },
     {
-     "id": 13,
+     "id": 22,
      "name": "dd6KaktusKlein",
      "type": "moebel",
      "x": 416,
@@ -3926,7 +4233,7 @@
      ]
     },
     {
-     "id": 14,
+     "id": 23,
      "name": "dd6KaktusBluehend",
      "type": "moebel",
      "x": 288,
@@ -3949,7 +4256,7 @@
      ]
     },
     {
-     "id": 15,
+     "id": 24,
      "name": "dd6Saguaro",
      "type": "moebel",
      "x": 160,
@@ -3972,7 +4279,7 @@
      ]
     },
     {
-     "id": 16,
+     "id": 25,
      "name": "dd6KaktusKlein",
      "type": "moebel",
      "x": 208,

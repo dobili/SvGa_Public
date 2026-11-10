@@ -107,6 +107,11 @@
     {
       "moebel": "cc4Karton",
       "feld": [1, 3]
+    },
+    {
+      "moebel": "ds8Finkenzeichen",
+      "feld": [12, 8],
+      "id": "ereignis18"
     }
   ],
   "ausloeser": [

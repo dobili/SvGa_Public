@@ -11,7 +11,7 @@
  "tilewidth": 16,
  "tileheight": 16,
  "nextlayerid": 5,
- "nextobjectid": 106,
+ "nextobjectid": 112,
  "layers": [
   {
    "id": 1,
@@ -5655,6 +5655,176 @@
     },
     {
      "id": 11,
+     "name": "fischerin",
+     "type": "statist",
+     "x": 320,
+     "y": 320,
+     "width": 16,
+     "height": 16,
+     "rotation": 0,
+     "visible": true,
+     "properties": [
+      {
+       "name": "von",
+       "type": "string",
+       "value": "20,20"
+      },
+      {
+       "name": "bis",
+       "type": "string",
+       "value": "20,20"
+      },
+      {
+       "name": "tun",
+       "type": "string",
+       "value": "flickt am Steg ein Netz"
+      },
+      {
+       "name": "wann",
+       "type": "string",
+       "value": "tag"
+      },
+      {
+       "name": "sagt",
+       "type": "string",
+       "value": "statist.pelikaninsel.dorf.fischerin"
+      }
+     ]
+    },
+    {
+     "id": 12,
+     "name": "netzflicker",
+     "type": "statist",
+     "x": 480,
+     "y": 384,
+     "width": 16,
+     "height": 16,
+     "rotation": 0,
+     "visible": true,
+     "properties": [
+      {
+       "name": "von",
+       "type": "string",
+       "value": "30,24"
+      },
+      {
+       "name": "bis",
+       "type": "string",
+       "value": "30,24"
+      },
+      {
+       "name": "tun",
+       "type": "string",
+       "value": "sitzt mit Mütze auf einer Kiste"
+      },
+      {
+       "name": "wann",
+       "type": "string",
+       "value": "tag"
+      },
+      {
+       "name": "sagt",
+       "type": "string",
+       "value": "statist.pelikaninsel.dorf.netzflicker"
+      }
+     ]
+    },
+    {
+     "id": 13,
+     "name": "inselkind",
+     "type": "statist",
+     "x": 240,
+     "y": 416,
+     "width": 16,
+     "height": 16,
+     "rotation": 0,
+     "visible": true,
+     "properties": [
+      {
+       "name": "von",
+       "type": "string",
+       "value": "15,26"
+      },
+      {
+       "name": "bis",
+       "type": "string",
+       "value": "15,26"
+      },
+      {
+       "name": "tun",
+       "type": "string",
+       "value": "wirft Brotkrumen für die Möwen"
+      },
+      {
+       "name": "wann",
+       "type": "string",
+       "value": "tag"
+      },
+      {
+       "name": "sagt",
+       "type": "string",
+       "value": "statist.pelikaninsel.dorf.inselkind"
+      }
+     ]
+    },
+    {
+     "id": 14,
+     "name": "reiher",
+     "type": "tier",
+     "x": 640,
+     "y": 448,
+     "width": 16,
+     "height": 16,
+     "rotation": 0,
+     "visible": true,
+     "properties": [
+      {
+       "name": "von",
+       "type": "string",
+       "value": "40,28"
+      },
+      {
+       "name": "bis",
+       "type": "string",
+       "value": "46,28"
+      },
+      {
+       "name": "verhalten",
+       "type": "string",
+       "value": "fliegen"
+      }
+     ]
+    },
+    {
+     "id": 15,
+     "name": "alligator",
+     "type": "tier",
+     "x": 96,
+     "y": 512,
+     "width": 16,
+     "height": 16,
+     "rotation": 0,
+     "visible": true,
+     "properties": [
+      {
+       "name": "von",
+       "type": "string",
+       "value": "6,32"
+      },
+      {
+       "name": "bis",
+       "type": "string",
+       "value": "6,32"
+      },
+      {
+       "name": "verhalten",
+       "type": "string",
+       "value": "schwimmen"
+      }
+     ]
+    },
+    {
+     "id": 16,
      "name": "n4Leuchtfeuer",
      "type": "moebel",
      "x": 96,
@@ -5677,7 +5847,7 @@
      ]
     },
     {
-     "id": 12,
+     "id": 17,
      "name": "n4SeefelsGrossWasser",
      "type": "moebel",
      "x": 0,
@@ -5700,7 +5870,7 @@
      ]
     },
     {
-     "id": 13,
+     "id": 18,
      "name": "n4SeefelsWasser",
      "type": "moebel",
      "x": 32,
@@ -5723,7 +5893,7 @@
      ]
     },
     {
-     "id": 14,
+     "id": 19,
      "name": "n4SeefelsWasser",
      "type": "moebel",
      "x": 208,
@@ -5746,7 +5916,7 @@
      ]
     },
     {
-     "id": 15,
+     "id": 20,
      "name": "n4SeefelsKleinWasser",
      "type": "moebel",
      "x": 0,
@@ -5769,7 +5939,7 @@
      ]
     },
     {
-     "id": 16,
+     "id": 21,
      "name": "n4SeefelsWasser",
      "type": "moebel",
      "x": 16,
@@ -5792,7 +5962,7 @@
      ]
     },
     {
-     "id": 17,
+     "id": 22,
      "name": "n4SeefelsKleinWasser",
      "type": "moebel",
      "x": 736,
@@ -5815,7 +5985,7 @@
      ]
     },
     {
-     "id": 18,
+     "id": 23,
      "name": "n4Fels",
      "type": "moebel",
      "x": 160,
@@ -5838,7 +6008,7 @@
      ]
     },
     {
-     "id": 19,
+     "id": 24,
      "name": "n4Fels",
      "type": "moebel",
      "x": 64,
@@ -5861,7 +6031,7 @@
      ]
     },
     {
-     "id": 20,
+     "id": 25,
      "name": "n4Fels",
      "type": "moebel",
      "x": 160,
@@ -5884,7 +6054,7 @@
      ]
     },
     {
-     "id": 21,
+     "id": 26,
      "name": "n4Fels",
      "type": "moebel",
      "x": 48,
@@ -5907,7 +6077,7 @@
      ]
     },
     {
-     "id": 22,
+     "id": 27,
      "name": "n4PfahlhausBlau",
      "type": "moebel",
      "x": 560,
@@ -5930,7 +6100,7 @@
      ]
     },
     {
-     "id": 23,
+     "id": 28,
      "name": "n4PfahlhausRot",
      "type": "moebel",
      "x": 640,
@@ -5953,7 +6123,7 @@
      ]
     },
     {
-     "id": 24,
+     "id": 29,
      "name": "n4PfahlhausWeiss",
      "type": "moebel",
      "x": 720,
@@ -5976,7 +6146,7 @@
      ]
     },
     {
-     "id": 25,
+     "id": 30,
      "name": "n4PfahlhausWeiss",
      "type": "moebel",
      "x": 560,
@@ -5999,7 +6169,7 @@
      ]
     },
     {
-     "id": 26,
+     "id": 31,
      "name": "n4PfahlhausBlau",
      "type": "moebel",
      "x": 640,
@@ -6022,7 +6192,7 @@
      ]
     },
     {
-     "id": 27,
+     "id": 32,
      "name": "n4Rettungsring",
      "type": "moebel",
      "x": 608,
@@ -6045,7 +6215,7 @@
      ]
     },
     {
-     "id": 28,
+     "id": 33,
      "name": "n4Rettungsring",
      "type": "moebel",
      "x": 768,
@@ -6068,7 +6238,7 @@
      ]
     },
     {
-     "id": 29,
+     "id": 34,
      "name": "n4PelikanRechts",
      "type": "moebel",
      "x": 336,
@@ -6091,7 +6261,7 @@
      ]
     },
     {
-     "id": 30,
+     "id": 35,
      "name": "n4PelikanLinks",
      "type": "moebel",
      "x": 544,
@@ -6114,7 +6284,7 @@
      ]
     },
     {
-     "id": 31,
+     "id": 36,
      "name": "n4PelikanRechts",
      "type": "moebel",
      "x": 704,
@@ -6137,7 +6307,7 @@
      ]
     },
     {
-     "id": 32,
+     "id": 37,
      "name": "n4PelikanLinks",
      "type": "moebel",
      "x": 624,
@@ -6160,7 +6330,7 @@
      ]
     },
     {
-     "id": 33,
+     "id": 38,
      "name": "n4Netzgestell",
      "type": "moebel",
      "x": 304,
@@ -6183,7 +6353,7 @@
      ]
     },
     {
-     "id": 34,
+     "id": 39,
      "name": "n4FaehrbootWasser",
      "type": "moebel",
      "x": 416,
@@ -6206,7 +6376,7 @@
      ]
     },
     {
-     "id": 35,
+     "id": 40,
      "name": "n4Wegweiser",
      "type": "moebel",
      "x": 336,
@@ -6229,7 +6399,7 @@
      ]
     },
     {
-     "id": 36,
+     "id": 41,
      "name": "n4Kiste",
      "type": "moebel",
      "x": 416,
@@ -6252,7 +6422,7 @@
      ]
     },
     {
-     "id": 37,
+     "id": 42,
      "name": "n4Kiste",
      "type": "moebel",
      "x": 320,
@@ -6275,7 +6445,7 @@
      ]
     },
     {
-     "id": 38,
+     "id": 43,
      "name": "n4Kiste",
      "type": "moebel",
      "x": 288,
@@ -6298,7 +6468,7 @@
      ]
     },
     {
-     "id": 39,
+     "id": 44,
      "name": "n4Fass",
      "type": "moebel",
      "x": 400,
@@ -6321,7 +6491,7 @@
      ]
     },
     {
-     "id": 40,
+     "id": 45,
      "name": "n4Fass",
      "type": "moebel",
      "x": 464,
@@ -6344,7 +6514,7 @@
      ]
     },
     {
-     "id": 41,
+     "id": 46,
      "name": "n4Kiste",
      "type": "moebel",
      "x": 352,
@@ -6367,7 +6537,7 @@
      ]
     },
     {
-     "id": 42,
+     "id": 47,
      "name": "n4Fass",
      "type": "moebel",
      "x": 304,
@@ -6390,7 +6560,7 @@
      ]
     },
     {
-     "id": 43,
+     "id": 48,
      "name": "n4Kisten",
      "type": "moebel",
      "x": 480,
@@ -6413,7 +6583,7 @@
      ]
     },
     {
-     "id": 44,
+     "id": 49,
      "name": "n4Boot",
      "type": "moebel",
      "x": 256,
@@ -6436,7 +6606,7 @@
      ]
     },
     {
-     "id": 45,
+     "id": 50,
      "name": "n4BootUfer",
      "type": "moebel",
      "x": 432,
@@ -6459,7 +6629,7 @@
      ]
     },
     {
-     "id": 46,
+     "id": 51,
      "name": "n4Spross",
      "type": "moebel",
      "x": 464,
@@ -6482,7 +6652,7 @@
      ]
     },
     {
-     "id": 47,
+     "id": 52,
      "name": "n4MuschelRosa",
      "type": "moebel",
      "x": 208,
@@ -6505,7 +6675,7 @@
      ]
     },
     {
-     "id": 48,
+     "id": 53,
      "name": "n4MuschelWeiss",
      "type": "moebel",
      "x": 544,
@@ -6528,7 +6698,7 @@
      ]
     },
     {
-     "id": 49,
+     "id": 54,
      "name": "n4MuschelGold",
      "type": "moebel",
      "x": 432,
@@ -6551,7 +6721,7 @@
      ]
     },
     {
-     "id": 50,
+     "id": 55,
      "name": "n4MuschelWeiss",
      "type": "moebel",
      "x": 528,
@@ -6574,7 +6744,7 @@
      ]
     },
     {
-     "id": 51,
+     "id": 56,
      "name": "n4SeesternGelb",
      "type": "moebel",
      "x": 112,
@@ -6597,7 +6767,7 @@
      ]
     },
     {
-     "id": 52,
+     "id": 57,
      "name": "n4MuschelGold",
      "type": "moebel",
      "x": 400,
@@ -6620,7 +6790,7 @@
      ]
     },
     {
-     "id": 53,
+     "id": 58,
      "name": "n4MuschelRosa",
      "type": "moebel",
      "x": 496,
@@ -6643,7 +6813,7 @@
      ]
     },
     {
-     "id": 54,
+     "id": 59,
      "name": "n4Spross",
      "type": "moebel",
      "x": 432,
@@ -6666,7 +6836,7 @@
      ]
     },
     {
-     "id": 55,
+     "id": 60,
      "name": "n4MuschelGold",
      "type": "moebel",
      "x": 352,
@@ -6689,7 +6859,7 @@
      ]
     },
     {
-     "id": 56,
+     "id": 61,
      "name": "n4MuschelBraun",
      "type": "moebel",
      "x": 192,
@@ -6712,7 +6882,7 @@
      ]
     },
     {
-     "id": 57,
+     "id": 62,
      "name": "n4SeesternGelb",
      "type": "moebel",
      "x": 208,
@@ -6735,7 +6905,7 @@
      ]
     },
     {
-     "id": 58,
+     "id": 63,
      "name": "n4MuschelBraun",
      "type": "moebel",
      "x": 128,
@@ -6758,7 +6928,7 @@
      ]
     },
     {
-     "id": 59,
+     "id": 64,
      "name": "n4MoeweVorn",
      "type": "moebel",
      "x": 224,
@@ -6781,7 +6951,7 @@
      ]
     },
     {
-     "id": 60,
+     "id": 65,
      "name": "n4SeesternGelb",
      "type": "moebel",
      "x": 672,
@@ -6804,7 +6974,7 @@
      ]
     },
     {
-     "id": 61,
+     "id": 66,
      "name": "n4MuschelWeiss",
      "type": "moebel",
      "x": 224,
@@ -6827,7 +6997,7 @@
      ]
     },
     {
-     "id": 62,
+     "id": 67,
      "name": "n4SeesternGelb",
      "type": "moebel",
      "x": 352,
@@ -6850,7 +7020,7 @@
      ]
     },
     {
-     "id": 63,
+     "id": 68,
      "name": "n4MuschelRosa",
      "type": "moebel",
      "x": 96,
@@ -6873,7 +7043,7 @@
      ]
     },
     {
-     "id": 64,
+     "id": 69,
      "name": "n4SeesternGelb",
      "type": "moebel",
      "x": 480,
@@ -6896,7 +7066,7 @@
      ]
     },
     {
-     "id": 65,
+     "id": 70,
      "name": "n4MuschelWeiss",
      "type": "moebel",
      "x": 640,
@@ -6919,7 +7089,7 @@
      ]
     },
     {
-     "id": 66,
+     "id": 71,
      "name": "n4MuschelBraun",
      "type": "moebel",
      "x": 496,
@@ -6942,7 +7112,7 @@
      ]
     },
     {
-     "id": 67,
+     "id": 72,
      "name": "n4MuschelRosa",
      "type": "moebel",
      "x": 112,
@@ -6965,7 +7135,7 @@
      ]
     },
     {
-     "id": 68,
+     "id": 73,
      "name": "n4MoeweRechts",
      "type": "moebel",
      "x": 256,
@@ -6988,7 +7158,7 @@
      ]
     },
     {
-     "id": 69,
+     "id": 74,
      "name": "n4SeesternGelb",
      "type": "moebel",
      "x": 512,
@@ -7011,7 +7181,7 @@
      ]
     },
     {
-     "id": 70,
+     "id": 75,
      "name": "n4MuschelBraun",
      "type": "moebel",
      "x": 464,
@@ -7034,7 +7204,7 @@
      ]
     },
     {
-     "id": 71,
+     "id": 76,
      "name": "n4MuschelWeiss",
      "type": "moebel",
      "x": 304,
@@ -7057,7 +7227,7 @@
      ]
     },
     {
-     "id": 72,
+     "id": 77,
      "name": "n4MuschelBraun",
      "type": "moebel",
      "x": 352,
@@ -7080,7 +7250,7 @@
      ]
     },
     {
-     "id": 73,
+     "id": 78,
      "name": "n4Spross",
      "type": "moebel",
      "x": 368,
@@ -7103,7 +7273,7 @@
      ]
     },
     {
-     "id": 74,
+     "id": 79,
      "name": "n4SeesternLila",
      "type": "moebel",
      "x": 320,
@@ -7126,7 +7296,7 @@
      ]
     },
     {
-     "id": 75,
+     "id": 80,
      "name": "n4MoeweRechts",
      "type": "moebel",
      "x": 368,
@@ -7149,7 +7319,7 @@
      ]
     },
     {
-     "id": 76,
+     "id": 81,
      "name": "n4MoeweVorn",
      "type": "moebel",
      "x": 432,
@@ -7172,7 +7342,7 @@
      ]
     },
     {
-     "id": 77,
+     "id": 82,
      "name": "n4Spross",
      "type": "moebel",
      "x": 352,
@@ -7195,7 +7365,7 @@
      ]
     },
     {
-     "id": 78,
+     "id": 83,
      "name": "n4MoeweVorn",
      "type": "moebel",
      "x": 320,
@@ -7218,7 +7388,7 @@
      ]
     },
     {
-     "id": 79,
+     "id": 84,
      "name": "n4MuschelRosa",
      "type": "moebel",
      "x": 240,
@@ -7241,7 +7411,7 @@
      ]
     },
     {
-     "id": 80,
+     "id": 85,
      "name": "n4MuschelRosa",
      "type": "moebel",
      "x": 384,
@@ -7264,7 +7434,7 @@
      ]
     },
     {
-     "id": 81,
+     "id": 86,
      "name": "n4SeesternGelb",
      "type": "moebel",
      "x": 208,
@@ -7287,7 +7457,7 @@
      ]
     },
     {
-     "id": 82,
+     "id": 87,
      "name": "n4MuschelWeiss",
      "type": "moebel",
      "x": 336,
@@ -7310,7 +7480,7 @@
      ]
     },
     {
-     "id": 83,
+     "id": 88,
      "name": "n4MuschelWeiss",
      "type": "moebel",
      "x": 208,
@@ -7333,7 +7503,7 @@
      ]
     },
     {
-     "id": 84,
+     "id": 89,
      "name": "n4SeesternGelb",
      "type": "moebel",
      "x": 336,
@@ -7356,7 +7526,7 @@
      ]
     },
     {
-     "id": 85,
+     "id": 90,
      "name": "n4MuschelBraun",
      "type": "moebel",
      "x": 368,
@@ -7379,7 +7549,7 @@
      ]
     },
     {
-     "id": 86,
+     "id": 91,
      "name": "n4MoeweRechts",
      "type": "moebel",
      "x": 176,
@@ -7402,7 +7572,7 @@
      ]
     },
     {
-     "id": 87,
+     "id": 92,
      "name": "n4MuschelGold",
      "type": "moebel",
      "x": 224,
@@ -7425,7 +7595,7 @@
      ]
     },
     {
-     "id": 88,
+     "id": 93,
      "name": "n4SeesternGelb",
      "type": "moebel",
      "x": 512,
@@ -7448,7 +7618,7 @@
      ]
     },
     {
-     "id": 89,
+     "id": 94,
      "name": "n4MuschelRosa",
      "type": "moebel",
      "x": 288,
@@ -7471,7 +7641,7 @@
      ]
     },
     {
-     "id": 90,
+     "id": 95,
      "name": "n4SeesternLila",
      "type": "moebel",
      "x": 560,
@@ -7494,7 +7664,7 @@
      ]
     },
     {
-     "id": 91,
+     "id": 96,
      "name": "n4MoeweRechts",
      "type": "moebel",
      "x": 192,
@@ -7517,7 +7687,7 @@
      ]
     },
     {
-     "id": 92,
+     "id": 97,
      "name": "n4MuschelGold",
      "type": "moebel",
      "x": 368,
@@ -7540,7 +7710,7 @@
      ]
     },
     {
-     "id": 93,
+     "id": 98,
      "name": "n4MoeweLinks",
      "type": "moebel",
      "x": 416,
@@ -7563,7 +7733,7 @@
      ]
     },
     {
-     "id": 94,
+     "id": 99,
      "name": "n4SeesternLila",
      "type": "moebel",
      "x": 400,
@@ -7586,7 +7756,7 @@
      ]
     },
     {
-     "id": 95,
+     "id": 100,
      "name": "n4MuschelWeiss",
      "type": "moebel",
      "x": 656,
@@ -7609,7 +7779,7 @@
      ]
     },
     {
-     "id": 96,
+     "id": 101,
      "name": "n4SeesternGelb",
      "type": "moebel",
      "x": 672,
@@ -7632,7 +7802,7 @@
      ]
     },
     {
-     "id": 97,
+     "id": 102,
      "name": "n4MuschelWeiss",
      "type": "moebel",
      "x": 336,
@@ -7655,7 +7825,7 @@
      ]
     },
     {
-     "id": 98,
+     "id": 103,
      "name": "n4MuschelWeiss",
      "type": "moebel",
      "x": 288,
@@ -7678,7 +7848,7 @@
      ]
     },
     {
-     "id": 99,
+     "id": 104,
      "name": "n4MoeweLinks",
      "type": "moebel",
      "x": 80,
@@ -7701,7 +7871,7 @@
      ]
     },
     {
-     "id": 100,
+     "id": 105,
      "name": "n4MoeweLinks",
      "type": "moebel",
      "x": 496,
@@ -7724,7 +7894,7 @@
      ]
     },
     {
-     "id": 101,
+     "id": 106,
      "name": "n4SeesternLila",
      "type": "moebel",
      "x": 576,
@@ -7747,7 +7917,7 @@
      ]
     },
     {
-     "id": 102,
+     "id": 107,
      "name": "n4MuschelWeiss",
      "type": "moebel",
      "x": 560,
@@ -7770,7 +7940,7 @@
      ]
     },
     {
-     "id": 103,
+     "id": 108,
      "name": "n4MuschelBraun",
      "type": "moebel",
      "x": 208,
@@ -7793,7 +7963,7 @@
      ]
     },
     {
-     "id": 104,
+     "id": 109,
      "name": "n4SeesternLila",
      "type": "moebel",
      "x": 176,
@@ -7816,11 +7986,34 @@
      ]
     },
     {
-     "id": 105,
+     "id": 110,
      "name": "n4MuschelBraun",
      "type": "moebel",
      "x": 512,
      "y": 448,
+     "width": 16,
+     "height": 16,
+     "rotation": 0,
+     "visible": true,
+     "properties": [
+      {
+       "name": "tiefe",
+       "type": "int",
+       "value": 1
+      },
+      {
+       "name": "kollision",
+       "type": "bool",
+       "value": false
+      }
+     ]
+    },
+    {
+     "id": 111,
+     "name": "sc8Finkenzeichen",
+     "type": "moebel",
+     "x": 640,
+     "y": 208,
      "width": 16,
      "height": 16,
      "rotation": 0,

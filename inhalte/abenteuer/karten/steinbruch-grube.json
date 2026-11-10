@@ -11,7 +11,7 @@
  "tilewidth": 16,
  "tileheight": 16,
  "nextlayerid": 5,
- "nextobjectid": 91,
+ "nextobjectid": 100,
  "layers": [
   {
    "id": 1,
@@ -10742,6 +10742,265 @@
     },
     {
      "id": 9,
+     "name": "steinmetz",
+     "type": "statist",
+     "x": 480,
+     "y": 480,
+     "width": 16,
+     "height": 16,
+     "rotation": 0,
+     "visible": true,
+     "properties": [
+      {
+       "name": "von",
+       "type": "string",
+       "value": "30,30"
+      },
+      {
+       "name": "bis",
+       "type": "string",
+       "value": "30,30"
+      },
+      {
+       "name": "tun",
+       "type": "string",
+       "value": "behaut einen Block in der Grube"
+      },
+      {
+       "name": "wann",
+       "type": "string",
+       "value": "tag"
+      },
+      {
+       "name": "sagt",
+       "type": "string",
+       "value": "statist.steinbruch.grube.steinmetz"
+      }
+     ]
+    },
+    {
+     "id": 10,
+     "name": "wanderer",
+     "type": "statist",
+     "x": 800,
+     "y": 640,
+     "width": 16,
+     "height": 16,
+     "rotation": 0,
+     "visible": true,
+     "properties": [
+      {
+       "name": "von",
+       "type": "string",
+       "value": "50,40"
+      },
+      {
+       "name": "bis",
+       "type": "string",
+       "value": "50,40"
+      },
+      {
+       "name": "tun",
+       "type": "string",
+       "value": "schaut über die Kante in die Grube"
+      },
+      {
+       "name": "wann",
+       "type": "string",
+       "value": "tag"
+      },
+      {
+       "name": "sagt",
+       "type": "string",
+       "value": "statist.steinbruch.grube.wanderer"
+      }
+     ]
+    },
+    {
+     "id": 11,
+     "name": "fotografin",
+     "type": "statist",
+     "x": 320,
+     "y": 320,
+     "width": 16,
+     "height": 16,
+     "rotation": 0,
+     "visible": true,
+     "properties": [
+      {
+       "name": "von",
+       "type": "string",
+       "value": "20,20"
+      },
+      {
+       "name": "bis",
+       "type": "string",
+       "value": "20,20"
+      },
+      {
+       "name": "tun",
+       "type": "string",
+       "value": "fotografiert die Felswände im Abendlicht"
+      },
+      {
+       "name": "wann",
+       "type": "string",
+       "value": "abend"
+      },
+      {
+       "name": "sagt",
+       "type": "string",
+       "value": "statist.steinbruch.grube.fotografin"
+      }
+     ]
+    },
+    {
+     "id": 12,
+     "name": "fledermaeuse",
+     "type": "tier",
+     "x": 560,
+     "y": 240,
+     "width": 16,
+     "height": 16,
+     "rotation": 0,
+     "visible": true,
+     "properties": [
+      {
+       "name": "von",
+       "type": "string",
+       "value": "35,15"
+      },
+      {
+       "name": "bis",
+       "type": "string",
+       "value": "45,15"
+      },
+      {
+       "name": "verhalten",
+       "type": "string",
+       "value": "fliegen"
+      },
+      {
+       "name": "wann",
+       "type": "string",
+       "value": "abend"
+      }
+     ]
+    },
+    {
+     "id": 13,
+     "name": "fuchs",
+     "type": "tier",
+     "x": 960,
+     "y": 672,
+     "width": 16,
+     "height": 16,
+     "rotation": 0,
+     "visible": true,
+     "properties": [
+      {
+       "name": "von",
+       "type": "string",
+       "value": "60,42"
+      },
+      {
+       "name": "bis",
+       "type": "string",
+       "value": "64,42"
+      },
+      {
+       "name": "verhalten",
+       "type": "string",
+       "value": "ausweichen"
+      }
+     ]
+    },
+    {
+     "id": 14,
+     "name": "hasen",
+     "type": "tier",
+     "x": 160,
+     "y": 704,
+     "width": 16,
+     "height": 16,
+     "rotation": 0,
+     "visible": true,
+     "properties": [
+      {
+       "name": "von",
+       "type": "string",
+       "value": "10,44"
+      },
+      {
+       "name": "bis",
+       "type": "string",
+       "value": "16,44"
+      },
+      {
+       "name": "verhalten",
+       "type": "string",
+       "value": "flitzen"
+      }
+     ]
+    },
+    {
+     "id": 15,
+     "name": "falke",
+     "type": "tier",
+     "x": 640,
+     "y": 128,
+     "width": 16,
+     "height": 16,
+     "rotation": 0,
+     "visible": true,
+     "properties": [
+      {
+       "name": "von",
+       "type": "string",
+       "value": "40,8"
+      },
+      {
+       "name": "bis",
+       "type": "string",
+       "value": "56,9"
+      },
+      {
+       "name": "verhalten",
+       "type": "string",
+       "value": "fliegen"
+      }
+     ]
+    },
+    {
+     "id": 16,
+     "name": "eidechse",
+     "type": "tier",
+     "x": 448,
+     "y": 496,
+     "width": 16,
+     "height": 16,
+     "rotation": 0,
+     "visible": true,
+     "properties": [
+      {
+       "name": "von",
+       "type": "string",
+       "value": "28,31"
+      },
+      {
+       "name": "bis",
+       "type": "string",
+       "value": "32,31"
+      },
+      {
+       "name": "verhalten",
+       "type": "string",
+       "value": "flitzen"
+      }
+     ]
+    },
+    {
+     "id": 17,
      "name": "st5Stollenmund",
      "type": "moebel",
      "x": 896,
@@ -10764,7 +11023,7 @@
      ]
     },
     {
-     "id": 10,
+     "id": 18,
      "name": "st5Lore",
      "type": "moebel",
      "x": 800,
@@ -10787,7 +11046,7 @@
      ]
     },
     {
-     "id": 11,
+     "id": 19,
      "name": "st5Bude",
      "type": "moebel",
      "x": 832,
@@ -10810,7 +11069,7 @@
      ]
     },
     {
-     "id": 12,
+     "id": 20,
      "name": "cc4Stammbank",
      "type": "moebel",
      "x": 784,
@@ -10833,7 +11092,7 @@
      ]
     },
     {
-     "id": 13,
+     "id": 21,
      "name": "st5Werkzeugkiste",
      "type": "moebel",
      "x": 944,
@@ -10856,7 +11115,7 @@
      ]
     },
     {
-     "id": 14,
+     "id": 22,
      "name": "cc4Stammbank",
      "type": "moebel",
      "x": 416,
@@ -10879,7 +11138,7 @@
      ]
     },
     {
-     "id": 15,
+     "id": 23,
      "name": "st5Birke",
      "type": "moebel",
      "x": 32,
@@ -10902,7 +11161,7 @@
      ]
     },
     {
-     "id": 16,
+     "id": 24,
      "name": "st5BirkeKlein",
      "type": "moebel",
      "x": 96,
@@ -10925,7 +11184,7 @@
      ]
     },
     {
-     "id": 17,
+     "id": 25,
      "name": "st5Birke",
      "type": "moebel",
      "x": 160,
@@ -10948,7 +11207,7 @@
      ]
     },
     {
-     "id": 18,
+     "id": 26,
      "name": "st5Bagger",
      "type": "moebel",
      "x": 64,
@@ -10971,7 +11230,7 @@
      ]
     },
     {
-     "id": 19,
+     "id": 27,
      "name": "st5Bauholz",
      "type": "moebel",
      "x": 144,
@@ -10994,194 +11253,10 @@
      ]
     },
     {
-     "id": 20,
-     "name": "st5GleisWaagerecht",
-     "type": "moebel",
-     "x": 192,
-     "y": 704,
-     "width": 16,
-     "height": 32,
-     "rotation": 0,
-     "visible": true,
-     "properties": [
-      {
-       "name": "tiefe",
-       "type": "int",
-       "value": 1
-      },
-      {
-       "name": "kollision",
-       "type": "bool",
-       "value": false
-      }
-     ]
-    },
-    {
-     "id": 21,
-     "name": "st5GleisWaagerecht",
-     "type": "moebel",
-     "x": 208,
-     "y": 704,
-     "width": 16,
-     "height": 32,
-     "rotation": 0,
-     "visible": true,
-     "properties": [
-      {
-       "name": "tiefe",
-       "type": "int",
-       "value": 1
-      },
-      {
-       "name": "kollision",
-       "type": "bool",
-       "value": false
-      }
-     ]
-    },
-    {
-     "id": 22,
-     "name": "st5GleisWaagerecht",
-     "type": "moebel",
-     "x": 224,
-     "y": 704,
-     "width": 16,
-     "height": 32,
-     "rotation": 0,
-     "visible": true,
-     "properties": [
-      {
-       "name": "tiefe",
-       "type": "int",
-       "value": 1
-      },
-      {
-       "name": "kollision",
-       "type": "bool",
-       "value": false
-      }
-     ]
-    },
-    {
-     "id": 23,
-     "name": "st5GleisWaagerecht",
-     "type": "moebel",
-     "x": 240,
-     "y": 704,
-     "width": 16,
-     "height": 32,
-     "rotation": 0,
-     "visible": true,
-     "properties": [
-      {
-       "name": "tiefe",
-       "type": "int",
-       "value": 1
-      },
-      {
-       "name": "kollision",
-       "type": "bool",
-       "value": false
-      }
-     ]
-    },
-    {
-     "id": 24,
-     "name": "st5GleisWaagerecht",
-     "type": "moebel",
-     "x": 256,
-     "y": 704,
-     "width": 16,
-     "height": 32,
-     "rotation": 0,
-     "visible": true,
-     "properties": [
-      {
-       "name": "tiefe",
-       "type": "int",
-       "value": 1
-      },
-      {
-       "name": "kollision",
-       "type": "bool",
-       "value": false
-      }
-     ]
-    },
-    {
-     "id": 25,
-     "name": "st5GleisWaagerecht",
-     "type": "moebel",
-     "x": 272,
-     "y": 704,
-     "width": 16,
-     "height": 32,
-     "rotation": 0,
-     "visible": true,
-     "properties": [
-      {
-       "name": "tiefe",
-       "type": "int",
-       "value": 1
-      },
-      {
-       "name": "kollision",
-       "type": "bool",
-       "value": false
-      }
-     ]
-    },
-    {
-     "id": 26,
-     "name": "st5GleisWaagerecht",
-     "type": "moebel",
-     "x": 288,
-     "y": 704,
-     "width": 16,
-     "height": 32,
-     "rotation": 0,
-     "visible": true,
-     "properties": [
-      {
-       "name": "tiefe",
-       "type": "int",
-       "value": 1
-      },
-      {
-       "name": "kollision",
-       "type": "bool",
-       "value": false
-      }
-     ]
-    },
-    {
-     "id": 27,
-     "name": "st5GleisWaagerecht",
-     "type": "moebel",
-     "x": 304,
-     "y": 704,
-     "width": 16,
-     "height": 32,
-     "rotation": 0,
-     "visible": true,
-     "properties": [
-      {
-       "name": "tiefe",
-       "type": "int",
-       "value": 1
-      },
-      {
-       "name": "kollision",
-       "type": "bool",
-       "value": false
-      }
-     ]
-    },
-    {
      "id": 28,
      "name": "st5GleisWaagerecht",
      "type": "moebel",
-     "x": 320,
+     "x": 192,
      "y": 704,
      "width": 16,
      "height": 32,
@@ -11204,7 +11279,7 @@
      "id": 29,
      "name": "st5GleisWaagerecht",
      "type": "moebel",
-     "x": 336,
+     "x": 208,
      "y": 704,
      "width": 16,
      "height": 32,
@@ -11227,7 +11302,7 @@
      "id": 30,
      "name": "st5GleisWaagerecht",
      "type": "moebel",
-     "x": 352,
+     "x": 224,
      "y": 704,
      "width": 16,
      "height": 32,
@@ -11250,7 +11325,7 @@
      "id": 31,
      "name": "st5GleisWaagerecht",
      "type": "moebel",
-     "x": 368,
+     "x": 240,
      "y": 704,
      "width": 16,
      "height": 32,
@@ -11273,7 +11348,7 @@
      "id": 32,
      "name": "st5GleisWaagerecht",
      "type": "moebel",
-     "x": 384,
+     "x": 256,
      "y": 704,
      "width": 16,
      "height": 32,
@@ -11296,7 +11371,7 @@
      "id": 33,
      "name": "st5GleisWaagerecht",
      "type": "moebel",
-     "x": 400,
+     "x": 272,
      "y": 704,
      "width": 16,
      "height": 32,
@@ -11319,7 +11394,7 @@
      "id": 34,
      "name": "st5GleisWaagerecht",
      "type": "moebel",
-     "x": 416,
+     "x": 288,
      "y": 704,
      "width": 16,
      "height": 32,
@@ -11342,7 +11417,7 @@
      "id": 35,
      "name": "st5GleisWaagerecht",
      "type": "moebel",
-     "x": 432,
+     "x": 304,
      "y": 704,
      "width": 16,
      "height": 32,
@@ -11365,7 +11440,7 @@
      "id": 36,
      "name": "st5GleisWaagerecht",
      "type": "moebel",
-     "x": 448,
+     "x": 320,
      "y": 704,
      "width": 16,
      "height": 32,
@@ -11388,7 +11463,7 @@
      "id": 37,
      "name": "st5GleisWaagerecht",
      "type": "moebel",
-     "x": 464,
+     "x": 336,
      "y": 704,
      "width": 16,
      "height": 32,
@@ -11411,7 +11486,7 @@
      "id": 38,
      "name": "st5GleisWaagerecht",
      "type": "moebel",
-     "x": 480,
+     "x": 352,
      "y": 704,
      "width": 16,
      "height": 32,
@@ -11434,7 +11509,7 @@
      "id": 39,
      "name": "st5GleisWaagerecht",
      "type": "moebel",
-     "x": 496,
+     "x": 368,
      "y": 704,
      "width": 16,
      "height": 32,
@@ -11457,7 +11532,7 @@
      "id": 40,
      "name": "st5GleisWaagerecht",
      "type": "moebel",
-     "x": 512,
+     "x": 384,
      "y": 704,
      "width": 16,
      "height": 32,
@@ -11480,7 +11555,7 @@
      "id": 41,
      "name": "st5GleisWaagerecht",
      "type": "moebel",
-     "x": 528,
+     "x": 400,
      "y": 704,
      "width": 16,
      "height": 32,
@@ -11503,7 +11578,7 @@
      "id": 42,
      "name": "st5GleisWaagerecht",
      "type": "moebel",
-     "x": 544,
+     "x": 416,
      "y": 704,
      "width": 16,
      "height": 32,
@@ -11526,7 +11601,7 @@
      "id": 43,
      "name": "st5GleisWaagerecht",
      "type": "moebel",
-     "x": 560,
+     "x": 432,
      "y": 704,
      "width": 16,
      "height": 32,
@@ -11549,7 +11624,7 @@
      "id": 44,
      "name": "st5GleisWaagerecht",
      "type": "moebel",
-     "x": 576,
+     "x": 448,
      "y": 704,
      "width": 16,
      "height": 32,
@@ -11572,7 +11647,7 @@
      "id": 45,
      "name": "st5GleisWaagerecht",
      "type": "moebel",
-     "x": 592,
+     "x": 464,
      "y": 704,
      "width": 16,
      "height": 32,
@@ -11595,7 +11670,7 @@
      "id": 46,
      "name": "st5GleisWaagerecht",
      "type": "moebel",
-     "x": 608,
+     "x": 480,
      "y": 704,
      "width": 16,
      "height": 32,
@@ -11618,7 +11693,7 @@
      "id": 47,
      "name": "st5GleisWaagerecht",
      "type": "moebel",
-     "x": 624,
+     "x": 496,
      "y": 704,
      "width": 16,
      "height": 32,
@@ -11641,7 +11716,7 @@
      "id": 48,
      "name": "st5GleisWaagerecht",
      "type": "moebel",
-     "x": 640,
+     "x": 512,
      "y": 704,
      "width": 16,
      "height": 32,
@@ -11664,7 +11739,7 @@
      "id": 49,
      "name": "st5GleisWaagerecht",
      "type": "moebel",
-     "x": 656,
+     "x": 528,
      "y": 704,
      "width": 16,
      "height": 32,
@@ -11687,7 +11762,7 @@
      "id": 50,
      "name": "st5GleisWaagerecht",
      "type": "moebel",
-     "x": 672,
+     "x": 544,
      "y": 704,
      "width": 16,
      "height": 32,
@@ -11710,7 +11785,7 @@
      "id": 51,
      "name": "st5GleisWaagerecht",
      "type": "moebel",
-     "x": 688,
+     "x": 560,
      "y": 704,
      "width": 16,
      "height": 32,
@@ -11733,7 +11808,7 @@
      "id": 52,
      "name": "st5GleisWaagerecht",
      "type": "moebel",
-     "x": 704,
+     "x": 576,
      "y": 704,
      "width": 16,
      "height": 32,
@@ -11756,7 +11831,7 @@
      "id": 53,
      "name": "st5GleisWaagerecht",
      "type": "moebel",
-     "x": 720,
+     "x": 592,
      "y": 704,
      "width": 16,
      "height": 32,
@@ -11779,7 +11854,7 @@
      "id": 54,
      "name": "st5GleisWaagerecht",
      "type": "moebel",
-     "x": 736,
+     "x": 608,
      "y": 704,
      "width": 16,
      "height": 32,
@@ -11802,7 +11877,7 @@
      "id": 55,
      "name": "st5GleisWaagerecht",
      "type": "moebel",
-     "x": 752,
+     "x": 624,
      "y": 704,
      "width": 16,
      "height": 32,
@@ -11825,7 +11900,7 @@
      "id": 56,
      "name": "st5GleisWaagerecht",
      "type": "moebel",
-     "x": 768,
+     "x": 640,
      "y": 704,
      "width": 16,
      "height": 32,
@@ -11848,7 +11923,7 @@
      "id": 57,
      "name": "st5GleisWaagerecht",
      "type": "moebel",
-     "x": 784,
+     "x": 656,
      "y": 704,
      "width": 16,
      "height": 32,
@@ -11871,7 +11946,7 @@
      "id": 58,
      "name": "st5GleisWaagerecht",
      "type": "moebel",
-     "x": 800,
+     "x": 672,
      "y": 704,
      "width": 16,
      "height": 32,
@@ -11894,7 +11969,7 @@
      "id": 59,
      "name": "st5GleisWaagerecht",
      "type": "moebel",
-     "x": 816,
+     "x": 688,
      "y": 704,
      "width": 16,
      "height": 32,
@@ -11917,7 +11992,7 @@
      "id": 60,
      "name": "st5GleisWaagerecht",
      "type": "moebel",
-     "x": 832,
+     "x": 704,
      "y": 704,
      "width": 16,
      "height": 32,
@@ -11940,7 +12015,7 @@
      "id": 61,
      "name": "st5GleisWaagerecht",
      "type": "moebel",
-     "x": 848,
+     "x": 720,
      "y": 704,
      "width": 16,
      "height": 32,
@@ -11963,7 +12038,7 @@
      "id": 62,
      "name": "st5GleisWaagerecht",
      "type": "moebel",
-     "x": 864,
+     "x": 736,
      "y": 704,
      "width": 16,
      "height": 32,
@@ -11986,7 +12061,7 @@
      "id": 63,
      "name": "st5GleisWaagerecht",
      "type": "moebel",
-     "x": 880,
+     "x": 752,
      "y": 704,
      "width": 16,
      "height": 32,
@@ -12007,6 +12082,190 @@
     },
     {
      "id": 64,
+     "name": "st5GleisWaagerecht",
+     "type": "moebel",
+     "x": 768,
+     "y": 704,
+     "width": 16,
+     "height": 32,
+     "rotation": 0,
+     "visible": true,
+     "properties": [
+      {
+       "name": "tiefe",
+       "type": "int",
+       "value": 1
+      },
+      {
+       "name": "kollision",
+       "type": "bool",
+       "value": false
+      }
+     ]
+    },
+    {
+     "id": 65,
+     "name": "st5GleisWaagerecht",
+     "type": "moebel",
+     "x": 784,
+     "y": 704,
+     "width": 16,
+     "height": 32,
+     "rotation": 0,
+     "visible": true,
+     "properties": [
+      {
+       "name": "tiefe",
+       "type": "int",
+       "value": 1
+      },
+      {
+       "name": "kollision",
+       "type": "bool",
+       "value": false
+      }
+     ]
+    },
+    {
+     "id": 66,
+     "name": "st5GleisWaagerecht",
+     "type": "moebel",
+     "x": 800,
+     "y": 704,
+     "width": 16,
+     "height": 32,
+     "rotation": 0,
+     "visible": true,
+     "properties": [
+      {
+       "name": "tiefe",
+       "type": "int",
+       "value": 1
+      },
+      {
+       "name": "kollision",
+       "type": "bool",
+       "value": false
+      }
+     ]
+    },
+    {
+     "id": 67,
+     "name": "st5GleisWaagerecht",
+     "type": "moebel",
+     "x": 816,
+     "y": 704,
+     "width": 16,
+     "height": 32,
+     "rotation": 0,
+     "visible": true,
+     "properties": [
+      {
+       "name": "tiefe",
+       "type": "int",
+       "value": 1
+      },
+      {
+       "name": "kollision",
+       "type": "bool",
+       "value": false
+      }
+     ]
+    },
+    {
+     "id": 68,
+     "name": "st5GleisWaagerecht",
+     "type": "moebel",
+     "x": 832,
+     "y": 704,
+     "width": 16,
+     "height": 32,
+     "rotation": 0,
+     "visible": true,
+     "properties": [
+      {
+       "name": "tiefe",
+       "type": "int",
+       "value": 1
+      },
+      {
+       "name": "kollision",
+       "type": "bool",
+       "value": false
+      }
+     ]
+    },
+    {
+     "id": 69,
+     "name": "st5GleisWaagerecht",
+     "type": "moebel",
+     "x": 848,
+     "y": 704,
+     "width": 16,
+     "height": 32,
+     "rotation": 0,
+     "visible": true,
+     "properties": [
+      {
+       "name": "tiefe",
+       "type": "int",
+       "value": 1
+      },
+      {
+       "name": "kollision",
+       "type": "bool",
+       "value": false
+      }
+     ]
+    },
+    {
+     "id": 70,
+     "name": "st5GleisWaagerecht",
+     "type": "moebel",
+     "x": 864,
+     "y": 704,
+     "width": 16,
+     "height": 32,
+     "rotation": 0,
+     "visible": true,
+     "properties": [
+      {
+       "name": "tiefe",
+       "type": "int",
+       "value": 1
+      },
+      {
+       "name": "kollision",
+       "type": "bool",
+       "value": false
+      }
+     ]
+    },
+    {
+     "id": 71,
+     "name": "st5GleisWaagerecht",
+     "type": "moebel",
+     "x": 880,
+     "y": 704,
+     "width": 16,
+     "height": 32,
+     "rotation": 0,
+     "visible": true,
+     "properties": [
+      {
+       "name": "tiefe",
+       "type": "int",
+       "value": 1
+      },
+      {
+       "name": "kollision",
+       "type": "bool",
+       "value": false
+      }
+     ]
+    },
+    {
+     "id": 72,
      "name": "cc8Prellbock",
      "type": "moebel",
      "x": 160,
@@ -12029,7 +12288,7 @@
      ]
     },
     {
-     "id": 65,
+     "id": 73,
      "name": "st5GraffitiWolf",
      "type": "moebel",
      "x": 960,
@@ -12052,7 +12311,7 @@
      ]
     },
     {
-     "id": 66,
+     "id": 74,
      "name": "st5GraffitiKrone",
      "type": "moebel",
      "x": 1024,
@@ -12075,7 +12334,7 @@
      ]
     },
     {
-     "id": 67,
+     "id": 75,
      "name": "scFelsGross",
      "type": "moebel",
      "x": 576,
@@ -12098,7 +12357,7 @@
      ]
     },
     {
-     "id": 68,
+     "id": 76,
      "name": "scFelsMittel",
      "type": "moebel",
      "x": 640,
@@ -12121,7 +12380,7 @@
      ]
     },
     {
-     "id": 69,
+     "id": 77,
      "name": "fels",
      "type": "moebel",
      "x": 544,
@@ -12144,7 +12403,7 @@
      ]
     },
     {
-     "id": 70,
+     "id": 78,
      "name": "felsKlein",
      "type": "moebel",
      "x": 192,
@@ -12167,7 +12426,7 @@
      ]
     },
     {
-     "id": 71,
+     "id": 79,
      "name": "wg4Felsgruppe",
      "type": "moebel",
      "x": 736,
@@ -12190,7 +12449,7 @@
      ]
     },
     {
-     "id": 72,
+     "id": 80,
      "name": "scFelsKlein",
      "type": "moebel",
      "x": 320,
@@ -12213,7 +12472,7 @@
      ]
     },
     {
-     "id": 73,
+     "id": 81,
      "name": "wg4FelsgruppeB",
      "type": "moebel",
      "x": 960,
@@ -12236,7 +12495,7 @@
      ]
     },
     {
-     "id": 74,
+     "id": 82,
      "name": "scFelsGross",
      "type": "moebel",
      "x": 576,
@@ -12259,7 +12518,7 @@
      ]
     },
     {
-     "id": 75,
+     "id": 83,
      "name": "scFelsMittel",
      "type": "moebel",
      "x": 624,
@@ -12282,7 +12541,7 @@
      ]
     },
     {
-     "id": 76,
+     "id": 84,
      "name": "scFelsGross",
      "type": "moebel",
      "x": 672,
@@ -12305,7 +12564,7 @@
      ]
     },
     {
-     "id": 77,
+     "id": 85,
      "name": "scFelsMittel",
      "type": "moebel",
      "x": 720,
@@ -12328,7 +12587,7 @@
      ]
     },
     {
-     "id": 78,
+     "id": 86,
      "name": "scFelsGross",
      "type": "moebel",
      "x": 128,
@@ -12351,7 +12610,7 @@
      ]
     },
     {
-     "id": 79,
+     "id": 87,
      "name": "scFelsMittel",
      "type": "moebel",
      "x": 176,
@@ -12374,7 +12633,7 @@
      ]
     },
     {
-     "id": 80,
+     "id": 88,
      "name": "scFelsGross",
      "type": "moebel",
      "x": 224,
@@ -12397,7 +12656,7 @@
      ]
     },
     {
-     "id": 81,
+     "id": 89,
      "name": "st5Schotterhaufen",
      "type": "moebel",
      "x": 704,
@@ -12420,7 +12679,7 @@
      ]
     },
     {
-     "id": 82,
+     "id": 90,
      "name": "st5Schotterhaufen",
      "type": "moebel",
      "x": 768,
@@ -12443,7 +12702,7 @@
      ]
     },
     {
-     "id": 83,
+     "id": 91,
      "name": "st5Schotterhaufen",
      "type": "moebel",
      "x": 416,
@@ -12466,7 +12725,7 @@
      ]
     },
     {
-     "id": 84,
+     "id": 92,
      "name": "st5Steinpalette",
      "type": "moebel",
      "x": 576,
@@ -12489,7 +12748,7 @@
      ]
     },
     {
-     "id": 85,
+     "id": 93,
      "name": "st5Steinpalette",
      "type": "moebel",
      "x": 608,
@@ -12512,7 +12771,7 @@
      ]
     },
     {
-     "id": 86,
+     "id": 94,
      "name": "st5Steinpalette",
      "type": "moebel",
      "x": 480,
@@ -12535,7 +12794,7 @@
      ]
     },
     {
-     "id": 87,
+     "id": 95,
      "name": "st5Lore",
      "type": "moebel",
      "x": 752,
@@ -12558,7 +12817,7 @@
      ]
     },
     {
-     "id": 88,
+     "id": 96,
      "name": "st5Bohlen",
      "type": "moebel",
      "x": 32,
@@ -12581,7 +12840,7 @@
      ]
     },
     {
-     "id": 89,
+     "id": 97,
      "name": "st5Bohlen",
      "type": "moebel",
      "x": 48,
@@ -12604,7 +12863,7 @@
      ]
     },
     {
-     "id": 90,
+     "id": 98,
      "name": "st5Schuppen",
      "type": "moebel",
      "x": 96,
@@ -12623,6 +12882,29 @@
        "name": "kollision",
        "type": "bool",
        "value": true
+      }
+     ]
+    },
+    {
+     "id": 99,
+     "name": "ds8Finkenzeichen",
+     "type": "moebel",
+     "x": 944,
+     "y": 672,
+     "width": 16,
+     "height": 16,
+     "rotation": 0,
+     "visible": true,
+     "properties": [
+      {
+       "name": "tiefe",
+       "type": "int",
+       "value": 1
+      },
+      {
+       "name": "kollision",
+       "type": "bool",
+       "value": false
       }
      ]
     }

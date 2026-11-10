@@ -23,10 +23,10 @@
   "objekte": [
     {
       "moebel": "es7Bett",
-      "feld": [1, 4]
+      "feld": [1, 3]
     },
     {
-      "moebel": "es7Tisch",
+      "moebel": "es9TischDunkel",
       "feld": [5, 4],
       "id": "tisch"
     },
@@ -46,26 +46,13 @@
     },
     {
       "moebel": "es7Ofen",
-      "feld": [9, 1]
+      "feld": [9, 1],
+      "versatz": [0, -8]
     },
     {
-      "moebel": "es7Fenster",
+      "moebel": "es9FensterNacht",
       "feld": [6, 1],
       "an_wand": true
-    },
-    {
-      "moebel": "es7Kisten",
-      "feld": [1, 6],
-      "id": "kisten"
-    },
-    {
-      "moebel": "es7Kiste",
-      "feld": [10, 7]
-    },
-    {
-      "moebel": "es7Petroleumlampe",
-      "feld": [0, 0],
-      "auf": "kisten"
     },
     {
       "moebel": "es7Fussmatte",
@@ -75,6 +62,29 @@
     {
       "moebel": "es7Tuer",
       "feld": [6, 9]
+    },
+    {
+      "moebel": "es7Kiste",
+      "feld": [1, 7],
+      "id": "kisten"
+    },
+    {
+      "moebel": "es7Kiste",
+      "feld": [2, 7]
+    },
+    {
+      "moebel": "es7Kiste",
+      "feld": [1, 8]
+    },
+    {
+      "moebel": "es7Petroleumlampe",
+      "feld": [1, 6],
+      "versatz": [0, 6],
+      "vorn": true
+    },
+    {
+      "moebel": "es7Fass",
+      "feld": [10, 8]
     }
   ],
   "ausloeser": [
@@ -102,7 +112,7 @@
   "figuren": [
     {
       "name": "postreiter",
-      "feld": [8, 7]
+      "feld": [7, 8]
     }
   ],
   "belebung": []

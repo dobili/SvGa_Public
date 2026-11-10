@@ -15726,12 +15726,12 @@
     },
     {
      "id": 53,
-     "name": "ca7Imbiss",
+     "name": "ca12Hotdogwagen",
      "type": "moebel",
-     "x": 80,
-     "y": 640,
-     "width": 96,
-     "height": 80,
+     "x": 96,
+     "y": 624,
+     "width": 48,
+     "height": 96,
      "rotation": 0,
      "visible": true,
      "properties": [

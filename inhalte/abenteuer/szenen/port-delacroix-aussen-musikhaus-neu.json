@@ -63,9 +63,9 @@
     "#ttppp............pp................................pppp~~~~~~~~pp.............#",
     "#ttppp............pp................................pppp~~~~~~~~pp.............#",
     "#ttppp............pp................................pppp~~~~~~~~pp.............#",
-    "#ttppp............pp............................................pp.............#",
-    "#ttppp............pp............................................pp.............#",
-    "#ttppp............pp............................................pp.............#",
+    "#ttppp............pp................................pppp........pp.............#",
+    "#ttppp............pp................................pppp........pp.............#",
+    "#ttppp............pp................................pppp........pp.............#",
     "#ttppp............pp............................................pp.............#",
     "#ttpppppppppppppppppppppppppppppppppppppppppppppppppppppeeeeeeeeeeeeeeeeeeeeeeee",
     "#ttpppppppppppppppppppppppppppppppppppppppppppppppppppppeeeeeeeeeeeeeeeeeeeeeeee",
@@ -331,7 +331,7 @@
       "moebel": "pd9BordQ4",
       "feld": [
         52,
-        49
+        52
       ],
       "versatz": [
         0,
@@ -1580,6 +1580,20 @@
         17
       ],
       "bauteil_ok": true
+    },
+    {
+      "moebel": "pd12Bagger",
+      "feld": [
+        29,
+        12
+      ]
+    },
+    {
+      "moebel": "pd12Lastwagen",
+      "feld": [
+        52,
+        43
+      ]
     }
   ],
   "ausloeser": [
@@ -1809,12 +1823,12 @@
       "name": "fischer",
       "typ": "statist",
       "feld": [
-        54,
-        44
+        53,
+        38
       ],
       "eigenschaften": {
-        "von": "54,44",
-        "bis": "54,44",
+        "von": "53,38",
+        "bis": "53,38",
         "tun": "flickt ein Netz am Kai",
         "wann": "tag",
         "sagt": "statist.portDelacroix.aussen.fischer"
@@ -1938,12 +1952,12 @@
       "name": "reiher",
       "typ": "tier",
       "feld": [
-        55,
-        45
+        54,
+        38
       ],
       "eigenschaften": {
-        "von": "55,44",
-        "bis": "54,46",
+        "von": "54,37",
+        "bis": "55,39",
         "verhalten": "ausweichen"
       }
     },

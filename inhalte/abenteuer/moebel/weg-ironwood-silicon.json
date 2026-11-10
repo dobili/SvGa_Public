@@ -1272,6 +1272,15 @@
       "kollision": true,
       "stil": "modern",
       "zustand": "gebraucht"
+    },
+    "wsr12Lastwagen": {
+      "quelle": "spiel/eigene/lastwagen_vorn.png",
+      "breite": 48,
+      "hoehe": 144,
+      "kollision": true,
+      "art": "fahrzeug",
+      "zustand": "gebraucht",
+      "stil": "modern"
     }
   }
 }

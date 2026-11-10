@@ -337,6 +337,24 @@
       "zustand": "gebraucht",
       "stil": "natur",
       "blick": "unten"
+    },
+    "gc12Eiswagen": {
+      "quelle": "spiel/eigene/eiswagen_vorn.png",
+      "breite": 48,
+      "hoehe": 96,
+      "kollision": true,
+      "art": "fahrzeug",
+      "zustand": "gebraucht",
+      "stil": "modern"
+    },
+    "gc12Hotdogwagen": {
+      "quelle": "spiel/eigene/hotdogwagen_vorn.png",
+      "breite": 48,
+      "hoehe": 96,
+      "kollision": true,
+      "art": "fahrzeug",
+      "zustand": "gebraucht",
+      "stil": "modern"
     }
   }
 }

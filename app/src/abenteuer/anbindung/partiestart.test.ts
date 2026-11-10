@@ -54,7 +54,11 @@ describe("partieeinstellungAus", () => {
     expect(e.hilfen).toEqual({ symbole: false, werkzeuge: false });
     expect(e.ruecknahmeErlaubt).toBe(false);
     expect(e.maia).toBe(true);
-    expect(e.abenteuer).toEqual({ kennung: "mapleFalls.ersteLektion#1" });
+    // Das Porträt reist mit, damit die Spielhülle den Gegner im Kopf zeigen kann (docs/spiel/18).
+    expect(e.abenteuer).toEqual({
+      kennung: "mapleFalls.ersteLektion#1",
+      portraet: "portraets/ambrose.webp",
+    });
   });
 
   it("Konzernspieler spielen ohne Maia, Stilmischungen nehmen den ersten Stil als Namen", () => {

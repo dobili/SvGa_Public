@@ -33,6 +33,7 @@ import { Antwortmeldung } from "./Rundenrahmen";
 import { Trainerbrett } from "./Trainerbrett";
 import type { Runde } from "./useRunde";
 import { useSammelstellung } from "./sammelstellung";
+import { useImSpiel } from "./imSpiel";
 
 type Vergleich = ReturnType<typeof pruefeFelder>;
 
@@ -258,6 +259,8 @@ function Planwahl({
  * benennen und den Plan wählen.
  */
 export function Strukturaufgabe({ aufgabe, runde }: { aufgabe: Aufgabe; runde: Runde }) {
+  // Im Schach-Abenteuer ohne Herkunftszeile (imSpiel.ts).
+  const imSpiel = useImSpiel();
   useSammelstellung(aufgabe.fen);
   const [felder] = useState(() => starkeFelderMitArt(aufgabe));
   const [frage] = useState(() => feldartfrage(aufgabe, ZUFALL));
@@ -322,14 +325,19 @@ export function Strukturaufgabe({ aufgabe, runde }: { aufgabe: Aufgabe; runde: R
       {planDran && (
         <Planwahl aufgabe={aufgabe} runde={runde} vorher={vorher} auftrag={schritt(gesamt)} />
       )}
-      <p className="hinweis">
-        {aufgabe.herkunft.quelle === "buch"
-          ? t(aufgabe.herkunft.beispiel ? "strukturtrainer.ausPartie" : "strukturtrainer.ausBuch", {
-              nummer: aufgabe.herkunft.abbildung,
-            })
-          : t("taktiktrainer.ausLichess", { wertung: aufgabe.herkunft.wertung })}{" "}
-        · {t("taktiktrainer.stufe", { stufe: aufgabe.schwierigkeit })}
-      </p>
+      {!imSpiel && (
+        <p className="hinweis">
+          {aufgabe.herkunft.quelle === "buch"
+            ? t(
+                aufgabe.herkunft.beispiel ? "strukturtrainer.ausPartie" : "strukturtrainer.ausBuch",
+                {
+                  nummer: aufgabe.herkunft.abbildung,
+                },
+              )
+            : t("taktiktrainer.ausLichess", { wertung: aufgabe.herkunft.wertung })}{" "}
+          · {t("taktiktrainer.stufe", { stufe: aufgabe.schwierigkeit })}
+        </p>
+      )}
     </>
   );
 }

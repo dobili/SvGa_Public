@@ -26,6 +26,7 @@ import { useEndspielpartie } from "./useEndspielpartie";
 import type { Runde } from "./useRunde";
 import { useSammelstellung } from "./sammelstellung";
 import { Knopfsymbol } from "../komponenten/bausteine/Knopfsymbol";
+import { useImSpiel } from "./imSpiel";
 
 const HILFEN = 3;
 const KEINE_WAHL = () => undefined;
@@ -89,6 +90,8 @@ export function Endspielaufgabe({
   massstab: Massstab;
   runde: Runde;
 }) {
+  // Im Schach-Abenteuer ohne Herkunftszeile und ohne „Die Engine denkt …“ (imSpiel.ts).
+  const imSpiel = useImSpiel();
   const [stufe, setzeStufe] = useState(0);
   useSammelstellung(aufgabe.fen);
   const stand = useEndspielpartie(aufgabe, massstab, (ergebnis) =>
@@ -142,19 +145,21 @@ export function Endspielaufgabe({
           anfangsGedreht={aufgabe.leser === "b"}
         />
       )}
-      <p className="hinweis">
-        {aufgabe.herkunft.quelle === "buch"
-          ? t("endspiel.ausBuch", { nummer: aufgabe.herkunft.abbildung })
-          : t("taktiktrainer.ausLichess", { wertung: aufgabe.herkunft.wertung })}
-        {" · "}
-        {t(`endspiel.thema.${aufgabe.thema}`)}
-        {" · "}
-        {t("taktiktrainer.stufe", { stufe: aufgabe.schwierigkeit })}
-        {aufgabe.pruefung.mattIn !== null &&
-          aufgabe.ziel === "gewinn" &&
-          ` · ${t("endspiel.mattIn", { zuege: aufgabe.pruefung.mattIn })}`}
-      </p>
-      {!fertig && (
+      {!imSpiel && (
+        <p className="hinweis">
+          {aufgabe.herkunft.quelle === "buch"
+            ? t("endspiel.ausBuch", { nummer: aufgabe.herkunft.abbildung })
+            : t("taktiktrainer.ausLichess", { wertung: aufgabe.herkunft.wertung })}
+          {" · "}
+          {t(`endspiel.thema.${aufgabe.thema}`)}
+          {" · "}
+          {t("taktiktrainer.stufe", { stufe: aufgabe.schwierigkeit })}
+          {aufgabe.pruefung.mattIn !== null &&
+            aufgabe.ziel === "gewinn" &&
+            ` · ${t("endspiel.mattIn", { zuege: aufgabe.pruefung.mattIn })}`}
+        </p>
+      )}
+      {!fertig && (!imSpiel || stand.fehler) && (
         <p className="hinweis" role="status" data-testid="endspiel-status">
           {stand.fehler
             ? t("partie.engineFehler", { fehler: stand.fehler })

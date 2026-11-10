@@ -30,7 +30,12 @@ import { VariantenAbfrage } from "../ui/bildschirme/VariantenAbfrage";
 import { ANSICHT_VARIANTENKARTE, Variantenkarte } from "../ui/bildschirme/Variantenkarte";
 import { AbenteuerAnsicht } from "../abenteuer/anbindung/AbenteuerAnsicht";
 import { AufgabenAnsicht } from "../abenteuer/anbindung/AufgabenAnsicht";
-import { ANSICHT_ABENTEUER, ANSICHT_AUFGABEN } from "../abenteuer/schnittstelle/modul";
+import { PartieHuelle } from "../abenteuer/anbindung/PartieHuelle";
+import {
+  ANSICHT_ABENTEUER,
+  ANSICHT_AUFGABEN,
+  ANSICHT_PARTIE,
+} from "../abenteuer/schnittstelle/modul";
 
 /** Ein Bildschirm eines Pakets. */
 export interface Zusatzansicht {
@@ -71,6 +76,8 @@ export const ZUSATZANSICHTEN: readonly Zusatzansicht[] = [
   { kennung: ANSICHT_ABENTEUER, Bildschirm: AbenteuerAnsicht, vollbild: true },
   // Aufgabenrunde des Abenteuers im Trainer der App (Regelwerk R30 bis R32), Wert: Auftragskennung.
   { kennung: ANSICHT_AUFGABEN, Bildschirm: AufgabenAnsicht, vollbild: true },
+  // Partie des Abenteuers in der Spielhülle (docs/spiel/18_Spielhuelle.md), Wert: Id der Partie.
+  { kennung: ANSICHT_PARTIE, Bildschirm: PartieHuelle, vollbild: true },
 ];
 
 /** Der eingetragene Bildschirm zu einer Kennung; undefined, wenn es ihn (noch) nicht gibt. */

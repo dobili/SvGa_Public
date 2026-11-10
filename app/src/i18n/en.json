@@ -24,8 +24,6 @@
   "abenteuer.neuBeginnenFrage": "Your whole game progress will be deleted. Really start over?",
   "abenteuer.neuBeginnenJa": "Yes, start over",
   "abenteuer.neuBeginnenNein": "No",
-  "abenteuer.aufgaben.titel": "Tasks from {steller}",
-  "abenteuer.aufgaben.steller": "{steller} sets the tasks.",
   "abenteuer.aufgaben.keinAuftrag": "This round of tasks is no longer open.",
   "abenteuer.aufgaben.laedt": "Putting the tasks together …",
   "abenteuer.kartenleiste": "Chess Adventure",

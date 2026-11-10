@@ -24,7 +24,7 @@ import { neueKennung } from "../../ui/komponenten/spielstart/spielwahl";
 import { auswertungsEngine } from "../../engine/engineDienst";
 import { wertFuer } from "../../engine/fallenurteil";
 import { ladePaket, paketzustand } from "../paket/paketlader";
-import { ANSICHT_AUFGABEN, type Appdienste } from "../schnittstelle/modul";
+import { ANSICHT_AUFGABEN, ANSICHT_PARTIE, type Appdienste } from "../schnittstelle/modul";
 import type { Paketzustand } from "../schnittstelle/paket";
 import type { Partieauftrag } from "../schnittstelle/partie";
 import type { Abenteuerstand } from "../schnittstelle/spielstand";
@@ -131,7 +131,7 @@ export function useAppdienste(): Appdienste {
       baueEinstellung: (auftrag) => partieeinstellungAus(auftrag, mitMaia),
       startePartie: async (auftrag) => {
         const id = await legePartieAn(auftrag, mitMaia);
-        if (id) navigiere({ bildschirm: "partie", id });
+        if (id) navigiere({ bildschirm: "zusatz", kennung: ANSICHT_PARTIE, wert: id });
       },
       liesErgebnis: async (kennung) => {
         const partie = findeAbenteuerpartie(kennung);
@@ -143,7 +143,7 @@ export function useAppdienste(): Appdienste {
       },
       zeigePartie: (kennung) => {
         const id = laufendePartieId(kennung);
-        if (id) navigiere({ bildschirm: "partie", id });
+        if (id) navigiere({ bildschirm: "zusatz", kennung: ANSICHT_PARTIE, wert: id });
       },
       sucheKipppunkt: async (kennung) => {
         const partie = findeAbenteuerpartie(kennung);

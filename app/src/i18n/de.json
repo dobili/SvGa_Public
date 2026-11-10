@@ -24,8 +24,6 @@
   "abenteuer.neuBeginnenFrage": "Der ganze Spielstand wird gelöscht. Wirklich von vorn beginnen?",
   "abenteuer.neuBeginnenJa": "Ja, von vorn",
   "abenteuer.neuBeginnenNein": "Nein",
-  "abenteuer.aufgaben.titel": "Aufgaben von {steller}",
-  "abenteuer.aufgaben.steller": "{steller} stellt die Aufgaben.",
   "abenteuer.aufgaben.keinAuftrag": "Diese Aufgabenrunde ist nicht mehr offen.",
   "abenteuer.aufgaben.laedt": "Aufgaben werden zusammengestellt …",
   "abenteuer.kartenleiste": "Schach-Abenteuer",

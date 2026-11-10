@@ -98,6 +98,6 @@ Szene heißt die Datei in `inhalte/abenteuer/szenen/` ohne `.json`.
 - [x] riverton-bahnhofshalle, riverton-pavillon, riverton-wohnwagen, riverton-schuppen (Haupt-Chat, `riverton-innen.md`)
 - [x] summit-city-aussen, summit-city-huette, summit-city-bergstation, summit-city-bergladen (Runde 9, mittel-4)
 - [x] hochebene-felsentuerme, hochebene-schule mit Zustand vor-diplom (Runde 9, mittel-4)
-- [ ] weg-desert-summit-bergstrasse, weg-desert-summit-diner mit Zustand neon, weg-desert-summit-hinterzimmer (Runde 9, mittel-4)
+- [x] weg-desert-summit-bergstrasse, weg-desert-summit-diner mit Zustand neon, weg-desert-summit-hinterzimmer (Runde 9, mittel-4)
 - [x] sternwarte-felsnase, sternwarte-kuppel (Runde 9, mittel-4)
-- [ ] weg-delacroix-desert-canyonpfad, weg-delacroix-desert-felsbogen (Runde 9, mittel-4)
+- [x] weg-delacroix-desert-canyonpfad, weg-delacroix-desert-felsbogen (Runde 9, mittel-4)

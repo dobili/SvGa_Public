@@ -1423,15 +1423,7 @@
       "blick": "unten",
       "zustand": "neu",
       "stil": "modern",
-      "maske": [
-        "...",
-        "...",
-        "...",
-        "...",
-        "...",
-        "...",
-        ".#."
-      ]
+      "maske": ["...", "...", "...", "...", "...", "...", ".#."]
     },
     "sb8Ringlicht": {
       "quelle": "spiel/eigene/ringlicht.png",
@@ -1442,11 +1434,7 @@
       "blick": "unten",
       "zustand": "neu",
       "stil": "modern",
-      "maske": [
-        ".",
-        ".",
-        "#"
-      ]
+      "maske": [".", ".", "#"]
     },
     "sb8Kreidespringer": {
       "quelle": "spiel/eigene/kreidespringer.png",

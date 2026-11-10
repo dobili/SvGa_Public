@@ -30,6 +30,9 @@ Szene heißt die Datei in `inhalte/abenteuer/szenen/` ohne `.json`.
 - [ ] silicon-bay-akademie (neu gebaut, Runde 8, mittel-3)
 - [ ] silicon-bay-altstadt (Runde 8, mittel-3)
 
+- [ ] weg-ironwood-silicon-glasbruecke (neu gebaut, Runde 8, mittel-1)
+- [ ] weg-ironwood-silicon-raststaette (Runde 8, mittel-1)
+
 ## Erledigt
 
 - [x] ironwood-kantine (Test, Haupt-Chat)

@@ -125,7 +125,8 @@
         "von": "10,6",
         "bis": "10,6",
         "tun": "probiert einen Wanderstock aus",
-        "sagt": "statist.summitCity.bergladen.kunde"
+        "sagt": "statist.summitCity.bergladen.kunde",
+        "zeigt": "operPartie"
       }
     }
   ],

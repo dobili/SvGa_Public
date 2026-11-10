@@ -1181,13 +1181,12 @@
   "belebung": [
     {
       "name": "lieferroboter",
-      "typ": "statist",
+      "typ": "tier",
       "feld": [26, 13],
       "eigenschaften": {
         "von": "26,13",
         "bis": "26,20",
-        "tun": "Lieferroboter rollt die Rampe hinunter",
-        "wann": "tag"
+        "verhalten": "ausweichen"
       }
     },
     {

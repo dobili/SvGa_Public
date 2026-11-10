@@ -738,7 +738,8 @@
         "bis": "44,53",
         "tun": "klopft auf die Schachuhr",
         "wann": "tag",
-        "sagt": "statist.riverton.aussen.parkschachspieler"
+        "sagt": "statist.riverton.aussen.parkschachspieler",
+        "zeigt": "partieDesJahrhunderts"
       }
     },
     {

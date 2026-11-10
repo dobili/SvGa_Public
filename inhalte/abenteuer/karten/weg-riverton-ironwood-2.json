@@ -14619,6 +14619,11 @@
        "name": "sagt",
        "type": "string",
        "value": "statist.wegRivertonIronwood.bruecke.kiebitz"
+      },
+      {
+       "name": "zeigt",
+       "type": "string",
+       "value": "timmanShort"
       }
      ]
     },

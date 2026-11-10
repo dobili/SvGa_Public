@@ -51,17 +51,20 @@ KAPUZEN_KINDER = ("4",)
 
 # Tierart → (Vorlage unter modern-farm/Animals oder modern-exteriors, Rahmenbreite, Rahmenhöhe,
 # Art der Vorlage)
-# Art der Vorlage: "standbild" = ein Einzelbild nach rechts (Bison); "reihen" = Reihe 0 Stand,
+# Art der Vorlage: "standbild" = ein Einzelbild nach rechts (Bison); "ansichten" = drei Einzelbilder
+# ``<quelle mit {}>`` für ``seite`` (nach rechts), ``hinten`` und ``vorn`` (Reh, Hirsch aus Gemini);
+# "reihen" = Reihe 0 Stand,
 # Reihe 1 Laufen (Hühner, Ziegen …); "streifen" = nur eine
 # Reihe mit einer Bewegung (Taube pickt); "baender" = beschriftete Bänder (Hund, Katze), Stand im
 # ersten, Laufen im fünften Band; "fest:<stand_y>:<lauf_y>" = Reihen an festen Pixelhöhen (Katzen:
 # die Beschriftungen berühren die Bildreihen, die Bänder taugen dort nicht).
 TIERARTEN = Path(__file__).resolve().parents[2] / "app" / "src" / "abenteuer" / "oberwelt" / "tierarten.json"
 # Art → (Quelle, Breite, Höhe, Schnitt); gemeinsam mit der App und der Vorschau (tierarten.json).
-TIERE = {
-    art: (a["quelle"], a["breite"], a["hoehe"], a["schnitt"])
-    for art, a in json.loads(TIERARTEN.read_text(encoding="utf-8"))["arten"].items()
-}
+_ARTEN = json.loads(TIERARTEN.read_text(encoding="utf-8"))["arten"]
+TIERE = {art: (a["quelle"], a["breite"], a["hoehe"], a["schnitt"]) for art, a in _ARTEN.items()}
+# Schnitt „ansichten“: Namen der Einzelbilder für Seite (nach rechts), hinten und vorn, falls sie
+# anders heißen (Lieferroboter: rechts, oben, unten).
+TIERANSICHTEN = {art: tuple(a["ansichten"]) for art, a in _ARTEN.items() if "ansichten" in a}
 
 
 def _figurenwerkzeug(privat: Path):
@@ -189,6 +192,36 @@ def _aus_standbild(quelle: Image.Image, breite: int, hoehe: int) -> Image.Image:
     return ziel
 
 
+ANSICHTEN = ("seite", "hinten", "vorn")
+
+
+def ansichtenstreifen(lade, muster: str, breite: int, hoehe: int, namen=ANSICHTEN) -> Image.Image:
+    """Vier Standbilder nebeneinander (rechts, oben, links, unten) aus den Einzelbildern einer Art.
+
+    Warum: Die Tiere aus Gemini (Reh, Hirsch, Runde 9) kommen als einzelne Ansichten von der Seite,
+    von hinten und von vorn. Die Seite schaut nach rechts; links ist sie gespiegelt.
+    Eingaben: ``lade(name) -> Image`` für ``muster.format(ansicht)``, Rahmengröße.
+    Beispiel: ``spiel/eigene/reh_{}.png`` → reh_seite, reh_hinten, gespiegelte Seite, reh_vorn.
+    """
+    seite, hinten, vorn = (lade(muster.format(a)).crop((0, 0, breite, hoehe)) for a in namen)
+    streifen = Image.new("RGBA", (4 * breite, hoehe))
+    for i, bild in enumerate((seite, hinten, seite.transpose(Image.Transpose.FLIP_LEFT_RIGHT), vorn)):
+        streifen.paste(bild, (i * breite, 0))
+    return streifen
+
+
+def _aus_ansichten(streifen: Image.Image, breite: int, hoehe: int) -> Image.Image:
+    """Ein Tier aus vier Standbildern (rechts, oben, links, unten): Laufen als leichtes Wippen."""
+    je_richtung = RAHMEN_JE_REIHE // STAND_RAHMEN
+    ziel = Image.new("RGBA", (RAHMEN_JE_REIHE * breite, 2 * hoehe))
+    for i in range(STAND_RAHMEN):
+        bild = streifen.crop((i * breite, 0, (i + 1) * breite, hoehe))
+        ziel.paste(bild, (i * breite, 0))
+        for j in range(je_richtung):
+            ziel.paste(bild, ((i * je_richtung + j) * breite, hoehe - WIPPEN[j % len(WIPPEN)]))
+    return ziel
+
+
 def tierbogen(quelle: Image.Image, breite: int, hoehe: int, art: str) -> Image.Image:
     """Ein Tier im Spielformat: Reihe 0 vier Standbilder, Reihe 1 Laufen (6 je Richtung)."""
     ziel = Image.new("RGBA", (RAHMEN_JE_REIHE * breite, 2 * hoehe))
@@ -202,6 +235,8 @@ def tierbogen(quelle: Image.Image, breite: int, hoehe: int, art: str) -> Image.I
         return ziel
     if art == "standbild":
         return _aus_standbild(quelle, breite, hoehe)
+    if art == "ansichten":
+        return _aus_ansichten(quelle, breite, hoehe)
     if art == "richtungen":
         # Eine Reihe mit 4 Richtungen × 6 Bildern (Krähe): je Richtung das erste Bild als Stand.
         je_richtung = RAHMEN_JE_REIHE // STAND_RAHMEN
@@ -227,7 +262,12 @@ def baue_tiere(privat: Path) -> None:
     ziel_tiere = privat / "spiel" / "tiere"
     ziel_tiere.mkdir(parents=True, exist_ok=True)
     for name, (datei, breite, hoehe, art) in TIERE.items():
-        quelle = Image.open(privat / datei).convert("RGBA")
+        if art == "ansichten":
+            namen = TIERANSICHTEN.get(name, ANSICHTEN)
+            oeffne = lambda n: Image.open(privat / n).convert("RGBA")  # noqa: E731
+            quelle = ansichtenstreifen(oeffne, datei, breite, hoehe, namen)
+        else:
+            quelle = Image.open(privat / datei).convert("RGBA")
         tierbogen(quelle, breite, hoehe, art).save(ziel_tiere / f"{name}.png")
 
 

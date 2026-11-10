@@ -11,7 +11,7 @@ from pathlib import Path
 import pytest
 
 DATEI = Path(__file__).resolve().parents[2] / "app/src/abenteuer/oberwelt/tierarten.json"
-SCHNITTE = ("reihen", "streifen", "richtungen", "baender", "standbild")
+SCHNITTE = ("reihen", "streifen", "richtungen", "baender", "standbild", "ansichten")
 
 
 def _daten() -> dict:

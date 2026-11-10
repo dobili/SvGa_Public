@@ -257,7 +257,9 @@ Auftrag `runde9_uebrige_karten.md`: drei Mängel aus `variantenwahl.md`, die fü
 Kreidezeichen auf einer Steinplatte vor der Holzfällerhütte; die Beschreibung ist neu geschrieben
 (ohne „Variante C“). Riesenbäume: Die Blässe ist die Tönung `nebel` (Nebel am Morgen, Runde 6),
 Weg und Figuren bleiben lesbar; die Tribüne steht nördlich des Bretts mit Blick darauf, im
-Gutachterbild war sie nur am Rand angeschnitten. Offen: Reh statt Ziege (Gemini-Prompt 11).
+Gutachterbild war sie nur am Rand angeschnitten. Offen: Reh statt Ziege (Gemini-Prompt 11). Nachtrag: Das Reh aus Gemini ist
+da (`reh_seite/_hinten/_vorn`, Tierart `reh`, Schnitt `ansichten`); der Hirsch ebenso, der Wapiti
+im Geysirbecken nimmt den Hirsch.
 
 ## 4. Bühnenbilder
 

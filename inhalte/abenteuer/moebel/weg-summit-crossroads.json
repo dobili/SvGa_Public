@@ -137,6 +137,15 @@
       "art": "deko",
       "zustand": "gebraucht",
       "stil": "laendlich"
+    },
+    "sx9SturmkellerZu": {
+      "quelle": "spiel/eigene/sturmkeller_zu.png",
+      "breite": 32,
+      "hoehe": 32,
+      "kollision": false,
+      "art": "deko",
+      "zustand": "gebraucht",
+      "stil": "laendlich"
     }
   }
 }

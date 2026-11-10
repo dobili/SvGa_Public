@@ -146,6 +146,15 @@
       "art": "deko",
       "zustand": "gebraucht",
       "stil": "laendlich"
+    },
+    "sx9GeysirKlein": {
+      "quelle": "spiel/eigene/geysir_klein.png",
+      "breite": 32,
+      "hoehe": 48,
+      "kollision": true,
+      "art": "stein",
+      "zustand": "neu",
+      "stil": "natur"
     }
   }
 }

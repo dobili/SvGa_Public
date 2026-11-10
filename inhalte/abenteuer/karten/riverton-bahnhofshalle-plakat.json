@@ -1420,7 +1420,7 @@
      "id": 10,
      "name": "pops",
      "type": "figur",
-     "x": 32,
+     "x": 64,
      "y": 112,
      "width": 16,
      "height": 16,
@@ -1825,7 +1825,7 @@
      "name": "mf8GlasthekeLinks",
      "type": "moebel",
      "x": 16,
-     "y": 128,
+     "y": 96,
      "width": 16,
      "height": 32,
      "rotation": 0,
@@ -1834,7 +1834,7 @@
       {
        "name": "tiefe",
        "type": "int",
-       "value": 152
+       "value": 120
       },
       {
        "name": "kollision",
@@ -1848,7 +1848,7 @@
      "name": "mf8GlasthekeMitte",
      "type": "moebel",
      "x": 32,
-     "y": 128,
+     "y": 96,
      "width": 16,
      "height": 32,
      "rotation": 0,
@@ -1857,7 +1857,7 @@
       {
        "name": "tiefe",
        "type": "int",
-       "value": 152
+       "value": 120
       },
       {
        "name": "kollision",
@@ -1871,7 +1871,7 @@
      "name": "mf8GlasthekeRechts",
      "type": "moebel",
      "x": 48,
-     "y": 128,
+     "y": 96,
      "width": 16,
      "height": 32,
      "rotation": 0,
@@ -1880,7 +1880,7 @@
       {
        "name": "tiefe",
        "type": "int",
-       "value": 152
+       "value": 120
       },
       {
        "name": "kollision",

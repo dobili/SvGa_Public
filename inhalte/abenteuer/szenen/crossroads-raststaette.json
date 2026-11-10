@@ -1,7 +1,7 @@
 {
   "karte": "crossroads.raststaette",
   "art": "innen",
-  "beschreibung": "Darlenes Raststätte in Crossroads: Holzwände, Dielen. Im Norden hinter einer Innenwand die Großküche mit weißen Fliesen, Kühlschränken, drei Herden unter Hauben, Grill, Fritteuse und Spültisch, in der Mitte ein Arbeitstisch mit Brett und Geschirr, an der Wand der Geschirrschrank; rechts daneben das WC. In der Küchenwand die Durchreiche, davor der lange Holztresen mit Kaffeemaschine, Gläsern und Flaschen und vier Hockern; Darlene dahinter, die Kasse am rechten Tresenende zum Gast hin. Rechts Darlenes Laden mit Postkartenständer und Regalen vor der Wand, davor der lange Varianten-Tisch mit drei Brettern und Hockern ringsum. Links unten zwei runde Tische mit Stühlen, rechts unten Novas Ecktisch, ein Spielautomat. Unten die Glastür mit Fußmatte.",
+  "beschreibung": "Darlenes Raststätte in Crossroads: Holzwände, Dielen. Im Norden hinter einer Innenwand die Großküche mit weißen Fliesen, Kühlschränken, drei Herden unter Hauben, Grill, Fritteuse und Spültisch, in der Mitte ein Arbeitstisch mit Brett und Geschirr, an der Wand der Geschirrschrank; rechts daneben das WC. In der Küchenwand die Durchreiche, eine zwei Felder breite Öffnung mit einem Stahltisch voller Teller, durch die man in die Küche sieht, davor der lange Holztresen mit Kaffeemaschine, Gläsern und Flaschen und vier Hockern; Darlene dahinter, die Kasse am rechten Tresenende zum Gast hin. Rechts Darlenes Laden mit Postkartenständer und Regalen vor der Wand, davor der lange Varianten-Tisch mit drei Brettern und Hockern ringsum. Links unten zwei runde Tische mit Stühlen, rechts unten Novas Ecktisch, ein Spielautomat. Unten die Glastür mit Fußmatte.",
   "wand": "holz",
   "boden": "dielen",
   "raster": [
@@ -11,9 +11,9 @@
     "#fffffffffffffff##.....#",
     "#fffffffffffffff##.....#",
     "#fffffffffffffff##.....#",
-    "###############.###.####",
-    "###############.###.####",
-    "###############.###.####",
+    "######ff#######.###.####",
+    "######ff#######.###.####",
+    "######ff#######.###.####",
     "#......................#",
     "#......................#",
     "#......................#",
@@ -92,11 +92,6 @@
     {
       "moebel": "wzTuer",
       "feld": [15, 8],
-      "an_wand": true
-    },
-    {
-      "moebel": "cr9Durchreiche",
-      "feld": [6, 8],
       "an_wand": true
     },
     {
@@ -333,6 +328,23 @@
       "moebel": "cr9Postkartenstaender",
       "feld": [16, 8],
       "bauteil_ok": true
+    },
+    {
+      "moebel": "cr9Arbeitstisch",
+      "feld": [6, 7],
+      "id": "durchreiche"
+    },
+    {
+      "moebel": "mf5Geschirr",
+      "feld": [0, 0],
+      "auf": "durchreiche",
+      "versatz": [-7, 0]
+    },
+    {
+      "moebel": "mf5Brotbrett",
+      "feld": [0, 0],
+      "auf": "durchreiche",
+      "versatz": [7, 0]
     }
   ],
   "ausloeser": [

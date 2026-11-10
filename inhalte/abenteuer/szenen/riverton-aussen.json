@@ -13,7 +13,7 @@
     "g": "stein",
     "h": "wasser"
   },
-  "beschreibung": "Riverton an einem Herbsttag, auf dem Pflaster stehen noch Pfützen. Ganz oben die Bahnlinie mit Schotter und einer Hecke am Bahnzaun. Vom Westrand kommt der Fußweg vom Bahndamm an zwei Laternen vorbei und biegt in einem Bogen auf den Vorplatz. Darüber steht der Bahnhof aus rotem Backstein mit dem Uhrturm und dem Bogenportal, links das kleine Stellwerk, rechts der Güterschuppen mit Holzstapel an der Laderampe, ganz rechts der Wasserturm, aus dem früher die Dampfloks Wasser nahmen; ein Trampelpfad führt vom Gehweg hin. Auf dem gepflasterten Vorplatz ein Brunnen, der Wegweiser, Laternen, der achteckige Infokiosk mit dem „i“ und das Wartehäuschen der Buslinie. Die Ladenschilder sind englisch wie überall im Land. Die Water Street läuft quer durch die Stadt, mit Mittellinie und Randlinien, Gehwege rundherum; von ihr zweigt eine kurze Straße nach Süden zur Brücke ab, daneben die Einfahrt zum Lagerhof. Südlich der Straße die Häuser mit der Front zum Fluss: zwei schmale Reihenhäuser, der Handyladen mit Leuchtschild, der Markt mit zwei Ständen unter Markisen voller Obst- und Gemüsekörbe, ein Obstkarren und ein Pommeskarren, an jedem ein Verkäufer, die Bäckerei mit rotem Ziegeldach, das Café mit gestreifter Markise und zwei Lagerschuppen am Kai. Davor die Uferpromenade mit Bank und Laternen. Der Ashford River fließt vom West- zum Ostrand; die Steinbrücke mit Gehwegen führt hinüber in den Riverside-Park. Dort am Uferweg ganz im Westen Slicks Wohnwagen, Albescus Werkstatt und der Schuppen mit Vorhängeschloss, auf der Wiese die sechs Bildschirmtische (weiße Tische, deren Platte ein Bildschirm mit Schachbrett ist), der Pavillon aus Holz mit Platz davor, das Pegelhaus und Bäume. Im Osten öffnet sich das Kanalbecken, der Kanal läuft nach Süden aus der Karte, daneben der Treidelpfad.",
+  "beschreibung": "Riverton an einem Herbsttag, auf dem Pflaster stehen noch Pfützen. Ganz oben die Bahnlinie mit Schotter und einer Hecke am Bahnzaun. Vom Westrand kommt der Fußweg vom Bahndamm an zwei Laternen vorbei und biegt in einem Bogen auf den Vorplatz. Darüber steht der Bahnhof aus rotem Backstein mit dem Uhrturm und dem Bogenportal, links das kleine Stellwerk, rechts der Güterschuppen mit Holzstapel an der Laderampe, ganz rechts der Wasserturm mit dem kleinen Pumpenhaus daneben, aus dem früher die Dampfloks Wasser nahmen; ein Trampelpfad führt vom Gehweg hin. Auf dem gepflasterten Vorplatz ein Brunnen, der Wegweiser, Laternen, der achteckige Infokiosk mit dem „i“ und das Wartehäuschen der Buslinie. Die Ladenschilder sind englisch wie überall im Land. Die Water Street läuft quer durch die Stadt, mit Mittellinie und Randlinien, Gehwege rundherum, ein Zebrastreifen führt vom Vorplatz zum Markt; von ihr zweigt eine kurze Straße nach Süden zur Brücke ab, daneben die Einfahrt zum Lagerhof. Südlich der Straße die Häuser mit der Front zum Fluss: zwei schmale Reihenhäuser, der Handyladen mit Leuchtschild, der Markt mit zwei Ständen unter Markisen voller Obst- und Gemüsekörbe, ein Obstkarren und ein Pommeskarren, an jedem ein Verkäufer, die Bäckerei mit rotem Ziegeldach, das Café mit gestreifter Markise und zwei Lagerschuppen am Kai. Davor die Uferpromenade mit Bank und Laternen. Der Ashford River fließt vom West- zum Ostrand; die Steinbrücke mit Gehwegen führt hinüber in den Riverside-Park. Dort am Uferweg ganz im Westen Slicks Wohnwagen, Albescus Werkstatt und der Schuppen mit Vorhängeschloss, auf der Wiese die sechs Bildschirmtische (weiße Tische, deren Platte ein Bildschirm mit Schachbrett ist), der Pavillon aus Holz mit Platz davor, das Pegelhaus und Bäume. Im Osten öffnet sich das Kanalbecken, der Kanal läuft nach Süden aus der Karte, daneben der Treidelpfad.",
   "raster": [
     "########################################################################",
     "#tttttttttttttttttttttttttttttttttttttttttttttttttttttttttttttttttttttt#",
@@ -583,10 +583,6 @@
       "feld": [66, 12]
     },
     {
-      "moebel": "sb5Faehrhaus",
-      "feld": [67, 17]
-    },
-    {
       "moebel": "rv5Reihenhaus",
       "feld": [1, 28]
     },
@@ -756,7 +752,7 @@
     },
     {
       "moebel": "rv8Ruderboot",
-      "feld": [59, 41],
+      "feld": [59, 40],
       "bauteil_ok": true
     },
     {
@@ -1189,6 +1185,30 @@
       "moebel": "cr9BordL6",
       "feld": [55, 33],
       "bauteil_ok": true
+    },
+    {
+      "moebel": "sa9Zebrastreifen",
+      "feld": [33, 23]
+    },
+    {
+      "moebel": "rv9PfuetzeGross",
+      "feld": [36, 19]
+    },
+    {
+      "moebel": "rv9PfuetzeKlein",
+      "feld": [26, 20]
+    },
+    {
+      "moebel": "rv9PfuetzeKlein",
+      "feld": [45, 21]
+    },
+    {
+      "moebel": "rv9PfuetzeKlein",
+      "feld": [12, 31]
+    },
+    {
+      "moebel": "sb5Faehrhaus",
+      "feld": [67, 9]
     }
   ],
   "ausloeser": [

@@ -404,11 +404,6 @@
       "feld": [34, 37]
     },
     {
-      "moebel": "n4MoeweRechts",
-      "feld": [11, 13],
-      "bauteil_ok": true
-    },
-    {
       "moebel": "n4SeesternGelb",
       "feld": [12, 40]
     },
@@ -455,16 +450,6 @@
     {
       "moebel": "n4MuschelWeiss",
       "feld": [40, 40]
-    },
-    {
-      "moebel": "n4MoeweVorn",
-      "feld": [30, 27],
-      "bauteil_ok": true
-    },
-    {
-      "moebel": "n4MoeweVorn",
-      "feld": [32, 21],
-      "bauteil_ok": true
     },
     {
       "moebel": "n4MuschelWeiss",

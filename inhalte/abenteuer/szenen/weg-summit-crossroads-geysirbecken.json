@@ -1,7 +1,7 @@
 {
   "karte": "wegSummitCrossroads.geysirbecken",
   "art": "aussen",
-  "beschreibung": "Dichter Kiefernwald, die Ranger-Station mit Häuschen, Rätseltafel, Bank und Warnschild am offenen Tor (S10). Dahinter das Geysirbecken: heiße Quellen mit hellem Sinterwulst, orangem Bakteriensaum und flachem, türkisem Rand, dazwischen weite Sinterflächen mit vielen Geysirkegeln. Ein Bohlenweg läuft im Zickzack zwischen den Becken hindurch, über zwei Abflussrinnen führen kurze Stege. In der Mitte der Infoplatz mit Bänken und Tafel, auf der Sinterinsel östlich des Wegs stehen Bisons, größer als jede Kuh. Im Süden zwei Weiden mit Zäunen, Wildblumen, Bänke unter Kiefern.",
+  "beschreibung": "Dichter Kiefernwald, die Ranger-Station mit Häuschen, Rätseltafel, Bank und Warnschild am offenen Tor (S10). Dahinter das Geysirbecken: heiße Quellen mit hellem Sinterwulst, orangem Bakteriensaum und flachem, türkisem Rand, dazwischen weite Sinterflächen mit großen und kleinen Geysirkegeln. Ein Bohlenweg läuft im Zickzack zwischen den Becken hindurch, über zwei Abflussrinnen führen kurze Stege. In der Mitte der Infoplatz mit Bänken und Tafel, auf der Sinterinsel östlich des Wegs stehen Bisons, größer als jede Kuh. Im Süden zwei Weiden mit Zäunen, Wildblumen, Bänke unter Kiefern.",
   "boden": "gras",
   "wandart": "gras",
   "ufer": "sinter",
@@ -45,29 +45,29 @@
     "#ss~~~~~~sssssddddddddddsssss#",
     "#sss~~~~sssssssssssssddssssss#",
     "#ssssssssssssssssssssddssssss#",
-    "#ssssssssssssssssssssddss~~ss#",
-    "#sssssssssss~~sssssssdds~~~ss#",
-    "#ssssssssss~~~~~sssssdds~~~ss#",
-    "#ssssssssss~~~~~~ssssdds~~~ss#",
-    "#ssssssssss~~~~~~~sssdds~~~ss#",
-    "#ssssssssss~~~~~~~sssdds~~~ss#",
-    "#ssssssssss~~~~~~~sssdds~~~ss#",
-    "#sssssssssss~~~ssssssdds~~~ss#",
+    "#ssssssssssssssssssssddssssss#",
+    "#sssssssssss~~sssssssddssssss#",
+    "#ssssssssss~~~~~sssssddssssss#",
+    "#ssssssssss~~~~~~ssssddssssss#",
+    "#ssssssssss~~~~~~~sssddssssss#",
+    "#ssssssssss~~~~~~~sssddssssss#",
+    "#ssssssssss~~~~~~~sssddssssss#",
+    "#sssssssssss~~~ssssssddssssss#",
     "#ssssssssssssssssssssddssssss#",
     "#ssssssssssssssssssssddssssss#",
     "#sssssssddddddddddddddddsssss#",
     "#sssssssddddddddddddddddsssss#",
-    "#ss~~sssddsssssssssssssssssss#",
-    "#ss~~~ssddsssssssssssssssssss#",
-    "#ss~~~ssddsss~~~~~~ssssssssss#",
-    "#ss~~~ssddss~~~~~~~~sssssssss#",
-    "#ss~~~ssddss~~~~~~~~~ssssssss#",
-    "#ss~~~ssddss~~~~~~~~~ssssssss#",
-    "#ss~~~ssddss~~~~~~~~sssssssss#",
-    "#ss~~~~sddsss~~~~~~~sssssssss#",
-    "#ss~~~~sddssss~~~~~ssssssssss#",
-    "#ss~~~~sddsssssssssssssssssss#",
-    "#ss~~~ssddsssssssssssssssssss#",
+    "#sssssssddsssssssssssssssssss#",
+    "#sssssssddsssssssssssssssssss#",
+    "#sssssssddsss~~~~~~ssssssssss#",
+    "#sssssssddss~~~~~~~~sssssssss#",
+    "#sssssssddss~~~~~~~~~ssssssss#",
+    "#sssssssddss~~~~~~~~~ssssssss#",
+    "#sssssssddss~~~~~~~~sssssssss#",
+    "#sssssssddsss~~~~~~~sssssssss#",
+    "#sssssssddssss~~~~~ssssssssss#",
+    "#sssssssddsssssssssssssssssss#",
+    "#sssssssddsssssssssssssssssss#",
     "#sssssssddsssssssssssssssssss#",
     "#sssssssddddddddddddddsssssss#",
     "#sssssssddddddddddddddsssssss#",
@@ -79,15 +79,15 @@
     "#sss~~~~ssssssssssssssddsssss#",
     "#ss~~~~~~sssssssssssssddsssss#",
     "#ss~~~~~~~ssssssssssssddsssss#",
-    "#ss~~~~~~~~sssssssssssdds~~ss#",
-    "#ss~~~~~~~~sssssssssssdds~~ss#",
-    "#ss~~~~~~~~sssssssssssdds~~ss#",
-    "#ss~~~~~sssss~~~~sssssdds~~ss#",
-    "#ss~~~~ssssss~~~~~~sssdds~~ss#",
-    "#sss~~~ssssss~~~~~~sssdds~~ss#",
-    "#ssssssssssss~~~~~~sssdds~~ss#",
-    "#ssssssssssss~~~~~~sssdds~~ss#",
-    "#ssssssssssss~~~~~ssssdds~~ss#",
+    "#ss~~~~~~~~sssssssssssddsssss#",
+    "#ss~~~~~~~~sssssssssssddsssss#",
+    "#ss~~~~~~~~sssssssssssddsssss#",
+    "#ss~~~~~sssss~~~~sssssddsssss#",
+    "#ss~~~~ssssss~~~~~~sssddsssss#",
+    "#sss~~~ssssss~~~~~~sssddsssss#",
+    "#ssssssssssss~~~~~~sssddsssss#",
+    "#ssssssssssss~~~~~~sssddsssss#",
+    "#ssssssssssss~~~~~ssssddsssss#",
     "#sssssssssssssssssssssddsssss#",
     "#sssssssssssssssssssssddsssss#",
     "#sssssssssssssssssssssddsssss#",
@@ -841,7 +841,11 @@
     },
     {
       "moebel": "sx7Geysir",
-      "feld": [25, 28]
+      "feld": [10, 24]
+    },
+    {
+      "moebel": "sx9GeysirKlein",
+      "feld": [10, 31]
     },
     {
       "moebel": "sx7Geysir",
@@ -849,143 +853,139 @@
     },
     {
       "moebel": "sx7Geysir",
-      "feld": [8, 34]
+      "feld": [4, 32]
+    },
+    {
+      "moebel": "sx9GeysirKlein",
+      "feld": [8, 38]
     },
     {
       "moebel": "sx7Geysir",
-      "feld": [22, 46]
+      "feld": [21, 49]
     },
     {
       "moebel": "sx7Geysir",
-      "feld": [21, 52]
+      "feld": [6, 60]
+    },
+    {
+      "moebel": "sx9GeysirKlein",
+      "feld": [2, 61]
     },
     {
       "moebel": "sx7Geysir",
-      "feld": [2, 60]
+      "feld": [11, 61]
     },
     {
       "moebel": "sx7Geysir",
-      "feld": [10, 61]
+      "feld": [18, 65]
+    },
+    {
+      "moebel": "sx9GeysirKlein",
+      "feld": [14, 67]
     },
     {
       "moebel": "sx7Geysir",
-      "feld": [25, 63]
+      "feld": [9, 70]
     },
     {
       "moebel": "sx7Geysir",
-      "feld": [17, 65]
+      "feld": [4, 73]
+    },
+    {
+      "moebel": "sx9GeysirKlein",
+      "feld": [2, 81]
     },
     {
       "moebel": "sx7Geysir",
-      "feld": [12, 66]
+      "feld": [6, 81]
     },
     {
       "moebel": "sx7Geysir",
-      "feld": [3, 73]
+      "feld": [2, 92]
+    },
+    {
+      "moebel": "sx9GeysirKlein",
+      "feld": [7, 100]
     },
     {
       "moebel": "sx7Geysir",
-      "feld": [9, 74]
+      "feld": [9, 104]
     },
     {
       "moebel": "sx7Geysir",
-      "feld": [2, 80]
+      "feld": [25, 108]
+    },
+    {
+      "moebel": "sx9GeysirKlein",
+      "feld": [21, 109]
     },
     {
       "moebel": "sx7Geysir",
-      "feld": [6, 80]
+      "feld": [5, 110]
     },
     {
       "moebel": "sx7Geysir",
-      "feld": [15, 82]
+      "feld": [16, 119]
+    },
+    {
+      "moebel": "sx9GeysirKlein",
+      "feld": [24, 121]
     },
     {
       "moebel": "sx7Geysir",
-      "feld": [22, 87]
-    },
-    {
-      "moebel": "sx7Geysir",
-      "feld": [15, 88]
-    },
-    {
-      "moebel": "sx7Geysir",
-      "feld": [21, 96]
-    },
-    {
-      "moebel": "sx7Geysir",
-      "feld": [4, 96]
-    },
-    {
-      "moebel": "sx7Geysir",
-      "feld": [10, 104]
-    },
-    {
-      "moebel": "sx7Geysir",
-      "feld": [3, 109]
-    },
-    {
-      "moebel": "sx7Geysir",
-      "feld": [7, 110]
-    },
-    {
-      "moebel": "sx7Geysir",
-      "feld": [25, 110]
-    },
-    {
-      "moebel": "sx7Geysir",
-      "feld": [17, 119]
+      "feld": [2, 120]
     },
     {
       "moebel": "sx9Bison",
-      "feld": [18, 86]
+      "feld": [15, 86]
     },
     {
       "moebel": "sx9BisonLiegend",
-      "feld": [25, 88]
+      "feld": [19, 86]
     },
     {
       "moebel": "sx9Bison",
-      "feld": [18, 89]
+      "feld": [23, 88]
     },
     {
       "moebel": "felsKlein",
-      "feld": [7, 37]
+      "feld": [4, 109]
     },
     {
       "moebel": "felsKlein",
-      "feld": [19, 85]
+      "feld": [3, 79]
     },
     {
       "moebel": "felsKlein",
-      "feld": [7, 73]
+      "feld": [3, 73]
     },
     {
       "moebel": "felsKlein",
-      "feld": [10, 60]
+      "feld": [7, 109]
     },
     {
       "moebel": "felsKlein",
-      "feld": [6, 79]
+      "feld": [3, 96]
     },
     {
       "moebel": "felsKlein",
-      "feld": [21, 48]
+      "feld": [8, 110]
     },
     {
       "moebel": "felsKlein",
-      "feld": [10, 70]
+      "feld": [8, 71]
     },
     {
       "moebel": "felsKlein",
-      "feld": [14, 87]
+      "feld": [6, 95]
     },
     {
       "moebel": "felsKlein",
-      "feld": [8, 72]
+      "feld": [8, 31]
     },
     {
       "moebel": "felsKlein",
-      "feld": [16, 66]
+      "feld": [21, 47]
     },
     {
       "moebel": "sx9BisonLiegend",
@@ -1059,10 +1059,10 @@
     {
       "name": "bisonherde",
       "typ": "tier",
-      "feld": [24, 92],
+      "feld": [16, 90],
       "eigenschaften": {
-        "von": "22,91",
-        "bis": "26,94",
+        "von": "14,89",
+        "bis": "18,92",
         "verhalten": "ausweichen"
       }
     },

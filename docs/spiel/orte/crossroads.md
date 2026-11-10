@@ -240,6 +240,15 @@ Auftrag `runde9_uebrige_karten.md`: drei Mängel aus `variantenwahl.md`, die fü
   Die Klappe ist jetzt das Gemini-Bild `sturmkeller_zu.png` (Möbel `sx9SturmkellerZu`); das offene
   Gegenstück `sturmkeller_offen.png` liegt bereit, falls die Gewitterszene einen Zustand bekommt.
 
+### 3.6 Runde 9: zweite Prüfung (mittel-3, 10.11.2026)
+
+`gutachten/mittel-3-runde9-2.md`. Crossroads außen ist reif für den Autor. Raststätte: Die
+Durchreiche ist jetzt eine echte Öffnung in der Küchenwand (zwei Felder breit, Stahltisch mit
+Tellern darin). Geysirbecken: schmale senkrechte Quellen entfernt, jeder dritte Kegel ist klein
+(Bildwunsch `geysir_klein.py`). Prärie: Die Innenkante der Felder folgt dem Weg; Hofplatz und
+Fahrweg aus Sandplatz mit weichem Rand statt Kies in Stufen; der Traktor steht auf dem Hofplatz;
+die Sturmkellerklappe liegt direkt vor dem Scheunentor. Silo bleibt Seitenansicht (Gebäude).
+
 ## 4. Bühnenbilder
 
 Die Inventare stehen in den Szenen (`beschreibung`) und folgen 1.1 bis 1.4; feste Felder sind die

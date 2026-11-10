@@ -11,7 +11,7 @@
  "tilewidth": 16,
  "tileheight": 16,
  "nextlayerid": 5,
- "nextobjectid": 82,
+ "nextobjectid": 70,
  "layers": [
   {
    "id": 1,
@@ -2006,7 +2006,7 @@
      "name": "rv8Holztisch",
      "type": "moebel",
      "x": 16,
-     "y": 144,
+     "y": 208,
      "width": 64,
      "height": 32,
      "rotation": 0,
@@ -2015,7 +2015,7 @@
       {
        "name": "tiefe",
        "type": "int",
-       "value": 168
+       "value": 232
       },
       {
        "name": "kollision",
@@ -2029,7 +2029,7 @@
      "name": "rv5Brett",
      "type": "moebel",
      "x": 26,
-     "y": 154,
+     "y": 218,
      "width": 12,
      "height": 9,
      "rotation": 0,
@@ -2038,7 +2038,7 @@
       {
        "name": "tiefe",
        "type": "int",
-       "value": 169
+       "value": 233
       },
       {
        "name": "kollision",
@@ -2052,7 +2052,7 @@
      "name": "rv5Brett",
      "type": "moebel",
      "x": 58,
-     "y": 154,
+     "y": 218,
      "width": 12,
      "height": 9,
      "rotation": 0,
@@ -2061,7 +2061,7 @@
       {
        "name": "tiefe",
        "type": "int",
-       "value": 169
+       "value": 233
       },
       {
        "name": "kollision",
@@ -2075,7 +2075,7 @@
      "name": "rv5StuhlVorn",
      "type": "moebel",
      "x": 24,
-     "y": 128,
+     "y": 192,
      "width": 16,
      "height": 32,
      "rotation": 0,
@@ -2084,7 +2084,7 @@
       {
        "name": "tiefe",
        "type": "int",
-       "value": 152
+       "value": 216
       },
       {
        "name": "kollision",
@@ -2098,7 +2098,7 @@
      "name": "rv5StuhlRuecken",
      "type": "moebel",
      "x": 24,
-     "y": 160,
+     "y": 224,
      "width": 16,
      "height": 32,
      "rotation": 0,
@@ -2107,7 +2107,7 @@
       {
        "name": "tiefe",
        "type": "int",
-       "value": 184
+       "value": 248
       },
       {
        "name": "kollision",
@@ -2121,7 +2121,7 @@
      "name": "rv5StuhlVorn",
      "type": "moebel",
      "x": 56,
-     "y": 128,
+     "y": 192,
      "width": 16,
      "height": 32,
      "rotation": 0,
@@ -2130,7 +2130,7 @@
       {
        "name": "tiefe",
        "type": "int",
-       "value": 152
+       "value": 216
       },
       {
        "name": "kollision",
@@ -2144,7 +2144,7 @@
      "name": "rv5StuhlRuecken",
      "type": "moebel",
      "x": 56,
-     "y": 160,
+     "y": 224,
      "width": 16,
      "height": 32,
      "rotation": 0,
@@ -2153,7 +2153,7 @@
       {
        "name": "tiefe",
        "type": "int",
-       "value": 184
+       "value": 248
       },
       {
        "name": "kollision",
@@ -2167,7 +2167,7 @@
      "name": "rv8Holztisch",
      "type": "moebel",
      "x": 304,
-     "y": 144,
+     "y": 208,
      "width": 64,
      "height": 32,
      "rotation": 0,
@@ -2176,7 +2176,7 @@
       {
        "name": "tiefe",
        "type": "int",
-       "value": 168
+       "value": 232
       },
       {
        "name": "kollision",
@@ -2190,7 +2190,7 @@
      "name": "rv5Brett",
      "type": "moebel",
      "x": 314,
-     "y": 154,
+     "y": 218,
      "width": 12,
      "height": 9,
      "rotation": 0,
@@ -2199,7 +2199,7 @@
       {
        "name": "tiefe",
        "type": "int",
-       "value": 169
+       "value": 233
       },
       {
        "name": "kollision",
@@ -2213,7 +2213,7 @@
      "name": "rv5Brett",
      "type": "moebel",
      "x": 346,
-     "y": 154,
+     "y": 218,
      "width": 12,
      "height": 9,
      "rotation": 0,
@@ -2222,7 +2222,7 @@
       {
        "name": "tiefe",
        "type": "int",
-       "value": 169
+       "value": 233
       },
       {
        "name": "kollision",
@@ -2236,7 +2236,7 @@
      "name": "rv5StuhlVorn",
      "type": "moebel",
      "x": 312,
-     "y": 128,
+     "y": 192,
      "width": 16,
      "height": 32,
      "rotation": 0,
@@ -2245,7 +2245,7 @@
       {
        "name": "tiefe",
        "type": "int",
-       "value": 152
+       "value": 216
       },
       {
        "name": "kollision",
@@ -2259,7 +2259,7 @@
      "name": "rv5StuhlRuecken",
      "type": "moebel",
      "x": 312,
-     "y": 160,
+     "y": 224,
      "width": 16,
      "height": 32,
      "rotation": 0,
@@ -2268,7 +2268,7 @@
       {
        "name": "tiefe",
        "type": "int",
-       "value": 184
+       "value": 248
       },
       {
        "name": "kollision",
@@ -2282,7 +2282,7 @@
      "name": "rv5StuhlVorn",
      "type": "moebel",
      "x": 344,
-     "y": 128,
+     "y": 192,
      "width": 16,
      "height": 32,
      "rotation": 0,
@@ -2291,7 +2291,7 @@
       {
        "name": "tiefe",
        "type": "int",
-       "value": 152
+       "value": 216
       },
       {
        "name": "kollision",
@@ -2305,7 +2305,7 @@
      "name": "rv5StuhlRuecken",
      "type": "moebel",
      "x": 344,
-     "y": 160,
+     "y": 224,
      "width": 16,
      "height": 32,
      "rotation": 0,
@@ -2314,7 +2314,7 @@
       {
        "name": "tiefe",
        "type": "int",
-       "value": 184
+       "value": 248
       },
       {
        "name": "kollision",
@@ -2325,329 +2325,7 @@
     },
     {
      "id": 45,
-     "name": "rv8Holztisch",
-     "type": "moebel",
-     "x": 16,
-     "y": 208,
-     "width": 64,
-     "height": 32,
-     "rotation": 0,
-     "visible": true,
-     "properties": [
-      {
-       "name": "tiefe",
-       "type": "int",
-       "value": 232
-      },
-      {
-       "name": "kollision",
-       "type": "bool",
-       "value": true
-      }
-     ]
-    },
-    {
-     "id": 46,
-     "name": "rv5Brett",
-     "type": "moebel",
-     "x": 26,
-     "y": 218,
-     "width": 12,
-     "height": 9,
-     "rotation": 0,
-     "visible": true,
-     "properties": [
-      {
-       "name": "tiefe",
-       "type": "int",
-       "value": 233
-      },
-      {
-       "name": "kollision",
-       "type": "bool",
-       "value": false
-      }
-     ]
-    },
-    {
-     "id": 47,
-     "name": "rv5Brett",
-     "type": "moebel",
-     "x": 58,
-     "y": 218,
-     "width": 12,
-     "height": 9,
-     "rotation": 0,
-     "visible": true,
-     "properties": [
-      {
-       "name": "tiefe",
-       "type": "int",
-       "value": 233
-      },
-      {
-       "name": "kollision",
-       "type": "bool",
-       "value": false
-      }
-     ]
-    },
-    {
-     "id": 48,
-     "name": "rv5StuhlVorn",
-     "type": "moebel",
-     "x": 24,
-     "y": 192,
-     "width": 16,
-     "height": 32,
-     "rotation": 0,
-     "visible": true,
-     "properties": [
-      {
-       "name": "tiefe",
-       "type": "int",
-       "value": 216
-      },
-      {
-       "name": "kollision",
-       "type": "bool",
-       "value": true
-      }
-     ]
-    },
-    {
-     "id": 49,
-     "name": "rv5StuhlRuecken",
-     "type": "moebel",
-     "x": 24,
-     "y": 224,
-     "width": 16,
-     "height": 32,
-     "rotation": 0,
-     "visible": true,
-     "properties": [
-      {
-       "name": "tiefe",
-       "type": "int",
-       "value": 248
-      },
-      {
-       "name": "kollision",
-       "type": "bool",
-       "value": true
-      }
-     ]
-    },
-    {
-     "id": 50,
-     "name": "rv5StuhlVorn",
-     "type": "moebel",
-     "x": 56,
-     "y": 192,
-     "width": 16,
-     "height": 32,
-     "rotation": 0,
-     "visible": true,
-     "properties": [
-      {
-       "name": "tiefe",
-       "type": "int",
-       "value": 216
-      },
-      {
-       "name": "kollision",
-       "type": "bool",
-       "value": true
-      }
-     ]
-    },
-    {
-     "id": 51,
-     "name": "rv5StuhlRuecken",
-     "type": "moebel",
-     "x": 56,
-     "y": 224,
-     "width": 16,
-     "height": 32,
-     "rotation": 0,
-     "visible": true,
-     "properties": [
-      {
-       "name": "tiefe",
-       "type": "int",
-       "value": 248
-      },
-      {
-       "name": "kollision",
-       "type": "bool",
-       "value": true
-      }
-     ]
-    },
-    {
-     "id": 52,
-     "name": "rv8Holztisch",
-     "type": "moebel",
-     "x": 304,
-     "y": 208,
-     "width": 64,
-     "height": 32,
-     "rotation": 0,
-     "visible": true,
-     "properties": [
-      {
-       "name": "tiefe",
-       "type": "int",
-       "value": 232
-      },
-      {
-       "name": "kollision",
-       "type": "bool",
-       "value": true
-      }
-     ]
-    },
-    {
-     "id": 53,
-     "name": "rv5Brett",
-     "type": "moebel",
-     "x": 314,
-     "y": 218,
-     "width": 12,
-     "height": 9,
-     "rotation": 0,
-     "visible": true,
-     "properties": [
-      {
-       "name": "tiefe",
-       "type": "int",
-       "value": 233
-      },
-      {
-       "name": "kollision",
-       "type": "bool",
-       "value": false
-      }
-     ]
-    },
-    {
-     "id": 54,
-     "name": "rv5Brett",
-     "type": "moebel",
-     "x": 346,
-     "y": 218,
-     "width": 12,
-     "height": 9,
-     "rotation": 0,
-     "visible": true,
-     "properties": [
-      {
-       "name": "tiefe",
-       "type": "int",
-       "value": 233
-      },
-      {
-       "name": "kollision",
-       "type": "bool",
-       "value": false
-      }
-     ]
-    },
-    {
-     "id": 55,
-     "name": "rv5StuhlVorn",
-     "type": "moebel",
-     "x": 312,
-     "y": 192,
-     "width": 16,
-     "height": 32,
-     "rotation": 0,
-     "visible": true,
-     "properties": [
-      {
-       "name": "tiefe",
-       "type": "int",
-       "value": 216
-      },
-      {
-       "name": "kollision",
-       "type": "bool",
-       "value": true
-      }
-     ]
-    },
-    {
-     "id": 56,
-     "name": "rv5StuhlRuecken",
-     "type": "moebel",
-     "x": 312,
-     "y": 224,
-     "width": 16,
-     "height": 32,
-     "rotation": 0,
-     "visible": true,
-     "properties": [
-      {
-       "name": "tiefe",
-       "type": "int",
-       "value": 248
-      },
-      {
-       "name": "kollision",
-       "type": "bool",
-       "value": true
-      }
-     ]
-    },
-    {
-     "id": 57,
-     "name": "rv5StuhlVorn",
-     "type": "moebel",
-     "x": 344,
-     "y": 192,
-     "width": 16,
-     "height": 32,
-     "rotation": 0,
-     "visible": true,
-     "properties": [
-      {
-       "name": "tiefe",
-       "type": "int",
-       "value": 216
-      },
-      {
-       "name": "kollision",
-       "type": "bool",
-       "value": true
-      }
-     ]
-    },
-    {
-     "id": 58,
-     "name": "rv5StuhlRuecken",
-     "type": "moebel",
-     "x": 344,
-     "y": 224,
-     "width": 16,
-     "height": 32,
-     "rotation": 0,
-     "visible": true,
-     "properties": [
-      {
-       "name": "tiefe",
-       "type": "int",
-       "value": 248
-      },
-      {
-       "name": "kollision",
-       "type": "bool",
-       "value": true
-      }
-     ]
-    },
-    {
-     "id": 59,
-     "name": "rv8Truhe",
+     "name": "rv9Figurentruhe",
      "type": "moebel",
      "x": 96,
      "y": 240,
@@ -2669,8 +2347,8 @@
      ]
     },
     {
-     "id": 60,
-     "name": "rv8Truhe",
+     "id": 46,
+     "name": "rv9Figurentruhe",
      "type": "moebel",
      "x": 256,
      "y": 240,
@@ -2692,7 +2370,7 @@
      ]
     },
     {
-     "id": 61,
+     "id": 47,
      "name": "rv5Limonade",
      "type": "moebel",
      "x": 176,
@@ -2715,7 +2393,7 @@
      ]
     },
     {
-     "id": 62,
+     "id": 48,
      "name": "wzPflanze",
      "type": "moebel",
      "x": 288,
@@ -2738,7 +2416,7 @@
      ]
     },
     {
-     "id": 63,
+     "id": 49,
      "name": "wzPflanze",
      "type": "moebel",
      "x": 80,
@@ -2761,7 +2439,7 @@
      ]
     },
     {
-     "id": 64,
+     "id": 50,
      "name": "wzPflanze",
      "type": "moebel",
      "x": 80,
@@ -2784,7 +2462,7 @@
      ]
     },
     {
-     "id": 65,
+     "id": 51,
      "name": "wzPflanze",
      "type": "moebel",
      "x": 288,
@@ -2807,7 +2485,7 @@
      ]
     },
     {
-     "id": 66,
+     "id": 52,
      "name": "mf4Fussmatte",
      "type": "moebel",
      "x": 192,
@@ -2830,7 +2508,7 @@
      ]
     },
     {
-     "id": 67,
+     "id": 53,
      "name": "mf5TuerSuedHolz",
      "type": "moebel",
      "x": 192,
@@ -2853,7 +2531,7 @@
      ]
     },
     {
-     "id": 68,
+     "id": 54,
      "name": "rv9GrossWeissTurm",
      "type": "moebel",
      "x": 128,
@@ -2876,7 +2554,7 @@
      ]
     },
     {
-     "id": 69,
+     "id": 55,
      "name": "rv9GrossWeissKoenig",
      "type": "moebel",
      "x": 160,
@@ -2899,7 +2577,7 @@
      ]
     },
     {
-     "id": 70,
+     "id": 56,
      "name": "rv9GrossWeissBauer",
      "type": "moebel",
      "x": 144,
@@ -2922,7 +2600,7 @@
      ]
     },
     {
-     "id": 71,
+     "id": 57,
      "name": "rv9GrossWeissBauer",
      "type": "moebel",
      "x": 176,
@@ -2945,7 +2623,7 @@
      ]
     },
     {
-     "id": 72,
+     "id": 58,
      "name": "rv9GrossWeissSpringer",
      "type": "moebel",
      "x": 192,
@@ -2968,7 +2646,7 @@
      ]
     },
     {
-     "id": 73,
+     "id": 59,
      "name": "rv9GrossWeissBauer",
      "type": "moebel",
      "x": 160,
@@ -2991,30 +2669,7 @@
      ]
     },
     {
-     "id": 74,
-     "name": "rv9GrossWeissDame",
-     "type": "moebel",
-     "x": 208,
-     "y": 202,
-     "width": 16,
-     "height": 24,
-     "rotation": 0,
-     "visible": true,
-     "properties": [
-      {
-       "name": "tiefe",
-       "type": "int",
-       "value": 218
-      },
-      {
-       "name": "kollision",
-       "type": "bool",
-       "value": true
-      }
-     ]
-    },
-    {
-     "id": 75,
+     "id": 60,
      "name": "rv9GrossSchwarzTurm",
      "type": "moebel",
      "x": 144,
@@ -3037,7 +2692,7 @@
      ]
     },
     {
-     "id": 76,
+     "id": 61,
      "name": "rv9GrossSchwarzKoenig",
      "type": "moebel",
      "x": 176,
@@ -3060,7 +2715,7 @@
      ]
     },
     {
-     "id": 77,
+     "id": 62,
      "name": "rv9GrossSchwarzBauer",
      "type": "moebel",
      "x": 160,
@@ -3083,7 +2738,7 @@
      ]
     },
     {
-     "id": 78,
+     "id": 63,
      "name": "rv9GrossSchwarzBauer",
      "type": "moebel",
      "x": 192,
@@ -3106,7 +2761,7 @@
      ]
     },
     {
-     "id": 79,
+     "id": 64,
      "name": "rv9GrossSchwarzBauer",
      "type": "moebel",
      "x": 176,
@@ -3129,7 +2784,7 @@
      ]
     },
     {
-     "id": 80,
+     "id": 65,
      "name": "rv9GrossSchwarzLaeufer",
      "type": "moebel",
      "x": 208,
@@ -3152,11 +2807,57 @@
      ]
     },
     {
-     "id": 81,
-     "name": "rv9GrossSchwarzDame",
+     "id": 66,
+     "name": "rv5BankLang",
      "type": "moebel",
-     "x": 224,
-     "y": 90,
+     "x": 16,
+     "y": 144,
+     "width": 48,
+     "height": 16,
+     "rotation": 0,
+     "visible": true,
+     "properties": [
+      {
+       "name": "tiefe",
+       "type": "int",
+       "value": 152
+      },
+      {
+       "name": "kollision",
+       "type": "bool",
+       "value": true
+      }
+     ]
+    },
+    {
+     "id": 67,
+     "name": "rv5BankLang",
+     "type": "moebel",
+     "x": 320,
+     "y": 144,
+     "width": 48,
+     "height": 16,
+     "rotation": 0,
+     "visible": true,
+     "properties": [
+      {
+       "name": "tiefe",
+       "type": "int",
+       "value": 152
+      },
+      {
+       "name": "kollision",
+       "type": "bool",
+       "value": true
+      }
+     ]
+    },
+    {
+     "id": 68,
+     "name": "rv9GrossWeissLaeufer",
+     "type": "moebel",
+     "x": 208,
+     "y": 186,
      "width": 16,
      "height": 24,
      "rotation": 0,
@@ -3165,7 +2866,30 @@
       {
        "name": "tiefe",
        "type": "int",
-       "value": 106
+       "value": 202
+      },
+      {
+       "name": "kollision",
+       "type": "bool",
+       "value": true
+      }
+     ]
+    },
+    {
+     "id": 69,
+     "name": "rv9GrossSchwarzSpringer",
+     "type": "moebel",
+     "x": 224,
+     "y": 106,
+     "width": 16,
+     "height": 24,
+     "rotation": 0,
+     "visible": true,
+     "properties": [
+      {
+       "name": "tiefe",
+       "type": "int",
+       "value": 122
       },
       {
        "name": "kollision",

@@ -759,14 +759,14 @@
       "karten": [
         {
           "kennung": "wegCedarRiverton.zedernwald",
-          "datei": "karten/weg-cedar-riverton-1.json",
+          "datei": "karten/weg-cedar-riverton-zedernwald.json",
           "name": "ort.wegCedarRiverton.zedernwald",
           "innen": false,
           "musik": "musik/landstrasse.ogg"
         },
         {
           "kennung": "wegCedarRiverton.bahndamm",
-          "datei": "karten/weg-cedar-riverton-2.json",
+          "datei": "karten/weg-cedar-riverton-bahndamm.json",
           "name": "ort.wegCedarRiverton.bahndamm",
           "innen": false,
           "musik": "musik/landstrasse.ogg"

@@ -735,12 +735,337 @@
     },
     {
       "moebel": "rv8Ruderboot",
-      "feld": [59, 40],
+      "feld": [59, 41],
       "bauteil_ok": true
     },
     {
       "moebel": "rv5Pegelhaus",
       "feld": [68, 34]
+    },
+    {
+      "moebel": "sb8Kaimauer",
+      "feld": [1, 39],
+      "bauteil_ok": true
+    },
+    {
+      "moebel": "sb8KaimauerReifen",
+      "feld": [2, 39],
+      "bauteil_ok": true
+    },
+    {
+      "moebel": "sb8Kaimauer",
+      "feld": [3, 39],
+      "bauteil_ok": true
+    },
+    {
+      "moebel": "sb8Kaimauer",
+      "feld": [4, 39],
+      "bauteil_ok": true
+    },
+    {
+      "moebel": "sb8KaimauerLeiter",
+      "feld": [5, 39],
+      "bauteil_ok": true
+    },
+    {
+      "moebel": "sb8Kaimauer",
+      "feld": [6, 39],
+      "bauteil_ok": true
+    },
+    {
+      "moebel": "sb8Kaimauer",
+      "feld": [7, 39],
+      "bauteil_ok": true
+    },
+    {
+      "moebel": "sb8KaimauerReifen",
+      "feld": [8, 39],
+      "bauteil_ok": true
+    },
+    {
+      "moebel": "sb8Kaimauer",
+      "feld": [9, 39],
+      "bauteil_ok": true
+    },
+    {
+      "moebel": "sb8Kaimauer",
+      "feld": [10, 39],
+      "bauteil_ok": true
+    },
+    {
+      "moebel": "sb8Kaimauer",
+      "feld": [11, 39],
+      "bauteil_ok": true
+    },
+    {
+      "moebel": "sb8Kaimauer",
+      "feld": [12, 39],
+      "bauteil_ok": true
+    },
+    {
+      "moebel": "sb8Kaimauer",
+      "feld": [13, 39],
+      "bauteil_ok": true
+    },
+    {
+      "moebel": "sb8KaimauerReifen",
+      "feld": [14, 39],
+      "bauteil_ok": true
+    },
+    {
+      "moebel": "sb8Kaimauer",
+      "feld": [15, 39],
+      "bauteil_ok": true
+    },
+    {
+      "moebel": "sb8Kaimauer",
+      "feld": [16, 39],
+      "bauteil_ok": true
+    },
+    {
+      "moebel": "sb8KaimauerLeiter",
+      "feld": [17, 39],
+      "bauteil_ok": true
+    },
+    {
+      "moebel": "sb8Kaimauer",
+      "feld": [18, 39],
+      "bauteil_ok": true
+    },
+    {
+      "moebel": "sb8Kaimauer",
+      "feld": [19, 39],
+      "bauteil_ok": true
+    },
+    {
+      "moebel": "sb8KaimauerReifen",
+      "feld": [20, 39],
+      "bauteil_ok": true
+    },
+    {
+      "moebel": "sb8Kaimauer",
+      "feld": [21, 39],
+      "bauteil_ok": true
+    },
+    {
+      "moebel": "sb8Kaimauer",
+      "feld": [22, 39],
+      "bauteil_ok": true
+    },
+    {
+      "moebel": "sb8Kaimauer",
+      "feld": [23, 39],
+      "bauteil_ok": true
+    },
+    {
+      "moebel": "sb8Kaimauer",
+      "feld": [24, 39],
+      "bauteil_ok": true
+    },
+    {
+      "moebel": "sb8Kaimauer",
+      "feld": [25, 39],
+      "bauteil_ok": true
+    },
+    {
+      "moebel": "sb8KaimauerReifen",
+      "feld": [26, 39],
+      "bauteil_ok": true
+    },
+    {
+      "moebel": "sb8Kaimauer",
+      "feld": [27, 39],
+      "bauteil_ok": true
+    },
+    {
+      "moebel": "sb8Kaimauer",
+      "feld": [28, 39],
+      "bauteil_ok": true
+    },
+    {
+      "moebel": "sb8KaimauerLeiter",
+      "feld": [29, 39],
+      "bauteil_ok": true
+    },
+    {
+      "moebel": "sb8Kaimauer",
+      "feld": [30, 39],
+      "bauteil_ok": true
+    },
+    {
+      "moebel": "sb8Kaimauer",
+      "feld": [31, 39],
+      "bauteil_ok": true
+    },
+    {
+      "moebel": "sb8KaimauerReifen",
+      "feld": [32, 39],
+      "bauteil_ok": true
+    },
+    {
+      "moebel": "sb8Kaimauer",
+      "feld": [33, 39],
+      "bauteil_ok": true
+    },
+    {
+      "moebel": "sb8Kaimauer",
+      "feld": [34, 39],
+      "bauteil_ok": true
+    },
+    {
+      "moebel": "sb8Kaimauer",
+      "feld": [35, 39],
+      "bauteil_ok": true
+    },
+    {
+      "moebel": "sb8Kaimauer",
+      "feld": [36, 39],
+      "bauteil_ok": true
+    },
+    {
+      "moebel": "sb8Kaimauer",
+      "feld": [37, 39],
+      "bauteil_ok": true
+    },
+    {
+      "moebel": "sb8KaimauerReifen",
+      "feld": [38, 39],
+      "bauteil_ok": true
+    },
+    {
+      "moebel": "sb8Kaimauer",
+      "feld": [39, 39],
+      "bauteil_ok": true
+    },
+    {
+      "moebel": "sb8Kaimauer",
+      "feld": [40, 39],
+      "bauteil_ok": true
+    },
+    {
+      "moebel": "sb8KaimauerLeiter",
+      "feld": [41, 39],
+      "bauteil_ok": true
+    },
+    {
+      "moebel": "sb8Kaimauer",
+      "feld": [42, 39],
+      "bauteil_ok": true
+    },
+    {
+      "moebel": "sb8Kaimauer",
+      "feld": [43, 39],
+      "bauteil_ok": true
+    },
+    {
+      "moebel": "sb8KaimauerReifen",
+      "feld": [44, 39],
+      "bauteil_ok": true
+    },
+    {
+      "moebel": "sb8Kaimauer",
+      "feld": [45, 39],
+      "bauteil_ok": true
+    },
+    {
+      "moebel": "sb8Kaimauer",
+      "feld": [46, 39],
+      "bauteil_ok": true
+    },
+    {
+      "moebel": "sb8Kaimauer",
+      "feld": [47, 39],
+      "bauteil_ok": true
+    },
+    {
+      "moebel": "sb8Kaimauer",
+      "feld": [48, 39],
+      "bauteil_ok": true
+    },
+    {
+      "moebel": "sb8Kaimauer",
+      "feld": [49, 39],
+      "bauteil_ok": true
+    },
+    {
+      "moebel": "sb8Kaimauer",
+      "feld": [55, 39],
+      "bauteil_ok": true
+    },
+    {
+      "moebel": "sb8KaimauerReifen",
+      "feld": [56, 39],
+      "bauteil_ok": true
+    },
+    {
+      "moebel": "sb8Kaimauer",
+      "feld": [57, 39],
+      "bauteil_ok": true
+    },
+    {
+      "moebel": "sb8Kaimauer",
+      "feld": [58, 39],
+      "bauteil_ok": true
+    },
+    {
+      "moebel": "sb8Kaimauer",
+      "feld": [59, 39],
+      "bauteil_ok": true
+    },
+    {
+      "moebel": "sb8Kaimauer",
+      "feld": [60, 39],
+      "bauteil_ok": true
+    },
+    {
+      "moebel": "sb8Kaimauer",
+      "feld": [61, 39],
+      "bauteil_ok": true
+    },
+    {
+      "moebel": "sb8KaimauerReifen",
+      "feld": [62, 39],
+      "bauteil_ok": true
+    },
+    {
+      "moebel": "sb8Kaimauer",
+      "feld": [63, 39],
+      "bauteil_ok": true
+    },
+    {
+      "moebel": "sb8Kaimauer",
+      "feld": [64, 39],
+      "bauteil_ok": true
+    },
+    {
+      "moebel": "sb8KaimauerLeiter",
+      "feld": [65, 39],
+      "bauteil_ok": true
+    },
+    {
+      "moebel": "sb8Kaimauer",
+      "feld": [66, 39],
+      "bauteil_ok": true
+    },
+    {
+      "moebel": "sb8Kaimauer",
+      "feld": [67, 39],
+      "bauteil_ok": true
+    },
+    {
+      "moebel": "sb8KaimauerReifen",
+      "feld": [68, 39],
+      "bauteil_ok": true
+    },
+    {
+      "moebel": "sb8Kaimauer",
+      "feld": [69, 39],
+      "bauteil_ok": true
+    },
+    {
+      "moebel": "sb8Kaimauer",
+      "feld": [70, 39],
+      "bauteil_ok": true
     },
     {
       "moebel": "rv5Bruecke",

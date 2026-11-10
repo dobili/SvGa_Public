@@ -1919,6 +1919,36 @@
       "zustand": "gebraucht",
       "stil": "klassisch",
       "blick": "keine"
+    },
+    "sb8Kaimauer": {
+      "quelle": "hafen-16/ground/quay_front_wall.png",
+      "breite": 16,
+      "hoehe": 16,
+      "kollision": false,
+      "art": "boden_teil",
+      "zustand": "gebraucht",
+      "stil": "industrie",
+      "blick": "keine"
+    },
+    "sb8KaimauerLeiter": {
+      "quelle": "hafen-16/ground/quay_front_wall_ladder.png",
+      "breite": 16,
+      "hoehe": 16,
+      "kollision": false,
+      "art": "boden_teil",
+      "zustand": "gebraucht",
+      "stil": "industrie",
+      "blick": "keine"
+    },
+    "sb8KaimauerReifen": {
+      "quelle": "hafen-16/ground/quay_front_wall_tire.png",
+      "breite": 16,
+      "hoehe": 16,
+      "kollision": false,
+      "art": "boden_teil",
+      "zustand": "gebraucht",
+      "stil": "industrie",
+      "blick": "keine"
     }
   }
 }

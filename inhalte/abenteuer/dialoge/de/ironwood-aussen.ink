@@ -18,6 +18,7 @@
 EXTERNAL beginnePartie(begegnung)
 EXTERNAL setzeSzene(kennung)
 EXTERNAL reise(karte, ausloeser)
+EXTERNAL zahle(muenzen)
 EXTERNAL oeffneLaden(laden)
 
 VAR abfahrtSiliconGesehen = false
@@ -31,6 +32,7 @@ VAR hatFahrrad = false
 VAR hatLaterne = false
 // Lastkahn (L3): lastkahnFrei setzt Lockport, wenn Ruben Big Joes Brief liest.
 VAR lastkahnFrei = false
+VAR muenzen = 0
 VAR nadelIronwood = 0
 VAR kaufGesehen = false
 VAR einladungGesehen = false
@@ -264,8 +266,13 @@ Ein Brett aus Kreide, Figuren aus Steinen. Wir hatten nicht mehr, und wir hatten
 === anleger ===
 {lastkahnFrei:
     Am Anleger liegt die Ashford Belle, der Kahn aus Lockport. Kapitän Ruben rollt ein Seil auf. #sprecher:erzaehler
-    * [Mit der Ashford Belle nach Lockport]
+    „Die Fahrt kostet 5 Münzen“, sagt Ruben. #sprecher:erzaehler
+    * {muenzen >= 5} [Mit der Ashford Belle nach Lockport (5 Münzen)]
+        ~ zahle(5)
         ~ reise("lockport.aussen", "kai")
+        -> END
+    * {muenzen < 5} [Mitfahren (5 Münzen)]
+        Du hast nicht genug Münzen. Ruben zuckt die Schultern: „Komm wieder, wenn die Kasse stimmt.“ #sprecher:erzaehler
         -> END
     * [Hierbleiben]
         -> END

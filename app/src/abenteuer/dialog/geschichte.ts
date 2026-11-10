@@ -38,6 +38,8 @@ export interface Wirkungen {
   readonly zeigeVorfuehrung: (kennung: string) => void;
   /** Simultan aus partieformen.json (Runde 6): Duelle hintereinander, sobald der Dialog zu ist. */
   readonly beginneSimultan: (kennung: string) => void;
+  /** Bezahlt einen festen Preis in Münzen (Fahrpreis); reicht es nicht, geschieht nichts. */
+  readonly zahle: (muenzen: number) => void;
   /** Tönung der aktuellen Karte: nebel, nacht, abend, sepia, dunkel oder „keine“ (toenung.ts). */
   readonly setzeToenung: (name: string) => void;
 }
@@ -116,6 +118,7 @@ export class Geschichte {
       (karte: string, ausloeser: string) => wirkungen.reise(karte, ausloeser),
       false,
     );
+    this.story.BindExternalFunction("zahle", (n: number) => wirkungen.zahle(n), false);
     this.story.BindExternalFunction(
       "schalteSteckbrief",
       (g: string, z: number) => wirkungen.schalteSteckbrief(g, z),

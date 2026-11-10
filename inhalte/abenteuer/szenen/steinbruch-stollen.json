@@ -3,40 +3,50 @@
   "datei": "karten/steinbruch-stollen.json",
   "art": "innen",
   "toenung": "dunkel",
-  "beschreibung": "Stollen 2 im alten Steinbruch: ein enger Gang im Fels, kalt und still, nur Tropfen fallen. Vom Eingang im Süden, durch den Tageslicht hereinfällt, läuft der Hauptgang mit einem alten Lorengleis nach Norden; Stützbalken aus Holz halten die Decke. An einer Gabelung geht links ein Seitenstollen zu einer Nische, in der Mama als Kind ihre Blechdose versteckt hat; rechts weitet sich der Gang zur Kaverne mit Pfütze, Geröll und einer abgestellten Lore, in der jedes Wort widerhallt. Hauptgang gerade nach Norden, Seitenstollen nach Nordwesten, Kaverne im Nordosten wie im Ortsplan.",
+  "beschreibung": "Stollen 2 im alten Steinbruch: ein enger Gang im Fels, kalt und still, nur Tropfen fallen. Vom Eingang im Süden, durch den Tageslicht hereinfällt, läuft der Hauptgang mit einem alten Lorengleis nach Norden; Stützbalken aus Holz halten die Decke. An einer Gabelung geht links ein Seitenstollen zu einer Nische, in der Mama als Kind ihre Blechdose versteckt hat; rechts weitet sich der Gang zur Kaverne mit Pfütze, Geröll und einer abgestellten Lore, in der jedes Wort widerhallt. Variante B, die schlichtere: nackter Felsboden statt Schotter, kurzer Hauptgang, die Gabelung schon bei Reihe 17, Kaverne direkt im Norden, kantige Brocken statt Geröll.",
   "wand": "fels",
-  "boden": "schotter",
+  "boden": "felsboden",
   "boeden": {
     "f": "felsboden"
   },
   "zustand": ["neu", "gebraucht", "alt"],
   "raster": [
-    "   ########            ###############  ",
-    "   ########            ###############  ",
-    "   ########            ###############  ",
-    "   #......#            #.............#  ",
-    "   #......#            #.............#  ",
-    "   #......#            #.............#  ",
-    "   #......#      #######.............#  ",
-    "   #####..#      #######.......fff...#  ",
-    "       #..#      #######.......fff...#  ",
-    "       #..#      #...................#  ",
-    "       #..########...................#  ",
-    "       #..########..##################  ",
-    "       #..########..#                   ",
-    "       #............#                   ",
-    "       #............#                   ",
-    "       ###########..#                   ",
-    "                 #..#                   ",
-    "                 #..#                   ",
-    "                 #..#                   ",
-    "                 #..#                   ",
+    "  #########    #################        ",
+    "  #########    #################        ",
+    "  #########    #################        ",
+    "  #.......#    #...............#        ",
+    "  #.......#    #...............#        ",
+    "  #.......#    #..........ff...#        ",
+    "  #.......#    #...............#        ",
+    "  ####..###    #...............#        ",
+    "     #..#      #...............#        ",
+    "     #..#      ###..############        ",
+    "     #..#        #..#                   ",
+    "     #..#        #..#                   ",
+    "     #..#        #..#                   ",
+    "     #..#        #..#                   ",
+    "     #..##########..#                   ",
+    "     #..##########..#                   ",
+    "     #..##########..#                   ",
+    "     #..............#                   ",
+    "     #..............#                   ",
+    "     #############..#                   ",
     "                 #..#                   ",
     "                 #..#                   ",
     "                 #..#                   ",
     "                 #..#                   "
   ],
   "objekte": [
+    {
+      "moebel": "st5GleisSenkrecht",
+      "feld": [18, 9],
+      "bauteil_ok": true
+    },
+    {
+      "moebel": "st5GleisSenkrecht",
+      "feld": [18, 10],
+      "bauteil_ok": true
+    },
     {
       "moebel": "st5GleisSenkrecht",
       "feld": [18, 11],
@@ -99,22 +109,22 @@
     },
     {
       "moebel": "st5Stuetzbalken",
-      "feld": [17, 12],
+      "feld": [17, 11],
       "an_wand": true
     },
     {
       "moebel": "st5Stuetzbalken",
-      "feld": [20, 12],
+      "feld": [20, 11],
       "an_wand": true
     },
     {
       "moebel": "st5Stuetzbalken",
-      "feld": [17, 16],
+      "feld": [17, 15],
       "an_wand": true
     },
     {
       "moebel": "st5Stuetzbalken",
-      "feld": [20, 16],
+      "feld": [20, 15],
       "an_wand": true
     },
     {
@@ -128,164 +138,188 @@
       "an_wand": true
     },
     {
-      "moebel": "st5PfuetzeGross",
-      "feld": [31, 7]
+      "moebel": "st5PfuetzeKlein",
+      "feld": [26, 5]
     },
     {
       "moebel": "st5Lore",
-      "feld": [26, 8]
+      "feld": [22, 6]
     },
     {
-      "moebel": "fels",
-      "feld": [34, 4]
-    },
-    {
-      "moebel": "felsKlein",
-      "feld": [28, 4]
-    },
-    {
-      "moebel": "felsKlein",
-      "feld": [5, 4]
-    },
-    {
-      "moebel": "fels",
-      "feld": [6, 5]
-    },
-    {
-      "moebel": "fels",
-      "feld": [24, 3]
-    },
-    {
-      "moebel": "felsKlein",
-      "feld": [25, 3]
-    },
-    {
-      "moebel": "felsKlein",
-      "feld": [27, 3]
-    },
-    {
-      "moebel": "fels",
-      "feld": [28, 3]
-    },
-    {
-      "moebel": "fels",
-      "feld": [30, 3]
-    },
-    {
-      "moebel": "felsKlein",
-      "feld": [31, 3]
-    },
-    {
-      "moebel": "felsKlein",
-      "feld": [33, 3]
-    },
-    {
-      "moebel": "fels",
-      "feld": [34, 3]
-    },
-    {
-      "moebel": "fels",
-      "feld": [36, 3]
-    },
-    {
-      "moebel": "felsKlein",
-      "feld": [26, 10]
-    },
-    {
-      "moebel": "fels",
-      "feld": [27, 10]
-    },
-    {
-      "moebel": "fels",
-      "feld": [29, 10]
-    },
-    {
-      "moebel": "felsKlein",
-      "feld": [30, 10]
-    },
-    {
-      "moebel": "felsKlein",
-      "feld": [32, 10]
-    },
-    {
-      "moebel": "fels",
-      "feld": [33, 10]
-    },
-    {
-      "moebel": "fels",
-      "feld": [35, 10]
-    },
-    {
-      "moebel": "felsKlein",
-      "feld": [36, 10]
-    },
-    {
-      "moebel": "felsKlein",
-      "feld": [24, 5]
-    },
-    {
-      "moebel": "fels",
-      "feld": [24, 6]
-    },
-    {
-      "moebel": "fels",
-      "feld": [24, 8]
-    },
-    {
-      "moebel": "felsKlein",
-      "feld": [36, 5]
-    },
-    {
-      "moebel": "fels",
-      "feld": [36, 6]
-    },
-    {
-      "moebel": "fels",
-      "feld": [36, 8]
-    },
-    {
-      "moebel": "felsKlein",
-      "feld": [36, 9]
-    },
-    {
-      "moebel": "fels",
-      "feld": [4, 3]
-    },
-    {
-      "moebel": "felsKlein",
-      "feld": [5, 3]
-    },
-    {
-      "moebel": "felsKlein",
-      "feld": [7, 3]
-    },
-    {
-      "moebel": "fels",
-      "feld": [8, 3]
-    },
-    {
-      "moebel": "fels",
-      "feld": [4, 6]
-    },
-    {
-      "moebel": "felsKlein",
-      "feld": [5, 6]
-    },
-    {
-      "moebel": "felsKlein",
-      "feld": [7, 6]
-    },
-    {
-      "moebel": "fels",
+      "moebel": "scFelsGross",
       "feld": [4, 4]
     },
     {
-      "moebel": "felsKlein",
-      "feld": [4, 5]
+      "moebel": "st5Werkzeugkiste",
+      "feld": [24, 4]
     },
     {
-      "moebel": "felsKlein",
-      "feld": [9, 5]
+      "moebel": "scFelsMittel",
+      "feld": [28, 6]
+    },
+    {
+      "moebel": "st5Bauholz",
+      "feld": [25, 5]
+    },
+    {
+      "moebel": "scFelsGross",
+      "feld": [19, 4]
+    },
+    {
+      "moebel": "scFelsMittel",
+      "feld": [6, 4]
+    },
+    {
+      "moebel": "mf4FelsHoch",
+      "feld": [21, 4]
+    },
+    {
+      "moebel": "mf4FelsHoch",
+      "feld": [17, 7]
+    },
+    {
+      "moebel": "caFaesser",
+      "feld": [28, 3]
+    },
+    {
+      "moebel": "mf4Fels",
+      "feld": [16, 3]
+    },
+    {
+      "moebel": "wc5SteinB",
+      "feld": [17, 3]
+    },
+    {
+      "moebel": "wc5SteinB",
+      "feld": [19, 3]
+    },
+    {
+      "moebel": "mf4Fels",
+      "feld": [20, 3]
+    },
+    {
+      "moebel": "mf4Fels",
+      "feld": [22, 3]
+    },
+    {
+      "moebel": "wc5SteinB",
+      "feld": [23, 3]
+    },
+    {
+      "moebel": "wc5SteinB",
+      "feld": [25, 3]
+    },
+    {
+      "moebel": "mf4Fels",
+      "feld": [26, 3]
+    },
+    {
+      "moebel": "wc5SteinB",
+      "feld": [29, 3]
+    },
+    {
+      "moebel": "wc5SteinB",
+      "feld": [16, 8]
+    },
+    {
+      "moebel": "mf4Fels",
+      "feld": [17, 8]
+    },
+    {
+      "moebel": "wc5SteinB",
+      "feld": [20, 8]
+    },
+    {
+      "moebel": "wc5SteinB",
+      "feld": [22, 8]
+    },
+    {
+      "moebel": "mf4Fels",
+      "feld": [23, 8]
+    },
+    {
+      "moebel": "mf4Fels",
+      "feld": [25, 8]
+    },
+    {
+      "moebel": "wc5SteinB",
+      "feld": [26, 8]
+    },
+    {
+      "moebel": "wc5SteinB",
+      "feld": [28, 8]
+    },
+    {
+      "moebel": "mf4Fels",
+      "feld": [29, 8]
+    },
+    {
+      "moebel": "mf4Fels",
+      "feld": [16, 4]
+    },
+    {
+      "moebel": "wc5SteinB",
+      "feld": [16, 5]
+    },
+    {
+      "moebel": "wc5SteinB",
+      "feld": [16, 7]
+    },
+    {
+      "moebel": "mf4Fels",
+      "feld": [30, 4]
+    },
+    {
+      "moebel": "mf4Fels",
+      "feld": [30, 6]
+    },
+    {
+      "moebel": "wc5SteinB",
+      "feld": [30, 7]
+    },
+    {
+      "moebel": "mf4Fels",
+      "feld": [3, 3]
+    },
+    {
+      "moebel": "wc5SteinB",
+      "feld": [4, 3]
+    },
+    {
+      "moebel": "wc5SteinB",
+      "feld": [6, 3]
+    },
+    {
+      "moebel": "mf4Fels",
+      "feld": [7, 3]
+    },
+    {
+      "moebel": "mf4Fels",
+      "feld": [9, 3]
+    },
+    {
+      "moebel": "wc5SteinB",
+      "feld": [3, 6]
+    },
+    {
+      "moebel": "wc5SteinB",
+      "feld": [5, 6]
+    },
+    {
+      "moebel": "mf4Fels",
+      "feld": [8, 6]
+    },
+    {
+      "moebel": "wc5SteinB",
+      "feld": [9, 6]
+    },
+    {
+      "moebel": "wc5SteinB",
+      "feld": [3, 5]
+    },
+    {
+      "moebel": "mf4Fels",
+      "feld": [9, 4]
     }
   ],
   "ausloeser": [

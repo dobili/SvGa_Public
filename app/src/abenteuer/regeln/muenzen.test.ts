@@ -2,7 +2,7 @@
 import { describe, expect, it } from "vitest";
 import karten from "../../../../inhalte/abenteuer/karten.json";
 import type { Kartensorte } from "../schnittstelle/karten";
-import { kaufe, kaufhindernis } from "./muenzen";
+import { bezahle, kaufe, kaufhindernis } from "./muenzen";
 import { leererAbenteuerstand } from "./spielstand";
 
 const SORTEN = karten.karten as unknown as readonly Kartensorte[];
@@ -30,6 +30,21 @@ describe("Läden", () => {
     const reich = kaufe({ ...STAND, muenzen: 200 }, rad, SORTEN, JETZT);
     expect(reich.gegenstaende).toEqual(["fahrrad"]);
     expect(kaufhindernis(reich, rad, SORTEN)).toBe("schonDa");
+  });
+});
+
+describe("Bezahlen (Fahrpreis des Lastkahns)", () => {
+  it("zieht den Preis ab, wenn das Geld reicht", () => {
+    expect(bezahle({ ...STAND, muenzen: 12 }, 5).muenzen).toBe(7);
+    expect(bezahle({ ...STAND, muenzen: 5 }, 5).muenzen).toBe(0);
+  });
+
+  it("lässt den Stand bei zu wenig Münzen oder ungültigem Preis unverändert", () => {
+    const arm = { ...STAND, muenzen: 3 };
+    expect(bezahle(arm, 5)).toBe(arm);
+    expect(bezahle(STAND, 0)).toBe(STAND);
+    expect(bezahle(STAND, -5)).toBe(STAND);
+    expect(bezahle(STAND, Number.NaN)).toBe(STAND);
   });
 });
 

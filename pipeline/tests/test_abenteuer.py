@@ -160,6 +160,12 @@ def test_querverweise_stimmen():
             if schluessel not in texte:
                 fehler.append(f"{fund['kennung']}: Text {schluessel} fehlt")
     rundenkennungen = {r["kennung"] for r in runden}
+    # Simultan und Gedächtnisstellung melden beim Bestehen dasselbe Quest-Ereignis wie eine Runde
+    # (mittel-2, 5e1afc85); ihre Kennungen stehen in partieformen.json.
+    partieformen = json.loads((INHALTE / "partieformen.json").read_text(encoding="utf-8"))
+    questrunden = rundenkennungen | {
+        p["kennung"] for art in ("simultan", "gedaechtnis") for p in partieformen.get(art, [])
+    }
     for runde in runden:
         ort = next((o for o in orte if o["kennung"] == runde["ort"]), None)
         if ort is None:
@@ -182,7 +188,7 @@ def test_querverweise_stimmen():
     for quest in quests:
         for schritt in quest["schritte"]:
             ereignis = schritt["ereignis"]
-            if ereignis["art"] == "aufgaben" and ereignis["runde"] not in rundenkennungen:
+            if ereignis["art"] == "aufgaben" and ereignis["runde"] not in questrunden:
                 fehler.append(f"{quest['kennung']}: Runde {ereignis['runde']} fehlt in runden.json")
     for quest in quests:
         for schritt in quest["schritte"]:

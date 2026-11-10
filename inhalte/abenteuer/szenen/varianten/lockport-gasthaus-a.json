@@ -284,5 +284,6 @@
   ],
   "zustand": ["neu", "gebraucht", "alt"],
   "stil": ["rustikal", "klassisch", "modern", "einfach", "laendlich"],
-  "datei": "karten/varianten/lockport-gasthaus-a.json"
+  "datei": "karten/varianten/lockport-gasthaus-a.json",
+  "variante": "a"
 }

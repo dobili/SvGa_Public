@@ -2,23 +2,25 @@
   "karte": "mapleFalls.clubraum",
   "datei": "karten/maple-falls-clubraum.json",
   "art": "innen",
-  "beschreibung": "Variante C, reicher: ein Clubraum, den das Team liebt. Ein großer blauer Teppich unter den Spieltischen; vier dunkle runde Tische stehen versetzt, auf jedem ein Brett, an jedem zwei grüne Schulstühle, die zum Tisch schauen. Links ein weißer Ausstellungstisch mit zwei Pokalen, darunter der von 1994. An der Nordwand zwei Fenster, Weltkarte, Tafel, das Plakat „Erst zählen“ und eine Pinnwand. Rechts das große grüne Pult von Coach Delgado mit dem Globus, an der Ostwand zwei hohe Bücherregale voller Schachbücher, dazu drei Pflanzen. Sam wartet am ersten Tisch, das Brett ohne Dame liegt auf dem hinteren rechten Tisch. Unten die Tür mit Fußmatte; eine Schülerin räumt Figuren ein.",
+  "beschreibung": "Der Clubraum des Schachclubs von Maple Falls in der Schule, seit Runde 8 so breit wie ein großes Klassenzimmer (26 x 15, KARTENREGELN 10.56): Die Schule ist außen das größte Gebäude des Orts, und am Clubkampf spielen sechs Bretter gleichzeitig. Ein großer blauer Teppich unter sechs dunklen runden Tischen in zwei versetzten Reihen, auf jedem ein Brett, an jedem zwei grüne Schulstühle. Links ein weißer Ausstellungstisch mit zwei Pokalen, darunter der von 1994. An der Nordwand drei Fenster, Weltkarte, Tafel, das Plakat „Erst zählen“ und eine Pinnwand; in der Mitte das große grüne Pult von Coach Delgado mit dem Globus, an der Ostwand zwei hohe Bücherregale voller Schachbücher, Pflanzen in den Ecken. Vor der Tür bleibt ein breiter Gang frei, wo Eltern auf ihre Kinder warten. Sam wartet am ersten Tisch, das Brett ohne Dame liegt auf dem hinteren Tisch.",
   "wand": "creme",
   "boden": "holzHell",
   "raster": [
-    "##################",
-    "##################",
-    "##################",
-    "#................#",
-    "#................#",
-    "#ttttttttttttt...#",
-    "#ttttttttttttt...#",
-    "#ttttttttttttt...#",
-    "#ttttttttttttt...#",
-    "#ttttttttttttt...#",
-    "#ttttttttttttt...#",
-    "#................#",
-    "#########.########"
+    "##########################",
+    "##########################",
+    "##########################",
+    "#........................#",
+    "#........................#",
+    "#ttttttttttttttttttttt...#",
+    "#ttttttttttttttttttttt...#",
+    "#ttttttttttttttttttttt...#",
+    "#ttttttttttttttttttttt...#",
+    "#ttttttttttttttttttttt...#",
+    "#ttttttttttttttttttttt...#",
+    "#........................#",
+    "#........................#",
+    "#........................#",
+    "#########.################"
   ],
   "objekte": [
     {
@@ -69,11 +71,11 @@
     },
     {
       "moebel": "mf8RegalHoch",
-      "feld": [15, 2]
+      "feld": [23, 2]
     },
     {
       "moebel": "mf8RegalHoch2",
-      "feld": [15, 6]
+      "feld": [23, 6]
     },
     {
       "moebel": "mf8RundtischDunkel",
@@ -161,34 +163,95 @@
     },
     {
       "moebel": "mf2Pflanze",
-      "feld": [16, 9]
+      "feld": [24, 9]
     },
     {
       "moebel": "mf4Palme",
-      "feld": [14, 9]
+      "feld": [22, 9]
     },
     {
       "moebel": "mf5TuerSuedHolz",
-      "feld": [9, 12],
+      "feld": [9, 14],
       "an_wand": true
     },
     {
       "moebel": "mf4Fussmatte",
-      "feld": [9, 11],
+      "feld": [9, 13],
       "versatz": [0, 8]
+    },
+    {
+      "moebel": "mf2Fenster",
+      "feld": [19, 1],
+      "an_wand": true
+    },
+    {
+      "moebel": "mf8RundtischDunkel",
+      "feld": [16, 5],
+      "id": "t5"
+    },
+    {
+      "moebel": "mf3BrettKleinFiguren",
+      "feld": [0, 0],
+      "auf": "t5"
+    },
+    {
+      "moebel": "mf8SchulstuhlRechts",
+      "feld": [15, 5],
+      "zu": "t5"
+    },
+    {
+      "moebel": "mf8SchulstuhlLinks",
+      "feld": [18, 5],
+      "zu": "t5"
+    },
+    {
+      "moebel": "mf8RundtischDunkel",
+      "feld": [17, 8],
+      "id": "t6"
+    },
+    {
+      "moebel": "mf3BrettKleinFiguren",
+      "feld": [0, 0],
+      "auf": "t6"
+    },
+    {
+      "moebel": "mf8SchulstuhlRechts",
+      "feld": [16, 8],
+      "zu": "t6"
+    },
+    {
+      "moebel": "mf8SchulstuhlLinks",
+      "feld": [19, 8],
+      "zu": "t6"
+    },
+    {
+      "moebel": "mf2Pflanze",
+      "feld": [1, 11]
+    },
+    {
+      "moebel": "mf8Kommode",
+      "feld": [16, 2]
+    },
+    {
+      "moebel": "mf8RegalRot",
+      "feld": [19, 2]
+    },
+    {
+      "moebel": "mf8Sideboard",
+      "feld": [21, 2]
     }
   ],
   "ausloeser": [
     {
       "name": "start",
-      "feld": [9, 10],
+      "feld": [9, 13],
       "eigenschaften": {
         "richtung": "oben"
       }
     },
     {
       "name": "schule",
-      "feld": [9, 12]
+      "feld": [9, 14]
     },
     {
       "name": "pokalvitrine",

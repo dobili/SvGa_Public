@@ -332,41 +332,14 @@
       "zustand": "gebraucht",
       "stil": "modern"
     },
-    "sc8HaeuschenRot": {
-      "quelle": "spiel/serene/serene_40.png",
-      "breite": 64,
-      "hoehe": 64,
+    "sc8Stall": {
+      "quelle": "modern-farm/Single_Files_16x16/0_Complete_Tileset_Singles_16x16/Stable_Example_Outside_16x16.png",
+      "breite": 160,
+      "hoehe": 128,
       "kollision": true,
       "art": "haus",
       "zustand": "gebraucht",
-      "stil": "rustikal"
-    },
-    "sc8HaeuschenGruen": {
-      "quelle": "spiel/serene/serene_58.png",
-      "breite": 64,
-      "hoehe": 64,
-      "kollision": true,
-      "art": "haus",
-      "zustand": "gebraucht",
-      "stil": "rustikal"
-    },
-    "sc8HaeuschenBlau": {
-      "quelle": "spiel/serene/serene_77.png",
-      "breite": 80,
-      "hoehe": 64,
-      "kollision": true,
-      "art": "haus",
-      "zustand": "gebraucht",
-      "stil": "rustikal"
-    },
-    "sc8HaeuschenMoos": {
-      "quelle": "spiel/serene/serene_72.png",
-      "breite": 80,
-      "hoehe": 64,
-      "kollision": true,
-      "art": "haus",
-      "zustand": "gebraucht",
-      "stil": "rustikal"
+      "stil": "laendlich"
     }
   }
 }

@@ -93,10 +93,11 @@ Osten liegt ein Vorplatz mit Postamt (A), Sheriffbüro (B) oder Gemischtwarenlad
 Kulissenhäuser ohne Innenraum: Wohnwagen und eine Blechhütte hinter dem Hof, Containerhäuser,
 in B ein Pumpenhaus am Bahnsteig. Ihre Türen zeigen zum Gehweg, zum Hof oder zum Vorplatz.
 
-**Leben (Regel 10.53):** 12 Statisten, 7 davon ansprechbar (`statist.desertSprings.aussen.*`):
+**Leben (Regel 10.53):** 12 Statisten, 8 davon ansprechbar (`statist.desertSprings.aussen.*`):
 Touristen am Bahnhof, Busgast, Postbotin (Fernschach per Postkarte), Hilfssheriff (Läufer in
 Schlangenlinien, mit Antwort von Ambrose), Tankwart (Rochade), Rentnerin (Schah und schachmatt),
-Kind (Gabel). Ohne Satz: Händlerin, Mechaniker, Trucker, Motelgast, Wanderin. Tiere: Hund,
+Kind (Gabel), Händlerin vor dem Antiquariat (Saavedra-Stellung 1895, zeigt die Vorführung
+`saavedraStellung`). Ohne Satz: Mechaniker, Trucker, Motelgast, Wanderin. Tiere: Hund,
 Eidechse, Geier, Roadrunner, Katze, Hühner.
 
 ### Weg 6 in Runde 7: Ereignisort und Leben

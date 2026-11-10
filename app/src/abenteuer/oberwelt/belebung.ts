@@ -129,14 +129,20 @@ export function passtZurStunde(wann: Tageszeit, stunde: number): boolean {
   return von < bis ? stunde >= von && stunde < bis : stunde >= von || stunde < bis;
 }
 
+/** Höchste Nummer weiterer Sätze eines Statisten (`.1` bis `.9`). */
+const MEISTE_SAETZE = 9;
+
 /**
  * Die Sätze eines Statisten in der Reihenfolge des Ansprechens: der Schlüssel selbst (wenn es ihn
- * gibt), dann `.1`, `.2` … solange vorhanden (Dokument 16, Abschnitt 3.1).
- * Beispiel: „statist.x.a“ mit Texten für „statist.x.a“ und „statist.x.a.1“ → beide, in dieser Folge.
+ * gibt), dann `.1` bis `.9`, soweit vorhanden (Dokument 16, Abschnitt 3.1). Lücken werden
+ * übersprungen, weil die Helfer den zweiten Satz meist `.2` nennen und `.1` weglassen.
+ * Beispiel: „statist.x.a“ mit Texten für „statist.x.a“ und „statist.x.a.2“ → beide, in dieser Folge.
  */
 export function saetzeVon(schluessel: string, gibt: (s: string) => boolean): string[] {
   const saetze = gibt(schluessel) ? [schluessel] : [];
-  for (let i = 1; gibt(`${schluessel}.${i}`); i++) saetze.push(`${schluessel}.${i}`);
+  for (let i = 1; i <= MEISTE_SAETZE; i++) {
+    if (gibt(`${schluessel}.${i}`)) saetze.push(`${schluessel}.${i}`);
+  }
   return saetze;
 }
 

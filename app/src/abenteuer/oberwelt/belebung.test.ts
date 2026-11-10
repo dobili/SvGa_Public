@@ -75,7 +75,7 @@ describe("passtZurStunde", () => {
 });
 
 describe("Satzfolge", () => {
-  const texte = new Set(["s.a", "s.a.1", "s.a.2", "s.a.ambrose", "s.b.1"]);
+  const texte = new Set(["s.a", "s.a.1", "s.a.2", "s.a.ambrose", "s.b.1", "s.c", "s.c.2"]);
   const gibt = (s: string) => texte.has(s);
 
   it("zeigt die Sätze nacheinander und dann reihum", () => {
@@ -86,6 +86,8 @@ describe("Satzfolge", () => {
 
   it("beginnt mit .1, wenn es den Schlüssel selbst nicht gibt", () => {
     expect(saetzeVon("s.b", gibt)).toEqual(["s.b.1"]);
+    // Lücke: Die Helfer schreiben den zweiten Satz als .2 ohne .1.
+    expect(saetzeVon("s.c", gibt)).toEqual(["s.c", "s.c.2"]);
   });
 
   it("liefert Ambroses Antwort, wenn es sie gibt", () => {

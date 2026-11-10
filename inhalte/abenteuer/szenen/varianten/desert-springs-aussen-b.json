@@ -621,8 +621,10 @@
       "eigenschaften": {
         "von": "25,17",
         "bis": "25,17",
-        "tun": "fegt den Sand von der Veranda",
-        "wann": "tag"
+        "tun": "fegt den Sand von der Veranda des Antiquariats",
+        "wann": "tag",
+        "sagt": "statist.desertSprings.aussen.haendlerin",
+        "zeigt": "saavedraStellung"
       }
     },
     {

@@ -7691,12 +7691,22 @@
       {
        "name": "tun",
        "type": "string",
-       "value": "fegt den Sand von der Veranda"
+       "value": "fegt den Sand von der Veranda des Antiquariats"
       },
       {
        "name": "wann",
        "type": "string",
        "value": "tag"
+      },
+      {
+       "name": "sagt",
+       "type": "string",
+       "value": "statist.desertSprings.aussen.haendlerin"
+      },
+      {
+       "name": "zeigt",
+       "type": "string",
+       "value": "saavedraStellung"
       }
      ]
     },

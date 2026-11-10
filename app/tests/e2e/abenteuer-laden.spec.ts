@@ -3,9 +3,13 @@
  * Münzen steht vor Patels Kiosk; der Dialog öffnet den Laden, „Zweite Chance“ kostet 20, danach ist
  * Flüstern zu teuer, die Münzen oben rechts zeigen den neuen Stand.
  */
+import { readFileSync } from "node:fs";
 import { expect, test } from "@playwright/test";
 import { feldDarunter } from "./abenteuer-karte";
 import { starteImBrowser } from "./hilfen";
+
+/** So viele Zeichen eines Satzes vergleicht der Test (die Sprechblase bricht längere Sätze um). */
+const SATZANFANG = 30;
 
 /** Spielstand im Park, eine Kachel unter dem Kiosk (Feld aus der Karte), Blick nach oben. */
 const STAND = {
@@ -105,9 +109,14 @@ test("Statist im Bergladen: ansprechen, Satz erscheint, beim nächsten Mal der n
   await expect(aktion).toHaveText("Sprechen", { timeout: 30000 });
   await aktion.click();
   const blase = page.getByTestId("abenteuer-sprechblase");
-  await expect(blase).toContainText("Die Karten vom Gipfelweg gehen am besten.");
+  // Die Sätze kommen aus den Texten, damit die Helfer sie umschreiben können (erster Satz, dann .2).
+  const texte = JSON.parse(
+    readFileSync(new URL("../../../inhalte/abenteuer/texte/de.json", import.meta.url), "utf-8"),
+  ) as Record<string, string>;
+  const satz = (schluessel: string) => (texte[schluessel] ?? schluessel).slice(0, SATZANFANG);
+  await expect(blase).toContainText(satz("statist.summitCity.bergladen.ladenhilfe"));
   await aktion.click();
-  await expect(blase).toContainText("Im Winter verkaufen wir Schneeschuhe");
+  await expect(blase).toContainText(satz("statist.summitCity.bergladen.ladenhilfe.2"));
   await blase.getByRole("button", { name: "Weiter" }).click();
   await expect(blase).toHaveCount(0);
 });

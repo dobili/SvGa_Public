@@ -972,10 +972,8 @@
   "vorfuehrung.laskerThomas.13": "Turm h2 gibt Schach. Der König muss noch ein Feld weiter.",
   "vorfuehrung.laskerThomas.14": "Kg1: Weiter geht es nicht.",
   "vorfuehrung.laskerThomas.15": "Der weiße König macht einen kleinen Schritt, und das ist Matt. Ein König setzt den anderen matt!",
-  "statist.summitCity.bergladen.ladenhilfe": "Die Karten vom Gipfelweg gehen am besten. Alle wollen hinauf, und keiner fragt, wie man wieder herunterkommt.",
-  "statist.summitCity.bergladen.ladenhilfe.1": "Im Winter verkaufen wir Schneeschuhe, im Sommer Sonnencreme. Die Berge bleiben dieselben.",
-  "statist.summitCity.bergladen.kunde": "Mein Lieblingszug? Der Turm auf die vorletzte Reihe. Von dort oben sieht man alles, wie vom Gipfel.",
-  "statist.summitCity.bergladen.kunde.1": "Dieser Rucksack hat vierzehn Fächer. Ich werde nie wieder etwas finden.",
+  "statist.summitCity.bergladen.ladenhilfe": "Im Sommer verkaufen wir Wanderkarten, im Winter Handschuhe. Schachbretter verkaufen wir das ganze Jahr. Hier oben wird auf jeder Hütte gespielt.",
+  "statist.summitCity.bergladen.kunde": "Ich spiele Damengambit. Ich gebe einen Bauern her und bekomme dafür die Mitte. Nur nimmt mein Bruder den Bauern nie.",
   "oberwelt.ambroseSagt": "{name}: {satz}",
   "statist.desertSprings.aussen.touristen": "Wir fahren die ganze alte Straße ab, von Anfang bis Ende. Mein Mann hält an jedem Schild. An jedem.",
   "statist.desertSprings.aussen.busgast": "Im neuen Bus hängt ein Bildschirm, der mit dir Schach spielt, solange du fährst. Er gewinnt immer. Ich schaue lieber aus dem Fenster.",
@@ -1163,5 +1161,9 @@
   "statist.lockport.gasthaus.fischerAmTresen": "Die Französische Verteidigung hat ihren Namen von einer Partie London gegen Paris, 1834, per Brief. Die Briefe brauchten Wochen. Auf meinen Fang warte ich auch Wochen.",
   "statist.lockport.gasthaus.wanderinBeimEssen": "Die Suppe hier ist die beste zwischen Riverton und Ironwood. Henrik sagt, das Geheimnis ist Geduld. Mein Schachlehrer sagt dasselbe, nur ist seine Suppe kalt.",
   "statist.ghostTown.saloon.touristMitKarte": "Hier haben die Goldgräber Karten gespielt, steht auf dem Schild. Ich wette, einer hat heimlich Schach gespielt. Es gibt immer einen.",
-  "statist.ghostTown.saloon.touristinMitHut": "Bobby Fischer war mit vierzehn Meister der USA. Mit vierzehn wollte ich Cowboy werden. Jetzt stehe ich in einem Saloon. Fast geschafft."
+  "statist.ghostTown.saloon.touristinMitHut": "Bobby Fischer war mit vierzehn Meister der USA. Mit vierzehn wollte ich Cowboy werden. Jetzt stehe ich in einem Saloon. Fast geschafft.",
+  "statist.desertSprings.aussen.haendlerin": "Ein Pfarrer in Glasgow hat 1895 gezeigt: In dieser Stellung gewinnt nur ein Turm. Mit einer Dame wäre es patt. Das Heft dazu liegt bei mir im Laden.",
+  "statist.hochebene.schule.vater": "Eine Studie von Réti, 1921: Der König holt einen Bauern ein, der eigentlich schon weg ist. Er geht schräg und verfolgt zwei Ziele zugleich. Das zeige ich meiner Tochter vor jedem Diplom.",
+  "statist.summitCity.aussen.blitzspieler": "Linares 1998: Schirow opfert seinen einzigen Läufer, damit sein König durchkommt. Viele halten das für den erstaunlichsten Zug überhaupt.",
+  "statist.summitCity.bergladen.ladenhilfe.2": "Die meisten kaufen eine Karte und fragen dann nach dem kürzesten Weg. Den gibt es nicht. Nur den schönsten."
 }

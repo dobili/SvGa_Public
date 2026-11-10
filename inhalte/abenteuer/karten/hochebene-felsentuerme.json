@@ -9172,7 +9172,7 @@
      "id": 10,
      "name": "pferd",
      "type": "tier",
-     "x": 1008,
+     "x": 992,
      "y": 288,
      "width": 16,
      "height": 16,
@@ -9182,12 +9182,12 @@
       {
        "name": "von",
        "type": "string",
-       "value": "63,18"
+       "value": "62,18"
       },
       {
        "name": "bis",
        "type": "string",
-       "value": "66,18"
+       "value": "65,18"
       },
       {
        "name": "verhalten",

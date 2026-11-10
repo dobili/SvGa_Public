@@ -679,6 +679,15 @@
       "art": "zaun",
       "zustand": "gebraucht",
       "stil": "laendlich"
+    },
+    "wc8Trittstein": {
+      "quelle": "modern-exteriors/Modern_Exteriors_16x16/ME_Theme_Sorter_16x16/11_Camping_Singles_16x16/ME_Singles_Camping_16x16_Rock_2.png",
+      "breite": 16,
+      "hoehe": 16,
+      "kollision": false,
+      "art": "stein",
+      "zustand": "neu",
+      "stil": "einfach"
     }
   }
 }

@@ -1104,6 +1104,10 @@
     {
       "name": "tafel",
       "feld": [107, 16]
+    },
+    {
+      "name": "kreide4",
+      "feld": [34, 8]
     }
   ],
   "figuren": [

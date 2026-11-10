@@ -183,6 +183,11 @@ const FIGUREN = {
   delphine: ["long15", "schwarz", "h7", "variant18", "2663a3", "", "", "variant04"], // Fischerin Delphine, Pelikaninsel
   "old-pete": ["short01", "weiss", "h4", "variant21", "5f705c", "", "variant06", "variant04"], // Netzmacher Old Pete
   coral: ["long08", "dunkelbraun", "h6", "variant05", "ffc425", "", "", ""], // Coral, sammelt Muscheln im Watt
+  // Runde 6 (mittel-3): Weg 4, Silicon Bay, Sommerjahrmarkt
+  kiki: ["long07", "blau", "h3", "variant05", "44c585", "", "", ""], // Kiki Blitz, 19, Streamerin
+  dolores: ["long10", "schwarz", "h6", "variant08", "6a3d9a", "", "", ""], // Schaustellerin, Mantel mit Sternen
+  ike: ["short11", "schwarz", "h6", "variant03", "ffc425", "", "", ""], // Dolores' Sohn, im Schachtürken
+  faehrmann: ["short01", "grau", "h4", "variant21", "03396c", "", "variant06", ""], // Fährmann der Inselfähre
 };
 
 /** Alle Porträtnamen, die die Spieldaten nennen (gegner.json, orte.json). */

@@ -198,6 +198,10 @@
       "moebel": "ld5TuerSued",
       "feld": [14, 12],
       "an_wand": true
+    },
+    {
+      "moebel": "mf2Tafel",
+      "feld": [2, 1]
     }
   ],
   "ausloeser": [
@@ -211,6 +215,26 @@
     {
       "name": "gasthausAusgang",
       "feld": [14, 12]
+    },
+    {
+      "name": "henrik",
+      "feld": [15, 6]
+    },
+    {
+      "name": "fundKegel",
+      "feld": [1, 4]
+    },
+    {
+      "name": "kegelbahn",
+      "feld": [3, 7]
+    },
+    {
+      "name": "fotoHochwasser",
+      "feld": [10, 3]
+    },
+    {
+      "name": "kegelkoenig",
+      "feld": [3, 3]
     }
   ],
   "figuren": [],
@@ -243,6 +267,15 @@
         "tun": "isst eine Suppe",
         "wann": "tag",
         "sagt": "statist.lockport.gasthaus.wanderinBeimEssen"
+      }
+    },
+    {
+      "name": "henrik",
+      "typ": "statist",
+      "feld": [15, 3],
+      "eigenschaften": {
+        "tun": "poliert Gläser hinter dem Tresen",
+        "wann": "tag"
       }
     }
   ],

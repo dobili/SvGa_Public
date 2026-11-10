@@ -26,6 +26,13 @@ VAR ausgangWegCedarRivertonSchaffner = ""
 VAR pfeilspitzeGefunden = false
 VAR holzspringerGefunden = false
 VAR fahrkarte1958Gefunden = false
+VAR held = "Du"
+VAR hatLaterne = false
+VAR wegCedarRivertonZugpartieBestanden = false
+VAR rosalindGetroffen = false
+VAR zugpartieErledigt = false
+VAR seite01Gefunden = false
+VAR thermoskanneGefunden = false
 
 // ---------------------------------------------------------------- Mrs. Fenwick
 
@@ -132,6 +139,8 @@ Wer hier jagte, kannte den Wald besser als jede Karte. #sprecher:ambrose
 ~ holzspringerGefunden = true
 In einem hohlen Baumstamm liegt ein Springer aus hellem Holz, glatt gegriffen. #sprecher:erzaehler
 ~ gibFund("holzspringer")
+Unter dem Fuß ist ein Feld eingebrannt, daneben ein winziger Fink. #sprecher:erzaehler
+~ gibFund("finchSpringerA")
 Ein Springer, allein im Wald. Er hüpft wohl noch. #sprecher:ambrose #stimmung:lacht
 -> END
 
@@ -144,4 +153,71 @@ Ein Springer, allein im Wald. Er hüpft wohl noch. #sprecher:ambrose #stimmung:l
 Im Schotter steckt eine vergilbte Pappkarte: „Riverton, einfache Fahrt, 1958“. #sprecher:erzaehler
 ~ gibFund("fahrkarte1958")
 Einfache Fahrt. Wer fuhr damals, und kam er an? #sprecher:ambrose
+-> END
+
+// ---------------------------------------------------------------- Runde 6: Zugpartie am Stellwerk (15, 2.2)
+
+// Rosalind Kettering spielt seit 23 Jahren eine Partie mit Lokführer Earl Dubois, ein Zug pro
+// Vorbeifahrt. Heute hat sie sich die Hand verstaucht. {held} findet, warum ihr erster Einfall
+// eine Figur einstellt (Kapitel 1, was hängt?), und hängt einen besseren Zug ans Signal.
+=== ereignis_zugpartie ===
+{zugpartieErledigt: -> zugpartie_danach}
+{wegCedarRivertonZugpartieBestanden: -> zugpartie_geloest}
+{rosalindGetroffen: -> zugpartie_angebot}
+~ rosalindGetroffen = true
+Vor dem Stellwerk sitzt eine ältere Frau auf der Bank, die rechte Hand im Verband. #sprecher:erzaehler
+„Rosalind Kettering. Ich spiele seit dreiundzwanzig Jahren eine Partie mit Earl, dem Lokführer vom Güterzug. Ein Zug pro Vorbeifahrt.“ #sprecher:erzaehler
+-> zugpartie_angebot
+
+=== zugpartie_angebot ===
+„Er hält seinen Zug auf einer Tafel aus dem Fenster, ich hänge meine Antwort ans Signal. Heute krieg ich die Tafel nicht hoch, und der Zug kommt gleich.“ #sprecher:erzaehler
+„Mein erster Einfall ist der Läufer nach vorn. Schaust du drauf, bevor wir ihn aufhängen?“ #sprecher:erzaehler
+* [Die Stellung ansehen]
+    ~ beginneAufgaben("wegCedarRiverton.zugpartie")
+    -> END
+* [Gleich]
+    „Viel Zeit ist nicht. Hörst du die Schienen schon?“ #sprecher:erzaehler
+    -> END
+
+=== zugpartie_geloest ===
+~ zugpartieErledigt = true
+Rosalind sieht auf das Brett. „Der Läufer hätte gehangen. Und Earl sieht so etwas sofort.“ #sprecher:erzaehler
+Du hängst den besseren Zug ans Signal. Der Güterzug rattert vorbei, aus dem Führerhaus winkt eine Hand mit einer Tafel. #sprecher:erzaehler
+„Hier, die alte Signalkelle aus dem Stellwerk. Die brauch ich nicht mehr, seit es Strom gibt.“ #sprecher:erzaehler
+~ gibFund("signalkelle")
+Sie warten aufeinander. Und es macht sie nicht unglücklich. #sprecher:ambrose
+-> END
+
+=== zugpartie_danach ===
+„Earl hat geantwortet. Er sagt, das war nicht mein Zug. Er kennt mich zu gut.“ #sprecher:erzaehler
+-> END
+
+// ---------------------------------------------------------------- Runde 6: Buchseite und Durchlass S14
+
+=== fund_seite01 ===
+{seite01Gefunden:
+    Im Schotter neben dem Bahnsteig liegen nur Steine. #sprecher:erzaehler
+    -> END
+}
+~ seite01Gefunden = true
+Zwischen den Schottersteinen neben dem Bahnsteig flattert ein Blatt Papier. #sprecher:erzaehler
+Eine Seite aus einem Handbuch, Kapitel 1: „Grundprinzipien des Schachs“. #sprecher:erzaehler
+~ gibFund("seite01")
+-> END
+
+// Durchlass unter dem Damm (13_Wegenetz.md, S14): stockdunkel, nur mit der Laterne aus Ironwood.
+=== durchlass ===
+{not hatLaterne:
+    Ein gemauerter Durchlass unter dem Damm, dahinter stockdunkel. Es tropft. #sprecher:erzaehler
+    Gwen hat gesagt, da wohne was. Ohne Licht gehst du da nicht hinein. #sprecher:erzaehler
+    -> END
+}
+{thermoskanneGefunden:
+    Im Licht der Laterne glänzt nasses Mauerwerk. Sonst ist hier nichts mehr. #sprecher:erzaehler
+    -> END
+}
+~ thermoskanneGefunden = true
+Die Laterne leuchtet in den Durchlass. Eine Kröte hüpft davon, das war wohl das, was hier wohnt. #sprecher:erzaehler
+Auf einem Mauervorsprung steht eine verbeulte Thermoskanne mit Namen: „G. Tolliver“. #sprecher:erzaehler
+~ gibFund("thermoskanneGwen")
 -> END

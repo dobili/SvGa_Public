@@ -2152,6 +2152,18 @@
     {
       "name": "fundFahrkarte",
       "feld": [57, 7]
+    },
+    {
+      "name": "ereignisZugpartie",
+      "feld": [42, 15]
+    },
+    {
+      "name": "seite01",
+      "feld": [44, 5]
+    },
+    {
+      "name": "durchlass",
+      "feld": [66, 7]
     }
   ],
   "figuren": [

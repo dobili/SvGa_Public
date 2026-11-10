@@ -258,3 +258,15 @@ dem Friedhof, drei Hütten dahinter. C: Post und Barbier in zweiter Reihe, Hotel
 südlich. Belebung in allen Varianten gleich: Mr. Pruitts Metallsucher und 12 Sommergäste und
 Durchreisende, 8 davon ansprechbar (`statist.ghostTown.aussen.*`), dazu Geier, Eule auf dem
 Wasserturm (nachts), Eidechse und ein alter Hund, der {held} folgt (Dokument 16, 5.3).
+
+### 4.6 Runde 6 (10.11.2026): Ansehen (niedrig-1)
+
+| Auslöser     | Karte  | Feld A   | Feld B   | Feld C   | Inhalt                                                                                     |
+| ------------ | ------ | -------- | -------- | -------- | ------------------------------------------------------------------------------------------ |
+| `ortsschild` | aussen | (1, 20)  | (3, 19)  | (8, 20)  | „Gold Hill, pop. 312“, mit Kreide auf Null; Schild `gt7Schild` neu in A (1, 18), C (8, 18) |
+| `steckbrief` | aussen | (35, 20) | (42, 20) | (34, 20) | Steckbrief am Sheriffbüro                                                                  |
+| `amboss`     | aussen | (12, 20) | (40, 33) | (11, 20) | vor der Schmiede (A, C), in B vor dem Mietstall                                            |
+| `klavier`    | saloon | (15, 4)  | (2, 4)   | (12, 4)  | drei stumme Tasten; Ambrose sagt einen Satz                                                |
+
+Alle als `art: dialog` in `ghost-town-aussen.ink` und `ghost-town-saloon.ink`. `stollen` (S11) und die
+Alte Minenstraße bleiben bei mittel-4.

@@ -21,6 +21,7 @@ VAR varianteSchach960Gelernt = false
 VAR ausgangPortDelacroixSchach960Set1 = ""
 VAR ausgangPortDelacroixSchach960Set2 = ""
 VAR ausgangPortDelacroixSchach960Set3 = ""
+VAR angesehenLochImDach = false
 
 === schild ===
 {
@@ -131,3 +132,19 @@ In meiner Stadt, mit gemischten Figuren und einer Posaune. Ich hätte nie gedach
     -> END
 + [„Bis bald, Mabel.“]
     -> END
+
+// ---------------------------------------------------------------- Ansehen (Runde 6)
+
+=== loch_im_dach ===
+{musikhausOffen:
+    Das Dach ist geflickt. Wo das Loch war, ist jetzt ein Fenster, und die Sonne fällt aufs Klavier. #sprecher:erzaehler
+    -> END
+}
+{angesehenLochImDach:
+    Durch das Loch im Dach fällt Licht auf die nassen Dielen. #sprecher:erzaehler
+    -> END
+}
+~ angesehenLochImDach = true
+Über dir ein Loch im Dach, so groß wie ein Tisch. Ein Lichtstreifen fällt auf die Dielen, mitten in eine Pfütze. #sprecher:erzaehler
+Früher hat hier jemand Trompete gespielt, bis die Fenster zitterten. Jetzt zittert nur das Wasser. #sprecher:ambrose #stimmung:fern
+-> END

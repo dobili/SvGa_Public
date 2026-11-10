@@ -1005,6 +1005,14 @@
     {
       "name": "altstadt",
       "feld": [0, 22]
+    },
+    {
+      "name": "infosaeule",
+      "feld": [66, 21]
+    },
+    {
+      "name": "werbetafel",
+      "feld": [67, 10]
     }
   ],
   "figuren": [

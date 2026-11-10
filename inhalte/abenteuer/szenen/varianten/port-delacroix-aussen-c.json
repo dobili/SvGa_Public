@@ -690,6 +690,10 @@
     {
       "name": "brettHaus4",
       "feld": [23, 53]
+    },
+    {
+      "name": "bauzaun",
+      "feld": [42, 42]
     }
   ],
   "figuren": [

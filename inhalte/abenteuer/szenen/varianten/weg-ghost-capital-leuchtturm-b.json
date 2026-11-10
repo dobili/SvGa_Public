@@ -281,12 +281,20 @@
     {
       "name": "fundLinse",
       "feld": [105, 17]
+    },
+    {
+      "name": "plakatWeltschachtag",
+      "feld": [110, 14]
     }
   ],
   "figuren": [
     {
       "name": "abe",
       "feld": [100, 15]
+    },
+    {
+      "name": "odette",
+      "feld": [114, 14]
     }
   ],
   "belebung": [

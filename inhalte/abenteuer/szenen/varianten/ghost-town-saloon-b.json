@@ -169,6 +169,10 @@
     {
       "name": "abzeichen",
       "feld": [2, 11]
+    },
+    {
+      "name": "klavier",
+      "feld": [2, 4]
     }
   ],
   "figuren": [

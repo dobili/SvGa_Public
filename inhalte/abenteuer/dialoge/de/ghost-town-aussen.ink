@@ -101,3 +101,17 @@ Noch eine Partie will ich sehen. Deine, gegen ihn. Dann ist es gut. #sprecher:am
     Natürlich weißt du es. Du weißt es schon länger als ich. #sprecher:ambrose
 - Ein Geist, der bleibt, wird ein Möbelstück. Ich war lange genug ein Brett. #sprecher:ambrose #stimmung:lacht
 -> END
+
+// ---------------------------------------------------------------- Ansehen (Runde 6)
+
+=== ortsschild ===
+Ein Holzschild am Ortseingang: „Gold Hill, pop. 312“. Die Zahl ist durchgestrichen, darunter steht mit Kreide eine Null. #sprecher:erzaehler
+-> END
+
+=== steckbrief ===
+Am Brett vor dem Sheriffbüro klebt ein Steckbrief, von der Sonne fast weiß: „Gesucht: Kartenzinker. 50 Dollar.“ Das Gesicht ist nicht mehr zu erkennen. #sprecher:erzaehler
+-> END
+
+=== amboss ===
+Ein rostiger Amboss im Sand. Ein Hufeisen liegt noch darauf, als wäre der Schmied nur kurz weg. #sprecher:erzaehler
+-> END

@@ -277,7 +277,15 @@
           "ziel": {
             "karte": "wegMapleCedar.zedernpfad",
             "ausloeser": "zedernZurueckPark"
-          }
+          },
+          "wenn": "nadelCedarCreek",
+          "dialog": "maple-falls-park.stamm_s2"
+        },
+        {
+          "name": "steg",
+          "karte": "mapleFalls.park",
+          "art": "gegenstand",
+          "dialog": "maple-falls-park.steg"
         }
       ],
       "club": {
@@ -594,14 +602,14 @@
         },
         {
           "kennung": "wegMapleCedar.flussweg",
-          "datei": "karten/weg-maple-cedar-2.json",
+          "datei": "karten/weg-maple-cedar-flussweg.json",
           "name": "ort.wegMapleCedar.flussweg",
           "innen": false,
           "musik": "musik/landstrasse.ogg"
         },
         {
           "kennung": "wegMapleCedar.zedernpfad",
-          "datei": "karten/weg-maple-cedar-3.json",
+          "datei": "karten/weg-maple-cedar-zedernpfad.json",
           "name": "ort.wegMapleCedar.zedernpfad",
           "innen": false,
           "musik": "musik/landstrasse.ogg"
@@ -691,7 +699,9 @@
           "ziel": {
             "karte": "mapleFalls.park",
             "ausloeser": "zedernpfad"
-          }
+          },
+          "wenn": "nadelCedarCreek",
+          "dialog": "weg-maple-cedar.stamm_s2"
         },
         {
           "name": "zedernWeiterCedar",
@@ -707,7 +717,27 @@
           "ziel": {
             "karte": "kuerbishof.hof",
             "ausloeser": "zurueckLandstrasse"
-          }
+          },
+          "wenn": "wegMapleCedarTafelBestanden",
+          "dialog": "weg-maple-cedar.gatter_s1"
+        },
+        {
+          "name": "ereignisFlohmarkt",
+          "karte": "wegMapleCedar.landstrasse",
+          "art": "dialog",
+          "dialog": "weg-maple-cedar.ereignis_flohmarkt"
+        },
+        {
+          "name": "seite00",
+          "karte": "wegMapleCedar.landstrasse",
+          "art": "gegenstand",
+          "dialog": "weg-maple-cedar.fund_seite00"
+        },
+        {
+          "name": "finchBauerA",
+          "karte": "wegMapleCedar.flussweg",
+          "art": "gegenstand",
+          "dialog": "weg-maple-cedar.fund_finch_bauer_a"
         }
       ]
     },
@@ -805,6 +835,24 @@
             "ausloeser": "bahndamm"
           },
           "dialog": "riverton-aussen.ankunft_zu_fuss"
+        },
+        {
+          "name": "ereignisZugpartie",
+          "karte": "wegCedarRiverton.bahndamm",
+          "art": "dialog",
+          "dialog": "weg-cedar-riverton.ereignis_zugpartie"
+        },
+        {
+          "name": "seite01",
+          "karte": "wegCedarRiverton.bahndamm",
+          "art": "gegenstand",
+          "dialog": "weg-cedar-riverton.fund_seite01"
+        },
+        {
+          "name": "durchlass",
+          "karte": "wegCedarRiverton.bahndamm",
+          "art": "gegenstand",
+          "dialog": "weg-cedar-riverton.durchlass"
         }
       ]
     },
@@ -1223,6 +1271,74 @@
             "karte": "lockport.aussen",
             "ausloeser": "gasthausTuer"
           }
+        },
+        {
+          "name": "tafelSchleuse",
+          "karte": "lockport.aussen",
+          "art": "gegenstand",
+          "dialog": "lockport-aussen.tafel_schleuse"
+        },
+        {
+          "name": "steg",
+          "karte": "lockport.aussen",
+          "art": "uebergang",
+          "ziel": {
+            "karte": "lockport.aussen",
+            "ausloeser": "stegSued"
+          },
+          "wenn": "lockportSteg",
+          "dialog": "lockport-aussen.steg_s3"
+        },
+        {
+          "name": "stegSued",
+          "karte": "lockport.aussen",
+          "art": "uebergang",
+          "ziel": {
+            "karte": "lockport.aussen",
+            "ausloeser": "steg"
+          }
+        },
+        {
+          "name": "kai",
+          "karte": "lockport.aussen",
+          "art": "dialog",
+          "dialog": "lockport-aussen.kai"
+        },
+        {
+          "name": "henriksBoot",
+          "karte": "lockport.aussen",
+          "art": "gegenstand",
+          "dialog": "lockport-aussen.henriks_boot"
+        },
+        {
+          "name": "henrik",
+          "karte": "lockport.gasthaus",
+          "art": "dialog",
+          "dialog": "lockport-gasthaus.henrik"
+        },
+        {
+          "name": "fundKegel",
+          "karte": "lockport.gasthaus",
+          "art": "gegenstand",
+          "dialog": "lockport-gasthaus.fund_kegel"
+        },
+        {
+          "name": "kegelbahn",
+          "karte": "lockport.gasthaus",
+          "art": "dialog",
+          "dialog": "lockport-gasthaus.kegelbahn"
+        },
+        {
+          "name": "fotoHochwasser",
+          "karte": "lockport.gasthaus",
+          "art": "dialog",
+          "dialog": "lockport-gasthaus.foto_hochwasser"
+        },
+        {
+          "name": "kegelkoenig",
+          "karte": "lockport.gasthaus",
+          "art": "dialog",
+          "dialog": "lockport-gasthaus.kegelkoenig"
         }
       ]
     },
@@ -1835,6 +1951,12 @@
           "sprite": "figuren/joggerin.png",
           "dialog": "weg-ironwood-silicon.joggerin",
           "gegner": "wegIronwoodSilicon.joggerin"
+        },
+        {
+          "kennung": "wegIronwoodSilicon.kiki",
+          "name": "figur.kiki.name",
+          "sprite": "figuren/kiki.png",
+          "dialog": "weg-ironwood-silicon.kiki"
         }
       ],
       "ausloeser": [
@@ -1897,6 +2019,42 @@
             "karte": "siliconBay.aussen",
             "ausloeser": "glasbruecke"
           }
+        },
+        {
+          "name": "ereignisStream",
+          "karte": "wegIronwoodSilicon.glasbruecke",
+          "art": "dialog",
+          "dialog": "weg-ironwood-silicon.ereignis_stream"
+        },
+        {
+          "name": "kreide2",
+          "karte": "wegIronwoodSilicon.raststaette",
+          "art": "gegenstand",
+          "dialog": "weg-ironwood-silicon.kreide2"
+        },
+        {
+          "name": "finchBauerB",
+          "karte": "wegIronwoodSilicon.raststaette",
+          "art": "gegenstand",
+          "dialog": "weg-ironwood-silicon.finch_bauer_b"
+        },
+        {
+          "name": "seite04",
+          "karte": "wegIronwoodSilicon.raststaette",
+          "art": "gegenstand",
+          "dialog": "weg-ironwood-silicon.seite04"
+        },
+        {
+          "name": "werbetafelZero",
+          "karte": "wegIronwoodSilicon.glasbruecke",
+          "art": "dialog",
+          "dialog": "weg-ironwood-silicon.werbetafel_zero"
+        },
+        {
+          "name": "schildSmartCity",
+          "karte": "wegIronwoodSilicon.glasbruecke",
+          "art": "dialog",
+          "dialog": "weg-ironwood-silicon.schild_smart_city"
         }
       ]
     },
@@ -2114,7 +2272,8 @@
           "ziel": {
             "karte": "pelikaninsel.dorf",
             "ausloeser": "faehre"
-          }
+          },
+          "dialog": "silicon-bay-aussen.inselfaehre"
         },
         {
           "name": "altstadt",
@@ -2133,6 +2292,24 @@
             "karte": "siliconBay.aussen",
             "ausloeser": "altstadt"
           }
+        },
+        {
+          "name": "infosaeule",
+          "karte": "siliconBay.aussen",
+          "art": "dialog",
+          "dialog": "silicon-bay-aussen.infosaeule"
+        },
+        {
+          "name": "werbetafel",
+          "karte": "siliconBay.aussen",
+          "art": "dialog",
+          "dialog": "silicon-bay-aussen.werbetafel"
+        },
+        {
+          "name": "netze",
+          "karte": "siliconBay.hafen",
+          "art": "dialog",
+          "dialog": "silicon-bay-aussen.netze"
         }
       ],
       "club": {
@@ -2259,6 +2436,12 @@
           "name": "figur.guidry.name",
           "sprite": "figuren/guidry.png",
           "dialog": "weg-silicon-delacroix.guidry"
+        },
+        {
+          "kennung": "wegSiliconDelacroix.kapitaen",
+          "name": "figur.kapitaen.name",
+          "sprite": "figuren/kapitaen.png",
+          "dialog": "weg-silicon-delacroix.kapitaen"
         }
       ],
       "ausloeser": [
@@ -2321,6 +2504,48 @@
             "karte": "portDelacroix.aussen",
             "ausloeser": "deich"
           }
+        },
+        {
+          "name": "ereignisKapitaen",
+          "karte": "wegSiliconDelacroix.faehre",
+          "art": "dialog",
+          "dialog": "weg-silicon-delacroix.ereignis_kapitaen"
+        },
+        {
+          "name": "ladung",
+          "karte": "wegSiliconDelacroix.faehre",
+          "art": "dialog",
+          "dialog": "weg-silicon-delacroix.ladung"
+        },
+        {
+          "name": "delfin",
+          "karte": "wegSiliconDelacroix.faehre",
+          "art": "dialog",
+          "dialog": "weg-silicon-delacroix.delfin"
+        },
+        {
+          "name": "seite02",
+          "karte": "wegSiliconDelacroix.faehre",
+          "art": "gegenstand",
+          "dialog": "weg-silicon-delacroix.seite02"
+        },
+        {
+          "name": "finchTurmA",
+          "karte": "wegSiliconDelacroix.faehre",
+          "art": "gegenstand",
+          "dialog": "weg-silicon-delacroix.finch_turm_a"
+        },
+        {
+          "name": "pumpenhaus",
+          "karte": "wegSiliconDelacroix.deich",
+          "art": "dialog",
+          "dialog": "weg-silicon-delacroix.pumpenhaus"
+        },
+        {
+          "name": "spurPM3",
+          "karte": "wegSiliconDelacroix.deich",
+          "art": "gegenstand",
+          "dialog": "weg-silicon-delacroix.spur_pm3"
         }
       ]
     },
@@ -2537,11 +2762,53 @@
           "karte": "portDelacroix.aussen",
           "art": "uebergang",
           "dialog": "port-delacroix-aussen.bayou",
-          "wenn": "musikhausOffen",
+          "wenn": "bayouOffen",
           "ziel": {
             "karte": "bayou.steg",
             "ausloeser": "zurueckDelacroix"
           }
+        },
+        {
+          "name": "spendenkasse",
+          "karte": "portDelacroix.turnhalle",
+          "art": "dialog",
+          "dialog": "port-delacroix-turnhalle.spendenkasse"
+        },
+        {
+          "name": "notenheft",
+          "karte": "portDelacroix.turnhalle",
+          "art": "dialog",
+          "dialog": "port-delacroix-turnhalle.notenheft"
+        },
+        {
+          "name": "plakatTurnhalle",
+          "karte": "portDelacroix.turnhalle",
+          "art": "dialog",
+          "dialog": "port-delacroix-turnhalle.plakat_turnhalle"
+        },
+        {
+          "name": "fotoWand",
+          "karte": "portDelacroix.werkstatt",
+          "art": "dialog",
+          "dialog": "port-delacroix-werkstatt.foto_wand"
+        },
+        {
+          "name": "laptop",
+          "karte": "portDelacroix.werkstatt",
+          "art": "dialog",
+          "dialog": "port-delacroix-werkstatt.laptop"
+        },
+        {
+          "name": "lochImDach",
+          "karte": "portDelacroix.musikhaus",
+          "art": "dialog",
+          "dialog": "port-delacroix-musikhaus.loch_im_dach"
+        },
+        {
+          "name": "bauzaun",
+          "karte": "portDelacroix.aussen",
+          "art": "dialog",
+          "dialog": "port-delacroix-aussen.bauzaun"
         }
       ],
       "club": {
@@ -3507,6 +3774,42 @@
             "karte": "crossroads.aussen",
             "ausloeser": "wegSummit"
           }
+        },
+        {
+          "name": "ereignisGeysirblitz",
+          "karte": "wegSummitCrossroads.geysirbecken",
+          "art": "dialog",
+          "dialog": "weg-summit-crossroads.ereignis_geysirblitz"
+        },
+        {
+          "name": "spurPM5",
+          "karte": "wegSummitCrossroads.geysirbecken",
+          "art": "gegenstand",
+          "dialog": "weg-summit-crossroads.spur_pm5"
+        },
+        {
+          "name": "finchBauerD",
+          "karte": "wegSummitCrossroads.geysirbecken",
+          "art": "gegenstand",
+          "dialog": "weg-summit-crossroads.finch_bauer_d"
+        },
+        {
+          "name": "geysirAusbruch",
+          "karte": "wegSummitCrossroads.geysirbecken",
+          "art": "dialog",
+          "dialog": "weg-summit-crossroads.geysir_ausbruch"
+        },
+        {
+          "name": "seite09",
+          "karte": "wegSummitCrossroads.praerie",
+          "art": "gegenstand",
+          "dialog": "weg-summit-crossroads.seite09"
+        },
+        {
+          "name": "windrad",
+          "karte": "wegSummitCrossroads.praerie",
+          "art": "dialog",
+          "dialog": "weg-summit-crossroads.windrad"
         }
       ]
     },
@@ -3633,6 +3936,18 @@
             "karte": "jahrmarkt.festplatz",
             "ausloeser": "zurueckCrossroads"
           }
+        },
+        {
+          "name": "viehgatter",
+          "karte": "crossroads.aussen",
+          "art": "dialog",
+          "dialog": "crossroads-aussen.viehgatter"
+        },
+        {
+          "name": "fernbus",
+          "karte": "crossroads.aussen",
+          "art": "dialog",
+          "dialog": "crossroads-aussen.fernbus"
         }
       ]
     },
@@ -3650,7 +3965,14 @@
           "innen": false
         }
       ],
-      "figuren": [],
+      "figuren": [
+        {
+          "kennung": "jahrmarkt.dolores",
+          "name": "figur.dolores.name",
+          "sprite": "figuren/dolores.png",
+          "dialog": "jahrmarkt.dolores"
+        }
+      ],
       "ausloeser": [
         {
           "name": "start",
@@ -3664,6 +3986,24 @@
             "karte": "crossroads.aussen",
             "ausloeser": "jahrmarkt"
           }
+        },
+        {
+          "name": "schachautomat",
+          "karte": "jahrmarkt.festplatz",
+          "art": "dialog",
+          "dialog": "jahrmarkt.schachautomat"
+        },
+        {
+          "name": "riesenrad",
+          "karte": "jahrmarkt.festplatz",
+          "art": "dialog",
+          "dialog": "jahrmarkt.riesenrad"
+        },
+        {
+          "name": "losbude",
+          "karte": "jahrmarkt.festplatz",
+          "art": "dialog",
+          "dialog": "jahrmarkt.losbude"
         }
       ]
     },
@@ -3749,6 +4089,24 @@
             "karte": "pinewoodCamp.aussen",
             "ausloeser": "wegCrossroads"
           }
+        },
+        {
+          "name": "ereignisLebendschach",
+          "karte": "wegCrossroadsPinewood.riesenbaeume",
+          "art": "dialog",
+          "dialog": "weg-crossroads-pinewood.ereignis_lebendschach"
+        },
+        {
+          "name": "seite10",
+          "karte": "wegCrossroadsPinewood.riesenbaeume",
+          "art": "gegenstand",
+          "dialog": "weg-crossroads-pinewood.seite10"
+        },
+        {
+          "name": "kreide4",
+          "karte": "wegCrossroadsPinewood.huetten",
+          "art": "gegenstand",
+          "dialog": "weg-crossroads-pinewood.kreide4"
         }
       ]
     },
@@ -4111,6 +4469,30 @@
           },
           "dialog": "goldmine.eingang",
           "wenn": "goldmineOffen"
+        },
+        {
+          "name": "ortsschild",
+          "karte": "ghostTown.aussen",
+          "art": "dialog",
+          "dialog": "ghost-town-aussen.ortsschild"
+        },
+        {
+          "name": "steckbrief",
+          "karte": "ghostTown.aussen",
+          "art": "dialog",
+          "dialog": "ghost-town-aussen.steckbrief"
+        },
+        {
+          "name": "amboss",
+          "karte": "ghostTown.aussen",
+          "art": "dialog",
+          "dialog": "ghost-town-aussen.amboss"
+        },
+        {
+          "name": "klavier",
+          "karte": "ghostTown.saloon",
+          "art": "dialog",
+          "dialog": "ghost-town-saloon.klavier"
         }
       ]
     },
@@ -4185,6 +4567,18 @@
           "name": "figur.abe.name",
           "sprite": "figuren/abe.png",
           "dialog": "weg-ghost-capital.abe"
+        },
+        {
+          "kennung": "wegGhostCapital.odette",
+          "name": "figur.odette.name",
+          "sprite": "figuren/odette.png",
+          "dialog": "weg-ghost-capital.odette"
+        },
+        {
+          "kennung": "wegGhostCapital.wanderer",
+          "name": "figur.wanderer.name",
+          "sprite": "figuren/wanderer.png",
+          "dialog": "weg-ghost-capital.wanderer"
         }
       ],
       "ausloeser": [
@@ -4215,7 +4609,9 @@
           "ziel": {
             "karte": "wegGhostCapital.leuchtturm",
             "ausloeser": "zurueckSeeufer"
-          }
+          },
+          "dialog": "weg-ghost-capital.weiter_leuchtturm",
+          "wenn": "capitalZugang"
         },
         {
           "name": "zurueckSeeufer",
@@ -4241,6 +4637,24 @@
             "karte": "capitalArena.aussen",
             "ausloeser": "wegGhost"
           }
+        },
+        {
+          "name": "ereignisWeltschachtag",
+          "karte": "wegGhostCapital.seeufer",
+          "art": "dialog",
+          "dialog": "weg-ghost-capital.ereignis_weltschachtag"
+        },
+        {
+          "name": "seite12",
+          "karte": "wegGhostCapital.seeufer",
+          "art": "gegenstand",
+          "dialog": "weg-ghost-capital.seite12"
+        },
+        {
+          "name": "plakatWeltschachtag",
+          "karte": "wegGhostCapital.leuchtturm",
+          "art": "dialog",
+          "dialog": "weg-ghost-capital.plakat_weltschachtag"
         }
       ]
     },
@@ -4438,6 +4852,12 @@
           "name": "figur.theron.name",
           "sprite": "figuren/theron.png",
           "dialog": "bayou.theron"
+        },
+        {
+          "kennung": "bayou.pepe",
+          "name": "figur.pepe.name",
+          "sprite": "figuren/pepe.png",
+          "dialog": "bayou.pepe"
         }
       ],
       "ausloeser": [
@@ -4460,6 +4880,36 @@
           "karte": "bayou.steg",
           "art": "gegenstand",
           "dialog": "bayou.nebel"
+        },
+        {
+          "name": "ereignisHausboot",
+          "karte": "bayou.steg",
+          "art": "dialog",
+          "dialog": "bayou.ereignis_hausboot"
+        },
+        {
+          "name": "luftboot",
+          "karte": "bayou.steg",
+          "art": "dialog",
+          "dialog": "bayou.luftboot"
+        },
+        {
+          "name": "sperreHochwasser",
+          "karte": "bayou.steg",
+          "art": "dialog",
+          "dialog": "bayou.sperre_hochwasser"
+        },
+        {
+          "name": "seite05",
+          "karte": "bayou.steg",
+          "art": "gegenstand",
+          "dialog": "bayou.seite05"
+        },
+        {
+          "name": "finchBauerC",
+          "karte": "bayou.steg",
+          "art": "gegenstand",
+          "dialog": "bayou.finch_bauer_c"
         }
       ]
     },

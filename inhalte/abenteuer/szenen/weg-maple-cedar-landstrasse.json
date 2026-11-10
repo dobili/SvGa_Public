@@ -3050,6 +3050,14 @@
     {
       "name": "fundFormular",
       "feld": [97, 13]
+    },
+    {
+      "name": "ereignisFlohmarkt",
+      "feld": [95, 21]
+    },
+    {
+      "name": "seite00",
+      "feld": [87, 17]
     }
   ],
   "figuren": [

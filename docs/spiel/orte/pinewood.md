@@ -295,3 +295,21 @@ kommt in Runde 6 der kleine Raum mit Z-1), zwei alte Zapfsäulen unter einem Vor
   - Camp: `steg` und `kanus`.
 - **Nicht von mir:** Wegweiser, Bärenspur und die Nebelzeit auf Weg 9 gehören zu mittel-3.
 - **Offen für mittel-2:** Sepia-Tönung der Staubstraße.
+
+### 3.5 Runde 6: Weg 9 spielbar (mittel-3)
+
+Ereignis `ereignisLebendschach` mit Aufgabenrunde `wegCrossroadsPinewood.lebendschach` (Platzhalter
+für die Brettansicht) und Quest gleichen Namens, Lohn Fund `fotoLebendschach`; Fundstellen
+`seite10` und `kreide4`. Felder:
+
+| Auslöser               | A         | B        | C        |
+| ---------------------- | --------- | -------- | -------- |
+| `ereignisLebendschach` | (38, 85)  | (28, 77) | (18, 91) |
+| `seite10`              | (24, 106) | (16, 68) | (17, 18) |
+
+| Auslöser  | A        | B       | C       |
+| --------- | -------- | ------- | ------- |
+| `kreide4` | (100, 8) | (34, 8) | (42, 8) |
+
+Nachtrag: Die Fundknoten heißen wie die Auslöser (`seite10`, `kreide4`) und zählen die Sammelstränge
+mit (`buchseiten`, `kreideTreffpunkte`). Die Riesenbäume haben in allen Varianten die Tönung `nebel`.

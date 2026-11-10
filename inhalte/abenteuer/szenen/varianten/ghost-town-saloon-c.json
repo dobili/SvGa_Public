@@ -184,6 +184,10 @@
     {
       "name": "abzeichen",
       "feld": [17, 10]
+    },
+    {
+      "name": "klavier",
+      "feld": [12, 4]
     }
   ],
   "figuren": [

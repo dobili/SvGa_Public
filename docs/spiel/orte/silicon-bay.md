@@ -181,7 +181,7 @@ Häuserzeile am Hafen (Türen in Reihe 15), dazwischen die Gasse (32–35 / 6–
 | A1 Fischhalle       | 0–15 / 0–19   | Was einmal war           | Fischhalle (2–13 / 6–15, geschlossen, Kulisse), verblichenes Schild „Fresh Fish Daily“                                                            | Netze an der Wand (Ansehen)                                                |
 | B1 Leerer Laden     | 16–31 / 0–19  | Hoffnung im Schaufenster | Ames Kurzwaren (16–23 / 6–15), leer, Schild „Bald geöffnet“ im Fenster; Hafenmeisterei (25–30 / 6–15, Kulisse); Mr. Ames auf einer Kiste (20, 16) | Schaufenster mit einem einzelnen Holzbrett darin (Ansehen, `schaufenster`) |
 | C1 Treppe und Store | 32–47 / 0–19  | Neu neben alt            | Treppe vom Campus, Gasse; Perfect Move Store (38–51 / 6–15, Glas, Tablets im Fenster, Kulisse)                                                    | Bildschirm im Store zeigt Novas Gesicht (Ansehen)                          |
-| D1 Fährhäuschen     | 48–63 / 0–19  | Warten                   | Ende des Stores, Fährhäuschen der Inselfähre (56–60 / 16–20) mit Fahrplan „Pelikaninsel – sonntags“                                               | Mr. Pike                                                                  |
+| D1 Fährhäuschen     | 48–63 / 0–19  | Warten                   | Ende des Stores, Fährhäuschen der Inselfähre (56–60 / 16–20) mit Fahrplan „Pelikaninsel – sonntags“                                               | Mr. Pike                                                                   |
 | A2 Küstenfähre      | 0–15 / 20–39  | Fernweh                  | Terminal der Küstenfähre (0–12 / 18–29) mit Rampe, Fähre im Wasser (2–12 / 31–37, Objekt)                                                         | `faehre` (6, 29), nach der Nadel (W5)                                      |
 | B2 Kai              | 16–31 / 20–39 | Sitzen am Wasser         | Bänke zum Wasser (18, 28), (24, 28), Poller, Laternen                                                                                             | Mr. Ames erzählt vom alten Hafen                                           |
 | C2 Fernrohr         | 32–47 / 20–39 | Weitsicht                | Münzfernrohr (40, 27) auf die Bucht, Kaikante                                                                                                     | `fernrohr` (Pelikaninsel), **Seeglas** an der Kaikante (`fundSeeglas`)     |
@@ -329,7 +329,7 @@ Fährmann, und welcher Tag heute ist, sagt er nicht.
 | raststaette | 52                     | Mrs. Kowalczyk (Weisheit), Juno; Busfahrer, Mr. Oakes (14) | `start`, `zurueckIronwood`, `tafel` (Runde `wegIronwoodSilicon.tafel`), `fundAnstecker`, `weiterGlasbruecke` | Austernfischer, Möwen, Radfahrer, Lastwagen                |
 | glasbruecke | 52                     | Joggerin (Gegnerin, Stellungsduell 3 + 2)                  | `zurueckRaststaette`, `fundOhrstoepsel`, `weiterSilicon` (Ankunftsdialog)                                    | Autos unter dem Deck, Lieferroboter, letzte Möwe           |
 | aussen      | 53, 54, 61             | Victor, Juno, Dash, Rosie; Figuren aus 14                  | `glasbruecke`, `akademieTuer`, `lobbyTuer`, `hotel`; neu `hafen`, `roboter`, `infosaeule`                    | Drohne, Lieferroboter, Menschen mit Bildschirmen, Wachmann |
-| hafen       | 62 (Abfahrt W5), N4    | Mr. Ames, Mr. Pike (14)                                   | `campus`, `faehre` (umgezogen), `inselfaehre`                                                                | Fähren (Objekte), Wellen                                   |
+| hafen       | 62 (Abfahrt W5), N4    | Mr. Ames, Mr. Pike (14)                                    | `campus`, `faehre` (umgezogen), `inselfaehre`                                                                | Fähren (Objekte), Wellen                                   |
 | akademie    | 55, 56, 58, 59, 60; R4 | Dr. Lin, Nova, Theo, Victor                                | `akademieAusgang`, `serverraumTuer`; Rangliste, Glaspokal, Zettel „Drei Ziele“ (09)                          | Staubsaugerroboter                                         |
 | serverraum  | 56                     | Nova (kommt dazu)                                          | `serverraumAusgang`, `schummelgeraete` (Fund „Ohrempfänger“)                                                 | Blinken, Lüfter (Klang)                                    |
 | lobby       | 57                     | Victor, Empfangsroboter                                    | `lobbyAusgang`, `vitrineHale` (Quest `siliconBay.fehlendeSeite`)                                             | Empfangsroboter dreht sich                                 |
@@ -385,6 +385,27 @@ Kameramann (filmt für Kiki), Techniker (misst Funkwellen für Perfect Move), Re
 Raststätte (`….raststaette.*`): Radfahrer, Busfahrer und Vogelzählerin (Austernfischer in einer Reihe
 wie Bauern) mit Satz, dazu Mr. Oakes; Austernfischer, Möwen, Strandläufer, Ringelgänse, Krebse,
 Hund.
+
+### 3.4 Runde 6: Weg 4 und Silicon Bay spielbar (mittel-3)
+
+Ereignis `ereignisStream` (Kiki Blitz, als Figur `wegIronwoodSilicon.kiki` am Stream-Tisch: A (70, 7), B (73, 11), C (65, 6)) mit Aufgabenrunde `wegIronwoodSilicon.stream` (Fallen,
+Kapitel 4; Platzhalter für die Partie mit Kandidatenwahl) und Quest gleichen Namens, Lohn Fund
+`fotoLive`. Spur P2 gibt der Ohrstöpsel (`fund_ohrstoepsel` gibt jetzt auch `spurPM2`).
+Fundstellen an der Raststätte `kreide2`, `finchBauerB`, `seite04`. Sperre S6: Die Inselfähre hat den
+Dialog `silicon-bay-aussen.inselfaehre` (Fahrplan „sonntags“, nach der Nadel jeden Tag). Ansehen: `infosaeule` und `werbetafel` auf dem Campus,
+`netze` an der Fischhalle im Hafen, `werbetafelZero` und `schildSmartCity` auf der Glasbrücke (je vor
+dem Gegenstand, in allen Varianten). Die Nacht im Hotel (Szene 61) setzt die Tönung `nacht` und am Morgen wieder `keine`. Die
+Fundknoten zählen die Sammelstränge mit (`finchFiguren`, `buchseiten`, `spurenPM`, `kreideTreffpunkte`).
+
+| Auslöser         | A       | B       | C       |
+| ---------------- | ------- | ------- | ------- |
+| `ereignisStream` | (71, 8) | (71, 8) | (66, 7) |
+
+| Auslöser      | A         | B         | C         |
+| ------------- | --------- | --------- | --------- |
+| `kreide2`     | (127, 11) | (124, 11) | (129, 11) |
+| `finchBauerB` | (140, 16) | (122, 16) | (142, 17) |
+| `seite04`     | (128, 14) | (110, 14) | (130, 14) |
 
 ## 4. Bühnenbilder
 
@@ -466,7 +487,7 @@ Summen, leise Werbejingles, kein Vogel.
 | A1        | Fischhalle 2–13 / 6–15 mit Holztor (7, 15) geschlossen, Schild „Fresh Fish Daily“ verblichen, Netze an der Fassade (Ansehen `netze`), Fischkisten gestapelt (12, 16)                 |
 | B1        | Ames Kurzwaren 16–23 / 6–15, Tür (19, 15), Schaufenster mit Holzbrett und Zettel „Bald geöffnet“ (`schaufenster` (21, 16)); Kiste (20, 16) mit Mr. Ames; Hafenmeisterei 25–30 / 6–15 |
 | C1        | Treppe 32–35 / 0–5 mit Sitzstufen 20–47 / 0–5; Gasse 32–35 / 6–15 (Pflaster), Laterne (31, 10); Perfect Move Store 38–51 / 6–15 (Glas, Bildschirm im Fenster (44, 15))               |
-| D1        | Fährhäuschen 56–60 / 16–20 (Holz, Fenster nach Süden), Fahrplan „Pelikaninsel – sonntags“ (55, 20), Mr. Pike davor (58, 21)                                                         |
+| D1        | Fährhäuschen 56–60 / 16–20 (Holz, Fenster nach Süden), Fahrplan „Pelikaninsel – sonntags“ (55, 20), Mr. Pike davor (58, 21)                                                          |
 | A2        | Fährterminal 0–12 / 18–29 mit Glasdach, Rampe zur Fähre (5–7 / 29–30), Fähre im Wasser 2–12 / 31–37 (Objekt), `faehre` (6, 29); Zaun am Westrand                                     |
 | B2        | Bänke zum Wasser (18, 28), (24, 28), Poller an der Kaikante (16, 30), (22, 30), (28, 30), Laternen (20, 22), (28, 22)                                                                |
 | C2        | Münzfernrohr (40, 27), `fernrohr` (40, 28); `fundSeeglas` an der Kaikante (36, 29); Rettungsring an der Laterne (44, 22)                                                             |

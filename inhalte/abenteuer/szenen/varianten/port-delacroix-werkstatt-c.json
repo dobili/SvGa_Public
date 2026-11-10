@@ -109,6 +109,14 @@
       "name": "werkbank",
       "feld": [9, 7],
       "auf_moebel": true
+    },
+    {
+      "name": "fotoWand",
+      "feld": [8, 3]
+    },
+    {
+      "name": "laptop",
+      "feld": [7, 9]
     }
   ],
   "figuren": [

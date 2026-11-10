@@ -21,6 +21,8 @@ VAR fotoAmbroseGesehen = false
 VAR ausgangPortDelacroixCeleste = ""
 VAR flashbackWerkstattBestanden = false
 VAR claireErzaehlt = false
+VAR angesehenFotoWand = false
+VAR angesehenLaptop = false
 
 // ---------------------------------------------------------------- Henri
 
@@ -129,4 +131,27 @@ Zwölf Jahre später: Der junge Ambrose ist zurück aus London und spielt seinem
 ~ claireErzaehlt = true
 Die kleine Schwester klatscht bei jedem Opfer. Dann kehren die Farben zurück. #sprecher:erzaehler
 Claire. Sie hat das Brett geerbt. Deshalb bist du hier. #sprecher:ambrose #stimmung:still
+-> END
+
+// ---------------------------------------------------------------- Ansehen (Runde 6)
+
+=== foto_wand ===
+{
+- fotoAmbroseGesehen:
+    Das alte Foto: ein junger Mann an einem Brett, um ihn herum Musiker. Ambrose sagt nichts mehr dazu. #sprecher:erzaehler
+- angesehenFotoWand:
+    Das Foto hängt schief. Henri weiß sicher, wer darauf ist. #sprecher:erzaehler
+- else:
+    ~ angesehenFotoWand = true
+    An der Wand hängt ein altes Foto in einem Holzrahmen: ein Brett, ein Tisch, Menschen mit Instrumenten. Das Glas ist gesprungen. #sprecher:erzaehler
+}
+-> END
+
+=== laptop ===
+{angesehenLaptop:
+    Auf dem Bildschirm läuft eine Partie. Célestes Figuren stehen sehr weit vorn. #sprecher:erzaehler
+    -> END
+}
+~ angesehenLaptop = true
+Célestes Laptop, zwischen Hobelspänen. Auf dem Bildschirm eine Tabelle mit Eröffnungen, daneben ein Zettel: „Nicht anfassen. Ich weiß, wo alles ist.“ #sprecher:erzaehler
 -> END

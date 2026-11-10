@@ -2619,7 +2619,7 @@
     {
       "name": "katzeImWaggon",
       "typ": "tier",
-      "feld": [105, 1],
+      "feld": [104, 2],
       "eigenschaften": {
         "verhalten": "sitzen"
       }

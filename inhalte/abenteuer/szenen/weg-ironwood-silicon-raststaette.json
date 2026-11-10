@@ -1047,9 +1047,9 @@
     {
       "name": "krebse",
       "typ": "tier",
-      "feld": [20, 23],
+      "feld": [18, 21],
       "eigenschaften": {
-        "von": "14,23",
+        "von": "12,21",
         "bis": "26,22",
         "verhalten": "ausweichen"
       }

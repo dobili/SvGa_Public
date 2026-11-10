@@ -827,7 +827,7 @@
       "typ": "tier",
       "feld": [49, 15],
       "eigenschaften": {
-        "verhalten": "sitzen",
+        "verhalten": "fliegen",
         "wann": "nacht"
       }
     },

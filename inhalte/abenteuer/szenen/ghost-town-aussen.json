@@ -693,7 +693,7 @@
       "typ": "tier",
       "feld": [50, 15],
       "eigenschaften": {
-        "verhalten": "sitzen",
+        "verhalten": "fliegen",
         "wann": "nacht"
       }
     },

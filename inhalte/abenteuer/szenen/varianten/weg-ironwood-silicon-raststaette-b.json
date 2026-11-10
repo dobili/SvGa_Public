@@ -767,9 +767,9 @@
     {
       "name": "krebse",
       "typ": "tier",
-      "feld": [20, 23],
+      "feld": [18, 21],
       "eigenschaften": {
-        "von": "14,23",
+        "von": "12,21",
         "bis": "26,22",
         "verhalten": "ausweichen"
       }
@@ -777,9 +777,9 @@
     {
       "name": "hund",
       "typ": "tier",
-      "feld": [150, 22],
+      "feld": [149, 21],
       "eigenschaften": {
-        "von": "146,20",
+        "von": "145,19",
         "bis": "156,23",
         "verhalten": "folgen"
       }

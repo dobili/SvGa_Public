@@ -1943,17 +1943,17 @@
       "typ": "tier",
       "feld": [23, 10],
       "eigenschaften": {
-        "verhalten": "sitzen",
+        "verhalten": "fliegen",
         "wann": "tag"
       }
     },
     {
       "name": "eichhoernchen",
       "typ": "tier",
-      "feld": [7, 7],
+      "feld": [6, 8],
       "eigenschaften": {
-        "von": "7,7",
-        "bis": "12,7",
+        "von": "6,8",
+        "bis": "11,8",
         "verhalten": "ausweichen"
       }
     },
@@ -1991,10 +1991,10 @@
     {
       "name": "pfadfinder",
       "typ": "statist",
-      "feld": [25, 10],
+      "feld": [23, 8],
       "eigenschaften": {
-        "von": "25,10",
-        "bis": "27,11",
+        "von": "23,8",
+        "bis": "25,9",
         "tun": "drei Pfadfinderkinder suchen Kreidepfeile",
         "wann": "tag"
       }
@@ -2040,11 +2040,11 @@
     {
       "name": "fuchs",
       "typ": "tier",
-      "feld": [30, 16],
+      "feld": [31, 15],
       "eigenschaften": {
         "verhalten": "flitzen",
-        "von": "27,16",
-        "bis": "33,16"
+        "von": "28,15",
+        "bis": "34,15"
       }
     }
   ],

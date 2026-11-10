@@ -629,14 +629,16 @@ Die Bibliothek baut mittel-4. Das Archiv ist in allen drei Varianten `"dicht": t
 
 ## Runde 7 (10.11.2026): Gebäude und Belebung in `cedarCreek.aussen`
 
-Nach Regel 10.51 und 10.53, das gewählte Bild bleibt. Sechs Kulissenhäuser ohne Innenraum: zwei
-kleine in zweiter Reihe zwischen Bahnsteig und den Rückseiten von Waschsalon und Seiteneingang
-(12, 5) und (19, 5); vier an einer neuen Gasse aus Pflaster am Südrand (Reihen 38–39, vom
-Vordachhaus bis zum Uferweg), Türen zur Gasse, Rücken zur Zedernwiese: (23, 34), (29, 34),
-(36, 34), (42, 34). Dafür sind eine Zeder, eine schmale Zeder, eine Tanne und das letzte
-Heckenstück weg, die Picknicktische stehen weiter nördlich (24, 28) und (37, 28). Damit 12
-Gebäude. Belebung: 12 Statisten, 9 ansprechbar (`statist.cedarCreek.aussen.*`), dazu Hund,
-Reiher, Eichelhäher, Enten auf dem Bach und ein Eichhörnchen auf der Wiese.
+Nach Regel 10.51 und 10.53. Mit Zustimmung des Haupt-Chats wächst die Karte nach Süden auf
+**60 × 50** (7a.2: kleiner Ort bis 60 × 50); das gewählte Bild oben bleibt. Unter der Zedernwiese
+steht eine Häuserzeile in voller Größe mit Türen zur neuen **Südgasse** (Pflaster, Reihen 47–48),
+die im Westen über die Gasse am Rand (Spalten 1–2) und im Osten über den Uferweg angebunden ist:
+zwei Wohnhäuser mit Flachdach (3, 39) und (16, 39), Dorfladen (10, 39), Bauernhaus (23, 37),
+breites Bauernhaus (32, 38), hohes Wohnhaus (42, 37). Dazu ein Stadthaus hinter der Bibliothek
+(42, 3). Das Vordachhaus behält seinen Vorplatz (Reihe 38). Der Bach läuft gerade bis an den neuen
+Südrand. Damit 13 Gebäude. Belebung: 12 Statisten, 9 ansprechbar (`statist.cedarCreek.aussen.*`),
+dazu Hund, Reiher, Eichelhäher, Enten auf dem Bach und ein Eichhörnchen auf der Wiese. Der Rentner
+am Picknicktisch zeigt Rubinsteins Unsterbliche (`zeigt: rubinsteinsUnsterbliche`).
 
 ## Runde 7 (10.11.2026): Weg 1 mit Ereignisort und Belebung
 

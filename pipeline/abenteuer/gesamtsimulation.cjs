@@ -147,7 +147,8 @@ function fasseAn(welt, st, ort, hier, o, a) {
     return true;
   }
   if (!a) {
-    if (o.name !== "start")
+    // Möbel ohne Auslöser sind Kulisse (die App spricht sie nicht an), keine Meldung wert.
+    if (o.name !== "start" && o.typ !== "moebel")
       st.meldungen.add(`Objekt ohne Eintrag in orte.json: ${hier}.${o.name}`);
     return false;
   }

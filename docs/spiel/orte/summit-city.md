@@ -24,7 +24,7 @@ Sommer, Summit City feiert sein Sommerfest.
 
 | Karte                    | Größe    | Lauf (Kacheln)                 | Zeit (3,5/s) |
 | ------------------------ | -------- | ------------------------------ | ------------ |
-| `summitCity.aussen`      | 70 × 56  | Südrand → Markt → Südrand ≈ 65 | ≈ 19 s       |
+| `summitCity.aussen`      | 80 × 56  | Südrand → Markt → Südrand ≈ 65 | ≈ 19 s       |
 | `summitCity.huette`      | 18 × 13  | Innenraum (Club)               | ≈ 4 s        |
 | `summitCity.bergstation` | 18 × 12  | Innenraum                      | ≈ 4 s        |
 | `summitCity.bergladen`   | 14 × 10  | Innenraum (Laden)              | ≈ 3 s        |
@@ -34,7 +34,7 @@ Sommer, Summit City feiert sein Sommerfest.
 Der Abzweig Hochebene hat zwei Karten zusammen etwa 160 Kacheln lang (Nebenschauplatz, 28: „ein Weg
 oder eine Abzweigung mit zwei Karten“), kürzer als ein Hauptweg.
 
-### 1.1 Summit City außen (`summitCity.aussen`, 70 × 56)
+### 1.1 Summit City außen (`summitCity.aussen`, 80 × 56)
 
 Bergstadt auf einer Alm unter den Gipfeln. Boden Gras, Wege aus Pflaster und Erde, Fels (`wand: fels`)
 im Norden als Gipfelwand, Pinien an den Rändern. Die Bergstraße kommt am **Südrand (34–36, 55)** an,
@@ -241,3 +241,31 @@ Felsstufe 13–15 mit Treppe bei 10–11). **Ränder** wie 1.1.
   direkt darüber.
 - B unterscheidet sich jetzt deutlich: Erdwege, ein achteckiger Brunnengarten mit Blumen und Bänken statt
   des Marktplatzes, keine Stände, Ziegen auf der Ostwiese.
+
+## Runde 7: Dorf und Leben (10.11.2026)
+
+**Dorf (Regel 10.51, mittel: 20 Gebäude):** Die Außenkarte ist um zehn Spalten nach Osten auf
+80 × 56 gewachsen. Die Übergänge am Südrand bleiben, wo sie waren. Neue Gassen machen Platz für
+Kulissenhäuser ohne Innenraum:
+
+- die Nordgasse vor der Talstation bis an den Ostrand;
+- die Pfade am Hang und an den Hütten, nach Osten verlängert;
+- eine Gasse im Südwesten zum Platz;
+- ein Pfad am Südrand.
+
+An ihnen stehen Chalets, Lodge, Höfe, ein Stadel, Post, Bergwacht (C), ein Wohnhaus und kleine
+Holzhäuschen (neue Möbel `sc8*`). Jede Tür hat einen kurzen Stichweg zur Gasse. Alle Varianten
+haben 20 bis 22 Gebäude.
+
+**Leben (Regel 10.53):** 12 Statisten, 7 davon ansprechbar (`statist.summitCity.aussen.*`):
+
+- Seilbahnwärter;
+- Kinder am Drachenbrunnen;
+- Marktfrau (Sizilianisch);
+- Briefträger (Staunton-Figuren seit 1849);
+- Bergführerin (Spieß);
+- Rentner (Lebendschach in Marostica, mit Antwort von Ambrose);
+- Festwirt (Perfect Move im Alltag).
+
+Ohne Satz: Wanderer, Holzhacker, Touristen, Gärtnerin, Radfahrer. Tiere: Murmeltier, Ziegen,
+Kuh, Hund, Adler, Katze.

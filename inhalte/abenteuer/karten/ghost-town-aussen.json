@@ -7429,7 +7429,7 @@
      "id": 33,
      "name": "pferdAmStall",
      "type": "tier",
-     "x": 256,
+     "x": 416,
      "y": 400,
      "width": 16,
      "height": 16,
@@ -7439,12 +7439,12 @@
       {
        "name": "von",
        "type": "string",
-       "value": "15,25"
+       "value": "25,25"
       },
       {
        "name": "bis",
        "type": "string",
-       "value": "17,25"
+       "value": "27,25"
       },
       {
        "name": "verhalten",

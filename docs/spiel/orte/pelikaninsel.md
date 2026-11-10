@@ -88,6 +88,14 @@ Auftrag `runde9_uebrige_karten.md`: drei Mängel aus `variantenwahl.md`, die fü
 - Mangel 3: Sand: Unter der Winterfärbung sieht Sand wie Erde aus; der Platz ist deshalb Schnee. Netzgestell ersetzt durch Netztrockner (Bildwunsch netztrockner.py: Böcke, Stange, durchhängendes Netz mit Schwimmern).
 - Zustände: keine.
 
+### 3.2 Runde 9: Gutachten (mittel-3, 10.11.2026)
+
+`gutachten/jahrmarkt-pelikaninsel.md`: Die Karte ist acht Reihen nach Norden gewachsen (50 × 44);
+der Anleger hat einen Querkopf, an dem die Fähre in Normgröße (18 × 6, Bild der Küstenfähre,
+`pk9Faehre`) längsseits an zwei Pollern liegt. Das Leuchtfeuer steht auf einer verschneiten
+Landzunge zwischen Felsen statt auf einem Kiesfeld. Die Ruderboote liegen im Wasser, Fässer stehen
+gruppiert am Anleger und an den Kisten, fünf statt zwölf Möwen.
+
 ## 4. Bühnenbilder
 
 **Größe** 50 × 36. **Boden** Strand und Dorfplatz Erde (der Sandboden zeichnet sich fleckig), Felsspitze

@@ -713,7 +713,32 @@ Nicht als eigene Szene: `schuppenOffen` (außen ist das Vorhängeschloss im Bild
 Lastkahn am Anleger (Objekt mit `wenn`, sobald es Objekte mit Bedingung gibt), Regen und Schnee
 (Tönung und Partikel; Schneebilder gibt es nicht, ENTSCHEIDUNGEN 10.11.2026), Wohnwagen (nur Szene 37).
 
-#### Runde 9: Bildschirmtische (mittel-3, 10.11.2026)
+#### Runde 9: drittes Gutachten (mittel-3, 10.11.2026)
+
+`gutachten/riverton-aussen-3.md`, `riverton-innen-3.md`, `zustaende-runde8.md`:
+
+- **Water Street:** Mittel- und Randlinien über `"markierung": ["s"]` (strasse.py) in allen
+  Fassungen der Außenkarte.
+- **Brücke:** Eine kurze Straße (Asphalt, Bordstein) zweigt von der Water Street nach Süden zur
+  Brücke ab; daneben die Einfahrt zum Lagerhof mit Bordstein. Bogen und Pfeiler der Brücke: offen,
+  bis das Bild aus Gemini-Prompt 3 (Eisenbrücke mit Höhe) da ist.
+- **Infokiosk** in der Beschreibung; die Ladenschilder sind englisch wie überall im Land (das Spiel
+  liegt in Amerika), so steht es jetzt in der Beschreibung.
+- **Halle:** zwei Bogenfenster an der freien Nordwand (Bildwunsch `bahnhof_innen.py`), das alte
+  Sprossenfenster hinter dem Getränkeautomaten ist weg; Abfahrtsmonitor mit gelben Zeilen.
+- **Pavillon:** die Beschreibung nennt jetzt je drei Tische (so stehen sie seit Runde 8); auf dem
+  Bodenbrett steht eine angefangene Partie mit großen Holzfiguren (Bildwunsch `grosse_figuren.py`).
+- **Wohnwagen:** eine dünne Wand trennt Bett und Nasszelle, der Duschvorhang schließt zur Küche;
+  die Küche rückt eine Spalte nach Osten; Kuriertasche an der Wand neben dem Kühlschrank; Pokale
+  tiefer auf dem Bord. Das Bett liegt quer zur Längsachse des Wagens (Nord–Süd über alle drei
+  Reihen); dass das Bild zwei Kissen hat, bleibt.
+- **Zustände:** Das Schild von Perfect Move hängt an der Fassade unter der Traufe (`auf` dem
+  Pavillon), nicht mehr als Balken über dem Dach; im Pavillon ersetzt es das abgenommene
+  Gründungsbild, Slick und der Club sind dort nicht mehr, ein Techniker und eine Trainerin von
+  Perfect Move richten ein. `tische-kaputt` liegt im Winter (`jahreszeit`), zwei Tische zeigen das
+  kaputte Bild, auch noch in `unterschriften`.
+
+### Runde 9: Bildschirmtische (mittel-3, 10.11.2026)
 
 Wunsch des Autors und der Geschichte (Szene 29: „Die Tische machen keine Fehler“; Szene 37: „am
 nächsten Morgen stehen im Pavillon Bildschirmtische“): Die Picknicktische mit Laptops sind ersetzt

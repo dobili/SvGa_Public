@@ -11,7 +11,7 @@
  "tilewidth": 16,
  "tileheight": 16,
  "nextlayerid": 5,
- "nextobjectid": 284,
+ "nextobjectid": 286,
  "layers": [
   {
    "id": 1,
@@ -2166,8 +2166,8 @@
     4,
     4,
     4,
-    1,
-    1,
+    4,
+    4,
     1,
     1,
     1,
@@ -20069,6 +20069,52 @@
        "name": "kollision",
        "type": "bool",
        "value": false
+      }
+     ]
+    },
+    {
+     "id": 284,
+     "name": "pwLagerfeuer",
+     "type": "moebel",
+     "x": 1008,
+     "y": 368,
+     "width": 16,
+     "height": 32,
+     "rotation": 0,
+     "visible": true,
+     "properties": [
+      {
+       "name": "tiefe",
+       "type": "int",
+       "value": 392
+      },
+      {
+       "name": "kollision",
+       "type": "bool",
+       "value": true
+      }
+     ]
+    },
+    {
+     "id": 285,
+     "name": "mfBank",
+     "type": "moebel",
+     "x": 1008,
+     "y": 416,
+     "width": 32,
+     "height": 32,
+     "rotation": 0,
+     "visible": true,
+     "properties": [
+      {
+       "name": "tiefe",
+       "type": "int",
+       "value": 440
+      },
+      {
+       "name": "kollision",
+       "type": "bool",
+       "value": true
       }
      ]
     }

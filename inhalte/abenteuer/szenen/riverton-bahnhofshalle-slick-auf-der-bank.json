@@ -66,7 +66,7 @@
       "an_wand": true
     },
     {
-      "moebel": "rv8Abfahrtsmonitor",
+      "moebel": "rv9Abfahrtsmonitor",
       "feld": [14, 1],
       "an_wand": true
     },
@@ -78,11 +78,6 @@
     {
       "moebel": "rv8GlastuerNord",
       "feld": [19, 1],
-      "an_wand": true
-    },
-    {
-      "moebel": "rv5Bogenfenster",
-      "feld": [21, 1],
       "an_wand": true
     },
     {
@@ -210,6 +205,16 @@
     {
       "moebel": "rv5Kuriertasche",
       "feld": [7, 12]
+    },
+    {
+      "moebel": "rv9Bogenfenster",
+      "feld": [1, 1],
+      "an_wand": true
+    },
+    {
+      "moebel": "rv9Bogenfenster",
+      "feld": [3, 1],
+      "an_wand": true
     }
   ],
   "ausloeser": [

@@ -247,14 +247,15 @@ ein Fanshop mit Schals und T-Shirts.
   30 Münzen.
 - **Weg 11, Seeufer:** Sperre S12 am Übergang `weiterLeuchtturm` (`wenn: capitalZugang` =
   `fernpartieGespielt` und `novaBitteGehoert`, der Wachmann erklärt). `ereignisWeltschachtag` (140, 13)
-  mit Quest `wegGhostCapital.weltschachtag` (klein): Simultan als Runde `wegGhostCapital.simultan`
-  (fünf Aufgaben, bis mittel-2 die Form Simultan baut), danach Abes Partie gegen die Welt, Foto, 25
+  mit Quest `wegGhostCapital.weltschachtag` (klein): Simultan `wegGhostCapital.simultan`
+  (partieformen.json: fünf Stellungsduelle aus Kapitel 6, Abschnitt 6.8, Abbildungen 6.33 bis 6.38,
+  gegen Slick, Big Joe, Mrs. Okafor, Céleste und Hollis; drei Punkte bestehen), danach Abes Partie gegen die Welt, Foto, 25
   Münzen. Figur Wanderer (`wegGhostCapital.wanderer`, (124, 15)) nimmt die Buchseiten zurück.
   `seite12` am Anleger (A (59, 8), B (99, 8), C (33, 8)), `faehrterminal` (A (48, 12), B (88, 12), C
   (22, 12)).
 - **Leuchtturm:** Figur Odette Finch (`wegGhostCapital.odette`, A (78, 14), B (114, 14), C (43, 13)):
-  Hinweise nach Zahl der Figuren, ab 15 der König (Fund `finchKoenig`) und das Meisterproblem (Runde
-  `wegGhostCapital.meisterproblem`, Platzhalter bis zum Bau mit der Engine), danach Fund
+  Hinweise nach Zahl der Figuren, ab 15 der König (Fund `finchKoenig`) und das Meisterproblem (Falle
+  von Légal, Begegnung `wegGhostCapital.meisterproblem` als Stellungsduell aus der Vorführung `finchFalle`), danach Fund
   `finchsBuchsbaum` (Extra). `plakatWeltschachtag` vor dem Aufsteller (A (58, 13), B (110, 14), C
   (20, 13)).
 - **Arena:** `fahnen` (A (31, 44), B (59, 44), C (5, 44)); Figur Wanderer (`capitalArena.wanderer`,

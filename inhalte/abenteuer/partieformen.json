@@ -7,5 +7,17 @@
       "sekunden": 5
     }
   ],
-  "simultan": []
+  "simultan": [
+    {
+      "kennung": "wegGhostCapital.simultan",
+      "begegnungen": [
+        "wegGhostCapital.simultan1",
+        "wegGhostCapital.simultan2",
+        "wegGhostCapital.simultan3",
+        "wegGhostCapital.simultan4",
+        "wegGhostCapital.simultan5"
+      ],
+      "mindestens": 3
+    }
+  ]
 }

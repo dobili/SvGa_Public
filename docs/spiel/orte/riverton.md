@@ -1174,3 +1174,8 @@ Boot; Pappelallee. Auslöser: `tafel` (15, 50), `fundZahnrad` (12, 43), `meilens
 | kanalweg | Winter              | Akt 3: Schnee am Pfad, Eis am Ufer (13, 7.3)                              |
 | bruecke  | Geländer gestrichen | nach Corwins Quest: Farbeimer und Leiter weg, Geländer frisch             |
 | bruecke  | Winter              | Akt 3: Schnee auf den Weiden, die Klapptische sind weggeräumt             |
+
+**Zustände Weg 3 (gebaut):** Kanalweg `graffiti` (`nadelIronwood >= 1`): Noors Wand ist fertig bemalt,
+Leiter und Sprayerin sind weg. Eisenbrücke `ohne-tische` (`nadelIronwood >= 1`): Die Brückenbauern haben
+die Klapptische weggeräumt, Corwin ist mit dem Streichen fertig. Der Winter beider Karten kommt mit der
+Schneefärbung (mittel-2).

@@ -798,6 +798,35 @@ Begründet nicht geändert:
   an einen Flusskai); dafür ein Bahnwärterhäuschen östlich des Güterschuppens (10.51, 20 Gebäude).
 - (42) Reihenhaus und Lagerhaus stehen je zweimal nebeneinander als Paar (Punkt 25: höchstens zweimal).
 
+### 3.7 Zweites Gutachten (10.11.2026, mittel-3)
+
+Behoben (`gutachten/riverton-aussen-2.md`, `riverton-innen-2.md`):
+
+- **Außen:** Bahnhof mit Uhrturm in der Mitte, Bogenportal mit Glastür unter dem Rundbogen und zwei
+  Flügeln (Bildwunsch `riverton_aussen.py`); der Bahnsteig liegt hinter dem Bahnhof zwischen Gebäude
+  und Gleis, Gleisbett aus Schotter; Bahnsteigbänke von der Seite statt mit dem Rücken zum Gleis;
+  Stellwerk ist eine Holzhütte am Fußweg (Tür zum Weg); der Fußweg biegt zum Vorplatz und hat zwei
+  Laternen; Tor des Güterschuppens mit Pflasterweg; zwei Läden statt Wohnblock und Angelladen;
+  Gehwege, Promenade, Bäckerei und Café auf Steinplatten, Vorplatz und Markt auf Kopfstein, Kai auf
+  Beton, so dass jede Fläche eine Kante hat; das ganze Wasser hat Steinufer, das Kanalbecken ist
+  offen zum Fluss; Pavillon aus Holz mit Fensterreihe und Tür (Bildwunsch `riverton_runde8b.py`);
+  sechs Bildschirmtische mit Abstand; Laternen am Uferweg stehen südlich des Wegs.
+- **Bahnhofshalle:** drei Schalterfenster, gläserne Bahnsteigtür in der Nordwand und gläserne
+  Eingangstür (eigene Bilder), Getränke- und Kaffeeautomat von vorn nebeneinander an der Nordwand,
+  Kiosk mit drei Zeitungshaltern im Raum statt auf der Wandkrone, Pops zwischen Haltern und
+  Tresen, keine Kartons mehr, nur zwei Pflanzen am Eingang.
+- **Pavillon:** rechteckige Holztische mit zwei Brettern auf der Platte und je einem Stuhl davor und
+  dahinter (Bildwunsch), Holztruhen, Pflanzen an den Ecken des Laufwegs, Limonadenglas auf einem
+  Tischchen.
+- **Wohnwagen:** drei Reihen tief, das Querbett reicht von Wand zu Wand; Pokale stehen auf dem
+  Wandbord unter der Decke; Nasszelle mit Mini-Toilette und Duschvorhang; Sitzecke mit zwei Bänken
+  um einen niedrigen Holztisch; keine Kistenmatte.
+
+Begründet nicht geändert: Bahnhofshalle mit hellen Ziegeln und rechteckigen Fenstern (keine
+Wand- und Fensterbilder in Backstein mit Rundbogen für Innenräume); Fahrbahnmarkierung und Pfützen
+(keine Bilder, Tönung der Laufzeit); Enten, Taubenmann und Hund sind Belebungsbilder; die
+Bäckerei behält ihr englisches Schild; Schuppen bleibt (stimmigste Karte des Gutachtens).
+
 ## 4. Bühnenbilder
 
 Je Karte Größe, Wände, Böden, Laufwege, Zonen und Inventar. Feld = linke obere Kachel. Möbel und Bilder

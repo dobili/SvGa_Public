@@ -2,7 +2,7 @@
   "karte": "riverton.pavillon",
   "datei": "karten/riverton-pavillon-perfect-move.json",
   "art": "innen",
-  "beschreibung": "Zustand: nach Szene 37 (slickAbschiedGesehen): Auf den langen Tischen stehen Laptops von Perfect Move statt der Bretter, der Limonadenstand ist fort, die großen Figuren liegen weggeräumt in den Truhen, an der Nordwand hängt das Schild von Perfect Move. Parkpavillon von Riverton, Slicks Club (Szenen 29 bis 37): ein Holzbau mit Dielen und einer Fensterreihe zum Fluss. In der Mitte ist ein großes Schachbrett in den Boden eingelassen, acht mal acht Platten aus hellem Marmor und dunklem Holz in einem Rahmen aus Stein, rundherum ein Laufweg, damit man die großen Figuren tragen kann. Die Figuren liegen in zwei Truhen südwestlich des Bretts. An der Nordwand hängt das Gründungsbild des Clubs, davor zwei lange Bänke für Zuschauer mit Blick aufs Brett. Links und rechts je zwei lange Holztische, auf jedem zwei Bretter nebeneinander, unter jedem Brett ein Stuhl davor und dahinter. Im Südosten der Limonadenstand mit Gläsern und Orangen, in den südlichen Ecken Pflanzen, unten die Tür mit Fußmatte.",
+  "beschreibung": "Zustand: nach Szene 37 (slickAbschiedGesehen): Auf den langen Tischen stehen Laptops von Perfect Move statt der Bretter, die großen Figuren liegen weggeräumt in den Truhen, an der Nordwand hängt das Schild von Perfect Move. Parkpavillon von Riverton, Slicks Club (Szenen 29 bis 37): ein Holzbau mit Dielen und einer Fensterreihe zum Fluss. In der Mitte ist ein großes Schachbrett in den Boden eingelassen, acht mal acht Platten aus hellem Marmor und dunklem Holz in einem Rahmen aus Stein, rundherum ein Laufweg, damit man die großen Figuren tragen kann. Die Figuren liegen in zwei Holztruhen südlich des Bretts. An der Nordwand hängt das Gründungsbild des Clubs, davor zwei lange Bänke für Zuschauer mit Blick aufs Brett. Links und rechts je zwei lange Tische aus zwei hellen Platten, auf jeder Platte ein Brett, an jedem Brett ein Stuhl davor und dahinter. Vor der Tür ein Tischchen mit einem Limonadenglas, Pflanzen an den Ecken des Laufwegs, unten die Tür mit Fußmatte.",
   "wand": "holz",
   "boden": "dielen",
   "raster": [
@@ -60,32 +60,19 @@
       "feld": [13, 3]
     },
     {
-      "moebel": "cr7LangtischL",
+      "moebel": "rv8Holztisch",
       "feld": [1, 5],
-      "id": "t1",
-      "bauteil_ok": true
-    },
-    {
-      "moebel": "cr7LangtischM",
-      "feld": [3, 5],
-      "id": "t1m",
-      "bauteil_ok": true
-    },
-    {
-      "moebel": "cr7LangtischR",
-      "feld": [4, 5],
-      "id": "t1r",
-      "bauteil_ok": true
+      "id": "t1"
     },
     {
       "moebel": "pd6Laptop",
       "auf": "t1",
-      "versatz": [0, -6]
+      "versatz": [-16, 0]
     },
     {
       "moebel": "pd6Laptop",
       "auf": "t1",
-      "versatz": [32, -6]
+      "versatz": [16, 0]
     },
     {
       "moebel": "rv5StuhlVorn",
@@ -95,49 +82,36 @@
     },
     {
       "moebel": "rv5StuhlRuecken",
-      "feld": [1, 7],
+      "feld": [1, 6],
       "zu": "t1",
       "versatz": [8, 0]
     },
     {
       "moebel": "rv5StuhlVorn",
       "feld": [3, 4],
-      "zu": "t1m",
+      "zu": "t1",
       "versatz": [8, 0]
     },
     {
       "moebel": "rv5StuhlRuecken",
-      "feld": [3, 7],
-      "zu": "t1m",
+      "feld": [3, 6],
+      "zu": "t1",
       "versatz": [8, 0]
     },
     {
-      "moebel": "cr7LangtischL",
+      "moebel": "rv8Holztisch",
       "feld": [19, 5],
-      "id": "t2",
-      "bauteil_ok": true
-    },
-    {
-      "moebel": "cr7LangtischM",
-      "feld": [21, 5],
-      "id": "t2m",
-      "bauteil_ok": true
-    },
-    {
-      "moebel": "cr7LangtischR",
-      "feld": [22, 5],
-      "id": "t2r",
-      "bauteil_ok": true
+      "id": "t2"
     },
     {
       "moebel": "pd6Laptop",
       "auf": "t2",
-      "versatz": [0, -6]
+      "versatz": [-16, 0]
     },
     {
       "moebel": "pd6Laptop",
       "auf": "t2",
-      "versatz": [32, -6]
+      "versatz": [16, 0]
     },
     {
       "moebel": "rv5StuhlVorn",
@@ -147,137 +121,201 @@
     },
     {
       "moebel": "rv5StuhlRuecken",
-      "feld": [19, 7],
+      "feld": [19, 6],
       "zu": "t2",
       "versatz": [8, 0]
     },
     {
       "moebel": "rv5StuhlVorn",
       "feld": [21, 4],
-      "zu": "t2m",
+      "zu": "t2",
       "versatz": [8, 0]
     },
     {
       "moebel": "rv5StuhlRuecken",
-      "feld": [21, 7],
-      "zu": "t2m",
+      "feld": [21, 6],
+      "zu": "t2",
       "versatz": [8, 0]
     },
     {
-      "moebel": "cr7LangtischL",
-      "feld": [1, 10],
-      "id": "t3",
-      "bauteil_ok": true
-    },
-    {
-      "moebel": "cr7LangtischM",
-      "feld": [3, 10],
-      "id": "t3m",
-      "bauteil_ok": true
-    },
-    {
-      "moebel": "cr7LangtischR",
-      "feld": [4, 10],
-      "id": "t3r",
-      "bauteil_ok": true
-    },
-    {
-      "moebel": "pd6Laptop",
-      "auf": "t3",
-      "versatz": [0, -6]
-    },
-    {
-      "moebel": "pd6Laptop",
-      "auf": "t3",
-      "versatz": [32, -6]
-    },
-    {
-      "moebel": "rv5StuhlVorn",
+      "moebel": "rv8Holztisch",
       "feld": [1, 9],
+      "id": "t3"
+    },
+    {
+      "moebel": "pd6Laptop",
+      "auf": "t3",
+      "versatz": [-16, 0]
+    },
+    {
+      "moebel": "pd6Laptop",
+      "auf": "t3",
+      "versatz": [16, 0]
+    },
+    {
+      "moebel": "rv5StuhlVorn",
+      "feld": [1, 8],
       "zu": "t3",
       "versatz": [8, 0]
     },
     {
       "moebel": "rv5StuhlRuecken",
-      "feld": [1, 12],
+      "feld": [1, 10],
       "zu": "t3",
       "versatz": [8, 0]
     },
     {
       "moebel": "rv5StuhlVorn",
-      "feld": [3, 9],
-      "zu": "t3m",
+      "feld": [3, 8],
+      "zu": "t3",
       "versatz": [8, 0]
     },
     {
       "moebel": "rv5StuhlRuecken",
-      "feld": [3, 12],
-      "zu": "t3m",
+      "feld": [3, 10],
+      "zu": "t3",
       "versatz": [8, 0]
     },
     {
-      "moebel": "cr7LangtischL",
-      "feld": [19, 10],
-      "id": "t4",
-      "bauteil_ok": true
-    },
-    {
-      "moebel": "cr7LangtischM",
-      "feld": [21, 10],
-      "id": "t4m",
-      "bauteil_ok": true
-    },
-    {
-      "moebel": "cr7LangtischR",
-      "feld": [22, 10],
-      "id": "t4r",
-      "bauteil_ok": true
-    },
-    {
-      "moebel": "pd6Laptop",
-      "auf": "t4",
-      "versatz": [0, -6]
-    },
-    {
-      "moebel": "pd6Laptop",
-      "auf": "t4",
-      "versatz": [32, -6]
-    },
-    {
-      "moebel": "rv5StuhlVorn",
+      "moebel": "rv8Holztisch",
       "feld": [19, 9],
+      "id": "t4"
+    },
+    {
+      "moebel": "pd6Laptop",
+      "auf": "t4",
+      "versatz": [-16, 0]
+    },
+    {
+      "moebel": "pd6Laptop",
+      "auf": "t4",
+      "versatz": [16, 0]
+    },
+    {
+      "moebel": "rv5StuhlVorn",
+      "feld": [19, 8],
       "zu": "t4",
       "versatz": [8, 0]
     },
     {
       "moebel": "rv5StuhlRuecken",
-      "feld": [19, 12],
+      "feld": [19, 10],
       "zu": "t4",
       "versatz": [8, 0]
     },
     {
       "moebel": "rv5StuhlVorn",
-      "feld": [21, 9],
-      "zu": "t4m",
+      "feld": [21, 8],
+      "zu": "t4",
       "versatz": [8, 0]
     },
     {
       "moebel": "rv5StuhlRuecken",
-      "feld": [21, 12],
-      "zu": "t4m",
+      "feld": [21, 10],
+      "zu": "t4",
       "versatz": [8, 0]
     },
     {
-      "moebel": "mf7Truhe",
-      "feld": [3, 14]
+      "moebel": "rv8Holztisch",
+      "feld": [1, 13],
+      "id": "t5"
     },
     {
-      "moebel": "mf7Truhe",
-      "feld": [5, 14]
+      "moebel": "pd6Laptop",
+      "auf": "t5",
+      "versatz": [-16, 0]
+    },
+    {
+      "moebel": "pd6Laptop",
+      "auf": "t5",
+      "versatz": [16, 0]
+    },
+    {
+      "moebel": "rv5StuhlVorn",
+      "feld": [1, 12],
+      "zu": "t5",
+      "versatz": [8, 0]
+    },
+    {
+      "moebel": "rv5StuhlRuecken",
+      "feld": [1, 14],
+      "zu": "t5",
+      "versatz": [8, 0]
+    },
+    {
+      "moebel": "rv5StuhlVorn",
+      "feld": [3, 12],
+      "zu": "t5",
+      "versatz": [8, 0]
+    },
+    {
+      "moebel": "rv5StuhlRuecken",
+      "feld": [3, 14],
+      "zu": "t5",
+      "versatz": [8, 0]
+    },
+    {
+      "moebel": "rv8Holztisch",
+      "feld": [19, 13],
+      "id": "t6"
+    },
+    {
+      "moebel": "pd6Laptop",
+      "auf": "t6",
+      "versatz": [-16, 0]
+    },
+    {
+      "moebel": "pd6Laptop",
+      "auf": "t6",
+      "versatz": [16, 0]
+    },
+    {
+      "moebel": "rv5StuhlVorn",
+      "feld": [19, 12],
+      "zu": "t6",
+      "versatz": [8, 0]
+    },
+    {
+      "moebel": "rv5StuhlRuecken",
+      "feld": [19, 14],
+      "zu": "t6",
+      "versatz": [8, 0]
+    },
+    {
+      "moebel": "rv5StuhlVorn",
+      "feld": [21, 12],
+      "zu": "t6",
+      "versatz": [8, 0]
+    },
+    {
+      "moebel": "rv5StuhlRuecken",
+      "feld": [21, 14],
+      "zu": "t6",
+      "versatz": [8, 0]
+    },
+    {
+      "moebel": "rv8Truhe",
+      "feld": [6, 15]
+    },
+    {
+      "moebel": "rv8Truhe",
+      "feld": [16, 15]
     },
     {
       "moebel": "wzPflanze",
-      "feld": [22, 14]
+      "feld": [18, 15]
+    },
+    {
+      "moebel": "wzPflanze",
+      "feld": [5, 15]
+    },
+    {
+      "moebel": "wzPflanze",
+      "feld": [5, 3]
+    },
+    {
+      "moebel": "wzPflanze",
+      "feld": [18, 3]
     },
     {
       "moebel": "mf4Fussmatte",
@@ -288,22 +326,6 @@
       "moebel": "mf5TuerSuedHolz",
       "feld": [12, 17],
       "an_wand": true
-    },
-    {
-      "moebel": "wzPflanze",
-      "feld": [1, 14]
-    },
-    {
-      "moebel": "wzPflanze",
-      "feld": [20, 14]
-    },
-    {
-      "moebel": "wzPflanze",
-      "feld": [21, 14]
-    },
-    {
-      "moebel": "wzPflanze",
-      "feld": [17, 15]
     },
     {
       "moebel": "sb5SchildPerfectMove",
@@ -330,7 +352,8 @@
     },
     {
       "name": "limonadenglas",
-      "feld": [20, 16]
+      "feld": [11, 16],
+      "auf_moebel": true
     }
   ],
   "figuren": [
@@ -351,10 +374,10 @@
     {
       "name": "zuschauer",
       "typ": "statist",
-      "feld": [2, 8],
+      "feld": [6, 10],
       "eigenschaften": {
-        "von": "2,8",
-        "bis": "1,10",
+        "von": "6,10",
+        "bis": "6,10",
         "tun": "schaut einer Blitzpartie zu",
         "wann": "tag",
         "sagt": "statist.riverton.pavillon.zuschauer"

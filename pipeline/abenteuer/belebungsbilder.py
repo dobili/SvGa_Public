@@ -15,6 +15,7 @@ ihrer Vorlage (``TIERE``; dieselben Maße stehen in ``app/src/abenteuer/oberwelt
 Aufruf: ``python -m pipeline.abenteuer.belebungsbilder /pfad/zum/privaten/repository``
 """
 
+import colorsys
 import importlib.util
 import random
 import sys
@@ -28,6 +29,24 @@ STAND_RAHMEN = 4
 # Anteil des Vorrats: Kinder und Ältere (graue Haare); der Rest sind Erwachsene.
 KINDER = 8
 AELTERE = 8
+# Natürliche Hauttöne (Wunsch des Autors, 10.11.2026): Körper 5 (oliv), 6 (grau), 8 (rosa), 9 (blau)
+# und 10 (Umfärbung) sehen nicht menschlich aus. Die vier Kinderkörper sind alle natürlich.
+HAUT = (1, 2, 3, 4, 7)
+HAUT_KINDER = (1, 2, 3, 4)
+# Haarfarben aus den Pixeln (die Farbnummern im Namen sind nicht in allen Frisuren gleich):
+# natürlich sind Rot-, Braun- und Blondtöne (Farbton bis 55°), Schwarz und Grau; bunt (Rosa, Blau,
+# Grün, Lila) fällt weg. Grau heißt: kaum Farbe und hell genug.
+NATUERLICHER_FARBTON = 55 / 360
+BUNT_AB_SAETTIGUNG = 0.2
+GRAU_HOECHSTENS_SAETTIGUNG = 0.15
+GRAU_MINDESTENS_HELLIGKEIT = 0.5
+# Kostüme statt Alltagskleidung (Schnittnummer am Anfang): Karateanzug, Häftlingsoverall, Polizei,
+# Tarnfleck, Rüstung, Ninja mit Maske, Badesachen, weißes Gewand. Lange Ärmel für den Winter gibt
+# es im Generator nur bei diesen Kostümen; Sommer und Winter werden deshalb nicht getrennt.
+KOSTUEME = ("15", "16", "19", "23", "29", "30", "31", "32", "33")
+# Kostümkapuzen unter den Frisuren (Frosch, Dino, Tierohren): Schnitte 27 bis 29, bei Kindern 4.
+KAPUZEN = ("27", "28", "29")
+KAPUZEN_KINDER = ("4",)
 
 # Tierart → (Vorlage unter modern-farm/Animals oder modern-exteriors, Rahmenbreite, Rahmenhöhe,
 # Art der Vorlage)
@@ -70,39 +89,64 @@ def _teile(ordner: Path, praefix: str) -> list[str]:
     return sorted(p.stem.removeprefix(praefix) for p in (ordner / "16x16").glob(f"{praefix}*.png"))
 
 
-def _grau(datei: Path) -> bool:
-    """Ist eine Frisur grau oder weiß? Mittel der deckenden Pixel hell und ohne Farbe."""
+def _haarfarbe(datei: Path) -> str:
+    """„grau“, „natürlich“ oder „bunt“ nach dem Mittel der deckenden Pixel einer Frisur."""
     bild = Image.open(datei).convert("RGBA")
     zugriff = bild.load()
     pixel = [zugriff[x, y] for x in range(bild.width) for y in range(bild.height) if zugriff[x, y][3] > 0]
     if not pixel:
-        return False
-    r, g, b = (sum(p[i] for p in pixel) / len(pixel) for i in range(3))
-    return max(r, g, b) > 140 and max(r, g, b) - min(r, g, b) < 30
+        return "bunt"
+    r, g, b = (sum(p[i] for p in pixel) / len(pixel) / 255 for i in range(3))
+    farbton, saettigung, helligkeit = colorsys.rgb_to_hsv(r, g, b)
+    if saettigung < GRAU_HOECHSTENS_SAETTIGUNG and helligkeit > GRAU_MINDESTENS_HELLIGKEIT:
+        return "grau"
+    if saettigung > BUNT_AB_SAETTIGUNG and farbton > NATUERLICHER_FARBTON:
+        return "bunt"
+    return "natürlich"
 
 
-def _lange_aermel(datei: Path) -> bool:
-    """Winterkleidung: Das Standbild von vorn hat Stoff bis zu den Händen (Reihen 20–23 der Arme)."""
+def _gesicht_bedeckt(datei: Path) -> bool:
+    """Deckt ein Kleidungsstück das Gesicht (Maske, Sturmhaube, Tierkostüm)? Stoff im Standbild von
+    vorn zwischen Stirn und Kinn (Reihen 14–20, Spalten 4–11)."""
     bild = Image.open(datei).convert("RGBA").crop((48, 0, 64, 32))
-    arme = [bild.getpixel((x, y))[3] for y in range(20, 24) for x in (3, 4, 11, 12)]
-    return sum(1 for a in arme if a > 0) >= 6
+    return any(bild.getpixel((x, y))[3] > 0 for y in range(14, 21) for x in range(4, 12))
 
 
 def statistenliste(gen: Path, zufall: random.Random) -> list[dict]:
-    """40 Einträge im Format von ``werkzeuge/figuren.json``: Erwachsene (Sommer, Winter), Ältere, Kinder."""
-    kleidung = _teile(gen / "Outfits", "Outfit_")
-    winter = [k for k in kleidung if _lange_aermel(gen / "Outfits" / "16x16" / f"Outfit_{k}.png")]
-    sommer = [k for k in kleidung if k not in winter] or kleidung
-    frisuren = _teile(gen / "Hairstyles", "Hairstyle_")
-    graue = [f for f in frisuren if _grau(gen / "Hairstyles" / "16x16" / f"Hairstyle_{f}.png")] or frisuren
-    kinderfrisuren = _teile(gen / "Hairstyles_kids", "Hairstyle_")
-    kinderkleidung = _teile(gen / "Outfits_kids", "Outfit_kid_")
+    """40 Einträge im Format von ``werkzeuge/figuren.json``: Kinder, Ältere (graue Haare), Erwachsene.
+
+    Nur natürliche Haut- und Haarfarben, keine Masken und Kostüme (Wunsch des Autors, 10.11.2026).
+    """
+    outfits = gen / "Outfits" / "16x16"
+    kleidung = [
+        k
+        for k in _teile(gen / "Outfits", "Outfit_")
+        if k.split("_")[0] not in KOSTUEME and not _gesicht_bedeckt(outfits / f"Outfit_{k}.png")
+    ]
+    haare = {
+        f: _haarfarbe(gen / "Hairstyles" / "16x16" / f"Hairstyle_{f}.png")
+        for f in _teile(gen / "Hairstyles", "Hairstyle_")
+    }
+    frisuren = [f for f, farbe in haare.items() if farbe != "bunt" and f.split("_")[0] not in KAPUZEN]
+    graue = [f for f, farbe in haare.items() if farbe == "grau"] or frisuren
+    kinderfrisuren = [
+        f
+        for f in _teile(gen / "Hairstyles_kids", "Hairstyle_")
+        if f.split("_")[1] not in KAPUZEN_KINDER
+        and _haarfarbe(gen / "Hairstyles_kids" / "16x16" / f"Hairstyle_{f}.png") != "bunt"
+    ]
+    kinder = gen / "Outfits_kids" / "16x16"
+    kinderkleidung = [
+        k
+        for k in _teile(gen / "Outfits_kids", "Outfit_kid_")
+        if not _gesicht_bedeckt(kinder / f"Outfit_kid_{k}.png")
+    ]
     liste = []
     for i in range(STATISTEN):
         if i < KINDER:
             liste.append(
                 {
-                    "koerper": zufall.randint(1, 4),
+                    "koerper": zufall.choice(HAUT_KINDER),
                     "augen": zufall.randint(1, 6),
                     "kind": True,
                     "kleidung": zufall.choice(kinderkleidung),
@@ -111,11 +155,12 @@ def statistenliste(gen: Path, zufall: random.Random) -> list[dict]:
             )
             continue
         aelter = i < KINDER + AELTERE
+        # Ältere haben graue Haare, Erwachsene alle natürlichen Farben.
         liste.append(
             {
-                "koerper": zufall.randint(1, 10),
+                "koerper": zufall.choice(HAUT),
                 "augen": zufall.randint(1, 7),
-                "kleidung": zufall.choice(winter if i % 2 else sommer),
+                "kleidung": zufall.choice(kleidung),
                 "frisur": zufall.choice(graue if aelter else frisuren),
             }
         )

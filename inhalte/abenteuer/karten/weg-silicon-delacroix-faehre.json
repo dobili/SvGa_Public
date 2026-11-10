@@ -11,7 +11,7 @@
  "tilewidth": 16,
  "tileheight": 16,
  "nextlayerid": 5,
- "nextobjectid": 214,
+ "nextobjectid": 215,
  "layers": [
   {
    "id": 1,
@@ -7389,6 +7389,11 @@
        "value": "tag"
       },
       {
+       "name": "zeigt",
+       "type": "string",
+       "value": "rosenthalDeVere"
+      },
+      {
        "name": "sagt",
        "type": "string",
        "value": "statist.wegSiliconDelacroix.faehre.matrose"
@@ -7623,7 +7628,7 @@
     },
     {
      "id": 17,
-     "name": "fliegendeFische",
+     "name": "robbe",
      "type": "tier",
      "x": 416,
      "y": 480,
@@ -12159,6 +12164,29 @@
        "name": "kollision",
        "type": "bool",
        "value": true
+      }
+     ]
+    },
+    {
+     "id": 214,
+     "name": "pd7Finkenzeichen",
+     "type": "moebel",
+     "x": 144,
+     "y": 640,
+     "width": 16,
+     "height": 16,
+     "rotation": 0,
+     "visible": true,
+     "properties": [
+      {
+       "name": "tiefe",
+       "type": "int",
+       "value": 1
+      },
+      {
+       "name": "kollision",
+       "type": "bool",
+       "value": false
       }
      ]
     }

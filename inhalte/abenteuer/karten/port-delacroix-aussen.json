@@ -14355,6 +14355,11 @@
        "value": "tag"
       },
       {
+       "name": "zeigt",
+       "type": "string",
+       "value": "operPartie"
+      },
+      {
        "name": "sagt",
        "type": "string",
        "value": "statist.portDelacroix.aussen.rentner"

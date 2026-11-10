@@ -103,10 +103,11 @@ je Viertel). Der Park um die Arena ist Stadt geworden:
 - Neue Möbel `ca8` (Läden, Märkte, Kaufhäuser, Post, Wachen, Polizeirevier, Feuerwache, Landhaus,
   Hoch-, Wohn- und Reihenhäuser aus Modern Exteriors), alle Kulissen ohne Innenraum.
 - Ostrand: `innenstadt` (Spalte 79, Reihen 57–58), die Fußgängerstraße führt ins neue Viertel.
-- Belebung (alle Varianten gleich): 12 Statisten, davon 9 mit Satz (Eisverkäuferin, Tourist mit
-  Stadtplan, Rentnerin mit Lasker, Student mit Deep Blue, Busfahrer mit Perfect Move,
-  Straßenmusiker, Vater, Schülerin mit Abzugsschach, Junge mit Autogrammheft in zwei Teilen), dazu
-  Fans, Reporterin, Polizist; Tauben, Spatzen, Hund, Katze. Sätze unter `statist.capitalArena.aussen.*`.
+- Belebung (alle Varianten gleich): 13 Statisten, davon 10 mit Satz (Schachlehrer am Abend, zeigt
+  `immergruenePartie`; Eisverkäuferin, Tourist mit
+  Stadtplan, Rentnerin mit Lasker, Student mit Deep Blue, Busfahrer mit Perfect Move (morgens),
+  Straßenmusiker (abends), Vater, Schülerin mit Abzugsschach, Junge mit Autogrammheft in zwei Teilen), dazu
+  Fans, Reporterin, Polizist (morgens); Tauben, Spatzen, Hund, Katze, Eichhörnchen, Amseln. Sätze unter `statist.capitalArena.aussen.*`.
 
 ### 1.3a Innenstadt (`capitalArena.innenstadt`, 80 × 60, neues Viertel)
 
@@ -123,8 +124,10 @@ je Viertel). Der Park um die Arena ist Stadt geworden:
 
 - Szene mit `"viertel": true`; zählt wie eine Außenkarte (Regel 10.51 und 10.53). Gebäude: A 28,
   B und C je 27.
-- **U-Bahn-Platz** (Dokument 15, 2.14, Treffpunkt K5): zwei alte Treppen mit Geländer führen hinab
-  zum stillgelegten U-Bahnhof, davor ein Bauzaun mit Plane. A Platz in der Mitte (Spalten 26–53), B
+- **U-Bahn-Platz** (Dokument 15, 2.14, Treffpunkt K5): der alte Abgang zum stillgelegten U-Bahnhof
+  mit Schild „Subway“, verschlossen mit Rollgitter, Kette und Schloss (`ci8Gitter`, für Runde 6 auch
+  `ci8GitterOffen`), daneben ein Kreidespringer auf dem Pflaster und ein Aufsteller „Bald“. Gitter: A
+  (39, 45), B (14, 45), C (64, 45). A Platz in der Mitte (Spalten 26–53), B
   im Westen (1–28), C im Osten (51–78). Der Bahnhof selbst (Bahnsteig, Fliesen, Graffiti) kommt mit
   dem Ereignis in Runde 6 als Innenraum.
 - Westrand: `arena` (Spalte 0, Reihen 57–58), Ankunft (1, 57).
@@ -132,7 +135,7 @@ je Viertel). Der Park um die Arena ist Stadt geworden:
   Washington Square Park, Bauarbeiter mit dem Spieß, Frau mit Dackel, Junge mit Kapuze, der vom
   Kreidepferd am Gitter erzählt (zwei Teile, Antwort von Ambrose), Geschäftsfrau mit Perfect Move,
   Schüler mit Judit Polgár, Straßenkehrer mit dem Zentrum); dazu Taxifahrer, Touristen, Jogger,
-  Lieferfahrer; Tauben, Dackel, Katze, Spatzen. Sätze unter `statist.capitalArena.innenstadt.*`.
+  Lieferfahrer; Tauben, Dackel, Katze, Spatzen, Möwen, Eichhörnchen. Sätze unter `statist.capitalArena.innenstadt.*`.
 
 ### 1.4 Halle (`capitalArena.halle`, 30 × 20)
 
@@ -206,17 +209,15 @@ ein Fanshop mit Schals und T-Shirts.
    „Landesmeisterschaft“, Pressetisch mit Laptops und Mikrofonen, Fanshop-Stand.
 3. **Für Runde 6 (Felder der Fundstellen, frei begehbar):** Nacht der Kreidespringer (Dokument 15,
    2.14) in `capitalArena.innenstadt` vor dem Bauzaun am U-Bahn-Abgang:
-   - `ereignisKreidenacht`: A (40, 48), B (15, 48), C (66, 48);
-   - `kreide5` (Kreidespringer am Gitter): A (36, 48), B (11, 48), C (61, 48).
-4. Bilder für das Viertel (beim Haupt-Chat bestellt, bis dahin Ersatz): Gitter vor dem U-Bahn-Abgang
-   (Ersatz: Bauzaun mit Plane), Kreidespringer an Mauer oder Gitter (2 × 2), Plakat „Bald“.
+   - `ereignisKreidenacht` (vor dem Gitter): A (40, 47), B (15, 47), C (65, 47);
+   - `kreide5` (Kreidespringer am Gitter): A (38, 47), B (13, 47), C (63, 47).
+4. Bilder für das Viertel: eigene Bilder `gitter_ubahn.png`, `kreidespringer.png`, `plakat_bald.png`.
 5. **Weg 11, Weltschachtag (Dokument 15, 2.13; Runde 7):** Am Ostende des Seeufers stehen in allen
-   Varianten die Bühne (138, 9) mit zwei Lautsprechern, davor eine lange Tafel aus fünf Klapptischen mit
-   Brettern (Spalten 122–135, Reihen 12–13) für das Simultan, westlich davon Eiswagen und Tacowagen
+   Varianten die Bühne (138, 9) mit zwei Lautsprechern, dazwischen eine weiße und eine schwarze Fahne, davor
+   eine lange Tafel aus fünf Klapptischen mit Brettern (`ca8KlapptischBrett`) (Spalten 122–135, Reihen 12–13) für das Simultan, westlich davon Eiswagen und Tacowagen
    (A (100, 12)/(110, 12), B (105, 11)/(115, 11), C (100, 10)/(110, 10)). Am Leuchtturm stehen Odettes
    Wohnmobil (A (78, 9), B (112, 9), C (37, 9)) und ein Plakat (A (58, 10), B (109, 10), C (20, 10);
-   Ersatz: Plakat Landesmeisterschaft; bestellt: `plakat_weltschachtag.png` „20. Juli“, 2 × 3).
-   Lichterketten über der Tafel fehlen noch (bestellt: `lichterkette.png`, 6 × 1).
+   eigenes Bild `plakat_20juli.png`). Über der Tafel hängt zwischen zwei Lichtermasten (121, 9) und (133, 9) eine Lichterkette.
    - `ereignisWeltschachtag`: Seeufer (140, 13), vor der Bühne;
    - `seite12` am Anleger: Seeufer (59, 10);
    - `finchKoenig` (Odette am Wohnmobil): Leuchtturm A (78, 13), B (113, 13), C (38, 13);

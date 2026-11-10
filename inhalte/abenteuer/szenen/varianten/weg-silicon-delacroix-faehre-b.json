@@ -1551,6 +1551,14 @@
         21
       ],
       "runde7": true
+    },
+    {
+      "moebel": "pd7Finkenzeichen",
+      "feld": [
+        9,
+        46
+      ],
+      "runde7": true
     }
   ],
   "ausloeser": [
@@ -1629,6 +1637,7 @@
         "bis": "19,18",
         "tun": "prüft die Ladungsgurte",
         "wann": "tag",
+        "zeigt": "rosenthalDeVere",
         "sagt": "statist.wegSiliconDelacroix.faehre.matrose"
       }
     },
@@ -1730,7 +1739,7 @@
       }
     },
     {
-      "name": "fliegendeFische",
+      "name": "robbe",
       "typ": "tier",
       "feld": [
         26,

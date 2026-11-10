@@ -256,7 +256,7 @@ musikhausOffen`): A Spieltische und Henris Klavier; B Musikschule mit Klapptisch
 - **Belebung außen (alle Varianten gleich):** 12 Statisten, davon 9 ansprechbar, und 5 Tiere
   (Pelikane, Möwen, Reiher, Katze, ein Hund, der ein Stück mitläuft). Ansprechbar: Handwerker
   (Fesselung), Sandsackhelfer (Lieblingszug), Briefträgerin (Welt), Rentner am Uferweg (Morphy 1858,
-  Vorrat 4.3 Nr. 16, mit Antwort von Ambrose), Fischer am Kai (Weltmeisterschaft 1886, Nr. 19),
+  Vorrat 4.3 Nr. 16, mit Antwort von Ambrose, zeigt `operPartie`), Fischer am Kai (Weltmeisterschaft 1886, Nr. 19),
   Mutter am Gebäckwagen (Perfect Move), Großmutter (Missverständnis), Bootsbauer am Ostkai (Rat,
   Kapitel 1), Kind in Gummistiefeln (Geschichte in zwei Teilen). Ohne Satz: Ballkinder, Kehrerin,
   Angler. Sätze in `texte/de.json` unter `statist.portDelacroix.aussen.*`.

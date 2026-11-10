@@ -11,7 +11,7 @@
  "tilewidth": 16,
  "tileheight": 16,
  "nextlayerid": 5,
- "nextobjectid": 122,
+ "nextobjectid": 124,
  "layers": [
   {
    "id": 1,
@@ -16055,6 +16055,52 @@
     },
     {
      "id": 108,
+     "name": "ca8FahneWeiss",
+     "type": "moebel",
+     "x": 2192,
+     "y": 144,
+     "width": 16,
+     "height": 48,
+     "rotation": 0,
+     "visible": true,
+     "properties": [
+      {
+       "name": "tiefe",
+       "type": "int",
+       "value": 184
+      },
+      {
+       "name": "kollision",
+       "type": "bool",
+       "value": true
+      }
+     ]
+    },
+    {
+     "id": 109,
+     "name": "ca8FahneSchwarz",
+     "type": "moebel",
+     "x": 2304,
+     "y": 144,
+     "width": 16,
+     "height": 48,
+     "rotation": 0,
+     "visible": true,
+     "properties": [
+      {
+       "name": "tiefe",
+       "type": "int",
+       "value": 184
+      },
+      {
+       "name": "kollision",
+       "type": "bool",
+       "value": true
+      }
+     ]
+    },
+    {
+     "id": 110,
      "name": "ca8Lautsprecher",
      "type": "moebel",
      "x": 2144,
@@ -16077,7 +16123,7 @@
      ]
     },
     {
-     "id": 109,
+     "id": 111,
      "name": "ca8Lautsprecher",
      "type": "moebel",
      "x": 2320,
@@ -16100,7 +16146,7 @@
      ]
     },
     {
-     "id": 110,
+     "id": 112,
      "name": "ca8Eiswagen",
      "type": "moebel",
      "x": 1600,
@@ -16123,7 +16169,7 @@
      ]
     },
     {
-     "id": 111,
+     "id": 113,
      "name": "ca8Tacowagen",
      "type": "moebel",
      "x": 1760,
@@ -16146,8 +16192,8 @@
      ]
     },
     {
-     "id": 112,
-     "name": "ca7Klapptisch",
+     "id": 114,
+     "name": "ca8KlapptischBrett",
      "type": "moebel",
      "x": 1952,
      "y": 192,
@@ -16169,31 +16215,8 @@
      ]
     },
     {
-     "id": 113,
-     "name": "mf2SchachbrettFiguren",
-     "type": "moebel",
-     "x": 1959,
-     "y": 197,
-     "width": 18,
-     "height": 14,
-     "rotation": 0,
-     "visible": true,
-     "properties": [
-      {
-       "name": "tiefe",
-       "type": "int",
-       "value": 217
-      },
-      {
-       "name": "kollision",
-       "type": "bool",
-       "value": false
-      }
-     ]
-    },
-    {
-     "id": 114,
-     "name": "ca7Klapptisch",
+     "id": 115,
+     "name": "ca8KlapptischBrett",
      "type": "moebel",
      "x": 2000,
      "y": 192,
@@ -16215,31 +16238,8 @@
      ]
     },
     {
-     "id": 115,
-     "name": "mf2SchachbrettFiguren",
-     "type": "moebel",
-     "x": 2007,
-     "y": 197,
-     "width": 18,
-     "height": 14,
-     "rotation": 0,
-     "visible": true,
-     "properties": [
-      {
-       "name": "tiefe",
-       "type": "int",
-       "value": 217
-      },
-      {
-       "name": "kollision",
-       "type": "bool",
-       "value": false
-      }
-     ]
-    },
-    {
      "id": 116,
-     "name": "ca7Klapptisch",
+     "name": "ca8KlapptischBrett",
      "type": "moebel",
      "x": 2048,
      "y": 192,
@@ -16262,30 +16262,7 @@
     },
     {
      "id": 117,
-     "name": "mf2SchachbrettFiguren",
-     "type": "moebel",
-     "x": 2055,
-     "y": 197,
-     "width": 18,
-     "height": 14,
-     "rotation": 0,
-     "visible": true,
-     "properties": [
-      {
-       "name": "tiefe",
-       "type": "int",
-       "value": 217
-      },
-      {
-       "name": "kollision",
-       "type": "bool",
-       "value": false
-      }
-     ]
-    },
-    {
-     "id": 118,
-     "name": "ca7Klapptisch",
+     "name": "ca8KlapptischBrett",
      "type": "moebel",
      "x": 2096,
      "y": 192,
@@ -16307,31 +16284,8 @@
      ]
     },
     {
-     "id": 119,
-     "name": "mf2SchachbrettFiguren",
-     "type": "moebel",
-     "x": 2103,
-     "y": 197,
-     "width": 18,
-     "height": 14,
-     "rotation": 0,
-     "visible": true,
-     "properties": [
-      {
-       "name": "tiefe",
-       "type": "int",
-       "value": 217
-      },
-      {
-       "name": "kollision",
-       "type": "bool",
-       "value": false
-      }
-     ]
-    },
-    {
-     "id": 120,
-     "name": "ca7Klapptisch",
+     "id": 118,
+     "name": "ca8KlapptischBrett",
      "type": "moebel",
      "x": 2144,
      "y": 192,
@@ -16353,20 +16307,112 @@
      ]
     },
     {
-     "id": 121,
-     "name": "mf2SchachbrettFiguren",
+     "id": 119,
+     "name": "ca8Lichtermast",
      "type": "moebel",
-     "x": 2151,
-     "y": 197,
-     "width": 18,
-     "height": 14,
+     "x": 1936,
+     "y": 144,
+     "width": 16,
+     "height": 48,
      "rotation": 0,
      "visible": true,
      "properties": [
       {
        "name": "tiefe",
        "type": "int",
-       "value": 217
+       "value": 184
+      },
+      {
+       "name": "kollision",
+       "type": "bool",
+       "value": true
+      }
+     ]
+    },
+    {
+     "id": 120,
+     "name": "ca8Lichtermast",
+     "type": "moebel",
+     "x": 2128,
+     "y": 144,
+     "width": 16,
+     "height": 48,
+     "rotation": 0,
+     "visible": true,
+     "properties": [
+      {
+       "name": "tiefe",
+       "type": "int",
+       "value": 184
+      },
+      {
+       "name": "kollision",
+       "type": "bool",
+       "value": true
+      }
+     ]
+    },
+    {
+     "id": 121,
+     "name": "ca8Lichterkette",
+     "type": "moebel",
+     "x": 1952,
+     "y": 144,
+     "width": 64,
+     "height": 16,
+     "rotation": 0,
+     "visible": true,
+     "properties": [
+      {
+       "name": "tiefe",
+       "type": "int",
+       "value": 152
+      },
+      {
+       "name": "kollision",
+       "type": "bool",
+       "value": false
+      }
+     ]
+    },
+    {
+     "id": 122,
+     "name": "ca8Lichterkette",
+     "type": "moebel",
+     "x": 2016,
+     "y": 144,
+     "width": 64,
+     "height": 16,
+     "rotation": 0,
+     "visible": true,
+     "properties": [
+      {
+       "name": "tiefe",
+       "type": "int",
+       "value": 152
+      },
+      {
+       "name": "kollision",
+       "type": "bool",
+       "value": false
+      }
+     ]
+    },
+    {
+     "id": 123,
+     "name": "ca8Lichterkette",
+     "type": "moebel",
+     "x": 2064,
+     "y": 144,
+     "width": 64,
+     "height": 16,
+     "rotation": 0,
+     "visible": true,
+     "properties": [
+      {
+       "name": "tiefe",
+       "type": "int",
+       "value": 152
       },
       {
        "name": "kollision",

@@ -11,7 +11,7 @@
  "tilewidth": 16,
  "tileheight": 16,
  "nextlayerid": 5,
- "nextobjectid": 67,
+ "nextobjectid": 68,
  "layers": [
   {
    "id": 1,
@@ -6729,12 +6729,12 @@
     },
     {
      "id": 64,
-     "name": "n4PfahlhausWeiss",
+     "name": "pd7Hausboot",
      "type": "moebel",
-     "x": 48,
-     "y": 128,
-     "width": 64,
-     "height": 80,
+     "x": 16,
+     "y": 160,
+     "width": 96,
+     "height": 64,
      "rotation": 0,
      "visible": true,
      "properties": [
@@ -6779,20 +6779,43 @@
      "type": "moebel",
      "x": 256,
      "y": 224,
-     "width": 32,
-     "height": 32,
+     "width": 16,
+     "height": 16,
      "rotation": 0,
      "visible": true,
      "properties": [
       {
        "name": "tiefe",
        "type": "int",
-       "value": 248
+       "value": 232
       },
       {
        "name": "kollision",
        "type": "bool",
        "value": true
+      }
+     ]
+    },
+    {
+     "id": 67,
+     "name": "pd7Finkenzeichen",
+     "type": "moebel",
+     "x": 160,
+     "y": 208,
+     "width": 16,
+     "height": 16,
+     "rotation": 0,
+     "visible": true,
+     "properties": [
+      {
+       "name": "tiefe",
+       "type": "int",
+       "value": 1
+      },
+      {
+       "name": "kollision",
+       "type": "bool",
+       "value": false
       }
      ]
     }

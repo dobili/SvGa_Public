@@ -97,6 +97,8 @@ export function Gedaechtnisstellung(props: {
             start={LEERES_BRETT}
             beiUebernehmen={(fen) => setzeErgebnis(vergleicheStellung(eintrag.fen, fen))}
             beiAbbrechen={() => beiEnde(false)}
+            nurSetzen
+            fertigText={tSpiel("oberwelt.gedaechtnis.fertig")}
           />
         </>
       )}

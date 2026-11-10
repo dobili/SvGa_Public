@@ -50,14 +50,21 @@ export function ErinnerungsRunde({
       </section>
     );
   }
+  // Nach „Runde auswerten“ eine eigene Endkarte mit dem einen Weg zurück; das Ende des
+  // Rundenrahmens („Noch eine Runde“) gehört in die App, nicht in die Geschichte (docs/spiel/18).
+  if (runde.fertig) {
+    return (
+      <section className="karte" data-testid="abenteuer-aufgaben-ende">
+        <p>{t("zugerraten.ende")}</p>
+        {zurueck}
+      </section>
+    );
+  }
   return (
-    <>
-      <Rundenrahmen kennung="zugErraten" runde={runde} nochmal={() => {}} zurAuswahl={null}>
-        <div className="trainer-aufgabe">
-          <Zugerratenaufgabe aufgabe={aufgabe} runde={runde} />
-        </div>
-      </Rundenrahmen>
-      {runde.ergebnis !== null && zurueck}
-    </>
+    <Rundenrahmen kennung="zugErraten" runde={runde} nochmal={() => {}} zurAuswahl={null} imSpiel>
+      <div className="trainer-aufgabe">
+        <Zugerratenaufgabe aufgabe={aufgabe} runde={runde} />
+      </div>
+    </Rundenrahmen>
   );
 }

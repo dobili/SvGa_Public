@@ -110,6 +110,7 @@ export function partieeinstellungAus(
       ...(auftrag.kandidaten ? { kandidaten: auftrag.kandidaten } : {}),
       ...(auftrag.kulisse ? { kulisse: auftrag.kulisse } : {}),
       ...(auftrag.buchbruch ? { buchbruch: auftrag.buchbruch } : {}),
+      ...(profil.portraet ? { portraet: profil.portraet } : {}),
     },
   };
 }

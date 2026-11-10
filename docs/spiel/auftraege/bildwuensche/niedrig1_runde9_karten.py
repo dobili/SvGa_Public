@@ -56,8 +56,9 @@ Bilder (in ``spiel/eigene/``, Breite × Höhe in Pixeln):
   Bay: das Gerät aus dem Paket las sich als brauner Holzkasten).
 - ``schubladenschrank_metall.png`` (32 × 48): Metallschrank mit vier Schubladen und Griffen, in dem
   die Schummelgeräte liegen (Gutachten: der Schrank hatte Türen statt Schubladen).
-- ``serverreihe_6.png`` (144 × 48): sechs Serverschränke aus Modern Interiors (Hospital 105 und zwei
-  Varianten) ohne ihre leeren Ränder dicht nebeneinander, als geschlossene Reihe an der Nordwand
+- ``serverreihe_6.png`` (160 × 48, die Reihe mittig mit Rand links und rechts): sechs
+  Serverschränke aus Modern Interiors (Hospital 105 und zwei Varianten) ohne ihre leeren Ränder
+  dicht nebeneinander, als geschlossene Reihe an der Nordwand
   (Gutachten: zwischen den Schränken lag je eine halbe Kachel Wand).
 - ``spiel/figuren/postreiter.png`` (384 × 64, Figurenbogen): aus den Gemini-Bildern
   ``postreiter_ki_rechts/_oben/_links/_unten.png`` (je 16 × 32). Obere Reihe vier Standbilder
@@ -485,7 +486,7 @@ SERVERBILDER = (
     "modern-interiors/1_Interiors/16x16/Theme_Sorter_Black_Shadow_Singles/19_Hospital_Black_Shadow_SIngles_16x16/Hospital_Black_Shadow_Singles_111.png",
     "modern-interiors/1_Interiors/16x16/Theme_Sorter_Black_Shadow_Singles/19_Hospital_Black_Shadow_SIngles_16x16/Hospital_Black_Shadow_Singles_105.png",
 )
-REIHE_B, REIHE_H = 144, 48
+REIHE_B, REIHE_H = 160, 48
 
 
 def serverreihe_6(haupt: Path) -> Image.Image:

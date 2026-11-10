@@ -1,0 +1,117 @@
+/*
+ * Stil der Spielhülle (docs/spiel/18_Spielhuelle.md): Partie und Aufgabenrunde im Aussehen des
+ * Spiels. Navy als Grund, Gold für Namen und Rahmen, helle Karten für Status und Knöpfe.
+ * Gehört zu anbindung/Huelle.tsx und anbindung/PartieHuelle.tsx.
+ */
+.abenteuer-huelle {
+  padding: 0;
+  padding-top: env(safe-area-inset-top);
+  gap: 0;
+  min-height: 100dvh;
+  background: var(--navy);
+  color: var(--flaeche);
+}
+
+.abenteuer-huelle-kopf {
+  display: flex;
+  align-items: center;
+  gap: calc(var(--raster) * 1.5);
+  padding: var(--raster) calc(var(--raster) * 2);
+  border-bottom: 2px solid var(--gold);
+}
+
+.abenteuer-huelle-figur {
+  margin: 0;
+  color: var(--gold);
+  font-weight: 600;
+  font-size: var(--groesse-gross);
+  letter-spacing: 0.02em;
+}
+
+.abenteuer-huelle-ort {
+  margin: 0;
+  font-size: var(--groesse-klein);
+  opacity: 0.85;
+}
+
+.abenteuer-huelle-inhalt {
+  display: flex;
+  flex-direction: column;
+  gap: var(--raster);
+  padding: var(--raster) calc(var(--raster) * 1.5) calc(var(--raster) * 3);
+}
+
+/* Die Zeile „am Zug“ und „Brett drehen“ unter dem Brett braucht die Partie im Spiel nicht. */
+.abenteuer-huelle-partie .brettzeile {
+  display: none;
+}
+
+/* Uhr einer Seite: Name links, Zeit rechts; die laufende Uhr in Gold, knappe Zeit rot. */
+.abenteuer-huelle-uhr {
+  display: flex;
+  justify-content: space-between;
+  align-items: baseline;
+  padding: calc(var(--raster) / 2) var(--raster);
+  border: 1px solid rgba(201, 162, 39, 0.4);
+  border-radius: var(--radius);
+  font-variant-numeric: tabular-nums;
+}
+
+.abenteuer-huelle-uhr[data-laeuft="true"] {
+  border-color: var(--gold);
+  color: var(--gold);
+}
+
+.abenteuer-huelle-uhr[data-knapp="true"] .abenteuer-huelle-zeit {
+  color: #ff8a80;
+}
+
+.abenteuer-huelle-zeit {
+  font-size: var(--groesse-gross);
+  font-weight: 600;
+}
+
+/* Fuß: eine Zeile Status und der eine Weg hinaus. */
+.abenteuer-huelle-fuss {
+  display: flex;
+  flex-wrap: wrap;
+  align-items: center;
+  justify-content: space-between;
+  gap: var(--raster);
+  padding: var(--raster) calc(var(--raster) * 1.5);
+  border-radius: var(--radius);
+  background: rgba(245, 240, 230, 0.96);
+  color: var(--navy);
+}
+
+.abenteuer-huelle-fuss p {
+  margin: 0;
+}
+
+.abenteuer-huelle-fuss .knopfreihe {
+  margin: 0;
+}
+
+/* Die Kartenleiste liegt auf Navy: heller Grund, damit die Karten lesbar bleiben. */
+.abenteuer-huelle .abenteuer-kartenleiste {
+  background: rgba(245, 240, 230, 0.96);
+  color: var(--navy);
+}
+
+/* Blindschach in der Hülle: Figuren unsichtbar (wie .rahmen-blindschach im Rahmen der App). */
+.abenteuer-huelle-blind .brett-figur {
+  visibility: hidden;
+}
+
+/* Aufgabenrunde: Die Trainerkomponenten der App stehen auf einer hellen Karte im Navy der Hülle. */
+.abenteuer-huelle-aufgaben .abenteuer-huelle-inhalt > * {
+  padding: calc(var(--raster) * 1.5);
+  border-radius: var(--radius);
+  background: var(--flaeche);
+  color: var(--navy);
+}
+
+/* „Brett drehen“ braucht die Aufgabe im Spiel nicht; wer am Zug ist, bleibt stehen. */
+.abenteuer-huelle .brettschalter-gruppe {
+  display: none;
+}

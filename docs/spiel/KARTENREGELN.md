@@ -916,6 +916,18 @@ auf jeder soll etwas passieren, das man entdecken kann. Die Geschichten dazu ste
       auf dem ersten an.
     - Kein Feld des Auslösers ist gesperrt, auch nicht halb (ein Haus mit Feinschub von 8 Pixeln
       sperrt die Nachbarkachel mit). Am Kartenrand steht dort der Belag des Wegs, nicht „#“.
+    - **An der Tür des Bildes** (Befund des Autors: Er ging am Clubhaus vorbei und stand plötzlich
+      drinnen). Führt ein Übergang in ein Gebäude, liegt er genau auf den Feldern vor oder in der
+      Tür des Gebäudebilds, nie daneben und nie vor der ganzen Fassade. Das Möbel nennt diese
+      Felder in `"tuer": [[Spalte, Reihe], …]`, gezählt ab der linken oberen Kachel des Bildes;
+      eine Doppeltür hat zwei Felder. Gebäude ohne `tuer` listet das Werkzeug zur Sichtprüfung.
+    - **Veranda und Stufen:** Der Held geht die Stufen hinauf bis zur Tür, aber nicht durch
+      Geländer oder Wand. Die `maske` des Gebäudes lässt Stufen und Verandaboden bis zur Tür frei
+      und sperrt Geländer und Seiten (Schule und Villa in Maple Falls, Hütte in Summit City, Arena,
+      Seiteneingang der Bibliothek); der Auslöser liegt dann oben an der Tür.
+    - **Ankunft:** Der Held kommt auf dem freien Feld neben dem Durchgang an und schaut von ihm
+      weg, nie auf dem Auslöser (`app/src/abenteuer/oberwelt/ankunft.ts`). Vor jedem Durchgang
+      muss deshalb ein freies Feld ohne anderen Auslöser liegen.
     - **Prüfung im Werkzeug:** `python -m pipeline.abenteuer.uebergaenge` (mit
       `pipeline/abenteuer/durchgang.py`, für Grundkarten und Zustände) und der Lauftest
       `app/src/abenteuer/oberwelt/uebergangslauf.test.ts`: Auf jeder gebauten Karte geht der Held

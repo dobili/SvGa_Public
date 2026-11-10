@@ -47,12 +47,13 @@
     },
     {
       "moebel": "sb5Messplatz",
-      "feld": [1, 4],
+      "feld": [1, 3],
       "id": "messplatz"
     },
     {
       "moebel": "sb8StuhlRuecken",
-      "feld": [1, 7]
+      "feld": [1, 6],
+      "versatz": [4, -14]
     },
     {
       "moebel": "sb8GlastuerSued",

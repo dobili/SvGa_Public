@@ -86,8 +86,8 @@
     },
     {
       "moebel": "cc5Seiteneingang",
-      "feld": [20, 9],
-      "versatz": [15, 8]
+      "feld": [21, 9],
+      "versatz": [0, 8]
     },
     {
       "moebel": "mf2Bibliothek",
@@ -108,8 +108,8 @@
       "versatz": [13, 0]
     },
     {
-      "moebel": "mfBushaltestelle",
-      "feld": [42, 16]
+      "moebel": "mf6Haltestelle",
+      "feld": [32, 28]
     },
     {
       "moebel": "cc5Poller",
@@ -511,7 +511,7 @@
     },
     {
       "moebel": "mf2ZederSchmal",
-      "feld": [35, 29]
+      "feld": [43, 16]
     },
     {
       "moebel": "mf2Zeder",
@@ -677,18 +677,18 @@
   "ausloeser": [
     {
       "name": "start",
-      "feld": [44, 19],
+      "feld": [34, 27],
       "eigenschaften": {
-        "richtung": "unten"
+        "richtung": "oben"
       }
     },
     {
       "name": "bushaltestelle",
-      "feld": [44, 19]
+      "feld": [34, 27]
     },
     {
       "name": "busZurueck",
-      "feld": [43, 19]
+      "feld": [33, 27]
     },
     {
       "name": "drechslereiTuer",
@@ -696,11 +696,19 @@
     },
     {
       "name": "waschsalonTuer",
-      "feld": [16, 19]
+      "feld": [13, 19]
+    },
+    {
+      "name": "waschsalonTuer",
+      "feld": [14, 19]
     },
     {
       "name": "bibliothekTuer",
-      "feld": [22, 19]
+      "feld": [22, 16]
+    },
+    {
+      "name": "bibliothekTuer",
+      "feld": [23, 16]
     },
     {
       "name": "plakat",
@@ -765,12 +773,12 @@
     {
       "name": "busfahrer",
       "typ": "statist",
-      "feld": [42, 21],
+      "feld": [38, 27],
       "eigenschaften": {
         "tun": "trinkt Kaffee aus der Thermoskanne",
         "wann": "tag",
-        "von": "42,21",
-        "bis": "44,21",
+        "von": "38,27",
+        "bis": "40,27",
         "sagt": "statist.cedarCreek.aussen.busfahrer"
       }
     },
@@ -820,7 +828,7 @@
     {
       "name": "waschsalonfrau",
       "typ": "statist",
-      "feld": [14, 19],
+      "feld": [16, 19],
       "eigenschaften": {
         "tun": "faltet vor dem Waschsalon Handtücher",
         "wann": "tag",
@@ -938,11 +946,11 @@
     {
       "name": "eichhoernchen",
       "typ": "tier",
-      "feld": [31, 29],
+      "feld": [30, 31],
       "eigenschaften": {
         "verhalten": "flitzen",
-        "von": "30,29",
-        "bis": "32,29"
+        "von": "29,31",
+        "bis": "31,31"
       }
     }
   ],

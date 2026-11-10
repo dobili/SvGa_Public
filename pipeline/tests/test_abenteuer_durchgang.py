@@ -40,3 +40,18 @@ def test_weg_am_kartenrand_in_voller_breite():
 
 def test_alle_karten_haben_vollstaendige_durchgaenge():
     assert pruefe_durchgaenge(szenen(), uebergaenge()) == []
+
+
+def test_ausloeser_liegt_genau_an_der_tuer_des_gebaeudes():
+    """Clubhaus (Befund des Autors): Der Auslöser lag vor dem Haus statt an der Tür."""
+    from pipeline.abenteuer.durchgang import tuerbefund
+
+    haus = {"quelle": "x.png", "breite": 64, "hoehe": 48, "kollision": True, "tuer": [[1, 3]]}
+    wiese = ["......"] * 6
+    objekte = [{"moebel": "haus", "feld": [1, 1]}]
+    richtig = szene([{"name": "tuer", "feld": [2, 4]}], objekte, wiese)
+    assert tuerbefund(richtig, "tuer", {"haus": haus}) is None
+    daneben = szene([{"name": "tuer", "feld": [4, 4]}], objekte, wiese)
+    assert "nicht an der Tür von haus" in tuerbefund(daneben, "tuer", {"haus": haus})
+    woanders = szene([{"name": "tuer", "feld": [0, 5]}], objekte, wiese)
+    assert tuerbefund(woanders, "tuer", {"haus": haus}) is None  # gehört nicht zu diesem Haus

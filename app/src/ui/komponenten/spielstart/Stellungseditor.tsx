@@ -118,15 +118,24 @@ function useZiehen(fen: string, setzeFen: (fen: string) => void) {
  * Der Editor. Eingaben: die Stellung, mit der er beginnt; Übernehmen mit der fertigen FEN;
  * Abbrechen. Beispiel: Grundstellung, „Figuren setzen“, Brett leeren, K auf e1, k auf e8, Q auf
  * d1 → „Stellung übernehmen“ ist frei, die Partie beginnt mit Weiß am Zug.
+ * `nurSetzen` (Vorgabe aus): für die Gedächtnisstellung des Schach-Abenteuers
+ * (docs/spiel/18_Spielhuelle.md). Dann gibt es nur Figurenwahl, „Brett leeren“ und die zwei
+ * Knöpfe unten; Moduswahl, „am Zug“ und „Grundstellung“ fehlen, und die Stellung muss nicht
+ * spielbar sein (es wird nur verglichen, wo die Steine stehen). `fertigText` ersetzt die
+ * Beschriftung von „Stellung übernehmen“.
  */
 export function Stellungseditor({
   start,
   beiUebernehmen,
   beiAbbrechen,
+  nurSetzen = false,
+  fertigText,
 }: {
   start: string;
   beiUebernehmen: (fen: string) => void;
   beiAbbrechen: () => void;
+  nurSetzen?: boolean;
+  fertigText?: string;
 }) {
   const [modus, setzeModus] = useState<Modus>("setzen");
   const [fen, setzeFen] = useState(start);
@@ -139,14 +148,18 @@ export function Stellungseditor({
   };
   return (
     <div className="stellungseditor" data-testid="stellungseditor">
-      <Auswahl
-        name={t("spielen.editor.modus")}
-        werte={["setzen", "ziehen"] as const}
-        gewaehlt={modus}
-        text={(m) => t(`spielen.editor.${m}`)}
-        beiWahl={setzeModus}
-      />
-      <p className="hinweis">{t(`spielen.editor.hinweis.${modus}`)}</p>
+      {!nurSetzen && (
+        <>
+          <Auswahl
+            name={t("spielen.editor.modus")}
+            werte={["setzen", "ziehen"] as const}
+            gewaehlt={modus}
+            text={(m) => t(`spielen.editor.${m}`)}
+            beiWahl={setzeModus}
+          />
+          <p className="hinweis">{t(`spielen.editor.hinweis.${modus}`)}</p>
+        </>
+      )}
       <Brett
         fen={fen}
         markierungen={[]}
@@ -159,32 +172,36 @@ export function Stellungseditor({
       {modus === "setzen" && (
         <>
           <Figurenwahl werkzeug={werkzeug} beiWahl={setzeWerkzeug} />
-          <Auswahl
-            name={t("spielen.editor.amZug")}
-            werte={["white", "black"] as const}
-            gewaehlt={amZugVon(fen)}
-            text={(farbe: Color) => t(farbe === "white" ? "farbe.w" : "farbe.b")}
-            beiWahl={(farbe) => setzeFen(mitAmZug(fen, farbe))}
-          />
+          {!nurSetzen && (
+            <Auswahl
+              name={t("spielen.editor.amZug")}
+              werte={["white", "black"] as const}
+              gewaehlt={amZugVon(fen)}
+              text={(farbe: Color) => t(farbe === "white" ? "farbe.w" : "farbe.b")}
+              beiWahl={(farbe) => setzeFen(mitAmZug(fen, farbe))}
+            />
+          )}
           <div className="knopfreihe">
             <button type="button" className="knopf-zweit" onClick={() => setzeFen(LEERES_BRETT)}>
               {t("spielen.editor.brettLeeren")}
             </button>
-            <button type="button" className="knopf-zweit" onClick={() => setzeFen(GRUNDSTELLUNG)}>
-              {t("spielen.editor.grundstellung")}
-            </button>
+            {!nurSetzen && (
+              <button type="button" className="knopf-zweit" onClick={() => setzeFen(GRUNDSTELLUNG)}>
+                {t("spielen.editor.grundstellung")}
+              </button>
+            )}
           </div>
         </>
       )}
-      {!ok && <p className="fehlertext">{t("spielen.editor.ungueltig")}</p>}
+      {!ok && !nurSetzen && <p className="fehlertext">{t("spielen.editor.ungueltig")}</p>}
       <div className="knopfreihe">
         <button
           type="button"
           className="knopf-haupt"
-          disabled={!ok}
+          disabled={!ok && !nurSetzen}
           onClick={() => beiUebernehmen(fen)}
         >
-          {t("spielen.fenUebernehmen")}
+          {fertigText ?? t("spielen.fenUebernehmen")}
         </button>
         <button type="button" className="knopf-zweit" onClick={beiAbbrechen}>
           {t("spielen.editor.abbrechen")}

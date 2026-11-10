@@ -28,6 +28,7 @@ import {
   stelleAufKachel,
 } from "./figurbilder";
 import { ladeMoebelbilder, stelleMoebelAuf, type Moebel } from "./moebel";
+import { EINGABEPAUSE_MS, gegenrichtung, pausenschritt } from "./eingabepause";
 import { baueSperrkarte } from "./sperrkarte";
 import type { Toenung } from "./toenung";
 import { Schneeschicht } from "./schneefall";
@@ -127,6 +128,8 @@ export class Oberweltszene extends Phaser.Scene {
   private ausloeser: Ausloeser[] = [];
   /** Letzter Treffer und ob der Held noch auf seinem Startauslöser steht (ausloeserebene.ts). */
   private meldezustand: Meldezustand = MELDE_START;
+  /** Rest der Eingabepause nach dem Kartenwechsel in Millisekunden (eingabepause.ts). */
+  private pause = EINGABEPAUSE_MS;
   /** Zuletzt gemeldete Kachel des Helden („x,y“), damit beiKachel nur bei Änderung feuert. */
   private letzteKachel: string | null = null;
   private tasten!: Phaser.Types.Input.Keyboard.CursorKeys | null;
@@ -205,6 +208,7 @@ export class Oberweltszene extends Phaser.Scene {
     this.cameras.main.startFollow(held, true);
     this.cameras.main.setRoundPixels(true);
     this.ausloeser = liesAusloeserAus(karte);
+    this.pause = EINGABEPAUSE_MS;
     this.stelleFigurenAuf(held);
     const liste = this.daten.moebel ?? [];
     if (this.daten.winter)
@@ -271,6 +275,7 @@ export class Oberweltszene extends Phaser.Scene {
     if (!this.held) return;
     this.held.setPosition((x + 0.5) * KACHEL, (y + 0.5) * KACHEL);
     this.meldezustand = MELDE_START;
+    this.pause = EINGABEPAUSE_MS;
   }
 
   /** Wo der Held steht, in Kachelkoordinaten (für den Spielstand beim Verlassen). */
@@ -299,7 +304,11 @@ export class Oberweltszene extends Phaser.Scene {
     if (!this.held) return;
     const heldfeld: Feld = { x: this.held.x / KACHEL - 0.5, y: this.held.y / KACHEL - 0.5 };
     this.belebungsschicht?.aktualisiere(delta, heldfeld, this.frei);
-    const richtung = this.laufen ? this.gewuenschteRichtung() : null;
+    const gewuenscht = this.gewuenschteRichtung();
+    // Der Held kommt mit Blick vom Durchgang weg an; die Gegenrichtung führte zurück hinein.
+    const zurueck = gewuenscht === gegenrichtung(this.daten.start.richtung);
+    this.pause = pausenschritt(this.pause, delta, gewuenscht !== null, zurueck);
+    const richtung = this.laufen && this.pause === 0 ? gewuenscht : null;
     const koerper = this.held.body as Phaser.Physics.Arcade.Body;
     koerper.setVelocity(0, 0);
     this.zeigeHeld(richtung);

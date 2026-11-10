@@ -39,8 +39,8 @@ function Kopf({ partie }: { partie: Zusatzpartie }) {
   );
 }
 
-/** Quelle und Lizenz; die Adressen als Links. */
-function Herkunft({ partie }: { partie: Zusatzpartie }) {
+/** Quelle und Lizenz; die Adressen als Links, mit `ohneLinks` als bloßer Text (Schach-Abenteuer). */
+function Herkunft({ partie, ohneLinks }: { partie: Zusatzpartie; ohneLinks: boolean }) {
   const turnier = partie.art === "turnier";
   return (
     <p className="hinweis" data-testid="zusatzpartie-quelle">
@@ -48,17 +48,25 @@ function Herkunft({ partie }: { partie: Zusatzpartie }) {
       {partie.quelle.map((adresse, i) => (
         <span key={adresse}>
           {i > 0 && " · "}
-          <a href={adresse} target="_blank" rel="noreferrer">
-            {new URL(adresse).hostname.replace(/^www\./, "")}
-          </a>
+          {ohneLinks ? (
+            new URL(adresse).hostname.replace(/^www\./, "")
+          ) : (
+            <a href={adresse} target="_blank" rel="noreferrer">
+              {new URL(adresse).hostname.replace(/^www\./, "")}
+            </a>
+          )}
         </span>
       ))}
       {turnier && (
         <>
           {" · "}
-          <a href={CC_BY_SA} target="_blank" rel="noreferrer">
-            CC BY-SA 4.0
-          </a>
+          {ohneLinks ? (
+            "CC BY-SA 4.0"
+          ) : (
+            <a href={CC_BY_SA} target="_blank" rel="noreferrer">
+              CC BY-SA 4.0
+            </a>
+          )}
         </>
       )}
     </p>
@@ -66,13 +74,13 @@ function Herkunft({ partie }: { partie: Zusatzpartie }) {
 }
 
 /** Der Inhalt der Karte: Kennzeichnung, Kopf, Kurztext, Herkunft. */
-function Inhalt({ partie }: { partie: Zusatzpartie }) {
+function Inhalt({ partie, ohneLinks }: { partie: Zusatzpartie; ohneLinks: boolean }) {
   const text = inSprache(partie.text, sprache());
   return (
     <>
       <Kopf partie={partie} />
       {text && <p>{text}</p>}
-      <Herkunft partie={partie} />
+      <Herkunft partie={partie} ohneLinks={ohneLinks} />
     </>
   );
 }
@@ -80,20 +88,23 @@ function Inhalt({ partie }: { partie: Zusatzpartie }) {
 /**
  * Die Karte zu einer Zusatzpartie.
  *
- * Eingaben: die Partie; `zugeklappt` für die Ansicht während des Ratens.
+ * Eingaben: die Partie; `zugeklappt` für die Ansicht während des Ratens; `ohneLinks` (Vorgabe
+ * aus) nennt Quelle und Lizenz ohne Link nach draußen (Schach-Abenteuer, docs/spiel/18).
  */
 export function Zusatzkarte({
   partie,
   zugeklappt = false,
+  ohneLinks = false,
 }: {
   partie: Zusatzpartie;
   zugeklappt?: boolean;
+  ohneLinks?: boolean;
 }) {
   if (zugeklappt)
     return (
       <details className="karte" data-testid="zusatzpartie-karte">
         <summary>{t("zugerraten.zusatzinhalt")}</summary>
-        <Inhalt partie={partie} />
+        <Inhalt partie={partie} ohneLinks={ohneLinks} />
       </details>
     );
   return (
@@ -101,7 +112,7 @@ export function Zusatzkarte({
       <p className="hinweis">
         <strong>{t("zugerraten.zusatzinhalt")}</strong>
       </p>
-      <Inhalt partie={partie} />
+      <Inhalt partie={partie} ohneLinks={ohneLinks} />
     </div>
   );
 }

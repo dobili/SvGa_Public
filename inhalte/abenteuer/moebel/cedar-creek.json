@@ -817,7 +817,13 @@
       "art": "gebaeude",
       "blick": "unten",
       "zustand": "gebraucht",
-      "stil": "laendlich"
+      "stil": "laendlich",
+      "tuer": [
+        [
+          2,
+          10
+        ]
+      ]
     },
     "cc4Wohnhaus": {
       "quelle": "modern-farm/Single_Files_16x16/Props_and_Buildings_16x16/Farmer_House_1_16x16.png",
@@ -1056,7 +1062,28 @@
       "blick": "unten",
       "zustand": "alt",
       "stil": "klassisch",
-      "frei_unten": 1
+      "tuer": [
+        [
+          1,
+          7
+        ],
+        [
+          2,
+          7
+        ]
+      ],
+      "maske": [
+        "....",
+        "###.",
+        "###.",
+        "###.",
+        "###.",
+        "###.",
+        "#...",
+        "#...",
+        "#...",
+        "#..."
+      ]
     },
     "cc5Planke": {
       "quelle": "modern-exteriors/Modern_Exteriors_16x16/ME_Theme_Sorter_16x16/11_Camping_Singles_16x16/ME_Singles_Camping_16x16_Pier_12.png",

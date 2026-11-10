@@ -17,6 +17,13 @@ Regeln je Übergang (Auslöser mit ``art: uebergang`` in orte.json):
    Seite zu, auf der anderen ein breiterer Raum: die Schwelle einer Tür), trägt ihn die ganze Lücke; ebenso
    senkrecht.
 
+5. Führt er in ein Gebäude, liegt er genau an der Tür des Gebäudebilds (Befund des Autors: Er
+   ging am Clubhaus vorbei und stand plötzlich drinnen). Das Möbel nennt die Felder vor oder in
+   seiner Tür in ``tuer`` (Spalte, Reihe ab der linken oberen Kachel des Bildes); der Auslöser
+   liegt auf genau diesen Feldern. Gebäude mit Veranda oder Stufen lassen den Weg zur Tür in
+   ihrer ``maske`` frei. Übergänge an Gebäuden ohne ``tuer`` listet ``tueren_ohne_angabe`` zur
+   Sichtprüfung.
+
 Mehrere Felder bekommt ein Auslöser in der Szene durch mehrere Einträge gleichen Namens; der
 Kartenbau schreibt je Feld ein Objekt, die App nimmt für die Ankunft das erste.
 Aufruf über ``python -m pipeline.abenteuer.uebergaenge``.
@@ -143,6 +150,55 @@ def fehlende_felder(szene: dict, name: str, moebel: dict) -> tuple[set[Feld], se
     return {f for f in felder if not frei(*f)}, fehlt
 
 
+def tuerbefund(szene: dict, name: str, moebel: dict) -> str | None:
+    """Regel 5: Befund, wenn der Auslöser an einem Gebäude mit ``tuer`` nicht genau an der Tür liegt.
+
+    Ein Gebäude gehört zum Auslöser, wenn ein Auslöserfeld in seinem Bild, in der Reihe darunter
+    oder auf einem seiner Türfelder liegt. Beispiel: Schule auf (39, 0) mit ``tuer``
+    [[8, 20], [9, 20]] → der Auslöser „schule“ liegt auf (47, 20) und (48, 20).
+    """
+    felder = {tuple(a["feld"]) for a in szene.get("ausloeser", []) if a["name"] == name}
+    for s in platziere(szene, moebel)[0]:
+        tuer = moebel.get(s["name"], {}).get("tuer")
+        if not tuer:
+            continue
+        x0, y0 = s["x"] // K, s["y"] // K
+        erwartet = {(x0 + a, y0 + b) for a, b in tuer}
+        nah = _flaeche(s) | {(x, y + 1) for x, y in _flaeche(s)} | erwartet
+        if felder & nah and felder != erwartet:
+            return f"liegt nicht an der Tür von {s['name']}: {sorted(felder)} statt {sorted(erwartet)}"
+    return None
+
+
+def tueren_ohne_angabe(alle: dict[str, dict], liste: list[dict]) -> list[str]:
+    """Übergänge von draußen in einen Innenraum, deren Gebäude keine ``tuer`` nennt (Sichtprüfung)."""
+    from pipeline.abenteuer.uebergaenge import rand, regel_fuer
+
+    moebel = lade_moebel()
+    offen = []
+    for karte, szene in alle.items():
+        for name in sorted({a["name"] for a in szene.get("ausloeser", [])}):
+            regel = regel_fuer(liste, karte, name)
+            ziel = alle.get((regel or {}).get("ziel", {}).get("karte", ""))
+            if not regel or regel.get("art") != "uebergang" or not ziel or szene.get("art") == "innen":
+                continue
+            felder = {tuple(a["feld"]) for a in szene["ausloeser"] if a["name"] == name}
+            if ziel.get("art") != "innen" or any(rand(szene, f) for f in felder):
+                continue
+            gesetzt = platziere(szene, moebel)[0]
+            if not any(
+                moebel.get(s["name"], {}).get("tuer") and felder & _tuerfelder(s, moebel) for s in gesetzt
+            ):
+                offen.append(f"{karte} {name} {sorted(felder)}")
+    return offen
+
+
+def _tuerfelder(stueck: dict, moebel: dict) -> set[Feld]:
+    """Die Türfelder eines gesetzten Möbels in Kartenkoordinaten."""
+    x0, y0 = stueck["x"] // K, stueck["y"] // K
+    return {(x0 + a, y0 + b) for a, b in moebel[stueck["name"]]["tuer"]}
+
+
 def alle_fassungen(grund: dict[str, dict]) -> list[tuple[str, dict]]:
     """(Name für den Befund, Szene) für jede Grundkarte und jeden Zustand aus orte.json.
 
@@ -173,6 +229,8 @@ def pruefe_durchgaenge(alle: dict[str, dict], liste: list[dict]) -> list[str]:
             if not regel or regel.get("art") != "uebergang":
                 continue
             zu, fehlt = fehlende_felder(szene, name, moebel)
+            if tuer := tuerbefund(szene, name, moebel):
+                befunde.append(f"{marke} {name}: {tuer}")
             if zu:
                 befunde.append(f"{marke} {name}: Feld {sorted(zu)} ist gesperrt")
             if fehlt:

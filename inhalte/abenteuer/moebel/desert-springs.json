@@ -118,7 +118,13 @@
       "art": "gebaeude",
       "zustand": "gebraucht",
       "blick": "unten",
-      "stil": "industrie"
+      "stil": "industrie",
+      "tuer": [
+        [
+          4,
+          6
+        ]
+      ]
     },
     "ds6BahnhofAlt": {
       "quelle": "spiel/eigene/bahnhof_alt_veranda.png",
@@ -129,7 +135,17 @@
       "zustand": "gebraucht",
       "blick": "unten",
       "stil": "klassisch",
-      "frei_unten": 1
+      "frei_unten": 1,
+      "tuer": [
+        [
+          4,
+          7
+        ],
+        [
+          5,
+          7
+        ]
+      ]
     },
     "ds6SchildAntiquariat": {
       "quelle": "spiel/eigene/schild_antiquariat.png",

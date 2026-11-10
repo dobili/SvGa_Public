@@ -11,15 +11,15 @@
     "########################",
     "########################",
     "########################",
-    "#..tttttt..............#",
-    "#..tttttt..............#",
-    "#..tttttt..............#",
-    "#..tttttt..............#",
-    "#..tttttt..............#",
     "#......................#",
     "#......................#",
     "#......................#",
     "#......................#",
+    "#..tttttt..............#",
+    "#..tttttt..............#",
+    "#..tttttt..............#",
+    "#..tttttt..............#",
+    "#..tttttt..............#",
     "#......................#",
     "############.###########"
   ],
@@ -40,18 +40,13 @@
       "an_wand": true
     },
     {
-      "moebel": "sb5Bildschirm",
-      "feld": [13, 0],
-      "an_wand": true
-    },
-    {
       "moebel": "sb5BildschirmB",
-      "feld": [15, 0],
+      "feld": [12, 0],
       "an_wand": true
     },
     {
       "moebel": "sb5BildschirmC",
-      "feld": [17, 0],
+      "feld": [16, 0],
       "an_wand": true
     },
     {
@@ -76,20 +71,20 @@
     },
     {
       "moebel": "sb5Sessel",
-      "feld": [3, 3]
+      "feld": [3, 7]
     },
     {
       "moebel": "sb8Sofa",
-      "feld": [5, 3],
+      "feld": [5, 7],
       "id": "sofa"
     },
     {
       "moebel": "sb5Sessel",
-      "feld": [7, 3]
+      "feld": [7, 7]
     },
     {
       "moebel": "pd6Couchtisch",
-      "feld": [5, 6]
+      "feld": [5, 10]
     },
     {
       "moebel": "sb5Sockel",
@@ -173,10 +168,10 @@
     {
       "name": "wartender",
       "typ": "statist",
-      "feld": [5, 4],
+      "feld": [5, 8],
       "eigenschaften": {
-        "von": "5,4",
-        "bis": "5,4",
+        "von": "5,8",
+        "bis": "5,8",
         "verhalten": "sitzen",
         "tun": "sitzt auf dem Sofa und wartet auf seinen Termin",
         "wann": "tag"

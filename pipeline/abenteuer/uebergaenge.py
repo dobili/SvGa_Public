@@ -127,12 +127,14 @@ def pruefe(alle: dict[str, dict], liste: list[dict]) -> list[str]:
 
 
 def main() -> int:
-    from pipeline.abenteuer.durchgang import pruefe_durchgaenge
+    from pipeline.abenteuer.durchgang import pruefe_durchgaenge, tueren_ohne_angabe
 
     alle, liste = szenen(), uebergaenge()
     befunde = pruefe(alle, liste) + pruefe_durchgaenge(alle, liste)
     for b in befunde:
         print(f"- {b}")
+    for t in tueren_ohne_angabe(alle, liste):
+        print(f"~ Hinweis: Tür ohne Angabe „tuer“ am Gebäude, bitte ansehen: {t}")
     print("Übergänge in Ordnung" if not befunde else f"{len(befunde)} Befunde")
     return 1 if befunde else 0
 

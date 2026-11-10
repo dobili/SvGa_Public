@@ -35,6 +35,11 @@ export const ANSICHT_ABENTEUER = "abenteuer";
 export type { Aufgabenauftrag, Aufgabenergebnis } from "./aufgaben";
 /** Kennung der Zusatzansicht, in der die App eine Aufgabenrunde des Spiels spielt. */
 export const ANSICHT_AUFGABEN = "abenteuer-aufgaben";
+/**
+ * Kennung der Zusatzansicht, in der eine Partie des Spiels läuft (Spielhülle, docs/spiel/18):
+ * Brett, Uhren, Kartenleiste im Aussehen des Spiels statt der Partieansicht der App. Wert: Id der Partie.
+ */
+export const ANSICHT_PARTIE = "abenteuer-partie";
 
 /**
  * Dienste, die die App dem Spiel beim Laden übergibt. Alles, was das Spiel von der App braucht,

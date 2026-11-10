@@ -43,6 +43,7 @@ import { Zugkommentare, type Rateversuch } from "./Zugkommentare";
 import { Zugvergleich } from "./Zugvergleich";
 import { Zusatzkarte } from "./Zusatzkarte";
 import { partieKennung, useRatestand, type Ratezustand } from "./useRatestand";
+import { useImSpiel } from "./imSpiel";
 
 const KEINE_WAHL = () => undefined;
 
@@ -177,6 +178,8 @@ export function Zugerratenaufgabe({ aufgabe, runde }: { aufgabe: Ratepartie; run
       ? stellungNach(aufgabe.startFen, s.zuege.slice(0, s.stelle))
       : s.fen;
   useSammelstellung(gezeigt);
+  // Im Schach-Abenteuer ohne „Analysieren“, ohne früheren Durchgang, Quellen ohne Link (imSpiel.ts).
+  const imSpiel = useImSpiel();
   const rechnung = useZugerratenEngine(s.versuch?.fehlversuch ?? null, gezeigt);
   const aktuell = s.stelle === null && !s.analyse;
   return (
@@ -187,7 +190,7 @@ export function Zugerratenaufgabe({ aufgabe, runde }: { aufgabe: Ratepartie; run
           farbe: t(aufgabe.seite === "white" ? "farbe.w" : "farbe.b"),
         })}
       </p>
-      {aufgabe.zusatz && <Zusatzkarte partie={aufgabe.zusatz} zugeklappt />}
+      {aufgabe.zusatz && <Zusatzkarte partie={aufgabe.zusatz} zugeklappt ohneLinks={imSpiel} />}
       <Zugerratenbrett
         aufgabe={aufgabe}
         s={s}
@@ -218,14 +221,16 @@ export function Zugerratenaufgabe({ aufgabe, runde }: { aufgabe: Ratepartie; run
         <Zugkommentare aufgabe={aufgabe} versuch={s.versuch} vergleich={rechnung.vergleich} />
       )}
       {!fertig && aktuell && <Hinweis aktiv={s.hinweis} zeige={() => s.setzeHinweis(true)} />}
-      <Analysebereich
-        fen={s.fen}
-        analyse={s.analyse}
-        setzeAnalyse={s.setzeAnalyse}
-        moeglich={!fertig && s.stelle === null}
-      />
+      {!imSpiel && (
+        <Analysebereich
+          fen={s.fen}
+          analyse={s.analyse}
+          setzeAnalyse={s.setzeAnalyse}
+          moeglich={!fertig && s.stelle === null}
+        />
+      )}
       <p data-testid="zugerraten-stand">{t("zugerraten.stand", { ...s.stand })}</p>
-      <Frueher eintrag={frueher} />
+      {!imSpiel && <Frueher eintrag={frueher} />}
       {fertig && (
         <Antwortmeldung richtig={runde.ergebnis === true}>{t("zugerraten.ende")}</Antwortmeldung>
       )}

@@ -225,7 +225,13 @@
       "kollision": true,
       "art": "gebaeude",
       "zustand": "gebraucht",
-      "stil": "rustikal"
+      "stil": "rustikal",
+      "tuer": [
+        [
+          4,
+          6
+        ]
+      ]
     },
     "pw9KanuSee": {
       "quelle": "spiel/eigene/kanu_quer.png",

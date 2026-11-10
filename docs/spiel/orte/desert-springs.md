@@ -36,7 +36,7 @@ nicht: Wer zurück will, nimmt die Schnellreise oder den Zug über Port Delacroi
 | `wegDelacroixDesert.canyonpfad` | 160 × 30 | ≈ 180                       | ≈ 51 s      |
 | `wegDelacroixDesert.felsbogen`  | 140 × 30 | ≈ 160                       | ≈ 46 s      |
 | **Weg 6 zusammen**              | 300      | ≈ 340                       | **≈ 97 s**  |
-| `desertSprings.aussen`          | 56 × 40  | Canyonrand → Antiquariat 50 | ≈ 14 s      |
+| `desertSprings.aussen`          | 60 × 40  | Canyonrand → Antiquariat 50 | ≈ 14 s      |
 | `desertSprings.garage`          | 18 × 12  | –                           | –           |
 | `desertSprings.antiquariat`     | 20 × 13  | –                           | –           |
 
@@ -85,3 +85,16 @@ mit Veranda und Schild ANTIQUARIAT, Diner-Wagen, Miras flacher Stein, Geierkreis
 über senkrechten Stücken des Wegs, die Pfeiler auf Fels, das Bild vorn gezeichnet; man geht durch
 den Bogen und unter der Brücke hindurch. 5. **Motel und Bahnhof:** Der Gang vor den Motelzimmern und die Veranda des alten Bahnhofs sind
 begehbar (`frei_unten: 1` im Möbel, seit 10.11.2026).
+
+## Runde 7: Stadt und Leben (10.11.2026)
+
+**Stadt (Regel 10.51, klein: 12 Gebäude):** Die Außenkarte ist von 56 auf 60 Spalten gewachsen. Im
+Osten liegt ein Vorplatz mit Postamt (A), Sheriffbüro (B) oder Gemischtwarenladen (C). Dazu kommen
+Kulissenhäuser ohne Innenraum: Wohnwagen und eine Blechhütte hinter dem Hof, Containerhäuser,
+in B ein Pumpenhaus am Bahnsteig. Ihre Türen zeigen zum Gehweg, zum Hof oder zum Vorplatz.
+
+**Leben (Regel 10.53):** 12 Statisten, 7 davon ansprechbar (`statist.desertSprings.aussen.*`):
+Touristen am Bahnhof, Busgast, Postbotin (Fernschach per Postkarte), Hilfssheriff (Läufer in
+Schlangenlinien, mit Antwort von Ambrose), Tankwart (Rochade), Rentnerin (Schah und schachmatt),
+Kind (Gabel). Ohne Satz: Händlerin, Mechaniker, Trucker, Motelgast, Wanderin. Tiere: Hund,
+Eidechse, Geier, Roadrunner, Katze, Hühner.

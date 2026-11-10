@@ -1103,16 +1103,18 @@ Pfadfinder.
 - _Warum gibt es den Damm?_ Er hebt das Gleis über die Flussaue, die im Frühjahr überschwemmt wird
   (kein Staudamm). Der Durchlass lässt Weg und Hochwasser hindurch.
 
-**Zustände (10.63):**
+**Zustände (10.63), gebaut (Szenen `lockport-aussen-<zustand>.json`):**
 
-| Karte                         | Zustand             | Bedingung      | Zustand: wann, was, warum                                                                         |
-| ----------------------------- | ------------------- | -------------- | ------------------------------------------------------------------------------------------------- |
-| `lockport.aussen`             | `stegOffen`         | `lockportSteg` | Nach Imogens Tafel: Die Wartung ist vorbei, die Zäune an Unter- und Obertor sind weg (S3).        |
-| `lockport.aussen`             | `henriksBootAnLand` | `taueErledigt` | Nach L2: Henriks Ruderboot liegt kieloben an Land, nicht mehr im Becken.                          |
-| `lockport.aussen`             | `lastkahnFrei`      | `lastkahnFrei` | Nach L3: Die Plane ist vom Lastkahn herunter, Stahlträger liegen an Bord, die Belle fährt wieder. |
-| `lockport.gasthaus`           | –                   | –              | Kein fester Wechsel.                                                                              |
-| `wegCedarRiverton.bahndamm`   | –                   | –              | Kein fester Wechsel (Rosalind und der Güterzug sind Figuren und Ereignis).                        |
-| `wegCedarRiverton.zedernwald` | –                   | –              | Kein fester Wechsel.                                                                              |
+| Karte                         | Zustand        | Bedingung      | Zustand: wann, was, warum                                                                       |
+| ----------------------------- | -------------- | -------------- | ----------------------------------------------------------------------------------------------- |
+| `lockport.aussen`             | `steg-offen`   | `lockportSteg` | Nach Imogens Tafel: Wartung vorbei, die Zäune an beiden Toren sind weg (S3).                    |
+| `lockport.aussen`             | `boot-an-land` | `taueErledigt` | Nach L2: Henriks Ruderboot liegt auf dem Werftplatz am Schuppen; der Steg ist dann schon offen. |
+| `lockport.gasthaus`           | –              | –              | Kein fester Wechsel.                                                                            |
+| `wegCedarRiverton.bahndamm`   | –              | –              | Kein fester Wechsel.                                                                            |
+| `wegCedarRiverton.zedernwald` | –              | –              | Kein fester Wechsel.                                                                            |
+
+Der Lastkahn hat auf der Karte keine Plane; der Zustand „lastkahnFrei“ entfällt, bis das Bild des
+Frachtkahns da ist (Bildwunsch `frachtkahn`).
 
 ## Runde 8 (10.11.2026): Kanalweg und Eisenbrücke nach den Notizen des Autors (mittel-4)
 

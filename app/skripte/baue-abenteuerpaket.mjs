@@ -311,6 +311,8 @@ async function main() {
   }
   await kopiereOberflaeche();
   await kopierePrivatordner("figuren");
+  // Tierbögen der Belebung (pipeline/abenteuer/belebungsbilder.py, Runde 7).
+  await kopierePrivatordner("tiere");
   await kopierePrivatordner("portraets");
   await kopierePrivatordner("grafik");
   await kopierePrivatordner("grafik/karten");

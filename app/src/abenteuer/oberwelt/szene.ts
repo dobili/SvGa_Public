@@ -21,6 +21,9 @@ import {
   stelleAufKachel,
 } from "./figurbilder";
 import { ladeMoebelbilder, stelleMoebelAuf, type Moebel } from "./moebel";
+import { baueSperrkarte } from "./sperrkarte";
+import { liesBelebung, type Belebung, type Feld } from "./belebung";
+import { Belebungsschicht, ladeBelebungsbilder, type Belebungsbilder } from "./belebungsschicht";
 
 export type Richtung = Weltposition["richtung"];
 
@@ -43,8 +46,11 @@ const AUSLOESER_EBENE = "ausloeser";
 /** Ein Auslöser, auf dem der Held steht oder den er ansieht: Name und Art aus der Tiled-Datei. */
 export interface Ausloesertreffer {
   readonly name: string;
-  /** „ausloeser“ (Übergang, Gegenstand, Start) oder „figur“ (Objekt mit type = figur). */
-  readonly typ: "ausloeser" | "figur";
+  /**
+   * „ausloeser“ (Übergang, Gegenstand, Start), „figur“ (Objekt mit type = figur) oder „statist“
+   * (ansprechbarer Statist der Belebung, mit `sagt`).
+   */
+  readonly typ: "ausloeser" | "figur" | "statist";
   /** Der Held steht selbst darauf (true) oder nur davor (false). */
   readonly darauf: boolean;
 }
@@ -83,12 +89,16 @@ export interface Szenendaten {
   readonly melder: Melder;
   /** Faktor auf das Lauftempo (Fahrrad draußen: 2; sonst 1). */
   readonly tempofaktor?: number;
+  /** Bögen der Statisten und Tiere (belebungsschicht.ts), Pfad im Paket → Adresse. */
+  readonly belebungsbilder?: Belebungsbilder;
+  /** Stunde für die Tageszeit der Statisten (`wann`); ohne Angabe die Uhr des Geräts. */
+  readonly stunde?: number;
 }
 
 /** Ein Auslöser der Karte in Kachelkoordinaten. */
 interface Ausloeser {
   readonly name: string;
-  readonly typ: "ausloeser" | "figur";
+  readonly typ: Ausloesertreffer["typ"];
   readonly x: number;
   readonly y: number;
 }
@@ -114,6 +124,11 @@ export class Oberweltszene extends Phaser.Scene {
   /** Der Auslöser, auf dem der Held startet (Übergang zurück): erst melden, wenn er ihn verlässt. */
   private startAusloeserOffen = true;
   private tasten!: Phaser.Types.Input.Keyboard.CursorKeys | null;
+  /** Statisten und Tiere der Karte (aus der Objektebene) und ihre Schicht nach create(). */
+  private belebung: Belebung[] = [];
+  private belebungsschicht: Belebungsschicht | null = null;
+  /** Ist eine Kachel für Tiere begehbar (sperrkarte.ts)? Vor create() ist nichts frei. */
+  private frei: (x: number, y: number) => boolean = () => false;
 
   constructor(private readonly daten: Szenendaten) {
     super("oberwelt");
@@ -132,6 +147,8 @@ export class Oberweltszene extends Phaser.Scene {
       ladeFigurbogen(this, `figur:${name}`, adresse);
     }
     ladeMoebelbilder(this, this.daten.moebel ?? []);
+    this.belebung = liesBelebung(this.daten.karte);
+    ladeBelebungsbilder(this, this.belebung, this.daten.belebungsbilder ?? {});
     if (this.daten.hintergrund) this.load.image("hintergrund", this.daten.hintergrund);
   }
 
@@ -181,7 +198,13 @@ export class Oberweltszene extends Phaser.Scene {
     this.cameras.main.setRoundPixels(true);
     this.ausloeser = this.liesAusloeser(karte);
     this.stelleFigurenAuf(held);
-    this.physics.add.collider(held, stelleMoebelAuf(this, this.daten.moebel ?? [], KACHEL));
+    const moebel = stelleMoebelAuf(this, this.daten.moebel ?? [], KACHEL);
+    this.physics.add.collider(held, moebel);
+    this.frei = baueSperrkarte(karte, feste, moebel, KACHEL);
+    const stunde = this.daten.stunde ?? new Date().getHours();
+    const schicht = new Belebungsschicht(this, this.belebung, KACHEL, stunde, "figur");
+    this.physics.add.collider(held, schicht.sperren());
+    this.belebungsschicht = schicht;
     this.tasten = this.input.keyboard?.createCursorKeys() ?? null;
   }
 
@@ -211,7 +234,7 @@ export class Oberweltszene extends Phaser.Scene {
     return (
       (ebene?.objects ?? [])
         .filter((o) => typeof o.name === "string" && o.name.length > 0)
-        // Statisten und Tiere (type statist/tier) sind noch keine Auslöser; sie kommen mit der Grafik.
+        // Statisten und Tiere (type statist/tier) bewegen sich; sie meldet die Belebungsschicht.
         .filter((o) => o.type !== "statist" && o.type !== "tier" && o.type !== "moebel")
         .map((o) => ({
           name: o.name,
@@ -256,8 +279,10 @@ export class Oberweltszene extends Phaser.Scene {
     return null;
   }
 
-  override update(): void {
+  override update(_zeit: number, delta: number): void {
     if (!this.held) return;
+    const heldfeld: Feld = { x: this.held.x / KACHEL - 0.5, y: this.held.y / KACHEL - 0.5 };
+    this.belebungsschicht?.aktualisiere(delta, heldfeld, this.frei);
     const richtung = this.laufen ? this.gewuenschteRichtung() : null;
     const koerper = this.held.body as Phaser.Physics.Arcade.Body;
     koerper.setVelocity(0, 0);
@@ -319,8 +344,15 @@ export class Oberweltszene extends Phaser.Scene {
   private meldeAusloeser(): void {
     const { x, y, richtung } = this.position();
     const vorne = KACHEL_VOR[richtung];
-    const darauf = this.ausloeser.find((a) => a.x === x && a.y === y) ?? null;
-    const davor = this.ausloeser.find((a) => a.x === x + vorne.x && a.y === y + vorne.y) ?? null;
+    const alle: readonly Ausloeser[] = [
+      ...this.ausloeser,
+      ...(this.belebungsschicht?.ansprechbare() ?? []).map((s) => ({
+        ...s,
+        typ: "statist" as const,
+      })),
+    ];
+    const darauf = alle.find((a) => a.x === x && a.y === y) ?? null;
+    const davor = alle.find((a) => a.x === x + vorne.x && a.y === y + vorne.y) ?? null;
     const treffer = darauf ?? davor;
     const name = treffer?.name ?? null;
     if (name === this.letzterAusloeser) return;
@@ -346,44 +378,3 @@ const KACHEL_VOR: Readonly<Record<Richtung, { readonly x: number; readonly y: nu
   links: { x: -1, y: 0 },
   rechts: { x: 1, y: 0 },
 };
-
-/** Startet Phaser in einem Element; die Breite folgt dem Element, gezeichnet mit ZOOM. */
-export function starteOberwelt(element: HTMLElement, daten: Szenendaten): Phaser.Game {
-  const szene = new Oberweltszene(daten);
-  return new Phaser.Game({
-    type: Phaser.AUTO,
-    parent: element,
-    width: Math.max(1, Math.floor(element.clientWidth / ZOOM)),
-    height: Math.max(1, Math.floor(element.clientHeight / ZOOM)),
-    zoom: ZOOM,
-    pixelArt: true,
-    backgroundColor: "#1a1612",
-    physics: { default: "arcade", arcade: { debug: false } },
-    scene: szene,
-    // Die App regelt Ton und Blattstapel selbst; Phaser soll keine Tastatur-Scrolls abfangen.
-    input: { keyboard: { capture: [] } },
-    audio: { noAudio: true },
-  });
-}
-
-/**
- * Beendet ein Spiel sauber: Läuft Phaser noch hoch (der Leser hat die Ansicht sofort wieder
- * verlassen), erst nach dem Start zerstören; ein Fehler dabei darf die App nicht abstürzen lassen.
- */
-export function beendeOberwelt(spiel: Phaser.Game): void {
-  const zerstoere = () => {
-    try {
-      spiel.destroy(true);
-    } catch (fehler) {
-      console.warn("Oberwelt konnte nicht sauber beendet werden:", fehler);
-    }
-  };
-  if (spiel.isBooted) zerstoere();
-  else spiel.events.once(Phaser.Core.Events.READY, zerstoere);
-}
-
-/** Die laufende Szene eines Spiels (nach dem Start). */
-export function szeneVon(spiel: Phaser.Game): Oberweltszene | null {
-  const szene = spiel.scene.getScene("oberwelt");
-  return szene instanceof Oberweltszene ? szene : null;
-}

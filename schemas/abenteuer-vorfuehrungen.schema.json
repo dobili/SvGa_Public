@@ -1,0 +1,55 @@
+{
+  "$schema": "https://json-schema.org/draft/2020-12/schema",
+  "$id": "https://schach-von-grund-auf.com/schemas/abenteuer-vorfuehrungen.schema.json",
+  "title": "Vorführungen des Schach-Abenteuers",
+  "description": "Ein Statist erzählt von einem brillanten Zug und spielt ihn mit seiner Fortsetzung auf einem kleinen Brett vor (Wunsch des Autors, 10.11.2026; docs/spiel/16, Abschnitt 3.4). Statisten verweisen mit der Eigenschaft „zeigt“ auf die Kennung. Die Pipeline prüft, dass die Partie bis „ab“ genau die Stellung „fen“ ergibt und alle Züge legal sind (pipeline/abenteuer/vorfuehrungen.py).",
+  "type": "object",
+  "additionalProperties": false,
+  "required": ["schemaVersion", "vorfuehrungen"],
+  "properties": {
+    "schemaVersion": { "const": 1 },
+    "vorfuehrungen": {
+      "type": "array",
+      "items": { "$ref": "#/$defs/vorfuehrung" }
+    }
+  },
+  "$defs": {
+    "vorfuehrung": {
+      "type": "object",
+      "additionalProperties": false,
+      "required": ["kennung", "partie", "quelle", "pgn", "ab", "fen", "zuege"],
+      "properties": {
+        "kennung": { "type": "string", "pattern": "^[a-z][a-zA-Z0-9]*$" },
+        "partie": {
+          "description": "Spieler, Ort und Jahr, wie sie in Quellen stehen (Namen werden nicht übersetzt)",
+          "type": "string"
+        },
+        "quelle": {
+          "description": "Adresse einer verlässlichen Quelle der Partie",
+          "type": "string"
+        },
+        "pgn": {
+          "description": "Zugfolge der Partie von der Grundstellung bis mindestens zum Ende der Vorführung, in SAN ohne Kommentare. Bei Studien und Partien, von denen nur die Schlussstellung belegt ist, beginnt sie mit [SetUp \"1\"] [FEN \"…\"], und ab ist 0.",
+          "type": "string"
+        },
+        "ab": {
+          "description": "Halbzüge der Partie bis zur gezeigten Stellung (0 = Grundstellung)",
+          "type": "integer",
+          "minimum": 0
+        },
+        "fen": {
+          "description": "Stellung nach „ab“ Halbzügen",
+          "type": "string"
+        },
+        "zuege": {
+          "description": "Die vorgespielten Züge in SAN, ab der Stellung „fen“",
+          "type": "array",
+          "minItems": 1,
+          "maxItems": 20,
+          "items": { "type": "string" }
+        },
+        "aus_sicht": { "enum": ["weiss", "schwarz"] }
+      }
+    }
+  }
+}

@@ -311,7 +311,7 @@
     {
       "name": "bishop",
       "typ": "tier",
-      "feld": [27, 4],
+      "feld": [29, 2],
       "eigenschaften": {
         "verhalten": "schwimmen"
       }

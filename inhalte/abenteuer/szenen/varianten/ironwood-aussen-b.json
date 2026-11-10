@@ -92,7 +92,7 @@
       "feld": [26, 0]
     },
     {
-      "moebel": "iw5StadthausGrau",
+      "moebel": "iw5StadthausBlau",
       "feld": [32, 0]
     },
     {
@@ -1342,6 +1342,18 @@
     {
       "moebel": "iw5StrassenbrueckeGehwegQuer6",
       "feld": [4, 28]
+    },
+    {
+      "moebel": "iw8Werkstatt",
+      "feld": [31, 39]
+    },
+    {
+      "moebel": "iw8Blechhuette",
+      "feld": [57, 39]
+    },
+    {
+      "moebel": "iw8SchuppenRot",
+      "feld": [75, 34]
     }
   ],
   "ausloeser": [
@@ -1454,28 +1466,8 @@
         "von": "40,47",
         "bis": "46,47",
         "tun": "füttert Tauben",
-        "wann": "tag"
-      }
-    },
-    {
-      "name": "rauch",
-      "typ": "statist",
-      "feld": [50, 1],
-      "eigenschaften": {
-        "von": "50,1",
-        "bis": "50,1",
-        "tun": "Rauch zieht vom Werk herüber"
-      }
-    },
-    {
-      "name": "funken",
-      "typ": "statist",
-      "feld": [66, 18],
-      "eigenschaften": {
-        "von": "66,18",
-        "bis": "66,18",
-        "tun": "Funken sprühen am Werk",
-        "wann": "abend"
+        "wann": "tag",
+        "sagt": "statist.ironwood.aussen.taubenfuetterer"
       }
     },
     {
@@ -1518,6 +1510,120 @@
         "bis": "35,15",
         "tun": "malen mit Kreide auf den Gehweg",
         "wann": "tag"
+      }
+    },
+    {
+      "name": "kranfuehrer",
+      "typ": "statist",
+      "feld": [70, 24],
+      "eigenschaften": {
+        "von": "70,24",
+        "bis": "76,24",
+        "tun": "lenkt den Portalkran im Werkhof",
+        "wann": "tag"
+      }
+    },
+    {
+      "name": "rangierer",
+      "typ": "statist",
+      "feld": [50, 52],
+      "eigenschaften": {
+        "von": "50,52",
+        "bis": "60,52",
+        "tun": "kuppelt Güterwagen am Schuppen",
+        "wann": "tag",
+        "sagt": "statist.ironwood.aussen.rangierer"
+      }
+    },
+    {
+      "name": "lieferfahrer",
+      "typ": "statist",
+      "feld": [60, 28],
+      "eigenschaften": {
+        "von": "60,28",
+        "bis": "66,28",
+        "tun": "wartet mit dem Lieferwagen an der Schranke",
+        "wann": "tag",
+        "sagt": "statist.ironwood.aussen.lieferfahrer"
+      }
+    },
+    {
+      "name": "wirt",
+      "typ": "statist",
+      "feld": [28, 29],
+      "eigenschaften": {
+        "von": "28,29",
+        "bis": "28,29",
+        "tun": "fegt vor der Kneipe „Zum Hoch“",
+        "wann": "abend",
+        "sagt": "statist.ironwood.aussen.wirt"
+      }
+    },
+    {
+      "name": "schuelerin",
+      "typ": "statist",
+      "feld": [30, 12],
+      "eigenschaften": {
+        "von": "30,12",
+        "bis": "44,13",
+        "tun": "geht mit Ranzen von der Schule heim",
+        "wann": "tag",
+        "sagt": "statist.ironwood.aussen.schuelerin"
+      }
+    },
+    {
+      "name": "busfahrerin",
+      "typ": "statist",
+      "feld": [16, 33],
+      "eigenschaften": {
+        "von": "16,33",
+        "bis": "16,33",
+        "tun": "macht Pause an der Haltestelle",
+        "wann": "tag",
+        "sagt": "statist.ironwood.aussen.busfahrerin"
+      }
+    },
+    {
+      "name": "arbeiterinPause",
+      "typ": "statist",
+      "feld": [54, 19],
+      "eigenschaften": {
+        "von": "54,19",
+        "bis": "54,19",
+        "tun": "trinkt Kaffee vor der Kantine",
+        "wann": "tag",
+        "sagt": "statist.ironwood.aussen.arbeiterinPause"
+      }
+    },
+    {
+      "name": "nachbar",
+      "typ": "statist",
+      "feld": [20, 12],
+      "eigenschaften": {
+        "von": "20,12",
+        "bis": "40,12",
+        "tun": "trägt Einkaufstüten die Elm Street hinauf",
+        "wann": "abend"
+      }
+    },
+    {
+      "name": "tauben",
+      "typ": "tier",
+      "feld": [42, 48],
+      "eigenschaften": {
+        "von": "42,48",
+        "bis": "46,48",
+        "verhalten": "fliegen"
+      }
+    },
+    {
+      "name": "ratten",
+      "typ": "tier",
+      "feld": [11, 44],
+      "eigenschaften": {
+        "von": "11,44",
+        "bis": "11,50",
+        "verhalten": "ausweichen"
       }
     }
   ],

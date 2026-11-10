@@ -206,7 +206,8 @@
         "von": "2,8",
         "bis": "2,10",
         "tun": "schaut einer Blitzpartie zu",
-        "wann": "tag"
+        "wann": "tag",
+        "sagt": "statist.riverton.pavillon.zuschauer"
       }
     },
     {
@@ -217,7 +218,8 @@
         "von": "16,8",
         "bis": "16,10",
         "tun": "wettet um eine Limonade",
-        "wann": "tag"
+        "wann": "tag",
+        "sagt": "statist.riverton.pavillon.wettender"
       }
     }
   ],

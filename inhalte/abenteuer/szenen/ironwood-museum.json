@@ -188,7 +188,19 @@
         "von": "8,12",
         "bis": "11,12",
         "tun": "liest die Schilder",
-        "wann": "tag"
+        "wann": "tag",
+        "sagt": "statist.ironwood.museum.besucherin"
+      }
+    },
+    {
+      "name": "lehrer",
+      "typ": "statist",
+      "feld": [14, 12],
+      "eigenschaften": {
+        "von": "14,12",
+        "bis": "14,12",
+        "tun": "führt eine Schulklasse durch das Museum",
+        "sagt": "statist.ironwood.museum.lehrer"
       }
     }
   ],

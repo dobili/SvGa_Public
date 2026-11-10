@@ -29,6 +29,8 @@ export const TIERBILDER: Readonly<Record<string, Tierbild>> = {
   esel: { breite: 48, hoehe: 48 },
   hund: { breite: 48, hoehe: 32 },
   katze: { breite: 32, hoehe: 32 },
+  // Keine Tierart, aber Belebung über dem Wasser (Dokument 15, Spur P1 auf Weg 3).
+  drohne: { breite: 16, hoehe: 16 },
 };
 
 /**
@@ -74,6 +76,7 @@ const STAEMME: Readonly<Record<string, string>> = {
   hund: "hund",
   kojote: "hund",
   katze: "katze",
+  drohne: "drohne",
 };
 
 /** Wörter, an denen eine Schar zu erkennen ist (Mehrzahl im Objektnamen). */

@@ -639,6 +639,10 @@
     {
       "moebel": "mfAhorn",
       "feld": [63, 13]
+    },
+    {
+      "moebel": "rv8WohnhausBraun",
+      "feld": [1, 10]
     }
   ],
   "ausloeser": [
@@ -716,12 +720,13 @@
     {
       "name": "pendler",
       "typ": "statist",
-      "feld": [20, 19],
+      "feld": [19, 19],
       "eigenschaften": {
-        "von": "20,19",
+        "von": "19,19",
         "bis": "36,19",
         "tun": "eilt mit Schirm zum Zug",
-        "wann": "morgen"
+        "wann": "morgen",
+        "sagt": "statist.riverton.aussen.pendler"
       }
     },
     {
@@ -732,6 +737,122 @@
         "von": "38,53",
         "bis": "44,53",
         "tun": "klopft auf die Schachuhr",
+        "wann": "tag",
+        "sagt": "statist.riverton.aussen.parkschachspieler"
+      }
+    },
+    {
+      "name": "brieftraegerin",
+      "typ": "statist",
+      "feld": [4, 36],
+      "eigenschaften": {
+        "von": "4,36",
+        "bis": "30,37",
+        "tun": "trägt die Post die Water Street entlang",
+        "wann": "tag",
+        "sagt": "statist.riverton.aussen.brieftraegerin"
+      }
+    },
+    {
+      "name": "taubenmann",
+      "typ": "statist",
+      "feld": [28, 21],
+      "eigenschaften": {
+        "von": "28,21",
+        "bis": "28,21",
+        "tun": "zählt seine Tauben",
+        "wann": "tag",
+        "sagt": "statist.riverton.aussen.taubenmann"
+      }
+    },
+    {
+      "name": "uhrmacher",
+      "typ": "statist",
+      "feld": [32, 21],
+      "eigenschaften": {
+        "von": "32,21",
+        "bis": "32,21",
+        "tun": "sitzt unter dem Uhrturm und prüft seine Taschenuhr",
+        "wann": "tag",
+        "sagt": "statist.riverton.aussen.uhrmacher"
+      }
+    },
+    {
+      "name": "gabelstaplerfahrer",
+      "typ": "statist",
+      "feld": [53, 17],
+      "eigenschaften": {
+        "von": "53,17",
+        "bis": "51,12",
+        "tun": "fährt Kisten zum Güterschuppen",
+        "wann": "tag",
+        "sagt": "statist.riverton.aussen.gabelstaplerfahrer"
+      }
+    },
+    {
+      "name": "anglerin",
+      "typ": "statist",
+      "feld": [62, 37],
+      "eigenschaften": {
+        "von": "62,37",
+        "bis": "62,37",
+        "tun": "angelt von der Ufermauer",
+        "wann": "tag",
+        "sagt": "statist.riverton.aussen.anglerin"
+      }
+    },
+    {
+      "name": "kellnerin",
+      "typ": "statist",
+      "feld": [41, 37],
+      "eigenschaften": {
+        "von": "41,37",
+        "bis": "47,37",
+        "tun": "trägt Kaffee zu den Tischen vor dem Café",
+        "wann": "tag"
+      }
+    },
+    {
+      "name": "kreidekinder",
+      "typ": "statist",
+      "feld": [34, 51],
+      "eigenschaften": {
+        "von": "34,51",
+        "bis": "34,51",
+        "tun": "malen ein Brett mit Kreide auf den Weg",
+        "wann": "tag"
+      }
+    },
+    {
+      "name": "jogger",
+      "typ": "statist",
+      "feld": [2, 47],
+      "eigenschaften": {
+        "von": "2,47",
+        "bis": "34,47",
+        "tun": "läuft am Park entlang",
+        "wann": "morgen"
+      }
+    },
+    {
+      "name": "hundebesitzerin",
+      "typ": "statist",
+      "feld": [24, 52],
+      "eigenschaften": {
+        "von": "24,52",
+        "bis": "30,52",
+        "tun": "geht mit dem Hund im Park spazieren",
+        "wann": "tag"
+      }
+    },
+    {
+      "name": "touristen",
+      "typ": "statist",
+      "feld": [40, 21],
+      "eigenschaften": {
+        "von": "40,21",
+        "bis": "40,21",
+        "tun": "fotografieren den Uhrturm",
         "wann": "tag"
       }
     },
@@ -750,7 +871,7 @@
       "typ": "tier",
       "feld": [60, 36],
       "eigenschaften": {
-        "von": "56,36",
+        "von": "60,36",
         "bis": "68,37",
         "verhalten": "fliegen"
       }
@@ -758,11 +879,31 @@
     {
       "name": "ratten",
       "typ": "tier",
-      "feld": [5, 2],
+      "feld": [5, 1],
       "eigenschaften": {
-        "von": "2,2",
-        "bis": "9,2",
+        "von": "5,1",
+        "bis": "9,1",
         "verhalten": "ausweichen"
+      }
+    },
+    {
+      "name": "hund",
+      "typ": "tier",
+      "feld": [25, 51],
+      "eigenschaften": {
+        "von": "25,51",
+        "bis": "25,51",
+        "verhalten": "folgen"
+      }
+    },
+    {
+      "name": "enten",
+      "typ": "tier",
+      "feld": [20, 41],
+      "eigenschaften": {
+        "von": "20,41",
+        "bis": "40,41",
+        "verhalten": "schwimmen"
       }
     }
   ],

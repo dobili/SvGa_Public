@@ -35,9 +35,13 @@ AELTERE = 8
 # Reihe mit einer Bewegung (Taube pickt); "baender" = beschriftete Bänder (Hund, Katze), Stand im
 # ersten, Laufen im fünften Band; "fest:<stand_y>:<lauf_y>" = Reihen an festen Pixelhöhen (Katzen:
 # die Beschriftungen berühren die Bildreihen, die Bänder taugen dort nicht).
-TAUBE = "modern-exteriors/Modern_Exteriors_16x16/Animated_16x16/Animated_sheets_16x16/Pigeon_16x16.png"
+BEWEGT = "modern-exteriors/Modern_Exteriors_16x16/Animated_16x16/Animated_sheets_16x16/"
+TAUBE = BEWEGT + "Pigeon_16x16.png"
+DROHNE = BEWEGT + "Drone_1_Flying_16x16.png"
 TIERE = {
     "taube": (TAUBE, 16, 16, "streifen"),
+    # Keine Tierart, aber Belebung über dem Wasser: die Drohne von Perfect Move (Dokument 15, Spur P1).
+    "drohne": (DROHNE, 16, 16, "streifen"),
     "huhn": ("modern-farm/Animals/Chickens_and_Roosters/Chicken_Brown_16x16.png", 16, 16, "reihen"),
     "ente": ("modern-farm/Animals/Ducks/Duck_Brown_16x16.png", 32, 32, "reihen"),
     "hase": ("modern-farm/Animals/Rabbits/Rabbit_Brown_16x16.png", 32, 32, "reihen"),

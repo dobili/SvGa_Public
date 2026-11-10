@@ -1202,7 +1202,7 @@
     "ca8KlapptischBrett": {
       "kollision": true,
       "zustand": "gebraucht",
-      "stil": "einfach",
+      "stil": "modern",
       "quelle": "spiel/eigene/klapptisch_brett.png",
       "breite": 32,
       "hoehe": 32,
@@ -1250,6 +1250,26 @@
       "hoehe": 48,
       "art": "plakat",
       "blick": "unten"
+    },
+    "ca8Lichtermast": {
+      "quelle": "spiel/eigene/lichtermast.png",
+      "kollision": true,
+      "art": "lampe",
+      "zustand": "neu",
+      "stil": "modern",
+      "blick": "unten",
+      "breite": 16,
+      "hoehe": 48
+    },
+    "ca8Lichterkette": {
+      "quelle": "spiel/eigene/lichterkette_laengs_4.png",
+      "kollision": false,
+      "art": "lampe",
+      "zustand": "neu",
+      "stil": "modern",
+      "blick": "unten",
+      "breite": 64,
+      "hoehe": 16
     }
   }
 }

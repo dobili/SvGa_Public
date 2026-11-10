@@ -570,6 +570,49 @@
         12
       ],
       "runde7": true
+    },
+    {
+      "moebel": "ca8Lichtermast",
+      "feld": [
+        121,
+        9
+      ],
+      "runde7": true
+    },
+    {
+      "moebel": "ca8Lichtermast",
+      "feld": [
+        133,
+        9
+      ],
+      "runde7": true
+    },
+    {
+      "moebel": "ca8Lichterkette",
+      "feld": [
+        122,
+        9
+      ],
+      "vorn": true,
+      "runde7": true
+    },
+    {
+      "moebel": "ca8Lichterkette",
+      "feld": [
+        126,
+        9
+      ],
+      "vorn": true,
+      "runde7": true
+    },
+    {
+      "moebel": "ca8Lichterkette",
+      "feld": [
+        129,
+        9
+      ],
+      "vorn": true,
+      "runde7": true
     }
   ],
   "ausloeser": [

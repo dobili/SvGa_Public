@@ -217,7 +217,7 @@ ein Fanshop mit Schals und T-Shirts.
    eine lange Tafel aus fünf Klapptischen mit Brettern (`ca8KlapptischBrett`) (Spalten 122–135, Reihen 12–13) für das Simultan, westlich davon Eiswagen und Tacowagen
    (A (100, 12)/(110, 12), B (105, 11)/(115, 11), C (100, 10)/(110, 10)). Am Leuchtturm stehen Odettes
    Wohnmobil (A (78, 9), B (112, 9), C (37, 9)) und ein Plakat (A (58, 10), B (109, 10), C (20, 10);
-   eigenes Bild `plakat_20juli.png`). Lichterketten über der Tafel fehlen noch.
+   eigenes Bild `plakat_20juli.png`). Über der Tafel hängt zwischen zwei Lichtermasten (121, 9) und (133, 9) eine Lichterkette.
    - `ereignisWeltschachtag`: Seeufer (140, 13), vor der Bühne;
    - `seite12` am Anleger: Seeufer (59, 10);
    - `finchKoenig` (Odette am Wohnmobil): Leuchtturm A (78, 13), B (113, 13), C (38, 13);

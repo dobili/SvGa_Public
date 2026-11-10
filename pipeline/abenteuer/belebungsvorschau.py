@@ -92,7 +92,8 @@ def teile(szene: dict, privat: Path, oeffne) -> list[tuple[int, int, int, object
     for b in szene.get("belebung", []):
         x, y = b["feld"][0] * K, b["feld"][1] * K
         if b.get("typ") == "statist":
-            pfad, (breite, hoehe) = privat / "spiel" / statistenbogen(b["name"], b.get("eigenschaften", {}).get("bild")), (16, 32)
+            bogen = statistenbogen(b["name"], b.get("eigenschaften", {}).get("bild"))
+            pfad, (breite, hoehe) = privat / "spiel" / bogen, (16, 32)
         else:
             art = tierart(b["name"])
             if art is None:

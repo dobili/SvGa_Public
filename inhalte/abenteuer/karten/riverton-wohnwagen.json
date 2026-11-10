@@ -6,19 +6,19 @@
  "type": "map",
  "version": "1.10",
  "infinite": false,
- "width": 14,
- "height": 9,
+ "width": 17,
+ "height": 8,
  "tilewidth": 16,
  "tileheight": 16,
  "nextlayerid": 5,
- "nextobjectid": 21,
+ "nextobjectid": 23,
  "layers": [
   {
    "id": 1,
    "name": "boden",
    "type": "tilelayer",
-   "width": 14,
-   "height": 9,
+   "width": 17,
+   "height": 8,
    "x": 0,
    "y": 0,
    "opacity": 1,
@@ -67,6 +67,52 @@
     0,
     0,
     0,
+    0,
+    0,
+    0,
+    0,
+    0,
+    0,
+    0,
+    0,
+    0,
+    1,
+    1,
+    1,
+    1,
+    0,
+    1,
+    1,
+    0,
+    1,
+    1,
+    1,
+    1,
+    1,
+    1,
+    1,
+    0,
+    0,
+    1,
+    1,
+    1,
+    1,
+    0,
+    1,
+    1,
+    0,
+    1,
+    1,
+    1,
+    1,
+    1,
+    1,
+    1,
+    0,
+    0,
+    1,
+    1,
+    1,
     1,
     1,
     1,
@@ -93,48 +139,12 @@
     1,
     1,
     1,
-    0,
-    0,
-    1,
-    1,
-    1,
-    1,
-    1,
-    1,
-    1,
-    1,
-    1,
     1,
     1,
     1,
     0,
     0,
-    1,
-    1,
-    1,
-    1,
-    1,
-    1,
-    1,
-    1,
-    1,
-    1,
-    1,
-    1,
     0,
-    0,
-    1,
-    1,
-    1,
-    1,
-    1,
-    1,
-    1,
-    1,
-    1,
-    1,
-    1,
-    1,
     0,
     0,
     0,
@@ -156,8 +166,8 @@
    "id": 2,
    "name": "waende",
    "type": "tilelayer",
-   "width": 14,
-   "height": 9,
+   "width": 17,
+   "height": 8,
    "x": 0,
    "y": 0,
    "opacity": 1,
@@ -206,6 +216,52 @@
     2,
     2,
     2,
+    2,
+    2,
+    2,
+    2,
+    2,
+    2,
+    2,
+    2,
+    2,
+    0,
+    0,
+    0,
+    0,
+    2,
+    0,
+    0,
+    2,
+    0,
+    0,
+    0,
+    0,
+    0,
+    0,
+    0,
+    2,
+    2,
+    0,
+    0,
+    0,
+    0,
+    2,
+    0,
+    0,
+    2,
+    0,
+    0,
+    0,
+    0,
+    0,
+    0,
+    0,
+    2,
+    2,
+    0,
+    0,
+    0,
     0,
     0,
     0,
@@ -232,48 +288,12 @@
     0,
     0,
     0,
-    2,
-    2,
-    0,
-    0,
-    0,
-    0,
-    0,
-    0,
-    0,
-    0,
-    0,
     0,
     0,
     0,
     2,
     2,
-    0,
-    0,
-    0,
-    0,
-    0,
-    0,
-    0,
-    0,
-    0,
-    0,
-    0,
-    0,
     2,
-    2,
-    0,
-    0,
-    0,
-    0,
-    0,
-    0,
-    0,
-    0,
-    0,
-    0,
-    0,
-    0,
     2,
     2,
     2,
@@ -295,13 +315,23 @@
    "id": 3,
    "name": "objekte",
    "type": "tilelayer",
-   "width": 14,
-   "height": 9,
+   "width": 17,
+   "height": 8,
    "x": 0,
    "y": 0,
    "opacity": 1,
    "visible": true,
    "data": [
+    0,
+    0,
+    0,
+    0,
+    0,
+    0,
+    0,
+    0,
+    0,
+    0,
     0,
     0,
     0,
@@ -444,8 +474,8 @@
      "id": 1,
      "name": "start",
      "type": "ausloeser",
-     "x": 112,
-     "y": 112,
+     "x": 160,
+     "y": 96,
      "width": 16,
      "height": 16,
      "rotation": 0,
@@ -462,8 +492,8 @@
      "id": 2,
      "name": "wohnwagenAusgang",
      "type": "ausloeser",
-     "x": 112,
-     "y": 128,
+     "x": 160,
+     "y": 112,
      "width": 16,
      "height": 16,
      "rotation": 0,
@@ -473,7 +503,7 @@
      "id": 3,
      "name": "dosentrophaeen",
      "type": "ausloeser",
-     "x": 80,
+     "x": 32,
      "y": 48,
      "width": 16,
      "height": 16,
@@ -482,42 +512,42 @@
     },
     {
      "id": 4,
-     "name": "rv5Bett",
+     "name": "wzFenster",
      "type": "moebel",
      "x": 16,
-     "y": 32,
-     "width": 48,
-     "height": 48,
+     "y": 16,
+     "width": 32,
+     "height": 32,
      "rotation": 0,
      "visible": true,
      "properties": [
       {
        "name": "tiefe",
        "type": "int",
-       "value": 72
+       "value": 0
       },
       {
        "name": "kollision",
        "type": "bool",
-       "value": true
+       "value": false
       }
      ]
     },
     {
      "id": 5,
-     "name": "mf3BrettKleinFiguren",
+     "name": "wzFenster",
      "type": "moebel",
-     "x": 34,
-     "y": 51,
-     "width": 12,
-     "height": 9,
+     "x": 208,
+     "y": 16,
+     "width": 32,
+     "height": 32,
      "rotation": 0,
      "visible": true,
      "properties": [
       {
        "name": "tiefe",
        "type": "int",
-       "value": 73
+       "value": 0
       },
       {
        "name": "kollision",
@@ -528,12 +558,12 @@
     },
     {
      "id": 6,
-     "name": "rv5Kommode",
+     "name": "rv5Buecherregal",
      "type": "moebel",
-     "x": 64,
-     "y": 32,
+     "x": 16,
+     "y": 16,
      "width": 32,
-     "height": 32,
+     "height": 48,
      "rotation": 0,
      "visible": true,
      "properties": [
@@ -553,8 +583,8 @@
      "id": 7,
      "name": "rv5PokalKlein",
      "type": "moebel",
-     "x": 65,
-     "y": 35,
+     "x": 17,
+     "y": 30,
      "width": 16,
      "height": 16,
      "rotation": 0,
@@ -576,8 +606,8 @@
      "id": 8,
      "name": "rv5PokalSilber",
      "type": "moebel",
-     "x": 79,
-     "y": 19,
+     "x": 31,
+     "y": 14,
      "width": 16,
      "height": 32,
      "rotation": 0,
@@ -597,11 +627,126 @@
     },
     {
      "id": 9,
-     "name": "rv5Buecherregal",
+     "name": "rv5Bett",
+     "type": "moebel",
+     "x": 16,
+     "y": 64,
+     "width": 48,
+     "height": 48,
+     "rotation": 0,
+     "visible": true,
+     "properties": [
+      {
+       "name": "tiefe",
+       "type": "int",
+       "value": 104
+      },
+      {
+       "name": "kollision",
+       "type": "bool",
+       "value": true
+      }
+     ]
+    },
+    {
+     "id": 10,
+     "name": "mf3BrettKleinFiguren",
+     "type": "moebel",
+     "x": 34,
+     "y": 83,
+     "width": 12,
+     "height": 9,
+     "rotation": 0,
+     "visible": true,
+     "properties": [
+      {
+       "name": "tiefe",
+       "type": "int",
+       "value": 105
+      },
+      {
+       "name": "kollision",
+       "type": "bool",
+       "value": false
+      }
+     ]
+    },
+    {
+     "id": 11,
+     "name": "rv5Kuriertasche",
+     "type": "moebel",
+     "x": 64,
+     "y": 32,
+     "width": 16,
+     "height": 32,
+     "rotation": 0,
+     "visible": true,
+     "properties": [
+      {
+       "name": "tiefe",
+       "type": "int",
+       "value": 56
+      },
+      {
+       "name": "kollision",
+       "type": "bool",
+       "value": true
+      }
+     ]
+    },
+    {
+     "id": 12,
+     "name": "mf5Toilette",
      "type": "moebel",
      "x": 96,
+     "y": 32,
+     "width": 16,
+     "height": 48,
+     "rotation": 0,
+     "visible": true,
+     "properties": [
+      {
+       "name": "tiefe",
+       "type": "int",
+       "value": 72
+      },
+      {
+       "name": "kollision",
+       "type": "bool",
+       "value": true
+      }
+     ]
+    },
+    {
+     "id": 13,
+     "name": "mf5Handwaschbecken",
+     "type": "moebel",
+     "x": 112,
+     "y": 48,
+     "width": 16,
+     "height": 16,
+     "rotation": 0,
+     "visible": true,
+     "properties": [
+      {
+       "name": "tiefe",
+       "type": "int",
+       "value": 56
+      },
+      {
+       "name": "kollision",
+       "type": "bool",
+       "value": true
+      }
+     ]
+    },
+    {
+     "id": 14,
+     "name": "mf8KuehlschrankWeiss",
+     "type": "moebel",
+     "x": 144,
      "y": 16,
-     "width": 32,
+     "width": 16,
      "height": 48,
      "rotation": 0,
      "visible": true,
@@ -619,30 +764,7 @@
      ]
     },
     {
-     "id": 10,
-     "name": "wzFenster",
-     "type": "moebel",
-     "x": 128,
-     "y": 16,
-     "width": 32,
-     "height": 32,
-     "rotation": 0,
-     "visible": true,
-     "properties": [
-      {
-       "name": "tiefe",
-       "type": "int",
-       "value": 0
-      },
-      {
-       "name": "kollision",
-       "type": "bool",
-       "value": false
-      }
-     ]
-    },
-    {
-     "id": 11,
+     "id": 15,
      "name": "rv5Kuechenzeile",
      "type": "moebel",
      "x": 160,
@@ -665,7 +787,30 @@
      ]
     },
     {
-     "id": 12,
+     "id": 16,
+     "name": "mf5Spuele",
+     "type": "moebel",
+     "x": 160,
+     "y": 34,
+     "width": 32,
+     "height": 16,
+     "rotation": 0,
+     "visible": true,
+     "properties": [
+      {
+       "name": "tiefe",
+       "type": "int",
+       "value": 42
+      },
+      {
+       "name": "kollision",
+       "type": "bool",
+       "value": false
+      }
+     ]
+    },
+    {
+     "id": 17,
      "name": "wzHerd",
      "type": "moebel",
      "x": 192,
@@ -688,149 +833,80 @@
      ]
     },
     {
-     "id": 13,
-     "name": "rv5Klapptisch",
-     "type": "moebel",
-     "x": 112,
-     "y": 64,
-     "width": 16,
-     "height": 16,
-     "rotation": 0,
-     "visible": true,
-     "properties": [
-      {
-       "name": "tiefe",
-       "type": "int",
-       "value": 72
-      },
-      {
-       "name": "kollision",
-       "type": "bool",
-       "value": true
-      }
-     ]
-    },
-    {
-     "id": 14,
-     "name": "rv5Hocker",
-     "type": "moebel",
-     "x": 96,
-     "y": 64,
-     "width": 16,
-     "height": 16,
-     "rotation": 0,
-     "visible": true,
-     "properties": [
-      {
-       "name": "tiefe",
-       "type": "int",
-       "value": 72
-      },
-      {
-       "name": "kollision",
-       "type": "bool",
-       "value": true
-      }
-     ]
-    },
-    {
-     "id": 15,
-     "name": "rv5Hocker",
-     "type": "moebel",
-     "x": 128,
-     "y": 64,
-     "width": 16,
-     "height": 16,
-     "rotation": 0,
-     "visible": true,
-     "properties": [
-      {
-       "name": "tiefe",
-       "type": "int",
-       "value": 72
-      },
-      {
-       "name": "kollision",
-       "type": "bool",
-       "value": true
-      }
-     ]
-    },
-    {
-     "id": 16,
-     "name": "rv5TeppichRund",
-     "type": "moebel",
-     "x": 96,
-     "y": 64,
-     "width": 32,
-     "height": 32,
-     "rotation": 0,
-     "visible": true,
-     "properties": [
-      {
-       "name": "tiefe",
-       "type": "int",
-       "value": 1
-      },
-      {
-       "name": "kollision",
-       "type": "bool",
-       "value": false
-      }
-     ]
-    },
-    {
-     "id": 17,
-     "name": "rv5Kuriertasche",
-     "type": "moebel",
-     "x": 192,
-     "y": 80,
-     "width": 16,
-     "height": 32,
-     "rotation": 0,
-     "visible": true,
-     "properties": [
-      {
-       "name": "tiefe",
-       "type": "int",
-       "value": 104
-      },
-      {
-       "name": "kollision",
-       "type": "bool",
-       "value": true
-      }
-     ]
-    },
-    {
      "id": 18,
-     "name": "rv5Zeitungen",
+     "name": "mf5NischenstuhlRechts",
      "type": "moebel",
-     "x": 16,
-     "y": 64,
-     "width": 32,
-     "height": 48,
+     "x": 208,
+     "y": 48,
+     "width": 16,
+     "height": 32,
      "rotation": 0,
      "visible": true,
      "properties": [
       {
        "name": "tiefe",
        "type": "int",
-       "value": 1
+       "value": 72
       },
       {
        "name": "kollision",
        "type": "bool",
-       "value": false
+       "value": true
       }
      ]
     },
     {
      "id": 19,
+     "name": "mf5Nischentisch",
+     "type": "moebel",
+     "x": 224,
+     "y": 48,
+     "width": 16,
+     "height": 16,
+     "rotation": 0,
+     "visible": true,
+     "properties": [
+      {
+       "name": "tiefe",
+       "type": "int",
+       "value": 56
+      },
+      {
+       "name": "kollision",
+       "type": "bool",
+       "value": true
+      }
+     ]
+    },
+    {
+     "id": 20,
+     "name": "mf5NischenstuhlLinks",
+     "type": "moebel",
+     "x": 240,
+     "y": 48,
+     "width": 16,
+     "height": 32,
+     "rotation": 0,
+     "visible": true,
+     "properties": [
+      {
+       "name": "tiefe",
+       "type": "int",
+       "value": 72
+      },
+      {
+       "name": "kollision",
+       "type": "bool",
+       "value": true
+      }
+     ]
+    },
+    {
+     "id": 21,
      "name": "mf4Fussmatte",
      "type": "moebel",
-     "x": 112,
-     "y": 120,
+     "x": 160,
+     "y": 104,
      "width": 16,
      "height": 16,
      "rotation": 0,
@@ -849,11 +925,11 @@
      ]
     },
     {
-     "id": 20,
+     "id": 22,
      "name": "rv5TuerSuedHell",
      "type": "moebel",
-     "x": 112,
-     "y": 128,
+     "x": 160,
+     "y": 112,
      "width": 16,
      "height": 16,
      "rotation": 0,

@@ -25,204 +25,120 @@
   "objekte": [
     {
       "moebel": "mf2Fenster",
-      "feld": [
-        4,
-        1
-      ],
+      "feld": [4, 1],
       "an_wand": true
     },
     {
       "moebel": "mf2Weltkarte",
-      "feld": [
-        7,
-        1
-      ],
+      "feld": [7, 1],
       "an_wand": true
     },
     {
       "moebel": "mfc8Kreidetafel",
-      "feld": [
-        12,
-        1
-      ]
+      "feld": [12, 1]
     },
     {
       "moebel": "mf2PlakatZaehlen",
-      "feld": [
-        15,
-        1
-      ],
+      "feld": [15, 1],
       "an_wand": true
     },
     {
       "moebel": "mf4Pinnwand",
-      "feld": [
-        18,
-        1
-      ],
+      "feld": [18, 1],
       "an_wand": true,
-      "versatz": [
-        0,
-        6
-      ]
+      "versatz": [0, 6]
     },
     {
       "moebel": "mf2Fenster",
-      "feld": [
-        21,
-        1
-      ],
+      "feld": [21, 1],
       "an_wand": true
     },
     {
       "moebel": "mfc8Vitrine",
-      "feld": [
-        7,
-        3
-      ],
+      "feld": [7, 3],
       "id": "vitrine"
     },
     {
       "moebel": "mfc8Pokal",
       "auf": "vitrine",
-      "versatz": [
-        -6,
-        0
-      ]
+      "versatz": [-6, 0]
     },
     {
       "moebel": "mfc8PokalB",
       "auf": "vitrine",
-      "versatz": [
-        6,
-        0
-      ]
+      "versatz": [6, 0]
     },
     {
       "moebel": "mfc8RegalSeite",
-      "feld": [
-        1,
-        3
-      ]
+      "feld": [1, 3]
     },
     {
       "moebel": "mfc8Pult",
-      "feld": [
-        1,
-        6
-      ],
+      "feld": [1, 6],
       "id": "pult"
     },
     {
       "moebel": "mf2Globus",
       "auf": "pult",
-      "versatz": [
-        4,
-        0
-      ]
+      "versatz": [4, 0]
     },
     {
       "moebel": "mfc8RegalSeiteB",
-      "feld": [
-        1,
-        9
-      ]
+      "feld": [1, 9]
     },
     {
       "moebel": "mfc8Spind",
-      "feld": [
-        19,
-        3
-      ]
+      "feld": [19, 3]
     },
     {
       "moebel": "mfc8Spind",
-      "feld": [
-        20,
-        3
-      ]
+      "feld": [20, 3]
     },
     {
       "moebel": "mfc8Spind",
-      "feld": [
-        21,
-        3
-      ]
+      "feld": [21, 3]
     },
     {
       "moebel": "mf7PflanzeHoch",
-      "feld": [
-        24,
-        3
-      ]
+      "feld": [24, 3]
     },
     {
       "moebel": "mf4Palme",
-      "feld": [
-        23,
-        11
-      ]
+      "feld": [23, 11]
     },
     {
       "moebel": "mf7PflanzeBusch",
-      "feld": [
-        1,
-        11
-      ]
+      "feld": [1, 11]
     },
     {
       "moebel": "mfc8Demotafel",
-      "feld": [
-        23,
-        7
-      ]
+      "feld": [23, 7]
     },
     {
       "moebel": "mfc8RegalNiedrig",
-      "feld": [
-        22,
-        3
-      ]
+      "feld": [22, 3]
     },
     {
       "moebel": "mfc8Bank",
-      "feld": [
-        5,
-        11
-      ]
+      "feld": [5, 11]
     },
     {
       "moebel": "mfc8Bank",
-      "feld": [
-        17,
-        11
-      ]
+      "feld": [17, 11]
     },
     {
       "moebel": "mf5TuerSuedHolz",
-      "feld": [
-        13,
-        14
-      ],
+      "feld": [13, 14],
       "an_wand": true
     },
     {
       "moebel": "mf4Fussmatte",
-      "feld": [
-        13,
-        13
-      ],
-      "versatz": [
-        0,
-        8
-      ]
+      "feld": [13, 13],
+      "versatz": [0, 8]
     },
     {
       "moebel": "mf8RundtischDunkel",
-      "feld": [
-        6,
-        6
-      ],
+      "feld": [6, 6],
       "id": "t1"
     },
     {
@@ -231,26 +147,17 @@
     },
     {
       "moebel": "mf8SchulstuhlRechts",
-      "feld": [
-        5,
-        6
-      ],
+      "feld": [5, 6],
       "zu": "t1"
     },
     {
       "moebel": "mf8SchulstuhlLinks",
-      "feld": [
-        8,
-        6
-      ],
+      "feld": [8, 6],
       "zu": "t1"
     },
     {
       "moebel": "mf8RundtischDunkel",
-      "feld": [
-        12,
-        6
-      ],
+      "feld": [12, 6],
       "id": "t2"
     },
     {
@@ -259,26 +166,17 @@
     },
     {
       "moebel": "mf8SchulstuhlRechts",
-      "feld": [
-        11,
-        6
-      ],
+      "feld": [11, 6],
       "zu": "t2"
     },
     {
       "moebel": "mf8SchulstuhlLinks",
-      "feld": [
-        14,
-        6
-      ],
+      "feld": [14, 6],
       "zu": "t2"
     },
     {
       "moebel": "mf8RundtischDunkel",
-      "feld": [
-        18,
-        6
-      ],
+      "feld": [18, 6],
       "id": "t3"
     },
     {
@@ -287,26 +185,17 @@
     },
     {
       "moebel": "mf8SchulstuhlRechts",
-      "feld": [
-        17,
-        6
-      ],
+      "feld": [17, 6],
       "zu": "t3"
     },
     {
       "moebel": "mf8SchulstuhlLinks",
-      "feld": [
-        20,
-        6
-      ],
+      "feld": [20, 6],
       "zu": "t3"
     },
     {
       "moebel": "mf8RundtischDunkel",
-      "feld": [
-        6,
-        9
-      ],
+      "feld": [6, 9],
       "id": "t4"
     },
     {
@@ -315,26 +204,17 @@
     },
     {
       "moebel": "mf8SchulstuhlRechts",
-      "feld": [
-        5,
-        9
-      ],
+      "feld": [5, 9],
       "zu": "t4"
     },
     {
       "moebel": "mf8SchulstuhlLinks",
-      "feld": [
-        8,
-        9
-      ],
+      "feld": [8, 9],
       "zu": "t4"
     },
     {
       "moebel": "mf8RundtischDunkel",
-      "feld": [
-        12,
-        9
-      ],
+      "feld": [12, 9],
       "id": "t5"
     },
     {
@@ -343,26 +223,17 @@
     },
     {
       "moebel": "mf8SchulstuhlRechts",
-      "feld": [
-        11,
-        9
-      ],
+      "feld": [11, 9],
       "zu": "t5"
     },
     {
       "moebel": "mf8SchulstuhlLinks",
-      "feld": [
-        14,
-        9
-      ],
+      "feld": [14, 9],
       "zu": "t5"
     },
     {
       "moebel": "mf8RundtischDunkel",
-      "feld": [
-        18,
-        9
-      ],
+      "feld": [18, 9],
       "id": "t6"
     },
     {
@@ -371,87 +242,57 @@
     },
     {
       "moebel": "mf8SchulstuhlRechts",
-      "feld": [
-        17,
-        9
-      ],
+      "feld": [17, 9],
       "zu": "t6"
     },
     {
       "moebel": "mf8SchulstuhlLinks",
-      "feld": [
-        20,
-        9
-      ],
+      "feld": [20, 9],
       "zu": "t6"
     }
   ],
   "ausloeser": [
     {
       "name": "start",
-      "feld": [
-        13,
-        12
-      ],
+      "feld": [13, 12],
       "eigenschaften": {
         "richtung": "oben"
       }
     },
     {
       "name": "schule",
-      "feld": [
-        13,
-        14
-      ]
+      "feld": [13, 14]
     },
     {
       "name": "pokalvitrine",
-      "feld": [
-        7,
-        3
-      ],
+      "feld": [7, 3],
       "auf_moebel": true
     },
     {
       "name": "brettOhneDame",
-      "feld": [
-        18,
-        6
-      ],
+      "feld": [18, 6],
       "auf_moebel": true
     },
     {
       "name": "plakatZaehlen",
-      "feld": [
-        15,
-        3
-      ]
+      "feld": [15, 3]
     }
   ],
   "figuren": [
     {
       "name": "coachDelgado",
-      "feld": [
-        3,
-        7
-      ]
+      "feld": [3, 7]
     },
     {
       "name": "sam",
-      "feld": [
-        9,
-        8
-      ]
+      "feld": [9, 8]
     }
   ],
   "belebung": [
     {
       "name": "schuelerin",
       "typ": "statist",
-      "feld": [
-        12,
-        8
-      ],
+      "feld": [12, 8],
       "eigenschaften": {
         "tun": "stellt am Tisch die Figuren auf",
         "wann": "tag",
@@ -462,10 +303,7 @@
     {
       "name": "clubmitglied",
       "typ": "statist",
-      "feld": [
-        16,
-        8
-      ],
+      "feld": [16, 8],
       "eigenschaften": {
         "tun": "schaut stehend einer Analyse zu",
         "wann": "tag",
@@ -476,10 +314,7 @@
     {
       "name": "mutterWartet",
       "typ": "statist",
-      "feld": [
-        11,
-        12
-      ],
+      "feld": [11, 12],
       "eigenschaften": {
         "tun": "wartet an der Tür auf ihren Sohn",
         "wann": "tag",
@@ -488,14 +323,8 @@
       }
     }
   ],
-  "zustand": [
-    "neu",
-    "gebraucht"
-  ],
-  "stil": [
-    "klassisch",
-    "schule"
-  ],
+  "zustand": ["neu", "gebraucht"],
+  "stil": ["klassisch", "schule"],
   "boeden": {
     "t": "teppichBlau"
   }

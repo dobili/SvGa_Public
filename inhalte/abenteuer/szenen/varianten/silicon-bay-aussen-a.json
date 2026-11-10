@@ -1,8 +1,8 @@
 {
   "karte": "siliconBay.aussen",
-  "datei": "karten/varianten/silicon-bay-aussen-c.json",
+  "datei": "karten/varianten/silicon-bay-aussen-a.json",
   "art": "aussen",
-  "beschreibung": "Silicon Bay, der Campus am Morgen: Glas, Licht und Bildschirme. Oben die Gebäudezeile: links der Konzernturm von Perfect Move, in der Mitte die Akademie, rechts das Hotel Bayview, daneben Werbetafeln, auf denen ZERO wirbt. Davor der helle Gehweg, der Boulevard mit der Straßenbahn, die links aus dem Tunnel kommt und rechts am Prellbock der Endhaltestelle hält (die Gleise liegen offen im Pflaster), und der Gehweg Süd. Rechts kommt man über die Glasbrücke an. Unten der Platz mit dem Brunnen, an der Südkante die Brüstung über dem Hafen; nur die Treppe in der Mitte führt hinunter. Variante C, die belebte: das Hotel ist ein flaches Glashaus mit Dachterrasse, das Innovation Lab ein Gewächshaus aus Glas links; über den Platz zieht ein Wochenmarkt, dahinter zwei Baumreihen, rechts Brunnen mit Bänken und Kaffeekiosk.",
+  "beschreibung": "Silicon Bay, der Campus am Morgen: Glas, Licht und Bildschirme. Oben die Gebäudezeile: links der Konzernturm von Perfect Move, in der Mitte die Akademie, rechts das Hotel Bayview, daneben Werbetafeln, auf denen ZERO wirbt. Davor der helle Gehweg, der Boulevard mit der Straßenbahn, die links aus dem Tunnel kommt und rechts am Prellbock der Endhaltestelle hält (die Gleise liegen offen im Pflaster), und der Gehweg Süd. Rechts kommt man über die Glasbrücke an. Unten der Platz mit dem Brunnen, an der Südkante die Brüstung über dem Hafen; nur die Treppe in der Mitte führt hinunter. Platz wie im Ortsplan: Food-Truck links, dahinter das Innovation Lab in einer alten Werkhalle, zwei Reihen Kübel, Brunnen mit Bänken, Kaffeekiosk rechts; Straßenbahn an der Haltestelle vor der Akademie.",
   "boden": "pflaster",
   "wandart": "stein",
   "boeden": {
@@ -94,336 +94,336 @@
       "versatz": [-47, 86]
     },
     {
-      "moebel": "sb5HotelC",
-      "feld": [41, 7]
+      "moebel": "sb5Hotel",
+      "feld": [42, 5]
     },
     {
-      "moebel": "sb5GleisNeu",
+      "moebel": "cc4GleisRand",
       "feld": [0, 24],
       "bauteil_ok": true
     },
     {
-      "moebel": "sb5GleisNeu",
+      "moebel": "cc4GleisRand",
       "feld": [1, 24],
       "bauteil_ok": true
     },
     {
-      "moebel": "sb5GleisNeu",
+      "moebel": "cc4GleisRand",
       "feld": [2, 24],
       "bauteil_ok": true
     },
     {
-      "moebel": "sb5GleisNeu",
+      "moebel": "cc4GleisRand",
       "feld": [3, 24],
       "bauteil_ok": true
     },
     {
-      "moebel": "sb5GleisNeu",
+      "moebel": "cc4GleisRand",
       "feld": [4, 24],
       "bauteil_ok": true
     },
     {
-      "moebel": "sb5GleisNeu",
+      "moebel": "cc4GleisRand",
       "feld": [5, 24],
       "bauteil_ok": true
     },
     {
-      "moebel": "sb5GleisNeu",
+      "moebel": "cc4GleisRand",
       "feld": [6, 24],
       "bauteil_ok": true
     },
     {
-      "moebel": "sb5GleisNeu",
+      "moebel": "cc4GleisRand",
       "feld": [7, 24],
       "bauteil_ok": true
     },
     {
-      "moebel": "sb5GleisNeu",
+      "moebel": "cc4GleisRand",
       "feld": [8, 24],
       "bauteil_ok": true
     },
     {
-      "moebel": "sb5GleisNeu",
+      "moebel": "cc4GleisRand",
       "feld": [9, 24],
       "bauteil_ok": true
     },
     {
-      "moebel": "sb5GleisNeu",
+      "moebel": "cc4GleisRand",
       "feld": [10, 24],
       "bauteil_ok": true
     },
     {
-      "moebel": "sb5GleisNeu",
+      "moebel": "cc4GleisRand",
       "feld": [11, 24],
       "bauteil_ok": true
     },
     {
-      "moebel": "sb5GleisNeu",
+      "moebel": "cc4GleisRand",
       "feld": [12, 24],
       "bauteil_ok": true
     },
     {
-      "moebel": "sb5GleisNeu",
+      "moebel": "cc4GleisRand",
       "feld": [13, 24],
       "bauteil_ok": true
     },
     {
-      "moebel": "sb5GleisNeu",
+      "moebel": "cc4GleisRand",
       "feld": [14, 24],
       "bauteil_ok": true
     },
     {
-      "moebel": "sb5GleisNeu",
+      "moebel": "cc4GleisRand",
       "feld": [15, 24],
       "bauteil_ok": true
     },
     {
-      "moebel": "sb5GleisNeu",
+      "moebel": "cc4GleisRand",
       "feld": [16, 24],
       "bauteil_ok": true
     },
     {
-      "moebel": "sb5GleisNeu",
+      "moebel": "cc4GleisRand",
       "feld": [17, 24],
       "bauteil_ok": true
     },
     {
-      "moebel": "sb5GleisNeu",
+      "moebel": "cc4GleisRand",
       "feld": [18, 24],
       "bauteil_ok": true
     },
     {
-      "moebel": "sb5GleisNeu",
+      "moebel": "cc4GleisRand",
       "feld": [19, 24],
       "bauteil_ok": true
     },
     {
-      "moebel": "sb5GleisNeu",
+      "moebel": "cc4GleisRand",
       "feld": [20, 24],
       "bauteil_ok": true
     },
     {
-      "moebel": "sb5GleisNeu",
+      "moebel": "cc4GleisRand",
       "feld": [21, 24],
       "bauteil_ok": true
     },
     {
-      "moebel": "sb5GleisNeu",
+      "moebel": "cc4GleisRand",
       "feld": [22, 24],
       "bauteil_ok": true
     },
     {
-      "moebel": "sb5GleisNeu",
+      "moebel": "cc4GleisRand",
       "feld": [23, 24],
       "bauteil_ok": true
     },
     {
-      "moebel": "sb5GleisNeu",
+      "moebel": "cc4GleisRand",
       "feld": [24, 24],
       "bauteil_ok": true
     },
     {
-      "moebel": "sb5GleisNeu",
+      "moebel": "cc4GleisRand",
       "feld": [25, 24],
       "bauteil_ok": true
     },
     {
-      "moebel": "sb5GleisNeu",
+      "moebel": "cc4GleisRand",
       "feld": [26, 24],
       "bauteil_ok": true
     },
     {
-      "moebel": "sb5GleisNeu",
+      "moebel": "cc4GleisRand",
       "feld": [27, 24],
       "bauteil_ok": true
     },
     {
-      "moebel": "sb5GleisNeu",
+      "moebel": "cc4GleisRand",
       "feld": [28, 24],
       "bauteil_ok": true
     },
     {
-      "moebel": "sb5GleisNeu",
+      "moebel": "cc4GleisRand",
       "feld": [29, 24],
       "bauteil_ok": true
     },
     {
-      "moebel": "sb5GleisNeu",
+      "moebel": "cc4GleisRand",
       "feld": [30, 24],
       "bauteil_ok": true
     },
     {
-      "moebel": "sb5GleisNeu",
+      "moebel": "cc4GleisRand",
       "feld": [31, 24],
       "bauteil_ok": true
     },
     {
-      "moebel": "sb5GleisNeu",
+      "moebel": "cc4GleisRand",
       "feld": [32, 24],
       "bauteil_ok": true
     },
     {
-      "moebel": "sb5GleisNeu",
+      "moebel": "cc4GleisRand",
       "feld": [33, 24],
       "bauteil_ok": true
     },
     {
-      "moebel": "sb5GleisNeu",
+      "moebel": "cc4GleisRand",
       "feld": [34, 24],
       "bauteil_ok": true
     },
     {
-      "moebel": "sb5GleisNeu",
+      "moebel": "cc4GleisRand",
       "feld": [35, 24],
       "bauteil_ok": true
     },
     {
-      "moebel": "sb5GleisNeu",
+      "moebel": "cc4GleisRand",
       "feld": [36, 24],
       "bauteil_ok": true
     },
     {
-      "moebel": "sb5GleisNeu",
+      "moebel": "cc4GleisRand",
       "feld": [37, 24],
       "bauteil_ok": true
     },
     {
-      "moebel": "sb5GleisNeu",
+      "moebel": "cc4GleisRand",
       "feld": [38, 24],
       "bauteil_ok": true
     },
     {
-      "moebel": "sb5GleisNeu",
+      "moebel": "cc4GleisRand",
       "feld": [39, 24],
       "bauteil_ok": true
     },
     {
-      "moebel": "sb5GleisNeu",
+      "moebel": "cc4GleisRand",
       "feld": [40, 24],
       "bauteil_ok": true
     },
     {
-      "moebel": "sb5GleisNeu",
+      "moebel": "cc4GleisRand",
       "feld": [41, 24],
       "bauteil_ok": true
     },
     {
-      "moebel": "sb5GleisNeu",
+      "moebel": "cc4GleisRand",
       "feld": [42, 24],
       "bauteil_ok": true
     },
     {
-      "moebel": "sb5GleisNeu",
+      "moebel": "cc4GleisRand",
       "feld": [43, 24],
       "bauteil_ok": true
     },
     {
-      "moebel": "sb5GleisNeu",
+      "moebel": "cc4GleisRand",
       "feld": [44, 24],
       "bauteil_ok": true
     },
     {
-      "moebel": "sb5GleisNeu",
+      "moebel": "cc4GleisRand",
       "feld": [45, 24],
       "bauteil_ok": true
     },
     {
-      "moebel": "sb5GleisNeu",
+      "moebel": "cc4GleisRand",
       "feld": [46, 24],
       "bauteil_ok": true
     },
     {
-      "moebel": "sb5GleisNeu",
+      "moebel": "cc4GleisRand",
       "feld": [47, 24],
       "bauteil_ok": true
     },
     {
-      "moebel": "sb5GleisNeu",
+      "moebel": "cc4GleisRand",
       "feld": [48, 24],
       "bauteil_ok": true
     },
     {
-      "moebel": "sb5GleisNeu",
+      "moebel": "cc4GleisRand",
       "feld": [49, 24],
       "bauteil_ok": true
     },
     {
-      "moebel": "sb5GleisNeu",
+      "moebel": "cc4GleisRand",
       "feld": [50, 24],
       "bauteil_ok": true
     },
     {
-      "moebel": "sb5GleisNeu",
+      "moebel": "cc4GleisRand",
       "feld": [51, 24],
       "bauteil_ok": true
     },
     {
-      "moebel": "sb5GleisNeu",
+      "moebel": "cc4GleisRand",
       "feld": [52, 24],
       "bauteil_ok": true
     },
     {
-      "moebel": "sb5GleisNeu",
+      "moebel": "cc4GleisRand",
       "feld": [53, 24],
       "bauteil_ok": true
     },
     {
-      "moebel": "sb5GleisNeu",
+      "moebel": "cc4GleisRand",
       "feld": [54, 24],
       "bauteil_ok": true
     },
     {
-      "moebel": "sb5GleisNeu",
+      "moebel": "cc4GleisRand",
       "feld": [55, 24],
       "bauteil_ok": true
     },
     {
-      "moebel": "sb5GleisNeu",
+      "moebel": "cc4GleisRand",
       "feld": [56, 24],
       "bauteil_ok": true
     },
     {
-      "moebel": "sb5GleisNeu",
+      "moebel": "cc4GleisRand",
       "feld": [57, 24],
       "bauteil_ok": true
     },
     {
-      "moebel": "sb5GleisNeu",
+      "moebel": "cc4GleisRand",
       "feld": [58, 24],
       "bauteil_ok": true
     },
     {
-      "moebel": "sb5GleisNeu",
+      "moebel": "cc4GleisRand",
       "feld": [59, 24],
       "bauteil_ok": true
     },
     {
-      "moebel": "sb5GleisNeu",
+      "moebel": "cc4GleisRand",
       "feld": [60, 24],
       "bauteil_ok": true
     },
     {
-      "moebel": "sb5GleisNeu",
+      "moebel": "cc4GleisRand",
       "feld": [61, 24],
       "bauteil_ok": true
     },
     {
-      "moebel": "sb5GleisNeu",
+      "moebel": "cc4GleisRand",
       "feld": [62, 24],
       "bauteil_ok": true
     },
     {
-      "moebel": "sb5GleisNeu",
+      "moebel": "cc4GleisRand",
       "feld": [63, 24],
       "bauteil_ok": true
     },
     {
-      "moebel": "sb5GleisNeu",
+      "moebel": "cc4GleisRand",
       "feld": [64, 24],
       "bauteil_ok": true
     },
     {
-      "moebel": "sb5GleisNeu",
+      "moebel": "cc4GleisRand",
       "feld": [65, 24],
       "bauteil_ok": true
     },
@@ -762,115 +762,87 @@
       "bauteil_ok": true
     },
     {
+      "moebel": "sb5Werbetafel",
+      "feld": [56, 3]
+    },
+    {
       "moebel": "sb5WerbetafelB",
-      "feld": [65, 4]
+      "feld": [61, 3]
+    },
+    {
+      "moebel": "sb5Werbetafel",
+      "feld": [66, 3]
     },
     {
       "moebel": "sb5Infosaeule",
-      "feld": [66, 19]
+      "feld": [60, 19]
     },
     {
       "moebel": "sb5BahnLinks",
-      "feld": [30, 23],
+      "feld": [20, 23],
       "bauteil_ok": true
     },
     {
       "moebel": "sb5BahnMitte",
-      "feld": [34, 23],
+      "feld": [24, 23],
       "bauteil_ok": true
     },
     {
       "moebel": "sb5BahnRechts",
-      "feld": [44, 23],
+      "feld": [34, 23],
       "bauteil_ok": true
     },
     {
-      "moebel": "sb5LabGlas",
-      "feld": [2, 33]
+      "moebel": "sbFoodtruck",
+      "feld": [4, 29]
     },
     {
-      "moebel": "wg6StandGross",
-      "feld": [13, 30]
+      "moebel": "mfBank",
+      "feld": [12, 33]
     },
     {
-      "moebel": "wg4Marktstand",
-      "feld": [19, 30]
+      "moebel": "sb5Lab",
+      "feld": [3, 38]
     },
     {
-      "moebel": "wg6StandGross",
-      "feld": [23, 30]
+      "moebel": "sb5Kuebel",
+      "feld": [21, 36]
     },
     {
-      "moebel": "wg4Marktstand",
-      "feld": [29, 30]
+      "moebel": "sb5KuebelBluete",
+      "feld": [21, 41]
     },
     {
-      "moebel": "sb5Marktkarren",
-      "feld": [36, 30]
+      "moebel": "sb5Kuebel",
+      "feld": [25, 36]
     },
     {
-      "moebel": "sb5Baum",
-      "feld": [13, 37]
+      "moebel": "sb5KuebelBluete",
+      "feld": [25, 41]
     },
     {
-      "moebel": "sb5Baum",
-      "feld": [13, 43]
+      "moebel": "sb5Kuebel",
+      "feld": [29, 36]
     },
     {
-      "moebel": "sb5Baum",
-      "feld": [19, 37]
-    },
-    {
-      "moebel": "sb5Baum",
-      "feld": [19, 43]
-    },
-    {
-      "moebel": "sb5Baum",
-      "feld": [25, 37]
-    },
-    {
-      "moebel": "sb5Baum",
-      "feld": [25, 43]
-    },
-    {
-      "moebel": "sb5Baum",
-      "feld": [31, 37]
-    },
-    {
-      "moebel": "sb5Baum",
-      "feld": [31, 43]
-    },
-    {
-      "moebel": "sb5Baum",
-      "feld": [37, 37]
-    },
-    {
-      "moebel": "sb5Baum",
-      "feld": [37, 43]
-    },
-    {
-      "moebel": "sb5Baum",
-      "feld": [43, 37]
-    },
-    {
-      "moebel": "sb5Baum",
-      "feld": [43, 43]
+      "moebel": "sb5KuebelBluete",
+      "feld": [29, 41]
     },
     {
       "moebel": "sb5BrunnenWasser",
-      "feld": [50, 36]
+      "feld": [42, 35]
     },
     {
       "moebel": "mfBank",
-      "feld": [46, 38]
+      "feld": [38, 42]
     },
     {
       "moebel": "mfBank",
-      "feld": [55, 38]
+      "feld": [46, 42]
     },
     {
       "moebel": "sb5Kaffeekiosk",
-      "feld": [62, 33]
+      "feld": [60, 31]
     },
     {
       "moebel": "sbLaterne",
@@ -879,12 +851,7 @@
     },
     {
       "moebel": "sbLaterne",
-      "feld": [24, 25],
-      "vorn": true
-    },
-    {
-      "moebel": "sbLaterne",
-      "feld": [36, 25],
+      "feld": [30, 25],
       "vorn": true
     },
     {
@@ -894,55 +861,55 @@
     },
     {
       "moebel": "sbLaterne",
-      "feld": [60, 25],
+      "feld": [64, 25],
       "vorn": true
     },
     {
-      "moebel": "sb8Markt3",
+      "moebel": "sb8Markt1",
       "feld": [1, 47]
     },
     {
-      "moebel": "sb8Markt7",
+      "moebel": "sb8Markt5",
       "feld": [6, 47]
     },
     {
-      "moebel": "sb8Markt11",
+      "moebel": "sb8Markt9",
       "feld": [11, 47]
     },
     {
-      "moebel": "sb8Markt1",
+      "moebel": "sb8Markt3",
       "feld": [16, 47]
     },
     {
-      "moebel": "sb8Markt9",
+      "moebel": "sb8Markt7",
       "feld": [21, 47]
     },
     {
-      "moebel": "sb8Markt5",
+      "moebel": "sb8Markt11",
       "feld": [26, 47]
     },
     {
-      "moebel": "sb8Markt12",
+      "moebel": "sb8Markt2",
       "feld": [37, 47]
     },
     {
-      "moebel": "sb8Markt4",
+      "moebel": "sb8Markt6",
       "feld": [42, 47]
     },
     {
-      "moebel": "sb8Markt8",
+      "moebel": "sb8Markt10",
       "feld": [47, 47]
     },
     {
-      "moebel": "sb8Markt2",
+      "moebel": "sb8Markt4",
       "feld": [52, 47]
     },
     {
-      "moebel": "sb8Markt6",
+      "moebel": "sb8Markt8",
       "feld": [57, 47]
     },
     {
-      "moebel": "sb8Markt10",
+      "moebel": "sb8Markt12",
       "feld": [62, 47]
     },
     {
@@ -950,8 +917,8 @@
       "feld": [15, 10]
     },
     {
-      "moebel": "sb8Condo44",
-      "feld": [54, 29]
+      "moebel": "sb8Condo51",
+      "feld": [63, 10]
     }
   ],
   "ausloeser": [
@@ -1008,11 +975,11 @@
     },
     {
       "name": "infosaeule",
-      "feld": [66, 21]
+      "feld": [60, 21]
     },
     {
       "name": "werbetafel",
-      "feld": [67, 10]
+      "feld": [63, 9]
     }
   ],
   "figuren": [
@@ -1022,11 +989,11 @@
     },
     {
       "name": "dash",
-      "feld": [17, 35]
+      "feld": [14, 33]
     },
     {
       "name": "victor",
-      "feld": [30, 35]
+      "feld": [26, 30]
     }
   ],
   "belebung": [
@@ -1077,7 +1044,7 @@
       "feld": [52, 33],
       "eigenschaften": {
         "von": "48,30",
-        "bis": "58,37",
+        "bis": "58,36",
         "verhalten": "folgen"
       }
     },
@@ -1135,19 +1102,19 @@
         "tun": "fotografiert das Wasserspiel",
         "wann": "tag",
         "von": "44,34",
-        "bis": "54,38",
+        "bis": "52,38",
         "sagt": "statist.siliconBay.aussen.touristin"
       }
     },
     {
       "name": "rentner",
       "typ": "statist",
-      "feld": [39, 43],
+      "feld": [40, 43],
       "eigenschaften": {
         "tun": "sitzt auf der Bank am Wasserspiel",
         "wann": "tag",
-        "von": "39,43",
-        "bis": "39,43",
+        "von": "40,43",
+        "bis": "40,43",
         "sagt": "statist.siliconBay.aussen.rentner"
       }
     },
@@ -1166,12 +1133,12 @@
     {
       "name": "barista",
       "typ": "statist",
-      "feld": [61, 40],
+      "feld": [62, 40],
       "eigenschaften": {
         "tun": "wartet auf den Kaffeeautomaten",
         "wann": "tag",
         "von": "58,40",
-        "bis": "66,42",
+        "bis": "66,41",
         "sagt": "statist.siliconBay.aussen.barista"
       }
     },
@@ -1212,12 +1179,12 @@
     {
       "name": "schulklasse",
       "typ": "statist",
-      "feld": [26, 41],
+      "feld": [26, 40],
       "eigenschaften": {
         "tun": "Schulklasse mit Tablets auf Besichtigung",
         "wann": "tag",
         "von": "22,38",
-        "bis": "30,42"
+        "bis": "30,41"
       }
     },
     {
@@ -1272,5 +1239,5 @@
       }
     }
   ],
-  "variante": "c"
+  "variante": "a"
 }

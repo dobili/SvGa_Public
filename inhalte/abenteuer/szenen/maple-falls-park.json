@@ -185,8 +185,8 @@
       "versatz": [0, 8]
     },
     {
-      "moebel": "mf9Absperrbock",
-      "feld": [5, 5],
+      "moebel": "mf9AbsperrbockBreit",
+      "feld": [4, 5],
       "id": "absperrungSteg"
     },
     {
@@ -227,7 +227,7 @@
       "feld": [20, 12]
     },
     {
-      "moebel": "mf2Kiosk",
+      "moebel": "mf9Limowagen",
       "feld": [24, 10]
     },
     {
@@ -446,6 +446,15 @@
         "von": "10,5",
         "bis": "24,5",
         "verhalten": "fliegen"
+      }
+    },
+    {
+      "name": "limoverkaeuferin",
+      "typ": "statist",
+      "feld": [27, 12],
+      "eigenschaften": {
+        "tun": "verkauft Limonade und Süßes am Wagen",
+        "wann": "tag"
       }
     }
   ],

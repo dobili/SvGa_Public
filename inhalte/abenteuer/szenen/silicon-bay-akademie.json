@@ -2,157 +2,266 @@
   "karte": "siliconBay.akademie",
   "datei": "karten/silicon-bay-akademie.json",
   "art": "innen",
-  "beschreibung": "Der große Saal der Perfect Move Academy in Silicon Bay: hell, kühl und leise summend, alles Glas, Weiß und Bildschirm. Die Nordwand ist eine Glasfront mit weißen Rahmen; davor hängt die Datenwand aus Großbildschirmen mit der Rangliste der Schüler. Rechts in der Nordwand die Metalltür zum Serverraum mit Kartenleser. Der Boden ist heller Kunststoff. Schüler sitzen an Bildschirmtischen und spielen gegen die Maschine; nur Dr. Lins Tisch trägt ein altes Holzbrett. Unten in der Mitte die gläserne Eingangstür. Sechs Bildschirmtische in zwei Reihen links, Dr. Lins Winkeltisch rechts, Sofa am Fenster, Vitrine mit Glaspokal an der Ostwand.",
+  "beschreibung": "Die Perfect Move Academy in Silicon Bay: hell, kühl und leise summend, alles Glas, Weiß und Bildschirm. Durch die gläserne Eingangstür im Süden kommt man ins Foyer mit dem Empfangstisch (Laptop für die Anmeldung), einer Sitzgruppe aus Sofa, zwei Stühlen und niedrigem Tisch und der Vitrine mit dem Glaspokal. Eine Glaswand trennt das Foyer vom Trainingssaal; durch sie sieht man die Schüler an ihren Bildschirmen. Im Saal stehen vier weiße Tische für je zwei Schüler mit Flachbildschirm und Tastatur, die Stühle davor zeigen zum Bildschirm. An der Nordwand die Datenwand mit der Rangliste der Schüler, daneben die Tür zum Serverraum, rechts ein großer Bildschirm für Vorträge mit drei Stuhlreihen davor und in der Ecke Wasserspender, Getränke- und Snackautomat. An der Westwand filmt Nova sich mit dem Ringlicht. Im Südosten, hinter einer Wand und zum Saal hin verglast, das Büro von Dr. Lin: ein weißer Schreibtisch, auf dem als einziges ein altes Holzbrett steht.",
   "wand": "hellgrau",
   "boden": "fliesenWeiss",
   "zustand": ["neu", "gebraucht"],
   "stil": ["modern", "klassisch"],
   "raster": [
-    "########################",
-    "########################",
-    "########################",
-    "#......................#",
-    "#......................#",
-    "#......................#",
-    "#......................#",
-    "#......................#",
-    "#......................#",
-    "#......................#",
-    "#......................#",
-    "#......................#",
-    "#......................#",
-    "#......................#",
-    "#......................#",
-    "############.###########"
+    "##########################",
+    "##########################",
+    "##########################",
+    "#........................#",
+    "#........................#",
+    "#........................#",
+    "#........................#",
+    "#........................#",
+    "#........................#",
+    "#........................#",
+    "#........................#",
+    "#........................#",
+    "#........................#",
+    "#..............##........#",
+    "#..............##........#",
+    "#..............##........#",
+    "#..............##........#",
+    "#..............##........#",
+    "#..............##........#",
+    "##########################"
   ],
   "objekte": [
     {
+      "moebel": "sb8Rangliste",
+      "feld": [4, 1],
+      "an_wand": true
+    },
+    {
+      "moebel": "sb8Statistik",
+      "feld": [6, 1],
+      "an_wand": true
+    },
+    {
       "moebel": "sb5Tuer",
-      "feld": [21, 1],
+      "feld": [12, 1],
       "an_wand": true
     },
     {
-      "moebel": "sb5TuerSued",
-      "feld": [12, 15],
+      "moebel": "sb8Smartboard",
+      "feld": [16, 1],
       "an_wand": true
     },
     {
-      "moebel": "cc4Fussmatte",
-      "feld": [12, 14],
-      "versatz": [0, 8]
+      "moebel": "sb8Wasserspender",
+      "feld": [20, 2]
     },
     {
-      "moebel": "sb5DatenwandB",
-      "feld": [8, 0],
-      "an_wand": true,
-      "versatz": [0, 6]
+      "moebel": "sb8Getraenkeautomat",
+      "feld": [21, 1]
     },
     {
-      "moebel": "sb5Datenwand",
-      "feld": [10, 0],
-      "an_wand": true,
-      "versatz": [0, 6]
+      "moebel": "sb8Snackautomat",
+      "feld": [23, 2]
     },
     {
-      "moebel": "sb5DatenwandB",
-      "feld": [12, 0],
-      "an_wand": true,
-      "versatz": [0, 6]
+      "moebel": "sb8Pflanze",
+      "feld": [1, 2]
     },
     {
-      "moebel": "sb5Datenwand",
-      "feld": [14, 0],
-      "an_wand": true,
-      "versatz": [0, 6]
+      "moebel": "sb8Bildschirmtisch",
+      "feld": [3, 4],
+      "id": "t1"
     },
     {
-      "moebel": "sb5Sofa",
-      "feld": [1, 3]
-    },
-    {
-      "moebel": "sb5Bildschirmtisch",
+      "moebel": "sb8StuhlRuecken",
       "feld": [3, 5],
-      "id": "t0",
-      "versatz": [0, 10]
+      "zu": "t1",
+      "versatz": [8, 0]
     },
     {
-      "moebel": "sb5Stuhl",
-      "feld": [3, 7],
-      "zu": "t0"
+      "moebel": "sb8StuhlRuecken",
+      "feld": [5, 5],
+      "zu": "t1",
+      "versatz": [8, 0]
     },
     {
-      "moebel": "sb5Bildschirmtisch",
-      "feld": [6, 5],
-      "id": "t1",
-      "versatz": [0, 10]
+      "moebel": "sb8Bildschirmtisch",
+      "feld": [9, 4],
+      "id": "t2"
     },
     {
-      "moebel": "sb5Stuhl",
-      "feld": [6, 7],
-      "zu": "t1"
-    },
-    {
-      "moebel": "sb5Bildschirmtisch",
+      "moebel": "sb8StuhlRuecken",
       "feld": [9, 5],
-      "id": "t2",
-      "versatz": [0, 10]
+      "zu": "t2",
+      "versatz": [8, 0]
     },
     {
-      "moebel": "sb5Stuhl",
+      "moebel": "sb8StuhlRuecken",
+      "feld": [11, 5],
+      "zu": "t2",
+      "versatz": [8, 0]
+    },
+    {
+      "moebel": "sb8Bildschirmtisch",
+      "feld": [3, 7],
+      "id": "t3"
+    },
+    {
+      "moebel": "sb8StuhlRuecken",
+      "feld": [3, 8],
+      "zu": "t3",
+      "versatz": [8, 0]
+    },
+    {
+      "moebel": "sb8StuhlRuecken",
+      "feld": [5, 8],
+      "zu": "t3",
+      "versatz": [8, 0]
+    },
+    {
+      "moebel": "sb8Bildschirmtisch",
       "feld": [9, 7],
-      "zu": "t2"
+      "id": "t4"
     },
     {
-      "moebel": "sb5Bildschirmtisch",
-      "feld": [3, 9],
-      "id": "t3",
-      "versatz": [0, 10]
+      "moebel": "sb8StuhlRuecken",
+      "feld": [9, 8],
+      "zu": "t4",
+      "versatz": [8, 0]
     },
     {
-      "moebel": "sb5Stuhl",
-      "feld": [3, 11],
-      "zu": "t3"
+      "moebel": "sb8StuhlRuecken",
+      "feld": [11, 8],
+      "zu": "t4",
+      "versatz": [8, 0]
     },
     {
-      "moebel": "sb5Bildschirmtisch",
-      "feld": [6, 9],
-      "id": "t4",
-      "versatz": [0, 10]
+      "moebel": "sb8StuhlRuecken",
+      "feld": [14, 5]
     },
     {
-      "moebel": "sb5Stuhl",
-      "feld": [6, 11],
-      "zu": "t4"
+      "moebel": "sb8StuhlRuecken",
+      "feld": [15, 5]
     },
     {
-      "moebel": "sb5Bildschirmtisch",
-      "feld": [9, 9],
-      "id": "t5",
-      "versatz": [0, 10]
+      "moebel": "sb8StuhlRuecken",
+      "feld": [17, 5]
     },
     {
-      "moebel": "sb5Stuhl",
-      "feld": [9, 11],
-      "zu": "t5"
+      "moebel": "sb8StuhlRuecken",
+      "feld": [18, 5]
     },
     {
-      "moebel": "sb5Winkeltisch",
-      "feld": [15, 6],
-      "id": "lin",
-      "versatz": [0, 10]
+      "moebel": "sb8StuhlRuecken",
+      "feld": [14, 7]
     },
     {
-      "moebel": "cc4Brett",
-      "auf": "lin"
+      "moebel": "sb8StuhlRuecken",
+      "feld": [15, 7]
     },
     {
-      "moebel": "sb5Stuhl",
-      "feld": [15, 8],
-      "zu": "lin"
+      "moebel": "sb8StuhlRuecken",
+      "feld": [17, 7]
+    },
+    {
+      "moebel": "sb8StuhlRuecken",
+      "feld": [18, 7]
+    },
+    {
+      "moebel": "sb8StuhlRuecken",
+      "feld": [14, 9]
+    },
+    {
+      "moebel": "sb8StuhlRuecken",
+      "feld": [15, 9]
+    },
+    {
+      "moebel": "sb8StuhlRuecken",
+      "feld": [17, 9]
+    },
+    {
+      "moebel": "sb8StuhlRuecken",
+      "feld": [18, 9]
+    },
+    {
+      "moebel": "sb8Ringlicht",
+      "feld": [1, 5]
+    },
+    {
+      "moebel": "sb8Glaswand",
+      "feld": [1, 11]
+    },
+    {
+      "moebel": "sb8Glaswand",
+      "feld": [3, 11]
+    },
+    {
+      "moebel": "sb8Glaswand",
+      "feld": [5, 11]
+    },
+    {
+      "moebel": "sb8Glaswand",
+      "feld": [9, 11]
+    },
+    {
+      "moebel": "sb8Glaswand",
+      "feld": [11, 11]
+    },
+    {
+      "moebel": "sb8Glaswand",
+      "feld": [13, 11]
+    },
+    {
+      "moebel": "sb8Glaswand",
+      "feld": [15, 11]
+    },
+    {
+      "moebel": "sb8Glaswand",
+      "feld": [17, 11]
+    },
+    {
+      "moebel": "sb8Glaswand",
+      "feld": [21, 11]
+    },
+    {
+      "moebel": "sb8Glaswand",
+      "feld": [23, 11]
+    },
+    {
+      "moebel": "sb8Sofa",
+      "feld": [2, 14]
+    },
+    {
+      "moebel": "sb8Couchtisch",
+      "feld": [2, 16],
+      "id": "couch"
+    },
+    {
+      "moebel": "sb8StuhlRechts",
+      "feld": [1, 15],
+      "zu": "couch"
+    },
+    {
+      "moebel": "sb8StuhlLinks",
+      "feld": [4, 15],
+      "zu": "couch"
+    },
+    {
+      "moebel": "sb8Schreibtisch",
+      "feld": [10, 15],
+      "id": "empfang"
+    },
+    {
+      "moebel": "pd6Laptop",
+      "auf": "empfang"
+    },
+    {
+      "moebel": "sb8StuhlVorn",
+      "feld": [11, 14],
+      "zu": "empfang"
     },
     {
       "moebel": "sb5Vitrine",
-      "feld": [20, 9],
+      "feld": [13, 13],
       "id": "vitrine"
     },
     {
@@ -160,53 +269,90 @@
       "auf": "vitrine"
     },
     {
-      "moebel": "sb5Pflanze",
-      "feld": [21, 12]
+      "moebel": "sb8Pflanze",
+      "feld": [1, 17]
     },
     {
-      "moebel": "sb5Pflanze",
-      "feld": [1, 12]
+      "moebel": "sb8Pflanze",
+      "feld": [14, 17]
+    },
+    {
+      "moebel": "sb5TuerSued",
+      "feld": [8, 19],
+      "an_wand": true
+    },
+    {
+      "moebel": "cc4Fussmatte",
+      "feld": [8, 18],
+      "versatz": [0, 8]
+    },
+    {
+      "moebel": "sb8Schreibtisch",
+      "feld": [19, 15],
+      "id": "lin"
+    },
+    {
+      "moebel": "cc4Brett",
+      "auf": "lin"
+    },
+    {
+      "moebel": "sb8StuhlVorn",
+      "feld": [20, 14],
+      "zu": "lin"
+    },
+    {
+      "moebel": "sb8StuhlRuecken",
+      "feld": [20, 16],
+      "zu": "lin"
+    },
+    {
+      "moebel": "sb8Pflanze",
+      "feld": [17, 17]
+    },
+    {
+      "moebel": "sb8Pflanze",
+      "feld": [24, 17]
     }
   ],
   "ausloeser": [
     {
       "name": "start",
-      "feld": [12, 14],
+      "feld": [8, 18],
       "eigenschaften": {
         "richtung": "oben"
       }
     },
     {
       "name": "akademieAusgang",
-      "feld": [12, 15]
+      "feld": [8, 19]
     },
     {
       "name": "serverraumTuer",
-      "feld": [21, 3]
+      "feld": [12, 3]
     }
   ],
   "figuren": [
     {
       "name": "theo",
-      "feld": [11, 4]
+      "feld": [5, 3]
     },
     {
       "name": "lin",
-      "feld": [18, 6]
+      "feld": [18, 14]
     },
     {
       "name": "nova",
-      "feld": [3, 4]
+      "feld": [1, 9]
     }
   ],
   "belebung": [
     {
       "name": "saugroboter",
       "typ": "tier",
-      "feld": [16, 13],
+      "feld": [13, 5],
       "eigenschaften": {
-        "von": "14,13",
-        "bis": "18,13",
+        "von": "13,4",
+        "bis": "13,10",
         "verhalten": "folgen"
       }
     }

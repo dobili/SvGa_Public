@@ -2,101 +2,203 @@
   "karte": "ironwood.umkleide",
   "datei": "karten/ironwood-umkleide.json",
   "art": "innen",
-  "beschreibung": "Die Umkleide des Werks, 14 × 10 Kacheln, graue Fliesen. An der Nordwand sechs gleiche Spinde ohne Lücke, in der dunklen Nordostecke ein großer Doppelspind mit dem Schließfach. An der Ostwand eine Duschecke mit zwei Brausen auf weißen Fliesen. In der Mitte zwei Umkleidebänke, an der Westwand ein Standspiegel. Die Südwestecke bleibt frei. Die Tür liegt in der Mitte der Südwand.",
+  "beschreibung": "Die Umkleide des Werks (Runde 8), 16 × 12, graue Fliesen. An der Nordwand sechs gleiche Spinde in einer Reihe, gleich daneben der große Doppelspind mit dem Schließfach, dann Wandspiegel über dem Handwaschbecken. In der Nordostecke die Duschen: zwei Kabinen mit Brause auf weißen Fliesen, zur Umkleide hin eine durchsichtige Trennwand mit Durchgang. In der Mitte zwei Umkleidebänke, eine Pflanze in der Südostecke. Die Tür liegt in der Südwand.",
   "wand": "hellgrau",
   "boden": "fliesenGrau",
   "boeden": {
     "f": "fliesenWeiss"
   },
   "raster": [
-    "##############",
-    "##############",
-    "##############",
-    "#............#",
-    "#............#",
-    "#..........ff#",
-    "#..........ff#",
-    "#..........ff#",
-    "#..........ff#",
-    "#######.######",
-    "##############"
+    "################",
+    "################",
+    "################",
+    "#.........fffff#",
+    "#.........fffff#",
+    "#.........fffff#",
+    "#.........fffff#",
+    "#..............#",
+    "#..............#",
+    "#..............#",
+    "######.#########",
+    "################"
   ],
   "objekte": [
     {
+      "moebel": "mf2Spind",
+      "feld": [
+        1,
+        2
+      ]
+    },
+    {
+      "moebel": "mf2Spind",
+      "feld": [
+        2,
+        2
+      ]
+    },
+    {
+      "moebel": "mf2Spind",
+      "feld": [
+        3,
+        2
+      ]
+    },
+    {
+      "moebel": "mf2Spind",
+      "feld": [
+        4,
+        2
+      ]
+    },
+    {
+      "moebel": "mf2Spind",
+      "feld": [
+        5,
+        2
+      ]
+    },
+    {
+      "moebel": "mf2Spind",
+      "feld": [
+        6,
+        2
+      ]
+    },
+    {
+      "moebel": "iwSpind",
+      "feld": [
+        7,
+        2
+      ],
+      "id": "schliessfachSpind"
+    },
+    {
+      "moebel": "iw8Wandspiegel",
+      "feld": [
+        9,
+        1
+      ],
+      "an_wand": true
+    },
+    {
+      "moebel": "mf5Handwaschbecken",
+      "feld": [
+        9,
+        3
+      ]
+    },
+    {
+      "moebel": "iw8Duschkabine",
+      "feld": [
+        10,
+        1
+      ]
+    },
+    {
+      "moebel": "iw8DuschkabineB",
+      "feld": [
+        12,
+        1
+      ]
+    },
+    {
+      "moebel": "ws5GlasL",
+      "feld": [
+        11,
+        7
+      ],
+      "bauteil_ok": true
+    },
+    {
+      "moebel": "ws5GlasM",
+      "feld": [
+        12,
+        7
+      ],
+      "bauteil_ok": true
+    },
+    {
+      "moebel": "ws5GlasM",
+      "feld": [
+        13,
+        7
+      ],
+      "bauteil_ok": true
+    },
+    {
+      "moebel": "ws5GlasR",
+      "feld": [
+        14,
+        7
+      ],
+      "bauteil_ok": true
+    },
+    {
+      "moebel": "cc4Bahnbank",
+      "feld": [
+        2,
+        5
+      ]
+    },
+    {
+      "moebel": "cc4Bahnbank",
+      "feld": [
+        2,
+        8
+      ]
+    },
+    {
+      "moebel": "cc4PflanzeK",
+      "feld": [
+        14,
+        8
+      ]
+    },
+    {
       "moebel": "cc6TuerSued",
-      "feld": [7, 10],
+      "feld": [
+        6,
+        11
+      ],
       "an_wand": true
     },
     {
       "moebel": "cc5Fussmatte",
-      "feld": [7, 8],
-      "versatz": [0, 24]
-    },
-    {
-      "moebel": "iwSpind",
-      "feld": [10, 2],
-      "id": "schliessfachSpind"
-    },
-    {
-      "moebel": "mf2Spind",
-      "feld": [1, 2]
-    },
-    {
-      "moebel": "mf2Spind",
-      "feld": [2, 2]
-    },
-    {
-      "moebel": "mf2Spind",
-      "feld": [3, 2]
-    },
-    {
-      "moebel": "mf2Spind",
-      "feld": [4, 2]
-    },
-    {
-      "moebel": "mf2Spind",
-      "feld": [5, 2]
-    },
-    {
-      "moebel": "mf2Spind",
-      "feld": [6, 2]
-    },
-    {
-      "moebel": "iw5Duschwanne",
-      "feld": [11, 5]
-    },
-    {
-      "moebel": "iw5Duschwanne",
-      "feld": [11, 7]
-    },
-    {
-      "moebel": "cc4Bahnbank",
-      "feld": [3, 5]
-    },
-    {
-      "moebel": "cc4Bahnbank",
-      "feld": [3, 7]
-    },
-    {
-      "moebel": "mf2Standspiegel",
-      "feld": [1, 4]
+      "feld": [
+        6,
+        9
+      ],
+      "versatz": [
+        0,
+        24
+      ]
     }
   ],
   "ausloeser": [
     {
       "name": "start",
-      "feld": [7, 8],
+      "feld": [
+        6,
+        9
+      ],
       "eigenschaften": {
         "richtung": "oben"
       }
     },
     {
       "name": "umkleideAusgang",
-      "feld": [7, 9]
+      "feld": [
+        6,
+        10
+      ]
     },
     {
       "name": "schliessfach",
-      "feld": [11, 4]
+      "feld": [
+        8,
+        4
+      ]
     }
   ],
   "figuren": [],
@@ -104,15 +206,28 @@
     {
       "name": "arbeiter",
       "typ": "statist",
-      "feld": [8, 4],
+      "feld": [
+        4,
+        7
+      ],
       "eigenschaften": {
-        "von": "8,4",
-        "bis": "9,4",
+        "von": "4,7",
+        "bis": "6,7",
         "tun": "zieht sich für die Schicht um",
         "wann": "morgen"
       }
     }
   ],
-  "zustand": ["gebraucht", "alt"],
-  "stil": ["industrie", "klassisch", "einfach", "modern", "rustikal"]
+  "zustand": [
+    "gebraucht",
+    "alt",
+    "neu"
+  ],
+  "stil": [
+    "industrie",
+    "klassisch",
+    "einfach",
+    "modern",
+    "rustikal"
+  ]
 }

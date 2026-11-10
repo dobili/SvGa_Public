@@ -29,6 +29,8 @@ VAR lebendschachGesehen = false
 VAR lebendschachBelohnt = false
 VAR kreide4Gefunden = false
 VAR seite10Gefunden = false
+VAR finchFiguren = 0
+VAR finchDameGefunden = false
 
 // ---------------------------------------------------------------- Greta und das Blindschach
 
@@ -143,6 +145,20 @@ Zwischen den Wurzeln eines Mammutbaums steckt ein Blatt Papier. Oben steht: Kapi
 Eine Seite aus einem Handbuch, an einem Baum, der älter ist als jedes Buch. #sprecher:ambrose
 ~ gibFund("seite10")
 ~ buchseiten = buchseiten + 1
+-> END
+
+// ---------------------------------------------------------------- Mammutbaum: Finchs Dame
+
+=== finch_dame ===
+{finchDameGefunden:
+    In der Astgabel sitzt nur noch Moos. #sprecher:erzaehler
+    -> END
+}
+~ finchDameGefunden = true
+In der Astgabel eines Mammutbaums, gerade in Reichweite, glänzt ein kleiner Fink aus Blech. Darunter steckt eine weiße Dame aus Buchsbaum. Unter ihrem Fuß ist ein Feld eingebrannt. #sprecher:erzaehler
+Die stärkste Figur, versteckt im ältesten Baum. Finch hatte Sinn für so etwas. #sprecher:ambrose
+~ gibFund("finchDame")
+~ finchFiguren = finchFiguren + 1
 -> END
 
 // ---------------------------------------------------------------- Holzfällerhütte: Kreidespringer K4

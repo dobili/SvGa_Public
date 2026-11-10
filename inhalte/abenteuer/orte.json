@@ -3752,6 +3752,18 @@
             "karte": "wegPinewoodGhost.canyonrand",
             "ausloeser": "zurueckCamp"
           }
+        },
+        {
+          "name": "steg",
+          "karte": "pinewoodCamp.aussen",
+          "art": "dialog",
+          "dialog": "pinewood-camp-aussen.steg"
+        },
+        {
+          "name": "kanus",
+          "karte": "pinewoodCamp.aussen",
+          "art": "dialog",
+          "dialog": "pinewood-camp-aussen.kanus"
         }
       ]
     },
@@ -3773,6 +3785,12 @@
           "datei": "karten/weg-pinewood-ghost-staubstrasse.json",
           "name": "ort.wegPinewoodGhost.staubstrasse",
           "innen": false
+        },
+        {
+          "kennung": "wegPinewoodGhost.tankstelle",
+          "datei": "karten/weg-pinewood-ghost-tankstelle.json",
+          "name": "ort.wegPinewoodGhost.tankstelle",
+          "innen": true
         }
       ],
       "figuren": [
@@ -3831,6 +3849,66 @@
             "karte": "ghostTown.aussen",
             "ausloeser": "wegPinewood"
           }
+        },
+        {
+          "name": "ereignisTankstelle",
+          "karte": "wegPinewoodGhost.staubstrasse",
+          "art": "dialog",
+          "dialog": "weg-pinewood-ghost.ereignis_tankstelle"
+        },
+        {
+          "name": "spurPM6",
+          "karte": "wegPinewoodGhost.staubstrasse",
+          "art": "gegenstand",
+          "dialog": "weg-pinewood-ghost.fund_spur_pm6"
+        },
+        {
+          "name": "seite11",
+          "karte": "wegPinewoodGhost.staubstrasse",
+          "art": "gegenstand",
+          "dialog": "weg-pinewood-ghost.fund_seite11"
+        },
+        {
+          "name": "wagen",
+          "karte": "wegPinewoodGhost.staubstrasse",
+          "art": "dialog",
+          "dialog": "weg-pinewood-ghost.wagen"
+        },
+        {
+          "name": "tankstelleTuer",
+          "karte": "wegPinewoodGhost.staubstrasse",
+          "art": "uebergang",
+          "ziel": {
+            "karte": "wegPinewoodGhost.tankstelle",
+            "ausloeser": "tankstelleAusgang"
+          }
+        },
+        {
+          "name": "tankstelleAusgang",
+          "karte": "wegPinewoodGhost.tankstelle",
+          "art": "uebergang",
+          "ziel": {
+            "karte": "wegPinewoodGhost.staubstrasse",
+            "ausloeser": "tankstelleTuer"
+          }
+        },
+        {
+          "name": "greifarm",
+          "karte": "wegPinewoodGhost.tankstelle",
+          "art": "dialog",
+          "dialog": "weg-pinewood-ghost.greifarm"
+        },
+        {
+          "name": "finchBauerE",
+          "karte": "wegPinewoodGhost.canyonrand",
+          "art": "gegenstand",
+          "dialog": "weg-pinewood-ghost.fund_finch_bauer_e"
+        },
+        {
+          "name": "kletterwand",
+          "karte": "wegPinewoodGhost.canyonrand",
+          "art": "dialog",
+          "dialog": "weg-pinewood-ghost.kletterwand"
         }
       ]
     },

@@ -1564,6 +1564,31 @@
           "wert": "rueckzug"
         }
       ]
+    },
+    {
+      "kennung": "wegPinewoodGhost.z1",
+      "name": "figur.z1.name",
+      "rolle": "strasse",
+      "portraet": "portraets/greifarm.svg",
+      "staerke": {
+        "art": "aktuell",
+        "versatz": 0
+      },
+      "stil": {
+        "angreifer": 100,
+        "taktiker": 120
+      },
+      "eroeffnung": {
+        "art": "fest",
+        "eroeffnungen": ["praxis:Italian Game"],
+        "abweichung": 0
+      },
+      "steckbrief": [
+        {
+          "art": "eroeffnung",
+          "wert": "Italienisch"
+        }
+      ]
     }
   ]
 }

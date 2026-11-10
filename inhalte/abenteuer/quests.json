@@ -2544,6 +2544,41 @@
           ]
         }
       ]
+    },
+    {
+      "kennung": "wegPinewoodGhost.gespenst",
+      "titel": "quest.gespenstTankstelle.titel",
+      "typ": "begegnung",
+      "ort": "wegPinewoodGhost",
+      "haupt": false,
+      "klein": true,
+      "start": {
+        "art": "dialog",
+        "knoten": "weg-pinewood-ghost.greifarm_start"
+      },
+      "schritte": [
+        {
+          "text": "quest.gespenstTankstelle.schritt1",
+          "ereignis": {
+            "art": "partie",
+            "begegnung": "wegPinewoodGhost.z1",
+            "ausgang": ["sieg", "remis", "niederlage"]
+          }
+        },
+        {
+          "text": "quest.gespenstTankstelle.schritt2",
+          "ereignis": {
+            "art": "dialog",
+            "knoten": "weg-pinewood-ghost.greifarm_ende"
+          },
+          "wirkungen": [
+            {
+              "art": "muenzen",
+              "anzahl": 25
+            }
+          ]
+        }
+      ]
     }
   ]
 }

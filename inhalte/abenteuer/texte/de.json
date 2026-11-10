@@ -1350,5 +1350,19 @@
   "fund.diplomKira.text": "Von Kira Vell gemalt, mit Falke und Bison. Für den Prüfer.",
   "quest.bauerndiplom.titel": "Das Bauerndiplom",
   "quest.bauerndiplom.schritt1": "Sei Prüfer beim Diplomtag: Stell den drei Kindern ihre Aufgaben.",
-  "quest.bauerndiplom.schritt2": "Überreiche mit Annek die Diplome."
+  "quest.bauerndiplom.schritt2": "Überreiche mit Annek die Diplome.",
+  "fund.spurPM6.name": "Typenschild Z-1",
+  "fund.spurPM6.text": "Von der Tür der alten Tankstelle: „Prototyp Z-1, Testlabor Perfect Move. Nicht entfernen.“",
+  "fund.seite11.name": "Buchseite, Kapitel 11",
+  "fund.seite11.text": "Beispielpartien: Wie die Konzepte zusammenwirken. Eine Seite aus einem Handbuch, Kapitel 11.",
+  "fund.bauerZ1.name": "Bauer aus Metall",
+  "fund.bauerZ1.text": "Von Z-1, dem Greifarm in der alten Tankstelle. Er ist kalt und erstaunlich schwer.",
+  "fund.finchBauerE.name": "Weißer Bauer aus Buchsbaum (E)",
+  "fund.finchBauerE.text": "Von der Aussicht am Canyonrand, bei der Bank, neben einem Finkenzeichen aus Blech. Unter dem Fuß ist ein Feld eingebrannt.",
+  "ort.wegPinewoodGhost.tankstelle": "Alte Tankstelle",
+  "figur.z1.name": "Z-1",
+  "quest.gespenstTankstelle.titel": "Das Gespenst der Tankstelle",
+  "quest.gespenstTankstelle.schritt1": "Setz dich an den Tisch und spiel gegen den Greifarm Z-1.",
+  "quest.gespenstTankstelle.schritt2": "Schau, was Z-1 nach der Partie macht.",
+  "figur.greifarm.name": "Z-1"
 }

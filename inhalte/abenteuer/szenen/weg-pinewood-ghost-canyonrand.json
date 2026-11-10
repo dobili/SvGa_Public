@@ -376,6 +376,14 @@
     {
       "name": "tafel",
       "feld": [64, 10]
+    },
+    {
+      "name": "finchBauerE",
+      "feld": [99, 17]
+    },
+    {
+      "name": "kletterwand",
+      "feld": [73, 18]
     }
   ],
   "figuren": [

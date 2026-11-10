@@ -194,3 +194,13 @@ Der Fernwanderweg führt zurück unter die Riesenbäume, Richtung Crossroads. #s
 === weg_ghost ===
 Hinter dem Camp führt eine Staubstraße nach Osten, zum Rand eines Canyons. Ein verwittertes Schild: „Ghost Town, 20 Meilen“. #sprecher:erzaehler
 -> END
+
+// >>> Runde 6 (mittel-4)
+=== steg ===
+Der Steg ragt in den See. Das Wasser ist so klar, dass man die Fische zählen könnte. #sprecher:erzaehler
+-> END
+
+=== kanus ===
+Zwei Kanus liegen kieloben am Ufer. Auf eins hat jemand mit Kreide ein Schachbrett gemalt. #sprecher:erzaehler
+-> END
+// <<< Runde 6 (mittel-4)

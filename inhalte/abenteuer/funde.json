@@ -312,6 +312,31 @@
       "ort": "hochebene",
       "name": "fund.diplomKira.name",
       "text": "fund.diplomKira.text"
+    },
+    {
+      "kennung": "spurPM6",
+      "ort": "wegPinewoodGhost",
+      "name": "fund.spurPM6.name",
+      "text": "fund.spurPM6.text"
+    },
+    {
+      "kennung": "seite11",
+      "ort": "wegPinewoodGhost",
+      "name": "fund.seite11.name",
+      "text": "fund.seite11.text",
+      "muenzen": 5
+    },
+    {
+      "kennung": "bauerZ1",
+      "ort": "wegPinewoodGhost",
+      "name": "fund.bauerZ1.name",
+      "text": "fund.bauerZ1.text"
+    },
+    {
+      "kennung": "finchBauerE",
+      "ort": "wegPinewoodGhost",
+      "name": "fund.finchBauerE.name",
+      "text": "fund.finchBauerE.text"
     }
   ]
 }

@@ -618,6 +618,19 @@
         "sekunden": 180,
         "zuschlag": 2
       }
+    },
+    {
+      "kennung": "wegPinewoodGhost.z1",
+      "gegner": "wegPinewoodGhost.z1",
+      "farbe": "black",
+      "format": {
+        "art": "partie"
+      },
+      "startstellung": {
+        "art": "grundstellung"
+      },
+      "kartenErlaubt": true,
+      "zeit": "wahl"
     }
   ]
 }

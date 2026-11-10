@@ -48,6 +48,11 @@ Bilder (in ``spiel/eigene/``, Breite × Höhe in Pixeln):
   Kreidezeilen (Namen mit Strichen), Holzrahmen (Gutachten: Tafel leer).
 - ``schild_sackgasse.png`` (16 × 32): Verkehrsschild Sackgasse (blaues Quadrat, weißer Balken mit
   rotem Querbalken oben) an einem grauen Pfosten, für den Wendehammer der Birch Lane.
+- ``spiel/figuren/postreiter.png`` (384 × 64, Figurenbogen): aus den Gemini-Bildern
+  ``postreiter_ki_rechts/_oben/_links/_unten.png`` (je 16 × 32). Obere Reihe vier Standbilder
+  (rechts, oben, links, unten); untere Reihe Laufen, je Richtung sechs Bilder. Weil es nur
+  Standbilder gibt, wippt die Figur beim Laufen um einen Pixel. Ersetzt den Bogen aus
+  ``figuren.py`` (Postreiter mit roter Mütze).
 
 Aufruf: python niedrig1_runde9_karten.py /home/user/schach-abenteuer-inhalte
 """
@@ -398,6 +403,23 @@ def schild_sackgasse() -> Image.Image:
     return bild
 
 
+FIGUR_B, FIGUR_H = 16, 32
+RICHTUNGEN = ("rechts", "oben", "links", "unten")
+LAUFBILDER = 6
+
+
+def postreiter_bogen(haupt: Path) -> Image.Image:
+    """Figurenbogen 384 × 64 aus vier Standbildern: oben die Standbilder in der Reihenfolge der
+    Figurentechnik, unten je Richtung sechs Laufbilder, abwechselnd einen Pixel angehoben."""
+    bogen = Image.new("RGBA", (24 * FIGUR_B, 2 * FIGUR_H))
+    for i, richtung in enumerate(RICHTUNGEN):
+        bild = Image.open(haupt / "spiel" / "eigene" / f"postreiter_ki_{richtung}.png").convert("RGBA")
+        bogen.alpha_composite(bild, (i * FIGUR_B, 0))
+        for k in range(LAUFBILDER):
+            bogen.alpha_composite(bild, ((i * LAUFBILDER + k) * FIGUR_B, FIGUR_H - (k % 2)))
+    return bogen
+
+
 def main(haupt: Path) -> None:
     ziel = haupt / "spiel" / "eigene"
     fenster_nacht(haupt).save(ziel / "fenster_nacht.png")
@@ -418,6 +440,7 @@ def main(haupt: Path) -> None:
     abzeichen_postreiter().save(ziel / "abzeichen_postreiter.png")
     tafel_kegelkoenig().save(ziel / "tafel_kegelkoenig.png")
     schild_sackgasse().save(ziel / "schild_sackgasse.png")
+    postreiter_bogen(haupt).save(haupt / "spiel" / "figuren" / "postreiter.png")
 
 
 if __name__ == "__main__":

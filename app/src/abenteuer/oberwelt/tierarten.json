@@ -1,5 +1,5 @@
 {
-  "erklaerung": "Tiere der Oberwelt, gemeinsam für App (oberwelt/tiere.ts), Bogenbau (pipeline/abenteuer/belebungsbilder.py) und Vorschau (pipeline/abenteuer/belebungsvorschau.py). arten: Art → Quelle im privaten Repository, Rahmengröße und Schnitt (reihen: Standbilder oben, Laufen darunter; streifen: eine Reihe, alle Richtungen gleich; richtungen: eine Reihe mit 4 × 6 Bildern; baender und fest:<stand_y>:<lauf_y> für Bögen mit Beschriftungen). staemme: Wortstamm im Objektnamen → Art (längster gewinnt). Ohne passenden Stamm wird nichts gezeichnet (Eidechse, Delfin, Libellen). Eine Art ohne eigenes Bild bekommt die nächstliegende darstellbare (Gutachter 10.11.2026): dunkle Greif- und Waldvögel die Krähe, weiße Wasservögel die Möwe oder Gans, Nager das braune Kaninchen, Fuchs und Kojote den Hund. Der Bison ist ein Einzelbild von mittel-3 (Schnitt „standbild“: gespiegelt, Laufen als Wippen).",
+  "erklaerung": "Tiere der Oberwelt, gemeinsam für App (oberwelt/tiere.ts), Bogenbau (pipeline/abenteuer/belebungsbilder.py) und Vorschau (pipeline/abenteuer/belebungsvorschau.py). arten: Art → Quelle im privaten Repository, Rahmengröße und Schnitt (reihen: Standbilder oben, Laufen darunter; streifen: eine Reihe, alle Richtungen gleich; richtungen: eine Reihe mit 4 × 6 Bildern; baender und fest:<stand_y>:<lauf_y> für Bögen mit Beschriftungen). staemme: Wortstamm im Objektnamen → Art (längster gewinnt). Ohne passenden Stamm wird nichts gezeichnet (Eidechse, Delfin, Libellen). Eine Art ohne eigenes Bild bekommt die nächstliegende darstellbare (Gutachter 10.11.2026): dunkle Greif- und Waldvögel die Krähe, weiße Wasservögel die Möwe oder Gans, Nager das braune Kaninchen, Fuchs und Kojote den Hund. Der Bison ist ein Einzelbild von mittel-3 (Schnitt „standbild“: gespiegelt, Laufen als Wippen). Reh und Hirsch sind Einzelbilder aus Gemini (niedrig-1, Schnitt „standbild“), statt der Ziege.",
   "arten": {
     "taube": {
       "quelle": "modern-exteriors/Modern_Exteriors_16x16/Animated_16x16/Animated_sheets_16x16/Pigeon_16x16.png",
@@ -96,6 +96,18 @@
       "breite": 32,
       "hoehe": 32,
       "schnitt": "fest:0:192"
+    },
+    "reh": {
+      "quelle": "spiel/eigene/reh_seite.png",
+      "breite": 32,
+      "hoehe": 32,
+      "schnitt": "standbild"
+    },
+    "hirsch": {
+      "quelle": "spiel/eigene/hirsch_seite.png",
+      "breite": 32,
+      "hoehe": 32,
+      "schnitt": "standbild"
     }
   },
   "staemme": {
@@ -133,8 +145,8 @@
     "praeriehund": "hase",
     "schwein": "schwein",
     "ziege": "ziege",
-    "reh": "ziege",
-    "hirsch": "ziege",
+    "reh": "reh",
+    "hirsch": "hirsch",
     "schaf": "schaf",
     "kuh": "kuh",
     "kueh": "kuh",

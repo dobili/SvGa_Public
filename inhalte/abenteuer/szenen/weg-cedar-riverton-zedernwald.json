@@ -53,8 +53,9 @@
   ],
   "objekte": [
     {
-      "moebel": "wc5Steg4",
-      "feld": [86, 14]
+      "moebel": "wc11HolzbrueckeQuer",
+      "feld": [85, 13],
+      "bauteil_ok": true
     },
     {
       "moebel": "wc5FelsgruppeB",

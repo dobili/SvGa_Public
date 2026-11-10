@@ -4628,12 +4628,12 @@
     },
     {
      "id": 22,
-     "name": "mf9StrassenbrueckeGehwegQuer4",
+     "name": "mf11HolzbrueckeQuer",
      "type": "moebel",
-     "x": 496,
-     "y": 224,
-     "width": 64,
-     "height": 84,
+     "x": 480,
+     "y": 240,
+     "width": 80,
+     "height": 48,
      "rotation": 0,
      "visible": true,
      "properties": [
@@ -5479,7 +5479,7 @@
     },
     {
      "id": 59,
-     "name": "mf2BankLang",
+     "name": "mf11BankHintenBraun",
      "type": "moebel",
      "x": 272,
      "y": 176,

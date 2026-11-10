@@ -425,7 +425,7 @@
       "feld": [13, 3]
     },
     {
-      "moebel": "cc4Bahnbank",
+      "moebel": "cc11BahnsteigbankHinten",
       "feld": [16, 4]
     },
     {
@@ -625,14 +625,6 @@
       "bauteil_ok": true
     },
     {
-      "moebel": "sc7Ferienhuette",
-      "feld": [5, 27]
-    },
-    {
-      "moebel": "sc7FerienhuetteB",
-      "feld": [13, 27]
-    },
-    {
       "moebel": "cr8Holzfaellerhuette",
       "feld": [42, 8]
     },
@@ -655,10 +647,6 @@
     {
       "moebel": "mf4Gemuesebeet",
       "feld": [8, 33]
-    },
-    {
-      "moebel": "cc4Nadelbaum",
-      "feld": [18, 28]
     },
     {
       "moebel": "mf2Blumenbeet",
@@ -687,6 +675,14 @@
     {
       "moebel": "cc8HeckeSenkrecht",
       "feld": [22, 34]
+    },
+    {
+      "moebel": "cc11HausHintenRot",
+      "feld": [5, 25]
+    },
+    {
+      "moebel": "cc11HausHintenBBraun",
+      "feld": [13, 25]
     }
   ],
   "ausloeser": [

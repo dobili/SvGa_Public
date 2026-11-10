@@ -98,6 +98,8 @@ Szene heißt die Datei in `inhalte/abenteuer/szenen/` ohne `.json`.
 - [ ] Runde-9-Karten von mittel-1, zweite Prüfung nach `port-delacroix.md`, `capital-arena-bayou.md`, `weg-ghost-capital.md`, `weg-silicon-delacroix.md` (Antworten in den Ortsdokumenten; Bilder `haeuser_varianten.py`, `schilder_deutsch.py`, `sumpfboden.py`, `wasser_moor.py` neu, `weg11_bilder.py`, `klippe_gras.py`)
 - [ ] weg-ironwood-silicon-raststaette (vierte Prüfung, mittel-1, Datei `weg-ironwood-silicon-raststaette-4.md`)
 
+- [ ] Gemini-Bilder in den Karten von niedrig-1 (Reh/Hirsch, Häuser und Bänke von hinten, Holzbrücke, London-Fronten, Postreiter, Ofen): maple-falls-aussen, maple-falls-park, cedar-creek-aussen, weg-cedar-riverton-bahndamm, -zedernwald, weg-maple-cedar-zedernpfad, -landstrasse, erinnerung-london-strand, erinnerung-siedlung-huette, lockport-gasthaus (Liste in cedar-creek.md „Gemini-Bilder eingebaut“; Figurenbogen postreiter und Tierbögen reh/hirsch erst bauen)
+
 ## Erledigt
 
 - [x] ironwood-kantine (Test, Haupt-Chat)

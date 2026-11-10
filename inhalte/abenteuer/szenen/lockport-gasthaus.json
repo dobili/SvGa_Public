@@ -45,8 +45,8 @@
       "an_wand": true
     },
     {
-      "moebel": "es7Ofen",
-      "feld": [19, 2]
+      "moebel": "ld11Kanonenofen",
+      "feld": [20, 2]
     },
     {
       "moebel": "ldBild",
@@ -334,6 +334,10 @@
       "feld": [0, 0],
       "auf": "t4",
       "versatz": [0, -4]
+    },
+    {
+      "moebel": "cc4Holzstapel",
+      "feld": [18, 3]
     }
   ],
   "ausloeser": [

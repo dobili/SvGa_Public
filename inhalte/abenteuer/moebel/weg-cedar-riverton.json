@@ -697,6 +697,25 @@
       "art": "boden",
       "zustand": "gebraucht",
       "stil": "laendlich"
+    },
+    "wc11BahnsteigbankHinten": {
+      "quelle": "spiel/eigene/bahnsteigbank_hinten.png",
+      "breite": 48,
+      "hoehe": 32,
+      "kollision": true,
+      "art": "bank",
+      "blick": "oben",
+      "zustand": "gebraucht",
+      "stil": "laendlich"
+    },
+    "wc11HolzbrueckeQuer": {
+      "quelle": "spiel/eigene/holzbruecke_waagrecht.png",
+      "breite": 80,
+      "hoehe": 48,
+      "kollision": false,
+      "art": "bruecke",
+      "zustand": "gebraucht",
+      "stil": "laendlich"
     }
   }
 }

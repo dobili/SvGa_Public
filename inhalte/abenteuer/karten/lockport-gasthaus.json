@@ -11,7 +11,7 @@
  "tilewidth": 16,
  "tileheight": 16,
  "nextlayerid": 5,
- "nextobjectid": 77,
+ "nextobjectid": 78,
  "layers": [
   {
    "id": 1,
@@ -1655,11 +1655,11 @@
     },
     {
      "id": 17,
-     "name": "es7Ofen",
+     "name": "ld11Kanonenofen",
      "type": "moebel",
-     "x": 304,
+     "x": 320,
      "y": 32,
-     "width": 32,
+     "width": 16,
      "height": 48,
      "rotation": 0,
      "visible": true,
@@ -3030,6 +3030,29 @@
        "name": "kollision",
        "type": "bool",
        "value": false
+      }
+     ]
+    },
+    {
+     "id": 77,
+     "name": "cc4Holzstapel",
+     "type": "moebel",
+     "x": 288,
+     "y": 48,
+     "width": 32,
+     "height": 32,
+     "rotation": 0,
+     "visible": true,
+     "properties": [
+      {
+       "name": "tiefe",
+       "type": "int",
+       "value": 72
+      },
+      {
+       "name": "kollision",
+       "type": "bool",
+       "value": true
       }
      ]
     }

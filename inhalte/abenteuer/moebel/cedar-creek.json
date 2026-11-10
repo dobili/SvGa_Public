@@ -1589,6 +1589,96 @@
       "art": "gebaeude",
       "stil": "klassisch",
       "zustand": "gebraucht"
+    },
+    "cc11HausHintenBlau": {
+      "quelle": "spiel/eigene/haus_hinten_blau.png",
+      "breite": 96,
+      "hoehe": 136,
+      "kollision": true,
+      "art": "gebaeude",
+      "zustand": "gebraucht",
+      "stil": "landhaus",
+      "blick": "oben"
+    },
+    "cc11HausHintenRot": {
+      "quelle": "spiel/eigene/haus_hinten_rot.png",
+      "breite": 96,
+      "hoehe": 136,
+      "kollision": true,
+      "art": "gebaeude",
+      "zustand": "gebraucht",
+      "stil": "landhaus",
+      "blick": "oben"
+    },
+    "cc11HausHintenBraun": {
+      "quelle": "spiel/eigene/haus_hinten_braun.png",
+      "breite": 96,
+      "hoehe": 136,
+      "kollision": true,
+      "art": "gebaeude",
+      "zustand": "gebraucht",
+      "stil": "landhaus",
+      "blick": "oben"
+    },
+    "cc11HausHintenBBlau": {
+      "quelle": "spiel/eigene/haus_hinten_b_blau.png",
+      "breite": 96,
+      "hoehe": 103,
+      "kollision": true,
+      "art": "gebaeude",
+      "zustand": "gebraucht",
+      "stil": "landhaus",
+      "blick": "oben"
+    },
+    "cc11HausHintenBRot": {
+      "quelle": "spiel/eigene/haus_hinten_b_rot.png",
+      "breite": 96,
+      "hoehe": 101,
+      "kollision": true,
+      "art": "gebaeude",
+      "zustand": "gebraucht",
+      "stil": "landhaus",
+      "blick": "oben"
+    },
+    "cc11HausHintenBBraun": {
+      "quelle": "spiel/eigene/haus_hinten_b_braun.png",
+      "breite": 96,
+      "hoehe": 101,
+      "kollision": true,
+      "art": "gebaeude",
+      "zustand": "gebraucht",
+      "stil": "landhaus",
+      "blick": "oben"
+    },
+    "cc11BankHintenGruen": {
+      "quelle": "spiel/eigene/bank_hinten_gruen.png",
+      "breite": 48,
+      "hoehe": 32,
+      "kollision": true,
+      "art": "bank",
+      "zustand": "gebraucht",
+      "stil": "landhaus",
+      "blick": "oben"
+    },
+    "cc11BankHintenBraun": {
+      "quelle": "spiel/eigene/bank_hinten_braun.png",
+      "breite": 48,
+      "hoehe": 32,
+      "kollision": true,
+      "art": "bank",
+      "zustand": "gebraucht",
+      "stil": "landhaus",
+      "blick": "oben"
+    },
+    "cc11BahnsteigbankHinten": {
+      "quelle": "spiel/eigene/bahnsteigbank_hinten.png",
+      "breite": 48,
+      "hoehe": 32,
+      "kollision": true,
+      "art": "bank",
+      "zustand": "gebraucht",
+      "stil": "landhaus",
+      "blick": "oben"
     }
   }
 }

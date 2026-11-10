@@ -13246,19 +13246,19 @@
     },
     {
      "id": 27,
-     "name": "ca8Wohnmobil",
+     "name": "fz11WohnmobilAb",
      "type": "moebel",
-     "x": 1248,
-     "y": 144,
-     "width": 96,
-     "height": 64,
+     "x": 1312,
+     "y": 128,
+     "width": 32,
+     "height": 96,
      "rotation": 0,
      "visible": true,
      "properties": [
       {
        "name": "tiefe",
        "type": "int",
-       "value": 200
+       "value": 216
       },
       {
        "name": "kollision",

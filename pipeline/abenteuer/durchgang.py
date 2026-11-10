@@ -131,11 +131,14 @@ def fehlende_felder(szene: dict, name: str, moebel: dict) -> tuple[set[Feld], se
 
     felder = {tuple(a["feld"]) for a in szene.get("ausloeser", []) if a["name"] == name}
     fehlt: set[Feld] = set()
+    # Eine Treppe im Freien, die über den Kartenrand hinausführt (alter Hafen, Aufgang zum Campus),
+    # ist ein Weg: Der Übergang liegt auf der Randreihe, dafür gilt die Wegbreite am Rand.
+    am_rand = all(x in (0, breite - 1) or y in (0, hoehe - 1) for x, y in felder)
     for s in gesetzt:
         art = moebel.get(s["name"], {}).get("art")
         durchgang = art in DURCHGANGSART or DURCHGANGSNAME.search(s["name"])
         if durchgang and not s["kollision"] and felder & _flaeche(s):
-            ganz = bool(GANZ.search(f"{art} {s['name']}"))
+            ganz = bool(GANZ.search(f"{art} {s['name']}")) and not am_rand
             fehlt |= _fehlend_im_moebel(felder, _flaeche(s), frei, ganz)
     for x, y in felder:
         if x in (0, breite - 1):

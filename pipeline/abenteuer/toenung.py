@@ -16,6 +16,8 @@ SCHLEIER = {
     "dunst": ((0xD8, 0xDD, 0xE0), 0.22),
     "nacht": ((0x0B, 0x15, 0x30), 0.55),
     "abend": ((0xFF, 0x8A, 0x3D), 0.18),
+    # Kaltes blaues Licht im Serverraum (Gutachten Silicon Bay, 10.11.2026).
+    "serverblau": ((0x1E, 0x50, 0xC8), 0.30),
 }
 
 

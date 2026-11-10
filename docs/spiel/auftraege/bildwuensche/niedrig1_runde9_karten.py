@@ -51,6 +51,14 @@ Bilder (in ``spiel/eigene/``, Breite × Höhe in Pixeln):
 - ``zebrastreifen_quer.png`` (32 × 48): Fußgängerüberweg über eine West-Ost-Straße von drei Reihen,
   sechs weiße Balken längs zur Fahrtrichtung, durchscheinend wie die Linien von ``strasse.py``
   (Gutachten Park: kein Überweg vom Uferweg zur Haltestelle).
+- ``klimageraet_serverraum.png`` (32 × 48): Klimaschrank für den Serverraum, hellgraues Stahlgehäuse
+  mit Lüftungsgitter oben, Anzeige mit blauer Zahl und zwei Leitungen nach oben (Gutachten Silicon
+  Bay: das Gerät aus dem Paket las sich als brauner Holzkasten).
+- ``schubladenschrank_metall.png`` (32 × 48): Metallschrank mit vier Schubladen und Griffen, in dem
+  die Schummelgeräte liegen (Gutachten: der Schrank hatte Türen statt Schubladen).
+- ``serverreihe_6.png`` (144 × 48): sechs Serverschränke aus Modern Interiors (Hospital 105 und zwei
+  Varianten) ohne ihre leeren Ränder dicht nebeneinander, als geschlossene Reihe an der Nordwand
+  (Gutachten: zwischen den Schränken lag je eine halbe Kachel Wand).
 - ``spiel/figuren/postreiter.png`` (384 × 64, Figurenbogen): aus den Gemini-Bildern
   ``postreiter_ki_rechts/_oben/_links/_unten.png`` (je 16 × 32). Obere Reihe vier Standbilder
   (rechts, oben, links, unten); untere Reihe Laufen, je Richtung sechs Bilder. Weil es nur
@@ -432,6 +440,71 @@ def zebrastreifen_quer() -> Image.Image:
     return bild
 
 
+STAHL_HELL = (206, 210, 218, 255)
+STAHL_MITTEL = (170, 176, 188, 255)
+STAHL_DUNKEL = (120, 126, 140, 255)
+LED_BLAU = (70, 150, 240, 255)
+
+
+def klimageraet_serverraum() -> Image.Image:
+    """Klimaschrank 32 × 48: Stahlgehäuse, oben ein Gitter aus waagrechten Lamellen, darunter eine
+    dunkle Anzeige mit blauer Zahl, unten eine Wartungsklappe; zwei Leitungen führen nach oben."""
+    bild = Image.new("RGBA", (32, 48))
+    z = ImageDraw.Draw(bild)
+    for x in (9, 21):
+        z.rectangle((x, 0, x + 2, 6), fill=STAHL_DUNKEL)
+    z.rectangle((3, 5, 28, 45), fill=RAHMEN)
+    z.rectangle((4, 6, 27, 44), fill=STAHL_HELL)
+    for y in range(9, 21, 3):
+        z.line((7, y, 24, y), fill=STAHL_DUNKEL)
+    z.rectangle((9, 24, 22, 29), fill=RAHMEN)
+    z.rectangle((11, 26, 15, 27), fill=LED_BLAU)
+    z.point((19, 26), fill=LED_BLAU)
+    z.rectangle((7, 33, 24, 41), outline=STAHL_DUNKEL, fill=STAHL_MITTEL)
+    z.rectangle((4, 45, 27, 46), fill=(58, 58, 80, 90))
+    return bild
+
+
+def schubladenschrank_metall() -> Image.Image:
+    """Metallschrank 32 × 48 mit vier Schubladen: je ein waagrechter Griff und ein Etikettfeld."""
+    bild = Image.new("RGBA", (32, 48))
+    z = ImageDraw.Draw(bild)
+    z.rectangle((3, 4, 28, 45), fill=RAHMEN)
+    z.rectangle((4, 5, 27, 9), fill=STAHL_HELL)
+    for i in range(4):
+        y = 11 + i * 8
+        z.rectangle((5, y, 26, y + 6), fill=STAHL_MITTEL, outline=STAHL_DUNKEL)
+        z.line((12, y + 4, 19, y + 4), fill=RAHMEN)
+        z.rectangle((13, y + 1, 18, y + 2), fill=(240, 240, 236, 255))
+    z.rectangle((4, 45, 27, 46), fill=(58, 58, 80, 90))
+    return bild
+
+
+SERVERBILDER = (
+    "modern-interiors/1_Interiors/16x16/Theme_Sorter_Black_Shadow_Singles/19_Hospital_Black_Shadow_SIngles_16x16/Hospital_Black_Shadow_Singles_105.png",
+    "modern-interiors/1_Interiors/16x16/Theme_Sorter_Black_Shadow_Singles/19_Hospital_Black_Shadow_SIngles_16x16/Hospital_Black_Shadow_Singles_111.png",
+    "modern-interiors/1_Interiors/16x16/Theme_Sorter_Black_Shadow_Singles/19_Hospital_Black_Shadow_SIngles_16x16/Hospital_Black_Shadow_Singles_105.png",
+)
+REIHE_B, REIHE_H = 144, 48
+
+
+def serverreihe_6(haupt: Path) -> Image.Image:
+    """Sechs Schränke lückenlos: Jedes Bild wird auf seinen Inhalt beschnitten (ohne durchsichtige
+    Ränder links und rechts) und an das vorige gesetzt; die Reihe steht mittig im Bild unten."""
+    teile = []
+    for i in range(6):
+        bild = Image.open(haupt / SERVERBILDER[i % 3]).convert("RGBA")
+        links, _, rechts, _ = bild.getbbox()
+        teile.append(bild.crop((links, 0, rechts, bild.height)))
+    breite = sum(t.width for t in teile)
+    reihe = Image.new("RGBA", (REIHE_B, REIHE_H))
+    x = (REIHE_B - breite) // 2
+    for teil in teile:
+        reihe.alpha_composite(teil, (x, REIHE_H - teil.height))
+        x += teil.width
+    return reihe
+
+
 def main(haupt: Path) -> None:
     ziel = haupt / "spiel" / "eigene"
     fenster_nacht(haupt).save(ziel / "fenster_nacht.png")
@@ -453,6 +526,9 @@ def main(haupt: Path) -> None:
     tafel_kegelkoenig().save(ziel / "tafel_kegelkoenig.png")
     schild_sackgasse().save(ziel / "schild_sackgasse.png")
     zebrastreifen_quer().save(ziel / "zebrastreifen_quer.png")
+    klimageraet_serverraum().save(ziel / "klimageraet_serverraum.png")
+    schubladenschrank_metall().save(ziel / "schubladenschrank_metall.png")
+    serverreihe_6(haupt).save(ziel / "serverreihe_6.png")
     postreiter_bogen(haupt).save(haupt / "spiel" / "figuren" / "postreiter.png")
 
 

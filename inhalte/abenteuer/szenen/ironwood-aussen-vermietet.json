@@ -1662,9 +1662,8 @@
       "versatz": [-40, 24]
     },
     {
-      "moebel": "caBus",
-      "feld": [53, 19],
-      "bauteil_ok": true
+      "moebel": "fz11BusAb",
+      "feld": [55, 18]
     },
     {
       "moebel": "ds6BahnhofAlt",

@@ -127,3 +127,7 @@ Szene heißt die Datei in `inhalte/abenteuer/szenen/` ohne `.json`.
 
 - [x] weg-riverton-ironwood-2 (+ ohne-tische), ironwood-museum, ironwood-umkleide, sternwarte-kuppel: Restpunkte des Nachtrags (mittel-4) → `mittel-4-restpunkte.md`
 - [x] summit-city-aussen, hochebene-felsentuerme, weg-desert-summit-bergstrasse, weg-delacroix-desert-canyonpfad, weg-delacroix-desert-felsbogen: Restpunkte Runde 9, zweite Prüfung (mittel-4) → `mittel-4-restpunkte.md`
+
+- [ ] weg-riverton-ironwood-2 (+ ohne-tische), ironwood-museum, ironwood-umkleide, sternwarte-kuppel: Restpunkte des Nachtrags (mittel-4)
+- [ ] summit-city-aussen, hochebene-felsentuerme, weg-desert-summit-bergstrasse, weg-delacroix-desert-canyonpfad, weg-delacroix-desert-felsbogen: Restpunkte Runde 9, zweite Prüfung (mittel-4)
+- [ ] hochebene-schule (+ vor-diplom), ironwood-aussen-vermietet: Busse in Vorderansicht nach 10.65 (mittel-4)

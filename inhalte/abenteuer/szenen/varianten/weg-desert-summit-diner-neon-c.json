@@ -484,10 +484,10 @@
     {
       "name": "roadrunner",
       "typ": "tier",
-      "feld": [24, 17],
+      "feld": [23, 17],
       "eigenschaften": {
-        "von": "24,17",
-        "bis": "28,17",
+        "von": "23,17",
+        "bis": "27,17",
         "verhalten": "ausweichen"
       }
     },

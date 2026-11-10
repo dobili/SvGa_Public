@@ -10651,7 +10651,7 @@
      "name": "hargrove",
      "type": "statist",
      "x": 864,
-     "y": 160,
+     "y": 144,
      "width": 16,
      "height": 16,
      "rotation": 0,
@@ -10660,12 +10660,12 @@
       {
        "name": "von",
        "type": "string",
-       "value": "54,10"
+       "value": "54,9"
       },
       {
        "name": "bis",
        "type": "string",
-       "value": "54,10"
+       "value": "54,9"
       },
       {
        "name": "tun",

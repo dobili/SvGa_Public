@@ -2613,13 +2613,6 @@
         {
           "text": "quest.seilschaft.schritt1",
           "ereignis": {
-            "art": "aufgaben",
-            "runde": "wegDelacroixDesert.seilschaft"
-          }
-        },
-        {
-          "text": "quest.seilschaft.schritt2",
-          "ereignis": {
             "art": "dialog",
             "knoten": "weg-delacroix-desert.seilschaft_ende"
           },

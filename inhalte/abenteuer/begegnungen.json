@@ -601,6 +601,7 @@
         "art": "grundstellung"
       },
       "kartenErlaubt": true,
+      "variante": "gehoer",
       "zeit": "wahl"
     },
     {

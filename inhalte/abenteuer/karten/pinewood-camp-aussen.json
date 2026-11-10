@@ -8184,6 +8184,11 @@
        "name": "wann",
        "type": "string",
        "value": "tag"
+      },
+      {
+       "name": "verhalten",
+       "type": "string",
+       "value": "schwimmen"
       }
      ]
     },

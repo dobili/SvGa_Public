@@ -448,15 +448,6 @@
       "anzahl": 2
     },
     {
-      "kennung": "wegDelacroixDesert.seilschaft",
-      "ort": "wegDelacroixDesert",
-      "steller": "wegDelacroixDesert.wren",
-      "reihe": false,
-      "buchuebungen": [],
-      "themen": ["mattbilder"],
-      "anzahl": 3
-    },
-    {
       "kennung": "sternwarte.sterne",
       "ort": "sternwarte",
       "steller": "sternwarte.ngata",

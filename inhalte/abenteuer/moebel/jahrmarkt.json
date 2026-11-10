@@ -203,6 +203,15 @@
       "art": "bank",
       "zustand": "neu",
       "stil": "einfach"
+    },
+    "n9BuehneBegehbar": {
+      "quelle": "modern-exteriors/Modern_Exteriors_16x16/ME_Theme_Sorter_16x16/21_Beach_Singles_16x16/21_Beach_16x16_Example_Small_Stage_1.png",
+      "breite": 128,
+      "hoehe": 96,
+      "kollision": false,
+      "art": "buehne",
+      "zustand": "neu",
+      "stil": "modern"
     }
   }
 }

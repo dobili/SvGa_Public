@@ -2,12 +2,13 @@
   "karte": "wegCrossroadsPinewood.huetten",
   "datei": "karten/weg-crossroads-pinewood-huetten.json",
   "art": "aussen",
-  "beschreibung": "Variante C, dichter Wald: Tannen und hohe Kiefern dicht an dicht, Farne, Pilze, zwei Feuerstellen an der Lichtung, Bärenspuren am Hang.",
+  "beschreibung": "Der Long Ridge Trail durch dichten Nadelwald: Tannen und hohe Kiefern dicht an dicht, Farne und Pilze. Der Erdweg schwingt in weiten Wellen von Ost nach West, ein Bach mäandert von Nord nach Süd, ein Holzsteg führt über ihn. Nördlich des Wegs Gretas Schutzhütte mit Pfad zur Tür und Holzstapel, weiter westlich die Holzfällerhütte mit Holzstapel, davor auf einer Steinplatte das Kreidezeichen des Springers. Südlich des Wegs die Lichtung mit zwei Feuerstellen: ein Steinring mit Bank und Picknicktisch, daneben ein kleines Lagerfeuer mit Bank. Im Südwesten der Hang mit Felsgruppen und Bärenspuren. Wegweiser am Ostende, eine Tafel am Weg.",
   "boden": "gras",
   "wandart": "hecke",
   "boeden": {
     "e": "erde",
-    "h": "dielen"
+    "h": "dielen",
+    "g": "stein"
   },
   "bruecken": ["h"],
   "raster": [
@@ -25,7 +26,7 @@
     "#......eeeeeeee.........eeeeeeeee................................................eeeeeeee..........eeeeeeee...................~~~....................#",
     "#...eeeeeee..................eeeeee............................................eeeeee..................eeeeeee................~~.....................#",
     "#.eeeeee........................eeeeee......................................eeeeee........................eeeeee..............~~.....................#",
-    "eeeee.............................eeeeeeee................................eeeeee.............................eeeee............~~....................ee",
+    "eeeee.............................eeeeeeeegg..............................eeeeee.............................eeeee............~~....................ee",
     "eee..................................eeeee.............................eeeeee..................................eeeeee.........~~..................eeee",
     "#......................................eeeeee........................eeeeee......................................eeeeee.......~~~..............eeeeee#",
     "#........................................eeeeeee..................eeeeee............................................eeeeee.....~~~..........eeeeeee..#",
@@ -1106,6 +1107,14 @@
     {
       "moebel": "wg4Farn",
       "feld": [133, 21]
+    },
+    {
+      "moebel": "pwLagerfeuer",
+      "feld": [63, 23]
+    },
+    {
+      "moebel": "mfBank",
+      "feld": [63, 26]
     }
   ],
   "ausloeser": [

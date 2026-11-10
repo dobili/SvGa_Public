@@ -11,7 +11,7 @@
  "tilewidth": 16,
  "tileheight": 16,
  "nextlayerid": 5,
- "nextobjectid": 72,
+ "nextobjectid": 71,
  "layers": [
   {
    "id": 1,
@@ -97,21 +97,21 @@
     0,
     0,
     0,
-    1,
-    1,
-    1,
-    1,
-    1,
-    1,
-    1,
-    1,
-    1,
-    1,
-    1,
-    1,
-    1,
-    1,
-    1,
+    4,
+    4,
+    4,
+    4,
+    4,
+    4,
+    4,
+    4,
+    4,
+    4,
+    4,
+    4,
+    4,
+    4,
+    4,
     0,
     0,
     1,
@@ -121,21 +121,21 @@
     1,
     0,
     0,
-    1,
-    1,
-    1,
-    1,
-    1,
-    1,
-    1,
-    1,
-    1,
-    1,
-    1,
-    1,
-    1,
-    1,
-    1,
+    4,
+    4,
+    4,
+    4,
+    4,
+    4,
+    4,
+    4,
+    4,
+    4,
+    4,
+    4,
+    4,
+    4,
+    4,
     0,
     0,
     1,
@@ -145,21 +145,21 @@
     1,
     0,
     0,
-    1,
-    1,
-    1,
-    1,
-    1,
-    1,
-    1,
-    1,
-    1,
-    1,
-    1,
-    1,
-    1,
-    1,
-    1,
+    4,
+    4,
+    4,
+    4,
+    4,
+    4,
+    4,
+    4,
+    4,
+    4,
+    4,
+    4,
+    4,
+    4,
+    4,
     0,
     0,
     1,
@@ -1473,7 +1473,7 @@
      "id": 8,
      "name": "fernfahrer",
      "type": "statist",
-     "x": 96,
+     "x": 80,
      "y": 192,
      "width": 16,
      "height": 16,
@@ -1483,22 +1483,12 @@
       {
        "name": "tun",
        "type": "string",
-       "value": "steht zwischen den Hockern am Tresen über einem Kaffee"
+       "value": "sitzt am Tresen über einem Kaffee"
       },
       {
        "name": "wann",
        "type": "string",
        "value": "tag"
-      },
-      {
-       "name": "von",
-       "type": "string",
-       "value": "6,12"
-      },
-      {
-       "name": "bis",
-       "type": "string",
-       "value": "6,12"
       },
       {
        "name": "sagt",
@@ -1549,8 +1539,8 @@
      "id": 10,
      "name": "schausteller",
      "type": "statist",
-     "x": 336,
-     "y": 160,
+     "x": 144,
+     "y": 224,
      "width": 16,
      "height": 16,
      "rotation": 0,
@@ -1559,22 +1549,12 @@
       {
        "name": "tun",
        "type": "string",
-       "value": "steht am Spielautomaten und zählt seine Lose"
+       "value": "sitzt am runden Tisch, isst Pfannkuchen und zählt Lose"
       },
       {
        "name": "wann",
        "type": "string",
        "value": "tag"
-      },
-      {
-       "name": "von",
-       "type": "string",
-       "value": "21,10"
-      },
-      {
-       "name": "bis",
-       "type": "string",
-       "value": "21,10"
       },
       {
        "name": "sagt",
@@ -1588,7 +1568,7 @@
      "name": "mf4Fussmatte",
      "type": "moebel",
      "x": 192,
-     "y": 264,
+     "y": 258,
      "width": 16,
      "height": 16,
      "rotation": 0,
@@ -1608,7 +1588,7 @@
     },
     {
      "id": 12,
-     "name": "mf9TuerSuedGlas",
+     "name": "sb8GlastuerSued",
      "type": "moebel",
      "x": 192,
      "y": 272,
@@ -1930,7 +1910,7 @@
     },
     {
      "id": 26,
-     "name": "mf9Durchreiche",
+     "name": "cr9Durchreiche",
      "type": "moebel",
      "x": 96,
      "y": 128,
@@ -2461,7 +2441,7 @@
      "id": 49,
      "name": "mf2SchachbrettFiguren",
      "type": "moebel",
-     "x": 247,
+     "x": 253,
      "y": 206,
      "width": 18,
      "height": 14,
@@ -2507,7 +2487,7 @@
      "id": 51,
      "name": "ccSchachbrettKlein",
      "type": "moebel",
-     "x": 322,
+     "x": 306,
      "y": 211,
      "width": 12,
      "height": 9,
@@ -2530,7 +2510,7 @@
      "id": 52,
      "name": "cr7Hocker",
      "type": "moebel",
-     "x": 240,
+     "x": 256,
      "y": 230,
      "width": 16,
      "height": 32,
@@ -2553,7 +2533,7 @@
      "id": 53,
      "name": "cr7Hocker",
      "type": "moebel",
-     "x": 272,
+     "x": 288,
      "y": 230,
      "width": 16,
      "height": 32,
@@ -2576,29 +2556,6 @@
      "id": 54,
      "name": "cr7Hocker",
      "type": "moebel",
-     "x": 304,
-     "y": 230,
-     "width": 16,
-     "height": 32,
-     "rotation": 0,
-     "visible": true,
-     "properties": [
-      {
-       "name": "tiefe",
-       "type": "int",
-       "value": 254
-      },
-      {
-       "name": "kollision",
-       "type": "bool",
-       "value": false
-      }
-     ]
-    },
-    {
-     "id": 55,
-     "name": "cr7Hocker",
-     "type": "moebel",
      "x": 256,
      "y": 182,
      "width": 16,
@@ -2619,7 +2576,7 @@
      ]
     },
     {
-     "id": 56,
+     "id": 55,
      "name": "cr7Hocker",
      "type": "moebel",
      "x": 288,
@@ -2642,7 +2599,7 @@
      ]
     },
     {
-     "id": 57,
+     "id": 56,
      "name": "cr7Hocker",
      "type": "moebel",
      "x": 320,
@@ -2665,7 +2622,7 @@
      ]
     },
     {
-     "id": 58,
+     "id": 57,
      "name": "ld5Rundtisch",
      "type": "moebel",
      "x": 32,
@@ -2688,7 +2645,7 @@
      ]
     },
     {
-     "id": 59,
+     "id": 58,
      "name": "ld5Stuhl1",
      "type": "moebel",
      "x": 16,
@@ -2711,7 +2668,7 @@
      ]
     },
     {
-     "id": 60,
+     "id": 59,
      "name": "ld5Stuhl2",
      "type": "moebel",
      "x": 64,
@@ -2734,7 +2691,7 @@
      ]
     },
     {
-     "id": 61,
+     "id": 60,
      "name": "ld5Rundtisch",
      "type": "moebel",
      "x": 112,
@@ -2757,7 +2714,7 @@
      ]
     },
     {
-     "id": 62,
+     "id": 61,
      "name": "ld5Stuhl1",
      "type": "moebel",
      "x": 96,
@@ -2780,7 +2737,7 @@
      ]
     },
     {
-     "id": 63,
+     "id": 62,
      "name": "ld5Stuhl2",
      "type": "moebel",
      "x": 144,
@@ -2803,7 +2760,7 @@
      ]
     },
     {
-     "id": 64,
+     "id": 63,
      "name": "ld5Rundtisch",
      "type": "moebel",
      "x": 336,
@@ -2826,7 +2783,7 @@
      ]
     },
     {
-     "id": 65,
+     "id": 64,
      "name": "mf8Spielautomat",
      "type": "moebel",
      "x": 352,
@@ -2849,7 +2806,7 @@
      ]
     },
     {
-     "id": 66,
+     "id": 65,
      "name": "mf5Buffet",
      "type": "moebel",
      "x": 192,
@@ -2872,7 +2829,7 @@
      ]
     },
     {
-     "id": 67,
+     "id": 66,
      "name": "cr9Arbeitstisch",
      "type": "moebel",
      "x": 176,
@@ -2895,7 +2852,7 @@
      ]
     },
     {
-     "id": 68,
+     "id": 67,
      "name": "mf5Brotbrett",
      "type": "moebel",
      "x": 178,
@@ -2918,7 +2875,7 @@
      ]
     },
     {
-     "id": 69,
+     "id": 68,
      "name": "mf5Geschirr",
      "type": "moebel",
      "x": 192,
@@ -2941,7 +2898,7 @@
      ]
     },
     {
-     "id": 70,
+     "id": 69,
      "name": "cc4Kasse",
      "type": "moebel",
      "x": 140,
@@ -2964,7 +2921,7 @@
      ]
     },
     {
-     "id": 71,
+     "id": 70,
      "name": "cr9Postkartenstaender",
      "type": "moebel",
      "x": 256,

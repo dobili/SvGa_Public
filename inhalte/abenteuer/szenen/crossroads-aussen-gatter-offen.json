@@ -1,7 +1,7 @@
 {
   "karte": "crossroads.aussen",
   "art": "aussen",
-  "beschreibung": "Zustand: Darlene hat den Gatterschlüssel gegeben (S13). Das Viehgatter steht offen am Straßenrand, die Alte Minenstraße ist frei. Diner-Wagen mit asphaltiertem Vorplatz und das eingezäunte Feld mit dem Erdweg zum Jahrmarkt, die große Tankstelle mit Waschanlage und einer Dieselsäule für Lastwagen. Der Highway hat Mittellinie und Bordsteine, Vorplätze und Parkplatz haben Einfahrten. Südwestlich der Parkplatz mit markierten Buchten: Werksbus, Food-Truck, zwei Sattelzüge, zwei Autos; daneben der Rastplatz mit Picknicktischen, Mülleimer und Laterne. Südöstlich ein Motel mit fünf Zimmern, die Werkstatt, der Eisenwarenladen und die kleine Kapelle mit eingezäuntem Friedhof. Östlich der Tankstelle das Farmhaus des Rinderzüchters. Im Osten das offene Viehgatter vor der Alten Minenstraße (S13). Wegweiser mit allen Städten, Schild „Crossroads – Diner + Gas“ vor der Raststätte, Fernbus-Haltestelle mit Gehweg am Highway West.",
+  "beschreibung": "Zustand: Darlene hat den Gatterschlüssel gegeben (S13). Das Viehgatter steht offen am Straßenrand, die Alte Minenstraße ist frei. Diner-Wagen mit asphaltiertem Vorplatz und das eingezäunte Feld mit dem Erdweg zum Jahrmarkt, die große Tankstelle mit Waschanlage und einer Dieselsäule für Lastwagen. Der Highway hat Mittellinie und Bordsteine, Vorplätze und Parkplatz haben Einfahrten. Südwestlich der Parkplatz mit markierten Buchten: Werksbus, Food-Truck, zwei Sattelzüge, zwei Autos; daneben der Rastplatz mit langen Picknicktischen, Mülleimer und Laterne. Südöstlich ein Motel mit vier Zimmern und Eisautomat, die Werkstatt, der Eisenwarenladen und die kleine Kapelle mit eingezäuntem Friedhof. Östlich der Tankstelle das Farmhaus des Rinderzüchters. Im Osten das offene Viehgatter vor der Alten Minenstraße (S13). Wegweiser mit allen Städten, Schild „Crossroads – Diner + Gas“ vor der Raststätte, Fernbus-Haltestelle mit Gehweg am Highway West.",
   "boden": "gras",
   "wandart": "gras",
   "boeden": {
@@ -31,14 +31,14 @@
     "#.....ee......................kkk....aaaaaaaaaaaaaaaaaa........#",
     "#.....ee......................kkk....aaaaaaaaaaaaaaaaaa........#",
     "#.....aaaaaaaaaaaaaaaaaaaaaaaakkkaaaaaaaaaaaaaaaaaaaaaaaa......#",
-    "#pppppaaaaaaaaaaaaaaaaaaaaaaaakkkaaaaaaaaaaaaaaaaaaaaaaaa......#",
-    "#pppppaaaaaaaaaaaaaaaaaaaaaaaakkkaaaaaaaaaaaaaaaaaaaaaaaa......#",
+    "#pppppaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaa......#",
+    "#pppppaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaa......#",
     "#aaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaa#",
     "#aaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaa#",
     "#aaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaa#",
     "#aaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaa#",
-    "#.........aaaaaa..................kk...........................#",
-    "#.aaaaaaaaaaaaaaaaaaaaaaaaa.......kk...........................#",
+    "#.........aaaaaa.................aaaa..........................#",
+    "#.aaaaaaaaaaaaaaaaaaaaaaaaa.......aa...........................#",
     "#.aaaaaaaaaaaaaaaaaaaaaaaaa.......kk...........................#",
     "#.aaaaaaaaaaaaaaaaaaaaaaaaa.......kk...........................#",
     "#.aaaaaaaaaaaaaaaaaaaaaaaaa.......kk...........................#",
@@ -224,15 +224,15 @@
       "bauteil_ok": true
     },
     {
-      "moebel": "rvPicknicktisch",
+      "moebel": "cr9PicknicktischLang",
       "feld": [28, 28]
     },
     {
-      "moebel": "rvPicknicktisch",
+      "moebel": "cr9PicknicktischLang",
       "feld": [28, 32]
     },
     {
-      "moebel": "rvPicknicktisch",
+      "moebel": "cr9PicknicktischLang",
       "feld": [28, 40]
     },
     {
@@ -533,7 +533,7 @@
     },
     {
       "moebel": "mf4Abfalleimer",
-      "feld": [30, 30]
+      "feld": [32, 35]
     },
     {
       "moebel": "mf4Laterne",
@@ -727,36 +727,6 @@
       "bauteil_ok": true
     },
     {
-      "moebel": "cr9BordQ5",
-      "feld": [6, 22],
-      "bauteil_ok": true
-    },
-    {
-      "moebel": "cr9BordQ7",
-      "feld": [15, 22],
-      "bauteil_ok": true
-    },
-    {
-      "moebel": "cr9BordQ3",
-      "feld": [26, 22],
-      "bauteil_ok": true
-    },
-    {
-      "moebel": "cr9BordQ3",
-      "feld": [34, 22],
-      "bauteil_ok": true
-    },
-    {
-      "moebel": "cr9BordQ7",
-      "feld": [41, 22],
-      "bauteil_ok": true
-    },
-    {
-      "moebel": "cr9BordQ4",
-      "feld": [53, 22],
-      "bauteil_ok": true
-    },
-    {
       "moebel": "cr9LinieQ9",
       "feld": [3, 30],
       "bauteil_ok": true
@@ -817,6 +787,45 @@
       "bauteil_ok": true
     },
     {
+      "moebel": "cr7Viehgatter",
+      "feld": [59, 26]
+    },
+    {
+      "moebel": "cr9BordQ5",
+      "feld": [6, 22],
+      "bauteil_ok": true
+    },
+    {
+      "moebel": "cr9BordQ7",
+      "feld": [15, 22],
+      "bauteil_ok": true
+    },
+    {
+      "moebel": "cr9BordQ3",
+      "feld": [26, 22],
+      "bauteil_ok": true
+    },
+    {
+      "moebel": "cr9BordQ3",
+      "feld": [34, 22],
+      "bauteil_ok": true
+    },
+    {
+      "moebel": "cr9BordQ7",
+      "feld": [41, 22],
+      "bauteil_ok": true
+    },
+    {
+      "moebel": "cr9BordQ4",
+      "feld": [53, 22],
+      "bauteil_ok": true
+    },
+    {
+      "moebel": "cr9BordQ5",
+      "feld": [1, 22],
+      "bauteil_ok": true
+    },
+    {
       "moebel": "cr9BordQ16",
       "feld": [37, 15],
       "bauteil_ok": true
@@ -867,18 +876,18 @@
       "bauteil_ok": true
     },
     {
-      "moebel": "cr9BordQ2",
+      "moebel": "cr9BordQ1",
       "feld": [32, 26],
       "bauteil_ok": true
     },
     {
       "moebel": "cr9BordQ16",
-      "feld": [36, 26],
+      "feld": [37, 26],
       "bauteil_ok": true
     },
     {
-      "moebel": "cr9BordQ11",
-      "feld": [52, 26],
+      "moebel": "cr9BordQ10",
+      "feld": [53, 26],
       "bauteil_ok": true
     },
     {
@@ -889,6 +898,16 @@
     {
       "moebel": "cr9BordQ11",
       "feld": [16, 27],
+      "bauteil_ok": true
+    },
+    {
+      "moebel": "cr9BordQ1",
+      "feld": [33, 27],
+      "bauteil_ok": true
+    },
+    {
+      "moebel": "cr9BordQ1",
+      "feld": [36, 27],
       "bauteil_ok": true
     },
     {
@@ -937,8 +956,28 @@
       "bauteil_ok": true
     },
     {
+      "moebel": "cr9BordL1",
+      "feld": [33, 26],
+      "bauteil_ok": true
+    },
+    {
+      "moebel": "cr9BordL1",
+      "feld": [34, 27],
+      "bauteil_ok": true
+    },
+    {
+      "moebel": "cr9BordL1",
+      "feld": [36, 27],
+      "bauteil_ok": true
+    },
+    {
       "moebel": "cr9BordL4",
       "feld": [37, 15],
+      "bauteil_ok": true
+    },
+    {
+      "moebel": "cr9BordL1",
+      "feld": [37, 26],
       "bauteil_ok": true
     },
     {
@@ -955,15 +994,6 @@
       "moebel": "cr9BordL3",
       "feld": [57, 19],
       "bauteil_ok": true
-    },
-    {
-      "moebel": "cr9BordQ5",
-      "feld": [1, 22],
-      "bauteil_ok": true
-    },
-    {
-      "moebel": "cr7Viehgatter",
-      "feld": [59, 26]
     }
   ],
   "ausloeser": [
@@ -1209,12 +1239,12 @@
     {
       "name": "rentner",
       "typ": "statist",
-      "feld": [30, 31],
+      "feld": [31, 31],
       "eigenschaften": {
-        "tun": "sitzt am Picknicktisch und löst ein Rätsel aus der Zeitung",
+        "tun": "lehnt am Picknicktisch und löst ein Rätsel aus der Zeitung",
         "wann": "tag",
-        "von": "29,30",
-        "bis": "30,33",
+        "von": "31,31",
+        "bis": "31,31",
         "sagt": "statist.crossroads.aussen.rentner"
       }
     },

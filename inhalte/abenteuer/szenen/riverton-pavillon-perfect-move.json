@@ -2,7 +2,7 @@
   "karte": "riverton.pavillon",
   "datei": "karten/riverton-pavillon-perfect-move.json",
   "art": "innen",
-  "beschreibung": "Zustand: nach Szene 37 (slickAbschiedGesehen): Statt der langen Holztische stehen links und rechts je drei Bildschirmtische von Perfect Move: weiße Tische, deren Platte ein Bildschirm mit Schachbrett ist, mit Bänken ringsum; an der Südwand stehen noch die Kartons der Lieferung, in den Nordecken zwei Rechnerschränke für die Tische, die großen Figuren liegen weggeräumt in den Truhen, an der Nordwand hängt das Schild von Perfect Move. Parkpavillon von Riverton, Slicks Club (Szenen 29 bis 37): ein Holzbau mit Dielen und einer Fensterreihe zum Fluss. In der Mitte ist ein großes Schachbrett in den Boden eingelassen, acht mal acht Platten aus hellem Marmor und dunklem Holz in einem Rahmen aus Stein, rundherum ein Laufweg, damit man die großen Figuren tragen kann. Die Figuren liegen in zwei Holztruhen südlich des Bretts. An der Nordwand hängt das Gründungsbild des Clubs, davor zwei lange Bänke für Zuschauer mit Blick aufs Brett. Links und rechts je zwei lange Tische aus zwei hellen Platten, auf jeder Platte ein Brett, an jedem Brett ein Stuhl davor und dahinter. Vor der Tür ein Tischchen mit einem Limonadenglas, Pflanzen an den Ecken des Laufwegs, unten die Tür mit Fußmatte.",
+  "beschreibung": "Zustand: nach Szene 37 (slickAbschiedGesehen): Statt der langen Holztische stehen links und rechts je drei Bildschirmtische von Perfect Move: weiße Tische, deren Platte ein Bildschirm mit Schachbrett ist, mit Bänken ringsum; an der Südwand stehen noch die Kartons der Lieferung, in den Nordecken zwei Rechnerschränke für die Tische, die großen Figuren liegen weggeräumt in den Truhen, an der Nordwand hängt das Schild von Perfect Move an der Stelle des abgenommenen Gründungsbilds; Slick und der Club sind nicht mehr hier, ein Techniker und eine Trainerin von Perfect Move richten den Raum ein. Parkpavillon von Riverton, Slicks Club (Szenen 29 bis 37): ein Holzbau mit Dielen und einer Fensterreihe zum Fluss. In der Mitte ist ein großes Schachbrett in den Boden eingelassen, acht mal acht Platten aus hellem Marmor und dunklem Holz in einem Rahmen aus Stein, rundherum ein Laufweg, damit man die großen Figuren tragen kann. Die Figuren liegen in zwei Holztruhen südlich des Bretts. An der Nordwand hängt das Gründungsbild des Clubs, davor zwei lange Bänke für Zuschauer mit Blick aufs Brett. Links und rechts je zwei lange Tische aus zwei hellen Platten, auf jeder Platte ein Brett, an jedem Brett ein Stuhl davor und dahinter. Vor der Tür ein Tischchen mit einem Limonadenglas, Pflanzen an den Ecken des Laufwegs, unten die Tür mit Fußmatte.",
   "wand": "holz",
   "boden": "dielen",
   "raster": [
@@ -34,11 +34,6 @@
     {
       "moebel": "wzFenster",
       "feld": [5, 1],
-      "an_wand": true
-    },
-    {
-      "moebel": "rv8Gruendungsbild",
-      "feld": [11, 1],
       "an_wand": true
     },
     {
@@ -95,7 +90,7 @@
     },
     {
       "moebel": "sb5SchildPerfectMove",
-      "feld": [8, 1],
+      "feld": [9, 1],
       "an_wand": true,
       "versatz": [0, 8]
     },
@@ -176,43 +171,28 @@
       "auf_moebel": true
     }
   ],
-  "figuren": [
-    {
-      "name": "slick",
-      "feld": [5, 8]
-    },
-    {
-      "name": "ray",
-      "feld": [18, 8]
-    },
-    {
-      "name": "tamsin",
-      "feld": [8, 16]
-    }
-  ],
+  "figuren": [],
   "belebung": [
     {
-      "name": "zuschauer",
+      "name": "techniker",
       "typ": "statist",
-      "feld": [6, 10],
+      "feld": [5, 7],
       "eigenschaften": {
-        "von": "6,10",
-        "bis": "6,10",
-        "tun": "schaut einer Blitzpartie zu",
+        "tun": "richtet einen Bildschirmtisch ein",
         "wann": "tag",
-        "sagt": "statist.riverton.pavillon.zuschauer"
+        "von": "5,7",
+        "bis": "5,11"
       }
     },
     {
-      "name": "wettender",
+      "name": "trainerin",
       "typ": "statist",
-      "feld": [16, 8],
+      "feld": [17, 10],
       "eigenschaften": {
-        "von": "16,8",
-        "bis": "16,10",
-        "tun": "wettet um eine Limonade",
+        "tun": "tippt Zahlen in ein Tablet",
         "wann": "tag",
-        "sagt": "statist.riverton.pavillon.wettender"
+        "von": "17,8",
+        "bis": "17,12"
       }
     }
   ],

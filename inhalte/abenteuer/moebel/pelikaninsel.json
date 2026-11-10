@@ -320,6 +320,24 @@
       "art": "deko",
       "zustand": "gebraucht",
       "stil": "maritim"
+    },
+    "pk9Faehre": {
+      "quelle": "spiel/eigene/hafen_faehre.png",
+      "breite": 288,
+      "hoehe": 96,
+      "kollision": false,
+      "art": "fahrzeug",
+      "zustand": "gebraucht",
+      "stil": "maritim",
+      "blick": "keine"
+    },
+    "pk9BootWasser": {
+      "quelle": "modern-exteriors/Modern_Exteriors_16x16/ME_Theme_Sorter_16x16/10_Vehicles_Singles_16x16/ME_Singles_Vehicles_16x16_Boat_1_Left_1.png",
+      "breite": 64,
+      "hoehe": 32,
+      "kollision": false,
+      "stil": "maritim",
+      "zustand": "gebraucht"
     }
   }
 }

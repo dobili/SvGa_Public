@@ -1,13 +1,13 @@
 {
   "karte": "wegSummitCrossroads.praerie",
   "art": "aussen",
-  "beschreibung": "Weizenfelder auf beiden Seiten bis an die Ränder, der Erdweg schwingt in vier weiten Bögen hindurch. Am Hof das rote Farmhaus mit Windrad, darunter die rote Scheune mit weißem Fachwerk; vor dem Scheunentor die Holzklappe des Sturmkellers mit Ray Castillo. Traktor, Silo mit Anbau, Heuhaufen, Leiterwagen und Vogelscheuche. Dichter goldener Weizen ohne Lücken. Unten die Schotterstraße mit Strommasten und einem Schild nach Crossroads.",
+  "beschreibung": "Weizenfelder auf Ackerboden auf beiden Seiten bis an die Ränder, der Erdweg schwingt in vier weiten Bögen hindurch. Am Hof ein gekiester Hofplatz zwischen dem roten Farmhaus und dem Windrad, darunter die rote Scheune mit weißem Fachwerk; vor dem Scheunentor die zweiflügelige Holzklappe des Sturmkellers im Gras mit Ray Castillo. Ein Fahrweg führt zum Traktor und zum Silo mit Anbau, Heuhaufen, Leiterwagen und Vogelscheuche. Dichter goldener Weizen ohne Lücken. Unten die Schotterstraße mit Strommasten und einem Schild nach Crossroads.",
   "boden": "gras",
   "wandart": "gras",
   "boeden": {
     "e": "erde",
     "s": "schotter",
-    "f": "gras"
+    "f": "erde"
   },
   "raster": [
     "##############ee##############",
@@ -82,18 +82,18 @@
     "#ffffff.......ee.............#",
     "#ffffff.......ee.............#",
     "#ffffff.......ee.............#",
-    "#ffffff.......ee.............#",
-    "#ffffff.......ee.............#",
-    "#ffffff.......ee.............#",
-    "#ffffff.......ee.............#",
-    "#ffffff.......ee.............#",
-    "#ffffff.......ee.............#",
-    "#ffffff.......ee.............#",
-    "#ffffff.......ee.............#",
-    "#ffffff.......ee.............#",
-    "#ffffff.......ee.............#",
-    "#ffffff.......ee.............#",
-    "#ffffff.......ee.............#",
+    "#ffffff.......ee..sssssssss..#",
+    "#ffffff.......ee.sssssssssss.#",
+    "#ffffff.......ee.sssssssssss.#",
+    "#ffffff.......ee.sssssssssss.#",
+    "#ffffff.......ee.sssssssssss.#",
+    "#ffffff.......eessssssssssss.#",
+    "#ffffff.......eessssssssssss.#",
+    "#ffffff.......ee.sssssssssss.#",
+    "#ffffff.......ee.sssssssssss.#",
+    "#ffffff.......ee.sssssssssss.#",
+    "#ffffff.......ee.sssssssssss.#",
+    "#ffffff.......ee..sssssssss..#",
     "#ffffff.......ee.............#",
     "#ffffff.......ee.............#",
     "#ffffff.......ee.............#",
@@ -106,21 +106,21 @@
     "#............ee..............#",
     "#............eeeeeeeee.......#",
     "#...........eeeeeeeeee.......#",
-    "#...........ee...............#",
-    "#...........ee...............#",
-    "#...........ee...............#",
-    "#ffffffff..eee...............#",
-    "#ffffffff..ee................#",
-    "#ffffffff..ee................#",
-    "#ffffffff..ee................#",
-    "#ffffffff..ee................#",
-    "#ffffffff..ee................#",
-    "#ffffffff..ee................#",
-    "#ffffffff..ee................#",
-    "#ffffffff..ee................#",
-    "#ffffffff..ee................#",
-    "#ffffffff..ee................#",
-    "#ffffffff..ee................#",
+    "#...........ee......ss.......#",
+    "#...........ee......ss.......#",
+    "#...........ee......ss.......#",
+    "#ffffffff..eee......ss.......#",
+    "#ffffffff..ee.......ss.......#",
+    "#ffffffff..ee.......ss.......#",
+    "#ffffffff..ee.......ss.......#",
+    "#ffffffff..ee.......ss.......#",
+    "#ffffffff..ee.......ss.......#",
+    "#ffffffff..ee.......ss.......#",
+    "#ffffffff..ee.......ss.......#",
+    "#ffffffff..ee.......ss.......#",
+    "#ffffffff..ee.......ss.......#",
+    "#ffffffff..ee.......ss.......#",
+    "#ffffffff..ee.......ss.......#",
     "#ffffffff..ee................#",
     "#ffffffff..ee................#",
     "#ffffffff..ee................#",
@@ -263,10 +263,6 @@
       "feld": [13, 151]
     },
     {
-      "moebel": "wg4BlumeGelb",
-      "feld": [18, 72]
-    },
-    {
       "moebel": "wg4Gras",
       "feld": [3, 28]
     },
@@ -288,15 +284,7 @@
     },
     {
       "moebel": "wg4BlumeGelb",
-      "feld": [17, 78]
-    },
-    {
-      "moebel": "wg4BlumeGelb",
       "feld": [1, 97]
-    },
-    {
-      "moebel": "wg4BlumeGelb",
-      "feld": [20, 72]
     },
     {
       "moebel": "wg4BlumeGelb",
@@ -363,16 +351,8 @@
       "feld": [11, 41]
     },
     {
-      "moebel": "wg4Wildblumen",
-      "feld": [21, 100]
-    },
-    {
       "moebel": "wg4BlumeGelb",
       "feld": [12, 68]
-    },
-    {
-      "moebel": "wg4Wildblumen",
-      "feld": [25, 81]
     },
     {
       "moebel": "wg4Wildblumen",
@@ -405,10 +385,6 @@
     {
       "moebel": "wg4Gras",
       "feld": [22, 97]
-    },
-    {
-      "moebel": "wg4Wildblumen",
-      "feld": [27, 73]
     },
     {
       "moebel": "wg4Wildblumen",
@@ -2727,12 +2703,12 @@
       "feld": [19, 84]
     },
     {
-      "moebel": "sx7Sturmkeller",
+      "moebel": "sx9SturmkellerWiese",
       "feld": [23, 94]
     },
     {
       "moebel": "heTraktor",
-      "feld": [17, 103],
+      "feld": [23, 102],
       "bauteil_ok": true
     }
   ],

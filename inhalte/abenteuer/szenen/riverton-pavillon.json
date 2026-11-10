@@ -2,7 +2,7 @@
   "karte": "riverton.pavillon",
   "datei": "karten/riverton-pavillon.json",
   "art": "innen",
-  "beschreibung": "Parkpavillon von Riverton, Slicks Club (Szenen 29 bis 37): ein Holzbau mit Dielen und einer Fensterreihe zum Fluss. In der Mitte ist ein großes Schachbrett in den Boden eingelassen, acht mal acht Platten aus hellem Marmor und dunklem Holz in einem Rahmen aus Stein, rundherum ein Laufweg, damit man die großen Figuren tragen kann. Die Figuren liegen in zwei Holztruhen südlich des Bretts. An der Nordwand hängt das Gründungsbild des Clubs, davor zwei lange Bänke für Zuschauer mit Blick aufs Brett. Links und rechts je zwei lange Tische aus zwei hellen Platten, auf jeder Platte ein Brett, an jedem Brett ein Stuhl davor und dahinter. Vor der Tür ein Tischchen mit einem Limonadenglas, Pflanzen an den Ecken des Laufwegs, unten die Tür mit Fußmatte.",
+  "beschreibung": "Parkpavillon von Riverton, Slicks Club (Szenen 29 bis 37): ein Holzbau mit Dielen und einer Fensterreihe zum Fluss. In der Mitte ist ein großes Schachbrett in den Boden eingelassen, acht mal acht Platten aus hellem Marmor und dunklem Holz in einem Rahmen aus Stein, rundherum ein Laufweg, damit man die großen Figuren tragen kann. Auf dem Brett steht eine angefangene Partie mit großen Holzfiguren, die übrigen liegen in zwei Holztruhen südlich des Bretts. An der Nordwand hängt das Gründungsbild des Clubs, davor zwei lange Bänke für Zuschauer mit Blick aufs Brett. Links und rechts je drei lange Tische aus zwei hellen Platten, auf jeder Platte ein Brett, an jedem Brett ein Stuhl davor und dahinter. Vor der Tür ein Tischchen mit einem Limonadenglas, Pflanzen an den Ecken des Laufwegs, unten die Tür mit Fußmatte.",
   "wand": "holz",
   "boden": "dielen",
   "raster": [
@@ -330,6 +330,76 @@
       "moebel": "mf5TuerSuedHolz",
       "feld": [12, 17],
       "an_wand": true
+    },
+    {
+      "moebel": "rv9GrossWeissTurm",
+      "feld": [8, 13],
+      "versatz": [0, -6]
+    },
+    {
+      "moebel": "rv9GrossWeissKoenig",
+      "feld": [10, 13],
+      "versatz": [0, -6]
+    },
+    {
+      "moebel": "rv9GrossWeissBauer",
+      "feld": [9, 12],
+      "versatz": [0, -6]
+    },
+    {
+      "moebel": "rv9GrossWeissBauer",
+      "feld": [11, 12],
+      "versatz": [0, -6]
+    },
+    {
+      "moebel": "rv9GrossWeissSpringer",
+      "feld": [12, 11],
+      "versatz": [0, -6]
+    },
+    {
+      "moebel": "rv9GrossWeissBauer",
+      "feld": [10, 10],
+      "versatz": [0, -6]
+    },
+    {
+      "moebel": "rv9GrossWeissDame",
+      "feld": [13, 13],
+      "versatz": [0, -6]
+    },
+    {
+      "moebel": "rv9GrossSchwarzTurm",
+      "feld": [9, 6],
+      "versatz": [0, -6]
+    },
+    {
+      "moebel": "rv9GrossSchwarzKoenig",
+      "feld": [11, 6],
+      "versatz": [0, -6]
+    },
+    {
+      "moebel": "rv9GrossSchwarzBauer",
+      "feld": [10, 7],
+      "versatz": [0, -6]
+    },
+    {
+      "moebel": "rv9GrossSchwarzBauer",
+      "feld": [12, 7],
+      "versatz": [0, -6]
+    },
+    {
+      "moebel": "rv9GrossSchwarzBauer",
+      "feld": [11, 9],
+      "versatz": [0, -6]
+    },
+    {
+      "moebel": "rv9GrossSchwarzLaeufer",
+      "feld": [13, 8],
+      "versatz": [0, -6]
+    },
+    {
+      "moebel": "rv9GrossSchwarzDame",
+      "feld": [14, 6],
+      "versatz": [0, -6]
     }
   ],
   "ausloeser": [

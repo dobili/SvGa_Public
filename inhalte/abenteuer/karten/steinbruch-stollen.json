@@ -4419,6 +4419,11 @@
    "name": "kennung",
    "type": "string",
    "value": "steinbruch.stollen"
+  },
+  {
+   "name": "toenung",
+   "type": "string",
+   "value": "dunkel"
   }
  ]
 }

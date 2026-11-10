@@ -46,14 +46,7 @@ Szene heißt die Datei in `inhalte/abenteuer/szenen/` ohne `.json`.
 - [x] weg-cedar-riverton-bahndamm, weg-cedar-riverton-zedernwald (zweite Prüfung, niedrig-1; Datei `weg-cedar-riverton-2.md`)
 - [x] maple-falls-aussen, maple-falls-park, cedar-creek-aussen (zweite Prüfung, niedrig-1; Datei `maple-falls-cedar-creek-2.md`)
 - [x] weg-maple-cedar-flussweg, -landstrasse, -zedernpfad (zweite Prüfung, niedrig-1; eine Datei `weg-maple-cedar-2.md`)
-<<<<<<< HEAD
 - [x] Zustände aus Runde 8 (`python -m pipeline.abenteuer.zustaende`): je Grundkarte eine kurze Prüfung, ob der Zustand zur Beschreibung „Zustand: …“ passt; eine Datei `zustaende-runde8.md`
-- [x] weg-riverton-ironwood-1, weg-riverton-ironwood-2 (zweite Prüfung, mittel-4, mit Zuständen graffiti und ohne-tische; Dateien `…-2.md`)
-- [x] ironwood-aussen (zweite Prüfung, mittel-4, mit Zuständen meisterschaft und vermietet; `ironwood-aussen-2.md`)
-- [x] ironwood-kantine (dritte Prüfung, mit Zustand logo; `ironwood-kantine-3.md`), ironwood-museum, ironwood-umkleide, ironwood-mamas-zimmer (zweite Prüfung, mittel-4; eine Datei `ironwood-innen-2.md`)
-- [x] steinbruch-grube (dritte Prüfung, jetzt mit Felskanten; `steinbruch-grube-3.md`), steinbruch-stollen (zweite Prüfung; `steinbruch-stollen-2.md`)
-=======
-- [ ] Zustände aus Runde 8 (`python -m pipeline.abenteuer.zustaende`): je Grundkarte eine kurze Prüfung, ob der Zustand zur Beschreibung „Zustand: …“ passt; eine Datei `zustaende-runde8.md`
 - [ ] port-delacroix-aussen mit Zustand musikhaus-neu (Runde 9, mittel-1; Bilder `bildwuensche/laeden_schilder.py`)
 - [ ] port-delacroix-musikhaus (Runde 9, mittel-1)
 - [ ] port-delacroix-werkstatt (Runde 9, mittel-1)
@@ -69,11 +62,10 @@ Szene heißt die Datei in `inhalte/abenteuer/szenen/` ohne `.json`.
 - [ ] weg-ghost-capital-leuchtturm (Runde 9, mittel-1)
 - [ ] weg-ironwood-silicon-glasbruecke (dritte Prüfung, mittel-1, Datei `weg-ironwood-silicon-glasbruecke-3.md`; Bilder `bildwuensche/matschsaum.py`)
 - [ ] weg-ironwood-silicon-raststaette (dritte Prüfung, mittel-1, Datei `weg-ironwood-silicon-raststaette-3.md`; Bilder `bildwuensche/wasser_watt.py`, `fassaden_zweck.py` neu)
-- [ ] weg-riverton-ironwood-1, weg-riverton-ironwood-2 (zweite Prüfung, mittel-4, mit Zuständen graffiti und ohne-tische; Dateien `…-2.md`)
-- [ ] ironwood-aussen (zweite Prüfung, mittel-4, mit Zuständen meisterschaft und vermietet; `ironwood-aussen-2.md`)
-- [ ] ironwood-kantine (dritte Prüfung, mit Zustand logo; `ironwood-kantine-3.md`), ironwood-museum, ironwood-umkleide, ironwood-mamas-zimmer (zweite Prüfung, mittel-4; eine Datei `ironwood-innen-2.md`)
-- [ ] steinbruch-grube (dritte Prüfung, jetzt mit Felskanten; `steinbruch-grube-3.md`), steinbruch-stollen (zweite Prüfung; `steinbruch-stollen-2.md`)
->>>>>>> 1fbc8a87fbf03c526c4ae53398b584bca149f84a
+- [x] weg-riverton-ironwood-1, weg-riverton-ironwood-2 (zweite Prüfung, mittel-4, mit Zuständen graffiti und ohne-tische; Dateien `…-2.md`)
+- [x] ironwood-aussen (zweite Prüfung, mittel-4, mit Zuständen meisterschaft und vermietet; `ironwood-aussen-2.md`)
+- [x] ironwood-kantine (dritte Prüfung, mit Zustand logo; `ironwood-kantine-3.md`), ironwood-museum, ironwood-umkleide, ironwood-mamas-zimmer (zweite Prüfung, mittel-4; eine Datei `ironwood-innen-2.md`)
+- [x] steinbruch-grube (dritte Prüfung, jetzt mit Felskanten; `steinbruch-grube-3.md`), steinbruch-stollen (zweite Prüfung; `steinbruch-stollen-2.md`)
 - [x] riverton-aussen und die vier Innenräume (dritte Prüfung, mittel-3; Bahnhof mit Uhrturm, Glastüren; Bilder privat ab c0febaac; Dateien `riverton-aussen-3.md`, `riverton-innen-3.md`)
 - [ ] desert-springs-aussen (Runde 9, mittel-2; mit Zustand meisterschaft)
 - [ ] desert-springs-garage, desert-springs-antiquariat (Runde 9, mittel-2; Antiquariat mit Zustand leihgabe)

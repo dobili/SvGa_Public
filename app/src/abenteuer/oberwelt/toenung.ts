@@ -24,7 +24,9 @@ export interface Schleier {
 
 /** Schleier je Tönung; Sepia und Dunkel haben eigene Wege (CSS-Filter, Lichtkreis). */
 export const SCHLEIER: Readonly<Partial<Record<Toenung, Schleier>>> = {
-  nebel: { farbe: 0xd8dde0, deckkraft: 0.45 },
+  // Nebel 0,30 statt 0,45 (10.11.2026): Bayou und Riesenbäume waren zu blass, um Dinge zu
+  // unterscheiden; gleich wie pipeline/abenteuer/toenung.py.
+  nebel: { farbe: 0xd8dde0, deckkraft: 0.3 },
   nacht: { farbe: 0x0b1530, deckkraft: 0.55 },
   abend: { farbe: 0xff8a3d, deckkraft: 0.18 },
 };

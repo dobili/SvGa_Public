@@ -3297,6 +3297,42 @@
       "art": "deko",
       "zustand": "gebraucht",
       "stil": "schule"
+    },
+    "mf10Basketball": {
+      "quelle": "spiel/eigene/basketball_halbfeld.png",
+      "breite": 96,
+      "hoehe": 80,
+      "kollision": false,
+      "art": "boden",
+      "zustand": "gebraucht",
+      "stil": "modern"
+    },
+    "mf10TorOffen1": {
+      "quelle": "modern-farm/Single_Files_16x16/Fences_16x16/Wooden_Fence_Type_4_Brown_Gate_1_16x16.png",
+      "breite": 16,
+      "hoehe": 16,
+      "kollision": false,
+      "art": "zaun",
+      "zustand": "gebraucht",
+      "stil": "klassisch"
+    },
+    "mf10TorOffen2": {
+      "quelle": "modern-farm/Single_Files_16x16/Fences_16x16/Wooden_Fence_Type_4_Brown_Gate_2_16x16.png",
+      "breite": 16,
+      "hoehe": 16,
+      "kollision": false,
+      "art": "zaun",
+      "zustand": "gebraucht",
+      "stil": "klassisch"
+    },
+    "mf10SchildVerkauf": {
+      "quelle": "spiel/eigene/schild_zu_verkaufen.png",
+      "breite": 48,
+      "hoehe": 32,
+      "kollision": true,
+      "art": "schild",
+      "zustand": "gebraucht",
+      "stil": "klassisch"
     }
   }
 }

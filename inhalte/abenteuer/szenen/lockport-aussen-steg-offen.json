@@ -20,8 +20,8 @@
     "#........................................................................#",
     "#........................................................................#",
     "#........................................................................#",
-    "#eeeeeeeeeeeeeeeeeeeeeeeeeeeeeeeeeeeeeeeeeeeeeeeeeeeeeeeeeeeeeeeeeeeeeeeee",
-    "#eeeeeeeeeeeeeeeeeeeeeeeeeeeeeeeeeeeeeeeeeeeeeeeeeeeeeeeeeeeeeeeeeeeeeeeee",
+    "#ppppppppppppppppppppppppppppppppppppppppppppppppppppppppppppppppppppppppp",
+    "#ppppppppppppppppppppppppppppppppppppppppppppppppppppppppppppppppppppppppp",
     "#pppppppppppppppppppppppppppppppppppppppppppppppppppppppppppppppppppppppp#",
     "~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~hh~~~~~~~~~~~~~~~~~~~~~~~~~~~~hh~~~~~~~~~~~~",
     "~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~hh~~~~~~~~~~~~~~~~~~~~~~~~~~~~hh~~~~~~~~~~~~",
@@ -87,7 +87,7 @@
     },
     {
       "moebel": "cc3Raetseltafel",
-      "feld": [36, 8]
+      "feld": [54, 8]
     },
     {
       "moebel": "cc5Poller",
@@ -154,8 +154,9 @@
       "feld": [64, 8]
     },
     {
-      "moebel": "ca8Eisenwaren",
-      "feld": [28, 23]
+      "moebel": "ds8Gemischtwaren",
+      "feld": [28, 23],
+      "id": "ausruester"
     },
     {
       "moebel": "ld8Stemmtor",
@@ -229,46 +230,6 @@
       "vorn": true
     },
     {
-      "moebel": "svHausRot",
-      "feld": [12, 6]
-    },
-    {
-      "moebel": "pd6HausRot",
-      "feld": [29, 6]
-    },
-    {
-      "moebel": "svHausGruen",
-      "feld": [66, 6]
-    },
-    {
-      "moebel": "rv5HolzhausRot",
-      "feld": [3, 28]
-    },
-    {
-      "moebel": "rv5HolzhausGruen",
-      "feld": [58, 28]
-    },
-    {
-      "moebel": "pd6HausRot2",
-      "feld": [3, 41]
-    },
-    {
-      "moebel": "rv5HolzhausRot",
-      "feld": [15, 41]
-    },
-    {
-      "moebel": "svHausBlau",
-      "feld": [22, 41]
-    },
-    {
-      "moebel": "pd6HausGruen",
-      "feld": [59, 41]
-    },
-    {
-      "moebel": "rv5HolzhausGruen",
-      "feld": [65, 41]
-    },
-    {
       "moebel": "cc7Bretterstapel",
       "feld": [63, 23]
     },
@@ -282,15 +243,11 @@
     },
     {
       "moebel": "mfBank",
-      "feld": [28, 40]
+      "feld": [30, 37]
     },
     {
       "moebel": "ld5WaescheBunt",
       "feld": [15, 37]
-    },
-    {
-      "moebel": "ld5Waesche",
-      "feld": [4, 37]
     },
     {
       "moebel": "mf2Blumenbeet",
@@ -383,48 +340,8 @@
       "feld": [66, 21]
     },
     {
-      "moebel": "pd6HausRot",
-      "feld": [38, 5]
-    },
-    {
-      "moebel": "svHausBlau",
-      "feld": [44, 5]
-    },
-    {
-      "moebel": "rv5HolzhausGruen",
-      "feld": [50, 5]
-    },
-    {
-      "moebel": "mf4Gemuesebeet",
-      "feld": [39, 2]
-    },
-    {
-      "moebel": "mf4Gemuesebeet",
-      "feld": [45, 2]
-    },
-    {
       "moebel": "wg4Erle",
       "feld": [48, 1]
-    },
-    {
-      "moebel": "rv5HolzhausRot",
-      "feld": [39, 27]
-    },
-    {
-      "moebel": "svHausGruen",
-      "feld": [45, 27]
-    },
-    {
-      "moebel": "pd6HausRot2",
-      "feld": [51, 27]
-    },
-    {
-      "moebel": "mf2Blumenbeet",
-      "feld": [39, 24]
-    },
-    {
-      "moebel": "mf2Blumenbeet",
-      "feld": [45, 24]
     },
     {
       "moebel": "wg4Erle",
@@ -433,14 +350,6 @@
     {
       "moebel": "mf4BaumRot",
       "feld": [53, 22]
-    },
-    {
-      "moebel": "svHausRot",
-      "feld": [41, 40]
-    },
-    {
-      "moebel": "rv5HolzhausGruen",
-      "feld": [47, 40]
     },
     {
       "moebel": "mf4Gemuesebeet",
@@ -457,6 +366,83 @@
     {
       "moebel": "wg4Erle",
       "feld": [54, 37]
+    },
+    {
+      "moebel": "sc7Ferienhuette",
+      "feld": [12, 4]
+    },
+    {
+      "moebel": "sc7FerienhuetteB",
+      "feld": [29, 5]
+    },
+    {
+      "moebel": "cr8Holzfaellerhuette",
+      "feld": [68, 5]
+    },
+    {
+      "moebel": "sc7FerienhuetteB",
+      "feld": [3, 27]
+    },
+    {
+      "moebel": "cr8Holzfaellerhuette",
+      "feld": [58, 27]
+    },
+    {
+      "moebel": "mf7Gartenhaus",
+      "feld": [16, 41]
+    },
+    {
+      "moebel": "wc5Gartenhaus",
+      "feld": [23, 41]
+    },
+    {
+      "moebel": "mf7Gartenhaus",
+      "feld": [60, 41]
+    },
+    {
+      "moebel": "mf7Gartenhaus",
+      "feld": [66, 41]
+    },
+    {
+      "moebel": "sc7Huette",
+      "feld": [37, 2]
+    },
+    {
+      "moebel": "sc7Huette",
+      "feld": [38, 24]
+    },
+    {
+      "moebel": "mf7Gartenhaus",
+      "feld": [46, 27]
+    },
+    {
+      "moebel": "sc7Ferienhuette",
+      "feld": [51, 26]
+    },
+    {
+      "moebel": "wc5Gartenhaus",
+      "feld": [42, 40]
+    },
+    {
+      "moebel": "wc5Gartenhaus",
+      "feld": [48, 40]
+    },
+    {
+      "moebel": "ld9SchildAnkerTaue",
+      "auf": "ausruester",
+      "versatz": [0, 10]
+    },
+    {
+      "moebel": "mf4BaumRot",
+      "feld": [45, 3]
+    },
+    {
+      "moebel": "wg4Erle",
+      "feld": [51, 5]
+    },
+    {
+      "moebel": "rv8Baeckerei",
+      "feld": [3, 36]
     }
   ],
   "ausloeser": [
@@ -712,7 +698,7 @@
     {
       "name": "imogen",
       "typ": "statist",
-      "feld": [55, 9],
+      "feld": [54, 8],
       "eigenschaften": {
         "tun": "steht mit dem Schlüsselbund an der Tafel",
         "wann": "tag"

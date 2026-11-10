@@ -3,7 +3,7 @@
   "datei": "karten/weg-cedar-riverton-bahndamm.json",
   "art": "aussen",
   "wand": "damm",
-  "beschreibung": "Hauptfassung (früher C). Der Bahndamm: Gleis mitten auf einer Schotterkrone (Reihen 6–10), Böschung nach Süden, Nordböschung in der Ansicht von oben verdeckt; im Norden Wiese mit Hecke, Stellwerk mit Blick aufs Gleis, Signal, ein Abstellgleis mit Güterwagen und Prellbock und eine Kuhweide hinter dem Viehdurchlass. Der Bahnsteigrest oben auf dem Damm mit zwei Bänken, Laternen und Treppe. Südlich der Weg durch Wiese und Birkenwald, zum Fluss mit Bank, an Kleingärten mit Kürbis und Sonnenblumen vorbei, am Stadtrand Lagerzaun und Lagerhalle hinter der Plakatwand von Perfect Move.",
+  "beschreibung": "Hauptfassung (früher C). Der Bahndamm: Gleis mitten auf einer Schotterkrone (Reihen 6–9), Böschung nach Süden; die Nordböschung fällt vom Betrachter weg und zeigt sich als dunklerer Grasstreifen mit Kante; im Norden Wiese mit Hecke, Stellwerk mit Blick aufs Gleis, Signal und eine Kuhweide hinter dem Viehdurchlass. Der Bahnsteigrest oben auf dem Damm mit zwei Bänken längs zum Gleis, Laternen und Treppe. Südlich der Weg durch Wiese und Birkenwald, zum Fluss mit Bank, an Kleingärten mit Kürbis und Sonnenblumen vorbei, am Stadtrand Lagerzaun und Lagerhalle hinter der Plakatwand von Perfect Move.",
   "boden": "gras",
   "wandart": "gras",
   "boeden": {
@@ -34,8 +34,8 @@
     "#kkkkkkkkkkkkkkkkkkkkkkkkkkkkkkkkkkkkkkkkkkkkkkkkkkkkkkkkkkkkkkkkkkkkkkkkkkkkkkkkkkkkkkkkkkkkkkkkkkkkkkkkkkkkkkkkkkkkkkkkkkkkkkkkkkkkkkkkkkkkkkkkkkkk#",
     "#kkkkkkkkkkkkkkkkkkkkkkkkkkkkkkkkkkkkkkkkkkkkkkkkkkkkkkkkkkkkkkkkkkkkkkkkkkkkkkkkkkkkkkkkkkkkkkkkkkkkkkkkkkkkkkkkkkkkkkkkkkkkkkkkkkkkkkkkkkkkkkkkkkkk#",
     "#kkkkkkkkkkkkkkkkkkkkkkkkkkkkkkkkkkkkkkkkkkkkkkkpppppppppppppkkkkkkkkkkkkkkkkkkkkkkkkkkkkkkkkkkkkkkkkkkkkkkkkkkkkkkkkkkkkkkkkkkkkkkkkkkkkkkkkkkkkkkkk#",
-    "#kkkkkkkkkkkkkkkkkkkkkkkkkkkkkkkkkkkkkkkkkkkkkkkpppppppppppppkkkkkkkkkkkkkkkkkkkkkkkkkkkkkkkkkkkkkkkkkkkkkkkkkkkkkkkkkkkkkkkkkkkkkkkkkkkkkkkkkkkkkkkk#",
-    "#####################################################kk#########ee####################################################################################",
+    "################################################ppppppppppppp#########################################################################################",
+    "################################################ppppppppppppp###ee####################################################################################",
     "#####################################################kk#########ee####################################################################################",
     "#...............................eeeeeeeeeeeeeeeeeeeeeeeeeeeeeeeeeeeeeeee..........................................eeeeeeeeee...................eeeeeee",
     "#..............................eeeeeeeeeeeeeeeeeeeeeeeeeeeeeeeeeeeeeeeeee........................................eeeeeeeeeeee.................eeeeeeee",
@@ -61,6 +61,606 @@
     "##################################################~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~#########################"
   ],
   "objekte": [
+    {
+      "moebel": "wc9BoeschungNord",
+      "feld": [0, 5]
+    },
+    {
+      "moebel": "wc9BoeschungNord",
+      "feld": [1, 5]
+    },
+    {
+      "moebel": "wc9BoeschungNord",
+      "feld": [2, 5]
+    },
+    {
+      "moebel": "wc9BoeschungNord",
+      "feld": [3, 5]
+    },
+    {
+      "moebel": "wc9BoeschungNord",
+      "feld": [4, 5]
+    },
+    {
+      "moebel": "wc9BoeschungNord",
+      "feld": [5, 5]
+    },
+    {
+      "moebel": "wc9BoeschungNord",
+      "feld": [6, 5]
+    },
+    {
+      "moebel": "wc9BoeschungNord",
+      "feld": [7, 5]
+    },
+    {
+      "moebel": "wc9BoeschungNord",
+      "feld": [8, 5]
+    },
+    {
+      "moebel": "wc9BoeschungNord",
+      "feld": [9, 5]
+    },
+    {
+      "moebel": "wc9BoeschungNord",
+      "feld": [10, 5]
+    },
+    {
+      "moebel": "wc9BoeschungNord",
+      "feld": [11, 5]
+    },
+    {
+      "moebel": "wc9BoeschungNord",
+      "feld": [12, 5]
+    },
+    {
+      "moebel": "wc9BoeschungNord",
+      "feld": [13, 5]
+    },
+    {
+      "moebel": "wc9BoeschungNord",
+      "feld": [14, 5]
+    },
+    {
+      "moebel": "wc9BoeschungNord",
+      "feld": [15, 5]
+    },
+    {
+      "moebel": "wc9BoeschungNord",
+      "feld": [16, 5]
+    },
+    {
+      "moebel": "wc9BoeschungNord",
+      "feld": [17, 5]
+    },
+    {
+      "moebel": "wc9BoeschungNord",
+      "feld": [18, 5]
+    },
+    {
+      "moebel": "wc9BoeschungNord",
+      "feld": [19, 5]
+    },
+    {
+      "moebel": "wc9BoeschungNord",
+      "feld": [20, 5]
+    },
+    {
+      "moebel": "wc9BoeschungNord",
+      "feld": [21, 5]
+    },
+    {
+      "moebel": "wc9BoeschungNord",
+      "feld": [22, 5]
+    },
+    {
+      "moebel": "wc9BoeschungNord",
+      "feld": [23, 5]
+    },
+    {
+      "moebel": "wc9BoeschungNord",
+      "feld": [24, 5]
+    },
+    {
+      "moebel": "wc9BoeschungNord",
+      "feld": [25, 5]
+    },
+    {
+      "moebel": "wc9BoeschungNord",
+      "feld": [26, 5]
+    },
+    {
+      "moebel": "wc9BoeschungNord",
+      "feld": [27, 5]
+    },
+    {
+      "moebel": "wc9BoeschungNord",
+      "feld": [28, 5]
+    },
+    {
+      "moebel": "wc9BoeschungNord",
+      "feld": [29, 5]
+    },
+    {
+      "moebel": "wc9BoeschungNord",
+      "feld": [30, 5]
+    },
+    {
+      "moebel": "wc9BoeschungNord",
+      "feld": [31, 5]
+    },
+    {
+      "moebel": "wc9BoeschungNord",
+      "feld": [32, 5]
+    },
+    {
+      "moebel": "wc9BoeschungNord",
+      "feld": [33, 5]
+    },
+    {
+      "moebel": "wc9BoeschungNord",
+      "feld": [34, 5]
+    },
+    {
+      "moebel": "wc9BoeschungNord",
+      "feld": [35, 5]
+    },
+    {
+      "moebel": "wc9BoeschungNord",
+      "feld": [36, 5]
+    },
+    {
+      "moebel": "wc9BoeschungNord",
+      "feld": [37, 5]
+    },
+    {
+      "moebel": "wc9BoeschungNord",
+      "feld": [38, 5]
+    },
+    {
+      "moebel": "wc9BoeschungNord",
+      "feld": [39, 5]
+    },
+    {
+      "moebel": "wc9BoeschungNord",
+      "feld": [40, 5]
+    },
+    {
+      "moebel": "wc9BoeschungNord",
+      "feld": [41, 5]
+    },
+    {
+      "moebel": "wc9BoeschungNord",
+      "feld": [42, 5]
+    },
+    {
+      "moebel": "wc9BoeschungNord",
+      "feld": [43, 5]
+    },
+    {
+      "moebel": "wc9BoeschungNord",
+      "feld": [44, 5]
+    },
+    {
+      "moebel": "wc9BoeschungNord",
+      "feld": [45, 5]
+    },
+    {
+      "moebel": "wc9BoeschungNord",
+      "feld": [46, 5]
+    },
+    {
+      "moebel": "wc9BoeschungNord",
+      "feld": [47, 5]
+    },
+    {
+      "moebel": "wc9BoeschungNord",
+      "feld": [48, 5]
+    },
+    {
+      "moebel": "wc9BoeschungNord",
+      "feld": [49, 5]
+    },
+    {
+      "moebel": "wc9BoeschungNord",
+      "feld": [50, 5]
+    },
+    {
+      "moebel": "wc9BoeschungNord",
+      "feld": [51, 5]
+    },
+    {
+      "moebel": "wc9BoeschungNord",
+      "feld": [52, 5]
+    },
+    {
+      "moebel": "wc9BoeschungNord",
+      "feld": [53, 5]
+    },
+    {
+      "moebel": "wc9BoeschungNord",
+      "feld": [54, 5]
+    },
+    {
+      "moebel": "wc9BoeschungNord",
+      "feld": [55, 5]
+    },
+    {
+      "moebel": "wc9BoeschungNord",
+      "feld": [56, 5]
+    },
+    {
+      "moebel": "wc9BoeschungNord",
+      "feld": [57, 5]
+    },
+    {
+      "moebel": "wc9BoeschungNord",
+      "feld": [58, 5]
+    },
+    {
+      "moebel": "wc9BoeschungNord",
+      "feld": [59, 5]
+    },
+    {
+      "moebel": "wc9BoeschungNord",
+      "feld": [60, 5]
+    },
+    {
+      "moebel": "wc9BoeschungNord",
+      "feld": [61, 5]
+    },
+    {
+      "moebel": "wc9BoeschungNord",
+      "feld": [62, 5]
+    },
+    {
+      "moebel": "wc9BoeschungNord",
+      "feld": [63, 5]
+    },
+    {
+      "moebel": "wc9BoeschungNord",
+      "feld": [64, 5]
+    },
+    {
+      "moebel": "wc9BoeschungNord",
+      "feld": [65, 5]
+    },
+    {
+      "moebel": "wc9BoeschungNord",
+      "feld": [66, 5]
+    },
+    {
+      "moebel": "wc9BoeschungNord",
+      "feld": [67, 5]
+    },
+    {
+      "moebel": "wc9BoeschungNord",
+      "feld": [68, 5]
+    },
+    {
+      "moebel": "wc9BoeschungNord",
+      "feld": [69, 5]
+    },
+    {
+      "moebel": "wc9BoeschungNord",
+      "feld": [70, 5]
+    },
+    {
+      "moebel": "wc9BoeschungNord",
+      "feld": [71, 5]
+    },
+    {
+      "moebel": "wc9BoeschungNord",
+      "feld": [72, 5]
+    },
+    {
+      "moebel": "wc9BoeschungNord",
+      "feld": [73, 5]
+    },
+    {
+      "moebel": "wc9BoeschungNord",
+      "feld": [74, 5]
+    },
+    {
+      "moebel": "wc9BoeschungNord",
+      "feld": [75, 5]
+    },
+    {
+      "moebel": "wc9BoeschungNord",
+      "feld": [76, 5]
+    },
+    {
+      "moebel": "wc9BoeschungNord",
+      "feld": [77, 5]
+    },
+    {
+      "moebel": "wc9BoeschungNord",
+      "feld": [78, 5]
+    },
+    {
+      "moebel": "wc9BoeschungNord",
+      "feld": [79, 5]
+    },
+    {
+      "moebel": "wc9BoeschungNord",
+      "feld": [80, 5]
+    },
+    {
+      "moebel": "wc9BoeschungNord",
+      "feld": [81, 5]
+    },
+    {
+      "moebel": "wc9BoeschungNord",
+      "feld": [82, 5]
+    },
+    {
+      "moebel": "wc9BoeschungNord",
+      "feld": [83, 5]
+    },
+    {
+      "moebel": "wc9BoeschungNord",
+      "feld": [84, 5]
+    },
+    {
+      "moebel": "wc9BoeschungNord",
+      "feld": [85, 5]
+    },
+    {
+      "moebel": "wc9BoeschungNord",
+      "feld": [86, 5]
+    },
+    {
+      "moebel": "wc9BoeschungNord",
+      "feld": [87, 5]
+    },
+    {
+      "moebel": "wc9BoeschungNord",
+      "feld": [88, 5]
+    },
+    {
+      "moebel": "wc9BoeschungNord",
+      "feld": [89, 5]
+    },
+    {
+      "moebel": "wc9BoeschungNord",
+      "feld": [90, 5]
+    },
+    {
+      "moebel": "wc9BoeschungNord",
+      "feld": [91, 5]
+    },
+    {
+      "moebel": "wc9BoeschungNord",
+      "feld": [92, 5]
+    },
+    {
+      "moebel": "wc9BoeschungNord",
+      "feld": [93, 5]
+    },
+    {
+      "moebel": "wc9BoeschungNord",
+      "feld": [94, 5]
+    },
+    {
+      "moebel": "wc9BoeschungNord",
+      "feld": [95, 5]
+    },
+    {
+      "moebel": "wc9BoeschungNord",
+      "feld": [96, 5]
+    },
+    {
+      "moebel": "wc9BoeschungNord",
+      "feld": [97, 5]
+    },
+    {
+      "moebel": "wc9BoeschungNord",
+      "feld": [98, 5]
+    },
+    {
+      "moebel": "wc9BoeschungNord",
+      "feld": [99, 5]
+    },
+    {
+      "moebel": "wc9BoeschungNord",
+      "feld": [100, 5]
+    },
+    {
+      "moebel": "wc9BoeschungNord",
+      "feld": [101, 5]
+    },
+    {
+      "moebel": "wc9BoeschungNord",
+      "feld": [102, 5]
+    },
+    {
+      "moebel": "wc9BoeschungNord",
+      "feld": [103, 5]
+    },
+    {
+      "moebel": "wc9BoeschungNord",
+      "feld": [104, 5]
+    },
+    {
+      "moebel": "wc9BoeschungNord",
+      "feld": [105, 5]
+    },
+    {
+      "moebel": "wc9BoeschungNord",
+      "feld": [106, 5]
+    },
+    {
+      "moebel": "wc9BoeschungNord",
+      "feld": [107, 5]
+    },
+    {
+      "moebel": "wc9BoeschungNord",
+      "feld": [108, 5]
+    },
+    {
+      "moebel": "wc9BoeschungNord",
+      "feld": [109, 5]
+    },
+    {
+      "moebel": "wc9BoeschungNord",
+      "feld": [110, 5]
+    },
+    {
+      "moebel": "wc9BoeschungNord",
+      "feld": [111, 5]
+    },
+    {
+      "moebel": "wc9BoeschungNord",
+      "feld": [112, 5]
+    },
+    {
+      "moebel": "wc9BoeschungNord",
+      "feld": [113, 5]
+    },
+    {
+      "moebel": "wc9BoeschungNord",
+      "feld": [114, 5]
+    },
+    {
+      "moebel": "wc9BoeschungNord",
+      "feld": [115, 5]
+    },
+    {
+      "moebel": "wc9BoeschungNord",
+      "feld": [116, 5]
+    },
+    {
+      "moebel": "wc9BoeschungNord",
+      "feld": [117, 5]
+    },
+    {
+      "moebel": "wc9BoeschungNord",
+      "feld": [118, 5]
+    },
+    {
+      "moebel": "wc9BoeschungNord",
+      "feld": [119, 5]
+    },
+    {
+      "moebel": "wc9BoeschungNord",
+      "feld": [120, 5]
+    },
+    {
+      "moebel": "wc9BoeschungNord",
+      "feld": [121, 5]
+    },
+    {
+      "moebel": "wc9BoeschungNord",
+      "feld": [122, 5]
+    },
+    {
+      "moebel": "wc9BoeschungNord",
+      "feld": [123, 5]
+    },
+    {
+      "moebel": "wc9BoeschungNord",
+      "feld": [124, 5]
+    },
+    {
+      "moebel": "wc9BoeschungNord",
+      "feld": [125, 5]
+    },
+    {
+      "moebel": "wc9BoeschungNord",
+      "feld": [126, 5]
+    },
+    {
+      "moebel": "wc9BoeschungNord",
+      "feld": [127, 5]
+    },
+    {
+      "moebel": "wc9BoeschungNord",
+      "feld": [128, 5]
+    },
+    {
+      "moebel": "wc9BoeschungNord",
+      "feld": [129, 5]
+    },
+    {
+      "moebel": "wc9BoeschungNord",
+      "feld": [130, 5]
+    },
+    {
+      "moebel": "wc9BoeschungNord",
+      "feld": [131, 5]
+    },
+    {
+      "moebel": "wc9BoeschungNord",
+      "feld": [132, 5]
+    },
+    {
+      "moebel": "wc9BoeschungNord",
+      "feld": [133, 5]
+    },
+    {
+      "moebel": "wc9BoeschungNord",
+      "feld": [134, 5]
+    },
+    {
+      "moebel": "wc9BoeschungNord",
+      "feld": [135, 5]
+    },
+    {
+      "moebel": "wc9BoeschungNord",
+      "feld": [136, 5]
+    },
+    {
+      "moebel": "wc9BoeschungNord",
+      "feld": [137, 5]
+    },
+    {
+      "moebel": "wc9BoeschungNord",
+      "feld": [138, 5]
+    },
+    {
+      "moebel": "wc9BoeschungNord",
+      "feld": [139, 5]
+    },
+    {
+      "moebel": "wc9BoeschungNord",
+      "feld": [140, 5]
+    },
+    {
+      "moebel": "wc9BoeschungNord",
+      "feld": [141, 5]
+    },
+    {
+      "moebel": "wc9BoeschungNord",
+      "feld": [142, 5]
+    },
+    {
+      "moebel": "wc9BoeschungNord",
+      "feld": [143, 5]
+    },
+    {
+      "moebel": "wc9BoeschungNord",
+      "feld": [144, 5]
+    },
+    {
+      "moebel": "wc9BoeschungNord",
+      "feld": [145, 5]
+    },
+    {
+      "moebel": "wc9BoeschungNord",
+      "feld": [146, 5]
+    },
+    {
+      "moebel": "wc9BoeschungNord",
+      "feld": [147, 5]
+    },
+    {
+      "moebel": "wc9BoeschungNord",
+      "feld": [148, 5]
+    },
+    {
+      "moebel": "wc9BoeschungNord",
+      "feld": [149, 5]
+    },
     {
       "moebel": "wc5Gleis",
       "feld": [0, 7],
@@ -989,21 +1589,8 @@
       "versatz": [8, 0]
     },
     {
-      "moebel": "wc5Waggon",
-      "feld": [103, 1],
-      "vorn": true
-    },
-    {
       "moebel": "wc5Schild",
       "feld": [60, 8]
-    },
-    {
-      "moebel": "wc5Bahnbank",
-      "feld": [49, 9]
-    },
-    {
-      "moebel": "wc5Bahnbank",
-      "feld": [53, 9]
     },
     {
       "moebel": "wc5Bank",
@@ -2042,10 +2629,6 @@
     },
     {
       "moebel": "wc5Stufen",
-      "feld": [53, 11]
-    },
-    {
-      "moebel": "wc5Stufen",
       "feld": [53, 12]
     },
     {
@@ -2113,105 +2696,6 @@
       "moebel": "wc8TorOffen2",
       "feld": [97, 19],
       "bauteil_ok": true
-    },
-    {
-      "moebel": "wc5Gleis",
-      "feld": [97, 3],
-      "bauteil_ok": true
-    },
-    {
-      "moebel": "wc5Gleis",
-      "feld": [98, 3],
-      "bauteil_ok": true
-    },
-    {
-      "moebel": "wc5Gleis",
-      "feld": [99, 3],
-      "bauteil_ok": true
-    },
-    {
-      "moebel": "wc5Gleis",
-      "feld": [100, 3],
-      "bauteil_ok": true
-    },
-    {
-      "moebel": "wc5Gleis",
-      "feld": [101, 3],
-      "bauteil_ok": true
-    },
-    {
-      "moebel": "wc5Gleis",
-      "feld": [102, 3],
-      "bauteil_ok": true
-    },
-    {
-      "moebel": "wc5Gleis",
-      "feld": [103, 3],
-      "bauteil_ok": true
-    },
-    {
-      "moebel": "wc5Gleis",
-      "feld": [104, 3],
-      "bauteil_ok": true
-    },
-    {
-      "moebel": "wc5Gleis",
-      "feld": [105, 3],
-      "bauteil_ok": true
-    },
-    {
-      "moebel": "wc5Gleis",
-      "feld": [106, 3],
-      "bauteil_ok": true
-    },
-    {
-      "moebel": "wc5Gleis",
-      "feld": [107, 3],
-      "bauteil_ok": true
-    },
-    {
-      "moebel": "wc5Gleis",
-      "feld": [108, 3],
-      "bauteil_ok": true
-    },
-    {
-      "moebel": "wc5Gleis",
-      "feld": [109, 3],
-      "bauteil_ok": true
-    },
-    {
-      "moebel": "wc5Gleis",
-      "feld": [110, 3],
-      "bauteil_ok": true
-    },
-    {
-      "moebel": "wc5Gleis",
-      "feld": [111, 3],
-      "bauteil_ok": true
-    },
-    {
-      "moebel": "wc5Gleis",
-      "feld": [112, 3],
-      "bauteil_ok": true
-    },
-    {
-      "moebel": "wc5Gleis",
-      "feld": [113, 3],
-      "bauteil_ok": true
-    },
-    {
-      "moebel": "wc5Gleis",
-      "feld": [114, 3],
-      "bauteil_ok": true
-    },
-    {
-      "moebel": "wc5Gleis",
-      "feld": [115, 3],
-      "bauteil_ok": true
-    },
-    {
-      "moebel": "cc8PrellbockQuer",
-      "feld": [96, 3]
     },
     {
       "moebel": "wc5ZaunOL",
@@ -2377,6 +2861,14 @@
     {
       "moebel": "wc5BirkeKlein",
       "feld": [2, 30]
+    },
+    {
+      "moebel": "scBankSeitlich",
+      "feld": [49, 9]
+    },
+    {
+      "moebel": "scBankSeitlich",
+      "feld": [57, 9]
     }
   ],
   "ausloeser": [
@@ -2515,16 +3007,6 @@
         "sagt": "statist.wegCedarRiverton.bahndamm.radlerin",
         "von": "52,14",
         "bis": "80,14"
-      }
-    },
-    {
-      "name": "katzeImWaggon",
-      "typ": "tier",
-      "feld": [106, 5],
-      "eigenschaften": {
-        "verhalten": "sitzen",
-        "von": "106,5",
-        "bis": "106,5"
       }
     },
     {

@@ -19,6 +19,14 @@ Bilder (in ``spiel/eigene/``, Breite × Höhe in Pixeln):
 - ``vogelscheuche_morphy.png`` (48 × 48): die Vogelscheuche aus Modern Farm mit schwarzem Zylinder und
   einem Schachbrettflicken auf der Brust: „Morphy“ im Maisirrgarten des Kürbishofs muss als solche zu
   erkennen sein (Paul Morphy trug Zylinder).
+- ``kugelfang.png`` (16 × 32): Kugelfang am Ende der Kegelbahn im Gasthaus Lockport. Senkrechte
+  dunkle Bohlen, davor ein gepolstertes Lederkissen, unten eine Gummimatte. Zweites Gutachten: Die
+  Prallbretter lasen sich als Holzstapel eine Kachel hinter der Bahn.
+- ``boeschung_nord.png`` (16 × 16, zum Aneinanderreihen): Nordböschung eines Bahndamms, die vom
+  Betrachter wegfällt. Gras, nach oben dunkler (Schatten der Böschung), unten eine helle Kante, wo die
+  Krone beginnt. Zweites Gutachten Bahndamm: Der Damm hatte keine Nordböschung.
+- ``schild_zu_verkaufen.png`` (48 × 32): Maklerschild „ZU VERKAUFEN“ an einem Holzpfosten mit Galgen,
+  für das leere Hayes-Haus in der Birch Lane (Beschreibung Maple Falls außen).
 
 Aufruf: python niedrig1_runde9_karten.py /home/user/schach-abenteuer-inhalte
 """
@@ -28,6 +36,7 @@ import sys
 from pathlib import Path
 
 from PIL import Image, ImageDraw
+from schilder import RAHMEN, schreibe, textbreite  # im privaten Repository: werkzeuge/schilder.py
 
 FENSTER = "spiel/generic/generic_087.png"
 TISCH = (
@@ -155,6 +164,72 @@ def vogelscheuche_morphy(haupt: Path) -> Image.Image:
     return bild
 
 
+LEDER = (92, 52, 40, 255)
+LEDER_HELL = (126, 76, 58, 255)
+BOHLE = (84, 60, 44, 255)
+BOHLE_FUGE = (52, 38, 30, 255)
+GUMMI = (40, 40, 46, 255)
+
+
+def kugelfang() -> Image.Image:
+    """Kugelfang 16 × 32: senkrechte Bohlen als Rückwand, davor ein Lederkissen mit Nähten (fängt
+    die Kugel), unten eine dunkle Gummimatte über die ganze Breite."""
+    bild = Image.new("RGBA", (16, 32))
+    z = ImageDraw.Draw(bild)
+    z.rectangle((0, 0, 15, 31), fill=BOHLE_FUGE)
+    for x in (1, 6, 11):
+        z.rectangle((x, 1, x + 3, 30), fill=BOHLE)
+    z.rectangle((2, 8, 13, 24), fill=LEDER)
+    for y in (12, 16, 20):
+        z.line((3, y, 12, y), fill=LEDER_HELL)
+    z.rectangle((0, 26, 15, 31), fill=GUMMI)
+    return bild
+
+
+GRAS_HELL = (112, 170, 72)
+GRAS_DUNKEL = (62, 110, 52)
+KANTE = (150, 196, 98, 255)
+
+
+def boeschung_nord() -> Image.Image:
+    """Böschungsstreifen 16 × 16: Verlauf von dunklem Gras oben zu hellem unten, darüber Halme als
+    Punkte, an der Unterkante eine helle Linie (Kante zur Krone). Nahtlos in der Breite."""
+    bild = Image.new("RGBA", (16, 16))
+    z = ImageDraw.Draw(bild)
+    for y in range(16):
+        a = y / 15
+        z.line(
+            (0, y, 15, y),
+            fill=tuple(int(d + (h - d) * a) for d, h in zip(GRAS_DUNKEL, GRAS_HELL, strict=False)) + (255,),
+        )
+    for x, y in ((2, 3), (7, 6), (12, 2), (4, 10), (10, 11), (14, 8)):
+        z.point((x, y), fill=GRAS_DUNKEL + (255,))
+    z.line((0, 15, 15, 15), fill=KANTE)
+    return bild
+
+
+PFOSTEN = (124, 84, 56, 255)
+TAFEL = (240, 236, 226, 255)
+TAFEL_ROT = (190, 44, 44, 255)
+
+
+def schild_zu_verkaufen() -> Image.Image:
+    """Maklerschild 48 × 32: Pfosten links, oben ein waagrechter Galgen, daran an zwei Ketten eine
+    weiße Tafel mit rotem Rand und der Schrift „ZU VERKAUFEN“ in zwei Zeilen."""
+    bild = Image.new("RGBA", (48, 32))
+    z = ImageDraw.Draw(bild)
+    z.rectangle((3, 2, 5, 31), fill=PFOSTEN)
+    z.rectangle((3, 2, 46, 4), fill=PFOSTEN)
+    for x in (10, 42):
+        z.line((x, 5, x, 8), fill=RAHMEN)
+    z.rectangle((6, 9, 46, 24), fill=TAFEL_ROT)
+    z.rectangle((7, 10, 45, 23), fill=TAFEL)
+    for zeile, y in (("ZU", 11), ("VERKAUFEN", 17)):
+        schreibe(z, zeile, 7 + (39 - textbreite(zeile)) // 2, y, TAFEL_ROT)
+    z.rectangle((2, 30, 8, 31), fill=(58, 58, 80, 90))
+    return bild
+
+
 def main(haupt: Path) -> None:
     ziel = haupt / "spiel" / "eigene"
     fenster_nacht(haupt).save(ziel / "fenster_nacht.png")
@@ -163,6 +238,9 @@ def main(haupt: Path) -> None:
     spinnennetz_ecke().save(ziel / "spinnennetz_ecke.png")
     stollen_eingang_offen(haupt).save(ziel / "stollen_eingang_offen.png")
     vogelscheuche_morphy(haupt).save(ziel / "vogelscheuche_morphy.png")
+    kugelfang().save(ziel / "kugelfang.png")
+    boeschung_nord().save(ziel / "boeschung_nord.png")
+    schild_zu_verkaufen().save(ziel / "schild_zu_verkaufen.png")
 
 
 if __name__ == "__main__":

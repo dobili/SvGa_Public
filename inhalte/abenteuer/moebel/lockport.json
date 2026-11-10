@@ -409,6 +409,24 @@
       "art": "wandschmuck",
       "zustand": "gebraucht",
       "stil": "rustikal"
+    },
+    "ld9SchildAnkerTaue": {
+      "quelle": "spiel/eigene/schild_anker_taue.png",
+      "breite": 64,
+      "hoehe": 16,
+      "kollision": false,
+      "art": "schild",
+      "zustand": "gebraucht",
+      "stil": "klassisch"
+    },
+    "ld9Kugelfang": {
+      "quelle": "spiel/eigene/kugelfang.png",
+      "breite": 16,
+      "hoehe": 32,
+      "kollision": true,
+      "art": "deko",
+      "zustand": "gebraucht",
+      "stil": "rustikal"
     }
   }
 }

@@ -3,7 +3,7 @@
   "datei": "karten/ghost-town-aussen.json",
   "art": "aussen",
   "wand": "felsRot",
-  "beschreibung": "Ghost Town an einem Hochsommermittag (Variante A, nach dem Ortsdokument), 56 × 40. Die Front Street aus festgetretenem rotem Fels läuft in den Reihen 21–23 von West nach Ost, nördlich davor ein Bretterweg vor den Holzhäusern mit ihren Türen zur Straße: Laden, Schmiede, der verwitterte Saloon mit der Schwingtür und das Sheriffbüro, dahinter ein Wasserturm. Zwischen Saloon und Sheriff führt ein Weg hinauf zur roten Bruchkante, wo der Stolleneingang der Goldmine mit einer Absperrung „Betreten verboten“ gesperrt ist. Südlich der Straße eine leere Tränke, Kakteen und rote Felsen; im Südosten der Friedhof hinter einem Holzzaun mit Tor, Holzkreuze und Grabsteine in Reihen, am Ostrand das Grab ohne Namen, darüber kreisen Geier. Im Südwesten führt ein Trampelpfad auf einen Hügel mit einer Bank für den Blick in die Sterne. Am Ostausgang die Haltestelle, an der Victor aus dem Bus steigt. Saloon, Laden, Schmiede, Sheriff und Prüfamt mit falschen Holzfassaden; der Stollen ist vernagelt, daneben eine rostige Lore; Tumbleweeds im roten Sand, ein kaputter Planwagen.",
+  "beschreibung": "Variante C (reicher): Die Front Street weitet sich vor dem Saloon zu einem kleinen Platz mit Fässern und Kisten; vier Holzhäuser, Wasserturm und Windrad stehen an der Nordseite. Der Weg zur gesperrten Mine zweigt zwischen Saloon und Sheriff ab. Der Friedhof im Südosten ist groß, mit Kreuzen, Grabsteinen und einem offenen Grab, das Grab ohne Namen am Ostrand. Viele Kakteen, rote Felsen und Geröll.",
   "boden": "sandRot",
   "wandart": "sandRot",
   "boeden": {
@@ -23,39 +23,39 @@
   ],
   "raster": [
     "########################################################",
-    "#############################kkkk#######################",
-    "#############################kkkk#######################",
-    "#############################kkkk#######################",
-    "#############################kkkk#######################",
-    "#.............................ee.......................#",
-    "#.............................ee.......................#",
-    "#.............................ee.......................#",
-    "#.............................ee.......................#",
-    "#.............................ee.......................#",
-    "#.............................ee.......................#",
-    "#.............................ee.......................#",
-    "#.............................ee.......................#",
-    "#.............................ee.......................#",
-    "#.............................ee.......................#",
-    "#.............................ee.......................#",
-    "#.............................ee.......................#",
-    "#.............................ee.......................#",
-    "#.............................ee.......................#",
-    "#.............................ee.......................#",
+    "############################kkkk########################",
+    "############################kkkk########################",
+    "############################kkkk########################",
+    "############################kkkk########################",
+    "#............................ee........................#",
+    "#............................ee........................#",
+    "#............................ee........................#",
+    "#............................ee........................#",
+    "#............................ee........................#",
+    "#............................ee........................#",
+    "#............................ee........................#",
+    "#............................ee........................#",
+    "#............................ee........................#",
+    "#............................ee........................#",
+    "#............................ee........................#",
+    "#............................ee........................#",
+    "#............................ee........................#",
+    "#............................ee........................#",
+    "#............................ee........................#",
     "#dddddddddddddddddddddddddddddddddddddddddddddddddddddd#",
     "eeeeeeeeeeeeeeeeeeeeeeeeeeeeeeeeeeeeeeeeeeeeeeeeeeeeeeee",
     "eeeeeeeeeeeeeeeeeeeeeeeeeeeeeeeeeeeeeeeeeeeeeeeeeeeeeeee",
     "#.eeeeeeeeeeeeeeeeeeeeeeeeeeeeeeeeeeeeeeeeeeeeeeeeeeee.#",
-    "#......ee..................................ee..........#",
-    "#......ee..................................ee..........#",
-    "#......ee..................................ee..........#",
-    "#......ee..................................ee..........#",
-    "#......ee..............................................#",
-    "#......ee..............................................#",
-    "#......ee..............................................#",
-    "#......ee..............................................#",
-    "#......ee..............................................#",
-    "#......................................................#",
+    "#.......ee............eeeeeeeeeeeee.....ee.............#",
+    "#.......ee.............eeeeeeeeeee......ee.............#",
+    "#.......ee..............................ee.............#",
+    "#.......ee..............................ee.............#",
+    "#.......ee..............................ee.............#",
+    "#.......ee.............................................#",
+    "#.......ee.............................................#",
+    "#.......ee.............................................#",
+    "#.......ee.............................................#",
+    "#.......ee.............................................#",
     "#......................................................#",
     "#......................................................#",
     "#......................................................#",
@@ -66,76 +66,140 @@
   "objekte": [
     {
       "moebel": "gt7FassadeLaden",
-      "feld": [2, 13]
+      "feld": [1, 13]
     },
     {
       "moebel": "gt7FassadeSchmiede",
-      "feld": [10, 13]
+      "feld": [9, 13]
     },
     {
       "moebel": "gt7SaloonFassade",
-      "feld": [19, 11]
+      "feld": [18, 11]
     },
     {
       "moebel": "gt7FassadeSheriff",
-      "feld": [33, 13]
+      "feld": [32, 13]
     },
     {
       "moebel": "gt7FassadePruefamt",
-      "feld": [41, 13]
+      "feld": [40, 13]
     },
     {
       "moebel": "gt7Wagenrad",
-      "feld": [17, 19]
+      "feld": [16, 19]
     },
     {
       "moebel": "gt8HuetteA",
-      "feld": [3, 6]
+      "feld": [2, 6]
     },
     {
       "moebel": "gt8Post",
-      "feld": [11, 5]
+      "feld": [10, 5]
     },
     {
       "moebel": "gt8HuetteB",
-      "feld": [41, 7]
+      "feld": [33, 6]
     },
     {
-      "moebel": "gt8Bank",
-      "feld": [9, 25]
+      "moebel": "gt8Barbier",
+      "feld": [40, 5]
     },
     {
       "moebel": "gt8Hotel",
-      "feld": [17, 24]
+      "feld": [12, 26]
     },
     {
       "moebel": "gt8Mietstall",
-      "feld": [26, 25]
+      "feld": [20, 26]
     },
     {
       "moebel": "gt7Wasserturm",
-      "feld": [49, 13]
+      "feld": [48, 13]
     },
     {
       "moebel": "gt7Traenke",
-      "feld": [2, 25]
+      "feld": [13, 25]
+    },
+    {
+      "moebel": "gt7PlanwagenKaputt",
+      "feld": [44, 24]
     },
     {
       "moebel": "gt7Stollen",
-      "feld": [29, 1]
+      "feld": [28, 1]
     },
     {
       "moebel": "gt7Lore",
-      "feld": [32, 5]
+      "feld": [31, 5]
     },
     {
       "moebel": "gt7ZaunUL",
-      "feld": [36, 37],
+      "feld": [30, 37],
       "bauteil_ok": true
     },
     {
       "moebel": "gt7ZaunOL",
-      "feld": [36, 28],
+      "feld": [30, 29],
+      "bauteil_ok": true
+    },
+    {
+      "moebel": "gt7ZaunUM",
+      "feld": [31, 37],
+      "bauteil_ok": true
+    },
+    {
+      "moebel": "gt7ZaunOM",
+      "feld": [31, 29],
+      "bauteil_ok": true
+    },
+    {
+      "moebel": "gt7ZaunUM",
+      "feld": [32, 37],
+      "bauteil_ok": true
+    },
+    {
+      "moebel": "gt7ZaunOM",
+      "feld": [32, 29],
+      "bauteil_ok": true
+    },
+    {
+      "moebel": "gt7ZaunUM",
+      "feld": [33, 37],
+      "bauteil_ok": true
+    },
+    {
+      "moebel": "gt7ZaunOM",
+      "feld": [33, 29],
+      "bauteil_ok": true
+    },
+    {
+      "moebel": "gt7ZaunUM",
+      "feld": [34, 37],
+      "bauteil_ok": true
+    },
+    {
+      "moebel": "gt7ZaunOM",
+      "feld": [34, 29],
+      "bauteil_ok": true
+    },
+    {
+      "moebel": "gt7ZaunUM",
+      "feld": [35, 37],
+      "bauteil_ok": true
+    },
+    {
+      "moebel": "gt7ZaunOM",
+      "feld": [35, 29],
+      "bauteil_ok": true
+    },
+    {
+      "moebel": "gt7ZaunUM",
+      "feld": [36, 37],
+      "bauteil_ok": true
+    },
+    {
+      "moebel": "gt7ZaunOM",
+      "feld": [36, 29],
       "bauteil_ok": true
     },
     {
@@ -145,7 +209,7 @@
     },
     {
       "moebel": "gt7ZaunOM",
-      "feld": [37, 28],
+      "feld": [37, 29],
       "bauteil_ok": true
     },
     {
@@ -155,7 +219,7 @@
     },
     {
       "moebel": "gt7ZaunOM",
-      "feld": [38, 28],
+      "feld": [38, 29],
       "bauteil_ok": true
     },
     {
@@ -164,8 +228,8 @@
       "bauteil_ok": true
     },
     {
-      "moebel": "gt7ZaunOM",
-      "feld": [39, 28],
+      "moebel": "gt7ZaunEndeLinks",
+      "feld": [39, 29],
       "bauteil_ok": true
     },
     {
@@ -174,18 +238,8 @@
       "bauteil_ok": true
     },
     {
-      "moebel": "gt7ZaunOM",
-      "feld": [40, 28],
-      "bauteil_ok": true
-    },
-    {
       "moebel": "gt7ZaunUM",
       "feld": [41, 37],
-      "bauteil_ok": true
-    },
-    {
-      "moebel": "gt7ZaunOM",
-      "feld": [41, 28],
       "bauteil_ok": true
     },
     {
@@ -194,8 +248,8 @@
       "bauteil_ok": true
     },
     {
-      "moebel": "gt7ZaunEndeLinks",
-      "feld": [42, 28],
+      "moebel": "gt7ZaunEndeRechts",
+      "feld": [42, 29],
       "bauteil_ok": true
     },
     {
@@ -204,8 +258,18 @@
       "bauteil_ok": true
     },
     {
+      "moebel": "gt7ZaunOM",
+      "feld": [43, 29],
+      "bauteil_ok": true
+    },
+    {
       "moebel": "gt7ZaunUM",
       "feld": [44, 37],
+      "bauteil_ok": true
+    },
+    {
+      "moebel": "gt7ZaunOM",
+      "feld": [44, 29],
       "bauteil_ok": true
     },
     {
@@ -214,8 +278,8 @@
       "bauteil_ok": true
     },
     {
-      "moebel": "gt7ZaunEndeRechts",
-      "feld": [45, 28],
+      "moebel": "gt7ZaunOM",
+      "feld": [45, 29],
       "bauteil_ok": true
     },
     {
@@ -225,7 +289,7 @@
     },
     {
       "moebel": "gt7ZaunOM",
-      "feld": [46, 28],
+      "feld": [46, 29],
       "bauteil_ok": true
     },
     {
@@ -235,7 +299,7 @@
     },
     {
       "moebel": "gt7ZaunOM",
-      "feld": [47, 28],
+      "feld": [47, 29],
       "bauteil_ok": true
     },
     {
@@ -245,7 +309,7 @@
     },
     {
       "moebel": "gt7ZaunOM",
-      "feld": [48, 28],
+      "feld": [48, 29],
       "bauteil_ok": true
     },
     {
@@ -255,7 +319,7 @@
     },
     {
       "moebel": "gt7ZaunOM",
-      "feld": [49, 28],
+      "feld": [49, 29],
       "bauteil_ok": true
     },
     {
@@ -265,7 +329,7 @@
     },
     {
       "moebel": "gt7ZaunOM",
-      "feld": [50, 28],
+      "feld": [50, 29],
       "bauteil_ok": true
     },
     {
@@ -275,7 +339,7 @@
     },
     {
       "moebel": "gt7ZaunOM",
-      "feld": [51, 28],
+      "feld": [51, 29],
       "bauteil_ok": true
     },
     {
@@ -285,22 +349,12 @@
     },
     {
       "moebel": "gt7ZaunOR",
-      "feld": [52, 28],
-      "bauteil_ok": true
-    },
-    {
-      "moebel": "gt7ZaunML",
-      "feld": [36, 29],
-      "bauteil_ok": true
-    },
-    {
-      "moebel": "gt7ZaunMR",
       "feld": [52, 29],
       "bauteil_ok": true
     },
     {
       "moebel": "gt7ZaunML",
-      "feld": [36, 30],
+      "feld": [30, 30],
       "bauteil_ok": true
     },
     {
@@ -310,7 +364,7 @@
     },
     {
       "moebel": "gt7ZaunML",
-      "feld": [36, 31],
+      "feld": [30, 31],
       "bauteil_ok": true
     },
     {
@@ -320,7 +374,7 @@
     },
     {
       "moebel": "gt7ZaunML",
-      "feld": [36, 32],
+      "feld": [30, 32],
       "bauteil_ok": true
     },
     {
@@ -330,7 +384,7 @@
     },
     {
       "moebel": "gt7ZaunML",
-      "feld": [36, 33],
+      "feld": [30, 33],
       "bauteil_ok": true
     },
     {
@@ -340,7 +394,7 @@
     },
     {
       "moebel": "gt7ZaunML",
-      "feld": [36, 34],
+      "feld": [30, 34],
       "bauteil_ok": true
     },
     {
@@ -350,7 +404,7 @@
     },
     {
       "moebel": "gt7ZaunML",
-      "feld": [36, 35],
+      "feld": [30, 35],
       "bauteil_ok": true
     },
     {
@@ -360,7 +414,7 @@
     },
     {
       "moebel": "gt7ZaunML",
-      "feld": [36, 36],
+      "feld": [30, 36],
       "bauteil_ok": true
     },
     {
@@ -370,239 +424,319 @@
     },
     {
       "moebel": "gt7GrabOhneName",
-      "feld": [50, 32]
+      "feld": [51, 32]
+    },
+    {
+      "moebel": "gt7Grabstein",
+      "feld": [46, 34]
+    },
+    {
+      "moebel": "gt7GrabOffen",
+      "feld": [36, 31]
     },
     {
       "moebel": "gt7GrabsteinGrau",
-      "feld": [48, 30]
+      "feld": [32, 34]
     },
     {
       "moebel": "gt7Grabstein",
-      "feld": [38, 33]
+      "feld": [46, 31]
+    },
+    {
+      "moebel": "gt7GrabsteinGrau",
+      "feld": [35, 31]
+    },
+    {
+      "moebel": "gt7GrabOffen",
+      "feld": [34, 34]
+    },
+    {
+      "moebel": "gt7Grabstein",
+      "feld": [44, 34]
+    },
+    {
+      "moebel": "gt7GrabsteinB",
+      "feld": [32, 31]
+    },
+    {
+      "moebel": "gt7GrabsteinGrau",
+      "feld": [34, 31]
+    },
+    {
+      "moebel": "gt7GrabsteinB",
+      "feld": [47, 31]
+    },
+    {
+      "moebel": "gt7Grabstein",
+      "feld": [33, 31]
+    },
+    {
+      "moebel": "gt7Grabstein",
+      "feld": [43, 31]
     },
     {
       "moebel": "gt7Grabhuegel",
-      "feld": [46, 30]
-    },
-    {
-      "moebel": "gt7GrabsteinB",
-      "feld": [46, 33]
-    },
-    {
-      "moebel": "gt7Grabstein",
-      "feld": [47, 30]
-    },
-    {
-      "moebel": "gt7GrabsteinB",
-      "feld": [47, 33]
+      "feld": [45, 31]
     },
     {
       "moebel": "gt7Kreuz",
-      "feld": [40, 33]
+      "feld": [48, 31]
     },
     {
-      "moebel": "gt7GrabsteinB",
-      "feld": [38, 30]
+      "moebel": "gt7Grabhuegel",
+      "feld": [33, 34]
     },
     {
-      "moebel": "gt7Grabstein",
-      "feld": [48, 33]
+      "moebel": "gt7GrabsteinGrau",
+      "feld": [49, 34]
     },
     {
-      "moebel": "gt7GrabsteinB",
-      "feld": [39, 30]
+      "moebel": "gt7GrabsteinGrau",
+      "feld": [37, 34]
+    },
+    {
+      "moebel": "gt7Kreuz",
+      "feld": [47, 34]
     },
     {
       "moebel": "gt7Geierkreis",
-      "feld": [44, 30]
+      "feld": [41, 31]
     },
     {
       "moebel": "gt7Bank",
-      "feld": [6, 33]
+      "feld": [7, 34]
     },
     {
       "moebel": "gt7Haltestelle",
       "feld": [52, 24]
     },
     {
-      "moebel": "gt7KaktusBluete",
-      "feld": [1, 31]
-    },
-    {
-      "moebel": "gt7Stein",
-      "feld": [21, 6]
-    },
-    {
-      "moebel": "gt7KaktusBluete",
-      "feld": [17, 34]
-    },
-    {
-      "moebel": "gt7KaktusBluete",
-      "feld": [38, 25]
-    },
-    {
-      "moebel": "gt7Saguaro",
-      "feld": [50, 6]
-    },
-    {
-      "moebel": "gt7Tumbleweed",
-      "feld": [40, 27]
+      "moebel": "gt7Kiste",
+      "feld": [32, 26]
     },
     {
       "moebel": "gt7Kaktus",
-      "feld": [1, 35]
-    },
-    {
-      "moebel": "gt7Tumbleweed",
-      "feld": [40, 32]
-    },
-    {
-      "moebel": "gt7Felsgruppe",
-      "feld": [37, 8]
+      "feld": [24, 36]
     },
     {
       "moebel": "gt7Stein",
-      "feld": [35, 31]
-    },
-    {
-      "moebel": "gt7Tumbleweed",
-      "feld": [35, 35]
-    },
-    {
-      "moebel": "gt7Tumbleweed",
-      "feld": [9, 5]
+      "feld": [4, 31]
     },
     {
       "moebel": "gt7Felsgruppe",
-      "feld": [41, 30]
-    },
-    {
-      "moebel": "gt7Tumbleweed",
-      "feld": [1, 8]
-    },
-    {
-      "moebel": "gt7Tumbleweed",
-      "feld": [9, 7]
-    },
-    {
-      "moebel": "gt7Stein",
-      "feld": [33, 36]
+      "feld": [38, 9]
     },
     {
       "moebel": "gt7KaktusBluete",
-      "feld": [17, 17]
+      "feld": [40, 35]
     },
     {
-      "moebel": "gt7Kaktus",
-      "feld": [36, 5]
+      "moebel": "gt7KaktusBluete",
+      "feld": [7, 6]
+    },
+    {
+      "moebel": "gt7Stein",
+      "feld": [2, 11]
     },
     {
       "moebel": "gt7Saguaro",
-      "feld": [24, 34]
+      "feld": [17, 35]
+    },
+    {
+      "moebel": "gt7Kaktus",
+      "feld": [20, 7]
+    },
+    {
+      "moebel": "gt7Tumbleweed",
+      "feld": [26, 5]
+    },
+    {
+      "moebel": "gt7Felsgruppe",
+      "feld": [37, 27]
+    },
+    {
+      "moebel": "gt7KaktusBluete",
+      "feld": [26, 8]
+    },
+    {
+      "moebel": "gt7Saguaro",
+      "feld": [2, 31]
+    },
+    {
+      "moebel": "gt7Tumbleweed",
+      "feld": [52, 11]
+    },
+    {
+      "moebel": "gt7Stein",
+      "feld": [45, 27]
+    },
+    {
+      "moebel": "gt7KaktusBluete",
+      "feld": [31, 32]
+    },
+    {
+      "moebel": "gt7Stein",
+      "feld": [50, 11]
+    },
+    {
+      "moebel": "gt7Tumbleweed",
+      "feld": [44, 32]
+    },
+    {
+      "moebel": "gt7Tumbleweed",
+      "feld": [46, 27]
+    },
+    {
+      "moebel": "gt7Felsgruppe",
+      "feld": [24, 8]
+    },
+    {
+      "moebel": "gt7Stein",
+      "feld": [6, 27]
     },
     {
       "moebel": "gt7TumbleweedGross",
-      "feld": [52, 7]
-    },
-    {
-      "moebel": "gt7Stein",
-      "feld": [28, 8]
-    },
-    {
-      "moebel": "gt7Stein",
-      "feld": [35, 11]
-    },
-    {
-      "moebel": "gt7Tumbleweed",
-      "feld": [38, 5]
+      "feld": [35, 26]
     },
     {
       "moebel": "gt7Tumbleweed",
       "feld": [25, 7]
     },
     {
-      "moebel": "gt7Stein",
-      "feld": [6, 11]
-    },
-    {
-      "moebel": "gt7Tumbleweed",
-      "feld": [2, 26]
-    },
-    {
-      "moebel": "gt7Tumbleweed",
-      "feld": [8, 6]
-    },
-    {
-      "moebel": "gt7Tumbleweed",
-      "feld": [8, 35]
-    },
-    {
-      "moebel": "gt7Stein",
-      "feld": [20, 10]
-    },
-    {
-      "moebel": "gt7Stein",
-      "feld": [4, 25]
-    },
-    {
-      "moebel": "gt7Felsgruppe",
-      "feld": [45, 35]
-    },
-    {
-      "moebel": "gt7Felsgruppe",
-      "feld": [48, 35]
+      "moebel": "gt7TumbleweedGross",
+      "feld": [4, 34]
     },
     {
       "moebel": "gt7TumbleweedGross",
-      "feld": [34, 33]
+      "feld": [41, 31]
     },
     {
-      "moebel": "gt7Kaktus",
-      "feld": [20, 6]
+      "moebel": "gt7Saguaro",
+      "feld": [16, 14]
     },
     {
-      "moebel": "gt7Kaktus",
-      "feld": [21, 35]
+      "moebel": "gt7KaktusBluete",
+      "feld": [28, 32]
+    },
+    {
+      "moebel": "gt7Stein",
+      "feld": [8, 5]
     },
     {
       "moebel": "gt7Felsgruppe",
-      "feld": [38, 6]
+      "feld": [19, 35]
+    },
+    {
+      "moebel": "gt7Tumbleweed",
+      "feld": [49, 25]
     },
     {
       "moebel": "gt7Felsgruppe",
+      "feld": [49, 26]
+    },
+    {
+      "moebel": "gt7Stein",
+      "feld": [32, 12]
+    },
+    {
+      "moebel": "gt7Stein",
+      "feld": [33, 5]
+    },
+    {
+      "moebel": "gt7KaktusBluete",
+      "feld": [1, 26]
+    },
+    {
+      "moebel": "gt7Stein",
+      "feld": [48, 33]
+    },
+    {
+      "moebel": "gt7Stein",
+      "feld": [50, 28]
+    },
+    {
+      "moebel": "gt7KaktusBluete",
+      "feld": [51, 8]
+    },
+    {
+      "moebel": "gt7Stein",
+      "feld": [26, 35]
+    },
+    {
+      "moebel": "gt7Tumbleweed",
+      "feld": [4, 33]
+    },
+    {
+      "moebel": "gt7Tumbleweed",
+      "feld": [2, 29]
+    },
+    {
+      "moebel": "gt7Stein",
+      "feld": [5, 30]
+    },
+    {
+      "moebel": "gt7Stein",
+      "feld": [42, 35]
+    },
+    {
+      "moebel": "gt7Kaktus",
+      "feld": [51, 35]
+    },
+    {
+      "moebel": "gt7Stein",
+      "feld": [43, 27]
+    },
+    {
+      "moebel": "gt7TumbleweedGross",
+      "feld": [1, 35]
+    },
+    {
+      "moebel": "gt7Stein",
+      "feld": [5, 32]
+    },
+    {
+      "moebel": "gt7Kaktus",
+      "feld": [21, 7]
+    },
+    {
+      "moebel": "gt7TumbleweedGross",
+      "feld": [39, 33]
+    },
+    {
+      "moebel": "gt7Felsgruppe",
+      "feld": [11, 35]
+    },
+    {
+      "moebel": "gt7Saguaro",
+      "feld": [28, 28]
+    },
+    {
+      "moebel": "gt7KaktusBluete",
       "feld": [47, 9]
     },
     {
       "moebel": "gt7Tumbleweed",
-      "feld": [26, 7]
-    },
-    {
-      "moebel": "gt7KaktusBluete",
-      "feld": [12, 32]
+      "feld": [47, 33]
     },
     {
       "moebel": "gt7Tumbleweed",
-      "feld": [19, 7]
-    },
-    {
-      "moebel": "gt7KaktusBluete",
-      "feld": [25, 8]
-    },
-    {
-      "moebel": "gt7KaktusBluete",
-      "feld": [26, 33]
-    },
-    {
-      "moebel": "gt7Stein",
-      "feld": [52, 9]
+      "feld": [11, 31]
     },
     {
       "moebel": "gt7Kaktus",
-      "feld": [18, 11]
+      "feld": [4, 28]
+    },
+    {
+      "moebel": "gt7KaktusBluete",
+      "feld": [27, 35]
+    },
+    {
+      "moebel": "gt7KaktusBluete",
+      "feld": [18, 8]
     },
     {
       "moebel": "gt7Schild",
-      "feld": [1, 18]
+      "feld": [8, 18]
     }
   ],
   "ausloeser": [
@@ -631,35 +765,35 @@
     },
     {
       "name": "saloonTuer",
-      "feld": [23, 20]
+      "feld": [22, 20]
     },
     {
       "name": "grab",
-      "feld": [49, 33]
+      "feld": [50, 33]
     },
     {
       "name": "sternenhimmel",
-      "feld": [7, 32]
+      "feld": [8, 33]
+    },
+    {
+      "name": "goldmine",
+      "feld": [29, 5]
     },
     {
       "name": "goldmine",
       "feld": [30, 5]
     },
     {
-      "name": "goldmine",
-      "feld": [31, 5]
-    },
-    {
       "name": "ortsschild",
-      "feld": [1, 20]
+      "feld": [8, 20]
     },
     {
       "name": "steckbrief",
-      "feld": [35, 20]
+      "feld": [34, 20]
     },
     {
       "name": "amboss",
-      "feld": [12, 20]
+      "feld": [11, 20]
     }
   ],
   "figuren": [
@@ -683,7 +817,7 @@
     {
       "name": "geier",
       "typ": "tier",
-      "feld": [44, 31],
+      "feld": [41, 32],
       "eigenschaften": {
         "verhalten": "fliegen"
       }
@@ -691,7 +825,7 @@
     {
       "name": "eule",
       "typ": "tier",
-      "feld": [50, 15],
+      "feld": [49, 15],
       "eigenschaften": {
         "verhalten": "fliegen",
         "wann": "nacht"

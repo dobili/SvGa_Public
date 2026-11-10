@@ -11,7 +11,7 @@
  "tilewidth": 16,
  "tileheight": 16,
  "nextlayerid": 5,
- "nextobjectid": 117,
+ "nextobjectid": 161,
  "layers": [
   {
    "id": 1,
@@ -1278,7 +1278,6 @@
     0,
     0,
     0,
-    0,
     1,
     1,
     1,
@@ -1308,6 +1307,7 @@
     1,
     1,
     1,
+    1,
     4,
     4,
     4,
@@ -1318,10 +1318,8 @@
     4,
     4,
     4,
-    0,
-    0,
-    0,
-    0,
+    4,
+    4,
     0,
     0,
     0,
@@ -1368,10 +1366,10 @@
     4,
     4,
     4,
-    0,
-    0,
-    0,
-    0,
+    4,
+    4,
+    4,
+    4,
     0,
     0,
     0,
@@ -1418,10 +1416,10 @@
     4,
     4,
     4,
-    0,
-    0,
-    0,
-    0,
+    4,
+    4,
+    4,
+    4,
     0,
     0,
     0,
@@ -1468,10 +1466,10 @@
     4,
     4,
     4,
-    0,
-    0,
-    0,
-    0,
+    4,
+    4,
+    4,
+    4,
     0,
     0,
     0,
@@ -1518,10 +1516,10 @@
     4,
     4,
     4,
-    0,
-    0,
-    0,
-    0,
+    4,
+    4,
+    4,
+    4,
     0,
     0,
     0,
@@ -1567,10 +1565,10 @@
     4,
     4,
     4,
-    0,
-    0,
-    0,
-    0,
+    4,
+    4,
+    4,
+    4,
     0,
     0,
     0,
@@ -1617,10 +1615,10 @@
     4,
     4,
     4,
-    0,
-    0,
-    0,
-    0,
+    4,
+    4,
+    4,
+    4,
     0,
     0,
     0,
@@ -1667,10 +1665,10 @@
     4,
     4,
     4,
-    0,
-    0,
-    0,
-    0,
+    4,
+    4,
+    4,
+    4,
     0,
     0,
     0,
@@ -1717,10 +1715,10 @@
     4,
     4,
     4,
-    0,
-    0,
-    0,
-    0,
+    4,
+    4,
+    4,
+    4,
     0,
     0,
     0,
@@ -1767,8 +1765,10 @@
     4,
     4,
     4,
-    0,
-    0,
+    4,
+    4,
+    4,
+    4,
     0,
     0,
     0,
@@ -3091,7 +3091,6 @@
     2,
     2,
     2,
-    2,
     0,
     0,
     0,
@@ -3131,10 +3130,9 @@
     0,
     0,
     0,
-    2,
-    2,
-    2,
-    2,
+    0,
+    0,
+    0,
     2,
     2,
     2,
@@ -3181,10 +3179,10 @@
     0,
     0,
     0,
-    2,
-    2,
-    2,
-    2,
+    0,
+    0,
+    0,
+    0,
     2,
     2,
     2,
@@ -3231,10 +3229,10 @@
     0,
     0,
     0,
-    2,
-    2,
-    2,
-    2,
+    0,
+    0,
+    0,
+    0,
     2,
     2,
     2,
@@ -3281,10 +3279,10 @@
     0,
     0,
     0,
-    2,
-    2,
-    2,
-    2,
+    0,
+    0,
+    0,
+    0,
     2,
     2,
     2,
@@ -3331,10 +3329,10 @@
     0,
     0,
     0,
-    2,
-    2,
-    2,
-    2,
+    0,
+    0,
+    0,
+    0,
     2,
     2,
     2,
@@ -3380,10 +3378,10 @@
     0,
     0,
     0,
-    2,
-    2,
-    2,
-    2,
+    0,
+    0,
+    0,
+    0,
     2,
     2,
     2,
@@ -3430,10 +3428,10 @@
     0,
     0,
     0,
-    2,
-    2,
-    2,
-    2,
+    0,
+    0,
+    0,
+    0,
     2,
     2,
     2,
@@ -3480,10 +3478,10 @@
     0,
     0,
     0,
-    2,
-    2,
-    2,
-    2,
+    0,
+    0,
+    0,
+    0,
     2,
     2,
     2,
@@ -3530,10 +3528,10 @@
     0,
     0,
     0,
-    2,
-    2,
-    2,
-    2,
+    0,
+    0,
+    0,
+    0,
     2,
     2,
     2,
@@ -3580,8 +3578,10 @@
     0,
     0,
     0,
-    2,
-    2,
+    0,
+    0,
+    0,
+    0,
     2,
     2,
     2,
@@ -5528,8 +5528,8 @@
      "id": 6,
      "name": "watt",
      "type": "ausloeser",
-     "x": 432,
-     "y": 544,
+     "x": 480,
+     "y": 496,
      "width": 16,
      "height": 16,
      "rotation": 0,
@@ -5637,7 +5637,7 @@
      "id": 14,
      "name": "krebs",
      "type": "tier",
-     "x": 192,
+     "x": 160,
      "y": 496,
      "width": 16,
      "height": 16,
@@ -5808,7 +5808,7 @@
      "name": "reiher",
      "type": "tier",
      "x": 640,
-     "y": 448,
+     "y": 416,
      "width": 16,
      "height": 16,
      "rotation": 0,
@@ -5817,12 +5817,12 @@
       {
        "name": "von",
        "type": "string",
-       "value": "40,28"
+       "value": "40,26"
       },
       {
        "name": "bis",
        "type": "string",
-       "value": "46,28"
+       "value": "46,26"
       },
       {
        "name": "verhalten",
@@ -5835,7 +5835,7 @@
      "id": 20,
      "name": "alligator",
      "type": "tier",
-     "x": 96,
+     "x": 64,
      "y": 512,
      "width": 16,
      "height": 16,
@@ -5845,12 +5845,12 @@
       {
        "name": "von",
        "type": "string",
-       "value": "6,32"
+       "value": "4,32"
       },
       {
        "name": "bis",
        "type": "string",
-       "value": "6,32"
+       "value": "4,32"
       },
       {
        "name": "verhalten",
@@ -6114,7 +6114,7 @@
     },
     {
      "id": 32,
-     "name": "n4PfahlhausBlau",
+     "name": "n4PfahlhausRot",
      "type": "moebel",
      "x": 560,
      "y": 128,
@@ -6137,7 +6137,7 @@
     },
     {
      "id": 33,
-     "name": "n4PfahlhausRot",
+     "name": "n4PfahlhausBlau",
      "type": "moebel",
      "x": 640,
      "y": 128,
@@ -6183,7 +6183,7 @@
     },
     {
      "id": 35,
-     "name": "n4PfahlhausWeiss",
+     "name": "n4PfahlhausBlau",
      "type": "moebel",
      "x": 560,
      "y": 272,
@@ -6206,7 +6206,7 @@
     },
     {
      "id": 36,
-     "name": "n4PfahlhausBlau",
+     "name": "n4PfahlhausRot",
      "type": "moebel",
      "x": 640,
      "y": 272,
@@ -6367,6 +6367,29 @@
     },
     {
      "id": 43,
+     "name": "n4PelikanLinks",
+     "type": "moebel",
+     "x": 496,
+     "y": 32,
+     "width": 16,
+     "height": 32,
+     "rotation": 0,
+     "visible": true,
+     "properties": [
+      {
+       "name": "tiefe",
+       "type": "int",
+       "value": 1
+      },
+      {
+       "name": "kollision",
+       "type": "bool",
+       "value": false
+      }
+     ]
+    },
+    {
+     "id": 44,
      "name": "n4Netzgestell",
      "type": "moebel",
      "x": 304,
@@ -6389,7 +6412,30 @@
      ]
     },
     {
-     "id": 44,
+     "id": 45,
+     "name": "n4Netzgestell",
+     "type": "moebel",
+     "x": 400,
+     "y": 272,
+     "width": 48,
+     "height": 32,
+     "rotation": 0,
+     "visible": true,
+     "properties": [
+      {
+       "name": "tiefe",
+       "type": "int",
+       "value": 296
+      },
+      {
+       "name": "kollision",
+       "type": "bool",
+       "value": true
+      }
+     ]
+    },
+    {
+     "id": 46,
      "name": "n4FaehrbootWasser",
      "type": "moebel",
      "x": 416,
@@ -6412,7 +6458,7 @@
      ]
     },
     {
-     "id": 45,
+     "id": 47,
      "name": "n4Wegweiser",
      "type": "moebel",
      "x": 336,
@@ -6435,36 +6481,13 @@
      ]
     },
     {
-     "id": 46,
-     "name": "n4Kiste",
+     "id": 48,
+     "name": "n4FassGross",
      "type": "moebel",
      "x": 416,
      "y": 96,
-     "width": 16,
-     "height": 16,
-     "rotation": 0,
-     "visible": true,
-     "properties": [
-      {
-       "name": "tiefe",
-       "type": "int",
-       "value": 104
-      },
-      {
-       "name": "kollision",
-       "type": "bool",
-       "value": true
-      }
-     ]
-    },
-    {
-     "id": 47,
-     "name": "n4Kiste",
-     "type": "moebel",
-     "x": 320,
-     "y": 112,
-     "width": 16,
-     "height": 16,
+     "width": 32,
+     "height": 32,
      "rotation": 0,
      "visible": true,
      "properties": [
@@ -6481,8 +6504,8 @@
      ]
     },
     {
-     "id": 48,
-     "name": "n4Kiste",
+     "id": 49,
+     "name": "n4Fass",
      "type": "moebel",
      "x": 288,
      "y": 208,
@@ -6504,7 +6527,7 @@
      ]
     },
     {
-     "id": 49,
+     "id": 50,
      "name": "n4Fass",
      "type": "moebel",
      "x": 400,
@@ -6527,7 +6550,7 @@
      ]
     },
     {
-     "id": 50,
+     "id": 51,
      "name": "n4Fass",
      "type": "moebel",
      "x": 464,
@@ -6550,8 +6573,8 @@
      ]
     },
     {
-     "id": 51,
-     "name": "n4Kiste",
+     "id": 52,
+     "name": "n4Fass",
      "type": "moebel",
      "x": 352,
      "y": 256,
@@ -6573,7 +6596,7 @@
      ]
     },
     {
-     "id": 52,
+     "id": 53,
      "name": "n4Fass",
      "type": "moebel",
      "x": 304,
@@ -6596,10 +6619,33 @@
      ]
     },
     {
-     "id": 53,
-     "name": "n4Kisten",
+     "id": 54,
+     "name": "n4Fass",
      "type": "moebel",
      "x": 480,
+     "y": 240,
+     "width": 16,
+     "height": 16,
+     "rotation": 0,
+     "visible": true,
+     "properties": [
+      {
+       "name": "tiefe",
+       "type": "int",
+       "value": 248
+      },
+      {
+       "name": "kollision",
+       "type": "bool",
+       "value": true
+      }
+     ]
+    },
+    {
+     "id": 55,
+     "name": "n4Kisten",
+     "type": "moebel",
+     "x": 272,
      "y": 240,
      "width": 32,
      "height": 32,
@@ -6619,10 +6665,33 @@
      ]
     },
     {
-     "id": 54,
+     "id": 56,
+     "name": "n4Fass",
+     "type": "moebel",
+     "x": 384,
+     "y": 320,
+     "width": 16,
+     "height": 16,
+     "rotation": 0,
+     "visible": true,
+     "properties": [
+      {
+       "name": "tiefe",
+       "type": "int",
+       "value": 328
+      },
+      {
+       "name": "kollision",
+       "type": "bool",
+       "value": true
+      }
+     ]
+    },
+    {
+     "id": 57,
      "name": "n4Boot",
      "type": "moebel",
-     "x": 256,
+     "x": 240,
      "y": 352,
      "width": 64,
      "height": 32,
@@ -6642,11 +6711,11 @@
      ]
     },
     {
-     "id": 55,
+     "id": 58,
      "name": "n4BootUfer",
      "type": "moebel",
-     "x": 432,
-     "y": 288,
+     "x": 496,
+     "y": 144,
      "width": 32,
      "height": 64,
      "rotation": 0,
@@ -6665,11 +6734,34 @@
      ]
     },
     {
-     "id": 56,
-     "name": "n4Spross",
+     "id": 59,
+     "name": "n4Fischerboot",
      "type": "moebel",
-     "x": 464,
-     "y": 384,
+     "x": 576,
+     "y": 416,
+     "width": 96,
+     "height": 64,
+     "rotation": 0,
+     "visible": true,
+     "properties": [
+      {
+       "name": "tiefe",
+       "type": "int",
+       "value": 472
+      },
+      {
+       "name": "kollision",
+       "type": "bool",
+       "value": true
+      }
+     ]
+    },
+    {
+     "id": 60,
+     "name": "n4MoeweVorn",
+     "type": "moebel",
+     "x": 448,
+     "y": 144,
      "width": 32,
      "height": 32,
      "rotation": 0,
@@ -6688,13 +6780,13 @@
      ]
     },
     {
-     "id": 57,
-     "name": "n4MuschelRosa",
+     "id": 61,
+     "name": "n4MoeweVorn",
      "type": "moebel",
-     "x": 208,
-     "y": 464,
-     "width": 16,
-     "height": 16,
+     "x": 272,
+     "y": 304,
+     "width": 32,
+     "height": 32,
      "rotation": 0,
      "visible": true,
      "properties": [
@@ -6711,33 +6803,10 @@
      ]
     },
     {
-     "id": 58,
-     "name": "n4MuschelWeiss",
+     "id": 62,
+     "name": "n4SeesternLila",
      "type": "moebel",
-     "x": 544,
-     "y": 464,
-     "width": 16,
-     "height": 16,
-     "rotation": 0,
-     "visible": true,
-     "properties": [
-      {
-       "name": "tiefe",
-       "type": "int",
-       "value": 1
-      },
-      {
-       "name": "kollision",
-       "type": "bool",
-       "value": false
-      }
-     ]
-    },
-    {
-     "id": 59,
-     "name": "n4MuschelGold",
-     "type": "moebel",
-     "x": 432,
+     "x": 464,
      "y": 544,
      "width": 16,
      "height": 16,
@@ -6757,146 +6826,8 @@
      ]
     },
     {
-     "id": 60,
-     "name": "n4MuschelWeiss",
-     "type": "moebel",
-     "x": 528,
-     "y": 480,
-     "width": 16,
-     "height": 16,
-     "rotation": 0,
-     "visible": true,
-     "properties": [
-      {
-       "name": "tiefe",
-       "type": "int",
-       "value": 1
-      },
-      {
-       "name": "kollision",
-       "type": "bool",
-       "value": false
-      }
-     ]
-    },
-    {
-     "id": 61,
-     "name": "n4SeesternGelb",
-     "type": "moebel",
-     "x": 112,
-     "y": 512,
-     "width": 16,
-     "height": 16,
-     "rotation": 0,
-     "visible": true,
-     "properties": [
-      {
-       "name": "tiefe",
-       "type": "int",
-       "value": 1
-      },
-      {
-       "name": "kollision",
-       "type": "bool",
-       "value": false
-      }
-     ]
-    },
-    {
-     "id": 62,
-     "name": "n4MuschelGold",
-     "type": "moebel",
-     "x": 400,
-     "y": 432,
-     "width": 16,
-     "height": 16,
-     "rotation": 0,
-     "visible": true,
-     "properties": [
-      {
-       "name": "tiefe",
-       "type": "int",
-       "value": 1
-      },
-      {
-       "name": "kollision",
-       "type": "bool",
-       "value": false
-      }
-     ]
-    },
-    {
      "id": 63,
-     "name": "n4MuschelRosa",
-     "type": "moebel",
-     "x": 496,
-     "y": 512,
-     "width": 16,
-     "height": 16,
-     "rotation": 0,
-     "visible": true,
-     "properties": [
-      {
-       "name": "tiefe",
-       "type": "int",
-       "value": 1
-      },
-      {
-       "name": "kollision",
-       "type": "bool",
-       "value": false
-      }
-     ]
-    },
-    {
-     "id": 64,
-     "name": "n4Spross",
-     "type": "moebel",
-     "x": 432,
-     "y": 112,
-     "width": 32,
-     "height": 32,
-     "rotation": 0,
-     "visible": true,
-     "properties": [
-      {
-       "name": "tiefe",
-       "type": "int",
-       "value": 1
-      },
-      {
-       "name": "kollision",
-       "type": "bool",
-       "value": false
-      }
-     ]
-    },
-    {
-     "id": 65,
-     "name": "n4MuschelGold",
-     "type": "moebel",
-     "x": 352,
-     "y": 416,
-     "width": 16,
-     "height": 16,
-     "rotation": 0,
-     "visible": true,
-     "properties": [
-      {
-       "name": "tiefe",
-       "type": "int",
-       "value": 1
-      },
-      {
-       "name": "kollision",
-       "type": "bool",
-       "value": false
-      }
-     ]
-    },
-    {
-     "id": 66,
-     "name": "n4MuschelBraun",
+     "name": "n4MuschelWeiss",
      "type": "moebel",
      "x": 192,
      "y": 544,
@@ -6918,125 +6849,10 @@
      ]
     },
     {
-     "id": 67,
-     "name": "n4SeesternGelb",
+     "id": 64,
+     "name": "n4MuschelGold",
      "type": "moebel",
-     "x": 208,
-     "y": 448,
-     "width": 16,
-     "height": 16,
-     "rotation": 0,
-     "visible": true,
-     "properties": [
-      {
-       "name": "tiefe",
-       "type": "int",
-       "value": 1
-      },
-      {
-       "name": "kollision",
-       "type": "bool",
-       "value": false
-      }
-     ]
-    },
-    {
-     "id": 68,
-     "name": "n4MuschelBraun",
-     "type": "moebel",
-     "x": 128,
-     "y": 512,
-     "width": 16,
-     "height": 16,
-     "rotation": 0,
-     "visible": true,
-     "properties": [
-      {
-       "name": "tiefe",
-       "type": "int",
-       "value": 1
-      },
-      {
-       "name": "kollision",
-       "type": "bool",
-       "value": false
-      }
-     ]
-    },
-    {
-     "id": 69,
-     "name": "n4MoeweVorn",
-     "type": "moebel",
-     "x": 224,
-     "y": 160,
-     "width": 32,
-     "height": 32,
-     "rotation": 0,
-     "visible": true,
-     "properties": [
-      {
-       "name": "tiefe",
-       "type": "int",
-       "value": 1
-      },
-      {
-       "name": "kollision",
-       "type": "bool",
-       "value": false
-      }
-     ]
-    },
-    {
-     "id": 70,
-     "name": "n4SeesternGelb",
-     "type": "moebel",
-     "x": 672,
-     "y": 432,
-     "width": 16,
-     "height": 16,
-     "rotation": 0,
-     "visible": true,
-     "properties": [
-      {
-       "name": "tiefe",
-       "type": "int",
-       "value": 1
-      },
-      {
-       "name": "kollision",
-       "type": "bool",
-       "value": false
-      }
-     ]
-    },
-    {
-     "id": 71,
-     "name": "n4MuschelWeiss",
-     "type": "moebel",
-     "x": 224,
-     "y": 528,
-     "width": 16,
-     "height": 16,
-     "rotation": 0,
-     "visible": true,
-     "properties": [
-      {
-       "name": "tiefe",
-       "type": "int",
-       "value": 1
-      },
-      {
-       "name": "kollision",
-       "type": "bool",
-       "value": false
-      }
-     ]
-    },
-    {
-     "id": 72,
-     "name": "n4SeesternGelb",
-     "type": "moebel",
-     "x": 352,
+     "x": 480,
      "y": 480,
      "width": 16,
      "height": 16,
@@ -7056,11 +6872,57 @@
      ]
     },
     {
-     "id": 73,
-     "name": "n4MuschelRosa",
+     "id": 65,
+     "name": "n4Spross",
      "type": "moebel",
-     "x": 96,
-     "y": 464,
+     "x": 144,
+     "y": 368,
+     "width": 32,
+     "height": 32,
+     "rotation": 0,
+     "visible": true,
+     "properties": [
+      {
+       "name": "tiefe",
+       "type": "int",
+       "value": 1
+      },
+      {
+       "name": "kollision",
+       "type": "bool",
+       "value": false
+      }
+     ]
+    },
+    {
+     "id": 66,
+     "name": "n4SprossGross",
+     "type": "moebel",
+     "x": 384,
+     "y": 144,
+     "width": 48,
+     "height": 32,
+     "rotation": 0,
+     "visible": true,
+     "properties": [
+      {
+       "name": "tiefe",
+       "type": "int",
+       "value": 1
+      },
+      {
+       "name": "kollision",
+       "type": "bool",
+       "value": false
+      }
+     ]
+    },
+    {
+     "id": 67,
+     "name": "n4SeesternLila",
+     "type": "moebel",
+     "x": 656,
+     "y": 528,
      "width": 16,
      "height": 16,
      "rotation": 0,
@@ -7079,11 +6941,149 @@
      ]
     },
     {
-     "id": 74,
-     "name": "n4SeesternGelb",
+     "id": 68,
+     "name": "n4SeesternLila",
      "type": "moebel",
-     "x": 480,
-     "y": 448,
+     "x": 448,
+     "y": 416,
+     "width": 16,
+     "height": 16,
+     "rotation": 0,
+     "visible": true,
+     "properties": [
+      {
+       "name": "tiefe",
+       "type": "int",
+       "value": 1
+      },
+      {
+       "name": "kollision",
+       "type": "bool",
+       "value": false
+      }
+     ]
+    },
+    {
+     "id": 69,
+     "name": "n4MoeweLinks",
+     "type": "moebel",
+     "x": 432,
+     "y": 208,
+     "width": 32,
+     "height": 32,
+     "rotation": 0,
+     "visible": true,
+     "properties": [
+      {
+       "name": "tiefe",
+       "type": "int",
+       "value": 1
+      },
+      {
+       "name": "kollision",
+       "type": "bool",
+       "value": false
+      }
+     ]
+    },
+    {
+     "id": 70,
+     "name": "n4MuschelWeiss",
+     "type": "moebel",
+     "x": 368,
+     "y": 176,
+     "width": 16,
+     "height": 16,
+     "rotation": 0,
+     "visible": true,
+     "properties": [
+      {
+       "name": "tiefe",
+       "type": "int",
+       "value": 1
+      },
+      {
+       "name": "kollision",
+       "type": "bool",
+       "value": false
+      }
+     ]
+    },
+    {
+     "id": 71,
+     "name": "n4SprossGross",
+     "type": "moebel",
+     "x": 384,
+     "y": 336,
+     "width": 48,
+     "height": 32,
+     "rotation": 0,
+     "visible": true,
+     "properties": [
+      {
+       "name": "tiefe",
+       "type": "int",
+       "value": 1
+      },
+      {
+       "name": "kollision",
+       "type": "bool",
+       "value": false
+      }
+     ]
+    },
+    {
+     "id": 72,
+     "name": "n4MuschelBraun",
+     "type": "moebel",
+     "x": 224,
+     "y": 416,
+     "width": 16,
+     "height": 16,
+     "rotation": 0,
+     "visible": true,
+     "properties": [
+      {
+       "name": "tiefe",
+       "type": "int",
+       "value": 1
+      },
+      {
+       "name": "kollision",
+       "type": "bool",
+       "value": false
+      }
+     ]
+    },
+    {
+     "id": 73,
+     "name": "n4SprossB",
+     "type": "moebel",
+     "x": 48,
+     "y": 256,
+     "width": 32,
+     "height": 32,
+     "rotation": 0,
+     "visible": true,
+     "properties": [
+      {
+       "name": "tiefe",
+       "type": "int",
+       "value": 1
+      },
+      {
+       "name": "kollision",
+       "type": "bool",
+       "value": false
+      }
+     ]
+    },
+    {
+     "id": 74,
+     "name": "n4MuschelWeiss",
+     "type": "moebel",
+     "x": 704,
+     "y": 544,
      "width": 16,
      "height": 16,
      "rotation": 0,
@@ -7105,30 +7105,7 @@
      "id": 75,
      "name": "n4MuschelWeiss",
      "type": "moebel",
-     "x": 640,
-     "y": 464,
-     "width": 16,
-     "height": 16,
-     "rotation": 0,
-     "visible": true,
-     "properties": [
-      {
-       "name": "tiefe",
-       "type": "int",
-       "value": 1
-      },
-      {
-       "name": "kollision",
-       "type": "bool",
-       "value": false
-      }
-     ]
-    },
-    {
-     "id": 76,
-     "name": "n4MuschelBraun",
-     "type": "moebel",
-     "x": 496,
+     "x": 176,
      "y": 432,
      "width": 16,
      "height": 16,
@@ -7148,11 +7125,11 @@
      ]
     },
     {
-     "id": 77,
-     "name": "n4MuschelRosa",
+     "id": 76,
+     "name": "n4SeesternGelb",
      "type": "moebel",
-     "x": 112,
-     "y": 416,
+     "x": 576,
+     "y": 544,
      "width": 16,
      "height": 16,
      "rotation": 0,
@@ -7171,11 +7148,34 @@
      ]
     },
     {
-     "id": 78,
-     "name": "n4MoeweRechts",
+     "id": 77,
+     "name": "n4Spross",
      "type": "moebel",
-     "x": 256,
-     "y": 272,
+     "x": 352,
+     "y": 112,
+     "width": 32,
+     "height": 32,
+     "rotation": 0,
+     "visible": true,
+     "properties": [
+      {
+       "name": "tiefe",
+       "type": "int",
+       "value": 1
+      },
+      {
+       "name": "kollision",
+       "type": "bool",
+       "value": false
+      }
+     ]
+    },
+    {
+     "id": 78,
+     "name": "n4MoeweLinks",
+     "type": "moebel",
+     "x": 320,
+     "y": 128,
      "width": 32,
      "height": 32,
      "rotation": 0,
@@ -7195,12 +7195,12 @@
     },
     {
      "id": 79,
-     "name": "n4SeesternGelb",
+     "name": "n4SprossB",
      "type": "moebel",
-     "x": 512,
-     "y": 480,
-     "width": 16,
-     "height": 16,
+     "x": 384,
+     "y": 96,
+     "width": 32,
+     "height": 32,
      "rotation": 0,
      "visible": true,
      "properties": [
@@ -7218,10 +7218,10 @@
     },
     {
      "id": 80,
-     "name": "n4MuschelBraun",
+     "name": "n4MuschelGold",
      "type": "moebel",
-     "x": 464,
-     "y": 464,
+     "x": 160,
+     "y": 528,
      "width": 16,
      "height": 16,
      "rotation": 0,
@@ -7244,7 +7244,7 @@
      "name": "n4MuschelWeiss",
      "type": "moebel",
      "x": 304,
-     "y": 496,
+     "y": 416,
      "width": 16,
      "height": 16,
      "rotation": 0,
@@ -7264,10 +7264,10 @@
     },
     {
      "id": 82,
-     "name": "n4MuschelBraun",
+     "name": "n4SeesternLila",
      "type": "moebel",
-     "x": 352,
-     "y": 544,
+     "x": 176,
+     "y": 448,
      "width": 16,
      "height": 16,
      "rotation": 0,
@@ -7287,12 +7287,12 @@
     },
     {
      "id": 83,
-     "name": "n4Spross",
+     "name": "n4SeesternLila",
      "type": "moebel",
-     "x": 368,
-     "y": 224,
-     "width": 32,
-     "height": 32,
+     "x": 224,
+     "y": 480,
+     "width": 16,
+     "height": 16,
      "rotation": 0,
      "visible": true,
      "properties": [
@@ -7310,10 +7310,10 @@
     },
     {
      "id": 84,
-     "name": "n4SeesternLila",
+     "name": "n4MuschelWeiss",
      "type": "moebel",
-     "x": 320,
-     "y": 496,
+     "x": 368,
+     "y": 464,
      "width": 16,
      "height": 16,
      "rotation": 0,
@@ -7333,10 +7333,10 @@
     },
     {
      "id": 85,
-     "name": "n4MoeweRechts",
+     "name": "n4Spross",
      "type": "moebel",
-     "x": 368,
-     "y": 112,
+     "x": 224,
+     "y": 256,
      "width": 32,
      "height": 32,
      "rotation": 0,
@@ -7356,12 +7356,12 @@
     },
     {
      "id": 86,
-     "name": "n4MoeweVorn",
+     "name": "n4MuschelGold",
      "type": "moebel",
-     "x": 432,
-     "y": 80,
-     "width": 32,
-     "height": 32,
+     "x": 416,
+     "y": 528,
+     "width": 16,
+     "height": 16,
      "rotation": 0,
      "visible": true,
      "properties": [
@@ -7379,10 +7379,10 @@
     },
     {
      "id": 87,
-     "name": "n4Spross",
+     "name": "n4MoeweRechts",
      "type": "moebel",
-     "x": 352,
-     "y": 272,
+     "x": 208,
+     "y": 304,
      "width": 32,
      "height": 32,
      "rotation": 0,
@@ -7402,12 +7402,12 @@
     },
     {
      "id": 88,
-     "name": "n4MoeweVorn",
+     "name": "n4SeesternGelb",
      "type": "moebel",
-     "x": 320,
-     "y": 384,
-     "width": 32,
-     "height": 32,
+     "x": 400,
+     "y": 496,
+     "width": 16,
+     "height": 16,
      "rotation": 0,
      "visible": true,
      "properties": [
@@ -7425,10 +7425,10 @@
     },
     {
      "id": 89,
-     "name": "n4MuschelRosa",
+     "name": "n4SeesternGelb",
      "type": "moebel",
-     "x": 240,
-     "y": 432,
+     "x": 448,
+     "y": 448,
      "width": 16,
      "height": 16,
      "rotation": 0,
@@ -7450,191 +7450,7 @@
      "id": 90,
      "name": "n4MuschelRosa",
      "type": "moebel",
-     "x": 384,
-     "y": 480,
-     "width": 16,
-     "height": 16,
-     "rotation": 0,
-     "visible": true,
-     "properties": [
-      {
-       "name": "tiefe",
-       "type": "int",
-       "value": 1
-      },
-      {
-       "name": "kollision",
-       "type": "bool",
-       "value": false
-      }
-     ]
-    },
-    {
-     "id": 91,
-     "name": "n4SeesternGelb",
-     "type": "moebel",
-     "x": 208,
-     "y": 544,
-     "width": 16,
-     "height": 16,
-     "rotation": 0,
-     "visible": true,
-     "properties": [
-      {
-       "name": "tiefe",
-       "type": "int",
-       "value": 1
-      },
-      {
-       "name": "kollision",
-       "type": "bool",
-       "value": false
-      }
-     ]
-    },
-    {
-     "id": 92,
-     "name": "n4MuschelWeiss",
-     "type": "moebel",
-     "x": 336,
-     "y": 512,
-     "width": 16,
-     "height": 16,
-     "rotation": 0,
-     "visible": true,
-     "properties": [
-      {
-       "name": "tiefe",
-       "type": "int",
-       "value": 1
-      },
-      {
-       "name": "kollision",
-       "type": "bool",
-       "value": false
-      }
-     ]
-    },
-    {
-     "id": 93,
-     "name": "n4MuschelWeiss",
-     "type": "moebel",
-     "x": 208,
-     "y": 176,
-     "width": 16,
-     "height": 16,
-     "rotation": 0,
-     "visible": true,
-     "properties": [
-      {
-       "name": "tiefe",
-       "type": "int",
-       "value": 1
-      },
-      {
-       "name": "kollision",
-       "type": "bool",
-       "value": false
-      }
-     ]
-    },
-    {
-     "id": 94,
-     "name": "n4SeesternGelb",
-     "type": "moebel",
-     "x": 336,
-     "y": 464,
-     "width": 16,
-     "height": 16,
-     "rotation": 0,
-     "visible": true,
-     "properties": [
-      {
-       "name": "tiefe",
-       "type": "int",
-       "value": 1
-      },
-      {
-       "name": "kollision",
-       "type": "bool",
-       "value": false
-      }
-     ]
-    },
-    {
-     "id": 95,
-     "name": "n4MuschelBraun",
-     "type": "moebel",
-     "x": 368,
-     "y": 416,
-     "width": 16,
-     "height": 16,
-     "rotation": 0,
-     "visible": true,
-     "properties": [
-      {
-       "name": "tiefe",
-       "type": "int",
-       "value": 1
-      },
-      {
-       "name": "kollision",
-       "type": "bool",
-       "value": false
-      }
-     ]
-    },
-    {
-     "id": 96,
-     "name": "n4MoeweRechts",
-     "type": "moebel",
-     "x": 176,
-     "y": 128,
-     "width": 32,
-     "height": 32,
-     "rotation": 0,
-     "visible": true,
-     "properties": [
-      {
-       "name": "tiefe",
-       "type": "int",
-       "value": 1
-      },
-      {
-       "name": "kollision",
-       "type": "bool",
-       "value": false
-      }
-     ]
-    },
-    {
-     "id": 97,
-     "name": "n4MuschelGold",
-     "type": "moebel",
-     "x": 224,
-     "y": 512,
-     "width": 16,
-     "height": 16,
-     "rotation": 0,
-     "visible": true,
-     "properties": [
-      {
-       "name": "tiefe",
-       "type": "int",
-       "value": 1
-      },
-      {
-       "name": "kollision",
-       "type": "bool",
-       "value": false
-      }
-     ]
-    },
-    {
-     "id": 98,
-     "name": "n4SeesternGelb",
-     "type": "moebel",
-     "x": 512,
+     "x": 128,
      "y": 496,
      "width": 16,
      "height": 16,
@@ -7654,10 +7470,194 @@
      ]
     },
     {
-     "id": 99,
-     "name": "n4MuschelRosa",
+     "id": 91,
+     "name": "n4MoeweLinks",
      "type": "moebel",
-     "x": 288,
+     "x": 320,
+     "y": 224,
+     "width": 32,
+     "height": 32,
+     "rotation": 0,
+     "visible": true,
+     "properties": [
+      {
+       "name": "tiefe",
+       "type": "int",
+       "value": 1
+      },
+      {
+       "name": "kollision",
+       "type": "bool",
+       "value": false
+      }
+     ]
+    },
+    {
+     "id": 92,
+     "name": "n4MuschelGold",
+     "type": "moebel",
+     "x": 512,
+     "y": 528,
+     "width": 16,
+     "height": 16,
+     "rotation": 0,
+     "visible": true,
+     "properties": [
+      {
+       "name": "tiefe",
+       "type": "int",
+       "value": 1
+      },
+      {
+       "name": "kollision",
+       "type": "bool",
+       "value": false
+      }
+     ]
+    },
+    {
+     "id": 93,
+     "name": "n4SprossB",
+     "type": "moebel",
+     "x": 448,
+     "y": 96,
+     "width": 32,
+     "height": 32,
+     "rotation": 0,
+     "visible": true,
+     "properties": [
+      {
+       "name": "tiefe",
+       "type": "int",
+       "value": 1
+      },
+      {
+       "name": "kollision",
+       "type": "bool",
+       "value": false
+      }
+     ]
+    },
+    {
+     "id": 94,
+     "name": "n4MuschelGold",
+     "type": "moebel",
+     "x": 144,
+     "y": 416,
+     "width": 16,
+     "height": 16,
+     "rotation": 0,
+     "visible": true,
+     "properties": [
+      {
+       "name": "tiefe",
+       "type": "int",
+       "value": 1
+      },
+      {
+       "name": "kollision",
+       "type": "bool",
+       "value": false
+      }
+     ]
+    },
+    {
+     "id": 95,
+     "name": "n4MuschelGold",
+     "type": "moebel",
+     "x": 80,
+     "y": 496,
+     "width": 16,
+     "height": 16,
+     "rotation": 0,
+     "visible": true,
+     "properties": [
+      {
+       "name": "tiefe",
+       "type": "int",
+       "value": 1
+      },
+      {
+       "name": "kollision",
+       "type": "bool",
+       "value": false
+      }
+     ]
+    },
+    {
+     "id": 96,
+     "name": "n4MuschelWeiss",
+     "type": "moebel",
+     "x": 64,
+     "y": 464,
+     "width": 16,
+     "height": 16,
+     "rotation": 0,
+     "visible": true,
+     "properties": [
+      {
+       "name": "tiefe",
+       "type": "int",
+       "value": 1
+      },
+      {
+       "name": "kollision",
+       "type": "bool",
+       "value": false
+      }
+     ]
+    },
+    {
+     "id": 97,
+     "name": "n4SeesternGelb",
+     "type": "moebel",
+     "x": 384,
+     "y": 544,
+     "width": 16,
+     "height": 16,
+     "rotation": 0,
+     "visible": true,
+     "properties": [
+      {
+       "name": "tiefe",
+       "type": "int",
+       "value": 1
+      },
+      {
+       "name": "kollision",
+       "type": "bool",
+       "value": false
+      }
+     ]
+    },
+    {
+     "id": 98,
+     "name": "n4MuschelWeiss",
+     "type": "moebel",
+     "x": 560,
+     "y": 480,
+     "width": 16,
+     "height": 16,
+     "rotation": 0,
+     "visible": true,
+     "properties": [
+      {
+       "name": "tiefe",
+       "type": "int",
+       "value": 1
+      },
+      {
+       "name": "kollision",
+       "type": "bool",
+       "value": false
+      }
+     ]
+    },
+    {
+     "id": 99,
+     "name": "n4MuschelGold",
+     "type": "moebel",
+     "x": 64,
      "y": 416,
      "width": 16,
      "height": 16,
@@ -7678,55 +7678,9 @@
     },
     {
      "id": 100,
-     "name": "n4SeesternLila",
+     "name": "n4MuschelRosa",
      "type": "moebel",
-     "x": 560,
-     "y": 496,
-     "width": 16,
-     "height": 16,
-     "rotation": 0,
-     "visible": true,
-     "properties": [
-      {
-       "name": "tiefe",
-       "type": "int",
-       "value": 1
-      },
-      {
-       "name": "kollision",
-       "type": "bool",
-       "value": false
-      }
-     ]
-    },
-    {
-     "id": 101,
-     "name": "n4MoeweRechts",
-     "type": "moebel",
-     "x": 192,
-     "y": 80,
-     "width": 32,
-     "height": 32,
-     "rotation": 0,
-     "visible": true,
-     "properties": [
-      {
-       "name": "tiefe",
-       "type": "int",
-       "value": 1
-      },
-      {
-       "name": "kollision",
-       "type": "bool",
-       "value": false
-      }
-     ]
-    },
-    {
-     "id": 102,
-     "name": "n4MuschelGold",
-     "type": "moebel",
-     "x": 368,
+     "x": 112,
      "y": 544,
      "width": 16,
      "height": 16,
@@ -7746,11 +7700,11 @@
      ]
     },
     {
-     "id": 103,
-     "name": "n4MoeweLinks",
+     "id": 101,
+     "name": "n4Spross",
      "type": "moebel",
-     "x": 416,
-     "y": 192,
+     "x": 176,
+     "y": 384,
      "width": 32,
      "height": 32,
      "rotation": 0,
@@ -7769,11 +7723,57 @@
      ]
     },
     {
-     "id": 104,
-     "name": "n4SeesternLila",
+     "id": 102,
+     "name": "n4MuschelBraun",
      "type": "moebel",
-     "x": 400,
-     "y": 448,
+     "x": 496,
+     "y": 512,
+     "width": 16,
+     "height": 16,
+     "rotation": 0,
+     "visible": true,
+     "properties": [
+      {
+       "name": "tiefe",
+       "type": "int",
+       "value": 1
+      },
+      {
+       "name": "kollision",
+       "type": "bool",
+       "value": false
+      }
+     ]
+    },
+    {
+     "id": 103,
+     "name": "n4MuschelWeiss",
+     "type": "moebel",
+     "x": 464,
+     "y": 480,
+     "width": 16,
+     "height": 16,
+     "rotation": 0,
+     "visible": true,
+     "properties": [
+      {
+       "name": "tiefe",
+       "type": "int",
+       "value": 1
+      },
+      {
+       "name": "kollision",
+       "type": "bool",
+       "value": false
+      }
+     ]
+    },
+    {
+     "id": 104,
+     "name": "n4MuschelWeiss",
+     "type": "moebel",
+     "x": 256,
+     "y": 496,
      "width": 16,
      "height": 16,
      "rotation": 0,
@@ -7793,10 +7793,10 @@
     },
     {
      "id": 105,
-     "name": "n4MuschelWeiss",
+     "name": "n4MuschelBraun",
      "type": "moebel",
-     "x": 656,
-     "y": 416,
+     "x": 432,
+     "y": 480,
      "width": 16,
      "height": 16,
      "rotation": 0,
@@ -7818,8 +7818,8 @@
      "id": 106,
      "name": "n4SeesternGelb",
      "type": "moebel",
-     "x": 672,
-     "y": 544,
+     "x": 560,
+     "y": 528,
      "width": 16,
      "height": 16,
      "rotation": 0,
@@ -7839,10 +7839,10 @@
     },
     {
      "id": 107,
-     "name": "n4MuschelWeiss",
+     "name": "n4SeesternGelb",
      "type": "moebel",
-     "x": 336,
-     "y": 208,
+     "x": 192,
+     "y": 448,
      "width": 16,
      "height": 16,
      "rotation": 0,
@@ -7862,10 +7862,10 @@
     },
     {
      "id": 108,
-     "name": "n4MuschelWeiss",
+     "name": "n4SeesternGelb",
      "type": "moebel",
-     "x": 288,
-     "y": 320,
+     "x": 144,
+     "y": 480,
      "width": 16,
      "height": 16,
      "rotation": 0,
@@ -7885,12 +7885,12 @@
     },
     {
      "id": 109,
-     "name": "n4MoeweLinks",
+     "name": "n4MuschelBraun",
      "type": "moebel",
-     "x": 80,
-     "y": 288,
-     "width": 32,
-     "height": 32,
+     "x": 592,
+     "y": 544,
+     "width": 16,
+     "height": 16,
      "rotation": 0,
      "visible": true,
      "properties": [
@@ -7908,12 +7908,12 @@
     },
     {
      "id": 110,
-     "name": "n4MoeweLinks",
+     "name": "n4SeesternGelb",
      "type": "moebel",
-     "x": 496,
-     "y": 144,
-     "width": 32,
-     "height": 32,
+     "x": 160,
+     "y": 416,
+     "width": 16,
+     "height": 16,
      "rotation": 0,
      "visible": true,
      "properties": [
@@ -7931,10 +7931,10 @@
     },
     {
      "id": 111,
-     "name": "n4SeesternLila",
+     "name": "n4SeesternGelb",
      "type": "moebel",
-     "x": 576,
-     "y": 448,
+     "x": 112,
+     "y": 464,
      "width": 16,
      "height": 16,
      "rotation": 0,
@@ -7956,8 +7956,8 @@
      "id": 112,
      "name": "n4MuschelWeiss",
      "type": "moebel",
-     "x": 560,
-     "y": 544,
+     "x": 480,
+     "y": 496,
      "width": 16,
      "height": 16,
      "rotation": 0,
@@ -7977,12 +7977,12 @@
     },
     {
      "id": 113,
-     "name": "n4MuschelBraun",
+     "name": "n4SprossGross",
      "type": "moebel",
-     "x": 208,
-     "y": 512,
-     "width": 16,
-     "height": 16,
+     "x": 368,
+     "y": 192,
+     "width": 48,
+     "height": 32,
      "rotation": 0,
      "visible": true,
      "properties": [
@@ -8000,10 +8000,10 @@
     },
     {
      "id": 114,
-     "name": "n4SeesternLila",
+     "name": "n4SeesternGelb",
      "type": "moebel",
-     "x": 176,
-     "y": 432,
+     "x": 672,
+     "y": 448,
      "width": 16,
      "height": 16,
      "rotation": 0,
@@ -8023,7 +8023,766 @@
     },
     {
      "id": 115,
+     "name": "n4SprossB",
+     "type": "moebel",
+     "x": 32,
+     "y": 304,
+     "width": 32,
+     "height": 32,
+     "rotation": 0,
+     "visible": true,
+     "properties": [
+      {
+       "name": "tiefe",
+       "type": "int",
+       "value": 1
+      },
+      {
+       "name": "kollision",
+       "type": "bool",
+       "value": false
+      }
+     ]
+    },
+    {
+     "id": 116,
+     "name": "n4SeesternGelb",
+     "type": "moebel",
+     "x": 528,
+     "y": 512,
+     "width": 16,
+     "height": 16,
+     "rotation": 0,
+     "visible": true,
+     "properties": [
+      {
+       "name": "tiefe",
+       "type": "int",
+       "value": 1
+      },
+      {
+       "name": "kollision",
+       "type": "bool",
+       "value": false
+      }
+     ]
+    },
+    {
+     "id": 117,
      "name": "n4MuschelBraun",
+     "type": "moebel",
+     "x": 544,
+     "y": 480,
+     "width": 16,
+     "height": 16,
+     "rotation": 0,
+     "visible": true,
+     "properties": [
+      {
+       "name": "tiefe",
+       "type": "int",
+       "value": 1
+      },
+      {
+       "name": "kollision",
+       "type": "bool",
+       "value": false
+      }
+     ]
+    },
+    {
+     "id": 118,
+     "name": "n4SeesternLila",
+     "type": "moebel",
+     "x": 128,
+     "y": 464,
+     "width": 16,
+     "height": 16,
+     "rotation": 0,
+     "visible": true,
+     "properties": [
+      {
+       "name": "tiefe",
+       "type": "int",
+       "value": 1
+      },
+      {
+       "name": "kollision",
+       "type": "bool",
+       "value": false
+      }
+     ]
+    },
+    {
+     "id": 119,
+     "name": "n4SeesternLila",
+     "type": "moebel",
+     "x": 64,
+     "y": 432,
+     "width": 16,
+     "height": 16,
+     "rotation": 0,
+     "visible": true,
+     "properties": [
+      {
+       "name": "tiefe",
+       "type": "int",
+       "value": 1
+      },
+      {
+       "name": "kollision",
+       "type": "bool",
+       "value": false
+      }
+     ]
+    },
+    {
+     "id": 120,
+     "name": "n4MuschelRosa",
+     "type": "moebel",
+     "x": 160,
+     "y": 544,
+     "width": 16,
+     "height": 16,
+     "rotation": 0,
+     "visible": true,
+     "properties": [
+      {
+       "name": "tiefe",
+       "type": "int",
+       "value": 1
+      },
+      {
+       "name": "kollision",
+       "type": "bool",
+       "value": false
+      }
+     ]
+    },
+    {
+     "id": 121,
+     "name": "n4MuschelGold",
+     "type": "moebel",
+     "x": 544,
+     "y": 464,
+     "width": 16,
+     "height": 16,
+     "rotation": 0,
+     "visible": true,
+     "properties": [
+      {
+       "name": "tiefe",
+       "type": "int",
+       "value": 1
+      },
+      {
+       "name": "kollision",
+       "type": "bool",
+       "value": false
+      }
+     ]
+    },
+    {
+     "id": 122,
+     "name": "n4MoeweRechts",
+     "type": "moebel",
+     "x": 176,
+     "y": 80,
+     "width": 32,
+     "height": 32,
+     "rotation": 0,
+     "visible": true,
+     "properties": [
+      {
+       "name": "tiefe",
+       "type": "int",
+       "value": 1
+      },
+      {
+       "name": "kollision",
+       "type": "bool",
+       "value": false
+      }
+     ]
+    },
+    {
+     "id": 123,
+     "name": "n4SeesternGelb",
+     "type": "moebel",
+     "x": 192,
+     "y": 512,
+     "width": 16,
+     "height": 16,
+     "rotation": 0,
+     "visible": true,
+     "properties": [
+      {
+       "name": "tiefe",
+       "type": "int",
+       "value": 1
+      },
+      {
+       "name": "kollision",
+       "type": "bool",
+       "value": false
+      }
+     ]
+    },
+    {
+     "id": 124,
+     "name": "n4MuschelWeiss",
+     "type": "moebel",
+     "x": 512,
+     "y": 336,
+     "width": 16,
+     "height": 16,
+     "rotation": 0,
+     "visible": true,
+     "properties": [
+      {
+       "name": "tiefe",
+       "type": "int",
+       "value": 1
+      },
+      {
+       "name": "kollision",
+       "type": "bool",
+       "value": false
+      }
+     ]
+    },
+    {
+     "id": 125,
+     "name": "n4MuschelRosa",
+     "type": "moebel",
+     "x": 368,
+     "y": 416,
+     "width": 16,
+     "height": 16,
+     "rotation": 0,
+     "visible": true,
+     "properties": [
+      {
+       "name": "tiefe",
+       "type": "int",
+       "value": 1
+      },
+      {
+       "name": "kollision",
+       "type": "bool",
+       "value": false
+      }
+     ]
+    },
+    {
+     "id": 126,
+     "name": "n4SprossB",
+     "type": "moebel",
+     "x": 192,
+     "y": 112,
+     "width": 32,
+     "height": 32,
+     "rotation": 0,
+     "visible": true,
+     "properties": [
+      {
+       "name": "tiefe",
+       "type": "int",
+       "value": 1
+      },
+      {
+       "name": "kollision",
+       "type": "bool",
+       "value": false
+      }
+     ]
+    },
+    {
+     "id": 127,
+     "name": "n4Spross",
+     "type": "moebel",
+     "x": 320,
+     "y": 288,
+     "width": 32,
+     "height": 32,
+     "rotation": 0,
+     "visible": true,
+     "properties": [
+      {
+       "name": "tiefe",
+       "type": "int",
+       "value": 1
+      },
+      {
+       "name": "kollision",
+       "type": "bool",
+       "value": false
+      }
+     ]
+    },
+    {
+     "id": 128,
+     "name": "n4MuschelGold",
+     "type": "moebel",
+     "x": 304,
+     "y": 544,
+     "width": 16,
+     "height": 16,
+     "rotation": 0,
+     "visible": true,
+     "properties": [
+      {
+       "name": "tiefe",
+       "type": "int",
+       "value": 1
+      },
+      {
+       "name": "kollision",
+       "type": "bool",
+       "value": false
+      }
+     ]
+    },
+    {
+     "id": 129,
+     "name": "n4MuschelGold",
+     "type": "moebel",
+     "x": 288,
+     "y": 464,
+     "width": 16,
+     "height": 16,
+     "rotation": 0,
+     "visible": true,
+     "properties": [
+      {
+       "name": "tiefe",
+       "type": "int",
+       "value": 1
+      },
+      {
+       "name": "kollision",
+       "type": "bool",
+       "value": false
+      }
+     ]
+    },
+    {
+     "id": 130,
+     "name": "n4SeesternLila",
+     "type": "moebel",
+     "x": 96,
+     "y": 448,
+     "width": 16,
+     "height": 16,
+     "rotation": 0,
+     "visible": true,
+     "properties": [
+      {
+       "name": "tiefe",
+       "type": "int",
+       "value": 1
+      },
+      {
+       "name": "kollision",
+       "type": "bool",
+       "value": false
+      }
+     ]
+    },
+    {
+     "id": 131,
+     "name": "n4MuschelRosa",
+     "type": "moebel",
+     "x": 272,
+     "y": 448,
+     "width": 16,
+     "height": 16,
+     "rotation": 0,
+     "visible": true,
+     "properties": [
+      {
+       "name": "tiefe",
+       "type": "int",
+       "value": 1
+      },
+      {
+       "name": "kollision",
+       "type": "bool",
+       "value": false
+      }
+     ]
+    },
+    {
+     "id": 132,
+     "name": "n4MuschelBraun",
+     "type": "moebel",
+     "x": 464,
+     "y": 432,
+     "width": 16,
+     "height": 16,
+     "rotation": 0,
+     "visible": true,
+     "properties": [
+      {
+       "name": "tiefe",
+       "type": "int",
+       "value": 1
+      },
+      {
+       "name": "kollision",
+       "type": "bool",
+       "value": false
+      }
+     ]
+    },
+    {
+     "id": 133,
+     "name": "n4SeesternGelb",
+     "type": "moebel",
+     "x": 560,
+     "y": 512,
+     "width": 16,
+     "height": 16,
+     "rotation": 0,
+     "visible": true,
+     "properties": [
+      {
+       "name": "tiefe",
+       "type": "int",
+       "value": 1
+      },
+      {
+       "name": "kollision",
+       "type": "bool",
+       "value": false
+      }
+     ]
+    },
+    {
+     "id": 134,
+     "name": "n4MuschelBraun",
+     "type": "moebel",
+     "x": 240,
+     "y": 528,
+     "width": 16,
+     "height": 16,
+     "rotation": 0,
+     "visible": true,
+     "properties": [
+      {
+       "name": "tiefe",
+       "type": "int",
+       "value": 1
+      },
+      {
+       "name": "kollision",
+       "type": "bool",
+       "value": false
+      }
+     ]
+    },
+    {
+     "id": 135,
+     "name": "n4MuschelGold",
+     "type": "moebel",
+     "x": 128,
+     "y": 416,
+     "width": 16,
+     "height": 16,
+     "rotation": 0,
+     "visible": true,
+     "properties": [
+      {
+       "name": "tiefe",
+       "type": "int",
+       "value": 1
+      },
+      {
+       "name": "kollision",
+       "type": "bool",
+       "value": false
+      }
+     ]
+    },
+    {
+     "id": 136,
+     "name": "n4Spross",
+     "type": "moebel",
+     "x": 432,
+     "y": 352,
+     "width": 32,
+     "height": 32,
+     "rotation": 0,
+     "visible": true,
+     "properties": [
+      {
+       "name": "tiefe",
+       "type": "int",
+       "value": 1
+      },
+      {
+       "name": "kollision",
+       "type": "bool",
+       "value": false
+      }
+     ]
+    },
+    {
+     "id": 137,
+     "name": "n4MuschelWeiss",
+     "type": "moebel",
+     "x": 640,
+     "y": 512,
+     "width": 16,
+     "height": 16,
+     "rotation": 0,
+     "visible": true,
+     "properties": [
+      {
+       "name": "tiefe",
+       "type": "int",
+       "value": 1
+      },
+      {
+       "name": "kollision",
+       "type": "bool",
+       "value": false
+      }
+     ]
+    },
+    {
+     "id": 138,
+     "name": "n4Spross",
+     "type": "moebel",
+     "x": 416,
+     "y": 240,
+     "width": 32,
+     "height": 32,
+     "rotation": 0,
+     "visible": true,
+     "properties": [
+      {
+       "name": "tiefe",
+       "type": "int",
+       "value": 1
+      },
+      {
+       "name": "kollision",
+       "type": "bool",
+       "value": false
+      }
+     ]
+    },
+    {
+     "id": 139,
+     "name": "n4MoeweVorn",
+     "type": "moebel",
+     "x": 480,
+     "y": 304,
+     "width": 32,
+     "height": 32,
+     "rotation": 0,
+     "visible": true,
+     "properties": [
+      {
+       "name": "tiefe",
+       "type": "int",
+       "value": 1
+      },
+      {
+       "name": "kollision",
+       "type": "bool",
+       "value": false
+      }
+     ]
+    },
+    {
+     "id": 140,
+     "name": "n4MoeweVorn",
+     "type": "moebel",
+     "x": 512,
+     "y": 208,
+     "width": 32,
+     "height": 32,
+     "rotation": 0,
+     "visible": true,
+     "properties": [
+      {
+       "name": "tiefe",
+       "type": "int",
+       "value": 1
+      },
+      {
+       "name": "kollision",
+       "type": "bool",
+       "value": false
+      }
+     ]
+    },
+    {
+     "id": 141,
+     "name": "n4Spross",
+     "type": "moebel",
+     "x": 416,
+     "y": 384,
+     "width": 32,
+     "height": 32,
+     "rotation": 0,
+     "visible": true,
+     "properties": [
+      {
+       "name": "tiefe",
+       "type": "int",
+       "value": 1
+      },
+      {
+       "name": "kollision",
+       "type": "bool",
+       "value": false
+      }
+     ]
+    },
+    {
+     "id": 142,
+     "name": "n4MuschelWeiss",
+     "type": "moebel",
+     "x": 448,
+     "y": 512,
+     "width": 16,
+     "height": 16,
+     "rotation": 0,
+     "visible": true,
+     "properties": [
+      {
+       "name": "tiefe",
+       "type": "int",
+       "value": 1
+      },
+      {
+       "name": "kollision",
+       "type": "bool",
+       "value": false
+      }
+     ]
+    },
+    {
+     "id": 143,
+     "name": "n4MuschelBraun",
+     "type": "moebel",
+     "x": 240,
+     "y": 464,
+     "width": 16,
+     "height": 16,
+     "rotation": 0,
+     "visible": true,
+     "properties": [
+      {
+       "name": "tiefe",
+       "type": "int",
+       "value": 1
+      },
+      {
+       "name": "kollision",
+       "type": "bool",
+       "value": false
+      }
+     ]
+    },
+    {
+     "id": 144,
+     "name": "n4Spross",
+     "type": "moebel",
+     "x": 224,
+     "y": 96,
+     "width": 32,
+     "height": 32,
+     "rotation": 0,
+     "visible": true,
+     "properties": [
+      {
+       "name": "tiefe",
+       "type": "int",
+       "value": 1
+      },
+      {
+       "name": "kollision",
+       "type": "bool",
+       "value": false
+      }
+     ]
+    },
+    {
+     "id": 145,
+     "name": "n4SprossB",
+     "type": "moebel",
+     "x": 144,
+     "y": 304,
+     "width": 32,
+     "height": 32,
+     "rotation": 0,
+     "visible": true,
+     "properties": [
+      {
+       "name": "tiefe",
+       "type": "int",
+       "value": 1
+      },
+      {
+       "name": "kollision",
+       "type": "bool",
+       "value": false
+      }
+     ]
+    },
+    {
+     "id": 146,
+     "name": "n4MuschelBraun",
+     "type": "moebel",
+     "x": 608,
+     "y": 528,
+     "width": 16,
+     "height": 16,
+     "rotation": 0,
+     "visible": true,
+     "properties": [
+      {
+       "name": "tiefe",
+       "type": "int",
+       "value": 1
+      },
+      {
+       "name": "kollision",
+       "type": "bool",
+       "value": false
+      }
+     ]
+    },
+    {
+     "id": 147,
+     "name": "n4SeesternGelb",
+     "type": "moebel",
+     "x": 528,
+     "y": 544,
+     "width": 16,
+     "height": 16,
+     "rotation": 0,
+     "visible": true,
+     "properties": [
+      {
+       "name": "tiefe",
+       "type": "int",
+       "value": 1
+      },
+      {
+       "name": "kollision",
+       "type": "bool",
+       "value": false
+      }
+     ]
+    },
+    {
+     "id": 148,
+     "name": "n4SeesternLila",
      "type": "moebel",
      "x": 512,
      "y": 448,
@@ -8045,7 +8804,260 @@
      ]
     },
     {
-     "id": 116,
+     "id": 149,
+     "name": "n4MuschelBraun",
+     "type": "moebel",
+     "x": 544,
+     "y": 448,
+     "width": 16,
+     "height": 16,
+     "rotation": 0,
+     "visible": true,
+     "properties": [
+      {
+       "name": "tiefe",
+       "type": "int",
+       "value": 1
+      },
+      {
+       "name": "kollision",
+       "type": "bool",
+       "value": false
+      }
+     ]
+    },
+    {
+     "id": 150,
+     "name": "n4MoeweRechts",
+     "type": "moebel",
+     "x": 176,
+     "y": 320,
+     "width": 32,
+     "height": 32,
+     "rotation": 0,
+     "visible": true,
+     "properties": [
+      {
+       "name": "tiefe",
+       "type": "int",
+       "value": 1
+      },
+      {
+       "name": "kollision",
+       "type": "bool",
+       "value": false
+      }
+     ]
+    },
+    {
+     "id": 151,
+     "name": "n4MoeweLinks",
+     "type": "moebel",
+     "x": 80,
+     "y": 304,
+     "width": 32,
+     "height": 32,
+     "rotation": 0,
+     "visible": true,
+     "properties": [
+      {
+       "name": "tiefe",
+       "type": "int",
+       "value": 1
+      },
+      {
+       "name": "kollision",
+       "type": "bool",
+       "value": false
+      }
+     ]
+    },
+    {
+     "id": 152,
+     "name": "n4SeesternLila",
+     "type": "moebel",
+     "x": 192,
+     "y": 464,
+     "width": 16,
+     "height": 16,
+     "rotation": 0,
+     "visible": true,
+     "properties": [
+      {
+       "name": "tiefe",
+       "type": "int",
+       "value": 1
+      },
+      {
+       "name": "kollision",
+       "type": "bool",
+       "value": false
+      }
+     ]
+    },
+    {
+     "id": 153,
+     "name": "n4MuschelGold",
+     "type": "moebel",
+     "x": 304,
+     "y": 528,
+     "width": 16,
+     "height": 16,
+     "rotation": 0,
+     "visible": true,
+     "properties": [
+      {
+       "name": "tiefe",
+       "type": "int",
+       "value": 1
+      },
+      {
+       "name": "kollision",
+       "type": "bool",
+       "value": false
+      }
+     ]
+    },
+    {
+     "id": 154,
+     "name": "n4MoeweVorn",
+     "type": "moebel",
+     "x": 112,
+     "y": 304,
+     "width": 32,
+     "height": 32,
+     "rotation": 0,
+     "visible": true,
+     "properties": [
+      {
+       "name": "tiefe",
+       "type": "int",
+       "value": 1
+      },
+      {
+       "name": "kollision",
+       "type": "bool",
+       "value": false
+      }
+     ]
+    },
+    {
+     "id": 155,
+     "name": "n4SeesternLila",
+     "type": "moebel",
+     "x": 688,
+     "y": 448,
+     "width": 16,
+     "height": 16,
+     "rotation": 0,
+     "visible": true,
+     "properties": [
+      {
+       "name": "tiefe",
+       "type": "int",
+       "value": 1
+      },
+      {
+       "name": "kollision",
+       "type": "bool",
+       "value": false
+      }
+     ]
+    },
+    {
+     "id": 156,
+     "name": "n4SeesternLila",
+     "type": "moebel",
+     "x": 480,
+     "y": 464,
+     "width": 16,
+     "height": 16,
+     "rotation": 0,
+     "visible": true,
+     "properties": [
+      {
+       "name": "tiefe",
+       "type": "int",
+       "value": 1
+      },
+      {
+       "name": "kollision",
+       "type": "bool",
+       "value": false
+      }
+     ]
+    },
+    {
+     "id": 157,
+     "name": "n4MuschelWeiss",
+     "type": "moebel",
+     "x": 464,
+     "y": 416,
+     "width": 16,
+     "height": 16,
+     "rotation": 0,
+     "visible": true,
+     "properties": [
+      {
+       "name": "tiefe",
+       "type": "int",
+       "value": 1
+      },
+      {
+       "name": "kollision",
+       "type": "bool",
+       "value": false
+      }
+     ]
+    },
+    {
+     "id": 158,
+     "name": "n4SeesternLila",
+     "type": "moebel",
+     "x": 192,
+     "y": 528,
+     "width": 16,
+     "height": 16,
+     "rotation": 0,
+     "visible": true,
+     "properties": [
+      {
+       "name": "tiefe",
+       "type": "int",
+       "value": 1
+      },
+      {
+       "name": "kollision",
+       "type": "bool",
+       "value": false
+      }
+     ]
+    },
+    {
+     "id": 159,
+     "name": "n4MuschelWeiss",
+     "type": "moebel",
+     "x": 96,
+     "y": 384,
+     "width": 16,
+     "height": 16,
+     "rotation": 0,
+     "visible": true,
+     "properties": [
+      {
+       "name": "tiefe",
+       "type": "int",
+       "value": 1
+      },
+      {
+       "name": "kollision",
+       "type": "bool",
+       "value": false
+      }
+     ]
+    },
+    {
+     "id": 160,
      "name": "sc8Finkenzeichen",
      "type": "moebel",
      "x": 640,

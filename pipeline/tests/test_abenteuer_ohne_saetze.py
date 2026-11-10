@@ -26,6 +26,9 @@ NOTIZFELDER = {
     "pgn",
     "eroeffnungen",
     "wert",
+    # Bedingungen (Zustände, Übergänge): Logik in der Bedingungssprache, kein Text für den Spieler.
+    "zustand_der_karte",
+    "wenn",
 }
 # Bauhilfen des Kartenbauers; sie kommen nicht ins Spielpaket.
 BAUHILFEN = ("ortsprofile.json", "materialien.json", "katalog_korrekturen/", "moebel/", "texte/")

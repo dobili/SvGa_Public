@@ -21,197 +21,113 @@
   "objekte": [
     {
       "moebel": "cc4Archivregal",
-      "feld": [
-        1,
-        1
-      ]
+      "feld": [1, 1]
     },
     {
       "moebel": "cc4ArchivregalB",
-      "feld": [
-        3,
-        1
-      ]
+      "feld": [3, 1]
     },
     {
       "moebel": "cc4Boxerfoto",
-      "feld": [
-        5,
-        1
-      ],
+      "feld": [5, 1],
       "an_wand": true
     },
     {
       "moebel": "cc4Archivregal",
-      "feld": [
-        6,
-        1
-      ]
+      "feld": [6, 1]
     },
     {
       "moebel": "cc4ArchivregalB",
-      "feld": [
-        8,
-        1
-      ],
+      "feld": [8, 1],
       "id": "dunklesRegal"
     },
     {
       "moebel": "cc4Treppe",
-      "feld": [
-        10,
-        1
-      ]
+      "feld": [10, 1]
     },
     {
       "moebel": "cc4ArchivregalB",
-      "feld": [
-        1,
-        4
-      ],
-      "versatz": [
-        4,
-        0
-      ]
+      "feld": [1, 4],
+      "versatz": [4, 0]
     },
     {
       "moebel": "cc4Archivregal",
-      "feld": [
-        3,
-        4
-      ],
-      "versatz": [
-        0,
-        0
-      ]
+      "feld": [3, 4],
+      "versatz": [0, 0]
     },
     {
       "moebel": "cc4ArchivregalB",
-      "feld": [
-        5,
-        6
-      ],
-      "versatz": [
-        4,
-        0
-      ]
+      "feld": [5, 6],
+      "versatz": [4, 0]
     },
     {
       "moebel": "cc4Archivregal",
-      "feld": [
-        7,
-        6
-      ],
-      "versatz": [
-        0,
-        0
-      ]
+      "feld": [7, 6],
+      "versatz": [0, 0]
     },
     {
       "moebel": "cc4Karton",
-      "feld": [
-        1,
-        8
-      ]
+      "feld": [1, 8]
     },
     {
       "moebel": "cc4Karton",
-      "feld": [
-        3,
-        8
-      ]
+      "feld": [3, 8]
     },
     {
       "moebel": "cc4KartonOffen",
-      "feld": [
-        9,
-        4
-      ],
+      "feld": [9, 4],
       "id": "karton1858"
     },
     {
       "moebel": "cc4StuhlHinten",
-      "feld": [
-        11,
-        7
-      ]
+      "feld": [11, 7]
     },
     {
       "moebel": "cc5Tisch",
-      "feld": [
-        11,
-        8
-      ],
+      "feld": [11, 8],
       "id": "tisch"
     },
     {
       "moebel": "cc4Leselampe",
       "auf": "tisch",
-      "versatz": [
-        7,
-        0
-      ]
+      "versatz": [7, 0]
     }
   ],
   "ausloeser": [
     {
       "name": "start",
-      "feld": [
-        11,
-        5
-      ],
+      "feld": [11, 5],
       "eigenschaften": {
         "richtung": "unten"
       }
     },
     {
       "name": "kellerAusgang",
-      "feld": [
-        11,
-        3
-      ]
+      "feld": [11, 3]
     },
     {
       "name": "boxerfoto",
-      "feld": [
-        5,
-        3
-      ]
+      "feld": [5, 3]
     },
     {
       "name": "programmheft",
-      "feld": [
-        11,
-        9
-      ],
+      "feld": [11, 9],
       "auf_moebel": true
     },
     {
       "name": "karton1858",
-      "feld": [
-        9,
-        5
-      ],
+      "feld": [9, 5],
       "auf_moebel": true
     },
     {
       "name": "wasserfleck",
-      "feld": [
-        6,
-        4
-      ]
+      "feld": [6, 4]
     }
   ],
   "figuren": [],
   "belebung": [],
-  "zustand": [
-    "gebraucht",
-    "alt"
-  ],
-  "stil": [
-    "klassisch",
-    "einfach"
-  ],
+  "zustand": ["gebraucht", "alt"],
+  "stil": ["klassisch", "einfach"],
   "dicht": true,
   "zustand_der_karte": "archivGeordnet"
 }

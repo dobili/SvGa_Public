@@ -161,3 +161,17 @@ Der Fernbus nach Ironwood hält an der Haltestelle vor dem Campus. #sprecher:erz
     Erst die Akademie, {held}. Dann die Reise. #sprecher:ambrose
 }
 -> END
+
+// ---------------------------------------------------------------- Inselfähre (Sperre S6)
+// Runde 6 (13_Wegenetz, Abschnitt 4): Nach der Nadel von Silicon Bay fährt die Fähre zur
+// Pelikaninsel dauerhaft; vorher nur der Fahrplan („sonntags“ ist Erzählung, Befund 16).
+
+=== inselfaehre ===
+{nadelSiliconBay:
+    Der Fährmann winkt dich an Bord. Seit du die Nadel hast, fährt er für dich jeden Tag. #sprecher:erzaehler
+    -> END
+}
+Am Fährhäuschen hängt ein Fahrplan: „Pelikaninsel. Sonntags.“ Der Fährmann flickt ein Tau und schaut nicht auf. #sprecher:erzaehler
+Heute ist nicht Sonntag. Und für die Insel brauchst du einen Grund. Hol dir erst die Nadel im Club. #sprecher:faehrmann
+-> END
+

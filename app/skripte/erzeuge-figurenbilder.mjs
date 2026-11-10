@@ -167,6 +167,11 @@ const FIGUREN = {
     "variant07",
     "variant04",
   ],
+  // Runde 6 (mittel-3): Weg 4, Silicon Bay, Sommerjahrmarkt
+  kiki: ["long07", "blau", "h3", "variant05", "44c585", "", "", ""], // Kiki Blitz, 19, Streamerin
+  dolores: ["long10", "schwarz", "h6", "variant08", "6a3d9a", "", "", ""], // Schaustellerin, Mantel mit Sternen
+  ike: ["short11", "schwarz", "h6", "variant03", "ffc425", "", "", ""], // Dolores' Sohn, im Schachtürken
+  faehrmann: ["short01", "grau", "h4", "variant21", "03396c", "", "variant06", ""], // Fährmann der Inselfähre
 };
 
 /** Alle Porträtnamen, die die Spieldaten nennen (gegner.json, orte.json). */

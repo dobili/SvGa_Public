@@ -271,3 +271,18 @@ kommt in Runde 6 der kleine Raum mit Z-1), zwei alte Zapfsäulen unter einem Vor
   in Tankstellen“), Truckerin (der Türke), Landvermesser (Eidechsen vor den Staubteufeln),
   Motorradfahrer.
   Tiere: Eidechse, Geier, Roadrunner, Kojote, Hase, Krähen.
+
+### 3.5 Runde 6: Weg 9 spielbar (mittel-3)
+
+Ereignis `ereignisLebendschach` mit Aufgabenrunde `wegCrossroadsPinewood.lebendschach` (Platzhalter
+für die Brettansicht) und Quest gleichen Namens, Lohn Fund `fotoLebendschach`; Fundstellen
+`seite10` und `kreide4`. Felder:
+
+| Auslöser               | A         | B        | C        |
+| ---------------------- | --------- | -------- | -------- |
+| `ereignisLebendschach` | (38, 85)  | (28, 77) | (18, 91) |
+| `seite10`              | (24, 106) | (16, 68) | (17, 18) |
+
+| Auslöser  | A        | B       | C       |
+| --------- | -------- | ------- | ------- |
+| `kreide4` | (100, 8) | (34, 8) | (42, 8) |

@@ -12,6 +12,7 @@
 // Variablen: alle setzt diese Datei; novaBitteGehoert setzt crossroads-raststaette.ink.
 
 EXTERNAL oeffneLaden(kennung)
+EXTERNAL reise(karte, ausloeser)
 
 VAR held = "Du"
 VAR ankunftCrossroadsGesehen = false
@@ -20,6 +21,7 @@ VAR slickGetroffen = false
 VAR miraCrossroadsGetroffen = false
 VAR bigJoeCrossroadsGetroffen = false
 VAR rosieCrossroadsGetroffen = false
+VAR gatterschluessel = false
 
 // ---------------------------------------------------------------- Ankunft (Szene 93)
 
@@ -111,3 +113,23 @@ Die Straße führt durch die Prärie zurück, Richtung Geysire und Berge. #sprec
 === weg_pinewood ===
 Ein Wanderweg führt nach Norden in den Wald. Ein Schild: „Fernwanderweg – Pinewood Camp“. #sprecher:erzaehler
 -> END
+
+// ---------------------------------------------------------------- Viehgatter (Sperre S13, Q4)
+// Runde 6 (13_Wegenetz, Abschnitt 5): Das Gatter vor der Alten Minenstraße öffnet Darlenes
+// Schlüssel (gatterschluessel, crossroads-raststaette.darlene_lieferung). Q4-FEHLT: Die Karte der
+// Minenstraße ist noch nicht gebaut; bis dahin reist {held} nach Ghost Town außen.
+
+=== viehgatter ===
+{gatterschluessel: -> viehgatter_offen}
+Ein Viehgatter sperrt die Alte Minenstraße. Dahinter stehen Rinder mitten auf dem Asphalt. Am Gatter hängt ein Schild: „Privatweg. Schlüssel bei Darlene.“ #sprecher:erzaehler
+Ein Hindernis, das man nicht schlagen kann. Nur fragen, wer den Schlüssel hat. #sprecher:ambrose
+-> END
+
+=== viehgatter_offen ===
+Darlenes Schlüssel passt. Hinter dem Gatter führt die Alte Minenstraße über die Hügel nach Ghost Town. Die Rinder machen widerwillig Platz. #sprecher:erzaehler
++ [Die Minenstraße nach Ghost Town nehmen]
+    ~ reise("ghostTown.aussen", "wegPinewood")
+    -> END
++ [Hierbleiben]
+    -> END
+

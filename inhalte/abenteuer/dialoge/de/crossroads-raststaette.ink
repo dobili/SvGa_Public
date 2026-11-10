@@ -23,6 +23,8 @@ VAR darleneGetroffen = false
 VAR novaBitteGehoert = false
 VAR novaHilfeZugesagt = false
 VAR postkarteGefunden = false
+VAR lieferungFuerDolores = false
+VAR gatterschluessel = false
 VAR varianteKoenigsrennenGelernt = false
 VAR varianteDracheGelernt = false
 VAR varianteAtomschachGelernt = false
@@ -36,6 +38,7 @@ VAR varianteFalkeUndBisonGelernt = false
 // ---------------------------------------------------------------- Darlene
 
 === darlene ===
+{novaBitteGehoert and not lieferungFuerDolores: -> darlene_lieferung}
 {not darleneGetroffen:
     ~ darleneGetroffen = true
     Hinter dem Tresen steht eine Frau mit Brille an einer Kette und gießt Kaffee ein, ohne hinzusehen. #sprecher:erzaehler
@@ -45,6 +48,17 @@ VAR varianteFalkeUndBisonGelernt = false
     {~Kaffee? Geht aufs Haus, wenn du was kaufst.|Ich hab alles, was die Läden davor hatten. Nur netter verpackt.|Der Tisch da hinten? Da spielt man alles, nur kein normales Schach.} #sprecher:darlene
 }
 ~ oeffneLaden("crossroads.raststaette")
+-> END
+
+=== darlene_lieferung ===
+// Runde 6: Nach Novas Bitte schickt Darlene eine Lieferung zum Jahrmarkt und gibt den
+// Gatterschlüssel mit (13_Wegenetz, S13). Quest crossroads.lieferung.
+~ lieferungFuerDolores = true
+~ gatterschluessel = true
+Darlene stellt eine Kiste auf den Tresen. Darin klirren Glühbirnen. #sprecher:erzaehler
+Tust du mir einen Gefallen? Die Kiste ist für Dolores, drüben auf dem Jahrmarkt hinter dem Feld. Glühbirnen für ihre Lichterketten. #sprecher:darlene
+Und nimm den hier. Der Schlüssel fürs Viehgatter an der Minenstraße. Nova sagt, du musst nach Ghost Town. Das ist der kürzeste Weg. #sprecher:darlene
+Eine Kiste, ein Schlüssel und ein Auftrag. So fingen meine besten Reisen an. #sprecher:ambrose
 -> END
 
 // ---------------------------------------------------------------- Nova (Szene 93)

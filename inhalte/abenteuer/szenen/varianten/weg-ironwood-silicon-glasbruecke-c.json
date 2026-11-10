@@ -1170,6 +1170,10 @@
     {
       "name": "fundOhrstoepsel",
       "feld": [86, 10]
+    },
+    {
+      "name": "ereignisStream",
+      "feld": [66, 7]
     }
   ],
   "figuren": [

@@ -50,3 +50,16 @@ ansprechbar, und sechs Tiere. Er hat sieben Statisten: Juno, Buster und die Band
 Dialoge kommen mit Runde 6), Besucher, Karussellbetreiber, Zuckerwattefrau und Ponykind mit Satz
 (`statist.jahrmarkt.festplatz.*`; das Ponykind erzählt die kleine Tiergeschichte). Tiere: Pony,
 Tauben, Spatzen, Hund, Katze, Krähen.
+
+## 6. Runde 6: spielbar
+
+Neue Datei `dialoge/de/jahrmarkt.ink`. Auslöser `schachautomat` (Dolores, Kempelens Türke von 1770;
+wer errät, dass Ike im Kasten sitzt, bekommt den Fund `geheimnisTuerke` mit zehn Münzen; dort gibt
+{held} auch Darlenes Lieferung ab), `riesenrad` und `losbude` zum Ansehen. Dolores und Ike sprechen
+über den Automaten; als Figuren mit eigenem Bild kommen sie, wenn die Bilder da sind.
+
+| Auslöser        | A        | B        | C        |
+| --------------- | -------- | -------- | -------- |
+| `schachautomat` | (24, 17) | (22, 13) | (20, 17) |
+| `riesenrad`     | (21, 14) | (33, 14) | (7, 14)  |
+| `losbude`       | (6, 22)  | (31, 22) | (5, 22)  |

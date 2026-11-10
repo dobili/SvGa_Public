@@ -987,6 +987,14 @@
     {
       "name": "rangerhaus",
       "feld": [20, 41]
+    },
+    {
+      "name": "ereignisLebendschach",
+      "feld": [28, 77]
+    },
+    {
+      "name": "seite10",
+      "feld": [16, 68]
     }
   ],
   "figuren": [],

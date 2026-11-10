@@ -192,3 +192,31 @@ Sinterboden, Ranger-Tor, Sturmkeller, Weizen, Wegweiser der Städte, Viehgatter,
 Die Inventare stehen in den Szenen (`beschreibung`) und folgen 1.1 bis 1.4; feste Felder sind die
 Übergänge und Auslöser aus 1.5 und 3.1, die Figuren Bell (17, 14), Ray (19, 96), Darlene am Tresen,
 Nova am Ecktisch.
+
+## 5. Runde 6: spielbar (mittel-3, 10.11.2026)
+
+**Weg 8** (`weg-summit-crossroads.ink`): Ereignis `ereignisGeysirblitz` mit Aufgabenrunde
+`wegSummitCrossroads.geysirblitz` (sechs Endspiele, Kapitel 9; Platzhalter für die Uhr als Geysir)
+und Quest `wegSummitCrossroads.geysirblitz`, Lohn Fund `rangerabzeichen`. Fundstellen `spurPM5`
+(Antrag am Infobrett), `finchBauerD` (unter dem Steg), `seite09` (Sturmkeller); Ansehen
+`geysirAusbruch` (Old Patience) und `windrad`. Felder in allen Varianten:
+
+| Auslöser              | A        | B        | C        |
+| --------------------- | -------- | -------- | -------- |
+| `ereignisGeysirblitz` | (5, 71)  | (14, 63) | (21, 62) |
+| `spurPM5`             | (11, 73) | (9, 63)  | (18, 60) |
+| `finchBauerD`         | (20, 73) | (8, 64)  | (15, 63) |
+| `geysirAusbruch`      | (6, 69)  | (16, 61) | (24, 59) |
+
+| Auslöser  | A        | B        | C        |
+| --------- | -------- | -------- | -------- |
+| `seite09` | (16, 95) | (16, 95) | (16, 95) |
+| `windrad` | (21, 80) | (24, 46) | (26, 80) |
+
+**Crossroads:** Sperre S13 am Viehgatter: Auslöser `viehgatter` (A, B, C bei (57, 23)),
+Dialog `crossroads-aussen.viehgatter`. Nach Novas Bitte gibt Darlene eine Lieferung für Dolores und
+den Gatterschlüssel mit (`darlene_lieferung`, Variablen `lieferungFuerDolores`,
+`gatterschluessel`; Quest `crossroads.lieferung`, Lohn 20 Münzen bei Dolores). Mit dem Schlüssel
+reist {held} über die Alte Minenstraße nach Ghost Town (vorerst `reise` nach
+`ghostTown.aussen`, Auslöser `wegPinewood`; die Karte der Minenstraße Q4 fehlt noch). Der Fernbus Q3
+ist noch offen.

@@ -198,6 +198,18 @@
     {
       "name": "zurueckCrossroads",
       "feld": [24, 35]
+    },
+    {
+      "name": "schachautomat",
+      "feld": [22, 13]
+    },
+    {
+      "name": "riesenrad",
+      "feld": [33, 14]
+    },
+    {
+      "name": "losbude",
+      "feld": [31, 22]
     }
   ],
   "figuren": [],

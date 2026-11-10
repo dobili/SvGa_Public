@@ -243,6 +243,88 @@
       "ort": "portDelacroix",
       "name": "fund.setliste960.name",
       "text": "fund.setliste960.text"
+    },
+    {
+      "kennung": "kreide2",
+      "ort": "wegIronwoodSilicon",
+      "name": "fund.kreide2.name",
+      "text": "fund.kreide2.text"
+    },
+    {
+      "kennung": "finchBauerB",
+      "ort": "wegIronwoodSilicon",
+      "name": "fund.finchBauerB.name",
+      "text": "fund.finchBauerB.text"
+    },
+    {
+      "kennung": "seite04",
+      "ort": "wegIronwoodSilicon",
+      "name": "fund.seite04.name",
+      "text": "fund.seite04.text",
+      "muenzen": 5
+    },
+    {
+      "kennung": "spurPM2",
+      "ort": "wegIronwoodSilicon",
+      "name": "fund.spurPM2.name",
+      "text": "fund.spurPM2.text"
+    },
+    {
+      "kennung": "fotoLive",
+      "ort": "wegIronwoodSilicon",
+      "name": "fund.fotoLive.name",
+      "text": "fund.fotoLive.text"
+    },
+    {
+      "kennung": "spurPM5",
+      "ort": "wegSummitCrossroads",
+      "name": "fund.spurPM5.name",
+      "text": "fund.spurPM5.text"
+    },
+    {
+      "kennung": "finchBauerD",
+      "ort": "wegSummitCrossroads",
+      "name": "fund.finchBauerD.name",
+      "text": "fund.finchBauerD.text"
+    },
+    {
+      "kennung": "seite09",
+      "ort": "wegSummitCrossroads",
+      "name": "fund.seite09.name",
+      "text": "fund.seite09.text",
+      "muenzen": 5
+    },
+    {
+      "kennung": "rangerabzeichen",
+      "ort": "wegSummitCrossroads",
+      "name": "fund.rangerabzeichen.name",
+      "text": "fund.rangerabzeichen.text"
+    },
+    {
+      "kennung": "kreide4",
+      "ort": "wegCrossroadsPinewood",
+      "name": "fund.kreide4.name",
+      "text": "fund.kreide4.text"
+    },
+    {
+      "kennung": "seite10",
+      "ort": "wegCrossroadsPinewood",
+      "name": "fund.seite10.name",
+      "text": "fund.seite10.text",
+      "muenzen": 5
+    },
+    {
+      "kennung": "fotoLebendschach",
+      "ort": "wegCrossroadsPinewood",
+      "name": "fund.fotoLebendschach.name",
+      "text": "fund.fotoLebendschach.text"
+    },
+    {
+      "kennung": "geheimnisTuerke",
+      "ort": "jahrmarkt",
+      "name": "fund.geheimnisTuerke.name",
+      "text": "fund.geheimnisTuerke.text",
+      "muenzen": 10
     }
   ]
 }

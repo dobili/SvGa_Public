@@ -308,6 +308,10 @@
     {
       "name": "wegweiser",
       "feld": [29, 20]
+    },
+    {
+      "name": "viehgatter",
+      "feld": [57, 23]
     }
   ],
   "figuren": [

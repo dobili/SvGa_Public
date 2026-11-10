@@ -1809,6 +1809,116 @@
       "zustand": "neu",
       "stil": "modern",
       "blick": "unten"
+    },
+    "sa8WohnhausA": {
+      "quelle": "spiel/eigene/altstadt_wohnhaus_a.png",
+      "breite": 112,
+      "hoehe": 208,
+      "kollision": true,
+      "art": "gebaeude",
+      "zustand": "gebraucht",
+      "stil": "klassisch",
+      "blick": "unten"
+    },
+    "sa8WohnhausB": {
+      "quelle": "spiel/eigene/altstadt_wohnhaus_b.png",
+      "breite": 112,
+      "hoehe": 208,
+      "kollision": true,
+      "art": "gebaeude",
+      "zustand": "gebraucht",
+      "stil": "klassisch",
+      "blick": "unten"
+    },
+    "sa8WohnhausC": {
+      "quelle": "spiel/eigene/altstadt_wohnhaus_c.png",
+      "breite": 112,
+      "hoehe": 208,
+      "kollision": true,
+      "art": "gebaeude",
+      "zustand": "gebraucht",
+      "stil": "klassisch",
+      "blick": "unten"
+    },
+    "sa8WohnhausD": {
+      "quelle": "spiel/eigene/altstadt_wohnhaus_d.png",
+      "breite": 112,
+      "hoehe": 208,
+      "kollision": true,
+      "art": "gebaeude",
+      "zustand": "gebraucht",
+      "stil": "klassisch",
+      "blick": "unten"
+    },
+    "sa8LadenA": {
+      "quelle": "spiel/eigene/altstadt_laden_a.png",
+      "breite": 112,
+      "hoehe": 144,
+      "kollision": true,
+      "art": "gebaeude",
+      "zustand": "gebraucht",
+      "stil": "klassisch",
+      "blick": "unten"
+    },
+    "sa8LadenB": {
+      "quelle": "spiel/eigene/altstadt_laden_b.png",
+      "breite": 112,
+      "hoehe": 144,
+      "kollision": true,
+      "art": "gebaeude",
+      "zustand": "gebraucht",
+      "stil": "klassisch",
+      "blick": "unten"
+    },
+    "sa8LadenC": {
+      "quelle": "spiel/eigene/altstadt_laden_c.png",
+      "breite": 112,
+      "hoehe": 144,
+      "kollision": true,
+      "art": "gebaeude",
+      "zustand": "gebraucht",
+      "stil": "klassisch",
+      "blick": "unten"
+    },
+    "sa8LadenD": {
+      "quelle": "spiel/eigene/altstadt_laden_d.png",
+      "breite": 112,
+      "hoehe": 144,
+      "kollision": true,
+      "art": "gebaeude",
+      "zustand": "gebraucht",
+      "stil": "klassisch",
+      "blick": "unten"
+    },
+    "sa8Schneemann": {
+      "quelle": "spiel/eigene/schneemann.png",
+      "breite": 16,
+      "hoehe": 32,
+      "kollision": true,
+      "art": "deko",
+      "zustand": "neu",
+      "stil": "natur",
+      "blick": "unten"
+    },
+    "sa8Weihnachtsbaum": {
+      "quelle": "modern-interiors/1_Interiors/16x16/Theme_Sorter_Black_Shadow_Singles/15_Christmas_Black_Shadow_Singles_16x16/Christmas_Shadow_Singles_3.png",
+      "breite": 32,
+      "hoehe": 48,
+      "kollision": true,
+      "art": "deko",
+      "zustand": "neu",
+      "stil": "klassisch",
+      "blick": "keine"
+    },
+    "sa8Gitarrenkoffer": {
+      "quelle": "modern-exteriors/Modern_Exteriors_16x16/ME_Theme_Sorter_16x16/20_Subway_and_Train_Station_Singles_16x16/ME_Singles_Subway_and_Train_Station_16x16_Guitar_Case_Money.png",
+      "breite": 32,
+      "hoehe": 16,
+      "kollision": false,
+      "art": "deko",
+      "zustand": "gebraucht",
+      "stil": "klassisch",
+      "blick": "keine"
     }
   }
 }

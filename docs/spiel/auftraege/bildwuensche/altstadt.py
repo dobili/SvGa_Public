@@ -32,6 +32,16 @@ LAEDEN = {
     "musikladen": ("Roof_1", ["Middle_Floor_10"], "Ground_Floor_Music_Store_1"),
     "eisdiele": ("Roof_5", [], "Ground_Floor_Ice_Cream_Shop_1"),
     "angelladen": ("Roof_6", [], "Ground_Floor_Bait_Shop_1"),
+    # Gutachten Altstadt (Runde 8): Wohnhäuser statt der Flachdachblöcke aus anderen Orten,
+    # offene Läden statt der Market-Häuser mit Vorhängeschloss an der Tür.
+    "wohnhaus_a": ("Roof_2", ["Middle_Floor_1"], "Ground_Floor_Condo_4"),
+    "wohnhaus_b": ("Roof_4", ["Middle_Floor_7"], "Ground_Floor_Condo_7"),
+    "wohnhaus_c": ("Roof_1", ["Middle_Floor_14"], "Ground_Floor_Condo_11"),
+    "wohnhaus_d": ("Roof_6", ["Middle_Floor_4"], "Ground_Floor_Condo_3"),
+    "laden_a": ("Roof_3", [], "Ground_Floor_Shop_11"),
+    "laden_b": ("Roof_5", [], "Ground_Floor_Shop_13"),
+    "laden_c": ("Roof_2", [], "Ground_Floor_Shop_21"),
+    "laden_d": ("Roof_1", [], "Ground_Floor_Shop_29"),
     # Ladenzeile am Campus (Runde 8, Notiz: statt zwölf fast gleicher Store-Häuschen)
     "campus_fitness": ("Roof_3", [], "Ground_Floor_Gym_1"),
     "campus_groove": ("Roof_2", [], "Ground_Floor_Shop_5"),

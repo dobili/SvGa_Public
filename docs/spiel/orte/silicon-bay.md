@@ -268,6 +268,21 @@ kleine Polizeiwache (`sa8Polizei1`, `2`), Eisenwarenladen (`sa8Eisenwaren`), Woh
   sind Briefträgerin, Ladenbesitzer, Hundebesitzer und Hund weg (zwölf Statisten). Ein Hydrant für den
   Feuerwehrmann.
 
+**Gutachten Altstadt (Runde 8, `gutachten/silicon-bay-altstadt.md`), behoben:** Die Altstadt liegt im
+Winter (`"jahreszeit": "winter"`); die Story-Bibel nennt Silicon Bay „ohne Jahreszeit“, das gilt für
+die Glasbauten des Campus, die Altstadt außerhalb hat Akt-3-Winter (Schnee, Schneemann der Kinder,
+Weihnachtsbaum). Campus, Akademie und Hafen bleiben ohne Jahreszeit. Gärten hinter beiden Zeilen statt
+Pflasterflecken, zwei Gartenschuppen; die Flachdachblöcke aus anderen Orten und die STORE- und
+MARKET-Häuser mit Vorhängeschloss sind durch vier Wohnhäuser und vier offene Läden ersetzt (Bildwunsch
+`altstadt.py`); Laternen am Gehweg, der Metzger fegt den Gehweg; der Marktplatz ist auf sieben Reihen
+mit Steinrand verkleinert, mit Bäumen in Baumscheiben, zwei Ständen mit Händlerin und Händler (Stände
+ohne Fischschild), Kreidezeichnung, Gitarrenkoffer und Weihnachtsbaum; der Park bekommt die freien
+Reihen, eine Hecke mit drei gleichen Durchgängen, einen Weg, Bänke und den Schneemann
+(`schneemann.py`). Nicht geändert: englische Ladenschilder (Silicon Bay, jetzt in der Beschreibung),
+Fahrbahnmarkierung und Bordstein (keine Bodenbilder, Bodenvariation von mittel-2), die Roboter und
+die aufrechte Katze (Belebungsbilder, nicht Kartenbild), der graue Flachbau des Eisenwarenladens
+(mittel-1 ersetzt das Bild auf allen Karten).
+
 **Belebung:** zwölf Statisten, acht davon mit Satz (`statist.siliconBay.altstadt.*`): Bäckerin,
 Uhrmacher, Musikhändler, Schülerin, Metzger (Perfect Move will die Straße kaufen), Rentnerpaar,
 Feuerwehrmann, Eisverkäuferin und der Straßenmusiker (zeigt die Goldmünzen-Partie, `zeigt:

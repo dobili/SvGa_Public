@@ -48,7 +48,7 @@ Victor sieht sich um, dann zieht er einen Stapel Papier aus seiner Tasche. #spre
 Spielberichte der Akademie. Novas Turnierpartien und ihre Trainingspartien. #sprecher:victor
 Ich sollte sie nicht haben. Sieh sie dir an. Mit deiner App, nicht mit unserer. #sprecher:victor
 Ein Bericht über Partien. Man liest ihn wie einen Brief: Was steht zwischen den Zeilen? #sprecher:ambrose
-* [Die Partien auswerten]
++ [Die Partien auswerten]
     ~ beginneAufgaben("siliconBay.auswertung")
     -> END
 * [„Später.“]

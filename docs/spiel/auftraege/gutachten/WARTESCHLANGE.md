@@ -79,7 +79,6 @@ Szene heißt die Datei in `inhalte/abenteuer/szenen/` ohne `.json`.
 - [x] erinnerung-siedlung-huette, erinnerung-london-kaffeehaus, erinnerung-london-strand (Runde 9, niedrig-1; Sepia aus der Tönung, im Vorschaubild nicht zu sehen)
 - [x] kuerbishof-hof, weg-pinewood-ghost-tankstelle (Runde 9, niedrig-1)
 
-
 - [x] crossroads-aussen mit Zustand gatter-offen (Runde 9, mittel-3)
 - [x] crossroads-raststaette (Runde 9, mittel-3)
 - [x] weg-summit-crossroads-geysirbecken, weg-summit-crossroads-praerie (Runde 9, mittel-3)
@@ -88,6 +87,8 @@ Szene heißt die Datei in `inhalte/abenteuer/szenen/` ohne `.json`.
 - [x] pelikaninsel-dorf im Winter (Runde 9, mittel-3)
 
 - [ ] silicon-bay-akademie, silicon-bay-altstadt (dritte Prüfung, mittel-3; Stehpulte, Glaswand mit Pfosten, geräumte Straße mit Schneewällen; Dateien `silicon-bay-akademie-3.md`, `silicon-bay-altstadt-3.md`)
+
+- [ ] ghost-town-aussen, ghost-town-saloon, goldmine-stollen, erinnerung-london-kaffeehaus, erinnerung-london-strand, kuerbishof-hof (zweite Prüfung, niedrig-1; Antworten in ghost-town.md, erinnerung-london.md, kuerbishof.md, Abschnitt „Gutachten Runde 9: Antworten“; Bilder aus `niedrig1_runde9_karten.py` erst rendern)
 
 ## Erledigt
 

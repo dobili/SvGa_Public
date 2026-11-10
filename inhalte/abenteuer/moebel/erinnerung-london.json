@@ -195,6 +195,16 @@
       "blick": "unten",
       "zustand": "gebraucht",
       "stil": "klassisch"
+    },
+    "el7FassadeD": {
+      "quelle": "spiel/eigene/fassade_london_d_tief.png",
+      "breite": 80,
+      "hoehe": 144,
+      "kollision": true,
+      "art": "gebaeude",
+      "blick": "unten",
+      "zustand": "gebraucht",
+      "stil": "klassisch"
     }
   }
 }

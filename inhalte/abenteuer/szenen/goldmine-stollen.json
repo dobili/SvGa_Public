@@ -3,71 +3,41 @@
   "datei": "karten/goldmine-stollen.json",
   "art": "innen",
   "toenung": "dunkel",
-  "beschreibung": "Der Stollen der Goldmine (N7), 40 × 24 Kacheln, Fels. Vom Eingang am Südrand läuft der Hauptgang mit Gleis, Stützrahmen aus Holz und Grubenlampen nach Norden bis zum Prellbock; nach Westen die Kammer der Bergleute mit Tisch, Hockern, einer Truhe und gestapeltem Grubenholz (auf dem Tisch ist Platz für das Logbuch von 1866), nach Osten die glänzende Goldader mit einer Lore auf einem kurzen Abstellgleis und Pfützen. Der Fels jenseits der Wände liegt im Dunkeln. Der Boden ist festgetretener Schotter, die Wände sind roher Fels.",
+  "beschreibung": "Der Stollen der Goldmine (N7), 40 × 24 Kacheln, Fels. Vom Eingang am Südrand läuft der Hauptgang mit Gleis, Stützrahmen aus Holz und Grubenlampen nach Norden bis zum Prellbock; nach Westen die Kammer der Bergleute mit Tisch, Hockern, einer Truhe und gestapeltem Grubenholz (auf dem Tisch ist Platz für das Logbuch von 1866), nach Osten die glänzende Goldader ; die Lore steht auf dem Hauptgleis vor dem Prellbock und Pfützen. Der Fels jenseits der Wände liegt im Dunkeln. Rings um die Gänge liegt der Fels im Dunkeln, nur die Nordwände zeigen ihre Schichten.",
   "wand": "fels",
-  "boden": "schotter",
+  "boden": "felsboden",
   "boeden": {
-    "f": "schotter"
+    "f": "felsboden"
   },
   "raster": [
-    "  ############                          ",
-    "  ############   ######                 ",
-    "  ############   ######                 ",
-    "  #ffffffffff#   ######    ############ ",
-    "  #ffffffffff##########    ############ ",
-    "  #ffffffffff#####ffff#    ############ ",
-    "  #ffffffffff#####ffff#    #ffffffffff# ",
-    "  #fffffffffffffffffff#    #ffffffffff# ",
-    "  #fffffffffffffffffff#    #ffffffffff# ",
-    "  #fffffffffffffffffff#    #ffffffffff# ",
-    "  #fffffffffffffffffff######ffffffffff# ",
-    "  ################ffff######ffffffffff# ",
-    "                 #ffff######ffffffffff# ",
-    "                 #ffffffffffffffffffff# ",
-    "                 #ffffffffffffffffffff# ",
-    "                 #ffffffffffffffffffff# ",
-    "                 #ffffffffffffffffffff# ",
-    "                 #ffff######ffffffffff# ",
-    "                 #ffff#    #ffffffffff# ",
-    "                 #ffff#    ############ ",
-    "                 #ffff#                 ",
-    "                 #ffff#                 ",
-    "                 #ffff#                 ",
-    "                 ##ff##                 "
+    "   ##########                           ",
+    "   ##########                           ",
+    "   ##########     ####                  ",
+    "   ffffffffff     ####      ##########  ",
+    "   ffffffffff#########      ##########  ",
+    "   ffffffffff#####ffff      ##########  ",
+    "   ffffffffff#####ffff      ffffffffff  ",
+    "   fffffffffffffffffff      ffffffffff  ",
+    "   fffffffffffffffffff      ffffffffff  ",
+    "   fffffffffffffffffff      ffffffffff  ",
+    "   fffffffffffffffffff######ffffffffff  ",
+    "                  ffff######ffffffffff  ",
+    "                  ffff######ffffffffff  ",
+    "                  ffffffffffffffffffff  ",
+    "                  ffffffffffffffffffff  ",
+    "                  ffffffffffffffffffff  ",
+    "                  ffffffffffffffffffff  ",
+    "                  ffff      ffffffffff  ",
+    "                  ffff      ffffffffff  ",
+    "                  ffff                  ",
+    "                  ffff                  ",
+    "                  ffff                  ",
+    "                  ffff                  ",
+    "                   ff                   "
   ],
   "objekte": [
     {
-      "moebel": "n9GleisQuer",
-      "feld": [28, 9],
-      "bauteil_ok": true
-    },
-    {
-      "moebel": "n9GleisQuer",
-      "feld": [29, 9],
-      "bauteil_ok": true
-    },
-    {
-      "moebel": "n9GleisQuer",
-      "feld": [30, 9],
-      "bauteil_ok": true
-    },
-    {
-      "moebel": "n9GleisQuer",
-      "feld": [31, 9],
-      "bauteil_ok": true
-    },
-    {
-      "moebel": "n9GleisQuer",
-      "feld": [32, 9],
-      "bauteil_ok": true
-    },
-    {
-      "moebel": "n9GleisQuer",
-      "feld": [33, 9],
-      "bauteil_ok": true
-    },
-    {
-      "moebel": "iw5Prellbock",
+      "moebel": "n10PrellbockHolz",
       "feld": [19, 5]
     },
     {
@@ -200,11 +170,6 @@
       "feld": [36, 9]
     },
     {
-      "moebel": "n7Lore",
-      "feld": [30, 9],
-      "bauteil_ok": true
-    },
-    {
       "moebel": "st5PfuetzeGross",
       "feld": [31, 14]
     },
@@ -223,10 +188,6 @@
     {
       "moebel": "cc4Holzstapel",
       "feld": [11, 8]
-    },
-    {
-      "moebel": "cc4Gleisende",
-      "feld": [34, 9]
     },
     {
       "moebel": "mf7Truhe",
@@ -279,29 +240,8 @@
       "an_wand": true
     },
     {
-      "moebel": "cc4Holzstapel",
-      "feld": [4, 6]
-    },
-    {
       "moebel": "st5Schotterhaufen",
       "feld": [33, 11]
-    },
-    {
-      "moebel": "n7Lore",
-      "feld": [19, 16],
-      "bauteil_ok": true
-    },
-    {
-      "moebel": "cc4Holzstapel",
-      "feld": [8, 8]
-    },
-    {
-      "moebel": "cc4Holzstapel",
-      "feld": [34, 12]
-    },
-    {
-      "moebel": "cc4Holzstapel",
-      "feld": [35, 17]
     },
     {
       "moebel": "n7Stuetze",
@@ -312,36 +252,63 @@
       "feld": [35, 6]
     },
     {
-      "moebel": "iwFass",
-      "feld": [12, 6]
-    },
-    {
-      "moebel": "iwFass",
-      "feld": [29, 17]
-    },
-    {
       "moebel": "st5Schotterhaufen",
       "feld": [30, 17]
     },
     {
-      "moebel": "cc4Holzstapel",
-      "feld": [33, 17]
+      "moebel": "n10LoreVorn",
+      "feld": [19, 8],
+      "bauteil_ok": true
     },
     {
-      "moebel": "iwFass",
-      "feld": [13, 9]
+      "moebel": "n7Grubenlampe",
+      "feld": [6, 4],
+      "an_wand": true,
+      "vorn": true
     },
     {
-      "moebel": "cc4Holzstapel",
-      "feld": [27, 12]
+      "moebel": "n7Grubenlampe",
+      "feld": [31, 7],
+      "an_wand": true,
+      "vorn": true
     },
     {
-      "moebel": "iwFass",
-      "feld": [3, 3]
+      "moebel": "n7Grubenlampe",
+      "feld": [25, 13],
+      "an_wand": true,
+      "vorn": true
     },
     {
-      "moebel": "iwFass",
-      "feld": [4, 3]
+      "moebel": "n7Stuetze",
+      "feld": [7, 7]
+    },
+    {
+      "moebel": "st5Schotterhaufen",
+      "feld": [3, 6]
+    },
+    {
+      "moebel": "st5Schotterhaufen",
+      "feld": [28, 9]
+    },
+    {
+      "moebel": "st5Schotterhaufen",
+      "feld": [33, 9]
+    },
+    {
+      "moebel": "st5Schotterhaufen",
+      "feld": [33, 12]
+    },
+    {
+      "moebel": "st5Schotterhaufen",
+      "feld": [28, 15]
+    },
+    {
+      "moebel": "st5Schotterhaufen",
+      "feld": [28, 18]
+    },
+    {
+      "moebel": "st5Schotterhaufen",
+      "feld": [33, 18]
     }
   ],
   "ausloeser": [
@@ -366,7 +333,7 @@
     },
     {
       "name": "lore",
-      "feld": [30, 11]
+      "feld": [21, 9]
     },
     {
       "name": "goldader",

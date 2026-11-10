@@ -38,7 +38,7 @@
       "an_wand": true
     },
     {
-      "moebel": "ldBild",
+      "moebel": "gt7Bild",
       "feld": [10, 1],
       "an_wand": true
     },
@@ -219,7 +219,7 @@
     {
       "name": "herrMitZylinder",
       "typ": "statist",
-      "feld": [6, 10],
+      "feld": [11, 10],
       "eigenschaften": {
         "von": "6,10",
         "bis": "6,10",

@@ -251,6 +251,15 @@
       "blick": "unten",
       "zustand": "alt",
       "stil": "rustikal"
+    },
+    "n10Traenke": {
+      "quelle": "modern-farm/Single_Files_16x16/Props_and_Buildings_16x16/Drinking_Trough_Horizontal_Full_16x16.png",
+      "breite": 32,
+      "hoehe": 16,
+      "kollision": true,
+      "art": "geraet",
+      "zustand": "gebraucht",
+      "stil": "laendlich"
     }
   }
 }

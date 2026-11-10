@@ -766,6 +766,42 @@
       "kollision": true,
       "stil": "rustikal",
       "zustand": "verwittert"
+    },
+    "gt10Schwingtuer": {
+      "quelle": "spiel/eigene/schwingtuer.png",
+      "breite": 16,
+      "hoehe": 16,
+      "kollision": false,
+      "art": "tuer",
+      "zustand": "alt",
+      "stil": "rustikal"
+    },
+    "gt10Abzeichen": {
+      "quelle": "spiel/eigene/abzeichen_postreiter.png",
+      "breite": 16,
+      "hoehe": 16,
+      "kollision": false,
+      "art": "deko",
+      "zustand": "alt",
+      "stil": "rustikal"
+    },
+    "gt10TischDunkel": {
+      "quelle": "spiel/eigene/tisch_rund_dunkel.png",
+      "breite": 32,
+      "hoehe": 32,
+      "kollision": true,
+      "art": "tisch",
+      "zustand": "alt",
+      "stil": "rustikal"
+    },
+    "gt10Traenke": {
+      "quelle": "modern-farm/Single_Files_16x16/Props_and_Buildings_16x16/Drinking_Trough_Horizontal_Full_16x16.png",
+      "breite": 32,
+      "hoehe": 16,
+      "kollision": true,
+      "art": "geraet",
+      "zustand": "alt",
+      "stil": "rustikal"
     }
   }
 }

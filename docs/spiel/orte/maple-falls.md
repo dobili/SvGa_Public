@@ -221,6 +221,20 @@ Landstraße nach Cedar Creek, zwischen Feldern und Zäunen, mit dem Fluss an ihr
 | Schulglocke zwei Minuten zu früh                       | nur Text (Belebung, Dialog möglich)                                                                           | kein Bild nötig.                                                                                                                                           |
 | Bushaltestellen                                        | zwei: Birch Lane (Schulbus morgens, Szene 5) und Park (Szene 13 wartet dort der Schulbus; danach Überlandbus) | Story-Bibel Szene 5 und 13 (Befund 23); der Überlandbus mit Mr. Kettering kommt aus 12.                                                                    |
 
+### 3.3 Runde 8: Größe der Innenräume (KARTENREGELN 10.56, mittel-1)
+
+Geprüft nach Gebäude außen und Zweck:
+
+| Raum       | Gebäude außen (Kacheln)         | Größe vorher | Größe jetzt | Begründung                                                                                                                                                            |
+| ---------- | ------------------------------- | ------------ | ----------- | --------------------------------------------------------------------------------------------------------------------------------------------------------------------- |
+| Wohnzimmer | Villa 9 × 13, zwei Stockwerke   | 20 × 13      | 20 × 13     | Wohnzimmer mit Küche und Treppe; schon größer als das Haus von außen, für eine Familie passend.                                                                       |
+| Dachboden  | dieselbe Villa, unter dem Dach  | 14 × 11      | 14 × 11     | Ein Dachboden ist enger als das Stockwerk darunter; Truhen und Kisten füllen ihn.                                                                                     |
+| Clubraum   | Schule 24 × 23, größtes Gebäude | 18 × 13      | **26 × 15** | Am Clubkampf spielen sechs Bretter gleichzeitig, Eltern warten an der Tür. Jetzt sechs Tische in zwei Reihen, ein Gang vor der Tür, Regale und Kommode an den Wänden. |
+| Diner      | Diner 8 × 9                     | 30 × 16      | 30 × 16     | Gastraum mit Theke, Nischen, Küche und Toiletten; schon so groß wie ein echtes Diner.                                                                                 |
+
+Zustände (10.63) folgen, sobald mittel-2 die Technik meldet: Dachboden mit und ohne das alte Brett
+(nachdem {held} es gefunden hat, liegt es nicht mehr dort).
+
 ## 4. Bühnenbilder
 
 ### 4.0a Varianten B und C (KARTENREGELN 10.37)

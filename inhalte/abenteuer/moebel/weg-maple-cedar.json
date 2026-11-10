@@ -283,7 +283,7 @@
       "stil": "laendlich"
     },
     "wg4Schuppen": {
-      "quelle": "modern-exteriors/Modern_Exteriors_16x16/ME_Theme_Sorter_16x16/17_Garden_Singles_16x16/ME_Singles_Garden_16x16_Blue_Brown_Wood_Storage.png",
+      "quelle": "spiel/eigene/gartenhaus_blau.png",
       "breite": 48,
       "hoehe": 64,
       "kollision": true,

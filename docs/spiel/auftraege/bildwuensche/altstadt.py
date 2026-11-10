@@ -7,7 +7,8 @@ Metzger, Musikhändler und Eisverkäuferin; ihre Läden baut dieses Skript aus d
 Ladengeschoss ist oben teilweise durchsichtig (Schild ragt hinein); es wird so gesetzt, dass seine
 Wand genau unter dem Geschoss darüber beginnt.
 
-Eingabe: Pfad zum privaten Repository. Ausgabe: spiel/eigene/altstadt_*.png, 112 Pixel breit.
+Eingabe: Pfad zum privaten Repository. Ausgabe: spiel/eigene/altstadt_*.png, 112 Pixel breit (dazu die
+Ladenzeile am Campus, altstadt_campus_*.png).
 Aufruf: python altstadt.py /home/user/schach-abenteuer-inhalte
 """
 
@@ -31,6 +32,15 @@ LAEDEN = {
     "musikladen": ("Roof_1", ["Middle_Floor_10"], "Ground_Floor_Music_Store_1"),
     "eisdiele": ("Roof_5", [], "Ground_Floor_Ice_Cream_Shop_1"),
     "angelladen": ("Roof_6", [], "Ground_Floor_Bait_Shop_1"),
+    # Ladenzeile am Campus (Runde 8, Notiz: statt zwölf fast gleicher Store-Häuschen)
+    "campus_fitness": ("Roof_3", [], "Ground_Floor_Gym_1"),
+    "campus_groove": ("Roof_2", [], "Ground_Floor_Shop_5"),
+    "campus_coolies": ("Roof_5", [], "Ground_Floor_Shop_19"),
+    "campus_bimbum": ("Roof_1", [], "Ground_Floor_Shop_9"),
+    "campus_danger": ("Roof_4", [], "Ground_Floor_Shop_35"),
+    "campus_plume": ("Roof_6", [], "Ground_Floor_Shop_25"),
+    "campus_musik": ("Roof_3", [], "Ground_Floor_Music_Store_5"),
+    "campus_eis": ("Roof_2", [], "Ground_Floor_Ice_Cream_Shop_3"),
 }
 
 

@@ -235,6 +235,15 @@ Geprüft nach Gebäude außen und Zweck:
 Zustände (10.63) folgen, sobald mittel-2 die Technik meldet: Dachboden mit und ohne das alte Brett
 (nachdem {held} es gefunden hat, liegt es nicht mehr dort).
 
+### 3.4 Runde 8: Zustände der Innenräume (KARTENREGELN 10.63, mittel-1)
+
+| Karte                   | Zustand      | Bedingung              | Zustand: wann, was, warum                                                                                                                                              |
+| ----------------------- | ------------ | ---------------------- | ---------------------------------------------------------------------------------------------------------------------------------------------------------------------- |
+| `mapleFalls.dachboden`  | `ohne-brett` | `ersterAbendGesehen`   | Ab Szene 4 steht der runde Tisch leer: Der Held trägt das Brett von da an bei sich. Der Auslöser `brett` bleibt, Ambrose spricht aus dem Gepäck.                       |
+| `mapleFalls.wohnzimmer` | `ausgepackt` | `aufbruchGesehen`      | Ab Szene 13 sind die Umzugskartons ausgepackt; Sofa, Couchtisch und ein niedriges Regal stehen an ihrer Stelle. Die Kiste in der Küche bleibt, `pizzakarton` entfällt. |
+| `mapleFalls.clubraum`   | `pokal`      | `nadelMapleFalls >= 1` | Nach dem gewonnenen Clubkampf steht der neue Pokal auf dem Lehrertisch von Coach Delgado.                                                                              |
+| `mapleFalls.diner`      | –            | –                      | Kein fester Wechsel in der Geschichte.                                                                                                                                 |
+
 ## 4. Bühnenbilder
 
 ### 4.0a Varianten B und C (KARTENREGELN 10.37)
@@ -355,86 +364,46 @@ bleibt frei (Ortsprofil, Rückmeldung Haupt-Chat).
 
 Das Waldbild entfällt (die breite Treppe braucht die Wandfläche).
 
-### 4.3 Clubraum der Maple Falls High (`mapleFalls.clubraum`), Runde 8 nach dem Gutachten
+### 4.3 Clubraum der Maple Falls High (`mapleFalls.clubraum`), Runde 8 nach dem zweiten Gutachten
 
 **Größe:** 26 × 15 (KARTENREGELN 10.56, Tabelle in 3.3). Nordwand Reihen 0–2, Tür mittig in der
-Südwand (13, 14), Fußmatte (13, 13), Start (13, 12). Heller Holzboden, blauer Teppich x 4–22,
-y 5–10, rundum mindestens eine Kachel Holzboden.
+Südwand (13, 14), Start (13, 13). Heller Holzboden, roter Teppich mit goldenem Rand (eigene Teile
+`teppich_*`) x 4–21, y 6–12, rundum eine Kachel Abstand zu den Tischen.
 
-**Laufwege:** Tür → breiter Gang (Spalte 13) zwischen den Bänken nach oben, zwischen den Tischen
-quer zu Pult (West), Vitrine (Nord) und Spinden (Ost). Szenen 5, 6, 9, 11, 12.
+| Zone     | Gegenstand                                                                              | Feld                                                  | Zweck                                             |
+| -------- | --------------------------------------------------------------------------------------- | ----------------------------------------------------- | ------------------------------------------------- |
+| Nordwand | Fenster, Weltkarte, Fenster, Wanduhr, Kreidetafel, Pinnwand, Plakat, Garderobe, Fenster | 2, 5, 8, 10, 12, 15, 17, 19, 23 (Reihe 1)             | Bilder enden auf gleicher Höhe über der Fußleiste |
+| Nord     | Pokaltisch mit dem Pokal von 1994 vorn, Glasschrank, Kartons mit Schachsets             | (4, 3), (6, 3), (9, 3)                                | `pokalvitrine` (4, 5)                             |
+| Nord     | Lehrertisch mit Globus unter der Tafel, Coach dahinter                                  | Tisch (12, 4), Coach (13, 3)                          | Demonstration an der Tafel                        |
+| Nordost  | Doppelspind                                                                             | (21, 3)                                               | Taschen; Jacken an der Garderobe darüber links    |
+| Seiten   | je ein schmales Bücherregal und eine Elternbank, Rücken zur Wand                        | West (1, 5), (1, 8); Ost (24, 5), (24, 8)             | Mutter sitzt auf der Westbank (1, 9)              |
+| Ecken    | hohe Pflanzen oben, Palmen unten                                                        | (1, 3), (24, 3), (1, 12), (23, 12)                    |                                                   |
+| Mitte    | sechs runde Holztische, je Brett und Schachuhr, zwei Stühle                             | (6, 7), (12, 7), (18, 7), (6, 10), (12, 10), (18, 10) | `brettOhneDame` (18, 7), Brett ohne weiße Dame    |
 
-| Zone     | Gegenstand                                                | Feld                                               | Zweck                                   |
-| -------- | --------------------------------------------------------- | -------------------------------------------------- | --------------------------------------- |
-| Nordwand | zwei Fenster, Weltkarte, Kreidetafel, Plakat, Pinnwand    | (4, 1), (21, 1); (7, 1); (12, 1); (15, 1); (18, 1) | Auslöser `plakatZaehlen` (15, 3)        |
-| Nord     | Glasvitrine mit zwei Pokalen                              | (7, 3)                                             | Auslöser `pokalvitrine` (7, 3)          |
-| West     | Bücherregal (Seitenansicht), Pult mit Globus, Bücherregal | (1, 3); (1, 6); (1, 9)                             | Coach Delgado (3, 7), Blick in den Raum |
-| Nordost  | drei Spinde, hohes Bücherregal, Pflanze                   | (19–21, 3); (22, 3); (24, 3)                       | Jacken und Taschen; Schachbücher        |
-| Ost      | fahrbare Demonstrationstafel, Seitenansicht nach Westen   | (23, 7)                                            | Tafel für Erklärungen am Brett          |
-| Mitte    | sechs runde Tische in zwei Reihen zu drei, je zwei Stühle | (6, 6), (12, 6), (18, 6), (6, 9), (12, 9), (18, 9) | sechs Bretter; `brettOhneDame` (18, 6)  |
-| Süd      | zwei Holzbänke für Eltern, Pflanzen in den Ecken          | (5, 11), (17, 11); (1, 11), (23, 11)               | Mutter wartet (11, 12)                  |
+Figuren: Coach Delgado hinter dem Lehrertisch, Sam im Gang (9, 9). Belebung sitzt: Schülerin am
+Tisch (11, 7), Clubmitglied (14, 10), Mutter auf der Bank (1, 9).
 
-Figuren: Coach Delgado am Pult (3, 7), Sam zwischen den Tischen (9, 8). Belebung mit festen,
-verschiedenen Bildern (Eigenschaft `bild`): Schülerin (12, 8, statist-07), Clubmitglied (16, 8,
-statist-14), wartende Mutter (11, 12, statist-18).
+#### Antworten auf das zweite Gutachten (10.11.2026)
 
-#### Antworten auf das Gutachten (10.11.2026)
+Behoben: 1–3 (Pokaltisch mit Pokalen und dem Pokal von 1994 vorn statt der offenen Vitrine),
+4 (Doppelspind statt der Spinde, die wie Kühlschränke aussahen), 5 (Pinnwand hängt über freiem
+Boden), 6 (alle Wandbilder enden auf einer Höhe), 7 (Plakat „Erst zählen“), 8–9 (niedriges Regal
+weg, Pflanzen in allen vier Ecken), 10 (Lehrertisch unter der Tafel), 11 (drei Fenster),
+12–13 und 16 (Lehrertisch von vorn, Coach dahinter, Globus auf der Platte), 14–15 (je ein
+schmales Regal an West- und Ostwand, Pflanzen getrennt), 17 (roter Teppich mit Rand), 19–20 (Brett
+ohne Dame, aufgebaute Bretter, Schachuhren), 21 (Tische mittig, eine Kachel Rand), 22–26
+(Statisten sitzen an Brettern und auf der Bank), 27 (Demotafel weg), 28 (Bänke mit dem Rücken an
+der Seitenwand, Blick zu den Tischen), 29 (Fußmatte weg), 31 (Ecken), 32 (Wanduhr, Garderobe,
+Pinnwand als Tabelle des Clubkampfs, Kartons).
 
-Behoben (Lage im neuen Raum):
+Begründet statt geändert:
 
-- **1, 2 Pokale:** stehen jetzt auf einer Glasvitrine (7, 3) vor der Nordwand, nicht mehr in der
-  Wand; das rote Ding und das Schildchen sind weg. Der Pokal von 1994 ist der linke; ein eigenes
-  Bild mit Plakette ist als Bildwunsch gemeldet.
-- **4 Tafel:** große Kreidetafel (12, 1) mittig über dem Tischfeld, dazu die fahrbare
-  Demonstrationstafel (23, 7), die zu den Tischen zeigt.
-- **5, 6, 7 Pult:** großes grünes Pult 2 × 3 an der Westwand (1, 6), Blick nach Osten in den
-  Raum; der Coach steht dahinter (3, 7) und schaut zu den Tischen. Der Globus steht auf dem Pult
-  und berührt keine Wand.
-- **8, 9 leere Möbel, Supermarktregal:** entfernt. Statt dessen drei Spinde (Jacken und Taschen)
-  und ein hohes Bücherregal mit Büchern, keine Flaschen.
-- **10, 11 Regale:** alle Bücherregale stehen an Wänden und zeigen in den Raum; nur noch zwei
-  Arten (schmal in Seitenansicht an der Westwand, hoch in Vorderansicht im Nordosten).
-- **12, 13 Pflanzen:** vier Pflanzen, je eine in jeder Ecke, drei verschiedene Bilder; keine
-  steht über einer anderen.
-- **14 Südband:** zwei Bänke für die Eltern (5, 11) und (17, 11), die wartende Mutter (11, 12).
-- **15 Tür:** mittig (13, 14), Gang in Spalte 13 frei bis zu den Tischen.
-- **16 Teppich:** x 4–22, links und rechts gleich weit von den Wänden (3 Kacheln), oben und unten
-  eine Kachel Holz.
-- **17 Tische:** zwei Reihen zu drei im festen Abstand von 6 Kacheln, mittig auf dem Teppich.
-- **18 Brett ohne Dame:** der Tisch hinten rechts (18, 6) trägt ein leeres Brett ohne Figuren,
-  die anderen fünf Bretter haben Figuren; Auslöser darauf.
-- **19 Stuhl an der Wand:** kein Stuhl berührt mehr eine Wand.
-- **21, 22 Figuren:** keine Figur steht mehr in einem Möbel oder Stuhl (Regel 10.55, Prüfung des
-  Kartenbaus in Ordnung); Sam steht frei zwischen den Tischen.
-- **23 gleiche Statisten:** jeder Statist hat ein eigenes Bild; die Vorschau zeigt es jetzt wie
-  die App (`pipeline/abenteuer/belebungsvorschau.py`).
-- **24 Coach:** die blaue Figur am Pult ist Coach Delgado; er steht jetzt hinter seinem Pult.
-
-Trifft nicht oder nur teilweise zu, mit Grund:
-
-- **3 Plakat „Erst zählen“:** Ein solches Bild gibt es im Katalog nicht; bis es gezeichnet ist,
-  hängt das bunte Lernplakat als Ersatz an seiner Stelle (15, 1). Bildwunsch an den Haupt-Chat.
-- **10 Regale an der Ostwand:** Im Katalog gibt es schmale Bücherregale in Seitenansicht nur mit
-  Blick nach rechts, also nur für die Westwand. Deshalb stehen sie im Westen; im Osten steht die
-  fahrbare Tafel, die es auch mit Blick nach links gibt. Bildwunsch: Seitenregal mit Blick nach
-  links.
-- **14 Garderobe und Uhr:** Weder Garderobe mit Jacken noch Wanduhr sind im Katalog; die Spinde
-  übernehmen die Garderobe. Beide als Bildwunsch gemeldet.
-- **16 Rand des Teppichs:** Der Katalog hat keinen Teppich mit Rand als Bodenbelag; Bildwunsch
-  (Teppich in neun Teilen).
-- **20 Schachuhren:** Kein Bild im Katalog. Die Bretter sind 12 × 9 Pixel klein; eine Uhr daneben
-  wäre als Kleinbild nötig. Bildwunsch.
-
-Antworten auf die Fragen:
-
-- _Ausstellungstisch, Pokal 1994:_ Die Pokale stehen jetzt in einer Glasvitrine; der von 1994 ist
-  der linke, bis ein Bild mit Plakette da ist.
-- _Leere Möbel, Supermarktregal:_ gibt es nicht mehr.
-- _Eltern:_ auf den Bänken vor der Tür.
-- _Hinterer Tisch:_ „hinten“ heißt vom Eingang aus weiter weg, also die Reihe y 6; das Brett
-  ohne Dame liegt auf ihrem rechten Tisch (18, 6), als einziges ohne Figuren.
-- _Teppich rechts:_ endet jetzt auf beiden Seiten gleich weit vor der Wand.
-- _Demonstrationstafel:_ ja, die Kreidetafel (12, 1) und die fahrbare Tafel (23, 7).
+- **18 Tische nicht dunkel:** Der Katalog hat keinen dunklen runden Tisch; die Beschreibung sagt
+  jetzt „runde Holztische“.
+- **30 Tür:** Die Tür ist dieselbe Südtür wie in den übrigen Innenräumen von Maple Falls; ein
+  eigenes Bild mit Rahmen wäre ein Wunsch für alle Räume, nicht nur für diesen.
+- **32 Lampen und Papierkorb:** nicht eingebaut; drei Fenster geben Licht, der Raum ist nach der
+  Prüfung des Kartenbauers ausreichend belegt.
 
 ### 4.4 Diner (`mapleFalls.diner`), neu gedacht (mittel-3, 9.11.2026)
 
@@ -599,7 +568,7 @@ mit Vorsilbe `mf6` in `moebel/maple-falls.json`. Bühnenbild:
   am Weg oder Gehweg, ohne Kollision (`vorn`), damit der schmale Gehweg frei bleibt.
 - **Bushaltestelle** (10.17): Wartehäuschen von hinten (Bus_Stop_2, 24–28 / 22–24), offen nach Norden
   zur Straße; davor eine Wartefläche aus Pflaster (23–29 / 19–21) am Gehweg; Auslöser
-  `bushaltestelle` (26, 21) unverändert direkt vor der offenen Seite.
+  `bushaltestelle` (23, 20) neben dem Wartehäuschen; seit Runde 8 steht es auf dem Pflaster an der Straße (24, 19), offen nach Norden (Bild `wartehaus_hinten`).
 - **Basketballplatz** (10.22): ganzer Platz mit Linien, Rand und zwei Körben (Basketball_Court_5,
   1–14 / 20–30); zwei Seitenbänke (15, 22) und (15, 26) mit Blick nach links zum Feld; Jo (Figur
   `skaterJo`) an der oberen Bank (16, 24).

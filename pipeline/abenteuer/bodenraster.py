@@ -77,8 +77,8 @@ def gleicher_boden(zeilen: list[str], x: int, y: int, dx: int, dy: int) -> bool:
 
 def bodenfeld(art: dict, zeilen: list[str], x: int, y: int) -> list[int]:
     """Die Kachel eines Bodens an (x, y): mit „rand“ Rand-, Eck- oder Innenecken-Stück je nach
-    Nachbarn (3×3-Block von LimeZu und die vier Innenecken rechts daneben), mit „varianten“ eine
-    feste Zufallsauswahl, sonst „feld“.
+    Nachbarn (3×3-Block von LimeZu und die vier Innenecken rechts daneben), mit „unter_wand“ direkt
+    unter einer Wand die Schattenkachel, mit „varianten“ eine feste Zufallsauswahl, sonst „feld“.
 
     Beispiel: ein Feldweg „e“ quer durchs Gras bekommt oben und unten Grasränder, in der Mitte Erde;
     ein Ufer in Stufen bekommt an jeder inneren Stufe eine Innenecke statt einer Kerbe.
@@ -95,6 +95,11 @@ def bodenfeld(art: dict, zeilen: list[str], x: int, y: int) -> list[int]:
                 if not gleich(dx, dy):
                     return [art["rand"][0] + sx, art["rand"][1] + sy]
         return [art["rand"][0] + spalte, art["rand"][1] + reihe]
+    if "unter_wand" in art and y > 0 and zeilen[y - 1][x] == WAND:
+        # Böden des Room Builders: Die erste Reihe eines Blocks trägt den Schatten der Wand. Nur
+        # direkt unter einer Wand gezeichnet; auf der ganzen Fläche wiederholt wirkt sie gebändert
+        # und verwaschen (Gutachten Runde 8, Punkt e: Dielen im Gasthaus, Fliesen im Diner).
+        return art["unter_wand"]
     if "varianten" in art:
         # Fest je Ort (kein echter Zufall), damit das Bild bei jedem Bau gleich bleibt.
         return art["varianten"][(x * 7349 + y * 1931 + x * y * 13) % len(art["varianten"])]

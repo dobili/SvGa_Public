@@ -822,7 +822,7 @@
       "blick": "unten"
     },
     "rv5Cafe": {
-      "quelle": "modern-exteriors/Modern_Exteriors_16x16/ME_Theme_Sorter_16x16/4_Generic_Building_Singles_16x16/ME_Singles_Generic_Building_16x16_Hardware_Store.png",
+      "quelle": "spiel/eigene/fassade_cafe.png",
       "breite": 128,
       "hoehe": 144,
       "kollision": true,
@@ -862,7 +862,7 @@
       "blick": "unten"
     },
     "rv5Schuppen": {
-      "quelle": "modern-exteriors/Modern_Exteriors_16x16/ME_Theme_Sorter_16x16/17_Garden_Singles_16x16/ME_Singles_Garden_16x16_Brown_Wood_Storage.png",
+      "quelle": "spiel/eigene/gartenhaus_braun.png",
       "breite": 48,
       "hoehe": 64,
       "kollision": true,
@@ -872,7 +872,7 @@
       "blick": "unten"
     },
     "rv5Pegelhaus": {
-      "quelle": "modern-exteriors/Modern_Exteriors_16x16/ME_Theme_Sorter_16x16/17_Garden_Singles_16x16/ME_Singles_Garden_16x16_Blue_White_Wood_Storage.png",
+      "quelle": "spiel/eigene/gartenhaus_weiss.png",
       "breite": 48,
       "hoehe": 64,
       "kollision": true,
@@ -1205,7 +1205,7 @@
       "blick": "unten"
     },
     "rv5PegelhausWeiss": {
-      "quelle": "modern-exteriors/Modern_Exteriors_16x16/ME_Theme_Sorter_16x16/17_Garden_Singles_16x16/ME_Singles_Garden_16x16_White_Wood_Storage.png",
+      "quelle": "spiel/eigene/gartenhaus_weiss.png",
       "breite": 48,
       "hoehe": 64,
       "kollision": true,
@@ -1707,6 +1707,86 @@
       "art": "koffer",
       "zustand": "gebraucht",
       "stil": "klassisch",
+      "blick": "keine"
+    },
+    "rv8Bahnhof": {
+      "quelle": "spiel/eigene/riverton_bahnhof.png",
+      "breite": 336,
+      "hoehe": 160,
+      "kollision": true,
+      "art": "gebaeude",
+      "zustand": "gebraucht",
+      "stil": "klassisch",
+      "blick": "unten"
+    },
+    "rv8Brueckenschatten": {
+      "quelle": "spiel/eigene/riverton_brueckenschatten.png",
+      "breite": 16,
+      "hoehe": 96,
+      "kollision": false,
+      "art": "deko",
+      "zustand": "gebraucht",
+      "stil": "klassisch",
+      "blick": "keine"
+    },
+    "rv8Holzdach": {
+      "quelle": "modern-farm/Single_Files_16x16/Props_and_Buildings_16x16/Canopy_Big_16x16.png",
+      "breite": 64,
+      "hoehe": 64,
+      "kollision": false,
+      "art": "gebaeude_teil",
+      "zustand": "gebraucht",
+      "stil": "klassisch",
+      "blick": "keine"
+    },
+    "rv8Ruderboot": {
+      "quelle": "modern-exteriors/Modern_Exteriors_16x16/ME_Theme_Sorter_16x16/10_Vehicles_Singles_16x16/ME_Singles_Vehicles_16x16_Boat_2_Left_1.png",
+      "breite": 80,
+      "hoehe": 32,
+      "kollision": false,
+      "art": "fahrzeug",
+      "zustand": "gebraucht",
+      "stil": "klassisch",
+      "blick": "keine"
+    },
+    "rv8Infokiosk": {
+      "quelle": "modern-exteriors/Modern_Exteriors_16x16/ME_Theme_Sorter_16x16/3_City_Props_Singles_16x16/ME_Singles_City_Props_16x16_Kiosk_Infopoint_1.png",
+      "breite": 80,
+      "hoehe": 96,
+      "kollision": true,
+      "art": "gebaeude",
+      "zustand": "gebraucht",
+      "stil": "klassisch",
+      "blick": "unten"
+    },
+    "rv8Poller": {
+      "quelle": "modern-exteriors/Modern_Exteriors_16x16/ME_Theme_Sorter_16x16/11_Camping_Singles_16x16/ME_Singles_Camping_16x16_Pier_14.png",
+      "breite": 32,
+      "hoehe": 16,
+      "kollision": true,
+      "art": "steg",
+      "zustand": "gebraucht",
+      "stil": "klassisch",
+      "blick": "keine"
+    },
+    "rv8Plakat": {
+      "quelle": "modern-exteriors/Modern_Exteriors_16x16/ME_Theme_Sorter_16x16/20_Subway_and_Train_Station_Singles_16x16/ME_Singles_Subway_and_Train_Station_16x16_Single_Poster.png",
+      "breite": 16,
+      "hoehe": 32,
+      "kollision": false,
+      "art": "bild",
+      "zustand": "neu",
+      "stil": "modern",
+      "blick": "unten"
+    },
+    "rv8Plane": {
+      "quelle": "modern-exteriors/Modern_Exteriors_16x16/ME_Theme_Sorter_16x16/20_Subway_and_Train_Station_Singles_16x16/ME_Singles_Subway_and_Train_Station_16x16_Grey_Folded_Blanket.png",
+      "breite": 16,
+      "hoehe": 16,
+      "kollision": false,
+      "art": "deko",
+      "zustand": "gebraucht",
+      "stil": "rustikal",
       "blick": "keine"
     }
   }

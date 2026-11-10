@@ -578,6 +578,24 @@ Glaswand fehlte, Kapselmaschinen-Tische, Automaten mitten im Raum, Stühle nicht
 Tür zum Serverraum in der Nordwand bei Spalte 12, Feld davor (12, 3). Eigene Bilder: Bildwunsch
 `docs/spiel/auftraege/bildwuensche/akademie.py` (Möbel `sb8…` in `moebel/silicon-bay.json`).
 
+### Runde 8 (mittel-3, 10.11.2026): Campus und alter Hafen nach den Notizen des Autors
+
+- **Campus (`siliconBay.aussen`, Hauptfassung C):** Bahn auf den Gleisen, Prellbock quer zum
+  Gleisende; Werbetafel am Gehweg; Waren und zwei Händler an den Marktständen; Bänke seitlich am
+  Wasserspiel; Ladenzeile aus acht verschiedenen Läden (Bildwunsch `altstadt.py`, Teil Campus) und
+  einem kleinen Supermarkt; Baumplatz mit eigenem hellem Steinboden; Hecke statt Glasgeländer an der
+  Terrasse (die „Kante“ war das Glasgeländer); Infokiosk, Wohnhaus und Fahrradschuppen dazu (10.51).
+  Bodenvariation (Punkt 31) kommt als Technik von mittel-2.
+- **Alter Hafen (`siliconBay.hafen`, Hauptfassung C):** Küstenfähre neu gezeichnet, schräg von oben
+  und 18 × 6 Kacheln groß (Bildwunsch `hafen_faehre.py`, KARTENREGELN 10.64: Personenfähre 16–20 × 6; der Kai ist
+  länger als die Fähre); Fährhäuschen als Häuschen mit Dach statt
+  flacher Front; der Kran ist weg; Ladebetrieb am kleinen Fischerboot mit Kisten und Fässern in Reihen und drei
+  Arbeitern; ein Gemüsekarren mit Händlerin statt zwei leerer; keine Kisten mehr auf der Straße;
+  Laternen am Straßenrand alle zehn Felder; die „H“-Taschen (Fischkisten) und der Fischeimer sind
+  weg; um den Leuchtturm genug Land für den Weg zur Tür. Das Fischerboot des Pakets (6 × 3 Kacheln mit
+  Angel) ist ein kleines Holzboot, kein Kutter; es bleibt so und heißt Fischerboot (10.64: zwischen Ruderboot
+  und Motorboot). Ein Verlängern ergäbe nur ein langes Ruderboot.
+
 ### 4.6 Serverraum (`siliconBay.serverraum`)
 
 **Größe:** 14 × 10. Nordwand Reihen 0–2 grau, Boden Doppelboden mit Lochplatten, Südwand Reihe 9 mit

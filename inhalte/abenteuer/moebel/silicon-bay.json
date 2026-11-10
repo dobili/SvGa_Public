@@ -320,7 +320,7 @@
       "stil": "modern"
     },
     "sb5Faehrhaus": {
-      "quelle": "modern-exteriors/Modern_Exteriors_16x16/ME_Theme_Sorter_16x16/17_Garden_Singles_16x16/ME_Singles_Garden_16x16_Blue_White_Wood_Storage.png",
+      "quelle": "spiel/eigene/gartenhaus_weiss.png",
       "breite": 48,
       "hoehe": 64,
       "kollision": true,
@@ -1377,7 +1377,7 @@
       "gebaeude": true
     },
     "sa8Eisenwaren": {
-      "quelle": "modern-exteriors/Modern_Exteriors_16x16/ME_Theme_Sorter_16x16/4_Generic_Building_Singles_16x16/ME_Singles_Generic_Building_16x16_Hardware_Store.png",
+      "quelle": "spiel/eigene/fassade_eisenwaren.png",
       "breite": 128,
       "hoehe": 144,
       "kollision": true,
@@ -1658,6 +1658,106 @@
       "art": "gebaeude",
       "zustand": "alt",
       "stil": "klassisch",
+      "blick": "unten"
+    },
+    "sb8LadenFitness": {
+      "quelle": "spiel/eigene/altstadt_campus_fitness.png",
+      "breite": 112,
+      "hoehe": 144,
+      "kollision": true,
+      "art": "gebaeude",
+      "zustand": "neu",
+      "stil": "modern",
+      "blick": "unten"
+    },
+    "sb8LadenGroove": {
+      "quelle": "spiel/eigene/altstadt_campus_groove.png",
+      "breite": 112,
+      "hoehe": 144,
+      "kollision": true,
+      "art": "gebaeude",
+      "zustand": "neu",
+      "stil": "modern",
+      "blick": "unten"
+    },
+    "sb8LadenCoolies": {
+      "quelle": "spiel/eigene/altstadt_campus_coolies.png",
+      "breite": 112,
+      "hoehe": 144,
+      "kollision": true,
+      "art": "gebaeude",
+      "zustand": "neu",
+      "stil": "modern",
+      "blick": "unten"
+    },
+    "sb8LadenBimbum": {
+      "quelle": "spiel/eigene/altstadt_campus_bimbum.png",
+      "breite": 112,
+      "hoehe": 144,
+      "kollision": true,
+      "art": "gebaeude",
+      "zustand": "neu",
+      "stil": "modern",
+      "blick": "unten"
+    },
+    "sb8LadenDanger": {
+      "quelle": "spiel/eigene/altstadt_campus_danger.png",
+      "breite": 112,
+      "hoehe": 144,
+      "kollision": true,
+      "art": "gebaeude",
+      "zustand": "neu",
+      "stil": "modern",
+      "blick": "unten"
+    },
+    "sb8LadenPlume": {
+      "quelle": "spiel/eigene/altstadt_campus_plume.png",
+      "breite": 112,
+      "hoehe": 144,
+      "kollision": true,
+      "art": "gebaeude",
+      "zustand": "neu",
+      "stil": "modern",
+      "blick": "unten"
+    },
+    "sb8LadenMusik": {
+      "quelle": "spiel/eigene/altstadt_campus_musik.png",
+      "breite": 112,
+      "hoehe": 144,
+      "kollision": true,
+      "art": "gebaeude",
+      "zustand": "neu",
+      "stil": "modern",
+      "blick": "unten"
+    },
+    "sb8LadenEis": {
+      "quelle": "spiel/eigene/altstadt_campus_eis.png",
+      "breite": 112,
+      "hoehe": 144,
+      "kollision": true,
+      "art": "gebaeude",
+      "zustand": "neu",
+      "stil": "modern",
+      "blick": "unten"
+    },
+    "sb8Faehre": {
+      "quelle": "spiel/eigene/hafen_faehre.png",
+      "breite": 288,
+      "hoehe": 96,
+      "kollision": false,
+      "art": "fahrzeug",
+      "zustand": "gebraucht",
+      "stil": "modern",
+      "blick": "keine"
+    },
+    "sb8Faehrhaeuschen": {
+      "quelle": "modern-exteriors/Modern_Exteriors_16x16/ME_Theme_Sorter_16x16/15_Police_Station_Singles_16x16/ME_Singles_Police_Station_16x16_Police_Station_Roof_Cabin_1.png",
+      "breite": 64,
+      "hoehe": 80,
+      "kollision": true,
+      "art": "gebaeude",
+      "zustand": "gebraucht",
+      "stil": "modern",
       "blick": "unten"
     }
   }

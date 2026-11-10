@@ -268,7 +268,7 @@
     },
     {
       "moebel": "mf6Haltestelle",
-      "feld": [24, 22]
+      "feld": [24, 19]
     },
     {
       "moebel": "mf4Abfalleimer",
@@ -368,7 +368,7 @@
     },
     {
       "name": "bushaltestelle",
-      "feld": [26, 21]
+      "feld": [23, 20]
     },
     {
       "name": "parkbank",

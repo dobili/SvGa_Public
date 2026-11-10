@@ -14,10 +14,13 @@ from PIL import Image, ImageDraw
 
 from pipeline.abenteuer.belebungsvorschau import teile as belebungsteile
 from pipeline.abenteuer.bodenraster import bodenfeld, randnachbar
+from pipeline.abenteuer.bodenvariation import lade_kachel, variiere
 from pipeline.abenteuer.kartenbau import GESPERRT, INHALTE, LEER, WAND, WASSER, K, lade, platziere, raster
 from pipeline.abenteuer.katalog import katalogbefund, katalogeintraege
+from pipeline.abenteuer.klippe import grasboden, klippenfeld, strassenzeichen, treppenfeld
 from pipeline.abenteuer.moebelliste import lade_moebel
 from pipeline.abenteuer.randspur import randluecken
+from pipeline.abenteuer.winter import ist_winter, winterbefunde, winterlich
 from pipeline.abenteuer.zusammenhang import HOLZ
 from pipeline.abenteuer.zustaende import zustandsname
 
@@ -62,15 +65,31 @@ def wellenbild(art: dict, feld: list[int], x: int, y: int) -> str | None:
     return wellen["bilder"][(x * 13 + y * 7) % len(wellen["bilder"])]
 
 
-def flaechen(zeilen: list[str]) -> dict[tuple[int, int], str]:
-    """Wandflächen: die zwei Wandkacheln direkt über einem Boden werden Fläche (oben, unten)."""
+def flaechen(zeilen: list[str], innen: bool = False) -> dict[tuple[int, int], str]:
+    """Wandflächen: die zwei Wandkacheln direkt über einem Boden werden Fläche (oben, unten).
+
+    Innen (``innen``) nur, wo die Wand seitlich an Wand anschließt: Eine einzelne Wandsäule über
+    einem Durchgang in einer Nord-Süd-Wand bleibt Krone. Warum: Sonst steckt mitten in der von oben
+    gesehenen Trennwand ein Stück Wandfläche mit Fußleiste über dem Durchgang (Gutachten Runde 8,
+    Punkt f: Diner zwischen Küche und Lager, Wohnzimmer zur Küche).
+    Beispiel: Boden (24, 5), Wand (24, 4) und (24, 3), daneben Boden bei (23, 4) und (25, 4) → keine
+    Fläche, die Wand läuft als Krone bis an den Durchgang.
+    """
     flaeche = {}
     for y in range(2, len(zeilen)):
         for x, z in enumerate(zeilen[y]):
-            if z not in GESPERRT and zeilen[y - 1][x] == WAND and zeilen[y - 2][x] == WAND:
-                flaeche[(x, y - 1)] = "unten"
-                flaeche[(x, y - 2)] = "oben"
+            if z in GESPERRT or zeilen[y - 1][x] != WAND or zeilen[y - 2][x] != WAND:
+                continue
+            if innen and not _seitlich_wand(zeilen, x, y - 1):
+                continue
+            flaeche[(x, y - 1)] = "unten"
+            flaeche[(x, y - 2)] = "oben"
     return flaeche
+
+
+def _seitlich_wand(zeilen: list[str], x: int, y: int) -> bool:
+    """Ob links oder rechts von (x, y) eine Wand steht (Kartenrand zählt als Wand)."""
+    return any(not 0 <= nx < len(zeilen[y]) or zeilen[y][nx] == WAND for nx in (x - 1, x + 1))
 
 
 def hintergrund(szene: dict, privat: Path, gezeichnet: dict | None = None) -> Image.Image:
@@ -94,10 +113,16 @@ def hintergrund(szene: dict, privat: Path, gezeichnet: dict | None = None) -> Im
     ufer = f"wasser_{szene['ufer']}" if szene.get("ufer") else "wasser"
     # Wandstile mit eigener Krone (Fels, Damm) zeichnen ihre Flächen auch draußen neben „wandart“:
     # Der Rand bleibt dann Boden, nur „#“ über einem Boden wird Hang oder Felswand (10.45).
-    flaeche = flaechen(zeilen) if not wandart or "krone" in wand else {}
+    flaeche = flaechen(zeilen, szene.get("art") == "innen") if not wandart or "krone" in wand else {}
+    # Felskanten aus LimeZus Klippenkacheln (Szene „kante“: „klippe“, pipeline/abenteuer/klippe.py).
+    klippe = szene.get("kante") == "klippe"
+    gras = grasboden(szene)
     for y, zeile in enumerate(zeilen):
         for x, z in enumerate(zeile):
             ort = (x * K, y * K)
+            if klippe and (feld := klippenfeld(zeilen, x, y, gras)) is not None:
+                bild.alpha_composite(kachel(privat, boegen, {"bogen": "gelaende"}, list(feld)), ort)
+                continue
             if z == WASSER:
                 # Ufer aus Stein (Szene „ufer“: „stein“, KARTENREGELN 10.6): dieselbe Kachelwahl,
                 # gezeichnet aus dem eigenen Bogen; die Randspur rechnet mit LimeZus Wasser.
@@ -142,9 +167,20 @@ def hintergrund(szene: dict, privat: Path, gezeichnet: dict | None = None) -> Im
                 bild.alpha_composite(kachel(privat, boegen, art, feld), ort)
                 if gezeichnet is not None:
                     gezeichnet[(x, y)] = (sonder.get(z, grund), feld)
-    if not wandart:
+    if klippe:
+        _treppen(bild, privat, boegen, zeilen, strassenzeichen(szene))
+    elif not wandart:
         _kronenrand(zeichner, zeilen, flaeche)
     return bild
+
+
+def _treppen(bild: Image.Image, privat: Path, boegen: dict, zeilen: list[str], strasse: set[str]) -> None:
+    """In den Fels geschlagene Treppen auf Rampen durch eine Klippenkante (klippe.treppenfeld)."""
+    for y, zeile in enumerate(zeilen):
+        for x in range(len(zeile)):
+            if (feld := treppenfeld(zeilen, x, y, strasse)) is not None:
+                treppe = kachel(privat, boegen, {"bogen": "gelaende"}, list(feld))
+                bild.alpha_composite(treppe, (x * K, y * K))
 
 
 def _kronenrand(zeichner: ImageDraw.ImageDraw, zeilen: list[str], flaeche: dict) -> None:
@@ -267,6 +303,9 @@ def vorschau(szene: dict, privat: Path, grund: Image.Image) -> Image.Image:
     gesetzt, _ = platziere(szene, moebel)
     bild = grund.copy()
     teile = [(s["tiefe"], s["x"], s["y"], moebelbild(privat, moebel[s["name"]]["quelle"])) for s in gesetzt]
+    if ist_winter(szene):
+        # Wie die App (oberwelt/winter.ts): Möbel ohne Wasserregel, sonst würden blaue Autos dunkel.
+        teile = [(t, x, y, winterlich(b, wasser=False)) for t, x, y, b in teile]
     orte = {o["kennung"]: o for o in lade(INHALTE / "orte.json")["orte"]}
     ort = orte.get(szene["karte"].split(".")[0], {"figuren": []})
     for f in szene.get("figuren", []):
@@ -331,6 +370,10 @@ def main() -> None:
         szene = lade(Path(name))
         gezeichnet: dict = {}
         grund = hintergrund(szene, privat, gezeichnet)
+        mat = lade(INHALTE / "materialien.json")
+        grund = variiere(szene, grund, gezeichnet, mat, lade_kachel(privat, mat["boegen"]))
+        if ist_winter(szene):
+            grund = winterlich(grund)
         name, spielbild = bildname(szene)
         if spielbild:
             grund.convert("RGB").save(privat / "spiel" / "grafik" / "karten" / f"{name}.png")
@@ -339,6 +382,7 @@ def main() -> None:
         if not spielbild and not szene.get("variante"):
             befunde.append(f"{szene['datei']} ist weder Grundkarte noch Zustand in orte.json: nur Vorschau")
         befunde += mattenbefunde(szene, privat)
+        befunde += winterbefunde(szene)
         print(f"{name}: Hintergrund und Vorschau gezeichnet")
         for b in befunde:
             print(f"  - {b}")

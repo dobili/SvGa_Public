@@ -13,13 +13,19 @@
           "datei": "karten/maple-falls-dachboden.json",
           "name": "ort.mapleFalls.dachboden",
           "innen": true,
-          "musik": "musik/dachboden.ogg"
+          "musik": "musik/dachboden.ogg",
+          "zustaende": {
+            "ersterAbendGesehen": "karten/maple-falls-dachboden-ohne-brett.json"
+          }
         },
         {
           "kennung": "mapleFalls.wohnzimmer",
           "datei": "karten/maple-falls-wohnzimmer.json",
           "name": "ort.mapleFalls.wohnzimmer",
-          "innen": true
+          "innen": true,
+          "zustaende": {
+            "aufbruchGesehen": "karten/maple-falls-wohnzimmer-ausgepackt.json"
+          }
         },
         {
           "kennung": "mapleFalls.aussen",
@@ -32,7 +38,10 @@
           "kennung": "mapleFalls.clubraum",
           "datei": "karten/maple-falls-clubraum.json",
           "name": "ort.mapleFalls.clubraum",
-          "innen": true
+          "innen": true,
+          "zustaende": {
+            "nadelMapleFalls >= 1": "karten/maple-falls-clubraum-pokal.json"
+          }
         },
         {
           "kennung": "mapleFalls.park",
@@ -333,7 +342,10 @@
           "kennung": "cedarCreek.archiv",
           "datei": "karten/cedar-creek-archiv.json",
           "name": "ort.cedarCreek.archiv",
-          "innen": true
+          "innen": true,
+          "zustaende": {
+            "archivGeordnet": "karten/cedar-creek-archiv-geordnet.json"
+          }
         },
         {
           "kennung": "cedarCreek.waschsalon",
@@ -599,14 +611,14 @@
       "karten": [
         {
           "kennung": "wegMapleCedar.landstrasse",
-          "datei": "karten/weg-maple-cedar-1.json",
+          "datei": "karten/weg-maple-cedar-landstrasse.json",
           "name": "ort.wegMapleCedar.landstrasse",
           "innen": false,
           "musik": "musik/landstrasse.ogg",
           "zustaende": {
-            "nadelMapleFalls < 1": "karten/weg-maple-cedar-1-flohmarkt-leer.json",
-            "wegMapleCedarTafelBestanden": "karten/weg-maple-cedar-1-gatter-offen.json",
-            "wegMapleCedarTafelBestanden und nadelMapleFalls < 1": "karten/weg-maple-cedar-1-gatter-offen-leer.json"
+            "nadelMapleFalls < 1": "karten/weg-maple-cedar-landstrasse-flohmarkt-leer.json",
+            "wegMapleCedarTafelBestanden": "karten/weg-maple-cedar-landstrasse-gatter-offen.json",
+            "wegMapleCedarTafelBestanden und nadelMapleFalls < 1": "karten/weg-maple-cedar-landstrasse-gatter-offen-leer.json"
           }
         },
         {
@@ -877,19 +889,32 @@
           "datei": "karten/riverton-aussen.json",
           "name": "ort.riverton.aussen",
           "innen": false,
-          "musik": "musik/riverton.ogg"
+          "musik": "musik/riverton.ogg",
+          "zustaende": {
+            "slickAbschiedGesehen": "karten/riverton-aussen-trainingszentrum.json",
+            "slickAbschiedGesehen und nadelIronwood >= 1": "karten/riverton-aussen-tische-kaputt.json",
+            "slickAbschiedGesehen und nadelDesertSprings >= 1": "karten/riverton-aussen-unterschriften.json",
+            "nicht ausgangCapitalArenaFinale == \"\"": "karten/riverton-aussen-nachspiel.json"
+          }
         },
         {
           "kennung": "riverton.pavillon",
           "datei": "karten/riverton-pavillon.json",
           "name": "ort.riverton.pavillon",
-          "innen": true
+          "innen": true,
+          "zustaende": {
+            "slickAbschiedGesehen": "karten/riverton-pavillon-perfect-move.json"
+          }
         },
         {
           "kennung": "riverton.bahnhofshalle",
           "datei": "karten/riverton-bahnhofshalle.json",
           "name": "ort.riverton.bahnhofshalle",
-          "innen": true
+          "innen": true,
+          "zustaende": {
+            "nadelIronwood >= 1": "karten/riverton-bahnhofshalle-slick-auf-der-bank.json",
+            "nadelDesertSprings >= 1": "karten/riverton-bahnhofshalle-plakat.json"
+          }
         },
         {
           "kennung": "riverton.wohnwagen",
@@ -901,7 +926,10 @@
           "kennung": "riverton.schuppen",
           "datei": "karten/riverton-schuppen.json",
           "name": "ort.riverton.schuppen",
-          "innen": true
+          "innen": true,
+          "zustaende": {
+            "fahrradErhalten": "karten/riverton-schuppen-ohne-fahrrad.json"
+          }
         }
       ],
       "figuren": [
@@ -1145,14 +1173,20 @@
           "datei": "karten/weg-riverton-ironwood-1.json",
           "name": "ort.wegRivertonIronwood.kanalweg",
           "innen": false,
-          "musik": "musik/landstrasse.ogg"
+          "musik": "musik/landstrasse.ogg",
+          "zustaende": {
+            "nadelIronwood >= 1": "karten/weg-riverton-ironwood-1-graffiti.json"
+          }
         },
         {
           "kennung": "wegRivertonIronwood.bruecke",
           "datei": "karten/weg-riverton-ironwood-2.json",
           "name": "ort.wegRivertonIronwood.bruecke",
           "innen": false,
-          "musik": "musik/landstrasse.ogg"
+          "musik": "musik/landstrasse.ogg",
+          "zustaende": {
+            "nadelIronwood >= 1": "karten/weg-riverton-ironwood-2-ohne-tische.json"
+          }
         }
       ],
       "figuren": [
@@ -1447,13 +1481,20 @@
           "datei": "karten/ironwood-aussen.json",
           "name": "ort.ironwood.aussen",
           "innen": false,
-          "musik": "musik/ironwood.ogg"
+          "musik": "musik/ironwood.ogg",
+          "zustaende": {
+            "kaufGesehen": "karten/ironwood-aussen-vermietet.json",
+            "endeAkt3Gesehen": "karten/ironwood-aussen-meisterschaft.json"
+          }
         },
         {
           "kennung": "ironwood.kantine",
           "datei": "karten/ironwood-kantine.json",
           "name": "ort.ironwood.kantine",
-          "innen": true
+          "innen": true,
+          "zustaende": {
+            "kaufGesehen": "karten/ironwood-kantine-logo.json"
+          }
         },
         {
           "kennung": "ironwood.mamasZimmer",

@@ -696,22 +696,22 @@ der Story-Bibel und die Wege.
 - Kleiner blau-grauer Tisch im Pavillon: der Getränketisch `rv5Limonade` mit dem Limonadenglas
   (Auslöser `limonadenglas`), nur Deko.
 
-**Zustände (Liste für die Zustandsszenen, gebaut wird nach der Meldung von mittel-2):**
+**Zustände (gebaut, Technik von mittel-2; Liste: `python -m pipeline.abenteuer.zustaende`):**
 
-| Karte                    | Zustand (`<basis>-<zustand>.json`) | wann                                       | was sich ändert                                                                           |
-| ------------------------ | ---------------------------------- | ------------------------------------------ | ----------------------------------------------------------------------------------------- |
-| `riverton.aussen`        | Grundfassung                       | Akt 2 bis Szene 37                         | Regen, Pfützen (Tönung und Partikel), Schuppen mit Vorhängeschloss                        |
-| `riverton.aussen`        | `schuppenOffen`                    | nach Szene 33 (Schlüssel, E4)              | Vorhängeschloss weg, Schuppentür angelehnt                                                |
-| `riverton.aussen`        | `trainingszentrum`                 | nach Szene 37                              | Gitter vor der Pavillontreppe, Schild „Trainingszentrum – demnächst“, Banner Perfect Move |
-| `riverton.aussen`        | `winter`                           | Akt 3                                      | Bildschirmtische verschneit, zwei kaputt; Eiszapfen am Anleger (Fund)                     |
-| `riverton.aussen`        | `unterschriften`                   | Akt 4                                      | Bildschirmtische abgedeckt; Tisch für Slicks Unterschriftenliste vor dem Pavillon         |
-| `riverton.aussen`        | `nachspiel`                        | nach dem Abspann                           | Bildschirmtische weg, Wiese wieder frei                                                   |
-| `riverton.aussen`        | Objekt mit `wenn`                  | nach L3                                    | Lastkahn am Anleger (kein eigenes Bild nötig)                                             |
-| `riverton.bahnhofshalle` | `slickAufDerBank`                  | Akt 3                                      | Slick spielt auf der Bank weiter, Brett neben ihm                                         |
-| `riverton.bahnhofshalle` | `plakat`                           | Akt 4                                      | Plakat der Landesmeisterschaft an der freien Wand                                         |
-| `riverton.pavillon`      | `perfectMove`                      | nach Szene 37                              | Bildschirmtische auf den langen Tischen, Bretter in Kisten                                |
-| `riverton.wohnwagen`     | –                                  | nur Szene 37                               | keiner                                                                                    |
-| `riverton.schuppen`      | `ohneFahrrad`                      | nach Szene 33, wenn das Fahrrad geholt ist | Plane liegt leer auf dem Boden, Fahrrad fehlt                                             |
+| Karte                    | Szene                                       | Bedingung                               | was sich ändert                                                    |
+| ------------------------ | ------------------------------------------- | --------------------------------------- | ------------------------------------------------------------------ |
+| `riverton.aussen`        | `riverton-aussen-trainingszentrum`          | `slickAbschiedGesehen` (nach Szene 37)  | Schild von Perfect Move über dem Pavillon, Absperrbock „Gesperrt“  |
+| `riverton.aussen`        | `riverton-aussen-tische-kaputt`             | dazu `nadelIronwood >= 1` (Akt 3)       | zwei Bildschirmtische ohne Laptop (im Winter kaputt)               |
+| `riverton.aussen`        | `riverton-aussen-unterschriften`            | dazu `nadelDesertSprings >= 1` (Akt 4)  | alle Laptops abgebaut, Tisch für Slicks Unterschriftenliste        |
+| `riverton.aussen`        | `riverton-aussen-nachspiel`                 | `nicht ausgangCapitalArenaFinale == ""` | Bildschirmtische und ihre Dächer weg, Schild ab                    |
+| `riverton.bahnhofshalle` | `riverton-bahnhofshalle-slick-auf-der-bank` | `nadelIronwood >= 1` (Akt 3)            | Slicks Brett auf der Bank, Kuriertasche daneben                    |
+| `riverton.bahnhofshalle` | `riverton-bahnhofshalle-plakat`             | `nadelDesertSprings >= 1` (Akt 4)       | Plakat der Landesmeisterschaft neben dem Kiosk                     |
+| `riverton.pavillon`      | `riverton-pavillon-perfect-move`            | `slickAbschiedGesehen` (nach Szene 37)  | Laptops statt Bretter, Limonadenstand weg, Schild von Perfect Move |
+| `riverton.schuppen`      | `riverton-schuppen-ohne-fahrrad`            | `fahrradErhalten` (Szene 33)            | Fahrrad weg, nur die gefaltete Plane                               |
+
+Nicht als eigene Szene: `schuppenOffen` (außen ist das Vorhängeschloss im Bild nicht zu sehen), der
+Lastkahn am Anleger (Objekt mit `wenn`, sobald es Objekte mit Bedingung gibt), Regen und Schnee
+(Tönung und Partikel; Schneebilder gibt es nicht, ENTSCHEIDUNGEN 10.11.2026), Wohnwagen (nur Szene 37).
 
 ### 3.5 Gutachten Runde 8 (10.11.2026, mittel-3): Innenräume
 
@@ -749,6 +749,54 @@ Begründet nicht geändert:
 - Schuppen „Fahrrad unter der Plane wie ein Zelt“: Das Fahrrad ist absichtlich abgedeckt (Szene 33);
   das Hinterrad schaut hervor. „Kein Staub, kein Licht durch Ritzen“: Partikel und Lichtstreifen sind
   Sache der Laufzeit, nicht des Kartenbilds.
+
+### 3.6 Gutachten Runde 8 (10.11.2026, mittel-3): Riverton außen
+
+Behoben (Gutachten `docs/spiel/auftraege/gutachten/riverton-aussen.md`, Nummern in Klammern):
+
+- **Bahn (1–9):** Bahnsteig aus Pflaster zwischen Gleis und Bahnhof mit zwei Bahnsteigbänken. Der
+  Bahnhof ist jetzt ein Backsteinbau mit rotem Ziegeldach, zwei Bogenfenstern und der gläsernen
+  Eingangstür in der Mitte (Bildwunsch `riverton_aussen.py`); `bahnhofTuer` (36, 16) liegt davor.
+  Hecke am Bahnzaun links und rechts des Bahnsteigs. Stellwerk, Güterschuppen (mit Laderampe zum
+  Gleis und Holzstapel darauf) und Wasserturm stehen direkt am Gleis; der Fußweg vom Bahndamm läuft
+  am Zaun entlang am Stellwerk vorbei zum Bahnsteig. Leere Rasenflächen sind gefüllt.
+- **Häuser (10–12):** Graues Hochhaus, Turmhaus und gequetschtes Wohnhaus sind weg. Dafür ein
+  Angelladen und ein Wohnhaus an der Water Street im Westen, ein Wohnhaus östlich des Güterschuppens
+  und ein Infokiosk auf dem Vorplatz.
+- **Vorplatz und Straße (13, 15, 17, 21, 22):** Die Water Street läuft an beiden Rändern aus der Karte
+  hinaus (nach Cedar Creek und Ironwood). Vorplatz sechs Reihen tief, der Brunnen mit zwei Bänken,
+  die zu ihm schauen, in der Mitte der Westhälfte; die Achse zur Bahnhofstür bleibt frei. Bäckerei,
+  Café und Lagerhäuser stehen auf Pflaster; die Brückenstraße ist Fußgängerzone und endet am
+  gepflasterten Brückenkopf im Park.
+- **Fluss, Kai, Kanal (23–31):** Nordufer als gerade Kaimauer mit drei Reihen Promenade, vier Bänken
+  mit Blick aufs Wasser und Laternen in festen Abständen. Am Kai im Osten Kisten, Fässer,
+  Poller mit Tau, ein Motorboot am Kai (5 × 2 Kacheln, 10.64) und der Gabelstaplerfahrer bei der Arbeit; das Pegelhaus steht am
+  Ende des Kais direkt am Wasser. Das Südufer schwingt aus. Der Kanal und sein Becken haben Steinufer
+  und laufen gerade nach Süden, der Kanal mit 7 Kacheln Wasser für Frachtkähne (10.64); der Treidelpfad läuft einfach neben dem Steinrand. Die Brücke wirft
+  einen Schatten aufs Wasser.
+- **Park (32–40):** Bäume, Büsche, drei Laternen am Uferweg. Die Bildschirmtische stehen unter drei
+  Holzdächern (Regen); der Pavillon hat ein Holzdach; der Platz davor ist zwei Reihen tief. Der
+  Parkschachspieler hat einen Picknicktisch mit Brett.
+
+Begründet nicht geändert:
+
+- (8) Wasserkran und Stichgleis gibt es nicht als Bild; der Turm steht am Hauptgleis.
+- (13) Fahrbahnmarkierung und Überweg: keine passenden Bodenbilder für Asphalt.
+- (14) Pfützen: Tönung und Partikel der Laufzeit (Regen), nicht das Kartenbild.
+- (16) Haltestellenschild: Das Bild der Haltestelle hat den Fahrplan am Wartehäuschen.
+- (18) Handyladen „STORE“: Kulisse ohne Innenraum (Bibel 10.2), Kyle steht davor.
+- (19) Verkäufer hinter dem Stand: Unter der Markise wäre die Figur verdeckt; Marktfrau, Obsthändler
+  und Imbissverkäufer stehen daneben.
+- (26) Die Enten sind eine Belebung, das Spiel bewegt sie.
+- (31) Das Ostufer des Kanals ist eine Böschung mit Bäumen, nicht begehbar.
+- (34) Wohnwagen, Werkstatt und Schuppen haben ihre Türen zum Hinterweg im Süden (Schuppentür zur
+  Südwand, 3.2); der Uferweg ist der Vorderweg des Parks. (35) Die Werkstatt ist seit dem Frühjahr
+  geschlossen (Bibel 9.2) und behält ihr Schaufenster.
+- (37) Der Pavillon ist außen ein Holzdach auf Stützen; innen hat er Wände und Fenster (Planen und
+  Holzwände sind in der Draufsicht nicht darstellbar).
+- 10.64: Der kleine Portalkran am Kai ist weg (ein Portalkran wäre 10–14 Kacheln hoch und passt nicht
+  an einen Flusskai); dafür ein Bahnwärterhäuschen östlich des Güterschuppens (10.51, 20 Gebäude).
+- (42) Reihenhaus und Lagerhaus stehen je zweimal nebeneinander als Paar (Punkt 25: höchstens zweimal).
 
 ## 4. Bühnenbilder
 
@@ -1273,3 +1321,14 @@ Fußmatte, Stufendiagonalen der Wege); er wird hier nicht einzeln umgebaut.
 - Fehlendes Bild: 15 (eine erkennbare Zeder gibt es im Paket nicht; Wunsch an den Haupt-Chat), 8
   (Grenzstein), 14, 20 (hohler und angenagter Stamm), 27 (Mikrofon).
 - Zur Nachprüfung: 5, 6, 7, 12, 13, 16, 19, 22.
+
+**Zustände Weg 3 (gebaut):** Kanalweg `graffiti` (`nadelIronwood >= 1`): Noors Wand ist fertig bemalt,
+Leiter und Sprayerin sind weg. Eisenbrücke `ohne-tische` (`nadelIronwood >= 1`): Die Brückenbauern haben
+die Klapptische weggeräumt, Corwin ist mit dem Streichen fertig. Der Winter beider Karten kommt mit der
+Schneefärbung (mittel-2).
+
+**Regel 10.64 (Größen):** Kanal 8 Reihen, Seitenarm nach Lockport jetzt 7 Reihen (vorher 6), Treidelbrücke
+neun Felder lang. Auf Weg 3 fahren keine Fahrzeuge; die Ruderboote am Ufer sind 4 × 2, das Autowrack im
+Fabrikhof 4 × 4, der Leiterwagen 2 × 3. Ironwood: Werksbus 7 × 4 (wie LimeZus Bus), keine Lastwagen.
+Steinbruch: Radlader 6 × 3, Lore der Feldbahn 1,5 × 1. Weg 7: die Sattelzüge sind 10 × 4; das Autowrack an
+der Tankstelle war ein Kleinwagen von vorn (2 × 2) und ist jetzt ein Wrack in Autogröße (4 × 4).

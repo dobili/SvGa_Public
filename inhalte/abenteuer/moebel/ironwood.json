@@ -439,7 +439,7 @@
       "blick": "unten"
     },
     "iw5Schuppen": {
-      "quelle": "modern-exteriors/Modern_Exteriors_16x16/ME_Theme_Sorter_16x16/17_Garden_Singles_16x16/ME_Singles_Garden_16x16_Brown_Wood_Storage.png",
+      "quelle": "spiel/eigene/gartenhaus_braun.png",
       "breite": 48,
       "hoehe": 64,
       "kollision": true,
@@ -675,7 +675,7 @@
       "stil": "klassisch"
     },
     "iw5Laden": {
-      "quelle": "modern-exteriors/Modern_Exteriors_16x16/ME_Theme_Sorter_16x16/4_Generic_Building_Singles_16x16/ME_Singles_Generic_Building_16x16_Hardware_Store.png",
+      "quelle": "spiel/eigene/fassade_kramladen.png",
       "breite": 128,
       "hoehe": 144,
       "kollision": true,
@@ -714,7 +714,7 @@
       "stil": "industrie"
     },
     "iw8SchuppenRot": {
-      "quelle": "modern-exteriors/Modern_Exteriors_16x16/ME_Theme_Sorter_16x16/17_Garden_Singles_16x16/ME_Singles_Garden_16x16_Red_Brown_Wood_Storage.png",
+      "quelle": "spiel/eigene/gartenhaus_rot.png",
       "breite": 48,
       "hoehe": 64,
       "kollision": true,

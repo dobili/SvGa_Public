@@ -4396,8 +4396,8 @@
      "id": 10,
      "name": "bushaltestelle",
      "type": "ausloeser",
-     "x": 416,
-     "y": 336,
+     "x": 368,
+     "y": 320,
      "width": 16,
      "height": 16,
      "rotation": 0,
@@ -5850,7 +5850,7 @@
      "name": "mf6Haltestelle",
      "type": "moebel",
      "x": 384,
-     "y": 352,
+     "y": 304,
      "width": 80,
      "height": 48,
      "rotation": 0,
@@ -5859,7 +5859,7 @@
       {
        "name": "tiefe",
        "type": "int",
-       "value": 392
+       "value": 344
       },
       {
        "name": "kollision",

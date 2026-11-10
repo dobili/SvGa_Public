@@ -18,20 +18,24 @@ Szene heißt die Datei in `inhalte/abenteuer/szenen/` ohne `.json`.
 - [x] weg-maple-cedar-landstrasse (Runde 8, niedrig-1)
 - [x] weg-maple-cedar-zedernpfad (Runde 8, niedrig-1)
 
-- [ ] weg-riverton-ironwood-1 (Kanalweg, Runde 8, mittel-4)
-- [ ] weg-riverton-ironwood-2 (Eisenbrücke, Runde 8, mittel-4)
-- [ ] ironwood-aussen (Runde 8, mittel-4)
-- [ ] ironwood-kantine (zweite Prüfung, Runde 8, mittel-4)
-- [ ] ironwood-museum (Runde 8, mittel-4)
-- [ ] ironwood-umkleide (Runde 8, mittel-4)
-- [ ] ironwood-mamas-zimmer (Runde 8, mittel-4)
-- [ ] steinbruch-grube (zweite Prüfung, Runde 8, mittel-4)
-- [ ] steinbruch-stollen (Runde 8, mittel-4)
-- [ ] silicon-bay-akademie (neu gebaut, Runde 8, mittel-3)
-- [ ] silicon-bay-altstadt (Runde 8, mittel-3)
+- [x] weg-riverton-ironwood-1 (Kanalweg, Runde 8, mittel-4)
+- [x] weg-riverton-ironwood-2 (Eisenbrücke, Runde 8, mittel-4)
+- [x] ironwood-aussen (Runde 8, mittel-4)
+- [x] ironwood-kantine (zweite Prüfung, Runde 8, mittel-4)
+- [x] ironwood-museum (Runde 8, mittel-4)
+- [x] ironwood-umkleide (Runde 8, mittel-4)
+- [x] ironwood-mamas-zimmer (Runde 8, mittel-4)
+- [x] steinbruch-grube (zweite Prüfung, Runde 8, mittel-4)
+- [x] steinbruch-stollen (Runde 8, mittel-4)
+- [x] silicon-bay-akademie (neu gebaut, Runde 8, mittel-3)
+- [x] silicon-bay-altstadt (Runde 8, mittel-3)
 
-- [ ] weg-ironwood-silicon-glasbruecke (neu gebaut, Runde 8, mittel-1)
-- [ ] weg-ironwood-silicon-raststaette (Runde 8, mittel-1)
+- [x] weg-ironwood-silicon-glasbruecke (neu gebaut, Runde 8, mittel-1)
+- [x] weg-ironwood-silicon-raststaette (Runde 8, mittel-1)
+
+- [x] riverton-aussen (zweite Prüfung nach Nachbesserung, mittel-3; Bilder im privaten main ab b6c369b2)
+- [x] riverton-bahnhofshalle, riverton-pavillon, riverton-wohnwagen, riverton-schuppen (zweite Prüfung, mittel-3, eine Datei `riverton-innen-2.md`)
+- [x] maple-falls-clubraum (dritte Prüfung, mittel-1, Datei `maple-falls-clubraum-3.md`)
 
 ## Erledigt
 

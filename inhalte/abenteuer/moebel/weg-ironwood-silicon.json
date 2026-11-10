@@ -85,7 +85,7 @@
       "blick": "unten"
     },
     "ws5Huette": {
-      "quelle": "modern-exteriors/Modern_Exteriors_16x16/ME_Theme_Sorter_16x16/17_Garden_Singles_16x16/ME_Singles_Garden_16x16_Brown_Wood_Storage.png",
+      "quelle": "spiel/eigene/gartenhaus_braun.png",
       "breite": 48,
       "hoehe": 64,
       "kollision": true,
@@ -123,7 +123,7 @@
       "stil": "modern"
     },
     "ws5Rasthaus": {
-      "quelle": "modern-exteriors/Modern_Exteriors_16x16/ME_Theme_Sorter_16x16/4_Generic_Building_Singles_16x16/ME_Singles_Generic_Building_16x16_Hardware_Store.png",
+      "quelle": "spiel/eigene/fassade_rasthaus.png",
       "breite": 128,
       "hoehe": 144,
       "kollision": true,
@@ -153,7 +153,7 @@
       "stil": "modern"
     },
     "ws5Wartehaus": {
-      "quelle": "modern-exteriors/Modern_Exteriors_16x16/ME_Theme_Sorter_16x16/10_Vehicles_Singles_16x16/ME_Singles_Vehicles_16x16_Bus_Stop_2.png",
+      "quelle": "spiel/eigene/wartehaus_hinten.png",
       "breite": 80,
       "hoehe": 48,
       "kollision": true,
@@ -843,10 +843,7 @@
       "art": "zaun",
       "zustand": "neu",
       "stil": "modern",
-      "maske": [
-        "",
-        "################"
-      ]
+      "maske": ["", "################"]
     },
     "wsgGelVorn12": {
       "quelle": "spiel/eigene/glasgelaender_vorn_12.png",
@@ -856,10 +853,7 @@
       "art": "zaun",
       "zustand": "neu",
       "stil": "modern",
-      "maske": [
-        "",
-        "############"
-      ]
+      "maske": ["", "############"]
     },
     "wsgGel8": {
       "quelle": "spiel/eigene/glasgelaender_8.png",
@@ -878,14 +872,7 @@
       "art": "zaun",
       "zustand": "neu",
       "stil": "modern",
-      "maske": [
-        "#",
-        "#",
-        "#",
-        "#",
-        "#",
-        "#"
-      ]
+      "maske": ["#", "#", "#", "#", "#", "#"]
     },
     "wsrLkw": {
       "quelle": "spiel/eigene/lkw_links_blau.png",

@@ -301,6 +301,16 @@ frei begehbar; die Auslöser kommen mit den Dialogen.
 - Zustände: keine neuen. Das Loch gehört zur Ankunft vor dem Hurrikan-Aufräumen; ein Zustand
   „Deich geflickt“ wäre erst sinnvoll, wenn die Geschichte zurückführt.
 
+**Bayou, Gutachten Runde 9 (`gutachten/capital-arena-bayou.md`, mittel-1):**
+
+- Wasser (1): dunkler, mit Seerosen als gestreute Wellenbilder (`wasser_moor.py` erweitert,
+  `seerosen_moor_1` bis `_3`). Die Vorschau zeigt den Nebel der Szene, deshalb wirkt sie blass.
+- Kahn (2): Das weiße Motorboot ist ein hölzernes Ruderboot.
+- Baum (5): Die Eiche auf Therons Insel ist eine Sumpfzypresse.
+- Boden (7): Die Inseln sind nasser, dunkler Sumpfboden (Bildwunsch `sumpfboden.py`) mit
+  Grasrand.
+- Offen: Möwe statt Reiher (6, Gemini-Prompt 14), Vogelschild (4, Story-Gegenstand).
+
 ## 4. Bühnenbilder
 
 ### 4.1 Fährdeck

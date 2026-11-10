@@ -25,837 +25,1468 @@
   "objekte": [
     {
       "moebel": "mfc10Pokalregal",
-      "feld": [4, 3],
+      "feld": [
+        4,
+        3
+      ],
       "id": "pokalregal"
     },
     {
       "moebel": "mfc8RegalNiedrig",
-      "feld": [7, 3]
+      "feld": [
+        7,
+        3
+      ]
     },
     {
       "moebel": "mfc8RegalNiedrig",
-      "feld": [17, 3]
+      "feld": [
+        17,
+        3
+      ]
     },
     {
       "moebel": "mfc9TeppichLo",
-      "feld": [4, 6]
+      "feld": [
+        4,
+        6
+      ]
     },
     {
       "moebel": "mfc9TeppichO",
-      "feld": [5, 6]
+      "feld": [
+        5,
+        6
+      ]
     },
     {
       "moebel": "mfc9TeppichO",
-      "feld": [6, 6]
+      "feld": [
+        6,
+        6
+      ]
     },
     {
       "moebel": "mfc9TeppichO",
-      "feld": [7, 6]
+      "feld": [
+        7,
+        6
+      ]
     },
     {
       "moebel": "mfc9TeppichO",
-      "feld": [8, 6]
+      "feld": [
+        8,
+        6
+      ]
     },
     {
       "moebel": "mfc9TeppichO",
-      "feld": [9, 6]
+      "feld": [
+        9,
+        6
+      ]
     },
     {
       "moebel": "mfc9TeppichO",
-      "feld": [10, 6]
+      "feld": [
+        10,
+        6
+      ]
     },
     {
       "moebel": "mfc9TeppichO",
-      "feld": [11, 6]
+      "feld": [
+        11,
+        6
+      ]
     },
     {
       "moebel": "mfc9TeppichO",
-      "feld": [12, 6]
+      "feld": [
+        12,
+        6
+      ]
     },
     {
       "moebel": "mfc9TeppichO",
-      "feld": [13, 6]
+      "feld": [
+        13,
+        6
+      ]
     },
     {
       "moebel": "mfc9TeppichO",
-      "feld": [14, 6]
+      "feld": [
+        14,
+        6
+      ]
     },
     {
       "moebel": "mfc9TeppichO",
-      "feld": [15, 6]
+      "feld": [
+        15,
+        6
+      ]
     },
     {
       "moebel": "mfc9TeppichO",
-      "feld": [16, 6]
+      "feld": [
+        16,
+        6
+      ]
     },
     {
       "moebel": "mfc9TeppichO",
-      "feld": [17, 6]
+      "feld": [
+        17,
+        6
+      ]
     },
     {
       "moebel": "mfc9TeppichO",
-      "feld": [18, 6]
+      "feld": [
+        18,
+        6
+      ]
     },
     {
       "moebel": "mfc9TeppichO",
-      "feld": [19, 6]
+      "feld": [
+        19,
+        6
+      ]
     },
     {
       "moebel": "mfc9TeppichO",
-      "feld": [20, 6]
+      "feld": [
+        20,
+        6
+      ]
     },
     {
       "moebel": "mfc9TeppichRo",
-      "feld": [21, 6]
+      "feld": [
+        21,
+        6
+      ]
     },
     {
       "moebel": "mfc9TeppichL",
-      "feld": [4, 7]
+      "feld": [
+        4,
+        7
+      ]
     },
     {
       "moebel": "mfc9TeppichM",
-      "feld": [5, 7]
+      "feld": [
+        5,
+        7
+      ]
     },
     {
       "moebel": "mfc9TeppichM",
-      "feld": [6, 7]
+      "feld": [
+        6,
+        7
+      ]
     },
     {
       "moebel": "mfc9TeppichM",
-      "feld": [7, 7]
+      "feld": [
+        7,
+        7
+      ]
     },
     {
       "moebel": "mfc9TeppichM",
-      "feld": [8, 7]
+      "feld": [
+        8,
+        7
+      ]
     },
     {
       "moebel": "mfc9TeppichM",
-      "feld": [9, 7]
+      "feld": [
+        9,
+        7
+      ]
     },
     {
       "moebel": "mfc9TeppichM",
-      "feld": [10, 7]
+      "feld": [
+        10,
+        7
+      ]
     },
     {
       "moebel": "mfc9TeppichM",
-      "feld": [11, 7]
+      "feld": [
+        11,
+        7
+      ]
     },
     {
       "moebel": "mfc9TeppichM",
-      "feld": [12, 7]
+      "feld": [
+        12,
+        7
+      ]
     },
     {
       "moebel": "mfc9TeppichM",
-      "feld": [13, 7]
+      "feld": [
+        13,
+        7
+      ]
     },
     {
       "moebel": "mfc9TeppichM",
-      "feld": [14, 7]
+      "feld": [
+        14,
+        7
+      ]
     },
     {
       "moebel": "mfc9TeppichM",
-      "feld": [15, 7]
+      "feld": [
+        15,
+        7
+      ]
     },
     {
       "moebel": "mfc9TeppichM",
-      "feld": [16, 7]
+      "feld": [
+        16,
+        7
+      ]
     },
     {
       "moebel": "mfc9TeppichM",
-      "feld": [17, 7]
+      "feld": [
+        17,
+        7
+      ]
     },
     {
       "moebel": "mfc9TeppichM",
-      "feld": [18, 7]
+      "feld": [
+        18,
+        7
+      ]
     },
     {
       "moebel": "mfc9TeppichM",
-      "feld": [19, 7]
+      "feld": [
+        19,
+        7
+      ]
     },
     {
       "moebel": "mfc9TeppichM",
-      "feld": [20, 7]
+      "feld": [
+        20,
+        7
+      ]
     },
     {
       "moebel": "mfc9TeppichR",
-      "feld": [21, 7]
+      "feld": [
+        21,
+        7
+      ]
     },
     {
       "moebel": "mfc9TeppichL",
-      "feld": [4, 8]
+      "feld": [
+        4,
+        8
+      ]
     },
     {
       "moebel": "mfc9TeppichM",
-      "feld": [5, 8]
+      "feld": [
+        5,
+        8
+      ]
     },
     {
       "moebel": "mfc9TeppichM",
-      "feld": [6, 8]
+      "feld": [
+        6,
+        8
+      ]
     },
     {
       "moebel": "mfc9TeppichM",
-      "feld": [7, 8]
+      "feld": [
+        7,
+        8
+      ]
     },
     {
       "moebel": "mfc9TeppichM",
-      "feld": [8, 8]
+      "feld": [
+        8,
+        8
+      ]
     },
     {
       "moebel": "mfc9TeppichM",
-      "feld": [9, 8]
+      "feld": [
+        9,
+        8
+      ]
     },
     {
       "moebel": "mfc9TeppichM",
-      "feld": [10, 8]
+      "feld": [
+        10,
+        8
+      ]
     },
     {
       "moebel": "mfc9TeppichM",
-      "feld": [11, 8]
+      "feld": [
+        11,
+        8
+      ]
     },
     {
       "moebel": "mfc9TeppichM",
-      "feld": [12, 8]
+      "feld": [
+        12,
+        8
+      ]
     },
     {
       "moebel": "mfc9TeppichM",
-      "feld": [13, 8]
+      "feld": [
+        13,
+        8
+      ]
     },
     {
       "moebel": "mfc9TeppichM",
-      "feld": [14, 8]
+      "feld": [
+        14,
+        8
+      ]
     },
     {
       "moebel": "mfc9TeppichM",
-      "feld": [15, 8]
+      "feld": [
+        15,
+        8
+      ]
     },
     {
       "moebel": "mfc9TeppichM",
-      "feld": [16, 8]
+      "feld": [
+        16,
+        8
+      ]
     },
     {
       "moebel": "mfc9TeppichM",
-      "feld": [17, 8]
+      "feld": [
+        17,
+        8
+      ]
     },
     {
       "moebel": "mfc9TeppichM",
-      "feld": [18, 8]
+      "feld": [
+        18,
+        8
+      ]
     },
     {
       "moebel": "mfc9TeppichM",
-      "feld": [19, 8]
+      "feld": [
+        19,
+        8
+      ]
     },
     {
       "moebel": "mfc9TeppichM",
-      "feld": [20, 8]
+      "feld": [
+        20,
+        8
+      ]
     },
     {
       "moebel": "mfc9TeppichR",
-      "feld": [21, 8]
+      "feld": [
+        21,
+        8
+      ]
     },
     {
       "moebel": "mfc9TeppichL",
-      "feld": [4, 9]
+      "feld": [
+        4,
+        9
+      ]
     },
     {
       "moebel": "mfc9TeppichM",
-      "feld": [5, 9]
+      "feld": [
+        5,
+        9
+      ]
     },
     {
       "moebel": "mfc9TeppichM",
-      "feld": [6, 9]
+      "feld": [
+        6,
+        9
+      ]
     },
     {
       "moebel": "mfc9TeppichM",
-      "feld": [7, 9]
+      "feld": [
+        7,
+        9
+      ]
     },
     {
       "moebel": "mfc9TeppichM",
-      "feld": [8, 9]
+      "feld": [
+        8,
+        9
+      ]
     },
     {
       "moebel": "mfc9TeppichM",
-      "feld": [9, 9]
+      "feld": [
+        9,
+        9
+      ]
     },
     {
       "moebel": "mfc9TeppichM",
-      "feld": [10, 9]
+      "feld": [
+        10,
+        9
+      ]
     },
     {
       "moebel": "mfc9TeppichM",
-      "feld": [11, 9]
+      "feld": [
+        11,
+        9
+      ]
     },
     {
       "moebel": "mfc9TeppichM",
-      "feld": [12, 9]
+      "feld": [
+        12,
+        9
+      ]
     },
     {
       "moebel": "mfc9TeppichM",
-      "feld": [13, 9]
+      "feld": [
+        13,
+        9
+      ]
     },
     {
       "moebel": "mfc9TeppichM",
-      "feld": [14, 9]
+      "feld": [
+        14,
+        9
+      ]
     },
     {
       "moebel": "mfc9TeppichM",
-      "feld": [15, 9]
+      "feld": [
+        15,
+        9
+      ]
     },
     {
       "moebel": "mfc9TeppichM",
-      "feld": [16, 9]
+      "feld": [
+        16,
+        9
+      ]
     },
     {
       "moebel": "mfc9TeppichM",
-      "feld": [17, 9]
+      "feld": [
+        17,
+        9
+      ]
     },
     {
       "moebel": "mfc9TeppichM",
-      "feld": [18, 9]
+      "feld": [
+        18,
+        9
+      ]
     },
     {
       "moebel": "mfc9TeppichM",
-      "feld": [19, 9]
+      "feld": [
+        19,
+        9
+      ]
     },
     {
       "moebel": "mfc9TeppichM",
-      "feld": [20, 9]
+      "feld": [
+        20,
+        9
+      ]
     },
     {
       "moebel": "mfc9TeppichR",
-      "feld": [21, 9]
+      "feld": [
+        21,
+        9
+      ]
     },
     {
       "moebel": "mfc9TeppichL",
-      "feld": [4, 10]
+      "feld": [
+        4,
+        10
+      ]
     },
     {
       "moebel": "mfc9TeppichM",
-      "feld": [5, 10]
+      "feld": [
+        5,
+        10
+      ]
     },
     {
       "moebel": "mfc9TeppichM",
-      "feld": [6, 10]
+      "feld": [
+        6,
+        10
+      ]
     },
     {
       "moebel": "mfc9TeppichM",
-      "feld": [7, 10]
+      "feld": [
+        7,
+        10
+      ]
     },
     {
       "moebel": "mfc9TeppichM",
-      "feld": [8, 10]
+      "feld": [
+        8,
+        10
+      ]
     },
     {
       "moebel": "mfc9TeppichM",
-      "feld": [9, 10]
+      "feld": [
+        9,
+        10
+      ]
     },
     {
       "moebel": "mfc9TeppichM",
-      "feld": [10, 10]
+      "feld": [
+        10,
+        10
+      ]
     },
     {
       "moebel": "mfc9TeppichM",
-      "feld": [11, 10]
+      "feld": [
+        11,
+        10
+      ]
     },
     {
       "moebel": "mfc9TeppichM",
-      "feld": [12, 10]
+      "feld": [
+        12,
+        10
+      ]
     },
     {
       "moebel": "mfc9TeppichM",
-      "feld": [13, 10]
+      "feld": [
+        13,
+        10
+      ]
     },
     {
       "moebel": "mfc9TeppichM",
-      "feld": [14, 10]
+      "feld": [
+        14,
+        10
+      ]
     },
     {
       "moebel": "mfc9TeppichM",
-      "feld": [15, 10]
+      "feld": [
+        15,
+        10
+      ]
     },
     {
       "moebel": "mfc9TeppichM",
-      "feld": [16, 10]
+      "feld": [
+        16,
+        10
+      ]
     },
     {
       "moebel": "mfc9TeppichM",
-      "feld": [17, 10]
+      "feld": [
+        17,
+        10
+      ]
     },
     {
       "moebel": "mfc9TeppichM",
-      "feld": [18, 10]
+      "feld": [
+        18,
+        10
+      ]
     },
     {
       "moebel": "mfc9TeppichM",
-      "feld": [19, 10]
+      "feld": [
+        19,
+        10
+      ]
     },
     {
       "moebel": "mfc9TeppichM",
-      "feld": [20, 10]
+      "feld": [
+        20,
+        10
+      ]
     },
     {
       "moebel": "mfc9TeppichR",
-      "feld": [21, 10]
+      "feld": [
+        21,
+        10
+      ]
     },
     {
       "moebel": "mfc9TeppichL",
-      "feld": [4, 11]
+      "feld": [
+        4,
+        11
+      ]
     },
     {
       "moebel": "mfc9TeppichM",
-      "feld": [5, 11]
+      "feld": [
+        5,
+        11
+      ]
     },
     {
       "moebel": "mfc9TeppichM",
-      "feld": [6, 11]
+      "feld": [
+        6,
+        11
+      ]
     },
     {
       "moebel": "mfc9TeppichM",
-      "feld": [7, 11]
+      "feld": [
+        7,
+        11
+      ]
     },
     {
       "moebel": "mfc9TeppichM",
-      "feld": [8, 11]
+      "feld": [
+        8,
+        11
+      ]
     },
     {
       "moebel": "mfc9TeppichM",
-      "feld": [9, 11]
+      "feld": [
+        9,
+        11
+      ]
     },
     {
       "moebel": "mfc9TeppichM",
-      "feld": [10, 11]
+      "feld": [
+        10,
+        11
+      ]
     },
     {
       "moebel": "mfc9TeppichM",
-      "feld": [11, 11]
+      "feld": [
+        11,
+        11
+      ]
     },
     {
       "moebel": "mfc9TeppichM",
-      "feld": [12, 11]
+      "feld": [
+        12,
+        11
+      ]
     },
     {
       "moebel": "mfc9TeppichM",
-      "feld": [13, 11]
+      "feld": [
+        13,
+        11
+      ]
     },
     {
       "moebel": "mfc9TeppichM",
-      "feld": [14, 11]
+      "feld": [
+        14,
+        11
+      ]
     },
     {
       "moebel": "mfc9TeppichM",
-      "feld": [15, 11]
+      "feld": [
+        15,
+        11
+      ]
     },
     {
       "moebel": "mfc9TeppichM",
-      "feld": [16, 11]
+      "feld": [
+        16,
+        11
+      ]
     },
     {
       "moebel": "mfc9TeppichM",
-      "feld": [17, 11]
+      "feld": [
+        17,
+        11
+      ]
     },
     {
       "moebel": "mfc9TeppichM",
-      "feld": [18, 11]
+      "feld": [
+        18,
+        11
+      ]
     },
     {
       "moebel": "mfc9TeppichM",
-      "feld": [19, 11]
+      "feld": [
+        19,
+        11
+      ]
     },
     {
       "moebel": "mfc9TeppichM",
-      "feld": [20, 11]
+      "feld": [
+        20,
+        11
+      ]
     },
     {
       "moebel": "mfc9TeppichR",
-      "feld": [21, 11]
+      "feld": [
+        21,
+        11
+      ]
     },
     {
       "moebel": "mfc9TeppichLu",
-      "feld": [4, 12]
+      "feld": [
+        4,
+        12
+      ]
     },
     {
       "moebel": "mfc9TeppichU",
-      "feld": [5, 12]
+      "feld": [
+        5,
+        12
+      ]
     },
     {
       "moebel": "mfc9TeppichU",
-      "feld": [6, 12]
+      "feld": [
+        6,
+        12
+      ]
     },
     {
       "moebel": "mfc9TeppichU",
-      "feld": [7, 12]
+      "feld": [
+        7,
+        12
+      ]
     },
     {
       "moebel": "mfc9TeppichU",
-      "feld": [8, 12]
+      "feld": [
+        8,
+        12
+      ]
     },
     {
       "moebel": "mfc9TeppichU",
-      "feld": [9, 12]
+      "feld": [
+        9,
+        12
+      ]
     },
     {
       "moebel": "mfc9TeppichU",
-      "feld": [10, 12]
+      "feld": [
+        10,
+        12
+      ]
     },
     {
       "moebel": "mfc9TeppichU",
-      "feld": [11, 12]
+      "feld": [
+        11,
+        12
+      ]
     },
     {
       "moebel": "mfc9TeppichU",
-      "feld": [12, 12]
+      "feld": [
+        12,
+        12
+      ]
     },
     {
       "moebel": "mfc9TeppichU",
-      "feld": [13, 12]
+      "feld": [
+        13,
+        12
+      ]
     },
     {
       "moebel": "mfc9TeppichU",
-      "feld": [14, 12]
+      "feld": [
+        14,
+        12
+      ]
     },
     {
       "moebel": "mfc9TeppichU",
-      "feld": [15, 12]
+      "feld": [
+        15,
+        12
+      ]
     },
     {
       "moebel": "mfc9TeppichU",
-      "feld": [16, 12]
+      "feld": [
+        16,
+        12
+      ]
     },
     {
       "moebel": "mfc9TeppichU",
-      "feld": [17, 12]
+      "feld": [
+        17,
+        12
+      ]
     },
     {
       "moebel": "mfc9TeppichU",
-      "feld": [18, 12]
+      "feld": [
+        18,
+        12
+      ]
     },
     {
       "moebel": "mfc9TeppichU",
-      "feld": [19, 12]
+      "feld": [
+        19,
+        12
+      ]
     },
     {
       "moebel": "mfc9TeppichU",
-      "feld": [20, 12]
+      "feld": [
+        20,
+        12
+      ]
     },
     {
       "moebel": "mfc9TeppichRu",
-      "feld": [21, 12]
+      "feld": [
+        21,
+        12
+      ]
     },
     {
       "moebel": "mf2Fenster",
-      "feld": [2, 1],
+      "feld": [
+        2,
+        1
+      ],
       "an_wand": true,
-      "versatz": [0, -2]
+      "versatz": [
+        0,
+        -2
+      ]
     },
     {
       "moebel": "mf2Weltkarte",
-      "feld": [5, 1],
+      "feld": [
+        5,
+        1
+      ],
       "an_wand": true,
-      "versatz": [0, -2]
+      "versatz": [
+        0,
+        -2
+      ]
     },
     {
       "moebel": "mf2Fenster",
-      "feld": [8, 1],
+      "feld": [
+        8,
+        1
+      ],
       "an_wand": true,
-      "versatz": [0, -2]
+      "versatz": [
+        0,
+        -2
+      ]
     },
     {
       "moebel": "mfc9Wanduhr",
-      "feld": [10, 1],
+      "feld": [
+        10,
+        1
+      ],
       "an_wand": true,
-      "versatz": [0, 4]
+      "versatz": [
+        0,
+        4
+      ]
     },
     {
       "moebel": "mfc8Kreidetafel",
-      "feld": [12, 1],
-      "versatz": [8, -2]
+      "feld": [
+        12,
+        1
+      ],
+      "versatz": [
+        8,
+        -2
+      ]
     },
     {
       "moebel": "mf4Pinnwand",
-      "feld": [15, 1],
+      "feld": [
+        15,
+        1
+      ],
       "an_wand": true,
-      "versatz": [0, 6]
+      "versatz": [
+        0,
+        6
+      ]
     },
     {
       "moebel": "mfc9PlakatZaehlen",
-      "feld": [17, 1],
+      "feld": [
+        17,
+        1
+      ],
       "an_wand": true,
-      "versatz": [0, -2]
+      "versatz": [
+        0,
+        2
+      ]
     },
     {
       "moebel": "mfc9Garderobe",
-      "feld": [19, 1],
+      "feld": [
+        19,
+        1
+      ],
       "an_wand": true,
-      "versatz": [0, -2]
+      "versatz": [
+        0,
+        -2
+      ]
     },
     {
       "moebel": "mf2Fenster",
-      "feld": [23, 1],
+      "feld": [
+        23,
+        1
+      ],
       "an_wand": true,
-      "versatz": [0, -2]
+      "versatz": [
+        0,
+        -2
+      ]
     },
     {
       "moebel": "mfc9Lehrertisch",
-      "feld": [12, 4],
+      "feld": [
+        12,
+        4
+      ],
       "id": "pult",
-      "versatz": [8, 0]
+      "versatz": [
+        8,
+        0
+      ]
     },
     {
       "moebel": "mf2Globus",
       "auf": "pult",
-      "versatz": [-6, 3]
+      "versatz": [
+        -6,
+        3
+      ]
     },
     {
       "moebel": "mfc10SpindeHoch",
-      "feld": [21, 3]
+      "feld": [
+        21,
+        3
+      ]
     },
     {
       "moebel": "mf7PflanzeHoch",
-      "feld": [1, 3]
+      "feld": [
+        1,
+        3
+      ]
     },
     {
       "moebel": "mf7PflanzeHoch",
-      "feld": [24, 3]
+      "feld": [
+        24,
+        3
+      ]
     },
     {
       "moebel": "mf4Palme",
-      "feld": [1, 12]
+      "feld": [
+        1,
+        12
+      ]
     },
     {
       "moebel": "mf4Palme",
-      "feld": [23, 12]
+      "feld": [
+        23,
+        12
+      ]
     },
     {
       "moebel": "mfc10RegalSeiteRechts",
-      "feld": [1, 6]
+      "feld": [
+        1,
+        6
+      ]
     },
     {
       "moebel": "mfc9RegalSeiteLinks",
-      "feld": [24, 6]
+      "feld": [
+        24,
+        6
+      ]
     },
     {
       "moebel": "mfc9BankWest",
-      "feld": [1, 9]
+      "feld": [
+        1,
+        9
+      ]
     },
     {
       "moebel": "mfc9BankOst",
-      "feld": [24, 9]
+      "feld": [
+        24,
+        9
+      ]
     },
     {
       "moebel": "mf8RundtischDunkel",
-      "feld": [6, 7],
+      "feld": [
+        6,
+        7
+      ],
       "id": "t1"
     },
     {
       "moebel": "mfc9BrettFiguren",
       "auf": "t1",
-      "versatz": [-4, 0]
+      "versatz": [
+        -4,
+        0
+      ]
     },
     {
       "moebel": "mfc9Schachuhr",
       "auf": "t1",
-      "versatz": [9, -1]
+      "versatz": [
+        9,
+        -1
+      ]
     },
     {
       "moebel": "mf8SchulstuhlRechts",
-      "feld": [5, 7],
+      "feld": [
+        5,
+        7
+      ],
       "zu": "t1",
-      "versatz": [5, 0]
+      "versatz": [
+        5,
+        0
+      ]
     },
     {
       "moebel": "mf8SchulstuhlLinks",
-      "feld": [8, 7],
+      "feld": [
+        8,
+        7
+      ],
       "zu": "t1",
-      "versatz": [-5, 0],
+      "versatz": [
+        -5,
+        0
+      ],
       "vorn": true
     },
     {
       "moebel": "mf8RundtischDunkel",
-      "feld": [12, 7],
+      "feld": [
+        12,
+        7
+      ],
       "id": "t2"
     },
     {
       "moebel": "mfc9BrettFiguren",
       "auf": "t2",
-      "versatz": [-4, 0]
+      "versatz": [
+        -4,
+        0
+      ]
     },
     {
       "moebel": "mfc9Schachuhr",
       "auf": "t2",
-      "versatz": [9, -1]
+      "versatz": [
+        9,
+        -1
+      ]
     },
     {
       "moebel": "mf8SchulstuhlRechts",
-      "feld": [11, 7],
+      "feld": [
+        11,
+        7
+      ],
       "zu": "t2",
-      "versatz": [5, 0]
+      "versatz": [
+        5,
+        0
+      ],
+      "an_wand": true
     },
     {
       "moebel": "mf8SchulstuhlLinks",
-      "feld": [14, 7],
+      "feld": [
+        14,
+        7
+      ],
       "zu": "t2",
-      "versatz": [-5, 0],
+      "versatz": [
+        -5,
+        0
+      ],
       "vorn": true
     },
     {
       "moebel": "mf8RundtischDunkel",
-      "feld": [18, 7],
+      "feld": [
+        18,
+        7
+      ],
       "id": "t3"
     },
     {
       "moebel": "mfc9BrettOhneDame",
       "auf": "t3",
-      "versatz": [-4, 0]
+      "versatz": [
+        -4,
+        0
+      ]
     },
     {
       "moebel": "mfc10Zettel",
       "auf": "t3",
-      "versatz": [10, -2]
+      "versatz": [
+        10,
+        -2
+      ]
     },
     {
       "moebel": "mf8SchulstuhlRechts",
-      "feld": [17, 7],
+      "feld": [
+        17,
+        7
+      ],
       "zu": "t3",
-      "versatz": [5, 0]
+      "versatz": [
+        5,
+        0
+      ]
     },
     {
       "moebel": "mf8SchulstuhlLinks",
-      "feld": [20, 7],
+      "feld": [
+        20,
+        7
+      ],
       "zu": "t3",
-      "versatz": [-5, 0],
+      "versatz": [
+        -5,
+        0
+      ],
       "vorn": true
     },
     {
       "moebel": "mf8RundtischDunkel",
-      "feld": [6, 10],
+      "feld": [
+        6,
+        10
+      ],
       "id": "t4"
     },
     {
       "moebel": "mfc9BrettFiguren",
       "auf": "t4",
-      "versatz": [-4, 0]
+      "versatz": [
+        -4,
+        0
+      ]
     },
     {
       "moebel": "mfc9Schachuhr",
       "auf": "t4",
-      "versatz": [9, -1]
+      "versatz": [
+        9,
+        -1
+      ]
     },
     {
       "moebel": "mf8SchulstuhlRechts",
-      "feld": [5, 10],
+      "feld": [
+        5,
+        10
+      ],
       "zu": "t4",
-      "versatz": [5, 0]
+      "versatz": [
+        5,
+        0
+      ]
     },
     {
       "moebel": "mf8SchulstuhlLinks",
-      "feld": [8, 10],
+      "feld": [
+        8,
+        10
+      ],
       "zu": "t4",
-      "versatz": [-5, 0],
+      "versatz": [
+        -5,
+        0
+      ],
       "vorn": true
     },
     {
       "moebel": "mf8RundtischDunkel",
-      "feld": [12, 10],
+      "feld": [
+        12,
+        10
+      ],
       "id": "t5"
     },
     {
       "moebel": "mfc9BrettFiguren",
       "auf": "t5",
-      "versatz": [-4, 0]
+      "versatz": [
+        -4,
+        0
+      ]
     },
     {
       "moebel": "mfc9Schachuhr",
       "auf": "t5",
-      "versatz": [9, -1]
+      "versatz": [
+        9,
+        -1
+      ]
     },
     {
       "moebel": "mf8SchulstuhlRechts",
-      "feld": [11, 10],
+      "feld": [
+        11,
+        10
+      ],
       "zu": "t5",
-      "versatz": [5, 0]
+      "versatz": [
+        5,
+        0
+      ]
     },
     {
       "moebel": "mf8SchulstuhlLinks",
-      "feld": [14, 10],
+      "feld": [
+        14,
+        10
+      ],
       "zu": "t5",
-      "versatz": [-5, 0],
-      "vorn": true
+      "versatz": [
+        -5,
+        0
+      ],
+      "an_wand": true
     },
     {
       "moebel": "mf8RundtischDunkel",
-      "feld": [18, 10],
+      "feld": [
+        18,
+        10
+      ],
       "id": "t6"
     },
     {
       "moebel": "mfc9BrettFiguren",
       "auf": "t6",
-      "versatz": [-4, 0]
+      "versatz": [
+        -4,
+        0
+      ]
     },
     {
       "moebel": "mfc9Schachuhr",
       "auf": "t6",
-      "versatz": [9, -1]
+      "versatz": [
+        9,
+        -1
+      ]
     },
     {
       "moebel": "mf8SchulstuhlRechts",
-      "feld": [17, 10],
+      "feld": [
+        17,
+        10
+      ],
       "zu": "t6",
-      "versatz": [5, 0]
+      "versatz": [
+        5,
+        0
+      ]
     },
     {
       "moebel": "mf8SchulstuhlLinks",
-      "feld": [20, 10],
+      "feld": [
+        20,
+        10
+      ],
       "zu": "t6",
-      "versatz": [-5, 0],
+      "versatz": [
+        -5,
+        0
+      ],
       "vorn": true
     },
     {
       "moebel": "mf5TuerSuedHolz",
-      "feld": [13, 14],
+      "feld": [
+        13,
+        14
+      ],
       "an_wand": true
     }
   ],
   "ausloeser": [
     {
       "name": "start",
-      "feld": [13, 13],
+      "feld": [
+        13,
+        13
+      ],
       "eigenschaften": {
         "richtung": "oben"
       }
     },
     {
       "name": "schule",
-      "feld": [13, 14]
+      "feld": [
+        13,
+        14
+      ]
     },
     {
       "name": "pokalvitrine",
-      "feld": [4, 5],
+      "feld": [
+        4,
+        5
+      ],
       "auf_moebel": true
     },
     {
       "name": "brettOhneDame",
-      "feld": [18, 7],
+      "feld": [
+        18,
+        7
+      ],
       "auf_moebel": true
     },
     {
       "name": "plakatZaehlen",
-      "feld": [17, 3]
+      "feld": [
+        17,
+        3
+      ]
     }
   ],
   "figuren": [
     {
       "name": "coachDelgado",
-      "feld": [15, 4]
+      "feld": [
+        15,
+        4
+      ]
     },
     {
       "name": "sam",
-      "feld": [9, 9]
+      "feld": [
+        9,
+        9
+      ]
     }
   ],
   "belebung": [
     {
       "name": "schuelerin",
       "typ": "statist",
-      "feld": [11, 7],
+      "feld": [
+        11,
+        7
+      ],
       "eigenschaften": {
         "tun": "sitzt am Tisch und stellt die Figuren auf",
         "wann": "tag",
@@ -866,7 +1497,10 @@
     {
       "name": "clubmitglied",
       "typ": "statist",
-      "feld": [14, 10],
+      "feld": [
+        14,
+        10
+      ],
       "eigenschaften": {
         "tun": "sitzt am Brett und spielt eine Übungspartie",
         "wann": "tag",
@@ -877,7 +1511,10 @@
     {
       "name": "mutterWartet",
       "typ": "statist",
-      "feld": [1, 10],
+      "feld": [
+        1,
+        10
+      ],
       "eigenschaften": {
         "tun": "sitzt auf der Bank und wartet auf ihren Sohn",
         "wann": "tag",
@@ -886,8 +1523,14 @@
       }
     }
   ],
-  "zustand": ["neu", "gebraucht"],
-  "stil": ["klassisch", "schule"],
+  "zustand": [
+    "neu",
+    "gebraucht"
+  ],
+  "stil": [
+    "klassisch",
+    "schule"
+  ],
   "boeden": {
     "t": "teppichBlau"
   }

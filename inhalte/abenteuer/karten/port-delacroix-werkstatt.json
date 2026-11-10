@@ -11,7 +11,7 @@
  "tilewidth": 16,
  "tileheight": 16,
  "nextlayerid": 5,
- "nextobjectid": 27,
+ "nextobjectid": 26,
  "layers": [
   {
    "id": 1,
@@ -1230,7 +1230,7 @@
      "name": "pd9Werkbank",
      "type": "moebel",
      "x": 128,
-     "y": 48,
+     "y": 40,
      "width": 48,
      "height": 48,
      "rotation": 0,
@@ -1239,7 +1239,7 @@
       {
        "name": "tiefe",
        "type": "int",
-       "value": 88
+       "value": 80
       },
       {
        "name": "kollision",
@@ -1296,29 +1296,6 @@
     },
     {
      "id": 24,
-     "name": "pd9Werkzeugschrank2",
-     "type": "moebel",
-     "x": 272,
-     "y": 128,
-     "width": 32,
-     "height": 32,
-     "rotation": 0,
-     "visible": true,
-     "properties": [
-      {
-       "name": "tiefe",
-       "type": "int",
-       "value": 152
-      },
-      {
-       "name": "kollision",
-       "type": "bool",
-       "value": true
-      }
-     ]
-    },
-    {
-     "id": 25,
      "name": "pd9Spaene",
      "type": "moebel",
      "x": 116,
@@ -1341,7 +1318,7 @@
      ]
     },
     {
-     "id": 26,
+     "id": 25,
      "name": "pd9Spaene",
      "type": "moebel",
      "x": 176,

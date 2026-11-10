@@ -4525,7 +4525,7 @@
      "name": "mfc9PlakatZaehlen",
      "type": "moebel",
      "x": 272,
-     "y": 14,
+     "y": 18,
      "width": 32,
      "height": 32,
      "rotation": 0,
@@ -5040,12 +5040,12 @@
       {
        "name": "tiefe",
        "type": "int",
-       "value": 136
+       "value": 0
       },
       {
        "name": "kollision",
        "type": "bool",
-       "value": true
+       "value": false
       }
      ]
     },
@@ -5408,7 +5408,7 @@
       {
        "name": "tiefe",
        "type": "int",
-       "value": 184
+       "value": 0
       },
       {
        "name": "kollision",

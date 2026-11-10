@@ -17259,7 +17259,7 @@
     },
     {
      "id": 144,
-     "name": "pd6Werkstatt",
+     "name": "pd10WerkGrau",
      "type": "moebel",
      "x": 128,
      "y": 704,
@@ -17282,19 +17282,19 @@
     },
     {
      "id": 145,
-     "name": "pd6HausGross",
+     "name": "pd10WerkGruen",
      "type": "moebel",
      "x": 352,
      "y": 688,
-     "width": 128,
-     "height": 160,
+     "width": 160,
+     "height": 144,
      "rotation": 0,
      "visible": true,
      "properties": [
       {
        "name": "tiefe",
        "type": "int",
-       "value": 840
+       "value": 824
       },
       {
        "name": "kollision",
@@ -17307,8 +17307,8 @@
      "id": 146,
      "name": "pd6PlaneDachKlein",
      "type": "moebel",
-     "x": 416,
-     "y": 698,
+     "x": 432,
+     "y": 688,
      "width": 32,
      "height": 32,
      "rotation": 0,
@@ -17317,7 +17317,7 @@
       {
        "name": "tiefe",
        "type": "int",
-       "value": 841
+       "value": 825
       },
       {
        "name": "kollision",
@@ -17328,7 +17328,7 @@
     },
     {
      "id": 147,
-     "name": "pd6HausGross",
+     "name": "pd10HausBlau",
      "type": "moebel",
      "x": 512,
      "y": 688,
@@ -18386,19 +18386,19 @@
     },
     {
      "id": 193,
-     "name": "pd7Reihenhaus3",
+     "name": "rvLaubbaum",
      "type": "moebel",
      "x": 1200,
-     "y": 336,
-     "width": 48,
-     "height": 192,
+     "y": 448,
+     "width": 64,
+     "height": 64,
      "rotation": 0,
      "visible": true,
      "properties": [
       {
        "name": "tiefe",
        "type": "int",
-       "value": 520
+       "value": 504
       },
       {
        "name": "kollision",
@@ -18478,19 +18478,19 @@
     },
     {
      "id": 197,
-     "name": "pd7Stadthaus5_1",
+     "name": "pd10HausGruen",
      "type": "moebel",
      "x": 176,
      "y": 480,
-     "width": 96,
-     "height": 176,
+     "width": 128,
+     "height": 160,
      "rotation": 0,
      "visible": true,
      "properties": [
       {
        "name": "tiefe",
        "type": "int",
-       "value": 648
+       "value": 632
       },
       {
        "name": "kollision",
@@ -18547,19 +18547,19 @@
     },
     {
      "id": 200,
-     "name": "pd7Reihenhaus3",
+     "name": "by9HuetteKrebs",
      "type": "moebel",
-     "x": 768,
-     "y": 208,
-     "width": 48,
-     "height": 192,
+     "x": 752,
+     "y": 224,
+     "width": 80,
+     "height": 80,
      "rotation": 0,
      "visible": true,
      "properties": [
       {
        "name": "tiefe",
        "type": "int",
-       "value": 392
+       "value": 296
       },
       {
        "name": "kollision",
@@ -18570,29 +18570,6 @@
     },
     {
      "id": 201,
-     "name": "pd6Waescheleine",
-     "type": "moebel",
-     "x": 1120,
-     "y": 768,
-     "width": 64,
-     "height": 48,
-     "rotation": 0,
-     "visible": true,
-     "properties": [
-      {
-       "name": "tiefe",
-       "type": "int",
-       "value": 808
-      },
-      {
-       "name": "kollision",
-       "type": "bool",
-       "value": true
-      }
-     ]
-    },
-    {
-     "id": 202,
      "name": "rvLaubbaumDunkel",
      "type": "moebel",
      "x": 1184,
@@ -18615,7 +18592,7 @@
      ]
     },
     {
-     "id": 203,
+     "id": 202,
      "name": "pd9BootAb",
      "type": "moebel",
      "x": 896,
@@ -18638,7 +18615,7 @@
      ]
     },
     {
-     "id": 204,
+     "id": 203,
      "name": "pd9BootAuf",
      "type": "moebel",
      "x": 992,
@@ -18661,7 +18638,7 @@
      ]
     },
     {
-     "id": 205,
+     "id": 204,
      "name": "pd9BootAb",
      "type": "moebel",
      "x": 896,
@@ -18684,7 +18661,7 @@
      ]
     },
     {
-     "id": 206,
+     "id": 205,
      "name": "pd9Sturmschutt",
      "type": "moebel",
      "x": 256,
@@ -18707,7 +18684,7 @@
      ]
     },
     {
-     "id": 207,
+     "id": 206,
      "name": "pd9Ziegel",
      "type": "moebel",
      "x": 544,
@@ -18730,7 +18707,7 @@
      ]
     },
     {
-     "id": 208,
+     "id": 207,
      "name": "pd9Ziegel",
      "type": "moebel",
      "x": 128,
@@ -18753,7 +18730,7 @@
      ]
     },
     {
-     "id": 209,
+     "id": 208,
      "name": "pd9StrichQ16",
      "type": "moebel",
      "x": 96,
@@ -18776,7 +18753,7 @@
      ]
     },
     {
-     "id": 210,
+     "id": 209,
      "name": "pd9StrichQ16",
      "type": "moebel",
      "x": 352,
@@ -18799,7 +18776,7 @@
      ]
     },
     {
-     "id": 211,
+     "id": 210,
      "name": "pd9StrichQ16",
      "type": "moebel",
      "x": 608,
@@ -18818,6 +18795,29 @@
        "name": "kollision",
        "type": "bool",
        "value": false
+      }
+     ]
+    },
+    {
+     "id": 211,
+     "name": "pd10Wegweiser",
+     "type": "moebel",
+     "x": 64,
+     "y": 176,
+     "width": 16,
+     "height": 32,
+     "rotation": 0,
+     "visible": true,
+     "properties": [
+      {
+       "name": "tiefe",
+       "type": "int",
+       "value": 200
+      },
+      {
+       "name": "kollision",
+       "type": "bool",
+       "value": true
       }
      ]
     }

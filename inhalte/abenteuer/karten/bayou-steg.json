@@ -5898,7 +5898,7 @@
     },
     {
      "id": 31,
-     "name": "ld5Kahn",
+     "name": "ld5Ruderboot",
      "type": "moebel",
      "x": 64,
      "y": 512,
@@ -6059,11 +6059,11 @@
     },
     {
      "id": 38,
-     "name": "wr5Eiche",
+     "name": "sd6Zypresse",
      "type": "moebel",
-     "x": 208,
+     "x": 224,
      "y": 304,
-     "width": 64,
+     "width": 48,
      "height": 80,
      "rotation": 0,
      "visible": true,

@@ -429,6 +429,15 @@ Begründet statt geändert:
     unter der Wand.
   - Die Fußmatte entfiel nach dem zweiten Gutachten, weil sie wie eine Kiste aussah.
 
+#### Antworten auf das vierte Gutachten (10.11.2026, „reif für den Autor“)
+
+- **1 Plakat:** „ERST ZÄHLEN“ hängt jetzt 4 Pixel tiefer und beginnt unter der Wandkrone.
+- **6 Sitzen:** Die Schülerin (11, 7) und das Clubmitglied (14, 10) stehen auf dem Feld ihres
+  Stuhls („sitzt …“, wie in Runde 9 vereinbart). Die beiden besetzten Stühle liegen hinter der
+  Figur (`an_wand`), deshalb verdeckt keine Lehne mehr ihren Körper.
+- Die übrigen Punkte (Tafel eine halbe Kachel versetzt, Coach ohne Stuhl, Regale von der Seite,
+  Sam auf dem Teppich, Tür ohne Matte) bleiben, wie der Gutachter sie stehen lässt.
+
 ### 4.4 Diner (`mapleFalls.diner`), neu gedacht (mittel-3, 9.11.2026)
 
 **Stand nach Runde 5 (gewählt: Variante C, überarbeitet nach den Hinweisen des Autors, 10.11.2026):**

@@ -1801,6 +1801,80 @@
       "art": "markierung",
       "zustand": "neu",
       "stil": "modern"
+    },
+    "ca10Buero": {
+      "quelle": "modern-exteriors/Modern_Exteriors_16x16/ME_Theme_Sorter_16x16/16_Office_Singles_16x16/ME_Singles_Office_16x16_Example_2.png",
+      "breite": 304,
+      "hoehe": 288,
+      "kollision": true,
+      "art": "haus",
+      "zustand": "neu",
+      "stil": "modern",
+      "blick": "unten"
+    },
+    "ca10Stadthaus": {
+      "quelle": "modern-exteriors/Modern_Exteriors_16x16/ME_Theme_Sorter_16x16/4_Generic_Building_Singles_16x16/ME_Singles_Generic_Building_16x16_Condo_6_Example.png",
+      "breite": 224,
+      "hoehe": 256,
+      "kollision": true,
+      "art": "haus",
+      "zustand": "neu",
+      "stil": "modern",
+      "blick": "unten"
+    },
+    "ca10Feuerwache": {
+      "quelle": "spiel/eigene/feuerwache.png",
+      "breite": 256,
+      "hoehe": 240,
+      "kollision": true,
+      "art": "gebaeude",
+      "zustand": "gebraucht",
+      "stil": "modern",
+      "blick": "unten",
+      "gebaeude": true
+    },
+    "ca10Polizei": {
+      "quelle": "spiel/eigene/polizei.png",
+      "breite": 336,
+      "hoehe": 288,
+      "kollision": true,
+      "art": "gebaeude",
+      "zustand": "gebraucht",
+      "stil": "modern",
+      "blick": "unten",
+      "gebaeude": true
+    },
+    "ca10Post": {
+      "quelle": "spiel/eigene/post.png",
+      "breite": 128,
+      "hoehe": 208,
+      "kollision": true,
+      "art": "gebaeude",
+      "zustand": "gebraucht",
+      "stil": "modern",
+      "blick": "unten",
+      "gebaeude": true
+    },
+    "ca10Post4": {
+      "quelle": "spiel/eigene/post_4.png",
+      "breite": 128,
+      "hoehe": 208,
+      "kollision": true,
+      "art": "gebaeude",
+      "zustand": "gebraucht",
+      "stil": "modern",
+      "blick": "unten",
+      "gebaeude": true
+    },
+    "ca10Cafe": {
+      "quelle": "spiel/eigene/fassade_cafe.png",
+      "breite": 128,
+      "hoehe": 144,
+      "kollision": true,
+      "art": "gebaeude",
+      "zustand": "neu",
+      "stil": "modern",
+      "blick": "unten"
     }
   }
 }

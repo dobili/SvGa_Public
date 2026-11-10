@@ -367,3 +367,24 @@ Brettern, Kinder mit Ball zwischen den Zelten, Reiher am Wasser.
 - Ein Korb an der Nordwand mit Zone darunter (weiße Linien); der zweite Korb ist weg.
 - Lehrertisch von vorn statt des schmalen Pults von der Seite.
 - Zwei Zuschauer sitzen auf den Stühlen, die Tische stehen nicht mehr auf Linien.
+
+### Gutachten Runde 9: Antworten (mittel-1, 10.11.2026)
+
+Gutachten `docs/spiel/auftraege/gutachten/port-delacroix.md`.
+
+- **Außen, Häuser (3–5):** Die Holzhäuser sind bunt gestrichen (Bildwunsch
+  `haeuser_varianten.py`). Zwei behalten das rote Dach, eins hat ein schiefergraues Dach und eine
+  weiße Wand, eins ein grünes Dach und eine gelbe Wand, zwei Werkstatthäuser sind grau-hellblau
+  und grün-weiß. Der hellblaue Flachdachblock ist eins dieser Holzhäuser. Von den drei gleichen
+  grauen Türmen bleibt einer im Nordosten. An der Rue du Port steht dafür eine verwitterte
+  Fischerhütte (Regel 10.51, 20 Gebäude), im Osten ein Baum.
+- **Gleis (1):** Am Prellbock steht ein Wegweiser. Die Bake als Prellbock ersetzt mittel-2
+  zentral (m).
+- **Wäscheleine (10):** entfernt.
+- **Musikhaus (1–3):** Straßenschutt mit Warndreieck, Kistenstapel mit Kleidern, Kistentuch und
+  blaues Fass sind weg (10.61). Dafür warten zwei alte Klaviere und ein Hocker auf die Rettung,
+  Bretter und eine Kiste liegen bereit.
+- **Werkstatt (1, 3):** Die Hobelbank steht an der Nordwand, die orange Truhe ist weg.
+- **Turnhalle (3):** Das Kästchenplakat ist weg. Dosenregale (4) ersetzt mittel-2 zentral (o).
+- Offen: zweiter Korb (1), Spielfeld (2), Foto (Werkstatt 2), Loch im Dach (Musikhaus 4), Dach
+  im Zustand „musikhaus-neu“ (dafür gibt es kein unbeschädigtes Gegenstück im Paket).

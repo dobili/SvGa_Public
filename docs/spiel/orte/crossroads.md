@@ -97,7 +97,8 @@ Schotterplatz, Motel und Wohnwagen nordöstlich; C hat die Gassen wie A, aber an
 
 **Belebung (Regel 10.53):** 13 Statisten in allen Varianten gleich, neun davon ansprechbar
 (`statist.crossroads.aussen.*`): Fernfahrerin, Mechaniker, Motelwirtin, Küsterin, Kreidekind, Postbote,
-Rentner, Farmer, Anhalterin; dazu Tankwart, Tomás, Autowäscher und Hundebesitzerin ohne Satz. Tiere:
+Rentner, Farmer, Anhalterin und Hundebesitzerin (zeigt die Gabel Tissir–Dreew, `zeigt: tissirDreev`);
+dazu Tankwart, Tomás und Autowäscher ohne Satz. Tiere:
 Hund, Rinder auf dem Feld, Krähen, Motelkatze, Spatzen. In der Raststätte vier ansprechbare
 Statisten (`statist.crossroads.raststaette.*`): Kellnerin, Fernfahrer, Variantenspielerin,
 Schausteller.
@@ -164,7 +165,7 @@ Spielarten, die man unterwegs gelernt hat. Hier trifft man alle wieder.
 
 **Ereignis Weg 8, Geysirblitz (Dokument 15, 2.10; Runde 7):** Auf der Sinterinsel am großen Geysir
 „Old Patience“ liegt eine Holzplattform (Boden `dielen`) mit zwei Bänken, Infotafel
-(`cc3Raetseltafel`, Ersatz bis `infotafel_geysir.png`) und Rangerhäuschen (`cc4Bootsschuppen`). Die
+(`cr8InfotafelDach`) und Rangerhäuschen (`cc4Bootsschuppen`). Die
 Felder bleiben frei begehbar:
 
 | Auslöser              | A        | B        | C        | Ort                                              |
@@ -179,7 +180,8 @@ dieselben (Sätze unter `statist.wegSummitCrossroads.geysirbecken.*` und `….pr
 Geysirbecken: Fotograf, Ranger-Praktikant, Vogelbeobachterin (Bisons), Kind; Bisonherde,
 Bisonweide, Raben, Murmeltiere, Eichhörnchen, Wapiti. Prärie: Farmerin, Radfahrerin, Landvermesser
 (arbeitet für eine Firma aus Silicon Bay, passt zu Spur P5), Bauer (Präriehunde); Falke,
-Präriehunde, Lerchen, Hühner, Hofhund, Hase.
+Präriehunde, Lerchen, Hühner, Hofhund, Hase. Im Geysirbecken zeigt die Schachlehrerin das erstickte Matt
+Unzicker–Sarapu (`zeigt: unzickerSarapu`).
 
 Auslöser `fernbus` (Haltestelle), `viehgatter` (S13), `geysirAusbruch` (Ansehen, zur vollen
 Stunde), `windrad` (Ansehen); Bilder: siehe Bestellung beim Haupt-Chat (Bison, Geysir, Dampf,

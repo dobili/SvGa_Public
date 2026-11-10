@@ -11,7 +11,7 @@
   "tilewidth": 16,
   "tileheight": 16,
   "nextlayerid": 5,
-  "nextobjectid": 280,
+  "nextobjectid": 281,
   "layers": [
     {
       "id": 1,
@@ -7012,7 +7012,7 @@
         },
         {
           "id": 278,
-          "name": "sc7FerienhuetteB",
+          "name": "cr8Holzfaellerhuette",
           "type": "moebel",
           "x": 1536,
           "y": 48,
@@ -7053,6 +7053,29 @@
               "name": "kollision",
               "type": "bool",
               "value": true
+            }
+          ]
+        },
+        {
+          "id": 280,
+          "name": "cr8Kreidespringer",
+          "type": "moebel",
+          "x": 1600,
+          "y": 96,
+          "width": 16,
+          "height": 16,
+          "rotation": 0,
+          "visible": true,
+          "properties": [
+            {
+              "name": "tiefe",
+              "type": "int",
+              "value": 104
+            },
+            {
+              "name": "kollision",
+              "type": "bool",
+              "value": false
             }
           ]
         }

@@ -1135,12 +1135,12 @@
       "auf": "streamtisch"
     },
     {
-      "moebel": "ccStehlampe",
+      "moebel": "sb8Ringlicht",
       "feld": [68, 4]
     },
     {
-      "moebel": "n6Flutlicht",
-      "feld": [62, 4]
+      "moebel": "sb8Funkmast",
+      "feld": [62, 2]
     }
   ],
   "ausloeser": [

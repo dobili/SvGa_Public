@@ -1397,6 +1397,48 @@
       "zustand": "gebraucht",
       "stil": "klassisch",
       "gebaeude": true
+    },
+    "sb8Funkmast": {
+      "quelle": "spiel/eigene/funkmast_testfeld.png",
+      "breite": 48,
+      "hoehe": 112,
+      "kollision": true,
+      "art": "geraet",
+      "blick": "unten",
+      "zustand": "neu",
+      "stil": "modern",
+      "maske": ["...", "...", "...", "...", "...", "...", ".#."]
+    },
+    "sb8Ringlicht": {
+      "quelle": "spiel/eigene/ringlicht.png",
+      "breite": 16,
+      "hoehe": 48,
+      "kollision": true,
+      "art": "lampe",
+      "blick": "unten",
+      "zustand": "neu",
+      "stil": "modern",
+      "maske": [".", ".", "#"]
+    },
+    "sb8Kreidespringer": {
+      "quelle": "spiel/eigene/kreidespringer.png",
+      "breite": 16,
+      "hoehe": 16,
+      "kollision": false,
+      "art": "deko",
+      "blick": "unten",
+      "zustand": "neu",
+      "stil": "einfach"
+    },
+    "sb8Finkenzeichen": {
+      "quelle": "spiel/eigene/finkenzeichen_blech.png",
+      "breite": 16,
+      "hoehe": 16,
+      "kollision": false,
+      "art": "deko",
+      "blick": "unten",
+      "zustand": "neu",
+      "stil": "einfach"
     }
   }
 }

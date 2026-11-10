@@ -876,6 +876,16 @@
               "name": "bis",
               "type": "string",
               "value": "27,21"
+            },
+            {
+              "name": "sagt",
+              "type": "string",
+              "value": "statist.crossroads.aussen.hundebesitzerin"
+            },
+            {
+              "name": "zeigt",
+              "type": "string",
+              "value": "tissirDreev"
             }
           ]
         },

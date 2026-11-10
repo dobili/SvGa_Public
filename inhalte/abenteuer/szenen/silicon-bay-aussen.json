@@ -1178,6 +1178,57 @@
         "von": "22,38",
         "bis": "30,42"
       }
+    },
+    {
+      "name": "moewen",
+      "typ": "tier",
+      "feld": [20, 56],
+      "eigenschaften": {
+        "von": "2,55",
+        "bis": "70,57",
+        "verhalten": "fliegen"
+      }
+    },
+    {
+      "name": "tauben",
+      "typ": "tier",
+      "feld": [30, 40],
+      "eigenschaften": {
+        "von": "20,32",
+        "bis": "50,46",
+        "verhalten": "fliegen"
+      }
+    },
+    {
+      "name": "hund",
+      "typ": "tier",
+      "feld": [50, 30],
+      "eigenschaften": {
+        "von": "40,29",
+        "bis": "60,30",
+        "verhalten": "folgen"
+      }
+    },
+    {
+      "name": "katze",
+      "typ": "tier",
+      "feld": [66, 44],
+      "eigenschaften": {
+        "von": "64,42",
+        "bis": "69,45",
+        "verhalten": "schlafen"
+      }
+    },
+    {
+      "name": "hundebesitzer",
+      "typ": "statist",
+      "feld": [50, 30],
+      "eigenschaften": {
+        "tun": "führt den Hund an der Leine",
+        "wann": "tag",
+        "von": "40,29",
+        "bis": "60,30"
+      }
     }
   ]
 }

@@ -1063,12 +1063,18 @@
       "feld": [138, 28]
     },
     {
-      "moebel": "sc7FerienhuetteB",
+      "moebel": "cr8Holzfaellerhuette",
       "feld": [30, 3]
     },
     {
       "moebel": "cc4Holzstapel",
       "feld": [36, 5]
+    },
+    {
+      "moebel": "cr8Kreidespringer",
+      "feld": [34, 6],
+      "vorn": true,
+      "versatz": [0, 0]
     }
   ],
   "ausloeser": [

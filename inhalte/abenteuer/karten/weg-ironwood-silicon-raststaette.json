@@ -11,7 +11,7 @@
   "tilewidth": 16,
   "tileheight": 16,
   "nextlayerid": 5,
-  "nextobjectid": 225,
+  "nextobjectid": 227,
   "layers": [
     {
       "id": 1,
@@ -5750,6 +5750,52 @@
               "name": "kollision",
               "type": "bool",
               "value": true
+            }
+          ]
+        },
+        {
+          "id": 225,
+          "name": "sb8Kreidespringer",
+          "type": "moebel",
+          "x": 2032,
+          "y": 144,
+          "width": 16,
+          "height": 16,
+          "rotation": 0,
+          "visible": true,
+          "properties": [
+            {
+              "name": "tiefe",
+              "type": "int",
+              "value": 152
+            },
+            {
+              "name": "kollision",
+              "type": "bool",
+              "value": false
+            }
+          ]
+        },
+        {
+          "id": 226,
+          "name": "sb8Finkenzeichen",
+          "type": "moebel",
+          "x": 2260,
+          "y": 238,
+          "width": 16,
+          "height": 16,
+          "rotation": 0,
+          "visible": true,
+          "properties": [
+            {
+              "name": "tiefe",
+              "type": "int",
+              "value": 246
+            },
+            {
+              "name": "kollision",
+              "type": "bool",
+              "value": false
             }
           ]
         }

@@ -480,7 +480,9 @@
         "tun": "spielt Akkordeon",
         "wann": "tag",
         "von": "30,48",
-        "bis": "30,48"
+        "bis": "30,48",
+        "sagt": "statist.siliconBay.altstadt.strassenmusiker",
+        "zeigt": "goldmuenzenPartie"
       }
     },
     {
@@ -503,6 +505,57 @@
         "wann": "tag",
         "von": "46,25",
         "bis": "56,25"
+      }
+    },
+    {
+      "name": "moewen",
+      "typ": "tier",
+      "feld": [40, 10],
+      "eigenschaften": {
+        "von": "10,2",
+        "bis": "66,8",
+        "verhalten": "fliegen"
+      }
+    },
+    {
+      "name": "tauben",
+      "typ": "tier",
+      "feld": [26, 45],
+      "eigenschaften": {
+        "von": "10,42",
+        "bis": "50,49",
+        "verhalten": "fliegen"
+      }
+    },
+    {
+      "name": "hund",
+      "typ": "tier",
+      "feld": [16, 25],
+      "eigenschaften": {
+        "von": "2,25",
+        "bis": "40,25",
+        "verhalten": "folgen"
+      }
+    },
+    {
+      "name": "katze",
+      "typ": "tier",
+      "feld": [60, 4],
+      "eigenschaften": {
+        "von": "56,2",
+        "bis": "66,7",
+        "verhalten": "schlafen"
+      }
+    },
+    {
+      "name": "hundebesitzer",
+      "typ": "statist",
+      "feld": [16, 25],
+      "eigenschaften": {
+        "tun": "führt den Hund an der Leine",
+        "wann": "tag",
+        "von": "2,25",
+        "bis": "40,25"
       }
     }
   ],

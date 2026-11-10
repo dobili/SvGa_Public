@@ -6224,7 +6224,7 @@
         },
         {
           "id": 248,
-          "name": "ccStehlampe",
+          "name": "sb8Ringlicht",
           "type": "moebel",
           "x": 1168,
           "y": 80,
@@ -6247,12 +6247,12 @@
         },
         {
           "id": 249,
-          "name": "n6Flutlicht",
+          "name": "sb8Funkmast",
           "type": "moebel",
           "x": 1056,
-          "y": 80,
-          "width": 32,
-          "height": 80,
+          "y": 48,
+          "width": 48,
+          "height": 112,
           "rotation": 0,
           "visible": true,
           "properties": [

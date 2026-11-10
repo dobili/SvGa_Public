@@ -179,12 +179,12 @@ klappert ein Blech. Die Farben werden blass.
 ### 3.4 Runde 7: Ereignisorte und Belebung auf Weg 9 (mittel-3, 10.11.2026)
 
 **Lebendschach (Dokument 15, 2.11)** in `riesenbaeume`: eine Lichtung neben dem Weg mit einem
-Rasenbrett 8 × 8 aus Gras und Kies, einer Holztribüne (`n6Tribuene`) im Norden und vier Masten an
-den Ecken (`n6Lichtermast`, Ersatz bis `fahne_lebendschach.png`). Lichtung links oben: A (28, 79),
+Rasenbrett 8 × 8 aus Gras und Kies, einer Holztribüne (`n6Tribuene`) im Norden und vier Fahnen an
+den Ecken (`cr8FahneWeiss` links, `cr8FahneSchwarz` rechts). Lichtung links oben: A (28, 79),
 B (18, 71), C (8, 85).
 
-**Holzfällerhütte (K4)** in `huetten`: Hütte `sc7FerienhuetteB` mit Holzstapel und Trampelpfad zum
-Weg; an ihrer Wand kommt der Kreidespringer (`kreidespringer.png`, bestellt). Hütte links oben:
+**Holzfällerhütte (K4)** in `huetten`: Hütte `cr8Holzfaellerhuette` mit Holzstapel und Trampelpfad
+zum Weg; an ihrer Wand der Kreidespringer (`cr8Kreidespringer`). Hütte links oben:
 A (96, 3), B (30, 3), C (38, 3).
 
 Felder für Runde 6 (frei begehbar):

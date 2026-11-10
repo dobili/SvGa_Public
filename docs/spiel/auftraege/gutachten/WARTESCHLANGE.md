@@ -89,6 +89,9 @@ Szene heißt die Datei in `inhalte/abenteuer/szenen/` ohne `.json`.
 
 - [x] silicon-bay-akademie, silicon-bay-altstadt (dritte Prüfung, mittel-3; Stehpulte, Glaswand mit Pfosten, geräumte Straße mit Schneewällen; Dateien `silicon-bay-akademie-3.md`, `silicon-bay-altstadt-3.md`)
 
+- [ ] Runde-9-Karten von mittel-1, zweite Prüfung nach `port-delacroix.md`, `capital-arena-bayou.md`, `weg-ghost-capital.md`, `weg-silicon-delacroix.md` (Antworten in den Ortsdokumenten; Bilder `haeuser_varianten.py`, `schilder_deutsch.py`, `sumpfboden.py`, `wasser_moor.py` neu, `weg11_bilder.py`, `klippe_gras.py`)
+- [ ] weg-ironwood-silicon-raststaette (vierte Prüfung, mittel-1, Datei `weg-ironwood-silicon-raststaette-4.md`)
+
 ## Erledigt
 
 - [x] ironwood-kantine (Test, Haupt-Chat)

@@ -11,7 +11,8 @@
     "a": "erde",
     "d": "strand",
     "z": "asphalt",
-    "q": "platten"
+    "q": "platten",
+    "w": "wasser_watt"
   },
   "bruecken": [
     "h"
@@ -40,9 +41,9 @@
     "#....................................................................................................ssss......................................................#",
     "#....................................................................................................ssss......................................................#",
     "#....................................................................................................ssss......................................................#",
-    "#....................................................................................................ssss......................................................#",
-    "#....................................................................................................ssss......................................................#",
-    "#........ddddd.......................................................................................ssss......................................ppppppp.........#",
+    "#....................................................................................................ssss.......................pppp...........................#",
+    "#....................................................................................................ssss.......................pppp...........................#",
+    "#........ddddd.......................................................................................ssss.......................pppp...........ppppppp.........#",
     "#...ddddddddddddddd..................................................................................ssss......................pppppp..........ppppppp.........#",
     "#.ddddddddddddddddddd.......qqqqqq...................................................................ssss......................pppppp..........ppppppp.........#",
     "#.ddddddddddddddddddd.......qqqqqq...................................................................ssss...............zzzzz..pppppp..........ppppppp.........#",
@@ -55,11 +56,11 @@
     "#.........................................aaaahhhhaaaaaaaaaaaaaa...............aa........aaaaaaaaaaaaaaaaaaaaazzzzzzzzzzzzzzzzzzz...zzzzzzzzzzzzzzzppppppppppp.#",
     "#........................ddddddddd..........dd~~~~dd.........dddddddd..........aa.........aaaaaaaaaaaaaaaaaaaazzzzzzzzzzzzzzzzzzz...zzzzzzzzzzzzzzzppppppppppp.#",
     "#d........dddddddddddddddddddddddddddd.....ddd~~~~dd.....ddddddddddddddddddaaaaaaddd........ddddddddddddaaaaaazzzzzzzzzzzzzzzzzzz........ppppppppppppppppppppp.#",
-    "#dddddddddddddddddddddddd~~~~~~~~~dddddddddddd~~~~ddddddddddd~~~~~~~~ddddddaaaaaaddddddddddddddddddddddd......zzzzzzzzzzzzzzzzzzz........ppppppppppppppppppppp.#",
-    "~~dddddddd~~~~~~~~~~~~~~~~~~~~~~~~~~~~ddddd~~~~~~~~dddddd~~~~~~~~~~~~~~~~~~~~~~~~~~~dddddddd~~~~~~~~~~~~~.....zzzzzzzzzzzzzzzzzzz........ppppppppppppppppppppp.#",
-    "~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~.....zzzzzzzzzzzzzzzzzzz.................pppppppppppp.#",
-    "~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~.....zzzzzzzzzzzzzzzzzzz.................pppppppppppp.#",
-    "~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~#######################################################"
+    "#ddddddddddddddddddddddddwwwwwwwwwdddddddddddd~~~~dddddddddddwwwwwwwwddddddaaaaaaddddddddddddddddddddddd......zzzzzzzzzzzzzzzzzzz........ppppppppppppppppppppp.#",
+    "wwddddddddwwwwwwwwwwwwwwwwwwwwwwwwwwwwdddddwwwwwwwwddddddwwwwwwwwwwwwwwwwwwwwwwwwwwwddddddddwwwwwwwwwwwww.....zzzzzzzzzzzzzzzzzzz........ppppppppppppppppppppp.#",
+    "wwwwwwwwwwwwwwwwwwwwwwwwwwwwwwwwwwwwwwwwwwwwwwwwwwwwwwwwwwwwwwwwwwwwwwwwwwwwwwwwwwwwwwwwwwwwwwwwwwwwwwwww.....zzzzzzzzzzzzzzzzzzz.................pppppppppppp.#",
+    "wwwwwwwwwwwwwwwwwwwwwwwwwwwwwwwwwwwwwwwwwwwwwwwwwwwwwwwwwwwwwwwwwwwwwwwwwwwwwwwwwwwwwwwwwwwwwwwwwwwwwwwww.....zzzzzzzzzzzzzzzzzzz.................pppppppppppp.#",
+    "wwwwwwwwwwwwwwwwwwwwwwwwwwwwwwwwwwwwwwwwwwwwwwwwwwwwwwwwwwwwwwwwwwwwwwwwwwwwwwwwwwwwwwwwwwwwwwwwwwwwwwwww#######################################################"
   ],
   "objekte": [
     {
@@ -2084,14 +2085,6 @@
       "bauteil_ok": true
     },
     {
-      "moebel": "wsrAutoRechts2",
-      "feld": [
-        150,
-        17
-      ],
-      "bauteil_ok": true
-    },
-    {
       "moebel": "ws5Picknick",
       "feld": [
         148,
@@ -2202,6 +2195,14 @@
         127,
         20
       ]
+    },
+    {
+      "moebel": "wsr10Bus",
+      "feld": [
+        127,
+        18
+      ],
+      "bauteil_ok": true
     }
   ],
   "ausloeser": [
@@ -2288,11 +2289,11 @@
       "typ": "tier",
       "feld": [
         60,
-        22
+        25
       ],
       "eigenschaften": {
-        "von": "60,22",
-        "bis": "60,22",
+        "von": "60,25",
+        "bis": "60,25",
         "verhalten": "sitzen"
       }
     },
@@ -2385,7 +2386,7 @@
       "eigenschaften": {
         "von": "30,24",
         "bis": "50,26",
-        "verhalten": "schwimmen"
+        "verhalten": "sitzen"
       }
     },
     {
@@ -2413,8 +2414,23 @@
         "bis": "157,25",
         "verhalten": "folgen"
       }
+    },
+    {
+      "name": "imbissverkaeufer",
+      "typ": "statist",
+      "feld": [
+        146,
+        15
+      ],
+      "eigenschaften": {
+        "von": "146,15",
+        "bis": "146,15",
+        "tun": "reicht Kaffee und Würstchen aus der Klappe",
+        "wann": "tag",
+        "bild": "statist-06",
+        "verhalten": "sitzen"
+      }
     }
   ],
-  "jahreszeit": "winter",
-  "ufer": "watt"
+  "jahreszeit": "winter"
 }

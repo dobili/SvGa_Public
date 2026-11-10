@@ -1232,6 +1232,14 @@
       "art": "markierung",
       "zustand": "neu",
       "stil": "modern"
+    },
+    "wsr10Bus": {
+      "quelle": "modern-exteriors/Modern_Exteriors_16x16/ME_Theme_Sorter_16x16/10_Vehicles_Singles_16x16/ME_Singles_Vehicles_16x16_Bus_Left_4.png",
+      "breite": 112,
+      "hoehe": 64,
+      "kollision": true,
+      "stil": "modern",
+      "zustand": "gebraucht"
     }
   }
 }

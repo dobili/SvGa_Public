@@ -43,15 +43,9 @@ export function Dialog({
   const [letzteZeile, setzeLetzteZeile] = useState<Dialogschritt | null>(() =>
     schritt.art === "zeile" ? schritt : null,
   );
-  const [gemeldeterKnoten, setzeGemeldetenKnoten] = useState<string | null>(null);
-
-  /** Meldet den aktuellen Knoten einmal, sobald er sich ändert. */
+  /** Meldet jeden Knoten, der neu besucht wurde (Besuchszahl, dialog/geschichte.ts). */
   const meldeKnoten = () => {
-    const knoten = geschichte.knoten();
-    if (knoten && knoten !== gemeldeterKnoten) {
-      setzeGemeldetenKnoten(knoten);
-      beiKnoten(knoten);
-    }
+    for (const knoten of geschichte.neueKnoten()) beiKnoten(knoten);
   };
 
   const weiter = () => {

@@ -17,6 +17,7 @@ import { deflateSync } from "node:zlib";
 
 const require = createRequire(import.meta.url);
 const { Compiler } = require("inkjs/compiler/Compiler");
+const { CompilerOptions } = require("inkjs/compiler/CompilerOptions");
 
 const HIER = dirname(fileURLToPath(import.meta.url));
 const QUELLE = resolve(HIER, "../../inhalte/abenteuer");
@@ -182,7 +183,9 @@ async function uebersetzeDialoge(sprache) {
   const ordner = join(QUELLE, "dialoge", sprache);
   for (const name of (await readdir(ordner)).filter((d) => d.endsWith(".ink"))) {
     const quelle = await readFile(join(ordner, name), "utf8");
-    const geschichte = new Compiler(quelle).Compile();
+    // Alle Besuche zählen: Die Oberwelt meldet Knoten über ihre Besuchszahl (dialog/geschichte.ts),
+    // sonst ginge ein Knoten mit nur einer Zeile vor END verloren (Leuchtfeuer, 10.11.2026).
+    const geschichte = new Compiler(quelle, new CompilerOptions(null, [], true)).Compile();
     const json = geschichte.ToJson();
     await schreibe(`dialoge/${sprache}/${name.replace(/\.ink$/, ".json")}`, json, "dialoge");
   }

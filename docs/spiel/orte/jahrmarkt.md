@@ -37,6 +37,17 @@ Bestellte Bilder: Riesenrad, Karussell, Schachautomat, Bude Dosenwerfen, Losbude
 Zuckerwatte, Schild „Summer Fair“, Lichtermast. Alle sind geliefert und eingesetzt. Die
 Lichterketten hängen zwischen Holzmasten (`n6Lichtermast`, nur der Fuß sperrt) über den Gängen.
 
+### 3.1 Runde 9: Mängel, Muster, Zustände (mittel-3, 10.11.2026)
+
+Auftrag `runde9_uebrige_karten.md`: drei Mängel aus `variantenwahl.md`, die fünf Muster, Zustände (10.63).
+
+**Festplatz** (`jahrmarkt-festplatz`)
+
+- Mangel 1: Riesenrad oben in der Mitte (Wahrzeichen, mit Warteschlange), Karussell links daneben ohne Überlappung, Bühne nach rechts. Beide bleiben in Seitenansicht: so zeigt sie das Paket, ein Riesenrad sieht man immer von der Seite.
+- Mangel 2: An jeder Bude und jedem Wagen steht ein Verkäufer daneben (unter der Markise wäre er verdeckt, wie in Riverton), dazu zwölf Besucher mehr (Schlange, Familie, Kinder am Karussell, Zuschauer an der Bühne).
+- Mangel 3: Platz unregelmäßig mit gewellten Rändern und Grasbuchten, Strohballen, Holzzaun hinten und vorn mit Pfosten und Lücke am Torbogen. Fahrspuren: kein Bodenbild (offen).
+- Zustände: keine.
+
 ## 4. Bühnenbild
 
 A: Riesenrad oben Mitte, Karussell links, Bühne mit Gerüst, Lautsprechern und Tribüne rechts,

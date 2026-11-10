@@ -99,3 +99,22 @@ Tiere: Katze, Krähen, Kühe, wilde Pferde, Hühner, Schwein.
 - **Kürbiswaage** (`kuerbiswaage`): Dialogwahl zwischen drei Kürbissen; der richtige Tipp gibt den
   Fund `kuerbisschleife`.
 - **Tor S1:** Es liegt auf der Landstraße von Weg 1 und gehört zu niedrig-1.
+
+## Runde 9 (10.11.2026): Antworten auf die Mängel der Variantenwahl (niedrig-1)
+
+Hof (Wahl C):
+
+1. _Mais und Kürbisse im Raster auf Wegerde, Irrgarten ohne Gänge:_
+   - **Irrgarten:** Er ist ein echter Irrgarten. Hoher Mais steht dicht auf jeder Kachel und ist
+     nicht begehbar (`n9MaisWand`). Dazwischen laufen Gänge aus Gras, zwei Kacheln breit, mit zwei
+     Sackgassen. Der Eingang liegt am Hofweg (10–11, 18).
+   - **Morphy:** In der Mitte steht die Vogelscheuche „Morphy“ mit Zylinder und Schachbrettflicken
+     (Bildwunsch `vogelscheuche_morphy.png`).
+   - **Kürbisfeld:** Die Kürbisse wachsen in durchgehenden Reihen auf jeder zweiten Zeile.
+2. _Niemand am Hofladen, Kühe ohne Zaun:_ Am Hofladen steht eine Verkäuferin. Die Kühe stehen auf
+   einer eingezäunten Weide mit Gatter zum Hofweg, die Pferdefrau lehnt am Weidezaun.
+3. _Rechtwinklige Wege, keine Vogelscheuche als Morphy erkennbar:_ Morphy ist jetzt erkennbar. Die
+   Wege bleiben gerade Hofwege zwischen Feldern und Gebäuden; Bögen gibt der Untergrund nicht her.
+
+Zustände: keine. Das Herbstfest steht in der Geschichte noch bevor, Walt öffnet nur das Gatter an der
+Landstraße (Zustand dort).

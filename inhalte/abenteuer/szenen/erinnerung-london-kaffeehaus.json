@@ -4,7 +4,7 @@
   "art": "innen",
   "beschreibung": "Ein Kaffeehaus am Strand in London, Herbst 1851 (Erinnerung, als Szene in Sepia): dunkles Holz, alte Dielen, Lederbänke an der Nordwand, ein Ofen, Bilder an den Wänden. An runden Tischen spielen Herren Schach bei Kerzenlicht, andere lesen Zeitung; es riecht nach Kaffee. In der Mitte der Tisch, um den sich alle drängen: Anderssen gegen Kieseritzky. Rechts die Theke mit dem Kellner (in allen Varianten). Die Tür liegt in der Südwand. Drei Schachtische, der berühmte in der Mitte, Theke rechts, Zeitungsständer links.",
   "wand": "holz",
-  "boden": "holzDunkel",
+  "boden": "dielen",
   "zustand": ["neu", "gebraucht", "alt"],
   "stil": ["klassisch", "rustikal", "laendlich"],
   "raster": [
@@ -30,7 +30,7 @@
     },
     {
       "moebel": "ldOfen",
-      "feld": [8, 1]
+      "feld": [7, 1]
     },
     {
       "moebel": "ldBild",
@@ -39,42 +39,47 @@
     },
     {
       "moebel": "ldBild",
-      "feld": [12, 1],
+      "feld": [10, 1],
       "an_wand": true
     },
     {
       "moebel": "el7Lederbank5",
-      "feld": [2, 3]
+      "feld": [1, 3]
+    },
+    {
+      "moebel": "ld5Rundtisch",
+      "feld": [2, 5],
+      "id": "bank1"
+    },
+    {
+      "moebel": "el7Kerze",
+      "auf": "bank1",
+      "versatz": [8, -2]
     },
     {
       "moebel": "el7Zeitungshalter",
-      "feld": [1, 6]
-    },
-    {
-      "moebel": "ld5Theke7",
-      "feld": [10, 3]
+      "feld": [1, 8]
     },
     {
       "moebel": "ld5Flaschenregal",
       "feld": [14, 1]
     },
     {
+      "moebel": "ld5Theke7",
+      "feld": [10, 5]
+    },
+    {
       "moebel": "ld5StuhlDunkelR",
-      "feld": [3, 7]
+      "feld": [3, 8]
     },
     {
       "moebel": "ld5Rundtisch",
-      "feld": [4, 7],
+      "feld": [4, 8],
       "id": "t1"
     },
     {
-      "moebel": "cc4Brett",
-      "auf": "t1",
-      "versatz": [-4, 0]
-    },
-    {
       "moebel": "ld5StuhlDunkelL",
-      "feld": [6, 7]
+      "feld": [6, 8]
     },
     {
       "moebel": "el7Kerze",
@@ -82,50 +87,55 @@
       "versatz": [8, -2]
     },
     {
+      "moebel": "cc4Brett",
+      "auf": "t1",
+      "versatz": [-4, 0]
+    },
+    {
       "moebel": "ld5StuhlDunkelR",
-      "feld": [7, 7]
+      "feld": [7, 8]
     },
     {
       "moebel": "ld5Rundtisch",
-      "feld": [8, 7],
+      "feld": [8, 8],
       "id": "mitte"
     },
     {
-      "moebel": "cc4Brett",
-      "auf": "mitte",
-      "versatz": [-4, 0]
-    },
-    {
       "moebel": "ld5StuhlDunkelL",
-      "feld": [10, 7]
+      "feld": [10, 8]
     },
     {
       "moebel": "el7Kerze",
       "auf": "mitte",
       "versatz": [8, -2]
+    },
+    {
+      "moebel": "cc4Brett",
+      "auf": "mitte",
+      "versatz": [-4, 0]
     },
     {
       "moebel": "ld5StuhlDunkelR",
-      "feld": [12, 8]
+      "feld": [12, 9]
     },
     {
       "moebel": "ld5Rundtisch",
-      "feld": [13, 8],
+      "feld": [13, 9],
       "id": "t3"
     },
     {
-      "moebel": "cc4Brett",
-      "auf": "t3",
-      "versatz": [-4, 0]
-    },
-    {
       "moebel": "ld5StuhlDunkelL",
-      "feld": [15, 8]
+      "feld": [15, 9]
     },
     {
       "moebel": "el7Kerze",
       "auf": "t3",
       "versatz": [8, -2]
+    },
+    {
+      "moebel": "cc4Brett",
+      "auf": "t3",
+      "versatz": [-4, 0]
     }
   ],
   "ausloeser": [
@@ -142,7 +152,7 @@
     },
     {
       "name": "schachtisch",
-      "feld": [9, 9]
+      "feld": [9, 10]
     },
     {
       "name": "rueckkehr",
@@ -152,11 +162,11 @@
   "figuren": [
     {
       "name": "kellner",
-      "feld": [13, 6]
+      "feld": [13, 4]
     },
     {
       "name": "zeitungsleser",
-      "feld": [3, 6]
+      "feld": [2, 9]
     }
   ],
   "belebung": [
@@ -168,30 +178,67 @@
         "von": "7,9",
         "bis": "7,9",
         "tun": "spielt Schach",
-        "wann": "tag"
+        "wann": "tag",
+        "verhalten": "sitzen"
       }
     },
     {
       "name": "kieseritzky",
       "typ": "statist",
-      "feld": [11, 9],
+      "feld": [10, 9],
       "eigenschaften": {
-        "von": "11,9",
-        "bis": "11,9",
+        "von": "10,9",
+        "bis": "10,9",
         "tun": "spielt Schach",
-        "wann": "tag"
+        "wann": "tag",
+        "verhalten": "sitzen"
       }
     },
     {
       "name": "gaeste",
       "typ": "statist",
-      "feld": [5, 10],
+      "feld": [8, 10],
       "eigenschaften": {
-        "von": "5,10",
-        "bis": "5,10",
+        "von": "8,10",
+        "bis": "8,10",
         "tun": "schauen zu",
         "wann": "tag"
       }
+    },
+    {
+      "name": "zuschauer",
+      "typ": "statist",
+      "feld": [9, 7],
+      "eigenschaften": {
+        "von": "9,7",
+        "bis": "9,7",
+        "tun": "beugt sich über das Brett",
+        "wann": "tag"
+      }
+    },
+    {
+      "name": "herrMitZylinder",
+      "typ": "statist",
+      "feld": [6, 10],
+      "eigenschaften": {
+        "von": "6,10",
+        "bis": "6,10",
+        "tun": "flüstert einen Zug",
+        "wann": "tag"
+      }
+    },
+    {
+      "name": "zeitungsleserBank",
+      "typ": "statist",
+      "feld": [4, 5],
+      "eigenschaften": {
+        "von": "4,5",
+        "bis": "4,5",
+        "tun": "liest Zeitung an der Lederbank",
+        "wann": "tag",
+        "verhalten": "sitzen"
+      }
     }
-  ]
+  ],
+  "toenung": "sepia"
 }

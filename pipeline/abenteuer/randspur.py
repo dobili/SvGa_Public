@@ -15,9 +15,21 @@ NENNEN = 6
 INNENECKE = {(3, 0): (1, 1), (4, 0): (-1, 1), (3, 1): (1, -1), (4, 1): (-1, -1)}
 
 
+# Schrägkacheln (bodenraster.SCHRAEGEN): Versatz → die zwei Seiten, zu denen sie Gras zeigen.
+SCHRAEGE = {
+    (5, 0): {(-1, 0), (0, -1)},
+    (6, 0): {(1, 0), (0, -1)},
+    (5, 3): {(-1, 0), (0, 1)},
+    (6, 3): {(1, 0), (0, 1)},
+}
+
+
 def _hat_rand(versatz: tuple[int, int], dx: int, dy: int) -> bool:
-    """Ob eine Kachel des 3×3-Blocks auf der Seite (dx, dy) ihren Rand zeigt (Innenecken: nie)."""
+    """Ob eine Kachel des 3×3-Blocks auf der Seite (dx, dy) ihren Rand zeigt (Innenecken: nie,
+    Schrägkacheln zu ihren beiden Grasseiten)."""
     spalte, reihe = versatz
+    if (spalte, reihe) in SCHRAEGE:
+        return (dx, dy) in SCHRAEGE[(spalte, reihe)]
     if spalte > 2:
         return False
     return {(-1, 0): spalte == 0, (1, 0): spalte == 2, (0, -1): reihe == 0, (0, 1): reihe == 2}[(dx, dy)]

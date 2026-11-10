@@ -4,6 +4,7 @@
  * und der Fahrpreis mit `zahle`, der vorher die Variable `muenzen` abfragt.
  */
 import { Compiler } from "inkjs/compiler/Compiler";
+import { CompilerOptions } from "inkjs/compiler/CompilerOptions";
 import { describe, expect, it } from "vitest";
 import { Geschichte, type Wirkungen } from "./geschichte";
 
@@ -20,6 +21,9 @@ Odette lächelt. #sprecher:odette
 ~ setzeToenung("nebel")
 -> END
 `;
+
+/** Wie der Paketbau: alle Besuche zählen (für neueKnoten). */
+const ALLE_BESUCHE = new CompilerOptions(null, [], true);
 
 function wirkungen(aufrufe: string[]): Wirkungen {
   const merke = (name: string) => (k: string) => {
@@ -50,7 +54,7 @@ function wirkungen(aufrufe: string[]): Wirkungen {
 
 describe("Geschichte: Wirkungen der Runde 6", () => {
   it("ruft zeigeVorfuehrung, beginneSimultan, beginneGedaechtnis und setzeToenung", () => {
-    const json = new Compiler(INK).Compile().ToJson() ?? "";
+    const json = new Compiler(INK, ALLE_BESUCHE).Compile().ToJson() ?? "";
     const aufrufe: string[] = [];
     const g = new Geschichte(json, wirkungen(aufrufe), {}, "Kim");
     g.starte("start");
@@ -81,7 +85,7 @@ VAR muenzen = 0
 
 /** Spielt den Anleger mit so vielen Münzen; gibt Aufrufe und gezeigte Zeilen zurück. */
 function fahre(muenzen: number): { aufrufe: string[]; zeilen: string[] } {
-  const json = new Compiler(FAHRT).Compile().ToJson() ?? "";
+  const json = new Compiler(FAHRT, ALLE_BESUCHE).Compile().ToJson() ?? "";
   const aufrufe: string[] = [];
   const zeilen: string[] = [];
   const g = new Geschichte(json, wirkungen(aufrufe), { muenzen }, "Kim");
@@ -104,5 +108,29 @@ describe("Geschichte: Fahrpreis mit zahle", () => {
 
   it("sagt bei zu wenig Münzen nein und zahlt nichts", () => {
     expect(fahre(3)).toEqual({ aufrufe: [], zeilen: ["Du hast nicht genug Münzen."] });
+  });
+});
+
+const LEUCHTFEUER = `
+VAR hatBatterie = false
+=== leuchtfeuer ===
+{hatBatterie: -> einsetzen}
+Ohne Batterie bleibt es dunkel.
+-> END
+=== einsetzen ===
+Das Leuchtfeuer blinkt.
+-> END
+`;
+
+describe("Geschichte: neue Knoten", () => {
+  it("meldet auch einen Knoten mit nur einer Zeile vor END", () => {
+    const json = new Compiler(LEUCHTFEUER, ALLE_BESUCHE).Compile().ToJson() ?? "";
+    const g = new Geschichte(json, wirkungen([]), { hatBatterie: true }, "Kim");
+    g.starte("leuchtfeuer");
+    const gemeldet: string[] = [];
+    for (let i = 0; i < 5 && g.weiter().art !== "ende"; i++) gemeldet.push(...g.neueKnoten());
+    gemeldet.push(...g.neueKnoten());
+    expect(gemeldet).toEqual(["leuchtfeuer", "einsetzen"]);
+    expect(g.neueKnoten()).toEqual([]);
   });
 });

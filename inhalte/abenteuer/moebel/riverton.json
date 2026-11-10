@@ -1888,6 +1888,24 @@
       "zustand": "gebraucht",
       "stil": "klassisch",
       "blick": "rechts"
+    },
+    "rv9Bildschirmtisch": {
+      "quelle": "spiel/eigene/bildschirmtisch.png",
+      "breite": 48,
+      "hoehe": 48,
+      "kollision": true,
+      "art": "tisch",
+      "zustand": "neu",
+      "stil": "modern"
+    },
+    "rv9BildschirmtischKaputt": {
+      "quelle": "spiel/eigene/bildschirmtisch_kaputt.png",
+      "breite": 48,
+      "hoehe": 48,
+      "kollision": true,
+      "art": "tisch",
+      "zustand": "kaputt",
+      "stil": "modern"
     }
   }
 }

@@ -77,6 +77,17 @@ Bildschirme, nur Wind, Möwen und das Klappern der Leinen an den Masten.
 **Für Runde 6:** Auslöser `leuchtfeuer`, `netze`, `watt` (Bedingung Gummistiefel); Figuren Delphine, Old
 Pete, Coral, Bishop mit Dialogen; Dialog für die geschlossene Fähre am Hafen („fährt nur sonntags“).
 
+### 3.1 Runde 9: Winter, Mängel, Zustände (mittel-3, 10.11.2026)
+
+Auftrag `runde9_uebrige_karten.md`: drei Mängel aus `variantenwahl.md`, die fünf Muster, Zustände (10.63).
+
+**Inseldorf** (`pelikaninsel-dorf`)
+
+- Mangel 1: Winter (`"jahreszeit": "winter"`): Tropenpflanzen entfernt, Gras wird Schnee, der Dorfplatz ist verschneit; das Grasufer wird zum Schneeufer.
+- Mangel 2: Leuchtfeuer auf einer felsigen Landzunge (Felsboden als Rundung mit Spitze nach Westen ins Meer, Felsen ringsum) statt eckigem Kiesfleck; Inselfähre 11 × 4 (Bildwunsch inselfaehre.py, Regel 10.64 Kutter) statt Motorboot, am Anleger.
+- Mangel 3: Sand: Unter der Winterfärbung sieht Sand wie Erde aus; der Platz ist deshalb Schnee. Netzgestell ersetzt durch Netztrockner (Bildwunsch netztrockner.py: Böcke, Stange, durchhängendes Netz mit Schwimmern).
+- Zustände: keine.
+
 ## 4. Bühnenbilder
 
 **Größe** 50 × 36. **Boden** Strand und Dorfplatz Erde (der Sandboden zeichnet sich fleckig), Felsspitze
@@ -87,6 +98,18 @@ Westen und Dorf im Osten, B gespiegelt und schlichter, C mit größerem Watt, me
 der bei Ebbe im Watt liegt. Die Pfahlhäuser (eigene Bilder, 4 × 5) stehen ohne Kollision im Wasser, das Wasser sperrt; ihre Treppen
 enden am Bohlensteg darunter. Leuchtfeuer (3 × 6, Tür unten in der Mitte), Netzgestell und Pelikane auf
 Pfählen sind ebenfalls eigene Bilder.
+
+## Nachtrag: Leuchtfeuer nur mit Batterie (10.11.2026, mittel-2)
+
+- **Befund (Simulation):** Beim zweiten Besuch führte `pelikaninsel.leuchtfeuer` jeden Auftrag nach
+  `leuchtfeuer_einsetzen`, auch ohne Batterie. Die Quest `pelikaninsel.leuchtfeuer` wäre damit ohne
+  Batterie fertig geworden: 35 Münzen und `gegenstandWeg` für eine Batterie, die es nicht gibt.
+- **Behoben:** Der Knoten führt nur mit `hatBatterie` zum Einsetzen. Ohne Batterie sagt der
+  Erzähler, dass das Feuer dunkel bleibt und es drüben in Silicon Bay eine gibt. Die Batterie gibt
+  der Eisenwarenladen der Altstadt (Quest `siliconBay.batterie`).
+- **Dazu, allgemein:** Die App meldete Knoten mit nur einer Zeile vor `END` nie an die Quests,
+  `leuchtfeuer_einsetzen` ist so ein Knoten. Seitdem meldet `dialog/geschichte.ts` Knoten über ihre
+  Besuchszahl, der Paketbau übersetzt mit „alle Besuche zählen“.
 
 ## Runde 7: Leben und Finch-Figur (10.11.2026, mittel-4)
 

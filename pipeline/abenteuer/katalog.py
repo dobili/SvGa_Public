@@ -33,6 +33,9 @@ def katalogbefund(name: str, eintrag: dict | None) -> str | None:
         return None
     if not eintrag.get("beschreibung"):
         return f"{name}: im Katalog noch nicht beschrieben, bitte beschreiben"
+    if eintrag.get("ueberhang"):
+        # Bogenlaternen (Gutachter 10.11.2026): Der Kopf hängt über Weg oder Fahrbahn.
+        return f"{name}: Kopf über der Straße (Arm nach {eintrag['ueberhang']}), Mast an den Rand stellen"
     if eintrag.get("ganz") is False:
         teile = eintrag.get("gegenstuecke") or "Gegenstücke fehlen"
         return f"{name} ist laut Katalog ein Bauteil: {str(teile)[:80]}"

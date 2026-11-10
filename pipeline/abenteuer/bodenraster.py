@@ -48,6 +48,15 @@ def ueberbrueckt(zeilen: list[str], x: int, y: int, dx: int, dy: int) -> bool:
 TRENNT = {".", WAND, WASSER, LEER}
 # Innenecken im Bogen von LimeZu: rechts neben dem 3×3-Block, je nach der abweichenden Diagonale.
 INNENECKEN = {(1, 1): (3, 0), (-1, 1): (4, 0), (1, -1): (3, 1), (-1, -1): (4, 1)}
+# Schrägkacheln (Raute rechts neben den Innenecken, Rand +5/+6): Außenecke (Spalte, Reihe im
+# 3×3-Block) → (Versatz der Schrägkachel, die zwei Felder, über die eine Treppe weiterläuft).
+# Beispiel: Ecke links unten (0, 2), Gras links unten → Schräge (5, 3), Treppe über (+1, +1)/(−1, −1).
+SCHRAEGEN = {
+    (0, 0): ((5, 0), ((1, -1), (-1, 1))),
+    (2, 0): ((6, 0), ((-1, -1), (1, 1))),
+    (0, 2): ((5, 3), ((1, 1), (-1, -1))),
+    (2, 2): ((6, 3), ((-1, 1), (1, -1))),
+}
 
 
 def wirksames_zeichen(zeilen: list[str], x: int, y: int) -> str:
@@ -94,6 +103,12 @@ def bodenfeld(art: dict, zeilen: list[str], x: int, y: int) -> list[int]:
             for (dx, dy), (sx, sy) in INNENECKEN.items():
                 if not gleich(dx, dy):
                     return [art["rand"][0] + sx, art["rand"][1] + sy]
+        # Wege in Bögen statt Stufen (Gutachter 10.11.2026): Läuft die Kante über eine Ecke
+        # diagonal weiter, nimmt die Ecke die Schrägkachel statt der runden Ecke.
+        if art.get("diagonalen") and (spalte, reihe) in SCHRAEGEN:
+            versatz, weiter = SCHRAEGEN[(spalte, reihe)]
+            if any(gleich(dx, dy) for dx, dy in weiter):
+                return [art["rand"][0] + versatz[0], art["rand"][1] + versatz[1]]
         return [art["rand"][0] + spalte, art["rand"][1] + reihe]
     if "unter_wand" in art and y > 0 and zeilen[y - 1][x] == WAND:
         # Böden des Room Builders: Die erste Reihe eines Blocks trägt den Schatten der Wand. Nur

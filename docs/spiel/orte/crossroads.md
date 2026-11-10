@@ -187,6 +187,39 @@ Auslöser `fernbus` (Haltestelle), `viehgatter` (S13), `geysirAusbruch` (Ansehen
 Stunde), `windrad` (Ansehen); Bilder: siehe Bestellung beim Haupt-Chat (Bison, Geysir, Dampf,
 Sinterboden, Ranger-Tor, Sturmkeller, Weizen, Wegweiser der Städte, Viehgatter, Schild Crossroads).
 
+### 3.4 Runde 9: Mängel, Muster, Zustände (mittel-3, 10.11.2026)
+
+Auftrag `runde9_uebrige_karten.md`: drei Mängel aus `variantenwahl.md`, die fünf Muster, Zustände (10.63).
+
+**Crossroads außen** (`crossroads-aussen`)
+
+- Mangel 1: Highway: Mittellinie (gestrichelt), Bordsteine automatisch an allen Asphalt-/Gras-Kanten, Bordstein zwischen Vorplätzen und Highway mit Einfahrten; Parkplatz mit Buchten (Bus, zwei Lkw, vier Autobuchten). Lkw bleiben Seitenansicht (Fahrzeugregel der Karten: von der Seite, in Fahrtrichtung). Figuren: Anhalterin auf den Gehweg der Haltestelle, Katze vom Highway an die Motelseite; Hund und Hundebesitzerin bleiben auf dem Vorplatz (jetzt durch Bordstein vom Highway getrennt).
+- Mangel 2: Zweite kleine Tankstelle entfernt, an ihrer Stelle das Farmhaus des Rinderzüchters (Gebäudezahl 10.51); Vorplatz der großen Tankstelle bis unter das Dach asphaltiert, Dieselsäule für Lkw am Rand.
+- Mangel 3: Kapelle frei gestellt (50–54), Schrottschuppen und zweiter Hühnerstall weg, eingezäunter Friedhof 56–62 / 36–44 mit Tor zum Schotterweg, Gräbern und Blumen; Küsterin harkt vor der Kapelle.
+- Dazu: Haltestelle Vorderansicht (mfBushaltestelle, aus A nachgezogen) mit Gehweg; Rastplatz mit Mülleimer und Laterne; Rinder hinter dem Gatter.
+- Zustand gatter-offen (gatterschluessel): Gatter aufgeschwenkt am Südrand (59,26), Rinder weg.
+
+**Raststätte** (`crossroads-raststaette`)
+
+- Mangel 1: Durchreiche war schon da; Küche gefüllt: Arbeitstisch mit Brett und Geschirr in der Mitte, Geschirrschrank statt Dosenregal.
+- Mangel 2: Kasse als kleine Registrierkasse auf dem rechten Tresenende (statt Kassentheke im Gang). Dielen: Bodenbild des Pakets, bleibt.
+- Mangel 3: Dosenregal nur noch im Laden, zwei verschiedene; Postkartenständer (Bildwunsch postkartenstaender.py) statt Zeitungsregal. Gäste können nicht sitzen (Statisten stehen); Fernfahrer steht zwischen den Hockern am Tresen, Schausteller am Spielautomaten.
+- Zustände: keine (nichts Festes ändert sich laut Story-Bibel).
+
+**Geysirbecken** (`geysirbecken`)
+
+- Mangel 1: Becken als natürliche Formen (Ellipsen mit Rauschen, geglättet), neues Ufer "sinter" (Bildwunsch wasser_sinter.py, Material wasser_sinter): heller Sinterwulst, oranger Bakteriensaum, flaches türkises Wasser. Keine Mauerlinie mehr.
+- Mangel 2: Bohlenweg (Dielen, 2 breit) im Zickzack über den Sinter zwischen den Becken, zwei kurze Stege über Abflussrinnen; der Infoplatz liegt am Weg. Rechte Winkel bleiben: Bohlenwege sind aus geraden Stücken gebaut.
+- Mangel 3: Grenze Gras/Sinter oben und unten gewellt statt gerade. Bisons verkleinert (Bildwunsch bison_klein.py, 3 × 2 Kacheln statt 4 × 3); die Belebung „bisonherde“ zeigte Kühe und ist weg (Tierbild Bison fehlt in der App: offen). Dampfwolken über dem Wasser entfernt, die Kegel tragen ihre eigene Fontäne. Falke, Kojote, Präriehunde für die Tierzahl (10.53).
+- Zustände: keine (das Ranger-Tor ist beim ersten Betreten schon offen, S10 liegt in Summit City).
+
+**Prärie** (`praerie`)
+
+- Mangel 1: Rote Scheune (Bildwunsch scheune_rot.py: LimeZus kleine Scheune mit roten Brettern und weißem Fachwerk) unter dem Farmhaus; die Sturmkellerklappe liegt vor dem Scheunentor, Hofweg vom Erdweg zum Tor, Ray, Farmerin und Hofhund davor.
+- Mangel 2: Weizen dicht (breiter Weizen in jeder Doppelkachel), Feldboden Gras statt Wegerde: keine runden Erdränder, kein sichtbarer Boden zwischen den Reihen.
+- Mangel 3: Weg in vier weiten Bögen (eine Spalte je zwei bis drei Reihen) statt rechtwinkliger Versprünge; Felder halten zwei Kacheln Abstand zum Weg.
+- Zustände: keine (das Gewitter ist Wetter, keine feste Änderung).
+
 ## 4. Bühnenbilder
 
 Die Inventare stehen in den Szenen (`beschreibung`) und folgen 1.1 bis 1.4; feste Felder sind die

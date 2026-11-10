@@ -21,29 +21,21 @@
  * regeln/quests.ts, modul/abenteuer.tsx (Dienste).
  */
 import { useEffect, useRef, useState } from "react";
-import { ladeSpieldaten } from "../daten/laden";
 import { Dialog } from "../dialog/Dialog";
 import type { Dialogvariablen } from "../dialog/geschichte";
-import { liesPaketJson } from "../paket/paketlader";
 import { deckgroesse, mentorzugGesperrt } from "../regeln/karten";
 import { kaufe } from "../regeln/muenzen";
-import { standNachRunde, type Rundenrueckweg } from "../regeln/rueckweg";
 import {
   variablenAusBesitz,
   variablenNachDialog,
   variablenNachBesuch,
-  variablenNachRunde,
 } from "../regeln/dialogvariablen";
-import { laufendesSimultan, nachSimultanpartie, starteSimultan } from "../regeln/simultan";
 import { spruecheErlaubt, ZEITKLASSEN } from "../regeln/zeitkarten";
-import type { BesonderePartieformenDesSchachAbenteuers } from "../../daten/generiert/abenteuer-partieformen";
-import type { Aufgabenauftrag } from "../schnittstelle/aufgaben";
 import type { Kartensorte } from "../schnittstelle/karten";
-import type { Partieauftrag, Partieergebnis } from "../schnittstelle/partie";
+import type { Partieauftrag } from "../schnittstelle/partie";
 import type { Abenteuerstand } from "../schnittstelle/spielstand";
 import { fehlertext, tSpiel } from "../texte/texte";
 import { Abspann } from "./Abspann";
-import { auftragFuer, auftragFuerRunde } from "./auftraege";
 import { Deckwahl } from "./Deckwahl";
 import { dialogwirkungen } from "./dialogwirkungen";
 import { Fortsetzungskarte, Partieergebniskarte, Rundenergebniskarte } from "./Ergebniskarten";
@@ -60,6 +52,7 @@ import { Steuerkreuz } from "./Steuerkreuz";
 import type { Ausloesertreffer, Richtung } from "./szene";
 import { Tagebuch } from "./Tagebuch";
 import { aktuelleToenung, type Toenung } from "./toenung";
+import { useAufgabenrunde } from "./useAufgabenrunde";
 import { LUPE, usePartiestart } from "./usePartiestart";
 import { Vorfuehrung } from "./Vorfuehrung";
 import {
@@ -111,6 +104,8 @@ export function Oberwelt() {
   const { schreibe, melde, wechsleKarte } = k;
   const partie = usePartiestart(k);
   const { deckwahl, ergebnis, offenePartie } = partie;
+  const runden = useAufgabenrunde(k, partie);
+  const { rundenergebnis, offeneRunde, gedaechtnis } = runden;
   const rahmen = useRef<HTMLDivElement>(null);
   const kachelanzeige = useRef<HTMLSpanElement>(null);
   const [fehler, setzeFehler] = useState<string | null>(null);
@@ -148,67 +143,6 @@ export function Oberwelt() {
   const simultanInArbeit = useRef<string | null>(null);
   // Eine Vorführung, die ein Dialog angestoßen hat (Odette am Leuchtturm); sie folgt dem Dialog.
   const vorfuehrungInArbeit = useRef<string | null>(null);
-  const [gedaechtnis, setzeGedaechtnis] = useState<string | null>(null);
-
-  // Ergebnis der zuletzt gespielten Aufgabenrunde für die Ergebniskarte (R31).
-  const [rundenergebnis, setzeRundenergebnis] = useState<
-    (Rundenrueckweg & { auftrag: Aufgabenauftrag }) | null
-  >(null);
-  // Eine Aufgabenrunde, die in der App noch offen ist (ohne Ergebnis zurückgekommen).
-  const [offeneRunde, setzeOffeneRunde] = useState<Aufgabenauftrag | null>(null);
-  // Eine bestandene Runde, die als Quest-Ereignis noch auf die Welt wartet.
-  const offeneRundenmeldung = useRef<string | null>(null);
-
-  /** Eine bestandene Aufgabenrunde als Quest-Ereignis, sobald die Welt da ist. */
-  const meldeRunde = (w: Weltdaten) => {
-    const runde = offeneRundenmeldung.current;
-    if (!runde) return;
-    offeneRundenmeldung.current = null;
-    melde({ art: "aufgaben", runde }, w);
-  };
-
-  // Rückweg der Aufgabenrunde (R31): Ergebnis auswerten, Rundenstand und Aufgabenreihe fortschreiben.
-  useEffect(() => {
-    const auftrag = stand?.laufendeAufgaben;
-    if (!auftrag) return;
-    void Promise.all([dienste.liesAufgabenergebnis(auftrag.kennung), ladeSpieldaten()]).then(
-      ([ergebnis, daten]) => {
-        const aktuell = standRef.current;
-        if (!aktuell) return;
-        if (!ergebnis) {
-          setzeOffeneRunde(auftrag);
-          return;
-        }
-        const r = standNachRunde(aktuell, auftrag, ergebnis, daten);
-        setzeRundenergebnis({ auftrag, ...r });
-        if (r.bestanden) offeneRundenmeldung.current = auftrag.runde;
-        schreibe(r.stand);
-        if (r.bestanden && weltRef.current) meldeRunde(weltRef.current);
-      },
-    );
-    // Nur beim Aufbau, wie der Rückweg der Partie.
-    // eslint-disable-next-line react-hooks/exhaustive-deps
-  }, []);
-
-  /** Startet eine Aufgabenrunde: Position sichern, Auftrag an die App (sie merkt ihn im Stand). */
-  const starteRunde = (runde: string) => {
-    const aktuell = standRef.current ?? stand;
-    if (!welt || !aktuell) return;
-    const auftrag = auftragFuerRunde(runde, welt.daten, aktuell);
-    if (!auftrag) {
-      setzeMeldung(tSpiel("aufgaben.fehlt", { runde }));
-      return;
-    }
-    const szene = spiel.current ? szeneVon(spiel.current) : null;
-    const position = szene
-      ? { ...szene.position(), karte: aktuell.position.karte }
-      : aktuell.position;
-    const mitPosition = { ...aktuell, position };
-    k.merke(mitPosition);
-    setzeRundenergebnis(null);
-    void dienste.schreibeStand(mitPosition).then(() => dienste.starteAufgaben(auftrag));
-  };
-
   /** Öffnet den Dialog „datei.knoten“ aus dem Paket. */
   const oeffneDialog = (verweis: string) => {
     const [datei, knoten] = verweis.split(".", 2);
@@ -268,7 +202,7 @@ export function Oberwelt() {
         // Karte betreten (Quests), dann ein Partieergebnis, das auf die Welt gewartet hat.
         melde({ art: "ort", karte: w.kennung }, w);
         partie.meldeErgebnis(w);
-        meldeRunde(w);
+        runden.meldeRunde(w);
         const startToenung = aktuelleToenung(w.karte, w.kennung, stand.dialogvariablen);
         setzeToenungZustand(startToenung);
         spiel.current = starteOberwelt(rahmen.current, {
@@ -357,63 +291,6 @@ export function Oberwelt() {
     szene?.setzeRichtung(richtung, gedrueckt);
   };
 
-  /** Das Simultan aus partieformen.json, oder null. */
-  const simultanEintrag = (kennung: string) =>
-    liesPaketJson<BesonderePartieformenDesSchachAbenteuers>("daten/partieformen.json").then(
-      (alle) => alle.simultan.find((s) => s.kennung === kennung) ?? null,
-    );
-
-  /** Beginnt ein Simultan: Fortschritt in den Dialogvariablen, dann das erste Brett. */
-  const starteSimultanAus = (kennung: string) => {
-    void simultanEintrag(kennung).then((eintrag) => {
-      const aktuell = standRef.current;
-      const erste = eintrag?.begegnungen[0];
-      if (!eintrag || !erste || !aktuell || !welt) return;
-      const neu = { ...aktuell, dialogvariablen: starteSimultan(aktuell.dialogvariablen, eintrag) };
-      schreibe(neu);
-      const auftrag = auftragFuer(erste, welt.daten, neu);
-      if (auftrag) partie.startePartie(auftrag, []);
-    });
-  };
-
-  /** Nach der Ergebniskarte im Simultan: das nächste Brett oder die Gesamtwertung. */
-  const weiterImSimultan = (e: Partieergebnis) => {
-    const laeuft = laufendesSimultan(standRef.current?.dialogvariablen ?? {});
-    if (!laeuft) return;
-    void simultanEintrag(laeuft).then((eintrag) => {
-      const aktuell = standRef.current;
-      if (!eintrag || !aktuell || !welt) return;
-      const begegnung = e.kennung.split("#")[0] ?? "";
-      const r = nachSimultanpartie(aktuell.dialogvariablen, eintrag, begegnung, e.ausgang);
-      const neu = { ...aktuell, dialogvariablen: { ...r.variablen } };
-      schreibe(neu);
-      const auftrag = r.naechste ? auftragFuer(r.naechste, welt.daten, neu) : null;
-      if (auftrag) partie.startePartie(auftrag, []);
-      if (r.ende?.bestanden) melde({ art: "aufgaben", runde: eintrag.kennung });
-      if (r.ende) {
-        setzeMeldung(
-          tSpiel("oberwelt.simultan.ende", {
-            punkte: r.ende.punkte,
-            bretter: eintrag.begegnungen.length,
-          }),
-        );
-      }
-    });
-  };
-
-  /** Ende einer Gedächtnisstellung: `<name>Bestanden` wie bei Aufgabenrunden (Runde 6). */
-  const beendeGedaechtnis = (kennung: string, bestanden: boolean) => {
-    setzeGedaechtnis(null);
-    const aktuell = standRef.current;
-    if (!aktuell) return;
-    schreibe({
-      ...aktuell,
-      dialogvariablen: { ...aktuell.dialogvariablen, ...variablenNachRunde(kennung, bestanden) },
-    });
-    // Quests warten darauf wie auf eine bestandene Aufgabenrunde (Vorschlag mittel-1).
-    if (bestanden) melde({ art: "aufgaben", runde: kennung });
-  };
-
   /** Der Aktionsknopf: Dialog des Auslösers oder der Figur öffnen. */
   const beiAktion = () => {
     if (!welt || !treffer) return;
@@ -500,19 +377,19 @@ export function Oberwelt() {
     const simultan = simultanInArbeit.current;
     simultanInArbeit.current = null;
     if (simultan) {
-      starteSimultanAus(simultan);
+      runden.starteSimultan(simultan);
       return;
     }
     const merken = gedaechtnisInArbeit.current;
     gedaechtnisInArbeit.current = null;
     if (merken) {
-      setzeGedaechtnis(merken);
+      runden.starteGedaechtnis(merken);
       return;
     }
     const runde = rundeInArbeit.current;
     rundeInArbeit.current = null;
     if (runde) {
-      starteRunde(runde);
+      runden.starteRunde(runde);
       return;
     }
     if (auftrag) partie.waehleOderStarte(auftrag);
@@ -644,7 +521,7 @@ export function Oberwelt() {
       {gedaechtnis && (
         <Gedaechtnisstellung
           kennung={gedaechtnis}
-          beiEnde={(bestanden) => beendeGedaechtnis(gedaechtnis, bestanden)}
+          beiEnde={(bestanden) => runden.beendeGedaechtnis(gedaechtnis, bestanden)}
         />
       )}
       {vorfuehrung && (
@@ -668,7 +545,7 @@ export function Oberwelt() {
           beiWiedereinstieg={(p) => partie.starteWiedereinstieg(ergebnis, p)}
           beiWeiter={() => {
             partie.schliesseErgebnis();
-            weiterImSimultan(ergebnis);
+            runden.weiterImSimultan(ergebnis);
           }}
         />
       )}
@@ -676,8 +553,8 @@ export function Oberwelt() {
         <Rundenergebniskarte
           ergebnis={rundenergebnis}
           club={tSpiel(welt?.ort.club?.name ?? "club.mapleFalls.name")}
-          beiNochmal={starteRunde}
-          beiWeiter={() => setzeRundenergebnis(null)}
+          beiNochmal={runden.starteRunde}
+          beiWeiter={runden.schliesseRundenergebnis}
         />
       )}
       {offeneRunde && (
@@ -686,10 +563,7 @@ export function Oberwelt() {
           weiter="aufgaben.weiter"
           abbrechen="aufgaben.abbrechen"
           beiWeiter={() => void dienste.starteAufgaben(offeneRunde)}
-          beiAbbrechen={() => {
-            setzeOffeneRunde(null);
-            schreibe({ ...(standRef.current ?? stand), laufendeAufgaben: null });
-          }}
+          beiAbbrechen={runden.brichRundeAb}
         />
       )}
       {offenePartie && (

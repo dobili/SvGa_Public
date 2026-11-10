@@ -3130,14 +3130,14 @@
       "klein": true,
       "start": {
         "art": "dialog",
-        "knoten": "silicon-bay-aussen.eisenwaren_batterie"
+        "knoten": "silicon-bay-aussen.eisenwaren"
       },
       "schritte": [
         {
           "text": "quest.batterie.schritt1",
           "ereignis": {
             "art": "dialog",
-            "knoten": "silicon-bay-aussen.eisenwaren_batterie_mitgenommen"
+            "knoten": "silicon-bay-aussen.eisenwaren_batterie"
           },
           "wirkungen": [
             {

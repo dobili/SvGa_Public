@@ -529,15 +529,6 @@
       "anzahl": 4
     },
     {
-      "kennung": "wegGhostCapital.simultan",
-      "ort": "wegGhostCapital",
-      "steller": "wegGhostCapital.abe",
-      "reihe": false,
-      "buchuebungen": [],
-      "themen": ["endspiel", "mattbilder", "doppelangriff"],
-      "anzahl": 5
-    },
-    {
       "kennung": "capitalArena.kreideraetsel",
       "ort": "capitalArena",
       "steller": "capitalArena.mo",

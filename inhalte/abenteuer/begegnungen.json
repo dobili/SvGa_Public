@@ -772,6 +772,86 @@
         "sekunden": 180,
         "zuschlag": 2
       }
+    },
+    {
+      "kennung": "wegGhostCapital.simultan1",
+      "gegner": "riverton.slick",
+      "farbe": "white",
+      "format": {
+        "art": "stellungsduell",
+        "zuege": 8,
+        "mindestvorteil": 0.5
+      },
+      "startstellung": {
+        "art": "abbildung",
+        "nummer": "6.33"
+      },
+      "kartenErlaubt": false,
+      "zaehltFuerApp": false
+    },
+    {
+      "kennung": "wegGhostCapital.simultan2",
+      "gegner": "ironwood.bigJoe",
+      "farbe": "white",
+      "format": {
+        "art": "stellungsduell",
+        "zuege": 8,
+        "mindestvorteil": 0.5
+      },
+      "startstellung": {
+        "art": "abbildung",
+        "nummer": "6.34"
+      },
+      "kartenErlaubt": false,
+      "zaehltFuerApp": false
+    },
+    {
+      "kennung": "wegGhostCapital.simultan3",
+      "gegner": "cedarCreek.okafor",
+      "farbe": "black",
+      "format": {
+        "art": "stellungsduell",
+        "zuege": 8,
+        "mindestvorteil": 0.5
+      },
+      "startstellung": {
+        "art": "abbildung",
+        "nummer": "6.35"
+      },
+      "kartenErlaubt": false,
+      "zaehltFuerApp": false
+    },
+    {
+      "kennung": "wegGhostCapital.simultan4",
+      "gegner": "portDelacroix.celeste",
+      "farbe": "white",
+      "format": {
+        "art": "stellungsduell",
+        "zuege": 8,
+        "mindestvorteil": 0.5
+      },
+      "startstellung": {
+        "art": "abbildung",
+        "nummer": "6.36"
+      },
+      "kartenErlaubt": false,
+      "zaehltFuerApp": false
+    },
+    {
+      "kennung": "wegGhostCapital.simultan5",
+      "gegner": "pinewoodCamp.hollis",
+      "farbe": "white",
+      "format": {
+        "art": "stellungsduell",
+        "zuege": 8,
+        "mindestvorteil": 0.5
+      },
+      "startstellung": {
+        "art": "abbildung",
+        "nummer": "6.38"
+      },
+      "kartenErlaubt": false,
+      "zaehltFuerApp": false
     }
   ]
 }

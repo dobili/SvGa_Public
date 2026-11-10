@@ -2,7 +2,7 @@
   "karte": "riverton.schuppen",
   "datei": "karten/riverton-schuppen.json",
   "art": "innen",
-  "beschreibung": "Der Schuppen hinter der Fahrradwerkstatt von Mrs. Albescu, seit dem Tod ihres Mannes nicht mehr benutzt (Szene 33). Holzwände, Betonboden mit Staub, durch die Ritzen fällt Licht; Staub tanzt in der Luft, in den Ecken hängen Spinnweben. Die Tür in der Mitte der Südwand führt zum Hinterweg am Park. An der Nordwand links der orange Werkzeugschrank mit Schlüsseln und Speichen, daneben lehnt eine Holzleiter, rechts die alte Werkbank mit Farbdose und Werkzeug. Mitten im Raum steht das grüne Fahrrad unter einer staubigen Plane, der Lenker schaut heraus. An der Westwand ein liegender und ein stehender Reifen, an der Ostwand ein blauer Kanister und ein Sägebock. Eine Maus huscht an der Südwand entlang.",
+  "beschreibung": "Der Schuppen ist halb Holzlager. Holzwände, staubiger Betonboden, Licht durch die Ritzen. An der Nordwand der Werkzeugschrank, die Werkbank und ein hoher Bretterstapel in der Ecke. Das grüne Fahrrad unter der Plane steht links im Raum, rechts liegen Holzscheite, und ein blauer Kanister, vorn an der Westwand ein alter Reifen.",
   "wand": "holz",
   "boden": "stein",
   "raster": [
@@ -21,32 +21,28 @@
       "feld": [1, 1]
     },
     {
-      "moebel": "rv5Leiter",
-      "feld": [3, 1]
+      "moebel": "rv5Werkbank",
+      "feld": [4, 1]
     },
     {
-      "moebel": "rv5Werkbank",
-      "feld": [6, 1]
+      "moebel": "rv5Bretterstapel",
+      "feld": [7, 1]
     },
     {
       "moebel": "rv5FahrradPlane",
-      "feld": [4, 3]
+      "feld": [2, 4]
     },
     {
-      "moebel": "rv5ReifenLiegend",
-      "feld": [1, 5]
-    },
-    {
-      "moebel": "rv5ReifenStehend",
-      "feld": [1, 6]
+      "moebel": "rv5Holzscheite",
+      "feld": [7, 4]
     },
     {
       "moebel": "rv5Kanister",
-      "feld": [8, 4]
+      "feld": [6, 4]
     },
     {
-      "moebel": "rv5Saegebock",
-      "feld": [6, 5]
+      "moebel": "rv5ReifenLiegend",
+      "feld": [1, 6]
     },
     {
       "moebel": "rv5TuerSuedHolz",
@@ -68,7 +64,7 @@
     },
     {
       "name": "fahrrad",
-      "feld": [5, 5]
+      "feld": [4, 5]
     }
   ],
   "figuren": [],

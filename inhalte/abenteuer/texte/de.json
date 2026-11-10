@@ -1520,7 +1520,7 @@
   "fund.fotoWeltschachtag.name": "Foto „Weltschachtag“",
   "fund.fotoWeltschachtag.text": "Die lange Tafel am Seeufer, fünf Bretter, die Bühne mit den zwei Fahnen und Abe mit dem Funkgerät.",
   "quest.weltschachtag.titel": "Weltschachtag am Leuchtturm",
-  "quest.weltschachtag.schritt1": "Das Simultan an der langen Tafel spielen: fünf Bretter, fünf Bekannte",
+  "quest.weltschachtag.schritt1": "Das Simultan an der langen Tafel bestehen: fünf Bretter, fünf Bekannte, den Vorteil verwerten",
   "quest.weltschachtag.schritt2": "Bei Abes Partie gegen die Welt einen Zug vorschlagen",
   "quest.batterie.titel": "Eine Batterie für das Leuchtfeuer",
   "quest.batterie.schritt1": "Hol im Eisenwarenladen der Altstadt eine Batterie für das Leuchtfeuer der Pelikaninsel.",
@@ -1577,5 +1577,6 @@
   "fund.spurPM1.name": "Foto der Drohne",
   "fund.spurPM1.text": "Eine Drohne mit dem Logo von Perfect Move über dem Kanal. Sie filmt jede Partie unter der Brücke.",
   "fund.kreide1.name": "Kreidespringer unter der Brücke",
-  "fund.kreide1.text": "Ein Springer aus Kreide am Brückenfuß. Wer ihn findet und das Wort kennt, darf mitspielen."
+  "fund.kreide1.text": "Ein Springer aus Kreide am Brückenfuß. Wer ihn findet und das Wort kennt, darf mitspielen.",
+  "quest.seilschaft.schritt2": "Erzähl Wren, wie die Partie ausgegangen ist."
 }

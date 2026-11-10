@@ -60,7 +60,7 @@ Eine Kutscherin mit Verstand. Die Landstraße erzieht gut. #sprecher:ambrose
 }
 Neben dem Kaffeeautomaten hängt eine Tafel: „Wer hier hängt, verliert. Drei Stellungen für die Pause.“ #sprecher:erzaehler
 Hängende Figuren. Die erste Frage vor jedem Zug, {held}. Du kennst sie. #sprecher:ambrose
-* [Die Aufgaben lösen]
++ [Die Aufgaben lösen]
     ~ beginneAufgaben("wegIronwoodSilicon.tafel")
     -> END
 * [Weitergehen]
@@ -86,7 +86,7 @@ Juno hält dir die Daumen hoch: „Sie ist schneller als du. Aber du bist schlau
 === joggerin_angebot ===
 Eine Stellung, zehn Züge, die Uhr läuft. Bereit? #sprecher:joggerin
 Sie läuft schnell und denkt schnell. Lass sie laufen, {held}. Denk du. #sprecher:ambrose
-* [„Los.“]
++ [„Los.“]
     ~ beginnePartie("wegIronwoodSilicon.joggerin")
     -> END
 * [„Später.“]
@@ -96,7 +96,7 @@ Sie läuft schnell und denkt schnell. Lass sie laufen, {held}. Denk du. #spreche
 === joggerin_nach_niederlage ===
 Puls bei hundertsechzig, Partie gewonnen. Guter Tag. #sprecher:joggerin
 Sie hat schneller gezogen, nicht besser. Noch einmal, und diesmal in deinem Takt. #sprecher:ambrose
-* [„Noch einmal.“]
++ [„Noch einmal.“]
     ~ beginnePartie("wegIronwoodSilicon.joggerin")
     -> END
 * [„Später.“]
@@ -152,7 +152,7 @@ Für einen Ohrstöpsel ist er sehr schwer. Behalte ihn, {held}. #sprecher:ambros
 
 === ereignis_stream ===
 {streamBelohnt: -> stream_danach}
-{ausgangWegIronwoodSiliconStream != "": -> stream_ende}
+{ausgangWegIronwoodSiliconStream == "sieg" or ausgangWegIronwoodSiliconStream == "remis" or ausgangWegIronwoodSiliconStream == "niederlage": -> stream_ende}
 {wegIronwoodSiliconStreamBestanden: -> stream_partie}
 {streamGesehen: -> stream_angebot}
 ~ streamGesehen = true

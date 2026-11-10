@@ -817,3 +817,24 @@ Regel 9; Widerspruch genügt.
 - **Neue Regel 10.55:** Statisten und Tiere stehen nicht im Wasser und nicht in Möbeln oder
   Bäumen. Schwimmer werden nur bis zur Wasserlinie gezeichnet. Der Kartenbauer prüft das. Die
   Befunde aller Karten stehen in `auftraege/nacharbeit_10_55.md`.
+
+## 10.11.2026 – Winter ohne Schnee-Bilder: Winter als Zustand mit Schneefärbung
+
+Frage des Autors: Die Geschichte spricht von Winter, aber die Bilder sind nicht winterlich. Braucht
+es Schnee-Bilder, oder lassen wir den Winter weg?
+
+Befund: In den gekauften Paketen gibt es keinen Schnee, nur eine Schneekugel als Deko.
+
+Empfehlung, gilt nach Regel 9 (Widerspruch genügt):
+
+- **Der Winter bleibt.** Er ist ein Zustand der Karte (KARTENREGELN 10.63), zum Beispiel
+  `ironwood.aussen` im Winter.
+- **`kartenbild` färbt die Karte im Winterzustand automatisch um:**
+  - Gras und Laub werden zu Schnee, wobei die Helligkeit bleibt.
+  - Erde wird entsättigt, Wasser kühler.
+  - Blumen und Pilze kommen in der Winterszene weg.
+  - Ein Test am Flussweg (10.11.2026) sah überzeugend aus, ohne ein neues Bild.
+- **Die App legt im Winter Schneefall über die Karte** (Teilchen). Die Tönung bleibt verfügbar.
+- **Eigene Bilder nur, wo die Umfärbung nicht reicht:** etwa Schneemann oder verschneite Dächer,
+  falls gewünscht.
+- **Umsetzung:** mittel-2, nach der Technik der Zustände.

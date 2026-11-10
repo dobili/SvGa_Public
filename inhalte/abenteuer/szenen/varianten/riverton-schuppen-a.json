@@ -1,0 +1,90 @@
+{
+  "karte": "riverton.schuppen",
+  "datei": "karten/varianten/riverton-schuppen-a.json",
+  "art": "innen",
+  "beschreibung": "Der Schuppen hinter der Fahrradwerkstatt von Mrs. Albescu, seit dem Tod ihres Mannes nicht mehr benutzt (Szene 33). Holzwände, Betonboden mit Staub, durch die Ritzen fällt Licht; Staub tanzt in der Luft, in den Ecken hängen Spinnweben. Die Tür in der Mitte der Südwand führt zum Hinterweg am Park. An der Nordwand links der orange Werkzeugschrank mit Schlüsseln und Speichen, daneben lehnt eine Holzleiter, rechts die alte Werkbank mit Farbdose und Werkzeug. Mitten im Raum steht das grüne Fahrrad unter einer staubigen Plane, der Lenker schaut heraus. An der Westwand ein liegender und ein stehender Reifen, an der Ostwand ein blauer Kanister und ein Sägebock. Eine Maus huscht an der Südwand entlang.",
+  "wand": "holz",
+  "boden": "stein",
+  "raster": [
+    "##########",
+    "##########",
+    "##########",
+    "#........#",
+    "#........#",
+    "#........#",
+    "#........#",
+    "#####.####"
+  ],
+  "objekte": [
+    {
+      "moebel": "rv5Werkzeugschrank",
+      "feld": [1, 1]
+    },
+    {
+      "moebel": "rv5Leiter",
+      "feld": [3, 1]
+    },
+    {
+      "moebel": "rv5Werkbank",
+      "feld": [6, 1]
+    },
+    {
+      "moebel": "rv5FahrradPlane",
+      "feld": [4, 3]
+    },
+    {
+      "moebel": "rv5ReifenLiegend",
+      "feld": [1, 5]
+    },
+    {
+      "moebel": "rv5ReifenStehend",
+      "feld": [1, 6]
+    },
+    {
+      "moebel": "rv5Kanister",
+      "feld": [8, 4]
+    },
+    {
+      "moebel": "rv5Saegebock",
+      "feld": [6, 5]
+    },
+    {
+      "moebel": "rv5TuerSuedHolz",
+      "feld": [5, 7],
+      "an_wand": true
+    }
+  ],
+  "ausloeser": [
+    {
+      "name": "start",
+      "feld": [5, 6],
+      "eigenschaften": {
+        "richtung": "oben"
+      }
+    },
+    {
+      "name": "schuppenAusgang",
+      "feld": [5, 7]
+    },
+    {
+      "name": "fahrrad",
+      "feld": [5, 5]
+    }
+  ],
+  "figuren": [],
+  "belebung": [
+    {
+      "name": "maus",
+      "typ": "tier",
+      "feld": [2, 6],
+      "eigenschaften": {
+        "von": "2,6",
+        "bis": "4,6",
+        "verhalten": "ausweichen"
+      }
+    }
+  ],
+  "zustand": ["gebraucht", "alt"],
+  "stil": ["rustikal", "industrie"],
+  "variante": "a"
+}

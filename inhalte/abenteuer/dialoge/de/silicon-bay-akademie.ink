@@ -80,7 +80,7 @@ Am Brett eines Clubs schweigt man. Im Park redet man. #sprecher:ambrose
 === lin_clubkampf ===
 Bereit? Ich spiele, was im Buch steht. Mal sehen, was du dagegen hast. #sprecher:lin
 Lass sie das Buch zuklappen, {held}. Dann wird sie vorsichtig. #sprecher:ambrose
-* [„Ich bin bereit.“]
++ [„Ich bin bereit.“]
     ~ beginnePartie("siliconBay.clubkampf")
     -> END
 * [„Noch nicht.“]
@@ -90,7 +90,7 @@ Lass sie das Buch zuklappen, {held}. Dann wird sie vorsichtig. #sprecher:ambrose
 === lin_nach_niederlage ===
 Gut gespielt bis zum Mittelspiel. Danach habe ich das Buch noch einmal aufgeschlagen. #sprecher:lin
 Sie war sicher, solange es Regeln gab. Zwing sie in eine Stellung ohne Regeln. #sprecher:ambrose
-* [„Noch einmal.“]
++ [„Noch einmal.“]
     ~ beginnePartie("siliconBay.clubkampf")
     -> END
 * [„Später.“]
@@ -128,6 +128,7 @@ Die fünfte Nadel. Und ein Mentor-Zug. Ich hätte ihn heute kaum gebraucht, du s
 {
 - not theoGetroffen: -> theo_erstes_treffen
 - siliconBayAuswertungBestanden and not serverraumOffen: -> theo_serverraum
+- not linGetroffen: -> theo_erst_lin
 - not reiheTheoBestanden: -> theo_reihe
 - else: -> theo_alltag
 }
@@ -142,11 +143,18 @@ Hier. Ein Tablet mit ZERO. Damit trainierst du in einer Woche mehr als in einem 
 ~ gibFund("zeroTablet")
 Auf dem Tablet gewinnt die Maschine eine Partie in zwölf Sekunden. Kein einziger Fehler. #sprecher:erzaehler
 Kein einziger Fehler. Nicht einer. #sprecher:ambrose #stimmung:gebannt
--> theo_reihe
+{linGetroffen: -> theo_reihe}
+-> theo_erst_lin
+
+// Die Reihe gibt es erst nach dem Gespräch mit Dr. Lin; sonst liefe die Runde, bevor die Quest
+// siliconBay.akademie auf sie wartet (Gesamtsimulation, Runde 6).
+=== theo_erst_lin ===
+Die Abfrage machen wir offiziell. Melde dich erst bei Dr. Lin, dann messe ich. #sprecher:theo
+-> END
 
 === theo_reihe ===
 Eröffnungsgrundsätze. Ich will sehen, ob du sie kennst oder nur benutzt. #sprecher:theo
-* [Die Aufgaben lösen]
++ [Die Aufgaben lösen]
     ~ beginneAufgaben("siliconBay.reiheTheo")
     -> END
 * [„Später.“]
@@ -189,7 +197,7 @@ Erst Theo. Er braucht seine Zahlen, sonst wird er nervös. #sprecher:nova
 
 === nova_reihe ===
 Fallen. Ich kenne jede. Die Frage ist, ob du sie siehst, bevor du reinfällst. #sprecher:nova
-* [Die Aufgaben lösen]
++ [Die Aufgaben lösen]
     ~ beginneAufgaben("siliconBay.reiheNova")
     -> END
 * [„Später.“]

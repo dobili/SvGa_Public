@@ -13,7 +13,7 @@
     "t": "stein",
     "h": "wasser"
   },
-  "beschreibung": "Riverton an einem Herbsttag, auf dem Pflaster stehen noch Pfützen. Ganz oben die Bahnlinie mit Schotter und einer Hecke am Bahnzaun. Vom Westrand kommt der Fußweg vom Bahndamm an zwei Laternen vorbei und biegt in einem Bogen auf den Vorplatz. Darüber steht der Bahnhof aus rotem Backstein mit dem Uhrturm und dem Bogenportal, links das kleine Stellwerk, rechts der Güterschuppen mit Holzstapel an der Laderampe, ganz rechts der Wasserturm. Auf dem gepflasterten Vorplatz ein Brunnen, der Wegweiser, Laternen und das Wartehäuschen der Buslinie. Die Water Street läuft quer durch die Stadt, Gehwege rundherum. Südlich der Straße die Häuser mit der Front zum Fluss: zwei schmale Reihenhäuser, der Handyladen mit Leuchtschild, der Markt mit zwei Ständen unter Markisen, Obst- und Imbisskarren, die Bäckerei, das Café mit gestreifter Markise und zwei Lagerschuppen am Kai. Davor die Uferpromenade mit Bank und Laternen. Der Ashford River fließt vom West- zum Ostrand; die Steinbrücke mit Gehwegen führt hinüber in den Riverside-Park. Dort am Uferweg ganz im Westen Slicks Wohnwagen, Albescus Werkstatt und der Schuppen mit Vorhängeschloss, auf der Wiese die sechs Bildschirmtische, der Pavillon aus Holz mit Platz davor, das Pegelhaus und Bäume. Im Osten öffnet sich das Kanalbecken, der Kanal läuft nach Süden aus der Karte, daneben der Treidelpfad.",
+  "beschreibung": "Riverton an einem Herbsttag, auf dem Pflaster stehen noch Pfützen. Ganz oben die Bahnlinie mit Schotter und einer Hecke am Bahnzaun. Vom Westrand kommt der Fußweg vom Bahndamm an zwei Laternen vorbei und biegt in einem Bogen auf den Vorplatz. Darüber steht der Bahnhof aus rotem Backstein mit dem Uhrturm und dem Bogenportal, links das kleine Stellwerk, rechts der Güterschuppen mit Holzstapel an der Laderampe, ganz rechts der Wasserturm, aus dem früher die Dampfloks Wasser nahmen; ein Trampelpfad führt vom Gehweg hin. Auf dem gepflasterten Vorplatz ein Brunnen, der Wegweiser, Laternen und das Wartehäuschen der Buslinie. Die Water Street läuft quer durch die Stadt, Gehwege rundherum. Südlich der Straße die Häuser mit der Front zum Fluss: zwei schmale Reihenhäuser, der Handyladen mit Leuchtschild, der Markt mit zwei Ständen unter Markisen voller Obst- und Gemüsekörbe, ein Obstkarren und ein Pommeskarren, an jedem ein Verkäufer, die Bäckerei mit rotem Ziegeldach, das Café mit gestreifter Markise und zwei Lagerschuppen am Kai. Davor die Uferpromenade mit Bank und Laternen. Der Ashford River fließt vom West- zum Ostrand; die Steinbrücke mit Gehwegen führt hinüber in den Riverside-Park. Dort am Uferweg ganz im Westen Slicks Wohnwagen, Albescus Werkstatt und der Schuppen mit Vorhängeschloss, auf der Wiese die sechs Bildschirmtische (Picknicktische mit aufgeklappten Laptops), der Pavillon aus Holz mit Platz davor, das Pegelhaus und Bäume. Im Osten öffnet sich das Kanalbecken, der Kanal läuft nach Süden aus der Karte, daneben der Treidelpfad.",
   "raster": [
     "########################################################################",
     "#tttttttttttttttttttttttttttttttttttttttttttttttttttttttttttttttttttttt#",
@@ -29,14 +29,14 @@
     "#...........eeee.......................................................#",
     "#.............ee.......................................................#",
     "#.............ee.......................................................#",
-    "#.............ee.......................................................#",
-    "#.............eeee.....................................................#",
-    "#.............eeee.....................................................#",
-    "#...............ee.....................................................#",
-    "#.............ppppppppppppppppppppppppppppppppppppppppppppppp..........#",
-    "#.............ppppppppppppppppppppppppppppppppppppppppppppppp..........#",
-    "#.............ppppppppppppppppppppppppppppppppppppppppppppppp..........#",
-    "#.............ppppppppppppppppppppppppppppppppppppppppppppppp..........#",
+    "#.............ee.......ee..............................................#",
+    "#.............eeee.....ee.......................................ee.....#",
+    "#.............eeee.....ee..............................ee.......ee.....#",
+    "#...............ee.....ee..............................ee.......ee.....#",
+    "#.............ppppppppppppppppppppppppppppppppppppppppppppppp...ee.....#",
+    "#.............ppppppppppppppppppppppppppppppppppppppppppppppp...ee.....#",
+    "#.............ppppppppppppppppppppppppppppppppppppppppppppppp...ee.....#",
+    "#..pp.........ppppppppppppppppppppppppppppppppppppppppppppppp...ee.....#",
     "#pppppppppppppppppppppppppppppppppppppppppppppppppppppppppppppppppppppp#",
     "#pssssssssssssssssssssssssssssssssssssssssssssssssssssssssssssssssssssp#",
     "#pssssssssssssssssssssssssssssssssssssssssssssssssssssssssssssssssssssp#",
@@ -60,16 +60,16 @@
     "~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~hhhhh~~~~~~~~~~~~~~~~~",
     "~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~hhhhh~~~~~~~~~~~~~~~~~",
     "~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~hhhhh~~~~~~~~~~~~~~~~~",
-    "#kkkkkkkkkkkkkkkkkkkkkkkkkkkkkkkkkkkkkkkkkkkkkkkkkkkkkkkkeep~~~~~~~~~..#",
-    "#kkkkkkkkkkkkkkkkkkkkkkkkkkkkkkkkkkkkkkkkkkkkkkkkkkkkkkkkeep~~~~~~~~~..#",
-    "#...................kk........................kk.........eep~~~~~~~~~..#",
-    "#...................kk........................kk.........eep~~~~~~~~~..#",
-    "#...................kk........................kk.........eep~~~~~~~~~..#",
-    "#...................kk........................kk.........eep~~~~~......#",
-    "#...................kk........................kk.........eep~~~~~......#",
-    "#...................kk..............ppppppppppkk.........eep~~~~~......#",
-    "#kkkkkkkkkkkkkkkkkkkkkkkkkkkkkkkkkkkkkkkkkkkkkkkk........eep~~~~~......#",
-    "#kkkkkkkkkkkkkkkkkkkkkkkkkkkkkkkkkkkkkkkkkkkkkkkk........eep~~~~~......#",
+    "#eeeeeeeeeeeeeeeeeeeeeeeeeeeeeeeeeeeeeeeeeeeeeeeeeeeeeeeeeep~~~~~~~~~..#",
+    "#eeeeeeeeeeeeeeeeeeeeeeeeeeeeeeeeeeeeeeeeeeeeeeeeeeeeeeeeeep~~~~~~~~~..#",
+    "#...................ee........................ee.........eep~~~~~~~~~..#",
+    "#...................ee........................ee.........eep~~~~~~~~~..#",
+    "#...................ee........................ee.........eep~~~~~~~~~..#",
+    "#...................ee........................ee.........eep~~~~~......#",
+    "#...................ee........................ee.........eep~~~~~......#",
+    "#...................ee..............ppppppppppee....eeeeeeep~~~~~......#",
+    "#eeeeeeeeeeeeeeeeeeeeeeeeeeeeeeeeeeeeeeeeeeeeeeee...eeeeeeep~~~~~......#",
+    "#eeeeeeeeeeeeeeeeeeeeeeeeeeeeeeeeeeeeeeeeeeeeeeee........eep~~~~~......#",
     "#########################################################ee#~~~~~#######"
   ],
   "objekte": [
@@ -443,7 +443,7 @@
     },
     {
       "moebel": "rv5Gueterschuppen",
-      "feld": [44, 9]
+      "feld": [44, 8]
     },
     {
       "moebel": "rv5Wasserturm",
@@ -477,41 +477,6 @@
       "vorn": true
     },
     {
-      "moebel": "mf4Laterne",
-      "feld": [10, 19],
-      "vorn": true
-    },
-    {
-      "moebel": "mf4Laterne",
-      "feld": [22, 19],
-      "vorn": true
-    },
-    {
-      "moebel": "mf4Laterne",
-      "feld": [30, 19],
-      "vorn": true
-    },
-    {
-      "moebel": "mf4Laterne",
-      "feld": [42, 19],
-      "vorn": true
-    },
-    {
-      "moebel": "mf4Laterne",
-      "feld": [48, 19],
-      "vorn": true
-    },
-    {
-      "moebel": "mf4Laterne",
-      "feld": [58, 19],
-      "vorn": true
-    },
-    {
-      "moebel": "mf4Laterne",
-      "feld": [66, 19],
-      "vorn": true
-    },
-    {
       "moebel": "rv5Reihenhaus",
       "feld": [1, 28]
     },
@@ -525,28 +490,29 @@
     },
     {
       "moebel": "rv5Marktstand",
-      "feld": [15, 29]
+      "feld": [15, 29],
+      "id": "stand1"
     },
     {
       "moebel": "rv5Marktstand",
-      "feld": [21, 29]
+      "feld": [21, 29],
+      "id": "stand2"
     },
     {
-      "moebel": "rv5Obstkarren",
+      "moebel": "rv8Obstkarren",
       "feld": [16, 33]
     },
     {
-      "moebel": "rv5Imbisskarren",
+      "moebel": "rv8Imbisskarren",
       "feld": [22, 33]
     },
     {
-      "moebel": "rv5Baeckerei",
-      "feld": [32, 31],
-      "bauteil_ok": true
+      "moebel": "rv8Baeckerei",
+      "feld": [32, 27]
     },
     {
       "moebel": "rv5Cafe",
-      "feld": [41, 27]
+      "feld": [42, 27]
     },
     {
       "moebel": "rv5Lagerhaus",
@@ -554,36 +520,11 @@
     },
     {
       "moebel": "rv5Lagerhaus",
-      "feld": [64, 30]
+      "feld": [63, 30]
     },
     {
       "moebel": "mfBank",
       "feld": [8, 36],
-      "vorn": true
-    },
-    {
-      "moebel": "mf4Laterne",
-      "feld": [13, 33],
-      "vorn": true
-    },
-    {
-      "moebel": "mf4Laterne",
-      "feld": [27, 33],
-      "vorn": true
-    },
-    {
-      "moebel": "mf4Laterne",
-      "feld": [40, 33],
-      "vorn": true
-    },
-    {
-      "moebel": "mf4Laterne",
-      "feld": [49, 33],
-      "vorn": true
-    },
-    {
-      "moebel": "mf4Laterne",
-      "feld": [63, 33],
       "vorn": true
     },
     {
@@ -603,28 +544,34 @@
       "feld": [15, 49]
     },
     {
-      "moebel": "rvBildschirmtisch",
-      "feld": [23, 48]
+      "moebel": "rvPicknicktisch",
+      "feld": [23, 48],
+      "id": "bt1"
     },
     {
-      "moebel": "rvBildschirmtisch",
-      "feld": [27, 48]
+      "moebel": "rvPicknicktisch",
+      "feld": [27, 48],
+      "id": "bt2"
     },
     {
-      "moebel": "rvBildschirmtisch",
-      "feld": [31, 48]
+      "moebel": "rvPicknicktisch",
+      "feld": [31, 48],
+      "id": "bt3"
     },
     {
-      "moebel": "rvBildschirmtisch",
-      "feld": [23, 51]
+      "moebel": "rvPicknicktisch",
+      "feld": [23, 51],
+      "id": "bt4"
     },
     {
-      "moebel": "rvBildschirmtisch",
-      "feld": [27, 51]
+      "moebel": "rvPicknicktisch",
+      "feld": [27, 51],
+      "id": "bt5"
     },
     {
-      "moebel": "rvBildschirmtisch",
-      "feld": [31, 51]
+      "moebel": "rvPicknicktisch",
+      "feld": [31, 51],
+      "id": "bt6"
     },
     {
       "moebel": "rv5Pavillon",
@@ -673,6 +620,126 @@
     {
       "moebel": "rv8MietshausB",
       "feld": [16, 4]
+    },
+    {
+      "moebel": "mf4Laterne",
+      "feld": [11, 19],
+      "vorn": true
+    },
+    {
+      "moebel": "mf4Laterne",
+      "feld": [23, 19],
+      "vorn": true
+    },
+    {
+      "moebel": "mf4Laterne",
+      "feld": [35, 19],
+      "vorn": true
+    },
+    {
+      "moebel": "mf4Laterne",
+      "feld": [47, 19],
+      "vorn": true
+    },
+    {
+      "moebel": "mf4Laterne",
+      "feld": [59, 19],
+      "vorn": true
+    },
+    {
+      "moebel": "mf4Laterne",
+      "feld": [13, 33],
+      "vorn": true
+    },
+    {
+      "moebel": "mf4Laterne",
+      "feld": [27, 33],
+      "vorn": true
+    },
+    {
+      "moebel": "mf4Laterne",
+      "feld": [41, 33],
+      "vorn": true
+    },
+    {
+      "moebel": "mf4Laterne",
+      "feld": [55, 33],
+      "vorn": true
+    },
+    {
+      "moebel": "mf4Laterne",
+      "feld": [69, 33],
+      "vorn": true
+    },
+    {
+      "moebel": "rv8KorbAepfel",
+      "auf": "stand1",
+      "versatz": [-24, 8]
+    },
+    {
+      "moebel": "rv8KorbBananen",
+      "auf": "stand1",
+      "versatz": [-8, 8]
+    },
+    {
+      "moebel": "rv8KorbTrauben",
+      "auf": "stand1",
+      "versatz": [8, 8]
+    },
+    {
+      "moebel": "rv8KorbMais",
+      "auf": "stand1",
+      "versatz": [24, 8]
+    },
+    {
+      "moebel": "rv8KorbMoehren",
+      "auf": "stand2",
+      "versatz": [-24, 8]
+    },
+    {
+      "moebel": "rv8KorbKohl",
+      "auf": "stand2",
+      "versatz": [-8, 8]
+    },
+    {
+      "moebel": "rv8KorbAepfel",
+      "auf": "stand2",
+      "versatz": [8, 8]
+    },
+    {
+      "moebel": "rv8KorbMoehren",
+      "auf": "stand2",
+      "versatz": [24, 8]
+    },
+    {
+      "moebel": "pd6Laptop",
+      "auf": "bt1",
+      "versatz": [0, 0]
+    },
+    {
+      "moebel": "pd6Laptop",
+      "auf": "bt2",
+      "versatz": [0, 0]
+    },
+    {
+      "moebel": "pd6Laptop",
+      "auf": "bt3",
+      "versatz": [0, 0]
+    },
+    {
+      "moebel": "pd6Laptop",
+      "auf": "bt4",
+      "versatz": [0, 0]
+    },
+    {
+      "moebel": "pd6Laptop",
+      "auf": "bt5",
+      "versatz": [0, 0]
+    },
+    {
+      "moebel": "pd6Laptop",
+      "auf": "bt6",
+      "versatz": [0, 0]
     }
   ],
   "ausloeser": [
@@ -837,17 +904,6 @@
       }
     },
     {
-      "name": "kellnerin",
-      "typ": "statist",
-      "feld": [41, 37],
-      "eigenschaften": {
-        "von": "41,37",
-        "bis": "47,37",
-        "tun": "trägt Kaffee zu den Tischen vor dem Café",
-        "wann": "tag"
-      }
-    },
-    {
       "name": "kreidekinder",
       "typ": "statist",
       "feld": [34, 51],
@@ -859,35 +915,13 @@
       }
     },
     {
-      "name": "jogger",
-      "typ": "statist",
-      "feld": [2, 47],
-      "eigenschaften": {
-        "von": "2,47",
-        "bis": "34,47",
-        "tun": "läuft am Park entlang",
-        "wann": "morgen"
-      }
-    },
-    {
       "name": "hundebesitzerin",
       "typ": "statist",
-      "feld": [24, 51],
+      "feld": [20, 53],
       "eigenschaften": {
-        "von": "24,51",
-        "bis": "30,52",
+        "von": "20,53",
+        "bis": "34,54",
         "tun": "geht mit dem Hund im Park spazieren",
-        "wann": "tag"
-      }
-    },
-    {
-      "name": "touristen",
-      "typ": "statist",
-      "feld": [40, 21],
-      "eigenschaften": {
-        "von": "40,21",
-        "bis": "40,21",
-        "tun": "fotografieren den Uhrturm",
         "wann": "tag"
       }
     },
@@ -924,10 +958,10 @@
     {
       "name": "hund",
       "typ": "tier",
-      "feld": [25, 51],
+      "feld": [21, 54],
       "eigenschaften": {
-        "von": "25,51",
-        "bis": "25,51",
+        "von": "21,54",
+        "bis": "21,54",
         "verhalten": "folgen"
       }
     },
@@ -939,6 +973,39 @@
         "von": "20,41",
         "bis": "40,41",
         "verhalten": "schwimmen"
+      }
+    },
+    {
+      "name": "marktfrau",
+      "typ": "statist",
+      "feld": [20, 31],
+      "eigenschaften": {
+        "von": "20,31",
+        "bis": "20,31",
+        "tun": "verkauft Obst und Gemüse an beiden Ständen",
+        "wann": "tag"
+      }
+    },
+    {
+      "name": "obsthaendler",
+      "typ": "statist",
+      "feld": [19, 34],
+      "eigenschaften": {
+        "von": "19,34",
+        "bis": "19,34",
+        "tun": "wiegt am Obstkarren Trauben ab",
+        "wann": "tag"
+      }
+    },
+    {
+      "name": "imbissverkaeufer",
+      "typ": "statist",
+      "feld": [21, 35],
+      "eigenschaften": {
+        "von": "21,35",
+        "bis": "21,35",
+        "tun": "reicht Pommes aus dem Imbisskarren",
+        "wann": "tag"
       }
     }
   ],

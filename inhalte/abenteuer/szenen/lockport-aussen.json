@@ -261,10 +261,6 @@
     },
     {
       "moebel": "wg4Stein",
-      "feld": [46, 8]
-    },
-    {
-      "moebel": "wg4Stein",
       "feld": [42, 13]
     },
     {
@@ -358,6 +354,10 @@
     {
       "moebel": "lp6Brunnen",
       "feld": [30, 36]
+    },
+    {
+      "moebel": "lp6Glocke",
+      "feld": [46, 8]
     }
   ],
   "ausloeser": [
@@ -417,6 +417,14 @@
     {
       "name": "pumpe",
       "feld": [31, 36]
+    },
+    {
+      "name": "glocke",
+      "feld": [46, 10]
+    },
+    {
+      "name": "lastkahn",
+      "feld": [9, 20]
     }
   ],
   "figuren": [],

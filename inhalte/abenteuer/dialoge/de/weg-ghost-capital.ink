@@ -13,11 +13,14 @@
 // Den Fund merkt sich Ink zusätzlich selbst.
 
 EXTERNAL beginneAufgaben(runde)
+EXTERNAL beginneSimultan(kennung)
+EXTERNAL zeigeVorfuehrung(kennung)
 EXTERNAL beginnePartie(begegnung)
 EXTERNAL gibFund(kennung)
 
 VAR wegGhostCapitalTafelBestanden = false
 VAR wegGhostCapitalSimultanBestanden = false
+VAR ausgangWegGhostCapitalSimultan5 = ""
 VAR ausgangWegGhostCapitalMeisterproblem = ""
 VAR weltschachtagBegonnen = false
 VAR weltschachtagErledigt = false
@@ -60,10 +63,10 @@ Der König muss zum Leuchtturm. Wie wir alle. #sprecher:ambrose #stimmung:friedl
     -> END
 }
 Am Steg hängt eine Tafel mit drei Diagrammen: „Im Endspiel ist der König eine Figur. Bring ihn nach vorn!“ #sprecher:erzaehler
-* [Die Aufgaben lösen]
++ [Die Aufgaben lösen]
     ~ beginneAufgaben("wegGhostCapital.tafel")
     -> END
-* [Weitergehen]
++ [Weitergehen]
     -> END
 
 === fund_linse ===
@@ -92,28 +95,35 @@ Der Weg führt zurück nach Süden, nach Ghost Town. #sprecher:erzaehler
 -> END
 
 // ---------------------------------------------------------------- Der Weltschachtag (Runde 6)
-// Dokument 15, 2.13. Simultan gegen fünf Bekannte (Runde wegGhostCapital.simultan; die Form
-// „Simultan“ baut mittel-2, bis dahin fünf Aufgaben), Abes Partie gegen das Publikum (erzählt).
+// Dokument 15, 2.13. Simultan gegen fünf Bekannte (partieformen.json, wegGhostCapital.simultan: fünf
+// Stellungsduelle aus Kapitel 6, Abschnitt 6.8, „Den Vorteil verwerten“; drei Punkte bestehen),
+// Abes Partie gegen das Publikum (erzählt).
 
 === ereignis_weltschachtag ===
 {
 - weltschachtagErledigt: -> weltschachtag_danach
 - wegGhostCapitalSimultanBestanden: -> weltschachtag_abschluss
+- ausgangWegGhostCapitalSimultan5 != "" and ausgangWegGhostCapitalSimultan5 != "abgebrochen": -> weltschachtag_nochmal
 - weltschachtagBegonnen: -> weltschachtag_angebot
 }
 ~ weltschachtagBegonnen = true
 Am Ufer steht eine Bühne mit zwei Fahnen, schwarz und weiß. Davor eine lange Tafel mit fünf Brettern, und an jedem sitzt jemand, den du kennst. #sprecher:erzaehler
 Abe winkt von der Bühne. Weltschachtag! Der 20. Juli, seit 1924. Heute spielt das ganze Ufer. #sprecher:abe
 Fünf Bretter, fünf Gegner, und du gehst von Brett zu Brett. Wie die großen Meister. #sprecher:abe
+An jedem Brett steht schon eine Stellung, in der du besser stehst. Jetzt musst du es nur noch nach Hause bringen. #sprecher:abe
 -> weltschachtag_angebot
 
 === weltschachtag_angebot ===
 + [Das Simultan beginnen]
-    ~ beginneAufgaben("wegGhostCapital.simultan")
+    ~ beginneSimultan("wegGhostCapital.simultan")
     -> END
 + [„Gleich. Erst ein Eis.“]
     Das Eis schmilzt, die Bretter nicht. Wir warten. #sprecher:abe
     -> END
+
+=== weltschachtag_nochmal ===
+Nicht ganz. Ein Vorteil ist wie ein Fisch an der Angel: Man muss ihn noch an Land ziehen. Noch eine Runde? #sprecher:abe
+-> weltschachtag_angebot
 
 === weltschachtag_abschluss ===
 ~ weltschachtagErledigt = true
@@ -200,6 +210,8 @@ Noch einmal? Weiß zieht und gewinnt. Sieh dir den Springer an, und dann sieh di
 ~ finchErledigt = true
 Odette klatscht in die Hände. Gelöst! Dann gehört der Satz dir. Finchs Buchsbaum, sechzehn Weiße, sechzehn Schwarze. #sprecher:odette
 ~ gibFund("finchsBuchsbaum")
+Und jetzt zeige ich dir, woher die Falle kommt. Légal hat sie um 1750 in Paris gestellt. #sprecher:odette
+~ zeigeVorfuehrung("finchFalle")
 Ein Problem, das gelöst wird, ist nicht verloren. Es ist angekommen. #sprecher:ambrose #stimmung:friedlich
 -> END
 

@@ -664,6 +664,55 @@ der Story-Bibel und die Wege.
    Brückenwärter, Kiebitz an den Tischen (Washington Square Park, 16 Nr. 36), Vogelbeobachterin
    (Reiher und Fesselung), Joggerin; Tiere Krähen, Möwe, Eidechse, Reiher, Enten, Hase, dazu die Drohne.
 
+### 3.4 Runde 8 (10.11.2026, mittel-3): Notizen des Autors, Antworten, Zustände
+
+**Umgesetzt (Hauptfassungen; B und C bleiben liegen):**
+
+- `riverton.aussen` (A): Bäckerei als ganzes Haus mit Ziegeldach statt flacher Fassade
+  (`rv8Baeckerei`, eigenes Bild aus Dach und Ladengeschoss); Wege zur Tür für Stadthaus, Stellwerk,
+  Wohnhaus und Pegelhaus, der Güterschuppen steht nicht mehr auf dem Pflaster (10.58); Sandwege im
+  Park sind Erdwege mit Rand; Stände mit Obst- und Gemüsekörben, Obstkarren mit Ware, Pommeskarren,
+  an jedem jemand (10.59); Bildschirmtische als Picknicktische mit aufgeklappten Laptops (10.60);
+  Laternen in festen Abständen; Wasserturm mit Trampelpfad. Tiere im Wasser: nur die Enten
+  (`schwimmen`), Möwen fliegen über der Promenade.
+- `riverton.bahnhofshalle` (A): echter Fahrkartenschalter (Tresen mit Schalterfenstern) statt Holztisch
+  mit Kasse und abgeschnittenem Ticket-Bild; Getränke- und Kaffeeautomat nebeneinander; Wasserspender
+  neben der Sitzreihe; Gepäck neben den Bänken; Pflanzen symmetrisch an den Säulen; Taube bleibt.
+- `riverton.pavillon` (A): 20 × 17 (Clubhaus mit langer Geschichte, 10.56); vier lange rechteckige
+  Tische mit je zwei Brettern nebeneinander; in der Mitte ein Bodenschachbrett aus hellen und dunklen
+  Fliesen (das Wahrzeichen des Clubs), Bank davor.
+- `riverton.wohnwagen` (A): 17 × 8 nach dem Grundriss eines Reisewohnwagens: Bett im Heck (links),
+  Nasszelle mit Mini-Toilette und Waschbecken, Küchenzeile mit Spüle, Herd und Kühlschrank gegenüber
+  der Tür, Sitzecke mit Klapptisch im Bug (rechts), Regal mit den Dosentrophäen.
+- `riverton.schuppen` (C ist jetzt Hauptfassung): keine Notiz; Kennzeichen `variante` entfernt, damit
+  das Spiel das Hintergrundbild bekommt. Größe 10 × 8 passt zum kleinen Schuppen außen.
+
+**Antworten auf die Fragen des Autors:**
+
+- Wasserturm: Er hat eine Geschichte in der Welt, keine in der Handlung. Es ist der Wasserturm der
+  Bahn, aus dem früher die Dampfloks am Bahnhof Wasser nahmen; heute Landmarke mit Tauben auf dem
+  Tank (2.3). Deshalb steht er neben den Gleisen und hat jetzt einen Trampelpfad vom Gehweg
+  (Bahnpersonal). Einen Zaun bekommt er nicht, der Pfad genügt.
+- Kleiner blau-grauer Tisch im Pavillon: der Getränketisch `rv5Limonade` mit dem Limonadenglas
+  (Auslöser `limonadenglas`), nur Deko.
+
+**Zustände (Liste für die Zustandsszenen, gebaut wird nach der Meldung von mittel-2):**
+
+| Karte                    | Zustand (`<basis>-<zustand>.json`) | wann                                       | was sich ändert                                                                           |
+| ------------------------ | ---------------------------------- | ------------------------------------------ | ----------------------------------------------------------------------------------------- |
+| `riverton.aussen`        | Grundfassung                       | Akt 2 bis Szene 37                         | Regen, Pfützen (Tönung und Partikel), Schuppen mit Vorhängeschloss                        |
+| `riverton.aussen`        | `schuppenOffen`                    | nach Szene 33 (Schlüssel, E4)              | Vorhängeschloss weg, Schuppentür angelehnt                                                |
+| `riverton.aussen`        | `trainingszentrum`                 | nach Szene 37                              | Gitter vor der Pavillontreppe, Schild „Trainingszentrum – demnächst“, Banner Perfect Move |
+| `riverton.aussen`        | `winter`                           | Akt 3                                      | Bildschirmtische verschneit, zwei kaputt; Eiszapfen am Anleger (Fund)                     |
+| `riverton.aussen`        | `unterschriften`                   | Akt 4                                      | Bildschirmtische abgedeckt; Tisch für Slicks Unterschriftenliste vor dem Pavillon         |
+| `riverton.aussen`        | `nachspiel`                        | nach dem Abspann                           | Bildschirmtische weg, Wiese wieder frei                                                   |
+| `riverton.aussen`        | Objekt mit `wenn`                  | nach L3                                    | Lastkahn am Anleger (kein eigenes Bild nötig)                                             |
+| `riverton.bahnhofshalle` | `slickAufDerBank`                  | Akt 3                                      | Slick spielt auf der Bank weiter, Brett neben ihm                                         |
+| `riverton.bahnhofshalle` | `plakat`                           | Akt 4                                      | Plakat der Landesmeisterschaft an der freien Wand                                         |
+| `riverton.pavillon`      | `perfectMove`                      | nach Szene 37                              | Bildschirmtische auf den langen Tischen, Bretter in Kisten                                |
+| `riverton.wohnwagen`     | –                                  | nur Szene 37                               | keiner                                                                                    |
+| `riverton.schuppen`      | `ohneFahrrad`                      | nach Szene 33, wenn das Fahrrad geholt ist | Plane liegt leer auf dem Boden, Fahrrad fehlt                                             |
+
 ## 4. Bühnenbilder
 
 Je Karte Größe, Wände, Böden, Laufwege, Zonen und Inventar. Feld = linke obere Kachel. Möbel und Bilder

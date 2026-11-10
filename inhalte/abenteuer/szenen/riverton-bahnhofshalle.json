@@ -2,7 +2,7 @@
   "karte": "riverton.bahnhofshalle",
   "datei": "karten/riverton-bahnhofshalle.json",
   "art": "innen",
-  "beschreibung": "Die Bahnhofshalle von Riverton (Szenen 26, 35): Backstein aus den 1880er Jahren, hohe Fenster, ein heller Steinboden, Hall, Durchsagen und das laute Ticken der großen Uhr. Die Glastür mit Fußmatte liegt in der Mitte der Südwand. Über der Mitte der Nordwand hängt die große Bahnhofsuhr, darunter die Holzbank von Mr. Harlan, dem alten Uhrmacher; rechts davon die Bahnsteigtür zu den Gleisen und ein Netzplan, links die Fahrplantafel und ein Fenster. An der Westseite der Zeitungsstand von Pops: zwei Zeitungsregale an der Wand, davor der hölzerne Ladentisch mit Kasse, weiter unten der alte Fahrkartenschalter. Vier Säulen tragen die Decke. An der Ostseite drei orange Wartebänke hintereinander, das Fundbüro mit einer Glasvitrine in der Südostecke, ein Gepäckwagen mit Koffer, Kaffee- und Getränkeautomat. Unten links eine Reihe Schließfächer, neben den Bänken ein Mülleimer, Topfpflanzen in den Ecken, eine Taube hat sich hereinverirrt, Reisende ziehen Koffer zum Bahnsteig.",
+  "beschreibung": "Bahnhofshalle von Riverton (Akt 2): hohe Backsteinwände, Steinboden, vier Säulen. Oben in der Mitte die große Bahnhofsuhr, darunter Harlans Bank; links die Fahrplantafel nach Cedar Creek, rechts die Tür zum Bahnsteig mit Netzplan. Links oben der Zeitungsstand mit zwei Regalen und Pops' Ladentisch mit Kasse, links unten der Fahrkartenschalter mit Schalterfenster und Tresen. Rechts drei Reihen Wartebänke, daneben ein Wasserspender und ein vergessener Koffer; an der Ostwand Getränke- und Kaffeeautomat nebeneinander, der Gepäckwagen. Pflanzen stehen gleichmäßig an den Säulen. Unten die Glastür mit Fußmatte.",
   "wand": "backstein",
   "boden": "stein",
   "raster": [
@@ -71,16 +71,6 @@
       "auf": "kiosk"
     },
     {
-      "moebel": "rv5SchalterLinks",
-      "feld": [2, 10],
-      "bauteil_ok": true
-    },
-    {
-      "moebel": "rv5SchalterRechts",
-      "feld": [4, 10],
-      "bauteil_ok": true
-    },
-    {
       "moebel": "rv5Netzplan",
       "feld": [16, 1],
       "an_wand": true
@@ -102,20 +92,8 @@
       "feld": [20, 9]
     },
     {
-      "moebel": "rv5Spind",
-      "feld": [1, 12]
-    },
-    {
-      "moebel": "rv5Spind",
-      "feld": [3, 12]
-    },
-    {
-      "moebel": "rv5Spind",
-      "feld": [5, 12]
-    },
-    {
       "moebel": "rv5Muelleimer",
-      "feld": [15, 8]
+      "feld": [15, 4]
     },
     {
       "moebel": "rv5Saeule",
@@ -128,10 +106,6 @@
     {
       "moebel": "rv5Saeule",
       "feld": [20, 4]
-    },
-    {
-      "moebel": "rv5Vitrine",
-      "feld": [21, 12]
     },
     {
       "moebel": "rv5Koffer",
@@ -147,15 +121,11 @@
     },
     {
       "moebel": "rv5Koffer",
-      "feld": [24, 7]
+      "feld": [15, 10]
     },
     {
       "moebel": "rv5Getraenkeautomat",
-      "feld": [23, 11]
-    },
-    {
-      "moebel": "rv5Topfpflanze",
-      "feld": [21, 8]
+      "feld": [21, 3]
     },
     {
       "moebel": "mf4Fussmatte",
@@ -166,6 +136,26 @@
       "moebel": "rv5TuerSuedGlas",
       "feld": [13, 15],
       "an_wand": true
+    },
+    {
+      "moebel": "rv8Fahrkartenschalter",
+      "feld": [1, 10]
+    },
+    {
+      "moebel": "rv5Topfpflanze",
+      "feld": [8, 4]
+    },
+    {
+      "moebel": "rv5Topfpflanze",
+      "feld": [19, 4]
+    },
+    {
+      "moebel": "rv5Topfpflanze",
+      "feld": [8, 13]
+    },
+    {
+      "moebel": "rv5Topfpflanze",
+      "feld": [19, 13]
     }
   ],
   "ausloeser": [
@@ -220,7 +210,7 @@
       "feld": [13, 12],
       "eigenschaften": {
         "von": "13,12",
-        "bis": "19,4",
+        "bis": "18,4",
         "tun": "zieht einen Koffer zum Bahnsteig",
         "sagt": "statist.riverton.bahnhofshalle.reisende"
       }

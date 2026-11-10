@@ -769,10 +769,10 @@ Behoben (Gutachten `docs/spiel/auftraege/gutachten/riverton-aussen.md`, Nummern 
   Café und Lagerhäuser stehen auf Pflaster; die Brückenstraße ist Fußgängerzone und endet am
   gepflasterten Brückenkopf im Park.
 - **Fluss, Kai, Kanal (23–31):** Nordufer als gerade Kaimauer mit drei Reihen Promenade, vier Bänken
-  mit Blick aufs Wasser und Laternen in festen Abständen. Am Kai im Osten ein Kran, Kisten, Fässer,
-  Poller mit Tau, ein Boot am Kai und der Gabelstaplerfahrer bei der Arbeit; das Pegelhaus steht am
+  mit Blick aufs Wasser und Laternen in festen Abständen. Am Kai im Osten Kisten, Fässer,
+  Poller mit Tau, ein Motorboot am Kai (5 × 2 Kacheln, 10.64) und der Gabelstaplerfahrer bei der Arbeit; das Pegelhaus steht am
   Ende des Kais direkt am Wasser. Das Südufer schwingt aus. Der Kanal und sein Becken haben Steinufer
-  und laufen gerade nach Süden; der Treidelpfad läuft einfach neben dem Steinrand. Die Brücke wirft
+  und laufen gerade nach Süden, der Kanal mit 7 Kacheln Wasser für Frachtkähne (10.64); der Treidelpfad läuft einfach neben dem Steinrand. Die Brücke wirft
   einen Schatten aufs Wasser.
 - **Park (32–40):** Bäume, Büsche, drei Laternen am Uferweg. Die Bildschirmtische stehen unter drei
   Holzdächern (Regen); der Pavillon hat ein Holzdach; der Platz davor ist zwei Reihen tief. Der
@@ -794,6 +794,8 @@ Begründet nicht geändert:
   geschlossen (Bibel 9.2) und behält ihr Schaufenster.
 - (37) Der Pavillon ist außen ein Holzdach auf Stützen; innen hat er Wände und Fenster (Planen und
   Holzwände sind in der Draufsicht nicht darstellbar).
+- 10.64: Der kleine Portalkran am Kai ist weg (ein Portalkran wäre 10–14 Kacheln hoch und passt nicht
+  an einen Flusskai); dafür ein Bahnwärterhäuschen östlich des Güterschuppens (10.51, 20 Gebäude).
 - (42) Reihenhaus und Lagerhaus stehen je zweimal nebeneinander als Paar (Punkt 25: höchstens zweimal).
 
 ## 4. Bühnenbilder

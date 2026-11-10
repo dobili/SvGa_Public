@@ -2,7 +2,7 @@
   "karte": "siliconBay.hafen",
   "datei": "karten/silicon-bay-hafen.json",
   "art": "aussen",
-  "beschreibung": "Der alte Hafen von Silicon Bay unterhalb der Terrasse des Campus. Von der Treppe in der Mitte kommt man auf die Hafenstraße. Oben die alten Häuser: die Fischhalle, ein Laden, Ames leerer Kurzwarenladen mit dem Schild „Bald geöffnet“ und die Hafenmeisterei. Am Südrand der Straße Laternen in festen Abständen, am Kai ein Gemüsekarren mit Händlerin. Links das Fährhäuschen, davor am Kai die Küstenfähre, viel größer als die Ruderboote. In der Mitte Ladebetrieb am Kutter: Kisten und Fässer in Reihen, Hafenarbeiter tragen sie zur Kaikante. Bänke mit Blick aufs Wasser, Poller an der Kaikante. Rechts der Steg der Inselfähre und der rot-weiße Leuchtturm auf einer Landzunge, zu dessen Tür ein Weg um den Turm führt.",
+  "beschreibung": "Der alte Hafen von Silicon Bay unterhalb der Terrasse des Campus. Von der Treppe in der Mitte kommt man auf die Hafenstraße. Oben die alten Häuser: die Fischhalle, ein Laden, Ames leerer Kurzwarenladen mit dem Schild „Bald geöffnet“ und die Hafenmeisterei. Am Südrand der Straße Laternen in festen Abständen, am Kai ein Gemüsekarren mit Händlerin. Links das Fährhäuschen, davor am Kai die Küstenfähre, 18 Kacheln lang, dreimal so lang wie das Fischerboot. In der Mitte Ladebetrieb am kleinen Fischerboot: Kisten und Fässer in Reihen, Hafenarbeiter tragen sie zur Kaikante. Bänke mit Blick aufs Wasser, Poller an der Kaikante. Rechts der Steg der Inselfähre und der rot-weiße Leuchtturm auf einer Landzunge, zu dessen Tür ein Weg um den Turm führt.",
   "boden": "pflaster",
   "wandart": "stein",
   "ufer": "stein",
@@ -414,7 +414,7 @@
       "eigenschaften": {
         "von": "20,28",
         "bis": "30,28",
-        "tun": "trägt Kisten zum Kutter",
+        "tun": "trägt Kisten zum Fischerboot",
         "wann": "tag"
       }
     },
@@ -436,7 +436,7 @@
       "eigenschaften": {
         "von": "29,30",
         "bis": "31,30",
-        "tun": "nimmt die Kisten auf dem Kutter an",
+        "tun": "nimmt die Kisten im Fischerboot an",
         "wann": "tag"
       }
     }

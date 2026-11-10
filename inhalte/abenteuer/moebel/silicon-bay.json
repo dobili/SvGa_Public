@@ -1742,8 +1742,8 @@
     },
     "sb8Faehre": {
       "quelle": "spiel/eigene/hafen_faehre.png",
-      "breite": 224,
-      "hoehe": 80,
+      "breite": 288,
+      "hoehe": 96,
       "kollision": false,
       "art": "fahrzeug",
       "zustand": "gebraucht",

@@ -2368,6 +2368,8 @@
       "breite": 80,
       "hoehe": 16,
       "kollision": false,
+      "begehbar": true,
+      "begehbar_grund": "hängt an der Fassade",
       "art": "schild",
       "zustand": "neu",
       "stil": "modern"
@@ -2377,6 +2379,8 @@
       "breite": 56,
       "hoehe": 16,
       "kollision": false,
+      "begehbar": true,
+      "begehbar_grund": "hängt an der Fassade",
       "art": "schild",
       "zustand": "gebraucht",
       "stil": "modern"
@@ -2386,6 +2390,8 @@
       "breite": 88,
       "hoehe": 16,
       "kollision": false,
+      "begehbar": true,
+      "begehbar_grund": "hängt an der Fassade",
       "art": "schild",
       "zustand": "gebraucht",
       "stil": "modern"
@@ -2395,6 +2401,8 @@
       "breite": 72,
       "hoehe": 16,
       "kollision": false,
+      "begehbar": true,
+      "begehbar_grund": "hängt an der Fassade",
       "art": "schild",
       "zustand": "gebraucht",
       "stil": "modern"

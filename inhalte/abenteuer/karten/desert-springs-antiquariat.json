@@ -11,7 +11,7 @@
  "tilewidth": 16,
  "tileheight": 16,
  "nextlayerid": 5,
- "nextobjectid": 31,
+ "nextobjectid": 32,
  "layers": [
   {
    "id": 1,
@@ -935,8 +935,8 @@
      "id": 3,
      "name": "okoro",
      "type": "figur",
-     "x": 272,
-     "y": 128,
+     "x": 256,
+     "y": 80,
      "width": 16,
      "height": 16,
      "rotation": 0,
@@ -1046,7 +1046,7 @@
      "name": "cc5Fussmatte",
      "type": "moebel",
      "x": 160,
-     "y": 200,
+     "y": 196,
      "width": 16,
      "height": 16,
      "rotation": 0,
@@ -1227,29 +1227,6 @@
     },
     {
      "id": 15,
-     "name": "rv5Bahnhofsuhr",
-     "type": "moebel",
-     "x": 176,
-     "y": 20,
-     "width": 32,
-     "height": 32,
-     "rotation": 0,
-     "visible": true,
-     "properties": [
-      {
-       "name": "tiefe",
-       "type": "int",
-       "value": 0
-      },
-      {
-       "name": "kollision",
-       "type": "bool",
-       "value": false
-      }
-     ]
-    },
-    {
-     "id": 16,
      "name": "cc6RegalSeiteHell",
      "type": "moebel",
      "x": 16,
@@ -1272,7 +1249,7 @@
      ]
     },
     {
-     "id": 17,
+     "id": 16,
      "name": "cc6RegalSeiteDunkel",
      "type": "moebel",
      "x": 16,
@@ -1295,7 +1272,7 @@
      ]
     },
     {
-     "id": 18,
+     "id": 17,
      "name": "cc6RegalSeiteGrau",
      "type": "moebel",
      "x": 288,
@@ -1318,10 +1295,33 @@
      ]
     },
     {
-     "id": 19,
+     "id": 18,
      "name": "cc4RegalD",
      "type": "moebel",
      "x": 64,
+     "y": 64,
+     "width": 32,
+     "height": 48,
+     "rotation": 0,
+     "visible": true,
+     "properties": [
+      {
+       "name": "tiefe",
+       "type": "int",
+       "value": 104
+      },
+      {
+       "name": "kollision",
+       "type": "bool",
+       "value": true
+      }
+     ]
+    },
+    {
+     "id": 19,
+     "name": "cc4RegalD",
+     "type": "moebel",
+     "x": 96,
      "y": 64,
      "width": 32,
      "height": 48,
@@ -1342,29 +1342,6 @@
     },
     {
      "id": 20,
-     "name": "cc4RegalD",
-     "type": "moebel",
-     "x": 96,
-     "y": 64,
-     "width": 32,
-     "height": 48,
-     "rotation": 0,
-     "visible": true,
-     "properties": [
-      {
-       "name": "tiefe",
-       "type": "int",
-       "value": 104
-      },
-      {
-       "name": "kollision",
-       "type": "bool",
-       "value": true
-      }
-     ]
-    },
-    {
-     "id": 21,
      "name": "cc4RegalB",
      "type": "moebel",
      "x": 64,
@@ -1387,7 +1364,7 @@
      ]
     },
     {
-     "id": 22,
+     "id": 21,
      "name": "cc4RegalB",
      "type": "moebel",
      "x": 96,
@@ -1410,7 +1387,7 @@
      ]
     },
     {
-     "id": 23,
+     "id": 22,
      "name": "cc5Tisch",
      "type": "moebel",
      "x": 160,
@@ -1433,7 +1410,7 @@
      ]
     },
     {
-     "id": 24,
+     "id": 23,
      "name": "cc4Leselampe",
      "type": "moebel",
      "x": 174,
@@ -1456,7 +1433,7 @@
      ]
     },
     {
-     "id": 25,
+     "id": 24,
      "name": "cc4StuhlVorn",
      "type": "moebel",
      "x": 160,
@@ -1479,20 +1456,43 @@
      ]
     },
     {
-     "id": 26,
-     "name": "cc4Tresen",
+     "id": 25,
+     "name": "mfc9Wanduhr",
      "type": "moebel",
-     "x": 240,
-     "y": 96,
-     "width": 32,
-     "height": 48,
+     "x": 184,
+     "y": 22,
+     "width": 16,
+     "height": 16,
      "rotation": 0,
      "visible": true,
      "properties": [
       {
        "name": "tiefe",
        "type": "int",
-       "value": 136
+       "value": 0
+      },
+      {
+       "name": "kollision",
+       "type": "bool",
+       "value": false
+      }
+     ]
+    },
+    {
+     "id": 26,
+     "name": "iw8Theke4",
+     "type": "moebel",
+     "x": 224,
+     "y": 96,
+     "width": 64,
+     "height": 32,
+     "rotation": 0,
+     "visible": true,
+     "properties": [
+      {
+       "name": "tiefe",
+       "type": "int",
+       "value": 120
       },
       {
        "name": "kollision",
@@ -1503,12 +1503,35 @@
     },
     {
      "id": 27,
-     "name": "mf4Vitrine",
+     "name": "cc4Kasse",
+     "type": "moebel",
+     "x": 264,
+     "y": 99,
+     "width": 16,
+     "height": 16,
+     "rotation": 0,
+     "visible": true,
+     "properties": [
+      {
+       "name": "tiefe",
+       "type": "int",
+       "value": 121
+      },
+      {
+       "name": "kollision",
+       "type": "bool",
+       "value": false
+      }
+     ]
+    },
+    {
+     "id": 28,
+     "name": "iw8VitrineB",
      "type": "moebel",
      "x": 240,
-     "y": 144,
+     "y": 128,
      "width": 32,
-     "height": 32,
+     "height": 48,
      "rotation": 0,
      "visible": true,
      "properties": [
@@ -1525,34 +1548,11 @@
      ]
     },
     {
-     "id": 28,
-     "name": "cc4KartonOffen",
+     "id": 29,
+     "name": "mf4Luke",
      "type": "moebel",
      "x": 32,
-     "y": 160,
-     "width": 32,
-     "height": 32,
-     "rotation": 0,
-     "visible": true,
-     "properties": [
-      {
-       "name": "tiefe",
-       "type": "int",
-       "value": 184
-      },
-      {
-       "name": "kollision",
-       "type": "bool",
-       "value": true
-      }
-     ]
-    },
-    {
-     "id": 29,
-     "name": "mf2Zeitungsstapel",
-     "type": "moebel",
-     "x": 128,
-     "y": 144,
+     "y": 128,
      "width": 32,
      "height": 48,
      "rotation": 0,
@@ -1572,10 +1572,33 @@
     },
     {
      "id": 30,
-     "name": "mf4Luke",
+     "name": "cc4KartonOffen",
      "type": "moebel",
-     "x": 192,
-     "y": 112,
+     "x": 32,
+     "y": 80,
+     "width": 32,
+     "height": 32,
+     "rotation": 0,
+     "visible": true,
+     "properties": [
+      {
+       "name": "tiefe",
+       "type": "int",
+       "value": 104
+      },
+      {
+       "name": "kollision",
+       "type": "bool",
+       "value": true
+      }
+     ]
+    },
+    {
+     "id": 31,
+     "name": "mf2Zeitungsstapel",
+     "type": "moebel",
+     "x": 48,
+     "y": 96,
      "width": 32,
      "height": 48,
      "rotation": 0,

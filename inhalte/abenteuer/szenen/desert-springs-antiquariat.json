@@ -4,7 +4,7 @@
   "art": "innen",
   "beschreibung": "Das Antiquariat von Mr. Okoro im alten Bahnhof von Desert Springs, 20 × 13 Kacheln, Dielen, Holzwand. An der Nordwand Bücherregale, ein Fenster und die alte Bahnhofsuhr, an den Seitenwänden schmale Regale; in der Mitte zwei Regalreihen und ein Lesetisch mit Lampe. Rechts der Tresen mit Mr. Okoro und eine Vitrine mit alten Fahrkarten, links Kisten mit Briefen, Zeitungsstapel und die Kellerluke. Tür in der Mitte der Südwand.",
   "wand": "holz",
-  "boden": "dielen",
+  "boden": "holzHell",
   "raster": [
     "####################",
     "####################",
@@ -30,7 +30,7 @@
     {
       "moebel": "cc5Fussmatte",
       "feld": [10, 11],
-      "versatz": [0, 24]
+      "versatz": [0, 20]
     },
     {
       "moebel": "cc4RegalA",
@@ -60,12 +60,6 @@
       "moebel": "cc4Fenster",
       "feld": [5, 1],
       "an_wand": true
-    },
-    {
-      "moebel": "rv5Bahnhofsuhr",
-      "feld": [11, 1],
-      "an_wand": true,
-      "versatz": [0, 4]
     },
     {
       "moebel": "cc6RegalSeiteHell",
@@ -112,26 +106,38 @@
       "zu": "lesetisch"
     },
     {
-      "moebel": "cc4Tresen",
-      "feld": [15, 6],
+      "moebel": "mfc9Wanduhr",
+      "feld": [11, 1],
+      "an_wand": true,
+      "versatz": [8, 6]
+    },
+    {
+      "moebel": "iw8Theke4",
+      "feld": [14, 6],
       "id": "tresen"
     },
     {
-      "moebel": "mf4Vitrine",
-      "feld": [15, 9]
+      "moebel": "cc4Kasse",
+      "feld": [0, 0],
+      "auf": "tresen",
+      "versatz": [16, 0]
+    },
+    {
+      "moebel": "iw8VitrineB",
+      "feld": [15, 8]
+    },
+    {
+      "moebel": "mf4Luke",
+      "feld": [2, 8]
     },
     {
       "moebel": "cc4KartonOffen",
-      "feld": [2, 10],
+      "feld": [2, 5],
       "id": "briefkiste"
     },
     {
       "moebel": "mf2Zeitungsstapel",
-      "feld": [8, 9]
-    },
-    {
-      "moebel": "mf4Luke",
-      "feld": [12, 7]
+      "feld": [3, 6]
     }
   ],
   "ausloeser": [
@@ -150,11 +156,11 @@
   "figuren": [
     {
       "name": "okoro",
-      "feld": [17, 8]
+      "feld": [16, 5]
     }
   ],
   "zustand": ["gebraucht", "alt", "neu"],
-  "stil": ["klassisch", "einfach", "rustikal", "modern", "industrie"],
+  "stil": ["klassisch", "einfach", "rustikal", "modern", "industrie", "schule"],
   "belebung": [
     {
       "name": "sammler",

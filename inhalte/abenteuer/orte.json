@@ -3129,6 +3129,9 @@
         {
           "kennung": "desertSprings.antiquariat",
           "datei": "karten/desert-springs-antiquariat.json",
+          "zustaende": {
+            "abschiedGesehen und briefGelesen": "karten/desert-springs-antiquariat-leihgabe.json"
+          },
           "name": "ort.desertSprings.antiquariat",
           "innen": true
         }

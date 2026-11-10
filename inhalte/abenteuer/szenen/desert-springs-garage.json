@@ -29,7 +29,7 @@
     {
       "moebel": "cc5Fussmatte",
       "feld": [9, 10],
-      "versatz": [0, 24]
+      "versatz": [0, 20]
     },
     {
       "moebel": "cc4Fenster",
@@ -42,12 +42,8 @@
       "an_wand": true
     },
     {
-      "moebel": "cc7Werkbank",
-      "feld": [1, 2]
-    },
-    {
       "moebel": "mf4RegalNiedrig",
-      "feld": [3, 1],
+      "feld": [4, 1],
       "id": "regal"
     },
     {
@@ -56,20 +52,8 @@
       "auf": "regal"
     },
     {
-      "moebel": "cc4Werktisch",
-      "feld": [14, 2]
-    },
-    {
       "moebel": "iw5AutoA",
       "feld": [1, 5]
-    },
-    {
-      "moebel": "iwFass",
-      "feld": [4, 9]
-    },
-    {
-      "moebel": "iwFass",
-      "feld": [1, 9]
     },
     {
       "moebel": "cc6TischHell",
@@ -117,6 +101,38 @@
     {
       "moebel": "iw5Kisten",
       "feld": [12, 9]
+    },
+    {
+      "moebel": "cc4Werktisch",
+      "feld": [1, 2]
+    },
+    {
+      "moebel": "rv5Werkzeugschrank",
+      "feld": [15, 2]
+    },
+    {
+      "moebel": "rv8Werkzeugkiste",
+      "feld": [3, 7]
+    },
+    {
+      "moebel": "pd6Kanister",
+      "feld": [3, 9]
+    },
+    {
+      "moebel": "iwFass",
+      "feld": [1, 10]
+    },
+    {
+      "moebel": "iwFass",
+      "feld": [2, 10]
+    },
+    {
+      "moebel": "rv5ReifenLiegend",
+      "feld": [16, 7]
+    },
+    {
+      "moebel": "rv5ReifenLiegend",
+      "feld": [16, 8]
     }
   ],
   "ausloeser": [

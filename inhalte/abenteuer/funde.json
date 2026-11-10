@@ -243,6 +243,36 @@
       "ort": "portDelacroix",
       "name": "fund.setliste960.name",
       "text": "fund.setliste960.text"
+    },
+    {
+      "kennung": "finchKarte",
+      "ort": "wegMapleCedar",
+      "name": "fund.finchKarte.name",
+      "text": "fund.finchKarte.text"
+    },
+    {
+      "kennung": "problemheft",
+      "ort": "wegMapleCedar",
+      "name": "fund.problemheft.name",
+      "text": "fund.problemheft.text"
+    },
+    {
+      "kennung": "seite00",
+      "ort": "wegMapleCedar",
+      "name": "fund.seite00.name",
+      "text": "fund.seite00.text"
+    },
+    {
+      "kennung": "finchBauerA",
+      "ort": "wegMapleCedar",
+      "name": "fund.finchBauerA.name",
+      "text": "fund.finchBauerA.text"
+    },
+    {
+      "kennung": "initialen1952",
+      "ort": "mapleFalls",
+      "name": "fund.initialen1952.name",
+      "text": "fund.initialen1952.text"
     }
   ]
 }

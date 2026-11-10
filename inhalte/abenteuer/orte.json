@@ -277,7 +277,15 @@
           "ziel": {
             "karte": "wegMapleCedar.zedernpfad",
             "ausloeser": "zedernZurueckPark"
-          }
+          },
+          "wenn": "nadelCedarCreek",
+          "dialog": "maple-falls-park.stamm_s2"
+        },
+        {
+          "name": "steg",
+          "karte": "mapleFalls.park",
+          "art": "gegenstand",
+          "dialog": "maple-falls-park.steg"
         }
       ],
       "club": {
@@ -594,14 +602,14 @@
         },
         {
           "kennung": "wegMapleCedar.flussweg",
-          "datei": "karten/weg-maple-cedar-2.json",
+          "datei": "karten/weg-maple-cedar-flussweg.json",
           "name": "ort.wegMapleCedar.flussweg",
           "innen": false,
           "musik": "musik/landstrasse.ogg"
         },
         {
           "kennung": "wegMapleCedar.zedernpfad",
-          "datei": "karten/weg-maple-cedar-3.json",
+          "datei": "karten/weg-maple-cedar-zedernpfad.json",
           "name": "ort.wegMapleCedar.zedernpfad",
           "innen": false,
           "musik": "musik/landstrasse.ogg"
@@ -691,7 +699,9 @@
           "ziel": {
             "karte": "mapleFalls.park",
             "ausloeser": "zedernpfad"
-          }
+          },
+          "wenn": "nadelCedarCreek",
+          "dialog": "weg-maple-cedar.stamm_s2"
         },
         {
           "name": "zedernWeiterCedar",
@@ -707,7 +717,27 @@
           "ziel": {
             "karte": "kuerbishof.hof",
             "ausloeser": "zurueckLandstrasse"
-          }
+          },
+          "wenn": "wegMapleCedarTafelBestanden",
+          "dialog": "weg-maple-cedar.gatter_s1"
+        },
+        {
+          "name": "ereignisFlohmarkt",
+          "karte": "wegMapleCedar.landstrasse",
+          "art": "dialog",
+          "dialog": "weg-maple-cedar.ereignis_flohmarkt"
+        },
+        {
+          "name": "seite00",
+          "karte": "wegMapleCedar.landstrasse",
+          "art": "gegenstand",
+          "dialog": "weg-maple-cedar.fund_seite00"
+        },
+        {
+          "name": "finchBauerA",
+          "karte": "wegMapleCedar.flussweg",
+          "art": "gegenstand",
+          "dialog": "weg-maple-cedar.fund_finch_bauer_a"
         }
       ]
     },

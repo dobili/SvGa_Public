@@ -1107,7 +1107,10 @@
       "typ": "begegnung",
       "ort": "ironwood",
       "haupt": false,
-      "start": { "art": "ort", "karte": "ironwood.mamasZimmer" },
+      "start": {
+        "art": "ort",
+        "karte": "ironwood.mamasZimmer"
+      },
       "schritte": [
         {
           "text": "quest.turnierheft.schritt1",
@@ -2409,6 +2412,33 @@
               "anzahl": 30
             }
           ]
+        }
+      ]
+    },
+    {
+      "kennung": "wegMapleCedar.flohmarkt",
+      "titel": "quest.flohmarkt.titel",
+      "typ": "raetsel",
+      "ort": "wegMapleCedar",
+      "haupt": false,
+      "start": {
+        "art": "dialog",
+        "knoten": "weg-maple-cedar.flohmarkt_angebot"
+      },
+      "schritte": [
+        {
+          "text": "quest.flohmarkt.schritt1",
+          "ereignis": {
+            "art": "aufgaben",
+            "runde": "wegMapleCedar.finchFallen"
+          }
+        },
+        {
+          "text": "quest.flohmarkt.schritt2",
+          "ereignis": {
+            "art": "dialog",
+            "knoten": "weg-maple-cedar.flohmarkt_karte"
+          }
         }
       ]
     }

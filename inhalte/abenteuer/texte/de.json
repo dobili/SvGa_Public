@@ -1309,5 +1309,19 @@
   "fehler.paket.pruefsumme": "Die Spieldatei {pfad} ist beschädigt. Bitte das Spiel neu laden.",
   "fehler.paket.ohneSpeicher": "Dieser Browser hat keinen Speicher für das Spielpaket.",
   "fehler.paket.datei": "Die Spieldatei {pfad} fehlt ({status}).",
-  "fehler.welt.karteFehlt": "Die Karte {karte} gibt es im Spiel nicht."
+  "fehler.welt.karteFehlt": "Die Karte {karte} gibt es im Spiel nicht.",
+  "figur.odette.name": "Odette Finch",
+  "fund.finchKarte.name": "Karte der Finch-Jagd",
+  "fund.finchKarte.text": "Eine Karte mit sechzehn leeren Kästchen von Odette Finch. Sechzehn weiße Figuren aus Buchsbaum liegen an den Wegen, jede mit ihrem Feld unter dem Fuß.",
+  "fund.problemheft.name": "Problemheft von Odette Finch",
+  "fund.problemheft.text": "Ein dünnes Heft mit drei „Finchs Fallen“ für unterwegs, für fünfzig Cent vom Flohmarkt an der Landstraße.",
+  "fund.seite00.name": "Buchseite: Kapitel 0",
+  "fund.seite00.text": "Eine Seite aus einem Handbuch, Kapitel 0: „Dein Einstieg ins Schachbuch“. Gefunden im Graben an der Landstraße.",
+  "fund.finchBauerA.name": "Finchs Bauer A",
+  "fund.finchBauerA.text": "Ein weißer Bauer aus Buchsbaum, unter der Bank am Steg des Flusswegs. Unter dem Fuß ist ein Feld eingebrannt.",
+  "fund.initialen1952.name": "Initialen im Geländer",
+  "fund.initialen1952.text": "Am neuen Steg im Park von Maple Falls ist ins alte Geländer geritzt: „M. W. + E. C. 1952“.",
+  "quest.flohmarkt.titel": "Finchs Fallen",
+  "quest.flohmarkt.schritt1": "Löse die drei Fallen von Odette Finch auf dem Flohmarkt an der Landstraße.",
+  "quest.flohmarkt.schritt2": "Hol dir bei Odette die Karte der Finch-Jagd ab."
 }

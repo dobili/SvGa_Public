@@ -401,6 +401,15 @@
       "buchuebungen": [],
       "themen": ["matt2"],
       "anzahl": 3
+    },
+    {
+      "kennung": "wegMapleCedar.finchFallen",
+      "ort": "wegMapleCedar",
+      "steller": "wegMapleCedar.odette",
+      "reihe": false,
+      "buchuebungen": [],
+      "themen": ["matt1"],
+      "anzahl": 3
     }
   ]
 }

@@ -94,7 +94,18 @@ springt nach Norden eine **Aussichtsplattform** vor (**Abzweig 3**, 66–74 / 5�
 Laufzeit: etwa 155 Kacheln mit den Kehren, 44 s. Ränder: Autobahn nach Nord und Süd unter der Brücke
 (kein Weg hinunter), Böschung und Lärmschutzwand an den Rändern, nur Ost- und Westende offen.
 
-### 1.3 Silicon Bay, Campus (`siliconBay.aussen`, 72 × 52)
+### 1.3 Silicon Bay, Campus (`siliconBay.aussen`, 72 × 60 seit Runde 7)
+
+**Runde 7 (Regel 10.51, mittel-3, 10.11.2026):** Die Karte ist um acht Reihen nach Süden gewachsen.
+Alles ab Reihe 47 liegt jetzt acht Reihen tiefer: Terrasse 55–59, Glasbrüstung in Reihe 56, Treppe
+zum Hafen 32–35 / 55–59, Auslöser `hafen` in Reihe 59. In den neuen Reihen 47–54 steht die
+**Uferzeile**: zwölf Kulissenhäuser (`sb8Markt1` bis `sb8Markt12`, „Market Small“) dicht an dicht,
+Türen zur Terrasse; die Spalten 31–36 bleiben als Weg zur Treppe frei. In der Nordzeile füllen zwei
+schmale Wohnhäuser (`sb8Condo51` bis `sb8Condo53`) die Lücken neben Konzernturm und Werbetafeln, in C
+dazu ein Wohnhaus am Platz. Jede Variante hat damit mindestens 20 Gebäude. Belebung: 12 Statisten
+(acht mit Satz, `statist.siliconBay.aussen.*`) und als „Tiere“ nur Maschinen, wie es die
+Weltbeschreibung will (Lieferroboter, Drohne, Staubsaugerroboter, Roboterhund, Fensterputzdrohne).
+Die Koordinaten der Tabellen unten gelten für die Reihen bis 46 weiter; darunter plus acht.
 
 Abschnitte zu je 18 Spalten × etwa 17 Reihen (A bis D, 1 bis 3), zwölf Abschnitte.
 

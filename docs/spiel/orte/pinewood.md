@@ -176,6 +176,32 @@ klappert ein Blech. Die Farben werden blass.
 4. **Ränder abgestimmt:** crossroads.aussen `wegPinewood` am Westrand 14–15 (mittel-3, 9.11.2026);
    ghostTown.aussen `wegPinewood` am Westrand 14–15 ist niedrig-1 vorgeschlagen.
 
+### 3.4 Runde 7: Ereignisorte und Belebung auf Weg 9 (mittel-3, 10.11.2026)
+
+**Lebendschach (Dokument 15, 2.11)** in `riesenbaeume`: eine Lichtung neben dem Weg mit einem
+Rasenbrett 8 × 8 aus Gras und Kies, einer Holztribüne (`n6Tribuene`) im Norden und vier Masten an
+den Ecken (`n6Lichtermast`, Ersatz bis `fahne_lebendschach.png`). Lichtung links oben: A (28, 79),
+B (18, 71), C (8, 85).
+
+**Holzfällerhütte (K4)** in `huetten`: Hütte `sc7FerienhuetteB` mit Holzstapel und Trampelpfad zum
+Weg; an ihrer Wand kommt der Kreidespringer (`kreidespringer.png`, bestellt). Hütte links oben:
+A (96, 3), B (30, 3), C (38, 3).
+
+Felder für Runde 6 (frei begehbar):
+
+| Auslöser               | A         | B        | C        | Ort                                    |
+| ---------------------- | --------- | -------- | -------- | -------------------------------------- |
+| `ereignisLebendschach` | (38, 85)  | (28, 77) | (18, 91) | riesenbaeume, Rand der Lichtung        |
+| `seite10`              | (24, 106) | (16, 68) | (17, 18) | riesenbaeume, am Fuß eines Mammutbaums |
+| `kreide4`              | (100, 8)  | (34, 8)  | (42, 8)  | huetten, vor der Wand der Hütte        |
+
+**Belebung (Regel 10.53):** je Karte vier ansprechbare Statisten und sechs Tiere, in A, B, C
+dieselben. Hütten (`statist.wegCrossroadsPinewood.huetten.*`): Wanderer, Holzfäller, Pilzsammlerin,
+Vogelkundler (Spechte); Eichhörnchen, Reh, Hase, Waschbär, Eichelhäher, Specht. Riesenbäume
+(`….riesenbaeume.*`): Pfadfinderin, Junge mit dem Eichhörnchen (es trägt einen schwarzen Bauern aus
+dem Camp, Dokument 16, 5.3), Betreuerin, Fotografin; Libellen, Specht, Eichhörnchen,
+Streifenhörnchen, Eule, Reh.
+
 ## 4. Bühnenbilder
 
 ### 4.1 Hütten

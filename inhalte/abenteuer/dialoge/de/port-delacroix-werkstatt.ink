@@ -75,10 +75,10 @@ Hinten in der Werkstatt sitzt ein Mädchen mit Kopfhörern auf einer Werkbank un
 Céleste nimmt die Kopfhörer ab und zeigt auf deinen Rucksack. #sprecher:erzaehler
 Schach ist was für alte Leute. Aber das Brett da sieht cool aus. #sprecher:celeste
 Also, ich schieb die Pferde einfach rum, okay? #sprecher:celeste
-* [„Okay. Eine Partie.“]
++ [„Okay. Eine Partie.“]
     ~ beginnePartie("portDelacroix.celeste")
     -> END
-* [„Ein andermal.“]
++ [„Ein andermal.“]
     Kein Stress. Ich bin eh am Mixen. #sprecher:celeste
     -> END
 
@@ -120,10 +120,10 @@ An der alten Werkbank riecht es nach frisch gehobeltem Holz. Zwischen den Späne
 Die Farben werden braun wie ein altes Foto. Ein Junge fegt Späne, ein Mann stellt Figuren aus Resthölzern auf. #sprecher:erzaehler
 Ein Klavier und ein Schachbrett haben eines gemeinsam, Ambrose. Jede Taste, jede Figur muss ihren Platz kennen. #sprecher:erzaehler
 Zwölf Jahre später: Der junge Ambrose ist zurück aus London und spielt seinem Vater und seiner kleinen Schwester eine Partie vor. #sprecher:erzaehler
-* [Die Partie mitspielen]
++ [Die Partie mitspielen]
     ~ beginneAufgaben("portDelacroix.flashbackWerkstatt")
     -> END
-* [Zurück in die Gegenwart]
++ [Zurück in die Gegenwart]
     Die Farben kehren zurück. Henri hobelt, Céleste tippt. #sprecher:erzaehler
     -> END
 

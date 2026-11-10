@@ -149,10 +149,10 @@ Ich auch nicht. Spar dir deine Sprüche. #sprecher:batiste
 
 === batiste_angebot ===
 Eine Stellung, du hast Weiß. Ohne Uhr, das Meer hat auch keine. #sprecher:batiste
-* [„Gut.“]
++ [„Gut.“]
     ~ beginnePartie("portDelacroix.batiste")
     -> END
-* [„Später.“]
++ [„Später.“]
     Ich bin hier. Das Boot auch. #sprecher:batiste
     -> END
 

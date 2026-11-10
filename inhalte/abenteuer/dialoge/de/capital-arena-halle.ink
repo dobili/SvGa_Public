@@ -102,34 +102,34 @@ VAR mappeGezeigt = false
 }
 
 === runde1_spielen ===
-* [„Ich bin bereit.“]
++ [„Ich bin bereit.“]
     ~ beginnePartie("capitalArena.runde1")
     -> END
-* [„Noch einen Moment.“]
++ [„Noch einen Moment.“]
     Natürlich. Die Bretter warten. #sprecher:turnierleiterin
     -> END
 
 === runde2_spielen ===
-* [„Ich bin bereit.“]
++ [„Ich bin bereit.“]
     ~ beginnePartie("capitalArena.runde2")
     -> END
-* [„Noch einen Moment.“]
++ [„Noch einen Moment.“]
     Natürlich. Die Bretter warten. #sprecher:turnierleiterin
     -> END
 
 === runde3_spielen ===
-* [„Ich bin bereit.“]
++ [„Ich bin bereit.“]
     ~ beginnePartie("capitalArena.runde3")
     -> END
-* [„Noch einen Moment.“]
++ [„Noch einen Moment.“]
     Natürlich. Die Bretter warten. #sprecher:turnierleiterin
     -> END
 
 === runde4_spielen ===
-* [„Ich bin bereit.“]
++ [„Ich bin bereit.“]
     ~ beginnePartie("capitalArena.runde4")
     -> END
-* [„Noch einen Moment.“]
++ [„Noch einen Moment.“]
     Natürlich. Die Bretter warten. #sprecher:turnierleiterin
     -> END
 
@@ -193,10 +193,10 @@ Wer ehrlich spielt, hat nichts zu fürchten. Das gilt auch für Erwachsene. #spr
     Halbfinale gegen Kade Sterling. Ein Funkprüfer läuft mit. #sprecher:turnierleiterin
     Ein einziges Mal. Wenn du mich rufst, komme ich. Wenn nicht, schaue ich zu. #sprecher:ambrose #stimmung:friedlich
 }
-* [„Ich bin bereit.“]
++ [„Ich bin bereit.“]
     ~ beginnePartie("capitalArena.halbfinale")
     -> END
-* [„Noch einen Moment.“]
++ [„Noch einen Moment.“]
     -> END
 
 // ---------------------------------------------------------------- Victor: vor dem Finale und Finale
@@ -232,10 +232,10 @@ Ich sage heute nichts. Das Brett gehört euch. #sprecher:ambrose #stimmung:fried
 
 === finale_angebot ===
 Finale auf der Bühne. Keine Karten, keine Sprüche. Nur ihr zwei. #sprecher:turnierleiterin
-* [„Ich bin bereit.“]
++ [„Ich bin bereit.“]
     ~ beginnePartie("capitalArena.finale")
     -> END
-* [„Gleich.“]
++ [„Gleich.“]
     -> END
 
 === nach_dem_finale ===

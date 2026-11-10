@@ -664,6 +664,55 @@ der Story-Bibel und die Wege.
    Brückenwärter, Kiebitz an den Tischen (Washington Square Park, 16 Nr. 36), Vogelbeobachterin
    (Reiher und Fesselung), Joggerin; Tiere Krähen, Möwe, Eidechse, Reiher, Enten, Hase, dazu die Drohne.
 
+### 3.4 Runde 8 (10.11.2026, mittel-3): Notizen des Autors, Antworten, Zustände
+
+**Umgesetzt (Hauptfassungen; B und C bleiben liegen):**
+
+- `riverton.aussen` (A): Bäckerei als ganzes Haus mit Ziegeldach statt flacher Fassade
+  (`rv8Baeckerei`, eigenes Bild aus Dach und Ladengeschoss); Wege zur Tür für Stadthaus, Stellwerk,
+  Wohnhaus und Pegelhaus, der Güterschuppen steht nicht mehr auf dem Pflaster (10.58); Sandwege im
+  Park sind Erdwege mit Rand; Stände mit Obst- und Gemüsekörben, Obstkarren mit Ware, Pommeskarren,
+  an jedem jemand (10.59); Bildschirmtische als Picknicktische mit aufgeklappten Laptops (10.60);
+  Laternen in festen Abständen; Wasserturm mit Trampelpfad. Tiere im Wasser: nur die Enten
+  (`schwimmen`), Möwen fliegen über der Promenade.
+- `riverton.bahnhofshalle` (A): echter Fahrkartenschalter (Tresen mit Schalterfenstern) statt Holztisch
+  mit Kasse und abgeschnittenem Ticket-Bild; Getränke- und Kaffeeautomat nebeneinander; Wasserspender
+  neben der Sitzreihe; Gepäck neben den Bänken; Pflanzen symmetrisch an den Säulen; Taube bleibt.
+- `riverton.pavillon` (A): 20 × 17 (Clubhaus mit langer Geschichte, 10.56); vier lange rechteckige
+  Tische mit je zwei Brettern nebeneinander; in der Mitte ein Bodenschachbrett aus hellen und dunklen
+  Fliesen (das Wahrzeichen des Clubs), Bank davor.
+- `riverton.wohnwagen` (A): 17 × 8 nach dem Grundriss eines Reisewohnwagens: Bett im Heck (links),
+  Nasszelle mit Mini-Toilette und Waschbecken, Küchenzeile mit Spüle, Herd und Kühlschrank gegenüber
+  der Tür, Sitzecke mit Klapptisch im Bug (rechts), Regal mit den Dosentrophäen.
+- `riverton.schuppen` (C ist jetzt Hauptfassung): keine Notiz; Kennzeichen `variante` entfernt, damit
+  das Spiel das Hintergrundbild bekommt. Größe 10 × 8 passt zum kleinen Schuppen außen.
+
+**Antworten auf die Fragen des Autors:**
+
+- Wasserturm: Er hat eine Geschichte in der Welt, keine in der Handlung. Es ist der Wasserturm der
+  Bahn, aus dem früher die Dampfloks am Bahnhof Wasser nahmen; heute Landmarke mit Tauben auf dem
+  Tank (2.3). Deshalb steht er neben den Gleisen und hat jetzt einen Trampelpfad vom Gehweg
+  (Bahnpersonal). Einen Zaun bekommt er nicht, der Pfad genügt.
+- Kleiner blau-grauer Tisch im Pavillon: der Getränketisch `rv5Limonade` mit dem Limonadenglas
+  (Auslöser `limonadenglas`), nur Deko.
+
+**Zustände (Liste für die Zustandsszenen, gebaut wird nach der Meldung von mittel-2):**
+
+| Karte                    | Zustand (`<basis>-<zustand>.json`) | wann                                       | was sich ändert                                                                           |
+| ------------------------ | ---------------------------------- | ------------------------------------------ | ----------------------------------------------------------------------------------------- |
+| `riverton.aussen`        | Grundfassung                       | Akt 2 bis Szene 37                         | Regen, Pfützen (Tönung und Partikel), Schuppen mit Vorhängeschloss                        |
+| `riverton.aussen`        | `schuppenOffen`                    | nach Szene 33 (Schlüssel, E4)              | Vorhängeschloss weg, Schuppentür angelehnt                                                |
+| `riverton.aussen`        | `trainingszentrum`                 | nach Szene 37                              | Gitter vor der Pavillontreppe, Schild „Trainingszentrum – demnächst“, Banner Perfect Move |
+| `riverton.aussen`        | `winter`                           | Akt 3                                      | Bildschirmtische verschneit, zwei kaputt; Eiszapfen am Anleger (Fund)                     |
+| `riverton.aussen`        | `unterschriften`                   | Akt 4                                      | Bildschirmtische abgedeckt; Tisch für Slicks Unterschriftenliste vor dem Pavillon         |
+| `riverton.aussen`        | `nachspiel`                        | nach dem Abspann                           | Bildschirmtische weg, Wiese wieder frei                                                   |
+| `riverton.aussen`        | Objekt mit `wenn`                  | nach L3                                    | Lastkahn am Anleger (kein eigenes Bild nötig)                                             |
+| `riverton.bahnhofshalle` | `slickAufDerBank`                  | Akt 3                                      | Slick spielt auf der Bank weiter, Brett neben ihm                                         |
+| `riverton.bahnhofshalle` | `plakat`                           | Akt 4                                      | Plakat der Landesmeisterschaft an der freien Wand                                         |
+| `riverton.pavillon`      | `perfectMove`                      | nach Szene 37                              | Bildschirmtische auf den langen Tischen, Bretter in Kisten                                |
+| `riverton.wohnwagen`     | –                                  | nur Szene 37                               | keiner                                                                                    |
+| `riverton.schuppen`      | `ohneFahrrad`                      | nach Szene 33, wenn das Fahrrad geholt ist | Plane liegt leer auf dem Boden, Fahrrad fehlt                                             |
+
 ## 4. Bühnenbilder
 
 Je Karte Größe, Wände, Böden, Laufwege, Zonen und Inventar. Feld = linke obere Kachel. Möbel und Bilder
@@ -1017,6 +1066,53 @@ sie in seinem Dialog). Imogen, Ruben und Henrik stehen als Statisten ohne Satz a
 liegt das Ruderboot neu bei (21, 18). Statt der Pumpe steht ein Dorfbrunnen mit Kurbel (`lp6Brunnen`, Modern Farm) bei (30, 36), Auslöser
 `pumpe` (31, 36), in allen drei Varianten. Die Glocke (`lp6Glocke`, eigenes Bild `glocke_pfosten.png`) hängt am Nordufer, Auslöser `glocke` davor auf der Uferstraße bei A (46, 10), B (44, 10), C (37, 10). **Offen:** die Schnellreise mit dem Lastkahn (`reise`) braucht Anleger in Riverton und
 Ironwood.
+
+## Runde 8 (10.11.2026): Lockport und Weg 2 nach den Notizen des Autors, Zustände (niedrig-1)
+
+**Lockport außen** (Hauptfassung A, jetzt 56 × 51):
+
+- Schleuse für Frachtkähne (10.57): Kammer 10 Kacheln lang (Spalten 32–41), Kammer und Seitenarm
+  5 Reihen Wasser (14–18) mit Steinufer; Untertor (30–31) und Obertor (42–43) tragen je einen Steg.
+- Platz unter der Schleuse durchgehend gepflastert; der Bootsschuppen steht auf einem gepflasterten
+  Werftplatz (44–54 / 20–24); das Schild „Zur Schleuse“ hängt über den Fenstern, nicht vor der Tür.
+- Statt der Scheune ein Schiffsausrüster (`ca8Eisenwaren`) an der Hauptstraße; im Süden eine zweite
+  Häuserreihe (fünf Häuser und ein Laden) an einer Hintergasse, Bäume am Südrand.
+- Sperre S3 bleibt dicht (Zäune an beiden Toren und am Westufer, geprüft mit Breitensuche).
+
+**Gasthaus** (Hauptfassung, früher C) nach 10.56 auf 30 × 14: Kegelbahn links an der Nordwand mit
+Bande und Kugelregal am Abwurf, getrennt von der Theke rechts; Hocker direkt am Tresen; das Rohr unter
+dem Stuhl ist weg.
+
+**Bahndamm** (Hauptfassung, früher C): Birkenwäldchen an beiden Enden; Dammkrone zwei Reihen breit,
+der Bahnsteig liegt oben, eine Treppe führt die Böschung hinunter; die Böschung läuft durchgehend bis
+an beide Ränder (`hang_bis_rand`); Durchlass mittig über dem Trampelpfad, der Teich darüber ist weg;
+Weg zum Stellwerk; der Garten hat ein offenes Tor mit Endpfosten und Wege zu beiden Gartenhäusern (das
+rote steht nicht mehr am Zaun); das Zaunstück am Damm über der Plakatwand ist weg; der Güterwagen steht
+vor den Schienen, die Katze sitzt daneben. **Zedernwald** (früher C): Trampelpfad zum Zelt der
+Pfadfinder.
+
+**Antworten auf die Fragen des Autors:**
+
+- _Brücke über den Kanal in Lockport?_ Die Stege auf Unter- und Obertor sind die Brücken; im Herbst
+  sind beide wegen der Wartung zu (S3), danach offen (Zustand `stegOffen`).
+- _Passt das Farmhaus unten?_ Nein, die Scheune ist durch einen Schiffsausrüster ersetzt; ein
+  Kanaldorf lebt von Kähnen, nicht von Feldern.
+- _Liegt die Haltestelle am Bahndamm oben oder unten?_ Oben auf dem Damm, mit Treppe hinunter. Umgesetzt.
+- _Wie sieht die andere Seite des Damms aus?_ Hinter der Krone fällt die Böschung zu Wiesen ab; die
+  Büsche oben stehen auf der Kante als Windschutz. Die Karte zeigt nur die Südseite.
+- _Warum gibt es den Damm?_ Er hebt das Gleis über die Flussaue, die im Frühjahr überschwemmt wird
+  (kein Staudamm). Der Durchlass lässt Weg und Hochwasser hindurch.
+
+**Zustände (10.63):**
+
+| Karte                         | Zustand             | Bedingung      | Zustand: wann, was, warum                                                                         |
+| ----------------------------- | ------------------- | -------------- | ------------------------------------------------------------------------------------------------- |
+| `lockport.aussen`             | `stegOffen`         | `lockportSteg` | Nach Imogens Tafel: Die Wartung ist vorbei, die Zäune an Unter- und Obertor sind weg (S3).        |
+| `lockport.aussen`             | `henriksBootAnLand` | `taueErledigt` | Nach L2: Henriks Ruderboot liegt kieloben an Land, nicht mehr im Becken.                          |
+| `lockport.aussen`             | `lastkahnFrei`      | `lastkahnFrei` | Nach L3: Die Plane ist vom Lastkahn herunter, Stahlträger liegen an Bord, die Belle fährt wieder. |
+| `lockport.gasthaus`           | –                   | –              | Kein fester Wechsel.                                                                              |
+| `wegCedarRiverton.bahndamm`   | –                   | –              | Kein fester Wechsel (Rosalind und der Güterzug sind Figuren und Ereignis).                        |
+| `wegCedarRiverton.zedernwald` | –                   | –              | Kein fester Wechsel.                                                                              |
 
 ## Runde 8 (10.11.2026): Kanalweg und Eisenbrücke nach den Notizen des Autors (mittel-4)
 

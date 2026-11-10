@@ -2,7 +2,7 @@
   "karte": "riverton.schuppen",
   "datei": "karten/riverton-schuppen.json",
   "art": "innen",
-  "beschreibung": "Variante C, Lager: Der Schuppen ist halb Holzlager. Holzwände, staubiger Betonboden, Licht durch die Ritzen. An der Nordwand der Werkzeugschrank, die Werkbank und ein hoher Bretterstapel in der Ecke. Das grüne Fahrrad unter der Plane steht links im Raum, rechts liegen Holzscheite, und ein blauer Kanister, vorn an der Westwand ein alter Reifen.",
+  "beschreibung": "Der Schuppen ist halb Holzlager. Holzwände, staubiger Betonboden, Licht durch die Ritzen. An der Nordwand der Werkzeugschrank, die Werkbank und ein hoher Bretterstapel in der Ecke. Das grüne Fahrrad unter der Plane steht links im Raum, rechts liegen Holzscheite, und ein blauer Kanister, vorn an der Westwand ein alter Reifen.",
   "wand": "holz",
   "boden": "stein",
   "raster": [

@@ -995,6 +995,10 @@
     {
       "name": "seite10",
       "feld": [16, 68]
+    },
+    {
+      "name": "finchDame",
+      "feld": [9, 42]
     }
   ],
   "figuren": [],

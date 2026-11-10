@@ -695,3 +695,20 @@ Finch-Jagd abholen (Funde `finchKarte`, `problemheft`). Die Karten von Flussweg 
 **Nachtrag Runde 6 (niedrig-1):** Der Flussweg hat die feste Tönung `nebel` (F1, Nebel am Morgen).
 Die Fundknoten heißen wie ihre Auslöser (`seite00`, `finch_bauer_a`) und zählen `buchseiten` und
 `finchFiguren` hoch (Vereinbarung der Sammelstränge).
+
+## Runde 8 (10.11.2026): Notizen des Autors und Zustände (niedrig-1)
+
+**Umgesetzt:** Prellbock quer zum Gleis, Seiteneingang der Bibliothek bündig, Briefkasten am Wegrand,
+Tiere aus dem Wasser (Akt-1-Nacharbeit); dazu ein Pflasterweg zum Stadthaus hinter der Bibliothek
+(10.58). Weg 1: Angler auf dem Steg, Trampelweg weitet sich vor der Straße, Aufsteller „FLOHMARKT SA“
+statt des hängenden Schilds, Tiere im Zedernpfad nicht mehr in Bäumen.
+
+**Zustände (10.63):**
+
+| Karte                       | Zustand         | Bedingung                     | Zustand: wann, was, warum                                                                                                |
+| --------------------------- | --------------- | ----------------------------- | ------------------------------------------------------------------------------------------------------------------------ |
+| `cedarCreek.aussen`         | `brueckeFertig` | `endeAkt1Gesehen`             | Ende von Akt 1: Die Brücke über den Bach nach Riverton ist fertig, Baustelle und Absperrung sind weg.                    |
+| `wegMapleCedar.landstrasse` | `gatterOffen`   | `wegMapleCedarTafelBestanden` | Nach der Rätseltafel: Walt Miller hat das Gatter zum Kürbishof geöffnet (S1).                                            |
+| `wegMapleCedar.landstrasse` | `flohmarkt`     | `nadelMapleFalls >= 1`        | Ab der ersten Nadel: Auf dem Hof stehen Tische mit Kram und Odettes Wohnmobil; vorher nur das Plakat und ein leerer Hof. |
+| `wegMapleCedar.zedernpfad`  | `stammWeg`      | `nadelCedarCreek >= 1`        | Nach der Nadel von Cedar Creek: Mr. Dunmore hat die umgestürzte Zeder beiseitegezogen, der Pfad ist frei (S2).           |
+| `wegMapleCedar.flussweg`    | –               | –                             | Feste Tönung Nebel (F1), kein Wechsel.                                                                                   |

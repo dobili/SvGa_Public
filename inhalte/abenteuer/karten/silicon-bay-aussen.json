@@ -11,7 +11,7 @@
  "tilewidth": 16,
  "tileheight": 16,
  "nextlayerid": 5,
- "nextobjectid": 216,
+ "nextobjectid": 224,
  "layers": [
   {
    "id": 1,
@@ -13165,7 +13165,7 @@
      "id": 13,
      "name": "infosaeule",
      "type": "ausloeser",
-     "x": 960,
+     "x": 1056,
      "y": 336,
      "width": 16,
      "height": 16,
@@ -13176,8 +13176,8 @@
      "id": 14,
      "name": "werbetafel",
      "type": "ausloeser",
-     "x": 1008,
-     "y": 144,
+     "x": 1072,
+     "y": 160,
      "width": 16,
      "height": 16,
      "rotation": 0,
@@ -13198,8 +13198,8 @@
      "id": 16,
      "name": "dash",
      "type": "figur",
-     "x": 224,
-     "y": 528,
+     "x": 272,
+     "y": 560,
      "width": 16,
      "height": 16,
      "rotation": 0,
@@ -13209,8 +13209,8 @@
      "id": 17,
      "name": "victor",
      "type": "figur",
-     "x": 416,
-     "y": 480,
+     "x": 480,
+     "y": 560,
      "width": 16,
      "height": 16,
      "rotation": 0,
@@ -13352,7 +13352,7 @@
       {
        "name": "bis",
        "type": "string",
-       "value": "58,36"
+       "value": "58,37"
       },
       {
        "name": "verhalten",
@@ -13532,7 +13532,7 @@
       {
        "name": "bis",
        "type": "string",
-       "value": "52,38"
+       "value": "54,38"
       },
       {
        "name": "sagt",
@@ -13545,7 +13545,7 @@
      "id": 28,
      "name": "rentner",
      "type": "statist",
-     "x": 640,
+     "x": 624,
      "y": 688,
      "width": 16,
      "height": 16,
@@ -13565,12 +13565,12 @@
       {
        "name": "von",
        "type": "string",
-       "value": "40,43"
+       "value": "39,43"
       },
       {
        "name": "bis",
        "type": "string",
-       "value": "40,43"
+       "value": "39,43"
       },
       {
        "name": "sagt",
@@ -13621,7 +13621,7 @@
      "id": 30,
      "name": "barista",
      "type": "statist",
-     "x": 992,
+     "x": 976,
      "y": 640,
      "width": 16,
      "height": 16,
@@ -13646,7 +13646,7 @@
       {
        "name": "bis",
        "type": "string",
-       "value": "66,41"
+       "value": "66,42"
       },
       {
        "name": "sagt",
@@ -13764,7 +13764,7 @@
      "name": "schulklasse",
      "type": "statist",
      "x": 416,
-     "y": 640,
+     "y": 656,
      "width": 16,
      "height": 16,
      "rotation": 0,
@@ -13788,7 +13788,7 @@
       {
        "name": "bis",
        "type": "string",
-       "value": "30,41"
+       "value": "30,42"
       }
      ]
     },
@@ -14031,12 +14031,12 @@
     },
     {
      "id": 44,
-     "name": "sb5Hotel",
+     "name": "sb5HotelC",
      "type": "moebel",
-     "x": 672,
-     "y": 80,
-     "width": 208,
-     "height": 256,
+     "x": 656,
+     "y": 112,
+     "width": 368,
+     "height": 224,
      "rotation": 0,
      "visible": true,
      "properties": [
@@ -14054,7 +14054,7 @@
     },
     {
      "id": 45,
-     "name": "cc4GleisRand",
+     "name": "sb5GleisNeu",
      "type": "moebel",
      "x": 0,
      "y": 384,
@@ -14077,7 +14077,7 @@
     },
     {
      "id": 46,
-     "name": "cc4GleisRand",
+     "name": "sb5GleisNeu",
      "type": "moebel",
      "x": 16,
      "y": 384,
@@ -14100,7 +14100,7 @@
     },
     {
      "id": 47,
-     "name": "cc4GleisRand",
+     "name": "sb5GleisNeu",
      "type": "moebel",
      "x": 32,
      "y": 384,
@@ -14123,7 +14123,7 @@
     },
     {
      "id": 48,
-     "name": "cc4GleisRand",
+     "name": "sb5GleisNeu",
      "type": "moebel",
      "x": 48,
      "y": 384,
@@ -14146,7 +14146,7 @@
     },
     {
      "id": 49,
-     "name": "cc4GleisRand",
+     "name": "sb5GleisNeu",
      "type": "moebel",
      "x": 64,
      "y": 384,
@@ -14169,7 +14169,7 @@
     },
     {
      "id": 50,
-     "name": "cc4GleisRand",
+     "name": "sb5GleisNeu",
      "type": "moebel",
      "x": 80,
      "y": 384,
@@ -14192,7 +14192,7 @@
     },
     {
      "id": 51,
-     "name": "cc4GleisRand",
+     "name": "sb5GleisNeu",
      "type": "moebel",
      "x": 96,
      "y": 384,
@@ -14215,7 +14215,7 @@
     },
     {
      "id": 52,
-     "name": "cc4GleisRand",
+     "name": "sb5GleisNeu",
      "type": "moebel",
      "x": 112,
      "y": 384,
@@ -14238,7 +14238,7 @@
     },
     {
      "id": 53,
-     "name": "cc4GleisRand",
+     "name": "sb5GleisNeu",
      "type": "moebel",
      "x": 128,
      "y": 384,
@@ -14261,7 +14261,7 @@
     },
     {
      "id": 54,
-     "name": "cc4GleisRand",
+     "name": "sb5GleisNeu",
      "type": "moebel",
      "x": 144,
      "y": 384,
@@ -14284,7 +14284,7 @@
     },
     {
      "id": 55,
-     "name": "cc4GleisRand",
+     "name": "sb5GleisNeu",
      "type": "moebel",
      "x": 160,
      "y": 384,
@@ -14307,7 +14307,7 @@
     },
     {
      "id": 56,
-     "name": "cc4GleisRand",
+     "name": "sb5GleisNeu",
      "type": "moebel",
      "x": 176,
      "y": 384,
@@ -14330,7 +14330,7 @@
     },
     {
      "id": 57,
-     "name": "cc4GleisRand",
+     "name": "sb5GleisNeu",
      "type": "moebel",
      "x": 192,
      "y": 384,
@@ -14353,7 +14353,7 @@
     },
     {
      "id": 58,
-     "name": "cc4GleisRand",
+     "name": "sb5GleisNeu",
      "type": "moebel",
      "x": 208,
      "y": 384,
@@ -14376,7 +14376,7 @@
     },
     {
      "id": 59,
-     "name": "cc4GleisRand",
+     "name": "sb5GleisNeu",
      "type": "moebel",
      "x": 224,
      "y": 384,
@@ -14399,7 +14399,7 @@
     },
     {
      "id": 60,
-     "name": "cc4GleisRand",
+     "name": "sb5GleisNeu",
      "type": "moebel",
      "x": 240,
      "y": 384,
@@ -14422,7 +14422,7 @@
     },
     {
      "id": 61,
-     "name": "cc4GleisRand",
+     "name": "sb5GleisNeu",
      "type": "moebel",
      "x": 256,
      "y": 384,
@@ -14445,7 +14445,7 @@
     },
     {
      "id": 62,
-     "name": "cc4GleisRand",
+     "name": "sb5GleisNeu",
      "type": "moebel",
      "x": 272,
      "y": 384,
@@ -14468,7 +14468,7 @@
     },
     {
      "id": 63,
-     "name": "cc4GleisRand",
+     "name": "sb5GleisNeu",
      "type": "moebel",
      "x": 288,
      "y": 384,
@@ -14491,7 +14491,7 @@
     },
     {
      "id": 64,
-     "name": "cc4GleisRand",
+     "name": "sb5GleisNeu",
      "type": "moebel",
      "x": 304,
      "y": 384,
@@ -14514,7 +14514,7 @@
     },
     {
      "id": 65,
-     "name": "cc4GleisRand",
+     "name": "sb5GleisNeu",
      "type": "moebel",
      "x": 320,
      "y": 384,
@@ -14537,7 +14537,7 @@
     },
     {
      "id": 66,
-     "name": "cc4GleisRand",
+     "name": "sb5GleisNeu",
      "type": "moebel",
      "x": 336,
      "y": 384,
@@ -14560,7 +14560,7 @@
     },
     {
      "id": 67,
-     "name": "cc4GleisRand",
+     "name": "sb5GleisNeu",
      "type": "moebel",
      "x": 352,
      "y": 384,
@@ -14583,7 +14583,7 @@
     },
     {
      "id": 68,
-     "name": "cc4GleisRand",
+     "name": "sb5GleisNeu",
      "type": "moebel",
      "x": 368,
      "y": 384,
@@ -14606,7 +14606,7 @@
     },
     {
      "id": 69,
-     "name": "cc4GleisRand",
+     "name": "sb5GleisNeu",
      "type": "moebel",
      "x": 384,
      "y": 384,
@@ -14629,7 +14629,7 @@
     },
     {
      "id": 70,
-     "name": "cc4GleisRand",
+     "name": "sb5GleisNeu",
      "type": "moebel",
      "x": 400,
      "y": 384,
@@ -14652,7 +14652,7 @@
     },
     {
      "id": 71,
-     "name": "cc4GleisRand",
+     "name": "sb5GleisNeu",
      "type": "moebel",
      "x": 416,
      "y": 384,
@@ -14675,7 +14675,7 @@
     },
     {
      "id": 72,
-     "name": "cc4GleisRand",
+     "name": "sb5GleisNeu",
      "type": "moebel",
      "x": 432,
      "y": 384,
@@ -14698,7 +14698,7 @@
     },
     {
      "id": 73,
-     "name": "cc4GleisRand",
+     "name": "sb5GleisNeu",
      "type": "moebel",
      "x": 448,
      "y": 384,
@@ -14721,7 +14721,7 @@
     },
     {
      "id": 74,
-     "name": "cc4GleisRand",
+     "name": "sb5GleisNeu",
      "type": "moebel",
      "x": 464,
      "y": 384,
@@ -14744,7 +14744,7 @@
     },
     {
      "id": 75,
-     "name": "cc4GleisRand",
+     "name": "sb5GleisNeu",
      "type": "moebel",
      "x": 480,
      "y": 384,
@@ -14767,7 +14767,7 @@
     },
     {
      "id": 76,
-     "name": "cc4GleisRand",
+     "name": "sb5GleisNeu",
      "type": "moebel",
      "x": 496,
      "y": 384,
@@ -14790,7 +14790,7 @@
     },
     {
      "id": 77,
-     "name": "cc4GleisRand",
+     "name": "sb5GleisNeu",
      "type": "moebel",
      "x": 512,
      "y": 384,
@@ -14813,7 +14813,7 @@
     },
     {
      "id": 78,
-     "name": "cc4GleisRand",
+     "name": "sb5GleisNeu",
      "type": "moebel",
      "x": 528,
      "y": 384,
@@ -14836,7 +14836,7 @@
     },
     {
      "id": 79,
-     "name": "cc4GleisRand",
+     "name": "sb5GleisNeu",
      "type": "moebel",
      "x": 544,
      "y": 384,
@@ -14859,7 +14859,7 @@
     },
     {
      "id": 80,
-     "name": "cc4GleisRand",
+     "name": "sb5GleisNeu",
      "type": "moebel",
      "x": 560,
      "y": 384,
@@ -14882,7 +14882,7 @@
     },
     {
      "id": 81,
-     "name": "cc4GleisRand",
+     "name": "sb5GleisNeu",
      "type": "moebel",
      "x": 576,
      "y": 384,
@@ -14905,7 +14905,7 @@
     },
     {
      "id": 82,
-     "name": "cc4GleisRand",
+     "name": "sb5GleisNeu",
      "type": "moebel",
      "x": 592,
      "y": 384,
@@ -14928,7 +14928,7 @@
     },
     {
      "id": 83,
-     "name": "cc4GleisRand",
+     "name": "sb5GleisNeu",
      "type": "moebel",
      "x": 608,
      "y": 384,
@@ -14951,7 +14951,7 @@
     },
     {
      "id": 84,
-     "name": "cc4GleisRand",
+     "name": "sb5GleisNeu",
      "type": "moebel",
      "x": 624,
      "y": 384,
@@ -14974,7 +14974,7 @@
     },
     {
      "id": 85,
-     "name": "cc4GleisRand",
+     "name": "sb5GleisNeu",
      "type": "moebel",
      "x": 640,
      "y": 384,
@@ -14997,7 +14997,7 @@
     },
     {
      "id": 86,
-     "name": "cc4GleisRand",
+     "name": "sb5GleisNeu",
      "type": "moebel",
      "x": 656,
      "y": 384,
@@ -15020,7 +15020,7 @@
     },
     {
      "id": 87,
-     "name": "cc4GleisRand",
+     "name": "sb5GleisNeu",
      "type": "moebel",
      "x": 672,
      "y": 384,
@@ -15043,7 +15043,7 @@
     },
     {
      "id": 88,
-     "name": "cc4GleisRand",
+     "name": "sb5GleisNeu",
      "type": "moebel",
      "x": 688,
      "y": 384,
@@ -15066,7 +15066,7 @@
     },
     {
      "id": 89,
-     "name": "cc4GleisRand",
+     "name": "sb5GleisNeu",
      "type": "moebel",
      "x": 704,
      "y": 384,
@@ -15089,7 +15089,7 @@
     },
     {
      "id": 90,
-     "name": "cc4GleisRand",
+     "name": "sb5GleisNeu",
      "type": "moebel",
      "x": 720,
      "y": 384,
@@ -15112,7 +15112,7 @@
     },
     {
      "id": 91,
-     "name": "cc4GleisRand",
+     "name": "sb5GleisNeu",
      "type": "moebel",
      "x": 736,
      "y": 384,
@@ -15135,7 +15135,7 @@
     },
     {
      "id": 92,
-     "name": "cc4GleisRand",
+     "name": "sb5GleisNeu",
      "type": "moebel",
      "x": 752,
      "y": 384,
@@ -15158,7 +15158,7 @@
     },
     {
      "id": 93,
-     "name": "cc4GleisRand",
+     "name": "sb5GleisNeu",
      "type": "moebel",
      "x": 768,
      "y": 384,
@@ -15181,7 +15181,7 @@
     },
     {
      "id": 94,
-     "name": "cc4GleisRand",
+     "name": "sb5GleisNeu",
      "type": "moebel",
      "x": 784,
      "y": 384,
@@ -15204,7 +15204,7 @@
     },
     {
      "id": 95,
-     "name": "cc4GleisRand",
+     "name": "sb5GleisNeu",
      "type": "moebel",
      "x": 800,
      "y": 384,
@@ -15227,7 +15227,7 @@
     },
     {
      "id": 96,
-     "name": "cc4GleisRand",
+     "name": "sb5GleisNeu",
      "type": "moebel",
      "x": 816,
      "y": 384,
@@ -15250,7 +15250,7 @@
     },
     {
      "id": 97,
-     "name": "cc4GleisRand",
+     "name": "sb5GleisNeu",
      "type": "moebel",
      "x": 832,
      "y": 384,
@@ -15273,7 +15273,7 @@
     },
     {
      "id": 98,
-     "name": "cc4GleisRand",
+     "name": "sb5GleisNeu",
      "type": "moebel",
      "x": 848,
      "y": 384,
@@ -15296,7 +15296,7 @@
     },
     {
      "id": 99,
-     "name": "cc4GleisRand",
+     "name": "sb5GleisNeu",
      "type": "moebel",
      "x": 864,
      "y": 384,
@@ -15319,7 +15319,7 @@
     },
     {
      "id": 100,
-     "name": "cc4GleisRand",
+     "name": "sb5GleisNeu",
      "type": "moebel",
      "x": 880,
      "y": 384,
@@ -15342,7 +15342,7 @@
     },
     {
      "id": 101,
-     "name": "cc4GleisRand",
+     "name": "sb5GleisNeu",
      "type": "moebel",
      "x": 896,
      "y": 384,
@@ -15365,7 +15365,7 @@
     },
     {
      "id": 102,
-     "name": "cc4GleisRand",
+     "name": "sb5GleisNeu",
      "type": "moebel",
      "x": 912,
      "y": 384,
@@ -15388,7 +15388,7 @@
     },
     {
      "id": 103,
-     "name": "cc4GleisRand",
+     "name": "sb5GleisNeu",
      "type": "moebel",
      "x": 928,
      "y": 384,
@@ -15411,7 +15411,7 @@
     },
     {
      "id": 104,
-     "name": "cc4GleisRand",
+     "name": "sb5GleisNeu",
      "type": "moebel",
      "x": 944,
      "y": 384,
@@ -15434,7 +15434,7 @@
     },
     {
      "id": 105,
-     "name": "cc4GleisRand",
+     "name": "sb5GleisNeu",
      "type": "moebel",
      "x": 960,
      "y": 384,
@@ -15457,7 +15457,7 @@
     },
     {
      "id": 106,
-     "name": "cc4GleisRand",
+     "name": "sb5GleisNeu",
      "type": "moebel",
      "x": 976,
      "y": 384,
@@ -15480,7 +15480,7 @@
     },
     {
      "id": 107,
-     "name": "cc4GleisRand",
+     "name": "sb5GleisNeu",
      "type": "moebel",
      "x": 992,
      "y": 384,
@@ -15503,7 +15503,7 @@
     },
     {
      "id": 108,
-     "name": "cc4GleisRand",
+     "name": "sb5GleisNeu",
      "type": "moebel",
      "x": 1008,
      "y": 384,
@@ -15526,7 +15526,7 @@
     },
     {
      "id": 109,
-     "name": "cc4GleisRand",
+     "name": "sb5GleisNeu",
      "type": "moebel",
      "x": 1024,
      "y": 384,
@@ -15549,7 +15549,7 @@
     },
     {
      "id": 110,
-     "name": "cc4GleisRand",
+     "name": "sb5GleisNeu",
      "type": "moebel",
      "x": 1040,
      "y": 384,
@@ -17113,10 +17113,10 @@
     },
     {
      "id": 178,
-     "name": "sb5Werbetafel",
+     "name": "sb5WerbetafelB",
      "type": "moebel",
-     "x": 896,
-     "y": 48,
+     "x": 1040,
+     "y": 64,
      "width": 80,
      "height": 96,
      "rotation": 0,
@@ -17125,7 +17125,7 @@
       {
        "name": "tiefe",
        "type": "int",
-       "value": 136
+       "value": 152
       },
       {
        "name": "kollision",
@@ -17136,55 +17136,9 @@
     },
     {
      "id": 179,
-     "name": "sb5WerbetafelB",
-     "type": "moebel",
-     "x": 976,
-     "y": 48,
-     "width": 80,
-     "height": 96,
-     "rotation": 0,
-     "visible": true,
-     "properties": [
-      {
-       "name": "tiefe",
-       "type": "int",
-       "value": 136
-      },
-      {
-       "name": "kollision",
-       "type": "bool",
-       "value": true
-      }
-     ]
-    },
-    {
-     "id": 180,
-     "name": "sb5Werbetafel",
-     "type": "moebel",
-     "x": 1056,
-     "y": 48,
-     "width": 80,
-     "height": 96,
-     "rotation": 0,
-     "visible": true,
-     "properties": [
-      {
-       "name": "tiefe",
-       "type": "int",
-       "value": 136
-      },
-      {
-       "name": "kollision",
-       "type": "bool",
-       "value": true
-      }
-     ]
-    },
-    {
-     "id": 181,
      "name": "sb5Infosaeule",
      "type": "moebel",
-     "x": 960,
+     "x": 1056,
      "y": 304,
      "width": 16,
      "height": 32,
@@ -17204,10 +17158,56 @@
      ]
     },
     {
-     "id": 182,
+     "id": 180,
      "name": "sb5BahnLinks",
      "type": "moebel",
-     "x": 320,
+     "x": 480,
+     "y": 368,
+     "width": 64,
+     "height": 64,
+     "rotation": 0,
+     "visible": true,
+     "properties": [
+      {
+       "name": "tiefe",
+       "type": "int",
+       "value": 424
+      },
+      {
+       "name": "kollision",
+       "type": "bool",
+       "value": true
+      }
+     ]
+    },
+    {
+     "id": 181,
+     "name": "sb5BahnMitte",
+     "type": "moebel",
+     "x": 544,
+     "y": 368,
+     "width": 160,
+     "height": 64,
+     "rotation": 0,
+     "visible": true,
+     "properties": [
+      {
+       "name": "tiefe",
+       "type": "int",
+       "value": 424
+      },
+      {
+       "name": "kollision",
+       "type": "bool",
+       "value": true
+      }
+     ]
+    },
+    {
+     "id": 182,
+     "name": "sb5BahnRechts",
+     "type": "moebel",
+     "x": 704,
      "y": 368,
      "width": 64,
      "height": 64,
@@ -17228,19 +17228,19 @@
     },
     {
      "id": 183,
-     "name": "sb5BahnMitte",
+     "name": "sb5LabGlas",
      "type": "moebel",
-     "x": 384,
-     "y": 368,
-     "width": 160,
-     "height": 64,
+     "x": 32,
+     "y": 528,
+     "width": 128,
+     "height": 112,
      "rotation": 0,
      "visible": true,
      "properties": [
       {
        "name": "tiefe",
        "type": "int",
-       "value": 424
+       "value": 632
       },
       {
        "name": "kollision",
@@ -17251,11 +17251,11 @@
     },
     {
      "id": 184,
-     "name": "sb5BahnRechts",
+     "name": "wg6StandGross",
      "type": "moebel",
-     "x": 544,
-     "y": 368,
-     "width": 64,
+     "x": 208,
+     "y": 480,
+     "width": 80,
      "height": 64,
      "rotation": 0,
      "visible": true,
@@ -17263,7 +17263,7 @@
       {
        "name": "tiefe",
        "type": "int",
-       "value": 424
+       "value": 536
       },
       {
        "name": "kollision",
@@ -17274,12 +17274,12 @@
     },
     {
      "id": 185,
-     "name": "sbFoodtruck",
+     "name": "wg4Marktstand",
      "type": "moebel",
-     "x": 64,
-     "y": 464,
-     "width": 112,
-     "height": 80,
+     "x": 304,
+     "y": 480,
+     "width": 48,
+     "height": 64,
      "rotation": 0,
      "visible": true,
      "properties": [
@@ -17297,19 +17297,19 @@
     },
     {
      "id": 186,
-     "name": "mfBank",
+     "name": "wg6StandGross",
      "type": "moebel",
-     "x": 192,
-     "y": 528,
-     "width": 32,
-     "height": 32,
+     "x": 368,
+     "y": 480,
+     "width": 80,
+     "height": 64,
      "rotation": 0,
      "visible": true,
      "properties": [
       {
        "name": "tiefe",
        "type": "int",
-       "value": 552
+       "value": 536
       },
       {
        "name": "kollision",
@@ -17320,19 +17320,19 @@
     },
     {
      "id": 187,
-     "name": "sb5Lab",
+     "name": "wg4Marktstand",
      "type": "moebel",
-     "x": 48,
-     "y": 608,
-     "width": 96,
-     "height": 96,
+     "x": 464,
+     "y": 480,
+     "width": 48,
+     "height": 64,
      "rotation": 0,
      "visible": true,
      "properties": [
       {
        "name": "tiefe",
        "type": "int",
-       "value": 696
+       "value": 536
       },
       {
        "name": "kollision",
@@ -17343,19 +17343,19 @@
     },
     {
      "id": 188,
-     "name": "sb5Kuebel",
+     "name": "sb5Marktkarren",
      "type": "moebel",
-     "x": 336,
-     "y": 576,
-     "width": 32,
-     "height": 32,
+     "x": 576,
+     "y": 480,
+     "width": 48,
+     "height": 64,
      "rotation": 0,
      "visible": true,
      "properties": [
       {
        "name": "tiefe",
        "type": "int",
-       "value": 600
+       "value": 536
       },
       {
        "name": "kollision",
@@ -17366,19 +17366,19 @@
     },
     {
      "id": 189,
-     "name": "sb5KuebelBluete",
+     "name": "sb5Baum",
      "type": "moebel",
-     "x": 336,
-     "y": 656,
-     "width": 32,
-     "height": 32,
+     "x": 208,
+     "y": 592,
+     "width": 48,
+     "height": 64,
      "rotation": 0,
      "visible": true,
      "properties": [
       {
        "name": "tiefe",
        "type": "int",
-       "value": 680
+       "value": 648
       },
       {
        "name": "kollision",
@@ -17389,19 +17389,19 @@
     },
     {
      "id": 190,
-     "name": "sb5Kuebel",
+     "name": "sb5Baum",
      "type": "moebel",
-     "x": 400,
-     "y": 576,
-     "width": 32,
-     "height": 32,
+     "x": 208,
+     "y": 688,
+     "width": 48,
+     "height": 64,
      "rotation": 0,
      "visible": true,
      "properties": [
       {
        "name": "tiefe",
        "type": "int",
-       "value": 600
+       "value": 744
       },
       {
        "name": "kollision",
@@ -17412,19 +17412,19 @@
     },
     {
      "id": 191,
-     "name": "sb5KuebelBluete",
+     "name": "sb5Baum",
      "type": "moebel",
-     "x": 400,
-     "y": 656,
-     "width": 32,
-     "height": 32,
+     "x": 304,
+     "y": 592,
+     "width": 48,
+     "height": 64,
      "rotation": 0,
      "visible": true,
      "properties": [
       {
        "name": "tiefe",
        "type": "int",
-       "value": 680
+       "value": 648
       },
       {
        "name": "kollision",
@@ -17435,19 +17435,19 @@
     },
     {
      "id": 192,
-     "name": "sb5Kuebel",
+     "name": "sb5Baum",
      "type": "moebel",
-     "x": 464,
-     "y": 576,
-     "width": 32,
-     "height": 32,
+     "x": 304,
+     "y": 688,
+     "width": 48,
+     "height": 64,
      "rotation": 0,
      "visible": true,
      "properties": [
       {
        "name": "tiefe",
        "type": "int",
-       "value": 600
+       "value": 744
       },
       {
        "name": "kollision",
@@ -17458,19 +17458,19 @@
     },
     {
      "id": 193,
-     "name": "sb5KuebelBluete",
+     "name": "sb5Baum",
      "type": "moebel",
-     "x": 464,
-     "y": 656,
-     "width": 32,
-     "height": 32,
+     "x": 400,
+     "y": 592,
+     "width": 48,
+     "height": 64,
      "rotation": 0,
      "visible": true,
      "properties": [
       {
        "name": "tiefe",
        "type": "int",
-       "value": 680
+       "value": 648
       },
       {
        "name": "kollision",
@@ -17481,19 +17481,19 @@
     },
     {
      "id": 194,
-     "name": "sb5BrunnenWasser",
+     "name": "sb5Baum",
      "type": "moebel",
-     "x": 672,
-     "y": 560,
-     "width": 64,
-     "height": 80,
+     "x": 400,
+     "y": 688,
+     "width": 48,
+     "height": 64,
      "rotation": 0,
      "visible": true,
      "properties": [
       {
        "name": "tiefe",
        "type": "int",
-       "value": 632
+       "value": 744
       },
       {
        "name": "kollision",
@@ -17504,19 +17504,19 @@
     },
     {
      "id": 195,
-     "name": "mfBank",
+     "name": "sb5Baum",
      "type": "moebel",
-     "x": 608,
-     "y": 672,
-     "width": 32,
-     "height": 32,
+     "x": 496,
+     "y": 592,
+     "width": 48,
+     "height": 64,
      "rotation": 0,
      "visible": true,
      "properties": [
       {
        "name": "tiefe",
        "type": "int",
-       "value": 696
+       "value": 648
       },
       {
        "name": "kollision",
@@ -17527,19 +17527,19 @@
     },
     {
      "id": 196,
-     "name": "mfBank",
+     "name": "sb5Baum",
      "type": "moebel",
-     "x": 736,
-     "y": 672,
-     "width": 32,
-     "height": 32,
+     "x": 496,
+     "y": 688,
+     "width": 48,
+     "height": 64,
      "rotation": 0,
      "visible": true,
      "properties": [
       {
        "name": "tiefe",
        "type": "int",
-       "value": 696
+       "value": 744
       },
       {
        "name": "kollision",
@@ -17550,12 +17550,127 @@
     },
     {
      "id": 197,
-     "name": "sb5Kaffeekiosk",
+     "name": "sb5Baum",
      "type": "moebel",
-     "x": 960,
-     "y": 496,
-     "width": 96,
-     "height": 144,
+     "x": 592,
+     "y": 592,
+     "width": 48,
+     "height": 64,
+     "rotation": 0,
+     "visible": true,
+     "properties": [
+      {
+       "name": "tiefe",
+       "type": "int",
+       "value": 648
+      },
+      {
+       "name": "kollision",
+       "type": "bool",
+       "value": true
+      }
+     ]
+    },
+    {
+     "id": 198,
+     "name": "sb5Baum",
+     "type": "moebel",
+     "x": 592,
+     "y": 688,
+     "width": 48,
+     "height": 64,
+     "rotation": 0,
+     "visible": true,
+     "properties": [
+      {
+       "name": "tiefe",
+       "type": "int",
+       "value": 744
+      },
+      {
+       "name": "kollision",
+       "type": "bool",
+       "value": true
+      }
+     ]
+    },
+    {
+     "id": 199,
+     "name": "sb5Baum",
+     "type": "moebel",
+     "x": 688,
+     "y": 592,
+     "width": 48,
+     "height": 64,
+     "rotation": 0,
+     "visible": true,
+     "properties": [
+      {
+       "name": "tiefe",
+       "type": "int",
+       "value": 648
+      },
+      {
+       "name": "kollision",
+       "type": "bool",
+       "value": true
+      }
+     ]
+    },
+    {
+     "id": 200,
+     "name": "sb5Baum",
+     "type": "moebel",
+     "x": 688,
+     "y": 688,
+     "width": 48,
+     "height": 64,
+     "rotation": 0,
+     "visible": true,
+     "properties": [
+      {
+       "name": "tiefe",
+       "type": "int",
+       "value": 744
+      },
+      {
+       "name": "kollision",
+       "type": "bool",
+       "value": true
+      }
+     ]
+    },
+    {
+     "id": 201,
+     "name": "sb5BrunnenWasser",
+     "type": "moebel",
+     "x": 800,
+     "y": 576,
+     "width": 64,
+     "height": 80,
+     "rotation": 0,
+     "visible": true,
+     "properties": [
+      {
+       "name": "tiefe",
+       "type": "int",
+       "value": 648
+      },
+      {
+       "name": "kollision",
+       "type": "bool",
+       "value": true
+      }
+     ]
+    },
+    {
+     "id": 202,
+     "name": "mfBank",
+     "type": "moebel",
+     "x": 736,
+     "y": 608,
+     "width": 32,
+     "height": 32,
      "rotation": 0,
      "visible": true,
      "properties": [
@@ -17572,7 +17687,53 @@
      ]
     },
     {
-     "id": 198,
+     "id": 203,
+     "name": "mfBank",
+     "type": "moebel",
+     "x": 880,
+     "y": 608,
+     "width": 32,
+     "height": 32,
+     "rotation": 0,
+     "visible": true,
+     "properties": [
+      {
+       "name": "tiefe",
+       "type": "int",
+       "value": 632
+      },
+      {
+       "name": "kollision",
+       "type": "bool",
+       "value": true
+      }
+     ]
+    },
+    {
+     "id": 204,
+     "name": "sb5Kaffeekiosk",
+     "type": "moebel",
+     "x": 992,
+     "y": 528,
+     "width": 96,
+     "height": 144,
+     "rotation": 0,
+     "visible": true,
+     "properties": [
+      {
+       "name": "tiefe",
+       "type": "int",
+       "value": 664
+      },
+      {
+       "name": "kollision",
+       "type": "bool",
+       "value": true
+      }
+     ]
+    },
+    {
+     "id": 205,
      "name": "sbLaterne",
      "type": "moebel",
      "x": 192,
@@ -17595,10 +17756,10 @@
      ]
     },
     {
-     "id": 199,
+     "id": 206,
      "name": "sbLaterne",
      "type": "moebel",
-     "x": 480,
+     "x": 384,
      "y": 400,
      "width": 32,
      "height": 64,
@@ -17618,7 +17779,30 @@
      ]
     },
     {
-     "id": 200,
+     "id": 207,
+     "name": "sbLaterne",
+     "type": "moebel",
+     "x": 576,
+     "y": 400,
+     "width": 32,
+     "height": 64,
+     "rotation": 0,
+     "visible": true,
+     "properties": [
+      {
+       "name": "tiefe",
+       "type": "int",
+       "value": 456
+      },
+      {
+       "name": "kollision",
+       "type": "bool",
+       "value": false
+      }
+     ]
+    },
+    {
+     "id": 208,
      "name": "sbLaterne",
      "type": "moebel",
      "x": 768,
@@ -17641,10 +17825,10 @@
      ]
     },
     {
-     "id": 201,
+     "id": 209,
      "name": "sbLaterne",
      "type": "moebel",
-     "x": 1024,
+     "x": 960,
      "y": 400,
      "width": 32,
      "height": 64,
@@ -17664,8 +17848,8 @@
      ]
     },
     {
-     "id": 202,
-     "name": "sb8Markt1",
+     "id": 210,
+     "name": "sb8Markt3",
      "type": "moebel",
      "x": 16,
      "y": 752,
@@ -17687,8 +17871,8 @@
      ]
     },
     {
-     "id": 203,
-     "name": "sb8Markt5",
+     "id": 211,
+     "name": "sb8Markt7",
      "type": "moebel",
      "x": 96,
      "y": 752,
@@ -17710,8 +17894,8 @@
      ]
     },
     {
-     "id": 204,
-     "name": "sb8Markt9",
+     "id": 212,
+     "name": "sb8Markt11",
      "type": "moebel",
      "x": 176,
      "y": 752,
@@ -17733,8 +17917,8 @@
      ]
     },
     {
-     "id": 205,
-     "name": "sb8Markt3",
+     "id": 213,
+     "name": "sb8Markt1",
      "type": "moebel",
      "x": 256,
      "y": 752,
@@ -17756,8 +17940,8 @@
      ]
     },
     {
-     "id": 206,
-     "name": "sb8Markt7",
+     "id": 214,
+     "name": "sb8Markt9",
      "type": "moebel",
      "x": 336,
      "y": 752,
@@ -17779,8 +17963,8 @@
      ]
     },
     {
-     "id": 207,
-     "name": "sb8Markt11",
+     "id": 215,
+     "name": "sb8Markt5",
      "type": "moebel",
      "x": 416,
      "y": 752,
@@ -17802,8 +17986,8 @@
      ]
     },
     {
-     "id": 208,
-     "name": "sb8Markt2",
+     "id": 216,
+     "name": "sb8Markt12",
      "type": "moebel",
      "x": 592,
      "y": 752,
@@ -17825,8 +18009,8 @@
      ]
     },
     {
-     "id": 209,
-     "name": "sb8Markt6",
+     "id": 217,
+     "name": "sb8Markt4",
      "type": "moebel",
      "x": 672,
      "y": 752,
@@ -17848,8 +18032,8 @@
      ]
     },
     {
-     "id": 210,
-     "name": "sb8Markt10",
+     "id": 218,
+     "name": "sb8Markt8",
      "type": "moebel",
      "x": 752,
      "y": 752,
@@ -17871,8 +18055,8 @@
      ]
     },
     {
-     "id": 211,
-     "name": "sb8Markt4",
+     "id": 219,
+     "name": "sb8Markt2",
      "type": "moebel",
      "x": 832,
      "y": 752,
@@ -17894,8 +18078,8 @@
      ]
     },
     {
-     "id": 212,
-     "name": "sb8Markt8",
+     "id": 220,
+     "name": "sb8Markt6",
      "type": "moebel",
      "x": 912,
      "y": 752,
@@ -17917,8 +18101,8 @@
      ]
     },
     {
-     "id": 213,
-     "name": "sb8Markt12",
+     "id": 221,
+     "name": "sb8Markt10",
      "type": "moebel",
      "x": 992,
      "y": 752,
@@ -17940,7 +18124,7 @@
      ]
     },
     {
-     "id": 214,
+     "id": 222,
      "name": "sb8Condo52",
      "type": "moebel",
      "x": 240,
@@ -17963,20 +18147,20 @@
      ]
     },
     {
-     "id": 215,
-     "name": "sb8Condo51",
+     "id": 223,
+     "name": "sb8Condo44",
      "type": "moebel",
-     "x": 1008,
-     "y": 160,
+     "x": 864,
+     "y": 464,
      "width": 96,
-     "height": 176,
+     "height": 128,
      "rotation": 0,
      "visible": true,
      "properties": [
       {
        "name": "tiefe",
        "type": "int",
-       "value": 328
+       "value": 584
       },
       {
        "name": "kollision",

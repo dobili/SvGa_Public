@@ -95,7 +95,15 @@ Quellen der Zustände:
     einer Häuserreihe. Ohne Rolle in der Geschichte kommen sie weg.
 28. **Holz in Stollen** (Stempel, Kappen) steht im Gang und nicht in den Wänden.
 29. **Anlegepfosten stehen direkt am Ufer.**
-30. **Winter:** Der Autor fragt, ob es Schnee-Bilder gibt; im Katalog gibt es keine. Antwort und
+30. **Böden mit Abwechslung** (alle Außenkarten): Pflaster und andere Beläge sind keine
+    durchgehend gleiche Textur. Zufällige Abweichungen, Verschmutzung, Verfärbung, ausgebesserte
+    Stellen, Gullys, Fugen mit Moos sorgen für ein realistisches Bild. Das ist Technik im
+    Kartenbild (mittel-2) und gilt für alle Karten.
+31. **Plätze sind begrenzt:** Häuser, Zaun, Hecke, Poller oder ein Belagwechsel zeigen, wo ein Platz
+    anfängt und aufhört.
+32. **Züge stehen auf den Gleisen.**
+33. **Werbetafeln stehen dort, wo man sie sieht** (an Weg oder Straße).
+34. **Winter:** Der Autor fragt, ob es Schnee-Bilder gibt; im Katalog gibt es keine. Antwort und
     Empfehlung in `docs/spiel/ENTSCHEIDUNGEN.md` (10.11.2026).
 
 ## Akt 1 (alle Wahl A)
@@ -447,3 +455,31 @@ Die übrigen Akt-1-Punkte (Maple Falls, Weg 1, Cedar Creek) hat niedrig-1 ebenfa
 - Der große Kaffeebecher-Stand zeigt mit seiner Öffnung vom Platz weg.
 - Die Bänke auf dem Platz schauen auf die Grünflächen hinaus; das ergibt wenig Sinn.
 - Die Übergänge zwischen Gras und Wegen sind unschön. Gibt es passende Bilder?
+
+### `siliconBay.aussen` (Campus, Wahl C: „sieht mal nach etwas anderem aus, abwechslungsreich, gut“)
+
+- Die Werbetafel oben rechts steht weit weg vom Weg.
+- Der Zug in der Mitte steht nicht auf den Gleisen.
+- Die Marktstände in der Mitte sind leer.
+- Die Bänke um den Brunnen zeigen nicht zum Brunnen.
+- Unten steht eine Reihe fast gleicher Store-Häuschen; mehr Abwechslung.
+- Vor den Stores läuft eine Kante durch den Boden, wie ein durchsichtiges Rechteck. Was ist das?
+- Fast die ganze Stadt hat dasselbe Pflaster. Mehr Abwechslung, siehe allgemeiner Punkt 31.
+- Der große Platz mit den Bäumen in der Mitte ist nicht abgegrenzt; man sieht nicht, wo er anfängt
+  und aufhört.
+- Am Gleis rechts steht wieder ein Absperrschild statt eines Prellbocks.
+
+### `siliconBay.hafen` (alter Hafen, Wahl C)
+
+- Fährhäuschen, Fähre und Kranturm haben keine Tiefe und passen nicht zum Rest (Regel 10.60).
+- Die Fähre ist nur doppelt so lang wie das kleine Ruderboot; die Größenverhältnisse stimmen nicht.
+- Der Leuchtturm steht auf einer kleinen Landzunge. Um ihn ist zu wenig Platz, um zum Eingang zu
+  kommen.
+- Der Bodenbelag ist viel zu regelmäßig (allgemeiner Punkt 31).
+- Zwei gleiche kleine Marktkarren (Gemüse?) stehen ohne Verkäufer herum.
+- Kisten liegen auf der Hauptstraße.
+- Die Laternen stehen zu weit vom Weg und nicht in regelmäßigen Abständen.
+- Neben dem Fährhäuschen stehen kleine Taschen mit „H“ in Rot, Blau, Rot. Was sind sie?
+- Ein Eimer mit Fischen steht zufällig auf dem Kai.
+- Kisten und Fässer am Kai sind in Ordnung, wenn verladen wird. Dann aber in größerer Menge und
+  geordnet, mit Ladebetrieb: Figuren, die arbeiten.

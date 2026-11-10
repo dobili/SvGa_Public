@@ -87,9 +87,8 @@ Szene heißt die Datei in `inhalte/abenteuer/szenen/` ohne `.json`.
 - [x] pelikaninsel-dorf im Winter (Runde 9, mittel-3)
 
 - [x] silicon-bay-akademie, silicon-bay-altstadt (dritte Prüfung, mittel-3; Stehpulte, Glaswand mit Pfosten, geräumte Straße mit Schneewällen; Dateien `silicon-bay-akademie-3.md`, `silicon-bay-altstadt-3.md`)
-- [ ] silicon-bay-akademie, silicon-bay-altstadt (dritte Prüfung, mittel-3; Stehpulte, Glaswand mit Pfosten, geräumte Straße mit Schneewällen; Dateien `silicon-bay-akademie-3.md`, `silicon-bay-altstadt-3.md`)
-- [ ] riverton-aussen mit Zuständen, riverton-bahnhofshalle, riverton-pavillon, riverton-wohnwagen (vierte Prüfung, mittel-3; Markierung, Straße zur Brücke, Bogenfenster, große Figuren; `riverton-aussen-4.md`, `riverton-innen-4.md`)
-- [ ] crossroads-aussen, crossroads-raststaette, jahrmarkt-festplatz, pelikaninsel-dorf, Weg 8 und Weg 9 (zweite Prüfung, mittel-3; Dateien `…-2.md`)
+- [x] riverton-aussen mit Zuständen, riverton-bahnhofshalle, riverton-pavillon, riverton-wohnwagen (vierte Prüfung, mittel-3; Markierung, Straße zur Brücke, Bogenfenster, große Figuren; `riverton-aussen-4.md`, `riverton-innen-4.md`)
+- [x] crossroads-aussen, crossroads-raststaette, jahrmarkt-festplatz, pelikaninsel-dorf, Weg 8 und Weg 9 (zweite Prüfung, mittel-3; eine Datei `mittel-3-runde9-2.md`)
 
 - [ ] ghost-town-aussen, ghost-town-saloon, goldmine-stollen, erinnerung-london-kaffeehaus, erinnerung-london-strand, kuerbishof-hof (zweite Prüfung, niedrig-1; Antworten in ghost-town.md, erinnerung-london.md, kuerbishof.md, Abschnitt „Gutachten Runde 9: Antworten“; Bilder aus `niedrig1_runde9_karten.py` erst rendern)
 

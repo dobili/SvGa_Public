@@ -2353,7 +2353,12 @@
       "art": "gebaeude",
       "blick": "unten",
       "zustand": "neu",
-      "stil": "modern"
+      "stil": "modern",
+      "tuer": [
+        [5, 29],
+        [6, 29],
+        [7, 29]
+      ]
     },
     "sb9Tunnelportal": {
       "quelle": "spiel/eigene/tunnelportal_west.png",

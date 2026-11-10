@@ -770,3 +770,14 @@ Gutachten in `docs/spiel/auftraege/gutachten/`. „Technik“ heißt: zentral ge
 - Fehlendes Bild: 10 (erkennbare Zeder), 6 (Sturmholz mit Wurzelteller).
 - Perspektive: 19–22 (Figuren ohne Eimer, Leinwand, Farbe).
 - Zur Nachprüfung: 5, 8, 12–14.
+
+## Bootsschuppen und Regel 10.64 (niedrig-1, 10.11.2026)
+
+- Der Bootsschuppen des Kanuverleihs (neues Bild `bootsschuppen.png` von mittel-1) steht wieder am
+  Bach, wie die Beschreibung sagt: am Westufer auf Höhe der Picknickwiese, das Tor nach Süden zu einer
+  kleinen Bucht, die in den Bach mündet. Das Ruderboot liegt daneben im Bach, die Bank zum Bach steht
+  zwei Reihen weiter oben.
+- Regel 10.64: Der Bus an der Haltestelle ist 7 × 4 Kacheln (Bus 7–9 × 3, die vierte Reihe ist das
+  Dach in der Schrägansicht), die Ruderboote 2 × 4 (hochkant). Auch der Schulbus im Park (Zustand
+  `schulbus`) ist 7 × 4. Der Traktor auf der Landstraße misst 5 × 4. Er steht nicht in der Liste der
+  Regel, ist aber größer als ein Auto, wie es sein soll.

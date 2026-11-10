@@ -768,7 +768,7 @@ Behoben (Gutachten `docs/spiel/auftraege/gutachten/riverton-aussen.md`, Nummern 
   die zu ihm schauen, in der Mitte der Westhälfte; die Achse zur Bahnhofstür bleibt frei. Bäckerei,
   Café und Lagerhäuser stehen auf Pflaster; die Brückenstraße ist Fußgängerzone und endet am
   gepflasterten Brückenkopf im Park.
-- **Fluss, Kai, Kanal (23–31):** Nordufer als gerade Kaimauer mit drei Reihen Promenade, vier Bänken
+- **Fluss, Kai, Kanal (23–31):** Nordufer als gerade Kaimauer (von vorn gesehen mit Leitern und Reifenfendern aus dem Hafenpaket) mit drei Reihen Promenade, vier Bänken
   mit Blick aufs Wasser und Laternen in festen Abständen. Am Kai im Osten Kisten, Fässer,
   Poller mit Tau, ein Motorboot am Kai (5 × 2 Kacheln, 10.64) und der Gabelstaplerfahrer bei der Arbeit; das Pegelhaus steht am
   Ende des Kais direkt am Wasser. Das Südufer schwingt aus. Der Kanal und sein Becken haben Steinufer
@@ -797,6 +797,35 @@ Begründet nicht geändert:
 - 10.64: Der kleine Portalkran am Kai ist weg (ein Portalkran wäre 10–14 Kacheln hoch und passt nicht
   an einen Flusskai); dafür ein Bahnwärterhäuschen östlich des Güterschuppens (10.51, 20 Gebäude).
 - (42) Reihenhaus und Lagerhaus stehen je zweimal nebeneinander als Paar (Punkt 25: höchstens zweimal).
+
+### 3.7 Zweites Gutachten (10.11.2026, mittel-3)
+
+Behoben (`gutachten/riverton-aussen-2.md`, `riverton-innen-2.md`):
+
+- **Außen:** Bahnhof mit Uhrturm in der Mitte, Bogenportal mit Glastür unter dem Rundbogen und zwei
+  Flügeln (Bildwunsch `riverton_aussen.py`); der Bahnsteig liegt hinter dem Bahnhof zwischen Gebäude
+  und Gleis, Gleisbett aus Schotter; Bahnsteigbänke von der Seite statt mit dem Rücken zum Gleis;
+  Stellwerk ist eine Holzhütte am Fußweg (Tür zum Weg); der Fußweg biegt zum Vorplatz und hat zwei
+  Laternen; Tor des Güterschuppens mit Pflasterweg; zwei Läden statt Wohnblock und Angelladen;
+  Gehwege, Promenade, Bäckerei und Café auf Steinplatten, Vorplatz und Markt auf Kopfstein, Kai auf
+  Beton, so dass jede Fläche eine Kante hat; das ganze Wasser hat Steinufer, das Kanalbecken ist
+  offen zum Fluss; Pavillon aus Holz mit Fensterreihe und Tür (Bildwunsch `riverton_runde8b.py`);
+  sechs Bildschirmtische mit Abstand; Laternen am Uferweg stehen südlich des Wegs.
+- **Bahnhofshalle:** drei Schalterfenster, gläserne Bahnsteigtür in der Nordwand und gläserne
+  Eingangstür (eigene Bilder), Getränke- und Kaffeeautomat von vorn nebeneinander an der Nordwand,
+  Kiosk mit drei Zeitungshaltern im Raum statt auf der Wandkrone, Pops zwischen Haltern und
+  Tresen, keine Kartons mehr, nur zwei Pflanzen am Eingang.
+- **Pavillon:** rechteckige Holztische mit zwei Brettern auf der Platte und je einem Stuhl davor und
+  dahinter (Bildwunsch), Holztruhen, Pflanzen an den Ecken des Laufwegs, Limonadenglas auf einem
+  Tischchen.
+- **Wohnwagen:** drei Reihen tief, das Querbett reicht von Wand zu Wand; Pokale stehen auf dem
+  Wandbord unter der Decke; Nasszelle mit Mini-Toilette und Duschvorhang; Sitzecke mit zwei Bänken
+  um einen niedrigen Holztisch; keine Kistenmatte.
+
+Begründet nicht geändert: Bahnhofshalle mit hellen Ziegeln und rechteckigen Fenstern (keine
+Wand- und Fensterbilder in Backstein mit Rundbogen für Innenräume); Fahrbahnmarkierung und Pfützen
+(keine Bilder, Tönung der Laufzeit); Enten, Taubenmann und Hund sind Belebungsbilder; die
+Bäckerei behält ihr englisches Schild; Schuppen bleibt (stimmigste Karte des Gutachtens).
 
 ## 4. Bühnenbilder
 
@@ -1332,3 +1361,56 @@ neun Felder lang. Auf Weg 3 fahren keine Fahrzeuge; die Ruderboote am Ufer sind 
 Fabrikhof 4 × 4, der Leiterwagen 2 × 3. Ironwood: Werksbus 7 × 4 (wie LimeZus Bus), keine Lastwagen.
 Steinbruch: Radlader 6 × 3, Lore der Feldbahn 1,5 × 1. Weg 7: die Sattelzüge sind 10 × 4; das Autowrack an
 der Tankstelle war ein Kleinwagen von vorn (2 × 2) und ist jetzt ein Wrack in Autogröße (4 × 4).
+
+### Gutachten Runde 8 (Kanalweg, Eisenbrücke): Umsetzung und Begründungen
+
+**Kanalweg** (`gutachten/weg-riverton-ironwood-1.md`), umgesetzt: befestigter Treidelpfad direkt an der
+Kaimauer (9), Poller in gleichem Abstand und ein Frachtkahn längs am Kai (2, eigenes Bild 5 × 26, Regel
+10.64), Steg am Rastanleger mit Boot daneben (4, 5), Reiher entfernt (6), Brücke mit Brückenköpfen und
+Fachwerk über den Seitenarm (8), Hütte am Ostufer entfernt, das Ostufer ist bewachsene Böschung (10), die
+Mauer ist die Hofmauer der Fabrik (11), Graffiti mit Turm und Springer (12), Fabrikhalle mit Rolltor statt
+Holzschuppen (14), Hof mit Containern und Fässern statt Autowracks (15), Hof ringsum eingezäunt mit Tor zum
+Pfad (16), Laternen an der Werkstraße (17), Haltestelle mit Bank und Mülleimer (18), Obstwiese und
+Picknicktisch statt leerer Wiese (19), vier verschiedene umzäunte Kleingärten ohne Straßenlaternen, Beete
+bepflanzt, der Gärtner gießt Kohl (20–23), Landvermesser auf dem Treidelpfad (24), Silo auf 9 Kacheln
+gekürzt (25), Hofplatz aus Erde mit Rand (26), Weg zwischen den Äckern bis zum Pfad (28), Zaun ringsum
+(29), Baumreihe als Birkenreihe beschrieben (31), ein Baumstil (32).
+Nicht umgesetzt, mit Grund: **Ufer als Mauer mit Krone (1, 3):** Das Steinufer zeichnet das Material
+`wasser_stein` des Kartenbilds; eine Mauerfläche mit Krone und dunklerer Wassermitte braucht ein neues
+Material (Vorschlag an den Haupt-Chat). **Enten und Gänse (6):** Das Tierbild „ente“ kommt aus
+`belebungsbilder.py`; dort gehört es ausgetauscht. **Wegweiser lesbar (7):** Das Bild ist ein Wegweiser
+ohne Schrift; der Seitenarm führt zum Westrand, wo Lockport anschließt. **Farmhaus (27):** Das wiederholte
+Hausbild ersetzt mittel-1 für alle Karten. **Hochbeete (30):** Der Gutachter nennt sie sauber gemacht; sie
+bleiben.
+
+**Eisenbrücke** (`gutachten/weg-riverton-ironwood-2.md`), umgesetzt: Der Hang hat Felskanten mit
+Treppen zwischen den Kehren (Klippenkacheln, Kante „klippe“), die Treppe nach Ironwood führt durch die
+letzte Kante, das Widerlager mit Graffiti sitzt am Brückenkopf, die Möwe fliegt über der Wiese, der
+Reiher ist weg, am Wärterhaus stehen kleine Laternen statt Straßenlaternen. Nicht umgesetzt: **Brücke
+liegt flach:** Das Fachwerk mit steinernen Brückenköpfen ist in der Draufsicht gezeichnet; eine Brücke mit
+sichtbarer Höhe über einem Einschnitt bräuchte ein eigenes Bild mit Unterseite und Schatten
+(Bildwunsch).
+
+Zweiter Durchgang an der Eisenbrücke (Detailbefunde, 10.11.2026): mehr Hocker am Imbiss, Dime am
+Brückenkopf, Koppeln mit Gattern, Stall in der ersten Koppel, Schafherde, Felsen unregelmäßig, mehr Bäume
+und Büsche am Hang, Hase entfernt.
+
+## Regel 10.64 und Bootsschuppen in Lockport (niedrig-1, 10.11.2026)
+
+- **Frachtkahn:** Die „Ashford Belle“ misst jetzt 24 × 5 Kacheln (vorher 6 × 3, kaum länger als ein
+  Ruderboot). Das Bild `frachtkahn.png` ist im Bildwunsch `niedrig1_clubraum_schleuse.py` neu
+  gezeichnet (384 × 80, sieben Lukendeckel, Steuerhaus mit Schornstein).
+- **Schleuse:** Damit Kammer und Kahn passen, ist die Karte 18 Spalten breiter (74 statt 56). Die
+  Kammer ist 28 Kacheln lang (Kahn + 4) und hat wie Becken und Oberwasser 7 Reihen Wasser (Reihen
+  13–19). Die Stemmtore reichen über diese 7 Reihen und je eine Reihe Kaimauer; das Bild
+  `schleusentor_stemm.png` ist dafür 32 × 144 (gleicher Bildwunsch).
+- **Bootsschuppen:** Er steht jetzt am Westende des Uferwegs auf der Kaimauer, das Tor öffnet sich
+  nach Süden zum Hafenbecken (Möbelangabe `zum_wasser`, damit die Prüfung „Vorderseite zur Wand“
+  Wasser vor dem Tor zulässt). Der Weg endet damit nicht mehr stumpf im Gras (Gutachten Nr. 22).
+  Der alte Wellblechschuppen ist der Werkstattschuppen auf dem Werftplatz.
+- **Henriks Boot:** ein Ruderboot von 4 × 2 Kacheln im Oberwasser östlich der Kammer (vorher 5 × 2
+  im Becken, wo jetzt der Kahn liegt); im Zustand `boot-an-land` liegt es auf dem Werftplatz.
+- **Abweichung:** Ein Ruderboot ist nach 10.64 3–4 × 1,5; das Bild ist 4 × 2, weil es die Bordwand
+  in der Schrägansicht mitzeigt.
+- **Gefüllt nach dem Verbreitern:** drei Wohnhäuser mit Gärten am Nordufer, drei an der mittleren
+  Reihe, zwei in der Südreihe. Der Dorfplatz ist wieder 12 Kacheln breit.

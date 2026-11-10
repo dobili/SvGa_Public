@@ -855,3 +855,23 @@ auf jeder soll etwas passieren, das man entdecken kann. Die Geschichten dazu ste
       werden ebenso verlängert.
     - **Prüfung:** Der Gutachter prüft die Maße gegen diese Tabelle (KARTENPRUEFUNG 3,
       „Wasser, Ufer, Boote“ und „Gleise und Straßen“).
+65. **Fahrzeuge in der Richtung ihrer Fläche** (Gutachten Runde 8, Befund j, 10.11.2026). LimeZu
+    zeichnet Fahrzeuge auf Straßen von West nach Ost von der Seite und auf Straßen von Nord nach Süd
+    von vorn oder hinten. Das bleibt so, aber die Fläche unter dem Fahrzeug muss dazu passen:
+    - **Längs geparkt:** An einer West-Ost-Straße parken Autos längs am Rand, von der Seite gezeichnet.
+      Die Parkbuchten sind dann lange Rechtecke parallel zur Straße.
+    - **Quer geparkt:** Parkbuchten quer zur Straße (Linien von Nord nach Süd) bekommen Autos von
+      vorn oder hinten. Ein Auto von der Seite steht nie in einer Bucht, deren Linien es kreuzt.
+    - **Busse, Lastwagen, Güterwagen, Traktoren:** Sie stehen längs zu ihrer Fahrbahn, Haltestelle
+      oder ihrem Gleis und ragen nicht in den Gehweg. Sie brauchen die Maße aus 10.64.
+    - Fehlt ein Bild in der passenden Richtung, wird die Fläche angepasst (Buchten längs), nicht das
+      Fahrzeug quer gestellt.
+66. **Wohnhäuser in Menschengröße** (Gutachten Runde 8, Befund i). Ein Wohnhaus ist mindestens 5
+    Kacheln breit und 5 hoch (Grundfläche mit Dach), ein Laden oder Gasthaus mindestens 6 × 5.
+    Bilder mit 3–4 Kacheln sind Schuppen, Kioske, Garagen, Hundehütten oder Gartenhäuser, nie
+    Wohnhäuser. Häuser in einer Straße dürfen verschieden groß sein, aber nicht um mehr als das
+    Doppelte, außer bei Fabrik, Kirche oder Hochhaus.
+67. **Winter an Bäumen** (Gutachten Runde 8, Befund k). Im Winterzustand (`"jahreszeit": "winter"`)
+    behält jeder Baum einen sichtbaren Stamm. Laubbäume sind kahl oder tragen Schnee auf der Krone,
+    Nadelbäume bleiben dunkelgrün mit Schneekappen. Ein weißer Kreis ohne Stamm liest sich als
+    Schneeball und ist ein Befund.

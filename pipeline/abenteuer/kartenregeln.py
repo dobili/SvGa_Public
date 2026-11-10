@@ -38,6 +38,13 @@ def _vorne(s: dict, blick: str) -> list[tuple[int, int]]:
     return [(x, y1 + 1 if dy > 0 else y0 - 1) for x in range(x0, x1 + 1)]
 
 
+def _wasser_vorn(zeilen: list[str], felder: list[tuple[int, int]]) -> bool:
+    """Liegt vor der Vorderseite Wasser? Für Möbel mit ``zum_wasser`` (Bootsschuppen, Bootshaus):
+    Ihr Tor öffnet sich zum Wasser, das ist dort richtig und keine Wand (Rückmeldung mittel-1,
+    Runde 8: Bootsschuppen gehören ans Wasser, mit dem Tor zum Wasser)."""
+    return any(0 <= y < len(zeilen) and 0 <= x < len(zeilen[0]) and zeilen[y][x] == "~" for x, y in felder)
+
+
 def pruefe_regeln(szene: dict, zeilen: list[str], gesetzt: list[dict], moebel: dict) -> list[str]:
     befunde: list[str] = []
     zustaende = set(szene.get("zustand", STANDARD_ZUSTAND))
@@ -67,7 +74,9 @@ def pruefe_regeln(szene: dict, zeilen: list[str], gesetzt: list[dict], moebel: d
             if nah:
                 befunde.append(f"{name} überdeckt eine Figur bei {nah[0]}")
         blick = angabe.get("blick")
-        if blick in RICHTUNG and s["kollision"] and all(_gesperrt(zeilen, x, y) for x, y in _vorne(s, blick)):
+        vorn = _vorne(s, blick) if blick in RICHTUNG else []
+        wasser_ok = angabe.get("zum_wasser") and _wasser_vorn(zeilen, vorn)
+        if vorn and s["kollision"] and not wasser_ok and all(_gesperrt(zeilen, x, y) for x, y in vorn):
             befunde.append(f"{name} zeigt mit der Vorderseite zur Wand ({blick})")
         if "zu" in eintrag and blick in RICHTUNG:
             ziel = nach_id.get(eintrag["zu"])

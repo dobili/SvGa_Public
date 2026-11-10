@@ -656,7 +656,8 @@ Tür zum Serverraum in der Nordwand bei Spalte 12, Feld davor (12, 3). Eigene Bi
   flacher Front; der Kran ist weg; Ladebetrieb am kleinen Fischerboot mit Kisten und Fässern in Reihen und drei
   Arbeitern; ein Gemüsekarren mit Händlerin statt zwei leerer; keine Kisten mehr auf der Straße;
   Laternen am Straßenrand alle zehn Felder; die „H“-Taschen (Fischkisten) und der Fischeimer sind
-  weg; um den Leuchtturm genug Land für den Weg zur Tür. Das Fischerboot des Pakets (6 × 3 Kacheln mit
+  weg; um den Leuchtturm genug Land für den Weg zur Tür. Die Kaimauer fällt von vorn gesehen zum Wasser ab
+  (`hafen-16/ground`, Wand mit Leitern und Reifenfendern, `sb8Kaimauer…`). Das Fischerboot des Pakets (6 × 3 Kacheln mit
   Angel) ist ein kleines Holzboot, kein Kutter; es bleibt so und heißt Fischerboot (10.64: zwischen Ruderboot
   und Motorboot). Ein Verlängern ergäbe nur ein langes Ruderboot.
 

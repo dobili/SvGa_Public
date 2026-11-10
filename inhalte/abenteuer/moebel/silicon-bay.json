@@ -838,7 +838,7 @@
       "stil": "modern"
     },
     "sb5Fussmatte": {
-      "quelle": "modern-exteriors/Modern_Exteriors_16x16/ME_Theme_Sorter_16x16/10_Vehicles_Singles_16x16/ME_Singles_Vehicles_16x16_Gas_Station_Doormat_1.png",
+      "quelle": "modern-interiors/1_Interiors/16x16/Theme_Sorter_Singles/26_Condominium_Singles/Condominium_Singles_66.png",
       "breite": 16,
       "hoehe": 16,
       "kollision": false,
@@ -1919,6 +1919,46 @@
       "zustand": "gebraucht",
       "stil": "klassisch",
       "blick": "keine"
+    },
+    "sb8Kaimauer": {
+      "quelle": "hafen-16/ground/quay_front_wall.png",
+      "breite": 16,
+      "hoehe": 16,
+      "kollision": false,
+      "art": "boden_teil",
+      "zustand": "gebraucht",
+      "stil": "industrie",
+      "blick": "keine"
+    },
+    "sb8KaimauerLeiter": {
+      "quelle": "hafen-16/ground/quay_front_wall_ladder.png",
+      "breite": 16,
+      "hoehe": 16,
+      "kollision": false,
+      "art": "boden_teil",
+      "zustand": "gebraucht",
+      "stil": "industrie",
+      "blick": "keine"
+    },
+    "sb8KaimauerReifen": {
+      "quelle": "hafen-16/ground/quay_front_wall_tire.png",
+      "breite": 16,
+      "hoehe": 16,
+      "kollision": false,
+      "art": "boden_teil",
+      "zustand": "gebraucht",
+      "stil": "industrie",
+      "blick": "keine"
+    },
+    "sb8GlastuerSued": {
+      "quelle": "spiel/eigene/glastuer_sued.png",
+      "breite": 16,
+      "hoehe": 16,
+      "kollision": false,
+      "art": "tuer",
+      "zustand": "neu",
+      "stil": "modern",
+      "blick": "unten"
     }
   }
 }

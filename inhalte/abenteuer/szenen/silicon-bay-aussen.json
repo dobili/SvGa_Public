@@ -1529,7 +1529,21 @@
     {
       "name": "akademieTuer",
       "feld": [
+        27,
+        31
+      ]
+    },
+    {
+      "name": "akademieTuer",
+      "feld": [
         28,
+        31
+      ]
+    },
+    {
+      "name": "akademieTuer",
+      "feld": [
+        29,
         31
       ]
     },

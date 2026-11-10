@@ -1017,3 +1017,64 @@ sie in seinem Dialog). Imogen, Ruben und Henrik stehen als Statisten ohne Satz a
 liegt das Ruderboot neu bei (21, 18). Statt der Pumpe steht ein Dorfbrunnen mit Kurbel (`lp6Brunnen`, Modern Farm) bei (30, 36), Auslöser
 `pumpe` (31, 36), in allen drei Varianten. Die Glocke (`lp6Glocke`, eigenes Bild `glocke_pfosten.png`) hängt am Nordufer, Auslöser `glocke` davor auf der Uferstraße bei A (46, 10), B (44, 10), C (37, 10). **Offen:** die Schnellreise mit dem Lastkahn (`reise`) braucht Anleger in Riverton und
 Ironwood.
+
+## Runde 8 (10.11.2026): Kanalweg und Eisenbrücke nach den Notizen des Autors (mittel-4)
+
+Beide Karten sind neu gebaut (Hauptfassung A; B und C bleiben als Archiv liegen) und jetzt
+36 Felder breit, damit der Kanal für Frachtkähne Platz hat.
+
+**Antworten auf die Fragen des Autors (Empfehlung, schon umgesetzt):**
+
+- _Eisenbrücke: Soll es eine Brücke aus Eisen geben?_ Ja, die Geschichte verlangt sie (Story-Bibel
+  10.3, Szene 40). Neu gezeichnet als genietetes Fachwerk mit Brückenköpfen aus Stein
+  (`bruecke_eisen_laengs_8`, Möbel `wr8BrueckeEisen8`).
+- _Ist es derselbe Kanal wie am Kanalweg?_ Ja. Die Eisenbrücke setzt den Kanalweg fort, deshalb ist
+  er auf beiden Karten gerade, acht Felder breit (Spalten 20–27, Frachtkähne nach Lockport) und hat
+  ein Steinufer (`ufer: stein`, Regel 10.57). Auf der Eisenbrücke biegt er in den Reihen 54–61 nach
+  Westen unter dem Pfad hindurch und läuft in den Spalten 2–9 bis Ironwood weiter; Ironwood hat
+  dieselben Spalten.
+- _Spieltische ohne Grund?_ Sie gehören den Brückenbauern (Dokument 15, 2.3): Dime und seine Leute
+  spielen unter der Brücke, wo es bei Regen trocken bleibt. Die Tische stehen jetzt auf einem
+  gepflasterten Kai am Südufer direkt an der Brücke, mit Hockern; die Graffiti am Widerlager dahinter
+  sind die übliche Malerei unter Brücken, eine Sprayerin ist dabei.
+- _Zickzackweg mit Zäunen?_ Der Pfad fällt in Kehren den Hang hinab (Abhang nach Ironwood). Zwischen
+  den Kehren liegen eingezäunte Weiden des Hofs am Hang (Schafe, Ziegen, Streuobst); die Zäune
+  trennen den Pfad von den Tieren.
+- _Große Graffiti-Mauer unten?_ Entfernt; sie hatte keinen Grund. Graffiti gibt es nur noch dort, wo
+  die Geschichte sie trägt: am Widerlager unter der Brücke und an der freien Wand am Kanalweg.
+- _Springer im Gras und Schildchen mit Huhn?_ Das sind das Kreidezeichen K1 (Kreide-Strang) und das
+  Finkenschild (Finch-Strang). Der Kreidespringer steht jetzt auf dem steinernen Brückenkopf, das
+  Finkenschild hängt am Geländer der Brücke (Regel 10.61).
+- _Kanalweg: Warum ein Silo ohne Farm?_ Das Silo gehört jetzt zu Mr. Dales Hof: es steht am Hofplatz
+  neben Scheune und Farmhaus, darunter vier Äcker (Kohl, Mais, Kürbis, Karotten).
+- _Boot quer im Kanal?_ Ein Kanal mit Frachtkähnen ist breit (acht Felder). Auf den Nord-Süd-Strecken
+  liegen nur kleine Boote längs am Ufer, weil es den Lastkahn nur in Ost-West-Ansicht gibt.
+- _Gebäude neben dem Farmhaus ohne Tür?_ Das war ein Hühnerstall. Er steht jetzt in einem eigenen
+  Hühnerhof mit Zaun und Hühnern, mit Weg zum Pfad; das Farmhaus steht für sich.
+- _Mast unten links?_ Entfernt, er hatte keinen Grund.
+
+**Eisenbrücke (`weg-riverton-ironwood-2`):** Wärterhäuschen (9, 14) mit Weg zum Pfad und zwei
+Laternen daran; Laternen am Treidelpfad alle 12 Reihen und an jeder Kehre. Kai 11–28 / 62–64 mit
+Bank und zwei Laternen. Auslöser: `fundNietenkopf` (18, 56), `zeitnotTrick` (17, 58),
+`aussichtTal` (18, 60) auf der Brücke; `waerterhaus` (11, 18); `ereignisBrueckenbauern` (24, 62),
+`kreide1` (19, 63), `spurPM1` (27, 62), `seite07` (13, 64), `finchLaeuferA` (16, 62); Dime (21, 62).
+Ausgang nach Ironwood (24–25, 159).
+
+**Kanalweg (`weg-riverton-ironwood-1`):** Freie Wand (3–14, 16) mit Sprayerin und Schild, Grund:
+Riverton hat die alte Fabrikmauer für Graffiti freigegeben (Noors Wand, Akt 2). Fabrikhalle mit Hof
+(Tür Spalte 8) und Tor zum Pfad; Werkstraße 1–16 / 50–52 mit Haltestelle und Rätseltafel;
+Kleingärten mit Gartenhäuschen (Reihen 60–79); Treidelbrücke über den Seitenarm (100–105) nach
+Lockport; Rastbank (15, 109); Hof von Mr. Dale mit Hühnerhof (2–9 / 110–117), Farmhaus (1, 121),
+Scheune (2, 132), Silo (11, 128), Hofplatz aus Kies, Äcker 1–14 / 148–159; Rastanleger mit Bank und
+Boot; Pappelallee. Auslöser: `tafel` (15, 50), `fundZahnrad` (12, 43), `meilenstein` (16, 10),
+`rastKanal` (16, 110), `fundKonservendose` (19, 157); Mr. Dale (8, 147).
+
+**Zustände (Regel 10.63), gebaut, sobald mittel-2 die Technik meldet:**
+
+| Karte    | Zustand             | Wann und warum                                                            |
+| -------- | ------------------- | ------------------------------------------------------------------------- |
+| kanalweg | Graffiti halb       | Akt 2: Noor beginnt die Schachfiguren an der freien Wand                  |
+| kanalweg | Graffiti fertig     | ab Akt 3 (`endeAkt2`-Marke): die Wand zeigt Turm und Springer vollständig |
+| kanalweg | Winter              | Akt 3: Schnee am Pfad, Eis am Ufer (13, 7.3)                              |
+| bruecke  | Geländer gestrichen | nach Corwins Quest: Farbeimer und Leiter weg, Geländer frisch             |
+| bruecke  | Winter              | Akt 3: Schnee auf den Weiden, die Klapptische sind weggeräumt             |

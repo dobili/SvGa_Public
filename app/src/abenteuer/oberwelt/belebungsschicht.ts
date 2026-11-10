@@ -13,7 +13,14 @@ import Phaser from "phaser";
 import { passtZurStunde, statistenbild, type Belebung, type Feld } from "./belebung";
 import { neueBewegung, schritt, steht, type Bewegung, type Umgebung } from "./belebungsbewegung";
 import { erzeugeLaufanimationen, ladeFigurbogen, laufname, standbild } from "./figurbilder";
-import { scharGroesse, scharversatz, tierartVon, TIERBILDER } from "./tiere";
+import {
+  scharGroesse,
+  scharversatz,
+  schwimmversatz,
+  tierAnsicht,
+  tierartVon,
+  TIERBILDER,
+} from "./tiere";
 
 /** Bilder der Belebung im Paket: Pfad („figuren/statist-07.png“, „tiere/taube.png“) → Adresse. */
 export type Belebungsbilder = Readonly<Record<string, string>>;
@@ -121,10 +128,13 @@ export class Belebungsschicht {
     erzeugeLaufanimationen(this.szene, bogen);
     for (let i = 0; i < scharGroesse(v.name); i++) {
       const sprite = this.szene.add.sprite(0, 0, bogen, standbild("unten"));
-      sprite.setOrigin(0.5, 1 - this.kachel / 2 / sprite.height);
+      // Schwimmer liegen im Wasser: unten abgeschnitten, um den Rest tiefer (Regel 10.55).
+      const ansicht = tierAnsicht(sprite.height, this.kachel, v.verhalten === "schwimmen");
+      if (ansicht.sichtbar < sprite.height) sprite.setCrop(0, 0, sprite.width, ansicht.sichtbar);
+      sprite.setOrigin(0.5, ansicht.ursprungY);
       // Große Tiere (Ziege, Kuh) brauchen in der Schar mehr als eine Kachel Abstand.
       const weite = Math.ceil(sprite.width / this.kachel);
-      const d = scharversatz(i);
+      const d = v.verhalten === "schwimmen" ? schwimmversatz(v.von, v.bis, i, 1) : scharversatz(i);
       this.fuegeHinzu(verschoben(v, { x: d.x * weite, y: d.y * weite }), sprite, bogen, null);
     }
   }

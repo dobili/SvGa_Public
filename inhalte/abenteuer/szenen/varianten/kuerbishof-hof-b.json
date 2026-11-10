@@ -790,6 +790,82 @@
       "eigenschaften": {
         "verhalten": "fliegen"
       }
+    },
+    {
+      "name": "erntehelfer",
+      "typ": "statist",
+      "feld": [36, 10],
+      "eigenschaften": {
+        "von": "36,10",
+        "bis": "36,10",
+        "tun": "trägt Kürbisse zum Wagen",
+        "wann": "tag",
+        "sagt": "statist.kuerbishof.hof.erntehelfer"
+      }
+    },
+    {
+      "name": "pferdefrau",
+      "typ": "statist",
+      "feld": [10, 26],
+      "eigenschaften": {
+        "von": "10,26",
+        "bis": "10,26",
+        "tun": "lehnt am Weidezaun",
+        "wann": "tag",
+        "sagt": "statist.kuerbishof.hof.pferdefrau"
+      }
+    },
+    {
+      "name": "marktfrau",
+      "typ": "statist",
+      "feld": [24, 20],
+      "eigenschaften": {
+        "von": "24,20",
+        "bis": "24,20",
+        "tun": "stapelt Apfelkisten für das Fest",
+        "wann": "tag",
+        "sagt": "statist.kuerbishof.hof.marktfrau"
+      }
+    },
+    {
+      "name": "kuehe",
+      "typ": "tier",
+      "feld": [8, 28],
+      "eigenschaften": {
+        "von": "8,28",
+        "bis": "12,28",
+        "verhalten": "sitzen"
+      }
+    },
+    {
+      "name": "wildpferde",
+      "typ": "tier",
+      "feld": [12, 30],
+      "eigenschaften": {
+        "von": "12,30",
+        "bis": "20,30",
+        "verhalten": "rennen"
+      }
+    },
+    {
+      "name": "huehner",
+      "typ": "tier",
+      "feld": [20, 9],
+      "eigenschaften": {
+        "von": "20,9",
+        "bis": "24,9",
+        "verhalten": "ausweichen"
+      }
+    },
+    {
+      "name": "schwein",
+      "typ": "tier",
+      "feld": [6, 18],
+      "eigenschaften": {
+        "von": "6,18",
+        "bis": "6,18",
+        "verhalten": "schlafen"
+      }
     }
   ],
   "variante": "b"

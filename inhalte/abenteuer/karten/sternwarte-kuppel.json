@@ -11,7 +11,7 @@
  "tilewidth": 16,
  "tileheight": 16,
  "nextlayerid": 5,
- "nextobjectid": 19,
+ "nextobjectid": 20,
  "layers": [
   {
    "id": 1,
@@ -997,6 +997,29 @@
        "name": "tiefe",
        "type": "int",
        "value": 153
+      },
+      {
+       "name": "kollision",
+       "type": "bool",
+       "value": false
+      }
+     ]
+    },
+    {
+     "id": 19,
+     "name": "ds8Finkenzeichen",
+     "type": "moebel",
+     "x": 192,
+     "y": 128,
+     "width": 16,
+     "height": 16,
+     "rotation": 0,
+     "visible": true,
+     "properties": [
+      {
+       "name": "tiefe",
+       "type": "int",
+       "value": 1
       },
       {
        "name": "kollision",

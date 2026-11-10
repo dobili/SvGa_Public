@@ -534,3 +534,16 @@ Holz alle vier Felder. **Tönung** dunkel; mit Laterne Lichtkreis von vier Felde
 | Nische        | Nische mit losem Stein; nach Szene 43 Blechdose (Objekt) | 4–7 / 3–5     | Mamas Versteck (N-ST2), vorher nur Steine                         |
 | Kaverne       | Hallraum mit Tropfsteinresten, Pfütze, abgestellte Lore  | 24–36 / 2–10  | `echo` (30, 6) (N-ST3)                                            |
 | überall       | Geröll in Gruppen, Wassertropfen (Klang), Stützbalken    | –             | Regel 9.8.5 entsprechend (Kleinkram nur am Rand)                  |
+
+## Runde 7: Steinbruch, Leben und Finch-Figur (10.11.2026, mittel-4)
+
+Zu Hargrove, Lena und den Kindern kommen drei ansprechbare Statisten (`statist.steinbruch.grube.*`):
+
+- Steinmetz (Abzug wie beim Sprengen);
+- Wanderer (Rukh, der Streitwagen, 16, 4.1 Nr. 4);
+- Fotografin am Abend (Krähen an der Kante).
+
+Tiere: Krähe, Fledermäuse, Fuchs, Hasen, Falke, Eidechse.
+
+**3.3 Feld für Runde 6:** `finchBauerF` in `steinbruch.grube` bei (59, 42) in A, B und C, begehbar,
+mit Finkenzeichen aus Kreide.

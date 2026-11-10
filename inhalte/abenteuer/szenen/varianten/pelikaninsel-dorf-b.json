@@ -253,6 +253,11 @@
     {
       "moebel": "n4MuschelGold",
       "feld": [22, 28]
+    },
+    {
+      "moebel": "sc8Finkenzeichen",
+      "feld": [40, 10],
+      "id": "ereignis45"
     }
   ],
   "ausloeser": [
@@ -333,6 +338,62 @@
       "feld": [33, 31],
       "eigenschaften": {
         "verhalten": "flitzen"
+      }
+    },
+    {
+      "name": "fischerin",
+      "typ": "statist",
+      "feld": [20, 20],
+      "eigenschaften": {
+        "von": "20,20",
+        "bis": "20,20",
+        "tun": "flickt am Steg ein Netz",
+        "wann": "tag",
+        "sagt": "statist.pelikaninsel.dorf.fischerin"
+      }
+    },
+    {
+      "name": "netzflicker",
+      "typ": "statist",
+      "feld": [30, 24],
+      "eigenschaften": {
+        "von": "30,24",
+        "bis": "30,24",
+        "tun": "sitzt mit Mütze auf einer Kiste",
+        "wann": "tag",
+        "sagt": "statist.pelikaninsel.dorf.netzflicker"
+      }
+    },
+    {
+      "name": "inselkind",
+      "typ": "statist",
+      "feld": [15, 26],
+      "eigenschaften": {
+        "von": "15,26",
+        "bis": "15,26",
+        "tun": "wirft Brotkrumen für die Möwen",
+        "wann": "tag",
+        "sagt": "statist.pelikaninsel.dorf.inselkind"
+      }
+    },
+    {
+      "name": "reiher",
+      "typ": "tier",
+      "feld": [39, 28],
+      "eigenschaften": {
+        "von": "39,28",
+        "bis": "45,28",
+        "verhalten": "fliegen"
+      }
+    },
+    {
+      "name": "alligator",
+      "typ": "tier",
+      "feld": [8, 32],
+      "eigenschaften": {
+        "von": "8,32",
+        "bis": "11,32",
+        "verhalten": "schwimmen"
       }
     }
   ],

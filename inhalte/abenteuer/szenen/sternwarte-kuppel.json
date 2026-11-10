@@ -96,6 +96,11 @@
       "feld": [0, 0],
       "auf": "anrichte",
       "versatz": [8, 0]
+    },
+    {
+      "moebel": "ds8Finkenzeichen",
+      "feld": [12, 8],
+      "id": "ereignis16"
     }
   ],
   "ausloeser": [

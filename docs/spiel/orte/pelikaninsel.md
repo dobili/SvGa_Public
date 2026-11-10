@@ -87,3 +87,16 @@ Westen und Dorf im Osten, B gespiegelt und schlichter, C mit größerem Watt, me
 der bei Ebbe im Watt liegt. Die Pfahlhäuser (eigene Bilder, 4 × 5) stehen ohne Kollision im Wasser, das Wasser sperrt; ihre Treppen
 enden am Bohlensteg darunter. Leuchtfeuer (3 × 6, Tür unten in der Mitte), Netzgestell und Pelikane auf
 Pfählen sind ebenfalls eigene Bilder.
+
+## Runde 7: Leben und Finch-Figur (10.11.2026, mittel-4)
+
+Zu Delphine, Old Pete und Coral kommen drei ansprechbare Statisten (`statist.pelikaninsel.dorf.*`):
+
+- Fischerin (Pelikane wie Bauern vor dem Doppelschritt);
+- Netzflicker (Narrenmatt, 16, 4.1 Nr. 9);
+- Inselkind (Fähre im Winter).
+
+Tiere: Bishop, Pelikane, Möwen, Krebs, Reiher, Alligator.
+
+**3.3 Feld für Runde 6:** `finchBauerH` bei A (40, 13), B (40, 10), C (40, 13), begehbar, mit
+Finkenzeichen aus Blech.

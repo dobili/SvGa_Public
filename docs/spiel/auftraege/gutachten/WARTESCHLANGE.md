@@ -66,6 +66,10 @@ Szene heißt die Datei in `inhalte/abenteuer/szenen/` ohne `.json`.
 - [ ] steinbruch-grube (dritte Prüfung, jetzt mit Felskanten; `steinbruch-grube-3.md`), steinbruch-stollen (zweite Prüfung; `steinbruch-stollen-2.md`)
 - [ ] riverton-aussen und die vier Innenräume (dritte Prüfung, mittel-3; Bahnhof mit Uhrturm, Glastüren; Bilder privat ab c0febaac; Dateien `riverton-aussen-3.md`, `riverton-innen-3.md`)
 
+- [ ] ghost-town-aussen (Runde 9, niedrig-1, mit Zustand mine-offen), ghost-town-saloon, goldmine-stollen
+- [ ] erinnerung-siedlung-huette, erinnerung-london-kaffeehaus, erinnerung-london-strand (Runde 9, niedrig-1; Sepia aus der Tönung, im Vorschaubild nicht zu sehen)
+- [ ] kuerbishof-hof, weg-pinewood-ghost-tankstelle (Runde 9, niedrig-1)
+
 ## Erledigt
 
 - [x] ironwood-kantine (Test, Haupt-Chat)

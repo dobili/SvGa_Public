@@ -7,7 +7,7 @@
   "boden": "sandRot",
   "wandart": "sandRot",
   "boeden": {
-    "e": "felsbodenRot",
+    "e": "sand",
     "d": "dielen",
     "k": "felsbodenRot"
   },
@@ -33,8 +33,8 @@
     "#............................ee........................#",
     "#............................ee........................#",
     "#............................ee........................#",
-    "#............................ee........................#",
-    "#............................ee........................#",
+    "#...kk.......................ee....kk..................#",
+    "#.kkkkkkkkkkkkkkkkkkkkkkkkkkkeekkkkkkkkkkkkkkkkkkkkkkkk#",
     "#............................ee........................#",
     "#............................ee........................#",
     "#............................ee........................#",
@@ -46,18 +46,18 @@
     "eeeeeeeeeeeeeeeeeeeeeeeeeeeeeeeeeeeeeeeeeeeeeeeeeeeeeeee",
     "eeeeeeeeeeeeeeeeeeeeeeeeeeeeeeeeeeeeeeeeeeeeeeeeeeeeeeee",
     "#.eeeeeeeeeeeeeeeeeeeeeeeeeeeeeeeeeeeeeeeeeeeeeeeeeeee.#",
-    "#.......ee............eeeeeeeeeeeee.....ee.............#",
-    "#.......ee.............eeeeeeeeeee......ee.............#",
-    "#.......ee..............................ee.............#",
-    "#.......ee..............................ee.............#",
-    "#.......ee..............................ee.............#",
+    "#.......ee............eeeeeeeeeeeee........kk..........#",
+    "#.......ee.............eeeeeeeeeee.........kk..........#",
+    "#.......ee.................................kk..........#",
+    "#.......ee.................................kk..........#",
+    "#.......ee.................................kk..........#",
     "#.......ee.............................................#",
     "#.......ee.............................................#",
     "#.......ee.............................................#",
     "#.......ee.............................................#",
     "#.......ee.............................................#",
-    "#......................................................#",
-    "#......................................................#",
+    "#.......kk..............kk........k....................#",
+    "#.......kkkkkkkkkkkkkkkkkkkkkkkkkkkkkk.................#",
     "#......................................................#",
     "#......................................................#",
     "#......................................................#",
@@ -133,111 +133,6 @@
       "feld": [31, 5]
     },
     {
-      "moebel": "gt7ZaunUL",
-      "feld": [30, 37],
-      "bauteil_ok": true
-    },
-    {
-      "moebel": "gt7ZaunOL",
-      "feld": [30, 29],
-      "bauteil_ok": true
-    },
-    {
-      "moebel": "gt7ZaunUM",
-      "feld": [31, 37],
-      "bauteil_ok": true
-    },
-    {
-      "moebel": "gt7ZaunOM",
-      "feld": [31, 29],
-      "bauteil_ok": true
-    },
-    {
-      "moebel": "gt7ZaunUM",
-      "feld": [32, 37],
-      "bauteil_ok": true
-    },
-    {
-      "moebel": "gt7ZaunOM",
-      "feld": [32, 29],
-      "bauteil_ok": true
-    },
-    {
-      "moebel": "gt7ZaunUM",
-      "feld": [33, 37],
-      "bauteil_ok": true
-    },
-    {
-      "moebel": "gt7ZaunOM",
-      "feld": [33, 29],
-      "bauteil_ok": true
-    },
-    {
-      "moebel": "gt7ZaunUM",
-      "feld": [34, 37],
-      "bauteil_ok": true
-    },
-    {
-      "moebel": "gt7ZaunOM",
-      "feld": [34, 29],
-      "bauteil_ok": true
-    },
-    {
-      "moebel": "gt7ZaunUM",
-      "feld": [35, 37],
-      "bauteil_ok": true
-    },
-    {
-      "moebel": "gt7ZaunOM",
-      "feld": [35, 29],
-      "bauteil_ok": true
-    },
-    {
-      "moebel": "gt7ZaunUM",
-      "feld": [36, 37],
-      "bauteil_ok": true
-    },
-    {
-      "moebel": "gt7ZaunOM",
-      "feld": [36, 29],
-      "bauteil_ok": true
-    },
-    {
-      "moebel": "gt7ZaunUM",
-      "feld": [37, 37],
-      "bauteil_ok": true
-    },
-    {
-      "moebel": "gt7ZaunOM",
-      "feld": [37, 29],
-      "bauteil_ok": true
-    },
-    {
-      "moebel": "gt7ZaunUM",
-      "feld": [38, 37],
-      "bauteil_ok": true
-    },
-    {
-      "moebel": "gt7ZaunOM",
-      "feld": [38, 29],
-      "bauteil_ok": true
-    },
-    {
-      "moebel": "gt7ZaunUM",
-      "feld": [39, 37],
-      "bauteil_ok": true
-    },
-    {
-      "moebel": "gt7ZaunEndeLinks",
-      "feld": [39, 29],
-      "bauteil_ok": true
-    },
-    {
-      "moebel": "gt7ZaunUM",
-      "feld": [40, 37],
-      "bauteil_ok": true
-    },
-    {
       "moebel": "gt7ZaunUM",
       "feld": [41, 37],
       "bauteil_ok": true
@@ -248,18 +143,8 @@
       "bauteil_ok": true
     },
     {
-      "moebel": "gt7ZaunEndeRechts",
-      "feld": [42, 29],
-      "bauteil_ok": true
-    },
-    {
       "moebel": "gt7ZaunUM",
       "feld": [43, 37],
-      "bauteil_ok": true
-    },
-    {
-      "moebel": "gt7ZaunOM",
-      "feld": [43, 29],
       "bauteil_ok": true
     },
     {
@@ -268,18 +153,8 @@
       "bauteil_ok": true
     },
     {
-      "moebel": "gt7ZaunOM",
-      "feld": [44, 29],
-      "bauteil_ok": true
-    },
-    {
       "moebel": "gt7ZaunUM",
       "feld": [45, 37],
-      "bauteil_ok": true
-    },
-    {
-      "moebel": "gt7ZaunOM",
-      "feld": [45, 29],
       "bauteil_ok": true
     },
     {
@@ -353,18 +228,8 @@
       "bauteil_ok": true
     },
     {
-      "moebel": "gt7ZaunML",
-      "feld": [30, 30],
-      "bauteil_ok": true
-    },
-    {
       "moebel": "gt7ZaunMR",
       "feld": [52, 30],
-      "bauteil_ok": true
-    },
-    {
-      "moebel": "gt7ZaunML",
-      "feld": [30, 31],
       "bauteil_ok": true
     },
     {
@@ -373,18 +238,8 @@
       "bauteil_ok": true
     },
     {
-      "moebel": "gt7ZaunML",
-      "feld": [30, 32],
-      "bauteil_ok": true
-    },
-    {
       "moebel": "gt7ZaunMR",
       "feld": [52, 32],
-      "bauteil_ok": true
-    },
-    {
-      "moebel": "gt7ZaunML",
-      "feld": [30, 33],
       "bauteil_ok": true
     },
     {
@@ -393,28 +248,13 @@
       "bauteil_ok": true
     },
     {
-      "moebel": "gt7ZaunML",
-      "feld": [30, 34],
-      "bauteil_ok": true
-    },
-    {
       "moebel": "gt7ZaunMR",
       "feld": [52, 34],
       "bauteil_ok": true
     },
     {
-      "moebel": "gt7ZaunML",
-      "feld": [30, 35],
-      "bauteil_ok": true
-    },
-    {
       "moebel": "gt7ZaunMR",
       "feld": [52, 35],
-      "bauteil_ok": true
-    },
-    {
-      "moebel": "gt7ZaunML",
-      "feld": [30, 36],
       "bauteil_ok": true
     },
     {
@@ -432,23 +272,11 @@
     },
     {
       "moebel": "gt7GrabOffen",
-      "feld": [36, 31]
-    },
-    {
-      "moebel": "gt7GrabsteinGrau",
-      "feld": [32, 34]
+      "feld": [41, 34]
     },
     {
       "moebel": "gt7Grabstein",
       "feld": [46, 31]
-    },
-    {
-      "moebel": "gt7GrabsteinGrau",
-      "feld": [35, 31]
-    },
-    {
-      "moebel": "gt7GrabOffen",
-      "feld": [34, 34]
     },
     {
       "moebel": "gt7Grabstein",
@@ -456,19 +284,7 @@
     },
     {
       "moebel": "gt7GrabsteinB",
-      "feld": [32, 31]
-    },
-    {
-      "moebel": "gt7GrabsteinGrau",
-      "feld": [34, 31]
-    },
-    {
-      "moebel": "gt7GrabsteinB",
       "feld": [47, 31]
-    },
-    {
-      "moebel": "gt7Grabstein",
-      "feld": [33, 31]
     },
     {
       "moebel": "gt7Grabstein",
@@ -483,16 +299,8 @@
       "feld": [48, 31]
     },
     {
-      "moebel": "gt7Grabhuegel",
-      "feld": [33, 34]
-    },
-    {
       "moebel": "gt7GrabsteinGrau",
       "feld": [49, 34]
-    },
-    {
-      "moebel": "gt7GrabsteinGrau",
-      "feld": [37, 34]
     },
     {
       "moebel": "gt7Kreuz",
@@ -528,10 +336,6 @@
     },
     {
       "moebel": "gt7KaktusBluete",
-      "feld": [40, 35]
-    },
-    {
-      "moebel": "gt7KaktusBluete",
       "feld": [7, 6]
     },
     {
@@ -551,16 +355,8 @@
       "feld": [26, 5]
     },
     {
-      "moebel": "gt7Felsgruppe",
-      "feld": [37, 27]
-    },
-    {
       "moebel": "gt7KaktusBluete",
       "feld": [26, 8]
-    },
-    {
-      "moebel": "gt7Saguaro",
-      "feld": [2, 31]
     },
     {
       "moebel": "gt7Tumbleweed",
@@ -571,16 +367,8 @@
       "feld": [45, 27]
     },
     {
-      "moebel": "gt7KaktusBluete",
-      "feld": [31, 32]
-    },
-    {
       "moebel": "gt7Stein",
       "feld": [50, 11]
-    },
-    {
-      "moebel": "gt7Tumbleweed",
-      "feld": [44, 32]
     },
     {
       "moebel": "gt7Tumbleweed",
@@ -595,20 +383,8 @@
       "feld": [6, 27]
     },
     {
-      "moebel": "gt7TumbleweedGross",
-      "feld": [35, 26]
-    },
-    {
       "moebel": "gt7Tumbleweed",
       "feld": [25, 7]
-    },
-    {
-      "moebel": "gt7TumbleweedGross",
-      "feld": [4, 34]
-    },
-    {
-      "moebel": "gt7TumbleweedGross",
-      "feld": [41, 31]
     },
     {
       "moebel": "gt7Saguaro",
@@ -643,20 +419,8 @@
       "feld": [33, 5]
     },
     {
-      "moebel": "gt7KaktusBluete",
-      "feld": [1, 26]
-    },
-    {
-      "moebel": "gt7Stein",
-      "feld": [48, 33]
-    },
-    {
       "moebel": "gt7Stein",
       "feld": [50, 28]
-    },
-    {
-      "moebel": "gt7KaktusBluete",
-      "feld": [51, 8]
     },
     {
       "moebel": "gt7Stein",
@@ -664,23 +428,7 @@
     },
     {
       "moebel": "gt7Tumbleweed",
-      "feld": [4, 33]
-    },
-    {
-      "moebel": "gt7Tumbleweed",
       "feld": [2, 29]
-    },
-    {
-      "moebel": "gt7Stein",
-      "feld": [5, 30]
-    },
-    {
-      "moebel": "gt7Stein",
-      "feld": [42, 35]
-    },
-    {
-      "moebel": "gt7Kaktus",
-      "feld": [51, 35]
     },
     {
       "moebel": "gt7Stein",
@@ -716,15 +464,7 @@
     },
     {
       "moebel": "gt7Tumbleweed",
-      "feld": [47, 33]
-    },
-    {
-      "moebel": "gt7Tumbleweed",
       "feld": [11, 31]
-    },
-    {
-      "moebel": "gt7Kaktus",
-      "feld": [4, 28]
     },
     {
       "moebel": "gt7KaktusBluete",
@@ -737,6 +477,110 @@
     {
       "moebel": "gt7Schild",
       "feld": [8, 18]
+    },
+    {
+      "moebel": "gt7ZaunOL",
+      "feld": [40, 29],
+      "bauteil_ok": true
+    },
+    {
+      "moebel": "gt7ZaunOM",
+      "feld": [41, 29],
+      "bauteil_ok": true
+    },
+    {
+      "moebel": "gt7ZaunEndeLinks",
+      "feld": [42, 29],
+      "bauteil_ok": true
+    },
+    {
+      "moebel": "gt7ZaunEndeRechts",
+      "feld": [45, 29],
+      "bauteil_ok": true
+    },
+    {
+      "moebel": "gt7ZaunUL",
+      "feld": [40, 37],
+      "bauteil_ok": true
+    },
+    {
+      "moebel": "gt7ZaunML",
+      "feld": [40, 30],
+      "bauteil_ok": true
+    },
+    {
+      "moebel": "gt7ZaunML",
+      "feld": [40, 31],
+      "bauteil_ok": true
+    },
+    {
+      "moebel": "gt7ZaunML",
+      "feld": [40, 32],
+      "bauteil_ok": true
+    },
+    {
+      "moebel": "gt7ZaunML",
+      "feld": [40, 33],
+      "bauteil_ok": true
+    },
+    {
+      "moebel": "gt7ZaunML",
+      "feld": [40, 34],
+      "bauteil_ok": true
+    },
+    {
+      "moebel": "gt7ZaunML",
+      "feld": [40, 35],
+      "bauteil_ok": true
+    },
+    {
+      "moebel": "gt7ZaunML",
+      "feld": [40, 36],
+      "bauteil_ok": true
+    },
+    {
+      "moebel": "gt8Bestatter",
+      "feld": [31, 27]
+    },
+    {
+      "moebel": "gtHeu",
+      "feld": [2, 25]
+    },
+    {
+      "moebel": "gtHeu",
+      "feld": [2, 27]
+    },
+    {
+      "moebel": "gt7Traenke",
+      "feld": [5, 26]
+    },
+    {
+      "moebel": "gt7Fass",
+      "feld": [4, 29]
+    },
+    {
+      "moebel": "gt7Windrad",
+      "feld": [51, 3]
+    },
+    {
+      "moebel": "gt7Kreuz",
+      "feld": [43, 32]
+    },
+    {
+      "moebel": "gt7Grabstein",
+      "feld": [45, 36]
+    },
+    {
+      "moebel": "gt7Saguaro",
+      "feld": [3, 33]
+    },
+    {
+      "moebel": "gt7Felsgruppe",
+      "feld": [11, 37]
+    },
+    {
+      "moebel": "gt7KaktusBluete",
+      "feld": [36, 37]
     }
   ],
   "ausloeser": [

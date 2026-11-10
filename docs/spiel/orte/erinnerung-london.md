@@ -86,3 +86,37 @@ ihnen und sieht, wie einer beide Türme und die Dame gibt und trotzdem gewinnt.
 - **Varianten:** A wie oben; B schlichter (weniger Fassaden, ein Tisch weniger, keine Droschke auf der
   Fahrbahn, sondern am Rand); C reicher (Marktkarren, zwei Droschken, Kaffeehaus mit Galerie aus
   Bänken und mehr Gästen).
+
+## Runde 9 (10.11.2026): Antworten auf die Mängel der Variantenwahl (niedrig-1)
+
+Beide Karten haben jetzt `"toenung": "sepia"` wie die Siedlungshütte.
+
+**Kaffeehaus (Wahl A):**
+
+1. _Niemand sitzt, niemand drängt sich am mittleren Tisch:_ Anderssen und Kieseritzky stehen an
+   ihren Stühlen. Drei Zuschauer stehen um den mittleren Tisch, einer beugt sich über das Brett. Im
+   Sitzen gibt es keine Figurenbilder.
+2. _Kein Sepia, lauter Dielenboden:_ Der Boden ist ruhige Dielung, das Sepia kommt aus der Tönung der
+   Szene.
+3. _Kellner vor der Theke, Lederbank ohne Tisch:_
+   - Die Theke ist zwei Reihen nach vorn gerückt, der Kellner steht dahinter.
+   - Vor der Lederbank steht ein Tisch mit Kerze.
+   - Die drei Schachtische stehen eine Reihe tiefer.
+
+**Strand (Wahl A):**
+
+1. _Acht statt fünf Fronten:_ Es sind jetzt fünf, wie die Beschreibung sagt: zwei links, das
+   Kaffeehaus in der Mitte, zwei rechts. Die Karte ist dafür 29 statt 44 Kacheln breit, dahinter
+   verliert sich die Erinnerung im Dunkel. Es gibt drei Fassadenbilder, die Front „TABAK“ kommt
+   deshalb zweimal vor; das ist das Höchstmaß nach dem Prüfregelwerk.
+2. _Flache Fassaden, Laternen vor Schrift und Tür:_
+   - Die Gaslaternen stehen auf den Grenzen zwischen zwei Häusern an der Bordsteinkante.
+   - Die Fassaden zeigen Dach und Schornsteine. Tiefe in Schrägansicht hätten sie nur mit neuen
+     Bildern; das ist ein Wunsch an den Haupt-Chat.
+3. _Kein Sepia, Tauben auf der Fahrbahn, südlicher Gehweg leer:_
+   - Die Szene ist in Sepia getönt.
+   - Die Tauben sitzen auf dem südlichen Gehweg.
+   - Dort stehen jetzt außerdem ein Blumenmädchen, ein Schuhputzer, der Zeitungskarren, ein
+     Händlerkarren und Fässer.
+
+Zustände: keine (eine Erinnerung).

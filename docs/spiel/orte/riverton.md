@@ -1332,3 +1332,23 @@ neun Felder lang. Auf Weg 3 fahren keine Fahrzeuge; die Ruderboote am Ufer sind 
 Fabrikhof 4 × 4, der Leiterwagen 2 × 3. Ironwood: Werksbus 7 × 4 (wie LimeZus Bus), keine Lastwagen.
 Steinbruch: Radlader 6 × 3, Lore der Feldbahn 1,5 × 1. Weg 7: die Sattelzüge sind 10 × 4; das Autowrack an
 der Tankstelle war ein Kleinwagen von vorn (2 × 2) und ist jetzt ein Wrack in Autogröße (4 × 4).
+
+## Regel 10.64 und Bootsschuppen in Lockport (niedrig-1, 10.11.2026)
+
+- **Frachtkahn:** Die „Ashford Belle“ misst jetzt 24 × 5 Kacheln (vorher 6 × 3, kaum länger als ein
+  Ruderboot). Das Bild `frachtkahn.png` ist im Bildwunsch `niedrig1_clubraum_schleuse.py` neu
+  gezeichnet (384 × 80, sieben Lukendeckel, Steuerhaus mit Schornstein).
+- **Schleuse:** Damit Kammer und Kahn passen, ist die Karte 18 Spalten breiter (74 statt 56). Die
+  Kammer ist 28 Kacheln lang (Kahn + 4) und hat wie Becken und Oberwasser 7 Reihen Wasser (Reihen
+  13–19). Die Stemmtore reichen über diese 7 Reihen und je eine Reihe Kaimauer; das Bild
+  `schleusentor_stemm.png` ist dafür 32 × 144 (gleicher Bildwunsch).
+- **Bootsschuppen:** Er steht jetzt am Westende des Uferwegs auf der Kaimauer, das Tor öffnet sich
+  nach Süden zum Hafenbecken (Möbelangabe `zum_wasser`, damit die Prüfung „Vorderseite zur Wand“
+  Wasser vor dem Tor zulässt). Der Weg endet damit nicht mehr stumpf im Gras (Gutachten Nr. 22).
+  Der alte Wellblechschuppen ist der Werkstattschuppen auf dem Werftplatz.
+- **Henriks Boot:** ein Ruderboot von 4 × 2 Kacheln im Oberwasser östlich der Kammer (vorher 5 × 2
+  im Becken, wo jetzt der Kahn liegt); im Zustand `boot-an-land` liegt es auf dem Werftplatz.
+- **Abweichung:** Ein Ruderboot ist nach 10.64 3–4 × 1,5; das Bild ist 4 × 2, weil es die Bordwand
+  in der Schrägansicht mitzeigt.
+- **Gefüllt nach dem Verbreitern:** drei Wohnhäuser mit Gärten am Nordufer, drei an der mittleren
+  Reihe, zwei in der Südreihe. Der Dorfplatz ist wieder 12 Kacheln breit.

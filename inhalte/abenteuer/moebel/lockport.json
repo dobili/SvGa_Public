@@ -384,8 +384,8 @@
     },
     "ld8Frachtkahn": {
       "quelle": "spiel/eigene/frachtkahn.png",
-      "breite": 96,
-      "hoehe": 48,
+      "breite": 384,
+      "hoehe": 80,
       "kollision": false,
       "art": "boot",
       "blick": "links",
@@ -395,7 +395,7 @@
     "ld8Stemmtor": {
       "quelle": "spiel/eigene/schleusentor_stemm.png",
       "breite": 32,
-      "hoehe": 80,
+      "hoehe": 144,
       "kollision": false,
       "art": "bruecke",
       "zustand": "gebraucht",

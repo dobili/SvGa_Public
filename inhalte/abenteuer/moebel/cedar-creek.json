@@ -860,7 +860,8 @@
       "art": "gebaeude",
       "blick": "unten",
       "zustand": "neu",
-      "stil": "landhaus"
+      "stil": "landhaus",
+      "zum_wasser": true
     },
     "cc4Stammbank": {
       "quelle": "modern-exteriors/Modern_Exteriors_16x16/ME_Theme_Sorter_16x16/11_Camping_Singles_16x16/ME_Singles_Camping_16x16_Cut_Wood_Bench_2.png",

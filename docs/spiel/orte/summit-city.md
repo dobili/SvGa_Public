@@ -331,8 +331,8 @@ braun statt grau, weil LimeZus Klippe nur Erde und Gras kennt.
 
 **Wards Hütte.** (1) Die Vitrine mit dem Pokal von 1985 steht an der Nordwand. (2) Ruhige Dielen statt
 Schrägmuster. (3) Zwei gerahmte Endspieldiagramme (Bildwunsch `bildwuensche/endspieldiagramm.py`) statt
-Karo und Landschaftsbild; Kit und Haraldsen stehen an den Clubtischen. Sitzen kann niemand: Es gibt keine
-sitzenden Figurenbilder.
+Karo und Landschaftsbild; Kit und Haraldsen stehen an den Clubtischen, ihnen gegenüber sitzen zwei Clubmitglieder
+(Statisten auf den Stuhlfeldern mit „sitzt …“, Hinweis des Haupt-Chats).
 
 **Bergstation.** (1) Die Gondel steht auf der steinernen Plattform, das Seil läuft durch ein Glastor in der
 Nordwand hinaus. (2) Der Schalter ist ein Schaltertresen mit Glas und Kasse, dahinter ein Schalterbeamter

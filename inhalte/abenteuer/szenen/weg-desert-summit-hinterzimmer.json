@@ -2,7 +2,7 @@
   "karte": "wegDesertSummit.hinterzimmer",
   "datei": "karten/weg-desert-summit-hinterzimmer.json",
   "art": "innen",
-  "beschreibung": "Hinterzimmer des Diners, Treffpunkt der Schachspieler (Variante C): an der Nordwand die Tafel mit einem Kreidespringer und ein Regal, drei Tische mit Brettern und Hockern, Mags und Ruth Keene stehen je an einem Brett. In der Westecke gestapelte Kisten, Fass und Kiste, eine Pflanze im Südosten.",
+  "beschreibung": "Hinterzimmer des Diners, Treffpunkt der Schachspieler (Variante C): an der Nordwand die Tafel mit einem Kreidespringer und ein Regal, drei Tische mit Brettern und Hockern, Mags und Ruth Keene stehen je an einem Brett, ihnen gegenüber sitzt je ein Spieler, am dritten Brett sitzen zwei. In der Westecke gestapelte Kisten, Fass und Kiste, eine Pflanze im Südosten.",
   "wand": "holz",
   "boden": "dielen",
   "raster": [
@@ -136,7 +136,44 @@
       "feld": [12, 6]
     }
   ],
-  "belebung": [],
+  "belebung": [
+    {
+      "name": "gegnerMags",
+      "typ": "statist",
+      "feld": [7, 5],
+      "eigenschaften": {
+        "tun": "sitzt am Brett gegenüber von Mags",
+        "bild": "statist-24"
+      }
+    },
+    {
+      "name": "gegnerRuth",
+      "typ": "statist",
+      "feld": [9, 6],
+      "eigenschaften": {
+        "tun": "sitzt am Brett gegenüber von Ruth Keene",
+        "bild": "statist-33"
+      }
+    },
+    {
+      "name": "spielerA",
+      "typ": "statist",
+      "feld": [4, 8],
+      "eigenschaften": {
+        "tun": "sitzt am mittleren Brett und spielt",
+        "bild": "statist-19"
+      }
+    },
+    {
+      "name": "spielerB",
+      "typ": "statist",
+      "feld": [7, 8],
+      "eigenschaften": {
+        "tun": "sitzt am mittleren Brett und spielt",
+        "bild": "statist-36"
+      }
+    }
+  ],
   "zustand": ["gebraucht", "alt", "neu"],
   "stil": [
     "einfach",

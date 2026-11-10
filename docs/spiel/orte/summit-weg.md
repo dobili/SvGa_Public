@@ -338,8 +338,8 @@ Einschnitt mit Randkacheln; der Kartenrand neben Boden zeigt den Boden. (3) Die 
 Felsstufen statt an geraden Linien im offenen Gelände (Gras über der oberen Stufe, Erde dazwischen, Sand
 unter der unteren); der Rastplatz ist eine Haltebucht aus Asphalt.
 
-**Hinterzimmer.** (1, 2) Mags und Ruth Keene stehen je an einem Brett; sitzende Figurenbilder gibt es
-nicht. (3) Gestapelte Kisten statt des Werkbankstücks, ein zweites Fass und eine Kiste in der Ecke. (4) Ein
+**Hinterzimmer.** (1, 2) Mags und Ruth Keene stehen je an einem Brett, ihnen gegenüber und am dritten
+Brett sitzen Spieler (Statisten auf den Hockern). (3) Gestapelte Kisten statt des Werkbankstücks, ein zweites Fass und eine Kiste in der Ecke. (4) Ein
 Kreidespringer auf der Tafel zeigt den Treffpunkt. Die Dielen sind das Material des Kartenbilds.
 
 **Zustände (10.63):**

@@ -2,7 +2,7 @@
   "karte": "summitCity.huette",
   "datei": "karten/summit-city-huette.json",
   "art": "innen",
-  "beschreibung": "Wards Hütte in Summit City: eine Blockhütte mit Holzwänden und ruhigen Dielen, es riecht nach Holzrauch und Tee. An der Nordwand der steinerne Kamin mit Feuer und Holzstapeln links und rechts, ein Bücherregal, zwei gerahmte Endspieldiagramme und die Vitrine mit dem Pokal von 1985. Vor dem Kamin auf dem Teppich zwei Ohrensessel und ein runder Tisch mit Wards altem Holzbrett, daneben Leselampe und Stehlampe. Im Süden zwei Clubtische, an denen Kit und Haraldsen spielen; an der Ostwand ein zweites Regal. Die Tür liegt in der Südwand.",
+  "beschreibung": "Wards Hütte in Summit City: eine Blockhütte mit Holzwänden und ruhigen Dielen, es riecht nach Holzrauch und Tee. An der Nordwand der steinerne Kamin mit Feuer und Holzstapeln links und rechts, ein Bücherregal, zwei gerahmte Endspieldiagramme und die Vitrine mit dem Pokal von 1985. Vor dem Kamin auf dem Teppich zwei Ohrensessel und ein runder Tisch mit Wards altem Holzbrett, daneben Leselampe und Stehlampe. Im Süden zwei Clubtische, an denen Kit und Haraldsen gegen zwei sitzende Clubmitglieder spielen; an der Ostwand ein zweites Regal. Die Tür liegt in der Südwand.",
   "wand": "holz",
   "boden": "dielen",
   "zustand": ["neu", "gebraucht", "alt"],
@@ -185,6 +185,26 @@
         "von": "2,4",
         "bis": "2,4",
         "verhalten": "sitzen"
+      }
+    },
+    {
+      "name": "gegnerinKit",
+      "typ": "statist",
+      "feld": [1, 10],
+      "eigenschaften": {
+        "tun": "sitzt am Clubtisch und spielt gegen Kit",
+        "wann": "tag",
+        "bild": "statist-22"
+      }
+    },
+    {
+      "name": "gegnerHaraldsen",
+      "typ": "statist",
+      "feld": [13, 10],
+      "eigenschaften": {
+        "tun": "sitzt am Clubtisch und spielt gegen Haraldsen",
+        "wann": "tag",
+        "bild": "statist-27"
       }
     }
   ]

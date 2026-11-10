@@ -11,7 +11,7 @@
  "tilewidth": 16,
  "tileheight": 16,
  "nextlayerid": 5,
- "nextobjectid": 36,
+ "nextobjectid": 38,
  "layers": [
   {
    "id": 1,
@@ -900,6 +900,62 @@
     },
     {
      "id": 11,
+     "name": "gegnerinKit",
+     "type": "statist",
+     "x": 16,
+     "y": 160,
+     "width": 16,
+     "height": 16,
+     "rotation": 0,
+     "visible": true,
+     "properties": [
+      {
+       "name": "tun",
+       "type": "string",
+       "value": "sitzt am Clubtisch und spielt gegen Kit"
+      },
+      {
+       "name": "wann",
+       "type": "string",
+       "value": "tag"
+      },
+      {
+       "name": "bild",
+       "type": "string",
+       "value": "statist-22"
+      }
+     ]
+    },
+    {
+     "id": 12,
+     "name": "gegnerHaraldsen",
+     "type": "statist",
+     "x": 208,
+     "y": 160,
+     "width": 16,
+     "height": 16,
+     "rotation": 0,
+     "visible": true,
+     "properties": [
+      {
+       "name": "tun",
+       "type": "string",
+       "value": "sitzt am Clubtisch und spielt gegen Haraldsen"
+      },
+      {
+       "name": "wann",
+       "type": "string",
+       "value": "tag"
+      },
+      {
+       "name": "bild",
+       "type": "string",
+       "value": "statist-27"
+      }
+     ]
+    },
+    {
+     "id": 13,
      "name": "cc8TuerSuedHolz",
      "type": "moebel",
      "x": 128,
@@ -922,7 +978,7 @@
      ]
     },
     {
-     "id": 12,
+     "id": 14,
      "name": "cc4Fussmatte",
      "type": "moebel",
      "x": 128,
@@ -945,7 +1001,7 @@
      ]
     },
     {
-     "id": 13,
+     "id": 15,
      "name": "sc7Kamin",
      "type": "moebel",
      "x": 112,
@@ -968,7 +1024,7 @@
      ]
     },
     {
-     "id": 14,
+     "id": 16,
      "name": "cc4Holzstapel",
      "type": "moebel",
      "x": 96,
@@ -991,7 +1047,7 @@
      ]
     },
     {
-     "id": 15,
+     "id": 17,
      "name": "cc4Holzstapel",
      "type": "moebel",
      "x": 176,
@@ -1014,7 +1070,7 @@
      ]
     },
     {
-     "id": 16,
+     "id": 18,
      "name": "mf2Buecherregal",
      "type": "moebel",
      "x": 16,
@@ -1037,7 +1093,7 @@
      ]
     },
     {
-     "id": 17,
+     "id": 19,
      "name": "cc4RegalB",
      "type": "moebel",
      "x": 240,
@@ -1060,7 +1116,7 @@
      ]
     },
     {
-     "id": 18,
+     "id": 20,
      "name": "iwVitrine",
      "type": "moebel",
      "x": 208,
@@ -1083,7 +1139,7 @@
      ]
     },
     {
-     "id": 19,
+     "id": 21,
      "name": "pokal",
      "type": "moebel",
      "x": 216,
@@ -1106,7 +1162,7 @@
      ]
     },
     {
-     "id": 20,
+     "id": 22,
      "name": "sc9EndspieldiagrammA",
      "type": "moebel",
      "x": 80,
@@ -1129,7 +1185,7 @@
      ]
     },
     {
-     "id": 21,
+     "id": 23,
      "name": "sc9EndspieldiagrammB",
      "type": "moebel",
      "x": 48,
@@ -1152,7 +1208,7 @@
      ]
     },
     {
-     "id": 22,
+     "id": 24,
      "name": "wzTeppich",
      "type": "moebel",
      "x": 112,
@@ -1175,7 +1231,7 @@
      ]
     },
     {
-     "id": 23,
+     "id": 25,
      "name": "mf2Ohrensessel",
      "type": "moebel",
      "x": 80,
@@ -1198,7 +1254,7 @@
      ]
     },
     {
-     "id": 24,
+     "id": 26,
      "name": "mf2Rundtisch",
      "type": "moebel",
      "x": 128,
@@ -1221,7 +1277,7 @@
      ]
     },
     {
-     "id": 25,
+     "id": 27,
      "name": "mf2SchachbrettFiguren",
      "type": "moebel",
      "x": 135,
@@ -1244,7 +1300,7 @@
      ]
     },
     {
-     "id": 26,
+     "id": 28,
      "name": "mf2Ohrensessel",
      "type": "moebel",
      "x": 176,
@@ -1267,7 +1323,7 @@
      ]
     },
     {
-     "id": 27,
+     "id": 29,
      "name": "cc4Leselampe",
      "type": "moebel",
      "x": 208,
@@ -1290,7 +1346,7 @@
      ]
     },
     {
-     "id": 28,
+     "id": 30,
      "name": "mf2StuhlL",
      "type": "moebel",
      "x": 16,
@@ -1313,7 +1369,7 @@
      ]
     },
     {
-     "id": 29,
+     "id": 31,
      "name": "mf2Schachtisch",
      "type": "moebel",
      "x": 32,
@@ -1336,7 +1392,7 @@
      ]
     },
     {
-     "id": 30,
+     "id": 32,
      "name": "cc4Brett",
      "type": "moebel",
      "x": 50,
@@ -1359,7 +1415,7 @@
      ]
     },
     {
-     "id": 31,
+     "id": 33,
      "name": "mf2Schachtisch",
      "type": "moebel",
      "x": 160,
@@ -1382,7 +1438,7 @@
      ]
     },
     {
-     "id": 32,
+     "id": 34,
      "name": "cc4Brett",
      "type": "moebel",
      "x": 178,
@@ -1405,7 +1461,7 @@
      ]
     },
     {
-     "id": 33,
+     "id": 35,
      "name": "mf2StuhlR",
      "type": "moebel",
      "x": 208,
@@ -1428,7 +1484,7 @@
      ]
     },
     {
-     "id": 34,
+     "id": 36,
      "name": "mf2Stehlampe",
      "type": "moebel",
      "x": 16,
@@ -1451,7 +1507,7 @@
      ]
     },
     {
-     "id": 35,
+     "id": 37,
      "name": "cc4RegalC",
      "type": "moebel",
      "x": 240,

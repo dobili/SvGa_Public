@@ -111,8 +111,8 @@
       "feld": [15, 2]
     },
     {
-      "moebel": "rv8Werkzeugkiste",
-      "feld": [3, 7]
+      "moebel": "dsReifen",
+      "feld": [3, 8]
     },
     {
       "moebel": "pd6Kanister",
@@ -133,6 +133,10 @@
     {
       "moebel": "rv5ReifenLiegend",
       "feld": [16, 8]
+    },
+    {
+      "moebel": "rv5ReifenStehend",
+      "feld": [4, 8]
     }
   ],
   "ausloeser": [
@@ -163,13 +167,5 @@
     }
   ],
   "zustand": ["gebraucht", "alt", "neu"],
-  "stil": [
-    "industrie",
-    "einfach",
-    "klassisch",
-    "modern",
-    "rustikal",
-    "laendlich",
-    "schule"
-  ]
+  "stil": ["industrie", "einfach", "klassisch", "modern", "rustikal", "laendlich", "schule"]
 }

@@ -516,7 +516,7 @@
     {
       "name": "bishop",
       "typ": "tier",
-      "feld": [20, 2],
+      "feld": [18, 4],
       "eigenschaften": {
         "verhalten": "sitzen"
       }

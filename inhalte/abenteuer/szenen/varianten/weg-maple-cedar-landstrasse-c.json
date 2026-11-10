@@ -3152,10 +3152,10 @@
     {
       "name": "reh",
       "typ": "tier",
-      "feld": [116, 13],
+      "feld": [115, 12],
       "eigenschaften": {
-        "von": "116,13",
-        "bis": "116,13",
+        "von": "115,12",
+        "bis": "115,12",
         "verhalten": "ausweichen",
         "wann": "morgen"
       }

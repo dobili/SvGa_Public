@@ -7188,7 +7188,7 @@
      "id": 21,
      "name": "kahnmaler",
      "type": "statist",
-     "x": 176,
+     "x": 192,
      "y": 320,
      "width": 16,
      "height": 16,
@@ -7208,12 +7208,12 @@
       {
        "name": "von",
        "type": "string",
-       "value": "10,20"
+       "value": "11,20"
       },
       {
        "name": "bis",
        "type": "string",
-       "value": "13,20"
+       "value": "14,20"
       },
       {
        "name": "sagt",
@@ -7450,8 +7450,8 @@
      "id": 30,
      "name": "imogen",
      "type": "statist",
-     "x": 624,
-     "y": 144,
+     "x": 608,
+     "y": 160,
      "width": 16,
      "height": 16,
      "rotation": 0,

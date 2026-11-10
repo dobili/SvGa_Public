@@ -509,12 +509,12 @@
     {
       "name": "kahnmaler",
       "typ": "statist",
-      "feld": [11, 20],
+      "feld": [12, 20],
       "eigenschaften": {
         "tun": "streicht die Bordwand des Lastkahns",
         "wann": "tag",
-        "von": "10,20",
-        "bis": "13,20",
+        "von": "11,20",
+        "bis": "14,20",
         "sagt": "statist.lockport.aussen.kahnmaler"
       }
     },
@@ -601,7 +601,7 @@
     {
       "name": "imogen",
       "typ": "statist",
-      "feld": [39, 9],
+      "feld": [38, 10],
       "eigenschaften": {
         "tun": "steht mit dem Schlüsselbund an der Tafel",
         "wann": "tag"

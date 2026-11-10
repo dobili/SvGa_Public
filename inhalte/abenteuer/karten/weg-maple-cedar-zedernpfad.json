@@ -7348,7 +7348,7 @@
       {
        "name": "verhalten",
        "type": "string",
-       "value": "sitzen"
+       "value": "fliegen"
       },
       {
        "name": "wann",
@@ -7562,8 +7562,8 @@
      "id": 14,
      "name": "hase",
      "type": "tier",
-     "x": 1360,
-     "y": 240,
+     "x": 1328,
+     "y": 224,
      "width": 16,
      "height": 16,
      "rotation": 0,
@@ -7577,12 +7577,12 @@
       {
        "name": "von",
        "type": "string",
-       "value": "83,15"
+       "value": "81,14"
       },
       {
        "name": "bis",
        "type": "string",
-       "value": "90,15"
+       "value": "88,14"
       }
      ]
     },
@@ -7600,7 +7600,7 @@
       {
        "name": "verhalten",
        "type": "string",
-       "value": "sitzen"
+       "value": "fliegen"
       },
       {
        "name": "wann",

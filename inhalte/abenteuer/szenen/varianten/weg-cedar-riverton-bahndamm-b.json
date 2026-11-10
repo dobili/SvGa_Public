@@ -1680,10 +1680,10 @@
     {
       "name": "hase",
       "typ": "tier",
-      "feld": [6, 18],
+      "feld": [5, 17],
       "eigenschaften": {
-        "von": "6,18",
-        "bis": "10,18",
+        "von": "5,17",
+        "bis": "9,17",
         "verhalten": "ausweichen"
       }
     },
@@ -1730,7 +1730,7 @@
     {
       "name": "katzeImWaggon",
       "typ": "tier",
-      "feld": [113, 1],
+      "feld": [112, 2],
       "eigenschaften": {
         "verhalten": "sitzen"
       }

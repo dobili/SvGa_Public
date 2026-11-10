@@ -11060,8 +11060,8 @@
      "id": 16,
      "name": "joggerin",
      "type": "statist",
-     "x": 32,
-     "y": 240,
+     "x": 16,
+     "y": 224,
      "width": 16,
      "height": 16,
      "rotation": 0,
@@ -11070,12 +11070,12 @@
       {
        "name": "von",
        "type": "string",
-       "value": "2,15"
+       "value": "1,14"
       },
       {
        "name": "bis",
        "type": "string",
-       "value": "58,15"
+       "value": "57,14"
       },
       {
        "name": "tun",
@@ -27412,29 +27412,6 @@
     },
     {
      "id": 724,
-     "name": "mf8FlohmarktSchild",
-     "type": "moebel",
-     "x": 1472,
-     "y": 272,
-     "width": 48,
-     "height": 32,
-     "rotation": 0,
-     "visible": true,
-     "properties": [
-      {
-       "name": "tiefe",
-       "type": "int",
-       "value": 296
-      },
-      {
-       "name": "kollision",
-       "type": "bool",
-       "value": true
-      }
-     ]
-    },
-    {
-     "id": 725,
      "name": "mf8FlohmarktPlakat",
      "type": "moebel",
      "x": 1520,
@@ -27448,6 +27425,29 @@
        "name": "tiefe",
        "type": "int",
        "value": 232
+      },
+      {
+       "name": "kollision",
+       "type": "bool",
+       "value": true
+      }
+     ]
+    },
+    {
+     "id": 725,
+     "name": "mf8FlohmarktPlakat",
+     "type": "moebel",
+     "x": 1472,
+     "y": 256,
+     "width": 32,
+     "height": 48,
+     "rotation": 0,
+     "visible": true,
+     "properties": [
+      {
+       "name": "tiefe",
+       "type": "int",
+       "value": 296
       },
       {
        "name": "kollision",

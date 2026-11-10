@@ -349,10 +349,10 @@
     {
       "name": "kioskbesucher",
       "typ": "statist",
-      "feld": [16, 13],
+      "feld": [16, 12],
       "eigenschaften": {
-        "von": "14,13",
-        "bis": "20,13",
+        "von": "14,12",
+        "bis": "20,12",
         "tun": "holt sich ein Eis",
         "wann": "tag"
       }

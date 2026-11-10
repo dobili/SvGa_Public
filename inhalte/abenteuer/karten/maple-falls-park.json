@@ -11,7 +11,7 @@
  "tilewidth": 16,
  "tileheight": 16,
  "nextlayerid": 5,
- "nextobjectid": 87,
+ "nextobjectid": 88,
  "layers": [
   {
    "id": 1,
@@ -4440,8 +4440,8 @@
      "id": 14,
      "name": "skaterJo",
      "type": "figur",
-     "x": 256,
-     "y": 384,
+     "x": 272,
+     "y": 416,
      "width": 16,
      "height": 16,
      "rotation": 0,
@@ -6056,29 +6056,6 @@
      "id": 84,
      "name": "mf4Strassenbaum",
      "type": "moebel",
-     "x": 256,
-     "y": 448,
-     "width": 48,
-     "height": 48,
-     "rotation": 0,
-     "visible": true,
-     "properties": [
-      {
-       "name": "tiefe",
-       "type": "int",
-       "value": 488
-      },
-      {
-       "name": "kollision",
-       "type": "bool",
-       "value": true
-      }
-     ]
-    },
-    {
-     "id": 85,
-     "name": "mf4Strassenbaum",
-     "type": "moebel",
      "x": 624,
      "y": 400,
      "width": 48,
@@ -6099,7 +6076,7 @@
      ]
     },
     {
-     "id": 86,
+     "id": 85,
      "name": "mfAhorn",
      "type": "moebel",
      "x": 496,
@@ -6118,6 +6095,52 @@
        "name": "kollision",
        "type": "bool",
        "value": true
+      }
+     ]
+    },
+    {
+     "id": 86,
+     "name": "mf9Halfpipe",
+     "type": "moebel",
+     "x": 256,
+     "y": 432,
+     "width": 64,
+     "height": 48,
+     "rotation": 0,
+     "visible": true,
+     "properties": [
+      {
+       "name": "tiefe",
+       "type": "int",
+       "value": 472
+      },
+      {
+       "name": "kollision",
+       "type": "bool",
+       "value": true
+      }
+     ]
+    },
+    {
+     "id": 87,
+     "name": "mf3BrettKlein",
+     "type": "moebel",
+     "x": 64,
+     "y": 183,
+     "width": 12,
+     "height": 9,
+     "rotation": 0,
+     "visible": true,
+     "properties": [
+      {
+       "name": "tiefe",
+       "type": "int",
+       "value": 201
+      },
+      {
+       "name": "kollision",
+       "type": "bool",
+       "value": false
       }
      ]
     }

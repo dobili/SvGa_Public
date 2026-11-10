@@ -13852,8 +13852,8 @@
      "id": 19,
      "name": "krebse",
      "type": "tier",
-     "x": 320,
-     "y": 368,
+     "x": 288,
+     "y": 336,
      "width": 16,
      "height": 16,
      "rotation": 0,
@@ -13862,12 +13862,12 @@
       {
        "name": "von",
        "type": "string",
-       "value": "14,23"
+       "value": "12,21"
       },
       {
        "name": "bis",
        "type": "string",
-       "value": "26,25"
+       "value": "24,23"
       },
       {
        "name": "verhalten",

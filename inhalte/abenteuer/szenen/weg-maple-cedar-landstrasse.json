@@ -2998,12 +2998,12 @@
       "feld": [97, 19]
     },
     {
-      "moebel": "mf8FlohmarktSchild",
-      "feld": [92, 17]
+      "moebel": "mf8FlohmarktPlakat",
+      "feld": [95, 12]
     },
     {
       "moebel": "mf8FlohmarktPlakat",
-      "feld": [95, 12]
+      "feld": [92, 16]
     }
   ],
   "ausloeser": [
@@ -3085,10 +3085,10 @@
     {
       "name": "joggerin",
       "typ": "statist",
-      "feld": [2, 15],
+      "feld": [1, 14],
       "eigenschaften": {
-        "von": "2,15",
-        "bis": "58,15",
+        "von": "1,14",
+        "bis": "57,14",
         "tun": "Tessa joggt die Straße entlang",
         "wann": "morgen"
       }

@@ -311,7 +311,7 @@
     {
       "name": "bishop",
       "typ": "tier",
-      "feld": [29, 2],
+      "feld": [27, 4],
       "eigenschaften": {
         "verhalten": "sitzen"
       }

@@ -2266,7 +2266,7 @@
     {
       "name": "katzeImWaggon",
       "typ": "tier",
-      "feld": [111, 1],
+      "feld": [110, 2],
       "eigenschaften": {
         "verhalten": "sitzen"
       }

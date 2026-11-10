@@ -268,6 +268,10 @@
     {
       "moebel": "lp6Brunnen",
       "feld": [30, 36]
+    },
+    {
+      "moebel": "lp6Glocke",
+      "feld": [44, 8]
     }
   ],
   "ausloeser": [
@@ -327,6 +331,10 @@
     {
       "name": "pumpe",
       "feld": [31, 36]
+    },
+    {
+      "name": "glocke",
+      "feld": [44, 10]
     }
   ],
   "figuren": [],

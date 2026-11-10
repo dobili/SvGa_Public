@@ -1005,5 +1005,5 @@ Quests (alle `klein`): `lockport.tafelSchleuse` (5 Münzen), `.kahnrennen` (3 Au
 `lastkahnFrei`). Den Brief gibt Big Joe in Ironwood mit der Variable `briefFuerRuben` (mittel-2 setzt
 sie in seinem Dialog). Imogen, Ruben und Henrik stehen als Statisten ohne Satz an ihren Auslösern; in B
 liegt das Ruderboot neu bei (21, 18). Statt der Pumpe steht ein Dorfbrunnen mit Kurbel (`lp6Brunnen`, Modern Farm) bei (30, 36), Auslöser
-`pumpe` (31, 36), in allen drei Varianten. **Offen:** Die Glocke hat noch kein Bild; die Schnellreise mit dem Lastkahn (`reise`) braucht Anleger in Riverton und
+`pumpe` (31, 36), in allen drei Varianten. Die Glocke (`lp6Glocke`, eigenes Bild `glocke_pfosten.png`) hängt am Nordufer, Auslöser `glocke` davor auf der Uferstraße bei A (46, 10), B (44, 10), C (37, 10). **Offen:** die Schnellreise mit dem Lastkahn (`reise`) braucht Anleger in Riverton und
 Ironwood.

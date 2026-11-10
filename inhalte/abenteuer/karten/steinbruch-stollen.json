@@ -11,7 +11,7 @@
  "tilewidth": 16,
  "tileheight": 16,
  "nextlayerid": 5,
- "nextobjectid": 63,
+ "nextobjectid": 71,
  "layers": [
   {
    "id": 1,
@@ -147,28 +147,19 @@
     0,
     0,
     0,
-    0,
     1,
     1,
     1,
     1,
     1,
     1,
-    0,
-    0,
-    0,
-    0,
-    0,
-    0,
-    0,
-    0,
+    1,
     0,
     0,
     0,
     0,
     0,
     0,
-    1,
     1,
     1,
     1,
@@ -181,20 +172,9 @@
     1,
     1,
     1,
-    0,
-    0,
-    0,
-    0,
-    0,
-    0,
-    0,
-    1,
     1,
     1,
     1,
-    1,
-    1,
-    0,
     0,
     0,
     0,
@@ -207,49 +187,19 @@
     0,
     0,
     0,
-    0,
-    1,
-    1,
-    1,
-    1,
-    1,
-    1,
-    1,
-    1,
-    1,
-    1,
     1,
     1,
     1,
-    0,
-    0,
-    0,
-    0,
-    0,
-    0,
-    0,
-    1,
     1,
     1,
     1,
     1,
-    1,
-    0,
-    0,
     0,
     0,
     0,
     0,
     0,
     0,
-    0,
-    0,
-    0,
-    0,
-    0,
-    0,
-    1,
-    1,
     1,
     1,
     1,
@@ -259,23 +209,12 @@
     1,
     1,
     1,
-    1,
-    1,
-    0,
-    0,
-    0,
-    0,
-    0,
-    0,
-    0,
     1,
     1,
     1,
     1,
     1,
     1,
-    0,
-    0,
     0,
     0,
     0,
@@ -288,9 +227,6 @@
     0,
     0,
     0,
-    1,
-    1,
-    1,
     1,
     1,
     1,
@@ -298,36 +234,15 @@
     1,
     1,
     1,
-    1,
-    1,
-    1,
-    0,
-    0,
     0,
     0,
     0,
     0,
     0,
     0,
-    0,
-    0,
-    0,
     1,
     1,
-    0,
-    0,
-    0,
-    0,
-    0,
-    0,
-    0,
-    0,
-    0,
-    0,
-    0,
-    0,
-    0,
-    0,
+    1,
     1,
     1,
     1,
@@ -335,7 +250,6 @@
     1,
     1,
     1,
-    4,
     4,
     4,
     1,
@@ -352,22 +266,21 @@
     0,
     0,
     0,
+    0,
     1,
     1,
-    0,
-    0,
-    0,
-    0,
-    0,
-    0,
-    0,
-    0,
+    1,
+    1,
+    1,
+    1,
+    1,
     0,
     0,
     0,
     0,
     0,
     0,
+    1,
     1,
     1,
     1,
@@ -375,12 +288,15 @@
     1,
     1,
     1,
-    4,
-    4,
-    4,
     1,
     1,
     1,
+    1,
+    1,
+    1,
+    1,
+    0,
+    0,
     0,
     0,
     0,
@@ -392,6 +308,8 @@
     0,
     0,
     0,
+    0,
+    0,
     1,
     1,
     0,
@@ -402,9 +320,6 @@
     0,
     0,
     0,
-    1,
-    1,
-    1,
     1,
     1,
     1,
@@ -420,7 +335,10 @@
     1,
     1,
     1,
-    1,
+    0,
+    0,
+    0,
+    0,
     0,
     0,
     0,
@@ -457,10 +375,7 @@
     1,
     1,
     1,
-    1,
-    1,
-    1,
-    1,
+    0,
     0,
     0,
     0,
@@ -472,6 +387,9 @@
     0,
     0,
     0,
+    0,
+    0,
+    0,
     1,
     1,
     0,
@@ -482,10 +400,10 @@
     0,
     0,
     0,
-    1,
-    1,
     0,
     0,
+    1,
+    1,
     0,
     0,
     0,
@@ -522,10 +440,10 @@
     0,
     0,
     0,
-    1,
-    1,
     0,
     0,
+    1,
+    1,
     0,
     0,
     0,
@@ -552,18 +470,8 @@
     0,
     0,
     0,
-    1,
-    1,
-    1,
-    1,
-    1,
     1,
     1,
-    1,
-    1,
-    1,
-    1,
-    1,
     0,
     0,
     0,
@@ -574,6 +482,8 @@
     0,
     0,
     0,
+    1,
+    1,
     0,
     0,
     0,
@@ -592,21 +502,28 @@
     0,
     0,
     0,
-    1,
-    1,
-    1,
-    1,
-    1,
-    1,
-    1,
-    1,
-    1,
-    1,
+    0,
+    0,
+    0,
+    0,
+    0,
+    0,
+    0,
+    0,
     1,
     1,
+    0,
+    0,
+    0,
+    0,
+    0,
+    0,
+    0,
     0,
     0,
     0,
+    1,
+    1,
     0,
     0,
     0,
@@ -632,6 +549,9 @@
     0,
     0,
     0,
+    0,
+    1,
+    1,
     0,
     0,
     0,
@@ -644,6 +564,22 @@
     0,
     1,
     1,
+    0,
+    0,
+    0,
+    0,
+    0,
+    0,
+    0,
+    0,
+    0,
+    0,
+    0,
+    0,
+    0,
+    0,
+    0,
+    0,
     0,
     0,
     0,
@@ -654,8 +590,20 @@
     0,
     0,
     0,
+    1,
+    1,
+    0,
+    0,
+    0,
+    0,
+    0,
+    0,
+    0,
+    0,
     0,
     0,
+    1,
+    1,
     0,
     0,
     0,
@@ -684,8 +632,18 @@
     0,
     1,
     1,
+    0,
+    0,
+    0,
     0,
     0,
+    0,
+    0,
+    0,
+    0,
+    0,
+    1,
+    1,
     0,
     0,
     0,
@@ -712,6 +670,8 @@
     0,
     0,
     0,
+    1,
+    1,
     0,
     0,
     0,
@@ -724,6 +684,13 @@
     0,
     1,
     1,
+    0,
+    0,
+    0,
+    0,
+    0,
+    0,
+    0,
     0,
     0,
     0,
@@ -736,6 +703,27 @@
     0,
     0,
     0,
+    0,
+    0,
+    0,
+    0,
+    0,
+    0,
+    0,
+    1,
+    1,
+    1,
+    1,
+    1,
+    1,
+    1,
+    1,
+    1,
+    1,
+    1,
+    1,
+    1,
+    1,
     0,
     0,
     0,
@@ -762,6 +750,18 @@
     0,
     0,
     0,
+    1,
+    1,
+    1,
+    1,
+    1,
+    1,
+    1,
+    1,
+    1,
+    1,
+    1,
+    1,
     1,
     1,
     0,
@@ -1120,27 +1120,20 @@
     2,
     2,
     2,
-    2,
     0,
     0,
     0,
     0,
     0,
     0,
-    2,
-    2,
-    2,
-    2,
-    2,
-    2,
-    2,
-    2,
+    0,
     2,
     2,
     2,
     2,
     2,
     2,
+    0,
     0,
     0,
     0,
@@ -1154,6 +1147,8 @@
     0,
     0,
     0,
+    0,
+    2,
     2,
     2,
     2,
@@ -1161,26 +1156,24 @@
     2,
     2,
     2,
+    2,
+    2,
+    2,
+    2,
     0,
     0,
     0,
     0,
     0,
     0,
-    2,
-    2,
-    2,
-    2,
-    2,
-    2,
-    2,
-    2,
+    0,
     2,
     2,
     2,
     2,
     2,
     2,
+    0,
     0,
     0,
     0,
@@ -1194,6 +1187,12 @@
     0,
     0,
     0,
+    0,
+    2,
+    2,
+    2,
+    2,
+    2,
     2,
     2,
     2,
@@ -1207,20 +1206,14 @@
     0,
     0,
     0,
-    2,
-    2,
-    2,
-    2,
-    2,
-    2,
-    2,
-    2,
+    0,
     2,
     2,
     2,
     2,
     2,
     2,
+    0,
     0,
     0,
     0,
@@ -1234,6 +1227,10 @@
     0,
     0,
     0,
+    0,
+    2,
+    2,
+    2,
     2,
     2,
     2,
@@ -1241,20 +1238,15 @@
     2,
     2,
     2,
+    2,
+    2,
     0,
     0,
     0,
     0,
     0,
     0,
-    2,
-    2,
-    2,
-    2,
-    2,
-    2,
-    2,
-    2,
+    0,
     2,
     2,
     2,
@@ -1274,8 +1266,8 @@
     0,
     0,
     0,
-    2,
-    2,
+    0,
+    0,
     2,
     2,
     2,
@@ -1285,14 +1277,14 @@
     2,
     2,
     2,
-    0,
-    0,
     2,
     2,
     2,
     2,
     2,
     2,
+    0,
+    0,
     2,
     2,
     2,
@@ -1314,8 +1306,8 @@
     0,
     0,
     0,
-    2,
-    2,
+    0,
+    0,
     2,
     2,
     2,
@@ -1325,14 +1317,14 @@
     2,
     2,
     2,
-    0,
-    0,
     2,
     2,
     2,
     2,
     2,
     2,
+    0,
+    0,
     2,
     2,
     2,
@@ -1354,6 +1346,9 @@
     0,
     0,
     0,
+    0,
+    0,
+    2,
     2,
     2,
     2,
@@ -1365,6 +1360,9 @@
     2,
     2,
     2,
+    2,
+    2,
+    2,
     0,
     0,
     2,
@@ -1375,23 +1373,8 @@
     2,
     2,
     2,
-    0,
-    0,
-    0,
-    0,
-    0,
-    0,
-    0,
-    0,
-    0,
-    0,
-    0,
-    0,
-    0,
-    0,
-    0,
-    0,
-    0,
+    2,
+    2,
     0,
     0,
     2,
@@ -1405,8 +1388,6 @@
     2,
     2,
     2,
-    0,
-    0,
     2,
     2,
     2,
@@ -1415,26 +1396,15 @@
     2,
     2,
     2,
-    0,
-    0,
-    0,
-    0,
-    0,
-    0,
-    0,
-    0,
-    0,
-    0,
-    0,
-    0,
-    0,
-    0,
-    0,
-    0,
-    0,
+    2,
+    2,
+    2,
+    2,
+    2,
+    2,
+    2,
     0,
     0,
-    2,
     2,
     2,
     2,
@@ -1455,8 +1425,6 @@
     2,
     2,
     2,
-    0,
-    0,
     2,
     2,
     2,
@@ -1475,6 +1443,8 @@
     2,
     2,
     2,
+    0,
+    0,
     2,
     2,
     2,
@@ -1495,8 +1465,6 @@
     2,
     2,
     2,
-    0,
-    0,
     2,
     2,
     2,
@@ -1515,6 +1483,8 @@
     2,
     2,
     2,
+    0,
+    0,
     2,
     2,
     2,
@@ -1525,18 +1495,8 @@
     2,
     2,
     2,
-    0,
     0,
     0,
-    0,
-    0,
-    0,
-    0,
-    0,
-    0,
-    0,
-    0,
-    0,
     2,
     2,
     2,
@@ -1563,22 +1523,8 @@
     2,
     2,
     2,
-    2,
-    2,
-    0,
-    0,
     0,
     0,
-    0,
-    0,
-    0,
-    0,
-    0,
-    0,
-    0,
-    0,
-    2,
-    2,
     2,
     2,
     2,
@@ -1589,6 +1535,8 @@
     2,
     2,
     2,
+    0,
+    0,
     2,
     2,
     2,
@@ -1617,8 +1565,6 @@
     2,
     0,
     0,
-    2,
-    2,
     2,
     2,
     2,
@@ -1629,6 +1575,8 @@
     2,
     2,
     2,
+    0,
+    0,
     2,
     2,
     2,
@@ -1657,12 +1605,19 @@
     2,
     0,
     0,
+    2,
+    2,
+    2,
+    2,
     2,
     2,
     2,
     2,
     2,
     2,
+    0,
+    0,
+    2,
     2,
     2,
     2,
@@ -1685,6 +1640,11 @@
     2,
     2,
     2,
+    2,
+    2,
+    2,
+    0,
+    0,
     2,
     2,
     2,
@@ -1697,6 +1657,19 @@
     2,
     0,
     0,
+    2,
+    2,
+    2,
+    2,
+    2,
+    2,
+    2,
+    2,
+    2,
+    2,
+    2,
+    2,
+    2,
     2,
     2,
     2,
@@ -1710,6 +1683,20 @@
     2,
     2,
     2,
+    0,
+    0,
+    0,
+    0,
+    0,
+    0,
+    0,
+    0,
+    0,
+    0,
+    0,
+    0,
+    0,
+    0,
     2,
     2,
     2,
@@ -1735,6 +1722,19 @@
     2,
     2,
     2,
+    2,
+    0,
+    0,
+    0,
+    0,
+    0,
+    0,
+    0,
+    0,
+    0,
+    0,
+    0,
+    0,
     0,
     0,
     2,
@@ -3015,7 +3015,7 @@
      "name": "st5GleisSenkrecht",
      "type": "moebel",
      "x": 288,
-     "y": 176,
+     "y": 144,
      "width": 32,
      "height": 16,
      "rotation": 0,
@@ -3038,7 +3038,7 @@
      "name": "st5GleisSenkrecht",
      "type": "moebel",
      "x": 288,
-     "y": 192,
+     "y": 160,
      "width": 32,
      "height": 16,
      "rotation": 0,
@@ -3061,7 +3061,7 @@
      "name": "st5GleisSenkrecht",
      "type": "moebel",
      "x": 288,
-     "y": 208,
+     "y": 176,
      "width": 32,
      "height": 16,
      "rotation": 0,
@@ -3084,7 +3084,7 @@
      "name": "st5GleisSenkrecht",
      "type": "moebel",
      "x": 288,
-     "y": 224,
+     "y": 192,
      "width": 32,
      "height": 16,
      "rotation": 0,
@@ -3107,7 +3107,7 @@
      "name": "st5GleisSenkrecht",
      "type": "moebel",
      "x": 288,
-     "y": 240,
+     "y": 208,
      "width": 32,
      "height": 16,
      "rotation": 0,
@@ -3130,7 +3130,7 @@
      "name": "st5GleisSenkrecht",
      "type": "moebel",
      "x": 288,
-     "y": 256,
+     "y": 224,
      "width": 32,
      "height": 16,
      "rotation": 0,
@@ -3153,7 +3153,7 @@
      "name": "st5GleisSenkrecht",
      "type": "moebel",
      "x": 288,
-     "y": 272,
+     "y": 240,
      "width": 32,
      "height": 16,
      "rotation": 0,
@@ -3176,7 +3176,7 @@
      "name": "st5GleisSenkrecht",
      "type": "moebel",
      "x": 288,
-     "y": 288,
+     "y": 256,
      "width": 32,
      "height": 16,
      "rotation": 0,
@@ -3199,7 +3199,7 @@
      "name": "st5GleisSenkrecht",
      "type": "moebel",
      "x": 288,
-     "y": 304,
+     "y": 272,
      "width": 32,
      "height": 16,
      "rotation": 0,
@@ -3222,7 +3222,7 @@
      "name": "st5GleisSenkrecht",
      "type": "moebel",
      "x": 288,
-     "y": 320,
+     "y": 288,
      "width": 32,
      "height": 16,
      "rotation": 0,
@@ -3245,7 +3245,7 @@
      "name": "st5GleisSenkrecht",
      "type": "moebel",
      "x": 288,
-     "y": 336,
+     "y": 304,
      "width": 32,
      "height": 16,
      "rotation": 0,
@@ -3268,7 +3268,7 @@
      "name": "st5GleisSenkrecht",
      "type": "moebel",
      "x": 288,
-     "y": 352,
+     "y": 320,
      "width": 32,
      "height": 16,
      "rotation": 0,
@@ -3288,19 +3288,19 @@
     },
     {
      "id": 17,
-     "name": "st5Stuetzbalken",
+     "name": "st5GleisSenkrecht",
      "type": "moebel",
-     "x": 272,
-     "y": 192,
-     "width": 16,
-     "height": 32,
+     "x": 288,
+     "y": 336,
+     "width": 32,
+     "height": 16,
      "rotation": 0,
      "visible": true,
      "properties": [
       {
        "name": "tiefe",
        "type": "int",
-       "value": 0
+       "value": 1
       },
       {
        "name": "kollision",
@@ -3311,19 +3311,19 @@
     },
     {
      "id": 18,
-     "name": "st5Stuetzbalken",
+     "name": "st5GleisSenkrecht",
      "type": "moebel",
-     "x": 320,
-     "y": 192,
-     "width": 16,
-     "height": 32,
+     "x": 288,
+     "y": 352,
+     "width": 32,
+     "height": 16,
      "rotation": 0,
      "visible": true,
      "properties": [
       {
        "name": "tiefe",
        "type": "int",
-       "value": 0
+       "value": 1
       },
       {
        "name": "kollision",
@@ -3337,7 +3337,7 @@
      "name": "st5Stuetzbalken",
      "type": "moebel",
      "x": 272,
-     "y": 256,
+     "y": 176,
      "width": 16,
      "height": 32,
      "rotation": 0,
@@ -3360,7 +3360,7 @@
      "name": "st5Stuetzbalken",
      "type": "moebel",
      "x": 320,
-     "y": 256,
+     "y": 176,
      "width": 16,
      "height": 32,
      "rotation": 0,
@@ -3383,7 +3383,7 @@
      "name": "st5Stuetzbalken",
      "type": "moebel",
      "x": 272,
-     "y": 320,
+     "y": 240,
      "width": 16,
      "height": 32,
      "rotation": 0,
@@ -3406,7 +3406,7 @@
      "name": "st5Stuetzbalken",
      "type": "moebel",
      "x": 320,
-     "y": 320,
+     "y": 240,
      "width": 16,
      "height": 32,
      "rotation": 0,
@@ -3426,11 +3426,11 @@
     },
     {
      "id": 23,
-     "name": "st5PfuetzeGross",
+     "name": "st5Stuetzbalken",
      "type": "moebel",
-     "x": 496,
-     "y": 112,
-     "width": 48,
+     "x": 272,
+     "y": 320,
+     "width": 16,
      "height": 32,
      "rotation": 0,
      "visible": true,
@@ -3438,22 +3438,22 @@
       {
        "name": "tiefe",
        "type": "int",
-       "value": 136
+       "value": 0
       },
       {
        "name": "kollision",
        "type": "bool",
-       "value": true
+       "value": false
       }
      ]
     },
     {
      "id": 24,
-     "name": "st5Lore",
+     "name": "st5Stuetzbalken",
      "type": "moebel",
-     "x": 416,
-     "y": 128,
-     "width": 48,
+     "x": 320,
+     "y": 320,
+     "width": 16,
      "height": 32,
      "rotation": 0,
      "visible": true,
@@ -3461,91 +3461,22 @@
       {
        "name": "tiefe",
        "type": "int",
-       "value": 152
+       "value": 0
       },
       {
        "name": "kollision",
        "type": "bool",
-       "value": true
+       "value": false
       }
      ]
     },
     {
      "id": 25,
-     "name": "fels",
+     "name": "st5PfuetzeKlein",
      "type": "moebel",
-     "x": 544,
-     "y": 64,
-     "width": 16,
-     "height": 16,
-     "rotation": 0,
-     "visible": true,
-     "properties": [
-      {
-       "name": "tiefe",
-       "type": "int",
-       "value": 72
-      },
-      {
-       "name": "kollision",
-       "type": "bool",
-       "value": true
-      }
-     ]
-    },
-    {
-     "id": 26,
-     "name": "felsKlein",
-     "type": "moebel",
-     "x": 448,
-     "y": 64,
-     "width": 16,
-     "height": 16,
-     "rotation": 0,
-     "visible": true,
-     "properties": [
-      {
-       "name": "tiefe",
-       "type": "int",
-       "value": 72
-      },
-      {
-       "name": "kollision",
-       "type": "bool",
-       "value": true
-      }
-     ]
-    },
-    {
-     "id": 27,
-     "name": "felsKlein",
-     "type": "moebel",
-     "x": 80,
-     "y": 64,
-     "width": 16,
-     "height": 16,
-     "rotation": 0,
-     "visible": true,
-     "properties": [
-      {
-       "name": "tiefe",
-       "type": "int",
-       "value": 72
-      },
-      {
-       "name": "kollision",
-       "type": "bool",
-       "value": true
-      }
-     ]
-    },
-    {
-     "id": 28,
-     "name": "fels",
-     "type": "moebel",
-     "x": 96,
+     "x": 416,
      "y": 80,
-     "width": 16,
+     "width": 32,
      "height": 16,
      "rotation": 0,
      "visible": true,
@@ -3563,10 +3494,263 @@
      ]
     },
     {
-     "id": 29,
-     "name": "fels",
+     "id": 26,
+     "name": "st5Lore",
+     "type": "moebel",
+     "x": 352,
+     "y": 96,
+     "width": 48,
+     "height": 32,
+     "rotation": 0,
+     "visible": true,
+     "properties": [
+      {
+       "name": "tiefe",
+       "type": "int",
+       "value": 120
+      },
+      {
+       "name": "kollision",
+       "type": "bool",
+       "value": true
+      }
+     ]
+    },
+    {
+     "id": 27,
+     "name": "scFelsGross",
+     "type": "moebel",
+     "x": 64,
+     "y": 64,
+     "width": 32,
+     "height": 32,
+     "rotation": 0,
+     "visible": true,
+     "properties": [
+      {
+       "name": "tiefe",
+       "type": "int",
+       "value": 88
+      },
+      {
+       "name": "kollision",
+       "type": "bool",
+       "value": true
+      }
+     ]
+    },
+    {
+     "id": 28,
+     "name": "st5Werkzeugkiste",
      "type": "moebel",
      "x": 384,
+     "y": 64,
+     "width": 32,
+     "height": 32,
+     "rotation": 0,
+     "visible": true,
+     "properties": [
+      {
+       "name": "tiefe",
+       "type": "int",
+       "value": 88
+      },
+      {
+       "name": "kollision",
+       "type": "bool",
+       "value": true
+      }
+     ]
+    },
+    {
+     "id": 29,
+     "name": "scFelsMittel",
+     "type": "moebel",
+     "x": 448,
+     "y": 96,
+     "width": 32,
+     "height": 32,
+     "rotation": 0,
+     "visible": true,
+     "properties": [
+      {
+       "name": "tiefe",
+       "type": "int",
+       "value": 120
+      },
+      {
+       "name": "kollision",
+       "type": "bool",
+       "value": true
+      }
+     ]
+    },
+    {
+     "id": 30,
+     "name": "st5Bauholz",
+     "type": "moebel",
+     "x": 400,
+     "y": 80,
+     "width": 32,
+     "height": 48,
+     "rotation": 0,
+     "visible": true,
+     "properties": [
+      {
+       "name": "tiefe",
+       "type": "int",
+       "value": 120
+      },
+      {
+       "name": "kollision",
+       "type": "bool",
+       "value": true
+      }
+     ]
+    },
+    {
+     "id": 31,
+     "name": "scFelsGross",
+     "type": "moebel",
+     "x": 304,
+     "y": 64,
+     "width": 32,
+     "height": 32,
+     "rotation": 0,
+     "visible": true,
+     "properties": [
+      {
+       "name": "tiefe",
+       "type": "int",
+       "value": 88
+      },
+      {
+       "name": "kollision",
+       "type": "bool",
+       "value": true
+      }
+     ]
+    },
+    {
+     "id": 32,
+     "name": "scFelsMittel",
+     "type": "moebel",
+     "x": 96,
+     "y": 64,
+     "width": 32,
+     "height": 32,
+     "rotation": 0,
+     "visible": true,
+     "properties": [
+      {
+       "name": "tiefe",
+       "type": "int",
+       "value": 88
+      },
+      {
+       "name": "kollision",
+       "type": "bool",
+       "value": true
+      }
+     ]
+    },
+    {
+     "id": 33,
+     "name": "mf4FelsHoch",
+     "type": "moebel",
+     "x": 336,
+     "y": 64,
+     "width": 16,
+     "height": 16,
+     "rotation": 0,
+     "visible": true,
+     "properties": [
+      {
+       "name": "tiefe",
+       "type": "int",
+       "value": 1
+      },
+      {
+       "name": "kollision",
+       "type": "bool",
+       "value": false
+      }
+     ]
+    },
+    {
+     "id": 34,
+     "name": "mf4FelsHoch",
+     "type": "moebel",
+     "x": 272,
+     "y": 112,
+     "width": 16,
+     "height": 16,
+     "rotation": 0,
+     "visible": true,
+     "properties": [
+      {
+       "name": "tiefe",
+       "type": "int",
+       "value": 1
+      },
+      {
+       "name": "kollision",
+       "type": "bool",
+       "value": false
+      }
+     ]
+    },
+    {
+     "id": 35,
+     "name": "caFaesser",
+     "type": "moebel",
+     "x": 448,
+     "y": 48,
+     "width": 32,
+     "height": 32,
+     "rotation": 0,
+     "visible": true,
+     "properties": [
+      {
+       "name": "tiefe",
+       "type": "int",
+       "value": 72
+      },
+      {
+       "name": "kollision",
+       "type": "bool",
+       "value": true
+      }
+     ]
+    },
+    {
+     "id": 36,
+     "name": "mf4Fels",
+     "type": "moebel",
+     "x": 256,
+     "y": 48,
+     "width": 16,
+     "height": 16,
+     "rotation": 0,
+     "visible": true,
+     "properties": [
+      {
+       "name": "tiefe",
+       "type": "int",
+       "value": 1
+      },
+      {
+       "name": "kollision",
+       "type": "bool",
+       "value": false
+      }
+     ]
+    },
+    {
+     "id": 37,
+     "name": "wc5SteinB",
+     "type": "moebel",
+     "x": 272,
      "y": 48,
      "width": 16,
      "height": 16,
@@ -3586,8 +3770,100 @@
      ]
     },
     {
-     "id": 30,
-     "name": "felsKlein",
+     "id": 38,
+     "name": "wc5SteinB",
+     "type": "moebel",
+     "x": 304,
+     "y": 48,
+     "width": 16,
+     "height": 16,
+     "rotation": 0,
+     "visible": true,
+     "properties": [
+      {
+       "name": "tiefe",
+       "type": "int",
+       "value": 56
+      },
+      {
+       "name": "kollision",
+       "type": "bool",
+       "value": true
+      }
+     ]
+    },
+    {
+     "id": 39,
+     "name": "mf4Fels",
+     "type": "moebel",
+     "x": 320,
+     "y": 48,
+     "width": 16,
+     "height": 16,
+     "rotation": 0,
+     "visible": true,
+     "properties": [
+      {
+       "name": "tiefe",
+       "type": "int",
+       "value": 1
+      },
+      {
+       "name": "kollision",
+       "type": "bool",
+       "value": false
+      }
+     ]
+    },
+    {
+     "id": 40,
+     "name": "mf4Fels",
+     "type": "moebel",
+     "x": 352,
+     "y": 48,
+     "width": 16,
+     "height": 16,
+     "rotation": 0,
+     "visible": true,
+     "properties": [
+      {
+       "name": "tiefe",
+       "type": "int",
+       "value": 1
+      },
+      {
+       "name": "kollision",
+       "type": "bool",
+       "value": false
+      }
+     ]
+    },
+    {
+     "id": 41,
+     "name": "wc5SteinB",
+     "type": "moebel",
+     "x": 368,
+     "y": 48,
+     "width": 16,
+     "height": 16,
+     "rotation": 0,
+     "visible": true,
+     "properties": [
+      {
+       "name": "tiefe",
+       "type": "int",
+       "value": 56
+      },
+      {
+       "name": "kollision",
+       "type": "bool",
+       "value": true
+      }
+     ]
+    },
+    {
+     "id": 42,
+     "name": "wc5SteinB",
      "type": "moebel",
      "x": 400,
      "y": 48,
@@ -3609,172 +3885,11 @@
      ]
     },
     {
-     "id": 31,
-     "name": "felsKlein",
-     "type": "moebel",
-     "x": 432,
-     "y": 48,
-     "width": 16,
-     "height": 16,
-     "rotation": 0,
-     "visible": true,
-     "properties": [
-      {
-       "name": "tiefe",
-       "type": "int",
-       "value": 56
-      },
-      {
-       "name": "kollision",
-       "type": "bool",
-       "value": true
-      }
-     ]
-    },
-    {
-     "id": 32,
-     "name": "fels",
-     "type": "moebel",
-     "x": 448,
-     "y": 48,
-     "width": 16,
-     "height": 16,
-     "rotation": 0,
-     "visible": true,
-     "properties": [
-      {
-       "name": "tiefe",
-       "type": "int",
-       "value": 56
-      },
-      {
-       "name": "kollision",
-       "type": "bool",
-       "value": true
-      }
-     ]
-    },
-    {
-     "id": 33,
-     "name": "fels",
-     "type": "moebel",
-     "x": 480,
-     "y": 48,
-     "width": 16,
-     "height": 16,
-     "rotation": 0,
-     "visible": true,
-     "properties": [
-      {
-       "name": "tiefe",
-       "type": "int",
-       "value": 56
-      },
-      {
-       "name": "kollision",
-       "type": "bool",
-       "value": true
-      }
-     ]
-    },
-    {
-     "id": 34,
-     "name": "felsKlein",
-     "type": "moebel",
-     "x": 496,
-     "y": 48,
-     "width": 16,
-     "height": 16,
-     "rotation": 0,
-     "visible": true,
-     "properties": [
-      {
-       "name": "tiefe",
-       "type": "int",
-       "value": 56
-      },
-      {
-       "name": "kollision",
-       "type": "bool",
-       "value": true
-      }
-     ]
-    },
-    {
-     "id": 35,
-     "name": "felsKlein",
-     "type": "moebel",
-     "x": 528,
-     "y": 48,
-     "width": 16,
-     "height": 16,
-     "rotation": 0,
-     "visible": true,
-     "properties": [
-      {
-       "name": "tiefe",
-       "type": "int",
-       "value": 56
-      },
-      {
-       "name": "kollision",
-       "type": "bool",
-       "value": true
-      }
-     ]
-    },
-    {
-     "id": 36,
-     "name": "fels",
-     "type": "moebel",
-     "x": 544,
-     "y": 48,
-     "width": 16,
-     "height": 16,
-     "rotation": 0,
-     "visible": true,
-     "properties": [
-      {
-       "name": "tiefe",
-       "type": "int",
-       "value": 56
-      },
-      {
-       "name": "kollision",
-       "type": "bool",
-       "value": true
-      }
-     ]
-    },
-    {
-     "id": 37,
-     "name": "fels",
-     "type": "moebel",
-     "x": 576,
-     "y": 48,
-     "width": 16,
-     "height": 16,
-     "rotation": 0,
-     "visible": true,
-     "properties": [
-      {
-       "name": "tiefe",
-       "type": "int",
-       "value": 56
-      },
-      {
-       "name": "kollision",
-       "type": "bool",
-       "value": true
-      }
-     ]
-    },
-    {
-     "id": 38,
-     "name": "felsKlein",
+     "id": 43,
+     "name": "mf4Fels",
      "type": "moebel",
      "x": 416,
-     "y": 160,
+     "y": 48,
      "width": 16,
      "height": 16,
      "rotation": 0,
@@ -3783,136 +3898,21 @@
       {
        "name": "tiefe",
        "type": "int",
-       "value": 168
+       "value": 1
       },
       {
        "name": "kollision",
        "type": "bool",
-       "value": true
-      }
-     ]
-    },
-    {
-     "id": 39,
-     "name": "fels",
-     "type": "moebel",
-     "x": 432,
-     "y": 160,
-     "width": 16,
-     "height": 16,
-     "rotation": 0,
-     "visible": true,
-     "properties": [
-      {
-       "name": "tiefe",
-       "type": "int",
-       "value": 168
-      },
-      {
-       "name": "kollision",
-       "type": "bool",
-       "value": true
-      }
-     ]
-    },
-    {
-     "id": 40,
-     "name": "fels",
-     "type": "moebel",
-     "x": 464,
-     "y": 160,
-     "width": 16,
-     "height": 16,
-     "rotation": 0,
-     "visible": true,
-     "properties": [
-      {
-       "name": "tiefe",
-       "type": "int",
-       "value": 168
-      },
-      {
-       "name": "kollision",
-       "type": "bool",
-       "value": true
-      }
-     ]
-    },
-    {
-     "id": 41,
-     "name": "felsKlein",
-     "type": "moebel",
-     "x": 480,
-     "y": 160,
-     "width": 16,
-     "height": 16,
-     "rotation": 0,
-     "visible": true,
-     "properties": [
-      {
-       "name": "tiefe",
-       "type": "int",
-       "value": 168
-      },
-      {
-       "name": "kollision",
-       "type": "bool",
-       "value": true
-      }
-     ]
-    },
-    {
-     "id": 42,
-     "name": "felsKlein",
-     "type": "moebel",
-     "x": 512,
-     "y": 160,
-     "width": 16,
-     "height": 16,
-     "rotation": 0,
-     "visible": true,
-     "properties": [
-      {
-       "name": "tiefe",
-       "type": "int",
-       "value": 168
-      },
-      {
-       "name": "kollision",
-       "type": "bool",
-       "value": true
-      }
-     ]
-    },
-    {
-     "id": 43,
-     "name": "fels",
-     "type": "moebel",
-     "x": 528,
-     "y": 160,
-     "width": 16,
-     "height": 16,
-     "rotation": 0,
-     "visible": true,
-     "properties": [
-      {
-       "name": "tiefe",
-       "type": "int",
-       "value": 168
-      },
-      {
-       "name": "kollision",
-       "type": "bool",
-       "value": true
+       "value": false
       }
      ]
     },
     {
      "id": 44,
-     "name": "fels",
+     "name": "wc5SteinB",
      "type": "moebel",
-     "x": 560,
-     "y": 160,
+     "x": 464,
+     "y": 48,
      "width": 16,
      "height": 16,
      "rotation": 0,
@@ -3921,7 +3921,7 @@
       {
        "name": "tiefe",
        "type": "int",
-       "value": 168
+       "value": 56
       },
       {
        "name": "kollision",
@@ -3932,10 +3932,10 @@
     },
     {
      "id": 45,
-     "name": "felsKlein",
+     "name": "wc5SteinB",
      "type": "moebel",
-     "x": 576,
-     "y": 160,
+     "x": 256,
+     "y": 128,
      "width": 16,
      "height": 16,
      "rotation": 0,
@@ -3944,7 +3944,7 @@
       {
        "name": "tiefe",
        "type": "int",
-       "value": 168
+       "value": 136
       },
       {
        "name": "kollision",
@@ -3955,10 +3955,10 @@
     },
     {
      "id": 46,
-     "name": "felsKlein",
+     "name": "mf4Fels",
      "type": "moebel",
-     "x": 384,
-     "y": 80,
+     "x": 272,
+     "y": 128,
      "width": 16,
      "height": 16,
      "rotation": 0,
@@ -3967,21 +3967,21 @@
       {
        "name": "tiefe",
        "type": "int",
-       "value": 88
+       "value": 1
       },
       {
        "name": "kollision",
        "type": "bool",
-       "value": true
+       "value": false
       }
      ]
     },
     {
      "id": 47,
-     "name": "fels",
+     "name": "wc5SteinB",
      "type": "moebel",
-     "x": 384,
-     "y": 96,
+     "x": 320,
+     "y": 128,
      "width": 16,
      "height": 16,
      "rotation": 0,
@@ -3990,7 +3990,7 @@
       {
        "name": "tiefe",
        "type": "int",
-       "value": 104
+       "value": 136
       },
       {
        "name": "kollision",
@@ -4001,9 +4001,9 @@
     },
     {
      "id": 48,
-     "name": "fels",
+     "name": "wc5SteinB",
      "type": "moebel",
-     "x": 384,
+     "x": 352,
      "y": 128,
      "width": 16,
      "height": 16,
@@ -4024,10 +4024,10 @@
     },
     {
      "id": 49,
-     "name": "felsKlein",
+     "name": "mf4Fels",
      "type": "moebel",
-     "x": 576,
-     "y": 80,
+     "x": 368,
+     "y": 128,
      "width": 16,
      "height": 16,
      "rotation": 0,
@@ -4036,21 +4036,21 @@
       {
        "name": "tiefe",
        "type": "int",
-       "value": 88
+       "value": 1
       },
       {
        "name": "kollision",
        "type": "bool",
-       "value": true
+       "value": false
       }
      ]
     },
     {
      "id": 50,
-     "name": "fels",
+     "name": "mf4Fels",
      "type": "moebel",
-     "x": 576,
-     "y": 96,
+     "x": 400,
+     "y": 128,
      "width": 16,
      "height": 16,
      "rotation": 0,
@@ -4059,20 +4059,20 @@
       {
        "name": "tiefe",
        "type": "int",
-       "value": 104
+       "value": 1
       },
       {
        "name": "kollision",
        "type": "bool",
-       "value": true
+       "value": false
       }
      ]
     },
     {
      "id": 51,
-     "name": "fels",
+     "name": "wc5SteinB",
      "type": "moebel",
-     "x": 576,
+     "x": 416,
      "y": 128,
      "width": 16,
      "height": 16,
@@ -4093,10 +4093,10 @@
     },
     {
      "id": 52,
-     "name": "felsKlein",
+     "name": "wc5SteinB",
      "type": "moebel",
-     "x": 576,
-     "y": 144,
+     "x": 448,
+     "y": 128,
      "width": 16,
      "height": 16,
      "rotation": 0,
@@ -4105,7 +4105,7 @@
       {
        "name": "tiefe",
        "type": "int",
-       "value": 152
+       "value": 136
       },
       {
        "name": "kollision",
@@ -4116,10 +4116,10 @@
     },
     {
      "id": 53,
-     "name": "fels",
+     "name": "mf4Fels",
      "type": "moebel",
-     "x": 64,
-     "y": 48,
+     "x": 464,
+     "y": 128,
      "width": 16,
      "height": 16,
      "rotation": 0,
@@ -4128,21 +4128,21 @@
       {
        "name": "tiefe",
        "type": "int",
-       "value": 56
+       "value": 1
       },
       {
        "name": "kollision",
        "type": "bool",
-       "value": true
+       "value": false
       }
      ]
     },
     {
      "id": 54,
-     "name": "felsKlein",
+     "name": "mf4Fels",
      "type": "moebel",
-     "x": 80,
-     "y": 48,
+     "x": 256,
+     "y": 64,
      "width": 16,
      "height": 16,
      "rotation": 0,
@@ -4151,21 +4151,21 @@
       {
        "name": "tiefe",
        "type": "int",
-       "value": 56
+       "value": 1
       },
       {
        "name": "kollision",
        "type": "bool",
-       "value": true
+       "value": false
       }
      ]
     },
     {
      "id": 55,
-     "name": "felsKlein",
+     "name": "wc5SteinB",
      "type": "moebel",
-     "x": 112,
-     "y": 48,
+     "x": 256,
+     "y": 80,
      "width": 16,
      "height": 16,
      "rotation": 0,
@@ -4174,7 +4174,7 @@
       {
        "name": "tiefe",
        "type": "int",
-       "value": 56
+       "value": 88
       },
       {
        "name": "kollision",
@@ -4185,9 +4185,124 @@
     },
     {
      "id": 56,
-     "name": "fels",
+     "name": "wc5SteinB",
      "type": "moebel",
-     "x": 128,
+     "x": 256,
+     "y": 112,
+     "width": 16,
+     "height": 16,
+     "rotation": 0,
+     "visible": true,
+     "properties": [
+      {
+       "name": "tiefe",
+       "type": "int",
+       "value": 120
+      },
+      {
+       "name": "kollision",
+       "type": "bool",
+       "value": true
+      }
+     ]
+    },
+    {
+     "id": 57,
+     "name": "mf4Fels",
+     "type": "moebel",
+     "x": 480,
+     "y": 64,
+     "width": 16,
+     "height": 16,
+     "rotation": 0,
+     "visible": true,
+     "properties": [
+      {
+       "name": "tiefe",
+       "type": "int",
+       "value": 1
+      },
+      {
+       "name": "kollision",
+       "type": "bool",
+       "value": false
+      }
+     ]
+    },
+    {
+     "id": 58,
+     "name": "mf4Fels",
+     "type": "moebel",
+     "x": 480,
+     "y": 96,
+     "width": 16,
+     "height": 16,
+     "rotation": 0,
+     "visible": true,
+     "properties": [
+      {
+       "name": "tiefe",
+       "type": "int",
+       "value": 1
+      },
+      {
+       "name": "kollision",
+       "type": "bool",
+       "value": false
+      }
+     ]
+    },
+    {
+     "id": 59,
+     "name": "wc5SteinB",
+     "type": "moebel",
+     "x": 480,
+     "y": 112,
+     "width": 16,
+     "height": 16,
+     "rotation": 0,
+     "visible": true,
+     "properties": [
+      {
+       "name": "tiefe",
+       "type": "int",
+       "value": 120
+      },
+      {
+       "name": "kollision",
+       "type": "bool",
+       "value": true
+      }
+     ]
+    },
+    {
+     "id": 60,
+     "name": "mf4Fels",
+     "type": "moebel",
+     "x": 48,
+     "y": 48,
+     "width": 16,
+     "height": 16,
+     "rotation": 0,
+     "visible": true,
+     "properties": [
+      {
+       "name": "tiefe",
+       "type": "int",
+       "value": 1
+      },
+      {
+       "name": "kollision",
+       "type": "bool",
+       "value": false
+      }
+     ]
+    },
+    {
+     "id": 61,
+     "name": "wc5SteinB",
+     "type": "moebel",
+     "x": 64,
      "y": 48,
      "width": 16,
      "height": 16,
@@ -4207,10 +4322,79 @@
      ]
     },
     {
-     "id": 57,
-     "name": "fels",
+     "id": 62,
+     "name": "wc5SteinB",
      "type": "moebel",
-     "x": 64,
+     "x": 96,
+     "y": 48,
+     "width": 16,
+     "height": 16,
+     "rotation": 0,
+     "visible": true,
+     "properties": [
+      {
+       "name": "tiefe",
+       "type": "int",
+       "value": 56
+      },
+      {
+       "name": "kollision",
+       "type": "bool",
+       "value": true
+      }
+     ]
+    },
+    {
+     "id": 63,
+     "name": "mf4Fels",
+     "type": "moebel",
+     "x": 112,
+     "y": 48,
+     "width": 16,
+     "height": 16,
+     "rotation": 0,
+     "visible": true,
+     "properties": [
+      {
+       "name": "tiefe",
+       "type": "int",
+       "value": 1
+      },
+      {
+       "name": "kollision",
+       "type": "bool",
+       "value": false
+      }
+     ]
+    },
+    {
+     "id": 64,
+     "name": "mf4Fels",
+     "type": "moebel",
+     "x": 144,
+     "y": 48,
+     "width": 16,
+     "height": 16,
+     "rotation": 0,
+     "visible": true,
+     "properties": [
+      {
+       "name": "tiefe",
+       "type": "int",
+       "value": 1
+      },
+      {
+       "name": "kollision",
+       "type": "bool",
+       "value": false
+      }
+     ]
+    },
+    {
+     "id": 65,
+     "name": "wc5SteinB",
+     "type": "moebel",
+     "x": 48,
      "y": 96,
      "width": 16,
      "height": 16,
@@ -4230,8 +4414,8 @@
      ]
     },
     {
-     "id": 58,
-     "name": "felsKlein",
+     "id": 66,
+     "name": "wc5SteinB",
      "type": "moebel",
      "x": 80,
      "y": 96,
@@ -4253,10 +4437,33 @@
      ]
     },
     {
-     "id": 59,
-     "name": "felsKlein",
+     "id": 67,
+     "name": "mf4Fels",
      "type": "moebel",
-     "x": 112,
+     "x": 128,
+     "y": 96,
+     "width": 16,
+     "height": 16,
+     "rotation": 0,
+     "visible": true,
+     "properties": [
+      {
+       "name": "tiefe",
+       "type": "int",
+       "value": 1
+      },
+      {
+       "name": "kollision",
+       "type": "bool",
+       "value": false
+      }
+     ]
+    },
+    {
+     "id": 68,
+     "name": "wc5SteinB",
+     "type": "moebel",
+     "x": 144,
      "y": 96,
      "width": 16,
      "height": 16,
@@ -4276,10 +4483,33 @@
      ]
     },
     {
-     "id": 60,
-     "name": "fels",
+     "id": 69,
+     "name": "wc5SteinB",
      "type": "moebel",
-     "x": 64,
+     "x": 48,
+     "y": 80,
+     "width": 16,
+     "height": 16,
+     "rotation": 0,
+     "visible": true,
+     "properties": [
+      {
+       "name": "tiefe",
+       "type": "int",
+       "value": 88
+      },
+      {
+       "name": "kollision",
+       "type": "bool",
+       "value": true
+      }
+     ]
+    },
+    {
+     "id": 70,
+     "name": "mf4Fels",
+     "type": "moebel",
+     "x": 144,
      "y": 64,
      "width": 16,
      "height": 16,
@@ -4289,58 +4519,12 @@
       {
        "name": "tiefe",
        "type": "int",
-       "value": 72
+       "value": 1
       },
       {
        "name": "kollision",
        "type": "bool",
-       "value": true
-      }
-     ]
-    },
-    {
-     "id": 61,
-     "name": "felsKlein",
-     "type": "moebel",
-     "x": 64,
-     "y": 80,
-     "width": 16,
-     "height": 16,
-     "rotation": 0,
-     "visible": true,
-     "properties": [
-      {
-       "name": "tiefe",
-       "type": "int",
-       "value": 88
-      },
-      {
-       "name": "kollision",
-       "type": "bool",
-       "value": true
-      }
-     ]
-    },
-    {
-     "id": 62,
-     "name": "felsKlein",
-     "type": "moebel",
-     "x": 144,
-     "y": 80,
-     "width": 16,
-     "height": 16,
-     "rotation": 0,
-     "visible": true,
-     "properties": [
-      {
-       "name": "tiefe",
-       "type": "int",
-       "value": 88
-      },
-      {
-       "name": "kollision",
-       "type": "bool",
-       "value": true
+       "value": false
       }
      ]
     }

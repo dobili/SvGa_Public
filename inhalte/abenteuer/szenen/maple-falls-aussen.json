@@ -44,14 +44,14 @@
     "#pppppp...................pp..........................ee.......#",
     "#.........................pp..........................ee.......#",
     "#.........................pp..........................ee.......#",
-    "#.........................pp......................dddddddddddd.#",
-    "#.........................pp......................dddddddddddd.#",
-    "#.........................pp......................dddddddddddd.#",
-    "#.........................pp......................dddddddddddd.#",
-    "#.........................pp......................dddddddddddd.#",
-    "#.........................pp......................dddddddddddd.#",
-    "#.........................pp......................dddddddddddd.#",
-    "#.........................pp......................dddddddddddd.#",
+    "#.........................pp......................dddddd.......#",
+    "#.........................pp......................dddddd.......#",
+    "#.........................pp......................dddddd.......#",
+    "#.........................pp......................dddddd.......#",
+    "#.........................pp......................dddddd.......#",
+    "#.........................pp......................dddddd.......#",
+    "#.........................pp......................dddddd.......#",
+    "#.........................pp......................dddddd.......#",
     "#.........................pp...................................#",
     "#pppppppppppppppppppppppppppppppppppppppppppppppppppppppppppppp#",
     "################################################################"
@@ -82,10 +82,6 @@
       "feld": [26, 5]
     },
     {
-      "moebel": "mfAhorn",
-      "feld": [32, 6]
-    },
-    {
       "moebel": "mf4Gemuesebeet",
       "feld": [11, 7]
     },
@@ -100,10 +96,6 @@
     {
       "moebel": "mf4BuschKlein",
       "feld": [29, 9]
-    },
-    {
-      "moebel": "mf4BuschKlein",
-      "feld": [31, 12]
     },
     {
       "moebel": "mf4VillaOrange",
@@ -559,10 +551,6 @@
       "feld": [40, 31]
     },
     {
-      "moebel": "mf4Gemuesebeet",
-      "feld": [12, 34]
-    },
-    {
       "moebel": "mf4BuschKlein",
       "feld": [28, 38]
     },
@@ -571,84 +559,12 @@
       "feld": [39, 38]
     },
     {
-      "moebel": "mf4ZaunSeite",
-      "feld": [11, 32]
-    },
-    {
-      "moebel": "mf4ZaunSeite",
-      "feld": [11, 33]
-    },
-    {
-      "moebel": "mf4ZaunSeite",
-      "feld": [11, 34]
-    },
-    {
-      "moebel": "mf4ZaunSeite",
-      "feld": [11, 35]
-    },
-    {
-      "moebel": "mf4ZaunSeite",
-      "feld": [11, 36]
-    },
-    {
-      "moebel": "mf4ZaunSeite",
-      "feld": [11, 37]
-    },
-    {
-      "moebel": "mf4ZaunSeite",
-      "feld": [11, 38]
-    },
-    {
-      "moebel": "mf4ZaunSeite",
-      "feld": [11, 39]
-    },
-    {
-      "moebel": "mf4ZaunSeite",
-      "feld": [11, 40]
-    },
-    {
-      "moebel": "mf4ZaunSeite",
-      "feld": [17, 32]
-    },
-    {
-      "moebel": "mf4ZaunSeite",
-      "feld": [17, 33]
-    },
-    {
-      "moebel": "mf4ZaunSeite",
-      "feld": [17, 34]
-    },
-    {
-      "moebel": "mf4ZaunSeite",
-      "feld": [17, 35]
-    },
-    {
-      "moebel": "mf4ZaunSeite",
-      "feld": [17, 36]
-    },
-    {
-      "moebel": "mf4ZaunSeite",
-      "feld": [17, 37]
-    },
-    {
-      "moebel": "mf4ZaunSeite",
-      "feld": [17, 38]
-    },
-    {
-      "moebel": "mf4ZaunSeite",
-      "feld": [17, 39]
-    },
-    {
-      "moebel": "mf4ZaunSeite",
-      "feld": [17, 40]
-    },
-    {
       "moebel": "mf5ZaunEckeObenLinks",
       "feld": [49, 31]
     },
     {
       "moebel": "mf5ZaunEckeObenRechts",
-      "feld": [62, 31]
+      "feld": [56, 31]
     },
     {
       "moebel": "mf4ZaunMitte",
@@ -665,30 +581,6 @@
     {
       "moebel": "mf4ZaunEckeRechts",
       "feld": [53, 31]
-    },
-    {
-      "moebel": "mf4ZaunEckeLinks",
-      "feld": [56, 31]
-    },
-    {
-      "moebel": "mf4ZaunMitte",
-      "feld": [57, 31]
-    },
-    {
-      "moebel": "mf4ZaunMitte",
-      "feld": [58, 31]
-    },
-    {
-      "moebel": "mf4ZaunMitte",
-      "feld": [59, 31]
-    },
-    {
-      "moebel": "mf4ZaunMitte",
-      "feld": [60, 31]
-    },
-    {
-      "moebel": "mf4ZaunMitte",
-      "feld": [61, 31]
     },
     {
       "moebel": "mf5ZaunSeiteLinks",
@@ -724,35 +616,35 @@
     },
     {
       "moebel": "mf4ZaunSeite",
-      "feld": [62, 32]
+      "feld": [56, 32]
     },
     {
       "moebel": "mf4ZaunSeite",
-      "feld": [62, 33]
+      "feld": [56, 33]
     },
     {
       "moebel": "mf4ZaunSeite",
-      "feld": [62, 34]
+      "feld": [56, 34]
     },
     {
       "moebel": "mf4ZaunSeite",
-      "feld": [62, 35]
+      "feld": [56, 35]
     },
     {
       "moebel": "mf4ZaunSeite",
-      "feld": [62, 36]
+      "feld": [56, 36]
     },
     {
       "moebel": "mf4ZaunSeite",
-      "feld": [62, 37]
+      "feld": [56, 37]
     },
     {
       "moebel": "mf4ZaunSeite",
-      "feld": [62, 38]
+      "feld": [56, 38]
     },
     {
       "moebel": "mf4ZaunSeite",
-      "feld": [62, 39]
+      "feld": [56, 39]
     },
     {
       "moebel": "mf4ZaunEckeLinks",
@@ -760,7 +652,7 @@
     },
     {
       "moebel": "mf4ZaunEckeRechts",
-      "feld": [62, 40]
+      "feld": [56, 40]
     },
     {
       "moebel": "mf4ZaunMitte",
@@ -787,36 +679,8 @@
       "feld": [55, 40]
     },
     {
-      "moebel": "mf4ZaunMitte",
-      "feld": [56, 40]
-    },
-    {
-      "moebel": "mf4ZaunMitte",
-      "feld": [57, 40]
-    },
-    {
-      "moebel": "mf4ZaunMitte",
-      "feld": [58, 40]
-    },
-    {
-      "moebel": "mf4ZaunMitte",
-      "feld": [59, 40]
-    },
-    {
-      "moebel": "mf4ZaunMitte",
-      "feld": [60, 40]
-    },
-    {
-      "moebel": "mf4ZaunMitte",
-      "feld": [61, 40]
-    },
-    {
       "moebel": "mfBank",
       "feld": [50, 32]
-    },
-    {
-      "moebel": "mfBank",
-      "feld": [58, 32]
     },
     {
       "moebel": "mf4Abfalleimer",
@@ -828,32 +692,24 @@
       "id": "sandkasten"
     },
     {
-      "moebel": "mf4Schaukel",
-      "feld": [56, 35]
-    },
-    {
-      "moebel": "mf4Rutsche",
-      "feld": [58, 35]
-    },
-    {
       "moebel": "mf4Klettergeruest",
       "feld": [51, 37]
     },
     {
-      "moebel": "mf4BuschKlein",
-      "feld": [60, 32]
+      "moebel": "mf4Schaukel",
+      "feld": [54, 37]
     },
     {
-      "moebel": "mf8KulisseHausRot",
-      "feld": [12, 37]
+      "moebel": "mf8KulisseBauernhaus",
+      "feld": [31, 4]
     },
     {
-      "moebel": "mf8KulisseHausBlau",
-      "feld": [33, 10]
+      "moebel": "mf8KulisseLaden",
+      "feld": [11, 32]
     },
     {
-      "moebel": "mf8KulisseHausKlein",
-      "feld": [36, 5]
+      "moebel": "mf8KulisseStadthaus",
+      "feld": [57, 30]
     }
   ],
   "ausloeser": [
@@ -927,12 +783,12 @@
     {
       "name": "kindMitBall",
       "typ": "statist",
-      "feld": [55, 39],
+      "feld": [53, 39],
       "eigenschaften": {
         "tun": "spielt Ball auf dem Spielplatz",
         "wann": "tag",
-        "von": "51,39",
-        "bis": "60,39",
+        "von": "50,39",
+        "bis": "55,39",
         "sagt": "statist.mapleFalls.aussen.kindMitBall"
       }
     },
@@ -1013,11 +869,12 @@
     {
       "name": "kinderKreide",
       "typ": "statist",
-      "feld": [61, 34],
+      "feld": [55, 33],
       "eigenschaften": {
         "tun": "malt mit Kreide ein Brett auf den Boden",
         "wann": "tag",
-        "sagt": "statist.mapleFalls.aussen.kinderKreide"
+        "sagt": "statist.mapleFalls.aussen.kinderKreide",
+        "zeigt": "laskerThomas"
       }
     },
     {

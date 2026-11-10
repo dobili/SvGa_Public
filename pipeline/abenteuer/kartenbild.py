@@ -19,6 +19,7 @@ from pipeline.abenteuer.katalog import katalogbefund, katalogeintraege
 from pipeline.abenteuer.moebelliste import lade_moebel
 from pipeline.abenteuer.randspur import randluecken
 from pipeline.abenteuer.zusammenhang import HOLZ
+from pipeline.abenteuer.zustaende import zustandsname
 
 KRONE = (246, 246, 248, 255)
 KRONENRAND = (58, 58, 80, 255)
@@ -298,6 +299,30 @@ def randhang(x: int, y: int, zeilen: list[str], flaeche: dict) -> tuple[int, int
     return nachbar if nachbar in flaeche else None
 
 
+def bildname(szene: dict) -> tuple[str, bool]:
+    """Name des Bildes und ob es ein Bild für das Spiel ist (sonst nur Vorschau).
+
+    Die Grundkarte heißt „<kennung>“, ein Zustand (``zustaende`` in orte.json, Runde 8)
+    „<kennung>-<zustand>“ mit dem Teil des Dateinamens hinter der Grundkarte, wie die App ihn lädt
+    (oberwelt/kartenfassung.ts). Varianten (KARTENREGELN 10.37) bekommen nur eine Vorschau
+    „…-<variante>“; eine Szene, die weder Grundkarte noch Zustand ist, ebenfalls, damit sie das Bild
+    der Grundkarte nicht überschreibt. Beispiel: port-delacroix-musikhaus-neu.json →
+    („portDelacroix.musikhaus-neu“, True).
+    """
+    name = szene["karte"]
+    karte = next(
+        (k for o in lade(INHALTE / "orte.json")["orte"] for k in o["karten"] if k["kennung"] == name),
+        {},
+    )
+    datei = szene.get("datei", "")
+    zustand = datei in karte.get("zustaende", {}).values() and datei != karte.get("datei")
+    if zustand:
+        name += f"-{zustandsname(datei, karte['datei'])}"
+    if szene.get("variante"):
+        return f"{name}-{szene['variante']}", False
+    return name, zustand or datei == karte.get("datei")
+
+
 def main() -> None:
     privat, vorschauordner = Path(sys.argv[1]), Path(sys.argv[2])
     vorschauordner.mkdir(parents=True, exist_ok=True)
@@ -306,17 +331,13 @@ def main() -> None:
         szene = lade(Path(name))
         gezeichnet: dict = {}
         grund = hintergrund(szene, privat, gezeichnet)
-        # Varianten (KARTENREGELN 10.37) bekommen nur eine Vorschau; das Spiel lädt Variante A.
-        name = szene["karte"]
-        # Zweite Fassung derselben Karte (Musikhaus: Ruine und neuer Clubraum) bekommt ein eigenes
-        # Bild „<kennung>-<zustand>.png“, sonst überschriebe sie den Hintergrund der ersten.
-        if szene.get("zustand_der_karte"):
-            name += f"-{szene['zustand_der_karte']}"
-        name += f"-{szene['variante']}" if szene.get("variante") else ""
-        if not szene.get("variante"):
+        name, spielbild = bildname(szene)
+        if spielbild:
             grund.convert("RGB").save(privat / "spiel" / "grafik" / "karten" / f"{name}.png")
         vorschau(szene, privat, grund).convert("RGB").save(vorschauordner / f"{name}.png")
         befunde = sorted(set(bildbefunde(szene, privat))) + randspur(szene, gezeichnet)
+        if not spielbild and not szene.get("variante"):
+            befunde.append(f"{szene['datei']} ist weder Grundkarte noch Zustand in orte.json: nur Vorschau")
         befunde += mattenbefunde(szene, privat)
         print(f"{name}: Hintergrund und Vorschau gezeichnet")
         for b in befunde:

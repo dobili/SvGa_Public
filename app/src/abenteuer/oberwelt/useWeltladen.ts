@@ -9,7 +9,7 @@
  * Abhängigkeiten: oberwelt/weltdaten.ts, oberwelt/oberweltspiel.ts, oberwelt/toenung.ts.
  */
 import { useEffect, useState, type RefObject } from "react";
-import { variablenNachBesuch } from "../regeln/dialogvariablen";
+import { variablenAusBesitz, variablenNachBesuch } from "../regeln/dialogvariablen";
 import type { Abenteuerstand } from "../schnittstelle/spielstand";
 import { fehlertext } from "../texte/texte";
 import { szeneAus, type Oberweltkern } from "./kern";
@@ -111,7 +111,9 @@ export function useWeltladen(k: Oberweltkern, a: Weltanschluss): string | null {
     let aktiv = true;
     // Beginn dieser Sitzung in der Welt, für die Spielzeit im Spielstand.
     const begonnen = Date.now();
-    ladeWelt(karte, stand.held.variante, stand.dialogvariablen)
+    // Zustände der Karte dürfen auch nach Besitz fragen (hatLaterne, Runde 8).
+    const variablen = { ...stand.dialogvariablen, ...variablenAusBesitz(stand) };
+    ladeWelt(karte, stand.held.variante, variablen)
       .then((w) => {
         if (!aktiv || !a.rahmen.current) return;
         k.setzeWelt(w);

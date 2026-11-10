@@ -76,7 +76,8 @@ function nimmKarte(sp, kennung) {
 function kaufe(welt, sp, ware) {
   const karte = welt.karten[ware.kennung];
   const schonDa =
-    (ware.art === "gegenstand" || karte?.art === "dauerhaft") && sp.karten[ware.kennung];
+    (ware.art === "gegenstand" || karte?.art === "dauerhaft") &&
+    sp.karten[ware.kennung];
   if (schonDa || sp.muenzen < ware.preis) return false;
   sp.muenzen -= ware.preis;
   nimmKarte(sp, ware.kennung);
@@ -86,7 +87,11 @@ function kaufe(welt, sp, ware) {
 
 /** Sparsam: dauerhafte Karten einmal, nur wenn danach noch die Rücklage bleibt. */
 function sammle(welt, sp, ware) {
-  if (welt.karten[ware.kennung]?.art !== "dauerhaft" || sp.muenzen - ware.preis < RUECKLAGE) return;
+  if (
+    welt.karten[ware.kennung]?.art !== "dauerhaft" ||
+    sp.muenzen - ware.preis < RUECKLAGE
+  )
+    return;
   kaufe(welt, sp, ware);
 }
 
@@ -96,13 +101,17 @@ function billigsteLeichte(welt, sp) {
     (l) => welt.laeden.find((x) => x.kennung === l).angebot,
   );
   return waren
-    .filter((w) => w.art === "karte" && welt.karten[w.kennung]?.stufe === "leicht")
+    .filter(
+      (w) => w.art === "karte" && welt.karten[w.kennung]?.stufe === "leicht",
+    )
     .sort((a, b) => a.preis - b.preis)[0];
 }
 
 /** Die Karte, die der Spieler in diesem Versuch spielt (verbraucht sie, wenn nötig), oder null. */
 function karteFuerVersuch(welt, sp, versuch) {
-  const besitz = Object.entries(sp.karten).filter(([k, n]) => n > 0 && welt.karten[k]);
+  const besitz = Object.entries(sp.karten).filter(
+    ([k, n]) => n > 0 && welt.karten[k],
+  );
   if (sp.art === "sparsam" && versuch < VERSUCHE_OHNE_KARTE) return null;
   // Sparsam: nur leichte, dauerhafte zuerst; verschwenderisch: die stärkste, bei gleicher Stufe dauerhafte.
   const dauerhaft = (k) => (welt.karten[k].art === "dauerhaft" ? 0 : 1);
@@ -130,7 +139,8 @@ function clubkampf(welt, sp, begegnung, zufall, kartenErlaubt) {
     ([k, n]) => n > 0 && welt.karten[k]?.stufe === "leicht",
   );
   const ware = billigsteLeichte(welt, sp);
-  const kaufbar = !kartenErlaubt || leichtImBesitz || (ware && sp.muenzen >= ware.preis);
+  const kaufbar =
+    !kartenErlaubt || leichtImBesitz || (ware && sp.muenzen >= ware.preis);
   let mitKarte = 0;
   for (let v = 0; v < HOECHSTENS_VERSUCHE; v++) {
     const karte = kartenErlaubt ? karteFuerVersuch(welt, sp, v) : null;
@@ -139,7 +149,13 @@ function clubkampf(welt, sp, begegnung, zufall, kartenErlaubt) {
     const nadel = !karte ? 3 : karte.stufe === "leicht" ? 2 : 1;
     return { begegnung, versuche: v + 1, mitKarte, nadel, kaufbar };
   }
-  return { begegnung, versuche: HOECHSTENS_VERSUCHE, mitKarte, nadel: 0, kaufbar };
+  return {
+    begegnung,
+    versuche: HOECHSTENS_VERSUCHE,
+    mitKarte,
+    nadel: 0,
+    kaufbar,
+  };
 }
 
 /** Spielt eine Zeitachse mit einem Spieler ab; gibt seine Orte (Ankunft, Abreise) und Clubs zurück. */
@@ -186,7 +202,9 @@ function bezahlbar(welt, sp, ort) {
 function abreise(welt, sp, ort) {
   ort.abreise = sp.muenzen;
   ort.bezahlbarAbreise = bezahlbar(welt, sp, ort.ort);
-  ort.karten = Object.entries(sp.karten).filter(([k, n]) => n > 0 && welt.karten[k]).length;
+  ort.karten = Object.entries(sp.karten).filter(
+    ([k, n]) => n > 0 && welt.karten[k],
+  ).length;
 }
 
 // ---------------------------------------------------------------- Bericht
@@ -218,7 +236,9 @@ function ortstabelle(welt, ersteLaeufe) {
     "| Ort | Akt | Münzen Ankunft | Münzen Abreise | im Laden bezahlbar (Ankunft / Abreise) | Karten |";
   const zeilen = [kopf, "| --- | --- | --- | --- | --- | --- |"];
   for (const o of ersteLaeufe[0].orte) {
-    const je = ersteLaeufe.map((sp) => sp.orte.find((x) => x.ort === o.ort)).filter(Boolean);
+    const je = ersteLaeufe
+      .map((sp) => sp.orte.find((x) => x.ort === o.ort))
+      .filter(Boolean);
     const anzahl = warenIn(welt, o.ort).length;
     const laden = anzahl
       ? `${o.bezahlbar.length} / ${o.bezahlbarAbreise.length} von ${anzahl}`
@@ -245,7 +265,9 @@ function clubtabelle(stat) {
 
 /** Erster Kauf einer Karte dieser Stufe durch den verschwenderischen Spieler. */
 function frueheste(welt, ersteLaeufe, stufe) {
-  const kauf = ersteLaeufe[0].kaeufe.find((k) => welt.karten[k.kennung]?.stufe === stufe);
+  const kauf = ersteLaeufe[0].kaeufe.find(
+    (k) => welt.karten[k.kennung]?.stufe === stufe,
+  );
   return kauf ? `${kauf.kennung} in ${kauf.ort} (Akt ${akt(kauf.ort)})` : "nie";
 }
 
@@ -280,7 +302,9 @@ function berichtWirtschaft(welt, zeitachsen, ersteNadel) {
   const zeilen = ["# Wirtschaft", ""];
   const ziele = [];
   for (const art of ["sparsam", "verschwenderisch"]) {
-    const erste = zeitachsen.map((z, i) => spiele(welt, z, art, 1000 * (i + 1), ersteNadel));
+    const erste = zeitachsen.map((z, i) =>
+      spiele(welt, z, art, 1000 * (i + 1), ersteNadel),
+    );
     const alle = zeitachsen.flatMap((z, i) =>
       Array.from({ length: WIEDERHOLUNGEN }, (_, w) =>
         spiele(welt, z, art, 1000 * (i + 1) + w, ersteNadel),
@@ -296,8 +320,12 @@ function berichtWirtschaft(welt, zeitachsen, ersteNadel) {
       "",
     );
     if (art === "sparsam") {
-      const ohneSilber = stat.filter((c) => c.silberOderBesser < 0.95).map((c) => c.begegnung);
-      const ohneKauf = stat.filter((c) => c.kaufbar < 0.95).map((c) => c.begegnung);
+      const ohneSilber = stat
+        .filter((c) => c.silberOderBesser < 0.95)
+        .map((c) => c.begegnung);
+      const ohneKauf = stat
+        .filter((c) => c.kaufbar < 0.95)
+        .map((c) => c.begegnung);
       ziele.push(
         `- Sparsamer Spieler mindestens Silber (in 95 % der Läufe): ${ohneSilber.length ? "NEIN, " + ohneSilber.join(", ") : "ja"}`,
       );
@@ -316,7 +344,9 @@ function berichtWirtschaft(welt, zeitachsen, ersteNadel) {
         `- Dauerhafte Karten, die der sparsame Spieler nie kaufen konnte: ${spanne(fehlt)}`,
       );
     } else {
-      ziele.push(`- Erste gekaufte starke Karte: ${frueheste(welt, erste, "stark")}`);
+      ziele.push(
+        `- Erste gekaufte starke Karte: ${frueheste(welt, erste, "stark")}`,
+      );
       ziele.push(
         `- Starke Karten erst ab Akt 3 im Laden: ${starkFrueh(welt).length ? "NEIN, " + starkFrueh(welt).join(", ") : "ja"}`,
       );
@@ -324,9 +354,15 @@ function berichtWirtschaft(welt, zeitachsen, ersteNadel) {
       ziele.push(
         `- Waren in Akt 4, die der verschwenderische Spieler nicht kaufen konnte: ${spanne(offen)} (Ziel: mehr als 0)`,
       );
-      ziele.push(`- Erste kaufbare mittlere Karte: ${frueheste(welt, erste, "mittel")}`);
-      const ende = erste.map((sp) => sp.orte.find((o) => akt(o.ort) === 2)?.ankunft ?? 0);
-      ziele.push(`- Münzen des verschwenderischen Spielers bei Beginn von Akt 2: ${spanne(ende)}`);
+      ziele.push(
+        `- Erste kaufbare mittlere Karte: ${frueheste(welt, erste, "mittel")}`,
+      );
+      const ende = erste.map(
+        (sp) => sp.orte.find((o) => akt(o.ort) === 2)?.ankunft ?? 0,
+      );
+      ziele.push(
+        `- Münzen des verschwenderischen Spielers bei Beginn von Akt 2: ${spanne(ende)}`,
+      );
     }
   }
   return [...zeilen, "## Ziele", "", ...ziele].join("\n");

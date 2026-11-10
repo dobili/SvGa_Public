@@ -9,7 +9,8 @@
     "p": "pflaster",
     "s": "asphalt",
     "k": "schotter",
-    "a": "asphalt"
+    "a": "asphalt",
+    "b": "pflaster"
   },
   "zustand": ["neu", "gebraucht", "alt"],
   "stil": ["natur", "klassisch", "modern", "laendlich", "rustikal"],
@@ -39,14 +40,14 @@
     "#..........pp...............................pp....kk.......#",
     "#..........pp...............................pp....kk.......#",
     "#..........ppppppppppppppppppppppppppppppppppp....kk.......#",
-    "#..........pppppppppppppppppppppppppppppppppppppp.kk.......#",
-    "#.............ppppppppppppppppppppppppppppppppppp.kk.......#",
-    "#.............ppppppppppppppppppppppppppppppppppp.kk.......#",
-    "#.............ppppppppppppppppppppppppppppppppppp.kk.......#",
-    "#..aaaa.......ppppppppppppppppppppppppppppppppppp.kk.......#",
-    "#..aaaa.......ppppppppppppppppppppppppppppppppppp.kk.......#",
-    "#..aaaa.......ppppppppppppppppppppppppppppppppppp.kk.......#",
-    "#..aaaa.....................pppppppppp........ppp.kk.......#",
+    "#..........pppppppppppppppppppppppppppppppppppbbb.kk.......#",
+    "#.............ppppppppppppppppppppppppppppppppbbb.kk.......#",
+    "#.............ppppppppppppppppppppppppppppppppbbb.kk.......#",
+    "#.............ppppppppppppppppppppppppppppppppbbb.kk.......#",
+    "#..aaaa.......ppppppppppppppppppppppppppppppppbbb.kk.......#",
+    "#..aaaa.......ppppppppppppppppppppppppppppppppbbb.kk.......#",
+    "#..aaaa.......ppppppppppppppppppppppppppppppppbbb.kk.......#",
+    "#..aaaa.....................pppppppppp........bbb.kk.......#",
     "#ssssssssssssssssssssssssssssssssssssssssssssssssssssssssss#",
     "#ssssssssssssssssssssssssssssssssssssssssssssssssssssssssss#",
     "#ssssssssssssssssssssssssssssssssssssssssssssssssssssssssss#",
@@ -618,5 +619,6 @@
     }
   ],
   "markierung": ["s"],
-  "zustand_der_karte": "nicht annekSchachGelernt"
+  "zustand_der_karte": "nicht annekSchachGelernt",
+  "randlinie": ["b"]
 }

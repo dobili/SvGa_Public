@@ -403,10 +403,6 @@
       "feld": [53, 19]
     },
     {
-      "name": "hinterzimmerTuer",
-      "feld": [84, 7]
-    },
-    {
       "name": "reklame",
       "feld": [112, 10]
     },
@@ -417,6 +413,14 @@
     {
       "name": "aussicht",
       "feld": [6, 20]
+    },
+    {
+      "name": "hinterzimmerTuer",
+      "feld": [78, 10]
+    },
+    {
+      "name": "hinterzimmerTuer",
+      "feld": [79, 10]
     }
   ],
   "figuren": [

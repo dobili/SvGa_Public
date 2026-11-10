@@ -126,10 +126,37 @@ def _buchten(bild: Image.Image, zeilen: list[str], buchten: dict[str, int]) -> N
                 z.line((x * K, y * K, (x + 1) * K - 1, y * K), fill=WEISS)
 
 
+def _randlinien(bild: Image.Image, zeilen: list[str], zeichen: set[str], offen: set[str]) -> None:
+    """Weiße Randlinie um Buchten aus ``zeichen`` (Szene „randlinie“): an jeder Seite, an der die
+    Bucht endet, außer zur Fahrbahn hin (``offen``), wo man ein- und ausfährt.
+
+    Warum: Die Haltebucht des Schulbusses lag als Pflaster im Pflaster des Hofs und war nicht als
+    Bucht zu erkennen (Gutachten Schule, Runde 9).
+    """
+    z = ImageDraw.Draw(bild)
+    for y, zeile in enumerate(zeilen):
+        for x, feld in enumerate(zeile):
+            if feld not in zeichen:
+                continue
+            for dx, dy in ((1, 0), (-1, 0), (0, 1), (0, -1)):
+                a, b = x + dx, y + dy
+                nachbar = zeilen[b][a] if 0 <= b < len(zeilen) and 0 <= a < len(zeile) else None
+                if nachbar in zeichen or nachbar in offen:
+                    continue
+                x0, y0 = (
+                    x * K + (K - RAND if dx > 0 else RAND - 1 if dx < 0 else 0),
+                    y * K + (K - RAND if dy > 0 else RAND - 1 if dy < 0 else 0),
+                )
+                ende = (x0, y0 + K - 1) if dx else (x0 + K - 1, y0)
+                z.line((x0, y0, *ende), fill=WEISS)
+
+
 def markiere(bild: Image.Image, zeilen: list[str], szene: dict) -> None:
-    """Alle Markierungen einer Szene: Linien auf Fahrbahnen (``markierung``), Parkbuchten (``buchten``).
+    """Alle Markierungen einer Szene: Linien auf Fahrbahnen (``markierung``), Parkbuchten (``buchten``),
+    Randlinien um Haltebuchten (``randlinie``).
 
     Ohne die beiden Schlüssel bleibt das Bild unverändert.
     """
     _linien(bild, zeilen, set(szene.get("markierung", [])))
     _buchten(bild, zeilen, szene.get("buchten", {}))
+    _randlinien(bild, zeilen, set(szene.get("randlinie", [])), set(szene.get("markierung", [])))

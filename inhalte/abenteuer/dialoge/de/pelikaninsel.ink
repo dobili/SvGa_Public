@@ -3,6 +3,7 @@
 // aus Silicon Bay; die Quelle der Batterie liegt in Silicon Bay bei mittel-3). Watt mit Gummistiefeln.
 
 // >>> Runde 6 (mittel-4)
+VAR finchFiguren = 0
 EXTERNAL beginneAufgaben(runde)
 EXTERNAL gibFund(kennung)
 VAR held = "Du"
@@ -106,7 +107,7 @@ Seit dem Winter ist es aus. Die Batterie gibt es nur drüben in Silicon Bay. #sp
 }
 -> END
 
-=== fund_finch_bauer_h ===
+=== finch_bauer_h ===
 {gefundenFinchBauerH:
     Unter dem Finkenzeichen ist nur noch Sand. #sprecher:erzaehler
     -> END
@@ -114,5 +115,6 @@ Seit dem Winter ist es aus. Die Batterie gibt es nur drüben in Silicon Bay. #sp
 ~ gefundenFinchBauerH = true
 An einem Pfahl hängt ein kleiner Fink aus Blech. Darunter im Sand steckt ein weißer Bauer aus Buchsbaum. #sprecher:erzaehler
 ~ gibFund("finchBauerH")
+~ finchFiguren = finchFiguren + 1
 -> END
 // <<< Runde 6 (mittel-4)

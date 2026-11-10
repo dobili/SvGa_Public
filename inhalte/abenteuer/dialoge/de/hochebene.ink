@@ -159,6 +159,8 @@ Die Schotterstraße führt zurück zur Bergstraße. Hinter dir kreist ein Falke 
 -> END
 
 // >>> Runde 6 (mittel-4)
+VAR finchFiguren = 0
+VAR buchseiten = 0
 EXTERNAL beginneAufgaben(runde)
 VAR diplomBegonnen = false
 VAR diplomFertig = false
@@ -209,7 +211,7 @@ Eins hab ich extra gemalt. Für den Prüfer. #sprecher:kira
 
 // ---------------------------------------------------------------- Funde und Ansehen
 
-=== fund_seite03 ===
+=== seite03 ===
 {gefundenSeite03:
     Am Fuß der Fahnenstange ist nichts mehr. #sprecher:erzaehler
     -> END
@@ -217,9 +219,10 @@ Eins hab ich extra gemalt. Für den Prüfer. #sprecher:kira
 ~ gefundenSeite03 = true
 Am Fuß der Fahnenstange flattert eine Buchseite im Wind. Oben steht: Kapitel 3, Gambits. #sprecher:erzaehler
 ~ gibFund("seite03")
+~ buchseiten = buchseiten + 1
 -> END
 
-=== fund_finch_turm_b ===
+=== finch_turm_b ===
 {gefundenFinchTurmB:
     In der Kiste liegen nur Bälle und Seilchen. #sprecher:erzaehler
     -> END
@@ -227,6 +230,7 @@ Am Fuß der Fahnenstange flattert eine Buchseite im Wind. Oben steht: Kapitel 3,
 ~ gefundenFinchTurmB = true
 Auf der Kiste mit den Sportgeräten ist ein Fink aus Kreide gemalt. Zwischen den Bällen liegt ein weißer Turm aus Buchsbaum. #sprecher:erzaehler
 ~ gibFund("finchTurmB")
+~ finchFiguren = finchFiguren + 1
 -> END
 
 === pferd ===

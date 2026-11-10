@@ -630,6 +630,31 @@
         "art": "grundstellung"
       },
       "kartenErlaubt": true,
+      "buchbruch": {
+        "linie": [
+          "e4",
+          "e5",
+          "Nf3",
+          "Nc6",
+          "Bc4",
+          "Bc5",
+          "c3",
+          "Nf6",
+          "d3",
+          "d6",
+          "O-O",
+          "a6",
+          "a4",
+          "Ba7",
+          "Re1",
+          "O-O",
+          "h3",
+          "h6",
+          "Nbd2",
+          "Re8"
+        ],
+        "stufe": 2
+      },
       "zeit": "wahl"
     },
     {

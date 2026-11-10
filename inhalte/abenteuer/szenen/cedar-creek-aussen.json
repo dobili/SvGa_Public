@@ -848,12 +848,12 @@
     {
       "name": "drechslergeselle",
       "typ": "statist",
-      "feld": [3, 19],
+      "feld": [2, 19],
       "eigenschaften": {
         "tun": "fegt Späne vom Gehweg",
         "wann": "tag",
-        "von": "2,19",
-        "bis": "5,19",
+        "von": "1,19",
+        "bis": "3,19",
         "sagt": "statist.cedarCreek.aussen.drechslergeselle"
       }
     },
@@ -903,11 +903,11 @@
     {
       "name": "zeitungsjunge",
       "typ": "statist",
-      "feld": [0, 23],
+      "feld": [2, 23],
       "eigenschaften": {
         "tun": "trägt Zeitungen aus",
         "wann": "morgen",
-        "von": "1,23",
+        "von": "2,23",
         "bis": "39,23"
       }
     },

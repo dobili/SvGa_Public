@@ -18,7 +18,11 @@ function zugNummer(k: Kipppunkt): number {
   return Math.floor(k.halbzug / 2) + 1;
 }
 
-/** Ergebnis der Partie: Ausgang, Züge, Karten, Nadel, Momente und Wiedereinstieg. */
+/**
+ * Ergebnis der Partie, knapp (Spielhülle, docs/spiel/18, Abschnitt 4): Ausgang, die neue Nadel und
+ * nach einer Niederlage Ambroses Satz zum Kipppunkt mit dem Wiedereinstieg, wo das Regelwerk ihn
+ * erlaubt (R14, R15). Zahl der Züge, Karten und Momente stehen nicht mehr hier; sie lenken ab.
+ */
 export function Partieergebniskarte(props: {
   readonly ergebnis: Partieergebnis;
   readonly gegner: string;
@@ -35,17 +39,10 @@ export function Partieergebniskarte(props: {
       <p>
         <strong>{tSpiel(`ergebnis.${ergebnis.ausgang}`, { gegner: props.gegner })}</strong>
       </p>
-      <p>{tSpiel("ergebnis.zuege", { anzahl: Math.ceil(ergebnis.halbzuege / 2) })}</p>
-      {ergebnis.gespielteKarten.length > 0 && (
-        <p>{tSpiel("ergebnis.karten", { anzahl: ergebnis.gespielteKarten.length })}</p>
-      )}
       {props.neueNadel && (
         <p>
           <strong>{tSpiel(`ergebnis.nadel.${props.neueNadel}`, { club: props.club })}</strong>
         </p>
-      )}
-      {ergebnis.momente.length > 0 && (
-        <p>{tSpiel("ergebnis.momente", { anzahl: ergebnis.momente.length })}</p>
       )}
       {kipppunkt === "suche" && <p className="lade">{tSpiel("ergebnis.kipppunktSuche")}</p>}
       {mitKipppunkt && (

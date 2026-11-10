@@ -82,6 +82,8 @@ function Hilfen({
   weiter: () => void;
   zeigeLoesung: () => void;
 }) {
+  // Im Schach-Abenteuer hilft Ambrose: „Ambrose fragen“ statt „Hinweis 1“ (imSpiel.ts).
+  const imSpiel = useImSpiel();
   const motiv = themenname
     ? themenname
     : aufgabe.motiv
@@ -99,12 +101,12 @@ function Hilfen({
         {stufe < HILFEN && (
           <button type="button" className="knopf-zweit" onClick={weiter}>
             <Knopfsymbol art="hinweis" />
-            {t("uebung.hinweis", { stufe: stufe + 1 })}
+            {imSpiel ? t("imSpiel.hinweis") : t("uebung.hinweis", { stufe: stufe + 1 })}
           </button>
         )}
         <button type="button" className="knopf-link" onClick={zeigeLoesung}>
           <Knopfsymbol art="loesung" />
-          {t("uebung.loesungZeigen")}
+          {t(imSpiel ? "imSpiel.loesung" : "uebung.loesungZeigen")}
         </button>
       </div>
     </div>

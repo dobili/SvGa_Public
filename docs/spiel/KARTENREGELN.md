@@ -953,3 +953,17 @@ auf jeder soll etwas passieren, das man entdecken kann. Die Geschichten dazu ste
       (`pipeline/tests/test_abenteuer_moebelbilder.py`).
     - Nach jeder neuen Kollision laufen Kartenbau, `uebergaenge` und der Lauftest: Kein Weg, keine
       Tür und keine Figur darf zugestellt sein.
+70. **Figuren, Statisten und Tiere halten den Helden auf, versperren aber nie den Weg** (Wunsch des
+    Autors, 10.11.2026).
+    - Hauptfiguren und Statisten sperren ihre Kachel, Statisten auch im Gehen. Tiere am Boden
+      sperren ebenfalls (in einer Schar das erste). Fliegende Tiere sperren nie, schwimmende
+      liegen im Wasser, folgende (Hund, Katze) bleiben durchlässig, damit sie den Helden nicht in
+      einer Sackgasse einsperren.
+    - Ein Statist läuft nicht in den Helden hinein. Steht der ihm länger als anderthalb Sekunden
+      im Weg, kehrt der Statist um.
+    - Stehende Figuren und Statisten stehen nie in einem Durchgang von einer Kachel Breite, nie
+      auf einem Auslöser und nie auf dem Feld vor einer Tür. Kein Laufweg führt über einen
+      Übergang oder durch die einzige Verbindung zu einem Ort der Karte.
+    - **Prüfung im Werkzeug:** Der Lauftest stellt jeden Statisten und jedes Tier einzeln auf
+      jede Kachel seines Laufwegs (alle anderen an ihrem Platz); dann muss weiter jeder Übergang,
+      jede Figur und jeder Gegenstand erreichbar sein.

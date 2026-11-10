@@ -8,10 +8,12 @@ import { readdirSync, readFileSync } from "node:fs";
 import { describe, expect, it } from "vitest";
 import { liesAusloeser, type Ausloeser } from "./ausloeserebene";
 import { ankunftsort } from "./ankunft";
-import { begehbar, sperrkacheln, type Sperrangabe, type Tiledkarte } from "./begehbar";
-import { gehe, kuerzesterWeg, loestAus, type Kachelort } from "./uebergangslauf";
+import { begehbar, laufwege, sperrkacheln, type Sperrangabe, type Tiledkarte } from "./begehbar";
+import { erreichbar, gehe, kuerzesterWeg, loestAus, type Kachelort } from "./uebergangslauf";
 
 const KACHEL = 16;
+/** Der Lauf über alle Karten und alle Laufwege braucht einige Sekunden. */
+const ZEITGRENZE_MS = 60000;
 const INHALTE = new URL("../../../../inhalte/abenteuer/", import.meta.url);
 
 function lies<T>(pfad: string): T {
@@ -86,7 +88,10 @@ function pruefeKarte(
     karte.layers.flatMap((e) => e.objects ?? []),
     KACHEL,
   );
-  const frei = begehbar(karte, sperrkacheln(karte, moebel, KACHEL));
+  // Statisten und Tiere stehen an ihrem Platz (auch die, die später loslaufen).
+  const gesperrt = sperrkacheln(karte, moebel, KACHEL);
+  for (const w of laufwege(karte, KACHEL)) gesperrt.add(`${w.start.x},${w.start.y}`);
+  const frei = begehbar(karte, gesperrt);
   const felderVon = (name: string) => alle.filter((a) => a.name === name && a.typ === "ausloeser");
   const namen = [...new Set(alle.map((a) => a.name))].filter(
     (name) => felderVon(name).length > 0 && regel(ort, kennung, name)?.art === "uebergang",
@@ -119,7 +124,8 @@ function pruefeKarte(
       }
     }
   }
-  return [...befunde, ...unerreichbare(datei, alle, frei, namen, stege)];
+  const fest = unerreichbare(datei, alle, frei, namen, stege);
+  return [...befunde, ...fest, ...versperrer(datei, karte, alle, gesperrt, namen, stege)];
 }
 
 /**
@@ -152,6 +158,79 @@ function unerreichbare(
   return befunde;
 }
 
+/** Was mit dieser Sperrung noch zu erreichen ist: Namen der Übergänge, Figuren und Gegenstände. */
+function erreichteNamen(
+  frei: (x: number, y: number) => boolean,
+  alle: readonly Ausloeser[],
+  uebergaenge: readonly string[],
+  stege: readonly { readonly von: readonly Kachelort[]; readonly nach: Kachelort }[],
+): Set<string> {
+  const starts: Kachelort[] = (uebergaenge.length > 0 ? uebergaenge : ["start"]).flatMap((n) => {
+    const feld = alle.find((a) => a.name === n);
+    return feld ? [feld] : [];
+  });
+  let flaeche = erreichbar(frei, starts);
+  // Stege auf derselben Karte: Wer den einen betritt, kommt am anderen an.
+  for (let neu = true; neu;) {
+    neu = false;
+    for (const steg of stege) {
+      const betreten = steg.von.some((f) => flaeche.has(`${f.x},${f.y}`));
+      if (betreten && !flaeche.has(`${steg.nach.x},${steg.nach.y}`)) {
+        starts.push(steg.nach);
+        neu = true;
+      }
+    }
+    if (neu) flaeche = erreichbar(frei, starts);
+  }
+  const namen = new Set<string>();
+  for (const a of alle) {
+    // Einen Übergang muss man betreten, alles andere erreicht man auch von davor.
+    const um = uebergaenge.includes(a.name)
+      ? [a]
+      : [a, ...NACHBARN.map((n) => ({ x: a.x + n.x, y: a.y + n.y }))];
+    if (um.some((u) => frei(u.x, u.y) && flaeche.has(`${u.x},${u.y}`))) namen.add(a.name);
+  }
+  return namen;
+}
+
+/**
+ * Statisten und Tiere, die irgendwo auf ihrem Laufweg etwas versperren (Wunsch des Autors,
+ * 10.11.2026: „Eine Figur darf nie den Weg auf Dauer versperren“). Jeder wird einzeln auf jede
+ * Kachel seines Laufwegs gestellt, alle anderen bleiben an ihrem Platz; was dann nicht mehr zu
+ * erreichen ist, ist ein Befund. Alle Laufwege zugleich zu sperren wäre zu streng: Ein Radfahrer
+ * auf der Straße wäre dann eine Mauer über die ganze Karte.
+ */
+function versperrer(
+  datei: string,
+  karte: Tiledkarte,
+  alle: readonly Ausloeser[],
+  gesperrt: ReadonlySet<string>,
+  uebergaenge: readonly string[],
+  stege: readonly { readonly von: readonly Kachelort[]; readonly nach: Kachelort }[],
+): string[] {
+  const ohne = begehbar(karte, gesperrt);
+  const inKarte = (x: number, y: number) => x >= 0 && y >= 0 && x < karte.width && y < karte.height;
+  const vorher = erreichteNamen(ohne, alle, uebergaenge, stege);
+  const befunde: string[] = [];
+  for (const w of laufwege(karte, KACHEL)) {
+    const verloren = new Set<string>();
+    const start = `${w.start.x},${w.start.y}`;
+    for (const f of w.felder) {
+      // Dieselbe Sperrung, nur dieser eine steht jetzt auf (f.x, f.y) statt an seinem Platz.
+      const frei = (x: number, y: number) =>
+        !(x === f.x && y === f.y) && (ohne(x, y) || (`${x},${y}` === start && inKarte(x, y)));
+      const noch = erreichteNamen(frei, alle, uebergaenge, stege);
+      for (const n of vorher) if (!noch.has(n)) verloren.add(n);
+    }
+    if (verloren.size > 0) {
+      befunde.push(
+        `${datei}: ${w.name} versperrt auf seinem Laufweg ${[...verloren].sort().join(", ")}`,
+      );
+    }
+  }
+  return befunde;
+}
+
 const NACHBARN = [
   { x: 0, y: -1 },
   { x: 0, y: 1 },
@@ -160,19 +239,23 @@ const NACHBARN = [
 ];
 
 describe("Übergänge zu Fuß", () => {
-  it("jeder Übergang ist von jeder Ankunft erreichbar und löst aus; jede Figur ist erreichbar", () => {
-    const orte = lies<{ orte: Ortseintrag[] }>("orte.json").orte;
-    const moebel = moebelliste();
-    const befunde: string[] = [];
-    for (const ort of orte) {
-      for (const k of ort.karten) {
-        for (const datei of [k.datei, ...Object.values(k.zustaende ?? {})]) {
-          befunde.push(...pruefeKarte(ort, k.kennung, datei, moebel));
+  it(
+    "jeder Übergang ist von jeder Ankunft erreichbar und löst aus; jede Figur ist erreichbar",
+    () => {
+      const orte = lies<{ orte: Ortseintrag[] }>("orte.json").orte;
+      const moebel = moebelliste();
+      const befunde: string[] = [];
+      for (const ort of orte) {
+        for (const k of ort.karten) {
+          for (const datei of [k.datei, ...Object.values(k.zustaende ?? {})]) {
+            befunde.push(...pruefeKarte(ort, k.kennung, datei, moebel));
+          }
         }
       }
-    }
-    expect(befunde).toEqual([]);
-  });
+      expect(befunde).toEqual([]);
+    },
+    ZEITGRENZE_MS,
+  );
 
   it("geht einen Weg ab und meldet den Übergang erst beim Betreten", () => {
     const alle: Ausloeser[] = [

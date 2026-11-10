@@ -126,3 +126,21 @@ test("Werkzeugkarten im Duell: Abzählen und Waage", async ({ page }) => {
   await expect(meldung).toBeVisible();
   await expect(abzaehlen).toBeDisabled();
 });
+
+test("Figuren sperren: der Held läuft nicht durch Skater Jo", async ({ page }) => {
+  // Befund des Autors (10.11.2026): Der Held soll nicht durch Figuren laufen können. Er steht eine
+  // Kachel unter Skater Jo mit Blick nach oben und drückt eine Sekunde lang nach oben.
+  await starteImBrowser(page);
+  await expect.poll(() => page.evaluate(schreibeStand, STAND)).toBe(true);
+  await page.reload();
+  await page.goto("/app/#abenteuer");
+  await page.getByTestId("abenteuer-laden").click();
+  await expect(page.getByTestId("abenteuer-welt")).toBeVisible({ timeout: 30000 });
+  await expect(page.getByTestId("abenteuer-aktion")).toBeVisible({ timeout: 10000 });
+  const kachel = page.getByTestId("abenteuer-kachel");
+  const vorher = await kachel.textContent();
+  await page.keyboard.down("ArrowUp");
+  await page.waitForTimeout(1000);
+  await page.keyboard.up("ArrowUp");
+  await expect(kachel).toHaveText(vorher ?? "");
+});

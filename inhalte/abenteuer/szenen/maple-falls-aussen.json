@@ -2,7 +2,7 @@
   "karte": "mapleFalls.aussen",
   "datei": "karten/maple-falls-aussen.json",
   "art": "aussen",
-  "beschreibung": "Die Birch Lane in Maple Falls an einem Spätsommernachmittag, 64 × 43 Kacheln. Oben kommt der Bach drei Kacheln breit vom Westrand, windet sich hinter den Gärten in sanften Bögen und vor der Schule nach Norden aus der Karte fließt. In den Gärten der Nordseite stehen Ahorne und Laubbäume im Wechsel, ein Gemüsebeet, eine Gartenbank und Büsche. Auf der Nordseite die Holzhäuser mit Veranda: das alte Whitlock-Haus, Lilys Haus und das Haus der Martínez, jedes mit niedrigem Eisenzaun, Pforte und Briefkasten in der Zaunlinie. Dann das Falls Diner mit der rosa Leuchtschrift über der Markise und einem Tisch davor, und die Maple Falls High mit Freitreppe; links der Treppe der Fahnenmast, rechts vor der Schule die Schulbushaltestelle mit Bank und Mülltonne, offen zur Straße. Die Birch Lane beginnt links an einem Wendehammer mit Gehweg rundherum und Schild „Sackgasse“ und führt rechts zum Park. Am südlichen Gehweg stehen klassische Laternen in gleichen Abständen, auf dem Grünstreifen dahinter grüne und rote Straßenbäume im Wechsel. Auf der Südseite die Häuser von Mrs. Calloway, Hayes (leer, Schild „Zu verkaufen“ an der Einfahrt), Fisk und ein viertes Haus. Gegenüber der Schule der eingezäunte Spielplatz auf Sand: ein Trampelpfad führt vom Gehweg zum Tor, oben zwei Bänke für Eltern mit Blick auf Sandkasten, Schaukel, Rutsche und Klettergerüst. Vor den Häusern der Südseite läuft ein Plattenweg an der Hecke entlang.",
+  "beschreibung": "Die Birch Lane in Maple Falls an einem Spätsommernachmittag, 64 × 43 Kacheln. Oben kommt der Bach drei Kacheln breit vom Westrand, windet sich hinter den Gärten in sanften Bögen und vor der Schule nach Norden aus der Karte fließt. In den Gärten der Nordseite stehen Ahorne und Laubbäume im Wechsel, ein Gemüsebeet, eine Gartenbank und Büsche. Auf der Nordseite die Holzhäuser mit Veranda: das alte Whitlock-Haus, Lilys Haus und das Haus der Martínez, jedes mit niedrigem Zaun, offener Pforte und Briefkasten in der Zaunlinie. Dann das Falls Diner mit der rosa Leuchtschrift über der Markise, und die Maple Falls High mit Freitreppe; links der Treppe der Fahnenmast, rechts vor der Schule die Schulbushaltestelle mit Bank und Mülltonne, offen zur Straße. Die Birch Lane beginnt links an einem Wendehammer mit Gehweg rundherum und Schild „Sackgasse“ und führt rechts zum Park. Am südlichen Gehweg stehen klassische Laternen in gleichen Abständen, auf dem Grünstreifen dahinter grüne und rote Straßenbäume im Wechsel. Auf der Südseite die Häuser von Mrs. Calloway, Hayes (leer, Schild „Zu verkaufen“ an der Einfahrt), Fisk und ein viertes Haus. Gegenüber der Schule der eingezäunte Spielplatz auf Sand: ein Trampelpfad führt vom Gehweg zum Tor, oben zwei Bänke für Eltern mit Blick auf Sandkasten, Schaukel, Rutsche und Klettergerüst. Vor den Häusern der Südseite läuft ein Plattenweg an der Hecke entlang.",
   "boden": "gras",
   "wandart": "hecke",
   "boeden": {
@@ -610,16 +610,16 @@
     },
     {
       "moebel": "mf4Sandkasten",
-      "feld": [51, 35],
+      "feld": [50, 34],
       "id": "sandkasten"
     },
     {
       "moebel": "mf4Klettergeruest",
-      "feld": [51, 37]
+      "feld": [53, 37]
     },
     {
       "moebel": "mf4Schaukel",
-      "feld": [54, 37]
+      "feld": [54, 34]
     },
     {
       "moebel": "svHausGruen",
@@ -636,10 +636,6 @@
     {
       "moebel": "mf7HeckeSaeule",
       "feld": [1, 27]
-    },
-    {
-      "moebel": "svHausRot",
-      "feld": [12, 36]
     },
     {
       "moebel": "mf4ZaunEckeLinks",
@@ -802,12 +798,116 @@
       "feld": [14, 30]
     },
     {
-      "moebel": "mf4BaumGruen",
+      "moebel": "mf7Gartenhaus",
+      "feld": [3, 3]
+    },
+    {
+      "moebel": "mf10TorOffen1",
+      "feld": [3, 23]
+    },
+    {
+      "moebel": "mf10TorOffen2",
+      "feld": [4, 23]
+    },
+    {
+      "moebel": "mf10TorOffen1",
+      "feld": [13, 23]
+    },
+    {
+      "moebel": "mf10TorOffen2",
+      "feld": [14, 23]
+    },
+    {
+      "moebel": "mf10TorOffen1",
+      "feld": [23, 23]
+    },
+    {
+      "moebel": "mf10TorOffen2",
+      "feld": [24, 23]
+    },
+    {
+      "moebel": "mf10TorOffen1",
+      "feld": [54, 31]
+    },
+    {
+      "moebel": "mf10TorOffen2",
+      "feld": [55, 31]
+    },
+    {
+      "moebel": "mf4Rutsche",
+      "feld": [50, 36]
+    },
+    {
+      "moebel": "mf10SchildVerkauf",
+      "feld": [37, 30]
+    },
+    {
+      "moebel": "cc4Hecke",
+      "feld": [7, 30]
+    },
+    {
+      "moebel": "cc4Hecke",
+      "feld": [9, 30]
+    },
+    {
+      "moebel": "cc4Hecke",
       "feld": [11, 30]
     },
     {
-      "moebel": "mf7Gartenhaus",
-      "feld": [3, 3]
+      "moebel": "cc4Hecke",
+      "feld": [17, 30]
+    },
+    {
+      "moebel": "cc4Hecke",
+      "feld": [19, 30]
+    },
+    {
+      "moebel": "cc4Hecke",
+      "feld": [21, 30]
+    },
+    {
+      "moebel": "cc4Hecke",
+      "feld": [23, 30]
+    },
+    {
+      "moebel": "cc4Hecke",
+      "feld": [29, 30]
+    },
+    {
+      "moebel": "cc4Hecke",
+      "feld": [31, 30]
+    },
+    {
+      "moebel": "cc4Hecke",
+      "feld": [33, 30]
+    },
+    {
+      "moebel": "cc4Hecke",
+      "feld": [35, 30]
+    },
+    {
+      "moebel": "cc4Hecke",
+      "feld": [41, 30]
+    },
+    {
+      "moebel": "cc4Hecke",
+      "feld": [43, 30]
+    },
+    {
+      "moebel": "cc4Hecke",
+      "feld": [45, 30]
+    },
+    {
+      "moebel": "cc4Hecke",
+      "feld": [47, 30]
+    },
+    {
+      "moebel": "mf2Blumenbeet",
+      "feld": [12, 38]
+    },
+    {
+      "moebel": "mf4BaumGruen",
+      "feld": [12, 35]
     }
   ],
   "ausloeser": [
@@ -881,7 +981,7 @@
     {
       "name": "kindMitBall",
       "typ": "statist",
-      "feld": [51, 37],
+      "feld": [50, 36],
       "eigenschaften": {
         "tun": "spielt Ball auf dem Spielplatz",
         "wann": "tag",
@@ -967,7 +1067,7 @@
     {
       "name": "kinderKreide",
       "typ": "statist",
-      "feld": [55, 33],
+      "feld": [54, 32],
       "eigenschaften": {
         "tun": "malt mit Kreide ein Brett auf den Boden",
         "wann": "tag",

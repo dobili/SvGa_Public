@@ -248,3 +248,77 @@ OBJECTS, side by side with plenty of magenta space:
 2. The same bench vertical (rotated 90 degrees, 1 tile wide and 3 tiles long), seen from above.
 3. A wall-mounted coat rack with a hanging work jacket and a hard hat, 2 tiles wide and 2 tiles tall (32x32 pixels), seen from the front.
 ```
+
+---
+
+## 11. Reh und Hirsch (niedrig-1)
+
+**Für:** Zedernwald, Zedernpfad, Landstraße (L6). Die Gutachter sehen dort Ziegen; die Szenen nennen
+Reh und Hirsch. **Datei:** `ki-roh/reh_hirsch.png`. **Ziel:** je Ansicht 2 × 2 Kacheln (32 × 32).
+
+```
+Pixel art game sprite sheet for a top-down RPG.
+
+VIEW: straight front-facing top-down view like classic 16-bit RPG maps (we see the animal from slightly above, like the characters). NOT isometric, NOT rotated.
+
+PIXEL STYLE: chunky pixel art for 32x32 pixel sprites, enlarged so that every sprite pixel is an exactly square block of 10x10 screen pixels on a strict grid. Hard edges, no anti-aliasing, no gradients, no blur. 1-pixel dark brown outline (#3A2A20). 2-3 flat shades per color, light from the top left.
+
+BACKGROUND: solid flat magenta (#FF00FF). No shadow, no ground, no text, no frame.
+
+ANIMALS: a slender roe deer doe (reddish-brown summer coat, white rump patch, large ears, no antlers, thin legs) and a red deer stag (darker brown, light neck mane, antlers with several points). Both clearly deer, NOT goats, NOT sheep: long thin legs, long neck, small head.
+
+Show for EACH animal four views in one row, plenty of magenta space between them, same size and style:
+1. facing down (toward the viewer),
+2. facing right (side view, walking),
+3. facing up (away from the viewer),
+4. facing right, head lowered grazing.
+Row 1: the doe. Row 2: the stag.
+```
+
+---
+
+## 12. Holzhäuser von hinten für die Südseite einer Straße (niedrig-1)
+
+**Für:** Maple Falls (Birch Lane), Cedar Creek, Lockport. Ein Haus südlich einer West-Ost-Straße zeigt
+in unserer Ansicht seine Rückseite. Die Bilder des Pakets haben die Haustür immer vorn. Deshalb
+kehren die Häuser der Straße den Rücken zu (Gutachten Runde 8, dreimal). **Datei:**
+`ki-roh/haus_rueckseite.png`. **Ziel:** 6 × 6 Kacheln (96 × 96).
+
+```
+Pixel art game sprite sheet for a top-down RPG, small-town America, wooden family houses.
+
+VIEW: straight front-facing top-down view like classic 16-bit RPG town maps (Pokemon-like): we see the roof from above and one wall from the front. NOT isometric, NOT rotated.
+
+PIXEL STYLE: chunky pixel art, every sprite pixel an exactly square block of 10x10 screen pixels on a strict grid. Hard edges, no anti-aliasing, no gradients, no blur. 1-pixel dark slate outline (#3A3A50). 2-3 flat shades per color, light from the top left.
+
+BACKGROUND: solid flat magenta (#FF00FF). No ground, no text, no frame.
+
+OBJECT: a one-and-a-half-storey wooden clapboard family house, about 6 tiles wide and 6 tiles tall including the roof (96x96 pixels). IMPORTANT: the street is BEHIND the house (at the top of the picture). So:
+- the wall facing the viewer is the BACK of the house: two windows, a small plain back door with two steps, a garden tap, NO front door, NO porch on this side;
+- at the TOP edge, above the roof ridge, a small covered front porch with a white railing and the top of a mailbox stick out, so it is clear the front door faces the street at the top.
+
+Show three colour variants side by side with plenty of magenta space: light blue walls with a grey roof, cream walls with a red roof, sage green walls with a brown roof.
+```
+
+---
+
+## 13. Bank von hinten (niedrig-1)
+
+**Für:** Bahnsteig am Bahndamm, Park Maple Falls, Bahnsteig Cedar Creek. Wartende sollen zum Gleis
+oder zum Fluss schauen, der nördlich von ihnen liegt. Dann sieht man die Bank von hinten (Gutachten
+Runde 8). **Datei:** `ki-roh/bank_hinten.png`. **Ziel:** 3 × 2 Kacheln (48 × 32).
+
+```
+Pixel art game sprite sheet for a top-down RPG.
+
+VIEW: straight front-facing top-down view like classic 16-bit RPG maps. NOT isometric, NOT rotated.
+
+PIXEL STYLE: chunky pixel art, every sprite pixel an exactly square block of 10x10 screen pixels on a strict grid. Hard edges, no anti-aliasing, no gradients, no blur. 1-pixel dark slate outline (#3A3A50). 2-3 flat shades per color, light from the top left.
+
+BACKGROUND: solid flat magenta (#FF00FF). No shadow, no ground, no text.
+
+OBJECTS, side by side with plenty of magenta space, 3 tiles wide and 2 tiles tall each (48x32 pixels):
+1. A green wooden park bench with cast-iron legs seen FROM BEHIND: in front we see the BACKREST from its back side (vertical slats and the iron frame), behind it the top of the seat. Someone sitting on it would look away from the viewer, toward the top of the picture.
+2. The same bench in dark brown wood.
+3. A railway platform bench of three joined green plastic seats on a metal beam, seen from behind (the backs of the three seats in front).
+```

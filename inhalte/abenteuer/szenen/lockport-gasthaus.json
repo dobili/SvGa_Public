@@ -45,14 +45,13 @@
       "an_wand": true
     },
     {
-      "moebel": "ld5Ofen",
-      "feld": [19, 1]
+      "moebel": "es7Ofen",
+      "feld": [19, 2]
     },
     {
-      "moebel": "wzBild",
+      "moebel": "ldBild",
       "feld": [21, 1],
-      "an_wand": true,
-      "versatz": [0, 6]
+      "an_wand": true
     },
     {
       "moebel": "ld5Flaschenregal",
@@ -69,7 +68,7 @@
       "versatz": [0, 8]
     },
     {
-      "moebel": "cc7Bretterstapel",
+      "moebel": "ld9Kugelfang",
       "feld": [16, 3]
     },
     {
@@ -289,18 +288,6 @@
       "feld": [19, 11]
     },
     {
-      "moebel": "wg6Faesser",
-      "feld": [13, 11]
-    },
-    {
-      "moebel": "wg6Faesser",
-      "feld": [25, 10]
-    },
-    {
-      "moebel": "ldFass",
-      "feld": [1, 8]
-    },
-    {
       "moebel": "mf4Fussmatte",
       "feld": [21, 12],
       "versatz": [0, 8]
@@ -309,6 +296,27 @@
       "moebel": "ld5TuerSued",
       "feld": [21, 13],
       "an_wand": true
+    },
+    {
+      "moebel": "mf9Rundtisch",
+      "feld": [23, 9],
+      "id": "t6"
+    },
+    {
+      "moebel": "ld5StuhlDunkelR",
+      "feld": [22, 9],
+      "zu": "t6"
+    },
+    {
+      "moebel": "ld5StuhlDunkelL",
+      "feld": [25, 9],
+      "zu": "t6"
+    },
+    {
+      "moebel": "ld5Glaeser",
+      "feld": [0, 0],
+      "auf": "t6",
+      "versatz": [0, -4]
     }
   ],
   "ausloeser": [
@@ -349,7 +357,7 @@
     {
       "name": "kegler",
       "typ": "statist",
-      "feld": [3, 3],
+      "feld": [1, 4],
       "eigenschaften": {
         "tun": "schiebt eine Kugel auf der Kegelbahn",
         "wann": "tag",
@@ -359,21 +367,23 @@
     {
       "name": "fischerAmTresen",
       "typ": "statist",
-      "feld": [22, 7],
+      "feld": [23, 7],
       "eigenschaften": {
-        "tun": "trinkt ein Bier am Tresen",
+        "tun": "sitzt am Tresen und trinkt ein Bier",
         "wann": "tag",
-        "sagt": "statist.lockport.gasthaus.fischerAmTresen"
+        "sagt": "statist.lockport.gasthaus.fischerAmTresen",
+        "verhalten": "sitzen"
       }
     },
     {
       "name": "wanderinBeimEssen",
       "typ": "statist",
-      "feld": [6, 9],
+      "feld": [3, 7],
       "eigenschaften": {
-        "tun": "isst eine Suppe",
+        "tun": "sitzt am Tisch und isst eine Suppe",
         "wann": "tag",
-        "sagt": "statist.lockport.gasthaus.wanderinBeimEssen"
+        "sagt": "statist.lockport.gasthaus.wanderinBeimEssen",
+        "verhalten": "sitzen"
       }
     },
     {
@@ -382,6 +392,18 @@
       "feld": [24, 4],
       "eigenschaften": {
         "tun": "poliert Gläser hinter dem Tresen",
+        "wann": "tag"
+      }
+    },
+    {
+      "name": "stammgast",
+      "typ": "statist",
+      "feld": [15, 8],
+      "eigenschaften": {
+        "von": "15,8",
+        "bis": "15,8",
+        "verhalten": "sitzen",
+        "tun": "sitzt beim Kartenspiel",
         "wann": "tag"
       }
     }

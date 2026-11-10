@@ -781,3 +781,42 @@ Gutachten in `docs/spiel/auftraege/gutachten/`. „Technik“ heißt: zentral ge
   Dach in der Schrägansicht), die Ruderboote 2 × 4 (hochkant). Auch der Schulbus im Park (Zustand
   `schulbus`) ist 7 × 4. Der Traktor auf der Landstraße misst 5 × 4. Er steht nicht in der Liste der
   Regel, ist aber größer als ein Auto, wie es sein soll.
+
+## Zweites Gutachten Runde 8: Antworten (niedrig-1, 10.11.2026)
+
+Gutachten `maple-falls-cedar-creek-2.md` und `weg-maple-cedar-2.md`.
+
+**Cedar Creek außen:**
+
+- **Bus ragt in den Gehweg (10.65):** Er steht jetzt in einer Busbucht (Reihe 23 auf seiner Länge
+  Asphalt), längs zur Straße.
+- **Holzhäuser nicht an der Straße:** Statt des Wellblechhauses stehen direkt südlich der Straße zwei
+  Blockhütten mit Gärten, Beet und Baum.
+- **Spielzeughäuser (10.66):** In der Südreihe stehen drei Hütten 5 × 5 und ein Gartenhaus.
+- **Flachdachblock:** Er ist weg, dort steht jetzt die Holzfällerhütte.
+- **Bootsschuppen:** Er steht seit 3e2bf4af am Bach; der Gutachter sah den Stand davor.
+
+**Flussweg:**
+
+- **Fährstelle ohne Pfosten:** Ein Poller am Ufer hält das Fährboot, daneben steht ein Schild.
+  Poller dürfen jetzt zum Wasser zeigen (`zum_wasser`).
+- **Boote quer am Steg:** Die Ruderboote liegen längs am Steg, der quer zum Ufer ins Wasser ragt. Der
+  Steg ist jetzt fünf Reihen lang, länger als die Boote.
+- **Erlen:** Am Ufer stehen sechs Erlen.
+
+**Landstraße:**
+
+- **Mais ohne Ende:** Das Maisfeld endet bei Spalte 93 an einer Wiese mit Erlen und Blumen.
+- **Apfelstand ohne Verkäuferin:** Eine Verkäuferin steht am Stand, Äpfel liegen auf dem Tresen.
+- **Hof ohne Weg zur Tür:** Ein Kiesweg führt vom Flohmarktplatz am Ufer entlang zur Haustür. Die Tür
+  liegt im Bild unten, also zum Fluss.
+
+**Zedernpfad:**
+
+- **Keine Höhe:** Zwei Felskanten (`"kante": "klippe"`) machen den Hang. Die erste trennt den
+  Waldrand von der mittleren Stufe, die zweite die Kuppe; der Pfad steigt über Felstreppen hinauf.
+- **Steinkreis und Bank:** Mein Stand aus Runde 8 war nicht gespeichert. Jetzt steht die
+  Baumstammbank auf der Kuppe in einem Kreis aus zehn Steinen.
+- **Sturmholz neben dem Weg:** Bei Spalte 38 liegen die Stämme quer über dem Weg (flach, man steigt
+  darüber), daneben Äste.
+- **Wald:** Er ist auf allen freien Feldern dichter, mit Abstand zum Weg.

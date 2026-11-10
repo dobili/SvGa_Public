@@ -1786,6 +1786,10 @@
     },
     {
       "name": "museumTuer",
+      "feld": [23, 46]
+    },
+    {
+      "name": "museumTuer",
       "feld": [24, 46]
     },
     {

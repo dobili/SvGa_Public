@@ -612,6 +612,10 @@
       "feld": [22, 20]
     },
     {
+      "name": "saloonTuer",
+      "feld": [23, 20]
+    },
+    {
       "name": "grab",
       "feld": [50, 33]
     },

@@ -928,7 +928,11 @@
     },
     {
       "name": "haustuer",
-      "feld": [3, 23]
+      "feld": [3, 20]
+    },
+    {
+      "name": "dinerTuer",
+      "feld": [31, 23]
     },
     {
       "name": "dinerTuer",
@@ -936,7 +940,11 @@
     },
     {
       "name": "schule",
-      "feld": [47, 23]
+      "feld": [47, 20]
+    },
+    {
+      "name": "schule",
+      "feld": [48, 20]
     },
     {
       "name": "park",

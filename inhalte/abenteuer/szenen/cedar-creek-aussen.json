@@ -86,8 +86,8 @@
     },
     {
       "moebel": "cc5Seiteneingang",
-      "feld": [20, 9],
-      "versatz": [15, 8]
+      "feld": [21, 9],
+      "versatz": [0, 8]
     },
     {
       "moebel": "mf2Bibliothek",
@@ -696,11 +696,19 @@
     },
     {
       "name": "waschsalonTuer",
-      "feld": [16, 19]
+      "feld": [13, 19]
+    },
+    {
+      "name": "waschsalonTuer",
+      "feld": [14, 19]
     },
     {
       "name": "bibliothekTuer",
-      "feld": [22, 19]
+      "feld": [22, 16]
+    },
+    {
+      "name": "bibliothekTuer",
+      "feld": [23, 16]
     },
     {
       "name": "plakat",
@@ -820,7 +828,7 @@
     {
       "name": "waschsalonfrau",
       "typ": "statist",
-      "feld": [14, 19],
+      "feld": [16, 19],
       "eigenschaften": {
         "tun": "faltet vor dem Waschsalon Handtücher",
         "wann": "tag",

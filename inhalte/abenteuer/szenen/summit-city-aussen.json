@@ -486,7 +486,11 @@
     },
     {
       "name": "huetteTuer",
-      "feld": [8, 26]
+      "feld": [8, 25]
+    },
+    {
+      "name": "huetteTuer",
+      "feld": [9, 25]
     },
     {
       "name": "bergladenTuer",
@@ -495,6 +499,10 @@
     {
       "name": "seilbahnTal",
       "feld": [54, 22]
+    },
+    {
+      "name": "seilbahnTal",
+      "feld": [55, 22]
     },
     {
       "name": "drachenbrunnen",

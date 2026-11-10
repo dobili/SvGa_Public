@@ -154,6 +154,14 @@ Westen die Bucht; nur der Pfad öffnet den Westrand.
   seit dem zweiten Gutachten Asphalt vor dem Tor (6).
 - Offen: Laternen am Dünenfuß (1), Abfahrt ohne Verzögerungsstreifen (5), Vogelschild (10).
 
+**Viertes Gutachten (`gutachten/weg-ironwood-silicon-raststaette-4.md`, „reif für den Autor“):**
+
+- **Waschstraße (1):** Eine Zufahrt führt östlich um die Waschbox herum nach Norden (125–126,
+  6–13), man fährt von hinten hinein und vorn hinaus.
+- **Buchten (3, 4):** Die senkrechten Buchtlinien und das einzelne Auto sind weg. Lastwagen und
+  Bus stehen längs am Rand der Fahrgasse.
+- Offen: Abfahrt (2), Laternenabstand (5), Vogelschild (7).
+
 ### 1.2 Glasbrücke (`wegIronwoodSilicon.glasbruecke`, 140 × 26), Runde 8 neu gebaut
 
 **Neu gebaut nach der Revision des Autors (10.11.2026, „keine Variante passt“, mittel-1).** Die

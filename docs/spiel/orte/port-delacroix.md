@@ -388,3 +388,16 @@ Gutachten `docs/spiel/auftraege/gutachten/port-delacroix.md`.
 - **Turnhalle (3):** Das Kästchenplakat ist weg. Dosenregale (4) ersetzt mittel-2 zentral (o).
 - Offen: zweiter Korb (1), Spielfeld (2), Foto (Werkstatt 2), Loch im Dach (Musikhaus 4), Dach
   im Zustand „musikhaus-neu“ (dafür gibt es kein unbeschädigtes Gegenstück im Paket).
+
+### Zweites Gutachten Runde 9: Antworten (mittel-1, 10.11.2026)
+
+Gutachten `docs/spiel/auftraege/gutachten/mittel-1-runde9-2.md`.
+
+- **Rue du Port (2):** Die Fahrbahn läuft jetzt vom Bahnsteig bis an den Kai durch (x 3–54), sie
+  endet nicht mehr stumpf im Kopfstein.
+- **Rohbau (3):** Vor Rohbau, Schutt und Stamm steht ein Bauzaun (16–29, 17).
+- **Prellbock (1):** Am Gleisende steht der Stahlprellbock von mittel-2 (1, 10), direkt über dem
+  ersten Gleisstück. Die Lage stimmt.
+- Im Zustand `musikhaus-neu` gleich.
+- Offen: schmales Turmhaus im Nordosten (4), leere Schneefläche im Süden (5), zweiter Korb und
+  Türmatte in der Turnhalle, doppelter Kistenstapel im Musikhaus.

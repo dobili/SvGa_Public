@@ -599,6 +599,95 @@
       "art": "baum",
       "zustand": "neu",
       "stil": "einfach"
+    },
+    "mf8FlohmarktSchild": {
+      "quelle": "modern-exteriors/Modern_Exteriors_16x16/ME_Theme_Sorter_16x16/6_Garage_Sales_Singles_16x16/ME_Singles_Garage_Sales_16x16_Signboard_1.png",
+      "breite": 48,
+      "hoehe": 32,
+      "kollision": true,
+      "stil": "laendlich",
+      "zustand": "gebraucht"
+    },
+    "mf8FlohmarktTischA": {
+      "quelle": "modern-exteriors/Modern_Exteriors_16x16/ME_Theme_Sorter_16x16/6_Garage_Sales_Singles_16x16/ME_Singles_Garage_Sales_16x16_Table_1.png",
+      "breite": 48,
+      "hoehe": 32,
+      "kollision": true,
+      "stil": "laendlich",
+      "zustand": "gebraucht"
+    },
+    "mf8FlohmarktTischB": {
+      "quelle": "modern-exteriors/Modern_Exteriors_16x16/ME_Theme_Sorter_16x16/6_Garage_Sales_Singles_16x16/ME_Singles_Garage_Sales_16x16_Table_2.png",
+      "breite": 48,
+      "hoehe": 32,
+      "kollision": true,
+      "stil": "laendlich",
+      "zustand": "gebraucht"
+    },
+    "mf8FlohmarktTischC": {
+      "quelle": "modern-exteriors/Modern_Exteriors_16x16/ME_Theme_Sorter_16x16/6_Garage_Sales_Singles_16x16/ME_Singles_Garage_Sales_16x16_Table_4.png",
+      "breite": 48,
+      "hoehe": 48,
+      "kollision": true,
+      "stil": "laendlich",
+      "zustand": "gebraucht"
+    },
+    "mf8FlohmarktKarton": {
+      "quelle": "modern-exteriors/Modern_Exteriors_16x16/ME_Theme_Sorter_16x16/6_Garage_Sales_Singles_16x16/ME_Singles_Garage_Sales_16x16_Box_3.png",
+      "breite": 32,
+      "hoehe": 32,
+      "kollision": true,
+      "art": "karton",
+      "blick": "unten",
+      "zustand": "gebraucht",
+      "stil": "laendlich"
+    },
+    "mf8FlohmarktKiste": {
+      "quelle": "modern-exteriors/Modern_Exteriors_16x16/ME_Theme_Sorter_16x16/6_Garage_Sales_Singles_16x16/ME_Singles_Garage_Sales_16x16_Box_9.png",
+      "breite": 32,
+      "hoehe": 48,
+      "kollision": true,
+      "stil": "laendlich",
+      "zustand": "gebraucht"
+    },
+    "mf8Wohnmobil": {
+      "quelle": "modern-exteriors/Modern_Exteriors_16x16/ME_Theme_Sorter_16x16/10_Vehicles_Singles_16x16/ME_Singles_Vehicles_16x16_Camper_Right_1.png",
+      "breite": 96,
+      "hoehe": 64,
+      "kollision": true,
+      "art": "fahrzeug",
+      "blick": "rechts",
+      "zustand": "gebraucht",
+      "stil": "laendlich"
+    },
+    "mf8FlohmarktHof": {
+      "quelle": "modern-farm/Single_Files_16x16/0_Complete_Tileset_Singles_16x16/Farmer_House_2_16x16.png",
+      "breite": 160,
+      "hoehe": 144,
+      "kollision": true,
+      "art": "gebaeude",
+      "blick": "unten",
+      "zustand": "gebraucht",
+      "stil": "laendlich"
+    },
+    "mf8FlohmarktPlakat": {
+      "quelle": "spiel/eigene/plakat_flohmarkt.png",
+      "breite": 32,
+      "hoehe": 48,
+      "kollision": true,
+      "art": "schild",
+      "blick": "unten",
+      "stil": "laendlich",
+      "zustand": "gebraucht"
+    },
+    "mf8Finkenzeichen": {
+      "quelle": "spiel/eigene/finkenzeichen_blech.png",
+      "breite": 16,
+      "hoehe": 16,
+      "kollision": false,
+      "art": "schild",
+      "stil": "laendlich",
+      "zustand": "alt"
     }
   }
 }

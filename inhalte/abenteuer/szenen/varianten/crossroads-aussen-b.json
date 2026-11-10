@@ -47,18 +47,18 @@
     "#kkkkkkkkkkkkkkkkkkkkkkkkk..........aaaaaaaaaaaaaaaaaaaaaaaaaaa#",
     "#kkkkkkkkkkkkkkkkkkkkkkkkk..........aaaaaaaaaaaaaaaaaaaaaaaaaaa#",
     "#kkkkkkkkkkkkkkkkkkkkkkkkk..........aaaaaaaaaaaaaaaaaaaaaaaaaaa#",
-    "#...................................aaaaaaaaaaaaaaaaaaaaaaaaaaa#",
-    "#...................................aaaaaaaaaaaaaaaaaaaaaaaaaaa#",
-    "#...................................aaaaaaaaaaaaaaaaaaaaaaaaaaa#",
-    "#...................................aaaaaaaaaaaaaaaaaaaaaaaaaaa#",
-    "#...................................aaaaaaaaaaaaaaaaaaaaaaaaaaa#",
-    "#...................................aaaaaaaaaaaaaaaaaaaaaaaaaaa#",
-    "#..............................................................#",
-    "#..............................................................#",
-    "#..............................................................#",
-    "#..............................................................#",
-    "#..............................................................#",
-    "#..............................................................#",
+    "#..............kk...................aaaaaaaaaaaaaaaaaaaaaaaaaaa#",
+    "#..............kk...................aaaaaaaaaaaaaaaaaaaaaaaaaaa#",
+    "#..............kk...................aaaaaaaaaaaaaaaaaaaaaaaaaaa#",
+    "#..............kk...................aaaaaaaaaaaaaaaaaaaaaaaaaaa#",
+    "#..............kk...................aaaaaaaaaaaaaaaaaaaaaaaaaaa#",
+    "#..............kk..............................................#",
+    "#..............kk..............................................#",
+    "#..............kk..............................................#",
+    "#..............kk..............................................#",
+    "#..............kk..............................................#",
+    "#kkkkkkkkkkkkkkkkkkkkkkkkkkkkkkkkkkk...........................#",
+    "#kkkkkkkkkkkkkkkkkkkkkkkkkkkkkkkkkkk...........................#",
     "################################################################"
   ],
   "objekte": [
@@ -105,28 +105,52 @@
       "feld": [58, 22]
     },
     {
-      "moebel": "wg4GrasB",
-      "feld": [54, 11]
+      "moebel": "cr7Motel",
+      "feld": [48, 1]
     },
     {
-      "moebel": "wg4GrasB",
-      "feld": [17, 39]
+      "moebel": "ds6WohnwagenMittel",
+      "feld": [54, 10]
+    },
+    {
+      "moebel": "wr5Huehnerstall",
+      "feld": [49, 12]
+    },
+    {
+      "moebel": "mf4BauernhausBreit",
+      "feld": [2, 35]
+    },
+    {
+      "moebel": "iw5Kirche",
+      "feld": [17, 36]
+    },
+    {
+      "moebel": "iw5Eisenwaren",
+      "feld": [22, 36]
+    },
+    {
+      "moebel": "ds6Garage",
+      "feld": [30, 39]
+    },
+    {
+      "moebel": "dd6Wasserturm",
+      "feld": [30, 31]
+    },
+    {
+      "moebel": "rv5Wohnwagen",
+      "feld": [37, 40]
+    },
+    {
+      "moebel": "cc4Drechslerei",
+      "feld": [17, 0]
     },
     {
       "moebel": "wg4Gras",
       "feld": [39, 3]
     },
     {
-      "moebel": "wg4Gras",
-      "feld": [28, 41]
-    },
-    {
       "moebel": "wg4GrasB",
       "feld": [35, 29]
-    },
-    {
-      "moebel": "wg4GrasB",
-      "feld": [58, 3]
     },
     {
       "moebel": "wg4Gras",
@@ -138,51 +162,19 @@
     },
     {
       "moebel": "wg4Gras",
-      "feld": [33, 33]
-    },
-    {
-      "moebel": "wg4GrasB",
-      "feld": [33, 44]
-    },
-    {
-      "moebel": "wg4Gras",
       "feld": [62, 26]
-    },
-    {
-      "moebel": "wg4GrasB",
-      "feld": [33, 33]
-    },
-    {
-      "moebel": "wg4GrasB",
-      "feld": [23, 37]
-    },
-    {
-      "moebel": "wg4GrasB",
-      "feld": [32, 43]
     },
     {
       "moebel": "wg4Gras",
       "feld": [61, 21]
     },
     {
-      "moebel": "wg4GrasB",
-      "feld": [20, 46]
+      "moebel": "wg4Gras",
+      "feld": [57, 40]
     },
     {
       "moebel": "wg4GrasB",
       "feld": [20, 14]
-    },
-    {
-      "moebel": "wg4Gras",
-      "feld": [59, 13]
-    },
-    {
-      "moebel": "wg4Gras",
-      "feld": [4, 37]
-    },
-    {
-      "moebel": "wg4Gras",
-      "feld": [18, 38]
     },
     {
       "moebel": "wg4Gras",
@@ -198,10 +190,6 @@
     },
     {
       "moebel": "wg4Gras",
-      "feld": [28, 46]
-    },
-    {
-      "moebel": "wg4Gras",
       "feld": [2, 3]
     },
     {
@@ -210,19 +198,71 @@
     },
     {
       "moebel": "wg4Gras",
-      "feld": [34, 45]
-    },
-    {
-      "moebel": "wg4Gras",
-      "feld": [25, 38]
-    },
-    {
-      "moebel": "wg4Gras",
-      "feld": [51, 16]
-    },
-    {
-      "moebel": "wg4Gras",
       "feld": [3, 1]
+    },
+    {
+      "moebel": "wg4GrasB",
+      "feld": [61, 40]
+    },
+    {
+      "moebel": "wg4GrasB",
+      "feld": [2, 20]
+    },
+    {
+      "moebel": "wg4GrasB",
+      "feld": [56, 40]
+    },
+    {
+      "moebel": "wg4Gras",
+      "feld": [43, 44]
+    },
+    {
+      "moebel": "wg4Gras",
+      "feld": [29, 9]
+    },
+    {
+      "moebel": "wg4GrasB",
+      "feld": [42, 2]
+    },
+    {
+      "moebel": "wg4Gras",
+      "feld": [43, 4]
+    },
+    {
+      "moebel": "wg4GrasB",
+      "feld": [3, 9]
+    },
+    {
+      "moebel": "wg4Gras",
+      "feld": [11, 7]
+    },
+    {
+      "moebel": "wg4GrasB",
+      "feld": [5, 17]
+    },
+    {
+      "moebel": "wg4Gras",
+      "feld": [10, 3]
+    },
+    {
+      "moebel": "wg4GrasB",
+      "feld": [27, 11]
+    },
+    {
+      "moebel": "wg4Gras",
+      "feld": [33, 6]
+    },
+    {
+      "moebel": "wg4Gras",
+      "feld": [14, 2]
+    },
+    {
+      "moebel": "wg4GrasB",
+      "feld": [14, 44]
+    },
+    {
+      "moebel": "wg4GrasB",
+      "feld": [33, 2]
     }
   ],
   "ausloeser": [
@@ -302,11 +342,41 @@
     {
       "name": "rinder",
       "typ": "tier",
-      "feld": [52, 38],
+      "feld": [12, 5],
       "eigenschaften": {
-        "von": "46,34",
-        "bis": "60,44",
+        "von": "9,2",
+        "bis": "15,8",
         "verhalten": "ausweichen"
+      }
+    },
+    {
+      "name": "kraehen",
+      "typ": "tier",
+      "feld": [40, 4],
+      "eigenschaften": {
+        "von": "34,1",
+        "bis": "60,6",
+        "verhalten": "fliegen"
+      }
+    },
+    {
+      "name": "motelkatze",
+      "typ": "tier",
+      "feld": [30, 24],
+      "eigenschaften": {
+        "von": "28,24",
+        "bis": "32,24",
+        "verhalten": "schlafen"
+      }
+    },
+    {
+      "name": "spatzen",
+      "typ": "tier",
+      "feld": [24, 30],
+      "eigenschaften": {
+        "von": "20,27",
+        "bis": "30,34",
+        "verhalten": "fliegen"
       }
     },
     {
@@ -314,10 +384,10 @@
       "typ": "statist",
       "feld": [44, 20],
       "eigenschaften": {
-        "von": "38,20",
-        "bis": "50,20",
         "tun": "tankt einen Wagen voll",
-        "wann": "tag"
+        "wann": "tag",
+        "von": "38,20",
+        "bis": "50,20"
       }
     },
     {
@@ -325,10 +395,142 @@
       "typ": "statist",
       "feld": [35, 27],
       "eigenschaften": {
-        "von": "35,27",
-        "bis": "35,27",
         "tun": "Tomás zeigt Mira die Windräder am Horizont",
-        "wann": "tag"
+        "wann": "tag",
+        "von": "35,27",
+        "bis": "35,27"
+      }
+    },
+    {
+      "name": "autowaescher",
+      "typ": "statist",
+      "feld": [52, 20],
+      "eigenschaften": {
+        "tun": "spritzt einen Pick-up ab",
+        "wann": "tag",
+        "von": "51,19",
+        "bis": "55,21"
+      }
+    },
+    {
+      "name": "hundebesitzerin",
+      "typ": "statist",
+      "feld": [22, 21],
+      "eigenschaften": {
+        "tun": "geht mit dem Hund über den Vorplatz",
+        "wann": "tag",
+        "von": "8,21",
+        "bis": "27,21",
+        "sagt": "statist.crossroads.aussen.hundebesitzerin",
+        "zeigt": "tissirDreev"
+      }
+    },
+    {
+      "name": "fernfahrerin",
+      "typ": "statist",
+      "feld": [9, 26],
+      "eigenschaften": {
+        "tun": "prüft die Reifen ihres Sattelzugs",
+        "wann": "tag",
+        "von": "6,26",
+        "bis": "16,26",
+        "sagt": "statist.crossroads.aussen.fernfahrerin"
+      }
+    },
+    {
+      "name": "mechaniker",
+      "typ": "statist",
+      "feld": [55, 33],
+      "eigenschaften": {
+        "tun": "wischt sich die Hände an einem Lappen ab",
+        "wann": "tag",
+        "von": "52,33",
+        "bis": "58,34",
+        "sagt": "statist.crossroads.aussen.mechaniker"
+      }
+    },
+    {
+      "name": "motelwirtin",
+      "typ": "statist",
+      "feld": [42, 33],
+      "eigenschaften": {
+        "tun": "fegt den Gang vor den Zimmern",
+        "wann": "tag",
+        "von": "38,33",
+        "bis": "48,33",
+        "sagt": "statist.crossroads.aussen.motelwirtin"
+      }
+    },
+    {
+      "name": "kuesterin",
+      "typ": "statist",
+      "feld": [48, 45],
+      "eigenschaften": {
+        "tun": "gießt die Blumen vor der Kapelle",
+        "wann": "tag",
+        "von": "46,45",
+        "bis": "51,46",
+        "sagt": "statist.crossroads.aussen.kuesterin"
+      }
+    },
+    {
+      "name": "kreidekind",
+      "typ": "statist",
+      "feld": [20, 27],
+      "eigenschaften": {
+        "tun": "malt mit Kreide ein Brett auf den Asphalt",
+        "wann": "tag",
+        "von": "18,27",
+        "bis": "24,27",
+        "sagt": "statist.crossroads.aussen.kreidekind"
+      }
+    },
+    {
+      "name": "postbote",
+      "typ": "statist",
+      "feld": [31, 18],
+      "eigenschaften": {
+        "tun": "bringt Pakete die Schotterstraße hinunter",
+        "wann": "tag",
+        "von": "31,10",
+        "bis": "31,21",
+        "sagt": "statist.crossroads.aussen.postbote"
+      }
+    },
+    {
+      "name": "rentner",
+      "typ": "statist",
+      "feld": [30, 31],
+      "eigenschaften": {
+        "tun": "sitzt am Picknicktisch und löst ein Rätsel aus der Zeitung",
+        "wann": "tag",
+        "von": "29,30",
+        "bis": "30,33",
+        "sagt": "statist.crossroads.aussen.rentner"
+      }
+    },
+    {
+      "name": "farmer",
+      "typ": "statist",
+      "feld": [10, 9],
+      "eigenschaften": {
+        "tun": "wirft Heu über den Zaun",
+        "wann": "tag",
+        "von": "9,8",
+        "bis": "15,9",
+        "sagt": "statist.crossroads.aussen.farmer"
+      }
+    },
+    {
+      "name": "anhalterin",
+      "typ": "statist",
+      "feld": [2, 24],
+      "eigenschaften": {
+        "tun": "hält ein Pappschild mit „Capital“ hoch",
+        "wann": "tag",
+        "von": "1,24",
+        "bis": "4,24",
+        "sagt": "statist.crossroads.aussen.anhalterin"
       }
     }
   ],
@@ -340,7 +542,8 @@
     "rustikal",
     "laendlich",
     "natur",
-    "landhaus"
+    "landhaus",
+    "industrie"
   ],
   "datei": "karten/varianten/crossroads-aussen-b.json"
 }

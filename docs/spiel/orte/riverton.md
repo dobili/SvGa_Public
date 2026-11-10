@@ -631,6 +631,29 @@ der Story-Bibel und die Wege.
    `lastkahnFrei` (gesetzt in L3). Anleger in Ironwood: `anleger` (12, 22), abgestimmt (1.8).
 7. **Übergang Weg 3 ↔ Ironwood:** abgestimmt (1.8): Spalten 24–25 auf beiden Seiten, Kanal 4–9.
 
+8. **Ereignisort Weg 3 „Die Brückenbauern“** (Dokument 15, 2.3; Runde 7, mittel-2): am Südufer gleich
+   östlich der Kanalbrücke (`bruecke`, Spalten 19–28, Reihen 66–70, in A, B und C gleich). Drei Klapptische
+   mit Brett (`ri8Klapptisch`), davor Platz für drei bis sechs Figuren; Kreidespringer am Brückenfuß
+   (`ri8Kreidespringer`, 19, 66), Finkenzeichen aus Blech westlich des Brückenfußes (`ri8Finkenzeichen`,
+   16, 66). Die Drohne mit dem Logo von Perfect Move fliegt als Belebung `drohne` über dem Wasser
+   (Reihe 63); ihr Bogen kommt aus `pipeline/abenteuer/belebungsbilder.py`. „Unter der Brücke“ geht in
+   der Draufsicht nicht; das Ufer neben der Brücke steht dafür.
+
+   **Felder für Runde 6 (begehbar, A, B und C gleich):**
+
+   | Karte     | Auslöser                 | Feld     | Hinweis                                |
+   | --------- | ------------------------ | -------- | -------------------------------------- |
+   | `bruecke` | `ereignisBrueckenbauern` | (23, 69) | vor dem mittleren Klapptisch (Dime)    |
+   | `bruecke` | `kreide1`                | (19, 67) | unter dem Kreidespringer am Brückenfuß |
+   | `bruecke` | `spurPM1`                | (25, 66) | Ufer, Blick auf die Drohne             |
+   | `bruecke` | `seite07`                | (27, 66) | Kanalufer                              |
+   | `bruecke` | `finchLaeuferA`          | (16, 67) | unter dem Finkenzeichen am Brückenfuß  |
+
+   **Leben (Regel 10.53):** Kanalweg: Angler, Radfahrerin, Kind mit der Entenfamilie (Dokument 16,
+   5.3; Ambrose antwortet), Landvermesser; Tiere Enten, Gänse, Ratten, Krähen, Reiher, Hase. Brücke:
+   Brückenwärter, Kiebitz an den Tischen (Washington Square Park, 16 Nr. 36), Vogelbeobachterin
+   (Reiher und Fesselung), Joggerin; Tiere Krähen, Möwe, Eidechse, Reiher, Enten, Hase, dazu die Drohne.
+
 ## 4. Bühnenbilder
 
 Je Karte Größe, Wände, Böden, Laufwege, Zonen und Inventar. Feld = linke obere Kachel. Möbel und Bilder
@@ -909,3 +932,36 @@ links zu den Tischen.
 Drei Dinge zum Ansehen nach 09, 3.2: Foto der Schleuse (Foto), Kegel mit Kerbe (Geschichte), Tafel
 „Kegelkönig“ (Komisches); der Schachbezug kommt über die Kegelbahn („neun Kegel, und einer hält alle
 anderen“, Henrik zu L2).
+
+## Runde 7 (10.11.2026): Lockport mit mehr Häusern und Leben (niedrig-1)
+
+`lockport.aussen` A, B, C nach Regel 10.51 und 10.53, Raster und Übergänge unverändert. Die untere
+Straße (Reihen 32–35) läuft jetzt bis an den Ostrand (Spalte 54); daran stehen im Südosten neue
+Häuser statt eines Teils des Wäldchens. Neue Kulissen (Vorsilbe `lp8`): Dorfladen „Store“,
+Markt, Wohnhaus mit Flachdach (ein- und zweistöckig), Lagerschuppen, Bauernhäuser. A hat 12, B 13,
+C 12 Gebäude. In A und B steht die Rätseltafel eine Spalte weiter (36, 8), in B eine Laterne
+(21, 9), in C eine (54, 9). Belebung in allen drei gleich: Finn und 12 neue Statisten, 8 davon
+ansprechbar (`statist.lockport.aussen.*`, Akt 2 im Herbstnebel), Möwe, Enten im Becken, Katze am
+Kai, Gans im Süden. Die benannten Figuren aus `14_Akt2_Leben_teil1.md` 4.1 (Imogen, Ruben, Henrik)
+kommen mit ihren Dialogen in Runde 6.
+
+## Runde 7 (10.11.2026): Weg 2 mit Stellwerk und Belebung (niedrig-1)
+
+**Zugpartie am Bahndamm** (Dokument 15, 2.2): südlich des Weges am Signalmast das Stellwerk
+(`wc8Stellwerk`, eigenes Bild `stellwerk.png`, 4 × 5, mit Tafel an der Hauswand neben der Tür), davor
+eine Bank (`wc8StellwerkBank`); Wiese mit Platz für drei bis sechs Figuren. Lage je Variante relativ
+zum Signal (A 38, B 24, C 40): Stellwerk bei (Signal + 2, 10), Tür in Spalte Signal + 4, Bank
+(Signal − 2, 11).
+
+### Für Runde 6 (Felder bleiben begehbar)
+
+| Auslöser            | Karte                         | Feld A                 | Feld B   | Feld C   | Was dort ist                                        |
+| ------------------- | ----------------------------- | ---------------------- | -------- | -------- | --------------------------------------------------- |
+| `ereignisZugpartie` | `wegCedarRiverton.bahndamm`   | (42, 15)               | (28, 15) | (44, 15) | Rosalind vor dem Stellwerk                          |
+| `seite01`           | `wegCedarRiverton.bahndamm`   | (44, 5)                | (28, 5)  | (46, 5)  | Buchseite Kapitel 1 im Schotter neben dem Bahnsteig |
+| `finchSpringerA`    | `wegCedarRiverton.zedernwald` | wie `fundHolzspringer` |          |          | der Springer aus Holz im hohlen Stamm (schon da)    |
+
+**Belebung:** Bahndamm mit Trainspotter (die Katze auf dem Güterzug, kleine Tiergeschichte),
+Radlerin, Gärtnerin (jetzt ansprechbar), Katze im Güterwagen, Fasan; Zedernwald mit Jäger mit
+Kamera (Hirsch), Wanderpaar (Springer heißt knight und Pferd), Vogelstimmensammlerin, Hirsch und
+Fuchs. Gwen, Juno, Leif und die Pfadfinder bleiben ohne Satz, weil ihre Dialoge in Runde 6 kommen.

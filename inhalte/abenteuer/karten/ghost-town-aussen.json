@@ -11,7 +11,7 @@
  "tilewidth": 16,
  "tileheight": 16,
  "nextlayerid": 5,
- "nextobjectid": 149,
+ "nextobjectid": 151,
  "layers": [
   {
    "id": 1,
@@ -6988,27 +6988,27 @@
      "id": 15,
      "name": "echse",
      "type": "tier",
-     "x": 480,
-     "y": 480,
+     "x": 48,
+     "y": 384,
      "width": 16,
      "height": 16,
      "rotation": 0,
      "visible": true,
      "properties": [
       {
+       "name": "verhalten",
+       "type": "string",
+       "value": "flitzen"
+      },
+      {
        "name": "von",
        "type": "string",
-       "value": "30,30"
+       "value": "3,24"
       },
       {
        "name": "bis",
        "type": "string",
-       "value": "34,30"
-      },
-      {
-       "name": "verhalten",
-       "type": "string",
-       "value": "ausweichen"
+       "value": "6,24"
       },
       {
        "name": "wann",
@@ -7019,6 +7019,370 @@
     },
     {
      "id": 16,
+     "name": "touristin",
+     "type": "statist",
+     "x": 192,
+     "y": 352,
+     "width": 16,
+     "height": 16,
+     "rotation": 0,
+     "visible": true,
+     "properties": [
+      {
+       "name": "tun",
+       "type": "string",
+       "value": "fotografiert die Fassaden"
+      },
+      {
+       "name": "wann",
+       "type": "string",
+       "value": "tag"
+      },
+      {
+       "name": "von",
+       "type": "string",
+       "value": "12,22"
+      },
+      {
+       "name": "bis",
+       "type": "string",
+       "value": "18,22"
+      },
+      {
+       "name": "sagt",
+       "type": "string",
+       "value": "statist.ghostTown.aussen.touristin"
+      }
+     ]
+    },
+    {
+     "id": 17,
+     "name": "bikerin",
+     "type": "statist",
+     "x": 704,
+     "y": 368,
+     "width": 16,
+     "height": 16,
+     "rotation": 0,
+     "visible": true,
+     "properties": [
+      {
+       "name": "tun",
+       "type": "string",
+       "value": "macht Pause neben ihrem Motorrad"
+      },
+      {
+       "name": "wann",
+       "type": "string",
+       "value": "tag"
+      },
+      {
+       "name": "sagt",
+       "type": "string",
+       "value": "statist.ghostTown.aussen.bikerin"
+      }
+     ]
+    },
+    {
+     "id": 18,
+     "name": "geschichtslehrer",
+     "type": "statist",
+     "x": 416,
+     "y": 368,
+     "width": 16,
+     "height": 16,
+     "rotation": 0,
+     "visible": true,
+     "properties": [
+      {
+       "name": "tun",
+       "type": "string",
+       "value": "erklärt einer Schulklasse die Stadt"
+      },
+      {
+       "name": "wann",
+       "type": "string",
+       "value": "tag"
+      },
+      {
+       "name": "sagt",
+       "type": "string",
+       "value": "statist.ghostTown.aussen.geschichtslehrer"
+      }
+     ]
+    },
+    {
+     "id": 19,
+     "name": "schulkind",
+     "type": "statist",
+     "x": 432,
+     "y": 352,
+     "width": 16,
+     "height": 16,
+     "rotation": 0,
+     "visible": true,
+     "properties": [
+      {
+       "name": "tun",
+       "type": "string",
+       "value": "hört dem Lehrer halb zu"
+      },
+      {
+       "name": "wann",
+       "type": "string",
+       "value": "tag"
+      },
+      {
+       "name": "sagt",
+       "type": "string",
+       "value": "statist.ghostTown.aussen.schulkind"
+      }
+     ]
+    },
+    {
+     "id": 20,
+     "name": "urenkelPostkutscher",
+     "type": "statist",
+     "x": 752,
+     "y": 352,
+     "width": 16,
+     "height": 16,
+     "rotation": 0,
+     "visible": true,
+     "properties": [
+      {
+       "name": "tun",
+       "type": "string",
+       "value": "sucht einen Namen auf alten Listen"
+      },
+      {
+       "name": "wann",
+       "type": "string",
+       "value": "tag"
+      },
+      {
+       "name": "sagt",
+       "type": "string",
+       "value": "statist.ghostTown.aussen.urenkelPostkutscher"
+      }
+     ]
+    },
+    {
+     "id": 21,
+     "name": "fotograf",
+     "type": "statist",
+     "x": 320,
+     "y": 352,
+     "width": 16,
+     "height": 16,
+     "rotation": 0,
+     "visible": true,
+     "properties": [
+      {
+       "name": "tun",
+       "type": "string",
+       "value": "wartet auf ein Bild ohne Menschen"
+      },
+      {
+       "name": "wann",
+       "type": "string",
+       "value": "tag"
+      },
+      {
+       "name": "sagt",
+       "type": "string",
+       "value": "statist.ghostTown.aussen.fotograf"
+      }
+     ]
+    },
+    {
+     "id": 22,
+     "name": "goldwaescherin",
+     "type": "statist",
+     "x": 48,
+     "y": 352,
+     "width": 16,
+     "height": 16,
+     "rotation": 0,
+     "visible": true,
+     "properties": [
+      {
+       "name": "tun",
+       "type": "string",
+       "value": "siebt Sand in einer Pfanne"
+      },
+      {
+       "name": "wann",
+       "type": "string",
+       "value": "tag"
+      },
+      {
+       "name": "sagt",
+       "type": "string",
+       "value": "statist.ghostTown.aussen.goldwaescherin"
+      }
+     ]
+    },
+    {
+     "id": 23,
+     "name": "wanderin",
+     "type": "statist",
+     "x": 128,
+     "y": 336,
+     "width": 16,
+     "height": 16,
+     "rotation": 0,
+     "visible": true,
+     "properties": [
+      {
+       "name": "tun",
+       "type": "string",
+       "value": "füllt ihre Wasserflasche auf"
+      },
+      {
+       "name": "wann",
+       "type": "string",
+       "value": "morgen"
+      },
+      {
+       "name": "sagt",
+       "type": "string",
+       "value": "statist.ghostTown.aussen.wanderin"
+      }
+     ]
+    },
+    {
+     "id": 24,
+     "name": "radfahrer",
+     "type": "statist",
+     "x": 16,
+     "y": 336,
+     "width": 16,
+     "height": 16,
+     "rotation": 0,
+     "visible": true,
+     "properties": [
+      {
+       "name": "tun",
+       "type": "string",
+       "value": "fährt staubig durch die Stadt"
+      },
+      {
+       "name": "wann",
+       "type": "string",
+       "value": "tag"
+      },
+      {
+       "name": "von",
+       "type": "string",
+       "value": "1,21"
+      },
+      {
+       "name": "bis",
+       "type": "string",
+       "value": "54,21"
+      }
+     ]
+    },
+    {
+     "id": 25,
+     "name": "bikerFreund",
+     "type": "statist",
+     "x": 720,
+     "y": 352,
+     "width": 16,
+     "height": 16,
+     "rotation": 0,
+     "visible": true,
+     "properties": [
+      {
+       "name": "tun",
+       "type": "string",
+       "value": "putzt den Helm"
+      },
+      {
+       "name": "wann",
+       "type": "string",
+       "value": "tag"
+      }
+     ]
+    },
+    {
+     "id": 26,
+     "name": "malerin",
+     "type": "statist",
+     "x": 480,
+     "y": 368,
+     "width": 16,
+     "height": 16,
+     "rotation": 0,
+     "visible": true,
+     "properties": [
+      {
+       "name": "tun",
+       "type": "string",
+       "value": "zeichnet den Saloon"
+      },
+      {
+       "name": "wann",
+       "type": "string",
+       "value": "tag"
+      }
+     ]
+    },
+    {
+     "id": 27,
+     "name": "mannMitHut",
+     "type": "statist",
+     "x": 256,
+     "y": 320,
+     "width": 16,
+     "height": 16,
+     "rotation": 0,
+     "visible": true,
+     "properties": [
+      {
+       "name": "tun",
+       "type": "string",
+       "value": "döst im Schatten auf dem Bretterweg"
+      },
+      {
+       "name": "wann",
+       "type": "string",
+       "value": "tag"
+      }
+     ]
+    },
+    {
+     "id": 28,
+     "name": "alterHund",
+     "type": "tier",
+     "x": 576,
+     "y": 368,
+     "width": 16,
+     "height": 16,
+     "rotation": 0,
+     "visible": true,
+     "properties": [
+      {
+       "name": "verhalten",
+       "type": "string",
+       "value": "folgen"
+      },
+      {
+       "name": "von",
+       "type": "string",
+       "value": "36,23"
+      },
+      {
+       "name": "bis",
+       "type": "string",
+       "value": "40,23"
+      }
+     ]
+    },
+    {
+     "id": 29,
      "name": "gt7FassadeLaden",
      "type": "moebel",
      "x": 32,
@@ -7041,7 +7405,7 @@
      ]
     },
     {
-     "id": 17,
+     "id": 30,
      "name": "gt7FassadeSchmiede",
      "type": "moebel",
      "x": 160,
@@ -7064,7 +7428,7 @@
      ]
     },
     {
-     "id": 18,
+     "id": 31,
      "name": "gt7SaloonFassade",
      "type": "moebel",
      "x": 304,
@@ -7087,7 +7451,7 @@
      ]
     },
     {
-     "id": 19,
+     "id": 32,
      "name": "gt7FassadeSheriff",
      "type": "moebel",
      "x": 528,
@@ -7110,7 +7474,7 @@
      ]
     },
     {
-     "id": 20,
+     "id": 33,
      "name": "gt7FassadePruefamt",
      "type": "moebel",
      "x": 656,
@@ -7133,7 +7497,7 @@
      ]
     },
     {
-     "id": 21,
+     "id": 34,
      "name": "gt7Wagenrad",
      "type": "moebel",
      "x": 272,
@@ -7156,7 +7520,145 @@
      ]
     },
     {
-     "id": 22,
+     "id": 35,
+     "name": "gt8HuetteA",
+     "type": "moebel",
+     "x": 48,
+     "y": 96,
+     "width": 80,
+     "height": 80,
+     "rotation": 0,
+     "visible": true,
+     "properties": [
+      {
+       "name": "tiefe",
+       "type": "int",
+       "value": 168
+      },
+      {
+       "name": "kollision",
+       "type": "bool",
+       "value": true
+      }
+     ]
+    },
+    {
+     "id": 36,
+     "name": "gt8Post",
+     "type": "moebel",
+     "x": 176,
+     "y": 80,
+     "width": 112,
+     "height": 112,
+     "rotation": 0,
+     "visible": true,
+     "properties": [
+      {
+       "name": "tiefe",
+       "type": "int",
+       "value": 184
+      },
+      {
+       "name": "kollision",
+       "type": "bool",
+       "value": true
+      }
+     ]
+    },
+    {
+     "id": 37,
+     "name": "gt8HuetteB",
+     "type": "moebel",
+     "x": 656,
+     "y": 112,
+     "width": 80,
+     "height": 80,
+     "rotation": 0,
+     "visible": true,
+     "properties": [
+      {
+       "name": "tiefe",
+       "type": "int",
+       "value": 184
+      },
+      {
+       "name": "kollision",
+       "type": "bool",
+       "value": true
+      }
+     ]
+    },
+    {
+     "id": 38,
+     "name": "gt8Bank",
+     "type": "moebel",
+     "x": 144,
+     "y": 400,
+     "width": 112,
+     "height": 112,
+     "rotation": 0,
+     "visible": true,
+     "properties": [
+      {
+       "name": "tiefe",
+       "type": "int",
+       "value": 504
+      },
+      {
+       "name": "kollision",
+       "type": "bool",
+       "value": true
+      }
+     ]
+    },
+    {
+     "id": 39,
+     "name": "gt8Hotel",
+     "type": "moebel",
+     "x": 272,
+     "y": 384,
+     "width": 128,
+     "height": 144,
+     "rotation": 0,
+     "visible": true,
+     "properties": [
+      {
+       "name": "tiefe",
+       "type": "int",
+       "value": 520
+      },
+      {
+       "name": "kollision",
+       "type": "bool",
+       "value": true
+      }
+     ]
+    },
+    {
+     "id": 40,
+     "name": "gt8Mietstall",
+     "type": "moebel",
+     "x": 416,
+     "y": 400,
+     "width": 128,
+     "height": 128,
+     "rotation": 0,
+     "visible": true,
+     "properties": [
+      {
+       "name": "tiefe",
+       "type": "int",
+       "value": 520
+      },
+      {
+       "name": "kollision",
+       "type": "bool",
+       "value": true
+      }
+     ]
+    },
+    {
+     "id": 41,
      "name": "gt7Wasserturm",
      "type": "moebel",
      "x": 784,
@@ -7179,10 +7681,10 @@
      ]
     },
     {
-     "id": 23,
+     "id": 42,
      "name": "gt7Traenke",
      "type": "moebel",
-     "x": 208,
+     "x": 32,
      "y": 400,
      "width": 16,
      "height": 16,
@@ -7202,30 +7704,7 @@
      ]
     },
     {
-     "id": 24,
-     "name": "gt7PlanwagenKaputt",
-     "type": "moebel",
-     "x": 352,
-     "y": 448,
-     "width": 64,
-     "height": 48,
-     "rotation": 0,
-     "visible": true,
-     "properties": [
-      {
-       "name": "tiefe",
-       "type": "int",
-       "value": 488
-      },
-      {
-       "name": "kollision",
-       "type": "bool",
-       "value": true
-      }
-     ]
-    },
-    {
-     "id": 25,
+     "id": 43,
      "name": "gt7Stollen",
      "type": "moebel",
      "x": 464,
@@ -7248,7 +7727,7 @@
      ]
     },
     {
-     "id": 26,
+     "id": 44,
      "name": "gt7Lore",
      "type": "moebel",
      "x": 512,
@@ -7271,7 +7750,7 @@
      ]
     },
     {
-     "id": 27,
+     "id": 45,
      "name": "gt7ZaunUL",
      "type": "moebel",
      "x": 576,
@@ -7294,7 +7773,7 @@
      ]
     },
     {
-     "id": 28,
+     "id": 46,
      "name": "gt7ZaunOL",
      "type": "moebel",
      "x": 576,
@@ -7317,424 +7796,10 @@
      ]
     },
     {
-     "id": 29,
-     "name": "gt7ZaunUM",
-     "type": "moebel",
-     "x": 592,
-     "y": 592,
-     "width": 16,
-     "height": 16,
-     "rotation": 0,
-     "visible": true,
-     "properties": [
-      {
-       "name": "tiefe",
-       "type": "int",
-       "value": 600
-      },
-      {
-       "name": "kollision",
-       "type": "bool",
-       "value": true
-      }
-     ]
-    },
-    {
-     "id": 30,
-     "name": "gt7ZaunOM",
-     "type": "moebel",
-     "x": 592,
-     "y": 448,
-     "width": 16,
-     "height": 16,
-     "rotation": 0,
-     "visible": true,
-     "properties": [
-      {
-       "name": "tiefe",
-       "type": "int",
-       "value": 456
-      },
-      {
-       "name": "kollision",
-       "type": "bool",
-       "value": true
-      }
-     ]
-    },
-    {
-     "id": 31,
-     "name": "gt7ZaunUM",
-     "type": "moebel",
-     "x": 608,
-     "y": 592,
-     "width": 16,
-     "height": 16,
-     "rotation": 0,
-     "visible": true,
-     "properties": [
-      {
-       "name": "tiefe",
-       "type": "int",
-       "value": 600
-      },
-      {
-       "name": "kollision",
-       "type": "bool",
-       "value": true
-      }
-     ]
-    },
-    {
-     "id": 32,
-     "name": "gt7ZaunOM",
-     "type": "moebel",
-     "x": 608,
-     "y": 448,
-     "width": 16,
-     "height": 16,
-     "rotation": 0,
-     "visible": true,
-     "properties": [
-      {
-       "name": "tiefe",
-       "type": "int",
-       "value": 456
-      },
-      {
-       "name": "kollision",
-       "type": "bool",
-       "value": true
-      }
-     ]
-    },
-    {
-     "id": 33,
-     "name": "gt7ZaunUM",
-     "type": "moebel",
-     "x": 624,
-     "y": 592,
-     "width": 16,
-     "height": 16,
-     "rotation": 0,
-     "visible": true,
-     "properties": [
-      {
-       "name": "tiefe",
-       "type": "int",
-       "value": 600
-      },
-      {
-       "name": "kollision",
-       "type": "bool",
-       "value": true
-      }
-     ]
-    },
-    {
-     "id": 34,
-     "name": "gt7ZaunOM",
-     "type": "moebel",
-     "x": 624,
-     "y": 448,
-     "width": 16,
-     "height": 16,
-     "rotation": 0,
-     "visible": true,
-     "properties": [
-      {
-       "name": "tiefe",
-       "type": "int",
-       "value": 456
-      },
-      {
-       "name": "kollision",
-       "type": "bool",
-       "value": true
-      }
-     ]
-    },
-    {
-     "id": 35,
-     "name": "gt7ZaunUM",
-     "type": "moebel",
-     "x": 640,
-     "y": 592,
-     "width": 16,
-     "height": 16,
-     "rotation": 0,
-     "visible": true,
-     "properties": [
-      {
-       "name": "tiefe",
-       "type": "int",
-       "value": 600
-      },
-      {
-       "name": "kollision",
-       "type": "bool",
-       "value": true
-      }
-     ]
-    },
-    {
-     "id": 36,
-     "name": "gt7ZaunOM",
-     "type": "moebel",
-     "x": 640,
-     "y": 448,
-     "width": 16,
-     "height": 16,
-     "rotation": 0,
-     "visible": true,
-     "properties": [
-      {
-       "name": "tiefe",
-       "type": "int",
-       "value": 456
-      },
-      {
-       "name": "kollision",
-       "type": "bool",
-       "value": true
-      }
-     ]
-    },
-    {
-     "id": 37,
-     "name": "gt7ZaunUM",
-     "type": "moebel",
-     "x": 656,
-     "y": 592,
-     "width": 16,
-     "height": 16,
-     "rotation": 0,
-     "visible": true,
-     "properties": [
-      {
-       "name": "tiefe",
-       "type": "int",
-       "value": 600
-      },
-      {
-       "name": "kollision",
-       "type": "bool",
-       "value": true
-      }
-     ]
-    },
-    {
-     "id": 38,
-     "name": "gt7ZaunOM",
-     "type": "moebel",
-     "x": 656,
-     "y": 448,
-     "width": 16,
-     "height": 16,
-     "rotation": 0,
-     "visible": true,
-     "properties": [
-      {
-       "name": "tiefe",
-       "type": "int",
-       "value": 456
-      },
-      {
-       "name": "kollision",
-       "type": "bool",
-       "value": true
-      }
-     ]
-    },
-    {
-     "id": 39,
-     "name": "gt7ZaunUM",
-     "type": "moebel",
-     "x": 672,
-     "y": 592,
-     "width": 16,
-     "height": 16,
-     "rotation": 0,
-     "visible": true,
-     "properties": [
-      {
-       "name": "tiefe",
-       "type": "int",
-       "value": 600
-      },
-      {
-       "name": "kollision",
-       "type": "bool",
-       "value": true
-      }
-     ]
-    },
-    {
-     "id": 40,
-     "name": "gt7ZaunEndeLinks",
-     "type": "moebel",
-     "x": 672,
-     "y": 448,
-     "width": 16,
-     "height": 16,
-     "rotation": 0,
-     "visible": true,
-     "properties": [
-      {
-       "name": "tiefe",
-       "type": "int",
-       "value": 456
-      },
-      {
-       "name": "kollision",
-       "type": "bool",
-       "value": true
-      }
-     ]
-    },
-    {
-     "id": 41,
-     "name": "gt7ZaunUM",
-     "type": "moebel",
-     "x": 688,
-     "y": 592,
-     "width": 16,
-     "height": 16,
-     "rotation": 0,
-     "visible": true,
-     "properties": [
-      {
-       "name": "tiefe",
-       "type": "int",
-       "value": 600
-      },
-      {
-       "name": "kollision",
-       "type": "bool",
-       "value": true
-      }
-     ]
-    },
-    {
-     "id": 42,
-     "name": "gt7ZaunUM",
-     "type": "moebel",
-     "x": 704,
-     "y": 592,
-     "width": 16,
-     "height": 16,
-     "rotation": 0,
-     "visible": true,
-     "properties": [
-      {
-       "name": "tiefe",
-       "type": "int",
-       "value": 600
-      },
-      {
-       "name": "kollision",
-       "type": "bool",
-       "value": true
-      }
-     ]
-    },
-    {
-     "id": 43,
-     "name": "gt7ZaunUM",
-     "type": "moebel",
-     "x": 720,
-     "y": 592,
-     "width": 16,
-     "height": 16,
-     "rotation": 0,
-     "visible": true,
-     "properties": [
-      {
-       "name": "tiefe",
-       "type": "int",
-       "value": 600
-      },
-      {
-       "name": "kollision",
-       "type": "bool",
-       "value": true
-      }
-     ]
-    },
-    {
-     "id": 44,
-     "name": "gt7ZaunEndeRechts",
-     "type": "moebel",
-     "x": 720,
-     "y": 448,
-     "width": 16,
-     "height": 16,
-     "rotation": 0,
-     "visible": true,
-     "properties": [
-      {
-       "name": "tiefe",
-       "type": "int",
-       "value": 456
-      },
-      {
-       "name": "kollision",
-       "type": "bool",
-       "value": true
-      }
-     ]
-    },
-    {
-     "id": 45,
-     "name": "gt7ZaunUM",
-     "type": "moebel",
-     "x": 736,
-     "y": 592,
-     "width": 16,
-     "height": 16,
-     "rotation": 0,
-     "visible": true,
-     "properties": [
-      {
-       "name": "tiefe",
-       "type": "int",
-       "value": 600
-      },
-      {
-       "name": "kollision",
-       "type": "bool",
-       "value": true
-      }
-     ]
-    },
-    {
-     "id": 46,
-     "name": "gt7ZaunOM",
-     "type": "moebel",
-     "x": 736,
-     "y": 448,
-     "width": 16,
-     "height": 16,
-     "rotation": 0,
-     "visible": true,
-     "properties": [
-      {
-       "name": "tiefe",
-       "type": "int",
-       "value": 456
-      },
-      {
-       "name": "kollision",
-       "type": "bool",
-       "value": true
-      }
-     ]
-    },
-    {
      "id": 47,
      "name": "gt7ZaunUM",
      "type": "moebel",
-     "x": 752,
+     "x": 592,
      "y": 592,
      "width": 16,
      "height": 16,
@@ -7757,7 +7822,7 @@
      "id": 48,
      "name": "gt7ZaunOM",
      "type": "moebel",
-     "x": 752,
+     "x": 592,
      "y": 448,
      "width": 16,
      "height": 16,
@@ -7780,7 +7845,7 @@
      "id": 49,
      "name": "gt7ZaunUM",
      "type": "moebel",
-     "x": 768,
+     "x": 608,
      "y": 592,
      "width": 16,
      "height": 16,
@@ -7803,7 +7868,7 @@
      "id": 50,
      "name": "gt7ZaunOM",
      "type": "moebel",
-     "x": 768,
+     "x": 608,
      "y": 448,
      "width": 16,
      "height": 16,
@@ -7826,7 +7891,7 @@
      "id": 51,
      "name": "gt7ZaunUM",
      "type": "moebel",
-     "x": 784,
+     "x": 624,
      "y": 592,
      "width": 16,
      "height": 16,
@@ -7849,7 +7914,7 @@
      "id": 52,
      "name": "gt7ZaunOM",
      "type": "moebel",
-     "x": 784,
+     "x": 624,
      "y": 448,
      "width": 16,
      "height": 16,
@@ -7872,7 +7937,7 @@
      "id": 53,
      "name": "gt7ZaunUM",
      "type": "moebel",
-     "x": 800,
+     "x": 640,
      "y": 592,
      "width": 16,
      "height": 16,
@@ -7895,7 +7960,7 @@
      "id": 54,
      "name": "gt7ZaunOM",
      "type": "moebel",
-     "x": 800,
+     "x": 640,
      "y": 448,
      "width": 16,
      "height": 16,
@@ -7918,7 +7983,7 @@
      "id": 55,
      "name": "gt7ZaunUM",
      "type": "moebel",
-     "x": 816,
+     "x": 656,
      "y": 592,
      "width": 16,
      "height": 16,
@@ -7941,7 +8006,7 @@
      "id": 56,
      "name": "gt7ZaunOM",
      "type": "moebel",
-     "x": 816,
+     "x": 656,
      "y": 448,
      "width": 16,
      "height": 16,
@@ -7962,6 +8027,420 @@
     },
     {
      "id": 57,
+     "name": "gt7ZaunUM",
+     "type": "moebel",
+     "x": 672,
+     "y": 592,
+     "width": 16,
+     "height": 16,
+     "rotation": 0,
+     "visible": true,
+     "properties": [
+      {
+       "name": "tiefe",
+       "type": "int",
+       "value": 600
+      },
+      {
+       "name": "kollision",
+       "type": "bool",
+       "value": true
+      }
+     ]
+    },
+    {
+     "id": 58,
+     "name": "gt7ZaunEndeLinks",
+     "type": "moebel",
+     "x": 672,
+     "y": 448,
+     "width": 16,
+     "height": 16,
+     "rotation": 0,
+     "visible": true,
+     "properties": [
+      {
+       "name": "tiefe",
+       "type": "int",
+       "value": 456
+      },
+      {
+       "name": "kollision",
+       "type": "bool",
+       "value": true
+      }
+     ]
+    },
+    {
+     "id": 59,
+     "name": "gt7ZaunUM",
+     "type": "moebel",
+     "x": 688,
+     "y": 592,
+     "width": 16,
+     "height": 16,
+     "rotation": 0,
+     "visible": true,
+     "properties": [
+      {
+       "name": "tiefe",
+       "type": "int",
+       "value": 600
+      },
+      {
+       "name": "kollision",
+       "type": "bool",
+       "value": true
+      }
+     ]
+    },
+    {
+     "id": 60,
+     "name": "gt7ZaunUM",
+     "type": "moebel",
+     "x": 704,
+     "y": 592,
+     "width": 16,
+     "height": 16,
+     "rotation": 0,
+     "visible": true,
+     "properties": [
+      {
+       "name": "tiefe",
+       "type": "int",
+       "value": 600
+      },
+      {
+       "name": "kollision",
+       "type": "bool",
+       "value": true
+      }
+     ]
+    },
+    {
+     "id": 61,
+     "name": "gt7ZaunUM",
+     "type": "moebel",
+     "x": 720,
+     "y": 592,
+     "width": 16,
+     "height": 16,
+     "rotation": 0,
+     "visible": true,
+     "properties": [
+      {
+       "name": "tiefe",
+       "type": "int",
+       "value": 600
+      },
+      {
+       "name": "kollision",
+       "type": "bool",
+       "value": true
+      }
+     ]
+    },
+    {
+     "id": 62,
+     "name": "gt7ZaunEndeRechts",
+     "type": "moebel",
+     "x": 720,
+     "y": 448,
+     "width": 16,
+     "height": 16,
+     "rotation": 0,
+     "visible": true,
+     "properties": [
+      {
+       "name": "tiefe",
+       "type": "int",
+       "value": 456
+      },
+      {
+       "name": "kollision",
+       "type": "bool",
+       "value": true
+      }
+     ]
+    },
+    {
+     "id": 63,
+     "name": "gt7ZaunUM",
+     "type": "moebel",
+     "x": 736,
+     "y": 592,
+     "width": 16,
+     "height": 16,
+     "rotation": 0,
+     "visible": true,
+     "properties": [
+      {
+       "name": "tiefe",
+       "type": "int",
+       "value": 600
+      },
+      {
+       "name": "kollision",
+       "type": "bool",
+       "value": true
+      }
+     ]
+    },
+    {
+     "id": 64,
+     "name": "gt7ZaunOM",
+     "type": "moebel",
+     "x": 736,
+     "y": 448,
+     "width": 16,
+     "height": 16,
+     "rotation": 0,
+     "visible": true,
+     "properties": [
+      {
+       "name": "tiefe",
+       "type": "int",
+       "value": 456
+      },
+      {
+       "name": "kollision",
+       "type": "bool",
+       "value": true
+      }
+     ]
+    },
+    {
+     "id": 65,
+     "name": "gt7ZaunUM",
+     "type": "moebel",
+     "x": 752,
+     "y": 592,
+     "width": 16,
+     "height": 16,
+     "rotation": 0,
+     "visible": true,
+     "properties": [
+      {
+       "name": "tiefe",
+       "type": "int",
+       "value": 600
+      },
+      {
+       "name": "kollision",
+       "type": "bool",
+       "value": true
+      }
+     ]
+    },
+    {
+     "id": 66,
+     "name": "gt7ZaunOM",
+     "type": "moebel",
+     "x": 752,
+     "y": 448,
+     "width": 16,
+     "height": 16,
+     "rotation": 0,
+     "visible": true,
+     "properties": [
+      {
+       "name": "tiefe",
+       "type": "int",
+       "value": 456
+      },
+      {
+       "name": "kollision",
+       "type": "bool",
+       "value": true
+      }
+     ]
+    },
+    {
+     "id": 67,
+     "name": "gt7ZaunUM",
+     "type": "moebel",
+     "x": 768,
+     "y": 592,
+     "width": 16,
+     "height": 16,
+     "rotation": 0,
+     "visible": true,
+     "properties": [
+      {
+       "name": "tiefe",
+       "type": "int",
+       "value": 600
+      },
+      {
+       "name": "kollision",
+       "type": "bool",
+       "value": true
+      }
+     ]
+    },
+    {
+     "id": 68,
+     "name": "gt7ZaunOM",
+     "type": "moebel",
+     "x": 768,
+     "y": 448,
+     "width": 16,
+     "height": 16,
+     "rotation": 0,
+     "visible": true,
+     "properties": [
+      {
+       "name": "tiefe",
+       "type": "int",
+       "value": 456
+      },
+      {
+       "name": "kollision",
+       "type": "bool",
+       "value": true
+      }
+     ]
+    },
+    {
+     "id": 69,
+     "name": "gt7ZaunUM",
+     "type": "moebel",
+     "x": 784,
+     "y": 592,
+     "width": 16,
+     "height": 16,
+     "rotation": 0,
+     "visible": true,
+     "properties": [
+      {
+       "name": "tiefe",
+       "type": "int",
+       "value": 600
+      },
+      {
+       "name": "kollision",
+       "type": "bool",
+       "value": true
+      }
+     ]
+    },
+    {
+     "id": 70,
+     "name": "gt7ZaunOM",
+     "type": "moebel",
+     "x": 784,
+     "y": 448,
+     "width": 16,
+     "height": 16,
+     "rotation": 0,
+     "visible": true,
+     "properties": [
+      {
+       "name": "tiefe",
+       "type": "int",
+       "value": 456
+      },
+      {
+       "name": "kollision",
+       "type": "bool",
+       "value": true
+      }
+     ]
+    },
+    {
+     "id": 71,
+     "name": "gt7ZaunUM",
+     "type": "moebel",
+     "x": 800,
+     "y": 592,
+     "width": 16,
+     "height": 16,
+     "rotation": 0,
+     "visible": true,
+     "properties": [
+      {
+       "name": "tiefe",
+       "type": "int",
+       "value": 600
+      },
+      {
+       "name": "kollision",
+       "type": "bool",
+       "value": true
+      }
+     ]
+    },
+    {
+     "id": 72,
+     "name": "gt7ZaunOM",
+     "type": "moebel",
+     "x": 800,
+     "y": 448,
+     "width": 16,
+     "height": 16,
+     "rotation": 0,
+     "visible": true,
+     "properties": [
+      {
+       "name": "tiefe",
+       "type": "int",
+       "value": 456
+      },
+      {
+       "name": "kollision",
+       "type": "bool",
+       "value": true
+      }
+     ]
+    },
+    {
+     "id": 73,
+     "name": "gt7ZaunUM",
+     "type": "moebel",
+     "x": 816,
+     "y": 592,
+     "width": 16,
+     "height": 16,
+     "rotation": 0,
+     "visible": true,
+     "properties": [
+      {
+       "name": "tiefe",
+       "type": "int",
+       "value": 600
+      },
+      {
+       "name": "kollision",
+       "type": "bool",
+       "value": true
+      }
+     ]
+    },
+    {
+     "id": 74,
+     "name": "gt7ZaunOM",
+     "type": "moebel",
+     "x": 816,
+     "y": 448,
+     "width": 16,
+     "height": 16,
+     "rotation": 0,
+     "visible": true,
+     "properties": [
+      {
+       "name": "tiefe",
+       "type": "int",
+       "value": 456
+      },
+      {
+       "name": "kollision",
+       "type": "bool",
+       "value": true
+      }
+     ]
+    },
+    {
+     "id": 75,
      "name": "gt7ZaunUR",
      "type": "moebel",
      "x": 832,
@@ -7984,7 +8463,7 @@
      ]
     },
     {
-     "id": 58,
+     "id": 76,
      "name": "gt7ZaunOR",
      "type": "moebel",
      "x": 832,
@@ -8007,7 +8486,7 @@
      ]
     },
     {
-     "id": 59,
+     "id": 77,
      "name": "gt7ZaunML",
      "type": "moebel",
      "x": 576,
@@ -8030,7 +8509,7 @@
      ]
     },
     {
-     "id": 60,
+     "id": 78,
      "name": "gt7ZaunMR",
      "type": "moebel",
      "x": 832,
@@ -8053,7 +8532,7 @@
      ]
     },
     {
-     "id": 61,
+     "id": 79,
      "name": "gt7ZaunML",
      "type": "moebel",
      "x": 576,
@@ -8076,7 +8555,7 @@
      ]
     },
     {
-     "id": 62,
+     "id": 80,
      "name": "gt7ZaunMR",
      "type": "moebel",
      "x": 832,
@@ -8099,7 +8578,7 @@
      ]
     },
     {
-     "id": 63,
+     "id": 81,
      "name": "gt7ZaunML",
      "type": "moebel",
      "x": 576,
@@ -8122,7 +8601,7 @@
      ]
     },
     {
-     "id": 64,
+     "id": 82,
      "name": "gt7ZaunMR",
      "type": "moebel",
      "x": 832,
@@ -8145,7 +8624,7 @@
      ]
     },
     {
-     "id": 65,
+     "id": 83,
      "name": "gt7ZaunML",
      "type": "moebel",
      "x": 576,
@@ -8168,7 +8647,7 @@
      ]
     },
     {
-     "id": 66,
+     "id": 84,
      "name": "gt7ZaunMR",
      "type": "moebel",
      "x": 832,
@@ -8191,7 +8670,7 @@
      ]
     },
     {
-     "id": 67,
+     "id": 85,
      "name": "gt7ZaunML",
      "type": "moebel",
      "x": 576,
@@ -8214,7 +8693,7 @@
      ]
     },
     {
-     "id": 68,
+     "id": 86,
      "name": "gt7ZaunMR",
      "type": "moebel",
      "x": 832,
@@ -8237,7 +8716,7 @@
      ]
     },
     {
-     "id": 69,
+     "id": 87,
      "name": "gt7ZaunML",
      "type": "moebel",
      "x": 576,
@@ -8260,7 +8739,7 @@
      ]
     },
     {
-     "id": 70,
+     "id": 88,
      "name": "gt7ZaunMR",
      "type": "moebel",
      "x": 832,
@@ -8283,7 +8762,7 @@
      ]
     },
     {
-     "id": 71,
+     "id": 89,
      "name": "gt7ZaunML",
      "type": "moebel",
      "x": 576,
@@ -8306,7 +8785,7 @@
      ]
     },
     {
-     "id": 72,
+     "id": 90,
      "name": "gt7ZaunMR",
      "type": "moebel",
      "x": 832,
@@ -8329,7 +8808,7 @@
      ]
     },
     {
-     "id": 73,
+     "id": 91,
      "name": "gt7ZaunML",
      "type": "moebel",
      "x": 576,
@@ -8352,7 +8831,7 @@
      ]
     },
     {
-     "id": 74,
+     "id": 92,
      "name": "gt7ZaunMR",
      "type": "moebel",
      "x": 832,
@@ -8375,7 +8854,7 @@
      ]
     },
     {
-     "id": 75,
+     "id": 93,
      "name": "gt7GrabOhneName",
      "type": "moebel",
      "x": 800,
@@ -8398,7 +8877,7 @@
      ]
     },
     {
-     "id": 76,
+     "id": 94,
      "name": "gt7GrabsteinGrau",
      "type": "moebel",
      "x": 768,
@@ -8421,7 +8900,7 @@
      ]
     },
     {
-     "id": 77,
+     "id": 95,
      "name": "gt7Grabstein",
      "type": "moebel",
      "x": 608,
@@ -8444,7 +8923,7 @@
      ]
     },
     {
-     "id": 78,
+     "id": 96,
      "name": "gt7Grabhuegel",
      "type": "moebel",
      "x": 736,
@@ -8467,7 +8946,7 @@
      ]
     },
     {
-     "id": 79,
+     "id": 97,
      "name": "gt7GrabsteinB",
      "type": "moebel",
      "x": 736,
@@ -8490,7 +8969,7 @@
      ]
     },
     {
-     "id": 80,
+     "id": 98,
      "name": "gt7Grabstein",
      "type": "moebel",
      "x": 752,
@@ -8513,7 +8992,7 @@
      ]
     },
     {
-     "id": 81,
+     "id": 99,
      "name": "gt7GrabsteinB",
      "type": "moebel",
      "x": 752,
@@ -8536,7 +9015,7 @@
      ]
     },
     {
-     "id": 82,
+     "id": 100,
      "name": "gt7Kreuz",
      "type": "moebel",
      "x": 640,
@@ -8559,7 +9038,7 @@
      ]
     },
     {
-     "id": 83,
+     "id": 101,
      "name": "gt7GrabsteinB",
      "type": "moebel",
      "x": 608,
@@ -8582,7 +9061,7 @@
      ]
     },
     {
-     "id": 84,
+     "id": 102,
      "name": "gt7Grabstein",
      "type": "moebel",
      "x": 768,
@@ -8605,7 +9084,7 @@
      ]
     },
     {
-     "id": 85,
+     "id": 103,
      "name": "gt7GrabsteinB",
      "type": "moebel",
      "x": 624,
@@ -8628,7 +9107,7 @@
      ]
     },
     {
-     "id": 86,
+     "id": 104,
      "name": "gt7Geierkreis",
      "type": "moebel",
      "x": 704,
@@ -8651,7 +9130,7 @@
      ]
     },
     {
-     "id": 87,
+     "id": 105,
      "name": "gt7Bank",
      "type": "moebel",
      "x": 96,
@@ -8674,7 +9153,7 @@
      ]
     },
     {
-     "id": 88,
+     "id": 106,
      "name": "gt7Haltestelle",
      "type": "moebel",
      "x": 832,
@@ -8697,7 +9176,7 @@
      ]
     },
     {
-     "id": 89,
+     "id": 107,
      "name": "gt7KaktusBluete",
      "type": "moebel",
      "x": 16,
@@ -8720,7 +9199,7 @@
      ]
     },
     {
-     "id": 90,
+     "id": 108,
      "name": "gt7Stein",
      "type": "moebel",
      "x": 336,
@@ -8743,30 +9222,7 @@
      ]
     },
     {
-     "id": 91,
-     "name": "gt7Stein",
-     "type": "moebel",
-     "x": 64,
-     "y": 96,
-     "width": 16,
-     "height": 16,
-     "rotation": 0,
-     "visible": true,
-     "properties": [
-      {
-       "name": "tiefe",
-       "type": "int",
-       "value": 104
-      },
-      {
-       "name": "kollision",
-       "type": "bool",
-       "value": true
-      }
-     ]
-    },
-    {
-     "id": 92,
+     "id": 109,
      "name": "gt7KaktusBluete",
      "type": "moebel",
      "x": 272,
@@ -8789,7 +9245,7 @@
      ]
     },
     {
-     "id": 93,
+     "id": 110,
      "name": "gt7KaktusBluete",
      "type": "moebel",
      "x": 608,
@@ -8812,7 +9268,7 @@
      ]
     },
     {
-     "id": 94,
+     "id": 111,
      "name": "gt7Saguaro",
      "type": "moebel",
      "x": 800,
@@ -8835,53 +9291,7 @@
      ]
     },
     {
-     "id": 95,
-     "name": "gt7Tumbleweed",
-     "type": "moebel",
-     "x": 288,
-     "y": 416,
-     "width": 16,
-     "height": 16,
-     "rotation": 0,
-     "visible": true,
-     "properties": [
-      {
-       "name": "tiefe",
-       "type": "int",
-       "value": 1
-      },
-      {
-       "name": "kollision",
-       "type": "bool",
-       "value": false
-      }
-     ]
-    },
-    {
-     "id": 96,
-     "name": "gt7Tumbleweed",
-     "type": "moebel",
-     "x": 672,
-     "y": 160,
-     "width": 16,
-     "height": 16,
-     "rotation": 0,
-     "visible": true,
-     "properties": [
-      {
-       "name": "tiefe",
-       "type": "int",
-       "value": 1
-      },
-      {
-       "name": "kollision",
-       "type": "bool",
-       "value": false
-      }
-     ]
-    },
-    {
-     "id": 97,
+     "id": 112,
      "name": "gt7Tumbleweed",
      "type": "moebel",
      "x": 640,
@@ -8904,53 +9314,7 @@
      ]
     },
     {
-     "id": 98,
-     "name": "gt7Felsgruppe",
-     "type": "moebel",
-     "x": 368,
-     "y": 496,
-     "width": 32,
-     "height": 32,
-     "rotation": 0,
-     "visible": true,
-     "properties": [
-      {
-       "name": "tiefe",
-       "type": "int",
-       "value": 520
-      },
-      {
-       "name": "kollision",
-       "type": "bool",
-       "value": true
-      }
-     ]
-    },
-    {
-     "id": 99,
-     "name": "gt7KaktusBluete",
-     "type": "moebel",
-     "x": 432,
-     "y": 496,
-     "width": 32,
-     "height": 32,
-     "rotation": 0,
-     "visible": true,
-     "properties": [
-      {
-       "name": "tiefe",
-       "type": "int",
-       "value": 520
-      },
-      {
-       "name": "kollision",
-       "type": "bool",
-       "value": true
-      }
-     ]
-    },
-    {
-     "id": 100,
+     "id": 113,
      "name": "gt7Kaktus",
      "type": "moebel",
      "x": 16,
@@ -8973,7 +9337,7 @@
      ]
     },
     {
-     "id": 101,
+     "id": 114,
      "name": "gt7Tumbleweed",
      "type": "moebel",
      "x": 640,
@@ -8996,7 +9360,7 @@
      ]
     },
     {
-     "id": 102,
+     "id": 115,
      "name": "gt7Felsgruppe",
      "type": "moebel",
      "x": 592,
@@ -9019,30 +9383,7 @@
      ]
     },
     {
-     "id": 103,
-     "name": "gt7Kaktus",
-     "type": "moebel",
-     "x": 688,
-     "y": 96,
-     "width": 16,
-     "height": 32,
-     "rotation": 0,
-     "visible": true,
-     "properties": [
-      {
-       "name": "tiefe",
-       "type": "int",
-       "value": 120
-      },
-      {
-       "name": "kollision",
-       "type": "bool",
-       "value": true
-      }
-     ]
-    },
-    {
-     "id": 104,
+     "id": 116,
      "name": "gt7Stein",
      "type": "moebel",
      "x": 560,
@@ -9065,7 +9406,7 @@
      ]
     },
     {
-     "id": 105,
+     "id": 117,
      "name": "gt7Tumbleweed",
      "type": "moebel",
      "x": 560,
@@ -9088,7 +9429,7 @@
      ]
     },
     {
-     "id": 106,
+     "id": 118,
      "name": "gt7Tumbleweed",
      "type": "moebel",
      "x": 144,
@@ -9111,7 +9452,7 @@
      ]
     },
     {
-     "id": 107,
+     "id": 119,
      "name": "gt7Felsgruppe",
      "type": "moebel",
      "x": 656,
@@ -9134,53 +9475,7 @@
      ]
     },
     {
-     "id": 108,
-     "name": "gt7Kaktus",
-     "type": "moebel",
-     "x": 288,
-     "y": 512,
-     "width": 16,
-     "height": 32,
-     "rotation": 0,
-     "visible": true,
-     "properties": [
-      {
-       "name": "tiefe",
-       "type": "int",
-       "value": 536
-      },
-      {
-       "name": "kollision",
-       "type": "bool",
-       "value": true
-      }
-     ]
-    },
-    {
-     "id": 109,
-     "name": "gt7Saguaro",
-     "type": "moebel",
-     "x": 496,
-     "y": 400,
-     "width": 32,
-     "height": 64,
-     "rotation": 0,
-     "visible": true,
-     "properties": [
-      {
-       "name": "tiefe",
-       "type": "int",
-       "value": 456
-      },
-      {
-       "name": "kollision",
-       "type": "bool",
-       "value": true
-      }
-     ]
-    },
-    {
-     "id": 110,
+     "id": 120,
      "name": "gt7Tumbleweed",
      "type": "moebel",
      "x": 16,
@@ -9203,7 +9498,7 @@
      ]
     },
     {
-     "id": 111,
+     "id": 121,
      "name": "gt7Tumbleweed",
      "type": "moebel",
      "x": 144,
@@ -9226,30 +9521,7 @@
      ]
     },
     {
-     "id": 112,
-     "name": "gt7Saguaro",
-     "type": "moebel",
-     "x": 64,
-     "y": 144,
-     "width": 32,
-     "height": 64,
-     "rotation": 0,
-     "visible": true,
-     "properties": [
-      {
-       "name": "tiefe",
-       "type": "int",
-       "value": 200
-      },
-      {
-       "name": "kollision",
-       "type": "bool",
-       "value": true
-      }
-     ]
-    },
-    {
-     "id": 113,
+     "id": 122,
      "name": "gt7Stein",
      "type": "moebel",
      "x": 528,
@@ -9272,30 +9544,7 @@
      ]
     },
     {
-     "id": 114,
-     "name": "gt7KaktusBluete",
-     "type": "moebel",
-     "x": 176,
-     "y": 400,
-     "width": 32,
-     "height": 32,
-     "rotation": 0,
-     "visible": true,
-     "properties": [
-      {
-       "name": "tiefe",
-       "type": "int",
-       "value": 424
-      },
-      {
-       "name": "kollision",
-       "type": "bool",
-       "value": true
-      }
-     ]
-    },
-    {
-     "id": 115,
+     "id": 123,
      "name": "gt7KaktusBluete",
      "type": "moebel",
      "x": 272,
@@ -9318,7 +9567,7 @@
      ]
     },
     {
-     "id": 116,
+     "id": 124,
      "name": "gt7Kaktus",
      "type": "moebel",
      "x": 576,
@@ -9341,7 +9590,7 @@
      ]
     },
     {
-     "id": 117,
+     "id": 125,
      "name": "gt7Saguaro",
      "type": "moebel",
      "x": 384,
@@ -9364,7 +9613,7 @@
      ]
     },
     {
-     "id": 118,
+     "id": 126,
      "name": "gt7TumbleweedGross",
      "type": "moebel",
      "x": 832,
@@ -9387,7 +9636,7 @@
      ]
     },
     {
-     "id": 119,
+     "id": 127,
      "name": "gt7Stein",
      "type": "moebel",
      "x": 448,
@@ -9410,7 +9659,7 @@
      ]
     },
     {
-     "id": 120,
+     "id": 128,
      "name": "gt7Stein",
      "type": "moebel",
      "x": 560,
@@ -9433,7 +9682,7 @@
      ]
     },
     {
-     "id": 121,
+     "id": 129,
      "name": "gt7Tumbleweed",
      "type": "moebel",
      "x": 608,
@@ -9456,7 +9705,7 @@
      ]
     },
     {
-     "id": 122,
+     "id": 130,
      "name": "gt7Tumbleweed",
      "type": "moebel",
      "x": 400,
@@ -9479,7 +9728,7 @@
      ]
     },
     {
-     "id": 123,
+     "id": 131,
      "name": "gt7Stein",
      "type": "moebel",
      "x": 96,
@@ -9502,7 +9751,7 @@
      ]
     },
     {
-     "id": 124,
+     "id": 132,
      "name": "gt7Tumbleweed",
      "type": "moebel",
      "x": 32,
@@ -9525,7 +9774,7 @@
      ]
     },
     {
-     "id": 125,
+     "id": 133,
      "name": "gt7Tumbleweed",
      "type": "moebel",
      "x": 128,
@@ -9548,7 +9797,7 @@
      ]
     },
     {
-     "id": 126,
+     "id": 134,
      "name": "gt7Tumbleweed",
      "type": "moebel",
      "x": 128,
@@ -9571,7 +9820,7 @@
      ]
     },
     {
-     "id": 127,
+     "id": 135,
      "name": "gt7Stein",
      "type": "moebel",
      "x": 320,
@@ -9594,7 +9843,7 @@
      ]
     },
     {
-     "id": 128,
+     "id": 136,
      "name": "gt7Stein",
      "type": "moebel",
      "x": 64,
@@ -9617,7 +9866,7 @@
      ]
     },
     {
-     "id": 129,
+     "id": 137,
      "name": "gt7Felsgruppe",
      "type": "moebel",
      "x": 720,
@@ -9640,30 +9889,7 @@
      ]
     },
     {
-     "id": 130,
-     "name": "gt7Kaktus",
-     "type": "moebel",
-     "x": 176,
-     "y": 176,
-     "width": 16,
-     "height": 32,
-     "rotation": 0,
-     "visible": true,
-     "properties": [
-      {
-       "name": "tiefe",
-       "type": "int",
-       "value": 200
-      },
-      {
-       "name": "kollision",
-       "type": "bool",
-       "value": true
-      }
-     ]
-    },
-    {
-     "id": 131,
+     "id": 138,
      "name": "gt7Felsgruppe",
      "type": "moebel",
      "x": 768,
@@ -9686,7 +9912,7 @@
      ]
     },
     {
-     "id": 132,
+     "id": 139,
      "name": "gt7TumbleweedGross",
      "type": "moebel",
      "x": 544,
@@ -9709,7 +9935,7 @@
      ]
     },
     {
-     "id": 133,
+     "id": 140,
      "name": "gt7Kaktus",
      "type": "moebel",
      "x": 320,
@@ -9732,53 +9958,7 @@
      ]
     },
     {
-     "id": 134,
-     "name": "gt7KaktusBluete",
-     "type": "moebel",
-     "x": 496,
-     "y": 464,
-     "width": 32,
-     "height": 32,
-     "rotation": 0,
-     "visible": true,
-     "properties": [
-      {
-       "name": "tiefe",
-       "type": "int",
-       "value": 488
-      },
-      {
-       "name": "kollision",
-       "type": "bool",
-       "value": true
-      }
-     ]
-    },
-    {
-     "id": 135,
-     "name": "gt7Kaktus",
-     "type": "moebel",
-     "x": 192,
-     "y": 448,
-     "width": 16,
-     "height": 32,
-     "rotation": 0,
-     "visible": true,
-     "properties": [
-      {
-       "name": "tiefe",
-       "type": "int",
-       "value": 472
-      },
-      {
-       "name": "kollision",
-       "type": "bool",
-       "value": true
-      }
-     ]
-    },
-    {
-     "id": 136,
+     "id": 141,
      "name": "gt7Kaktus",
      "type": "moebel",
      "x": 336,
@@ -9801,30 +9981,7 @@
      ]
     },
     {
-     "id": 137,
-     "name": "gt7Tumbleweed",
-     "type": "moebel",
-     "x": 160,
-     "y": 496,
-     "width": 16,
-     "height": 16,
-     "rotation": 0,
-     "visible": true,
-     "properties": [
-      {
-       "name": "tiefe",
-       "type": "int",
-       "value": 1
-      },
-      {
-       "name": "kollision",
-       "type": "bool",
-       "value": false
-      }
-     ]
-    },
-    {
-     "id": 138,
+     "id": 142,
      "name": "gt7Felsgruppe",
      "type": "moebel",
      "x": 608,
@@ -9847,7 +10004,7 @@
      ]
     },
     {
-     "id": 139,
+     "id": 143,
      "name": "gt7Felsgruppe",
      "type": "moebel",
      "x": 752,
@@ -9870,7 +10027,7 @@
      ]
     },
     {
-     "id": 140,
+     "id": 144,
      "name": "gt7Tumbleweed",
      "type": "moebel",
      "x": 416,
@@ -9893,30 +10050,7 @@
      ]
     },
     {
-     "id": 141,
-     "name": "gt7Kaktus",
-     "type": "moebel",
-     "x": 192,
-     "y": 112,
-     "width": 16,
-     "height": 32,
-     "rotation": 0,
-     "visible": true,
-     "properties": [
-      {
-       "name": "tiefe",
-       "type": "int",
-       "value": 136
-      },
-      {
-       "name": "kollision",
-       "type": "bool",
-       "value": true
-      }
-     ]
-    },
-    {
-     "id": 142,
+     "id": 145,
      "name": "gt7KaktusBluete",
      "type": "moebel",
      "x": 192,
@@ -9939,80 +10073,11 @@
      ]
     },
     {
-     "id": 143,
+     "id": 146,
      "name": "gt7Tumbleweed",
      "type": "moebel",
      "x": 304,
      "y": 112,
-     "width": 16,
-     "height": 16,
-     "rotation": 0,
-     "visible": true,
-     "properties": [
-      {
-       "name": "tiefe",
-       "type": "int",
-       "value": 1
-      },
-      {
-       "name": "kollision",
-       "type": "bool",
-       "value": false
-      }
-     ]
-    },
-    {
-     "id": 144,
-     "name": "gt7KaktusBluete",
-     "type": "moebel",
-     "x": 464,
-     "y": 416,
-     "width": 32,
-     "height": 32,
-     "rotation": 0,
-     "visible": true,
-     "properties": [
-      {
-       "name": "tiefe",
-       "type": "int",
-       "value": 440
-      },
-      {
-       "name": "kollision",
-       "type": "bool",
-       "value": true
-      }
-     ]
-    },
-    {
-     "id": 145,
-     "name": "gt7KaktusBluete",
-     "type": "moebel",
-     "x": 448,
-     "y": 464,
-     "width": 32,
-     "height": 32,
-     "rotation": 0,
-     "visible": true,
-     "properties": [
-      {
-       "name": "tiefe",
-       "type": "int",
-       "value": 488
-      },
-      {
-       "name": "kollision",
-       "type": "bool",
-       "value": true
-      }
-     ]
-    },
-    {
-     "id": 146,
-     "name": "gt7Tumbleweed",
-     "type": "moebel",
-     "x": 192,
-     "y": 144,
      "width": 16,
      "height": 16,
      "rotation": 0,
@@ -10068,6 +10133,52 @@
        "name": "tiefe",
        "type": "int",
        "value": 552
+      },
+      {
+       "name": "kollision",
+       "type": "bool",
+       "value": true
+      }
+     ]
+    },
+    {
+     "id": 149,
+     "name": "gt7Stein",
+     "type": "moebel",
+     "x": 832,
+     "y": 144,
+     "width": 16,
+     "height": 16,
+     "rotation": 0,
+     "visible": true,
+     "properties": [
+      {
+       "name": "tiefe",
+       "type": "int",
+       "value": 152
+      },
+      {
+       "name": "kollision",
+       "type": "bool",
+       "value": true
+      }
+     ]
+    },
+    {
+     "id": 150,
+     "name": "gt7Kaktus",
+     "type": "moebel",
+     "x": 288,
+     "y": 176,
+     "width": 16,
+     "height": 32,
+     "rotation": 0,
+     "visible": true,
+     "properties": [
+      {
+       "name": "tiefe",
+       "type": "int",
+       "value": 200
       },
       {
        "name": "kollision",

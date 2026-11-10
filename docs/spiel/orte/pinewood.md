@@ -176,6 +176,32 @@ klappert ein Blech. Die Farben werden blass.
 4. **Ränder abgestimmt:** crossroads.aussen `wegPinewood` am Westrand 14–15 (mittel-3, 9.11.2026);
    ghostTown.aussen `wegPinewood` am Westrand 14–15 ist niedrig-1 vorgeschlagen.
 
+### 3.4 Runde 7: Ereignisorte und Belebung auf Weg 9 (mittel-3, 10.11.2026)
+
+**Lebendschach (Dokument 15, 2.11)** in `riesenbaeume`: eine Lichtung neben dem Weg mit einem
+Rasenbrett 8 × 8 aus Gras und Kies, einer Holztribüne (`n6Tribuene`) im Norden und vier Fahnen an
+den Ecken (`cr8FahneWeiss` links, `cr8FahneSchwarz` rechts). Lichtung links oben: A (28, 79),
+B (18, 71), C (8, 85).
+
+**Holzfällerhütte (K4)** in `huetten`: Hütte `cr8Holzfaellerhuette` mit Holzstapel und Trampelpfad
+zum Weg; an ihrer Wand der Kreidespringer (`cr8Kreidespringer`). Hütte links oben:
+A (96, 3), B (30, 3), C (38, 3).
+
+Felder für Runde 6 (frei begehbar):
+
+| Auslöser               | A         | B        | C        | Ort                                    |
+| ---------------------- | --------- | -------- | -------- | -------------------------------------- |
+| `ereignisLebendschach` | (38, 85)  | (28, 77) | (18, 91) | riesenbaeume, Rand der Lichtung        |
+| `seite10`              | (24, 106) | (16, 68) | (17, 18) | riesenbaeume, am Fuß eines Mammutbaums |
+| `kreide4`              | (100, 8)  | (34, 8)  | (42, 8)  | huetten, vor der Wand der Hütte        |
+
+**Belebung (Regel 10.53):** je Karte vier ansprechbare Statisten und sechs Tiere, in A, B, C
+dieselben. Hütten (`statist.wegCrossroadsPinewood.huetten.*`): Wanderer, Holzfäller, Pilzsammlerin,
+Vogelkundler (Spechte); Eichhörnchen, Reh, Hase, Waschbär, Eichelhäher, Specht. Riesenbäume
+(`….riesenbaeume.*`): Pfadfinderin, Junge mit dem Eichhörnchen (es trägt einen schwarzen Bauern aus
+dem Camp, Dokument 16, 5.3), Betreuerin, Fotografin; Libellen, Specht, Eichhörnchen,
+Streifenhörnchen, Eule, Reh.
+
 ## 4. Bühnenbilder
 
 ### 4.1 Hütten
@@ -204,3 +230,44 @@ mit Seilen, Geländer an der Kante, Bank, Rätseltafel, Kiefern im Westen, Felse
 
 Boden Sand, Piste Schotter (2 breit). Inventar: schiefe Zäune, Telegrafenmasten, liegengebliebener
 Wagen, Kakteen, Felsen, ein Schild „GHOST TOWN 2 MI“.
+
+## Runde 7: Camp als Ort und Leben (10.11.2026)
+
+**Camp (Regel 10.51, klein: 12 Gebäude):** Zu den Campbuden und dem Kiosk kommen
+Kulissenhäuser ohne Innenraum am Uferweg: Ranger-Häuschen, Waschhaus, zwei Wohnwagen,
+Schutzhütte, Pavillon und Bootsschuppen. Dazu ein Badehäuschen am Strand und ein Holzschuppen im
+Nordosten. Ein Erdweg führt im Westen am Ufer entlang und im Nordosten bis zum Schuppen. In B
+stehen die Hütten im Norden am Hüttenweg, weil der Westen dort Strand ist.
+
+**Leben (Regel 10.53):** 12 Statisten, 7 davon ansprechbar (`statist.pinewoodCamp.aussen.*`):
+Betreuer, Köchin am Kiosk (Bauer schlägt Dame, mit Antwort von Ambrose), Rangerin
+(Lewis-Figuren), Wanderin, Anglerin (Italienisch), Bademeister (Perfect Move im Alltag) und Opa
+am Wohnwagen (Bobby Fischer mit 14). Ohne Satz: Holzhacker, zwei Kinder beim Wettlauf,
+Fotografin, Gitarrist am Abend, Kanufahrer. Tiere: Libellen, Reh, Eichhörnchen, Enten, Hund,
+Specht.
+
+### Weg 10 in Runde 7: Ereignisort und Leben
+
+**Ereignisort „Das Gespenst der Tankstelle“ (Dokument 15, 2.12):** An der Staubstraße steht eine
+verlassene Tankstelle direkt an der Piste: ein Blechhäuschen mit Solarpaneel auf dem Dach (darin
+kommt in Runde 6 der kleine Raum mit Z-1), zwei alte Zapfsäulen unter einem Vordach mit Schild
+„GAS“ und ein Autowrack. Davor ist Platz für drei bis sechs Figuren.
+
+**3.3 Felder für Runde 6 (begehbar):**
+
+| Karte          | Auslöser             | A        | B        | C         | Hinweis                              |
+| -------------- | -------------------- | -------- | -------- | --------- | ------------------------------------ |
+| `staubstrasse` | `ereignisTankstelle` | (88, 15) | (49, 9)  | (99, 11)  | vor der Tür des Häuschens            |
+| `staubstrasse` | `spurPM6`            | (89, 15) | (51, 9)  | (100, 11) | an der Tür                           |
+| `staubstrasse` | `seite11`            | (84, 14) | (45, 8)  | (94, 10)  | Ölwechsel-Graben neben dem Dach      |
+| `canyonrand`   | `finchBauerE`        | (99, 17) | (99, 16) | (43, 17)  | Aussicht bei der Bank, Finkenzeichen |
+
+**Leben (Regel 10.53):**
+
+- **Canyonrand:** Kletterer (Fesselung), Wanderin (Eichhörnchen mit einem Bauern aus dem Camp),
+  Campbetreuerin (Tag des Schachs am 20. Juli, FIDE 1924), Fotograf.
+  Tiere: Adler, Eichhörnchen, Eidechse, Geier, Hase, Specht.
+- **Staubstraße:** zwei Kinder aus dem Camp (das Gespenst, mit Ambroses „Gespenster spielen nicht
+  in Tankstellen“), Truckerin (der Türke), Landvermesser (Eidechsen vor den Staubteufeln),
+  Motorradfahrer.
+  Tiere: Eidechse, Geier, Roadrunner, Kojote, Hase, Krähen.

@@ -162,7 +162,7 @@ wirken sollen. Diese Werte gehen der Tabelle unten (Pokémon eins zu eins) vor:
 
 | Kartenart                                       | Größe in Kacheln                                    | Durchquerung zu Fuß |
 | ----------------------------------------------- | --------------------------------------------------- | ------------------- |
-| Kleiner Ort (Maple Falls, Cedar Creek)          | 40–60 × 30–40                                       | 12–17 s             |
+| Kleiner Ort (Maple Falls, Cedar Creek)          | 40–60 × 30–50 (bis 50 seit 10.11.2026, Regel 10.51) | 12–17 s             |
 | Mittlere Stadt (Riverton, Ironwood)             | 60–80 × 50–60                                       | 17–23 s             |
 | Große Stadt                                     | Viertel zu je 60–80 × 40–60                         | je 17–23 s          |
 | Weg zwischen zwei Orten in Akt 1                | 2 Karten, zusammen 220–280 lang, 20–30 quer         | 65–80 s             |

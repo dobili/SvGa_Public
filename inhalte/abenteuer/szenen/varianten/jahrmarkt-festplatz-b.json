@@ -207,10 +207,10 @@
       "typ": "statist",
       "feld": [20, 24],
       "eigenschaften": {
-        "von": "16,24",
-        "bis": "30,24",
         "tun": "Juno fotografiert alles",
-        "wann": "tag"
+        "wann": "tag",
+        "von": "16,24",
+        "bis": "30,24"
       }
     },
     {
@@ -218,10 +218,21 @@
       "typ": "statist",
       "feld": [10, 17],
       "eigenschaften": {
-        "von": "10,17",
-        "bis": "10,17",
         "tun": "Buster verkauft Lose",
-        "wann": "tag"
+        "wann": "tag",
+        "von": "10,17",
+        "bis": "10,17"
+      }
+    },
+    {
+      "name": "band",
+      "typ": "statist",
+      "feld": [38, 8],
+      "eigenschaften": {
+        "tun": "eine Country-Band spielt",
+        "wann": "abend",
+        "von": "34,8",
+        "bis": "40,8"
       }
     },
     {
@@ -229,21 +240,107 @@
       "typ": "statist",
       "feld": [30, 16],
       "eigenschaften": {
+        "tun": "schlendert mit Zuckerwatte über den Platz",
+        "wann": "tag",
         "von": "26,14",
         "bis": "38,18",
-        "tun": "schlendert mit Zuckerwatte über den Platz",
-        "wann": "tag"
+        "sagt": "statist.jahrmarkt.festplatz.besucher"
       }
     },
     {
-      "name": "band",
+      "name": "karussellbetreiber",
       "typ": "statist",
-      "feld": [36, 8],
+      "feld": [12, 13],
       "eigenschaften": {
-        "von": "34,8",
-        "bis": "40,8",
-        "tun": "eine Country-Band spielt",
-        "wann": "abend"
+        "tun": "ölt die Pferde des Karussells",
+        "wann": "tag",
+        "von": "10,13",
+        "bis": "16,13",
+        "sagt": "statist.jahrmarkt.festplatz.karussellbetreiber"
+      }
+    },
+    {
+      "name": "zuckerwattefrau",
+      "typ": "statist",
+      "feld": [22, 24],
+      "eigenschaften": {
+        "tun": "dreht Zuckerwatte auf Stäbchen",
+        "wann": "tag",
+        "von": "21,23",
+        "bis": "25,25",
+        "sagt": "statist.jahrmarkt.festplatz.zuckerwattefrau"
+      }
+    },
+    {
+      "name": "ponykind",
+      "typ": "statist",
+      "feld": [8, 27],
+      "eigenschaften": {
+        "tun": "führt ein Pony am Strick über die Wiese",
+        "wann": "tag",
+        "von": "5,26",
+        "bis": "14,28",
+        "sagt": "statist.jahrmarkt.festplatz.ponykind"
+      }
+    },
+    {
+      "name": "pony",
+      "typ": "tier",
+      "feld": [9, 28],
+      "eigenschaften": {
+        "von": "5,27",
+        "bis": "15,29",
+        "verhalten": "folgen"
+      }
+    },
+    {
+      "name": "tauben",
+      "typ": "tier",
+      "feld": [26, 22],
+      "eigenschaften": {
+        "von": "18,20",
+        "bis": "34,26",
+        "verhalten": "fliegen"
+      }
+    },
+    {
+      "name": "spatzen",
+      "typ": "tier",
+      "feld": [30, 10],
+      "eigenschaften": {
+        "von": "20,6",
+        "bis": "40,12",
+        "verhalten": "fliegen"
+      }
+    },
+    {
+      "name": "hund",
+      "typ": "tier",
+      "feld": [24, 30],
+      "eigenschaften": {
+        "von": "20,29",
+        "bis": "28,33",
+        "verhalten": "folgen"
+      }
+    },
+    {
+      "name": "katze",
+      "typ": "tier",
+      "feld": [40, 28],
+      "eigenschaften": {
+        "von": "38,27",
+        "bis": "43,29",
+        "verhalten": "schlafen"
+      }
+    },
+    {
+      "name": "kraehen",
+      "typ": "tier",
+      "feld": [10, 31],
+      "eigenschaften": {
+        "von": "3,30",
+        "bis": "20,33",
+        "verhalten": "ausweichen"
       }
     }
   ],

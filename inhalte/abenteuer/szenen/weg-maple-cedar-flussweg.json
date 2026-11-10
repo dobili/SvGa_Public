@@ -949,10 +949,6 @@
       "feld": [116, 20]
     },
     {
-      "moebel": "wg4BlumenWeiss",
-      "feld": [55, 20]
-    },
-    {
       "moebel": "wg4PilzeB",
       "feld": [72, 12]
     },
@@ -1207,6 +1203,14 @@
     {
       "moebel": "wg4Stein",
       "feld": [72, 13]
+    },
+    {
+      "moebel": "wg4Bank",
+      "feld": [54, 20]
+    },
+    {
+      "moebel": "mf8Finkenzeichen",
+      "feld": [58, 21]
     }
   ],
   "ausloeser": [
@@ -1324,6 +1328,58 @@
         "bis": "9,22",
         "verhalten": "fliegen",
         "wann": "morgen"
+      }
+    },
+    {
+      "name": "vogelbeobachterin",
+      "typ": "statist",
+      "feld": [48, 18],
+      "eigenschaften": {
+        "tun": "beobachtet den Reiher durchs Fernglas",
+        "wann": "morgen",
+        "sagt": "statist.wegMapleCedar.flussweg.vogelbeobachterin"
+      }
+    },
+    {
+      "name": "picknickVater",
+      "typ": "statist",
+      "feld": [70, 16],
+      "eigenschaften": {
+        "tun": "packt den Picknickkorb aus",
+        "wann": "tag",
+        "sagt": "statist.wegMapleCedar.flussweg.picknickVater"
+      }
+    },
+    {
+      "name": "kindSteinehuepfen",
+      "typ": "statist",
+      "feld": [59, 20],
+      "eigenschaften": {
+        "tun": "lässt Steine über das Wasser hüpfen",
+        "wann": "tag",
+        "von": "59,21",
+        "bis": "62,21",
+        "sagt": "statist.wegMapleCedar.flussweg.kindSteinehuepfen"
+      }
+    },
+    {
+      "name": "enten",
+      "typ": "tier",
+      "feld": [50, 25],
+      "eigenschaften": {
+        "verhalten": "schwimmen",
+        "von": "45,24",
+        "bis": "55,26"
+      }
+    },
+    {
+      "name": "eisvogel",
+      "typ": "tier",
+      "feld": [62, 21],
+      "eigenschaften": {
+        "verhalten": "fliegen",
+        "von": "60,21",
+        "bis": "66,21"
       }
     }
   ]

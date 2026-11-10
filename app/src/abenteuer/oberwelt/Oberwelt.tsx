@@ -87,13 +87,8 @@ import { spruecheErlaubt, ZEITKLASSEN } from "../regeln/zeitkarten";
 import { Laden } from "./Laden";
 import { Steuerkreuz } from "./Steuerkreuz";
 import { Tagebuch } from "./Tagebuch";
-import {
-  beendeOberwelt,
-  starteOberwelt,
-  szeneVon,
-  type Ausloesertreffer,
-  type Richtung,
-} from "./szene";
+import { beendeOberwelt, starteOberwelt, szeneVon } from "./oberweltspiel";
+import type { Ausloesertreffer, Richtung } from "./szene";
 import {
   KACHELSATZ,
   SPRACHE,
@@ -102,8 +97,10 @@ import {
   figurZu,
   ladeWelt,
   objektposition,
+  sprechblaseFuer,
   type Weltdaten,
 } from "./weltdaten";
+import { Sprechblase, type SprechblasenInhalt } from "./Sprechblase";
 
 /** Ein offener Dialog: die übersetzte Geschichte, der Knoten und der Name der Datei. */
 interface OffenerDialog {
@@ -128,6 +125,9 @@ export function Oberwelt() {
   const [treffer, setzeTreffer] = useState<Ausloesertreffer | null>(null);
   const [dialog, setzeDialog] = useState<OffenerDialog | null>(null);
   const [meldung, setzeMeldung] = useState<string | null>(null);
+  // Sprechblase eines Statisten und wie oft jeder schon angesprochen wurde (nur in dieser Sitzung).
+  const [sprechblase, setzeSprechblase] = useState<SprechblasenInhalt | null>(null);
+  const angesprochen = useRef(new Map<string, number>());
   const [ergebnis, setzeErgebnis] = useState<Partieergebnis | null>(null);
   const [offenePartie, setzeOffenePartie] = useState<string | null>(null);
   const [tagebuch, setzeTagebuch] = useState(false);
@@ -366,6 +366,7 @@ export function Oberwelt() {
   /** Ein Auslöser der Karte (aus Phaser): Übergänge sofort, alles andere als Quest-Ereignis. */
   const beiTreffer = (t: Ausloesertreffer | null) => {
     setzeTreffer(t);
+    if (!t) setzeSprechblase(null);
     const w = weltRef.current;
     const aktuell = standRef.current;
     if (!t || !w || !aktuell) return;
@@ -422,6 +423,7 @@ export function Oberwelt() {
           figurenbilder: w.figurenbilder,
           moebel: w.moebel,
           hintergrund: w.hintergrund,
+          belebungsbilder: w.belebungsbilder,
           kachelsatz: KACHELSATZ,
           start: stand.position,
           // Fahrrad (docs/spiel/08, W3): doppeltes Tempo draußen.
@@ -494,6 +496,13 @@ export function Oberwelt() {
   /** Der Aktionsknopf: Dialog des Auslösers oder der Figur öffnen. */
   const beiAktion = () => {
     if (!welt || !treffer) return;
+    if (treffer.typ === "statist") {
+      const schluessel = `${welt.kennung}.${treffer.name}`;
+      const besuch = angesprochen.current.get(schluessel) ?? 0;
+      angesprochen.current.set(schluessel, besuch + 1);
+      setzeSprechblase(sprechblaseFuer(welt, treffer.name, besuch, stand?.held.name ?? ""));
+      return;
+    }
     if (treffer.typ === "figur") {
       const figur = figurZu(welt.ort, treffer.name);
       if (figur) oeffneDialog(figur.dialog);
@@ -843,6 +852,13 @@ export function Oberwelt() {
       )}
       {tagebuch && welt && (
         <Tagebuch stand={stand} daten={welt.daten} beiSchliessen={() => setzeTagebuch(false)} />
+      )}
+      {sprechblase && !dialog && (
+        <Sprechblase
+          inhalt={sprechblase}
+          weiter={tSpiel("ergebnis.weiter")}
+          beiSchliessen={() => setzeSprechblase(null)}
+        />
       )}
       {meldung && (
         <section className="abenteuer-ergebnis" role="status" data-testid="abenteuer-meldung">

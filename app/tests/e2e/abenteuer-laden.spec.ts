@@ -3,9 +3,13 @@
  * Münzen steht vor Patels Kiosk; der Dialog öffnet den Laden, „Zweite Chance“ kostet 20, danach ist
  * Flüstern zu teuer, die Münzen oben rechts zeigen den neuen Stand.
  */
+import { readFileSync } from "node:fs";
 import { expect, test } from "@playwright/test";
 import { feldDarunter } from "./abenteuer-karte";
 import { starteImBrowser } from "./hilfen";
+
+/** So viele Zeichen eines Satzes vergleicht der Test (die Sprechblase bricht längere Sätze um). */
+const SATZANFANG = 30;
 
 /** Spielstand im Park, eine Kachel unter dem Kiosk (Feld aus der Karte), Blick nach oben. */
 const STAND = {
@@ -81,6 +85,40 @@ test("Patels Kiosk: Dialog öffnet den Laden, Kauf zieht Münzen ab", async ({ p
   await expect(laden.getByRole("button", { name: /Flüstern/ })).toBeDisabled();
   await laden.getByRole("button", { name: "Fertig" }).click();
   await expect(page.getByTestId("abenteuer-muenzen")).toHaveText("30 Münzen");
+});
+
+test("Statist im Bergladen: ansprechen, Satz erscheint, beim nächsten Mal der nächste", async ({
+  page,
+}) => {
+  // Runde 7: Statisten mit `sagt` sind ansprechbar (Dokument 16, Abschnitt 3.1).
+  const stand = {
+    ...STAND,
+    position: {
+      karte: "summitCity.bergladen",
+      ...feldDarunter("summit-city-bergladen", "ladenhilfe"),
+      richtung: "oben",
+    },
+  };
+  await starteImBrowser(page);
+  await expect.poll(() => page.evaluate(schreibeStand, stand)).toBe(true);
+  await page.reload();
+  await page.goto("/app/#abenteuer");
+  await page.getByTestId("abenteuer-laden").click();
+  await expect(page.getByTestId("abenteuer-welt")).toBeVisible({ timeout: 30000 });
+  const aktion = page.getByTestId("abenteuer-aktion");
+  await expect(aktion).toHaveText("Sprechen", { timeout: 30000 });
+  await aktion.click();
+  const blase = page.getByTestId("abenteuer-sprechblase");
+  // Die Sätze kommen aus den Texten, damit die Helfer sie umschreiben können (erster Satz, dann .2).
+  const texte = JSON.parse(
+    readFileSync(new URL("../../../inhalte/abenteuer/texte/de.json", import.meta.url), "utf-8"),
+  ) as Record<string, string>;
+  const satz = (schluessel: string) => (texte[schluessel] ?? schluessel).slice(0, SATZANFANG);
+  await expect(blase).toContainText(satz("statist.summitCity.bergladen.ladenhilfe"));
+  await aktion.click();
+  await expect(blase).toContainText(satz("statist.summitCity.bergladen.ladenhilfe.2"));
+  await blase.getByRole("button", { name: "Weiter" }).click();
+  await expect(blase).toHaveCount(0);
 });
 
 test("Erinnerung London 1851: Sepia, kein Tagebuch, keine Münzen", async ({ page }) => {

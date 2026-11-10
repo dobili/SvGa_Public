@@ -11,7 +11,7 @@
  "tilewidth": 16,
  "tileheight": 16,
  "nextlayerid": 5,
- "nextobjectid": 42,
+ "nextobjectid": 56,
  "layers": [
   {
    "id": 1,
@@ -12748,10 +12748,10 @@
     },
     {
      "id": 8,
-     "name": "roadrunner",
-     "type": "tier",
-     "x": 1888,
-     "y": 224,
+     "name": "rangerin",
+     "type": "statist",
+     "x": 1840,
+     "y": 240,
      "width": 16,
      "height": 16,
      "rotation": 0,
@@ -12760,26 +12760,36 @@
       {
        "name": "von",
        "type": "string",
-       "value": "112,14"
+       "value": "115,15"
       },
       {
        "name": "bis",
        "type": "string",
-       "value": "124,14"
+       "value": "115,15"
       },
       {
-       "name": "verhalten",
+       "name": "tun",
        "type": "string",
-       "value": "rennen"
+       "value": "zählt die Besucher am Bogen"
+      },
+      {
+       "name": "wann",
+       "type": "string",
+       "value": "tag"
+      },
+      {
+       "name": "sagt",
+       "type": "string",
+       "value": "statist.wegDelacroixDesert.felsbogen.rangerin"
       }
      ]
     },
     {
      "id": 9,
-     "name": "eidechse",
-     "type": "tier",
-     "x": 576,
-     "y": 128,
+     "name": "goldsucher",
+     "type": "statist",
+     "x": 1120,
+     "y": 352,
      "width": 16,
      "height": 16,
      "rotation": 0,
@@ -12788,12 +12798,121 @@
       {
        "name": "von",
        "type": "string",
-       "value": "34,8"
+       "value": "70,22"
       },
       {
        "name": "bis",
        "type": "string",
-       "value": "40,8"
+       "value": "70,22"
+      },
+      {
+       "name": "tun",
+       "type": "string",
+       "value": "siebt Sand im trockenen Bach"
+      },
+      {
+       "name": "wann",
+       "type": "string",
+       "value": "tag"
+      },
+      {
+       "name": "sagt",
+       "type": "string",
+       "value": "statist.wegDelacroixDesert.felsbogen.goldsucher"
+      }
+     ]
+    },
+    {
+     "id": 10,
+     "name": "radfahrerin",
+     "type": "statist",
+     "x": 336,
+     "y": 320,
+     "width": 16,
+     "height": 16,
+     "rotation": 0,
+     "visible": true,
+     "properties": [
+      {
+       "name": "von",
+       "type": "string",
+       "value": "21,20"
+      },
+      {
+       "name": "bis",
+       "type": "string",
+       "value": "21,20"
+      },
+      {
+       "name": "tun",
+       "type": "string",
+       "value": "macht Pause im Schatten"
+      },
+      {
+       "name": "wann",
+       "type": "string",
+       "value": "tag"
+      },
+      {
+       "name": "sagt",
+       "type": "string",
+       "value": "statist.wegDelacroixDesert.felsbogen.radfahrerin"
+      }
+     ]
+    },
+    {
+     "id": 11,
+     "name": "fotograf",
+     "type": "statist",
+     "x": 1584,
+     "y": 352,
+     "width": 16,
+     "height": 16,
+     "rotation": 0,
+     "visible": true,
+     "properties": [
+      {
+       "name": "von",
+       "type": "string",
+       "value": "99,22"
+      },
+      {
+       "name": "bis",
+       "type": "string",
+       "value": "99,22"
+      },
+      {
+       "name": "tun",
+       "type": "string",
+       "value": "fotografiert den Felsbogen"
+      },
+      {
+       "name": "wann",
+       "type": "string",
+       "value": "tag"
+      }
+     ]
+    },
+    {
+     "id": 12,
+     "name": "roadrunner",
+     "type": "tier",
+     "x": 288,
+     "y": 144,
+     "width": 16,
+     "height": 16,
+     "rotation": 0,
+     "visible": true,
+     "properties": [
+      {
+       "name": "von",
+       "type": "string",
+       "value": "18,9"
+      },
+      {
+       "name": "bis",
+       "type": "string",
+       "value": "24,9"
       },
       {
        "name": "verhalten",
@@ -12803,7 +12922,147 @@
      ]
     },
     {
-     "id": 10,
+     "id": 13,
+     "name": "eidechse",
+     "type": "tier",
+     "x": 544,
+     "y": 160,
+     "width": 16,
+     "height": 16,
+     "rotation": 0,
+     "visible": true,
+     "properties": [
+      {
+       "name": "von",
+       "type": "string",
+       "value": "34,10"
+      },
+      {
+       "name": "bis",
+       "type": "string",
+       "value": "40,10"
+      },
+      {
+       "name": "verhalten",
+       "type": "string",
+       "value": "flitzen"
+      }
+     ]
+    },
+    {
+     "id": 14,
+     "name": "geier",
+     "type": "tier",
+     "x": 880,
+     "y": 304,
+     "width": 16,
+     "height": 16,
+     "rotation": 0,
+     "visible": true,
+     "properties": [
+      {
+       "name": "von",
+       "type": "string",
+       "value": "55,19"
+      },
+      {
+       "name": "bis",
+       "type": "string",
+       "value": "61,19"
+      },
+      {
+       "name": "verhalten",
+       "type": "string",
+       "value": "fliegen"
+      }
+     ]
+    },
+    {
+     "id": 15,
+     "name": "wuestenhase",
+     "type": "tier",
+     "x": 1248,
+     "y": 288,
+     "width": 16,
+     "height": 16,
+     "rotation": 0,
+     "visible": true,
+     "properties": [
+      {
+       "name": "von",
+       "type": "string",
+       "value": "78,18"
+      },
+      {
+       "name": "bis",
+       "type": "string",
+       "value": "84,18"
+      },
+      {
+       "name": "verhalten",
+       "type": "string",
+       "value": "flitzen"
+      }
+     ]
+    },
+    {
+     "id": 16,
+     "name": "kojote",
+     "type": "tier",
+     "x": 1600,
+     "y": 224,
+     "width": 16,
+     "height": 16,
+     "rotation": 0,
+     "visible": true,
+     "properties": [
+      {
+       "name": "von",
+       "type": "string",
+       "value": "100,14"
+      },
+      {
+       "name": "bis",
+       "type": "string",
+       "value": "106,14"
+      },
+      {
+       "name": "verhalten",
+       "type": "string",
+       "value": "ausweichen"
+      }
+     ]
+    },
+    {
+     "id": 17,
+     "name": "falke",
+     "type": "tier",
+     "x": 1952,
+     "y": 256,
+     "width": 16,
+     "height": 16,
+     "rotation": 0,
+     "visible": true,
+     "properties": [
+      {
+       "name": "von",
+       "type": "string",
+       "value": "122,16"
+      },
+      {
+       "name": "bis",
+       "type": "string",
+       "value": "128,16"
+      },
+      {
+       "name": "verhalten",
+       "type": "string",
+       "value": "fliegen"
+      }
+     ]
+    },
+    {
+     "id": 18,
      "name": "dd6Felsbogen",
      "type": "moebel",
      "x": 1424,
@@ -12826,7 +13085,7 @@
      ]
     },
     {
-     "id": 11,
+     "id": 19,
      "name": "dd6Bruecke1879",
      "type": "moebel",
      "x": 736,
@@ -12849,7 +13108,7 @@
      ]
     },
     {
-     "id": 12,
+     "id": 20,
      "name": "mfBank",
      "type": "moebel",
      "x": 1312,
@@ -12872,7 +13131,7 @@
      ]
     },
     {
-     "id": 13,
+     "id": 21,
      "name": "wg5Wegweiser",
      "type": "moebel",
      "x": 96,
@@ -12895,7 +13154,7 @@
      ]
     },
     {
-     "id": 14,
+     "id": 22,
      "name": "dd6KaktusKlein",
      "type": "moebel",
      "x": 1648,
@@ -12918,7 +13177,7 @@
      ]
     },
     {
-     "id": 15,
+     "id": 23,
      "name": "dd6KaktusBluehend",
      "type": "moebel",
      "x": 1760,
@@ -12941,7 +13200,7 @@
      ]
     },
     {
-     "id": 16,
+     "id": 24,
      "name": "dd6KaktusKlein",
      "type": "moebel",
      "x": 1872,
@@ -12964,7 +13223,7 @@
      ]
     },
     {
-     "id": 17,
+     "id": 25,
      "name": "dd6KaktusBluehend",
      "type": "moebel",
      "x": 1984,
@@ -12987,7 +13246,7 @@
      ]
     },
     {
-     "id": 18,
+     "id": 26,
      "name": "dd6KaktusKlein",
      "type": "moebel",
      "x": 2096,
@@ -13010,7 +13269,7 @@
      ]
     },
     {
-     "id": 19,
+     "id": 27,
      "name": "dd6KaktusBluehend",
      "type": "moebel",
      "x": 944,
@@ -13033,7 +13292,7 @@
      ]
     },
     {
-     "id": 20,
+     "id": 28,
      "name": "dd6KaktusKlein",
      "type": "moebel",
      "x": 1056,
@@ -13056,7 +13315,7 @@
      ]
     },
     {
-     "id": 21,
+     "id": 29,
      "name": "dd6KaktusBluehend",
      "type": "moebel",
      "x": 1168,
@@ -13079,7 +13338,7 @@
      ]
     },
     {
-     "id": 22,
+     "id": 30,
      "name": "dd6KaktusKlein",
      "type": "moebel",
      "x": 1280,
@@ -13102,7 +13361,7 @@
      ]
     },
     {
-     "id": 23,
+     "id": 31,
      "name": "dd6KaktusBluehend",
      "type": "moebel",
      "x": 1392,
@@ -13125,7 +13384,7 @@
      ]
     },
     {
-     "id": 24,
+     "id": 32,
      "name": "dd6KaktusKlein",
      "type": "moebel",
      "x": 368,
@@ -13148,7 +13407,7 @@
      ]
     },
     {
-     "id": 25,
+     "id": 33,
      "name": "dd6KaktusBluehend",
      "type": "moebel",
      "x": 480,
@@ -13171,7 +13430,7 @@
      ]
     },
     {
-     "id": 26,
+     "id": 34,
      "name": "dd6KaktusKlein",
      "type": "moebel",
      "x": 592,
@@ -13194,7 +13453,7 @@
      ]
     },
     {
-     "id": 27,
+     "id": 35,
      "name": "dd6KaktusBluehend",
      "type": "moebel",
      "x": 704,
@@ -13217,7 +13476,7 @@
      ]
     },
     {
-     "id": 28,
+     "id": 36,
      "name": "dd6KaktusKlein",
      "type": "moebel",
      "x": 48,
@@ -13240,7 +13499,7 @@
      ]
     },
     {
-     "id": 29,
+     "id": 37,
      "name": "dd6KaktusBluehend",
      "type": "moebel",
      "x": 160,
@@ -13263,7 +13522,7 @@
      ]
     },
     {
-     "id": 30,
+     "id": 38,
      "name": "fels",
      "type": "moebel",
      "x": 1680,
@@ -13286,7 +13545,7 @@
      ]
     },
     {
-     "id": 31,
+     "id": 39,
      "name": "felsKlein",
      "type": "moebel",
      "x": 1856,
@@ -13309,7 +13568,7 @@
      ]
     },
     {
-     "id": 32,
+     "id": 40,
      "name": "fels",
      "type": "moebel",
      "x": 2032,
@@ -13332,7 +13591,7 @@
      ]
     },
     {
-     "id": 33,
+     "id": 41,
      "name": "felsKlein",
      "type": "moebel",
      "x": 976,
@@ -13355,7 +13614,7 @@
      ]
     },
     {
-     "id": 34,
+     "id": 42,
      "name": "fels",
      "type": "moebel",
      "x": 1152,
@@ -13378,7 +13637,7 @@
      ]
     },
     {
-     "id": 35,
+     "id": 43,
      "name": "felsKlein",
      "type": "moebel",
      "x": 1328,
@@ -13401,7 +13660,7 @@
      ]
     },
     {
-     "id": 36,
+     "id": 44,
      "name": "felsKlein",
      "type": "moebel",
      "x": 400,
@@ -13424,7 +13683,7 @@
      ]
     },
     {
-     "id": 37,
+     "id": 45,
      "name": "fels",
      "type": "moebel",
      "x": 576,
@@ -13447,7 +13706,7 @@
      ]
     },
     {
-     "id": 38,
+     "id": 46,
      "name": "felsKlein",
      "type": "moebel",
      "x": 752,
@@ -13470,7 +13729,7 @@
      ]
     },
     {
-     "id": 39,
+     "id": 47,
      "name": "fels",
      "type": "moebel",
      "x": 80,
@@ -13493,7 +13752,7 @@
      ]
     },
     {
-     "id": 40,
+     "id": 48,
      "name": "felsKlein",
      "type": "moebel",
      "x": 256,
@@ -13516,13 +13775,151 @@
      ]
     },
     {
-     "id": 41,
+     "id": 49,
      "name": "dd6Geierkreis",
      "type": "moebel",
      "x": 480,
      "y": 128,
      "width": 32,
      "height": 32,
+     "rotation": 0,
+     "visible": true,
+     "properties": [
+      {
+       "name": "tiefe",
+       "type": "int",
+       "value": 1
+      },
+      {
+       "name": "kollision",
+       "type": "bool",
+       "value": false
+      }
+     ]
+    },
+    {
+     "id": 50,
+     "name": "ds8Kletterseil",
+     "type": "moebel",
+     "x": 1584,
+     "y": 272,
+     "width": 16,
+     "height": 64,
+     "rotation": 0,
+     "visible": true,
+     "properties": [
+      {
+       "name": "tiefe",
+       "type": "int",
+       "value": 328
+      },
+      {
+       "name": "kollision",
+       "type": "bool",
+       "value": false
+      }
+     ]
+    },
+    {
+     "id": 51,
+     "name": "pg7SeilHaken",
+     "type": "moebel",
+     "x": 1568,
+     "y": 336,
+     "width": 16,
+     "height": 32,
+     "rotation": 0,
+     "visible": true,
+     "properties": [
+      {
+       "name": "tiefe",
+       "type": "int",
+       "value": 360
+      },
+      {
+       "name": "kollision",
+       "type": "bool",
+       "value": false
+      }
+     ]
+    },
+    {
+     "id": 52,
+     "name": "scRucksack",
+     "type": "moebel",
+     "x": 1536,
+     "y": 368,
+     "width": 16,
+     "height": 32,
+     "rotation": 0,
+     "visible": true,
+     "properties": [
+      {
+       "name": "tiefe",
+       "type": "int",
+       "value": 392
+      },
+      {
+       "name": "kollision",
+       "type": "bool",
+       "value": true
+      }
+     ]
+    },
+    {
+     "id": 53,
+     "name": "scRucksackRot",
+     "type": "moebel",
+     "x": 1568,
+     "y": 368,
+     "width": 16,
+     "height": 32,
+     "rotation": 0,
+     "visible": true,
+     "properties": [
+      {
+       "name": "tiefe",
+       "type": "int",
+       "value": 392
+      },
+      {
+       "name": "kollision",
+       "type": "bool",
+       "value": true
+      }
+     ]
+    },
+    {
+     "id": 54,
+     "name": "ds8Kreidebeutel",
+     "type": "moebel",
+     "x": 1552,
+     "y": 384,
+     "width": 16,
+     "height": 16,
+     "rotation": 0,
+     "visible": true,
+     "properties": [
+      {
+       "name": "tiefe",
+       "type": "int",
+       "value": 1
+      },
+      {
+       "name": "kollision",
+       "type": "bool",
+       "value": false
+      }
+     ]
+    },
+    {
+     "id": 55,
+     "name": "ds8Finkenzeichen",
+     "type": "moebel",
+     "x": 1040,
+     "y": 336,
+     "width": 16,
+     "height": 16,
      "rotation": 0,
      "visible": true,
      "properties": [

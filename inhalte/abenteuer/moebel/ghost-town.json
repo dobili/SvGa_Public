@@ -678,6 +678,86 @@
       "blick": "oben",
       "zustand": "alt",
       "stil": "rustikal"
+    },
+    "gt8Mietstall": {
+      "quelle": "spiel/eigene/fassade_mietstall.png",
+      "breite": 128,
+      "hoehe": 128,
+      "kollision": true,
+      "art": "gebaeude",
+      "blick": "unten",
+      "stil": "rustikal",
+      "zustand": "verwittert"
+    },
+    "gt8Bank": {
+      "quelle": "spiel/eigene/fassade_bank.png",
+      "breite": 112,
+      "hoehe": 112,
+      "kollision": true,
+      "art": "gebaeude",
+      "blick": "unten",
+      "stil": "rustikal",
+      "zustand": "verwittert"
+    },
+    "gt8Barbier": {
+      "quelle": "spiel/eigene/fassade_barbier.png",
+      "breite": 112,
+      "hoehe": 112,
+      "kollision": true,
+      "art": "gebaeude",
+      "blick": "unten",
+      "stil": "rustikal",
+      "zustand": "verwittert"
+    },
+    "gt8Bestatter": {
+      "quelle": "spiel/eigene/fassade_bestatter.png",
+      "breite": 112,
+      "hoehe": 112,
+      "kollision": true,
+      "art": "gebaeude",
+      "blick": "unten",
+      "stil": "rustikal",
+      "zustand": "verwittert"
+    },
+    "gt8Post": {
+      "quelle": "spiel/eigene/fassade_post.png",
+      "breite": 112,
+      "hoehe": 112,
+      "kollision": true,
+      "art": "gebaeude",
+      "blick": "unten",
+      "stil": "rustikal",
+      "zustand": "verwittert"
+    },
+    "gt8Hotel": {
+      "quelle": "spiel/eigene/fassade_hotel.png",
+      "breite": 128,
+      "hoehe": 144,
+      "kollision": true,
+      "art": "gebaeude",
+      "blick": "unten",
+      "stil": "rustikal",
+      "zustand": "verwittert"
+    },
+    "gt8HuetteA": {
+      "quelle": "spiel/eigene/huette_bretter_a.png",
+      "breite": 80,
+      "hoehe": 80,
+      "kollision": true,
+      "art": "gebaeude",
+      "blick": "unten",
+      "stil": "rustikal",
+      "zustand": "verwittert"
+    },
+    "gt8HuetteB": {
+      "quelle": "spiel/eigene/huette_bretter_b.png",
+      "breite": 80,
+      "hoehe": 80,
+      "kollision": true,
+      "art": "gebaeude",
+      "blick": "unten",
+      "stil": "rustikal",
+      "zustand": "verwittert"
     }
   }
 }

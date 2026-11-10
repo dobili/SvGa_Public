@@ -8,67 +8,72 @@
   "boeden": {
     "p": "pflaster",
     "f": "felsboden",
-    "e": "erde"
+    "e": "erde",
+    "k": "schotter"
   },
   "zustand": ["neu", "gebraucht", "alt"],
   "stil": ["natur", "klassisch", "modern", "rustikal", "laendlich"],
   "raster": [
-    "######################################################################",
-    "######################################################################",
-    "######################################################################",
-    "######################################################################",
-    "######################################################################",
-    "######################################################################",
-    "#.fffffffffffffffffffffff............................................#",
-    "#.fffffffffffffffffffffff............................................#",
-    "#.fffffffffffffffffffffff............................................#",
-    "#.fffffffffffffffffffffff............................................#",
-    "#.fffffffffffffffffffffff............................................#",
-    "#.fffffffffffffffffffffff............................................#",
-    "#.fffffffffffffffffffffff............................................#",
-    "##########pp##############...........................................#",
-    "##########pp##############...........................................#",
-    "##########pp##############...........................................#",
-    "#....................................................................#",
-    "#....................................................................#",
-    "#....................................................................#",
-    "#....................................................................#",
-    "#....................................................................#",
-    "#....................................................................#",
-    "#.....................................................pp.............#",
-    "#.....................................................pp.............#",
-    "#....................pp...............................pp.............#",
-    "#....................pp...............................pp.............#",
-    "#.......pp...........pp...............................pp.............#",
-    "#.......pp...........pp...............................pp.............#",
-    "#.......pp...........pp...pppppppppppppppppppppppppppppp.............#",
-    "#.......pppppppppppppppppppppppppppppppppppppppppppppppp.............#",
-    "#.......ppppppppppppppppppppppppppppppppppppppp......................#",
-    "#.........................ppppppppppppppppppppp......................#",
-    "#.........................ppppppppppppppppppppp......................#",
-    "#.........................pppppppppppppppppppppeeeeeeeeeee...........#",
-    "#.........................pppppppppppppppppppppeeeeeeeeeee...........#",
-    "#.........................ppppppppppppppppppppp.........ee...........#",
-    "#.........................ppppppppppppppppppppp.........ee...........#",
-    "#.........................ppppppppppppppppppppp.........ee...........#",
-    "#.........................ppppppppppppppppppppp.........ee...........#",
-    "#.........................ppppppppppppppppppppp.........ee...........#",
-    "#.........................ppppppppppppppppppppp.........ee...........#",
-    "#.................................ppp...................ee...........#",
-    "#.................................ppp...................ee...........#",
-    "#.................................ppp...................ee...........#",
-    "#.................................ppp...................ee...........#",
-    "#.................................ppp...................ee...........#",
-    "#..eeeeeeeeeeeeeeeeeeeeeeeeeeeeeeeppp..........eeeeeeeeeeeeeeeeeeee..#",
-    "#..eeeeeeeeeeeeeeeeeeeeeeeeeeeeeeeppp..........eeeeeeeeeeeeeeeeeeee..#",
-    "#.................................ppp...................ee...........#",
-    "#.................................ppp...................ee...........#",
-    "#.................................ppp...................ee...........#",
-    "#.................................ppp...................ee...........#",
-    "#.................................ppp...................ee...........#",
-    "#.................................ppp...................ee...........#",
-    "#.................................ppp...................ee...........#",
-    "##################################ppp###################ee############"
+    "################################################################################",
+    "################################################################################",
+    "################################################################################",
+    "################################################################################",
+    "################################################################################",
+    "################################################################################",
+    "#.fffffffffffffffffffffff......................................................#",
+    "#.fffffffffffffffffffffff......................................................#",
+    "#.fffffffffffffffffffffff......................................................#",
+    "#.fffffffffffffffffffffff......................................................#",
+    "#.fffffffffffffffffffffff......................................................#",
+    "#.fffffffffffffffffffffff......................................................#",
+    "#.fffffffffffffffffffffff......................................................#",
+    "##########pp##############.....................................................#",
+    "##########pp##############.....................................................#",
+    "##########pp##############.....................................................#",
+    "#........................................pp....................................#",
+    "#........................................pp....................................#",
+    "#........................................pp....................................#",
+    "#..............................pp........pp....................................#",
+    "#..............................pp........pp....................................#",
+    "#..............................pp........pp..........................pp........#",
+    "#.........................ppppppppppppppppppppppppppppppppppppppppppppppppppppp#",
+    "#.........................ppppppppppppppppppppppppppppppppppppppppppppppppppppp#",
+    "#....................pp...............................pp.......................#",
+    "#....................pp...............................pp.......................#",
+    "#.......pp...........pp...............................pp.......................#",
+    "#.......pp...........pp...............................pp.......................#",
+    "#.......pp...........pp...pppppppppppppppppppppppppppppp.......................#",
+    "#.......pppppppppppppppppppppppppppppppppppppppppppppppp.......................#",
+    "#.......ppppppppppppppppppppppppppppppppppppppp................................#",
+    "#.........................ppppppppppppppppppppp................pp..............#",
+    "#.........................ppppppppppppppppppppp................pp........pp....#",
+    "#.........................pppppppppppppppppppppeeeeeeeeeeeeeeeeeeeeeeeeeeeeeeee#",
+    "#.........................pppppppppppppppppppppeeeeeeeeeeeeeeeeeeeeeeeeeeeeeeee#",
+    "#.........................ppppppppppppppppppppp.........ee.....................#",
+    "#.........................ppppppppppppppppppppp.........ee.....................#",
+    "#.........................ppppppppppppppppppppp.........ee.....................#",
+    "#.........................ppppppppppppppppppppp.........ee.....................#",
+    "#.ppppppppppppppppppppppppppppppppppppppppppppp.........ee.....................#",
+    "#.ppppppppppppppppppppppppppppppppppppppppppppp.........ee.....................#",
+    "#.................................ppp...................ee.....................#",
+    "#.................................ppp...................ee.....................#",
+    "#.................................ppp...................ee.....................#",
+    "#.................................ppp...................ee.....................#",
+    "#.................................ppp...................ee.....................#",
+    "#..eeeeeeeeeeeeeeeeeeeeeeeeeeeeeeeppp..........eeeeeeeeeeeeeeeeeeeeeeeeeeeeeeee#",
+    "#..eeeeeeeeeeeeeeeeeeeeeeeeeeeeeeeppp..........eeeeeeeeeeeeeeeeeeeeeeeeeeeeeeee#",
+    "#.................................ppp...................ee.....................#",
+    "#.................................ppp...................ee.....................#",
+    "#.................................ppp...................ee.....................#",
+    "#.................................ppp...................ee.....................#",
+    "#.................................ppp...................ee.....................#",
+    "#.................................ppp...................ee.....................#",
+    "#.................................ppp...................ee.....................#",
+    "#.................................ppp...................ee.....................#",
+    "#.................................ppp...................ee...pp................#",
+    "#.kkkkkkkkkkkkkkkkkkkkkkkkkkkkkkkkpppkkkkkkkkkkkkkkkkkkkeekkkkkkkkkkkkkkkkkkkkk#",
+    "#.kkkkkkkkkkkkkkkkkkkkkkkkkkkkkkkkpppkkkkkkkkkkkkkkkkkkkeekkkkkkkkkkkkkkkkkkkkk#",
+    "##################################ppp###################ee######################"
   ],
   "objekte": [
     {
@@ -197,80 +202,16 @@
       "feld": [61, 39]
     },
     {
-      "moebel": "wds6Kegelbaum",
-      "feld": [30, 15]
-    },
-    {
       "moebel": "wds6PinieB",
       "feld": [19, 8]
-    },
-    {
-      "moebel": "wds6Pinie",
-      "feld": [25, 51]
-    },
-    {
-      "moebel": "wds6Pinie",
-      "feld": [32, 20]
-    },
-    {
-      "moebel": "wds6Pinie",
-      "feld": [22, 33]
-    },
-    {
-      "moebel": "wds6PinieB",
-      "feld": [33, 7]
-    },
-    {
-      "moebel": "wds6Pinie",
-      "feld": [22, 50]
-    },
-    {
-      "moebel": "wds6PinieB",
-      "feld": [28, 20]
-    },
-    {
-      "moebel": "wds6Kegelbaum",
-      "feld": [5, 35]
-    },
-    {
-      "moebel": "wds6Kegelbaum",
-      "feld": [18, 35]
-    },
-    {
-      "moebel": "wds6PinieB",
-      "feld": [63, 11]
-    },
-    {
-      "moebel": "wds6Pinie",
-      "feld": [27, 12]
     },
     {
       "moebel": "wds6PinieB",
       "feld": [7, 8]
     },
     {
-      "moebel": "wds6Pinie",
-      "feld": [40, 18]
-    },
-    {
-      "moebel": "wds6PinieB",
-      "feld": [66, 14]
-    },
-    {
-      "moebel": "wds6PinieB",
-      "feld": [38, 7]
-    },
-    {
-      "moebel": "wds6PinieB",
-      "feld": [63, 24]
-    },
-    {
       "moebel": "wds6PinieB",
       "feld": [22, 9]
-    },
-    {
-      "moebel": "wds6Kegelbaum",
-      "feld": [41, 7]
     },
     {
       "moebel": "wds6Pinie",
@@ -282,55 +223,11 @@
     },
     {
       "moebel": "wds6Kegelbaum",
-      "feld": [37, 12]
-    },
-    {
-      "moebel": "wds6Kegelbaum",
       "feld": [16, 8]
-    },
-    {
-      "moebel": "wds6Pinie",
-      "feld": [64, 7]
     },
     {
       "moebel": "wds6Kegelbaum",
       "feld": [41, 44]
-    },
-    {
-      "moebel": "wds6PinieB",
-      "feld": [42, 22]
-    },
-    {
-      "moebel": "wds6PinieB",
-      "feld": [35, 20]
-    },
-    {
-      "moebel": "wds6Pinie",
-      "feld": [28, 7]
-    },
-    {
-      "moebel": "wds6Kegelbaum",
-      "feld": [4, 30]
-    },
-    {
-      "moebel": "wds6Pinie",
-      "feld": [10, 34]
-    },
-    {
-      "moebel": "wds6PinieB",
-      "feld": [63, 16]
-    },
-    {
-      "moebel": "wds6PinieB",
-      "feld": [61, 50]
-    },
-    {
-      "moebel": "wds6PinieB",
-      "feld": [19, 49]
-    },
-    {
-      "moebel": "wds6PinieB",
-      "feld": [34, 15]
     },
     {
       "moebel": "wds6Wacholder",
@@ -341,49 +238,85 @@
       "feld": [59, 7]
     },
     {
-      "moebel": "scFelsKlein",
-      "feld": [44, 13]
-    },
-    {
-      "moebel": "scFelsKlein",
-      "feld": [40, 12]
-    },
-    {
       "moebel": "wds6Wacholder",
       "feld": [50, 7]
     },
     {
-      "moebel": "scFelsKlein",
-      "feld": [66, 19]
+      "moebel": "sc8Haus",
+      "feld": [62, 7]
+    },
+    {
+      "moebel": "sc8ChaletBraun",
+      "feld": [28, 6]
+    },
+    {
+      "moebel": "sc8HofBreit",
+      "feld": [19, 48]
+    },
+    {
+      "moebel": "sc7Huette",
+      "feld": [60, 24]
+    },
+    {
+      "moebel": "sc8Stadel",
+      "feld": [68, 36]
+    },
+    {
+      "moebel": "sc7Huette",
+      "feld": [58, 49]
+    },
+    {
+      "moebel": "sc8HofBreit",
+      "feld": [68, 48]
+    },
+    {
+      "moebel": "sc8Hof",
+      "feld": [38, 6]
+    },
+    {
+      "moebel": "sc8Stall",
+      "feld": [16, 31]
+    },
+    {
+      "moebel": "sc8HofBreit",
+      "feld": [44, 48]
+    },
+    {
+      "moebel": "sc8Stall",
+      "feld": [2, 31]
+    },
+    {
+      "moebel": "sc8Stall",
+      "feld": [69, 24]
     }
   ],
   "ausloeser": [
     {
       "name": "start",
-      "feld": [35, 54],
+      "feld": [35, 58],
       "eigenschaften": {
         "richtung": "oben"
       }
     },
     {
       "name": "wegDesert",
-      "feld": [34, 55]
+      "feld": [34, 59]
     },
     {
       "name": "wegDesert",
-      "feld": [35, 55]
+      "feld": [35, 59]
     },
     {
       "name": "wegDesert",
-      "feld": [36, 55]
+      "feld": [36, 59]
     },
     {
       "name": "wegCrossroads",
-      "feld": [56, 55]
+      "feld": [56, 59]
     },
     {
       "name": "wegCrossroads",
-      "feld": [57, 55]
+      "feld": [57, 59]
     },
     {
       "name": "huetteTuer",
@@ -410,6 +343,90 @@
   ],
   "belebung": [
     {
+      "name": "seilbahnwaerter",
+      "typ": "statist",
+      "feld": [56, 25],
+      "eigenschaften": {
+        "von": "56,25",
+        "bis": "56,25",
+        "tun": "prüft das Seil",
+        "wann": "tag",
+        "sagt": "statist.summitCity.aussen.seilbahnwaerter"
+      }
+    },
+    {
+      "name": "kinder",
+      "typ": "statist",
+      "feld": [38, 32],
+      "eigenschaften": {
+        "von": "38,32",
+        "bis": "38,32",
+        "tun": "klettern am Brunnen",
+        "wann": "tag",
+        "sagt": "statist.summitCity.aussen.kinder"
+      }
+    },
+    {
+      "name": "marktfrau",
+      "typ": "statist",
+      "feld": [30, 35],
+      "eigenschaften": {
+        "von": "30,35",
+        "bis": "30,35",
+        "tun": "baut ihren Stand für das Fest auf",
+        "wann": "tag",
+        "sagt": "statist.summitCity.aussen.marktfrau"
+      }
+    },
+    {
+      "name": "brieftraeger",
+      "typ": "statist",
+      "feld": [66, 24],
+      "eigenschaften": {
+        "von": "66,24",
+        "bis": "56,24",
+        "tun": "bringt Pakete zur Post",
+        "wann": "tag",
+        "sagt": "statist.summitCity.aussen.brieftraeger"
+      }
+    },
+    {
+      "name": "bergfuehrerin",
+      "typ": "statist",
+      "feld": [52, 30],
+      "eigenschaften": {
+        "von": "52,30",
+        "bis": "52,30",
+        "tun": "erklärt Touristen den Weg zum Gipfel",
+        "wann": "tag",
+        "sagt": "statist.summitCity.aussen.bergfuehrerin"
+      }
+    },
+    {
+      "name": "rentner",
+      "typ": "statist",
+      "feld": [40, 38],
+      "eigenschaften": {
+        "von": "40,38",
+        "bis": "40,38",
+        "tun": "sitzt auf der Bank am Platz",
+        "wann": "tag",
+        "sagt": "statist.summitCity.aussen.rentner"
+      }
+    },
+    {
+      "name": "festwirt",
+      "typ": "statist",
+      "feld": [43, 30],
+      "eigenschaften": {
+        "von": "43,30",
+        "bis": "43,30",
+        "tun": "hängt Lampions auf",
+        "wann": "abend",
+        "sagt": "statist.summitCity.aussen.festwirt"
+      }
+    },
+    {
       "name": "wanderer",
       "typ": "statist",
       "feld": [35, 45],
@@ -421,17 +438,6 @@
       }
     },
     {
-      "name": "seilbahnwaerter",
-      "typ": "statist",
-      "feld": [56, 23],
-      "eigenschaften": {
-        "von": "56,23",
-        "bis": "56,23",
-        "tun": "prüft das Seil",
-        "wann": "tag"
-      }
-    },
-    {
       "name": "holzhacker",
       "typ": "statist",
       "feld": [14, 50],
@@ -439,6 +445,52 @@
         "von": "14,50",
         "bis": "14,50",
         "tun": "hackt Holz",
+        "wann": "tag"
+      }
+    },
+    {
+      "name": "touristen",
+      "typ": "statist",
+      "feld": [60, 36],
+      "eigenschaften": {
+        "von": "60,36",
+        "bis": "60,36",
+        "tun": "fotografieren die Berge",
+        "wann": "tag"
+      }
+    },
+    {
+      "name": "blitzspieler",
+      "typ": "statist",
+      "feld": [31, 33],
+      "eigenschaften": {
+        "von": "31,33",
+        "bis": "31,33",
+        "tun": "baut am Platz ein Brett für das Fest auf",
+        "wann": "tag",
+        "sagt": "statist.summitCity.aussen.blitzspieler",
+        "zeigt": "schirowLh3"
+      }
+    },
+    {
+      "name": "gaertnerin",
+      "typ": "statist",
+      "feld": [12, 28],
+      "eigenschaften": {
+        "von": "12,28",
+        "bis": "12,28",
+        "tun": "gießt die Blumenkästen",
+        "wann": "morgen"
+      }
+    },
+    {
+      "name": "radfahrer",
+      "typ": "statist",
+      "feld": [60, 24],
+      "eigenschaften": {
+        "von": "60,24",
+        "bis": "74,24",
+        "tun": "schiebt sein Rad den Berg hinauf",
         "wann": "tag"
       }
     },
@@ -463,14 +515,43 @@
       }
     },
     {
-      "name": "kinder",
-      "typ": "statist",
-      "feld": [38, 32],
+      "name": "kuh",
+      "typ": "tier",
+      "feld": [72, 36],
       "eigenschaften": {
-        "von": "38,32",
-        "bis": "38,32",
-        "tun": "klettern am Brunnen",
-        "wann": "tag"
+        "von": "72,36",
+        "bis": "72,36",
+        "verhalten": "sitzen"
+      }
+    },
+    {
+      "name": "hund",
+      "typ": "tier",
+      "feld": [36, 35],
+      "eigenschaften": {
+        "von": "36,35",
+        "bis": "36,35",
+        "verhalten": "folgen"
+      }
+    },
+    {
+      "name": "adler",
+      "typ": "tier",
+      "feld": [37, 10],
+      "eigenschaften": {
+        "von": "37,10",
+        "bis": "53,10",
+        "verhalten": "fliegen"
+      }
+    },
+    {
+      "name": "katze",
+      "typ": "tier",
+      "feld": [10, 26],
+      "eigenschaften": {
+        "von": "10,26",
+        "bis": "10,26",
+        "verhalten": "schlafen"
       }
     }
   ]

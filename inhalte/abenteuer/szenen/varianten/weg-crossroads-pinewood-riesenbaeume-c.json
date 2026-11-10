@@ -8,7 +8,8 @@
   "wandart": "hecke",
   "boeden": {
     "e": "erde",
-    "h": "dielen"
+    "h": "dielen",
+    "k": "schotter"
   },
   "bruecken": ["h"],
   "raster": [
@@ -100,14 +101,14 @@
     "#.........................ee...........#",
     "#.........................ee...........#",
     "#.........................ee...........#",
-    "#.........................ee...........#",
-    "#.........................ee...........#",
-    "#.........................ee...........#",
-    "#.........................ee...........#",
-    "#.........................ee...........#",
-    "#.........................ee...........#",
-    "#.........................ee...........#",
-    "#.........................ee...........#",
+    "#.........k.k.k.k.........ee...........#",
+    "#........k.k.k.k..........ee...........#",
+    "#.........k.k.k.k.........ee...........#",
+    "#........k.k.k.k..........ee...........#",
+    "#.........k.k.k.k.........ee...........#",
+    "#........k.k.k.k..........ee...........#",
+    "#.........k.k.k.k.........ee...........#",
+    "#........k.k.k.k..........ee...........#",
     "#.........................ee...........#",
     "#.........................ee...........#",
     "~~~~~~~~~~~~~~~~~~~~~~~~~~hh~~~~~~~~~~~~",
@@ -532,31 +533,11 @@
     },
     {
       "moebel": "pw7TanneHoch",
-      "feld": [12, 85]
-    },
-    {
-      "moebel": "wg4Busch",
-      "feld": [18, 86]
-    },
-    {
-      "moebel": "pw7TanneHoch",
       "feld": [34, 86]
     },
     {
       "moebel": "pw7Tanne",
       "feld": [37, 85]
-    },
-    {
-      "moebel": "pw7TanneHoch",
-      "feld": [8, 90]
-    },
-    {
-      "moebel": "wg4Busch",
-      "feld": [10, 90]
-    },
-    {
-      "moebel": "pw7TanneHoch",
-      "feld": [17, 89]
     },
     {
       "moebel": "pw7Tanne",
@@ -575,10 +556,6 @@
       "feld": [32, 89]
     },
     {
-      "moebel": "pw7Tanne",
-      "feld": [15, 93]
-    },
-    {
       "moebel": "pw7TanneHoch",
       "feld": [36, 92]
     },
@@ -589,18 +566,6 @@
     {
       "moebel": "pw7TanneHoch",
       "feld": [4, 94]
-    },
-    {
-      "moebel": "pw7Tanne",
-      "feld": [8, 94]
-    },
-    {
-      "moebel": "pw7TanneHoch",
-      "feld": [10, 94]
-    },
-    {
-      "moebel": "wg4Busch",
-      "feld": [17, 96]
     },
     {
       "moebel": "pw7TanneHoch",
@@ -1007,16 +972,8 @@
       "feld": [14, 81]
     },
     {
-      "moebel": "wg4Pilze",
-      "feld": [16, 86]
-    },
-    {
       "moebel": "wg4Gras",
       "feld": [20, 86]
-    },
-    {
-      "moebel": "wg4Farn",
-      "feld": [14, 90]
     },
     {
       "moebel": "wg4Pilze",
@@ -1145,6 +1102,26 @@
     {
       "moebel": "wg4Gras",
       "feld": [34, 125]
+    },
+    {
+      "moebel": "n6Tribuene",
+      "feld": [11, 85]
+    },
+    {
+      "moebel": "cr8FahneWeiss",
+      "feld": [8, 87]
+    },
+    {
+      "moebel": "cr8FahneWeiss",
+      "feld": [8, 93]
+    },
+    {
+      "moebel": "cr8FahneSchwarz",
+      "feld": [17, 87]
+    },
+    {
+      "moebel": "cr8FahneSchwarz",
+      "feld": [17, 93]
     }
   ],
   "ausloeser": [
@@ -1181,21 +1158,109 @@
     {
       "name": "libellen",
       "typ": "tier",
-      "feld": [8, 97],
+      "feld": [20, 92],
       "eigenschaften": {
-        "von": "4,97",
-        "bis": "14,97",
+        "von": "10,90",
+        "bis": "30,94",
         "verhalten": "fliegen"
       }
     },
     {
       "name": "specht",
       "typ": "tier",
-      "feld": [30, 60],
+      "feld": [10, 40],
       "eigenschaften": {
-        "von": "30,60",
-        "bis": "30,60",
-        "verhalten": "sitzen"
+        "von": "5,30",
+        "bis": "15,50",
+        "verhalten": "fliegen"
+      }
+    },
+    {
+      "name": "eichhoernchen",
+      "typ": "tier",
+      "feld": [22, 60],
+      "eigenschaften": {
+        "von": "18,55",
+        "bis": "26,66",
+        "verhalten": "flitzen"
+      }
+    },
+    {
+      "name": "streifenhoernchen",
+      "typ": "tier",
+      "feld": [14, 100],
+      "eigenschaften": {
+        "von": "10,98",
+        "bis": "18,104",
+        "verhalten": "flitzen"
+      }
+    },
+    {
+      "name": "eule",
+      "typ": "tier",
+      "feld": [6, 20],
+      "eigenschaften": {
+        "von": "6,20",
+        "bis": "6,20",
+        "verhalten": "schlafen"
+      }
+    },
+    {
+      "name": "reh",
+      "typ": "tier",
+      "feld": [32, 112],
+      "eigenschaften": {
+        "von": "28,108",
+        "bis": "36,118",
+        "verhalten": "ausweichen"
+      }
+    },
+    {
+      "name": "pfadfinderin",
+      "typ": "statist",
+      "feld": [16, 30],
+      "eigenschaften": {
+        "tun": "übt mit einer weißen Weste Schritte vorwärts",
+        "wann": "tag",
+        "von": "15,28",
+        "bis": "18,34",
+        "sagt": "statist.wegCrossroadsPinewood.riesenbaeume.pfadfinderin"
+      }
+    },
+    {
+      "name": "eichhoernchenjunge",
+      "typ": "statist",
+      "feld": [22, 62],
+      "eigenschaften": {
+        "tun": "starrt in die Baumkrone",
+        "wann": "tag",
+        "von": "20,60",
+        "bis": "24,64",
+        "sagt": "statist.wegCrossroadsPinewood.riesenbaeume.eichhoernchenjunge"
+      }
+    },
+    {
+      "name": "betreuerin",
+      "typ": "statist",
+      "feld": [28, 100],
+      "eigenschaften": {
+        "tun": "zählt Westen in einem Wäschekorb",
+        "wann": "tag",
+        "von": "26,98",
+        "bis": "30,104",
+        "sagt": "statist.wegCrossroadsPinewood.riesenbaeume.betreuerin"
+      }
+    },
+    {
+      "name": "fotografin",
+      "typ": "statist",
+      "feld": [10, 120],
+      "eigenschaften": {
+        "tun": "legt sich auf den Rücken, um den Baum aufs Bild zu bekommen",
+        "wann": "tag",
+        "von": "8,118",
+        "bis": "14,124",
+        "sagt": "statist.wegCrossroadsPinewood.riesenbaeume.fotografin"
       }
     }
   ],

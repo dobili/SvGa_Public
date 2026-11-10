@@ -200,6 +200,61 @@
       "blick": "unten",
       "zustand": "gebraucht",
       "stil": "modern"
+    },
+    "sc8PlakatDiplomtag": {
+      "quelle": "spiel/eigene/plakat_diplomtag.png",
+      "breite": 32,
+      "hoehe": 48,
+      "kollision": true,
+      "art": "schild",
+      "zustand": "gebraucht",
+      "stil": "natur"
+    },
+    "sc8Fahnenmast": {
+      "quelle": "spiel/eigene/fahnenmast_schule.png",
+      "breite": 48,
+      "hoehe": 144,
+      "kollision": true,
+      "art": "mast",
+      "zustand": "gebraucht",
+      "stil": "natur",
+      "maske": ["...", "...", "...", "...", "...", "...", "...", ".#.", "###"]
+    },
+    "sc8FinkenzeichenSchule": {
+      "quelle": "spiel/eigene/finkenzeichen_kreide.png",
+      "breite": 16,
+      "hoehe": 16,
+      "kollision": false,
+      "art": "deko",
+      "zustand": "gebraucht",
+      "stil": "natur"
+    },
+    "sc8TribueneLinks": {
+      "quelle": "modern-exteriors/Modern_Exteriors_16x16/ME_Theme_Sorter_16x16/13_School_Singles_16x16/ME_Singles_School_16x16_Stands_2.png",
+      "breite": 32,
+      "hoehe": 64,
+      "kollision": true,
+      "art": "tribuene",
+      "zustand": "gebraucht",
+      "stil": "klassisch"
+    },
+    "sc8TribueneMitte": {
+      "quelle": "modern-exteriors/Modern_Exteriors_16x16/ME_Theme_Sorter_16x16/13_School_Singles_16x16/ME_Singles_School_16x16_Stands_1.png",
+      "breite": 64,
+      "hoehe": 48,
+      "kollision": true,
+      "art": "tribuene",
+      "zustand": "gebraucht",
+      "stil": "klassisch"
+    },
+    "sc8TribueneRechts": {
+      "quelle": "modern-exteriors/Modern_Exteriors_16x16/ME_Theme_Sorter_16x16/13_School_Singles_16x16/ME_Singles_School_16x16_Stands_3.png",
+      "breite": 32,
+      "hoehe": 64,
+      "kollision": true,
+      "art": "tribuene",
+      "zustand": "gebraucht",
+      "stil": "klassisch"
     }
   }
 }

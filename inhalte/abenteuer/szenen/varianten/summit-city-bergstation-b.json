@@ -97,12 +97,25 @@
     {
       "name": "skifahrerin",
       "typ": "statist",
-      "feld": [9, 9],
+      "feld": [10, 8],
       "eigenschaften": {
-        "von": "9,9",
-        "bis": "9,9",
-        "tun": "wartet auf die Gondel",
-        "wann": "tag"
+        "von": "10,8",
+        "bis": "10,8",
+        "tun": "trägt ihre Ski hinauf zum Gletscher",
+        "wann": "tag",
+        "sagt": "statist.summitCity.bergstation.skifahrerin"
+      }
+    },
+    {
+      "name": "seilbahnfan",
+      "typ": "statist",
+      "feld": [14, 6],
+      "eigenschaften": {
+        "von": "14,6",
+        "bis": "14,6",
+        "tun": "schaut durch das Fenster auf das Seil",
+        "wann": "tag",
+        "sagt": "statist.summitCity.bergstation.seilbahnfan"
       }
     }
   ],

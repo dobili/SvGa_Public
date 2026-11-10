@@ -1863,12 +1863,60 @@
     {
       "name": "pfadfinder",
       "typ": "statist",
-      "feld": [24, 9],
+      "feld": [23, 8],
       "eigenschaften": {
-        "von": "24,9",
+        "von": "23,8",
         "bis": "27,10",
         "tun": "drei Pfadfinderkinder suchen Kreidepfeile",
         "wann": "tag"
+      }
+    },
+    {
+      "name": "jaegerMitKamera",
+      "typ": "statist",
+      "feld": [88, 6],
+      "eigenschaften": {
+        "tun": "wartet mit der Kamera auf den Hirsch",
+        "wann": "morgen",
+        "sagt": "statist.wegCedarRiverton.zedernwald.jaegerMitKamera"
+      }
+    },
+    {
+      "name": "wanderpaar",
+      "typ": "statist",
+      "feld": [40, 12],
+      "eigenschaften": {
+        "tun": "streitet freundlich über die Karte",
+        "wann": "tag",
+        "sagt": "statist.wegCedarRiverton.zedernwald.wanderpaar"
+      }
+    },
+    {
+      "name": "vogelstimmenSammlerin",
+      "typ": "statist",
+      "feld": [120, 14],
+      "eigenschaften": {
+        "tun": "nimmt mit einem Mikrofon Vogelstimmen auf",
+        "wann": "morgen",
+        "sagt": "statist.wegCedarRiverton.zedernwald.vogelstimmenSammlerin"
+      }
+    },
+    {
+      "name": "hirsch",
+      "typ": "tier",
+      "feld": [95, 2],
+      "eigenschaften": {
+        "verhalten": "sitzen"
+      }
+    },
+    {
+      "name": "fuchs",
+      "typ": "tier",
+      "feld": [30, 15],
+      "eigenschaften": {
+        "verhalten": "flitzen",
+        "von": "27,15",
+        "bis": "33,15"
       }
     }
   ]

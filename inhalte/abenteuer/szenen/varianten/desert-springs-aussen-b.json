@@ -2,7 +2,7 @@
   "karte": "desertSprings.aussen",
   "datei": "karten/varianten/desert-springs-aussen-b.json",
   "art": "aussen",
-  "beschreibung": "Variante B, schlicht: Motel aus zwei Wohnwagen, Diner in einem großen Wohnwagen, grauer Bahnhof, kleinere Tankstelle weiter östlich, Hof aus Schotter, Wasserturm am Bahnsteig, kaum Kakteen.",
+  "beschreibung": "Variante B, schlicht: Sheriffbüro statt Post, Pumpenhaus am Bahnsteig, Motel aus zwei Wohnwagen, Diner in einem großen Wohnwagen, grauer Bahnhof, kleinere Tankstelle weiter östlich, Hof aus Schotter, Wasserturm am Bahnsteig, kaum Kakteen.",
   "wand": "felsRot",
   "wandart": "sand",
   "boden": "sand",
@@ -13,46 +13,46 @@
     "q": "stein"
   },
   "raster": [
-    "########################################################",
-    "########################################################",
-    "#kkkkkkkkkkkkkkkkkkkkkkkkkkkkkkkkkkkkkkkkkkkkkkkkkkkkkk#",
-    "#kkkkkkkkkkkkkkkkkkkkkkkkkkkkkkkkkkkkkkkkkkkkkkkkkkkkkk#",
-    "#kkkkkkkkkkkkkkkkkkkkkkkkkkkkkkkkkkkkkkkkkkkkkkkkkkkkkk#",
-    "#kkkkkkkkkkkkkkkkkkkkkkkkkkkkkkkkkkkkkkkkkkkkkkkkkkkkkk#",
-    "#.............ppppppppppppppppppppppp..................#",
-    "#.............ppppppppppppppppppppppp..................#",
-    "#......................................................#",
-    "#......................................................#",
-    "#......................................................#",
-    "#......................................................#",
-    "#......................................................#",
-    "#......................................................#",
-    "#......................................................#",
-    "#......................................................#",
-    "#pppppppppppppppppppppppppppppppppppppppppppppppppppppp#",
-    "#pppppppppppppppppppppppppppppppppppppppppppppppppppppp#",
-    "ssssssssssssssssssssssssssssssssssssssssssssss.........#",
-    "ssssssssssssssssssssssssssssssssssssssssssssss.........#",
-    "ssssssssssssssssssssssssssssssssssssssssssssss.........#",
-    "#ppppppppppppppppppppppppppppppppppppppppppsss.........#",
-    "#..........................................sss.........#",
-    "#..........................................sss.........#",
-    "#..........................................sss.........#",
-    "#..........................................sss.........#",
-    "#..........................................sss.........#",
-    "#..........................................sss.........#",
-    "#..........................................sss.........#",
-    "#..kkkkkkkkkkkkkkkkkkkkkkkkkkkkkkkkkkkkkkkkkkk.........#",
-    "#..kkkkkkkkkkkkkkkkkkkkkkkkkkkkkkkkkkkkkkkkkkk.........#",
-    "#..kkkkkkkkkkkkkkkkkkkkkkkkkkkkkkkkkkkkkkkkkkk.........#",
-    "#..kkkkkkkkkkkkkkkkkkkkkkkkkkkkkkkkkkkkkkkkkkkkkkkkkkkkk",
-    "#..kkkkkkkkkkkkkkkkkkkkkkkkkkkkkkkkkkkkkkkkkkkkkkkkkkkkk",
-    "#......................................................#",
-    "#......................................................#",
-    "#......................................................#",
-    "########################################################",
-    "########################################################",
-    "########################################################"
+    "############################################################",
+    "############################################################",
+    "#kkkkkkkkkkkkkkkkkkkkkkkkkkkkkkkkkkkkkkkkkkkkkkkkkkkkkkkkkk#",
+    "#kkkkkkkkkkkkkkkkkkkkkkkkkkkkkkkkkkkkkkkkkkkkkkkkkkkkkkkkkk#",
+    "#kkkkkkkkkkkkkkkkkkkkkkkkkkkkkkkkkkkkkkkkkkkkkkkkkkkkkkkkkk#",
+    "#kkkkkkkkkkkkkkkkkkkkkkkkkkkkkkkkkkkkkkkkkkkkkkkkkkkkkkkkkk#",
+    "#.............ppppppppppppppppppppppp......................#",
+    "#.............ppppppppppppppppppppppp......................#",
+    "#..........................................................#",
+    "#..........................................................#",
+    "#..........................................................#",
+    "#..........................................................#",
+    "#..........................................................#",
+    "#..........................................................#",
+    "#..........................................................#",
+    "#..........................................................#",
+    "#pppppppppppppppppppppppppppppppppppppppppppppppppppppppppp#",
+    "#pppppppppppppppppppppppppppppppppppppppppppppppppppppppppp#",
+    "ssssssssssssssssssssssssssssssssssssssssssssss.............#",
+    "ssssssssssssssssssssssssssssssssssssssssssssss.............#",
+    "ssssssssssssssssssssssssssssssssssssssssssssss.............#",
+    "#ppppppppppppppppppppppppppppppppppppppppppsss.............#",
+    "#..........................................sss.............#",
+    "#..........................................sss.............#",
+    "#..........................................sss.............#",
+    "#..........................................sss.............#",
+    "#..........................................sss.............#",
+    "#..........................................sss.............#",
+    "#..........................................sss.............#",
+    "#..kkkkkkkkkkkkkkkkkkkkkkkkkkkkkkkkkkkkkkkkkkk.............#",
+    "#..kkkkkkkkkkkkkkkkkkkkkkkkkkkkkkkkkkkkkkkkkkk.............#",
+    "#..kkkkkkkkkkkkkkkkkkkkkkkkkkkkkkkkkkkkkkkkkkkppppppppppppp#",
+    "#..kkkkkkkkkkkkkkkkkkkkkkkkkkkkkkkkkkkkkkkkkkkkkkkkkkkkkkkkk",
+    "#..kkkkkkkkkkkkkkkkkkkkkkkkkkkkkkkkkkkkkkkkkkkkkkkkkkkkkkkkk",
+    "#..........................................................#",
+    "#..........................................................#",
+    "#..........................................................#",
+    "############################################################",
+    "############################################################",
+    "############################################################"
   ],
   "objekte": [
     {
@@ -326,6 +326,26 @@
       "bauteil_ok": true
     },
     {
+      "moebel": "cc4Gleis",
+      "feld": [55, 3],
+      "bauteil_ok": true
+    },
+    {
+      "moebel": "cc4Gleis",
+      "feld": [56, 3],
+      "bauteil_ok": true
+    },
+    {
+      "moebel": "cc4Gleis",
+      "feld": [57, 3],
+      "bauteil_ok": true
+    },
+    {
+      "moebel": "cc4Gleis",
+      "feld": [58, 3],
+      "bauteil_ok": true
+    },
+    {
       "moebel": "ds6BahnhofAlt",
       "feld": [20, 9],
       "id": "bahnhof"
@@ -382,6 +402,34 @@
       "feld": [25, 28]
     },
     {
+      "moebel": "ds8Pumpenhaus",
+      "feld": [13, 8]
+    },
+    {
+      "moebel": "ds8Containerhaus",
+      "feld": [37, 11]
+    },
+    {
+      "moebel": "ds8Containerhaus",
+      "feld": [54, 11]
+    },
+    {
+      "moebel": "ds8WohnwagenKlein",
+      "feld": [26, 23]
+    },
+    {
+      "moebel": "ds8WohnwagenMittel",
+      "feld": [32, 23]
+    },
+    {
+      "moebel": "ds8Sheriff",
+      "feld": [46, 18]
+    },
+    {
+      "moebel": "ds8Huette",
+      "feld": [53, 25]
+    },
+    {
       "moebel": "mf4Laterne",
       "feld": [12, 13],
       "vorn": true
@@ -407,10 +455,6 @@
     },
     {
       "moebel": "dd6KaktusKlein",
-      "feld": [48, 23]
-    },
-    {
-      "moebel": "dd6KaktusKlein",
       "feld": [40, 35]
     },
     {
@@ -428,31 +472,23 @@
     {
       "moebel": "wg4FelsgruppeB",
       "feld": [33, 35]
-    },
-    {
-      "moebel": "wg4Felsgruppe",
-      "feld": [47, 28]
-    },
-    {
-      "moebel": "wg4FelsgruppeB",
-      "feld": [51, 29]
     }
   ],
   "ausloeser": [
     {
       "name": "start",
-      "feld": [53, 32],
+      "feld": [57, 32],
       "eigenschaften": {
         "richtung": "links"
       }
     },
     {
       "name": "canyon",
-      "feld": [55, 32]
+      "feld": [59, 32]
     },
     {
       "name": "canyon",
-      "feld": [55, 33]
+      "feld": [59, 33]
     },
     {
       "name": "highway",
@@ -495,16 +531,6 @@
   ],
   "belebung": [
     {
-      "name": "hund",
-      "typ": "tier",
-      "feld": [10, 17],
-      "eigenschaften": {
-        "von": "10,17",
-        "bis": "10,17",
-        "verhalten": "schlafen"
-      }
-    },
-    {
       "name": "touristen",
       "typ": "statist",
       "feld": [16, 7],
@@ -512,7 +538,8 @@
         "von": "16,7",
         "bis": "20,7",
         "tun": "fotografieren den alten Bahnhof",
-        "wann": "tag"
+        "wann": "tag",
+        "sagt": "statist.desertSprings.aussen.touristen"
       }
     },
     {
@@ -523,27 +550,185 @@
         "von": "3,21",
         "bis": "3,21",
         "tun": "wartet auf den Bus",
+        "wann": "tag",
+        "sagt": "statist.desertSprings.aussen.busgast"
+      }
+    },
+    {
+      "name": "postbotin",
+      "typ": "statist",
+      "feld": [50, 31],
+      "eigenschaften": {
+        "von": "50,31",
+        "bis": "42,31",
+        "tun": "trägt Pakete zum Postamt",
+        "wann": "tag",
+        "sagt": "statist.desertSprings.aussen.postbotin"
+      }
+    },
+    {
+      "name": "hilfssheriff",
+      "typ": "statist",
+      "feld": [40, 17],
+      "eigenschaften": {
+        "von": "40,17",
+        "bis": "46,17",
+        "tun": "dreht seine Runde auf dem Gehweg",
+        "wann": "tag",
+        "sagt": "statist.desertSprings.aussen.hilfssheriff"
+      }
+    },
+    {
+      "name": "tankwart",
+      "typ": "statist",
+      "feld": [44, 17],
+      "eigenschaften": {
+        "von": "44,17",
+        "bis": "44,17",
+        "tun": "wischt die Zapfsäule ab",
+        "wann": "tag",
+        "sagt": "statist.desertSprings.aussen.tankwart"
+      }
+    },
+    {
+      "name": "rentnerin",
+      "typ": "statist",
+      "feld": [31, 31],
+      "eigenschaften": {
+        "von": "31,31",
+        "bis": "31,31",
+        "tun": "sitzt mit einer Decke in der Wintersonne",
+        "wann": "tag",
+        "sagt": "statist.desertSprings.aussen.rentnerin"
+      }
+    },
+    {
+      "name": "kind",
+      "typ": "statist",
+      "feld": [28, 30],
+      "eigenschaften": {
+        "von": "28,30",
+        "bis": "34,30",
+        "tun": "kickt eine Blechdose über den Hof",
+        "wann": "tag",
+        "sagt": "statist.desertSprings.aussen.kind"
+      }
+    },
+    {
+      "name": "haendlerin",
+      "typ": "statist",
+      "feld": [25, 17],
+      "eigenschaften": {
+        "von": "25,17",
+        "bis": "25,17",
+        "tun": "fegt den Sand von der Veranda des Antiquariats",
+        "wann": "tag",
+        "sagt": "statist.desertSprings.aussen.haendlerin",
+        "zeigt": "saavedraStellung"
+      }
+    },
+    {
+      "name": "mechaniker",
+      "typ": "statist",
+      "feld": [20, 30],
+      "eigenschaften": {
+        "von": "20,30",
+        "bis": "20,30",
+        "tun": "schraubt an einem alten Pick-up",
         "wann": "tag"
+      }
+    },
+    {
+      "name": "trucker",
+      "typ": "statist",
+      "feld": [12, 17],
+      "eigenschaften": {
+        "von": "12,17",
+        "bis": "12,17",
+        "tun": "trinkt Kaffee vor dem Diner",
+        "wann": "morgen"
+      }
+    },
+    {
+      "name": "motelgast",
+      "typ": "statist",
+      "feld": [8, 30],
+      "eigenschaften": {
+        "von": "8,30",
+        "bis": "8,30",
+        "tun": "sitzt in Jacke vor seinem Zimmer",
+        "wann": "morgen"
+      }
+    },
+    {
+      "name": "wanderin",
+      "typ": "statist",
+      "feld": [55, 33],
+      "eigenschaften": {
+        "von": "55,33",
+        "bis": "49,33",
+        "tun": "kommt staubig aus dem Canyon",
+        "wann": "tag"
+      }
+    },
+    {
+      "name": "hund",
+      "typ": "tier",
+      "feld": [10, 17],
+      "eigenschaften": {
+        "von": "10,17",
+        "bis": "10,17",
+        "verhalten": "schlafen"
       }
     },
     {
       "name": "eidechse",
       "typ": "tier",
-      "feld": [50, 31],
+      "feld": [50, 35],
       "eigenschaften": {
-        "von": "48,31",
-        "bis": "52,31",
+        "von": "50,35",
+        "bis": "54,35",
         "verhalten": "flitzen"
       }
     },
     {
       "name": "geier",
       "typ": "tier",
-      "feld": [28, 10],
+      "feld": [28, 9],
       "eigenschaften": {
-        "von": "20,10",
-        "bis": "36,10",
+        "von": "28,9",
+        "bis": "36,9",
         "verhalten": "fliegen"
+      }
+    },
+    {
+      "name": "roadrunner",
+      "typ": "tier",
+      "feld": [54, 35],
+      "eigenschaften": {
+        "von": "54,35",
+        "bis": "48,35",
+        "verhalten": "flitzen"
+      }
+    },
+    {
+      "name": "katze",
+      "typ": "tier",
+      "feld": [14, 30],
+      "eigenschaften": {
+        "von": "14,30",
+        "bis": "14,30",
+        "verhalten": "sitzen"
+      }
+    },
+    {
+      "name": "huehner",
+      "typ": "tier",
+      "feld": [30, 35],
+      "eigenschaften": {
+        "von": "30,35",
+        "bis": "34,35",
+        "verhalten": "ausweichen"
       }
     }
   ],

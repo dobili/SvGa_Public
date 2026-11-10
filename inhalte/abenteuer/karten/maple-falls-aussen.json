@@ -11,7 +11,7 @@
  "tilewidth": 16,
  "tileheight": 16,
  "nextlayerid": 5,
- "nextobjectid": 209,
+ "nextobjectid": 185,
  "layers": [
   {
    "id": 1,
@@ -2128,12 +2128,12 @@
     4,
     4,
     4,
-    4,
-    4,
-    4,
-    4,
-    4,
-    4,
+    1,
+    1,
+    1,
+    1,
+    1,
+    1,
     1,
     0,
     0,
@@ -2192,12 +2192,12 @@
     4,
     4,
     4,
-    4,
-    4,
-    4,
-    4,
-    4,
-    4,
+    1,
+    1,
+    1,
+    1,
+    1,
+    1,
     1,
     0,
     0,
@@ -2256,12 +2256,12 @@
     4,
     4,
     4,
-    4,
-    4,
-    4,
-    4,
-    4,
-    4,
+    1,
+    1,
+    1,
+    1,
+    1,
+    1,
     1,
     0,
     0,
@@ -2320,12 +2320,12 @@
     4,
     4,
     4,
-    4,
-    4,
-    4,
-    4,
-    4,
-    4,
+    1,
+    1,
+    1,
+    1,
+    1,
+    1,
     1,
     0,
     0,
@@ -2384,12 +2384,12 @@
     4,
     4,
     4,
-    4,
-    4,
-    4,
-    4,
-    4,
-    4,
+    1,
+    1,
+    1,
+    1,
+    1,
+    1,
     1,
     0,
     0,
@@ -2448,12 +2448,12 @@
     4,
     4,
     4,
-    4,
-    4,
-    4,
-    4,
-    4,
-    4,
+    1,
+    1,
+    1,
+    1,
+    1,
+    1,
     1,
     0,
     0,
@@ -2512,12 +2512,12 @@
     4,
     4,
     4,
-    4,
-    4,
-    4,
-    4,
-    4,
-    4,
+    1,
+    1,
+    1,
+    1,
+    1,
+    1,
     1,
     0,
     0,
@@ -2576,12 +2576,12 @@
     4,
     4,
     4,
-    4,
-    4,
-    4,
-    4,
-    4,
-    4,
+    1,
+    1,
+    1,
+    1,
+    1,
+    1,
     1,
     0,
     0,
@@ -8436,6 +8436,16 @@
      "visible": true,
      "properties": [
       {
+       "name": "tun",
+       "type": "string",
+       "value": "trägt Briefe aus"
+      },
+      {
+       "name": "wann",
+       "type": "string",
+       "value": "morgen"
+      },
+      {
        "name": "von",
        "type": "string",
        "value": "6,24"
@@ -8446,14 +8456,9 @@
        "value": "30,24"
       },
       {
-       "name": "tun",
+       "name": "sagt",
        "type": "string",
-       "value": "trägt Briefe aus"
-      },
-      {
-       "name": "wann",
-       "type": "string",
-       "value": "morgen"
+       "value": "statist.mapleFalls.aussen.brieftraegerin"
       }
      ]
     },
@@ -8469,6 +8474,16 @@
      "visible": true,
      "properties": [
       {
+       "name": "tun",
+       "type": "string",
+       "value": "harkt Laub im Garten"
+      },
+      {
+       "name": "wann",
+       "type": "string",
+       "value": "tag"
+      },
+      {
        "name": "von",
        "type": "string",
        "value": "23,9"
@@ -8479,14 +8494,9 @@
        "value": "25,9"
       },
       {
-       "name": "tun",
+       "name": "sagt",
        "type": "string",
-       "value": "harkt Laub im Garten"
-      },
-      {
-       "name": "wann",
-       "type": "string",
-       "value": "tag"
+       "value": "statist.mapleFalls.aussen.laubharker"
       }
      ]
     },
@@ -8494,23 +8504,13 @@
      "id": 12,
      "name": "kindMitBall",
      "type": "statist",
-     "x": 880,
+     "x": 848,
      "y": 624,
      "width": 16,
      "height": 16,
      "rotation": 0,
      "visible": true,
      "properties": [
-      {
-       "name": "von",
-       "type": "string",
-       "value": "51,39"
-      },
-      {
-       "name": "bis",
-       "type": "string",
-       "value": "60,39"
-      },
       {
        "name": "tun",
        "type": "string",
@@ -8520,6 +8520,21 @@
        "name": "wann",
        "type": "string",
        "value": "tag"
+      },
+      {
+       "name": "von",
+       "type": "string",
+       "value": "50,39"
+      },
+      {
+       "name": "bis",
+       "type": "string",
+       "value": "55,39"
+      },
+      {
+       "name": "sagt",
+       "type": "string",
+       "value": "statist.mapleFalls.aussen.kindMitBall"
       }
      ]
     },
@@ -8581,6 +8596,344 @@
     },
     {
      "id": 15,
+     "name": "kellnerin",
+     "type": "statist",
+     "x": 576,
+     "y": 384,
+     "width": 16,
+     "height": 16,
+     "rotation": 0,
+     "visible": true,
+     "properties": [
+      {
+       "name": "tun",
+       "type": "string",
+       "value": "macht Pause vor dem Diner"
+      },
+      {
+       "name": "wann",
+       "type": "string",
+       "value": "tag"
+      },
+      {
+       "name": "sagt",
+       "type": "string",
+       "value": "statist.mapleFalls.aussen.kellnerin"
+      }
+     ]
+    },
+    {
+     "id": 16,
+     "name": "rentnerHaltestelle",
+     "type": "statist",
+     "x": 896,
+     "y": 384,
+     "width": 16,
+     "height": 16,
+     "rotation": 0,
+     "visible": true,
+     "properties": [
+      {
+       "name": "tun",
+       "type": "string",
+       "value": "wartet an der Haltestelle auf den Bus"
+      },
+      {
+       "name": "wann",
+       "type": "string",
+       "value": "tag"
+      },
+      {
+       "name": "sagt",
+       "type": "string",
+       "value": "statist.mapleFalls.aussen.rentnerHaltestelle"
+      }
+     ]
+    },
+    {
+     "id": 17,
+     "name": "hundebesitzerin",
+     "type": "statist",
+     "x": 64,
+     "y": 448,
+     "width": 16,
+     "height": 16,
+     "rotation": 0,
+     "visible": true,
+     "properties": [
+      {
+       "name": "tun",
+       "type": "string",
+       "value": "geht mit dem Hund spazieren"
+      },
+      {
+       "name": "wann",
+       "type": "string",
+       "value": "tag"
+      },
+      {
+       "name": "von",
+       "type": "string",
+       "value": "4,28"
+      },
+      {
+       "name": "bis",
+       "type": "string",
+       "value": "46,28"
+      },
+      {
+       "name": "sagt",
+       "type": "string",
+       "value": "statist.mapleFalls.aussen.hundebesitzerin"
+      }
+     ]
+    },
+    {
+     "id": 18,
+     "name": "schuelerin",
+     "type": "statist",
+     "x": 752,
+     "y": 384,
+     "width": 16,
+     "height": 16,
+     "rotation": 0,
+     "visible": true,
+     "properties": [
+      {
+       "name": "tun",
+       "type": "string",
+       "value": "geht von der Schule nach Hause"
+      },
+      {
+       "name": "wann",
+       "type": "string",
+       "value": "tag"
+      },
+      {
+       "name": "von",
+       "type": "string",
+       "value": "47,24"
+      },
+      {
+       "name": "bis",
+       "type": "string",
+       "value": "20,24"
+      },
+      {
+       "name": "sagt",
+       "type": "string",
+       "value": "statist.mapleFalls.aussen.schuelerin"
+      }
+     ]
+    },
+    {
+     "id": 19,
+     "name": "lehrer",
+     "type": "statist",
+     "x": 736,
+     "y": 368,
+     "width": 16,
+     "height": 16,
+     "rotation": 0,
+     "visible": true,
+     "properties": [
+      {
+       "name": "tun",
+       "type": "string",
+       "value": "steht vor der Schule und schaut auf die Uhr"
+      },
+      {
+       "name": "wann",
+       "type": "string",
+       "value": "morgen"
+      },
+      {
+       "name": "sagt",
+       "type": "string",
+       "value": "statist.mapleFalls.aussen.lehrer"
+      }
+     ]
+    },
+    {
+     "id": 20,
+     "name": "kinderKreide",
+     "type": "statist",
+     "x": 880,
+     "y": 528,
+     "width": 16,
+     "height": 16,
+     "rotation": 0,
+     "visible": true,
+     "properties": [
+      {
+       "name": "tun",
+       "type": "string",
+       "value": "malt mit Kreide ein Brett auf den Boden"
+      },
+      {
+       "name": "wann",
+       "type": "string",
+       "value": "tag"
+      },
+      {
+       "name": "sagt",
+       "type": "string",
+       "value": "statist.mapleFalls.aussen.kinderKreide"
+      },
+      {
+       "name": "zeigt",
+       "type": "string",
+       "value": "laskerThomas"
+      }
+     ]
+    },
+    {
+     "id": 21,
+     "name": "joggerin",
+     "type": "statist",
+     "x": 32,
+     "y": 656,
+     "width": 16,
+     "height": 16,
+     "rotation": 0,
+     "visible": true,
+     "properties": [
+      {
+       "name": "tun",
+       "type": "string",
+       "value": "joggt die Gasse hinter den Gärten entlang"
+      },
+      {
+       "name": "wann",
+       "type": "string",
+       "value": "morgen"
+      },
+      {
+       "name": "von",
+       "type": "string",
+       "value": "2,41"
+      },
+      {
+       "name": "bis",
+       "type": "string",
+       "value": "60,41"
+      }
+     ]
+    },
+    {
+     "id": 22,
+     "name": "maler",
+     "type": "statist",
+     "x": 144,
+     "y": 384,
+     "width": 16,
+     "height": 16,
+     "rotation": 0,
+     "visible": true,
+     "properties": [
+      {
+       "name": "tun",
+       "type": "string",
+       "value": "streicht den Gartenzaun"
+      },
+      {
+       "name": "wann",
+       "type": "string",
+       "value": "tag"
+      }
+     ]
+    },
+    {
+     "id": 23,
+     "name": "frauMitEinkauf",
+     "type": "statist",
+     "x": 416,
+     "y": 480,
+     "width": 16,
+     "height": 16,
+     "rotation": 0,
+     "visible": true,
+     "properties": [
+      {
+       "name": "tun",
+       "type": "string",
+       "value": "trägt Einkaufstaschen nach Hause"
+      },
+      {
+       "name": "wann",
+       "type": "string",
+       "value": "tag"
+      },
+      {
+       "name": "von",
+       "type": "string",
+       "value": "26,30"
+      },
+      {
+       "name": "bis",
+       "type": "string",
+       "value": "26,40"
+      }
+     ]
+    },
+    {
+     "id": 24,
+     "name": "hund",
+     "type": "tier",
+     "x": 80,
+     "y": 448,
+     "width": 16,
+     "height": 16,
+     "rotation": 0,
+     "visible": true,
+     "properties": [
+      {
+       "name": "verhalten",
+       "type": "string",
+       "value": "folgen"
+      },
+      {
+       "name": "von",
+       "type": "string",
+       "value": "5,28"
+      },
+      {
+       "name": "bis",
+       "type": "string",
+       "value": "46,28"
+      }
+     ]
+    },
+    {
+     "id": 25,
+     "name": "tauben",
+     "type": "tier",
+     "x": 832,
+     "y": 384,
+     "width": 16,
+     "height": 16,
+     "rotation": 0,
+     "visible": true,
+     "properties": [
+      {
+       "name": "verhalten",
+       "type": "string",
+       "value": "fliegen"
+      },
+      {
+       "name": "von",
+       "type": "string",
+       "value": "50,24"
+      },
+      {
+       "name": "bis",
+       "type": "string",
+       "value": "54,24"
+      }
+     ]
+    },
+    {
+     "id": 26,
      "name": "mfAhorn",
      "type": "moebel",
      "x": 16,
@@ -8603,7 +8956,7 @@
      ]
     },
     {
-     "id": 16,
+     "id": 27,
      "name": "mfBaum",
      "type": "moebel",
      "x": 80,
@@ -8626,7 +8979,7 @@
      ]
     },
     {
-     "id": 17,
+     "id": 28,
      "name": "mfBaum",
      "type": "moebel",
      "x": 192,
@@ -8649,7 +9002,7 @@
      ]
     },
     {
-     "id": 18,
+     "id": 29,
      "name": "mfAhorn",
      "type": "moebel",
      "x": 256,
@@ -8672,7 +9025,7 @@
      ]
     },
     {
-     "id": 19,
+     "id": 30,
      "name": "mfAhorn",
      "type": "moebel",
      "x": 352,
@@ -8695,7 +9048,7 @@
      ]
     },
     {
-     "id": 20,
+     "id": 31,
      "name": "mfBaum",
      "type": "moebel",
      "x": 416,
@@ -8718,30 +9071,7 @@
      ]
     },
     {
-     "id": 21,
-     "name": "mfAhorn",
-     "type": "moebel",
-     "x": 512,
-     "y": 96,
-     "width": 64,
-     "height": 64,
-     "rotation": 0,
-     "visible": true,
-     "properties": [
-      {
-       "name": "tiefe",
-       "type": "int",
-       "value": 152
-      },
-      {
-       "name": "kollision",
-       "type": "bool",
-       "value": true
-      }
-     ]
-    },
-    {
-     "id": 22,
+     "id": 32,
      "name": "mf4Gemuesebeet",
      "type": "moebel",
      "x": 176,
@@ -8764,7 +9094,7 @@
      ]
     },
     {
-     "id": 23,
+     "id": 33,
      "name": "mf4Gartenbank",
      "type": "moebel",
      "x": 224,
@@ -8787,7 +9117,7 @@
      ]
     },
     {
-     "id": 24,
+     "id": 34,
      "name": "mf4Busch",
      "type": "moebel",
      "x": 336,
@@ -8810,7 +9140,7 @@
      ]
     },
     {
-     "id": 25,
+     "id": 35,
      "name": "mf4BuschKlein",
      "type": "moebel",
      "x": 464,
@@ -8833,53 +9163,7 @@
      ]
     },
     {
-     "id": 26,
-     "name": "mf4Busch",
-     "type": "moebel",
-     "x": 544,
-     "y": 160,
-     "width": 32,
-     "height": 32,
-     "rotation": 0,
-     "visible": true,
-     "properties": [
-      {
-       "name": "tiefe",
-       "type": "int",
-       "value": 184
-      },
-      {
-       "name": "kollision",
-       "type": "bool",
-       "value": true
-      }
-     ]
-    },
-    {
-     "id": 27,
-     "name": "mf4BuschKlein",
-     "type": "moebel",
-     "x": 496,
-     "y": 192,
-     "width": 16,
-     "height": 16,
-     "rotation": 0,
-     "visible": true,
-     "properties": [
-      {
-       "name": "tiefe",
-       "type": "int",
-       "value": 200
-      },
-      {
-       "name": "kollision",
-       "type": "bool",
-       "value": true
-      }
-     ]
-    },
-    {
-     "id": 28,
+     "id": 36,
      "name": "mf4VillaOrange",
      "type": "moebel",
      "x": 16,
@@ -8902,7 +9186,7 @@
      ]
     },
     {
-     "id": 29,
+     "id": 37,
      "name": "mf4VillaLila",
      "type": "moebel",
      "x": 176,
@@ -8925,7 +9209,7 @@
      ]
     },
     {
-     "id": 30,
+     "id": 38,
      "name": "mf4VillaRot",
      "type": "moebel",
      "x": 336,
@@ -8948,7 +9232,7 @@
      ]
     },
     {
-     "id": 31,
+     "id": 39,
      "name": "mf4Diner",
      "type": "moebel",
      "x": 496,
@@ -8971,7 +9255,7 @@
      ]
     },
     {
-     "id": 32,
+     "id": 40,
      "name": "mf4SchildDiner",
      "type": "moebel",
      "x": 536,
@@ -8994,7 +9278,7 @@
      ]
     },
     {
-     "id": 33,
+     "id": 41,
      "name": "mf4Schule",
      "type": "moebel",
      "x": 624,
@@ -9017,7 +9301,7 @@
      ]
     },
     {
-     "id": 34,
+     "id": 42,
      "name": "mf4Fahnenmast",
      "type": "moebel",
      "x": 656,
@@ -9040,7 +9324,7 @@
      ]
     },
     {
-     "id": 35,
+     "id": 43,
      "name": "mf4ZaunSeite",
      "type": "moebel",
      "x": 160,
@@ -9054,190 +9338,6 @@
        "name": "tiefe",
        "type": "int",
        "value": 88
-      },
-      {
-       "name": "kollision",
-       "type": "bool",
-       "value": true
-      }
-     ]
-    },
-    {
-     "id": 36,
-     "name": "mf4ZaunSeite",
-     "type": "moebel",
-     "x": 160,
-     "y": 96,
-     "width": 16,
-     "height": 16,
-     "rotation": 0,
-     "visible": true,
-     "properties": [
-      {
-       "name": "tiefe",
-       "type": "int",
-       "value": 104
-      },
-      {
-       "name": "kollision",
-       "type": "bool",
-       "value": true
-      }
-     ]
-    },
-    {
-     "id": 37,
-     "name": "mf4ZaunSeite",
-     "type": "moebel",
-     "x": 160,
-     "y": 112,
-     "width": 16,
-     "height": 16,
-     "rotation": 0,
-     "visible": true,
-     "properties": [
-      {
-       "name": "tiefe",
-       "type": "int",
-       "value": 120
-      },
-      {
-       "name": "kollision",
-       "type": "bool",
-       "value": true
-      }
-     ]
-    },
-    {
-     "id": 38,
-     "name": "mf4ZaunSeite",
-     "type": "moebel",
-     "x": 160,
-     "y": 128,
-     "width": 16,
-     "height": 16,
-     "rotation": 0,
-     "visible": true,
-     "properties": [
-      {
-       "name": "tiefe",
-       "type": "int",
-       "value": 136
-      },
-      {
-       "name": "kollision",
-       "type": "bool",
-       "value": true
-      }
-     ]
-    },
-    {
-     "id": 39,
-     "name": "mf4ZaunSeite",
-     "type": "moebel",
-     "x": 160,
-     "y": 144,
-     "width": 16,
-     "height": 16,
-     "rotation": 0,
-     "visible": true,
-     "properties": [
-      {
-       "name": "tiefe",
-       "type": "int",
-       "value": 152
-      },
-      {
-       "name": "kollision",
-       "type": "bool",
-       "value": true
-      }
-     ]
-    },
-    {
-     "id": 40,
-     "name": "mf4ZaunSeite",
-     "type": "moebel",
-     "x": 160,
-     "y": 160,
-     "width": 16,
-     "height": 16,
-     "rotation": 0,
-     "visible": true,
-     "properties": [
-      {
-       "name": "tiefe",
-       "type": "int",
-       "value": 168
-      },
-      {
-       "name": "kollision",
-       "type": "bool",
-       "value": true
-      }
-     ]
-    },
-    {
-     "id": 41,
-     "name": "mf4ZaunSeite",
-     "type": "moebel",
-     "x": 160,
-     "y": 176,
-     "width": 16,
-     "height": 16,
-     "rotation": 0,
-     "visible": true,
-     "properties": [
-      {
-       "name": "tiefe",
-       "type": "int",
-       "value": 184
-      },
-      {
-       "name": "kollision",
-       "type": "bool",
-       "value": true
-      }
-     ]
-    },
-    {
-     "id": 42,
-     "name": "mf4ZaunSeite",
-     "type": "moebel",
-     "x": 160,
-     "y": 192,
-     "width": 16,
-     "height": 16,
-     "rotation": 0,
-     "visible": true,
-     "properties": [
-      {
-       "name": "tiefe",
-       "type": "int",
-       "value": 200
-      },
-      {
-       "name": "kollision",
-       "type": "bool",
-       "value": true
-      }
-     ]
-    },
-    {
-     "id": 43,
-     "name": "mf4ZaunSeite",
-     "type": "moebel",
-     "x": 160,
-     "y": 208,
-     "width": 16,
-     "height": 16,
-     "rotation": 0,
-     "visible": true,
-     "properties": [
-      {
-       "name": "tiefe",
-       "type": "int",
-       "value": 216
       },
       {
        "name": "kollision",
@@ -9251,7 +9351,7 @@
      "name": "mf4ZaunSeite",
      "type": "moebel",
      "x": 160,
-     "y": 224,
+     "y": 96,
      "width": 16,
      "height": 16,
      "rotation": 0,
@@ -9260,7 +9360,7 @@
       {
        "name": "tiefe",
        "type": "int",
-       "value": 232
+       "value": 104
       },
       {
        "name": "kollision",
@@ -9274,7 +9374,7 @@
      "name": "mf4ZaunSeite",
      "type": "moebel",
      "x": 160,
-     "y": 240,
+     "y": 112,
      "width": 16,
      "height": 16,
      "rotation": 0,
@@ -9283,7 +9383,7 @@
       {
        "name": "tiefe",
        "type": "int",
-       "value": 248
+       "value": 120
       },
       {
        "name": "kollision",
@@ -9297,7 +9397,7 @@
      "name": "mf4ZaunSeite",
      "type": "moebel",
      "x": 160,
-     "y": 256,
+     "y": 128,
      "width": 16,
      "height": 16,
      "rotation": 0,
@@ -9306,7 +9406,7 @@
       {
        "name": "tiefe",
        "type": "int",
-       "value": 264
+       "value": 136
       },
       {
        "name": "kollision",
@@ -9320,7 +9420,7 @@
      "name": "mf4ZaunSeite",
      "type": "moebel",
      "x": 160,
-     "y": 272,
+     "y": 144,
      "width": 16,
      "height": 16,
      "rotation": 0,
@@ -9329,7 +9429,7 @@
       {
        "name": "tiefe",
        "type": "int",
-       "value": 280
+       "value": 152
       },
       {
        "name": "kollision",
@@ -9343,7 +9443,7 @@
      "name": "mf4ZaunSeite",
      "type": "moebel",
      "x": 160,
-     "y": 288,
+     "y": 160,
      "width": 16,
      "height": 16,
      "rotation": 0,
@@ -9352,7 +9452,7 @@
       {
        "name": "tiefe",
        "type": "int",
-       "value": 296
+       "value": 168
       },
       {
        "name": "kollision",
@@ -9366,7 +9466,7 @@
      "name": "mf4ZaunSeite",
      "type": "moebel",
      "x": 160,
-     "y": 304,
+     "y": 176,
      "width": 16,
      "height": 16,
      "rotation": 0,
@@ -9375,7 +9475,7 @@
       {
        "name": "tiefe",
        "type": "int",
-       "value": 312
+       "value": 184
       },
       {
        "name": "kollision",
@@ -9389,7 +9489,7 @@
      "name": "mf4ZaunSeite",
      "type": "moebel",
      "x": 160,
-     "y": 320,
+     "y": 192,
      "width": 16,
      "height": 16,
      "rotation": 0,
@@ -9398,7 +9498,7 @@
       {
        "name": "tiefe",
        "type": "int",
-       "value": 328
+       "value": 200
       },
       {
        "name": "kollision",
@@ -9412,7 +9512,7 @@
      "name": "mf4ZaunSeite",
      "type": "moebel",
      "x": 160,
-     "y": 336,
+     "y": 208,
      "width": 16,
      "height": 16,
      "rotation": 0,
@@ -9421,7 +9521,7 @@
       {
        "name": "tiefe",
        "type": "int",
-       "value": 344
+       "value": 216
       },
       {
        "name": "kollision",
@@ -9435,7 +9535,7 @@
      "name": "mf4ZaunSeite",
      "type": "moebel",
      "x": 160,
-     "y": 352,
+     "y": 224,
      "width": 16,
      "height": 16,
      "rotation": 0,
@@ -9444,7 +9544,7 @@
       {
        "name": "tiefe",
        "type": "int",
-       "value": 360
+       "value": 232
       },
       {
        "name": "kollision",
@@ -9457,8 +9557,8 @@
      "id": 53,
      "name": "mf4ZaunSeite",
      "type": "moebel",
-     "x": 320,
-     "y": 80,
+     "x": 160,
+     "y": 240,
      "width": 16,
      "height": 16,
      "rotation": 0,
@@ -9467,7 +9567,7 @@
       {
        "name": "tiefe",
        "type": "int",
-       "value": 88
+       "value": 248
       },
       {
        "name": "kollision",
@@ -9480,8 +9580,8 @@
      "id": 54,
      "name": "mf4ZaunSeite",
      "type": "moebel",
-     "x": 320,
-     "y": 96,
+     "x": 160,
+     "y": 256,
      "width": 16,
      "height": 16,
      "rotation": 0,
@@ -9490,7 +9590,7 @@
       {
        "name": "tiefe",
        "type": "int",
-       "value": 104
+       "value": 264
       },
       {
        "name": "kollision",
@@ -9503,8 +9603,8 @@
      "id": 55,
      "name": "mf4ZaunSeite",
      "type": "moebel",
-     "x": 320,
-     "y": 112,
+     "x": 160,
+     "y": 272,
      "width": 16,
      "height": 16,
      "rotation": 0,
@@ -9513,7 +9613,7 @@
       {
        "name": "tiefe",
        "type": "int",
-       "value": 120
+       "value": 280
       },
       {
        "name": "kollision",
@@ -9526,8 +9626,8 @@
      "id": 56,
      "name": "mf4ZaunSeite",
      "type": "moebel",
-     "x": 320,
-     "y": 128,
+     "x": 160,
+     "y": 288,
      "width": 16,
      "height": 16,
      "rotation": 0,
@@ -9536,7 +9636,7 @@
       {
        "name": "tiefe",
        "type": "int",
-       "value": 136
+       "value": 296
       },
       {
        "name": "kollision",
@@ -9549,8 +9649,8 @@
      "id": 57,
      "name": "mf4ZaunSeite",
      "type": "moebel",
-     "x": 320,
-     "y": 144,
+     "x": 160,
+     "y": 304,
      "width": 16,
      "height": 16,
      "rotation": 0,
@@ -9559,7 +9659,7 @@
       {
        "name": "tiefe",
        "type": "int",
-       "value": 152
+       "value": 312
       },
       {
        "name": "kollision",
@@ -9572,8 +9672,8 @@
      "id": 58,
      "name": "mf4ZaunSeite",
      "type": "moebel",
-     "x": 320,
-     "y": 160,
+     "x": 160,
+     "y": 320,
      "width": 16,
      "height": 16,
      "rotation": 0,
@@ -9582,7 +9682,7 @@
       {
        "name": "tiefe",
        "type": "int",
-       "value": 168
+       "value": 328
       },
       {
        "name": "kollision",
@@ -9595,8 +9695,8 @@
      "id": 59,
      "name": "mf4ZaunSeite",
      "type": "moebel",
-     "x": 320,
-     "y": 176,
+     "x": 160,
+     "y": 336,
      "width": 16,
      "height": 16,
      "rotation": 0,
@@ -9605,7 +9705,7 @@
       {
        "name": "tiefe",
        "type": "int",
-       "value": 184
+       "value": 344
       },
       {
        "name": "kollision",
@@ -9618,8 +9718,8 @@
      "id": 60,
      "name": "mf4ZaunSeite",
      "type": "moebel",
-     "x": 320,
-     "y": 192,
+     "x": 160,
+     "y": 352,
      "width": 16,
      "height": 16,
      "rotation": 0,
@@ -9628,7 +9728,7 @@
       {
        "name": "tiefe",
        "type": "int",
-       "value": 200
+       "value": 360
       },
       {
        "name": "kollision",
@@ -9642,6 +9742,190 @@
      "name": "mf4ZaunSeite",
      "type": "moebel",
      "x": 320,
+     "y": 80,
+     "width": 16,
+     "height": 16,
+     "rotation": 0,
+     "visible": true,
+     "properties": [
+      {
+       "name": "tiefe",
+       "type": "int",
+       "value": 88
+      },
+      {
+       "name": "kollision",
+       "type": "bool",
+       "value": true
+      }
+     ]
+    },
+    {
+     "id": 62,
+     "name": "mf4ZaunSeite",
+     "type": "moebel",
+     "x": 320,
+     "y": 96,
+     "width": 16,
+     "height": 16,
+     "rotation": 0,
+     "visible": true,
+     "properties": [
+      {
+       "name": "tiefe",
+       "type": "int",
+       "value": 104
+      },
+      {
+       "name": "kollision",
+       "type": "bool",
+       "value": true
+      }
+     ]
+    },
+    {
+     "id": 63,
+     "name": "mf4ZaunSeite",
+     "type": "moebel",
+     "x": 320,
+     "y": 112,
+     "width": 16,
+     "height": 16,
+     "rotation": 0,
+     "visible": true,
+     "properties": [
+      {
+       "name": "tiefe",
+       "type": "int",
+       "value": 120
+      },
+      {
+       "name": "kollision",
+       "type": "bool",
+       "value": true
+      }
+     ]
+    },
+    {
+     "id": 64,
+     "name": "mf4ZaunSeite",
+     "type": "moebel",
+     "x": 320,
+     "y": 128,
+     "width": 16,
+     "height": 16,
+     "rotation": 0,
+     "visible": true,
+     "properties": [
+      {
+       "name": "tiefe",
+       "type": "int",
+       "value": 136
+      },
+      {
+       "name": "kollision",
+       "type": "bool",
+       "value": true
+      }
+     ]
+    },
+    {
+     "id": 65,
+     "name": "mf4ZaunSeite",
+     "type": "moebel",
+     "x": 320,
+     "y": 144,
+     "width": 16,
+     "height": 16,
+     "rotation": 0,
+     "visible": true,
+     "properties": [
+      {
+       "name": "tiefe",
+       "type": "int",
+       "value": 152
+      },
+      {
+       "name": "kollision",
+       "type": "bool",
+       "value": true
+      }
+     ]
+    },
+    {
+     "id": 66,
+     "name": "mf4ZaunSeite",
+     "type": "moebel",
+     "x": 320,
+     "y": 160,
+     "width": 16,
+     "height": 16,
+     "rotation": 0,
+     "visible": true,
+     "properties": [
+      {
+       "name": "tiefe",
+       "type": "int",
+       "value": 168
+      },
+      {
+       "name": "kollision",
+       "type": "bool",
+       "value": true
+      }
+     ]
+    },
+    {
+     "id": 67,
+     "name": "mf4ZaunSeite",
+     "type": "moebel",
+     "x": 320,
+     "y": 176,
+     "width": 16,
+     "height": 16,
+     "rotation": 0,
+     "visible": true,
+     "properties": [
+      {
+       "name": "tiefe",
+       "type": "int",
+       "value": 184
+      },
+      {
+       "name": "kollision",
+       "type": "bool",
+       "value": true
+      }
+     ]
+    },
+    {
+     "id": 68,
+     "name": "mf4ZaunSeite",
+     "type": "moebel",
+     "x": 320,
+     "y": 192,
+     "width": 16,
+     "height": 16,
+     "rotation": 0,
+     "visible": true,
+     "properties": [
+      {
+       "name": "tiefe",
+       "type": "int",
+       "value": 200
+      },
+      {
+       "name": "kollision",
+       "type": "bool",
+       "value": true
+      }
+     ]
+    },
+    {
+     "id": 69,
+     "name": "mf4ZaunSeite",
+     "type": "moebel",
+     "x": 320,
      "y": 208,
      "width": 16,
      "height": 16,
@@ -9661,7 +9945,7 @@
      ]
     },
     {
-     "id": 62,
+     "id": 70,
      "name": "mf4ZaunSeite",
      "type": "moebel",
      "x": 320,
@@ -9684,7 +9968,7 @@
      ]
     },
     {
-     "id": 63,
+     "id": 71,
      "name": "mf4ZaunSeite",
      "type": "moebel",
      "x": 320,
@@ -9707,7 +9991,7 @@
      ]
     },
     {
-     "id": 64,
+     "id": 72,
      "name": "mf4ZaunSeite",
      "type": "moebel",
      "x": 320,
@@ -9730,7 +10014,7 @@
      ]
     },
     {
-     "id": 65,
+     "id": 73,
      "name": "mf4ZaunSeite",
      "type": "moebel",
      "x": 320,
@@ -9753,7 +10037,7 @@
      ]
     },
     {
-     "id": 66,
+     "id": 74,
      "name": "mf4ZaunSeite",
      "type": "moebel",
      "x": 320,
@@ -9776,7 +10060,7 @@
      ]
     },
     {
-     "id": 67,
+     "id": 75,
      "name": "mf4ZaunSeite",
      "type": "moebel",
      "x": 320,
@@ -9799,7 +10083,7 @@
      ]
     },
     {
-     "id": 68,
+     "id": 76,
      "name": "mf4ZaunSeite",
      "type": "moebel",
      "x": 320,
@@ -9822,7 +10106,7 @@
      ]
     },
     {
-     "id": 69,
+     "id": 77,
      "name": "mf4ZaunSeite",
      "type": "moebel",
      "x": 320,
@@ -9845,7 +10129,7 @@
      ]
     },
     {
-     "id": 70,
+     "id": 78,
      "name": "mf4ZaunSeite",
      "type": "moebel",
      "x": 320,
@@ -9868,7 +10152,7 @@
      ]
     },
     {
-     "id": 71,
+     "id": 79,
      "name": "mf4ZaunSeite",
      "type": "moebel",
      "x": 480,
@@ -9891,7 +10175,7 @@
      ]
     },
     {
-     "id": 72,
+     "id": 80,
      "name": "mf4ZaunSeite",
      "type": "moebel",
      "x": 480,
@@ -9914,7 +10198,7 @@
      ]
     },
     {
-     "id": 73,
+     "id": 81,
      "name": "mf4ZaunSeite",
      "type": "moebel",
      "x": 480,
@@ -9937,7 +10221,7 @@
      ]
     },
     {
-     "id": 74,
+     "id": 82,
      "name": "mf4ZaunSeite",
      "type": "moebel",
      "x": 480,
@@ -9960,7 +10244,7 @@
      ]
     },
     {
-     "id": 75,
+     "id": 83,
      "name": "mf4ZaunSeite",
      "type": "moebel",
      "x": 480,
@@ -9983,7 +10267,7 @@
      ]
     },
     {
-     "id": 76,
+     "id": 84,
      "name": "mf4ZaunSeite",
      "type": "moebel",
      "x": 480,
@@ -10006,7 +10290,7 @@
      ]
     },
     {
-     "id": 77,
+     "id": 85,
      "name": "mf4ZaunSeite",
      "type": "moebel",
      "x": 480,
@@ -10029,7 +10313,7 @@
      ]
     },
     {
-     "id": 78,
+     "id": 86,
      "name": "mf4ZaunSeite",
      "type": "moebel",
      "x": 480,
@@ -10052,7 +10336,7 @@
      ]
     },
     {
-     "id": 79,
+     "id": 87,
      "name": "mf4ZaunSeite",
      "type": "moebel",
      "x": 480,
@@ -10075,7 +10359,7 @@
      ]
     },
     {
-     "id": 80,
+     "id": 88,
      "name": "mf4ZaunSeite",
      "type": "moebel",
      "x": 480,
@@ -10098,7 +10382,7 @@
      ]
     },
     {
-     "id": 81,
+     "id": 89,
      "name": "mf4ZaunSeite",
      "type": "moebel",
      "x": 480,
@@ -10121,7 +10405,7 @@
      ]
     },
     {
-     "id": 82,
+     "id": 90,
      "name": "mf4ZaunSeite",
      "type": "moebel",
      "x": 480,
@@ -10144,7 +10428,7 @@
      ]
     },
     {
-     "id": 83,
+     "id": 91,
      "name": "mf4ZaunSeite",
      "type": "moebel",
      "x": 480,
@@ -10167,7 +10451,7 @@
      ]
     },
     {
-     "id": 84,
+     "id": 92,
      "name": "mf4ZaunSeite",
      "type": "moebel",
      "x": 480,
@@ -10190,7 +10474,7 @@
      ]
     },
     {
-     "id": 85,
+     "id": 93,
      "name": "mf4ZaunSeite",
      "type": "moebel",
      "x": 480,
@@ -10213,7 +10497,7 @@
      ]
     },
     {
-     "id": 86,
+     "id": 94,
      "name": "mf4ZaunSeite",
      "type": "moebel",
      "x": 480,
@@ -10236,7 +10520,7 @@
      ]
     },
     {
-     "id": 87,
+     "id": 95,
      "name": "mf4ZaunSeite",
      "type": "moebel",
      "x": 480,
@@ -10259,7 +10543,7 @@
      ]
     },
     {
-     "id": 88,
+     "id": 96,
      "name": "mf4ZaunSeite",
      "type": "moebel",
      "x": 480,
@@ -10282,194 +10566,10 @@
      ]
     },
     {
-     "id": 89,
-     "name": "mf4ZaunMitte",
-     "type": "moebel",
-     "x": 16,
-     "y": 368,
-     "width": 16,
-     "height": 16,
-     "rotation": 0,
-     "visible": true,
-     "properties": [
-      {
-       "name": "tiefe",
-       "type": "int",
-       "value": 376
-      },
-      {
-       "name": "kollision",
-       "type": "bool",
-       "value": true
-      }
-     ]
-    },
-    {
-     "id": 90,
-     "name": "mf4ZaunEckeRechts",
-     "type": "moebel",
-     "x": 32,
-     "y": 368,
-     "width": 16,
-     "height": 16,
-     "rotation": 0,
-     "visible": true,
-     "properties": [
-      {
-       "name": "tiefe",
-       "type": "int",
-       "value": 376
-      },
-      {
-       "name": "kollision",
-       "type": "bool",
-       "value": true
-      }
-     ]
-    },
-    {
-     "id": 91,
-     "name": "mf4Briefkasten",
-     "type": "moebel",
-     "x": 80,
-     "y": 352,
-     "width": 16,
-     "height": 32,
-     "rotation": 0,
-     "visible": true,
-     "properties": [
-      {
-       "name": "tiefe",
-       "type": "int",
-       "value": 376
-      },
-      {
-       "name": "kollision",
-       "type": "bool",
-       "value": true
-      }
-     ]
-    },
-    {
-     "id": 92,
-     "name": "mf4ZaunEckeLinks",
-     "type": "moebel",
-     "x": 96,
-     "y": 368,
-     "width": 16,
-     "height": 16,
-     "rotation": 0,
-     "visible": true,
-     "properties": [
-      {
-       "name": "tiefe",
-       "type": "int",
-       "value": 376
-      },
-      {
-       "name": "kollision",
-       "type": "bool",
-       "value": true
-      }
-     ]
-    },
-    {
-     "id": 93,
-     "name": "mf4ZaunMitte",
-     "type": "moebel",
-     "x": 112,
-     "y": 368,
-     "width": 16,
-     "height": 16,
-     "rotation": 0,
-     "visible": true,
-     "properties": [
-      {
-       "name": "tiefe",
-       "type": "int",
-       "value": 376
-      },
-      {
-       "name": "kollision",
-       "type": "bool",
-       "value": true
-      }
-     ]
-    },
-    {
-     "id": 94,
-     "name": "mf4ZaunMitte",
-     "type": "moebel",
-     "x": 128,
-     "y": 368,
-     "width": 16,
-     "height": 16,
-     "rotation": 0,
-     "visible": true,
-     "properties": [
-      {
-       "name": "tiefe",
-       "type": "int",
-       "value": 376
-      },
-      {
-       "name": "kollision",
-       "type": "bool",
-       "value": true
-      }
-     ]
-    },
-    {
-     "id": 95,
-     "name": "mf4ZaunMitte",
-     "type": "moebel",
-     "x": 144,
-     "y": 368,
-     "width": 16,
-     "height": 16,
-     "rotation": 0,
-     "visible": true,
-     "properties": [
-      {
-       "name": "tiefe",
-       "type": "int",
-       "value": 376
-      },
-      {
-       "name": "kollision",
-       "type": "bool",
-       "value": true
-      }
-     ]
-    },
-    {
-     "id": 96,
-     "name": "mf4ZaunMitte",
-     "type": "moebel",
-     "x": 160,
-     "y": 368,
-     "width": 16,
-     "height": 16,
-     "rotation": 0,
-     "visible": true,
-     "properties": [
-      {
-       "name": "tiefe",
-       "type": "int",
-       "value": 376
-      },
-      {
-       "name": "kollision",
-       "type": "bool",
-       "value": true
-      }
-     ]
-    },
-    {
      "id": 97,
      "name": "mf4ZaunMitte",
      "type": "moebel",
-     "x": 176,
+     "x": 16,
      "y": 368,
      "width": 16,
      "height": 16,
@@ -10492,7 +10592,7 @@
      "id": 98,
      "name": "mf4ZaunEckeRechts",
      "type": "moebel",
-     "x": 192,
+     "x": 32,
      "y": 368,
      "width": 16,
      "height": 16,
@@ -10515,7 +10615,7 @@
      "id": 99,
      "name": "mf4Briefkasten",
      "type": "moebel",
-     "x": 240,
+     "x": 80,
      "y": 352,
      "width": 16,
      "height": 32,
@@ -10538,7 +10638,7 @@
      "id": 100,
      "name": "mf4ZaunEckeLinks",
      "type": "moebel",
-     "x": 256,
+     "x": 96,
      "y": 368,
      "width": 16,
      "height": 16,
@@ -10561,7 +10661,7 @@
      "id": 101,
      "name": "mf4ZaunMitte",
      "type": "moebel",
-     "x": 272,
+     "x": 112,
      "y": 368,
      "width": 16,
      "height": 16,
@@ -10584,7 +10684,7 @@
      "id": 102,
      "name": "mf4ZaunMitte",
      "type": "moebel",
-     "x": 288,
+     "x": 128,
      "y": 368,
      "width": 16,
      "height": 16,
@@ -10607,7 +10707,7 @@
      "id": 103,
      "name": "mf4ZaunMitte",
      "type": "moebel",
-     "x": 304,
+     "x": 144,
      "y": 368,
      "width": 16,
      "height": 16,
@@ -10630,7 +10730,7 @@
      "id": 104,
      "name": "mf4ZaunMitte",
      "type": "moebel",
-     "x": 320,
+     "x": 160,
      "y": 368,
      "width": 16,
      "height": 16,
@@ -10653,7 +10753,7 @@
      "id": 105,
      "name": "mf4ZaunMitte",
      "type": "moebel",
-     "x": 336,
+     "x": 176,
      "y": 368,
      "width": 16,
      "height": 16,
@@ -10676,7 +10776,7 @@
      "id": 106,
      "name": "mf4ZaunEckeRechts",
      "type": "moebel",
-     "x": 352,
+     "x": 192,
      "y": 368,
      "width": 16,
      "height": 16,
@@ -10699,7 +10799,7 @@
      "id": 107,
      "name": "mf4Briefkasten",
      "type": "moebel",
-     "x": 400,
+     "x": 240,
      "y": 352,
      "width": 16,
      "height": 32,
@@ -10722,7 +10822,7 @@
      "id": 108,
      "name": "mf4ZaunEckeLinks",
      "type": "moebel",
-     "x": 416,
+     "x": 256,
      "y": 368,
      "width": 16,
      "height": 16,
@@ -10745,7 +10845,7 @@
      "id": 109,
      "name": "mf4ZaunMitte",
      "type": "moebel",
-     "x": 432,
+     "x": 272,
      "y": 368,
      "width": 16,
      "height": 16,
@@ -10768,7 +10868,7 @@
      "id": 110,
      "name": "mf4ZaunMitte",
      "type": "moebel",
-     "x": 448,
+     "x": 288,
      "y": 368,
      "width": 16,
      "height": 16,
@@ -10791,7 +10891,7 @@
      "id": 111,
      "name": "mf4ZaunMitte",
      "type": "moebel",
-     "x": 464,
+     "x": 304,
      "y": 368,
      "width": 16,
      "height": 16,
@@ -10812,6 +10912,190 @@
     },
     {
      "id": 112,
+     "name": "mf4ZaunMitte",
+     "type": "moebel",
+     "x": 320,
+     "y": 368,
+     "width": 16,
+     "height": 16,
+     "rotation": 0,
+     "visible": true,
+     "properties": [
+      {
+       "name": "tiefe",
+       "type": "int",
+       "value": 376
+      },
+      {
+       "name": "kollision",
+       "type": "bool",
+       "value": true
+      }
+     ]
+    },
+    {
+     "id": 113,
+     "name": "mf4ZaunMitte",
+     "type": "moebel",
+     "x": 336,
+     "y": 368,
+     "width": 16,
+     "height": 16,
+     "rotation": 0,
+     "visible": true,
+     "properties": [
+      {
+       "name": "tiefe",
+       "type": "int",
+       "value": 376
+      },
+      {
+       "name": "kollision",
+       "type": "bool",
+       "value": true
+      }
+     ]
+    },
+    {
+     "id": 114,
+     "name": "mf4ZaunEckeRechts",
+     "type": "moebel",
+     "x": 352,
+     "y": 368,
+     "width": 16,
+     "height": 16,
+     "rotation": 0,
+     "visible": true,
+     "properties": [
+      {
+       "name": "tiefe",
+       "type": "int",
+       "value": 376
+      },
+      {
+       "name": "kollision",
+       "type": "bool",
+       "value": true
+      }
+     ]
+    },
+    {
+     "id": 115,
+     "name": "mf4Briefkasten",
+     "type": "moebel",
+     "x": 400,
+     "y": 352,
+     "width": 16,
+     "height": 32,
+     "rotation": 0,
+     "visible": true,
+     "properties": [
+      {
+       "name": "tiefe",
+       "type": "int",
+       "value": 376
+      },
+      {
+       "name": "kollision",
+       "type": "bool",
+       "value": true
+      }
+     ]
+    },
+    {
+     "id": 116,
+     "name": "mf4ZaunEckeLinks",
+     "type": "moebel",
+     "x": 416,
+     "y": 368,
+     "width": 16,
+     "height": 16,
+     "rotation": 0,
+     "visible": true,
+     "properties": [
+      {
+       "name": "tiefe",
+       "type": "int",
+       "value": 376
+      },
+      {
+       "name": "kollision",
+       "type": "bool",
+       "value": true
+      }
+     ]
+    },
+    {
+     "id": 117,
+     "name": "mf4ZaunMitte",
+     "type": "moebel",
+     "x": 432,
+     "y": 368,
+     "width": 16,
+     "height": 16,
+     "rotation": 0,
+     "visible": true,
+     "properties": [
+      {
+       "name": "tiefe",
+       "type": "int",
+       "value": 376
+      },
+      {
+       "name": "kollision",
+       "type": "bool",
+       "value": true
+      }
+     ]
+    },
+    {
+     "id": 118,
+     "name": "mf4ZaunMitte",
+     "type": "moebel",
+     "x": 448,
+     "y": 368,
+     "width": 16,
+     "height": 16,
+     "rotation": 0,
+     "visible": true,
+     "properties": [
+      {
+       "name": "tiefe",
+       "type": "int",
+       "value": 376
+      },
+      {
+       "name": "kollision",
+       "type": "bool",
+       "value": true
+      }
+     ]
+    },
+    {
+     "id": 119,
+     "name": "mf4ZaunMitte",
+     "type": "moebel",
+     "x": 464,
+     "y": 368,
+     "width": 16,
+     "height": 16,
+     "rotation": 0,
+     "visible": true,
+     "properties": [
+      {
+       "name": "tiefe",
+       "type": "int",
+       "value": 376
+      },
+      {
+       "name": "kollision",
+       "type": "bool",
+       "value": true
+      }
+     ]
+    },
+    {
+     "id": 120,
      "name": "mf4ZaunEckeRechts",
      "type": "moebel",
      "x": 480,
@@ -10834,7 +11118,7 @@
      ]
     },
     {
-     "id": 113,
+     "id": 121,
      "name": "mf4TischLinks",
      "type": "moebel",
      "x": 576,
@@ -10857,7 +11141,7 @@
      ]
     },
     {
-     "id": 114,
+     "id": 122,
      "name": "mf4TischRechts",
      "type": "moebel",
      "x": 592,
@@ -10880,7 +11164,7 @@
      ]
     },
     {
-     "id": 115,
+     "id": 123,
      "name": "mfBushaltestelle",
      "type": "moebel",
      "x": 912,
@@ -10903,7 +11187,7 @@
      ]
     },
     {
-     "id": 116,
+     "id": 124,
      "name": "mfBank",
      "type": "moebel",
      "x": 880,
@@ -10926,7 +11210,7 @@
      ]
     },
     {
-     "id": 117,
+     "id": 125,
      "name": "mfMuelltonne",
      "type": "moebel",
      "x": 992,
@@ -10949,7 +11233,7 @@
      ]
     },
     {
-     "id": 118,
+     "id": 126,
      "name": "mf4BaumGruen",
      "type": "moebel",
      "x": 128,
@@ -10972,7 +11256,7 @@
      ]
     },
     {
-     "id": 119,
+     "id": 127,
      "name": "mf4BaumRot",
      "type": "moebel",
      "x": 208,
@@ -10995,7 +11279,7 @@
      ]
     },
     {
-     "id": 120,
+     "id": 128,
      "name": "mf4BaumGruen",
      "type": "moebel",
      "x": 320,
@@ -11018,7 +11302,7 @@
      ]
     },
     {
-     "id": 121,
+     "id": 129,
      "name": "mf4BaumRot",
      "type": "moebel",
      "x": 464,
@@ -11041,7 +11325,7 @@
      ]
     },
     {
-     "id": 122,
+     "id": 130,
      "name": "mf4BaumGruen",
      "type": "moebel",
      "x": 560,
@@ -11064,7 +11348,7 @@
      ]
     },
     {
-     "id": 123,
+     "id": 131,
      "name": "mf4BaumRot",
      "type": "moebel",
      "x": 656,
@@ -11087,7 +11371,7 @@
      ]
     },
     {
-     "id": 124,
+     "id": 132,
      "name": "mf4Laterne",
      "type": "moebel",
      "x": 96,
@@ -11110,7 +11394,7 @@
      ]
     },
     {
-     "id": 125,
+     "id": 133,
      "name": "mf4Laterne",
      "type": "moebel",
      "x": 272,
@@ -11133,7 +11417,7 @@
      ]
     },
     {
-     "id": 126,
+     "id": 134,
      "name": "mf4Laterne",
      "type": "moebel",
      "x": 384,
@@ -11156,7 +11440,7 @@
      ]
     },
     {
-     "id": 127,
+     "id": 135,
      "name": "mf4Laterne",
      "type": "moebel",
      "x": 528,
@@ -11179,7 +11463,7 @@
      ]
     },
     {
-     "id": 128,
+     "id": 136,
      "name": "mf4Laterne",
      "type": "moebel",
      "x": 624,
@@ -11202,7 +11486,7 @@
      ]
     },
     {
-     "id": 129,
+     "id": 137,
      "name": "mf4Laterne",
      "type": "moebel",
      "x": 720,
@@ -11225,7 +11509,7 @@
      ]
     },
     {
-     "id": 130,
+     "id": 138,
      "name": "mf4Laterne",
      "type": "moebel",
      "x": 816,
@@ -11248,7 +11532,7 @@
      ]
     },
     {
-     "id": 131,
+     "id": 139,
      "name": "mf4Laterne",
      "type": "moebel",
      "x": 928,
@@ -11271,7 +11555,7 @@
      ]
     },
     {
-     "id": 132,
+     "id": 140,
      "name": "mf4Laterne",
      "type": "moebel",
      "x": 992,
@@ -11294,7 +11578,7 @@
      ]
     },
     {
-     "id": 133,
+     "id": 141,
      "name": "mf4BauernhausBreit",
      "type": "moebel",
      "x": 16,
@@ -11317,7 +11601,7 @@
      ]
     },
     {
-     "id": 134,
+     "id": 142,
      "name": "mf4Bauernhaus",
      "type": "moebel",
      "x": 288,
@@ -11340,7 +11624,7 @@
      ]
     },
     {
-     "id": 135,
+     "id": 143,
      "name": "mf4BauernhausBreit",
      "type": "moebel",
      "x": 464,
@@ -11363,7 +11647,7 @@
      ]
     },
     {
-     "id": 136,
+     "id": 144,
      "name": "mf4Bauernhaus",
      "type": "moebel",
      "x": 640,
@@ -11386,53 +11670,7 @@
      ]
     },
     {
-     "id": 137,
-     "name": "mf4Gemuesebeet",
-     "type": "moebel",
-     "x": 192,
-     "y": 544,
-     "width": 32,
-     "height": 48,
-     "rotation": 0,
-     "visible": true,
-     "properties": [
-      {
-       "name": "tiefe",
-       "type": "int",
-       "value": 1
-      },
-      {
-       "name": "kollision",
-       "type": "bool",
-       "value": false
-      }
-     ]
-    },
-    {
-     "id": 138,
-     "name": "mf4Busch",
-     "type": "moebel",
-     "x": 224,
-     "y": 592,
-     "width": 32,
-     "height": 32,
-     "rotation": 0,
-     "visible": true,
-     "properties": [
-      {
-       "name": "tiefe",
-       "type": "int",
-       "value": 616
-      },
-      {
-       "name": "kollision",
-       "type": "bool",
-       "value": true
-      }
-     ]
-    },
-    {
-     "id": 139,
+     "id": 145,
      "name": "mf4BuschKlein",
      "type": "moebel",
      "x": 448,
@@ -11455,7 +11693,7 @@
      ]
     },
     {
-     "id": 140,
+     "id": 146,
      "name": "mf4BuschKlein",
      "type": "moebel",
      "x": 624,
@@ -11478,421 +11716,7 @@
      ]
     },
     {
-     "id": 141,
-     "name": "mf4ZaunSeite",
-     "type": "moebel",
-     "x": 176,
-     "y": 512,
-     "width": 16,
-     "height": 16,
-     "rotation": 0,
-     "visible": true,
-     "properties": [
-      {
-       "name": "tiefe",
-       "type": "int",
-       "value": 520
-      },
-      {
-       "name": "kollision",
-       "type": "bool",
-       "value": true
-      }
-     ]
-    },
-    {
-     "id": 142,
-     "name": "mf4ZaunSeite",
-     "type": "moebel",
-     "x": 176,
-     "y": 528,
-     "width": 16,
-     "height": 16,
-     "rotation": 0,
-     "visible": true,
-     "properties": [
-      {
-       "name": "tiefe",
-       "type": "int",
-       "value": 536
-      },
-      {
-       "name": "kollision",
-       "type": "bool",
-       "value": true
-      }
-     ]
-    },
-    {
-     "id": 143,
-     "name": "mf4ZaunSeite",
-     "type": "moebel",
-     "x": 176,
-     "y": 544,
-     "width": 16,
-     "height": 16,
-     "rotation": 0,
-     "visible": true,
-     "properties": [
-      {
-       "name": "tiefe",
-       "type": "int",
-       "value": 552
-      },
-      {
-       "name": "kollision",
-       "type": "bool",
-       "value": true
-      }
-     ]
-    },
-    {
-     "id": 144,
-     "name": "mf4ZaunSeite",
-     "type": "moebel",
-     "x": 176,
-     "y": 560,
-     "width": 16,
-     "height": 16,
-     "rotation": 0,
-     "visible": true,
-     "properties": [
-      {
-       "name": "tiefe",
-       "type": "int",
-       "value": 568
-      },
-      {
-       "name": "kollision",
-       "type": "bool",
-       "value": true
-      }
-     ]
-    },
-    {
-     "id": 145,
-     "name": "mf4ZaunSeite",
-     "type": "moebel",
-     "x": 176,
-     "y": 576,
-     "width": 16,
-     "height": 16,
-     "rotation": 0,
-     "visible": true,
-     "properties": [
-      {
-       "name": "tiefe",
-       "type": "int",
-       "value": 584
-      },
-      {
-       "name": "kollision",
-       "type": "bool",
-       "value": true
-      }
-     ]
-    },
-    {
-     "id": 146,
-     "name": "mf4ZaunSeite",
-     "type": "moebel",
-     "x": 176,
-     "y": 592,
-     "width": 16,
-     "height": 16,
-     "rotation": 0,
-     "visible": true,
-     "properties": [
-      {
-       "name": "tiefe",
-       "type": "int",
-       "value": 600
-      },
-      {
-       "name": "kollision",
-       "type": "bool",
-       "value": true
-      }
-     ]
-    },
-    {
      "id": 147,
-     "name": "mf4ZaunSeite",
-     "type": "moebel",
-     "x": 176,
-     "y": 608,
-     "width": 16,
-     "height": 16,
-     "rotation": 0,
-     "visible": true,
-     "properties": [
-      {
-       "name": "tiefe",
-       "type": "int",
-       "value": 616
-      },
-      {
-       "name": "kollision",
-       "type": "bool",
-       "value": true
-      }
-     ]
-    },
-    {
-     "id": 148,
-     "name": "mf4ZaunSeite",
-     "type": "moebel",
-     "x": 176,
-     "y": 624,
-     "width": 16,
-     "height": 16,
-     "rotation": 0,
-     "visible": true,
-     "properties": [
-      {
-       "name": "tiefe",
-       "type": "int",
-       "value": 632
-      },
-      {
-       "name": "kollision",
-       "type": "bool",
-       "value": true
-      }
-     ]
-    },
-    {
-     "id": 149,
-     "name": "mf4ZaunSeite",
-     "type": "moebel",
-     "x": 176,
-     "y": 640,
-     "width": 16,
-     "height": 16,
-     "rotation": 0,
-     "visible": true,
-     "properties": [
-      {
-       "name": "tiefe",
-       "type": "int",
-       "value": 648
-      },
-      {
-       "name": "kollision",
-       "type": "bool",
-       "value": true
-      }
-     ]
-    },
-    {
-     "id": 150,
-     "name": "mf4ZaunSeite",
-     "type": "moebel",
-     "x": 272,
-     "y": 512,
-     "width": 16,
-     "height": 16,
-     "rotation": 0,
-     "visible": true,
-     "properties": [
-      {
-       "name": "tiefe",
-       "type": "int",
-       "value": 520
-      },
-      {
-       "name": "kollision",
-       "type": "bool",
-       "value": true
-      }
-     ]
-    },
-    {
-     "id": 151,
-     "name": "mf4ZaunSeite",
-     "type": "moebel",
-     "x": 272,
-     "y": 528,
-     "width": 16,
-     "height": 16,
-     "rotation": 0,
-     "visible": true,
-     "properties": [
-      {
-       "name": "tiefe",
-       "type": "int",
-       "value": 536
-      },
-      {
-       "name": "kollision",
-       "type": "bool",
-       "value": true
-      }
-     ]
-    },
-    {
-     "id": 152,
-     "name": "mf4ZaunSeite",
-     "type": "moebel",
-     "x": 272,
-     "y": 544,
-     "width": 16,
-     "height": 16,
-     "rotation": 0,
-     "visible": true,
-     "properties": [
-      {
-       "name": "tiefe",
-       "type": "int",
-       "value": 552
-      },
-      {
-       "name": "kollision",
-       "type": "bool",
-       "value": true
-      }
-     ]
-    },
-    {
-     "id": 153,
-     "name": "mf4ZaunSeite",
-     "type": "moebel",
-     "x": 272,
-     "y": 560,
-     "width": 16,
-     "height": 16,
-     "rotation": 0,
-     "visible": true,
-     "properties": [
-      {
-       "name": "tiefe",
-       "type": "int",
-       "value": 568
-      },
-      {
-       "name": "kollision",
-       "type": "bool",
-       "value": true
-      }
-     ]
-    },
-    {
-     "id": 154,
-     "name": "mf4ZaunSeite",
-     "type": "moebel",
-     "x": 272,
-     "y": 576,
-     "width": 16,
-     "height": 16,
-     "rotation": 0,
-     "visible": true,
-     "properties": [
-      {
-       "name": "tiefe",
-       "type": "int",
-       "value": 584
-      },
-      {
-       "name": "kollision",
-       "type": "bool",
-       "value": true
-      }
-     ]
-    },
-    {
-     "id": 155,
-     "name": "mf4ZaunSeite",
-     "type": "moebel",
-     "x": 272,
-     "y": 592,
-     "width": 16,
-     "height": 16,
-     "rotation": 0,
-     "visible": true,
-     "properties": [
-      {
-       "name": "tiefe",
-       "type": "int",
-       "value": 600
-      },
-      {
-       "name": "kollision",
-       "type": "bool",
-       "value": true
-      }
-     ]
-    },
-    {
-     "id": 156,
-     "name": "mf4ZaunSeite",
-     "type": "moebel",
-     "x": 272,
-     "y": 608,
-     "width": 16,
-     "height": 16,
-     "rotation": 0,
-     "visible": true,
-     "properties": [
-      {
-       "name": "tiefe",
-       "type": "int",
-       "value": 616
-      },
-      {
-       "name": "kollision",
-       "type": "bool",
-       "value": true
-      }
-     ]
-    },
-    {
-     "id": 157,
-     "name": "mf4ZaunSeite",
-     "type": "moebel",
-     "x": 272,
-     "y": 624,
-     "width": 16,
-     "height": 16,
-     "rotation": 0,
-     "visible": true,
-     "properties": [
-      {
-       "name": "tiefe",
-       "type": "int",
-       "value": 632
-      },
-      {
-       "name": "kollision",
-       "type": "bool",
-       "value": true
-      }
-     ]
-    },
-    {
-     "id": 158,
-     "name": "mf4ZaunSeite",
-     "type": "moebel",
-     "x": 272,
-     "y": 640,
-     "width": 16,
-     "height": 16,
-     "rotation": 0,
-     "visible": true,
-     "properties": [
-      {
-       "name": "tiefe",
-       "type": "int",
-       "value": 648
-      },
-      {
-       "name": "kollision",
-       "type": "bool",
-       "value": true
-      }
-     ]
-    },
-    {
-     "id": 159,
      "name": "mf5ZaunEckeObenLinks",
      "type": "moebel",
      "x": 784,
@@ -11915,123 +11739,8 @@
      ]
     },
     {
-     "id": 160,
+     "id": 148,
      "name": "mf5ZaunEckeObenRechts",
-     "type": "moebel",
-     "x": 992,
-     "y": 496,
-     "width": 16,
-     "height": 16,
-     "rotation": 0,
-     "visible": true,
-     "properties": [
-      {
-       "name": "tiefe",
-       "type": "int",
-       "value": 504
-      },
-      {
-       "name": "kollision",
-       "type": "bool",
-       "value": true
-      }
-     ]
-    },
-    {
-     "id": 161,
-     "name": "mf4ZaunMitte",
-     "type": "moebel",
-     "x": 800,
-     "y": 496,
-     "width": 16,
-     "height": 16,
-     "rotation": 0,
-     "visible": true,
-     "properties": [
-      {
-       "name": "tiefe",
-       "type": "int",
-       "value": 504
-      },
-      {
-       "name": "kollision",
-       "type": "bool",
-       "value": true
-      }
-     ]
-    },
-    {
-     "id": 162,
-     "name": "mf4ZaunMitte",
-     "type": "moebel",
-     "x": 816,
-     "y": 496,
-     "width": 16,
-     "height": 16,
-     "rotation": 0,
-     "visible": true,
-     "properties": [
-      {
-       "name": "tiefe",
-       "type": "int",
-       "value": 504
-      },
-      {
-       "name": "kollision",
-       "type": "bool",
-       "value": true
-      }
-     ]
-    },
-    {
-     "id": 163,
-     "name": "mf4ZaunMitte",
-     "type": "moebel",
-     "x": 832,
-     "y": 496,
-     "width": 16,
-     "height": 16,
-     "rotation": 0,
-     "visible": true,
-     "properties": [
-      {
-       "name": "tiefe",
-       "type": "int",
-       "value": 504
-      },
-      {
-       "name": "kollision",
-       "type": "bool",
-       "value": true
-      }
-     ]
-    },
-    {
-     "id": 164,
-     "name": "mf4ZaunEckeRechts",
-     "type": "moebel",
-     "x": 848,
-     "y": 496,
-     "width": 16,
-     "height": 16,
-     "rotation": 0,
-     "visible": true,
-     "properties": [
-      {
-       "name": "tiefe",
-       "type": "int",
-       "value": 504
-      },
-      {
-       "name": "kollision",
-       "type": "bool",
-       "value": true
-      }
-     ]
-    },
-    {
-     "id": 165,
-     "name": "mf4ZaunEckeLinks",
      "type": "moebel",
      "x": 896,
      "y": 496,
@@ -12053,10 +11762,10 @@
      ]
     },
     {
-     "id": 166,
+     "id": 149,
      "name": "mf4ZaunMitte",
      "type": "moebel",
-     "x": 912,
+     "x": 800,
      "y": 496,
      "width": 16,
      "height": 16,
@@ -12067,6 +11776,397 @@
        "name": "tiefe",
        "type": "int",
        "value": 504
+      },
+      {
+       "name": "kollision",
+       "type": "bool",
+       "value": true
+      }
+     ]
+    },
+    {
+     "id": 150,
+     "name": "mf4ZaunMitte",
+     "type": "moebel",
+     "x": 816,
+     "y": 496,
+     "width": 16,
+     "height": 16,
+     "rotation": 0,
+     "visible": true,
+     "properties": [
+      {
+       "name": "tiefe",
+       "type": "int",
+       "value": 504
+      },
+      {
+       "name": "kollision",
+       "type": "bool",
+       "value": true
+      }
+     ]
+    },
+    {
+     "id": 151,
+     "name": "mf4ZaunMitte",
+     "type": "moebel",
+     "x": 832,
+     "y": 496,
+     "width": 16,
+     "height": 16,
+     "rotation": 0,
+     "visible": true,
+     "properties": [
+      {
+       "name": "tiefe",
+       "type": "int",
+       "value": 504
+      },
+      {
+       "name": "kollision",
+       "type": "bool",
+       "value": true
+      }
+     ]
+    },
+    {
+     "id": 152,
+     "name": "mf4ZaunEckeRechts",
+     "type": "moebel",
+     "x": 848,
+     "y": 496,
+     "width": 16,
+     "height": 16,
+     "rotation": 0,
+     "visible": true,
+     "properties": [
+      {
+       "name": "tiefe",
+       "type": "int",
+       "value": 504
+      },
+      {
+       "name": "kollision",
+       "type": "bool",
+       "value": true
+      }
+     ]
+    },
+    {
+     "id": 153,
+     "name": "mf5ZaunSeiteLinks",
+     "type": "moebel",
+     "x": 784,
+     "y": 512,
+     "width": 16,
+     "height": 16,
+     "rotation": 0,
+     "visible": true,
+     "properties": [
+      {
+       "name": "tiefe",
+       "type": "int",
+       "value": 520
+      },
+      {
+       "name": "kollision",
+       "type": "bool",
+       "value": true
+      }
+     ]
+    },
+    {
+     "id": 154,
+     "name": "mf5ZaunSeiteLinks",
+     "type": "moebel",
+     "x": 784,
+     "y": 528,
+     "width": 16,
+     "height": 16,
+     "rotation": 0,
+     "visible": true,
+     "properties": [
+      {
+       "name": "tiefe",
+       "type": "int",
+       "value": 536
+      },
+      {
+       "name": "kollision",
+       "type": "bool",
+       "value": true
+      }
+     ]
+    },
+    {
+     "id": 155,
+     "name": "mf5ZaunSeiteLinks",
+     "type": "moebel",
+     "x": 784,
+     "y": 544,
+     "width": 16,
+     "height": 16,
+     "rotation": 0,
+     "visible": true,
+     "properties": [
+      {
+       "name": "tiefe",
+       "type": "int",
+       "value": 552
+      },
+      {
+       "name": "kollision",
+       "type": "bool",
+       "value": true
+      }
+     ]
+    },
+    {
+     "id": 156,
+     "name": "mf5ZaunSeiteLinks",
+     "type": "moebel",
+     "x": 784,
+     "y": 560,
+     "width": 16,
+     "height": 16,
+     "rotation": 0,
+     "visible": true,
+     "properties": [
+      {
+       "name": "tiefe",
+       "type": "int",
+       "value": 568
+      },
+      {
+       "name": "kollision",
+       "type": "bool",
+       "value": true
+      }
+     ]
+    },
+    {
+     "id": 157,
+     "name": "mf5ZaunSeiteLinks",
+     "type": "moebel",
+     "x": 784,
+     "y": 576,
+     "width": 16,
+     "height": 16,
+     "rotation": 0,
+     "visible": true,
+     "properties": [
+      {
+       "name": "tiefe",
+       "type": "int",
+       "value": 584
+      },
+      {
+       "name": "kollision",
+       "type": "bool",
+       "value": true
+      }
+     ]
+    },
+    {
+     "id": 158,
+     "name": "mf5ZaunSeiteLinks",
+     "type": "moebel",
+     "x": 784,
+     "y": 592,
+     "width": 16,
+     "height": 16,
+     "rotation": 0,
+     "visible": true,
+     "properties": [
+      {
+       "name": "tiefe",
+       "type": "int",
+       "value": 600
+      },
+      {
+       "name": "kollision",
+       "type": "bool",
+       "value": true
+      }
+     ]
+    },
+    {
+     "id": 159,
+     "name": "mf5ZaunSeiteLinks",
+     "type": "moebel",
+     "x": 784,
+     "y": 608,
+     "width": 16,
+     "height": 16,
+     "rotation": 0,
+     "visible": true,
+     "properties": [
+      {
+       "name": "tiefe",
+       "type": "int",
+       "value": 616
+      },
+      {
+       "name": "kollision",
+       "type": "bool",
+       "value": true
+      }
+     ]
+    },
+    {
+     "id": 160,
+     "name": "mf5ZaunSeiteLinks",
+     "type": "moebel",
+     "x": 784,
+     "y": 624,
+     "width": 16,
+     "height": 16,
+     "rotation": 0,
+     "visible": true,
+     "properties": [
+      {
+       "name": "tiefe",
+       "type": "int",
+       "value": 632
+      },
+      {
+       "name": "kollision",
+       "type": "bool",
+       "value": true
+      }
+     ]
+    },
+    {
+     "id": 161,
+     "name": "mf4ZaunSeite",
+     "type": "moebel",
+     "x": 896,
+     "y": 512,
+     "width": 16,
+     "height": 16,
+     "rotation": 0,
+     "visible": true,
+     "properties": [
+      {
+       "name": "tiefe",
+       "type": "int",
+       "value": 520
+      },
+      {
+       "name": "kollision",
+       "type": "bool",
+       "value": true
+      }
+     ]
+    },
+    {
+     "id": 162,
+     "name": "mf4ZaunSeite",
+     "type": "moebel",
+     "x": 896,
+     "y": 528,
+     "width": 16,
+     "height": 16,
+     "rotation": 0,
+     "visible": true,
+     "properties": [
+      {
+       "name": "tiefe",
+       "type": "int",
+       "value": 536
+      },
+      {
+       "name": "kollision",
+       "type": "bool",
+       "value": true
+      }
+     ]
+    },
+    {
+     "id": 163,
+     "name": "mf4ZaunSeite",
+     "type": "moebel",
+     "x": 896,
+     "y": 544,
+     "width": 16,
+     "height": 16,
+     "rotation": 0,
+     "visible": true,
+     "properties": [
+      {
+       "name": "tiefe",
+       "type": "int",
+       "value": 552
+      },
+      {
+       "name": "kollision",
+       "type": "bool",
+       "value": true
+      }
+     ]
+    },
+    {
+     "id": 164,
+     "name": "mf4ZaunSeite",
+     "type": "moebel",
+     "x": 896,
+     "y": 560,
+     "width": 16,
+     "height": 16,
+     "rotation": 0,
+     "visible": true,
+     "properties": [
+      {
+       "name": "tiefe",
+       "type": "int",
+       "value": 568
+      },
+      {
+       "name": "kollision",
+       "type": "bool",
+       "value": true
+      }
+     ]
+    },
+    {
+     "id": 165,
+     "name": "mf4ZaunSeite",
+     "type": "moebel",
+     "x": 896,
+     "y": 576,
+     "width": 16,
+     "height": 16,
+     "rotation": 0,
+     "visible": true,
+     "properties": [
+      {
+       "name": "tiefe",
+       "type": "int",
+       "value": 584
+      },
+      {
+       "name": "kollision",
+       "type": "bool",
+       "value": true
+      }
+     ]
+    },
+    {
+     "id": 166,
+     "name": "mf4ZaunSeite",
+     "type": "moebel",
+     "x": 896,
+     "y": 592,
+     "width": 16,
+     "height": 16,
+     "rotation": 0,
+     "visible": true,
+     "properties": [
+      {
+       "name": "tiefe",
+       "type": "int",
+       "value": 600
       },
       {
        "name": "kollision",
@@ -12077,10 +12177,10 @@
     },
     {
      "id": 167,
-     "name": "mf4ZaunMitte",
+     "name": "mf4ZaunSeite",
      "type": "moebel",
-     "x": 928,
-     "y": 496,
+     "x": 896,
+     "y": 608,
      "width": 16,
      "height": 16,
      "rotation": 0,
@@ -12089,7 +12189,7 @@
       {
        "name": "tiefe",
        "type": "int",
-       "value": 504
+       "value": 616
       },
       {
        "name": "kollision",
@@ -12100,10 +12200,10 @@
     },
     {
      "id": 168,
-     "name": "mf4ZaunMitte",
+     "name": "mf4ZaunSeite",
      "type": "moebel",
-     "x": 944,
-     "y": 496,
+     "x": 896,
+     "y": 624,
      "width": 16,
      "height": 16,
      "rotation": 0,
@@ -12112,7 +12212,7 @@
       {
        "name": "tiefe",
        "type": "int",
-       "value": 504
+       "value": 632
       },
       {
        "name": "kollision",
@@ -12123,420 +12223,6 @@
     },
     {
      "id": 169,
-     "name": "mf4ZaunMitte",
-     "type": "moebel",
-     "x": 960,
-     "y": 496,
-     "width": 16,
-     "height": 16,
-     "rotation": 0,
-     "visible": true,
-     "properties": [
-      {
-       "name": "tiefe",
-       "type": "int",
-       "value": 504
-      },
-      {
-       "name": "kollision",
-       "type": "bool",
-       "value": true
-      }
-     ]
-    },
-    {
-     "id": 170,
-     "name": "mf4ZaunMitte",
-     "type": "moebel",
-     "x": 976,
-     "y": 496,
-     "width": 16,
-     "height": 16,
-     "rotation": 0,
-     "visible": true,
-     "properties": [
-      {
-       "name": "tiefe",
-       "type": "int",
-       "value": 504
-      },
-      {
-       "name": "kollision",
-       "type": "bool",
-       "value": true
-      }
-     ]
-    },
-    {
-     "id": 171,
-     "name": "mf5ZaunSeiteLinks",
-     "type": "moebel",
-     "x": 784,
-     "y": 512,
-     "width": 16,
-     "height": 16,
-     "rotation": 0,
-     "visible": true,
-     "properties": [
-      {
-       "name": "tiefe",
-       "type": "int",
-       "value": 520
-      },
-      {
-       "name": "kollision",
-       "type": "bool",
-       "value": true
-      }
-     ]
-    },
-    {
-     "id": 172,
-     "name": "mf5ZaunSeiteLinks",
-     "type": "moebel",
-     "x": 784,
-     "y": 528,
-     "width": 16,
-     "height": 16,
-     "rotation": 0,
-     "visible": true,
-     "properties": [
-      {
-       "name": "tiefe",
-       "type": "int",
-       "value": 536
-      },
-      {
-       "name": "kollision",
-       "type": "bool",
-       "value": true
-      }
-     ]
-    },
-    {
-     "id": 173,
-     "name": "mf5ZaunSeiteLinks",
-     "type": "moebel",
-     "x": 784,
-     "y": 544,
-     "width": 16,
-     "height": 16,
-     "rotation": 0,
-     "visible": true,
-     "properties": [
-      {
-       "name": "tiefe",
-       "type": "int",
-       "value": 552
-      },
-      {
-       "name": "kollision",
-       "type": "bool",
-       "value": true
-      }
-     ]
-    },
-    {
-     "id": 174,
-     "name": "mf5ZaunSeiteLinks",
-     "type": "moebel",
-     "x": 784,
-     "y": 560,
-     "width": 16,
-     "height": 16,
-     "rotation": 0,
-     "visible": true,
-     "properties": [
-      {
-       "name": "tiefe",
-       "type": "int",
-       "value": 568
-      },
-      {
-       "name": "kollision",
-       "type": "bool",
-       "value": true
-      }
-     ]
-    },
-    {
-     "id": 175,
-     "name": "mf5ZaunSeiteLinks",
-     "type": "moebel",
-     "x": 784,
-     "y": 576,
-     "width": 16,
-     "height": 16,
-     "rotation": 0,
-     "visible": true,
-     "properties": [
-      {
-       "name": "tiefe",
-       "type": "int",
-       "value": 584
-      },
-      {
-       "name": "kollision",
-       "type": "bool",
-       "value": true
-      }
-     ]
-    },
-    {
-     "id": 176,
-     "name": "mf5ZaunSeiteLinks",
-     "type": "moebel",
-     "x": 784,
-     "y": 592,
-     "width": 16,
-     "height": 16,
-     "rotation": 0,
-     "visible": true,
-     "properties": [
-      {
-       "name": "tiefe",
-       "type": "int",
-       "value": 600
-      },
-      {
-       "name": "kollision",
-       "type": "bool",
-       "value": true
-      }
-     ]
-    },
-    {
-     "id": 177,
-     "name": "mf5ZaunSeiteLinks",
-     "type": "moebel",
-     "x": 784,
-     "y": 608,
-     "width": 16,
-     "height": 16,
-     "rotation": 0,
-     "visible": true,
-     "properties": [
-      {
-       "name": "tiefe",
-       "type": "int",
-       "value": 616
-      },
-      {
-       "name": "kollision",
-       "type": "bool",
-       "value": true
-      }
-     ]
-    },
-    {
-     "id": 178,
-     "name": "mf5ZaunSeiteLinks",
-     "type": "moebel",
-     "x": 784,
-     "y": 624,
-     "width": 16,
-     "height": 16,
-     "rotation": 0,
-     "visible": true,
-     "properties": [
-      {
-       "name": "tiefe",
-       "type": "int",
-       "value": 632
-      },
-      {
-       "name": "kollision",
-       "type": "bool",
-       "value": true
-      }
-     ]
-    },
-    {
-     "id": 179,
-     "name": "mf4ZaunSeite",
-     "type": "moebel",
-     "x": 992,
-     "y": 512,
-     "width": 16,
-     "height": 16,
-     "rotation": 0,
-     "visible": true,
-     "properties": [
-      {
-       "name": "tiefe",
-       "type": "int",
-       "value": 520
-      },
-      {
-       "name": "kollision",
-       "type": "bool",
-       "value": true
-      }
-     ]
-    },
-    {
-     "id": 180,
-     "name": "mf4ZaunSeite",
-     "type": "moebel",
-     "x": 992,
-     "y": 528,
-     "width": 16,
-     "height": 16,
-     "rotation": 0,
-     "visible": true,
-     "properties": [
-      {
-       "name": "tiefe",
-       "type": "int",
-       "value": 536
-      },
-      {
-       "name": "kollision",
-       "type": "bool",
-       "value": true
-      }
-     ]
-    },
-    {
-     "id": 181,
-     "name": "mf4ZaunSeite",
-     "type": "moebel",
-     "x": 992,
-     "y": 544,
-     "width": 16,
-     "height": 16,
-     "rotation": 0,
-     "visible": true,
-     "properties": [
-      {
-       "name": "tiefe",
-       "type": "int",
-       "value": 552
-      },
-      {
-       "name": "kollision",
-       "type": "bool",
-       "value": true
-      }
-     ]
-    },
-    {
-     "id": 182,
-     "name": "mf4ZaunSeite",
-     "type": "moebel",
-     "x": 992,
-     "y": 560,
-     "width": 16,
-     "height": 16,
-     "rotation": 0,
-     "visible": true,
-     "properties": [
-      {
-       "name": "tiefe",
-       "type": "int",
-       "value": 568
-      },
-      {
-       "name": "kollision",
-       "type": "bool",
-       "value": true
-      }
-     ]
-    },
-    {
-     "id": 183,
-     "name": "mf4ZaunSeite",
-     "type": "moebel",
-     "x": 992,
-     "y": 576,
-     "width": 16,
-     "height": 16,
-     "rotation": 0,
-     "visible": true,
-     "properties": [
-      {
-       "name": "tiefe",
-       "type": "int",
-       "value": 584
-      },
-      {
-       "name": "kollision",
-       "type": "bool",
-       "value": true
-      }
-     ]
-    },
-    {
-     "id": 184,
-     "name": "mf4ZaunSeite",
-     "type": "moebel",
-     "x": 992,
-     "y": 592,
-     "width": 16,
-     "height": 16,
-     "rotation": 0,
-     "visible": true,
-     "properties": [
-      {
-       "name": "tiefe",
-       "type": "int",
-       "value": 600
-      },
-      {
-       "name": "kollision",
-       "type": "bool",
-       "value": true
-      }
-     ]
-    },
-    {
-     "id": 185,
-     "name": "mf4ZaunSeite",
-     "type": "moebel",
-     "x": 992,
-     "y": 608,
-     "width": 16,
-     "height": 16,
-     "rotation": 0,
-     "visible": true,
-     "properties": [
-      {
-       "name": "tiefe",
-       "type": "int",
-       "value": 616
-      },
-      {
-       "name": "kollision",
-       "type": "bool",
-       "value": true
-      }
-     ]
-    },
-    {
-     "id": 186,
-     "name": "mf4ZaunSeite",
-     "type": "moebel",
-     "x": 992,
-     "y": 624,
-     "width": 16,
-     "height": 16,
-     "rotation": 0,
-     "visible": true,
-     "properties": [
-      {
-       "name": "tiefe",
-       "type": "int",
-       "value": 632
-      },
-      {
-       "name": "kollision",
-       "type": "bool",
-       "value": true
-      }
-     ]
-    },
-    {
-     "id": 187,
      "name": "mf4ZaunEckeLinks",
      "type": "moebel",
      "x": 784,
@@ -12559,10 +12245,10 @@
      ]
     },
     {
-     "id": 188,
+     "id": 170,
      "name": "mf4ZaunEckeRechts",
      "type": "moebel",
-     "x": 992,
+     "x": 896,
      "y": 640,
      "width": 16,
      "height": 16,
@@ -12582,7 +12268,7 @@
      ]
     },
     {
-     "id": 189,
+     "id": 171,
      "name": "mf4ZaunMitte",
      "type": "moebel",
      "x": 800,
@@ -12605,7 +12291,7 @@
      ]
     },
     {
-     "id": 190,
+     "id": 172,
      "name": "mf4ZaunMitte",
      "type": "moebel",
      "x": 816,
@@ -12628,7 +12314,7 @@
      ]
     },
     {
-     "id": 191,
+     "id": 173,
      "name": "mf4ZaunMitte",
      "type": "moebel",
      "x": 832,
@@ -12651,7 +12337,7 @@
      ]
     },
     {
-     "id": 192,
+     "id": 174,
      "name": "mf4ZaunMitte",
      "type": "moebel",
      "x": 848,
@@ -12674,7 +12360,7 @@
      ]
     },
     {
-     "id": 193,
+     "id": 175,
      "name": "mf4ZaunMitte",
      "type": "moebel",
      "x": 864,
@@ -12697,7 +12383,7 @@
      ]
     },
     {
-     "id": 194,
+     "id": 176,
      "name": "mf4ZaunMitte",
      "type": "moebel",
      "x": 880,
@@ -12720,145 +12406,7 @@
      ]
     },
     {
-     "id": 195,
-     "name": "mf4ZaunMitte",
-     "type": "moebel",
-     "x": 896,
-     "y": 640,
-     "width": 16,
-     "height": 16,
-     "rotation": 0,
-     "visible": true,
-     "properties": [
-      {
-       "name": "tiefe",
-       "type": "int",
-       "value": 648
-      },
-      {
-       "name": "kollision",
-       "type": "bool",
-       "value": true
-      }
-     ]
-    },
-    {
-     "id": 196,
-     "name": "mf4ZaunMitte",
-     "type": "moebel",
-     "x": 912,
-     "y": 640,
-     "width": 16,
-     "height": 16,
-     "rotation": 0,
-     "visible": true,
-     "properties": [
-      {
-       "name": "tiefe",
-       "type": "int",
-       "value": 648
-      },
-      {
-       "name": "kollision",
-       "type": "bool",
-       "value": true
-      }
-     ]
-    },
-    {
-     "id": 197,
-     "name": "mf4ZaunMitte",
-     "type": "moebel",
-     "x": 928,
-     "y": 640,
-     "width": 16,
-     "height": 16,
-     "rotation": 0,
-     "visible": true,
-     "properties": [
-      {
-       "name": "tiefe",
-       "type": "int",
-       "value": 648
-      },
-      {
-       "name": "kollision",
-       "type": "bool",
-       "value": true
-      }
-     ]
-    },
-    {
-     "id": 198,
-     "name": "mf4ZaunMitte",
-     "type": "moebel",
-     "x": 944,
-     "y": 640,
-     "width": 16,
-     "height": 16,
-     "rotation": 0,
-     "visible": true,
-     "properties": [
-      {
-       "name": "tiefe",
-       "type": "int",
-       "value": 648
-      },
-      {
-       "name": "kollision",
-       "type": "bool",
-       "value": true
-      }
-     ]
-    },
-    {
-     "id": 199,
-     "name": "mf4ZaunMitte",
-     "type": "moebel",
-     "x": 960,
-     "y": 640,
-     "width": 16,
-     "height": 16,
-     "rotation": 0,
-     "visible": true,
-     "properties": [
-      {
-       "name": "tiefe",
-       "type": "int",
-       "value": 648
-      },
-      {
-       "name": "kollision",
-       "type": "bool",
-       "value": true
-      }
-     ]
-    },
-    {
-     "id": 200,
-     "name": "mf4ZaunMitte",
-     "type": "moebel",
-     "x": 976,
-     "y": 640,
-     "width": 16,
-     "height": 16,
-     "rotation": 0,
-     "visible": true,
-     "properties": [
-      {
-       "name": "tiefe",
-       "type": "int",
-       "value": 648
-      },
-      {
-       "name": "kollision",
-       "type": "bool",
-       "value": true
-      }
-     ]
-    },
-    {
-     "id": 201,
+     "id": 177,
      "name": "mfBank",
      "type": "moebel",
      "x": 800,
@@ -12881,30 +12429,7 @@
      ]
     },
     {
-     "id": 202,
-     "name": "mfBank",
-     "type": "moebel",
-     "x": 928,
-     "y": 512,
-     "width": 32,
-     "height": 32,
-     "rotation": 0,
-     "visible": true,
-     "properties": [
-      {
-       "name": "tiefe",
-       "type": "int",
-       "value": 536
-      },
-      {
-       "name": "kollision",
-       "type": "bool",
-       "value": true
-      }
-     ]
-    },
-    {
-     "id": 203,
+     "id": 178,
      "name": "mf4Abfalleimer",
      "type": "moebel",
      "x": 832,
@@ -12927,7 +12452,7 @@
      ]
     },
     {
-     "id": 204,
+     "id": 179,
      "name": "mf4Sandkasten",
      "type": "moebel",
      "x": 816,
@@ -12950,53 +12475,7 @@
      ]
     },
     {
-     "id": 205,
-     "name": "mf4Schaukel",
-     "type": "moebel",
-     "x": 896,
-     "y": 560,
-     "width": 32,
-     "height": 48,
-     "rotation": 0,
-     "visible": true,
-     "properties": [
-      {
-       "name": "tiefe",
-       "type": "int",
-       "value": 600
-      },
-      {
-       "name": "kollision",
-       "type": "bool",
-       "value": true
-      }
-     ]
-    },
-    {
-     "id": 206,
-     "name": "mf4Rutsche",
-     "type": "moebel",
-     "x": 928,
-     "y": 560,
-     "width": 48,
-     "height": 64,
-     "rotation": 0,
-     "visible": true,
-     "properties": [
-      {
-       "name": "tiefe",
-       "type": "int",
-       "value": 616
-      },
-      {
-       "name": "kollision",
-       "type": "bool",
-       "value": true
-      }
-     ]
-    },
-    {
-     "id": 207,
+     "id": 180,
      "name": "mf4Klettergeruest",
      "type": "moebel",
      "x": 816,
@@ -13019,20 +12498,89 @@
      ]
     },
     {
-     "id": 208,
-     "name": "mf4BuschKlein",
+     "id": 181,
+     "name": "mf4Schaukel",
      "type": "moebel",
-     "x": 960,
-     "y": 512,
-     "width": 16,
-     "height": 16,
+     "x": 864,
+     "y": 592,
+     "width": 32,
+     "height": 48,
      "rotation": 0,
      "visible": true,
      "properties": [
       {
        "name": "tiefe",
        "type": "int",
-       "value": 520
+       "value": 632
+      },
+      {
+       "name": "kollision",
+       "type": "bool",
+       "value": true
+      }
+     ]
+    },
+    {
+     "id": 182,
+     "name": "mf8KulisseBauernhaus",
+     "type": "moebel",
+     "x": 496,
+     "y": 64,
+     "width": 128,
+     "height": 160,
+     "rotation": 0,
+     "visible": true,
+     "properties": [
+      {
+       "name": "tiefe",
+       "type": "int",
+       "value": 216
+      },
+      {
+       "name": "kollision",
+       "type": "bool",
+       "value": true
+      }
+     ]
+    },
+    {
+     "id": 183,
+     "name": "mf8KulisseLaden",
+     "type": "moebel",
+     "x": 176,
+     "y": 512,
+     "width": 112,
+     "height": 144,
+     "rotation": 0,
+     "visible": true,
+     "properties": [
+      {
+       "name": "tiefe",
+       "type": "int",
+       "value": 648
+      },
+      {
+       "name": "kollision",
+       "type": "bool",
+       "value": true
+      }
+     ]
+    },
+    {
+     "id": 184,
+     "name": "mf8KulisseStadthaus",
+     "type": "moebel",
+     "x": 912,
+     "y": 480,
+     "width": 96,
+     "height": 176,
+     "rotation": 0,
+     "visible": true,
+     "properties": [
+      {
+       "name": "tiefe",
+       "type": "int",
+       "value": 648
       },
       {
        "name": "kollision",

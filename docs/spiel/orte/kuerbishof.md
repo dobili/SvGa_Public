@@ -75,3 +75,13 @@ mit Dialogen; Bedingung am Tor S1.
 
 **Größe** 48 × 34. **Boden** Gras, Hofplatz und Feldweg Erde, Felder Ackerboden. Bühnenbild je Variante
 in den Szenen (`inhalte/abenteuer/szenen/kuerbishof-hof.json`, B und C in `szenen/varianten/`).
+
+## Runde 7: Leben (10.11.2026, mittel-4)
+
+Zu Walt, Clover und Oma kommen drei ansprechbare Statisten (`statist.kuerbishof.hof.*`):
+
+- Erntehelfer (Umwandlung, wie der größte Kürbis);
+- Pferdefrau am Weidezaun (die wilden Pferde in fester Reihenfolge);
+- Marktfrau (Weizenkorn-Legende, Dokument 16, 4.1 Nr. 8).
+
+Tiere: Katze, Krähen, Kühe, wilde Pferde, Hühner, Schwein.

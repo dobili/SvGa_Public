@@ -777,7 +777,8 @@
         "von": "19,12",
         "bis": "19,12",
         "tun": "angelt im Kanal",
-        "wann": "tag"
+        "wann": "tag",
+        "sagt": "statist.wegRivertonIronwood.kanalweg.angler"
       }
     },
     {
@@ -792,13 +793,37 @@
       }
     },
     {
+      "name": "kind",
+      "typ": "statist",
+      "feld": [19, 34],
+      "eigenschaften": {
+        "von": "19,34",
+        "bis": "19,34",
+        "tun": "zählt die Entenküken",
+        "wann": "tag",
+        "sagt": "statist.wegRivertonIronwood.kanalweg.kind"
+      }
+    },
+    {
+      "name": "landvermesser",
+      "typ": "statist",
+      "feld": [8, 60],
+      "eigenschaften": {
+        "von": "8,60",
+        "bis": "14,60",
+        "tun": "misst den Treidelpfad aus",
+        "wann": "tag",
+        "sagt": "statist.wegRivertonIronwood.kanalweg.landvermesser"
+      }
+    },
+    {
       "name": "enten",
       "typ": "tier",
       "feld": [22, 30],
       "eigenschaften": {
         "von": "22,30",
-        "bis": "22,40",
-        "verhalten": "folgen"
+        "bis": "22,44",
+        "verhalten": "schwimmen"
       }
     },
     {
@@ -818,17 +843,37 @@
       "eigenschaften": {
         "von": "22,168",
         "bis": "22,176",
-        "verhalten": "folgen"
+        "verhalten": "schwimmen"
       }
     },
     {
       "name": "kraehen",
       "typ": "tier",
-      "feld": [7, 32],
+      "feld": [6, 41],
       "eigenschaften": {
-        "von": "7,32",
-        "bis": "7,32",
+        "von": "6,41",
+        "bis": "6,41",
         "verhalten": "sitzen"
+      }
+    },
+    {
+      "name": "reiher",
+      "typ": "tier",
+      "feld": [19, 100],
+      "eigenschaften": {
+        "von": "19,100",
+        "bis": "19,100",
+        "verhalten": "sitzen"
+      }
+    },
+    {
+      "name": "hase",
+      "typ": "tier",
+      "feld": [25, 170],
+      "eigenschaften": {
+        "von": "25,170",
+        "bis": "27,170",
+        "verhalten": "flitzen"
       }
     }
   ],

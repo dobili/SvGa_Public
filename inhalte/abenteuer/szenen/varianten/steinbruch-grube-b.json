@@ -337,6 +337,11 @@
     {
       "moebel": "fels",
       "feld": [30, 18]
+    },
+    {
+      "moebel": "ds8Finkenzeichen",
+      "feld": [59, 42],
+      "id": "ereignis57"
     }
   ],
   "ausloeser": [
@@ -403,6 +408,93 @@
         "von": "30,4",
         "bis": "30,4",
         "verhalten": "sitzen"
+      }
+    },
+    {
+      "name": "steinmetz",
+      "typ": "statist",
+      "feld": [30, 30],
+      "eigenschaften": {
+        "von": "30,30",
+        "bis": "30,30",
+        "tun": "behaut einen Block in der Grube",
+        "wann": "tag",
+        "sagt": "statist.steinbruch.grube.steinmetz"
+      }
+    },
+    {
+      "name": "wanderer",
+      "typ": "statist",
+      "feld": [51, 40],
+      "eigenschaften": {
+        "von": "51,40",
+        "bis": "51,40",
+        "tun": "schaut über die Kante in die Grube",
+        "wann": "tag",
+        "sagt": "statist.steinbruch.grube.wanderer"
+      }
+    },
+    {
+      "name": "fotografin",
+      "typ": "statist",
+      "feld": [20, 20],
+      "eigenschaften": {
+        "von": "20,20",
+        "bis": "20,20",
+        "tun": "fotografiert die Felswände im Abendlicht",
+        "wann": "abend",
+        "sagt": "statist.steinbruch.grube.fotografin"
+      }
+    },
+    {
+      "name": "fledermaeuse",
+      "typ": "tier",
+      "feld": [35, 15],
+      "eigenschaften": {
+        "von": "35,15",
+        "bis": "45,15",
+        "verhalten": "fliegen",
+        "wann": "abend"
+      }
+    },
+    {
+      "name": "fuchs",
+      "typ": "tier",
+      "feld": [60, 42],
+      "eigenschaften": {
+        "von": "60,42",
+        "bis": "64,42",
+        "verhalten": "ausweichen"
+      }
+    },
+    {
+      "name": "hasen",
+      "typ": "tier",
+      "feld": [10, 44],
+      "eigenschaften": {
+        "von": "10,44",
+        "bis": "16,44",
+        "verhalten": "flitzen"
+      }
+    },
+    {
+      "name": "falke",
+      "typ": "tier",
+      "feld": [40, 8],
+      "eigenschaften": {
+        "von": "40,8",
+        "bis": "56,8",
+        "verhalten": "fliegen"
+      }
+    },
+    {
+      "name": "eidechse",
+      "typ": "tier",
+      "feld": [25, 36],
+      "eigenschaften": {
+        "von": "25,36",
+        "bis": "29,36",
+        "verhalten": "flitzen"
       }
     }
   ],

@@ -1095,6 +1095,24 @@
     {
       "moebel": "ws5Strandgras",
       "feld": [121, 23]
+    },
+    {
+      "moebel": "pd6Klapptisch",
+      "feld": [71, 6],
+      "id": "streamtisch"
+    },
+    {
+      "moebel": "pd6Laptop",
+      "feld": [0, 0],
+      "auf": "streamtisch"
+    },
+    {
+      "moebel": "sb8Ringlicht",
+      "feld": [73, 5]
+    },
+    {
+      "moebel": "sb8Funkmast",
+      "feld": [66, 3]
     }
   ],
   "ausloeser": [
@@ -1152,7 +1170,44 @@
         "von": "6,18",
         "bis": "18,18",
         "tun": "Pendlerin mit Kaffeebecher",
-        "wann": "morgen"
+        "wann": "morgen",
+        "sagt": "statist.wegIronwoodSilicon.glasbruecke.pendlerin"
+      }
+    },
+    {
+      "name": "kameramann",
+      "typ": "statist",
+      "feld": [70, 10],
+      "eigenschaften": {
+        "tun": "sucht auf der Brücke den besten Platz für ein Stativ",
+        "wann": "tag",
+        "von": "68,10",
+        "bis": "74,11",
+        "sagt": "statist.wegIronwoodSilicon.glasbruecke.kameramann"
+      }
+    },
+    {
+      "name": "techniker",
+      "typ": "statist",
+      "feld": [100, 12],
+      "eigenschaften": {
+        "tun": "misst mit einem Gerät die Funkwellen am Geländer",
+        "wann": "tag",
+        "von": "96,11",
+        "bis": "104,13",
+        "sagt": "statist.wegIronwoodSilicon.glasbruecke.techniker"
+      }
+    },
+    {
+      "name": "rentnerin",
+      "typ": "statist",
+      "feld": [30, 15],
+      "eigenschaften": {
+        "tun": "schaut den Autos unter der Brücke zu",
+        "wann": "tag",
+        "von": "26,14",
+        "bis": "34,16",
+        "sagt": "statist.wegIronwoodSilicon.glasbruecke.rentnerin"
       }
     },
     {
@@ -1160,7 +1215,59 @@
       "typ": "tier",
       "feld": [120, 9],
       "eigenschaften": {
-        "verhalten": "sitzen"
+        "von": "110,8",
+        "bis": "130,12",
+        "verhalten": "fliegen"
+      }
+    },
+    {
+      "name": "tauben",
+      "typ": "tier",
+      "feld": [10, 20],
+      "eigenschaften": {
+        "von": "4,16",
+        "bis": "18,24",
+        "verhalten": "fliegen"
+      }
+    },
+    {
+      "name": "kraehe",
+      "typ": "tier",
+      "feld": [83, 10],
+      "eigenschaften": {
+        "von": "78,10",
+        "bis": "92,12",
+        "verhalten": "ausweichen"
+      }
+    },
+    {
+      "name": "spatzen",
+      "typ": "tier",
+      "feld": [14, 22],
+      "eigenschaften": {
+        "von": "6,18",
+        "bis": "20,24",
+        "verhalten": "fliegen"
+      }
+    },
+    {
+      "name": "seeschwalben",
+      "typ": "tier",
+      "feld": [130, 16],
+      "eigenschaften": {
+        "von": "122,14",
+        "bis": "138,20",
+        "verhalten": "fliegen"
+      }
+    },
+    {
+      "name": "kaninchen",
+      "typ": "tier",
+      "feld": [126, 20],
+      "eigenschaften": {
+        "von": "120,18",
+        "bis": "134,22",
+        "verhalten": "flitzen"
       }
     }
   ]

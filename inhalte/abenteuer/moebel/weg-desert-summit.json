@@ -522,6 +522,33 @@
       "blick": "unten",
       "zustand": "alt",
       "stil": "klassisch"
+    },
+    "sc8Funkgeraet": {
+      "quelle": "spiel/eigene/cb_funkgeraet.png",
+      "breite": 16,
+      "hoehe": 16,
+      "kollision": false,
+      "art": "geraet",
+      "zustand": "gebraucht",
+      "stil": "natur"
+    },
+    "sc8Finkenzeichen": {
+      "quelle": "spiel/eigene/finkenzeichen_blech.png",
+      "breite": 16,
+      "hoehe": 16,
+      "kollision": false,
+      "art": "deko",
+      "zustand": "gebraucht",
+      "stil": "natur"
+    },
+    "sc8Kreidespringer": {
+      "quelle": "spiel/eigene/kreidespringer.png",
+      "breite": 16,
+      "hoehe": 16,
+      "kollision": false,
+      "art": "deko",
+      "zustand": "gebraucht",
+      "stil": "natur"
     }
   }
 }

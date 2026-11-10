@@ -892,6 +892,26 @@
     {
       "moebel": "ws5Strandgras",
       "feld": [86, 17]
+    },
+    {
+      "moebel": "wr5Container",
+      "feld": [128, 8]
+    },
+    {
+      "moebel": "sb5KuebelBluete",
+      "feld": [142, 15]
+    },
+    {
+      "moebel": "sb8Kreidespringer",
+      "feld": [129, 9],
+      "vorn": true,
+      "versatz": [0, 0]
+    },
+    {
+      "moebel": "sb8Finkenzeichen",
+      "feld": [143, 16],
+      "vorn": true,
+      "versatz": [4, -2]
     }
   ],
   "ausloeser": [
@@ -957,7 +977,8 @@
         "von": "20,18",
         "bis": "90,18",
         "tun": "Radfahrer auf dem Küstenpfad",
-        "wann": "tag"
+        "wann": "tag",
+        "sagt": "statist.wegIronwoodSilicon.raststaette.radfahrer"
       }
     },
     {
@@ -966,7 +987,8 @@
       "feld": [145, 22],
       "eigenschaften": {
         "tun": "Busfahrer Briggs macht Pause am Wartehäuschen",
-        "wann": "tag"
+        "wann": "tag",
+        "sagt": "statist.wegIronwoodSilicon.raststaette.busfahrer"
       }
     },
     {
@@ -976,6 +998,58 @@
       "eigenschaften": {
         "tun": "Mr. Oakes zählt Vögel im Watt",
         "wann": "tag"
+      }
+    },
+    {
+      "name": "vogelzaehlerin",
+      "typ": "statist",
+      "feld": [70, 18],
+      "eigenschaften": {
+        "tun": "zählt mit einem Klicker die Strandläufer",
+        "wann": "tag",
+        "von": "66,18",
+        "bis": "74,19",
+        "sagt": "statist.wegIronwoodSilicon.raststaette.vogelzaehlerin"
+      }
+    },
+    {
+      "name": "strandlaeufer",
+      "typ": "tier",
+      "feld": [80, 23],
+      "eigenschaften": {
+        "von": "72,22",
+        "bis": "90,24",
+        "verhalten": "flitzen"
+      }
+    },
+    {
+      "name": "ringelgaense",
+      "typ": "tier",
+      "feld": [40, 25],
+      "eigenschaften": {
+        "von": "30,24",
+        "bis": "50,26",
+        "verhalten": "schwimmen"
+      }
+    },
+    {
+      "name": "krebse",
+      "typ": "tier",
+      "feld": [20, 23],
+      "eigenschaften": {
+        "von": "14,23",
+        "bis": "26,25",
+        "verhalten": "ausweichen"
+      }
+    },
+    {
+      "name": "hund",
+      "typ": "tier",
+      "feld": [150, 22],
+      "eigenschaften": {
+        "von": "146,20",
+        "bis": "156,24",
+        "verhalten": "folgen"
       }
     }
   ],

@@ -7,7 +7,8 @@
   "wandart": "gras",
   "boeden": {
     "e": "erde",
-    "f": "erde"
+    "f": "erde",
+    "k": "schotter"
   },
   "zustand": ["neu", "gebraucht", "alt"],
   "stil": [
@@ -37,14 +38,14 @@
     "#...............eeeeeeeeeeeeeee......eee............ee.................................................................#",
     "eeeeeeeeeeeeeeeeeeeeeeeeeeeeeeeeeeeeeeeee...........ee..........eeeeeeeeeeeee.............eeeeeeeeeeeeeeeeeeeeeeeeeeeeee",
     "eeeeeeeeeeeeeeeeeee.........eeeeeeeeeeeeee..........ee.........eeeeeeeeeeeeeeeeeeeeeeeeeeeeeeeeeeeeeeeeeeeeeeeeeeeeeeeee",
-    "eeeeeeeeeeeeeeeee.............eeeeeeeeeeeee.........ee........eeee..........eeeeeeeeeeeeeee............................#",
-    "#.......................................eeeeeeeeeeeeeeeeeeeeeeeee......................................................#",
-    "#........................................eeeeeeeeeeeeeeeeeeeeeee.......................................................#",
-    "~~~~~~~~~.................................eeeeeeeeeeeeeeeeeeeee........................................................#",
-    "~~~~~~~~~~.............................................................................................................#",
-    "~~~~~~~~~~~~...........................................................................................................#",
-    "~~~~~~~~~~~~~..........................................................................................................#",
-    "~~~~~~~~~~~~~~~........................................................................................................#",
+    "eeeeeeeeeeeeeeeee.............eeeeeeeeeeeee.........ee........eeee..........eeeeeeeeeeeeeee....kk......................#",
+    "#.......................................eeeeeeeeeeeeeeeeeeeeeeeee..............................kk......................#",
+    "#........................................eeeeeeeeeeeeeeeeeeeeeee........................kkkkkkkkkkk....................#",
+    "~~~~~~~~~.................................eeeeeeeeeeeeeeeeeeeee.........................kkkkkkkkkkk....................#",
+    "~~~~~~~~~~..............................................................................kkkkkkkkkkk....................#",
+    "~~~~~~~~~~~~............................................................................kkkkkkkkkkk....................#",
+    "~~~~~~~~~~~~~...........................................................................kkkkkkkkkkk....................#",
+    "~~~~~~~~~~~~~~~.........................................................................kkkkkkkkkkk....................#",
     "~~~~~~~~~~~~~~~~.........................~~~~~~~~~~~.........................~~~~~~~~~~~.........................~~~~..#",
     "~~~~~~~~~~~~~~~~~~~~~.........~~~~~~~~~~~~~~~~~~~~~~~~~....................~~~~~~~~~~~~~~~~~~~~~~~~~...........~~~~~~~~~",
     "~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~.....~~~~~~~~~~~~",
@@ -2620,28 +2621,12 @@
       "feld": [80, 20]
     },
     {
-      "moebel": "wg4LaubbaumRot",
-      "feld": [84, 20]
-    },
-    {
-      "moebel": "wg4Busch",
-      "feld": [95, 12]
-    },
-    {
       "moebel": "wg4BuschB",
       "feld": [98, 12]
     },
     {
-      "moebel": "wg4Busch",
-      "feld": [96, 13]
-    },
-    {
       "moebel": "wg4BuschBreit",
       "feld": [100, 12]
-    },
-    {
-      "moebel": "wg4Erle",
-      "feld": [106, 22]
     },
     {
       "moebel": "wg4Erle",
@@ -2662,14 +2647,6 @@
     {
       "moebel": "wg4Laubbaum",
       "feld": [70, 21]
-    },
-    {
-      "moebel": "wg4LaubbaumB",
-      "feld": [92, 20]
-    },
-    {
-      "moebel": "wg4LaubbaumHerbst",
-      "feld": [100, 19]
     },
     {
       "moebel": "wg4GrasB",
@@ -2716,10 +2693,6 @@
       "feld": [34, 19]
     },
     {
-      "moebel": "wg4BlumeBlau",
-      "feld": [104, 20]
-    },
-    {
       "moebel": "wg4GrasB",
       "feld": [38, 23]
     },
@@ -2764,36 +2737,8 @@
       "feld": [40, 20]
     },
     {
-      "moebel": "wg4Farn",
-      "feld": [90, 22]
-    },
-    {
-      "moebel": "wg4Farn",
-      "feld": [91, 22]
-    },
-    {
-      "moebel": "wg4Farn",
-      "feld": [90, 23]
-    },
-    {
-      "moebel": "wg4SteinB",
-      "feld": [96, 22]
-    },
-    {
       "moebel": "wg4GrasB",
       "feld": [116, 22]
-    },
-    {
-      "moebel": "wg4BlumeBlau",
-      "feld": [91, 19]
-    },
-    {
-      "moebel": "wg4BlumeBlau",
-      "feld": [92, 19]
-    },
-    {
-      "moebel": "wg4BlumeBlau",
-      "feld": [91, 20]
     },
     {
       "moebel": "wg4GrasB",
@@ -2844,18 +2789,6 @@
       "feld": [43, 12]
     },
     {
-      "moebel": "wg4BlumeBlau",
-      "feld": [103, 23]
-    },
-    {
-      "moebel": "wg4BlumeBlau",
-      "feld": [104, 23]
-    },
-    {
-      "moebel": "wg4BlumeBlau",
-      "feld": [103, 24]
-    },
-    {
       "moebel": "wg4Pilze",
       "feld": [27, 25]
     },
@@ -2889,10 +2822,6 @@
     },
     {
       "moebel": "wg4Stein",
-      "feld": [107, 18]
-    },
-    {
-      "moebel": "wg4Stein",
       "feld": [116, 13]
     },
     {
@@ -2908,24 +2837,12 @@
       "feld": [28, 17]
     },
     {
-      "moebel": "wg4SteinB",
-      "feld": [105, 25]
-    },
-    {
       "moebel": "wg4BlumeBlau",
       "feld": [64, 14]
     },
     {
       "moebel": "wg4BlumeBlau",
       "feld": [65, 14]
-    },
-    {
-      "moebel": "wg4Gras",
-      "feld": [99, 20]
-    },
-    {
-      "moebel": "wg4BlumenWeiss",
-      "feld": [96, 24]
     },
     {
       "moebel": "wg4Pilze",
@@ -3000,18 +2917,6 @@
       "feld": [34, 12]
     },
     {
-      "moebel": "wg4Gras",
-      "feld": [99, 17]
-    },
-    {
-      "moebel": "wg4Gras",
-      "feld": [100, 17]
-    },
-    {
-      "moebel": "wg4Gras",
-      "feld": [99, 18]
-    },
-    {
       "moebel": "wg4GrasB",
       "feld": [18, 25]
     },
@@ -3057,14 +2962,6 @@
     },
     {
       "moebel": "wg4BuschKlein",
-      "feld": [87, 19]
-    },
-    {
-      "moebel": "wg4BuschKlein",
-      "feld": [88, 19]
-    },
-    {
-      "moebel": "wg4BuschKlein",
       "feld": [39, 24]
     },
     {
@@ -3072,8 +2969,41 @@
       "feld": [32, 18]
     },
     {
-      "moebel": "wg4BuschBluete",
-      "feld": [105, 19]
+      "moebel": "mf8FlohmarktHof",
+      "feld": [99, 17]
+    },
+    {
+      "moebel": "mf8Wohnmobil",
+      "feld": [88, 19],
+      "bauteil_ok": true
+    },
+    {
+      "moebel": "mf8FlohmarktTischA",
+      "feld": [89, 23]
+    },
+    {
+      "moebel": "mf8FlohmarktTischB",
+      "feld": [92, 23]
+    },
+    {
+      "moebel": "mf8FlohmarktTischC",
+      "feld": [96, 22]
+    },
+    {
+      "moebel": "mf8FlohmarktKarton",
+      "feld": [94, 19]
+    },
+    {
+      "moebel": "mf8FlohmarktKiste",
+      "feld": [97, 19]
+    },
+    {
+      "moebel": "mf8FlohmarktSchild",
+      "feld": [92, 17]
+    },
+    {
+      "moebel": "mf8FlohmarktPlakat",
+      "feld": [95, 12]
     }
   ],
   "ausloeser": [
@@ -3205,6 +3135,56 @@
         "bis": "104,14",
         "verhalten": "ausweichen",
         "wann": "morgen"
+      }
+    },
+    {
+      "name": "frauMitPferden",
+      "typ": "statist",
+      "feld": [23, 17],
+      "eigenschaften": {
+        "tun": "beobachtet die wilden Pferde auf der Weide",
+        "wann": "tag",
+        "sagt": "statist.wegMapleCedar.landstrasse.frauMitPferden"
+      }
+    },
+    {
+      "name": "verkaeuferin",
+      "typ": "statist",
+      "feld": [95, 22],
+      "eigenschaften": {
+        "tun": "verkauft ihren Dachboden auf dem Hof",
+        "wann": "tag",
+        "sagt": "statist.wegMapleCedar.landstrasse.verkaeuferin"
+      }
+    },
+    {
+      "name": "kundeMitLampe",
+      "typ": "statist",
+      "feld": [94, 21],
+      "eigenschaften": {
+        "tun": "hält eine alte Lampe gegen das Licht",
+        "wann": "tag",
+        "sagt": "statist.wegMapleCedar.landstrasse.kundeMitLampe"
+      }
+    },
+    {
+      "name": "wildpferde",
+      "typ": "tier",
+      "feld": [24, 22],
+      "eigenschaften": {
+        "verhalten": "ausweichen",
+        "von": "20,21",
+        "bis": "28,23"
+      }
+    },
+    {
+      "name": "eichhoernchen",
+      "typ": "tier",
+      "feld": [72, 20],
+      "eigenschaften": {
+        "verhalten": "flitzen",
+        "von": "70,19",
+        "bis": "76,20"
       }
     }
   ]

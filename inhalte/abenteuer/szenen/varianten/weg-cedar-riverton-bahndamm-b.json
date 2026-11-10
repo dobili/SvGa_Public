@@ -1579,6 +1579,14 @@
     {
       "moebel": "wc5Stein",
       "feld": [43, 23]
+    },
+    {
+      "moebel": "wc8Stellwerk",
+      "feld": [26, 10]
+    },
+    {
+      "moebel": "wc8StellwerkBank",
+      "feld": [22, 11]
     }
   ],
   "ausloeser": [
@@ -1640,12 +1648,11 @@
     {
       "name": "gaertnerin",
       "typ": "statist",
-      "feld": [105, 17],
+      "feld": [95, 18],
       "eigenschaften": {
-        "von": "105,17",
-        "bis": "108,17",
         "tun": "gießt die Beete",
-        "wann": "tag"
+        "wann": "tag",
+        "sagt": "statist.wegCedarRiverton.bahndamm.gaertnerin"
       }
     },
     {
@@ -1684,6 +1691,46 @@
         "von": "90,22",
         "bis": "100,22",
         "verhalten": "fliegen"
+      }
+    },
+    {
+      "name": "trainspotter",
+      "typ": "statist",
+      "feld": [25, 10],
+      "eigenschaften": {
+        "tun": "notiert die Nummern der Güterwagen",
+        "wann": "tag",
+        "sagt": "statist.wegCedarRiverton.bahndamm.trainspotter"
+      }
+    },
+    {
+      "name": "radlerin",
+      "typ": "statist",
+      "feld": [36, 9],
+      "eigenschaften": {
+        "tun": "schiebt das Rad den Damm entlang",
+        "wann": "morgen",
+        "sagt": "statist.wegCedarRiverton.bahndamm.radlerin",
+        "von": "36,9",
+        "bis": "64,9"
+      }
+    },
+    {
+      "name": "katzeImWaggon",
+      "typ": "tier",
+      "feld": [113, 1],
+      "eigenschaften": {
+        "verhalten": "sitzen"
+      }
+    },
+    {
+      "name": "fasan",
+      "typ": "tier",
+      "feld": [20, 20],
+      "eigenschaften": {
+        "verhalten": "ausweichen",
+        "von": "16,20",
+        "bis": "26,21"
       }
     }
   ],

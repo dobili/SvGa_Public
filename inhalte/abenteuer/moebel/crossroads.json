@@ -146,6 +146,69 @@
       "blick": "unten",
       "zustand": "gebraucht",
       "stil": "klassisch"
+    },
+    "cr8InfotafelDach": {
+      "quelle": "spiel/eigene/infotafel_dach.png",
+      "breite": 32,
+      "hoehe": 32,
+      "kollision": true,
+      "art": "schild",
+      "blick": "unten",
+      "zustand": "neu",
+      "stil": "rustikal"
+    },
+    "cr8FahneWeiss": {
+      "quelle": "spiel/eigene/fahne_weiss.png",
+      "breite": 16,
+      "hoehe": 48,
+      "kollision": true,
+      "art": "deko",
+      "blick": "unten",
+      "zustand": "neu",
+      "stil": "rustikal",
+      "maske": [".", ".", "#"]
+    },
+    "cr8FahneSchwarz": {
+      "quelle": "spiel/eigene/fahne_schwarz.png",
+      "breite": 16,
+      "hoehe": 48,
+      "kollision": true,
+      "art": "deko",
+      "blick": "unten",
+      "zustand": "neu",
+      "stil": "rustikal",
+      "maske": [".", ".", "#"]
+    },
+    "cr8Holzfaellerhuette": {
+      "quelle": "spiel/eigene/holzfaellerhuette.png",
+      "breite": 80,
+      "hoehe": 80,
+      "kollision": true,
+      "art": "gebaeude",
+      "blick": "unten",
+      "zustand": "neu",
+      "stil": "rustikal",
+      "gebaeude": true
+    },
+    "cr8Kreidespringer": {
+      "quelle": "spiel/eigene/kreidespringer.png",
+      "breite": 16,
+      "hoehe": 16,
+      "kollision": false,
+      "art": "deko",
+      "blick": "unten",
+      "zustand": "neu",
+      "stil": "einfach"
+    },
+    "cr8Finkenzeichen": {
+      "quelle": "spiel/eigene/finkenzeichen_kreide.png",
+      "breite": 16,
+      "hoehe": 16,
+      "kollision": false,
+      "art": "deko",
+      "blick": "unten",
+      "zustand": "neu",
+      "stil": "einfach"
     }
   }
 }

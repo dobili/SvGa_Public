@@ -11,7 +11,7 @@
     "e": "erde",
     "h": "holzDunkel"
   },
-  "beschreibung": "gemischte Bäume, Gärten mit Beeten, Blumenkästen und Briefkästen, Laternen am Südrand der Straße, ein Picknickplatz mit zwei Tischen auf der Zedernwiese, der Bach schwingt im Süden weit aus. Der Ortskern von Cedar Creek an einem kühlen Spätsommermorgen: ein kleiner, stiller Ort am Bach, der nach Holz und Papier riecht. Die schmale Asphaltstraße kommt links vom Flussweg und endet rechts vor dem Bach, beidseitig mit gepflastertem Gehweg. An der Nordseite stehen nebeneinander die Drechslerei von Mr. Dunmore (kleine Holzscheune mit Blechdach, Rolltor links, Holzstapel davor), der Waschsalon von Mr. Boateng mit Markisen und großen Schaufenstern, darüber ein türkises Neonschild „Waschsalon“, vor dem ein Hund wartet, und das größte Gebäude, die Bibliothek aus rotem Backstein von 1890 mit schiefergedecktem Turm; unten im Turm führen Stufen durch einen Steinbogen mit zwei Lampen zur Tür, links und rechts davon zwei alte Laternen. Rechts an der Straße die hölzerne Anschlagtafel mit Zetteln vom Gemeindefest und dem glänzenden Plakat von Perfect Move, daneben die Bushaltestelle mit Wartehäuschen; der Busfahrer trinkt auf der Straße Kaffee aus der Thermoskanne, Victor wartet am Häuschen. Ganz oben verläuft ein Gleis an der Nordkante, das rechts über eine Holzbrücke über den Bach aus dem Bild führt und links an einem Halteschild endet; davor liegt der kleine gepflasterte Bahnsteig des Haltepunkts mit grüner Bank, Stationsschild „Cedar Creek“ und Fahrplantafel, erreichbar über den Zedernpfad. Hinter den Häusern eine Wiese mit roten Zedern und Fichten, aus der links der Zedernpfad zum Gehweg herunterkommt. Südlich der Straße zwei Holzhäuser mit roten Dächern in Gärten mit Rasen, Plattenweg, Blumenbeet und einer dichten Zedernhecke, daneben eine Wiese mit Zedern, einer Baumstammbank und einer Bank zum Bach. Ganz rechts läuft ein Uferweg aus Erde, dahinter fließt der Bach von oben nach unten durch das Bild; ein breiter Holzsteg ragt hinein, auf dem Rosa angelt und ein Mann Bretter erneuert, weiter unten der Bootsschuppen des Kanuverleihs mit einem Ruderboot im Wasser, ein Reiher steht am Ufer. Oben führt eine Holzbrücke über den Bach in den Zedernwald am Ostufer. Laufwege: Gehwege vor allen Türen, Zedernpfad zum Bahnsteig, die Straße nach links, Zedernpfad, Uferweg, Steg und Brücke.",
+  "beschreibung": "gemischte Bäume, Gärten mit Beeten, Blumenkästen und Briefkästen, Laternen am Südrand der Straße, ein Picknickplatz mit zwei Tischen auf der Zedernwiese, der Bach schwingt im Süden weit aus. Der Ortskern von Cedar Creek an einem kühlen Spätsommermorgen: ein kleiner, stiller Ort am Bach, der nach Holz und Papier riecht. Die schmale Asphaltstraße kommt links vom Flussweg und endet rechts vor dem Bach, beidseitig mit gepflastertem Gehweg. An der Nordseite stehen nebeneinander die Drechslerei von Mr. Dunmore (kleine Holzscheune mit Blechdach, Rolltor links, Holzstapel davor), der Waschsalon von Mr. Boateng mit Markisen und großen Schaufenstern, darüber ein türkises Neonschild „Waschsalon“, vor dem ein Hund wartet, und das größte Gebäude, die Bibliothek aus rotem Backstein von 1890 mit schiefergedecktem Turm; unten im Turm führen Stufen durch einen Steinbogen mit zwei Lampen zur Tür, links und rechts davon zwei alte Laternen. Rechts an der Straße die hölzerne Anschlagtafel mit Zetteln vom Gemeindefest und dem glänzenden Plakat von Perfect Move, daneben die Bushaltestelle mit Wartehäuschen; der Busfahrer trinkt auf der Straße Kaffee aus der Thermoskanne, Victor wartet am Häuschen. Ganz oben verläuft ein Gleis an der Nordkante, das rechts über eine Holzbrücke über den Bach aus dem Bild führt und links an einem Halteschild endet; davor liegt der kleine gepflasterte Bahnsteig des Haltepunkts mit grüner Bank, Stationsschild „Cedar Creek“ und Fahrplantafel, erreichbar über den Zedernpfad. Hinter den Häusern eine Wiese mit roten Zedern und Fichten, aus der links der Zedernpfad zum Gehweg herunterkommt. Südlich der Straße zwei Holzhäuser mit roten Dächern in Gärten mit Rasen, Plattenweg, Blumenbeet und einer dichten Zedernhecke, daneben eine Wiese mit Zedern, einer Baumstammbank und einer Bank zum Bach. Ganz rechts läuft ein Uferweg aus Erde, dahinter fließt der Bach von oben nach unten durch das Bild; ein breiter Holzsteg ragt hinein, auf dem Rosa angelt und ein Mann Bretter erneuert, weiter unten der Bootsschuppen des Kanuverleihs mit einem Ruderboot im Wasser, ein Reiher steht am Ufer. Oben führt eine Holzbrücke über den Bach in den Zedernwald am Ostufer. Laufwege: Gehwege vor allen Türen, Zedernpfad zum Bahnsteig, die Straße nach links, Zedernpfad, Uferweg, Steg und Brücke. Runde 7: Die Karte reicht jetzt bis Reihe 49. Unter der Zedernwiese steht eine Häuserzeile mit Bauernhäusern, Wohnhäusern und einem Laden, die Türen zur neuen Südgasse (Reihen 47–48); hinter der Bibliothek ein Stadthaus.",
   "raster": [
     "##################################################~~~~~#####",
     "#.................................................hhhhh....#",
@@ -51,8 +51,17 @@
     "#pp.............................................ee..~~~~~..#",
     "#pp.............................................ee~~~~~....#",
     "#pp.............................................ee~~~~~....#",
-    "#pppppppppp.....................................ee~~~~~....#",
-    "#pppppppppp.....................................ee~~~~~....#",
+    "#pppppppppppppppppppp...........................ee~~~~~....#",
+    "#pp.............................................ee~~~~~....#",
+    "#pp.............................................ee~~~~~....#",
+    "#pp.............................................ee~~~~~....#",
+    "#pp.............................................ee~~~~~....#",
+    "#pp.............................................ee~~~~~....#",
+    "#pp.............................................ee~~~~~....#",
+    "#pp.............................................ee~~~~~....#",
+    "#pp.............................................ee~~~~~....#",
+    "#pppppppppppppppppppppppppppppppppppppppppppppppee~~~~~....#",
+    "#pppppppppppppppppppppppppppppppppppppppppppppppee~~~~~....#",
     "##################################################~~~~~#####"
   ],
   "objekte": [
@@ -134,32 +143,8 @@
       "feld": [2, 6]
     },
     {
-      "moebel": "mf2Zeder",
-      "feld": [13, 5]
-    },
-    {
       "moebel": "cc4NadelbaumB",
       "feld": [17, 6]
-    },
-    {
-      "moebel": "cc4Nadelbaum",
-      "feld": [42, 4]
-    },
-    {
-      "moebel": "mf2Zeder",
-      "feld": [44, 4]
-    },
-    {
-      "moebel": "mf2ZederSchmal",
-      "feld": [42, 8]
-    },
-    {
-      "moebel": "cc4NadelbaumB",
-      "feld": [45, 8]
-    },
-    {
-      "moebel": "cc4Nadelbaum",
-      "feld": [42, 12]
     },
     {
       "moebel": "cc4Gleis",
@@ -502,11 +487,6 @@
       "bauteil_ok": true
     },
     {
-      "moebel": "cc8HeckeSenkrecht",
-      "feld": [21, 36],
-      "bauteil_ok": true
-    },
-    {
       "moebel": "mf2BlumenbeetKlein",
       "feld": [19, 30]
     },
@@ -553,14 +533,6 @@
       "feld": [38, 24]
     },
     {
-      "moebel": "cc4Nadelbaum",
-      "feld": [40, 34]
-    },
-    {
-      "moebel": "mf2ZederSchmal",
-      "feld": [27, 35]
-    },
-    {
       "moebel": "cc4NadelbaumB",
       "feld": [56, 35]
     },
@@ -574,11 +546,11 @@
     },
     {
       "moebel": "cc7Picknicktisch",
-      "feld": [31, 33]
+      "feld": [24, 28]
     },
     {
       "moebel": "cc7Picknicktisch",
-      "feld": [35, 33]
+      "feld": [37, 28]
     },
     {
       "moebel": "cc7Blumenkasten",
@@ -629,6 +601,34 @@
     {
       "moebel": "cc5BootUfer",
       "feld": [52, 25]
+    },
+    {
+      "moebel": "cc8KulisseHausFlach",
+      "feld": [3, 39]
+    },
+    {
+      "moebel": "cc8KulisseLaden",
+      "feld": [10, 39]
+    },
+    {
+      "moebel": "cc8KulisseHausFlach",
+      "feld": [16, 39]
+    },
+    {
+      "moebel": "cc8KulisseBauernhaus",
+      "feld": [23, 37]
+    },
+    {
+      "moebel": "cc8KulisseBauernhausBreit",
+      "feld": [32, 38]
+    },
+    {
+      "moebel": "cc8KulisseHausHoch",
+      "feld": [42, 37]
+    },
+    {
+      "moebel": "cc8KulisseStadthaus",
+      "feld": [42, 3]
     }
   ],
   "ausloeser": [
@@ -724,10 +724,11 @@
       "typ": "statist",
       "feld": [42, 21],
       "eigenschaften": {
+        "tun": "trinkt Kaffee aus der Thermoskanne",
+        "wann": "tag",
         "von": "42,21",
         "bis": "44,21",
-        "tun": "trinkt Kaffee aus der Thermoskanne",
-        "wann": "tag"
+        "sagt": "statist.cedarCreek.aussen.busfahrer"
       }
     },
     {
@@ -735,10 +736,11 @@
       "typ": "statist",
       "feld": [51, 15],
       "eigenschaften": {
+        "tun": "erneuert Bretter am Steg",
+        "wann": "tag",
         "von": "51,15",
         "bis": "52,15",
-        "tun": "erneuert Bretter am Steg",
-        "wann": "tag"
+        "sagt": "statist.cedarCreek.aussen.stegbauer"
       }
     },
     {
@@ -770,6 +772,134 @@
         "bis": "9,7",
         "wann": "morgen",
         "verhalten": "fliegen"
+      }
+    },
+    {
+      "name": "waschsalonfrau",
+      "typ": "statist",
+      "feld": [14, 19],
+      "eigenschaften": {
+        "tun": "faltet vor dem Waschsalon Handtücher",
+        "wann": "tag",
+        "sagt": "statist.cedarCreek.aussen.waschsalonfrau"
+      }
+    },
+    {
+      "name": "bibliothekarin",
+      "typ": "statist",
+      "feld": [29, 19],
+      "eigenschaften": {
+        "tun": "macht Pause vor der Bibliothek",
+        "wann": "tag",
+        "sagt": "statist.cedarCreek.aussen.bibliothekarin"
+      }
+    },
+    {
+      "name": "drechslergeselle",
+      "typ": "statist",
+      "feld": [3, 19],
+      "eigenschaften": {
+        "tun": "fegt Späne vom Gehweg",
+        "wann": "tag",
+        "von": "2,19",
+        "bis": "5,19",
+        "sagt": "statist.cedarCreek.aussen.drechslergeselle"
+      }
+    },
+    {
+      "name": "anglerin",
+      "typ": "statist",
+      "feld": [48, 35],
+      "eigenschaften": {
+        "tun": "angelt am Uferweg",
+        "wann": "morgen",
+        "sagt": "statist.cedarCreek.aussen.anglerin"
+      }
+    },
+    {
+      "name": "kindMitHuette",
+      "typ": "statist",
+      "feld": [31, 28],
+      "eigenschaften": {
+        "tun": "baut unter der Zeder eine Hütte aus Ästen",
+        "wann": "tag",
+        "sagt": "statist.cedarCreek.aussen.kindMitHuette"
+      }
+    },
+    {
+      "name": "rentnerPicknick",
+      "typ": "statist",
+      "feld": [26, 29],
+      "eigenschaften": {
+        "tun": "sitzt am Picknicktisch und liest Zeitung",
+        "wann": "tag",
+        "sagt": "statist.cedarCreek.aussen.rentnerPicknick",
+        "zeigt": "rubinsteinsUnsterbliche"
+      }
+    },
+    {
+      "name": "brueckenbauer",
+      "typ": "statist",
+      "feld": [48, 9],
+      "eigenschaften": {
+        "tun": "misst die Bretter der Brücke nach",
+        "wann": "tag",
+        "von": "48,8",
+        "bis": "48,9",
+        "sagt": "statist.cedarCreek.aussen.brueckenbauer"
+      }
+    },
+    {
+      "name": "zeitungsjunge",
+      "typ": "statist",
+      "feld": [0, 23],
+      "eigenschaften": {
+        "tun": "trägt Zeitungen aus",
+        "wann": "morgen",
+        "von": "1,23",
+        "bis": "39,23"
+      }
+    },
+    {
+      "name": "mutterMitKinderwagen",
+      "typ": "statist",
+      "feld": [30, 23],
+      "eigenschaften": {
+        "tun": "schiebt einen Kinderwagen",
+        "wann": "tag",
+        "von": "30,23",
+        "bis": "10,23"
+      }
+    },
+    {
+      "name": "radfahrer",
+      "typ": "statist",
+      "feld": [1, 20],
+      "eigenschaften": {
+        "tun": "fährt mit dem Rad durch den Ort",
+        "wann": "tag",
+        "von": "1,20",
+        "bis": "44,21"
+      }
+    },
+    {
+      "name": "enten",
+      "typ": "tier",
+      "feld": [53, 24],
+      "eigenschaften": {
+        "verhalten": "schwimmen",
+        "von": "53,20",
+        "bis": "54,34"
+      }
+    },
+    {
+      "name": "eichhoernchen",
+      "typ": "tier",
+      "feld": [38, 30],
+      "eigenschaften": {
+        "verhalten": "flitzen",
+        "von": "36,26",
+        "bis": "40,32"
       }
     }
   ],

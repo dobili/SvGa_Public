@@ -11,7 +11,7 @@
  "tilewidth": 16,
  "tileheight": 16,
  "nextlayerid": 5,
- "nextobjectid": 134,
+ "nextobjectid": 133,
  "layers": [
   {
    "id": 1,
@@ -1722,8 +1722,8 @@
     1,
     1,
     1,
-    1,
-    1,
+    4,
+    4,
     1,
     1,
     1,
@@ -1786,8 +1786,8 @@
     1,
     1,
     1,
-    1,
-    1,
+    4,
+    4,
     1,
     1,
     1,
@@ -1850,8 +1850,8 @@
     1,
     1,
     1,
-    1,
-    1,
+    4,
+    4,
     1,
     1,
     1,
@@ -1914,8 +1914,8 @@
     1,
     1,
     1,
-    1,
-    1,
+    4,
+    4,
     1,
     1,
     1,
@@ -1978,8 +1978,8 @@
     1,
     1,
     1,
-    1,
-    1,
+    4,
+    4,
     1,
     1,
     1,
@@ -2042,8 +2042,8 @@
     1,
     1,
     1,
-    1,
-    1,
+    4,
+    4,
     1,
     1,
     1,
@@ -2106,8 +2106,8 @@
     1,
     1,
     1,
-    1,
-    1,
+    4,
+    4,
     1,
     1,
     1,
@@ -2170,8 +2170,136 @@
     1,
     1,
     1,
+    4,
+    4,
+    4,
+    4,
+    4,
+    4,
+    4,
+    4,
+    4,
+    4,
+    4,
+    4,
+    4,
+    4,
+    4,
+    4,
+    4,
+    4,
+    4,
+    4,
+    4,
+    4,
+    4,
+    4,
+    4,
+    4,
+    4,
+    4,
+    1,
+    0,
+    0,
+    1,
+    4,
+    4,
+    4,
+    4,
+    4,
+    4,
+    4,
+    4,
+    4,
+    4,
+    4,
+    4,
+    4,
+    4,
+    4,
+    4,
+    4,
+    4,
+    4,
+    4,
+    4,
+    4,
+    4,
+    4,
+    4,
     1,
     1,
+    1,
+    1,
+    1,
+    1,
+    1,
+    4,
+    4,
+    4,
+    4,
+    4,
+    4,
+    4,
+    4,
+    4,
+    4,
+    4,
+    4,
+    4,
+    4,
+    4,
+    4,
+    4,
+    4,
+    4,
+    4,
+    4,
+    4,
+    4,
+    4,
+    4,
+    4,
+    4,
+    4,
+    1,
+    0,
+    0,
+    1,
+    4,
+    4,
+    4,
+    4,
+    4,
+    4,
+    4,
+    4,
+    4,
+    4,
+    4,
+    4,
+    4,
+    4,
+    4,
+    4,
+    4,
+    4,
+    4,
+    4,
+    4,
+    4,
+    4,
+    4,
+    4,
+    1,
+    1,
+    1,
+    1,
+    1,
+    1,
+    1,
+    4,
+    4,
     1,
     1,
     1,
@@ -2234,8 +2362,8 @@
     1,
     1,
     1,
-    1,
-    1,
+    4,
+    4,
     1,
     1,
     1,
@@ -2298,8 +2426,8 @@
     1,
     1,
     1,
-    1,
-    1,
+    4,
+    4,
     1,
     1,
     1,
@@ -2362,8 +2490,8 @@
     1,
     1,
     1,
-    1,
-    1,
+    4,
+    4,
     1,
     1,
     1,
@@ -2426,200 +2554,8 @@
     1,
     1,
     1,
-    1,
-    1,
-    1,
-    1,
-    1,
-    1,
-    1,
-    1,
-    1,
-    1,
-    1,
-    1,
-    1,
-    1,
-    1,
-    1,
-    1,
-    1,
-    1,
-    1,
-    1,
-    1,
-    1,
-    1,
-    1,
-    1,
-    1,
-    1,
-    1,
-    0,
-    0,
-    1,
     4,
     4,
-    4,
-    4,
-    4,
-    4,
-    4,
-    4,
-    4,
-    4,
-    4,
-    4,
-    4,
-    4,
-    4,
-    4,
-    4,
-    4,
-    4,
-    4,
-    4,
-    4,
-    4,
-    4,
-    4,
-    1,
-    1,
-    1,
-    1,
-    1,
-    1,
-    1,
-    1,
-    1,
-    1,
-    1,
-    1,
-    1,
-    1,
-    1,
-    1,
-    1,
-    1,
-    1,
-    1,
-    1,
-    1,
-    1,
-    1,
-    1,
-    1,
-    1,
-    1,
-    1,
-    1,
-    1,
-    1,
-    1,
-    1,
-    1,
-    1,
-    0,
-    0,
-    1,
-    4,
-    4,
-    4,
-    4,
-    4,
-    4,
-    4,
-    4,
-    4,
-    4,
-    4,
-    4,
-    4,
-    4,
-    4,
-    4,
-    4,
-    4,
-    4,
-    4,
-    4,
-    4,
-    4,
-    4,
-    4,
-    1,
-    1,
-    1,
-    1,
-    1,
-    1,
-    1,
-    1,
-    1,
-    1,
-    1,
-    1,
-    1,
-    1,
-    1,
-    1,
-    1,
-    1,
-    1,
-    1,
-    1,
-    1,
-    1,
-    1,
-    1,
-    1,
-    1,
-    1,
-    1,
-    1,
-    1,
-    1,
-    1,
-    1,
-    1,
-    1,
-    0,
-    0,
-    1,
-    4,
-    4,
-    4,
-    4,
-    4,
-    4,
-    4,
-    4,
-    4,
-    4,
-    4,
-    4,
-    4,
-    4,
-    4,
-    4,
-    4,
-    4,
-    4,
-    4,
-    4,
-    4,
-    4,
-    4,
-    4,
-    1,
-    1,
-    1,
-    1,
-    1,
-    1,
-    1,
-    1,
-    1,
     1,
     1,
     1,
@@ -2682,8 +2618,8 @@
     1,
     1,
     1,
-    1,
-    1,
+    4,
+    4,
     1,
     1,
     1,
@@ -2746,8 +2682,8 @@
     1,
     1,
     1,
-    1,
-    1,
+    4,
+    4,
     1,
     1,
     1,
@@ -2810,8 +2746,8 @@
     1,
     1,
     1,
-    1,
-    1,
+    4,
+    4,
     1,
     1,
     1,
@@ -2874,8 +2810,8 @@
     1,
     1,
     1,
-    1,
-    1,
+    4,
+    4,
     1,
     1,
     1,
@@ -2938,8 +2874,8 @@
     1,
     1,
     1,
-    1,
-    1,
+    4,
+    4,
     1,
     1,
     1,
@@ -3002,6 +2938,37 @@
     1,
     1,
     1,
+    4,
+    4,
+    4,
+    4,
+    4,
+    4,
+    4,
+    4,
+    4,
+    4,
+    4,
+    4,
+    4,
+    4,
+    4,
+    4,
+    4,
+    4,
+    4,
+    4,
+    4,
+    4,
+    4,
+    4,
+    4,
+    4,
+    4,
+    4,
+    1,
+    0,
+    0,
     1,
     1,
     1,
@@ -3030,6 +2997,39 @@
     1,
     1,
     1,
+    1,
+    1,
+    1,
+    1,
+    1,
+    4,
+    4,
+    4,
+    4,
+    4,
+    4,
+    4,
+    4,
+    4,
+    4,
+    4,
+    4,
+    4,
+    4,
+    4,
+    4,
+    4,
+    4,
+    4,
+    4,
+    4,
+    4,
+    4,
+    4,
+    4,
+    4,
+    4,
+    4,
     1,
     0,
     0,
@@ -9471,8 +9471,8 @@
      "id": 16,
      "name": "rinder",
      "type": "tier",
-     "x": 832,
-     "y": 608,
+     "x": 192,
+     "y": 80,
      "width": 16,
      "height": 16,
      "rotation": 0,
@@ -9481,12 +9481,12 @@
       {
        "name": "von",
        "type": "string",
-       "value": "46,34"
+       "value": "9,2"
       },
       {
        "name": "bis",
        "type": "string",
-       "value": "60,44"
+       "value": "15,8"
       },
       {
        "name": "verhalten",
@@ -9497,6 +9497,90 @@
     },
     {
      "id": 17,
+     "name": "kraehen",
+     "type": "tier",
+     "x": 640,
+     "y": 64,
+     "width": 16,
+     "height": 16,
+     "rotation": 0,
+     "visible": true,
+     "properties": [
+      {
+       "name": "von",
+       "type": "string",
+       "value": "34,1"
+      },
+      {
+       "name": "bis",
+       "type": "string",
+       "value": "60,6"
+      },
+      {
+       "name": "verhalten",
+       "type": "string",
+       "value": "fliegen"
+      }
+     ]
+    },
+    {
+     "id": 18,
+     "name": "motelkatze",
+     "type": "tier",
+     "x": 480,
+     "y": 384,
+     "width": 16,
+     "height": 16,
+     "rotation": 0,
+     "visible": true,
+     "properties": [
+      {
+       "name": "von",
+       "type": "string",
+       "value": "28,24"
+      },
+      {
+       "name": "bis",
+       "type": "string",
+       "value": "32,24"
+      },
+      {
+       "name": "verhalten",
+       "type": "string",
+       "value": "schlafen"
+      }
+     ]
+    },
+    {
+     "id": 19,
+     "name": "spatzen",
+     "type": "tier",
+     "x": 384,
+     "y": 480,
+     "width": 16,
+     "height": 16,
+     "rotation": 0,
+     "visible": true,
+     "properties": [
+      {
+       "name": "von",
+       "type": "string",
+       "value": "20,27"
+      },
+      {
+       "name": "bis",
+       "type": "string",
+       "value": "30,34"
+      },
+      {
+       "name": "verhalten",
+       "type": "string",
+       "value": "fliegen"
+      }
+     ]
+    },
+    {
+     "id": 20,
      "name": "tankwart",
      "type": "statist",
      "x": 704,
@@ -9507,16 +9591,6 @@
      "visible": true,
      "properties": [
       {
-       "name": "von",
-       "type": "string",
-       "value": "38,20"
-      },
-      {
-       "name": "bis",
-       "type": "string",
-       "value": "50,20"
-      },
-      {
        "name": "tun",
        "type": "string",
        "value": "tankt einen Wagen voll"
@@ -9525,11 +9599,21 @@
        "name": "wann",
        "type": "string",
        "value": "tag"
+      },
+      {
+       "name": "von",
+       "type": "string",
+       "value": "38,20"
+      },
+      {
+       "name": "bis",
+       "type": "string",
+       "value": "50,20"
       }
      ]
     },
     {
-     "id": 18,
+     "id": 21,
      "name": "tomas",
      "type": "statist",
      "x": 560,
@@ -9540,16 +9624,6 @@
      "visible": true,
      "properties": [
       {
-       "name": "von",
-       "type": "string",
-       "value": "35,27"
-      },
-      {
-       "name": "bis",
-       "type": "string",
-       "value": "35,27"
-      },
-      {
        "name": "tun",
        "type": "string",
        "value": "Tomás zeigt Mira die Windräder am Horizont"
@@ -9558,11 +9632,439 @@
        "name": "wann",
        "type": "string",
        "value": "tag"
+      },
+      {
+       "name": "von",
+       "type": "string",
+       "value": "35,27"
+      },
+      {
+       "name": "bis",
+       "type": "string",
+       "value": "35,27"
       }
      ]
     },
     {
-     "id": 19,
+     "id": 22,
+     "name": "autowaescher",
+     "type": "statist",
+     "x": 832,
+     "y": 320,
+     "width": 16,
+     "height": 16,
+     "rotation": 0,
+     "visible": true,
+     "properties": [
+      {
+       "name": "tun",
+       "type": "string",
+       "value": "spritzt einen Pick-up ab"
+      },
+      {
+       "name": "wann",
+       "type": "string",
+       "value": "tag"
+      },
+      {
+       "name": "von",
+       "type": "string",
+       "value": "51,19"
+      },
+      {
+       "name": "bis",
+       "type": "string",
+       "value": "55,21"
+      }
+     ]
+    },
+    {
+     "id": 23,
+     "name": "hundebesitzerin",
+     "type": "statist",
+     "x": 352,
+     "y": 336,
+     "width": 16,
+     "height": 16,
+     "rotation": 0,
+     "visible": true,
+     "properties": [
+      {
+       "name": "tun",
+       "type": "string",
+       "value": "geht mit dem Hund über den Vorplatz"
+      },
+      {
+       "name": "wann",
+       "type": "string",
+       "value": "tag"
+      },
+      {
+       "name": "von",
+       "type": "string",
+       "value": "8,21"
+      },
+      {
+       "name": "bis",
+       "type": "string",
+       "value": "27,21"
+      },
+      {
+       "name": "sagt",
+       "type": "string",
+       "value": "statist.crossroads.aussen.hundebesitzerin"
+      },
+      {
+       "name": "zeigt",
+       "type": "string",
+       "value": "tissirDreev"
+      }
+     ]
+    },
+    {
+     "id": 24,
+     "name": "fernfahrerin",
+     "type": "statist",
+     "x": 144,
+     "y": 416,
+     "width": 16,
+     "height": 16,
+     "rotation": 0,
+     "visible": true,
+     "properties": [
+      {
+       "name": "tun",
+       "type": "string",
+       "value": "prüft die Reifen ihres Sattelzugs"
+      },
+      {
+       "name": "wann",
+       "type": "string",
+       "value": "tag"
+      },
+      {
+       "name": "von",
+       "type": "string",
+       "value": "6,26"
+      },
+      {
+       "name": "bis",
+       "type": "string",
+       "value": "16,26"
+      },
+      {
+       "name": "sagt",
+       "type": "string",
+       "value": "statist.crossroads.aussen.fernfahrerin"
+      }
+     ]
+    },
+    {
+     "id": 25,
+     "name": "mechaniker",
+     "type": "statist",
+     "x": 880,
+     "y": 528,
+     "width": 16,
+     "height": 16,
+     "rotation": 0,
+     "visible": true,
+     "properties": [
+      {
+       "name": "tun",
+       "type": "string",
+       "value": "wischt sich die Hände an einem Lappen ab"
+      },
+      {
+       "name": "wann",
+       "type": "string",
+       "value": "tag"
+      },
+      {
+       "name": "von",
+       "type": "string",
+       "value": "52,33"
+      },
+      {
+       "name": "bis",
+       "type": "string",
+       "value": "58,34"
+      },
+      {
+       "name": "sagt",
+       "type": "string",
+       "value": "statist.crossroads.aussen.mechaniker"
+      }
+     ]
+    },
+    {
+     "id": 26,
+     "name": "motelwirtin",
+     "type": "statist",
+     "x": 672,
+     "y": 528,
+     "width": 16,
+     "height": 16,
+     "rotation": 0,
+     "visible": true,
+     "properties": [
+      {
+       "name": "tun",
+       "type": "string",
+       "value": "fegt den Gang vor den Zimmern"
+      },
+      {
+       "name": "wann",
+       "type": "string",
+       "value": "tag"
+      },
+      {
+       "name": "von",
+       "type": "string",
+       "value": "38,33"
+      },
+      {
+       "name": "bis",
+       "type": "string",
+       "value": "48,33"
+      },
+      {
+       "name": "sagt",
+       "type": "string",
+       "value": "statist.crossroads.aussen.motelwirtin"
+      }
+     ]
+    },
+    {
+     "id": 27,
+     "name": "kuesterin",
+     "type": "statist",
+     "x": 768,
+     "y": 720,
+     "width": 16,
+     "height": 16,
+     "rotation": 0,
+     "visible": true,
+     "properties": [
+      {
+       "name": "tun",
+       "type": "string",
+       "value": "gießt die Blumen vor der Kapelle"
+      },
+      {
+       "name": "wann",
+       "type": "string",
+       "value": "tag"
+      },
+      {
+       "name": "von",
+       "type": "string",
+       "value": "46,45"
+      },
+      {
+       "name": "bis",
+       "type": "string",
+       "value": "51,46"
+      },
+      {
+       "name": "sagt",
+       "type": "string",
+       "value": "statist.crossroads.aussen.kuesterin"
+      }
+     ]
+    },
+    {
+     "id": 28,
+     "name": "kreidekind",
+     "type": "statist",
+     "x": 320,
+     "y": 432,
+     "width": 16,
+     "height": 16,
+     "rotation": 0,
+     "visible": true,
+     "properties": [
+      {
+       "name": "tun",
+       "type": "string",
+       "value": "malt mit Kreide ein Brett auf den Asphalt"
+      },
+      {
+       "name": "wann",
+       "type": "string",
+       "value": "tag"
+      },
+      {
+       "name": "von",
+       "type": "string",
+       "value": "18,27"
+      },
+      {
+       "name": "bis",
+       "type": "string",
+       "value": "24,27"
+      },
+      {
+       "name": "sagt",
+       "type": "string",
+       "value": "statist.crossroads.aussen.kreidekind"
+      }
+     ]
+    },
+    {
+     "id": 29,
+     "name": "postbote",
+     "type": "statist",
+     "x": 496,
+     "y": 288,
+     "width": 16,
+     "height": 16,
+     "rotation": 0,
+     "visible": true,
+     "properties": [
+      {
+       "name": "tun",
+       "type": "string",
+       "value": "bringt Pakete die Schotterstraße hinunter"
+      },
+      {
+       "name": "wann",
+       "type": "string",
+       "value": "tag"
+      },
+      {
+       "name": "von",
+       "type": "string",
+       "value": "31,10"
+      },
+      {
+       "name": "bis",
+       "type": "string",
+       "value": "31,21"
+      },
+      {
+       "name": "sagt",
+       "type": "string",
+       "value": "statist.crossroads.aussen.postbote"
+      }
+     ]
+    },
+    {
+     "id": 30,
+     "name": "rentner",
+     "type": "statist",
+     "x": 480,
+     "y": 512,
+     "width": 16,
+     "height": 16,
+     "rotation": 0,
+     "visible": true,
+     "properties": [
+      {
+       "name": "tun",
+       "type": "string",
+       "value": "sitzt am Picknicktisch und löst ein Rätsel aus der Zeitung"
+      },
+      {
+       "name": "wann",
+       "type": "string",
+       "value": "tag"
+      },
+      {
+       "name": "von",
+       "type": "string",
+       "value": "29,30"
+      },
+      {
+       "name": "bis",
+       "type": "string",
+       "value": "30,33"
+      },
+      {
+       "name": "sagt",
+       "type": "string",
+       "value": "statist.crossroads.aussen.rentner"
+      }
+     ]
+    },
+    {
+     "id": 31,
+     "name": "farmer",
+     "type": "statist",
+     "x": 160,
+     "y": 144,
+     "width": 16,
+     "height": 16,
+     "rotation": 0,
+     "visible": true,
+     "properties": [
+      {
+       "name": "tun",
+       "type": "string",
+       "value": "wirft Heu über den Zaun"
+      },
+      {
+       "name": "wann",
+       "type": "string",
+       "value": "tag"
+      },
+      {
+       "name": "von",
+       "type": "string",
+       "value": "9,8"
+      },
+      {
+       "name": "bis",
+       "type": "string",
+       "value": "15,9"
+      },
+      {
+       "name": "sagt",
+       "type": "string",
+       "value": "statist.crossroads.aussen.farmer"
+      }
+     ]
+    },
+    {
+     "id": 32,
+     "name": "anhalterin",
+     "type": "statist",
+     "x": 32,
+     "y": 384,
+     "width": 16,
+     "height": 16,
+     "rotation": 0,
+     "visible": true,
+     "properties": [
+      {
+       "name": "tun",
+       "type": "string",
+       "value": "hält ein Pappschild mit „Capital“ hoch"
+      },
+      {
+       "name": "wann",
+       "type": "string",
+       "value": "tag"
+      },
+      {
+       "name": "von",
+       "type": "string",
+       "value": "1,24"
+      },
+      {
+       "name": "bis",
+       "type": "string",
+       "value": "4,24"
+      },
+      {
+       "name": "sagt",
+       "type": "string",
+       "value": "statist.crossroads.aussen.anhalterin"
+      }
+     ]
+    },
+    {
+     "id": 33,
      "name": "cr7Raststaette",
      "type": "moebel",
      "x": 160,
@@ -9585,7 +10087,7 @@
      ]
     },
     {
-     "id": 20,
+     "id": 34,
      "name": "cr7SchildCrossroads",
      "type": "moebel",
      "x": 320,
@@ -9608,7 +10110,7 @@
      ]
     },
     {
-     "id": 21,
+     "id": 35,
      "name": "ws5TankstelleGross",
      "type": "moebel",
      "x": 576,
@@ -9631,7 +10133,7 @@
      ]
     },
     {
-     "id": 22,
+     "id": 36,
      "name": "crBus",
      "type": "moebel",
      "x": 64,
@@ -9654,7 +10156,7 @@
      ]
     },
     {
-     "id": 23,
+     "id": 37,
      "name": "sbFoodtruck",
      "type": "moebel",
      "x": 288,
@@ -9677,7 +10179,7 @@
      ]
     },
     {
-     "id": 24,
+     "id": 38,
      "name": "cr7Sattelzug",
      "type": "moebel",
      "x": 64,
@@ -9700,7 +10202,7 @@
      ]
     },
     {
-     "id": 25,
+     "id": 39,
      "name": "rvAutoGruen",
      "type": "moebel",
      "x": 240,
@@ -9723,7 +10225,7 @@
      ]
     },
     {
-     "id": 26,
+     "id": 40,
      "name": "cr7WegweiserStaedte",
      "type": "moebel",
      "x": 448,
@@ -9746,7 +10248,7 @@
      ]
     },
     {
-     "id": 27,
+     "id": 41,
      "name": "cc3ZaunEnde",
      "type": "moebel",
      "x": 32,
@@ -9769,7 +10271,7 @@
      ]
     },
     {
-     "id": 28,
+     "id": 42,
      "name": "ccZaun",
      "type": "moebel",
      "x": 48,
@@ -9792,7 +10294,7 @@
      ]
     },
     {
-     "id": 29,
+     "id": 43,
      "name": "ccZaun",
      "type": "moebel",
      "x": 64,
@@ -9815,7 +10317,7 @@
      ]
     },
     {
-     "id": 30,
+     "id": 44,
      "name": "cc3ZaunEndeR",
      "type": "moebel",
      "x": 80,
@@ -9838,7 +10340,7 @@
      ]
     },
     {
-     "id": 31,
+     "id": 45,
      "name": "cc3ZaunEnde",
      "type": "moebel",
      "x": 128,
@@ -9861,7 +10363,7 @@
      ]
     },
     {
-     "id": 32,
+     "id": 46,
      "name": "ccZaun",
      "type": "moebel",
      "x": 144,
@@ -9884,7 +10386,7 @@
      ]
     },
     {
-     "id": 33,
+     "id": 47,
      "name": "ccZaun",
      "type": "moebel",
      "x": 160,
@@ -9907,7 +10409,7 @@
      ]
     },
     {
-     "id": 34,
+     "id": 48,
      "name": "ccZaun",
      "type": "moebel",
      "x": 176,
@@ -9930,7 +10432,7 @@
      ]
     },
     {
-     "id": 35,
+     "id": 49,
      "name": "ccZaun",
      "type": "moebel",
      "x": 192,
@@ -9953,7 +10455,7 @@
      ]
     },
     {
-     "id": 36,
+     "id": 50,
      "name": "ccZaun",
      "type": "moebel",
      "x": 208,
@@ -9976,7 +10478,7 @@
      ]
     },
     {
-     "id": 37,
+     "id": 51,
      "name": "ccZaun",
      "type": "moebel",
      "x": 224,
@@ -9999,7 +10501,7 @@
      ]
     },
     {
-     "id": 38,
+     "id": 52,
      "name": "ccZaun",
      "type": "moebel",
      "x": 240,
@@ -10022,7 +10524,7 @@
      ]
     },
     {
-     "id": 39,
+     "id": 53,
      "name": "ccZaun",
      "type": "moebel",
      "x": 256,
@@ -10045,7 +10547,7 @@
      ]
     },
     {
-     "id": 40,
+     "id": 54,
      "name": "ccZaun",
      "type": "moebel",
      "x": 272,
@@ -10068,7 +10570,7 @@
      ]
     },
     {
-     "id": 41,
+     "id": 55,
      "name": "ccZaun",
      "type": "moebel",
      "x": 288,
@@ -10091,7 +10593,7 @@
      ]
     },
     {
-     "id": 42,
+     "id": 56,
      "name": "ccZaun",
      "type": "moebel",
      "x": 304,
@@ -10114,7 +10616,7 @@
      ]
     },
     {
-     "id": 43,
+     "id": 57,
      "name": "ccZaun",
      "type": "moebel",
      "x": 320,
@@ -10137,7 +10639,7 @@
      ]
     },
     {
-     "id": 44,
+     "id": 58,
      "name": "ccZaun",
      "type": "moebel",
      "x": 336,
@@ -10160,7 +10662,7 @@
      ]
     },
     {
-     "id": 45,
+     "id": 59,
      "name": "ccZaun",
      "type": "moebel",
      "x": 352,
@@ -10183,7 +10685,7 @@
      ]
     },
     {
-     "id": 46,
+     "id": 60,
      "name": "ccZaun",
      "type": "moebel",
      "x": 368,
@@ -10206,7 +10708,7 @@
      ]
     },
     {
-     "id": 47,
+     "id": 61,
      "name": "ccZaun",
      "type": "moebel",
      "x": 384,
@@ -10229,7 +10731,7 @@
      ]
     },
     {
-     "id": 48,
+     "id": 62,
      "name": "ccZaun",
      "type": "moebel",
      "x": 400,
@@ -10252,7 +10754,7 @@
      ]
     },
     {
-     "id": 49,
+     "id": 63,
      "name": "cc3ZaunEndeR",
      "type": "moebel",
      "x": 416,
@@ -10275,536 +10777,7 @@
      ]
     },
     {
-     "id": 50,
-     "name": "cc3ZaunEnde",
-     "type": "moebel",
-     "x": 640,
-     "y": 480,
-     "width": 16,
-     "height": 16,
-     "rotation": 0,
-     "visible": true,
-     "properties": [
-      {
-       "name": "tiefe",
-       "type": "int",
-       "value": 488
-      },
-      {
-       "name": "kollision",
-       "type": "bool",
-       "value": true
-      }
-     ]
-    },
-    {
-     "id": 51,
-     "name": "ccZaun",
-     "type": "moebel",
-     "x": 656,
-     "y": 480,
-     "width": 16,
-     "height": 16,
-     "rotation": 0,
-     "visible": true,
-     "properties": [
-      {
-       "name": "tiefe",
-       "type": "int",
-       "value": 488
-      },
-      {
-       "name": "kollision",
-       "type": "bool",
-       "value": true
-      }
-     ]
-    },
-    {
-     "id": 52,
-     "name": "ccZaun",
-     "type": "moebel",
-     "x": 672,
-     "y": 480,
-     "width": 16,
-     "height": 16,
-     "rotation": 0,
-     "visible": true,
-     "properties": [
-      {
-       "name": "tiefe",
-       "type": "int",
-       "value": 488
-      },
-      {
-       "name": "kollision",
-       "type": "bool",
-       "value": true
-      }
-     ]
-    },
-    {
-     "id": 53,
-     "name": "ccZaun",
-     "type": "moebel",
-     "x": 688,
-     "y": 480,
-     "width": 16,
-     "height": 16,
-     "rotation": 0,
-     "visible": true,
-     "properties": [
-      {
-       "name": "tiefe",
-       "type": "int",
-       "value": 488
-      },
-      {
-       "name": "kollision",
-       "type": "bool",
-       "value": true
-      }
-     ]
-    },
-    {
-     "id": 54,
-     "name": "ccZaun",
-     "type": "moebel",
-     "x": 704,
-     "y": 480,
-     "width": 16,
-     "height": 16,
-     "rotation": 0,
-     "visible": true,
-     "properties": [
-      {
-       "name": "tiefe",
-       "type": "int",
-       "value": 488
-      },
-      {
-       "name": "kollision",
-       "type": "bool",
-       "value": true
-      }
-     ]
-    },
-    {
-     "id": 55,
-     "name": "ccZaun",
-     "type": "moebel",
-     "x": 720,
-     "y": 480,
-     "width": 16,
-     "height": 16,
-     "rotation": 0,
-     "visible": true,
-     "properties": [
-      {
-       "name": "tiefe",
-       "type": "int",
-       "value": 488
-      },
-      {
-       "name": "kollision",
-       "type": "bool",
-       "value": true
-      }
-     ]
-    },
-    {
-     "id": 56,
-     "name": "ccZaun",
-     "type": "moebel",
-     "x": 736,
-     "y": 480,
-     "width": 16,
-     "height": 16,
-     "rotation": 0,
-     "visible": true,
-     "properties": [
-      {
-       "name": "tiefe",
-       "type": "int",
-       "value": 488
-      },
-      {
-       "name": "kollision",
-       "type": "bool",
-       "value": true
-      }
-     ]
-    },
-    {
-     "id": 57,
-     "name": "ccZaun",
-     "type": "moebel",
-     "x": 752,
-     "y": 480,
-     "width": 16,
-     "height": 16,
-     "rotation": 0,
-     "visible": true,
-     "properties": [
-      {
-       "name": "tiefe",
-       "type": "int",
-       "value": 488
-      },
-      {
-       "name": "kollision",
-       "type": "bool",
-       "value": true
-      }
-     ]
-    },
-    {
-     "id": 58,
-     "name": "ccZaun",
-     "type": "moebel",
-     "x": 768,
-     "y": 480,
-     "width": 16,
-     "height": 16,
-     "rotation": 0,
-     "visible": true,
-     "properties": [
-      {
-       "name": "tiefe",
-       "type": "int",
-       "value": 488
-      },
-      {
-       "name": "kollision",
-       "type": "bool",
-       "value": true
-      }
-     ]
-    },
-    {
-     "id": 59,
-     "name": "ccZaun",
-     "type": "moebel",
-     "x": 784,
-     "y": 480,
-     "width": 16,
-     "height": 16,
-     "rotation": 0,
-     "visible": true,
-     "properties": [
-      {
-       "name": "tiefe",
-       "type": "int",
-       "value": 488
-      },
-      {
-       "name": "kollision",
-       "type": "bool",
-       "value": true
-      }
-     ]
-    },
-    {
-     "id": 60,
-     "name": "ccZaun",
-     "type": "moebel",
-     "x": 800,
-     "y": 480,
-     "width": 16,
-     "height": 16,
-     "rotation": 0,
-     "visible": true,
-     "properties": [
-      {
-       "name": "tiefe",
-       "type": "int",
-       "value": 488
-      },
-      {
-       "name": "kollision",
-       "type": "bool",
-       "value": true
-      }
-     ]
-    },
-    {
-     "id": 61,
-     "name": "ccZaun",
-     "type": "moebel",
-     "x": 816,
-     "y": 480,
-     "width": 16,
-     "height": 16,
-     "rotation": 0,
-     "visible": true,
-     "properties": [
-      {
-       "name": "tiefe",
-       "type": "int",
-       "value": 488
-      },
-      {
-       "name": "kollision",
-       "type": "bool",
-       "value": true
-      }
-     ]
-    },
-    {
-     "id": 62,
-     "name": "ccZaun",
-     "type": "moebel",
-     "x": 832,
-     "y": 480,
-     "width": 16,
-     "height": 16,
-     "rotation": 0,
-     "visible": true,
-     "properties": [
-      {
-       "name": "tiefe",
-       "type": "int",
-       "value": 488
-      },
-      {
-       "name": "kollision",
-       "type": "bool",
-       "value": true
-      }
-     ]
-    },
-    {
-     "id": 63,
-     "name": "ccZaun",
-     "type": "moebel",
-     "x": 848,
-     "y": 480,
-     "width": 16,
-     "height": 16,
-     "rotation": 0,
-     "visible": true,
-     "properties": [
-      {
-       "name": "tiefe",
-       "type": "int",
-       "value": 488
-      },
-      {
-       "name": "kollision",
-       "type": "bool",
-       "value": true
-      }
-     ]
-    },
-    {
      "id": 64,
-     "name": "ccZaun",
-     "type": "moebel",
-     "x": 864,
-     "y": 480,
-     "width": 16,
-     "height": 16,
-     "rotation": 0,
-     "visible": true,
-     "properties": [
-      {
-       "name": "tiefe",
-       "type": "int",
-       "value": 488
-      },
-      {
-       "name": "kollision",
-       "type": "bool",
-       "value": true
-      }
-     ]
-    },
-    {
-     "id": 65,
-     "name": "ccZaun",
-     "type": "moebel",
-     "x": 880,
-     "y": 480,
-     "width": 16,
-     "height": 16,
-     "rotation": 0,
-     "visible": true,
-     "properties": [
-      {
-       "name": "tiefe",
-       "type": "int",
-       "value": 488
-      },
-      {
-       "name": "kollision",
-       "type": "bool",
-       "value": true
-      }
-     ]
-    },
-    {
-     "id": 66,
-     "name": "ccZaun",
-     "type": "moebel",
-     "x": 896,
-     "y": 480,
-     "width": 16,
-     "height": 16,
-     "rotation": 0,
-     "visible": true,
-     "properties": [
-      {
-       "name": "tiefe",
-       "type": "int",
-       "value": 488
-      },
-      {
-       "name": "kollision",
-       "type": "bool",
-       "value": true
-      }
-     ]
-    },
-    {
-     "id": 67,
-     "name": "ccZaun",
-     "type": "moebel",
-     "x": 912,
-     "y": 480,
-     "width": 16,
-     "height": 16,
-     "rotation": 0,
-     "visible": true,
-     "properties": [
-      {
-       "name": "tiefe",
-       "type": "int",
-       "value": 488
-      },
-      {
-       "name": "kollision",
-       "type": "bool",
-       "value": true
-      }
-     ]
-    },
-    {
-     "id": 68,
-     "name": "ccZaun",
-     "type": "moebel",
-     "x": 928,
-     "y": 480,
-     "width": 16,
-     "height": 16,
-     "rotation": 0,
-     "visible": true,
-     "properties": [
-      {
-       "name": "tiefe",
-       "type": "int",
-       "value": 488
-      },
-      {
-       "name": "kollision",
-       "type": "bool",
-       "value": true
-      }
-     ]
-    },
-    {
-     "id": 69,
-     "name": "ccZaun",
-     "type": "moebel",
-     "x": 944,
-     "y": 480,
-     "width": 16,
-     "height": 16,
-     "rotation": 0,
-     "visible": true,
-     "properties": [
-      {
-       "name": "tiefe",
-       "type": "int",
-       "value": 488
-      },
-      {
-       "name": "kollision",
-       "type": "bool",
-       "value": true
-      }
-     ]
-    },
-    {
-     "id": 70,
-     "name": "ccZaun",
-     "type": "moebel",
-     "x": 960,
-     "y": 480,
-     "width": 16,
-     "height": 16,
-     "rotation": 0,
-     "visible": true,
-     "properties": [
-      {
-       "name": "tiefe",
-       "type": "int",
-       "value": 488
-      },
-      {
-       "name": "kollision",
-       "type": "bool",
-       "value": true
-      }
-     ]
-    },
-    {
-     "id": 71,
-     "name": "ccZaun",
-     "type": "moebel",
-     "x": 976,
-     "y": 480,
-     "width": 16,
-     "height": 16,
-     "rotation": 0,
-     "visible": true,
-     "properties": [
-      {
-       "name": "tiefe",
-       "type": "int",
-       "value": 488
-      },
-      {
-       "name": "kollision",
-       "type": "bool",
-       "value": true
-      }
-     ]
-    },
-    {
-     "id": 72,
-     "name": "cc3ZaunEndeR",
-     "type": "moebel",
-     "x": 992,
-     "y": 480,
-     "width": 16,
-     "height": 16,
-     "rotation": 0,
-     "visible": true,
-     "properties": [
-      {
-       "name": "tiefe",
-       "type": "int",
-       "value": 488
-      },
-      {
-       "name": "kollision",
-       "type": "bool",
-       "value": true
-      }
-     ]
-    },
-    {
-     "id": 73,
      "name": "cr7ViehgatterQuer",
      "type": "moebel",
      "x": 928,
@@ -10827,20 +10800,227 @@
      ]
     },
     {
-     "id": 74,
-     "name": "rvPicknicktisch",
+     "id": 65,
+     "name": "cr7Motel",
      "type": "moebel",
-     "x": 448,
-     "y": 448,
-     "width": 32,
-     "height": 32,
+     "x": 592,
+     "y": 416,
+     "width": 224,
+     "height": 112,
      "rotation": 0,
      "visible": true,
      "properties": [
       {
        "name": "tiefe",
        "type": "int",
-       "value": 472
+       "value": 520
+      },
+      {
+       "name": "kollision",
+       "type": "bool",
+       "value": true
+      }
+     ]
+    },
+    {
+     "id": 66,
+     "name": "ds6Garage",
+     "type": "moebel",
+     "x": 832,
+     "y": 432,
+     "width": 96,
+     "height": 96,
+     "rotation": 0,
+     "visible": true,
+     "properties": [
+      {
+       "name": "tiefe",
+       "type": "int",
+       "value": 520
+      },
+      {
+       "name": "kollision",
+       "type": "bool",
+       "value": true
+      }
+     ]
+    },
+    {
+     "id": 67,
+     "name": "wr5Huehnerstall",
+     "type": "moebel",
+     "x": 928,
+     "y": 448,
+     "width": 64,
+     "height": 80,
+     "rotation": 0,
+     "visible": true,
+     "properties": [
+      {
+       "name": "tiefe",
+       "type": "int",
+       "value": 520
+      },
+      {
+       "name": "kollision",
+       "type": "bool",
+       "value": true
+      }
+     ]
+    },
+    {
+     "id": 68,
+     "name": "mf4Bauernhaus",
+     "type": "moebel",
+     "x": 592,
+     "y": 560,
+     "width": 128,
+     "height": 160,
+     "rotation": 0,
+     "visible": true,
+     "properties": [
+      {
+       "name": "tiefe",
+       "type": "int",
+       "value": 712
+      },
+      {
+       "name": "kollision",
+       "type": "bool",
+       "value": true
+      }
+     ]
+    },
+    {
+     "id": 69,
+     "name": "iw5Kirche",
+     "type": "moebel",
+     "x": 736,
+     "y": 576,
+     "width": 80,
+     "height": 144,
+     "rotation": 0,
+     "visible": true,
+     "properties": [
+      {
+       "name": "tiefe",
+       "type": "int",
+       "value": 712
+      },
+      {
+       "name": "kollision",
+       "type": "bool",
+       "value": true
+      }
+     ]
+    },
+    {
+     "id": 70,
+     "name": "iw5Eisenwaren",
+     "type": "moebel",
+     "x": 832,
+     "y": 576,
+     "width": 128,
+     "height": 144,
+     "rotation": 0,
+     "visible": true,
+     "properties": [
+      {
+       "name": "tiefe",
+       "type": "int",
+       "value": 712
+      },
+      {
+       "name": "kollision",
+       "type": "bool",
+       "value": true
+      }
+     ]
+    },
+    {
+     "id": 71,
+     "name": "ds6WohnwagenMittel",
+     "type": "moebel",
+     "x": 880,
+     "y": 160,
+     "width": 128,
+     "height": 128,
+     "rotation": 0,
+     "visible": true,
+     "properties": [
+      {
+       "name": "tiefe",
+       "type": "int",
+       "value": 280
+      },
+      {
+       "name": "kollision",
+       "type": "bool",
+       "value": true
+      }
+     ]
+    },
+    {
+     "id": 72,
+     "name": "cc4Drechslerei",
+     "type": "moebel",
+     "x": 272,
+     "y": 0,
+     "width": 128,
+     "height": 160,
+     "rotation": 0,
+     "visible": true,
+     "properties": [
+      {
+       "name": "tiefe",
+       "type": "int",
+       "value": 152
+      },
+      {
+       "name": "kollision",
+       "type": "bool",
+       "value": true
+      }
+     ]
+    },
+    {
+     "id": 73,
+     "name": "rv5Wohnwagen",
+     "type": "moebel",
+     "x": 48,
+     "y": 640,
+     "width": 96,
+     "height": 96,
+     "rotation": 0,
+     "visible": true,
+     "properties": [
+      {
+       "name": "tiefe",
+       "type": "int",
+       "value": 728
+      },
+      {
+       "name": "kollision",
+       "type": "bool",
+       "value": true
+      }
+     ]
+    },
+    {
+     "id": 74,
+     "name": "rv5WohnwagenGross",
+     "type": "moebel",
+     "x": 288,
+     "y": 640,
+     "width": 128,
+     "height": 96,
+     "rotation": 0,
+     "visible": true,
+     "properties": [
+      {
+       "name": "tiefe",
+       "type": "int",
+       "value": 728
       },
       {
        "name": "kollision",
@@ -10853,8 +11033,8 @@
      "id": 75,
      "name": "rvPicknicktisch",
      "type": "moebel",
-     "x": 544,
-     "y": 640,
+     "x": 464,
+     "y": 480,
      "width": 32,
      "height": 32,
      "rotation": 0,
@@ -10863,7 +11043,7 @@
       {
        "name": "tiefe",
        "type": "int",
-       "value": 664
+       "value": 504
       },
       {
        "name": "kollision",
@@ -10874,6 +11054,29 @@
     },
     {
      "id": 76,
+     "name": "rvPicknicktisch",
+     "type": "moebel",
+     "x": 464,
+     "y": 576,
+     "width": 32,
+     "height": 32,
+     "rotation": 0,
+     "visible": true,
+     "properties": [
+      {
+       "name": "tiefe",
+       "type": "int",
+       "value": 600
+      },
+      {
+       "name": "kollision",
+       "type": "bool",
+       "value": true
+      }
+     ]
+    },
+    {
+     "id": 77,
      "name": "wg4Gras",
      "type": "moebel",
      "x": 592,
@@ -10896,7 +11099,7 @@
      ]
     },
     {
-     "id": 77,
+     "id": 78,
      "name": "wg4GrasB",
      "type": "moebel",
      "x": 496,
@@ -10919,34 +11122,11 @@
      ]
     },
     {
-     "id": 78,
+     "id": 79,
      "name": "wg4GrasB",
      "type": "moebel",
      "x": 448,
      "y": 624,
-     "width": 16,
-     "height": 16,
-     "rotation": 0,
-     "visible": true,
-     "properties": [
-      {
-       "name": "tiefe",
-       "type": "int",
-       "value": 1
-      },
-      {
-       "name": "kollision",
-       "type": "bool",
-       "value": false
-      }
-     ]
-    },
-    {
-     "id": 79,
-     "name": "wg4Gras",
-     "type": "moebel",
-     "x": 720,
-     "y": 464,
      "width": 16,
      "height": 16,
      "rotation": 0,
@@ -11035,29 +11215,6 @@
     },
     {
      "id": 83,
-     "name": "wg4Gras",
-     "type": "moebel",
-     "x": 784,
-     "y": 464,
-     "width": 16,
-     "height": 16,
-     "rotation": 0,
-     "visible": true,
-     "properties": [
-      {
-       "name": "tiefe",
-       "type": "int",
-       "value": 1
-      },
-      {
-       "name": "kollision",
-       "type": "bool",
-       "value": false
-      }
-     ]
-    },
-    {
-     "id": 84,
      "name": "wg4GrasB",
      "type": "moebel",
      "x": 240,
@@ -11080,7 +11237,7 @@
      ]
     },
     {
-     "id": 85,
+     "id": 84,
      "name": "wg4GrasB",
      "type": "moebel",
      "x": 960,
@@ -11103,7 +11260,7 @@
      ]
     },
     {
-     "id": 86,
+     "id": 85,
      "name": "wg4GrasB",
      "type": "moebel",
      "x": 864,
@@ -11126,30 +11283,7 @@
      ]
     },
     {
-     "id": 87,
-     "name": "wg4BlumeGelb",
-     "type": "moebel",
-     "x": 736,
-     "y": 528,
-     "width": 16,
-     "height": 16,
-     "rotation": 0,
-     "visible": true,
-     "properties": [
-      {
-       "name": "tiefe",
-       "type": "int",
-       "value": 1
-      },
-      {
-       "name": "kollision",
-       "type": "bool",
-       "value": false
-      }
-     ]
-    },
-    {
-     "id": 88,
+     "id": 86,
      "name": "wg4GrasB",
      "type": "moebel",
      "x": 528,
@@ -11172,30 +11306,7 @@
      ]
     },
     {
-     "id": 89,
-     "name": "wg4BlumeGelb",
-     "type": "moebel",
-     "x": 912,
-     "y": 512,
-     "width": 16,
-     "height": 16,
-     "rotation": 0,
-     "visible": true,
-     "properties": [
-      {
-       "name": "tiefe",
-       "type": "int",
-       "value": 1
-      },
-      {
-       "name": "kollision",
-       "type": "bool",
-       "value": false
-      }
-     ]
-    },
-    {
-     "id": 90,
+     "id": 87,
      "name": "wg4BlumeGelb",
      "type": "moebel",
      "x": 832,
@@ -11218,30 +11329,7 @@
      ]
     },
     {
-     "id": 91,
-     "name": "wg4GrasB",
-     "type": "moebel",
-     "x": 576,
-     "y": 720,
-     "width": 16,
-     "height": 16,
-     "rotation": 0,
-     "visible": true,
-     "properties": [
-      {
-       "name": "tiefe",
-       "type": "int",
-       "value": 1
-      },
-      {
-       "name": "kollision",
-       "type": "bool",
-       "value": false
-      }
-     ]
-    },
-    {
-     "id": 92,
+     "id": 88,
      "name": "wg4Gras",
      "type": "moebel",
      "x": 464,
@@ -11264,7 +11352,7 @@
      ]
     },
     {
-     "id": 93,
+     "id": 89,
      "name": "wg4BlumeGelb",
      "type": "moebel",
      "x": 864,
@@ -11287,7 +11375,7 @@
      ]
     },
     {
-     "id": 94,
+     "id": 90,
      "name": "wg4GrasB",
      "type": "moebel",
      "x": 48,
@@ -11310,30 +11398,7 @@
      ]
     },
     {
-     "id": 95,
-     "name": "wg4BlumeGelb",
-     "type": "moebel",
-     "x": 880,
-     "y": 640,
-     "width": 16,
-     "height": 16,
-     "rotation": 0,
-     "visible": true,
-     "properties": [
-      {
-       "name": "tiefe",
-       "type": "int",
-       "value": 1
-      },
-      {
-       "name": "kollision",
-       "type": "bool",
-       "value": false
-      }
-     ]
-    },
-    {
-     "id": 96,
+     "id": 91,
      "name": "wg4BlumeGelb",
      "type": "moebel",
      "x": 608,
@@ -11356,7 +11421,7 @@
      ]
     },
     {
-     "id": 97,
+     "id": 92,
      "name": "wg4BlumeGelb",
      "type": "moebel",
      "x": 176,
@@ -11379,7 +11444,7 @@
      ]
     },
     {
-     "id": 98,
+     "id": 93,
      "name": "wg4BlumeGelb",
      "type": "moebel",
      "x": 240,
@@ -11402,30 +11467,7 @@
      ]
     },
     {
-     "id": 99,
-     "name": "wg4Gras",
-     "type": "moebel",
-     "x": 560,
-     "y": 576,
-     "width": 16,
-     "height": 16,
-     "rotation": 0,
-     "visible": true,
-     "properties": [
-      {
-       "name": "tiefe",
-       "type": "int",
-       "value": 1
-      },
-      {
-       "name": "kollision",
-       "type": "bool",
-       "value": false
-      }
-     ]
-    },
-    {
-     "id": 100,
+     "id": 94,
      "name": "wg4GrasB",
      "type": "moebel",
      "x": 976,
@@ -11448,7 +11490,7 @@
      ]
     },
     {
-     "id": 101,
+     "id": 95,
      "name": "wg4BlumeGelb",
      "type": "moebel",
      "x": 576,
@@ -11471,7 +11513,7 @@
      ]
     },
     {
-     "id": 102,
+     "id": 96,
      "name": "wg4BlumeGelb",
      "type": "moebel",
      "x": 528,
@@ -11494,7 +11536,7 @@
      ]
     },
     {
-     "id": 103,
+     "id": 97,
      "name": "wg4BlumeGelb",
      "type": "moebel",
      "x": 800,
@@ -11517,7 +11559,7 @@
      ]
     },
     {
-     "id": 104,
+     "id": 98,
      "name": "wg4Gras",
      "type": "moebel",
      "x": 448,
@@ -11540,7 +11582,7 @@
      ]
     },
     {
-     "id": 105,
+     "id": 99,
      "name": "wg4BlumeGelb",
      "type": "moebel",
      "x": 432,
@@ -11563,30 +11605,7 @@
      ]
     },
     {
-     "id": 106,
-     "name": "wg4Gras",
-     "type": "moebel",
-     "x": 560,
-     "y": 560,
-     "width": 16,
-     "height": 16,
-     "rotation": 0,
-     "visible": true,
-     "properties": [
-      {
-       "name": "tiefe",
-       "type": "int",
-       "value": 1
-      },
-      {
-       "name": "kollision",
-       "type": "bool",
-       "value": false
-      }
-     ]
-    },
-    {
-     "id": 107,
+     "id": 100,
      "name": "wg4BlumeGelb",
      "type": "moebel",
      "x": 816,
@@ -11609,7 +11628,7 @@
      ]
     },
     {
-     "id": 108,
+     "id": 101,
      "name": "wg4GrasB",
      "type": "moebel",
      "x": 480,
@@ -11632,7 +11651,7 @@
      ]
     },
     {
-     "id": 109,
+     "id": 102,
      "name": "wg4BlumeGelb",
      "type": "moebel",
      "x": 192,
@@ -11655,30 +11674,7 @@
      ]
     },
     {
-     "id": 110,
-     "name": "wg4Gras",
-     "type": "moebel",
-     "x": 864,
-     "y": 704,
-     "width": 16,
-     "height": 16,
-     "rotation": 0,
-     "visible": true,
-     "properties": [
-      {
-       "name": "tiefe",
-       "type": "int",
-       "value": 1
-      },
-      {
-       "name": "kollision",
-       "type": "bool",
-       "value": false
-      }
-     ]
-    },
-    {
-     "id": 111,
+     "id": 103,
      "name": "wg4GrasB",
      "type": "moebel",
      "x": 16,
@@ -11701,30 +11697,7 @@
      ]
     },
     {
-     "id": 112,
-     "name": "wg4Gras",
-     "type": "moebel",
-     "x": 288,
-     "y": 128,
-     "width": 16,
-     "height": 16,
-     "rotation": 0,
-     "visible": true,
-     "properties": [
-      {
-       "name": "tiefe",
-       "type": "int",
-       "value": 1
-      },
-      {
-       "name": "kollision",
-       "type": "bool",
-       "value": false
-      }
-     ]
-    },
-    {
-     "id": 113,
+     "id": 104,
      "name": "wg4GrasB",
      "type": "moebel",
      "x": 80,
@@ -11747,7 +11720,7 @@
      ]
     },
     {
-     "id": 114,
+     "id": 105,
      "name": "wg4GrasB",
      "type": "moebel",
      "x": 432,
@@ -11770,7 +11743,7 @@
      ]
     },
     {
-     "id": 115,
+     "id": 106,
      "name": "wg4BlumeGelb",
      "type": "moebel",
      "x": 528,
@@ -11793,7 +11766,7 @@
      ]
     },
     {
-     "id": 116,
+     "id": 107,
      "name": "wg4BlumeGelb",
      "type": "moebel",
      "x": 448,
@@ -11816,7 +11789,7 @@
      ]
     },
     {
-     "id": 117,
+     "id": 108,
      "name": "wg4Gras",
      "type": "moebel",
      "x": 32,
@@ -11839,7 +11812,7 @@
      ]
     },
     {
-     "id": 118,
+     "id": 109,
      "name": "wg4Gras",
      "type": "moebel",
      "x": 48,
@@ -11862,30 +11835,7 @@
      ]
     },
     {
-     "id": 119,
-     "name": "wg4GrasB",
-     "type": "moebel",
-     "x": 736,
-     "y": 528,
-     "width": 16,
-     "height": 16,
-     "rotation": 0,
-     "visible": true,
-     "properties": [
-      {
-       "name": "tiefe",
-       "type": "int",
-       "value": 1
-      },
-      {
-       "name": "kollision",
-       "type": "bool",
-       "value": false
-      }
-     ]
-    },
-    {
-     "id": 120,
+     "id": 110,
      "name": "wg4BlumeGelb",
      "type": "moebel",
      "x": 448,
@@ -11908,30 +11858,7 @@
      ]
     },
     {
-     "id": 121,
-     "name": "wg4Gras",
-     "type": "moebel",
-     "x": 656,
-     "y": 720,
-     "width": 16,
-     "height": 16,
-     "rotation": 0,
-     "visible": true,
-     "properties": [
-      {
-       "name": "tiefe",
-       "type": "int",
-       "value": 1
-      },
-      {
-       "name": "kollision",
-       "type": "bool",
-       "value": false
-      }
-     ]
-    },
-    {
-     "id": 122,
+     "id": 111,
      "name": "wg4BlumeGelb",
      "type": "moebel",
      "x": 464,
@@ -11954,7 +11881,7 @@
      ]
     },
     {
-     "id": 123,
+     "id": 112,
      "name": "wg4BlumeGelb",
      "type": "moebel",
      "x": 672,
@@ -11977,11 +11904,264 @@
      ]
     },
     {
-     "id": 124,
+     "id": 113,
+     "name": "wg4GrasB",
+     "type": "moebel",
+     "x": 64,
+     "y": 320,
+     "width": 16,
+     "height": 16,
+     "rotation": 0,
+     "visible": true,
+     "properties": [
+      {
+       "name": "tiefe",
+       "type": "int",
+       "value": 1
+      },
+      {
+       "name": "kollision",
+       "type": "bool",
+       "value": false
+      }
+     ]
+    },
+    {
+     "id": 114,
+     "name": "wg4Gras",
+     "type": "moebel",
+     "x": 576,
+     "y": 48,
+     "width": 16,
+     "height": 16,
+     "rotation": 0,
+     "visible": true,
+     "properties": [
+      {
+       "name": "tiefe",
+       "type": "int",
+       "value": 1
+      },
+      {
+       "name": "kollision",
+       "type": "bool",
+       "value": false
+      }
+     ]
+    },
+    {
+     "id": 115,
+     "name": "wg4BlumeGelb",
+     "type": "moebel",
+     "x": 848,
+     "y": 224,
+     "width": 16,
+     "height": 16,
+     "rotation": 0,
+     "visible": true,
+     "properties": [
+      {
+       "name": "tiefe",
+       "type": "int",
+       "value": 1
+      },
+      {
+       "name": "kollision",
+       "type": "bool",
+       "value": false
+      }
+     ]
+    },
+    {
+     "id": 116,
+     "name": "wg4Gras",
+     "type": "moebel",
+     "x": 400,
+     "y": 208,
+     "width": 16,
+     "height": 16,
+     "rotation": 0,
+     "visible": true,
+     "properties": [
+      {
+       "name": "tiefe",
+       "type": "int",
+       "value": 1
+      },
+      {
+       "name": "kollision",
+       "type": "bool",
+       "value": false
+      }
+     ]
+    },
+    {
+     "id": 117,
+     "name": "wg4Gras",
+     "type": "moebel",
+     "x": 976,
+     "y": 688,
+     "width": 16,
+     "height": 16,
+     "rotation": 0,
+     "visible": true,
+     "properties": [
+      {
+       "name": "tiefe",
+       "type": "int",
+       "value": 1
+      },
+      {
+       "name": "kollision",
+       "type": "bool",
+       "value": false
+      }
+     ]
+    },
+    {
+     "id": 118,
+     "name": "wg4GrasB",
+     "type": "moebel",
+     "x": 32,
+     "y": 336,
+     "width": 16,
+     "height": 16,
+     "rotation": 0,
+     "visible": true,
+     "properties": [
+      {
+       "name": "tiefe",
+       "type": "int",
+       "value": 1
+      },
+      {
+       "name": "kollision",
+       "type": "bool",
+       "value": false
+      }
+     ]
+    },
+    {
+     "id": 119,
+     "name": "wg4BlumeGelb",
+     "type": "moebel",
+     "x": 896,
+     "y": 416,
+     "width": 16,
+     "height": 16,
+     "rotation": 0,
+     "visible": true,
+     "properties": [
+      {
+       "name": "tiefe",
+       "type": "int",
+       "value": 1
+      },
+      {
+       "name": "kollision",
+       "type": "bool",
+       "value": false
+      }
+     ]
+    },
+    {
+     "id": 120,
+     "name": "wg4GrasB",
+     "type": "moebel",
+     "x": 32,
+     "y": 176,
+     "width": 16,
+     "height": 16,
+     "rotation": 0,
+     "visible": true,
+     "properties": [
+      {
+       "name": "tiefe",
+       "type": "int",
+       "value": 1
+      },
+      {
+       "name": "kollision",
+       "type": "bool",
+       "value": false
+      }
+     ]
+    },
+    {
+     "id": 121,
+     "name": "wg4GrasB",
+     "type": "moebel",
+     "x": 448,
+     "y": 224,
+     "width": 16,
+     "height": 16,
+     "rotation": 0,
+     "visible": true,
+     "properties": [
+      {
+       "name": "tiefe",
+       "type": "int",
+       "value": 1
+      },
+      {
+       "name": "kollision",
+       "type": "bool",
+       "value": false
+      }
+     ]
+    },
+    {
+     "id": 122,
      "name": "wg4GrasB",
      "type": "moebel",
      "x": 704,
-     "y": 592,
+     "y": 112,
+     "width": 16,
+     "height": 16,
+     "rotation": 0,
+     "visible": true,
+     "properties": [
+      {
+       "name": "tiefe",
+       "type": "int",
+       "value": 1
+      },
+      {
+       "name": "kollision",
+       "type": "bool",
+       "value": false
+      }
+     ]
+    },
+    {
+     "id": 123,
+     "name": "wg4GrasB",
+     "type": "moebel",
+     "x": 960,
+     "y": 576,
+     "width": 16,
+     "height": 16,
+     "rotation": 0,
+     "visible": true,
+     "properties": [
+      {
+       "name": "tiefe",
+       "type": "int",
+       "value": 1
+      },
+      {
+       "name": "kollision",
+       "type": "bool",
+       "value": false
+      }
+     ]
+    },
+    {
+     "id": 124,
+     "name": "wg4BlumeGelb",
+     "type": "moebel",
+     "x": 512,
+     "y": 560,
      "width": 16,
      "height": 16,
      "rotation": 0,
@@ -12001,10 +12181,10 @@
     },
     {
      "id": 125,
-     "name": "wg4GrasB",
+     "name": "wg4Gras",
      "type": "moebel",
-     "x": 688,
-     "y": 656,
+     "x": 80,
+     "y": 48,
      "width": 16,
      "height": 16,
      "rotation": 0,
@@ -12024,24 +12204,24 @@
     },
     {
      "id": 126,
-     "name": "mf4Strassenbaum",
+     "name": "wg4Gras",
      "type": "moebel",
-     "x": 448,
-     "y": 592,
-     "width": 48,
-     "height": 48,
+     "x": 144,
+     "y": 176,
+     "width": 16,
+     "height": 16,
      "rotation": 0,
      "visible": true,
      "properties": [
       {
        "name": "tiefe",
        "type": "int",
-       "value": 632
+       "value": 1
       },
       {
        "name": "kollision",
        "type": "bool",
-       "value": true
+       "value": false
       }
      ]
     },
@@ -12050,98 +12230,6 @@
      "name": "wg4Busch",
      "type": "moebel",
      "x": 496,
-     "y": 464,
-     "width": 32,
-     "height": 32,
-     "rotation": 0,
-     "visible": true,
-     "properties": [
-      {
-       "name": "tiefe",
-       "type": "int",
-       "value": 488
-      },
-      {
-       "name": "kollision",
-       "type": "bool",
-       "value": true
-      }
-     ]
-    },
-    {
-     "id": 128,
-     "name": "mf4Strassenbaum",
-     "type": "moebel",
-     "x": 512,
-     "y": 528,
-     "width": 48,
-     "height": 48,
-     "rotation": 0,
-     "visible": true,
-     "properties": [
-      {
-       "name": "tiefe",
-       "type": "int",
-       "value": 568
-      },
-      {
-       "name": "kollision",
-       "type": "bool",
-       "value": true
-      }
-     ]
-    },
-    {
-     "id": 129,
-     "name": "mf4Strassenbaum",
-     "type": "moebel",
-     "x": 592,
-     "y": 576,
-     "width": 48,
-     "height": 48,
-     "rotation": 0,
-     "visible": true,
-     "properties": [
-      {
-       "name": "tiefe",
-       "type": "int",
-       "value": 616
-      },
-      {
-       "name": "kollision",
-       "type": "bool",
-       "value": true
-      }
-     ]
-    },
-    {
-     "id": 130,
-     "name": "wg4Busch",
-     "type": "moebel",
-     "x": 448,
-     "y": 720,
-     "width": 32,
-     "height": 32,
-     "rotation": 0,
-     "visible": true,
-     "properties": [
-      {
-       "name": "tiefe",
-       "type": "int",
-       "value": 744
-      },
-      {
-       "name": "kollision",
-       "type": "bool",
-       "value": true
-      }
-     ]
-    },
-    {
-     "id": 131,
-     "name": "wg4Busch",
-     "type": "moebel",
-     "x": 592,
      "y": 544,
      "width": 32,
      "height": 32,
@@ -12161,11 +12249,11 @@
      ]
     },
     {
-     "id": 132,
+     "id": 128,
      "name": "mf4Strassenbaum",
      "type": "moebel",
      "x": 464,
-     "y": 640,
+     "y": 704,
      "width": 48,
      "height": 48,
      "rotation": 0,
@@ -12174,7 +12262,7 @@
       {
        "name": "tiefe",
        "type": "int",
-       "value": 680
+       "value": 744
       },
       {
        "name": "kollision",
@@ -12184,11 +12272,11 @@
      ]
     },
     {
-     "id": 133,
+     "id": 129,
      "name": "mf4Strassenbaum",
      "type": "moebel",
-     "x": 576,
-     "y": 688,
+     "x": 464,
+     "y": 608,
      "width": 48,
      "height": 48,
      "rotation": 0,
@@ -12197,7 +12285,76 @@
       {
        "name": "tiefe",
        "type": "int",
-       "value": 728
+       "value": 648
+      },
+      {
+       "name": "kollision",
+       "type": "bool",
+       "value": true
+      }
+     ]
+    },
+    {
+     "id": 130,
+     "name": "wg4Busch",
+     "type": "moebel",
+     "x": 464,
+     "y": 464,
+     "width": 32,
+     "height": 32,
+     "rotation": 0,
+     "visible": true,
+     "properties": [
+      {
+       "name": "tiefe",
+       "type": "int",
+       "value": 488
+      },
+      {
+       "name": "kollision",
+       "type": "bool",
+       "value": true
+      }
+     ]
+    },
+    {
+     "id": 131,
+     "name": "wg4Busch",
+     "type": "moebel",
+     "x": 448,
+     "y": 560,
+     "width": 32,
+     "height": 32,
+     "rotation": 0,
+     "visible": true,
+     "properties": [
+      {
+       "name": "tiefe",
+       "type": "int",
+       "value": 584
+      },
+      {
+       "name": "kollision",
+       "type": "bool",
+       "value": true
+      }
+     ]
+    },
+    {
+     "id": 132,
+     "name": "wg4Busch",
+     "type": "moebel",
+     "x": 512,
+     "y": 496,
+     "width": 32,
+     "height": 32,
+     "rotation": 0,
+     "visible": true,
+     "properties": [
+      {
+       "name": "tiefe",
+       "type": "int",
+       "value": 520
       },
       {
        "name": "kollision",

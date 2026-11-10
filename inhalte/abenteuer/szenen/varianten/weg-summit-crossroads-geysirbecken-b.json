@@ -8,7 +8,8 @@
   "ufer": "stein",
   "boeden": {
     "e": "erde",
-    "s": "sinter"
+    "s": "sinter",
+    "d": "dielen"
   },
   "bruecken": ["h"],
   "raster": [
@@ -74,9 +75,9 @@
     "#ssssssssssssssssssssssssssss#",
     "#ssssssssssssssssssssssssssss#",
     "#ssssssssssssssssssssssssssss#",
-    "#ssssssssssssssssssssssssssss#",
-    "#ssssssssssssssssssssssssssss#",
-    "#ssssssssssssssssssssssssssss#",
+    "#ssssssssssddddddddssssssssss#",
+    "#ssssssssssddddddddssssssssss#",
+    "#ssssssssssddddddddssssssssss#",
     "#ssss~~~~hh~~~~sssss~~~~~~~~~#",
     "#ssss~~~~hh~~~~sssss~~~~~~~~~#",
     "#ssss~~~~hh~~~~sssss~~~~~~~~~#",
@@ -354,6 +355,26 @@
     },
     {
       "moebel": "sx7Geysir",
+      "feld": [13, 58]
+    },
+    {
+      "moebel": "cc4Bootsschuppen",
+      "feld": [8, 59]
+    },
+    {
+      "moebel": "mfBank",
+      "feld": [12, 62]
+    },
+    {
+      "moebel": "mfBank",
+      "feld": [15, 62]
+    },
+    {
+      "moebel": "cr8InfotafelDach",
+      "feld": [17, 62]
+    },
+    {
+      "moebel": "sx7Geysir",
       "feld": [14, 38]
     },
     {
@@ -564,17 +585,32 @@
     },
     {
       "moebel": "sx7Dampf",
-      "feld": [8, 115],
+      "feld": [8, 117],
       "vorn": true
     },
     {
       "moebel": "sx7Dampf",
-      "feld": [23, 101],
+      "feld": [23, 99],
       "vorn": true
     },
     {
       "moebel": "sx7Dampf",
-      "feld": [16, 103],
+      "feld": [20, 65],
+      "vorn": true
+    },
+    {
+      "moebel": "sx7Dampf",
+      "feld": [22, 71],
+      "vorn": true
+    },
+    {
+      "moebel": "sx7Dampf",
+      "feld": [16, 99],
+      "vorn": true
+    },
+    {
+      "moebel": "sx7Dampf",
+      "feld": [14, 73],
       "vorn": true
     },
     {
@@ -614,12 +650,8 @@
       "feld": [24, 59]
     },
     {
-      "moebel": "felsKlein",
-      "feld": [16, 62]
-    },
-    {
-      "moebel": "felsKlein",
-      "feld": [3, 64]
+      "moebel": "sx7Geysir",
+      "feld": [19, 58]
     },
     {
       "moebel": "felsKlein",
@@ -627,7 +659,7 @@
     },
     {
       "moebel": "felsKlein",
-      "feld": [15, 75]
+      "feld": [15, 67]
     },
     {
       "moebel": "felsKlein",
@@ -635,7 +667,7 @@
     },
     {
       "moebel": "felsKlein",
-      "feld": [12, 86]
+      "feld": [19, 76]
     },
     {
       "moebel": "sx7Geysir",
@@ -643,51 +675,55 @@
     },
     {
       "moebel": "felsKlein",
-      "feld": [11, 94]
-    },
-    {
-      "moebel": "felsKlein",
-      "feld": [24, 89]
-    },
-    {
-      "moebel": "felsKlein",
-      "feld": [21, 97]
-    },
-    {
-      "moebel": "felsKlein",
-      "feld": [7, 102]
+      "feld": [10, 86]
     },
     {
       "moebel": "sx7Geysir",
-      "feld": [5, 104]
-    },
-    {
-      "moebel": "sx7Geysir",
-      "feld": [12, 110]
+      "feld": [17, 88]
     },
     {
       "moebel": "felsKlein",
-      "feld": [19, 116]
+      "feld": [15, 90]
     },
     {
       "moebel": "sx7Geysir",
-      "feld": [20, 117]
+      "feld": [19, 96]
+    },
+    {
+      "moebel": "sx7Geysir",
+      "feld": [20, 101]
+    },
+    {
+      "moebel": "sx7Geysir",
+      "feld": [24, 110]
     },
     {
       "moebel": "felsKlein",
-      "feld": [21, 123]
+      "feld": [3, 109]
+    },
+    {
+      "moebel": "sx7Geysir",
+      "feld": [19, 119]
+    },
+    {
+      "moebel": "felsKlein",
+      "feld": [21, 118]
     },
     {
       "moebel": "felsKlein",
       "feld": [5, 123]
     },
     {
+      "moebel": "felsKlein",
+      "feld": [3, 122]
+    },
+    {
       "moebel": "sx7Bison",
       "feld": [14, 94]
     },
     {
-      "moebel": "sx7Bison",
-      "feld": [15, 89]
+      "moebel": "sx7BisonRechts",
+      "feld": [10, 94]
     },
     {
       "moebel": "sx7BisonLiegend",
@@ -696,6 +732,12 @@
     {
       "moebel": "sx7Bison",
       "feld": [7, 146]
+    },
+    {
+      "moebel": "cr8Finkenzeichen",
+      "feld": [8, 64],
+      "vorn": true,
+      "versatz": [0, 0]
     }
   ],
   "ausloeser": [
@@ -745,7 +787,7 @@
     {
       "name": "bisonherde",
       "typ": "tier",
-      "feld": [20, 92],
+      "feld": [19, 92],
       "eigenschaften": {
         "von": "18,91",
         "bis": "24,95",
@@ -763,17 +805,6 @@
       }
     },
     {
-      "name": "wanderer",
-      "typ": "statist",
-      "feld": [14, 40],
-      "eigenschaften": {
-        "von": "5,40",
-        "bis": "16,41",
-        "tun": "fotografiert die Quellen",
-        "wann": "tag"
-      }
-    },
-    {
       "name": "raben",
       "typ": "tier",
       "feld": [20, 8],
@@ -781,6 +812,97 @@
         "von": "18,6",
         "bis": "26,8",
         "verhalten": "fliegen"
+      }
+    },
+    {
+      "name": "murmeltiere",
+      "typ": "tier",
+      "feld": [6, 18],
+      "eigenschaften": {
+        "von": "3,16",
+        "bis": "9,20",
+        "verhalten": "flitzen"
+      }
+    },
+    {
+      "name": "eichhoernchen",
+      "typ": "tier",
+      "feld": [20, 160],
+      "eigenschaften": {
+        "von": "18,155",
+        "bis": "25,165",
+        "verhalten": "flitzen"
+      }
+    },
+    {
+      "name": "wapiti",
+      "typ": "tier",
+      "feld": [24, 145],
+      "eigenschaften": {
+        "von": "20,142",
+        "bis": "27,150",
+        "verhalten": "ausweichen"
+      }
+    },
+    {
+      "name": "fotograf",
+      "typ": "statist",
+      "feld": [14, 28],
+      "eigenschaften": {
+        "tun": "wartet mit der Kamera auf den nächsten Ausbruch",
+        "wann": "tag",
+        "von": "14,26",
+        "bis": "15,32",
+        "sagt": "statist.wegSummitCrossroads.geysirbecken.fotograf"
+      }
+    },
+    {
+      "name": "praktikant",
+      "typ": "statist",
+      "feld": [16, 19],
+      "eigenschaften": {
+        "tun": "fegt Laub vom Steg vor der Ranger-Station",
+        "wann": "tag",
+        "von": "14,19",
+        "bis": "20,20",
+        "sagt": "statist.wegSummitCrossroads.geysirbecken.praktikant"
+      }
+    },
+    {
+      "name": "vogelbeobachterin",
+      "typ": "statist",
+      "feld": [8, 150],
+      "eigenschaften": {
+        "tun": "schaut mit dem Fernglas nach den Bisons",
+        "wann": "tag",
+        "von": "5,148",
+        "bis": "10,152",
+        "sagt": "statist.wegSummitCrossroads.geysirbecken.vogelbeobachterin"
+      }
+    },
+    {
+      "name": "kind",
+      "typ": "statist",
+      "feld": [16, 158],
+      "eigenschaften": {
+        "tun": "hüpft von Baumstumpf zu Baumstumpf",
+        "wann": "tag",
+        "von": "15,157",
+        "bis": "20,160",
+        "sagt": "statist.wegSummitCrossroads.geysirbecken.kind"
+      }
+    },
+    {
+      "name": "schachlehrerin",
+      "typ": "statist",
+      "feld": [16, 155],
+      "eigenschaften": {
+        "tun": "sammelt ihre Klasse für die Rückfahrt",
+        "wann": "tag",
+        "von": "14,154",
+        "bis": "20,158",
+        "sagt": "statist.wegSummitCrossroads.geysirbecken.schachlehrerin",
+        "zeigt": "unzickerSarapu"
       }
     }
   ],

@@ -42,10 +42,10 @@
     "#..........ee............ee............................#",
     "#..........ee............ee............................#",
     "#..........ee............ee............................#",
-    "#.ppppppppppppppppppppppppppppppppppppp................#",
-    "#.ppppppppppppppppppppppppppppppppppppp................#",
-    "#.ppppppppppppppppppppppppppppppppppppp................#",
-    "#.ppppppppppppppppppppppppppppppppppppp................#",
+    "#.ppppppppppppppppppppppppppppppppppppppppppppppppppppp#",
+    "#.ppppppppppppppppppppppppppppppppppppppppppppppppppppp#",
+    "#.ppppppppppppppppppppppppppppppppppppppppppppppppppppp#",
+    "#.ppppppppppppppppppppppppppppppppppppppppppppppppppppp#",
     "#......................................................#",
     "#......................................................#",
     "#......................................................#",
@@ -97,30 +97,6 @@
     {
       "moebel": "mf4BauernhausBreit",
       "feld": [19, 1]
-    },
-    {
-      "moebel": "ld5WaescheBunt",
-      "feld": [12, 6]
-    },
-    {
-      "moebel": "ld5Waesche",
-      "feld": [29, 6]
-    },
-    {
-      "moebel": "ld5WaescheWeiss",
-      "feld": [46, 6]
-    },
-    {
-      "moebel": "mf4Gemuesebeet",
-      "feld": [13, 2]
-    },
-    {
-      "moebel": "mf4Gemuesebeet",
-      "feld": [15, 2]
-    },
-    {
-      "moebel": "mf2Blumenbeet",
-      "feld": [31, 3]
     },
     {
       "moebel": "cc3Raetseltafel",
@@ -222,7 +198,7 @@
     },
     {
       "moebel": "mf4Laterne",
-      "feld": [48, 9],
+      "feld": [54, 9],
       "vorn": true
     },
     {
@@ -234,48 +210,12 @@
       "feld": [24, 33]
     },
     {
-      "moebel": "mf4BaumRot",
-      "feld": [43, 32]
-    },
-    {
       "moebel": "wg4Erle",
       "feld": [49, 36]
     },
     {
-      "moebel": "mf4BaumRot",
-      "feld": [49, 27]
-    },
-    {
-      "moebel": "wg4Erle",
-      "feld": [42, 26]
-    },
-    {
-      "moebel": "mf4BaumRot",
-      "feld": [52, 32]
-    },
-    {
       "moebel": "mf4BaumGruen",
       "feld": [45, 36]
-    },
-    {
-      "moebel": "wg4Erle",
-      "feld": [44, 23]
-    },
-    {
-      "moebel": "wg4LaubbaumB",
-      "feld": [51, 23]
-    },
-    {
-      "moebel": "mf4BaumGruen",
-      "feld": [45, 27]
-    },
-    {
-      "moebel": "wg4LaubbaumHerbst",
-      "feld": [47, 30]
-    },
-    {
-      "moebel": "mf4BaumGruen",
-      "feld": [41, 35]
     },
     {
       "moebel": "mf4BaumRot",
@@ -310,10 +250,6 @@
       "feld": [21, 36]
     },
     {
-      "moebel": "wg4Gras",
-      "feld": [46, 9]
-    },
-    {
       "moebel": "wg4BlumenWeiss",
       "feld": [13, 38]
     },
@@ -322,40 +258,20 @@
       "feld": [10, 36]
     },
     {
-      "moebel": "wg4BuschKlein",
-      "feld": [44, 31]
-    },
-    {
       "moebel": "wg4BlumenWeiss",
       "feld": [24, 23]
-    },
-    {
-      "moebel": "wg4BlumeGelb",
-      "feld": [14, 3]
     },
     {
       "moebel": "wg4Gras",
       "feld": [33, 22]
     },
     {
-      "moebel": "wg4Stein",
-      "feld": [40, 26]
-    },
-    {
       "moebel": "wg4BuschKlein",
       "feld": [54, 1]
     },
     {
-      "moebel": "wg4Stein",
-      "feld": [48, 26]
-    },
-    {
       "moebel": "wg4BlumenWeiss",
       "feld": [53, 4]
-    },
-    {
-      "moebel": "wg4Stein",
-      "feld": [16, 4]
     },
     {
       "moebel": "wg4BlumenWeiss",
@@ -387,19 +303,7 @@
     },
     {
       "moebel": "wg4Gras",
-      "feld": [41, 30]
-    },
-    {
-      "moebel": "wg4Gras",
       "feld": [1, 30]
-    },
-    {
-      "moebel": "wg4BlumeGelb",
-      "feld": [12, 6]
-    },
-    {
-      "moebel": "wg4BlumeGelb",
-      "feld": [48, 25]
     },
     {
       "moebel": "wg4Stein",
@@ -454,20 +358,12 @@
       "feld": [41, 12]
     },
     {
-      "moebel": "wg4Stein",
-      "feld": [30, 9]
-    },
-    {
       "moebel": "wg4BlumenWeiss",
       "feld": [53, 1]
     },
     {
       "moebel": "wg4Stein",
       "feld": [23, 23]
-    },
-    {
-      "moebel": "wg4BlumeGelb",
-      "feld": [50, 3]
     },
     {
       "moebel": "wg4Gras",
@@ -502,20 +398,8 @@
       "feld": [8, 22]
     },
     {
-      "moebel": "wg4Gras",
-      "feld": [29, 6]
-    },
-    {
       "moebel": "wg4BlumenWeiss",
       "feld": [17, 38]
-    },
-    {
-      "moebel": "wg4BlumenWeiss",
-      "feld": [52, 1]
-    },
-    {
-      "moebel": "wg4BlumeGelb",
-      "feld": [14, 4]
     },
     {
       "moebel": "wg4Stein",
@@ -534,16 +418,8 @@
       "feld": [53, 20]
     },
     {
-      "moebel": "wg4BlumenWeiss",
-      "feld": [39, 30]
-    },
-    {
       "moebel": "wg4BlumeGelb",
       "feld": [40, 24]
-    },
-    {
-      "moebel": "wg4Stein",
-      "feld": [48, 35]
     },
     {
       "moebel": "wg4Gras",
@@ -586,8 +462,24 @@
       "feld": [42, 20]
     },
     {
-      "moebel": "wg4BuschKlein",
-      "feld": [33, 9]
+      "moebel": "lp8Markt",
+      "feld": [46, 0]
+    },
+    {
+      "moebel": "lp8HausFlachHoch",
+      "feld": [11, 0]
+    },
+    {
+      "moebel": "lp8Laden",
+      "feld": [29, 2]
+    },
+    {
+      "moebel": "lp8Schuppen",
+      "feld": [39, 26]
+    },
+    {
+      "moebel": "lp8BauernhausBreit",
+      "feld": [45, 23]
     }
   ],
   "ausloeser": [
@@ -629,19 +521,165 @@
       "typ": "tier",
       "feld": [24, 20],
       "eigenschaften": {
+        "verhalten": "fliegen",
         "von": "24,20",
-        "bis": "24,20",
-        "verhalten": "fliegen"
+        "bis": "24,20"
       }
     },
     {
       "name": "gans",
       "typ": "tier",
-      "feld": [46, 30],
+      "feld": [48, 37],
       "eigenschaften": {
-        "von": "46,30",
-        "bis": "50,30",
-        "verhalten": "ausweichen"
+        "verhalten": "ausweichen",
+        "von": "44,37",
+        "bis": "52,37"
+      }
+    },
+    {
+      "name": "waescherin",
+      "typ": "statist",
+      "feld": [27, 10],
+      "eigenschaften": {
+        "tun": "hängt im Nebel Wäsche auf",
+        "wann": "morgen",
+        "sagt": "statist.lockport.aussen.waescherin"
+      }
+    },
+    {
+      "name": "bootsbauer",
+      "typ": "statist",
+      "feld": [46, 19],
+      "eigenschaften": {
+        "tun": "kalfatert ein Ruderboot am Bootsschuppen",
+        "wann": "tag",
+        "sagt": "statist.lockport.aussen.bootsbauer"
+      }
+    },
+    {
+      "name": "anglerAmKai",
+      "typ": "statist",
+      "feld": [6, 20],
+      "eigenschaften": {
+        "tun": "angelt vom Kai aus",
+        "wann": "morgen",
+        "sagt": "statist.lockport.aussen.anglerAmKai"
+      }
+    },
+    {
+      "name": "postbotin",
+      "typ": "statist",
+      "feld": [3, 10],
+      "eigenschaften": {
+        "tun": "fährt mit dem Rad die Post aus",
+        "wann": "morgen",
+        "von": "3,10",
+        "bis": "54,10",
+        "sagt": "statist.lockport.aussen.postbotin"
+      }
+    },
+    {
+      "name": "schulkind",
+      "typ": "statist",
+      "feld": [12, 24],
+      "eigenschaften": {
+        "tun": "geht mit dem Ranzen nach Hause",
+        "wann": "tag",
+        "von": "12,24",
+        "bis": "12,31",
+        "sagt": "statist.lockport.aussen.schulkind"
+      }
+    },
+    {
+      "name": "hafenmeisterRuhestand",
+      "typ": "statist",
+      "feld": [33, 12],
+      "eigenschaften": {
+        "tun": "schaut der Schleuse zu",
+        "wann": "tag",
+        "sagt": "statist.lockport.aussen.hafenmeisterRuhestand"
+      }
+    },
+    {
+      "name": "kahnmaler",
+      "typ": "statist",
+      "feld": [11, 20],
+      "eigenschaften": {
+        "tun": "streicht die Bordwand des Lastkahns",
+        "wann": "tag",
+        "von": "10,20",
+        "bis": "13,20",
+        "sagt": "statist.lockport.aussen.kahnmaler"
+      }
+    },
+    {
+      "name": "touristin",
+      "typ": "statist",
+      "feld": [34, 18],
+      "eigenschaften": {
+        "tun": "fotografiert die Schleusentore",
+        "wann": "tag",
+        "sagt": "statist.lockport.aussen.touristin"
+      }
+    },
+    {
+      "name": "fischer",
+      "typ": "statist",
+      "feld": [20, 21],
+      "eigenschaften": {
+        "tun": "flickt ein Netz am Kai",
+        "wann": "morgen"
+      }
+    },
+    {
+      "name": "frauMitBesen",
+      "typ": "statist",
+      "feld": [30, 33],
+      "eigenschaften": {
+        "tun": "fegt Laub vor der Tür",
+        "wann": "tag",
+        "von": "28,33",
+        "bis": "33,33"
+      }
+    },
+    {
+      "name": "spaziergaenger",
+      "typ": "statist",
+      "feld": [3, 34],
+      "eigenschaften": {
+        "tun": "geht mit Schirm durch den Nebel",
+        "wann": "abend",
+        "von": "3,34",
+        "bis": "37,34"
+      }
+    },
+    {
+      "name": "mannMitSchubkarre",
+      "typ": "statist",
+      "feld": [25, 22],
+      "eigenschaften": {
+        "tun": "schiebt Brennholz zum Gasthaus",
+        "wann": "tag",
+        "von": "25,22",
+        "bis": "25,31"
+      }
+    },
+    {
+      "name": "enten",
+      "typ": "tier",
+      "feld": [15, 15],
+      "eigenschaften": {
+        "verhalten": "schwimmen",
+        "von": "3,15",
+        "bis": "27,15"
+      }
+    },
+    {
+      "name": "katze",
+      "typ": "tier",
+      "feld": [37, 19],
+      "eigenschaften": {
+        "verhalten": "sitzen"
       }
     }
   ],

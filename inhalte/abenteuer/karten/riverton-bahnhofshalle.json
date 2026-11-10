@@ -11,7 +11,7 @@
  "tilewidth": 16,
  "tileheight": 16,
  "nextlayerid": 5,
- "nextobjectid": 45,
+ "nextobjectid": 46,
  "layers": [
   {
    "id": 1,
@@ -1446,6 +1446,11 @@
        "name": "wann",
        "type": "string",
        "value": "morgen"
+      },
+      {
+       "name": "sagt",
+       "type": "string",
+       "value": "statist.riverton.bahnhofshalle.reisende"
       }
      ]
     },
@@ -1479,6 +1484,39 @@
     },
     {
      "id": 12,
+     "name": "schaffnerin",
+     "type": "statist",
+     "x": 144,
+     "y": 192,
+     "width": 16,
+     "height": 16,
+     "rotation": 0,
+     "visible": true,
+     "properties": [
+      {
+       "name": "von",
+       "type": "string",
+       "value": "9,12"
+      },
+      {
+       "name": "bis",
+       "type": "string",
+       "value": "9,12"
+      },
+      {
+       "name": "tun",
+       "type": "string",
+       "value": "wartet mit der Kelle auf den nächsten Zug"
+      },
+      {
+       "name": "sagt",
+       "type": "string",
+       "value": "statist.riverton.bahnhofshalle.schaffnerin"
+      }
+     ]
+    },
+    {
+     "id": 13,
      "name": "rv5Bogenfenster",
      "type": "moebel",
      "x": 64,
@@ -1501,7 +1539,7 @@
      ]
     },
     {
-     "id": 13,
+     "id": 14,
      "name": "rv5Fahrplantafel",
      "type": "moebel",
      "x": 112,
@@ -1524,7 +1562,7 @@
      ]
     },
     {
-     "id": 14,
+     "id": 15,
      "name": "rv5Bahnhofsuhr",
      "type": "moebel",
      "x": 192,
@@ -1547,7 +1585,7 @@
      ]
     },
     {
-     "id": 15,
+     "id": 16,
      "name": "rv5Bahnsteigtuer",
      "type": "moebel",
      "x": 304,
@@ -1570,7 +1608,7 @@
      ]
     },
     {
-     "id": 16,
+     "id": 17,
      "name": "rv5Bogenfenster",
      "type": "moebel",
      "x": 336,
@@ -1593,7 +1631,7 @@
      ]
     },
     {
-     "id": 17,
+     "id": 18,
      "name": "rv5BankHarlan",
      "type": "moebel",
      "x": 176,
@@ -1616,7 +1654,7 @@
      ]
     },
     {
-     "id": 18,
+     "id": 19,
      "name": "rv5Zeitungsregal",
      "type": "moebel",
      "x": 32,
@@ -1639,7 +1677,7 @@
      ]
     },
     {
-     "id": 19,
+     "id": 20,
      "name": "rv5Zeitungsregal",
      "type": "moebel",
      "x": 48,
@@ -1662,7 +1700,7 @@
      ]
     },
     {
-     "id": 20,
+     "id": 21,
      "name": "rv5Ladentisch",
      "type": "moebel",
      "x": 48,
@@ -1685,7 +1723,7 @@
      ]
     },
     {
-     "id": 21,
+     "id": 22,
      "name": "rv5Kasse",
      "type": "moebel",
      "x": 56,
@@ -1708,7 +1746,7 @@
      ]
     },
     {
-     "id": 22,
+     "id": 23,
      "name": "rv5SchalterLinks",
      "type": "moebel",
      "x": 32,
@@ -1731,7 +1769,7 @@
      ]
     },
     {
-     "id": 23,
+     "id": 24,
      "name": "rv5SchalterRechts",
      "type": "moebel",
      "x": 64,
@@ -1754,7 +1792,7 @@
      ]
     },
     {
-     "id": 24,
+     "id": 25,
      "name": "rv5Netzplan",
      "type": "moebel",
      "x": 256,
@@ -1777,7 +1815,7 @@
      ]
     },
     {
-     "id": 25,
+     "id": 26,
      "name": "rv5Wartebank",
      "type": "moebel",
      "x": 256,
@@ -1800,7 +1838,7 @@
      ]
     },
     {
-     "id": 26,
+     "id": 27,
      "name": "rv5Wartebank",
      "type": "moebel",
      "x": 256,
@@ -1823,7 +1861,7 @@
      ]
     },
     {
-     "id": 27,
+     "id": 28,
      "name": "rv5Wartebank",
      "type": "moebel",
      "x": 256,
@@ -1846,7 +1884,7 @@
      ]
     },
     {
-     "id": 28,
+     "id": 29,
      "name": "rv5Saeule",
      "type": "moebel",
      "x": 320,
@@ -1869,7 +1907,7 @@
      ]
     },
     {
-     "id": 29,
+     "id": 30,
      "name": "rv5Spind",
      "type": "moebel",
      "x": 16,
@@ -1892,7 +1930,7 @@
      ]
     },
     {
-     "id": 30,
+     "id": 31,
      "name": "rv5Spind",
      "type": "moebel",
      "x": 48,
@@ -1915,7 +1953,7 @@
      ]
     },
     {
-     "id": 31,
+     "id": 32,
      "name": "rv5Spind",
      "type": "moebel",
      "x": 80,
@@ -1938,7 +1976,7 @@
      ]
     },
     {
-     "id": 32,
+     "id": 33,
      "name": "rv5Muelleimer",
      "type": "moebel",
      "x": 240,
@@ -1961,7 +1999,7 @@
      ]
     },
     {
-     "id": 33,
+     "id": 34,
      "name": "rv5Saeule",
      "type": "moebel",
      "x": 112,
@@ -1984,7 +2022,7 @@
      ]
     },
     {
-     "id": 34,
+     "id": 35,
      "name": "rv5Saeule",
      "type": "moebel",
      "x": 112,
@@ -2007,7 +2045,7 @@
      ]
     },
     {
-     "id": 35,
+     "id": 36,
      "name": "rv5Saeule",
      "type": "moebel",
      "x": 320,
@@ -2030,7 +2068,7 @@
      ]
     },
     {
-     "id": 36,
+     "id": 37,
      "name": "rv5Vitrine",
      "type": "moebel",
      "x": 336,
@@ -2053,7 +2091,7 @@
      ]
     },
     {
-     "id": 37,
+     "id": 38,
      "name": "rv5Koffer",
      "type": "moebel",
      "x": 304,
@@ -2076,7 +2114,7 @@
      ]
     },
     {
-     "id": 38,
+     "id": 39,
      "name": "rv5Kaffeeautomat",
      "type": "moebel",
      "x": 368,
@@ -2099,7 +2137,7 @@
      ]
     },
     {
-     "id": 39,
+     "id": 40,
      "name": "rv5Gepaeckwagen",
      "type": "moebel",
      "x": 368,
@@ -2122,7 +2160,7 @@
      ]
     },
     {
-     "id": 40,
+     "id": 41,
      "name": "rv5Koffer",
      "type": "moebel",
      "x": 384,
@@ -2145,7 +2183,7 @@
      ]
     },
     {
-     "id": 41,
+     "id": 42,
      "name": "rv5Getraenkeautomat",
      "type": "moebel",
      "x": 368,
@@ -2168,7 +2206,7 @@
      ]
     },
     {
-     "id": 42,
+     "id": 43,
      "name": "rv5Topfpflanze",
      "type": "moebel",
      "x": 336,
@@ -2191,7 +2229,7 @@
      ]
     },
     {
-     "id": 43,
+     "id": 44,
      "name": "mf4Fussmatte",
      "type": "moebel",
      "x": 208,
@@ -2214,7 +2252,7 @@
      ]
     },
     {
-     "id": 44,
+     "id": 45,
      "name": "rv5TuerSuedGlas",
      "type": "moebel",
      "x": 208,

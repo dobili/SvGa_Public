@@ -101,7 +101,7 @@ Kein Befund.
 
 ## Bergstraße (40 × 130)
 
-Lastwagen von hinten in einer eigenen Asphaltbucht neben der Straße (x 13–15,5, y 85–95).
+Lastwagen von hinten in einer eigenen Asphaltbucht neben der Straße (etwa x 17,5–20,5, y 84–92,5).
 Passt. Die Kehren sind unverändert rechte Winkel; die Karte bleibt fast reif.
 
 ## Felstürme

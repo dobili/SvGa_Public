@@ -100,6 +100,22 @@ Kind (Gabel), Händlerin vor dem Antiquariat (Saavedra-Stellung 1895, zeigt die 
 `saavedraStellung`). Ohne Satz: Mechaniker, Trucker, Motelgast, Wanderin. Tiere: Hund,
 Eidechse, Geier, Roadrunner, Katze, Hühner.
 
+### Weg 6 in Runde 9: Mängel der Variantenwahl (10.11.2026, mittel-4)
+
+**Canyonpfad (Wahl C).** (1) Der Canyon hat Felswände im Norden und die Kante der Hochfläche im Süden aus
+roten Klippenkacheln (`"kante": "klippe"`, `"fels": "rot"`, Bildwunsch `bildwuensche/klippe_rot.py`); der
+Zugang zur Sternwarte führt über eine Treppe. (2) Der Bahnhof liegt am Ausgang des Canyons auf derselben
+Höhe wie der Pfad, eine Rampe braucht es nicht. (3) Die Gleise enden an Prellböcken: Das ist der
+Kopfbahnhof der Wüstenbahn. Das trockene Bachbett ist ein zwei Reihen breiter Streifen aus rotem Felsboden
+mit Kieseln am Südrand.
+
+**Felsbogen (Wahl A).** (1) Rote Felswände und Kanten statt Grundriss. (2) Die alte Strecke liegt oben in
+einem Einschnitt über die Hochfläche: nach Westen bis an den Kartenrand, mit Übergang und Andreaskreuzen am
+Abstieg, nach Osten stillgelegt bis zum Prellbock vor dem Bogen. (3) Der Ostabsatz geht breit in den Weg
+durch den Bogen über; die Bank steht am Rand des tiefen Tals mit Blick nach Süden.
+
+**Zustände:** keine; die Geschichte ändert auf Weg 6 keine festen Objekte.
+
 ### Weg 6 in Runde 7: Ereignisort und Leben
 
 **Ereignisort „Die Seilschaft“ (Dokument 15, 2.7):** Am Wandfuß beim Felsbogen hängen ein

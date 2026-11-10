@@ -154,6 +154,14 @@ durch den Bogen über; die Bank steht am Rand des tiefen Tals mit Blick nach Sü
 
 **Zustände:** keine; die Geschichte ändert auf Weg 6 keine festen Objekte.
 
+### Weg 6, Gutachten Runde 9 (10.11.2026, mittel-4)
+
+- **Canyonpfad:** Ein Pfad aus hellem Sand führt vom Bahnhof zum Westrand und zur Treppe der
+  Sternwarte. Nicht umgesetzt: **Boden und Hochfläche fast gleich rot** – die Hochfläche hat den
+  rissigen Felsboden aus `klippe_rot.png`, der Boden roten Sand; **Prellbock** ersetzt mittel-2 zentral.
+- **Felsbogen:** Die Brücke steht mittig über dem Weg, die Pfeiler beiderseits. Nicht umgesetzt:
+  **leere Hochfläche** – auf Wandfeldern dürfen keine Objekte stehen.
+
 ### Weg 6 in Runde 7: Ereignisort und Leben
 
 **Ereignisort „Die Seilschaft“ (Dokument 15, 2.7):** Am Wandfuß beim Felsbogen hängen ein

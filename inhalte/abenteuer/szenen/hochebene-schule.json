@@ -103,7 +103,7 @@
     },
     {
       "moebel": "heSchulbus",
-      "feld": [30, 32],
+      "feld": [30, 28],
       "bauteil_ok": true
     },
     {
@@ -562,10 +562,10 @@
     {
       "name": "busfahrerin",
       "typ": "statist",
-      "feld": [32, 31],
+      "feld": [37, 32],
       "eigenschaften": {
-        "von": "32,31",
-        "bis": "32,31",
+        "von": "37,32",
+        "bis": "37,32",
         "tun": "wartet am Schulbus",
         "wann": "tag",
         "sagt": "statist.hochebene.schule.busfahrerin"

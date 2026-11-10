@@ -42,6 +42,18 @@ def _rolle(zeilen: list[str], x: int, y: int) -> str | None:
     """Welche Reihe der Kante (x, y) ist: „kante“, „wand“, „fuss“ oder None (keine Kante darunter)."""
     if not _ist_wand(zeilen, x, y):
         return None
+    # Der linke und rechte Kartenrand setzt das Band daneben fort, statt als flache Erdfläche wie ein
+    # Platzhalter zu stehen (Gutachten Runde 9, Querbefund „orange Kacheln“).
+    breite = len(zeilen[0])
+    if x in (0, breite - 1) and breite > 2:
+        innen = 1 if x == 0 else breite - 2
+        if _ist_wand(zeilen, innen, y):
+            return _rolle_ohne_rand(zeilen, innen, y)
+    return _rolle_ohne_rand(zeilen, x, y)
+
+
+def _rolle_ohne_rand(zeilen: list[str], x: int, y: int) -> str | None:
+    """Rolle nach den Feldern darunter (siehe ``_rolle``), ohne die Fortsetzung am Rand."""
     for abstand, rolle in ((1, "fuss"), (2, "wand"), (3, "kante")):
         unten = y + abstand
         if unten >= len(zeilen):
@@ -72,6 +84,13 @@ def klippenfeld(zeilen: list[str], x: int, y: int, grasboden: set[str]) -> tuple
     if not _ist_wand(zeilen, x, y):
         return None
     rolle = _rolle(zeilen, x, y)
+    breite = len(zeilen[0])
+    if rolle is not None and x in (0, breite - 1) and breite > 2:
+        # Randspalte: dieselbe Kachel wie das Band daneben, als Mitte (das Band läuft weiter).
+        innen = klippenfeld(zeilen, 1 if x == 0 else breite - 2, y, grasboden)
+        if innen is not None:
+            variante = "gras" if innen[0] in SPALTEN["gras"] else "erde"
+            return (SPALTEN[variante][1], innen[1])
     links, mitte, rechts = SPALTEN[_variante(zeilen, x, y, grasboden)]
     if rolle is None:
         return None if _rand_neben_boden(zeilen, x, y) else _flaechenfeld(zeilen, x, y, grasboden)
@@ -92,6 +111,8 @@ def _rand_neben_boden(zeilen: list[str], x: int, y: int) -> bool:
     if 0 < x < breite - 1 and 0 < y < hoehe - 1:
         return False
     innen = [(x + 1, y), (x - 1, y), (x, y + 1), (x, y - 1)]
+    # Ecken: das nächste Innenfeld (diagonal) zählt mit.
+    innen.append((min(max(x, 1), breite - 2), min(max(y, 1), hoehe - 2)))
     return any(0 < a < breite - 1 and 0 < b < hoehe - 1 and not _ist_wand(zeilen, a, b) for a, b in innen)
 
 

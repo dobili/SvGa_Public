@@ -41,8 +41,10 @@ def test_band_hat_kante_wand_und_fuss():
 
 def test_enden_eines_abschnitts_haben_randkacheln():
     links, _, rechts = SPALTEN["gras"]
-    assert klippenfeld(RASTER, 0, 2, GRAS)[0] == links
+    # Am Kartenrand (x 0) läuft das Band weiter: Mitte; das Ende vor der Rampe hat die Randkachel.
+    assert klippenfeld(RASTER, 0, 2, GRAS)[0] == SPALTEN["gras"][1]
     assert klippenfeld(RASTER, 4, 2, GRAS)[0] == rechts
+    assert klippenfeld(["rrrrrrr", "#..###.", "#..###.", "#..###.", "......."], 3, 2, GRAS)[0] == links
 
 
 def test_ohne_gras_darueber_nimmt_die_klippe_erde():
@@ -114,3 +116,40 @@ def test_einbuchtung_der_kante_ist_keine_treppe():
     """Regel: Gutachten Steinbruchgrube (dritte Prüfung), Treppen nur auf Rampen mit Weg."""
     raster = ["rrrrrrrr", "##rr####", "########", "########", "........"]
     assert treppenfeld(raster, 2, 1) is None
+
+
+def test_band_laeuft_bis_an_den_kartenrand_ohne_erdflaeche():
+    """Regel: Gutachten Runde 9, keine orangen Platzhalter am Ende der Felskanten.
+
+    Am Rand neben einem Band steht Felswand (Mittelspalte), keine Erdfläche (Reihe 43).
+    """
+    raster = ["#rrrrr#", "#rrrrr#", "#######", "#######", "#######", "#.....#", "#.....#"]
+    for y in (2, 3, 4):
+        links = klippenfeld(raster, 0, y, GRAS)
+        assert links[1] != REIHE_OBEN and links[0] == SPALTEN["gras"][1]
+        assert klippenfeld(raster, 1, y, GRAS)[0] == SPALTEN["gras"][1]
+
+
+def test_keine_flache_erdflaeche_in_den_klippenkarten():
+    """Regel: Gutachten Runde 9, Querbefund „orange Kacheln“: In den Karten mit Klippe und Gras liegt
+    keine flache Erdfläche (Reihe 42/43 der Erdklippe) mehr, weder am Rand noch über einer Kante."""
+    import json
+    from pathlib import Path
+
+    from pipeline.abenteuer.kartenbau import raster
+
+    szenen = Path(__file__).resolve().parents[2] / "inhalte" / "abenteuer" / "szenen"
+    for datei in sorted(szenen.glob("*.json")):
+        szene = json.loads(datei.read_text(encoding="utf-8"))
+        if szene.get("kante") != "klippe" or szene.get("fels") == "rot" or not grasboden(szene):
+            continue
+        zeilen, gras = raster(szene), grasboden(szene)
+        flach = [
+            (x, y)
+            for y in range(len(zeilen))
+            for x in range(len(zeilen[0]))
+            if (feld := klippenfeld(zeilen, x, y, gras))
+            and feld[0] in SPALTEN["erde"]
+            and feld[1] in (42, 43)
+        ]
+        assert not flach, f"{datei.name}: flache Erdfläche bei {flach[:5]}"

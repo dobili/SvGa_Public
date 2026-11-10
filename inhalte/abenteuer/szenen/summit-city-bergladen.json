@@ -135,10 +135,10 @@
     {
       "name": "kunde",
       "typ": "statist",
-      "feld": [8, 7],
+      "feld": [8, 8],
       "eigenschaften": {
-        "von": "8,7",
-        "bis": "8,7",
+        "von": "8,8",
+        "bis": "8,8",
         "tun": "probiert einen Wanderstock aus",
         "sagt": "statist.summitCity.bergladen.kunde",
         "zeigt": "schaefermatt",

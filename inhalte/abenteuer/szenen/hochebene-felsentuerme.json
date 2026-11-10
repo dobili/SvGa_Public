@@ -2,11 +2,11 @@
   "karte": "hochebene.felsentuerme",
   "datei": "karten/hochebene-felsentuerme.json",
   "art": "aussen",
-  "beschreibung": "Die Hochebene westlich der Bergstraße: roter Boden, weiter Himmel, rote Felstürme. Ein Schotterweg kommt am Ostrand von der Bergstraße und läuft in Bögen nach Westen zur Schule. Unterwegs eine Pferdekoppel mit Wassertrog und ein Wacholder, unter dem ein flacher roter Stein als Tisch dient: Hier spielt Kira Vell nach der Schule. Falken kreisen, Eidechsen sonnen sich. Weg aus rotem Felsboden mit drei ausgerundeten Bögen, im Norden eine Felswand, im Süden die Kante einer Geländestufe, zwei Felstürme am Ostende, Koppel mit Holzzaun in der Mitte, flacher Steintisch mit Brett unter dem Wacholderbaum, Felsbogen im Westen.",
+  "beschreibung": "Die Hochebene westlich der Bergstraße: roter Boden, weiter Himmel, rote Felstürme. Ein Schotterweg kommt am Ostrand von der Bergstraße und läuft in Bögen nach Westen zur Schule. Unterwegs eine Pferdekoppel mit Wassertrog und ein Wacholder, unter dem ein flacher roter Stein als Tisch dient: Hier spielt Kira Vell nach der Schule. Falken kreisen, Eidechsen sonnen sich. Weg aus hellem Sand mit drei ausgerundeten Bögen, im Norden eine Felswand, im Süden die Kante einer Geländestufe, zwei Felstürme am Ostende, Koppel mit Holzzaun und Wassertrog in der Mitte, flacher Steintisch mit Brett neben einem Wacholder, Felsbogen im Westen.",
   "wand": "felsRot",
   "boden": "sandRot",
   "boeden": {
-    "e": "erde",
+    "w": "sand",
     "f": "felsbodenRot"
   },
   "zustand": ["neu", "gebraucht", "alt"],
@@ -21,17 +21,17 @@
     "#..................................................................................................#",
     "#..................................................................................................#",
     "#..................................................................................................#",
-    "#...............................................ffffffffffffffffffffffffffffffff...................#",
-    "#...............................................ffffffffffffffffffffffffffffffff...................#",
-    "#...............................................fff..........................fff...................#",
-    "#...............................................ff............................ff...................#",
-    "#...............................................ff............................fff..................#",
-    "ffffffffffffffffffff............................ff............................ffffffffffffffffffffff",
-    "ffffffffffffffffffff............................ff............................ffffffffffffffffffffff",
-    "#................fff............................ff.................................................#",
-    "#.................fff..........................fff.................................................#",
-    "#.................ffffffffffffffffffffffffffffffff.................................................#",
-    "#.................ffffffffffffffffffffffffffffffff.................................................#",
+    "#...............................................w.wwwwwwwwwwwwwwwwwwwwwwwwwwww.w...................#",
+    "#................................................wwwwwwwwwwwwwwwwwwwwwwwwwwwwww....................#",
+    "#...............................................ww.w........................w.ww...................#",
+    "#...............................................www..........................wwww..................#",
+    "#...............................................ww............................ww.w.................#",
+    "wwwwwwwwwwwwwwwwww.w............................ww.............................wwwwwwwwwwwwwwwwwwwww",
+    "wwwwwwwwwwwwwwwwwww.............................ww............................w.wwwwwwwwwwwwwwwwwwww",
+    "#...............w.www..........................www.................................................#",
+    "#................www.w........................w.ww.................................................#",
+    "#..................wwwwwwwwwwwwwwwwwwwwwwwwwwwwww..................................................#",
+    "#.................w.wwwwwwwwwwwwwwwwwwwwwwwwwwww.w.................................................#",
     "#....................................ffffffffff....ffff............................................#",
     "#..................................ffffffffffffffffffffffffff......................................#",
     "#.................................fffffffffffffffffffffffffff......................................#",
@@ -225,8 +225,8 @@
       "feld": [94, 12]
     },
     {
-      "moebel": "wds6Pinie",
-      "feld": [42, 10]
+      "moebel": "wds6Wacholder",
+      "feld": [42, 11]
     },
     {
       "moebel": "wds6SteinRot",
@@ -244,15 +244,7 @@
       "feld": [26, 3]
     },
     {
-      "moebel": "wds6Briefkasten",
-      "feld": [8, 12]
-    },
-    {
-      "moebel": "haltestellenschild",
-      "feld": [12, 11]
-    },
-    {
-      "moebel": "wds6Wacholder",
+      "moebel": "wds6KaktusBluehend",
       "feld": [20, 9]
     },
     {
@@ -264,11 +256,11 @@
       "feld": [80, 20]
     },
     {
-      "moebel": "wds6Wacholder",
+      "moebel": "wds6KaktusBluehend",
       "feld": [32, 15]
     },
     {
-      "moebel": "wds6Wacholder",
+      "moebel": "wds6KaktusBluehend",
       "feld": [19, 4]
     },
     {
@@ -280,7 +272,7 @@
       "feld": [13, 24]
     },
     {
-      "moebel": "wds6Wacholder",
+      "moebel": "wds6KaktusBluehend",
       "feld": [75, 20]
     },
     {
@@ -296,16 +288,44 @@
       "feld": [49, 6]
     },
     {
-      "moebel": "wds6Wacholder",
+      "moebel": "wds6KaktusBluehend",
       "feld": [79, 17]
     },
     {
-      "moebel": "wds6Wacholder",
+      "moebel": "wds6KaktusBluehend",
       "feld": [49, 21]
     },
     {
       "moebel": "wds6SteinRot",
       "feld": [53, 15]
+    },
+    {
+      "moebel": "hb7Trog",
+      "feld": [64, 14]
+    },
+    {
+      "moebel": "felsKlein",
+      "feld": [6, 5]
+    },
+    {
+      "moebel": "wds6KaktusKlein",
+      "feld": [14, 9]
+    },
+    {
+      "moebel": "felsKlein",
+      "feld": [22, 11]
+    },
+    {
+      "moebel": "wds6KaktusKlein",
+      "feld": [56, 4]
+    },
+    {
+      "moebel": "felsKlein",
+      "feld": [70, 5]
+    },
+    {
+      "moebel": "wds6KaktusKlein",
+      "feld": [78, 3]
     }
   ],
   "ausloeser": [

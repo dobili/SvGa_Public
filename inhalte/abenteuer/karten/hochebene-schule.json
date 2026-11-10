@@ -7498,8 +7498,8 @@
      "id": 15,
      "name": "busfahrerin",
      "type": "statist",
-     "x": 512,
-     "y": 496,
+     "x": 592,
+     "y": 512,
      "width": 16,
      "height": 16,
      "rotation": 0,
@@ -7508,12 +7508,12 @@
       {
        "name": "von",
        "type": "string",
-       "value": "32,31"
+       "value": "37,32"
       },
       {
        "name": "bis",
        "type": "string",
-       "value": "32,31"
+       "value": "37,32"
       },
       {
        "name": "tun",
@@ -8039,7 +8039,7 @@
      "name": "heSchulbus",
      "type": "moebel",
      "x": 480,
-     "y": 512,
+     "y": 448,
      "width": 112,
      "height": 64,
      "rotation": 0,
@@ -8048,7 +8048,7 @@
       {
        "name": "tiefe",
        "type": "int",
-       "value": 568
+       "value": 504
       },
       {
        "name": "kollision",

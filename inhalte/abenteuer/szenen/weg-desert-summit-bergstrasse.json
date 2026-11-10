@@ -781,10 +781,10 @@
     {
       "name": "ziegen",
       "typ": "tier",
-      "feld": [28, 66],
+      "feld": [12, 60],
       "eigenschaften": {
-        "von": "28,66",
-        "bis": "32,66",
+        "von": "12,60",
+        "bis": "18,60",
         "verhalten": "sitzen"
       }
     },

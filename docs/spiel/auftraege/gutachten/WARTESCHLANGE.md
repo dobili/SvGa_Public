@@ -151,3 +151,4 @@ Szene heißt die Datei in `inhalte/abenteuer/szenen/` ohne `.json`.
 
 - [ ] weg-desert-summit-diner (+ neon): Tür des Hinterzimmers am Diner; hochebene-schule (+ vor-diplom): Bucht mit Randlinie (mittel-4)
 - [ ] weg-desert-summit-diner (+ neon), weg-desert-summit-bergstrasse, hochebene-felsentuerme: Lastwagen von vorn und hinten in Buchten, Pferde auf der Koppel (Gemini Teil 2, mittel-4)
+- [ ] steinbruch-grube: Bagger aus Gemini (bagger_links) statt des kleinen Baggers von vorn (mittel-4)

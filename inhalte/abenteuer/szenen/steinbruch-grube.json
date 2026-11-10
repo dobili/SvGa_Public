@@ -418,8 +418,8 @@
       "feld": [54, 42]
     },
     {
-      "moebel": "st5Bagger",
-      "feld": [57, 37]
+      "moebel": "fz12BaggerLinks",
+      "feld": [56, 37]
     },
     {
       "moebel": "st8Granitquader",
@@ -605,7 +605,7 @@
     },
     {
       "name": "bagger",
-      "feld": [56, 40]
+      "feld": [59, 42]
     }
   ],
   "figuren": [],

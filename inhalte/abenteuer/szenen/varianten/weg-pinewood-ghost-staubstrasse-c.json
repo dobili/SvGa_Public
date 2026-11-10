@@ -365,10 +365,6 @@
       "feld": [97, 2]
     },
     {
-      "moebel": "dd6Saguaro",
-      "feld": [104, 3]
-    },
-    {
       "moebel": "dd6KaktusKlein",
       "feld": [109, 3]
     },
@@ -445,20 +441,8 @@
       "feld": [57, 5]
     },
     {
-      "moebel": "dd6Saguaro",
-      "feld": [88, 5]
-    },
-    {
       "moebel": "dd6KaktusKlein",
       "feld": [95, 5]
-    },
-    {
-      "moebel": "fels",
-      "feld": [98, 8]
-    },
-    {
-      "moebel": "dd6KaktusBluehend",
-      "feld": [102, 7]
     },
     {
       "moebel": "dd6Saguaro",
@@ -531,14 +515,6 @@
     {
       "moebel": "dd6KaktusKlein",
       "feld": [79, 12]
-    },
-    {
-      "moebel": "fels",
-      "feld": [91, 10]
-    },
-    {
-      "moebel": "dd6KaktusBluehend",
-      "feld": [98, 9]
     },
     {
       "moebel": "dd6Saguaro",
@@ -827,6 +803,38 @@
     {
       "moebel": "dd6KaktusBluehend",
       "feld": [147, 25]
+    },
+    {
+      "moebel": "cp8Schuppen",
+      "feld": [97, 5],
+      "id": "ereignisTankstelleHaus"
+    },
+    {
+      "moebel": "cp8Solarpaneel",
+      "feld": [99, 6],
+      "vorn": true,
+      "id": "ereignis184"
+    },
+    {
+      "moebel": "cp8Zapfsaeule",
+      "feld": [90, 8],
+      "id": "ereignis185"
+    },
+    {
+      "moebel": "cp8Zapfsaeule",
+      "feld": [93, 8],
+      "id": "ereignis186"
+    },
+    {
+      "moebel": "cp8Vordach",
+      "feld": [89, 6],
+      "vorn": true,
+      "id": "ereignis187"
+    },
+    {
+      "moebel": "wr5Autowrack",
+      "feld": [104, 4],
+      "id": "ereignis188"
     }
   ],
   "ausloeser": [
@@ -867,22 +875,109 @@
       }
     },
     {
+      "name": "kinder",
+      "typ": "statist",
+      "feld": [20, 13],
+      "eigenschaften": {
+        "von": "20,13",
+        "bis": "26,13",
+        "tun": "zwei Kinder aus dem Camp, mit Taschenlampen",
+        "wann": "tag",
+        "sagt": "statist.wegPinewoodGhost.staubstrasse.kinder"
+      }
+    },
+    {
+      "name": "truckerin",
+      "typ": "statist",
+      "feld": [40, 20],
+      "eigenschaften": {
+        "von": "40,20",
+        "bis": "40,20",
+        "tun": "wartet neben ihrem Lastwagen auf Hilfe",
+        "wann": "tag",
+        "sagt": "statist.wegPinewoodGhost.staubstrasse.truckerin"
+      }
+    },
+    {
+      "name": "landvermesser",
+      "typ": "statist",
+      "feld": [120, 12],
+      "eigenschaften": {
+        "von": "120,12",
+        "bis": "120,12",
+        "tun": "misst die Straße mit einem Stativ aus",
+        "wann": "tag",
+        "sagt": "statist.wegPinewoodGhost.staubstrasse.landvermesser"
+      }
+    },
+    {
+      "name": "motorradfahrer",
+      "typ": "statist",
+      "feld": [140, 14],
+      "eigenschaften": {
+        "von": "140,14",
+        "bis": "140,14",
+        "tun": "trinkt Wasser im Schatten eines Mastes",
+        "wann": "tag"
+      }
+    },
+    {
       "name": "eidechse",
       "typ": "tier",
-      "feld": [30, 23],
+      "feld": [30, 22],
       "eigenschaften": {
-        "von": "28,23",
-        "bis": "34,23",
+        "von": "30,22",
+        "bis": "35,22",
         "verhalten": "flitzen"
       }
     },
     {
       "name": "geier",
       "typ": "tier",
-      "feld": [120, 6],
+      "feld": [60, 7],
       "eigenschaften": {
-        "von": "110,6",
-        "bis": "130,6",
+        "von": "60,7",
+        "bis": "80,7",
+        "verhalten": "fliegen"
+      }
+    },
+    {
+      "name": "roadrunner",
+      "typ": "tier",
+      "feld": [101, 22],
+      "eigenschaften": {
+        "von": "101,22",
+        "bis": "93,22",
+        "verhalten": "flitzen"
+      }
+    },
+    {
+      "name": "kojote",
+      "typ": "tier",
+      "feld": [130, 22],
+      "eigenschaften": {
+        "von": "130,22",
+        "bis": "134,22",
+        "verhalten": "ausweichen"
+      }
+    },
+    {
+      "name": "hase",
+      "typ": "tier",
+      "feld": [10, 6],
+      "eigenschaften": {
+        "von": "10,6",
+        "bis": "16,6",
+        "verhalten": "flitzen"
+      }
+    },
+    {
+      "name": "kraehen",
+      "typ": "tier",
+      "feld": [86, 6],
+      "eigenschaften": {
+        "von": "86,6",
+        "bis": "96,6",
         "verhalten": "fliegen"
       }
     }

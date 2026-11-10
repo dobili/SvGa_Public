@@ -22,6 +22,8 @@ import {
 } from "./figurbilder";
 import { ladeMoebelbilder, stelleMoebelAuf, type Moebel } from "./moebel";
 import { baueSperrkarte } from "./sperrkarte";
+import type { Toenung } from "./toenung";
+import { Toenungsschicht } from "./toenungsschicht";
 import { liesBelebung, type Belebung, type Feld } from "./belebung";
 import { Belebungsschicht, ladeBelebungsbilder, type Belebungsbilder } from "./belebungsschicht";
 
@@ -93,6 +95,9 @@ export interface Szenendaten {
   readonly belebungsbilder?: Belebungsbilder;
   /** Stunde für die Tageszeit der Statisten (`wann`); ohne Angabe die Uhr des Geräts. */
   readonly stunde?: number;
+  /** Tönung der Karte (toenung.ts) und ob der Held eine Laterne trägt (Lichtkreis bei „dunkel“). */
+  readonly toenung?: Toenung | null;
+  readonly laterne?: boolean;
 }
 
 /** Ein Auslöser der Karte in Kachelkoordinaten. */
@@ -127,6 +132,7 @@ export class Oberweltszene extends Phaser.Scene {
   /** Statisten und Tiere der Karte (aus der Objektebene) und ihre Schicht nach create(). */
   private belebung: Belebung[] = [];
   private belebungsschicht: Belebungsschicht | null = null;
+  private toenungsschicht: Toenungsschicht | null = null;
   /** Ist eine Kachel für Tiere begehbar (sperrkarte.ts)? Vor create() ist nichts frei. */
   private frei: (x: number, y: number) => boolean = () => false;
 
@@ -205,6 +211,8 @@ export class Oberweltszene extends Phaser.Scene {
     const schicht = new Belebungsschicht(this, this.belebung, KACHEL, stunde, "figur");
     this.physics.add.collider(held, schicht.sperren());
     this.belebungsschicht = schicht;
+    this.toenungsschicht = new Toenungsschicht(this, KACHEL);
+    this.setzeToenung(this.daten.toenung ?? null);
     this.tasten = this.input.keyboard?.createCursorKeys() ?? null;
   }
 
@@ -249,6 +257,11 @@ export class Oberweltszene extends Phaser.Scene {
   setzeRichtung(richtung: Richtung, gedrueckt: boolean): void {
     if (gedrueckt) this.gedrueckt.add(richtung);
     else this.gedrueckt.delete(richtung);
+  }
+
+  /** Neue Tönung, etwa nach `setzeToenung` in einem Dialog (null: keine). */
+  setzeToenung(toenung: Toenung | null): void {
+    this.toenungsschicht?.setze(toenung, this.daten.laterne ?? false);
   }
 
   /** Dialog offen: Der Held bleibt stehen, Eingaben werden verworfen. */
@@ -297,6 +310,7 @@ export class Oberweltszene extends Phaser.Scene {
       if (richtung === "unten") koerper.setVelocityY(tempo);
     }
     this.held.setDepth(this.held.y);
+    this.toenungsschicht?.folge(this.held.x, this.held.y);
     this.meldeAusloeser();
     this.meldeKachel();
   }

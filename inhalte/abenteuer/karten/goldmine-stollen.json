@@ -4833,6 +4833,11 @@
    "name": "kennung",
    "type": "string",
    "value": "goldmine.stollen"
+  },
+  {
+   "name": "toenung",
+   "type": "string",
+   "value": "dunkel"
   }
  ]
 }

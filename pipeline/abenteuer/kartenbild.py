@@ -161,7 +161,8 @@ def _treppen(bild: Image.Image, privat: Path, boegen: dict, zeilen: list[str], s
     for y, zeile in enumerate(zeilen):
         for x in range(len(zeile)):
             if (feld := treppenfeld(zeilen, x, y, strasse)) is not None:
-                bild.alpha_composite(kachel(privat, boegen, {"bogen": "gelaende"}, list(feld)), (x * K, y * K))
+                treppe = kachel(privat, boegen, {"bogen": "gelaende"}, list(feld))
+                bild.alpha_composite(treppe, (x * K, y * K))
 
 
 def _kronenrand(zeichner: ImageDraw.ImageDraw, zeilen: list[str], flaeche: dict) -> None:

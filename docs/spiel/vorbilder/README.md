@@ -5,13 +5,14 @@ gelöst als in unseren Karten. Die Vorschaubilder liegen im privaten Repository 
 (nur zum Ansehen, Lizenz). Hier stehen ihre Beschreibungen: was jedes Bild zeigt, was gut gelöst
 ist, welche Lehre daraus für unsere Karten folgt, und am Ende jeder Datei die Bauprinzipien.
 
-| Datei                        | Bilder                    | Inhalt                                                    |
-| ---------------------------- | ------------------------- | --------------------------------------------------------- |
-| `modernexteriors-1.md`       | Modern Exteriors 001–035  | Straßen, Innenstadt, Kanal mit Brücken und Höhen (027)    |
-| `modernexteriors-2.md`       | Modern Exteriors 036–070  | Bahnhof, Friedhof, Teich mit Klippe, Kreuzung, Tankstelle |
-| `moderninteriors-1.md`       | Modern Interiors 001–034  | Wohnräume, Küchen, Gastronomie, Museum, Bad und Duschen   |
-| `moderninteriors-2.md`       | Modern Interiors 035–067  | Laden mit Umkleidekabinen, Museum, Eisdiele, Schießstand  |
-| `modernoffice-modernfarm.md` | Office 001–012, Farm 1–28 | Büros, Teeküche, Höfe, Beete, Scheune mit Silo, Markt     |
+| Datei                                   | Bilder                                         | Inhalt                                                    |
+| --------------------------------------- | ---------------------------------------------- | --------------------------------------------------------- |
+| `modernexteriors-1.md`                  | Modern Exteriors 001–035                       | Straßen, Innenstadt, Kanal mit Brücken und Höhen (027)    |
+| `modernexteriors-2.md`                  | Modern Exteriors 036–070                       | Bahnhof, Friedhof, Teich mit Klippe, Kreuzung, Tankstelle |
+| `moderninteriors-1.md`                  | Modern Interiors 001–034                       | Wohnräume, Küchen, Gastronomie, Museum, Bad und Duschen   |
+| `moderninteriors-2.md`                  | Modern Interiors 035–067                       | Laden mit Umkleidekabinen, Museum, Eisdiele, Schießstand  |
+| `modernoffice-modernfarm.md`            | Office 001–012, Farm 1–28                      | Büros, Teeküche, Höfe, Beete, Scheune mit Silo, Markt     |
+| `hafen-containerterminal-winterwald.md` | Port 001–009, Terminal 001–009, Winter 001–006 | Kai, Poller, Container, Kräne, Terminal, Schnee; Maßstab  |
 
 ## Die besten Vorbilder je Thema
 

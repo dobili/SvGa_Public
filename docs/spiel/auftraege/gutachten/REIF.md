@@ -36,7 +36,7 @@ Stand: 10.11.2026.
 | capital-arena-halle                            | 10.11.2026 | `mittel-1-runde9-2.md`                  |
 | capital-arena-ubahnhof                         | 10.11.2026 | `mittel-1-runde9-2.md`                  |
 | weg-ghost-capital-seeufer                      | 10.11.2026 | `mittel-1-runde9-2.md`                  |
-| crossroads-aussen                              | 10.11.2026 | `mittel-3-runde9-2.md`                  |
+| crossroads-aussen                              | 10.11.2026 | `silicon-bay-aussen-hafen-2.md`         |
 | jahrmarkt-festplatz                            | 10.11.2026 | `mittel-3-runde9-2.md`                  |
 | pelikaninsel-dorf                              | 10.11.2026 | `mittel-3-runde9-2.md`                  |
 | weg-crossroads-pinewood-huetten                | 10.11.2026 | `mittel-3-runde9-2.md`                  |
@@ -61,11 +61,11 @@ Stand: 10.11.2026.
 | weg-maple-cedar-landstrasse (mit Zuständen)    | 10.11.2026 | `nachpruefung-neubau-13a5891d.md`       |
 | goldmine-stollen                               | 10.11.2026 | `niedrig-1-5.md`                        |
 | kuerbishof-hof                                 | 10.11.2026 | `nachpruefung-neubau-13a5891d.md`       |
-| riverton-pavillon                              | 10.11.2026 | `mittel-3-restpunkte.md`                |
+| riverton-pavillon                              | 10.11.2026 | `silicon-bay-aussen-hafen-2.md`         |
 | riverton-wohnwagen                             | 10.11.2026 | `mittel-3-restpunkte.md`                |
 | crossroads-raststaette                         | 10.11.2026 | `mittel-3-restpunkte.md`                |
-| weg-summit-crossroads-geysirbecken             | 10.11.2026 | `mittel-3-restpunkte.md`                |
-| weg-summit-crossroads-praerie                  | 10.11.2026 | `mittel-3-restpunkte.md`                |
+| weg-summit-crossroads-geysirbecken             | 10.11.2026 | `silicon-bay-aussen-hafen-2.md`         |
+| weg-summit-crossroads-praerie                  | 10.11.2026 | `silicon-bay-aussen-hafen-2.md`         |
 | weg-crossroads-pinewood-riesenbaeume           | 10.11.2026 | `mittel-3-restpunkte.md`                |
 | port-delacroix-aussen                          | 10.11.2026 | `mittel-1-runde9-3.md`                  |
 | capital-arena-innenstadt                       | 10.11.2026 | `nachpruefung-neubau-13a5891d.md`       |
@@ -85,15 +85,10 @@ Hinweise:
 
 ## Fast reif (ein oder zwei benannte Punkte fehlen)
 
-| Szene                         | Datum      | Letztes Gutachten                   | Was fehlt                     |
-| ----------------------------- | ---------- | ----------------------------------- | ----------------------------- |
-| ironwood-kantine              | 10.11.2026 | `ironwood-kantine-3.md`             | Kasse, Speiseplan im Gastraum |
-| weg-desert-summit-bergstrasse | 10.11.2026 | `mittel-4-restpunkte.md`            | Kehren als rechte Winkel      |
-| silicon-bay-lobby             | 10.11.2026 | `silicon-bay-lobby-serverraum-2.md` | Lounge steht vor den Aufzügen |
-
-## Erste Prüfung, noch nicht reif
-
-| Szene              | Datum      | Gutachten                     | Schwerster Punkt                              |
-| ------------------ | ---------- | ----------------------------- | --------------------------------------------- |
-| silicon-bay-aussen | 10.11.2026 | `silicon-bay-aussen-hafen.md` | Tunnel, Brüstung, Glasbrücke fehlen           |
-| silicon-bay-hafen  | 10.11.2026 | `silicon-bay-aussen-hafen.md` | Häuser ohne Hafenbezug, Fähre im fremden Stil |
+| Szene                         | Datum      | Letztes Gutachten                   | Was fehlt                      |
+| ----------------------------- | ---------- | ----------------------------------- | ------------------------------ |
+| ironwood-kantine              | 10.11.2026 | `ironwood-kantine-3.md`             | Kasse, Speiseplan im Gastraum  |
+| weg-desert-summit-bergstrasse | 10.11.2026 | `mittel-4-restpunkte.md`            | Kehren als rechte Winkel       |
+| silicon-bay-lobby             | 10.11.2026 | `silicon-bay-lobby-serverraum-2.md` | Lounge steht vor den Aufzügen  |
+| silicon-bay-aussen            | 10.11.2026 | `silicon-bay-aussen-hafen-2.md`     | Tunnelportal, leere Nordfläche |
+| silicon-bay-hafen             | 10.11.2026 | `silicon-bay-aussen-hafen-2.md`     | leere Kaifläche in der Mitte   |

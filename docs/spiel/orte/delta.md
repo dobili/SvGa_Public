@@ -234,6 +234,24 @@ frei begehbar; die Auslöser kommen mit den Dialogen.
   Angler (Alligator Fernand, Tiergeschichte), Krebsfischerin (Welt), Mann mit Mundharmonika (die
   Unsterbliche), Fotografin ohne Satz; Reiher, Alligator, Libellen, Frosch, Schildkröte, Nutria.
 
+**Runde 6 (mittel-1, 10.11.2026): spielbar.**
+
+- **Fähre:** Figur Kapitän Fall (`wegSiliconDelacroix.kapitaen`, A (15, 69), B (16, 26), C (10, 34)).
+  Auslöser `ereignisKapitaen`, `ladung` (A (13, 10), B (15, 62), C (13, 8)), `delfin` (21, 52),
+  `seite02`, `finchTurmA` an den Feldern oben. Quest `wegSiliconDelacroix.kapitaensproblem` (klein):
+  Aufgabenrunde `wegSiliconDelacroix.kapitaensproblem` (Umwandlung, Hinlenkung, vier Aufgaben), dann
+  Horn, Fund `kapitaensmuetze` (Extra `aussehen:kapitaensmuetze`) und 20 Münzen.
+- **Deich:** `pumpenhaus` (153, 16), `spurPM3` an den Feldern oben (Fund Mappe „Hochwasserhilfe“).
+- **Bayou:** Figur Pépé Thibodeaux (`bayou.pepe`, (7, 13)), Auslöser `ereignisHausboot`, `finchBauerC`,
+  `seite05`, `sperreHochwasser` (8, 17, am überfluteten Steg, einmal ein Satz), `luftboot` (A und C
+  (17, 26), B (14, 29)). Quest `bayou.kisteImHausboot` (klein): Formulare ansehen, Partie
+  `bayou.hausboot` ab dem 21. Zug (Weiß, Ambroses Seite, Gegner `bayou.hafenarbeiter`), Fund
+  `formularCafeDesExiles`, 15 Münzen. Die Laterne steht jetzt bei (6, 10).
+- **Sperre S8:** Der Übergang `bayou` in Port Delacroix prüft `bayouOffen` = Musikhaus offen und
+  Gummistiefel, im Sommer (Nadel Summit City) ohne Stiefel; der Dialog nennt den Grund.
+- **Sammelstränge:** Fundknoten zählen die gemeinsamen Ink-Variablen `buchseiten`, `finchFiguren`,
+  `spurenPM` hoch (zusätzlich zu `gibFund`).
+
 ## 4. Bühnenbilder
 
 ### 4.1 Fährdeck

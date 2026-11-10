@@ -35,6 +35,7 @@ VAR buchseiten = 0
 VAR finchFiguren = 0
 VAR abeGetroffen = false
 VAR linseGefunden = false
+VAR angesehenFaehrterminal = false
 
 // ---------------------------------------------------------------- Abe am Leuchtturm
 
@@ -236,4 +237,15 @@ Du hast meine Seiten! Er streicht jede glatt und legt sie in den Rucksack. #spre
 ~ buchseiten = buchseiten + 1
 Am Anleger klebt ein Blatt an einem Pfosten. Eine Seite aus einem Handbuch, Kapitel 12. #sprecher:erzaehler
 ~ gibFund("seite12")
+-> END
+
+// ---------------------------------------------------------------- Ansehen am Seeufer (Runde 6)
+
+=== faehrterminal ===
+{angesehenFaehrterminal:
+    Am Fahrplan hängt ein Zettel: „Sonderfahrt am 20. Juli, Weltschachtag.“ #sprecher:erzaehler
+    -> END
+}
+~ angesehenFaehrterminal = true
+Ein kleines Fährterminal mit einem Fahrplan unter Glas. Die Fähre fährt zweimal am Tag über den See, sonntags dreimal. #sprecher:erzaehler
 -> END

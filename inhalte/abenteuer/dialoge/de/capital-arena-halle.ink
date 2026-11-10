@@ -15,6 +15,7 @@
 // crossroads-raststaette.ink (Szene 93); die übrigen setzt diese Datei.
 
 EXTERNAL beginnePartie(begegnung)
+EXTERNAL gibFund(kennung)
 EXTERNAL oeffneLaden(laden)
 
 VAR arenaGesehen = false
@@ -31,6 +32,9 @@ VAR vorrundeGeschafft = false
 VAR aussageGesehen = false
 VAR vorDemFinaleGesehen = false
 VAR finaleBesprochen = false
+VAR angesehenBanner = false
+VAR spurenPM = 0
+VAR mappeGezeigt = false
 
 === function punkt(ausgang) ===
 {
@@ -306,11 +310,23 @@ Auf den Tribünen jubeln alle Städte zugleich. Draußen auf der Treppe ist es r
 // ---------------------------------------------------------------- Dr. Lin, Graham Hale, Tafel, Laden
 
 === lin ===
+// Ende des Sammelstrangs „Spuren von Perfect Move“ (Dokument 15, 1.3): mit allen sechs Spuren
+// zusätzliche Sätze und ein Album-Foto, ohne die Haupthandlung zu ändern.
+{aussageGesehen and spurenPM >= 6 and not mappeGezeigt: -> lin_mappe}
 {aussageGesehen:
     Ich verliere wohl meine Stelle. Dann gründe ich einen Club ohne Bildschirme. #sprecher:lin
 - else:
     Wir haben eine Mappe dabei. Nach der Vorrunde. Dann reden wir. #sprecher:lin
 }
+-> END
+
+=== lin_mappe ===
+~ mappeGezeigt = true
+Du legst Dr. Lin deine eigene Mappe hin: die Drohne, der Funkmast, der Messwagen, die Server, der Geysirantrag, der Greifarm. #sprecher:erzaehler
+Das hier kenne ich. Woher hast du das? #sprecher:lin
+Sie blättert lange. Damit wird unsere Aussage doppelt so schwer. Danke. Und bitte sei vorsichtig. #sprecher:lin
+~ gibFund("fotoMappe")
+Sechs Spuren, eine Mappe. Manchmal gewinnt man, indem man nur genau hinsieht. #sprecher:ambrose
 -> END
 
 === graham_hale ===
@@ -339,4 +355,15 @@ Auf den Tribünen jubeln alle Städte zugleich. Draußen auf der Treppe ist es r
 === fanshop ===
 Am Fanshop gibt es Schals und Anstecker der Meisterschaft. #sprecher:erzaehler
 ~ oeffneLaden("capitalArena.fanshop")
+-> END
+
+// ---------------------------------------------------------------- Ansehen (Runde 6)
+
+=== banner ===
+{angesehenBanner:
+    „Landesmeisterschaft“. Darunter hat jemand mit Bleistift einen kleinen Springer gemalt. #sprecher:erzaehler
+    -> END
+}
+~ angesehenBanner = true
+Über den Tribünen hängt ein langes Banner: „Landesmeisterschaft“. An einer Ecke hat sich die Naht gelöst und flattert. #sprecher:erzaehler
 -> END

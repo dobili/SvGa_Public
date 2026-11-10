@@ -4667,6 +4667,12 @@
           "karte": "wegGhostCapital.leuchtturm",
           "art": "dialog",
           "dialog": "weg-ghost-capital.plakat_weltschachtag"
+        },
+        {
+          "name": "faehrterminal",
+          "karte": "wegGhostCapital.seeufer",
+          "art": "dialog",
+          "dialog": "weg-ghost-capital.faehrterminal"
         }
       ]
     },
@@ -4688,6 +4694,12 @@
           "datei": "karten/capital-arena-innenstadt.json",
           "name": "ort.capitalArena.innenstadt",
           "innen": false
+        },
+        {
+          "kennung": "capitalArena.ubahnhof",
+          "datei": "karten/capital-arena-ubahnhof.json",
+          "name": "ort.capitalArena.ubahnhof",
+          "innen": true
         },
         {
           "kennung": "capitalArena.halle",
@@ -4768,6 +4780,18 @@
           "sprite": "figuren/victor.png",
           "dialog": "capital-arena-halle.victor",
           "gegner": "capitalArena.victor"
+        },
+        {
+          "kennung": "capitalArena.mo",
+          "name": "figur.mo.name",
+          "sprite": "figuren/mo.png",
+          "dialog": "capital-arena-ubahnhof.mo"
+        },
+        {
+          "kennung": "capitalArena.wanderer",
+          "name": "figur.wanderer.name",
+          "sprite": "figuren/wanderer.png",
+          "dialog": "capital-arena-aussen.wanderer"
         }
       ],
       "ausloeser": [
@@ -4841,6 +4865,51 @@
           "karte": "capitalArena.aussen",
           "art": "gegenstand",
           "dialog": "capital-arena-aussen.treppe"
+        },
+        {
+          "name": "ubahn",
+          "karte": "capitalArena.innenstadt",
+          "art": "uebergang",
+          "dialog": "capital-arena-innenstadt.ubahn",
+          "wenn": "ubahnOffen",
+          "ziel": {
+            "karte": "capitalArena.ubahnhof",
+            "ausloeser": "ubahnAusgang"
+          }
+        },
+        {
+          "name": "ubahnAusgang",
+          "karte": "capitalArena.ubahnhof",
+          "art": "uebergang",
+          "dialog": "capital-arena-ubahnhof.ausgang",
+          "ziel": {
+            "karte": "capitalArena.innenstadt",
+            "ausloeser": "ubahn"
+          }
+        },
+        {
+          "name": "kreide5",
+          "karte": "capitalArena.innenstadt",
+          "art": "gegenstand",
+          "dialog": "capital-arena-innenstadt.kreide5"
+        },
+        {
+          "name": "ereignisKreidenacht",
+          "karte": "capitalArena.ubahnhof",
+          "art": "dialog",
+          "dialog": "capital-arena-ubahnhof.ereignis_kreidenacht"
+        },
+        {
+          "name": "fahnen",
+          "karte": "capitalArena.aussen",
+          "art": "dialog",
+          "dialog": "capital-arena-aussen.fahnen"
+        },
+        {
+          "name": "banner",
+          "karte": "capitalArena.halle",
+          "art": "dialog",
+          "dialog": "capital-arena-halle.banner"
         }
       ]
     },

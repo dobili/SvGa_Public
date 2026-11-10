@@ -42,11 +42,7 @@
           "ereignis": {
             "art": "partie",
             "begegnung": "mapleFalls.ersteLektion",
-            "ausgang": [
-              "sieg",
-              "remis",
-              "niederlage"
-            ]
+            "ausgang": ["sieg", "remis", "niederlage"]
           },
           "wirkungen": [
             {
@@ -68,9 +64,7 @@
         "art": "dialog",
         "knoten": "maple-falls-dachboden.nach_erster_partie"
       },
-      "voraussetzung": [
-        "mapleFalls.dasBrett"
-      ],
+      "voraussetzung": ["mapleFalls.dasBrett"],
       "schritte": [
         {
           "text": "quest.ersterAbend.schritt1",
@@ -124,10 +118,7 @@
           "ereignis": {
             "art": "partie",
             "begegnung": "mapleFalls.clubkampf",
-            "ausgang": [
-              "sieg",
-              "remis"
-            ]
+            "ausgang": ["sieg", "remis"]
           },
           "wirkungen": [
             {
@@ -175,11 +166,7 @@
           "ereignis": {
             "art": "partie",
             "begegnung": "mapleFalls.victor",
-            "ausgang": [
-              "sieg",
-              "remis",
-              "niederlage"
-            ]
+            "ausgang": ["sieg", "remis", "niederlage"]
           }
         },
         {
@@ -248,9 +235,7 @@
           "ereignis": {
             "art": "partie",
             "begegnung": "mapleFalls.samRevanche",
-            "ausgang": [
-              "sieg"
-            ]
+            "ausgang": ["sieg"]
           },
           "wirkungen": [
             {
@@ -261,9 +246,7 @@
           ]
         }
       ],
-      "voraussetzung": [
-        "mapleFalls.dasBrett"
-      ]
+      "voraussetzung": ["mapleFalls.dasBrett"]
     },
     {
       "kennung": "mapleFalls.verlorenesBrett",
@@ -442,10 +425,7 @@
           "ereignis": {
             "art": "partie",
             "begegnung": "cedarCreek.clubkampf",
-            "ausgang": [
-              "sieg",
-              "remis"
-            ]
+            "ausgang": ["sieg", "remis"]
           },
           "wirkungen": [
             {
@@ -571,9 +551,7 @@
         "karte": "cedarCreek.archiv",
         "ausloeser": "programmheft"
       },
-      "voraussetzung": [
-        "cedarCreek.archiv1858"
-      ],
+      "voraussetzung": ["cedarCreek.archiv1858"],
       "schritte": [
         {
           "text": "quest.erinnerungNewYork.schritt1",
@@ -672,10 +650,7 @@
           "ereignis": {
             "art": "partie",
             "begegnung": "riverton.clubkampf",
-            "ausgang": [
-              "sieg",
-              "remis"
-            ]
+            "ausgang": ["sieg", "remis"]
           },
           "wirkungen": [
             {
@@ -909,11 +884,7 @@
           "ereignis": {
             "art": "partie",
             "begegnung": "ironwood.mama",
-            "ausgang": [
-              "sieg",
-              "remis",
-              "niederlage"
-            ]
+            "ausgang": ["sieg", "remis", "niederlage"]
           },
           "wirkungen": [
             {
@@ -968,10 +939,7 @@
           "ereignis": {
             "art": "partie",
             "begegnung": "ironwood.clubkampf",
-            "ausgang": [
-              "sieg",
-              "remis"
-            ]
+            "ausgang": ["sieg", "remis"]
           },
           "wirkungen": [
             {
@@ -1061,9 +1029,7 @@
         "art": "dialog",
         "knoten": "ironwood-kantine.feier_einladung"
       },
-      "voraussetzung": [
-        "ironwood.mamasFinale"
-      ],
+      "voraussetzung": ["ironwood.mamasFinale"],
       "schritte": [
         {
           "text": "quest.feier.schritt1",
@@ -1305,10 +1271,7 @@
           "ereignis": {
             "art": "partie",
             "begegnung": "siliconBay.clubkampf",
-            "ausgang": [
-              "sieg",
-              "remis"
-            ]
+            "ausgang": ["sieg", "remis"]
           },
           "wirkungen": [
             {
@@ -1509,10 +1472,7 @@
           "ereignis": {
             "art": "partie",
             "begegnung": "portDelacroix.clubkampf",
-            "ausgang": [
-              "sieg",
-              "remis"
-            ]
+            "ausgang": ["sieg", "remis"]
           },
           "wirkungen": [
             {
@@ -1593,11 +1553,7 @@
           "ereignis": {
             "art": "partie",
             "begegnung": "portDelacroix.celeste",
-            "ausgang": [
-              "sieg",
-              "remis",
-              "niederlage"
-            ]
+            "ausgang": ["sieg", "remis", "niederlage"]
           }
         },
         {
@@ -1737,10 +1693,7 @@
           "ereignis": {
             "art": "partie",
             "begegnung": "desertSprings.clubkampf",
-            "ausgang": [
-              "sieg",
-              "remis"
-            ]
+            "ausgang": ["sieg", "remis"]
           },
           "wirkungen": [
             {
@@ -1923,11 +1876,7 @@
           "ereignis": {
             "art": "partie",
             "begegnung": "ghostTown.fernpartie",
-            "ausgang": [
-              "sieg",
-              "remis",
-              "niederlage"
-            ]
+            "ausgang": ["sieg", "remis", "niederlage"]
           }
         },
         {
@@ -2032,9 +1981,7 @@
           "ereignis": {
             "art": "partie",
             "begegnung": "capitalArena.halbfinale",
-            "ausgang": [
-              "sieg"
-            ]
+            "ausgang": ["sieg"]
           },
           "wirkungen": [
             {
@@ -2063,11 +2010,7 @@
           "ereignis": {
             "art": "partie",
             "begegnung": "capitalArena.finale",
-            "ausgang": [
-              "sieg",
-              "remis",
-              "niederlage"
-            ]
+            "ausgang": ["sieg", "remis", "niederlage"]
           },
           "wirkungen": [
             {
@@ -2185,10 +2128,7 @@
           "ereignis": {
             "art": "partie",
             "begegnung": "summitCity.clubkampf",
-            "ausgang": [
-              "sieg",
-              "remis"
-            ]
+            "ausgang": ["sieg", "remis"]
           },
           "wirkungen": [
             {
@@ -2436,10 +2376,7 @@
           "ereignis": {
             "art": "partie",
             "begegnung": "portDelacroix.schach960Set1",
-            "ausgang": [
-              "sieg",
-              "remis"
-            ]
+            "ausgang": ["sieg", "remis"]
           },
           "wirkungen": [
             {
@@ -2453,10 +2390,7 @@
           "ereignis": {
             "art": "partie",
             "begegnung": "portDelacroix.schach960Set2",
-            "ausgang": [
-              "sieg",
-              "remis"
-            ]
+            "ausgang": ["sieg", "remis"]
           },
           "wirkungen": [
             {
@@ -2470,10 +2404,7 @@
           "ereignis": {
             "art": "partie",
             "begegnung": "portDelacroix.schach960Set3",
-            "ausgang": [
-              "sieg",
-              "remis"
-            ]
+            "ausgang": ["sieg", "remis"]
           },
           "wirkungen": [
             {
@@ -2745,11 +2676,7 @@
           "ereignis": {
             "art": "partie",
             "begegnung": "wegDesertSummit.funkschach",
-            "ausgang": [
-              "sieg",
-              "remis",
-              "niederlage"
-            ]
+            "ausgang": ["sieg", "remis", "niederlage"]
           }
         },
         {
@@ -2818,11 +2745,7 @@
           "ereignis": {
             "art": "partie",
             "begegnung": "wegPinewoodGhost.z1",
-            "ausgang": [
-              "sieg",
-              "remis",
-              "niederlage"
-            ]
+            "ausgang": ["sieg", "remis", "niederlage"]
           }
         },
         {
@@ -3145,11 +3068,7 @@
           "ereignis": {
             "art": "partie",
             "begegnung": "bayou.hausboot",
-            "ausgang": [
-              "sieg",
-              "remis",
-              "niederlage"
-            ]
+            "ausgang": ["sieg", "remis", "niederlage"]
           }
         },
         {
@@ -3225,6 +3144,179 @@
               "gegenstand": "batterie"
             }
           ]
+        }
+      ]
+    },
+    {
+      "kennung": "capitalArena.kreidenacht",
+      "titel": "quest.kreidenacht.titel",
+      "typ": "hilfe",
+      "ort": "capitalArena",
+      "haupt": false,
+      "klein": true,
+      "start": {
+        "art": "dialog",
+        "knoten": "capital-arena-ubahnhof.mo_erstes"
+      },
+      "schritte": [
+        {
+          "text": "quest.kreidenacht.schritt1",
+          "ereignis": {
+            "art": "partie",
+            "begegnung": "capitalArena.kreidenacht1",
+            "ausgang": ["sieg", "remis", "niederlage"]
+          }
+        },
+        {
+          "text": "quest.kreidenacht.schritt2",
+          "ereignis": {
+            "art": "partie",
+            "begegnung": "capitalArena.kreidenacht2",
+            "ausgang": ["sieg", "remis", "niederlage"]
+          }
+        },
+        {
+          "text": "quest.kreidenacht.schritt3",
+          "ereignis": {
+            "art": "partie",
+            "begegnung": "capitalArena.kreidenacht3",
+            "ausgang": ["sieg", "remis", "niederlage"]
+          }
+        },
+        {
+          "text": "quest.kreidenacht.schritt4",
+          "ereignis": {
+            "art": "dialog",
+            "knoten": "capital-arena-ubahnhof.mo_victor"
+          },
+          "wirkungen": [
+            {
+              "art": "muenzen",
+              "anzahl": 30
+            }
+          ]
+        }
+      ]
+    },
+    {
+      "kennung": "wegGhostCapital.finchJagd",
+      "titel": "quest.finchJagd.titel",
+      "typ": "raetsel",
+      "ort": "wegGhostCapital",
+      "haupt": false,
+      "klein": true,
+      "start": {
+        "art": "ort",
+        "karte": "wegMapleCedar.landstrasse",
+        "ausloeser": "ereignisFlohmarkt"
+      },
+      "schritte": [
+        {
+          "text": "quest.finchJagd.schritt1",
+          "ereignis": {
+            "art": "dialog",
+            "knoten": "weg-ghost-capital.odette_koenig"
+          }
+        },
+        {
+          "text": "quest.finchJagd.schritt2",
+          "ereignis": {
+            "art": "aufgaben",
+            "runde": "wegGhostCapital.meisterproblem"
+          }
+        },
+        {
+          "text": "quest.finchJagd.schritt3",
+          "ereignis": {
+            "art": "dialog",
+            "knoten": "weg-ghost-capital.odette_geloest"
+          },
+          "wirkungen": [
+            {
+              "art": "muenzen",
+              "anzahl": 50
+            }
+          ]
+        }
+      ]
+    },
+    {
+      "kennung": "capitalArena.verloreneSeiten",
+      "titel": "quest.verloreneSeiten.titel",
+      "typ": "hilfe",
+      "ort": "capitalArena",
+      "haupt": false,
+      "klein": true,
+      "start": {
+        "art": "ort",
+        "karte": "wegMapleCedar.landstrasse",
+        "ausloeser": "seite00"
+      },
+      "schritte": [
+        {
+          "text": "quest.verloreneSeiten.schritt1",
+          "ereignis": {
+            "art": "dialog",
+            "knoten": "weg-ghost-capital.wanderer_seiten"
+          }
+        },
+        {
+          "text": "quest.verloreneSeiten.schritt2",
+          "ereignis": {
+            "art": "dialog",
+            "knoten": "capital-arena-aussen.wanderer_buch"
+          }
+        }
+      ]
+    },
+    {
+      "kennung": "capitalArena.spurenPerfectMove",
+      "titel": "quest.spurenPerfectMove.titel",
+      "typ": "hilfe",
+      "ort": "capitalArena",
+      "haupt": false,
+      "klein": true,
+      "start": {
+        "art": "ort",
+        "karte": "wegRivertonIronwood.bruecke",
+        "ausloeser": "spurPM1"
+      },
+      "schritte": [
+        {
+          "text": "quest.spurenPerfectMove.schritt1",
+          "ereignis": {
+            "art": "dialog",
+            "knoten": "capital-arena-halle.lin_mappe"
+          }
+        }
+      ]
+    },
+    {
+      "kennung": "capitalArena.kreidespringer",
+      "titel": "quest.kreidespringer.titel",
+      "typ": "hilfe",
+      "ort": "capitalArena",
+      "haupt": false,
+      "klein": true,
+      "start": {
+        "art": "ort",
+        "karte": "wegRivertonIronwood.bruecke",
+        "ausloeser": "kreide1"
+      },
+      "schritte": [
+        {
+          "text": "quest.kreidespringer.schritt1",
+          "ereignis": {
+            "art": "dialog",
+            "knoten": "capital-arena-innenstadt.kreide5"
+          }
+        },
+        {
+          "text": "quest.kreidespringer.schritt2",
+          "ereignis": {
+            "art": "dialog",
+            "knoten": "capital-arena-ubahnhof.mo_victor"
+          }
         }
       ]
     }

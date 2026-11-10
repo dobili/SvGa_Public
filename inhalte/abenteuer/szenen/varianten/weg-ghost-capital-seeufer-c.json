@@ -540,8 +540,12 @@
       "feld": [140, 13]
     },
     {
+      "name": "faehrterminal",
+      "feld": [22, 12]
+    },
+    {
       "name": "seite12",
-      "feld": [59, 10]
+      "feld": [33, 8]
     }
   ],
   "figuren": [

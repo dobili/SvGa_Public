@@ -600,6 +600,31 @@
       "ort": "wegGhostCapital",
       "name": "fund.fotoWeltschachtag.name",
       "text": "fund.fotoWeltschachtag.text"
+    },
+    {
+      "kennung": "kreide5",
+      "ort": "capitalArena",
+      "name": "fund.kreide5.name",
+      "text": "fund.kreide5.text"
+    },
+    {
+      "kennung": "fotoKreidenacht",
+      "ort": "capitalArena",
+      "name": "fund.fotoKreidenacht.name",
+      "text": "fund.fotoKreidenacht.text"
+    },
+    {
+      "kennung": "fotoMappe",
+      "ort": "capitalArena",
+      "name": "fund.fotoMappe.name",
+      "text": "fund.fotoMappe.text"
+    },
+    {
+      "kennung": "buchVonGrundAuf",
+      "ort": "capitalArena",
+      "name": "fund.buchVonGrundAuf.name",
+      "text": "fund.buchVonGrundAuf.text",
+      "extra": "brett:manuskript"
     }
   ]
 }

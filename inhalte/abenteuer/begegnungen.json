@@ -670,6 +670,57 @@
       },
       "kartenErlaubt": false,
       "zaehltFuerApp": false
+    },
+    {
+      "kennung": "capitalArena.kreidenacht1",
+      "gegner": "capitalArena.dime",
+      "farbe": "zufall",
+      "format": {
+        "art": "partie"
+      },
+      "startstellung": {
+        "art": "grundstellung"
+      },
+      "kartenErlaubt": false,
+      "zeit": {
+        "sekunden": 180,
+        "zuschlag": 2
+      },
+      "zaehltFuerApp": false
+    },
+    {
+      "kennung": "capitalArena.kreidenacht2",
+      "gegner": "capitalArena.mamaBear",
+      "farbe": "zufall",
+      "format": {
+        "art": "partie"
+      },
+      "startstellung": {
+        "art": "grundstellung"
+      },
+      "kartenErlaubt": false,
+      "zeit": {
+        "sekunden": 180,
+        "zuschlag": 2
+      },
+      "zaehltFuerApp": false
+    },
+    {
+      "kennung": "capitalArena.kreidenacht3",
+      "gegner": "capitalArena.victor",
+      "farbe": "zufall",
+      "format": {
+        "art": "partie"
+      },
+      "startstellung": {
+        "art": "grundstellung"
+      },
+      "kartenErlaubt": false,
+      "zeit": {
+        "sekunden": 180,
+        "zuschlag": 2
+      },
+      "zaehltFuerApp": false
     }
   ]
 }

@@ -1609,6 +1609,46 @@
           "wert": "angreifer"
         }
       ]
+    },
+    {
+      "kennung": "capitalArena.dime",
+      "name": "figur.dime.name",
+      "rolle": "strasse",
+      "portraet": "portraets/dime.svg",
+      "staerke": {
+        "art": "aktuell",
+        "versatz": -25
+      },
+      "stil": "taktiker",
+      "eroeffnung": {
+        "art": "frei"
+      },
+      "steckbrief": [
+        {
+          "art": "stil",
+          "wert": "taktiker"
+        }
+      ]
+    },
+    {
+      "kennung": "capitalArena.mamaBear",
+      "name": "figur.mamaBear.name",
+      "rolle": "strasse",
+      "portraet": "portraets/mama-bear.svg",
+      "staerke": {
+        "art": "aktuell",
+        "versatz": -25
+      },
+      "stil": "verteidiger",
+      "eroeffnung": {
+        "art": "frei"
+      },
+      "steckbrief": [
+        {
+          "art": "stil",
+          "wert": "verteidiger"
+        }
+      ]
     }
   ]
 }

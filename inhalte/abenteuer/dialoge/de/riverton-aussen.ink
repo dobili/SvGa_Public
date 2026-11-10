@@ -17,8 +17,10 @@
 EXTERNAL gibFund(kennung)
 
 EXTERNAL reise(karte, ausloeser)
+EXTERNAL zahle(muenzen)
 // Lastkahn (L3, 14_Akt2_Leben_teil1 4.3): lastkahnFrei setzt Lockport, wenn Ruben Big Joes Brief liest.
 VAR lastkahnFrei = false
+VAR muenzen = 0
 VAR held = "Du"
 VAR ankunftRivertonGesehen = false
 VAR novaGesehen = false
@@ -198,8 +200,13 @@ Noch ein Holzstück. Jemand hat einen ganzen Satz verloren. #sprecher:ambrose
 Am Anleger hängt ein Blechschild: „Lastkahn Ashford Belle: Riverton – Lockport – Ironwood. Fahrten nach Ansage.“ #sprecher:erzaehler
 {lastkahnFrei:
     Die Belle liegt am Anleger, Kapitän Ruben winkt vom Deck. #sprecher:erzaehler
-    * [Mit der Ashford Belle nach Lockport]
+    „Die Fahrt kostet 5 Münzen“, sagt Ruben. #sprecher:erzaehler
+    * {muenzen >= 5} [Mit der Ashford Belle nach Lockport (5 Münzen)]
+        ~ zahle(5)
         ~ reise("lockport.aussen", "kai")
+        -> END
+    * {muenzen < 5} [Mitfahren (5 Münzen)]
+        Du hast nicht genug Münzen. Ruben zuckt die Schultern: „Komm wieder, wenn die Kasse stimmt.“ #sprecher:erzaehler
         -> END
     * [Hierbleiben]
         -> END

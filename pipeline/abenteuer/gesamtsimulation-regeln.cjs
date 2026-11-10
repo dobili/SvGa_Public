@@ -205,8 +205,7 @@ function wirke(st, wirkungen) {
     if (w.art === "gegenstand") st.besitz.add(w.gegenstand);
     if (w.art === "gegenstandWeg") st.besitz.delete(w.gegenstand);
     if (w.art === "muenzen") {
-      st.muenzen += w.anzahl;
-      st.zeitachse.push({ art: "muenzen", anzahl: w.anzahl, quelle: "quest" });
+      verdiene(st, w.anzahl, "quest");
     }
   }
 }
@@ -232,6 +231,12 @@ function melde(welt, st, x) {
       continue;
     st.staende.push({ k: q.kennung, i: 0, fertig: false });
   }
+}
+
+/** Münzen gutschreiben: im Stand (für die Dialogvariable `muenzen`) und in der Zeitachse. */
+function verdiene(st, anzahl, quelle) {
+  st.muenzen += anzahl;
+  st.zeitachse.push({ art: "muenzen", anzahl, quelle });
 }
 
 /** Variablen aus dem Besitz, beim Öffnen jedes Dialogs neu (regeln/dialogvariablen.ts). */
@@ -285,17 +290,17 @@ function geschichte(welt, st, datei) {
   binde("gibFund", (f) => {
     const name = "gefunden" + gross(f);
     if (!st.vars[name] && welt.fundmuenzen[f]) {
-      st.zeitachse.push({
-        art: "muenzen",
-        anzahl: welt.fundmuenzen[f],
-        quelle: "fund",
-      });
+      verdiene(st, welt.fundmuenzen[f], "fund");
     }
     st.folgen.huelle[name] = true;
   });
   binde("gibKarte", (k) => {
     st.karten[k] = (st.karten[k] || 0) + 1;
     st.zeitachse.push({ art: "karte", karte: k });
+  });
+  // Fahrpreis (regeln/muenzen.ts, bezahle): nur wenn es reicht; der Dialog fragt vorher `muenzen` ab.
+  binde("zahle", (n) => {
+    if (n >= 1 && st.muenzen >= n) verdiene(st, -n, "fahrt");
   });
   // Partieformen der Runde 6 (Gedächtnisstellung, Simultan): wie eine Aufgabenrunde nach dem Dialog.
   for (const f of ["beginneGedaechtnis", "beginneSimultan"]) {
@@ -379,11 +384,7 @@ function spielePartie(welt, st, b) {
   st.vars["ausgang" + name] = a;
   // Wirtschaft: erster Sieg gegen einen Straßengegner (MUENZEN.strassensieg), erster Clubkampf.
   if (a === "sieg" && !st.vars["siege" + name] && welt.rolle[b] === "strasse") {
-    st.zeitachse.push({
-      art: "muenzen",
-      anzahl: MUENZEN_STRASSENSIEG,
-      quelle: "strasse",
-    });
+    verdiene(st, MUENZEN_STRASSENSIEG, "strasse");
   }
   if (welt.rolle[b] === "clubchef" && n === 1)
     st.zeitachse.push({ art: "clubkampf", begegnung: b });
@@ -402,12 +403,7 @@ function spieleRunde(welt, st, r) {
   if (n < 2) return;
   const teile = r.split("."),
     name = teile.pop();
-  if (n === 2)
-    st.zeitachse.push({
-      art: "muenzen",
-      anzahl: MUENZEN_RUNDE,
-      quelle: "runde",
-    });
+  if (n === 2) verdiene(st, MUENZEN_RUNDE, "runde");
   st.vars[name + "Bestanden"] = true;
   st.vars[teile.join("") + gross(name) + "Bestanden"] = true;
   melde(welt, st, { art: "aufgaben", runde: r });

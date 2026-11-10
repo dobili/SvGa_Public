@@ -36,6 +36,8 @@ Szene heißt die Datei in `inhalte/abenteuer/szenen/` ohne `.json`.
 - [x] riverton-aussen (zweite Prüfung nach Nachbesserung, mittel-3; Bilder im privaten main ab b6c369b2)
 - [x] riverton-bahnhofshalle, riverton-pavillon, riverton-wohnwagen, riverton-schuppen (zweite Prüfung, mittel-3, eine Datei `riverton-innen-2.md`)
 - [x] maple-falls-clubraum (dritte Prüfung, mittel-1, Datei `maple-falls-clubraum-3.md`)
+- [ ] weg-ironwood-silicon-glasbruecke (zweite Prüfung, Winter, mittel-1, Datei `weg-ironwood-silicon-glasbruecke-2.md`; Bilder aus `bildwuensche/zero_werbung.py`)
+- [ ] weg-ironwood-silicon-raststaette (zweite Prüfung, Winter, Küste, Zufahrt, mittel-1, Datei `weg-ironwood-silicon-raststaette-2.md`; Bilder aus `bildwuensche/gartenhaus.py`, `fassaden_zweck.py`, `wartehaus.py`)
 
 - [x] silicon-bay-akademie (zweite Prüfung, mittel-3; Bilder privat ab a579b56c; Datei `silicon-bay-akademie-2.md`)
 - [x] silicon-bay-altstadt (zweite Prüfung, jetzt Winter, mittel-3; Datei `silicon-bay-altstadt-2.md`)

@@ -1034,6 +1034,155 @@
       "art": "bordstein",
       "zustand": "neu",
       "stil": "modern"
+    },
+    "wsgWerbetafelZero": {
+      "quelle": "spiel/eigene/werbetafel_zero.png",
+      "breite": 80,
+      "hoehe": 96,
+      "kollision": true,
+      "art": "schild",
+      "zustand": "neu",
+      "stil": "modern",
+      "blick": "unten"
+    },
+    "wsgOhrstoepsel": {
+      "quelle": "spiel/eigene/ohrstoepsel.png",
+      "breite": 16,
+      "hoehe": 16,
+      "kollision": false,
+      "art": "deko",
+      "zustand": "neu",
+      "stil": "modern"
+    },
+    "wsgLaterneModern": {
+      "quelle": "modern-exteriors/Modern_Exteriors_16x16/ME_Theme_Sorter_16x16/3_City_Props_Singles_16x16/ME_Singles_City_Props_16x16_Street_Lamp_3.png",
+      "breite": 32,
+      "hoehe": 64,
+      "kollision": true,
+      "art": "laterne",
+      "zustand": "neu",
+      "stil": "modern",
+      "blick": "unten"
+    },
+    "wsgBeetBaum": {
+      "quelle": "modern-exteriors/Modern_Exteriors_16x16/ME_Theme_Sorter_16x16/3_City_Props_Singles_16x16/ME_Singles_City_Props_16x16_Tree_9.png",
+      "breite": 32,
+      "hoehe": 64,
+      "kollision": true,
+      "art": "baum",
+      "zustand": "neu",
+      "stil": "modern",
+      "blick": "unten"
+    },
+    "wsgBeetZypresse": {
+      "quelle": "modern-exteriors/Modern_Exteriors_16x16/ME_Theme_Sorter_16x16/3_City_Props_Singles_16x16/ME_Singles_City_Props_16x16_Tree_8.png",
+      "breite": 32,
+      "hoehe": 64,
+      "kollision": true,
+      "art": "baum",
+      "zustand": "neu",
+      "stil": "modern",
+      "blick": "unten"
+    },
+    "wsgBeetBusch": {
+      "quelle": "modern-exteriors/Modern_Exteriors_16x16/ME_Theme_Sorter_16x16/3_City_Props_Singles_16x16/ME_Singles_City_Props_16x16_Tree_7.png",
+      "breite": 32,
+      "hoehe": 64,
+      "kollision": true,
+      "art": "busch",
+      "zustand": "neu",
+      "stil": "modern",
+      "blick": "unten"
+    },
+    "wsrPlanke5": {
+      "quelle": "spiel/eigene/leitplanke_laengs_5.png",
+      "breite": 80,
+      "hoehe": 16,
+      "kollision": false,
+      "art": "zaun",
+      "zustand": "neu",
+      "stil": "modern"
+    },
+    "wsrPlanke7": {
+      "quelle": "spiel/eigene/leitplanke_laengs_7.png",
+      "breite": 112,
+      "hoehe": 16,
+      "kollision": false,
+      "art": "zaun",
+      "zustand": "neu",
+      "stil": "modern"
+    },
+    "wsgLinieQ6": {
+      "quelle": "spiel/eigene/fahrbahn_linie_quer_6.png",
+      "breite": 96,
+      "hoehe": 16,
+      "kollision": false,
+      "art": "markierung",
+      "zustand": "neu",
+      "stil": "modern"
+    },
+    "wsgBordQ7": {
+      "quelle": "spiel/eigene/einfassung_quer_7.png",
+      "breite": 112,
+      "hoehe": 16,
+      "kollision": false,
+      "art": "bordstein",
+      "zustand": "neu",
+      "stil": "modern"
+    },
+    "wsgBordQ5": {
+      "quelle": "spiel/eigene/einfassung_quer_5.png",
+      "breite": 80,
+      "hoehe": 16,
+      "kollision": false,
+      "art": "bordstein",
+      "zustand": "neu",
+      "stil": "modern"
+    },
+    "wsgBordQ1": {
+      "quelle": "spiel/eigene/einfassung_quer_1.png",
+      "breite": 16,
+      "hoehe": 16,
+      "kollision": false,
+      "art": "bordstein",
+      "zustand": "neu",
+      "stil": "modern"
+    },
+    "wsgBordQ10": {
+      "quelle": "spiel/eigene/einfassung_quer_10.png",
+      "breite": 160,
+      "hoehe": 16,
+      "kollision": false,
+      "art": "bordstein",
+      "zustand": "neu",
+      "stil": "modern"
+    },
+    "wsgBordL15": {
+      "quelle": "spiel/eigene/einfassung_laengs_15.png",
+      "breite": 16,
+      "hoehe": 240,
+      "kollision": false,
+      "art": "bordstein",
+      "zustand": "neu",
+      "stil": "modern"
+    },
+    "wsgBordL5": {
+      "quelle": "spiel/eigene/einfassung_laengs_5.png",
+      "breite": 16,
+      "hoehe": 80,
+      "kollision": false,
+      "art": "bordstein",
+      "zustand": "neu",
+      "stil": "modern"
+    },
+    "wsgBordL1": {
+      "quelle": "spiel/eigene/einfassung_laengs_1.png",
+      "breite": 16,
+      "hoehe": 16,
+      "kollision": false,
+      "art": "bordstein",
+      "zustand": "neu",
+      "stil": "modern"
     }
   }
 }

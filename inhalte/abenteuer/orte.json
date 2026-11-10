@@ -3828,6 +3828,30 @@
             "karte": "goldmine.stollen",
             "ausloeser": "stollenAusgang"
           }
+        },
+        {
+          "name": "ortsschild",
+          "karte": "ghostTown.aussen",
+          "art": "dialog",
+          "dialog": "ghost-town-aussen.ortsschild"
+        },
+        {
+          "name": "steckbrief",
+          "karte": "ghostTown.aussen",
+          "art": "dialog",
+          "dialog": "ghost-town-aussen.steckbrief"
+        },
+        {
+          "name": "amboss",
+          "karte": "ghostTown.aussen",
+          "art": "dialog",
+          "dialog": "ghost-town-aussen.amboss"
+        },
+        {
+          "name": "klavier",
+          "karte": "ghostTown.saloon",
+          "art": "dialog",
+          "dialog": "ghost-town-saloon.klavier"
         }
       ]
     },

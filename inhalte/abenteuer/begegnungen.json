@@ -589,6 +589,35 @@
       "kartenErlaubt": false,
       "zaehltFuerApp": false,
       "variante": "schach960"
+    },
+    {
+      "kennung": "wegDesertSummit.funkschach",
+      "gegner": "wegDesertSummit.mamaBear",
+      "farbe": "zufall",
+      "format": {
+        "art": "partie"
+      },
+      "startstellung": {
+        "art": "grundstellung"
+      },
+      "kartenErlaubt": true,
+      "zeit": "wahl"
+    },
+    {
+      "kennung": "wegDesertSummit.kreideblitz",
+      "gegner": "wegDesertSummit.mags",
+      "farbe": "zufall",
+      "format": {
+        "art": "partie"
+      },
+      "startstellung": {
+        "art": "grundstellung"
+      },
+      "kartenErlaubt": true,
+      "zeit": {
+        "sekunden": 180,
+        "zuschlag": 2
+      }
     }
   ]
 }

@@ -11,7 +11,7 @@
  "tilewidth": 16,
  "tileheight": 16,
  "nextlayerid": 5,
- "nextobjectid": 100,
+ "nextobjectid": 108,
  "layers": [
   {
    "id": 1,
@@ -13670,6 +13670,94 @@
     },
     {
      "id": 10,
+     "name": "ereignisFunkschach",
+     "type": "ausloeser",
+     "x": 1264,
+     "y": 176,
+     "width": 16,
+     "height": 16,
+     "rotation": 0,
+     "visible": true
+    },
+    {
+     "id": 11,
+     "name": "kreide3",
+     "type": "ausloeser",
+     "x": 1392,
+     "y": 144,
+     "width": 16,
+     "height": 16,
+     "rotation": 0,
+     "visible": true
+    },
+    {
+     "id": 12,
+     "name": "finchSpringerB",
+     "type": "ausloeser",
+     "x": 1424,
+     "y": 160,
+     "width": 16,
+     "height": 16,
+     "rotation": 0,
+     "visible": true
+    },
+    {
+     "id": 13,
+     "name": "seite08",
+     "type": "ausloeser",
+     "x": 880,
+     "y": 352,
+     "width": 16,
+     "height": 16,
+     "rotation": 0,
+     "visible": true
+    },
+    {
+     "id": 14,
+     "name": "hinterzimmerTuer",
+     "type": "ausloeser",
+     "x": 1376,
+     "y": 112,
+     "width": 16,
+     "height": 16,
+     "rotation": 0,
+     "visible": true
+    },
+    {
+     "id": 15,
+     "name": "reklame",
+     "type": "ausloeser",
+     "x": 1824,
+     "y": 160,
+     "width": 16,
+     "height": 16,
+     "rotation": 0,
+     "visible": true
+    },
+    {
+     "id": 16,
+     "name": "motelschild",
+     "type": "ausloeser",
+     "x": 1632,
+     "y": 160,
+     "width": 16,
+     "height": 16,
+     "rotation": 0,
+     "visible": true
+    },
+    {
+     "id": 17,
+     "name": "aussicht",
+     "type": "ausloeser",
+     "x": 112,
+     "y": 288,
+     "width": 16,
+     "height": 16,
+     "rotation": 0,
+     "visible": true
+    },
+    {
+     "id": 18,
      "name": "earl",
      "type": "figur",
      "x": 1152,
@@ -13680,7 +13768,7 @@
      "visible": true
     },
     {
-     "id": 11,
+     "id": 19,
      "name": "trucker",
      "type": "statist",
      "x": 1088,
@@ -13713,7 +13801,7 @@
      ]
     },
     {
-     "id": 12,
+     "id": 20,
      "name": "kojote",
      "type": "tier",
      "x": 736,
@@ -13741,7 +13829,7 @@
      ]
     },
     {
-     "id": 13,
+     "id": 21,
      "name": "roadrunner",
      "type": "tier",
      "x": 416,
@@ -13769,7 +13857,7 @@
      ]
     },
     {
-     "id": 14,
+     "id": 22,
      "name": "kellnerin",
      "type": "statist",
      "x": 1280,
@@ -13807,7 +13895,7 @@
      ]
     },
     {
-     "id": 15,
+     "id": 23,
      "name": "fernfahrer",
      "type": "statist",
      "x": 992,
@@ -13845,7 +13933,7 @@
      ]
     },
     {
-     "id": 16,
+     "id": 24,
      "name": "motelgast",
      "type": "statist",
      "x": 1568,
@@ -13883,7 +13971,7 @@
      ]
     },
     {
-     "id": 17,
+     "id": 25,
      "name": "tankwart",
      "type": "statist",
      "x": 672,
@@ -13916,7 +14004,7 @@
      ]
     },
     {
-     "id": 18,
+     "id": 26,
      "name": "praeriehunde",
      "type": "tier",
      "x": 1680,
@@ -13944,7 +14032,7 @@
      ]
     },
     {
-     "id": 19,
+     "id": 27,
      "name": "eidechse",
      "type": "tier",
      "x": 480,
@@ -13972,7 +14060,7 @@
      ]
     },
     {
-     "id": 20,
+     "id": 28,
      "name": "geier",
      "type": "tier",
      "x": 1120,
@@ -14000,7 +14088,7 @@
      ]
     },
     {
-     "id": 21,
+     "id": 29,
      "name": "hund",
      "type": "tier",
      "x": 1536,
@@ -14028,7 +14116,7 @@
      ]
     },
     {
-     "id": 22,
+     "id": 30,
      "name": "kraehen",
      "type": "tier",
      "x": 1920,
@@ -14056,7 +14144,7 @@
      ]
     },
     {
-     "id": 23,
+     "id": 31,
      "name": "hase",
      "type": "tier",
      "x": 2160,
@@ -14084,7 +14172,7 @@
      ]
     },
     {
-     "id": 24,
+     "id": 32,
      "name": "wds6Diner",
      "type": "moebel",
      "x": 1216,
@@ -14107,7 +14195,7 @@
      ]
     },
     {
-     "id": 25,
+     "id": 33,
      "name": "wds6SchildDiner",
      "type": "moebel",
      "x": 1248,
@@ -14130,7 +14218,7 @@
      ]
     },
     {
-     "id": 26,
+     "id": 34,
      "name": "wds6Motel",
      "type": "moebel",
      "x": 1408,
@@ -14153,7 +14241,7 @@
      ]
     },
     {
-     "id": 27,
+     "id": 35,
      "name": "wds6SchildMotel",
      "type": "moebel",
      "x": 1632,
@@ -14176,7 +14264,7 @@
      ]
     },
     {
-     "id": 28,
+     "id": 36,
      "name": "wds6Tafel",
      "type": "moebel",
      "x": 1376,
@@ -14199,7 +14287,7 @@
      ]
     },
     {
-     "id": 29,
+     "id": 37,
      "name": "wds6NeonK",
      "type": "moebel",
      "x": 1280,
@@ -14222,7 +14310,7 @@
      ]
     },
     {
-     "id": 30,
+     "id": 38,
      "name": "wds6Container",
      "type": "moebel",
      "x": 1168,
@@ -14245,7 +14333,7 @@
      ]
     },
     {
-     "id": 31,
+     "id": 39,
      "name": "wds6Wasserturm",
      "type": "moebel",
      "x": 1984,
@@ -14268,7 +14356,7 @@
      ]
     },
     {
-     "id": 32,
+     "id": 40,
      "name": "wds6Windrad",
      "type": "moebel",
      "x": 2080,
@@ -14291,7 +14379,7 @@
      ]
     },
     {
-     "id": 33,
+     "id": 41,
      "name": "wds6Reklame",
      "type": "moebel",
      "x": 1792,
@@ -14314,7 +14402,7 @@
      ]
     },
     {
-     "id": 34,
+     "id": 42,
      "name": "wds6SattelzugRot",
      "type": "moebel",
      "x": 912,
@@ -14337,7 +14425,7 @@
      ]
     },
     {
-     "id": 35,
+     "id": 43,
      "name": "wds6SattelzugBlau",
      "type": "moebel",
      "x": 912,
@@ -14360,7 +14448,7 @@
      ]
     },
     {
-     "id": 36,
+     "id": 44,
      "name": "wds6Spieltisch",
      "type": "moebel",
      "x": 1120,
@@ -14383,7 +14471,7 @@
      ]
     },
     {
-     "id": 37,
+     "id": 45,
      "name": "wds6Brett",
      "type": "moebel",
      "x": 1154,
@@ -14406,7 +14494,7 @@
      ]
     },
     {
-     "id": 38,
+     "id": 46,
      "name": "wds6Reifen",
      "type": "moebel",
      "x": 1232,
@@ -14429,7 +14517,7 @@
      ]
     },
     {
-     "id": 39,
+     "id": 47,
      "name": "wds6Reifen",
      "type": "moebel",
      "x": 1248,
@@ -14452,7 +14540,7 @@
      ]
     },
     {
-     "id": 40,
+     "id": 48,
      "name": "wds6Tankstelle",
      "type": "moebel",
      "x": 608,
@@ -14475,7 +14563,7 @@
      ]
     },
     {
-     "id": 41,
+     "id": 49,
      "name": "wds6Autowrack",
      "type": "moebel",
      "x": 736,
@@ -14498,7 +14586,7 @@
      ]
     },
     {
-     "id": 42,
+     "id": 50,
      "name": "wds6Felsbogen",
      "type": "moebel",
      "x": 384,
@@ -14521,7 +14609,7 @@
      ]
     },
     {
-     "id": 43,
+     "id": 51,
      "name": "wds6Ortsschild",
      "type": "moebel",
      "x": 2240,
@@ -14544,7 +14632,7 @@
      ]
     },
     {
-     "id": 44,
+     "id": 52,
      "name": "wds6Bank",
      "type": "moebel",
      "x": 96,
@@ -14567,7 +14655,7 @@
      ]
     },
     {
-     "id": 45,
+     "id": 53,
      "name": "wds6Wegweiser",
      "type": "moebel",
      "x": 32,
@@ -14590,7 +14678,7 @@
      ]
     },
     {
-     "id": 46,
+     "id": 54,
      "name": "wds6Saguaro",
      "type": "moebel",
      "x": 48,
@@ -14613,7 +14701,7 @@
      ]
     },
     {
-     "id": 47,
+     "id": 55,
      "name": "wds6Wacholder",
      "type": "moebel",
      "x": 144,
@@ -14636,7 +14724,7 @@
      ]
     },
     {
-     "id": 48,
+     "id": 56,
      "name": "wds6Saguaro",
      "type": "moebel",
      "x": 224,
@@ -14659,7 +14747,7 @@
      ]
     },
     {
-     "id": 49,
+     "id": 57,
      "name": "wds6Wacholder",
      "type": "moebel",
      "x": 64,
@@ -14682,7 +14770,7 @@
      ]
     },
     {
-     "id": 50,
+     "id": 58,
      "name": "wds6KaktusBluehend",
      "type": "moebel",
      "x": 240,
@@ -14705,7 +14793,7 @@
      ]
     },
     {
-     "id": 51,
+     "id": 59,
      "name": "wds6SteinRot",
      "type": "moebel",
      "x": 320,
@@ -14728,7 +14816,7 @@
      ]
     },
     {
-     "id": 52,
+     "id": 60,
      "name": "wds6SteinRot",
      "type": "moebel",
      "x": 560,
@@ -14751,7 +14839,7 @@
      ]
     },
     {
-     "id": 53,
+     "id": 61,
      "name": "wds6Geierkreis",
      "type": "moebel",
      "x": 480,
@@ -14774,7 +14862,7 @@
      ]
     },
     {
-     "id": 54,
+     "id": 62,
      "name": "wds6Geierkreis",
      "type": "moebel",
      "x": 1920,
@@ -14797,7 +14885,7 @@
      ]
     },
     {
-     "id": 55,
+     "id": 63,
      "name": "wds6SteinRot",
      "type": "moebel",
      "x": 2256,
@@ -14820,7 +14908,7 @@
      ]
     },
     {
-     "id": 56,
+     "id": 64,
      "name": "wds6KaktusKlein",
      "type": "moebel",
      "x": 1856,
@@ -14843,7 +14931,7 @@
      ]
     },
     {
-     "id": 57,
+     "id": 65,
      "name": "wds6Saguaro",
      "type": "moebel",
      "x": 2304,
@@ -14866,7 +14954,7 @@
      ]
     },
     {
-     "id": 58,
+     "id": 66,
      "name": "wds6KaktusKlein",
      "type": "moebel",
      "x": 1744,
@@ -14889,7 +14977,7 @@
      ]
     },
     {
-     "id": 59,
+     "id": 67,
      "name": "wds6Saguaro",
      "type": "moebel",
      "x": 1920,
@@ -14912,7 +15000,7 @@
      ]
     },
     {
-     "id": 60,
+     "id": 68,
      "name": "wds6KaktusKlein",
      "type": "moebel",
      "x": 1712,
@@ -14935,7 +15023,7 @@
      ]
     },
     {
-     "id": 61,
+     "id": 69,
      "name": "wds6KaktusKlein",
      "type": "moebel",
      "x": 2160,
@@ -14958,7 +15046,7 @@
      ]
     },
     {
-     "id": 62,
+     "id": 70,
      "name": "wds6SteinRot",
      "type": "moebel",
      "x": 2096,
@@ -14981,7 +15069,7 @@
      ]
     },
     {
-     "id": 63,
+     "id": 71,
      "name": "wds6KaktusKlein",
      "type": "moebel",
      "x": 1936,
@@ -15004,7 +15092,7 @@
      ]
     },
     {
-     "id": 64,
+     "id": 72,
      "name": "wds6KaktusBluehend",
      "type": "moebel",
      "x": 1728,
@@ -15027,7 +15115,7 @@
      ]
     },
     {
-     "id": 65,
+     "id": 73,
      "name": "wds6KaktusKlein",
      "type": "moebel",
      "x": 2352,
@@ -15050,7 +15138,7 @@
      ]
     },
     {
-     "id": 66,
+     "id": 74,
      "name": "wds6KaktusKlein",
      "type": "moebel",
      "x": 1824,
@@ -15073,7 +15161,7 @@
      ]
     },
     {
-     "id": 67,
+     "id": 75,
      "name": "wds6SteinRot",
      "type": "moebel",
      "x": 2240,
@@ -15096,7 +15184,7 @@
      ]
     },
     {
-     "id": 68,
+     "id": 76,
      "name": "wds6KaktusBluehend",
      "type": "moebel",
      "x": 2192,
@@ -15119,7 +15207,7 @@
      ]
     },
     {
-     "id": 69,
+     "id": 77,
      "name": "wds6KaktusKlein",
      "type": "moebel",
      "x": 1600,
@@ -15142,7 +15230,7 @@
      ]
     },
     {
-     "id": 70,
+     "id": 78,
      "name": "wds6Saguaro",
      "type": "moebel",
      "x": 1408,
@@ -15165,7 +15253,7 @@
      ]
     },
     {
-     "id": 71,
+     "id": 79,
      "name": "wds6KaktusBluehend",
      "type": "moebel",
      "x": 2016,
@@ -15188,7 +15276,7 @@
      ]
     },
     {
-     "id": 72,
+     "id": 80,
      "name": "wds6KaktusBluehend",
      "type": "moebel",
      "x": 2304,
@@ -15211,7 +15299,7 @@
      ]
     },
     {
-     "id": 73,
+     "id": 81,
      "name": "wds6KaktusBluehend",
      "type": "moebel",
      "x": 1328,
@@ -15234,7 +15322,7 @@
      ]
     },
     {
-     "id": 74,
+     "id": 82,
      "name": "wds6KaktusKlein",
      "type": "moebel",
      "x": 1840,
@@ -15257,7 +15345,7 @@
      ]
     },
     {
-     "id": 75,
+     "id": 83,
      "name": "wds6KaktusBluehend",
      "type": "moebel",
      "x": 1552,
@@ -15280,7 +15368,7 @@
      ]
     },
     {
-     "id": 76,
+     "id": 84,
      "name": "wds6KaktusBluehend",
      "type": "moebel",
      "x": 1664,
@@ -15303,7 +15391,7 @@
      ]
     },
     {
-     "id": 77,
+     "id": 85,
      "name": "wds6KaktusKlein",
      "type": "moebel",
      "x": 1504,
@@ -15326,7 +15414,7 @@
      ]
     },
     {
-     "id": 78,
+     "id": 86,
      "name": "wds6KaktusBluehend",
      "type": "moebel",
      "x": 1552,
@@ -15349,7 +15437,7 @@
      ]
     },
     {
-     "id": 79,
+     "id": 87,
      "name": "wds6SteinRot",
      "type": "moebel",
      "x": 336,
@@ -15372,7 +15460,7 @@
      ]
     },
     {
-     "id": 80,
+     "id": 88,
      "name": "wds6Saguaro",
      "type": "moebel",
      "x": 688,
@@ -15395,7 +15483,7 @@
      ]
     },
     {
-     "id": 81,
+     "id": 89,
      "name": "wds6SteinRot",
      "type": "moebel",
      "x": 512,
@@ -15418,7 +15506,7 @@
      ]
     },
     {
-     "id": 82,
+     "id": 90,
      "name": "wds6KaktusKlein",
      "type": "moebel",
      "x": 736,
@@ -15441,7 +15529,7 @@
      ]
     },
     {
-     "id": 83,
+     "id": 91,
      "name": "wds6KaktusKlein",
      "type": "moebel",
      "x": 784,
@@ -15464,7 +15552,7 @@
      ]
     },
     {
-     "id": 84,
+     "id": 92,
      "name": "wds6KaktusKlein",
      "type": "moebel",
      "x": 752,
@@ -15487,7 +15575,7 @@
      ]
     },
     {
-     "id": 85,
+     "id": 93,
      "name": "wds6KaktusKlein",
      "type": "moebel",
      "x": 640,
@@ -15510,7 +15598,7 @@
      ]
     },
     {
-     "id": 86,
+     "id": 94,
      "name": "wds6KaktusKlein",
      "type": "moebel",
      "x": 768,
@@ -15533,7 +15621,7 @@
      ]
     },
     {
-     "id": 87,
+     "id": 95,
      "name": "wds6KaktusKlein",
      "type": "moebel",
      "x": 608,
@@ -15556,7 +15644,7 @@
      ]
     },
     {
-     "id": 88,
+     "id": 96,
      "name": "wds6KaktusKlein",
      "type": "moebel",
      "x": 576,
@@ -15579,7 +15667,7 @@
      ]
     },
     {
-     "id": 89,
+     "id": 97,
      "name": "wds6Wacholder",
      "type": "moebel",
      "x": 816,
@@ -15602,7 +15690,7 @@
      ]
     },
     {
-     "id": 90,
+     "id": 98,
      "name": "wds6KaktusKlein",
      "type": "moebel",
      "x": 672,
@@ -15625,7 +15713,7 @@
      ]
     },
     {
-     "id": 91,
+     "id": 99,
      "name": "wds6SteinRot",
      "type": "moebel",
      "x": 608,
@@ -15648,7 +15736,7 @@
      ]
     },
     {
-     "id": 92,
+     "id": 100,
      "name": "wds6SteinRot",
      "type": "moebel",
      "x": 544,
@@ -15671,7 +15759,7 @@
      ]
     },
     {
-     "id": 93,
+     "id": 101,
      "name": "wds6SteinRot",
      "type": "moebel",
      "x": 384,
@@ -15694,7 +15782,7 @@
      ]
     },
     {
-     "id": 94,
+     "id": 102,
      "name": "wds6KaktusKlein",
      "type": "moebel",
      "x": 784,
@@ -15717,7 +15805,7 @@
      ]
     },
     {
-     "id": 95,
+     "id": 103,
      "name": "wds6KaktusKlein",
      "type": "moebel",
      "x": 352,
@@ -15740,7 +15828,7 @@
      ]
     },
     {
-     "id": 96,
+     "id": 104,
      "name": "sc8Funkgeraet",
      "type": "moebel",
      "x": 1248,
@@ -15763,7 +15851,7 @@
      ]
     },
     {
-     "id": 97,
+     "id": 105,
      "name": "sc8Kreidespringer",
      "type": "moebel",
      "x": 1392,
@@ -15786,7 +15874,7 @@
      ]
     },
     {
-     "id": 98,
+     "id": 106,
      "name": "mf2Blumenbeet",
      "type": "moebel",
      "x": 1456,
@@ -15809,7 +15897,7 @@
      ]
     },
     {
-     "id": 99,
+     "id": 107,
      "name": "sc8Finkenzeichen",
      "type": "moebel",
      "x": 1424,

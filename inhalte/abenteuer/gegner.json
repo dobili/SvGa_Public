@@ -146,17 +146,28 @@
       "name": "figur.juno.name",
       "rolle": "clubmitglied",
       "portraet": "portraets/juno.svg",
-      "staerke": { "art": "aktuell", "versatz": -100 },
+      "staerke": {
+        "art": "aktuell",
+        "versatz": -100
+      },
       "gewichte": {
         "figurHaengen": 2,
         "schlagreflex": 1.5,
         "taktikUebersehen": 1.3
       },
       "stil": "draufgaenger",
-      "eroeffnung": { "art": "praxis" },
+      "eroeffnung": {
+        "art": "praxis"
+      },
       "steckbrief": [
-        { "art": "fehlerart", "wert": "figurHaengen" },
-        { "art": "fehlerart", "wert": "schlagreflex" }
+        {
+          "art": "fehlerart",
+          "wert": "figurHaengen"
+        },
+        {
+          "art": "fehlerart",
+          "wert": "schlagreflex"
+        }
       ]
     },
     {
@@ -164,15 +175,23 @@
       "name": "figur.okafor.name",
       "rolle": "clubchef",
       "portraet": "portraets/okafor.svg",
-      "staerke": { "art": "eingang", "versatz": 280 },
-      "phasenversatz": { "endspiel": 1 },
+      "staerke": {
+        "art": "eingang",
+        "versatz": 280
+      },
+      "phasenversatz": {
+        "endspiel": 1
+      },
       "gewichte": {
         "tempoverlust": 1.6,
         "koenigPassiv": 1.3,
         "taktikUebersehen": 0.7,
         "grundreihe": 0.5
       },
-      "stil": { "taktiker": 100, "verteidiger": 80 },
+      "stil": {
+        "taktiker": 100,
+        "verteidiger": 80
+      },
       "eroeffnung": {
         "art": "fest",
         "eroeffnungen": [
@@ -182,9 +201,18 @@
         "abweichung": 15
       },
       "steckbrief": [
-        { "art": "stil", "wert": "taktiker" },
-        { "art": "fehlerart", "wert": "tempoverlust" },
-        { "art": "eroeffnung", "wert": "praxis:Philidor Defense" }
+        {
+          "art": "stil",
+          "wert": "taktiker"
+        },
+        {
+          "art": "fehlerart",
+          "wert": "tempoverlust"
+        },
+        {
+          "art": "eroeffnung",
+          "wert": "praxis:Philidor Defense"
+        }
       ]
     },
     {
@@ -192,13 +220,27 @@
       "name": "figur.dex.name",
       "rolle": "clubmitglied",
       "portraet": "portraets/dex.svg",
-      "staerke": { "art": "aktuell", "versatz": 0 },
-      "gewichte": { "koenigMitte": 1.5, "figurHaengen": 1.3 },
+      "staerke": {
+        "art": "aktuell",
+        "versatz": 0
+      },
+      "gewichte": {
+        "koenigMitte": 1.5,
+        "figurHaengen": 1.3
+      },
       "stil": "taktiker",
-      "eroeffnung": { "art": "praxis" },
+      "eroeffnung": {
+        "art": "praxis"
+      },
       "steckbrief": [
-        { "art": "stil", "wert": "taktiker" },
-        { "art": "fehlerart", "wert": "koenigMitte" }
+        {
+          "art": "stil",
+          "wert": "taktiker"
+        },
+        {
+          "art": "fehlerart",
+          "wert": "koenigMitte"
+        }
       ]
     },
     {
@@ -206,13 +248,27 @@
       "name": "figur.mae.name",
       "rolle": "clubmitglied",
       "portraet": "portraets/mae.svg",
-      "staerke": { "art": "aktuell", "versatz": -50 },
-      "gewichte": { "drohungIgnoriert": 1.6, "koenigsschild": 1.3 },
+      "staerke": {
+        "art": "aktuell",
+        "versatz": -50
+      },
+      "gewichte": {
+        "drohungIgnoriert": 1.6,
+        "koenigsschild": 1.3
+      },
       "stil": "angreifer",
-      "eroeffnung": { "art": "praxis" },
+      "eroeffnung": {
+        "art": "praxis"
+      },
       "steckbrief": [
-        { "art": "stil", "wert": "angreifer" },
-        { "art": "fehlerart", "wert": "drohungIgnoriert" }
+        {
+          "art": "stil",
+          "wert": "angreifer"
+        },
+        {
+          "art": "fehlerart",
+          "wert": "drohungIgnoriert"
+        }
       ]
     },
     {
@@ -221,13 +277,27 @@
       "rolle": "strasse",
       "portraet": "portraets/rosa.svg",
       "immunGegen": ["grossesMaul", "gruebelfalle"],
-      "staerke": { "art": "aktuell", "versatz": -50 },
-      "gewichte": { "schlagVerpasst": 1.4, "bauernzugOhneNot": 0.6 },
+      "staerke": {
+        "art": "aktuell",
+        "versatz": -50
+      },
+      "gewichte": {
+        "schlagVerpasst": 1.4,
+        "bauernzugOhneNot": 0.6
+      },
       "stil": "verteidiger",
-      "eroeffnung": { "art": "frei" },
+      "eroeffnung": {
+        "art": "frei"
+      },
       "steckbrief": [
-        { "art": "stil", "wert": "verteidiger" },
-        { "art": "fehlerart", "wert": "schlagVerpasst" }
+        {
+          "art": "stil",
+          "wert": "verteidiger"
+        },
+        {
+          "art": "fehlerart",
+          "wert": "schlagVerpasst"
+        }
       ]
     },
     {
@@ -266,25 +336,45 @@
       "name": "figur.schaffner.name",
       "rolle": "strasse",
       "portraet": "portraets/schaffner.svg",
-      "staerke": { "art": "aktuell", "versatz": -100 },
-      "gewichte": { "schlagVerpasst": 1.3 },
+      "staerke": {
+        "art": "aktuell",
+        "versatz": -100
+      },
+      "gewichte": {
+        "schlagVerpasst": 1.3
+      },
       "stil": "taktiker",
-      "eroeffnung": { "art": "frei" },
-      "steckbrief": [{ "art": "stil", "wert": "taktiker" }]
+      "eroeffnung": {
+        "art": "frei"
+      },
+      "steckbrief": [
+        {
+          "art": "stil",
+          "wert": "taktiker"
+        }
+      ]
     },
     {
       "kennung": "riverton.slick",
       "name": "figur.slick.name",
       "rolle": "clubchef",
       "portraet": "portraets/slick.svg",
-      "staerke": { "art": "eingang", "versatz": 340 },
-      "phasenversatz": { "endspiel": -1 },
+      "staerke": {
+        "art": "eingang",
+        "versatz": 340
+      },
+      "phasenversatz": {
+        "endspiel": -1
+      },
       "gewichte": {
         "drohungIgnoriert": 1.8,
         "schlagreflex": 1.5,
         "taktikUebersehen": 0.6
       },
-      "stil": { "angreifer": 110, "taktiker": 100 },
+      "stil": {
+        "angreifer": 110,
+        "taktiker": 100
+      },
       "eroeffnung": {
         "art": "fest",
         "eroeffnungen": [
@@ -294,9 +384,18 @@
         "abweichung": 15
       },
       "steckbrief": [
-        { "art": "fehlerart", "wert": "drohungIgnoriert" },
-        { "art": "eroeffnung", "wert": "praxis:Scotch Game" },
-        { "art": "stil", "wert": "angreifer" }
+        {
+          "art": "fehlerart",
+          "wert": "drohungIgnoriert"
+        },
+        {
+          "art": "eroeffnung",
+          "wert": "praxis:Scotch Game"
+        },
+        {
+          "art": "stil",
+          "wert": "angreifer"
+        }
       ]
     },
     {
@@ -304,13 +403,27 @@
       "name": "figur.tamsin.name",
       "rolle": "clubmitglied",
       "portraet": "portraets/tamsin.svg",
-      "staerke": { "art": "aktuell", "versatz": -50 },
-      "gewichte": { "schlagreflex": 1.6, "koenigMitte": 1.2 },
+      "staerke": {
+        "art": "aktuell",
+        "versatz": -50
+      },
+      "gewichte": {
+        "schlagreflex": 1.6,
+        "koenigMitte": 1.2
+      },
       "stil": "draufgaenger",
-      "eroeffnung": { "art": "praxis" },
+      "eroeffnung": {
+        "art": "praxis"
+      },
       "steckbrief": [
-        { "art": "fehlerart", "wert": "schlagreflex" },
-        { "art": "stil", "wert": "draufgaenger" }
+        {
+          "art": "fehlerart",
+          "wert": "schlagreflex"
+        },
+        {
+          "art": "stil",
+          "wert": "draufgaenger"
+        }
       ]
     },
     {
@@ -318,13 +431,27 @@
       "name": "figur.ray.name",
       "rolle": "clubmitglied",
       "portraet": "portraets/ray.svg",
-      "staerke": { "art": "aktuell", "versatz": 0 },
-      "gewichte": { "tempoverlust": 1.4, "bauernzugOhneNot": 1.3 },
+      "staerke": {
+        "art": "aktuell",
+        "versatz": 0
+      },
+      "gewichte": {
+        "tempoverlust": 1.4,
+        "bauernzugOhneNot": 1.3
+      },
       "stil": "verteidiger",
-      "eroeffnung": { "art": "praxis" },
+      "eroeffnung": {
+        "art": "praxis"
+      },
       "steckbrief": [
-        { "art": "stil", "wert": "verteidiger" },
-        { "art": "fehlerart", "wert": "tempoverlust" }
+        {
+          "art": "stil",
+          "wert": "verteidiger"
+        },
+        {
+          "art": "fehlerart",
+          "wert": "tempoverlust"
+        }
       ]
     },
     {
@@ -333,18 +460,33 @@
       "rolle": "strasse",
       "portraet": "portraets/harlan.svg",
       "immunGegen": ["grossesMaul"],
-      "staerke": { "art": "aktuell", "versatz": 0 },
-      "gewichte": { "taktikUebersehen": 0.7 },
+      "staerke": {
+        "art": "aktuell",
+        "versatz": 0
+      },
+      "gewichte": {
+        "taktikUebersehen": 0.7
+      },
       "stil": "positionsspieler",
-      "eroeffnung": { "art": "frei" },
-      "steckbrief": [{ "art": "stil", "wert": "positionsspieler" }]
+      "eroeffnung": {
+        "art": "frei"
+      },
+      "steckbrief": [
+        {
+          "art": "stil",
+          "wert": "positionsspieler"
+        }
+      ]
     },
     {
       "kennung": "ironwood.bigJoe",
       "name": "figur.bigJoe.name",
       "rolle": "clubchef",
       "portraet": "portraets/big-joe.svg",
-      "staerke": { "art": "eingang", "versatz": 400 },
+      "staerke": {
+        "art": "eingang",
+        "versatz": 400
+      },
       "gewichte": {
         "taktikUebersehen": 1.5,
         "roentgen": 1.8,
@@ -360,9 +502,18 @@
         "abweichung": 10
       },
       "steckbrief": [
-        { "art": "eroeffnung", "wert": "praxis:Queen's Gambit Declined" },
-        { "art": "fleck", "wert": "roentgen" },
-        { "art": "stil", "wert": "positionsspieler" }
+        {
+          "art": "eroeffnung",
+          "wert": "praxis:Queen's Gambit Declined"
+        },
+        {
+          "art": "fleck",
+          "wert": "roentgen"
+        },
+        {
+          "art": "stil",
+          "wert": "positionsspieler"
+        }
       ]
     },
     {
@@ -370,13 +521,26 @@
       "name": "figur.hank.name",
       "rolle": "clubmitglied",
       "portraet": "portraets/hank.svg",
-      "staerke": { "art": "aktuell", "versatz": 0 },
-      "gewichte": { "koenigPassiv": 1.4 },
+      "staerke": {
+        "art": "aktuell",
+        "versatz": 0
+      },
+      "gewichte": {
+        "koenigPassiv": 1.4
+      },
       "stil": "verteidiger",
-      "eroeffnung": { "art": "praxis" },
+      "eroeffnung": {
+        "art": "praxis"
+      },
       "steckbrief": [
-        { "art": "stil", "wert": "verteidiger" },
-        { "art": "fehlerart", "wert": "koenigPassiv" }
+        {
+          "art": "stil",
+          "wert": "verteidiger"
+        },
+        {
+          "art": "fehlerart",
+          "wert": "koenigPassiv"
+        }
       ]
     },
     {
@@ -384,13 +548,26 @@
       "name": "figur.priya.name",
       "rolle": "clubmitglied",
       "portraet": "portraets/priya.svg",
-      "staerke": { "art": "aktuell", "versatz": 50 },
-      "gewichte": { "bauernraub": 1.3 },
+      "staerke": {
+        "art": "aktuell",
+        "versatz": 50
+      },
+      "gewichte": {
+        "bauernraub": 1.3
+      },
       "stil": "taktiker",
-      "eroeffnung": { "art": "praxis" },
+      "eroeffnung": {
+        "art": "praxis"
+      },
       "steckbrief": [
-        { "art": "stil", "wert": "taktiker" },
-        { "art": "fehlerart", "wert": "bauernraub" }
+        {
+          "art": "stil",
+          "wert": "taktiker"
+        },
+        {
+          "art": "fehlerart",
+          "wert": "bauernraub"
+        }
       ]
     },
     {
@@ -398,13 +575,26 @@
       "name": "figur.gus.name",
       "rolle": "strasse",
       "portraet": "portraets/gus.svg",
-      "staerke": { "art": "aktuell", "versatz": -50 },
-      "gewichte": { "falscherAbtausch": 1.4 },
+      "staerke": {
+        "art": "aktuell",
+        "versatz": -50
+      },
+      "gewichte": {
+        "falscherAbtausch": 1.4
+      },
       "stil": "vereinfacher",
-      "eroeffnung": { "art": "frei" },
+      "eroeffnung": {
+        "art": "frei"
+      },
       "steckbrief": [
-        { "art": "stil", "wert": "vereinfacher" },
-        { "art": "fehlerart", "wert": "falscherAbtausch" }
+        {
+          "art": "stil",
+          "wert": "vereinfacher"
+        },
+        {
+          "art": "fehlerart",
+          "wert": "falscherAbtausch"
+        }
       ]
     },
     {
@@ -412,9 +602,17 @@
       "name": "figur.mutter.name",
       "rolle": "story",
       "portraet": "portraets/mutter.svg",
-      "staerke": { "art": "eingang", "versatz": 250 },
-      "phasenversatz": { "mittelspiel": -1 },
-      "gewichte": { "taktikUebersehen": 1.6, "roentgen": 1.8 },
+      "staerke": {
+        "art": "eingang",
+        "versatz": 250
+      },
+      "phasenversatz": {
+        "mittelspiel": -1
+      },
+      "gewichte": {
+        "taktikUebersehen": 1.6,
+        "roentgen": 1.8
+      },
       "stil": "positionsspieler",
       "eroeffnung": {
         "art": "fest",
@@ -423,8 +621,14 @@
       },
       "menschlich": true,
       "steckbrief": [
-        { "art": "eroeffnung", "wert": "praxis:Queen's Gambit Declined" },
-        { "art": "fleck", "wert": "roentgen" }
+        {
+          "art": "eroeffnung",
+          "wert": "praxis:Queen's Gambit Declined"
+        },
+        {
+          "art": "fleck",
+          "wert": "roentgen"
+        }
       ]
     },
     {
@@ -433,13 +637,26 @@
       "rolle": "strasse",
       "portraet": "portraets/joggerin.svg",
       "immunGegen": ["grossesMaul"],
-      "staerke": { "art": "aktuell", "versatz": -100 },
-      "gewichte": { "schlagreflex": 1.4 },
+      "staerke": {
+        "art": "aktuell",
+        "versatz": -100
+      },
+      "gewichte": {
+        "schlagreflex": 1.4
+      },
       "stil": "draufgaenger",
-      "eroeffnung": { "art": "frei" },
+      "eroeffnung": {
+        "art": "frei"
+      },
       "steckbrief": [
-        { "art": "stil", "wert": "draufgaenger" },
-        { "art": "fehlerart", "wert": "schlagreflex" }
+        {
+          "art": "stil",
+          "wert": "draufgaenger"
+        },
+        {
+          "art": "fehlerart",
+          "wert": "schlagreflex"
+        }
       ]
     },
     {
@@ -448,13 +665,30 @@
       "rolle": "strasse",
       "portraet": "portraets/dash.svg",
       "immunGegen": ["grossesMaul", "ablenkung"],
-      "staerke": { "art": "aktuell", "versatz": -50 },
-      "gewichte": { "drohungIgnoriert": 1.5, "schlagreflex": 1.3 },
-      "stil": { "angreifer": 110, "draufgaenger": 90 },
-      "eroeffnung": { "art": "frei" },
+      "staerke": {
+        "art": "aktuell",
+        "versatz": -50
+      },
+      "gewichte": {
+        "drohungIgnoriert": 1.5,
+        "schlagreflex": 1.3
+      },
+      "stil": {
+        "angreifer": 110,
+        "draufgaenger": 90
+      },
+      "eroeffnung": {
+        "art": "frei"
+      },
       "steckbrief": [
-        { "art": "stil", "wert": "angreifer" },
-        { "art": "fehlerart", "wert": "drohungIgnoriert" }
+        {
+          "art": "stil",
+          "wert": "angreifer"
+        },
+        {
+          "art": "fehlerart",
+          "wert": "drohungIgnoriert"
+        }
       ]
     },
     {
@@ -462,8 +696,13 @@
       "name": "figur.nova.name",
       "rolle": "clubmitglied",
       "portraet": "portraets/nova.svg",
-      "staerke": { "art": "aktuell", "versatz": 50 },
-      "gewichte": { "ungenau": 0.7 },
+      "staerke": {
+        "art": "aktuell",
+        "versatz": 50
+      },
+      "gewichte": {
+        "ungenau": 0.7
+      },
       "stil": "universell",
       "eroeffnung": {
         "art": "fest",
@@ -471,8 +710,14 @@
         "abweichung": 10
       },
       "steckbrief": [
-        { "art": "eroeffnung", "wert": "praxis:Sicilian Defense" },
-        { "art": "stil", "wert": "universell" }
+        {
+          "art": "eroeffnung",
+          "wert": "praxis:Sicilian Defense"
+        },
+        {
+          "art": "stil",
+          "wert": "universell"
+        }
       ]
     },
     {
@@ -480,13 +725,27 @@
       "name": "figur.theo.name",
       "rolle": "clubmitglied",
       "portraet": "portraets/theo.svg",
-      "staerke": { "art": "aktuell", "versatz": 0 },
-      "gewichte": { "tempoverlust": 1.4, "koenigMitte": 1.2 },
+      "staerke": {
+        "art": "aktuell",
+        "versatz": 0
+      },
+      "gewichte": {
+        "tempoverlust": 1.4,
+        "koenigMitte": 1.2
+      },
       "stil": "positionsspieler",
-      "eroeffnung": { "art": "praxis" },
+      "eroeffnung": {
+        "art": "praxis"
+      },
       "steckbrief": [
-        { "art": "stil", "wert": "positionsspieler" },
-        { "art": "fehlerart", "wert": "tempoverlust" }
+        {
+          "art": "stil",
+          "wert": "positionsspieler"
+        },
+        {
+          "art": "fehlerart",
+          "wert": "tempoverlust"
+        }
       ]
     },
     {
@@ -495,13 +754,26 @@
       "rolle": "strasse",
       "portraet": "portraets/schiffskoch.svg",
       "immunGegen": ["ablenkung"],
-      "staerke": { "art": "aktuell", "versatz": -50 },
-      "gewichte": { "falscherAbtausch": 1.4 },
+      "staerke": {
+        "art": "aktuell",
+        "versatz": -50
+      },
+      "gewichte": {
+        "falscherAbtausch": 1.4
+      },
       "stil": "vereinfacher",
-      "eroeffnung": { "art": "frei" },
+      "eroeffnung": {
+        "art": "frei"
+      },
       "steckbrief": [
-        { "art": "stil", "wert": "vereinfacher" },
-        { "art": "fehlerart", "wert": "falscherAbtausch" }
+        {
+          "art": "stil",
+          "wert": "vereinfacher"
+        },
+        {
+          "art": "fehlerart",
+          "wert": "falscherAbtausch"
+        }
       ]
     },
     {
@@ -510,13 +782,27 @@
       "rolle": "strasse",
       "portraet": "portraets/batiste.svg",
       "immunGegen": ["kuehlerKopf", "gruebelfalle", "grossesMaul", "ablenkung"],
-      "staerke": { "art": "aktuell", "versatz": 0 },
-      "gewichte": { "koenigPassiv": 1.3, "bauernzugOhneNot": 0.7 },
+      "staerke": {
+        "art": "aktuell",
+        "versatz": 0
+      },
+      "gewichte": {
+        "koenigPassiv": 1.3,
+        "bauernzugOhneNot": 0.7
+      },
       "stil": "verteidiger",
-      "eroeffnung": { "art": "frei" },
+      "eroeffnung": {
+        "art": "frei"
+      },
       "steckbrief": [
-        { "art": "stil", "wert": "verteidiger" },
-        { "art": "fehlerart", "wert": "koenigPassiv" }
+        {
+          "art": "stil",
+          "wert": "verteidiger"
+        },
+        {
+          "art": "fehlerart",
+          "wert": "koenigPassiv"
+        }
       ]
     },
     {
@@ -524,8 +810,13 @@
       "name": "figur.remy.name",
       "rolle": "clubmitglied",
       "portraet": "portraets/remy.svg",
-      "staerke": { "art": "aktuell", "versatz": 0 },
-      "gewichte": { "koenigsschild": 1.4 },
+      "staerke": {
+        "art": "aktuell",
+        "versatz": 0
+      },
+      "gewichte": {
+        "koenigsschild": 1.4
+      },
       "stil": "angreifer",
       "eroeffnung": {
         "art": "fest",
@@ -533,9 +824,18 @@
         "abweichung": 20
       },
       "steckbrief": [
-        { "art": "stil", "wert": "angreifer" },
-        { "art": "eroeffnung", "wert": "praxis:King's Gambit" },
-        { "art": "fehlerart", "wert": "koenigsschild" }
+        {
+          "art": "stil",
+          "wert": "angreifer"
+        },
+        {
+          "art": "eroeffnung",
+          "wert": "praxis:King's Gambit"
+        },
+        {
+          "art": "fehlerart",
+          "wert": "koenigsschild"
+        }
       ]
     },
     {
@@ -543,13 +843,26 @@
       "name": "figur.lou.name",
       "rolle": "clubmitglied",
       "portraet": "portraets/lou.svg",
-      "staerke": { "art": "aktuell", "versatz": -50 },
-      "gewichte": { "bauernvorstoss": 1.5 },
+      "staerke": {
+        "art": "aktuell",
+        "versatz": -50
+      },
+      "gewichte": {
+        "bauernvorstoss": 1.5
+      },
       "stil": "positionsspieler",
-      "eroeffnung": { "art": "praxis" },
+      "eroeffnung": {
+        "art": "praxis"
+      },
       "steckbrief": [
-        { "art": "stil", "wert": "positionsspieler" },
-        { "art": "fehlerart", "wert": "bauernvorstoss" }
+        {
+          "art": "stil",
+          "wert": "positionsspieler"
+        },
+        {
+          "art": "fehlerart",
+          "wert": "bauernvorstoss"
+        }
       ]
     },
     {
@@ -557,24 +870,50 @@
       "name": "figur.celeste.name",
       "rolle": "story",
       "portraet": "portraets/celeste.svg",
-      "staerke": { "art": "aktuell", "versatz": -300 },
-      "gewichte": { "figurHaengen": 2, "ungenau": 1.5 },
+      "staerke": {
+        "art": "aktuell",
+        "versatz": -300
+      },
+      "gewichte": {
+        "figurHaengen": 2,
+        "ungenau": 1.5
+      },
       "stil": "universell",
-      "eroeffnung": { "art": "frei" },
-      "steckbrief": [{ "art": "fehlerart", "wert": "figurHaengen" }]
+      "eroeffnung": {
+        "art": "frei"
+      },
+      "steckbrief": [
+        {
+          "art": "fehlerart",
+          "wert": "figurHaengen"
+        }
+      ]
     },
     {
       "kennung": "desertSprings.buck",
       "name": "figur.buck.name",
       "rolle": "strasse",
       "portraet": "portraets/buck.svg",
-      "staerke": { "art": "aktuell", "versatz": -100 },
-      "gewichte": { "schlagreflex": 1.5 },
+      "staerke": {
+        "art": "aktuell",
+        "versatz": -100
+      },
+      "gewichte": {
+        "schlagreflex": 1.5
+      },
       "stil": "angreifer",
-      "eroeffnung": { "art": "frei" },
+      "eroeffnung": {
+        "art": "frei"
+      },
       "steckbrief": [
-        { "art": "stil", "wert": "angreifer" },
-        { "art": "fehlerart", "wert": "schlagreflex" }
+        {
+          "art": "stil",
+          "wert": "angreifer"
+        },
+        {
+          "art": "fehlerart",
+          "wert": "schlagreflex"
+        }
       ]
     },
     {
@@ -582,13 +921,26 @@
       "name": "figur.tomas.name",
       "rolle": "clubmitglied",
       "portraet": "portraets/tomas.svg",
-      "staerke": { "art": "aktuell", "versatz": 0 },
-      "gewichte": { "koenigPassiv": 1.3 },
+      "staerke": {
+        "art": "aktuell",
+        "versatz": 0
+      },
+      "gewichte": {
+        "koenigPassiv": 1.3
+      },
       "stil": "verteidiger",
-      "eroeffnung": { "art": "praxis" },
+      "eroeffnung": {
+        "art": "praxis"
+      },
       "steckbrief": [
-        { "art": "stil", "wert": "verteidiger" },
-        { "art": "fehlerart", "wert": "koenigPassiv" }
+        {
+          "art": "stil",
+          "wert": "verteidiger"
+        },
+        {
+          "art": "fehlerart",
+          "wert": "koenigPassiv"
+        }
       ]
     },
     {
@@ -596,8 +948,13 @@
       "name": "figur.dot.name",
       "rolle": "clubmitglied",
       "portraet": "portraets/dot.svg",
-      "staerke": { "art": "aktuell", "versatz": 50 },
-      "gewichte": { "taktikUebersehen": 1.2 },
+      "staerke": {
+        "art": "aktuell",
+        "versatz": 50
+      },
+      "gewichte": {
+        "taktikUebersehen": 1.2
+      },
       "stil": "positionsspieler",
       "eroeffnung": {
         "art": "fest",
@@ -605,8 +962,14 @@
         "abweichung": 10
       },
       "steckbrief": [
-        { "art": "eroeffnung", "wert": "praxis:Queen's Gambit Declined" },
-        { "art": "stil", "wert": "positionsspieler" }
+        {
+          "art": "eroeffnung",
+          "wert": "praxis:Queen's Gambit Declined"
+        },
+        {
+          "art": "stil",
+          "wert": "positionsspieler"
+        }
       ]
     },
     {
@@ -1153,6 +1516,52 @@
         {
           "art": "stil",
           "wert": "angreifer"
+        }
+      ]
+    },
+    {
+      "kennung": "wegDesertSummit.mags",
+      "name": "figur.mags.name",
+      "rolle": "strasse",
+      "portraet": "portraets/mags.svg",
+      "staerke": {
+        "art": "aktuell",
+        "versatz": -50
+      },
+      "stil": {
+        "angreifer": 120,
+        "taktiker": 100
+      },
+      "eroeffnung": {
+        "art": "frei"
+      },
+      "steckbrief": [
+        {
+          "art": "fleck",
+          "wert": "rueckzug"
+        }
+      ]
+    },
+    {
+      "kennung": "wegDesertSummit.mamaBear",
+      "name": "figur.mamaBear.name",
+      "rolle": "strasse",
+      "portraet": "portraets/mama-bear.svg",
+      "staerke": {
+        "art": "aktuell",
+        "versatz": -80
+      },
+      "stil": {
+        "angreifer": 90,
+        "taktiker": 90
+      },
+      "eroeffnung": {
+        "art": "frei"
+      },
+      "steckbrief": [
+        {
+          "art": "fleck",
+          "wert": "rueckzug"
         }
       ]
     }

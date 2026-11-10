@@ -268,6 +268,31 @@
       "ort": "sternwarte",
       "name": "fund.finchBauerG.name",
       "text": "fund.finchBauerG.text"
+    },
+    {
+      "kennung": "kreide3",
+      "ort": "wegDesertSummit",
+      "name": "fund.kreide3.name",
+      "text": "fund.kreide3.text"
+    },
+    {
+      "kennung": "finchSpringerB",
+      "ort": "wegDesertSummit",
+      "name": "fund.finchSpringerB.name",
+      "text": "fund.finchSpringerB.text"
+    },
+    {
+      "kennung": "seite08",
+      "ort": "wegDesertSummit",
+      "name": "fund.seite08.name",
+      "text": "fund.seite08.text",
+      "muenzen": 5
+    },
+    {
+      "kennung": "spurPM4",
+      "ort": "wegDesertSummit",
+      "name": "fund.spurPM4.name",
+      "text": "fund.spurPM4.text"
     }
   ]
 }

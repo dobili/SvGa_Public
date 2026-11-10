@@ -172,6 +172,10 @@ const FIGUREN = {
   ferris: ["long07", "blond", "h2", "variant17", "00b159", "", "", "variant03"], // Sol Ferris, Kletterin oben, Weg 6
   ngata: ["short20", "grau", "h7", "variant21", "03396c", "light03", "", ""], // Dr. Ngata, Sternwarte, Funkschach
   lucia: ["long12", "dunkelbraun", "h4", "variant05", "614f8a", "", "", ""], // Lucía, zeichnet das Sternbild Springer
+  // Runde 6 (mittel-4): Weg 7
+  mags: ["long11", "rot", "h3", "variant18", "614f8a", "", "", "variant08"], // Kreidespringerin im Hinterzimmer, Kühlwagenfahrerin
+  "ruth-keene": ["long01", "hellgrau", "h5", "variant20", "d11141", "", "", "variant04"], // Ruth Keene, Funkname Mama Bear
+  "mama-bear": ["long01", "hellgrau", "h5", "variant20", "d11141", "", "", "variant04"], // Mama Bear am Funk (Ruth Keene)
 };
 
 /** Alle Porträtnamen, die die Spieldaten nennen (gegner.json, orte.json). */

@@ -2475,6 +2475,41 @@
           ]
         }
       ]
+    },
+    {
+      "kennung": "wegDesertSummit.funkschach",
+      "titel": "quest.funkschach.titel",
+      "typ": "hilfe",
+      "ort": "wegDesertSummit",
+      "haupt": false,
+      "klein": true,
+      "start": {
+        "art": "dialog",
+        "knoten": "weg-desert-summit.funkschach_start"
+      },
+      "schritte": [
+        {
+          "text": "quest.funkschach.schritt1",
+          "ereignis": {
+            "art": "partie",
+            "begegnung": "wegDesertSummit.funkschach",
+            "ausgang": ["sieg", "remis", "niederlage"]
+          }
+        },
+        {
+          "text": "quest.funkschach.schritt2",
+          "ereignis": {
+            "art": "dialog",
+            "knoten": "weg-desert-summit.funkschach_ende"
+          },
+          "wirkungen": [
+            {
+              "art": "muenzen",
+              "anzahl": 30
+            }
+          ]
+        }
+      ]
     }
   ]
 }

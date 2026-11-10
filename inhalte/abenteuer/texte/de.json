@@ -1326,5 +1326,20 @@
   "figur.ngata.name": "Dr. Ngata",
   "figur.lucia.name": "Lucía",
   "quest.koenigsangriffSterne.titel": "Königsangriff unter Sternen",
-  "quest.koenigsangriffSterne.schritt1": "Löse Dr. Ngatas Mattbilder, bevor der Mond hinter dem Canyon versinkt."
+  "quest.koenigsangriffSterne.schritt1": "Löse Dr. Ngatas Mattbilder, bevor der Mond hinter dem Canyon versinkt.",
+  "fund.kreide3.name": "Kreidespringer am Diner",
+  "fund.kreide3.text": "Ein Springer aus Kreide an der Seitenwand des Diners. Dahinter trifft sich der Club ohne Haus.",
+  "fund.finchSpringerB.name": "Weißer Springer aus Buchsbaum",
+  "fund.finchSpringerB.text": "Aus dem Blumenkasten am Motel, neben einem Finkenzeichen aus Blech. Unter dem Fuß ist ein Feld eingebrannt.",
+  "fund.seite08.name": "Buchseite, Kapitel 8",
+  "fund.seite08.text": "Endspiel-Fundament. Eine Seite aus einem Handbuch, Kapitel 8.",
+  "fund.spurPM4.name": "Frachtbrief mit Logo",
+  "fund.spurPM4.text": "Vom Sattelzug in der Haltebucht: versiegelte Kisten von Perfect Move, Ziel „Gebirge“. Die Kisten summen.",
+  "ort.wegDesertSummit.hinterzimmer": "Hinterzimmer des Diners",
+  "figur.mags.name": "Mags",
+  "figur.ruthKeene.name": "Ruth Keene",
+  "figur.mamaBear.name": "Mama Bear",
+  "quest.funkschach.titel": "Schach über Funk",
+  "quest.funkschach.schritt1": "Spiel im Funkturnier der Fernfahrer mit, Gegnerin ist Mama Bear.",
+  "quest.funkschach.schritt2": "Hör dir an, was Mama Bear über ihre Fracht erzählt."
 }

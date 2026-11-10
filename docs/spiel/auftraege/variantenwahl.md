@@ -229,19 +229,122 @@ Die Varianten-Kennungen `musikhaus-neu` und `diner-neon` folgen der Wahl ihrer G
     1. Die Vitrine mit dem Pokal von 1985 steht rechts an der Ostwand weit weg von der Nordwand (x 15–16, y 5–7) und ist ein hoher Schrank.
     2. Der Dielenboden hat das laute Schrägmuster.
     3. Die Endspieldiagramme sind zwei kleine grüne Karos (x 4, y 2 und ein Bild x 13–14, y 1–2 ist ein Landschaftsgemälde), an den Clubtischen sitzt niemand, drei Figuren stehen an der Südwand.
-- [ ] `weg-crossroads-pinewood-huetten` (wegCrossroadsPinewood.huetten)
-- [ ] `weg-crossroads-pinewood-riesenbaeume` (wegCrossroadsPinewood.riesenbaeume)
-- [ ] `weg-delacroix-desert-canyonpfad` (wegDelacroixDesert.canyonpfad)
-- [ ] `weg-delacroix-desert-felsbogen` (wegDelacroixDesert.felsbogen)
-- [ ] `weg-desert-summit-bergstrasse` (wegDesertSummit.bergstrasse)
-- [ ] `weg-desert-summit-diner` (wegDesertSummit.diner)
-- [ ] `weg-desert-summit-hinterzimmer` (wegDesertSummit.hinterzimmer)
-- [ ] `weg-ghost-capital-leuchtturm` (wegGhostCapital.leuchtturm)
-- [ ] `weg-ghost-capital-seeufer` (wegGhostCapital.seeufer)
-- [ ] `weg-pinewood-ghost-canyonrand` (wegPinewoodGhost.canyonrand)
-- [ ] `weg-pinewood-ghost-staubstrasse` (wegPinewoodGhost.staubstrasse)
-- [ ] `weg-pinewood-ghost-tankstelle` (wegPinewoodGhost.tankstelle)
-- [ ] `weg-silicon-delacroix-deich` (wegSiliconDelacroix.deich)
-- [ ] `weg-silicon-delacroix-faehre` (wegSiliconDelacroix.faehre)
-- [ ] `weg-summit-crossroads-geysirbecken` (wegSummitCrossroads.geysirbecken)
-- [ ] `weg-summit-crossroads-praerie` (wegSummitCrossroads.praerie)
+- [x] `weg-crossroads-pinewood-huetten` (wegCrossroadsPinewood.huetten): **C**
+  - Warum: Als einzige Fassung ein Nadelwald: dichte Tannen beiderseits des Wegs, Schutzhütte, Lichtung mit Bank und Feuerstelle, Bach mit Steg; A und B sind Wiesen mit einzelnen Laubbäumen.
+  - Mängel:
+    1. Der Weg besteht aus langen Geraden mit rechtwinkligen Versprüngen statt Bögen (etwa x 9–10, y 14–22.
+    2. X 27–29, y 11–20.
+    3. X 89–90, y 9–16).
+    4. Der Bach ist eine schnurgerade senkrechte Linie von Rand zu Rand (x 128–129, y 0–30), der Steg ein kurzes Brett quer darüber.
+    5. Die Schutzhütte steht drei Reihen über dem Weg ohne Pfad zur Tür (x 78–86, y 2–8), Lichtung und Feuerstelle liegen zwischen den Bäumen ohne Picknicktisch (x 56–62, y 4–8), kein Hang mit Felsen.
+- [x] `weg-crossroads-pinewood-riesenbaeume` (wegCrossroadsPinewood.riesenbaeume): **C**
+  - Warum: Dichtester Hain: Mammutbäume beiderseits und mitten im Wald, viele Tannen und Farne, Ranger-Häuschen mit Fahne, Bach mit Steg; A ist lichter, B fast eine Wiese mit Laubbüschen.
+  - Mängel:
+    1. Der Weg läuft in langen Geraden mit rechten Winkeln statt in Kehren (x 15–16, y 5–40.
+    2. X 33–34, y 40–66.
+    3. X 35–36, y 92–116).
+    4. Mitten im Hain liegt ein graues Schachbrett-Pflaster mit vier Fahnen und einer Bank (x 9–18, y 95–106), das die Beschreibung nicht nennt und dessen Zweck unklar ist.
+    5. Der Bach ist eine gerade waagerechte Linie (y 109–110), die Mammutbäume stehen links als Kolonne im gleichen Abstand (x 2–7, y 30–125).
+- [x] `weg-delacroix-desert-canyonpfad` (wegDelacroixDesert.canyonpfad): **C**
+  - Warum: Am dichtesten bepflanzt (Säulen- und blühende Kakteen in Gruppen), klarer Verlauf mit Engstelle und Abzweig nach Norden, Bahnsteig mit Häuschen und Wasserturm im Osten; A ist ähnlich, aber kahler, B hat kaum Kakteen.
+  - Mängel:
+    1. Der Canyon ist ein Grundriss: Boden und Umgebung haben dieselbe rote Textur, getrennt nur durch eine dunkle Linie mit rechtwinkligen Versprüngen (ganze Karte), Felswand gibt es nur stückweise am Nordrand der Abschnitte.
+    2. Eine Rampe hinunter ist nicht zu sehen, der Übergang vom Bahnsteig ist eben (x 126–136, y 8–18).
+    3. Zwei Gleise mit rot-weißen Sperren enden am Westende des Bahnsteigs frei im Fels (x 138–140, y 4–7), das Bachbett mit Kieseln ist nur eine Reihe einzelner Steine.
+- [x] `weg-delacroix-desert-felsbogen` (wegDelacroixDesert.felsbogen): **A**
+  - Warum: Einzige Fassung mit zusammenhängendem Weg: vom Ostabsatz durch den Felsbogen ins tiefere Tal mit Bank, unter der Eisenbahnbrücke hindurch nach Norden auf den langen Absatz und hinunter zum Westrand; in B und C sind die Abschnitte durch Fels getrennt und der Bogen steht frei.
+  - Mängel:
+    1. Der Talboden ist ein Grundriss aus roter Fläche mit dunkler Linie und rechten Winkeln in gleichfarbigem Fels, Höhe liest sich nur an kurzen Wandstücken (ganze Karte).
+    2. Die Eisenbahnbrücke ist ein kurzes Fachwerkstück von vorn, das im Fels beginnt und endet, ohne Gleis links und rechts (x 46–58, y 15–19).
+    3. Der Ostabsatz hat keine sichtbare Verbindung zum Bogen außer einer Kachel (x 99–100, y 17–24), die Bank steht in einer Nische vor der Wand ohne Blick ins Tal (x 82–83, y 18–19).
+- [x] `weg-desert-summit-bergstrasse` (wegDesertSummit.bergstrasse): **C**
+  - Warum: Vier Kehren mit durchgehenden Felsstufen und drei Vegetationszonen wie A, dazu der dichteste Pinienwald oben, mehr Steine und der Rastplatz mit Sattelzug in der Mitte; B hat nur drei Kehren und einen langen leeren Erdstreifen.
+  - Mängel:
+    1. Die Straße ist glatter Asphalt ohne Mittellinie und Randlinie mit rechtwinkligen Kehren (ganze Länge), Leitplanken nur als kurze Stücke an den Querstücken.
+    2. Die Felsstufen sind waagerechte graubraune Bänder von Rand zu Rand, durch die die Straße ohne Rampe oder Einschnitt hindurchläuft (y 51–53, y 81–83, y 107–109), ein Rahmen umläuft die Karte.
+    3. Die Zonen wechseln an schnurgeraden waagerechten Kanten (Gras/Erde y 60, Erde/Sand y 101), der Sattelzug steht von der Seite gezeichnet auf einem grauen Rechteck neben der Straße (x 11–20, y 90–94).
+- [x] `weg-desert-summit-diner` (wegDesertSummit.diner): **C**
+  - Warum: Gleiche Anlage wie A (Diner mit Neonschild, Motel, Parkplatz, Fernfahrerplatz mit zwei Sattelzügen, Tankstelle, Felsbogen, Werbetafel, Wasserturm), dazu mehr Kakteen und ein Haus am Ostende; B hat keine Tankstelle und keinen Felsbogen.
+  - Mängel:
+    1. Die Old Mother Road ist glatter Asphalt ohne Markierung und springt in rechten Winkeln um bis zu fünf Reihen (x 50–55, y 11–20.
+    2. X 104–108, y 12–18).
+    3. Der Fernfahrerplatz ist ein eckiger Asphaltblock ohne Buchten, die Sattelzüge stehen von der Seite gezeichnet darauf (x 56–67, y 15–25).
+    4. Die Tafelberge sind nur ein Wandstreifen am Nordrand und eine Kastenlinie am Südrand, ein Rahmen umläuft die Karte.
+    5. Die Tankstelle ist winzig neben dem Felsbogen (x 32–39, y 12–17) und die Zapfsäulen stehen im Sand.
+- [x] `weg-desert-summit-hinterzimmer` (wegDesertSummit.hinterzimmer): **C**
+  - Warum: Drei Tische mit Brettern und je zwei Hockern gleichmäßig im Raum, Tafel und Regal an der Nordwand, Kisten und Fass an den Wänden, ruhiger Dielenboden; A hat das laute Schrägparkett und einen Tisch mit nur einem Hocker, B Steinplatten und Ziegelwand.
+  - Mängel:
+    1. Die beiden Figuren stehen frei im Raum statt an einem Brett (x 7, y 3–4.
+    2. X 10, y 8–9), niemand sitzt.
+    3. Der Kistenstapel links (x 0–1, y 3–4) ist ein von der Seite gezeichnetes Regalstück, das Fass steht einzeln an der Westwand (x 0, y 8).
+    4. Die Tafel ist leer, kein Kreidespringer oder Zeichen deutet auf den Treffpunkt hin, die Dielen sind leicht unscharf.
+- [x] `weg-ghost-capital-leuchtturm` (wegGhostCapital.leuchtturm): **A**
+  - Warum: Leuchtturm und Wärterhaus mittig auf der grünen Landzunge, Weg dicht am Turmfuß vorbei, Bank, Wohnmobil und Tannen im Süden; B rückt den Turm nach Osten und hat Laubbäume, C ist ganz in orange Erde getaucht und passt nicht zum Seeufer.
+  - Mängel:
+    1. Die Landzunge ist ein kleines Rechteck, das nur vier Reihen in den See ragt (x 55–75, y 3–9), Felsen am Ufer fehlen, „felsig“ ist nichts.
+    2. Zwischen See und Wiese liegt ein oranger Erdstreifen über die ganze Breite (y 9–11), dessen Zweck neben dem eigentlichen Weg unklar ist.
+    3. Der Weg hat rechtwinklige Versprünge, die Tannen im Süden stehen in drei gleichmäßigen Reihen (y 19–28), der Wald hat keinen Rand.
+- [x] `weg-ghost-capital-seeufer` (wegGhostCapital.seeufer): **A**
+  - Warum: Strand mit drei Sonnenschirmen und Handtüchern, Fähranleger mit Schiff, zwei Imbisswagen, Schachtische mit Lichterkette und Bühne im Osten, Weg hinter dem Strand, Tannen im Süden; B hat weniger Strandleben, C ist orange Erde statt Wiese.
+  - Mängel:
+    1. Der „helle Sandstrand“ ist ein oranger Erdstreifen in Wegfarbe (y 9–11).
+    2. Das Fährhaus ist ein moderner Glasbau mit Flachdach auf einem eckigen Erdvorsprung (x 44–55, y 4–11), das Schiff eine kleine weiße Jacht quer am Steg (x 60–70, y 3–6).
+    3. Der Absperrbock steht im Gras abseits des Wegs (x 3–4, y 17–18), der Wachmann nicht daneben, die Tannen im Süden in gleichmäßigen Reihen.
+- [x] `weg-pinewood-ghost-canyonrand` (wegPinewoodGhost.canyonrand): **C**
+  - Warum: Deutlichster Übergang vom dichten Kiefernwald im Westen zu Fels und Kakteen im Osten, Weg nahe an der Kante, zwei Bänke und Tafeln an der Kante; in A ist der Wald klein und B fast nur Stein.
+  - Mängel:
+    1. Die Kante ist eine Doppellinie mit einem schmalen Wandstreifen (y 20–21), darunter liegt der Canyongrund als heller, völlig leerer Streifen auf gleicher Höhe (y 22–28): Tiefe sieht man nicht.
+    2. Ein Rahmen umläuft die Karte.
+    3. Die Kletterwand ist ein kleiner Felsblock auf der Kante (x 77–80, y 16–21), nicht als Kletterwand mit Routen erkennbar.
+    4. Gras und roter Fels stoßen an einer senkrechten geraden Linie aneinander (x 90, y 0–17), der Weg hat rechtwinklige Versprünge.
+- [x] `weg-pinewood-ghost-staubstrasse` (wegPinewoodGhost.staubstrasse): **C**
+  - Warum: Dichteste Wüste: viele Säulen- und blühende Kakteen, Autowrack, Telegrafenmasten, schiefe Zaunstücke, Staubteufel, Planwagenwrack, verlassene Tankstelle am Weg; A ist ähnlich, aber lichter, B fast leer.
+  - Mängel:
+    1. Die Piste ist ein glattes hellgraues Band mit rechtwinkligen Versprüngen um bis zu vier Reihen (x 13–15, y 14–21.
+    2. X 35–37, y 15–21.
+    3. X 59–61, y 8–15.
+    4. X 109–111, y 12–19) ohne Fahrspur oder Rand.
+    5. Die Telegrafenmasten stehen ohne Draht in ungleichen Abständen, teils auf dem Weg (x 23, y 16–20.
+    6. X 120, y 12–16).
+    7. Die Zaunstücke sind kurze gerade Stücke ohne Zusammenhang (x 13–20, y 4.
+    8. X 39–47, y 24.
+    9. X 99–107, y 23), zwei Autowracks statt einem (x 50–54, y 3–6.
+    10. X 104–108, y 4–7).
+- [x] `weg-pinewood-ghost-tankstelle` (wegPinewoodGhost.tankstelle): **A**
+  - Warum: Greifarm mit Tisch und Brett in der Mitte, davor ein zweiter Tisch mit Brett und Hocker, Regale an der Nordwand, Reifen links, Fass rechts, Steinboden; B hat Holzwand und Schrägparkett wie ein Wohnraum, C rückt den Arm an die Ostwand.
+  - Mängel:
+    1. Der Raum sieht nicht verlassen aus: saubere helle Platten und Ziegelwand, kein Staub, keine Risse, kein Gerümpel.
+    2. In den Regalen stehen bunte Dosen statt Ölkanistern (x 1–2 und x 9–10, y 1–3).
+    3. Zwei Tische mit Brett (am Greifarm x 5–6, y 4–5 und darunter x 5–6, y 6–7), die Beschreibung nennt einen.
+    4. Nichts erinnert an eine Tankstelle (keine Kasse, Theke, Werkstattgrube).
+- [x] `weg-silicon-delacroix-deich` (wegSiliconDelacroix.deich): **C**
+  - Warum: Am reichsten: Bojenkette und Fähre am Steg, Deichkrone mit Sandsäcken, Rampe zum Platz, Marsch mit vielen Bäumen, Schilf, Blumen, Scheune, Zeltlager, zwei Häuser und ein Boot; A ist dünner, B hat eine lange Zaunlinie und Flachdachhäuser ohne Grund.
+  - Mängel:
+    1. Der Deich hat keine Höhe: Krone (y 9), grüner Hangstreifen (y 12–13) und Marsch liegen flach untereinander, getrennt durch eine gerade Heckenlinie.
+    2. Das Meer ist ein schmaler türkiser Streifen von sechs Reihen statt grau mit Steinschüttung.
+    3. Ein Motorboot und ein Ruderboot liegen mitten in der Wiese (x 60–64, y 28–30.
+    4. X 124–129, y 26–29), das Loch in der Krone ist nicht zu erkennen, der Erdweg ist 220 Kacheln schnurgerade.
+- [x] `weg-silicon-delacroix-faehre` (wegSiliconDelacroix.faehre): **A**
+  - Warum: Entspricht der Beschreibung am genauesten: Achterdeck mit Containern, Kisten, Fässern und Rettungsboot, dann Bordbar mit Tisch und Brett, Salon als Deckhaus, Bankreihen auf dem Vorderdeck, dunkles Holzdeck mit heller Reling; B ist ein leeres gelbes Deck mit vier Autos, C mischt Bäume in Kübeln und ein zweites Boot hinein.
+  - Mängel:
+    1. Die Fähre ist ein Rechteck ohne Bug und Heck, das wie ein Floß im Wasser liegt (x 9–21, y 4–75), kein Schornstein, keine Brücke.
+    2. Salon und Bordbar sind kleine Buden aus anderen Paketen (Fischbude mit Hai x 11–18, y 26–33.
+    3. Holzcontainer mit Klimageräten x 17–23, y 40–45.
+    4. Kiosk x 18–22, y 84–90 im Bild unten), nicht als Schiffsaufbauten lesbar.
+    5. Das Dielenmuster ist das laute Schrägparkett, zehn Bänke stehen in fünf gleichen Reihen ohne Blickrichtung (y 56–78).
+- [x] `weg-summit-crossroads-geysirbecken` (wegSummitCrossroads.geysirbecken): **C**
+  - Warum: Kleinere Becken und die meisten Geysirkegel, breite Sinterflächen dazwischen, Ranger-Haus mit Fahne, Infoplatz mit Bänken, Bisons und Besucher, im Süden Blumenwiese und Tannen; in A und B füllen wenige riesige Rechteckbecken die Karte.
+  - Mängel:
+    1. Die Becken sind exakte Rechtecke mit grauer Mauerlinie statt natürlicher Sinterränder (alle, etwa x 10–20, y 24–38.
+    2. X 0–12 und x 17–30, y 46–56).
+    3. Die Holzstege laufen jeweils schnurgerade mittig durch ein Becken, ein Zickzack zwischen Sinterinseln gibt es nicht, und zwischen den Stegen liegt kein Weg über den Sinter.
+    4. Gras und Sinter stoßen oben und unten an waagerechten Geraden aneinander (y 22 und y 124), die Bisons sind größer als das Ranger-Haus breit ist und die Dampfwolken stehen über dem Wasser statt über den Kegeln.
+- [x] `weg-summit-crossroads-praerie` (wegSummitCrossroads.praerie): **C**
+  - Warum: Vollständigste Farm (rotes Farmhaus, Windrad, Traktor, Silo mit Scheunenanbau, Vogelscheuche, Leiterwagen, Kürbisse, Blumen) und Weizen in geschlossenen Flächen bis an beide Ränder, Weg mit mehreren Kurven; A hat nur Scheune und Windrad, B steht mit lückigen Feldern und einem Silo mitten im Feld da.
+  - Mängel:
+    1. Die rote Scheune mit der Klappe des Sturmkellers fehlt: es gibt Farmhaus und Silo, keine Scheune und keine erkennbare Klappe.
+    2. Der Weizen steht auf Wegerde in Rechtecken mit runden Ecken, die oberen Felder in lichten Reihen mit sichtbarem Boden (x 0–10 und x 18–30, y 2–58).
+    3. Der Weg hat rechtwinklige Versprünge (x 9–14, y 25–26.
+    4. Y 60–61.
+    5. Y 95–96.
+    6. Y 120–121) und wird an einer geraden Kante zur hellgrauen Schotterstraße (y 130), die Strommasten stehen ohne Leitung beiderseits.

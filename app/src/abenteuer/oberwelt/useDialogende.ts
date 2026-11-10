@@ -11,6 +11,7 @@
  */
 import { useRef, useState } from "react";
 import type { Dialogvariablen, Wirkungen } from "../dialog/geschichte";
+import { erfuellt } from "../regeln/bedingung";
 import { variablenAusBesitz, variablenNachDialog } from "../regeln/dialogvariablen";
 import type { Abenteuerstand } from "../schnittstelle/spielstand";
 import { tSpiel } from "../texte/texte";
@@ -129,10 +130,10 @@ export function useDialogende(k: Oberweltkern, partie: Partien, runden: Runden):
     const laden = nimm(m.laden, null);
     if (laden) setzeOffenerLaden(laden);
     const u = nimm(uebergang, null);
-    // `wenn` gilt als erfüllt bei true, einer Zahl über 0 (Nadel) oder einem nicht leeren Text.
-    // Besitz zählt mit (hatLaterne, hatGummistiefel: Sperren S4, S8, S9, S11, S14).
+    // `wenn` ist eine Bedingung (regeln/bedingung.ts); Besitz zählt mit (hatLaterne,
+    // hatGummistiefel: Sperren S4, S8, S9, S11, S14).
     const bedingungen = { ...neu.dialogvariablen, ...variablenAusBesitz(neu) };
-    if (u && (!u.wenn || Boolean(bedingungen[u.wenn])))
+    if (u && (!u.wenn || erfuellt(u.wenn, bedingungen)))
       k.wechsleKarte(u.ziel.karte, u.ziel.ausloeser);
     starteFolge(m, { vorfuehrung: setzeVorfuehrung, runden, partie });
   };

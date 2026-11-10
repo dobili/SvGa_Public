@@ -12,6 +12,7 @@ const { CompilerOptions } = require(
   path.join(APP, "compiler", "CompilerOptions"),
 );
 const { Story } = require(APP);
+const { erfuellt } = require("./bedingung.cjs");
 const DATEN = path.join(HAUPT, "inhalte", "abenteuer");
 
 /** Gebiete in der Reihenfolge der Geschichte (Story-Bibel, Teil 1 bis 4). */
@@ -239,6 +240,11 @@ function verdiene(st, anzahl, quelle) {
   st.zeitachse.push({ art: "muenzen", anzahl, quelle });
 }
 
+/** Ob `wenn` (Bedingung, bedingung.cjs) gilt; Besitz zählt mit wie in der App. */
+function gilt(st, wenn) {
+  return !wenn || erfuellt(wenn, { ...st.vars, ...besitzvariablen(st) });
+}
+
 /** Variablen aus dem Besitz, beim Öffnen jedes Dialogs neu (regeln/dialogvariablen.ts). */
 function besitzvariablen(st) {
   const v = { muenzen: st.muenzen };
@@ -433,8 +439,7 @@ function wendeFolgenAn(welt, st, f, uebergang, reiseErlaubt) {
   for (const w of laden ? laden.angebot : [])
     if (w.art === "gegenstand") st.besitz.add(w.kennung);
   let ziel = f.reise && reiseErlaubt(f.reise.karte) ? f.reise : null;
-  if (uebergang && (!uebergang.wenn || Boolean(st.vars[uebergang.wenn])))
-    ziel = uebergang.ziel;
+  if (uebergang && gilt(st, uebergang.wenn)) ziel = uebergang.ziel;
   if (f.runde) spieleRunde(welt, st, f.runde);
   if (f.partieform) spielePartieform(welt, st, f.partieform);
   if (f.partie) spielePartie(welt, st, f.partie);
@@ -469,6 +474,7 @@ function ausloeserFuer(ort, karte, name) {
 }
 
 module.exports = {
+  gilt,
   MUENZEN_ERSTE_NADEL,
   ladeWelt,
   figurenOhneKarte,

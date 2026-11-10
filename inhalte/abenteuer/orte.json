@@ -3117,6 +3117,9 @@
         {
           "kennung": "desertSprings.aussen",
           "datei": "karten/desert-springs-aussen.json",
+          "zustaende": {
+            "endeAkt3Gesehen": "karten/desert-springs-aussen-meisterschaft.json"
+          },
           "name": "ort.desertSprings.aussen",
           "innen": false
         },
@@ -3129,6 +3132,9 @@
         {
           "kennung": "desertSprings.antiquariat",
           "datei": "karten/desert-springs-antiquariat.json",
+          "zustaende": {
+            "abschiedGesehen und briefGelesen": "karten/desert-springs-antiquariat-leihgabe.json"
+          },
           "name": "ort.desertSprings.antiquariat",
           "innen": true
         }

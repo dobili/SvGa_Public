@@ -86,3 +86,14 @@ def test_engstelle_an_einer_stufe():
     # Versatz mit voller Überlappung (drei Felder hoch an der Stufe): keine Engstelle.
     gut = {(0, 1), (0, 2), (1, 1), (1, 2), (1, 3), (2, 2), (2, 3), (3, 2), (3, 3)}
     assert engstellen(gut, 2) == []
+
+
+def test_mittellinie_zaehlt_zur_fahrbahn():
+    """Runde 9: Eine Straße mit Mittellinie (asphaltMitte) ist nicht drei schmale Streifen."""
+    from pipeline.abenteuer.zusammenhang import pruefe_breiten
+
+    zeilen = ["." * 20, "s" * 20, "m" * 20, "s" * 20, "." * 20]
+    szene = {"boeden": {"s": "asphalt", "m": "asphaltMitte"}}
+    assert pruefe_breiten(szene, zeilen) == []
+    ohne = {"boeden": {"s": "asphalt", "m": "pflaster"}}
+    assert any("zu schmal" in b for b in pruefe_breiten(ohne, zeilen))

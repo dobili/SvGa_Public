@@ -51,7 +51,8 @@ KAPUZEN_KINDER = ("4",)
 
 # Tierart → (Vorlage unter modern-farm/Animals oder modern-exteriors, Rahmenbreite, Rahmenhöhe,
 # Art der Vorlage)
-# Art der Vorlage: "reihen" = Reihe 0 Stand, Reihe 1 Laufen (Hühner, Ziegen …); "streifen" = nur eine
+# Art der Vorlage: "standbild" = ein Einzelbild nach rechts (Bison); "reihen" = Reihe 0 Stand,
+# Reihe 1 Laufen (Hühner, Ziegen …); "streifen" = nur eine
 # Reihe mit einer Bewegung (Taube pickt); "baender" = beschriftete Bänder (Hund, Katze), Stand im
 # ersten, Laufen im fünften Band; "fest:<stand_y>:<lauf_y>" = Reihen an festen Pixelhöhen (Katzen:
 # die Beschriftungen berühren die Bildreihen, die Bänder taugen dort nicht).
@@ -169,6 +170,25 @@ def _baender(bild: Image.Image) -> list[tuple[int, int]]:
     return baender
 
 
+# Wippen beim Laufen für Tiere aus einem Einzelbild (Pixel nach oben je Laufbild).
+WIPPEN = (0, 0, 1, 1, 0, 0)
+
+
+def _aus_standbild(quelle: Image.Image, breite: int, hoehe: int) -> Image.Image:
+    """Ein Tier aus einem Einzelbild nach rechts (Bison von mittel-3): links gespiegelt, oben und unten
+    wie rechts und links (es gibt keine Front- und Rückansicht), Laufen als leichtes Wippen."""
+    rechts = quelle.crop((0, 0, breite, hoehe))
+    links = rechts.transpose(Image.Transpose.FLIP_LEFT_RIGHT)
+    ansichten = (rechts, rechts, links, links)  # Reihenfolge: rechts, oben, links, unten
+    je_richtung = RAHMEN_JE_REIHE // STAND_RAHMEN
+    ziel = Image.new("RGBA", (RAHMEN_JE_REIHE * breite, 2 * hoehe))
+    for i, bild in enumerate(ansichten):
+        ziel.paste(bild, (i * breite, 0))
+        for j in range(je_richtung):
+            ziel.paste(bild, ((i * je_richtung + j) * breite, hoehe - WIPPEN[j % len(WIPPEN)]))
+    return ziel
+
+
 def tierbogen(quelle: Image.Image, breite: int, hoehe: int, art: str) -> Image.Image:
     """Ein Tier im Spielformat: Reihe 0 vier Standbilder, Reihe 1 Laufen (6 je Richtung)."""
     ziel = Image.new("RGBA", (RAHMEN_JE_REIHE * breite, 2 * hoehe))
@@ -180,6 +200,8 @@ def tierbogen(quelle: Image.Image, breite: int, hoehe: int, art: str) -> Image.I
         for i in range(RAHMEN_JE_REIHE):
             ziel.paste(bilder[i % len(bilder)], (i * breite, hoehe))
         return ziel
+    if art == "standbild":
+        return _aus_standbild(quelle, breite, hoehe)
     if art == "richtungen":
         # Eine Reihe mit 4 Richtungen × 6 Bildern (Krähe): je Richtung das erste Bild als Stand.
         je_richtung = RAHMEN_JE_REIHE // STAND_RAHMEN

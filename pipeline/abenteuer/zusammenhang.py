@@ -8,6 +8,7 @@ kartenbild.py verfolgt zusätzlich die gezeichneten Ränder.
 
 import re
 
+from pipeline.abenteuer.bodenraster import HOLZ_BOEDEN
 from pipeline.abenteuer.kartenbau import LEER, WAND, WASSER, K
 
 # Mindestbreiten in Kacheln (KARTENREGELN 10.33): Straße zwei Spuren, Weg zwei Leute nebeneinander.
@@ -25,7 +26,7 @@ WASSER_MINDEST = 2
 # Ein Fluss darf von Feld zu Feld um so viel breiter oder schmaler werden, ein Weg nur um eins.
 WASSER_SPRUNG = 2
 # Holzböden über Wasser (Brücken, Stege) gehören für den Zusammenhang zum Wasserlauf.
-HOLZ = {"dielen", "holzDunkel", "holzHell"}
+HOLZ = HOLZ_BOEDEN
 ENDSTUECK = re.compile(r"Ecke|Ende|Pfosten|Tor|Links|Rechts|Seite|Rand|Left|Right|End|Corner|Post|Gate", re.I)
 
 
@@ -156,13 +157,19 @@ def wasserzeichen(szene: dict) -> set[str]:
     return {WASSER} | set(szene.get("bruecken", [])) | holz
 
 
+# Böden, die als Markierung auf einer Fahrbahn liegen und für die Breite zu ihr zählen.
+FAHRBAHN_MARKIERUNG = {"asphaltMitte": "asphalt", "asphaltMitteSenkrecht": "asphalt"}
+
+
 def pruefe_breiten(szene: dict, zeilen: list[str]) -> list[str]:
     """Mindestbreite und gleichmäßige Breite von Straßen, Wegen und Flüssen (10.33, 10.34)."""
     befunde, groesse = [], (len(zeilen[0]), len(zeilen))
     boeden = szene.get("boeden", {})
     arten = {z: boeden[z] for z in boeden if boeden[z] in MINDEST and z not in wasserzeichen(szene)}
     for zeichen, art in sorted(arten.items()):
-        for teil in _komponenten(zeilen, lambda z, c=zeichen: z == c):
+        # Markierungen (Mittellinie) gehören zur Fahrbahn ihres Belags (asphaltMitte → asphalt).
+        familie = {zeichen} | {z for z, a in boeden.items() if FAHRBAHN_MARKIERUNG.get(a) == art}
+        for teil in _komponenten(zeilen, lambda z, f=familie: z in f):
             gerade = breiten(teil, groesse, diagonal=False)
             if sorted(gerade.values())[len(gerade) // 2] > FLAECHE:
                 continue  # Feld oder Platz, kein Weg

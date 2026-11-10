@@ -353,6 +353,32 @@
         "gullys": 0.01
       }
     },
+    "sandplatz": {
+      "bogen": "gelaende",
+      "feld": [
+        9,
+        31
+      ],
+      "rand": [
+        8,
+        30
+      ],
+      "diagonalen": true
+    },
+    "asphaltMitte": {
+      "bogen": "stadt",
+      "feld": [
+        12,
+        6
+      ]
+    },
+    "asphaltMitteSenkrecht": {
+      "bogen": "stadt",
+      "feld": [
+        12,
+        7
+      ]
+    },
     "hecke": {
       "bogen": "gelaende",
       "feld": [

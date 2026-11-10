@@ -8,6 +8,8 @@
  * S > 0,2, L > 0,35) → halb zum Grau; Wasser (0,45 ≤ H ≤ 0,6) → kühler, nur mit `wasser` (bei
  * Möbeln aus, sonst würden blaue Autos dunkel).
  *
+ * Bäume und Büsche bekommen Schneekappen statt ganz weißer Kronen (faerbeMoebelDaten, Regel 10.67).
+ *
  * Rolle im Gesamtbild: Reine Logik plus das Umfärben einer Phaser-Textur über eine Leinwand; die
  * Szene (szene.ts) ruft `faerbeWinterlich` vor dem Aufstellen der Möbel. Winter erkennt sie an der
  * Karteneigenschaft `jahreszeit` (kartenbau schreibt sie aus der Szene).
@@ -73,18 +75,74 @@ export function winterfarbe(r: number, g: number, b: number, wasser = true): Far
   return [r, g, b];
 }
 
-/** Färbt Bilddaten an Ort und Stelle um (RGBA, Transparenz bleibt); je Farbe einmal gerechnet. */
-export function faerbeDaten(daten: Uint8ClampedArray, wasser = false): void {
-  const gemerkt = new Map<number, Farbe>();
-  for (let i = 0; i < daten.length; i += KANAELE) {
+// Bäume und Büsche (Regel 10.67): nur oben Schnee, darunter Wintergrün, dunkler Rand bleibt; sonst
+// wurden Laubbäume zu weißen Kugeln ohne Stamm („Schneebälle“). Wie schneekappen in winter.py.
+const KAPPE_ANTEIL = 0.35;
+const KAPPE_MINDESTENS = 2;
+const RAND_HELLIGKEIT = 0.22;
+const LAUB_GRAU = 0.45;
+const LAUB_DUNKEL = 0.85;
+
+/** Ob eine Farbe Laub ist (Regel für Grün) und ob sie ein dunkler Rand ist. */
+function laub(r: number, g: number, b: number): { readonly laub: boolean; readonly rand: boolean } {
+  const [h, l, s] = hls(r, g, b);
+  const ist = h > GRUEN[0] && h < GRUEN[1] && s > GRUEN_SAETTIGUNG;
+  return { laub: ist, rand: ist && l < RAND_HELLIGKEIT };
+}
+
+/** Laub unter der Schneekappe: zum Grau gezogen und etwas dunkler (Wintergrün). */
+export function winterlaub(r: number, g: number, b: number): Farbe {
+  const grau = (r + g + b) / 3;
+  const f = (c: number) => Math.round((c * (1 - LAUB_GRAU) + grau * LAUB_GRAU) * LAUB_DUNKEL);
+  return [f(r), f(g), f(b)];
+}
+
+/** Ob das Pixel an Stelle i deckend und Laub ist. */
+function istLaub(daten: Uint8ClampedArray, i: number): boolean {
+  return (daten[i + 3] ?? 0) > 0 && laub(daten[i] ?? 0, daten[i + 1] ?? 0, daten[i + 2] ?? 0).laub;
+}
+
+/** Eine Laubstrecke einer Spalte von `oben` bis vor `ende` färben (Kappe, dann Wintergrün). */
+function faerbeStrecke(
+  daten: Uint8ClampedArray,
+  index: (y: number) => number,
+  oben: number,
+  ende: number,
+  kappe: number,
+): void {
+  for (let y = oben; y < ende; y++) {
+    const i = index(y);
     const [r, g, b] = [daten[i] ?? 0, daten[i + 1] ?? 0, daten[i + 2] ?? 0];
-    const schluessel = (r << 16) | (g << 8) | b;
-    let neu = gemerkt.get(schluessel);
-    if (!neu) {
-      neu = winterfarbe(r, g, b, wasser);
-      gemerkt.set(schluessel, neu);
+    if (laub(r, g, b).rand) continue;
+    [daten[i], daten[i + 1], daten[i + 2]] =
+      y - oben < kappe ? winterfarbe(r, g, b) : winterlaub(r, g, b);
+  }
+}
+
+/**
+ * Möbel im Winter, an Ort und Stelle: je Spalte bekommt die oberste Laubstrecke oben eine
+ * Schneekappe (35 %, mindestens 2 Pixel), darunter und tiefer Wintergrün; dunkle Ränder bleiben;
+ * alles andere wie `winterfarbe` ohne Wasser. Beispiel: 10 hellgrüne Pixel → 4 Schnee, 6 Wintergrün.
+ */
+export function faerbeMoebelDaten(daten: Uint8ClampedArray, breite: number, hoehe: number): void {
+  for (let x = 0; x < breite; x++) {
+    const index = (y: number) => (y * breite + x) * KANAELE;
+    let erste = true;
+    for (let y = 0; y < hoehe;) {
+      const i = index(y);
+      if (!istLaub(daten, i)) {
+        const neu = winterfarbe(daten[i] ?? 0, daten[i + 1] ?? 0, daten[i + 2] ?? 0, false);
+        if ((daten[i + 3] ?? 0) > 0) [daten[i], daten[i + 1], daten[i + 2]] = neu;
+        y++;
+        continue;
+      }
+      let ende = y;
+      while (ende < hoehe && istLaub(daten, index(ende))) ende++;
+      const kappe = erste ? Math.max(KAPPE_MINDESTENS, Math.ceil((ende - y) * KAPPE_ANTEIL)) : 0;
+      faerbeStrecke(daten, index, y, ende, kappe);
+      erste = false;
+      y = ende;
     }
-    [daten[i], daten[i + 1], daten[i + 2]] = neu;
   }
 }
 
@@ -110,7 +168,7 @@ export function faerbeWinterlich(szene: Phaser.Scene, schluessel: readonly strin
     if (!malen) continue;
     malen.drawImage(quelle, 0, 0);
     const bild = malen.getImageData(0, 0, leinwand.width, leinwand.height);
-    faerbeDaten(bild.data);
+    faerbeMoebelDaten(bild.data, leinwand.width, leinwand.height);
     malen.putImageData(bild, 0, 0);
     szene.textures.remove(s);
     szene.textures.addCanvas(s, leinwand);

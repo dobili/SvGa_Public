@@ -52,6 +52,10 @@ Szene heißt die Datei in `inhalte/abenteuer/szenen/` ohne `.json`.
 - [ ] ironwood-kantine (dritte Prüfung, mit Zustand logo; `ironwood-kantine-3.md`), ironwood-museum, ironwood-umkleide, ironwood-mamas-zimmer (zweite Prüfung, mittel-4; eine Datei `ironwood-innen-2.md`)
 - [ ] steinbruch-grube (dritte Prüfung, jetzt mit Felskanten; `steinbruch-grube-3.md`), steinbruch-stollen (zweite Prüfung; `steinbruch-stollen-2.md`)
 - [ ] riverton-aussen und die vier Innenräume (dritte Prüfung, mittel-3; Bahnhof mit Uhrturm, Glastüren; Bilder privat ab c0febaac; Dateien `riverton-aussen-3.md`, `riverton-innen-3.md`)
+- [ ] desert-springs-aussen (Runde 9, mittel-2; mit Zustand meisterschaft)
+- [ ] desert-springs-garage, desert-springs-antiquariat (Runde 9, mittel-2; Antiquariat mit Zustand leihgabe)
+- [ ] pinewood-camp-aussen (Runde 9, mittel-2)
+- [ ] weg-pinewood-ghost-canyonrand, weg-pinewood-ghost-staubstrasse (Runde 9, mittel-2)
 
 - [ ] ghost-town-aussen (Runde 9, niedrig-1, mit Zustand mine-offen), ghost-town-saloon, goldmine-stollen
 - [ ] erinnerung-siedlung-huette, erinnerung-london-kaffeehaus, erinnerung-london-strand (Runde 9, niedrig-1; Sepia aus der Tönung, im Vorschaubild nicht zu sehen)

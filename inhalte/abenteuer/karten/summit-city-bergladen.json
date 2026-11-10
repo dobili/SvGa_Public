@@ -549,9 +549,9 @@
        "value": "räumt Karten ins Regal"
       },
       {
-       "name": "wann",
+       "name": "sagt",
        "type": "string",
-       "value": "tag"
+       "value": "statist.summitCity.bergladen.ladenhilfe"
       }
      ]
     },
@@ -582,9 +582,9 @@
        "value": "probiert einen Rucksack"
       },
       {
-       "name": "wann",
+       "name": "sagt",
        "type": "string",
-       "value": "tag"
+       "value": "statist.summitCity.bergladen.kunde"
       }
      ]
     },

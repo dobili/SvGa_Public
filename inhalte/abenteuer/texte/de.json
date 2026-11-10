@@ -824,5 +824,10 @@
   "ort.kuerbishof.name": "Kürbishof Miller",
   "ort.kuerbishof.hof": "Kürbishof",
   "ort.pelikaninsel.name": "Pelikaninsel",
-  "ort.pelikaninsel.dorf": "Inseldorf"
+  "ort.pelikaninsel.dorf": "Inseldorf",
+  "statist.summitCity.bergladen.ladenhilfe": "Die Karten vom Gipfelweg gehen am besten. Alle wollen hinauf, und keiner fragt, wie man wieder herunterkommt.",
+  "statist.summitCity.bergladen.ladenhilfe.1": "Im Winter verkaufen wir Schneeschuhe, im Sommer Sonnencreme. Die Berge bleiben dieselben.",
+  "statist.summitCity.bergladen.kunde": "Mein Lieblingszug? Der Turm auf die vorletzte Reihe. Von dort oben sieht man alles, wie vom Gipfel.",
+  "statist.summitCity.bergladen.kunde.1": "Dieser Rucksack hat vierzehn Fächer. Ich werde nie wieder etwas finden.",
+  "oberwelt.ambroseSagt": "{name}: {satz}"
 }

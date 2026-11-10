@@ -97,6 +97,7 @@ Szene heißt die Datei in `inhalte/abenteuer/szenen/` ohne `.json`.
 
 - [ ] Runde-9-Karten von mittel-1, zweite Prüfung nach `port-delacroix.md`, `capital-arena-bayou.md`, `weg-ghost-capital.md`, `weg-silicon-delacroix.md` (Antworten in den Ortsdokumenten; Bilder `haeuser_varianten.py`, `schilder_deutsch.py`, `sumpfboden.py`, `wasser_moor.py` neu, `weg11_bilder.py`, `klippe_gras.py`)
 - [ ] weg-ironwood-silicon-raststaette (vierte Prüfung, mittel-1, Datei `weg-ironwood-silicon-raststaette-4.md`)
+- [ ] Gemini-Bilder eingebaut (mittel-3): Roboter in silicon-bay-altstadt, -akademie, -aussen; Reh in weg-crossroads-pinewood-huetten, -riesenbaeume; Sturmkeller in weg-summit-crossroads-praerie (kurze Sichtprüfung)
 
 ## Erledigt
 

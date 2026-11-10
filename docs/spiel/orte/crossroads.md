@@ -236,7 +236,9 @@ Auftrag `runde9_uebrige_karten.md`: drei Mängel aus `variantenwahl.md`, die fü
   größer (52 Pixel, Bildwunsch `bison_klein.py`) und die Herde mit dem neuen Tierbild Bison zurück;
   der Wapiti (zeigte eine Kuh) ist weg, die Weide hat Bisons.
 - **Prärie:** Weizen auf Ackerboden; gekiester Hofplatz zwischen Farmhaus, Windrad und Scheune, Fahrweg
-  zu Traktor und Silo; Sturmkellerklappe als zweiflügelige Tür im Gras (`sturmkeller_wiese.png`).
+  zu Traktor und Silo; Sturmkellerklappe als zweiflügelige Tür im Gras (`sturmkeller_wiese.png`). Nachtrag:
+  Die Klappe ist jetzt das Gemini-Bild `sturmkeller_zu.png` (Möbel `sx9SturmkellerZu`); das offene
+  Gegenstück `sturmkeller_offen.png` liegt bereit, falls die Gewitterszene einen Zustand bekommt.
 
 ## 4. Bühnenbilder
 

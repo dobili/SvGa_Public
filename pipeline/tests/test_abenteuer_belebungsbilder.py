@@ -89,3 +89,25 @@ def test_haarfarbe_trennt_grau_natuerlich_bunt(tmp_path):
     assert (
         _haarfarbe(_speichere(tmp_path, "blau.png", Image.new("RGBA", (4, 4), (60, 80, 200, 255)))) == "bunt"
     )
+
+
+def test_ansichten_ergeben_vier_richtungen_mit_gespiegelter_seite():
+    """Reh aus Gemini (Runde 9): Seite nach rechts, links gespiegelt, oben = hinten, unten = vorn."""
+    from pipeline.abenteuer.belebungsbilder import ansichtenstreifen
+
+    farben = {"seite": (200, 0, 0, 255), "hinten": (0, 200, 0, 255), "vorn": (0, 0, 200, 255)}
+
+    def lade(name: str):
+        ansicht = name.split("_")[1].split(".")[0]
+        bild = Image.new("RGBA", (4, 4), farben[ansicht])
+        bild.putpixel((0, 0), (9, 9, 9, 255))  # Merkmal oben links, zeigt die Spiegelung
+        return bild
+
+    streifen = ansichtenstreifen(lade, "reh_{}.png", 4, 4)
+    assert streifen.size == (16, 4)
+    assert streifen.getpixel((1, 1))[:3] == (200, 0, 0)
+    assert streifen.getpixel((5, 1))[:3] == (0, 200, 0)
+    assert streifen.getpixel((11, 0))[:3] == (9, 9, 9)  # gespiegelte Seite: Merkmal rechts
+    assert streifen.getpixel((13, 1))[:3] == (0, 0, 200)
+    bogen = tierbogen(streifen, 4, 4, "ansichten")
+    assert bogen.size == (RAHMEN_JE_REIHE * 4, 8)

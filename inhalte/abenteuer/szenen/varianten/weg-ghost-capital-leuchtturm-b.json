@@ -44,245 +44,495 @@
   "objekte": [
     {
       "moebel": "gc7Leuchtturm",
-      "feld": [102, 1]
+      "feld": [
+        102,
+        1
+      ]
     },
     {
       "moebel": "gc7Waerterhaus2",
-      "feld": [92, 3]
+      "feld": [
+        92,
+        3
+      ]
     },
     {
       "moebel": "gc7Bank",
-      "feld": [109, 13]
+      "feld": [
+        109,
+        13
+      ]
     },
     {
       "moebel": "gc7Rettungsring",
-      "feld": [100, 11]
+      "feld": [
+        100,
+        11
+      ]
     },
     {
       "moebel": "gc7LinsenKiste",
-      "feld": [106, 17]
+      "feld": [
+        106,
+        17
+      ]
     },
     {
       "moebel": "gc7Fels",
-      "feld": [100, 8]
+      "feld": [
+        100,
+        8
+      ]
     },
     {
       "moebel": "gc7FelsFlach",
-      "feld": [111, 7]
+      "feld": [
+        111,
+        7
+      ]
     },
     {
       "moebel": "gc7FelsFlach",
-      "feld": [89, 9]
+      "feld": [
+        89,
+        9
+      ]
     },
     {
       "moebel": "gc7Fels",
-      "feld": [111, 9]
+      "feld": [
+        111,
+        9
+      ]
     },
     {
       "moebel": "gc7Fels",
-      "feld": [30, 10]
+      "feld": [
+        30,
+        10
+      ]
     },
     {
       "moebel": "gc7Treibholz",
-      "feld": [60, 10]
+      "feld": [
+        60,
+        10
+      ]
     },
     {
       "moebel": "gc7Kisten",
-      "feld": [112, 14]
+      "feld": [
+        112,
+        14
+      ]
     },
     {
       "moebel": "gc7Laubbaum",
-      "feld": [98, 24]
+      "feld": [
+        98,
+        24
+      ]
     },
     {
       "moebel": "gc7Birke",
-      "feld": [43, 25]
+      "feld": [
+        43,
+        25
+      ]
     },
     {
       "moebel": "gc7Laubbaum",
-      "feld": [71, 25]
+      "feld": [
+        71,
+        25
+      ]
     },
     {
       "moebel": "gc7Birke",
-      "feld": [64, 19]
+      "feld": [
+        64,
+        19
+      ]
     },
     {
       "moebel": "gc7Birke",
-      "feld": [40, 21]
+      "feld": [
+        40,
+        21
+      ]
     },
     {
       "moebel": "gc7Laubbaum",
-      "feld": [16, 20]
+      "feld": [
+        16,
+        20
+      ]
     },
     {
       "moebel": "gc7Laubbaum",
-      "feld": [111, 23]
+      "feld": [
+        111,
+        23
+      ]
     },
     {
       "moebel": "gc7Birke",
-      "feld": [19, 24]
+      "feld": [
+        19,
+        24
+      ]
     },
     {
       "moebel": "gc7Laubbaum",
-      "feld": [33, 19]
+      "feld": [
+        33,
+        19
+      ]
     },
     {
       "moebel": "gc7Laubbaum",
-      "feld": [26, 21]
+      "feld": [
+        26,
+        21
+      ]
     },
     {
       "moebel": "gc7Laubbaum",
-      "feld": [82, 22]
+      "feld": [
+        82,
+        22
+      ]
     },
     {
       "moebel": "gc7Laubbaum",
-      "feld": [127, 25]
+      "feld": [
+        127,
+        25
+      ]
     },
     {
       "moebel": "gc7Laubbaum",
-      "feld": [6, 20]
+      "feld": [
+        6,
+        20
+      ]
     },
     {
       "moebel": "gc7Laubbaum",
-      "feld": [72, 19]
+      "feld": [
+        72,
+        19
+      ]
     },
     {
       "moebel": "gc7Laubbaum",
-      "feld": [119, 24]
+      "feld": [
+        119,
+        24
+      ]
     },
     {
       "moebel": "gc7Laubbaum",
-      "feld": [33, 25]
+      "feld": [
+        33,
+        25
+      ]
     },
     {
       "moebel": "gc7Birke",
-      "feld": [62, 22]
+      "feld": [
+        62,
+        22
+      ]
     },
     {
       "moebel": "gc7Laubbaum",
-      "feld": [106, 26]
+      "feld": [
+        106,
+        26
+      ]
     },
     {
       "moebel": "gc7Laubbaum",
-      "feld": [71, 22]
+      "feld": [
+        71,
+        22
+      ]
     },
     {
       "moebel": "gc7Birke",
-      "feld": [84, 25]
+      "feld": [
+        84,
+        25
+      ]
     },
     {
       "moebel": "gc7Laubbaum",
-      "feld": [113, 20]
+      "feld": [
+        113,
+        20
+      ]
     },
     {
       "moebel": "gc7Birke",
-      "feld": [32, 22]
+      "feld": [
+        32,
+        22
+      ]
     },
     {
       "moebel": "gc7Birke",
-      "feld": [50, 26]
+      "feld": [
+        50,
+        26
+      ]
     },
     {
       "moebel": "gc7Birke",
-      "feld": [92, 23]
+      "feld": [
+        92,
+        23
+      ]
     },
     {
       "moebel": "gc7Birke",
-      "feld": [132, 21]
+      "feld": [
+        132,
+        21
+      ]
     },
     {
       "moebel": "gc7Birke",
-      "feld": [124, 21]
+      "feld": [
+        124,
+        21
+      ]
     },
     {
       "moebel": "gc7Birke",
-      "feld": [64, 26]
+      "feld": [
+        64,
+        26
+      ]
     },
     {
       "moebel": "gc7Laubbaum",
-      "feld": [12, 24]
+      "feld": [
+        12,
+        24
+      ]
     },
     {
       "moebel": "gc7Laubbaum",
-      "feld": [5, 23]
+      "feld": [
+        5,
+        23
+      ]
     },
     {
       "moebel": "gc7Laubbaum",
-      "feld": [78, 25]
+      "feld": [
+        78,
+        25
+      ]
     },
     {
       "moebel": "gc7Laubbaum",
-      "feld": [83, 19]
+      "feld": [
+        83,
+        19
+      ]
     },
     {
       "moebel": "gc7Laubbaum",
-      "feld": [95, 19]
+      "feld": [
+        95,
+        19
+      ]
     },
     {
       "moebel": "gc7Laubbaum",
-      "feld": [91, 26]
+      "feld": [
+        91,
+        26
+      ]
     },
     {
       "moebel": "gc7Birke",
-      "feld": [52, 23]
+      "feld": [
+        52,
+        23
+      ]
     },
     {
       "moebel": "gc7Birke",
-      "feld": [2, 26]
+      "feld": [
+        2,
+        26
+      ]
     },
     {
       "moebel": "gc7Laubbaum",
-      "feld": [53, 19]
+      "feld": [
+        53,
+        19
+      ]
     },
     {
       "moebel": "gc7Laubbaum",
-      "feld": [46, 19]
+      "feld": [
+        46,
+        19
+      ]
     },
     {
       "moebel": "gc7Laubbaum",
-      "feld": [57, 26]
+      "feld": [
+        57,
+        26
+      ]
+    },
+    {
+      "moebel": "ca8PlakatJuli",
+      "feld": [
+        109,
+        10
+      ],
+      "runde7": true
+    },
+    {
+      "moebel": "ca8Wohnmobil",
+      "feld": [
+        112,
+        9
+      ],
+      "bauteil_ok": true,
+      "runde7": true
     }
   ],
   "ausloeser": [
     {
       "name": "start",
-      "feld": [1, 16],
+      "feld": [
+        1,
+        16
+      ],
       "eigenschaften": {
         "richtung": "rechts"
       }
     },
     {
       "name": "zurueckSeeufer",
-      "feld": [0, 16]
+      "feld": [
+        0,
+        16
+      ]
     },
     {
       "name": "zurueckSeeufer",
-      "feld": [0, 17]
+      "feld": [
+        0,
+        17
+      ]
     },
     {
       "name": "weiterCapital",
-      "feld": [139, 20]
+      "feld": [
+        139,
+        20
+      ]
     },
     {
       "name": "weiterCapital",
-      "feld": [139, 21]
+      "feld": [
+        139,
+        21
+      ]
     },
     {
       "name": "fundLinse",
-      "feld": [105, 17]
+      "feld": [
+        105,
+        17
+      ]
     }
   ],
   "figuren": [
     {
       "name": "abe",
-      "feld": [100, 15]
+      "feld": [
+        100,
+        15
+      ]
     }
   ],
   "belebung": [
     {
+      "name": "spaziergaenger",
+      "typ": "statist",
+      "feld": [
+        121,
+        15
+      ],
+      "eigenschaften": {
+        "von": "117,13",
+        "bis": "124,21",
+        "tun": "geht mit dem Hund am See spazieren",
+        "wann": "tag",
+        "sagt": "statist.wegGhostCapital.leuchtturm.spaziergaenger"
+      }
+    },
+    {
+      "name": "fotograf",
+      "typ": "statist",
+      "feld": [
+        43,
+        14
+      ],
+      "eigenschaften": {
+        "von": "43,14",
+        "bis": "43,14",
+        "tun": "fotografiert den Leuchtturm",
+        "wann": "tag",
+        "sagt": "statist.wegGhostCapital.leuchtturm.fotograf"
+      }
+    },
+    {
+      "name": "radfahrerin",
+      "typ": "statist",
+      "feld": [
+        80,
+        13
+      ],
+      "eigenschaften": {
+        "von": "71,15",
+        "bis": "91,16",
+        "tun": "schiebt ihr Rad und macht Pause",
+        "wann": "tag",
+        "sagt": "statist.wegGhostCapital.leuchtturm.radfahrerin"
+      }
+    },
+    {
+      "name": "angler",
+      "typ": "statist",
+      "feld": [
+        10,
+        12
+      ],
+      "eigenschaften": {
+        "von": "10,12",
+        "bis": "10,12",
+        "tun": "angelt vom Ufer aus",
+        "wann": "tag"
+      }
+    },
+    {
       "name": "moewen",
       "typ": "tier",
-      "feld": [80, 5],
+      "feld": [
+        80,
+        5
+      ],
       "eigenschaften": {
         "von": "70,3",
         "bis": "100,7",
@@ -290,18 +540,81 @@
       }
     },
     {
-      "name": "spaziergaenger",
-      "typ": "statist",
-      "feld": [100, 21],
+      "name": "hund",
+      "typ": "tier",
+      "feld": [
+        122,
+        15
+      ],
       "eigenschaften": {
-        "von": "96,21",
+        "von": "117,13",
         "bis": "124,21",
-        "tun": "geht mit dem Hund am See spazieren",
-        "wann": "tag"
+        "verhalten": "folgen"
+      }
+    },
+    {
+      "name": "robbe",
+      "typ": "tier",
+      "feld": [
+        85,
+        2
+      ],
+      "eigenschaften": {
+        "von": "80,2",
+        "bis": "92,3",
+        "verhalten": "schwimmen"
+      }
+    },
+    {
+      "name": "kormoran",
+      "typ": "tier",
+      "feld": [
+        94,
+        14
+      ],
+      "eigenschaften": {
+        "von": "94,14",
+        "bis": "94,14",
+        "verhalten": "sitzen"
+      }
+    },
+    {
+      "name": "krebs",
+      "typ": "tier",
+      "feld": [
+        16,
+        15
+      ],
+      "eigenschaften": {
+        "von": "13,17",
+        "bis": "20,15",
+        "verhalten": "flitzen"
+      }
+    },
+    {
+      "name": "seeadler",
+      "typ": "tier",
+      "feld": [
+        71,
+        15
+      ],
+      "eigenschaften": {
+        "von": "60,12",
+        "bis": "90,16",
+        "verhalten": "fliegen"
       }
     }
   ],
-  "zustand": ["neu", "gebraucht", "alt"],
-  "stil": ["natur", "klassisch", "rustikal", "modern"],
+  "zustand": [
+    "neu",
+    "gebraucht",
+    "alt"
+  ],
+  "stil": [
+    "natur",
+    "klassisch",
+    "rustikal",
+    "modern"
+  ],
   "variante": "b"
 }

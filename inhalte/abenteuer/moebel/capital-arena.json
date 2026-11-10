@@ -1128,6 +1128,56 @@
       "zustand": "alt",
       "stil": "industrie",
       "blick": "unten"
+    },
+    "ca8Eiswagen": {
+      "quelle": "modern-exteriors/Modern_Exteriors_16x16/ME_Theme_Sorter_16x16/10_Vehicles_Singles_16x16/ME_Singles_Vehicles_16x16_Ice_Cream_Truck_3.png",
+      "breite": 112,
+      "hoehe": 64,
+      "kollision": true,
+      "art": "fahrzeug",
+      "zustand": "neu",
+      "stil": "modern",
+      "blick": "rechts"
+    },
+    "ca8Tacowagen": {
+      "quelle": "modern-exteriors/Modern_Exteriors_16x16/ME_Theme_Sorter_16x16/10_Vehicles_Singles_16x16/ME_Singles_Vehicles_16x16_Tacos_Truck_3.png",
+      "breite": 112,
+      "hoehe": 64,
+      "kollision": true,
+      "art": "fahrzeug",
+      "zustand": "neu",
+      "stil": "modern",
+      "blick": "rechts"
+    },
+    "ca8Lautsprecher": {
+      "quelle": "modern-exteriors/Modern_Exteriors_16x16/ME_Theme_Sorter_16x16/21_Beach_Singles_16x16/21_Beach_16x16_Big_Loudspeaker_Sand.png",
+      "breite": 48,
+      "hoehe": 48,
+      "kollision": true,
+      "art": "geraet",
+      "zustand": "neu",
+      "stil": "modern",
+      "blick": "unten"
+    },
+    "ca8Wohnmobil": {
+      "quelle": "modern-exteriors/Modern_Exteriors_16x16/ME_Theme_Sorter_16x16/10_Vehicles_Singles_16x16/ME_Singles_Vehicles_16x16_Camper_Left_1.png",
+      "breite": 96,
+      "hoehe": 64,
+      "kollision": true,
+      "art": "fahrzeug",
+      "zustand": "gebraucht",
+      "stil": "klassisch",
+      "blick": "links"
+    },
+    "ca8PlakatJuli": {
+      "quelle": "spiel/eigene/plakat_meisterschaft.png",
+      "kollision": true,
+      "art": "plakat",
+      "zustand": "neu",
+      "stil": "klassisch",
+      "blick": "unten",
+      "breite": 32,
+      "hoehe": 48
     }
   }
 }

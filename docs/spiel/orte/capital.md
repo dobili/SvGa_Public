@@ -210,7 +210,23 @@ ein Fanshop mit Schals und T-Shirts.
    - `kreide5` (Kreidespringer am Gitter): A (36, 48), B (11, 48), C (61, 48).
 4. Bilder für das Viertel (beim Haupt-Chat bestellt, bis dahin Ersatz): Gitter vor dem U-Bahn-Abgang
    (Ersatz: Bauzaun mit Plane), Kreidespringer an Mauer oder Gitter (2 × 2), Plakat „Bald“.
-5. Halle (Runde 7): vier Statisten mit Satz (Zuschauer mit den Kiebitzen, Reporter mit der ersten
+5. **Weg 11, Weltschachtag (Dokument 15, 2.13; Runde 7):** Am Ostende des Seeufers stehen in allen
+   Varianten die Bühne (138, 9) mit zwei Lautsprechern, davor eine lange Tafel aus fünf Klapptischen mit
+   Brettern (Spalten 122–135, Reihen 12–13) für das Simultan, westlich davon Eiswagen und Tacowagen
+   (A (100, 12)/(110, 12), B (105, 11)/(115, 11), C (100, 10)/(110, 10)). Am Leuchtturm stehen Odettes
+   Wohnmobil (A (78, 9), B (112, 9), C (37, 9)) und ein Plakat (A (58, 10), B (109, 10), C (20, 10);
+   Ersatz: Plakat Landesmeisterschaft; bestellt: `plakat_weltschachtag.png` „20. Juli“, 2 × 3).
+   Lichterketten über der Tafel fehlen noch (bestellt: `lichterkette.png`, 6 × 1).
+   - `ereignisWeltschachtag`: Seeufer (140, 13), vor der Bühne;
+   - `seite12` am Anleger: Seeufer (59, 10);
+   - `finchKoenig` (Odette am Wohnmobil): Leuchtturm A (78, 13), B (113, 13), C (38, 13);
+   - `wandererCapital`: Seeufer (120, 15), am Weg neben der Tafel.
+6. **Belebung Weg 11 (Sommer):** Seeufer: Wachmann (Perfect Move), Schwimmerin (20. Juli, FIDE 1924),
+   Geschwister beim Steinehüpfen (Enten wie Bauern, mit Antwort von Ambrose), Drachenkind und
+   Picknickfamilie ohne Satz; Möwen, Enten, Hecht, Eichhörnchen, Specht, Schwan. Leuchtturm:
+   Spaziergänger (Hund gegen Leuchtturm, Tiergeschichte), Fotograf (Carlsen 2882), Radfahrerin (Welt),
+   Angler ohne Satz; Möwen, Hund, Robbe, Kormoran, Krebs, Seeadler.
+7. Halle (Runde 7): vier Statisten mit Satz (Zuschauer mit den Kiebitzen, Reporter mit der ersten
    Olympiade 1927, Mutter mit Brotdose, Ordner).
 
 ## 4. Bühnenbilder

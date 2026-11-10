@@ -869,6 +869,33 @@ auf jeder soll etwas passieren, das man entdecken kann. Die Geschichten dazu ste
       oder ihrem Gleis und ragen nicht in den Gehweg. Sie brauchen die Maße aus 10.64.
     - Fehlt ein Bild in der passenden Richtung, wird die Fläche angepasst (Buchten längs), nicht das
       Fahrzeug quer gestellt.
+    - **Welches Bild für welche Richtung** (Sichtung des Katalogs, 10.11.2026; Größen in Kacheln,
+      Breite × Höhe; Möbel `fz11…` stehen in `moebel/allgemein.json` für alle Orte):
+
+      | Fahrzeug                 | Straße West–Ost (von der Seite)                                                                        | Straße Nord–Süd (von vorn/hinten)                                                                                       | Fehlt                                                            |
+      | ------------------------ | ------------------------------------------------------------------------------------------------------ | ----------------------------------------------------------------------------------------------------------------------- | ---------------------------------------------------------------- |
+      | Auto                     | 26 Wagen, 4 × 3 oder 5 × 3: `wsrAutoLinks1/14/21`, `wsrAutoRechts2/10/17`, `rvAutoBlau`, `rvAutoGruen` | dieselben 26, 2 × 4 bis 3 × 5: nach Süden `wsgAutoAb1/10/14/17/21`, `iw5AutoA/B`; nach Norden `wsgAutoAuf2/11/15/19/22` | nichts                                                           |
+      | Linienbus                | 7 × 4: `caBus`, `crBus`, `wsr10Bus` (nach links), `fz11BusRechts`                                      | 3 × 7: `fz11BusAb`, `fz11BusAuf`                                                                                        | nichts                                                           |
+      | Schulbus                 | 7 × 4: `heSchulbus` (nach links), `fz11SchulbusRechts`                                                 | 3 × 7: `fz11SchulbusAb`, `fz11SchulbusAuf`                                                                              | nichts                                                           |
+      | Traktor                  | 5 × 4: `heTraktor`, `n1Traktor` (nach links), `fz11TraktorRechts`                                      | 4 × 6: `fz11TraktorVorn`, `fz11TraktorHinten`                                                                           | nichts                                                           |
+      | Wohnmobil                | 6 × 4: `ca8Wohnmobil` (links), `mf8Wohnmobil` (rechts)                                                 | 2 × 6: `fz11WohnmobilAb`, `fz11WohnmobilAuf`                                                                            | nichts                                                           |
+      | Krankenwagen             | 8 × 5: `fz11KrankenwagenLinks/Rechts`                                                                  | 3 × 7: `fz11KrankenwagenAb/Auf`                                                                                         | nichts                                                           |
+      | Lastwagen                | 11 × 5: `wsrLkw` (links), `fz11LkwRechts`                                                              | –                                                                                                                       | von vorn und von hinten                                          |
+      | Sattelzug                | 10 × 4: `cr7Sattelzug`, `cr7SattelzugBlau` (und `wds6…`, `ws5…`)                                       | –                                                                                                                       | von vorn und von hinten; nach links                              |
+      | Eis-, Taco-, Imbisswagen | 7 × 4: `ca8Eiswagen`, `ca8Tacowagen`; mit Markise 7 × 5/6: `n6Eiswagen`, `sbFoodtruck`                 | –                                                                                                                       | von vorn und von hinten                                          |
+      | Lieferwagen              | –                                                                                                      | –                                                                                                                       | alle vier Ansichten (bisher steht ein Auto oder Wohnmobil dafür) |
+      | Droschke, Planwagen      | 6 × 4: `el7Droschke`; `gt7PlanwagenKaputt`                                                             | –                                                                                                                       | von vorn und von hinten                                          |
+      | Bagger                   | 3 × 6: `st5Bagger` (eine Ansicht)                                                                      | –                                                                                                                       | von der Seite                                                    |
+
+      Die Lastwagen der Hafenpakete (`hafen-16/vehicles`, `containerterminal-16/vehicles`) sind nur
+      ein bis zwei Kacheln groß und nach 10.64 nicht zu gebrauchen. Ein Silo ist kein Fahrzeug; es
+      steht immer von vorn (hoch) am Hof.
+
+    - **Prüfung im Werkzeug:** `kartenbau` druckt einen Hinweis (kein Befund), wenn ein Fahrzeug
+      von der Seite auf einer Fahrbahn steht, die dort klar von Nord nach Süd läuft (oder
+      umgekehrt), oder wenn eine Buchtlinie quer unter ihm durchläuft
+      (`pipeline/abenteuer/fahrzeuge.py`; alle Karten: `python -m pipeline.abenteuer.fahrzeuge`).
+      Höfe, Wiesen und Parkplätze ohne Linien prüft es nicht: Dort entscheidet der Gutachter.
 66. **Wohnhäuser in Menschengröße** (Gutachten Runde 8, Befund i). Ein Wohnhaus ist mindestens 5
     Kacheln breit und 5 hoch (Grundfläche mit Dach), ein Laden oder Gasthaus mindestens 6 × 5.
     Bilder mit 3–4 Kacheln sind Schuppen, Kioske, Garagen, Hundehütten oder Gartenhäuser, nie

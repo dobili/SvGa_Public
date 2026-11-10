@@ -96,6 +96,10 @@ der Anleger hat einen Querkopf, an dem die Fähre in Normgröße (18 × 6, Bild 
 Landzunge zwischen Felsen statt auf einem Kiesfeld. Die Ruderboote liegen im Wasser, Fässer stehen
 gruppiert am Anleger und an den Kisten, fünf statt zwölf Möwen.
 
+### 3.3 Runde 9: zweite Prüfung (mittel-3, 10.11.2026)
+
+Reif für den Autor. Zwei statt fünf einzelne Möwen neben der Schar.
+
 ## 4. Bühnenbilder
 
 **Größe** 50 × 36. **Boden** Strand und Dorfplatz Erde (der Sandboden zeichnet sich fleckig), Felsspitze

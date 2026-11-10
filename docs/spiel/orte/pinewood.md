@@ -261,6 +261,12 @@ Gutachterbild war sie nur am Rand angeschnitten. Offen: Reh statt Ziege (Gemini-
 da (`reh_seite/_hinten/_vorn`, Tierart `reh`, Schnitt `ansichten`); der Hirsch ebenso, der Wapiti
 im Geysirbecken nimmt den Hirsch.
 
+### 3.8 Runde 9: zweite Prüfung (mittel-3, 10.11.2026)
+
+Hütten sind reif für den Autor. Riesenbäume: Tönung `dunst` statt `nebel` (neu in `toenung.ts`,
+`toenung.py`, Kartenbauer: derselbe Schleier mit halber Deckkraft), damit Weg, Figuren und Brett
+lesbar bleiben.
+
 ## 4. Bühnenbilder
 
 ### 4.1 Hütten

@@ -392,7 +392,12 @@ Restpunkte: Die Laternen stehen an den Hausgrenzen statt vor den Schaufenstern; 
 rollt am Schneemann eine Schneekugel. Gemini-Bilder (Runde 9): Die Roboter
 (Liefer-, Staubsauger-, Schneeräumroboter in der Altstadt, Saugroboter in der Akademie, Lieferroboter
 und Roboterhund am Campus) zeigen jetzt den Lieferroboter von Perfect Move (Tierart `lieferroboter`
-in `tierarten.json`, Schnitt `ansichten` aus `lieferroboter_rechts/_oben/_unten`).
+in `tierarten.json`, Schnitt `ansichten` aus `lieferroboter_rechts/_oben/_unten`). In der Akademie heißt
+die Belebung jetzt `lieferroboter` und steht in der Beschreibung: Perfect Move erprobt seinen
+Lieferroboter im eigenen Haus; ein flacher Saugroboter hätte ein eigenes Bild gebraucht. Campus und
+alter Hafen sind für die erste Prüfung durchgesehen (10.64 bis 10.67): Der Asphalt des Campus ist das
+Gleisbett der Bahn, die Hafenstraße ein Plattenweg, deshalb keine Fahrbahnmarkierung; Kaimauer und
+Fähre in Normgröße stehen.
 
 **Belebung:** zwölf Statisten, acht davon mit Satz (`statist.siliconBay.altstadt.*`): Bäckerin,
 Uhrmacher, Musikhändler, Schülerin, Metzger (Perfect Move will die Straße kaufen), Rentnerpaar,

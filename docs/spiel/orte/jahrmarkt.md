@@ -54,6 +54,10 @@ Auftrag `runde9_uebrige_karten.md`: drei Mängel aus `variantenwahl.md`, die fü
 durchgehender Zaun; die Bühne ist begehbar (`n9BuehneBegehbar`, flach), darauf die Band mit
 Sängerin, Gitarre und Fiedel; Hot-Dog- und Eisverkäuferin stehen an der Klappe ihres Wagens.
 
+### 3.3 Runde 9: zweite Prüfung (mittel-3, 10.11.2026)
+
+Reif für den Autor. „Am Abend“ ist jetzt zu sehen: Tönung `abend` in der Szene.
+
 ## 4. Bühnenbild
 
 A: Riesenrad oben Mitte, Karussell links, Bühne mit Gerüst, Lautsprechern und Tribüne rechts,

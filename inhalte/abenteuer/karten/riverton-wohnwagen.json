@@ -6,7 +6,7 @@
  "type": "map",
  "version": "1.10",
  "infinite": false,
- "width": 16,
+ "width": 17,
  "height": 7,
  "tilewidth": 16,
  "tileheight": 16,
@@ -17,7 +17,7 @@
    "id": 1,
    "name": "boden",
    "type": "tilelayer",
-   "width": 16,
+   "width": 17,
    "height": 7,
    "x": 0,
    "y": 0,
@@ -73,27 +73,15 @@
     0,
     0,
     0,
+    0,
+    0,
+    0,
     1,
     1,
     0,
     1,
     1,
-    1,
-    1,
-    1,
-    1,
-    1,
-    1,
-    1,
-    1,
-    1,
     0,
-    0,
-    1,
-    1,
-    1,
-    1,
-    1,
     1,
     1,
     1,
@@ -119,6 +107,24 @@
     1,
     1,
     1,
+    1,
+    0,
+    0,
+    1,
+    1,
+    1,
+    1,
+    1,
+    1,
+    1,
+    1,
+    1,
+    1,
+    1,
+    1,
+    1,
+    1,
+    1,
     0,
     0,
     0,
@@ -129,6 +135,7 @@
     0,
     0,
     1,
+    0,
     0,
     0,
     0,
@@ -142,7 +149,7 @@
    "id": 2,
    "name": "waende",
    "type": "tilelayer",
-   "width": 16,
+   "width": 17,
    "height": 7,
    "x": 0,
    "y": 0,
@@ -198,27 +205,15 @@
     2,
     2,
     2,
+    2,
+    2,
+    2,
     0,
     0,
     2,
     0,
     0,
-    0,
-    0,
-    0,
-    0,
-    0,
-    0,
-    0,
-    0,
-    0,
     2,
-    2,
-    0,
-    0,
-    0,
-    0,
-    0,
     0,
     0,
     0,
@@ -244,6 +239,24 @@
     0,
     0,
     0,
+    0,
+    2,
+    2,
+    0,
+    0,
+    0,
+    0,
+    0,
+    0,
+    0,
+    0,
+    0,
+    0,
+    0,
+    0,
+    0,
+    0,
+    0,
     2,
     2,
     2,
@@ -254,6 +267,7 @@
     2,
     2,
     0,
+    2,
     2,
     2,
     2,
@@ -267,13 +281,20 @@
    "id": 3,
    "name": "objekte",
    "type": "tilelayer",
-   "width": 16,
+   "width": 17,
    "height": 7,
    "x": 0,
    "y": 0,
    "opacity": 1,
    "visible": true,
    "data": [
+    0,
+    0,
+    0,
+    0,
+    0,
+    0,
+    0,
     0,
     0,
     0,
@@ -466,7 +487,7 @@
      "name": "rv5PokalKlein",
      "type": "moebel",
      "x": 20,
-     "y": 35,
+     "y": 37,
      "width": 16,
      "height": 16,
      "rotation": 0,
@@ -486,12 +507,12 @@
     },
     {
      "id": 6,
-     "name": "rv5PokalSilber",
+     "name": "rv5PokalKlein",
      "type": "moebel",
      "x": 36,
-     "y": 19,
+     "y": 37,
      "width": 16,
-     "height": 32,
+     "height": 16,
      "rotation": 0,
      "visible": true,
      "properties": [
@@ -762,75 +783,6 @@
     },
     {
      "id": 18,
-     "name": "rv8Sitzbank",
-     "type": "moebel",
-     "x": 192,
-     "y": 48,
-     "width": 32,
-     "height": 16,
-     "rotation": 0,
-     "visible": true,
-     "properties": [
-      {
-       "name": "tiefe",
-       "type": "int",
-       "value": 56
-      },
-      {
-       "name": "kollision",
-       "type": "bool",
-       "value": true
-      }
-     ]
-    },
-    {
-     "id": 19,
-     "name": "mf5Nischentisch",
-     "type": "moebel",
-     "x": 200,
-     "y": 64,
-     "width": 16,
-     "height": 16,
-     "rotation": 0,
-     "visible": true,
-     "properties": [
-      {
-       "name": "tiefe",
-       "type": "int",
-       "value": 72
-      },
-      {
-       "name": "kollision",
-       "type": "bool",
-       "value": true
-      }
-     ]
-    },
-    {
-     "id": 20,
-     "name": "rv8Sitzbank",
-     "type": "moebel",
-     "x": 192,
-     "y": 80,
-     "width": 32,
-     "height": 16,
-     "rotation": 0,
-     "visible": true,
-     "properties": [
-      {
-       "name": "tiefe",
-       "type": "int",
-       "value": 88
-      },
-      {
-       "name": "kollision",
-       "type": "bool",
-       "value": true
-      }
-     ]
-    },
-    {
-     "id": 21,
      "name": "rv5TuerSuedHell",
      "type": "moebel",
      "x": 128,
@@ -853,7 +805,7 @@
      ]
     },
     {
-     "id": 22,
+     "id": 19,
      "name": "rv5Kuriertasche",
      "type": "moebel",
      "x": 96,
@@ -872,6 +824,75 @@
        "name": "kollision",
        "type": "bool",
        "value": false
+      }
+     ]
+    },
+    {
+     "id": 20,
+     "name": "mf5NischenstuhlRechts",
+     "type": "moebel",
+     "x": 176,
+     "y": 48,
+     "width": 16,
+     "height": 32,
+     "rotation": 0,
+     "visible": true,
+     "properties": [
+      {
+       "name": "tiefe",
+       "type": "int",
+       "value": 72
+      },
+      {
+       "name": "kollision",
+       "type": "bool",
+       "value": true
+      }
+     ]
+    },
+    {
+     "id": 21,
+     "name": "mf5Nischentisch",
+     "type": "moebel",
+     "x": 192,
+     "y": 64,
+     "width": 16,
+     "height": 16,
+     "rotation": 0,
+     "visible": true,
+     "properties": [
+      {
+       "name": "tiefe",
+       "type": "int",
+       "value": 72
+      },
+      {
+       "name": "kollision",
+       "type": "bool",
+       "value": true
+      }
+     ]
+    },
+    {
+     "id": 22,
+     "name": "mf5NischenstuhlLinks",
+     "type": "moebel",
+     "x": 208,
+     "y": 48,
+     "width": 16,
+     "height": 32,
+     "rotation": 0,
+     "visible": true,
+     "properties": [
+      {
+       "name": "tiefe",
+       "type": "int",
+       "value": 72
+      },
+      {
+       "name": "kollision",
+       "type": "bool",
+       "value": true
       }
      ]
     }

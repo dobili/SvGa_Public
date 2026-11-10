@@ -11,7 +11,7 @@
  "tilewidth": 16,
  "tileheight": 16,
  "nextlayerid": 5,
- "nextobjectid": 142,
+ "nextobjectid": 139,
  "layers": [
   {
    "id": 1,
@@ -8924,29 +8924,6 @@
     },
     {
      "id": 102,
-     "name": "n4MoeweRechts",
-     "type": "moebel",
-     "x": 176,
-     "y": 208,
-     "width": 32,
-     "height": 32,
-     "rotation": 0,
-     "visible": true,
-     "properties": [
-      {
-       "name": "tiefe",
-       "type": "int",
-       "value": 1
-      },
-      {
-       "name": "kollision",
-       "type": "bool",
-       "value": false
-      }
-     ]
-    },
-    {
-     "id": 103,
      "name": "n4SeesternGelb",
      "type": "moebel",
      "x": 192,
@@ -8969,7 +8946,7 @@
      ]
     },
     {
-     "id": 104,
+     "id": 103,
      "name": "n4MuschelWeiss",
      "type": "moebel",
      "x": 512,
@@ -8992,7 +8969,7 @@
      ]
     },
     {
-     "id": 105,
+     "id": 104,
      "name": "n4MuschelRosa",
      "type": "moebel",
      "x": 368,
@@ -9015,7 +8992,7 @@
      ]
     },
     {
-     "id": 106,
+     "id": 105,
      "name": "n4MuschelGold",
      "type": "moebel",
      "x": 304,
@@ -9038,7 +9015,7 @@
      ]
     },
     {
-     "id": 107,
+     "id": 106,
      "name": "n4MuschelGold",
      "type": "moebel",
      "x": 288,
@@ -9061,7 +9038,7 @@
      ]
     },
     {
-     "id": 108,
+     "id": 107,
      "name": "n4SeesternLila",
      "type": "moebel",
      "x": 96,
@@ -9084,7 +9061,7 @@
      ]
     },
     {
-     "id": 109,
+     "id": 108,
      "name": "n4MuschelRosa",
      "type": "moebel",
      "x": 272,
@@ -9107,7 +9084,7 @@
      ]
     },
     {
-     "id": 110,
+     "id": 109,
      "name": "n4MuschelBraun",
      "type": "moebel",
      "x": 464,
@@ -9130,7 +9107,7 @@
      ]
     },
     {
-     "id": 111,
+     "id": 110,
      "name": "n4SeesternGelb",
      "type": "moebel",
      "x": 560,
@@ -9153,7 +9130,7 @@
      ]
     },
     {
-     "id": 112,
+     "id": 111,
      "name": "n4MuschelBraun",
      "type": "moebel",
      "x": 240,
@@ -9176,7 +9153,7 @@
      ]
     },
     {
-     "id": 113,
+     "id": 112,
      "name": "n4MuschelGold",
      "type": "moebel",
      "x": 128,
@@ -9199,7 +9176,7 @@
      ]
     },
     {
-     "id": 114,
+     "id": 113,
      "name": "n4MuschelWeiss",
      "type": "moebel",
      "x": 640,
@@ -9222,53 +9199,7 @@
      ]
     },
     {
-     "id": 115,
-     "name": "n4MoeweVorn",
-     "type": "moebel",
-     "x": 480,
-     "y": 432,
-     "width": 32,
-     "height": 32,
-     "rotation": 0,
-     "visible": true,
-     "properties": [
-      {
-       "name": "tiefe",
-       "type": "int",
-       "value": 1
-      },
-      {
-       "name": "kollision",
-       "type": "bool",
-       "value": false
-      }
-     ]
-    },
-    {
-     "id": 116,
-     "name": "n4MoeweVorn",
-     "type": "moebel",
-     "x": 512,
-     "y": 336,
-     "width": 32,
-     "height": 32,
-     "rotation": 0,
-     "visible": true,
-     "properties": [
-      {
-       "name": "tiefe",
-       "type": "int",
-       "value": 1
-      },
-      {
-       "name": "kollision",
-       "type": "bool",
-       "value": false
-      }
-     ]
-    },
-    {
-     "id": 117,
+     "id": 114,
      "name": "n4MuschelWeiss",
      "type": "moebel",
      "x": 448,
@@ -9291,7 +9222,7 @@
      ]
     },
     {
-     "id": 118,
+     "id": 115,
      "name": "n4MuschelBraun",
      "type": "moebel",
      "x": 240,
@@ -9314,7 +9245,7 @@
      ]
     },
     {
-     "id": 119,
+     "id": 116,
      "name": "n4MuschelBraun",
      "type": "moebel",
      "x": 608,
@@ -9337,7 +9268,7 @@
      ]
     },
     {
-     "id": 120,
+     "id": 117,
      "name": "n4SeesternGelb",
      "type": "moebel",
      "x": 528,
@@ -9360,7 +9291,7 @@
      ]
     },
     {
-     "id": 121,
+     "id": 118,
      "name": "n4SeesternLila",
      "type": "moebel",
      "x": 512,
@@ -9383,7 +9314,7 @@
      ]
     },
     {
-     "id": 122,
+     "id": 119,
      "name": "n4MuschelBraun",
      "type": "moebel",
      "x": 544,
@@ -9406,7 +9337,7 @@
      ]
     },
     {
-     "id": 123,
+     "id": 120,
      "name": "n4SeesternLila",
      "type": "moebel",
      "x": 192,
@@ -9429,7 +9360,7 @@
      ]
     },
     {
-     "id": 124,
+     "id": 121,
      "name": "n4MuschelGold",
      "type": "moebel",
      "x": 304,
@@ -9452,7 +9383,7 @@
      ]
     },
     {
-     "id": 125,
+     "id": 122,
      "name": "n4SeesternLila",
      "type": "moebel",
      "x": 688,
@@ -9475,7 +9406,7 @@
      ]
     },
     {
-     "id": 126,
+     "id": 123,
      "name": "n4SeesternLila",
      "type": "moebel",
      "x": 480,
@@ -9498,7 +9429,7 @@
      ]
     },
     {
-     "id": 127,
+     "id": 124,
      "name": "n4MuschelWeiss",
      "type": "moebel",
      "x": 464,
@@ -9521,7 +9452,7 @@
      ]
     },
     {
-     "id": 128,
+     "id": 125,
      "name": "n4SeesternLila",
      "type": "moebel",
      "x": 192,
@@ -9544,7 +9475,7 @@
      ]
     },
     {
-     "id": 129,
+     "id": 126,
      "name": "n4MuschelWeiss",
      "type": "moebel",
      "x": 96,
@@ -9567,7 +9498,7 @@
      ]
     },
     {
-     "id": 130,
+     "id": 127,
      "name": "sc8Finkenzeichen",
      "type": "moebel",
      "x": 640,
@@ -9590,7 +9521,7 @@
      ]
     },
     {
-     "id": 131,
+     "id": 128,
      "name": "n4Fels",
      "type": "moebel",
      "x": 48,
@@ -9613,7 +9544,7 @@
      ]
     },
     {
-     "id": 132,
+     "id": 129,
      "name": "n4Fels",
      "type": "moebel",
      "x": 32,
@@ -9636,7 +9567,7 @@
      ]
     },
     {
-     "id": 133,
+     "id": 130,
      "name": "n4Fels",
      "type": "moebel",
      "x": 144,
@@ -9659,7 +9590,7 @@
      ]
     },
     {
-     "id": 134,
+     "id": 131,
      "name": "n4Fels",
      "type": "moebel",
      "x": 176,
@@ -9682,7 +9613,7 @@
      ]
     },
     {
-     "id": 135,
+     "id": 132,
      "name": "n4Fels",
      "type": "moebel",
      "x": 160,
@@ -9705,7 +9636,7 @@
      ]
     },
     {
-     "id": 136,
+     "id": 133,
      "name": "n4Fels",
      "type": "moebel",
      "x": 64,
@@ -9728,7 +9659,7 @@
      ]
     },
     {
-     "id": 137,
+     "id": 134,
      "name": "n4Fels",
      "type": "moebel",
      "x": 32,
@@ -9751,7 +9682,7 @@
      ]
     },
     {
-     "id": 138,
+     "id": 135,
      "name": "n4Fels",
      "type": "moebel",
      "x": 96,
@@ -9774,7 +9705,7 @@
      ]
     },
     {
-     "id": 139,
+     "id": 136,
      "name": "pk9Faehre",
      "type": "moebel",
      "x": 240,
@@ -9797,7 +9728,7 @@
      ]
     },
     {
-     "id": 140,
+     "id": 137,
      "name": "rv8Poller",
      "type": "moebel",
      "x": 256,
@@ -9820,7 +9751,7 @@
      ]
     },
     {
-     "id": 141,
+     "id": 138,
      "name": "rv8Poller",
      "type": "moebel",
      "x": 480,

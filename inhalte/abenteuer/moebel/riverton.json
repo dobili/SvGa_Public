@@ -2032,6 +2032,33 @@
       "art": "deko",
       "zustand": "gebraucht",
       "stil": "klassisch"
+    },
+    "rv9Figurentruhe": {
+      "quelle": "spiel/eigene/figurentruhe.png",
+      "breite": 32,
+      "hoehe": 32,
+      "kollision": true,
+      "art": "deko",
+      "zustand": "gebraucht",
+      "stil": "klassisch"
+    },
+    "rv9PfuetzeKlein": {
+      "quelle": "spiel/eigene/pfuetze_fels_klein.png",
+      "breite": 32,
+      "hoehe": 16,
+      "kollision": false,
+      "art": "deko",
+      "zustand": "gebraucht",
+      "stil": "klassisch"
+    },
+    "rv9PfuetzeGross": {
+      "quelle": "spiel/eigene/pfuetze_fels_gross.png",
+      "breite": 48,
+      "hoehe": 32,
+      "kollision": false,
+      "art": "deko",
+      "zustand": "gebraucht",
+      "stil": "klassisch"
     }
   }
 }

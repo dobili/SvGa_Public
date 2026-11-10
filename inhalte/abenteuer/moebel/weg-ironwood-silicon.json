@@ -843,7 +843,10 @@
       "art": "zaun",
       "zustand": "neu",
       "stil": "modern",
-      "maske": ["", "################"]
+      "maske": [
+        "",
+        "################"
+      ]
     },
     "wsgGelVorn12": {
       "quelle": "spiel/eigene/glasgelaender_vorn_12.png",
@@ -853,7 +856,10 @@
       "art": "zaun",
       "zustand": "neu",
       "stil": "modern",
-      "maske": ["", "############"]
+      "maske": [
+        "",
+        "############"
+      ]
     },
     "wsgGel8": {
       "quelle": "spiel/eigene/glasgelaender_8.png",
@@ -872,7 +878,14 @@
       "art": "zaun",
       "zustand": "neu",
       "stil": "modern",
-      "maske": ["#", "#", "#", "#", "#", "#"]
+      "maske": [
+        "#",
+        "#",
+        "#",
+        "#",
+        "#",
+        "#"
+      ]
     },
     "wsrLkw": {
       "quelle": "spiel/eigene/lkw_links_blau.png",
@@ -1181,6 +1194,33 @@
       "hoehe": 16,
       "kollision": false,
       "art": "bordstein",
+      "zustand": "neu",
+      "stil": "modern"
+    },
+    "wsgMatschL": {
+      "quelle": "spiel/eigene/matschsaum_links.png",
+      "breite": 16,
+      "hoehe": 384,
+      "kollision": false,
+      "art": "boden",
+      "zustand": "neu",
+      "stil": "modern"
+    },
+    "wsgMatschR": {
+      "quelle": "spiel/eigene/matschsaum_rechts.png",
+      "breite": 16,
+      "hoehe": 384,
+      "kollision": false,
+      "art": "boden",
+      "zustand": "neu",
+      "stil": "modern"
+    },
+    "wsgLieferroboter": {
+      "quelle": "spiel/eigene/lieferroboter.png",
+      "breite": 16,
+      "hoehe": 16,
+      "kollision": true,
+      "art": "fahrzeug",
       "zustand": "neu",
       "stil": "modern"
     }

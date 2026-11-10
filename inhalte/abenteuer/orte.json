@@ -1144,14 +1144,20 @@
           "datei": "karten/weg-riverton-ironwood-1.json",
           "name": "ort.wegRivertonIronwood.kanalweg",
           "innen": false,
-          "musik": "musik/landstrasse.ogg"
+          "musik": "musik/landstrasse.ogg",
+          "zustaende": {
+            "nadelIronwood >= 1": "karten/weg-riverton-ironwood-1-graffiti.json"
+          }
         },
         {
           "kennung": "wegRivertonIronwood.bruecke",
           "datei": "karten/weg-riverton-ironwood-2.json",
           "name": "ort.wegRivertonIronwood.bruecke",
           "innen": false,
-          "musik": "musik/landstrasse.ogg"
+          "musik": "musik/landstrasse.ogg",
+          "zustaende": {
+            "nadelIronwood >= 1": "karten/weg-riverton-ironwood-2-ohne-tische.json"
+          }
         }
       ],
       "figuren": [
@@ -1446,13 +1452,20 @@
           "datei": "karten/ironwood-aussen.json",
           "name": "ort.ironwood.aussen",
           "innen": false,
-          "musik": "musik/ironwood.ogg"
+          "musik": "musik/ironwood.ogg",
+          "zustaende": {
+            "kaufGesehen": "karten/ironwood-aussen-vermietet.json",
+            "endeAkt3Gesehen": "karten/ironwood-aussen-meisterschaft.json"
+          }
         },
         {
           "kennung": "ironwood.kantine",
           "datei": "karten/ironwood-kantine.json",
           "name": "ort.ironwood.kantine",
-          "innen": true
+          "innen": true,
+          "zustaende": {
+            "kaufGesehen": "karten/ironwood-kantine-logo.json"
+          }
         },
         {
           "kennung": "ironwood.mamasZimmer",

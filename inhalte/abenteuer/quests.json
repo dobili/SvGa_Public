@@ -2490,6 +2490,40 @@
           ]
         }
       ]
+    },
+    {
+      "kennung": "wegGhostCapital.weltschachtag",
+      "titel": "quest.weltschachtag.titel",
+      "typ": "hilfe",
+      "ort": "wegGhostCapital",
+      "haupt": false,
+      "klein": true,
+      "start": {
+        "art": "dialog",
+        "knoten": "weg-ghost-capital.ereignis_weltschachtag"
+      },
+      "schritte": [
+        {
+          "text": "quest.weltschachtag.schritt1",
+          "ereignis": {
+            "art": "aufgaben",
+            "runde": "wegGhostCapital.simultan"
+          }
+        },
+        {
+          "text": "quest.weltschachtag.schritt2",
+          "ereignis": {
+            "art": "dialog",
+            "knoten": "weg-ghost-capital.weltschachtag_funk"
+          },
+          "wirkungen": [
+            {
+              "art": "muenzen",
+              "anzahl": 25
+            }
+          ]
+        }
+      ]
     }
   ]
 }

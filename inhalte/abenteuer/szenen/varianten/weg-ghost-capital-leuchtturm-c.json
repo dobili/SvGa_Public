@@ -686,6 +686,13 @@
         25,
         17
       ]
+    },
+    {
+      "name": "plakatWeltschachtag",
+      "feld": [
+        20,
+        13
+      ]
     }
   ],
   "figuren": [
@@ -694,6 +701,13 @@
       "feld": [
         30,
         16
+      ]
+    },
+    {
+      "name": "odette",
+      "feld": [
+        43,
+        13
       ]
     }
   ],

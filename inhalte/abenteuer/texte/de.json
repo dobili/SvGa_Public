@@ -1333,5 +1333,17 @@
   "quest.kisteImHausboot.titel": "Die Kiste im Hausboot",
   "quest.kisteImHausboot.schritt1": "In Pépés Blechkiste blättern, bevor sie brennt",
   "quest.kisteImHausboot.schritt2": "Die alte Partie nach dem 20. Zug mit Ambroses Seite weiterspielen",
-  "quest.kisteImHausboot.schritt3": "Pépé erzählen, wie die Partie ausging"
+  "quest.kisteImHausboot.schritt3": "Pépé erzählen, wie die Partie ausging",
+  "figur.odette.name": "Odette Finch",
+  "fund.seite12.name": "Buchseite, Kapitel 12",
+  "fund.seite12.text": "Eine Seite aus einem Handbuch, Kapitel 12: Trainingsmethodik und Checklisten. Gefunden am Anleger am Seeufer.",
+  "fund.finchKoenig.name": "Finchs König",
+  "fund.finchKoenig.text": "Der weiße König aus Buchsbaum. Odette Finch hat ihn die ganze Zeit in der Tasche getragen.",
+  "fund.finchsBuchsbaum.name": "Finchs Buchsbaum",
+  "fund.finchsBuchsbaum.text": "Der ganze Satz aus Buchsbaum, sechzehn Weiße und sechzehn Schwarze, für das gelöste Meisterproblem.",
+  "fund.fotoWeltschachtag.name": "Foto „Weltschachtag“",
+  "fund.fotoWeltschachtag.text": "Die lange Tafel am Seeufer, fünf Bretter, die Bühne mit den zwei Fahnen und Abe mit dem Funkgerät.",
+  "quest.weltschachtag.titel": "Weltschachtag am Leuchtturm",
+  "quest.weltschachtag.schritt1": "Das Simultan an der langen Tafel spielen: fünf Bretter, fünf Bekannte",
+  "quest.weltschachtag.schritt2": "Bei Abes Partie gegen die Welt einen Zug vorschlagen"
 }

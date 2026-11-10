@@ -660,9 +660,31 @@
         45,
         17
       ]
+    },
+    {
+      "name": "ereignisWeltschachtag",
+      "feld": [
+        140,
+        13
+      ]
+    },
+    {
+      "name": "seite12",
+      "feld": [
+        59,
+        10
+      ]
     }
   ],
-  "figuren": [],
+  "figuren": [
+    {
+      "name": "wanderer",
+      "feld": [
+        124,
+        15
+      ]
+    }
+  ],
   "belebung": [
     {
       "name": "wachmann",

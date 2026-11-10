@@ -410,6 +410,24 @@
       "buchuebungen": [],
       "themen": ["umwandlung", "hinlenkung"],
       "anzahl": 4
+    },
+    {
+      "kennung": "wegGhostCapital.simultan",
+      "ort": "wegGhostCapital",
+      "steller": "wegGhostCapital.abe",
+      "reihe": false,
+      "buchuebungen": [],
+      "themen": ["endspiel", "mattbilder", "doppelangriff"],
+      "anzahl": 5
+    },
+    {
+      "kennung": "wegGhostCapital.meisterproblem",
+      "ort": "wegGhostCapital",
+      "steller": "wegGhostCapital.odette",
+      "reihe": false,
+      "buchuebungen": [],
+      "themen": ["matt2"],
+      "anzahl": 1
     }
   ]
 }

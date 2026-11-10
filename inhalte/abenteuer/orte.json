@@ -3834,6 +3834,18 @@
           "name": "figur.abe.name",
           "sprite": "figuren/abe.png",
           "dialog": "weg-ghost-capital.abe"
+        },
+        {
+          "kennung": "wegGhostCapital.odette",
+          "name": "figur.odette.name",
+          "sprite": "figuren/odette.png",
+          "dialog": "weg-ghost-capital.odette"
+        },
+        {
+          "kennung": "wegGhostCapital.wanderer",
+          "name": "figur.wanderer.name",
+          "sprite": "figuren/wanderer.png",
+          "dialog": "weg-ghost-capital.wanderer"
         }
       ],
       "ausloeser": [
@@ -3864,7 +3876,9 @@
           "ziel": {
             "karte": "wegGhostCapital.leuchtturm",
             "ausloeser": "zurueckSeeufer"
-          }
+          },
+          "dialog": "weg-ghost-capital.weiter_leuchtturm",
+          "wenn": "capitalZugang"
         },
         {
           "name": "zurueckSeeufer",
@@ -3890,6 +3904,24 @@
             "karte": "capitalArena.aussen",
             "ausloeser": "wegGhost"
           }
+        },
+        {
+          "name": "ereignisWeltschachtag",
+          "karte": "wegGhostCapital.seeufer",
+          "art": "dialog",
+          "dialog": "weg-ghost-capital.ereignis_weltschachtag"
+        },
+        {
+          "name": "seite12",
+          "karte": "wegGhostCapital.seeufer",
+          "art": "gegenstand",
+          "dialog": "weg-ghost-capital.seite12"
+        },
+        {
+          "name": "plakatWeltschachtag",
+          "karte": "wegGhostCapital.leuchtturm",
+          "art": "dialog",
+          "dialog": "weg-ghost-capital.plakat_weltschachtag"
         }
       ]
     },

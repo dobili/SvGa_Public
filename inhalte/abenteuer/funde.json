@@ -288,6 +288,32 @@
       "ort": "bayou",
       "name": "fund.formularCafeDesExiles.name",
       "text": "fund.formularCafeDesExiles.text"
+    },
+    {
+      "kennung": "seite12",
+      "ort": "wegGhostCapital",
+      "name": "fund.seite12.name",
+      "text": "fund.seite12.text",
+      "muenzen": 5
+    },
+    {
+      "kennung": "finchKoenig",
+      "ort": "wegGhostCapital",
+      "name": "fund.finchKoenig.name",
+      "text": "fund.finchKoenig.text"
+    },
+    {
+      "kennung": "finchsBuchsbaum",
+      "ort": "wegGhostCapital",
+      "name": "fund.finchsBuchsbaum.name",
+      "text": "fund.finchsBuchsbaum.text",
+      "extra": "figurensatz:finchs-buchsbaum"
+    },
+    {
+      "kennung": "fotoWeltschachtag",
+      "ort": "wegGhostCapital",
+      "name": "fund.fotoWeltschachtag.name",
+      "text": "fund.fotoWeltschachtag.text"
     }
   ]
 }

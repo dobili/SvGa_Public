@@ -731,13 +731,13 @@
           "name": "seite00",
           "karte": "wegMapleCedar.landstrasse",
           "art": "gegenstand",
-          "dialog": "weg-maple-cedar.fund_seite00"
+          "dialog": "weg-maple-cedar.seite00"
         },
         {
           "name": "finchBauerA",
           "karte": "wegMapleCedar.flussweg",
           "art": "gegenstand",
-          "dialog": "weg-maple-cedar.fund_finch_bauer_a"
+          "dialog": "weg-maple-cedar.finch_bauer_a"
         }
       ]
     },
@@ -846,7 +846,7 @@
           "name": "seite01",
           "karte": "wegCedarRiverton.bahndamm",
           "art": "gegenstand",
-          "dialog": "weg-cedar-riverton.fund_seite01"
+          "dialog": "weg-cedar-riverton.seite01"
         },
         {
           "name": "durchlass",
@@ -1339,6 +1339,12 @@
           "karte": "lockport.gasthaus",
           "art": "dialog",
           "dialog": "lockport-gasthaus.kegelkoenig"
+        },
+        {
+          "name": "pumpe",
+          "karte": "lockport.aussen",
+          "art": "dialog",
+          "dialog": "lockport-aussen.pumpe"
         }
       ]
     },

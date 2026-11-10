@@ -121,7 +121,11 @@ Die App zeichnet `statist` und `tier` noch nicht (`app/src/abenteuer/oberwelt/sz
    - Vitest für die Logik (Ausweichen, Satzfolge, Zuordnung);
    - ein Playwright-Test: Statist ansprechen, Satz erscheint;
    - `npm run pruefen`, `npm run build`, e2e Abenteuer grün.
-5. **Leistung:** 30 Statisten und 15 Tiere auf einer Karte flüssig auf dem Handy, also ohne
+5. **Vorführungen** (Dokument 16, 3.4): Ein Statist mit `zeigt` bietet nach seinem Satz an, den
+   Zug vorzuspielen. Ein kleines Brett zeigt die Stellung aus `inhalte/abenteuer/vorfuehrungen.json`
+   und spielt die Züge mit den Sätzen `vorfuehrung.<kennung>.<n>` nacheinander vor (vor und zurück
+   wie im Folgespieler, ohne Balken). Die Daten müssen dafür ins Abenteuer-Paket der App.
+6. **Leistung:** 30 Statisten und 15 Tiere auf einer Karte flüssig auf dem Handy, also ohne
    Physik für Tiere und nur Bewegung im Sichtbereich.
 
 Danach Riverton, Ironwood und Weg 3 wie oben.

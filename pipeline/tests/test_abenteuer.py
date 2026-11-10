@@ -27,6 +27,7 @@ DATEIEN = {
     "runden.json": "abenteuer-runden.schema.json",
     "funde.json": "abenteuer-funde.schema.json",
     "laeden.json": "abenteuer-laeden.schema.json",
+    "vorfuehrungen.json": "abenteuer-vorfuehrungen.schema.json",
     "texte/de.json": "abenteuer-texte.schema.json",
 }
 

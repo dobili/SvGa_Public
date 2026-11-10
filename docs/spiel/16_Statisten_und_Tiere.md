@@ -109,6 +109,29 @@ Dazu passen kurze **Sätze berühmter Spielerinnen und Spieler** aus Interviews 
   (Eis, Badesachen). Ein Statist wiederholt sich nie über zwei Orte hinweg, außer er reist
   (Wanderer, Lkw-Fahrer, Odette Finch).
 
+### 3.4 Vorführen statt nur erzählen (Wunsch des Autors, 10.11.2026)
+
+Wer von einem brillanten Zug erzählt, kann ihn auch zeigen.
+
+- **In der App:** Nach dem Satz fragt der Statist: „Soll ich ihn dir zeigen?“ Dann öffnet sich ein
+  kleines Brett mit der Stellung vor dem Zug. Er spielt den Zug und die Fortsetzung Zug für Zug
+  vor, mit einem kurzen Satz je Zug, wie der Folgespieler der Trainer
+  (`ui/trainer/Folgespieler.tsx`).
+- **Daten:**
+  - Die Vorführung steht in `inhalte/abenteuer/vorfuehrungen.json`, mit Partie, Quelle und Zügen.
+  - Der Statist bekommt `"zeigt": "<kennung>"`.
+  - Die Texte stehen in `texte/de.json`: `vorfuehrung.<kennung>.titel` und ein Satz je Zug
+    (`vorfuehrung.<kennung>.1`, `.2` …; der Satz zum letzten Zug ist Pflicht).
+- **Prüfung** (`python -m pipeline.abenteuer.vorfuehrungen`, auch in pytest):
+  - Die Partie ergibt nach `ab` Halbzügen genau die Stellung.
+  - Jeder Zug ist legal.
+  - Texte und Verweise sind da.
+- **Erste Vorführung:** die Opernpartie, Morphy 1858, die letzten fünf Züge bis zum Matt
+  (`operPartie`). Weitere kommen aus dem Vorrat 4.5. Höchstens eine Vorführung je Karte, damit sie
+  etwas Besonderes bleibt.
+- **Auch Lieblingsmotive und Eröffnungen** lassen sich so zeigen. Dafür genügt eine kurze, selbst
+  gebaute Zugfolge mit Quelle „eigenes Beispiel“, ebenfalls geprüft.
+
 ## 4. Vorrat: Schachgeschichte (nur das hier, oder vom Haupt-Chat geprüft)
 
 Die Helfer nehmen Begebenheiten nur aus dieser Liste. Jede ist gut belegt. Neue Begebenheiten

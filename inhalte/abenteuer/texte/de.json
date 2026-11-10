@@ -824,5 +824,15 @@
   "ort.kuerbishof.name": "Kürbishof Miller",
   "ort.kuerbishof.hof": "Kürbishof",
   "ort.pelikaninsel.name": "Pelikaninsel",
-  "ort.pelikaninsel.dorf": "Inseldorf"
+  "ort.pelikaninsel.dorf": "Inseldorf",
+  "vorfuehrung.operPartie.titel": "Die Opernpartie, Paris 1858",
+  "vorfuehrung.operPartie.1": "Morphy gibt den Turm für einen Springer. Der Springer hat den Weg zum König versperrt.",
+  "vorfuehrung.operPartie.2": "Schwarz muss zurückschlagen. Jetzt hängt wieder etwas auf der d-Linie.",
+  "vorfuehrung.operPartie.3": "Der zweite Turm kommt nach. Die Fesselung auf d7 bleibt.",
+  "vorfuehrung.operPartie.4": "Schwarz will mit der Dame tauschen. Zu spät.",
+  "vorfuehrung.operPartie.5": "Läufer schlägt mit Schach. Alles läuft auf ein Feld zu: d8.",
+  "vorfuehrung.operPartie.6": "Wieder muss Schwarz zurückschlagen.",
+  "vorfuehrung.operPartie.7": "Und jetzt die Dame! Morphy gibt sie her, damit der Springer weg ist.",
+  "vorfuehrung.operPartie.8": "Schwarz hat keine Wahl.",
+  "vorfuehrung.operPartie.9": "Matt. Mit dem letzten Turm, der übrig war. Die Herren haben angeblich kaum noch auf die Bühne geschaut."
 }

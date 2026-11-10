@@ -18687,8 +18687,8 @@
      "id": 206,
      "name": "pd9Ziegel",
      "type": "moebel",
-     "x": 544,
-     "y": 384,
+     "x": 528,
+     "y": 336,
      "width": 32,
      "height": 32,
      "rotation": 0,
@@ -18697,12 +18697,12 @@
       {
        "name": "tiefe",
        "type": "int",
-       "value": 1
+       "value": 360
       },
       {
        "name": "kollision",
        "type": "bool",
-       "value": false
+       "value": true
       }
      ]
     },
@@ -18710,8 +18710,8 @@
      "id": 207,
      "name": "pd9Ziegel",
      "type": "moebel",
-     "x": 128,
-     "y": 736,
+     "x": 304,
+     "y": 784,
      "width": 32,
      "height": 32,
      "rotation": 0,
@@ -18720,12 +18720,12 @@
       {
        "name": "tiefe",
        "type": "int",
-       "value": 1
+       "value": 808
       },
       {
        "name": "kollision",
        "type": "bool",
-       "value": false
+       "value": true
       }
      ]
     },

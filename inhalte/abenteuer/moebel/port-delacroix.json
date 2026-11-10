@@ -1607,12 +1607,10 @@
       "quelle": "modern-exteriors/Modern_Exteriors_16x16/ME_Theme_Sorter_16x16/3_City_Props_Singles_16x16/ME_Singles_City_Props_16x16_Brick_5.png",
       "breite": 32,
       "hoehe": 32,
-      "kollision": false,
+      "kollision": true,
       "art": "deko",
       "zustand": "gebraucht",
-      "stil": "klassisch",
-      "begehbar": true,
-      "begehbar_grund": "Ziegelreste, flach am Boden"
+      "stil": "klassisch"
     },
     "pd9LeiterKaputt": {
       "quelle": "modern-exteriors/Modern_Exteriors_16x16/ME_Theme_Sorter_16x16/3_City_Props_Singles_16x16/ME_Singles_City_Props_16x16_Broken_Ladder_1.png",

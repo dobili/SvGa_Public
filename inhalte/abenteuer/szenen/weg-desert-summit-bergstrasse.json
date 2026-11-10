@@ -3,7 +3,7 @@
   "datei": "karten/weg-desert-summit-bergstrasse.json",
   "kante": "klippe",
   "art": "aussen",
-  "beschreibung": "Weg 7, die Bergstraße: Hinter dem Diner endet die Wüste an einem Viehgitter im Asphalt, und die Straße steigt in Kehren nach Norden in die Berge. Felsstufen aus rotem Stein trennen die Kehren, Rampen führen hindurch. Unten Sand, Kakteen und Wacholder, in der Mitte Erde und erste Pinien, oben Gras, dichter Pinienwald und kühler Wind. Auf halber Höhe zweigt ein Schotterweg nach Westen zur Hochebene ab, mit Wegweiser und offener Schranke. Am Nordrand geht es nach Summit City. Die Straße hat gelbe Mittellinie, weiße Randlinien und abgeschrägte Kehren; die Zonen wechseln an den Felsstufen, der Rastplatz ist eine Haltebucht aus Asphalt. Variante C, die reichere: drei weite Kehren, Picknickplatz mit Bänken an der Quelle, dichter Pinienwald oben mit Holzstapeln, viele Felsbrocken an den Stufen. Wo die Straße eine Felsstufe schneidet, fassen Stützmauern aus Ziegeln den Einschnitt; die Mittellinie läuft durch die Kehren.",
+  "beschreibung": "Weg 7, die Bergstraße: Hinter dem Diner endet die Wüste an einem Viehgitter im Asphalt, und die Straße steigt in Kehren nach Norden in die Berge. Felsstufen aus rotem Stein trennen die Kehren, Rampen führen hindurch. Unten Sand, Kakteen und Wacholder, in der Mitte Erde und erste Pinien, oben Gras, dichter Pinienwald und kühler Wind. Auf halber Höhe zweigt ein Schotterweg nach Westen zur Hochebene ab, mit Wegweiser und offener Schranke. Am Nordrand geht es nach Summit City. Die Straße hat gelbe Mittellinie, weiße Randlinien und abgeschrägte Kehren; die Zonen wechseln an den Felsstufen, der Rastplatz ist ein Stellplatz aus Asphalt mit zwei Buchten quer zur Straße, in einer steht ein Lastwagen von hinten. Variante C, die reichere: drei weite Kehren, Picknickplatz mit Bänken an der Quelle, dichter Pinienwald oben mit Holzstapeln, viele Felsbrocken an den Stufen. Wo die Straße eine Felsstufe schneidet, fassen Stützmauern aus Ziegeln den Einschnitt; die Mittellinie läuft durch die Kehren.",
   "wand": "fels",
   "boden": "sand",
   "boeden": {
@@ -101,15 +101,15 @@
     "#################################sss####",
     "#eeeeeeeeeeeeeeeeeeeeeeeeeeeeeeeessseee#",
     "#eeeeeeeeeeeeeeeeeeeeeeeeeeeeeeeessseee#",
-    "#eeeeeeeeeeeeeeeeeeeeeeeeeeeeeeeessseee#",
-    "#eeeeeeeeeeeeeeeeeeeeeeeeeeeeeeeessseee#",
-    "#eeeeeeeeeeeeeeeeeeeeeeeeeeeeeeeessseee#",
-    "#eeeeeeeeeeeeeeeeeeeeeeeeeeeeeeeessseee#",
-    "#eeeeeeeeeeeeeeeeeeeeeeeeeeeeeeeessseee#",
-    "#eeeeeeeeeeaaaaaaaaaaeeeeeeeeeeeessseee#",
-    "#eeeeeeeeeeaaaaaaaaaaeeeeeeeeeeeessseee#",
-    "#eeeeeeeeeeaaaaaaaaaaeeeeeeeeeeeessseee#",
-    "#eeeeeeeeeeaaaaaaaaaaeeeeeeeeeeesssseee#",
+    "#eeeeeeeeeeeeeeeeaaaaaaaaeeeeeeeessseee#",
+    "#eeeeeeeeeeeeeeeeaaaaaaaaeeeeeeeessseee#",
+    "#eeeeeeeeeeeeeeeeaaaaaaaaeeeeeeeessseee#",
+    "#eeeeeeeeeeeeeeeeaaaaaaaaeeeeeeeessseee#",
+    "#eeeeeeeeeeeeeeeeaaaaaaaaeeeeeeeessseee#",
+    "#eeeeeeeeeeeeeeeeaaaaaaaaeeeeeeeessseee#",
+    "#eeeeeeeeeeeeeeeeaaaaaaaaeeeeeeeessseee#",
+    "#eeeeeeeeeeeeeeeeaaaaaaaaeeeeeeeessseee#",
+    "#eeeeeeeeeeeeeeeeaaaaaaaaeeeeeeesssseee#",
     "#eeeessssssssssssssssssssssssssssssseee#",
     "#eeesssssssssssssssssssssssssssssssseee#",
     "#eeessssssssssssssssssssssssssssssseeee#",
@@ -162,7 +162,7 @@
     },
     {
       "moebel": "parkbank",
-      "feld": [20, 88]
+      "feld": [12, 91]
     },
     {
       "moebel": "wds6Wegweiser",
@@ -646,9 +646,10 @@
       "feld": [11, 111]
     },
     {
-      "moebel": "wds6SattelzugBlau",
-      "feld": [11, 90],
-      "id": "ereignis124"
+      "moebel": "fz12LastwagenHinten",
+      "feld": [17, 85],
+      "id": "ereignis124",
+      "versatz": [8, 0]
     },
     {
       "moebel": "wg6Kisten",
@@ -739,7 +740,7 @@
     },
     {
       "name": "spurPM4",
-      "feld": [15, 95]
+      "feld": [18, 94]
     },
     {
       "name": "aussichtBerg",
@@ -876,5 +877,8 @@
     }
   ],
   "markierung": ["s"],
-  "wandart": "gras"
+  "wandart": "gras",
+  "buchten_laengs": {
+    "a": 4
+  }
 }

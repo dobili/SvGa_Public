@@ -58,3 +58,13 @@ def test_randlinie_um_die_haltebucht_offen_zur_fahrbahn():
     assert bild.getpixel((2 * K + 1, 8)) == WEISS  # linke Seite der Bucht
     assert bild.getpixel((2 * K + 8, 1)) == WEISS  # Oberkante
     assert bild.getpixel((2 * K + 8, 2 * K - 2)) != WEISS  # zur Fahrbahn offen
+
+
+def test_buchten_laengs_alle_vier_spalten():
+    """Regel: KARTENREGELN 10.65: Fahrzeuge von vorn oder hinten stehen in Buchten mit Linien von
+    Nord nach Süd (Fernfahrerplatz am Diner)."""
+    zeilen = ["bbbbbbbbb"] * 3
+    bild = Image.new("RGBA", (9 * K, 3 * K))
+    markiere(bild, zeilen, {"buchten_laengs": {"b": 4}})
+    assert bild.getpixel((4 * K, 5)) == WEISS
+    assert bild.getpixel((2 * K, 5)) == (0, 0, 0, 0)

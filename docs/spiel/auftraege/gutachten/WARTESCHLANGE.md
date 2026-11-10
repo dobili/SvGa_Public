@@ -146,3 +146,6 @@ Szene heißt die Datei in `inhalte/abenteuer/szenen/` ohne `.json`.
 - [ ] weg-desert-summit-diner (+ neon): Tür des Hinterzimmers am Diner; hochebene-schule (+ vor-diplom): Bucht mit Randlinie (mittel-4)
 - [ ] silicon-bay-aussen und silicon-bay-hafen (dritte Prüfung, mittel-3; Tunnelbogen am Kartenrand, Park im Norden, Gartenhof, Baumplatz symmetrisch; Kai mit Kran und Fischkisten, Fähre an der Kaimauer, Bäckerei in der Häuserzeile)
 - [ ] riverton-aussen (+ vier Zustände), crossroads-aussen (+ gatter-offen), jahrmarkt-festplatz: Gemini-Bilder Teil 2 eingebaut (Steinbrücke, Sattelzüge, Lastwagen, Imbisswagen von vorn; kurze Sichtprüfung, mittel-3)
+
+- [ ] weg-desert-summit-diner (+ neon), weg-desert-summit-bergstrasse, hochebene-felsentuerme: Lastwagen von vorn und hinten in Buchten, Pferde auf der Koppel (Gemini Teil 2, mittel-4)
+- [ ] steinbruch-grube: Bagger aus Gemini (bagger_links) statt des kleinen Baggers von vorn (mittel-4)

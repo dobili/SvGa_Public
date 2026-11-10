@@ -278,7 +278,7 @@ Kehren. **Ränder** offen nur Ost (39, 120–122), West (0, 70–71), Nord (18�
 | `diner`       | `kreide3`            | (87, 9)   | (91, 9)   | (85, 9)  | Kreidespringer an der Seite |
 | `diner`       | `finchSpringerB`     | (89, 10)  | (65, 10)  | (87, 10) | Blumenkasten am Motel       |
 | `diner`       | `seite08`            | (55, 22)  | (52, 18)  | (54, 17) | Parkplatz                   |
-| `bergstrasse` | `spurPM4`            | (16, 116) | (16, 115) | (15, 95) | neben dem Sattelzug         |
+| `bergstrasse` | `spurPM4`            | (16, 116) | (16, 115) | (18, 94) | hinter dem Lastwagen        |
 
 **Leben (Regel 10.53):**
 
@@ -370,3 +370,27 @@ und 5 unter dem Bild); der Übergang `hinterzimmerTuer` liegt in voller Türbrei
 10.68, 10.69). Bergstraße: Eine zweite Abschrägung der Kehren machte die Fahrbahn zackig und schmaler als
 drei Felder und ist wieder entfernt; runde Kehren brauchen Asphaltkacheln mit Rand und Schrägen wie
 `piste_rot.png` (möglicher Bildwunsch).
+
+## Gemini-Bilder Teil 2: Lastwagen von vorn und hinten (10.11.2026, mittel-4)
+
+Der Autor hat Sattelzug und Lastwagen in Vorder- und Rückansicht gemalt (`spiel/eigene/sattelzug_vorn`,
+`_hinten`, `lastwagen_vorn`, `_hinten`; Möbel `fz12…` in `moebel/allgemein.json`). Damit stehen die Laster
+nach Regel 10.65 quer zur Straße in Buchten statt als Seitenansicht auf einem Platz.
+
+- **Diner (und Zustand neon):** Der Fernfahrerplatz ist 32 Felder breit und zwölf Reihen tief (Spalten
+  52–83, Reihen 18–29; die Karte ist dafür drei Reihen höher, 33 statt 30). `"buchten_laengs": {"b": 4}`
+  zieht die Linien von Nord nach Süd (neu in `pipeline/abenteuer/strasse.py`). Darin stehen ein Sattelzug
+  von vorn (56, 18), einer von hinten (64, 19) und ein Lastwagen von hinten (76, 18), je eine halbe Kachel
+  eingerückt. Der Trucker lehnt am Führerhaus (68, 20), der Fernfahrer prüft die Reifen (60, 27).
+- **Bergstraße:** Der Rastplatz ist ein Stellplatz aus Asphalt mit zwei Buchten quer zur Straße (Spalten
+  17–24, Reihen 85–93). In der linken steht der Lastwagen von hinten (17, 85, Ereignisobjekt
+  `ereignis124`), die Kisten liegen in der rechten. `spurPM4` liegt jetzt bei (18, 94) hinter dem
+  Lastwagen; die Bank steht bei (12, 91) an der Quelle.
+- **Prüfung:** `pipeline/abenteuer/fahrzeuge.py` kennt die neuen Bilder (vorn/hinten = längs) und nimmt
+  auf Plätzen mit `buchten` oder `buchten_laengs` die Richtung der Buchten statt der Platzform.
+- **Kojote:** Die Belebung `kojote` zeigt jetzt den Kojoten aus Gemini statt des Hundes (Stamm in
+  `tierarten.json`), sobald der Haupt-Chat den Bogen gebaut hat.
+- **Nicht gemacht:** runde Kehren mit durchsichtigen Asphaltecken. Die weißen Randlinien und die
+  Mittellinie zeichnet `strasse.py` gerade bis in die Ecke; mit Schrägkacheln müssten sie der Schräge
+  folgen, und das Kartenbild müsste unter jeder Randkachel den Nachbarboden zeichnen (Sand, Erde oder
+  Gras je Zone). Das ist ein eigener Schritt für Kartenbild und Linien, kein reiner Bildwunsch.

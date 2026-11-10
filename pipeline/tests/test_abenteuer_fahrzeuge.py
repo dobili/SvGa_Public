@@ -56,3 +56,16 @@ def test_auto_von_der_seite_ueber_einer_buchtlinie():
     # Dasselbe Auto zwischen zwei Linien am Rand der Bucht: kein Hinweis.
     daneben = [stueck("autoSeite", 2, 1, 5, 3), stueck("linieHoch", 2, 0, 1, 5)]
     assert fahrzeughinweise(SZENE, platz, daneben, MOEBEL) == []
+
+
+def test_lastwagen_von_vorn_in_buchten_laengs():
+    """Regel: KARTENREGELN 10.65: Auf einem Platz mit Buchtlinien von Nord nach Süd stehen Fahrzeuge
+    von vorn oder hinten richtig, auch wenn der Platz breiter als tief ist (Fernfahrerplatz)."""
+    assert ansicht("spiel/eigene/sattelzug_vorn.png") == LAENGS
+    assert ansicht("spiel/eigene/lastwagen_hinten.png") == LAENGS
+    assert ansicht("spiel/eigene/lieferwagen_links.png") == SEITE
+    moebel = {"zugVorn": {"quelle": "spiel/eigene/sattelzug_vorn.png"}, **MOEBEL}
+    zeilen = ["b" * 12] * 4
+    szene = {"boden": "sand", "boeden": {"b": "asphalt"}, "buchten_laengs": {"b": 4}}
+    assert fahrzeughinweise(szene, zeilen, [stueck("zugVorn", 4, 0, 3, 4)], moebel) == []
+    assert len(fahrzeughinweise(szene, zeilen, [stueck("busSeite", 2, 1, 7, 3)], moebel)) == 1

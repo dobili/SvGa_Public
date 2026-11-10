@@ -8,7 +8,9 @@ genannten Rasterzeichen sind Fahrbahn. Parkplätze und Höfe bekommen ein eigene
 Markierung.
 
 Parkbuchten (Szene ``"buchten": {"b": 4}``): Auf Plätzen aus diesem Zeichen trennt alle vier Reihen
-eine weiße Linie die Buchten (Fernfahrerplatz am Diner, Variantenwahl Mangel 3).
+eine weiße Linie die Buchten (Variantenwahl Mangel 3). ``"buchten_laengs": {"b": 4}`` zieht die Linien
+von Nord nach Süd, alle vier Spalten: für Fahrzeuge von vorn oder hinten (Fernfahrerplatz am Diner
+und Rastplatz der Bergstraße mit den Lastwagen aus Gemini, 10.11.2026; KARTENREGELN 10.65).
 
 Regeln (Straßen wie in Nordamerika, Schauplatz der Geschichte):
 - Fahrbahnen von 2 bis 4 Feldern Breite bekommen eine gelbe, gestrichelte Mittellinie;
@@ -126,6 +128,19 @@ def _buchten(bild: Image.Image, zeilen: list[str], buchten: dict[str, int]) -> N
                 z.line((x * K, y * K, (x + 1) * K - 1, y * K), fill=WEISS)
 
 
+def _buchten_laengs(bild: Image.Image, zeilen: list[str], buchten: dict[str, int]) -> None:
+    """Weiße Trennlinien von Nord nach Süd: alle ``abstand`` Spalten ab der linken Kante des Platzes.
+
+    Beispiel: Fernfahrerplatz, 32 Felder breit, Abstand 4 → sieben Linien, acht Buchten für
+    Sattelzüge von vorn oder hinten (3 Felder breit).
+    """
+    z = ImageDraw.Draw(bild)
+    for zeichen, abstand in buchten.items():
+        for y, anfang, laenge in _laeufe(zeilen, {zeichen}, False):
+            for x in range(anfang + abstand, anfang + laenge, abstand):
+                z.line((x * K, y * K, x * K, (y + 1) * K - 1), fill=WEISS)
+
+
 def _randlinien(bild: Image.Image, zeilen: list[str], zeichen: set[str], offen: set[str]) -> None:
     """Weiße Randlinie um Buchten aus ``zeichen`` (Szene „randlinie“): an jeder Seite, an der die
     Bucht endet, außer zur Fahrbahn hin (``offen``), wo man ein- und ausfährt.
@@ -152,11 +167,12 @@ def _randlinien(bild: Image.Image, zeilen: list[str], zeichen: set[str], offen: 
 
 
 def markiere(bild: Image.Image, zeilen: list[str], szene: dict) -> None:
-    """Alle Markierungen einer Szene: Linien auf Fahrbahnen (``markierung``), Parkbuchten (``buchten``),
+    """Alle Markierungen einer Szene: Linien auf Fahrbahnen (``markierung``), Parkbuchten (``buchten``, ``buchten_laengs``),
     Randlinien um Haltebuchten (``randlinie``).
 
     Ohne die beiden Schlüssel bleibt das Bild unverändert.
     """
     _linien(bild, zeilen, set(szene.get("markierung", [])))
     _buchten(bild, zeilen, szene.get("buchten", {}))
+    _buchten_laengs(bild, zeilen, szene.get("buchten_laengs", {}))
     _randlinien(bild, zeilen, set(szene.get("randlinie", [])), set(szene.get("markierung", [])))

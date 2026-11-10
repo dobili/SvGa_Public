@@ -10639,8 +10639,8 @@
      "id": 7,
      "name": "bagger",
      "type": "ausloeser",
-     "x": 896,
-     "y": 640,
+     "x": 944,
+     "y": 672,
      "width": 16,
      "height": 16,
      "rotation": 0,
@@ -12989,19 +12989,19 @@
     },
     {
      "id": 105,
-     "name": "st5Bagger",
+     "name": "fz12BaggerLinks",
      "type": "moebel",
-     "x": 912,
+     "x": 896,
      "y": 592,
-     "width": 48,
-     "height": 96,
+     "width": 112,
+     "height": 78,
      "rotation": 0,
      "visible": true,
      "properties": [
       {
        "name": "tiefe",
        "type": "int",
-       "value": 680
+       "value": 662
       },
       {
        "name": "kollision",

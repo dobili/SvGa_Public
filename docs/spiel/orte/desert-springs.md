@@ -86,6 +86,44 @@ mit Veranda und Schild ANTIQUARIAT, Diner-Wagen, Miras flacher Stein, Geierkreis
 den Bogen und unter der Brücke hindurch. 5. **Motel und Bahnhof:** Der Gang vor den Motelzimmern und die Veranda des alten Bahnhofs sind
 begehbar (`frei_unten: 1` im Möbel, seit 10.11.2026).
 
+## Runde 9: Stadt und Innenräume nach dem Gutachten (10.11.2026, mittel-2)
+
+### Antworten auf die drei Mängel (variantenwahl.md)
+
+- **`desertSprings.aussen` (Hauptfassung C):**
+  1. **Old Mother Road:** hat jetzt eine gestrichelte Mittellinie (neue Böden `asphaltMitte` und
+     `asphaltMitteSenkrecht` aus LimeZus Stadtbogen). Sie biegt mit abgeschrägter Ecke statt im
+     rechten Winkel zum Hof ab.
+  2. **Diner und Bahnhof:**
+     - Der Diner trägt die neue Diner-Fassade (mittel-1) statt des silbernen Wagens aus Crossroads.
+     - Der Bahnsteig ist drei Reihen tief vor dem alten Bahnhof, mit zwei Bänken. Der Bahnhof steht
+       direkt daran, die Rückseite zu den Gleisen.
+     - Motel und Garage bleiben: Die Garage ist der Clubraum, das Motel nennt die Geschichte. Ob
+       Crossroads sein Motel tauscht, entscheidet mittel-3.
+  3. **Leere Sandflächen:** bekommen Saguaros, blühende Kakteen und Felsgruppen (Süden, am
+     Wasserturm, Osten). Der rote Fels am oberen Rand bleibt die Wand. Eine rote Felsklippe gibt es
+     erst mit dem Bildwunsch von mittel-4.
+- **`desertSprings.garage`:**
+  - Der Werktisch steht an der Nordwand neben dem Werkzeugregal; die Holzbank ohne Grund ist weg.
+  - Am Auto stehen Werkzeugkiste und Ölkanister, die Fässer zusammen in der Ecke.
+  - Rechts kommen Werkzeugschrank und liegende Reifen in die leere Hälfte.
+  - Einen Ölfleck gibt es nicht als Bild; er wäre ein kleiner Bildwunsch.
+- **`desertSprings.antiquariat`:**
+  - Kellerluke, Briefkiste und Zeitungen liegen links, wie es die Beschreibung sagt.
+  - Statt Kasten und leerer Vitrine gibt es eine lange Holztheke mit Kasse und eine Vitrine mit
+    Inhalt.
+  - Eine kleine Wanduhr ersetzt die zwei Kacheln große Bahnhofsuhr; dazu helle Dielen.
+
+### Zustände
+
+| Karte                       | Zustand         | Bedingung                          | Was sich ändert                                                            | Quelle                                                           |
+| --------------------------- | --------------- | ---------------------------------- | -------------------------------------------------------------------------- | ---------------------------------------------------------------- |
+| `desertSprings.aussen`      | `meisterschaft` | `endeAkt3Gesehen`                  | drei Fahrerautos auf dem Hof vor dem Motel, Banner der Landesmeisterschaft | 13_Wegenetz, Akt 4: Dot vermietet Zimmer an Meisterschaftsfahrer |
+| `desertSprings.antiquariat` | `leihgabe`      | `abschiedGesehen und briefGelesen` | Vitrine mit Hales Brief neben dem Lesetisch                                | 13_Wegenetz, Post-Game: Hales Brief als Leihgabe                 |
+
+Die Garage hat keinen Zustand. Dass in Akt 4 Mira und Tomás unterwegs sind, betrifft nur Figuren.
+„Erste Wärme, blühende Kakteen“ in Akt 3 ist die Grundkarte.
+
 ## Runde 7: Stadt und Leben (10.11.2026)
 
 **Stadt (Regel 10.51, klein: 12 Gebäude):** Die Außenkarte ist von 56 auf 60 Spalten gewachsen. Im

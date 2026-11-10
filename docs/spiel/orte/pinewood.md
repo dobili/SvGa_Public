@@ -202,6 +202,37 @@ Vogelkundler (Spechte); Eichhörnchen, Reh, Hase, Waschbär, Eichelhäher, Spech
 dem Camp, Dokument 16, 5.3), Betreuerin, Fotografin; Libellen, Specht, Eichhörnchen,
 Streifenhörnchen, Eule, Reh.
 
+### 3.6 Runde 9: Camp und Weg 10 nach dem Gutachten (10.11.2026, mittel-2)
+
+- **`pinewoodCamp.aussen` (Hauptfassung C):**
+  - **Lagerfeuerplatz:** Er war ein gezackter Sandfleck. Jetzt ist er ein runder Platz aus dem neuen
+    Boden `sandplatz` (LimeZus oranger Sand mit Rändern und Schrägkacheln), die Baumstämme bilden den
+    Ring.
+  - **Strand:** Er lief in Kachelstufen. Jetzt ist er ein durchgehender Streifen mit einer Bucht und
+    einer Sandzunge.
+  - **Stilbrüche:** Wellblechschuppen, weißer Wohnwagen und Containerhaus sind ersetzt durch
+    Blockhütten (das Waschhaus ist jetzt auch eine) und Tannen. Der Bootsschuppen steht am Ufer.
+  - **Zustände:** keine. Das Camp besucht man nur in Akt 4, und die Geschichte ändert dort nichts
+    Festes; Sommerfest und Lebendschach spielen auf Weg 9.
+- **`wegPinewoodGhost.canyonrand` (Hauptfassung C):**
+  - **Tiefe:** Unter der Kante lag ein leerer Streifen auf gleicher Höhe. Jetzt windet sich unten
+    ein Fluss mit Seitenarmen durch roten Sand, mit Felsen und Kakteen.
+  - **Kletterwand:** Sie hängt jetzt an der Felswand, nicht als Block auf der Kante; es gibt zwei
+    Routen.
+  - **Rahmen:** `wandart` (roter Sand) nimmt ihn weg.
+  - **Grenze:** Gras und roter Fels verzahnen sich unregelmäßig; die Wegecken bekommen Schrägkacheln.
+  - **Offen:** Die rote Klippe selbst ist ein Bildwunsch von mittel-4. Gras über der Kante ist
+    LimeZus Wand ohne roten Fuß.
+  - **Zustände:** keine (nur Akt 4).
+- **`wegPinewoodGhost.staubstrasse` (Hauptfassung C):**
+  - **Piste:** Sie schwingt in weiten Bögen statt in Versprüngen von vier Reihen und hat ein
+    Bankett aus rotem Felsboden.
+  - **Masten:** stehen alle 14 Kacheln am Nordrand. Die Leitung ist ein Bildwunsch
+    (`bildwuensche/telegrafenleitung.py`, ein Stück Draht je Abstand).
+  - **Aufgeräumt:** Die zusammenhanglosen Zaunstücke und das zweite Autowrack sind weg. Die
+    Tankstelle steht direkt an der Piste, ihr Türauslöser auf dem Bankett.
+  - **Zustände:** keine (nur Akt 4).
+
 ## 4. Bühnenbilder
 
 ### 4.1 Hütten

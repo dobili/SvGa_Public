@@ -169,7 +169,14 @@ Erst danach sieht der Autor die Karte. Neue Notizen des Autors kommen als neue P
 Der Gutachter bekommt nicht den Bericht des Helfers und nicht die Notizen des Autors zu dieser
 Karte, damit er unbefangen bleibt.
 
-## 5. Vorhandene Themen zuerst nutzen
+## 5. Vorbilder ansehen
+
+Vor dem Bau und beim Gutachten: `docs/spiel/vorbilder/README.md` nennt je Thema die Vorschaubilder,
+an denen LimeZu selbst zeigt, wie Straßen, Kanäle, Höhen, Küchen, Museen und Höfe gebaut werden.
+Die Bilder liegen im privaten Repository unter `vorbilder/`. Wo eine Karte von den Bauprinzipien dort
+abweicht, ist das ein Befund.
+
+## 6. Vorhandene Themen zuerst nutzen
 
 Viele Mängel kamen daher, dass passende Bilder aus unseren Paketen nicht genutzt wurden. Alle stehen
 im Katalog (`register/katalog.json` im privaten Repository). Bevor ein Ersatz oder ein eigenes Bild

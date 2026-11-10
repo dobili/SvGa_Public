@@ -2,7 +2,7 @@
   "karte": "riverton.schuppen",
   "datei": "karten/riverton-schuppen.json",
   "art": "innen",
-  "beschreibung": "Der Schuppen ist halb Holzlager. Holzwände, staubiger Betonboden, Licht durch die Ritzen. An der Nordwand der Werkzeugschrank, die Werkbank und ein hoher Bretterstapel in der Ecke. Das grüne Fahrrad unter der Plane steht links im Raum, rechts liegen Holzscheite, und ein blauer Kanister, vorn an der Westwand ein alter Reifen.",
+  "beschreibung": "Der Schuppen hinter der Werkstatt ist halb Holzlager. Holzwände, staubiger Betonboden. An der Nordwand ein Wandbord mit Haken für Werkzeug, darunter die orange Werkzeugkiste, daneben die Werkbank und ein Stapel aufrecht gestellter Bretter. Das grüne Fahrrad steht links unter einer Plane, nur das Hinterrad schaut hervor. Rechts zwei hohe Gestelle voller Brennholz und eine leere Farbdose, vorn an der Westwand ein alter Reifen.",
   "wand": "holz",
   "boden": "stein",
   "raster": [
@@ -17,28 +17,39 @@
   ],
   "objekte": [
     {
-      "moebel": "rv5Werkzeugschrank",
-      "feld": [1, 1]
+      "moebel": "rv8Werkzeugbord",
+      "feld": [1, 1],
+      "an_wand": true,
+      "versatz": [0, 14],
+      "bauteil_ok": true
+    },
+    {
+      "moebel": "rv8Werkzeugkiste",
+      "feld": [1, 2]
     },
     {
       "moebel": "rv5Werkbank",
       "feld": [4, 1]
     },
     {
-      "moebel": "rv5Bretterstapel",
-      "feld": [7, 1]
+      "moebel": "rv8Bretterstapel",
+      "feld": [7, 2]
     },
     {
       "moebel": "rv5FahrradPlane",
       "feld": [2, 4]
     },
     {
-      "moebel": "rv5Holzscheite",
+      "moebel": "rv8Farbdose",
+      "feld": [6, 4]
+    },
+    {
+      "moebel": "rv8Brennholz",
       "feld": [7, 4]
     },
     {
-      "moebel": "rv5Kanister",
-      "feld": [6, 4]
+      "moebel": "rv8Brennholz",
+      "feld": [8, 4]
     },
     {
       "moebel": "rv5ReifenLiegend",

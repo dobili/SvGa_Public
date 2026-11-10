@@ -47,6 +47,7 @@ const {
   RUHE_TAKT,
   RUHE_NAECHSTES_GEBIET,
   RUHE_ENDE,
+  gilt,
 } = require("./gesamtsimulation-regeln.cjs");
 const { berichtWirtschaft } = require("./gesamtsimulation-wirtschaft.cjs");
 
@@ -76,7 +77,12 @@ function argumente(liste) {
 function erlaubt(welt, st, ort, reise = false) {
   const o = welt.orte.find((x) => x.kennung === ort);
   const hier = welt.karteZuOrt[st.karte];
-  if (!o || o.art === "erinnerung" || hier.art === "erinnerung" || ort === hier.kennung)
+  if (
+    !o ||
+    o.art === "erinnerung" ||
+    hier.art === "erinnerung" ||
+    ort === hier.kennung
+  )
     return true;
   if (st.phase === FOLGE.length - 1) return true;
   const i = FOLGE.indexOf(ort);
@@ -122,19 +128,34 @@ function besucheKarte(welt, st) {
 
 /** Spricht eine Figur an oder löst einen Auslöser aus; false, wenn nichts geschah. */
 function fasseAn(welt, st, ort, hier, o, a) {
-  const figur = ort.figuren.find((f) => f.kennung === ort.kennung + "." + o.name);
+  const figur = ort.figuren.find(
+    (f) => f.kennung === ort.kennung + "." + o.name,
+  );
   if (figur) {
-    wendeFolgenAn(welt, st, dialog(welt, st, figur.dialog), null, reiseErlaubtFuer(welt, st));
+    wendeFolgenAn(
+      welt,
+      st,
+      dialog(welt, st, figur.dialog),
+      null,
+      reiseErlaubtFuer(welt, st),
+    );
     return true;
   }
   if (!a) {
-    if (o.name !== "start") st.meldungen.add(`Objekt ohne Eintrag in orte.json: ${hier}.${o.name}`);
+    if (o.name !== "start")
+      st.meldungen.add(`Objekt ohne Eintrag in orte.json: ${hier}.${o.name}`);
     return false;
   }
   if (a.art === "start") return false;
   melde(welt, st, { art: "ort", karte: hier, ausloeser: a.name });
   if (a.dialog)
-    wendeFolgenAn(welt, st, dialog(welt, st, a.dialog), null, reiseErlaubtFuer(welt, st));
+    wendeFolgenAn(
+      welt,
+      st,
+      dialog(welt, st, a.dialog),
+      null,
+      reiseErlaubtFuer(welt, st),
+    );
   return true;
 }
 
@@ -158,7 +179,7 @@ function ersteSchritte(welt, st) {
   // bis er im selben Zustand gesperrt war.
   const sig = zustand(st);
   const offen = (a, k) =>
-    !a.wenn || Boolean(st.vars[a.wenn]) || (a.dialog && st.gesperrt[k + "." + a.name] !== sig);
+    gilt(st, a.wenn) || (a.dialog && st.gesperrt[k + "." + a.name] !== sig);
   const erster = {},
     schlange = [st.karte],
     gesehen = new Set([st.karte]);
@@ -166,7 +187,11 @@ function ersteSchritte(welt, st) {
     const k = schlange.shift();
     for (const a of wegeVon(welt, k)) {
       const z = a.ziel.karte;
-      if (gesehen.has(z) || !offen(a, k) || !erlaubt(welt, st, welt.karteZuOrt[z]?.kennung))
+      if (
+        gesehen.has(z) ||
+        !offen(a, k) ||
+        !erlaubt(welt, st, welt.karteZuOrt[z]?.kennung)
+      )
         continue;
       if (st.zielOrt && !imZiel(welt, st, z)) continue;
       gesehen.add(z);
@@ -179,7 +204,9 @@ function ersteSchritte(welt, st) {
 
 /** Ziel: erreichbare Karte des Gebiets, zuerst unbesucht, sonst die am längsten nicht besuchte. */
 function naechsterWeg(welt, st) {
-  const gebiet = st.zielOrt ? [st.zielOrt] : [FOLGE[st.phase], FOLGE[st.phase - 1]].filter(Boolean);
+  const gebiet = st.zielOrt
+    ? [st.zielOrt]
+    : [FOLGE[st.phase], FOLGE[st.phase - 1]].filter(Boolean);
   const erster = ersteSchritte(welt, st);
   // Erinnerungen gehören zum Gebiet, aus dem man sie erreicht.
   const karten = welt.orte
@@ -202,13 +229,22 @@ function waehleWeg(welt, st, wege, schritt) {
         st.gesperrt[schl(x)] !== zustand(st),
     );
     if (!offen.length) return;
-    offen.sort((x, y) => (st.letzterWeg[schl(x)] || 0) - (st.letzterWeg[schl(y)] || 0));
+    offen.sort(
+      (x, y) => (st.letzterWeg[schl(x)] || 0) - (st.letzterWeg[schl(y)] || 0),
+    );
     w = offen[0];
   }
   st.letzterWeg[schl(w)] = schritt;
   melde(welt, st, { art: "ort", karte: st.karte, ausloeser: w.name });
   const vorher = st.karte;
-  if (w.dialog) wendeFolgenAn(welt, st, dialog(welt, st, w.dialog), w, reiseErlaubtFuer(welt, st));
+  if (w.dialog)
+    wendeFolgenAn(
+      welt,
+      st,
+      dialog(welt, st, w.dialog),
+      w,
+      reiseErlaubtFuer(welt, st),
+    );
   else betrete(welt, st, w.ziel.karte);
   if (st.karte === vorher) st.gesperrt[vorher + "." + w.name] = zustand(st);
 }
@@ -223,9 +259,11 @@ function nachSchritt(st) {
   }
   st.ruhe++;
   if (st.ruhe % RUHE_TAKT === RUHE_NEUER_VERSUCH)
-    for (const n of Object.keys(st.versuche)) st.versuche[n] = VERSUCHE_JE_ZUSTAND - 1;
+    for (const n of Object.keys(st.versuche))
+      st.versuche[n] = VERSUCHE_JE_ZUSTAND - 1;
   // Das nächste Gebiet erst, wenn der Spieler im aktuellen angekommen ist.
-  const dort = FOLGE.indexOf(st.letzterOrt) >= st.phase || st.besucht.has(FOLGE[st.phase]);
+  const dort =
+    FOLGE.indexOf(st.letzterOrt) >= st.phase || st.besucht.has(FOLGE[st.phase]);
   if (st.ruhe >= RUHE_NAECHSTES_GEBIET && dort && st.phase < FOLGE.length - 1) {
     st.phase++;
     st.ruhe = 0;
@@ -260,7 +298,8 @@ function rueckkehr(welt, st, frist) {
     for (const q of welt.quests) {
       const s = st.staende.find((x) => x.k === q.kennung);
       const ort = welt.orte.find((x) => x.kennung === q.ort);
-      if (!s || s.fertig || !ort || ort.art === "weg" || Date.now() > frist) continue;
+      if (!s || s.fertig || !ort || ort.art === "weg" || Date.now() > frist)
+        continue;
       ziele.push(q.ort);
       betrete(welt, st, ort.karten[0].kennung);
       st.zielOrt = q.ort;
@@ -268,11 +307,15 @@ function rueckkehr(welt, st, frist) {
       // die drei Sets Schach960 brauchen je Partie mehrere Anläufe).
       for (let n = 0; n < RUECKKEHR_SCHRITTE && !s.fertig; n++) {
         // Nur Wege innerhalb des Ortes; wer doch hinausgerät (etwa durch einen Dialog), reist zurück.
-        if (welt.karteZuOrt[st.karte]?.kennung !== q.ort) betrete(welt, st, ort.karten[0].kennung);
-        const drinnen = besucheKarte(welt, st).filter((w) => imZiel(welt, st, w.ziel?.karte));
+        if (welt.karteZuOrt[st.karte]?.kennung !== q.ort)
+          betrete(welt, st, ort.karten[0].kennung);
+        const drinnen = besucheKarte(welt, st).filter((w) =>
+          imZiel(welt, st, w.ziel?.karte),
+        );
         waehleWeg(welt, st, drinnen, n + 1e6);
         if (n % 200 === 0)
-          for (const k of Object.keys(st.versuche)) st.versuche[k] = VERSUCHE_JE_ZUSTAND - 1;
+          for (const k of Object.keys(st.versuche))
+            st.versuche[k] = VERSUCHE_JE_ZUSTAND - 1;
       }
     }
   st.zielOrt = null;
@@ -293,7 +336,9 @@ function bericht(welt, st, ohneKarte, rueck) {
     const text = !s
       ? "nie begonnen"
       : `hängt bei Schritt ${s.i} (${JSON.stringify(q.schritte[s.i].ereignis)})`;
-    offen.push(`  ${q.haupt ? "Hauptquest" : "Nebenquest"} ${q.kennung}: ${text}`);
+    offen.push(
+      `  ${q.haupt ? "Hauptquest" : "Nebenquest"} ${q.kennung}: ${text}`,
+    );
   }
   zeilen.push("Offene Quests:", ...(offen.length ? offen : ["  keine"]));
   zeilen.push("Nie erreichte Knoten:");
@@ -302,7 +347,9 @@ function bericht(welt, st, ohneKarte, rueck) {
     if (nie.length) zeilen.push(`  ${datei}: ${nie.join(", ")}`);
   }
   zeilen.push(`Figuren ohne Karte: ${ohneKarte.join(", ") || "keine"}`);
-  zeilen.push(`Rückkehr mit der Monatskarte nach: ${rueck.join(", ") || "keine"}`);
+  zeilen.push(
+    `Rückkehr mit der Monatskarte nach: ${rueck.join(", ") || "keine"}`,
+  );
   zeilen.push(
     `Nie besuchte Orte: ${
       welt.orte
@@ -323,8 +370,12 @@ function sackgasse(welt, st) {
   const haengt = st.staende.some((s) => !s.fertig);
   const hauptOffen =
     haengt ||
-    welt.quests.some((q) => q.haupt && !st.staende.some((s) => s.k === q.kennung && s.fertig));
-  const datenFehlen = [...st.meldungen].some((m) => !m.startsWith("Zeitbudget"));
+    welt.quests.some(
+      (q) => q.haupt && !st.staende.some((s) => s.k === q.kennung && s.fertig),
+    );
+  const datenFehlen = [...st.meldungen].some(
+    (m) => !m.startsWith("Zeitbudget"),
+  );
   return hauptOffen || !st.abspann || datenFehlen;
 }
 

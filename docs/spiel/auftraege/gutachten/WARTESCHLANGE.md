@@ -111,6 +111,8 @@ Szene heißt die Datei in `inhalte/abenteuer/szenen/` ohne `.json`.
 
 - [x] silicon-bay-lobby, silicon-bay-serverraum (zweite Prüfung, niedrig-1; Antworten in silicon-bay.md; Bilder klimageraet_serverraum, schubladenschrank_metall, serverreihe_6 aus `niedrig1_runde9_karten.py` erst rendern; neue Tönung serverblau) → `silicon-bay-lobby-serverraum-2.md`
 
+
+- [ ] silicon-bay-lobby, silicon-bay-serverraum (zweite Prüfung, niedrig-1; Antworten in silicon-bay.md; Bilder klimageraet_serverraum, schubladenschrank_metall, serverreihe_6 aus `niedrig1_runde9_karten.py` erst rendern; neue Tönung serverblau)
 - [ ] port-delacroix-aussen, capital-arena-innenstadt, bayou-steg, weg-ghost-capital-leuchtturm, weg-silicon-delacroix-deich (dritte Prüfung, mittel-1, nach `mittel-1-runde9-2.md`; Bild `bildwuensche/boje_frei.py`, Nebel 0,28)
 - [ ] weg-ironwood-silicon-raststaette (fünfte Prüfung, nur Waschstraße und Buchten, mittel-1)
 - [ ] silicon-bay-aussen (Campus, jetzt 72 × 70) und silicon-bay-hafen (zweite Prüfung, mittel-3; Turm, Tunnel, Glasdeck, Läden zum Platz, Brüstung; Fähre schattiert, Hafenläden, Stützmauer; Datei `silicon-bay-aussen-hafen-2.md`)

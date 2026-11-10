@@ -93,11 +93,13 @@ function markierungen(
 
 /** Der Hinweis-Knopf, oder nach dem Tipp der Satz zum goldenen Feld. */
 function Hinweis({ aktiv, zeige }: { aktiv: boolean; zeige: () => void }) {
+  // Im Schach-Abenteuer hilft Ambrose: „Ambrose fragen“ statt „Hinweis: Figur zeigen“.
+  const imSpiel = useImSpiel();
   if (aktiv) return <p className="hinweis">{t("zugerraten.hinweisAktiv")}</p>;
   return (
     <button type="button" className="knopf-zweit" onClick={zeige} data-testid="zugerraten-hinweis">
       <Knopfsymbol art="hinweis" />
-      {t("zugerraten.hinweis")}
+      {t(imSpiel ? "imSpiel.hinweis" : "zugerraten.hinweis")}
     </button>
   );
 }

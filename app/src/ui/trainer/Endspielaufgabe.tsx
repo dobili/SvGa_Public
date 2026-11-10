@@ -55,6 +55,8 @@ function Hilfen({
   gibAuf: () => void;
 }) {
   const stichwort = aufgabe.stichwort ? ` ${t(`endspiel.stichwort.${aufgabe.stichwort}`)}` : "";
+  // Im Schach-Abenteuer hilft Ambrose: „Ambrose fragen“ statt „Hinweis 1“ (imSpiel.ts).
+  const imSpiel = useImSpiel();
   return (
     <div className="uebung-hilfe">
       {stufe >= 1 && (
@@ -69,7 +71,7 @@ function Hilfen({
         {stufe < HILFEN && (
           <button type="button" className="knopf-zweit" onClick={weiter}>
             <Knopfsymbol art="hinweis" />
-            {t("uebung.hinweis", { stufe: stufe + 1 })}
+            {imSpiel ? t("imSpiel.hinweis") : t("uebung.hinweis", { stufe: stufe + 1 })}
           </button>
         )}
         <button type="button" className="knopf-link" onClick={gibAuf}>

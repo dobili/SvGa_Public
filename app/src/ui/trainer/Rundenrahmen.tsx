@@ -111,7 +111,8 @@ export function Rundenrahmen({
     <div className="trainerrunde" data-testid="trainerrunde">
       <div className="trainerrunde-kopf">
         <p className="hinweis" aria-live="polite" data-tour="runde-stand">
-          {t("trainer.stand", {
+          {/* Im Spiel ohne Zählung „richtig“: Die Wertung nennt die Ergebniskarte der Oberwelt. */}
+          {t(imSpiel ? "imSpiel.stand" : "trainer.stand", {
             nummer: runde.index + 1,
             anzahl: runde.anzahl,
             richtig: runde.richtig,
@@ -143,7 +144,9 @@ export function Rundenrahmen({
       {runde.ergebnis !== null && (
         <div className="knopfzeile">
           <button type="button" className="knopf-haupt" onClick={runde.weiter}>
-            {runde.index + 1 < runde.anzahl ? t("trainer.weiter") : t("trainer.auswerten")}
+            {imSpiel || runde.index + 1 < runde.anzahl
+              ? t("trainer.weiter")
+              : t("trainer.auswerten")}
           </button>
           {!imSpiel && (
             <button type="button" className="knopf-zweit" onClick={runde.wiederhole}>

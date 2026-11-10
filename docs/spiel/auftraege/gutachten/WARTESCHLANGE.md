@@ -90,9 +90,9 @@ Szene heißt die Datei in `inhalte/abenteuer/szenen/` ohne `.json`.
 - [x] riverton-aussen mit Zuständen, riverton-bahnhofshalle, riverton-pavillon, riverton-wohnwagen (vierte Prüfung, mittel-3; Markierung, Straße zur Brücke, Bogenfenster, große Figuren; `riverton-aussen-4.md`, `riverton-innen-4.md`)
 - [x] crossroads-aussen, crossroads-raststaette, jahrmarkt-festplatz, pelikaninsel-dorf, Weg 8 und Weg 9 (zweite Prüfung, mittel-3; eine Datei `mittel-3-runde9-2.md`)
 
-- [ ] ghost-town-aussen, ghost-town-saloon, goldmine-stollen, erinnerung-london-kaffeehaus, erinnerung-london-strand, kuerbishof-hof (zweite Prüfung, niedrig-1; Antworten in ghost-town.md, erinnerung-london.md, kuerbishof.md, Abschnitt „Gutachten Runde 9: Antworten“; Bilder aus `niedrig1_runde9_karten.py` erst rendern)
+- [x] ghost-town-aussen, ghost-town-saloon, goldmine-stollen, erinnerung-london-kaffeehaus, erinnerung-london-strand, kuerbishof-hof (zweite Prüfung, niedrig-1; Antworten in ghost-town.md, erinnerung-london.md, kuerbishof.md, Abschnitt „Gutachten Runde 9: Antworten“; Bilder aus `niedrig1_runde9_karten.py` erst rendern)
 
-- [ ] lockport-aussen, lockport-gasthaus, weg-cedar-riverton-bahndamm, maple-falls-aussen, maple-falls-park, cedar-creek-aussen, weg-maple-cedar-flussweg, -landstrasse, -zedernpfad (vierte Prüfung, nur die Restpunkte, niedrig-1; Antworten in cedar-creek.md „Drittes Gutachten Runde 8“; Bilder tafel_kegelkoenig, schild_sackgasse aus `niedrig1_runde9_karten.py`)
+- [x] lockport-aussen, lockport-gasthaus, weg-cedar-riverton-bahndamm, maple-falls-aussen, maple-falls-park, cedar-creek-aussen, weg-maple-cedar-flussweg, -landstrasse, -zedernpfad (vierte Prüfung, nur die Restpunkte, niedrig-1; Antworten in cedar-creek.md „Drittes Gutachten Runde 8“; Bilder tafel_kegelkoenig, schild_sackgasse aus `niedrig1_runde9_karten.py`)
 
 - [ ] Runde-9-Karten von mittel-1, zweite Prüfung nach `port-delacroix.md`, `capital-arena-bayou.md`, `weg-ghost-capital.md`, `weg-silicon-delacroix.md` (Antworten in den Ortsdokumenten; Bilder `haeuser_varianten.py`, `schilder_deutsch.py`, `sumpfboden.py`, `wasser_moor.py` neu, `weg11_bilder.py`, `klippe_gras.py`)
 - [ ] weg-ironwood-silicon-raststaette (vierte Prüfung, mittel-1, Datei `weg-ironwood-silicon-raststaette-4.md`)

@@ -16,6 +16,7 @@ from pipeline.abenteuer.belebungsvorschau import teile as belebungsteile
 from pipeline.abenteuer.bodenraster import bodenfeld, randnachbar
 from pipeline.abenteuer.kartenbau import GESPERRT, INHALTE, LEER, WAND, WASSER, K, lade, platziere, raster
 from pipeline.abenteuer.katalog import katalogbefund, katalogeintraege
+from pipeline.abenteuer.klippe import grasboden, klippenfeld, strassenzeichen, treppenfeld
 from pipeline.abenteuer.moebelliste import lade_moebel
 from pipeline.abenteuer.randspur import randluecken
 from pipeline.abenteuer.zusammenhang import HOLZ
@@ -95,9 +96,15 @@ def hintergrund(szene: dict, privat: Path, gezeichnet: dict | None = None) -> Im
     # Wandstile mit eigener Krone (Fels, Damm) zeichnen ihre Flächen auch draußen neben „wandart“:
     # Der Rand bleibt dann Boden, nur „#“ über einem Boden wird Hang oder Felswand (10.45).
     flaeche = flaechen(zeilen) if not wandart or "krone" in wand else {}
+    # Felskanten aus LimeZus Klippenkacheln (Szene „kante“: „klippe“, pipeline/abenteuer/klippe.py).
+    klippe = szene.get("kante") == "klippe"
+    gras = grasboden(szene)
     for y, zeile in enumerate(zeilen):
         for x, z in enumerate(zeile):
             ort = (x * K, y * K)
+            if klippe and (feld := klippenfeld(zeilen, x, y, gras)) is not None:
+                bild.alpha_composite(kachel(privat, boegen, {"bogen": "gelaende"}, list(feld)), ort)
+                continue
             if z == WASSER:
                 # Ufer aus Stein (Szene „ufer“: „stein“, KARTENREGELN 10.6): dieselbe Kachelwahl,
                 # gezeichnet aus dem eigenen Bogen; die Randspur rechnet mit LimeZus Wasser.
@@ -142,9 +149,19 @@ def hintergrund(szene: dict, privat: Path, gezeichnet: dict | None = None) -> Im
                 bild.alpha_composite(kachel(privat, boegen, art, feld), ort)
                 if gezeichnet is not None:
                     gezeichnet[(x, y)] = (sonder.get(z, grund), feld)
-    if not wandart:
+    if klippe:
+        _treppen(bild, privat, boegen, zeilen, strassenzeichen(szene))
+    elif not wandart:
         _kronenrand(zeichner, zeilen, flaeche)
     return bild
+
+
+def _treppen(bild: Image.Image, privat: Path, boegen: dict, zeilen: list[str], strasse: set[str]) -> None:
+    """In den Fels geschlagene Treppen auf Rampen durch eine Klippenkante (klippe.treppenfeld)."""
+    for y, zeile in enumerate(zeilen):
+        for x in range(len(zeile)):
+            if (feld := treppenfeld(zeilen, x, y, strasse)) is not None:
+                bild.alpha_composite(kachel(privat, boegen, {"bogen": "gelaende"}, list(feld)), (x * K, y * K))
 
 
 def _kronenrand(zeichner: ImageDraw.ImageDraw, zeilen: list[str], flaeche: dict) -> None:

@@ -152,3 +152,14 @@ Für alles Feinere gibt es `"maske": ["....", "#..#", "#..#"]`: je Kachelreihe d
 Zeichenkette, `#` sperrt, `.` ist frei (offenes Tor nur an den Pfosten, Viehgatter quer mit
 oberster Reihe, Mammutbaum nur am Stammfuß). Die Maske ersetzt die Standardregel und
 `frei_unten`; Regel in `pipeline/abenteuer/maske.py`.
+
+## Felskanten aus Klippenkacheln (`"kante": "klippe"`, Runde 8)
+
+Mit `"kante": "klippe"` zeichnet `kartenbild` Bänder aus drei Reihen `#` über einem Boden wie LimeZu
+(Vorbild Modern Exteriors 048): oben eine gewellte Kante, darunter Felswand, unten ein Grasfuß; an den
+Enden eines Abschnitts Randkacheln. Liegt über der Kante kein Gras, nimmt sie die Erdvariante. Rampen
+aus Erde oder Schotter durch ein Band bekommen eine in den Fels geschlagene Treppe, Straßen nicht.
+Dicke Wandflächen ohne Boden darunter zeigen die obere Fläche. Ohne den Schlüssel bleibt alles wie
+bisher. Logik: `pipeline/abenteuer/klippe.py`, Test: `pipeline/tests/test_abenteuer_klippe.py`.
+Benutzt von: `steinbruch-grube`, `weg-desert-summit-bergstrasse`. Nicht bei roten Felsen (`felsRot`,
+Sternwarte, Wüste): LimeZus Klippe hat nur Gras- und Erdfuß, der grüne Fuß passt nicht auf roten Sand.

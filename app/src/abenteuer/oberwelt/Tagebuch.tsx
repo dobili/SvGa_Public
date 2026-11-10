@@ -13,6 +13,8 @@ import { naechsterSchritt } from "../regeln/quests";
 import type { Abenteuerstand } from "../schnittstelle/spielstand";
 import { tSpiel } from "../texte/texte";
 import { notizen } from "./notizbuch";
+import { finchKarteSichtbar } from "../regeln/finchjagd";
+import { FinchKarte } from "./FinchKarte";
 
 export function Tagebuch({
   stand,
@@ -93,6 +95,9 @@ export function Tagebuch({
             );
           })}
         </ul>
+      )}
+      {finchKarteSichtbar(stand.funde, stand.dialogvariablen) && (
+        <FinchKarte gefunden={stand.funde} fundeDaten={daten.funde} />
       )}
       <h3>{tSpiel("tagebuch.funde")}</h3>
       {stand.funde.length === 0 ? (

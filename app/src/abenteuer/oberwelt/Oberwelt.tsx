@@ -38,7 +38,10 @@ import {
   variablenNachDialog,
   variablenNachBesuch,
   variablenNachFund,
+  variablenNachRunde,
 } from "../regeln/dialogvariablen";
+import { laufendesSimultan, nachSimultanpartie, starteSimultan } from "../regeln/simultan";
+import type { BesonderePartieformenDesSchachAbenteuers } from "../../daten/generiert/abenteuer-partieformen";
 
 /** Gegenstand „Reisebrett“ und seine Begegnung (docs/spiel/11, I3): Übungspartie gegen Ambrose. */
 const REISEBRETT = "reisebrett";
@@ -104,6 +107,7 @@ import {
 } from "./weltdaten";
 import { Sprechblase, type SprechblasenInhalt } from "./Sprechblase";
 import { Vorfuehrung } from "./Vorfuehrung";
+import { Gedaechtnisstellung } from "./Gedaechtnisstellung";
 import { aktuelleToenung, toenungsvariable, type Toenung } from "./toenung";
 
 /** Ein offener Dialog: die übersetzte Geschichte, der Knoten und der Name der Datei. */
@@ -165,6 +169,12 @@ export function Oberwelt() {
   const [offenerLaden, setzeOffenerLaden] = useState<string | null>(null);
   // Eine Aufgabenrunde, die ein Dialog angestoßen hat; sie beginnt, wenn der Dialog zu ist.
   const rundeInArbeit = useRef<string | null>(null);
+  // Eine Gedächtnisstellung, die ein Dialog angestoßen hat (Runde 6); sie beginnt nach dem Dialog.
+  const gedaechtnisInArbeit = useRef<string | null>(null);
+  // Ein Simultan, das ein Dialog angestoßen hat (Runde 6); das erste Brett beginnt nach dem Dialog.
+  const simultanInArbeit = useRef<string | null>(null);
+  const [gedaechtnis, setzeGedaechtnis] = useState<string | null>(null);
+
   // Ergebnis der zuletzt gespielten Aufgabenrunde für die Ergebniskarte (R31).
   const [rundenergebnis, setzeRundenergebnis] = useState<
     (Rundenrueckweg & { auftrag: Aufgabenauftrag }) | null
@@ -489,6 +499,7 @@ export function Oberwelt() {
         !tagebuch &&
         !deckwahl &&
         vorfuehrung === null &&
+        gedaechtnis === null &&
         offenerLaden === null,
     );
   }, [
@@ -500,6 +511,7 @@ export function Oberwelt() {
     tagebuch,
     deckwahl,
     vorfuehrung,
+    gedaechtnis,
     offenerLaden,
     welt,
   ]);
@@ -507,6 +519,60 @@ export function Oberwelt() {
   const beiRichtung = (richtung: Richtung, gedrueckt: boolean) => {
     const szene = spiel.current ? szeneVon(spiel.current) : null;
     szene?.setzeRichtung(richtung, gedrueckt);
+  };
+
+  /** Das Simultan aus partieformen.json, oder null. */
+  const simultanEintrag = (kennung: string) =>
+    liesPaketJson<BesonderePartieformenDesSchachAbenteuers>("daten/partieformen.json").then(
+      (alle) => alle.simultan.find((s) => s.kennung === kennung) ?? null,
+    );
+
+  /** Beginnt ein Simultan: Fortschritt in den Dialogvariablen, dann das erste Brett. */
+  const starteSimultanAus = (kennung: string) => {
+    void simultanEintrag(kennung).then((eintrag) => {
+      const aktuell = standRef.current;
+      const erste = eintrag?.begegnungen[0];
+      if (!eintrag || !erste || !aktuell || !welt) return;
+      const neu = { ...aktuell, dialogvariablen: starteSimultan(aktuell.dialogvariablen, eintrag) };
+      schreibe(neu);
+      const auftrag = auftragFuer(erste, welt.daten, neu);
+      if (auftrag) startePartie(auftrag, []);
+    });
+  };
+
+  /** Nach der Ergebniskarte im Simultan: das nächste Brett oder die Gesamtwertung. */
+  const weiterImSimultan = (e: Partieergebnis) => {
+    const laeuft = laufendesSimultan(standRef.current?.dialogvariablen ?? {});
+    if (!laeuft) return;
+    void simultanEintrag(laeuft).then((eintrag) => {
+      const aktuell = standRef.current;
+      if (!eintrag || !aktuell || !welt) return;
+      const begegnung = e.kennung.split("#")[0] ?? "";
+      const r = nachSimultanpartie(aktuell.dialogvariablen, eintrag, begegnung, e.ausgang);
+      const neu = { ...aktuell, dialogvariablen: { ...r.variablen } };
+      schreibe(neu);
+      const auftrag = r.naechste ? auftragFuer(r.naechste, welt.daten, neu) : null;
+      if (auftrag) startePartie(auftrag, []);
+      if (r.ende) {
+        setzeMeldung(
+          tSpiel("oberwelt.simultan.ende", {
+            punkte: r.ende.punkte,
+            bretter: eintrag.begegnungen.length,
+          }),
+        );
+      }
+    });
+  };
+
+  /** Ende einer Gedächtnisstellung: `<name>Bestanden` wie bei Aufgabenrunden (Runde 6). */
+  const beendeGedaechtnis = (kennung: string, bestanden: boolean) => {
+    setzeGedaechtnis(null);
+    const aktuell = standRef.current;
+    if (!aktuell) return;
+    schreibe({
+      ...aktuell,
+      dialogvariablen: { ...aktuell.dialogvariablen, ...variablenNachRunde(kennung, bestanden) },
+    });
   };
 
   /** Der Aktionsknopf: Dialog des Auslösers oder der Figur öffnen. */
@@ -568,6 +634,12 @@ export function Oberwelt() {
     },
     beginneAufgaben: (runde) => {
       rundeInArbeit.current = runde;
+    },
+    beginneGedaechtnis: (kennung) => {
+      gedaechtnisInArbeit.current = kennung;
+    },
+    beginneSimultan: (kennung) => {
+      simultanInArbeit.current = kennung;
     },
     reise: (karte, ausloeser) => {
       reiseInArbeit.current = { karte, ausloeser };
@@ -734,6 +806,18 @@ export function Oberwelt() {
     const bedingungen = { ...neu.dialogvariablen, ...variablenAusBesitz(neu) };
     if (uebergang && (!uebergang.wenn || Boolean(bedingungen[uebergang.wenn]))) {
       wechsleKarte(uebergang.ziel.karte, uebergang.ziel.ausloeser);
+    }
+    const simultan = simultanInArbeit.current;
+    simultanInArbeit.current = null;
+    if (simultan) {
+      starteSimultanAus(simultan);
+      return;
+    }
+    const merken = gedaechtnisInArbeit.current;
+    gedaechtnisInArbeit.current = null;
+    if (merken) {
+      setzeGedaechtnis(merken);
+      return;
     }
     const runde = rundeInArbeit.current;
     rundeInArbeit.current = null;
@@ -903,6 +987,12 @@ export function Oberwelt() {
           }}
         />
       )}
+      {gedaechtnis && (
+        <Gedaechtnisstellung
+          kennung={gedaechtnis}
+          beiEnde={(bestanden) => beendeGedaechtnis(gedaechtnis, bestanden)}
+        />
+      )}
       {vorfuehrung && (
         <Vorfuehrung kennung={vorfuehrung} beiSchliessen={() => setzeVorfuehrung(null)} />
       )}
@@ -958,6 +1048,7 @@ export function Oberwelt() {
               setzeErgebnis(null);
               setzeNeueNadel(null);
               setzeKipppunkt(null);
+              weiterImSimultan(ergebnis);
             }}
           >
             {tSpiel("ergebnis.weiter")}

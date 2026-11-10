@@ -196,6 +196,25 @@ test("Musikhaus: nach musikhausOffen lädt die zweite Fassung der Karte", async 
   );
 });
 
+test("Tagebuch: Sammelkarte der Finch-Jagd zeigt die gefundene Figur", async ({ page }) => {
+  // Runde 6, Teil 5: 16 Kästchen, Fortschritt aus den Funden.
+  const stand = {
+    ...STAND,
+    funde: [{ kennung: "finchLaeuferA", gefunden: "2026-11-10T08:00:00.000Z" }],
+  };
+  await starteImBrowser(page);
+  await expect.poll(() => page.evaluate(schreibeStand, stand)).toBe(true);
+  await page.reload();
+  await page.goto("/app/#abenteuer");
+  await page.getByTestId("abenteuer-laden").click();
+  await expect(page.getByTestId("abenteuer-welt")).toBeVisible({ timeout: 30000 });
+  await page.getByTestId("abenteuer-tagebuchknopf").click();
+  const karte = page.getByTestId("abenteuer-finchkarte");
+  await expect(karte.locator("li")).toHaveCount(16);
+  await expect(karte.locator("li.gefunden")).toHaveCount(1);
+  await expect(page.getByTestId("abenteuer-tagebuch")).toContainText("1 von 16 Figuren gefunden.");
+});
+
 test("Erinnerung London 1851: Sepia, kein Tagebuch, keine Münzen", async ({ page }) => {
   const stand = {
     ...STAND,

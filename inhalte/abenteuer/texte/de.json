@@ -1554,5 +1554,15 @@
   "quest.spurenPerfectMove.schritt1": "Sechs Spuren von Perfect Move an den Wegen sammeln und Dr. Lin in Capital zeigen",
   "quest.kreidespringer.titel": "Die Kreidespringer",
   "quest.kreidespringer.schritt1": "Den Kreidespringern folgen: unter der Brücke, an der Raststätte, im Diner, bei den Holzfällern und in Capital",
-  "quest.kreidespringer.schritt2": "In der Nacht der Kreidespringer im alten U-Bahnhof mitspielen"
+  "quest.kreidespringer.schritt2": "In der Nacht der Kreidespringer im alten U-Bahnhof mitspielen",
+  "oberwelt.gedaechtnis.titel": "Gedächtnisstellung",
+  "oberwelt.gedaechtnis.einpraegen": "Präg dir die Stellung ein. Noch {sekunden} Sekunden.",
+  "oberwelt.gedaechtnis.aufbauen": "Bau die Stellung aus dem Gedächtnis auf.",
+  "oberwelt.gedaechtnis.bestanden": "Alles richtig: {richtig} von {gesamt} Figuren am richtigen Platz.",
+  "oberwelt.gedaechtnis.daneben": "{richtig} von {gesamt} Figuren am richtigen Platz. Fast!",
+  "oberwelt.simultan.ende": "Simultan beendet: {punkte} Punkte aus {bretter} Partien.",
+  "tagebuch.finch.titel": "Finchs Buchsbaum",
+  "tagebuch.finch.stand": "{anzahl} von {gesamt} Figuren gefunden.",
+  "tagebuch.finch.gefunden": "gefunden",
+  "tagebuch.finch.offen": "noch versteckt"
 }

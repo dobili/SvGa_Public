@@ -450,3 +450,30 @@
   border-radius: 0;
   image-rendering: pixelated;
 }
+
+/* Sammelkarte der Finch-Jagd im Tagebuch (Runde 6): 16 Kästchen in vier Reihen. */
+.abenteuer-finchkarte {
+  display: grid;
+  grid-template-columns: repeat(4, 1fr);
+  gap: 0.4rem;
+  padding: 0;
+  list-style: none;
+}
+
+.abenteuer-finchkarte li {
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  border: 1px dashed currentColor;
+  padding: 0.3rem;
+  opacity: 0.5;
+}
+
+.abenteuer-finchkarte li.gefunden {
+  border-style: solid;
+  opacity: 1;
+}
+
+.abenteuer-finchkarte span {
+  font-size: 1.6rem;
+}

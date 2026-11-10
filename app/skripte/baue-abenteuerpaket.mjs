@@ -292,6 +292,8 @@ async function main() {
     "laeden.json",
     // Vorführungen der Statisten (Dokument 16, 3.4); die App liest fen und zuege.
     "vorfuehrungen.json",
+    // Gedächtnisstellungen und Simultan (Runde 6, docs/spiel/15 Abschnitt 4).
+    "partieformen.json",
   ]) {
     await kopiereJson("daten", name, "daten");
   }

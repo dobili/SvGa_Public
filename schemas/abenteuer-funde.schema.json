@@ -33,6 +33,11 @@
           "minimum": 1,
           "maximum": 200
         },
+        "feld": {
+          "description": "Nur Figuren der Finch-Jagd (finch<Figur><Buchstabe>, docs/spiel/15, 1.1): das Feld, das unter der Figur eingebrannt ist (Feld in Finchs Meisterproblem); die Sammelkarte im Tagebuch zeigt es nach dem Fund",
+          "type": "string",
+          "pattern": "^[a-h][1-8]$"
+        },
         "extra": {
           "description": "Extra der App, das der Fund freischaltet (E3; wirkt, sobald die Extras angebunden sind)",
           "type": "string",

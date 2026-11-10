@@ -5,6 +5,7 @@
       "kennung": "mapleFalls",
       "name": "ort.mapleFalls.name",
       "nummer": 1,
+      "groesse": "klein",
       "staffel": 1,
       "karten": [
         {
@@ -299,6 +300,7 @@
       "kennung": "cedarCreek",
       "name": "ort.cedarCreek.name",
       "nummer": 2,
+      "groesse": "klein",
       "staffel": 1,
       "karten": [
         {
@@ -810,6 +812,7 @@
       "kennung": "riverton",
       "name": "ort.riverton.name",
       "nummer": 3,
+      "groesse": "mittel",
       "staffel": 1,
       "karten": [
         {
@@ -1171,6 +1174,7 @@
       "kennung": "lockport",
       "name": "ort.lockport.name",
       "nummer": 0,
+      "groesse": "klein",
       "staffel": 1,
       "karten": [
         {
@@ -1226,6 +1230,7 @@
       "kennung": "ironwood",
       "name": "ort.ironwood.name",
       "nummer": 4,
+      "groesse": "mittel",
       "staffel": 1,
       "karten": [
         {
@@ -1820,6 +1825,7 @@
       "kennung": "siliconBay",
       "name": "ort.siliconBay.name",
       "nummer": 5,
+      "groesse": "gross",
       "staffel": 2,
       "karten": [
         {
@@ -2176,6 +2182,7 @@
       "kennung": "portDelacroix",
       "name": "ort.portDelacroix.name",
       "nummer": 6,
+      "groesse": "mittel",
       "staffel": 2,
       "karten": [
         {
@@ -2521,6 +2528,7 @@
       "kennung": "desertSprings",
       "name": "ort.desertSprings.name",
       "nummer": 7,
+      "groesse": "klein",
       "staffel": 2,
       "karten": [
         {
@@ -2858,6 +2866,7 @@
       "kennung": "summitCity",
       "name": "ort.summitCity.name",
       "nummer": 8,
+      "groesse": "mittel",
       "staffel": 2,
       "karten": [
         {
@@ -3162,6 +3171,7 @@
       "kennung": "crossroads",
       "name": "ort.crossroads.name",
       "nummer": 9,
+      "groesse": "klein",
       "staffel": 2,
       "karten": [
         {
@@ -3403,6 +3413,7 @@
       "kennung": "pinewoodCamp",
       "name": "ort.pinewoodCamp.name",
       "nummer": 10,
+      "groesse": "klein",
       "staffel": 2,
       "karten": [
         {
@@ -3569,6 +3580,7 @@
       "kennung": "ghostTown",
       "name": "ort.ghostTown.name",
       "nummer": 11,
+      "groesse": "klein",
       "staffel": 2,
       "karten": [
         {
@@ -3813,6 +3825,7 @@
       "kennung": "capitalArena",
       "name": "ort.capitalArena.name",
       "nummer": 12,
+      "groesse": "gross",
       "staffel": 2,
       "karten": [
         {

@@ -15,9 +15,11 @@ import json
 import sys
 from pathlib import Path
 
+from pipeline.abenteuer.belebung import lade_texte, pruefe_belebung
 from pipeline.abenteuer.kartenregeln import pruefe_regeln
 from pipeline.abenteuer.maske import maskenfelder
 from pipeline.abenteuer.moebelliste import lade_moebel
+from pipeline.abenteuer.stadtgroesse import ortseintrag, pruefe_gebaeude, zaehlt_als_stadtkarte
 from pipeline.abenteuer.varianten import vergleiche_mit_a
 
 HAUPT = Path(__file__).resolve().parents[2]
@@ -270,6 +272,11 @@ def baue(pfad: Path) -> list[str]:
     from pipeline.abenteuer.zusammenhang import pruefe_zusammenhang
 
     befunde += pruefe_zusammenhang(szene, zeilen, gesetzt, moebel)
+    if not pfad.stem.endswith("-a"):  # frühere A nach einer Wahl: Archiv, wird nicht mehr gebaut
+        befunde += pruefe_gebaeude(szene, gesetzt, moebel)
+        ort = ortseintrag(szene["karte"]) or {}
+        stadt = zaehlt_als_stadtkarte(szene) and "groesse" in ort
+        befunde += pruefe_belebung(szene, ort.get("art", "stadt"), stadt, lade_texte())
     befunde += vergleiche_mit_a(pfad.resolve(), szene, lade)
     ziel = INHALTE / szene["datei"]
     ziel.parent.mkdir(parents=True, exist_ok=True)  # Varianten: karten/varianten/

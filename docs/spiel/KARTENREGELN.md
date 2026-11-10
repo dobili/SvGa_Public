@@ -706,3 +706,62 @@ Werkzeug erledigt, steht dabei; daran arbeiten die Helfer nicht vorbei.
     alles dahinter `" "` (dunkel). Draußen hinter Häuserzeilen eine zweite Reihe Häuser, Dächer oder
     Gärten statt `#`. Über einem Abgrund den Grund zeigen (Canyon: `sandRot` unten, Felswand mit
     Fläche davor).
+
+### 10.9 Städte und Routen nach der Revision von Akt 2 bis 4 (Rückmeldung des Autors, 10.11.2026, morgens)
+
+Der Autor: Die Städte haben zu wenige Gebäude, gemessen an den Pokémon-Städten. Nicht alle Gebäude
+müssen begehbar sein, sie sollen Größe und Abwechslung zeigen. Die Routen sehen echt aus, aber
+auf jeder soll etwas passieren, das man entdecken kann. Die Geschichten dazu stehen in
+`docs/spiel/15_Routen_Ereignisse.md` und werden auf den Karten sichtbar.
+
+51. **Städte wirken groß.** Jede Außenkarte einer Stadt (`<ort>.aussen` oder `"viertel": true`)
+    hat je nach Ortsgröße (`groesse` in `orte.json`) eine Mindestzahl an Gebäuden:
+    - klein: 12;
+    - mittel: 20;
+    - gross: 20 je Viertel.
+
+    Große Städte (Silicon Bay, Capital) bekommen dafür ein zweites Viertel als eigene Außenkarte
+    (Regel 7a.3.6). Die meisten Gebäude sind **Kulissenhäuser**:
+    - mit Tür, aber ohne Innenraum;
+    - verschiedene Dächer, Farben und Größen;
+    - Läden mit Schild oder Markise;
+    - Wohnblocks, Reihenhäuser, Hinterhäuser.
+
+    Häuserzeilen stehen dicht an der Straße, mit Gärten oder Höfen dahinter. Zwei gleiche
+    Gebäudebilder stehen nie nebeneinander, und in einer Stadt stehen höchstens drei gleiche (Farbvarianten zählen als
+    verschieden). Die Karte darf dafür bis an die Obergrenze aus 7a.2 wachsen. Übergänge und Felder
+    der Geschichte (Türen, Figuren, Auslöser) bleiben, wo sie sind; wächst die Karte, verschieben
+    sich ihre Koordinaten, und `orte.json` zieht mit.
+    **[auto]** Prüfung „Stadt wirkt leer“ (`pipeline/abenteuer/stadtgroesse.py`). Als Gebäude zählt:
+    - ein Möbel mit `"gebaeude": true` oder mit `art` haus oder gebaeude;
+    - sonst jedes Möbel ab 5 × 5 Kacheln mit Kollision, das kein Baum, Fels, Fahrzeug, Zaun, Steg
+      und keine Brücke ist.
+
+52. **Jede Route hat einen Ereignisort.** Für das Routen-Ereignis aus Dokument 15 gibt es auf der
+    Route eine Stelle, die man schon beim ersten Durchgehen bemerkt, auch wenn das Ereignis erst
+    später im Spiel stattfindet:
+    - ein Blickfang (Telefonzelle, Baumhaus, Heckenlabyrinth, Wohnmobil, Funkmast);
+    - eine Abzweigung dorthin (Regel 7a.3.3);
+    - Platz für drei bis sechs Figuren.
+
+    Kleine Sammelstücke (versteckte Figuren, Buchseiten, Spuren von Perfect Move) liegen als
+    Auslöser auf der Karte; Kennungen und Felder stehen in Dokument 15. Ist das Ereignis noch
+    nicht dran, steht dort, was vorher da ist, zum Beispiel ein leerer Platz mit Plakat „Bald“.
+
+53. **Die Welt ist bewohnt.** Mindestzahlen je Außenkarte (Tiere: eine Schar zählt als eins):
+
+    | Karte                  | Statisten | davon mit `sagt` | Tiere |
+    | ---------------------- | --------- | ---------------- | ----- |
+    | Außenkarte einer Stadt | 12        | 6                | 4     |
+    | Viertel einer Stadt    | 12        | 6                | 4     |
+    | Karte eines Wegs       | 4         | 3                | 6     |
+
+    Ein ansprechbarer Statist hat `eigenschaften.sagt` mit dem Schlüssel
+    `statist.<karte>.<name>` in `inhalte/abenteuer/texte/de.json`. Was Statisten sagen (Welt,
+    Lieblingszug, Lieblingseröffnung, Motiv, brillanter Zug, Schachgeschichte, Missverständnis mit
+    Herz), regelt `docs/spiel/16_Statisten_und_Tiere.md`. Schachgeschichte stammt nur aus dem
+    geprüften Vorrat dort. Tiere haben ein Verhalten (`sitzen`, `fliegen`, `ausweichen`, `flitzen`,
+    `folgen`, `rennen`, `schwimmen`, `schlafen`). In allen drei Varianten stehen dieselben
+    Statisten mit denselben Sätzen.
+    **[auto]** Prüfung „Stadt wirkt leer“, „Weg wirkt leer“ und „Satz fehlt“
+    (`pipeline/abenteuer/belebung.py`).

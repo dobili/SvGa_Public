@@ -2,13 +2,14 @@
  * Tiere der Oberwelt: welche Tierart ein Objekt der Karte zeigt, welches Bild dazu gehört (mit
  * nahem Ersatz, solange es keine eigene Zeichnung gibt) und wie viele Tiere eine Schar hat.
  *
- * Rolle im Gesamtbild: Reine Logik für belebungsschicht.ts (getestet in tiere.test.ts). Die
- * Bilder baut `pipeline/abenteuer/belebungsbilder.py` (TIERE) als `tiere/<art>.png` im
- * Spielformat; die Rahmengrößen hier müssen dazu passen. Regeln: Dokument 16, Abschnitt 5.2
+ * Rolle im Gesamtbild: Reine Logik für belebungsschicht.ts (getestet in tiere.test.ts). Arten,
+ * Quellen, Rahmengrößen und Wortstämme stehen in tierarten.json, die auch der Bogenbau
+ * (`pipeline/abenteuer/belebungsbilder.py`, `tiere/<art>.png`) und die Vorschau lesen. Regeln: Dokument 16, Abschnitt 5.2
  * („Bis dahin steht ein naher Ersatz“) und Auftrag Runde 7 („Eine Schar wird als drei bis fünf
  * Tiere gezeichnet“).
  */
 import { streuwert } from "./belebung";
+import tierarten from "./tierarten.json";
 
 /** Rahmengröße eines Tierbogens in Pixeln. */
 export interface Tierbild {
@@ -16,68 +17,17 @@ export interface Tierbild {
   readonly hoehe: number;
 }
 
-/** Die Bögen, die belebungsbilder.py baut: Art → Rahmengröße (dieselben Zahlen wie dort). */
-export const TIERBILDER: Readonly<Record<string, Tierbild>> = {
-  taube: { breite: 16, hoehe: 16 },
-  huhn: { breite: 16, hoehe: 16 },
-  ente: { breite: 32, hoehe: 32 },
-  hase: { breite: 32, hoehe: 32 },
-  schwein: { breite: 32, hoehe: 32 },
-  ziege: { breite: 32, hoehe: 48 },
-  schaf: { breite: 32, hoehe: 32 },
-  kuh: { breite: 48, hoehe: 48 },
-  esel: { breite: 48, hoehe: 48 },
-  hund: { breite: 48, hoehe: 32 },
-  katze: { breite: 32, hoehe: 32 },
-  // Keine Tierart, aber Belebung über dem Wasser (Dokument 15, Spur P1 auf Weg 3).
-  drohne: { breite: 16, hoehe: 16 },
-};
+/** Die Bögen, die belebungsbilder.py baut: Art → Rahmengröße (aus tierarten.json, wie dort). */
+export const TIERBILDER: Readonly<Record<string, Tierbild>> = Object.fromEntries(
+  Object.entries(tierarten.arten).map(([art, a]) => [art, { breite: a.breite, hoehe: a.hoehe }]),
+);
 
 /**
- * Wortstamm im Objektnamen → Bild (eigenes oder naher Ersatz). Längere Stämme gehen vor
- * („werkskatzeAussen“ → katze, „bisonherde“ → kuh). Ohne Treffer wird nichts gezeichnet (Wind,
- * Nebel, Roboter, Libellen und Tiere ohne passenden Ersatz wie Eidechse oder Delfin).
+ * Wortstamm im Objektnamen → Bild (eigenes oder naher Ersatz, tierarten.json). Längere Stämme
+ * gehen vor („werkskatzeAussen“ → katze, „praeriehunde“ → hase, nicht hund). Ohne Treffer wird
+ * nichts gezeichnet (Wind, Nebel, Roboter, Libellen und Tiere ohne Ersatz wie Eidechse, Delfin).
  */
-const STAEMME: Readonly<Record<string, string>> = {
-  taube: "taube",
-  moewe: "taube",
-  kraehe: "taube",
-  rabe: "taube",
-  geier: "taube",
-  falke: "taube",
-  adler: "taube",
-  specht: "taube",
-  eule: "taube",
-  eichelhaeher: "taube",
-  austernfischer: "taube",
-  huhn: "huhn",
-  huehner: "huhn",
-  roadrunner: "huhn",
-  ente: "ente",
-  gans: "ente",
-  gaense: "ente",
-  reiher: "ente",
-  pelikan: "ente",
-  hase: "hase",
-  kaninchen: "hase",
-  eichhoernchen: "hase",
-  murmeltier: "hase",
-  praeriehund: "hase",
-  schwein: "schwein",
-  ziege: "ziege",
-  reh: "ziege",
-  schaf: "schaf",
-  kuh: "kuh",
-  kueh: "kuh",
-  rind: "kuh",
-  bison: "kuh",
-  esel: "esel",
-  pferd: "esel",
-  hund: "hund",
-  kojote: "hund",
-  katze: "katze",
-  drohne: "drohne",
-};
+const STAEMME: Readonly<Record<string, string>> = tierarten.staemme;
 
 /** Wörter, an denen eine Schar zu erkennen ist (Mehrzahl im Objektnamen). */
 const SCHARWOERTER = [
@@ -95,6 +45,13 @@ const SCHARWOERTER = [
   "pelikane",
   "herde",
   "schar",
+  "spatzen",
+  "amseln",
+  "lerchen",
+  "seeschwalben",
+  "wildpferde",
+  "praeriehunde",
+  "murmeltiere",
 ] as const;
 
 const STAEMME_NACH_LAENGE = Object.keys(STAEMME).sort((a, b) => b.length - a.length);

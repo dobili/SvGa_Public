@@ -12,11 +12,12 @@ Reihen. Obere Reihe vier Standbilder (rechts, oben, links, unten), untere Reihe 
 Bildern je Richtung in derselben Reihenfolge. Statisten haben Rahmen 16 × 32, Tiere die Rahmengröße
 ihrer Vorlage (``TIERE``; dieselben Maße stehen in ``app/src/abenteuer/oberwelt/belebung.ts``).
 
-Aufruf: ``python -m pipeline.abenteuer.belebungsbilder /pfad/zum/privaten/repository``
+Aufruf: ``python -m pipeline.abenteuer.belebungsbilder /pfad/zum/privaten/repository [--nur-tiere]``
 """
 
 import colorsys
 import importlib.util
+import json
 import random
 import sys
 from pathlib import Path
@@ -54,23 +55,11 @@ KAPUZEN_KINDER = ("4",)
 # Reihe mit einer Bewegung (Taube pickt); "baender" = beschriftete Bänder (Hund, Katze), Stand im
 # ersten, Laufen im fünften Band; "fest:<stand_y>:<lauf_y>" = Reihen an festen Pixelhöhen (Katzen:
 # die Beschriftungen berühren die Bildreihen, die Bänder taugen dort nicht).
-BEWEGT = "modern-exteriors/Modern_Exteriors_16x16/Animated_16x16/Animated_sheets_16x16/"
-TAUBE = BEWEGT + "Pigeon_16x16.png"
-DROHNE = BEWEGT + "Drone_1_Flying_16x16.png"
+TIERARTEN = Path(__file__).resolve().parents[2] / "app" / "src" / "abenteuer" / "oberwelt" / "tierarten.json"
+# Art → (Quelle, Breite, Höhe, Schnitt); gemeinsam mit der App und der Vorschau (tierarten.json).
 TIERE = {
-    "taube": (TAUBE, 16, 16, "streifen"),
-    # Keine Tierart, aber Belebung über dem Wasser: die Drohne von Perfect Move (Dokument 15, Spur P1).
-    "drohne": (DROHNE, 16, 16, "streifen"),
-    "huhn": ("modern-farm/Animals/Chickens_and_Roosters/Chicken_Brown_16x16.png", 16, 16, "reihen"),
-    "ente": ("modern-farm/Animals/Ducks/Duck_Brown_16x16.png", 32, 32, "reihen"),
-    "hase": ("modern-farm/Animals/Rabbits/Rabbit_Brown_16x16.png", 32, 32, "reihen"),
-    "schwein": ("modern-farm/Animals/Pigs/Pig_Pink_16x16.png", 32, 32, "reihen"),
-    "ziege": ("modern-farm/Animals/Goats/Goat_Brown_16x16.png", 32, 48, "reihen"),
-    "schaf": ("modern-farm/Animals/Sheeps/Sheep_2_White_16x16.png", 32, 32, "reihen"),
-    "kuh": ("modern-farm/Animals/Cows/Cow_16x16.png", 48, 48, "reihen"),
-    "esel": ("modern-farm/Animals/Donkeys/Donkey_16x16.png", 48, 48, "reihen"),
-    "hund": ("modern-farm/Animals/Dogs/Dog_Labrador_Brown_16x16.png", 48, 32, "baender"),
-    "katze": ("modern-farm/Animals/Cats/Cat_Hugo.png", 32, 32, "fest:0:192"),
+    art: (a["quelle"], a["breite"], a["hoehe"], a["schnitt"])
+    for art, a in json.loads(TIERARTEN.read_text(encoding="utf-8"))["arten"].items()
 }
 
 
@@ -191,6 +180,14 @@ def tierbogen(quelle: Image.Image, breite: int, hoehe: int, art: str) -> Image.I
         for i in range(RAHMEN_JE_REIHE):
             ziel.paste(bilder[i % len(bilder)], (i * breite, hoehe))
         return ziel
+    if art == "richtungen":
+        # Eine Reihe mit 4 Richtungen × 6 Bildern (Krähe): je Richtung das erste Bild als Stand.
+        je_richtung = RAHMEN_JE_REIHE // STAND_RAHMEN
+        for i in range(STAND_RAHMEN):
+            stand = quelle.crop((i * je_richtung * breite, 0, (i * je_richtung + 1) * breite, hoehe))
+            ziel.paste(stand, (i * breite, 0))
+        ziel.paste(quelle.crop((0, 0, RAHMEN_JE_REIHE * breite, hoehe)), (0, hoehe))
+        return ziel
     if art.startswith("fest:"):
         stand_y, lauf_y = (int(z) for z in art.split(":")[1:])
     elif art == "baender":
@@ -203,22 +200,33 @@ def tierbogen(quelle: Image.Image, breite: int, hoehe: int, art: str) -> Image.I
     return ziel
 
 
+def baue_tiere(privat: Path) -> None:
+    """Alle Tierbögen nach ``spiel/tiere/<art>.png`` (Quellen aus tierarten.json)."""
+    ziel_tiere = privat / "spiel" / "tiere"
+    ziel_tiere.mkdir(parents=True, exist_ok=True)
+    for name, (datei, breite, hoehe, art) in TIERE.items():
+        quelle = Image.open(privat / datei).convert("RGBA")
+        tierbogen(quelle, breite, hoehe, art).save(ziel_tiere / f"{name}.png")
+
+
 def main(argv: list[str]) -> int:
+    nur_tiere = "--nur-tiere" in argv
+    argv = [a for a in argv if a != "--nur-tiere"]
     if len(argv) != 1:
         print(__doc__)
         return 1
     privat = Path(argv[0])
+    if nur_tiere:
+        baue_tiere(privat)
+        print(f"{len(TIERE)} Tiere nach {privat / 'spiel' / 'tiere'}")
+        return 0
     figuren = _figurenwerkzeug(privat)
     zufall = random.Random(7)
     ziel_figuren = privat / "spiel" / "figuren"
     ziel_figuren.mkdir(parents=True, exist_ok=True)
     for i, eintrag in enumerate(statistenliste(figuren.GEN, zufall), start=1):
         figuren.spielformat(figuren.zusammensetzen(eintrag)).save(ziel_figuren / f"statist-{i:02d}.png")
-    ziel_tiere = privat / "spiel" / "tiere"
-    ziel_tiere.mkdir(parents=True, exist_ok=True)
-    for name, (datei, breite, hoehe, art) in TIERE.items():
-        quelle = Image.open(privat / datei).convert("RGBA")
-        tierbogen(quelle, breite, hoehe, art).save(ziel_tiere / f"{name}.png")
+    baue_tiere(privat)
     print(f"{STATISTEN} Statisten und {len(TIERE)} Tiere nach {privat / 'spiel'}")
     return 0
 

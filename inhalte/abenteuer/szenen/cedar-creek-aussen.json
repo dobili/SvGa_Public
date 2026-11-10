@@ -11,7 +11,7 @@
     "e": "erde",
     "h": "holzDunkel"
   },
-  "beschreibung": "gemischte Bäume, Gärten mit Beeten, Blumenkästen und Briefkästen, Laternen am Südrand der Straße, ein Picknickplatz mit zwei Tischen auf der Zedernwiese, der Bach schwingt im Süden weit aus. Der Ortskern von Cedar Creek an einem kühlen Spätsommermorgen: ein kleiner, stiller Ort am Bach, der nach Holz und Papier riecht. Die schmale Asphaltstraße kommt links vom Flussweg und endet rechts vor dem Bach, beidseitig mit gepflastertem Gehweg. An der Nordseite stehen nebeneinander die Drechslerei von Mr. Dunmore (kleine Holzscheune mit Blechdach, Rolltor links, Holzstapel davor), der Waschsalon von Mr. Boateng mit Markisen und großen Schaufenstern, darüber ein türkises Neonschild „Waschsalon“, vor dem ein Hund wartet, und das größte Gebäude, die Bibliothek aus rotem Backstein von 1890 mit schiefergedecktem Turm; unten im Turm führen Stufen durch einen Steinbogen mit zwei Lampen zur Tür, links und rechts davon zwei alte Laternen. Rechts an der Straße die hölzerne Anschlagtafel mit Zetteln vom Gemeindefest und dem glänzenden Plakat von Perfect Move, daneben die Bushaltestelle mit Wartehäuschen; der Busfahrer trinkt auf der Straße Kaffee aus der Thermoskanne, Victor wartet am Häuschen. Ganz oben verläuft ein Gleis an der Nordkante, das rechts über eine Holzbrücke über den Bach aus dem Bild führt und links an einem Halteschild endet; davor liegt der kleine gepflasterte Bahnsteig des Haltepunkts mit grüner Bank, Stationsschild „Cedar Creek“ und Fahrplantafel, erreichbar über den Zedernpfad. Hinter den Häusern eine Wiese mit roten Zedern und Fichten, aus der links der Zedernpfad zum Gehweg herunterkommt. Südlich der Straße zwei Holzhäuser mit roten Dächern in Gärten mit Rasen, Plattenweg, Blumenbeet und einer dichten Zedernhecke, daneben eine Wiese mit Zedern, einer Baumstammbank und einer Bank zum Bach. Ganz rechts läuft ein Uferweg aus Erde, dahinter fließt der Bach von oben nach unten durch das Bild; ein breiter Holzsteg ragt hinein, auf dem Rosa angelt und ein Mann Bretter erneuert, weiter unten der Bootsschuppen des Kanuverleihs mit einem Ruderboot im Wasser, ein Reiher steht am Ufer. Oben führt eine Holzbrücke über den Bach in den Zedernwald am Ostufer. Laufwege: Gehwege vor allen Türen, Zedernpfad zum Bahnsteig, die Straße nach links, Zedernpfad, Uferweg, Steg und Brücke.",
+  "beschreibung": "gemischte Bäume, Gärten mit Beeten, Blumenkästen und Briefkästen, Laternen am Südrand der Straße, ein Picknickplatz mit zwei Tischen auf der Zedernwiese, der Bach schwingt im Süden weit aus. Der Ortskern von Cedar Creek an einem kühlen Spätsommermorgen: ein kleiner, stiller Ort am Bach, der nach Holz und Papier riecht. Die schmale Asphaltstraße kommt links vom Flussweg und endet rechts vor dem Bach, beidseitig mit gepflastertem Gehweg. An der Nordseite stehen nebeneinander die Drechslerei von Mr. Dunmore (kleine Holzscheune mit Blechdach, Rolltor links, Holzstapel davor), der Waschsalon von Mr. Boateng mit Markisen und großen Schaufenstern, darüber ein türkises Neonschild „Waschsalon“, vor dem ein Hund wartet, und das größte Gebäude, die Bibliothek aus rotem Backstein von 1890 mit schiefergedecktem Turm; unten im Turm führen Stufen durch einen Steinbogen mit zwei Lampen zur Tür, links und rechts davon zwei alte Laternen. Rechts an der Straße die hölzerne Anschlagtafel mit Zetteln vom Gemeindefest und dem glänzenden Plakat von Perfect Move, daneben die Bushaltestelle mit Wartehäuschen; der Busfahrer trinkt auf der Straße Kaffee aus der Thermoskanne, Victor wartet am Häuschen. Ganz oben verläuft ein Gleis an der Nordkante, das rechts über eine Holzbrücke über den Bach aus dem Bild führt und links an einem Halteschild endet; davor liegt der kleine gepflasterte Bahnsteig des Haltepunkts mit grüner Bank, Stationsschild „Cedar Creek“ und Fahrplantafel, erreichbar über den Zedernpfad. Hinter den Häusern eine Wiese mit roten Zedern und Fichten, aus der links der Zedernpfad zum Gehweg herunterkommt. Südlich der Straße zwei Holzhäuser mit roten Dächern in Gärten mit Rasen, Plattenweg, Blumenbeet und einer dichten Zedernhecke, daneben eine Wiese mit Zedern, einer Baumstammbank und einer Bank zum Bach. Ganz rechts läuft ein Uferweg aus Erde, dahinter fließt der Bach von oben nach unten durch das Bild; ein breiter Holzsteg ragt hinein, auf dem Rosa angelt und ein Mann Bretter erneuert, weiter unten der Bootsschuppen des Kanuverleihs mit einem Ruderboot im Wasser, ein Reiher steht am Ufer. Oben führt eine Holzbrücke über den Bach in den Zedernwald am Ostufer. Laufwege: Gehwege vor allen Türen, Zedernpfad zum Bahnsteig, die Straße nach links, Zedernpfad, Uferweg, Steg und Brücke. Runde 7: Die Karte reicht jetzt bis Reihe 49. Unter der Zedernwiese steht eine Häuserzeile mit Bauernhäusern, Wohnhäusern und einem Laden, die Türen zur neuen Südgasse (Reihen 47–48); hinter der Bibliothek ein Stadthaus.",
   "raster": [
     "##################################################~~~~~#####",
     "#.................................................hhhhh....#",
@@ -49,6 +49,15 @@
     "#pp.............................................ee..~~~~~..#",
     "#pp.............................................ee..~~~~~..#",
     "#pp.............................................ee..~~~~~..#",
+    "#pp.............................................ee~~~~~....#",
+    "#pp.............................................ee~~~~~....#",
+    "#pppppppppppppppppppp...........................ee~~~~~....#",
+    "#pp.............................................ee~~~~~....#",
+    "#pp.............................................ee~~~~~....#",
+    "#pp.............................................ee~~~~~....#",
+    "#pp.............................................ee~~~~~....#",
+    "#pp.............................................ee~~~~~....#",
+    "#pp.............................................ee~~~~~....#",
     "#pp.............................................ee~~~~~....#",
     "#pp.............................................ee~~~~~....#",
     "#pppppppppppppppppppppppppppppppppppppppppppppppee~~~~~....#",
@@ -136,26 +145,6 @@
     {
       "moebel": "cc4NadelbaumB",
       "feld": [17, 6]
-    },
-    {
-      "moebel": "cc4Nadelbaum",
-      "feld": [42, 4]
-    },
-    {
-      "moebel": "mf2Zeder",
-      "feld": [44, 4]
-    },
-    {
-      "moebel": "mf2ZederSchmal",
-      "feld": [42, 8]
-    },
-    {
-      "moebel": "cc4NadelbaumB",
-      "feld": [45, 8]
-    },
-    {
-      "moebel": "cc4Nadelbaum",
-      "feld": [42, 12]
     },
     {
       "moebel": "cc4Gleis",
@@ -614,28 +603,32 @@
       "feld": [52, 25]
     },
     {
-      "moebel": "cc8KulisseHausKleinHell",
-      "feld": [12, 5]
+      "moebel": "cc8KulisseHausFlach",
+      "feld": [3, 39]
     },
     {
-      "moebel": "cc8KulisseHausKleinRot",
-      "feld": [19, 5]
+      "moebel": "cc8KulisseLaden",
+      "feld": [10, 39]
     },
     {
-      "moebel": "cc8KulisseHausBlau",
-      "feld": [23, 34]
+      "moebel": "cc8KulisseHausFlach",
+      "feld": [16, 39]
     },
     {
-      "moebel": "cc8KulisseHausKleinHell2",
-      "feld": [29, 34]
+      "moebel": "cc8KulisseBauernhaus",
+      "feld": [23, 37]
     },
     {
-      "moebel": "cc8KulisseHausGruen",
-      "feld": [36, 34]
+      "moebel": "cc8KulisseBauernhausBreit",
+      "feld": [32, 38]
     },
     {
-      "moebel": "cc8KulisseHausRot",
-      "feld": [42, 34]
+      "moebel": "cc8KulisseHausHoch",
+      "feld": [42, 37]
+    },
+    {
+      "moebel": "cc8KulisseStadthaus",
+      "feld": [42, 3]
     }
   ],
   "ausloeser": [

@@ -21,7 +21,14 @@
     "runde": {
       "type": "object",
       "additionalProperties": false,
-      "required": ["kennung", "ort", "steller", "reihe", "buchuebungen", "themen"],
+      "required": [
+        "kennung",
+        "ort",
+        "steller",
+        "reihe",
+        "buchuebungen",
+        "themen"
+      ],
       "properties": {
         "kennung": { "$ref": "#/$defs/kennung" },
         "ort": {

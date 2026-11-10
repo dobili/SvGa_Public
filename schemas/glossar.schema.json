@@ -16,7 +16,10 @@
       "additionalProperties": false,
       "required": ["begriff", "text", "stellen", "verweise"],
       "properties": {
-        "begriff": { "description": "wie im Glossar, etwa „Bauernhebel (Hebel)“", "type": "string" },
+        "begriff": {
+          "description": "wie im Glossar, etwa „Bauernhebel (Hebel)“",
+          "type": "string"
+        },
         "text": { "$ref": "text.schema.json#/$defs/textteile" },
         "stellen": {
           "description": "Stellen im Buch, die den Begriff erklären (aus \\glseite)",
@@ -29,11 +32,18 @@
               "anker": { "type": "string" },
               "kapitel": { "type": "integer", "minimum": 0, "maximum": 12 },
               "abschnitt": { "type": ["string", "null"] },
-              "abbildung": { "description": "nächste Abbildung an der Stelle, zum Öffnen in der App", "type": ["string", "null"] }
+              "abbildung": {
+                "description": "nächste Abbildung an der Stelle, zum Öffnen in der App",
+                "type": ["string", "null"]
+              }
             }
           }
         },
-        "verweise": { "description": "Querverweise (Pfeile) auf andere Einträge", "type": "array", "items": { "type": "string" } }
+        "verweise": {
+          "description": "Querverweise (Pfeile) auf andere Einträge",
+          "type": "array",
+          "items": { "type": "string" }
+        }
       }
     }
   }

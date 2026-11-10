@@ -30,6 +30,7 @@
   "abenteuer.aufgaben.laedt": "Putting the tasks together …",
   "abenteuer.kartenleiste": "Chess Adventure",
   "abenteuer.kartenleisteHinweis": "Encounter {begegnung}. After the game: “Back to town”.",
+  "abenteuer.funkansage": "Over the radio: {zug}",
   "abenteuer.zustand": "{gegner} {zustand}.",
   "partie.zurueckZurStadt": "Back to town",
   "app.titel": "Schach von Grund auf",

@@ -173,6 +173,29 @@ test("Dunkler Stollen: mit Laterne leuchtet ein Lichtkreis um den Helden", async
   await expect(welt).toHaveAttribute("data-toenung", "dunkel");
 });
 
+test("Musikhaus: nach musikhausOffen lädt die zweite Fassung der Karte", async ({ page }) => {
+  // Runde 6, zustand_der_karte: orte.json `zustaende` wählt die Datei nach der Dialogvariable.
+  const stand = {
+    ...STAND,
+    dialogvariablen: { musikhausOffen: true },
+    position: {
+      karte: "portDelacroix.musikhaus",
+      ...feldVon("port-delacroix-musikhaus-neu", "start"),
+      richtung: "oben",
+    },
+  };
+  await starteImBrowser(page);
+  await expect.poll(() => page.evaluate(schreibeStand, stand)).toBe(true);
+  await page.reload();
+  await page.goto("/app/#abenteuer");
+  await page.getByTestId("abenteuer-laden").click();
+  await expect(page.locator(".abenteuer-welt canvas")).toBeVisible({ timeout: 30000 });
+  await expect(page.getByTestId("abenteuer-welt")).toHaveAttribute(
+    "data-fassung",
+    "musikhausOffen",
+  );
+});
+
 test("Erinnerung London 1851: Sepia, kein Tagebuch, keine Münzen", async ({ page }) => {
   const stand = {
     ...STAND,

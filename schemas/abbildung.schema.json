@@ -48,10 +48,7 @@
     },
     "unterabschnitt": {
       "description": "Titel des ungezählten Unterabschnitts, falls vorhanden",
-      "type": [
-        "string",
-        "null"
-      ]
+      "type": ["string", "null"]
     },
     "fen": {
       "description": "Stellung in Forsyth-Edwards-Notation",
@@ -105,10 +102,7 @@
         {
           "type": "object",
           "additionalProperties": false,
-          "required": [
-            "id",
-            "pfad"
-          ],
+          "required": ["id", "pfad"],
           "properties": {
             "id": {
               "type": "string"
@@ -126,10 +120,7 @@
     "quelle": {
       "type": "object",
       "additionalProperties": false,
-      "required": [
-        "datei",
-        "zeile"
-      ],
+      "required": ["datei", "zeile"],
       "properties": {
         "datei": {
           "type": "string"
@@ -152,11 +143,7 @@
   },
   "$defs": {
     "farbe": {
-      "enum": [
-        "gold",
-        "rot",
-        "grau"
-      ]
+      "enum": ["gold", "rot", "grau"]
     },
     "feld": {
       "type": "string",
@@ -165,11 +152,7 @@
     "pfeil": {
       "type": "object",
       "additionalProperties": false,
-      "required": [
-        "farbe",
-        "von",
-        "nach"
-      ],
+      "required": ["farbe", "von", "nach"],
       "properties": {
         "farbe": {
           "$ref": "#/$defs/farbe"
@@ -185,10 +168,7 @@
     "feldmarke": {
       "type": "object",
       "additionalProperties": false,
-      "required": [
-        "farbe",
-        "feld"
-      ],
+      "required": ["farbe", "feld"],
       "properties": {
         "farbe": {
           "$ref": "#/$defs/farbe"
@@ -201,11 +181,7 @@
     "abschnitt": {
       "type": "object",
       "additionalProperties": false,
-      "required": [
-        "nummer",
-        "label",
-        "titel"
-      ],
+      "required": ["nummer", "label", "titel"],
       "properties": {
         "nummer": {
           "type": "string"

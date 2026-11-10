@@ -2828,13 +2828,53 @@
       }
     },
     {
-      "name": "praeriehund",
+      "name": "praeriehunde",
       "typ": "tier",
       "feld": [6, 60],
       "eigenschaften": {
         "von": "5,58",
         "bis": "8,62",
+        "verhalten": "flitzen"
+      }
+    },
+    {
+      "name": "lerchen",
+      "typ": "tier",
+      "feld": [8, 15],
+      "eigenschaften": {
+        "von": "3,10",
+        "bis": "12,25",
+        "verhalten": "fliegen"
+      }
+    },
+    {
+      "name": "huehner",
+      "typ": "tier",
+      "feld": [18, 100],
+      "eigenschaften": {
+        "von": "16,98",
+        "bis": "20,104",
         "verhalten": "ausweichen"
+      }
+    },
+    {
+      "name": "hofhund",
+      "typ": "tier",
+      "feld": [15, 96],
+      "eigenschaften": {
+        "von": "13,94",
+        "bis": "17,100",
+        "verhalten": "folgen"
+      }
+    },
+    {
+      "name": "hase",
+      "typ": "tier",
+      "feld": [12, 140],
+      "eigenschaften": {
+        "von": "10,135",
+        "bis": "18,150",
+        "verhalten": "flitzen"
       }
     },
     {
@@ -2842,10 +2882,47 @@
       "typ": "statist",
       "feld": [22, 100],
       "eigenschaften": {
+        "tun": "bindet das Scheunentor fest, der Wind dreht",
+        "wann": "tag",
         "von": "21,99",
         "bis": "26,104",
-        "tun": "bindet das Scheunentor fest, der Wind dreht",
-        "wann": "tag"
+        "sagt": "statist.wegSummitCrossroads.praerie.farmerin"
+      }
+    },
+    {
+      "name": "radfahrerin",
+      "typ": "statist",
+      "feld": [14, 50],
+      "eigenschaften": {
+        "tun": "schiebt ihr Rad gegen den Wind",
+        "wann": "tag",
+        "von": "14,40",
+        "bis": "15,70",
+        "sagt": "statist.wegSummitCrossroads.praerie.radfahrerin"
+      }
+    },
+    {
+      "name": "landvermesser",
+      "typ": "statist",
+      "feld": [16, 135],
+      "eigenschaften": {
+        "tun": "misst mit Stativ und Messlatte den Straßenrand aus",
+        "wann": "tag",
+        "von": "15,132",
+        "bis": "18,138",
+        "sagt": "statist.wegSummitCrossroads.praerie.landvermesser"
+      }
+    },
+    {
+      "name": "bauer",
+      "typ": "statist",
+      "feld": [13, 20],
+      "eigenschaften": {
+        "tun": "zählt die Hügel der Präriehunde",
+        "wann": "tag",
+        "von": "12,18",
+        "bis": "15,24",
+        "sagt": "statist.wegSummitCrossroads.praerie.bauer"
       }
     }
   ],

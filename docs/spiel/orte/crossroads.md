@@ -148,6 +148,25 @@ Spielarten, die man unterwegs gelernt hat. Hier trifft man alle wieder.
 
 ### 3.3 Für Runde 6
 
+**Ereignis Weg 8, Geysirblitz (Dokument 15, 2.10; Runde 7):** Auf der Sinterinsel am großen Geysir
+„Old Patience“ liegt eine Holzplattform (Boden `dielen`) mit zwei Bänken, Infotafel
+(`cc3Raetseltafel`, Ersatz bis `infotafel_geysir.png`) und Rangerhäuschen (`cc4Bootsschuppen`). Die
+Felder bleiben frei begehbar:
+
+| Auslöser              | A        | B        | C        | Ort                                              |
+| --------------------- | -------- | -------- | -------- | ------------------------------------------------ |
+| `ereignisGeysirblitz` | (5, 71)  | (14, 63) | (21, 62) | geysirbecken, Plattform                          |
+| `spurPM5`             | (11, 73) | (9, 63)  | (18, 60) | geysirbecken, vor dem Rangerhäuschen (Infobrett) |
+| `finchBauerD`         | (20, 73) | (8, 64)  | (15, 63) | geysirbecken, Ufer am Steg (Finkenzeichen)       |
+| `seite09`             | (16, 95) | (16, 95) | (16, 95) | praerie, neben dem Sturmkeller                   |
+
+**Belebung Weg 8 (Regel 10.53):** je Karte vier ansprechbare Statisten und sechs Tiere, in A, B, C
+dieselben (Sätze unter `statist.wegSummitCrossroads.geysirbecken.*` und `….praerie.*`).
+Geysirbecken: Fotograf, Ranger-Praktikant, Vogelbeobachterin (Bisons), Kind; Bisonherde,
+Bisonweide, Raben, Murmeltiere, Eichhörnchen, Wapiti. Prärie: Farmerin, Radfahrerin, Landvermesser
+(arbeitet für eine Firma aus Silicon Bay, passt zu Spur P5), Bauer (Präriehunde); Falke,
+Präriehunde, Lerchen, Hühner, Hofhund, Hase.
+
 Auslöser `fernbus` (Haltestelle), `viehgatter` (S13), `geysirAusbruch` (Ansehen, zur vollen
 Stunde), `windrad` (Ansehen); Bilder: siehe Bestellung beim Haupt-Chat (Bison, Geysir, Dampf,
 Sinterboden, Ranger-Tor, Sturmkeller, Weizen, Wegweiser der Städte, Viehgatter, Schild Crossroads).

@@ -120,7 +120,10 @@ def hintergrund(szene: dict, privat: Path, gezeichnet: dict | None = None) -> Im
     for y, zeile in enumerate(zeilen):
         for x, z in enumerate(zeile):
             ort = (x * K, y * K)
-            if klippe and (feld := klippenfeld(zeilen, x, y, gras)) is not None:
+            # Randwände draußen zeigen auch mit Klippen den Boden dahinter (Regel 10.2), sonst wird der
+            # Kartenrand zur erdigen Dachfläche (Port Delacroix, Runde 9).
+            am_rand = wandart is not None and z == WAND and randnachbar(zeilen, x, y) is not None
+            if klippe and not am_rand and (feld := klippenfeld(zeilen, x, y, gras)) is not None:
                 bild.alpha_composite(kachel(privat, boegen, {"bogen": "gelaende"}, list(feld)), ort)
                 continue
             if z == WASSER:

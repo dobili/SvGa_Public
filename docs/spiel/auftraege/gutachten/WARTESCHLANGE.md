@@ -47,6 +47,10 @@ Szene heißt die Datei in `inhalte/abenteuer/szenen/` ohne `.json`.
 - [ ] maple-falls-aussen, maple-falls-park, cedar-creek-aussen (zweite Prüfung, niedrig-1)
 - [ ] weg-maple-cedar-flussweg, -landstrasse, -zedernpfad (zweite Prüfung, niedrig-1; eine Datei `weg-maple-cedar-2.md`)
 - [ ] Zustände aus Runde 8 (`python -m pipeline.abenteuer.zustaende`): je Grundkarte eine kurze Prüfung, ob der Zustand zur Beschreibung „Zustand: …“ passt; eine Datei `zustaende-runde8.md`
+- [ ] port-delacroix-aussen mit Zustand musikhaus-neu (Runde 9, mittel-1; Bilder `bildwuensche/laeden_schilder.py`)
+- [ ] port-delacroix-musikhaus (Runde 9, mittel-1)
+- [ ] port-delacroix-werkstatt (Runde 9, mittel-1)
+- [ ] port-delacroix-turnhalle (Runde 9, mittel-1)
 
 ## Erledigt
 

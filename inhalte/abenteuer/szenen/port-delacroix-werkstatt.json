@@ -27,11 +27,6 @@
       "an_wand": true
     },
     {
-      "moebel": "pd6Hobelbank",
-      "feld": [7, 1],
-      "id": "hobel"
-    },
-    {
       "moebel": "pd6Fenster",
       "feld": [12, 1],
       "an_wand": true
@@ -72,16 +67,8 @@
       "feld": [5, 7]
     },
     {
-      "moebel": "pd6Bretterstapel",
-      "feld": [17, 8]
-    },
-    {
       "moebel": "pd6Holzscheite",
       "feld": [12, 9]
-    },
-    {
-      "moebel": "pd6Kanister",
-      "feld": [4, 10]
     },
     {
       "moebel": "pd6Fussmatte",
@@ -92,6 +79,33 @@
       "moebel": "pd6Tuer",
       "feld": [10, 12],
       "an_wand": true
+    },
+    {
+      "moebel": "pd9Werkbank",
+      "feld": [8, 3],
+      "id": "hobel"
+    },
+    {
+      "moebel": "pd9KlavierBeige",
+      "feld": [3, 7]
+    },
+    {
+      "moebel": "pd9Klavierhocker",
+      "feld": [4, 10]
+    },
+    {
+      "moebel": "pd9Werkzeugschrank2",
+      "feld": [17, 8]
+    },
+    {
+      "moebel": "pd9Spaene",
+      "feld": [7, 6],
+      "versatz": [4, 4]
+    },
+    {
+      "moebel": "pd9Spaene",
+      "feld": [11, 6],
+      "versatz": [0, 6]
     }
   ],
   "ausloeser": [
@@ -108,7 +122,7 @@
     },
     {
       "name": "werkbank",
-      "feld": [9, 4],
+      "feld": [9, 5],
       "auf_moebel": true
     },
     {

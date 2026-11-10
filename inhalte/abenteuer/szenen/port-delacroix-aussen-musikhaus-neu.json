@@ -1,0 +1,1121 @@
+{
+  "karte": "portDelacroix.aussen",
+  "datei": "karten/port-delacroix-aussen-musikhaus-neu.json",
+  "art": "aussen",
+  "boden": "gras",
+  "wandart": "hecke",
+  "wand": "damm",
+  "ufer": "stein",
+  "boeden": {
+    "p": "pflaster",
+    "s": "asphalt",
+    "e": "erde",
+    "t": "stein"
+  },
+  "beschreibung": "Zustand: ab Szene 70 (musikhausOffen) ist das Musikhaus am Kai wieder aufgebaut: Planen und Bauzaun sind weg, über der Tür hängt das Schild „Musik und Schach, seit 1889“, weil der Club es nach dem Hurrikan gemeinsam repariert hat. Port Delacroix im nassen Winter nach dem Hurrikan, Hoffnung statt Trauer. Ganz oben das Meer mit Steinkante, darunter die Deichkrone als Erdweg vom Westrand (Ankunft von der Fähre) bis zum Kai, am Fuß der Krone Sandsäcke vom Sturm und der grüne Hang des Deichs; eine Rampe führt hinunter in die Stadt, eine zweite zum Kai. Im Westen das Gleis des Wüstenzugs mit Prellbock und der Bahnsteig mit Bank und Wegweiser. An der Rue du Port die Turnhalle der Schule, eine lange Backsteinhalle mit Sägezahndach, an den Häusern lehnen Leitern, links ein rotes, rechts ein grünes Holzhaus, dazwischen der Gebäckwagen von Mrs. Arceneaux, ein Rohbau hinter einem Bauzaun, Bäume, ein umgestürzter Stamm und Holz vom Sturm, Pfützen auf Straße und Platz. Südlich der Straße der gepflasterte Platz mit Clubzelt und Notzelt, auf einer Kiste der Bläser, Kinder mit Ball; daneben am Kai das Musikhaus mit rostigem Blechdach, links und rechts des Eingangs ein Bauzaun mit blauer Plane. Am Kai Fässer, Kisten, Sandsäcke, Mr. Batiste mit Eimer und Seil, im Hafenbecken zwei Fischerboote und ein Ruderboot, ein Steg. Im Süden die Rue des Facteurs mit der Klavierwerkstatt Whitlock-Duval und zwei kleinen Holzhäusern, Gärten mit Wäscheleinen; im Osten geht sie als Marschpfad zwischen Bäumen zum Bayou.",
+  "raster": [
+    "~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~",
+    "~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~",
+    "~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~",
+    "~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~",
+    "~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~",
+    "eeeeeeeeeeeeeeeeeeeeeeeeeeeeeeeeeeeeeeeeeeeeeeeeeeeeeeee~~~~~~~~...............#",
+    "eeeeeeeeeeeeeeeeeeeeeeeeeeeeeeeeeeeeeeeeeeeeeeeeeeeeeeee~~~~~~~~...............#",
+    "#............................ee.....................ee..~~~~~~~~pp.............#",
+    "#############################ee#####################ee..~~~~~~~~pp.............#",
+    "#############################ee#####################ee..~~~~~~~~pp.............#",
+    "#tt##########################ee#####################eepp~~~~~~~~pp.............#",
+    "#tt.................................................pppp~~~~~~~~pp.............#",
+    "#ttppp..............................................pppp~~~~~~~~pp.............#",
+    "#ttppp..............................................pppp~~~~~~~~pp.............#",
+    "#ttppp..............................................pppp~~~~~~~~pp.............#",
+    "#ttppp..............................................pppp~~~~~~~~pp.............#",
+    "#ttppp..............................................pppp~~~~~~~~pp.............#",
+    "#ttppp..............................................pppp~~~~~~~~pp.............#",
+    "#ttppp..............................................pppp~~~~~~~~ppppppppppppppp#",
+    "#ttppp..............................................pppp~~~~~~~~ppppppppppppppp#",
+    "#ttppp..............................................pppp~~~~~~~~pp.............#",
+    "#ttppp..............................................pppp~~~~~~~~pp.............#",
+    "#ttppp..............................................pppp~~~~~~~~pp.............#",
+    "#ttppp..............................................pppp~~~~~~~~pp.............#",
+    "#ttppp..............................................pppp~~~~~~~~pp.............#",
+    "#ttppppppppppppppppppppppppppppppppppppppppppppppppppppp~~~~~~~~pp.............#",
+    "#ttpppsssssssssssssssssssssssssssssssssssssssssssssspppp~~~~~~~~pp.............#",
+    "#ttpppsssssssssssssssssssssssssssssssssssssssssssssspppp~~~~~~~~pp.............#",
+    "#ttpppsssssssssssssssssssssssssssssssssssssssssssssspppp~~~~~~~~pp.............#",
+    "#ttppppppppppppppppppppppppppppppppppppppppppppppppppppp~~~~~~~~pp.............#",
+    "#tt...............ppppppppppppppppppppp.............pppp~~~~~~~~pp.............#",
+    "#tt...............ppppppppppppppppppppp.............pppp~~~~~~~~pp.............#",
+    "#tt...............ppppppppppppppppppppp.............pppp~~~~~~~~pp.............#",
+    "#tt...............ppppppppppppppppppppp.............pppp~~~~~~~~ppppppppppppppp#",
+    "#tt...............ppppppppppppppppppppp.............pppp~~~~~~~~ppppppppppppppp#",
+    "#tt...............ppppppppppppppppppppp.............pppp~~~~~~~~pp.............#",
+    "#tt...............ppppppppppppppppppppp.............pppp~~~~~~~~pp.............#",
+    "#tt...............ppppppppppppppppppppp.............pppp~~~~~~~~pp.............#",
+    "#tt...............ppppppppppppppppppppp.............pppp~~~~~~~~pp.............#",
+    "#tt...............ppppppppppppppppppppp.............pppp~~~~~~~~pp.............#",
+    "#tt...............ppppppppppppppppppppp.............pppp~~~~~~~~pp.............#",
+    "#ttppppppppppppppppppppppppppppppppppppppppppppppppppppp~~~~~~~~pp.............#",
+    "#ttppppppppppppppppppppppppppppppppppppppppppppppppppppp~~~~~~~~pp.............#",
+    "#ttppp............pp................................pppp~~~~~~~~pp.............#",
+    "#ttppp............pp................................pppp~~~~~~~~ppppppppppppppp#",
+    "#ttppp............pp................................pppp~~~~~~~~ppppppppppppppp#",
+    "#ttppp............pp................................pppp~~~~~~~~pp.............#",
+    "#ttppp............pp................................pppp~~~~~~~~pp.............#",
+    "#ttppp............pp................................pppp~~~~~~~~pp.............#",
+    "#ttppp............pp............................................pp.............#",
+    "#ttppp............pp............................................pp.............#",
+    "#ttppp............pp............................................pp.............#",
+    "#ttppp............pp............................................pp.............#",
+    "#ttpppppppppppppppppppppppppppppppppppppppppppppppppppppeeeeeeeeeeeeeeeeeeeeeeee",
+    "#ttpppppppppppppppppppppppppppppppppppppppppppppppppppppeeeeeeeeeeeeeeeeeeeeeeee",
+    "#..............................................................................#",
+    "#..............................................................................#",
+    "################################################################################"
+  ],
+  "objekte": [
+    {
+      "moebel": "pd9BordQ2",
+      "feld": [64, 7],
+      "versatz": [0, -1]
+    },
+    {
+      "moebel": "pd9BordQ2",
+      "feld": [54, 10],
+      "versatz": [0, -1]
+    },
+    {
+      "moebel": "pd9BordQ3",
+      "feld": [3, 12],
+      "versatz": [0, -1]
+    },
+    {
+      "moebel": "pd9BordQ13",
+      "feld": [66, 18],
+      "versatz": [0, -1]
+    },
+    {
+      "moebel": "pd9BordQ16",
+      "feld": [6, 25],
+      "versatz": [0, -1]
+    },
+    {
+      "moebel": "pd9BordQ16",
+      "feld": [22, 25],
+      "versatz": [0, -1]
+    },
+    {
+      "moebel": "pd9BordQ14",
+      "feld": [38, 25],
+      "versatz": [0, -1]
+    },
+    {
+      "moebel": "pd9BordQ13",
+      "feld": [66, 33],
+      "versatz": [0, -1]
+    },
+    {
+      "moebel": "pd9BordQ15",
+      "feld": [3, 41],
+      "versatz": [0, -1]
+    },
+    {
+      "moebel": "pd9BordQ13",
+      "feld": [39, 41],
+      "versatz": [0, -1]
+    },
+    {
+      "moebel": "pd9BordQ13",
+      "feld": [66, 44],
+      "versatz": [0, -1]
+    },
+    {
+      "moebel": "pd9BordQ12",
+      "feld": [6, 53],
+      "versatz": [0, -1]
+    },
+    {
+      "moebel": "pd9BordQ16",
+      "feld": [20, 53],
+      "versatz": [0, -1]
+    },
+    {
+      "moebel": "pd9BordQ16",
+      "feld": [36, 53],
+      "versatz": [0, -1]
+    },
+    {
+      "moebel": "pd9BordQ4",
+      "feld": [52, 53],
+      "versatz": [0, -1]
+    },
+    {
+      "moebel": "pd9BordQ13",
+      "feld": [66, 20],
+      "versatz": [0, -2]
+    },
+    {
+      "moebel": "pd9BordQ15",
+      "feld": [3, 30],
+      "versatz": [0, -2]
+    },
+    {
+      "moebel": "pd9BordQ13",
+      "feld": [39, 30],
+      "versatz": [0, -2]
+    },
+    {
+      "moebel": "pd9BordQ13",
+      "feld": [66, 35],
+      "versatz": [0, -2]
+    },
+    {
+      "moebel": "pd9BordQ12",
+      "feld": [6, 43],
+      "versatz": [0, -2]
+    },
+    {
+      "moebel": "pd9BordQ16",
+      "feld": [20, 43],
+      "versatz": [0, -2]
+    },
+    {
+      "moebel": "pd9BordQ16",
+      "feld": [36, 43],
+      "versatz": [0, -2]
+    },
+    {
+      "moebel": "pd9BordQ13",
+      "feld": [66, 46],
+      "versatz": [0, -2]
+    },
+    {
+      "moebel": "pd9BordQ4",
+      "feld": [52, 49],
+      "versatz": [0, -2]
+    },
+    {
+      "moebel": "pd9BordQ16",
+      "feld": [3, 55],
+      "versatz": [0, -2]
+    },
+    {
+      "moebel": "pd9BordQ16",
+      "feld": [19, 55],
+      "versatz": [0, -2]
+    },
+    {
+      "moebel": "pd9BordQ16",
+      "feld": [35, 55],
+      "versatz": [0, -2]
+    },
+    {
+      "moebel": "pd9BordQ5",
+      "feld": [51, 55],
+      "versatz": [0, -2]
+    },
+    {
+      "moebel": "pd9BordL11",
+      "feld": [18, 30],
+      "versatz": [-1, 0]
+    },
+    {
+      "moebel": "pd9BordL10",
+      "feld": [18, 43],
+      "versatz": [-1, 0]
+    },
+    {
+      "moebel": "pd9BordL14",
+      "feld": [52, 11],
+      "versatz": [-1, 0]
+    },
+    {
+      "moebel": "pd9BordL11",
+      "feld": [52, 30],
+      "versatz": [-1, 0]
+    },
+    {
+      "moebel": "pd9BordL6",
+      "feld": [52, 43],
+      "versatz": [-1, 0]
+    },
+    {
+      "moebel": "pd9BordL4",
+      "feld": [64, 49],
+      "versatz": [-1, 0]
+    },
+    {
+      "moebel": "pd9BordL13",
+      "feld": [6, 12],
+      "versatz": [-2, 0]
+    },
+    {
+      "moebel": "pd9BordL10",
+      "feld": [6, 43],
+      "versatz": [-2, 0]
+    },
+    {
+      "moebel": "pd9BordL10",
+      "feld": [20, 43],
+      "versatz": [-2, 0]
+    },
+    {
+      "moebel": "pd9BordL11",
+      "feld": [39, 30],
+      "versatz": [-2, 0]
+    },
+    {
+      "moebel": "pd9BordL11",
+      "feld": [66, 7],
+      "versatz": [-2, 0]
+    },
+    {
+      "moebel": "pd9BordL13",
+      "feld": [66, 20],
+      "versatz": [-2, 0]
+    },
+    {
+      "moebel": "pd9BordL9",
+      "feld": [66, 35],
+      "versatz": [-2, 0]
+    },
+    {
+      "moebel": "pd9BordL7",
+      "feld": [66, 46],
+      "versatz": [-2, 0]
+    },
+    {
+      "moebel": "pd6Prellbock",
+      "feld": [1, 10]
+    },
+    {
+      "moebel": "pd6Gleis",
+      "feld": [1, 12],
+      "bauteil_ok": true
+    },
+    {
+      "moebel": "pd6Gleis",
+      "feld": [1, 13],
+      "bauteil_ok": true
+    },
+    {
+      "moebel": "pd6Gleis",
+      "feld": [1, 14],
+      "bauteil_ok": true
+    },
+    {
+      "moebel": "pd6Gleis",
+      "feld": [1, 15],
+      "bauteil_ok": true
+    },
+    {
+      "moebel": "pd6Gleis",
+      "feld": [1, 16],
+      "bauteil_ok": true
+    },
+    {
+      "moebel": "pd6Gleis",
+      "feld": [1, 17],
+      "bauteil_ok": true
+    },
+    {
+      "moebel": "pd6Gleis",
+      "feld": [1, 18],
+      "bauteil_ok": true
+    },
+    {
+      "moebel": "pd6Gleis",
+      "feld": [1, 19],
+      "bauteil_ok": true
+    },
+    {
+      "moebel": "pd6Gleis",
+      "feld": [1, 20],
+      "bauteil_ok": true
+    },
+    {
+      "moebel": "pd6Gleis",
+      "feld": [1, 21],
+      "bauteil_ok": true
+    },
+    {
+      "moebel": "pd6Gleis",
+      "feld": [1, 22],
+      "bauteil_ok": true
+    },
+    {
+      "moebel": "pd6Gleis",
+      "feld": [1, 23],
+      "bauteil_ok": true
+    },
+    {
+      "moebel": "pd6Gleis",
+      "feld": [1, 24],
+      "bauteil_ok": true
+    },
+    {
+      "moebel": "pd6Gleis",
+      "feld": [1, 25],
+      "bauteil_ok": true
+    },
+    {
+      "moebel": "pd6Gleis",
+      "feld": [1, 26],
+      "bauteil_ok": true
+    },
+    {
+      "moebel": "pd6Gleis",
+      "feld": [1, 27],
+      "bauteil_ok": true
+    },
+    {
+      "moebel": "pd6Gleis",
+      "feld": [1, 28],
+      "bauteil_ok": true
+    },
+    {
+      "moebel": "pd6Gleis",
+      "feld": [1, 29],
+      "bauteil_ok": true
+    },
+    {
+      "moebel": "pd6Gleis",
+      "feld": [1, 30],
+      "bauteil_ok": true
+    },
+    {
+      "moebel": "pd6Gleis",
+      "feld": [1, 31],
+      "bauteil_ok": true
+    },
+    {
+      "moebel": "pd6Gleis",
+      "feld": [1, 32],
+      "bauteil_ok": true
+    },
+    {
+      "moebel": "pd6Gleis",
+      "feld": [1, 33],
+      "bauteil_ok": true
+    },
+    {
+      "moebel": "pd6Gleis",
+      "feld": [1, 34],
+      "bauteil_ok": true
+    },
+    {
+      "moebel": "pd6Gleis",
+      "feld": [1, 35],
+      "bauteil_ok": true
+    },
+    {
+      "moebel": "pd6Gleis",
+      "feld": [1, 36],
+      "bauteil_ok": true
+    },
+    {
+      "moebel": "pd6Gleis",
+      "feld": [1, 37],
+      "bauteil_ok": true
+    },
+    {
+      "moebel": "pd6Gleis",
+      "feld": [1, 38],
+      "bauteil_ok": true
+    },
+    {
+      "moebel": "pd6Gleis",
+      "feld": [1, 39],
+      "bauteil_ok": true
+    },
+    {
+      "moebel": "pd6Gleis",
+      "feld": [1, 40],
+      "bauteil_ok": true
+    },
+    {
+      "moebel": "pd6Gleis",
+      "feld": [1, 41],
+      "bauteil_ok": true
+    },
+    {
+      "moebel": "pd6Gleis",
+      "feld": [1, 42],
+      "bauteil_ok": true
+    },
+    {
+      "moebel": "pd6Gleis",
+      "feld": [1, 43],
+      "bauteil_ok": true
+    },
+    {
+      "moebel": "pd6Gleis",
+      "feld": [1, 44],
+      "bauteil_ok": true
+    },
+    {
+      "moebel": "pd6Gleis",
+      "feld": [1, 45],
+      "bauteil_ok": true
+    },
+    {
+      "moebel": "pd6Gleis",
+      "feld": [1, 46],
+      "bauteil_ok": true
+    },
+    {
+      "moebel": "pd6Gleis",
+      "feld": [1, 47],
+      "bauteil_ok": true
+    },
+    {
+      "moebel": "pd6Gleis",
+      "feld": [1, 48],
+      "bauteil_ok": true
+    },
+    {
+      "moebel": "pd6Gleis",
+      "feld": [1, 49],
+      "bauteil_ok": true
+    },
+    {
+      "moebel": "pd6Gleis",
+      "feld": [1, 50],
+      "bauteil_ok": true
+    },
+    {
+      "moebel": "pd6Gleis",
+      "feld": [1, 51],
+      "bauteil_ok": true
+    },
+    {
+      "moebel": "pd6Gleis",
+      "feld": [1, 52],
+      "bauteil_ok": true
+    },
+    {
+      "moebel": "pd6Gleis",
+      "feld": [1, 53],
+      "bauteil_ok": true
+    },
+    {
+      "moebel": "pd6Gleis",
+      "feld": [1, 54],
+      "bauteil_ok": true
+    },
+    {
+      "moebel": "pd6SandsaeckeReihe",
+      "feld": [3, 7]
+    },
+    {
+      "moebel": "pd6SandsaeckeReihe",
+      "feld": [9, 7]
+    },
+    {
+      "moebel": "pd6SandsaeckeReihe",
+      "feld": [16, 7]
+    },
+    {
+      "moebel": "pd6SandsaeckeReihe",
+      "feld": [22, 7]
+    },
+    {
+      "moebel": "pd6SandsaeckeReihe",
+      "feld": [35, 7]
+    },
+    {
+      "moebel": "pd6SandsaeckeReihe",
+      "feld": [41, 7]
+    },
+    {
+      "moebel": "pd6SandsaeckeReihe",
+      "feld": [47, 7]
+    },
+    {
+      "moebel": "pd6Werkhalle",
+      "feld": [20, 19],
+      "id": "th"
+    },
+    {
+      "moebel": "pd6Werkhalle",
+      "feld": [26, 19]
+    },
+    {
+      "moebel": "pd6SchildTurnhalle",
+      "auf": "th",
+      "versatz": [24, -3]
+    },
+    {
+      "moebel": "pd6HausGross",
+      "feld": [8, 15],
+      "id": "h1"
+    },
+    {
+      "moebel": "pd6PlaneDach",
+      "auf": "h1",
+      "versatz": [30, -28]
+    },
+    {
+      "moebel": "pd6Werkstatt",
+      "feld": [37, 16],
+      "id": "h2"
+    },
+    {
+      "moebel": "pd6PlaneDachKlein",
+      "auf": "h2",
+      "versatz": [-30, -30]
+    },
+    {
+      "moebel": "pd6Gebaeckstand",
+      "feld": [33, 22]
+    },
+    {
+      "moebel": "pd6Rohbau",
+      "feld": [22, 10]
+    },
+    {
+      "moebel": "pd6Zelt",
+      "feld": [21, 32]
+    },
+    {
+      "moebel": "pd6ZeltFlach",
+      "feld": [27, 32]
+    },
+    {
+      "moebel": "pd6Musikhaus",
+      "feld": [39, 31],
+      "id": "mh"
+    },
+    {
+      "moebel": "pd6Kiste",
+      "feld": [31, 37]
+    },
+    {
+      "moebel": "pd6Werkstatt",
+      "feld": [8, 44],
+      "id": "ws"
+    },
+    {
+      "moebel": "pd6HausGross",
+      "feld": [22, 43],
+      "id": "h3"
+    },
+    {
+      "moebel": "pd6PlaneDachKlein",
+      "auf": "h3",
+      "versatz": [16, -54]
+    },
+    {
+      "moebel": "pd6HausGross",
+      "feld": [32, 43]
+    },
+    {
+      "moebel": "pd6Steg",
+      "feld": [56, 23]
+    },
+    {
+      "moebel": "pd6Steg",
+      "feld": [56, 24]
+    },
+    {
+      "moebel": "cc4Bahnbank",
+      "feld": [3, 14]
+    },
+    {
+      "moebel": "rvWegweiser",
+      "feld": [5, 22]
+    },
+    {
+      "moebel": "pdEimer",
+      "feld": [53, 30]
+    },
+    {
+      "moebel": "pdSeil",
+      "feld": [54, 32]
+    },
+    {
+      "moebel": "pd6DielenNass",
+      "feld": [14, 27]
+    },
+    {
+      "moebel": "pd6DielenNass",
+      "feld": [30, 33]
+    },
+    {
+      "moebel": "pd6DielenNass",
+      "feld": [44, 42]
+    },
+    {
+      "moebel": "pd6DielenNass",
+      "feld": [53, 20]
+    },
+    {
+      "moebel": "pd6DielenNass",
+      "feld": [36, 53]
+    },
+    {
+      "moebel": "pd6DielenNass",
+      "feld": [65, 26]
+    },
+    {
+      "moebel": "pd6Leiter",
+      "feld": [16, 22]
+    },
+    {
+      "moebel": "pd6Leiter",
+      "feld": [47, 22]
+    },
+    {
+      "moebel": "pd6Stamm",
+      "feld": [16, 12]
+    },
+    {
+      "moebel": "pd6Holzscheite",
+      "feld": [18, 15]
+    },
+    {
+      "moebel": "pd6SandsaeckeReihe",
+      "feld": [53, 18]
+    },
+    {
+      "moebel": "pd6SandsaeckeReihe",
+      "feld": [53, 26]
+    },
+    {
+      "moebel": "pd6SandsaeckeReihe",
+      "feld": [53, 34]
+    },
+    {
+      "moebel": "mf4Laterne",
+      "feld": [17, 22],
+      "vorn": true
+    },
+    {
+      "moebel": "mf4Laterne",
+      "feld": [33, 22],
+      "vorn": true
+    },
+    {
+      "moebel": "mf4Laterne",
+      "feld": [51, 22],
+      "vorn": true
+    },
+    {
+      "moebel": "mf4Laterne",
+      "feld": [10, 39],
+      "vorn": true
+    },
+    {
+      "moebel": "mf4Laterne",
+      "feld": [30, 39],
+      "vorn": true
+    },
+    {
+      "moebel": "mf4Laterne",
+      "feld": [37, 39],
+      "vorn": true
+    },
+    {
+      "moebel": "rvLaubbaum",
+      "feld": [56, 50]
+    },
+    {
+      "moebel": "rvLaubbaumDunkel",
+      "feld": [62, 50]
+    },
+    {
+      "moebel": "rvLaubbaum",
+      "feld": [36, 10]
+    },
+    {
+      "moebel": "pd6Fass",
+      "feld": [54, 15]
+    },
+    {
+      "moebel": "pd6Fass",
+      "feld": [55, 15]
+    },
+    {
+      "moebel": "pd6Kiste",
+      "feld": [54, 36]
+    },
+    {
+      "moebel": "pd7Laden1",
+      "feld": [66, 10]
+    },
+    {
+      "moebel": "pd7Laden4",
+      "feld": [71, 10]
+    },
+    {
+      "moebel": "pd7Reihenhaus2",
+      "feld": [76, 6]
+    },
+    {
+      "moebel": "pd7Villa2",
+      "feld": [66, 20]
+    },
+    {
+      "moebel": "pd7Reihenhaus3",
+      "feld": [75, 21]
+    },
+    {
+      "moebel": "pd7Markt2",
+      "feld": [66, 35]
+    },
+    {
+      "moebel": "pd7Stadthaus",
+      "feld": [73, 36]
+    },
+    {
+      "moebel": "pd7Laden7",
+      "feld": [6, 32]
+    },
+    {
+      "moebel": "pd7Stadthaus5_1",
+      "feld": [11, 30]
+    },
+    {
+      "moebel": "pd7Markt5",
+      "feld": [40, 44]
+    },
+    {
+      "moebel": "pd7Laden10",
+      "feld": [47, 45]
+    },
+    {
+      "moebel": "pd7Reihenhaus3",
+      "feld": [48, 13]
+    },
+    {
+      "moebel": "pd6Waescheleine",
+      "feld": [70, 48]
+    },
+    {
+      "moebel": "rvLaubbaumDunkel",
+      "feld": [74, 49]
+    },
+    {
+      "moebel": "pd9BootAb",
+      "feld": [56, 12]
+    },
+    {
+      "moebel": "pd9BootAuf",
+      "feld": [62, 22]
+    },
+    {
+      "moebel": "pd9BootAb",
+      "feld": [56, 36]
+    },
+    {
+      "moebel": "pd9Sturmschutt",
+      "feld": [16, 13]
+    },
+    {
+      "moebel": "pd9Ziegel",
+      "feld": [34, 24]
+    },
+    {
+      "moebel": "pd9Ziegel",
+      "feld": [8, 46]
+    },
+    {
+      "moebel": "pd9StrichQ16",
+      "feld": [6, 27],
+      "versatz": [0, 8]
+    },
+    {
+      "moebel": "pd9StrichQ16",
+      "feld": [22, 27],
+      "versatz": [0, 8]
+    },
+    {
+      "moebel": "pd9StrichQ16",
+      "feld": [38, 27],
+      "versatz": [0, 8]
+    },
+    {
+      "moebel": "pd6SchildMusikhaus",
+      "auf": "mh",
+      "versatz": [-30, 8]
+    }
+  ],
+  "ausloeser": [
+    {
+      "name": "start",
+      "feld": [1, 5],
+      "eigenschaften": {
+        "richtung": "rechts"
+      }
+    },
+    {
+      "name": "deich",
+      "feld": [0, 5]
+    },
+    {
+      "name": "deich",
+      "feld": [0, 6]
+    },
+    {
+      "name": "bayou",
+      "feld": [79, 53]
+    },
+    {
+      "name": "bayou",
+      "feld": [79, 54]
+    },
+    {
+      "name": "turnhalleTuer",
+      "feld": [22, 25]
+    },
+    {
+      "name": "werkstattTuer",
+      "feld": [15, 53]
+    },
+    {
+      "name": "musikhausTuer",
+      "feld": [46, 41]
+    },
+    {
+      "name": "wuestenzug",
+      "feld": [4, 19]
+    },
+    {
+      "name": "gebaeckstand",
+      "feld": [34, 25]
+    },
+    {
+      "name": "brettHaus1",
+      "feld": [13, 25]
+    },
+    {
+      "name": "brettHaus2",
+      "feld": [44, 25]
+    },
+    {
+      "name": "brettHaus3",
+      "feld": [27, 53]
+    },
+    {
+      "name": "brettHaus4",
+      "feld": [37, 53]
+    },
+    {
+      "name": "bauzaun",
+      "feld": [40, 42]
+    }
+  ],
+  "figuren": [
+    {
+      "name": "batiste",
+      "feld": [54, 30]
+    },
+    {
+      "name": "arceneaux",
+      "feld": [36, 25]
+    },
+    {
+      "name": "blaeser",
+      "feld": [31, 36]
+    }
+  ],
+  "belebung": [
+    {
+      "name": "handwerker",
+      "typ": "statist",
+      "feld": [12, 41],
+      "eigenschaften": {
+        "von": "6,41",
+        "bis": "16,41",
+        "tun": "trägt Bretter",
+        "wann": "tag",
+        "sagt": "statist.portDelacroix.aussen.handwerker"
+      }
+    },
+    {
+      "name": "sandsackhelfer",
+      "typ": "statist",
+      "feld": [19, 6],
+      "eigenschaften": {
+        "von": "13,6",
+        "bis": "25,6",
+        "tun": "stapelt Sandsäcke",
+        "wann": "morgen",
+        "sagt": "statist.portDelacroix.aussen.sandsackhelfer"
+      }
+    },
+    {
+      "name": "ballkinder",
+      "typ": "statist",
+      "feld": [25, 37],
+      "eigenschaften": {
+        "von": "25,36",
+        "bis": "28,40",
+        "tun": "spielen Ball zwischen den Zelten",
+        "wann": "tag"
+      }
+    },
+    {
+      "name": "brieftraegerin",
+      "typ": "statist",
+      "feld": [8, 29],
+      "eigenschaften": {
+        "von": "6,29",
+        "bis": "50,29",
+        "tun": "trägt Briefe aus, Schal bis zur Nase",
+        "wann": "tag",
+        "sagt": "statist.portDelacroix.aussen.brieftraegerin"
+      }
+    },
+    {
+      "name": "rentner",
+      "typ": "statist",
+      "feld": [30, 42],
+      "eigenschaften": {
+        "von": "30,42",
+        "bis": "30,42",
+        "tun": "sitzt im Mantel am Uferweg und schaut aufs Wasser",
+        "wann": "tag",
+        "zeigt": "operPartie",
+        "sagt": "statist.portDelacroix.aussen.rentner"
+      }
+    },
+    {
+      "name": "fischer",
+      "typ": "statist",
+      "feld": [54, 44],
+      "eigenschaften": {
+        "von": "54,44",
+        "bis": "54,44",
+        "tun": "flickt ein Netz am Kai",
+        "wann": "tag",
+        "sagt": "statist.portDelacroix.aussen.fischer"
+      }
+    },
+    {
+      "name": "mutter",
+      "typ": "statist",
+      "feld": [44, 29],
+      "eigenschaften": {
+        "von": "44,29",
+        "bis": "44,29",
+        "tun": "wartet mit Thermosbecher vor dem Gebäckwagen",
+        "wann": "tag",
+        "sagt": "statist.portDelacroix.aussen.mutter"
+      }
+    },
+    {
+      "name": "grossmutter",
+      "typ": "statist",
+      "feld": [24, 54],
+      "eigenschaften": {
+        "von": "20,54",
+        "bis": "30,54",
+        "tun": "geht mit Einkaufstasche die Rue des Facteurs entlang",
+        "wann": "tag",
+        "sagt": "statist.portDelacroix.aussen.grossmutter"
+      }
+    },
+    {
+      "name": "bootsbauer",
+      "typ": "statist",
+      "feld": [68, 45],
+      "eigenschaften": {
+        "von": "66,45",
+        "bis": "72,45",
+        "tun": "streicht ein Ruder",
+        "wann": "tag",
+        "sagt": "statist.portDelacroix.aussen.bootsbauer"
+      }
+    },
+    {
+      "name": "gummistiefel",
+      "typ": "statist",
+      "feld": [65, 30],
+      "eigenschaften": {
+        "von": "65,22",
+        "bis": "65,40",
+        "tun": "springt in Gummistiefeln von Pfütze zu Pfütze",
+        "wann": "tag",
+        "sagt": "statist.portDelacroix.aussen.gummistiefel"
+      }
+    },
+    {
+      "name": "kehrerin",
+      "typ": "statist",
+      "feld": [46, 27],
+      "eigenschaften": {
+        "von": "40,27",
+        "bis": "50,27",
+        "tun": "schiebt Wasser mit dem Besen in den Gully",
+        "wann": "tag"
+      }
+    },
+    {
+      "name": "angler",
+      "typ": "statist",
+      "feld": [64, 12],
+      "eigenschaften": {
+        "von": "64,12",
+        "bis": "64,12",
+        "tun": "angelt im Hafenbecken",
+        "wann": "morgen"
+      }
+    },
+    {
+      "name": "pelikane",
+      "typ": "tier",
+      "feld": [55, 20],
+      "eigenschaften": {
+        "von": "55,18",
+        "bis": "55,24",
+        "verhalten": "sitzen"
+      }
+    },
+    {
+      "name": "moewen",
+      "typ": "tier",
+      "feld": [60, 10],
+      "eigenschaften": {
+        "von": "57,8",
+        "bis": "62,14",
+        "verhalten": "fliegen"
+      }
+    },
+    {
+      "name": "reiher",
+      "typ": "tier",
+      "feld": [55, 45],
+      "eigenschaften": {
+        "von": "55,44",
+        "bis": "54,46",
+        "verhalten": "ausweichen"
+      }
+    },
+    {
+      "name": "katze",
+      "typ": "tier",
+      "feld": [53, 11],
+      "eigenschaften": {
+        "von": "53,11",
+        "bis": "53,11",
+        "verhalten": "sitzen"
+      }
+    },
+    {
+      "name": "hund",
+      "typ": "tier",
+      "feld": [30, 54],
+      "eigenschaften": {
+        "von": "26,54",
+        "bis": "36,54",
+        "verhalten": "folgen"
+      }
+    }
+  ],
+  "zustand": ["neu", "gebraucht", "alt", "kaputt"],
+  "stil": ["klassisch", "rustikal", "industrie", "modern", "natur"],
+  "jahreszeit": "winter",
+  "kante": "klippe",
+  "zustand_der_karte": "musikhausOffen"
+}

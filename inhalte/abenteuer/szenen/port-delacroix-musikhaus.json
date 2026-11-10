@@ -23,6 +23,54 @@
   ],
   "objekte": [
     {
+      "moebel": "pd9Ziegel",
+      "feld": [10, 9]
+    },
+    {
+      "moebel": "pd9Rohr",
+      "feld": [16, 4]
+    },
+    {
+      "moebel": "pd9Stiefel",
+      "feld": [3, 11]
+    },
+    {
+      "moebel": "pd9LeiterKaputt",
+      "feld": [11, 3]
+    },
+    {
+      "moebel": "pd9Schutt",
+      "feld": [12, 10]
+    },
+    {
+      "moebel": "pd6Kiste",
+      "feld": [8, 4]
+    },
+    {
+      "moebel": "pd6Kiste",
+      "feld": [9, 4]
+    },
+    {
+      "moebel": "pd6Kiste",
+      "feld": [15, 3]
+    },
+    {
+      "moebel": "pd6Kiste",
+      "feld": [16, 8]
+    },
+    {
+      "moebel": "pd6DielenNass",
+      "feld": [5, 6]
+    },
+    {
+      "moebel": "pd6PfuetzeKlein",
+      "feld": [5, 8]
+    },
+    {
+      "moebel": "pd6PfuetzeKlein",
+      "feld": [7, 7]
+    },
+    {
       "moebel": "pd6Fenster",
       "feld": [4, 1],
       "an_wand": true
@@ -53,10 +101,6 @@
       "feld": [1, 9]
     },
     {
-      "moebel": "pd6DielenLoch",
-      "feld": [6, 5]
-    },
-    {
       "moebel": "pd6DielenNass",
       "feld": [12, 3]
     },
@@ -69,20 +113,12 @@
       "feld": [4, 10]
     },
     {
-      "moebel": "pd6PfuetzeKlein",
-      "feld": [9, 5]
-    },
-    {
       "moebel": "pd6RahmenKaputt",
       "feld": [9, 7]
     },
     {
       "moebel": "pd6Splitter",
       "feld": [11, 8]
-    },
-    {
-      "moebel": "pd6Splitter",
-      "feld": [7, 9]
     },
     {
       "moebel": "pd6Saegebock",
@@ -101,10 +137,6 @@
       "feld": [18, 10]
     },
     {
-      "moebel": "pd6KistenTuch",
-      "feld": [7, 3]
-    },
-    {
       "moebel": "pd6StuhlRechts",
       "feld": [14, 6]
     },
@@ -115,18 +147,6 @@
     {
       "moebel": "pd6Kiste",
       "feld": [14, 3]
-    },
-    {
-      "moebel": "pd6Bretterstapel",
-      "feld": [15, 2]
-    },
-    {
-      "moebel": "pd6Truemmer",
-      "feld": [8, 10]
-    },
-    {
-      "moebel": "pd6Kistenstapel",
-      "feld": [5, 7]
     },
     {
       "moebel": "pd6Tuer",

@@ -293,5 +293,10 @@ test("Reisebrett: Übungspartie gegen Ambrose von draußen", async ({ page }) =>
   await page.getByTestId("abenteuer-reisebrettknopf").click();
   await expect(page.getByTestId("abenteuer-deckwahl")).toBeVisible();
   await page.getByTestId("abenteuer-deck-los").click();
-  await expect(page.getByTestId("abenteuer-kartenleiste")).toBeVisible({ timeout: 30000 });
+  // Die Partie läuft in der Spielhülle; ohne Karten gibt es keine leere Kartenleiste (docs/spiel/18).
+  await expect(page.getByTestId("abenteuer-huelle-kopf")).toContainText("Ambrose", {
+    timeout: 30000,
+  });
+  await expect(page.getByTestId("abenteuer-partie-aufgeben")).toBeVisible();
+  await expect(page.getByTestId("abenteuer-kartenleiste")).toHaveCount(0);
 });

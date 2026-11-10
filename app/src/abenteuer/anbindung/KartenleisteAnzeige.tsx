@@ -121,7 +121,6 @@ export function KartenleisteAnzeige({
   const [gegnerliste, setzeGegnerliste] = useState<readonly Gegnerdaten[]>([]);
   const [laeuft, setzeLaeuft] = useState<string | null>(null);
   const [meldung, setzeMeldung] = useState<string | null>(null);
-  const begegnung = partiekennung.split("#")[0] ?? partiekennung;
 
   useEffect(() => {
     let aktiv = true;
@@ -147,18 +146,22 @@ export function KartenleisteAnzeige({
     </span>
   );
   if (!stand || !partie || !karten || karten.deck.length === 0) {
+    // Ohne Karten bleibt nur, was die Geschichte zeigt (docs/spiel/18): der Zustand des Gegners,
+    // falls es einen gibt; sonst keine leere Leiste.
     return (
-      <aside
-        className={leistenklasse}
-        style={pixelrahmen?.stil}
-        data-testid="abenteuer-kartenleiste"
-      >
-        <strong>{t("abenteuer.kartenleiste")}</strong>
-        {zustandszeile}
+      <>
+        {zustandszeile && (
+          <aside
+            className={leistenklasse}
+            style={pixelrahmen?.stil}
+            data-testid="abenteuer-kartenleiste"
+          >
+            {zustandszeile}
+          </aside>
+        )}
         <Funkansage partiekennung={partiekennung} />
         <Kulisse karte={steuerung.partie?.einstellung.abenteuer?.kulisse ?? null} />
-        <span>{t("abenteuer.kartenleisteHinweis", { begegnung })}</span>
-      </aside>
+      </>
     );
   }
 
@@ -252,7 +255,6 @@ export function KartenleisteAnzeige({
 
   return (
     <aside className={leistenklasse} style={pixelrahmen?.stil} data-testid="abenteuer-kartenleiste">
-      <strong>{t("abenteuer.kartenleiste")}</strong>
       {zustandszeile}
       <Funkansage partiekennung={partiekennung} />
       <Kulisse karte={steuerung.partie?.einstellung.abenteuer?.kulisse ?? null} />

@@ -502,29 +502,20 @@ Promenade; keine Tiere bis zur Öffnung der Inselfähre (dann Pelikan „Bishop�
 
 ### 4.5 Akademie (`siliconBay.akademie`)
 
-**Größe:** 24 × 16 (großer Saal). Nordwand Reihen 0–2 Glas mit weißen Rahmen (Blick auf die
-Bürotürme), Boden heller Kunststoff, Südwand Reihe 15 mit der Glastür bei Spalte 12; in der
-Nordwand bei Spalte 21 die Tür zum Serverraum (Metall, Kartenleser).
+**Neu gebaut in Runde 8 (mittel-3, 10.11.2026)** nach den Notizen des Autors (keine Variante passte:
+Glaswand fehlte, Kapselmaschinen-Tische, Automaten mitten im Raum, Stühle nicht zum Tisch, nur ein Raum).
 
-**Stimmung:** Kunstlicht, leises Summen, Klicken von Bildschirmen; kein Holz außer auf Dr. Lins Tisch.
+**Größe:** 26 × 20, drei Räume (10.56: der Glaswürfel außen ist groß genug für Saal, Foyer und Büro).
 
-**Laufwege:** Tür (12, 15) → Start (12, 14) → Mittelgang nach oben zur Datenwand; links die
-Bildschirmtische, rechts Dr. Lins Schreibtisch und die Serverraumtür.
+| Raum             | Felder        | Inhalt                                                                                                                                                                                                                                                                                                                                                               |
+| ---------------- | ------------- | -------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------- |
+| Trainingssaal    | 1–24 / 3–10   | Datenwand (Rangliste, Statistik) an der Nordwand, Theo davor (5, 3); vier weiße Tische für je zwei Schüler mit Flachbildschirm und Tastatur, Stühle von hinten zum Bildschirm; Vortragsecke mit großem Bildschirm und drei Stuhlreihen; Pausenecke im Nordosten mit Wasserspender, Getränke- und Snackautomat an der Wand; Nova mit Ringlicht an der Westwand (1, 9) |
+| Glaswand         | 1–24 / 11–12  | gläserne Trennwand aus dem Büropaket; Durchgang zum Foyer bei 7–8, zum Büro bei 19–20                                                                                                                                                                                                                                                                                |
+| Foyer            | 1–14 / 13–18  | Eingang Südwand (8, 19), Sitzgruppe (Sofa, Couchtisch, zwei Stühle zum Tisch), Empfangstisch mit Laptop, Vitrine mit dem Glaspokal                                                                                                                                                                                                                                   |
+| Büro von Dr. Lin | 17–24 / 13–18 | zum Saal verglast, zum Foyer Wand; weißer Schreibtisch mit dem alten Holzbrett (Clubkampf, Szene 60), sein Stuhl dahinter, Besucherstuhl davor; Dr. Lin (18, 14)                                                                                                                                                                                                     |
 
-| Zone         | Gegenstand                                                | Feld                                                     | Ausrichtung      | Material, Stil, Zustand | Zweck                                                        |
-| ------------ | --------------------------------------------------------- | -------------------------------------------------------- | ---------------- | ----------------------- | ------------------------------------------------------------ |
-| Nordwand     | Datenwand aus vier Bildschirmen mit Rangliste             | Wandfläche (8–15, 1)                                     | –                | Glas, modern, neu       | Ansehen `rangliste` (09); Theo davor (11, 4)                 |
-| Nordwand     | Tür zum Serverraum mit Kartenleser                        | Wandfläche (21, 1)                                       | –                | Metall                  | `serverraumTuer` (21, 3), `wenn: serverraumOffen`            |
-| Westwand     | breite Fensterbank mit Kissen                             | (1, 4), 1 × 4                                            | Sitzfläche Ost   | weiß, modern            | Nova sitzt hier (Szene 55); Platzhalter Akt 4 leer           |
-| Mitte links  | sechs Bildschirmtische in zwei Reihen, je ein Stuhl       | Tische (3, 6), (6, 6), (9, 6), (3, 10), (6, 10), (9, 10) | Stühle zum Tisch | weiß, modern, neu       | Bildschirmbretter; Probepartie (Szene 55), Reihen (Szene 58) |
-| Mitte rechts | Dr. Lins Schreibtisch mit einem einzigen Holzbrett, Stuhl | Tisch (16, 7), 3 × 2; Stuhl (17, 6)                      | Stuhl zum Tisch  | weiß, Holzbrett alt     | Dr. Lin (18, 6); Clubkampf (Szene 60) an diesem Tisch        |
-| Mitte rechts | Zettel „Drei Ziele“ in Handschrift an der Glaswand        | Wandfläche (18, 1)                                       | –                | Papier                  | Ansehen `dreiZiele` (09)                                     |
-| Ostwand      | Vitrine mit Glaspokal                                     | (22, 10)                                                 | –                | Glas, einmal je Ort     | Ansehen `glaspokal` (09)                                     |
-| Ecke SO      | Kunstpflanze in weißem Kübel, Staubsaugerroboter-Station  | (22, 13), (20, 13)                                       | –                | Kunststoff              | Regel 4.4; Staubsaugerroboter (Belebung)                     |
-| Ecke SW      | Kamera auf Stativ, Ringlicht                              | (1, 12)                                                  | –                | modern                  | Nova lächelt in die Kamera (Szene 55)                        |
-
-Offen: Bildschirmtische mit Schachbrett sind im Katalog wahrscheinlich nur als Bürotische mit
-Monitor vorhanden; das genügt.
+Tür zum Serverraum in der Nordwand bei Spalte 12, Feld davor (12, 3). Eigene Bilder: Bildwunsch
+`docs/spiel/auftraege/bildwuensche/akademie.py` (Möbel `sb8…` in `moebel/silicon-bay.json`).
 
 ### 4.6 Serverraum (`siliconBay.serverraum`)
 

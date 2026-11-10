@@ -1439,6 +1439,166 @@
       "blick": "unten",
       "zustand": "neu",
       "stil": "einfach"
+    },
+    "sb8Bildschirmtisch": {
+      "quelle": "spiel/eigene/akademie_bildschirmtisch.png",
+      "breite": 64,
+      "hoehe": 32,
+      "kollision": true,
+      "art": "schreibtisch",
+      "zustand": "neu",
+      "stil": "modern",
+      "blick": "keine"
+    },
+    "sb8Schreibtisch": {
+      "quelle": "spiel/eigene/akademie_schreibtisch.png",
+      "breite": 48,
+      "hoehe": 32,
+      "kollision": true,
+      "art": "schreibtisch",
+      "zustand": "neu",
+      "stil": "modern",
+      "blick": "keine"
+    },
+    "sb8Glaswand": {
+      "quelle": "spiel/eigene/akademie_glaswand.png",
+      "breite": 32,
+      "hoehe": 32,
+      "kollision": true,
+      "art": "trennwand",
+      "zustand": "neu",
+      "stil": "modern",
+      "blick": "keine"
+    },
+    "sb8StuhlVorn": {
+      "quelle": "spiel/eigene/akademie_stuhl_vorn.png",
+      "breite": 16,
+      "hoehe": 32,
+      "kollision": true,
+      "art": "stuhl",
+      "zustand": "neu",
+      "stil": "modern",
+      "blick": "unten"
+    },
+    "sb8StuhlRuecken": {
+      "quelle": "spiel/eigene/akademie_stuhl_ruecken.png",
+      "breite": 16,
+      "hoehe": 32,
+      "kollision": true,
+      "art": "stuhl",
+      "zustand": "neu",
+      "stil": "modern",
+      "blick": "oben"
+    },
+    "sb8Sofa": {
+      "quelle": "spiel/eigene/akademie_sofa.png",
+      "breite": 32,
+      "hoehe": 32,
+      "kollision": true,
+      "art": "sofa",
+      "zustand": "neu",
+      "stil": "modern",
+      "blick": "unten"
+    },
+    "sb8Couchtisch": {
+      "quelle": "spiel/eigene/akademie_couchtisch.png",
+      "breite": 32,
+      "hoehe": 16,
+      "kollision": true,
+      "art": "tisch",
+      "zustand": "neu",
+      "stil": "modern",
+      "blick": "keine"
+    },
+    "sb8Wasserspender": {
+      "quelle": "spiel/eigene/akademie_wasserspender.png",
+      "breite": 16,
+      "hoehe": 32,
+      "kollision": true,
+      "art": "geraet",
+      "zustand": "neu",
+      "stil": "modern",
+      "blick": "unten"
+    },
+    "sb8Getraenkeautomat": {
+      "quelle": "spiel/eigene/akademie_getraenkeautomat.png",
+      "breite": 32,
+      "hoehe": 48,
+      "kollision": true,
+      "art": "automat",
+      "zustand": "neu",
+      "stil": "modern",
+      "blick": "unten"
+    },
+    "sb8Snackautomat": {
+      "quelle": "spiel/eigene/akademie_snackautomat.png",
+      "breite": 32,
+      "hoehe": 32,
+      "kollision": true,
+      "art": "automat",
+      "zustand": "neu",
+      "stil": "modern",
+      "blick": "unten"
+    },
+    "sb8Smartboard": {
+      "quelle": "spiel/eigene/akademie_smartboard.png",
+      "breite": 32,
+      "hoehe": 32,
+      "kollision": false,
+      "art": "bild",
+      "zustand": "neu",
+      "stil": "modern",
+      "blick": "unten"
+    },
+    "sb8Rangliste": {
+      "quelle": "spiel/eigene/akademie_rangliste.png",
+      "breite": 32,
+      "hoehe": 32,
+      "kollision": false,
+      "art": "bild",
+      "zustand": "neu",
+      "stil": "modern",
+      "blick": "unten"
+    },
+    "sb8Statistik": {
+      "quelle": "spiel/eigene/akademie_statistik.png",
+      "breite": 32,
+      "hoehe": 32,
+      "kollision": false,
+      "art": "bild",
+      "zustand": "neu",
+      "stil": "modern",
+      "blick": "unten"
+    },
+    "sb8Pflanze": {
+      "quelle": "spiel/eigene/akademie_pflanze.png",
+      "breite": 16,
+      "hoehe": 32,
+      "kollision": true,
+      "art": "pflanze",
+      "zustand": "neu",
+      "stil": "modern",
+      "blick": "keine"
+    },
+    "sb8StuhlLinks": {
+      "quelle": "spiel/eigene/akademie_stuhl_links.png",
+      "breite": 16,
+      "hoehe": 32,
+      "kollision": true,
+      "art": "stuhl",
+      "zustand": "neu",
+      "stil": "modern",
+      "blick": "links"
+    },
+    "sb8StuhlRechts": {
+      "quelle": "spiel/eigene/akademie_stuhl_rechts.png",
+      "breite": 16,
+      "hoehe": 32,
+      "kollision": true,
+      "art": "stuhl",
+      "zustand": "neu",
+      "stil": "modern",
+      "blick": "rechts"
     }
   }
 }

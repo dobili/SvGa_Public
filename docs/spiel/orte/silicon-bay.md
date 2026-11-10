@@ -819,3 +819,15 @@ Gutachten `silicon-bay-lobby-serverraum.md`.
     `schubladenschrank_metall.png`).
   - Der Arbeitsplatz hat einen Stuhl; die Tür ist die Glastür.
   - Offen: Kabel und Bodenlichter. Dafür gibt es keine Bilder.
+
+## Zweites Gutachten Lobby und Serverraum: Antworten (niedrig-1, 10.11.2026)
+
+- **Lobby:**
+  - Die Sitzgruppe steht nicht mehr vor den Aufzügen, sondern im Südwesten des Raums (Teppich
+    Reihen 7–11). Vor den drei Aufzügen sind vier Reihen frei.
+  - Der leere Bildschirm ist weg. Zwei Bildschirme mit Kennzahlen hängen an der Nordwand
+    (x 12 und x 16) und füllen auch das Wandstück neben den Aufzügen.
+- **Serverraum:**
+  - Die Schrankreihe ist nicht mehr angeschnitten: Das Bild ist 160 px breit, die sechs Schränke
+    stehen mittig mit Rand links und rechts (`serverreihe_6.png`, neu rendern).
+  - Der Stuhl steht direkt am Messplatz.

@@ -528,7 +528,7 @@
      "type": "moebel",
      "x": 16,
      "y": 16,
-     "width": 144,
+     "width": 160,
      "height": 48,
      "rotation": 0,
      "visible": true,
@@ -665,7 +665,7 @@
      "name": "sb5Messplatz",
      "type": "moebel",
      "x": 16,
-     "y": 64,
+     "y": 48,
      "width": 32,
      "height": 48,
      "rotation": 0,
@@ -674,7 +674,7 @@
       {
        "name": "tiefe",
        "type": "int",
-       "value": 104
+       "value": 88
       },
       {
        "name": "kollision",
@@ -687,8 +687,8 @@
      "id": 11,
      "name": "sb8StuhlRuecken",
      "type": "moebel",
-     "x": 16,
-     "y": 112,
+     "x": 20,
+     "y": 82,
      "width": 16,
      "height": 32,
      "rotation": 0,
@@ -697,7 +697,7 @@
       {
        "name": "tiefe",
        "type": "int",
-       "value": 136
+       "value": 106
       },
       {
        "name": "kollision",

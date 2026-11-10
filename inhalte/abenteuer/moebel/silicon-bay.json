@@ -2323,7 +2323,7 @@
     },
     "sb12Serverreihe": {
       "quelle": "spiel/eigene/serverreihe_6.png",
-      "breite": 144,
+      "breite": 160,
       "hoehe": 48,
       "kollision": true,
       "art": "geraet",

@@ -88,6 +88,18 @@ der bei Ebbe im Watt liegt. Die Pfahlhäuser (eigene Bilder, 4 × 5) stehen ohne
 enden am Bohlensteg darunter. Leuchtfeuer (3 × 6, Tür unten in der Mitte), Netzgestell und Pelikane auf
 Pfählen sind ebenfalls eigene Bilder.
 
+## Nachtrag: Leuchtfeuer nur mit Batterie (10.11.2026, mittel-2)
+
+- **Befund (Simulation):** Beim zweiten Besuch führte `pelikaninsel.leuchtfeuer` jeden Auftrag nach
+  `leuchtfeuer_einsetzen`, auch ohne Batterie. Die Quest `pelikaninsel.leuchtfeuer` wäre damit ohne
+  Batterie fertig geworden: 35 Münzen und `gegenstandWeg` für eine Batterie, die es nicht gibt.
+- **Behoben:** Der Knoten führt nur mit `hatBatterie` zum Einsetzen. Ohne Batterie sagt der
+  Erzähler, dass das Feuer dunkel bleibt und es drüben in Silicon Bay eine gibt. Die Batterie gibt
+  der Eisenwarenladen der Altstadt (Quest `siliconBay.batterie`).
+- **Dazu, allgemein:** Die App meldete Knoten mit nur einer Zeile vor `END` nie an die Quests,
+  `leuchtfeuer_einsetzen` ist so ein Knoten. Seitdem meldet `dialog/geschichte.ts` Knoten über ihre
+  Besuchszahl, der Paketbau übersetzt mit „alle Besuche zählen“.
+
 ## Runde 7: Leben und Finch-Figur (10.11.2026, mittel-4)
 
 Zu Delphine, Old Pete und Coral kommen drei ansprechbare Statisten (`statist.pelikaninsel.dorf.*`):

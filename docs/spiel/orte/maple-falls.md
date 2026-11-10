@@ -405,6 +405,30 @@ Begründet statt geändert:
 - **32 Lampen und Papierkorb:** nicht eingebaut; drei Fenster geben Licht, der Raum ist nach der
   Prüfung des Kartenbauers ausreichend belegt.
 
+#### Antworten auf das dritte Gutachten (10.11.2026)
+
+- **1 Brett ohne Dame:** Auf dem Tisch hinten rechts liegt statt der Schachuhr ein Zettel mit
+  rotem Fragezeichen (Bildwunsch `clubraum_moebel.py`). Auf 12 × 9 Pixeln ist die fehlende Dame
+  allein nicht zu sehen.
+- **2 Pokalregal:** Das Pokalregal mit Glastüren hat Pokale auf zwei Böden, ganz vorn unten steht
+  der Pokal von 1994 mit Schild (eigenes Bild). Pokaltisch und schwebender Pokal sind weg.
+- **3, 4 Glasschrank, Kartons:** entfernt. Dafür stehen links und rechts vom Lehrertisch zwei
+  Bücherregale; das füllt auch den leeren Nordosten (Befund 14).
+- **5, 6 Coach, Tafel:** Tafel und Lehrertisch sitzen mittig über der Tür. Der Coach steht rechts
+  neben dem Tisch und verdeckt die Tafel nicht. Der Globus steht auf der Tischplatte.
+- **7 Wandbilder:** Alle Wandbilder enden auf einer Höhe; Fenster, Karte, Plakat und Garderobe
+  beginnen an derselben Linie.
+- **8 Spind:** drei hohe Schulspinde (eigenes Bild) statt des Doppelspinds aus dem Bahnhof.
+- **9 Regale:** Auf beiden Seiten steht dasselbe schmale Regal, links gespiegelt. Die Pflanzen
+  stehen jetzt darüber in den Ecken, nicht mehr auf den Regalen.
+- **11 Stühle:** Die Stühle rücken eine Drittelkachel an die Tische.
+- **10, 12, 13, 15 begründet:**
+  - Die Seitenbänke sind LimeZus Bänke von der Seite; eine andere Ansicht gibt es nicht.
+  - Sam steht als Hauptfigur frei im Gang.
+  - Die Dielen sind seit Punkt e der Sammelbefunde scharf: Die Schattenkachel liegt nur noch
+    unter der Wand.
+  - Die Fußmatte entfiel nach dem zweiten Gutachten, weil sie wie eine Kiste aussah.
+
 ### 4.4 Diner (`mapleFalls.diner`), neu gedacht (mittel-3, 9.11.2026)
 
 **Stand nach Runde 5 (gewählt: Variante C, überarbeitet nach den Hinweisen des Autors, 10.11.2026):**

@@ -18,8 +18,12 @@ const RUECKKEHR_SCHRITTE = 6000;
 const NACHHOLEN_SCHRITTE = 1500;
 const NEUER_VERSUCH_ALLE = 200;
 
-/** Orte außerhalb der FOLGE (keine Erinnerungen), die an einen der Orte direkt angrenzen. */
-function nebenorte(welt, orte) {
+/**
+ * Orte (keine Erinnerungen), die an einen der Orte direkt angrenzen; mit `nurNeben` nur die
+ * außerhalb der FOLGE (Jahrmarkt an Crossroads). Die Rückkehr braucht alle Nachbarn: Der letzte
+ * Schritt von capitalArena.verloreneSeiten verlangt die Seitenabgabe auf dem Weg davor.
+ */
+function nachbarorte(welt, orte, nurNeben = false) {
   const angrenzend = new Set();
   for (const o of welt.orte) {
     for (const a of o.ausloeser || []) {
@@ -31,8 +35,13 @@ function nebenorte(welt, orte) {
   }
   return [...angrenzend].filter((k) => {
     const o = welt.orte.find((x) => x.kennung === k);
-    return o && o.art !== "erinnerung" && !FOLGE.includes(k);
+    return o && o.art !== "erinnerung" && !(nurNeben && FOLGE.includes(k));
   });
+}
+
+/** Angrenzende Orte außerhalb der FOLGE (zum Gebiet beim Erkunden). */
+function nebenorte(welt, orte) {
+  return nachbarorte(welt, orte, true);
 }
 
 /** Bleibt bis zu `schritte` Schritte in den Zielorten; endet, wenn `fertig()` gilt. */
@@ -57,10 +66,10 @@ function rueckkehr(welt, st, frist, h) {
     for (const q of welt.quests) {
       const s = st.staende.find((x) => x.k === q.kennung);
       const ort = welt.orte.find((x) => x.kennung === q.ort);
-      if (!s || s.fertig || !ort || ort.art === "weg" || Date.now() > frist)
-        continue;
+      // Auch Wege: Odette (finchJagd) wartet auf dem Weg, bis alle Figuren gefunden sind.
+      if (!s || s.fertig || !ort || Date.now() > frist) continue;
       ziele.push(q.ort);
-      st.zielOrte = new Set([q.ort, ...nebenorte(welt, [q.ort])]);
+      st.zielOrte = new Set([q.ort, ...nachbarorte(welt, [q.ort])]);
       betrete(welt, st, ort.karten[0].kennung);
       // Quests mit mehreren Partien (drei Sets Schach960) brauchen je Partie mehrere Anläufe.
       bleibe(

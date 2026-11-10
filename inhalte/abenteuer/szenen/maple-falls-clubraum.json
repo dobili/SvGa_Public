@@ -2,7 +2,7 @@
   "karte": "mapleFalls.clubraum",
   "datei": "karten/maple-falls-clubraum.json",
   "art": "innen",
-  "beschreibung": "Der Clubraum des Schachclubs von Maple Falls in der Schule (26 × 15, KARTENREGELN 10.56): Die Schule ist außen das größte Gebäude des Orts, beim Clubkampf spielen sechs Bretter gleichzeitig. Ein roter Teppich mit goldenem Rand liegt mittig unter sechs runden Holztischen in zwei Reihen zu drei, an jedem zwei grüne Schulstühle einander gegenüber, auf jedem ein aufgebautes Brett und eine Schachuhr; auf dem hinteren rechten Tisch steht das Brett, dem die weiße Dame fehlt. An der Nordwand drei Fenster, die Weltkarte, eine Wanduhr, mittig die Kreidetafel für Demonstrationen, daneben die Pinnwand mit der Tabelle des Clubkampfs, das Plakat „Erst zählen“ und eine Garderobe mit Jacken. Unter der Tafel steht der grüne Lehrertisch mit Globus, Coach Delgado dahinter mit Blick in den Raum. Links ein Pokalregal mit den Pokalen des Clubs, ganz vorn der Pokal von 1994, daneben ein kleiner Glasschrank und ein Stapel Kartons mit Schachsets und Uhren; rechts ein Doppelspind. An den Seitenwänden je ein schmales Bücherregal und eine Bank für die Eltern, mit dem Rücken zur Wand und Blick zu den Tischen; in allen vier Ecken Pflanzen. Die Tür liegt mittig in der Südwand.",
+  "beschreibung": "Der Clubraum des Schachclubs von Maple Falls in der Schule (26 × 15, KARTENREGELN 10.56): Die Schule ist außen das größte Gebäude des Orts, beim Clubkampf spielen sechs Bretter gleichzeitig. Ein roter Teppich mit goldenem Rand liegt mittig unter sechs runden Holztischen in zwei Reihen zu drei, an jedem zwei grüne Schulstühle dicht am Tisch, auf jedem ein aufgebautes Brett und eine Schachuhr; auf dem hinteren rechten Tisch steht das Brett, dem die weiße Dame fehlt, daneben statt der Uhr ein Zettel mit einem roten Fragezeichen. An der Nordwand hängen auf einer Höhe drei Fenster, die Weltkarte, eine Wanduhr, mittig über der Tür die Kreidetafel, die Pinnwand mit der Tabelle des Clubkampfs, das Plakat „Erst zählen“ und eine Garderobe mit Jacken. Unter der Tafel steht der grüne Lehrertisch mit Globus und Buch, Coach Delgado rechts daneben mit Blick in den Raum. Links ein Pokalregal mit Glastüren, ganz vorn unten der Pokal von 1994 mit Schild, daneben ein Bücherregal; rechts ein zweites Bücherregal und drei hohe Schulspinde. An den Seitenwänden je ein gleiches schmales Bücherregal und eine Bank für die Eltern, mit dem Rücken zur Wand und Blick zu den Tischen; in allen vier Ecken Pflanzen. Die Tür liegt mittig in der Südwand.",
   "wand": "creme",
   "boden": "holzHell",
   "raster": [
@@ -23,6 +23,19 @@
     "#############.############"
   ],
   "objekte": [
+    {
+      "moebel": "mfc10Pokalregal",
+      "feld": [4, 3],
+      "id": "pokalregal"
+    },
+    {
+      "moebel": "mfc8RegalNiedrig",
+      "feld": [7, 3]
+    },
+    {
+      "moebel": "mfc8RegalNiedrig",
+      "feld": [17, 3]
+    },
     {
       "moebel": "mfc9TeppichLo",
       "feld": [4, 6]
@@ -530,83 +543,69 @@
     {
       "moebel": "mf2Fenster",
       "feld": [2, 1],
-      "an_wand": true
+      "an_wand": true,
+      "versatz": [0, -2]
     },
     {
       "moebel": "mf2Weltkarte",
       "feld": [5, 1],
       "an_wand": true,
-      "versatz": [0, -3]
+      "versatz": [0, -2]
     },
     {
       "moebel": "mf2Fenster",
       "feld": [8, 1],
-      "an_wand": true
+      "an_wand": true,
+      "versatz": [0, -2]
     },
     {
       "moebel": "mfc9Wanduhr",
       "feld": [10, 1],
       "an_wand": true,
-      "versatz": [0, 2]
+      "versatz": [0, 4]
     },
     {
       "moebel": "mfc8Kreidetafel",
       "feld": [12, 1],
-      "versatz": [0, -3]
+      "versatz": [8, -2]
     },
     {
       "moebel": "mf4Pinnwand",
       "feld": [15, 1],
       "an_wand": true,
-      "versatz": [0, 13]
+      "versatz": [0, 6]
     },
     {
       "moebel": "mfc9PlakatZaehlen",
       "feld": [17, 1],
       "an_wand": true,
-      "versatz": [0, -3]
+      "versatz": [0, -2]
     },
     {
       "moebel": "mfc9Garderobe",
       "feld": [19, 1],
       "an_wand": true,
-      "versatz": [0, -3]
+      "versatz": [0, -2]
     },
     {
       "moebel": "mf2Fenster",
       "feld": [23, 1],
-      "an_wand": true
-    },
-    {
-      "moebel": "mf8Pokaltisch",
-      "feld": [4, 3],
-      "id": "pokalregal"
-    },
-    {
-      "moebel": "mfc9Pokal1994",
-      "auf": "pokalregal",
-      "versatz": [0, 6]
-    },
-    {
-      "moebel": "mfc9Glasschrank",
-      "feld": [6, 3]
-    },
-    {
-      "moebel": "mfc9Kartons",
-      "feld": [9, 3]
+      "an_wand": true,
+      "versatz": [0, -2]
     },
     {
       "moebel": "mfc9Lehrertisch",
       "feld": [12, 4],
-      "id": "pult"
+      "id": "pult",
+      "versatz": [8, 0]
     },
     {
       "moebel": "mf2Globus",
       "auf": "pult",
-      "versatz": [-8, 0]
+      "versatz": [-6, 3]
     },
     {
-      "moebel": "mfc9Doppelspind",
+      "moebel": "mfc10SpindeHoch",
       "feld": [21, 3]
     },
     {
@@ -626,20 +625,20 @@
       "feld": [23, 12]
     },
     {
-      "moebel": "mfc8RegalSeite",
-      "feld": [1, 5]
+      "moebel": "mfc10RegalSeiteRechts",
+      "feld": [1, 6]
     },
     {
       "moebel": "mfc9RegalSeiteLinks",
-      "feld": [24, 5]
+      "feld": [24, 6]
     },
     {
       "moebel": "mfc9BankWest",
-      "feld": [1, 8]
+      "feld": [1, 9]
     },
     {
       "moebel": "mfc9BankOst",
-      "feld": [24, 8]
+      "feld": [24, 9]
     },
     {
       "moebel": "mf8RundtischDunkel",
@@ -659,12 +658,15 @@
     {
       "moebel": "mf8SchulstuhlRechts",
       "feld": [5, 7],
-      "zu": "t1"
+      "zu": "t1",
+      "versatz": [5, 0]
     },
     {
       "moebel": "mf8SchulstuhlLinks",
       "feld": [8, 7],
-      "zu": "t1"
+      "zu": "t1",
+      "versatz": [-5, 0],
+      "vorn": true
     },
     {
       "moebel": "mf8RundtischDunkel",
@@ -684,12 +686,15 @@
     {
       "moebel": "mf8SchulstuhlRechts",
       "feld": [11, 7],
-      "zu": "t2"
+      "zu": "t2",
+      "versatz": [5, 0]
     },
     {
       "moebel": "mf8SchulstuhlLinks",
       "feld": [14, 7],
-      "zu": "t2"
+      "zu": "t2",
+      "versatz": [-5, 0],
+      "vorn": true
     },
     {
       "moebel": "mf8RundtischDunkel",
@@ -702,19 +707,22 @@
       "versatz": [-4, 0]
     },
     {
-      "moebel": "mfc9Schachuhr",
+      "moebel": "mfc10Zettel",
       "auf": "t3",
-      "versatz": [9, -1]
+      "versatz": [10, -2]
     },
     {
       "moebel": "mf8SchulstuhlRechts",
       "feld": [17, 7],
-      "zu": "t3"
+      "zu": "t3",
+      "versatz": [5, 0]
     },
     {
       "moebel": "mf8SchulstuhlLinks",
       "feld": [20, 7],
-      "zu": "t3"
+      "zu": "t3",
+      "versatz": [-5, 0],
+      "vorn": true
     },
     {
       "moebel": "mf8RundtischDunkel",
@@ -734,12 +742,15 @@
     {
       "moebel": "mf8SchulstuhlRechts",
       "feld": [5, 10],
-      "zu": "t4"
+      "zu": "t4",
+      "versatz": [5, 0]
     },
     {
       "moebel": "mf8SchulstuhlLinks",
       "feld": [8, 10],
-      "zu": "t4"
+      "zu": "t4",
+      "versatz": [-5, 0],
+      "vorn": true
     },
     {
       "moebel": "mf8RundtischDunkel",
@@ -759,12 +770,15 @@
     {
       "moebel": "mf8SchulstuhlRechts",
       "feld": [11, 10],
-      "zu": "t5"
+      "zu": "t5",
+      "versatz": [5, 0]
     },
     {
       "moebel": "mf8SchulstuhlLinks",
       "feld": [14, 10],
-      "zu": "t5"
+      "zu": "t5",
+      "versatz": [-5, 0],
+      "vorn": true
     },
     {
       "moebel": "mf8RundtischDunkel",
@@ -784,12 +798,15 @@
     {
       "moebel": "mf8SchulstuhlRechts",
       "feld": [17, 10],
-      "zu": "t6"
+      "zu": "t6",
+      "versatz": [5, 0]
     },
     {
       "moebel": "mf8SchulstuhlLinks",
       "feld": [20, 10],
-      "zu": "t6"
+      "zu": "t6",
+      "versatz": [-5, 0],
+      "vorn": true
     },
     {
       "moebel": "mf5TuerSuedHolz",
@@ -827,7 +844,7 @@
   "figuren": [
     {
       "name": "coachDelgado",
-      "feld": [13, 3]
+      "feld": [15, 4]
     },
     {
       "name": "sam",
@@ -860,7 +877,7 @@
     {
       "name": "mutterWartet",
       "typ": "statist",
-      "feld": [1, 9],
+      "feld": [1, 10],
       "eigenschaften": {
         "tun": "sitzt auf der Bank und wartet auf ihren Sohn",
         "wann": "tag",

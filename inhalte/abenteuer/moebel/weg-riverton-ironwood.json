@@ -1,5 +1,51 @@
 {
   "moebel": {
+    "wr8Lastkahn": {
+      "quelle": "spiel/eigene/lastkahn_laengs.png",
+      "breite": 84,
+      "hoehe": 420,
+      "kollision": false,
+      "art": "boot",
+      "zustand": "gebraucht",
+      "stil": "industrie"
+    },
+    "wr8SiloKurz": {
+      "quelle": "spiel/eigene/silo_kurz.png",
+      "breite": 80,
+      "hoehe": 144,
+      "kollision": true,
+      "art": "gebaeude",
+      "gebaeude": false,
+      "zustand": "gebraucht",
+      "stil": "laendlich"
+    },
+    "wr8GraffitiSpringer": {
+      "quelle": "spiel/eigene/graffiti_springer.png",
+      "breite": 48,
+      "hoehe": 32,
+      "kollision": false,
+      "art": "deko",
+      "zustand": "neu",
+      "stil": "modern"
+    },
+    "wr8GraffitiTurm": {
+      "quelle": "spiel/eigene/graffiti_turm.png",
+      "breite": 48,
+      "hoehe": 32,
+      "kollision": false,
+      "art": "deko",
+      "zustand": "neu",
+      "stil": "modern"
+    },
+    "wr8BrueckeEisen7": {
+      "quelle": "spiel/eigene/bruecke_eisen_laengs_7.png",
+      "breite": 64,
+      "hoehe": 148,
+      "kollision": false,
+      "art": "bruecke",
+      "zustand": "alt",
+      "stil": "klassisch"
+    },
     "wr5Fabrikhalle": {
       "quelle": "modern-exteriors/Modern_Exteriors_16x16/ME_Theme_Sorter_16x16/24_Additional_Houses_Singles_16x16/24_Additional_Houses_Post_Apocalyptic_House_1_16x16.png",
       "breite": 208,

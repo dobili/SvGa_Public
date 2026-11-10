@@ -11,7 +11,7 @@
  "tilewidth": 16,
  "tileheight": 16,
  "nextlayerid": 5,
- "nextobjectid": 107,
+ "nextobjectid": 136,
  "layers": [
   {
    "id": 1,
@@ -1987,7 +1987,7 @@
     0,
     0,
     0,
-    0,
+    1,
     1,
     1,
     1,
@@ -2050,14 +2050,14 @@
     1,
     1,
     1,
+    1,
     0,
     0,
     0,
     0,
     0,
     0,
-    0,
-    0,
+    1,
     1,
     1,
     1,
@@ -2120,8 +2120,7 @@
     1,
     1,
     1,
-    0,
-    0,
+    1,
     0,
     0,
     0,
@@ -2190,8 +2189,8 @@
     1,
     1,
     1,
-    0,
-    0,
+    1,
+    1,
     0,
     0,
     0,
@@ -2260,7 +2259,8 @@
     1,
     1,
     1,
-    0,
+    1,
+    1,
     0,
     0,
     0,
@@ -2292,11 +2292,11 @@
     0,
     0,
     0,
-    1,
-    1,
-    1,
-    1,
-    1,
+    0,
+    0,
+    0,
+    0,
+    0,
     1,
     1,
     1,
@@ -2356,7 +2356,7 @@
     1,
     1,
     1,
-    0,
+    1,
     0,
     0,
     0,
@@ -2421,10 +2421,11 @@
     1,
     1,
     1,
-    0,
-    0,
-    0,
-    0,
+    1,
+    1,
+    1,
+    1,
+    1,
     0,
     0,
     0,
@@ -2470,7 +2471,6 @@
     1,
     1,
     1,
-    1,
     0,
     0,
     0,
@@ -2490,10 +2490,11 @@
     1,
     1,
     1,
-    0,
-    0,
-    0,
-    0,
+    1,
+    1,
+    1,
+    1,
+    1,
     0,
     0,
     0,
@@ -2540,8 +2541,6 @@
     1,
     1,
     1,
-    1,
-    0,
     0,
     0,
     0,
@@ -2560,12 +2559,12 @@
     1,
     1,
     1,
-    0,
-    0,
-    0,
-    0,
-    0,
-    0,
+    1,
+    1,
+    1,
+    1,
+    1,
+    1,
     0,
     0,
     0,
@@ -2610,8 +2609,8 @@
     1,
     1,
     1,
-    0,
-    0,
+    1,
+    1,
     0,
     0,
     0,
@@ -2629,13 +2628,13 @@
     1,
     1,
     1,
-    0,
-    0,
-    0,
-    0,
-    0,
-    0,
-    0,
+    1,
+    1,
+    1,
+    1,
+    1,
+    1,
+    1,
     0,
     0,
     0,
@@ -2680,8 +2679,8 @@
     1,
     1,
     1,
-    0,
-    0,
+    1,
+    1,
     0,
     0,
     0,
@@ -2699,14 +2698,13 @@
     1,
     1,
     1,
-    0,
-    0,
-    0,
-    0,
-    0,
-    0,
-    0,
-    0,
+    1,
+    1,
+    1,
+    1,
+    1,
+    1,
+    1,
     0,
     0,
     0,
@@ -2750,8 +2748,9 @@
     1,
     1,
     1,
-    0,
-    0,
+    1,
+    1,
+    1,
     0,
     0,
     0,
@@ -2769,15 +2768,14 @@
     1,
     1,
     1,
-    0,
-    0,
-    0,
-    0,
-    0,
-    0,
-    0,
-    0,
-    0,
+    1,
+    1,
+    1,
+    1,
+    1,
+    1,
+    1,
+    1,
     0,
     0,
     0,
@@ -2820,7 +2818,9 @@
     1,
     1,
     1,
-    0,
+    1,
+    1,
+    1,
     0,
     0,
     0,
@@ -2841,26 +2841,23 @@
     1,
     1,
     1,
-    0,
-    0,
-    0,
-    0,
-    0,
-    0,
-    0,
-    0,
-    0,
-    0,
-    0,
-    0,
-    0,
-    0,
-    0,
+    1,
+    1,
+    1,
+    1,
+    1,
+    1,
+    1,
+    1,
+    1,
     0,
     0,
     0,
     0,
     0,
+    1,
+    1,
+    1,
     1,
     1,
     1,
@@ -2891,6 +2888,9 @@
     1,
     1,
     1,
+    1,
+    1,
+    1,
     0,
     0,
     0,
@@ -2912,24 +2912,6 @@
     1,
     1,
     1,
-    0,
-    0,
-    0,
-    0,
-    0,
-    0,
-    0,
-    0,
-    0,
-    0,
-    0,
-    0,
-    0,
-    0,
-    0,
-    0,
-    0,
-    0,
     1,
     1,
     1,
@@ -2961,12 +2943,6 @@
     1,
     1,
     1,
-    0,
-    0,
-    0,
-    0,
-    0,
-    0,
     1,
     1,
     1,
@@ -2982,17 +2958,9 @@
     1,
     1,
     1,
-    0,
-    0,
-    0,
-    0,
-    0,
-    0,
-    0,
-    0,
-    0,
-    0,
-    0,
+    1,
+    1,
+    1,
     0,
     0,
     0,
@@ -3031,12 +2999,6 @@
     1,
     1,
     1,
-    0,
-    0,
-    0,
-    0,
-    0,
-    0,
     1,
     1,
     1,
@@ -3053,15 +3015,22 @@
     1,
     1,
     1,
-    0,
-    0,
     1,
     1,
-    0,
-    0,
-    0,
-    0,
-    0,
+    1,
+    1,
+    1,
+    1,
+    1,
+    1,
+    1,
+    1,
+    1,
+    1,
+    1,
+    1,
+    1,
+    1,
     0,
     0,
     0,
@@ -3101,7 +3070,37 @@
     1,
     1,
     1,
-    0,
+    1,
+    1,
+    1,
+    1,
+    1,
+    1,
+    1,
+    1,
+    1,
+    1,
+    1,
+    1,
+    1,
+    1,
+    1,
+    1,
+    1,
+    1,
+    1,
+    1,
+    1,
+    1,
+    1,
+    1,
+    1,
+    1,
+    1,
+    1,
+    1,
+    1,
+    1,
     0,
     0,
     0,
@@ -3128,9 +3127,6 @@
     1,
     1,
     1,
-    0,
-    0,
-    0,
     1,
     1,
     1,
@@ -3170,8 +3166,11 @@
     1,
     1,
     1,
-    0,
-    0,
+    1,
+    1,
+    1,
+    1,
+    1,
     0,
     0,
     0,
@@ -3240,8 +3239,8 @@
     1,
     1,
     1,
-    0,
-    0,
+    1,
+    1,
     0,
     0,
     0,
@@ -3310,8 +3309,8 @@
     1,
     1,
     1,
-    0,
-    0,
+    1,
+    1,
     0,
     0,
     0,
@@ -3380,7 +3379,8 @@
     1,
     1,
     1,
-    0,
+    1,
+    1,
     0,
     0,
     0,
@@ -5500,7 +5500,7 @@
     2,
     2,
     2,
-    2,
+    0,
     0,
     0,
     0,
@@ -5563,8 +5563,7 @@
     0,
     0,
     0,
-    2,
-    2,
+    0,
     2,
     2,
     2,
@@ -5633,8 +5632,8 @@
     0,
     0,
     0,
-    2,
-    2,
+    0,
+    0,
     2,
     2,
     2,
@@ -5703,8 +5702,8 @@
     0,
     0,
     0,
-    2,
-    2,
+    0,
+    0,
     2,
     2,
     2,
@@ -5773,7 +5772,8 @@
     0,
     0,
     0,
-    2,
+    0,
+    0,
     2,
     2,
     2,
@@ -5805,11 +5805,11 @@
     2,
     2,
     2,
-    0,
-    0,
-    0,
-    0,
-    0,
+    2,
+    2,
+    2,
+    2,
+    2,
     0,
     0,
     0,
@@ -5869,7 +5869,7 @@
     0,
     0,
     0,
-    2,
+    0,
     2,
     2,
     2,
@@ -5934,10 +5934,11 @@
     0,
     0,
     0,
-    2,
-    2,
-    2,
-    2,
+    0,
+    0,
+    0,
+    0,
+    0,
     2,
     2,
     2,
@@ -5951,7 +5952,6 @@
     2,
     2,
     2,
-    0,
     0,
     0,
     0,
@@ -6003,10 +6003,11 @@
     0,
     0,
     0,
-    2,
-    2,
-    2,
-    2,
+    0,
+    0,
+    0,
+    0,
+    0,
     2,
     2,
     2,
@@ -6022,7 +6023,6 @@
     2,
     2,
     2,
-    0,
     0,
     0,
     0,
@@ -6060,7 +6060,6 @@
     2,
     2,
     2,
-    2,
     0,
     0,
     0,
@@ -6073,12 +6072,12 @@
     0,
     0,
     0,
-    2,
-    2,
-    2,
-    2,
-    2,
-    2,
+    0,
+    0,
+    0,
+    0,
+    0,
+    0,
     2,
     2,
     2,
@@ -6123,8 +6122,8 @@
     0,
     0,
     0,
-    2,
-    2,
+    0,
+    0,
     2,
     2,
     2,
@@ -6142,13 +6141,13 @@
     0,
     0,
     0,
-    2,
-    2,
-    2,
-    2,
-    2,
-    2,
-    2,
+    0,
+    0,
+    0,
+    0,
+    0,
+    0,
+    0,
     2,
     2,
     2,
@@ -6193,8 +6192,8 @@
     0,
     0,
     0,
-    2,
-    2,
+    0,
+    0,
     2,
     2,
     2,
@@ -6212,14 +6211,13 @@
     0,
     0,
     0,
-    2,
-    2,
-    2,
-    2,
-    2,
-    2,
-    2,
-    2,
+    0,
+    0,
+    0,
+    0,
+    0,
+    0,
+    0,
     2,
     2,
     2,
@@ -6263,8 +6261,9 @@
     0,
     0,
     0,
-    2,
-    2,
+    0,
+    0,
+    0,
     2,
     2,
     2,
@@ -6282,15 +6281,14 @@
     0,
     0,
     0,
-    2,
-    2,
-    2,
-    2,
-    2,
-    2,
-    2,
-    2,
-    2,
+    0,
+    0,
+    0,
+    0,
+    0,
+    0,
+    0,
+    0,
     2,
     2,
     2,
@@ -6333,7 +6331,9 @@
     0,
     0,
     0,
-    2,
+    0,
+    0,
+    0,
     2,
     2,
     2,
@@ -6354,26 +6354,25 @@
     0,
     0,
     0,
-    2,
-    2,
-    2,
-    2,
-    2,
-    2,
-    2,
-    2,
-    2,
-    2,
-    2,
-    2,
-    2,
-    2,
-    2,
+    0,
+    0,
+    0,
+    0,
+    0,
+    0,
+    0,
+    0,
+    0,
     2,
     2,
     2,
     2,
     2,
+    0,
+    0,
+    0,
+    0,
+    0,
     0,
     0,
     0,
@@ -6404,6 +6403,7 @@
     0,
     0,
     0,
+    0,
     2,
     2,
     2,
@@ -6425,24 +6425,6 @@
     0,
     0,
     0,
-    2,
-    2,
-    2,
-    2,
-    2,
-    2,
-    2,
-    2,
-    2,
-    2,
-    2,
-    2,
-    2,
-    2,
-    2,
-    2,
-    2,
-    2,
     0,
     0,
     0,
@@ -6474,12 +6456,6 @@
     0,
     0,
     0,
-    2,
-    2,
-    2,
-    2,
-    2,
-    2,
     0,
     0,
     0,
@@ -6495,17 +6471,9 @@
     0,
     0,
     0,
-    2,
-    2,
-    2,
-    2,
-    2,
-    2,
-    2,
-    2,
-    2,
-    2,
-    2,
+    0,
+    0,
+    0,
     2,
     2,
     2,
@@ -6544,12 +6512,6 @@
     0,
     0,
     0,
-    2,
-    2,
-    2,
-    2,
-    2,
-    2,
     0,
     0,
     0,
@@ -6566,15 +6528,22 @@
     0,
     0,
     0,
-    2,
-    2,
     0,
     0,
-    2,
-    2,
-    2,
-    2,
-    2,
+    0,
+    0,
+    0,
+    0,
+    0,
+    0,
+    0,
+    0,
+    0,
+    0,
+    0,
+    0,
+    0,
+    0,
     2,
     2,
     2,
@@ -6614,7 +6583,37 @@
     0,
     0,
     0,
-    2,
+    0,
+    0,
+    0,
+    0,
+    0,
+    0,
+    0,
+    0,
+    0,
+    0,
+    0,
+    0,
+    0,
+    0,
+    0,
+    0,
+    0,
+    0,
+    0,
+    0,
+    0,
+    0,
+    0,
+    0,
+    0,
+    0,
+    0,
+    0,
+    0,
+    0,
+    0,
     2,
     2,
     2,
@@ -6641,9 +6640,6 @@
     0,
     0,
     0,
-    2,
-    2,
-    2,
     0,
     0,
     0,
@@ -6683,8 +6679,11 @@
     0,
     0,
     0,
-    2,
-    2,
+    0,
+    0,
+    0,
+    0,
+    0,
     2,
     2,
     2,
@@ -6753,8 +6752,8 @@
     0,
     0,
     0,
-    2,
-    2,
+    0,
+    0,
     2,
     2,
     2,
@@ -6823,8 +6822,8 @@
     0,
     0,
     0,
-    2,
-    2,
+    0,
+    0,
     2,
     2,
     2,
@@ -6893,7 +6892,8 @@
     0,
     0,
     0,
-    2,
+    0,
+    0,
     2,
     2,
     2,
@@ -10950,38 +10950,10 @@
     },
     {
      "id": 17,
-     "name": "hasen",
-     "type": "tier",
-     "x": 128,
-     "y": 720,
-     "width": 16,
-     "height": 16,
-     "rotation": 0,
-     "visible": true,
-     "properties": [
-      {
-       "name": "von",
-       "type": "string",
-       "value": "8,45"
-      },
-      {
-       "name": "bis",
-       "type": "string",
-       "value": "14,45"
-      },
-      {
-       "name": "verhalten",
-       "type": "string",
-       "value": "flitzen"
-      }
-     ]
-    },
-    {
-     "id": 18,
      "name": "falke",
      "type": "tier",
-     "x": 640,
-     "y": 80,
+     "x": 288,
+     "y": 48,
      "width": 16,
      "height": 16,
      "rotation": 0,
@@ -10990,17 +10962,45 @@
       {
        "name": "von",
        "type": "string",
-       "value": "40,5"
+       "value": "18,3"
       },
       {
        "name": "bis",
        "type": "string",
-       "value": "56,5"
+       "value": "34,3"
       },
       {
        "name": "verhalten",
        "type": "string",
        "value": "fliegen"
+      }
+     ]
+    },
+    {
+     "id": 18,
+     "name": "kraehen",
+     "type": "tier",
+     "x": 960,
+     "y": 64,
+     "width": 16,
+     "height": 16,
+     "rotation": 0,
+     "visible": true,
+     "properties": [
+      {
+       "name": "von",
+       "type": "string",
+       "value": "60,4"
+      },
+      {
+       "name": "bis",
+       "type": "string",
+       "value": "60,4"
+      },
+      {
+       "name": "verhalten",
+       "type": "string",
+       "value": "sitzen"
       }
      ]
     },
@@ -11128,8 +11128,8 @@
      "id": 24,
      "name": "mfBank",
      "type": "moebel",
-     "x": 336,
-     "y": 64,
+     "x": 416,
+     "y": 144,
      "width": 32,
      "height": 32,
      "rotation": 0,
@@ -11138,7 +11138,7 @@
       {
        "name": "tiefe",
        "type": "int",
-       "value": 88
+       "value": 168
       },
       {
        "name": "kollision",
@@ -11149,7 +11149,7 @@
     },
     {
      "id": 25,
-     "name": "cc3ZaunEnde",
+     "name": "wg4ZaunBottomLeft",
      "type": "moebel",
      "x": 304,
      "y": 160,
@@ -11172,7 +11172,7 @@
     },
     {
      "id": 26,
-     "name": "ccZaun",
+     "name": "wg4ZaunBottomMiddle",
      "type": "moebel",
      "x": 320,
      "y": 160,
@@ -11195,7 +11195,7 @@
     },
     {
      "id": 27,
-     "name": "ccZaun",
+     "name": "wg4ZaunBottomMiddle",
      "type": "moebel",
      "x": 336,
      "y": 160,
@@ -11218,7 +11218,7 @@
     },
     {
      "id": 28,
-     "name": "ccZaun",
+     "name": "wg4ZaunBottomMiddle",
      "type": "moebel",
      "x": 352,
      "y": 160,
@@ -11241,7 +11241,7 @@
     },
     {
      "id": 29,
-     "name": "ccZaun",
+     "name": "wg4ZaunBottomMiddle",
      "type": "moebel",
      "x": 368,
      "y": 160,
@@ -11264,7 +11264,7 @@
     },
     {
      "id": 30,
-     "name": "ccZaun",
+     "name": "wg4ZaunBottomMiddle",
      "type": "moebel",
      "x": 384,
      "y": 160,
@@ -11287,7 +11287,7 @@
     },
     {
      "id": 31,
-     "name": "cc3ZaunEndeR",
+     "name": "wg4ZaunBottomRight",
      "type": "moebel",
      "x": 400,
      "y": 160,
@@ -11335,8 +11335,8 @@
      "id": 33,
      "name": "st5BirkeKlein",
      "type": "moebel",
-     "x": 176,
-     "y": 32,
+     "x": 448,
+     "y": 16,
      "width": 48,
      "height": 64,
      "rotation": 0,
@@ -11345,7 +11345,7 @@
       {
        "name": "tiefe",
        "type": "int",
-       "value": 88
+       "value": 72
       },
       {
        "name": "kollision",
@@ -11358,7 +11358,7 @@
      "id": 34,
      "name": "st5BirkeKlein",
      "type": "moebel",
-     "x": 448,
+     "x": 800,
      "y": 16,
      "width": 48,
      "height": 64,
@@ -11381,29 +11381,6 @@
      "id": 35,
      "name": "st5Birke",
      "type": "moebel",
-     "x": 800,
-     "y": 16,
-     "width": 48,
-     "height": 80,
-     "rotation": 0,
-     "visible": true,
-     "properties": [
-      {
-       "name": "tiefe",
-       "type": "int",
-       "value": 88
-      },
-      {
-       "name": "kollision",
-       "type": "bool",
-       "value": true
-      }
-     ]
-    },
-    {
-     "id": 36,
-     "name": "st5Birke",
-     "type": "moebel",
      "x": 1008,
      "y": 32,
      "width": 48,
@@ -11424,20 +11401,43 @@
      ]
     },
     {
-     "id": 37,
-     "name": "st5Birke",
+     "id": 36,
+     "name": "st5BirkeKlein",
      "type": "moebel",
-     "x": 1024,
+     "x": 112,
      "y": 112,
      "width": 48,
-     "height": 80,
+     "height": 64,
      "rotation": 0,
      "visible": true,
      "properties": [
       {
        "name": "tiefe",
        "type": "int",
-       "value": 184
+       "value": 168
+      },
+      {
+       "name": "kollision",
+       "type": "bool",
+       "value": true
+      }
+     ]
+    },
+    {
+     "id": 37,
+     "name": "st5BirkeKlein",
+     "type": "moebel",
+     "x": 208,
+     "y": 112,
+     "width": 48,
+     "height": 64,
+     "rotation": 0,
+     "visible": true,
+     "properties": [
+      {
+       "name": "tiefe",
+       "type": "int",
+       "value": 168
       },
       {
        "name": "kollision",
@@ -11448,19 +11448,19 @@
     },
     {
      "id": 38,
-     "name": "felsKlein",
+     "name": "st5BirkeKlein",
      "type": "moebel",
-     "x": 48,
-     "y": 224,
-     "width": 16,
-     "height": 16,
+     "x": 496,
+     "y": 112,
+     "width": 48,
+     "height": 64,
      "rotation": 0,
      "visible": true,
      "properties": [
       {
        "name": "tiefe",
        "type": "int",
-       "value": 232
+       "value": 168
       },
       {
        "name": "kollision",
@@ -11471,19 +11471,19 @@
     },
     {
      "id": 39,
-     "name": "felsKlein",
+     "name": "st5BirkeKlein",
      "type": "moebel",
-     "x": 64,
-     "y": 432,
-     "width": 16,
-     "height": 16,
+     "x": 592,
+     "y": 112,
+     "width": 48,
+     "height": 64,
      "rotation": 0,
      "visible": true,
      "properties": [
       {
        "name": "tiefe",
        "type": "int",
-       "value": 440
+       "value": 168
       },
       {
        "name": "kollision",
@@ -11494,19 +11494,19 @@
     },
     {
      "id": 40,
-     "name": "felsKlein",
+     "name": "st5BirkeKlein",
      "type": "moebel",
-     "x": 240,
-     "y": 224,
-     "width": 16,
-     "height": 16,
+     "x": 736,
+     "y": 112,
+     "width": 48,
+     "height": 64,
      "rotation": 0,
      "visible": true,
      "properties": [
       {
        "name": "tiefe",
        "type": "int",
-       "value": 232
+       "value": 168
       },
       {
        "name": "kollision",
@@ -11517,19 +11517,19 @@
     },
     {
      "id": 41,
-     "name": "felsKlein",
+     "name": "st5BirkeKlein",
      "type": "moebel",
-     "x": 256,
-     "y": 448,
-     "width": 16,
-     "height": 16,
+     "x": 832,
+     "y": 112,
+     "width": 48,
+     "height": 64,
      "rotation": 0,
      "visible": true,
      "properties": [
       {
        "name": "tiefe",
        "type": "int",
-       "value": 456
+       "value": 168
       },
       {
        "name": "kollision",
@@ -11540,42 +11540,42 @@
     },
     {
      "id": 42,
-     "name": "mf4Fels",
+     "name": "wg4Busch",
      "type": "moebel",
-     "x": 304,
-     "y": 224,
-     "width": 16,
-     "height": 16,
+     "x": 240,
+     "y": 48,
+     "width": 32,
+     "height": 32,
      "rotation": 0,
      "visible": true,
      "properties": [
       {
        "name": "tiefe",
        "type": "int",
-       "value": 1
+       "value": 72
       },
       {
        "name": "kollision",
        "type": "bool",
-       "value": false
+       "value": true
       }
      ]
     },
     {
      "id": 43,
-     "name": "felsKlein",
+     "name": "wg4Busch",
      "type": "moebel",
-     "x": 320,
-     "y": 448,
-     "width": 16,
-     "height": 16,
+     "x": 544,
+     "y": 32,
+     "width": 32,
+     "height": 32,
      "rotation": 0,
      "visible": true,
      "properties": [
       {
        "name": "tiefe",
        "type": "int",
-       "value": 456
+       "value": 56
       },
       {
        "name": "kollision",
@@ -11586,56 +11586,56 @@
     },
     {
      "id": 44,
-     "name": "mf4Fels",
+     "name": "wg4Busch",
      "type": "moebel",
-     "x": 368,
-     "y": 240,
-     "width": 16,
-     "height": 16,
+     "x": 880,
+     "y": 48,
+     "width": 32,
+     "height": 32,
      "rotation": 0,
      "visible": true,
      "properties": [
       {
        "name": "tiefe",
        "type": "int",
-       "value": 1
+       "value": 72
       },
       {
        "name": "kollision",
        "type": "bool",
-       "value": false
+       "value": true
       }
      ]
     },
     {
      "id": 45,
-     "name": "mf4Fels",
+     "name": "wg4Busch",
      "type": "moebel",
      "x": 384,
-     "y": 448,
-     "width": 16,
-     "height": 16,
+     "y": 32,
+     "width": 32,
+     "height": 32,
      "rotation": 0,
      "visible": true,
      "properties": [
       {
        "name": "tiefe",
        "type": "int",
-       "value": 1
+       "value": 56
       },
       {
        "name": "kollision",
        "type": "bool",
-       "value": false
+       "value": true
       }
      ]
     },
     {
      "id": 46,
-     "name": "mf4Fels",
+     "name": "wg4BlumeBlau",
      "type": "moebel",
-     "x": 432,
-     "y": 256,
+     "x": 1056,
+     "y": 48,
      "width": 16,
      "height": 16,
      "rotation": 0,
@@ -11655,10 +11655,10 @@
     },
     {
      "id": 47,
-     "name": "mf4Fels",
+     "name": "wg4Gras",
      "type": "moebel",
-     "x": 448,
-     "y": 464,
+     "x": 80,
+     "y": 80,
      "width": 16,
      "height": 16,
      "rotation": 0,
@@ -11678,10 +11678,10 @@
     },
     {
      "id": 48,
-     "name": "mf4Fels",
+     "name": "wg4Gras",
      "type": "moebel",
-     "x": 496,
-     "y": 240,
+     "x": 960,
+     "y": 80,
      "width": 16,
      "height": 16,
      "rotation": 0,
@@ -11701,10 +11701,10 @@
     },
     {
      "id": 49,
-     "name": "felsKlein",
+     "name": "wg4Gras",
      "type": "moebel",
-     "x": 512,
-     "y": 448,
+     "x": 416,
+     "y": 80,
      "width": 16,
      "height": 16,
      "rotation": 0,
@@ -11713,21 +11713,21 @@
       {
        "name": "tiefe",
        "type": "int",
-       "value": 456
+       "value": 1
       },
       {
        "name": "kollision",
        "type": "bool",
-       "value": true
+       "value": false
       }
      ]
     },
     {
      "id": 50,
-     "name": "mf4Fels",
+     "name": "wg4BlumenWeiss",
      "type": "moebel",
-     "x": 560,
-     "y": 224,
+     "x": 1024,
+     "y": 48,
      "width": 16,
      "height": 16,
      "rotation": 0,
@@ -11747,10 +11747,10 @@
     },
     {
      "id": 51,
-     "name": "felsKlein",
+     "name": "wg4BlumenWeiss",
      "type": "moebel",
      "x": 576,
-     "y": 448,
+     "y": 80,
      "width": 16,
      "height": 16,
      "rotation": 0,
@@ -11759,21 +11759,21 @@
       {
        "name": "tiefe",
        "type": "int",
-       "value": 456
+       "value": 1
       },
       {
        "name": "kollision",
        "type": "bool",
-       "value": true
+       "value": false
       }
      ]
     },
     {
      "id": 52,
-     "name": "mf4Fels",
+     "name": "wg4Gras",
      "type": "moebel",
-     "x": 624,
-     "y": 224,
+     "x": 800,
+     "y": 32,
      "width": 16,
      "height": 16,
      "rotation": 0,
@@ -11793,10 +11793,10 @@
     },
     {
      "id": 53,
-     "name": "felsKlein",
+     "name": "wg4BlumeGelb",
      "type": "moebel",
-     "x": 640,
-     "y": 448,
+     "x": 224,
+     "y": 32,
      "width": 16,
      "height": 16,
      "rotation": 0,
@@ -11805,21 +11805,21 @@
       {
        "name": "tiefe",
        "type": "int",
-       "value": 456
+       "value": 1
       },
       {
        "name": "kollision",
        "type": "bool",
-       "value": true
+       "value": false
       }
      ]
     },
     {
      "id": 54,
-     "name": "felsKlein",
+     "name": "wg4Gras",
      "type": "moebel",
-     "x": 688,
-     "y": 240,
+     "x": 800,
+     "y": 32,
      "width": 16,
      "height": 16,
      "rotation": 0,
@@ -11828,21 +11828,21 @@
       {
        "name": "tiefe",
        "type": "int",
-       "value": 248
+       "value": 1
       },
       {
        "name": "kollision",
        "type": "bool",
-       "value": true
+       "value": false
       }
      ]
     },
     {
      "id": 55,
-     "name": "mf4Fels",
+     "name": "wg4BlumenWeiss",
      "type": "moebel",
-     "x": 704,
-     "y": 448,
+     "x": 720,
+     "y": 48,
      "width": 16,
      "height": 16,
      "rotation": 0,
@@ -11862,33 +11862,33 @@
     },
     {
      "id": 56,
-     "name": "scFelsKlein",
+     "name": "wg4BlumenWeiss",
      "type": "moebel",
-     "x": 752,
-     "y": 240,
-     "width": 32,
-     "height": 32,
+     "x": 1040,
+     "y": 48,
+     "width": 16,
+     "height": 16,
      "rotation": 0,
      "visible": true,
      "properties": [
       {
        "name": "tiefe",
        "type": "int",
-       "value": 264
+       "value": 1
       },
       {
        "name": "kollision",
        "type": "bool",
-       "value": true
+       "value": false
       }
      ]
     },
     {
      "id": 57,
-     "name": "mf4Fels",
+     "name": "wg4BlumeBlau",
      "type": "moebel",
-     "x": 768,
-     "y": 432,
+     "x": 160,
+     "y": 32,
      "width": 16,
      "height": 16,
      "rotation": 0,
@@ -11908,10 +11908,10 @@
     },
     {
      "id": 58,
-     "name": "mf4Fels",
+     "name": "wg4Gras",
      "type": "moebel",
-     "x": 816,
-     "y": 224,
+     "x": 416,
+     "y": 48,
      "width": 16,
      "height": 16,
      "rotation": 0,
@@ -11931,10 +11931,10 @@
     },
     {
      "id": 59,
-     "name": "mf4Fels",
+     "name": "wg4Gras",
      "type": "moebel",
-     "x": 880,
-     "y": 224,
+     "x": 928,
+     "y": 64,
      "width": 16,
      "height": 16,
      "rotation": 0,
@@ -11954,10 +11954,10 @@
     },
     {
      "id": 60,
-     "name": "st8Granitquader",
+     "name": "scFelsMittel",
      "type": "moebel",
-     "x": 256,
-     "y": 256,
+     "x": 48,
+     "y": 224,
      "width": 32,
      "height": 32,
      "rotation": 0,
@@ -11966,7 +11966,7 @@
       {
        "name": "tiefe",
        "type": "int",
-       "value": 280
+       "value": 248
       },
       {
        "name": "kollision",
@@ -11977,6 +11977,236 @@
     },
     {
      "id": 61,
+     "name": "scFelsKlein",
+     "type": "moebel",
+     "x": 288,
+     "y": 224,
+     "width": 32,
+     "height": 32,
+     "rotation": 0,
+     "visible": true,
+     "properties": [
+      {
+       "name": "tiefe",
+       "type": "int",
+       "value": 248
+      },
+      {
+       "name": "kollision",
+       "type": "bool",
+       "value": true
+      }
+     ]
+    },
+    {
+     "id": 62,
+     "name": "scFelsMittel",
+     "type": "moebel",
+     "x": 368,
+     "y": 240,
+     "width": 32,
+     "height": 32,
+     "rotation": 0,
+     "visible": true,
+     "properties": [
+      {
+       "name": "tiefe",
+       "type": "int",
+       "value": 264
+      },
+      {
+       "name": "kollision",
+       "type": "bool",
+       "value": true
+      }
+     ]
+    },
+    {
+     "id": 63,
+     "name": "scFelsKlein",
+     "type": "moebel",
+     "x": 512,
+     "y": 240,
+     "width": 32,
+     "height": 32,
+     "rotation": 0,
+     "visible": true,
+     "properties": [
+      {
+       "name": "tiefe",
+       "type": "int",
+       "value": 264
+      },
+      {
+       "name": "kollision",
+       "type": "bool",
+       "value": true
+      }
+     ]
+    },
+    {
+     "id": 64,
+     "name": "scFelsGross",
+     "type": "moebel",
+     "x": 528,
+     "y": 448,
+     "width": 32,
+     "height": 32,
+     "rotation": 0,
+     "visible": true,
+     "properties": [
+      {
+       "name": "tiefe",
+       "type": "int",
+       "value": 472
+      },
+      {
+       "name": "kollision",
+       "type": "bool",
+       "value": true
+      }
+     ]
+    },
+    {
+     "id": 65,
+     "name": "scFelsKlein",
+     "type": "moebel",
+     "x": 624,
+     "y": 224,
+     "width": 32,
+     "height": 32,
+     "rotation": 0,
+     "visible": true,
+     "properties": [
+      {
+       "name": "tiefe",
+       "type": "int",
+       "value": 248
+      },
+      {
+       "name": "kollision",
+       "type": "bool",
+       "value": true
+      }
+     ]
+    },
+    {
+     "id": 66,
+     "name": "scFelsMittel",
+     "type": "moebel",
+     "x": 720,
+     "y": 240,
+     "width": 32,
+     "height": 32,
+     "rotation": 0,
+     "visible": true,
+     "properties": [
+      {
+       "name": "tiefe",
+       "type": "int",
+       "value": 264
+      },
+      {
+       "name": "kollision",
+       "type": "bool",
+       "value": true
+      }
+     ]
+    },
+    {
+     "id": 67,
+     "name": "scFelsKlein",
+     "type": "moebel",
+     "x": 736,
+     "y": 432,
+     "width": 32,
+     "height": 32,
+     "rotation": 0,
+     "visible": true,
+     "properties": [
+      {
+       "name": "tiefe",
+       "type": "int",
+       "value": 456
+      },
+      {
+       "name": "kollision",
+       "type": "bool",
+       "value": true
+      }
+     ]
+    },
+    {
+     "id": 68,
+     "name": "scFelsMittel",
+     "type": "moebel",
+     "x": 832,
+     "y": 224,
+     "width": 32,
+     "height": 32,
+     "rotation": 0,
+     "visible": true,
+     "properties": [
+      {
+       "name": "tiefe",
+       "type": "int",
+       "value": 248
+      },
+      {
+       "name": "kollision",
+       "type": "bool",
+       "value": true
+      }
+     ]
+    },
+    {
+     "id": 69,
+     "name": "scFelsGross",
+     "type": "moebel",
+     "x": 944,
+     "y": 464,
+     "width": 32,
+     "height": 32,
+     "rotation": 0,
+     "visible": true,
+     "properties": [
+      {
+       "name": "tiefe",
+       "type": "int",
+       "value": 488
+      },
+      {
+       "name": "kollision",
+       "type": "bool",
+       "value": true
+      }
+     ]
+    },
+    {
+     "id": 70,
+     "name": "st8Granitquader",
+     "type": "moebel",
+     "x": 256,
+     "y": 256,
+     "width": 32,
+     "height": 32,
+     "rotation": 0,
+     "visible": true,
+     "properties": [
+      {
+       "name": "tiefe",
+       "type": "int",
+       "value": 280
+      },
+      {
+       "name": "kollision",
+       "type": "bool",
+       "value": true
+      }
+     ]
+    },
+    {
+     "id": 71,
      "name": "st8Granitquader",
      "type": "moebel",
      "x": 256,
@@ -11999,56 +12229,10 @@
      ]
     },
     {
-     "id": 62,
-     "name": "st8GranitquaderStapel",
-     "type": "moebel",
-     "x": 304,
-     "y": 256,
-     "width": 32,
-     "height": 48,
-     "rotation": 0,
-     "visible": true,
-     "properties": [
-      {
-       "name": "tiefe",
-       "type": "int",
-       "value": 296
-      },
-      {
-       "name": "kollision",
-       "type": "bool",
-       "value": true
-      }
-     ]
-    },
-    {
-     "id": 63,
+     "id": 72,
      "name": "st8Granitquader",
      "type": "moebel",
      "x": 304,
-     "y": 336,
-     "width": 32,
-     "height": 32,
-     "rotation": 0,
-     "visible": true,
-     "properties": [
-      {
-       "name": "tiefe",
-       "type": "int",
-       "value": 360
-      },
-      {
-       "name": "kollision",
-       "type": "bool",
-       "value": true
-      }
-     ]
-    },
-    {
-     "id": 64,
-     "name": "st8Granitquader",
-     "type": "moebel",
-     "x": 352,
      "y": 256,
      "width": 32,
      "height": 32,
@@ -12068,7 +12252,53 @@
      ]
     },
     {
-     "id": 65,
+     "id": 73,
+     "name": "st8Granitquader",
+     "type": "moebel",
+     "x": 304,
+     "y": 336,
+     "width": 32,
+     "height": 32,
+     "rotation": 0,
+     "visible": true,
+     "properties": [
+      {
+       "name": "tiefe",
+       "type": "int",
+       "value": 360
+      },
+      {
+       "name": "kollision",
+       "type": "bool",
+       "value": true
+      }
+     ]
+    },
+    {
+     "id": 74,
+     "name": "st8GranitquaderStapel",
+     "type": "moebel",
+     "x": 352,
+     "y": 256,
+     "width": 32,
+     "height": 48,
+     "rotation": 0,
+     "visible": true,
+     "properties": [
+      {
+       "name": "tiefe",
+       "type": "int",
+       "value": 296
+      },
+      {
+       "name": "kollision",
+       "type": "bool",
+       "value": true
+      }
+     ]
+    },
+    {
+     "id": 75,
      "name": "st8Granitquader",
      "type": "moebel",
      "x": 352,
@@ -12091,20 +12321,20 @@
      ]
     },
     {
-     "id": 66,
-     "name": "st8GranitquaderStapel",
+     "id": 76,
+     "name": "st8Granitquader",
      "type": "moebel",
      "x": 400,
      "y": 256,
      "width": 32,
-     "height": 48,
+     "height": 32,
      "rotation": 0,
      "visible": true,
      "properties": [
       {
        "name": "tiefe",
        "type": "int",
-       "value": 296
+       "value": 280
       },
       {
        "name": "kollision",
@@ -12114,7 +12344,7 @@
      ]
     },
     {
-     "id": 67,
+     "id": 77,
      "name": "st8Granitquader",
      "type": "moebel",
      "x": 400,
@@ -12137,7 +12367,7 @@
      ]
     },
     {
-     "id": 68,
+     "id": 78,
      "name": "st8Granitquader",
      "type": "moebel",
      "x": 448,
@@ -12160,7 +12390,7 @@
      ]
     },
     {
-     "id": 69,
+     "id": 79,
      "name": "st8Granitquader",
      "type": "moebel",
      "x": 448,
@@ -12183,13 +12413,151 @@
      ]
     },
     {
-     "id": 70,
-     "name": "st5Bohlen",
+     "id": 80,
+     "name": "st8Granitquader",
+     "type": "moebel",
+     "x": 640,
+     "y": 256,
+     "width": 32,
+     "height": 32,
+     "rotation": 0,
+     "visible": true,
+     "properties": [
+      {
+       "name": "tiefe",
+       "type": "int",
+       "value": 280
+      },
+      {
+       "name": "kollision",
+       "type": "bool",
+       "value": true
+      }
+     ]
+    },
+    {
+     "id": 81,
+     "name": "st8Granitquader",
+     "type": "moebel",
+     "x": 640,
+     "y": 336,
+     "width": 32,
+     "height": 32,
+     "rotation": 0,
+     "visible": true,
+     "properties": [
+      {
+       "name": "tiefe",
+       "type": "int",
+       "value": 360
+      },
+      {
+       "name": "kollision",
+       "type": "bool",
+       "value": true
+      }
+     ]
+    },
+    {
+     "id": 82,
+     "name": "st8Granitquader",
+     "type": "moebel",
+     "x": 688,
+     "y": 256,
+     "width": 32,
+     "height": 32,
+     "rotation": 0,
+     "visible": true,
+     "properties": [
+      {
+       "name": "tiefe",
+       "type": "int",
+       "value": 280
+      },
+      {
+       "name": "kollision",
+       "type": "bool",
+       "value": true
+      }
+     ]
+    },
+    {
+     "id": 83,
+     "name": "st8Granitquader",
+     "type": "moebel",
+     "x": 688,
+     "y": 336,
+     "width": 32,
+     "height": 32,
+     "rotation": 0,
+     "visible": true,
+     "properties": [
+      {
+       "name": "tiefe",
+       "type": "int",
+       "value": 360
+      },
+      {
+       "name": "kollision",
+       "type": "bool",
+       "value": true
+      }
+     ]
+    },
+    {
+     "id": 84,
+     "name": "st8Granitquader",
+     "type": "moebel",
+     "x": 736,
+     "y": 256,
+     "width": 32,
+     "height": 32,
+     "rotation": 0,
+     "visible": true,
+     "properties": [
+      {
+       "name": "tiefe",
+       "type": "int",
+       "value": 280
+      },
+      {
+       "name": "kollision",
+       "type": "bool",
+       "value": true
+      }
+     ]
+    },
+    {
+     "id": 85,
+     "name": "st8Granitquader",
+     "type": "moebel",
+     "x": 736,
+     "y": 336,
+     "width": 32,
+     "height": 32,
+     "rotation": 0,
+     "visible": true,
+     "properties": [
+      {
+       "name": "tiefe",
+       "type": "int",
+       "value": 360
+      },
+      {
+       "name": "kollision",
+       "type": "bool",
+       "value": true
+      }
+     ]
+    },
+    {
+     "id": 86,
+     "name": "cc7Bretterstapel",
      "type": "moebel",
      "x": 512,
-     "y": 272,
-     "width": 16,
-     "height": 48,
+     "y": 288,
+     "width": 32,
+     "height": 32,
      "rotation": 0,
      "visible": true,
      "properties": [
@@ -12206,13 +12574,13 @@
      ]
     },
     {
-     "id": 71,
-     "name": "st5Bohlen",
+     "id": 87,
+     "name": "st5PfuetzeKlein",
      "type": "moebel",
-     "x": 528,
-     "y": 272,
-     "width": 16,
-     "height": 48,
+     "x": 128,
+     "y": 304,
+     "width": 32,
+     "height": 16,
      "rotation": 0,
      "visible": true,
      "properties": [
@@ -12229,7 +12597,122 @@
      ]
     },
     {
-     "id": 72,
+     "id": 88,
+     "name": "st5PfuetzeGross",
+     "type": "moebel",
+     "x": 960,
+     "y": 320,
+     "width": 48,
+     "height": 32,
+     "rotation": 0,
+     "visible": true,
+     "properties": [
+      {
+       "name": "tiefe",
+       "type": "int",
+       "value": 344
+      },
+      {
+       "name": "kollision",
+       "type": "bool",
+       "value": true
+      }
+     ]
+    },
+    {
+     "id": 89,
+     "name": "scFelsGross",
+     "type": "moebel",
+     "x": 64,
+     "y": 272,
+     "width": 32,
+     "height": 32,
+     "rotation": 0,
+     "visible": true,
+     "properties": [
+      {
+       "name": "tiefe",
+       "type": "int",
+       "value": 296
+      },
+      {
+       "name": "kollision",
+       "type": "bool",
+       "value": true
+      }
+     ]
+    },
+    {
+     "id": 90,
+     "name": "scFelsGross",
+     "type": "moebel",
+     "x": 576,
+     "y": 352,
+     "width": 32,
+     "height": 32,
+     "rotation": 0,
+     "visible": true,
+     "properties": [
+      {
+       "name": "tiefe",
+       "type": "int",
+       "value": 376
+      },
+      {
+       "name": "kollision",
+       "type": "bool",
+       "value": true
+      }
+     ]
+    },
+    {
+     "id": 91,
+     "name": "scFelsGross",
+     "type": "moebel",
+     "x": 832,
+     "y": 288,
+     "width": 32,
+     "height": 32,
+     "rotation": 0,
+     "visible": true,
+     "properties": [
+      {
+       "name": "tiefe",
+       "type": "int",
+       "value": 312
+      },
+      {
+       "name": "kollision",
+       "type": "bool",
+       "value": true
+      }
+     ]
+    },
+    {
+     "id": 92,
+     "name": "scFelsMittel",
+     "type": "moebel",
+     "x": 1008,
+     "y": 272,
+     "width": 32,
+     "height": 32,
+     "rotation": 0,
+     "visible": true,
+     "properties": [
+      {
+       "name": "tiefe",
+       "type": "int",
+       "value": 296
+      },
+      {
+       "name": "kollision",
+       "type": "bool",
+       "value": true
+      }
+     ]
+    },
+    {
+     "id": 93,
      "name": "st5Stollenmund",
      "type": "moebel",
      "x": 848,
@@ -12252,7 +12735,7 @@
      ]
     },
     {
-     "id": 73,
+     "id": 94,
      "name": "ds8Finkenzeichen",
      "type": "moebel",
      "x": 896,
@@ -12275,7 +12758,7 @@
      ]
     },
     {
-     "id": 74,
+     "id": 95,
      "name": "st8FeldbahnLaengs",
      "type": "moebel",
      "x": 864,
@@ -12298,7 +12781,7 @@
      ]
     },
     {
-     "id": 75,
+     "id": 96,
      "name": "st8FeldbahnLaengs",
      "type": "moebel",
      "x": 864,
@@ -12321,7 +12804,7 @@
      ]
     },
     {
-     "id": 76,
+     "id": 97,
      "name": "st8FeldbahnLaengs",
      "type": "moebel",
      "x": 864,
@@ -12344,7 +12827,7 @@
      ]
     },
     {
-     "id": 77,
+     "id": 98,
      "name": "st8FeldbahnLaengs",
      "type": "moebel",
      "x": 864,
@@ -12367,7 +12850,7 @@
      ]
     },
     {
-     "id": 78,
+     "id": 99,
      "name": "st8FeldbahnLaengs",
      "type": "moebel",
      "x": 864,
@@ -12390,7 +12873,7 @@
      ]
     },
     {
-     "id": 79,
+     "id": 100,
      "name": "st8FeldbahnLaengs",
      "type": "moebel",
      "x": 864,
@@ -12413,7 +12896,7 @@
      ]
     },
     {
-     "id": 80,
+     "id": 101,
      "name": "st8FeldbahnLaengs",
      "type": "moebel",
      "x": 864,
@@ -12436,7 +12919,7 @@
      ]
     },
     {
-     "id": 81,
+     "id": 102,
      "name": "st8FeldbahnLaengs",
      "type": "moebel",
      "x": 864,
@@ -12459,7 +12942,7 @@
      ]
     },
     {
-     "id": 82,
+     "id": 103,
      "name": "st8FeldbahnLaengs",
      "type": "moebel",
      "x": 864,
@@ -12482,7 +12965,7 @@
      ]
     },
     {
-     "id": 83,
+     "id": 104,
      "name": "st8FeldbahnLaengs",
      "type": "moebel",
      "x": 864,
@@ -12505,7 +12988,7 @@
      ]
     },
     {
-     "id": 84,
+     "id": 105,
      "name": "st8FeldbahnLaengs",
      "type": "moebel",
      "x": 864,
@@ -12528,7 +13011,7 @@
      ]
     },
     {
-     "id": 85,
+     "id": 106,
      "name": "st8FeldbahnLaengs",
      "type": "moebel",
      "x": 864,
@@ -12551,7 +13034,7 @@
      ]
     },
     {
-     "id": 86,
+     "id": 107,
      "name": "st8FeldbahnLaengs",
      "type": "moebel",
      "x": 864,
@@ -12574,7 +13057,7 @@
      ]
     },
     {
-     "id": 87,
+     "id": 108,
      "name": "st8FeldbahnLaengs",
      "type": "moebel",
      "x": 864,
@@ -12597,7 +13080,7 @@
      ]
     },
     {
-     "id": 88,
+     "id": 109,
      "name": "st8LoreLaengs",
      "type": "moebel",
      "x": 864,
@@ -12620,7 +13103,7 @@
      ]
     },
     {
-     "id": 89,
+     "id": 110,
      "name": "st8LoreLaengs",
      "type": "moebel",
      "x": 864,
@@ -12643,7 +13126,7 @@
      ]
     },
     {
-     "id": 90,
+     "id": 111,
      "name": "st8PrellbockFeldbahn",
      "type": "moebel",
      "x": 864,
@@ -12666,7 +13149,7 @@
      ]
     },
     {
-     "id": 91,
+     "id": 112,
      "name": "st5Bagger",
      "type": "moebel",
      "x": 912,
@@ -12689,30 +13172,7 @@
      ]
     },
     {
-     "id": 92,
-     "name": "st5Lichtmast",
-     "type": "moebel",
-     "x": 928,
-     "y": 496,
-     "width": 64,
-     "height": 64,
-     "rotation": 0,
-     "visible": true,
-     "properties": [
-      {
-       "name": "tiefe",
-       "type": "int",
-       "value": 552
-      },
-      {
-       "name": "kollision",
-       "type": "bool",
-       "value": true
-      }
-     ]
-    },
-    {
-     "id": 93,
+     "id": 113,
      "name": "st8Granitquader",
      "type": "moebel",
      "x": 800,
@@ -12735,7 +13195,7 @@
      ]
     },
     {
-     "id": 94,
+     "id": 114,
      "name": "st8GranitquaderStapel",
      "type": "moebel",
      "x": 800,
@@ -12758,13 +13218,13 @@
      ]
     },
     {
-     "id": 95,
-     "name": "st5Schuppen",
+     "id": 115,
+     "name": "iw8Blechhuette",
      "type": "moebel",
-     "x": 96,
-     "y": 496,
-     "width": 48,
-     "height": 64,
+     "x": 80,
+     "y": 480,
+     "width": 64,
+     "height": 80,
      "rotation": 0,
      "visible": true,
      "properties": [
@@ -12781,12 +13241,12 @@
      ]
     },
     {
-     "id": 96,
-     "name": "sd6Schilf",
+     "id": 116,
+     "name": "scFelsGross",
      "type": "moebel",
-     "x": 464,
-     "y": 496,
-     "width": 16,
+     "x": 640,
+     "y": 480,
+     "width": 32,
      "height": 32,
      "rotation": 0,
      "visible": true,
@@ -12794,20 +13254,112 @@
       {
        "name": "tiefe",
        "type": "int",
-       "value": 1
+       "value": 504
       },
       {
        "name": "kollision",
        "type": "bool",
-       "value": false
+       "value": true
       }
      ]
     },
     {
-     "id": 97,
+     "id": 117,
+     "name": "scFelsMittel",
+     "type": "moebel",
+     "x": 736,
+     "y": 544,
+     "width": 32,
+     "height": 32,
+     "rotation": 0,
+     "visible": true,
+     "properties": [
+      {
+       "name": "tiefe",
+       "type": "int",
+       "value": 568
+      },
+      {
+       "name": "kollision",
+       "type": "bool",
+       "value": true
+      }
+     ]
+    },
+    {
+     "id": 118,
+     "name": "scFelsMittel",
+     "type": "moebel",
+     "x": 128,
+     "y": 640,
+     "width": 32,
+     "height": 32,
+     "rotation": 0,
+     "visible": true,
+     "properties": [
+      {
+       "name": "tiefe",
+       "type": "int",
+       "value": 664
+      },
+      {
+       "name": "kollision",
+       "type": "bool",
+       "value": true
+      }
+     ]
+    },
+    {
+     "id": 119,
+     "name": "scFelsMittel",
+     "type": "moebel",
+     "x": 960,
+     "y": 480,
+     "width": 32,
+     "height": 32,
+     "rotation": 0,
+     "visible": true,
+     "properties": [
+      {
+       "name": "tiefe",
+       "type": "int",
+       "value": 504
+      },
+      {
+       "name": "kollision",
+       "type": "bool",
+       "value": true
+      }
+     ]
+    },
+    {
+     "id": 120,
+     "name": "st5PfuetzeKlein",
+     "type": "moebel",
+     "x": 704,
+     "y": 624,
+     "width": 32,
+     "height": 16,
+     "rotation": 0,
+     "visible": true,
+     "properties": [
+      {
+       "name": "tiefe",
+       "type": "int",
+       "value": 632
+      },
+      {
+       "name": "kollision",
+       "type": "bool",
+       "value": true
+      }
+     ]
+    },
+    {
+     "id": 121,
      "name": "sd6Schilf",
      "type": "moebel",
-     "x": 336,
+     "x": 544,
      "y": 512,
      "width": 16,
      "height": 32,
@@ -12827,10 +13379,10 @@
      ]
     },
     {
-     "id": 98,
+     "id": 122,
      "name": "sd6Schilf",
      "type": "moebel",
-     "x": 368,
+     "x": 528,
      "y": 496,
      "width": 16,
      "height": 32,
@@ -12850,10 +13402,102 @@
      ]
     },
     {
-     "id": 99,
+     "id": 123,
      "name": "sd6Schilf",
      "type": "moebel",
-     "x": 240,
+     "x": 320,
+     "y": 576,
+     "width": 16,
+     "height": 32,
+     "rotation": 0,
+     "visible": true,
+     "properties": [
+      {
+       "name": "tiefe",
+       "type": "int",
+       "value": 1
+      },
+      {
+       "name": "kollision",
+       "type": "bool",
+       "value": false
+      }
+     ]
+    },
+    {
+     "id": 124,
+     "name": "sd6Schilf",
+     "type": "moebel",
+     "x": 512,
+     "y": 480,
+     "width": 16,
+     "height": 32,
+     "rotation": 0,
+     "visible": true,
+     "properties": [
+      {
+       "name": "tiefe",
+       "type": "int",
+       "value": 1
+      },
+      {
+       "name": "kollision",
+       "type": "bool",
+       "value": false
+      }
+     ]
+    },
+    {
+     "id": 125,
+     "name": "sd6Schilf",
+     "type": "moebel",
+     "x": 400,
+     "y": 480,
+     "width": 16,
+     "height": 32,
+     "rotation": 0,
+     "visible": true,
+     "properties": [
+      {
+       "name": "tiefe",
+       "type": "int",
+       "value": 1
+      },
+      {
+       "name": "kollision",
+       "type": "bool",
+       "value": false
+      }
+     ]
+    },
+    {
+     "id": 126,
+     "name": "sd6Schilf",
+     "type": "moebel",
+     "x": 480,
+     "y": 480,
+     "width": 16,
+     "height": 32,
+     "rotation": 0,
+     "visible": true,
+     "properties": [
+      {
+       "name": "tiefe",
+       "type": "int",
+       "value": 1
+      },
+      {
+       "name": "kollision",
+       "type": "bool",
+       "value": false
+      }
+     ]
+    },
+    {
+     "id": 127,
+     "name": "sd6Schilf",
+     "type": "moebel",
+     "x": 592,
      "y": 560,
      "width": 16,
      "height": 32,
@@ -12873,11 +13517,34 @@
      ]
     },
     {
-     "id": 100,
+     "id": 128,
+     "name": "sd6Schilf",
+     "type": "moebel",
+     "x": 336,
+     "y": 528,
+     "width": 16,
+     "height": 32,
+     "rotation": 0,
+     "visible": true,
+     "properties": [
+      {
+       "name": "tiefe",
+       "type": "int",
+       "value": 1
+      },
+      {
+       "name": "kollision",
+       "type": "bool",
+       "value": false
+      }
+     ]
+    },
+    {
+     "id": 129,
      "name": "mf6Seerose1",
      "type": "moebel",
-     "x": 416,
-     "y": 608,
+     "x": 400,
+     "y": 560,
      "width": 16,
      "height": 16,
      "rotation": 0,
@@ -12896,33 +13563,10 @@
      ]
     },
     {
-     "id": 101,
+     "id": 130,
      "name": "mf6Seerose3",
      "type": "moebel",
-     "x": 432,
-     "y": 592,
-     "width": 16,
-     "height": 16,
-     "rotation": 0,
-     "visible": true,
-     "properties": [
-      {
-       "name": "tiefe",
-       "type": "int",
-       "value": 1
-      },
-      {
-       "name": "kollision",
-       "type": "bool",
-       "value": false
-      }
-     ]
-    },
-    {
-     "id": 102,
-     "name": "mf6Seerose1",
-     "type": "moebel",
-     "x": 352,
+     "x": 416,
      "y": 576,
      "width": 16,
      "height": 16,
@@ -12942,11 +13586,11 @@
      ]
     },
     {
-     "id": 103,
-     "name": "mf6Seerose3",
+     "id": 131,
+     "name": "mf6Seerose1",
      "type": "moebel",
      "x": 496,
-     "y": 624,
+     "y": 576,
      "width": 16,
      "height": 16,
      "rotation": 0,
@@ -12965,11 +13609,57 @@
      ]
     },
     {
-     "id": 104,
+     "id": 132,
+     "name": "mf6Seerose2",
+     "type": "moebel",
+     "x": 432,
+     "y": 576,
+     "width": 16,
+     "height": 16,
+     "rotation": 0,
+     "visible": true,
+     "properties": [
+      {
+       "name": "tiefe",
+       "type": "int",
+       "value": 1
+      },
+      {
+       "name": "kollision",
+       "type": "bool",
+       "value": false
+      }
+     ]
+    },
+    {
+     "id": 133,
+     "name": "mf6Seerose3",
+     "type": "moebel",
+     "x": 512,
+     "y": 592,
+     "width": 16,
+     "height": 16,
+     "rotation": 0,
+     "visible": true,
+     "properties": [
+      {
+       "name": "tiefe",
+       "type": "int",
+       "value": 1
+      },
+      {
+       "name": "kollision",
+       "type": "bool",
+       "value": false
+      }
+     ]
+    },
+    {
+     "id": 134,
      "name": "mf6Seerose1",
      "type": "moebel",
      "x": 464,
-     "y": 656,
+     "y": 592,
      "width": 16,
      "height": 16,
      "rotation": 0,
@@ -12988,30 +13678,7 @@
      ]
     },
     {
-     "id": 105,
-     "name": "mf6Seerose3",
-     "type": "moebel",
-     "x": 320,
-     "y": 640,
-     "width": 16,
-     "height": 16,
-     "rotation": 0,
-     "visible": true,
-     "properties": [
-      {
-       "name": "tiefe",
-       "type": "int",
-       "value": 1
-      },
-      {
-       "name": "kollision",
-       "type": "bool",
-       "value": false
-      }
-     ]
-    },
-    {
-     "id": 106,
+     "id": 135,
      "name": "st5GraffitiKrone",
      "type": "moebel",
      "x": 992,

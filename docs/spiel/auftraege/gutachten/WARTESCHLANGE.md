@@ -39,6 +39,14 @@ Szene heißt die Datei in `inhalte/abenteuer/szenen/` ohne `.json`.
 - [ ] weg-ironwood-silicon-glasbruecke (zweite Prüfung, Winter, mittel-1, Datei `weg-ironwood-silicon-glasbruecke-2.md`; Bilder aus `bildwuensche/zero_werbung.py`)
 - [ ] weg-ironwood-silicon-raststaette (zweite Prüfung, Winter, Küste, Zufahrt, mittel-1, Datei `weg-ironwood-silicon-raststaette-2.md`; Bilder aus `bildwuensche/gartenhaus.py`, `fassaden_zweck.py`, `wartehaus.py`)
 
+- [ ] silicon-bay-akademie (zweite Prüfung, mittel-3; Bilder privat ab a579b56c; Datei `silicon-bay-akademie-2.md`)
+- [ ] silicon-bay-altstadt (zweite Prüfung, jetzt Winter, mittel-3; Datei `silicon-bay-altstadt-2.md`)
+- [ ] lockport-aussen, lockport-gasthaus (zweite Prüfung, niedrig-1; Antworten in den Ortsdokumenten, Abschnitt „Gutachten Runde 8: Antworten“)
+- [ ] weg-cedar-riverton-bahndamm, weg-cedar-riverton-zedernwald (zweite Prüfung, niedrig-1)
+- [ ] maple-falls-aussen, maple-falls-park, cedar-creek-aussen (zweite Prüfung, niedrig-1)
+- [ ] weg-maple-cedar-flussweg, -landstrasse, -zedernpfad (zweite Prüfung, niedrig-1; eine Datei `weg-maple-cedar-2.md`)
+- [ ] Zustände aus Runde 8 (`python -m pipeline.abenteuer.zustaende`): je Grundkarte eine kurze Prüfung, ob der Zustand zur Beschreibung „Zustand: …“ passt; eine Datei `zustaende-runde8.md`
+
 ## Erledigt
 
 - [x] ironwood-kantine (Test, Haupt-Chat)

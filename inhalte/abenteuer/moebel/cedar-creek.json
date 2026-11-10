@@ -1560,6 +1560,33 @@
       "art": "gleis",
       "zustand": "gebraucht",
       "stil": "industrie"
+    },
+    "cc8HolzhausBlau": {
+      "quelle": "spiel/serene/serene_76.png",
+      "breite": 64,
+      "hoehe": 64,
+      "kollision": true,
+      "art": "gebaeude",
+      "stil": "klassisch",
+      "zustand": "gebraucht"
+    },
+    "cc8HolzhausRot": {
+      "quelle": "spiel/serene/serene_40.png",
+      "breite": 64,
+      "hoehe": 64,
+      "kollision": true,
+      "art": "gebaeude",
+      "stil": "klassisch",
+      "zustand": "gebraucht"
+    },
+    "cc8HolzhausGruen": {
+      "quelle": "spiel/serene/serene_58.png",
+      "breite": 64,
+      "hoehe": 64,
+      "kollision": true,
+      "art": "gebaeude",
+      "stil": "klassisch",
+      "zustand": "gebraucht"
     }
   }
 }

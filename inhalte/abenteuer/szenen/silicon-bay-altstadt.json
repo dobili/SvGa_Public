@@ -2,13 +2,14 @@
   "karte": "siliconBay.altstadt",
   "art": "aussen",
   "viertel": true,
-  "beschreibung": "Die Altstadt von Silicon Bay im Winter, ein Viertel westlich des Campus. Die Straße läuft von Ost nach West, Gehwege auf beiden Seiten. Nördlich die Ladenzeile: die Bäckerei mit rotem Ziegeldach, die Polizeiwache, ein schmales viktorianisches Haus, ein Wohnhaus, das Uhrengeschäft, das Postamt, ein kleiner Laden, der Musikladen, ein Wohnhaus und die Metzgerei; dahinter Gärten mit Bäumen und einer durchgehenden Hecke an der Mauer. Südlich hinter einer Hecke mit zwei Durchgängen die Häuser mit der Front zum Marktplatz: Angelladen, Wohnhaus, kleiner Laden, Eisenwarenladen, ein Laden, ein kleiner Garten mit Baum, der Kaffeekiosk in Form eines Bechers mit der Öffnung zum Platz, ein Wohnhaus, die Eisdiele und ein weiteres Wohnhaus. Auf dem Platz der Wochenmarkt mit vier Ständen voller Obst und Gemüse, der Brunnen mit zwei Bänken, die zu ihm schauen, und ein Hydrant. Ganz im Süden der Park hinter einer Hecke mit Bäumen und Büschen.",
+  "beschreibung": "Die Altstadt von Silicon Bay im Winter, ein Viertel westlich des Campus; außerhalb der Glasbauten liegt Schnee. Die Straße läuft von Ost nach West, am nördlichen Gehweg Laternen in festen Abständen. Nördlich die Ladenzeile: Bäckerei, Polizeiwache, ein schmales viktorianisches Haus, ein Wohnhaus, ein Laden, das Postamt, ein zweiter Laden, der Musikladen, ein Wohnhaus und die Metzgerei; dahinter verschneite Gärten mit Bäumen und zwei Gartenschuppen bis zur Hecke an der Nordgrenze. Die Ladenschilder sind englisch wie überall in Silicon Bay. Südlich hinter einer Hecke mit zwei Gassen die Häuser mit der Front zum Marktplatz: Angelladen, Wohnhaus, ein kleiner Garten, Eisenwarenladen, ein Laden, ein Garten mit Baum, der Kaffeekiosk in Form eines Bechers, ein Wohnhaus, die Eisdiele und ein Wohnhaus. Der Marktplatz hat einen Rand aus Steinplatten: zwei Stände voller Obst und Gemüse mit Händlerin und Händler, Bäume mit Baumscheiben, der Brunnen mit zwei Bänken, die zu ihm schauen, eine Kreidezeichnung, ein Straßenmusiker mit Gitarrenkoffer und im Osten ein geschmückter Weihnachtsbaum. Ganz im Süden der Park hinter einer Hecke mit drei Durchgängen, mit Weg, Bänken, Bäumen und dem Schneemann, den die Kinder bauen.",
   "boden": "pflaster",
   "wandart": "stein",
   "boeden": {
     "p": "stein",
     "s": "asphalt",
-    "r": "gras"
+    "r": "gras",
+    "e": "erde"
   },
   "raster": [
     "########################################################################",
@@ -20,18 +21,18 @@
     "#rrrrrrrrrrrrrrrrrrrrrrrrrrrrrrrrrrrrrrrrrrrrrrrrrrrrrrrrrrrrrrrrrrrrrr#",
     "#rrrrrrrrrrrrrrrrrrrrrrrrrrrrrrrrrrrrrrrrrrrrrrrrrrrrrrrrrrrrrrrrrrrrrr#",
     "#rrrrrrrrrrrrrrrrrrrrrrrrrrrrrrrrrrrrrrrrrrrrrrrrrrrrrrrrrrrrrrrrrrrrrr#",
-    "#......................................................................#",
-    "#......................................................................#",
-    "#......................................................................#",
-    "#......................................................................#",
-    "#......................................................................#",
-    "#......................................................................#",
-    "#......................................................................#",
-    "#......................................................................#",
-    "#......................................................................#",
-    "#......................................................................#",
-    "#......................................................................#",
-    "#......................................................................#",
+    "#rrrrrrrrrrrrrrrrrrrrrrrrrrrrrrrrrrrrrrrrrrrrrrrrrrrrrrrrrrrrrrrrrrrrrr#",
+    "#rrrrrrrrrrrrrrrrrrrrrrrrrrrrrrrrrrrrrrrrrrrrrrrrrrrrrrrrrrrrrrrrrrrrrr#",
+    "#rrrrrrrrrrrrrrrrrrrrrrrrrrrrrrrrrrrrrrrrrrrrrrrrrrrrrrrrrrrrrrrrrrrrrr#",
+    "#rrrrrrrrrrrrrrrrrrrrrrrrrrrrrrrrrrrrrrrrrrrrrrrrrrrrrrrrrrrrrrrrrrrrrr#",
+    "#rrrrrrrrrrrrrrrrrrrrrrrrrrrrrrrrrrrrrrrrrrrrrrrrrrrrrrrrrrrrrrrrrrrrrr#",
+    "#rrrrrrrrrrrrrrrrrrrrrrrrrrrrrrrrrrrrrrrrrrrrrrrrrrrrrrrrrrrrrrrrrrrrrr#",
+    "#rrrrrrrrrrrrrrrrrrrrrrrrrrrrrrrrrrrrrrrrrrrrrrrrrrrrrrrrrrrrrrrrrrrrrr#",
+    "#rrrrrrrrrrrrrrrrrrrrrrrrrrrrrrrrrrrrrrrrrrrrrrrrrrrrrrrrrrrrrrrrrrrrrr#",
+    "#rrrrrrrrrrrrrrrrrrrrrrrrrrrrrrrrrrrrrrrrrrrrrrrrrrrrrrrrrrrrrrrrrrrrrr#",
+    "#rrrrrrrrrrrrrrrrrrrrrrrrrrrrrrrrrrrrrrrrrrrrrrrrrrrrrrrrrrrrrrrrrrrrrr#",
+    "#rrrrrrrrrrrrrrrrrrrrrrrrrrrrrrrrrrrrrrrrrrrrrrrrrrrrrrrrrrrrrrrrrrrrrr#",
+    "#rrrrrrrrrrrrrrrrrrrrrrrrrrrrrrrrrrrrrrrrrrrrrrrrrrrrrrrrrrrrrrrrrrrrrr#",
     "#ppppppppppppppppppppppppppppppppppppppppppppppppppppppppppppppppppppppp",
     "#ppppppppppppppppppppppppppppppppppppppppppppppppppppppppppppppppppppppp",
     "#ssssssssssssssssssssssssssssssssssssssssssssssssssssssssssssssssssssss#",
@@ -39,19 +40,19 @@
     "#ssssssssssssssssssssssssssssssssssssssssssssssssssssssssssssssssssssss#",
     "#pppppppppppppppppppppppppppppppppppppppppppppppppppppppppppppppppppppp#",
     "#rrrrrrrrrrrrrrrrrrrpprrrrrrrrrrrrrrrrrrrrpprrrrrrrrrrrrrrrrrrrrrrrrrrr#",
-    "#rrrrrrrrrrrrrrrrrrrpprrrrrrrrrrrrrrrrrrrrpprrrrrrrrrrrrrrrrrrrrrrrrrrr#",
-    "#rrrrrrrrrrrrrrrrrrrpprrrrrrrrrrrrrrrrrrrrpprrrrrrrrrrrrrrrrrrrrrrrrrrr#",
-    "#rrrrrrrrrrrrrrrrrrrpprrrrrrrrrrrrrrrrrrrrpprrrrrrrrrrrrrrrrrrrrrrrrrrr#",
-    "#...................pp....................pp...........................#",
-    "#...................pp....................pp...........................#",
-    "#...................pp....................pp...........................#",
-    "#...................pp....................pp...........................#",
-    "#...................pp....................pp...........................#",
-    "#...................pp....................pp...........................#",
-    "#...................pp....................pp...........................#",
-    "#...................pp....................pp...........................#",
-    "#...................pp....................pp...........................#",
-    "#...................pp....................pp...........................#",
+    "#rrrrrrrrrrrrrrrrrrpprrrrrrrrrrrrrrrrrrrrpprrrrrrrrrrrrrrrrrrrrrrrrrrrr#",
+    "#rrrrrrrrrrrrrrrrrrpprrrrrrrrrrrrrrrrrrrrpprrrrrrrrrrrrrrrrrrrrrrrrrrrr#",
+    "#rrrrrrrrrrrrrrrrrrpprrrrrrrrrrrrrrrrrrrrpprrrrrrrrrrrrrrrrrrrrrrrrrrrr#",
+    "#rrrrrrrrrrrrrrrrrrpprrrrrrrrrrrrrrrrrrrrpprrrrrrrrrrrrrrrrrrrrrrrrrrrr#",
+    "#rrrrrrrrrrrrrrrrrrpprrrrrrrrrrrrrrrrrrrrpprrrrrrrrrrrrrrrrrrrrrrrrrrrr#",
+    "#rrrrrrrrrrrrrrrrrrpprrrrrrrrrrrrrrrrrrrrpprrrrrrrrrrrrrrrrrrrrrrrrrrrr#",
+    "#..............rrrr.pp...............rrrr.pp...........................#",
+    "#..............rrrr.pp...............rrrr.pp...........................#",
+    "#..............rrrr.pp...............rrrr.pp...........................#",
+    "#..............rrrr.pp...............rrrr.pp...........................#",
+    "#..............rrrr.pp...............rrrr.pp...........................#",
+    "#..............rrrr.pp...............rrrr.pp...........................#",
+    "#..............rrrr.pp...............rrrr.pp...........................#",
     "#pppppppppppppppppppppppppppppppppppppppppppppppppppppppppppppppppppppp#",
     "#pppppppppppppppppppppppppppppppppppppppppppppppppppppppppppppppppppppp#",
     "#pppppppppppppppppppppppppppppppppppppppppppppppppppppppppppppppppppppp#",
@@ -59,9 +60,9 @@
     "#pppppppppppppppppppppppppppppppppppppppppppppppppppppppppppppppppppppp#",
     "#pppppppppppppppppppppppppppppppppppppppppppppppppppppppppppppppppppppp#",
     "#pppppppppppppppppppppppppppppppppppppppppppppppppppppppppppppppppppppp#",
-    "#pppppppppppppppppppppppppppppppppppppppppppppppppppppppppppppppppppppp#",
-    "#pppppppppppppppppppppppppppppppppppppppppppppppppppppppppppppppppppppp#",
-    "#pppppppppppppppppppppppppppppppppppppppppppppppppppppppppppppppppppppp#",
+    "#rrrrrrrrrrrrrrrrrrrrrrrrrrrrrrrrrrrrrrrrrrrrrrrrrrrrrrrrrrrrrrrrrrrrrr#",
+    "#eeeeeeeeeeeeeeeeeeeeeeeeeeeeeeeeeeeeeeeeeeeeeeeeeeeeeeeeeeeeeeeeeeeeee#",
+    "#eeeeeeeeeeeeeeeeeeeeeeeeeeeeeeeeeeeeeeeeeeeeeeeeeeeeeeeeeeeeeeeeeeeeee#",
     "#rrrrrrrrrrrrrrrrrrrrrrrrrrrrrrrrrrrrrrrrrrrrrrrrrrrrrrrrrrrrrrrrrrrrrr#",
     "#rrrrrrrrrrrrrrrrrrrrrrrrrrrrrrrrrrrrrrrrrrrrrrrrrrrrrrrrrrrrrrrrrrrrrr#",
     "#rrrrrrrrrrrrrrrrrrrrrrrrrrrrrrrrrrrrrrrrrrrrrrrrrrrrrrrrrrrrrrrrrrrrrr#",
@@ -83,11 +84,11 @@
       "bauteil_ok": true
     },
     {
-      "moebel": "sb8Condo53",
-      "feld": [22, 10]
+      "moebel": "sa8WohnhausA",
+      "feld": [21, 8]
     },
     {
-      "moebel": "sa8Laden8",
+      "moebel": "sa8LadenA",
       "feld": [28, 12]
     },
     {
@@ -95,39 +96,35 @@
       "feld": [35, 8]
     },
     {
-      "moebel": "sb8Markt11",
-      "feld": [43, 13]
+      "moebel": "sa8LadenB",
+      "feld": [43, 12]
     },
     {
       "moebel": "sa8Musikladen",
-      "feld": [48, 8]
+      "feld": [50, 8]
     },
     {
       "moebel": "sa8Condo9",
-      "feld": [55, 9]
+      "feld": [57, 9]
     },
     {
       "moebel": "sa8Metzgerei",
-      "feld": [61, 12]
+      "feld": [63, 12]
     },
     {
       "moebel": "sa8Angelladen",
       "feld": [1, 32]
     },
     {
-      "moebel": "sb8Condo51",
-      "feld": [8, 30]
-    },
-    {
-      "moebel": "sb8Markt9",
-      "feld": [15, 33]
+      "moebel": "sa8WohnhausB",
+      "feld": [8, 28]
     },
     {
       "moebel": "sa8Eisenwaren",
       "feld": [22, 32]
     },
     {
-      "moebel": "sa8Laden6",
+      "moebel": "sa8LadenD",
       "feld": [30, 32]
     },
     {
@@ -135,72 +132,20 @@
       "feld": [44, 32]
     },
     {
-      "moebel": "sb8Condo44",
-      "feld": [51, 33]
+      "moebel": "sa8WohnhausC",
+      "feld": [50, 28]
     },
     {
       "moebel": "sa8Eisdiele",
       "feld": [57, 32]
     },
     {
-      "moebel": "sb8Condo45",
-      "feld": [64, 31]
+      "moebel": "sa8WohnhausD",
+      "feld": [64, 28]
     },
     {
       "moebel": "sb5BrunnenWasser",
       "feld": [46, 42]
-    },
-    {
-      "moebel": "n6Marktstand",
-      "feld": [6, 43],
-      "id": "stand1"
-    },
-    {
-      "moebel": "n6Marktstand",
-      "feld": [12, 43],
-      "id": "stand2"
-    },
-    {
-      "moebel": "n6Marktstand",
-      "feld": [18, 43],
-      "id": "stand3"
-    },
-    {
-      "moebel": "n6Marktstand",
-      "feld": [24, 43],
-      "id": "stand4"
-    },
-    {
-      "moebel": "wg4Laubbaum",
-      "feld": [61, 51]
-    },
-    {
-      "moebel": "wg4Laubbaum",
-      "feld": [13, 51]
-    },
-    {
-      "moebel": "wg4Laubbaum",
-      "feld": [54, 51]
-    },
-    {
-      "moebel": "mf4Strassenbaum",
-      "feld": [34, 3]
-    },
-    {
-      "moebel": "mf4Strassenbaum",
-      "feld": [6, 6]
-    },
-    {
-      "moebel": "mf4Strassenbaum",
-      "feld": [50, 2]
-    },
-    {
-      "moebel": "mf4Strassenbaum",
-      "feld": [65, 5]
-    },
-    {
-      "moebel": "mf4Strassenbaum",
-      "feld": [44, 1]
     },
     {
       "moebel": "wg4Laubbaum",
@@ -555,159 +500,6 @@
       "bauteil_ok": true
     },
     {
-      "moebel": "cc4Hecke",
-      "feld": [1, 51],
-      "bauteil_ok": true
-    },
-    {
-      "moebel": "cc4Hecke",
-      "feld": [3, 51],
-      "bauteil_ok": true
-    },
-    {
-      "moebel": "cc4Hecke",
-      "feld": [5, 51],
-      "bauteil_ok": true
-    },
-    {
-      "moebel": "cc4Hecke",
-      "feld": [7, 51],
-      "bauteil_ok": true
-    },
-    {
-      "moebel": "cc4Hecke",
-      "feld": [9, 51],
-      "bauteil_ok": true
-    },
-    {
-      "moebel": "cc4Hecke",
-      "feld": [11, 51],
-      "bauteil_ok": true
-    },
-    {
-      "moebel": "cc4Hecke",
-      "feld": [17, 51],
-      "bauteil_ok": true
-    },
-    {
-      "moebel": "cc4Hecke",
-      "feld": [19, 51],
-      "bauteil_ok": true
-    },
-    {
-      "moebel": "cc4Hecke",
-      "feld": [21, 51],
-      "bauteil_ok": true
-    },
-    {
-      "moebel": "cc4Hecke",
-      "feld": [23, 51],
-      "bauteil_ok": true
-    },
-    {
-      "moebel": "cc4Hecke",
-      "feld": [25, 51],
-      "bauteil_ok": true
-    },
-    {
-      "moebel": "cc4Hecke",
-      "feld": [27, 51],
-      "bauteil_ok": true
-    },
-    {
-      "moebel": "cc4Hecke",
-      "feld": [29, 51],
-      "bauteil_ok": true
-    },
-    {
-      "moebel": "cc4Hecke",
-      "feld": [31, 51],
-      "bauteil_ok": true
-    },
-    {
-      "moebel": "cc4Hecke",
-      "feld": [33, 51],
-      "bauteil_ok": true
-    },
-    {
-      "moebel": "cc4Hecke",
-      "feld": [35, 51],
-      "bauteil_ok": true
-    },
-    {
-      "moebel": "cc4Hecke",
-      "feld": [37, 51],
-      "bauteil_ok": true
-    },
-    {
-      "moebel": "cc4Hecke",
-      "feld": [43, 51],
-      "bauteil_ok": true
-    },
-    {
-      "moebel": "cc4Hecke",
-      "feld": [45, 51],
-      "bauteil_ok": true
-    },
-    {
-      "moebel": "cc4Hecke",
-      "feld": [47, 51],
-      "bauteil_ok": true
-    },
-    {
-      "moebel": "cc4Hecke",
-      "feld": [49, 51],
-      "bauteil_ok": true
-    },
-    {
-      "moebel": "cc4Hecke",
-      "feld": [51, 51],
-      "bauteil_ok": true
-    },
-    {
-      "moebel": "cc4Hecke",
-      "feld": [65, 51],
-      "bauteil_ok": true
-    },
-    {
-      "moebel": "cc4Hecke",
-      "feld": [67, 51],
-      "bauteil_ok": true
-    },
-    {
-      "moebel": "cc4Hecke",
-      "feld": [69, 51],
-      "bauteil_ok": true
-    },
-    {
-      "moebel": "wg4Busch",
-      "feld": [4, 53]
-    },
-    {
-      "moebel": "wg4Busch",
-      "feld": [21, 53]
-    },
-    {
-      "moebel": "wg4Busch",
-      "feld": [30, 53]
-    },
-    {
-      "moebel": "wg4Busch",
-      "feld": [35, 53]
-    },
-    {
-      "moebel": "wg4Busch",
-      "feld": [43, 53]
-    },
-    {
-      "moebel": "wg4Busch",
-      "feld": [48, 52]
-    },
-    {
-      "moebel": "wg4Busch",
-      "feld": [68, 53]
-    },
-    {
       "moebel": "wg4Laubbaum",
       "feld": [10, 4]
     },
@@ -720,48 +512,313 @@
       "feld": [58, 4]
     },
     {
+      "moebel": "wg4Laubbaum",
+      "feld": [15, 34]
+    },
+    {
+      "moebel": "mf4Laterne",
+      "feld": [11, 19],
+      "vorn": true
+    },
+    {
+      "moebel": "mf4Laterne",
+      "feld": [23, 19],
+      "vorn": true
+    },
+    {
+      "moebel": "mf4Laterne",
+      "feld": [35, 19],
+      "vorn": true
+    },
+    {
+      "moebel": "mf4Laterne",
+      "feld": [47, 19],
+      "vorn": true
+    },
+    {
+      "moebel": "mf4Laterne",
+      "feld": [59, 19],
+      "vorn": true
+    },
+    {
+      "moebel": "sb5Faehrhaus",
+      "feld": [3, 3]
+    },
+    {
+      "moebel": "rv5Schuppen",
+      "feld": [40, 3]
+    },
+    {
+      "moebel": "wg6StandGross",
+      "feld": [8, 42],
+      "id": "stand1"
+    },
+    {
       "moebel": "rv8KorbAepfel",
       "auf": "stand1",
-      "versatz": [-10, 10]
+      "versatz": [-24, 8]
     },
     {
       "moebel": "rv8KorbBananen",
       "auf": "stand1",
-      "versatz": [6, 10]
+      "versatz": [-8, 8]
+    },
+    {
+      "moebel": "rv8KorbTrauben",
+      "auf": "stand1",
+      "versatz": [8, 8]
+    },
+    {
+      "moebel": "rv8KorbMais",
+      "auf": "stand1",
+      "versatz": [24, 8]
+    },
+    {
+      "moebel": "wg6StandGross",
+      "feld": [15, 42],
+      "id": "stand2"
     },
     {
       "moebel": "rv8KorbMoehren",
       "auf": "stand2",
-      "versatz": [-10, 10]
+      "versatz": [-24, 8]
     },
     {
       "moebel": "rv8KorbKohl",
       "auf": "stand2",
-      "versatz": [6, 10]
-    },
-    {
-      "moebel": "rv8KorbTrauben",
-      "auf": "stand3",
-      "versatz": [-10, 10]
-    },
-    {
-      "moebel": "rv8KorbMais",
-      "auf": "stand3",
-      "versatz": [6, 10]
+      "versatz": [-8, 8]
     },
     {
       "moebel": "rv8KorbAepfel",
-      "auf": "stand4",
-      "versatz": [-10, 10]
+      "auf": "stand2",
+      "versatz": [8, 8]
     },
     {
       "moebel": "rv8KorbMoehren",
-      "auf": "stand4",
-      "versatz": [6, 10]
+      "auf": "stand2",
+      "versatz": [24, 8]
     },
     {
-      "moebel": "rvHydrant",
+      "moebel": "sb5Baum",
+      "feld": [26, 42]
+    },
+    {
+      "moebel": "sb5Baum",
+      "feld": [36, 42]
+    },
+    {
+      "moebel": "sb5Baum",
+      "feld": [56, 42]
+    },
+    {
+      "moebel": "sb5Baum",
       "feld": [66, 42]
+    },
+    {
+      "moebel": "sa8Weihnachtsbaum",
+      "feld": [61, 43]
+    },
+    {
+      "moebel": "sb8Kreidespringer",
+      "feld": [21, 45]
+    },
+    {
+      "moebel": "sa8Gitarrenkoffer",
+      "feld": [32, 45]
+    },
+    {
+      "moebel": "cc4Hecke",
+      "feld": [3, 48],
+      "bauteil_ok": true
+    },
+    {
+      "moebel": "cc4Hecke",
+      "feld": [5, 48],
+      "bauteil_ok": true
+    },
+    {
+      "moebel": "cc4Hecke",
+      "feld": [7, 48],
+      "bauteil_ok": true
+    },
+    {
+      "moebel": "cc4Hecke",
+      "feld": [9, 48],
+      "bauteil_ok": true
+    },
+    {
+      "moebel": "cc4Hecke",
+      "feld": [11, 48],
+      "bauteil_ok": true
+    },
+    {
+      "moebel": "cc4Hecke",
+      "feld": [13, 48],
+      "bauteil_ok": true
+    },
+    {
+      "moebel": "cc4Hecke",
+      "feld": [17, 48],
+      "bauteil_ok": true
+    },
+    {
+      "moebel": "cc4Hecke",
+      "feld": [19, 48],
+      "bauteil_ok": true
+    },
+    {
+      "moebel": "cc4Hecke",
+      "feld": [21, 48],
+      "bauteil_ok": true
+    },
+    {
+      "moebel": "cc4Hecke",
+      "feld": [23, 48],
+      "bauteil_ok": true
+    },
+    {
+      "moebel": "cc4Hecke",
+      "feld": [25, 48],
+      "bauteil_ok": true
+    },
+    {
+      "moebel": "cc4Hecke",
+      "feld": [27, 48],
+      "bauteil_ok": true
+    },
+    {
+      "moebel": "cc4Hecke",
+      "feld": [29, 48],
+      "bauteil_ok": true
+    },
+    {
+      "moebel": "cc4Hecke",
+      "feld": [31, 48],
+      "bauteil_ok": true
+    },
+    {
+      "moebel": "cc4Hecke",
+      "feld": [33, 48],
+      "bauteil_ok": true
+    },
+    {
+      "moebel": "cc4Hecke",
+      "feld": [35, 48],
+      "bauteil_ok": true
+    },
+    {
+      "moebel": "cc4Hecke",
+      "feld": [37, 48],
+      "bauteil_ok": true
+    },
+    {
+      "moebel": "cc4Hecke",
+      "feld": [42, 48],
+      "bauteil_ok": true
+    },
+    {
+      "moebel": "cc4Hecke",
+      "feld": [44, 48],
+      "bauteil_ok": true
+    },
+    {
+      "moebel": "cc4Hecke",
+      "feld": [46, 48],
+      "bauteil_ok": true
+    },
+    {
+      "moebel": "cc4Hecke",
+      "feld": [48, 48],
+      "bauteil_ok": true
+    },
+    {
+      "moebel": "cc4Hecke",
+      "feld": [50, 48],
+      "bauteil_ok": true
+    },
+    {
+      "moebel": "cc4Hecke",
+      "feld": [52, 48],
+      "bauteil_ok": true
+    },
+    {
+      "moebel": "cc4Hecke",
+      "feld": [54, 48],
+      "bauteil_ok": true
+    },
+    {
+      "moebel": "cc4Hecke",
+      "feld": [56, 48],
+      "bauteil_ok": true
+    },
+    {
+      "moebel": "cc4Hecke",
+      "feld": [60, 48],
+      "bauteil_ok": true
+    },
+    {
+      "moebel": "cc4Hecke",
+      "feld": [62, 48],
+      "bauteil_ok": true
+    },
+    {
+      "moebel": "cc4Hecke",
+      "feld": [64, 48],
+      "bauteil_ok": true
+    },
+    {
+      "moebel": "cc4Hecke",
+      "feld": [66, 48],
+      "bauteil_ok": true
+    },
+    {
+      "moebel": "cc4Hecke",
+      "feld": [68, 48],
+      "bauteil_ok": true
+    },
+    {
+      "moebel": "wg4Laubbaum",
+      "feld": [5, 51]
+    },
+    {
+      "moebel": "wg4Laubbaum",
+      "feld": [24, 51]
+    },
+    {
+      "moebel": "wg4Laubbaum",
+      "feld": [50, 51]
+    },
+    {
+      "moebel": "wg4Laubbaum",
+      "feld": [64, 51]
+    },
+    {
+      "moebel": "mfBank",
+      "feld": [14, 51]
+    },
+    {
+      "moebel": "mfBank",
+      "feld": [32, 51]
+    },
+    {
+      "moebel": "mfBank",
+      "feld": [44, 51]
+    },
+    {
+      "moebel": "wg4Busch",
+      "feld": [11, 52]
+    },
+    {
+      "moebel": "wg4Busch",
+      "feld": [30, 52]
+    },
+    {
+      "moebel": "wg4Busch",
+      "feld": [58, 52]
+    },
+    {
+      "moebel": "sa8Schneemann",
+      "feld": [40, 51]
     }
   ],
   "ausloeser": [
@@ -810,10 +867,10 @@
     {
       "name": "maehroboter",
       "typ": "tier",
-      "feld": [20, 53],
+      "feld": [20, 50],
       "eigenschaften": {
-        "von": "4,52",
-        "bis": "66,54",
+        "von": "4,50",
+        "bis": "66,50",
         "verhalten": "ausweichen"
       }
     },
@@ -823,7 +880,7 @@
       "feld": [50, 45],
       "eigenschaften": {
         "von": "40,42",
-        "bis": "60,48",
+        "bis": "60,46",
         "verhalten": "ausweichen"
       }
     },
@@ -854,36 +911,36 @@
     {
       "name": "musikhaendler",
       "typ": "statist",
-      "feld": [51, 21],
+      "feld": [53, 21],
       "eigenschaften": {
         "tun": "stimmt eine Gitarre vor der Tür",
         "wann": "tag",
-        "von": "48,21",
-        "bis": "54,21",
+        "von": "50,21",
+        "bis": "56,21",
         "sagt": "statist.siliconBay.altstadt.musikhaendler"
       }
     },
     {
       "name": "schuelerin",
       "typ": "statist",
-      "feld": [20, 42],
+      "feld": [20, 45],
       "eigenschaften": {
         "tun": "malt mit Kreide auf den Marktplatz",
         "wann": "tag",
-        "von": "14,42",
-        "bis": "26,43",
+        "von": "20,44",
+        "bis": "23,45",
         "sagt": "statist.siliconBay.altstadt.schuelerin"
       }
     },
     {
       "name": "metzger",
       "typ": "statist",
-      "feld": [64, 25],
+      "feld": [66, 22],
       "eigenschaften": {
-        "tun": "fegt den Gehweg",
+        "tun": "fegt den Gehweg vor seiner Metzgerei",
         "wann": "tag",
-        "von": "61,25",
-        "bis": "67,25",
+        "von": "63,22",
+        "bis": "69,22",
         "sagt": "statist.siliconBay.altstadt.metzger"
       }
     },
@@ -892,7 +949,7 @@
       "typ": "statist",
       "feld": [44, 45],
       "eigenschaften": {
-        "tun": "sitzt am Brunnen und füttert die Tauben",
+        "tun": "steht am Brunnen und füttert die Tauben",
         "wann": "tag",
         "von": "44,45",
         "bis": "44,45",
@@ -902,12 +959,12 @@
     {
       "name": "feuerwehrmann",
       "typ": "statist",
-      "feld": [65, 44],
+      "feld": [40, 22],
       "eigenschaften": {
-        "tun": "prüft den Hydranten",
+        "tun": "macht seine Runde durch die Altstadt",
         "wann": "tag",
-        "von": "62,44",
-        "bis": "68,46",
+        "von": "30,22",
+        "bis": "60,22",
         "sagt": "statist.siliconBay.altstadt.feuerwehrmann"
       }
     },
@@ -926,12 +983,12 @@
     {
       "name": "strassenmusiker",
       "typ": "statist",
-      "feld": [30, 48],
+      "feld": [31, 45],
       "eigenschaften": {
         "tun": "spielt Akkordeon",
         "wann": "tag",
-        "von": "30,48",
-        "bis": "30,48",
+        "von": "31,45",
+        "bis": "31,45",
         "sagt": "statist.siliconBay.altstadt.strassenmusiker",
         "zeigt": "goldmuenzenPartie"
       }
@@ -939,12 +996,12 @@
     {
       "name": "kinder",
       "typ": "statist",
-      "feld": [40, 53],
+      "feld": [39, 52],
       "eigenschaften": {
         "tun": "bauen einen Schneemann im Park",
         "wann": "tag",
-        "von": "30,53",
-        "bis": "50,54"
+        "von": "36,52",
+        "bis": "42,53"
       }
     },
     {
@@ -963,7 +1020,7 @@
       "feld": [26, 45],
       "eigenschaften": {
         "von": "10,42",
-        "bis": "50,49",
+        "bis": "50,46",
         "verhalten": "fliegen"
       }
     },
@@ -980,23 +1037,23 @@
     {
       "name": "marktfrau",
       "typ": "statist",
-      "feld": [11, 46],
+      "feld": [7, 44],
       "eigenschaften": {
-        "tun": "verkauft Obst an den ersten beiden Ständen",
+        "tun": "verkauft Obst an ihrem Stand",
         "wann": "tag",
-        "von": "11,46",
-        "bis": "11,46"
+        "von": "7,44",
+        "bis": "7,44"
       }
     },
     {
       "name": "gemuesehaendler",
       "typ": "statist",
-      "feld": [23, 46],
+      "feld": [20, 43],
       "eigenschaften": {
-        "tun": "wiegt Möhren und Mais ab",
+        "tun": "wiegt Möhren an seinem Stand ab",
         "wann": "tag",
-        "von": "23,46",
-        "bis": "23,46"
+        "von": "20,43",
+        "bis": "20,43"
       }
     }
   ],
@@ -1011,5 +1068,6 @@
     "laendlich",
     "landhaus"
   ],
-  "datei": "karten/silicon-bay-altstadt.json"
+  "datei": "karten/silicon-bay-altstadt.json",
+  "jahreszeit": "winter"
 }

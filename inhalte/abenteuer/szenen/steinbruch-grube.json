@@ -14,11 +14,7 @@
     "k": "schotter",
     "p": "pflaster"
   },
-  "zustand": [
-    "neu",
-    "gebraucht",
-    "alt"
-  ],
+  "zustand": ["neu", "gebraucht", "alt"],
   "raster": [
     "######################################################################",
     "#rrrrrrrrrrrrrrrrrrrrrrrrrrrrrrrrrrrrrrrrrrrrrrrrrrrrrrrrrrrrrrrrrrrr#",
@@ -74,676 +70,394 @@
   "objekte": [
     {
       "moebel": "cc5Poller",
-      "feld": [
-        3,
-        6
-      ]
+      "feld": [3, 6]
     },
     {
       "moebel": "cc5Poller",
-      "feld": [
-        3,
-        9
-      ]
+      "feld": [3, 9]
     },
     {
       "moebel": "svSchild",
-      "feld": [
-        4,
-        4
-      ]
+      "feld": [4, 4]
     },
     {
       "moebel": "st5Bude",
-      "feld": [
-        40,
-        1
-      ]
+      "feld": [40, 1]
     },
     {
       "moebel": "mfBank",
-      "feld": [
-        21,
-        4
-      ]
+      "feld": [21, 4]
     },
     {
       "moebel": "cc3ZaunEnde",
-      "feld": [
-        19,
-        10
-      ],
+      "feld": [19, 10],
       "bauteil_ok": true
     },
     {
       "moebel": "ccZaun",
-      "feld": [
-        20,
-        10
-      ],
+      "feld": [20, 10],
       "bauteil_ok": true
     },
     {
       "moebel": "ccZaun",
-      "feld": [
-        21,
-        10
-      ],
+      "feld": [21, 10],
       "bauteil_ok": true
     },
     {
       "moebel": "ccZaun",
-      "feld": [
-        22,
-        10
-      ],
+      "feld": [22, 10],
       "bauteil_ok": true
     },
     {
       "moebel": "ccZaun",
-      "feld": [
-        23,
-        10
-      ],
+      "feld": [23, 10],
       "bauteil_ok": true
     },
     {
       "moebel": "ccZaun",
-      "feld": [
-        24,
-        10
-      ],
+      "feld": [24, 10],
       "bauteil_ok": true
     },
     {
       "moebel": "cc3ZaunEndeR",
-      "feld": [
-        25,
-        10
-      ],
+      "feld": [25, 10],
       "bauteil_ok": true
     },
     {
       "moebel": "st5Birke",
-      "feld": [
-        6,
-        1
-      ]
+      "feld": [6, 1]
     },
     {
       "moebel": "st5BirkeKlein",
-      "feld": [
-        11,
-        2
-      ]
+      "feld": [11, 2]
     },
     {
       "moebel": "st5BirkeKlein",
-      "feld": [
-        28,
-        1
-      ]
+      "feld": [28, 1]
     },
     {
       "moebel": "st5Birke",
-      "feld": [
-        50,
-        1
-      ]
+      "feld": [50, 1]
     },
     {
       "moebel": "st5Birke",
-      "feld": [
-        63,
-        2
-      ]
+      "feld": [63, 2]
     },
     {
       "moebel": "st5Birke",
-      "feld": [
-        64,
-        7
-      ]
+      "feld": [64, 7]
     },
     {
       "moebel": "felsKlein",
-      "feld": [
-        3,
-        14
-      ]
+      "feld": [3, 14]
     },
     {
       "moebel": "felsKlein",
-      "feld": [
-        4,
-        27
-      ]
+      "feld": [4, 27]
     },
     {
       "moebel": "felsKlein",
-      "feld": [
-        15,
-        14
-      ]
+      "feld": [15, 14]
     },
     {
       "moebel": "felsKlein",
-      "feld": [
-        16,
-        28
-      ]
+      "feld": [16, 28]
     },
     {
       "moebel": "mf4Fels",
-      "feld": [
-        19,
-        14
-      ]
+      "feld": [19, 14]
     },
     {
       "moebel": "felsKlein",
-      "feld": [
-        20,
-        28
-      ]
+      "feld": [20, 28]
     },
     {
       "moebel": "mf4Fels",
-      "feld": [
-        23,
-        15
-      ]
+      "feld": [23, 15]
     },
     {
       "moebel": "mf4Fels",
-      "feld": [
-        24,
-        28
-      ]
+      "feld": [24, 28]
     },
     {
       "moebel": "mf4Fels",
-      "feld": [
-        27,
-        16
-      ]
+      "feld": [27, 16]
     },
     {
       "moebel": "mf4Fels",
-      "feld": [
-        28,
-        29
-      ]
+      "feld": [28, 29]
     },
     {
       "moebel": "mf4Fels",
-      "feld": [
-        31,
-        15
-      ]
+      "feld": [31, 15]
     },
     {
       "moebel": "felsKlein",
-      "feld": [
-        32,
-        28
-      ]
+      "feld": [32, 28]
     },
     {
       "moebel": "mf4Fels",
-      "feld": [
-        35,
-        14
-      ]
+      "feld": [35, 14]
     },
     {
       "moebel": "felsKlein",
-      "feld": [
-        36,
-        28
-      ]
+      "feld": [36, 28]
     },
     {
       "moebel": "mf4Fels",
-      "feld": [
-        39,
-        14
-      ]
+      "feld": [39, 14]
     },
     {
       "moebel": "felsKlein",
-      "feld": [
-        40,
-        28
-      ]
+      "feld": [40, 28]
     },
     {
       "moebel": "felsKlein",
-      "feld": [
-        43,
-        15
-      ]
+      "feld": [43, 15]
     },
     {
       "moebel": "mf4Fels",
-      "feld": [
-        44,
-        28
-      ]
+      "feld": [44, 28]
     },
     {
       "moebel": "scFelsKlein",
-      "feld": [
-        47,
-        15
-      ]
+      "feld": [47, 15]
     },
     {
       "moebel": "mf4Fels",
-      "feld": [
-        48,
-        27
-      ]
+      "feld": [48, 27]
     },
     {
       "moebel": "mf4Fels",
-      "feld": [
-        51,
-        14
-      ]
+      "feld": [51, 14]
     },
     {
       "moebel": "mf4Fels",
-      "feld": [
-        55,
-        14
-      ]
+      "feld": [55, 14]
     },
     {
       "moebel": "st8Granitquader",
-      "feld": [
-        16,
-        16
-      ]
+      "feld": [16, 16]
     },
     {
       "moebel": "st8Granitquader",
-      "feld": [
-        16,
-        21
-      ]
+      "feld": [16, 21]
     },
     {
       "moebel": "st8GranitquaderStapel",
-      "feld": [
-        19,
-        16
-      ]
+      "feld": [19, 16]
     },
     {
       "moebel": "st8Granitquader",
-      "feld": [
-        19,
-        21
-      ]
+      "feld": [19, 21]
     },
     {
       "moebel": "st8Granitquader",
-      "feld": [
-        22,
-        16
-      ]
+      "feld": [22, 16]
     },
     {
       "moebel": "st8Granitquader",
-      "feld": [
-        22,
-        21
-      ]
+      "feld": [22, 21]
     },
     {
       "moebel": "st8GranitquaderStapel",
-      "feld": [
-        25,
-        16
-      ]
+      "feld": [25, 16]
     },
     {
       "moebel": "st8Granitquader",
-      "feld": [
-        25,
-        21
-      ]
+      "feld": [25, 21]
     },
     {
       "moebel": "st8Granitquader",
-      "feld": [
-        28,
-        16
-      ]
+      "feld": [28, 16]
     },
     {
       "moebel": "st8Granitquader",
-      "feld": [
-        28,
-        21
-      ]
+      "feld": [28, 21]
     },
     {
       "moebel": "st5Bohlen",
-      "feld": [
-        32,
-        17
-      ]
+      "feld": [32, 17]
     },
     {
       "moebel": "st5Bohlen",
-      "feld": [
-        33,
-        17
-      ]
+      "feld": [33, 17]
     },
     {
       "moebel": "st5Stollenmund",
-      "feld": [
-        53,
-        25
-      ],
+      "feld": [53, 25],
       "bauteil_ok": true
     },
     {
       "moebel": "ds8Finkenzeichen",
-      "feld": [
-        56,
-        26
-      ],
+      "feld": [56, 26],
       "vorn": true
     },
     {
       "moebel": "st8FeldbahnLaengs",
-      "feld": [
-        54,
-        28
-      ]
+      "feld": [54, 28]
     },
     {
       "moebel": "st8FeldbahnLaengs",
-      "feld": [
-        54,
-        29
-      ]
+      "feld": [54, 29]
     },
     {
       "moebel": "st8FeldbahnLaengs",
-      "feld": [
-        54,
-        30
-      ]
+      "feld": [54, 30]
     },
     {
       "moebel": "st8FeldbahnLaengs",
-      "feld": [
-        54,
-        31
-      ]
+      "feld": [54, 31]
     },
     {
       "moebel": "st8FeldbahnLaengs",
-      "feld": [
-        54,
-        32
-      ]
+      "feld": [54, 32]
     },
     {
       "moebel": "st8FeldbahnLaengs",
-      "feld": [
-        54,
-        33
-      ]
+      "feld": [54, 33]
     },
     {
       "moebel": "st8FeldbahnLaengs",
-      "feld": [
-        54,
-        34
-      ]
+      "feld": [54, 34]
     },
     {
       "moebel": "st8FeldbahnLaengs",
-      "feld": [
-        54,
-        35
-      ]
+      "feld": [54, 35]
     },
     {
       "moebel": "st8FeldbahnLaengs",
-      "feld": [
-        54,
-        36
-      ]
+      "feld": [54, 36]
     },
     {
       "moebel": "st8FeldbahnLaengs",
-      "feld": [
-        54,
-        37
-      ]
+      "feld": [54, 37]
     },
     {
       "moebel": "st8FeldbahnLaengs",
-      "feld": [
-        54,
-        38
-      ]
+      "feld": [54, 38]
     },
     {
       "moebel": "st8FeldbahnLaengs",
-      "feld": [
-        54,
-        39
-      ]
+      "feld": [54, 39]
     },
     {
       "moebel": "st8FeldbahnLaengs",
-      "feld": [
-        54,
-        40
-      ]
+      "feld": [54, 40]
     },
     {
       "moebel": "st8FeldbahnLaengs",
-      "feld": [
-        54,
-        41
-      ]
+      "feld": [54, 41]
     },
     {
       "moebel": "st8LoreLaengs",
-      "feld": [
-        54,
-        33
-      ]
+      "feld": [54, 33]
     },
     {
       "moebel": "st8LoreLaengs",
-      "feld": [
-        54,
-        37
-      ]
+      "feld": [54, 37]
     },
     {
       "moebel": "st8PrellbockFeldbahn",
-      "feld": [
-        54,
-        42
-      ]
+      "feld": [54, 42]
     },
     {
       "moebel": "st5Bagger",
-      "feld": [
-        57,
-        37
-      ]
+      "feld": [57, 37]
     },
     {
       "moebel": "st5Lichtmast",
-      "feld": [
-        58,
-        31
-      ]
+      "feld": [58, 31]
     },
     {
       "moebel": "st8Granitquader",
-      "feld": [
-        50,
-        39
-      ]
+      "feld": [50, 39]
     },
     {
       "moebel": "st8GranitquaderStapel",
-      "feld": [
-        50,
-        43
-      ]
+      "feld": [50, 43]
     },
     {
       "moebel": "st5Schuppen",
-      "feld": [
-        6,
-        31
-      ]
+      "feld": [6, 31]
     },
     {
       "moebel": "sd6Schilf",
-      "feld": [
-        29,
-        31
-      ]
+      "feld": [29, 31]
     },
     {
       "moebel": "sd6Schilf",
-      "feld": [
-        21,
-        32
-      ]
+      "feld": [21, 32]
     },
     {
       "moebel": "sd6Schilf",
-      "feld": [
-        23,
-        31
-      ]
+      "feld": [23, 31]
     },
     {
       "moebel": "sd6Schilf",
-      "feld": [
-        15,
-        35
-      ]
+      "feld": [15, 35]
     },
     {
       "moebel": "mf6Seerose1",
-      "feld": [
-        26,
-        38
-      ]
+      "feld": [26, 38]
     },
     {
       "moebel": "mf6Seerose3",
-      "feld": [
-        27,
-        37
-      ]
+      "feld": [27, 37]
     },
     {
       "moebel": "mf6Seerose1",
-      "feld": [
-        22,
-        36
-      ]
+      "feld": [22, 36]
     },
     {
       "moebel": "mf6Seerose3",
-      "feld": [
-        31,
-        39
-      ]
+      "feld": [31, 39]
     },
     {
       "moebel": "mf6Seerose1",
-      "feld": [
-        29,
-        41
-      ]
+      "feld": [29, 41]
     },
     {
       "moebel": "mf6Seerose3",
-      "feld": [
-        20,
-        40
-      ]
+      "feld": [20, 40]
     },
     {
       "moebel": "st5GraffitiKrone",
-      "feld": [
-        62,
-        25
-      ],
+      "feld": [62, 25],
       "vorn": true
     }
   ],
   "ausloeser": [
     {
       "name": "start",
-      "feld": [
-        1,
-        7
-      ],
+      "feld": [1, 7],
       "eigenschaften": {
         "richtung": "rechts"
       }
     },
     {
       "name": "zurueckIronwood",
-      "feld": [
-        0,
-        7
-      ]
+      "feld": [0, 7]
     },
     {
       "name": "zurueckIronwood",
-      "feld": [
-        0,
-        8
-      ]
+      "feld": [0, 8]
     },
     {
       "name": "stollen",
-      "feld": [
-        54,
-        28
-      ]
+      "feld": [54, 28]
     },
     {
       "name": "finchBauerF",
-      "feld": [
-        56,
-        28
-      ]
+      "feld": [56, 28]
     },
     {
       "name": "graffiti",
-      "feld": [
-        62,
-        28
-      ]
+      "feld": [62, 28]
     },
     {
       "name": "bagger",
-      "feld": [
-        56,
-        40
-      ]
+      "feld": [56, 40]
     }
   ],
   "figuren": [],
@@ -751,10 +465,7 @@
     {
       "name": "hargrove",
       "typ": "statist",
-      "feld": [
-        21,
-        9
-      ],
+      "feld": [21, 9],
       "eigenschaften": {
         "von": "21,9",
         "bis": "21,9",
@@ -765,10 +476,7 @@
     {
       "name": "lena",
       "typ": "statist",
-      "feld": [
-        24,
-        9
-      ],
+      "feld": [24, 9],
       "eigenschaften": {
         "von": "24,9",
         "bis": "24,9",
@@ -779,10 +487,7 @@
     {
       "name": "wanderer",
       "typ": "statist",
-      "feld": [
-        22,
-        9
-      ],
+      "feld": [22, 9],
       "eigenschaften": {
         "von": "22,9",
         "bis": "22,9",
@@ -794,10 +499,7 @@
     {
       "name": "kinder",
       "typ": "statist",
-      "feld": [
-        50,
-        30
-      ],
+      "feld": [50, 30],
       "eigenschaften": {
         "von": "50,30",
         "bis": "50,30",
@@ -808,10 +510,7 @@
     {
       "name": "kraehe",
       "typ": "tier",
-      "feld": [
-        34,
-        4
-      ],
+      "feld": [34, 4],
       "eigenschaften": {
         "von": "34,4",
         "bis": "34,4",
@@ -821,10 +520,7 @@
     {
       "name": "steinmetz",
       "typ": "statist",
-      "feld": [
-        20,
-        19
-      ],
+      "feld": [20, 19],
       "eigenschaften": {
         "von": "20,19",
         "bis": "20,19",
@@ -836,10 +532,7 @@
     {
       "name": "fotografin",
       "typ": "statist",
-      "feld": [
-        38,
-        19
-      ],
+      "feld": [38, 19],
       "eigenschaften": {
         "von": "38,19",
         "bis": "38,19",
@@ -851,10 +544,7 @@
     {
       "name": "fledermaeuse",
       "typ": "tier",
-      "feld": [
-        35,
-        15
-      ],
+      "feld": [35, 15],
       "eigenschaften": {
         "von": "35,15",
         "bis": "45,15",
@@ -865,10 +555,7 @@
     {
       "name": "fuchs",
       "typ": "tier",
-      "feld": [
-        60,
-        45
-      ],
+      "feld": [60, 45],
       "eigenschaften": {
         "von": "60,45",
         "bis": "64,45",
@@ -878,10 +565,7 @@
     {
       "name": "hasen",
       "typ": "tier",
-      "feld": [
-        8,
-        45
-      ],
+      "feld": [8, 45],
       "eigenschaften": {
         "von": "8,45",
         "bis": "14,45",
@@ -891,10 +575,7 @@
     {
       "name": "falke",
       "typ": "tier",
-      "feld": [
-        40,
-        5
-      ],
+      "feld": [40, 5],
       "eigenschaften": {
         "von": "40,5",
         "bis": "56,5",
@@ -904,10 +585,7 @@
     {
       "name": "eidechse",
       "typ": "tier",
-      "feld": [
-        44,
-        46
-      ],
+      "feld": [44, 46],
       "eigenschaften": {
         "von": "44,46",
         "bis": "48,46",

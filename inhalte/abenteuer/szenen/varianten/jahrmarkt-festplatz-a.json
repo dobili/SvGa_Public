@@ -1,8 +1,7 @@
 {
   "karte": "jahrmarkt.festplatz",
-  "variante": "c",
   "art": "aussen",
-  "beschreibung": "Variante C, reich und am Abend: Links das Riesenrad und das Karussell, in der Mitte die Bühne mit Gerüst, Lautsprechern und zwei Tribünen. Davor der Schachautomat neben dem Zuckerwattestand. Drei Buden, Süßigkeiten, Limonade, Hot Dogs und Eiswagen, zwei Lichterketten zwischen Holzmasten über den Gängen, drei Flutlichtmasten. Am Eingang der Torbogen „Summer Fair“.",
+  "beschreibung": "Sommerjahrmarkt auf dem Feld hinter der Raststätte (Variante A, nach dem Ortsdokument): Vom Südrand kommt der Erdweg auf einen großen Festplatz aus festgetretener Erde. Oben in der Mitte das Riesenrad, links das Karussell, rechts die Bühne für Country-Bands mit Lautsprechern und einer Holztribüne. In der Mitte der Schachautomat „Der Schachtürke“. Unten eine Reihe Buden: Losbude und Dosenwerfen, Süßigkeiten, Limonade, Hot Dogs und der Eiswagen. Flutlichtmasten an den Ecken, Lichterketten zwischen Holzmasten über den Gängen, ringsum Wiese mit Bäumen. Am Eingang der Torbogen „Summer Fair“.",
   "boden": "gras",
   "wandart": "gras",
   "boeden": {
@@ -55,74 +54,70 @@
     },
     {
       "moebel": "n6Riesenrad",
-      "feld": [4, 4]
+      "feld": [18, 4]
+    },
+    {
+      "moebel": "n6Schachautomat",
+      "feld": [24, 14]
     },
     {
       "moebel": "n6Karussell",
-      "feld": [13, 6]
+      "feld": [4, 7]
     },
     {
       "moebel": "n6Buehne",
-      "feld": [26, 5],
+      "feld": [32, 5],
       "bauteil_ok": true
     },
     {
       "moebel": "n6Gestell",
-      "feld": [26, 0],
+      "feld": [32, 0],
       "vorn": true,
       "bauteil_ok": true
     },
     {
       "moebel": "n6Lautsprecher",
-      "feld": [24, 8]
+      "feld": [30, 7]
     },
     {
       "moebel": "n6Lautsprecher",
-      "feld": [35, 8]
+      "feld": [41, 7]
     },
     {
       "moebel": "n6Tribuene",
-      "feld": [26, 13]
-    },
-    {
-      "moebel": "n6Tribuene",
-      "feld": [31, 13]
-    },
-    {
-      "moebel": "n6Schachautomat",
-      "feld": [20, 14]
-    },
-    {
-      "moebel": "n6Zuckerwatte",
-      "feld": [23, 14]
+      "feld": [34, 13]
     },
     {
       "moebel": "n6BudeLose",
-      "feld": [4, 18]
+      "feld": [5, 18]
     },
     {
       "moebel": "n6BudeDosen",
-      "feld": [9, 18]
+      "feld": [11, 18]
     },
     {
-      "moebel": "n6Marktstand",
-      "feld": [38, 10]
-    },
-    {
-      "moebel": "n6Suessigkeiten",
-      "feld": [15, 21]
+      "moebel": "n6Zuckerwatte",
+      "feld": [17, 21]
     },
     {
       "moebel": "n6Limonade",
-      "feld": [19, 20]
+      "feld": [21, 20]
     },
     {
       "moebel": "n6HotDog",
-      "feld": [27, 20]
+      "feld": [29, 20]
     },
     {
       "moebel": "n6Eiswagen",
-      "feld": [35, 20]
+      "feld": [37, 20]
+    },
+    {
+      "moebel": "n6Flutlicht",
+      "feld": [3, 3]
+    },
+    {
+      "moebel": "n6Flutlicht",
+      "feld": [43, 3]
     },
     {
       "moebel": "n6Flutlicht",
@@ -130,151 +125,223 @@
     },
     {
       "moebel": "n6Flutlicht",
-      "feld": [42, 3]
-    },
-    {
-      "moebel": "n6Flutlicht",
-      "feld": [44, 12]
+      "feld": [44, 23]
     },
     {
       "moebel": "n6Lichtermast",
-      "feld": [3, 15]
+      "feld": [8, 14]
     },
     {
       "moebel": "n6Lichtermast",
-      "feld": [8, 15]
+      "feld": [13, 14]
     },
     {
       "moebel": "n6Lichtermast",
-      "feld": [13, 15]
+      "feld": [18, 14]
     },
     {
       "moebel": "n6Lichtermast",
-      "feld": [18, 15]
+      "feld": [23, 14]
     },
     {
       "moebel": "n6Lichterkette",
-      "feld": [4, 15],
+      "feld": [9, 14],
       "vorn": true,
       "versatz": [0, 1]
     },
     {
       "moebel": "n6Lichterkette",
-      "feld": [9, 15],
+      "feld": [14, 14],
       "vorn": true,
       "versatz": [0, 1]
     },
     {
       "moebel": "n6Lichterkette",
-      "feld": [14, 15],
+      "feld": [19, 14],
       "vorn": true,
       "versatz": [0, 1]
     },
     {
       "moebel": "n6Lichtermast",
-      "feld": [26, 16]
+      "feld": [27, 15]
     },
     {
       "moebel": "n6Lichtermast",
-      "feld": [31, 16]
-    },
-    {
-      "moebel": "n6Lichtermast",
-      "feld": [36, 16]
-    },
-    {
-      "moebel": "n6Lichtermast",
-      "feld": [41, 16]
+      "feld": [32, 15]
     },
     {
       "moebel": "n6Lichterkette",
-      "feld": [27, 16],
+      "feld": [28, 15],
       "vorn": true,
       "versatz": [0, 1]
     },
     {
-      "moebel": "n6Lichterkette",
-      "feld": [32, 16],
-      "vorn": true,
-      "versatz": [0, 1]
+      "moebel": "wg4Busch",
+      "feld": [37, 29]
     },
     {
-      "moebel": "n6Lichterkette",
-      "feld": [37, 16],
-      "vorn": true,
-      "versatz": [0, 1]
+      "moebel": "mf4Strassenbaum",
+      "feld": [8, 32]
     },
     {
-      "moebel": "wg4Wildblumen",
+      "moebel": "mf4Strassenbaum",
+      "feld": [14, 29]
+    },
+    {
+      "moebel": "mf4Strassenbaum",
+      "feld": [2, 32]
+    },
+    {
+      "moebel": "wg4Laubbaum",
+      "feld": [29, 31]
+    },
+    {
+      "moebel": "wg4Busch",
+      "feld": [21, 29]
+    },
+    {
+      "moebel": "wg4Busch",
+      "feld": [44, 30]
+    },
+    {
+      "moebel": "wg4Busch",
+      "feld": [26, 32]
+    },
+    {
+      "moebel": "wg4Busch",
+      "feld": [13, 33]
+    },
+    {
+      "moebel": "wg4Busch",
+      "feld": [36, 33]
+    },
+    {
+      "moebel": "wg4Busch",
+      "feld": [6, 29]
+    },
+    {
+      "moebel": "wg4Busch",
+      "feld": [18, 29]
+    },
+    {
+      "moebel": "wg4BlumeGelb",
+      "feld": [45, 21]
+    },
+    {
+      "moebel": "wg4Gras",
+      "feld": [15, 2]
+    },
+    {
+      "moebel": "wg4BlumeGelb",
+      "feld": [10, 3]
+    },
+    {
+      "moebel": "wg4Gras",
+      "feld": [1, 3]
+    },
+    {
+      "moebel": "wg4Gras",
+      "feld": [46, 33]
+    },
+    {
+      "moebel": "wg4BlumeGelb",
+      "feld": [2, 11]
+    },
+    {
+      "moebel": "wg4Gras",
+      "feld": [39, 32]
+    },
+    {
+      "moebel": "wg4Gras",
+      "feld": [19, 1]
+    },
+    {
+      "moebel": "wg4BlumeGelb",
+      "feld": [3, 2]
+    },
+    {
+      "moebel": "wg4Gras",
+      "feld": [2, 1]
+    },
+    {
+      "moebel": "wg4Gras",
+      "feld": [46, 33]
+    },
+    {
+      "moebel": "wg4Gras",
+      "feld": [35, 3]
+    },
+    {
+      "moebel": "wg4BlumeGelb",
+      "feld": [35, 30]
+    },
+    {
+      "moebel": "wg4Gras",
+      "feld": [32, 1]
+    },
+    {
+      "moebel": "wg4Gras",
+      "feld": [21, 32]
+    },
+    {
+      "moebel": "wg4Gras",
+      "feld": [35, 3]
+    },
+    {
+      "moebel": "wg4Gras",
+      "feld": [40, 32]
+    },
+    {
+      "moebel": "wg4BlumeGelb",
+      "feld": [38, 2]
+    },
+    {
+      "moebel": "wg4Gras",
+      "feld": [8, 1]
+    },
+    {
+      "moebel": "wg4BlumeGelb",
+      "feld": [22, 32]
+    },
+    {
+      "moebel": "wg4BlumeGelb",
+      "feld": [14, 1]
+    },
+    {
+      "moebel": "wg4BlumeGelb",
       "feld": [41, 33]
     },
     {
-      "moebel": "wg4Busch",
-      "feld": [39, 29]
+      "moebel": "wg4BlumeGelb",
+      "feld": [46, 20]
     },
     {
-      "moebel": "wg4Wildblumen",
-      "feld": [17, 33]
+      "moebel": "wg4BlumeGelb",
+      "feld": [41, 2]
     },
     {
-      "moebel": "wg4Wildblumen",
-      "feld": [35, 33]
+      "moebel": "wg4Gras",
+      "feld": [39, 1]
     },
     {
-      "moebel": "wg4Busch",
+      "moebel": "wg4BlumeGelb",
+      "feld": [10, 30]
+    },
+    {
+      "moebel": "wg4BlumeGelb",
+      "feld": [33, 3]
+    },
+    {
+      "moebel": "wg4Gras",
       "feld": [43, 29]
     },
     {
-      "moebel": "wg4Laubbaum",
-      "feld": [2, 31]
+      "moebel": "wg4Gras",
+      "feld": [45, 6]
     },
     {
-      "moebel": "wg4Busch",
-      "feld": [9, 32]
-    },
-    {
-      "moebel": "wg4Wildblumen",
-      "feld": [41, 31]
-    },
-    {
-      "moebel": "wg4Laubbaum",
-      "feld": [19, 29]
-    },
-    {
-      "moebel": "wg4Busch",
-      "feld": [27, 30]
-    },
-    {
-      "moebel": "wg4Wildblumen",
-      "feld": [8, 29]
-    },
-    {
-      "moebel": "wg4Busch",
-      "feld": [5, 29]
-    },
-    {
-      "moebel": "wg4Busch",
-      "feld": [13, 32]
-    },
-    {
-      "moebel": "mf4Strassenbaum",
-      "feld": [25, 32]
-    },
-    {
-      "moebel": "wg4Laubbaum",
-      "feld": [30, 31]
-    },
-    {
-      "moebel": "wg4Wildblumen",
-      "feld": [20, 33]
-    },
-    {
-      "moebel": "mf4Strassenbaum",
-      "feld": [13, 29]
-    },
-    {
-      "moebel": "wg4Wildblumen",
-      "feld": [45, 31]
+      "moebel": "wg4BlumeGelb",
+      "feld": [46, 15]
     }
   ],
   "ausloeser": [
@@ -295,21 +362,21 @@
     },
     {
       "name": "schachautomat",
-      "feld": [20, 17]
+      "feld": [24, 17]
     },
     {
       "name": "riesenrad",
-      "feld": [7, 14]
+      "feld": [21, 14]
     },
     {
       "name": "losbude",
-      "feld": [5, 22]
+      "feld": [6, 22]
     }
   ],
   "figuren": [
     {
       "name": "dolores",
-      "feld": [22, 16]
+      "feld": [26, 16]
     }
   ],
   "belebung": [
@@ -321,7 +388,7 @@
         "tun": "Juno fotografiert alles",
         "wann": "tag",
         "von": "16,24",
-        "bis": "30,26"
+        "bis": "28,24"
       }
     },
     {
@@ -338,11 +405,11 @@
     {
       "name": "band",
       "typ": "statist",
-      "feld": [36, 8],
+      "feld": [36, 5],
       "eigenschaften": {
         "tun": "eine Country-Band spielt",
         "wann": "abend",
-        "von": "34,8",
+        "von": "34,11",
         "bis": "40,8"
       }
     },
@@ -353,7 +420,7 @@
       "eigenschaften": {
         "tun": "schlendert mit Zuckerwatte über den Platz",
         "wann": "tag",
-        "von": "25,14",
+        "von": "26,14",
         "bis": "38,18",
         "sagt": "statist.jahrmarkt.festplatz.besucher"
       }
@@ -365,7 +432,7 @@
       "eigenschaften": {
         "tun": "ölt die Pferde des Karussells",
         "wann": "tag",
-        "von": "10,14",
+        "von": "10,13",
         "bis": "16,13",
         "sagt": "statist.jahrmarkt.festplatz.karussellbetreiber"
       }
@@ -465,5 +532,6 @@
     "rustikal",
     "landhaus"
   ],
-  "datei": "karten/varianten/jahrmarkt-festplatz-c.json"
+  "datei": "karten/varianten/jahrmarkt-festplatz-a.json",
+  "variante": "a"
 }

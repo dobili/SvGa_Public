@@ -1262,6 +1262,66 @@ Boot; Pappelallee. Auslöser: `tafel` (15, 50), `fundZahnrad` (12, 43), `meilens
 | bruecke  | Geländer gestrichen | nach Corwins Quest: Farbeimer und Leiter weg, Geländer frisch             |
 | bruecke  | Winter              | Akt 3: Schnee auf den Weiden, die Klapptische sind weggeräumt             |
 
+## Gutachten Runde 8: Antworten (niedrig-1, 10.11.2026)
+
+Gutachten in `docs/spiel/auftraege/gutachten/`. Nummern beziehen sich auf die Befunde dort.
+„Technik“ heißt: Der Punkt betrifft alle Karten und wird zentral gelöst (Tierbilder, Laternenhöhe,
+Fußmatte, Stufendiagonalen der Wege); er wird hier nicht einzeln umgebaut.
+
+**Lockport außen** (Commit „Lockport außen nach dem Gutachten“):
+
+- Behoben: 1 (Becken öffnet sich nach Westen zum Fluss), 2 (Frachtkahn längs am Kai), 6, 7, 9
+  (Stemmtore mit GESPERRT-Böcken statt Zaunpfählen und Schwenkbalken), 10, 11, 13, 23 (Rettungsring,
+  Steinchen, Pfähle weg), 12 (Nordkai durchgehend gepflastert), 14 (Ladung am Kai), 15, 16, 36–38
+  (Holzhäuser in vier Farben statt siebenmal Flachdach und drei Läden), 21 (Wäscheleinen), 24, 25
+  (Werft mit Bootsschuppen und Holzstapel), 30 (Gassen gepflastert), 31–35 (echter Dorfplatz mit
+  Brunnen, Linde und Bank), 39, 40 (Gärten, mehr und gemischte Bäume).
+- Technik: 5 (Hühner im Becken sind das Entenbild), 20 (Laternenhöhe), 19 und 33 (Verdeckung durch
+  zu hohe Laterne und Baumkrone).
+- Fehlendes Bild: 8 (verschiedene Wasserstände vor und hinter dem Tor gibt es nicht als Kachel),
+  3 und 4 (Tau vom Boot zum Poller), 26 (Ladenschild „ANKER TAUE“ für den Schiffsausrüster, als
+  Bildwunsch gemeldet), 28 und 29 (das Gasthausbild hat Tür und Fenster fest im Anbau).
+- Zur Nachprüfung in der neuen Fassung: 17, 18, 22, 27, 41. Die Hintergasse führt mit Absicht an
+  beiden Rändern hinaus: Sie ist der Weg aus dem Dorf (Übergänge nach Westen und Osten).
+
+**Gasthaus „Zur Schleuse“** (Commit „Gasthaus Lockport nach dem Gutachten“):
+
+- Behoben: 1, 2 (Prallbretter als Kugelfang, Ofen aus der Schusslinie), 4 (ein Kegelsatz), 8
+  (Tafel auf Wandhöhe), 18 (Küchentür hinter der Theke), 19, 23, 24 (fünf Tische, frei von der
+  Südwand), 20 (Gläser auf drei Tischen), 15, 21 (Gäste neben, nicht in den Stühlen), 25 (Pflanzen in
+  die Ecken), 32 (Garderobe, eigenes Bild).
+- Bildwunsch gestellt: 6 (Bande mit der Leiste oben in der Kachel; die alte Leiste liegt am
+  unteren Kachelrand, darum scheint sie neben der Bahn), 9 (Kugelregal von der Seite).
+- Technik: 29 (Fußmatte). Perspektive: 7, 15 (alle Figuren stehen frontal, es gibt keine
+  Schiebe- oder Sitzhaltung), 30 (Türbild).
+- Fehlendes Bild: 3, 5 (Bahnbelag und Kegel im Maßstab), 14 (Zapfhahn, Kasse), 16 (Leitung).
+- Ansichtssache: 22, 27, 28 (Bildstil der Möbel aus dem Paket, nicht der Karte).
+
+**Bahndamm** (Commit „Bahndamm nach dem Gutachten“):
+
+- Behoben: 1–3 (Gleis mitten auf Schotterkrone, Böschung nach Süden; die Nordböschung reicht
+  als `hang_bis_rand` bis an den Kartenrand und ist darum kaum zu sehen), 4, 5, 24 (Buschreihe und
+  Steine aufgelockert), 6 (Bahnsteig mit Laternen), 10, 11 (Viehdurchlass zur Kuhweide), 12, 13
+  (Güterwagen auf Abstellgleis mit Prellbock), 16 (dichter Birkenwald), 18, 19, 20 (Stellwerk
+  nördlich am Gleis mit Blick auf die Strecke), 25–29 (Kleingarten mit Kürbis, Sonnenblumen, Tor),
+  31 (Weg zur Bank am Fluss), 33–35 (Lagerzaun und -halle, Plakatwand von Perfect Move), 38
+  (Wegweiser, Laternen am Bahnsteig).
+- Technik: 13, 15, 17, 30, 37 (Tierbilder und ihre Stellung), 36 (Stufendiagonalen).
+- Perspektive: 7 (Bänke werden immer von vorn gezeigt; auf dem Bahnsteig stehen sie mit dem Rücken
+  zur Krone, damit Wartende zum Zug schauen), 22 (keine Figur mit Rad), 28 (keine Gießkanne in der
+  Hand).
+- Gewollt: 32 (der Fluss läuft am Südrand aus der Karte; das Gegenufer liegt außerhalb).
+
+**Zedernwald** (Commit „Zedernwald nach dem Gutachten“):
+
+- Behoben: 1, 2 (Bach zwei Kacheln schmal und gewunden), 3, 11 (Trittsteine, Wegweiser und Tafel an
+  der Kreuzung), 4, 17, 18 (Waldboden, Farne, Büsche, Pilzblock aufgelöst), 23 (zweites Zelt,
+  Fahne), 24, 25 (Leif mit drei Kindern am Weg), 26 (Wanderpaar zu zweit).
+- Technik: 9, 21, 28 (Tierbilder), 10 (Stufendiagonalen).
+- Fehlendes Bild: 15 (eine erkennbare Zeder gibt es im Paket nicht; Wunsch an den Haupt-Chat), 8
+  (Grenzstein), 14, 20 (hohler und angenagter Stamm), 27 (Mikrofon).
+- Zur Nachprüfung: 5, 6, 7, 12, 13, 16, 19, 22.
+
 **Zustände Weg 3 (gebaut):** Kanalweg `graffiti` (`nadelIronwood >= 1`): Noors Wand ist fertig bemalt,
 Leiter und Sprayerin sind weg. Eisenbrücke `ohne-tische` (`nadelIronwood >= 1`): Die Brückenbauern haben
 die Klapptische weggeräumt, Corwin ist mit dem Streichen fertig. Der Winter beider Karten kommt mit der

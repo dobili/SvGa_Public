@@ -44,14 +44,14 @@ def absperrbock_breit() -> Image.Image:
 
 
 def kegelbande() -> Image.Image:
-    """Bande der Kegelbahn (16 × 16, Stück zum Aneinanderreihen): niedrige Holzleiste unten in der
-    Kachel, trennt die Bahn vom Gastraum (Rückmeldung des Autors, Runde 8)."""
+    """Bande der Kegelbahn (16 × 16, Stück zum Aneinanderreihen): niedrige Holzleiste oben in der
+    Kachel, direkt an der Bahn darüber (Gutachten Runde 8: die Leiste lag eine halbe Kachel daneben)."""
     bild = Image.new("RGBA", (K, K))
     z = ImageDraw.Draw(bild)
-    z.rectangle((0, 8, 15, 13), fill=RAHMEN)
-    z.rectangle((0, 9, 15, 10), fill=HOLZ_HELL)
-    z.rectangle((0, 11, 15, 12), fill=HOLZ_DUNKEL)
-    z.rectangle((0, 14, 15, 15), fill=(58, 58, 80, 90))
+    z.rectangle((0, 0, 15, 5), fill=RAHMEN)
+    z.rectangle((0, 1, 15, 2), fill=HOLZ_HELL)
+    z.rectangle((0, 3, 15, 4), fill=HOLZ_DUNKEL)
+    z.rectangle((0, 6, 15, 7), fill=(58, 58, 80, 90))
     return bild
 
 

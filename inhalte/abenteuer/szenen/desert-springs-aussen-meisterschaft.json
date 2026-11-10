@@ -2,7 +2,7 @@
   "karte": "desertSprings.aussen",
   "datei": "karten/desert-springs-aussen-meisterschaft.json",
   "art": "aussen",
-  "beschreibung": "Zustand: in Akt 4 (endeAkt3Gesehen) stehen drei Autos von Meisterschaftsfahrern auf dem Hof vor dem Motel und am Diner hängt das Banner der Meisterschaft, weil Dot die Zimmer an Fahrer zur Meisterschaft vermietet (13_Wegenetz, Akt 4). Sonst wie die Grundkarte. Desert Springs an der Old Mother Road, am Rand des roten Canyons. Oben die Bahnlinie mit einem langen Bahnsteig, daran der alte Bahnhof mit Veranda (darin das Antiquariat von Mr. Okoro); westlich der Wasserturm und das Diner, östlich die große Tankstelle mit Waschstraße. Die Straße kommt von Westen (Highway), hat eine Mittellinie und biegt in einer Kurve nach Süden zum Hof ab. Südlich der Straße das Motel mit Leuchtschild, die Garage von Tomás (Club), Wohncontainer, Wohnwagen, eine Hütte und der Gemischtwarenladen; davor ein heller Hof mit Bänken. Ringsum roter Sand, Felsen, Saguaros und blühende Kakteen; nach Osten der Pfad zum Canyon.",
+  "beschreibung": "Zustand: in Akt 4 (endeAkt3Gesehen) stehen drei Autos von Meisterschaftsfahrern auf dem Hof vor dem Motel und über dem Hof hängt das Banner der Meisterschaft zwischen zwei Laternen, weil Dot die Zimmer an Fahrer zur Meisterschaft vermietet (13_Wegenetz, Akt 4). Sonst wie die Grundkarte. Desert Springs an der Old Mother Road, am Rand des roten Canyons. Oben die Bahnlinie mit einem langen Bahnsteig, daran der alte Bahnhof mit Veranda (darin das Antiquariat von Mr. Okoro); westlich der Wasserturm und das Diner, östlich die große Tankstelle mit Waschstraße. Die Straße kommt von Westen (Highway), hat eine Mittellinie und biegt nach Süden zum Hof ab; der Gehweg läuft schräg um die Innenecke weiter, die Mittellinie bis an die Ecke. Südlich der Straße das Motel mit Leuchtschild, die Garage von Tomás (Club), zwei Wohncontainer, Wohnwagen, eine Brettershütte, eine Hütte und der Gemischtwarenladen; davor ein heller Hof mit Bänken. Ringsum roter Sand, Felsen, Saguaros und blühende Kakteen; nach Osten der Pfad zum Canyon.",
   "wand": "felsRot",
   "wandart": "sandRot",
   "boden": "sandRot",
@@ -33,17 +33,17 @@
     "#..........................................................#",
     "#pppppppppppppppppppppppppppppppppppppppppppppppppppppppppp#",
     "#pppppppppppppppppppppppppppppppppppppppppppppppppppppppppp#",
-    "sssssssssssssssssssssssssssssssssssssssssssspp.............#",
-    "mmmmmmmmmmmmmmmmmmmmmmmmmmmmmmmmmmmmmmmmmssssp.............#",
-    "ssssssssssssssssssssssssssssssssssssssssssssss.............#",
-    "#ppppppppppppppppppppppppppppppppppppppppsssss.............#",
-    "#.........................................ssss.............#",
-    "#..........................................sns.............#",
-    "#..........................................sns.............#",
-    "#..........................................sns.............#",
-    "#..........................................sns.............#",
-    "#..........................................sns.............#",
-    "#..........................................sns.............#",
+    "ssssssssssssssssssssssssssssssssssssssssssssppp............#",
+    "mmmmmmmmmmmmmmmmmmmmmmmmmmmmmmmmmmmmmmmmmmmsspp............#",
+    "ssssssssssssssssssssssssssssssssssssssssssssssp............#",
+    "#ppppppppppppppppppppppppppppppppppppppppsssnsp............#",
+    "#........................................ppsns.............#",
+    "#.........................................psns.............#",
+    "#.........................................psns.............#",
+    "#.........................................psns.............#",
+    "#.........................................psns.............#",
+    "#.........................................psns.............#",
+    "#.........................................psns.............#",
     "#..qqqqqqqqqqqqqqqqqqqqqqqqqqqqqqqqqqqqqqqqqqq.............#",
     "#..qqqqqqqqqqqqqqqqqqqqqqqqqqqqqqqqqqqqqqqqqqq.............#",
     "#..qqqqqqqqqqqqqqqqqqqqqqqqqqqqqqqqqqqqqqqqqqqppppppppppppp#",
@@ -658,7 +658,7 @@
     },
     {
       "moebel": "iw5AutoB",
-      "feld": [35, 13],
+      "feld": [41, 11],
       "id": "bucksWagen"
     },
     {
@@ -677,7 +677,7 @@
     },
     {
       "moebel": "mf2Blumenbeet",
-      "feld": [41, 27]
+      "feld": [10, 34]
     },
     {
       "moebel": "dsReifen",
@@ -708,7 +708,7 @@
       "feld": [46, 22]
     },
     {
-      "moebel": "ds8Containerhaus",
+      "moebel": "by9HuetteKrebs",
       "feld": [54, 26]
     },
     {
@@ -818,15 +818,26 @@
     },
     {
       "moebel": "wsgAutoAb14",
-      "feld": [12, 29]
+      "feld": [8, 29]
     },
     {
       "moebel": "wsgAutoAb1",
       "feld": [26, 29]
     },
     {
+      "moebel": "mf4Laterne",
+      "feld": [29, 27],
+      "vorn": true
+    },
+    {
+      "moebel": "mf4Laterne",
+      "feld": [36, 27],
+      "vorn": true
+    },
+    {
       "moebel": "ca7Banner",
-      "feld": [30, 29]
+      "feld": [30, 27],
+      "vorn": true
     }
   ],
   "ausloeser": [
@@ -1088,6 +1099,6 @@
     }
   ],
   "zustand": ["neu", "gebraucht", "alt"],
-  "stil": ["natur", "einfach", "industrie", "klassisch", "modern", "laendlich"],
+  "stil": ["natur", "einfach", "industrie", "klassisch", "modern", "laendlich", "rustikal"],
   "zustand_der_karte": "endeAkt3Gesehen"
 }

@@ -55,7 +55,20 @@
       "art": "gebaeude",
       "zustand": "gebraucht",
       "blick": "unten",
-      "stil": "modern"
+      "stil": "modern",
+      "maske": [
+        "#################",
+        "#################",
+        "#################",
+        "#################",
+        "#################",
+        "#################",
+        ".................",
+        "......######.....",
+        "......######.....",
+        "......######.....",
+        "................."
+      ]
     },
     "ds6Wohnwagen": {
       "quelle": "modern-exteriors/Modern_Exteriors_16x16/ME_Theme_Sorter_16x16/11_Camping_Singles_16x16/ME_Singles_Camping_16x16_Mobile_House_Small_5.png",

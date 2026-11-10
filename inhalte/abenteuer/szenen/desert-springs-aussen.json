@@ -2,7 +2,7 @@
   "karte": "desertSprings.aussen",
   "datei": "karten/desert-springs-aussen.json",
   "art": "aussen",
-  "beschreibung": "Desert Springs an der Old Mother Road, am Rand des roten Canyons. Oben die Bahnlinie mit einem langen Bahnsteig, daran der alte Bahnhof mit Veranda (darin das Antiquariat von Mr. Okoro); westlich der Wasserturm und das Diner, östlich die große Tankstelle mit Waschstraße. Die Straße kommt von Westen (Highway), hat eine Mittellinie und biegt in einer Kurve nach Süden zum Hof ab. Südlich der Straße das Motel mit Leuchtschild, die Garage von Tomás (Club), Wohncontainer, Wohnwagen, eine Hütte und der Gemischtwarenladen; davor ein heller Hof mit Bänken. Ringsum roter Sand, Felsen, Saguaros und blühende Kakteen; nach Osten der Pfad zum Canyon.",
+  "beschreibung": "Desert Springs an der Old Mother Road, am Rand des roten Canyons. Oben die Bahnlinie mit einem langen Bahnsteig, daran der alte Bahnhof mit Veranda (darin das Antiquariat von Mr. Okoro); westlich der Wasserturm und das Diner, östlich die große Tankstelle mit Waschstraße. Die Straße kommt von Westen (Highway), hat eine Mittellinie und biegt nach Süden zum Hof ab; der Gehweg läuft schräg um die Innenecke weiter, die Mittellinie bis an die Ecke. Südlich der Straße das Motel mit Leuchtschild, die Garage von Tomás (Club), zwei Wohncontainer, Wohnwagen, eine Brettershütte, eine Hütte und der Gemischtwarenladen; davor ein heller Hof mit Bänken. Ringsum roter Sand, Felsen, Saguaros und blühende Kakteen; nach Osten der Pfad zum Canyon.",
   "wand": "felsRot",
   "wandart": "sandRot",
   "boden": "sandRot",
@@ -33,17 +33,17 @@
     "#..........................................................#",
     "#pppppppppppppppppppppppppppppppppppppppppppppppppppppppppp#",
     "#pppppppppppppppppppppppppppppppppppppppppppppppppppppppppp#",
-    "sssssssssssssssssssssssssssssssssssssssssssspp.............#",
-    "mmmmmmmmmmmmmmmmmmmmmmmmmmmmmmmmmmmmmmmmmssssp.............#",
-    "ssssssssssssssssssssssssssssssssssssssssssssss.............#",
-    "#ppppppppppppppppppppppppppppppppppppppppsssss.............#",
-    "#.........................................ssss.............#",
-    "#..........................................sns.............#",
-    "#..........................................sns.............#",
-    "#..........................................sns.............#",
-    "#..........................................sns.............#",
-    "#..........................................sns.............#",
-    "#..........................................sns.............#",
+    "ssssssssssssssssssssssssssssssssssssssssssssppp............#",
+    "mmmmmmmmmmmmmmmmmmmmmmmmmmmmmmmmmmmmmmmmmmmsspp............#",
+    "ssssssssssssssssssssssssssssssssssssssssssssssp............#",
+    "#ppppppppppppppppppppppppppppppppppppppppsssnsp............#",
+    "#........................................ppsns.............#",
+    "#.........................................psns.............#",
+    "#.........................................psns.............#",
+    "#.........................................psns.............#",
+    "#.........................................psns.............#",
+    "#.........................................psns.............#",
+    "#.........................................psns.............#",
     "#..qqqqqqqqqqqqqqqqqqqqqqqqqqqqqqqqqqqqqqqqqqq.............#",
     "#..qqqqqqqqqqqqqqqqqqqqqqqqqqqqqqqqqqqqqqqqqqq.............#",
     "#..qqqqqqqqqqqqqqqqqqqqqqqqqqqqqqqqqqqqqqqqqqqppppppppppppp#",
@@ -658,7 +658,7 @@
     },
     {
       "moebel": "iw5AutoB",
-      "feld": [35, 13],
+      "feld": [41, 11],
       "id": "bucksWagen"
     },
     {
@@ -677,7 +677,7 @@
     },
     {
       "moebel": "mf2Blumenbeet",
-      "feld": [41, 27]
+      "feld": [10, 34]
     },
     {
       "moebel": "dsReifen",
@@ -708,7 +708,7 @@
       "feld": [46, 22]
     },
     {
-      "moebel": "ds8Containerhaus",
+      "moebel": "by9HuetteKrebs",
       "feld": [54, 26]
     },
     {
@@ -1072,5 +1072,5 @@
     }
   ],
   "zustand": ["neu", "gebraucht", "alt"],
-  "stil": ["natur", "einfach", "industrie", "klassisch", "modern", "laendlich"]
+  "stil": ["natur", "einfach", "industrie", "klassisch", "modern", "laendlich", "rustikal"]
 }

@@ -38,306 +38,507 @@
   "objekte": [
     {
       "moebel": "n10PrellbockHolz",
-      "feld": [19, 5]
+      "feld": [
+        19,
+        5
+      ]
     },
     {
       "moebel": "st5GleisSenkrecht",
-      "feld": [19, 7],
+      "feld": [
+        19,
+        7
+      ],
       "bauteil_ok": true
     },
     {
       "moebel": "st5GleisSenkrecht",
-      "feld": [19, 8],
+      "feld": [
+        19,
+        8
+      ],
       "bauteil_ok": true
     },
     {
       "moebel": "st5GleisSenkrecht",
-      "feld": [19, 9],
+      "feld": [
+        19,
+        9
+      ],
       "bauteil_ok": true
     },
     {
       "moebel": "st5GleisSenkrecht",
-      "feld": [19, 10],
+      "feld": [
+        19,
+        10
+      ],
       "bauteil_ok": true
     },
     {
       "moebel": "st5GleisSenkrecht",
-      "feld": [19, 11],
+      "feld": [
+        19,
+        11
+      ],
       "bauteil_ok": true
     },
     {
       "moebel": "st5GleisSenkrecht",
-      "feld": [19, 12],
+      "feld": [
+        19,
+        12
+      ],
       "bauteil_ok": true
     },
     {
       "moebel": "st5GleisSenkrecht",
-      "feld": [19, 13],
+      "feld": [
+        19,
+        13
+      ],
       "bauteil_ok": true
     },
     {
       "moebel": "st5GleisSenkrecht",
-      "feld": [19, 14],
+      "feld": [
+        19,
+        14
+      ],
       "bauteil_ok": true
     },
     {
       "moebel": "st5GleisSenkrecht",
-      "feld": [19, 15],
+      "feld": [
+        19,
+        15
+      ],
       "bauteil_ok": true
     },
     {
       "moebel": "st5GleisSenkrecht",
-      "feld": [19, 16],
+      "feld": [
+        19,
+        16
+      ],
       "bauteil_ok": true
     },
     {
       "moebel": "st5GleisSenkrecht",
-      "feld": [19, 17],
+      "feld": [
+        19,
+        17
+      ],
       "bauteil_ok": true
     },
     {
       "moebel": "st5GleisSenkrecht",
-      "feld": [19, 18],
+      "feld": [
+        19,
+        18
+      ],
       "bauteil_ok": true
     },
     {
       "moebel": "st5GleisSenkrecht",
-      "feld": [19, 19],
+      "feld": [
+        19,
+        19
+      ],
       "bauteil_ok": true
     },
     {
       "moebel": "st5GleisSenkrecht",
-      "feld": [19, 20],
+      "feld": [
+        19,
+        20
+      ],
       "bauteil_ok": true
     },
     {
       "moebel": "st5GleisSenkrecht",
-      "feld": [19, 21],
+      "feld": [
+        19,
+        21
+      ],
       "bauteil_ok": true
     },
     {
       "moebel": "st5GleisSenkrecht",
-      "feld": [19, 22],
+      "feld": [
+        19,
+        22
+      ],
       "bauteil_ok": true
     },
     {
       "moebel": "n7Stuetze",
-      "feld": [18, 6]
+      "feld": [
+        18,
+        6
+      ]
     },
     {
       "moebel": "n7Grubenlampe",
-      "feld": [20, 6],
+      "feld": [
+        20,
+        6
+      ],
       "vorn": true,
       "an_wand": true
     },
     {
       "moebel": "n7Stuetze",
-      "feld": [18, 10]
+      "feld": [
+        18,
+        10
+      ]
     },
     {
       "moebel": "n7Stuetze",
-      "feld": [18, 14]
+      "feld": [
+        18,
+        14
+      ]
     },
     {
       "moebel": "n7Grubenlampe",
-      "feld": [20, 14],
+      "feld": [
+        20,
+        14
+      ],
       "vorn": true,
       "an_wand": true
     },
     {
       "moebel": "n7Stuetze",
-      "feld": [18, 18]
+      "feld": [
+        18,
+        18
+      ]
     },
     {
       "moebel": "cc5Tisch",
-      "feld": [5, 4],
+      "feld": [
+        5,
+        4
+      ],
       "id": "kammertisch"
     },
     {
       "moebel": "cc4Hocker",
-      "feld": [4, 5]
+      "feld": [
+        4,
+        5
+      ]
     },
     {
       "moebel": "cc4Hocker",
-      "feld": [7, 5]
+      "feld": [
+        7,
+        5
+      ]
     },
     {
       "moebel": "n7Goldader",
-      "feld": [33, 6]
+      "feld": [
+        33,
+        6
+      ]
     },
     {
       "moebel": "n7Goldader",
-      "feld": [36, 9]
+      "feld": [
+        36,
+        9
+      ]
     },
     {
       "moebel": "st5PfuetzeGross",
-      "feld": [31, 14]
+      "feld": [
+        31,
+        14
+      ]
     },
     {
       "moebel": "st5PfuetzeKlein",
-      "feld": [34, 16]
+      "feld": [
+        34,
+        16
+      ]
     },
     {
       "moebel": "st5PfuetzeKlein",
-      "feld": [29, 12]
+      "feld": [
+        29,
+        12
+      ]
     },
     {
       "moebel": "st5Schotterhaufen",
-      "feld": [35, 15]
+      "feld": [
+        35,
+        15
+      ]
     },
     {
       "moebel": "cc4Holzstapel",
-      "feld": [11, 8]
+      "feld": [
+        11,
+        8
+      ]
     },
     {
       "moebel": "mf7Truhe",
-      "feld": [8, 4]
+      "feld": [
+        8,
+        4
+      ]
     },
     {
       "moebel": "st5Schotterhaufen",
-      "feld": [3, 9]
+      "feld": [
+        3,
+        9
+      ]
     },
     {
       "moebel": "rv8Werkzeugkiste",
-      "feld": [10, 6]
+      "feld": [
+        10,
+        6
+      ]
     },
     {
       "moebel": "cc4Holzstapel",
-      "feld": [11, 4]
+      "feld": [
+        11,
+        4
+      ]
     },
     {
       "moebel": "iwFass",
-      "feld": [4, 8]
+      "feld": [
+        4,
+        8
+      ]
     },
     {
       "moebel": "iwFass",
-      "feld": [5, 8]
+      "feld": [
+        5,
+        8
+      ]
     },
     {
       "moebel": "cc4Holzstapel",
-      "feld": [28, 6]
+      "feld": [
+        28,
+        6
+      ]
     },
     {
       "moebel": "cc4Holzstapel",
-      "feld": [36, 12]
+      "feld": [
+        36,
+        12
+      ]
     },
     {
       "moebel": "iwFass",
-      "feld": [37, 16]
+      "feld": [
+        37,
+        16
+      ]
     },
     {
       "moebel": "n7Stuetze",
-      "feld": [14, 7]
+      "feld": [
+        14,
+        7
+      ]
     },
     {
       "moebel": "n7Stuetze",
-      "feld": [24, 13]
+      "feld": [
+        24,
+        13
+      ]
     },
     {
       "moebel": "n7Grubenlampe",
-      "feld": [16, 7],
+      "feld": [
+        16,
+        7
+      ],
       "vorn": true,
       "an_wand": true
     },
     {
       "moebel": "st5Schotterhaufen",
-      "feld": [33, 11]
+      "feld": [
+        33,
+        11
+      ]
     },
     {
       "moebel": "n7Stuetze",
-      "feld": [30, 6]
+      "feld": [
+        30,
+        6
+      ]
     },
     {
       "moebel": "n7Stuetze",
-      "feld": [35, 6]
+      "feld": [
+        35,
+        6
+      ]
     },
     {
       "moebel": "st5Schotterhaufen",
-      "feld": [30, 17]
+      "feld": [
+        30,
+        17
+      ]
     },
     {
       "moebel": "n10LoreVorn",
-      "feld": [19, 8],
+      "feld": [
+        19,
+        8
+      ],
       "bauteil_ok": true
     },
     {
       "moebel": "n7Grubenlampe",
-      "feld": [6, 4],
+      "feld": [
+        6,
+        4
+      ],
       "an_wand": true,
       "vorn": true
     },
     {
       "moebel": "n7Grubenlampe",
-      "feld": [31, 7],
+      "feld": [
+        31,
+        7
+      ],
       "an_wand": true,
       "vorn": true
     },
     {
       "moebel": "n7Grubenlampe",
-      "feld": [25, 13],
+      "feld": [
+        25,
+        13
+      ],
       "an_wand": true,
       "vorn": true
     },
     {
       "moebel": "n7Stuetze",
-      "feld": [7, 7]
+      "feld": [
+        7,
+        7
+      ]
     },
     {
       "moebel": "st5Schotterhaufen",
-      "feld": [3, 6]
+      "feld": [
+        3,
+        6
+      ]
     },
     {
       "moebel": "st5Schotterhaufen",
-      "feld": [28, 9]
+      "feld": [
+        28,
+        9
+      ]
     },
     {
       "moebel": "st5Schotterhaufen",
-      "feld": [33, 9]
+      "feld": [
+        33,
+        9
+      ]
     },
     {
       "moebel": "st5Schotterhaufen",
-      "feld": [33, 12]
+      "feld": [
+        33,
+        12
+      ]
     },
     {
       "moebel": "st5Schotterhaufen",
-      "feld": [28, 15]
+      "feld": [
+        28,
+        15
+      ]
     },
     {
       "moebel": "st5Schotterhaufen",
-      "feld": [28, 18]
+      "feld": [
+        28,
+        18
+      ]
     },
     {
       "moebel": "st5Schotterhaufen",
-      "feld": [33, 18]
+      "feld": [
+        33,
+        18
+      ]
     }
   ],
   "ausloeser": [
     {
       "name": "start",
-      "feld": [19, 22],
+      "feld": [
+        19,
+        22
+      ],
       "eigenschaften": {
         "richtung": "oben"
       }
     },
     {
       "name": "stollenAusgang",
-      "feld": [19, 23]
+      "feld": [
+        19,
+        23
+      ]
     },
     {
       "name": "stollenAusgang",
-      "feld": [20, 23]
+      "feld": [
+        20,
+        23
+      ]
     },
     {
       "name": "logbuch",
-      "feld": [6, 6]
+      "feld": [
+        6,
+        6
+      ]
     },
     {
       "name": "lore",
-      "feld": [21, 9]
+      "feld": [
+        21,
+        9
+      ]
     },
     {
       "name": "goldader",
-      "feld": [33, 8]
+      "feld": [
+        33,
+        8
+      ]
     }
   ],
   "figuren": [],
@@ -345,7 +546,10 @@
     {
       "name": "fledermaeuse",
       "typ": "tier",
-      "feld": [20, 5],
+      "feld": [
+        20,
+        5
+      ],
       "eigenschaften": {
         "von": "18,5",
         "bis": "22,5",
@@ -353,7 +557,11 @@
       }
     }
   ],
-  "zustand": ["neu", "gebraucht", "alt"],
+  "zustand": [
+    "neu",
+    "gebraucht",
+    "alt"
+  ],
   "stil": [
     "natur",
     "einfach",

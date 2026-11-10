@@ -117,6 +117,24 @@
       "art": "deko",
       "zustand": "alt",
       "stil": "industrie"
+    },
+    "pg9Telegrafenleitung": {
+      "quelle": "spiel/eigene/telegrafenleitung.png",
+      "breite": 224,
+      "hoehe": 16,
+      "kollision": false,
+      "art": "deko",
+      "zustand": "alt",
+      "stil": "industrie"
+    },
+    "pg9Autowrack": {
+      "quelle": "modern-exteriors/Modern_Exteriors_16x16/ME_Theme_Sorter_16x16/3_City_Props_Singles_16x16/ME_Singles_City_Props_16x16_Car_Wreck_3.png",
+      "breite": 64,
+      "hoehe": 48,
+      "kollision": true,
+      "art": "fahrzeug",
+      "zustand": "verwittert",
+      "stil": "industrie"
     }
   }
 }

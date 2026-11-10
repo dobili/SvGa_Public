@@ -946,7 +946,7 @@
      "id": 4,
      "name": "sammler",
      "type": "statist",
-     "x": 96,
+     "x": 128,
      "y": 112,
      "width": 16,
      "height": 16,
@@ -956,12 +956,12 @@
       {
        "name": "von",
        "type": "string",
-       "value": "6,7"
+       "value": "8,7"
       },
       {
        "name": "bis",
        "type": "string",
-       "value": "6,7"
+       "value": "8,7"
       },
       {
        "name": "tun",
@@ -1597,8 +1597,8 @@
      "id": 31,
      "name": "mf2Zeitungsstapel",
      "type": "moebel",
-     "x": 48,
-     "y": 96,
+     "x": 32,
+     "y": 48,
      "width": 32,
      "height": 48,
      "rotation": 0,

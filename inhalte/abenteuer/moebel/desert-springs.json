@@ -31,10 +31,11 @@
       "kollision": true
     },
     "dsRegal": {
-      "quelle": "modern-interiors/1_Interiors/16x16/Theme_Sorter_Black_Shadow_Singles/5_Classroom_and_Library_Black_Shadow_Singles_16x16/Classroom_and_Library_Singles_45.png",
+      "quelle": "modern-interiors/1_Interiors/16x16/Theme_Sorter_Black_Shadow_Singles/5_Classroom_and_Library_Black_Shadow_Singles_16x16/Classroom_and_Library_Singles_70.png",
       "breite": 32,
       "hoehe": 48,
-      "kollision": true
+      "kollision": true,
+      "art": "buecherregal"
     },
     "ds6Tankstelle": {
       "quelle": "modern-exteriors/Modern_Exteriors_16x16/ME_Theme_Sorter_16x16/10_Vehicles_Singles_16x16/ME_Singles_Vehicles_16x16_Gas_Station_1.png",
@@ -54,7 +55,20 @@
       "art": "gebaeude",
       "zustand": "gebraucht",
       "blick": "unten",
-      "stil": "modern"
+      "stil": "modern",
+      "maske": [
+        "#################",
+        "#################",
+        "#################",
+        "#################",
+        "#################",
+        "#################",
+        ".................",
+        "......######.....",
+        "......######.....",
+        "......######.....",
+        "................."
+      ]
     },
     "ds6Wohnwagen": {
       "quelle": "modern-exteriors/Modern_Exteriors_16x16/ME_Theme_Sorter_16x16/11_Camping_Singles_16x16/ME_Singles_Camping_16x16_Mobile_House_Small_5.png",

@@ -516,7 +516,7 @@
       "stil": "klassisch"
     },
     "pd6Notenregal": {
-      "quelle": "modern-interiors/1_Interiors/16x16/Theme_Sorter_Black_Shadow_Singles/5_Classroom_and_Library_Black_Shadow_Singles_16x16/Classroom_and_Library_Singles_44.png",
+      "quelle": "modern-interiors/1_Interiors/16x16/Theme_Sorter_Black_Shadow_Singles/5_Classroom_and_Library_Black_Shadow_Singles_16x16/Classroom_and_Library_Singles_69.png",
       "breite": 32,
       "hoehe": 48,
       "kollision": true,
@@ -737,13 +737,14 @@
       "stil": "industrie"
     },
     "pd6Prellbock": {
-      "quelle": "spiel/eigene/prellbock.png",
+      "quelle": "spiel/eigene/prellbock_stahl_oben.png",
       "breite": 32,
       "hoehe": 32,
       "kollision": true,
       "art": "gleis",
       "zustand": "gebraucht",
-      "stil": "industrie"
+      "stil": "industrie",
+      "beschreibung": "Prellbock aus Stahl (eigenes Bild, prellbock_stahl.py): Bock mit Querbalken, zwei Puffern und Schutzhaltsignal; ersetzt die rot-weiße Straßenbake (Querauftrag m, 10.11.2026). Gleis senkrecht, endet oben."
     },
     "pd6Waescheleine": {
       "quelle": "modern-exteriors/Modern_Exteriors_16x16/ME_Theme_Sorter_16x16/3_City_Props_Singles_16x16/ME_Singles_City_Props_16x16_Hanging_Clothes_2.png",

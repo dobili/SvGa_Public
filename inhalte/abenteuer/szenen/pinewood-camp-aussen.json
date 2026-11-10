@@ -2,7 +2,7 @@
   "karte": "pinewoodCamp.aussen",
   "datei": "karten/pinewood-camp-aussen.json",
   "art": "aussen",
-  "beschreibung": "Pinewood Camp am See: Vom Nordrand kommt der Weg aus Crossroads zwischen Mammutbäumen herein. Oben eine Reihe Blockhütten, links Zelte und die Schutzhütte, in der Mitte der runde Lagerfeuerplatz aus Erde mit Baumstämmen als Sitzen, daneben Fahnenmast, Kiosk und Rangerhaus; das Waschhaus ist eine Blockhütte wie die übrigen. Unten ein Sandstrand mit einer kleinen Bucht, zwei Stegen, Kanus und dem Bootsschuppen am Ufer; Bänke am Strand, Tannen am Rand.",
+  "beschreibung": "Pinewood Camp am See: Vom Nordrand kommt der Weg aus Crossroads zwischen Mammutbäumen herein. Oben eine Reihe Blockhütten, links Zelte und die Schutzhütte, in der Mitte der runde Lagerfeuerplatz aus Erde mit Baumstämmen als Sitzen, daneben Fahnenmast, Kiosk und Rangerhaus; das Waschhaus ist eine Blockhütte wie die übrigen. Unten ein Sandstrand, dessen Ufer in weichen Bögen vor- und zurückspringt (Buchten und Landzungen), zwei Stege, ein Kanu draußen auf dem See und der Bootsschuppen am Ufer; links am Weg eine weitere Blockhütte mit Holzstapel und Hackklotz des Holzhackers, unter der Pergola ein Picknicktisch; Bänke am Strand, Tannen am Rand.",
   "boden": "gras",
   "wandart": "hecke",
   "boeden": {
@@ -45,9 +45,9 @@
     "#...........................................ee.............#",
     "#...........................................ee.............#",
     "#dddddddddddddddddddddddddddddddddddddddddddeeddddddddddddd#",
-    "#ddddddddddddddd~~~~~~ddddddddddddddddddddddeeddddddddddddd~",
-    "~~~~~~~~~~~~hh~~~~~~~~~~~~~ddddddd~~~~~~~~~~hh~~~~~~~~~~~~~~",
-    "~~~~~~~~~~~~hh~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~hh~~~~~~~~~~~~~~",
+    "#dddddddddddddddddddddd~~~~~~~~~~~~~ddddddddeeddddddddddddd#",
+    "#dddddddddddhh~~~~~~~~~~~~~~~~~~~~~~ddddddddhhdddddddddddd~~",
+    "~dddddddd~~~hh~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~hh~~~~~~~~~~~~~~",
     "~~~~~~~~~~~~hh~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~hh~~~~~~~~~~~~~~",
     "~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~",
     "~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~",
@@ -107,8 +107,8 @@
       "id": "kiosk"
     },
     {
-      "moebel": "pw7KanuQuer",
-      "feld": [38, 28]
+      "moebel": "pw9KanuSee",
+      "feld": [18, 37]
     },
     {
       "moebel": "cc5BootAmSteg",
@@ -167,8 +167,16 @@
       "feld": [18, 20]
     },
     {
-      "moebel": "rv5HolzhausGruen",
-      "feld": [3, 26]
+      "moebel": "pw7Campbude",
+      "feld": [2, 26]
+    },
+    {
+      "moebel": "cc4Holzstapel",
+      "feld": [8, 27]
+    },
+    {
+      "moebel": "sc7Hackklotz",
+      "feld": [10, 28]
     },
     {
       "moebel": "cp7MammutStamm",
@@ -354,6 +362,10 @@
     {
       "moebel": "pw7Campbude",
       "feld": [52, 10]
+    },
+    {
+      "moebel": "cc7Picknicktisch",
+      "feld": [23, 21]
     }
   ],
   "ausloeser": [
@@ -424,18 +436,6 @@
     }
   ],
   "belebung": [
-    {
-      "name": "kanufahrer",
-      "typ": "statist",
-      "feld": [30, 36],
-      "eigenschaften": {
-        "von": "24,36",
-        "bis": "40,36",
-        "tun": "paddelt über den See",
-        "wann": "tag",
-        "verhalten": "schwimmen"
-      }
-    },
     {
       "name": "betreuer",
       "typ": "statist",
@@ -577,10 +577,10 @@
     {
       "name": "reh",
       "typ": "tier",
-      "feld": [54, 29],
+      "feld": [57, 6],
       "eigenschaften": {
-        "von": "54,29",
-        "bis": "54,29",
+        "von": "57,6",
+        "bis": "57,12",
         "verhalten": "sitzen"
       }
     },
@@ -622,6 +622,17 @@
         "von": "48,4",
         "bis": "48,4",
         "verhalten": "sitzen"
+      }
+    },
+    {
+      "name": "paddlerin",
+      "typ": "statist",
+      "feld": [38, 31],
+      "eigenschaften": {
+        "von": "38,31",
+        "bis": "42,31",
+        "tun": "trägt ein Paddel zum Steg",
+        "wann": "tag"
       }
     }
   ],

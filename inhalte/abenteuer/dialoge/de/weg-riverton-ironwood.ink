@@ -30,6 +30,11 @@ VAR gefundenSpurPM1 = false
 VAR gefundenSeite07 = false
 VAR gefundenFinchLaeuferA = false
 VAR ausgangWegRivertonIronwoodDime = ""
+// Zähler der Sammelstränge (Vereinbarung Runde 6): jeder Fundknoten zählt zu gibFund hoch.
+VAR finchFiguren = 0
+VAR buchseiten = 0
+VAR spurenPM = 0
+VAR kreideTreffpunkte = 0
 
 // ---------------------------------------------------------------- Mr. Dale
 
@@ -142,7 +147,7 @@ Von hier oben sieht jede Stadt aus wie eine Stellung. Man erkennt erst unten, we
 
 // ---------------------------------------------------------------- Ereignis „Die Brückenbauern“
 
-=== kreidespringer ===
+=== kreide1 ===
 {gefundenKreide1:
     Der Springer aus Kreide am Brückenfuß. Das Wort kennst du schon: Td8. #sprecher:erzaehler
     -> END
@@ -167,6 +172,7 @@ Am Brückenfuß ist ein Springer aus Kreide gezeichnet. Darunter, kleiner: #spre
 Td8. Der König steckt hinter seinen eigenen Bauern fest: Matt auf der Grundreihe. #sprecher:erzaehler
 Das Wort ist „Td8“. #sprecher:erzaehler
 ~ gibFund("kreide1")
+~ kreideTreffpunkte = kreideTreffpunkte + 1
 -> END
 
 === brueckenbauern ===
@@ -205,7 +211,7 @@ Die da? Seit zwei Wochen. Filmt jede Partie. Fragt keiner, wozu. #sprecher:dime
 Noch eine? #sprecher:dime
 -> spielen
 
-=== drohne ===
+=== spur_pm1 ===
 {gefundenSpurPM1:
     Die Drohne steht wieder über dem Wasser. Sie hat Geduld. #sprecher:erzaehler
     -> END
@@ -213,6 +219,7 @@ Noch eine? #sprecher:dime
 Über dem Kanal steht eine Drohne. Auf der Unterseite leuchtet ein Logo: Perfect Move. #sprecher:erzaehler
 Sie dreht sich langsam zu den Klapptischen, als würde sie zuschauen. #sprecher:erzaehler
 ~ gibFund("spurPM1")
+~ spurenPM = spurenPM + 1
 -> END
 
 === seite07 ===
@@ -223,6 +230,7 @@ Sie dreht sich langsam zu den Klapptischen, als würde sie zuschauen. #sprecher:
 Zwischen den Steinen am Kanalufer klemmt ein Blatt, trocken und sauber. #sprecher:erzaehler
 Kapitel 7: „Taktik: Wie man aus kleinen Vorteilen Material gewinnt“. Eine Seite aus einem Handbuch. #sprecher:erzaehler
 ~ gibFund("seite07")
+~ buchseiten = buchseiten + 1
 -> END
 
 === finch_laeufer_a ===
@@ -232,4 +240,5 @@ Kapitel 7: „Taktik: Wie man aus kleinen Vorteilen Material gewinnt“. Eine Se
 }
 Am Brückenfuß hängt ein kleiner Fink aus Blech. Darunter, im Spalt zwischen zwei Steinen, steckt ein weißer Läufer aus hellem Holz. #sprecher:erzaehler
 ~ gibFund("finchLaeuferA")
+~ finchFiguren = finchFiguren + 1
 -> END

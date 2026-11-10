@@ -13016,6 +13016,11 @@
    "name": "kennung",
    "type": "string",
    "value": "steinbruch.grube"
+  },
+  {
+   "name": "toenung",
+   "type": "string",
+   "value": "nebel"
   }
  ]
 }

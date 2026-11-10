@@ -559,6 +559,10 @@
     {
       "name": "glocke",
       "feld": [37, 10]
+    },
+    {
+      "name": "lastkahn",
+      "feld": [9, 20]
     }
   ],
   "figuren": [],

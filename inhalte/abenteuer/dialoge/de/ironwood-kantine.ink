@@ -20,6 +20,10 @@ EXTERNAL setzeZustand(gegner, faktor, grund)
 
 VAR held = "Du"
 VAR bigJoeGetroffen = false
+// L3 „Post für den Kapitän“ (14_Akt2_Leben_teil1, 4.3): Big Joe gibt nach Szene 39 einmal den
+// Brief für Ruben in Lockport mit; lastkahnFrei setzt Lockport (niedrig-1), wenn Ruben ihn liest.
+VAR briefFuerRuben = false
+VAR lastkahnFrei = false
 VAR elmStreetBekannt = false
 VAR fotoGefunden = false
 VAR mamaFotoGesehen = false
@@ -41,6 +45,7 @@ VAR pokalregalGesehen = false
 {~Der Ofen in der Ecke knackt, an den langen Tischen klappern Figuren.|Big Joe stellt Figuren auf sein Stahlbrett, so behutsam, als wären sie aus Glas.|Es riecht nach Kaffee, Eisen und nassen Jacken.} #sprecher:erzaehler
 {
 - not bigJoeGetroffen: -> big_joe_erkennt
+- not briefFuerRuben and not lastkahnFrei: -> big_joe_brief
 - nadelIronwood > clubkampfIronwoodNadel: -> big_joe_nach_sieg
 - mamaSpielt and not feierGesehen and nadelIronwood == 0: -> feier_einladung
 - not (reiheHankBestanden and reihePriyaBestanden): -> big_joe_reihe_offen
@@ -113,6 +118,12 @@ Gut gekämpft, Kumpel. Aber die Kantine bleibt meine. Noch eine? #sprecher:bigJo
 Die vierte Nadel. Und wieder ein Mentor-Zug. #sprecher:ambrose
 Ich habe dir das Wertvollste gegeben, das ich habe. #sprecher:ambrose
 Draußen am Werkstor stehen Männer in Anzügen. Big Joe sieht hinaus und wird still. #sprecher:erzaehler
+-> END
+
+=== big_joe_brief ===
+Big Joe zieht einen zerknitterten Umschlag aus der Brusttasche. #sprecher:erzaehler
+Kumpel, fährst du am Kanal entlang? Bring das Ruben in Lockport, Kumpel. Der Mann hat seit dem Sommer keine Fracht. #sprecher:bigJoe
+~ briefFuerRuben = true
 -> END
 
 === big_joe_alltag ===

@@ -25,11 +25,10 @@ import type Phaser from "phaser";
 import { liesPaketJson } from "../paket/paketlader";
 import { findeKarte, ladeSpieldaten } from "../daten/laden";
 import { Dialog } from "../dialog/Dialog";
-import type { Dialogvariablen, Wirkungen } from "../dialog/geschichte";
+import type { Dialogvariablen } from "../dialog/geschichte";
 import { appdienste } from "../modul/abenteuer";
 import { deckgroesse, mentorzugGesperrt, mitLernkarten, vorgabeFen } from "../regeln/karten";
 import { wendeWirkungenAn, werteEreignisAus, type Questereignis } from "../regeln/quests";
-import { mitFund } from "../regeln/funde";
 import { kaufe } from "../regeln/muenzen";
 import { standNachPartie, standNachRunde, type Rundenrueckweg } from "../regeln/rueckweg";
 import { mitAppWertung, zaehltFuerA } from "../regeln/wertung";
@@ -37,7 +36,6 @@ import {
   variablenAusBesitz,
   variablenNachDialog,
   variablenNachBesuch,
-  variablenNachFund,
   variablenNachRunde,
 } from "../regeln/dialogvariablen";
 import { laufendesSimultan, nachSimultanpartie, starteSimultan } from "../regeln/simultan";
@@ -108,7 +106,10 @@ import {
 import { Sprechblase, type SprechblasenInhalt } from "./Sprechblase";
 import { Vorfuehrung } from "./Vorfuehrung";
 import { Gedaechtnisstellung } from "./Gedaechtnisstellung";
-import { aktuelleToenung, toenungsvariable, type Toenung } from "./toenung";
+import { Kopfleiste } from "./Kopfleiste";
+import { dialogwirkungen } from "./dialogwirkungen";
+import { Fortsetzungskarte, Partieergebniskarte, Rundenergebniskarte } from "./Ergebniskarten";
+import { aktuelleToenung, type Toenung } from "./toenung";
 
 /** Ein offener Dialog: die übersetzte Geschichte, der Knoten und der Name der Datei. */
 interface OffenerDialog {
@@ -173,6 +174,8 @@ export function Oberwelt() {
   const gedaechtnisInArbeit = useRef<string | null>(null);
   // Ein Simultan, das ein Dialog angestoßen hat (Runde 6); das erste Brett beginnt nach dem Dialog.
   const simultanInArbeit = useRef<string | null>(null);
+  // Eine Vorführung, die ein Dialog angestoßen hat (Odette am Leuchtturm); sie folgt dem Dialog.
+  const vorfuehrungInArbeit = useRef<string | null>(null);
   const [gedaechtnis, setzeGedaechtnis] = useState<string | null>(null);
 
   // Ergebnis der zuletzt gespielten Aufgabenrunde für die Ergebniskarte (R31).
@@ -553,6 +556,7 @@ export function Oberwelt() {
       schreibe(neu);
       const auftrag = r.naechste ? auftragFuer(r.naechste, welt.daten, neu) : null;
       if (auftrag) startePartie(auftrag, []);
+      if (r.ende?.bestanden) melde({ art: "aufgaben", runde: eintrag.kennung });
       if (r.ende) {
         setzeMeldung(
           tSpiel("oberwelt.simultan.ende", {
@@ -573,6 +577,8 @@ export function Oberwelt() {
       ...aktuell,
       dialogvariablen: { ...aktuell.dialogvariablen, ...variablenNachRunde(kennung, bestanden) },
     });
+    // Quests warten darauf wie auf eine bestandene Aufgabenrunde (Vorschlag mittel-1).
+    if (bestanden) melde({ art: "aufgaben", runde: kennung });
   };
 
   /** Der Aktionsknopf: Dialog des Auslösers oder der Figur öffnen. */
@@ -596,74 +602,30 @@ export function Oberwelt() {
 
   if (!stand) return <p className="fehlertext">{tSpiel("oberwelt.keinSpielstand")}</p>;
 
-  const wirkungen: Wirkungen = {
-    zeigeAbspann: () => {
-      abspannInArbeit.current = true;
-    },
-    oeffneLaden: (kennung) => {
-      ladenInArbeit.current = kennung;
-    },
-    gibFund: (kennung) => {
-      const aktuell = standRef.current ?? stand;
-      const fund = welt?.daten.funde.find((f) => f.kennung === kennung);
-      const mit = mitFund(aktuell, kennung, new Date(), fund?.muenzen ?? 0);
-      if (mit === aktuell) return;
-      // Dialogvariable `gefunden<Fund>` für spätere Bedingungen (übergreifende Quests, E4).
-      const neu = {
-        ...mit,
-        dialogvariablen: { ...mit.dialogvariablen, ...variablenNachFund(kennung) },
-      };
-      schreibe(neu);
-      setzeMeldung(
-        tSpiel(fund?.extra ? "fund.gefundenExtra" : "fund.gefunden", {
-          name: tSpiel(fund?.name ?? kennung),
-        }),
-      );
-    },
-    gibKarte: (kennung) => {
-      const aktuell = standRef.current ?? stand;
-      schreibe(wendeWirkungenAn(aktuell, [{ art: "karte", karte: kennung }], new Date()));
-    },
-    setzeSzene: (szene) => {
-      const aktuell = standRef.current ?? stand;
-      schreibe({ ...aktuell, handlung: { ...aktuell.handlung, szene } });
-    },
-    beginnePartie: (begegnung) => {
-      const aktuell = standRef.current ?? stand;
-      if (welt) auftragInArbeit.current = auftragFuer(begegnung, welt.daten, aktuell);
-    },
-    beginneAufgaben: (runde) => {
-      rundeInArbeit.current = runde;
-    },
-    beginneGedaechtnis: (kennung) => {
-      gedaechtnisInArbeit.current = kennung;
-    },
-    beginneSimultan: (kennung) => {
-      simultanInArbeit.current = kennung;
-    },
-    reise: (karte, ausloeser) => {
-      reiseInArbeit.current = { karte, ausloeser };
-    },
-    setzeToenung: (name) => {
-      const aktuell = standRef.current ?? stand;
-      if (!welt) return;
-      const variable = toenungsvariable(welt.kennung);
-      const neu = { ...aktuell.dialogvariablen, [variable]: name };
-      schreibe({ ...aktuell, dialogvariablen: neu });
-      const toenung = aktuelleToenung(welt.karte, welt.kennung, neu);
-      setzeToenungZustand(toenung);
+  // Die Refs (Spielstand, Merker) liest dialogwirkungen erst, wenn Ink eine Funktion aufruft,
+  // also nach dem Zeichnen; die Regel react-hooks/refs kann das nicht erkennen.
+  // eslint-disable-next-line react-hooks/refs
+  const wirkungen = dialogwirkungen({
+    stand: () => standRef.current ?? stand,
+    welt,
+    schreibe,
+    meldung: setzeMeldung,
+    toenung: (t) => {
+      setzeToenungZustand(t);
       const szene = spiel.current ? szeneVon(spiel.current) : null;
-      szene?.setzeToenung(toenung);
+      szene?.setzeToenung(t);
     },
-    setzeZustand: (gegner, faktor, grund) => {
-      const aktuell = standRef.current ?? stand;
-      schreibe(wendeWirkungenAn(aktuell, [{ art: "zustand", gegner, faktor, grund }], new Date()));
-    },
-    schalteSteckbrief: (gegner, zeile) => {
-      const aktuell = standRef.current ?? stand;
-      schreibe(wendeWirkungenAn(aktuell, [{ art: "steckbrief", gegner, zeile }], new Date()));
-    },
-  };
+    merker: () => ({
+      abspann: abspannInArbeit,
+      laden: ladenInArbeit,
+      auftrag: auftragInArbeit,
+      runde: rundeInArbeit,
+      gedaechtnis: gedaechtnisInArbeit,
+      simultan: simultanInArbeit,
+      vorfuehrung: vorfuehrungInArbeit,
+      reise: reiseInArbeit,
+    }),
+  });
 
   /**
    * Startet die Partie zu einem Auftrag mit dem gewählten Deck: Vorgaben ändern die Startstellung
@@ -807,6 +769,12 @@ export function Oberwelt() {
     if (uebergang && (!uebergang.wenn || Boolean(bedingungen[uebergang.wenn]))) {
       wechsleKarte(uebergang.ziel.karte, uebergang.ziel.ausloeser);
     }
+    const zeigen = vorfuehrungInArbeit.current;
+    vorfuehrungInArbeit.current = null;
+    if (zeigen) {
+      setzeVorfuehrung(zeigen);
+      return;
+    }
     const simultan = simultanInArbeit.current;
     simultanInArbeit.current = null;
     if (simultan) {
@@ -862,39 +830,20 @@ export function Oberwelt() {
       <span ref={kachelanzeige} hidden data-testid="abenteuer-kachel" />
       {/* In Erinnerungen (Ambroses Zeit) gibt es weder Tagebuch noch Münzen des Helden (F3). */}
       {!welt?.erinnerung && (
-        <>
-          <button
-            type="button"
-            className="abenteuer-tagebuchknopf"
-            onClick={() => setzeTagebuch(true)}
-            data-testid="abenteuer-tagebuchknopf"
-          >
-            {tSpiel("tagebuch.knopf")}
-          </button>
-          <span className="abenteuer-muenzen" data-testid="abenteuer-muenzen" aria-live="polite">
-            {tSpiel("laden.muenzenKurz", { anzahl: stand.muenzen })}
-          </span>
-          {welt && stand.gegenstaende.includes(REISEBRETT) && !dialog && !deckwahl && (
-            <button
-              type="button"
-              className="abenteuer-tagebuchknopf abenteuer-reisebrettknopf"
-              onClick={starteUebungspartie}
-              data-testid="abenteuer-reisebrettknopf"
-            >
-              {tSpiel("reisebrett.knopf")}
-            </button>
-          )}
-          {welt && !welt.innen && stand.gegenstaende.includes(MONATSKARTE) && !dialog && (
-            <button
-              type="button"
-              className="abenteuer-tagebuchknopf abenteuer-reisenknopf"
-              onClick={() => setzeReisen(true)}
-              data-testid="abenteuer-reisenknopf"
-            >
-              {tSpiel("reisen.knopf")}
-            </button>
-          )}
-        </>
+        <Kopfleiste
+          muenzen={stand.muenzen}
+          beiTagebuch={() => setzeTagebuch(true)}
+          beiReisebrett={
+            welt && stand.gegenstaende.includes(REISEBRETT) && !dialog && !deckwahl
+              ? starteUebungspartie
+              : null
+          }
+          beiReisen={
+            welt && !welt.innen && stand.gegenstaende.includes(MONATSKARTE) && !dialog
+              ? () => setzeReisen(true)
+              : null
+          }
+        />
       )}
       {fehler && (
         <p className="fehlertext abenteuer-ergebnis">{tSpiel("oberwelt.fehler", { fehler })}</p>
@@ -1005,139 +954,52 @@ export function Oberwelt() {
         </section>
       )}
       {ergebnis && (
-        <section className="abenteuer-ergebnis" role="status" data-testid="abenteuer-ergebnis">
-          <p>
-            <strong>
-              {tSpiel(`ergebnis.${ergebnis.ausgang}`, { gegner: gegnername(ergebnis) })}
-            </strong>
-          </p>
-          <p>{tSpiel("ergebnis.zuege", { anzahl: Math.ceil(ergebnis.halbzuege / 2) })}</p>
-          {ergebnis.gespielteKarten.length > 0 && (
-            <p>{tSpiel("ergebnis.karten", { anzahl: ergebnis.gespielteKarten.length })}</p>
-          )}
-          {neueNadel && (
-            <p>
-              <strong>
-                {tSpiel(`ergebnis.nadel.${neueNadel}`, {
-                  club: tSpiel(welt?.ort.club?.name ?? "club.mapleFalls.name"),
-                })}
-              </strong>
-            </p>
-          )}
-          {ergebnis.momente.length > 0 && (
-            <p>{tSpiel("ergebnis.momente", { anzahl: ergebnis.momente.length })}</p>
-          )}
-          {kipppunkt === "suche" && <p className="lade">{tSpiel("ergebnis.kipppunktSuche")}</p>}
-          {kipppunkt && kipppunkt !== "suche" && (
-            <>
-              <p>{tSpiel("ergebnis.kipppunkt", { zug: Math.floor(kipppunkt.halbzug / 2) + 1 })}</p>
-              <button
-                type="button"
-                className="knopf-haupt"
-                onClick={() => starteWiedereinstieg(ergebnis, kipppunkt)}
-                data-testid="abenteuer-wiedereinstieg"
-              >
-                {tSpiel("ergebnis.nochEinmal", { zug: Math.floor(kipppunkt.halbzug / 2) + 1 })}
-              </button>
-            </>
-          )}
-          <button
-            type="button"
-            className={kipppunkt && kipppunkt !== "suche" ? "knopf-zweit" : "knopf-haupt"}
-            onClick={() => {
-              setzeErgebnis(null);
-              setzeNeueNadel(null);
-              setzeKipppunkt(null);
-              weiterImSimultan(ergebnis);
-            }}
-          >
-            {tSpiel("ergebnis.weiter")}
-          </button>
-        </section>
+        <Partieergebniskarte
+          ergebnis={ergebnis}
+          gegner={gegnername(ergebnis)}
+          club={tSpiel(welt?.ort.club?.name ?? "club.mapleFalls.name")}
+          neueNadel={neueNadel}
+          kipppunkt={kipppunkt}
+          beiWiedereinstieg={(k) => starteWiedereinstieg(ergebnis, k)}
+          beiWeiter={() => {
+            setzeErgebnis(null);
+            setzeNeueNadel(null);
+            setzeKipppunkt(null);
+            weiterImSimultan(ergebnis);
+          }}
+        />
       )}
       {rundenergebnis && (
-        <section
-          className="abenteuer-ergebnis"
-          role="status"
-          data-testid="abenteuer-rundenergebnis"
-        >
-          <p>
-            <strong>
-              {tSpiel(rundenergebnis.bestanden ? "aufgaben.bestanden" : "aufgaben.nichtBestanden", {
-                punkte: rundenergebnis.punkte,
-                moeglich: rundenergebnis.moeglich,
-              })}
-            </strong>
-          </p>
-          {rundenergebnis.reiheGeschafft && (
-            <p>
-              {tSpiel("aufgaben.reiheBestanden", {
-                club: tSpiel(welt?.ort.club?.name ?? "club.mapleFalls.name"),
-              })}
-            </p>
-          )}
-          {!rundenergebnis.bestanden && (
-            <button
-              type="button"
-              className="knopf-haupt"
-              onClick={() => starteRunde(rundenergebnis.auftrag.runde)}
-              data-testid="abenteuer-runde-nochmal"
-            >
-              {tSpiel("aufgaben.nochEinmal")}
-            </button>
-          )}
-          <button
-            type="button"
-            className={rundenergebnis.bestanden ? "knopf-haupt" : "knopf-zweit"}
-            onClick={() => setzeRundenergebnis(null)}
-          >
-            {tSpiel("ergebnis.weiter")}
-          </button>
-        </section>
+        <Rundenergebniskarte
+          ergebnis={rundenergebnis}
+          club={tSpiel(welt?.ort.club?.name ?? "club.mapleFalls.name")}
+          beiNochmal={starteRunde}
+          beiWeiter={() => setzeRundenergebnis(null)}
+        />
       )}
       {offeneRunde && (
-        <section className="abenteuer-ergebnis" role="status">
-          <p>{tSpiel("aufgaben.laeuft")}</p>
-          <button
-            type="button"
-            className="knopf-haupt"
-            onClick={() => void dienste.starteAufgaben(offeneRunde)}
-          >
-            {tSpiel("aufgaben.weiter")}
-          </button>
-          <button
-            type="button"
-            className="knopf-zweit"
-            onClick={() => {
-              setzeOffeneRunde(null);
-              schreibe({ ...(standRef.current ?? stand), laufendeAufgaben: null });
-            }}
-          >
-            {tSpiel("aufgaben.abbrechen")}
-          </button>
-        </section>
+        <Fortsetzungskarte
+          text="aufgaben.laeuft"
+          weiter="aufgaben.weiter"
+          abbrechen="aufgaben.abbrechen"
+          beiWeiter={() => void dienste.starteAufgaben(offeneRunde)}
+          beiAbbrechen={() => {
+            setzeOffeneRunde(null);
+            schreibe({ ...(standRef.current ?? stand), laufendeAufgaben: null });
+          }}
+        />
       )}
       {offenePartie && (
-        <section className="abenteuer-ergebnis" role="status">
-          <p>{tSpiel("ergebnis.partieLaeuft")}</p>
-          <button
-            type="button"
-            className="knopf-haupt"
-            onClick={() => dienste.zeigePartie(offenePartie)}
-          >
-            {tSpiel("ergebnis.weiterspielen")}
-          </button>
-          <button
-            type="button"
-            className="knopf-zweit"
-            onClick={() => {
-              setzeOffenePartie(null);
-              schreibe({ ...(standRef.current ?? stand), laufendePartie: null });
-            }}
-          >
-            {tSpiel("ergebnis.aufgeben")}
-          </button>
-        </section>
+        <Fortsetzungskarte
+          text="ergebnis.partieLaeuft"
+          weiter="ergebnis.weiterspielen"
+          abbrechen="ergebnis.aufgeben"
+          beiWeiter={() => dienste.zeigePartie(offenePartie)}
+          beiAbbrechen={() => {
+            setzeOffenePartie(null);
+            schreibe({ ...(standRef.current ?? stand), laufendePartie: null });
+          }}
+        />
       )}
     </div>
   );

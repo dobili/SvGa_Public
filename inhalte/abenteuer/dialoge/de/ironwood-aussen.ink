@@ -29,6 +29,8 @@ VAR ausgangIronwoodGus = ""
 VAR ednaGetroffen = false
 VAR hatFahrrad = false
 VAR hatLaterne = false
+// Lastkahn (L3): lastkahnFrei setzt Lockport, wenn Ruben Big Joes Brief liest.
+VAR lastkahnFrei = false
 VAR nadelIronwood = 0
 VAR kaufGesehen = false
 VAR einladungGesehen = false
@@ -255,4 +257,19 @@ Im Fenster von Ednas Laden: Schrauben in Gläsern, drei Laternen, eine Fahrradke
 ~ kreidebrettGesehen = true
 Auf dem Gehweg haben Kinder ein Schachbrett mit Kreide gemalt, die Figuren sind Steine und Kronkorken. #sprecher:erzaehler
 Ein Brett aus Kreide, Figuren aus Steinen. Wir hatten nicht mehr, und wir hatten genug. #sprecher:ambrose
+-> END
+
+// ---------------------------------------------------------------- Anleger am Kanal (Runde 6)
+
+=== anleger ===
+{lastkahnFrei:
+    Am Anleger liegt die Ashford Belle, der Kahn aus Lockport. Kapitän Ruben rollt ein Seil auf. #sprecher:erzaehler
+    * [Mit der Ashford Belle nach Lockport]
+        ~ reise("lockport.aussen", "kai")
+        -> END
+    * [Hierbleiben]
+        -> END
+- else:
+    Ein leerer Anleger am schwarzen Kanal. Hier hat lange kein Kahn mehr festgemacht. #sprecher:erzaehler
+}
 -> END

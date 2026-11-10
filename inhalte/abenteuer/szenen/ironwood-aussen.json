@@ -154,7 +154,7 @@
       "id": "eisenwaren"
     },
     {
-      "moebel": "iw5StadthausGelb",
+      "moebel": "iw5StadthausGrau",
       "feld": [
         27,
         17
@@ -2443,48 +2443,6 @@
         42
       ],
       "vorn": true
-    },
-    {
-      "moebel": "wg4Busch",
-      "feld": [
-        61,
-        33
-      ]
-    },
-    {
-      "moebel": "wg4Busch",
-      "feld": [
-        61,
-        35
-      ]
-    },
-    {
-      "moebel": "wg4Busch",
-      "feld": [
-        61,
-        37
-      ]
-    },
-    {
-      "moebel": "wg4Busch",
-      "feld": [
-        61,
-        39
-      ]
-    },
-    {
-      "moebel": "wg4Busch",
-      "feld": [
-        61,
-        41
-      ]
-    },
-    {
-      "moebel": "wg4Busch",
-      "feld": [
-        61,
-        43
-      ]
     },
     {
       "moebel": "cc3ZaunEnde",

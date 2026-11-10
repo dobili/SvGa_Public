@@ -307,6 +307,8 @@ Fuß). Vor den Tischen ist Platz für drei Kinder, Annek, Kira und {held}.
 - **Hochebene, Bauerndiplom** (`ereignisDiplom`): Das Ereignis beginnt erst, wenn Annek Schach
   gelernt hat (`annekSchachGelernt`). Vorher zeigt es das Plakat „Diplomtag – bald!“.
   - Quest `hochebene.bauerndiplom` (klein): Aufgabenrunde `hochebene.diplom`, gestellt von Annek.
+  - Buchbezug der Aufgabenwahl ist Kapitel 12 (Trainingsmethodik), nicht 3 wie in Dokument 15; Ambrose
+    nennt es am Ende. Die Buchseite Kapitel 3 an der Fahnenstange bleibt.
     Das ist der Ersatz für die Aufgabenwahl je Kind.
   - Lohn: Fund `diplomKira`, von Kira gemalt mit Falke und Bison, dazu 20 Münzen.
 - **Hochebene, Funde:** `seite03` (Kapitel 3, Gambits; an der Fahnenstange) und `finchTurmB` (Kiste

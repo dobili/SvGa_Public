@@ -294,8 +294,8 @@ Kehren. **Ränder** offen nur Ost (39, 120–122), West (0, 70–71), Nord (18�
 - **Schach über Funk** (`ereignisFunkschach`, Dialog `weg-desert-summit.ereignis_funkschach`): Earl
   holt {held} ans CB-Funkgerät.
   - Quest `wegDesertSummit.funkschach` (klein): Partie gegen Mama Bear (Begegnung
-    `wegDesertSummit.funkschach`, Gegner `wegDesertSummit.mamaBear`). Das ist der Ersatz für die
-    Partie nach Gehör, bis mittel-2 sie gebaut hat.
+    `wegDesertSummit.funkschach`, Gegner `wegDesertSummit.mamaBear`) als Partie nach Gehör
+    (`"variante": "gehoer"`): Ihr Zug kommt erst als Ansage, dann aufs Brett.
   - Danach erzählt Mama Bear von den summenden Kisten. Lohn: Funkname „{held} Junior“ und
     30 Münzen.
 - **Hinterzimmer (K3), neuer Innenraum `wegDesertSummit.hinterzimmer`** (14 × 12, A/B/C):

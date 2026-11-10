@@ -173,6 +173,8 @@ VAR ambroseSprichtWieder = false
 // Nach der Begegnung mit den Vells, sobald Annek Schach gelernt hat. Vorher hängt nur das Plakat
 // „Diplomtag“ auf dem Schulhof. Die Aufgabenwahl je Kind (drei Aufgaben zur Wahl) kommt mit einer
 // eigenen Partieform; bis dahin stellt Annek eine Aufgabenrunde (hochebene.diplom).
+// Buchbezug der Aufgabenwahl: Kapitel 12 (Trainingsmethodik), nicht Kapitel 3 wie in Dokument 15; die
+// Buchseite Kapitel 3 (Gambits) an der Fahnenstange ist ein eigener Fund.
 
 === ereignis_diplom ===
 {
@@ -206,6 +208,7 @@ Eins hab ich extra gemalt. Für den Prüfer. #sprecher:kira
 ~ gibFund("diplomKira")
 {ambroseSprichtWieder:
     Lehren ist Spielen mit einem Brett, das man nicht sieht. #sprecher:ambrose
+    Die richtige Aufgabe zur richtigen Zeit: Wie man übt, steht in Kapitel 12. #sprecher:ambrose
 }
 -> END
 

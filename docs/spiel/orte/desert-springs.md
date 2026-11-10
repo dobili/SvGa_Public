@@ -128,9 +128,9 @@ davon.
 - **Seilschaft** (`ereignisSeilschaft`, Dialog `weg-delacroix-desert.ereignis_seilschaft`):
   - Vor der Versöhnung liegen nur Seile und Rucksäcke da.
   - Danach rufen Wren Okoro (unten) und Sol Ferris (oben) um Hilfe.
-  - Quest `wegDelacroixDesert.seilschaft` (klein), mit der Aufgabenrunde
-    `wegDelacroixDesert.seilschaft`. Das ist der Ersatz für die Gedächtnisstellung, bis mittel-2
-    sie gebaut hat.
+  - Quest `wegDelacroixDesert.seilschaft` (klein), ein Schritt: Gedächtnisstellung
+    `wegDelacroixDesert.seilschaft` (partieformen.json, fünf Sekunden; `beginneGedaechtnis`), danach
+    `seilschaft_ende`.
   - Lohn: Fund `karabiner` und 20 Münzen.
 - **Funde:** `seite06` (Kapitel 6, Mittelspielstrategie) und `finchLaeuferB` als Gegenstände an den
   Feldern aus 3.3.

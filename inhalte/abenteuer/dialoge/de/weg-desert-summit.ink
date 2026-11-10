@@ -127,9 +127,9 @@ VAR ausgangWegDesertSummitKreideblitz = ""
 VAR ruthGetroffen = false
 
 // ---------------------------------------------------------------- Ereignis: Schach über Funk (Dokument 15, 2.8)
-// Akt 4. Das CB-Funkgerät im Fenster des Diners. Partie nach Gehör kommt von mittel-2; bis dahin eine
-// normale Partie gegen Mama Bear (Begegnung wegDesertSummit.funkschach). Danach erzählt sie von ihrer
-// summenden Fracht (Spur P4 am Sattelzug auf der Bergstraße).
+// Akt 4. Das CB-Funkgerät im Fenster des Diners. Partie nach Gehör gegen Mama Bear (Begegnung
+// wegDesertSummit.funkschach, variante „gehoer“): Ihr Zug kommt erst als Ansage über Funk, dann auf das
+// Brett. Danach erzählt sie von ihrer summenden Fracht (Spur P4 am Sattelzug auf der Bergstraße).
 
 === ereignis_funkschach ===
 {funkschachFertig:
@@ -147,7 +147,8 @@ Das ist das Dienstagsturnier der Fernfahrer, zwischen der Wüste und den Bergen.
 -> funkschach_partie
 
 === funkschach_partie ===
-Hier Mama Bear. Bedenkzeit bis zur nächsten Ausfahrt. Ich fange an. #sprecher:mamaBear
+Hier Mama Bear. Bedenkzeit bis zur nächsten Ausfahrt. Ich sag dir meine Züge an, du hörst gut hin. #sprecher:mamaBear
+Earl stellt ein Brett neben das Funkgerät. Was aus dem Lautsprecher kommt, setzt er für Mama Bear aufs Brett. #sprecher:erzaehler
 ~ beginnePartie("wegDesertSummit.funkschach")
 -> END
 

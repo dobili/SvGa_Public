@@ -15,6 +15,7 @@
 
 EXTERNAL beginneAufgaben(runde)
 EXTERNAL gibFund(kennung)
+EXTERNAL beginneGedaechtnis(kennung)
 
 VAR held = "Du"
 VAR ambroseSprichtWieder = false
@@ -162,7 +163,8 @@ VAR gefundenFinchLaeuferB = false
 
 // ---------------------------------------------------------------- Ereignis: Die Seilschaft (Dokument 15, 2.7)
 // Erst nach der Versöhnung (Akt 3, bei der Rückkehr). Vorher liegen nur Seile, Rucksäcke und ein Kreidebeutel
-// am Wandfuß. Gedächtnisstellung kommt von mittel-2; bis dahin eine Aufgabenrunde (wegDelacroixDesert.seilschaft).
+// am Wandfuß. Gedächtnisstellung wegDelacroixDesert.seilschaft (partieformen.json): Ferris zeigt oben die Stellung
+// fünf Sekunden, {held} baut sie aus dem Gedächtnis auf; bestanden setzt wegDelacroixDesertSeilschaftBestanden.
 
 === ereignis_seilschaft ===
 {not versoehnungGesehen:
@@ -186,7 +188,7 @@ Ich zeige dir oben die Stellung. Merk sie dir und ruf sie Wren zu! #sprecher:fer
 
 === seilschaft_runde ===
 Schau genau hin. Unten sieht Wren das Brett nicht. #sprecher:ferris
-~ beginneAufgaben("wegDelacroixDesert.seilschaft")
+~ beginneGedaechtnis("wegDelacroixDesert.seilschaft")
 -> END
 
 === seilschaft_ende ===

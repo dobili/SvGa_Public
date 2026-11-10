@@ -518,6 +518,12 @@
       "muenzen": 5
     },
     {
+      "kennung": "finchDame",
+      "ort": "wegCrossroadsPinewood",
+      "name": "fund.finchDame.name",
+      "text": "fund.finchDame.text"
+    },
+    {
       "kennung": "fotoLebendschach",
       "ort": "wegCrossroadsPinewood",
       "name": "fund.fotoLebendschach.name",

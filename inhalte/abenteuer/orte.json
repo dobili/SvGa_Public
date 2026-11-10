@@ -4196,6 +4196,12 @@
           "dialog": "weg-crossroads-pinewood.seite10"
         },
         {
+          "name": "finchDame",
+          "karte": "wegCrossroadsPinewood.riesenbaeume",
+          "art": "gegenstand",
+          "dialog": "weg-crossroads-pinewood.finch_dame"
+        },
+        {
           "name": "kreide4",
           "karte": "wegCrossroadsPinewood.huetten",
           "art": "gegenstand",

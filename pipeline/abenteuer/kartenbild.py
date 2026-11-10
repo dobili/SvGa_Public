@@ -119,6 +119,10 @@ def hintergrund(szene: dict, privat: Path, gezeichnet: dict | None = None) -> Im
                 bild.alpha_composite(kachel(privat, boegen, art, feld), ort)
                 if gezeichnet is not None:
                     gezeichnet[(x, y)] = (artname, feld)
+            elif z == WAND and szene.get("hang_bis_rand") and (nachbar := randhang(x, y, zeilen, flaeche)):
+                # Szenen mit „hang_bis_rand“ (Bahndamm): Die Böschung läuft bis an den linken und
+                # rechten Bildrand weiter statt dort als Wiese zu enden (Rückmeldung des Autors, Runde 8).
+                bild.alpha_composite(kachel(privat, boegen, wand, wand[flaeche[nachbar]]), ort)
             elif z == WAND and (x, y) in flaeche:
                 teil = wand[flaeche[(x, y)]]
                 bild.alpha_composite(kachel(privat, boegen, wand, teil), ort)
@@ -310,6 +314,13 @@ def bildname(szene: dict) -> tuple[str, bool]:
     if szene.get("variante"):
         return f"{name}-{szene['variante']}", False
     return name, zustand or datei == karte.get("datei")
+
+
+def randhang(x: int, y: int, zeilen: list[str], flaeche: dict) -> tuple[int, int] | None:
+    """Für ein Randfeld links oder rechts das Hangfeld daneben (für „hang_bis_rand“), sonst None."""
+    breite = len(zeilen[0])
+    nachbar = (1, y) if x == 0 else (breite - 2, y) if x == breite - 1 else None
+    return nachbar if nachbar in flaeche else None
 
 
 def main() -> None:

@@ -1,5 +1,59 @@
 {
   "moebel": {
+    "st8Tuerstock": {
+      "quelle": "spiel/eigene/tuerstock_2.png",
+      "breite": 32,
+      "hoehe": 32,
+      "kollision": false,
+      "art": "deko",
+      "zustand": "alt",
+      "stil": "industrie"
+    },
+    "st8Granitquader": {
+      "quelle": "spiel/eigene/granitquader.png",
+      "breite": 32,
+      "hoehe": 32,
+      "kollision": true,
+      "art": "material",
+      "zustand": "gebraucht",
+      "stil": "industrie"
+    },
+    "st8GranitquaderStapel": {
+      "quelle": "spiel/eigene/granitquader_stapel.png",
+      "breite": 32,
+      "hoehe": 48,
+      "kollision": true,
+      "art": "material",
+      "zustand": "gebraucht",
+      "stil": "industrie"
+    },
+    "st8FeldbahnLaengs": {
+      "quelle": "spiel/eigene/feldbahn_laengs.png",
+      "breite": 16,
+      "hoehe": 16,
+      "kollision": false,
+      "art": "gleis",
+      "zustand": "alt",
+      "stil": "industrie"
+    },
+    "st8LoreLaengs": {
+      "quelle": "spiel/eigene/lore_laengs.png",
+      "breite": 16,
+      "hoehe": 24,
+      "kollision": true,
+      "art": "geraet",
+      "zustand": "alt",
+      "stil": "industrie"
+    },
+    "st8PrellbockFeldbahn": {
+      "quelle": "spiel/eigene/prellbock_feldbahn.png",
+      "breite": 16,
+      "hoehe": 16,
+      "kollision": true,
+      "art": "gleis",
+      "zustand": "alt",
+      "stil": "industrie"
+    },
     "st5Bagger": {
       "quelle": "modern-exteriors/Modern_Exteriors_16x16/ME_Theme_Sorter_16x16/8_Worksite_Singles_16x16/ME_Singles_Worksite_16x16_Excavator_1.png",
       "breite": 48,

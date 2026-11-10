@@ -2,7 +2,7 @@
   "karte": "mapleFalls.clubraum",
   "datei": "karten/maple-falls-clubraum.json",
   "art": "innen",
-  "beschreibung": "Der Clubraum des Schachclubs von Maple Falls in der Schule, seit Runde 8 so breit wie ein großes Klassenzimmer (26 x 15, KARTENREGELN 10.56): Die Schule ist außen das größte Gebäude des Orts, und am Clubkampf spielen sechs Bretter gleichzeitig. Ein großer blauer Teppich unter sechs dunklen runden Tischen in zwei versetzten Reihen, auf jedem ein Brett, an jedem zwei grüne Schulstühle. Links ein weißer Ausstellungstisch mit zwei Pokalen, darunter der von 1994. An der Nordwand drei Fenster, Weltkarte, Tafel, das Plakat „Erst zählen“ und eine Pinnwand; in der Mitte das große grüne Pult von Coach Delgado mit dem Globus, an der Ostwand zwei hohe Bücherregale voller Schachbücher, Pflanzen in den Ecken. Vor der Tür bleibt ein breiter Gang frei, wo Eltern auf ihre Kinder warten. Sam wartet am ersten Tisch, das Brett ohne Dame liegt auf dem hinteren Tisch.",
+  "beschreibung": "Der Clubraum des Schachclubs von Maple Falls in der Schule (26 x 15, KARTENREGELN 10.56): Die Schule ist außen das größte Gebäude des Orts, am Clubkampf spielen sechs Bretter gleichzeitig. Ein blauer Teppich liegt mittig unter sechs dunklen runden Tischen in zwei gleichmäßigen Reihen zu drei, an jedem zwei grüne Schulstühle einander gegenüber, auf jedem ein Brett mit Figuren; auf dem hinteren rechten Tisch liegt das Brett, dem die Dame fehlt. An der Westwand das große grüne Pult von Coach Delgado mit Globus, Blick in den Raum, darüber und darunter je ein Bücherregal voller Schachbücher. An der Nordwand zwei Fenster, die Weltkarte, eine Kreidetafel für Demonstrationen, das Plakat „Erst zählen“ und eine Pinnwand; davor eine Glasvitrine mit den Pokalen des Clubs, der vordere von 1994. Rechts drei Spinde für Jacken und Taschen. Unten vor der Tür, die mittig in der Südwand liegt, zwei Holzbänke für Eltern, Pflanzen in den Ecken.",
   "wand": "creme",
   "boden": "holzHell",
   "raster": [
@@ -11,302 +11,315 @@
     "##########################",
     "#........................#",
     "#........................#",
-    "#ttttttttttttttttttttt...#",
-    "#ttttttttttttttttttttt...#",
-    "#ttttttttttttttttttttt...#",
-    "#ttttttttttttttttttttt...#",
-    "#ttttttttttttttttttttt...#",
-    "#ttttttttttttttttttttt...#",
+    "#...ttttttttttttttttttt..#",
+    "#...ttttttttttttttttttt..#",
+    "#...ttttttttttttttttttt..#",
+    "#...ttttttttttttttttttt..#",
+    "#...ttttttttttttttttttt..#",
+    "#...ttttttttttttttttttt..#",
     "#........................#",
     "#........................#",
     "#........................#",
-    "#########.################"
+    "#############.############"
   ],
   "objekte": [
     {
       "moebel": "mf2Fenster",
-      "feld": [3, 1],
-      "an_wand": true
-    },
-    {
-      "moebel": "mf2Fenster",
-      "feld": [11, 1],
+      "feld": [4, 1],
       "an_wand": true
     },
     {
       "moebel": "mf2Weltkarte",
-      "feld": [5, 1],
-      "an_wand": true
-    },
-    {
-      "moebel": "mf2Tafel",
       "feld": [7, 1],
       "an_wand": true
     },
     {
+      "moebel": "mfc8Kreidetafel",
+      "feld": [12, 1]
+    },
+    {
       "moebel": "mf2PlakatZaehlen",
-      "feld": [9, 1],
+      "feld": [15, 1],
       "an_wand": true
     },
     {
       "moebel": "mf4Pinnwand",
-      "feld": [13, 1],
+      "feld": [18, 1],
       "an_wand": true,
       "versatz": [0, 6]
     },
     {
-      "moebel": "mf8Pokaltisch",
-      "feld": [1, 1]
+      "moebel": "mf2Fenster",
+      "feld": [21, 1],
+      "an_wand": true
     },
     {
-      "moebel": "mf8Lehrerpult",
-      "feld": [13, 2],
+      "moebel": "mfc8Vitrine",
+      "feld": [7, 3],
+      "id": "vitrine"
+    },
+    {
+      "moebel": "mfc8Pokal",
+      "auf": "vitrine",
+      "versatz": [-6, 0]
+    },
+    {
+      "moebel": "mfc8PokalB",
+      "auf": "vitrine",
+      "versatz": [6, 0]
+    },
+    {
+      "moebel": "mfc8RegalSeite",
+      "feld": [1, 3]
+    },
+    {
+      "moebel": "mfc8Pult",
+      "feld": [1, 6],
       "id": "pult"
     },
     {
       "moebel": "mf2Globus",
-      "feld": [0, 0],
       "auf": "pult",
-      "versatz": [6, 2]
+      "versatz": [4, 0]
     },
     {
-      "moebel": "mf8RegalHoch",
-      "feld": [23, 2]
-    },
-    {
-      "moebel": "mf8RegalHoch2",
-      "feld": [23, 6]
-    },
-    {
-      "moebel": "mf8RundtischDunkel",
-      "feld": [2, 5],
-      "id": "t1"
-    },
-    {
-      "moebel": "mf3BrettKleinFiguren",
-      "feld": [0, 0],
-      "auf": "t1"
-    },
-    {
-      "moebel": "mf8SchulstuhlRechts",
-      "feld": [1, 5],
-      "zu": "t1"
-    },
-    {
-      "moebel": "mf8SchulstuhlLinks",
-      "feld": [4, 5],
-      "zu": "t1"
-    },
-    {
-      "moebel": "mf8RundtischDunkel",
-      "feld": [8, 5],
-      "id": "t2"
-    },
-    {
-      "moebel": "mf3BrettKleinFiguren",
-      "feld": [0, 0],
-      "auf": "t2"
-    },
-    {
-      "moebel": "mf8SchulstuhlRechts",
-      "feld": [7, 5],
-      "zu": "t2"
-    },
-    {
-      "moebel": "mf8SchulstuhlLinks",
-      "feld": [10, 5],
-      "zu": "t2"
-    },
-    {
-      "moebel": "mf8RundtischDunkel",
-      "feld": [5, 8],
-      "id": "t3"
-    },
-    {
-      "moebel": "mf3BrettKleinFiguren",
-      "feld": [0, 0],
-      "auf": "t3"
-    },
-    {
-      "moebel": "mf8SchulstuhlRechts",
-      "feld": [4, 8],
-      "zu": "t3"
-    },
-    {
-      "moebel": "mf8SchulstuhlLinks",
-      "feld": [7, 8],
-      "zu": "t3"
-    },
-    {
-      "moebel": "mf8RundtischDunkel",
-      "feld": [11, 8],
-      "id": "t4"
-    },
-    {
-      "moebel": "mf3BrettKleinFiguren",
-      "feld": [0, 0],
-      "auf": "t4"
-    },
-    {
-      "moebel": "mf8SchulstuhlRechts",
-      "feld": [10, 8],
-      "zu": "t4"
-    },
-    {
-      "moebel": "mf8SchulstuhlLinks",
-      "feld": [13, 8],
-      "zu": "t4"
-    },
-    {
-      "moebel": "mf2Pflanze",
+      "moebel": "mfc8RegalSeiteB",
       "feld": [1, 9]
     },
     {
-      "moebel": "mf2Pflanze",
-      "feld": [24, 9]
+      "moebel": "mfc8Spind",
+      "feld": [19, 3]
+    },
+    {
+      "moebel": "mfc8Spind",
+      "feld": [20, 3]
+    },
+    {
+      "moebel": "mfc8Spind",
+      "feld": [21, 3]
+    },
+    {
+      "moebel": "mf7PflanzeHoch",
+      "feld": [24, 3]
     },
     {
       "moebel": "mf4Palme",
-      "feld": [22, 9]
+      "feld": [23, 11]
+    },
+    {
+      "moebel": "mf7PflanzeBusch",
+      "feld": [1, 11]
+    },
+    {
+      "moebel": "mfc8Demotafel",
+      "feld": [23, 7]
+    },
+    {
+      "moebel": "mfc8RegalNiedrig",
+      "feld": [22, 3]
+    },
+    {
+      "moebel": "mfc8Bank",
+      "feld": [5, 11]
+    },
+    {
+      "moebel": "mfc8Bank",
+      "feld": [17, 11]
     },
     {
       "moebel": "mf5TuerSuedHolz",
-      "feld": [9, 14],
+      "feld": [13, 14],
       "an_wand": true
     },
     {
       "moebel": "mf4Fussmatte",
-      "feld": [9, 13],
+      "feld": [13, 13],
       "versatz": [0, 8]
     },
     {
-      "moebel": "mf2Fenster",
-      "feld": [19, 1],
-      "an_wand": true
+      "moebel": "mf8RundtischDunkel",
+      "feld": [6, 6],
+      "id": "t1"
+    },
+    {
+      "moebel": "mf3BrettKleinFiguren",
+      "auf": "t1"
+    },
+    {
+      "moebel": "mf8SchulstuhlRechts",
+      "feld": [5, 6],
+      "zu": "t1"
+    },
+    {
+      "moebel": "mf8SchulstuhlLinks",
+      "feld": [8, 6],
+      "zu": "t1"
     },
     {
       "moebel": "mf8RundtischDunkel",
-      "feld": [16, 5],
+      "feld": [12, 6],
+      "id": "t2"
+    },
+    {
+      "moebel": "mf3BrettKleinFiguren",
+      "auf": "t2"
+    },
+    {
+      "moebel": "mf8SchulstuhlRechts",
+      "feld": [11, 6],
+      "zu": "t2"
+    },
+    {
+      "moebel": "mf8SchulstuhlLinks",
+      "feld": [14, 6],
+      "zu": "t2"
+    },
+    {
+      "moebel": "mf8RundtischDunkel",
+      "feld": [18, 6],
+      "id": "t3"
+    },
+    {
+      "moebel": "mfc8BrettLeer",
+      "auf": "t3"
+    },
+    {
+      "moebel": "mf8SchulstuhlRechts",
+      "feld": [17, 6],
+      "zu": "t3"
+    },
+    {
+      "moebel": "mf8SchulstuhlLinks",
+      "feld": [20, 6],
+      "zu": "t3"
+    },
+    {
+      "moebel": "mf8RundtischDunkel",
+      "feld": [6, 9],
+      "id": "t4"
+    },
+    {
+      "moebel": "mf3BrettKleinFiguren",
+      "auf": "t4"
+    },
+    {
+      "moebel": "mf8SchulstuhlRechts",
+      "feld": [5, 9],
+      "zu": "t4"
+    },
+    {
+      "moebel": "mf8SchulstuhlLinks",
+      "feld": [8, 9],
+      "zu": "t4"
+    },
+    {
+      "moebel": "mf8RundtischDunkel",
+      "feld": [12, 9],
       "id": "t5"
     },
     {
       "moebel": "mf3BrettKleinFiguren",
-      "feld": [0, 0],
       "auf": "t5"
     },
     {
       "moebel": "mf8SchulstuhlRechts",
-      "feld": [15, 5],
+      "feld": [11, 9],
       "zu": "t5"
     },
     {
       "moebel": "mf8SchulstuhlLinks",
-      "feld": [18, 5],
+      "feld": [14, 9],
       "zu": "t5"
     },
     {
       "moebel": "mf8RundtischDunkel",
-      "feld": [17, 8],
+      "feld": [18, 9],
       "id": "t6"
     },
     {
       "moebel": "mf3BrettKleinFiguren",
-      "feld": [0, 0],
       "auf": "t6"
     },
     {
       "moebel": "mf8SchulstuhlRechts",
-      "feld": [16, 8],
+      "feld": [17, 9],
       "zu": "t6"
     },
     {
       "moebel": "mf8SchulstuhlLinks",
-      "feld": [19, 8],
+      "feld": [20, 9],
       "zu": "t6"
-    },
-    {
-      "moebel": "mf2Pflanze",
-      "feld": [1, 11]
-    },
-    {
-      "moebel": "mf8Kommode",
-      "feld": [16, 2]
-    },
-    {
-      "moebel": "mf8RegalRot",
-      "feld": [19, 2]
-    },
-    {
-      "moebel": "mf8Sideboard",
-      "feld": [21, 2]
     }
   ],
   "ausloeser": [
     {
       "name": "start",
-      "feld": [9, 13],
+      "feld": [13, 12],
       "eigenschaften": {
         "richtung": "oben"
       }
     },
     {
       "name": "schule",
-      "feld": [9, 14]
+      "feld": [13, 14]
     },
     {
       "name": "pokalvitrine",
-      "feld": [1, 3],
+      "feld": [7, 3],
       "auf_moebel": true
     },
     {
       "name": "brettOhneDame",
-      "feld": [12, 9],
+      "feld": [18, 6],
       "auf_moebel": true
     },
     {
       "name": "plakatZaehlen",
-      "feld": [9, 3]
+      "feld": [15, 3]
     }
   ],
   "figuren": [
     {
       "name": "coachDelgado",
-      "feld": [12, 4]
+      "feld": [3, 7]
     },
     {
       "name": "sam",
-      "feld": [3, 4]
+      "feld": [9, 8]
     }
   ],
   "belebung": [
     {
       "name": "schuelerin",
       "typ": "statist",
-      "feld": [3, 7],
+      "feld": [12, 8],
       "eigenschaften": {
-        "tun": "stellt die Figuren auf",
+        "tun": "stellt am Tisch die Figuren auf",
         "wann": "tag",
-        "sagt": "statist.mapleFalls.clubraum.schuelerin"
+        "sagt": "statist.mapleFalls.clubraum.schuelerin",
+        "bild": "statist-07"
       }
     },
     {
       "name": "clubmitglied",
       "typ": "statist",
-      "feld": [13, 8],
+      "feld": [16, 8],
       "eigenschaften": {
-        "tun": "analysiert eine alte Partie",
+        "tun": "schaut stehend einer Analyse zu",
         "wann": "tag",
-        "sagt": "statist.mapleFalls.clubraum.clubmitglied"
+        "sagt": "statist.mapleFalls.clubraum.clubmitglied",
+        "bild": "statist-14"
       }
     },
     {
       "name": "mutterWartet",
       "typ": "statist",
-      "feld": [8, 10],
+      "feld": [11, 12],
       "eigenschaften": {
         "tun": "wartet an der Tür auf ihren Sohn",
         "wann": "tag",
-        "sagt": "statist.mapleFalls.clubraum.mutterWartet"
+        "sagt": "statist.mapleFalls.clubraum.mutterWartet",
+        "bild": "statist-18"
       }
     }
   ],

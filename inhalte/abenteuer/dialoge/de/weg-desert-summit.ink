@@ -94,6 +94,10 @@ Rote Felstürme, und darüber kreisen Falken. #sprecher:erzaehler
 -> END
 
 // >>> Runde 6 (mittel-4)
+VAR spurenPM = 0
+VAR kreideTreffpunkte = 0
+VAR finchFiguren = 0
+VAR buchseiten = 0
 EXTERNAL beginnePartie(begegnung)
 VAR ambroseSprichtWieder = false
 VAR funkschachBegonnen = false
@@ -143,7 +147,7 @@ Mein Laster steht in der Haltebucht an der Bergstraße. Schau ihn dir an, wenn d
 
 // ---------------------------------------------------------------- Funde am Diner
 
-=== fund_kreide3 ===
+=== kreide3 ===
 {gefundenKreide3:
     Der Springer aus Kreide ist noch da. Daneben die Tür zum Hinterzimmer. #sprecher:erzaehler
     -> END
@@ -152,12 +156,13 @@ Mein Laster steht in der Haltebucht an der Bergstraße. Schau ihn dir an, wenn d
 An der Seitenwand des Diners ist ein Springer aus Kreide gemalt, direkt neben einer schmalen Tür. #sprecher:erzaehler
 Darunter, ganz klein: „Dreimal klopfen.“ #sprecher:erzaehler
 ~ gibFund("kreide3")
+~ kreideTreffpunkte = kreideTreffpunkte + 1
 {ambroseSprichtWieder:
     Ein Club ohne Haus. Das gefällt mir. Früher haben wir in Kaffeehäusern gespielt. #sprecher:ambrose
 }
 -> END
 
-=== fund_finch_springer_b ===
+=== finch_springer_b ===
 {gefundenFinchSpringerB:
     Im Blumenkasten wachsen nur noch Blumen. #sprecher:erzaehler
     -> END
@@ -165,9 +170,10 @@ Darunter, ganz klein: „Dreimal klopfen.“ #sprecher:erzaehler
 ~ gefundenFinchSpringerB = true
 Im Blumenkasten am Motel steckt ein kleiner Fink aus Blech. Zwischen den Blumen liegt ein weißer Springer aus Buchsbaum. #sprecher:erzaehler
 ~ gibFund("finchSpringerB")
+~ finchFiguren = finchFiguren + 1
 -> END
 
-=== fund_seite08 ===
+=== seite08 ===
 {gefundenSeite08:
     Auf dem Parkplatz liegt nur noch Staub. #sprecher:erzaehler
     -> END
@@ -175,6 +181,7 @@ Im Blumenkasten am Motel steckt ein kleiner Fink aus Blech. Zwischen den Blumen 
 ~ gefundenSeite08 = true
 Unter einem Reifen des Lasters klemmt eine Buchseite. Oben steht: Kapitel 8, Endspiel-Fundament. #sprecher:erzaehler
 ~ gibFund("seite08")
+~ buchseiten = buchseiten + 1
 -> END
 
 === hinterzimmer_tuer ===
@@ -248,7 +255,7 @@ Ein Wegweiser: „Summit City ↑, Hochebene ←“. Die Schranke zur Hochebene 
 Aus dem Fels rinnt kaltes Wasser in einen Steintrog. {held} trinkt ein paar Schlucke. #sprecher:erzaehler
 -> END
 
-=== fund_spur_pm4 ===
+=== spur_pm4 ===
 {gefundenSpurPM4:
     Der Sattelzug steht noch in der Haltebucht. Die Kisten summen. #sprecher:erzaehler
     -> END
@@ -257,5 +264,6 @@ Aus dem Fels rinnt kaltes Wasser in einen Steintrog. {held} trinkt ein paar Schl
 In der Haltebucht steht ein blauer Sattelzug. Auf den Kisten klebt das Logo von Perfect Move, versiegelt, Ziel „Gebirge“. #sprecher:erzaehler
 Wenn man das Ohr an eine Kiste hält, summt sie. Unter dem Scheibenwischer steckt ein Frachtbrief. #sprecher:erzaehler
 ~ gibFund("spurPM4")
+~ spurenPM = spurenPM + 1
 -> END
 // <<< Runde 6 (mittel-4)

@@ -5,6 +5,7 @@
 // Erreichbar über die Sperre S9 auf dem Canyonpfad (weg-delacroix-desert.sternwarte_abzweig).
 
 // >>> Runde 6 (mittel-4)
+VAR finchFiguren = 0
 EXTERNAL beginneAufgaben(runde)
 EXTERNAL gibFund(kennung)
 VAR held = "Du"
@@ -68,7 +69,7 @@ Von der Bank sieht man tief hinunter in den Canyon. Der Pfad unten ist nur noch 
 Ein alter Antennenmast, festgebunden mit Draht. Er summt leise im Wind. Von hier geht Dr. Ngatas Funk um die Welt. #sprecher:erzaehler
 -> END
 
-=== fund_finch_bauer_g ===
+=== finch_bauer_g ===
 {gefundenFinchBauerG:
     Unter dem Finkenzeichen liegt nur noch Staub. #sprecher:erzaehler
     -> END
@@ -76,5 +77,6 @@ Ein alter Antennenmast, festgebunden mit Draht. Er summt leise im Wind. Von hier
 ~ gefundenFinchBauerG = true
 Auf dem Boden ist ein kleiner Fink aus Kreide gemalt. Darunter, hinter einer Kiste mit Fotoplatten, steht ein weißer Bauer aus Buchsbaum. #sprecher:erzaehler
 ~ gibFund("finchBauerG")
+~ finchFiguren = finchFiguren + 1
 -> END
 // <<< Runde 6 (mittel-4)

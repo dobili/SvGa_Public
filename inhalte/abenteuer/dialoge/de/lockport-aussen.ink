@@ -9,10 +9,12 @@
 // (Henriks Boot, Runde lockport.taue, Gummistiefel über die Quest), L3 Post für den Kapitän
 // (Brief von Big Joe aus Ironwood, Variable briefFuerRuben; danach lastkahnFrei).
 // Lohn des ganzen Ortes: Imogen gibt die Karte „Auszeit“, wenn alle drei erledigt sind.
-// Einstiege wie in orte.json: tafel_schleuse, steg_s3, kai, henriks_boot.
+// Einstiege wie in orte.json: tafel_schleuse, steg_s3, kai, henriks_boot, lastkahn (Rückfahrt mit der
+// Ashford Belle nach Riverton oder Ironwood, erst ab lastkahnFrei; Hinfahrt an den Anlegern dort).
 
 EXTERNAL beginneAufgaben(runde)
 EXTERNAL gibKarte(kennung)
+EXTERNAL reise(karte, ausloeser)
 
 VAR held = "Du"
 VAR lockportTafelSchleuseBestanden = false
@@ -158,3 +160,23 @@ Der alte Dorfbrunnen mit Kurbel. Wer dreht, bekommt kaltes Wasser und quietschen
 === glocke ===
 An einem Pfosten am Ufer hängt eine Messingglocke. Imogen läutet sie für jeden Kahn, der kommt. #sprecher:erzaehler
 -> END
+
+// ---------------------------------------------------------------- Lastkahn (nach L3)
+
+=== lastkahn ===
+{not lastkahnFrei:
+    Die Ashford Belle liegt vertäut unter ihrer Plane. Ohne Fracht fährt sie nirgendwohin. #sprecher:erzaehler
+    -> END
+}
+Ruben steht an der Gangway. „Die Belle legt gleich ab. Wohin?“ #sprecher:erzaehler
+* [Nach Riverton]
+    Der Kahn gleitet aus der Schleuse in den Kanal. Die Pappeln ziehen langsam vorbei. #sprecher:erzaehler
+    ~ reise("riverton.aussen", "anlegerSchild")
+    -> END
+* [Nach Ironwood]
+    Der Kahn folgt dem Kanal nach Osten, bis die Schlote des Werks auftauchen. #sprecher:erzaehler
+    ~ reise("ironwood.aussen", "anleger")
+    -> END
+* [Hierbleiben]
+    „Die Belle wartet nicht ewig. Aber heute schon.“ #sprecher:erzaehler
+    -> END

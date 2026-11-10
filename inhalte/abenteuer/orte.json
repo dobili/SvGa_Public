@@ -1413,6 +1413,12 @@
           "karte": "lockport.aussen",
           "art": "dialog",
           "dialog": "lockport-aussen.glocke"
+        },
+        {
+          "name": "lastkahn",
+          "karte": "lockport.aussen",
+          "art": "dialog",
+          "dialog": "lockport-aussen.lastkahn"
         }
       ]
     },

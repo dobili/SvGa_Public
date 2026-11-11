@@ -128,3 +128,13 @@ Landstraße (Zustand dort).
 - **Traktor:** Er steht längs auf dem Hofweg (West–Ost), so passt die Seitenansicht (Regel 10.65).
   Der Traktorfahrer steht daneben.
 - **Blaue Kiste beim Schwein:** Das war die kleine Tränke, jetzt steht dort ein Holztrog.
+
+## Rückmeldung des Autors, Runde 11: Antworten (niedrig-1, 11.11.2026)
+
+- **R045:** Der Zaun vor dem Kürbisfeld hat an allen vier Enden einen Pfosten.
+- **R046:** Die Kürbisse liegen ganz im Beet (Spalten 37–45), keiner mehr auf dem Rand.
+- **R047:** Das Kürbisfeld ist ein großes Beet mit Ackererde und Holzrahmen (`acker_11x18.png`,
+  aus LimeZus neun Beetteilen zusammengesetzt), nicht mehr der Boden der Wege.
+- **R048:** Der Mais ist ein Labyrinth (in der Mitte steht „Morphy“). Darunter liegt durchgehender
+  Ackerboden ohne Rahmen (`acker_frei_13x18.png`, gekachelt aus LimeZus `Topsoil`); die acht
+  gerahmten Beete sind weg.

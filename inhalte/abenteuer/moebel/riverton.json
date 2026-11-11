@@ -871,7 +871,7 @@
       "blick": "unten"
     },
     "rv5Schuppen": {
-      "quelle": "spiel/eigene/gartenhaus_braun.png",
+      "quelle": "modern-exteriors/Modern_Exteriors_16x16/ME_Theme_Sorter_16x16/17_Garden_Singles_16x16/ME_Singles_Garden_16x16_Brown_Wood_Storage.png",
       "breite": 48,
       "hoehe": 64,
       "kollision": true,
@@ -882,7 +882,7 @@
       "tuer": [[1, 4]]
     },
     "rv5Pegelhaus": {
-      "quelle": "spiel/eigene/gartenhaus_weiss.png",
+      "quelle": "modern-exteriors/Modern_Exteriors_16x16/ME_Theme_Sorter_16x16/17_Garden_Singles_16x16/ME_Singles_Garden_16x16_White_Wood_Storage.png",
       "breite": 48,
       "hoehe": 64,
       "kollision": true,
@@ -1215,7 +1215,7 @@
       "blick": "unten"
     },
     "rv5PegelhausWeiss": {
-      "quelle": "spiel/eigene/gartenhaus_weiss.png",
+      "quelle": "modern-exteriors/Modern_Exteriors_16x16/ME_Theme_Sorter_16x16/17_Garden_Singles_16x16/ME_Singles_Garden_16x16_White_Wood_Storage.png",
       "breite": 48,
       "hoehe": 64,
       "kollision": true,

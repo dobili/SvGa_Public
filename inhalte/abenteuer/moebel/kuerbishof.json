@@ -270,6 +270,24 @@
       "art": "geraet",
       "zustand": "gebraucht",
       "stil": "laendlich"
+    },
+    "n12AckerMais": {
+      "quelle": "spiel/eigene/acker_frei_13x18.png",
+      "breite": 208,
+      "hoehe": 288,
+      "kollision": false,
+      "art": "boden",
+      "zustand": "gebraucht",
+      "stil": "laendlich"
+    },
+    "n12AckerKuerbis": {
+      "quelle": "spiel/eigene/acker_11x18.png",
+      "breite": 176,
+      "hoehe": 288,
+      "kollision": false,
+      "art": "boden",
+      "zustand": "gebraucht",
+      "stil": "laendlich"
     }
   }
 }

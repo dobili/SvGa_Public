@@ -877,3 +877,22 @@ Geist, der vor langer Zeit gelebt hat und ein Kind findet. Das Spiel ist keine W
   die Buch-App), sie erscheint nur nicht mehr im Spiel.
 
 Auftrag: `docs/spiel/auftraege/runde10_dialoge.md` (mittel-2).
+
+## 11.11.2026 – Rückmeldung des Autors zu den Karten (Sammel-Chat, R001 bis R070)
+
+Der Autor hat die Karten auf der Weltkarte durchgesehen; die Sammlung steht in
+`docs/spiel/auftraege/rueckmeldung/sammlung.md`. Hauptpunkt sind die „Abziehbilder“: von Hand
+gezeichnete Bilder ohne Tiefe, die neben den gekauften Paketen herausfallen.
+
+- **Abziehbilder kommen weg.** Reihenfolge für Ersatz: Paketbild aus dem Katalog, dann Zusammenbau
+  aus Paketteilen, erst zuletzt ein Wunsch für Gemini (gesammelt in einer Datei für den Autor). Selbst
+  Gezeichnetes bleibt nur für Flaches (Schilder, Markierungen, Böden, Plakate). Der Gutachter sichtet
+  alle 558 eigenen Bilder.
+- **Kartenwechsel erst mit Bewegung zum Durchgang**, nicht beim Darüberlaufen.
+- **Wege sind verbindlich:** keine Abkürzung durch Wald oder um Felswände herum, außer zu Fundstellen.
+- **Drei Straßenarten**, die man unterscheidet: Trampelpfad, Landstraße (Bus), Stadtstraße.
+- **Die Außenkarten ergeben eine Weltkarte** ohne Überlappung; Flüsse und Straßen setzen sich fort.
+- **Innenräume passen zum Gebäude außen**; Türen deuten weitere Räume und Treppenhäuser an.
+- **Figuren stehen sinnvoll**, Schachspieler sitzen.
+
+Auftrag mit Verteilung: `docs/spiel/auftraege/runde11_rueckmeldung.md`.

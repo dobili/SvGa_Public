@@ -125,7 +125,12 @@ function pruefeKarte(
     }
   }
   const fest = unerreichbare(datei, alle, frei, namen, stege);
-  return [...befunde, ...fest, ...versperrer(datei, karte, alle, gesperrt, namen, stege)];
+  return [
+    ...befunde,
+    ...fest,
+    ...versperrer(datei, karte, alle, gesperrt, namen, stege),
+    ...versperrerPaare(datei, karte, alle, gesperrt, namen, stege),
+  ];
 }
 
 /**
@@ -231,6 +236,54 @@ function versperrer(
   return befunde;
 }
 
+/** So nah müssen zwei Laufende stehen, um gemeinsam eine Lücke zu schließen (Kacheln, Summe aus x und y). */
+const NAH = 2;
+
+/**
+ * Zwei Statisten oder Tiere, die gemeinsam etwas versperren (Grenze des Einzeltests, Auftrag
+ * 11.11.2026): Jedes Paar wird auf alle Kacheln seiner Laufwege gestellt, die höchstens NAH
+ * auseinanderliegen; nur so nah können zwei zusammen einen Durchgang schließen, den jeder allein
+ * offen lässt. Was dann nicht mehr zu erreichen ist, ist ein Befund.
+ */
+function versperrerPaare(
+  datei: string,
+  karte: Tiledkarte,
+  alle: readonly Ausloeser[],
+  gesperrt: ReadonlySet<string>,
+  uebergaenge: readonly string[],
+  stege: readonly { readonly von: readonly Kachelort[]; readonly nach: Kachelort }[],
+): string[] {
+  const ohne = begehbar(karte, gesperrt);
+  const inKarte = (x: number, y: number) => x >= 0 && y >= 0 && x < karte.width && y < karte.height;
+  const vorher = erreichteNamen(ohne, alle, uebergaenge, stege);
+  const wege = laufwege(karte, KACHEL);
+  const befunde: string[] = [];
+  wege.forEach((a, i) => {
+    for (const b of wege.slice(i + 1)) {
+      const plaetze = new Set([`${a.start.x},${a.start.y}`, `${b.start.x},${b.start.y}`]);
+      const verloren = new Set<string>();
+      for (const fa of a.felder) {
+        for (const fb of b.felder) {
+          const abstand = Math.abs(fa.x - fb.x) + Math.abs(fa.y - fb.y);
+          if (abstand === 0 || abstand > NAH) continue;
+          const besetzt = new Set([`${fa.x},${fa.y}`, `${fb.x},${fb.y}`]);
+          const frei = (x: number, y: number) =>
+            !besetzt.has(`${x},${y}`) &&
+            (ohne(x, y) || (plaetze.has(`${x},${y}`) && inKarte(x, y)));
+          const noch = erreichteNamen(frei, alle, uebergaenge, stege);
+          for (const n of vorher) if (!noch.has(n)) verloren.add(n);
+        }
+      }
+      if (verloren.size > 0) {
+        befunde.push(
+          `${datei}: ${a.name} und ${b.name} versperren gemeinsam ${[...verloren].sort().join(", ")}`,
+        );
+      }
+    }
+  });
+  return befunde;
+}
+
 const NACHBARN = [
   { x: 0, y: -1 },
   { x: 0, y: 1 },
@@ -256,6 +309,36 @@ describe("Übergänge zu Fuß", () => {
     },
     ZEITGRENZE_MS,
   );
+
+  it("meldet zwei Laufende, die nur gemeinsam einen Durchgang schließen", () => {
+    // Karte 5 × 4 ohne Wände; ein Gang ist es durch die Auslöser: links „start“, rechts „tuer“,
+    // dazwischen in Spalte 2 eine Mauer aus Möbeln mit einer zwei Kacheln breiten Lücke (Reihen 1, 2).
+    const statist = (name: string, reihe: number) => ({
+      name,
+      type: "statist",
+      x: 2 * KACHEL,
+      y: reihe * KACHEL,
+      properties: [
+        { name: "von", value: `2,${reihe}` },
+        { name: "bis", value: `3,${reihe}` },
+      ],
+    });
+    const karte: Tiledkarte = {
+      width: 5,
+      height: 4,
+      layers: [{ type: "objectgroup", objects: [statist("anna", 1), statist("ben", 2)] }],
+    };
+    const alle: Ausloeser[] = [
+      { name: "start", typ: "ausloeser", x: 0, y: 1 },
+      { name: "tuer", typ: "ausloeser", x: 4, y: 1 },
+    ];
+    const mauer = new Set(["2,0", "2,3", "3,0", "3,3"]);
+    expect(versperrer("probe", karte, alle, mauer, ["tuer"], [])).toEqual([]);
+    expect(versperrerPaare("probe", karte, alle, mauer, ["tuer"], [])).toEqual([
+      // Gestartet wird an den Übergängen (hier „tuer“); verloren geht, was dahinter liegt.
+      "probe: anna und ben versperren gemeinsam start",
+    ]);
+  });
 
   it("geht einen Weg ab und meldet den Übergang erst beim Betreten", () => {
     const alle: Ausloeser[] = [

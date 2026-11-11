@@ -105,13 +105,56 @@ fünf wiederkehrende Fehler:
 10. Silicon Bay, Victor. Vorher: „Sieh sie dir an. Mit deiner App, nicht mit unserer.“ Jetzt: „Sieh
     sie dir an. Mit deinem eigenen Kopf, nicht mit unserem Programm.“
 
+## Nachtrag 11.11.2026: Tagebuch, Funde, Vorführungen
+
+Der Haupt-Chat hat entschieden: Die Schnitzeljagd bleibt das Manuskript des Wanderers, „Karten“
+bleiben Gegenstände der Welt, die kleinen Geschichtsstunden der Statisten bleiben. Danach wurden die
+bisher nur mit Suchmustern geprüften Texte Satz für Satz gelesen.
+
+| Gruppe                                | gelesen | geändert | Befund                                                             |
+| ------------------------------------- | ------: | -------: | ------------------------------------------------------------------ |
+| Questschritte und Questtitel          |     276 |      188 | Befehl an den Spieler → Notiz des Helden                           |
+| Tagebuchtexte                         |      26 |        5 | „Deine Hilfskarten“ → „Meine Hilfskarten“ usw.                     |
+| Funde (ohne Seiten und Finch-Figuren) |      75 |        8 | „dir“, „deinem“ → „mir“, „meinem“; drei Sätze in Ambroses Ich-Form |
+| Vorführungen                          |     161 |        0 | lebendig erzählt, kein Lehrbuchton                                 |
+| Steckbriefe (Vorlagen der Lupe)       |       8 |        0 | knapp und sachlich, passt zur Lupe des Uhrmachers                  |
+| Kartensprüche und Kartenmeldungen     |      47 |        0 | Ambroses Stimme                                                    |
+| Ortsnamen, Clubnamen, Läden           |     146 |        0 | reine Namen                                                        |
+
+**Tagebuch in der Stimme des Helden:** Das Tagebuch gehört dem Helden. Vorher standen dort Befehle
+(„Löse die Aufgaben, die Sam dir stellt.“), bei den späteren Quests Grundformen ohne Punkt („Dem
+Kapitän die Lösung zeigen und das Horn blasen“). Jetzt sind alle Schritte Notizen in derselben
+Form: „Sams Aufgaben lösen.“, „Mama zeigen, was ich gefunden habe.“, „Beim Coach meinen Platz im
+Team abholen.“ Die Überschrift heißt „Das habe ich vor“ statt „Offene Aufgaben“, die Meldung „Neu im
+Tagebuch: …“ statt „Neue Aufgabe: …“. Die Grundform ist zugleich geschlechtsneutral.
+
+**Vorführungen:** Der Auftrag nannte Ambroses Stimme. In der App zeigt aber ein Statist die
+Vorführung (der Kunde im Bergladen das Schäfermatt, der Wirt in Ironwood Botwinniks Läuferopfer),
+nicht Ambrose. Die Texte sind deshalb in einer Erzählstimme geblieben, die zu jedem Vorführenden
+passt („Und jetzt die Dame! Morphy gibt sie her, damit der Springer weg ist.“). Sollen sie doch von
+Ambrose kommen, müsste die App ihn als Sprecher zeigen; die Texte wären dann schnell angepasst.
+
+**Englisch:** Für die Spieltexte gibt es keine englische Fassung (`inhalte/abenteuer/texte` hat nur
+`de.json`, die Ink-Dialoge nur `de`). Die Abenteuertexte der App in `app/src/i18n/en.json`
+(Menü, Laden des Pakets) waren nicht betroffen. Nachzuziehen ist also nichts; die Übersetzung des
+Spiels bleibt als Ganzes offen.
+
+**Lauftest (Grenzen aus der Meldung vom 10.11.2026):**
+
+- Zwei Laufende, die gemeinsam zustellen: neu geprüft (`versperrerPaare` in
+  `app/src/abenteuer/oberwelt/uebergangslauf.test.ts`). Jedes Paar von Statisten oder Tieren wird
+  auf alle Kacheln seiner Laufwege gestellt, die höchstens zwei Kacheln auseinanderliegen. Befunde
+  auf den gebauten Karten: keine. Der Test läuft 14 Sekunden.
+- Engstellen zwischen pixelversetzten Möbeln: kein eigener Lauf nötig. Ein Möbel sperrt im Lauftest
+  jede Kachel, die es berührt; frei ist also nur, was eine ganze Kachel (16 Pixel) breit ist, und
+  der Körper des Helden misst 12 Pixel. Der Lauftest irrt nur zur sicheren Seite. Festgehalten in
+  `app/src/abenteuer/oberwelt/begehbar.test.ts`.
+- Weiter nicht geprüft: drei oder mehr Laufende zugleich. Im Spiel dreht ein aufgehaltener Statist
+  nach anderthalb Sekunden um, ein Dauerstau ist deshalb auch dort nicht zu erwarten.
+
 ## Offen
 
-- **Schnitzeljagd:** Wanderer oder Ambrose (siehe oben). Entscheidung des Autors.
-- **Karten als Gegenstand der Welt:** Läden verkaufen „Karten“, Turnierleiterin und Clubchefs sagen
-  „ohne Karten“. Das blieb, weil die Karten in der Welt als Schachkarten vorkommen. Ambroses eigene
-  Karten sind jetzt als Versprechen formuliert („Nenn es Mentor-Zug“). Soll niemand außer Ambrose
-  von Karten reden, wären etwa 15 Sätze und die Ladentexte zu ändern.
+- **Schnitzeljagd, Karten als Gegenstand der Welt, Statisten:** entschieden (siehe Nachtrag), nichts offen.
 - **Variantentisch in der Raststätte:** „Kommt bald an den Tisch.“ und „Das geht schon.“ sind
   Platzhalter für Spielformen, die noch nicht gebaut sind. Sie verschwinden mit den Formen.
 - **Odette Finch und Rosalind Kettering** sprechen als Erzähltext in Anführungszeichen (ohne
@@ -120,10 +163,5 @@ fünf wiederkehrende Fehler:
 - **Greta an der Hütte** sieht Ambrose („Der Geist da spielt doch, oder?“). Das ist die einzige
   Figur außer dem Helden, die ihn bemerkt (Ward ahnt ihn nur). Blieb, weil die Blindpartie darauf
   aufbaut.
-- **Statisten:** Viele Sätze sind kleine Geschichtsstunden („Wusstest du, dass …“). Sie passen zu
-  den Figuren (Rentner, Lehrer, Försterin) und blieben. Wem das zu lehrhaft ist: Es betrifft etwa
-  40 der 321 Sätze.
-- **Questtexte, Steckbriefe, Vorführungen** (rund 550 Texte) wurden nur mit Suchmustern geprüft
-  (Buchverweise, Anrede, Bedienwörter), nicht Satz für Satz gelesen.
-- **Englisch:** `inhalte/abenteuer/texte` hat nur `de.json`; für eine Übersetzung gilt der Test
-  ebenfalls.
+- **Englische Fassung des Spiels:** gibt es noch nicht (siehe Nachtrag).
+- **Vorführungen von Ambrose:** nur, wenn die App ihn als Sprecher zeigt (siehe Nachtrag).

@@ -145,6 +145,9 @@ export function useAppdienste(): Appdienste {
         const id = laufendePartieId(kennung);
         if (id) navigiere({ bildschirm: "zusatz", kennung: ANSICHT_PARTIE, wert: id });
       },
+      zeigeBeendetePartie: (id) => {
+        navigiere({ bildschirm: "zusatz", kennung: ANSICHT_PARTIE, wert: id });
+      },
       sucheKipppunkt: async (kennung) => {
         const partie = findeAbenteuerpartie(kennung);
         return partie ? sucheKipppunkt(partie, bewerteFuerKipppunkt) : null;

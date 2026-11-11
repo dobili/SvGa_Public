@@ -1591,5 +1591,12 @@
   "fund.kreide1.text": "Ein Springer aus Kreide am Brückenfuß. Wer ihn findet und das Wort kennt, darf mitspielen.",
   "quest.seilschaft.schritt2": "Wren erzählen, wie die Partie ausgegangen ist.",
   "fund.finchDame.name": "Weiße Dame aus Buchsbaum",
-  "fund.finchDame.text": "Aus der Astgabel eines Mammutbaums am Weg nach Pinewood, neben einem Fink aus Blech. Unter dem Fuß ist ein Feld eingebrannt."
+  "fund.finchDame.text": "Aus der Astgabel eines Mammutbaums am Weg nach Pinewood, neben einem Fink aus Blech. Unter dem Fuß ist ein Feld eingebrannt.",
+  "huelle.zugZurueck": "Einen Zug zurück",
+  "huelle.zugVor": "Einen Zug vor",
+  "huelle.nachspielStand": "Halbzug {zug} von {anzahl}",
+  "tagebuch.partien": "Meine Partien",
+  "tagebuch.keinePartien": "Noch keine Partie zu Ende gespielt.",
+  "tagebuch.partieZuege": "{anzahl} Züge",
+  "tagebuch.partieAnsehen": "Ansehen"
 }

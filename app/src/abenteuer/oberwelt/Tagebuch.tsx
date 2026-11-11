@@ -5,9 +5,14 @@
  * Rolle im Gesamtbild: React-Overlay über der Welt (Entscheidung C4). Zeigt je Quest den
  * nächsten Schritt aus den Questdaten (regeln/quests.ts, naechsterSchritt). Die Zurück-Taste
  * schließt es.
- * Abhängigkeiten: regeln/quests.ts, texte/texte.ts, app/blattstapel.ts.
+ * „Meine Partien“ (docs/spiel/18, Abschnitt 8): die beendeten Partien des Abenteuers, knapp, mit
+ * „Ansehen“ zum Nachspielen in der Hülle; der Rückruf sichert vorher die Position des Helden.
+ * Abhängigkeiten: regeln/quests.ts, texte/texte.ts, app/blattstapel.ts, anbindung/meinePartien.ts,
+ * speicher/speicher.ts (Partien der App).
  */
 import { useZurueckSchliesst } from "../../app/blattstapel";
+import { useSpeicher } from "../../speicher/speicher";
+import { meinePartien } from "../anbindung/meinePartien";
 import type { Spieldaten } from "../daten/laden";
 import { naechsterSchritt } from "../regeln/quests";
 import type { Abenteuerstand } from "../schnittstelle/spielstand";
@@ -20,10 +25,13 @@ export function Tagebuch({
   stand,
   daten,
   beiSchliessen,
+  beiPartie,
 }: {
   readonly stand: Abenteuerstand;
   readonly daten: Spieldaten;
   readonly beiSchliessen: () => void;
+  /** Öffnet eine beendete Partie zum Nachspielen (Id der Partie in der App). */
+  readonly beiPartie: (id: string) => void;
 }) {
   useZurueckSchliesst(true, beiSchliessen);
   const laufend = stand.quests.filter((q) => !q.erledigt);
@@ -116,6 +124,7 @@ export function Tagebuch({
         </ul>
       )}
       {stand.gegenstaende.includes("notizbuch") && <Turnierheft stand={stand} daten={daten} />}
+      <MeinePartien beiPartie={beiPartie} />
       <button type="button" className="knopf-haupt" onClick={beiSchliessen}>
         {tSpiel("tagebuch.schliessen")}
       </button>
@@ -143,6 +152,38 @@ function Turnierheft({ stand, daten }: { stand: Abenteuerstand; daten: Spieldate
                   ))}
                 </ul>
               )}
+            </li>
+          ))}
+        </ul>
+      )}
+    </>
+  );
+}
+
+/** Die beendeten Partien des Abenteuers, neueste zuerst, je mit „Ansehen“. */
+function MeinePartien({ beiPartie }: { beiPartie: (id: string) => void }) {
+  const spiel = useSpeicher((z) => z.daten.spiel);
+  const zeilen = meinePartien(spiel);
+  return (
+    <>
+      <h3>{tSpiel("tagebuch.partien")}</h3>
+      {zeilen.length === 0 ? (
+        <p>{tSpiel("tagebuch.keinePartien")}</p>
+      ) : (
+        <ul className="abenteuer-partienliste" data-testid="abenteuer-meine-partien">
+          {zeilen.map((z) => (
+            <li key={z.id}>
+              <span>
+                {tSpiel("tagebuch.notizPartie", {
+                  gegner: z.gegner,
+                  ausgang: tSpiel(`tagebuch.ausgang.${z.ausgang}`),
+                })}
+                {" · "}
+                {tSpiel("tagebuch.partieZuege", { anzahl: z.zuege })}
+              </span>
+              <button type="button" className="knopf-zweit" onClick={() => beiPartie(z.id)}>
+                {tSpiel("tagebuch.partieAnsehen")}
+              </button>
             </li>
           ))}
         </ul>

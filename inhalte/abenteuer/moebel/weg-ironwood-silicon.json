@@ -1282,10 +1282,10 @@
       "zustand": "gebraucht",
       "stil": "modern"
     },
-    "wsr12Linie7": {
-      "quelle": "spiel/eigene/fahrbahn_linie_7.png",
+    "wsr12Linie9": {
+      "quelle": "spiel/eigene/fahrbahn_linie_9.png",
       "breite": 16,
-      "hoehe": 112,
+      "hoehe": 144,
       "kollision": false,
       "art": "markierung",
       "zustand": "neu",

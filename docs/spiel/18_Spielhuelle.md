@@ -192,10 +192,7 @@ Jeder Schritt ist lauffähig und geprüft; jeder Rückweg führt in die Oberwelt
     „Weiter“ statt „Runde auswerten“. Grund: Ambrose begleitet den Helden, seine Hilfe ist Teil
     der Geschichte; die Wertung nennt die Ergebniskarte. Die Texte stehen in der App-Sprachdatei
     (`imSpiel.*`), weil die Trainerkomponenten sie zeichnen.
-  - **„Meine Partien“ im Tagebuch:** nicht gebaut. Die Partienliste der App hat das Aussehen der
-    App; ein Sprung dorthin wäre genau der Bruch, den die Hülle vermeidet. Wer die Partien
-    ansehen will, findet sie in der App unter „Spielen“. Später möglich: eine eigene, knappe
-    Liste im Tagebuch mit Nachspielen in der Hülle.
+  - **„Meine Partien“ im Tagebuch:** gebaut am 11.11.2026, siehe Abschnitt 8.
   - **Ergebniskarte der Oberwelt:** knapp, nur Ausgang, Nadel und Ambroses Satz zum Kipppunkt.
   - **Falle oder Köder:** Der Folgespieler nach der Antwort bleibt. Er zeigt, was nach dem
     Nehmen geschieht, und ist damit die Auflösung der Aufgabe.
@@ -213,3 +210,19 @@ Brettern des Spiels. Sie melden das Ergebnis über denselben Rückruf wie ein ec
 - **Gedächtnisstellung:** „Bestehen“ / „Verfehlen“ rufen `beiEnde` wie ein richtiger oder falscher
   Aufbau.
 - **Vorführung:** keine Testzeile. Sie hat kein Ergebnis; „Weiter“ schließt sie jederzeit.
+
+## 8. „Meine Partien“ und der Variantentisch (11.11.2026)
+
+- **Liste im Tagebuch:** Unter dem Turnierheft steht „Meine Partien“: die beendeten Partien des
+  Abenteuers, neueste zuerst, höchstens zwölf, je ein Satz („Gegen Skater Jo: gewonnen · 24 Züge“)
+  und der Knopf „Ansehen“ (`anbindung/meinePartien.ts`, `oberwelt/Tagebuch.tsx`). Freie Partien
+  der App und die laufende Partie fehlen.
+- **Nachspielen in der Hülle:** „Ansehen“ sichert die Position des Helden und öffnet die Partie in
+  der Hülle (`zeigeBeendetePartie`). Jede beendete Partie hat dort unter dem Brett ◀ und ▶ mit
+  dem Stand „Halbzug 12 von 47“; das gilt auch direkt nach dem Ende einer Partie. Die
+  Ergebnisblende liegt nur über der Schlussstellung. „Weiter“ führt in die Welt zurück, ohne
+  neue Ergebniskarte. Auswertung, Zugliste und Teilen gibt es weiter nur in der App.
+- **Variantentisch in der Raststätte (Crossroads):** Die Sätze „Kommt bald an den Tisch.“ und
+  „Das geht schon.“ sind fort. Zu jeder gelernten Variante steht ein Satz der Welt (zwei
+  Fernfahrer beim Königsrennen, die Holzente auf e4). Spielbar bleiben am Tisch die Formen, die
+  es gibt: Blindschach und Schach960 als Wahl im Dialog.

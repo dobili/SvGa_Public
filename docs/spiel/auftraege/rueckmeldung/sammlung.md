@@ -17,7 +17,7 @@ Reihenfolge je Kategorie: zuerst, was das Weiterspielen verhindert, dann Stören
 
 ### Maple Falls, Falls Diner (`maple-falls-diner`)
 
-- [ ] R003. Maple Falls, Diner: Die Kaffeemaschine steht nicht auf der Theke, sondern schwebt in der Luft neben der Kaffeemaschine (Wortlaut so diktiert; gemeint ist wohl: neben der Theke).
+- [ ] R003. Maple Falls, Diner: Die Kaffeemaschine steht nicht auf der Theke, sondern schwebt in der Luft neben der Theke (vom Autor bestätigt).
   > „Da steht die Kaffeemaschine nicht auf der Theke, sondern halt schwebt so in der Luft neben der Kaffeemaschine.“
 - [ ] R004. Maple Falls, Diner, Theke: Kasse und Kaffeemaschine zeigen zu den Barhockern hin, wo die Kundschaft sitzt. Das ergibt keinen Sinn. Vorschlag des Autors: Anordnung drehen. Unterhalb der Theke der Bereich, wo die Mitarbeiter stehen; die Barhocker oberhalb der Theke, wo die Kunden sitzen. Dann müssen die Assets für Kasse und Kaffeemaschine nicht getauscht werden.
 - [ ] R005a. Maple Falls, Diner, Innentüren: Die Innentür rechts, die nach hinten ins Hinterzimmer führt, ist dasselbe Asset wie die Haustür und wirkt merkwürdig (Wand fast doppelt so hoch wie die Tür). Dasselbe gilt für die Innentüren der Toiletten auf der linken Seite. Siehe R005.
@@ -53,4 +53,3 @@ Reihenfolge je Kategorie: zuerst, was das Weiterspielen verhindert, dann Stören
 
 ## Unklar
 
-- [ ] R003 (Hinweis): Das Diktat zur Kaffeemaschine lautet „neben der Kaffeemaschine“; vermutlich „neben der Theke“. Bei Rückfrage klären.

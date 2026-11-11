@@ -1,0 +1,569 @@
+{
+  "schemaVersion": 1,
+  "stand": "2026-11-11",
+  "quelle": "docs/spiel/auftraege/gutachten/ABZIEHBILDER.md",
+  "abziehbild": [
+    {
+      "bild": "spiel/eigene/archivkartons_oben.png",
+      "urteil": "abziehbild",
+      "grund": "R067: flache Kartonfronten mit Zahl",
+      "szenen": ["cedar-creek-archiv", "cedar-creek-archiv-geordnet"]
+    },
+    {
+      "bild": "spiel/eigene/archivkartons_unten.png",
+      "urteil": "abziehbild",
+      "grund": "R067",
+      "szenen": ["cedar-creek-archiv", "cedar-creek-archiv-geordnet"]
+    },
+    {
+      "bild": "spiel/eigene/bahnsteigbank_hinten.png",
+      "urteil": "abziehbild",
+      "grund": "Rückansicht entfällt (Regel 10.71)",
+      "szenen": ["cedar-creek-aussen", "weg-cedar-riverton-bahndamm"]
+    },
+    {
+      "bild": "spiel/eigene/bank_hinten_braun.png",
+      "urteil": "abziehbild",
+      "grund": "Rückansicht entfällt (Regel 10.71)",
+      "szenen": [
+        "maple-falls-park",
+        "maple-falls-park-schulbus",
+        "maple-falls-park-steg-neu"
+      ]
+    },
+    {
+      "bild": "spiel/eigene/basketball_halbfeld.png",
+      "urteil": "abziehbild",
+      "grund": "Hallenboden ohne Tiefe (R021); alten Asphaltplatz zurückholen",
+      "szenen": [
+        "maple-falls-park",
+        "maple-falls-park-schulbus",
+        "maple-falls-park-steg-neu"
+      ]
+    },
+    {
+      "bild": "spiel/eigene/berghuette.png",
+      "urteil": "abziehbild",
+      "grund": "flaches Rechteckdach wie huette_a (Entscheidung des Haupt-Chats)",
+      "szenen": [
+        "lockport-aussen",
+        "lockport-aussen-boot-an-land",
+        "lockport-aussen-steg-offen",
+        "summit-city-aussen"
+      ]
+    },
+    {
+      "bild": "spiel/eigene/bergladen.png",
+      "urteil": "abziehbild",
+      "grund": "flaches Rechteckdach wie huette_a (Entscheidung des Haupt-Chats)",
+      "szenen": ["summit-city-aussen"]
+    },
+    {
+      "bild": "spiel/eigene/bootsschuppen.png",
+      "urteil": "abziehbild",
+      "grund": "nur Front, Trapezdach von vorn",
+      "szenen": [
+        "cedar-creek-aussen",
+        "lockport-aussen",
+        "lockport-aussen-boot-an-land",
+        "lockport-aussen-steg-offen",
+        "pinewood-camp-aussen"
+      ]
+    },
+    {
+      "bild": "spiel/eigene/bude_dosenwerfen.png",
+      "urteil": "abziehbild",
+      "grund": "Bude von vorn, Markise nicht von oben",
+      "szenen": ["jahrmarkt-festplatz"]
+    },
+    {
+      "bild": "spiel/eigene/bude_lose.png",
+      "urteil": "abziehbild",
+      "grund": "wie bude_dosenwerfen",
+      "szenen": ["jahrmarkt-festplatz"]
+    },
+    {
+      "bild": "spiel/eigene/buecherregal_schmal_links.png",
+      "urteil": "abziehbild",
+      "grund": "R012: Regal von der Seite, flacher Streifen",
+      "szenen": ["maple-falls-clubraum", "maple-falls-clubraum-pokal"]
+    },
+    {
+      "bild": "spiel/eigene/buecherregal_schmal_rechts.png",
+      "urteil": "abziehbild",
+      "grund": "R012",
+      "szenen": ["maple-falls-clubraum", "maple-falls-clubraum-pokal"]
+    },
+    {
+      "bild": "spiel/eigene/campbude.png",
+      "urteil": "abziehbild",
+      "grund": "flaches Rechteckdach wie huette_a",
+      "szenen": ["pinewood-camp-aussen"]
+    },
+    {
+      "bild": "spiel/eigene/campkiosk.png",
+      "urteil": "abziehbild",
+      "grund": "Front mit flachem Dach",
+      "szenen": ["pinewood-camp-aussen", "summit-city-aussen"]
+    },
+    {
+      "bild": "spiel/eigene/diner_wagen.png",
+      "urteil": "abziehbild",
+      "grund": "nur Front, Dach als Band",
+      "szenen": [
+        "crossroads-aussen",
+        "crossroads-aussen-gatter-offen",
+        "weg-desert-summit-diner",
+        "weg-desert-summit-diner-neon"
+      ]
+    },
+    {
+      "bild": "spiel/eigene/faehre_bar.png",
+      "urteil": "abziehbild",
+      "grund": "reine Front",
+      "szenen": ["weg-silicon-delacroix-faehre"]
+    },
+    {
+      "bild": "spiel/eigene/faehre_deckhaus.png",
+      "urteil": "abziehbild",
+      "grund": "nur Front, flaches Dach ohne Tiefe",
+      "szenen": ["weg-silicon-delacroix-faehre"]
+    },
+    {
+      "bild": "spiel/eigene/faehrhaus.png",
+      "urteil": "abziehbild",
+      "grund": "nur Front mit Dreiecksgiebel",
+      "szenen": ["weg-ghost-capital-seeufer"]
+    },
+    {
+      "bild": "spiel/eigene/fanshop.png",
+      "urteil": "abziehbild",
+      "grund": "Bude von vorn, flaches Dachschild",
+      "szenen": ["capital-arena-halle"]
+    },
+    {
+      "bild": "spiel/eigene/frachtkahn.png",
+      "urteil": "abziehbild",
+      "grund": "Draufsicht ohne Bordwand (Entscheidung des Haupt-Chats)",
+      "szenen": [
+        "lockport-aussen",
+        "lockport-aussen-boot-an-land",
+        "lockport-aussen-steg-offen"
+      ]
+    },
+    {
+      "bild": "spiel/eigene/garage_rolltor.png",
+      "urteil": "abziehbild",
+      "grund": "Front mit glatter Dachplatte, keine Seitenfläche",
+      "szenen": [
+        "crossroads-aussen",
+        "crossroads-aussen-gatter-offen",
+        "desert-springs-aussen",
+        "desert-springs-aussen-meisterschaft",
+        "hochebene-schule",
+        "hochebene-schule-vor-diplom"
+      ]
+    },
+    {
+      "bild": "spiel/eigene/garderobe_jacken.png",
+      "urteil": "abziehbild",
+      "grund": "R013: drei Farbrechtecke an einer Stange, wirkt wie Aufkleber",
+      "szenen": [
+        "ironwood-mamas-zimmer",
+        "lockport-gasthaus",
+        "maple-falls-clubraum",
+        "maple-falls-clubraum-pokal"
+      ]
+    },
+    {
+      "bild": "spiel/eigene/gartenhaus_blau.png",
+      "urteil": "abziehbild",
+      "grund": "R002: nur Front, Trapezdach von vorn",
+      "szenen": [
+        "lockport-aussen",
+        "lockport-aussen-boot-an-land",
+        "lockport-aussen-steg-offen",
+        "maple-falls-aussen",
+        "weg-cedar-riverton-bahndamm",
+        "weg-maple-cedar-landstrasse",
+        "weg-maple-cedar-landstrasse-flohmarkt-leer",
+        "weg-maple-cedar-landstrasse-gatter-offen",
+        "weg-maple-cedar-landstrasse-gatter-offen-leer"
+      ]
+    },
+    {
+      "bild": "spiel/eigene/gartenhaus_braun.png",
+      "urteil": "abziehbild",
+      "grund": "R002",
+      "szenen": [
+        "cedar-creek-aussen",
+        "ironwood-aussen",
+        "ironwood-aussen-meisterschaft",
+        "ironwood-aussen-vermietet",
+        "lockport-aussen",
+        "lockport-aussen-boot-an-land",
+        "lockport-aussen-steg-offen",
+        "riverton-aussen",
+        "riverton-aussen-nachspiel",
+        "riverton-aussen-tische-kaputt",
+        "riverton-aussen-trainingszentrum",
+        "riverton-aussen-unterschriften",
+        "silicon-bay-altstadt",
+        "weg-ironwood-silicon-raststaette",
+        "weg-riverton-ironwood-1",
+        "weg-riverton-ironwood-1-graffiti"
+      ]
+    },
+    {
+      "bild": "spiel/eigene/gartenhaus_rot.png",
+      "urteil": "abziehbild",
+      "grund": "R002",
+      "szenen": [
+        "maple-falls-aussen",
+        "weg-cedar-riverton-bahndamm",
+        "weg-riverton-ironwood-1",
+        "weg-riverton-ironwood-1-graffiti"
+      ]
+    },
+    {
+      "bild": "spiel/eigene/gartenhaus_weiss.png",
+      "urteil": "abziehbild",
+      "grund": "R002",
+      "szenen": [
+        "riverton-aussen",
+        "riverton-aussen-nachspiel",
+        "riverton-aussen-tische-kaputt",
+        "riverton-aussen-trainingszentrum",
+        "riverton-aussen-unterschriften",
+        "silicon-bay-altstadt",
+        "silicon-bay-aussen",
+        "silicon-bay-hafen"
+      ]
+    },
+    {
+      "bild": "spiel/eigene/halfpipe.png",
+      "urteil": "abziehbild",
+      "grund": "R022: Seitenansicht ohne Tiefe",
+      "szenen": [
+        "maple-falls-park",
+        "maple-falls-park-schulbus",
+        "maple-falls-park-steg-neu"
+      ]
+    },
+    {
+      "bild": "spiel/eigene/haus_hinten_b_blau.png",
+      "urteil": "abziehbild",
+      "grund": "Rückansicht entfällt (Regel 10.71)",
+      "szenen": ["maple-falls-aussen"]
+    },
+    {
+      "bild": "spiel/eigene/haus_hinten_b_braun.png",
+      "urteil": "abziehbild",
+      "grund": "Rückansicht entfällt (Regel 10.71); R054",
+      "szenen": ["cedar-creek-aussen"]
+    },
+    {
+      "bild": "spiel/eigene/haus_hinten_b_rot.png",
+      "urteil": "abziehbild",
+      "grund": "Rückansicht entfällt (Regel 10.71)",
+      "szenen": ["maple-falls-aussen"]
+    },
+    {
+      "bild": "spiel/eigene/haus_hinten_blau.png",
+      "urteil": "abziehbild",
+      "grund": "Rückansicht entfällt (Regel 10.71)",
+      "szenen": ["maple-falls-aussen"]
+    },
+    {
+      "bild": "spiel/eigene/haus_hinten_braun.png",
+      "urteil": "abziehbild",
+      "grund": "Rückansicht entfällt (Regel 10.71)",
+      "szenen": ["maple-falls-aussen"]
+    },
+    {
+      "bild": "spiel/eigene/haus_hinten_rot.png",
+      "urteil": "abziehbild",
+      "grund": "Rückansicht entfällt (Regel 10.71); R054",
+      "szenen": ["cedar-creek-aussen"]
+    },
+    {
+      "bild": "spiel/eigene/holzfaellerhuette.png",
+      "urteil": "abziehbild",
+      "grund": "R054 (vom Autor genannt): wie huette_a",
+      "szenen": [
+        "cedar-creek-aussen",
+        "lockport-aussen",
+        "lockport-aussen-boot-an-land",
+        "lockport-aussen-steg-offen",
+        "summit-city-aussen",
+        "weg-crossroads-pinewood-huetten"
+      ]
+    },
+    {
+      "bild": "spiel/eigene/huette_a.png",
+      "urteil": "abziehbild",
+      "grund": "R054 (vom Autor genannt): Dach ein flaches Rechteck ohne First und Schattierung, Wand ohne Seitenfläche",
+      "szenen": [
+        "cedar-creek-aussen",
+        "lockport-aussen",
+        "lockport-aussen-boot-an-land",
+        "lockport-aussen-steg-offen",
+        "maple-falls-aussen",
+        "summit-city-aussen"
+      ]
+    },
+    {
+      "bild": "spiel/eigene/huette_b.png",
+      "urteil": "abziehbild",
+      "grund": "R054 (vom Autor genannt): wie huette_a",
+      "szenen": [
+        "cedar-creek-aussen",
+        "lockport-aussen",
+        "lockport-aussen-boot-an-land",
+        "lockport-aussen-steg-offen",
+        "summit-city-aussen"
+      ]
+    },
+    {
+      "bild": "spiel/eigene/lastkahn_laengs.png",
+      "urteil": "abziehbild",
+      "grund": "Draufsicht ohne Bordwand (Entscheidung des Haupt-Chats)",
+      "szenen": ["weg-riverton-ironwood-1", "weg-riverton-ironwood-1-graffiti"]
+    },
+    {
+      "bild": "spiel/eigene/motel.png",
+      "urteil": "abziehbild",
+      "grund": "Front mit glattem Dachstreifen, keine Seitenfläche",
+      "szenen": [
+        "crossroads-aussen",
+        "crossroads-aussen-gatter-offen",
+        "desert-springs-aussen",
+        "desert-springs-aussen-meisterschaft",
+        "weg-desert-summit-diner",
+        "weg-desert-summit-diner-neon"
+      ]
+    },
+    {
+      "bild": "spiel/eigene/pokalregal.png",
+      "urteil": "abziehbild",
+      "grund": "R011: reine Front ohne Oberseite",
+      "szenen": ["maple-falls-clubraum", "maple-falls-clubraum-pokal"]
+    },
+    {
+      "bild": "spiel/eigene/rangerhaus.png",
+      "urteil": "abziehbild",
+      "grund": "flaches Rechteckdach, Wand ohne Tiefe",
+      "szenen": [
+        "pinewood-camp-aussen",
+        "summit-city-aussen",
+        "weg-crossroads-pinewood-riesenbaeume",
+        "weg-summit-crossroads-geysirbecken"
+      ]
+    },
+    {
+      "bild": "spiel/eigene/saegebock.png",
+      "urteil": "abziehbild",
+      "grund": "R058: Seitenansicht ohne Tiefe, als Werkbank und Schildträger benutzt",
+      "szenen": [
+        "cedar-creek-drechslerei",
+        "port-delacroix-musikhaus",
+        "port-delacroix-werkstatt"
+      ]
+    },
+    {
+      "bild": "spiel/eigene/schutzhuette.png",
+      "urteil": "abziehbild",
+      "grund": "flaches Rechteckdach wie huette_a (Entscheidung des Haupt-Chats)",
+      "szenen": [
+        "pinewood-camp-aussen",
+        "summit-city-aussen",
+        "weg-crossroads-pinewood-huetten"
+      ]
+    },
+    {
+      "bild": "spiel/eigene/seefaehre.png",
+      "urteil": "abziehbild",
+      "grund": "glatte Seitenansicht ohne Deck von oben",
+      "szenen": ["weg-ghost-capital-seeufer"]
+    },
+    {
+      "bild": "spiel/eigene/spinde_hoch.png",
+      "urteil": "abziehbild",
+      "grund": "R011: reine Front ohne Oberseite",
+      "szenen": ["maple-falls-clubraum", "maple-falls-clubraum-pokal"]
+    },
+    {
+      "bild": "spiel/eigene/stellwerk.png",
+      "urteil": "abziehbild",
+      "grund": "nur Front, Dach als Band von vorn",
+      "szenen": ["weg-cedar-riverton-bahndamm"]
+    },
+    {
+      "bild": "spiel/eigene/tankstelle_vordach.png",
+      "urteil": "abziehbild",
+      "grund": "Vordach von vorn als Platte, Säulen flach",
+      "szenen": ["weg-pinewood-ghost-staubstrasse"]
+    },
+    {
+      "bild": "spiel/eigene/turnhalle.png",
+      "urteil": "abziehbild",
+      "grund": "glatte Front mit Dachstreifen, keine Tiefe",
+      "szenen": ["hochebene-schule", "hochebene-schule-vor-diplom"]
+    },
+    {
+      "bild": "spiel/eigene/vitrine_fahrkarten.png",
+      "urteil": "abziehbild",
+      "grund": "reine Front, keine Oberseite (auch die übrigen vitrine_*)",
+      "szenen": [
+        "desert-springs-antiquariat",
+        "desert-springs-antiquariat-leihgabe",
+        "ironwood-museum"
+      ]
+    },
+    {
+      "bild": "spiel/eigene/vitrine_glasfunke.png",
+      "urteil": "abziehbild",
+      "grund": "wie vitrine_fahrkarten",
+      "szenen": ["ironwood-museum"]
+    },
+    {
+      "bild": "spiel/eigene/vitrine_laterne.png",
+      "urteil": "abziehbild",
+      "grund": "wie vitrine_fahrkarten",
+      "szenen": ["ironwood-museum"]
+    },
+    {
+      "bild": "spiel/eigene/vitrine_leer.png",
+      "urteil": "abziehbild",
+      "grund": "wie vitrine_fahrkarten",
+      "szenen": ["ironwood-museum"]
+    },
+    {
+      "bild": "spiel/eigene/vitrine_lokmodell.png",
+      "urteil": "abziehbild",
+      "grund": "wie vitrine_fahrkarten",
+      "szenen": ["ironwood-museum"]
+    },
+    {
+      "bild": "spiel/eigene/vitrine_muetze.png",
+      "urteil": "abziehbild",
+      "grund": "wie vitrine_fahrkarten",
+      "szenen": ["ironwood-museum"]
+    },
+    {
+      "bild": "spiel/eigene/vitrine_werkzeug.png",
+      "urteil": "abziehbild",
+      "grund": "wie vitrine_fahrkarten",
+      "szenen": ["ironwood-museum"]
+    },
+    {
+      "bild": "spiel/eigene/vitrine_zeitung.png",
+      "urteil": "abziehbild",
+      "grund": "wie vitrine_fahrkarten",
+      "szenen": ["ironwood-museum"]
+    },
+    {
+      "bild": "spiel/eigene/wartehaus_hinten.png",
+      "urteil": "abziehbild",
+      "grund": "Rückansicht entfällt (Regel 10.71)",
+      "szenen": [
+        "capital-arena-innenstadt",
+        "cedar-creek-aussen",
+        "ironwood-aussen",
+        "ironwood-aussen-meisterschaft",
+        "ironwood-aussen-vermietet",
+        "maple-falls-park",
+        "maple-falls-park-schulbus",
+        "maple-falls-park-steg-neu",
+        "weg-ironwood-silicon-raststaette"
+      ]
+    },
+    {
+      "bild": "spiel/eigene/werk_halle.png",
+      "urteil": "abziehbild",
+      "grund": "glatte Front, Sheddach als Zacken von vorn",
+      "szenen": ["port-delacroix-aussen", "port-delacroix-aussen-musikhaus-neu"]
+    },
+    {
+      "bild": "spiel/eigene/werk_schornstein.png",
+      "urteil": "abziehbild",
+      "grund": "flache Säule ohne Rundung, kein Schatten",
+      "szenen": [
+        "ironwood-aussen",
+        "ironwood-aussen-meisterschaft",
+        "ironwood-aussen-vermietet",
+        "weg-riverton-ironwood-1",
+        "weg-riverton-ironwood-1-graffiti"
+      ]
+    },
+    {
+      "bild": "spiel/eigene/wuestenbahnhof.png",
+      "urteil": "abziehbild",
+      "grund": "flaches Rechteckdach, Wand ohne Tiefe",
+      "szenen": ["weg-delacroix-desert-canyonpfad"]
+    },
+    {
+      "bild": "spiel/eigene/zuckerwatte.png",
+      "urteil": "abziehbild",
+      "grund": "Wagen von vorn, Markise nicht von oben",
+      "szenen": ["jahrmarkt-festplatz"]
+    }
+  ],
+  "bleibt_bis_ersatz": [
+    {
+      "bild": "spiel/eigene/fassade_barbier.png",
+      "urteil": "grenzwertig",
+      "grund": "Scheinfassade von vorn; bleibt, bis die Gemini-Westernhäuser da sind (gemini_prompts_4.md Nr. 3), dann ersetzen"
+    },
+    {
+      "bild": "spiel/eigene/fassade_bestatter.png",
+      "urteil": "grenzwertig",
+      "grund": "Scheinfassade von vorn; bleibt, bis die Gemini-Westernhäuser da sind (gemini_prompts_4.md Nr. 3), dann ersetzen"
+    },
+    {
+      "bild": "spiel/eigene/fassade_hotel.png",
+      "urteil": "grenzwertig",
+      "grund": "Scheinfassade von vorn; bleibt, bis die Gemini-Westernhäuser da sind (gemini_prompts_4.md Nr. 3), dann ersetzen"
+    },
+    {
+      "bild": "spiel/eigene/fassade_laden.png",
+      "urteil": "grenzwertig",
+      "grund": "Scheinfassade von vorn; bleibt, bis die Gemini-Westernhäuser da sind (gemini_prompts_4.md Nr. 3), dann ersetzen"
+    },
+    {
+      "bild": "spiel/eigene/fassade_mietstall.png",
+      "urteil": "grenzwertig",
+      "grund": "Scheinfassade von vorn; bleibt, bis die Gemini-Westernhäuser da sind (gemini_prompts_4.md Nr. 3), dann ersetzen"
+    },
+    {
+      "bild": "spiel/eigene/fassade_post.png",
+      "urteil": "grenzwertig",
+      "grund": "Scheinfassade von vorn; bleibt, bis die Gemini-Westernhäuser da sind (gemini_prompts_4.md Nr. 3), dann ersetzen"
+    },
+    {
+      "bild": "spiel/eigene/fassade_pruefamt.png",
+      "urteil": "grenzwertig",
+      "grund": "Scheinfassade von vorn; bleibt, bis die Gemini-Westernhäuser da sind (gemini_prompts_4.md Nr. 3), dann ersetzen"
+    },
+    {
+      "bild": "spiel/eigene/fassade_schmiede.png",
+      "urteil": "grenzwertig",
+      "grund": "Scheinfassade von vorn; bleibt, bis die Gemini-Westernhäuser da sind (gemini_prompts_4.md Nr. 3), dann ersetzen"
+    },
+    {
+      "bild": "spiel/eigene/fassade_sheriff.png",
+      "urteil": "grenzwertig",
+      "grund": "Scheinfassade von vorn; bleibt, bis die Gemini-Westernhäuser da sind (gemini_prompts_4.md Nr. 3), dann ersetzen"
+    },
+    {
+      "bild": "spiel/eigene/hafen_faehre.png",
+      "urteil": "grenzwertig",
+      "grund": "bleibt, bis die Gemini-Fähre da ist (gemini_prompts_4.md Nr. 7)"
+    },
+    {
+      "bild": "spiel/eigene/saloon_fassade.png",
+      "urteil": "grenzwertig",
+      "grund": "Scheinfassade von vorn; bleibt, bis die Gemini-Westernhäuser da sind (gemini_prompts_4.md Nr. 3), dann ersetzen"
+    }
+  ]
+}

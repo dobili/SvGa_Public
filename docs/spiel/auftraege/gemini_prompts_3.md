@@ -1,5 +1,8 @@
 # Prompts für Gemini, Teil 3: Kutter, Bus, Gleise, Kleinteile
 
+**Überholt (11.11.2026):** Bitte nur noch `gemini_prompts_4.md` benutzen. Kutter und Bus stehen dort
+wieder; Gleise und Kleinteile haben die Helfer selbst gebaut.
+
 Stand: 11.11.2026 (Haupt-Chat). Dritte Sammlung aus den Gutachten. Teil 1 und Teil 2 sind erledigt
 und eingebaut.
 

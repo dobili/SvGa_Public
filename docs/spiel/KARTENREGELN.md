@@ -977,3 +977,20 @@ auf jeder soll etwas passieren, das man entdecken kann. Die Geschichten dazu ste
     - **Prüfung im Werkzeug:** Der Lauftest stellt jeden Statisten und jedes Tier einzeln auf
       jede Kachel seines Laufwegs (alle anderen an ihrem Platz); dann muss weiter jeder Übergang,
       jede Figur und jeder Gegenstand erreichbar sein.
+
+### 10.71 Keine Abziehbilder, keine Rückansichten (Rückmeldung des Autors, 11.11.2026)
+
+- **Abziehbild:** ein von Hand gezeichnetes Bild ohne Tiefe. Es zeigt nur eine Front: kein Dach von
+  oben, kein First, keine Oberseite, keine Seitenfläche, keine Schattierung. Solche Bilder kommen aus
+  allen Karten heraus (Liste mit Ersatz: `auftraege/gutachten/ABZIEHBILDER.md`).
+- **Ersatz in dieser Reihenfolge:** Paketbild aus dem Katalog; Zusammenbau aus Paketteilen (Dach,
+  Wand, Tür, wie `laden_*`, `altstadt_*`, `haus_farm*`); zuletzt ein Wunsch für Gemini über den
+  Haupt-Chat.
+- **Selbst Gezeichnetes** ist nur für Flaches erlaubt: Schilder, Markierungen, Böden, Plakate,
+  Etiketten.
+- **Alle Gebäude zeigen ihre Front nach Süden**, wie in den Paketen. Rückansichten (`haus_hinten_*`,
+  `bank_hinten_*`, `wartehaus_hinten`) entfallen. Ein Haus südlich einer Straße hat seine Tür auf der
+  Südseite und einen Weg oder eine Gasse dorthin; die Regel „Straße südlich, also Vorderansicht“
+  (Runde 8) gilt damit für jedes Haus.
+- **Prüfung:** `test_abenteuer_moebelbilder.py` soll melden, wenn ein Möbel ein Bild aus der Liste der
+  Abziehbilder benutzt (sobald die Liste vollständig ist).

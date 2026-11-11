@@ -166,6 +166,35 @@ Erst danach sieht der Autor die Karte. Neue Notizen des Autors kommen als neue P
 - Was die Geschichte braucht (Vitrine, Brett ohne Dame), ist erkennbar.
 - Zustände (KARTENREGELN 10.63): Jeder Zustand ist eine eigene Szene mit dem Satz „Zustand: …“.
 
+### Rückmeldung des Autors vom 11.11.2026 (Sammlung R001 bis R070)
+
+Diese Punkte haben Karten durchfallen lassen, die als reif galten. Sie gelten für jede Karte.
+
+- **Abziehbild:** Hat jedes Gebäude und jedes Möbel Tiefe (Dach oder Oberseite von oben, First,
+  Schattierung, Seitenfläche)? Ein von Hand gezeichnetes Bild, das nur eine Front zeigt, fällt durch
+  (Liste: `auftraege/gutachten/ABZIEHBILDER.md`, Regel 10.71).
+- **Rückansicht:** Zeigt ein Haus seine Rückseite, hat sie dann dieselbe Tiefe wie die Pakethäuser
+  (Dach von oben mit First, Rückwand mit Fenstern)? Rückansichten sind erlaubt, wenn das Bild passt
+  (Regel 10.71).
+- **Bodenkante:** Endet ein befestigter Boden (Pflaster, Platten, Asphalt) mit nackter gerader Kante
+  im Gras? Er braucht Randstein oder Saum.
+- **Straßenart:** Ist erkennbar, ob es ein Trampelpfad, eine Landstraße (Bus) oder eine Stadtstraße
+  ist, und ist der Wechsel zwischen zwei Arten auf der Karte zu sehen?
+- **Abkürzung:** Kann man den vorgegebenen Weg umgehen (lichter Wald, offene Wiese am Rand)?
+- **Felswand:** Endet eine Wand frei, sodass man um sie herum auf die Höhe kommt? Sind Treppen im
+  Fels vollständig?
+- **Anschluss:** Setzen sich Fluss, Straße und Gelände am Kartenrand auf der Nachbarkarte fort?
+- **Innen und außen:** Passen Form, Größe und Eingang des Innenraums zum Gebäude außen? Deuten Türen
+  weitere Räume und Treppenhäuser an? Liegt eine Treppe unten dort, wo sie oben liegt?
+- **Innentür:** Reicht eine Tür zwischen Räumen bis zur Wandhöhe, oder ist es die Haustür?
+- **Auf etwas stehen:** Steht jedes Ding auf seiner Unterlage (Kaffeemaschine auf der Theke, Bank auf
+  dem Pflaster, Pflanzen im Beet, Kürbisse auf dem Feld, Brücke über dem ganzen Fluss)?
+- **Zustand gegen Grundkarte:** Verschiebt sich im Zustand etwas, das gleich bleiben soll? Verschwindet
+  etwas, das man in der Welt nur öffnen würde (Tor)?
+- **Figuren:** Steht jemand mit dem Gesicht zur Wand, in einem Möbel, oder steht ein Schachspieler,
+  statt zu sitzen?
+- **Unerklärtes:** Gibt es ein Ding ohne erkennbaren Grund (zerstörte Kommode, Schatten am Boden)?
+
 ## 4. Vorlage für den Gutachter
 
 > Du bist Gutachter für Karten eines Pixel-Art-Rollenspiels (Draufsicht schräg von oben, wie

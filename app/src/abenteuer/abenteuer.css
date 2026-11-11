@@ -86,11 +86,13 @@
   margin: 0 0 var(--raster);
 }
 
-.abenteuer-dialog-kopf /*
+/*
  * Porträt aus dem Porträt-Generator (Modern UI): Bogen mit Bildern 32 × 32, doppelt vergrößert;
  * Zeile 1 ist Sprechen (zehn Bilder), zweimal je neuer Dialogzeile, dann Ruhe auf Bild 1.
+ * Gilt im Dialogkopf und im Kopf der Spielhülle; dort zeigte der Bogen sonst vier halbe Köpfe.
  */
-.abenteuer-portraet-bogen {
+.abenteuer-dialog-kopf .abenteuer-portraet-bogen,
+.abenteuer-huelle-kopf .abenteuer-portraet-bogen {
   display: block;
   width: 64px;
   height: 64px;

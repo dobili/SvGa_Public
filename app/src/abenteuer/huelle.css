@@ -143,3 +143,14 @@
   border-color: currentColor;
   color: inherit;
 }
+
+/* Testknöpfe: dunkle Schrift auf hellem Knopf, auch auf dem dunklen Grund der Partie. */
+.abenteuer-huelle-test .knopf-zweit {
+  color: var(--navy);
+}
+
+/* „Weiter“ nach der Partie: Gold auf Navy, sonst verschwindet der Knopf im Grund der Hülle. */
+.abenteuer-huelle-partie .knopf-haupt {
+  background: var(--gold);
+  color: var(--navy);
+}

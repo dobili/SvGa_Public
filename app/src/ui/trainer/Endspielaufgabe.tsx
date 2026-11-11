@@ -133,9 +133,14 @@ export function Endspielaufgabe({
   return (
     <>
       <p className="trainer-auftrag" data-testid="endspiel-auftrag">
-        {t(`endspiel.ziel.${aufgabe.ziel}`, {
-          farbe: t(aufgabe.leser === "w" ? "farbe.w" : "farbe.b"),
-        })}
+        {t(
+          imSpiel
+            ? aufgabe.ziel === "gewinn"
+              ? "imSpiel.endspielGewinn"
+              : "imSpiel.endspielRemis"
+            : `endspiel.ziel.${aufgabe.ziel}`,
+          { farbe: t(aufgabe.leser === "w" ? "farbe.w" : "farbe.b") },
+        )}
       </p>
       {stellung.ok && (
         <Brettbereich

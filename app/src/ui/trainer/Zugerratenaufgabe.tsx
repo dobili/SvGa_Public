@@ -121,6 +121,7 @@ function Zugerratenbrett({
   gezeigt: string;
   wert: number | null;
 }) {
+  const imSpiel = useImSpiel();
   const spiele = (von: string, nach: string, umwandlung?: Rolle) => {
     const live = !fertig && s.stelle === null;
     if (!s.analyse && !live) return "ungueltig" as const;
@@ -159,7 +160,10 @@ function Zugerratenbrett({
       bedienung={bedienung}
       beschriftung={t("trainer.zugErraten.name")}
       anfangsGedreht={aufgabe.seite === "black"}
-      seitenleiste={(gedreht) => <Bewertungsbalken wert={wert ?? 0} gedreht={gedreht} />}
+      // Im Schach-Abenteuer ohne Bewertungsbalken: Er gehört zur Analyse der App (imSpiel.ts).
+      seitenleiste={
+        imSpiel ? null : (gedreht) => <Bewertungsbalken wert={wert ?? 0} gedreht={gedreht} />
+      }
     />
   );
 }
@@ -187,7 +191,7 @@ export function Zugerratenaufgabe({ aufgabe, runde }: { aufgabe: Ratepartie; run
   return (
     <>
       <p className="trainer-auftrag">
-        {t("zugerraten.auftrag", {
+        {t(imSpiel ? "imSpiel.zugerraten" : "zugerraten.auftrag", {
           titel: aufgabe.titel,
           farbe: t(aufgabe.seite === "white" ? "farbe.w" : "farbe.b"),
         })}

@@ -376,7 +376,7 @@ def main() -> None:
         grund = hintergrund(szene, privat, gezeichnet)
         mat = lade(INHALTE / "materialien.json")
         grund = variiere(szene, grund, gezeichnet, mat, lade_kachel(privat, mat["boegen"]))
-        markiere(grund, raster(szene), szene)
+        markiere(grund, raster(szene), szene, gezeichnet, mat["boeden"])
         if ist_winter(szene):
             grund = winterlich(grund)
         name, spielbild = bildname(szene)

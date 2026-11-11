@@ -977,3 +977,16 @@ auf jeder soll etwas passieren, das man entdecken kann. Die Geschichten dazu ste
     - **Prüfung im Werkzeug:** Der Lauftest stellt jeden Statisten und jedes Tier einzeln auf
       jede Kachel seines Laufwegs (alle anderen an ihrem Platz); dann muss weiter jeder Übergang,
       jede Figur und jeder Gegenstand erreichbar sein.
+71. **Kein Boden endet mit einer nackten geraden Kante im Gras** (Rückmeldung R041, R042, R049,
+    11.11.2026).
+    - Der Kartenzeichner säumt jede Kante zwischen befestigtem Boden und Naturboden selbst
+      (`pipeline/abenteuer/saum.py`); in der Szene ist nichts zu tun. Welcher Boden welchen Saum
+      bekommt, steht in `materialien.json` unter `"saum"`:
+      - `randstein` (Pflaster, Platten, Stein): eine Reihe heller Kantensteine mit Fugen;
+      - `bankett` (Asphalt): dunkler, ausgefranster Streifen ohne Bordstein, für Landstraßen. Eine
+        Stadtstraße bekommt ihren Bordstein durch den Gehweg aus Pflaster daneben;
+      - `weich` (Sand, Schotter, Felsboden, Sinter): Das Gras greift unregelmäßig ein bis drei
+        Pixel herein.
+    - Erde und Sandplatz haben Randkacheln (`rand`) und brauchen keinen Saum. Wasser hat sein Ufer.
+    - Ein neuer Boden braucht `rand` oder `saum`; sonst meldet der Kartenbau „endet mit nackter
+      Kante im Gras“.

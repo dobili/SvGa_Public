@@ -1,6 +1,6 @@
 # Sammlung der Rückmeldungen zum Schach-Abenteuer (Beta)
 
-Stand: 11.11.2026. Offene Punkte: 60. Abgeschickt (gepusht): noch nichts.
+Stand: 11.11.2026. Offene Punkte: 63. Abgeschickt (gepusht): noch nichts.
 
 Reihenfolge je Kategorie: zuerst, was das Weiterspielen verhindert, dann Störendes, dann Schönheitsfehler.
 
@@ -22,6 +22,7 @@ Reihenfolge je Kategorie: zuerst, was das Weiterspielen verhindert, dann Stören
 
 ### Alle Karten (Regel)
 
+- [ ] R065. Alle Gebäude mit Innenraum (Auftrag an eine KI): Bei jedem Gebäude, das man von außen sieht, prüfen, ob Form und Größe des Innenraums zum Gebäude-Asset passen könnten. Der Raum darf nicht so riesig sein, dass er nicht ins Gebäude passen würde. Ist er kleiner, muss es Hinweise auf weitere Räume geben (Türen, auch verschlossene), die man nicht modellieren muss, damit sich erklärt, warum das Gebäude viel größer ist. Bisher ist dem Autor bei der ersten Durchsicht nur die Bibliothek aufgefallen. Zusammenhang mit R063, R064.
 - [ ] R055. Alle Karten, „Abziehbild“-Assets: Der Autor weiß nicht, woher die Kartenbauer diese Assets haben. Sie haben keine Tiefe und können nicht verwendet werden (siehe R002, R021, R022, R054). Er vermutet, dass sie auch auf anderen Karten eingesetzt sind; alle prüfen und überarbeiten. Mögliche Wege laut Autor: Er lässt Assets im passenden Stil zeichnen (Gemini), oder es werden passende, gut kombinierbare Asset-Packs gesucht. Die Entscheidung liegt beim Hauptchat.
 - [ ] R042. Alle Karten, Bodenübergänge: Prüfen, ob die Übergänge zwischen zwei verschiedenen Boden-Assets so sinnvoll sind, wie sie sind. Sollen es scharfe Kanten sein, oder braucht es ein Übergangs-Asset? Siehe R041.
 - [ ] R005. Alle Karten, Innentüren: Für Türen im Inneren (zwischen Räumen) wird dasselbe Asset wie für die Haustür benutzt. Es wirkt falsch, weil die Wand fast doppelt so hoch ist wie die Tür. Für Innentüren muss ein anderes, passendes Asset gefunden werden. Konkret betroffen: Diner (siehe R005a).
@@ -104,6 +105,13 @@ Reihenfolge je Kategorie: zuerst, was das Weiterspielen verhindert, dann Stören
 ### Cedar Creek, Waschsalon (`cedar-creek-waschsalon`)
 
 - [ ] R061. Waschsalon, unten links, Stuhl ganz links: An der Rückenlehne scheint etwas aufgemalt oder aufgeklebt zu sein, eine Art Schild. Der Autor fragt, ob das zur Geschichte gehört und Sinn macht. Es stört ihn nicht (vielleicht hat jemand etwas hingeklebt oder gekritzelt). Der Hauptchat soll entscheiden: Gehört es nicht zur Geschichte, kann es weg. Sonst sieht die Karte nach Einschätzung des Autors gut aus, er hat nichts auszusetzen.
+
+### Cedar Creek, Bibliothek (`cedar-creek-bibliothek`)
+
+Der Raum der Stadtbibliothek an sich sieht nach Einschätzung des Autors gut aus, er hat nichts auszusetzen.
+
+- [ ] R063. Bibliothek, Eingang: Außen ist der Eingangsbereich links an das Gebäude gesetzt, eine Treppe, die man hochgeht, und oben ein Balkon. Nach der Raumlogik des Gebäude-Assets müsste man hinter der Eingangstür nach rechts gehen, um in den ersten Raum zu kommen. Im Innenraum liegt der Eingang aber unten links, das macht wenig Sinn. Möglichkeiten laut Autor: den Zugang in die linke Wand legen, oder links einen kleinen Vorraum modellieren (der unter dem Balkon liegen müsste, den man auf der Hauptkarte sieht). Im Vorraum liegt unten der Eingang, rechts geht es in den Hauptraum, der dann der eigentliche, schön modellierte Bibliotheksraum wäre.
+- [ ] R064. Bibliothek, obere Etagen: Das Gebäude auf der Karte ist mehrstöckig, der Raum hat aber keine Karte für obere Etagen. Es gibt nur hinten die Tür, die über eine Treppe in den Keller führt. Der Autor meint, es müsse irgendwo eine Möglichkeit geben, in die oberen Etagen zu kommen. Die Etagen müssen nicht als Räume angelegt werden; eine Tür reicht, die man nicht durchgehen kann und hinter der man ein Treppenhaus vermuten kann. Dafür von außen ableiten, welche Form die Räume haben müssten.
 
 ### Cedar Creek, Drechslerei (`cedar-creek-drechslerei`)
 

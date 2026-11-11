@@ -946,6 +946,13 @@ auf jeder soll etwas passieren, das man entdecken kann. Die Geschichten dazu ste
       Richtung am Auslöser: `"eigenschaften": {"durchgang": "oben"}` (auch `"oben,links"`). Ohne
       Angabe meldet der Lauftest das Feld. Regel in `app/src/abenteuer/oberwelt/ausloeserebene.ts`
       (`mitDurchgang`, `meldeschritt`).
+    - **Abkürzungen (R030, R031, Entscheidung 6 der Runde 11):** Wo die Geschichte einen Weg
+      vorgibt, ist er der einzige Weg; Wald, Fels, Zaun und Wasser sperren lückenlos. Die Prüfung
+      `python -m pipeline.abenteuer.abkuerzung` vergleicht je Paar von Übergängen am Kartenrand
+      den Weg über Wegboden mit dem Weg querfeldein und meldet Abkürzungen, Umgehungen (auf
+      Wegen) und Sperren, die sich umgehen lassen (Sturmholz, Gatter). Offenes Gelände ohne
+      Sperre der Geschichte bekommt in der Szene `"abkuerzung_ok": "offenesGelaende"` (ein Platz:
+      `"platz"`).
     - **Prüfung im Werkzeug:** `python -m pipeline.abenteuer.uebergaenge` (mit
       `pipeline/abenteuer/durchgang.py`, für Grundkarten und Zustände) und der Lauftest
       `app/src/abenteuer/oberwelt/uebergangslauf.test.ts`: Auf jeder gebauten Karte geht der Held

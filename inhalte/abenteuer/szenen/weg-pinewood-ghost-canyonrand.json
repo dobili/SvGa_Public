@@ -699,5 +699,6 @@
   "ufer": "rot",
   "kante": "klippe",
   "fels": "rot",
-  "klippenhoehe": 5
+  "klippenhoehe": 5,
+  "abkuerzung_ok": "offenesGelaende"
 }

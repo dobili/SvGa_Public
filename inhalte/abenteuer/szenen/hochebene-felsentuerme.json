@@ -521,5 +521,6 @@
   ],
   "kante": "klippe",
   "fels": "rot",
-  "wandart": "sandRot"
+  "wandart": "sandRot",
+  "abkuerzung_ok": "offenesGelaende"
 }

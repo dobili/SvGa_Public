@@ -1,6 +1,6 @@
 # Sammlung der Rückmeldungen zum Schach-Abenteuer (Beta)
 
-Stand: 11.11.2026. Offene Punkte: 68. Abgeschickt (gepusht): noch nichts.
+Stand: 11.11.2026. Offene Punkte: 68. Erste Abgabe: 11.11.2026 (R001 bis R070, ohne die unbenutzte Nummer R035).
 
 Hinweis: Es gibt zwei Karten, die mit „Zedern“ beginnen: Zedernpfad (Maple Falls nach Cedar Creek) und Zedernwald (Cedar Creek nach Riverton). Alle bisherigen Anmerkungen des Autors, auch wo er „Zedernwald“ sagte, betreffen den Zedernpfad.
 
@@ -30,7 +30,7 @@ Reihenfolge je Kategorie: zuerst, was das Weiterspielen verhindert, dann Stören
 - [ ] R005. Alle Karten, Innentüren: Für Türen im Inneren (zwischen Räumen) wird dasselbe Asset wie für die Haustür benutzt. Es wirkt falsch, weil die Wand fast doppelt so hoch ist wie die Tür. Für Innentüren muss ein anderes, passendes Asset gefunden werden. Konkret betroffen: Diner (siehe R005a).
   > „Wir müssen für so Türen in den Innenräumen ein anderes Asset finden.“
 
-### Maple Falls, Falls Diner (`maple-falls-diner`)
+### Maple Falls, Diner (`maple-falls-diner`)
 
 - [ ] R003. Maple Falls, Diner: Die Kaffeemaschine steht nicht auf der Theke, sondern schwebt in der Luft neben der Theke (vom Autor bestätigt).
   > „Da steht die Kaffeemaschine nicht auf der Theke, sondern halt schwebt so in der Luft neben der Kaffeemaschine.“
@@ -114,7 +114,6 @@ Der Raum der Stadtbibliothek an sich sieht nach Einschätzung des Autors gut aus
 
 - [ ] R063. Bibliothek, Eingang: Außen ist der Eingangsbereich links an das Gebäude gesetzt, eine Treppe, die man hochgeht, und oben ein Balkon. Nach der Raumlogik des Gebäude-Assets müsste man hinter der Eingangstür nach rechts gehen, um in den ersten Raum zu kommen. Im Innenraum liegt der Eingang aber unten links, das macht wenig Sinn. Möglichkeiten laut Autor: den Zugang in die linke Wand legen, oder links einen kleinen Vorraum modellieren (der unter dem Balkon liegen müsste, den man auf der Hauptkarte sieht). Im Vorraum liegt unten der Eingang, rechts geht es in den Hauptraum, der dann der eigentliche, schön modellierte Bibliotheksraum wäre.
 - [ ] R064. Bibliothek, obere Etagen: Das Gebäude auf der Karte ist mehrstöckig, der Raum hat aber keine Karte für obere Etagen. Es gibt nur hinten die Tür, die über eine Treppe in den Keller führt. Der Autor meint, es müsse irgendwo eine Möglichkeit geben, in die oberen Etagen zu kommen. Die Etagen müssen nicht als Räume angelegt werden; eine Tür reicht, die man nicht durchgehen kann und hinter der man ein Treppenhaus vermuten kann. Dafür von außen ableiten, welche Form die Räume haben müssten.
-
 - [ ] R066. Bibliothek und Keller, Treppe: Man geht in der Bibliothek oben rechts durch eine Tür, die direkt in den Keller führt. Im Keller ist die Treppe als Zugang ebenfalls oben rechts. Das ergibt keinen Sinn: Ist in der Bibliothek der Zugang oben rechts, kann die Treppe im Keller nicht auch oben rechts sein, sonst lassen sich die beiden Karten nicht logisch aneinandersetzen. Außerdem ist es unüblich, dass hinter einer Tür direkt eine Treppe nach unten führt. Vorschlag des Autors: In der Bibliothek oben rechts einen kleinen abgetrennten Bereich anlegen, in dem die Treppe nach unten liegt. Man geht durch eine Tür hinein und biegt dann auf die Treppe nach unten ab. Der Keller soll direkt unter dem Bibliotheksraum liegen. Er sollte eventuell auch flächenmäßig genauso groß sein wie der Bibliotheksraum; zwingend ist das nicht (man unterkellert nicht immer das ganze Gebäude), schaden würde es nicht.
 
 ### Cedar Creek, Keller unter der Bibliothek (der Autor sagt „Keller“; `cedar-creek-archiv`, vom Autor bestätigt, Variante `cedar-creek-archiv-geordnet`)

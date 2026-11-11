@@ -1,6 +1,6 @@
 # Sammlung der Rückmeldungen zum Schach-Abenteuer (Beta)
 
-Stand: 11.11.2026. Offene Punkte: 90 (davon 22 seit der ersten Abgabe neu: R071 bis R092). Erste Abgabe: 11.11.2026 (R001 bis R070, ohne die unbenutzte Nummer R035).
+Stand: 11.11.2026. Offene Punkte: 98 (davon 30 seit der ersten Abgabe neu: R071 bis R100). Erste Abgabe: 11.11.2026 (R001 bis R070, ohne die unbenutzte Nummer R035).
 
 Hinweis: Es gibt zwei Karten, die mit „Zedern“ beginnen: Zedernpfad (Maple Falls nach Cedar Creek) und Zedernwald (Cedar Creek nach Riverton). Alle bisherigen Anmerkungen des Autors, auch wo er „Zedernwald“ sagte, betreffen den Zedernpfad.
 
@@ -157,6 +157,17 @@ Der Raum der Stadtbibliothek an sich sieht nach Einschätzung des Autors gut aus
 - [ ] R092. Riverton Außen, Nachspielvariante (`riverton-aussen-nachspiel`): Die Bildschirmtische verschwinden, und die Wiese ist dann komplett leer. Wunsch: etwas Nettes überlegen, was stattdessen dort stehen könnte, damit die Wiese nicht so leer bleibt.
 - [ ] R080. Riverton, oben rechts neben dem Bahngleis: Ein kleiner gepflasterter Streifen, auf dem ein Stapel Holz liegt. Das wirkt komisch: Warum pflastert man ein Stück entlang der Gleise, biegt kurz nach unten ab und pflastert nur, damit dort ein Holzhaufen auf Pflaster steht? Vorschlag: die Pflasterung entweder komplett an den Schienen entlangziehen oder weglassen und Gras lassen. Auch der Holzhaufen an sich macht dort wenig Sinn; er könnte näher an das große Farmhaus, das fast direkt daneben steht.
 - [ ] R081. Riverton, oben rechts, rechts unter dem Wasserturm: wieder ein „Abziehbild“-Häuschen (siehe R055).
+
+### Riverton, Bahnhofshalle (`riverton-bahnhofshalle`, Varianten `riverton-bahnhofshalle-plakat`, `riverton-bahnhofshalle-slick-auf-der-bank`)
+
+- [ ] R097. Bahnhofshalle, oben in der Mitte an der Wand: Dort stehen Assets mit „Ticket-Schaltern“ als Überschrift. Es sieht aus, als wären drei identische Assets ineinandergeschoben und in die Wand gesetzt worden. Das sieht komplett falsch aus. Der Autor weiß nicht, wofür das Asset eigentlich gedacht ist, und meint, es gehört eher auf einen Tresen, sodass aus dem Tresen ein Ticketschalter wird. In den Online-Vorlagen nachsehen, wofür es gemeint ist. Es fehlt im Grunde ein Ticketschalter, an dem man wirklich etwas kaufen kann. Es muss unbedingt etwas Vernünftiges besorgt werden.
+- [ ] R100. Bahnhofshalle, Sitzreihen in der Mitte: Es gibt drei Reihen von Sitzen. Die oberen beiden sehen identisch aus. Die untere Reihe (direkt vor einem, wenn man hereinkommt: zwei Paar Stühle) hat plötzlich eine Lücke in der Mitte, zwei Stühle nebeneinander, Lücke, wieder zwei Stühle. Das ergibt keinen Sinn, sie soll wie die Reihen darüber sein.
+- [ ] R093. Bahnhofshalle, rechte Seite: Ein Koffer steht mitten im Weg. Er könnte näher an eine der Säulen. Den würde ein Reisender nie einfach so stehen lassen.
+- [ ] R094. Bahnhofshalle, unten rechts: Dasselbe mit einem Gepäckstück, das der Autor für einen Trolley hält („glaube ich“): Es steht mitten im Weg. Siehe R093.
+- [ ] R096. Bahnhofshalle, oben rechts in der Ecke an der Wand: Die Automaten. Der eine steht weiter unten als der andere. Das würde man nicht so machen; der rechte Automat wirkt, als stünde er nicht ganz an der Wand.
+- [ ] R098. Bahnhofshalle, oben links in der Ecke auf dem Boden: Ein Asset, das aussieht wie neun identische Assets in drei mal drei Reihen. Der Autor weiß nicht, was es darstellen soll und ob es zur Geschichte gehört (Hauptchat prüfen); es ergibt zunächst keinen Sinn.
+- [ ] R099. Bahnhofshalle, direkt unter R098: Ein Tisch mit einer Glasplatte. Der Autor weiß nicht genau, wofür er da ist und was er darstellen soll (Hauptchat prüfen).
+- [ ] R095. Bahnhofshalle, rechte Seite an der Wand: Ein stählernes Schließfach. Wunsch: ruhig zwei Reihen von Schließfächern mit jeweils zwei Schließfächern.
 
 ### Maple Falls, Wohnzimmer (`maple-falls-wohnzimmer-ausgepackt`)
 

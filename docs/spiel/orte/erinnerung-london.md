@@ -127,3 +127,10 @@ Zustände: keine (eine Erinnerung).
   darin; die Spieler sitzen.
 - **Strand:** Die fünfte Front ist ein Hutmacher („HUETE“) statt eines zweiten Tabakladens
   (Bildwunsch `fassade_london_d_tief.png`). Ein Kutscher wartet neben der Droschke.
+
+## Helle Ladenzone (niedrig-1, 11.11.2026)
+
+Gutachten `niedrig-1-5.md`: Schaufenster und Türen am Strand waren kaum zu erkennen. Die fünf
+Fronten bekommen eine beleuchtete Ladenzone (Bildwunsch `london_<name>_hell.png` aus
+`niedrig1_runde10.py`): Das Erdgeschoss ist heller, hinter dem Glas brennt warmes Gaslicht. Die
+Möbel `el11*` zeigen auf die neuen Bilder.

@@ -370,3 +370,17 @@ Gutachten `docs/spiel/auftraege/gutachten/ghost-town.md`.
   `pferd` steht neu in `tierarten.json` (Gemini-Bilder `pferd_braun_*`), ebenso `fuchs` und
   `schimmel`; die Bögen baut der Haupt-Chat.
 - Der umgekippte Planwagen am Friedhofsweg bleibt.
+
+## Anbindebalken, Weiche, Regeln 10.68–10.70 (niedrig-1, 11.11.2026)
+
+- **Ghost Town:** Das Pferd steht am Anbindebalken vor dem Mietstall (`gt12Anbindebalken` bei
+  (24, 25), Bildwunsch `anbindebalken.png`), die Tränke daneben bei (21, 25). Das Pferd grast
+  eine Reihe davor (24–26 / 24).
+- **Goldmine:** Der Abzweig beginnt mit einer Weiche (`gt12Weiche` bei (19, 14), 4 × 4 Kacheln,
+  Bildwunsch `weiche_stollen.png`): Das Hauptgleis läuft durch, das Abzweiggleis biegt im
+  Viertelkreis zur Goldader ab.
+- **Regeln 10.68–10.70** für alle Karten von niedrig-1 (41 Szenen): Kartenbau, `uebergaenge`,
+  Fahrzeugprüfung und Lauftest sind ohne Befund. Von Hand geprüft: Keine stehende Figur steht
+  auf einem Auslöser, vor einer Tür oder in einem Durchgang von einer Kachel. Einziger Fund:
+  In Lockport saß der Statist Ruben auf dem Ankunftspunkt `kai` (13, 20); er sitzt jetzt bei
+  (11, 20).

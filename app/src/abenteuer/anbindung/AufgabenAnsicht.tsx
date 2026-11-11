@@ -41,6 +41,8 @@ import { ErinnerungsRunde } from "./ErinnerungsRunde";
 import { Huelle } from "./Huelle";
 import { sprecherAusSchluessel } from "./huellentexte";
 import { rundenaufgaben, type Rundenaufgabe } from "./rundenaufgaben";
+import { testantworten } from "./testende";
+import { Raetseltest } from "./Testleiste";
 
 /** Die Runde selbst; eigene Komponente, damit `useRunde` die fertige Aufgabenliste bekommt. */
 function Runde({
@@ -56,16 +58,20 @@ function Runde({
   const runde = useRunde("taktik", aufgaben.length);
   const ergebnisse = useRef<Antwortergebnis[]>([]);
   const gemeldet = useRef(false);
+  // Testhilfe des Autors: die ganze Runde sofort bestehen (true) oder verfehlen (false).
+  const [test, setzeTest] = useState<boolean | null>(null);
   useEffect(() => {
-    if (!runde.fertig || gemeldet.current) return;
+    if ((!runde.fertig && test === null) || gemeldet.current) return;
     gemeldet.current = true;
-    beiEnde(ergebnisse.current, runde.sekunden ?? 0);
-  }, [runde.fertig, runde.sekunden, beiEnde]);
-  if (runde.fertig) {
+    const antworten = test === null ? ergebnisse.current : testantworten(aufgaben.length, test);
+    beiEnde(antworten, runde.sekunden ?? 0);
+  }, [runde.fertig, runde.sekunden, beiEnde, test, aufgaben.length]);
+  if (runde.fertig || test !== null) {
+    const richtig = test === null ? runde.richtig : test ? aufgaben.length : 0;
     return (
       <section className="karte" data-testid="abenteuer-aufgaben-ende">
         <h2 className="karte-titel">{t("trainer.rundeFertig")}</h2>
-        <p>{t("trainer.ergebnis", { richtig: runde.richtig, anzahl: runde.anzahl })}</p>
+        <p>{t("trainer.ergebnis", { richtig, anzahl: runde.anzahl })}</p>
         <ZurueckKnopf />
       </section>
     );
@@ -81,43 +87,50 @@ function Runde({
     },
   };
   return (
-    <Rundenrahmen
-      kennung="taktik"
-      runde={mitProtokoll}
-      nochmal={() => {}}
-      zurAuswahl={null}
-      imSpiel
-    >
-      <div key={runde.index} className="trainer-aufgabe">
-        {aktuelle.art === "endspiel" ? (
-          massstab ? (
-            <Endspielaufgabe aufgabe={aktuelle.aufgabe} massstab={massstab} runde={mitProtokoll} />
+    <>
+      <Rundenrahmen
+        kennung="taktik"
+        runde={mitProtokoll}
+        nochmal={() => {}}
+        zurAuswahl={null}
+        imSpiel
+      >
+        <div key={runde.index} className="trainer-aufgabe">
+          {aktuelle.art === "endspiel" ? (
+            massstab ? (
+              <Endspielaufgabe
+                aufgabe={aktuelle.aufgabe}
+                massstab={massstab}
+                runde={mitProtokoll}
+              />
+            ) : (
+              <p className="lade">{t("abenteuer.aufgaben.laedt")}</p>
+            )
+          ) : aktuelle.art === "falle" ? (
+            <Fallenaufgabe aufgabe={aktuelle.aufgabe} runde={mitProtokoll} />
+          ) : aktuelle.art === "struktur" ? (
+            <Strukturaufgabe aufgabe={aktuelle.aufgabe} runde={mitProtokoll} />
+          ) : aktuelle.art === "zusatz" ? (
+            <Taktikaufgabe
+              aufgabe={aktuelle.aufgabe.aufgabe}
+              runde={mitProtokoll}
+              motivAbfragen={false}
+              zusatz={{
+                themenname: t(`zusatzaufgaben.thema.${aktuelle.aufgabe.thema}`),
+                vorher: aktuelle.aufgabe.vorher,
+              }}
+            />
           ) : (
-            <p className="lade">{t("abenteuer.aufgaben.laedt")}</p>
-          )
-        ) : aktuelle.art === "falle" ? (
-          <Fallenaufgabe aufgabe={aktuelle.aufgabe} runde={mitProtokoll} />
-        ) : aktuelle.art === "struktur" ? (
-          <Strukturaufgabe aufgabe={aktuelle.aufgabe} runde={mitProtokoll} />
-        ) : aktuelle.art === "zusatz" ? (
-          <Taktikaufgabe
-            aufgabe={aktuelle.aufgabe.aufgabe}
-            runde={mitProtokoll}
-            motivAbfragen={false}
-            zusatz={{
-              themenname: t(`zusatzaufgaben.thema.${aktuelle.aufgabe.thema}`),
-              vorher: aktuelle.aufgabe.vorher,
-            }}
-          />
-        ) : (
-          <Taktikaufgabe
-            aufgabe={aktuelle.aufgabe}
-            runde={mitProtokoll}
-            motivAbfragen={aktuelle.motivAbfragen}
-          />
-        )}
-      </div>
-    </Rundenrahmen>
+            <Taktikaufgabe
+              aufgabe={aktuelle.aufgabe}
+              runde={mitProtokoll}
+              motivAbfragen={aktuelle.motivAbfragen}
+            />
+          )}
+        </div>
+      </Rundenrahmen>
+      <Raetseltest beiWahl={setzeTest} />
+    </>
   );
 }
 

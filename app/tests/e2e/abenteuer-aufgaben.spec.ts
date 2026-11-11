@@ -111,6 +111,26 @@ test("Aufgabenrunde von Sam: weitermachen, durchspielen, Ergebnis in der Stadt",
   await expect(page.getByText("Deine Aufgabenrunde läuft noch.")).toHaveCount(0);
 });
 
+test("Testhilfe: „Bestehen“ beendet die Runde von Sam als bestanden", async ({ page }) => {
+  await starteImBrowser(page);
+  await expect.poll(() => page.evaluate(schreibeStand, STAND)).toBe(true);
+  await page.reload();
+  await page.goto("/app/#abenteuer");
+  await page.getByTestId("abenteuer-laden").click();
+  await expect(page.getByText("Deine Aufgabenrunde läuft noch.")).toBeVisible({ timeout: 30000 });
+  await page.getByRole("button", { name: "Weitermachen" }).click();
+  await expect(page.getByTestId("trainerrunde")).toContainText("Aufgabe 1 von 3", {
+    timeout: 20000,
+  });
+  await page.getByTestId("abenteuer-test-bestehen").click();
+  await expect(page.getByTestId("abenteuer-aufgaben-ende")).toContainText("3 von 3");
+  await page.getByTestId("abenteuer-aufgaben-zurueck").click();
+  const ergebnis = page.getByTestId("abenteuer-rundenergebnis");
+  await expect(ergebnis).toBeVisible({ timeout: 30000 });
+  await expect(ergebnis).toContainText("3 von 3 Punkten");
+  await expect(page.getByTestId("abenteuer-runde-nochmal")).toHaveCount(0);
+});
+
 test("Erinnerung New York 1857: Zugerraten der Partie Paulsen gegen Morphy", async ({ page }) => {
   const stand = {
     ...STAND,

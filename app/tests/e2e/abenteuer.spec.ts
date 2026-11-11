@@ -113,6 +113,16 @@ test("vom Dachboden in die erste Partie und zurück", async ({ page }) => {
   await expect(page.getByText("Deine Partie läuft noch.")).toBeVisible({ timeout: 20000 });
   await page.getByRole("button", { name: "Weiterspielen" }).click();
   await expect(page.getByTestId("partie")).toBeVisible({ timeout: 20000 });
+
+  // Testhilfe: „Gewinnen“ beendet die Partie, „Weiter“ führt in die Welt zur Ergebniskarte.
+  await page.getByTestId("abenteuer-test-sieg").click();
+  await expect(page.getByTestId("abenteuer-test-sieg")).toHaveCount(0);
+  await page.getByTestId("partie-zurueck-zur-stadt").click();
+  const ergebnis = page.getByTestId("abenteuer-ergebnis");
+  await expect(ergebnis).toBeVisible({ timeout: 30000 });
+  await expect(ergebnis).toContainText("Gewonnen gegen Ambrose");
+  await ergebnis.getByRole("button", { name: "Weiter", exact: true }).click();
+  await expect(ergebnis).toHaveCount(0);
 });
 
 test("Übergang von vorn: vom Dachboden über die Luke ins Wohnzimmer", async ({ page }) => {

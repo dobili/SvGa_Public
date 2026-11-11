@@ -4,7 +4,7 @@
 import { describe, expect, it } from "vitest";
 import type { Partie } from "../../spiel/partie";
 import { ausgangAus } from "./partieergebnis";
-import { mitTestende } from "./testende";
+import { mitTestende, testantworten } from "./testende";
 
 /** Eine laufende Partie ohne Uhr, der Leser spielt die angegebene Farbe. */
 function partie(eigeneFarbe: "white" | "black"): Partie {
@@ -23,5 +23,16 @@ describe("mitTestende", () => {
   it("lässt eine beendete Partie unverändert", () => {
     const beendet = mitTestende(partie("white"), "niederlage", 0);
     expect(mitTestende(beendet, "sieg", 0)).toBe(beendet);
+  });
+});
+
+describe("testantworten", () => {
+  it("füllt die ganze Runde mit richtigen oder falschen Antworten", () => {
+    expect(testantworten(3, true)).toEqual(["richtig", "richtig", "richtig"]);
+    expect(testantworten(2, false)).toEqual(["falsch", "falsch"]);
+  });
+
+  it("gibt für eine leere Runde eine leere Liste", () => {
+    expect(testantworten(0, true)).toEqual([]);
   });
 });

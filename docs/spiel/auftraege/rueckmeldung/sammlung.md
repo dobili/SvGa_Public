@@ -1,6 +1,6 @@
 # Sammlung der Rückmeldungen zum Schach-Abenteuer (Beta)
 
-Stand: 11.11.2026. Offene Punkte: 98 (davon 30 seit der ersten Abgabe neu: R071 bis R100). Erste Abgabe: 11.11.2026 (R001 bis R070, ohne die unbenutzte Nummer R035).
+Stand: 11.11.2026. Offene Punkte: 101 (davon 33 seit der ersten Abgabe neu: R071 bis R103). Erste Abgabe: 11.11.2026 (R001 bis R070, ohne die unbenutzte Nummer R035).
 
 Hinweis: Es gibt zwei Karten, die mit „Zedern“ beginnen: Zedernpfad (Maple Falls nach Cedar Creek) und Zedernwald (Cedar Creek nach Riverton). Alle bisherigen Anmerkungen des Autors, auch wo er „Zedernwald“ sagte, betreffen den Zedernpfad.
 
@@ -167,6 +167,9 @@ Der Raum der Stadtbibliothek an sich sieht nach Einschätzung des Autors gut aus
 - [ ] R096. Bahnhofshalle, oben rechts in der Ecke an der Wand: Die Automaten. Der eine steht weiter unten als der andere. Das würde man nicht so machen; der rechte Automat wirkt, als stünde er nicht ganz an der Wand.
 - [ ] R098. Bahnhofshalle, oben links in der Ecke auf dem Boden: Ein Asset, das aussieht wie neun identische Assets in drei mal drei Reihen. Der Autor weiß nicht, was es darstellen soll und ob es zur Geschichte gehört (Hauptchat prüfen); es ergibt zunächst keinen Sinn.
 - [ ] R099. Bahnhofshalle, direkt unter R098: Ein Tisch mit einer Glasplatte. Der Autor weiß nicht genau, wofür er da ist und was er darstellen soll (Hauptchat prüfen).
+- [ ] R101. Bahnhofshalle, Variante „Slick auf der Bank“ (`riverton-bahnhofshalle-slick-auf-der-bank`): Sein Schachbrett soll auf der Bank links liegen. Stattdessen hängt es oben an der Lehne in der Luft. Seine Tasche steht eher neben der Säule als neben der Bank.
+- [ ] R102. Bahnhofshalle, Variante „Slick auf der Bank“: Slick selbst ist nicht zu entdecken, obwohl er hier angeblich Schach spielen soll. Der Autor weiß nicht, ob es Absicht ist, dass er nicht gezeichnet wurde (Hauptchat prüfen). Spielt er dort Schach, wäre es sinnvoll, das Schachbrett auf die Sitzfläche eines der Stühle zu legen, während er auf dem Stuhl daneben sitzt. Zusammenhang mit R101 und R020.
+- [ ] R103. Bahnhofshalle, Variante Plakat (`riverton-bahnhofshalle-plakat`): Oben links wird ein Plakat hinzugefügt, das exakt hinter dem Fenster-Asset liegt und vom Fenster komplett verdeckt wird. Es muss eine freie Stelle an der Wand gefunden werden, wo das Plakat unterkommt.
 - [ ] R095. Bahnhofshalle, rechte Seite an der Wand: Ein stählernes Schließfach. Wunsch: ruhig zwei Reihen von Schließfächern mit jeweils zwei Schließfächern.
 
 ### Maple Falls, Wohnzimmer (`maple-falls-wohnzimmer-ausgepackt`)

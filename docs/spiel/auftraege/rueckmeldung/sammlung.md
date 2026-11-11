@@ -1,6 +1,6 @@
 # Sammlung der Rückmeldungen zum Schach-Abenteuer (Beta)
 
-Stand: 11.11.2026. Offene Punkte: 76 (davon 8 seit der ersten Abgabe neu: R071 bis R078). Erste Abgabe: 11.11.2026 (R001 bis R070, ohne die unbenutzte Nummer R035).
+Stand: 11.11.2026. Offene Punkte: 79 (davon 11 seit der ersten Abgabe neu: R071 bis R081). Erste Abgabe: 11.11.2026 (R001 bis R070, ohne die unbenutzte Nummer R035).
 
 Hinweis: Es gibt zwei Karten, die mit „Zedern“ beginnen: Zedernpfad (Maple Falls nach Cedar Creek) und Zedernwald (Cedar Creek nach Riverton). Alle bisherigen Anmerkungen des Autors, auch wo er „Zedernwald“ sagte, betreffen den Zedernpfad.
 
@@ -23,6 +23,7 @@ Reihenfolge je Kategorie: zuerst, was das Weiterspielen verhindert, dann Stören
 - [ ] R073. Bahndamm, oben, eingezäunte kleine Kuhherde (drei Kühe): Das Tor des Gatters öffnet sich Richtung Bahndamm. Es kann dementsprechend nicht geöffnet werden, weil der Bahndamm die Tür blockieren würde.
 - [ ] R074. Bahndamm, Haus oben (das mit den Vögeln): Es steht zum Teil auf dem Abhang des Bahndamms und könnte so gar nicht dort stehen.
 - [ ] R078. Übergang Bahndamm zu Riverton am Fluss (Logiklücke; der Autor meint vermutlich `riverton-aussen`): Legt man die Karte von Riverton direkt an die Karte am Bahndamm, führt die Hauptstraße von Riverton links direkt zur Wellblechhütte (siehe R077), die Straße endet also im Nichts. Man kann das mit einer Zwischenkarte erklären, es ist aber ungünstig. Vorschlag des Autors: Auf der Bahndamm-Karte die Schienen oben (den Bahndamm) ganz am rechten Ende ein Stück in einer Kurve nach unten führen, bevor es an den Rand geht, und den Trampelpfad weiter unten an der Karte unten rechts enden lassen. Legt man beide Karten aneinander, würde die Hauptstraße von Riverton dann unterhalb der Karte am Fluss entlang verlaufen (Wortlaut sinngemäß, „unterhalb von der Karte am Fluss“), und das Problem entfiele. Zusammenhang mit R034.
+- [ ] R079. Übergang Bahndamm zu Riverton: Beim Kartenwechsel geht es ruckartig vom Bahndamm zu keinem Bahndamm. In Riverton liegen die Schienen einfach auf dem Boden, vorher lagen sie in der Bahndamm-Karte auf einem Damm. Es fehlt logisch ein Abstieg des Bahndamms. Vorschlag: in der Riverton-Karte andeuten, dass der Damm leicht abfällt, sodass es zum Bahnsteig hin wieder eben wird. Dafür braucht es wahrscheinlich einige Assets. Zusammenhang mit R072 und R078.
 
 ## Karten und Grafik
 
@@ -140,6 +141,11 @@ Der Raum der Stadtbibliothek an sich sieht nach Einschätzung des Autors gut aus
 - [ ] R075. Bahndamm, Bahnhaltestelle: Die Bänke stehen direkt in einer der Laternen.
 - [ ] R076. Bahndamm, relativ mittig im Bild am Weg: Ein kleines umzäuntes Gebiet mit Sonnenblumen und Kürbissen. Darin stehen zwei kleine „Abziehbild“-Häuschen (siehe R055). Die Sonnenblumen und Kürbisse wachsen teilweise auf dem Trampelpfad, das ergibt keinen Sinn.
 - [ ] R077. Bahndamm, ganz rechts unten: ein gepflasterter Platz mit einer alten Hütte mit Wellblechdach, oben ein Zaun. Der Zaun geht nicht ganz bis zum Rand. Die Hütte wirkt fehl am Platz; der Autor weiß nicht, ob sie von der Geschichte her Sinn macht (Hauptchat prüfen, sonst überlegen). Der gepflasterte Boden hat wieder eine harte Kante zum Gras; ein Übergangs-Asset wäre schöner (siehe R042). Zusammenhang mit R078.
+
+### Riverton, Außen (der Autor sagt „Riverton-Karte“; vermutlich `riverton-aussen`)
+
+- [ ] R080. Riverton, oben rechts neben dem Bahngleis: Ein kleiner gepflasterter Streifen, auf dem ein Stapel Holz liegt. Das wirkt komisch: Warum pflastert man ein Stück entlang der Gleise, biegt kurz nach unten ab und pflastert nur, damit dort ein Holzhaufen auf Pflaster steht? Vorschlag: die Pflasterung entweder komplett an den Schienen entlangziehen oder weglassen und Gras lassen. Auch der Holzhaufen an sich macht dort wenig Sinn; er könnte näher an das große Farmhaus, das fast direkt daneben steht.
+- [ ] R081. Riverton, oben rechts, rechts unter dem Wasserturm: wieder ein „Abziehbild“-Häuschen (siehe R055).
 
 ### Maple Falls, Wohnzimmer (`maple-falls-wohnzimmer-ausgepackt`)
 

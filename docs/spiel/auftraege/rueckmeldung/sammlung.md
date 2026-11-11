@@ -1,6 +1,6 @@
 # Sammlung der Rückmeldungen zum Schach-Abenteuer (Beta)
 
-Stand: 11.11.2026. Offene Punkte: 134 (davon 66 seit der ersten Abgabe neu: R071 bis R137). Erste Abgabe: 11.11.2026 (R001 bis R070, ohne die unbenutzte Nummer R035).
+Stand: 11.11.2026. Offene Punkte: 139 (davon 71 seit der ersten Abgabe neu: R071 bis R142). Erste Abgabe: 11.11.2026 (R001 bis R070, ohne die unbenutzte Nummer R035).
 
 Hinweis: Es gibt zwei Karten, die mit „Zedern“ beginnen: Zedernpfad (Maple Falls nach Cedar Creek) und Zedernwald (Cedar Creek nach Riverton). Alle bisherigen Anmerkungen des Autors, auch wo er „Zedernwald“ sagte, betreffen den Zedernpfad.
 
@@ -221,6 +221,11 @@ Lange vertikale Karte; der Autor ging sie von oben nach unten durch.
 - [ ] R135. Lockport Außen, Gebäude oben in der Mitte: kein Abziehbild, passt aber vom Stil nicht. Dasselbe gilt für das zweite Gebäude von links oben, zwischen den beiden großen Gebäuden.
 - [ ] R136. Lockport Außen, Häuserreihe oberhalb des Kanals, von links nach rechts (Aufzählung des Autors; Zuordnung zu R134 und R135 und Abgleich mit dem Bild bitte durch den Hauptchat): 1. ganz links ein kleiner Schuppen am Kanal: Abziehbild, nicht in Ordnung. 2. das nächste Gebäude rechts daneben, über den gepflasterten Weg: in Ordnung. 3. das Gebäude rechts daneben: nicht in Ordnung. 4. wieder ein Gebäude: in Ordnung. 5. und 6. zwei Gebäude: nicht in Ordnung. 7. ein Gebäude: in Ordnung. 8. ganz rechts ein Gebäude: nicht in Ordnung. Die nicht in Ordnung befindlichen müssen ausgetauscht werden.
 - [ ] R137. Lockport Außen, Kanal: Auf dem Kanal liegt wieder ein „Abziehbild“, eine Fähre, vom Autor korrigiert „einen Tanker meine ich“. Es muss ein vernünftiges Asset werden (siehe R055, R120).
+- [ ] R138. Lockport Außen, rechts direkt unter dem Kanal: Ein Wellblechhaus steht zum Teil auf dem Rasen und zum Teil auf dem Gepflasterten. Es sollte nur auf einem von beiden stehen, wahrscheinlich eher auf dem gepflasterten Bereich.
+- [ ] R139. Lockport Außen, untere Hälfte des Bildes, an der gepflasterten Straße: mehrere „Abziehbild“-Gebäude. In der unteren Hälfte sind nur das Gebäude mit dem Schild „Schleuse“ und das Gebäude mit dem Schild „Ankertaue“ vom Asset her in Ordnung. Alle anderen Gebäude in der unteren Hälfte müssen ausgetauscht werden (siehe R055).
+- [ ] R140. Lockport Außen, Schild „Ankertaue“: Es überdeckt das Schild, das das Gebäude-Asset selbst hat, nur teilweise, und liegt ein bisschen zu tief. Es soll das eigentliche Schild des Gebäudes vollständig abdecken (siehe R059).
+- [ ] R141. Lockport Außen, Schild „Schleuse“: Es hängt vorne an einer Markise des Gebäudes. Das geht nicht, es muss an die Hauswand.
+- [ ] R142. Lockport Außen, ganze Karte: Die Übergänge zwischen dem gepflasterten Boden-Asset und dem Gras sind sehr scharf (siehe R041, R042). Der Autor hat das bei vielen Karten bemängelt und bittet, sich etwas zu überlegen.
 
 ### Maple Falls, Wohnzimmer (`maple-falls-wohnzimmer-ausgepackt`)
 

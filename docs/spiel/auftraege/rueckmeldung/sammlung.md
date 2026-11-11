@@ -1,6 +1,6 @@
 # Sammlung der Rückmeldungen zum Schach-Abenteuer (Beta)
 
-Stand: 11.11.2026. Offene Punkte: 10. Abgeschickt (gepusht): noch nichts.
+Stand: 11.11.2026. Offene Punkte: 19. Abgeschickt (gepusht): noch nichts.
 
 Reihenfolge je Kategorie: zuerst, was das Weiterspielen verhindert, dann Störendes, dann Schönheitsfehler.
 
@@ -26,6 +26,18 @@ Reihenfolge je Kategorie: zuerst, was das Weiterspielen verhindert, dann Stören
 - [ ] R009. Maple Falls, Diner: Ein kleiner Barhocker steht links direkt hinter einem der roten Stühle (beziehungsweise rechts daneben). Er passt nicht zum Diner und sein Platz erschließt sich nicht.
 - [ ] R010. Maple Falls, Diner, Eingangsbereich: Der Bereich ist nur eine leere Fläche. Idee: ein netter Teppich, der zu einem Diner passt.
 
+### Maple Falls, Clubraum der Maple Falls High (`maple-falls-clubraum`, Variante Pokal: `maple-falls-clubraum-pokal`)
+
+- [ ] R011. Maple Falls, Clubraum, Pokalschrank (Vitrine) und Spinde hinten rechts: Die Assets passen perspektivisch nicht. Bei den sonst benutzten Regalen sieht man von oben auch ein Stück der Oberseite des Schranks; bei Vitrine und Spinden nicht, sie sind frontal gedacht. Eine Decke daraufzumalen würde nach Einschätzung des Autors vermutlich nicht gut aussehen. Beide Elemente gefallen ihm und sollen bleiben, brauchen aber andere Assets. Außerdem prüfen, ob dieselben Assets auf anderen Karten eingesetzt sind.
+- [ ] R012. Maple Falls, Clubraum, linke und rechte Wand mittig (vermutlich, Autor unsicher): Ein Bücherregal von der Seite. Das Asset ist hässlich. Zuerst klären, was es überhaupt darstellen soll, dann ein anderes Asset dafür finden.
+- [ ] R013. Maple Falls, Clubraum, hinten rechts an der Wand: Drei Rechtecke (rot, blau, grün), die scheinbar an einer Stange hängen, sehen aus wie ein Aufkleber an der Wand. Soll es ein Aufkleber sein, ist es in Ordnung. Soll es etwas mit Tiefe sein (etwa eine Stange, an der etwas hängt), muss ein anderes Asset her. Der Autor sieht darin und in R011/R012 mögliche Beispiele für selbst mit Gemini erstellte Assets; der Hauptchat soll entscheiden.
+- [ ] R014. Maple Falls, Clubraum, hinten an der Wand: Das Schild „Erst zählen“ bedeckt die ganze Wand (in Ordnung), ragt aber leicht in die Decke hinein, ist also etwas zu groß oder zu hoch. Wunsch: herunterskalieren, sodass der Text noch lesbar ist und das Schild nur die Wandhöhe bedeckt.
+- [ ] R015. Maple Falls, Clubraum, Tisch in der Mitte oben: Der Globus steht direkt auf dem Buch, das würde man so nicht machen. Vorschlag: den Globus auf eines der Regale stellen, etwa oben auf das Regal, das links im Raum steht.
+- [ ] R016. Maple Falls, Clubraum, Wechsel von der Variante Grund zur Variante Pokal: Das Plakat „Erst zählen“ oben rechts verschiebt sich.
+- [ ] R017. Maple Falls, Clubraum, Variante Pokal: Es kommen Stühle hinzu, an Tischen, an denen in der Variante Grund nur ein Stuhl stand. Der Autor weiß nicht, ob das gewollt ist. Wenn es von der Geschichte so gewollt ist, in Ordnung (Hauptchat prüfen).
+- [x] R018. Maple Falls, Clubraum, Variante Pokal: Der Pokal steht auf dem Tisch, vermutlich direkt auf einem anderen Gegenstand. Der Autor: kann so bleiben, fällt kaum auf. Kein Handlungsbedarf.
+- [ ] R019. Maple Falls, Clubraum, Variante Pokal: Der Stuhl in der Mitte steht direkt vor oder auf einer der Figuren. Bewegen sich die Figuren, ist das zufällig und in Ordnung. Stehen sie immer an derselben Stelle, muss die Figur woanders hingehen, wenn der Stuhl kommt.
+
 ### Maple Falls, Aussen (Hauptstraße, `maple-falls-aussen`)
 
 - [ ] R002. Maple Falls, Hauptstraße, unten links zwischen den beiden größeren Häusern: Ein kleiner rötlich-brauner Schuppen passt vom Asset her nicht. Er hat keine Tiefe wie die anderen Gebäude, wirkt wie ein Abziehbild und fällt optisch heraus. Er soll gegen etwas ausgetauscht werden, das besser passt. Wird das Asset woanders benutzt, muss es dort ebenfalls weg, weil es insgesamt nicht zum Stil passt.
@@ -38,6 +50,7 @@ Reihenfolge je Kategorie: zuerst, was das Weiterspielen verhindert, dann Stören
 ## Figuren und Tiere
 
 - [ ] R008. Alle Karten (zuerst gesehen im Diner, Küche): Eine Person in der Küche steht mit dem Gesicht zur Wand. Bewegen sich Figuren im Spiel von selbst hin und her, ist das in Ordnung. Stehen sie still, müssen sie logisch platziert sein, an einer sinnvollen Stelle und mit sinnvoller Blickrichtung. Der Autor bittet, das bei allen Karten zu prüfen, bei denen sich Figuren nicht von selbst bewegen.
+- [ ] R020. Alle Karten, besonders Clubraum Maple Falls High: Figuren sollen sich bewegen, wenn es Sinn macht, und nicht wie Säulen herumstehen. Im Clubraum sollen sie eigentlich auf den Stühlen sitzen, weil sie Schach spielen. Der Autor weiß nicht, ob man das grafisch hinbekommt; der Hauptchat soll entscheiden, auch in Bezug auf die Geschichte. Zusammenhang mit R008 und R019.
 
 ## Geschichte und Texte
 

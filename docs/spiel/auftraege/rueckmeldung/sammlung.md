@@ -1,6 +1,6 @@
 # Sammlung der Rückmeldungen zum Schach-Abenteuer (Beta)
 
-Stand: 11.11.2026. Offene Punkte: 139 (davon 71 seit der ersten Abgabe neu: R071 bis R142). Erste Abgabe: 11.11.2026 (R001 bis R070, ohne die unbenutzte Nummer R035).
+Stand: 11.11.2026. Offene Punkte: 140 (davon 72 seit der ersten Abgabe neu: R071 bis R143). Erste Abgabe: 11.11.2026 (R001 bis R070, ohne die unbenutzte Nummer R035).
 
 Hinweis: Es gibt zwei Karten, die mit „Zedern“ beginnen: Zedernpfad (Maple Falls nach Cedar Creek) und Zedernwald (Cedar Creek nach Riverton). Alle bisherigen Anmerkungen des Autors, auch wo er „Zedernwald“ sagte, betreffen den Zedernpfad.
 
@@ -226,6 +226,7 @@ Lange vertikale Karte; der Autor ging sie von oben nach unten durch.
 - [ ] R140. Lockport Außen, Schild „Ankertaue“: Es überdeckt das Schild, das das Gebäude-Asset selbst hat, nur teilweise, und liegt ein bisschen zu tief. Es soll das eigentliche Schild des Gebäudes vollständig abdecken (siehe R059).
 - [ ] R141. Lockport Außen, Schild „Schleuse“: Es hängt vorne an einer Markise des Gebäudes. Das geht nicht, es muss an die Hauswand.
 - [ ] R142. Lockport Außen, ganze Karte: Die Übergänge zwischen dem gepflasterten Boden-Asset und dem Gras sind sehr scharf (siehe R041, R042). Der Autor hat das bei vielen Karten bemängelt und bittet, sich etwas zu überlegen.
+- [ ] R143. Lockport Außen, unten in der Mitte auf dem gepflasterten Bereich (Brunnen, daneben eine Bank): Rechts unterhalb des Brunnens steht ein Baum, der scheinbar einfach aus dem gepflasterten Boden wächst. Entweder die Pflasterung an der Stelle auflösen, damit der Baum auf Gras steht, oder den Baum auf das Gras daneben verlagern.
 
 ### Maple Falls, Wohnzimmer (`maple-falls-wohnzimmer-ausgepackt`)
 

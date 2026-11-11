@@ -903,8 +903,11 @@ Der Autor zu R065 (`gutachten/INNEN_AUSSEN.md`): Weicht die Fläche des Innenrau
 von der Fläche ab, die das Gebäude außen hergibt, wird angepasst. Gemessen wird die Grundfläche (Breite
 mal Tiefe), nicht nur die Breite.
 
-- **Raum größer als das Gebäude** (der häufige Fall): das Gebäude außen vergrößern oder den Raum
-  verkleinern oder teilen.
+- **Raum größer als das Gebäude** (der häufige Fall): **das Gebäude außen vergrößern.** Räume, die
+  der Autor schon im Einzelnen durchgesehen hat (alle Karten der Sammlung R001 bis R151: Maple Falls,
+  Cedar Creek, Riverton, Lockport, London und die Wege dazwischen), werden **nicht verkleinert**
+  (Autor, 12.11.2026). Bei noch nicht durchgesehenen Räumen ist Verkleinern oder Teilen erlaubt, das
+  Vergrößern des Gebäudes bleibt die erste Wahl.
 - **Gebäude größer als der Raum:** Türen (auch verschlossene) und Treppenhäuser zeigen weitere Räume
   an; so hatte der Autor es in R065 beschrieben.
 - **Lage des Eingangs** stimmt immer überein, unabhängig von der Fläche.

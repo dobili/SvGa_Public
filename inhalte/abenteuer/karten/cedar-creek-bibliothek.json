@@ -1251,7 +1251,7 @@
      "name": "globus",
      "type": "ausloeser",
      "x": 304,
-     "y": 144,
+     "y": 208,
      "width": 16,
      "height": 16,
      "rotation": 0,
@@ -1294,8 +1294,8 @@
      "id": 10,
      "name": "leserin",
      "type": "statist",
-     "x": 48,
-     "y": 208,
+     "x": 160,
+     "y": 192,
      "width": 16,
      "height": 16,
      "rotation": 0,
@@ -1322,8 +1322,8 @@
      "id": 11,
      "name": "student",
      "type": "statist",
-     "x": 224,
-     "y": 144,
+     "x": 240,
+     "y": 128,
      "width": 16,
      "height": 16,
      "rotation": 0,
@@ -1350,8 +1350,8 @@
      "id": 12,
      "name": "rentnerZeitung",
      "type": "statist",
-     "x": 128,
-     "y": 176,
+     "x": 192,
+     "y": 208,
      "width": 16,
      "height": 16,
      "rotation": 0,
@@ -1376,7 +1376,7 @@
     },
     {
      "id": 13,
-     "name": "cc4RegalA",
+     "name": "cc4RegalB",
      "type": "moebel",
      "x": 16,
      "y": 16,
@@ -1399,7 +1399,7 @@
     },
     {
      "id": 14,
-     "name": "cc4RegalB",
+     "name": "cc4RegalD",
      "type": "moebel",
      "x": 48,
      "y": 16,
@@ -1445,7 +1445,7 @@
     },
     {
      "id": 16,
-     "name": "cc4RegalC",
+     "name": "cc4RegalB",
      "type": "moebel",
      "x": 112,
      "y": 16,
@@ -1537,7 +1537,7 @@
     },
     {
      "id": 20,
-     "name": "cc4Zeitungsregal",
+     "name": "cc12Zeitungsregal",
      "type": "moebel",
      "x": 240,
      "y": 16,
@@ -1560,7 +1560,7 @@
     },
     {
      "id": 21,
-     "name": "cc4RegalA",
+     "name": "cc4RegalB",
      "type": "moebel",
      "x": 272,
      "y": 16,
@@ -1930,8 +1930,8 @@
      "id": 37,
      "name": "cc4Tresen",
      "type": "moebel",
-     "x": 128,
-     "y": 176,
+     "x": 16,
+     "y": 160,
      "width": 32,
      "height": 48,
      "rotation": 0,
@@ -1940,7 +1940,7 @@
       {
        "name": "tiefe",
        "type": "int",
-       "value": 216
+       "value": 200
       },
       {
        "name": "kollision",
@@ -1954,7 +1954,7 @@
      "name": "cc4PflanzeK",
      "type": "moebel",
      "x": 16,
-     "y": 192,
+     "y": 208,
      "width": 16,
      "height": 32,
      "rotation": 0,
@@ -1963,7 +1963,7 @@
       {
        "name": "tiefe",
        "type": "int",
-       "value": 216
+       "value": 232
       },
       {
        "name": "kollision",
@@ -2321,7 +2321,7 @@
      "id": 54,
      "name": "cc4Stehlampe",
      "type": "moebel",
-     "x": 304,
+     "x": 240,
      "y": 192,
      "width": 16,
      "height": 48,
@@ -2345,7 +2345,7 @@
      "name": "cc5Anrichte",
      "type": "moebel",
      "x": 304,
-     "y": 112,
+     "y": 176,
      "width": 32,
      "height": 32,
      "rotation": 0,
@@ -2354,7 +2354,7 @@
       {
        "name": "tiefe",
        "type": "int",
-       "value": 136
+       "value": 200
       },
       {
        "name": "kollision",
@@ -2368,7 +2368,7 @@
      "name": "cc4Globus",
      "type": "moebel",
      "x": 312,
-     "y": 99,
+     "y": 163,
      "width": 16,
      "height": 32,
      "rotation": 0,
@@ -2377,7 +2377,7 @@
       {
        "name": "tiefe",
        "type": "int",
-       "value": 137
+       "value": 201
       },
       {
        "name": "kollision",
@@ -2483,7 +2483,7 @@
      "name": "cc6RegalSeiteGrau",
      "type": "moebel",
      "x": 320,
-     "y": 144,
+     "y": 96,
      "width": 16,
      "height": 48,
      "rotation": 0,
@@ -2492,7 +2492,7 @@
       {
        "name": "tiefe",
        "type": "int",
-       "value": 184
+       "value": 136
       },
       {
        "name": "kollision",

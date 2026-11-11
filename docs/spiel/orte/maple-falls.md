@@ -751,3 +751,24 @@ Gutachten `docs/spiel/auftraege/gutachten/maple-falls-cedar-creek-2.md`.
 - **Bäume am Uferweg:** Drei Straßenbäume stehen zwischen den Laternen. Ein vierter passt nicht neben
   den Verkaufswagen.
 - **Grauer Gegenstand:** Das war die alte Halfpipe; das neue Bild ist gerendert.
+
+## Erstes Gutachten der Innenräume: Antworten (niedrig-1, 11.11.2026)
+
+Gutachten `maple-falls-innen.md`. Neue Bilder aus `bildwuensche/niedrig1_runde11.py`.
+
+- **Dachboden (auch `ohne-brett`):**
+  - Die Hutschachtel ist klein, rund und gestreift (5, 9), neben dem Teppich.
+  - Die zwei unklaren Stoffhaufen sind weg: In der Südwestecke und an der Ostwand stehen alte
+    Kartons.
+  - Hinter dem Sprossenfenster leuchtet rotes Ahornlaub.
+- **Wohnzimmer (auch `ausgepackt`):**
+  - Der Pizzakarton liegt flach vor dem Kartonstapel (7, 10), mit rotem Kreis, Auslöser (7, 11).
+  - Die Whitlock-Kiste trägt ein Etikett „WHITLOCK“ (drei Kacheln breit, damit die Schrift passt).
+  - Zustand `ausgepackt`: Das Sofa, das zur Haustür schaute, ist weg. An der Westwand steht ein
+    Bücherregal, vor dem Fernseher ein runder Couchtisch; die Sessel schauen weiter zum Fernseher.
+- **Diner:**
+  - Die Durchreiche ist eine Öffnung mit Ablage, durch die man in die helle Küche sieht
+    (`durchreiche_offen.png` von mittel-3).
+  - Glastür (`sb8GlastuerSued`) statt der Tür, von der nur die braune Matte zu sehen war.
+  - Wartebank vor der Toilettenwand (5, 10). Die Nischen haben rote Polsterbänke mit hoher Lehne.
+  - Die Pflanze steht nicht mehr im Durchgang zur Automatenecke.

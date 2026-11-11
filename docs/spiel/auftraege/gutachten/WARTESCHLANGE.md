@@ -118,6 +118,7 @@ Szene heißt die Datei in `inhalte/abenteuer/szenen/` ohne `.json`.
 
 - [x] ghost-town-aussen (nur neue Bilder: Planwagen von vorn neben dem Mietstall, Pferd an der Tränke, niedrig-1; Antworten in ghost-town.md; Bögen fuchs, pferd, schimmel erst bauen) → `gemini-fahrzeuge-teil2.md`
 - [ ] ghost-town-aussen (Anbindebalken und Tränke am Mietstall), goldmine-stollen (Weiche am Abzweig), erinnerung-london-strand (helle Ladenzone), lockport-aussen (nur Ruben versetzt) (Restpunkte, niedrig-1; Bilder aus `niedrig1_runde10.py` erst rendern; Antworten in ghost-town.md und erinnerung-london.md)
+- [ ] cedar-creek-archiv (+geordnet), cedar-creek-waschsalon, maple-falls-diner, cedar-creek-bibliothek (zweite Prüfung, niedrig-1) und maple-falls-dachboden (+ohne-brett), maple-falls-wohnzimmer (+ausgepackt), cedar-creek-drechslerei (nur Restpunkte); Bilder aus `niedrig1_runde11.py` erst rendern; Antworten in cedar-creek.md und maple-falls.md
 
 ## Erledigt
 

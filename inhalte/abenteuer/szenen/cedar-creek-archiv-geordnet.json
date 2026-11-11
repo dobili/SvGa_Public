@@ -2,7 +2,7 @@
   "karte": "cedarCreek.archiv",
   "datei": "karten/cedar-creek-archiv-geordnet.json",
   "art": "innen",
-  "beschreibung": "Zustand: nach der Nebenaufgabe „Das Archiv“ (archivGeordnet, Szene 18) stehen links statt der nassen, aufgeweichten Kartons trockene, geschlossene Kartons, weil der Held der Bibliothekarin Okafor beim Umräumen nach dem Wasserschaden geholfen hat. Das Archiv im Keller der Bibliothek von Cedar Creek: ein niedriger, kühler Raum mit Steinboden und Backsteinwänden, ordentlich, aber lange nicht benutzt. Es riecht nach altem Papier.\n\nRechts an der Nordwand führt eine steile Holztreppe hinauf in den Lesesaal; sie liegt genau unter der Kellertür der Bibliothek. Links davon stehen vier hohe Regale voller gebundener Zeitungsjahrgänge und Mappen, zwischen zwei Regalen hängt ein vergilbtes Foto eines Boxers. Das Regal ganz rechts neben der Treppe liegt im Schatten; erst mit einer Laterne sieht man, was darin steht.\n\nIn der Mitte stehen die Archivkartons in zwei sauberen Reihen, jeder mit einer Jahreszahl beschriftet. In der unteren Reihe steht ein offener Karton: „1850–1859“. Rechts unten an der Südwand der Lesetisch mit aufgeschlagenem Buch, an dem man Akten sichtet; darauf liegt das alte Programmheft, dahinter ein Stuhl, daneben eine Stehlampe mit warmem Licht. Am Westende ein Stapel höherer Kartons. Auf dem Boden vorn ein dunkler Wasserfleck, der aussieht wie ein Springer.\n\nLaufwege: von der Treppe nach unten, nach links zwischen Regalen und Kartonreihen hindurch zum offenen Karton, nach rechts zum Lesetisch, nach vorn zum Fleck.",
+  "beschreibung": "Zustand: nach der Nebenaufgabe „Das Archiv“ (archivGeordnet, Szene 18) stehen links statt der nassen, aufgeweichten Kartons trockene, geschlossene Kartons, weil der Held der Bibliothekarin Okafor beim Umräumen nach dem Wasserschaden geholfen hat. Das Archiv im Keller der Bibliothek von Cedar Creek: ein niedriger, kühler Raum mit Steinboden und hell gekalkten Ziegelwänden, ordentlich, aber lange nicht benutzt. Es riecht nach altem Papier.\n\nRechts an der Nordwand führt eine steile Holztreppe hinauf in den Lesesaal; sie liegt genau unter der Kellertür der Bibliothek. Links davon stehen vier hohe Regale voller gebundener Zeitungsjahrgänge und Mappen, zwischen zwei Regalen hängt ein vergilbtes Foto eines Boxers. Das vierte Regal ganz rechts neben der Treppe liegt im Schatten; erst mit einer Laterne sieht man, was darin steht.\n\nIn der Mitte stehen die Archivkartons in zwei sauberen Reihen, jeder mit einer Jahreszahl beschriftet. In der unteren Reihe steht links ein offener Karton: „1850“. Rechts unten an der Südwand der Lesetisch mit aufgeschlagenem Buch, an dem man Akten sichtet; darauf liegt das alte Programmheft, dahinter ein Stuhl, auf dem Tisch eine Leselampe mit warmem Licht. Am Westende der Reihen zwei Stapel höherer Kartons. Auf dem Boden vorn, vor der unteren Reihe, ein dunkler Wasserfleck, der aussieht wie ein Springer.\n\nLaufwege: von der Treppe nach unten, nach links zwischen Regalen und Kartonreihen hindurch zum offenen Karton, nach rechts zum Lesetisch, nach vorn zum Fleck.",
   "wand": "backstein",
   "boden": "stein",
   "raster": [
@@ -37,7 +37,7 @@
       "feld": [6, 1]
     },
     {
-      "moebel": "cc4ArchivregalB",
+      "moebel": "cc12RegalSchatten",
       "feld": [8, 1],
       "id": "dunklesRegal"
     },
@@ -46,37 +46,25 @@
       "feld": [10, 1]
     },
     {
-      "moebel": "cc4ArchivregalB",
-      "feld": [1, 4],
-      "versatz": [4, 0]
-    },
-    {
-      "moebel": "cc4Archivregal",
-      "feld": [3, 4],
-      "versatz": [0, 0]
-    },
-    {
-      "moebel": "cc4ArchivregalB",
-      "feld": [5, 6],
-      "versatz": [4, 0]
-    },
-    {
-      "moebel": "cc4Archivregal",
-      "feld": [7, 6],
-      "versatz": [0, 0]
+      "moebel": "cc4Karton",
+      "feld": [1, 4]
     },
     {
       "moebel": "cc4Karton",
-      "feld": [1, 8]
+      "feld": [1, 6]
     },
     {
-      "moebel": "cc4Karton",
-      "feld": [3, 8]
+      "moebel": "cc12KartonsOben",
+      "feld": [3, 4]
     },
     {
-      "moebel": "cc4KartonOffen",
-      "feld": [9, 4],
+      "moebel": "cc12KartonsUnten",
+      "feld": [3, 6],
       "id": "karton1858"
+    },
+    {
+      "moebel": "cc12Wasserfleck",
+      "feld": [6, 8]
     },
     {
       "moebel": "cc4StuhlHinten",
@@ -90,7 +78,17 @@
     {
       "moebel": "cc4Leselampe",
       "auf": "tisch",
-      "versatz": [7, 0]
+      "versatz": [9, -2]
+    },
+    {
+      "moebel": "cc12BuchOffen",
+      "auf": "tisch",
+      "versatz": [-6, 2]
+    },
+    {
+      "moebel": "cc12Programmheft",
+      "auf": "tisch",
+      "versatz": [-7, -7]
     }
   ],
   "ausloeser": [
@@ -131,17 +129,17 @@
     },
     {
       "name": "programmheft",
-      "feld": [11, 9],
+      "feld": [10, 9],
       "auf_moebel": true
     },
     {
       "name": "karton1858",
-      "feld": [9, 5],
+      "feld": [3, 8],
       "auf_moebel": true
     },
     {
       "name": "wasserfleck",
-      "feld": [6, 4]
+      "feld": [7, 9]
     }
   ],
   "figuren": [],

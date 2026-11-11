@@ -37,6 +37,11 @@
       "auf": "hobelbank"
     },
     {
+      "moebel": "cc12Werkstattfenster",
+      "feld": [6, 1],
+      "an_wand": true
+    },
+    {
       "moebel": "cc4Holzregal",
       "feld": [8, 1]
     },
@@ -127,7 +132,8 @@
         "von": "2,5",
         "bis": "2,5",
         "tun": "dreht an der Drehbank",
-        "wann": "tag"
+        "wann": "tag",
+        "bild": "statist-13"
       }
     }
   ],

@@ -680,14 +680,8 @@
       "zustand": "gebraucht",
       "stil": "klassisch",
       "tuer": [
-        [
-          1,
-          9
-        ],
-        [
-          2,
-          9
-        ]
+        [1, 9],
+        [2, 9]
       ]
     },
     "mf2Plakatwand": {
@@ -1091,12 +1085,7 @@
       "blick": "unten",
       "zustand": "gebraucht",
       "stil": "klassisch",
-      "tuer": [
-        [
-          2,
-          10
-        ]
-      ],
+      "tuer": [[2, 10]],
       "maske": [
         ".........",
         "#########",
@@ -1143,14 +1132,8 @@
       "zustand": "gebraucht",
       "stil": "klassisch",
       "tuer": [
-        [
-          1,
-          9
-        ],
-        [
-          2,
-          9
-        ]
+        [1, 9],
+        [2, 9]
       ]
     },
     "mf4Schule": {
@@ -1163,14 +1146,8 @@
       "zustand": "gebraucht",
       "stil": "klassisch",
       "tuer": [
-        [
-          8,
-          20
-        ],
-        [
-          9,
-          20
-        ]
+        [8, 20],
+        [9, 20]
       ],
       "maske": [
         "........................",
@@ -1217,12 +1194,7 @@
       "blick": "unten",
       "zustand": "gebraucht",
       "stil": "klassisch",
-      "tuer": [
-        [
-          7,
-          9
-        ]
-      ]
+      "tuer": [[7, 9]]
     },
     "mf4Briefkasten": {
       "quelle": "modern-exteriors/Modern_Exteriors_16x16/ME_Theme_Sorter_16x16/22_Post_Office_Singles_16x16/22_Post_Office_16x16_Black_Mailbox_1_Front.png",
@@ -1476,17 +1448,7 @@
       "art": "deko",
       "zustand": "gebraucht",
       "stil": "klassisch",
-      "maske": [
-        "...",
-        "...",
-        "...",
-        "...",
-        "...",
-        "...",
-        "...",
-        "...",
-        "###"
-      ]
+      "maske": ["...", "...", "...", "...", "...", "...", "...", "...", "###"]
     },
     "mf4StegLinks": {
       "quelle": "modern-exteriors/Modern_Exteriors_16x16/ME_Theme_Sorter_16x16/11_Camping_Singles_16x16/ME_Singles_Camping_16x16_Pier_Bridge_1.png",
@@ -3603,6 +3565,93 @@
       "kollision": false,
       "art": "boden",
       "zustand": "gebraucht",
+      "stil": "klassisch"
+    },
+    "mf12Durchreiche": {
+      "quelle": "spiel/eigene/durchreiche_offen.png",
+      "breite": 32,
+      "hoehe": 32,
+      "kollision": false,
+      "art": "fenster",
+      "zustand": "gebraucht",
+      "stil": "klassisch",
+      "begehbar": true,
+      "begehbar_grund": "Öffnung in der Wand"
+    },
+    "mf12NischenbankRechts": {
+      "quelle": "spiel/eigene/nischenbank_rechts.png",
+      "breite": 16,
+      "hoehe": 32,
+      "kollision": true,
+      "art": "bank",
+      "blick": "rechts",
+      "zustand": "gebraucht",
+      "stil": "klassisch"
+    },
+    "mf12NischenbankLinks": {
+      "quelle": "spiel/eigene/nischenbank_links.png",
+      "breite": 16,
+      "hoehe": 32,
+      "kollision": true,
+      "art": "bank",
+      "blick": "links",
+      "zustand": "gebraucht",
+      "stil": "klassisch"
+    },
+    "mf12Hutschachtel": {
+      "quelle": "spiel/eigene/hutschachtel_klein.png",
+      "breite": 16,
+      "hoehe": 16,
+      "kollision": true,
+      "art": "deko",
+      "zustand": "alt",
+      "stil": "klassisch"
+    },
+    "mf12FensterAhorn": {
+      "quelle": "spiel/eigene/fenster_ahorn.png",
+      "breite": 32,
+      "hoehe": 32,
+      "kollision": false,
+      "art": "fenster",
+      "zustand": "alt",
+      "stil": "rustikal",
+      "begehbar": true,
+      "begehbar_grund": "hängt an der Wand"
+    },
+    "mf12Pizzakarton": {
+      "quelle": "spiel/eigene/pizzakarton_flach.png",
+      "breite": 16,
+      "hoehe": 16,
+      "kollision": true,
+      "art": "karton",
+      "zustand": "gebraucht",
+      "stil": "modern"
+    },
+    "mf12KartonWhitlock": {
+      "quelle": "spiel/eigene/karton_whitlock.png",
+      "breite": 48,
+      "hoehe": 32,
+      "kollision": true,
+      "art": "karton",
+      "zustand": "gebraucht",
+      "stil": "klassisch"
+    },
+    "mf12KartonAlt": {
+      "quelle": "modern-exteriors/Modern_Exteriors_16x16/ME_Theme_Sorter_16x16/6_Garage_Sales_Singles_16x16/ME_Singles_Garage_Sales_16x16_Box_1.png",
+      "breite": 32,
+      "hoehe": 32,
+      "kollision": true,
+      "art": "karton",
+      "zustand": "alt",
+      "stil": "klassisch"
+    },
+    "mf12KartonAltHoch": {
+      "quelle": "modern-exteriors/Modern_Exteriors_16x16/ME_Theme_Sorter_16x16/6_Garage_Sales_Singles_16x16/ME_Singles_Garage_Sales_16x16_Box_2.png",
+      "breite": 32,
+      "hoehe": 32,
+      "kollision": true,
+      "art": "karton",
+      "zustand": "alt",
       "stil": "klassisch"
     }
   }

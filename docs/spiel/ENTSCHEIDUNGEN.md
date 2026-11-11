@@ -910,5 +910,13 @@ mal Tiefe), nicht nur die Breite.
   Vergrößern des Gebäudes bleibt die erste Wahl.
 - **Gebäude größer als der Raum:** Türen (auch verschlossene) und Treppenhäuser zeigen weitere Räume
   an; so hatte der Autor es in R065 beschrieben.
+- **Die Form geht vor die Größe** (Autor, 12.11.2026): Der Grundriss des Innenraums folgt dem
+  Grundriss, den das Gebäudebild nahelegt. Nicht jedes Gebäude ist ein Rechteck: Anbau, Flügel,
+  Vorbau, Turm, L- oder T-Form (Beispiel R151, Gasthaus zur Schleuse: außen ein liegendes T) zeigen
+  sich innen als dieselbe Form. Vorgehen je Gebäude: das Außenbild ansehen, den Grundriss daraus
+  ableiten (Lage der Flügel, Türen, Fenster), den Raum danach formen; erst dann die Fläche prüfen.
+  Lässt sich die Form innen nicht herstellen, ohne einen durchgesehenen Raum zu zerstören, wird das
+  Gebäudebild außen getauscht oder aus dem Baukasten passend gebaut.
 - **Lage des Eingangs** stimmt immer überein, unabhängig von der Fläche.
-- Der Gutachter hat bisher nur Breiten verglichen; die Flächen misst er nach, wenn es weitergeht.
+- Der Gutachter hat bisher nur Breiten aus den Daten verglichen. Wenn es weitergeht, prüft er je
+  Gebäude am Bild zuerst die Form, dann die Fläche.

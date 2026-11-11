@@ -187,8 +187,10 @@ Diese Punkte haben Karten durchfallen lassen, die als reif galten. Sie gelten f�
 - **Felswand:** Endet eine Wand frei, sodass man um sie herum auf die Höhe kommt? Sind Treppen im
   Fels vollständig?
 - **Anschluss:** Setzen sich Fluss, Straße und Gelände am Kartenrand auf der Nachbarkarte fort?
-- **Innen und außen:** Passen Form, Größe und Eingang des Innenraums zum Gebäude außen? Deuten Türen
-  weitere Räume und Treppenhäuser an? Liegt eine Treppe unten dort, wo sie oben liegt?
+- **Innen und außen:** Zuerst die **Form**: Hat der Innenraum den Grundriss, den das Gebäudebild
+  nahelegt (Rechteck, L, T, Anbau, Flügel, Turm)? Dann die Fläche (Abweichung unter 50 %) und die Lage
+  des Eingangs. Deuten Türen weitere Räume und Treppenhäuser an? Liegt eine Treppe unten dort, wo sie
+  oben liegt? Durchgesehene Räume werden nicht verkleinert; dann wächst das Gebäude.
 - **Innentür:** Reicht eine Tür zwischen Räumen bis zur Wandhöhe, oder ist es die Haustür?
 - **Auf etwas stehen:** Steht jedes Ding auf seiner Unterlage (Kaffeemaschine auf der Theke, Bank auf
   dem Pflaster, Pflanzen im Beet, Kürbisse auf dem Feld, Brücke über dem ganzen Fluss)?

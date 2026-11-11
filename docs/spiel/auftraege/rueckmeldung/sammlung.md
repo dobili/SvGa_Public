@@ -1,6 +1,6 @@
 # Sammlung der Rückmeldungen zum Schach-Abenteuer (Beta)
 
-Stand: 11.11.2026. Offene Punkte: 101 (davon 33 seit der ersten Abgabe neu: R071 bis R103). Erste Abgabe: 11.11.2026 (R001 bis R070, ohne die unbenutzte Nummer R035).
+Stand: 11.11.2026. Offene Punkte: 103 (davon 35 seit der ersten Abgabe neu: R071 bis R105). Erste Abgabe: 11.11.2026 (R001 bis R070, ohne die unbenutzte Nummer R035).
 
 Hinweis: Es gibt zwei Karten, die mit „Zedern“ beginnen: Zedernpfad (Maple Falls nach Cedar Creek) und Zedernwald (Cedar Creek nach Riverton). Alle bisherigen Anmerkungen des Autors, auch wo er „Zedernwald“ sagte, betreffen den Zedernpfad.
 
@@ -171,6 +171,11 @@ Der Raum der Stadtbibliothek an sich sieht nach Einschätzung des Autors gut aus
 - [ ] R102. Bahnhofshalle, Variante „Slick auf der Bank“: Slick selbst ist nicht zu entdecken, obwohl er hier angeblich Schach spielen soll. Der Autor weiß nicht, ob es Absicht ist, dass er nicht gezeichnet wurde (Hauptchat prüfen). Spielt er dort Schach, wäre es sinnvoll, das Schachbrett auf die Sitzfläche eines der Stühle zu legen, während er auf dem Stuhl daneben sitzt. Zusammenhang mit R101 und R020.
 - [ ] R103. Bahnhofshalle, Variante Plakat (`riverton-bahnhofshalle-plakat`): Oben links wird ein Plakat hinzugefügt, das exakt hinter dem Fenster-Asset liegt und vom Fenster komplett verdeckt wird. Es muss eine freie Stelle an der Wand gefunden werden, wo das Plakat unterkommt.
 - [ ] R095. Bahnhofshalle, rechte Seite an der Wand: Ein stählernes Schließfach. Wunsch: ruhig zwei Reihen von Schließfächern mit jeweils zwei Schließfächern.
+
+### Erinnerung London, Strand (`erinnerung-london-strand`)
+
+- [ ] R104. Erinnerung London, Strand, Gesamtbild: Die Karte sieht sehr merkwürdig aus, weil viele „Abziehbild“-Assets ohne Tiefe verwendet werden, zum Beispiel die Kutsche und die Straßenlaternen. Auch die Häuser im Hintergrund wirken falsch: Die Dimensionen stimmen vermutlich nicht. Stellt man eine Figur direkt vor eine Tür, wäre die Tür doppelt so hoch wie die Figur. Die Häuser wirken komisch gestreckt. Der Autor weiß nicht mehr, woher die Häuser-Assets kommen und ob er sie mit Gemini erstellt hat. Auf jeden Fall werden andere gebraucht, die im Stil besser passen. Wunsch: Auf dem ganzen Bild überall auf vernünftige Assets achten, die zum Stil des Spiels passen. Zusammenhang mit R055.
+- [ ] R105. Erinnerung London, Strand, Begrenzung der Szene: Dem Autor ist unklar, wie die Karte gedacht ist. Links und rechts ist sie nicht abgeschlossen (eine Straße, die entlangläuft, aber man kann nach links, rechts, oben und unten nicht hinaus). Drumherum liegt ein dunkler, schwarzer Rahmen um die ganze Szenerie. Fragen des Autors (Hauptchat klären): Bleibt die Figur später am Rand einfach hängen? Soll man sich in dieser Szene überhaupt bewegen können, oder ist es nur eine Erinnerung, die als Bild gezeigt wird?
 
 ### Maple Falls, Wohnzimmer (`maple-falls-wohnzimmer-ausgepackt`)
 

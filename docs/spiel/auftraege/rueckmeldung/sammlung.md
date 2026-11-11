@@ -1,6 +1,6 @@
 # Sammlung der Rückmeldungen zum Schach-Abenteuer (Beta)
 
-Stand: 11.11.2026. Offene Punkte: 89 (davon 21 seit der ersten Abgabe neu: R071 bis R091). Erste Abgabe: 11.11.2026 (R001 bis R070, ohne die unbenutzte Nummer R035).
+Stand: 11.11.2026. Offene Punkte: 90 (davon 22 seit der ersten Abgabe neu: R071 bis R092). Erste Abgabe: 11.11.2026 (R001 bis R070, ohne die unbenutzte Nummer R035).
 
 Hinweis: Es gibt zwei Karten, die mit „Zedern“ beginnen: Zedernpfad (Maple Falls nach Cedar Creek) und Zedernwald (Cedar Creek nach Riverton). Alle bisherigen Anmerkungen des Autors, auch wo er „Zedernwald“ sagte, betreffen den Zedernpfad.
 
@@ -151,9 +151,10 @@ Der Raum der Stadtbibliothek an sich sieht nach Einschätzung des Autors gut aus
 - [ ] R085. Riverton Außen, ganz rechts auf der Karte, relativ mittig: ein abgegrenzter Bereich mit zwei Wellblechhütten und vielen Kisten. Rechts davon steht wieder ein „Abziehbild“-Häuschen (siehe R055).
 - [ ] R083. Riverton Außen, neben dem Haus mit dem Schild „Groove“ (zweites Haus von links, oberhalb der Hauptstraße): Direkt daneben steht ein kleiner Wegweiser mit zwei Schildern. Dem Autor erschließt sich nicht, warum er dort steht. Vorschlag: ein Stück weiter oben neben den Trampelpfad stellen.
 - [ ] R084. Riverton Außen, Trampelpfad (der oben neben dem Wegweiser, R083): Ein Busch steht mitten auf dem Weg.
-- [ ] R091. Riverton Außen, längliches Holzhaus rechts neben den „Bildschirmtischen“ (Wortlaut, vermutlich Spracheingabe verstümmelt, siehe unten): Direkt vor der Tür steht ein Tisch mit einem Schachbrett. Dadurch kann man nicht in das Haus hineingehen. Ist das von der Geschichte nicht so gewollt, muss es geändert werden (Hauptchat prüfen).
+- [ ] R091. Riverton Außen, längliches Holzhaus rechts neben den „Bildschirmtischen“ (Wortlaut; der Autor benutzt den Begriff später in R092 erneut als Kartenobjekt, er ist also vermutlich echt): Direkt vor der Tür steht ein Tisch mit einem Schachbrett. Dadurch kann man nicht in das Haus hineingehen. Ist das von der Geschichte nicht so gewollt, muss es geändert werden (Hauptchat prüfen).
 - [ ] R089. Riverton Außen, Bakery, relativ mittig im Bild: wieder ein „Abziehbild“-Haus, das nicht zu den sonstigen Assets passt (siehe R055).
 - [ ] R090. Riverton Außen, ganz unten links im Bild: das dritte Haus von links ist ein „Abziehbild“-Haus (siehe R055).
+- [ ] R092. Riverton Außen, Nachspielvariante (`riverton-aussen-nachspiel`): Die Bildschirmtische verschwinden, und die Wiese ist dann komplett leer. Wunsch: etwas Nettes überlegen, was stattdessen dort stehen könnte, damit die Wiese nicht so leer bleibt.
 - [ ] R080. Riverton, oben rechts neben dem Bahngleis: Ein kleiner gepflasterter Streifen, auf dem ein Stapel Holz liegt. Das wirkt komisch: Warum pflastert man ein Stück entlang der Gleise, biegt kurz nach unten ab und pflastert nur, damit dort ein Holzhaufen auf Pflaster steht? Vorschlag: die Pflasterung entweder komplett an den Schienen entlangziehen oder weglassen und Gras lassen. Auch der Holzhaufen an sich macht dort wenig Sinn; er könnte näher an das große Farmhaus, das fast direkt daneben steht.
 - [ ] R081. Riverton, oben rechts, rechts unter dem Wasserturm: wieder ein „Abziehbild“-Häuschen (siehe R055).
 

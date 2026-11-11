@@ -16,7 +16,8 @@ Verfahren:
   Natur): Ein Unterschied ist ein **Randbruch**.
 - Übergänge ohne Rand (Fähre, Bus, Zug, Steg) verbinden Inseln nur lose und werden nicht gelegt.
 - ``inhalte/abenteuer/weltpuzzle.json`` hält die erlaubten Ausnahmen fest: ein ``zwischenstueck``
-  (ungezeichnetes Wegstück, die Naht darf springen) und ``rand_ausnahmen``, je mit Begründung.
+  (ungezeichnetes Wegstück, die Naht darf springen; mit ``sprung`` um genau so viele Kacheln) und
+  ``rand_ausnahmen``, je mit Begründung.
 
 Aufruf: ``python -m pipeline.abenteuer.weltpuzzle [--bild PFAD] [--ort KENNUNG ...]``
 (Liste der Befunde, Rückgabewert 1 bei Befunden; das Bild zeichnet ``weltpuzzle_bild.py``).
@@ -132,6 +133,7 @@ def legen(
     """
     hin = {(n.von, n.name): n for n in alle_naehte}
     fest = [n for n in alle_naehte if not _ist_ausnahme(frei, n, hin)]
+    fest += _mit_sprung(alle_naehte, frei)
     # Rückweg ergänzen, wo er nicht über den Rand führt (Desert Springs: hin über den Rand,
     # zurück am Bahnhof), damit jede Naht in beiden Richtungen legt.
     paare = {(n.von, n.nach) for n in fest}
@@ -164,6 +166,19 @@ def legen(
     return inseln, befunde + _spruenge(inseln, alle_naehte, frei, hin)
 
 
+def _mit_sprung(alle_naehte: list[Naht], frei: list[dict]) -> list[Naht]:
+    """Zwischenstücke mit festem ``sprung`` (dx, dy in Kacheln): Die Naht legt die Zielkarte um
+    diesen Sprung versetzt. Beispiel: Vom Stadtpark steigt der Pfad ungezeichnet am Kürbishof
+    vorbei, der Zedernpfad liegt deshalb 34 Kacheln höher als bündig."""
+    ergebnis = []
+    for e in frei:
+        naht = next((n for n in alle_naehte if (n.von, n.name) == (e["karte"], e["ausloeser"])), None)
+        if naht and "sprung" in e:
+            versatz = (naht.versatz[0] + e["sprung"][0], naht.versatz[1] + e["sprung"][1])
+            ergebnis.append(Naht(naht.von, naht.name, naht.nach, naht.seite, versatz))
+    return ergebnis
+
+
 def _spruenge(inseln: list[dict], alle_naehte: list[Naht], frei: list[dict], hin: dict) -> list[str]:
     """Prüft die Zwischenstücke: Der Sprung zwischen Soll- und Ist-Lage bleibt klein."""
     befunde = []
@@ -173,7 +188,7 @@ def _spruenge(inseln: list[dict], alle_naehte: list[Naht], frei: list[dict], hin
             continue
         insel = next((i for i in inseln if n.von in i), {})
         if n.nach not in insel:
-            continue  # Das Zwischenstück ist die einzige Verbindung: Es legt nichts fest.
+            continue  # Das freie Zwischenstück ist die einzige Verbindung: Es legt nichts fest.
         dx = insel[n.nach][0] - insel[n.von][0] - n.versatz[0]
         dy = insel[n.nach][1] - insel[n.von][1] - n.versatz[1]
         if max(abs(dx), abs(dy)) > SPRUNG_HOECHSTENS:

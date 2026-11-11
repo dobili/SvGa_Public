@@ -1,6 +1,6 @@
 # Sammlung der Rückmeldungen zum Schach-Abenteuer (Beta)
 
-Stand: 11.11.2026. Offene Punkte: 79 (davon 11 seit der ersten Abgabe neu: R071 bis R081). Erste Abgabe: 11.11.2026 (R001 bis R070, ohne die unbenutzte Nummer R035).
+Stand: 11.11.2026. Offene Punkte: 86 (davon 18 seit der ersten Abgabe neu: R071 bis R088). Erste Abgabe: 11.11.2026 (R001 bis R070, ohne die unbenutzte Nummer R035).
 
 Hinweis: Es gibt zwei Karten, die mit „Zedern“ beginnen: Zedernpfad (Maple Falls nach Cedar Creek) und Zedernwald (Cedar Creek nach Riverton). Alle bisherigen Anmerkungen des Autors, auch wo er „Zedernwald“ sagte, betreffen den Zedernpfad.
 
@@ -144,6 +144,13 @@ Der Raum der Stadtbibliothek an sich sieht nach Einschätzung des Autors gut aus
 
 ### Riverton, Außen (der Autor sagt „Riverton-Karte“; vermutlich `riverton-aussen`)
 
+- [ ] R087. Riverton Außen, Brücke über den Fluss ganz rechts (Hauptstraße-Seite): Das Brücken-Asset hat die falsche Perspektive. Man sieht rechts Kanalöffnungen, die man bei Blick von oben nicht sehen dürfte. Es passt optisch nicht gut, ist zu lang und überlappt unten mit der nächsten Insel, dem nächsten Bereich, wo eigentlich schon der Weg entlanggehen sollte. Stattdessen ist dort einfach darunter gepflastert: Der Trampelpfad ist unterbrochen und ein Stück der Brücke ragt darüber. Das würde man so nicht bauen.
+- [ ] R082. Riverton Außen, Hauptstraße: Die Straßenmarkierungen sind nicht überall auf der Straße durchgehalten, besonders am Rand und an der Kreuzung.
+- [ ] R088. Riverton Außen, Kanal ganz rechts am Bildrand, mittig: Die Umrandung des Kanals ist nicht zu Ende gezogen. Die Kanalränder sind befestigt, am Bildrand fehlen die Assets dafür.
+- [ ] R086. Riverton Außen, abgegrenzter Bereich ganz rechts (siehe R085): Eine Straßenlaterne relativ nah an der Brücke überlappt mit dem Zaun des Bereichs.
+- [ ] R085. Riverton Außen, ganz rechts auf der Karte, relativ mittig: ein abgegrenzter Bereich mit zwei Wellblechhütten und vielen Kisten. Rechts davon steht wieder ein „Abziehbild“-Häuschen (siehe R055).
+- [ ] R083. Riverton Außen, neben dem Haus mit dem Schild „Groove“ (zweites Haus von links, oberhalb der Hauptstraße): Direkt daneben steht ein kleiner Wegweiser mit zwei Schildern. Dem Autor erschließt sich nicht, warum er dort steht. Vorschlag: ein Stück weiter oben neben den Trampelpfad stellen.
+- [ ] R084. Riverton Außen, Trampelpfad (der oben neben dem Wegweiser, R083): Ein Busch steht mitten auf dem Weg.
 - [ ] R080. Riverton, oben rechts neben dem Bahngleis: Ein kleiner gepflasterter Streifen, auf dem ein Stapel Holz liegt. Das wirkt komisch: Warum pflastert man ein Stück entlang der Gleise, biegt kurz nach unten ab und pflastert nur, damit dort ein Holzhaufen auf Pflaster steht? Vorschlag: die Pflasterung entweder komplett an den Schienen entlangziehen oder weglassen und Gras lassen. Auch der Holzhaufen an sich macht dort wenig Sinn; er könnte näher an das große Farmhaus, das fast direkt daneben steht.
 - [ ] R081. Riverton, oben rechts, rechts unter dem Wasserturm: wieder ein „Abziehbild“-Häuschen (siehe R055).
 

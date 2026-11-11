@@ -1005,3 +1005,30 @@ auf jeder soll etwas passieren, das man entdecken kann. Die Geschichten dazu ste
   überzeugt, das Haus mit Front nach Süden stellen und einen Weg oder eine Gasse zur Tür legen.
 - **Prüfung:** `test_abenteuer_moebelbilder.py` soll melden, wenn ein Möbel ein Bild aus der Liste der
   Abziehbilder benutzt (sobald die Liste vollständig ist).
+
+71. **Kein Boden endet mit einer nackten geraden Kante im Gras** (Rückmeldung R041, R042, R049,
+    11.11.2026).
+    - Der Kartenzeichner säumt jede Kante zwischen befestigtem Boden und Naturboden selbst
+      (`pipeline/abenteuer/saum.py`); in der Szene ist nichts zu tun. Welcher Boden welchen Saum
+      bekommt, steht in `materialien.json` unter `"saum"`:
+      - `randstein` (Pflaster, Platten, Stein): eine Reihe heller Kantensteine mit Fugen;
+      - `bankett` (Asphalt): dunkler, ausgefranster Streifen ohne Bordstein, für Landstraßen. Eine
+        Stadtstraße bekommt ihren Bordstein durch den Gehweg aus Pflaster daneben;
+      - `weich` (Sand, Schotter, Felsboden, Sinter): Das Gras greift unregelmäßig ein bis drei
+        Pixel herein.
+    - Erde und Sandplatz haben Randkacheln (`rand`) und brauchen keinen Saum. Wasser hat sein Ufer.
+    - Ein neuer Boden braucht `rand` oder `saum`; sonst meldet der Kartenbau „endet mit nackter
+      Kante im Gras“.
+72. **Drei Straßenarten, die man unterscheidet** (Rückmeldung R036, R037, Entscheidung 3 im Auftrag
+    Runde 11).
+    - **Trampelpfad:** Boden `erde` (braun, mit Grasrand). Nur zu Fuß; kein Fahrzeug, keine
+      Haltestelle.
+    - **Landstraße:** Boden `landstrasse`: alter, ausgeblichener Asphalt ohne Bordstein, mit Bankett
+      und zwei Fahrspuren, ohne Mittellinie; mindestens drei Felder breit. Hier fährt der Bus.
+      Das Rasterzeichen kommt **nicht** in `markierung`.
+    - **Stadtstraße:** Boden `asphalt` mit `markierung` und Gehweg aus Pflaster (der Randstein des
+      Pflasters ist der Bordstein).
+    - **Übergang:** Wechselt eine Straße die Art, liegt der Wechsel auf einer Karte, nicht am
+      Kartenrand: Beide Beläge stoßen im Raster aneinander, der Kartenzeichner bricht den festeren
+      Belag unregelmäßig ab (`pipeline/abenteuer/strassenart.py`). Am Kartenrand hat die Straße auf
+      beiden Karten dieselbe Art.

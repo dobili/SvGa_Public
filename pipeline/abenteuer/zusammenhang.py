@@ -12,7 +12,7 @@ from pipeline.abenteuer.bodenraster import HOLZ_BOEDEN
 from pipeline.abenteuer.kartenbau import LEER, WAND, WASSER, K
 
 # Mindestbreiten in Kacheln (KARTENREGELN 10.33): Straße zwei Spuren, Weg zwei Leute nebeneinander.
-MINDEST = {"asphalt": 3, "erde": 2}
+MINDEST = {"asphalt": 3, "landstrasse": 3, "erde": 2}
 # Schmale Stücke unter der Mindestbreite: keins. Ein Weg einer Kachel Breite lässt sich mit den
 # Randkacheln von LimeZu nicht zeichnen (kein Stück mit Rand auf beiden Seiten), er stieße gerade
 # ans Gras (Randspur, Cedar Creek 9.11.2026).

@@ -1,6 +1,6 @@
 # Sammlung der Rückmeldungen zum Schach-Abenteuer (Beta)
 
-Stand: 11.11.2026. Offene Punkte: 57. Abgeschickt (gepusht): noch nichts.
+Stand: 11.11.2026. Offene Punkte: 58. Abgeschickt (gepusht): noch nichts.
 
 Reihenfolge je Kategorie: zuerst, was das Weiterspielen verhindert, dann Störendes, dann Schönheitsfehler.
 
@@ -96,6 +96,7 @@ Reihenfolge je Kategorie: zuerst, was das Weiterspielen verhindert, dann Stören
 - [ ] R056. Ortskern, Hauptstraße von links nach rechts bis zum Platz: Am Ende der Straße sind die Straßenmarkierungen verrutscht, die letzte Markierung ist nach unten gerutscht.
 - [ ] R057. Ortskern, Platz am Ende der Hauptstraße (Wende- und Parkbereich, dort parkt der Bus, vor der Bushaltestelle): Der asphaltierte Bereich ist nicht überall vollständig mit den Pflastersteinen umrandet. Wunsch: Wende- und Parkbereich überarbeiten, sodass ein sauberes Rechteck entsteht, schön umrandet mit den kleinen grauen Steinen, und die Fahrbahnmarkierungen passen. Auch hier soll sich eine KI das Ergebnis im Bild ansehen.
 - [ ] R054. Ortskern, Gebäude als „Abziehbilder“ ohne Tiefe, passen perspektivisch und vielleicht auch stilistisch nicht zum Rest (der Autor ist sich bei Perspektive und Stil nicht sicher, sie fallen optisch jedenfalls heraus). Betroffen sind: das kleine Häuschen rechts neben der Bibliothek; der Schuppen am Fluss rechts, relativ mittig im Bild; das Häuschen ganz unten am Fluss, links vom Fluss; die drei Häuser ganz links unten in der unteren Häuserreihe; die Häuser darüber auf der linken Bildseite unter der Hauptstraße. Bitte durch etwas Sinnvolles ersetzen, oder der Autor lässt in Gemini passende Assets erstellen.
+- [ ] R059. Ortskern, Schild „Waschsalon“ über dem Waschsalon: Es sieht aus, als lägen zwei Schilder voreinander, ein weißes mit lila Schrift und ein schwarzes mit weißer Schrift. Der Autor vermutet, dass das weiße Schild zum Gebäude-Asset gehört und das schwarze darübergelegt wurde. Das schwarze Schild soll das weiße vollständig abdecken, damit es nicht aussieht, als hätte der Inhaber faul ein zweites Schild davorgestellt.
 - [ ] R051. Ortskern, Bahnhaltestelle oben (Schilder „Fahrplan“ und „Cedar Creek“): Die Schilder sind nach Einschätzung des Autors okay, auch wenn die Assets nicht gerade dreidimensional sind; nicht schlimm. Die Bank zwischen den beiden Schildern steht aber auf dem Gras. Vorschlag: den gepflasterten Bereich ein Stück nach unten erweitern, sodass die Bank auf der Pflasterung steht, und die Schilder entsprechend ein Stück nach unten verschieben.
 - [ ] R052. Ortskern, Bahnhaltestelle: Der Übergang zwischen dem Trampelpfad, der zur Haltestelle führt, und der gepflasterten Haltestelle besteht nur aus einer einzigen Ecke. Wird die Haltestelle nach unten erweitert (R051), muss der Übergang entsprechend erweitert und der Trampelpfad verbreitert werden.
 

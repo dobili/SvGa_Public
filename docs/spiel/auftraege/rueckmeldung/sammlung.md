@@ -63,6 +63,7 @@ Reihenfolge je Kategorie: zuerst, was das Weiterspielen verhindert, dann Stören
 ### Weg Maple Falls nach Cedar Creek, Landstraße (`weg-maple-cedar-landstrasse`)
 
 - [ ] R037. Landstraße: Sie hat dasselbe bräunliche Asset wie der Zedernpfad, der im Grunde ein Trampelpfad durch den Wald ist. Das ist unlogisch, weil über die Landstraße ein Bus fahren soll (er geht ganz rechts in den Flussweg über und vom Flussweg auf eine gepflasterte Straße beim Ortskern). Ein Bus darf auch über eine nicht gepflasterte Landstraße fahren, wäre aber unüblich. Grafisch muss deutlich werden, dass es eine Straße ist, die ein Bus befährt. Zusammenhang mit R036.
+  Lösungsvorschlag des Autors: Entweder ein anderes Asset für Trampelpfade, die nur von Menschen begangen werden (etwa Zedernpfad), oder ein anderes Asset für Wege, auf denen auch ein Bus fährt (Landstraße), damit beide Arten sich unterscheiden.
 
 ### Weg Maple Falls nach Cedar Creek, Zedernpfad (`weg-maple-cedar-zedernpfad`)
 

@@ -1670,13 +1670,7 @@
         41
       ]
     },
-    {
-      "name": "wuestenzug",
-      "feld": [
-        4,
-        19
-      ]
-    },
+    {"name": "wuestenzug", "feld": [4, 19], "eigenschaften": {"durchgang": "links"}},
     {
       "name": "gebaeckstand",
       "feld": [

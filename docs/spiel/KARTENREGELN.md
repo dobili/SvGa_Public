@@ -938,6 +938,14 @@ auf jeder soll etwas passieren, das man entdecken kann. Die Geschichten dazu ste
     - **Ankunft:** Der Held kommt auf dem freien Feld neben dem Durchgang an und schaut von ihm
       weg, nie auf dem Auslöser (`app/src/abenteuer/oberwelt/ankunft.ts`). Vor jedem Durchgang
       muss deshalb ein freies Feld ohne anderen Auslöser liegen.
+    - **Auslösen (R060, Wunsch des Autors, 11.11.2026):** Ein Übergang wechselt die Karte erst,
+      wenn der Held auf dem Feld steht **und** in den Durchgang geht. Bloßes Darüberlaufen oder
+      Stehen wechselt nicht. Der Durchgang ist jede Richtung, in der das Nachbarfeld fest
+      gesperrt ist (Hauswand hinter der Tür, Kartenrand; Figuren zählen nicht). Liegt der
+      Übergang frei im Raum (Bahnsteig, Haltestelle, Treppe mitten im Raum), nennt die Szene die
+      Richtung am Auslöser: `"eigenschaften": {"durchgang": "oben"}` (auch `"oben,links"`). Ohne
+      Angabe meldet der Lauftest das Feld. Regel in `app/src/abenteuer/oberwelt/ausloeserebene.ts`
+      (`mitDurchgang`, `meldeschritt`).
     - **Prüfung im Werkzeug:** `python -m pipeline.abenteuer.uebergaenge` (mit
       `pipeline/abenteuer/durchgang.py`, für Grundkarten und Zustände) und der Lauftest
       `app/src/abenteuer/oberwelt/uebergangslauf.test.ts`: Auf jeder gebauten Karte geht der Held

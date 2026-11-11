@@ -700,10 +700,7 @@
         "richtung": "links"
       }
     },
-    {
-      "name": "zurueckDelacroix",
-      "feld": [157, 9]
-    },
+    {"name": "zurueckDelacroix", "feld": [157, 9], "eigenschaften": {"durchgang": "oben"}},
     {
       "name": "weiterFelsbogen",
       "feld": [0, 14]

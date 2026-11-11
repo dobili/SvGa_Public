@@ -199,3 +199,17 @@ Jeder Schritt ist lauffähig und geprüft; jeder Rückweg führt in die Oberwelt
   - **Ergebniskarte der Oberwelt:** knapp, nur Ausgang, Nadel und Ambroses Satz zum Kipppunkt.
   - **Falle oder Köder:** Der Folgespieler nach der Antwort bleibt. Er zeigt, was nach dem
     Nehmen geschieht, und ist damit die Auflösung der Aufgabe.
+
+## 7. Testhilfe des Autors (11.11.2026)
+
+Solange nicht für die Leser gebaut wird (`__VEROEFFENTLICHUNG__` aus), stehen Testzeilen unter den
+Brettern des Spiels. Sie melden das Ergebnis über denselben Rückruf wie ein echtes Ende.
+
+- **Partie:** „Gewinnen“, „Remis“, „Verlieren“ (Haupt-Chat, `anbindung/Testleiste.tsx`,
+  `testende.ts`).
+- **Aufgabenrunde** (auch mit Endspielaufgaben): „Bestehen“ füllt alle Antworten mit „richtig“,
+  „Verfehlen“ mit „falsch“ (`testantworten`); danach die Endkarte der Runde und „Weiter“.
+- **Erinnerung:** „Bestehen“ / „Verfehlen“ melden die eine Aufgabe als richtig oder falsch.
+- **Gedächtnisstellung:** „Bestehen“ / „Verfehlen“ rufen `beiEnde` wie ein richtiger oder falscher
+  Aufbau.
+- **Vorführung:** keine Testzeile. Sie hat kein Ergebnis; „Weiter“ schließt sie jederzeit.

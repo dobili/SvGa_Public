@@ -2,7 +2,7 @@
   "karte": "mapleFalls.wohnzimmer",
   "datei": "karten/maple-falls-wohnzimmer-ausgepackt.json",
   "art": "innen",
-  "beschreibung": "Zustand: ab Szene 13 (aufbruchGesehen) sind die Umzugskartons ausgepackt, weil Mutter und Kind inzwischen Wochen im Haus wohnen; an ihrer Stelle stehen an der Westwand und an der Innenwand je ein Bücherregal und vor dem Fernseher ein runder Couchtisch, nur die Kiste in der Küche bleibt. Das Erdgeschoss des alten Whitlock-Hauses am Tag nach dem Umzug, zwei Räume nebeneinander (20 × 13). Links das Wohnzimmer mit hellen Dielen und cremefarbenen Wänden: In der Nordwestecke führt eine steile Holztreppe an der Wand entlang zum Dachboden hinauf, unten ist Platz zum Antreten; daneben die Kiste mit dem Etikett „Whitlock“ (nicht wegwerfen). An der Nordwand eine niedrige Kommode unter dem Fenster, das gerahmte Foto von Grandma Whitlock, ein Sideboard mit dem Fernseher auf seinem Standfuß und rechts die geschlossene Tür zum Schlafzimmer. Vor dem Fernseher liegt der gemusterte Teppich, dahinter stehen zwei gelbe Sessel mit der Lehne zum Raum und Blick zum Fernseher, daneben eine Stehlampe. Die Umzugskartons stehen in zwei Gruppen an den Wänden: übereinander an der Westwand und als Stapel hinter den Sesseln an der Innenwand, davor liegt flach der leere Pizzakarton von gestern Abend. Neben dem Fernseher ein schmales Bücherregal, eine Zimmerpflanze in der Südwestecke, unten die Haustür, innen davor die Fußmatte. Durch einen offenen Durchgang in der Innenwand geht es nach rechts in die Küche mit Fliesen: Küchenzeile mit zwei Arbeitsplatten, Herd und Kühlschrank lückenlos an der Nordwand, darüber ein Fenster. In der Mitte der runde Esstisch mit zwei Stühlen, die zum Tisch schauen; Mama steht daneben und sortiert Papiere. Vorn links der Karton „Küche?“, in der Südostecke eine Palme. Laufwege: von der Haustür hinauf und nach links zur Treppe; nach rechts über den Durchgang zum Esstisch und zu Mama.",
+  "beschreibung": "Zustand: ab Szene 13 (aufbruchGesehen) sind die Umzugskartons ausgepackt, weil Mutter und Kind inzwischen Wochen im Haus wohnen; an ihrer Stelle stehen an der Westwand und an der Innenwand je ein Bücherregal und vor dem Fernseher ein runder Couchtisch, nur die Kiste in der Küche bleibt; die Küche ist eingerichtet, mit einem runden Teppich unter dem Esstisch, einem Beistelltisch an der Innenwand und einem Anrichtetisch an der Ostwand. Das Erdgeschoss des alten Whitlock-Hauses am Tag nach dem Umzug, zwei Räume nebeneinander (20 × 13). Links das Wohnzimmer mit hellen Dielen und cremefarbenen Wänden: In der Nordwestecke führt eine steile Holztreppe an der Wand entlang zum Dachboden hinauf, unten ist Platz zum Antreten; daneben die Kiste mit dem Etikett „Whitlock“ (nicht wegwerfen). An der Nordwand eine niedrige Kommode unter dem Fenster, das gerahmte Foto von Grandma Whitlock, ein Sideboard mit dem Fernseher auf seinem Standfuß und rechts die geschlossene Tür zum Schlafzimmer. Vor dem Fernseher liegt der gemusterte Teppich, dahinter stehen zwei gelbe Sessel mit der Lehne zum Raum und Blick zum Fernseher, daneben eine Stehlampe. Die Umzugskartons stehen in zwei Gruppen an den Wänden: übereinander an der Westwand und als Stapel hinter den Sesseln an der Innenwand, davor liegt flach der leere Pizzakarton von gestern Abend. Neben dem Fernseher ein schmales Bücherregal, eine Zimmerpflanze in der Südwestecke, unten die Haustür, innen davor die Fußmatte. Durch einen offenen Durchgang in der Innenwand geht es nach rechts in die Küche mit Fliesen: Küchenzeile mit zwei Arbeitsplatten, Herd und Kühlschrank lückenlos an der Nordwand, darüber ein Fenster. In der Mitte der runde Esstisch mit zwei Stühlen, die zum Tisch schauen; Mama steht daneben und sortiert Papiere. Vorn links der Karton „Küche?“, in der Südostecke eine Palme. Laufwege: von der Haustür hinauf und nach links zur Treppe; nach rechts über den Durchgang zum Esstisch und zu Mama.",
   "wand": "creme",
   "boden": "holzHell",
   "raster": [
@@ -98,6 +98,11 @@
       "feld": [18, 1]
     },
     {
+      "moebel": "mf7TeppichRund",
+      "feld": [14, 6],
+      "versatz": [0, 4]
+    },
+    {
       "moebel": "mf4Esstisch",
       "feld": [14, 6],
       "id": "esstisch"
@@ -119,7 +124,7 @@
     },
     {
       "moebel": "mf4Palme",
-      "feld": [17, 10]
+      "feld": [14, 10]
     },
     {
       "moebel": "mf4Fussmatte",
@@ -150,6 +155,14 @@
     {
       "moebel": "cc4RegalA",
       "feld": [1, 5]
+    },
+    {
+      "moebel": "mf8Sideboard",
+      "feld": [17, 9]
+    },
+    {
+      "moebel": "mf8Kommode",
+      "feld": [12, 3]
     }
   ],
   "ausloeser": [

@@ -2,7 +2,7 @@
   "karte": "mapleFalls.diner",
   "datei": "karten/maple-falls-diner.json",
   "art": "innen",
-  "beschreibung": "Das Falls Diner an der Birch Lane, ein Diner wie aus den Fünfzigern: rote Wände, weiße Fliesen. Im Norden liegt hinter einer echten Wand die Großküche; in ihrer Wandfläche zum Gastraum die Durchreiche (eine Öffnung mit Ablage, durch die man in die helle Küche sieht), daneben die Pinnwand mit den gelösten Tischsets, das Foto von der Eröffnung der Schule 1962 und rechts die Küchentür. Vor der Wand läuft der Gang des Personals, davor die lange rote Bar mit sechs roten Hockern direkt an der Theke; auf der Bar die Kaffeemaschine und ein altes Radio. Am Westende der Bar die alte Kassentheke, die Kasse zum Gast. Links unten zwei Sitznischen mit runden Tischen zwischen gepolsterten roten Bänken mit hoher Lehne, links oben die Spielautomaten-Ecke mit Bildern, eine dritte Nische und eine Wartebank vor der Wand der Toiletten; in dieser Wand die Türen zu zwei Toiletten. In der Küche zwei Kühlschränke, drei Herde unter drei Hauben, Grillplatte, Fritteuse, Spültisch und ein Arbeitstisch mit Brotbrett und Milchshake-Mixer; dahinter das Lager mit Vorratsregalen voller Konserven und Kartons. Unten die niedrige Glastür mit Fußmatte. Laufwege: von der Tür nach oben, rechts an der Bar entlang, links zu den Nischen und zu den Toiletten.",
+  "beschreibung": "Das Falls Diner an der Birch Lane, ein Diner wie aus den Fünfzigern: rote Wände, weiße Fliesen. Im Norden liegt hinter einer echten Wand die Großküche; in ihrer Wandfläche zum Gastraum die Durchreiche (eine Öffnung mit Ablage, durch die man in die helle Küche sieht), daneben die Pinnwand mit den gelösten Tischsets, das Foto von der Eröffnung der Schule 1962 und rechts die Küchentür. Davor die lange rote Bar: Die Gäste sitzen auf vier roten Hockern an ihrer Nordseite, mit dem Rücken zur Küchenwand; das Personal steht südlich hinter der Bar und geht am Ostende an der Durchreiche vorbei zur Küchentür. Auf der Bar steht die Kaffeemaschine, zum Personal gedreht. Am Westende der Bar die alte Kassentheke. Im Eingang liegt ein rot gemusterter Teppich. Links unten zwei Sitznischen mit runden Tischen zwischen gepolsterten roten Bänken mit hoher Lehne, links oben die Spielautomaten-Ecke mit Bildern, eine dritte Nische vor der Wand der Toiletten; in dieser Wand die Türen zu zwei Toiletten. In der Küche zwei Kühlschränke, drei Herde unter drei Hauben, Grillplatte, Fritteuse, Spültisch und in der Mitte eine Reihe von vier Arbeitstischen aus Edelstahl, auf dem ersten Brotbrett und Milchshake-Mixer; dahinter das Lager mit Vorratsregalen voller Konserven und Kartons. Unten die niedrige Glastür mit Fußmatte. Laufwege: von der Tür über den Teppich nach oben, rechts zu den Hockern an der Bar, links zu den Nischen und zu den Toiletten.",
   "wand": "rot",
   "boden": "fliesenWeiss",
   "raster": [
@@ -24,6 +24,10 @@
     "#######.######################"
   ],
   "objekte": [
+    {
+      "moebel": "wzTeppich",
+      "feld": [6, 12]
+    },
     {
       "moebel": "mf8Spielautomat",
       "feld": [7, 1]
@@ -71,13 +75,13 @@
     },
     {
       "moebel": "wzBild",
-      "feld": [16, 8],
+      "feld": [20, 8],
       "an_wand": true,
       "versatz": [0, 3]
     },
     {
       "moebel": "mf12Durchreiche",
-      "feld": [18, 8],
+      "feld": [22, 8],
       "an_wand": true
     },
     {
@@ -97,72 +101,54 @@
     },
     {
       "moebel": "mf5Kassentheke",
-      "feld": [12, 10],
+      "feld": [12, 11],
       "id": "kasse"
     },
     {
       "moebel": "mf5ThekeLinks",
-      "feld": [14, 10],
+      "feld": [14, 11],
       "id": "t0",
       "bauteil_ok": true
     },
     {
       "moebel": "mf5ThekeMitte",
-      "feld": [16, 10],
+      "feld": [16, 11],
       "id": "t16",
       "bauteil_ok": true
     },
     {
       "moebel": "mf5ThekeMitte",
-      "feld": [17, 10],
+      "feld": [17, 11],
       "id": "t17",
       "bauteil_ok": true
     },
     {
       "moebel": "mf5ThekeMitte",
-      "feld": [18, 10],
+      "feld": [18, 11],
       "id": "t18",
       "bauteil_ok": true
     },
     {
       "moebel": "mf5ThekeMitte",
-      "feld": [19, 10],
+      "feld": [19, 11],
       "id": "t19",
       "bauteil_ok": true
     },
     {
       "moebel": "mf5ThekeMitte",
-      "feld": [20, 10],
+      "feld": [20, 11],
       "id": "t20",
       "bauteil_ok": true
     },
     {
       "moebel": "mf5ThekeMitte",
-      "feld": [21, 10],
+      "feld": [21, 11],
       "id": "t21",
       "bauteil_ok": true
     },
     {
-      "moebel": "mf5ThekeMitte",
-      "feld": [22, 10],
-      "id": "t22",
-      "bauteil_ok": true
-    },
-    {
-      "moebel": "mf5ThekeMitte",
-      "feld": [23, 10],
-      "id": "t23",
-      "bauteil_ok": true
-    },
-    {
-      "moebel": "mf5ThekeMitte",
-      "feld": [24, 10],
-      "id": "t24",
-      "bauteil_ok": true
-    },
-    {
       "moebel": "mf5ThekeRechts",
-      "feld": [25, 10],
+      "feld": [22, 11],
       "id": "tr",
       "bauteil_ok": true
     },
@@ -170,55 +156,23 @@
       "moebel": "mf5Kaffeemaschine",
       "feld": [0, 0],
       "auf": "t0",
-      "versatz": [-7, 0]
-    },
-    {
-      "moebel": "mf9RadioAlt",
-      "feld": [0, 0],
-      "auf": "t0",
-      "versatz": [7, 0]
+      "versatz": [4, 0]
     },
     {
       "moebel": "mf5Hocker",
-      "feld": [15, 12],
-      "zu": "t0",
-      "versatz": [0, -7],
-      "vorn": true
+      "feld": [15, 10]
     },
     {
       "moebel": "mf5Hocker",
-      "feld": [17, 12],
-      "zu": "t17",
-      "versatz": [0, -7],
-      "vorn": true
+      "feld": [17, 10]
     },
     {
       "moebel": "mf5Hocker",
-      "feld": [19, 12],
-      "zu": "t19",
-      "versatz": [0, -7],
-      "vorn": true
+      "feld": [19, 10]
     },
     {
       "moebel": "mf5Hocker",
-      "feld": [21, 12],
-      "zu": "t21",
-      "versatz": [0, -7],
-      "vorn": true
-    },
-    {
-      "moebel": "mf5Hocker",
-      "feld": [23, 12],
-      "zu": "t23",
-      "versatz": [0, -7],
-      "vorn": true
-    },
-    {
-      "moebel": "mf5Hocker",
-      "feld": [25, 12],
-      "zu": "tr",
-      "versatz": [0, -7],
-      "vorn": true
+      "feld": [21, 10]
     },
     {
       "moebel": "mf9Rundtisch",
@@ -324,6 +278,21 @@
       "id": "ins1"
     },
     {
+      "moebel": "mf8Zerlegetisch2",
+      "feld": [17, 4],
+      "id": "ins2"
+    },
+    {
+      "moebel": "mf8Zerlegetisch2",
+      "feld": [19, 4],
+      "id": "ins3"
+    },
+    {
+      "moebel": "mf8Zerlegetisch2",
+      "feld": [21, 4],
+      "id": "ins4"
+    },
+    {
       "moebel": "mf5Brotbrett",
       "feld": [0, 0],
       "auf": "ins1",
@@ -356,8 +325,12 @@
       "bauteil_ok": true
     },
     {
-      "moebel": "wzKartonstapelHoch",
-      "feld": [25, 4]
+      "moebel": "mf4Karton",
+      "feld": [25, 5]
+    },
+    {
+      "moebel": "mf4KartonBreit",
+      "feld": [26, 5]
     },
     {
       "moebel": "mf4KartonStapel",
@@ -382,10 +355,6 @@
     {
       "moebel": "mf5Handwaschbecken",
       "feld": [4, 5]
-    },
-    {
-      "moebel": "mf9Wartebank",
-      "feld": [5, 10]
     }
   ],
   "ausloeser": [
@@ -406,31 +375,35 @@
     {
       "name": "kellnerin",
       "typ": "statist",
-      "feld": [9, 13],
+      "feld": [18, 14],
       "eigenschaften": {
-        "tun": "bringt Kaffee an die Tische",
+        "tun": "geht hinter der Bar hin und her und schenkt Kaffee nach",
         "wann": "tag",
-        "sagt": "statist.mapleFalls.diner.kellnerin"
+        "sagt": "statist.mapleFalls.diner.kellnerin",
+        "von": "15,14",
+        "bis": "23,14"
       }
     },
     {
       "name": "lkwFahrer",
       "typ": "statist",
-      "feld": [13, 6],
+      "feld": [17, 11],
       "eigenschaften": {
         "tun": "sitzt am Tresen und isst Pfannkuchen",
         "wann": "tag",
-        "sagt": "statist.mapleFalls.diner.lkwFahrer"
+        "sagt": "statist.mapleFalls.diner.lkwFahrer",
+        "verhalten": "sitzen"
       }
     },
     {
       "name": "rentnerinnen",
       "typ": "statist",
-      "feld": [22, 10],
+      "feld": [21, 11],
       "eigenschaften": {
         "tun": "teilen sich ein Stück Apfelkuchen",
         "wann": "tag",
-        "sagt": "statist.mapleFalls.diner.rentnerinnen"
+        "sagt": "statist.mapleFalls.diner.rentnerinnen",
+        "verhalten": "sitzen"
       }
     }
   ],

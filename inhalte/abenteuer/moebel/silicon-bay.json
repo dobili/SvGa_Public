@@ -326,7 +326,7 @@
       "stil": "modern"
     },
     "sb5Faehrhaus": {
-      "quelle": "spiel/eigene/gartenhaus_weiss.png",
+      "quelle": "modern-exteriors/Modern_Exteriors_16x16/ME_Theme_Sorter_16x16/17_Garden_Singles_16x16/ME_Singles_Garden_16x16_White_Wood_Storage.png",
       "breite": 48,
       "hoehe": 64,
       "kollision": true,

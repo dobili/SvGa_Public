@@ -173,6 +173,9 @@ Diese Punkte haben Karten durchfallen lassen, die als reif galten. Sie gelten f�
 - **Abziehbild:** Hat jedes Gebäude und jedes Möbel Tiefe (Dach oder Oberseite von oben, First,
   Schattierung, Seitenfläche)? Ein von Hand gezeichnetes Bild, das nur eine Front zeigt, fällt durch
   (Liste: `auftraege/gutachten/ABZIEHBILDER.md`, Regel 10.71).
+- **Zusammengebautes Bild:** Ist ein aus Teilen gebautes Gebäude einzeln am Bild kontrolliert
+  (nichts überdeckt Tür oder Fenster, Tür mit Türblatt, Dach schließt an die Wand, Maßstab zur Figur)?
+  Vor der Kontrolle kommt es in keine Karte (Regel 10.71).
 - **Rückansicht:** Zeigt ein Haus seine Rückseite, hat sie dann dieselbe Tiefe wie die Pakethäuser
   (Dach von oben mit First, Rückwand mit Fenstern)? Rückansichten sind erlaubt, wenn das Bild passt
   (Regel 10.71).

@@ -991,9 +991,21 @@ auf jeder soll etwas passieren, das man entdecken kann. Die Geschichten dazu ste
 - **Abziehbild:** ein von Hand gezeichnetes Bild ohne Tiefe. Es zeigt nur eine Front: kein Dach von
   oben, kein First, keine Oberseite, keine Seitenfläche, keine Schattierung. Solche Bilder kommen aus
   allen Karten heraus (Liste mit Ersatz: `auftraege/gutachten/ABZIEHBILDER.md`).
-- **Ersatz in dieser Reihenfolge:** Paketbild aus dem Katalog; Zusammenbau aus Paketteilen (Dach,
-  Wand, Tür, wie `laden_*`, `altstadt_*`, `haus_farm*`); zuletzt ein Wunsch für Gemini über den
-  Haupt-Chat.
+- **Fehlt ein Bild, in dieser Reihenfolge vorgehen** (Autor, 12.11.2026):
+  1. Fertiges Paketbild aus dem Katalog nehmen.
+  2. Gibt es keines: aus dem **Baukasten** zusammensetzen. Für Gebäude ist das zuerst
+     `topdown-16/` (Topdown Modern: Wände, Dächer mit First, Fenster, Türrahmen, Markisen,
+     Vordächer), daneben Paketteile von LimeZu (wie bei `laden_*`, `altstadt_*`, `haus_farm*`). Farben
+     des Baukastens an LimeZu angleichen (dämpfen).
+  3. Klappt das nicht: Wunsch für Gemini an den Haupt-Chat (Name, Größe in Kacheln, Ansicht, wofür).
+     Der Autor erzeugt das Bild.
+  4. **Nie selbst zeichnen**, außer Flaches (nächster Punkt).
+- **Jeder Zusammenbau wird am Bild kontrolliert, bevor er in eine Karte kommt** (Autor: im ersten
+  Probebau lag ein Fenster halb über der Türöffnung). Der Bauer sieht sich das fertige Bild vergrößert
+  an und prüft: Kein Teil überdeckt ein anderes (Fenster, Tür, Schild, Markise); die Tür ist ganz und
+  hat ein Türblatt; Dach und Wand schließen ohne Lücke und ohne abgeschnittene Kante; Fenster sitzen
+  auf einer Höhe; der Maßstab passt zur Figur (Tür etwa 1 × 2 Kacheln). Danach prüft der Gutachter
+  das Bild einzeln, erst dann wird es verwendet.
 - **Selbst Gezeichnetes** ist nur für Flaches erlaubt: Schilder, Markierungen, Böden, Plakate,
   Etiketten.
 - **Rückansichten sind erlaubt, wenn das Bild passt** (Autor, 11.11.2026: „Ich habe nichts gegen

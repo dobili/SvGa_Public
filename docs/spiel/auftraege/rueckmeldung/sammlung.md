@@ -1,6 +1,6 @@
 # Sammlung der Rückmeldungen zum Schach-Abenteuer (Beta)
 
-Stand: 11.11.2026. Offene Punkte: 148 (davon 80 seit der ersten Abgabe neu: R071 bis R151). Erste Abgabe: 11.11.2026 (R001 bis R070, ohne die unbenutzte Nummer R035). Zweite Abgabe: R071 bis R151.
+Stand: 11.11.2026. Offene Punkte: 147 (davon 80 seit der ersten Abgabe neu: R071 bis R151). Erste Abgabe: 11.11.2026 (R001 bis R070, ohne die unbenutzte Nummer R035). Zweite Abgabe: R071 bis R151.
 
 Hinweis: Es gibt zwei Karten, die mit „Zedern“ beginnen: Zedernpfad (Maple Falls nach Cedar Creek) und Zedernwald (Cedar Creek nach Riverton). Alle bisherigen Anmerkungen des Autors, auch wo er „Zedernwald“ sagte, betreffen den Zedernpfad.
 
@@ -182,7 +182,7 @@ Der Raum der Stadtbibliothek an sich sieht nach Einschätzung des Autors gut aus
 - [ ] R104. Erinnerung London, Strand, Gesamtbild: Die Karte sieht sehr merkwürdig aus, weil viele „Abziehbild“-Assets ohne Tiefe verwendet werden, zum Beispiel die Kutsche und die Straßenlaternen. Auch die Häuser im Hintergrund wirken falsch: Die Dimensionen stimmen vermutlich nicht. Stellt man eine Figur direkt vor eine Tür, wäre die Tür doppelt so hoch wie die Figur. Die Häuser wirken komisch gestreckt. Der Autor weiß nicht mehr, woher die Häuser-Assets kommen und ob er sie mit Gemini erstellt hat. Auf jeden Fall werden andere gebraucht, die im Stil besser passen. Wunsch: Auf dem ganzen Bild überall auf vernünftige Assets achten, die zum Stil des Spiels passen. Zusammenhang mit R055.
 - [ ] R105. Erinnerung London, Strand, Begrenzung der Szene: Dem Autor ist unklar, wie die Karte gedacht ist. Links und rechts ist sie nicht abgeschlossen (eine Straße, die entlangläuft, aber man kann nach links, rechts, oben und unten nicht hinaus). Drumherum liegt ein dunkler, schwarzer Rahmen um die ganze Szenerie. Fragen des Autors (Hauptchat klären): Bleibt die Figur später am Rand einfach hängen? Soll man sich in dieser Szene überhaupt bewegen können, oder ist es nur eine Erinnerung, die als Bild gezeigt wird?
 
-### Riverton, Slicks Wohnwagen (`riverton-wohnwagen`)
+### Riverton, Slicks Wohnwagen (`riverton-wohnwagen`; „River“ im Diktat war Slick, vom Autor bestätigt)
 
 - [ ] R111. Wohnwagen, Gesamtbild: Der komplette Wohnwagen braucht eine neue Überarbeitung mit vernünftigen Assets und einer vernünftigen Raumeinteilung. Wunsch des Autors: einen Grundriss eines echten Wohnwagens aus dem Internet besorgen und versuchen, ihn nachzubauen.
   Ergänzung des Autors: Er fragt, ob das überhaupt ein Wohnwagen sein soll. Das Gebäude-Asset sieht eher aus wie ein kleines Haus auf Rädern, das man als Anhänger benutzen kann, also kein klassischer Wohnwagen (Hauptchat klären, ob es so gewollt ist). Ist es so gewollt, muss man sich nicht an klassische Wohnwagen-Grundrisse halten. Der Autor hat bereits einen Test veranlasst (und hofft, dass er irgendwann durchläuft), der die Gebäude-Assets ansieht und überlegt, welche Form der Innenraum haben müsste. Das ist hier besonders wichtig, weil es nur ein Gebäude mit einem einzigen Raum ist. Zusammenhang mit R065.
@@ -264,6 +264,5 @@ Lange vertikale Karte; der Autor ging sie von oben nach unten durch.
 
 ## Unklar
 
-- [ ] R112. Wohnwagen: Der Autor sagte „River hat einen Wohnwagen“ (Spracheingabe). Die Karte heißt „Slicks Wohnwagen“, vermutlich ist Slick gemeint; im Zweifel beim Autor klären.
 
 

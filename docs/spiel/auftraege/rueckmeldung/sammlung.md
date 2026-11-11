@@ -1,6 +1,6 @@
 # Sammlung der Rückmeldungen zum Schach-Abenteuer (Beta)
 
-Stand: 11.11.2026. Offene Punkte: 56. Abgeschickt (gepusht): noch nichts.
+Stand: 11.11.2026. Offene Punkte: 57. Abgeschickt (gepusht): noch nichts.
 
 Reihenfolge je Kategorie: zuerst, was das Weiterspielen verhindert, dann Störendes, dann Schönheitsfehler.
 
@@ -98,6 +98,10 @@ Reihenfolge je Kategorie: zuerst, was das Weiterspielen verhindert, dann Stören
 - [ ] R054. Ortskern, Gebäude als „Abziehbilder“ ohne Tiefe, passen perspektivisch und vielleicht auch stilistisch nicht zum Rest (der Autor ist sich bei Perspektive und Stil nicht sicher, sie fallen optisch jedenfalls heraus). Betroffen sind: das kleine Häuschen rechts neben der Bibliothek; der Schuppen am Fluss rechts, relativ mittig im Bild; das Häuschen ganz unten am Fluss, links vom Fluss; die drei Häuser ganz links unten in der unteren Häuserreihe; die Häuser darüber auf der linken Bildseite unter der Hauptstraße. Bitte durch etwas Sinnvolles ersetzen, oder der Autor lässt in Gemini passende Assets erstellen.
 - [ ] R051. Ortskern, Bahnhaltestelle oben (Schilder „Fahrplan“ und „Cedar Creek“): Die Schilder sind nach Einschätzung des Autors okay, auch wenn die Assets nicht gerade dreidimensional sind; nicht schlimm. Die Bank zwischen den beiden Schildern steht aber auf dem Gras. Vorschlag: den gepflasterten Bereich ein Stück nach unten erweitern, sodass die Bank auf der Pflasterung steht, und die Schilder entsprechend ein Stück nach unten verschieben.
 - [ ] R052. Ortskern, Bahnhaltestelle: Der Übergang zwischen dem Trampelpfad, der zur Haltestelle führt, und der gepflasterten Haltestelle besteht nur aus einer einzigen Ecke. Wird die Haltestelle nach unten erweitert (R051), muss der Übergang entsprechend erweitert und der Trampelpfad verbreitert werden.
+
+### Cedar Creek, Drechslerei (`cedar-creek-drechslerei`)
+
+- [ ] R058. Drechslerei, die beiden Werkbänke in der Mitte: Das Asset passt nicht zum Rest. Es ist wenig ausmodelliert und sieht aus wie ein „Abziehbild“. Die beiden Holzstücke, die darauf liegen, ragen scheinbar zur Hälfte über und würden gleich herunterfallen. Ein anderes Werkbank-Asset wird gebraucht, und es ist vermutlich auch an anderen Stellen auszutauschen. Der Autor glaubt, dass dasselbe Asset auch manchmal für Schilder benutzt wird. Als Schild findet er es ganz okay, aber es kann nicht beides sein: Ein aufrecht stehendes Schild mit Text und eine Werkbank mit waagerechter Fläche, auf der etwas liegt. Prüfen, wo es sonst eingesetzt ist, und ein besseres Asset für die Werkbank finden. Der Rest der Karte sieht nach Einschätzung des Autors gut aus. Zusammenhang mit R055.
 
 ### Maple Falls, Wohnzimmer (`maple-falls-wohnzimmer-ausgepackt`)
 

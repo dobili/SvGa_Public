@@ -226,3 +226,45 @@ Brettern des Spiels. Sie melden das Ergebnis über denselben Rückruf wie ein ec
   „Das geht schon.“ sind fort. Zu jeder gelernten Variante steht ein Satz der Welt (zwei
   Fernfahrer beim Königsrennen, die Holzente auf e4). Spielbar bleiben am Tisch die Formen, die
   es gibt: Blindschach und Schach960 als Wahl im Dialog.
+
+## 9. Durchgang als Spieler in Handybreite (11.11.2026)
+
+Bildschirmfotos im Browser (Pixel 7, 412 Punkte breit) von Partie, Aufgabenrunde (Taktik,
+Struktur, Falle), Erinnerung, Endspiel, Gedächtnisstellung, Ergebniskarte und Tagebuch. Alles
+passt in die Breite; nichts wird abgeschnitten. Behoben:
+
+- **Kopf der Hülle:** Das Porträt zeigte vier halbe Köpfe, weil die Regel für den Porträtbogen
+  nur im Dialogkopf galt. Sie gilt jetzt auch im Kopf der Hülle.
+- **Partie, „Weiter“ nach dem Ende:** Der Knopf war Navy auf Navy und las sich als bloßer Text.
+  Er ist jetzt Gold.
+- **Partie, Testknöpfe:** Die Schrift war fast weiß auf weißem Knopf; jetzt dunkel.
+- **Endkarte der Runde:** „Runde geschafft“ stand auch bei null richtigen Antworten da. Jetzt
+  „Das war die Runde.“ mit der Zahl der richtigen Aufgaben; das Urteil spricht die Ergebniskarte
+  in der Stadt.
+- **Erinnerung:** kein Bewertungsbalken neben dem Brett; der Auftrag sagt „… siehst du, was
+  wirklich gespielt wurde“ statt „zeigt die App den Partiezug“.
+- **Endspiel:** „Gewinne diese Stellung.“ und „Halte das Remis.“ ohne „gegen die Engine“.
+- **Falle oder Geschenk:** ohne die Zeile „Aus der freien Lichess-Datenbank (Wertung …) · Stufe“.
+
+Geblieben, mit Grund:
+
+- **Karte „Zusatzinhalt (nicht aus dem Buch)“ in der Erinnerung:** Sie nennt die Quelle der
+  Partie; bei Turnierpartien verlangt die Lizenz (CC BY-SA 4.0) die Namensnennung. Sie steht
+  zugeklappt über dem Brett.
+- **Warnsignale und „Schach, Schlag, Drohung“ nach „Ambrose fragen“:** Das sind die Werkzeuge des
+  Buches; das Spiel soll sie lehren.
+- **Kopfleiste der Welt über Gedächtnisstellung und Ergebniskarte:** Die Fenster liegen in der
+  Welt, die Leiste gehört dazu; der Text beginnt darunter.
+
+## 10. Karten gegen die Regeln 10.68 bis 10.70 (mittel-1, 11.11.2026)
+
+Geprüft: 32 Szenen (Port Delacroix, Capital Arena, Bayou, Weg 5, Weg 11, Weg 4, Riverton,
+Clubraum Maple Falls) mit `uebergaenge`, dem Lauftest, dem Möbeltest und einer Durchsicht der
+stehenden Figuren.
+
+- **10.68 Übergänge:** kein Befund, kein Gebäude ohne `tuer` auf diesen Karten.
+- **10.69 Kollision:** Alle Ausnahmen `begehbar` tragen einen stimmigen Grund (an der Wand, über
+  Kopfhöhe, im Wasser, flach, Schilf, Schiffsdeck, Bühne, unter der Glasbrücke).
+- **10.70 Figuren:** Keine stehende Figur steht auf einem Auslöser, vor einer Tür oder in einem
+  Durchgang von einer Kachel. Der Uhrmacher in Riverton steht neben der Bahnhofstür (34, 18),
+  nicht davor; das Feld vor der Tür (35–36, 19) ist frei.

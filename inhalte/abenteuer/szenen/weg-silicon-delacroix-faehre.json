@@ -1,7 +1,7 @@
 {
   "karte": "wegSiliconDelacroix.faehre",
   "art": "aussen",
-  "beschreibung": "Die Küstenfähre „Gulf Star“ auf offener See (Variante A, nach dem Ortsdokument): Deck aus dunklem Holz mit heller Metallreling, Bug nach Süden. Hinten das Achterdeck mit Containern, Kisten, Fässern und dem Rettungsboot, am Heck das Fallreep. Dann die Bordbar, wo der Schiffskoch Mr. Ruiz am runden Tisch mit Schachbrett wartet, und der Salon als weißes Deckhaus mit der Rätseltafel an der Wand; auf seinem Dach die Brücke mit Fensterband nach vorn und der rote Schornstein. Auf dem Vorderdeck versetzte Holzbänke mit Blick zum Bug, vier Liegestühle, Koffer, zwei Münzferngläser an der Reling und Rettungsringe; am spitzen Bug Poller, Taue und die Rampe zum Anleger. Ringsum die weiße Bordwand mit Bullaugen.",
+  "beschreibung": "Die Küstenfähre „Gulf Star“ auf offener See (Variante A, nach dem Ortsdokument): Deck aus dunklem Holz mit heller Metallreling, Bug nach Süden. Hinten das Achterdeck mit Containern, Kisten, Fässern und dem Rettungsboot, am Heck das Fallreep. Dann die Bordbar, wo der Schiffskoch Mr. Ruiz am runden Tisch mit Schachbrett wartet, und der Salon als weißes Deckhaus mit der Rätseltafel an der Wand; auf seinem Dach die Brücke mit Fensterband nach vorn und der rote Schornstein. Auf dem Vorderdeck versetzte Holzbänke mit Blick zum Bug, vier Liegestühle, Koffer an den Bänken, Tische unter Sonnenschirmen, Fässer und Kisten, vier Münzferngläser auf Ständern an der Reling und Rettungsringe; am spitzen Bug Poller, Taue und die Rampe zum Anleger. Ringsum die weiße Bordwand mit Bullaugen.",
   "boden": "gras",
   "wandart": "gras",
   "ufer": "rumpf",
@@ -1508,34 +1508,6 @@
       ]
     },
     {
-      "moebel": "fz10Koffer",
-      "feld": [
-        13,
-        38
-      ]
-    },
-    {
-      "moebel": "fz10Koffer",
-      "feld": [
-        19,
-        47
-      ]
-    },
-    {
-      "moebel": "fz10Fernglas",
-      "feld": [
-        21,
-        56
-      ]
-    },
-    {
-      "moebel": "fz10Fernglas",
-      "feld": [
-        8,
-        46
-      ]
-    },
-    {
       "moebel": "wg6Kisten",
       "feld": [
         18,
@@ -1554,6 +1526,468 @@
       "feld": [
         21,
         62
+      ]
+    },
+    {
+      "moebel": "fz10Fernglas",
+      "feld": [
+        8,
+        44
+      ]
+    },
+    {
+      "moebel": "fz10Fernglas",
+      "feld": [
+        21,
+        54
+      ]
+    },
+    {
+      "moebel": "fz10Fernglas",
+      "feld": [
+        8,
+        66
+      ]
+    },
+    {
+      "moebel": "fz10Fernglas",
+      "feld": [
+        21,
+        36
+      ]
+    },
+    {
+      "moebel": "fz10Koffer",
+      "feld": [
+        12,
+        42
+      ]
+    },
+    {
+      "moebel": "fz10Koffer",
+      "feld": [
+        20,
+        42
+      ]
+    },
+    {
+      "moebel": "fz10Koffer",
+      "feld": [
+        15,
+        47
+      ]
+    },
+    {
+      "moebel": "gc7Schirm",
+      "feld": [
+        11,
+        36
+      ]
+    },
+    {
+      "moebel": "mf9Rundtisch",
+      "feld": [
+        14,
+        38
+      ]
+    },
+    {
+      "moebel": "sd6Liegestuhl",
+      "feld": [
+        16,
+        38
+      ]
+    },
+    {
+      "moebel": "wg6Faesser",
+      "feld": [
+        20,
+        49
+      ]
+    },
+    {
+      "moebel": "wg6Kisten",
+      "feld": [
+        8,
+        55
+      ]
+    },
+    {
+      "moebel": "ld5Seil",
+      "feld": [
+        20,
+        52
+      ]
+    },
+    {
+      "moebel": "ld5Seil",
+      "feld": [
+        9,
+        49
+      ]
+    },
+    {
+      "moebel": "mf9Rundtisch",
+      "feld": [
+        19,
+        55
+      ]
+    },
+    {
+      "moebel": "gc7Schirm",
+      "feld": [
+        15,
+        60
+      ]
+    },
+    {
+      "moebel": "fz9Bank",
+      "feld": [
+        12,
+        65
+      ]
+    },
+    {
+      "moebel": "wg6Faesser",
+      "feld": [
+        8,
+        70
+      ]
+    },
+    {
+      "moebel": "cc5Poller",
+      "feld": [
+        13,
+        72
+      ]
+    },
+    {
+      "moebel": "cc5Poller",
+      "feld": [
+        16,
+        72
+      ]
+    },
+    {
+      "moebel": "fz12BullaugeLinks",
+      "feld": [
+        6,
+        6
+      ]
+    },
+    {
+      "moebel": "fz12BullaugeRechts",
+      "feld": [
+        23,
+        6
+      ]
+    },
+    {
+      "moebel": "fz12BullaugeLinks",
+      "feld": [
+        6,
+        9
+      ]
+    },
+    {
+      "moebel": "fz12BullaugeRechts",
+      "feld": [
+        23,
+        9
+      ]
+    },
+    {
+      "moebel": "fz12BullaugeLinks",
+      "feld": [
+        6,
+        12
+      ]
+    },
+    {
+      "moebel": "fz12BullaugeRechts",
+      "feld": [
+        23,
+        12
+      ]
+    },
+    {
+      "moebel": "fz12BullaugeLinks",
+      "feld": [
+        6,
+        15
+      ]
+    },
+    {
+      "moebel": "fz12BullaugeRechts",
+      "feld": [
+        23,
+        15
+      ]
+    },
+    {
+      "moebel": "fz12BullaugeLinks",
+      "feld": [
+        6,
+        18
+      ]
+    },
+    {
+      "moebel": "fz12BullaugeRechts",
+      "feld": [
+        23,
+        18
+      ]
+    },
+    {
+      "moebel": "fz12BullaugeLinks",
+      "feld": [
+        6,
+        21
+      ]
+    },
+    {
+      "moebel": "fz12BullaugeRechts",
+      "feld": [
+        23,
+        21
+      ]
+    },
+    {
+      "moebel": "fz12BullaugeLinks",
+      "feld": [
+        6,
+        24
+      ]
+    },
+    {
+      "moebel": "fz12BullaugeRechts",
+      "feld": [
+        23,
+        24
+      ]
+    },
+    {
+      "moebel": "fz12BullaugeLinks",
+      "feld": [
+        6,
+        27
+      ]
+    },
+    {
+      "moebel": "fz12BullaugeRechts",
+      "feld": [
+        23,
+        27
+      ]
+    },
+    {
+      "moebel": "fz12BullaugeLinks",
+      "feld": [
+        6,
+        30
+      ]
+    },
+    {
+      "moebel": "fz12BullaugeRechts",
+      "feld": [
+        23,
+        30
+      ]
+    },
+    {
+      "moebel": "fz12BullaugeLinks",
+      "feld": [
+        6,
+        33
+      ]
+    },
+    {
+      "moebel": "fz12BullaugeRechts",
+      "feld": [
+        23,
+        33
+      ]
+    },
+    {
+      "moebel": "fz12BullaugeLinks",
+      "feld": [
+        6,
+        36
+      ]
+    },
+    {
+      "moebel": "fz12BullaugeRechts",
+      "feld": [
+        23,
+        36
+      ]
+    },
+    {
+      "moebel": "fz12BullaugeLinks",
+      "feld": [
+        6,
+        39
+      ]
+    },
+    {
+      "moebel": "fz12BullaugeRechts",
+      "feld": [
+        23,
+        39
+      ]
+    },
+    {
+      "moebel": "fz12BullaugeLinks",
+      "feld": [
+        6,
+        42
+      ]
+    },
+    {
+      "moebel": "fz12BullaugeRechts",
+      "feld": [
+        23,
+        42
+      ]
+    },
+    {
+      "moebel": "fz12BullaugeLinks",
+      "feld": [
+        6,
+        45
+      ]
+    },
+    {
+      "moebel": "fz12BullaugeRechts",
+      "feld": [
+        23,
+        45
+      ]
+    },
+    {
+      "moebel": "fz12BullaugeLinks",
+      "feld": [
+        6,
+        48
+      ]
+    },
+    {
+      "moebel": "fz12BullaugeRechts",
+      "feld": [
+        23,
+        48
+      ]
+    },
+    {
+      "moebel": "fz12BullaugeLinks",
+      "feld": [
+        6,
+        51
+      ]
+    },
+    {
+      "moebel": "fz12BullaugeRechts",
+      "feld": [
+        23,
+        51
+      ]
+    },
+    {
+      "moebel": "fz12BullaugeLinks",
+      "feld": [
+        6,
+        54
+      ]
+    },
+    {
+      "moebel": "fz12BullaugeRechts",
+      "feld": [
+        23,
+        54
+      ]
+    },
+    {
+      "moebel": "fz12BullaugeLinks",
+      "feld": [
+        6,
+        57
+      ]
+    },
+    {
+      "moebel": "fz12BullaugeRechts",
+      "feld": [
+        23,
+        57
+      ]
+    },
+    {
+      "moebel": "fz12BullaugeLinks",
+      "feld": [
+        6,
+        60
+      ]
+    },
+    {
+      "moebel": "fz12BullaugeRechts",
+      "feld": [
+        23,
+        60
+      ]
+    },
+    {
+      "moebel": "fz12BullaugeLinks",
+      "feld": [
+        6,
+        63
+      ]
+    },
+    {
+      "moebel": "fz12BullaugeRechts",
+      "feld": [
+        23,
+        63
+      ]
+    },
+    {
+      "moebel": "fz12BullaugeLinks",
+      "feld": [
+        6,
+        66
+      ]
+    },
+    {
+      "moebel": "fz12BullaugeRechts",
+      "feld": [
+        23,
+        66
+      ]
+    },
+    {
+      "moebel": "fz12BullaugeLinks",
+      "feld": [
+        6,
+        69
+      ]
+    },
+    {
+      "moebel": "fz12BullaugeRechts",
+      "feld": [
+        23,
+        69
+      ]
+    },
+    {
+      "moebel": "fz12BullaugeLinks",
+      "feld": [
+        6,
+        72
+      ]
+    },
+    {
+      "moebel": "fz12BullaugeRechts",
+      "feld": [
+        23,
+        72
       ]
     }
   ],
@@ -1683,12 +2117,12 @@
       "name": "passagierin",
       "typ": "statist",
       "feld": [
-        12,
-        38
+        13,
+        43
       ],
       "eigenschaften": {
-        "von": "12,38",
-        "bis": "12,38",
+        "von": "13,43",
+        "bis": "13,43",
         "tun": "sitzt im Wintermantel auf ihrem Koffer",
         "wann": "tag",
         "sagt": "statist.wegSiliconDelacroix.faehre.passagierin"

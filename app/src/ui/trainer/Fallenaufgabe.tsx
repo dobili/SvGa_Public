@@ -35,6 +35,7 @@ import type { Runde } from "./useRunde";
 import { THEMA_FALLE } from "../../speicher/themenprotokoll";
 import { antworteMitKarte } from "./kartenantwort";
 import { useSammelstellung } from "./sammelstellung";
+import { useImSpiel } from "./imSpiel";
 
 const buchzug = (san: string) => sanInSprache(san, sprache());
 const NACHKOMMASTELLEN = 1;
@@ -131,6 +132,7 @@ function Warnnutzensatz({ nutzen }: { nutzen: Warnnutzen }) {
  * Hinweis, nehmen oder ablehnen, dann Widerlegung mit Balken und den Nutzen der Signale sehen.
  */
 export function Fallenaufgabe({ aufgabe, runde }: { aufgabe: Aufgabe; runde: Runde }) {
+  const imSpiel = useImSpiel();
   useSammelstellung(aufgabe.fen);
   const entschieden = runde.ergebnis !== null;
   const warn = useMemo(() => {
@@ -153,11 +155,14 @@ export function Fallenaufgabe({ aufgabe, runde }: { aufgabe: Aufgabe; runde: Run
     vorzug: buchzug(aufgabe.vorzug),
     zug: angebotszug(aufgabe.angebot),
   });
-  const kurzzeile = [
-    t("wenigertext.werkzeug.falle.amZug", { farbe }),
-    herkunftstext(aufgabe),
-    t("taktiktrainer.stufe", { stufe: aufgabe.schwierigkeit }),
-  ].join(" · ");
+  // Im Schach-Abenteuer ohne Herkunft und Stufe: Die Figur der Geschichte stellt die Frage.
+  const kurzzeile = imSpiel
+    ? t("wenigertext.werkzeug.falle.amZug", { farbe })
+    : [
+        t("wenigertext.werkzeug.falle.amZug", { farbe }),
+        herkunftstext(aufgabe),
+        t("taktiktrainer.stufe", { stufe: aufgabe.schwierigkeit }),
+      ].join(" · ");
   return (
     <>
       <Fallenfrage

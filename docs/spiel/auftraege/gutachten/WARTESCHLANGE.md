@@ -158,3 +158,5 @@ Szene heißt die Datei in `inhalte/abenteuer/szenen/` ohne `.json`.
 - [ ] riverton-aussen (+ vier Zustände): Steinbrücke mit Bogenstreifen und Schatten; crossroads-aussen (+ gatter-offen): Sattelzüge mit Trennlinie, Lastwagen weg; silicon-bay-aussen: Hotel, kleiner Kaffeebecher, keine Möwen; silicon-bay-hafen: Angelladen im Osten (kurze Sichtprüfung, mittel-3)
 
 - [ ] ironwood-aussen (+ vermietet, meisterschaft), steinbruch-grube, steinbruch-stollen, weg-desert-summit-hinterzimmer, weg-riverton-ironwood-1 (+ graffiti): Befunde der Prüfung vom 11.11. (mittel-4)
+
+- [ ] weg-silicon-delacroix-faehre (vierte Prüfung, mittel-1, nach `weg-silicon-delacroix-faehre-2.md`; Bilder `bildwuensche/faehre_deck.py`: Münzfernglas, Bullaugen)

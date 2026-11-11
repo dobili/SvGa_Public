@@ -70,8 +70,8 @@ function Runde({
     const richtig = test === null ? runde.richtig : test ? aufgaben.length : 0;
     return (
       <section className="karte" data-testid="abenteuer-aufgaben-ende">
-        <h2 className="karte-titel">{t("trainer.rundeFertig")}</h2>
-        <p>{t("trainer.ergebnis", { richtig, anzahl: runde.anzahl })}</p>
+        <h2 className="karte-titel">{tSpiel("huelle.rundeVorbei")}</h2>
+        <p>{tSpiel("huelle.rundeRichtig", { richtig, anzahl: runde.anzahl })}</p>
         <ZurueckKnopf />
       </section>
     );

@@ -4,7 +4,9 @@
   "art": "aussen",
   "boden": "gras",
   "wandart": "hecke",
-  "bruecken": ["h"],
+  "bruecken": [
+    "h"
+  ],
   "boeden": {
     "p": "pflaster",
     "s": "asphalt",
@@ -19,29 +21,29 @@
     "#.................................................hhhhh....#",
     "#...........pppppppppp............................~~~~~....#",
     "eeeeeeeeeeeepppppppppp.............................~~~~~...#",
-    "eeeeeeeeeeee.......................................~~~~~...#",
-    "#.........ee.......................................~~~~~...#",
+    "eeeeeeeeeeeepppppppppp.............................~~~~~...#",
+    "#.........eepppppppppp.............................~~~~~...#",
     "#.........ee........................................~~~~~..#",
     "#.........ee....................................eeeehhhhheee",
-    "#.........ee.........ppp........................eeeehhhhheee",
-    "#.........ee.........ppp........................ee..~~~~~..#",
-    "#.........ee.........ppp........................ee..~~~~~..#",
-    "#.........ee.........ppp........................ee.~~~~~...#",
-    "#.........ee.........ppp....................ppppee.~~~~~...#",
-    "#.........ee.........ppp....................ppppeehhhh~....#",
-    "#.........ee.........ppp........................eehhhh~....#",
-    "#.........ee.........ppp........................ee~~~~~....#",
-    "#.........ee.........ppp........................ee~~~~~....#",
-    "#.........ee.........ppp........................ee.~~~~~...#",
+    "#.........ee.........pppp.......................eeeehhhhheee",
+    "#.........ee.........pppp.......................ee..~~~~~..#",
+    "#.........ee.........pppp.......................ee..~~~~~..#",
+    "#.........ee.........pppp.......................ee.~~~~~...#",
+    "#.........ee.........pppp...................ppppee.~~~~~...#",
+    "#.........ee.........pppp...................ppppeehhhh~....#",
+    "#.........ee.........pppp.......................eehhhh~....#",
+    "#.........ee.........pppp.......................ee~~~~~....#",
+    "#.........ee.........pppp.......................ee~~~~~....#",
+    "#.........ee.........pppp.......................ee.~~~~~...#",
     "ppppppppppppppppppppppppppppppppppppppppppppppppee.~~~~~...#",
     "ssssssssssssssssssssssssssssssssssssssssssssssspee.~~~~~...#",
     "ssssssssssssssssssssssssssssssssssssssssssssssspee.~~~~~...#",
     "ssssssssssssssssssssssssssssssssssssssssssssssspee..~~~~~..#",
-    "ppppppppppppppppppppppppppppppbbbbbbbbbbssssssspee..~~~~~..#",
-    "#pp...........................bbbbbbbbbbpsssssspee..~~~~~..#",
-    "#pp...........................bbbbbbbbbbppppppppee..~~~~~..#",
-    "#p............................bbbbbbbbbb........ee..~~~~~..#",
-    "#p...........................pppppppppppp.......ee...~~~~~.#",
+    "ppppppppppppppppppppppppppppppbbbbbbbbbbbbbbbbbpee..~~~~~..#",
+    "#pp..........................pbbbbbbbbbbbbbbbbbpee..~~~~~..#",
+    "#pp..........................pbbbbbbbbbbbbbbbbbpee..~~~~~..#",
+    "#p...........................pbbbbbbbbbbbbbbbbbpee..~~~~~..#",
+    "#p...........................pppppppppppppppppppee...~~~~~.#",
     "#p..............................................ee...~~~~~.#",
     "#p..............................................ee...~~~~~.#",
     "#p..............................................ee...~~~~~.#",
@@ -50,9 +52,9 @@
     "#p..............................................ee..~~~~~..#",
     "#p..............................................ee..~~~~~..#",
     "#p..............................................ee..~~~~~..#",
+    "#pppppppppppppppppppp...........................ee~~~~~....#",
     "#p..............................................ee~~~~~....#",
-    "#p..............................................ee~~~~~....#",
-    "#p.pppppppppppppppppp...........................ee~~~~~....#",
+    "#p..................p...........................ee~~~~~....#",
     "#p..............................................ee~~~~~....#",
     "#p..............................................ee~~~~~....#",
     "#p..............................................ee~~~~~....#",
@@ -68,712 +70,1136 @@
   "objekte": [
     {
       "moebel": "cc4Drechslerei",
-      "feld": [2, 9]
+      "feld": [
+        2,
+        9
+      ]
     },
     {
       "moebel": "cc4Holzstapel",
-      "feld": [6, 18]
+      "feld": [
+        6,
+        18
+      ]
     },
     {
       "moebel": "mf2Waschsalon",
-      "feld": [12, 10],
+      "feld": [
+        12,
+        10
+      ],
       "id": "waschsalon"
     },
     {
-      "moebel": "cc4SchildWaschsalon",
-      "auf": "waschsalon",
-      "versatz": [0, 10]
-    },
-    {
       "moebel": "cc5Seiteneingang",
-      "feld": [21, 9],
-      "versatz": [0, 8]
+      "feld": [
+        21,
+        9
+      ],
+      "versatz": [
+        5,
+        8
+      ]
     },
     {
       "moebel": "mf2Bibliothek",
-      "feld": [24, 3],
+      "feld": [
+        24,
+        3
+      ],
       "id": "bibliothek",
       "bauteil_ok": true
     },
     {
       "moebel": "mfLaterne",
-      "feld": [19, 16],
+      "feld": [
+        19,
+        16
+      ],
       "vorn": true,
-      "versatz": [14, 0]
+      "versatz": [
+        14,
+        0
+      ]
     },
     {
       "moebel": "mfLaterne",
-      "feld": [24, 16],
+      "feld": [
+        24,
+        16
+      ],
       "vorn": true,
-      "versatz": [13, 0]
+      "versatz": [
+        13,
+        0
+      ]
     },
     {
       "moebel": "mf6Haltestelle",
-      "feld": [32, 28]
+      "feld": [
+        32,
+        28
+      ]
     },
     {
       "moebel": "cc5Poller",
-      "feld": [47, 20]
+      "feld": [
+        47,
+        20
+      ]
     },
     {
       "moebel": "cc5Poller",
-      "feld": [47, 22]
+      "feld": [
+        47,
+        22
+      ]
     },
     {
       "moebel": "cc3Anschlagtafel",
-      "feld": [41, 26]
+      "feld": [
+        42,
+        28
+      ]
     },
     {
       "moebel": "mfMuelltonne",
-      "feld": [43, 27]
+      "feld": [
+        45,
+        28
+      ]
     },
     {
       "moebel": "cc4Nadelbaum",
-      "feld": [2, 1]
+      "feld": [
+        2,
+        1
+      ]
     },
     {
       "moebel": "cc4NadelbaumB",
-      "feld": [5, 1]
+      "feld": [
+        5,
+        1
+      ]
     },
     {
       "moebel": "cc4Nadelbaum",
-      "feld": [8, 1]
+      "feld": [
+        8,
+        1
+      ]
     },
     {
       "moebel": "cc4NadelbaumB",
-      "feld": [2, 6]
+      "feld": [
+        2,
+        6
+      ]
     },
     {
       "moebel": "cc4NadelbaumB",
-      "feld": [17, 6]
+      "feld": [
+        18,
+        7
+      ]
     },
     {
       "moebel": "cc4Gleis",
-      "feld": [12, 1],
+      "feld": [
+        12,
+        1
+      ],
       "bauteil_ok": true
     },
     {
       "moebel": "cc4Gleis",
-      "feld": [13, 1],
+      "feld": [
+        13,
+        1
+      ],
       "bauteil_ok": true
     },
     {
       "moebel": "cc4Gleis",
-      "feld": [14, 1],
+      "feld": [
+        14,
+        1
+      ],
       "bauteil_ok": true
     },
     {
       "moebel": "cc4Gleis",
-      "feld": [15, 1],
+      "feld": [
+        15,
+        1
+      ],
       "bauteil_ok": true
     },
     {
       "moebel": "cc4Gleis",
-      "feld": [16, 1],
+      "feld": [
+        16,
+        1
+      ],
       "bauteil_ok": true
     },
     {
       "moebel": "cc4Gleis",
-      "feld": [17, 1],
+      "feld": [
+        17,
+        1
+      ],
       "bauteil_ok": true
     },
     {
       "moebel": "cc4Gleis",
-      "feld": [18, 1],
+      "feld": [
+        18,
+        1
+      ],
       "bauteil_ok": true
     },
     {
       "moebel": "cc4Gleis",
-      "feld": [19, 1],
+      "feld": [
+        19,
+        1
+      ],
       "bauteil_ok": true
     },
     {
       "moebel": "cc4Gleis",
-      "feld": [20, 1],
+      "feld": [
+        20,
+        1
+      ],
       "bauteil_ok": true
     },
     {
       "moebel": "cc4Gleis",
-      "feld": [21, 1],
+      "feld": [
+        21,
+        1
+      ],
       "bauteil_ok": true
     },
     {
       "moebel": "cc4Gleis",
-      "feld": [22, 1],
+      "feld": [
+        22,
+        1
+      ],
       "bauteil_ok": true
     },
     {
       "moebel": "cc4Gleis",
-      "feld": [23, 1],
+      "feld": [
+        23,
+        1
+      ],
       "bauteil_ok": true
     },
     {
       "moebel": "cc4Gleis",
-      "feld": [24, 1],
+      "feld": [
+        24,
+        1
+      ],
       "bauteil_ok": true
     },
     {
       "moebel": "cc4Gleis",
-      "feld": [25, 1],
+      "feld": [
+        25,
+        1
+      ],
       "bauteil_ok": true
     },
     {
       "moebel": "cc4Gleis",
-      "feld": [26, 1],
+      "feld": [
+        26,
+        1
+      ],
       "bauteil_ok": true
     },
     {
       "moebel": "cc4Gleis",
-      "feld": [27, 1],
+      "feld": [
+        27,
+        1
+      ],
       "bauteil_ok": true
     },
     {
       "moebel": "cc4Gleis",
-      "feld": [28, 1],
+      "feld": [
+        28,
+        1
+      ],
       "bauteil_ok": true
     },
     {
       "moebel": "cc4Gleis",
-      "feld": [29, 1],
+      "feld": [
+        29,
+        1
+      ],
       "bauteil_ok": true
     },
     {
       "moebel": "cc4Gleis",
-      "feld": [30, 1],
+      "feld": [
+        30,
+        1
+      ],
       "bauteil_ok": true
     },
     {
       "moebel": "cc4Gleis",
-      "feld": [31, 1],
+      "feld": [
+        31,
+        1
+      ],
       "bauteil_ok": true
     },
     {
       "moebel": "cc4Gleis",
-      "feld": [32, 1],
+      "feld": [
+        32,
+        1
+      ],
       "bauteil_ok": true
     },
     {
       "moebel": "cc4Gleis",
-      "feld": [33, 1],
+      "feld": [
+        33,
+        1
+      ],
       "bauteil_ok": true
     },
     {
       "moebel": "cc4Gleis",
-      "feld": [34, 1],
+      "feld": [
+        34,
+        1
+      ],
       "bauteil_ok": true
     },
     {
       "moebel": "cc4Gleis",
-      "feld": [35, 1],
+      "feld": [
+        35,
+        1
+      ],
       "bauteil_ok": true
     },
     {
       "moebel": "cc4Gleis",
-      "feld": [36, 1],
+      "feld": [
+        36,
+        1
+      ],
       "bauteil_ok": true
     },
     {
       "moebel": "cc4Gleis",
-      "feld": [37, 1],
+      "feld": [
+        37,
+        1
+      ],
       "bauteil_ok": true
     },
     {
       "moebel": "cc4Gleis",
-      "feld": [38, 1],
+      "feld": [
+        38,
+        1
+      ],
       "bauteil_ok": true
     },
     {
       "moebel": "cc4Gleis",
-      "feld": [39, 1],
+      "feld": [
+        39,
+        1
+      ],
       "bauteil_ok": true
     },
     {
       "moebel": "cc4Gleis",
-      "feld": [40, 1],
+      "feld": [
+        40,
+        1
+      ],
       "bauteil_ok": true
     },
     {
       "moebel": "cc4Gleis",
-      "feld": [41, 1],
+      "feld": [
+        41,
+        1
+      ],
       "bauteil_ok": true
     },
     {
       "moebel": "cc4Gleis",
-      "feld": [42, 1],
+      "feld": [
+        42,
+        1
+      ],
       "bauteil_ok": true
     },
     {
       "moebel": "cc4Gleis",
-      "feld": [43, 1],
+      "feld": [
+        43,
+        1
+      ],
       "bauteil_ok": true
     },
     {
       "moebel": "cc4Gleis",
-      "feld": [44, 1],
+      "feld": [
+        44,
+        1
+      ],
       "bauteil_ok": true
     },
     {
       "moebel": "cc4Gleis",
-      "feld": [45, 1],
+      "feld": [
+        45,
+        1
+      ],
       "bauteil_ok": true
     },
     {
       "moebel": "cc4Gleis",
-      "feld": [46, 1],
+      "feld": [
+        46,
+        1
+      ],
       "bauteil_ok": true
     },
     {
       "moebel": "cc4Gleis",
-      "feld": [47, 1],
+      "feld": [
+        47,
+        1
+      ],
       "bauteil_ok": true
     },
     {
       "moebel": "cc4Gleis",
-      "feld": [48, 1],
+      "feld": [
+        48,
+        1
+      ],
       "bauteil_ok": true
     },
     {
       "moebel": "cc4Gleis",
-      "feld": [49, 1],
+      "feld": [
+        49,
+        1
+      ],
       "bauteil_ok": true
     },
     {
       "moebel": "cc4Gleis",
-      "feld": [50, 1],
+      "feld": [
+        50,
+        1
+      ],
       "bauteil_ok": true
     },
     {
       "moebel": "cc4Gleis",
-      "feld": [51, 1],
+      "feld": [
+        51,
+        1
+      ],
       "bauteil_ok": true
     },
     {
       "moebel": "cc4Gleis",
-      "feld": [52, 1],
+      "feld": [
+        52,
+        1
+      ],
       "bauteil_ok": true
     },
     {
       "moebel": "cc4Gleis",
-      "feld": [53, 1],
+      "feld": [
+        53,
+        1
+      ],
       "bauteil_ok": true
     },
     {
       "moebel": "cc4Gleis",
-      "feld": [54, 1],
+      "feld": [
+        54,
+        1
+      ],
       "bauteil_ok": true
     },
     {
       "moebel": "cc4Gleis",
-      "feld": [55, 1],
+      "feld": [
+        55,
+        1
+      ],
       "bauteil_ok": true
     },
     {
       "moebel": "cc4Gleis",
-      "feld": [56, 1],
+      "feld": [
+        56,
+        1
+      ],
       "bauteil_ok": true
     },
     {
       "moebel": "cc4Gleis",
-      "feld": [57, 1],
+      "feld": [
+        57,
+        1
+      ],
       "bauteil_ok": true
     },
     {
       "moebel": "cc4Gleis",
-      "feld": [58, 1],
+      "feld": [
+        58,
+        1
+      ],
       "bauteil_ok": true
     },
     {
       "moebel": "cc4GleisRand",
-      "feld": [59, 1],
+      "feld": [
+        59,
+        1
+      ],
       "bauteil_ok": true
     },
     {
       "moebel": "cc5Planke",
-      "feld": [50, 1],
+      "feld": [
+        50,
+        1
+      ],
       "bauteil_ok": true
     },
     {
       "moebel": "cc5Planke",
-      "feld": [50, 2],
+      "feld": [
+        50,
+        2
+      ],
       "bauteil_ok": true
     },
     {
       "moebel": "cc5PlankeB",
-      "feld": [52, 1],
+      "feld": [
+        52,
+        1
+      ],
       "bauteil_ok": true
     },
     {
       "moebel": "cc5PlankeB",
-      "feld": [52, 2],
+      "feld": [
+        52,
+        2
+      ],
       "bauteil_ok": true
     },
     {
       "moebel": "cc5PlankeB",
-      "feld": [53, 1],
+      "feld": [
+        53,
+        1
+      ],
       "bauteil_ok": true
     },
     {
       "moebel": "cc5PlankeB",
-      "feld": [53, 2],
+      "feld": [
+        53,
+        2
+      ],
       "bauteil_ok": true
     },
     {
       "moebel": "cc8PrellbockQuer",
-      "feld": [11, 0]
+      "feld": [
+        11,
+        0
+      ]
     },
     {
       "moebel": "cc4Stationsschild",
-      "feld": [13, 3]
+      "feld": [
+        13,
+        4
+      ]
     },
     {
       "moebel": "cc11BahnsteigbankHinten",
-      "feld": [16, 4]
+      "feld": [
+        16,
+        5
+      ]
     },
     {
       "moebel": "cc4Fahrplan",
-      "feld": [19, 3]
+      "feld": [
+        19,
+        4
+      ]
     },
     {
       "moebel": "cc4NadelbaumB",
-      "feld": [56, 4]
+      "feld": [
+        56,
+        4
+      ]
     },
     {
       "moebel": "cc4Nadelbaum",
-      "feld": [57, 11]
+      "feld": [
+        57,
+        11
+      ]
     },
     {
       "moebel": "mf2Zeder",
-      "feld": [56, 15]
+      "feld": [
+        56,
+        15
+      ]
     },
     {
       "moebel": "cc4NadelbaumB",
-      "feld": [57, 19]
+      "feld": [
+        57,
+        19
+      ]
     },
     {
       "moebel": "cc4Nadelbaum",
-      "feld": [57, 23]
+      "feld": [
+        57,
+        23
+      ]
     },
     {
       "moebel": "cc8HeckeSenkrecht",
-      "feld": [21, 24],
+      "feld": [
+        21,
+        24
+      ],
       "bauteil_ok": true
     },
     {
       "moebel": "cc8HeckeSenkrecht",
-      "feld": [21, 26],
+      "feld": [
+        21,
+        26
+      ],
       "bauteil_ok": true
     },
     {
       "moebel": "cc8HeckeSenkrecht",
-      "feld": [21, 28],
+      "feld": [
+        21,
+        28
+      ],
       "bauteil_ok": true
     },
     {
       "moebel": "cc8HeckeSenkrecht",
-      "feld": [21, 30],
+      "feld": [
+        21,
+        30
+      ],
       "bauteil_ok": true
     },
     {
       "moebel": "cc8HeckeSenkrecht",
-      "feld": [21, 32],
+      "feld": [
+        21,
+        32
+      ],
       "bauteil_ok": true
     },
     {
       "moebel": "cc8HeckeSenkrecht",
-      "feld": [21, 34],
+      "feld": [
+        21,
+        34
+      ],
       "bauteil_ok": true
-    },
-    {
-      "moebel": "cc4Briefkasten",
-      "feld": [3, 24]
     },
     {
       "moebel": "mfLaterne",
-      "feld": [10, 16],
+      "feld": [
+        10,
+        16
+      ],
       "vorn": true
     },
     {
       "moebel": "mfLaterne",
-      "feld": [40, 16],
+      "feld": [
+        40,
+        16
+      ],
       "vorn": true
     },
     {
       "moebel": "mf2Zeder",
-      "feld": [24, 24]
+      "feld": [
+        24,
+        24
+      ]
     },
     {
       "moebel": "cc4NadelbaumB",
-      "feld": [28, 27]
+      "feld": [
+        28,
+        27
+      ]
     },
     {
       "moebel": "cc4Nadelbaum",
-      "feld": [25, 31]
+      "feld": [
+        25,
+        31
+      ]
     },
     {
       "moebel": "mf2ZederSchmal",
-      "feld": [43, 16]
+      "feld": [
+        43,
+        16
+      ]
     },
     {
       "moebel": "mf2Zeder",
-      "feld": [33, 31]
+      "feld": [
+        33,
+        31
+      ]
     },
     {
       "moebel": "cc4NadelbaumB",
-      "feld": [56, 35]
+      "feld": [
+        56,
+        35
+      ]
     },
     {
       "moebel": "cc4Stammbank",
-      "feld": [29, 30]
+      "feld": [
+        29,
+        30
+      ]
     },
     {
       "moebel": "cc7Picknicktisch",
-      "feld": [24, 28]
+      "feld": [
+        24,
+        28
+      ]
     },
     {
       "moebel": "cc7Picknicktisch",
-      "feld": [37, 28]
+      "feld": [
+        37,
+        28
+      ]
     },
     {
       "moebel": "cc7Fussbruecke",
-      "feld": [51, 8]
+      "feld": [
+        51,
+        8
+      ]
     },
     {
       "moebel": "cc5Planke",
-      "feld": [50, 14],
+      "feld": [
+        50,
+        14
+      ],
       "bauteil_ok": true
     },
     {
       "moebel": "cc5PlankeB",
-      "feld": [52, 14],
+      "feld": [
+        52,
+        14
+      ],
       "bauteil_ok": true
     },
     {
       "moebel": "cc5Planke",
-      "feld": [50, 15],
+      "feld": [
+        50,
+        15
+      ],
       "bauteil_ok": true
     },
     {
       "moebel": "cc5PlankeB",
-      "feld": [52, 15],
+      "feld": [
+        52,
+        15
+      ],
       "bauteil_ok": true
     },
     {
       "moebel": "cc5StegPfaehle",
-      "feld": [50, 16],
+      "feld": [
+        50,
+        16
+      ],
       "bauteil_ok": true
     },
     {
       "moebel": "cc5StegPfaehle",
-      "feld": [52, 16],
+      "feld": [
+        52,
+        16
+      ],
       "bauteil_ok": true
     },
     {
       "moebel": "cc5BootAmSteg",
-      "feld": [53, 17]
+      "feld": [
+        53,
+        17
+      ]
     },
     {
       "moebel": "cc8KulisseBauernhaus",
-      "feld": [23, 37]
+      "feld": [
+        23,
+        37
+      ]
     },
     {
       "moebel": "cc8KulisseBauernhausBreit",
-      "feld": [32, 38]
+      "feld": [
+        32,
+        38
+      ]
     },
     {
       "moebel": "cc4Nadelbaum",
-      "feld": [44, 38]
-    },
-    {
-      "moebel": "mf2Blumenbeet",
-      "feld": [4, 41]
-    },
-    {
-      "moebel": "mf2Blumenbeet",
-      "feld": [11, 41]
-    },
-    {
-      "moebel": "mf2Blumenbeet",
-      "feld": [17, 41]
+      "feld": [
+        44,
+        38
+      ]
     },
     {
       "moebel": "caBus",
-      "feld": [31, 23],
+      "feld": [
+        31,
+        23
+      ],
       "bauteil_ok": true
     },
     {
       "moebel": "cc5BankZumBach",
-      "feld": [50, 24]
+      "feld": [
+        50,
+        24
+      ]
     },
     {
-      "moebel": "cc4Bootsschuppen",
-      "feld": [50, 27]
+      "moebel": "cc12SchuppenBlau",
+      "feld": [
+        50,
+        27
+      ]
     },
     {
       "moebel": "cc5BootUfer",
-      "feld": [54, 28],
+      "feld": [
+        54,
+        28
+      ],
       "bauteil_ok": true
     },
     {
-      "moebel": "cr8Holzfaellerhuette",
-      "feld": [42, 8]
+      "moebel": "cc12SchuppenRot",
+      "feld": [
+        43,
+        9
+      ]
     },
     {
-      "moebel": "sc7Ferienhuette",
-      "feld": [4, 42]
-    },
-    {
-      "moebel": "sc7FerienhuetteB",
-      "feld": [11, 42]
-    },
-    {
-      "moebel": "cr8Holzfaellerhuette",
-      "feld": [17, 42]
-    },
-    {
-      "moebel": "wc5Gartenhaus",
-      "feld": [44, 43]
-    },
-    {
-      "moebel": "mf4Gemuesebeet",
-      "feld": [8, 33]
-    },
-    {
-      "moebel": "mf2Blumenbeet",
-      "feld": [3, 33]
+      "moebel": "cc12SchuppenBraun",
+      "feld": [
+        44,
+        43
+      ]
     },
     {
       "moebel": "cc8HeckeSenkrecht",
-      "feld": [22, 24]
+      "feld": [
+        22,
+        24
+      ]
     },
     {
       "moebel": "cc8HeckeSenkrecht",
-      "feld": [22, 26]
+      "feld": [
+        22,
+        26
+      ]
     },
     {
       "moebel": "cc8HeckeSenkrecht",
-      "feld": [22, 28]
+      "feld": [
+        22,
+        28
+      ]
     },
     {
       "moebel": "cc8HeckeSenkrecht",
-      "feld": [22, 30]
+      "feld": [
+        22,
+        30
+      ]
     },
     {
       "moebel": "cc8HeckeSenkrecht",
-      "feld": [22, 32]
+      "feld": [
+        22,
+        32
+      ]
     },
     {
       "moebel": "cc8HeckeSenkrecht",
-      "feld": [22, 34]
+      "feld": [
+        22,
+        34
+      ]
     },
     {
-      "moebel": "cc11HausHintenRot",
-      "feld": [5, 25]
+      "moebel": "pd10HausBlau",
+      "feld": [
+        3,
+        26
+      ]
     },
     {
-      "moebel": "cc11HausHintenBBraun",
-      "feld": [13, 25]
+      "moebel": "pd10WerkGruen",
+      "feld": [
+        11,
+        27
+      ]
+    },
+    {
+      "moebel": "pd10WerkGrau",
+      "feld": [
+        3,
+        38
+      ]
+    },
+    {
+      "moebel": "pd10HausGruen",
+      "feld": [
+        14,
+        37
+      ]
+    },
+    {
+      "moebel": "cc4Briefkasten",
+      "feld": [
+        2,
+        34
+      ]
     }
   ],
   "ausloeser": [
     {
       "name": "start",
-      "feld": [34, 27],
+      "feld": [
+        34,
+        27
+      ],
       "eigenschaften": {
         "richtung": "oben"
       }
     },
     {
       "name": "bushaltestelle",
-      "feld": [34, 27]
+      "feld": [
+        34,
+        27
+      ]
     },
     {
       "name": "busZurueck",
-      "feld": [33, 27]
+      "feld": [
+        33,
+        27
+      ]
     },
     {
       "name": "drechslereiTuer",
-      "feld": [4, 19]
+      "feld": [
+        4,
+        19
+      ]
     },
     {
       "name": "waschsalonTuer",
-      "feld": [13, 19]
+      "feld": [
+        13,
+        19
+      ]
     },
     {
       "name": "waschsalonTuer",
-      "feld": [14, 19]
+      "feld": [
+        14,
+        19
+      ]
     },
     {
       "name": "bibliothekTuer",
-      "feld": [22, 16]
+      "feld": [
+        22,
+        16
+      ]
     },
     {
       "name": "bibliothekTuer",
-      "feld": [23, 16]
+      "feld": [
+        23,
+        16
+      ]
     },
     {
       "name": "plakat",
-      "feld": [41, 28]
+      "feld": [
+        42,
+        30
+      ]
     },
     {
       "name": "steg",
-      "feld": [49, 14]
+      "feld": [
+        49,
+        14
+      ]
     },
     {
       "name": "zedernpfad",
-      "feld": [0, 4]
+      "feld": [
+        0,
+        4
+      ]
     },
     {
       "name": "zedernpfad",
-      "feld": [0, 5]
+      "feld": [
+        0,
+        5
+      ]
     },
     {
       "name": "bahnhof",
-      "feld": [16, 3]
+      "feld": [
+        16,
+        3
+      ]
     },
     {
       "name": "flussweg",
-      "feld": [0, 19]
+      "feld": [
+        0,
+        19
+      ]
     },
     {
       "name": "flussweg",
-      "feld": [0, 20]
+      "feld": [
+        0,
+        20
+      ]
     },
     {
       "name": "flussweg",
-      "feld": [0, 21]
+      "feld": [
+        0,
+        21
+      ]
     },
     {
       "name": "flussweg",
-      "feld": [0, 22]
+      "feld": [
+        0,
+        22
+      ]
     },
     {
       "name": "flussweg",
-      "feld": [0, 23]
+      "feld": [
+        0,
+        23
+      ]
     },
     {
       "name": "zedernwald",
-      "feld": [59, 8]
+      "feld": [
+        59,
+        8
+      ]
     },
     {
       "name": "zedernwald",
-      "feld": [59, 9]
+      "feld": [
+        59,
+        9
+      ]
     }
   ],
   "figuren": [
     {
       "name": "rosa",
-      "feld": [53, 14]
+      "feld": [
+        53,
+        14
+      ]
     },
     {
       "name": "victor",
-      "feld": [47, 19]
+      "feld": [
+        47,
+        19
+      ]
     }
   ],
   "belebung": [
     {
       "name": "busfahrer",
       "typ": "statist",
-      "feld": [38, 27],
+      "feld": [
+        38,
+        27
+      ],
       "eigenschaften": {
         "tun": "trinkt Kaffee aus der Thermoskanne",
         "wann": "tag",
@@ -785,7 +1211,10 @@
     {
       "name": "stegbauer",
       "typ": "statist",
-      "feld": [51, 15],
+      "feld": [
+        51,
+        15
+      ],
       "eigenschaften": {
         "tun": "erneuert Bretter am Steg",
         "wann": "tag",
@@ -797,7 +1226,10 @@
     {
       "name": "hund",
       "typ": "tier",
-      "feld": [17, 19],
+      "feld": [
+        17,
+        19
+      ],
       "eigenschaften": {
         "von": "17,19",
         "bis": "19,19",
@@ -807,7 +1239,10 @@
     {
       "name": "reiher",
       "typ": "tier",
-      "feld": [50, 22],
+      "feld": [
+        50,
+        22
+      ],
       "eigenschaften": {
         "von": "50,22",
         "bis": "50,22",
@@ -817,7 +1252,10 @@
     {
       "name": "eichelhaeher",
       "typ": "tier",
-      "feld": [3, 7],
+      "feld": [
+        3,
+        7
+      ],
       "eigenschaften": {
         "von": "3,7",
         "bis": "9,7",
@@ -828,7 +1266,10 @@
     {
       "name": "waschsalonfrau",
       "typ": "statist",
-      "feld": [16, 19],
+      "feld": [
+        16,
+        19
+      ],
       "eigenschaften": {
         "tun": "faltet vor dem Waschsalon Handtücher",
         "wann": "tag",
@@ -838,7 +1279,10 @@
     {
       "name": "bibliothekarin",
       "typ": "statist",
-      "feld": [29, 19],
+      "feld": [
+        29,
+        19
+      ],
       "eigenschaften": {
         "tun": "macht Pause vor der Bibliothek",
         "wann": "tag",
@@ -848,7 +1292,10 @@
     {
       "name": "drechslergeselle",
       "typ": "statist",
-      "feld": [2, 19],
+      "feld": [
+        2,
+        19
+      ],
       "eigenschaften": {
         "tun": "fegt Späne vom Gehweg",
         "wann": "tag",
@@ -860,7 +1307,10 @@
     {
       "name": "anglerin",
       "typ": "statist",
-      "feld": [48, 35],
+      "feld": [
+        48,
+        35
+      ],
       "eigenschaften": {
         "tun": "angelt am Uferweg",
         "wann": "morgen",
@@ -870,7 +1320,10 @@
     {
       "name": "kindMitHuette",
       "typ": "statist",
-      "feld": [31, 28],
+      "feld": [
+        31,
+        28
+      ],
       "eigenschaften": {
         "tun": "baut unter der Zeder eine Hütte aus Ästen",
         "wann": "tag",
@@ -880,7 +1333,10 @@
     {
       "name": "rentnerPicknick",
       "typ": "statist",
-      "feld": [26, 29],
+      "feld": [
+        26,
+        29
+      ],
       "eigenschaften": {
         "tun": "sitzt am Picknicktisch und liest Zeitung",
         "wann": "tag",
@@ -891,7 +1347,10 @@
     {
       "name": "brueckenbauer",
       "typ": "statist",
-      "feld": [48, 9],
+      "feld": [
+        48,
+        9
+      ],
       "eigenschaften": {
         "tun": "misst die Bretter der Brücke nach",
         "wann": "tag",
@@ -903,7 +1362,10 @@
     {
       "name": "zeitungsjunge",
       "typ": "statist",
-      "feld": [2, 23],
+      "feld": [
+        2,
+        23
+      ],
       "eigenschaften": {
         "tun": "trägt Zeitungen aus",
         "wann": "morgen",
@@ -914,7 +1376,10 @@
     {
       "name": "mutterMitKinderwagen",
       "typ": "statist",
-      "feld": [30, 23],
+      "feld": [
+        30,
+        23
+      ],
       "eigenschaften": {
         "tun": "schiebt einen Kinderwagen",
         "wann": "tag",
@@ -925,7 +1390,10 @@
     {
       "name": "radfahrer",
       "typ": "statist",
-      "feld": [1, 20],
+      "feld": [
+        1,
+        20
+      ],
       "eigenschaften": {
         "tun": "fährt mit dem Rad durch den Ort",
         "wann": "tag",
@@ -936,7 +1404,10 @@
     {
       "name": "enten",
       "typ": "tier",
-      "feld": [53, 24],
+      "feld": [
+        53,
+        24
+      ],
       "eigenschaften": {
         "verhalten": "schwimmen",
         "von": "53,20",
@@ -946,7 +1417,10 @@
     {
       "name": "eichhoernchen",
       "typ": "tier",
-      "feld": [30, 31],
+      "feld": [
+        30,
+        31
+      ],
       "eigenschaften": {
         "verhalten": "flitzen",
         "von": "29,31",
@@ -954,6 +1428,12 @@
       }
     }
   ],
-  "zustand": ["neu", "gebraucht", "alt"],
-  "markierung": ["s"]
+  "zustand": [
+    "neu",
+    "gebraucht",
+    "alt"
+  ],
+  "markierung": [
+    "s"
+  ]
 }

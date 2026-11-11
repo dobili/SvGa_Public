@@ -540,6 +540,12 @@
           "dialog": "ansehen-cedar-creek.schild_fluestern"
         },
         {
+          "name": "treppenhaus",
+          "karte": "cedarCreek.bibliothek",
+          "art": "gegenstand",
+          "dialog": "ansehen-cedar-creek.treppenhaus"
+        },
+        {
           "name": "boxerfoto",
           "karte": "cedarCreek.archiv",
           "art": "gegenstand",

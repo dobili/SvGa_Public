@@ -3,7 +3,7 @@
 // Je Raum drei Gegenstände (im Archiv zwei, dazu Karton und Programmheft der Geschichte) ohne
 // Spielwirkung (docs/spiel/09_Weltbeschreibung.md, Abschnitt 3 Punkt 2 und 5.3): beim ersten
 // Ansehen ein Satz (manchmal mit Ambrose), danach ein zweiter. Keine Quests, keine Belohnungen.
-// Einstiege wie in orte.json: zeitungsregal, globus, schild_fluestern, boxerfoto, wasserfleck,
+// Einstiege wie in orte.json: zeitungsregal, globus, schild_fluestern, treppenhaus, boxerfoto, wasserfleck,
 // zettel_turm, comicheft, automat.
 //
 // Variablen „angesehen…“ je Gegenstand, weil Ink-Besuchszähler einen neuen Dialog nicht
@@ -14,6 +14,7 @@ VAR angesehenGlobus = false
 VAR angesehenSchildFluestern = false
 VAR angesehenBoxerfoto = false
 VAR angesehenWasserfleck = false
+VAR angesehenTreppenhaus = false
 VAR angesehenZettelTurm = false
 VAR angesehenComicheft = false
 VAR angesehenAutomat = false
@@ -51,6 +52,16 @@ VAR angesehenAutomat = false
 
 // ---------------------------------------------------------------- Archiv
 
+=== treppenhaus ===
+{angesehenTreppenhaus:
+    Die Tür zum Treppenhaus bleibt zu. Oben knarrt eine Diele. #sprecher:erzaehler
+- else:
+    ~ angesehenTreppenhaus = true
+    Eine Tür mit einem Messingschild: „Treppenhaus. Magazin und Lesezimmer im ersten Stock, nur für Personal.“ #sprecher:erzaehler
+    Abgeschlossen. Von oben riecht es nach noch mehr Büchern. #sprecher:erzaehler
+}
+-> END
+
 === boxerfoto ===
 {angesehenBoxerfoto:
     Auf der Rückseite steht: „Verlor den Kampf. Gewann danach jede Schachpartie im Ort.“ #sprecher:erzaehler
@@ -63,10 +74,10 @@ VAR angesehenAutomat = false
 
 === wasserfleck ===
 {angesehenWasserfleck:
-    Der Springer an der Wand greift von seinem Feld aus drei Kartons auf einmal an. #sprecher:erzaehler
+    Der Springer auf dem Boden greift von seinem Feld aus drei Kartons auf einmal an. #sprecher:erzaehler
 - else:
     ~ angesehenWasserfleck = true
-    An der Wand ein Wasserfleck, genau in der Form eines Springers. #sprecher:erzaehler
+    Auf dem Steinboden ein dunkler Wasserfleck, genau in der Form eines Springers. #sprecher:erzaehler
     Selbst das Wasser in diesem Keller spielt Schach. Ich fühle mich hier wohl. #sprecher:ambrose #stimmung:lacht
 }
 -> END

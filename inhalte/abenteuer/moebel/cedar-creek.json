@@ -818,7 +818,12 @@
       "blick": "unten",
       "zustand": "gebraucht",
       "stil": "laendlich",
-      "tuer": [[2, 10]]
+      "tuer": [
+        [
+          2,
+          10
+        ]
+      ]
     },
     "cc4Wohnhaus": {
       "quelle": "modern-farm/Single_Files_16x16/Props_and_Buildings_16x16/Farmer_House_1_16x16.png",
@@ -978,18 +983,6 @@
       "zustand": "alt",
       "stil": "klassisch"
     },
-    "cc4SchildWaschsalon": {
-      "quelle": "spiel/eigene/schild_waschsalon.png",
-      "breite": 64,
-      "hoehe": 16,
-      "kollision": false,
-      "art": "schild",
-      "blick": "unten",
-      "zustand": "neu",
-      "stil": "modern",
-      "begehbar": true,
-      "begehbar_grund": "hängt an der Wand"
-    },
     "cc4Gleis": {
       "quelle": "modern-exteriors/Modern_Exteriors_16x16/ME_Theme_Sorter_16x16/20_Subway_and_Train_Station_Singles_16x16/ME_Singles_Subway_and_Train_Station_16x16_Brown_Rail_Modular_Horizontal.png",
       "breite": 16,
@@ -1058,8 +1051,14 @@
       "zustand": "alt",
       "stil": "klassisch",
       "tuer": [
-        [1, 7],
-        [2, 7]
+        [
+          1,
+          7
+        ],
+        [
+          2,
+          7
+        ]
       ],
       "maske": [
         "....",
@@ -1068,10 +1067,10 @@
         "###.",
         "###.",
         "###.",
-        "#...",
-        "#...",
-        "#...",
-        "#..."
+        "....",
+        "....",
+        "....",
+        "...."
       ]
     },
     "cc5Planke": {
@@ -1534,15 +1533,6 @@
       "zustand": "gebraucht",
       "stil": "klassisch"
     },
-    "cc8Saegebock": {
-      "quelle": "spiel/eigene/saegebock.png",
-      "breite": 32,
-      "hoehe": 32,
-      "kollision": true,
-      "art": "geraet",
-      "zustand": "gebraucht",
-      "stil": "rustikal"
-    },
     "cc8KulisseBauernhaus": {
       "quelle": "modern-farm/Single_Files_16x16/0_Complete_Tileset_Singles_16x16/Farmer_House_1_16x16.png",
       "breite": 128,
@@ -1741,7 +1731,7 @@
       "blick": "oben"
     },
     "cc12KartonsOben": {
-      "quelle": "spiel/eigene/archivkartons_oben.png",
+      "quelle": "spiel/eigene/archivkartons_tief_oben.png",
       "breite": 96,
       "hoehe": 32,
       "kollision": true,
@@ -1751,7 +1741,7 @@
       "blick": "unten"
     },
     "cc12KartonsUnten": {
-      "quelle": "spiel/eigene/archivkartons_unten.png",
+      "quelle": "spiel/eigene/archivkartons_tief_unten.png",
       "breite": 96,
       "hoehe": 32,
       "kollision": true,
@@ -1846,6 +1836,53 @@
       "zustand": "gebraucht",
       "stil": "klassisch",
       "blick": "unten"
+    },
+    "cc12SchuppenRot": {
+      "quelle": "modern-exteriors/Modern_Exteriors_16x16/ME_Theme_Sorter_16x16/17_Garden_Singles_16x16/ME_Singles_Garden_16x16_Red_Brown_Wood_Storage.png",
+      "breite": 48,
+      "hoehe": 64,
+      "kollision": true,
+      "art": "gebaeude",
+      "blick": "unten",
+      "zustand": "gebraucht",
+      "stil": "laendlich"
+    },
+    "cc12SchuppenBlau": {
+      "quelle": "modern-exteriors/Modern_Exteriors_16x16/ME_Theme_Sorter_16x16/17_Garden_Singles_16x16/ME_Singles_Garden_16x16_Blue_White_Wood_Storage.png",
+      "breite": 48,
+      "hoehe": 64,
+      "kollision": true,
+      "art": "gebaeude",
+      "blick": "unten",
+      "zustand": "gebraucht",
+      "stil": "laendlich",
+      "zum_wasser": true
+    },
+    "cc12SchuppenBraun": {
+      "quelle": "modern-exteriors/Modern_Exteriors_16x16/ME_Theme_Sorter_16x16/17_Garden_Singles_16x16/ME_Singles_Garden_16x16_Brown_Wood_Storage.png",
+      "breite": 48,
+      "hoehe": 64,
+      "kollision": true,
+      "art": "gebaeude",
+      "blick": "unten",
+      "zustand": "gebraucht",
+      "stil": "laendlich"
+    },
+    "cc12TreppeAb": {
+      "quelle": "spiel/eigene/treppe_ab_gelaender.png",
+      "breite": 96,
+      "hoehe": 80,
+      "kollision": true,
+      "art": "gelaender",
+      "zustand": "alt",
+      "stil": "klassisch",
+      "maske": [
+        "......",
+        "##..##",
+        "##..##",
+        "##..##",
+        "##..##"
+      ]
     }
   }
 }

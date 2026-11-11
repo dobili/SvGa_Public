@@ -547,6 +547,12 @@ Werkzeug erledigt, steht dabei; daran arbeiten die Helfer nicht vorbei.
    Heiße Quellen (Geysirbecken) haben statt Gras einen Sinterrand: `"ufer": "sinter"` (Bildwunsch
    `bildwuensche/wasser_sinter.py`, Boden `wasser_sinter`, Runde 9): heller Sinterwulst, oranger Saum,
    flaches türkises Wasser, gewellt.
+   Flüsse im roten Sand (Canyon) haben ein Sandufer: `"ufer": "rot"` (Bildwunsch
+   `bildwuensche/wasser_rot.py`, Boden `wasser_rot`, 11.11.2026), mit Schrägkacheln für Schleifen.
+   Eine Schlucht braucht eine hohe Wand: `"kante": "klippe"` mit `"klippenhoehe": 5` (Kante,
+   dreimal Wand, Fuß; ohne Angabe drei Reihen), darunter ein dunklerer Boden als auf der Hochfläche.
+   Roter Sand an Gras bekommt als Saum den Boden `sandRotRand` (`bildwuensche/sand_rot_gras.py`);
+   wandert die Grenze je Reihe um eine Spalte, wird sie eine schräge Linie statt einer Treppe.
    Pfützen im Stollen sind Möbel (`pfuetze_fels_klein`, `_gross`), kein Wasser.
 
 ### 10.2 Türen und Durchgänge

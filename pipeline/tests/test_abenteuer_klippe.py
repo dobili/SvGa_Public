@@ -163,3 +163,12 @@ def test_keine_flache_erdflaeche_in_den_klippenkarten():
             and feld[1] in (42, 43)
         ]
         assert not flach, f"{datei.name}: flache Erdfläche bei {flach[:5]}"
+
+
+def test_hohe_wand_wiederholt_die_felswand():
+    """Szene „klippenhoehe“: 5 (Canyonrand, 11.11.2026): Kante, dreimal Wand, Fuß."""
+    raster = ["....", "####", "####", "####", "####", "####", "...."]
+    reihen = [klippenfeld(raster, 1, y, GRAS, 5)[1] for y in range(1, 6)]
+    assert reihen == [REIHE_KANTE, REIHE_WAND, REIHE_WAND, REIHE_WAND, REIHE_FUSS]
+    # Ohne die Angabe bleibt es bei drei Reihen: Die oberen zwei sind dann Rand und Hochfläche.
+    assert [klippenfeld(raster, 1, y, GRAS)[1] for y in (1, 2, 3)] == [REIHE_RAND, REIHE_OBEN, REIHE_KANTE]

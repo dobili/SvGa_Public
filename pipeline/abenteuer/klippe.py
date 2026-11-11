@@ -18,6 +18,10 @@ Aufbau einer Kante (drei Reihen ``#`` über einem Boden, wie ``flaechen`` sie fi
 Links und rechts am Ende eines Abschnitts stehen die Randkacheln (Spalte 8 und 10), dazwischen die
 Mitte (Spalte 9). Liegt über der Kante kein Gras, nimmt die Klippe die Erdvariante (Spalten 14–16).
 Breite ``#``-Flächen ohne Boden darunter zeigen die obere Fläche (Reihe 43).
+
+Hohe Wände (Szene ``"klippenhoehe": 5``, Gutachten Canyonrand 11.11.2026: „Eine Schlucht wirkt so wie
+eine Bordsteinkante“): Das Band ist dann so viele Reihen hoch; oben die Kante, unten der Fuß,
+dazwischen wiederholt sich die Felswand. Ohne Angabe bleibt es bei drei Reihen.
 """
 
 from pathlib import Path
@@ -32,6 +36,8 @@ REIHE_RAND, REIHE_KANTE, REIHE_WAND, REIHE_FUSS, REIHE_OBEN = 42, 44, 45, 46, 43
 # In den Fels geschlagene Treppe, eine Kachel breit: oben mit Kappe, Mitte, unten mit Grasfuß.
 TREPPE = {"oben": (25, 47), "mitte": (25, 46), "unten": (25, 48)}
 WAND = "#"
+# Höhe einer Kante in Reihen, wenn die Szene nichts sagt (Kante, Wand, Fuß).
+HOEHE_STANDARD = 3
 # Breiteste Rampe, die als Treppe durch eine Kante gilt (Grube: vier Felder).
 BREITE_RAMPE = 4
 
@@ -40,7 +46,7 @@ def _ist_wand(zeilen: list[str], x: int, y: int) -> bool:
     return 0 <= y < len(zeilen) and 0 <= x < len(zeilen[0]) and zeilen[y][x] == WAND
 
 
-def _rolle(zeilen: list[str], x: int, y: int) -> str | None:
+def _rolle(zeilen: list[str], x: int, y: int, hoehe: int = HOEHE_STANDARD) -> str | None:
     """Welche Reihe der Kante (x, y) ist: „kante“, „wand“, „fuss“ oder None (keine Kante darunter)."""
     if not _ist_wand(zeilen, x, y):
         return None
@@ -50,13 +56,18 @@ def _rolle(zeilen: list[str], x: int, y: int) -> str | None:
     if x in (0, breite - 1) and breite > 2:
         innen = 1 if x == 0 else breite - 2
         if _ist_wand(zeilen, innen, y):
-            return _rolle_ohne_rand(zeilen, innen, y)
-    return _rolle_ohne_rand(zeilen, x, y)
+            return _rolle_ohne_rand(zeilen, innen, y, hoehe)
+    return _rolle_ohne_rand(zeilen, x, y, hoehe)
 
 
-def _rolle_ohne_rand(zeilen: list[str], x: int, y: int) -> str | None:
-    """Rolle nach den Feldern darunter (siehe ``_rolle``), ohne die Fortsetzung am Rand."""
-    for abstand, rolle in ((1, "fuss"), (2, "wand"), (3, "kante")):
+def _rolle_ohne_rand(zeilen: list[str], x: int, y: int, hoehe: int = HOEHE_STANDARD) -> str | None:
+    """Rolle nach den Feldern darunter (siehe ``_rolle``), ohne die Fortsetzung am Rand.
+
+    Beispiel mit ``hoehe`` 5: das Feld direkt über dem Boden ist „fuss“, die drei darüber „wand“,
+    das fünfte „kante“; ein sechstes Wandfeld darüber gehört nicht mehr zur Kante (None).
+    """
+    for abstand in range(1, hoehe + 1):
+        rolle = "fuss" if abstand == 1 else "kante" if abstand == hoehe else "wand"
         unten = y + abstand
         if unten >= len(zeilen):
             return None
@@ -74,10 +85,13 @@ def _variante(zeilen: list[str], x: int, y: int, grasboden: set[str]) -> str:
     return "gras" if zeichen in grasboden else "erde"
 
 
-def klippenfeld(zeilen: list[str], x: int, y: int, grasboden: set[str]) -> tuple[int, int] | None:
+def klippenfeld(
+    zeilen: list[str], x: int, y: int, grasboden: set[str], hoehe: int = HOEHE_STANDARD
+) -> tuple[int, int] | None:
     """Die Kachel des Geländebogens für das Wandfeld (x, y), oder None.
 
-    Eingaben: Raster der Szene, Feld, die Rasterzeichen, die in der Szene Gras sind.
+    Eingaben: Raster der Szene, Feld, die Rasterzeichen, die in der Szene Gras sind, die Höhe der
+    Kante in Reihen (Szene „klippenhoehe“, sonst drei).
     Ausgabe: (Spalte, Reihe) im Geländebogen.
     Beispiel: Band aus drei Reihen „#“ zwischen Wiese oben und Schotter unten → oben Reihe 44,
     Mitte 45, unten 46; am linken Ende des Bands Spalte 8.
@@ -85,11 +99,11 @@ def klippenfeld(zeilen: list[str], x: int, y: int, grasboden: set[str]) -> tuple
     """
     if not _ist_wand(zeilen, x, y):
         return None
-    rolle = _rolle(zeilen, x, y)
+    rolle = _rolle(zeilen, x, y, hoehe)
     breite = len(zeilen[0])
     if rolle is not None and x in (0, breite - 1) and breite > 2:
         # Randspalte: dieselbe Kachel wie das Band daneben, als Mitte (das Band läuft weiter).
-        innen = klippenfeld(zeilen, 1 if x == 0 else breite - 2, y, grasboden)
+        innen = klippenfeld(zeilen, 1 if x == 0 else breite - 2, y, grasboden, hoehe)
         if innen is not None:
             variante = "gras" if innen[0] in SPALTEN["gras"] else "erde"
             return (SPALTEN[variante][1], innen[1])
@@ -97,8 +111,8 @@ def klippenfeld(zeilen: list[str], x: int, y: int, grasboden: set[str]) -> tuple
     if rolle is None:
         return None if _rand_neben_boden(zeilen, x, y) else _flaechenfeld(zeilen, x, y, grasboden)
     reihe = {"kante": REIHE_KANTE, "wand": REIHE_WAND, "fuss": REIHE_FUSS}[rolle]
-    ende_links = _rolle(zeilen, x - 1, y) != rolle or not _ist_wand(zeilen, x - 1, y)
-    ende_rechts = _rolle(zeilen, x + 1, y) != rolle or not _ist_wand(zeilen, x + 1, y)
+    ende_links = _rolle(zeilen, x - 1, y, hoehe) != rolle or not _ist_wand(zeilen, x - 1, y)
+    ende_rechts = _rolle(zeilen, x + 1, y, hoehe) != rolle or not _ist_wand(zeilen, x + 1, y)
     spalte = links if ende_links and not ende_rechts else rechts if ende_rechts and not ende_links else mitte
     return (spalte, reihe)
 

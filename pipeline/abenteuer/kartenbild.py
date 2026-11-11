@@ -18,6 +18,7 @@ from pipeline.abenteuer.bodenvariation import lade_kachel, variiere
 from pipeline.abenteuer.kartenbau import GESPERRT, INHALTE, LEER, WAND, WASSER, K, lade, platziere, raster
 from pipeline.abenteuer.katalog import katalogbefund, katalogeintraege
 from pipeline.abenteuer.klippe import (
+    HOEHE_STANDARD,
     REIHE_RAND,
     grasboden,
     klippenbogen,
@@ -124,7 +125,7 @@ def hintergrund(szene: dict, privat: Path, gezeichnet: dict | None = None) -> Im
     # Der Rand bleibt dann Boden, nur „#“ über einem Boden wird Hang oder Felswand (10.45).
     flaeche = flaechen(zeilen, szene.get("art") == "innen") if not wandart or "krone" in wand else {}
     # Felskanten und Treppen aus LimeZus Klippenkacheln (Szene „kante“: „klippe“, klippe.py).
-    klippe = szene.get("kante") == "klippe"
+    klippe, klippenhoehe = szene.get("kante") == "klippe", szene.get("klippenhoehe", HOEHE_STANDARD)
     gras, klippenart = grasboden(szene), {"bogen": klippenbogen(szene, privat)}
     ueber = brueckenzeichen(szene)  # Holzböden, unter denen das Wasser weiterläuft
     for y, zeile in enumerate(zeilen):
@@ -133,7 +134,7 @@ def hintergrund(szene: dict, privat: Path, gezeichnet: dict | None = None) -> Im
             # Randwände draußen zeigen auch mit Klippen den Boden dahinter (Regel 10.2), sonst wird der
             # Kartenrand zur erdigen Dachfläche (Port Delacroix, Runde 9).
             am_rand = wandart is not None and z == WAND and randnachbar(zeilen, x, y) is not None
-            if klippe and not am_rand and (feld := klippenfeld(zeilen, x, y, gras)) is not None:
+            if klippe and not am_rand and (feld := klippenfeld(zeilen, x, y, gras, klippenhoehe)) is not None:
                 if feld[1] == REIHE_RAND:  # Rand der Hochfläche: oben schaut der Boden darüber durch
                     art = boeden[sonder.get(roh[y - 1][x], grund)]
                     bild.alpha_composite(kachel(privat, boegen, art, bodenfeld(art, roh, x, y - 1)), ort)

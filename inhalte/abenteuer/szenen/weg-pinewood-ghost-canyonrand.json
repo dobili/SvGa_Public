@@ -2,43 +2,44 @@
   "karte": "wegPinewoodGhost.canyonrand",
   "datei": "karten/weg-pinewood-ghost-canyonrand.json",
   "art": "aussen",
-  "beschreibung": "Weg 10 am Canyonrand: Von Westen kommt der Weg aus dem Kiefernwald (Bänke, Blumen, Tafel), im Osten wird der Boden zu rotem Fels mit Kakteen; die Grenze läuft als schräge Linie durch den Wald. Der Weg läuft nahe an der Kante entlang, dazwischen nur ein schmaler Felsstreifen mit Bänken; die Kante springt in Wellen vor und zurück. Darunter fällt eine Felswand in den Canyon, an ihr zwei Kletterrouten mit Griffen und Seilen (Juniper): Felsblöcke, die auf dem Canyonboden stehen und bis zur Kante reichen; unten windet sich ein Fluss in Schleifen durch den roten Sand, mit Felsen und Kakteen am Ufer.",
+  "beschreibung": "Weg 10 am Canyonrand: Von Westen kommt der Weg aus dem Kiefernwald (Bänke, Blumen, Tafel), im Osten wird der Boden zu rotem Sand mit Kakteen; die Grenze läuft als schräge Linie durch den Wald. Der Weg läuft gerade und nahe an der Kante entlang, dazwischen nur ein schmaler Streifen mit Bänken; die Kante springt in weiten Buchten vor und zurück. Darunter fällt eine fünf Reihen hohe rote Felswand in den Canyon, an ihr zwei Kletterrouten mit Griffen und Seilen (Juniper): Felsblöcke, die auf dem Canyonboden stehen und bis zur Kante reichen. Der Canyonboden ist dunkler Fels im Schatten der Wand; darin windet sich ein Fluss in Schleifen, mit hellen Sandbänken am Ufer, Felsen und Kakteen.",
   "wand": "felsRot",
   "boden": "gras",
   "boeden": {
     "e": "erde",
-    "r": "felsbodenRot",
-    "f": "sandRot"
+    "s": "sandRot",
+    "g": "sandRotRand",
+    "f": "felsbodenRot"
   },
   "raster": [
     "######################################################################################################################################################",
-    "#..................................................................................rrrrrrrrrrrrrrrrrrrrrrrrrrrrrrrrrrrrrrrrrrrrrrrrrrrrrrrrrrrrrrrrrr#",
-    "#...................................................................................rrrrrrrrrrrrrrrrrrrrrrrrrrrrrrrrrrrrrrrrrrrrrrrrrrrrrrrrrrrrrrrrr#",
-    "#....................................................................................rrrrrrrrrrrrrrrrrrrrrrrrrrrrrrrrrrrrrrrrrrrrrrrrrrrrrrrrrrrrrrrr#",
-    "#....................................................................................rrrrrrrrrrrrrrrrrrrrrrrrrrrrrrrrrrrrrrrrrrrrrrrrrrrrrrrrrrrrrrrr#",
-    "#.....................................................................................rrrrrrrrrrrrrrrrrrrrrrrrrrrrrrrrrrrrrrrrrrrrrrrrrrrrrrrrrrrrrrr#",
-    "#......................................................................................rrrrrrrrrrrrrrrrrrrrrrrrrrrrrrrrrrrrrrrrrrrrrrrrrrrrrrrrrrrrrr#",
-    "#......................................................................................rrrrrrrrrrrrrrrrrrrrrrrrrrrrrrrrrrrrrrrrrrrrrrrrrrrrrrrrrrrrrr#",
-    "#.......................................................................................rrrrrrrrrrrrrrrrrrrrrrrrrrrrrrrrrrrrrrrrrrrrrrrrrrrrrrrrrrrrr#",
-    "#........................................................................................rrrrrrrrrrrrrrrrrrrrrrrrrrrrrrrrrrrrrrrrrrrrrrrrrrrrrrrrrrrr#",
-    "#........................................................................................rrrrrrrrrrrrrrrrrrrrrrrrrrrrrrrrrrrrrrrrrrrrrrrrrrrrrrrrrrrr#",
-    "#...........................................eeeeeeeeeeee..................................rrrrrrrrrrrrrrrrreeeeeeeeeeeerrrrrrrrrrrrrrrrrrrrrrrrrrrrrr#",
-    "#.....................................eeeeeeeeeeeeeeeeeeeeee...............................rrrrrrrrrrrreeeeeeeeeeeeeeeeeeeeeerrrrrrrrrrrrrrrrrrrrrrrr#",
-    "#....................eeeeeeeeeeeeeeeeeeeeeeeeeeeeeeeeeeeeeeeeeee............................rrrrrrreeeeeeeeeeeeeeeeeeeeeeeeeeeeeeeeeeeeeeeeeerrrrrrrr#",
-    "eeeeeeeee.......eeeeeeeeeeeeeeeeeeeeeeeeeeeerrrrrrrrrrrreeeeeeeeeeeeeeeeeeeeeeeeeeeeeeeeeeeeeeeeeeeeeeeeeeerrrrrrrrrrrreeeeeeeeeeeeeeeeeeeeeeeeeeeeeee",
-    "eeeeeeeeeeeeeeeeeeeeeeeeeeeeeeeeeeeeeerrrrrrrrrrrrrrrrrrrrrreeeeeeeeeeeeeeeeeeeeeeeeeeeeeeeeeeeeeeeeeeerrrrrrrrrrrrrrrrrrrrrreeeeeeeeeeeeeeeeeeeeeeeee",
-    "#eeeeeeeeeeeeeeeeeeeerrrrrrrrrrrrrrrrrrrrrrrrrrrrrrrrrrrrrrrrrrreeeeeeeeeeeeeeeeeeeeeeeeeeeeeeeeeeerrrrrrrrrrrrrrrrrrrrrrrrrrrrrrrrrrrrrrrrrreeeeeeee#",
-    "#rrrrrrrreeeeeeerrrrrrrrrrrrrrrrrrrrrrrrrrrr############rrrrrrrrrrrrrrrrrrrrr#######rrrrrrrrrrrrrrrr###################rrrrrrrrrrrrrrrrrrrrrrrrrrrrrr#",
-    "#rrrrrrrrrrrrrrrrrrrrrrrrrrrrrrrrrrrrr######################rrrrrrrrrrrrrrrrr#######rrrrrrrrrrrrrrrr#########################rrrrrrrrrrrrrrrrrrrrrrrr#",
-    "#rrrrrrrrrrrrrrrrrrrr###########################################rrrrrrrrrrrrr#######rrrrrrrrrrrrrrrr##########################################rrrrrrr#",
-    "####rrrrrrrrrrrr############################ffffffffffff#####################fffffff################fffffffffffffffffff#############################r#",
-    "######################################ffffffffffffffffffffff#################fffffff################fffffffffffffffffffffffff#########################",
-    "#####################fffffffffffffffffffffffffffffffffffffffffff#############fffffff################ffffffffffffffffffffffffffffffffffffffffff########",
-    "#fff############fffff~~~~~~~~~~~~~~~~~~~~~fffffffffffffffffffffffffffffffffffffffffffffffffffffffffffffffffffffffffffff~~~~~~~~~~~~~~~~~~~~~~~ffffff##",
-    "#fffffffffffffff~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~fffffffffffffffff~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~fffffffffffffffff~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~ff#",
-    "#~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~#",
-    "#~~~~~~~~~~~~~~~~~~~~fffffffffffffffffffff~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~fffffffffffffffffffffff~~~~~~~#",
-    "#~~~~~~~~~~~~~~~fffffffffffffffffffffffffffffff~~~~~~~~~~~~~~~~~fffffffffffffffffffffffffffffffff~~~~~~~~~~~~~~~~~fffffffffffffffffffffffffffffffff~~#",
+    "#.............................................................................ggsssssssssssssssssssssssssssssssssssssssssssssssssssssssssssssssssssss#",
+    "#..............................................................................ggssssssssssssssssssssssssssssssssssssssssssssssssssssssssssssssssssss#",
+    "#...............................................................................ggsssssssssssssssssssssssssssssssssssssssssssssssssssssssssssssssssss#",
+    "#................................................................................ggssssssssssssssssssssssssssssssssssssssssssssssssssssssssssssssssss#",
+    "#.................................................................................ggsssssssssssssssssssssssssssssssssssssssssssssssssssssssssssssssss#",
+    "#..................................................................................ggssssssssssssssssssssssssssssssssssssssssssssssssssssssssssssssss#",
+    "#...................................................................................ggsssssssssssssssssssssssssssssssssssssssssssssssssssssssssssssss#",
+    "#....................................................................................ggssssssssssssssssssssssssssssssssssssssssssssssssssssssssssssss#",
+    "#.....................................................................................ggsssssssssssssssssssssssssssssssssssssssssssssssssssssssssssss#",
+    "#......................................................................................ggssssssssssssssssssssssssssssssssssssssssssssssssssssssssssss#",
+    "#.......................................................................................ggsssssssssssssssssssssssssssssssssssssssssssssssssssssssssss#",
+    "#........................................................................................ggssssssssssssssssssssssssssssssssssssssssssssssssssssssssss#",
+    "#eeeeeeeeeeeeeeeeeeeeeeeeeeeeeeeeeeeeeeeeeeeeeeeeeeeeeeeeeeeeeeeeeeeeeeeeeeeeeeeeeeeeeeeeeeeeeeeeeeeeeeeeeeeeeeeeeeeeeeeeeeeeeeeeeeeeeeeeeeeeeeeeeeee#",
+    "eeeeeeeeeeeeeeeeeeeeeeeeeeeeeeeeeeeeeeeeeeeeeeeeeeeeeeeeeeeeeeeeeeeeeeeeeeeeeeeeeeeeeeeeeeeeeeeeeeeeeeeeeeeeeeeeeeeeeeeeeeeeeeeeeeeeeeeeeeeeeeeeeeeeee",
+    "eeeeeeeeeeeeeeeeeeeeeeeeeeeeeeeeeeeeeeeeeeeeeeeeeeeeeeeeeeeeeeeeeeeeeeeeeeeeeeeeeeeeeeeeeeeeeeeeeeeeeeeeeeeeeeeeeeeeeeeeeeeeeeeeeeeeeeeeeeeeeeeeeeeeee",
+    "#.........................................ggggggggggggggggggggggggggggggggggggggggg.......ggsssssssssssssssssssssssssssssssssssssssssssssssssssssssss#",
+    "#..............................ggggggggggg#########################################........ggsssss##############sssssssssss###########################",
+    "#gggggggggggggggggggggggggggggg####################################################gggggggggggssss####################################################",
+    "######################################################################################################################################################",
+    "######################################################################################################################################################",
+    "######################################################################################################################################################",
+    "##########################################fffffffffffffffffffffffffffffffffffffffff###############ffffffffffffff###########ffffffffffffffffffffffffff#",
+    "###############################fffffffffffffffffffffffffff~~~~~~~~~~~~~~~ffffffffff###############ff~~~~~~~~~~~~fffffffffffffffffffffffffff~~~~~~~~~~~",
+    "#ffffffffffffffffffffffffffffff~~~~~~ffffffffffffffff~~~~~~~~~~~~~~~~~~~~~~~~~ffffffffffffffffffff~~~~~~~~~~~~~~~~~~~~~ffffffffffffffff~~~~~~~~~~~~~~~",
+    "~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~",
+    "~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~fffffffffffffff~~~~~~~~~~~~~~~~~~~~~~~~~~~ffffffffffff~~~~~~~~~~~~~~~~~~~~~~~~~~~ffffffffff#",
+    "~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~ffffff~~~~~~~~~~~~~~~~fffffffffffffffffffffffff~~~~~~~~~~~~~~~~~~~~fffffffffffffffffffff~~~~~~~~~~~~~~~~ffffffffffffff#",
     "#ffffffffffffffffffffffffffffffffffffffffffffffffffffffffffffffffffffffffffffffffffffffffffffffffffffffffffffffffffffffffffffffffffffffffffffffffffff#",
     "######################################################################################################################################################"
   ],
@@ -51,17 +52,17 @@
     },
     {
       "moebel": "pg7SeilHaken",
-      "feld": [72, 18],
+      "feld": [72, 16],
       "vorn": true
     },
     {
       "moebel": "pg7SeilHaken",
-      "feld": [74, 18],
+      "feld": [74, 16],
       "vorn": true
     },
     {
       "moebel": "pg7SeilHaken",
-      "feld": [76, 18],
+      "feld": [76, 16],
       "vorn": true
     },
     {
@@ -70,11 +71,11 @@
     },
     {
       "moebel": "mfBank",
-      "feld": [40, 15]
+      "feld": [39, 11]
     },
     {
       "moebel": "mfBank",
-      "feld": [96, 17]
+      "feld": [93, 11]
     },
     {
       "moebel": "mf4Wegweiser",
@@ -281,16 +282,8 @@
       "feld": [110, 4]
     },
     {
-      "moebel": "felsKlein",
-      "feld": [116, 4]
-    },
-    {
       "moebel": "dd6Saguaro",
       "feld": [126, 1]
-    },
-    {
-      "moebel": "dd6KaktusBluehend",
-      "feld": [134, 3]
     },
     {
       "moebel": "felsKlein",
@@ -309,22 +302,6 @@
       "feld": [99, 7]
     },
     {
-      "moebel": "dd6Saguaro",
-      "feld": [119, 5]
-    },
-    {
-      "moebel": "dd6KaktusBluehend",
-      "feld": [130, 8]
-    },
-    {
-      "moebel": "felsKlein",
-      "feld": [134, 5]
-    },
-    {
-      "moebel": "dd6Saguaro",
-      "feld": [140, 6]
-    },
-    {
       "moebel": "dd6KaktusBluehend",
       "feld": [92, 9]
     },
@@ -334,15 +311,11 @@
     },
     {
       "moebel": "dd6Saguaro",
-      "feld": [109, 13]
-    },
-    {
-      "moebel": "dd6KaktusBluehend",
-      "feld": [117, 15]
+      "feld": [109, 12]
     },
     {
       "moebel": "felsKlein",
-      "feld": [122, 15]
+      "feld": [125, 16]
     },
     {
       "moebel": "wg4BlumeGelb",
@@ -474,7 +447,7 @@
     },
     {
       "moebel": "wg4BlumeGelb",
-      "feld": [16, 13]
+      "feld": [16, 12]
     },
     {
       "moebel": "wg4BlumeRot",
@@ -486,15 +459,15 @@
     },
     {
       "moebel": "wg4BlumeRot",
-      "feld": [73, 13]
+      "feld": [73, 12]
     },
     {
       "moebel": "wg4BlumeGelb",
-      "feld": [13, 14]
+      "feld": [13, 12]
     },
     {
       "moebel": "wg4BlumeRot",
-      "feld": [20, 13]
+      "feld": [20, 12]
     },
     {
       "moebel": "wg4BlumeGelb",
@@ -506,7 +479,7 @@
     },
     {
       "moebel": "wg4BlumeGelb",
-      "feld": [64, 13]
+      "feld": [64, 12]
     },
     {
       "moebel": "wg4BlumeRot",
@@ -514,11 +487,11 @@
     },
     {
       "moebel": "wg4BlumeGelb",
-      "feld": [82, 13]
+      "feld": [82, 12]
     },
     {
       "moebel": "cp8Finkenzeichen",
-      "feld": [43, 17],
+      "feld": [43, 16],
       "id": "ereignis117"
     },
     {
@@ -532,7 +505,7 @@
     },
     {
       "moebel": "dd6KaktusKlein",
-      "feld": [30, 27]
+      "feld": [30, 28]
     },
     {
       "moebel": "felsKlein",
@@ -545,6 +518,50 @@
     {
       "moebel": "felsKlein",
       "feld": [123, 28]
+    },
+    {
+      "moebel": "dd6Felsbogen",
+      "feld": [112, 3]
+    },
+    {
+      "moebel": "dd6Felsbogen",
+      "feld": [130, 2]
+    },
+    {
+      "moebel": "dd6Kaktus",
+      "feld": [104, 10]
+    },
+    {
+      "moebel": "dd6KaktusOhne",
+      "feld": [99, 10]
+    },
+    {
+      "moebel": "dd6KaktusBluehend",
+      "feld": [123, 6]
+    },
+    {
+      "moebel": "felsKlein",
+      "feld": [145, 6]
+    },
+    {
+      "moebel": "dd6KaktusBluehend",
+      "feld": [97, 3]
+    },
+    {
+      "moebel": "felsKlein",
+      "feld": [126, 9]
+    },
+    {
+      "moebel": "dd6SteinFlach",
+      "feld": [104, 5]
+    },
+    {
+      "moebel": "dd6SteinFlach",
+      "feld": [108, 9]
+    },
+    {
+      "moebel": "dd6Saguaro",
+      "feld": [145, 9]
     }
   ],
   "ausloeser": [
@@ -577,7 +594,7 @@
     },
     {
       "name": "finchBauerE",
-      "feld": [43, 17]
+      "feld": [43, 16]
     },
     {
       "name": "kletterwand",
@@ -594,10 +611,10 @@
     {
       "name": "kletterer",
       "typ": "statist",
-      "feld": [82, 20],
+      "feld": [82, 16],
       "eigenschaften": {
-        "von": "82,20",
-        "bis": "82,20",
+        "von": "82,16",
+        "bis": "82,16",
         "tun": "sichert das Seil",
         "wann": "tag",
         "sagt": "statist.wegPinewoodGhost.canyonrand.kletterer"
@@ -681,10 +698,10 @@
     {
       "name": "hase",
       "typ": "tier",
-      "feld": [130, 8],
+      "feld": [128, 12],
       "eigenschaften": {
-        "von": "130,8",
-        "bis": "124,8",
+        "von": "128,12",
+        "bis": "122,12",
         "verhalten": "flitzen"
       }
     },
@@ -701,6 +718,9 @@
   ],
   "zustand": ["neu", "gebraucht", "alt"],
   "stil": ["natur", "einfach", "laendlich", "klassisch", "landhaus"],
-  "wandart": "sandRot",
-  "ufer": null
+  "wandart": "felsbodenRot",
+  "ufer": "rot",
+  "kante": "klippe",
+  "fels": "rot",
+  "klippenhoehe": 5
 }

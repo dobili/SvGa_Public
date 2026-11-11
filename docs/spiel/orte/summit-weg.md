@@ -408,3 +408,10 @@ sie Viertelbögen (`"kehren": "rund"` in der Szene, neues Modul `pipeline/abente
   Befund.
 - **Nicht gemacht:** schräge Ränder für Fahrbahnen, die um ein Feld versetzt weiterlaufen. Die Bergstraße
   hat keine solche Stelle.
+
+## Hinterzimmer, zweite Prüfung (11.11.2026, mittel-4)
+
+Gutachten `weg-desert-summit-hinterzimmer-2.md`, Befund 1: Die Hocker verschwanden hinter den Figuren. Jetzt
+sitzen vier Spieler sichtbar auf Stühlen mit Lehne: je einer nördlich der Tische von Mags und Ruth Keene,
+zwei am dritten Tisch (nördlich und südlich). Der dritte Tisch steht dafür bei (3, 6), Mags steht rechts
+von ihrem Brett (7, 5). Befunde 2 und 3 (Kistenstapel, Kreidespringer am Tafelrand) bleiben.

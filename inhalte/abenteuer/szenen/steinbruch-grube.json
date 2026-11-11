@@ -3,7 +3,7 @@
   "datei": "karten/steinbruch-grube.json",
   "art": "aussen",
   "toenung": "nebel",
-  "beschreibung": "Der alte Steinbruch Hargrove & Söhne hinter Ironwood (Runde 8), ein kühler Morgen. Die Karte zeigt die Grube von oben in drei Höhen: oben die Wiese an der Bruchkante, darunter die Abbaustufe aus Felsboden, ganz unten die Sohle aus Schotter. Die Kanten verlaufen unregelmäßig, am Fuß liegt Geröll; Rampen führen schräg hinunter, oben im Osten, auf der Stufe zurück nach Westen und dort zur Sohle. Die Zufahrt kommt am Westrand zwischen zwei Pollern mit Schild herein, die Bude hat ihre Tür zur Zufahrt, Aussichtspunkt mit Eisengeländer und Bank blicken in die Tiefe, Birken stehen an der Kante. Auf der Stufe lagern gesägte Blöcke in Reihen, dazu Abraum, Pfützen und Grubenholz. Auf der Sohle liegt ein natürliches Wasserloch mit Schilf und Seerosen; die gepflasterte Rampe im Westen ist die alte Fahrrampe der Laster. Der Stollenmund sitzt in der unteren Felskante; die Feldbahn läuft von dort mit zwei Loren nach Süden bis zum Prellbock am Verladeplatz, wo der alte Radlader steht. Bretterhütte für Werkzeug im Westen, Graffiti an der Felswand im Nordosten.",
+  "beschreibung": "Der alte Steinbruch Hargrove & Söhne hinter Ironwood (Runde 8), ein kühler Morgen. Die Karte zeigt die Grube von oben in drei Höhen: oben die Wiese an der Bruchkante, darunter die Abbaustufe aus Felsboden, ganz unten die Sohle aus Schotter. Die Kanten verlaufen unregelmäßig, am Fuß liegt Geröll; Rampen führen schräg hinunter, oben im Osten, auf der Stufe zurück nach Westen und dort zur Sohle. Die Zufahrt kommt am Westrand zwischen zwei Pollern mit Schild herein, die Bude hat ihre Tür zur Zufahrt, Aussichtspunkt mit Eisengeländer und Bank blicken in die Tiefe, Birken stehen an der Kante. Auf der Stufe liegen gesägte Blöcke in losen Gruppen, wie die Arbeit sie liegen ließ, dazu Bauholz, Schotterhaufen, Abraum und Pfützen. Auf der Sohle liegt ein natürliches Wasserloch mit Schilf und Seerosen; neben dem Wasserloch liegen Steinpaletten, Bohlen, ein Karren und Schotterhaufen, im Südosten Bauholz und Werkzeug; die gepflasterte Rampe im Westen ist die alte Fahrrampe der Laster. Der Stollenmund sitzt in der unteren Felskante; die Feldbahn läuft von dort mit zwei Loren nach Süden bis zum Prellbock am Verladeplatz, wo der alte gelbe Raupenbagger steht. Bretterhütte für Werkzeug im Westen, Graffiti an der Felswand im Nordosten.",
   "wand": "fels",
   "kante": "klippe",
   "boden": "gras",
@@ -246,70 +246,6 @@
     {
       "moebel": "scFelsGross",
       "feld": [59, 29]
-    },
-    {
-      "moebel": "st8Granitquader",
-      "feld": [16, 17]
-    },
-    {
-      "moebel": "st8Granitquader",
-      "feld": [16, 21]
-    },
-    {
-      "moebel": "st8Granitquader",
-      "feld": [20, 17]
-    },
-    {
-      "moebel": "st8Granitquader",
-      "feld": [18, 22]
-    },
-    {
-      "moebel": "st8GranitquaderStapel",
-      "feld": [22, 16]
-    },
-    {
-      "moebel": "st8Granitquader",
-      "feld": [21, 21]
-    },
-    {
-      "moebel": "st8Granitquader",
-      "feld": [25, 17]
-    },
-    {
-      "moebel": "st8Granitquader",
-      "feld": [25, 21]
-    },
-    {
-      "moebel": "st8Granitquader",
-      "feld": [29, 17]
-    },
-    {
-      "moebel": "st8Granitquader",
-      "feld": [29, 21]
-    },
-    {
-      "moebel": "st8Granitquader",
-      "feld": [40, 16]
-    },
-    {
-      "moebel": "st8Granitquader",
-      "feld": [40, 22]
-    },
-    {
-      "moebel": "st8Granitquader",
-      "feld": [44, 17]
-    },
-    {
-      "moebel": "st8Granitquader",
-      "feld": [42, 22]
-    },
-    {
-      "moebel": "st8Granitquader",
-      "feld": [45, 16]
-    },
-    {
-      "moebel": "st8Granitquader",
-      "feld": [45, 21]
     },
     {
       "moebel": "cc7Bretterstapel",
@@ -573,6 +509,170 @@
     {
       "moebel": "st8Granitquader",
       "feld": [44, 44]
+    },
+    {
+      "moebel": "st8Granitquader",
+      "feld": [16, 17]
+    },
+    {
+      "moebel": "st8Granitquader",
+      "feld": [18, 17]
+    },
+    {
+      "moebel": "st8GranitquaderStapel",
+      "feld": [17, 19]
+    },
+    {
+      "moebel": "st8Granitquader",
+      "feld": [21, 18]
+    },
+    {
+      "moebel": "st8Granitquader",
+      "feld": [26, 21]
+    },
+    {
+      "moebel": "st8Granitquader",
+      "feld": [28, 21]
+    },
+    {
+      "moebel": "st8Granitquader",
+      "feld": [27, 19]
+    },
+    {
+      "moebel": "st8GranitquaderStapel",
+      "feld": [24, 16]
+    },
+    {
+      "moebel": "st8Granitquader",
+      "feld": [35, 17]
+    },
+    {
+      "moebel": "st8Granitquader",
+      "feld": [41, 16]
+    },
+    {
+      "moebel": "st8Granitquader",
+      "feld": [43, 17]
+    },
+    {
+      "moebel": "st8GranitquaderStapel",
+      "feld": [45, 16]
+    },
+    {
+      "moebel": "st8Granitquader",
+      "feld": [44, 20]
+    },
+    {
+      "moebel": "st8Granitquader",
+      "feld": [39, 21]
+    },
+    {
+      "moebel": "st5Bauholz",
+      "feld": [31, 20]
+    },
+    {
+      "moebel": "st5Schotterhaufen",
+      "feld": [20, 22]
+    },
+    {
+      "moebel": "st5Schotterhaufen",
+      "feld": [33, 22]
+    },
+    {
+      "moebel": "st5Werkzeugkiste",
+      "feld": [47, 20]
+    },
+    {
+      "moebel": "st5Steinpalette",
+      "feld": [5, 35]
+    },
+    {
+      "moebel": "st5Steinpalette",
+      "feld": [5, 38]
+    },
+    {
+      "moebel": "st5Bohlen",
+      "feld": [10, 35]
+    },
+    {
+      "moebel": "st5Schotterhaufen",
+      "feld": [12, 41]
+    },
+    {
+      "moebel": "st5Schotterhaufen",
+      "feld": [8, 42]
+    },
+    {
+      "moebel": "st5Lore",
+      "feld": [15, 37]
+    },
+    {
+      "moebel": "st5BirkeKlein",
+      "feld": [3, 42]
+    },
+    {
+      "moebel": "wg4Busch",
+      "feld": [16, 42]
+    },
+    {
+      "moebel": "wg4Gras",
+      "feld": [10, 44]
+    },
+    {
+      "moebel": "wg4Gras",
+      "feld": [17, 39]
+    },
+    {
+      "moebel": "wg4Gras",
+      "feld": [13, 34]
+    },
+    {
+      "moebel": "st5PfuetzeGross",
+      "feld": [9, 46]
+    },
+    {
+      "moebel": "st5Lichtmast",
+      "feld": [17, 44]
+    },
+    {
+      "moebel": "st8Granitquader",
+      "feld": [12, 36]
+    },
+    {
+      "moebel": "st5Schotterhaufen",
+      "feld": [39, 43]
+    },
+    {
+      "moebel": "st5Schotterhaufen",
+      "feld": [44, 47]
+    },
+    {
+      "moebel": "st5Bauholz",
+      "feld": [42, 44]
+    },
+    {
+      "moebel": "wg4Busch",
+      "feld": [38, 46]
+    },
+    {
+      "moebel": "wg4Gras",
+      "feld": [45, 42]
+    },
+    {
+      "moebel": "wg4Gras",
+      "feld": [49, 47]
+    },
+    {
+      "moebel": "st5PfuetzeKlein",
+      "feld": [41, 47]
+    },
+    {
+      "moebel": "scFelsMittel",
+      "feld": [51, 45]
+    },
+    {
+      "moebel": "st5Werkzeugkiste",
+      "feld": [47, 42]
     }
   ],
   "ausloeser": [

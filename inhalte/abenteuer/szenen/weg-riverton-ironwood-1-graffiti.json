@@ -2,7 +2,7 @@
   "karte": "wegRivertonIronwood.kanalweg",
   "art": "aussen",
   "zustand_der_karte": "nadelIronwood >= 1",
-  "beschreibung": "Zustand: nach dem Clubkampf in Ironwood (nadelIronwood ≥ 1, Ende Akt 2): Noors Schachfiguren an der freien Wand sind fertig, die Wand ist ganz bemalt, Türme, Springer und bunte Bilder von Ende zu Ende, die Sprayerin ist weg. Kanalweg (Runde 8, überarbeitet nach dem Gutachten): gerader Kanal mit Steinufer, acht Reihen Wasser für Frachtkähne, der befestigte Treidelpfad liegt direkt an der Kaimauer, Poller in gleichem Abstand; derselbe Kanal läuft auf der Eisenbrücke weiter. Im Norden die Fabrik: Halle mit Rolltor, Hof mit Containern und Fässern, Zaun und Tor zum Pfad; die Hofmauer im Süden ist die freie Wand, an der eine Sprayerin Noors Schachfiguren (Turm, Springer) sprüht. Die Werkstraße mit Mittellinie und Gehweg mit der Haltestelle ohne Bus (Schild, Bank, Mülleimer) und der Rätseltafel. Ein Frachtkahn liegt längs an der Kaimauer. Obstwiese mit Picknicktisch, vier umzäunte Kleingärten, jeder anders. An der Kreuzung führt eine eiserne Brücke mit Durchfahrt über den Seitenarm (sieben Reihen) nach Lockport. Hof von Mr. Dale mit Hühnerhof, Farmhaus, Scheune und Silo am Hofplatz, vier umzäunte Äcker mit Weg zum Pfad. Rastanleger mit Steg, Ruderboot und Bank, Birkenreihe am Pfad; das Ostufer ist bewachsene Böschung.",
+  "beschreibung": "Zustand: nach dem Clubkampf in Ironwood (nadelIronwood ≥ 1, Ende Akt 2): Noors Schachfiguren an der freien Wand sind fertig, die Wand ist ganz bemalt, Türme, Springer und bunte Bilder von Ende zu Ende, die Sprayerin ist weg. Kanalweg (Runde 8, überarbeitet nach dem Gutachten): gerader Kanal mit Steinufer, acht Reihen Wasser für Frachtkähne, der befestigte Treidelpfad liegt direkt an der Kaimauer, Poller in gleichem Abstand; derselbe Kanal läuft auf der Eisenbrücke weiter. Im Norden die Fabrik: eine flache, alte Werkhalle mit Wellblechdach und Anbau, dahinter zwei Schornsteine, Hof mit Containern und Fässern, Zaun und Tor zum Pfad; die Hofmauer im Süden ist die freie Wand, an der eine Sprayerin Noors Schachfiguren (Turm, Springer) sprüht. Die Werkstraße mit Mittellinie und Gehweg mit der Haltestelle ohne Bus (Schild, Bank, Mülleimer) und der Rätseltafel. Ein Frachtkahn liegt längs an der Kaimauer. Obstwiese mit Picknicktisch, vier umzäunte Kleingärten, jeder anders. An der Kreuzung führt eine eiserne Brücke mit Durchfahrt über den Seitenarm (sieben Reihen) nach Lockport. Hof von Mr. Dale mit Hühnerhof, Farmhaus, Scheune und Silo am Hofplatz, vier umzäunte Äcker mit Weg zum Pfad. Rastanleger mit Steg, Ruderboot und Bank, Birkenreihe am Pfad; das Ostufer ist bewachsene Böschung.",
   "boden": "gras",
   "wandart": "gras",
   "boeden": {
@@ -270,8 +270,8 @@
       "feld": [16, 8]
     },
     {
-      "moebel": "iw5Kantine",
-      "feld": [1, 1]
+      "moebel": "wr5Fabrikhalle",
+      "feld": [1, 7]
     },
     {
       "moebel": "ccZaun",
@@ -2245,6 +2245,14 @@
       "moebel": "wr8GraffitiTurm",
       "feld": [13, 31],
       "vorn": true
+    },
+    {
+      "moebel": "iw5Schornstein",
+      "feld": [3, 0]
+    },
+    {
+      "moebel": "iw5Schornstein",
+      "feld": [10, 0]
     }
   ],
   "ausloeser": [

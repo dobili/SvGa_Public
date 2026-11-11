@@ -11,7 +11,7 @@
  "tilewidth": 16,
  "tileheight": 16,
  "nextlayerid": 5,
- "nextobjectid": 480,
+ "nextobjectid": 482,
  "layers": [
   {
    "id": 1,
@@ -21450,12 +21450,12 @@
     },
     {
      "id": 41,
-     "name": "iw5Kantine",
+     "name": "wr5Fabrikhalle",
      "type": "moebel",
      "x": 16,
-     "y": 16,
+     "y": 112,
      "width": 208,
-     "height": 256,
+     "height": 160,
      "rotation": 0,
      "visible": true,
      "properties": [
@@ -31542,6 +31542,52 @@
        "name": "kollision",
        "type": "bool",
        "value": false
+      }
+     ]
+    },
+    {
+     "id": 480,
+     "name": "iw5Schornstein",
+     "type": "moebel",
+     "x": 48,
+     "y": 0,
+     "width": 32,
+     "height": 112,
+     "rotation": 0,
+     "visible": true,
+     "properties": [
+      {
+       "name": "tiefe",
+       "type": "int",
+       "value": 104
+      },
+      {
+       "name": "kollision",
+       "type": "bool",
+       "value": true
+      }
+     ]
+    },
+    {
+     "id": 481,
+     "name": "iw5Schornstein",
+     "type": "moebel",
+     "x": 160,
+     "y": 0,
+     "width": 32,
+     "height": 112,
+     "rotation": 0,
+     "visible": true,
+     "properties": [
+      {
+       "name": "tiefe",
+       "type": "int",
+       "value": 104
+      },
+      {
+       "name": "kollision",
+       "type": "bool",
+       "value": true
       }
      ]
     }

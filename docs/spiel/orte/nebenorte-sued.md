@@ -159,3 +159,20 @@ Beobachterstuhl, links ein Tisch mit aufgeschlagenem Sternatlas statt Anrichte u
 In der Grube steht der gelbe Kettenbagger aus Gemini von der Seite (`fz12BaggerLinks`, 112 × 78, Feld
 (56, 37)), der Löffel zeigt zur Feldbahn. Er ersetzt den kleinen Bagger von vorn (`st5Bagger`). Der
 Auslöser `bagger` liegt jetzt bei (59, 42) vor den Ketten.
+
+## Steinbruch, vierte Prüfung (11.11.2026, mittel-4)
+
+Gutachten `steinbruch-4.md`.
+
+- **Grube 1:** Die Granitblöcke liegen in losen Gruppen (Stapelplatz, liegengebliebene Einzelblöcke) statt
+  in zwei Reihen; dazu Bauholz, Schotterhaufen und eine Werkzeugkiste auf der Stufe.
+- **Grube 2:** Sohle westlich des Wasserlochs: Steinpaletten, Bohlen, Karren, Schotterhaufen, Lichtmast,
+  Birke, Büsche, Pfütze. Südöstlich: Bauholz, Schotterhaufen, Werkzeugkiste, Fels, Pfütze.
+- **Grube 3:** Die Beschreibung nennt den gelben Raupenbagger.
+- **Grube 4, 5 (Zufahrt gerade, Nebeltönung blass):** nicht geändert; die Zufahrt ist die alte Werkstraße,
+  die Tönung prüft der Autor im Spiel.
+- **Stollen 2:** Das Gleis läuft drei Felder weiter bis in die Kaverne, der Prellbock steht bei (18, 6).
+- **Stollen 3:** Das Eingangslicht ist ein weicher, durchscheinender Schein (Bildwunsch
+  `bildwuensche/stollenlicht.py`, Möbel `st11Eingangslicht`) statt eines Stücks Sandboden.
+- **Stollen 4:** Die Brocken im Quergang liegen in ungleichem Abstand, einer ist größer.
+- **Stollen 1 (Felswand nur an Nordseiten):** bleibt, der Gutachter nimmt es im Dunkel hin.

@@ -152,3 +152,4 @@ Szene heißt die Datei in `inhalte/abenteuer/szenen/` ohne `.json`.
 - [x] weg-ghost-capital-seeufer, capital-arena-aussen, port-delacroix-aussen (+ musikhaus-neu), weg-ironwood-silicon-raststaette, weg-silicon-delacroix-deich: Restpunkte aus `gemini-fahrzeuge-teil2.md` (Verkäufer, Lastwagen am Marktplatz, Längsbuchten, Deichfläche; mittel-1) → `mittel-1-fahrzeuge-restpunkte-pferde.md`
 - [ ] ironwood-kantine (+ logo): Registrierkasse und Speiseplan als eigene Bilder (mittel-4)
 - [ ] weg-desert-summit-bergstrasse: runde Kehren mit Linien im Bogen (mittel-4)
+- [ ] ironwood-aussen (+ vermietet, meisterschaft), steinbruch-grube, steinbruch-stollen, weg-desert-summit-hinterzimmer, weg-riverton-ironwood-1 (+ graffiti): Befunde der Prüfung vom 11.11. (mittel-4)

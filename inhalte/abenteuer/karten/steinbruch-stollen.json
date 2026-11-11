@@ -11,7 +11,7 @@
  "tilewidth": 16,
  "tileheight": 16,
  "nextlayerid": 5,
- "nextobjectid": 48,
+ "nextobjectid": 52,
  "layers": [
   {
    "id": 1,
@@ -735,8 +735,8 @@
     0,
     0,
     0,
-    4,
-    4,
+    1,
+    1,
     0,
     0,
     0,
@@ -768,8 +768,8 @@
     0,
     0,
     0,
-    4,
-    4,
+    1,
+    1,
     0,
     0,
     0,
@@ -801,8 +801,8 @@
     0,
     0,
     0,
-    4,
-    4,
+    1,
+    1,
     0,
     0,
     0,
@@ -2511,7 +2511,7 @@
      "name": "st8PrellbockFeldbahn",
      "type": "moebel",
      "x": 288,
-     "y": 144,
+     "y": 96,
      "width": 16,
      "height": 16,
      "rotation": 0,
@@ -2520,7 +2520,7 @@
       {
        "name": "tiefe",
        "type": "int",
-       "value": 152
+       "value": 104
       },
       {
        "name": "kollision",
@@ -3269,7 +3269,7 @@
      "id": 38,
      "name": "scFelsKlein",
      "type": "moebel",
-     "x": 208,
+     "x": 192,
      "y": 272,
      "width": 32,
      "height": 32,
@@ -3382,9 +3382,9 @@
     },
     {
      "id": 43,
-     "name": "scFelsKlein",
+     "name": "scFelsMittel",
      "type": "moebel",
-     "x": 256,
+     "x": 240,
      "y": 272,
      "width": 32,
      "height": 32,
@@ -3492,6 +3492,98 @@
        "name": "kollision",
        "type": "bool",
        "value": true
+      }
+     ]
+    },
+    {
+     "id": 48,
+     "name": "st8FeldbahnLaengs",
+     "type": "moebel",
+     "x": 288,
+     "y": 112,
+     "width": 16,
+     "height": 16,
+     "rotation": 0,
+     "visible": true,
+     "properties": [
+      {
+       "name": "tiefe",
+       "type": "int",
+       "value": 1
+      },
+      {
+       "name": "kollision",
+       "type": "bool",
+       "value": false
+      }
+     ]
+    },
+    {
+     "id": 49,
+     "name": "st8FeldbahnLaengs",
+     "type": "moebel",
+     "x": 288,
+     "y": 128,
+     "width": 16,
+     "height": 16,
+     "rotation": 0,
+     "visible": true,
+     "properties": [
+      {
+       "name": "tiefe",
+       "type": "int",
+       "value": 1
+      },
+      {
+       "name": "kollision",
+       "type": "bool",
+       "value": false
+      }
+     ]
+    },
+    {
+     "id": 50,
+     "name": "st8FeldbahnLaengs",
+     "type": "moebel",
+     "x": 288,
+     "y": 144,
+     "width": 16,
+     "height": 16,
+     "rotation": 0,
+     "visible": true,
+     "properties": [
+      {
+       "name": "tiefe",
+       "type": "int",
+       "value": 1
+      },
+      {
+       "name": "kollision",
+       "type": "bool",
+       "value": false
+      }
+     ]
+    },
+    {
+     "id": 51,
+     "name": "st11Eingangslicht",
+     "type": "moebel",
+     "x": 288,
+     "y": 320,
+     "width": 32,
+     "height": 64,
+     "rotation": 0,
+     "visible": true,
+     "properties": [
+      {
+       "name": "tiefe",
+       "type": "int",
+       "value": 376
+      },
+      {
+       "name": "kollision",
+       "type": "bool",
+       "value": false
       }
      ]
     }

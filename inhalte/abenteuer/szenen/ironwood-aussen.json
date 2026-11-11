@@ -2,13 +2,13 @@
   "karte": "ironwood.aussen",
   "datei": "karten/ironwood-aussen.json",
   "art": "aussen",
-  "beschreibung": "Ironwood außen (Variante C als Hauptfassung, Runde 8 nach den Notizen des Autors): Der Kanal am Westrand ist acht Felder breit mit Steinufer, Poller am Kai in gleichem Abstand, die Hauptstraße quert ihn auf einer Straßenbrücke mit Gehwegen. Hauptstraße und Seitenstraße sind durchgehend mit Pflaster eingefasst, die Seitenstraße mündet direkt in die Hauptstraße. Im Werk eine Halle mit Dach, Container und Fässer im Werkhof, ein durchgehender Zaun mit Endpfosten am Tor. Der Markt hat Waren auf jedem Stand, der Platz reicht bis an die Promenade, eine Hecke fasst ihn ein. Die Kapelle St. Barbara (Schutzpatronin der Hütten- und Bergleute) hat einen Weg und einen kleinen Friedhof mit Zaun. Die Gleise enden im Westen am Prellbock quer zum Gleis beim alten Bahnhof und führen im Osten aus der Stadt zum Werk und Steinbruch; der Übergang ist ins Gleis eingelassen. Laternen an der Promenade stehen oben in gleichem Abstand. Runde 8, zweite Prüfung: Straßen mit Markierung, am Bahnsteig der alte Bahnhof, im Übergang Bohlen statt Schienen, eine Hecke um den Markt, eine Schranke im Werkstor, am Übergang das Haus des Schrankenwärters; der Absperrbock im Südosten sperrt den Erdweg zum stillgelegten Steinbruch.",
+  "beschreibung": "Ironwood außen (Variante C als Hauptfassung, Runde 8 nach den Notizen des Autors): Der Kanal am Westrand ist acht Felder breit mit Steinufer, Poller am Kai in gleichem Abstand, die Hauptstraße quert ihn auf einer Straßenbrücke mit Gehwegen. Hauptstraße und Seitenstraße sind durchgehend mit Pflaster eingefasst, die Seitenstraße beginnt in voller Breite an der Kaipromenade und mündet direkt in die Hauptstraße. Im Werk eine Halle mit Dach, Container und Fässer im Werkhof, ein durchgehender Zaun mit Endpfosten am Tor. Der Markt hat Waren auf jedem Stand, der Platz reicht bis an die Promenade, eine Hecke fasst ihn ein. Die Kapelle St. Barbara (Schutzpatronin der Hütten- und Bergleute) hat einen Weg und einen kleinen Friedhof mit Zaun. Die Gleise enden im Westen am Prellbock quer zum Gleis beim alten Bahnhof und führen im Osten aus der Stadt zum Werk und Steinbruch; der Übergang ist ins Gleis eingelassen. Laternen an der Promenade stehen oben in gleichem Abstand. Runde 8, zweite Prüfung: Straßen mit Markierung, der alte Bahnhof steht mit der Veranda direkt am Bahnsteig vor den Prellböcken, mit Bahnhofsuhr, Bank und Gepäckkarre, im Übergang Bohlen statt Schienen, eine Hecke um den Markt, eine Schranke im Werkstor, am Übergang das Haus des Schrankenwärters; der Absperrbock im Südosten sperrt den Erdweg zum stillgelegten Steinbruch.",
   "boden": "gras",
   "wandart": "hecke",
   "boeden": {
     "p": "pflaster",
     "s": "asphalt",
-    "h": "dielen",
+    "h": "wasser",
     "k": "stein",
     "e": "erde",
     "q": "stein",
@@ -28,12 +28,12 @@
     "##~~~~~~~~pp............pp......................qqqqq..........................#",
     "##~~~~~~~~pp............pp......................qqqqq..........................#",
     "##~~~~~~~~ppppppppppppppppppppppppppppppppppppp.qqqqq..........................#",
-    "##~~~~~~~~ppssssspppppppppppppppppppppppppppppp.qqqqq....................qq....#",
+    "##~~~~~~~~ppppppppppppppppppppppppppppppppppppp.qqqqq....................qq....#",
     "##~~~~~~~~ppssssssssssssssssssssssssssssssssssp.qqqqq....................qq....#",
     "##~~~~~~~~ppssssssssssssssssssssssssssssssssssp..........................qq....#",
     "##~~~~~~~~ppssssssssssssssssssssssssssssssssssp..........................qq....#",
-    "##~~~~~~~~ppsssssppppppppppppppppppppppppppsssp..........................qq....#",
-    "##~~~~~~~~ppsssssp......pp................psssp..........................qq....#",
+    "##~~~~~~~~pppppppppppppppppppppppppppppppppsssp..........................qq....#",
+    "##~~~~~~~~pppppppp......pp................psssp..........................qq....#",
     "##~~~~~~~~pppppppp......pp................psssp.qqqqqqqqqqqqqqqqqqqqqqqqqqqqqqq#",
     "##~~~~~~~~ppppp.........pp................psssp.qqqqqqqqqqqqqqqqqqqqqqqqqqqqqqq#",
     "##~~~~~~~~ppppp.........pp................psssp.qqqqqqqqqqqqqqqqqqqqqqqqqqqqqqq#",
@@ -45,11 +45,11 @@
     "##~~~~~~~~ppppp.........pp................psssp.qqqqqqqqqqqqqqqqqqqqqqqqqqqqqqq#",
     "##~~~~~~~~ppppp.........pp................psssp.qqqqqqqqqqqqqqqqqqqqqqqqqqqqqqq#",
     "##~~~~~~~~pp............pp................psssp.........qqqqq..................#",
-    "##~~~~~~~~pppppppppppppppppppppppppppppppppsssppppppppppppppppppppppppppppppppp#",
-    "##~~~~~~~~sssssssssssssssssssssssssssssssssssssssssssssssssssssssssssssssssssss#",
-    "##~~~~~~~~sssssssssssssssssssssssssssssssssssssssssssssssssssssssssssssssssssss#",
-    "##~~~~~~~~sssssssssssssssssssssssssssssssssssssssssssssssssssssssssssssssssssss#",
-    "##~~~~~~~~ppppppppppppppppppppppppppppppppppppppppppppppppppppppppppppppppppppp#",
+    "##hhhhhhhhpppppppppppppppppppppppppppppppppsssppppppppppppppppppppppppppppppppp#",
+    "##hhhhhhhhsssssssssssssssssssssssssssssssssssssssssssssssssssssssssssssssssssss#",
+    "##hhhhhhhhsssssssssssssssssssssssssssssssssssssssssssssssssssssssssssssssssssss#",
+    "##hhhhhhhhsssssssssssssssssssssssssssssssssssssssssssssssssssssssssssssssssssss#",
+    "##hhhhhhhhppppppppppppppppppppppppppppppppppppppppppppppppppppppppppppppppppppp#",
     "##~~~~~~~~pp......pp........pp........ppppppppppppppppppppppp..................#",
     "##~~~~~~~~pp......pp........pp........ppppppppppppppppppppppp..................#",
     "##~~~~~~~~pp......pp........pp........ppppppppppppppppppppppp..................#",
@@ -79,6 +79,12 @@
     "##~~~~~~~~######################################################################"
   ],
   "objekte": [
+    {
+      "moebel": "iw8StrassenbrueckeGehwegQuer10",
+      "feld": [0, 28],
+      "versatz": [0, -2],
+      "bauteil_ok": true
+    },
     {
       "moebel": "iw5StadthausBlau",
       "feld": [12, 0]
@@ -383,10 +389,6 @@
     {
       "moebel": "cc5Poller",
       "feld": [10, 24]
-    },
-    {
-      "moebel": "cc5Poller",
-      "feld": [10, 48]
     },
     {
       "moebel": "cc5Poller",
@@ -1657,7 +1659,7 @@
     },
     {
       "moebel": "ds6BahnhofAlt",
-      "feld": [10, 38],
+      "feld": [10, 41],
       "id": "alterBahnhof"
     },
     {
@@ -1732,6 +1734,23 @@
     {
       "moebel": "cc8HeckeSenkrecht",
       "feld": [60, 43]
+    },
+    {
+      "moebel": "rv5Bahnhofsuhr",
+      "auf": "alterBahnhof",
+      "versatz": [-48, -8]
+    },
+    {
+      "moebel": "rvBahnsteigbank",
+      "feld": [12, 49]
+    },
+    {
+      "moebel": "rv5Gepaeckwagen",
+      "feld": [17, 49]
+    },
+    {
+      "moebel": "rv8Koffer",
+      "feld": [16, 50]
     }
   ],
   "ausloeser": [

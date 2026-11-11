@@ -1554,3 +1554,10 @@ der Kai hat zum Rasen eine Kante aus Steinplatten.
 Die Brücke über den Fluss in Riverton außen ist jetzt das Gemini-Bild der Steinbrücke
 (`rv10Steinbruecke`, 80 × 116, begehbar); das alte Brückenbild und der eigene Schatten sind weg.
 Gilt für die Grundszene und alle vier Zustände.
+
+## Kanalweg, dritte Prüfung (11.11.2026, mittel-4)
+
+Gutachten `weg-riverton-ironwood-1-3.md`, Befund 1: Die Fabrik im Norden war dasselbe Stadthaus wie die
+Kantine in Ironwood. Jetzt steht dort die flache alte Werkhalle mit Wellblechdach (`wr5Fabrikhalle`, Feld
+(1, 7)), dahinter zwei Schornsteine. Gilt auch für den Zustand „graffiti“. Befund 3 (Silo): bleibt, es ist
+schon das gekürzte Bild `silo_kurz` (neun Felder).

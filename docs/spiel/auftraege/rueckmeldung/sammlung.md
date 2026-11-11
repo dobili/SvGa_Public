@@ -1,6 +1,6 @@
 # Sammlung der Rückmeldungen zum Schach-Abenteuer (Beta)
 
-Stand: 11.11.2026. Offene Punkte: 26. Abgeschickt (gepusht): noch nichts.
+Stand: 11.11.2026. Offene Punkte: 31. Abgeschickt (gepusht): noch nichts.
 
 Reihenfolge je Kategorie: zuerst, was das Weiterspielen verhindert, dann Störendes, dann Schönheitsfehler.
 
@@ -9,6 +9,8 @@ Reihenfolge je Kategorie: zuerst, was das Weiterspielen verhindert, dann Stören
 ## Übergänge und Kollision
 
 - [ ] R026. Maple Falls, Stadtpark, oben, Stege und Ufer: Oberhalb des Flusses ist nur Gras. Optisch kann man über den rechten Steg gehen und am Ufer links zum linken Steg laufen, oder umgekehrt. Alle Orte oben wären so über beide Stege erreichbar. Soll der kaputte Steg nach seiner Reparatur in der Geschichte Sinn haben, darf man den Ort nicht auch über den anderen Steg erreichen können. Das müsste optisch so gelöst sein, dass man nicht einfach am anderen Ufer von Steg zu Steg laufen kann. Zusammenhang mit R024 und R025.
+- [ ] R030. Zedernpfad, Wald: Der Zedernwald ist nicht sehr dicht. Mit der Figur kann man nahezu unten am Rand von links nach rechts laufen und dann nach oben zum Ausgang, ohne dem Weg zu folgen. Dabei umgeht man das komplette Gebirge. Das kann nicht Sinn der Sache sein.
+- [ ] R031. Alle Karten, Abkürzungen: Prüfen, ob man an Stellen, an denen man dem Weg folgen soll, durch Wald oder Ähnliches abkürzen kann. Ist vorgesehen, dass man dem Weg folgt, soll das nicht möglich sein. Ausnahme: Es ist für die Geschichte nicht schlimm oder es gibt im Wald etwas zu entdecken. Zusammenhang mit R030.
 
 ## Karten und Grafik
 
@@ -52,6 +54,12 @@ Reihenfolge je Kategorie: zuerst, was das Weiterspielen verhindert, dann Stören
 - [ ] R021. Maple Falls, Stadtpark, Basketballplatz unten links: Das Asset wurde „aus irgendwelchen Gründen“ gegen ein neues gewechselt. Das neue zeigt einen Indoor-Platz statt eines Outdoor-Platzes und ist ein Abziehbild ohne Tiefe. Unbrauchbar. In alten Versionen nachsehen: Dort gab es einen sehr schönen asphaltierten Basketballplatz.
 - [ ] R022. Maple Falls, Stadtpark, unten mittig: Ein hölzernes Gebilde, der Autor weiß nicht, ob es eine Halfpipe sein soll. Abziehbild ohne Tiefe, so nicht verwendbar. Je nachdem, was es darstellen soll, ein vernünftiges Asset erstellen. Zuerst klären, was es sein soll.
 - [ ] R025. Maple Falls, Stadtpark, oben, zwei Stege: Dem Autor erschließt sich nicht, warum es zwei Stege gibt. Laut seiner Übersichtskarte führt nur der rechte Steg zu einer neuen Karte, der linke führt nirgendwohin: In dieser Übersichtskarte, die dem Autor gebaut wurde, liegt dort keine Kachel, die das Öffnen einer neuen Karte auslöst (vom Autor bestätigt). Der defekte Steg liegt laut R024 oben links. Klären (Hauptchat), ob es zwei Stege braucht.
+
+### Weg Maple Falls nach Cedar Creek, Zedernpfad (`weg-maple-cedar-zedernpfad`)
+
+- [ ] R027. Zedernpfad, Treppen: Der Weg führt in Schwüngen mittig durch die Karte nach oben, an zwei Stellen über Treppen. Die Treppenabschnitte sehen nicht gut aus: Es fehlen ständig Treppenkacheln, dort schimmert plötzlich der Weg durch, der ursprünglich darunter lag. Die Treppen sind nicht vollständig umgesetzt.
+- [ ] R028. Zedernpfad, Gebirgszug von linkem Bildrand nach rechts: Er hört etwa mittig im Bild auf, daneben ist wieder Gras. Das ergibt perspektivisch keinen Sinn. Man könnte rechts am Gebirgszug vorbeigehen, das Gras hoch und stünde oben, ohne Höhe erklommen zu haben. Eine durchgehende Grasfläche liegt einmal oberhalb und einmal unterhalb des Gebirges, ohne dass ein Asset einen Anstieg andeutet (Problem der Höhenwahrnehmung und Perspektive). Der Autor möchte, dass online bei dem Asset-Pack, aus dem die Gebirgs-Assets stammen, und bei anderen Packs zu Gebirgen nachgesehen wird, wie das gelöst ist: ziehen die Gebirge immer komplett übers Bild, damit das Problem gar nicht entsteht, oder gibt es Assets für einen leichten, begrasten Anstieg über einen längeren Bereich (dieselbe Höhe, ohne senkrechte Wand)? Wenn nein, wird so etwas hier gebraucht.
+- [ ] R029. Zedernpfad, oberer Gebirgszug: Er beginnt links relativ mittig im Bild und hört etwas weiter rechts wieder auf. Man kann links und rechts daran vorbeigehen. Dasselbe Problem wie R028.
 
 ### Maple Falls, Wohnzimmer (`maple-falls-wohnzimmer-ausgepackt`)
 

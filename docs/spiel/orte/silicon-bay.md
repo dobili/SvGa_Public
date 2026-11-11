@@ -163,8 +163,8 @@ Westen die Bucht; nur der Pfad öffnet den Westrand.
 - Offen: Abfahrt (2), Laternenabstand (5), Vogelschild (7).
 - **Lastwagen (Gemini Teil 2, 10.11.2026):** Mrs. Kowalczyks Lastwagen ist das neue Bild von vorn
   (`wsr12Lastwagen`, `spiel/eigene/lastwagen_vorn.png`, (117, 18)) statt des Bildes aus
-  `lkw_schraeg.py`. Lastwagen und Bus (jetzt von hinten, `fz11BusAuf`, (125, 20)) stehen in
-  Längsbuchten (117–128, 20–26) mit drei weißen Linien (`wsr12Linie7`); die Fahrgasse zum
+  `lkw_schraeg.py`. Lastwagen und Bus (jetzt von hinten, `fz11BusAuf`, (125, 19)) stehen in
+  Längsbuchten (117–128, 18–26) mit drei weißen Linien (`wsr12Linie9`); die Fahrgasse zum
   Strandweg ist frei. Mrs. Kowalczyk steht neben ihrem Lastwagen (121, 25).
 
 ### 1.2 Glasbrücke (`wegIronwoodSilicon.glasbruecke`, 140 × 26), Runde 8 neu gebaut

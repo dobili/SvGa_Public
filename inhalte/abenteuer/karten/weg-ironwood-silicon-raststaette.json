@@ -17031,12 +17031,12 @@
     },
     {
      "id": 156,
-     "name": "wsr12Linie7",
+     "name": "wsr12Linie9",
      "type": "moebel",
      "x": 2000,
-     "y": 320,
+     "y": 288,
      "width": 16,
-     "height": 112,
+     "height": 144,
      "rotation": 0,
      "visible": true,
      "properties": [
@@ -17054,12 +17054,12 @@
     },
     {
      "id": 157,
-     "name": "wsr12Linie7",
+     "name": "wsr12Linie9",
      "type": "moebel",
      "x": 1936,
-     "y": 320,
+     "y": 288,
      "width": 16,
-     "height": 112,
+     "height": 144,
      "rotation": 0,
      "visible": true,
      "properties": [
@@ -17077,12 +17077,12 @@
     },
     {
      "id": 158,
-     "name": "wsr12Linie7",
+     "name": "wsr12Linie9",
      "type": "moebel",
      "x": 1872,
-     "y": 320,
+     "y": 288,
      "width": 16,
-     "height": 112,
+     "height": 144,
      "rotation": 0,
      "visible": true,
      "properties": [
@@ -19955,7 +19955,7 @@
      "name": "fz11BusAuf",
      "type": "moebel",
      "x": 2008,
-     "y": 320,
+     "y": 304,
      "width": 48,
      "height": 112,
      "rotation": 0,
@@ -19964,7 +19964,7 @@
       {
        "name": "tiefe",
        "type": "int",
-       "value": 424
+       "value": 408
       },
       {
        "name": "kollision",

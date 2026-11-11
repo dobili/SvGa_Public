@@ -1296,24 +1296,24 @@
       ]
     },
     {
-      "moebel": "wsr12Linie7",
+      "moebel": "wsr12Linie9",
       "feld": [
         125,
-        20
+        18
       ]
     },
     {
-      "moebel": "wsr12Linie7",
+      "moebel": "wsr12Linie9",
       "feld": [
         121,
-        20
+        18
       ]
     },
     {
-      "moebel": "wsr12Linie7",
+      "moebel": "wsr12Linie9",
       "feld": [
         117,
-        20
+        18
       ]
     },
     {
@@ -2192,7 +2192,7 @@
       "moebel": "fz11BusAuf",
       "feld": [
         125,
-        20
+        19
       ],
       "bauteil_ok": true,
       "versatz": [

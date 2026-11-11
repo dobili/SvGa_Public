@@ -115,3 +115,16 @@
 .abenteuer-huelle .brettschalter-gruppe {
   display: none;
 }
+
+/* Testhilfe des Autors unter der Partie: klein und abgesetzt, nie in der Veröffentlichung. */
+.abenteuer-huelle-test {
+  display: flex;
+  flex-wrap: wrap;
+  align-items: center;
+  gap: var(--raster);
+  padding: calc(var(--raster) / 2) calc(var(--raster) * 1.5);
+  border: 1px dashed rgba(245, 240, 230, 0.6);
+  border-radius: var(--radius);
+  color: rgba(245, 240, 230, 0.85);
+  font-size: var(--groesse-klein, 0.85rem);
+}

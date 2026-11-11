@@ -94,6 +94,9 @@ test("vom Dachboden in die erste Partie und zurück", async ({ page }) => {
   await expect(page.getByTestId("abenteuer-huelle-kopf")).toContainText("Ambrose");
   await expect(page.getByTestId("partiestatus")).toBeVisible();
   await expect(page.getByTestId("abenteuer-partie-aufgeben")).toBeVisible();
+  // Testhilfe des Autors (nur außerhalb der Veröffentlichung): Gewinnen, Remis, Verlieren.
+  await expect(page.getByTestId("abenteuer-test-sieg")).toBeVisible();
+  await expect(page.getByTestId("abenteuer-test-niederlage")).toBeVisible();
   await expect(page.locator(".kopfzeile")).toHaveCount(0);
   await expect(page.locator(".zugliste-aufklappen")).toHaveCount(0);
   await expect(page.getByRole("button", { name: "Brett drehen" })).toBeHidden();

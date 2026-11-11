@@ -29,6 +29,7 @@ import { ANSICHT_ABENTEUER } from "../schnittstelle/modul";
 import { tSpiel } from "../texte/texte";
 import { Huelle } from "./Huelle";
 import { gegnerName, sprecherAusPfad, statustext } from "./huellentexte";
+import { Testleiste } from "./Testleiste";
 
 /** Unter so viel Restzeit (ms) wird die Uhr rot, wie in der App. */
 const KNAPP_MS = 10_000;
@@ -164,6 +165,7 @@ function Spielfeld({ s, partie }: { s: Partiesteuerung; partie: Partie }) {
           />
         ))}
       {partie.ende ? <Weiterknopf /> : <Spielfuss s={s} gegner={gegner} />}
+      {!partie.ende && <Testleiste id={partie.id} />}
     </>
   );
 }

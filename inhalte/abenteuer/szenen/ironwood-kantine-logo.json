@@ -3,7 +3,7 @@
   "datei": "karten/ironwood-kantine-logo.json",
   "art": "innen",
   "zustand_der_karte": "kaufGesehen",
-  "beschreibung": "Zustand: ab Szene 49 (kaufGesehen), Akt 3: An der Wand über der Essensausgabe hängt das Logo von Perfect Move, an der Tür steht ein Karton mit den Pokalen des Clubs, weil der Club die Kantine räumen musste. Die Kantine des Werks, zugleich Clubraum des Werksclubs (Runde 8, Regeln 10.56 und Notizen 12–16): 36 × 20, so breit wie das Kantinengebäude. Links hinter einer Trennwand die Küche mit zwei Kühlschränken, Gastroherd unter der Haube, Herden mit dem Suppentopf, Spüle, Ablage mit Geschirr, Arbeitstisch und Anrichte; davor die lange Essensausgabe mit Kaffeemaschine, Warmhaltetheke aus Glas, Geschirr und Kasse, der Speiseplan an der Nordwand des Gastraums. Der Gastraum ist voll mit Tischreihen der Schicht; Mülleimer, Wasserspender und Getränkeautomat an der Westwand, Spinde, Uhr und Pinnwand an der Nordwand; der Mittelgang von der Tür zur Ausgabe ist frei. Rechts, durch Pflanzen abgesetzt und auf Dielen, die Schachecke: der Ofen an der Wand, davor Big Joes Clubtisch, drei weitere Clubtische auf Teppichen, Pokalregal, Foto der Werksmannschaft, Regal und Stehlampe. Die Tür liegt in der Mitte der Südwand, die Matte davor. An einigen Tischen sitzen Leute der Schicht beim Essen.",
+  "beschreibung": "Zustand: ab Szene 49 (kaufGesehen), Akt 3: An der Wand über der Essensausgabe hängt das Logo von Perfect Move, an der Tür steht ein Karton mit den Pokalen des Clubs, weil der Club die Kantine räumen musste. Die Kantine des Werks, zugleich Clubraum des Werksclubs (Runde 8, Regeln 10.56 und Notizen 12–16): 36 × 20, so breit wie das Kantinengebäude. Links hinter einer Trennwand die Küche mit zwei Kühlschränken, Gastroherd unter der Haube, Herden mit dem Suppentopf, Spüle, Ablage mit Geschirr, Arbeitstisch und Anrichte; davor die lange Essensausgabe mit Kaffeemaschine, Warmhaltetheke aus Glas, Geschirr und der Registrierkasse am Ende des Tresens, der Speiseplan im Holzrahmen an der Nordwand des Gastraums neben der Uhr. Der Gastraum ist voll mit Tischreihen der Schicht; Mülleimer, Wasserspender und Getränkeautomat an der Westwand, Spinde, Uhr und Pinnwand an der Nordwand; der Mittelgang von der Tür zur Ausgabe ist frei. Rechts, durch Pflanzen abgesetzt und auf Dielen, die Schachecke: der Ofen an der Wand, davor Big Joes Clubtisch, drei weitere Clubtische auf Teppichen, Pokalregal, Foto der Werksmannschaft, Regal und Stehlampe. Die Tür liegt in der Mitte der Südwand, die Matte davor. An einigen Tischen sitzen Leute der Schicht beim Essen.",
   "wand": "hellgrau",
   "boden": "fliesenGrau",
   "raster": [
@@ -109,10 +109,10 @@
       "auf": "warmhalten"
     },
     {
-      "moebel": "cc4Kasse",
+      "moebel": "iw10Kasse",
       "feld": [6, 0],
       "auf": "ausgabe",
-      "versatz": [48, 0]
+      "versatz": [60, -6]
     },
     {
       "moebel": "ca7Muelleimer",
@@ -131,9 +131,10 @@
       "versatz": [24, 0]
     },
     {
-      "moebel": "mf8Tafel",
+      "moebel": "iw10Speiseplan",
       "feld": [19, 1],
-      "an_wand": true
+      "an_wand": true,
+      "versatz": [0, 8]
     },
     {
       "moebel": "mf2Spind",
@@ -775,7 +776,7 @@
     {
       "moebel": "sb5SchildPerfectMove",
       "auf": "ausgabe",
-      "versatz": [8, -24]
+      "versatz": [-4, -24]
     },
     {
       "moebel": "cc4KartonOffen",

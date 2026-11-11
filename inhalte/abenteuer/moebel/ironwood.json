@@ -584,12 +584,7 @@
       "zustand": "gebraucht",
       "stil": "einfach",
       "blick": "unten",
-      "tuer": [
-        [
-          2,
-          10
-        ]
-      ]
+      "tuer": [[2, 10]]
     },
     "iw5Eisenwaren": {
       "quelle": "modern-exteriors/Modern_Exteriors_16x16/ME_Theme_Sorter_16x16/4_Generic_Building_Singles_16x16/ME_Singles_Generic_Building_16x16_Hardware_Store_Example.png",
@@ -610,12 +605,7 @@
       "zustand": "gebraucht",
       "stil": "industrie",
       "blick": "unten",
-      "tuer": [
-        [
-          3,
-          16
-        ]
-      ]
+      "tuer": [[3, 16]]
     },
     "iw5Halle": {
       "quelle": "modern-exteriors/Modern_Exteriors_16x16/ME_Theme_Sorter_16x16/4_Generic_Building_Singles_16x16/ME_Singles_Generic_Building_16x16_Condo_8.png",
@@ -646,12 +636,7 @@
       "zustand": "gebraucht",
       "stil": "industrie",
       "blick": "unten",
-      "tuer": [
-        [
-          2,
-          5
-        ]
-      ]
+      "tuer": [[2, 5]]
     },
     "iw5Pfoertner": {
       "quelle": "modern-exteriors/Modern_Exteriors_16x16/ME_Theme_Sorter_16x16/15_Police_Station_Singles_16x16/ME_Singles_Police_Station_16x16_Parking_Booth_1.png",
@@ -904,14 +889,8 @@
       "blick": "unten",
       "stil": "klassisch",
       "tuer": [
-        [
-          2,
-          11
-        ],
-        [
-          3,
-          11
-        ]
+        [2, 11],
+        [3, 11]
       ]
     },
     "iw9VitrineZeitung": {
@@ -1032,6 +1011,26 @@
       "blick": "unten",
       "zustand": "neu",
       "stil": "rustikal"
+    },
+    "iw10Kasse": {
+      "quelle": "spiel/eigene/kantine_kasse.png",
+      "breite": 32,
+      "hoehe": 32,
+      "kollision": true,
+      "art": "geraet",
+      "blick": "unten",
+      "zustand": "gebraucht",
+      "stil": "industrie"
+    },
+    "iw10Speiseplan": {
+      "quelle": "spiel/eigene/kantine_speiseplan.png",
+      "breite": 32,
+      "hoehe": 16,
+      "kollision": true,
+      "art": "tafel",
+      "blick": "unten",
+      "zustand": "gebraucht",
+      "stil": "industrie"
     }
   }
 }

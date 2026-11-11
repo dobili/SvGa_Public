@@ -151,3 +151,5 @@ Szene heißt die Datei in `inhalte/abenteuer/szenen/` ohne `.json`.
 - [x] steinbruch-grube: Bagger aus Gemini (bagger_links) statt des kleinen Baggers von vorn (mittel-4) → `silicon-bay-3-gemini-teil2-mittel-3-4.md`
 
 - [x] weg-ghost-capital-seeufer, capital-arena-aussen, port-delacroix-aussen (+ musikhaus-neu), weg-ironwood-silicon-raststaette, weg-silicon-delacroix-deich: Restpunkte aus `gemini-fahrzeuge-teil2.md` (Verkäufer, Lastwagen am Marktplatz, Längsbuchten, Deichfläche; mittel-1) → `mittel-1-fahrzeuge-restpunkte-pferde.md`
+- [ ] ironwood-kantine (+ logo): Registrierkasse und Speiseplan als eigene Bilder (mittel-4)
+- [ ] weg-desert-summit-bergstrasse: runde Kehren mit Linien im Bogen (mittel-4)

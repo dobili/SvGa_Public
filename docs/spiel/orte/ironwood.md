@@ -825,3 +825,12 @@ zwei Teppichmaterialien mit Muster; **„TICKET“** – Bild des Pakets.
 
 **Werksbus (10.11.2026, abends):** Das Bild `fz11BusAb` ist 3 × 7 Kacheln, sichtbar etwa 6,5 lang; ein
 längeres Busbild in Vorderansicht gibt es im Katalog nicht (Soll 7–9 nach 10.64).
+
+## Kantine, dritte Prüfung: Kasse und Speiseplan (11.11.2026, mittel-4)
+
+Befunde 3 und 6 des Gutachtens `ironwood-kantine-3.md`: Die Kasse war die 16 × 16 große Marktkasse des
+Pakets und ging auf dem Tresen unter; der Speiseplan war eine Schultafel. Beide sind jetzt eigene Bilder
+(Bildwunsch `bildwuensche/kantine_kasse.py`): die Registrierkasse `iw10Kasse` (32 × 32) am rechten Ende der
+Essensausgabe, der Speiseplan `iw10Speiseplan` (32 × 16) im Holzrahmen an der Nordwand des Gastraums neben
+der Uhr. Gilt auch für den Zustand „logo“; dort rückt das Schild „PERFECT MOVE“ ein Stück nach links,
+damit es die Kasse nicht berührt.

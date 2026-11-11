@@ -17,6 +17,7 @@ from pathlib import Path
 
 from pipeline.abenteuer.belebung import lade_texte, pruefe_belebung, pruefe_standorte
 from pipeline.abenteuer.kartenregeln import pruefe_regeln
+from pipeline.abenteuer.kehren import kehrenbefunde
 from pipeline.abenteuer.maske import maskenfelder
 from pipeline.abenteuer.moebelliste import lade_moebel
 from pipeline.abenteuer.stadtgroesse import ortseintrag, pruefe_gebaeude, zaehlt_als_stadtkarte
@@ -298,6 +299,7 @@ def baue(pfad: Path) -> list[str]:
     from pipeline.abenteuer.zusammenhang import pruefe_zusammenhang
 
     befunde += pruefe_zusammenhang(szene, zeilen, gesetzt, moebel)
+    befunde += kehrenbefunde(szene, zeilen)
     if not ist_archiv(pfad):
         befunde += pruefe_gebaeude(szene, gesetzt, moebel)
         ort = ortseintrag(szene["karte"]) or {}

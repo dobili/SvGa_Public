@@ -1,6 +1,6 @@
 # Sammlung der Rückmeldungen zum Schach-Abenteuer (Beta)
 
-Stand: 11.11.2026. Offene Punkte: 66. Abgeschickt (gepusht): noch nichts.
+Stand: 11.11.2026. Offene Punkte: 68. Abgeschickt (gepusht): noch nichts.
 
 Hinweis: Es gibt zwei Karten, die mit „Zedern“ beginnen: Zedernpfad (Maple Falls nach Cedar Creek) und Zedernwald (Cedar Creek nach Riverton). Alle bisherigen Anmerkungen des Autors, auch wo er „Zedernwald“ sagte, betreffen den Zedernpfad.
 
@@ -117,7 +117,7 @@ Der Raum der Stadtbibliothek an sich sieht nach Einschätzung des Autors gut aus
 
 - [ ] R066. Bibliothek und Keller, Treppe: Man geht in der Bibliothek oben rechts durch eine Tür, die direkt in den Keller führt. Im Keller ist die Treppe als Zugang ebenfalls oben rechts. Das ergibt keinen Sinn: Ist in der Bibliothek der Zugang oben rechts, kann die Treppe im Keller nicht auch oben rechts sein, sonst lassen sich die beiden Karten nicht logisch aneinandersetzen. Außerdem ist es unüblich, dass hinter einer Tür direkt eine Treppe nach unten führt. Vorschlag des Autors: In der Bibliothek oben rechts einen kleinen abgetrennten Bereich anlegen, in dem die Treppe nach unten liegt. Man geht durch eine Tür hinein und biegt dann auf die Treppe nach unten ab. Der Keller soll direkt unter dem Bibliotheksraum liegen. Er sollte eventuell auch flächenmäßig genauso groß sein wie der Bibliotheksraum; zwingend ist das nicht (man unterkellert nicht immer das ganze Gebäude), schaden würde es nicht.
 
-### Cedar Creek, Keller unter der Bibliothek (der Autor sagt „Keller“; vermutlich `cedar-creek-archiv`, Variante `cedar-creek-archiv-geordnet`)
+### Cedar Creek, Keller unter der Bibliothek (der Autor sagt „Keller“; `cedar-creek-archiv`, vom Autor bestätigt, Variante `cedar-creek-archiv-geordnet`)
 
 - [ ] R067. Keller, Kisten mit Zahlen: Die Kisten mit den aufgedruckten Zahlen passen optisch nicht, es sind wieder „Abziehbild“-Assets. Wunsch: schönere Paket- oder Kisten-Assets finden, auf die man Zahlen schreiben kann und die optisch besser zum Rest passen. Zusammenhang mit R055.
 - [ ] R068. Keller, unten mittig im Bild: Auf dem Boden ist ein Schatten. Dem Autor erschließt sich nicht, was es damit auf sich hat. Fragt: Gehört der Schatten zur Geschichte? Hauptchat prüfen; gehört er nicht dazu, kann er wohl weg.
@@ -125,6 +125,11 @@ Der Raum der Stadtbibliothek an sich sieht nach Einschätzung des Autors gut aus
 ### Cedar Creek, Drechslerei (`cedar-creek-drechslerei`)
 
 - [ ] R058. Drechslerei, die beiden Werkbänke in der Mitte: Das Asset passt nicht zum Rest. Es ist wenig ausmodelliert und sieht aus wie ein „Abziehbild“. Die beiden Holzstücke, die darauf liegen, ragen scheinbar zur Hälfte über und würden gleich herunterfallen. Ein anderes Werkbank-Asset wird gebraucht, und es ist vermutlich auch an anderen Stellen auszutauschen. Der Autor glaubt, dass dasselbe Asset auch manchmal für Schilder benutzt wird. Als Schild findet er es ganz okay, aber es kann nicht beides sein: Ein aufrecht stehendes Schild mit Text und eine Werkbank mit waagerechter Fläche, auf der etwas liegt. Prüfen, wo es sonst eingesetzt ist, und ein besseres Asset für die Werkbank finden. Der Rest der Karte sieht nach Einschätzung des Autors gut aus. Zusammenhang mit R055.
+
+### Weg Cedar Creek nach Riverton, Zedernwald (`weg-cedar-riverton-zedernwald`)
+
+- [ ] R069. Zedernwald, Brücke über den kleinen Fluss: Ein kleiner „Mini-Fluss“ geht durch die Karte, die Brücke liegt relativ mittig, ein Stückchen weiter rechts. Sie steht nicht mittig über dem Fluss. Wunsch: besser setzen, sodass sie mittiger über dem Fluss steht, falls machbar.
+- [ ] R070. Zedernwald, oben rechts, kleines Camp: Das Lagerfeuer steht mitten auf dem Weg. Das sollte nicht so sein.
 
 ### Maple Falls, Wohnzimmer (`maple-falls-wohnzimmer-ausgepackt`)
 

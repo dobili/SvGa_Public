@@ -1,6 +1,6 @@
 # Sammlung der Rückmeldungen zum Schach-Abenteuer (Beta)
 
-Stand: 11.11.2026. Offene Punkte: 59. Abgeschickt (gepusht): noch nichts.
+Stand: 11.11.2026. Offene Punkte: 60. Abgeschickt (gepusht): noch nichts.
 
 Reihenfolge je Kategorie: zuerst, was das Weiterspielen verhindert, dann Störendes, dann Schönheitsfehler.
 
@@ -100,6 +100,10 @@ Reihenfolge je Kategorie: zuerst, was das Weiterspielen verhindert, dann Stören
 - [ ] R059. Ortskern, Schild „Waschsalon“ über dem Waschsalon: Es sieht aus, als lägen zwei Schilder voreinander, ein weißes mit lila Schrift und ein schwarzes mit weißer Schrift. Der Autor vermutet, dass das weiße Schild zum Gebäude-Asset gehört und das schwarze darübergelegt wurde. Das schwarze Schild soll das weiße vollständig abdecken, damit es nicht aussieht, als hätte der Inhaber faul ein zweites Schild davorgestellt.
 - [ ] R051. Ortskern, Bahnhaltestelle oben (Schilder „Fahrplan“ und „Cedar Creek“): Die Schilder sind nach Einschätzung des Autors okay, auch wenn die Assets nicht gerade dreidimensional sind; nicht schlimm. Die Bank zwischen den beiden Schildern steht aber auf dem Gras. Vorschlag: den gepflasterten Bereich ein Stück nach unten erweitern, sodass die Bank auf der Pflasterung steht, und die Schilder entsprechend ein Stück nach unten verschieben.
 - [ ] R052. Ortskern, Bahnhaltestelle: Der Übergang zwischen dem Trampelpfad, der zur Haltestelle führt, und der gepflasterten Haltestelle besteht nur aus einer einzigen Ecke. Wird die Haltestelle nach unten erweitert (R051), muss der Übergang entsprechend erweitert und der Trampelpfad verbreitert werden.
+
+### Cedar Creek, Waschsalon (`cedar-creek-waschsalon`)
+
+- [ ] R061. Waschsalon, unten links, Stuhl ganz links: An der Rückenlehne scheint etwas aufgemalt oder aufgeklebt zu sein, eine Art Schild. Der Autor fragt, ob das zur Geschichte gehört und Sinn macht. Es stört ihn nicht (vielleicht hat jemand etwas hingeklebt oder gekritzelt). Der Hauptchat soll entscheiden: Gehört es nicht zur Geschichte, kann es weg. Sonst sieht die Karte nach Einschätzung des Autors gut aus, er hat nichts auszusetzen.
 
 ### Cedar Creek, Drechslerei (`cedar-creek-drechslerei`)
 

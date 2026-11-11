@@ -11,7 +11,7 @@
  "tilewidth": 16,
  "tileheight": 16,
  "nextlayerid": 5,
- "nextobjectid": 154,
+ "nextobjectid": 155,
  "layers": [
   {
    "id": 1,
@@ -7429,8 +7429,8 @@
      "id": 33,
      "name": "pferdAmStall",
      "type": "tier",
-     "x": 416,
-     "y": 400,
+     "x": 400,
+     "y": 384,
      "width": 16,
      "height": 16,
      "rotation": 0,
@@ -7439,12 +7439,12 @@
       {
        "name": "von",
        "type": "string",
-       "value": "25,25"
+       "value": "24,24"
       },
       {
        "name": "bis",
        "type": "string",
-       "value": "27,25"
+       "value": "26,24"
       },
       {
        "name": "verhalten",
@@ -10205,6 +10205,29 @@
        "name": "tiefe",
        "type": "int",
        "value": 526
+      },
+      {
+       "name": "kollision",
+       "type": "bool",
+       "value": true
+      }
+     ]
+    },
+    {
+     "id": 154,
+     "name": "gt12Anbindebalken",
+     "type": "moebel",
+     "x": 384,
+     "y": 400,
+     "width": 48,
+     "height": 16,
+     "rotation": 0,
+     "visible": true,
+     "properties": [
+      {
+       "name": "tiefe",
+       "type": "int",
+       "value": 408
       },
       {
        "name": "kollision",

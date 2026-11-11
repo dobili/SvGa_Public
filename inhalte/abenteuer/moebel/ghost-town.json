@@ -842,6 +842,24 @@
       "blick": "unten",
       "zustand": "gebraucht",
       "stil": "rustikal"
+    },
+    "gt12Anbindebalken": {
+      "quelle": "spiel/eigene/anbindebalken.png",
+      "breite": 48,
+      "hoehe": 16,
+      "kollision": true,
+      "art": "zaun",
+      "zustand": "alt",
+      "stil": "rustikal"
+    },
+    "gt12Weiche": {
+      "quelle": "spiel/eigene/weiche_stollen.png",
+      "breite": 64,
+      "hoehe": 64,
+      "kollision": false,
+      "art": "gleis",
+      "zustand": "alt",
+      "stil": "industrie"
     }
   }
 }

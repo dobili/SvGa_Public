@@ -207,7 +207,7 @@
       "stil": "klassisch"
     },
     "el11Buchladen": {
-      "quelle": "spiel/eigene/london_buchladen.png",
+      "quelle": "spiel/eigene/london_buchladen_hell.png",
       "breite": 112,
       "hoehe": 192,
       "kollision": false,
@@ -218,7 +218,7 @@
       "begehbar_grund": "Fassade als Kulisse auf der Wandfläche"
     },
     "el11Schneider": {
-      "quelle": "spiel/eigene/london_schneider.png",
+      "quelle": "spiel/eigene/london_schneider_hell.png",
       "breite": 112,
       "hoehe": 192,
       "kollision": false,
@@ -229,7 +229,7 @@
       "begehbar_grund": "Fassade als Kulisse auf der Wandfläche"
     },
     "el11Kaffeehaus": {
-      "quelle": "spiel/eigene/london_kaffeehaus.png",
+      "quelle": "spiel/eigene/london_kaffeehaus_hell.png",
       "breite": 112,
       "hoehe": 192,
       "kollision": false,
@@ -238,15 +238,10 @@
       "stil": "klassisch",
       "begehbar": true,
       "begehbar_grund": "Fassade als Kulisse auf der Wandfläche",
-      "tuer": [
-        [
-          5,
-          12
-        ]
-      ]
+      "tuer": [[5, 12]]
     },
     "el11Schachsalon": {
-      "quelle": "spiel/eigene/london_schachsalon.png",
+      "quelle": "spiel/eigene/london_schachsalon_hell.png",
       "breite": 112,
       "hoehe": 192,
       "kollision": false,
@@ -257,7 +252,7 @@
       "begehbar_grund": "Fassade als Kulisse auf der Wandfläche"
     },
     "el11Pub": {
-      "quelle": "spiel/eigene/london_pub.png",
+      "quelle": "spiel/eigene/london_pub_hell.png",
       "breite": 112,
       "hoehe": 192,
       "kollision": false,

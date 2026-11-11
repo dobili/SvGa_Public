@@ -1,6 +1,6 @@
 # Sammlung der Rückmeldungen zum Schach-Abenteuer (Beta)
 
-Stand: 11.11.2026. Offene Punkte: 49. Abgeschickt (gepusht): noch nichts.
+Stand: 11.11.2026. Offene Punkte: 56. Abgeschickt (gepusht): noch nichts.
 
 Reihenfolge je Kategorie: zuerst, was das Weiterspielen verhindert, dann Störendes, dann Schönheitsfehler.
 
@@ -21,6 +21,7 @@ Reihenfolge je Kategorie: zuerst, was das Weiterspielen verhindert, dann Stören
 
 ### Alle Karten (Regel)
 
+- [ ] R055. Alle Karten, „Abziehbild“-Assets: Der Autor weiß nicht, woher die Kartenbauer diese Assets haben. Sie haben keine Tiefe und können nicht verwendet werden (siehe R002, R021, R022, R054). Er vermutet, dass sie auch auf anderen Karten eingesetzt sind; alle prüfen und überarbeiten. Mögliche Wege laut Autor: Er lässt Assets im passenden Stil zeichnen (Gemini), oder es werden passende, gut kombinierbare Asset-Packs gesucht. Die Entscheidung liegt beim Hauptchat.
 - [ ] R042. Alle Karten, Bodenübergänge: Prüfen, ob die Übergänge zwischen zwei verschiedenen Boden-Assets so sinnvoll sind, wie sie sind. Sollen es scharfe Kanten sein, oder braucht es ein Übergangs-Asset? Siehe R041.
 - [ ] R005. Alle Karten, Innentüren: Für Türen im Inneren (zwischen Räumen) wird dasselbe Asset wie für die Haustür benutzt. Es wirkt falsch, weil die Wand fast doppelt so hoch ist wie die Tür. Für Innentüren muss ein anderes, passendes Asset gefunden werden. Konkret betroffen: Diner (siehe R005a).
   > „Wir müssen für so Türen in den Innenräumen ein anderes Asset finden.“
@@ -88,6 +89,15 @@ Reihenfolge je Kategorie: zuerst, was das Weiterspielen verhindert, dann Stören
 - [ ] R045. Kürbishof, Zaun rechts, beim Feld oben rechts: Die Enden des Zauns fehlen, also die Endpfosten.
 - [ ] R046. Kürbishof, Kürbisfeld (oben rechts): Die Kürbisse liegen nicht vollständig auf dem Feld. Einige liegen auf der Graskante.
 - [ ] R047. Kürbishof, Kürbisfeld (oben rechts): Der Untergrund ist dasselbe Asset wie für die Wege. Das ergibt keinen Sinn, der Boden eines Kürbisfelds sieht anders aus als ein Trampelpfad. Ein anderes Asset ist nötig; vermutlich gibt es im Bestand (Datenbank) ein geeignetes.
+
+### Cedar Creek, Ortskern (`cedar-creek-aussen`)
+
+- [ ] R053. Ortskern, Eingang der Bibliothek (der Autor meint die Stadtbibliothek, das große Gebäude in der Mitte): Zwischen dem Asset des Eingangsbereichs mit der Treppe und dem Asset des Bibliotheksgebäudes ist immer noch eine grafische Lücke, durch die das Gras schimmert. Der Autor hat das schon mehrfach angemerkt, es ist nach seiner Zählung etwa zum fünften Mal schiefgegangen. Vorschlag des Autors: das Eingangs-Asset im Layer oberhalb der Bibliothek anlegen und nur noch ein Stückchen nach rechts schieben, sodass es oben beim Balkon die Wand wirklich berührt. Auftrag: Eine KI soll es zusammenbauen und sich das Bild konkret ansehen, ob noch Grün oder Hintergrund-Assets durchschimmern.
+- [ ] R056. Ortskern, Hauptstraße von links nach rechts bis zum Platz: Am Ende der Straße sind die Straßenmarkierungen verrutscht, die letzte Markierung ist nach unten gerutscht.
+- [ ] R057. Ortskern, Platz am Ende der Hauptstraße (Wende- und Parkbereich, dort parkt der Bus, vor der Bushaltestelle): Der asphaltierte Bereich ist nicht überall vollständig mit den Pflastersteinen umrandet. Wunsch: Wende- und Parkbereich überarbeiten, sodass ein sauberes Rechteck entsteht, schön umrandet mit den kleinen grauen Steinen, und die Fahrbahnmarkierungen passen. Auch hier soll sich eine KI das Ergebnis im Bild ansehen.
+- [ ] R054. Ortskern, Gebäude als „Abziehbilder“ ohne Tiefe, passen perspektivisch und vielleicht auch stilistisch nicht zum Rest (der Autor ist sich bei Perspektive und Stil nicht sicher, sie fallen optisch jedenfalls heraus). Betroffen sind: das kleine Häuschen rechts neben der Bibliothek; der Schuppen am Fluss rechts, relativ mittig im Bild; das Häuschen ganz unten am Fluss, links vom Fluss; die drei Häuser ganz links unten in der unteren Häuserreihe; die Häuser darüber auf der linken Bildseite unter der Hauptstraße. Bitte durch etwas Sinnvolles ersetzen, oder der Autor lässt in Gemini passende Assets erstellen.
+- [ ] R051. Ortskern, Bahnhaltestelle oben (Schilder „Fahrplan“ und „Cedar Creek“): Die Schilder sind nach Einschätzung des Autors okay, auch wenn die Assets nicht gerade dreidimensional sind; nicht schlimm. Die Bank zwischen den beiden Schildern steht aber auf dem Gras. Vorschlag: den gepflasterten Bereich ein Stück nach unten erweitern, sodass die Bank auf der Pflasterung steht, und die Schilder entsprechend ein Stück nach unten verschieben.
+- [ ] R052. Ortskern, Bahnhaltestelle: Der Übergang zwischen dem Trampelpfad, der zur Haltestelle führt, und der gepflasterten Haltestelle besteht nur aus einer einzigen Ecke. Wird die Haltestelle nach unten erweitert (R051), muss der Übergang entsprechend erweitert und der Trampelpfad verbreitert werden.
 
 ### Maple Falls, Wohnzimmer (`maple-falls-wohnzimmer-ausgepackt`)
 

@@ -92,12 +92,13 @@ Stand: 11.11.2026.
 | cedar-creek-waschsalon                         | 11.11.2026 | `nachpruefung-147fa651.md`                 |
 | cedar-creek-bibliothek                         | 11.11.2026 | `nachpruefung-147fa651.md`                 |
 | maple-falls-diner                              | 11.11.2026 | `nachpruefung-147fa651.md`                 |
-| weg-pinewood-ghost-staubstrasse                | 11.11.2026 | `nachpruefung-147fa651.md`                 |
-| desert-springs-aussen (mit meisterschaft)      | 11.11.2026 | `nachpruefung-147fa651.md`                 |
+| weg-pinewood-ghost-staubstrasse                | 11.11.2026 | `weg-pinewood-ghost-canyonrand-3.md`       |
+| desert-springs-aussen (mit meisterschaft)      | 11.11.2026 | `weg-pinewood-ghost-canyonrand-3.md`       |
 | ironwood-aussen (mit vermietet, meisterschaft) | 11.11.2026 | `nachpruefung-147fa651.md`                 |
 | steinbruch-grube                               | 11.11.2026 | `nachpruefung-147fa651.md`                 |
 | weg-desert-summit-hinterzimmer                 | 11.11.2026 | `nachpruefung-147fa651.md`                 |
 | weg-silicon-delacroix-faehre                   | 11.11.2026 | `nachpruefung-147fa651.md`                 |
+| weg-pinewood-ghost-canyonrand                  | 11.11.2026 | `weg-pinewood-ghost-canyonrand-3.md`       |
 
 Hinweise:
 
@@ -107,6 +108,5 @@ Hinweise:
 
 ## Fast reif (ein oder zwei benannte Punkte fehlen)
 
-| Szene                         | Datum      | Letztes Gutachten          | Was fehlt                           |
-| ----------------------------- | ---------- | -------------------------- | ----------------------------------- |
-| weg-pinewood-ghost-canyonrand | 11.11.2026 | `nachpruefung-147fa651.md` | Fluss und Wandkante in Kachelstufen |
+| Szene | Datum | Letztes Gutachten | Was fehlt |
+| ----- | ----- | ----------------- | --------- |

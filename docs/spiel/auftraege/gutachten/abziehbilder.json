@@ -16,22 +16,6 @@
       "szenen": ["cedar-creek-archiv", "cedar-creek-archiv-geordnet"]
     },
     {
-      "bild": "spiel/eigene/bahnsteigbank_hinten.png",
-      "urteil": "abziehbild",
-      "grund": "Rückansicht entfällt (Regel 10.71)",
-      "szenen": ["cedar-creek-aussen", "weg-cedar-riverton-bahndamm"]
-    },
-    {
-      "bild": "spiel/eigene/bank_hinten_braun.png",
-      "urteil": "abziehbild",
-      "grund": "Rückansicht entfällt (Regel 10.71)",
-      "szenen": [
-        "maple-falls-park",
-        "maple-falls-park-schulbus",
-        "maple-falls-park-steg-neu"
-      ]
-    },
-    {
       "bild": "spiel/eigene/basketball_halbfeld.png",
       "urteil": "abziehbild",
       "grund": "Hallenboden ohne Tiefe (R021); alten Asphaltplatz zurückholen",
@@ -251,39 +235,21 @@
       ]
     },
     {
-      "bild": "spiel/eigene/haus_hinten_b_blau.png",
-      "urteil": "abziehbild",
-      "grund": "Rückansicht entfällt (Regel 10.71)",
-      "szenen": ["maple-falls-aussen"]
-    },
-    {
-      "bild": "spiel/eigene/haus_hinten_b_braun.png",
-      "urteil": "abziehbild",
-      "grund": "Rückansicht entfällt (Regel 10.71); R054",
-      "szenen": ["cedar-creek-aussen"]
-    },
-    {
-      "bild": "spiel/eigene/haus_hinten_b_rot.png",
-      "urteil": "abziehbild",
-      "grund": "Rückansicht entfällt (Regel 10.71)",
-      "szenen": ["maple-falls-aussen"]
-    },
-    {
       "bild": "spiel/eigene/haus_hinten_blau.png",
       "urteil": "abziehbild",
-      "grund": "Rückansicht entfällt (Regel 10.71)",
+      "grund": "flache Rückansicht ohne First und Schattierung",
       "szenen": ["maple-falls-aussen"]
     },
     {
       "bild": "spiel/eigene/haus_hinten_braun.png",
       "urteil": "abziehbild",
-      "grund": "Rückansicht entfällt (Regel 10.71)",
+      "grund": "flache Rückansicht ohne First und Schattierung",
       "szenen": ["maple-falls-aussen"]
     },
     {
       "bild": "spiel/eigene/haus_hinten_rot.png",
       "urteil": "abziehbild",
-      "grund": "Rückansicht entfällt (Regel 10.71); R054",
+      "grund": "R054: flache Rückansicht ohne First und Schattierung",
       "szenen": ["cedar-creek-aussen"]
     },
     {
@@ -463,22 +429,6 @@
       "szenen": ["ironwood-museum"]
     },
     {
-      "bild": "spiel/eigene/wartehaus_hinten.png",
-      "urteil": "abziehbild",
-      "grund": "Rückansicht entfällt (Regel 10.71)",
-      "szenen": [
-        "capital-arena-innenstadt",
-        "cedar-creek-aussen",
-        "ironwood-aussen",
-        "ironwood-aussen-meisterschaft",
-        "ironwood-aussen-vermietet",
-        "maple-falls-park",
-        "maple-falls-park-schulbus",
-        "maple-falls-park-steg-neu",
-        "weg-ironwood-silicon-raststaette"
-      ]
-    },
-    {
       "bild": "spiel/eigene/werk_halle.png",
       "urteil": "abziehbild",
       "grund": "glatte Front, Sheddach als Zacken von vorn",
@@ -559,6 +509,21 @@
       "bild": "spiel/eigene/hafen_faehre.png",
       "urteil": "grenzwertig",
       "grund": "bleibt, bis die Gemini-Fähre da ist (gemini_prompts_4.md Nr. 7)"
+    },
+    {
+      "bild": "spiel/eigene/haus_hinten_b_blau.png",
+      "urteil": "grenzwertig",
+      "grund": "Rückansicht mit Walmdach und Gauben, Wand flach; bleibt, bis die Gemini-Rückansichten da sind (gemini_prompts_4.md Nr. 11)"
+    },
+    {
+      "bild": "spiel/eigene/haus_hinten_b_braun.png",
+      "urteil": "grenzwertig",
+      "grund": "R054 (vom Autor genannt); wie haus_hinten_b_blau"
+    },
+    {
+      "bild": "spiel/eigene/haus_hinten_b_rot.png",
+      "urteil": "grenzwertig",
+      "grund": "wie haus_hinten_b_blau"
     },
     {
       "bild": "spiel/eigene/saloon_fassade.png",

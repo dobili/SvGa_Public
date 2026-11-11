@@ -1,8 +1,12 @@
 """Tests der Straßenarten (pipeline/abenteuer/strassenart.py): Landstraße und Belagwechsel."""
 
-from PIL import Image
+import pytest
 
-from pipeline.abenteuer.strassenart import BRUCH_FARBE, K, belagwechsel, landstrassen
+pytest.importorskip("PIL.Image")  # Pillow fehlt in Actions
+
+from PIL import Image  # noqa: E402
+
+from pipeline.abenteuer.strassenart import BRUCH_FARBE, K, belagwechsel, landstrassen  # noqa: E402
 
 ASPHALT, ERDE = (80, 80, 90, 255), (170, 130, 80, 255)
 

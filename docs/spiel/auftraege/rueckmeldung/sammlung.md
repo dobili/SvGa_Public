@@ -1,6 +1,6 @@
 # Sammlung der Rückmeldungen zum Schach-Abenteuer (Beta)
 
-Stand: 11.11.2026. Offene Punkte: 42. Abgeschickt (gepusht): noch nichts.
+Stand: 11.11.2026. Offene Punkte: 43. Abgeschickt (gepusht): noch nichts.
 
 Reihenfolge je Kategorie: zuerst, was das Weiterspielen verhindert, dann Störendes, dann Schönheitsfehler.
 
@@ -67,8 +67,9 @@ Reihenfolge je Kategorie: zuerst, was das Weiterspielen verhindert, dann Stören
   Lösungsvorschlag des Autors: Entweder ein anderes Asset für Trampelpfade, die nur von Menschen begangen werden (etwa Zedernpfad), oder ein anderes Asset für Wege, auf denen auch ein Bus fährt (Landstraße), damit beide Arten sich unterscheiden.
 - [ ] R038. Landstraße, Felder oben: Die Felder sind Rechtecke, in zwei Reihen aneinandergereiht. Die Pflanzen (Pflanzenassets) liegen teilweise außerhalb der Pflanzkästen oder eingegrenzten Felder, teilweise auf deren Begrenzungen, und auch in den Zwischenräumen zwischen den beiden Reihen. Das ergibt keinen Sinn; Pflanzen gehören nur in die Felder.
 - [ ] R039. Landstraße, kleiner Stand relativ mittig im Bild: Auf dem Dach wachsen Pflanzen, dieselben wie links und rechts neben dem Stand. Das ergibt keinen Sinn.
-- [ ] R040. Landstraße, Stand: Er ist komplett leer, Ware scheint zu fehlen. Der Autor weiß nicht, ob das in der Geschichte so gedacht ist (Hauptchat prüfen). Rechts daneben steht eine Figur. Gehört sie zum Stand, sollte sie näher an der Straße neben dem Stand stehen und nicht so weit oben. Zusammenhang mit R008.
+- [ ] R040. Landstraße, Stand: Er ist komplett leer, Ware scheint zu fehlen. Der Autor weiß nicht, ob das in der Geschichte so gedacht ist (Hauptchat prüfen). Rechts daneben steht eine Figur. Gehört sie zum Stand, sollte sie näher an der Straße neben dem Stand stehen und nicht so weit oben. Zusammenhang mit R008. Der Autor bestätigt: Die Figur steht rechts neben dem Stand, er vermutet, dass sie zum Stand gehört, weiß es aber nicht.
 - [ ] R041. Landstraße, Fläche des Flohmarkts: Das gräuliche Boden-Asset ist an sich in Ordnung, aber der Übergang zum Gras daneben ist eine scharfe, gerade Kante. Es sieht aus, als wäre das Boden-Asset auf das Gras geklebt. Wunsch: ein passendes Übergangs-Asset finden, um den Rand natürlicher zu machen, oder einen angelegten Rand, der klarer trennt. Eine rechteckige Asphaltierung ist als Menschenwerk denkbar, die abrupte gerade Linie stört aber das Bild. Als Beispiel nennt der Autor den Weg: Der hat die orange-braune Farbe und ein Randasset für den Übergang zu Gras.
+- [ ] R044. Landstraße, Variante mit offenem Garten (Variante `weg-maple-cedar-landstrasse-gatter-offen`): Das Tor im Zaun verschwindet einfach. Das ist unlogisch, man baut ein Tor nicht ab, man öffnet es. Wunsch: ein passendes Asset, bei dem das Tor einmal offen und einmal zu ist, und das in beiden Varianten verwendet wird.
 
 ### Weg Maple Falls nach Cedar Creek, Zedernpfad (`weg-maple-cedar-zedernpfad`)
 

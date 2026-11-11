@@ -1,6 +1,6 @@
 # Sammlung der Rückmeldungen zum Schach-Abenteuer (Beta)
 
-Stand: 11.11.2026. Offene Punkte: 35. Abgeschickt (gepusht): noch nichts.
+Stand: 11.11.2026. Offene Punkte: 34. Abgeschickt (gepusht): noch nichts.
 
 Reihenfolge je Kategorie: zuerst, was das Weiterspielen verhindert, dann Störendes, dann Schönheitsfehler.
 
@@ -12,7 +12,7 @@ Reihenfolge je Kategorie: zuerst, was das Weiterspielen verhindert, dann Stören
 - [ ] R030. Zedernpfad, Wald: Der Zedernwald ist nicht sehr dicht. Mit der Figur kann man nahezu unten am Rand von links nach rechts laufen und dann nach oben zum Ausgang, ohne dem Weg zu folgen. Dabei umgeht man das komplette Gebirge. Das kann nicht Sinn der Sache sein.
 - [ ] R031. Alle Karten, Abkürzungen: Prüfen, ob man an Stellen, an denen man dem Weg folgen soll, durch Wald oder Ähnliches abkürzen kann. Ist vorgesehen, dass man dem Weg folgt, soll das nicht möglich sein. Ausnahme: Es ist für die Geschichte nicht schlimm oder es gibt im Wald etwas zu entdecken. Zusammenhang mit R030.
 - [ ] R032. Zedernpfad, Weltlogik (Ergänzung zum Zedernwald): Der Zedernpfad führt oben rechts hinaus zum Ortskern von Cedar Creek. Man kommt auch anders dorthin: vom Stadtpark die Hauptstraße rechts zur Landstraße, von dort ganz rechts zum Flussweg, von dort ganz rechts zum Ortskern. Landstraße plus Flussweg sind in der Breite viel länger als der Zedernpfad. Legt man die Karten aneinander, passt das nicht. Der Zedernpfad müsste sehr viel breiter sein, damit die Strecke zur Logik passt.
-- [ ] R033. Weltlogik, Kürbishof und Zedernpfad: Legt man die Karten auf einer großen Fläche von links nach rechts aneinander (Stadtpark, Landstraße, Flussweg, Ortskern), liegt der Kürbishof, der von der Landstraße nach oben abgeht, oberhalb der Landstraße. Der Zedernpfad müsste dann oberhalb des Kürbishofs verlaufen. Der Autor meint, dafür müssten Verbindungskarten gebaut werden: eine, die am Kürbishof vorbei nach oben zum Zedernpfad führt, und ein Verbindungsstück vom Ende des Zedernpfads (der dann ein ganzes Stück nach rechts weitergeht) zum Ortskern. Legt er den Zedernpfad mit seinem Zugang auf den Zugang des Ortskerns, überlappt er mit der Karte zum „Plusweg“ (Wortlaut, siehe R035).
+- [ ] R033. Weltlogik, Kürbishof und Zedernpfad: Legt man die Karten auf einer großen Fläche von links nach rechts aneinander (Stadtpark, Landstraße, Flussweg, Ortskern), liegt der Kürbishof, der von der Landstraße nach oben abgeht, oberhalb der Landstraße. Der Zedernpfad müsste dann oberhalb des Kürbishofs verlaufen. Der Autor meint, dafür müssten Verbindungskarten gebaut werden: eine, die am Kürbishof vorbei nach oben zum Zedernpfad führt, und ein Verbindungsstück vom Ende des Zedernpfads (der dann ein ganzes Stück nach rechts weitergeht) zum Ortskern. Legt er den Zedernpfad mit seinem Zugang auf den Zugang des Ortskerns, überlappt er mit der Karte „Flussweg“ (diktiert als „Plusweg“, vom Autor als Flussweg bestätigt).
 - [ ] R034. Alle Außenkarten, Weltkarte (Auftrag an den Hauptchat): Der Autor bittet darum, dass eine KI die Weltkarte tatsächlich zusammenpuzzelt, indem sie die Karten über ihre Zugänge aneinanderlegt. Innenräume werden dafür nicht gebraucht. Die Weltkarte muss konsistent sein, nichts darf überlappen.
 
 ## Karten und Grafik
@@ -87,5 +87,4 @@ Reihenfolge je Kategorie: zuerst, was das Weiterspielen verhindert, dann Stören
 
 ## Unklar
 
-- [ ] R035. Weltlogik: Der Autor sagt „die Karte zum Plusweg“ (Spracheingabe, vermutlich verstümmelt, vielleicht „Flussweg“). Bitte beim Autor klären, welche Karte gemeint ist. Betrifft R033.
 

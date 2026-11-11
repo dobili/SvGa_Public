@@ -117,6 +117,7 @@ Szene heißt die Datei in `inhalte/abenteuer/szenen/` ohne `.json`.
 - [x] silicon-bay-lobby, silicon-bay-serverraum (dritte Prüfung, nur Restpunkte, niedrig-1; Antworten in silicon-bay.md; `serverreihe_6` aus `niedrig1_runde9_karten.py` neu rendern, jetzt 160 px breit) und cedar-creek-aussen (nur Haltestelle: Wartehaus südlich der Busbucht, Antworten in cedar-creek.md) → `silicon-bay-lobby-serverraum-3.md`
 
 - [x] ghost-town-aussen (nur neue Bilder: Planwagen von vorn neben dem Mietstall, Pferd an der Tränke, niedrig-1; Antworten in ghost-town.md; Bögen fuchs, pferd, schimmel erst bauen) → `gemini-fahrzeuge-teil2.md`
+- [ ] ghost-town-aussen (Anbindebalken und Tränke am Mietstall), goldmine-stollen (Weiche am Abzweig), erinnerung-london-strand (helle Ladenzone), lockport-aussen (nur Ruben versetzt) (Restpunkte, niedrig-1; Bilder aus `niedrig1_runde10.py` erst rendern; Antworten in ghost-town.md und erinnerung-london.md)
 
 ## Erledigt
 

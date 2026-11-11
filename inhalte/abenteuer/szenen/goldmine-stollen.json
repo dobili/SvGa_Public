@@ -37,13 +37,8 @@
   ],
   "objekte": [
     {
-      "moebel": "n9GleisQuer",
-      "feld": [21, 14],
-      "bauteil_ok": true
-    },
-    {
-      "moebel": "n9GleisQuer",
-      "feld": [22, 14],
+      "moebel": "gt12Weiche",
+      "feld": [19, 14],
       "bauteil_ok": true
     },
     {
@@ -138,26 +133,6 @@
     {
       "moebel": "st5GleisSenkrecht",
       "feld": [19, 13],
-      "bauteil_ok": true
-    },
-    {
-      "moebel": "st5GleisSenkrecht",
-      "feld": [19, 14],
-      "bauteil_ok": true
-    },
-    {
-      "moebel": "st5GleisSenkrecht",
-      "feld": [19, 15],
-      "bauteil_ok": true
-    },
-    {
-      "moebel": "st5GleisSenkrecht",
-      "feld": [19, 16],
-      "bauteil_ok": true
-    },
-    {
-      "moebel": "st5GleisSenkrecht",
-      "feld": [19, 17],
       "bauteil_ok": true
     },
     {

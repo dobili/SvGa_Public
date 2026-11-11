@@ -581,6 +581,10 @@
     {
       "moebel": "gt12PlanwagenVorn",
       "feld": [28, 26]
+    },
+    {
+      "moebel": "gt12Anbindebalken",
+      "feld": [24, 25]
     }
   ],
   "ausloeser": [
@@ -823,10 +827,10 @@
     {
       "name": "pferdAmStall",
       "typ": "tier",
-      "feld": [26, 25],
+      "feld": [25, 24],
       "eigenschaften": {
-        "von": "25,25",
-        "bis": "27,25",
+        "von": "24,24",
+        "bis": "26,24",
         "verhalten": "grasen"
       }
     }

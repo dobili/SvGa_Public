@@ -17,10 +17,27 @@ from pathlib import Path
 
 from PIL import Image, ImageDraw
 
-UMRISS, KASTEN, KASTEN_HELL, KASTEN_DUNKEL = (44, 40, 52, 255), (196, 190, 178, 255), (226, 222, 212, 255), (150, 144, 136, 255)
-ANZEIGE, ZIFFER, TASTE, TASTE_ROT, PAPIER = (38, 60, 52, 255), (140, 232, 150, 255), (92, 96, 110, 255), (200, 66, 56, 255), (246, 244, 236, 255)
+UMRISS, KASTEN, KASTEN_HELL, KASTEN_DUNKEL = (
+    (44, 40, 52, 255),
+    (196, 190, 178, 255),
+    (226, 222, 212, 255),
+    (150, 144, 136, 255),
+)
+ANZEIGE, ZIFFER, TASTE, TASTE_ROT, PAPIER = (
+    (38, 60, 52, 255),
+    (140, 232, 150, 255),
+    (92, 96, 110, 255),
+    (200, 66, 56, 255),
+    (246, 244, 236, 255),
+)
 LADE, GELD, MUENZE = (120, 112, 104, 255), (118, 170, 108, 255), (230, 196, 84, 255)
-RAHMEN, RAHMEN_HELL, TAFEL, KREIDE, KREIDE_GELB = (112, 70, 40, 255), (160, 106, 62, 255), (40, 70, 58, 255), (232, 236, 226, 255), (240, 214, 120, 255)
+RAHMEN, RAHMEN_HELL, TAFEL, KREIDE, KREIDE_GELB = (
+    (112, 70, 40, 255),
+    (160, 106, 62, 255),
+    (40, 70, 58, 255),
+    (232, 236, 226, 255),
+    (240, 214, 120, 255),
+)
 
 
 def kasse() -> Image.Image:

@@ -12,12 +12,17 @@ eine weiße Linie die Buchten (Variantenwahl Mangel 3). ``"buchten_laengs": {"b"
 von Nord nach Süd, alle vier Spalten: für Fahrzeuge von vorn oder hinten (Fernfahrerplatz am Diner
 und Rastplatz der Bergstraße mit den Lastwagen aus Gemini, 10.11.2026; KARTENREGELN 10.65).
 
+Runde Kehren (Szene ``"kehren": "rund"``, kehren.py): Fahrbahnecken werden im Bild zum Viertelbogen,
+Rand- und Mittellinie folgen dem Bogen.
+
 Regeln (Straßen wie in Nordamerika, Schauplatz der Geschichte):
 - Fahrbahnen von 2 bis 4 Feldern Breite bekommen eine gelbe, gestrichelte Mittellinie;
 - an beiden Rändern eine durchgehende weiße Randlinie, ein halbes Pixel-Paar vom Rand entfernt.
 """
 
 from PIL import Image, ImageDraw
+
+from pipeline.abenteuer.kehren import Kehre, bogenlinien, runde
 
 K = 16
 GELB, WEISS = (232, 196, 64, 255), (236, 236, 228, 255)
@@ -47,14 +52,16 @@ def _laeufe(zeilen: list[str], zeichen: set[str], senkrecht: bool) -> list[tuple
     return ergebnis
 
 
-def _linien(bild: Image.Image, zeilen: list[str], zeichen: set[str]) -> None:
+def _linien(bild: Image.Image, zeilen: list[str], zeichen: set[str], kehren: tuple[Kehre, ...] = ()) -> None:
     """Zeichnet Mittel- und Randlinien auf alle Fahrbahnen aus ``zeichen`` (Bild in Pixeln K je Feld).
 
     Beispiel: Old Mother Road, drei Reihen „s“ von Rand zu Rand → gelbe Striche in Reihe 1,5,
     weiße Linien an Ober- und Unterkante.
-    Sonderfall: Kreuzungen (quer und längs Fahrbahn) bekommen keine Linie.
+    Sonderfall: Kreuzungen (quer und längs Fahrbahn) bekommen keine Linie. In den Quadraten runder
+    Kehren (``kehren``, kehren.py) zeichnet ``bogenlinien`` die Linien als Bogen.
     """
     z = ImageDraw.Draw(bild)
+    rund = set().union(*(k.felder() for k in kehren))
     # Mittellinie je gerades Fahrbahnfeld: (x, y) → Pixel der Linie quer zur Fahrtrichtung.
     mitten: dict[bool, dict[tuple[int, int], float]] = {True: {}, False: {}}
     # Waagerechte Straßen: senkrechte Läufe je Spalte; senkrechte Straßen: waagerechte Läufe je Reihe.
@@ -80,8 +87,13 @@ def _linien(bild: Image.Image, zeilen: list[str], zeichen: set[str]) -> None:
                 if p % (STRICH + LUECKE) < STRICH:
                     linien += [(mitte - 1, GELB), (mitte, GELB)]
                 for q, farbe in linien:
-                    z.point((p, int(q)) if senkrecht else (int(q), p), fill=farbe)
-    _kehren(z, zeilen, zeichen, mitten)
+                    punkt = (p, int(q)) if senkrecht else (int(q), p)
+                    if (punkt[0] // K, punkt[1] // K) not in rund:
+                        z.point(punkt, fill=farbe)
+    if kehren:
+        bogenlinien(bild, kehren, RAND, WEISS, GELB)
+    else:
+        _kehren(z, zeilen, zeichen, mitten)
 
 
 def _kehren(z: ImageDraw.ImageDraw, zeilen: list[str], zeichen: set[str], mitten: dict) -> None:
@@ -172,7 +184,9 @@ def markiere(bild: Image.Image, zeilen: list[str], szene: dict) -> None:
 
     Ohne die beiden Schlüssel bleibt das Bild unverändert.
     """
-    _linien(bild, zeilen, set(szene.get("markierung", [])))
+    fahrbahn = set(szene.get("markierung", []))
+    kehren = runde(bild, zeilen, fahrbahn) if szene.get("kehren") == "rund" else []
+    _linien(bild, zeilen, fahrbahn, tuple(kehren))
     _buchten(bild, zeilen, szene.get("buchten", {}))
     _buchten_laengs(bild, zeilen, szene.get("buchten_laengs", {}))
     _randlinien(bild, zeilen, set(szene.get("randlinie", [])), set(szene.get("markierung", [])))

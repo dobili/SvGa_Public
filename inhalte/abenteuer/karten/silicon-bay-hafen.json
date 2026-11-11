@@ -11,7 +11,7 @@
  "tilewidth": 16,
  "tileheight": 16,
  "nextlayerid": 5,
- "nextobjectid": 203,
+ "nextobjectid": 202,
  "layers": [
   {
    "id": 1,
@@ -11882,29 +11882,6 @@
     },
     {
      "id": 183,
-     "name": "pk9Netztrockner",
-     "type": "moebel",
-     "x": 896,
-     "y": 176,
-     "width": 48,
-     "height": 32,
-     "rotation": 0,
-     "visible": true,
-     "properties": [
-      {
-       "name": "tiefe",
-       "type": "int",
-       "value": 200
-      },
-      {
-       "name": "kollision",
-       "type": "bool",
-       "value": true
-      }
-     ]
-    },
-    {
-     "id": 184,
      "name": "caKisten",
      "type": "moebel",
      "x": 784,
@@ -11927,7 +11904,7 @@
      ]
     },
     {
-     "id": 185,
+     "id": 184,
      "name": "sb5Fischkiste",
      "type": "moebel",
      "x": 864,
@@ -11950,30 +11927,7 @@
      ]
     },
     {
-     "id": 186,
-     "name": "sb5FischkisteB",
-     "type": "moebel",
-     "x": 880,
-     "y": 208,
-     "width": 16,
-     "height": 32,
-     "rotation": 0,
-     "visible": true,
-     "properties": [
-      {
-       "name": "tiefe",
-       "type": "int",
-       "value": 232
-      },
-      {
-       "name": "kollision",
-       "type": "bool",
-       "value": true
-      }
-     ]
-    },
-    {
-     "id": 187,
+     "id": 185,
      "name": "sb5Kran",
      "type": "moebel",
      "x": 560,
@@ -11996,7 +11950,7 @@
      ]
     },
     {
-     "id": 188,
+     "id": 186,
      "name": "pd6Kistenstapel",
      "type": "moebel",
      "x": 592,
@@ -12019,7 +11973,7 @@
      ]
     },
     {
-     "id": 189,
+     "id": 187,
      "name": "sb5Fischkiste",
      "type": "moebel",
      "x": 624,
@@ -12042,7 +11996,7 @@
      ]
     },
     {
-     "id": 190,
+     "id": 188,
      "name": "sb5FischkisteB",
      "type": "moebel",
      "x": 640,
@@ -12065,7 +12019,7 @@
      ]
     },
     {
-     "id": 191,
+     "id": 189,
      "name": "pk9Netztrockner",
      "type": "moebel",
      "x": 368,
@@ -12088,7 +12042,7 @@
      ]
     },
     {
-     "id": 192,
+     "id": 190,
      "name": "pk9Netztrockner",
      "type": "moebel",
      "x": 432,
@@ -12111,7 +12065,7 @@
      ]
     },
     {
-     "id": 193,
+     "id": 191,
      "name": "sb5Fischkiste",
      "type": "moebel",
      "x": 352,
@@ -12134,7 +12088,7 @@
      ]
     },
     {
-     "id": 194,
+     "id": 192,
      "name": "sb5FischkisteB",
      "type": "moebel",
      "x": 368,
@@ -12157,7 +12111,7 @@
      ]
     },
     {
-     "id": 195,
+     "id": 193,
      "name": "sb5Fischkiste",
      "type": "moebel",
      "x": 384,
@@ -12180,7 +12134,7 @@
      ]
     },
     {
-     "id": 196,
+     "id": 194,
      "name": "pd9BootAuf",
      "type": "moebel",
      "x": 688,
@@ -12203,7 +12157,7 @@
      ]
     },
     {
-     "id": 197,
+     "id": 195,
      "name": "pd6Bretterstapel",
      "type": "moebel",
      "x": 256,
@@ -12226,7 +12180,7 @@
      ]
     },
     {
-     "id": 198,
+     "id": 196,
      "name": "sb5Fass",
      "type": "moebel",
      "x": 288,
@@ -12249,7 +12203,7 @@
      ]
     },
     {
-     "id": 199,
+     "id": 197,
      "name": "sb5FassB",
      "type": "moebel",
      "x": 304,
@@ -12272,7 +12226,7 @@
      ]
     },
     {
-     "id": 200,
+     "id": 198,
      "name": "sb5Fass",
      "type": "moebel",
      "x": 704,
@@ -12295,7 +12249,7 @@
      ]
     },
     {
-     "id": 201,
+     "id": 199,
      "name": "mfBank",
      "type": "moebel",
      "x": 352,
@@ -12318,7 +12272,7 @@
      ]
     },
     {
-     "id": 202,
+     "id": 200,
      "name": "mfBank",
      "type": "moebel",
      "x": 224,
@@ -12332,6 +12286,29 @@
        "name": "tiefe",
        "type": "int",
        "value": 456
+      },
+      {
+       "name": "kollision",
+       "type": "bool",
+       "value": true
+      }
+     ]
+    },
+    {
+     "id": 201,
+     "name": "sa8Angelladen",
+     "type": "moebel",
+     "x": 880,
+     "y": 112,
+     "width": 112,
+     "height": 144,
+     "rotation": 0,
+     "visible": true,
+     "properties": [
+      {
+       "name": "tiefe",
+       "type": "int",
+       "value": 248
       },
       {
        "name": "kollision",

@@ -390,7 +390,21 @@ nach Regel 10.65 quer zur Straße in Buchten statt als Seitenansicht auf einem P
   auf Plätzen mit `buchten` oder `buchten_laengs` die Richtung der Buchten statt der Platzform.
 - **Kojote:** Die Belebung `kojote` zeigt jetzt den Kojoten aus Gemini statt des Hundes (Stamm in
   `tierarten.json`), sobald der Haupt-Chat den Bogen gebaut hat.
-- **Nicht gemacht:** runde Kehren mit durchsichtigen Asphaltecken. Die weißen Randlinien und die
-  Mittellinie zeichnet `strasse.py` gerade bis in die Ecke; mit Schrägkacheln müssten sie der Schräge
-  folgen, und das Kartenbild müsste unter jeder Randkachel den Nachbarboden zeichnen (Sand, Erde oder
-  Gras je Zone). Das ist ein eigener Schritt für Kartenbild und Linien, kein reiner Bildwunsch.
+
+## Runde Kehren der Bergstraße (11.11.2026, mittel-4)
+
+Gutachten Bergstraße („fast reif“): Die Kehren waren rechte Winkel mit abgeschnittener Ecke. Jetzt sind
+sie Viertelbögen (`"kehren": "rund"` in der Szene, neues Modul `pipeline/abenteuer/kehren.py`).
+
+- **Bild:** Im Quadrat jeder Kehre (vier mal vier Felder bei drei Spuren) entscheidet das Kartenbild jedes
+  Pixel neu: im Viertelring Asphalt (Innenradius ein Feld), sonst der Boden der Zone, also Sand, Erde oder
+  Gras, je nachdem, wo die Kehre liegt. Eigene Asphaltkacheln braucht es dafür nicht.
+- **Linien:** Die weißen Randlinien und die gelbe Mittellinie laufen als Bogen durch die Kehre und schließen
+  an die geraden Linien an; die Mittellinie ist in der Kehre durchgezogen.
+- **Raster:** bleibt, wie es war (alle Felder begehbar). Das Raster darf an der Ecke eckig oder abgeschnitten
+  sein, das Bild ist dasselbe.
+- **Prüfung:** Mit `"kehren": "rund"` meldet der Kartenbau jedes Fahrbahnfeld, das weder gerade Strecke
+  noch Teil einer Kehre ist (Äste ungleicher Breite, Stufen). Die Bergstraße hat sieben Kehren und keinen
+  Befund.
+- **Nicht gemacht:** schräge Ränder für Fahrbahnen, die um ein Feld versetzt weiterlaufen. Die Bergstraße
+  hat keine solche Stelle.

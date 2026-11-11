@@ -11,7 +11,7 @@
  "tilewidth": 16,
  "tileheight": 16,
  "nextlayerid": 5,
- "nextobjectid": 235,
+ "nextobjectid": 232,
  "layers": [
   {
    "id": 1,
@@ -9443,7 +9443,7 @@
      "id": 15,
      "name": "bigJoe",
      "type": "figur",
-     "x": 240,
+     "x": 272,
      "y": 528,
      "width": 16,
      "height": 16,
@@ -14447,7 +14447,7 @@
      "id": 225,
      "name": "cr10SattelzugVorn",
      "type": "moebel",
-     "x": 128,
+     "x": 136,
      "y": 448,
      "width": 48,
      "height": 168,
@@ -14470,7 +14470,7 @@
      "id": 226,
      "name": "cr10SattelzugHinten",
      "type": "moebel",
-     "x": 176,
+     "x": 200,
      "y": 448,
      "width": 48,
      "height": 160,
@@ -14491,29 +14491,6 @@
     },
     {
      "id": 227,
-     "name": "cr10LastwagenVorn",
-     "type": "moebel",
-     "x": 64,
-     "y": 576,
-     "width": 48,
-     "height": 144,
-     "rotation": 0,
-     "visible": true,
-     "properties": [
-      {
-       "name": "tiefe",
-       "type": "int",
-       "value": 712
-      },
-      {
-       "name": "kollision",
-       "type": "bool",
-       "value": true
-      }
-     ]
-    },
-    {
-     "id": 228,
      "name": "cr10HotdogwagenVorn",
      "type": "moebel",
      "x": 320,
@@ -14527,6 +14504,29 @@
        "name": "tiefe",
        "type": "int",
        "value": 536
+      },
+      {
+       "name": "kollision",
+       "type": "bool",
+       "value": true
+      }
+     ]
+    },
+    {
+     "id": 228,
+     "name": "cp8WohnwagenKlein",
+     "type": "moebel",
+     "x": 752,
+     "y": 16,
+     "width": 96,
+     "height": 96,
+     "rotation": 0,
+     "visible": true,
+     "properties": [
+      {
+       "name": "tiefe",
+       "type": "int",
+       "value": 104
       },
       {
        "name": "kollision",
@@ -14562,7 +14562,7 @@
      "id": 230,
      "name": "cr9LinieL11",
      "type": "moebel",
-     "x": 176,
+     "x": 192,
      "y": 448,
      "width": 16,
      "height": 176,
@@ -14585,7 +14585,7 @@
      "id": 231,
      "name": "cr9LinieL11",
      "type": "moebel",
-     "x": 224,
+     "x": 256,
      "y": 448,
      "width": 16,
      "height": 176,
@@ -14601,75 +14601,6 @@
        "name": "kollision",
        "type": "bool",
        "value": false
-      }
-     ]
-    },
-    {
-     "id": 232,
-     "name": "cr9LinieL9",
-     "type": "moebel",
-     "x": 64,
-     "y": 576,
-     "width": 16,
-     "height": 144,
-     "rotation": 0,
-     "visible": true,
-     "properties": [
-      {
-       "name": "tiefe",
-       "type": "int",
-       "value": 1
-      },
-      {
-       "name": "kollision",
-       "type": "bool",
-       "value": false
-      }
-     ]
-    },
-    {
-     "id": 233,
-     "name": "cr9LinieL9",
-     "type": "moebel",
-     "x": 112,
-     "y": 576,
-     "width": 16,
-     "height": 144,
-     "rotation": 0,
-     "visible": true,
-     "properties": [
-      {
-       "name": "tiefe",
-       "type": "int",
-       "value": 1
-      },
-      {
-       "name": "kollision",
-       "type": "bool",
-       "value": false
-      }
-     ]
-    },
-    {
-     "id": 234,
-     "name": "cp8WohnwagenKlein",
-     "type": "moebel",
-     "x": 752,
-     "y": 16,
-     "width": 96,
-     "height": 96,
-     "rotation": 0,
-     "visible": true,
-     "properties": [
-      {
-       "name": "tiefe",
-       "type": "int",
-       "value": 104
-      },
-      {
-       "name": "kollision",
-       "type": "bool",
-       "value": true
       }
      ]
     }

@@ -885,3 +885,13 @@ Gutachten `silicon-bay-lobby-serverraum.md`.
   - Häuserzeile: Zwischen Hafenbedarf und Kurzwaren steht die Bäckerei (`pd7Laden7`), die
     Hafenmeisterei steht gleich rechts der Treppe (x 37–42); die Netze trocknen östlich davon.
   - Der Kutter (nächste Gemini-Datei) ersetzt später das Ruderboot.
+
+## Drittes Gutachten Campus und alter Hafen: Antworten (mittel-3, 11.11.2026)
+
+- **Campus:** Das Hotel Bayview ist jetzt ein richtiges Hotel (`sb10HotelBayview`, LimeZu
+  Hotel 1, 17 × 23, x 43–59, Tür mit drei Auslösern bei x 50–52, y 31); das braune Wohnhaus,
+  das Schild und die Werbetafel daneben sind weg, vom Gartenhof bleibt ein Rasenstück mit zwei
+  Bäumen. Der Kaffeebecher ist auf 4 × 6 Kacheln verkleinert (`kaffeebecher_klein.png`,
+  Bildwunsch `kaffeebecher_klein.py`) und damit niedriger als die Läden. Die Möwen auf der
+  Terrasse (lasen sich als Gänse) sind weg.
+- **Alter Hafen:** Am Ostende der Hafenstraße steht der Angelladen (`sa8Angelladen`, x 55–61).

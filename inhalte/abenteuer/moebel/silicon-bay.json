@@ -2414,6 +2414,31 @@
       "art": "schild",
       "zustand": "gebraucht",
       "stil": "modern"
+    },
+    "sb10HotelBayview": {
+      "quelle": "modern-exteriors/Modern_Exteriors_16x16/ME_Theme_Sorter_16x16/12_Hotel_and_Hospital_Singles_16x16/ME_Singles_Hotel_and_Hospital_16x16_Hotel_1.png",
+      "breite": 272,
+      "hoehe": 368,
+      "kollision": true,
+      "art": "gebaeude",
+      "blick": "unten",
+      "tuer": [
+        [7, 23],
+        [8, 23],
+        [9, 23]
+      ],
+      "zustand": "gebraucht",
+      "stil": "klassisch"
+    },
+    "sb10KaffeebecherKlein": {
+      "quelle": "spiel/eigene/kaffeebecher_klein.png",
+      "breite": 64,
+      "hoehe": 96,
+      "kollision": true,
+      "art": "gebaeude",
+      "blick": "unten",
+      "zustand": "neu",
+      "stil": "modern"
     }
   }
 }

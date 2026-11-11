@@ -155,3 +155,4 @@ Szene heißt die Datei in `inhalte/abenteuer/szenen/` ohne `.json`.
 - [ ] weg-desert-summit-bergstrasse: runde Kehren mit Linien im Bogen (mittel-4)
 
 - [ ] riverton-aussen (+ vier Zustände): Steinbrücke mit Bogenstreifen und Schatten; crossroads-aussen (+ gatter-offen): Sattelzüge mit Trennlinie, Lastwagen weg; silicon-bay-aussen: Hotel, kleiner Kaffeebecher, keine Möwen; silicon-bay-hafen: Angelladen im Osten (kurze Sichtprüfung, mittel-3)
+- [ ] weg-silicon-delacroix-faehre (vierte Prüfung, mittel-1, nach `weg-silicon-delacroix-faehre-2.md`; Bilder `bildwuensche/faehre_deck.py`: Münzfernglas, Bullaugen)

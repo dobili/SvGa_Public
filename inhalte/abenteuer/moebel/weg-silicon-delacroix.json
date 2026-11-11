@@ -424,9 +424,9 @@
       "zustand": "gebraucht"
     },
     "fz10Fernglas": {
-      "quelle": "modern-exteriors/Modern_Exteriors_16x16/ME_Theme_Sorter_16x16/11_Camping_Singles_16x16/ME_Singles_Camping_16x16_Binoculars_1.png",
+      "quelle": "spiel/eigene/muenzfernglas.png",
       "breite": 16,
-      "hoehe": 16,
+      "hoehe": 32,
       "kollision": true,
       "art": "geraet",
       "zustand": "gebraucht",
@@ -462,6 +462,28 @@
       "art": "fahrzeug",
       "zustand": "gebraucht",
       "stil": "einfach"
+    },
+    "fz12BullaugeLinks": {
+      "quelle": "spiel/eigene/bullauge_links.png",
+      "breite": 16,
+      "hoehe": 16,
+      "kollision": false,
+      "art": "schmuck",
+      "begehbar": true,
+      "begehbar_grund": "sitzt in der Bordwand über dem Wasser, dort läuft niemand",
+      "zustand": "gebraucht",
+      "stil": "modern"
+    },
+    "fz12BullaugeRechts": {
+      "quelle": "spiel/eigene/bullauge_rechts.png",
+      "breite": 16,
+      "hoehe": 16,
+      "kollision": false,
+      "art": "schmuck",
+      "begehbar": true,
+      "begehbar_grund": "sitzt in der Bordwand über dem Wasser, dort läuft niemand",
+      "zustand": "gebraucht",
+      "stil": "modern"
     }
   }
 }

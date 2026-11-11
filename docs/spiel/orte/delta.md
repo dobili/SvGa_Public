@@ -345,6 +345,14 @@ frei begehbar; die Auslöser kommen mit den Dialogen.
   es für Seitenansichten verlangt.
 - Offen: Bauzaun südlich der Zelte (4), Fähre: Deck, Vogelschild, Fässer.
 
+- **Fähre, dritte Prüfung (`weg-silicon-delacroix-faehre-2.md`, 11.11.2026):** Vier Münzferngläser
+  auf Ständern stehen an der Reling (`fz10Fernglas`, neues Bild `muenzfernglas.png`: (8, 44),
+  (21, 54), (8, 66), (21, 36)). Die orangen Koffer stehen an den Bänken, nicht mehr frei auf dem
+  Deck; die Passagierin sitzt daneben (13, 43). Das Vorderdeck hat zwei Tische unter
+  Sonnenschirmen, eine siebte Bank, Fässer, Kisten, Taue und zwei weitere Poller. In der Bordwand
+  sitzen Bullaugen, alle drei Reihen (`fz12BullaugeLinks`/`Rechts`). Bildwunsch
+  `bildwuensche/faehre_deck.py`. Offen: Fallreep am Heck (4).
+
 - **Deich, Messwagen (Gemini Teil 2, 10.11.2026):** Der Messwagen ist jetzt der Lieferwagen von
   vorn (`dz12Lieferwagen`, Bild `spiel/eigene/lieferwagen_vorn.png`, (139, 11)) auf einer
   Pflasterfläche (138–142, 11–16). Der Längsstreifen ist wieder Wiese. Baum, Schilf und Gras

@@ -1,6 +1,6 @@
 # Sammlung der Rückmeldungen zum Schach-Abenteuer (Beta)
 
-Stand: 11.11.2026. Offene Punkte: 124 (davon 56 seit der ersten Abgabe neu: R071 bis R127). Erste Abgabe: 11.11.2026 (R001 bis R070, ohne die unbenutzte Nummer R035).
+Stand: 11.11.2026. Offene Punkte: 126 (davon 58 seit der ersten Abgabe neu: R071 bis R129). Erste Abgabe: 11.11.2026 (R001 bis R070, ohne die unbenutzte Nummer R035).
 
 Hinweis: Es gibt zwei Karten, die mit „Zedern“ beginnen: Zedernpfad (Maple Falls nach Cedar Creek) und Zedernwald (Cedar Creek nach Riverton). Alle bisherigen Anmerkungen des Autors, auch wo er „Zedernwald“ sagte, betreffen den Zedernpfad.
 
@@ -205,6 +205,11 @@ Lange vertikale Karte; der Autor ging sie von oben nach unten durch.
 - [ ] R123. Kanalweg, dort wo der Kanal abzweigt: Eine Brücke, die von oben nach unten verläuft und über die Fußgänger gehen sollen. Das Asset ist nur ein „Abziehbild“ (siehe R055).
 - [ ] R124. Kanalweg, weiter unten auf der linken Seite: weitere kleine Felder, jeweils ein rechteckiger Pflanzkasten, mit Kohlköpfen, Gerste, Kürbissen und Möhren. Auch hier bleibt die Bepflanzung nicht innerhalb der braunen Erde, sondern liegt teilweise auf dem Rand der Kästen. Zusammenhang mit R038, R046, R048.
 - [ ] R125. Kanalweg, fast direkt unter diesen Parzellen, rechts am Kanal: Ein Boot an einem Holzsteg. Dem Steg fehlen die Füße, die ins Wasser ragen. Das Boot ist nirgendwo festgemacht (siehe R050).
+
+### Riverton, Parkpavillon (`riverton-pavillon`, Variante `riverton-pavillon-perfect-move`)
+
+- [ ] R128. Parkpavillon, Schachfiguren auf dem Brett in der Mitte: Sie sind sehr hässlich. Wunsch: vernünftige, ordentliche Schachfiguren zeichnen oder passende Assets im Internet besorgen. Der Autor hält das auch für eine mögliche Aufgabe für Gemini.
+- [ ] R129. Parkpavillon, links und rechts von der Eingangstür direkt neben den Pflanzen: zwei große Koffer (der Autor glaubt, es sollen Koffer sein). Es sind „Abziehbild“-Assets. Ein neues Asset wird gebraucht (siehe R055).
 
 ### Maple Falls, Wohnzimmer (`maple-falls-wohnzimmer-ausgepackt`)
 

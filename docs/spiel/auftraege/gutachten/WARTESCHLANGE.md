@@ -117,7 +117,7 @@ Szene heißt die Datei in `inhalte/abenteuer/szenen/` ohne `.json`.
 - [x] silicon-bay-lobby, silicon-bay-serverraum (dritte Prüfung, nur Restpunkte, niedrig-1; Antworten in silicon-bay.md; `serverreihe_6` aus `niedrig1_runde9_karten.py` neu rendern, jetzt 160 px breit) und cedar-creek-aussen (nur Haltestelle: Wartehaus südlich der Busbucht, Antworten in cedar-creek.md) → `silicon-bay-lobby-serverraum-3.md`
 
 - [x] ghost-town-aussen (nur neue Bilder: Planwagen von vorn neben dem Mietstall, Pferd an der Tränke, niedrig-1; Antworten in ghost-town.md; Bögen fuchs, pferd, schimmel erst bauen) → `gemini-fahrzeuge-teil2.md`
-- [ ] ghost-town-aussen (Anbindebalken und Tränke am Mietstall), goldmine-stollen (Weiche am Abzweig), erinnerung-london-strand (helle Ladenzone), lockport-aussen (nur Ruben versetzt) (Restpunkte, niedrig-1; Bilder aus `niedrig1_runde10.py` erst rendern; Antworten in ghost-town.md und erinnerung-london.md)
+- [x] ghost-town-aussen (Anbindebalken und Tränke am Mietstall), goldmine-stollen (Weiche am Abzweig), erinnerung-london-strand (helle Ladenzone), lockport-aussen (nur Ruben versetzt) (Restpunkte, niedrig-1; Bilder aus `niedrig1_runde10.py` erst rendern; Antworten in ghost-town.md und erinnerung-london.md) → `restpunkte-76799517.md`
 
 ## Erledigt
 
@@ -151,7 +151,7 @@ Szene heißt die Datei in `inhalte/abenteuer/szenen/` ohne `.json`.
 - [x] steinbruch-grube: Bagger aus Gemini (bagger_links) statt des kleinen Baggers von vorn (mittel-4) → `silicon-bay-3-gemini-teil2-mittel-3-4.md`
 
 - [x] weg-ghost-capital-seeufer, capital-arena-aussen, port-delacroix-aussen (+ musikhaus-neu), weg-ironwood-silicon-raststaette, weg-silicon-delacroix-deich: Restpunkte aus `gemini-fahrzeuge-teil2.md` (Verkäufer, Lastwagen am Marktplatz, Längsbuchten, Deichfläche; mittel-1) → `mittel-1-fahrzeuge-restpunkte-pferde.md`
-- [ ] ironwood-kantine (+ logo): Registrierkasse und Speiseplan als eigene Bilder (mittel-4)
-- [ ] weg-desert-summit-bergstrasse: runde Kehren mit Linien im Bogen (mittel-4)
+- [x] ironwood-kantine (+ logo): Registrierkasse und Speiseplan als eigene Bilder (mittel-4) → `restpunkte-76799517.md`
+- [x] weg-desert-summit-bergstrasse: runde Kehren mit Linien im Bogen (mittel-4) → `restpunkte-76799517.md`
 
-- [ ] riverton-aussen (+ vier Zustände): Steinbrücke mit Bogenstreifen und Schatten; crossroads-aussen (+ gatter-offen): Sattelzüge mit Trennlinie, Lastwagen weg; silicon-bay-aussen: Hotel, kleiner Kaffeebecher, keine Möwen; silicon-bay-hafen: Angelladen im Osten (kurze Sichtprüfung, mittel-3)
+- [x] riverton-aussen (+ vier Zustände): Steinbrücke mit Bogenstreifen und Schatten; crossroads-aussen (+ gatter-offen): Sattelzüge mit Trennlinie, Lastwagen weg; silicon-bay-aussen: Hotel, kleiner Kaffeebecher, keine Möwen; silicon-bay-hafen: Angelladen im Osten (kurze Sichtprüfung, mittel-3) → `restpunkte-76799517.md`

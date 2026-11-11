@@ -4,6 +4,32 @@ Stand: 11.11.2026 (Haupt-Chat). Aus der Sichtung aller 558 eigenen Bilder (`guta
 Diese Bilder gibt es in keinem Paket und sie lassen sich nicht aus Paketteilen bauen. **Teil 3 ist damit
 überholt:** Kutter und Bus stehen hier wieder, Gleise und Kleinteile haben die Helfer selbst gebaut.
 
+## Stand nach dem Kauf von „Topdown Modern – Small Town“ (12.11.2026)
+
+Das Paket ist ein **Baukasten für Gebäude** (Wände, Dächer mit First, Fenster, Türrahmen, Markisen,
+Vordächer), dazu Zäune, Masten, Brunnen, Bänke, Steintreppe und Steinbrücke. Fertige Häuser, Fahrzeuge
+von vorn, Schiffe oder Westernhäuser enthält es nicht. 83 Einzelbilder stehen im Katalog unter
+`topdown-16/`. Ein Probebau (Schuppen und kleines Haus aus Dach, Wand, Fenster, Tür) steht im Maßstab
+richtig neben LimeZu-Häusern und hat die Tiefe, die den Abziehbildern fehlt; die Farben sind kräftiger
+und werden beim Zusammenbau gedämpft.
+
+| Nr. | Bild                              | Noch nötig?                                                                                                    |
+| --- | --------------------------------- | -------------------------------------------------------------------------------------------------------------- |
+| 1   | Gartenschuppen, Bootsschuppen     | **Zurückgestellt.** Wird aus dem Baukasten gebaut; nur wenn das nicht überzeugt.                               |
+| 2   | Blockhütten                       | **Ja.** Der Baukasten hat keine Blockwand.                                                                     |
+| 3   | Westernhäuser mit Dach            | **Ja.**                                                                                                        |
+| 4   | Halfpipe, Pokalvitrine            | **Ja.**                                                                                                        |
+| 5   | Stellwerk, Schornstein, Werkhalle | **Teilweise.** Werkhalle kommt aus dem Baukasten (Ziegelwand, Dach); Stellwerk und Schornstein bitte erzeugen. |
+| 6   | Speisewagen des Diners            | **Ja.**                                                                                                        |
+| 7   | Fähre, Deckhaus, Fährhäuschen     | **Ja**, das Fährhäuschen kann entfallen (Baukasten).                                                           |
+| 8   | Fischkutter, Lastkahn             | **Ja.**                                                                                                        |
+| 9   | Bus von vorn und von hinten       | **Ja.**                                                                                                        |
+| 10  | Zuckerwattewagen                  | **Ja.**                                                                                                        |
+| 11  | Wohnhäuser von hinten             | **Zurückgestellt.** Rückwand mit Fenstern und Dach aus dem Baukasten.                                          |
+
+Also bitte erzeugen: **2, 3, 4, 5 (ohne Werkhalle), 6, 7 (ohne Fährhäuschen), 8, 9, 10.** In den
+Prompts 5 und 7 das jeweils nicht nötige Objekt einfach aus dem Text streichen.
+
 ## So geht es
 
 1. Je Prompt ein **neuer** Gemini-Chat.

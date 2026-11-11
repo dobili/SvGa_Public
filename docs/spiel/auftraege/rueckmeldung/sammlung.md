@@ -51,7 +51,7 @@ Reihenfolge je Kategorie: zuerst, was das Weiterspielen verhindert, dann Stören
 - [ ] R024. Maple Falls, Stadtpark, oben links, defekter Steg: Er steht zum Teil auf dem Ufer, obwohl unter dem Steg-Asset Wasser zu sehen ist. Das wirkt merkwürdig. Entweder den kaputten Steg ganz ins Wasser verschieben oder den Fluss um den Steg herumbiegen.
 - [ ] R021. Maple Falls, Stadtpark, Basketballplatz unten links: Das Asset wurde „aus irgendwelchen Gründen“ gegen ein neues gewechselt. Das neue zeigt einen Indoor-Platz statt eines Outdoor-Platzes und ist ein Abziehbild ohne Tiefe. Unbrauchbar. In alten Versionen nachsehen: Dort gab es einen sehr schönen asphaltierten Basketballplatz.
 - [ ] R022. Maple Falls, Stadtpark, unten mittig: Ein hölzernes Gebilde, der Autor weiß nicht, ob es eine Halfpipe sein soll. Abziehbild ohne Tiefe, so nicht verwendbar. Je nachdem, was es darstellen soll, ein vernünftiges Asset erstellen. Zuerst klären, was es sein soll.
-- [ ] R025. Maple Falls, Stadtpark, oben, zwei Stege: Dem Autor erschließt sich nicht, warum es zwei Stege gibt. Laut seiner Übersichtskarte führt nur der rechte Steg zu einer neuen Karte, der linke führt nirgendwohin. Klären (Hauptchat), ob es zwei Stege braucht.
+- [ ] R025. Maple Falls, Stadtpark, oben, zwei Stege: Dem Autor erschließt sich nicht, warum es zwei Stege gibt. Laut seiner Übersichtskarte führt nur der rechte Steg zu einer neuen Karte, der linke führt nirgendwohin: In dieser Übersichtskarte, die dem Autor gebaut wurde, liegt dort keine Kachel, die das Öffnen einer neuen Karte auslöst (vom Autor bestätigt). Der defekte Steg liegt laut R024 oben links. Klären (Hauptchat), ob es zwei Stege braucht.
 
 ### Maple Falls, Wohnzimmer (`maple-falls-wohnzimmer-ausgepackt`)
 

@@ -1,7 +1,7 @@
 {
   "karte": "lockport.gasthaus",
   "art": "innen",
-  "beschreibung": "Hauptfassung, nach 10.56 30 × 14: petrolgrüne Wände, Dielen. Links an der Nordwand die Kegelbahn (Spalten 1–15) mit einem Kegelsatz am Ende, Prallbrettern als Kugelfang dahinter, einer Holzbande direkt an der Bahn und dem Kugelregal am Abwurf; darüber die Kreidetafel „Kegelkönig“ und zwei Fenster. Hinter dem Kugelfang Garderobe und Kaminofen, daneben das Foto der Schleuse im Hochwasser, dann hinter der Theke das Flaschenregal und die Tür zur Küche. Wirt Henrik hinter dem Tresen, vier Hocker direkt davor, Fässer in der Ecke. Fünf runde Tische mit dunklen Stühlen, drei mit Gläsern; Pflanzen in den Ecken; die Tür in der Südwand bei Spalte 21.",
+  "beschreibung": "Hauptfassung, nach 10.56 30 × 14: petrolgrüne Wände, Dielen. Links an der Nordwand die Kegelbahn (Spalten 1–15) mit einem Kegelsatz am Ende, Prallbrettern als Kugelfang dahinter, einer Holzbande direkt an der Bahn und dem Kugelregal am Abwurf; darüber die Kreidetafel „Kegelkönig“ und zwei Fenster. Hinter dem Kugelfang der Kaminofen, daneben das Foto der Schleuse im Hochwasser, dann hinter der Theke das Flaschenregal und die Tür zur Küche. Wirt Henrik hinter dem Tresen, vier Hocker direkt davor, Fässer in der Ecke. Fünf runde Tische mit dunklen Stühlen, drei mit Gläsern; Pflanzen in den Ecken; die Tür in der Südwand bei Spalte 21.",
   "wand": "gruen",
   "boden": "dielen",
   "boeden": {
@@ -37,11 +37,6 @@
     {
       "moebel": "wzFenster",
       "feld": [11, 1],
-      "an_wand": true
-    },
-    {
-      "moebel": "ld8Garderobe",
-      "feld": [17, 1],
       "an_wand": true
     },
     {

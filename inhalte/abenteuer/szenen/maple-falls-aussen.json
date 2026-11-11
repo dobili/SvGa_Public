@@ -890,8 +890,8 @@
       "feld": [12, 35]
     },
     {
-      "moebel": "sc7Ferienhuette",
-      "feld": [58, 33]
+      "moebel": "mf13Mobilheim",
+      "feld": [57, 32]
     },
     {
       "moebel": "mf4BaumGruen",
@@ -902,16 +902,16 @@
       "feld": [2, 29]
     },
     {
-      "moebel": "mf11HausHintenBlau",
-      "feld": [3, 32]
+      "moebel": "mf11HausHintenBBraun",
+      "feld": [3, 34]
     },
     {
       "moebel": "mf11HausHintenBRot",
       "feld": [18, 33]
     },
     {
-      "moebel": "mf11HausHintenBraun",
-      "feld": [30, 32]
+      "moebel": "mf11HausHintenBBraun",
+      "feld": [30, 34]
     },
     {
       "moebel": "mf11HausHintenBBlau",

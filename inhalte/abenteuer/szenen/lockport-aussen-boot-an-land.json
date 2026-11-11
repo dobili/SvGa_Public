@@ -320,7 +320,7 @@
       "bauteil_ok": true
     },
     {
-      "moebel": "cc4Bootsschuppen",
+      "moebel": "ld13Bootsschuppen",
       "feld": [1, 9]
     },
     {
@@ -356,24 +356,24 @@
       "feld": [54, 37]
     },
     {
-      "moebel": "sc7Ferienhuette",
-      "feld": [12, 4]
+      "moebel": "ld13MobilheimA",
+      "feld": [12, 3]
     },
     {
-      "moebel": "sc7FerienhuetteB",
-      "feld": [29, 5]
+      "moebel": "ld13MobilheimB",
+      "feld": [29, 4]
     },
     {
-      "moebel": "cr8Holzfaellerhuette",
-      "feld": [68, 5]
+      "moebel": "ld13MobilheimC",
+      "feld": [68, 4]
     },
     {
-      "moebel": "sc7FerienhuetteB",
-      "feld": [3, 27]
+      "moebel": "ld13MobilheimD",
+      "feld": [3, 26]
     },
     {
-      "moebel": "cr8Holzfaellerhuette",
-      "feld": [58, 27]
+      "moebel": "ld13MobilheimA",
+      "feld": [58, 26]
     },
     {
       "moebel": "mf7Gartenhaus",
@@ -396,8 +396,8 @@
       "feld": [46, 27]
     },
     {
-      "moebel": "sc7Ferienhuette",
-      "feld": [51, 26]
+      "moebel": "ld13MobilheimB",
+      "feld": [51, 25]
     },
     {
       "moebel": "wc5Gartenhaus",

@@ -3704,6 +3704,16 @@
       "stil": "schule",
       "begehbar": true,
       "begehbar_grund": "hängt an der Wand"
+    },
+    "mf13Mobilheim": {
+      "quelle": "modern-exteriors/Modern_Exteriors_16x16/ME_Theme_Sorter_16x16/11_Camping_Singles_16x16/ME_Singles_Camping_16x16_Mobile_House_Small_2.png",
+      "breite": 96,
+      "hoehe": 96,
+      "kollision": true,
+      "art": "gebaeude",
+      "blick": "unten",
+      "zustand": "gebraucht",
+      "stil": "klassisch"
     }
   }
 }

@@ -13648,12 +13648,12 @@
     },
     {
      "id": 232,
-     "name": "sc7Ferienhuette",
+     "name": "mf13Mobilheim",
      "type": "moebel",
-     "x": 928,
-     "y": 528,
-     "width": 80,
-     "height": 80,
+     "x": 912,
+     "y": 512,
+     "width": 96,
+     "height": 96,
      "rotation": 0,
      "visible": true,
      "properties": [
@@ -13717,19 +13717,19 @@
     },
     {
      "id": 235,
-     "name": "mf11HausHintenBlau",
+     "name": "mf11HausHintenBBraun",
      "type": "moebel",
      "x": 48,
-     "y": 512,
+     "y": 544,
      "width": 96,
-     "height": 136,
+     "height": 101,
      "rotation": 0,
      "visible": true,
      "properties": [
       {
        "name": "tiefe",
        "type": "int",
-       "value": 640
+       "value": 637
       },
       {
        "name": "kollision",
@@ -13763,19 +13763,19 @@
     },
     {
      "id": 237,
-     "name": "mf11HausHintenBraun",
+     "name": "mf11HausHintenBBraun",
      "type": "moebel",
      "x": 480,
-     "y": 512,
+     "y": 544,
      "width": 96,
-     "height": 136,
+     "height": 101,
      "rotation": 0,
      "visible": true,
      "properties": [
       {
        "name": "tiefe",
        "type": "int",
-       "value": 640
+       "value": 637
       },
       {
        "name": "kollision",

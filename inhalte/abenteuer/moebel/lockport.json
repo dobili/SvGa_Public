@@ -471,6 +471,57 @@
       "art": "ofen",
       "zustand": "gebraucht",
       "stil": "rustikal"
+    },
+    "ld13MobilheimA": {
+      "quelle": "modern-exteriors/Modern_Exteriors_16x16/ME_Theme_Sorter_16x16/11_Camping_Singles_16x16/ME_Singles_Camping_16x16_Mobile_House_Small_1.png",
+      "breite": 96,
+      "hoehe": 96,
+      "kollision": true,
+      "art": "gebaeude",
+      "blick": "unten",
+      "zustand": "gebraucht",
+      "stil": "rustikal"
+    },
+    "ld13MobilheimB": {
+      "quelle": "modern-exteriors/Modern_Exteriors_16x16/ME_Theme_Sorter_16x16/11_Camping_Singles_16x16/ME_Singles_Camping_16x16_Mobile_House_Small_2.png",
+      "breite": 96,
+      "hoehe": 96,
+      "kollision": true,
+      "art": "gebaeude",
+      "blick": "unten",
+      "zustand": "gebraucht",
+      "stil": "rustikal"
+    },
+    "ld13MobilheimC": {
+      "quelle": "modern-exteriors/Modern_Exteriors_16x16/ME_Theme_Sorter_16x16/11_Camping_Singles_16x16/ME_Singles_Camping_16x16_Mobile_House_Small_3.png",
+      "breite": 96,
+      "hoehe": 96,
+      "kollision": true,
+      "art": "gebaeude",
+      "blick": "unten",
+      "zustand": "gebraucht",
+      "stil": "rustikal"
+    },
+    "ld13MobilheimD": {
+      "quelle": "modern-exteriors/Modern_Exteriors_16x16/ME_Theme_Sorter_16x16/11_Camping_Singles_16x16/ME_Singles_Camping_16x16_Mobile_House_Small_4.png",
+      "breite": 96,
+      "hoehe": 96,
+      "kollision": true,
+      "art": "gebaeude",
+      "blick": "unten",
+      "zustand": "gebraucht",
+      "stil": "rustikal"
+    },
+    "ld13Bootsschuppen": {
+      "quelle": "modern-exteriors/Modern_Exteriors_16x16/ME_Theme_Sorter_16x16/17_Garden_Singles_16x16/ME_Singles_Garden_16x16_Blue_White_Wood_Storage.png",
+      "breite": 48,
+      "hoehe": 64,
+      "kollision": true,
+      "art": "haus",
+      "blick": "unten",
+      "zustand": "gebraucht",
+      "stil": "landhaus",
+      "zum_wasser": true
     }
   }
 }

@@ -1,6 +1,6 @@
 # Sammlung der Rückmeldungen zum Schach-Abenteuer (Beta)
 
-Stand: 11.11.2026. Offene Punkte: 63. Abgeschickt (gepusht): noch nichts.
+Stand: 11.11.2026. Offene Punkte: 66. Abgeschickt (gepusht): noch nichts.
 
 Reihenfolge je Kategorie: zuerst, was das Weiterspielen verhindert, dann Störendes, dann Schönheitsfehler.
 
@@ -112,6 +112,13 @@ Der Raum der Stadtbibliothek an sich sieht nach Einschätzung des Autors gut aus
 
 - [ ] R063. Bibliothek, Eingang: Außen ist der Eingangsbereich links an das Gebäude gesetzt, eine Treppe, die man hochgeht, und oben ein Balkon. Nach der Raumlogik des Gebäude-Assets müsste man hinter der Eingangstür nach rechts gehen, um in den ersten Raum zu kommen. Im Innenraum liegt der Eingang aber unten links, das macht wenig Sinn. Möglichkeiten laut Autor: den Zugang in die linke Wand legen, oder links einen kleinen Vorraum modellieren (der unter dem Balkon liegen müsste, den man auf der Hauptkarte sieht). Im Vorraum liegt unten der Eingang, rechts geht es in den Hauptraum, der dann der eigentliche, schön modellierte Bibliotheksraum wäre.
 - [ ] R064. Bibliothek, obere Etagen: Das Gebäude auf der Karte ist mehrstöckig, der Raum hat aber keine Karte für obere Etagen. Es gibt nur hinten die Tür, die über eine Treppe in den Keller führt. Der Autor meint, es müsse irgendwo eine Möglichkeit geben, in die oberen Etagen zu kommen. Die Etagen müssen nicht als Räume angelegt werden; eine Tür reicht, die man nicht durchgehen kann und hinter der man ein Treppenhaus vermuten kann. Dafür von außen ableiten, welche Form die Räume haben müssten.
+
+- [ ] R066. Bibliothek und Keller, Treppe: Man geht in der Bibliothek oben rechts durch eine Tür, die direkt in den Keller führt. Im Keller ist die Treppe als Zugang ebenfalls oben rechts. Das ergibt keinen Sinn: Ist in der Bibliothek der Zugang oben rechts, kann die Treppe im Keller nicht auch oben rechts sein, sonst lassen sich die beiden Karten nicht logisch aneinandersetzen. Außerdem ist es unüblich, dass hinter einer Tür direkt eine Treppe nach unten führt. Vorschlag des Autors: In der Bibliothek oben rechts einen kleinen abgetrennten Bereich anlegen, in dem die Treppe nach unten liegt. Man geht durch eine Tür hinein und biegt dann auf die Treppe nach unten ab. Der Keller soll direkt unter dem Bibliotheksraum liegen. Er sollte eventuell auch flächenmäßig genauso groß sein wie der Bibliotheksraum; zwingend ist das nicht (man unterkellert nicht immer das ganze Gebäude), schaden würde es nicht.
+
+### Cedar Creek, Keller unter der Bibliothek (der Autor sagt „Keller“; vermutlich `cedar-creek-archiv`, Variante `cedar-creek-archiv-geordnet`)
+
+- [ ] R067. Keller, Kisten mit Zahlen: Die Kisten mit den aufgedruckten Zahlen passen optisch nicht, es sind wieder „Abziehbild“-Assets. Wunsch: schönere Paket- oder Kisten-Assets finden, auf die man Zahlen schreiben kann und die optisch besser zum Rest passen. Zusammenhang mit R055.
+- [ ] R068. Keller, unten mittig im Bild: Auf dem Boden ist ein Schatten. Dem Autor erschließt sich nicht, was es damit auf sich hat. Fragt: Gehört der Schatten zur Geschichte? Hauptchat prüfen; gehört er nicht dazu, kann er wohl weg.
 
 ### Cedar Creek, Drechslerei (`cedar-creek-drechslerei`)
 

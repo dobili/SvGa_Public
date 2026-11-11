@@ -145,6 +145,17 @@
       "stil": "natur",
       "blick": "unten"
     },
+    "pw7SchildWaschhaus": {
+      "quelle": "spiel/eigene/schild_waschhaus.png",
+      "breite": 48,
+      "hoehe": 16,
+      "kollision": false,
+      "art": "schild",
+      "zustand": "gebraucht",
+      "stil": "rustikal",
+      "begehbar": true,
+      "begehbar_grund": "hängt an der Wand"
+    },
     "pw7Kiosk": {
       "quelle": "spiel/eigene/campkiosk.png",
       "breite": 80,

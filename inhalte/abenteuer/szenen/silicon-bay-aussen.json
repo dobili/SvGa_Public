@@ -2,7 +2,7 @@
   "karte": "siliconBay.aussen",
   "datei": "karten/silicon-bay-aussen.json",
   "art": "aussen",
-  "beschreibung": "Silicon Bay, der Campus am Morgen: Glas, Licht und Bildschirme auf hellen Platten. Oben die Gebäudezeile: links der Konzernturm von Perfect Move, acht Geschosse und mit Abstand das höchste Haus, daneben ein Gästehaus, in der Mitte die Akademie, rechts das Hotel Bayview mit Leuchtschild und ein Wohnhaus, dahinter ein Park mit Rasen, Bäumen und Büschen, zwischen Hotel und Wohnhaus ein Gartenhof mit Statuenbrunnen und zwei Bänken; dazwischen und am Ostrand zwei Werbetafeln, auf denen ZERO wirbt. Davor der Gehweg, der Boulevard mit der Straßenbahn, die links aus dem Bogen des Tunnels kommt (ein Betonbau quer über der Fahrbahn am Westrand, Gleis und Asphalt verschwinden im Dunkel) und rechts am Prellbock der Endhaltestelle hält (die Gleise liegen offen im Asphalt, dahinter endet die Fahrbahn), und der Gehweg Süd. Am Ostrand kommt man über das gläserne Deck der Glasbrücke an. Südlich des Boulevards die Ladenzeile mit den Fronten zum Platz: Fitnessstudio, Plattenladen, Modeladen, Spielzeugladen, Sportladen, Café, Musikladen, Eisdiele und ein kleiner Supermarkt, in der Mitte ein Durchgang. Auf dem Platz der Wochenmarkt mit Obst und Gemüse, Marktfrau und Gemüsehändler, links das Innovation Lab als Gewächshaus aus Glas und der Infokiosk, dahinter der Baumplatz mit eigenem Steinboden, in seiner Mitte der Brunnen mit zwei Bänken, die zu ihm schauen; rechts der Kaffeekiosk und ein Fahrradschuppen. An der Südkante die Terrasse mit Hecke und gläserner Brüstung über dem Hafen; nur die Treppe in der Mitte führt hinunter.",
+  "beschreibung": "Silicon Bay, der Campus am Morgen: Glas, Licht und Bildschirme auf hellen Platten. Oben die Gebäudezeile: links der Konzernturm von Perfect Move, acht Geschosse und mit Abstand das höchste Haus, daneben ein Gästehaus, in der Mitte die Akademie, rechts das Hotel Bayview, ein altes Grandhotel mit grünem Kupferdach und Leuchtschrift, und ein Wohnhaus, dahinter ein Park mit Rasen, Bäumen und Büschen, zwischen Hotel und Wohnhaus ein Rasenstück mit zwei Bäumen; am Ostrand eine Werbetafel, auf der ZERO wirbt. Davor der Gehweg, der Boulevard mit der Straßenbahn, die links aus dem Bogen des Tunnels kommt (ein Betonbau quer über der Fahrbahn am Westrand, Gleis und Asphalt verschwinden im Dunkel) und rechts am Prellbock der Endhaltestelle hält (die Gleise liegen offen im Asphalt, dahinter endet die Fahrbahn), und der Gehweg Süd. Am Ostrand kommt man über das gläserne Deck der Glasbrücke an. Südlich des Boulevards die Ladenzeile mit den Fronten zum Platz: Fitnessstudio, Plattenladen, Modeladen, Spielzeugladen, Sportladen, Café, Musikladen, Eisdiele und ein kleiner Supermarkt, in der Mitte ein Durchgang. Auf dem Platz der Wochenmarkt mit Obst und Gemüse, Marktfrau und Gemüsehändler, links das Innovation Lab als Gewächshaus aus Glas und der Infokiosk, dahinter der Baumplatz mit eigenem Steinboden, in seiner Mitte der Brunnen mit zwei Bänken, die zu ihm schauen; rechts der Kaffeekiosk in Bechergestalt, kleiner als die Läden, und ein Fahrradschuppen. An der Südkante die Terrasse mit Hecke und gläserner Brüstung über dem Hafen; nur die Treppe in der Mitte führt hinunter.",
   "boden": "platten",
   "wandart": "stein",
   "boeden": {
@@ -24,18 +24,18 @@
     "#..............wwwwwwwwwwwwwwwwwwwwwwwwwwwwwwwwwwwwwwwwwwwwwwwwwwwwwwww#",
     "#..............wwwwwwwwwwwwwwwwwwwwwwwwwwwwwwwwwwwwwwwwwwwwwwwwwwwwwwww#",
     "#..............wwwwwwwwwwwwwwwwwwwwwwwwwwwwwwwwwwwwwwwwwwwwwwwwwwwwwwww#",
-    "#..............wwwwwww..............................wwwwwwwwwww........#",
-    "#..............wwwwwww..............................wwwwwwwwwww........#",
-    "#..............wwwwwww..............................wwwwwwwwwww........#",
-    "#..............wwwwwww..............................wwwwwwwwwww........#",
-    "#..............wwwwwww..............................wwwwwwwwwww........#",
-    "#..............wwwwwww..............................wwwwwwwwwww........#",
-    "#..............wwwwwww..............................wwwwwwwwwww........#",
-    "#...................................................wwwwwwwwwww........#",
-    "#...................................................wwwwwwwwwww........#",
-    "#...................................................wwwwwwwwwww........#",
-    "#...................................................wwwwwwwwwww........#",
-    "#...................................................wwwwwwwwwww........#",
+    "#..............wwwwwww......................................wwww.......#",
+    "#..............wwwwwww......................................wwww.......#",
+    "#..............wwwwwww......................................wwww.......#",
+    "#..............wwwwwww......................................wwww.......#",
+    "#..............wwwwwww......................................wwww.......#",
+    "#..............wwwwwww......................................wwww.......#",
+    "#..............wwwwwww......................................wwww.......#",
+    "#...........................................................wwww.......#",
+    "#...........................................................wwww.......#",
+    "#...........................................................wwww.......#",
+    "#...........................................................wwww.......#",
+    "#...........................................................wwww.......#",
     "#......................................................................#",
     "#......................................................................#",
     "#......................................................................#",
@@ -486,10 +486,6 @@
       "feld": [32, 56]
     },
     {
-      "moebel": "sb5Kaffeekiosk",
-      "feld": [62, 53]
-    },
-    {
       "moebel": "sbLaterne",
       "feld": [12, 35],
       "vorn": true
@@ -791,22 +787,8 @@
       "bauteil_ok": true
     },
     {
-      "moebel": "ca8Hochhaus46",
-      "feld": [44, 13],
-      "id": "hotel"
-    },
-    {
-      "moebel": "sb9SchildHotel",
-      "auf": "hotel",
-      "versatz": [0, 60]
-    },
-    {
       "moebel": "wsgWerbetafelZero",
       "feld": [66, 23]
-    },
-    {
-      "moebel": "wsgWerbetafelZero",
-      "feld": [51, 25]
     },
     {
       "moebel": "wsgDeck4",
@@ -884,18 +866,6 @@
     },
     {
       "moebel": "sb5Baum",
-      "feld": [42, 6]
-    },
-    {
-      "moebel": "sb5Baum",
-      "feld": [48, 5]
-    },
-    {
-      "moebel": "sb5Baum",
-      "feld": [54, 6]
-    },
-    {
-      "moebel": "sb5Baum",
       "feld": [60, 5]
     },
     {
@@ -958,10 +928,6 @@
     },
     {
       "moebel": "sb5Baum",
-      "feld": [45, 8]
-    },
-    {
-      "moebel": "sb5Baum",
       "feld": [17, 14]
     },
     {
@@ -993,12 +959,13 @@
       "feld": [36, 10]
     },
     {
-      "moebel": "cc3BuschB",
-      "feld": [48, 10]
+      "moebel": "sb10HotelBayview",
+      "feld": [43, 8],
+      "id": "hotel"
     },
     {
-      "moebel": "sb5Baum",
-      "feld": [52, 13]
+      "moebel": "sb10KaffeebecherKlein",
+      "feld": [63, 55]
     },
     {
       "moebel": "sb5Baum",
@@ -1006,42 +973,16 @@
     },
     {
       "moebel": "sb5Baum",
-      "feld": [52, 19]
-    },
-    {
-      "moebel": "sb5Baum",
       "feld": [60, 19]
     },
     {
-      "moebel": "ca7Statuenbrunnen",
-      "feld": [56, 15]
-    },
-    {
-      "moebel": "mf9BankLinks",
-      "feld": [54, 17]
-    },
-    {
-      "moebel": "mf9BankRechts",
-      "feld": [60, 17]
-    },
-    {
       "moebel": "cc4Hecke",
-      "feld": [52, 23],
+      "feld": [60, 23],
       "bauteil_ok": true
     },
     {
       "moebel": "cc4Hecke",
-      "feld": [54, 23],
-      "bauteil_ok": true
-    },
-    {
-      "moebel": "cc4Hecke",
-      "feld": [59, 23],
-      "bauteil_ok": true
-    },
-    {
-      "moebel": "cc4Hecke",
-      "feld": [61, 23],
+      "feld": [62, 23],
       "bauteil_ok": true
     }
   ],
@@ -1086,10 +1027,6 @@
       "feld": [29, 31]
     },
     {
-      "name": "hotel",
-      "feld": [47, 31]
-    },
-    {
       "name": "hafen",
       "feld": [32, 69]
     },
@@ -1120,6 +1057,18 @@
     {
       "name": "werbetafel",
       "feld": [68, 29]
+    },
+    {
+      "name": "hotel",
+      "feld": [50, 31]
+    },
+    {
+      "name": "hotel",
+      "feld": [51, 31]
+    },
+    {
+      "name": "hotel",
+      "feld": [52, 31]
     }
   ],
   "figuren": [
@@ -1328,16 +1277,6 @@
       }
     },
     {
-      "name": "moewen",
-      "typ": "tier",
-      "feld": [20, 67],
-      "eigenschaften": {
-        "von": "2,67",
-        "bis": "70,67",
-        "verhalten": "fliegen"
-      }
-    },
-    {
       "name": "tauben",
       "typ": "tier",
       "feld": [30, 59],
@@ -1360,10 +1299,10 @@
     {
       "name": "katze",
       "typ": "tier",
-      "feld": [64, 63],
+      "feld": [64, 62],
       "eigenschaften": {
-        "von": "62,62",
-        "bis": "65,64",
+        "von": "62,61",
+        "bis": "66,63",
         "verhalten": "schlafen"
       }
     },

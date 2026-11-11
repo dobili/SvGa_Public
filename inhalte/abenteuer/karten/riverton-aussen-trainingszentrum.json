@@ -12524,7 +12524,7 @@
      "id": 23,
      "name": "uhrmacher",
      "type": "statist",
-     "x": 544,
+     "x": 528,
      "y": 288,
      "width": 16,
      "height": 16,
@@ -12534,12 +12534,12 @@
       {
        "name": "von",
        "type": "string",
-       "value": "34,18"
+       "value": "33,18"
       },
       {
        "name": "bis",
        "type": "string",
-       "value": "34,18"
+       "value": "33,18"
       },
       {
        "name": "tun",
@@ -18442,7 +18442,7 @@
      "type": "moebel",
      "x": 800,
      "y": 608,
-     "width": 80,
+     "width": 112,
      "height": 116,
      "rotation": 0,
      "visible": true,

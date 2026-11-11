@@ -1,7 +1,7 @@
 {
   "karte": "crossroads.aussen",
   "art": "aussen",
-  "beschreibung": "Zustand: Darlene hat den Gatterschlüssel gegeben (S13). Das Viehgatter steht offen am Straßenrand, die Alte Minenstraße ist frei. Diner-Wagen mit asphaltiertem Vorplatz und das eingezäunte Feld mit dem Erdweg zum Jahrmarkt, die große Tankstelle mit Waschanlage und einer Dieselsäule für Lastwagen. Der Highway hat Mittellinie und Bordsteine, Vorplätze und Parkplatz haben Einfahrten. Südwestlich der Parkplatz mit markierten Buchten, Bus und Autos stehen quer in ihren Buchten und zeigen Front oder Heck: Werksbus, zwei Sattelzüge, ein Lastwagen, ein Imbisswagen und zwei Autos, alle von vorn oder hinten gesehen; daneben der Rastplatz mit langen Picknicktischen, Mülleimer und Laterne. Südöstlich ein Motel mit vier Zimmern und Eisautomat, die Werkstatt, der Eisenwarenladen und die kleine Kapelle mit eingezäuntem Friedhof. Hinter der Tankstelle der Wohnwagen des Tankwarts, östlich das Farmhaus des Rinderzüchters. Im Osten das offene Viehgatter vor der Alten Minenstraße (S13). Wegweiser mit allen Städten, Schild „Crossroads – Diner + Gas“ vor der Raststätte, Fernbus-Haltestelle mit Gehweg am Highway West.",
+  "beschreibung": "Zustand: Darlene hat den Gatterschlüssel gegeben (S13). Das Viehgatter steht offen am Straßenrand, die Alte Minenstraße ist frei. Diner-Wagen mit asphaltiertem Vorplatz und das eingezäunte Feld mit dem Erdweg zum Jahrmarkt, die große Tankstelle mit Waschanlage und einer Dieselsäule für Lastwagen. Der Highway hat Mittellinie und Bordsteine, Vorplätze und Parkplatz haben Einfahrten. Südwestlich der Parkplatz mit markierten Buchten, Bus und Autos stehen quer in ihren Buchten und zeigen Front oder Heck: Werksbus, zwei Sattelzüge in eigenen Buchten mit Trennlinie, ein Imbisswagen und zwei Autos, alle von vorn oder hinten gesehen; daneben der Rastplatz mit langen Picknicktischen, Mülleimer und Laterne. Südöstlich ein Motel mit vier Zimmern und Eisautomat, die Werkstatt, der Eisenwarenladen und die kleine Kapelle mit eingezäuntem Friedhof. Hinter der Tankstelle der Wohnwagen des Tankwarts, östlich das Farmhaus des Rinderzüchters. Im Osten das offene Viehgatter vor der Alten Minenstraße (S13). Wegweiser mit allen Städten, Schild „Crossroads – Diner + Gas“ vor der Raststätte, Fernbus-Haltestelle mit Gehweg am Highway West.",
   "boden": "gras",
   "wandart": "gras",
   "boeden": {
@@ -927,22 +927,23 @@
     {
       "moebel": "cr10SattelzugVorn",
       "feld": [8, 28],
-      "bauteil_ok": true
+      "bauteil_ok": true,
+      "versatz": [8, 0]
     },
     {
       "moebel": "cr10SattelzugHinten",
-      "feld": [11, 28],
-      "bauteil_ok": true
-    },
-    {
-      "moebel": "cr10LastwagenVorn",
-      "feld": [4, 36],
-      "bauteil_ok": true
+      "feld": [12, 28],
+      "bauteil_ok": true,
+      "versatz": [8, 0]
     },
     {
       "moebel": "cr10HotdogwagenVorn",
       "feld": [20, 28],
       "bauteil_ok": true
+    },
+    {
+      "moebel": "cp8WohnwagenKlein",
+      "feld": [47, 1]
     },
     {
       "moebel": "cr9LinieL11",
@@ -951,27 +952,13 @@
     },
     {
       "moebel": "cr9LinieL11",
-      "feld": [11, 28],
+      "feld": [12, 28],
       "bauteil_ok": true
     },
     {
       "moebel": "cr9LinieL11",
-      "feld": [14, 28],
+      "feld": [16, 28],
       "bauteil_ok": true
-    },
-    {
-      "moebel": "cr9LinieL9",
-      "feld": [4, 36],
-      "bauteil_ok": true
-    },
-    {
-      "moebel": "cr9LinieL9",
-      "feld": [7, 36],
-      "bauteil_ok": true
-    },
-    {
-      "moebel": "cp8WohnwagenKlein",
-      "feld": [47, 1]
     }
   ],
   "ausloeser": [
@@ -1038,7 +1025,7 @@
     },
     {
       "name": "bigJoe",
-      "feld": [15, 33]
+      "feld": [17, 33]
     },
     {
       "name": "slick",

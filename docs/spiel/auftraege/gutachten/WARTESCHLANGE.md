@@ -153,3 +153,5 @@ Szene heißt die Datei in `inhalte/abenteuer/szenen/` ohne `.json`.
 - [x] weg-ghost-capital-seeufer, capital-arena-aussen, port-delacroix-aussen (+ musikhaus-neu), weg-ironwood-silicon-raststaette, weg-silicon-delacroix-deich: Restpunkte aus `gemini-fahrzeuge-teil2.md` (Verkäufer, Lastwagen am Marktplatz, Längsbuchten, Deichfläche; mittel-1) → `mittel-1-fahrzeuge-restpunkte-pferde.md`
 - [ ] ironwood-kantine (+ logo): Registrierkasse und Speiseplan als eigene Bilder (mittel-4)
 - [ ] weg-desert-summit-bergstrasse: runde Kehren mit Linien im Bogen (mittel-4)
+
+- [ ] riverton-aussen (+ vier Zustände): Steinbrücke mit Bogenstreifen und Schatten; crossroads-aussen (+ gatter-offen): Sattelzüge mit Trennlinie, Lastwagen weg; silicon-bay-aussen: Hotel, kleiner Kaffeebecher, keine Möwen; silicon-bay-hafen: Angelladen im Osten (kurze Sichtprüfung, mittel-3)

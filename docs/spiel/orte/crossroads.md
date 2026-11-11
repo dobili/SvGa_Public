@@ -264,6 +264,14 @@ Hotdog-Wagen (`cr10HotdogwagenVorn`) von vorn oder hinten gesehen in Buchten; Se
 es auf dem Platz nicht mehr (10.65). Big Joe steht neben seinem Sattelzug, ein kleiner Wohnwagen
 am Nordrand hält die Zahl der Bauten.
 
+### 3.9 Drittes Gutachten und Laufwege (mittel-3, 11.11.2026)
+
+Parkplatz: Der Lastwagen hinter dem Bus ist weg (der Bus kam nicht heraus). Die beiden Sattelzüge
+stehen in eigenen, vier Kacheln breiten Buchten mit Trennlinie (x 8–11 und x 12–15). Laufwege
+nach 10.70: Hofhund der Prärie nicht mehr über den Auslöser `sturmkeller`, Bisons im
+Geysirbecken nicht mehr auf `bisons` und `fundBisonhaar`, Betreuerin bei den Riesenbäumen nicht
+mehr über `ereignisLebendschach`.
+
 ## 4. Bühnenbilder
 
 Die Inventare stehen in den Szenen (`beschreibung`) und folgen 1.1 bis 1.4; feste Felder sind die

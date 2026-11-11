@@ -1350,10 +1350,10 @@
     {
       "name": "uhrmacher",
       "typ": "statist",
-      "feld": [34, 18],
+      "feld": [33, 18],
       "eigenschaften": {
-        "von": "34,18",
-        "bis": "34,18",
+        "von": "33,18",
+        "bis": "33,18",
         "tun": "steht unter der Bahnhofsuhr und prüft seine Taschenuhr",
         "wann": "tag",
         "sagt": "statist.riverton.aussen.uhrmacher"

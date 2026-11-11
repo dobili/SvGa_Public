@@ -1431,7 +1431,7 @@
      "id": 11,
      "name": "reisende",
      "type": "statist",
-     "x": 208,
+     "x": 256,
      "y": 192,
      "width": 16,
      "height": 16,
@@ -1441,12 +1441,12 @@
       {
        "name": "von",
        "type": "string",
-       "value": "13,12"
+       "value": "16,10"
       },
       {
        "name": "bis",
        "type": "string",
-       "value": "19,3"
+       "value": "20,12"
       },
       {
        "name": "tun",
@@ -1492,7 +1492,7 @@
      "id": 13,
      "name": "schaffnerin",
      "type": "statist",
-     "x": 288,
+     "x": 272,
      "y": 48,
      "width": 16,
      "height": 16,
@@ -1502,12 +1502,12 @@
       {
        "name": "von",
        "type": "string",
-       "value": "18,3"
+       "value": "17,3"
       },
       {
        "name": "bis",
        "type": "string",
-       "value": "18,3"
+       "value": "17,3"
       },
       {
        "name": "tun",

@@ -2100,8 +2100,8 @@
       "begehbar_grund": "liegt flach am Boden"
     },
     "rv10Steinbruecke": {
-      "quelle": "spiel/eigene/steinbruecke_laengs.png",
-      "breite": 80,
+      "quelle": "spiel/eigene/steinbruecke_laengs_bogen.png",
+      "breite": 112,
       "hoehe": 116,
       "kollision": false,
       "art": "bruecke",

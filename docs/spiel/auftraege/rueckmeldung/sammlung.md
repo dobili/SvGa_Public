@@ -1,6 +1,6 @@
 # Sammlung der Rückmeldungen zum Schach-Abenteuer (Beta)
 
-Stand: 11.11.2026. Offene Punkte: 43. Abgeschickt (gepusht): noch nichts.
+Stand: 11.11.2026. Offene Punkte: 47. Abgeschickt (gepusht): noch nichts.
 
 Reihenfolge je Kategorie: zuerst, was das Weiterspielen verhindert, dann Störendes, dann Schönheitsfehler.
 
@@ -76,6 +76,13 @@ Reihenfolge je Kategorie: zuerst, was das Weiterspielen verhindert, dann Stören
 - [ ] R027. Zedernpfad, Treppen: Der Weg führt in Schwüngen mittig durch die Karte nach oben, an zwei Stellen über Treppen. Die Treppenabschnitte sehen nicht gut aus: Es fehlen ständig Treppenkacheln, dort schimmert plötzlich der Weg durch, der ursprünglich darunter lag. Die Treppen sind nicht vollständig umgesetzt.
 - [ ] R028. Zedernpfad, Gebirgszug von linkem Bildrand nach rechts: Er hört etwa mittig im Bild auf, daneben ist wieder Gras. Das ergibt perspektivisch keinen Sinn. Man könnte rechts am Gebirgszug vorbeigehen, das Gras hoch und stünde oben, ohne Höhe erklommen zu haben. Eine durchgehende Grasfläche liegt einmal oberhalb und einmal unterhalb des Gebirges, ohne dass ein Asset einen Anstieg andeutet (Problem der Höhenwahrnehmung und Perspektive). Der Autor möchte, dass online bei dem Asset-Pack, aus dem die Gebirgs-Assets stammen, und bei anderen Packs zu Gebirgen nachgesehen wird, wie das gelöst ist: ziehen die Gebirge immer komplett übers Bild, damit das Problem gar nicht entsteht, oder gibt es Assets für einen leichten, begrasten Anstieg über einen längeren Bereich (dieselbe Höhe, ohne senkrechte Wand)? Wenn nein, wird so etwas hier gebraucht.
 - [ ] R029. Zedernpfad, oberer Gebirgszug: Er beginnt links relativ mittig im Bild und hört etwas weiter rechts wieder auf. Man kann links und rechts daran vorbeigehen. Dasselbe Problem wie R028.
+
+### Kürbishof (`kuerbishof-hof`)
+
+- [ ] R048. Kürbishof, Feld oben links (Gerste/Ähren, möglicherweise Kornlabyrinth): Unter den Ähren liegen wieder die rechteckigen Feld-Assets. Die Ähren wachsen teilweise auf dem Rahmen dieser Feld-Assets oder in den Lücken, wo eigentlich Gras sein sollte. Das funktioniert so nicht. Es sieht aus, als hätte jemand Wege durchs Feld geplant (ob es ein Labyrinth sein soll, weiß der Autor nicht). Der Autor vermutet, dass es bewusst ein Weg ist, weil in der Mitte eine Vogelscheuche mit einem Schachbrett auf der Brust steht, die man finden soll (Hauptchat mit der Geschichte abgleichen). Ist es ein Kornlabyrinth, braucht es ein durchgängiges Untergrund-Asset, das nicht durch die Holzrahmen der Feldkästen unterbrochen wird. Ist kein Labyrinth geplant, müssen die Ähren zumindest innerhalb der Kästen bleiben.
+- [ ] R045. Kürbishof, Zaun rechts, beim Feld oben rechts: Die Enden des Zauns fehlen, also die Endpfosten.
+- [ ] R046. Kürbishof, Kürbisfeld (oben rechts): Die Kürbisse liegen nicht vollständig auf dem Feld. Einige liegen auf der Graskante.
+- [ ] R047. Kürbishof, Kürbisfeld (oben rechts): Der Untergrund ist dasselbe Asset wie für die Wege. Das ergibt keinen Sinn, der Boden eines Kürbisfelds sieht anders aus als ein Trampelpfad. Ein anderes Asset ist nötig; vermutlich gibt es im Bestand (Datenbank) ein geeignetes.
 
 ### Maple Falls, Wohnzimmer (`maple-falls-wohnzimmer-ausgepackt`)
 

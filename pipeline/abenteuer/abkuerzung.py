@@ -19,7 +19,8 @@ Befunde:
 - **Kein durchgehender Weg:** Die beiden Übergänge verbindet kein Wegboden.
 Ausnahme: ``"abkuerzung_ok"`` in der Szene mit einem Kennwort als Grund (``offenesGelaende``:
 Wüste, Hochebene, Prärie ohne Sperre der Geschichte am Weg; ``platz``: ein Platz, über den man
-quer gehen darf). Ein Kennwort statt eines Satzes, weil in den Daten keine Sätze stehen. Abstecher zu Fundstellen bleiben erlaubt: Sie führen nicht von Rand zu Rand.
+quer gehen darf). Ein Kennwort statt eines Satzes, weil in den Daten keine Sätze stehen.
+Abstecher zu Fundstellen bleiben erlaubt: Sie führen nicht von Rand zu Rand.
 
 Die Prüfung warnt nur. Aufruf: ``python -m pipeline.abenteuer.abkuerzung`` (Liste je Karte).
 """

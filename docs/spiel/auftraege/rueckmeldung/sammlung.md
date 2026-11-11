@@ -1,6 +1,6 @@
 # Sammlung der Rückmeldungen zum Schach-Abenteuer (Beta)
 
-Stand: 11.11.2026. Offene Punkte: 36. Abgeschickt (gepusht): noch nichts.
+Stand: 11.11.2026. Offene Punkte: 42. Abgeschickt (gepusht): noch nichts.
 
 Reihenfolge je Kategorie: zuerst, was das Weiterspielen verhindert, dann Störendes, dann Schönheitsfehler.
 
@@ -21,6 +21,7 @@ Reihenfolge je Kategorie: zuerst, was das Weiterspielen verhindert, dann Stören
 
 ### Alle Karten (Regel)
 
+- [ ] R042. Alle Karten, Bodenübergänge: Prüfen, ob die Übergänge zwischen zwei verschiedenen Boden-Assets so sinnvoll sind, wie sie sind. Sollen es scharfe Kanten sein, oder braucht es ein Übergangs-Asset? Siehe R041.
 - [ ] R005. Alle Karten, Innentüren: Für Türen im Inneren (zwischen Räumen) wird dasselbe Asset wie für die Haustür benutzt. Es wirkt falsch, weil die Wand fast doppelt so hoch ist wie die Tür. Für Innentüren muss ein anderes, passendes Asset gefunden werden. Konkret betroffen: Diner (siehe R005a).
   > „Wir müssen für so Türen in den Innenräumen ein anderes Asset finden.“
 
@@ -64,6 +65,10 @@ Reihenfolge je Kategorie: zuerst, was das Weiterspielen verhindert, dann Stören
 
 - [ ] R037. Landstraße: Sie hat dasselbe bräunliche Asset wie der Zedernpfad, der im Grunde ein Trampelpfad durch den Wald ist. Das ist unlogisch, weil über die Landstraße ein Bus fahren soll (er geht ganz rechts in den Flussweg über und vom Flussweg auf eine gepflasterte Straße beim Ortskern). Ein Bus darf auch über eine nicht gepflasterte Landstraße fahren, wäre aber unüblich. Grafisch muss deutlich werden, dass es eine Straße ist, die ein Bus befährt. Zusammenhang mit R036.
   Lösungsvorschlag des Autors: Entweder ein anderes Asset für Trampelpfade, die nur von Menschen begangen werden (etwa Zedernpfad), oder ein anderes Asset für Wege, auf denen auch ein Bus fährt (Landstraße), damit beide Arten sich unterscheiden.
+- [ ] R038. Landstraße, Felder oben: Die Felder sind Rechtecke, in zwei Reihen aneinandergereiht. Die Pflanzen (Pflanzenassets) liegen teilweise außerhalb der Pflanzkästen oder eingegrenzten Felder, teilweise auf deren Begrenzungen, und auch in den Zwischenräumen zwischen den beiden Reihen. Das ergibt keinen Sinn; Pflanzen gehören nur in die Felder.
+- [ ] R039. Landstraße, kleiner Stand relativ mittig im Bild: Auf dem Dach wachsen Pflanzen, dieselben wie links und rechts neben dem Stand. Das ergibt keinen Sinn.
+- [ ] R040. Landstraße, Stand: Er ist komplett leer, Ware scheint zu fehlen. Der Autor weiß nicht, ob das in der Geschichte so gedacht ist (Hauptchat prüfen). Rechts daneben steht eine Figur. Gehört sie zum Stand, sollte sie näher an der Straße neben dem Stand stehen und nicht so weit oben. Zusammenhang mit R008.
+- [ ] R041. Landstraße, Fläche des Flohmarkts: Das gräuliche Boden-Asset ist an sich in Ordnung, aber der Übergang zum Gras daneben ist eine scharfe, gerade Kante. Es sieht aus, als wäre das Boden-Asset auf das Gras geklebt. Wunsch: ein passendes Übergangs-Asset finden, um den Rand natürlicher zu machen, oder einen angelegten Rand, der klarer trennt. Eine rechteckige Asphaltierung ist als Menschenwerk denkbar, die abrupte gerade Linie stört aber das Bild. Als Beispiel nennt der Autor den Weg: Der hat die orange-braune Farbe und ein Randasset für den Übergang zu Gras.
 
 ### Weg Maple Falls nach Cedar Creek, Zedernpfad (`weg-maple-cedar-zedernpfad`)
 
@@ -79,6 +84,7 @@ Reihenfolge je Kategorie: zuerst, was das Weiterspielen verhindert, dann Stören
 
 - [ ] R008. Alle Karten (zuerst gesehen im Diner, Küche): Eine Person in der Küche steht mit dem Gesicht zur Wand. Bewegen sich Figuren im Spiel von selbst hin und her, ist das in Ordnung. Stehen sie still, müssen sie logisch platziert sein, an einer sinnvollen Stelle und mit sinnvoller Blickrichtung. Der Autor bittet, das bei allen Karten zu prüfen, bei denen sich Figuren nicht von selbst bewegen.
 - [ ] R020. Alle Karten, besonders Clubraum Maple Falls High: Figuren sollen sich bewegen, wenn es Sinn macht, und nicht wie Säulen herumstehen. Im Clubraum sollen sie eigentlich auf den Stühlen sitzen, weil sie Schach spielen. Der Autor weiß nicht, ob man das grafisch hinbekommt; der Hauptchat soll entscheiden, auch in Bezug auf die Geschichte. Zusammenhang mit R008 und R019.
+- [ ] R043. Landstraße, Tiere rechts im Bild: Das Größenverhältnis stimmt nicht. Der Hase ist fast so groß wie das Reh (der Autor glaubt, es ist ein Reh). Das ergibt wenig Sinn.
 
 ## Geschichte und Texte
 

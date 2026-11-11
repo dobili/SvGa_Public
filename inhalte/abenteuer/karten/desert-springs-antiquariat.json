@@ -984,7 +984,7 @@
      "id": 5,
      "name": "leserin",
      "type": "statist",
-     "x": 192,
+     "x": 128,
      "y": 160,
      "width": 16,
      "height": 16,
@@ -994,12 +994,12 @@
       {
        "name": "von",
        "type": "string",
-       "value": "12,10"
+       "value": "8,10"
       },
       {
        "name": "bis",
        "type": "string",
-       "value": "12,10"
+       "value": "8,10"
       },
       {
        "name": "tun",
@@ -1526,7 +1526,7 @@
     },
     {
      "id": 28,
-     "name": "iw8VitrineB",
+     "name": "iw9VitrineFahrkarten",
      "type": "moebel",
      "x": 240,
      "y": 128,
@@ -1572,7 +1572,7 @@
     },
     {
      "id": 30,
-     "name": "cc4KartonOffen",
+     "name": "ds6KisteBriefe",
      "type": "moebel",
      "x": 32,
      "y": 80,

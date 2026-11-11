@@ -19,16 +19,16 @@
     "#....................................................................................................................................................#",
     "#....................................................................................................................................................#",
     "#....................................................................................................................................................#",
-    "#...............................................................................kkkkkkkkkkkkkkkkkkkkkkkkkkkkkk.......................................#",
-    "#........................................................kkkkkkkkkkkkkkkkkkkkkkkkkkkkkkkkkkkkkkkkkkkkkkkkkkkkkkkkkkkkkkkkkkk.........................#",
-    "#................................................kkkkkkkkkkkkkkkkkkkkkkkkkkkkkkkkkkkkkkkkkkkkkkkkkkkkkkkkkkkkkkkkkkkkkkkkkkkkkkkk....................#",
-    "#kkkkkkkk.........................kkkkkkkkkkkkkkkkkkkkkkkkkkkkkkkkkkkkkkkkkkkkkkkkkkkkkkkkkkkkkkkkkkkkkkkkkkkkkkkkkkkkkkkkkkkkkkkkkkkkkkkkkkkkkkkkkkk#",
-    "kkkkkkkkkkkkkkkkkkkkkkkkkkkkkkkkkkkkkkkkkkkkkkkkkkkkkkkkkkkkkkkkkkkkkkkkkkkkkkkk..............................kkkkkkkkkkkkkkkkkkkkkkkkkkkkkkkkkkkkkkkk",
-    "kkkkkkkkkkkkkkkkkkkkkkkkkkkkkkkkkkkkkkkkkkkkkkkkkkkkkkkkk...................................................................kkkkkkkkkkkkkkkkkkkkkkkkkk",
-    "#kkkkkkkkkkkkkkkkkkkkkkkkkkkkkkkkkkkkkkkkkkkkkkkk................................................................................kkkkkkkkkkkkkkkkkkkk#",
-    "#........kkkkkkkkkkkkkkkkkkkkkkkkk...................................................................................................................#",
-    "#....................................................................................................................................................#",
-    "#....................................................................................................................................................#",
+    "#.......................................................................kkkkkkkkkkkkkkkkkkkkkkkkkkkkkkkkkkkkkkkkk....................................#",
+    "#......................................................................kkkkkkkkkkkkkkkkkkkkkkkkkkkkkkkkkkkkkkkkkkk...................................#",
+    "#.......................................kkkkkkkkkkkkkkkkkkkkkkkkkkkkkkkkkkkkkkkkkkkkkkkkkkkkkkkkkkkkkkkkkkkkkkkkkkk..................................#",
+    "#kkkkkkkkkkkk..........................kkkkkkkkkkkkkkkkkkkkkkkkkkkkkkkkkkkkkkkkkkkkkkkkkkkkkkkkkkkkkkkkkkkkkkkkkkkkkkkkkkkkkkkkkkkkkkkkkkkkkkkkkkkkkk#",
+    "kkkkkkkkkkkkkk........................kkkkkkkkkkkkkkkkkkkkkkkkkkkkkkkkkk.........................................kkkkkkkkkkkkkkkkkkkkkkkkkkkkkkkkkkkkk",
+    "kkkkkkkkkkkkkkk......................kkkkkkkkkkkkkkkkkkkkkkkkkkkkkkkkkk...........................................kkkkkkkkkkkkkkkkkkkkkkkkkkkkkkkkkkkk",
+    "#kkkkkkkkkkkkkkkkkkkkkkkkkkkkkkkkkkkkkkk...........................................................................kkkkkkkkkkkkkkkkkkkkkkkkkkkkkkkkkk#",
+    "#............kkkkkkkkkkkkkkkkkkkkkkkkkk..............................................................................................................#",
+    "#.............kkkkkkkkkkkkkkkkkkkkkkkk...............................................................................................................#",
+    "#..............kkkkkkkkkkkkkkkkkkkkkk................................................................................................................#",
     "#....................................................................................................................................................#",
     "#....................................................................................................................................................#",
     "#....................................................................................................................................................#",
@@ -43,7 +43,7 @@
   "objekte": [
     {
       "moebel": "pg9Autowrack",
-      "feld": [50, 4]
+      "feld": [61, 6]
     },
     {
       "moebel": "gt7PlanwagenKaputt",
@@ -91,7 +91,7 @@
     },
     {
       "moebel": "fels",
-      "feld": [40, 3]
+      "feld": [38, 7]
     },
     {
       "moebel": "dd6KaktusBluehend",
@@ -550,95 +550,95 @@
     },
     {
       "moebel": "iwStrommast",
-      "feld": [12, 5]
+      "feld": [12, 2]
     },
     {
       "moebel": "iwStrommast",
-      "feld": [26, 5]
+      "feld": [26, 2]
     },
     {
       "moebel": "iwStrommast",
-      "feld": [40, 5]
+      "feld": [40, 2]
     },
     {
       "moebel": "iwStrommast",
-      "feld": [54, 5]
+      "feld": [54, 2]
     },
     {
       "moebel": "iwStrommast",
-      "feld": [68, 5]
+      "feld": [68, 2]
     },
     {
       "moebel": "iwStrommast",
-      "feld": [82, 5]
+      "feld": [82, 2]
     },
     {
       "moebel": "iwStrommast",
-      "feld": [96, 5]
+      "feld": [96, 2]
     },
     {
       "moebel": "iwStrommast",
-      "feld": [110, 5]
+      "feld": [110, 2]
     },
     {
       "moebel": "iwStrommast",
-      "feld": [124, 5]
+      "feld": [124, 2]
     },
     {
       "moebel": "iwStrommast",
-      "feld": [138, 5]
+      "feld": [138, 2]
     },
     {
       "moebel": "pg9Telegrafenleitung",
-      "feld": [12, 5],
+      "feld": [12, 2],
       "versatz": [8, 3],
       "vorn": true
     },
     {
       "moebel": "pg9Telegrafenleitung",
-      "feld": [26, 5],
+      "feld": [26, 2],
       "versatz": [8, 3],
       "vorn": true
     },
     {
       "moebel": "pg9Telegrafenleitung",
-      "feld": [40, 5],
+      "feld": [40, 2],
       "versatz": [8, 3],
       "vorn": true
     },
     {
       "moebel": "pg9Telegrafenleitung",
-      "feld": [54, 5],
+      "feld": [54, 2],
       "versatz": [8, 3],
       "vorn": true
     },
     {
       "moebel": "pg9Telegrafenleitung",
-      "feld": [68, 5],
+      "feld": [68, 2],
       "versatz": [8, 3],
       "vorn": true
     },
     {
       "moebel": "pg9Telegrafenleitung",
-      "feld": [82, 5],
+      "feld": [82, 2],
       "versatz": [8, 3],
       "vorn": true
     },
     {
       "moebel": "pg9Telegrafenleitung",
-      "feld": [96, 5],
+      "feld": [96, 2],
       "versatz": [8, 3],
       "vorn": true
     },
     {
       "moebel": "pg9Telegrafenleitung",
-      "feld": [110, 5],
+      "feld": [110, 2],
       "versatz": [8, 3],
       "vorn": true
     },
     {
       "moebel": "pg9Telegrafenleitung",
-      "feld": [124, 5],
+      "feld": [124, 2],
       "versatz": [8, 3],
       "vorn": true
     },
@@ -690,7 +690,7 @@
     },
     {
       "name": "wagen",
-      "feld": [52, 7]
+      "feld": [63, 9]
     }
   ],
   "figuren": [],

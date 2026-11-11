@@ -2,7 +2,7 @@
   "karte": "pinewoodCamp.aussen",
   "datei": "karten/pinewood-camp-aussen.json",
   "art": "aussen",
-  "beschreibung": "Pinewood Camp am See: Vom Nordrand kommt der Weg aus Crossroads zwischen Mammutbäumen herein. Oben eine Reihe Blockhütten, links Zelte und die Schutzhütte, in der Mitte der runde Lagerfeuerplatz aus Erde mit Baumstämmen als Sitzen, daneben Fahnenmast, Kiosk und Rangerhaus; das Waschhaus ist eine Blockhütte wie die übrigen. Unten ein Sandstrand, dessen Ufer in weichen Bögen vor- und zurückspringt (Buchten und Landzungen), zwei Stege, ein Kanu draußen auf dem See und der Bootsschuppen am Ufer; links am Weg eine weitere Blockhütte mit Holzstapel und Hackklotz des Holzhackers, unter der Pergola ein Picknicktisch; Bänke am Strand, Tannen am Rand.",
+  "beschreibung": "Pinewood Camp am See: Vom Nordrand kommt der Weg aus Crossroads zwischen Mammutbäumen herein. Oben eine Reihe Blockhütten, links Zelte und die Schutzhütte, in der Mitte der runde Lagerfeuerplatz aus Erde mit Baumstämmen als Sitzen, daneben Fahnenmast, Kiosk und Rangerhaus; das Waschhaus ist eine Blockhütte wie die übrigen, mit einem Holzschild über der Tür. Unten ein Sandstrand, dessen Ufer in weichen Bögen vor- und zurückspringt (Buchten und Landzungen), zwei Stege, ein Kanu draußen auf dem See und der Bootsschuppen am Ufer; links am Weg eine weitere Blockhütte mit Holzstapel und Hackklotz des Holzhackers, unter der Pergola ein Picknicktisch; Bänke am Strand, Tannen am Rand.",
   "boden": "gras",
   "wandart": "hecke",
   "boeden": {
@@ -45,8 +45,8 @@
     "#...........................................ee.............#",
     "#...........................................ee.............#",
     "#dddddddddddddddddddddddddddddddddddddddddddeeddddddddddddd#",
-    "#dddddddddddddddddddddd~~~~~~~~~~~~~ddddddddeeddddddddddddd#",
-    "#dddddddddddhh~~~~~~~~~~~~~~~~~~~~~~ddddddddhhdddddddddddd~~",
+    "#ddddddddddddddddd~~~~~~~~~~~~~~~~~~ddddddddeeddddddddddddd#",
+    "#dddddddddddhhddd~~~~~~~~~~~~~~~~~~~~dddddddhhddddddddddd~~~",
     "~dddddddd~~~hh~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~hh~~~~~~~~~~~~~~",
     "~~~~~~~~~~~~hh~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~hh~~~~~~~~~~~~~~",
     "~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~",
@@ -156,7 +156,7 @@
     },
     {
       "moebel": "cc4Bootsschuppen",
-      "feld": [50, 26]
+      "feld": [50, 28]
     },
     {
       "moebel": "cp7Schutzhuette",
@@ -350,6 +350,12 @@
       "moebel": "pw7Campbude",
       "feld": [47, 18],
       "id": "waschhaus"
+    },
+    {
+      "moebel": "pw7SchildWaschhaus",
+      "feld": [0, 0],
+      "auf": "waschhaus",
+      "versatz": [0, -4]
     },
     {
       "moebel": "pw7Tanne",
@@ -637,5 +643,6 @@
     }
   ],
   "zustand": ["neu", "gebraucht", "alt"],
-  "stil": ["natur", "einfach", "laendlich", "landhaus", "klassisch", "rustikal"]
+  "stil": ["natur", "einfach", "laendlich", "landhaus", "klassisch", "rustikal"],
+  "ufer": "strand"
 }

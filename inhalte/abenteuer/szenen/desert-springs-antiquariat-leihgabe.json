@@ -123,7 +123,7 @@
       "versatz": [16, 0]
     },
     {
-      "moebel": "iw8VitrineB",
+      "moebel": "iw9VitrineFahrkarten",
       "feld": [15, 8]
     },
     {
@@ -131,7 +131,7 @@
       "feld": [2, 8]
     },
     {
-      "moebel": "cc4KartonOffen",
+      "moebel": "ds6KisteBriefe",
       "feld": [2, 5],
       "id": "briefkiste"
     },
@@ -181,10 +181,10 @@
     {
       "name": "leserin",
       "typ": "statist",
-      "feld": [12, 10],
+      "feld": [8, 10],
       "eigenschaften": {
-        "von": "12,10",
-        "bis": "12,10",
+        "von": "8,10",
+        "bis": "8,10",
         "tun": "sitzt mit einem Buch in der Leseecke",
         "wann": "tag",
         "sagt": "statist.desertSprings.antiquariat.leserin"

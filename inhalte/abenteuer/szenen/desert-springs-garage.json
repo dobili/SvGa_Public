@@ -2,7 +2,7 @@
   "karte": "desertSprings.garage",
   "datei": "karten/desert-springs-garage.json",
   "art": "innen",
-  "beschreibung": "Die Garage von Tomás am Motel, Clubraum des Desert-Springs-Clubs, 18 × 12 Kacheln, Steinboden, Backsteinwand. An der Nordwand Werkbank, Werkzeugregal und Fenster, auf dem Regal Miras Dosenpokal; links ein Auto in Reparatur und Ölfässer, in der Mitte der Clubtisch mit vier Stühlen, rechts der Reifenstapel mit dem Brett, an dem Mira trainiert, Kisten und Kartons. Tür in der Mitte der Südwand.",
+  "beschreibung": "Die Garage von Tomás am Motel, Clubraum des Desert-Springs-Clubs, 18 × 12 Kacheln, Steinboden, helle Ziegelwand. An der Nordwand Werkbank, Werkzeugregal und Fenster, auf dem Regal Miras Dosenpokal; links ein Auto in Reparatur und Ölfässer, in der Mitte der Clubtisch mit vier Stühlen, rechts der Reifenstapel mit dem Brett, an dem Mira trainiert, Kisten und Kartons. Tür in der Mitte der Südwand.",
   "wand": "backstein",
   "boden": "stein",
   "raster": [
@@ -59,6 +59,11 @@
       "moebel": "cc6TischHell",
       "feld": [8, 6],
       "id": "club"
+    },
+    {
+      "moebel": "cc4Brett",
+      "feld": [0, 0],
+      "auf": "club"
     },
     {
       "moebel": "cc4StuhlVorn",

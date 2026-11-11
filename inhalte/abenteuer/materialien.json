@@ -9,6 +9,9 @@
     "fels": "spiel/eigene/fels.png",
     "wasser_stein": "spiel/eigene/wasser_stein.png",
     "wasser_sinter": "spiel/eigene/wasser_sinter.png",
+    "wasser_rot": "spiel/eigene/wasser_rot.png",
+    "wasser_strand": "spiel/eigene/wasser_strand.png",
+    "sandRotRand": "spiel/eigene/sand_rot_gras.png",
     "damm": "spiel/eigene/damm.png",
     "felsRot": "spiel/eigene/fels_rot.png",
     "wasser_rumpf": "spiel/eigene/wasser_rumpf.png",
@@ -482,6 +485,54 @@
         "anteil": 24
       }
     },
+    "wasser_rot": {
+      "bogen": "wasser_rot",
+      "feld": [
+        1,
+        1
+      ],
+      "rand": [
+        0,
+        0
+      ],
+      "diagonalen": true,
+      "wellen": {
+        "bilder": [
+          "modern-exteriors/Modern_Exteriors_16x16/Modern_Exteriors_Complete_Singles_16x16/ME_Singles_Terrains_and_Fences_16x16_Props_Water_1.png",
+          "modern-exteriors/Modern_Exteriors_16x16/Modern_Exteriors_Complete_Singles_16x16/ME_Singles_Terrains_and_Fences_16x16_Props_Water_2.png",
+          "modern-exteriors/Modern_Exteriors_16x16/Modern_Exteriors_Complete_Singles_16x16/ME_Singles_Terrains_and_Fences_16x16_Props_Water_3.png",
+          "modern-exteriors/Modern_Exteriors_16x16/Modern_Exteriors_Complete_Singles_16x16/ME_Singles_Terrains_and_Fences_16x16_Props_Water_4.png",
+          "modern-exteriors/Modern_Exteriors_16x16/Modern_Exteriors_Complete_Singles_16x16/ME_Singles_Terrains_and_Fences_16x16_Props_Water_5.png",
+          "modern-exteriors/Modern_Exteriors_16x16/Modern_Exteriors_Complete_Singles_16x16/ME_Singles_Terrains_and_Fences_16x16_Props_Water_9.png",
+          "modern-exteriors/Modern_Exteriors_16x16/Modern_Exteriors_Complete_Singles_16x16/ME_Singles_Terrains_and_Fences_16x16_Props_Water_10.png"
+        ],
+        "anteil": 24
+      }
+    },
+    "wasser_strand": {
+      "bogen": "wasser_strand",
+      "feld": [
+        1,
+        1
+      ],
+      "rand": [
+        0,
+        0
+      ],
+      "diagonalen": true,
+      "wellen": {
+        "bilder": [
+          "modern-exteriors/Modern_Exteriors_16x16/Modern_Exteriors_Complete_Singles_16x16/ME_Singles_Terrains_and_Fences_16x16_Props_Water_1.png",
+          "modern-exteriors/Modern_Exteriors_16x16/Modern_Exteriors_Complete_Singles_16x16/ME_Singles_Terrains_and_Fences_16x16_Props_Water_2.png",
+          "modern-exteriors/Modern_Exteriors_16x16/Modern_Exteriors_Complete_Singles_16x16/ME_Singles_Terrains_and_Fences_16x16_Props_Water_3.png",
+          "modern-exteriors/Modern_Exteriors_16x16/Modern_Exteriors_Complete_Singles_16x16/ME_Singles_Terrains_and_Fences_16x16_Props_Water_4.png",
+          "modern-exteriors/Modern_Exteriors_16x16/Modern_Exteriors_Complete_Singles_16x16/ME_Singles_Terrains_and_Fences_16x16_Props_Water_5.png",
+          "modern-exteriors/Modern_Exteriors_16x16/Modern_Exteriors_Complete_Singles_16x16/ME_Singles_Terrains_and_Fences_16x16_Props_Water_9.png",
+          "modern-exteriors/Modern_Exteriors_16x16/Modern_Exteriors_Complete_Singles_16x16/ME_Singles_Terrains_and_Fences_16x16_Props_Water_10.png"
+        ],
+        "anteil": 24
+      }
+    },
     "sandRot": {
       "bogen": "felsRot",
       "feld": [
@@ -703,6 +754,18 @@
     },
     "pisteRot": {
       "bogen": "pisteRot",
+      "feld": [
+        1,
+        1
+      ],
+      "rand": [
+        0,
+        0
+      ],
+      "diagonalen": true
+    },
+    "sandRotRand": {
+      "bogen": "sandRotRand",
       "feld": [
         1,
         1

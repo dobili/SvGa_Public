@@ -147,6 +147,25 @@
         ]
       ]
     },
+    "ds6KisteBriefe": {
+      "quelle": "spiel/eigene/kiste_briefe.png",
+      "breite": 32,
+      "hoehe": 32,
+      "kollision": true,
+      "art": "kiste",
+      "zustand": "alt",
+      "stil": "klassisch"
+    },
+    "ds6Stationsschild": {
+      "quelle": "spiel/eigene/schild_desert_springs.png",
+      "breite": 48,
+      "hoehe": 32,
+      "kollision": true,
+      "art": "schild",
+      "blick": "unten",
+      "zustand": "gebraucht",
+      "stil": "klassisch"
+    },
     "ds6SchildAntiquariat": {
       "quelle": "spiel/eigene/schild_antiquariat.png",
       "breite": 64,

@@ -1,7 +1,9 @@
 /**
- * Drei Knöpfe unter der Partie des Abenteuers: sofort gewinnen, Remis, verlieren (nur Testfassung).
+ * Testhilfe des Autors (nur Testfassung): drei Knöpfe unter der Partie des Abenteuers (sofort
+ * gewinnen, Remis, verlieren) und zwei unter jedem Rätsel („Bestehen“, „Verfehlen“).
  *
- * Rolle im Gesamtbild: gehört zur Hülle der Partie (PartieHuelle.tsx) und erscheint nur, solange
+ * Rolle im Gesamtbild: gehört zur Hülle der Partie (PartieHuelle.tsx), zur Aufgabenrunde, zur
+ * Erinnerung und zur Gedächtnisstellung und erscheint nur, solange
  * nicht für die Leser gebaut wird. Die Texte stehen hier fest auf Deutsch, weil die Leiste nie
  * ausgeliefert und nie übersetzt wird.
  * Abhängigkeiten: testende.ts, ui/komponenten/partie/botzug.ts.
@@ -32,6 +34,38 @@ export function Testleiste({ id }: { readonly id: string }) {
           {k.text}
         </button>
       ))}
+    </section>
+  );
+}
+
+/**
+ * Die Testzeile eines Rätsels: „Bestehen“ und „Verfehlen“.
+ *
+ * Eingabe: der Rückruf, über den auch das echte Ergebnis läuft (true = bestanden).
+ * Beispiel: In der Gedächtnisstellung ruft „Bestehen“ `beiEnde(true)` wie ein richtiger Aufbau.
+ * Sonderfall: In der Veröffentlichung zeichnet die Zeile nichts.
+ */
+export function Raetseltest({ beiWahl }: { readonly beiWahl: (bestanden: boolean) => void }) {
+  if (!TESTKNOEPFE_AN) return null;
+  return (
+    <section className="abenteuer-huelle-test" aria-label="Testhilfe des Autors">
+      <span>Test:</span>
+      <button
+        type="button"
+        className="knopf-zweit"
+        data-testid="abenteuer-test-bestehen"
+        onClick={() => beiWahl(true)}
+      >
+        Bestehen
+      </button>
+      <button
+        type="button"
+        className="knopf-zweit"
+        data-testid="abenteuer-test-verfehlen"
+        onClick={() => beiWahl(false)}
+      >
+        Verfehlen
+      </button>
     </section>
   );
 }

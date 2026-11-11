@@ -128,3 +128,9 @@
   color: rgba(245, 240, 230, 0.85);
   font-size: var(--groesse-klein, 0.85rem);
 }
+
+/* In den hellen Fenstern der Oberwelt (Gedächtnisstellung) in der Farbe der Karte. */
+.abenteuer-ergebnis .abenteuer-huelle-test {
+  border-color: currentColor;
+  color: inherit;
+}

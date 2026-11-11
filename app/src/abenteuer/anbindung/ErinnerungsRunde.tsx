@@ -8,7 +8,7 @@
  * Abhängigkeiten: ui/trainer (Rundenrahmen, useRunde, Zugerratenaufgabe), daten/laden.ts,
  * anbindung/erinnerung.ts.
  */
-import { useEffect, useMemo, useRef } from "react";
+import { useEffect, useMemo, useRef, useState } from "react";
 import { ladeZusatzpartien } from "../../daten/laden";
 import { sprache, t } from "../../i18n/sprache";
 import type { Antwortergebnis } from "../../training/wiederholung";
@@ -18,6 +18,7 @@ import { useRunde } from "../../ui/trainer/useRunde";
 import { Zugerratenaufgabe } from "../../ui/trainer/Zugerratenaufgabe";
 import type { Aufgabenauftrag } from "../schnittstelle/aufgaben";
 import { erinnerungsaufgabe } from "./erinnerung";
+import { Raetseltest } from "./Testleiste";
 
 export function ErinnerungsRunde({
   erinnerung,
@@ -36,11 +37,14 @@ export function ErinnerungsRunde({
   );
   const runde = useRunde("zugErraten", 1);
   const gemeldet = useRef(false);
+  // Testhilfe des Autors: die Erinnerung sofort bestehen (true) oder verfehlen (false).
+  const [test, setzeTest] = useState<boolean | null>(null);
+  const ergebnis = test ?? runde.ergebnis;
   useEffect(() => {
-    if (runde.ergebnis === null || gemeldet.current) return;
+    if (ergebnis === null || gemeldet.current) return;
     gemeldet.current = true;
-    beiEnde([runde.ergebnis ? "richtig" : "falsch"], runde.sekunden ?? 0);
-  }, [runde.ergebnis, runde.sekunden, beiEnde]);
+    beiEnde([ergebnis ? "richtig" : "falsch"], runde.sekunden ?? 0);
+  }, [ergebnis, runde.sekunden, beiEnde]);
   if (partien.art === "laedt") return <p className="lade">{t("abenteuer.aufgaben.laedt")}</p>;
   if (!aufgabe) {
     return (
@@ -52,7 +56,7 @@ export function ErinnerungsRunde({
   }
   // Nach „Runde auswerten“ eine eigene Endkarte mit dem einen Weg zurück; das Ende des
   // Rundenrahmens („Noch eine Runde“) gehört in die App, nicht in die Geschichte (docs/spiel/18).
-  if (runde.fertig) {
+  if (runde.fertig || test !== null) {
     return (
       <section className="karte" data-testid="abenteuer-aufgaben-ende">
         <p>{t("zugerraten.ende")}</p>
@@ -61,10 +65,13 @@ export function ErinnerungsRunde({
     );
   }
   return (
-    <Rundenrahmen kennung="zugErraten" runde={runde} nochmal={() => {}} zurAuswahl={null} imSpiel>
-      <div className="trainer-aufgabe">
-        <Zugerratenaufgabe aufgabe={aufgabe} runde={runde} />
-      </div>
-    </Rundenrahmen>
+    <>
+      <Rundenrahmen kennung="zugErraten" runde={runde} nochmal={() => {}} zurAuswahl={null} imSpiel>
+        <div className="trainer-aufgabe">
+          <Zugerratenaufgabe aufgabe={aufgabe} runde={runde} />
+        </div>
+      </Rundenrahmen>
+      <Raetseltest beiWahl={setzeTest} />
+    </>
   );
 }

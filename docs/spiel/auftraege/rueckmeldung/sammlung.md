@@ -1,6 +1,6 @@
 # Sammlung der Rückmeldungen zum Schach-Abenteuer (Beta)
 
-Stand: 11.11.2026. Offene Punkte: 147 (davon 79 seit der ersten Abgabe neu: R071 bis R150). Erste Abgabe: 11.11.2026 (R001 bis R070, ohne die unbenutzte Nummer R035).
+Stand: 11.11.2026. Offene Punkte: 148 (davon 80 seit der ersten Abgabe neu: R071 bis R151). Erste Abgabe: 11.11.2026 (R001 bis R070, ohne die unbenutzte Nummer R035).
 
 Hinweis: Es gibt zwei Karten, die mit „Zedern“ beginnen: Zedernpfad (Maple Falls nach Cedar Creek) und Zedernwald (Cedar Creek nach Riverton). Alle bisherigen Anmerkungen des Autors, auch wo er „Zedernwald“ sagte, betreffen den Zedernpfad.
 
@@ -237,6 +237,7 @@ Lange vertikale Karte; der Autor ging sie von oben nach unten durch.
 - [ ] R148. Gasthaus, Kegelbahn unten, Bande: Die Bande hat keine wirkliche Tiefe, sie sieht aus, als wäre sie aufgemalt. Viel Tiefe braucht sie nicht, soll aber nicht aufgemalt wirken.
 - [ ] R149. Gasthaus, Ende der Kegelbahn: Rechts neben den Kegeln steht ein bräunliches, rechteckiges Asset, nur ein „Abziehbild“. Der Autor vermutet, es soll eine Art Wand sein, die die Kugel aufhält, wenn sie durch die Kegel kommt und sie umwirft. Ein vernünftiges Asset wird gebraucht.
 - [ ] R150. Gasthaus, Regal für die Kegel, fast ganz links: ein „Abziehbild“. Dafür wird ein vernünftiges Asset gebraucht (siehe R055).
+- [ ] R151. Gasthaus, Raumform gegenüber dem Gebäude-Asset (typisches Beispiel für R065): Der gestaltete Innenraum passt nicht ganz zum Gebäude-Asset, das außen benutzt wird. Das Gebäude-Asset würde eher einen T-förmigen Innenraum nahelegen: Man stelle sich ein „T“ vor (diktiert „TD“, vermutlich „T“) und drehe es um etwa 90 Grad nach links. Das ist nur eine grobe Beschreibung des Autors; die KI soll genau nachsehen, wie der Raum aussehen müsste.
 
 ### Maple Falls, Wohnzimmer (`maple-falls-wohnzimmer-ausgepackt`)
 

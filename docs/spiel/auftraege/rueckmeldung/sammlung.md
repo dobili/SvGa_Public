@@ -1,6 +1,6 @@
 # Sammlung der Rückmeldungen zum Schach-Abenteuer (Beta)
 
-Stand: 11.11.2026. Offene Punkte: 126 (davon 58 seit der ersten Abgabe neu: R071 bis R129). Erste Abgabe: 11.11.2026 (R001 bis R070, ohne die unbenutzte Nummer R035).
+Stand: 11.11.2026. Offene Punkte: 127 (davon 59 seit der ersten Abgabe neu: R071 bis R130). Erste Abgabe: 11.11.2026 (R001 bis R070, ohne die unbenutzte Nummer R035).
 
 Hinweis: Es gibt zwei Karten, die mit „Zedern“ beginnen: Zedernpfad (Maple Falls nach Cedar Creek) und Zedernwald (Cedar Creek nach Riverton). Alle bisherigen Anmerkungen des Autors, auch wo er „Zedernwald“ sagte, betreffen den Zedernpfad.
 
@@ -210,6 +210,7 @@ Lange vertikale Karte; der Autor ging sie von oben nach unten durch.
 
 - [ ] R128. Parkpavillon, Schachfiguren auf dem Brett in der Mitte: Sie sind sehr hässlich. Wunsch: vernünftige, ordentliche Schachfiguren zeichnen oder passende Assets im Internet besorgen. Der Autor hält das auch für eine mögliche Aufgabe für Gemini.
 - [ ] R129. Parkpavillon, links und rechts von der Eingangstür direkt neben den Pflanzen: zwei große Koffer (der Autor glaubt, es sollen Koffer sein). Es sind „Abziehbild“-Assets. Ein neues Asset wird gebraucht (siehe R055).
+- [ ] R130. Parkpavillon, Variante Perfect Move (`riverton-pavillon-perfect-move`), Idee: Das Schachbrett in der Mitte komplett mit Teppichen bedecken. Damit wird dargestellt, dass die Firma Perfect Move das nicht digitale Schach gar nicht mehr braucht; deshalb wird das riesige Schachbrett in der Mitte nicht gebraucht und mit Teppichen abgedeckt. Zusammenhang mit R128 (bei der Grundvariante sollen die Figuren schöner werden).
 
 ### Maple Falls, Wohnzimmer (`maple-falls-wohnzimmer-ausgepackt`)
 

@@ -1,6 +1,6 @@
 # Sammlung der Rückmeldungen zum Schach-Abenteuer (Beta)
 
-Stand: 11.11.2026. Offene Punkte: 103 (davon 35 seit der ersten Abgabe neu: R071 bis R105). Erste Abgabe: 11.11.2026 (R001 bis R070, ohne die unbenutzte Nummer R035).
+Stand: 11.11.2026. Offene Punkte: 109 (davon 41 seit der ersten Abgabe neu: R071 bis R112). Erste Abgabe: 11.11.2026 (R001 bis R070, ohne die unbenutzte Nummer R035).
 
 Hinweis: Es gibt zwei Karten, die mit „Zedern“ beginnen: Zedernpfad (Maple Falls nach Cedar Creek) und Zedernwald (Cedar Creek nach Riverton). Alle bisherigen Anmerkungen des Autors, auch wo er „Zedernwald“ sagte, betreffen den Zedernpfad.
 
@@ -177,6 +177,15 @@ Der Raum der Stadtbibliothek an sich sieht nach Einschätzung des Autors gut aus
 - [ ] R104. Erinnerung London, Strand, Gesamtbild: Die Karte sieht sehr merkwürdig aus, weil viele „Abziehbild“-Assets ohne Tiefe verwendet werden, zum Beispiel die Kutsche und die Straßenlaternen. Auch die Häuser im Hintergrund wirken falsch: Die Dimensionen stimmen vermutlich nicht. Stellt man eine Figur direkt vor eine Tür, wäre die Tür doppelt so hoch wie die Figur. Die Häuser wirken komisch gestreckt. Der Autor weiß nicht mehr, woher die Häuser-Assets kommen und ob er sie mit Gemini erstellt hat. Auf jeden Fall werden andere gebraucht, die im Stil besser passen. Wunsch: Auf dem ganzen Bild überall auf vernünftige Assets achten, die zum Stil des Spiels passen. Zusammenhang mit R055.
 - [ ] R105. Erinnerung London, Strand, Begrenzung der Szene: Dem Autor ist unklar, wie die Karte gedacht ist. Links und rechts ist sie nicht abgeschlossen (eine Straße, die entlangläuft, aber man kann nach links, rechts, oben und unten nicht hinaus). Drumherum liegt ein dunkler, schwarzer Rahmen um die ganze Szenerie. Fragen des Autors (Hauptchat klären): Bleibt die Figur später am Rand einfach hängen? Soll man sich in dieser Szene überhaupt bewegen können, oder ist es nur eine Erinnerung, die als Bild gezeigt wird?
 
+### Riverton, Slicks Wohnwagen (`riverton-wohnwagen`)
+
+- [ ] R111. Wohnwagen, Gesamtbild: Der komplette Wohnwagen braucht eine neue Überarbeitung mit vernünftigen Assets und einer vernünftigen Raumeinteilung. Wunsch des Autors: einen Grundriss eines echten Wohnwagens aus dem Internet besorgen und versuchen, ihn nachzubauen.
+- [ ] R109. Wohnwagen, Toilette und Kühlschrank: Eine Toilette steht in einer Nische, daneben ein vermutlich defekter Kühlschrank (der Autor weiß nicht, ob es einer sein soll). Die Rückwand schimmert durch das Asset des Kühlschranks hindurch. Ist es ein Kühlschrank, ergibt es keinen Sinn, dass er neben der Toilette steht. Eine Toilette steht auch nicht einfach so im Raum, ein Toilettenbereich ist immer abgetrennt.
+- [ ] R107. Wohnwagen, Spülbecken: Es ist einfach auf eine Kommode geklebt. Es passt perspektivisch überhaupt nicht, ein „Abziehbild“ ohne Tiefe, das an der Front der Kommode klebt (siehe R055).
+- [ ] R110. Wohnwagen, Bett links mit Schachbrett: Zwei Pokale stehen mitten auf dem Bett. Der Autor hat das Gefühl, dass hinter dem Bett-Asset noch etwas ist, worauf die Pokale stehen, man erkennt es aber nicht.
+- [ ] R108. Wohnwagen, Tisch mit zwei Stühlen links und rechts: Der Tisch steht nicht mittig zwischen den Stühlen.
+- [x] R106. Wohnwagen, Rucksack an der Wand: Der Autor glaubt, dass das gewollt ist. Kein Handlungsbedarf.
+
 ### Maple Falls, Wohnzimmer (`maple-falls-wohnzimmer-ausgepackt`)
 
 - [ ] R001. Maple Falls, Wohnzimmer (Familie, am Anfang; Autor meint den ausgepackten Zustand später): Die Küche ist im unteren Bereich noch kahl. Etwas ergänzen, damit es belebter aussieht.
@@ -200,5 +209,7 @@ Der Raum der Stadtbibliothek an sich sieht nach Einschätzung des Autors gut aus
 ## Ideen und Wünsche
 
 ## Unklar
+
+- [ ] R112. Wohnwagen: Der Autor sagte „River hat einen Wohnwagen“ (Spracheingabe). Die Karte heißt „Slicks Wohnwagen“, vermutlich ist Slick gemeint; im Zweifel beim Autor klären.
 
 

@@ -1,0 +1,5 @@
+{
+  "erklaerung": "Erlaubte Ausnahmen für das Weltpuzzle (pipeline/abenteuer/weltpuzzle.py, R034). zwischenstuecke: Übergänge, zwischen deren Karten ein ungezeichnetes Wegstück liegt; die Naht legt die Karten nicht bündig aneinander und darf bis 60 Kacheln springen. rand_ausnahmen: Nähte, deren Randbruch ein Zwischenstück erklärt. Jeder Eintrag: karte (Kennung), ausloeser (Name auf dieser Karte), grund (ein Satz, steht auch im Ortsdokument).",
+  "zwischenstuecke": [],
+  "rand_ausnahmen": []
+}

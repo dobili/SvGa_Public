@@ -1,6 +1,6 @@
 # Sammlung der Rückmeldungen zum Schach-Abenteuer (Beta)
 
-Stand: 11.11.2026. Offene Punkte: 110 (davon 42 seit der ersten Abgabe neu: R071 bis R113). Erste Abgabe: 11.11.2026 (R001 bis R070, ohne die unbenutzte Nummer R035).
+Stand: 11.11.2026. Offene Punkte: 124 (davon 56 seit der ersten Abgabe neu: R071 bis R127). Erste Abgabe: 11.11.2026 (R001 bis R070, ohne die unbenutzte Nummer R035).
 
 Hinweis: Es gibt zwei Karten, die mit „Zedern“ beginnen: Zedernpfad (Maple Falls nach Cedar Creek) und Zedernwald (Cedar Creek nach Riverton). Alle bisherigen Anmerkungen des Autors, auch wo er „Zedernwald“ sagte, betreffen den Zedernpfad.
 
@@ -24,11 +24,13 @@ Reihenfolge je Kategorie: zuerst, was das Weiterspielen verhindert, dann Stören
 - [ ] R074. Bahndamm, Haus oben (das mit den Vögeln): Es steht zum Teil auf dem Abhang des Bahndamms und könnte so gar nicht dort stehen.
 - [ ] R078. Übergang Bahndamm zu Riverton, Außen (`riverton-aussen`, vom Autor bestätigt; Logiklücke): Puzzelt man die beiden Karten über den Übergang des Trampelpfads (Bahndamm-Karte) zur Riverton-Karte zusammen, wirkt es, als ginge die Hauptstraße von Riverton direkt in die Wellblechhütte über (siehe R077); die Straße endet im Nichts. Man kann das mit einer Zwischenkarte erklären, es ist aber ungünstig. Wunsch des Autors: die Bahndamm-Karte auf der rechten Seite in der Führung von Gleisen und Trampelpfad umgestalten (Schienen ganz am rechten Ende ein Stück in einer Kurve nach unten, Trampelpfad weiter unten rechts enden lassen). Legt man dann die Trampelpfad-Übergänge beider Karten zusammen, soll die Hauptstraße von Riverton optisch links unterhalb der Bahndamm-Karte weiterlaufen. Zusammenhang mit R034 und R079.
 - [ ] R079. Übergang Bahndamm zu Riverton: Beim Kartenwechsel geht es ruckartig vom Bahndamm zu keinem Bahndamm. In Riverton liegen die Schienen einfach auf dem Boden, vorher lagen sie in der Bahndamm-Karte auf einem Damm. Es fehlt logisch ein Abstieg des Bahndamms. Vorschlag: in der Riverton-Karte andeuten, dass der Damm leicht abfällt, sodass es zum Bahnsteig hin wieder eben wird. Dafür braucht es wahrscheinlich einige Assets. Zusammenhang mit R072 und R078.
+- [ ] R119. Kanalweg, Fußweg oberhalb der erstgenannten Straße (R118): Eine Bank, ein Straßenschild, ein Mülleimer (der Autor glaubt) neben dem Bushaltestellenschild und zwei Straßenlaternen blockieren den ganzen Fußgängerweg. Die beiden Laternen stehen auch zu eng beieinander. Vorschlag des Autors: eine Laterne direkt an der Kreuzung, wo es hinüber geht, dann gleichmäßige Abstände zwischen den Laternen. Bank und Bushaltestellenschild zwischen die Laternen setzen. Außerdem so pflastern, dass man entweder vor oder hinter der Bank auf dem Fußweg vorbeikommt.
 
 ## Karten und Grafik
 
 ### Alle Karten (Regel)
 
+- [ ] R127. Alle Karten, Zäune: Die Zaun-Assets sind für Zäune gedacht, die von links nach rechts laufen, und nicht für Zäune, die von oben nach unten verlaufen. Übereinandergestellt funktionieren sie dafür nicht. Auf allen Karten prüfen und passende Assets für senkrechte Zäune verwenden (siehe R115, R121; zuvor ähnlich R045).
 - [ ] R065. Alle Gebäude mit Innenraum (Auftrag an eine KI): Bei jedem Gebäude, das man von außen sieht, prüfen, ob Form und Größe des Innenraums zum Gebäude-Asset passen könnten. Der Raum darf nicht so riesig sein, dass er nicht ins Gebäude passen würde. Ist er kleiner, muss es Hinweise auf weitere Räume geben (Türen, auch verschlossene), die man nicht modellieren muss, damit sich erklärt, warum das Gebäude viel größer ist. Bisher ist dem Autor bei der ersten Durchsicht nur die Bibliothek aufgefallen. Zusammenhang mit R063, R064.
 - [ ] R055. Alle Karten, „Abziehbild“-Assets: Der Autor weiß nicht, woher die Kartenbauer diese Assets haben. Sie haben keine Tiefe und können nicht verwendet werden (siehe R002, R021, R022, R054). Er vermutet, dass sie auch auf anderen Karten eingesetzt sind; alle prüfen und überarbeiten. Mögliche Wege laut Autor: Er lässt Assets im passenden Stil zeichnen (Gemini), oder es werden passende, gut kombinierbare Asset-Packs gesucht. Die Entscheidung liegt beim Hauptchat.
 - [ ] R042. Alle Karten, Bodenübergänge: Prüfen, ob die Übergänge zwischen zwei verschiedenen Boden-Assets so sinnvoll sind, wie sie sind. Sollen es scharfe Kanten sein, oder braucht es ein Übergangs-Asset? Siehe R041.
@@ -188,6 +190,22 @@ Der Raum der Stadtbibliothek an sich sieht nach Einschätzung des Autors gut aus
 - [ ] R108. Wohnwagen, Tisch mit zwei Stühlen links und rechts: Der Tisch steht nicht mittig zwischen den Stühlen.
 - [x] R106. Wohnwagen, Rucksack an der Wand: Der Autor glaubt, dass das gewollt ist. Kein Handlungsbedarf.
 
+### Weg Riverton nach Ironwood, Kanalweg (der Autor sagt „Weg-Riverton-Ironwood, Kanalweg“; vermutlich `weg-riverton-ironwood-1`, Variante `weg-riverton-ironwood-1-graffiti`)
+
+Lange vertikale Karte; der Autor ging sie von oben nach unten durch.
+
+- [ ] R114. Kanalweg, oben links: Die beiden Schornsteine sind „Abziehbild“-Assets (siehe R055).
+- [ ] R115. Kanalweg, oben links direkt unter dem ersten Haus: Der Platz soll eingezäunt sein. Links und rechts sind aber Holzzaun-Assets benutzt, die eigentlich für Zäune gedacht sind, die von links nach rechts laufen. Sie wurden übereinandergestellt, um einen Zaun von unten nach oben zu bilden. Das funktioniert nicht. Siehe R127.
+- [ ] R116. Kanalweg, direkt darunter, gemauerte Wand mit Graffiti: Das Turm-Graffiti hängt zu tief. Überhaupt hängen die Schach-Graffitis zu tief, sie berühren fast den Boden. Nicht dramatisch, aber: etwas verkleinern und nur auf den Wandbereich setzen, sodass der Sockel der Wand nicht besprüht ist.
+- [ ] R117. Kanalweg, Schach-Graffitis allgemein: Sie sind im Grunde nur Umrandungen. Wunsch: schönere, feiner ausgestaltete Graffitis der Schachfiguren (nicht dramatisch).
+- [ ] R118. Kanalweg, erster Weg, der nach links zum Kartenrand abzweigt (eine Art Hauptstraße): Die Straßenmarkierung geht wieder nicht bis zum Rand.
+- [ ] R120. Kanalweg, Tanker: Das Asset ist nur ein „Abziehbild“. Es muss etwas Vernünftiges her (siehe R055).
+- [ ] R121. Kanalweg, ein Stück unterhalb links vom Tanker: umzäunte Parzellen mit Hütten. Die Hütten sind „Abziehbild“-Assets. Dazu das Zaun-Problem: Die Zaun-Assets sind nicht für Zäune geeignet, die von oben nach unten verlaufen (siehe R127).
+- [ ] R122. Kanalweg, Parzelle mit Kohlköpfen: Die Kohlköpfe sind nicht gleichmäßig auf dem Feld verteilt, sondern berühren teilweise den Rand des Feldes.
+- [ ] R123. Kanalweg, dort wo der Kanal abzweigt: Eine Brücke, die von oben nach unten verläuft und über die Fußgänger gehen sollen. Das Asset ist nur ein „Abziehbild“ (siehe R055).
+- [ ] R124. Kanalweg, weiter unten auf der linken Seite: weitere kleine Felder, jeweils ein rechteckiger Pflanzkasten, mit Kohlköpfen, Gerste, Kürbissen und Möhren. Auch hier bleibt die Bepflanzung nicht innerhalb der braunen Erde, sondern liegt teilweise auf dem Rand der Kästen. Zusammenhang mit R038, R046, R048.
+- [ ] R125. Kanalweg, fast direkt unter diesen Parzellen, rechts am Kanal: Ein Boot an einem Holzsteg. Dem Steg fehlen die Füße, die ins Wasser ragen. Das Boot ist nirgendwo festgemacht (siehe R050).
+
 ### Maple Falls, Wohnzimmer (`maple-falls-wohnzimmer-ausgepackt`)
 
 - [ ] R001. Maple Falls, Wohnzimmer (Familie, am Anfang; Autor meint den ausgepackten Zustand später): Die Küche ist im unteren Bereich noch kahl. Etwas ergänzen, damit es belebter aussieht.
@@ -197,6 +215,7 @@ Der Raum der Stadtbibliothek an sich sieht nach Einschätzung des Autors gut aus
 - [ ] R008. Alle Karten (zuerst gesehen im Diner, Küche): Eine Person in der Küche steht mit dem Gesicht zur Wand. Bewegen sich Figuren im Spiel von selbst hin und her, ist das in Ordnung. Stehen sie still, müssen sie logisch platziert sein, an einer sinnvollen Stelle und mit sinnvoller Blickrichtung. Der Autor bittet, das bei allen Karten zu prüfen, bei denen sich Figuren nicht von selbst bewegen.
 - [ ] R020. Alle Karten, besonders Clubraum Maple Falls High: Figuren sollen sich bewegen, wenn es Sinn macht, und nicht wie Säulen herumstehen. Im Clubraum sollen sie eigentlich auf den Stühlen sitzen, weil sie Schach spielen. Der Autor weiß nicht, ob man das grafisch hinbekommt; der Hauptchat soll entscheiden, auch in Bezug auf die Geschichte. Zusammenhang mit R008 und R019.
 - [ ] R043. Landstraße, Tiere rechts im Bild: Das Größenverhältnis stimmt nicht. Der Hase ist fast so groß wie das Reh (der Autor glaubt, es ist ein Reh). Das ergibt wenig Sinn.
+- [ ] R126. Kanalweg, fast ganz unten auf der rechten Seite des Kanals: Enten, von denen zwei im Wasser stehen und eine draußen. Der Autor nennt es ohne ausdrückliche Wertung; vermutlich stört, dass die Enten im Wasser stehen statt zu schwimmen. Bei Gelegenheit nachfragen.
 
 ## Geschichte und Texte
 

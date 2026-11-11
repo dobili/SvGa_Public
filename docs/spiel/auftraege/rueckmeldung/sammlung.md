@@ -1,6 +1,6 @@
 # Sammlung der Rückmeldungen zum Schach-Abenteuer (Beta)
 
-Stand: 11.11.2026. Offene Punkte: 109 (davon 41 seit der ersten Abgabe neu: R071 bis R112). Erste Abgabe: 11.11.2026 (R001 bis R070, ohne die unbenutzte Nummer R035).
+Stand: 11.11.2026. Offene Punkte: 110 (davon 42 seit der ersten Abgabe neu: R071 bis R113). Erste Abgabe: 11.11.2026 (R001 bis R070, ohne die unbenutzte Nummer R035).
 
 Hinweis: Es gibt zwei Karten, die mit „Zedern“ beginnen: Zedernpfad (Maple Falls nach Cedar Creek) und Zedernwald (Cedar Creek nach Riverton). Alle bisherigen Anmerkungen des Autors, auch wo er „Zedernwald“ sagte, betreffen den Zedernpfad.
 
@@ -155,6 +155,7 @@ Der Raum der Stadtbibliothek an sich sieht nach Einschätzung des Autors gut aus
 - [ ] R089. Riverton Außen, Bakery, relativ mittig im Bild: wieder ein „Abziehbild“-Haus, das nicht zu den sonstigen Assets passt (siehe R055).
 - [ ] R090. Riverton Außen, ganz unten links im Bild: das dritte Haus von links ist ein „Abziehbild“-Haus (siehe R055).
 - [ ] R092. Riverton Außen, Nachspielvariante (`riverton-aussen-nachspiel`): Die Bildschirmtische verschwinden, und die Wiese ist dann komplett leer. Wunsch: etwas Nettes überlegen, was stattdessen dort stehen könnte, damit die Wiese nicht so leer bleibt.
+- [ ] R113. Riverton Außen, Fahrradschuppen: Das Gebäude-Asset ist ein „Abziehbild“ und muss ausgetauscht werden (siehe R055). Der Autor sagte „wie gesagt“, ich habe den Fahrradschuppen unter den früheren Punkten (R085, R089, R090) nicht ausdrücklich benannt; welches der gemeldeten Abziehbild-Häuschen es ist, hat er nicht gesagt (Hauptchat über `riverton-schuppen` prüfen). Der Innenraum (Riverton, Schuppen, `riverton-schuppen`) sieht nach Einschätzung des Autors ganz gut aus, kann so bleiben.
 - [ ] R080. Riverton, oben rechts neben dem Bahngleis: Ein kleiner gepflasterter Streifen, auf dem ein Stapel Holz liegt. Das wirkt komisch: Warum pflastert man ein Stück entlang der Gleise, biegt kurz nach unten ab und pflastert nur, damit dort ein Holzhaufen auf Pflaster steht? Vorschlag: die Pflasterung entweder komplett an den Schienen entlangziehen oder weglassen und Gras lassen. Auch der Holzhaufen an sich macht dort wenig Sinn; er könnte näher an das große Farmhaus, das fast direkt daneben steht.
 - [ ] R081. Riverton, oben rechts, rechts unter dem Wasserturm: wieder ein „Abziehbild“-Häuschen (siehe R055).
 

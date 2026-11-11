@@ -81,7 +81,8 @@ schreiben, wenn die Helfer gesucht haben):
 - R111 Wohnwagen: Haus auf Rädern oder klassischer Wohnwagen? (Geschichte prüfen)
 - R077 Wellblechhütte am Bahndamm, R098 und R099 Dinge in der Bahnhofshalle, R083 Wegweiser, R091
   Tisch vor der Tür, R102 Slick nicht zu sehen: jeweils gegen die Geschichte prüfen.
-- Offen aus Runde 11: ab welchem Verhältnis Innenräume an ihr Gebäude angepasst werden.
+- Entschieden (12.11.2026): Innenräume werden angepasst, wenn die Fläche um 50 % oder mehr abweicht
+  (ENTSCHEIDUNGEN). Die Gemini-Wünsche stehen in `gemini_prompts_5.md`.
 
 ## 6. Reihenfolge, wenn es weitergeht
 

@@ -896,3 +896,16 @@ gezeichnete Bilder ohne Tiefe, die neben den gekauften Paketen herausfallen.
 - **Figuren stehen sinnvoll**, Schachspieler sitzen.
 
 Auftrag mit Verteilung: `docs/spiel/auftraege/runde11_rueckmeldung.md`.
+
+## 12.11.2026 – Innenraum gegen Gebäude: ab 50 % Abweichung der Fläche anpassen
+
+Der Autor zu R065 (`gutachten/INNEN_AUSSEN.md`): Weicht die Fläche des Innenraums um 50 % oder mehr
+von der Fläche ab, die das Gebäude außen hergibt, wird angepasst. Gemessen wird die Grundfläche (Breite
+mal Tiefe), nicht nur die Breite.
+
+- **Raum größer als das Gebäude** (der häufige Fall): das Gebäude außen vergrößern oder den Raum
+  verkleinern oder teilen.
+- **Gebäude größer als der Raum:** Türen (auch verschlossene) und Treppenhäuser zeigen weitere Räume
+  an; so hatte der Autor es in R065 beschrieben.
+- **Lage des Eingangs** stimmt immer überein, unabhängig von der Fläche.
+- Der Gutachter hat bisher nur Breiten verglichen; die Flächen misst er nach, wenn es weitergeht.

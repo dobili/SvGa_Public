@@ -190,7 +190,7 @@ Der Raum der Stadtbibliothek an sich sieht nach Einschätzung des Autors gut aus
 - [ ] R108. Wohnwagen, Tisch mit zwei Stühlen links und rechts: Der Tisch steht nicht mittig zwischen den Stühlen.
 - [x] R106. Wohnwagen, Rucksack an der Wand: Der Autor glaubt, dass das gewollt ist. Kein Handlungsbedarf.
 
-### Weg Riverton nach Ironwood, Kanalweg (der Autor sagt „Weg-Riverton-Ironwood, Kanalweg“; vermutlich `weg-riverton-ironwood-1`, Variante `weg-riverton-ironwood-1-graffiti`)
+### Weg Riverton nach Ironwood, Kanalweg (der Autor sagt „Weg-Riverton-Ironwood, Kanalweg“; Karte „Weg Riverton-Ironwood-Kanalweg“, vom Autor so benannt; Dateiname vermutlich `weg-riverton-ironwood-1`, Variante `weg-riverton-ironwood-1-graffiti`)
 
 Lange vertikale Karte; der Autor ging sie von oben nach unten durch.
 
@@ -215,7 +215,7 @@ Lange vertikale Karte; der Autor ging sie von oben nach unten durch.
 - [ ] R008. Alle Karten (zuerst gesehen im Diner, Küche): Eine Person in der Küche steht mit dem Gesicht zur Wand. Bewegen sich Figuren im Spiel von selbst hin und her, ist das in Ordnung. Stehen sie still, müssen sie logisch platziert sein, an einer sinnvollen Stelle und mit sinnvoller Blickrichtung. Der Autor bittet, das bei allen Karten zu prüfen, bei denen sich Figuren nicht von selbst bewegen.
 - [ ] R020. Alle Karten, besonders Clubraum Maple Falls High: Figuren sollen sich bewegen, wenn es Sinn macht, und nicht wie Säulen herumstehen. Im Clubraum sollen sie eigentlich auf den Stühlen sitzen, weil sie Schach spielen. Der Autor weiß nicht, ob man das grafisch hinbekommt; der Hauptchat soll entscheiden, auch in Bezug auf die Geschichte. Zusammenhang mit R008 und R019.
 - [ ] R043. Landstraße, Tiere rechts im Bild: Das Größenverhältnis stimmt nicht. Der Hase ist fast so groß wie das Reh (der Autor glaubt, es ist ein Reh). Das ergibt wenig Sinn.
-- [ ] R126. Kanalweg, fast ganz unten auf der rechten Seite des Kanals: Enten, von denen zwei im Wasser stehen und eine draußen. Der Autor nennt es ohne ausdrückliche Wertung; vermutlich stört, dass die Enten im Wasser stehen statt zu schwimmen. Bei Gelegenheit nachfragen.
+- [ ] R126. Kanalweg, fast ganz unten auf der rechten Seite des Kanals: Enten, zwei davon im Wasser, eine draußen. Bei den Enten im Wasser sind die Füße zu sehen; sie müssten aber schwimmen, dann sieht man die Füße nicht. Der Autor weiß nicht, ob es nur ein Enten-Asset gibt. Es stört ihn prinzipiell nicht (Schönheitsfehler); an Land sieht man die Füße zu Recht, im Wasser eigentlich nicht. Wunsch: ein Schwimm-Asset für Enten im Wasser, falls vorhanden.
 
 ## Geschichte und Texte
 

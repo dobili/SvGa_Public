@@ -1,6 +1,6 @@
 # Sammlung der Rückmeldungen zum Schach-Abenteuer (Beta)
 
-Stand: 11.11.2026. Offene Punkte: 148 (davon 80 seit der ersten Abgabe neu: R071 bis R151). Erste Abgabe: 11.11.2026 (R001 bis R070, ohne die unbenutzte Nummer R035).
+Stand: 11.11.2026. Offene Punkte: 148 (davon 80 seit der ersten Abgabe neu: R071 bis R151). Erste Abgabe: 11.11.2026 (R001 bis R070, ohne die unbenutzte Nummer R035). Zweite Abgabe: R071 bis R151.
 
 Hinweis: Es gibt zwei Karten, die mit „Zedern“ beginnen: Zedernpfad (Maple Falls nach Cedar Creek) und Zedernwald (Cedar Creek nach Riverton). Alle bisherigen Anmerkungen des Autors, auch wo er „Zedernwald“ sagte, betreffen den Zedernpfad.
 

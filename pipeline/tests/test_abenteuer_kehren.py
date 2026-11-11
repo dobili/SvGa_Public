@@ -1,9 +1,13 @@
 """Tests der runden Kehren (pipeline/abenteuer/kehren.py): Finden, Prüfen, Zeichnen."""
 
-from PIL import Image
+import pytest
 
-from pipeline.abenteuer.kehren import K, Kehre, finde_kehren, kehrenbefunde, runde
-from pipeline.abenteuer.strasse import GELB, WEISS, markiere
+pytest.importorskip("PIL.Image")  # Pillow fehlt in Actions
+
+from PIL import Image  # noqa: E402
+
+from pipeline.abenteuer.kehren import K, Kehre, finde_kehren, kehrenbefunde, runde  # noqa: E402
+from pipeline.abenteuer.strasse import GELB, WEISS, markiere  # noqa: E402
 
 # Waagerechter Ast (Reihen 1–3) nach rechts, senkrechter Ast (Spalten 1–3) nach unten.
 ECKE = [

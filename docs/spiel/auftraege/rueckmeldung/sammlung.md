@@ -1,6 +1,6 @@
 # Sammlung der Rückmeldungen zum Schach-Abenteuer (Beta)
 
-Stand: 11.11.2026. Offene Punkte: 140 (davon 72 seit der ersten Abgabe neu: R071 bis R143). Erste Abgabe: 11.11.2026 (R001 bis R070, ohne die unbenutzte Nummer R035).
+Stand: 11.11.2026. Offene Punkte: 147 (davon 79 seit der ersten Abgabe neu: R071 bis R150). Erste Abgabe: 11.11.2026 (R001 bis R070, ohne die unbenutzte Nummer R035).
 
 Hinweis: Es gibt zwei Karten, die mit „Zedern“ beginnen: Zedernpfad (Maple Falls nach Cedar Creek) und Zedernwald (Cedar Creek nach Riverton). Alle bisherigen Anmerkungen des Autors, auch wo er „Zedernwald“ sagte, betreffen den Zedernpfad.
 
@@ -227,6 +227,16 @@ Lange vertikale Karte; der Autor ging sie von oben nach unten durch.
 - [ ] R141. Lockport Außen, Schild „Schleuse“: Es hängt vorne an einer Markise des Gebäudes. Das geht nicht, es muss an die Hauswand.
 - [ ] R142. Lockport Außen, ganze Karte: Die Übergänge zwischen dem gepflasterten Boden-Asset und dem Gras sind sehr scharf (siehe R041, R042). Der Autor hat das bei vielen Karten bemängelt und bittet, sich etwas zu überlegen.
 - [ ] R143. Lockport Außen, unten in der Mitte auf dem gepflasterten Bereich (Brunnen, daneben eine Bank): Rechts unterhalb des Brunnens steht ein Baum, der scheinbar einfach aus dem gepflasterten Boden wächst. Entweder die Pflasterung an der Stelle auflösen, damit der Baum auf Gras steht, oder den Baum auf das Gras daneben verlagern.
+
+### Lockport, Gasthaus zur Schleuse (der Autor sagt „logport.gasthaus“ = `lockport-gasthaus`)
+
+- [ ] R147. Gasthaus, Figuren und Stühle: An zwei Stellen steht auf einer Figur direkt ein Stuhl. Siehe R019 und R008.
+- [ ] R144. Gasthaus, oben rechts, neben dem Alkoholschrank: Ein Bild hängt ein bisschen zu tief an der Wand, es liegt scheinbar auf der Sockelleiste der Wand.
+- [ ] R145. Gasthaus, im Raum neben dem Bild (R144): Ein Kachelofen steht scheinbar mitten im Raum. Ein Kachelofen würde an der Wand stehen.
+- [ ] R146. Gasthaus, relativ mittig oben an der Wand: Wieder das Gebilde mit den Farben Rot, Blau, Grün, das dem Autor schon im Clubraum aufgefallen war (siehe R013). Er weiß nicht, ob es ein Aufkleber für die Wand sein soll oder etwas mit Tiefe. Soll es Tiefe haben, muss das Asset gegen etwas mit wirklicher Tiefe getauscht werden, denn es ist nur ein „Abziehbild“.
+- [ ] R148. Gasthaus, Kegelbahn unten, Bande: Die Bande hat keine wirkliche Tiefe, sie sieht aus, als wäre sie aufgemalt. Viel Tiefe braucht sie nicht, soll aber nicht aufgemalt wirken.
+- [ ] R149. Gasthaus, Ende der Kegelbahn: Rechts neben den Kegeln steht ein bräunliches, rechteckiges Asset, nur ein „Abziehbild“. Der Autor vermutet, es soll eine Art Wand sein, die die Kugel aufhält, wenn sie durch die Kegel kommt und sie umwirft. Ein vernünftiges Asset wird gebraucht.
+- [ ] R150. Gasthaus, Regal für die Kegel, fast ganz links: ein „Abziehbild“. Dafür wird ein vernünftiges Asset gebraucht (siehe R055).
 
 ### Maple Falls, Wohnzimmer (`maple-falls-wohnzimmer-ausgepackt`)
 

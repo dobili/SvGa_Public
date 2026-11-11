@@ -173,8 +173,9 @@ Diese Punkte haben Karten durchfallen lassen, die als reif galten. Sie gelten f�
 - **Abziehbild:** Hat jedes Gebäude und jedes Möbel Tiefe (Dach oder Oberseite von oben, First,
   Schattierung, Seitenfläche)? Ein von Hand gezeichnetes Bild, das nur eine Front zeigt, fällt durch
   (Liste: `auftraege/gutachten/ABZIEHBILDER.md`, Regel 10.71).
-- **Blick der Gebäude:** Zeigt jedes Gebäude seine Front nach Süden wie in den Paketen? Rückansichten
-  gibt es nicht mehr (Regel 10.71).
+- **Rückansicht:** Zeigt ein Haus seine Rückseite, hat sie dann dieselbe Tiefe wie die Pakethäuser
+  (Dach von oben mit First, Rückwand mit Fenstern)? Rückansichten sind erlaubt, wenn das Bild passt
+  (Regel 10.71).
 - **Bodenkante:** Endet ein befestigter Boden (Pflaster, Platten, Asphalt) mit nackter gerader Kante
   im Gras? Er braucht Randstein oder Saum.
 - **Straßenart:** Ist erkennbar, ob es ein Trampelpfad, eine Landstraße (Bus) oder eine Stadtstraße

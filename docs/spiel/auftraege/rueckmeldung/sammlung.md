@@ -1,6 +1,6 @@
 # Sammlung der Rückmeldungen zum Schach-Abenteuer (Beta)
 
-Stand: 11.11.2026. Offene Punkte: 58. Abgeschickt (gepusht): noch nichts.
+Stand: 11.11.2026. Offene Punkte: 59. Abgeschickt (gepusht): noch nichts.
 
 Reihenfolge je Kategorie: zuerst, was das Weiterspielen verhindert, dann Störendes, dann Schönheitsfehler.
 
@@ -16,6 +16,7 @@ Reihenfolge je Kategorie: zuerst, was das Weiterspielen verhindert, dann Stören
 - [ ] R034. Alle Außenkarten, Weltkarte (Auftrag an den Hauptchat): Der Autor bittet darum, dass eine KI die Weltkarte tatsächlich zusammenpuzzelt, indem sie die Karten über ihre Zugänge aneinanderlegt. Innenräume werden dafür nicht gebraucht. Die Weltkarte muss konsistent sein, nichts darf überlappen.
   Ergänzung des Autors: Beim Zusammensetzen auch die Übergänge von Karte zu Karte prüfen, damit zum Beispiel Flüsse und Flusswege glaubwürdig ineinander übergehen. Kleine Inkonsistenzen sind in Ordnung, wenn man sie mit einem kleinen Zwischenstück erklären kann, das nicht als Karte gezeichnet wird (sonst werden es zu viele Karten). Beispiel: Auf der Landstraße taucht oben direkt das Feld auf, das im Stadtpark noch nicht zu sehen war; das lässt sich mit einem kurzen, nicht gezeichneten Wegstück dazwischen erklären. Nicht in Ordnung wäre etwa, wenn auf der Landstraße unten links plötzlich kein Wasser mehr wäre, wo es im Anschluss noch Wasser gab; da fragt man sich, warum. Das gilt für das ganze Puzzle.
 - [ ] R036. Übergang Stadtpark zur Landstraße (Maple Falls): Im Stadtpark ist die Straße gepflastert und hat Straßenmarkierungen, ein Bus fährt darüber. Beim Kartenwechsel zur Landstraße ist sie plötzlich nur noch das bräunliche Asset, wie ein Trampelpfad. Ein Übergang von der gepflasterten Straße zur Landstraße fehlt.
+- [ ] R060. Alle Karten, Auslösen des Kartenwechsels: Auf der Übersichtskarte ist markiert, in welchem Bereich die Figur stehen muss, um in einen Raum oder auf die nächste Karte zu kommen. Beispiel Waschsalon (Ortskern): Markiert ist die Kachel des Fußwegs direkt vor dem Waschsalon. Der Autor vermutet, dass er schon beim bloßen Darüberlaufen automatisch in den Waschsalon kommt. Das soll nicht sein. Der Wechsel soll erst stattfinden, wenn die Figur auf der Kachel steht und sich auf die Tür zubewegt, also die Pfeiltaste in Richtung Tür gedrückt wird (im Beispiel: Pfeiltaste nach oben). Dasselbe gilt für Übergänge zwischen Außenkarten (etwa Landstraße): Steht die Figur direkt am Kartenrand, soll noch nicht gewechselt werden, sondern erst, wenn die Pfeiltaste in Richtung der nächsten Karte gedrückt wird. Auftrag: bei allen Karten die Funktionslogik prüfen. Der Autor vermutet das Verhalten nur, getestet hat er es nicht ausdrücklich („ich vermute“).
 
 ## Karten und Grafik
 

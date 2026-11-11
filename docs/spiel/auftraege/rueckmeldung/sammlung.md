@@ -1,6 +1,6 @@
 # Sammlung der Rückmeldungen zum Schach-Abenteuer (Beta)
 
-Stand: 11.11.2026. Offene Punkte: 129 (davon 61 seit der ersten Abgabe neu: R071 bis R132). Erste Abgabe: 11.11.2026 (R001 bis R070, ohne die unbenutzte Nummer R035).
+Stand: 11.11.2026. Offene Punkte: 134 (davon 66 seit der ersten Abgabe neu: R071 bis R137). Erste Abgabe: 11.11.2026 (R001 bis R070, ohne die unbenutzte Nummer R035).
 
 Hinweis: Es gibt zwei Karten, die mit „Zedern“ beginnen: Zedernpfad (Maple Falls nach Cedar Creek) und Zedernwald (Cedar Creek nach Riverton). Alle bisherigen Anmerkungen des Autors, auch wo er „Zedernwald“ sagte, betreffen den Zedernpfad.
 
@@ -213,6 +213,14 @@ Lange vertikale Karte; der Autor ging sie von oben nach unten durch.
 - [ ] R128. Parkpavillon, Schachfiguren auf dem Brett in der Mitte: Sie sind sehr hässlich. Wunsch: vernünftige, ordentliche Schachfiguren zeichnen oder passende Assets im Internet besorgen. Der Autor hält das auch für eine mögliche Aufgabe für Gemini.
 - [ ] R129. Parkpavillon, links und rechts von der Eingangstür direkt neben den Pflanzen: zwei große Koffer (der Autor glaubt, es sollen Koffer sein). Es sind „Abziehbild“-Assets. Ein neues Asset wird gebraucht (siehe R055).
 - [ ] R130. Parkpavillon, Variante Perfect Move (`riverton-pavillon-perfect-move`), Idee: Das Schachbrett in der Mitte komplett mit Teppichen bedecken. Damit wird dargestellt, dass die Firma Perfect Move das nicht digitale Schach gar nicht mehr braucht; deshalb wird das riesige Schachbrett in der Mitte nicht gebraucht und mit Teppichen abgedeckt. Zusammenhang mit R128 (bei der Grundvariante sollen die Figuren schöner werden).
+
+### Lockport, Außen (Schleusendorf; der Autor sagt „Logport“ = `lockport-aussen`, Varianten `lockport-aussen-boot-an-land`, `lockport-aussen-steg-offen`)
+
+- [ ] R133. Lockport Außen, oben rechts: Über den Kanal führen zwei Fußgängerbrücken (vermutlich), bei beiden hängt ein „Gesperrt“-Schild darüber. Sowohl das Schild als auch die Brücken sind „Abziehbild“-Assets. Es werden vernünftige Assets im passenden Stil gebraucht (siehe R055).
+- [ ] R134. Lockport Außen, oben rechts, das erste Haus: ein „Abziehbild“-Haus (siehe R055).
+- [ ] R135. Lockport Außen, Gebäude oben in der Mitte: kein Abziehbild, passt aber vom Stil nicht. Dasselbe gilt für das zweite Gebäude von links oben, zwischen den beiden großen Gebäuden.
+- [ ] R136. Lockport Außen, Häuserreihe oberhalb des Kanals, von links nach rechts (Aufzählung des Autors; Zuordnung zu R134 und R135 und Abgleich mit dem Bild bitte durch den Hauptchat): 1. ganz links ein kleiner Schuppen am Kanal: Abziehbild, nicht in Ordnung. 2. das nächste Gebäude rechts daneben, über den gepflasterten Weg: in Ordnung. 3. das Gebäude rechts daneben: nicht in Ordnung. 4. wieder ein Gebäude: in Ordnung. 5. und 6. zwei Gebäude: nicht in Ordnung. 7. ein Gebäude: in Ordnung. 8. ganz rechts ein Gebäude: nicht in Ordnung. Die nicht in Ordnung befindlichen müssen ausgetauscht werden.
+- [ ] R137. Lockport Außen, Kanal: Auf dem Kanal liegt wieder ein „Abziehbild“, eine Fähre, vom Autor korrigiert „einen Tanker meine ich“. Es muss ein vernünftiges Asset werden (siehe R055, R120).
 
 ### Maple Falls, Wohnzimmer (`maple-falls-wohnzimmer-ausgepackt`)
 

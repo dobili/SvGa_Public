@@ -15,6 +15,7 @@ import { LEERES_BRETT } from "../../spiel/stellungsbau";
 import { Brettbereich } from "../../ui/komponenten/brettbedienung/Brettbereich";
 import { useBrettbedienung } from "../../ui/komponenten/brettbedienung/useBrettbedienung";
 import { Stellungseditor } from "../../ui/komponenten/spielstart/Stellungseditor";
+import { Raetseltest } from "../anbindung/Testleiste";
 import { liesPaketJson } from "../paket/paketlader";
 import { vergleicheStellung, type Gedaechtnisergebnis } from "../regeln/gedaechtnis";
 import { tSpiel } from "../texte/texte";
@@ -102,6 +103,7 @@ export function Gedaechtnisstellung(props: {
           />
         </>
       )}
+      {eintrag && !ergebnis && <Raetseltest beiWahl={beiEnde} />}
       {ergebnis && (
         <>
           <p data-testid="abenteuer-gedaechtnis-ergebnis">

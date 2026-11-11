@@ -117,7 +117,6 @@ Szene heißt die Datei in `inhalte/abenteuer/szenen/` ohne `.json`.
 - [x] silicon-bay-lobby, silicon-bay-serverraum (dritte Prüfung, nur Restpunkte, niedrig-1; Antworten in silicon-bay.md; `serverreihe_6` aus `niedrig1_runde9_karten.py` neu rendern, jetzt 160 px breit) und cedar-creek-aussen (nur Haltestelle: Wartehaus südlich der Busbucht, Antworten in cedar-creek.md) → `silicon-bay-lobby-serverraum-3.md`
 
 - [x] ghost-town-aussen (nur neue Bilder: Planwagen von vorn neben dem Mietstall, Pferd an der Tränke, niedrig-1; Antworten in ghost-town.md; Bögen fuchs, pferd, schimmel erst bauen) → `gemini-fahrzeuge-teil2.md`
-- [ ] ghost-town-aussen (Anbindebalken und Tränke am Mietstall), goldmine-stollen (Weiche am Abzweig), erinnerung-london-strand (helle Ladenzone), lockport-aussen (nur Ruben versetzt) (Restpunkte, niedrig-1; Bilder aus `niedrig1_runde10.py` erst rendern; Antworten in ghost-town.md und erinnerung-london.md)
 - [ ] cedar-creek-archiv (+geordnet), cedar-creek-waschsalon, maple-falls-diner, cedar-creek-bibliothek (zweite Prüfung, niedrig-1) und maple-falls-dachboden (+ohne-brett), maple-falls-wohnzimmer (+ausgepackt), cedar-creek-drechslerei (nur Restpunkte); Bilder aus `niedrig1_runde11.py` erst rendern; Antworten in cedar-creek.md und maple-falls.md
 
 - [x] ghost-town-aussen (Anbindebalken und Tränke am Mietstall), goldmine-stollen (Weiche am Abzweig), erinnerung-london-strand (helle Ladenzone), lockport-aussen (nur Ruben versetzt) (Restpunkte, niedrig-1; Bilder aus `niedrig1_runde10.py` erst rendern; Antworten in ghost-town.md und erinnerung-london.md) → `restpunkte-76799517.md`
@@ -157,7 +156,6 @@ Szene heißt die Datei in `inhalte/abenteuer/szenen/` ohne `.json`.
 - [x] ironwood-kantine (+ logo): Registrierkasse und Speiseplan als eigene Bilder (mittel-4) → `restpunkte-76799517.md`
 - [x] weg-desert-summit-bergstrasse: runde Kehren mit Linien im Bogen (mittel-4) → `restpunkte-76799517.md`
 
-- [ ] riverton-aussen (+ vier Zustände): Steinbrücke mit Bogenstreifen und Schatten; crossroads-aussen (+ gatter-offen): Sattelzüge mit Trennlinie, Lastwagen weg; silicon-bay-aussen: Hotel, kleiner Kaffeebecher, keine Möwen; silicon-bay-hafen: Angelladen im Osten (kurze Sichtprüfung, mittel-3)
 
 - [ ] ironwood-aussen (+ vermietet, meisterschaft), steinbruch-grube, steinbruch-stollen, weg-desert-summit-hinterzimmer, weg-riverton-ironwood-1 (+ graffiti): Befunde der Prüfung vom 11.11. (mittel-4)
 

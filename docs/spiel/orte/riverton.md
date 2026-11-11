@@ -1563,3 +1563,10 @@ Mauerwerk mit zwei dunklen Bögen und einem Pfeiler und wirft einen Schatten auf
 10.70: Der Uhrmacher steht nicht mehr neben dem Feld vor der Bahnhofstür (33, 18); in der
 Bahnhofshalle läuft die Reisende nicht mehr über den Übergang `zugCedar` und den Fund, die
 Schaffnerin steht eine Kachel neben dem Übergang (17, 3).
+
+## Kanalweg, dritte Prüfung (11.11.2026, mittel-4)
+
+Gutachten `weg-riverton-ironwood-1-3.md`, Befund 1: Die Fabrik im Norden war dasselbe Stadthaus wie die
+Kantine in Ironwood. Jetzt steht dort die flache alte Werkhalle mit Wellblechdach (`wr5Fabrikhalle`, Feld
+(1, 7)), dahinter zwei Schornsteine. Gilt auch für den Zustand „graffiti“. Befund 3 (Silo): bleibt, es ist
+schon das gekürzte Bild `silo_kurz` (neun Felder).

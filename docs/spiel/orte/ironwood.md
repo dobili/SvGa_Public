@@ -834,3 +834,19 @@ Pakets und ging auf dem Tresen unter; der Speiseplan war eine Schultafel. Beide 
 Essensausgabe, der Speiseplan `iw10Speiseplan` (32 × 16) im Holzrahmen an der Nordwand des Gastraums neben
 der Uhr. Gilt auch für den Zustand „logo“; dort rückt das Schild „PERFECT MOVE“ ein Stück nach links,
 damit es die Kasse nicht berührt.
+
+## Ironwood außen, dritte Prüfung (11.11.2026, mittel-4)
+
+Gutachten `ironwood-aussen-3.md`, gilt für alle drei Zustände (Grundfassung, vermietet, meisterschaft):
+
+- **Befund 1, Brücke:** Die Hauptstraße quert den Kanal wieder auf der Straßenbrücke mit Gehwegen
+  (`iw8StrassenbrueckeGehwegQuer10`, Reihen 28–32, bis an den Westrand). Die Felder unter der Brücke sind
+  begehbares Wasser (`h`, wie in Riverton); der Rand bleibt zu. Die Brücke war bei der Überarbeitung nach
+  dem ersten Gutachten verloren gegangen, die Beschreibung nannte sie weiter.
+- **Befund 2, alter Bahnhof:** Das Bahnhofsgebäude steht jetzt mit der Veranda direkt am Bahnsteig
+  (Feld (10, 41) statt (10, 38)), mit Bahnhofsuhr am Giebel, Bank, Gepäckkarre und Koffer auf dem Bahnsteig.
+- **Befund 3, Asphaltblock:** Die Seitenstraße beginnt in ihrer Breite (Reihen 12–14) an der Kaipromenade;
+  der breitere Block (Reihen 11–16) ist Pflaster.
+- **Nicht geändert:** Befunde 4 bis 7 (Schornsteine, Kantinengebäude als Werkshalle, Automaten im Hof, zwei
+  Läden mit gleichem Schild) standen nicht im Auftrag. Das Gebäude ist die Werkskantine mit Tür, kein
+  Hallenbild im Paket ist so groß.

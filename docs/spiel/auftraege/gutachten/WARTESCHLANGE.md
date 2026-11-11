@@ -155,3 +155,5 @@ Szene heißt die Datei in `inhalte/abenteuer/szenen/` ohne `.json`.
 - [ ] weg-desert-summit-bergstrasse: runde Kehren mit Linien im Bogen (mittel-4)
 
 - [ ] riverton-aussen (+ vier Zustände): Steinbrücke mit Bogenstreifen und Schatten; crossroads-aussen (+ gatter-offen): Sattelzüge mit Trennlinie, Lastwagen weg; silicon-bay-aussen: Hotel, kleiner Kaffeebecher, keine Möwen; silicon-bay-hafen: Angelladen im Osten (kurze Sichtprüfung, mittel-3)
+
+- [ ] ironwood-aussen (+ vermietet, meisterschaft), steinbruch-grube, steinbruch-stollen, weg-desert-summit-hinterzimmer, weg-riverton-ironwood-1 (+ graffiti): Befunde der Prüfung vom 11.11. (mittel-4)

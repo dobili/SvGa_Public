@@ -3,12 +3,11 @@
   "datei": "karten/steinbruch-stollen.json",
   "art": "innen",
   "toenung": "dunkel",
-  "beschreibung": "Stollen 2 im alten Steinbruch (Runde 8, nach dem Gutachten): enge Gänge im Dunkel des Bergs, kalt und still. Vom Eingang im Süden, wo Tageslicht auf den Boden fällt, läuft der Hauptgang mit der Feldbahn nach Norden; zwei Loren stehen auf dem Gleis, Türstöcke aus Grubenholz stützen die Decke in gleichem Abstand. An der Gabelung führt links ein Quergang zum Seitenstollen und weiter zu einer kleinen Nische; vor ihr liegt der lose Stein, hinter dem Mama als Kind ihre Blechdose versteckt hat. Rechts weitet sich der Gang zur unregelmäßigen Kaverne mit Pfützen, Brocken und einem Stapel Grubenholz; das Gleis endet dort am Prellbock. Zweite Prüfung: Über den Felswänden ist es dunkel, die zwei Grubenlampen hängen an der Wand, der lose Stein vor Mamas Versteck ist ein flacher Stein, anders als die Brocken.",
+  "beschreibung": "Stollen 2 im alten Steinbruch (Runde 8, nach dem Gutachten): enge Gänge im Dunkel des Bergs, kalt und still. Vom Eingang im Süden, wo Tageslicht auf den Boden fällt, läuft der Hauptgang mit der Feldbahn nach Norden; zwei Loren stehen auf dem Gleis, Türstöcke aus Grubenholz stützen die Decke in gleichem Abstand. An der Gabelung führt links ein Quergang zum Seitenstollen und weiter zu einer kleinen Nische; vor ihr liegt der lose Stein, hinter dem Mama als Kind ihre Blechdose versteckt hat. Rechts weitet sich der Gang zur unregelmäßigen Kaverne mit Pfützen, Brocken und einem Stapel Grubenholz; das Gleis läuft bis in die Kaverne und endet dort am Prellbock. Zweite Prüfung: Über den Felswänden ist es dunkel, die zwei Grubenlampen hängen an der Wand, der lose Stein vor Mamas Versteck ist ein flacher Stein, anders als die Brocken.",
   "wand": "felsStollen",
   "boden": "felsboden",
   "boeden": {
-    "f": "felsboden",
-    "l": "sand"
+    "f": "felsboden"
   },
   "zustand": ["neu", "gebraucht", "alt"],
   "raster": [
@@ -33,14 +32,14 @@
     "      ..............             ",
     "                  ..             ",
     "                  ..             ",
-    "                  ll             ",
-    "                  ll             ",
-    "                  ll             "
+    "                  ..             ",
+    "                  ..             ",
+    "                  ..             "
   ],
   "objekte": [
     {
       "moebel": "st8PrellbockFeldbahn",
-      "feld": [18, 9]
+      "feld": [18, 6]
     },
     {
       "moebel": "st8FeldbahnLaengs",
@@ -180,7 +179,7 @@
     },
     {
       "moebel": "scFelsKlein",
-      "feld": [13, 17]
+      "feld": [12, 17]
     },
     {
       "moebel": "scFelsKlein",
@@ -199,8 +198,8 @@
       "feld": [6, 11]
     },
     {
-      "moebel": "scFelsKlein",
-      "feld": [16, 17]
+      "moebel": "scFelsMittel",
+      "feld": [15, 17]
     },
     {
       "moebel": "scFelsKlein",
@@ -218,6 +217,23 @@
     {
       "moebel": "scFelsKlein",
       "feld": [26, 3]
+    },
+    {
+      "moebel": "st8FeldbahnLaengs",
+      "feld": [18, 7]
+    },
+    {
+      "moebel": "st8FeldbahnLaengs",
+      "feld": [18, 8]
+    },
+    {
+      "moebel": "st8FeldbahnLaengs",
+      "feld": [18, 9]
+    },
+    {
+      "moebel": "st11Eingangslicht",
+      "feld": [18, 20],
+      "vorn": true
     }
   ],
   "ausloeser": [

@@ -990,3 +990,16 @@ auf jeder soll etwas passieren, das man entdecken kann. Die Geschichten dazu ste
     - Erde und Sandplatz haben Randkacheln (`rand`) und brauchen keinen Saum. Wasser hat sein Ufer.
     - Ein neuer Boden braucht `rand` oder `saum`; sonst meldet der Kartenbau „endet mit nackter
       Kante im Gras“.
+72. **Drei Straßenarten, die man unterscheidet** (Rückmeldung R036, R037, Entscheidung 3 im Auftrag
+    Runde 11).
+    - **Trampelpfad:** Boden `erde` (braun, mit Grasrand). Nur zu Fuß; kein Fahrzeug, keine
+      Haltestelle.
+    - **Landstraße:** Boden `landstrasse`: alter, ausgeblichener Asphalt ohne Bordstein, mit Bankett
+      und zwei Fahrspuren, ohne Mittellinie; mindestens drei Felder breit. Hier fährt der Bus.
+      Das Rasterzeichen kommt **nicht** in `markierung`.
+    - **Stadtstraße:** Boden `asphalt` mit `markierung` und Gehweg aus Pflaster (der Randstein des
+      Pflasters ist der Bordstein).
+    - **Übergang:** Wechselt eine Straße die Art, liegt der Wechsel auf einer Karte, nicht am
+      Kartenrand: Beide Beläge stoßen im Raster aneinander, der Kartenzeichner bricht den festeren
+      Belag unregelmäßig ab (`pipeline/abenteuer/strassenart.py`). Am Kartenrand hat die Straße auf
+      beiden Karten dieselbe Art.

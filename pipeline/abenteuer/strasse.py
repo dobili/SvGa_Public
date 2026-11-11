@@ -24,6 +24,7 @@ from PIL import Image, ImageDraw
 
 from pipeline.abenteuer.kehren import Kehre, bogenlinien, finde_kehren, runde
 from pipeline.abenteuer.saum import saeume
+from pipeline.abenteuer.strassenart import belagwechsel, landstrassen
 
 K = 16
 GELB, WEISS = (232, 196, 64, 255), (236, 236, 228, 255)
@@ -209,6 +210,8 @@ def markiere(
             frozenset().union(*(k.felder() for k in finde_kehren(zeilen, fahrbahn))) if rund else frozenset()
         )
         saeume(bild, gezeichnet, boeden, ohne)
+        landstrassen(bild, gezeichnet)
+        belagwechsel(bild, gezeichnet)
     kehren = runde(bild, zeilen, fahrbahn) if rund else []
     _linien(bild, zeilen, fahrbahn, tuple(kehren))
     _buchten(bild, zeilen, szene.get("buchten", {}))

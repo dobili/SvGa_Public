@@ -978,7 +978,7 @@ auf jeder soll etwas passieren, das man entdecken kann. Die Geschichten dazu ste
       jede Kachel seines Laufwegs (alle anderen an ihrem Platz); dann muss weiter jeder Übergang,
       jede Figur und jeder Gegenstand erreichbar sein.
 
-### 10.71 Keine Abziehbilder, keine Rückansichten (Rückmeldung des Autors, 11.11.2026)
+### 10.71 Keine Abziehbilder; Rückansichten nur mit Tiefe (Rückmeldung des Autors, 11.11.2026)
 
 - **Abziehbild:** ein von Hand gezeichnetes Bild ohne Tiefe. Es zeigt nur eine Front: kein Dach von
   oben, kein First, keine Oberseite, keine Seitenfläche, keine Schattierung. Solche Bilder kommen aus
@@ -988,9 +988,12 @@ auf jeder soll etwas passieren, das man entdecken kann. Die Geschichten dazu ste
   Haupt-Chat.
 - **Selbst Gezeichnetes** ist nur für Flaches erlaubt: Schilder, Markierungen, Böden, Plakate,
   Etiketten.
-- **Alle Gebäude zeigen ihre Front nach Süden**, wie in den Paketen. Rückansichten (`haus_hinten_*`,
-  `bank_hinten_*`, `wartehaus_hinten`) entfallen. Ein Haus südlich einer Straße hat seine Tür auf der
-  Südseite und einen Weg oder eine Gasse dorthin; die Regel „Straße südlich, also Vorderansicht“
-  (Runde 8) gilt damit für jedes Haus.
+- **Rückansichten sind erlaubt, wenn das Bild passt** (Autor, 11.11.2026: „Ich habe nichts gegen
+  Gebäude von hinten, sie müssen halt vom Asset her passen“). Ein Haus südlich einer Straße darf seine
+  Rückseite zeigen. Die Rückansicht braucht dieselbe Tiefe wie die Pakethäuser: Dach von oben mit
+  First und Schattierung, Rückwand mit Fenstern, Hintertür oder Schuppenanbau. Die drei flachen
+  `haus_hinten_blau/_braun/_rot` entfallen; die `_b_`-Fassungen gelten als grenzwertig und werden
+  durch bessere ersetzt, sobald es sie gibt (Gemini Teil 4, Nr. 11). Wo eine Rückansicht nicht
+  überzeugt, das Haus mit Front nach Süden stellen und einen Weg oder eine Gasse zur Tür legen.
 - **Prüfung:** `test_abenteuer_moebelbilder.py` soll melden, wenn ein Möbel ein Bild aus der Liste der
   Abziehbilder benutzt (sobald die Liste vollständig ist).

@@ -172,3 +172,15 @@ OBJECTS: buses standing on a road that runs from top to bottom, each a tall narr
 ```
 OBJECT: a small cotton candy cart for a fairground, seen from the front and slightly from above: 2 tiles wide and 3 tiles tall (32x48 pixels). Pink-and-white striped canopy seen partly from above, a glass case with a spinning drum, two big pink cotton candy puffs on sticks, two spoked wheels and a push handle. No letters.
 ```
+
+---
+
+## 11. Wohnhäuser von hinten
+
+**Für:** Häuser, die südlich einer Straße stehen und ihre Rückseite zeigen (Cedar Creek, Maple
+Falls, Riverton und andere). **Datei:** `ki-roh/haus_hinten.jpg`. **Ziel:** je 96 × 96 Pixel.
+
+```
+OBJECTS: four small American family houses seen from BEHIND, in one row, each 6 tiles wide and 6 tiles tall (96x96 pixels), same scale. We stand in the back garden: the upper half of each picture is the gabled shingle roof seen from above (ridge running left to right, a brick chimney, a darker shaded far side), the lower half is the BACK WALL of horizontal wooden siding with two or three windows with curtains and a plain back door with two steps. Each house has one detail at the back: 1. light blue siding, grey roof, a small lean-to shed. 2. brown siding, dark brown roof, a stack of firewood. 3. red siding, dark grey roof, a rain barrel and a drainpipe. 4. cream siding, green roof, a clothesline post and a cellar hatch.
+No front door, no porch, no mailbox, no house number.
+```

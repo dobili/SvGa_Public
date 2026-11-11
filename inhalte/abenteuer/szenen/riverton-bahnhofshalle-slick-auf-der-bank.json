@@ -268,10 +268,10 @@
     {
       "name": "reisende",
       "typ": "statist",
-      "feld": [13, 12],
+      "feld": [16, 12],
       "eigenschaften": {
-        "von": "13,12",
-        "bis": "19,3",
+        "von": "16,10",
+        "bis": "20,12",
         "tun": "zieht einen Koffer zum Bahnsteig",
         "sagt": "statist.riverton.bahnhofshalle.reisende"
       }
@@ -289,10 +289,10 @@
     {
       "name": "schaffnerin",
       "typ": "statist",
-      "feld": [18, 3],
+      "feld": [17, 3],
       "eigenschaften": {
-        "von": "18,3",
-        "bis": "18,3",
+        "von": "17,3",
+        "bis": "17,3",
         "tun": "wartet mit der Kelle auf den nächsten Zug",
         "sagt": "statist.riverton.bahnhofshalle.schaffnerin"
       }

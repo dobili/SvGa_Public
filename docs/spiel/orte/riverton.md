@@ -1554,3 +1554,12 @@ der Kai hat zum Rasen eine Kante aus Steinplatten.
 Die Brücke über den Fluss in Riverton außen ist jetzt das Gemini-Bild der Steinbrücke
 (`rv10Steinbruecke`, 80 × 116, begehbar); das alte Brückenbild und der eigene Schatten sind weg.
 Gilt für die Grundszene und alle vier Zustände.
+
+### Steinbrücke mit Höhe und Laufwege (11.11.2026, mittel-3)
+
+Gutachten: Die Brücke las sich als graue Platte. Jetzt hat sie an der Ostseite einen Streifen
+Mauerwerk mit zwei dunklen Bögen und einem Pfeiler und wirft einen Schatten aufs Wasser
+(`steinbruecke_laengs_bogen.png`, Bildwunsch `steinbruecke_hoehe.py`, 112 × 116). Laufwege nach
+10.70: Der Uhrmacher steht nicht mehr neben dem Feld vor der Bahnhofstür (33, 18); in der
+Bahnhofshalle läuft die Reisende nicht mehr über den Übergang `zugCedar` und den Fund, die
+Schaffnerin steht eine Kachel neben dem Übergang (17, 3).

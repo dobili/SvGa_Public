@@ -957,7 +957,7 @@
       "feld": [16, 90],
       "eigenschaften": {
         "von": "14,89",
-        "bis": "18,92",
+        "bis": "18,91",
         "verhalten": "ausweichen"
       }
     },
@@ -1058,7 +1058,7 @@
       "feld": [8, 129],
       "eigenschaften": {
         "von": "6,128",
-        "bis": "11,131",
+        "bis": "10,131",
         "verhalten": "ausweichen"
       }
     },

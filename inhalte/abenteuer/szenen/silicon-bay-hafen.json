@@ -2,7 +2,7 @@
   "karte": "siliconBay.hafen",
   "datei": "karten/silicon-bay-hafen.json",
   "art": "aussen",
-  "beschreibung": "Der alte Hafen von Silicon Bay unterhalb der Terrasse des Campus; eine Stützmauer trägt die Terrasse, in der Mitte führt die Treppe in zwei Läufen herunter auf die Hafenstraße. Oben die alten Häuser: der Fischladen der Fischhalle, der Laden für Hafenbedarf, die Bäckerei, Ames leerer Kurzwarenladen mit dem Schild „Coming soon“ und dem Plakat „Bald geöffnet“ und gleich rechts der Treppe die Hafenmeisterei mit Schild und Flagge; daneben trocknen Netze über Fischkisten. Am Südrand der Straße Laternen in festen Abständen, am Kai ein Gemüsekarren mit Händlerin. Links das Fährhäuschen, davor am Kai die Küstenfähre, 18 Kacheln lang, sie liegt mit der Bordwand an der Kaimauer, die Gangway reicht auf den Kai. In der Mitte das kleine Fischerboot, ein Ruderboot mit Angel; davor der Arbeitsplatz der Fischer: ein gelber Portalkran, Kistenstapel, Fischkisten, Trockengestelle mit Netzen, ein aufgelegtes Beiboot, Bretter und Fässer, die Hafenarbeiter zur Kaikante tragen. Bänke mit Blick aufs Wasser, Poller an der Kaikante; die Kaimauer fällt mit Leitern und Reifenfendern zum Wasser ab. Rechts der Steg der Inselfähre mit einem Motorboot und der rot-weiße Leuchtturm auf einer Mole, zu dessen Tür ein Weg um den Turm führt.",
+  "beschreibung": "Der alte Hafen von Silicon Bay unterhalb der Terrasse des Campus; eine Stützmauer trägt die Terrasse, in der Mitte führt die Treppe in zwei Läufen herunter auf die Hafenstraße. Oben die alten Häuser: der Fischladen der Fischhalle, der Laden für Hafenbedarf, die Bäckerei, Ames leerer Kurzwarenladen mit dem Schild „Coming soon“ und dem Plakat „Bald geöffnet“ und gleich rechts der Treppe die Hafenmeisterei mit Schild und Flagge; daneben trocknen Netze über Fischkisten, am Ostende der Straße steht der Angelladen. Am Südrand der Straße Laternen in festen Abständen, am Kai ein Gemüsekarren mit Händlerin. Links das Fährhäuschen, davor am Kai die Küstenfähre, 18 Kacheln lang, sie liegt mit der Bordwand an der Kaimauer, die Gangway reicht auf den Kai. In der Mitte das kleine Fischerboot, ein Ruderboot mit Angel; davor der Arbeitsplatz der Fischer: ein gelber Portalkran, Kistenstapel, Fischkisten, Trockengestelle mit Netzen, ein aufgelegtes Beiboot, Bretter und Fässer, die Hafenarbeiter zur Kaikante tragen. Bänke mit Blick aufs Wasser, Poller an der Kaikante; die Kaimauer fällt mit Leitern und Reifenfendern zum Wasser ab. Rechts der Steg der Inselfähre mit einem Motorboot und der rot-weiße Leuchtturm auf einer Mole, zu dessen Tür ein Weg um den Turm führt.",
   "boden": "pflaster",
   "wandart": "stein",
   "ufer": "stein",
@@ -862,20 +862,12 @@
       "feld": [51, 13]
     },
     {
-      "moebel": "pk9Netztrockner",
-      "feld": [56, 11]
-    },
-    {
       "moebel": "caKisten",
       "feld": [49, 14]
     },
     {
       "moebel": "sb5Fischkiste",
       "feld": [54, 13]
-    },
-    {
-      "moebel": "sb5FischkisteB",
-      "feld": [55, 13]
     },
     {
       "moebel": "sb5Kran",
@@ -940,6 +932,10 @@
     {
       "moebel": "mfBank",
       "feld": [14, 27]
+    },
+    {
+      "moebel": "sa8Angelladen",
+      "feld": [55, 7]
     }
   ],
   "ausloeser": [

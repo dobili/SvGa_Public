@@ -11,7 +11,7 @@
  "tilewidth": 16,
  "tileheight": 16,
  "nextlayerid": 5,
- "nextobjectid": 45,
+ "nextobjectid": 46,
  "layers": [
   {
    "id": 1,
@@ -963,8 +963,8 @@
      "id": 11,
      "name": "pizzakarton",
      "type": "ausloeser",
-     "x": 128,
-     "y": 160,
+     "x": 112,
+     "y": 176,
      "width": 16,
      "height": 16,
      "rotation": 0,
@@ -1213,11 +1213,11 @@
     },
     {
      "id": 23,
-     "name": "mf4Karton",
+     "name": "mf12KartonWhitlock",
      "type": "moebel",
      "x": 16,
      "y": 80,
-     "width": 16,
+     "width": 48,
      "height": 32,
      "rotation": 0,
      "visible": true,
@@ -1581,6 +1581,29 @@
     },
     {
      "id": 39,
+     "name": "mf12Pizzakarton",
+     "type": "moebel",
+     "x": 112,
+     "y": 160,
+     "width": 16,
+     "height": 16,
+     "rotation": 0,
+     "visible": true,
+     "properties": [
+      {
+       "name": "tiefe",
+       "type": "int",
+       "value": 168
+      },
+      {
+       "name": "kollision",
+       "type": "bool",
+       "value": true
+      }
+     ]
+    },
+    {
+     "id": 40,
      "name": "mf4KartonStapel",
      "type": "moebel",
      "x": 144,
@@ -1603,7 +1626,7 @@
      ]
     },
     {
-     "id": 40,
+     "id": 41,
      "name": "mf4KartonBreit",
      "type": "moebel",
      "x": 160,
@@ -1626,7 +1649,7 @@
      ]
     },
     {
-     "id": 41,
+     "id": 42,
      "name": "mf4Fussmatte",
      "type": "moebel",
      "x": 80,
@@ -1649,7 +1672,7 @@
      ]
     },
     {
-     "id": 42,
+     "id": 43,
      "name": "mf4RegalSchmal",
      "type": "moebel",
      "x": 144,
@@ -1672,7 +1695,7 @@
      ]
     },
     {
-     "id": 43,
+     "id": 44,
      "name": "mf4FernseherStand",
      "type": "moebel",
      "x": 112,
@@ -1695,7 +1718,7 @@
      ]
     },
     {
-     "id": 44,
+     "id": 45,
      "name": "mf5TuerSuedHolz",
      "type": "moebel",
      "x": 80,

@@ -11,7 +11,7 @@
  "tilewidth": 16,
  "tileheight": 16,
  "nextlayerid": 5,
- "nextobjectid": 42,
+ "nextobjectid": 40,
  "layers": [
   {
    "id": 1,
@@ -1547,11 +1547,11 @@
     },
     {
      "id": 37,
-     "name": "mf3SofaL",
+     "name": "mf7CouchtischRund",
      "type": "moebel",
-     "x": 16,
-     "y": 96,
-     "width": 16,
+     "x": 112,
+     "y": 64,
+     "width": 32,
      "height": 32,
      "rotation": 0,
      "visible": true,
@@ -1559,7 +1559,7 @@
       {
        "name": "tiefe",
        "type": "int",
-       "value": 120
+       "value": 88
       },
       {
        "name": "kollision",
@@ -1570,75 +1570,6 @@
     },
     {
      "id": 38,
-     "name": "mf3SofaM",
-     "type": "moebel",
-     "x": 32,
-     "y": 96,
-     "width": 16,
-     "height": 32,
-     "rotation": 0,
-     "visible": true,
-     "properties": [
-      {
-       "name": "tiefe",
-       "type": "int",
-       "value": 120
-      },
-      {
-       "name": "kollision",
-       "type": "bool",
-       "value": true
-      }
-     ]
-    },
-    {
-     "id": 39,
-     "name": "mf3SofaR",
-     "type": "moebel",
-     "x": 48,
-     "y": 96,
-     "width": 16,
-     "height": 32,
-     "rotation": 0,
-     "visible": true,
-     "properties": [
-      {
-       "name": "tiefe",
-       "type": "int",
-       "value": 120
-      },
-      {
-       "name": "kollision",
-       "type": "bool",
-       "value": true
-      }
-     ]
-    },
-    {
-     "id": 40,
-     "name": "mf7CouchtischRund",
-     "type": "moebel",
-     "x": 32,
-     "y": 128,
-     "width": 32,
-     "height": 32,
-     "rotation": 0,
-     "visible": true,
-     "properties": [
-      {
-       "name": "tiefe",
-       "type": "int",
-       "value": 152
-      },
-      {
-       "name": "kollision",
-       "type": "bool",
-       "value": true
-      }
-     ]
-    },
-    {
-     "id": 41,
      "name": "mf4RegalNiedrig",
      "type": "moebel",
      "x": 144,
@@ -1652,6 +1583,29 @@
        "name": "tiefe",
        "type": "int",
        "value": 168
+      },
+      {
+       "name": "kollision",
+       "type": "bool",
+       "value": true
+      }
+     ]
+    },
+    {
+     "id": 39,
+     "name": "cc4RegalA",
+     "type": "moebel",
+     "x": 16,
+     "y": 80,
+     "width": 32,
+     "height": 48,
+     "rotation": 0,
+     "visible": true,
+     "properties": [
+      {
+       "name": "tiefe",
+       "type": "int",
+       "value": 120
       },
       {
        "name": "kollision",

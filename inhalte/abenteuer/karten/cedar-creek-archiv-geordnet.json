@@ -623,7 +623,7 @@
      "id": 9,
      "name": "programmheft",
      "type": "ausloeser",
-     "x": 176,
+     "x": 160,
      "y": 144,
      "width": 16,
      "height": 16,
@@ -634,8 +634,8 @@
      "id": 10,
      "name": "karton1858",
      "type": "ausloeser",
-     "x": 144,
-     "y": 80,
+     "x": 48,
+     "y": 128,
      "width": 16,
      "height": 16,
      "rotation": 0,
@@ -645,8 +645,8 @@
      "id": 11,
      "name": "wasserfleck",
      "type": "ausloeser",
-     "x": 96,
-     "y": 64,
+     "x": 112,
+     "y": 144,
      "width": 16,
      "height": 16,
      "rotation": 0,
@@ -746,7 +746,7 @@
     },
     {
      "id": 16,
-     "name": "cc4ArchivregalB",
+     "name": "cc12RegalSchatten",
      "type": "moebel",
      "x": 128,
      "y": 16,
@@ -792,147 +792,9 @@
     },
     {
      "id": 18,
-     "name": "cc4ArchivregalB",
-     "type": "moebel",
-     "x": 20,
-     "y": 64,
-     "width": 32,
-     "height": 48,
-     "rotation": 0,
-     "visible": true,
-     "properties": [
-      {
-       "name": "tiefe",
-       "type": "int",
-       "value": 104
-      },
-      {
-       "name": "kollision",
-       "type": "bool",
-       "value": true
-      }
-     ]
-    },
-    {
-     "id": 19,
-     "name": "cc4Archivregal",
-     "type": "moebel",
-     "x": 48,
-     "y": 64,
-     "width": 32,
-     "height": 48,
-     "rotation": 0,
-     "visible": true,
-     "properties": [
-      {
-       "name": "tiefe",
-       "type": "int",
-       "value": 104
-      },
-      {
-       "name": "kollision",
-       "type": "bool",
-       "value": true
-      }
-     ]
-    },
-    {
-     "id": 20,
-     "name": "cc4ArchivregalB",
-     "type": "moebel",
-     "x": 84,
-     "y": 96,
-     "width": 32,
-     "height": 48,
-     "rotation": 0,
-     "visible": true,
-     "properties": [
-      {
-       "name": "tiefe",
-       "type": "int",
-       "value": 136
-      },
-      {
-       "name": "kollision",
-       "type": "bool",
-       "value": true
-      }
-     ]
-    },
-    {
-     "id": 21,
-     "name": "cc4Archivregal",
-     "type": "moebel",
-     "x": 112,
-     "y": 96,
-     "width": 32,
-     "height": 48,
-     "rotation": 0,
-     "visible": true,
-     "properties": [
-      {
-       "name": "tiefe",
-       "type": "int",
-       "value": 136
-      },
-      {
-       "name": "kollision",
-       "type": "bool",
-       "value": true
-      }
-     ]
-    },
-    {
-     "id": 22,
      "name": "cc4Karton",
      "type": "moebel",
      "x": 16,
-     "y": 128,
-     "width": 32,
-     "height": 32,
-     "rotation": 0,
-     "visible": true,
-     "properties": [
-      {
-       "name": "tiefe",
-       "type": "int",
-       "value": 152
-      },
-      {
-       "name": "kollision",
-       "type": "bool",
-       "value": true
-      }
-     ]
-    },
-    {
-     "id": 23,
-     "name": "cc4Karton",
-     "type": "moebel",
-     "x": 48,
-     "y": 128,
-     "width": 32,
-     "height": 32,
-     "rotation": 0,
-     "visible": true,
-     "properties": [
-      {
-       "name": "tiefe",
-       "type": "int",
-       "value": 152
-      },
-      {
-       "name": "kollision",
-       "type": "bool",
-       "value": true
-      }
-     ]
-    },
-    {
-     "id": 24,
-     "name": "cc4KartonOffen",
-     "type": "moebel",
-     "x": 144,
      "y": 64,
      "width": 32,
      "height": 32,
@@ -952,7 +814,99 @@
      ]
     },
     {
-     "id": 25,
+     "id": 19,
+     "name": "cc4Karton",
+     "type": "moebel",
+     "x": 16,
+     "y": 96,
+     "width": 32,
+     "height": 32,
+     "rotation": 0,
+     "visible": true,
+     "properties": [
+      {
+       "name": "tiefe",
+       "type": "int",
+       "value": 120
+      },
+      {
+       "name": "kollision",
+       "type": "bool",
+       "value": true
+      }
+     ]
+    },
+    {
+     "id": 20,
+     "name": "cc12KartonsOben",
+     "type": "moebel",
+     "x": 48,
+     "y": 64,
+     "width": 96,
+     "height": 32,
+     "rotation": 0,
+     "visible": true,
+     "properties": [
+      {
+       "name": "tiefe",
+       "type": "int",
+       "value": 88
+      },
+      {
+       "name": "kollision",
+       "type": "bool",
+       "value": true
+      }
+     ]
+    },
+    {
+     "id": 21,
+     "name": "cc12KartonsUnten",
+     "type": "moebel",
+     "x": 48,
+     "y": 96,
+     "width": 96,
+     "height": 32,
+     "rotation": 0,
+     "visible": true,
+     "properties": [
+      {
+       "name": "tiefe",
+       "type": "int",
+       "value": 120
+      },
+      {
+       "name": "kollision",
+       "type": "bool",
+       "value": true
+      }
+     ]
+    },
+    {
+     "id": 22,
+     "name": "cc12Wasserfleck",
+     "type": "moebel",
+     "x": 96,
+     "y": 128,
+     "width": 48,
+     "height": 32,
+     "rotation": 0,
+     "visible": true,
+     "properties": [
+      {
+       "name": "tiefe",
+       "type": "int",
+       "value": 1
+      },
+      {
+       "name": "kollision",
+       "type": "bool",
+       "value": false
+      }
+     ]
+    },
+    {
+     "id": 23,
      "name": "cc4StuhlHinten",
      "type": "moebel",
      "x": 176,
@@ -975,7 +929,7 @@
      ]
     },
     {
-     "id": 26,
+     "id": 24,
      "name": "cc5Tisch",
      "type": "moebel",
      "x": 176,
@@ -998,13 +952,59 @@
      ]
     },
     {
-     "id": 27,
+     "id": 25,
      "name": "cc4Leselampe",
      "type": "moebel",
-     "x": 191,
-     "y": 115,
+     "x": 193,
+     "y": 113,
      "width": 16,
      "height": 32,
+     "rotation": 0,
+     "visible": true,
+     "properties": [
+      {
+       "name": "tiefe",
+       "type": "int",
+       "value": 153
+      },
+      {
+       "name": "kollision",
+       "type": "bool",
+       "value": false
+      }
+     ]
+    },
+    {
+     "id": 26,
+     "name": "cc12BuchOffen",
+     "type": "moebel",
+     "x": 180,
+     "y": 141,
+     "width": 12,
+     "height": 8,
+     "rotation": 0,
+     "visible": true,
+     "properties": [
+      {
+       "name": "tiefe",
+       "type": "int",
+       "value": 153
+      },
+      {
+       "name": "kollision",
+       "type": "bool",
+       "value": false
+      }
+     ]
+    },
+    {
+     "id": 27,
+     "name": "cc12Programmheft",
+     "type": "moebel",
+     "x": 181,
+     "y": 132,
+     "width": 8,
+     "height": 8,
      "rotation": 0,
      "visible": true,
      "properties": [

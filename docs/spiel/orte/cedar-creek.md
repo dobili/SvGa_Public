@@ -921,3 +921,39 @@ Gutachten `niedrig-1-5.md`, Restpunkte der reifen Karten.
   Gleisbogen; ohne neues Bild geht es nicht.
 - **London, dunkle Ladenzone:** bleibt offen. Die Läden sind Teil der Gemini-Fronten; heller
   werden sie nur mit neuen Bildern.
+
+## Erstes Gutachten der Innenräume: Antworten (niedrig-1, 11.11.2026)
+
+Gutachten `cedar-creek-innen.md`. Neue Bilder aus `bildwuensche/niedrig1_runde11.py`.
+
+- **Archiv (auch `geordnet`):**
+  - Zwei Reihen Archivkartons mit Jahreszahlen stehen in der Mitte (oben 1810–1840 bei (3, 4),
+    unten 1850–1880 bei (3, 6)); der Karton 1850 ist offen (`karton1858` bei (3, 8)). Die
+    Bücherregale im Raum sind weg.
+  - Der Wasserfleck in Springerform liegt vorn am Boden (6, 8), Auslöser bei (7, 9).
+  - Das vierte Regal neben der Treppe liegt im Schatten (abgedunkeltes Bild).
+  - Auf dem Lesetisch liegen das aufgeschlagene Buch und das Programmheft.
+  - Die hohen Kartons stehen als zwei Stapel am Westende der Reihen, nicht mehr an der Südwand.
+    Im Zustand `geordnet` stehen dort trockene, geschlossene Kartons.
+  - Wand: Im Wandbogen gibt es keinen roten Backstein. Die Beschreibung sagt jetzt „hell
+    gekalkte Ziegelwände“, das Bild bleibt.
+- **Waschsalon:**
+  - Vier Waschmaschinen und zwei Trockner mit warm glühendem Bullauge; auf dem linken klebt das
+    Steckschachbrett (`trockner` bei (6, 4)). Die Pinnwand hängt über den Trocknern.
+  - Die zweite Maschinenreihe ist weg. In der Mitte stehen zwei Edelstahltische mit Korb, Mr.
+    Boateng daneben; die Wartesitze links vorn an der Westwand mit Comicheft, ein Mann sitzt dort.
+  - Keine Körbe mehr auf den Maschinen. Ein Westfenster lässt sich nicht zeichnen (Seitenwände
+    sind nur ein Rand); stattdessen ein Fenster in der Nordwand, die Beschreibung folgt dem Bild.
+  - Die Tür ist die Glastür (`sb8GlastuerSued`); bisher sah man nur die braune Matte.
+  - Die erste Zeile „Variante C …“ ist aus der Beschreibung gestrichen.
+- **Bibliothek:**
+  - Der Ausleihtresen steht links neben dem Eingang an der Westwand (1, 10).
+  - Der Student steht sichtbar zwischen den Regalreihen (15, 8), die Leserin im Gang (10, 12),
+    der Rentner liest neben den Lesetischen (12, 13); die Stehlampe steht zwischen den Tischen.
+  - Die Nordregale sind alle gleich hoch; das Zeitungsregal ist ein eigenes Bild mit Zeitungen
+    über Stangen.
+  - Der Globus steht mit seiner Kommode in der Südostecke (19, 11).
+  - Die Seitenregale an der Westwand bleiben quer: An einer Seitenwand ist die Seitenansicht
+    richtig. Die Beschreibung nennt sie jetzt.
+- **Drechslerei:** Fenster mit Tageslicht in der Nordwand (6, 1). Mr. Dunmore bekommt ein
+  festes Bild eines älteren Mannes (`bild: statist-13`).

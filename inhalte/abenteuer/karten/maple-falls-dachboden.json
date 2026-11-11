@@ -11,7 +11,7 @@
  "tilewidth": 16,
  "tileheight": 16,
  "nextlayerid": 5,
- "nextobjectid": 29,
+ "nextobjectid": 30,
  "layers": [
   {
    "id": 1,
@@ -655,7 +655,7 @@
     },
     {
      "id": 11,
-     "name": "mf2Dachfenster",
+     "name": "mf12FensterAhorn",
      "type": "moebel",
      "x": 112,
      "y": 16,
@@ -908,19 +908,19 @@
     },
     {
      "id": 22,
-     "name": "mf7Kistenstapel",
+     "name": "mf12KartonAltHoch",
      "type": "moebel",
      "x": 176,
      "y": 96,
      "width": 32,
-     "height": 48,
+     "height": 32,
      "rotation": 0,
      "visible": true,
      "properties": [
       {
        "name": "tiefe",
        "type": "int",
-       "value": 136
+       "value": 120
       },
       {
        "name": "kollision",
@@ -931,6 +931,29 @@
     },
     {
      "id": 23,
+     "name": "mf12KartonAltHoch",
+     "type": "moebel",
+     "x": 176,
+     "y": 84,
+     "width": 32,
+     "height": 32,
+     "rotation": 0,
+     "visible": true,
+     "properties": [
+      {
+       "name": "tiefe",
+       "type": "int",
+       "value": 108
+      },
+      {
+       "name": "kollision",
+       "type": "bool",
+       "value": true
+      }
+     ]
+    },
+    {
+     "id": 24,
      "name": "mf7Truhe",
      "type": "moebel",
      "x": 144,
@@ -953,7 +976,7 @@
      ]
     },
     {
-     "id": 24,
+     "id": 25,
      "name": "mf7Teddy",
      "type": "moebel",
      "x": 152,
@@ -976,13 +999,13 @@
      ]
     },
     {
-     "id": 25,
-     "name": "mf2KisteTuch",
+     "id": 26,
+     "name": "mf12KartonAltHoch",
      "type": "moebel",
      "x": 16,
-     "y": 144,
+     "y": 128,
      "width": 32,
-     "height": 16,
+     "height": 32,
      "rotation": 0,
      "visible": true,
      "properties": [
@@ -999,7 +1022,7 @@
      ]
     },
     {
-     "id": 26,
+     "id": 27,
      "name": "mf2Zeitungsstapel",
      "type": "moebel",
      "x": 112,
@@ -1022,13 +1045,13 @@
      ]
     },
     {
-     "id": 27,
-     "name": "mf2Hutschachtel",
+     "id": 28,
+     "name": "mf12Hutschachtel",
      "type": "moebel",
-     "x": 64,
-     "y": 128,
-     "width": 32,
-     "height": 32,
+     "x": 80,
+     "y": 144,
+     "width": 16,
+     "height": 16,
      "rotation": 0,
      "visible": true,
      "properties": [
@@ -1045,7 +1068,7 @@
      ]
     },
     {
-     "id": 28,
+     "id": 29,
      "name": "mf2Standspiegel",
      "type": "moebel",
      "x": 16,

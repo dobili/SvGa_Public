@@ -818,12 +818,7 @@
       "blick": "unten",
       "zustand": "gebraucht",
       "stil": "laendlich",
-      "tuer": [
-        [
-          2,
-          10
-        ]
-      ]
+      "tuer": [[2, 10]]
     },
     "cc4Wohnhaus": {
       "quelle": "modern-farm/Single_Files_16x16/Props_and_Buildings_16x16/Farmer_House_1_16x16.png",
@@ -1063,14 +1058,8 @@
       "zustand": "alt",
       "stil": "klassisch",
       "tuer": [
-        [
-          1,
-          7
-        ],
-        [
-          2,
-          7
-        ]
+        [1, 7],
+        [2, 7]
       ],
       "maske": [
         "....",
@@ -1750,6 +1739,113 @@
       "zustand": "gebraucht",
       "stil": "landhaus",
       "blick": "oben"
+    },
+    "cc12KartonsOben": {
+      "quelle": "spiel/eigene/archivkartons_oben.png",
+      "breite": 96,
+      "hoehe": 32,
+      "kollision": true,
+      "art": "kiste",
+      "zustand": "alt",
+      "stil": "einfach",
+      "blick": "unten"
+    },
+    "cc12KartonsUnten": {
+      "quelle": "spiel/eigene/archivkartons_unten.png",
+      "breite": 96,
+      "hoehe": 32,
+      "kollision": true,
+      "art": "kiste",
+      "zustand": "alt",
+      "stil": "einfach",
+      "blick": "unten"
+    },
+    "cc12Wasserfleck": {
+      "quelle": "spiel/eigene/wasserfleck_springer.png",
+      "breite": 48,
+      "hoehe": 32,
+      "kollision": false,
+      "art": "boden_teil",
+      "zustand": "alt",
+      "stil": "einfach"
+    },
+    "cc12RegalSchatten": {
+      "quelle": "spiel/eigene/archivregal_schatten.png",
+      "breite": 32,
+      "hoehe": 48,
+      "kollision": true,
+      "art": "regal",
+      "zustand": "alt",
+      "stil": "klassisch",
+      "blick": "unten"
+    },
+    "cc12BuchOffen": {
+      "quelle": "spiel/eigene/buch_offen_klein.png",
+      "breite": 12,
+      "hoehe": 8,
+      "kollision": true,
+      "art": "deko",
+      "zustand": "alt",
+      "stil": "klassisch"
+    },
+    "cc12Programmheft": {
+      "quelle": "spiel/eigene/programmheft.png",
+      "breite": 8,
+      "hoehe": 8,
+      "kollision": true,
+      "art": "deko",
+      "zustand": "alt",
+      "stil": "klassisch"
+    },
+    "cc12Trockner": {
+      "quelle": "spiel/eigene/trockner_schmal.png",
+      "breite": 16,
+      "hoehe": 32,
+      "kollision": true,
+      "art": "geraet",
+      "zustand": "gebraucht",
+      "stil": "modern",
+      "blick": "unten"
+    },
+    "cc12TrocknerBrett": {
+      "quelle": "spiel/eigene/trockner_steckschach.png",
+      "breite": 16,
+      "hoehe": 32,
+      "kollision": true,
+      "art": "geraet",
+      "zustand": "gebraucht",
+      "stil": "modern",
+      "blick": "unten"
+    },
+    "cc12Comicheft": {
+      "quelle": "spiel/eigene/comicheft.png",
+      "breite": 8,
+      "hoehe": 8,
+      "kollision": true,
+      "art": "deko",
+      "zustand": "gebraucht",
+      "stil": "modern"
+    },
+    "cc12Werkstattfenster": {
+      "quelle": "spiel/eigene/werkstattfenster.png",
+      "breite": 32,
+      "hoehe": 32,
+      "kollision": false,
+      "art": "fenster",
+      "zustand": "gebraucht",
+      "stil": "rustikal",
+      "begehbar": true,
+      "begehbar_grund": "hängt an der Wand"
+    },
+    "cc12Zeitungsregal": {
+      "quelle": "spiel/eigene/zeitungsregal.png",
+      "breite": 32,
+      "hoehe": 48,
+      "kollision": true,
+      "art": "regal",
+      "zustand": "gebraucht",
+      "stil": "klassisch",
+      "blick": "unten"
     }
   }
 }

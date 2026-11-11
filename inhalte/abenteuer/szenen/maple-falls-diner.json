@@ -2,7 +2,7 @@
   "karte": "mapleFalls.diner",
   "datei": "karten/maple-falls-diner.json",
   "art": "innen",
-  "beschreibung": "Das Falls Diner an der Birch Lane, ein Diner wie aus den Fünfzigern (Variante C, vom Autor gewählt): rote Wände, weiße Fliesen. Im Norden liegt hinter einer echten Wand die Großküche; in ihrer Wandfläche zum Gastraum die Durchreiche (ein Fenster mit Ablage), daneben die Pinnwand mit den gelösten Tischsets, das Foto von der Eröffnung der Schule 1962 und rechts die Küchentür. Vor der Wand läuft der Gang des Personals, davor die lange rote Bar mit sechs roten Hockern direkt an der Theke; auf der Bar die Kaffeemaschine und altem Radio. Am Westende der Bar die alte Kassentheke, die Kasse zum Gast. Links unten zwei Sitznischen mit runden Tischen zwischen den hohen Lehnstühlen, links oben die Spielautomaten-Ecke mit Bildern, eine dritte Nische und eine Wartebank vor der Wand der Toiletten; in dieser Wand die Türen zu zwei Toiletten. In der Küche zwei Kühlschränke, drei Herde unter drei Hauben, Grillplatte, Fritteuse, Spültisch und ein Arbeitstisch mit Brotbrett und Milchshake-Mixer; dahinter das Lager mit Vorratsregalen voller Konserven und Kartons. Unten die niedrige Glastür mit Fußmatte. Laufwege: von der Tür nach oben, rechts an der Bar entlang, links zu den Nischen und zu den Toiletten.",
+  "beschreibung": "Das Falls Diner an der Birch Lane, ein Diner wie aus den Fünfzigern: rote Wände, weiße Fliesen. Im Norden liegt hinter einer echten Wand die Großküche; in ihrer Wandfläche zum Gastraum die Durchreiche (eine Öffnung mit Ablage, durch die man in die helle Küche sieht), daneben die Pinnwand mit den gelösten Tischsets, das Foto von der Eröffnung der Schule 1962 und rechts die Küchentür. Vor der Wand läuft der Gang des Personals, davor die lange rote Bar mit sechs roten Hockern direkt an der Theke; auf der Bar die Kaffeemaschine und ein altes Radio. Am Westende der Bar die alte Kassentheke, die Kasse zum Gast. Links unten zwei Sitznischen mit runden Tischen zwischen gepolsterten roten Bänken mit hoher Lehne, links oben die Spielautomaten-Ecke mit Bildern, eine dritte Nische und eine Wartebank vor der Wand der Toiletten; in dieser Wand die Türen zu zwei Toiletten. In der Küche zwei Kühlschränke, drei Herde unter drei Hauben, Grillplatte, Fritteuse, Spültisch und ein Arbeitstisch mit Brotbrett und Milchshake-Mixer; dahinter das Lager mit Vorratsregalen voller Konserven und Kartons. Unten die niedrige Glastür mit Fußmatte. Laufwege: von der Tür nach oben, rechts an der Bar entlang, links zu den Nischen und zu den Toiletten.",
   "wand": "rot",
   "boden": "fliesenWeiss",
   "raster": [
@@ -50,18 +50,18 @@
       "id": "nw"
     },
     {
-      "moebel": "mf5NischenstuhlRechts",
+      "moebel": "mf12NischenbankRechts",
       "feld": [8, 5],
       "zu": "nw"
     },
     {
-      "moebel": "mf5NischenstuhlLinks",
+      "moebel": "mf12NischenbankLinks",
       "feld": [11, 5],
       "zu": "nw"
     },
     {
       "moebel": "wzPflanze",
-      "feld": [11, 7]
+      "feld": [11, 2]
     },
     {
       "moebel": "mf4Pinnwand",
@@ -76,7 +76,7 @@
       "versatz": [0, 3]
     },
     {
-      "moebel": "mf9Durchreiche",
+      "moebel": "mf12Durchreiche",
       "feld": [18, 8],
       "an_wand": true
     },
@@ -226,12 +226,12 @@
       "id": "n1"
     },
     {
-      "moebel": "mf5NischenstuhlRechts",
+      "moebel": "mf12NischenbankRechts",
       "feld": [1, 10],
       "zu": "n1"
     },
     {
-      "moebel": "mf5NischenstuhlLinks",
+      "moebel": "mf12NischenbankLinks",
       "feld": [4, 10],
       "zu": "n1"
     },
@@ -241,12 +241,12 @@
       "id": "n2"
     },
     {
-      "moebel": "mf5NischenstuhlRechts",
+      "moebel": "mf12NischenbankRechts",
       "feld": [1, 12],
       "zu": "n2"
     },
     {
-      "moebel": "mf5NischenstuhlLinks",
+      "moebel": "mf12NischenbankLinks",
       "feld": [4, 12],
       "zu": "n2"
     },
@@ -260,7 +260,7 @@
       "versatz": [0, 8]
     },
     {
-      "moebel": "mf9TuerSuedGlas",
+      "moebel": "sb8GlastuerSued",
       "feld": [7, 15],
       "an_wand": true
     },
@@ -382,6 +382,10 @@
     {
       "moebel": "mf5Handwaschbecken",
       "feld": [4, 5]
+    },
+    {
+      "moebel": "mf9Wartebank",
+      "feld": [5, 10]
     }
   ],
   "ausloeser": [

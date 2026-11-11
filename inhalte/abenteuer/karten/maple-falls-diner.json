@@ -11,7 +11,7 @@
  "tilewidth": 16,
  "tileheight": 16,
  "nextlayerid": 5,
- "nextobjectid": 75,
+ "nextobjectid": 76,
  "layers": [
   {
    "id": 1,
@@ -1732,7 +1732,7 @@
     },
     {
      "id": 11,
-     "name": "mf5NischenstuhlRechts",
+     "name": "mf12NischenbankRechts",
      "type": "moebel",
      "x": 128,
      "y": 80,
@@ -1755,7 +1755,7 @@
     },
     {
      "id": 12,
-     "name": "mf5NischenstuhlLinks",
+     "name": "mf12NischenbankLinks",
      "type": "moebel",
      "x": 176,
      "y": 80,
@@ -1781,7 +1781,7 @@
      "name": "wzPflanze",
      "type": "moebel",
      "x": 176,
-     "y": 112,
+     "y": 32,
      "width": 16,
      "height": 32,
      "rotation": 0,
@@ -1790,7 +1790,7 @@
       {
        "name": "tiefe",
        "type": "int",
-       "value": 136
+       "value": 56
       },
       {
        "name": "kollision",
@@ -1847,7 +1847,7 @@
     },
     {
      "id": 16,
-     "name": "mf9Durchreiche",
+     "name": "mf12Durchreiche",
      "type": "moebel",
      "x": 288,
      "y": 128,
@@ -2422,7 +2422,7 @@
     },
     {
      "id": 41,
-     "name": "mf5NischenstuhlRechts",
+     "name": "mf12NischenbankRechts",
      "type": "moebel",
      "x": 16,
      "y": 160,
@@ -2445,7 +2445,7 @@
     },
     {
      "id": 42,
-     "name": "mf5NischenstuhlLinks",
+     "name": "mf12NischenbankLinks",
      "type": "moebel",
      "x": 64,
      "y": 160,
@@ -2491,7 +2491,7 @@
     },
     {
      "id": 44,
-     "name": "mf5NischenstuhlRechts",
+     "name": "mf12NischenbankRechts",
      "type": "moebel",
      "x": 16,
      "y": 192,
@@ -2514,7 +2514,7 @@
     },
     {
      "id": 45,
-     "name": "mf5NischenstuhlLinks",
+     "name": "mf12NischenbankLinks",
      "type": "moebel",
      "x": 64,
      "y": 192,
@@ -2583,7 +2583,7 @@
     },
     {
      "id": 48,
-     "name": "mf9TuerSuedGlas",
+     "name": "sb8GlastuerSued",
      "type": "moebel",
      "x": 112,
      "y": 240,
@@ -3194,6 +3194,29 @@
        "name": "tiefe",
        "type": "int",
        "value": 88
+      },
+      {
+       "name": "kollision",
+       "type": "bool",
+       "value": true
+      }
+     ]
+    },
+    {
+     "id": 75,
+     "name": "mf9Wartebank",
+     "type": "moebel",
+     "x": 80,
+     "y": 160,
+     "width": 32,
+     "height": 32,
+     "rotation": 0,
+     "visible": true,
+     "properties": [
+      {
+       "name": "tiefe",
+       "type": "int",
+       "value": 184
       },
       {
        "name": "kollision",

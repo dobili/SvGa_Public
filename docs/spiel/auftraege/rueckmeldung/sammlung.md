@@ -1,6 +1,6 @@
 # Sammlung der Rückmeldungen zum Schach-Abenteuer (Beta)
 
-Stand: 11.11.2026. Offene Punkte: 34. Abgeschickt (gepusht): noch nichts.
+Stand: 11.11.2026. Offene Punkte: 36. Abgeschickt (gepusht): noch nichts.
 
 Reihenfolge je Kategorie: zuerst, was das Weiterspielen verhindert, dann Störendes, dann Schönheitsfehler.
 
@@ -15,6 +15,7 @@ Reihenfolge je Kategorie: zuerst, was das Weiterspielen verhindert, dann Stören
 - [ ] R033. Weltlogik, Kürbishof und Zedernpfad: Legt man die Karten auf einer großen Fläche von links nach rechts aneinander (Stadtpark, Landstraße, Flussweg, Ortskern), liegt der Kürbishof, der von der Landstraße nach oben abgeht, oberhalb der Landstraße. Der Zedernpfad müsste dann oberhalb des Kürbishofs verlaufen. Der Autor meint, dafür müssten Verbindungskarten gebaut werden: eine, die am Kürbishof vorbei nach oben zum Zedernpfad führt, und ein Verbindungsstück vom Ende des Zedernpfads (der dann ein ganzes Stück nach rechts weitergeht) zum Ortskern. Legt er den Zedernpfad mit seinem Zugang auf den Zugang des Ortskerns, überlappt er mit der Karte „Flussweg“ (diktiert als „Plusweg“, vom Autor als Flussweg bestätigt).
 - [ ] R034. Alle Außenkarten, Weltkarte (Auftrag an den Hauptchat): Der Autor bittet darum, dass eine KI die Weltkarte tatsächlich zusammenpuzzelt, indem sie die Karten über ihre Zugänge aneinanderlegt. Innenräume werden dafür nicht gebraucht. Die Weltkarte muss konsistent sein, nichts darf überlappen.
   Ergänzung des Autors: Beim Zusammensetzen auch die Übergänge von Karte zu Karte prüfen, damit zum Beispiel Flüsse und Flusswege glaubwürdig ineinander übergehen. Kleine Inkonsistenzen sind in Ordnung, wenn man sie mit einem kleinen Zwischenstück erklären kann, das nicht als Karte gezeichnet wird (sonst werden es zu viele Karten). Beispiel: Auf der Landstraße taucht oben direkt das Feld auf, das im Stadtpark noch nicht zu sehen war; das lässt sich mit einem kurzen, nicht gezeichneten Wegstück dazwischen erklären. Nicht in Ordnung wäre etwa, wenn auf der Landstraße unten links plötzlich kein Wasser mehr wäre, wo es im Anschluss noch Wasser gab; da fragt man sich, warum. Das gilt für das ganze Puzzle.
+- [ ] R036. Übergang Stadtpark zur Landstraße (Maple Falls): Im Stadtpark ist die Straße gepflastert und hat Straßenmarkierungen, ein Bus fährt darüber. Beim Kartenwechsel zur Landstraße ist sie plötzlich nur noch das bräunliche Asset, wie ein Trampelpfad. Ein Übergang von der gepflasterten Straße zur Landstraße fehlt.
 
 ## Karten und Grafik
 
@@ -58,6 +59,10 @@ Reihenfolge je Kategorie: zuerst, was das Weiterspielen verhindert, dann Stören
 - [ ] R021. Maple Falls, Stadtpark, Basketballplatz unten links: Das Asset wurde „aus irgendwelchen Gründen“ gegen ein neues gewechselt. Das neue zeigt einen Indoor-Platz statt eines Outdoor-Platzes und ist ein Abziehbild ohne Tiefe. Unbrauchbar. In alten Versionen nachsehen: Dort gab es einen sehr schönen asphaltierten Basketballplatz.
 - [ ] R022. Maple Falls, Stadtpark, unten mittig: Ein hölzernes Gebilde, der Autor weiß nicht, ob es eine Halfpipe sein soll. Abziehbild ohne Tiefe, so nicht verwendbar. Je nachdem, was es darstellen soll, ein vernünftiges Asset erstellen. Zuerst klären, was es sein soll.
 - [ ] R025. Maple Falls, Stadtpark, oben, zwei Stege: Dem Autor erschließt sich nicht, warum es zwei Stege gibt. Laut seiner Übersichtskarte führt nur der rechte Steg zu einer neuen Karte, der linke führt nirgendwohin: In dieser Übersichtskarte, die dem Autor gebaut wurde, liegt dort keine Kachel, die das Öffnen einer neuen Karte auslöst (vom Autor bestätigt). Der defekte Steg liegt laut R024 oben links. Klären (Hauptchat), ob es zwei Stege braucht.
+
+### Weg Maple Falls nach Cedar Creek, Landstraße (`weg-maple-cedar-landstrasse`)
+
+- [ ] R037. Landstraße: Sie hat dasselbe bräunliche Asset wie der Zedernpfad, der im Grunde ein Trampelpfad durch den Wald ist. Das ist unlogisch, weil über die Landstraße ein Bus fahren soll (er geht ganz rechts in den Flussweg über und vom Flussweg auf eine gepflasterte Straße beim Ortskern). Ein Bus darf auch über eine nicht gepflasterte Landstraße fahren, wäre aber unüblich. Grafisch muss deutlich werden, dass es eine Straße ist, die ein Bus befährt. Zusammenhang mit R036.
 
 ### Weg Maple Falls nach Cedar Creek, Zedernpfad (`weg-maple-cedar-zedernpfad`)
 

@@ -120,6 +120,8 @@ Szene heißt die Datei in `inhalte/abenteuer/szenen/` ohne `.json`.
 - [ ] ghost-town-aussen (Anbindebalken und Tränke am Mietstall), goldmine-stollen (Weiche am Abzweig), erinnerung-london-strand (helle Ladenzone), lockport-aussen (nur Ruben versetzt) (Restpunkte, niedrig-1; Bilder aus `niedrig1_runde10.py` erst rendern; Antworten in ghost-town.md und erinnerung-london.md)
 - [ ] cedar-creek-archiv (+geordnet), cedar-creek-waschsalon, maple-falls-diner, cedar-creek-bibliothek (zweite Prüfung, niedrig-1) und maple-falls-dachboden (+ohne-brett), maple-falls-wohnzimmer (+ausgepackt), cedar-creek-drechslerei (nur Restpunkte); Bilder aus `niedrig1_runde11.py` erst rendern; Antworten in cedar-creek.md und maple-falls.md
 
+- [x] ghost-town-aussen (Anbindebalken und Tränke am Mietstall), goldmine-stollen (Weiche am Abzweig), erinnerung-london-strand (helle Ladenzone), lockport-aussen (nur Ruben versetzt) (Restpunkte, niedrig-1; Bilder aus `niedrig1_runde10.py` erst rendern; Antworten in ghost-town.md und erinnerung-london.md) → `restpunkte-76799517.md`
+
 ## Erledigt
 
 - [x] ironwood-kantine (Test, Haupt-Chat)
@@ -152,11 +154,13 @@ Szene heißt die Datei in `inhalte/abenteuer/szenen/` ohne `.json`.
 - [x] steinbruch-grube: Bagger aus Gemini (bagger_links) statt des kleinen Baggers von vorn (mittel-4) → `silicon-bay-3-gemini-teil2-mittel-3-4.md`
 
 - [x] weg-ghost-capital-seeufer, capital-arena-aussen, port-delacroix-aussen (+ musikhaus-neu), weg-ironwood-silicon-raststaette, weg-silicon-delacroix-deich: Restpunkte aus `gemini-fahrzeuge-teil2.md` (Verkäufer, Lastwagen am Marktplatz, Längsbuchten, Deichfläche; mittel-1) → `mittel-1-fahrzeuge-restpunkte-pferde.md`
-- [ ] ironwood-kantine (+ logo): Registrierkasse und Speiseplan als eigene Bilder (mittel-4)
-- [ ] weg-desert-summit-bergstrasse: runde Kehren mit Linien im Bogen (mittel-4)
+- [x] ironwood-kantine (+ logo): Registrierkasse und Speiseplan als eigene Bilder (mittel-4) → `restpunkte-76799517.md`
+- [x] weg-desert-summit-bergstrasse: runde Kehren mit Linien im Bogen (mittel-4) → `restpunkte-76799517.md`
 
 - [ ] riverton-aussen (+ vier Zustände): Steinbrücke mit Bogenstreifen und Schatten; crossroads-aussen (+ gatter-offen): Sattelzüge mit Trennlinie, Lastwagen weg; silicon-bay-aussen: Hotel, kleiner Kaffeebecher, keine Möwen; silicon-bay-hafen: Angelladen im Osten (kurze Sichtprüfung, mittel-3)
 
 - [ ] ironwood-aussen (+ vermietet, meisterschaft), steinbruch-grube, steinbruch-stollen, weg-desert-summit-hinterzimmer, weg-riverton-ironwood-1 (+ graffiti): Befunde der Prüfung vom 11.11. (mittel-4)
 
 - [ ] weg-silicon-delacroix-faehre (vierte Prüfung, mittel-1, nach `weg-silicon-delacroix-faehre-2.md`; Bilder `bildwuensche/faehre_deck.py`: Münzfernglas, Bullaugen)
+
+- [x] riverton-aussen (+ vier Zustände): Steinbrücke mit Bogenstreifen und Schatten; crossroads-aussen (+ gatter-offen): Sattelzüge mit Trennlinie, Lastwagen weg; silicon-bay-aussen: Hotel, kleiner Kaffeebecher, keine Möwen; silicon-bay-hafen: Angelladen im Osten (kurze Sichtprüfung, mittel-3) → `restpunkte-76799517.md`

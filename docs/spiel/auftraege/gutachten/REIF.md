@@ -18,7 +18,7 @@ Stand: 11.11.2026.
 | weg-cedar-riverton-bahndamm                 | 10.11.2026 | `niedrig-1-5.md`                           |
 | weg-maple-cedar-flussweg                    | 10.11.2026 | `niedrig-1-4.md`                           |
 | weg-maple-cedar-zedernpfad                  | 10.11.2026 | `niedrig-1-5.md`                           |
-| riverton-aussen (mit Zuständen)             | 10.11.2026 | `silicon-bay-3-gemini-teil2-mittel-3-4.md` |
+| riverton-aussen (mit Zuständen)             | 11.11.2026 | `restpunkte-76799517.md`                   |
 | riverton-bahnhofshalle                      | 10.11.2026 | `riverton-innen-4.md`                      |
 | riverton-schuppen                           | 10.11.2026 | `riverton-innen-3.md`                      |
 | weg-riverton-ironwood-2                     | 10.11.2026 | `mittel-4-restpunkte.md`                   |
@@ -28,7 +28,7 @@ Stand: 11.11.2026.
 | silicon-bay-akademie                        | 10.11.2026 | `silicon-bay-akademie-3.md`                |
 | silicon-bay-altstadt                        | 10.11.2026 | `silicon-bay-altstadt-3.md`                |
 | weg-ironwood-silicon-glasbruecke            | 10.11.2026 | `weg-ironwood-silicon-glasbruecke-3.md`    |
-| weg-ironwood-silicon-raststaette            | 10.11.2026 | `mittel-1-fahrzeuge-restpunkte-pferde.md`  |
+| weg-ironwood-silicon-raststaette            | 11.11.2026 | `restpunkte-76799517.md`                   |
 | port-delacroix-musikhaus                    | 10.11.2026 | `mittel-1-runde9-2.md`                     |
 | port-delacroix-werkstatt                    | 10.11.2026 | `mittel-1-runde9-2.md`                     |
 | port-delacroix-turnhalle                    | 10.11.2026 | `mittel-1-runde9-2.md`                     |
@@ -36,14 +36,14 @@ Stand: 11.11.2026.
 | capital-arena-halle                         | 10.11.2026 | `mittel-1-runde9-2.md`                     |
 | capital-arena-ubahnhof                      | 10.11.2026 | `mittel-1-runde9-2.md`                     |
 | weg-ghost-capital-seeufer                   | 10.11.2026 | `mittel-1-fahrzeuge-restpunkte-pferde.md`  |
-| crossroads-aussen                           | 10.11.2026 | `silicon-bay-3-gemini-teil2-mittel-3-4.md` |
+| crossroads-aussen                           | 11.11.2026 | `restpunkte-76799517.md`                   |
 | jahrmarkt-festplatz                         | 10.11.2026 | `mittel-1-fahrzeuge-restpunkte-pferde.md`  |
 | pelikaninsel-dorf                           | 10.11.2026 | `mittel-3-runde9-2.md`                     |
 | weg-crossroads-pinewood-huetten             | 10.11.2026 | `mittel-3-runde9-2.md`                     |
-| ghost-town-aussen                           | 10.11.2026 | `mittel-1-fahrzeuge-restpunkte-pferde.md`  |
+| ghost-town-aussen                           | 11.11.2026 | `restpunkte-76799517.md`                   |
 | ghost-town-saloon                           | 10.11.2026 | `niedrig-1-runde9-2.md`                    |
 | erinnerung-london-kaffeehaus                | 10.11.2026 | `niedrig-1-runde9-2.md`                    |
-| erinnerung-london-strand                    | 10.11.2026 | `niedrig-1-5.md`                           |
+| erinnerung-london-strand                    | 11.11.2026 | `restpunkte-76799517.md`                   |
 | erinnerung-siedlung-huette                  | 10.11.2026 | `niedrig-1-5.md`                           |
 | weg-pinewood-ghost-tankstelle               | 10.11.2026 | `erinnerungen-kuerbishof-tankstelle.md`    |
 | summit-city-aussen                          | 10.11.2026 | `mittel-4-restpunkte.md`                   |
@@ -59,7 +59,7 @@ Stand: 11.11.2026.
 | cedar-creek-aussen                          | 10.11.2026 | `silicon-bay-lobby-serverraum-3.md`        |
 | weg-cedar-riverton-zedernwald               | 10.11.2026 | `niedrig-1-5.md`                           |
 | weg-maple-cedar-landstrasse (mit Zuständen) | 10.11.2026 | `mittel-1-fahrzeuge-restpunkte-pferde.md`  |
-| goldmine-stollen                            | 10.11.2026 | `niedrig-1-5.md`                           |
+| goldmine-stollen                            | 11.11.2026 | `restpunkte-76799517.md`                   |
 | kuerbishof-hof                              | 10.11.2026 | `mittel-1-fahrzeuge-restpunkte-pferde.md`  |
 | riverton-pavillon                           | 10.11.2026 | `silicon-bay-aussen-hafen-2.md`            |
 | riverton-wohnwagen                          | 10.11.2026 | `mittel-3-restpunkte.md`                   |
@@ -76,8 +76,8 @@ Stand: 11.11.2026.
 | weg-delacroix-desert-canyonpfad             | 10.11.2026 | `mittel-4-restpunkte.md`                   |
 | silicon-bay-serverraum                      | 10.11.2026 | `silicon-bay-lobby-serverraum-3.md`        |
 | silicon-bay-lobby                           | 10.11.2026 | `silicon-bay-lobby-serverraum-3.md`        |
-| silicon-bay-aussen                          | 10.11.2026 | `silicon-bay-3-gemini-teil2-mittel-3-4.md` |
-| silicon-bay-hafen                           | 10.11.2026 | `silicon-bay-3-gemini-teil2-mittel-3-4.md` |
+| silicon-bay-aussen                          | 11.11.2026 | `restpunkte-76799517.md`                   |
+| silicon-bay-hafen                           | 11.11.2026 | `restpunkte-76799517.md`                   |
 | maple-falls-dachboden (mit ohne-brett)      | 11.11.2026 | `maple-falls-innen.md`                     |
 | maple-falls-wohnzimmer (mit ausgepackt)     | 11.11.2026 | `maple-falls-innen.md`                     |
 | cedar-creek-drechslerei                     | 11.11.2026 | `cedar-creek-innen.md`                     |
@@ -86,6 +86,8 @@ Stand: 11.11.2026.
 | steinbruch-stollen                          | 11.11.2026 | `steinbruch-4.md`                          |
 | pinewood-camp-aussen                        | 11.11.2026 | `pinewood-camp-aussen.md`                  |
 | weg-riverton-ironwood-1 (mit graffiti)      | 11.11.2026 | `weg-riverton-ironwood-1-3.md`             |
+| ironwood-kantine (mit logo)                 | 11.11.2026 | `restpunkte-76799517.md`                   |
+| weg-desert-summit-bergstrasse               | 11.11.2026 | `restpunkte-76799517.md`                   |
 
 Hinweise:
 
@@ -97,8 +99,6 @@ Hinweise:
 
 | Szene                                          | Datum      | Letztes Gutachten                               | Was fehlt                                           |
 | ---------------------------------------------- | ---------- | ----------------------------------------------- | --------------------------------------------------- |
-| ironwood-kantine                               | 10.11.2026 | `ironwood-kantine-3.md`                         | Kasse, Speiseplan im Gastraum                       |
-| weg-desert-summit-bergstrasse                  | 10.11.2026 | `silicon-bay-3-gemini-teil2-mittel-3-4.md`      | Kehren als rechte Winkel                            |
 | maple-falls-diner                              | 11.11.2026 | `maple-falls-innen.md`                          | Durchreiche als Öffnung, Glastür, Wartebank         |
 | cedar-creek-bibliothek                         | 11.11.2026 | `cedar-creek-innen.md`                          | Ausleihtresen am Eingang, Leserin hinter dem Regal  |
 | desert-springs-aussen (mit meisterschaft)      | 11.11.2026 | `desert-springs-3karten.md`                     | Bahnhof ohne Veranda und Schild                     |

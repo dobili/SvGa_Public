@@ -90,11 +90,13 @@ export function Oberwelt() {
     const aktuell = standRef.current;
     if (!t || !w || !aktuell) return;
     const a = ausloeserFuer(w.ort, w.kennung, t.name);
-    if (t.typ === "ausloeser" && a?.art === "uebergang" && t.darauf && a.dialog && a.ziel) {
+    // Ein Übergang wechselt erst, wenn der Held in den Durchgang geht (R060), nicht beim Betreten.
+    if (t.typ === "ausloeser" && a?.art === "uebergang" && !t.durch) return;
+    if (t.typ === "ausloeser" && a?.art === "uebergang" && a.dialog && a.ziel) {
       dialoge.oeffneUebergang(a.dialog, a.ziel, a.wenn ?? null);
       return;
     }
-    if (t.typ === "ausloeser" && a?.art === "uebergang" && t.darauf) {
+    if (t.typ === "ausloeser" && a?.art === "uebergang") {
       // Ein Übergang ohne Ziel (etwa die Landstraße nach Cedar Creek) ist noch nicht gebaut.
       if (a.ziel) wechsleKarte(a.ziel.karte, a.ziel.ausloeser);
       else setzeMeldung(tSpiel("oberwelt.karteFehlt", { karte: a.name }));

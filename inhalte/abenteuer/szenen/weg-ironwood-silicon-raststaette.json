@@ -2212,13 +2212,7 @@
         "richtung": "links"
       }
     },
-    {
-      "name": "zurueckIronwood",
-      "feld": [
-        139,
-        21
-      ]
-    },
+    {"name": "zurueckIronwood", "feld": [139, 21], "eigenschaften": {"durchgang": "oben"}},
     {
       "name": "weiterGlasbruecke",
       "feld": [

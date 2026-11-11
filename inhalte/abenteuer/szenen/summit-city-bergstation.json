@@ -118,10 +118,7 @@
         "richtung": "oben"
       }
     },
-    {
-      "name": "seilbahnBerg",
-      "feld": [14, 7]
-    },
+    {"name": "seilbahnBerg", "feld": [14, 7], "eigenschaften": {"durchgang": "oben"}},
     {
       "name": "fundMurmeltierpfeife",
       "feld": [16, 10]

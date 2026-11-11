@@ -6,9 +6,11 @@ jeder Versatz des Flusses als Stufe. Dieser Bogen hat dieselbe Ordnung wie ``pis
 wie LimeZus Wege im Geländebogen): 3 × 3-Block, vier Innenecken, vier Schrägen. Der Kartenbauer
 nimmt ihn mit ``"ufer": "rot"`` (Boden ``wasser_rot`` in materialien.json, mit ``diagonalen``).
 
-Vom Ufer nach innen: roter Sand (fels_rot.png), ein schmaler Streifen nasser, dunklerer Sand, ein
-Streifen helles Flachwasser, dann LimeZus Wasser. Die Kante ist leicht zufällig (fester Zufall,
-gleiches Bild bei jedem Lauf).
+Vom Ufer nach innen: der dunkle Fels des Canyonbodens (fels_rot.png abgedunkelt wie in
+``sand_rot_gras.py``, Boden ``felsbodenRotDunkel``), ein schmaler nasser Streifen, ein Streifen
+helles Flachwasser, dann LimeZus Wasser. Das Ufer muss der Boden sein, in dem der Fluss liegt:
+Mit hellem Sand standen an jeder Schräge helle Dreiecke im dunklen Fels wie Treppenstufen. Die
+Kante ist leicht zufällig (fester Zufall, gleiches Bild bei jedem Lauf).
 
 Zweites Bild ``wasser_strand.png`` (Gutachten Pinewood Camp, Punkt 2: „das Ufer springt in
 Rechtecken“): dasselbe mit LimeZus hellem Sand außen, für Seen mit Sandstrand (``"ufer": "strand"``,
@@ -25,6 +27,7 @@ from pathlib import Path
 
 from PIL import Image
 from piste_rot import ORDNUNG, K, _abstand, _kachel
+from sand_rot_gras import SCHATTEN
 
 GELAENDE = "modern-exteriors/Modern_Exteriors_16x16/ME_Theme_Sorter_16x16/1_Terrains_and_Fences_16x16.png"
 WASSER_FELD = (1, 36)
@@ -52,13 +55,16 @@ def _flach(farbe: tuple) -> tuple:
     )
 
 
-def wasserbogen(wasser: Image.Image, sand_bogen: Image.Image) -> Image.Image:
-    """Der Bogen 7 × 4 Kacheln: Wasserkachel innen, Sand aus den Feldern [2..3, 0..1] von fels_rot."""
+def wasserbogen(
+    wasser: Image.Image, sand_bogen: Image.Image, spalten: tuple[int, int] = (2, 3)
+) -> Image.Image:
+    """Der Bogen 7 × 4 Kacheln: Wasserkachel innen, Ufer aus den Feldern [spalten, 0..1] des Bogens
+    (fels_rot: Spalten 2 und 3 sind Sand, Spalte 1 ist Felsboden)."""
     bild = Image.new("RGBA", (7 * K, 4 * K))
     zufall = random.Random(1866)
     w = wasser.load()
     for (sp, ze), art in ORDNUNG.items():
-        sand = _kachel(sand_bogen, (2 + (sp + ze) % 2, ze % 2)).load()
+        sand = _kachel(sand_bogen, (spalten[(sp + ze) % 2], ze % 2)).load()
         kachel = Image.new("RGBA", (K, K))
         px = kachel.load()
         for y in range(K):
@@ -92,7 +98,9 @@ def main() -> None:
     wasser = _kachel(gelaende, WASSER_FELD)
     sand = Image.open(privat / "spiel" / "eigene" / "fels_rot.png").convert("RGBA")
     eigene = privat / "spiel" / "eigene"
-    wasserbogen(wasser, sand).save(eigene / "wasser_rot.png")
+    dunkel = Image.eval(sand, lambda wert: round(wert * SCHATTEN))
+    dunkel.putalpha(sand.getchannel("A"))
+    wasserbogen(wasser, dunkel, (1, 1)).save(eigene / "wasser_rot.png")
     wasserbogen(wasser, sandbogen(gelaende)).save(eigene / "wasser_strand.png")
     print("Wasser mit rotem Ufer und mit Sandstrand nach", eigene)
 

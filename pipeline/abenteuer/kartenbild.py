@@ -13,7 +13,7 @@ from pathlib import Path
 from PIL import Image, ImageDraw
 
 from pipeline.abenteuer.belebungsvorschau import teile as belebungsteile
-from pipeline.abenteuer.bodenraster import bodenfeld, brueckenzeichen, randnachbar
+from pipeline.abenteuer.bodenraster import bodenfeld, brueckenzeichen, randnachbar, randsichten
 from pipeline.abenteuer.bodenvariation import lade_kachel, variiere
 from pipeline.abenteuer.kartenbau import GESPERRT, INHALTE, LEER, WAND, WASSER, K, lade, platziere, raster
 from pipeline.abenteuer.katalog import katalogbefund, katalogeintraege
@@ -128,6 +128,7 @@ def hintergrund(szene: dict, privat: Path, gezeichnet: dict | None = None) -> Im
     klippe, klippenhoehe = szene.get("kante") == "klippe", szene.get("klippenhoehe", HOEHE_STANDARD)
     gras, klippenart = grasboden(szene), {"bogen": klippenbogen(szene, privat)}
     ueber = brueckenzeichen(szene)  # Holzböden, unter denen das Wasser weiterläuft
+    sichten = randsichten(roh, sonder, grund, boeden)  # Böden mit „rand_gegen“ (Weg im roten Sand)
     for y, zeile in enumerate(zeilen):
         for x, z in enumerate(zeile):
             ort = (x * K, y * K)
@@ -143,8 +144,9 @@ def hintergrund(szene: dict, privat: Path, gezeichnet: dict | None = None) -> Im
             if z == WASSER:
                 # Ufer aus Stein (Szene „ufer“: „stein“, KARTENREGELN 10.6): dieselbe Kachelwahl,
                 # gezeichnet aus dem eigenen Bogen; die Randspur rechnet mit LimeZus Wasser.
-                feld = bodenfeld(boeden["wasser"], zeilen, x, y, ueber)
-                art = boeden[ufer]
+                art = boeden[ufer]  # mit „diagonalen“ wählt das Ufer Schrägkacheln (Buchten)
+                wasser = boeden["wasser"] | {"diagonalen": art.get("diagonalen")}
+                feld = bodenfeld(wasser, zeilen, x, y, ueber)
                 eigen = [art["rand"][i] + feld[i] - boeden["wasser"]["rand"][i] for i in (0, 1)]
                 bild.alpha_composite(kachel(privat, boegen, art, eigen), ort)
                 if gezeichnet is not None:
@@ -180,7 +182,7 @@ def hintergrund(szene: dict, privat: Path, gezeichnet: dict | None = None) -> Im
                 zeichner.rectangle((*ort, ort[0] + K - 1, ort[1] + K - 1), fill=KRONE)
             elif z != LEER:
                 art = boeden[sonder.get(z, grund)]
-                feld = bodenfeld(art, roh, x, y)
+                feld = bodenfeld(art, sichten.get(sonder.get(z, grund), roh), x, y)
                 bild.alpha_composite(kachel(privat, boegen, art, feld), ort)
                 if gezeichnet is not None:
                     gezeichnet[(x, y)] = (sonder.get(z, grund), feld)

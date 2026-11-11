@@ -12,6 +12,8 @@
     "wasser_rot": "spiel/eigene/wasser_rot.png",
     "wasser_strand": "spiel/eigene/wasser_strand.png",
     "sandRotRand": "spiel/eigene/sand_rot_gras.png",
+    "wegRot": "spiel/eigene/weg_rot.png",
+    "felsRotDunkel": "spiel/eigene/fels_rot_dunkel.png",
     "damm": "spiel/eigene/damm.png",
     "felsRot": "spiel/eigene/fels_rot.png",
     "wasser_rumpf": "spiel/eigene/wasser_rumpf.png",
@@ -775,6 +777,39 @@
         0
       ],
       "diagonalen": true
+    },
+    "erdeRot": {
+      "bogen": "wegRot",
+      "feld": [
+        1,
+        1
+      ],
+      "rand": [
+        0,
+        0
+      ],
+      "diagonalen": true,
+      "rand_gegen": [
+        "sandRot",
+        "sandRotRand"
+      ]
+    },
+    "felsbodenRotDunkel": {
+      "bogen": "felsRotDunkel",
+      "feld": [
+        1,
+        0
+      ],
+      "varianten": [
+        [
+          1,
+          0
+        ],
+        [
+          1,
+          1
+        ]
+      ]
     }
   },
   "waende": {

@@ -7,8 +7,16 @@ LimeZus Gras. Eine Grenze, die je Reihe um eine Spalte wandert, zeichnet der Kar
 schräge Linie (Boden ``sandRotRand`` in materialien.json, mit ``diagonalen``). Gedacht ist er für
 einen schmalen Saum an der Grenze; die Fläche dahinter bleibt ``sandRot`` mit seinen Varianten.
 
-Aufruf: ``python sand_rot_gras.py <privates Repository>``; schreibt
-spiel/eigene/sand_rot_gras.png (112 × 64). Braucht ``piste_rot.py`` im selben Ordner.
+Dazu zwei Bilder für die Nachprüfung des Canyonrands (11.11.2026, „es fehlen Bögen“, „Canyonboden
+nur wenig dunkler“):
+- ``weg_rot.png``: LimeZus Erdweg innen, roter Sand außen, gleiche Ordnung. Damit bekommt der Weg
+  auch im roten Sand Ränder und Schrägen (Boden ``erdeRot`` mit ``rand_gegen``).
+- ``fels_rot_dunkel.png``: ``fels_rot.png`` abgedunkelt, für den Canyonboden im Schatten der Wand
+  (Boden ``felsbodenRotDunkel``).
+
+Aufruf: ``python sand_rot_gras.py <privates Repository>``; schreibt spiel/eigene/sand_rot_gras.png,
+weg_rot.png (je 112 × 64) und fels_rot_dunkel.png (Größe wie fels_rot.png). Braucht ``piste_rot.py``
+im selben Ordner.
 """
 
 import sys
@@ -19,11 +27,13 @@ from piste_rot import K, _kachel, pistenbogen
 
 GELAENDE = "modern-exteriors/Modern_Exteriors_16x16/ME_Theme_Sorter_16x16/1_Terrains_and_Fences_16x16.png"
 GRAS_FELD = (3, 8)
+ERDE_FELD = (1, 31)
+SCHATTEN = 0.62  # Helligkeit des Canyonbodens gegenüber der Hochfläche
 
 
-def grasbogen(gelaende: Image.Image) -> Image.Image:
-    """Ein Bogen 4 × 2 Kacheln voll Gras: ``pistenbogen`` liest die Außenfläche aus [2..3, 0..1]."""
-    gras = _kachel(gelaende, GRAS_FELD)
+def flaechenbogen(gelaende: Image.Image, feld: tuple[int, int]) -> Image.Image:
+    """Ein Bogen 4 × 2 Kacheln voll der Kachel ``feld``: ``pistenbogen`` liest aus [2..3, 0..1]."""
+    gras = _kachel(gelaende, feld)
     bild = Image.new("RGBA", (4 * K, 2 * K))
     for sp in range(4):
         for ze in range(2):
@@ -35,9 +45,13 @@ def main() -> None:
     privat = Path(sys.argv[1] if len(sys.argv) > 1 else ".")
     gelaende = Image.open(privat / GELAENDE).convert("RGBA")
     sand = Image.open(privat / "spiel" / "eigene" / "fels_rot.png").convert("RGBA")
-    ziel = privat / "spiel" / "eigene" / "sand_rot_gras.png"
-    pistenbogen(sand, grasbogen(gelaende)).save(ziel)
-    print("Roter Sand mit Grasrand nach", ziel)
+    eigene = privat / "spiel" / "eigene"
+    pistenbogen(sand, flaechenbogen(gelaende, GRAS_FELD)).save(eigene / "sand_rot_gras.png")
+    pistenbogen(flaechenbogen(gelaende, ERDE_FELD), sand).save(eigene / "weg_rot.png")
+    dunkel = Image.eval(sand, lambda wert: round(wert * SCHATTEN))
+    dunkel.putalpha(sand.getchannel("A"))
+    dunkel.save(eigene / "fels_rot_dunkel.png")
+    print("Sandsaum, Weg im roten Sand und dunkler Canyonboden nach", eigene)
 
 
 if __name__ == "__main__":

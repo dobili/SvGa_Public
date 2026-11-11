@@ -830,17 +830,17 @@
     },
     {
       "moebel": "mf4Laterne",
-      "feld": [29, 27],
+      "feld": [29, 29],
       "vorn": true
     },
     {
       "moebel": "mf4Laterne",
-      "feld": [36, 27],
+      "feld": [36, 29],
       "vorn": true
     },
     {
       "moebel": "ca7Banner",
-      "feld": [30, 27],
+      "feld": [30, 29],
       "vorn": true
     }
   ],

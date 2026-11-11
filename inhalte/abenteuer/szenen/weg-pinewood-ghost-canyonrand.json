@@ -2,14 +2,15 @@
   "karte": "wegPinewoodGhost.canyonrand",
   "datei": "karten/weg-pinewood-ghost-canyonrand.json",
   "art": "aussen",
-  "beschreibung": "Weg 10 am Canyonrand: Von Westen kommt der Weg aus dem Kiefernwald (Bänke, Blumen, Tafel), im Osten wird der Boden zu rotem Sand mit Kakteen; die Grenze läuft als schräge Linie durch den Wald. Der Weg läuft gerade und nahe an der Kante entlang, dazwischen nur ein schmaler Streifen mit Bänken; die Kante springt in weiten Buchten vor und zurück. Darunter fällt eine fünf Reihen hohe rote Felswand in den Canyon, an ihr zwei Kletterrouten mit Griffen und Seilen (Juniper): Felsblöcke, die auf dem Canyonboden stehen und bis zur Kante reichen. Der Canyonboden ist dunkler Fels im Schatten der Wand; darin windet sich ein Fluss in Schleifen, mit hellen Sandbänken am Ufer, Felsen und Kakteen.",
+  "beschreibung": "Weg 10 am Canyonrand: Von Westen kommt der Weg aus dem Kiefernwald (Bänke, Blumen, Tafel), im Osten wird der Boden zu rotem Sand mit Kakteen; die Grenze läuft als schräge Linie durch den Wald. Der Weg zieht in weiten Schwüngen durch den Wald und über den Sand und kommt dabei immer wieder nahe an die Kante; die Kante hat in der Mitte eine weite Bucht. Darunter fällt eine fünf Reihen hohe rote Felswand in den Canyon, an ihr zwei Kletterrouten mit Griffen und Seilen (Juniper): Felsblöcke, die auf dem Canyonboden stehen und bis zur Kante reichen. Der Canyonboden liegt tief im Schatten, deutlich dunkler als die Hochfläche; darin windet sich ein Fluss in Schleifen, mit hellen Sandbänken am Ufer, Felsen und Kakteen.",
   "wand": "felsRot",
   "boden": "gras",
   "boeden": {
     "e": "erde",
+    "E": "erdeRot",
     "s": "sandRot",
     "g": "sandRotRand",
-    "f": "felsbodenRot"
+    "f": "felsbodenRotDunkel"
   },
   "raster": [
     "######################################################################################################################################################",
@@ -21,25 +22,25 @@
     "#..................................................................................ggssssssssssssssssssssssssssssssssssssssssssssssssssssssssssssssss#",
     "#...................................................................................ggsssssssssssssssssssssssssssssssssssssssssssssssssssssssssssssss#",
     "#....................................................................................ggssssssssssssssssssssssssssssssssssssssssssssssssssssssssssssss#",
-    "#.....................................................................................ggsssssssssssssssssssssssssssssssssssssssssssssssssssssssssssss#",
-    "#......................................................................................ggssssssssssssssssssssssssssssssssssssssssssssssssssssssssssss#",
-    "#.......................................................................................ggsssssssssssssssssssssssssssssssssssssssssssssssssssssssssss#",
-    "#........................................................................................ggssssssssssssssssssssssssssssssssssssssssssssssssssssssssss#",
-    "#eeeeeeeeeeeeeeeeeeeeeeeeeeeeeeeeeeeeeeeeeeeeeeeeeeeeeeeeeeeeeeeeeeeeeeeeeeeeeeeeeeeeeeeeeeeeeeeeeeeeeeeeeeeeeeeeeeeeeeeeeeeeeeeeeeeeeeeeeeeeeeeeeeee#",
-    "eeeeeeeeeeeeeeeeeeeeeeeeeeeeeeeeeeeeeeeeeeeeeeeeeeeeeeeeeeeeeeeeeeeeeeeeeeeeeeeeeeeeeeeeeeeeeeeeeeeeeeeeeeeeeeeeeeeeeeeeeeeeeeeeeeeeeeeeeeeeeeeeeeeeee",
-    "eeeeeeeeeeeeeeeeeeeeeeeeeeeeeeeeeeeeeeeeeeeeeeeeeeeeeeeeeeeeeeeeeeeeeeeeeeeeeeeeeeeeeeeeeeeeeeeeeeeeeeeeeeeeeeeeeeeeeeeeeeeeeeeeeeeeeeeeeeeeeeeeeeeeee",
-    "#.........................................ggggggggggggggggggggggggggggggggggggggggg.......ggsssssssssssssssssssssssssssssssssssssssssssssssssssssssss#",
-    "#..............................ggggggggggg#########################################........ggsssss##############sssssssssss###########################",
-    "#gggggggggggggggggggggggggggggg####################################################gggggggggggssss####################################################",
+    "#.............eeeeeeeeeeeeeeeeeeeeeeeeeee.............................................ggsssssssssssssssssssssssssssssssssssssssssssssssssssssssssssss#",
+    "#............eeeeeeeeeeeeeeeeeeeeeeeeeeeee.............................................ggsEEEEEEEEEEEEEEEEEEEEEEEEEEEEEEEEEEEssssssssssssssssssssssss#",
+    "#...........eeeeeeeeeeeeeeeeeeeeeeeeeeeeeee.............................................gEEEEEEEEEEEEEEEEEEEEEEEEEEEEEEEEEEEEEsssssssssssssssssssssss#",
+    "#..........eee...........................eeeeeeeeeeeeeeeeeeeeeeeeeeeeeeeeeeeeeeeeeeeeeeeeEEEEEEEEEEEEEEEEEEEEEEEEEEEEEEEEEEEEEEssssssssssssssssssssss#",
+    "#eeeeeeeeeeee.............................eeeeeeeeeeeeeeeeeeeeeeeeeeeeeeeeeeeeeeeeeeeeeeeEggsssssssssssssssssssssssssssssssssEEEEEEEEEEEEEEEEEEEEEEEE#",
+    "eeeeeeeeeeee...............................eeeeeeeeeeeeeeeeeeeeeeeeeeeeeeeeeeeeeeeeeeeeee..ggsssssssssssssssssssssssssssssssssEEEEEEEEEEEEEEEEEEEEEEEE",
+    "eeeeeeeeeee................................................................................ggssssssssssssssssssssssssssssssssssEEEEEEEEEEEEEEEEEEEEEEE",
+    "#.............................................................gggggggggggggggggggggggggggggggssssssssssssssssssssssssssssssssssssssssssssssssssssssss#",
+    "#ggggggggggggggggggggggggggggggggggggggggggggggggggggggggggggg###############################################ssssssssssssssssssssssssssssssssssssssss#",
     "######################################################################################################################################################",
     "######################################################################################################################################################",
     "######################################################################################################################################################",
-    "##########################################fffffffffffffffffffffffffffffffffffffffff###############ffffffffffffff###########ffffffffffffffffffffffffff#",
-    "###############################fffffffffffffffffffffffffff~~~~~~~~~~~~~~~ffffffffff###############ff~~~~~~~~~~~~fffffffffffffffffffffffffff~~~~~~~~~~~",
-    "#ffffffffffffffffffffffffffffff~~~~~~ffffffffffffffff~~~~~~~~~~~~~~~~~~~~~~~~~ffffffffffffffffffff~~~~~~~~~~~~~~~~~~~~~ffffffffffffffff~~~~~~~~~~~~~~~",
+    "######################################################################################################################################################",
+    "##############################################################fffffffffffffffffffffffffffffffffffffffffffffff#########################################",
+    "#fffffffffffffffffffffffffffffffffffffffffffffffffffffffffffffffff~~~~~~~~~~~~~~~~~~~fffffffffffffff~~~~~~~ffffffffffffffffffffffffffffffffffffffffff#",
+    "#ffffffffffffffffff~~~~~~~~~~~~~~~~~~~~~~ffffffffffffffffffffffff~~~~~~~~~~~~~~~~~~~~~fffffffffffff~~~~~~~~~fffffffffffffffffff~~~~~~~~~~~~~~~~~~~~~~~",
     "~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~",
-    "~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~fffffffffffffff~~~~~~~~~~~~~~~~~~~~~~~~~~~ffffffffffff~~~~~~~~~~~~~~~~~~~~~~~~~~~ffffffffff#",
-    "~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~ffffff~~~~~~~~~~~~~~~~fffffffffffffffffffffffff~~~~~~~~~~~~~~~~~~~~fffffffffffffffffffff~~~~~~~~~~~~~~~~ffffffffffffff#",
+    "~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~fffffffffffffffffff~~~~~~~~~~~~~~~fffffff~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~",
+    "~~~~~~~~~~~~~~~~~~~ffffffffffffffffffffff~~~~~~~~~~~~~~~~~~~~~~~~fffffffffffffffffffff~~~~~~~~~~~~~fffffffff~~~~~~~~~~~~~~~~~~~ffffffffffffffffffffff#",
     "#ffffffffffffffffffffffffffffffffffffffffffffffffffffffffffffffffffffffffffffffffffffffffffffffffffffffffffffffffffffffffffffffffffffffffffffffffffff#",
     "######################################################################################################################################################"
   ],
@@ -67,19 +68,37 @@
     },
     {
       "moebel": "wg4Schild",
-      "feld": [69, 11]
+      "feld": [70, 10]
     },
     {
       "moebel": "mfBank",
-      "feld": [39, 11]
+      "feld": [39, 7]
     },
     {
       "moebel": "mfBank",
-      "feld": [93, 11]
+      "feld": [93, 8]
     },
     {
       "moebel": "mf4Wegweiser",
-      "feld": [143, 12]
+      "feld": [143, 11]
+    },
+    {
+      "moebel": "cp8Finkenzeichen",
+      "feld": [43, 16],
+      "id": "ereignis117"
+    },
+    {
+      "moebel": "pg7Kletterwand",
+      "feld": [100, 17],
+      "vorn": true
+    },
+    {
+      "moebel": "dd6Felsbogen",
+      "feld": [100, 1]
+    },
+    {
+      "moebel": "dd6Felsbogen",
+      "feld": [130, 1]
     },
     {
       "moebel": "pw7TanneHoch",
@@ -131,7 +150,7 @@
     },
     {
       "moebel": "pw7TanneHoch",
-      "feld": [47, 3]
+      "feld": [48, 2]
     },
     {
       "moebel": "pw7Kiefer",
@@ -167,19 +186,19 @@
     },
     {
       "moebel": "pw7Kiefer",
-      "feld": [77, 3]
+      "feld": [78, 2]
     },
     {
       "moebel": "pw7Tanne",
-      "feld": [80, 1]
+      "feld": [81, 1]
     },
     {
       "moebel": "wg4Busch",
-      "feld": [83, 3]
+      "feld": [84, 2]
     },
     {
       "moebel": "pw7TanneHoch",
-      "feld": [85, 4]
+      "feld": [84, 5]
     },
     {
       "moebel": "pw7Kiefer",
@@ -187,31 +206,23 @@
     },
     {
       "moebel": "pw7Tanne",
-      "feld": [6, 4]
+      "feld": [4, 7]
     },
     {
       "moebel": "wg4Busch",
-      "feld": [9, 6]
+      "feld": [8, 7]
     },
     {
       "moebel": "pw7TanneHoch",
-      "feld": [19, 5]
-    },
-    {
-      "moebel": "pw7Kiefer",
-      "feld": [30, 5]
-    },
-    {
-      "moebel": "pw7Tanne",
-      "feld": [35, 6]
+      "feld": [18, 4]
     },
     {
       "moebel": "wg4Busch",
-      "feld": [40, 6]
+      "feld": [42, 7]
     },
     {
       "moebel": "pw7TanneHoch",
-      "feld": [43, 5]
+      "feld": [45, 5]
     },
     {
       "moebel": "pw7Kiefer",
@@ -219,51 +230,51 @@
     },
     {
       "moebel": "pw7Tanne",
-      "feld": [82, 4]
+      "feld": [87, 1]
     },
     {
       "moebel": "wg4Busch",
-      "feld": [5, 9]
+      "feld": [7, 10]
     },
     {
       "moebel": "pw7TanneHoch",
-      "feld": [32, 7]
+      "feld": [32, 12]
     },
     {
       "moebel": "pw7Kiefer",
-      "feld": [37, 7]
+      "feld": [35, 12]
     },
     {
       "moebel": "pw7Tanne",
-      "feld": [45, 7]
+      "feld": [48, 7]
     },
     {
       "moebel": "wg4Busch",
-      "feld": [82, 9]
+      "feld": [81, 8]
     },
     {
       "moebel": "pw7TanneHoch",
-      "feld": [65, 10]
+      "feld": [63, 8]
     },
     {
       "moebel": "pw7Kiefer",
-      "feld": [71, 7]
+      "feld": [72, 6]
     },
     {
       "moebel": "pw7Tanne",
-      "feld": [74, 7]
+      "feld": [75, 7]
     },
     {
       "moebel": "wg4Busch",
-      "feld": [76, 12]
+      "feld": [78, 10]
     },
     {
       "moebel": "pw7TanneHoch",
-      "feld": [14, 11]
+      "feld": [14, 12]
     },
     {
       "moebel": "pw7Kiefer",
-      "feld": [63, 9]
+      "feld": [60, 8]
     },
     {
       "moebel": "dd6KaktusBluehend",
@@ -271,15 +282,15 @@
     },
     {
       "moebel": "felsKlein",
-      "feld": [101, 2]
+      "feld": [97, 1]
     },
     {
       "moebel": "dd6Saguaro",
-      "feld": [108, 4]
+      "feld": [112, 1]
     },
     {
       "moebel": "dd6KaktusBluehend",
-      "feld": [110, 4]
+      "feld": [112, 6]
     },
     {
       "moebel": "dd6Saguaro",
@@ -287,7 +298,7 @@
     },
     {
       "moebel": "felsKlein",
-      "feld": [141, 2]
+      "feld": [142, 1]
     },
     {
       "moebel": "dd6Saguaro",
@@ -295,15 +306,15 @@
     },
     {
       "moebel": "dd6KaktusBluehend",
-      "feld": [94, 8]
+      "feld": [96, 6]
     },
     {
       "moebel": "felsKlein",
-      "feld": [99, 7]
+      "feld": [97, 9]
     },
     {
       "moebel": "dd6KaktusBluehend",
-      "feld": [92, 9]
+      "feld": [90, 7]
     },
     {
       "moebel": "felsKlein",
@@ -311,7 +322,7 @@
     },
     {
       "moebel": "dd6Saguaro",
-      "feld": [109, 12]
+      "feld": [108, 13]
     },
     {
       "moebel": "felsKlein",
@@ -319,7 +330,7 @@
     },
     {
       "moebel": "wg4BlumeGelb",
-      "feld": [10, 3]
+      "feld": [11, 1]
     },
     {
       "moebel": "wg4BlumeRot",
@@ -327,19 +338,19 @@
     },
     {
       "moebel": "wg4BlumeGelb",
-      "feld": [33, 2]
+      "feld": [32, 1]
     },
     {
       "moebel": "wg4BlumeRot",
-      "feld": [38, 2]
+      "feld": [34, 1]
     },
     {
       "moebel": "wg4BlumeGelb",
-      "feld": [49, 2]
+      "feld": [54, 6]
     },
     {
       "moebel": "wg4BlumeRot",
-      "feld": [53, 3]
+      "feld": [56, 6]
     },
     {
       "moebel": "wg4BlumeGelb",
@@ -350,40 +361,36 @@
       "feld": [62, 1]
     },
     {
+      "moebel": "wg4BlumeRot",
+      "feld": [87, 6]
+    },
+    {
       "moebel": "wg4BlumeGelb",
-      "feld": [79, 2]
+      "feld": [87, 8]
     },
     {
       "moebel": "wg4BlumeRot",
-      "feld": [83, 2]
+      "feld": [11, 6]
     },
     {
       "moebel": "wg4BlumeGelb",
-      "feld": [82, 2]
+      "feld": [26, 6]
     },
     {
       "moebel": "wg4BlumeRot",
-      "feld": [12, 5]
+      "feld": [37, 7]
     },
     {
       "moebel": "wg4BlumeGelb",
-      "feld": [27, 5]
+      "feld": [54, 8]
     },
     {
       "moebel": "wg4BlumeRot",
-      "feld": [39, 5]
+      "feld": [56, 8]
     },
     {
       "moebel": "wg4BlumeGelb",
-      "feld": [50, 4]
-    },
-    {
-      "moebel": "wg4BlumeRot",
-      "feld": [54, 6]
-    },
-    {
-      "moebel": "wg4BlumeGelb",
-      "feld": [57, 6]
+      "feld": [58, 6]
     },
     {
       "moebel": "wg4BlumeRot",
@@ -391,15 +398,11 @@
     },
     {
       "moebel": "wg4BlumeGelb",
-      "feld": [72, 5]
+      "feld": [69, 8]
     },
     {
       "moebel": "wg4BlumeRot",
-      "feld": [79, 3]
-    },
-    {
-      "moebel": "wg4BlumeGelb",
-      "feld": [81, 2]
+      "feld": [81, 6]
     },
     {
       "moebel": "wg4BlumeRot",
@@ -407,23 +410,23 @@
     },
     {
       "moebel": "wg4BlumeGelb",
-      "feld": [49, 8]
+      "feld": [46, 10]
     },
     {
       "moebel": "wg4BlumeRot",
-      "feld": [55, 7]
+      "feld": [54, 10]
     },
     {
       "moebel": "wg4BlumeGelb",
-      "feld": [58, 7]
+      "feld": [58, 8]
     },
     {
       "moebel": "wg4BlumeRot",
-      "feld": [81, 6]
+      "feld": [79, 7]
     },
     {
       "moebel": "wg4BlumeGelb",
-      "feld": [84, 6]
+      "feld": [87, 10]
     },
     {
       "moebel": "wg4BlumeRot",
@@ -431,15 +434,15 @@
     },
     {
       "moebel": "wg4BlumeGelb",
-      "feld": [6, 11]
+      "feld": [3, 12]
     },
     {
       "moebel": "wg4BlumeRot",
-      "feld": [39, 10]
+      "feld": [38, 12]
     },
     {
       "moebel": "wg4BlumeGelb",
-      "feld": [51, 10]
+      "feld": [51, 11]
     },
     {
       "moebel": "wg4BlumeRot",
@@ -447,7 +450,7 @@
     },
     {
       "moebel": "wg4BlumeGelb",
-      "feld": [16, 12]
+      "feld": [17, 12]
     },
     {
       "moebel": "wg4BlumeRot",
@@ -455,15 +458,15 @@
     },
     {
       "moebel": "wg4BlumeGelb",
-      "feld": [60, 12]
+      "feld": [58, 10]
     },
     {
       "moebel": "wg4BlumeRot",
-      "feld": [73, 12]
+      "feld": [72, 11]
     },
     {
       "moebel": "wg4BlumeGelb",
-      "feld": [13, 12]
+      "feld": [11, 10]
     },
     {
       "moebel": "wg4BlumeRot",
@@ -471,33 +474,23 @@
     },
     {
       "moebel": "wg4BlumeGelb",
-      "feld": [35, 12]
+      "feld": [38, 14]
     },
     {
       "moebel": "wg4BlumeRot",
-      "feld": [36, 12]
+      "feld": [32, 8]
     },
     {
       "moebel": "wg4BlumeGelb",
-      "feld": [64, 12]
+      "feld": [66, 10]
     },
     {
       "moebel": "wg4BlumeRot",
-      "feld": [62, 12]
+      "feld": [59, 15]
     },
     {
       "moebel": "wg4BlumeGelb",
-      "feld": [82, 12]
-    },
-    {
-      "moebel": "cp8Finkenzeichen",
-      "feld": [43, 16],
-      "id": "ereignis117"
-    },
-    {
-      "moebel": "pg7Kletterwand",
-      "feld": [100, 17],
-      "vorn": true
+      "feld": [84, 10]
     },
     {
       "moebel": "felsKlein",
@@ -520,20 +513,12 @@
       "feld": [123, 28]
     },
     {
-      "moebel": "dd6Felsbogen",
-      "feld": [112, 3]
-    },
-    {
-      "moebel": "dd6Felsbogen",
-      "feld": [130, 2]
-    },
-    {
       "moebel": "dd6Kaktus",
-      "feld": [104, 10]
+      "feld": [101, 13]
     },
     {
       "moebel": "dd6KaktusOhne",
-      "feld": [99, 10]
+      "feld": [96, 13]
     },
     {
       "moebel": "dd6KaktusBluehend",
@@ -545,19 +530,11 @@
     },
     {
       "moebel": "dd6KaktusBluehend",
-      "feld": [97, 3]
+      "feld": [96, 3]
     },
     {
       "moebel": "felsKlein",
       "feld": [126, 9]
-    },
-    {
-      "moebel": "dd6SteinFlach",
-      "feld": [104, 5]
-    },
-    {
-      "moebel": "dd6SteinFlach",
-      "feld": [108, 9]
     },
     {
       "moebel": "dd6Saguaro",
@@ -647,10 +624,10 @@
     {
       "name": "fotograf",
       "typ": "statist",
-      "feld": [100, 12],
+      "feld": [104, 14],
       "eigenschaften": {
-        "von": "100,12",
-        "bis": "100,12",
+        "von": "104,14",
+        "bis": "104,14",
         "tun": "fotografiert den Canyon",
         "wann": "tag"
       }
@@ -668,20 +645,20 @@
     {
       "name": "eichhoernchen",
       "typ": "tier",
-      "feld": [25, 10],
+      "feld": [25, 12],
       "eigenschaften": {
-        "von": "25,10",
-        "bis": "31,10",
+        "von": "25,12",
+        "bis": "31,12",
         "verhalten": "flitzen"
       }
     },
     {
       "name": "eidechse",
       "typ": "tier",
-      "feld": [80, 10],
+      "feld": [80, 15],
       "eigenschaften": {
-        "von": "80,10",
-        "bis": "85,10",
+        "von": "80,15",
+        "bis": "85,15",
         "verhalten": "flitzen"
       }
     },

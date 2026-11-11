@@ -553,6 +553,10 @@ Werkzeug erledigt, steht dabei; daran arbeiten die Helfer nicht vorbei.
    dreimal Wand, Fuß; ohne Angabe drei Reihen), darunter ein dunklerer Boden als auf der Hochfläche.
    Roter Sand an Gras bekommt als Saum den Boden `sandRotRand` (`bildwuensche/sand_rot_gras.py`);
    wandert die Grenze je Reihe um eine Spalte, wird sie eine schräge Linie statt einer Treppe.
+   Ein Erdweg im roten Sand ist der Boden `erdeRot` (Bild `weg_rot.png`): Er zeigt seinen Rand
+   auch am Sand (`rand_gegen` in materialien.json) und biegt über Schrägkacheln; der Canyonboden
+   ist `felsbodenRotDunkel`. Das Ufer `rot` zeichnet diesen dunklen Boden als Ufer, sonst stehen
+   an jeder Schräge helle Dreiecke im Fels.
    Pfützen im Stollen sind Möbel (`pfuetze_fels_klein`, `_gross`), kein Wasser.
 
 ### 10.2 Türen und Durchgänge

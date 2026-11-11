@@ -69,3 +69,17 @@ def test_brueckenzeichen_aus_den_holzboeden_der_szene():
     szene = {"boeden": {"b": "holzDunkel", "s": "sinter", "d": "dielen", "e": "erde"}}
     assert brueckenzeichen(szene) == {"b", "d"}
     assert brueckenzeichen({}) == frozenset()
+
+
+def test_randsichten_machen_genannte_boeden_zum_grund():
+    """Ein Weg mit ``rand_gegen`` zeigt seinen Rand auch an rotem Sand (Canyonrand, 11.11.2026)."""
+    from pipeline.abenteuer.bodenraster import bodenfeld, randsichten
+
+    weg = {"feld": [1, 1], "rand": [0, 0], "rand_gegen": ["sandRot"]}
+    boeden = {"erdeRot": weg, "sandRot": {"feld": [2, 0]}, "gras": {"feld": [3, 8]}}
+    roh = ["sss", "EEE", "EEE", "sss"]
+    sichten = randsichten(roh, {"E": "erdeRot", "s": "sandRot"}, "gras", boeden)
+    assert sichten == {"erdeRot": ["...", "EEE", "EEE", "..."]}
+    # Ohne die Sicht gilt Sand als gleicher Boden (Mitte), mit ihr liegt oben der Rand.
+    assert bodenfeld(weg, roh, 1, 1) == [1, 1]
+    assert bodenfeld(weg, sichten["erdeRot"], 1, 1) == [1, 0]

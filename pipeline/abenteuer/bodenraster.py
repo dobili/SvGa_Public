@@ -153,3 +153,25 @@ def randnachbar(zeilen: list[str], x: int, y: int) -> tuple[int, int] | None:
     if 0 <= nx < breite and 0 <= ny < hoehe and zeilen[ny][nx] not in (WAND, LEER):
         return (nx, ny)
     return None
+
+
+def randsichten(roh: list[str], sonder: dict[str, str], grund: str, boeden: dict) -> dict[str, list[str]]:
+    """Je Boden mit ``rand_gegen`` das Raster, wie dieser Boden es für seinen Rand sieht.
+
+    Warum: Ränder entstehen sonst nur zum Grundboden „.“ (TRENNT). Ein Erdweg, der aus der Wiese in
+    roten Sand läuft, braucht dort aber auch einen Rand, sonst wird jede Biegung eine Kachelstufe
+    (Gutachten Canyonrand, 11.11.2026). Ein Boden nennt mit ``rand_gegen`` die Bodenarten, an denen
+    er seinen Rand zeigt; ihre Felder gelten für ihn als Grundboden.
+    Eingaben: Raster, Sonderböden der Szene (Zeichen → Bodenart), Grundboden, Böden aus
+    materialien.json. Ausgabe: Bodenart → Raster; Böden ohne ``rand_gegen`` fehlen (sie sehen das
+    Raster unverändert).
+    Beispiel: „erdeRot“ mit ``rand_gegen`` [„sandRot“] in einer Szene mit „s“: „sandRot“ → alle
+    „s“ werden für diesen Boden zu „.“.
+    """
+    sichten = {}
+    for name in {grund, *sonder.values()}:
+        gegen = set(boeden.get(name, {}).get("rand_gegen", []))
+        zeichen = {z for z, art in sonder.items() if art in gegen}
+        if zeichen:
+            sichten[name] = ["".join("." if z in zeichen else z for z in zeile) for zeile in roh]
+    return sichten

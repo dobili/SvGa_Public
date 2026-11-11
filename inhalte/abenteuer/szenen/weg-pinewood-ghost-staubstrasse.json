@@ -19,13 +19,13 @@
     "#....................................................................................................................................................#",
     "#....................................................................................................................................................#",
     "#....................................................................................................................................................#",
-    "#.......................................................................kkkkkkkkkkkkkkkkkkkkkkkkkkkkkkkkkkkkkkkkk....................................#",
-    "#......................................................................kkkkkkkkkkkkkkkkkkkkkkkkkkkkkkkkkkkkkkkkkkk...................................#",
-    "#.......................................kkkkkkkkkkkkkkkkkkkkkkkkkkkkkkkkkkkkkkkkkkkkkkkkkkkkkkkkkkkkkkkkkkkkkkkkkkk..................................#",
+    "#....................................................................................................................................................#",
+    "#....................................................................................................................................................#",
+    "#.......................................kkkkkkkkkkkkkkkkkkkkkkkkkkkkkkkkkkkkkkkkkkkkkkkkkkkkkkkkkkkkkkkkkkkkkkkkk....................................#",
     "#kkkkkkkkkkkk..........................kkkkkkkkkkkkkkkkkkkkkkkkkkkkkkkkkkkkkkkkkkkkkkkkkkkkkkkkkkkkkkkkkkkkkkkkkkkkkkkkkkkkkkkkkkkkkkkkkkkkkkkkkkkkkk#",
-    "kkkkkkkkkkkkkk........................kkkkkkkkkkkkkkkkkkkkkkkkkkkkkkkkkk.........................................kkkkkkkkkkkkkkkkkkkkkkkkkkkkkkkkkkkkk",
-    "kkkkkkkkkkkkkkk......................kkkkkkkkkkkkkkkkkkkkkkkkkkkkkkkkkk...........................................kkkkkkkkkkkkkkkkkkkkkkkkkkkkkkkkkkkk",
-    "#kkkkkkkkkkkkkkkkkkkkkkkkkkkkkkkkkkkkkkk...........................................................................kkkkkkkkkkkkkkkkkkkkkkkkkkkkkkkkkk#",
+    "kkkkkkkkkkkkkk........................kkkkkkkkkkkkkkkkkkkkkkkkkkkkkkkkkkkkkkkkkkkkkkkkkkkkkkkkkkkkkkkkkkkkkkkkkkkkkkkkkkkkkkkkkkkkkkkkkkkkkkkkkkkkkkkk",
+    "kkkkkkkkkkkkkkk......................kkkkkkkkkkkkkkkkkkkkkkkkkkkkkkkkkkkkkkkkkkkkkkkkkkkkkkkkkkkkkkkkkkkkkkkkkkkkkkkkkkkkkkkkkkkkkkkkkkkkkkkkkkkkkkkkk",
+    "#kkkkkkkkkkkkkkkkkkkkkkkkkkkkkkkkkkkkkkk.........................................................................kkkkkkkkkkkkkkkkkkkkkkkkkkkkkkkkkkkk#",
     "#............kkkkkkkkkkkkkkkkkkkkkkkkkk..............................................................................................................#",
     "#.............kkkkkkkkkkkkkkkkkkkkkkkk...............................................................................................................#",
     "#..............kkkkkkkkkkkkkkkkkkkkkk................................................................................................................#",
@@ -51,7 +51,7 @@
     },
     {
       "moebel": "iwFassGross",
-      "feld": [103, 8]
+      "feld": [103, 10]
     },
     {
       "moebel": "pg7Staubteufel",
@@ -115,11 +115,11 @@
     },
     {
       "moebel": "dd6Saguaro",
-      "feld": [84, 3]
+      "feld": [84, 5]
     },
     {
       "moebel": "dd6KaktusKlein",
-      "feld": [90, 4]
+      "feld": [90, 6]
     },
     {
       "moebel": "fels",
@@ -207,7 +207,7 @@
     },
     {
       "moebel": "dd6KaktusKlein",
-      "feld": [95, 5]
+      "feld": [95, 7]
     },
     {
       "moebel": "dd6Saguaro",
@@ -263,7 +263,7 @@
     },
     {
       "moebel": "fels",
-      "feld": [49, 11]
+      "feld": [49, 9]
     },
     {
       "moebel": "fels",
@@ -287,15 +287,15 @@
     },
     {
       "moebel": "dd6KaktusKlein",
-      "feld": [91, 15]
+      "feld": [91, 9]
     },
     {
       "moebel": "fels",
-      "feld": [97, 15]
+      "feld": [108, 6]
     },
     {
       "moebel": "dd6KaktusBluehend",
-      "feld": [103, 15]
+      "feld": [103, 9]
     },
     {
       "moebel": "dd6Saguaro",
@@ -519,29 +519,29 @@
     },
     {
       "moebel": "cp8Solarpaneel",
-      "feld": [99, 6],
+      "feld": [99, 8],
       "vorn": true,
       "id": "ereignis184"
     },
     {
       "moebel": "cp8Zapfsaeule",
-      "feld": [90, 8],
+      "feld": [90, 10],
       "id": "ereignis185"
     },
     {
       "moebel": "cp8Zapfsaeule",
-      "feld": [93, 8],
+      "feld": [93, 10],
       "id": "ereignis186"
     },
     {
       "moebel": "cp8Vordach",
-      "feld": [89, 6],
+      "feld": [89, 8],
       "vorn": true,
       "id": "ereignis187"
     },
     {
       "moebel": "cp8Schuppen",
-      "feld": [97, 4],
+      "feld": [97, 6],
       "id": "ereignisTankstelleHaus"
     },
     {
@@ -644,7 +644,7 @@
     },
     {
       "moebel": "gt7TuerHolz",
-      "feld": [101, 9],
+      "feld": [101, 11],
       "vorn": true
     }
   ],
@@ -674,19 +674,19 @@
     },
     {
       "name": "ereignisTankstelle",
-      "feld": [99, 11]
+      "feld": [99, 13]
     },
     {
       "name": "spurPM6",
-      "feld": [100, 11]
+      "feld": [100, 13]
     },
     {
       "name": "seite11",
-      "feld": [94, 10]
+      "feld": [94, 12]
     },
     {
       "name": "tankstelleTuer",
-      "feld": [101, 10]
+      "feld": [101, 12]
     },
     {
       "name": "wagen",

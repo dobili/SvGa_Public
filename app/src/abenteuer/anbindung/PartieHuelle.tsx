@@ -10,6 +10,8 @@
  * „Weiter“ in die Oberwelt; dort liest das Spiel das Ergebnis und zeigt seine Ergebniskarte.
  * Abhängigkeiten: ui/komponenten/partie/usePartie.ts (Logik), Brettbereich, useLeserzug,
  * Ergebnisblende, partieerweiterungen.ts (Kartenleiste), spiel/uhr.ts, anbindung/Huelle.tsx.
+ * Eine beendete Partie lässt sich Zug für Zug nachspielen (◀ ▶ unter dem Brett); so öffnet auch
+ * „Meine Partien“ im Tagebuch eine alte Partie (docs/spiel/18, Abschnitt 8).
  * Sonderfälle: Partie ohne Uhr zeigt keine Uhren; Blindschach blendet die Figuren aus; eine
  * unbekannte Id zeigt einen Hinweis und den Weg zurück.
  */
@@ -117,6 +119,43 @@ function Weiterknopf() {
   );
 }
 
+/** Blätterknöpfe der beendeten Partie: ein Halbzug zurück oder vor, dazwischen der Stand. */
+function Blaettern({
+  stelle,
+  anzahl,
+  setze,
+}: {
+  stelle: number;
+  anzahl: number;
+  setze: (stelle: number) => void;
+}) {
+  return (
+    <div className="abenteuer-huelle-blaettern" data-testid="abenteuer-partie-blaettern">
+      <button
+        type="button"
+        className="chip"
+        disabled={stelle === 0}
+        aria-label={tSpiel("huelle.zugZurueck")}
+        data-testid="abenteuer-partie-zurueck"
+        onClick={() => setze(stelle - 1)}
+      >
+        ◀
+      </button>
+      <span role="status">{tSpiel("huelle.nachspielStand", { zug: stelle, anzahl })}</span>
+      <button
+        type="button"
+        className="chip"
+        disabled={stelle >= anzahl}
+        aria-label={tSpiel("huelle.zugVor")}
+        data-testid="abenteuer-partie-vor"
+        onClick={() => setze(stelle + 1)}
+      >
+        ▶
+      </button>
+    </div>
+  );
+}
+
 /** Brett, Uhren, Kartenleiste und Fuß einer geladenen Partie. */
 function Spielfeld({ s, partie }: { s: Partiesteuerung; partie: Partie }) {
   // Markierungen der Karten (Fingerzeig, Gefahrenradar) gelten nur für die Stellung, in der sie kamen.
@@ -127,12 +166,16 @@ function Spielfeld({ s, partie }: { s: Partiesteuerung; partie: Partie }) {
   const eigene = partie.einstellung.eigeneFarbe;
   const gegner = gegnerName(partie);
   const bedienung = useLeserzug(s, s.fen, false);
-  const stellung = useMemo(() => stellungAusFen(s.fen), [s.fen]);
+  // Nachspielen der beendeten Partie: Zahl der gezeigten Halbzüge; null = Schlussstellung.
+  const [stelle, setzeStelle] = useState<number | null>(null);
+  const anzahl = partie.zuege.length;
+  const gezeigt = partie.ende ? (stelle ?? anzahl) : anzahl;
+  const fen = gezeigt === anzahl ? s.fen : (stellungen(partie)[gezeigt] ?? s.fen);
+  const stellung = useMemo(() => stellungAusFen(fen), [fen]);
   const letzter = useMemo(() => {
-    const anzahl = partie.zuege.length;
-    if (anzahl === 0) return null;
-    return zugFelder(stellungen(partie)[anzahl - 1] ?? "", partie.zuege[anzahl - 1]?.san ?? "");
-  }, [partie]);
+    if (gezeigt === 0) return null;
+    return zugFelder(stellungen(partie)[gezeigt - 1] ?? "", partie.zuege[gezeigt - 1]?.san ?? "");
+  }, [partie, gezeigt]);
   if (!stellung.ok) return <p className="fehlertext">{stellung.fehler}</p>;
   const amZug = leserAmZug(partie) && !partie.ende;
   return (
@@ -149,7 +192,7 @@ function Spielfeld({ s, partie }: { s: Partiesteuerung; partie: Partie }) {
         }
         beschriftung={tSpiel("huelle.brett", { gegner })}
         anfangsGedreht={eigene === "black"}
-        ueberlagerung={<Ergebnisblende partie={partie} />}
+        ueberlagerung={gezeigt === anzahl ? <Ergebnisblende partie={partie} /> : undefined}
       />
       {partie.uhr && (
         <Uhr uhr={partie.uhr} farbe={eigene} name={tSpiel("huelle.du")} jetztMs={s.jetztMs} />
@@ -164,6 +207,9 @@ function Spielfeld({ s, partie }: { s: Partiesteuerung; partie: Partie }) {
             beiMarkierungen={(marken) => setzeHinweis({ fen: s.fen, marken })}
           />
         ))}
+      {partie.ende && anzahl > 0 && (
+        <Blaettern stelle={gezeigt} anzahl={anzahl} setze={setzeStelle} />
+      )}
       {partie.ende ? <Weiterknopf /> : <Spielfuss s={s} gegner={gegner} />}
       {!partie.ende && <Testleiste id={partie.id} />}
     </>

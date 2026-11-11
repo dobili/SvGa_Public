@@ -62,6 +62,8 @@ export interface Appdienste {
   readonly liesErgebnis: (kennung: string) => Promise<Partieergebnis | null>;
   /** Öffnet eine noch laufende Partie des Abenteuers wieder (Kennung des Partieauftrags). */
   readonly zeigePartie: (kennung: string) => void;
+  /** Öffnet eine beendete Partie zum Nachspielen in der Hülle (Id der Partie in der App). */
+  readonly zeigeBeendetePartie: (id: string) => void;
   /**
    * Sucht in einer verlorenen Partie den Kipppunkt (Regelwerk R14) mit der Engine der App; null,
    * wenn es keinen gibt oder die Partie nicht mehr in der App liegt.

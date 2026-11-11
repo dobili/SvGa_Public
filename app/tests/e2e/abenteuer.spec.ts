@@ -123,6 +123,19 @@ test("vom Dachboden in die erste Partie und zurück", async ({ page }) => {
   await expect(ergebnis).toContainText("Gewonnen gegen Ambrose");
   await ergebnis.getByRole("button", { name: "Weiter", exact: true }).click();
   await expect(ergebnis).toHaveCount(0);
+
+  // „Meine Partien“ im Tagebuch: die Partie steht in der Liste, „Ansehen“ zeigt sie in der Hülle,
+  // „Weiter“ führt zurück in die Welt (ohne neue Ergebniskarte).
+  await page.getByTestId("abenteuer-tagebuchknopf").click();
+  const liste = page.getByTestId("abenteuer-meine-partien");
+  await expect(liste).toContainText("Gegen Ambrose: gewonnen");
+  await liste.getByRole("button", { name: "Ansehen" }).click();
+  await expect(page.getByTestId("partie")).toBeVisible({ timeout: 20000 });
+  await expect(page.getByTestId("abenteuer-huelle-kopf")).toContainText("Ambrose");
+  await expect(page.getByTestId("abenteuer-test-sieg")).toHaveCount(0);
+  await page.getByTestId("partie-zurueck-zur-stadt").click();
+  await expect(page.locator(".abenteuer-welt canvas")).toBeVisible({ timeout: 30000 });
+  await expect(page.getByTestId("abenteuer-ergebnis")).toHaveCount(0);
 });
 
 test("Übergang von vorn: vom Dachboden über die Luke ins Wohnzimmer", async ({ page }) => {

@@ -274,7 +274,17 @@ export function Oberwelt() {
         />
       )}
       {tagebuch && welt && (
-        <Tagebuch stand={stand} daten={welt.daten} beiSchliessen={() => setzeTagebuch(false)} />
+        <Tagebuch
+          stand={stand}
+          daten={welt.daten}
+          beiSchliessen={() => setzeTagebuch(false)}
+          // Position sichern wie vor einer Partie, dann die alte Partie in der Hülle zeigen.
+          beiPartie={(id) => {
+            const mitPosition = { ...stand, position: k.position(stand) };
+            k.merke(mitPosition);
+            void dienste.schreibeStand(mitPosition).then(() => dienste.zeigeBeendetePartie(id));
+          }}
+        />
       )}
       {sprechblase && !dialog && !vorfuehrung && (
         <Sprechblase

@@ -96,33 +96,34 @@ Ein Schild: „Varianten-Tisch. Alles erlaubt, nur kein normales Schach.“ #spr
 }
 Was du schon kennst: #sprecher:erzaehler
 {varianteKoenigsrennenGelernt:
-    Königsrennen, von Earl am Diner. Kommt bald an den Tisch. #sprecher:erzaehler
+    Königsrennen, von Earl am Diner. Zwei Fernfahrer jagen ihre Könige gerade um die Wette nach oben. #sprecher:erzaehler
 }
 {varianteDracheGelernt:
-    Schach mit dem Drachen, vom Fest in Summit City. Kommt bald an den Tisch. #sprecher:erzaehler
+    Schach mit dem Drachen, vom Fest in Summit City. Der Glasdrache wartet neben dem Brett auf seinen Einsatz. #sprecher:erzaehler
 }
 {varianteAtomschachGelernt:
-    Atomschach, von Bell am Geysir. Kommt bald an den Tisch. #sprecher:erzaehler
+    Atomschach, von Bell am Geysir. Auf einem Brett fehlt schon die halbe Mitte. #sprecher:erzaehler
 }
 {varianteEntenschachGelernt:
-    Entenschach, von Ray im Sturmkeller. Kommt bald an den Tisch. #sprecher:erzaehler
+    Entenschach, von Ray im Sturmkeller. Die Holzente steht mitten auf e4 und rührt sich nicht. #sprecher:erzaehler
 }
 {varianteRaeuberschachGelernt:
-    Räuberschach, vom Lagerfeuer im Camp. Kommt bald an den Tisch. #sprecher:erzaehler
+    Räuberschach, vom Lagerfeuer im Camp. Ein Junge verschenkt strahlend seine Dame. #sprecher:erzaehler
 }
 {varianteTandemGelernt:
-    Tandem, vom Lagerfeuer im Camp. Kommt bald an den Tisch. #sprecher:erzaehler
+    Tandem, vom Lagerfeuer im Camp. Vier Leute an zwei Brettern, und alle reden durcheinander. #sprecher:erzaehler
 }
 {varianteFalkeUndBisonGelernt:
-    Falke und Bison, von Kira auf der Hochebene. Kommt bald an den Tisch. #sprecher:erzaehler
+    Falke und Bison, von Kira auf der Hochebene. Die zwei Figuren liegen obenauf in der Kiste. #sprecher:erzaehler
 }
 {varianteBlindschachGelernt:
-    Blindschach, von Greta an der Hütte. Das geht schon. #sprecher:erzaehler
+    Blindschach, von Greta an der Hütte. Eine Frau sagt ihre Züge an und sieht dabei aus dem Fenster. #sprecher:erzaehler
 }
 {varianteSchach960Gelernt:
-    Schach960, von Mabel im Musikhaus. Das geht schon. #sprecher:erzaehler
+    Schach960, von Mabel im Musikhaus. Jemand würfelt die Grundreihe aus und stöhnt. #sprecher:erzaehler
 }
-// VARIANTE-FEHLT: alle außer Blindschach und Schach960 (Bericht).
+// Der Tisch ist Kulisse: Die Sätze zeigen, was dort gespielt wird, ohne ein Versprechen an den
+// Spieler („Kommt bald“). Spielbar sind bisher nur Blindschach und Schach960 bei ihren Figuren.
 + {varianteBlindschachGelernt} [Blindschach gegen Ambrose]
     Zwölf Jahre Briefe, {held}. Ich sehe das Brett mit geschlossenen Augen besser als mit offenen. #sprecher:ambrose #stimmung:lacht
     ~ beginnePartie("wegCrossroadsPinewood.blindschach")

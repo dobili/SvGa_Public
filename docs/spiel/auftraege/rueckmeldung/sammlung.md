@@ -1,6 +1,6 @@
 # Sammlung der Rückmeldungen zum Schach-Abenteuer (Beta)
 
-Stand: 11.11.2026. Offene Punkte: 68. Erste Abgabe: 11.11.2026 (R001 bis R070, ohne die unbenutzte Nummer R035).
+Stand: 11.11.2026. Offene Punkte: 76 (davon 8 seit der ersten Abgabe neu: R071 bis R078). Erste Abgabe: 11.11.2026 (R001 bis R070, ohne die unbenutzte Nummer R035).
 
 Hinweis: Es gibt zwei Karten, die mit „Zedern“ beginnen: Zedernpfad (Maple Falls nach Cedar Creek) und Zedernwald (Cedar Creek nach Riverton). Alle bisherigen Anmerkungen des Autors, auch wo er „Zedernwald“ sagte, betreffen den Zedernpfad.
 
@@ -19,6 +19,10 @@ Reihenfolge je Kategorie: zuerst, was das Weiterspielen verhindert, dann Stören
   Ergänzung des Autors: Beim Zusammensetzen auch die Übergänge von Karte zu Karte prüfen, damit zum Beispiel Flüsse und Flusswege glaubwürdig ineinander übergehen. Kleine Inkonsistenzen sind in Ordnung, wenn man sie mit einem kleinen Zwischenstück erklären kann, das nicht als Karte gezeichnet wird (sonst werden es zu viele Karten). Beispiel: Auf der Landstraße taucht oben direkt das Feld auf, das im Stadtpark noch nicht zu sehen war; das lässt sich mit einem kurzen, nicht gezeichneten Wegstück dazwischen erklären. Nicht in Ordnung wäre etwa, wenn auf der Landstraße unten links plötzlich kein Wasser mehr wäre, wo es im Anschluss noch Wasser gab; da fragt man sich, warum. Das gilt für das ganze Puzzle.
 - [ ] R036. Übergang Stadtpark zur Landstraße (Maple Falls): Im Stadtpark ist die Straße gepflastert und hat Straßenmarkierungen, ein Bus fährt darüber. Beim Kartenwechsel zur Landstraße ist sie plötzlich nur noch das bräunliche Asset, wie ein Trampelpfad. Ein Übergang von der gepflasterten Straße zur Landstraße fehlt.
 - [ ] R060. Alle Karten, Auslösen des Kartenwechsels: Auf der Übersichtskarte ist markiert, in welchem Bereich die Figur stehen muss, um in einen Raum oder auf die nächste Karte zu kommen. Beispiel Waschsalon (Ortskern): Markiert ist die Kachel des Fußwegs direkt vor dem Waschsalon. Der Autor vermutet, dass er schon beim bloßen Darüberlaufen automatisch in den Waschsalon kommt. Das soll nicht sein. Der Wechsel soll erst stattfinden, wenn die Figur auf der Kachel steht und sich auf die Tür zubewegt, also die Pfeiltaste in Richtung Tür gedrückt wird (im Beispiel: Pfeiltaste nach oben). Dasselbe gilt für Übergänge zwischen Außenkarten (etwa Landstraße): Steht die Figur direkt am Kartenrand, soll noch nicht gewechselt werden, sondern erst, wenn die Pfeiltaste in Richtung der nächsten Karte gedrückt wird. Auftrag: bei allen Karten die Funktionslogik prüfen. Der Autor vermutet das Verhalten nur, getestet hat er es nicht ausdrücklich („ich vermute“).
+- [ ] R072. Bahndamm: Der Bahnsteig unterbricht den Bahndamm. Das war nach Aussage des Autors bei der anderen Karte (Bahnhaltestelle) schon einmal so.
+- [ ] R073. Bahndamm, oben, eingezäunte kleine Kuhherde (drei Kühe): Das Tor des Gatters öffnet sich Richtung Bahndamm. Es kann dementsprechend nicht geöffnet werden, weil der Bahndamm die Tür blockieren würde.
+- [ ] R074. Bahndamm, Haus oben (das mit den Vögeln): Es steht zum Teil auf dem Abhang des Bahndamms und könnte so gar nicht dort stehen.
+- [ ] R078. Übergang Bahndamm zu Riverton am Fluss (Logiklücke; der Autor meint vermutlich `riverton-aussen`): Legt man die Karte von Riverton direkt an die Karte am Bahndamm, führt die Hauptstraße von Riverton links direkt zur Wellblechhütte (siehe R077), die Straße endet also im Nichts. Man kann das mit einer Zwischenkarte erklären, es ist aber ungünstig. Vorschlag des Autors: Auf der Bahndamm-Karte die Schienen oben (den Bahndamm) ganz am rechten Ende ein Stück in einer Kurve nach unten führen, bevor es an den Rand geht, und den Trampelpfad weiter unten an der Karte unten rechts enden lassen. Legt man beide Karten aneinander, würde die Hauptstraße von Riverton dann unterhalb der Karte am Fluss entlang verlaufen (Wortlaut sinngemäß, „unterhalb von der Karte am Fluss“), und das Problem entfiele. Zusammenhang mit R034.
 
 ## Karten und Grafik
 
@@ -129,6 +133,13 @@ Der Raum der Stadtbibliothek an sich sieht nach Einschätzung des Autors gut aus
 
 - [ ] R069. Zedernwald, Brücke über den kleinen Fluss: Ein kleiner „Mini-Fluss“ geht durch die Karte, die Brücke liegt relativ mittig, ein Stückchen weiter rechts. Sie steht nicht mittig über dem Fluss. Wunsch: besser setzen, sodass sie mittiger über dem Fluss steht, falls machbar.
 - [ ] R070. Zedernwald, oben rechts, kleines Camp: Das Lagerfeuer steht mitten auf dem Weg. Das sollte nicht so sein.
+
+### Weg Cedar Creek nach Riverton, Bahndamm (`weg-cedar-riverton-bahndamm`)
+
+- [ ] R071. Bahndamm, oben: Einige Vögel stehen direkt auf einem Haus, auf der Hausfront. Es ist auch wieder ein „Abziehbild“-Haus (siehe R055). Die Vögel dürfen nicht auf der Fassade stehen.
+- [ ] R075. Bahndamm, Bahnhaltestelle: Die Bänke stehen direkt in einer der Laternen.
+- [ ] R076. Bahndamm, relativ mittig im Bild am Weg: Ein kleines umzäuntes Gebiet mit Sonnenblumen und Kürbissen. Darin stehen zwei kleine „Abziehbild“-Häuschen (siehe R055). Die Sonnenblumen und Kürbisse wachsen teilweise auf dem Trampelpfad, das ergibt keinen Sinn.
+- [ ] R077. Bahndamm, ganz rechts unten: ein gepflasterter Platz mit einer alten Hütte mit Wellblechdach, oben ein Zaun. Der Zaun geht nicht ganz bis zum Rand. Die Hütte wirkt fehl am Platz; der Autor weiß nicht, ob sie von der Geschichte her Sinn macht (Hauptchat prüfen, sonst überlegen). Der gepflasterte Boden hat wieder eine harte Kante zum Gras; ein Übergangs-Asset wäre schöner (siehe R042). Zusammenhang mit R078.
 
 ### Maple Falls, Wohnzimmer (`maple-falls-wohnzimmer-ausgepackt`)
 

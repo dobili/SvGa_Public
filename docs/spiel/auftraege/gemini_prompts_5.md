@@ -7,7 +7,8 @@ Lastkahn aus Teil 4. **Diese Liste nennt nur, was in keinem Paket steckt.** Teil
 ## So geht es (wie bei Teil 4)
 
 1. Je Prompt ein **neuer** Gemini-Chat, den gemeinsamen Kopf davor.
-2. **Jedem Prompt `ki-roh/stilvorlage.png` beilegen.**
+2. **Jedem Prompt `ki-roh/stilvorlage.png` beilegen** (neue Fassung vom 12.11.2026: oben die Farbleiste,
+   in der Mitte ein öffentliches Vorschaubild von LimeZu als Zielstil, unten eigene Bilder im Maßstab).
 3. Vor dem Hochladen prüfen:
    - Gemini hat **nichts aus der Stilvorlage abgezeichnet** (Farbleiste, Lastwagen, Bagger, Tiere);
    - Hintergrund ist reines Magenta, kein Raster, keine Schrift;
@@ -27,7 +28,7 @@ PIXEL STYLE: chunky pixel art on a 16x16 pixel tile grid, enlarged so that every
 
 BACKGROUND: solid flat magenta (#FF00FF) everywhere. No shadow, no ground, no road, no text, no letters, no frame. Plenty of magenta space between objects.
 
-STYLE REFERENCE: The attached image is a style reference only. Match its pixel size, outline thickness, shading (2-3 flat shades, light from the top left), level of detail and the color palette shown in its top row. Do NOT copy any object from the reference. Draw only the objects described below.
+STYLE REFERENCE: The attached image is a style reference only. Its large middle block shows the TARGET STYLE (buildings of the game's main tileset): match their pixel size, thin dark outlines, soft muted colours, simple flat shading, roof and wall proportions and level of detail. The top row is the colour palette. The bottom row shows earlier objects at the right scale next to a person (the dark rectangle is 1 tile wide and 2 tiles tall). Do NOT copy any object, building or text from the reference. Draw only the objects described below.
 
 BUILDINGS: every building is seen from the front and from above at the same time, like in classic 16-bit RPG towns: the upper half of the picture is the ROOF seen from above (with a ridge line, roof tiles or planks, a chimney, a darker shaded side), the lower half is the FRONT WALL with door and windows. The building must look solid and three-dimensional, never like a flat sticker. The door is in the front wall at the bottom.
 ```

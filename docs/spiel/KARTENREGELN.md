@@ -1044,3 +1044,25 @@ auf jeder soll etwas passieren, das man entdecken kann. Die Geschichten dazu ste
       Kartenrand: Beide Beläge stoßen im Raster aneinander, der Kartenzeichner bricht den festeren
       Belag unregelmäßig ab (`pipeline/abenteuer/strassenart.py`). Am Kartenrand hat die Straße auf
       beiden Karten dieselbe Art.
+
+### 10.74 Grundriss der Gebäudebilder im Katalog (Wunsch des Autors, 12.11.2026)
+
+Jedes Gebäudebild hat im Katalog das Feld `grundriss` (öffentlich in
+`inhalte/abenteuer/katalog_korrekturen/grundrisse.json`, 361 Bilder). Wer einen Innenraum baut oder
+ändert, liest es zuerst: Der Raum folgt der Form des Gebäudes, Tür und Fenster liegen innen dort,
+wo sie außen im Bild sind (Form vor Größe; bei mehr als 50 % Abweichung der Fläche anpassen;
+Räume, die der Autor schon durchgesehen hat, werden nicht verkleinert, lieber das Gebäude größer).
+
+- `form`: `rechteck`, `L`, `T`, `rund`, `achteck`, `unregelmaessig`; `fassade` heißt Scheinfront
+  ohne Dach (Tiefe frei wählbar), `bauteil` und `sonder` sind keine Räume zum Betreten.
+- `breite`: Breite des Baukörpers in Kacheln. `tiefe`: sichtbare Dachreihen, also die Tiefe des
+  Hauses nach hinten; 0 heißt frei.
+- `geschosse`: Zahl der Geschosse an der Front.
+- `tueren`: Liste von Spalten (`von`, `bis`), gezählt ab 1 von links im Bild, eine Spalte ist
+  16 Pixel. Leer heißt: Im Bild ist keine Tür; der Eingang wird angesetzt oder das Bild ist eine
+  Hofseite.
+- `fenster`: je Geschoss (`EG`, `OG1`, `OG2`, …, `DG`) die Spalten der Fenster.
+- `hinweis`: Vorbauten, Treppen, Flügel und was daraus für den Innenraum folgt.
+
+Die Angaben sind am Bild mit Kachelraster abgelesen (Hauptchat, 12.11.2026). Farbvarianten mit
+gleichem Umriss teilen sich einen Eintrag. Neue Gebäudebilder bekommen das Feld beim Eintragen.

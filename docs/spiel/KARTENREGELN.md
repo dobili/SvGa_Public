@@ -1062,7 +1062,52 @@ Räume, die der Autor schon durchgesehen hat, werden nicht verkleinert, lieber d
   16 Pixel. Leer heißt: Im Bild ist keine Tür; der Eingang wird angesetzt oder das Bild ist eine
   Hofseite.
 - `fenster`: je Geschoss (`EG`, `OG1`, `OG2`, …, `DG`) die Spalten der Fenster.
+- `aufgang` (bei mehreren Geschossen, sonst leer): `art` (`treppe`, `treppenhaus`, `wendeltreppe`,
+  `leiter`, `aussentreppe`, `fahrstuhl_und_treppenhaus`), `lage` in Worten (links und rechts wie im
+  Bild, hinten heißt von der Tür weg) und ein `hinweis`. Siehe 10.76.
 - `hinweis`: Vorbauten, Treppen, Flügel und was daraus für den Innenraum folgt.
 
 Die Angaben sind am Bild mit Kachelraster abgelesen (Hauptchat, 12.11.2026). Farbvarianten mit
 gleichem Umriss teilen sich einen Eintrag. Neue Gebäudebilder bekommen das Feld beim Eintragen.
+
+### 10.75 Wie viel größer ein Innenraum sein darf (Entscheidung des Autors, 13.11.2026)
+
+Außenbilder sind gestaucht: Das typische Gebäude ist 6 Kacheln breit und 4 tief, also etwa
+5 Türen breit; ein echtes Haus ist etwa 10 Türen breit. Wie in anderen Spielen dieser Art ist der
+Innenraum deshalb größer als das Gebäude außen. Übernommen werden Form, Verhältnisse und die Lage
+von Tür und Fenstern, nicht das genaue Maß.
+
+| Gebäude außen (Feld `breite`) | Breite innen               | Tiefe innen                 |
+| ----------------------------- | -------------------------- | --------------------------- |
+| klein, bis 5                  | bis 2,5-fach, mindestens 8 | mindestens 6 Reihen         |
+| mittel, 6 bis 11              | bis 2-fach                 | bis 2,5-fach der Dachreihen |
+| groß, ab 12                   | 1- bis 1,5-fach            | bis 2-fach                  |
+
+- Die Rangfolge bleibt: Eine Hütte ist innen kleiner als ein Laden, ein Laden kleiner als ein Amt.
+- Tür und Fenster liegen innen an derselben Stelle der Breite wie außen (Tür außen im rechten
+  Drittel heißt Tür innen im rechten Drittel).
+- Mehrere Geschosse außen dürfen innen mehrere Karten sein; jedes Geschoss zählt für sich.
+- Liegt ein Raum über dem Faktor: erst das Gebäude vergrößern, sonst den Raum teilen. Räume, die
+  der Autor schon durchgesehen hat, werden nicht verkleinert.
+- Die 50-Prozent-Regel misst gegen den Grundriss mal Faktor, nicht gegen das rohe Außenmaß. Für
+  das Gutachten Innen gegen Außen heißt das: Bis zum Faktor der Tabelle ist ein Raum in Ordnung
+  (bisher galt schon 1,5 als zu breit).
+
+### 10.76 Treppe, Leiter oder Fahrstuhl (Wunsch des Autors, 13.11.2026)
+
+Hat ein Gebäude außen mehrere Geschosse und innen mehr als eine Karte, steht der Aufgang dort, wo
+das Feld `aufgang` im Grundriss ihn nennt. Die Vorgaben dahinter:
+
+- **Wo außen etwas zu sehen ist, gilt das:** Treppenturm, Glasstreifen, hohes Treppenhausfenster,
+  Dachaufbau mit Tür, Außentreppe, Feuertreppe.
+- **Wohnhaus und Laden mit Wohnung:** einläufige Treppe an der Seitenwand hinter der Haustür oder
+  an der Rückwand, nie vor einem Fenster und nie im Weg zwischen Tür und Tresen. Bei Läden ist
+  die Treppe hinten und nicht für Kunden, außer das Obergeschoss gehört zum Laden.
+- **Sehr schmale Häuser (bis 5 breit):** steile Treppe an der Rückwand.
+- **Öffentliche Gebäude (Schule, Palast, Bahnhof, Hotel):** breites Treppenhaus in der Achse des
+  Eingangs oder im Turm.
+- **Fahrstuhl** nur in modernen Gebäuden ab vier Geschossen (Bürohaus, Konzernturm) und in der
+  Polizei; immer mit Treppenhaus daneben. Altbauten haben keinen.
+- **Leiter** nur zu Heuböden, im Rohbau und im Stellwerk. **Wendeltreppe** nur in runden Bauten
+  und Türmen.
+- Auf jeder Geschosskarte liegt der Aufgang an derselben Stelle.

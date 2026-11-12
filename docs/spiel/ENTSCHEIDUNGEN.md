@@ -920,3 +920,11 @@ mal Tiefe), nicht nur die Breite.
 - **Lage des Eingangs** stimmt immer überein, unabhängig von der Fläche.
 - Der Gutachter hat bisher nur Breiten aus den Daten verglichen. Wenn es weitergeht, prüft er je
   Gebäude am Bild zuerst die Form, dann die Fläche.
+
+## Innenraum größer als das Gebäude außen; Aufgänge im Katalog (13.11.2026)
+
+Der Autor hat bestätigt: Außenbilder sind gestaucht (typisch 5 Türen breit statt 10), Innenräume
+dürfen deshalb größer sein. Es gilt die Tabelle in den Kartenregeln 10.75 (klein bis 2,5-fach,
+mittel bis 2-fach, groß bis 1,5-fach in der Breite); die 50-Prozent-Regel misst gegen den
+Grundriss mal Faktor. Zu jedem mehrgeschossigen Gebäudebild steht im Katalog, ob Treppe,
+Treppenhaus, Leiter oder Fahrstuhl passt und wo (Feld `aufgang`, Regel 10.76).

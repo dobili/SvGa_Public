@@ -47,15 +47,18 @@
           "datei": "karten/maple-falls-aussen.json",
           "name": "ort.mapleFalls.aussen",
           "innen": false,
-          "musik": "musik/maple-falls.ogg"
+          "musik": "musik/maple-falls.ogg",
+          "geraeusch": "klang/wasserfall.m4a"
         },
         {
           "kennung": "mapleFalls.clubraum",
           "datei": "karten/maple-falls-clubraum.json",
           "name": "ort.mapleFalls.clubraum",
           "innen": true,
+          "musik": "musik/maple-falls.club.m4a",
           "zustaende": {
-            "nadelMapleFalls >= 1": "karten/maple-falls-clubraum-pokal.json"
+            "nadelMapleFalls >= 1": "karten/maple-falls-clubraum-pokal.json",
+            "victorGesehen": "karten/maple-falls-clubraum-bildschirm.json"
           }
         },
         {
@@ -63,16 +66,22 @@
           "datei": "karten/maple-falls-park.json",
           "name": "ort.mapleFalls.park",
           "innen": false,
+          "musik": "musik/maple-falls.ogg",
+          "geraeusch": "klang/wasserfall.m4a",
           "zustaende": {
-            "nadelMapleFalls >= 1": "karten/maple-falls-park-steg-neu.json",
-            "aufbruchGesehen und nicht ankunftCedarCreekGesehen": "karten/maple-falls-park-schulbus.json"
+            "nadelMapleFalls >= 1": "karten/maple-falls-park-steg-neu.json"
           }
         },
         {
           "kennung": "mapleFalls.diner",
           "datei": "karten/maple-falls-diner.json",
           "name": "ort.mapleFalls.diner",
-          "innen": true
+          "innen": true,
+          "musik": "musik/diner.m4a",
+          "geraeusch": "klang/diner_kueche.m4a",
+          "zustaende": {
+            "nadelMapleFalls >= 1 und dinerAbendGesehen": "karten/maple-falls-diner-tischset.json"
+          }
         }
       ],
       "figuren": [
@@ -121,6 +130,46 @@
           "name": "figur.lily.name",
           "sprite": "figuren/lily.png",
           "dialog": "maple-falls-aussen.lily"
+        },
+        {
+          "kennung": "mapleFalls.hector",
+          "name": "figur.hector.name",
+          "sprite": "figuren/kellner.png",
+          "dialog": "maple-falls-diner.hector"
+        },
+        {
+          "kennung": "mapleFalls.calloway",
+          "name": "figur.calloway.name",
+          "sprite": "figuren/statist-11.png",
+          "dialog": "maple-falls-aussen.calloway"
+        },
+        {
+          "kennung": "mapleFalls.carla",
+          "name": "figur.carla.name",
+          "sprite": "figuren/statist-26.png",
+          "dialog": "maple-falls-aussen.carla",
+          "wenn": "nicht endeAkt1Gesehen"
+        },
+        {
+          "kennung": "mapleFalls.carlaSchule",
+          "name": "figur.carla.name",
+          "sprite": "figuren/statist-26.png",
+          "dialog": "maple-falls-aussen.carla",
+          "wenn": "endeAkt1Gesehen und nadelIronwood == 0"
+        },
+        {
+          "kennung": "mapleFalls.carlaClub",
+          "name": "figur.carla.name",
+          "sprite": "figuren/statist-26.png",
+          "dialog": "maple-falls-aussen.carla",
+          "wenn": "nadelIronwood > 0"
+        },
+        {
+          "kennung": "mapleFalls.owen",
+          "name": "figur.owen.name",
+          "sprite": "figuren/statist-07.png",
+          "dialog": "maple-falls-aussen.calloway",
+          "wenn": "endeAkt1Gesehen"
         }
       ],
       "ausloeser": [
@@ -350,6 +399,18 @@
           "karte": "mapleFalls.dachboden",
           "art": "gegenstand",
           "dialog": "ansehen-maple-falls.kiste_whitlock"
+        },
+        {
+          "name": "bildschirmPult",
+          "karte": "mapleFalls.clubraum",
+          "art": "gegenstand",
+          "dialog": "ansehen-maple-falls.bildschirm_pult"
+        },
+        {
+          "name": "kreidebrett",
+          "karte": "mapleFalls.aussen",
+          "art": "gegenstand",
+          "dialog": "ansehen-maple-falls.kreidebrett"
         }
       ],
       "club": {
@@ -380,14 +441,30 @@
           "datei": "karten/cedar-creek-aussen.json",
           "name": "ort.cedarCreek.aussen",
           "innen": false,
-          "musik": "musik/cedar-creek.ogg"
+          "musik": "musik/cedar-creek.m4a",
+          "geraeusch": "klang/bach.m4a",
+          "licht": "tag",
+          "licht_zustaende": {
+            "endeAkt1Gesehen": "abend"
+          },
+          "klangquellen": [
+            {
+              "objekt": "mf2Bibliothek",
+              "musik": "turmuhr",
+              "reichweite": 18
+            }
+          ],
+          "zustaende": {
+            "teamAngekommen und nicht endeAkt1Gesehen": "karten/cedar-creek-aussen-samstag.json"
+          }
         },
         {
           "kennung": "cedarCreek.bibliothek",
           "datei": "karten/cedar-creek-bibliothek.json",
           "name": "ort.cedarCreek.bibliothek",
           "innen": true,
-          "musik": "musik/bibliothek.ogg"
+          "musik": "musik/cedar-creek.bibliothek.m4a",
+          "geraeusch": "klang/uhr_ticken.m4a"
         },
         {
           "kennung": "cedarCreek.archiv",
@@ -396,19 +473,26 @@
           "innen": true,
           "zustaende": {
             "archivGeordnet": "karten/cedar-creek-archiv-geordnet.json"
-          }
+          },
+          "musik": "musik/cedar-creek.archiv.m4a",
+          "geraeusch": "klang/archiv.m4a",
+          "licht": "nacht"
         },
         {
           "kennung": "cedarCreek.waschsalon",
           "datei": "karten/cedar-creek-waschsalon.json",
           "name": "ort.cedarCreek.waschsalon",
-          "innen": true
+          "innen": true,
+          "musik": "musik/cedar-creek.m4a",
+          "geraeusch": "klang/waschmaschine.m4a"
         },
         {
           "kennung": "cedarCreek.drechslerei",
           "datei": "karten/cedar-creek-drechslerei.json",
           "name": "ort.cedarCreek.drechslerei",
-          "innen": true
+          "innen": true,
+          "musik": "musik/cedar-creek.m4a",
+          "geraeusch": "klang/holzknacken.m4a"
         }
       ],
       "figuren": [
@@ -451,6 +535,30 @@
           "name": "figur.victor.name",
           "sprite": "figuren/victor.png",
           "dialog": "cedar-creek-aussen.victor"
+        },
+        {
+          "kennung": "cedarCreek.zwillinge",
+          "name": "figur.zwillinge.name",
+          "sprite": "figuren/zwillinge.png",
+          "dialog": "cedar-creek-aussen.zwillinge"
+        },
+        {
+          "kennung": "cedarCreek.kettering",
+          "name": "figur.kettering.name",
+          "sprite": "figuren/kettering.png",
+          "dialog": "cedar-creek-aussen.kettering"
+        },
+        {
+          "kennung": "cedarCreek.zwillingeDrinnen",
+          "name": "figur.zwillinge.name",
+          "sprite": "figuren/zwillinge.png",
+          "dialog": "cedar-creek-bibliothek.zwillinge"
+        },
+        {
+          "kennung": "cedarCreek.dunmore",
+          "name": "figur.dunmore.name",
+          "sprite": "figuren/dunmore.png",
+          "dialog": "cedar-creek-drechslerei.dunmore"
         }
       ],
       "ausloeser": [
@@ -671,26 +779,32 @@
           "datei": "karten/weg-maple-cedar-landstrasse.json",
           "name": "ort.wegMapleCedar.landstrasse",
           "innen": false,
-          "musik": "musik/landstrasse.ogg",
+          "musik": "musik/weg.m4a",
           "zustaende": {
             "nadelMapleFalls < 1": "karten/weg-maple-cedar-landstrasse-flohmarkt-leer.json",
             "wegMapleCedarTafelBestanden": "karten/weg-maple-cedar-landstrasse-gatter-offen.json",
             "wegMapleCedarTafelBestanden und nadelMapleFalls < 1": "karten/weg-maple-cedar-landstrasse-gatter-offen-leer.json"
-          }
+          },
+          "geraeusch": "klang/zaun_wind.m4a",
+          "licht": "tag"
         },
         {
           "kennung": "wegMapleCedar.flussweg",
           "datei": "karten/weg-maple-cedar-flussweg.json",
           "name": "ort.wegMapleCedar.flussweg",
           "innen": false,
-          "musik": "musik/landstrasse.ogg"
+          "musik": "musik/weg.fluss.m4a",
+          "geraeusch": "klang/fluss.m4a",
+          "licht": "tag"
         },
         {
           "kennung": "wegMapleCedar.zedernpfad",
           "datei": "karten/weg-maple-cedar-zedernpfad.json",
           "name": "ort.wegMapleCedar.zedernpfad",
           "innen": false,
-          "musik": "musik/landstrasse.ogg"
+          "musik": "musik/weg.zedern.m4a",
+          "geraeusch": "klang/wald_still.m4a",
+          "licht": "dunst"
         }
       ],
       "figuren": [
@@ -706,6 +820,26 @@
           "sprite": "figuren/nia.png",
           "dialog": "weg-maple-cedar.gegnerin",
           "gegner": "wegMapleCedar.nia"
+        },
+        {
+          "kennung": "wegMapleCedar.ada",
+          "name": "figur.ada.name",
+          "sprite": "figuren/ada.png",
+          "dialog": "weg-maple-cedar.ada"
+        },
+        {
+          "kennung": "wegMapleCedar.tessa",
+          "name": "figur.tessa.name",
+          "sprite": "figuren/tessa.png",
+          "dialog": "weg-maple-cedar.tessa",
+          "wenn": "nadelCedarCreek == 0"
+        },
+        {
+          "kennung": "wegMapleCedar.tessaFluss",
+          "name": "figur.tessa.name",
+          "sprite": "figuren/tessa.png",
+          "dialog": "weg-maple-cedar.tessa",
+          "wenn": "nadelCedarCreek > 0 und nadelRiverton == 0"
         }
       ],
       "ausloeser": [
@@ -816,6 +950,16 @@
           "karte": "wegMapleCedar.flussweg",
           "art": "gegenstand",
           "dialog": "weg-maple-cedar.finch_bauer_a"
+        },
+        {
+          "name": "apfelstand",
+          "art": "gegenstand",
+          "dialog": "weg-maple-cedar.apfelstand"
+        },
+        {
+          "name": "faehrstein",
+          "art": "gegenstand",
+          "dialog": "weg-maple-cedar.faehrstein"
         }
       ]
     },
@@ -2680,6 +2824,7 @@
           "name": "weiterDeich",
           "karte": "wegSiliconDelacroix.faehre",
           "art": "uebergang",
+          "dialog": "weg-silicon-delacroix.bug",
           "ziel": {
             "karte": "wegSiliconDelacroix.deich",
             "ausloeser": "zurueckFaehre"
@@ -5222,7 +5367,9 @@
           "kennung": "kuerbishof.hof",
           "datei": "karten/kuerbishof-hof.json",
           "name": "ort.kuerbishof.hof",
-          "innen": false
+          "innen": false,
+          "musik": "musik/weg.kuerbishof.m4a",
+          "geraeusch": "klang/huehner.m4a"
         }
       ],
       "figuren": [

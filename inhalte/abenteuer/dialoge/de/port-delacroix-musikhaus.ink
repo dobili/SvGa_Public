@@ -11,6 +11,7 @@
 EXTERNAL gibFund(kennung)
 EXTERNAL beginnePartie(begegnung)
 
+VAR ambroseSprichtWieder = false
 VAR simultanGedankt = false
 VAR nadelDesertSprings = 0
 VAR musikhausOffen = false
@@ -78,9 +79,10 @@ Eine Bläserin putzt ihre Posaune und lacht dich an. #sprecher:erzaehler
 Mabel. Posaune, zweite Reihe, und dienstags Schach. Bei uns stehen die Figuren jeden Abend anders. #sprecher:blaeser #stimmung:froh
 Wir spielen nie zweimal dasselbe Stück. Warum sollten wir zweimal dieselbe Eröffnung spielen? #sprecher:blaeser
 Wir nennen es Schach960. Die Grundreihe wird gemischt, die Läufer stehen auf verschiedenen Farben, der König irgendwo zwischen den Türmen. #sprecher:blaeser
-Rochiert wird wie immer: König und Turm landen auf denselben Feldern wie im normalen Schach. #sprecher:blaeser
+* [„Und die Rochade?“]
+- Rochiert wird wie immer: König und Turm landen auf denselben Feldern wie im normalen Schach. #sprecher:blaeser
 Zum Rochieren fasst du erst den König an und dann deinen eigenen Turm. #sprecher:blaeser
-Hier hilft dir nichts Auswendiggelerntes, {held}. Nur Grundsätze: Figuren entwickeln, das Zentrum besetzen, den König in Sicherheit bringen. #sprecher:ambrose
+Hier hilft dir nichts Auswendiggelerntes, {held}. Sieh hin, was dasteht. #sprecher:ambrose
 Als Kind fand ich das Unsinn. Mein Vater stimmte Klaviere, und bei mir sollte jede Figur an ihrem Platz stehen. #sprecher:ambrose #stimmung:lacht
 Jetzt lerne ich es eben. Fast zweihundert Jahre zu spät, aber in der richtigen Stadt. #sprecher:ambrose #stimmung:friedlich
 -> blaeser_set1
@@ -107,7 +109,7 @@ Zweites Set. Jetzt spiele ich mit, nicht nur zum Warmwerden. #sprecher:blaeser
 
 === blaeser_set3 ===
 Letztes Set, die Jam-Session. Die ganze Band schaut zu, und ich spiele, so gut ich kann. #sprecher:blaeser
-Sie wird schneller und mutiger. Lass dich nicht mitreißen. Entwickeln, Zentrum, König. Dann darfst du improvisieren. #sprecher:ambrose
+Sie wird schneller und mutiger. Lass dich nicht mitreißen. #sprecher:ambrose
 + [„Ich bin bereit.“]
     ~ beginnePartie("portDelacroix.schach960Set3")
     -> END
@@ -146,5 +148,5 @@ In meiner Stadt, mit gemischten Figuren und einer Posaune. Ich hätte nie gedach
 }
 ~ angesehenLochImDach = true
 Über dir ein Loch im Dach, so groß wie ein Tisch. Ein Lichtstreifen fällt auf die Dielen, mitten in eine Pfütze. #sprecher:erzaehler
-Früher hat hier jemand Trompete gespielt, bis die Fenster zitterten. Jetzt zittert nur das Wasser. #sprecher:ambrose #stimmung:fern
+{ambroseSprichtWieder: Früher hat hier jemand Trompete gespielt, bis die Fenster zitterten. Jetzt zittert nur das Wasser. #sprecher:ambrose #stimmung:fern}
 -> END

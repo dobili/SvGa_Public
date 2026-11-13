@@ -59,6 +59,13 @@ function bleibe(welt, st, h, start, schritte, fertig) {
   }
 }
 
+/** Alle Voraussetzungen einer Quest sind erledigt (Beispiel: mapleFalls.epilog nach der Meisterschaft). */
+function bereit(st, q) {
+  return (q.voraussetzung || []).every((k) =>
+    st.staende.some((x) => x.k === k && x.fertig),
+  );
+}
+
 /** Mit der Monatskarte zu jedem Ort mit offener Quest, bis sie fertig ist; gibt die Ziele zurück. */
 function rueckkehr(welt, st, frist, h) {
   const ziele = [];
@@ -66,19 +73,18 @@ function rueckkehr(welt, st, frist, h) {
     for (const q of welt.quests) {
       const s = st.staende.find((x) => x.k === q.kennung);
       const ort = welt.orte.find((x) => x.kennung === q.ort);
-      // Auch Wege: Odette (finchJagd) wartet auf dem Weg, bis alle Figuren gefunden sind.
-      if (!s || s.fertig || !ort || Date.now() > frist) continue;
+      // Auch Wege: Odette (finchJagd) wartet auf dem Weg, bis alle Figuren gefunden sind. Eine
+      // Hauptquest, die nach dem Abspann beginnt (Epilog auf dem Dachboden), zählt mit, sobald ihre
+      // Voraussetzungen erledigt sind.
+      if ((s && s.fertig) || !ort || Date.now() > frist) continue;
+      if (!s && !(q.haupt && bereit(st, q))) continue;
       ziele.push(q.ort);
       st.zielOrte = new Set([q.ort, ...nachbarorte(welt, [q.ort])]);
-      betrete(welt, st, ort.karten[0].kennung);
+      const startkarte = q.start?.karte || ort.karten[0].kennung;
+      betrete(welt, st, startkarte);
       // Quests mit mehreren Partien (drei Sets Schach960) brauchen je Partie mehrere Anläufe.
-      bleibe(
-        welt,
-        st,
-        h,
-        ort.karten[0].kennung,
-        RUECKKEHR_SCHRITTE,
-        () => s.fertig,
+      bleibe(welt, st, h, startkarte, RUECKKEHR_SCHRITTE, () =>
+        st.staende.some((x) => x.k === q.kennung && x.fertig),
       );
     }
   st.zielOrte = null;

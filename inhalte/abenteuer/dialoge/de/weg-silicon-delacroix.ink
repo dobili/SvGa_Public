@@ -13,7 +13,8 @@
 // Runde 11 (13.11.2026): nach dem Roman (roman/akt3_teil2.md, Kapitel 35): Ambrose am Bug sagt nur
 // noch die Zugnummer („Den, den sie gespielt hätte“), der Delfin, den er nicht sieht (Knoten
 // delfin), am Deich die Kette und „Ich bin hier weggegangen“. Ambrose kommentiert die Funde nicht
-// mehr. Klang: ambrose.verzerrt, delfin; „Nicht jetzt.“ statt „Später.“.
+// mehr (die Muschel nur vor dem Vorwurf, als Vorbereitung auf Claire). Klang: ambrose.verzerrt,
+// delfin; „Nicht jetzt.“ statt „Später.“.
 //
 // Variablen: ausgangWegSiliconDelacroixSchiffskoch und wegSiliconDelacroixTafelBestanden setzt die
 // Hülle (R42); „abgebrochen“ zählt wie nicht gespielt (R35).
@@ -22,6 +23,8 @@ EXTERNAL beginnePartie(begegnung)
 EXTERNAL beginneAufgaben(runde)
 EXTERNAL gibFund(kennung)
 
+VAR bugGesehen = false
+VAR tiefpunktGesehen = false
 VAR ausgangWegSiliconDelacroixSchiffskoch = ""
 VAR wegSiliconDelacroixTafelBestanden = false
 VAR ruizGetroffen = false
@@ -94,10 +97,6 @@ Angebrannt. Passiert. Noch einmal, solange das Meer ruhig ist? #sprecher:schiffs
 ~ guidryGetroffen = true
 Am Deich stapeln Männer und Frauen in Gummistiefeln Sandsäcke. Einer richtet sich auf, die Hand im Kreuz. #sprecher:erzaehler
 Ein Loch im Deich ist wie ein Loch in einer Kette. Man stopft es, bevor es größer wird. Hinterher ist man immer klüger. #sprecher:guidry
-Diese Luft. Salz und Holz. Und Teer. Und etwas Süßes, das fault: die Magnolien. #sprecher:ambrose #stimmung:fern
-Ich kenne diese Luft. #sprecher:ambrose #stimmung:fern
-* [„Du bist hier geboren.“]
-- Ich bin hier weggegangen. Das ist nicht dasselbe. #sprecher:ambrose
 -> END
 
 // ---------------------------------------------------------------- Rätseltafel und Rückweg
@@ -138,7 +137,7 @@ Zwischen zwei Rettungsringen klemmt eine Flasche mit einem gerollten Zettel dari
 ~ muschelGefunden = true
 Im Sand am Deich liegt eine Muschel mit einem kleinen, runden Loch, wie für eine Kette gemacht. #sprecher:erzaehler
 ~ gibFund("muschelMitLoch")
-Meine Schwester sammelte solche. Sie fädelte sie auf und trug sie sonntags. #sprecher:ambrose #stimmung:fern
+{not tiefpunktGesehen: Meine Schwester sammelte solche. Sie fädelte sie auf und trug sie sonntags. #sprecher:ambrose #stimmung:fern}
 -> END
 
 // ---------------------------------------------------------------- Das Kapitänsproblem (Runde 6)
@@ -202,12 +201,20 @@ Auf dem Achterdeck stehen Container mit der Aufschrift „Hochwasserhilfe“. Ei
 -> END
 
 === delfin ===
-// Kapitel 35: Ambrose am Bug. Er antwortet genau und knapp und sagt nur noch die Zugnummer.
 {angesehenDelfin:
     Das Wasser ist ruhig. Am Bug steht Ambrose und sieht nach vorn. #sprecher:erzaehler
     -> END
 }
 ~ angesehenDelfin = true
+Neben dem Schiff springt ein Delfin, grau und glänzend, und ist wieder weg. Mama schreit auf wie ein Kind. #sprecher:erzaehler #klang:delfin
+{bugGesehen: Du drehst dich nach Ambrose um. Er hat es nicht gesehen. Er sieht nach vorn, auf die Küste. #sprecher:erzaehler}
+-> END
+
+// Gutachten L3.5: Ambrose am Bug als Pflichtereignis beim Übergang auf den Deich (orte.json,
+// weiterDeich); einmal.
+=== bug ===
+{bugGesehen: -> END}
+~ bugGesehen = true
 Mama steht viel an der Reling. Ihr spielt auf Junos Reisebrett, das bei jedem Wellenschlag verrutscht. Sie gewinnt öfter. #sprecher:erzaehler
 Ambrose steht am Bug. Früher bedachte er deine Fehler mit einem Seufzen. Jetzt sagt er die Zugnummer. #sprecher:erzaehler #musik:ambrose.verzerrt
 Zug vierzehn. #sprecher:ambrose
@@ -216,9 +223,7 @@ Zug vierzehn. #sprecher:ambrose
 * [„Welchen?“]
 - Den, den sie gespielt hätte. #sprecher:ambrose #stimmung:fern
 Er sagt „sie“. Wie bei einem Menschen. #sprecher:erzaehler #pause
-Neben dem Schiff springt ein Delfin, grau und glänzend, und ist wieder weg. Mama schreit auf wie ein Kind. #sprecher:erzaehler #klang:delfin
-* [Dich nach Ambrose umdrehen]
-- Er hat es nicht gesehen. Er sieht nach vorn, auf die Küste, die als brauner Strich aus dem Dunst kommt. #sprecher:erzaehler
+Vorn kommt die Küste als brauner Strich aus dem Dunst. #sprecher:erzaehler
 -> END
 
 === pumpenhaus ===
@@ -241,7 +246,6 @@ Im Pumpenhaus brummt eine alte Pumpe. An der Tür hängt ein Zettel: „Läuft. 
 ~ buchseiten = buchseiten + 1
 An der Reling hat sich ein Blatt Papier verfangen, nass vom Gischt. Darauf eine gezeichnete Stellung. #sprecher:erzaehler
 ~ gibFund("seite02")
-Der Wind verteilt Stellungen übers ganze Land. Heben wir sie auf. #sprecher:ambrose
 -> END
 
 === finch_turm_a ===
@@ -265,5 +269,4 @@ Unter dem Turm ist ein Feld eingebrannt. #sprecher:erzaehler
 ~ spurenPM = spurenPM + 1
 Neben dem weißen Messwagen liegt eine Mappe im Gras. Auf dem Deckel: „Hochwasserhilfe: 40 Bildschirmtische, Nutzerdaten Port Delacroix“. #sprecher:erzaehler
 ~ gibFund("spurPM3")
-Hilfe, die mitschreibt. Das gefällt mir nicht. #sprecher:ambrose
 -> END

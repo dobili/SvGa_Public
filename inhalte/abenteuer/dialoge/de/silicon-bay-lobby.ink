@@ -24,6 +24,7 @@ VAR siliconBayAuswertungBestanden = false
 VAR victorFalschGesagt = false
 VAR notizbuchseiteFotografiert = false
 VAR roboterGetroffen = false
+VAR tabletNachtGesehen = false
 
 // ---------------------------------------------------------------- Victor
 
@@ -64,6 +65,7 @@ Er sieht an dir vorbei. Dafür hat er, schätzt du, den ganzen Tag gebraucht. #s
 // Kapitel 33: die Auswertung mit Juno; Ambrose sieht auf das dunkle Tablet. Victors „Das ist
 // falsch“ aus der Story-Bibel (Abschnitt 18.1) steht am Schluss.
 ~ victorFalschGesagt = true
+{tabletNachtGesehen:Am Abend, im Hotelzimmer. Du sitzt bis Mitternacht allein auf dem Teppich.|Am Abend, im Hotelzimmer. Juno und du sitzt bis Mitternacht auf dem Teppich.} #sprecher:erzaehler
 Im Training spielt Nova vierundsiebzig Prozent, jede Woche, das ganze Jahr. Im Turnier achtundneunzig. #sprecher:erzaehler #musik:spannung
 Vielleicht ist sie im Turnier besser. Manche sind das. #sprecher:juno
 * [„Nicht so.“]
@@ -72,9 +74,11 @@ Der einzige Zug, der gewinnt. Das zeigt sich erst vierzehn Züge später. #sprec
 * [„Der ist zu gut.“]
 - Kann ein Zug zu gut sein? #sprecher:juno
 * [„Okafor hätte ihn nicht gefunden. Big Joe nicht. Du?“]
-- Ambrose sieht nicht auf die Stellung. Er sieht auf das Tablet, das dunkel daliegt. #sprecher:erzaehler
+- Ambrose sieht nicht auf die Stellung. Er sieht auf das Tablet auf dem Nachttisch, dunkel. #sprecher:erzaehler
+Er antwortet nicht gleich. #sprecher:erzaehler #pause
 Nein. Ich nicht. #sprecher:ambrose #stimmung:fern
-Victor hat zugehört. Zum ersten Mal sagt er es laut. #sprecher:erzaehler
+* [Schlafen gehen]
+- Am nächsten Morgen wartet Victor in der Lobby. Er hat die Berichte auch gesehen. Zum ersten Mal sagt er es laut. #sprecher:erzaehler
 Das ist falsch. #sprecher:victor #stimmung:ernst
 Sag meinem Vater nichts. Noch nicht. Ich muss nachdenken. #sprecher:victor #stimmung:muede
 -> END
@@ -120,6 +124,7 @@ Victor hat Ambrose nicht gehört. Er sagt es, weil er sieht, wohin du schaust. #
 
 // Victor zählt die Generationen ab; Juno macht das Foto (Kapitel 32).
 === vitrine_victor ===
+Er hält den Kopf ein wenig schief. #sprecher:erzaehler
 Mein … der Vater vom Vater vom Großvater meines Vaters. Er hat Brücken gebaut. #sprecher:victor
 Er soll Schach gespielt haben. Per Post, mit irgendwem aus dem Süden. #sprecher:victor
 Mein Vater sagt, es war die einzige Zeitverschwendung, die er sich erlaubt hat. #sprecher:victor
@@ -127,8 +132,8 @@ Mein Vater sagt, es war die einzige Zeitverschwendung, die er sich erlaubt hat. 
 
 === vitrine_foto ===
 ~ notizbuchseiteFotografiert = true
-Juno macht ein Foto. Der Blitz spiegelt sich in der Scheibe. Auf dem Foto sind alle Züge der linken Seite zu lesen. #sprecher:erzaehler
+{tabletNachtGesehen:Du machst ein Foto für Juno.|Juno macht ein Foto.} Der Blitz spiegelt sich in der Scheibe. Auf dem Foto sind alle Züge der linken Seite zu lesen. #sprecher:erzaehler
 Ambrose steht vor dem Glas, die Hand erhoben, und rührt es nicht an. #sprecher:erzaehler
-Er hat sie aufgehoben. Meine Züge. #sprecher:ambrose #stimmung:traurig
+Er hat sie aufgehoben. Meine Züge. In einem Buch. #sprecher:ambrose #stimmung:lacht
 -> END
 

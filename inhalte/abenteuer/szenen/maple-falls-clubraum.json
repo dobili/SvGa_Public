@@ -2,7 +2,7 @@
   "karte": "mapleFalls.clubraum",
   "datei": "karten/maple-falls-clubraum.json",
   "art": "innen",
-  "beschreibung": "Der Clubraum des Schachclubs von Maple Falls in der Schule (26 × 15, KARTENREGELN 10.56): Die Schule ist außen das größte Gebäude des Orts, beim Clubkampf spielen sechs Bretter gleichzeitig. Ein roter Teppich mit goldenem Rand liegt mittig unter sechs runden Holztischen in zwei Reihen zu drei, an jedem zwei grüne Schulstühle dicht am Tisch, auf zweien sitzen Clubmitglieder vor ihren Partien, auf jedem ein aufgebautes Brett und eine Schachuhr; auf dem hinteren rechten Tisch steht das Brett, dem die weiße Dame fehlt, daneben statt der Uhr ein Zettel mit einem roten Fragezeichen. An der Nordwand hängen auf einer Höhe drei Fenster, die Weltkarte, eine Wanduhr, mittig über der Tür die Kreidetafel, die Pinnwand mit der Tabelle des Clubkampfs, das Plakat „Erst zählen“ und eine gerahmte Urkunde. Unter der Tafel steht der grüne Lehrertisch mit einem aufgeschlagenen Buch, Coach Delgado rechts daneben mit Blick in den Raum. Links ein Vitrinenschrank mit Glastüren, obenauf die Pokale des Clubs, darunter der von 1994; daneben ein Bücherregal, auf dem der Globus steht, und ein niedriges Regal mit Schachbüchern; rechts ein zweites Bücherregal und vier graue Schulspinde. An den Seitenwänden je ein gleiches schmales Bücherregal und eine Bank für die Eltern, mit dem Rücken zur Wand und Blick zu den Tischen; in allen vier Ecken Pflanzen. Die Tür liegt mittig in der Südwand.",
+  "beschreibung": "Der Clubraum des Schachclubs von Maple Falls in der Schule (26 × 15, KARTENREGELN 10.56): Die Schule ist außen das größte Gebäude des Orts, beim Clubkampf spielen sechs Bretter gleichzeitig. Ein roter Teppich mit goldenem Rand liegt mittig unter sechs runden Holztischen in zwei Reihen zu drei, an jedem zwei grüne Schulstühle dicht am Tisch, auf zweien sitzen Clubmitglieder vor ihren Partien, auf jedem ein aufgebautes Brett und eine Schachuhr; auf dem hinteren rechten Tisch steht das Brett, dem die weiße Dame fehlt, daneben statt der Uhr ein Zettel mit einem roten Fragezeichen. An der Nordwand hängen auf einer Höhe drei Fenster, die Weltkarte, eine Wanduhr, mittig über der Tür die Kreidetafel, die Pinnwand mit der Tabelle des Clubkampfs, das Plakat „Erst zählen“ und eine gerahmte Urkunde. Unter der Tafel steht der grüne Lehrertisch mit einem aufgeschlagenen Buch, Coach Delgado rechts daneben mit Blick in den Raum. Links eine Glasvitrine mit Holzrahmen, von oben zu sehen, obenauf die Pokale des Clubs, darunter der von 1994; daneben ein Bücherregal, auf dem der Globus steht, und ein niedriges Regal mit Schachbüchern; rechts ein zweites Bücherregal und sechs graue Schulspinde in zwei Blöcken (R011: Bilder mit sichtbarer Oberseite). An den Seitenwänden je eine Bank (die Seitenregale sind weg, R012) für die Eltern, mit dem Rücken zur Wand und Blick zu den Tischen; in allen vier Ecken Pflanzen. Die Tür liegt mittig in der Südwand.",
   "wand": "creme",
   "boden": "holzHell",
   "raster": [
@@ -24,19 +24,19 @@
   ],
   "objekte": [
     {
-      "moebel": "mf13Vitrinenschrank",
-      "feld": [4, 3],
+      "moebel": "mf13Pokalvitrine",
+      "feld": [4, 2],
       "id": "pokalregal"
     },
     {
       "moebel": "mfc8Pokal",
       "auf": "pokalregal",
-      "versatz": [-7, -12]
+      "versatz": [-7, -10]
     },
     {
       "moebel": "mf13PokalSockel",
       "auf": "pokalregal",
-      "versatz": [6, -12]
+      "versatz": [6, -10]
     },
     {
       "moebel": "mfc8RegalNiedrig",
@@ -616,22 +616,6 @@
       "versatz": [0, -4]
     },
     {
-      "moebel": "mf13Spind",
-      "feld": [21, 3]
-    },
-    {
-      "moebel": "mf13Spind",
-      "feld": [22, 3]
-    },
-    {
-      "moebel": "mf13Spind",
-      "feld": [23, 3]
-    },
-    {
-      "moebel": "mf13Spind",
-      "feld": [20, 3]
-    },
-    {
       "moebel": "cc4RegalA",
       "feld": [10, 3]
     },
@@ -650,14 +634,6 @@
     {
       "moebel": "mf4Palme",
       "feld": [23, 12]
-    },
-    {
-      "moebel": "cc6RegalSeiteHell",
-      "feld": [1, 6]
-    },
-    {
-      "moebel": "cc6RegalSeiteGrau",
-      "feld": [24, 6]
     },
     {
       "moebel": "mfc9BankWest",
@@ -839,6 +815,14 @@
       "moebel": "mf5TuerSuedHolz",
       "feld": [13, 14],
       "an_wand": true
+    },
+    {
+      "moebel": "mf13SpindeGrau",
+      "feld": [20, 3]
+    },
+    {
+      "moebel": "mf13SpindeGrau",
+      "feld": [22, 3]
     }
   ],
   "ausloeser": [
@@ -855,7 +839,7 @@
     },
     {
       "name": "pokalvitrine",
-      "feld": [4, 5],
+      "feld": [4, 4],
       "auf_moebel": true
     },
     {
@@ -876,6 +860,10 @@
     {
       "name": "sam",
       "feld": [9, 9]
+    },
+    {
+      "name": "carlaClub",
+      "feld": [16, 9]
     }
   ],
   "belebung": [

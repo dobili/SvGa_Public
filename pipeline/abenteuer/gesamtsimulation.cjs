@@ -156,6 +156,8 @@ function fasseAn(welt, st, ort, hier, o, a) {
   const figur = ort.figuren.find(
     (f) => f.kennung === ort.kennung + "." + o.name,
   );
+  // Figuren mit `wenn` stehen nur, wenn die Bedingung gilt (regeln/figurbedingung.ts).
+  if (figur && !gilt(st, figur.wenn)) return false;
   if (figur) {
     wendeFolgenAn(
       welt,

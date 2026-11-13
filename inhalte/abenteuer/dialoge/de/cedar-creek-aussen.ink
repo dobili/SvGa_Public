@@ -112,7 +112,7 @@ Da bist du ja! Gleich geht es los! #sprecher:mae #stimmung:froh
 // die Hand auf dem Brett liegt (sterne_ambrose). Klang: Stille S20 bis zur ersten Sternschnuppe,
 // dann das Nachtstück.
 ~ sternennachtGesehen = true
-Am Steg liegen Decken. Mae hat ein Teleskop aufgebaut, das größer ist als sie selbst. #sprecher:erzaehler #musik:aus #geraeusch:grillen
+Am Steg liegen Decken. Mae hat ein Teleskop aufgebaut, das größer ist als sie selbst. #sprecher:erzaehler #musik:aus #geraeusch:grillen #licht:nacht #teilchen:sternschnuppen
 Dex hat eine rote Lampe gebastelt, „damit die Augen sich nicht erschrecken“. Alle paar Minuten geht sie aus. #sprecher:erzaehler
 Mrs. Okafor hatte gesagt, eine halbe Stunde. Das war vor zwei Stunden. #sprecher:erzaehler
 Die da ist Kassiopeia. Sieht aus wie ein W. Und das ist der Große Wagen, und das … #sprecher:mae
@@ -151,7 +151,7 @@ Nach Mitternacht geht ihr hinüber in den Lesesaal. Die Matten liegen zwischen d
 // Wunsch als Folge. Hier fällt das dritte „Später“. Klang nach 21_Klangplan.md (S25, S26).
 // Porträtfassung „lacht ohne Spott“ gibt es noch nicht.
 ~ endeAkt1Gesehen = true
-Das Wasser ist rot von der Sonne. Die Zedern stehen schwarz dagegen. #sprecher:erzaehler #musik:cedarCreek.steg
+Das Wasser ist rot von der Sonne. Die Zedern stehen schwarz dagegen. #sprecher:erzaehler #musik:cedarCreek.steg #licht:abend
 Du setzt dich ans Ende der Bretter und legst das Brett neben dich, ohne Handtuch. Er steht am Geländer. #sprecher:erzaehler
 -> fehler_am_steg ->
 * [„Was willst du eigentlich?“]
@@ -366,13 +366,13 @@ Victor spielt weiter auf seinem Tablet. Er sieht nicht auf. #sprecher:erzaehler
 - else:
     Der Linienbus nach Maple Falls fährt jede Stunde. {teamAngekommen:Das Auswärtsspiel läuft noch.|Morgen ist der Clubkampf.} #sprecher:erzaehler
 }
-* [Nach Maple Falls fahren]
++ [Nach Maple Falls fahren]
     Der Bus rollt die Landstraße entlang. Hinter dir werden die Zedern kleiner. #sprecher:erzaehler
     ~ reise("mapleFalls.park", "bushaltestelle")
     -> END
 + [Mit dem Busfahrer reden]
     -> kettering
-* [Noch bleiben]
++ [Noch bleiben]
     -> END
 
 // ---------------------------------------------------------------- Ankunft zu Fuß (W5)
@@ -458,9 +458,9 @@ Der Bus wartet bis heute Abend. Mr. Kettering fährt uns zurück. #sprecher:coac
 === kettering_a ===
 Der Busfahrer hat die Mütze in den Nacken geschoben und liest Zeitung. #sprecher:erzaehler
 Einunddreißig Jahre fahr ich diese Strecke. Jede Kurve hat einen Namen. Die meisten hab ich vergeben. #sprecher:kettering
-* [„Welche Kurve ist die schönste?“]
++ [„Welche Kurve ist die schönste?“]
     Die Witwe. Nach der sieht man den Wasserfall. #sprecher:kettering
-* [„Wird es nicht langweilig?“]
++ [„Wird es nicht langweilig?“]
     Die Kurven sind dieselben. Die Leute nicht. #sprecher:kettering
 - -> bus_zurueck
 

@@ -195,6 +195,19 @@ def _aus_standbild(quelle: Image.Image, breite: int, hoehe: int) -> Image.Image:
 ANSICHTEN = ("seite", "hinten", "vorn")
 
 
+def _im_rahmen(bild: Image.Image, breite: int, hoehe: int) -> Image.Image:
+    """Das Bild unten bündig und waagrecht mittig in einen Rahmen ``breite × hoehe``.
+
+    Warum: Die größeren Fassungen (``*_v2.png``, Haupt-Chat 13.11.2026) sind oben beschnitten und je
+    Ansicht verschieden hoch; die Füße müssen in allen Ansichten auf derselben Linie stehen. Ein
+    Bild, das so groß ist wie der Rahmen, bleibt unverändert; ein größeres verliert oben und an
+    beiden Seiten gleich viel.
+    """
+    rahmen = Image.new("RGBA", (breite, hoehe))
+    rahmen.paste(bild, ((breite - bild.width) // 2, hoehe - bild.height))
+    return rahmen
+
+
 def ansichtenstreifen(lade, muster: str, breite: int, hoehe: int, namen=ANSICHTEN) -> Image.Image:
     """Vier Standbilder nebeneinander (rechts, oben, links, unten) aus den Einzelbildern einer Art.
 
@@ -203,7 +216,7 @@ def ansichtenstreifen(lade, muster: str, breite: int, hoehe: int, namen=ANSICHTE
     Eingaben: ``lade(name) -> Image`` für ``muster.format(ansicht)``, Rahmengröße.
     Beispiel: ``spiel/eigene/reh_{}.png`` → reh_seite, reh_hinten, gespiegelte Seite, reh_vorn.
     """
-    seite, hinten, vorn = (lade(muster.format(a)).crop((0, 0, breite, hoehe)) for a in namen)
+    seite, hinten, vorn = (_im_rahmen(lade(muster.format(a)), breite, hoehe) for a in namen)
     streifen = Image.new("RGBA", (4 * breite, hoehe))
     for i, bild in enumerate((seite, hinten, seite.transpose(Image.Transpose.FLIP_LEFT_RIGHT), vorn)):
         streifen.paste(bild, (i * breite, 0))

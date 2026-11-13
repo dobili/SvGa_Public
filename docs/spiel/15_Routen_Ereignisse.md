@@ -202,7 +202,7 @@ Jeder Abschnitt nennt:
 - **Vorbild:** Fernschach und die Partien, die Bahnwärter mit Lokführern über Jahre spielten.
 - **Wann:** Akt 2, beim ersten Gang zu Fuß.
 - **Geschichte:**
-  1. Am Bahndamm steht ein altes Stellwerk mit Signal. Die Wärterin Marian Marsh, 68, sie,
+  1. Am Bahndamm steht ein altes Stellwerk mit Signal. Die Wärterin Marian Shaw, 68, sie,
      spielt seit 23 Jahren eine Partie mit Lokführer Earl Dubois. Ja, demselben, der in Akt 4 Lkw
      fährt: Er hat den Beruf gewechselt, die Partie nicht.
   2. Ein Zug pro Vorbeifahrt: Er hält eine Tafel aus dem Fenster, sie hängt ihre Antwort an das

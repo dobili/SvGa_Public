@@ -288,6 +288,17 @@
       "art": "boden",
       "zustand": "gebraucht",
       "stil": "laendlich"
+    },
+    "kh12Windrad": {
+      "quelle": "spiel/eigene/windrad.png",
+      "breite": 48,
+      "hoehe": 96,
+      "kollision": true,
+      "art": "windrad",
+      "blick": "unten",
+      "zustand": "alt",
+      "stil": "klassisch",
+      "hinweis": "Windrad am Kürbishof (Ortsblatt, Klangplan windrad)"
     }
   }
 }

@@ -1,11 +1,10 @@
 /**
  * Der Abspann des Schach-Abenteuers (Story-Bibel Akt 4, Technikliste Punkt 7): alle Figuren mit
- * Porträt, die Mitwirkenden und Lizenzen, am Ende Ambroses leiser Gruß als Extra-Abspann.
+ * Porträt, die Mitwirkenden und Lizenzen.
  *
  * Rolle im Gesamtbild: React-Overlay über der Welt; ein Dialog ruft `zeigeAbspann()`, die
- * Oberwelt zeigt ihn nach dem Dialog. Der Extra-Abspann kommt nur, wenn der Leser im Halbfinale den
- * freien Mentor-Zug nicht gespielt hat (R29, Dokument 02, 2.7: „Held und Ambrose spielen gemeinsam“
- * war nicht nötig).
+ * Oberwelt zeigt ihn nach dem Dialog. Ambroses Zettel (Extra-Abspann, R29) liegt seit dem
+ * 13.11.2026 im Epilog auf dem Dachboden (maple-falls-dachboden.epilog), nicht mehr hier.
  * Abhängigkeiten: daten/laden.ts, dialog/Portraet.tsx, texte/texte.ts, app/blattstapel.ts.
  */
 import { useZurueckSchliesst } from "../../app/blattstapel";
@@ -47,7 +46,6 @@ export function Abspann({
   readonly beiSchliessen: () => void;
 }) {
   useZurueckSchliesst(true, beiSchliessen);
-  const extra = stand.dialogvariablen.mentorzugFreiGespielt !== true;
   return (
     <section
       className="abenteuer-menue abenteuer-abspann"
@@ -71,11 +69,6 @@ export function Abspann({
           <li key={k}>{tSpiel(k)}</li>
         ))}
       </ul>
-      {extra && (
-        <p className="abenteuer-abspann-extra" data-testid="abenteuer-abspann-extra">
-          {tSpiel("abspann.extra")}
-        </p>
-      )}
       <button type="button" className="knopf-haupt" onClick={beiSchliessen}>
         {tSpiel("abspann.schliessen")}
       </button>

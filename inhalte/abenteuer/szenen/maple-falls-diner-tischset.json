@@ -1,0 +1,216 @@
+{
+  "karte": "mapleFalls.diner",
+  "datei": "karten/maple-falls-diner-tischset.json",
+  "art": "innen",
+  "wand": "rot",
+  "boden": "fliesenWeiss",
+  "zustand": ["neu", "gebraucht"],
+  "stil": ["klassisch", "industrie", "modern"],
+  "zustand_der_karte": "nadelMapleFalls >= 1 und dinerAbendGesehen",
+  "beschreibung": "Zustand: nach der Nadel von Maple Falls und dem Abend im Diner (nadelMapleFalls >= 1 und dinerAbendGesehen, Ortsblatt Hector Stufe B) hängt das erste gelöste Tischset gerahmt an der Wand neben dem Foto. Das Falls Diner an der Birch Lane, lang und schmal wie ein Wagen (Roman Kap. 7), 16 × 13. Das Gebäude außen ist eine Fassade von 8 Kacheln Breite und 6 Dachreihen; nach KARTENREGELN 10.75 darf der Raum höchstens doppelt so breit und zweieinhalbmal so tief sein. Rote Wände, weiße Fliesen. An der Nordwand links die Tür zur Toilette (nur angedeutet), die Pinnwand mit gelösten Tischsets, die Durchreiche zur kleinen Küche, das Foto von der Eröffnung der Schule und zwei Bilder. Davor die lange rote Theke: links die alte Kasse, daneben auf der Theke der Stapel ungelöster Tischsets und die Kaffeemaschine, zum Personal gedreht. Die Gäste sitzen auf drei roten Hockern an der Nordseite der Theke; dahinter, auf der Südseite, steht Hector, der Besitzer, und die Kellnerin geht dort hin und her (R004). Rechts zwei Sitznischen mit runden Tischen zwischen roten Polsterbänken, in der Ecke ein Spielautomat, links unten eine Palme. Unten rechts die Glastür mit Fußmatte. Laufwege: von der Tür nach oben zu den Nischen und um die Theke herum zu den Hockern.",
+  "raster": [
+    "################",
+    "################",
+    "################",
+    "#..............#",
+    "#..............#",
+    "#..............#",
+    "#..............#",
+    "#..............#",
+    "#..............#",
+    "#..............#",
+    "#..............#",
+    "#..............#",
+    "###########.####"
+  ],
+  "objekte": [
+    {
+      "moebel": "mf12InnentuerHolz",
+      "feld": [1, 0],
+      "an_wand": true
+    },
+    {
+      "moebel": "mf4Pinnwand",
+      "feld": [2, 1],
+      "an_wand": true,
+      "versatz": [0, 4]
+    },
+    {
+      "moebel": "mf12Durchreiche",
+      "feld": [4, 1],
+      "an_wand": true
+    },
+    {
+      "moebel": "wzBild",
+      "feld": [7, 1],
+      "an_wand": true,
+      "versatz": [0, 4]
+    },
+    {
+      "moebel": "mf8BildTeller",
+      "feld": [11, 1],
+      "an_wand": true,
+      "versatz": [0, 4]
+    },
+    {
+      "moebel": "mf8BildPflanze",
+      "feld": [13, 1],
+      "an_wand": true,
+      "versatz": [0, 4]
+    },
+    {
+      "moebel": "mf5Hocker",
+      "feld": [3, 5]
+    },
+    {
+      "moebel": "mf5Hocker",
+      "feld": [5, 5]
+    },
+    {
+      "moebel": "mf5Hocker",
+      "feld": [7, 5]
+    },
+    {
+      "moebel": "mf5Kassentheke",
+      "feld": [1, 6]
+    },
+    {
+      "moebel": "mf5ThekeLinks",
+      "feld": [3, 6],
+      "id": "t0",
+      "bauteil_ok": true
+    },
+    {
+      "moebel": "mf5ThekeMitte",
+      "feld": [5, 6],
+      "bauteil_ok": true
+    },
+    {
+      "moebel": "mf5ThekeMitte",
+      "feld": [6, 6],
+      "bauteil_ok": true
+    },
+    {
+      "moebel": "mf5ThekeMitte",
+      "feld": [7, 6],
+      "bauteil_ok": true
+    },
+    {
+      "moebel": "mf5ThekeRechts",
+      "feld": [8, 6],
+      "bauteil_ok": true
+    },
+    {
+      "moebel": "mf5Kaffeemaschine",
+      "auf": "t0"
+    },
+    {
+      "moebel": "mf12Tischsets",
+      "auf": "t0",
+      "versatz": [-5, 2]
+    },
+    {
+      "moebel": "mf12NischenbankRechts",
+      "feld": [10, 4]
+    },
+    {
+      "moebel": "mf9Rundtisch",
+      "feld": [11, 4]
+    },
+    {
+      "moebel": "mf12NischenbankLinks",
+      "feld": [13, 4]
+    },
+    {
+      "moebel": "mf12NischenbankRechts",
+      "feld": [10, 7]
+    },
+    {
+      "moebel": "mf9Rundtisch",
+      "feld": [11, 7]
+    },
+    {
+      "moebel": "mf12NischenbankLinks",
+      "feld": [13, 7]
+    },
+    {
+      "moebel": "mf8Spielautomat",
+      "feld": [14, 3]
+    },
+    {
+      "moebel": "mf4Palme",
+      "feld": [1, 10]
+    },
+    {
+      "moebel": "mf4Fussmatte",
+      "feld": [11, 11],
+      "versatz": [0, 3]
+    },
+    {
+      "moebel": "sb8GlastuerSued",
+      "feld": [11, 12],
+      "an_wand": true
+    },
+    {
+      "moebel": "mf12TischsetGerahmt",
+      "feld": [9, 1],
+      "an_wand": true,
+      "versatz": [0, 4]
+    }
+  ],
+  "ausloeser": [
+    {
+      "name": "start",
+      "feld": [11, 11],
+      "eigenschaften": {
+        "richtung": "oben"
+      }
+    },
+    {
+      "name": "dinerAusgang",
+      "feld": [11, 12]
+    }
+  ],
+  "figuren": [
+    {
+      "name": "hector",
+      "feld": [5, 9]
+    }
+  ],
+  "belebung": [
+    {
+      "name": "kellnerin",
+      "typ": "statist",
+      "feld": [3, 9],
+      "eigenschaften": {
+        "tun": "geht hinter der Theke hin und her und schenkt Kaffee nach",
+        "wann": "tag",
+        "sagt": "statist.mapleFalls.diner.kellnerin",
+        "von": "1,9",
+        "bis": "8,9"
+      }
+    },
+    {
+      "name": "lkwFahrer",
+      "typ": "statist",
+      "feld": [9, 5],
+      "eigenschaften": {
+        "tun": "isst Pfannkuchen am Ende der Theke",
+        "wann": "tag",
+        "sagt": "statist.mapleFalls.diner.lkwFahrer",
+        "verhalten": "sitzen"
+      }
+    },
+    {
+      "name": "rentnerinnen",
+      "typ": "statist",
+      "feld": [12, 6],
+      "eigenschaften": {
+        "tun": "teilen sich ein Stück Apfelkuchen in der Nische",
+        "wann": "tag",
+        "sagt": "statist.mapleFalls.diner.rentnerinnen",
+        "verhalten": "sitzen"
+      }
+    }
+  ]
+}

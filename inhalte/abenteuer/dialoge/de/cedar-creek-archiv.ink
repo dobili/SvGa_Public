@@ -5,6 +5,9 @@
 // cedarCreek.archivOrdnen), 19 1858 (akt1.erzaehlung1858, Hauptquest cedarCreek.archiv1858),
 // 20 Erinnerung: New York, 1857 (Zugerraten der Partie klassik-paulsen-morphy, Runde
 // cedarCreek.erinnerungNewYork). Einstiege wie in orte.json: „karton“, „programmheft“.
+// Gutachten Teil K (13.11.2026): Oktober 1858 (K1.1), „Gleich.“ statt „Später.“ (K1.5), die Reibung
+// nach New York in beiden Zweigen und auch über den Karton erreichbar (K1.7; einen Dialog, der nach
+// der Runde von selbst startet, kennt die Hülle nicht), Hale und Treppe im Stamm (K1.8).
 // Den Karton 1850–1859 gibt es nach dem Umräumen oder nach dem Clubkampf (Bibel, Szene 18).
 // Ambrose erwähnt 1866 nicht und nennt Hales Vornamen nicht (Bibel, Szene 19).
 // Runde 11 (Roman, Kapitel 12; Dialogprüfung B2, VC53 bis VC73): Ordnen als stilles Tragen mit
@@ -41,6 +44,7 @@ VAR newYorkBesprochen = false
 - not okaforGetroffen: -> karton_fremd
 - not archivGeordnet and (nadelCedarCreek == 0 or ordnenAngeboten): -> ordnen
 - not erzaehlung1858Gesehen: -> karton_1858
+- erinnerungNewYorkBestanden and not newYorkBesprochen: -> programmheft_danach
 - else: -> karton_alltag
 }
 
@@ -94,10 +98,11 @@ Ihre Schritte auf der Wendeltreppe. Dann nichts mehr. #sprecher:erzaehler #pause
 
 === karton_1858 ===
 Im Karton liegt eine Zeitung. Vier Seiten, dünn, die Schrift so klein, dass sie vor den Augen schwimmt. #sprecher:erzaehler
-„Crescent City Herald“, Mai 1858. Darunter ein Schachkalender und ein Heft. #sprecher:erzaehler
+„Crescent City Herald“. Ein Datum im Oktober 1858. Ganz unten im Karton liegt ein Heft. #sprecher:erzaehler
 -> erzaehlung_1858
 
 === erzaehlung_1858 ===
+// Gutachten K1.8: Hale und die Treppe stehen im Stamm; die Wahlen sind nur Einwürfe.
 ~ erzaehlung1858Gesehen = true
 Auf der dritten Seite, zwischen einer Anzeige für Schiffspassagen und dem Preis für Baumwolle, steht ein Absatz. #sprecher:erzaehler
 „Mr. Hale, Ingenieur, schlägt Mr. Whitlock im Match, vier zu drei.“ #sprecher:erzaehler #bild:zeitung1858 #klang:zeitung
@@ -107,24 +112,21 @@ Leg es weg. #sprecher:ambrose #stimmung:bitter #pause:2
 Er steht neben dem Tisch, im Lichtkegel. Zum ersten Mal sieht er alt aus. #sprecher:erzaehler
 * [„Du hast gesagt, es gibt viele Hales.“]
     Es gibt viele. #sprecher:ambrose
-    Die Lampe flackert. Irgendwo tropft Wasser. #sprecher:erzaehler #pause:2
 * [„Ambrose.“]
-    Die Lampe flackert. Irgendwo tropft Wasser. #sprecher:erzaehler #pause:2
-- Vier zu drei. Sieben Partien, in einem Saal über einem Kaffeehaus, und die halbe Stadt stand auf der Treppe. #sprecher:ambrose #musik:ambrose.erinnerung
+- Die Lampe flackert. Irgendwo tropft Wasser. #sprecher:erzaehler #pause:2
+Vier zu drei. Sieben Partien, in einem Saal über einem Kaffeehaus, und die halbe Stadt stand auf der Treppe. #sprecher:ambrose #musik:ambrose.erinnerung
 Ich war siebenundzwanzig und der Beste, den sie hatten. Ich wusste es. Das war das Unglück. #sprecher:ambrose
 * [„Und der andere?“]
-    Ein Ingenieur, Brückenbauer aus dem Norden. Er spielte, wie man eine Brücke baut. #sprecher:ambrose
-    Jeder Stein auf den anderen. Nichts Überflüssiges, nichts Schönes. Ich fand ihn unerträglich. #sprecher:ambrose
-* [Ihn erzählen lassen]
-    Er beginnt, auf und ab zu gehen. Drei Schritte, die Wand, drei Schritte zurück. #sprecher:erzaehler
-- In der siebten stand ich auf Gewinn. Ein Kind hätte sie gewonnen. Einen Bauern nehmen und nach Hause gehen. #sprecher:ambrose
+* [Warten]
+- Er beginnt, auf und ab zu gehen. Drei Schritte, die Wand, drei Schritte zurück. #sprecher:erzaehler
+Ein Ingenieur, Brückenbauer aus dem Norden. Er spielte, wie man eine Brücke baut. #sprecher:ambrose
+Jeder Stein auf den anderen. Nichts Überflüssiges, nichts Schönes. Ich fand ihn unerträglich. #sprecher:ambrose
+In der siebten stand ich auf Gewinn. Ein Kind hätte sie gewonnen. Einen Bauern nehmen und nach Hause gehen. #sprecher:ambrose
 Aber ich sah ein Opfer. Einen Turm, mitten in seine Stellung. Ich wusste nicht einmal, ob es stimmte. #sprecher:ambrose
-* [„Warum hast du es gespielt?“]
-    Weil die Leute auf der Treppe standen. Ich wollte, dass sie in hundert Jahren noch davon reden. #sprecher:ambrose
-    ** [„Hat es gestimmt?“]
-        -> erzaehlung_1858_nein
+Ich habe es gespielt, weil die Leute auf der Treppe standen. Sie sollten in hundert Jahren noch davon reden. #sprecher:ambrose
 * [„Hat es gestimmt?“]
-    -> erzaehlung_1858_nein
+* [Warten]
+- -> erzaehlung_1858_nein
 
 === erzaehlung_1858_nein ===
 Nein. #sprecher:ambrose #pause:3
@@ -178,8 +180,8 @@ Setz dich. Du spielst seine Züge. Ich sage dir nichts. #sprecher:ambrose
 * [„Los geht's.“]
     ~ beginneAufgaben("cedarCreek.erinnerungNewYork")
     -> END
-* [„Nicht jetzt.“]
-    Nicht jetzt? Ausgerechnet heute. Nun gut. #sprecher:ambrose #stimmung:bitter
+* [„Gleich.“]
+    Nun gut. Der Junge sieht ohnehin aus dem Fenster. #sprecher:ambrose
     -> END
 
 === programmheft_danach ===
@@ -197,8 +199,9 @@ Siehst du? Das. Das ist Schach. Nicht dieses Zählen. #sprecher:ambrose #musik:a
         Er sieht auf das Brett aus Licht. Dann auf die Zeitung. Vier zu drei. #sprecher:erzaehler
         Wenn ich das wüsste, säße ich vielleicht nicht in einer Kiste. #sprecher:ambrose
     ** [Nichts sagen]
-* [„Das war wunderschön.“]
-    Ja. #sprecher:ambrose
+* [Nichts sagen]
+    Du denkst an gestern. #sprecher:erzaehler #pause
+    Sieh mich nicht so an. Das habe ich gesagt. #sprecher:ambrose #stimmung:still
 - -> name_im_archiv
 
 // Runde 11 (VC73, Roman Kapitel 12, Schluss): Ambrose nennt {held} zum ersten Mal beim Namen.

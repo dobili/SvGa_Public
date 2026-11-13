@@ -38,9 +38,8 @@ Auf dem Trockner dort klebt jede Woche eine neue Stellung. Wer sie löst, wäsch
 * [„Ich versuche es.“]
     Nur zu. Weiß am Zug, Matt in zwei. #sprecher:boateng
 * [„Ich habe gar keine Wäsche dabei.“]
-    Dann hast du einen Gutschein für nachher. Das ist auch was. #sprecher:boateng
-- Ein Brett auf einer Maschine, die zittert. Und die Figuren halten. #sprecher:ambrose
--> END
+    Dann hast du einen Gutschein für das nächste Mal. Das ist auch was. #sprecher:boateng
+- -> END
 
 === boateng_wartet ===
 Die Maschine ist gleich fertig. Du auch? #sprecher:boateng
@@ -58,9 +57,8 @@ Die Maschine ist gleich fertig. Du auch? #sprecher:boateng
 }
 
 === trockner_raetsel ===
-Das Brett auf dem Trockner vibriert leise, die Figuren halten. Weiß am Zug, Matt in zwei. #sprecher:erzaehler #klang:trockner_figuren
-Der König hinter seinen Bauern. Kein Fenster, keine Luft. #sprecher:ambrose
-Das kennst du jetzt. #sprecher:ambrose
+// Gutachten K1.15: Ambrose schweigt im Waschsalon; der Held findet es selbst.
+Die Figuren zittern leicht, weil die Maschine läuft. Weiß am Zug, Matt in zwei. #sprecher:erzaehler #klang:trockner_figuren
 * [Die Stellung lösen]
     ~ beginneAufgaben("cedarCreek.trocknerStellung")
     -> END
@@ -105,7 +103,8 @@ Sehr alt. Gib mir einen Moment und eine Waschladung Zeit. #sprecher:boateng
 ~ formularEntziffert = true
 Das ist eine alte Schrift. Die Züge sind englisch notiert, K für König, Kt für Springer. #sprecher:boateng
 Er schreibt die Züge Zeile für Zeile in heutiger Notation auf einen Zettel und reicht ihn dir. #sprecher:erzaehler
-Das sind meine Züge. Ein Stück meiner letzten Partie, in meiner eigenen Hand. #sprecher:ambrose #stimmung:traurig
+// Gutachten K1.6: Welche Partie es ist, bleibt offen bis zum Steg.
+Das sind Züge von mir. In meiner eigenen Hand. #sprecher:ambrose #stimmung:traurig #pause:2
 Ich hatte vergessen, wie ich schrieb. #sprecher:ambrose
 * [„Danke, Mr. Boateng.“]
     Gern. Bring mehr davon, wenn du welche findest. #sprecher:boateng

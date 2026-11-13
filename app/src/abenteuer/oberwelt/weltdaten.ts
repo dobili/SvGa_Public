@@ -21,6 +21,7 @@ export { ladeDialog } from "../dialog/dialogdatei";
 import { liesBelebung, statistenbild, statistensatz } from "./belebung";
 import type { SprechblasenInhalt } from "./Sprechblase";
 import { ohneAbwesende } from "../regeln/abwesenheit";
+import { ohneFigurenNachBedingung } from "../regeln/figurbedingung";
 import type { Abenteuerstand } from "../schnittstelle/spielstand";
 import { figurenbildAdresse } from "./figurbogen";
 import { kartenfassung } from "./kartenfassung";
@@ -169,8 +170,13 @@ export async function ladeWelt(
     paketdateiAlsAdresse(fund.ort.art === "erinnerung" ? FIGURBILD : HELDBILD),
     paketdateiAlsAdresse(FIGURBILD),
   ]);
-  // Im Tiefpunkt steht Ambrose auf keiner Karte (regeln/abwesenheit.ts).
-  const karte = ohneAbwesende(geladen, variablen as Abenteuerstand["dialogvariablen"]);
+  // Im Tiefpunkt steht Ambrose auf keiner Karte (regeln/abwesenheit.ts); Figuren mit `wenn`
+  // stehen nur, wenn ihre Bedingung gilt (regeln/figurbedingung.ts).
+  const karte = ohneFigurenNachBedingung(
+    ohneAbwesende(geladen, variablen as Abenteuerstand["dialogvariablen"]),
+    (name) => figurZu(fund.ort, name)?.wenn,
+    variablen,
+  );
   const erinnerung = fund.ort.art === "erinnerung";
   const [stilbild, heldfigur, figurenbilder, moebel, hintergrund, belebungsbilder] =
     await Promise.all([

@@ -51,6 +51,7 @@ def _bedingungen() -> list[tuple[str, str]]:
         ergebnis += [
             (f"{ort['kennung']}.{a['name']}.wenn", a["wenn"]) for a in ort["ausloeser"] if a.get("wenn")
         ]
+        ergebnis += [(f"{f['kennung']}.wenn", f["wenn"]) for f in ort["figuren"] if f.get("wenn")]
     return ergebnis
 
 

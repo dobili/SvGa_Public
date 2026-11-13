@@ -59,3 +59,21 @@ def test_standbild_spiegelt_und_wippt():
     assert bogen.getpixel((0, 3))[0] == 255  # rechts wie die Quelle
     assert bogen.getpixel((2 * 4 + 3, 3))[0] == 255  # links gespiegelt
     assert bogen.getpixel((2 * 4, 4 + 2))[0] == 255  # drittes Laufbild ein Pixel höher
+
+
+def test_ansichten_stehen_unten_buendig():
+    """Größere Fassungen (v2) sind je Ansicht verschieden hoch: Füße auf derselben Rahmenlinie."""
+    image = pytest.importorskip("PIL.Image")
+    from pipeline.abenteuer.belebungsbilder import ansichtenstreifen
+
+    hoehen = {"seite": 3, "hinten": 5, "vorn": 4}
+
+    def lade(name: str):
+        bild = image.new("RGBA", (2, hoehen[name]))
+        bild.putpixel((0, hoehen[name] - 1), (255, 0, 0, 255))  # Fuß unten links
+        return bild
+
+    streifen = ansichtenstreifen(lade, "{}", 4, 6)
+    assert streifen.size == (16, 6)
+    for rahmen in (0, 1, 3):  # rechts, oben, unten (links ist gespiegelt)
+        assert streifen.getpixel((rahmen * 4 + 1, 5))[0] == 255

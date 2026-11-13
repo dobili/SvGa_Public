@@ -62,7 +62,7 @@ Dann sah er uns.
 sich die Hand an der Hose ab. „Wollt ihr die Führung? Kostet nichts. Ich erzähl sie sonst den
 Eidechsen.“
 
-Er erzählte. Achtzehnhundertdreiundsechzig Silber gefunden, viertausend Menschen in zwei
+Er erzählte. Achtzehnhundertdreiundsechzig Gold gefunden, viertausend Menschen in zwei
 Jahren. Drei Saloons, eine Zeitung, ein Opernhaus, das nie fertig wurde. Achtzehnhundertneunundsechzig
 die Ader erschöpft. Achtzehnhundertdreiundsiebzig der Letzte gegangen, ein Schmied, der die
 Tür seiner Schmiede offen ließ, weil es nichts mehr zu stehlen gab.
@@ -102,7 +102,7 @@ Stein gehauen hatte, für einen Mann, dessen Namen er nicht lesen konnte.
 Seine Stimme war ruhig. Es war kein Schmerz darin.
 
 „Nur nicht dort, wo ich wollte.“ Er kniete nieder. Er legte die Hand auf den Stein, und sie
-ging nicht hindurch. „Ein Schmied. Er hieß Tobias. Er hatte Hände wie dieser Kranführer, und
+ging nicht hindurch. „Ein Schmied. Er hieß Gideon. Er hatte Hände wie dieser Kranführer, und
 er hat jeden Springerzug laut mitgezählt. Eins, zwei, und eins.“ Er lächelte. „Ich habe ihn
 ganz vergessen.“
 
@@ -197,7 +197,7 @@ Zimmer mit Rosen.
 In der Tür stand ein Mann. Er war groß, mit einem Lederschurz und Armen wie Balken. Er hatte
 eine Schüssel in den Händen, und er trug sie so vorsichtig, als wäre sie aus Glas.
 
-„Tobias“, sagte ich. Meine Stimme war ein Faden. „Stell es hin. Setz dich. Sieh her.“
+„Gideon“, sagte ich. Meine Stimme war ein Faden. „Stell es hin. Setz dich. Sieh her.“
 
 Er setzte sich auf die Bettkante. Das Eisen ächzte.
 
@@ -211,7 +211,7 @@ die in meine Stellung fährt und einen Bauern nimmt, grob, gierig, ganz unähnli
 der sie führte. Meine Dame, die zurückweicht, ein stilles Feld. Seinen Springer, der
 herüberkommt.
 
-„Und jetzt?“, fragte Tobias. Er hatte sich vorgebeugt. Er hatte die Schüssel vergessen.
+„Und jetzt?“, fragte Gideon. Er hatte sich vorgebeugt. Er hatte die Schüssel vergessen.
 
 „Jetzt gebe ich Schach. Mit der Dame.“
 
@@ -225,7 +225,7 @@ weil er richtig war, weil dahinter ein Endspiel wartete, das ich nicht verstand 
 nicht, und weil ich zum ersten Mal in meinem Leben nicht gewinnen wollte, bevor es so weit
 war.
 
-„Und dann?“, fragte Tobias.
+„Und dann?“, fragte Gideon.
 
 Auf dem Brett stand seine Dame, dort, wo meine gewesen war. Neben meinem König.
 
@@ -248,7 +248,7 @@ Ich sah ihn lange an.
 
 „Das ist er“, sagte ich. „Mein vierzigster. Gib mir das Papier.“
 
-Tobias hielt mir das Blatt. Ich schrieb. Es dauerte. Die Feder kratzte, und zweimal musste
+Gideon hielt mir das Blatt. Ich schrieb. Es dauerte. Die Feder kratzte, und zweimal musste
 ich absetzen.
 
 _40. König schlägt g3._
@@ -261,7 +261,7 @@ Ich schrieb nichts davon. Die Hand tat es nicht mehr.
 
 Ich faltete das Blatt. Ich schrieb den Namen darauf und die Stadt.
 
-„Unten ist der Postreiter“, sagte Tobias. „Er will weiter, vor dem Schnee.“
+„Unten ist der Postreiter“, sagte Gideon. „Er will weiter, vor dem Schnee.“
 
 „Gib es ihm.“ Ich hielt ihm den Brief hin. „Bring ihn nach Norden. Er wartet.“
 
@@ -269,7 +269,7 @@ Ich faltete das Blatt. Ich schrieb den Namen darauf und die Stadt.
 
 „Ein unerträglicher Mann. Der beste Gegner, den ich hatte.“
 
-Tobias nahm den Brief in seine großen Hände. An der Tür blieb er stehen.
+Gideon nahm den Brief in seine großen Hände. An der Tür blieb er stehen.
 
 „Und das Brett, Mister? Wenn … Wem soll ich es geben?“
 
@@ -279,7 +279,7 @@ Bauern. Schwarz zwei Springer und drei. Der weiße König stand im Freien.
 Schwarz am Zug.
 
 „Meiner Schwester“, sagte ich. „Claire. Die Adresse steht innen im Deckel. Sag ihr, sie soll
-darauf aufpassen.“ Ich musste Luft holen. „Und, Tobias. Die Stellung. Die rührt niemand an.
+darauf aufpassen.“ Ich musste Luft holen. „Und, Gideon. Die Stellung. Die rührt niemand an.
 Er ist dran.“
 
 „Wer ist dran?“
@@ -311,9 +311,9 @@ Nachricht seines Todes._“
 
 „Ja.“
 
-„Tobias hat ihn abgegeben.“
+„Gideon hat ihn abgegeben.“
 
-„Tobias hat alles getan, worum ich ihn gebeten habe“, sagte Ambrose. „Er hat das Brett
+„Gideon hat alles getan, worum ich ihn gebeten habe“, sagte Ambrose. „Er hat das Brett
 verpackt und nach Maple Falls geschickt, mit den Figuren festgebunden. Er hat einen Stein
 behauen. Er hat einem Fremden drei Tage lang die Stirn gekühlt und dabei Springerzüge
 gelernt.“ Er drehte sich um. „Ich habe hundertsechzig Jahre lang an Hale gedacht. An jedem
@@ -335,7 +335,7 @@ Unten auf der Straße regte sich nichts. Im Saloon brannte noch die Laterne.
 Ich meine es jedes Mal mehr.“
 
 `[Klang: Nacht in Ghost Town: Grillen, Wind. Zimmer: Stille. Übergang: das Mondlicht wird Kerzenlicht mit einem einzelnen warmen Ton. Erinnerung: nur die Kerze (feines Knistern), Atem, die Feder auf Papier. Ambroses Thema fehlt bis zum Königszug; dann erklingt es einmal, vollständig, auf einem einzelnen Klavier, langsam, und endet auf dem Grundton. Stiefel auf der Treppe, Pferd, Hufe. Die Kerze geht aus: Stille, zwei Sekunden Schwarz. Rückkehr ohne Musik.]`
-`[Bild: Leeres Zimmer mit Tapetenfetzen (Rosen). Erinnerung in Sepia bei Kerzenlicht, der Spieler steuert nichts außer den vier Zügen (Zugerraten). Dünne Hände auf der Decke. Tobias in der Tür mit Schüssel. Der König geht einen Schritt nach vorn (langsam, als einzige Bewegung im Bild). Die Flamme wird blau und erlischt; Schwarzblende.]`
+`[Bild: Leeres Zimmer mit Tapetenfetzen (Rosen). Erinnerung in Sepia bei Kerzenlicht, der Spieler steuert nichts außer den vier Zügen (Zugerraten). Dünne Hände auf der Decke. Gideon in der Tür mit Schüssel. Der König geht einen Schritt nach vorn (langsam, als einzige Bewegung im Bild). Die Flamme wird blau und erlischt; Schwarzblende.]`
 `[Karte: Laden mit Treppe, Zimmer darüber. Erinnerungskarte: dasselbe Zimmer 1866 mit Bett, Tisch, Stuhl und Brett.]`
 
 ---
@@ -359,16 +359,17 @@ Er blieb in der Tür stehen und sah zu.
 
 Ich legte das Brett auf den Tisch. Altes Holz, dunkle Ecken. _A. W. 1857._
 
-Es war leer. Seit Port Delacroix war es leer gewesen, seit ein Mädchen mit einem Skateboard
-darauf die Pferde herumgeschoben hatte.
+Es war leer. Die Fernpartie hatte nie darauf gestanden, seit ich es kannte; nur ein Mädchen mit
+einem Skateboard hatte in Port Delacroix die Pferde darauf herumgeschoben.
 
 Ich legte das Tagebuch daneben. Juno hatte es mir gegeben, aufgeschlagen bei einer
-Doppelseite, die sie seit einem Jahr führte. Neun kleine Zettel waren eingeklebt, jeder mit
-vier Zügen, jeder aus einer anderen Stadt. Ein Bleistiftzettel von einer Parkbank. Die Kante
-eines Programmhefts. Ein Stück von einem Partieformular. Eine Seite aus einem Schulheft, in
-Kiras Schrift. Der letzte war von Ward, in einer Schrift wie gestochen.
+Doppelseite, die sie seit einem Jahr führte. Acht kleine Zettel waren eingeklebt, jeder mit
+vier Zügen, aus sieben Städten. Ein Bleistiftzettel von einer Parkbank. Die Kante eines
+Programmhefts. Ein Stück von einem Partieformular. Ein Streifen, der nach Werkstatt roch. Der
+letzte war von Ward, in einer Schrift wie gestochen.
 
-Dazu ein Brief in einem Umschlag, mit einem gebrochenen Siegel.
+Das neunte Stück lag lose daneben: ein Brief in einem Umschlag, mit einem gebrochenen Siegel,
+und auf seiner Rückseite vier Züge in einer Schrift, die ich inzwischen kannte.
 
 Victor legte sein Buch daneben. Er schlug es hinten auf. Die Seite lag da, ausgefranst an
 einem Rand.
@@ -434,7 +435,7 @@ Er fasste den Bauern an. Er hielt ihn einen Augenblick fest.
 
 „Sag ihm“, sagte Ambrose, und seine Stimme war nicht ganz fest, „es wäre mir eine Ehre.“
 
-Victor schob den Bauern vor. Zwei Felder.
+Victor schob den Bauern vor. Ein Feld.
 
 Es war das Leiseste, was ich je gehört habe. Holz auf Holz.
 
@@ -479,8 +480,8 @@ und sehr schön. Es war eine Brücke aus zwei Pferden.
 nicht ganz. „Genau wie er. Nichts Überflüssiges.“
 
 Ich zählte Felder. Mein König ging vor, Schritt um Schritt. Sein König kam ihm entgegen. Mein
-Bauer in der Mitte, der letzte von vieren, der noch laufen konnte. Sein Bauer am Rand, den
-Hale im März 1867 zwei Felder vorgeschoben hatte.
+Bauer in der Mitte, der letzte von vieren, der noch laufen konnte. Sein Bauer auf der
+zweiten Linie, den Hale im März 1867 ein Feld vorgeschoben hatte.
 
 Im sechzigsten Zug sah ich es.
 
@@ -627,7 +628,7 @@ versucht.“
 
 „Weil ich nicht weiß, ob ich dann zurückkäme. Und es gibt noch etwas, das ich sehen will.“
 
-Er setzte sich. Neben mich, auf die Kante, die Füße im Staub. Es war das fünfte Mal. Ich hatte
+Er setzte sich. Neben mich, auf die Kante, die Füße im Staub. Es war das vierte Mal. Ich hatte
 mitgezählt.
 
 „Noch eine Partie“, sagte Ambrose. „Deine. Gegen ihn. In dieser großen Halle, vor allen
@@ -708,7 +709,7 @@ Ich starrte ihn an.
 „Es ist der schönste, den ich habe“, sagte er.
 
 `[Klang: Saloon: Stimmen, Gaskocher, Junos Lachen, gedämpft durch die Wand. Draußen: Grillen, Wind, sehr weit. Das Nachtstück, zum dritten und letzten Mal, mit Ambroses Thema als Gegenstimme. „Bleib“: die Musik hält an, ein einzelner gehaltener Ton. „Ein Möbelstück“: weiter, leiser. Sternschnuppe: der Glockenton. Schluss: Thema des Helden und Ambroses Thema miteinander, im Wechsel, wie ein Gespräch.]`
-`[Bild: Hauptstraße im Mondlicht, Sternenhimmel über dem Friedhof. Ambrose sitzt neben dem Helden auf der Gehsteigkante, Füße im Staub (das fünfte und letzte Mal). Er betrachtet seine Hand; sie ist durchsichtiger als sonst. Sternschnuppe lang über den ganzen Himmel.]`
+`[Bild: Hauptstraße im Mondlicht, Sternenhimmel über dem Friedhof. Ambrose sitzt neben dem Helden auf der Gehsteigkante, Füße im Staub (das vierte Mal; das fünfte folgt auf der Treppe der Arena). Er betrachtet seine Hand; sie ist durchsichtiger als sonst. Sternschnuppe lang über den ganzen Himmel.]`
 `[Karte: Ghost Town bei Nacht, etwas weniger entsättigt als am Tag (die Farbe kehrt leise zurück). Wahl „Bleib.“ oder „Ich weiß.“; beide führen zum selben Gespräch.]`
 
 ---
@@ -719,9 +720,9 @@ Ich starrte ihn an.
 | ------------------------------------------------------------------------------------------------------------------------------------------------------------------------------ | ----------------------------------------------------------------------------------------------------------------------------------------------------------------------- | ------------------------------------------------------------------------------------------------------------------------------------------------------ |
 | Die Farben gehen auf der Staubstraße stufenweise aus dem Bild.                                                                                                                 | Der Übergang in die Vergangenheit als Erlebnis (steht als Sepia in der Bibel).                                                                                          | Sättigung der Karten sinkt in Stufen.                                                                                                                  |
 | Das Zimmer über dem Laden mit Rosentapete; „Dreihundertzwölf“.                                                                                                                 | Ein Ort für die Erinnerung; ein Bild für die schlaflosen Nächte.                                                                                                        | Kleine Innenkarte.                                                                                                                                     |
-| Grabstein ohne Namen mit eingeritztem Brett; Zeile aus dem Kirchenbuch; der Schmied Tobias.                                                                                    | Erklärt, wie das Brett zu Claire kam, und gibt Ambrose einen Menschen in seinen letzten Tagen.                                                                          | Großansicht des Steins; Text von Mr. Pruitt.                                                                                                           |
+| Grabstein ohne Namen mit eingeritztem Brett; Zeile aus dem Kirchenbuch; der Schmied Gideon.                                                                                    | Erklärt, wie das Brett zu Claire kam, und gibt Ambrose einen Menschen in seinen letzten Tagen.                                                                          | Großansicht des Steins; Text von Mr. Pruitt.                                                                                                           |
 | Juno legt eine gelbe Blume auf e4.                                                                                                                                             | Juno nimmt Abschied auf ihre Art; einziger Farbfleck.                                                                                                                   | Kleine Szene; die Blume bleibt liegen.                                                                                                                 |
-| Die letzte Kerze ausführlich: Hales 39. Zug hat ihn erreicht; er zeigt Tobias die letzten Züge; sein vierzigster ist der König, der „einen Schritt nach vorn, ins Freie“ geht. | Der letzte Zug bekommt Bedeutung und verbindet sich mit dem laufenden König aus Akt 4. Keine Einzelheiten zum Sterben (Stilregel).                                      | Zugerraten der vier Züge; der Königszug als langsame Einzelbewegung.                                                                                   |
+| Die letzte Kerze ausführlich: Hales 39. Zug hat ihn erreicht; er zeigt Gideon die letzten Züge; sein vierzigster ist der König, der „einen Schritt nach vorn, ins Freie“ geht. | Der letzte Zug bekommt Bedeutung und verbindet sich mit dem laufenden König aus Akt 4. Keine Einzelheiten zum Sterben (Stilregel).                                      | Zugerraten der vier Züge; der Königszug als langsame Einzelbewegung.                                                                                   |
 | Ambrose hat Hale „irgendwann um den zwanzigsten Zug“ verziehen, schreibt es aber nicht mehr.                                                                                   | Beide konnten es einander nicht mehr sagen; Gegenstück zu Hales Brief.                                                                                                  | Erzählerzeile im Flashback.                                                                                                                            |
 | „Die Stellung rührt niemand an. Er ist dran.“ stammt aus dieser Nacht.                                                                                                         | Erklärt die Sätze aus Kapitel 3 und 4.                                                                                                                                  | Rückbezug.                                                                                                                                             |
 | Ambrose: „Hundertsechzig Jahre an Hale gedacht und nicht einmal an den Schmied.“                                                                                               | Erkenntnis: Er hat nur auf einen gewartet.                                                                                                                              | Zeile nach dem Flashback.                                                                                                                              |

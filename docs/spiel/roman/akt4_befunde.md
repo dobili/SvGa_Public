@@ -72,7 +72,7 @@ die Aussage, nach dem Halbfinale der Gang. Die Vorrunde darf als Stellungsduelle
 
 ## 5. Neue Figuren, Dinge, Motive
 
-- Figuren: der Schmied Tobias (1866), Mr. Dorrance (nur als Name); der Mann im grauen Anzug.
+- Figuren: der Schmied Gideon (1866), Mr. Dorrance (nur als Name); der Mann im grauen Anzug.
 - Dinge: leere Tagebuchseite mit Glitzerrahmen, verschnittener Falke, Plakat mit acht Gesichtern,
   das graue Gerät, Victors Schachbuch mit Hales Seite, Sams Stock mit neun Kerben, Tapete mit Rosen,
   Stein mit eingeritztem Brett, gelbe Blume, Doppelseite mit neun Zetteln, Karte mit goldenem Rand.
@@ -95,3 +95,31 @@ die Aussage, nach dem Halbfinale der Gang. Die Vorrunde darf als Stellungsduelle
 | T26 | Eine Karte liegt nur in einer Partie zusätzlich im Deck (goldener Rand)                 | Kapitel 63     |
 | T27 | Abspann als Folge von Standbildern mit Musik; spielbare Schlussszene                    | Kapitel 66     |
 | T28 | Klangquelle mit Reichweite auf der Karte (Rosies Wagen, Remys Trompete)                 | Kapitel 31, 35 |
+
+## 7 Entscheidungen nach der Prüfung des Gutachters (Teil E, 13.11.2026)
+
+Im Roman berichtigt:
+
+- **Hales Antwort 40… b5** ist ein Schritt auf der b-Linie (kein Randbauer, nicht zwei Felder).
+- **Neun Fragmente aus sieben Orten:** Im Tagebuch kleben acht Zettel; das neunte Stück ist die
+  Rückseite von Hales Brief. Kein Zettel von Kira.
+- **Ambrose sitzt fünfmal:** Der Gehsteig in Ghost Town ist das vierte Mal, die Treppe der Arena das
+  fünfte und letzte.
+- **Coach Delgado** unterschrieb im September, in der Woche nach Victors Besuch; Startgeld für
+  sieben Kinder.
+- **Kades Gerät:** zwei Jahre bei sich getragen, erst in der Tasche, zuletzt im Schuh.
+- **Ward** sagt es Mama, „bevor ihr fahrt“ (vor dem Clubkampf); der Held bleibt sechs Tage.
+- **Kira** ist 13 („zwei Jahre jünger als ich“). **Ghost Town** ist eine Goldgräberstadt.
+- **Der Schmied von 1866 heißt Gideon** (Tobias bleibt der Turniergegner aus der Bibel).
+- **Victor** sah das Gerät im Januar und sagte es „keinem, der etwas hätte tun können“.
+- Kleinigkeiten: Der Pfarrer spielt weiterhin nicht; „Unterarme wie Big Joe“; Brett im
+  Geigenkasten; Graham Hale: „acht Jahre“; Owen ist im Epilog acht; eine Nacht im Hotel vor dem
+  Turnier; im Finale lässt Victor den Helden ins Spanische; das Nachtstück kommt genau dreimal vor.
+
+Es bleibt beim Roman, die Bibel wird angeglichen: Der Großvater hält Hales Seite für wertlos, und
+Graham Hale weiß nichts von dem Buch (E1.2). Ein Remis genügt für die Nadel in Summit City (E1.8).
+Das Drachenfest liegt vor Victors Niederlage und ist an einem anderen Abend besuchbar (E1.4). Kira
+sagt zum Falken „Den hab ich verschnitten. Aber er zieht trotzdem.“ (E1.7).
+
+Offen gelassen, weil der Roman hier bewusst schweigt: was Mama und Mr. Pruitt im Saloon von den
+Gesprächen mit Ambrose halten (E4.9); eine öffentliche Geste von Graham Hale (E1.6).

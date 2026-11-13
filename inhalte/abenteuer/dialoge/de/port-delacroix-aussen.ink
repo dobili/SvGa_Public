@@ -3,12 +3,17 @@
 //
 // Szenen der Bibel: Ankunft über den Deich (Ende von Szene 62), 64 Bretter sammeln (Quest
 // portDelacroix.wiederaufbau, Besuch 1: vier Häuser), 65 Batiste am Kai (Begegnung
-// portDelacroix.batiste, immun gegen Sprüche; beim ersten Sieg Zweite Chance und Kühler Kopf statt
+// portDelacroix.batiste, immun gegen Sprüche; beim ersten Sieg Zweite Chance und Bauernkompass statt
 // Pokerface, das keine eigene Wirkung hat), Gebäckstand von Mrs. Arceneaux (Laden
 // portDelacroix.gebaeckstand), Weiterreise mit dem Wüstenzug (wenn nadelPortDelacroix).
 // Seit Akt 4 führt am Kai ein Luftboot in den Bayou (bayou, wenn musikhausOffen, bayou.ink).
 // Einstiege wie in orte.json: ankunft_zu_fuss, deich, bayou, batiste, arceneaux, brett_haus1 bis
 // brett_haus4, gebaeckstand, wuestenzug.
+//
+// Kapitel 37 nach dem Roman: Bretter erbitten (niemand schlägt die Tür zu), Batiste am Boot,
+// Slicks Postkarte am Abend; Ambrose fehlt, in seinem Kopf ist es still „wie wenn ein Zahn fehlt“.
+// Runde 11 (13.11.2026): Ankunft nach dem Roman (roman/akt3_teil2.md, Kapitel 35): die braune
+// Wasserlinie an allen Häusern, die Ruine des Musikhauses, die Trompete zwischen Trauer und Tanz.
 //
 // Ambrose schweigt nach dem Vorwurf (Szene 63) bis zu den Nachfahren (Szene 68,
 // ambroseSprichtWieder); seine Zeilen hängen daran. Variablen: ausgangPortDelacroixBatiste und
@@ -41,15 +46,22 @@ VAR angesehenBauzaun = false
 
 === ankunft_zu_fuss ===
 {ankunftPortDelacroixGesehen:
-    Der Deichweg endet am Kai von Port Delacroix. #sprecher:erzaehler
+    Der Deichweg endet am Kai von Port Delacroix. An allen Häusern läuft der braune Strich entlang. #sprecher:erzaehler
     -> END
 }
 ~ ankunftPortDelacroixGesehen = true
-Der Deichweg endet am Kai. Boote schaukeln, an den Häusern stehen Leitern, auf einem Dach liegt eine Plane. #sprecher:erzaehler
-Aus einem Zelt klingt eine Trompete. Jemand hat ein Schild an einen Bauzaun gehängt: „Wir bauen wieder auf.“ #sprecher:erzaehler
+Schmale Häuser mit Balkonen aus geschmiedetem Eisen, Fensterläden in Grün und Blau, Palmen. Auf vielen Dächern liegen Planen. #sprecher:erzaehler
+An den Hauswänden läuft in Hüfthöhe ein brauner Strich entlang, von Haus zu Haus, schnurgerade. #sprecher:erzaehler
+* [„Was ist das?“]
+- Da stand das Wasser. #sprecher:mutter
+Am Kai ist eine Lücke. Mauern ohne Dach, durch die leeren Fenster sieht man den Himmel. #sprecher:erzaehler
+Über dem Eingang hängt ein Schild an einer einzigen Schraube: „Maison de Musique. Club d’Échecs, depuis 1889.“ #sprecher:erzaehler
+Das Musikhaus. Mein Vater hat die Orgel darin gestimmt. #sprecher:ambrose #stimmung:fern
+Ich habe unter der Empore gesessen und gewartet, bis er fertig war. #sprecher:ambrose #stimmung:fern
+* [Warten]
+- Er macht einen Schritt darauf zu. Dann noch einen. #sprecher:erzaehler
+Aus einem Zelt neben der Ruine kommt eine Trompete, erst langsam, dann plötzlich schnell, als könne sie sich nicht entscheiden. #sprecher:erzaehler #musik:karte
 Ich geh zum Notzelt, da brauchen sie Hände. Das Turnier ist in der Turnhalle. Wir sehen uns heute Abend. #sprecher:mutter
-Hier. Ich bin hier geboren. Nicht in New Orleans, das habe ich immer erzählt, weil es besser klang. #sprecher:ambrose #stimmung:fern #pause
-Ich war acht, als wir umzogen. Ich hatte es fast vergessen. #sprecher:ambrose
 -> END
 
 === deich ===
@@ -75,8 +87,9 @@ Zurück auf den Deichweg zur Fähre. #sprecher:erzaehler
 - brettHaus1Gesehen: -> haus_schon_besucht
 }
 ~ brettHaus1Gesehen = true
-Eine alte Frau öffnet die Tür und reicht dir ein Brett aus dunklem Holz, die Ecken vom Wasser gewellt. #sprecher:erzaehler
-Das hat mein Großvater geschnitzt. Nehmt es. Es soll wieder gespielt werden. #sprecher:erzaehler
+An fremde Türen klopfen, in einer Stadt, in der man dich gestern einen Betrüger genannt hat. Niemand schlägt die Tür zu. #sprecher:erzaehler
+Ein alter Mann gibt dir ein Brett, dessen eine Hälfte heller ist als die andere. #sprecher:erzaehler
+„Die dunkle Seite stand im Wasser. Spielt sich noch.“ #sprecher:erzaehler
 -> brett_gezaehlt
 
 === brett_haus2 ===
@@ -85,8 +98,8 @@ Das hat mein Großvater geschnitzt. Nehmt es. Es soll wieder gespielt werden. #s
 - brettHaus2Gesehen: -> haus_schon_besucht
 }
 ~ brettHaus2Gesehen = true
-Ein Mann mit Gipsarm schiebt mit dem Fuß eine Kiste zur Tür. Darin klappern Figuren, zwei Damen fehlen. #sprecher:erzaehler
-Die Damen hat der Sturm genommen. Nehmt den Rest. Ein König ohne Dame ist immer noch ein König. #sprecher:erzaehler
+Eine Frau mit einem Säugling auf dem Arm bringt Figuren in einem Marmeladenglas. Zwei Bauern fehlen. #sprecher:erzaehler
+Sie hat Muscheln dazugelegt. #sprecher:erzaehler
 -> brett_gezaehlt
 
 === brett_haus3 ===
@@ -95,8 +108,8 @@ Die Damen hat der Sturm genommen. Nehmt den Rest. Ein König ohne Dame ist immer
 - brettHaus3Gesehen: -> haus_schon_besucht
 }
 ~ brettHaus3Gesehen = true
-Zwei Kinder kommen aus einem Hof gerannt und drücken dir ein Klappbrett aus Pappe in die Hand. #sprecher:erzaehler
-Das ist unseres. Aber wir spielen eh lieber im Club. Wenn es den wieder gibt. #sprecher:erzaehler
+In der Rue des Facteurs hängt ein Brett an der Wand eines Wohnzimmers wie ein Bild. Ein Junge steigt auf einen Stuhl und hängt es ab. #sprecher:erzaehler
+„Das hat mein Großvater geschnitzt. Nehmt es. An der Wand spielt keiner.“ #sprecher:erzaehler
 -> brett_gezaehlt
 
 === brett_haus4 ===
@@ -106,19 +119,25 @@ Das ist unseres. Aber wir spielen eh lieber im Club. Wenn es den wieder gibt. #s
 }
 ~ brettHaus4Gesehen = true
 Im Fenster eines Hauses mit neuer Tür steht ein Marmorbrett. Die Besitzerin trägt es dir selbst hinaus. #sprecher:erzaehler
-Das hat mein Großvater geschnitzt. Gut, eigentlich gekauft. Aber er hat es geliebt. Nehmt es. #sprecher:erzaehler
+Jemand reicht dir im Vorbeigehen etwas Heißes in einer Serviette, Teig mit Zucker, ohne zu fragen, wer du bist. #sprecher:erzaehler
 -> brett_gezaehlt
 
 === brett_gezaehlt ===
 ~ bretterGesammelt = bretterGesammelt + 1
 {bretterGesammelt >= 4: -> bretter_vollstaendig}
-{bretterGesammelt} von vier Häusern. Noch ein paar Türen. #sprecher:erzaehler
+{bretterGesammelt} von vier Häusern. Aus jedem zweiten Haus kommt Hämmern. #sprecher:erzaehler
+{bretterGesammelt == 1: Es redet niemand neben dir. Es sagt niemand „Zug vierzehn“. Es ist still in deinem Kopf, wie wenn ein Zahn fehlt. #sprecher:erzaehler}
 -> END
 
 === bretter_vollstaendig ===
-Vier Bretter, drei Kisten Figuren, ein Klappbrett aus Pappe. Mehr kannst du kaum tragen. #sprecher:erzaehler
-In der Turnhalle sortiert Miss Odile die Figuren auf die Tische und singt dabei leise. #sprecher:erzaehler
-Es fühlt sich gut an, ganz allein etwas Gutes zu tun. Und einsam. #sprecher:erzaehler
+In der Turnhalle sortiert Miss Odile, was du gebracht hast. Was nicht zusammenpasst, legt sie auch zusammen. #sprecher:erzaehler #musik:odile
+Sie singt dabei leise, etwas auf Französisch, das klingt, als wäre es sehr alt. #sprecher:erzaehler
+Remy stimmt am anderen Ende seine Trompete. Er sieht auf den Karren. Dann sieht er weg. #sprecher:erzaehler
+* [Zum Zelt gehen]
+- Am Abend liegt an deinem Platz im Zelt eine Postkarte. Vorn eine Brücke im Regen. #sprecher:erzaehler #musik:riverton.postkarte
+„Maple Falls! Wir spielen jetzt unter der alten Steinbrücke. Dach haben wir, Wände nicht. Tamsin sagt, das zählt als Pavillon.“ #sprecher:erzaehler
+„Elf Kinder letzten Samstag. Der Stein liegt in der Mitte. Bring den Springer mal vorbei, er fehlt uns. – S.“ #sprecher:erzaehler
+Du liest sie dreimal. Dann baust du auf Junos Reisebrett die Stellung von Batiste auf und spielst sie allein noch einmal durch. #sprecher:erzaehler
 -> END
 
 === haus_ohne_auftrag ===
@@ -141,29 +160,37 @@ Hier warst du schon. Jemand winkt dir aus dem Fenster zu. #sprecher:erzaehler
 
 === batiste_erstes_treffen ===
 ~ batisteGetroffen = true
-Am Kai flickt ein Mann mit Strohhut ein Boot. Auf einer Kiste neben ihm steht ein Brett. #sprecher:erzaehler
-Batiste. Ich flicke Boote, seit es Boote gibt. Fast. #sprecher:batiste
-Junge Leute reden. Das Wasser hört nicht zu. #sprecher:batiste
-Ich auch nicht. Spar dir deine Sprüche. #sprecher:batiste
+Am Kai liegt ein Boot kieloben auf zwei Böcken. Ein Mann streicht Pech in die Fugen. Auf einem Eimer steht ein Brett. #sprecher:erzaehler
+Du bist der mit dem Rucksack. #sprecher:batiste
+* [„Ja.“]
+- Hm. Remy ist ein guter Junge. Er hat im Sturm seine Trompete über den Kopf gehalten, vier Stunden lang. #sprecher:batiste
+Wer so was gemacht hat, wird empfindlich, wenn einer mit Glas an der Jacke kommt. #sprecher:batiste
+Setz dich. Ohne Uhr. Uhren sind was für Leute, die irgendwohin müssen. #sprecher:batiste
 -> batiste_angebot
 
 === batiste_angebot ===
-Eine Stellung, du hast Weiß. Ohne Uhr, das Meer hat auch keine. #sprecher:batiste
+Eine Stellung, in der nichts hängt und alles davon abhängt, welchen Bauern man wohin stellt. Er redet beim Spielen, über das Wasser. #sprecher:erzaehler
 + [„Gut.“]
     ~ beginnePartie("portDelacroix.batiste")
     -> END
-+ [„Später.“]
++ [„Nicht jetzt.“]
     Ich bin hier. Das Boot auch. #sprecher:batiste
     -> END
 
 === batiste_nach_sieg ===
-Gut gespielt. Keine Worte, nur Züge. So mag ich das. #sprecher:batiste
 {not batisteKarteGegeben:
     ~ batisteKarteGegeben = true
-    Mach ein Gesicht wie das Wasser. Dann weiß keiner, was darunter ist. #sprecher:batiste
-    Er schiebt dir zwei Karten über die Kiste. Eine für einen zweiten Versuch, eine für einen kühlen Kopf. #sprecher:erzaehler
+    Du gewinnst nicht schön. Aber allein. #sprecher:erzaehler
+    Na also. Jetzt hat es auch keiner gehört. #sprecher:batiste
+    Mach ein Gesicht wie das Wasser. Dann weiß keiner, was darunter ist. Auch du nicht, eine Weile. #sprecher:batiste
+    // „Kühler Kopf“ hat schon Mr. Quinn geschenkt; Batiste gibt den Bauernkompass (Bauer um Bauer,
+    // ohne Uhr; Dokument 11 schlug ihn für Port Delacroix vor).
+    Er schiebt dir zwei Karten über die Kiste. Eine für einen zweiten Versuch, eine mit einem Bauern und einer Kompassnadel. #sprecher:erzaehler
+    Welchen Bauern man wohin stellt. Das ist das Ganze. #sprecher:batiste
     ~ gibKarte("zweiteChance")
-    ~ gibKarte("kuehlerKopf")
+    ~ gibKarte("bauernkompass")
+- else:
+    Gut gespielt. Keine Worte, nur Züge. So mag ich das. #sprecher:batiste
 }
 + [„Noch eine Partie.“]
     ~ beginnePartie("portDelacroix.batiste")
@@ -172,11 +199,11 @@ Gut gespielt. Keine Worte, nur Züge. So mag ich das. #sprecher:batiste
     -> END
 
 === batiste_nach_niederlage ===
-Das Wasser war ruhiger als du. Noch einmal? #sprecher:batiste
+Junge Leute reden. Das Wasser hört nicht zu. Noch einmal? #sprecher:batiste
 + [„Noch einmal.“]
     ~ beginnePartie("portDelacroix.batiste")
     -> END
-+ [„Später.“]
++ [„Nicht jetzt.“]
     -> END
 
 // ---------------------------------------------------------------- Mrs. Arceneaux am Gebäckstand

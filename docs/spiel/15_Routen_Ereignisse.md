@@ -202,7 +202,7 @@ Jeder Abschnitt nennt:
 - **Vorbild:** Fernschach und die Partien, die Bahnwärter mit Lokführern über Jahre spielten.
 - **Wann:** Akt 2, beim ersten Gang zu Fuß.
 - **Geschichte:**
-  1. Am Bahndamm steht ein altes Stellwerk mit Signal. Die Wärterin Rosalind Kettering, 68, sie,
+  1. Am Bahndamm steht ein altes Stellwerk mit Signal. Die Wärterin Marian Marsh, 68, sie,
      spielt seit 23 Jahren eine Partie mit Lokführer Earl Dubois. Ja, demselben, der in Akt 4 Lkw
      fährt: Er hat den Beruf gewechselt, die Partie nicht.
   2. Ein Zug pro Vorbeifahrt: Er hält eine Tafel aus dem Fenster, sie hängt ihre Antwort an das
@@ -210,7 +210,7 @@ Jeder Abschnitt nennt:
   3. Heute hat sie sich die Hand verstaucht und kann die Tafel nicht hochhalten. Der Güterzug kommt
      in zwei Minuten.
   4. {held} hängt den Zug auf, aber nicht ihren ersten Einfall: Der würde eine Figur einstellen.
-- **Schach:** „Was hängt?“ (Kapitel 1). {held} findet in Rosalinds Stellung, warum ihr Zug eine
+- **Schach:** „Was hängt?“ (Kapitel 1). {held} findet in Marians Stellung, warum ihr Zug eine
   Figur verliert, und zeigt einen besseren.
 - **Später:**
   - **Akt 4:** Earl erzählt im Diner von Weg 7, dass die Partie remis endete, „nach 31 Jahren,

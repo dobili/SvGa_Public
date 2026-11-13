@@ -11,6 +11,10 @@
 // notizbuchseiteFotografiert der eigene Merker; den Gegenstand gibt die Quest beim Knoten
 // „vitrine_foto“.
 
+// Runde 11 (13.11.2026): Vitrine nach dem Roman (roman/akt3_teil1.md, Kapitel 32): Victor sagt den
+// Text der Führung auf, Ambrose erkennt seine Züge, Juno macht das Foto. Klang nach 21_Klangplan.md
+// (Stille S46, dann ambrose.victor.einstimmig).
+
 EXTERNAL beginneAufgaben(runde)
 
 VAR held = "Du"
@@ -34,7 +38,7 @@ VAR roboterGetroffen = false
 
 === victor_erstes_treffen ===
 ~ victorLobbyGetroffen = true
-Victor sitzt auf einem weißen Sofa unter einem Bildschirm mit dem Gesicht seines Vaters. #sprecher:erzaehler
+Victor sitzt auf dem weißen Sofa der Lobby, unter einem Bildschirm mit dem Gesicht seines Vaters. #sprecher:erzaehler
 Mein Vater hält heute drei Reden. Ich muss bei allen klatschen. #sprecher:victor #stimmung:muede
 Geh erst zu Dr. Lin. Sie ist die Einzige hier, die noch ein Holzbrett hat. #sprecher:victor
 -> END
@@ -44,25 +48,35 @@ Theo misst dich gerade, oder? Er misst alle. Mich auch. #sprecher:victor
 -> END
 
 === victor_berichte ===
-Victor sieht sich um, dann zieht er einen Stapel Papier aus seiner Tasche. #sprecher:erzaehler
-Spielberichte der Akademie. Novas Turnierpartien und ihre Trainingspartien. #sprecher:victor
-Ich sollte sie nicht haben. Sieh sie dir an. Mit deinem eigenen Kopf, nicht mit unserem Programm. #sprecher:victor
-Ein Bericht über Partien. Man liest ihn wie einen Brief: Was steht zwischen den Zeilen? #sprecher:ambrose
+Victor steht vor dir, als hätte er schon eine Weile gewartet. Dann hält er dir einen Speicherstift hin. #sprecher:erzaehler
+Die Spielberichte der Akademie. Alle Partien vom letzten Jahr, Training und Turnier. Schau sie dir an. #sprecher:victor
+* [„Warum?“]
+- Weil ich sie mir angeschaut habe. Und ich will, dass jemand anders auch. #sprecher:victor
+Er sieht an dir vorbei. Dafür hat er, schätzt du, den ganzen Tag gebraucht. #sprecher:erzaehler
 + [Die Partien auswerten]
     ~ beginneAufgaben("siliconBay.auswertung")
     -> END
-* [„Später.“]
+* [„Nicht jetzt.“]
     Gut. Aber nicht zu spät. #sprecher:victor
     -> END
 
 === victor_falsch ===
+// Kapitel 33: die Auswertung mit Juno; Ambrose sieht auf das dunkle Tablet. Victors „Das ist
+// falsch“ aus der Story-Bibel (Abschnitt 18.1) steht am Schluss.
 ~ victorFalschGesagt = true
-Achtundneunzig Prozent im Turnier, vierundsiebzig im Training. Das ist kein Talent. #sprecher:erzaehler
-… Das ist falsch. #sprecher:victor #stimmung:ernst
-Vor einer Partie hab ich gesehen, wie sie etwas ins Ohr gesteckt hat. Ich dachte, ein Kopfhörer. #sprecher:victor
+Im Training spielt Nova vierundsiebzig Prozent, jede Woche, das ganze Jahr. Im Turnier achtundneunzig. #sprecher:erzaehler #musik:spannung
+Vielleicht ist sie im Turnier besser. Manche sind das. #sprecher:juno
+* [„Nicht so.“]
+- Zug einunddreißig, ein Finale im Herbst: ein König ein Feld zur Seite, mitten im Angriff, ohne Grund. #sprecher:erzaehler
+Der einzige Zug, der gewinnt. Das zeigt sich erst vierzehn Züge später. #sprecher:erzaehler
+* [„Der ist zu gut.“]
+- Kann ein Zug zu gut sein? #sprecher:juno
+* [„Okafor hätte ihn nicht gefunden. Big Joe nicht. Du?“]
+- Ambrose sieht nicht auf die Stellung. Er sieht auf das Tablet, das dunkel daliegt. #sprecher:erzaehler
+Nein. Ich nicht. #sprecher:ambrose #stimmung:fern
+Victor hat zugehört. Zum ersten Mal sagt er es laut. #sprecher:erzaehler
+Das ist falsch. #sprecher:victor #stimmung:ernst
 Sag meinem Vater nichts. Noch nicht. Ich muss nachdenken. #sprecher:victor #stimmung:muede
-Ein Hale, der zweifelt. Das habe ich nicht kommen sehen. #sprecher:ambrose
-Zu meiner Zeit hieß das: sich selbst nicht belügen. Es ist die schwerste Übung von allen. #sprecher:ambrose
 -> END
 
 === victor_alltag ===
@@ -89,19 +103,32 @@ Er lächelt mit Absicht. Das ist unheimlicher als ein Geist. Glaube mir, ich wei
     Die Vitrine „Hale – Ingenieure seit 1850“. Das Notizbuch liegt aufgeschlagen, die Seite fehlt noch immer. #sprecher:erzaehler
     -> END
 }
-In einer Vitrine steht: „Hale – Ingenieure seit 1850“. Ein Rechenschieber, eine Brückenzeichnung, ein altes Notizbuch. #sprecher:erzaehler
-Auf der linken Seite stehen Schachzüge in altmodischer Schrift. Die rechte Seite ist herausgerissen. #sprecher:erzaehler
-Das sind meine Züge. #sprecher:ambrose #pause
-Und das … das war seine Antwort. Auf der Seite, die fehlt. #sprecher:ambrose #stimmung:traurig
+Hale. Ingenieure seit 1850. Von der Brücke zum Algorithmus. #sprecher:victor
+Victor sagt es auf, weil es zur Führung gehört. Hinter dem Glas liegt ein Rechenschieber aus Elfenbein. #sprecher:erzaehler
+Daneben eine Zeichnung, braun vom Alter, lauter Dreiecke. Du erkennst sie, bevor du die Unterschrift liest. #sprecher:erzaehler
+Auf einem Pult ein Notizbuch. Schachzüge in zwei Spalten, jeder Buchstabe wie mit dem Lineal gezogen. #sprecher:erzaehler
+Die linke Seite ist voll. Die rechte ist herausgerissen, sauber, dicht am Falz. #sprecher:erzaehler #musik:aus #geraeusch:aus
+* [Warten]
+- Ambrose macht keinen Laut. Diesmal weißt du, dass du warten musst. #sprecher:erzaehler #pause:3
+Das sind meine Züge. Die linke Spalte. Jeden einzelnen. #sprecher:ambrose #stimmung:still #musik:ambrose.victor.einstimmig
+Ich habe sie in Briefe geschrieben und gewartet. Und er hat sie eingetragen. Mit einem Lineal, vermutlich. #sprecher:ambrose #stimmung:still
+Und die Seite, die fehlt. Das war seine Antwort. #sprecher:ambrose #stimmung:traurig
 Mein Vater sagt, die Seite war schon immer weg. #sprecher:victor
-* [Ein Foto machen]
-    -> vitrine_foto
-* [Nur ansehen]
-    Du siehst lange hin. Dann machst du doch ein Foto. #sprecher:erzaehler
-    -> vitrine_foto
+Victor hat Ambrose nicht gehört. Er sagt es, weil er sieht, wohin du schaust. #sprecher:erzaehler
+* [„Wer hat das geschrieben?“]
+    -> vitrine_victor
+
+// Victor zählt die Generationen ab; Juno macht das Foto (Kapitel 32).
+=== vitrine_victor ===
+Mein … der Vater vom Vater vom Großvater meines Vaters. Er hat Brücken gebaut. #sprecher:victor
+Er soll Schach gespielt haben. Per Post, mit irgendwem aus dem Süden. #sprecher:victor
+Mein Vater sagt, es war die einzige Zeitverschwendung, die er sich erlaubt hat. #sprecher:victor
+-> vitrine_foto
 
 === vitrine_foto ===
 ~ notizbuchseiteFotografiert = true
-Auf dem Foto sind alle Züge der linken Seite zu lesen. #sprecher:erzaehler
-Irgendwo gibt es diese Seite. Und ich will wissen, was er geantwortet hat. #sprecher:ambrose
+Juno macht ein Foto. Der Blitz spiegelt sich in der Scheibe. Auf dem Foto sind alle Züge der linken Seite zu lesen. #sprecher:erzaehler
+Ambrose steht vor dem Glas, die Hand erhoben, und rührt es nicht an. #sprecher:erzaehler
+Er hat sie aufgehoben. Meine Züge. #sprecher:ambrose #stimmung:traurig
 -> END
+

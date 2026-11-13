@@ -21,138 +21,228 @@
   "objekte": [
     {
       "moebel": "cc4Pflanze",
-      "feld": [1, 2]
+      "feld": [
+        1,
+        2
+      ]
     },
     {
       "moebel": "cc4Waschmaschine",
-      "feld": [2, 2]
+      "feld": [
+        2,
+        2
+      ]
     },
     {
       "moebel": "cc4Waschmaschine",
-      "feld": [3, 2]
+      "feld": [
+        3,
+        2
+      ]
     },
     {
       "moebel": "cc4Waschmaschine",
-      "feld": [4, 2]
+      "feld": [
+        4,
+        2
+      ]
     },
     {
       "moebel": "cc4Waschmaschine",
-      "feld": [5, 2]
+      "feld": [
+        5,
+        2
+      ]
     },
     {
       "moebel": "cc12TrocknerBrett",
-      "feld": [6, 2],
+      "feld": [
+        6,
+        2
+      ],
       "id": "trockner"
     },
     {
       "moebel": "cc12Trockner",
-      "feld": [7, 2]
+      "feld": [
+        7,
+        2
+      ]
     },
     {
       "moebel": "cc4Pinnwand",
-      "feld": [6, 1],
+      "feld": [
+        6,
+        1
+      ],
       "an_wand": true,
-      "versatz": [0, 3]
+      "versatz": [
+        0,
+        3
+      ]
     },
     {
       "moebel": "wzFenster",
-      "feld": [9, 1],
+      "feld": [
+        9,
+        1
+      ],
       "an_wand": true
     },
     {
       "moebel": "cc4Waschmittelregal",
-      "feld": [11, 1]
+      "feld": [
+        11,
+        1
+      ]
     },
     {
       "moebel": "cc4AutomatLinks",
-      "feld": [12, 4],
+      "feld": [
+        12,
+        4
+      ],
       "bauteil_ok": true
     },
     {
       "moebel": "cc4Falttisch",
-      "feld": [4, 5],
+      "feld": [
+        4,
+        5
+      ],
       "id": "platte"
     },
     {
       "moebel": "cc4Falttisch",
-      "feld": [6, 5],
+      "feld": [
+        6,
+        5
+      ],
       "id": "platte2"
     },
     {
       "moebel": "cc4Waeschekorb",
-      "feld": [3, 5]
+      "feld": [
+        3,
+        5
+      ]
     },
     {
       "moebel": "rv5Wartebank",
-      "feld": [1, 7],
+      "feld": [
+        1,
+        7
+      ],
       "id": "sitze"
     },
     {
       "moebel": "cc12Comicheft",
       "auf": "sitze",
-      "versatz": [-16, 2]
+      "versatz": [
+        -16,
+        10
+      ]
     },
     {
       "moebel": "cc4WaeschekorbGruen",
-      "feld": [4, 7]
+      "feld": [
+        4,
+        7
+      ]
     },
     {
       "moebel": "cc4Pflanze",
-      "feld": [12, 8]
+      "feld": [
+        12,
+        8
+      ]
     },
     {
       "moebel": "sb8GlastuerSued",
-      "feld": [7, 10],
+      "feld": [
+        7,
+        10
+      ],
       "an_wand": true
     },
     {
       "moebel": "cc4Fussmatte",
-      "feld": [7, 9],
-      "versatz": [0, 3]
+      "feld": [
+        7,
+        9
+      ],
+      "versatz": [
+        0,
+        3
+      ]
     }
   ],
   "ausloeser": [
     {
       "name": "start",
-      "feld": [7, 9],
+      "feld": [
+        7,
+        9
+      ],
       "eigenschaften": {
         "richtung": "oben"
       }
     },
     {
       "name": "waschsalonAusgang",
-      "feld": [7, 10]
+      "feld": [
+        7,
+        10
+      ]
     },
     {
       "name": "zettelTurm",
-      "feld": [7, 4]
+      "feld": [
+        7,
+        4
+      ]
     },
     {
       "name": "trockner",
-      "feld": [6, 4],
+      "feld": [
+        6,
+        4
+      ],
       "auf_moebel": true
     },
     {
       "name": "comicheft",
-      "feld": [1, 9],
+      "feld": [
+        1,
+        9
+      ],
       "auf_moebel": true
     },
     {
       "name": "automat",
-      "feld": [11, 5]
+      "feld": [
+        11,
+        5
+      ]
     }
   ],
   "figuren": [
     {
       "name": "boateng",
-      "feld": [8, 6]
+      "feld": [
+        8,
+        6
+      ]
     }
   ],
   "belebung": [
     {
       "name": "kundin",
       "typ": "statist",
-      "feld": [10, 7],
+      "feld": [
+        10,
+        7
+      ],
       "eigenschaften": {
         "tun": "spielt Blitz am Telefon, während die Wäsche läuft",
         "wann": "tag",
@@ -162,7 +252,10 @@
     {
       "name": "mannMitZeitung",
       "typ": "statist",
-      "feld": [3, 8],
+      "feld": [
+        3,
+        8
+      ],
       "eigenschaften": {
         "tun": "wartet mit der Zeitung auf den Trockner",
         "wann": "tag",
@@ -171,6 +264,12 @@
       }
     }
   ],
-  "zustand": ["neu", "gebraucht"],
-  "stil": ["modern", "einfach"]
+  "zustand": [
+    "neu",
+    "gebraucht"
+  ],
+  "stil": [
+    "modern",
+    "einfach"
+  ]
 }

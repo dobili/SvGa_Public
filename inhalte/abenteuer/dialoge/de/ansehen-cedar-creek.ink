@@ -14,6 +14,7 @@ VAR angesehenGlobus = false
 VAR angesehenSchildFluestern = false
 VAR angesehenBoxerfoto = false
 VAR angesehenWasserfleck = false
+VAR angesehenTreppenhaus = false
 VAR angesehenZettelTurm = false
 VAR angesehenComicheft = false
 VAR angesehenAutomat = false
@@ -50,6 +51,17 @@ VAR angesehenAutomat = false
 -> END
 
 // ---------------------------------------------------------------- Archiv
+
+// Tür zum Treppenhaus im Vorraum (Karte aus Runde 11, Auslöser treppenhaus in orte.json).
+=== treppenhaus ===
+{angesehenTreppenhaus:
+    Die Tür zum Treppenhaus bleibt zu. Oben knarrt eine Diele. #sprecher:erzaehler
+- else:
+    ~ angesehenTreppenhaus = true
+    Eine Tür mit einem Messingschild: „Treppenhaus. Magazin und Lesezimmer im ersten Stock, nur für Personal.“ #sprecher:erzaehler
+    Abgeschlossen. Von oben riecht es nach noch mehr Büchern. #sprecher:erzaehler
+}
+-> END
 
 === boxerfoto ===
 {angesehenBoxerfoto:

@@ -8,6 +8,7 @@
 // trocknerStellungBestanden setzt die Hülle (regeln/dialogvariablen.ts).
 
 EXTERNAL beginneAufgaben(runde)
+EXTERNAL schalteSteckbrief(gegner, zeile)
 
 VAR boatengGetroffen = false
 VAR boatengLagos = false
@@ -37,9 +38,8 @@ Auf dem Trockner dort klebt jede Woche eine neue Stellung. Wer sie löst, wäsch
 * [„Ich versuche es.“]
     Nur zu. Weiß am Zug, Matt in zwei. #sprecher:boateng
 * [„Ich habe gar keine Wäsche dabei.“]
-    Dann hast du einen Gutschein für später. Das ist auch was. #sprecher:boateng
-- Ein Brett auf einer Maschine, die zittert. Und die Figuren halten. #sprecher:ambrose
--> END
+    Dann hast du einen Gutschein für das nächste Mal. Das ist auch was. #sprecher:boateng
+- -> END
 
 === boateng_wartet ===
 Die Maschine ist gleich fertig. Du auch? #sprecher:boateng
@@ -57,9 +57,8 @@ Die Maschine ist gleich fertig. Du auch? #sprecher:boateng
 }
 
 === trockner_raetsel ===
-Das Brett auf dem Trockner vibriert leise, die Figuren halten. Weiß am Zug, Matt in zwei. #sprecher:erzaehler #klang:trockner_figuren
-Der König hinter seinen Bauern. Kein Fenster, keine Luft. #sprecher:ambrose
-Das kennst du jetzt. #sprecher:ambrose
+// Gutachten K1.15: Ambrose schweigt im Waschsalon; der Held findet es selbst.
+Die Figuren zittern leicht, weil die Maschine läuft. Weiß am Zug, Matt in zwei. #sprecher:erzaehler #klang:trockner_figuren
 * [Die Stellung lösen]
     ~ beginneAufgaben("cedarCreek.trocknerStellung")
     -> END
@@ -68,8 +67,7 @@ Das kennst du jetzt. #sprecher:ambrose
 
 === boateng_lagos ===
 // Runde 11 (VC47 bis VC50, Roman Kapitel 11): Die Lagos-Geschichte als Pointe, Ambrose schweigt.
-// Dieselben Sätze sollen als Steckbriefzeile von Mrs. Okafor erscheinen; dafür fehlt noch eine
-// Zeilenart mit freiem Text.
+// Danach steht die Geschichte als Steckbriefzeile von Mrs. Okafor im Clubtagebuch.
 ~ boatengLagos = true
 Mr. Boateng nickt, zieht das Paketband ab und stellt eine neue Stellung auf. #sprecher:erzaehler
 Die alte hat mir ein Mädchen gezeigt. Vor fünfzig Jahren. Sie kam aus Lagos und hat im ganzen Staat Turniere gespielt. #sprecher:boateng
@@ -81,6 +79,8 @@ Sie hat gewartet. Immer. Bis einer zu früh gekommen ist. #sprecher:boateng #sti
 * [Nichts fragen]
     Er streicht das Paketband glatt und lässt sich Zeit. #sprecher:erzaehler #pause:2
 - Sie stellt Bücher ins Regal. Gegenüber. #sprecher:boateng
+// Steckbrief von Mrs. Okafor, Zeile 3 (Freitext steckbrief.okafor.lagos, gegner.json).
+~ schalteSteckbrief("cedarCreek.okafor", 3)
 -> END
 
 === boateng_alltag ===
@@ -103,7 +103,8 @@ Sehr alt. Gib mir einen Moment und eine Waschladung Zeit. #sprecher:boateng
 ~ formularEntziffert = true
 Das ist eine alte Schrift. Die Züge sind englisch notiert, K für König, Kt für Springer. #sprecher:boateng
 Er schreibt die Züge Zeile für Zeile in heutiger Notation auf einen Zettel und reicht ihn dir. #sprecher:erzaehler
-Das sind meine Züge. Ein Stück meiner letzten Partie, in meiner eigenen Hand. #sprecher:ambrose #stimmung:traurig
+// Gutachten K1.6: Welche Partie es ist, bleibt offen bis zum Steg.
+Das sind Züge von mir. In meiner eigenen Hand. #sprecher:ambrose #stimmung:traurig #pause:2
 Ich hatte vergessen, wie ich schrieb. #sprecher:ambrose
 * [„Danke, Mr. Boateng.“]
     Gern. Bring mehr davon, wenn du welche findest. #sprecher:boateng

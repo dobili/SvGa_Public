@@ -206,12 +206,6 @@
           "wenn": "aufbruchGesehen"
         },
         {
-          "name": "fotoGrandma",
-          "karte": "mapleFalls.wohnzimmer",
-          "art": "gegenstand",
-          "dialog": "ansehen-maple-falls.foto_grandma"
-        },
-        {
           "name": "kartonKueche",
           "karte": "mapleFalls.wohnzimmer",
           "art": "gegenstand",
@@ -538,6 +532,12 @@
           "karte": "cedarCreek.bibliothek",
           "art": "gegenstand",
           "dialog": "ansehen-cedar-creek.schild_fluestern"
+        },
+        {
+          "name": "treppenhaus",
+          "karte": "cedarCreek.bibliothek",
+          "art": "gegenstand",
+          "dialog": "ansehen-cedar-creek.treppenhaus"
         },
         {
           "name": "boxerfoto",
@@ -1049,7 +1049,7 @@
             "karte": "riverton.wohnwagen",
             "ausloeser": "wohnwagenAusgang"
           },
-          "wenn": "clubkampfRivertonBesprochen",
+          "wenn": "rivertonMontagGesehen",
           "dialog": "riverton-aussen.wohnwagen_zu"
         },
         {
@@ -2131,6 +2131,7 @@
           "name": "weiterGlasbruecke",
           "karte": "wegIronwoodSilicon.raststaette",
           "art": "uebergang",
+          "dialog": "weg-ironwood-silicon.glasbruecke",
           "ziel": {
             "karte": "wegIronwoodSilicon.glasbruecke",
             "ausloeser": "zurueckRaststaette"

@@ -540,7 +540,7 @@ Kapitels gelöst) sie nennt, gemerkt in `lernkarte<Kennung>`. „Was droht?“ r
 ±0,5 (AUSGEGLICHEN_BIS), Ende „vereinbart“. Schmeichelei: überheblich mindestens 1,3, Stärke neu
 gerechnet. Sprüche fehlen in der Deckwahl außer gegen Straßengegner. Kartentasche (Gegenstand,
 300 Münzen): Deck 4. Nicht gebaut: Schutzengel (bräuchte eine Bewertung jedes eigenen Zuges
-während der Bot rechnet), Spickzettel, Pokerface, Limo, Lupe, Reisebrett, Notizbuch.
+während der Bot rechnet; Stand überholt, siehe „Karte „Schutzengel“: Ambrose hält den Zug auf (13.11.2026)“), Spickzettel, Pokerface, Limo, Lupe, Reisebrett, Notizbuch.
 
 **Antworten aus Akt 3 (niedrig-1, 8.11.2026):** Konter für dash, batiste, buck, joggerin,
 schiffskoch. Immunitäten für die Gegnerprofile von Akt 3 (vorgemerkt): Dash grossesMaul und
@@ -596,7 +596,7 @@ mit `#stimmung:jung` die junge Fassung. Ein Test prüft, dass jeder Sprecher ein
 
 **Akt 3 vollständig in Daten (8.11.2026, abends):** Funde, Läden (Foodtruck Silicon Bay,
 Gebäckstand Port Delacroix, Antiquariat Desert Springs), Erinnerung 1858 (Bird–Morphy ab Zug 11 mit
-Schwarz, bei Mira), Pokerface und Schutzengel nicht als eigene Karten (ersetzt durch vorhandene).
+Schwarz, bei Mira), Pokerface und Schutzengel nicht als eigene Karten (ersetzt durch vorhandene; für den Schutzengel überholt, siehe den Eintrag vom 13.11.2026: Ambrose hält den Zug auf).
 Buck bleibt bei Abbildung 1.36: 8.44 steht bei Stockfish Tiefe 28 auf +2,84, zu viel für ein
 Stellungsduell nach R13 (Befund mittel-1). R29 gebaut: Zwischen Tiefpunkt und Versöhnung steht der
 Mentor-Zug nicht zur Wahl im Deck (`mentorzugGesperrt`).
@@ -955,3 +955,11 @@ Hauptchats, in Arbeit bei mittel-2: Maßstab ist der Verlust an Stellungsbewertu
 Bauerneinheiten gegenüber dem besten Zug, oder ein übersehenes Matt); als Begründung höchstens die
 Art des Fehlers („Da hängt etwas.“, „Dein König.“), nie der bessere Zug; in Partien ohne Ambrose
 (Finale) ist die Karte gesperrt. Dauer und Häufigkeit bleiben wie in Dokument 11.
+
+## Abgabe des Vertikalschnitts als interaktive Weltkarte (13.11.2026)
+
+Wunsch des Autors: Die überarbeiteten Karten von Akt 1 bekommt er wieder als Übersichtsseite wie
+bei der letzten Durchsicht: Karten einzeln an- und ausschalten, die Übergänge zwischen den Karten
+sehen, das Ganze verschieben und zoomen. Mit dieser Seite arbeitet er am besten. Sie entsteht aus
+den gebauten Karten (Hintergründe gerendert) und wird unter derselben Adresse wie zuletzt
+aktualisiert.

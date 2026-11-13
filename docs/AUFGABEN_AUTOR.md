@@ -1654,15 +1654,16 @@ die 40 häufigsten Gambits. Ein paar Zahlen (Anteil an allen Partien des Bandes)
       fehlte, und wieder gekündigt. (h) Das Spiel endet auf dem Dachboden: Der Held bringt dem
       Nachbarskind Lily die erste Frage bei, „Was hängt?“. Empfehlung: alles so übernehmen. Im Roman
       umgesetzt, im Spiel noch nicht; Widerspruch genügt.
-- [ ] RO10. **Schönere Figuren und Porträts:** Die gekauften LimeZu-Pakete enthalten Generatoren
-      für Figuren und Porträts; daraus stammen die jetzigen (Figuren 16×32 Pixel, Porträtköpfe
-      32×32). Ein fertiges Paket, das modern, plastischer und groß genug für rund 100 Figuren mit
-      Kindern und Alten ist, hat die Recherche nicht gefunden; zwei schöne Kandidaten scheiden
-      wegen der Lizenz aus (Mana Seed verbietet Projekte mit KI-erzeugtem Code, der Generator von
-      RPG Maker gilt nur für RPG-Maker-Spiele). Empfehlung: (a) Porträts zuerst, mit Gemini wie bei
-      den Tieren, je Figur ein Grundbild und für Hauptfiguren fünf bis sechs Ausdrücke, auf 64×64
-      heruntergerechnet; (b) Figuren als Probe mit fünf Stück (Kind, Jugendliche, Erwachsener,
-      Alte, Ambrose) auf zwei Wegen: Gemini und PixelLab (pixellab.ai, 40 Generierungen gratis,
-      danach 24 $ für einen Monat, Rechte bei uns); erst danach über alle Figuren entscheiden.
-      Der Autor probiert beides aus (13.11.2026): Probeprompt für Gemini und Link zu PixelLab
-      stehen im Chat; er schickt die Bilder, danach wird entschieden.
+- [ ] RO10. **Neue Figuren und Porträts:** Der Stil steht (Juno-Probe). Arbeitsweise mit
+      Prompt-Vorlage, Größen und Ablauf: `docs/spiel/24_Figuren_und_Portraets.md`. Kurz:
+      PixelLab, Create from Text, Low Top-Down, 32×32, Highly detailed; Kinder mit „short,
+      child height“; Animation Template motion, Skeleton v3, Walking für South, East, North, West;
+      ZIP an den Hauptchat. Danach Porträt in Gemini mit dem Standbild von vorn als Vorlage. Für
+      Juno fehlen noch die Laufbilder North und West. Weitere Figuren erst, wenn Juno im Spiel
+      läuft (mittel-2 baut die Anzeige um). Offen: wann das Abo (24 $ im Monat) nötig wird.
+- [ ] RO11. **Lernkarten für abgeschlossene Buchkapitel:** Der Kartenplan belohnt im Spiel, wer in
+      der App ein Kapitel des Buches abschließt, mit einer Lernkarte. Das schickt den Spieler
+      mittelbar zum Buch und passt nicht zu einem Spiel, das für sich steht. Empfehlung: Die
+      Lernkarten gibt es stattdessen für die Lektionen im Spiel selbst (Club, Trainer, gesammelte
+      Seiten); in der Buch-App kann es später eine eigene Belohnung geben. Noch nicht umgesetzt;
+      Zustimmung oder Widerspruch genügt.

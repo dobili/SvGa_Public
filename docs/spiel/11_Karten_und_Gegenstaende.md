@@ -72,8 +72,7 @@ die Szenen für die neuen Gegenstände stehen in `05_Story_Bibel.md` (Szenen 10a
 3. **K7 Spickzettel**: Belohnung der Vorbereitungsquest in Riverton (Szene 34), nutzt die
    Eröffnung aus dem Steckbrief.
 4. **I6 Monatskarte** und **I3 Reisebrett**: mit der Schnellreise (W2) und Akt 3.
-5. **S8 Pokerface** und **K4 Schutzengel**: mit Akt 3; der Schutzengel braucht die Bewertung jedes
-   eigenen Zuges, während der Bot rechnet (ENTSCHEIDUNGEN, „Nicht gebaut“), deshalb zuletzt.
+5. **S8 Pokerface** und **K4 Schutzengel**: mit Akt 3; der Schutzengel braucht die Bewertung jedes eigenen Zuges, während der Bot rechnet, damit Ambrose den Zug aufhalten kann (ENTSCHEIDUNGEN, Eintrag vom 13.11.2026), deshalb zuletzt.
 
 Nicht empfohlen: Karten, die Figuren verschieben, Züge des Gegners verbieten oder den König
 schützen (bricht G1), und kaufbare Vorgaben (bricht G4).

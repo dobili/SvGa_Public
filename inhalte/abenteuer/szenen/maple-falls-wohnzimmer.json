@@ -211,10 +211,6 @@
       "feld": [3, 4]
     },
     {
-      "name": "fotoGrandma",
-      "feld": [6, 3]
-    },
-    {
       "name": "kartonKueche",
       "feld": [12, 10],
       "auf_moebel": true

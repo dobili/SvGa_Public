@@ -9,6 +9,11 @@
 // fund_fahrkarte. Den Aufbruch erzählt der Übergang am Steg (cedar-creek-aussen.zedernwald), die
 // Ankunft der Übergang nach Riverton (riverton-aussen.ankunft_zu_fuss).
 //
+// Runde 11 (13.11.2026): an den Roman angeglichen (roman/akt2_teil1.md, Kapitel 17): die Wanderin
+// am Wegweiser („Bis er angreift“), der Güterzug und Ambroses „Elf Tage, und ich bin nicht
+// angekommen“, Mr. Quinns Pause mit Uhr, die Herkunft der Karte „Kühler Kopf“ (ein alter Herr mit
+// Thermoskanne) und der graue Himmel über Riverton. Am Bahndamm ist keine Musik (21_Klangplan.md, S28).
+//
 // Variablen: ausgangWegCedarRivertonSchaffner setzt die Hülle (regeln/dialogvariablen.ts),
 // „abgebrochen“ zählt wie nicht gespielt (R35). Die Tafel fragt die Langform
 // wegCedarRivertonTafelBestanden ab (eindeutig je Route). Funde merkt sich Ink selbst.
@@ -35,19 +40,22 @@ VAR rosalindGetroffen = false
 VAR zugpartieErledigt = false
 VAR seite01Gefunden = false
 VAR thermoskanneGefunden = false
+VAR gueterzugGesehen = false
 
 // ---------------------------------------------------------------- Mrs. Fenwick
 
 === fenwick ===
 {fenwickGetroffen:
-    {~Immer noch unterwegs? Der Wald hat Zeit. Du auch.|Zähl zuerst, wer verteidigt. Dann greif an. Mehr weiß ich auch nicht.|Grüß Riverton von mir. Und den Fluss.} #sprecher:fenwick
+    {~Immer den Gleisen nach. Der Wald hat Zeit. Du auch.|Zähl zuerst, wer verteidigt. Dann greif an.|Grüß Riverton von mir. Und nehmt einen Schirm mit.} #sprecher:fenwick
     -> END
 }
 ~ fenwickGetroffen = true
-Am Wegweiser rastet eine Frau mit Rucksack und Wanderstock. Ihre Stiefel sind voller Moos. #sprecher:erzaehler
-Nach Riverton? Dann ein Rat für unterwegs. #sprecher:fenwick
-Wer angreift, soll zuerst zählen, wer verteidigt. Das hat mir mein Trainer hundertmal gesagt. #sprecher:fenwick
-Eine Dame, die Regeln im Kopf trägt und Moos an den Stiefeln. Sie gefällt mir. #sprecher:ambrose
+An einem Wegweiser steht eine Frau mit Rucksack und Stock und isst einen Apfel. #sprecher:erzaehler
+Riverton? Immer den Gleisen nach. Und merkt euch eins, wenn ihr dort spielen wollt. #sprecher:fenwick
+Sie zeigt mit dem Apfel auf euch. #sprecher:erzaehler
+Wer angreift, soll zuerst zählen, wer verteidigt. #sprecher:fenwick
+Das wissen wir. #sprecher:juno
+Das weiß jeder. Bis er angreift. #sprecher:fenwick
 -> END
 
 // ---------------------------------------------------------------- Rätseltafel
@@ -58,7 +66,7 @@ Eine Dame, die Regeln im Kopf trägt und Moos an den Stiefeln. Sie gefällt mir.
     -> END
 }
 Am Wegweiser „Riverton, 3 Meilen“ hängt eine Holztafel mit drei Diagrammen: „Ein Zug, zwei Angriffe. Findest du sie?“ #sprecher:erzaehler
-Doppelangriffe. Ein Zug, der zwei Briefe auf einmal zustellt. #sprecher:ambrose
+Doppelangriffe. Ein Zug, zwei Ziele. #sprecher:ambrose
 * [Die Aufgaben lösen]
     ~ beginneAufgaben("wegCedarRiverton.tafel")
     -> END
@@ -77,33 +85,38 @@ Doppelangriffe. Ein Zug, der zwei Briefe auf einmal zustellt. #sprecher:ambrose
 
 === quinn_erstes_treffen ===
 ~ quinnGetroffen = true
-Am Bahndamm sitzt ein Mann in Schaffneruniform auf einem Schwellenstapel. Vor ihm ein Brett und eine Schachuhr. #sprecher:erzaehler
-Quinn, Schaffner. Ich habe zwölf Minuten Pause, und keine Minute davon verschwende ich. #sprecher:schaffner
-Juno setzt sich sofort hin. „Ich zuerst!“ #sprecher:erzaehler
-Drei Minuten später ist ihr König matt. #sprecher:erzaehler #pause
+{not gueterzugGesehen: -> gueterzug ->}
+An einer Bude neben den Gleisen sitzt ein Mann in Uniform. Auf einer Kiste ein Brett und eine Uhr mit zwei Zifferblättern. #sprecher:erzaehler
+Pause. Zwanzig Minuten, dann kommt der Elfuhrsieben. Wer will? #sprecher:schaffner
+Ich! #sprecher:juno #stimmung:froh
+Juno spielt, als würde das Haus brennen. Sie verliert einen Läufer, einen Turm, und wirft vor Lachen den König selbst um. #sprecher:erzaehler
 Ich hab die Zeit gewonnen. Er hatte mehr übrig. #sprecher:juno #stimmung:froh
 -> quinn_angebot
 
+// Kapitel 17: Der Güterzug, lange bevor man ihn sieht; Ambroses erste Andeutung von 1866.
+=== gueterzug ===
+~ gueterzugGesehen = true
+Erst singt die Schiene. Dann zittert der Boden. Dann rattert ein Güterzug vorbei, vierzig Wagen. Du zählst sie. #sprecher:erzaehler #klang:gueterzug
+So schnell. #sprecher:ambrose #pause:2
+Er klingt nicht beeindruckt. Er klingt müde. #sprecher:erzaehler
+Ich habe elf Tage gebraucht. Von New Orleans bis … nun. Elf Tage, und ich bin nicht angekommen. #sprecher:ambrose #stimmung:traurig
+* [Warten, ob er weiterspricht]
+* [„Wohin?“]
+- ->->
+
 === quinn_angebot ===
-Jetzt du. Drei Minuten und zwei Sekunden dazu je Zug, eine Stellung mit Vorteil für Weiß. #sprecher:schaffner
-Zehn Züge, dann fährt mein Zug. #sprecher:schaffner
+Jetzt du. Drei Minuten, und zwei Sekunden für jeden Zug dazu. #sprecher:schaffner
 * [„Abgemacht.“]
-    Er spielt wie ein Fahrplan: genau, pünktlich, ohne Umwege. Lass dich nicht hetzen. #sprecher:ambrose
+    Ruhig. Die Uhr ist auch eine Figur. Sie gehört zum Spiel. Aber sie ist nicht der König. #sprecher:ambrose
     ~ beginnePartie("wegCedarRiverton.schaffner")
     -> END
-* [„Später.“]
+* [„Nicht jetzt.“]
     Der nächste Zug kommt in einer Stunde. Ich auch. #sprecher:schaffner
     -> END
 
 === quinn_nach_sieg ===
-{not quinnKarteGegeben:
-    ~ quinnKarteGegeben = true
-    Bevor ich es vergesse, ein Rat von der Strecke: Wenn alle drängeln, atme einmal durch. #sprecher:schaffner
-    ~ gibKarte("kuehlerKopf")
-    Ein kühler Kopf ist mehr wert als zwei Minuten. Aber zwei Minuten sind auch nicht schlecht. #sprecher:ambrose
-}
+{not quinnKarteGegeben: -> quinn_karte}
 Pünktlich gewonnen. Das sehe ich gern. Noch eine, bevor die Pause um ist? #sprecher:schaffner
-Du hast die Uhr behandelt wie eine Figur. Gut. #sprecher:ambrose
 + [„Noch eine.“]
     ~ beginnePartie("wegCedarRiverton.schaffner")
     -> END
@@ -111,13 +124,29 @@ Du hast die Uhr behandelt wie eine Figur. Gut. #sprecher:ambrose
     Gute Fahrt nach Riverton. Zu Fuß ist auch eine Fahrt. #sprecher:schaffner
     -> END
 
+// Kapitel 17: Die Karte hat eine Herkunft; danach der graue Himmel über den drei Brücken.
+=== quinn_karte ===
+~ quinnKarteGegeben = true
+Er gibt dir die Hand. #sprecher:erzaehler
+Quinn. Seit neunzehn Jahren auf der Strecke. #sprecher:schaffner
+Aus der Brusttasche zieht er eine Karte: ein Kopf, über dem eine kleine Wolke hängt. #sprecher:erzaehler
+~ gibKarte("kuehlerKopf")
+Die hat mir mal einer dagelassen. Alter Herr mit einer Thermoskanne. Ich hab nie verstanden, wofür sie gut ist. #sprecher:schaffner
+Die Schrift auf der Rückseite ist steil und altmodisch. #sprecher:erzaehler
+* [Die Karte umdrehen]
+* [Einstecken]
+- In der Ferne stehen drei Brücken über einem breiten Fluss. Der Himmel darüber hängt grau und schwer. #sprecher:erzaehler #klang:donner_fern
+Riverton. Nehmt einen Schirm. #sprecher:schaffner
+Ihr habt keinen. #sprecher:erzaehler
+-> END
+
 === quinn_nach_niederlage ===
 Verspätung. Das passiert den Besten. Noch einmal? #sprecher:schaffner
-Mit Uhr sieht man weniger als ohne. Das ist der Preis der Eile. #sprecher:ambrose
+Lass dich nicht hetzen. #sprecher:ambrose
 + [„Revanche.“]
     ~ beginnePartie("wegCedarRiverton.schaffner")
     -> END
-+ [„Später.“]
++ [„Nicht jetzt.“]
     -> END
 
 // ---------------------------------------------------------------- Funde
@@ -160,7 +189,7 @@ Einfache Fahrt. Wer fuhr damals, und kam er an? #sprecher:ambrose
 
 // ---------------------------------------------------------------- Runde 6: Zugpartie am Stellwerk (15, 2.2)
 
-// Rosalind Kettering spielt seit 23 Jahren eine Partie mit Lokführer Earl Dubois, ein Zug pro
+// Marian Marsh spielt seit 23 Jahren eine Partie mit Lokführer Earl Dubois, ein Zug pro
 // Vorbeifahrt. Heute hat sie sich die Hand verstaucht. {held} findet, warum ihr erster Einfall
 // eine Figur einstellt (Kapitel 1, was hängt?), und hängt einen besseren Zug ans Signal.
 === ereignis_zugpartie ===
@@ -169,7 +198,7 @@ Einfache Fahrt. Wer fuhr damals, und kam er an? #sprecher:ambrose
 {rosalindGetroffen: -> zugpartie_angebot}
 ~ rosalindGetroffen = true
 Vor dem Stellwerk sitzt eine ältere Frau auf der Bank, die rechte Hand im Verband. #sprecher:erzaehler
-„Rosalind Kettering. Ich spiele seit dreiundzwanzig Jahren eine Partie mit Earl, dem Lokführer vom Güterzug. Ein Zug pro Vorbeifahrt.“ #sprecher:erzaehler
+„Marian Marsh. Ich spiele seit dreiundzwanzig Jahren eine Partie mit Earl, dem Lokführer vom Güterzug. Ein Zug pro Vorbeifahrt.“ #sprecher:erzaehler
 -> zugpartie_angebot
 
 === zugpartie_angebot ===
@@ -184,7 +213,7 @@ Vor dem Stellwerk sitzt eine ältere Frau auf der Bank, die rechte Hand im Verba
 
 === zugpartie_geloest ===
 ~ zugpartieErledigt = true
-Rosalind sieht auf das Brett. „Der Läufer hätte gehangen. Und Earl sieht so etwas sofort.“ #sprecher:erzaehler
+Marian sieht auf das Brett. „Der Läufer hätte gehangen. Und Earl sieht so etwas sofort.“ #sprecher:erzaehler
 Du hängst den besseren Zug ans Signal. Der Güterzug rattert vorbei, aus dem Führerhaus winkt eine Hand mit einer Tafel. #sprecher:erzaehler
 „Hier, die alte Signalkelle aus dem Stellwerk. Die brauch ich nicht mehr, seit es Strom gibt.“ #sprecher:erzaehler
 ~ gibFund("signalkelle")
@@ -204,7 +233,8 @@ Sie warten aufeinander. Und es macht sie nicht unglücklich. #sprecher:ambrose
 }
 ~ seite01Gefunden = true
 Zwischen den Schottersteinen neben dem Bahnsteig flattert ein Blatt Papier. #sprecher:erzaehler
-Eine lose Seite voller Schachdiagramme. #sprecher:erzaehler
+// Kein Buchverweis (Entscheidung vom 10.11.2026): ein loses Blatt mit einer Stellung.
+Ein loses Blatt mit einer gezeichneten Stellung. Darunter steht mit Bleistift: „Schwarz zieht und gewinnt.“ #sprecher:erzaehler
 ~ gibFund("seite01")
 ~ buchseiten = buchseiten + 1
 -> END

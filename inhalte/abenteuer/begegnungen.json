@@ -112,35 +112,34 @@
       "zeit": "wahl",
       "momente": [
         {
-          "wenn": { "zug": 20 },
+          "wenn": {
+            "merkmal": "koeder",
+            "abZug": 12
+          },
           "sprecher": "okafor",
-          "text": "moment.okafor.bauer",
-          "musik": "aus"
+          "dialog": "cedar-creek-bibliothek.clubkampf_bauer"
         },
         {
-          "wenn": { "zug": 22 },
+          "wenn": {
+            "abZug": 18
+          },
           "sprecher": "okafor",
-          "text": "moment.okafor.geduld",
-          "musik": "karte"
+          "dialog": "cedar-creek-bibliothek.clubkampf_bauer"
         },
         {
-          "wenn": { "zug": 28 },
+          "wenn": {
+            "merkmal": "turmopfer",
+            "uhrUnter": 240
+          },
           "sprecher": "ambrose",
-          "text": "moment.ambrose.lassMich",
-          "musik": "ambrose.lassMich"
+          "dialog": "cedar-creek-bibliothek.clubkampf_lass_mich"
         },
         {
-          "wenn": { "zug": 29 },
+          "wenn": {
+            "abZug": 26
+          },
           "sprecher": "ambrose",
-          "text": "moment.ambrose.weissNicht",
-          "musik": "aus"
-        },
-        {
-          "wenn": { "zug": 30 },
-          "sprecher": "ambrose",
-          "text": "moment.ambrose.zaehl",
-          "klang": "aha",
-          "musik": "karte"
+          "dialog": "cedar-creek-bibliothek.clubkampf_lass_mich"
         }
       ]
     },
@@ -209,26 +208,34 @@
       "zeit": "wahl",
       "momente": [
         {
-          "wenn": { "zug": 8 },
+          "wenn": {
+            "abZug": 22
+          },
           "sprecher": "slick",
           "text": "moment.slick.musik"
         },
         {
-          "wenn": { "merkmal": "geschlagen:bauer" },
+          "wenn": {
+            "merkmal": "geschlagen:bauer"
+          },
           "sprecher": "slick",
           "text": "moment.slick.autsch"
         },
         {
-          "wenn": { "zug": 20 },
+          "wenn": {
+            "zug": 20
+          },
           "sprecher": "ambrose",
           "text": "moment.ambrose.hier",
           "musik": "aus"
         },
         {
-          "wenn": { "merkmal": "schachGegeben" },
+          "wenn": {
+            "merkmal": "schachGegeben"
+          },
           "sprecher": "slick",
-          "text": "moment.slick.odum",
-          "musik": "aus"
+          "musik": "aus",
+          "dialog": "riverton-pavillon.clubkampf_odum"
         }
       ]
     },
@@ -261,7 +268,23 @@
       "startstellung": {
         "art": "grundstellung"
       },
-      "kartenErlaubt": true
+      "kartenErlaubt": true,
+      "momente": [
+        {
+          "wenn": {
+            "abZug": 14
+          },
+          "sprecher": "mutter",
+          "dialog": "ironwood-kantine.mama_moment_rost"
+        },
+        {
+          "wenn": {
+            "abZug": 28
+          },
+          "sprecher": "ambrose",
+          "dialog": "ironwood-kantine.mama_moment_angriff"
+        }
+      ]
     },
     {
       "kennung": "ironwood.clubkampf",
@@ -274,7 +297,23 @@
         "art": "grundstellung"
       },
       "kartenErlaubt": true,
-      "zeit": "wahl"
+      "zeit": "wahl",
+      "momente": [
+        {
+          "wenn": {
+            "abZug": 20
+          },
+          "sprecher": "ambrose",
+          "dialog": "ironwood-kantine.clubkampf_schraubstock"
+        },
+        {
+          "wenn": {
+            "abZug": 28
+          },
+          "sprecher": "ambrose",
+          "dialog": "ironwood-kantine.clubkampf_stimmt_es"
+        }
+      ]
     },
     {
       "kennung": "wegIronwoodSilicon.joggerin",
@@ -390,7 +429,16 @@
         "art": "grundstellung"
       },
       "kartenErlaubt": true,
-      "zeit": "wahl"
+      "zeit": "wahl",
+      "momente": [
+        {
+          "wenn": {
+            "abZug": 15
+          },
+          "sprecher": "ambrose",
+          "text": "moment.ambrose.zuklappen"
+        }
+      ]
     },
     {
       "kennung": "portDelacroix.clubkampf",
@@ -403,7 +451,32 @@
         "art": "grundstellung"
       },
       "kartenErlaubt": false,
-      "zeit": "wahl"
+      "zeit": "wahl",
+      "momente": [
+        {
+          "wenn": {
+            "zug": 2
+          },
+          "sprecher": "erzaehler",
+          "text": "moment.odile.summt",
+          "musik": "odile"
+        },
+        {
+          "wenn": {
+            "abZug": 12
+          },
+          "sprecher": "erzaehler",
+          "text": "moment.held.plan",
+          "musik": "held"
+        },
+        {
+          "wenn": {
+            "abZug": 22
+          },
+          "sprecher": "erzaehler",
+          "text": "moment.odile.stille"
+        }
+      ]
     },
     {
       "kennung": "desertSprings.clubkampf",
@@ -419,7 +492,31 @@
         "art": "grundstellung"
       },
       "kartenErlaubt": true,
-      "zeit": "wahl"
+      "zeit": "wahl",
+      "momente": [
+        {
+          "wenn": {
+            "abZug": 8
+          },
+          "sprecher": "ambrose",
+          "dialog": "desert-springs-garage.clubkampf_sturm"
+        },
+        {
+          "wenn": {
+            "merkmal": "schachGegen",
+            "abZug": 14
+          },
+          "sprecher": "mira",
+          "dialog": "desert-springs-garage.clubkampf_atme"
+        },
+        {
+          "wenn": {
+            "abZug": 24
+          },
+          "sprecher": "mira",
+          "dialog": "desert-springs-garage.clubkampf_atme"
+        }
+      ]
     },
     {
       "kennung": "summitCity.clubkampf",

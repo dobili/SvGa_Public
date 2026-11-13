@@ -72,6 +72,16 @@
           }
         },
         {
+          "description": "Schutzengel (K4, docs/spiel/11): Für so viele eigene Züge hält Ambrose einen groben Fehler (etwa zwei Bauerneinheiten Verlust gegenüber dem besten Zug, ein zugelassenes oder verpasstes Matt) einmal auf; der Held zieht neu. Gesperrt ohne Ambrose",
+          "type": "object",
+          "additionalProperties": false,
+          "required": ["art", "zuege"],
+          "properties": {
+            "art": { "const": "schutzengel" },
+            "zuege": { "type": "integer", "minimum": 1, "maximum": 20 }
+          }
+        },
+        {
           "description": "Gefühlte Zeitnot des Gegners für so viele seiner Züge (Großes Maul, docs/spiel/10, S1; 08, Z6); die Uhr bleibt",
           "type": "object",
           "additionalProperties": false,

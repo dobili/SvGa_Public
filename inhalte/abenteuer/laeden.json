@@ -220,6 +220,11 @@
           "art": "karte",
           "kennung": "laeufervorgabe",
           "preis": 200
+        },
+        {
+          "art": "karte",
+          "kennung": "schutzengel",
+          "preis": 90
         }
       ]
     },

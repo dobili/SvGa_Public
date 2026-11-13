@@ -17,6 +17,7 @@
 import { useEffect, useRef, useState } from "react";
 import { Dialog } from "../dialog/Dialog";
 import { deckgroesse, mentorzugGesperrt } from "../regeln/karten";
+import { schutzengelGesperrt } from "../regeln/schutzengel";
 import { kaufe } from "../regeln/muenzen";
 import { variablenAusBesitz } from "../regeln/dialogvariablen";
 import { spruecheErlaubt, ZEITKLASSEN } from "../regeln/zeitkarten";
@@ -244,6 +245,7 @@ export function Oberwelt() {
           steckbrief={lupeFuer(stand.gegenstaende, welt.daten.gegner, deckwahl.profil.kennung)}
           farbeFrei={deckwahl.farbeFrei === true}
           mentorGesperrt={mentorzugGesperrt(stand.dialogvariablen)}
+          schutzengelGesperrt={schutzengelGesperrt(stand.dialogvariablen, deckwahl.kennung)}
           freieKarten={deckwahl.freieKarten ?? []}
           beiWahl={(deck, zeit, farbe) =>
             partie.startePartie(

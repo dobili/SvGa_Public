@@ -2,7 +2,7 @@
   "karte": "kuerbishof.hof",
   "datei": "karten/kuerbishof-hof.json",
   "art": "aussen",
-  "beschreibung": "Ein breites Bauernhaus und die Scheune zwischen Maisirrgarten und Kürbisfeld. Der Irrgarten links hat Gänge zwischen hohem Mais, der Eingang liegt am Hofweg, in der Mitte steht die Vogelscheuche „Morphy“; rechts das Kürbisfeld, ein großes Beet mit dunkler Ackererde und Holzrahmen, die Kürbisse in Reihen darin, mit der zweiten Vogelscheuche. Der Mais steht auf durchgehendem Ackerboden ohne Rahmen. Der Zaun vor dem Kürbisfeld hat an allen vier Enden einen Pfosten. Viele Heuballen, Sonnenblumen am Hofweg, am Hofladen eine Verkäuferin mit Kürbiskisten, vier Apfelbäume auf der Wiese, links unten die Kuhweide mit Zaun und Gatter. Der Traktor steht vor der Scheune. Zwischen den Obstbäumen hinter Haus und Scheune dreht sich ein Windrad (Ortsblatt).",
+  "beschreibung": "Ein breites Bauernhaus und die Scheune zwischen Maisirrgarten und Kürbisfeld. Der Irrgarten links hat Gänge zwischen hohem Mais, der Eingang liegt am Hofweg, in der Mitte steht die Vogelscheuche „Morphy“; rechts das Kürbisfeld, ein großes Beet mit dunkler Ackererde und Holzrahmen, die Kürbisse in Reihen darin, mit der zweiten Vogelscheuche. Der Mais steht auf durchgehendem Ackerboden ohne Rahmen. Der Zaun vor dem Kürbisfeld hat an allen vier Enden einen Pfosten. Viele Heuballen, Sonnenblumen am Hofweg, am Hofladen eine Verkäuferin mit Kürbiskisten, vier Apfelbäume auf der Wiese, links unten die Kuhweide mit Zaun und Gatter. Der Traktor steht vor der Scheune. Zwischen den Obstbäumen hinter Haus und Scheune dreht sich ein Windrad (Ortsblatt). Kartengutachten Akt 1: Oma Miller verkauft selbst am Hofladen; links daneben die Kiste mit Kürbissen auf der Kürbiswaage (Auslöser kuerbiswaage); die Kürbisse auf dem Feld sperren, man geht zwischen den Reihen; der Hofweg endet an beiden Seiten an Büschen; der Stichweg führt zur Haustür; die Pferde laufen unter dem Apfelbaum durch; die Lücke oben im Irrgarten ist geschlossen.",
   "boden": "gras",
   "wandart": "gras",
   "boeden": {
@@ -38,12 +38,12 @@
     "#..............................................#",
     "#..............................................#",
     "#..............................................#",
-    "#.........ee.......ee.......ee.................#",
-    "#.........ee.......ee.......ee...........ee....#",
-    "#.........ee.......ee.......ee...........ee....#",
-    "#.........ee.......ee.......ee...........ee....#",
-    "#.........ee.......ee.......ee...........ee....#",
-    "#.........ee.......ee.......ee...........ee....#",
+    "#.........ee.........ee.....ee.................#",
+    "#.........ee.........ee.....ee...........ee....#",
+    "#.........ee.........ee.....ee...........ee....#",
+    "#.........ee.........ee.....ee...........ee....#",
+    "#.........ee.........ee.....ee...........ee....#",
+    "#.........ee.........ee.....ee...........ee....#",
     "#eeeeeeeeeeeeeeeeeeeeeeeeeeeeeeeeeeeeeeeeeeeeee#",
     "#eeeeeeeeeeeeeeeeeeeeeeeeeeeeeeeeeeeeeeeeeeeeee#",
     "#......................ee......................#",
@@ -704,255 +704,247 @@
       "feld": [13, 17]
     },
     {
-      "moebel": "n1Kuerbis",
+      "moebel": "kh12KuerbisFeld",
       "feld": [37, 1]
     },
     {
-      "moebel": "n1Kuerbis",
+      "moebel": "kh12KuerbisFeld",
       "feld": [38, 1]
     },
     {
-      "moebel": "n1Kuerbis",
+      "moebel": "kh12KuerbisFeld",
       "feld": [39, 1]
     },
     {
-      "moebel": "n1Kuerbis",
+      "moebel": "kh12KuerbisFeld",
       "feld": [40, 1]
     },
     {
-      "moebel": "n1Kuerbis",
+      "moebel": "kh12KuerbisFeld",
       "feld": [41, 1]
     },
     {
-      "moebel": "n1Kuerbis",
+      "moebel": "kh12KuerbisFeld",
       "feld": [42, 1]
     },
     {
-      "moebel": "n1Kuerbis",
+      "moebel": "kh12KuerbisFeld",
       "feld": [43, 1]
     },
     {
-      "moebel": "n1Kuerbis",
+      "moebel": "kh12KuerbisFeld",
       "feld": [44, 1]
     },
     {
-      "moebel": "n1Kuerbis",
+      "moebel": "kh12KuerbisFeld",
       "feld": [45, 1]
     },
     {
-      "moebel": "n1Kuerbis",
+      "moebel": "kh12KuerbisFeld",
       "feld": [37, 3]
     },
     {
-      "moebel": "n1Kuerbis",
+      "moebel": "kh12KuerbisFeld",
       "feld": [38, 3]
     },
     {
-      "moebel": "n1Kuerbis",
+      "moebel": "kh12KuerbisFeld",
       "feld": [42, 3]
     },
     {
-      "moebel": "n1Kuerbis",
+      "moebel": "kh12KuerbisFeld",
       "feld": [43, 3]
     },
     {
-      "moebel": "n1Kuerbis",
+      "moebel": "kh12KuerbisFeld",
       "feld": [44, 3]
     },
     {
-      "moebel": "n1Kuerbis",
+      "moebel": "kh12KuerbisFeld",
       "feld": [45, 3]
     },
     {
-      "moebel": "n1Kuerbis",
+      "moebel": "kh12KuerbisFeld",
       "feld": [37, 5]
     },
     {
-      "moebel": "n1Kuerbis",
+      "moebel": "kh12KuerbisFeld",
       "feld": [38, 5]
     },
     {
-      "moebel": "n1Kuerbis",
-      "feld": [42, 5]
-    },
-    {
-      "moebel": "n1Kuerbis",
+      "moebel": "kh12KuerbisFeld",
       "feld": [43, 5]
     },
     {
-      "moebel": "n1Kuerbis",
+      "moebel": "kh12KuerbisFeld",
       "feld": [44, 5]
     },
     {
-      "moebel": "n1Kuerbis",
+      "moebel": "kh12KuerbisFeld",
       "feld": [45, 5]
     },
     {
-      "moebel": "n1Kuerbis",
+      "moebel": "kh12KuerbisFeld",
       "feld": [37, 7]
     },
     {
-      "moebel": "n1Kuerbis",
+      "moebel": "kh12KuerbisFeld",
       "feld": [38, 7]
     },
     {
-      "moebel": "n1Kuerbis",
-      "feld": [42, 7]
-    },
-    {
-      "moebel": "n1Kuerbis",
+      "moebel": "kh12KuerbisFeld",
       "feld": [43, 7]
     },
     {
-      "moebel": "n1Kuerbis",
+      "moebel": "kh12KuerbisFeld",
       "feld": [44, 7]
     },
     {
-      "moebel": "n1Kuerbis",
+      "moebel": "kh12KuerbisFeld",
       "feld": [45, 7]
     },
     {
-      "moebel": "n1Kuerbis",
+      "moebel": "kh12KuerbisFeld",
       "feld": [37, 9]
     },
     {
-      "moebel": "n1Kuerbis",
+      "moebel": "kh12KuerbisFeld",
       "feld": [38, 9]
     },
     {
-      "moebel": "n1Kuerbis",
+      "moebel": "kh12KuerbisFeld",
       "feld": [39, 9]
     },
     {
-      "moebel": "n1Kuerbis",
+      "moebel": "kh12KuerbisFeld",
       "feld": [40, 9]
     },
     {
-      "moebel": "n1Kuerbis",
+      "moebel": "kh12KuerbisFeld",
       "feld": [41, 9]
     },
     {
-      "moebel": "n1Kuerbis",
+      "moebel": "kh12KuerbisFeld",
       "feld": [42, 9]
     },
     {
-      "moebel": "n1Kuerbis",
+      "moebel": "kh12KuerbisFeld",
       "feld": [43, 9]
     },
     {
-      "moebel": "n1Kuerbis",
+      "moebel": "kh12KuerbisFeld",
       "feld": [44, 9]
     },
     {
-      "moebel": "n1Kuerbis",
+      "moebel": "kh12KuerbisFeld",
       "feld": [45, 9]
     },
     {
-      "moebel": "n1Kuerbis",
+      "moebel": "kh12KuerbisFeld",
       "feld": [37, 11]
     },
     {
-      "moebel": "n1Kuerbis",
+      "moebel": "kh12KuerbisFeld",
       "feld": [38, 11]
     },
     {
-      "moebel": "n1Kuerbis",
+      "moebel": "kh12KuerbisFeld",
       "feld": [39, 11]
     },
     {
-      "moebel": "n1Kuerbis",
+      "moebel": "kh12KuerbisFeld",
       "feld": [40, 11]
     },
     {
-      "moebel": "n1Kuerbis",
+      "moebel": "kh12KuerbisFeld",
       "feld": [41, 11]
     },
     {
-      "moebel": "n1Kuerbis",
+      "moebel": "kh12KuerbisFeld",
       "feld": [42, 11]
     },
     {
-      "moebel": "n1Kuerbis",
+      "moebel": "kh12KuerbisFeld",
       "feld": [43, 11]
     },
     {
-      "moebel": "n1Kuerbis",
+      "moebel": "kh12KuerbisFeld",
       "feld": [44, 11]
     },
     {
-      "moebel": "n1Kuerbis",
+      "moebel": "kh12KuerbisFeld",
       "feld": [45, 11]
     },
     {
-      "moebel": "n1Kuerbis",
+      "moebel": "kh12KuerbisFeld",
       "feld": [37, 13]
     },
     {
-      "moebel": "n1Kuerbis",
+      "moebel": "kh12KuerbisFeld",
       "feld": [38, 13]
     },
     {
-      "moebel": "n1Kuerbis",
+      "moebel": "kh12KuerbisFeld",
       "feld": [39, 13]
     },
     {
-      "moebel": "n1Kuerbis",
+      "moebel": "kh12KuerbisFeld",
       "feld": [40, 13]
     },
     {
-      "moebel": "n1Kuerbis",
+      "moebel": "kh12KuerbisFeld",
       "feld": [41, 13]
     },
     {
-      "moebel": "n1Kuerbis",
+      "moebel": "kh12KuerbisFeld",
       "feld": [42, 13]
     },
     {
-      "moebel": "n1Kuerbis",
+      "moebel": "kh12KuerbisFeld",
       "feld": [43, 13]
     },
     {
-      "moebel": "n1Kuerbis",
+      "moebel": "kh12KuerbisFeld",
       "feld": [44, 13]
     },
     {
-      "moebel": "n1Kuerbis",
+      "moebel": "kh12KuerbisFeld",
       "feld": [45, 13]
     },
     {
-      "moebel": "n1Kuerbis",
+      "moebel": "kh12KuerbisFeld",
       "feld": [37, 15]
     },
     {
-      "moebel": "n1Kuerbis",
+      "moebel": "kh12KuerbisFeld",
       "feld": [38, 15]
     },
     {
-      "moebel": "n1Kuerbis",
+      "moebel": "kh12KuerbisFeld",
       "feld": [39, 15]
     },
     {
-      "moebel": "n1Kuerbis",
+      "moebel": "kh12KuerbisFeld",
       "feld": [40, 15]
     },
     {
-      "moebel": "n1Kuerbis",
+      "moebel": "kh12KuerbisFeld",
       "feld": [41, 15]
     },
     {
-      "moebel": "n1Kuerbis",
+      "moebel": "kh12KuerbisFeld",
       "feld": [42, 15]
     },
     {
-      "moebel": "n1Kuerbis",
+      "moebel": "kh12KuerbisFeld",
       "feld": [43, 15]
     },
     {
-      "moebel": "n1Kuerbis",
+      "moebel": "kh12KuerbisFeld",
       "feld": [44, 15]
     },
     {
-      "moebel": "n1Kuerbis",
+      "moebel": "kh12KuerbisFeld",
       "feld": [45, 15]
     },
     {
@@ -1527,6 +1519,18 @@
     {
       "moebel": "kh12Windrad",
       "feld": [24, 0]
+    },
+    {
+      "moebel": "n1Mais",
+      "feld": [7, 1]
+    },
+    {
+      "moebel": "n1Busch",
+      "feld": [1, 25]
+    },
+    {
+      "moebel": "n1Busch",
+      "feld": [46, 25]
     }
   ],
   "ausloeser": [
@@ -1569,7 +1573,7 @@
     },
     {
       "name": "omaMiller",
-      "feld": [7, 26]
+      "feld": [5, 25]
     }
   ],
   "belebung": [
@@ -1592,10 +1596,10 @@
     {
       "name": "erntehelfer",
       "typ": "statist",
-      "feld": [36, 10],
+      "feld": [41, 19],
       "eigenschaften": {
-        "von": "36,10",
-        "bis": "36,10",
+        "von": "41,19",
+        "bis": "41,19",
         "tun": "trägt Kürbisse zum Wagen",
         "wann": "tag",
         "sagt": "statist.kuerbishof.hof.erntehelfer"
@@ -1650,10 +1654,10 @@
     {
       "name": "wildpferde",
       "typ": "tier",
-      "feld": [13, 30],
+      "feld": [13, 32],
       "eigenschaften": {
-        "von": "13,30",
-        "bis": "21,30",
+        "von": "13,32",
+        "bis": "21,32",
         "verhalten": "rennen"
       }
     },
@@ -1675,17 +1679,6 @@
         "von": "38,23",
         "bis": "40,23",
         "verhalten": "schlafen"
-      }
-    },
-    {
-      "name": "hofladenVerkaeuferin",
-      "typ": "statist",
-      "feld": [4, 25],
-      "eigenschaften": {
-        "von": "4,25",
-        "bis": "4,25",
-        "tun": "verkauft Kürbisse und Äpfel am Hofladen",
-        "wann": "tag"
       }
     }
   ]

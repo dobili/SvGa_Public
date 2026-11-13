@@ -299,6 +299,16 @@
       "zustand": "alt",
       "stil": "klassisch",
       "hinweis": "Windrad am Kürbishof (Ortsblatt, Klangplan windrad)"
+    },
+    "kh12KuerbisFeld": {
+      "quelle": "modern-farm/Single_Files_16x16/Crops_16x16/Crop_Pumpkin_Ripe_16x16.png",
+      "breite": 16,
+      "hoehe": 32,
+      "kollision": true,
+      "art": "pflanze",
+      "zustand": "neu",
+      "stil": "laendlich",
+      "hinweis": "Kürbis auf dem Feld, sperrt (Kartengutachten Akt 1: man lief über die Ernte)"
     }
   }
 }

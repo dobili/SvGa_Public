@@ -2584,10 +2584,23 @@ RULES: No text, no letters, no numbers, no logos anywhere in the image; leave si
 OBJECT: a photo of a grey folder on a press table.
 ```
 
-#### B100. `buchVonGrundAuf` (Das Buch des Wanderers, capitalArena)
+#### B100. `buchVonGrundAuf` (Die Sammlung des Wanderers, capitalArena)
 
-**Kein Bild.** Der Fund heißt „Das Buch des Wanderers“ und verweist auf ein Buch; nach der
-Entscheidung vom 13.11.2026 bitte erst klären, ob der Fund bleibt (Rückfrage an den Hauptchat).
+**Datei:** `bilder/fund-buch-von-grund-auf.webp`. **Größe:** 512 × 512 (intern 128 × 128). **Text:** keiner.
+
+```
+Pixel art item illustration for a cozy chess adventure game: one single object, centred, shown large like an item picture in an inventory.
+
+FORMAT: one square image. NOT a sprite sheet, NO magenta background. Plain soft parchment background (#E8DCC4) with a small soft shadow under the object.
+
+PIXEL STYLE: chunky pixel art at a low internal resolution of about 128x128 pixels, enlarged so that every pixel is an exactly square block on a strict grid. Hard edges, no anti-aliasing, no gradients, no blur, no dithering noise. 1-pixel dark slate outline (#3A3A50) on the main shapes. 2-3 flat shades per colour, light from the top left. Soft muted colours, warm and calm, readable at a glance.
+
+STYLE REFERENCE: The attached image is a style reference only (palette, pixel size, outlines). Do NOT copy any object, building or text from it.
+
+RULES: No text, no letters, no numbers, no logos anywhere in the image; leave sign, paper and plate areas blank so the game can lay text over them. No real persons, no recognisable faces of real people, no real brands. No frame, no border, no watermark.
+
+OBJECT: a small bundle of old loose chess sheets with drawn positions, freshly bound together with string in a plain linen cover.
+```
 
 #### B101. `konservendose` (Konservendose mit Zettel, wegRivertonIronwood)
 

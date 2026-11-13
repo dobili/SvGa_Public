@@ -196,28 +196,29 @@ Zwei Fahnen vor der Freitreppe, darauf ein König und die Jahreszahl der ersten 
 -> END
 
 // ---------------------------------------------------------------- Der Wanderer (Buchseiten, 15, 1.2)
-// Nach dem Finale schenkt er {held} das gedruckte Buch, wenn alle dreizehn Seiten zurück sind
+// Nach dem Finale schenkt er {held} die gebundene Sammlung alter Schachblätter („Sammlung des
+// Wanderers“, Dokument 15, Teil J), wenn alle dreizehn Blätter zurück sind
 // (wandererSeitenZurueck setzt weg-ghost-capital.ink).
 
 === wanderer ===
 {
 - buchGeschenkt:
-    {~Der Verlag druckt eine zweite Auflage. Mit einem Dank an dich im Vorwort.|Wenn du nicht weiterweißt: Geh ein Stück. Unterwegs fällt einem das meiste ein.|Ich laufe jetzt nach Hause. Ohne Wind, hoffe ich.} #sprecher:wanderer
+    {~Ich sammle weiter. Der Wind hilft mir dabei, ob ich will oder nicht.|Wenn du nicht weiterweißt: Geh ein Stück. Unterwegs fällt einem das meiste ein.|Ich laufe jetzt nach Hause. Ohne Wind, hoffe ich.} #sprecher:wanderer
 - finaleGespielt() and wandererSeitenZurueck >= 13:
     -> wanderer_buch
 - wandererSeitenZurueck >= 13:
-    Alle dreizehn Seiten sind beim Verlag. Spiel dein Finale, dann sehen wir uns hier. #sprecher:wanderer
+    Alle dreizehn Blätter sind beim Buchbinder. Spiel dein Finale, dann sehen wir uns hier. #sprecher:wanderer
 - else:
     ~ wandererCapitalGetroffen = true
-    Mein Verlag ist gleich um die Ecke. Aber ohne die fehlenden Seiten will ich da nicht hinein. #sprecher:wanderer
+    Der Buchbinder ist gleich um die Ecke. Aber ohne die fehlenden Blätter will ich da nicht hinein. #sprecher:wanderer
 }
 -> END
 
 === wanderer_buch ===
 ~ buchGeschenkt = true
-Der Mann mit dem gelben Rucksack hält ein Buch in den Händen, noch nach Druckerschwärze riechend. #sprecher:erzaehler
-Für dich. Dreizehn Seiten haben gefehlt, und jede hast du einmal in der Hand gehabt. #sprecher:wanderer
+Der Mann mit dem gelben Rucksack hält einen Packen alter Blätter in den Händen, frisch gebunden, in einem Leinendeckel. #sprecher:erzaehler
+Für dich. Dreizehn Blätter haben gefehlt, und jedes hast du einmal in der Hand gehabt. #sprecher:wanderer
 ~ gibFund("buchVonGrundAuf")
-Ein Buch für Anfänger. Die besten Bücher sind die, die man immer wieder aufschlägt. #sprecher:ambrose #stimmung:friedlich
+Stellungen, die jemand aufgehoben hat. Das kenne ich. #sprecher:ambrose #stimmung:froh
 -> END
 

@@ -870,7 +870,7 @@
           "text": "quest.mamasFinale.schritt3",
           "ereignis": {
             "art": "dialog",
-            "knoten": "ironwood-kantine.mama_foto"
+            "knoten": "maple-falls-wohnzimmer.mama_foto"
           }
         },
         {

@@ -3,8 +3,8 @@
 //
 // Szene 39 der Story-Bibel, zweiter Teil (akt2.fotoGefunden): Oma Ruth öffnet Mamas Zimmer; das
 // Foto von 2001 ist der Gegenstand der Hauptquest ironwood.mamasFinale (Wirkung in quests.json)
-// und zugleich ein Fund fürs Album (gibFund). Danach ruft Oma Ruth Mama an; Mama kommt in die
-// Kantine (ironwood-kantine.mama_foto).
+// und zugleich ein Fund fürs Album (gibFund). {held} zeigt es Mama zu Hause in der Küche
+// (maple-falls-wohnzimmer.mama_foto, Roman Kapitel 27); danach spielt Mama in der Kantine.
 // Im selben Besuch gibt Oma Ruth Mamas Turnierheft (Szene 39a, oma_ruth_heft; Roman, Kapitel 25).
 // Einstiege wie in orte.json: oma_ruth, medaille, partieformular.
 
@@ -42,7 +42,7 @@ Sie kam nach Hause und trug den Koffer mit den Figuren in den Keller. #sprecher:
 - Joe hat drei Tage gewartet, dann hat er geklingelt. Ich hab gesagt, sie will niemanden sehen. #sprecher:omaRuth
 Er dachte, er lässt ihr Zeit. Sie dachte, er ist enttäuscht. #sprecher:omaRuth
 So sind fünfundzwanzig Jahre vergangen. Zwei Dickköpfe. #sprecher:omaRuth
-Nimm das Foto mit. Ich ruf sie an. #sprecher:omaRuth
+Nimm das Foto mit. Zeig es ihr. #sprecher:omaRuth
 -> oma_ruth_heft
 
 // Szene 39a: Mamas Turnierheft (Gegenstand notizbuch, Quest ironwood.turnierheft gibt ihn).

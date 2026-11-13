@@ -3,7 +3,7 @@
 //
 // Szenen der Story-Bibel (Abschnitt 11): 39 erster Teil (Big Joe erkennt Lauries Kind, nennt die
 // Elm Street: Start der Quest ironwood.mamasFinale), 43 Mamas Partie (Begegnung ironwood.mama;
-// Mama kommt nach Ironwood, weil Oma Ruth sie angerufen hat), 44 Die Feier (Quest ironwood.feier,
+// Mama sieht das Foto zu Hause, maple-falls-wohnzimmer.mama_foto, und kommt zur Partie), 44 Die Feier (Quest ironwood.feier,
 // Big Joe abgelenkt), 46 Aufgabenreihe (Runden ironwood.reiheHank, ironwood.reihePriya),
 // 48 Clubkampf (Begegnung ironwood.clubkampf).
 // Einstiege wie in orte.json: big_joe, hank, priya, mama, pokalregal, stahlbrett. Die Quest
@@ -38,6 +38,9 @@ VAR ausgangIronwoodClubkampf = ""
 VAR nadelIronwood = 0
 VAR clubkampfIronwoodNadel = 0
 VAR pokalregalGesehen = false
+// Kapitel 27 (Roman): Mama kommt in die Kantine, Big Joe hält sie fest.
+VAR mamaInKantine = false
+VAR turnierheftBekommen = false
 
 // ---------------------------------------------------------------- Big Joe
 
@@ -174,34 +177,34 @@ Das ist kein Trick. Das ist ein Fest. #sprecher:ambrose
 
 === mama ===
 {
-- not fotoGefunden:
+- not mamaFotoGesehen:
     Am Tisch am Fenster ist ein Platz frei. Big Joe stellt dort nie jemanden hin. #sprecher:erzaehler
     -> END
-- not mamaFotoGesehen: -> mama_foto
+- not mamaInKantine: -> mama_ankunft
 - ausgangIronwoodMama == "" or ausgangIronwoodMama == "abgebrochen": -> mama_partie_angebot
 - not mamaSpielt: -> mama_nach_partie
 - else: -> mama_alltag
 }
 
-=== mama_foto ===
-~ mamaFotoGesehen = true
-Die Tür geht auf. Mama steht im Mantel da, noch im Schwesternkittel darunter. #sprecher:erzaehler
-„Oma Ruth hat angerufen.“ #sprecher:erzaehler
-Du zeigst ihr das Foto aus der Elm Street. #sprecher:erzaehler
-* [„Ich hab das gefunden.“]
-    Sie nimmt das Foto. Lange sagt sie nichts. #sprecher:erzaehler #pause
-* [„Big Joe lässt grüßen. Und es tut ihm leid.“]
-    Sie sieht zu Big Joe hinüber. Er sieht auf den Boden. #sprecher:erzaehler #pause
-- Ich hab den Läufer nicht gesehen. Im Finale, Zug dreiunddreißig. Ein Spieß. Fünfundzwanzig Jahre, und ich sehe ihn jede Nacht. #sprecher:mutter #stimmung:ernst
-Danach hab ich nie wieder eine Figur angefasst. Ich wollte nicht, dass dir das auch passiert. #sprecher:mutter
-Big Joe kommt herüber. Die beiden umarmen sich, ohne ein Wort. #sprecher:erzaehler
+// Kapitel 27, zweiter Teil (Roman): Stille beim Eintreten, dann das Ironwood-Thema warm.
+=== mama_ankunft ===
+~ mamaInKantine = true
+Sie sind alle da, Hank und Priya und ein Dutzend andere in Arbeitsjacken. Als Mama in der Tür steht, wird es still wie in einer Kirche. #sprecher:erzaehler #musik:aus
+Big Joe steht auf. Er sagt nichts. Sie sagt nichts. #sprecher:erzaehler
+Sie geht durch den ganzen langen Raum. Er kommt ihr drei Schritte entgegen und hält sie fest, als könnte sie zerbrechen. #sprecher:erzaehler #pause:2
+Laurie. #sprecher:bigJoe
+Du hättest noch mal klingeln können. #sprecher:mutter
+Ich weiß. #sprecher:bigJoe
+Ich hätte aufgemacht. #sprecher:mutter
+Ich weiß. Jetzt. #sprecher:bigJoe #musik:karte
 -> mama_partie_angebot
 
 === mama_partie_angebot ===
-Gut. Eine Partie. #sprecher:mutter
-Hier, in diesem Raum. Aber wenn ich gewinne, räumst du die Spülmaschine aus. #sprecher:mutter
-* [„Abgemacht.“]
-    Deine Mutter, wenn ich das sagen darf, setzt sich wie jemand, der nie aufgehört hat. #sprecher:ambrose
+Am Stahlbrett. Mama hat Weiß. Sie sieht die Figuren an, eine nach der anderen, als müsste sie sich an ihre Namen erinnern. #sprecher:erzaehler
+* [„Ich bin bereit.“]
+    Ihre Hand zittert, als sie den ersten Bauern anfasst. Damenbauer, zwei Felder. Dann der daneben. #sprecher:erzaehler
+    Damengambit. Hat sie von mir. #sprecher:bigJoe #stimmung:froh
+    Du spielst Schach. Mit deiner Mutter. Sie ist nicht hergekommen, um geschont zu werden. #sprecher:ambrose
     ~ beginnePartie("ironwood.mama")
     -> END
 * [„Gleich, Mama.“]
@@ -209,20 +212,38 @@ Hier, in diesem Raum. Aber wenn ich gewinne, räumst du die Spülmaschine aus. #
     -> END
 
 === mama_nach_partie ===
+// Klangplan S39: Als Mama innehält, fällt alles weg; bei „Ich hab ihn gesehen“ Mamas Thema zum
+// ersten Mal vollständig (`mama.vollstaendig`). Das Ergebnis ist das Einzige, das nicht wichtig ist.
 ~ mamaSpielt = true
-{ausgangIronwoodMama == "sieg":
-    Mama lacht und weint gleichzeitig. #sprecher:erzaehler
-    Du hast mich mit einem Spieß erwischt. Natürlich. #sprecher:mutter
-    Kumpel, das war ihr Fehler von damals. Jetzt ist er erledigt. #sprecher:bigJoe
+Im dreißigsten Zug hat sie den Turm schon berührt. Dann hält sie inne. #sprecher:erzaehler #musik:aus
+Sie sieht nicht auf ihren Angriff. Ihr Blick geht die Schräge entlang, Feld für Feld, bis in deine Ecke. #sprecher:erzaehler #pause:3
+Big Joe hat die Augen zugemacht. Mama nimmt die Hand vom Turm und zieht die Dame aus der Schräge. #sprecher:erzaehler
+Ich hab ihn gesehen. Den Läufer. Diesmal hab ich ihn gesehen. #sprecher:mutter #musik:mama.vollstaendig #stimmung:hatIhnGesehen
+Sie hält sich mit beiden Händen an der Tischkante fest. Big Joes Augen sind nass, und es ist ihm vollkommen gleichgültig. #sprecher:erzaehler
+{ausgangIronwoodMama:
+- "sieg":
+    Ihr spielt zu Ende. Du gewinnst. Es ist das Einzige an diesem Tag, das nicht wichtig ist. #sprecher:erzaehler
+- "remis":
+    Ihr spielt zu Ende. Remis. Es ist das Einzige an diesem Tag, das nicht wichtig ist. #sprecher:erzaehler
 - else:
-    Ich hab ihn gesehen. Den Läufer. Diesmal hab ich ihn gesehen. #sprecher:mutter
-    Sie muss sich setzen. Big Joe bringt ihr einen Kaffee. #sprecher:erzaehler
+    Ihr spielt zu Ende. Mama gewinnt. Es ist das Einzige an diesem Tag, das nicht wichtig ist. #sprecher:erzaehler
 }
-Ab jetzt fahre ich mit zu den Turnieren. Jemand muss ja auf die Zeit achten. #sprecher:mutter #stimmung:froh
+{turnierheftBekommen: -> heft_satz ->}
+Und ab jetzt fahre ich mit. Zu den Turnieren. Jemand muss ja auf die Zeit achten. #sprecher:mutter #stimmung:froh
 Du spielst zu langsam. #sprecher:mutter
-Deine Mutter, wenn ich das sagen darf, spielt besser, als sie lügt. #sprecher:ambrose #stimmung:lacht
+Deine Mutter, wenn ich das sagen darf, spielt besser, als sie lügt. #sprecher:ambrose #stimmung:lachtOhneSpott
 Juno klebt das Foto ins Tagebuch. Mit Glitzer. Diesmal ja. #sprecher:juno #stimmung:froh
 -> END
+
+// Kapitel 27: Mamas Satz unter dem Finale (Tunnel, nur mit dem blauen Heft).
+=== heft_satz ===
+Mama schlägt das blaue Heft auf und nimmt Hank einen Kugelschreiber aus der Brusttasche, ohne zu fragen. #sprecher:erzaehler
+Unter „Finale. 12. Mai 2001“ schreibt sie einen einzigen Satz: „Es passiert jedem. Auch mir.“ #sprecher:erzaehler #bild:heft_neuer_satz
+Sie blättert um. Auf der nächsten Seite stehen drei Sätze in deiner Schrift. #sprecher:erzaehler #bild:aus
+Du schreibst ja in mein Heft. #sprecher:mutter
+* [„Oma hat gesagt …“]
+- Ich weiß, was Oma gesagt hat. Schreib weiter. #sprecher:mutter
+->->
 
 === mama_alltag ===
 {~Grundreihe. Immer die Grundreihe. Sag das Joe nicht.|Ich hab mir ein Taschenschach gekauft. Für die Nachtschicht.|Fünfundzwanzig Jahre. Und die Figuren fühlen sich an wie gestern.} #sprecher:mutter

@@ -34,6 +34,10 @@ VAR dinerAbendGesehen = false
 VAR nadelRiverton = 0
 VAR verbotGesehen = false
 VAR ankunftIronwoodGesehen = false
+// Kapitel 27 (Roman): Das Foto aus der Elm Street liegt auf dem Küchentisch. fotoGefunden setzt
+// ironwood-mamas-zimmer.ink, mamaFotoGesehen diese Datei (Quest ironwood.mamasFinale, Schritt 3).
+VAR fotoGefunden = false
+VAR mamaFotoGesehen = false
 
 === mutter ===
 {
@@ -46,6 +50,7 @@ VAR ankunftIronwoodGesehen = false
 - kenntHale and nadelMapleFalls > 0 and not aufbruchGesehen: -> aufbruch
 - joGetroffen and not dinerAbendGesehen: -> diner_einladung
 - nadelRiverton > 0 and not verbotGesehen and not ankunftIronwoodGesehen: -> nicht_ironwood
+- fotoGefunden and not mamaFotoGesehen: -> mama_foto
 - else: -> mutter_alltag
 }
 
@@ -163,6 +168,38 @@ Mit Juno. Am Fluss. Gut. #sprecher:mutter
 Sie drückt dir eine Tüte mit belegten Broten in die Hand, als hätte sie es die ganze Zeit gewusst. #sprecher:erzaehler
 Samstagabend fahrt ihr alle mit dem Bus zurück. Und das Brett nicht verlieren. #sprecher:mutter
 Juno wartet am Stadtpark. Dahinter beginnt die Landstraße. #sprecher:erzaehler
+-> END
+
+=== mama_foto ===
+// Kapitel 27, erster Teil (Roman). Mamas Erzählung ohne Musik; bei „jede Nacht“ Mamas Thema,
+// vier Töne, abgebrochen (Klangplan `mama`). Porträt „erzählt“, dann „denkt nach“.
+~ mamaFotoGesehen = true
+Du legst das Foto auf den Küchentisch. Dorthin, wo der Zettel gelegen hat. #sprecher:erzaehler #musik:aus #geraeusch:kuehlschrank
+Mama kommt von der Frühschicht. Mantel, Tasche, ob du gegessen hast. Dann sieht sie es. #sprecher:erzaehler
+* [„Ich hab das gefunden.“]
+- Sie setzt sich. Nicht auf den Stuhl, an dem sie steht. Auf den nächsten, als wäre der Weg zu weit. #sprecher:erzaehler #pause:2
+Du warst in Ironwood. Bei Mama. #sprecher:mutter #stimmung:verschlossen
+* [„Und bei Big Joe. Er lässt grüßen.“]
+- Und es tut ihm leid. Das sagst du auch. #sprecher:erzaehler
+Ihm tut es leid. Joe. Dieser sture, alberne … Ihm tut es leid. #sprecher:mutter #stimmung:riss
+Sie nimmt das Foto. Das Mädchen mit den Händen in den Ärmeln. #sprecher:erzaehler
+Ich war siebzehn. Ich war gut, weißt du. Ich sage das nicht, um anzugeben. #sprecher:mutter #stimmung:erzaehlt
+Im Finale stand ich auf Gewinn. Joe stand hinten an der Wand und hat sich nicht getraut zu atmen. #sprecher:mutter
+Zug dreiunddreißig. Ich sehe nur meinen Angriff. Ich ziehe den Turm vor, hinter meine Dame, auf dieselbe Schräge. #sprecher:mutter
+Und ganz hinten steht sein Läufer und sieht die Schräge entlang. Seit zwanzig Zügen. #sprecher:mutter
+Ein Spieß. Das Einfachste, was es gibt. #sprecher:mutter
+Ich hab den Läufer nicht gesehen. Fünfundzwanzig Jahre, und ich sehe ihn jede Nacht. #sprecher:mutter #musik:mama
+„Wenn ich angreife, sehe ich nichts anderes. Aufpassen!!“ Sie hat es mit dreizehn ins blaue Heft geschrieben. #sprecher:erzaehler
+Ich wollte nicht, dass es jedem passiert. Ich wollte, dass es mir nicht passiert. #sprecher:mutter #musik:aus
+Ich hab die Figuren in den Keller getragen. Schule, Ausbildung. Du. Es ging ja. #sprecher:mutter
+* [„Du hast gesagt: Weiß steht besser.“]
+- Sie sieht dich an. #sprecher:erzaehler
+* [„Am ersten Abend. Drei Sekunden.“]
+- Zwei. Es waren zwei. Ich hab mich so erschrocken. #sprecher:mutter #stimmung:lachtOhneSpott
+Du legst das blaue Heft neben das Foto, aufgeschlagen auf der letzten Seite. Mama sieht auf die leere Stelle. #sprecher:erzaehler #bild:blaues_heft
+Sie steht auf, geht zum Fenster und schiebt die Hände in die Ärmel ihrer Strickjacke. #sprecher:erzaehler #bild:aus #stimmung:denktNach
+Gut. Eine Partie. #sprecher:mutter
+In Ironwood. Ich will den Raum sehen. Und wenn ich gewinne, räumst du die Spülmaschine aus. #sprecher:mutter
 -> END
 
 === mutter_alltag ===

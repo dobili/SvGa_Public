@@ -73,6 +73,11 @@ const FIGUREN = {
   sam: ["short11", "braun", "h3", "variant03", "44c585", "", "", ""], // Clubmitglied
   lily: ["long02", "blond", "h4", "variant01", "ff6f69", "", "", ""], // Nachbarskind, 8
   abernathy: ["short01", "weiss", "h1", "variant21", "5f705c", "light05", "variant06", ""], // Bibliothekar, 80
+  // Maple Falls, neu nach dem Roman zu Akt 1 (13.11.2026): Sprecher ohne Gegner und noch ohne Karte
+  calloway: ["long16", "weiss", "h2", "variant09", "b5838d", "light01", "", ""], // Nachbarin, über 80
+  hector: ["short16", "schwarz", "h6", "variant04", "ececec", "", "variant03", ""], // Diner, Schürze
+  carla: ["long12", "schwarz", "h5", "variant07", "3b5998", "", "", ""], // Junos Schwester, 17
+  pratt: ["short07", "grau", "h4", "variant11", "5b6770", "", "variant04", ""], // Hausmeister
   "skater-jo": ["long07", "kupfer", "h3", "variant10", "00b159", "", "", "variant03"], // Skaterin, 16
   nia: ["long15", "schwarz", "h8", "variant06", "5bc0de", "", "", ""], // Route 1
   wanderer: ["short05", "grau", "h5", "variant17", "5f705c", "", "variant02", "variant08"], // Route 1

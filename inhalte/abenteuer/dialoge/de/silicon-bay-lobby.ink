@@ -48,10 +48,11 @@ Theo misst dich gerade, oder? Er misst alle. Mich auch. #sprecher:victor
 -> END
 
 === victor_berichte ===
-Victor sieht sich um, dann zieht er einen Stapel Papier aus seiner Tasche. #sprecher:erzaehler
-Spielberichte der Akademie. Novas Turnierpartien und ihre Trainingspartien. #sprecher:victor
-Ich sollte sie nicht haben. Sieh sie dir an. Mit deinem eigenen Kopf, nicht mit unserem Programm. #sprecher:victor
-Ein Bericht über Partien. Man liest ihn wie einen Brief: Was steht zwischen den Zeilen? #sprecher:ambrose
+Victor steht vor dir, als hätte er schon eine Weile gewartet. Dann hält er dir einen Speicherstift hin. #sprecher:erzaehler
+Die Spielberichte der Akademie. Alle Partien vom letzten Jahr, Training und Turnier. Schau sie dir an. #sprecher:victor
+* [„Warum?“]
+- Weil ich sie mir angeschaut habe. Und ich will, dass jemand anders auch. #sprecher:victor
+Er sieht an dir vorbei. Dafür hat er, schätzt du, den ganzen Tag gebraucht. #sprecher:erzaehler
 + [Die Partien auswerten]
     ~ beginneAufgaben("siliconBay.auswertung")
     -> END
@@ -60,13 +61,22 @@ Ein Bericht über Partien. Man liest ihn wie einen Brief: Was steht zwischen den
     -> END
 
 === victor_falsch ===
+// Kapitel 33: die Auswertung mit Juno; Ambrose sieht auf das dunkle Tablet. Victors „Das ist
+// falsch“ aus der Story-Bibel (Abschnitt 18.1) steht am Schluss.
 ~ victorFalschGesagt = true
-Achtundneunzig Prozent im Turnier, vierundsiebzig im Training. Das ist kein Talent. #sprecher:erzaehler
-… Das ist falsch. #sprecher:victor #stimmung:ernst
-Vor einer Partie hab ich gesehen, wie sie etwas ins Ohr gesteckt hat. Ich dachte, ein Kopfhörer. #sprecher:victor
+Im Training spielt Nova vierundsiebzig Prozent, jede Woche, das ganze Jahr. Im Turnier achtundneunzig. #sprecher:erzaehler #musik:spannung
+Vielleicht ist sie im Turnier besser. Manche sind das. #sprecher:juno
+* [„Nicht so.“]
+- Zug einunddreißig, ein Finale im Herbst: ein König ein Feld zur Seite, mitten im Angriff, ohne Grund. #sprecher:erzaehler
+Der einzige Zug, der gewinnt. Das zeigt sich erst vierzehn Züge später. #sprecher:erzaehler
+* [„Der ist zu gut.“]
+- Kann ein Zug zu gut sein? #sprecher:juno
+* [„Okafor hätte ihn nicht gefunden. Big Joe nicht. Du?“]
+- Ambrose sieht nicht auf die Stellung. Er sieht auf das Tablet, das dunkel daliegt. #sprecher:erzaehler
+Nein. Ich nicht. #sprecher:ambrose #stimmung:fern
+Victor hat zugehört. Zum ersten Mal sagt er es laut. #sprecher:erzaehler
+Das ist falsch. #sprecher:victor #stimmung:ernst
 Sag meinem Vater nichts. Noch nicht. Ich muss nachdenken. #sprecher:victor #stimmung:muede
-Ein Hale, der zweifelt. Das habe ich nicht kommen sehen. #sprecher:ambrose
-Zu meiner Zeit hieß das: sich selbst nicht belügen. Es ist die schwerste Übung von allen. #sprecher:ambrose
 -> END
 
 === victor_alltag ===

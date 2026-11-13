@@ -11,6 +11,8 @@
 // Runde 11 (13.11.2026): Dr. Lin, Theo und Nova nach dem Roman (roman/akt3_teil1.md, Kapitel 32):
 // Lins drei Fragen, Theos Kurve („menschlich“), ZERO spielt in zwölf Sekunden, Ambrose gebannt.
 // Klang nach 21_Klangplan.md (zero, ambrose.gebannt). „Später“ nur in Akt 1, hier „Nicht jetzt.“.
+// Kapitel 33: Ambrose verbietet das „Hm“ im Club, nach dem Sieg sagt Dr. Lin einmal „Sie“ und
+// schaltet den Tisch aus (abschaltton, dann Stille S48); im Clubkampf ein Moment bei Zug 15.
 //
 // Variablen: reiheTheoBestanden, reiheNovaBestanden, siliconBayAuswertungBestanden,
 // ausgangSiliconBayClubkampf und nadelSiliconBay setzt die Hülle (R42); ohrempfaengerGefunden setzt
@@ -78,19 +80,17 @@ Bevor du gegen mich spielst, fragen dich Theo und Nova ab. So ist es hier üblic
 === lin_schweigen ===
 ~ schweigenErklaert = true
 Du hast die Reihe bestanden. Morgen früh spielen wir. #sprecher:lin
-Vor der Partie willst du einen Spruch üben. Ambrose räuspert sich. #sprecher:erzaehler
-Am Brett eines Clubs schweigt man. Im Park redet man. #sprecher:ambrose
-* [„Warum?“]
-    Im Park spielt man um eine Limonade. Im Club um die Ehre des anderen. #sprecher:ambrose
-    Wer ihn stört, nimmt ihm die Partie weg, nicht nur die Zeit. #sprecher:ambrose
-* [„Verstanden.“]
-    Gut. Auch in echten Turnieren gilt Ruhe. Den Gegner abzulenken ist dort verboten. #sprecher:ambrose
-- Die Sprüche bleiben heute in deiner Tasche. #sprecher:erzaehler
+Am Morgen probierst du etwas vor dem Spiegel. Ein Gesicht, ein „Hm“. #sprecher:erzaehler
+Nein. #sprecher:ambrose #stimmung:streng
+* [„Bei Dash hat es …“]
+- Am Brett eines Clubs schweigt man. Im Park redet man. #sprecher:ambrose #stimmung:streng
+Im Park spielt man um eine Limonade. Im Club um die Ehre des anderen. #sprecher:ambrose
+Wer ihn dort stört, nimmt ihm nicht die Zeit. Er nimmt ihm die Partie weg. Und die gehört euch beiden. #sprecher:ambrose
+Du lässt es. #sprecher:erzaehler
 -> lin_clubkampf
 
 === lin_clubkampf ===
 Bereit? Ich spiele, was die Theorie sagt. Mal sehen, was du dagegen hast. #sprecher:lin
-Führ sie von den gelernten Wegen herunter, {held}. Dann wird sie vorsichtig. #sprecher:ambrose
 + [„Ich bin bereit.“]
     ~ beginnePartie("siliconBay.clubkampf")
     -> END
@@ -110,17 +110,26 @@ Sie war sicher, solange es Regeln gab. Zwing sie in eine Stellung ohne Regeln. #
 === lin_nach_sieg ===
 ~ clubkampfSiliconBayNadel = nadelSiliconBay
 {clubkampfSiliconBayBesprochen:
-    Eine bessere Nadel. Ich schreibe es in mein Heft. Mit Tinte. #sprecher:lin #stimmung:froh
+    Eine bessere Nadel. Ich schreibe es in mein Heft. Mit Tinte. #sprecher:lin #stimmung:froh #klang:fanfare.gedaempft
     -> END
 }
 ~ clubkampfSiliconBayBesprochen = true
 {ausgangSiliconBayClubkampf == "remis":
-    Remis. Ehrlich erkämpft. Die Bronzenadel gehört dir. #sprecher:lin
-- else:
-    Ich habe Sie nichts gelehrt. Sie mich. #sprecher:lin #stimmung:froh
+    Remis. Ehrlich erkämpft. Die Bronzenadel gehört dir. #sprecher:lin #klang:fanfare.gedaempft
+    -> lin_tisch_aus
 }
-Dr. Lin hält einen Moment inne. Dann lacht sie über sich selbst: „Entschuldige. Das Sie ist mir rausgerutscht.“ #sprecher:erzaehler
-Die fünfte Nadel. Und ein Mentor-Zug. Ich hätte ihn heute kaum gebraucht, du schon gar nicht. #sprecher:ambrose
+Dr. Lin sitzt lange still. Dann nimmt sie die Nadel aus der Kitteltasche: klares Glas, darin ein einzelner Bauer. #sprecher:erzaehler #klang:fanfare.gedaempft
+Ich habe Sie nichts gelehrt. Sie mich. #sprecher:lin
+Sie sagt „Sie“. Zu dir. Einmal. #sprecher:erzaehler
+-> lin_tisch_aus
+
+// Kapitel 33: Die Tische zeigen den Fehler, nicht die Angst. Danach wirkliche Stille (S48).
+=== lin_tisch_aus ===
+Wissen Sie, was die Tische nicht zeigen? Wo der Fehler war, ja. Nicht, warum man Angst hatte. #sprecher:lin
+Sie schaltet den Tisch aus. Darunter nur schwarzes Glas, in dem ihr euch beide spiegelt. #sprecher:erzaehler #klang:abschaltton #musik:aus #geraeusch:aus #pause:4
+Ich habe die Spielberichte meiner Klasse nie so genau angesehen. #sprecher:lin #stimmung:ernst
+* [Schweigen]
+- Du hast es versprochen. Aber sie hat deinen Blick gesehen. Und sie ist eine Lehrerin. #sprecher:erzaehler
 -> END
 
 === lin_alltag ===

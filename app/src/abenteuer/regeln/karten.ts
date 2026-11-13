@@ -175,6 +175,16 @@ export function mitGespielterKarte(
   };
 }
 
+/**
+ * Zeigt die Karte nur, dass Ambrose da ist, statt einen Zug zu spielen? Ja für eine freie Karte
+ * der Begegnung (R29, Mentor-Zug im Halbfinale, Story-Bibel 34.3): goldener Rand, kein Zug;
+ * den Turmzug findet der Held selbst (regeln/zugerraten.ts).
+ * Beispiel: Halbfinale, frei ["mentorzug"] → ja; gekaufter Mentor-Zug im Clubkampf → nein.
+ */
+export function nurAnwesenheit(karten: Partiekarten, kennung: string): boolean {
+  return karten.frei?.includes(kennung) === true;
+}
+
 /** Stufe einer Karte zu ihrer Kennung (für Anzeige und Protokoll). */
 export function stufeVon(kennung: string, sorten: readonly Kartensorte[]): Kartenstufe | null {
   return sorten.find((s) => s.kennung === kennung)?.stufe ?? null;

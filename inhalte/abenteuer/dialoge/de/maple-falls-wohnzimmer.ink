@@ -24,6 +24,10 @@ VAR kenntHale = false
 VAR ausgangMapleFallsErsteLektion = ""
 VAR ersteLektionBesprochen = false
 VAR nadelMapleFalls = 0
+// Neu nach dem Roman zu Akt 1 (Kapitel 7, Szene akt1.dinerAbend): joGetroffen setzt
+// maple-falls-park.ink, dinerAbendGesehen diese Datei.
+VAR joGetroffen = false
+VAR dinerAbendGesehen = false
 
 === mutter ===
 {
@@ -34,6 +38,7 @@ VAR nadelMapleFalls = 0
     -> END
 - ersteLektionBesprochen and not ersterAbendGesehen: -> erster_abend
 - kenntHale and nadelMapleFalls > 0 and not aufbruchGesehen: -> aufbruch
+- joGetroffen and not dinerAbendGesehen: -> diner_einladung
 - else: -> mutter_alltag
 }
 
@@ -119,4 +124,63 @@ Und das alte Brett nimmst du mit, oder? Dann verlier es nicht. #sprecher:mutter
 
 === mutter_alltag ===
 {~Ich hab gleich Nachtschicht. Im Kühlschrank ist noch Pizza.|Hast du die Kartons in deinem Zimmer schon ausgepackt? Einen wenigstens?|Wenn du rausgehst: Hauptsache, du bist vor zehn zu Hause.|Die Nachbarin hat Kuchen gebracht. Die Leute hier sind nett.} #sprecher:mutter
+-> END
+
+// ---------------------------------------------------------------- Abend im Diner
+
+// Szene akt1.dinerAbend (Roman, Kapitel 7; neu gegenüber der Story-Bibel), etwa vier Minuten,
+// freigeschaltet nach der ersten Begegnung mit Jo. Mama findet die Lösung vor {held}, nur als
+// Erzählerzeile (ihr Geheimnis ein zweites Mal ohne Worte); Hector erzählt vom Mann im Anzug
+// (Graham Hale als Vorzeichen). Stimmung: warm, am Ende ein Schatten. Klang: eigenes kleines
+// Diner-Stück wie aus einer Musikbox, Bratgeräusche, Geschirr; bei Hectors Bericht fällt die
+// Musik einen Takt aus. Vorgemerkt für mittel-2: #musik:diner am Anfang, #pause:3 nach Mamas Finger.
+// Die Szene spielt im Dialog; der Ort Diner bekommt für Hector eine Figur, wenn die Karten so weit
+// sind (maple-falls-diner.ink, kleine Geschichte Hector).
+=== diner_einladung ===
+~ dinerAbendGesehen = true
+{not kenntHale:
+    ~ setzeSzene("akt1.dinerAbend")
+}
+Ich hab heute frei. Und der Herd ist immer noch nicht angeschlossen. #sprecher:mutter
+Diner? Ich lade dich ein. #sprecher:mutter #stimmung:froh
+* [„Pommes?“]
+    Pommes. Und vielleicht sogar ein Salat. Vielleicht. #sprecher:mutter
+* [„Gern.“]
+- -> diner_abend
+
+=== diner_abend ===
+Das Diner an der Hauptstraße ist lang und schmal wie ein Eisenbahnwagen. Rote Bänke, eine Theke aus Blech. #sprecher:erzaehler #klang:diner
+Es riecht nach Zwiebeln und Kaffee. Aus der Musikbox kommt leise ein altes Lied. #sprecher:erzaehler
+Bestellung läuft! #sprecher:hector #stimmung:froh
+Er ruft es in die Küche, obwohl außer ihm niemand in der Küche ist. Auf seiner Schürze steht „Hector“. #sprecher:erzaehler
+Er legt euch Papiersets hin. Darauf ein Schachbrett: „Rätsel der Woche: Weiß zieht und setzt in einem Zug matt.“ #sprecher:erzaehler
+Nimm zwei. Ist schwer diese Woche. Ich krieg's nicht raus. #sprecher:hector
+* [Das Rätsel ansehen]
+* [Erst Pommes bestellen]
+    Pommes kommen. Das Rätsel läuft nicht weg. #sprecher:hector
+- Neben der Kasse liegt ein Stapel Sets, mindestens zwanzig. Auf keinem ist etwas eingezeichnet. #sprecher:erzaehler
+Du suchst. Was hängt? Wohin kann die Dame? #sprecher:erzaehler #pause
+Mama sieht zu. Sie sagt nichts. #sprecher:erzaehler
+Aber ihr Finger bewegt sich, einen Zentimeter über dem Papier, auf ein Feld. Eine halbe Sekunde vor deinem Stift. #sprecher:erzaehler #pause
+Du tust, als hättest du es nicht gesehen. Dann zeichnest du den Pfeil ein. #sprecher:erzaehler
+Hector hält das Set ins Licht wie einen Geldschein. #sprecher:erzaehler
+Matt in eins! Am ersten Abend! Das kommt an die Wand. #sprecher:hector #stimmung:froh
+Deine Mutter war schneller. Ich sage es nur, damit du es weißt. #sprecher:ambrose
+* [Den Kopf schütteln, ganz leicht]
+    Schon gut. Ich schweige. Gentlemen schweigen über Damen. #sprecher:ambrose #stimmung:lacht
+* [„Pst.“]
+    Mama sieht auf. „Was?“ Du zeigst auf die Pommes. #sprecher:erzaehler
+- Die Pommes kommen. Hector bleibt am Tisch stehen, das Geschirrtuch über der Schulter. #sprecher:erzaehler
+Gestern saß hier einer. Anzug, zwei Telefone, kein Lächeln. #sprecher:hector
+Hat Kaffee bestellt und nur auf Zahlen geguckt. Wollte wissen, wem das Schulgebäude gehört. #sprecher:hector
+Hab gesagt: der Schule. #sprecher:hector #stimmung:lacht
+Dann lacht er nicht mehr. Die Musikbox setzt für einen Takt aus. #sprecher:erzaehler #pause
+Hat er nicht komisch gefunden. #sprecher:hector
+* [„Wer war das?“]
+    Keine Ahnung. Hat nicht mal Trinkgeld gegeben. Kaffee schwarz, ohne alles. #sprecher:hector
+* [Nichts sagen]
+- Gibt es hier Ketchup? #sprecher:mutter
+Draußen ist es dunkel geworden. Hinter dem Fenster die Hauptstraße, die einzige Ampel, dahinter schwarze Bäume. #sprecher:erzaehler
+Es ist ein guter Abend. Du merkst es erst, als er fast vorbei ist. #sprecher:erzaehler
+Du hast den ganzen Tag nicht an die alte Wohnung gedacht. #sprecher:erzaehler
 -> END

@@ -11,6 +11,8 @@
 // Pflichtgespräch auf dem Weg zur Haltestelle; es läuft vor dem ersten Gespräch mit Juno. Die Stufen
 // B bis D (Einstieg „calloway“) brauchen eine Figur auf der Birch Lane und je Stufe ein sichtbares
 // Ding (zweiter Stuhl, Kartenspiel, Tischchen mit Brett); das folgt mit den Karten.
+// Ebenso Carla Martínez, Junos ältere Schwester (Einstieg „carla“, Stufen A bis D), die drei Jahre im
+// Team war und aufgehört hat; Stufe C steht vor dem Fenster des Clubraums, Stufe D im Clubraum.
 
 EXTERNAL beginneAufgaben(runde)
 
@@ -196,4 +198,65 @@ Der Springer, sagt der Junge, springt immer auf die andere Farbe. Stimmt das? #s
 - Seit vierundsechzig wohne ich neben einem Schachbrett. Jetzt fange ich an. #sprecher:calloway
 Margaret hätte gelacht. Sie hat oft gelacht. Das weiß kaum einer. #sprecher:calloway
 Das wusste ich nicht. #sprecher:ambrose #stimmung:still
+-> END
+
+// ---------------------------------------------------------------- Carla Martínez
+
+// Kleine Geschichte nach dem Ortsblatt: Carla tut, als hätte Schach sie nie interessiert, und kommt
+// über die Akte zurück. Keine Aufgabe, keine Belohnung; jede Stufe ändert etwas Sichtbares.
+=== carla ===
+{
+- nadelIronwood > 0: -> carla_d
+- endeAkt1Gesehen: -> carla_c
+- nadelMapleFalls > 0: -> carla_b
+- else: -> carla_a
+}
+
+// Stufe A (Ankunft): Sie repariert ein Fahrrad am Zaun und winkt ab, wenn es um Schach geht.
+=== carla_a ===
+Vor dem gelben Haus kniet ein Mädchen, älter als Juno, und schraubt an einem Fahrrad. #sprecher:erzaehler
+Du bist Junos neues viertes Brett? Viel Glück. Sie redet, bis du umfällst. #sprecher:carla
+* [„Spielst du auch Schach?“]
+    Hab ich mal. Jetzt hab ich fast ein Auto. #sprecher:carla
+* [„Juno sagt, du warst gut.“]
+    Juno sagt viel. #sprecher:carla
+- Sie winkt ab und dreht weiter an der Kette. #sprecher:erzaehler
+-> END
+
+// Stufe B (nach der Clubnadel): Das Fahrrad ist fertig. Sie kennt die Eröffnung.
+=== carla_b ===
+Das Fahrrad steht fertig am Zaun. Carla schiebt es gerade auf die Straße. #sprecher:erzaehler
+Und? Wie war der Clubkampf? #sprecher:carla
+* [„Gewonnen. Gegen den Coach.“]
+    Echt? Gegen Delgado? #sprecher:carla
+* [„Knapp.“]
+    Gegen Delgado ist es immer knapp. #sprecher:carla
+- Italienisch, oder? Läufer nach c4, und dann wartet sie nur auf ihren Angriff. #sprecher:carla
+Sie merkt, was sie gesagt hat, und steigt auf das Rad. #sprecher:erzaehler
+Sie kennt die Eröffnung. Und die Trainerin. Man vergisst nicht, was man geliebt hat. #sprecher:ambrose
+-> END
+
+// Stufe C (nach Akt 1): Sie steht von außen am Fenster des Clubraums und schaut zu. Sie geht,
+// wenn man sie anspricht.
+=== carla_c ===
+Vor dem Fenster des Clubraums steht Carla und sieht hinein. Drinnen spielen zwei Kinder aus der Sechsten. #sprecher:erzaehler
+* [„Willst du nicht reinkommen?“]
+    Nur geguckt. Ich muss los. #sprecher:carla
+* [Neben sie stellen und mitschauen]
+    Ihr schaut zusammen zu. Dann sagt sie: „Der Kleine stellt seinen Läufer ein.“ Und geht. #sprecher:erzaehler
+- Am Fenster bleibt ein Abdruck ihrer Hand. #sprecher:erzaehler
+-> END
+
+// Stufe D (nach Akt 2): Sie sitzt im Clubraum am Brett mit der fehlenden Dame und bringt Jüngeren
+// das Zählen bei. Gehört dann in den Clubraum.
+=== carla_d ===
+Carla sitzt am Brett mit dem Radiergummi. Vor ihr zwei Kinder aus der Sechsten. #sprecher:erzaehler
+Wer greift an? Wer verteidigt? Erst zählen, dann schlagen. #sprecher:carla
+Sie sieht dich und zuckt die Schultern. #sprecher:erzaehler
+Delgado hat gefragt. Und ich hatte samstags eh nichts vor. #sprecher:carla
+* [„Schön, dass du da bist.“]
+    Sag Juno nichts. Sonst steht es morgen im Tagebuch. Mit Glitzer. #sprecher:carla
+* [„Der Radiergummi hat schon zwei Partien gewonnen.“]
+    Drei. Heute Morgen noch eine. #sprecher:carla #stimmung:froh
+- Sie kommt zurück. So fängt es an. #sprecher:ambrose #stimmung:still
 -> END

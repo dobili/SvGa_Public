@@ -55,21 +55,36 @@ VAR pokalregalGesehen = false
 }
 
 === big_joe_erkennt ===
+// Kapitel 25 (Roman): Big Joe erkennt Lauries Kind an der Art, wie es auf das Brett sieht. Bei
+// der Frage setzt alles aus (Klangplan S35), danach kommt die Musik der Karte zurück.
 ~ bigJoeGetroffen = true
 ~ elmStreetBekannt = true
-Ein riesiger Mann in Arbeitsjacke kommt auf dich zu, bleibt stehen und sieht dich lange an. #sprecher:erzaehler
-Kumpel, du hast ein Gesicht, das ich kenne. #sprecher:bigJoe #pause
-Bist du Lauries Kind? #sprecher:bigJoe #stimmung:ernst
-* [„Laurie? Meine Mama heißt Laura.“]
-    Laura. Für mich war sie immer Laurie. #sprecher:bigJoe
-    Die beste Spielerin, die dieser Club je hatte. #sprecher:bigJoe
-* [„Woher kennen Sie meine Mama?“]
-    Ich war ihr Trainer. Hier, in dieser Kantine. Lange her. #sprecher:bigJoe
-- Er zeigt auf das Pokalregal. Zwischen den Pokalen ist eine Lücke, als hätte dort einer gestanden. #sprecher:erzaehler
-Ihre Mutter wohnt noch in der Elm Street. Sag Laurie, Big Joe lässt grüßen. #sprecher:bigJoe
-Und dass es ihm leidtut. #sprecher:bigJoe
-Und wenn du um die Nadel spielen willst: erst Hank, dann Priya, dann ich. #sprecher:bigJoe
-Ein Trainer, der sich entschuldigen will. Das ist ein Mann, der lange getragen hat. #sprecher:ambrose
+Am Ende des Raums, unter dem Pokalregal, sitzt ein Mann wie aus demselben Stück wie der Ofen. Vor ihm ein Schachbrett aus Stahl. #sprecher:erzaehler
+Er setzt eine Figur hin, als wäre sie aus Glas. #sprecher:erzaehler
+Eine Fesselung ist wie ein Kranhaken, Priya. Was dranhängt, kann nicht weg. #sprecher:bigJoe
+Ein Spieß ist eine Fesselung von hinten. Statik. #sprecher:priya
+Statik! #sprecher:bigJoe #stimmung:lacht
+Er lacht, dass die Tassen klirren. Dann sieht er dich und hört auf. #sprecher:erzaehler
+Er steht auf. Es dauert, bis er oben ist. #sprecher:erzaehler
+Kumpel. Du hast ein Gesicht, das ich kenne. #sprecher:bigJoe
+Die Augen. Wie du auf das Brett guckst, bevor du auf mich guckst. #sprecher:bigJoe
+Bist du Lauries Kind? #sprecher:bigJoe #musik:aus #pause:3
+* [„Laura. Sie heißt Laura.“]
+- Laura. #sprecher:bigJoe
+Sein großes Gesicht wird froh und traurig zugleich. #sprecher:erzaehler
+Ja. Hier hieß sie Laurie. #sprecher:bigJoe #musik:karte
+Er heißt Big Joe. Er sagt es wie einen Dienstgrad. Kranführer, dreißig Jahre, und ebenso lange der Club. #sprecher:erzaehler
+Steckt sie noch die Hände in die Ärmel? Wenn sie nachdenkt? #sprecher:bigJoe
+* [„Ja.“]
+- Du hast nie darüber nachgedacht. #sprecher:erzaehler
+Im Pokalregal hinter ihm stehen die Pokale dicht an dicht. Nur an einer Stelle nicht. #sprecher:erzaehler
+Elm Street. Nummer zehn, das Eckhaus mit dem grünen Geländer. #sprecher:bigJoe
+Geh hin. Sie wartet seit fünfundzwanzig Jahren, dass jemand klingelt. #sprecher:bigJoe
+Und wenn du deine Mutter siehst: Big Joe lässt grüßen. #sprecher:bigJoe
+Und dass es ihm leidtut. #sprecher:bigJoe #stimmung:ernst
+Um die Nadel spielen? Erst Hank, dann Priya, dann ich. #sprecher:bigJoe
+Was tut ihm leid? #sprecher:juno
+Du weißt es nicht. #sprecher:erzaehler
 -> END
 
 === big_joe_reihe_offen ===
@@ -268,14 +283,15 @@ Spieße und scheinbarer Schutz. Bereit für ein bisschen Statik? #sprecher:priya
 
 === pokalregal ===
 {pokalregalGesehen:
-    Die Lücke im Regal ist noch da. Ein Staubrand zeigt, wo der Pokal stand. #sprecher:erzaehler
+    Die Lücke im Regal ist noch da, so breit wie eine Hand. Darunter das Messingschild: 2001. #sprecher:erzaehler
     -> END
 }
 ~ pokalregalGesehen = true
-Im Pokalregal stehen dreißig Jahre Werksclub. Auf einem Schild unter einer Lücke steht: „Jugendmeisterschaft 2001“. #sprecher:erzaehler
+Im Pokalregal stehen dreißig Jahre Werksclub, dicht an dicht. #sprecher:erzaehler
+Nur an einer Stelle nicht. Eine Lücke, so breit wie eine Hand. Darunter ein Schildchen aus Messing: 2001. #sprecher:erzaehler #bild:pokalluecke_2001
 -> END
 
 === stahlbrett ===
-Ein Schachbrett aus Stahlplatten, selbst geschweißt, die Felder abwechselnd blank und geschwärzt. Die Figuren sind aus Holz. #sprecher:erzaehler
+Ein Schachbrett aus Stahl. Die Felder hell geschliffen und dunkel angelassen, die Schweißnähte am Rand dick wie Finger. #sprecher:erzaehler #bild:stahlbrett
 Stahl für das Brett, Holz für die Figuren. Ein Mann, der weiß, was hart sein muss und was nicht. #sprecher:ambrose
 -> END

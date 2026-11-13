@@ -94,11 +94,10 @@ Zurück zur Eisenbrücke und dem Kanalweg nach Riverton. #sprecher:erzaehler
 
 === haustuer_ruth ===
 {elmStreetBekannt:
-    Elm Street, ein Reihenhaus mit grüner Tür. Du klingelst. #sprecher:erzaehler
-    Drinnen schlurfen Hausschuhe. #sprecher:erzaehler
+    Elm Street, Nummer zehn. Das Eckhaus mit dem grünen Geländer. #sprecher:erzaehler #musik:aus #geraeusch:schnee_schritte
+    Du klingelst. Drinnen schlurfen Hausschuhe. #sprecher:erzaehler
 - else:
-    Eine Reihe gleicher Häuser in der Elm Street. Hinter dieser grünen Tür wohnt jemand, den du nicht kennst. #sprecher:erzaehler
-    Noch nicht. #sprecher:erzaehler
+    Reihenhäuser, eins am anderen, alle gleich. Nur das Eckhaus hat ein grünes Geländer. #sprecher:erzaehler
 }
 -> END
 
@@ -271,7 +270,8 @@ Im Fenster von Ednas Laden: Schrauben in Gläsern, drei Laternen, eine Fahrradke
     -> END
 }
 ~ kreidebrettGesehen = true
-Auf dem Gehweg haben Kinder ein Schachbrett mit Kreide gemalt, die Figuren sind Steine und Kronkorken. #sprecher:erzaehler
+Auf dem Gehweg haben Kinder ein Schachbrett mit Kreide gemalt. Ein richtiges, acht mal acht. #sprecher:erzaehler
+Die können hier zählen. #sprecher:juno
 Ein Brett aus Kreide, Figuren aus Steinen. Wir hatten nicht mehr, und wir hatten genug. #sprecher:ambrose
 -> END
 

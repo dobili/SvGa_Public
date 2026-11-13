@@ -5,64 +5,82 @@
 // Foto von 2001 ist der Gegenstand der Hauptquest ironwood.mamasFinale (Wirkung in quests.json)
 // und zugleich ein Fund fürs Album (gibFund). Danach ruft Oma Ruth Mama an; Mama kommt in die
 // Kantine (ironwood-kantine.mama_foto).
-// Beim zweiten Besuch gibt Oma Ruth Mamas Turnierheft (Szene 39a, oma_ruth_heft).
+// Im selben Besuch gibt Oma Ruth Mamas Turnierheft (Szene 39a, oma_ruth_heft; Roman, Kapitel 25).
 // Einstiege wie in orte.json: oma_ruth, medaille, partieformular.
 
 EXTERNAL gibFund(kennung)
 
+VAR held = "Du"
 VAR fotoGefunden = false
 VAR medailleGesehen = false
 VAR partieformular2001Gesehen = false
 VAR turnierheftBekommen = false
 
 === oma_ruth ===
+// Kapitel 25 (Roman): Oma Ruth kennt {held}; die Umarmung auf der Schwelle, dann Mamas Thema
+// (Klangplan S36, `mama`), das am leeren Blatt nach vier Tönen abbricht. Das Heft gibt sie im
+// selben Besuch (oma_ruth_heft); wer früher schon hier war, bekommt es beim nächsten Mal.
 {fotoGefunden and not turnierheftBekommen: -> oma_ruth_heft}
 {fotoGefunden:
-    {~Deine Mutter war das stillste Kind der Straße. Außer, wenn sie gewonnen hat.|Ich hab ihr Zimmer so gelassen, falls sie mal wieder schlafen will.|Laurie hat angerufen. Sie klang, als hätte sie lange geweint und dann gelacht.} #sprecher:omaRuth
+    {~Deine Mutter war das stillste Kind der Straße. Außer, wenn sie gewonnen hat.|Ich hab ihr Zimmer so gelassen, falls sie mal wieder schlafen will.|Du bist schon wieder gewachsen. Das gehört verboten.} #sprecher:omaRuth
     -> END
 }
 ~ fotoGefunden = true
-Eine kleine Frau mit Strickjacke öffnet die Tür, sieht dich an und hält sich am Rahmen fest. #sprecher:erzaehler
-Du bist Lauries Kind. Komm her. #sprecher:omaRuth #stimmung:froh
-Sie umarmt dich lange. Dann führt sie dich eine schmale Treppe hinauf in ein kleines Zimmer. #sprecher:erzaehler
-Poster an der Wand, eine Silbermedaille am Haken, auf dem Schreibtisch ein Foto: „Jugendmeisterschaft 2001, Finale – Laura M., Stahlwerker-Club Ironwood“. #sprecher:erzaehler
+Die Frau in der Tür ist klein und hat Mamas Kinn. #sprecher:erzaehler
+Sie sieht dich an und sagt nichts. Dann zieht sie dich an sich. Sie riecht nach Mamas altem Waschmittel. #sprecher:erzaehler #musik:mama
+Du bist gewachsen. Seit dem Frühjahr. Das gehört verboten. #sprecher:omaRuth
+Sie macht Kakao und stellt Juno Fragen, als wäre Juno die Hauptperson. Juno beantwortet sie alle. #sprecher:erzaehler
+Komm. Ich zeig dir was. Sie wird mir böse sein. Soll sie. #sprecher:omaRuth
+Ein kleines Zimmer unter dem Dach. Poster von Bands, eine gehäkelte Decke. Durchs Fenster sieht man die Schornsteine. #sprecher:erzaehler
+An der Wand ein Foto: ein Mädchen, die Hände in den Ärmeln, über einem Brett. „Jugendmeisterschaft des Bundesstaats 2001. Finale. Laura M., Stahlwerker-Club Ironwood.“ #sprecher:erzaehler #bild:foto2001
 ~ gibFund("foto2001")
-Sie hat genau so gelacht wie deine Mama heute. Nur jünger. #sprecher:juno
-Sie hat das Formular vom Finale eingerahmt und nie wieder angesehen. Nimm das Foto mit. #sprecher:omaRuth
-Ich ruf sie an. #sprecher:omaRuth
-Deine Mutter, wenn ich das sagen darf, war eine Meisterin. Und niemand hat es mir erzählt. #sprecher:ambrose #stimmung:stolz
--> END
+Sie sieht so sicher aus. #sprecher:erzaehler #bild:aus
+Deine Mutter war das stillste Kind der Straße. Außer, wenn sie gewonnen hat. Dann hat man sie bis zum Werkstor gehört. #sprecher:omaRuth
+Joe sagt, er hat in dreißig Jahren keine zweite gehabt. Dann kam das Finale. Sie hat etwas übersehen, einen Läufer. #sprecher:omaRuth
+Sie kam nach Hause und trug den Koffer mit den Figuren in den Keller. #sprecher:omaRuth #stimmung:traurig
+* [„Und Big Joe?“]
+- Joe hat drei Tage gewartet, dann hat er geklingelt. Ich hab gesagt, sie will niemanden sehen. #sprecher:omaRuth
+Er dachte, er lässt ihr Zeit. Sie dachte, er ist enttäuscht. #sprecher:omaRuth
+So sind fünfundzwanzig Jahre vergangen. Zwei Dickköpfe. #sprecher:omaRuth
+Nimm das Foto mit. Ich ruf sie an. #sprecher:omaRuth
+-> oma_ruth_heft
 
 // Szene 39a: Mamas Turnierheft (Gegenstand notizbuch, Quest ironwood.turnierheft gibt ihn).
 === oma_ruth_heft ===
 ~ turnierheftBekommen = true
-Oma Ruth zieht die Schreibtischschublade auf und holt ein dickes, blaues Heft heraus. #sprecher:erzaehler
-Lauries Turnierheft. Jede Partie mit Datum, Gegner und drei Sätzen: Was ich gelernt habe. #sprecher:omaRuth
-Die letzte Seite ist das Finale 2001. Danach ist alles leer. #sprecher:omaRuth
-Sie hat es mir dagelassen. Ich glaube, sie wollte, dass jemand weiterschreibt. #sprecher:omaRuth #stimmung:froh
-Drei Sätze nach jeder Partie. Deine Mutter war eine ordentliche Spielerin. Ich war das nie. #sprecher:ambrose
-Ab jetzt schreibe ich nach jeder Partie die wichtigsten Momente hinein. Du findest sie im Tagebuch. #sprecher:ambrose
+Sie zieht die Schublade des Schreibtischs auf. Ein Heft, dick, blau, die Ecken abgestoßen. #sprecher:erzaehler
+Jede Seite eine Partie. Datum, Gegner, Ergebnis. Darunter drei Sätze: „Was ich gelernt habe.“ #sprecher:erzaehler #bild:blaues_heft
+„Nicht mit der Dame zuerst.“ #sprecher:erzaehler
+„Wenn ich angreife, sehe ich nichts anderes. Aufpassen!!“ #sprecher:erzaehler
+„Geduld ist kein Warten. Geduld ist Hinsehen.“ #sprecher:erzaehler
+Die Schrift wird erwachsener. Die letzte beschriebene Seite: „Finale. 12. Mai 2001.“ Darunter die Überschrift. #sprecher:erzaehler
+Und darunter nichts. #sprecher:erzaehler #musik:aus #pause:2
+Sie hat es mir dagelassen. Ich glaube, sie wollte, dass jemand weiterschreibt. #sprecher:omaRuth
+Draußen leuchtet der Himmel über dem Werk orange auf. Das Fauchen kommt einen Atemzug später. #sprecher:erzaehler #licht:ironwood #klang:hochofen
+Drei Sätze nach jeder Partie. Deine Mutter war eine ordentliche Spielerin, {held}. #sprecher:ambrose #stimmung:still
+Ich war das nie. Ich habe meine Niederlagen nicht aufgeschrieben. Ich habe sie auswendig gelernt. #sprecher:ambrose
+* [„Was macht man damit?“]
+- Mit einem halb leeren Heft? Man schreibt hinein. Was sonst. #sprecher:ambrose
+Ab jetzt stehen nach jeder Partie die wichtigsten Momente im blauen Heft. Du findest es im Tagebuch. #sprecher:erzaehler
 -> END
 
 === medaille ===
 {medailleGesehen:
-    Die Silbermedaille dreht sich langsam am Haken, wenn du vorbeigehst. #sprecher:erzaehler
+    Die Silbermedaille dreht sich langsam am Band, wenn du vorbeigehst. #sprecher:erzaehler
     -> END
 }
 ~ medailleGesehen = true
-Eine Silbermedaille an einem rot-weißen Band: „2. Platz, Jugendmeisterschaft des Bundesstaats, 2001“. #sprecher:erzaehler
-Silber. Das ist eine Niederlage, die man aufhängt. Mutig. #sprecher:ambrose
+An der Wand hängt eine Medaille an einem blauen Band. Silber. #sprecher:erzaehler
+Silber. Eine Niederlage, die man aufhängt. Mutig. #sprecher:ambrose
 -> END
 
 === partieformular ===
 {partieformular2001Gesehen:
-    Unter dem Glas der Kreis um den 33. Zug. #sprecher:erzaehler
-    Die Tinte ist verblasst, der Kreis nicht. #sprecher:erzaehler
+    Unter dem Glas der Kreis um den dreiunddreißigsten Zug. #sprecher:erzaehler
     -> END
 }
 ~ partieformular2001Gesehen = true
-Unter Glas ein Partieformular, sauber ausgefüllt in runder Schrift. #sprecher:erzaehler
-Um den 33. Zug ist ein Kreis gemalt, fest und dick. #sprecher:erzaehler
-Ein Spieß. Der Läufer greift durch. #sprecher:ambrose
-Ein einziger Zug in einer langen, guten Partie. #sprecher:ambrose
+Unter Glas ein Partieformular. Züge in zwei Spalten, in einer Schrift, die du kennst. Nur runder, jünger. #sprecher:erzaehler #bild:partieformular2001
+Um den dreiunddreißigsten Zug ist ein Kreis. So fest gedrückt, dass das Papier fast durch ist. #sprecher:erzaehler
+Sie hat es eingerahmt und nie wieder angesehen. #sprecher:omaRuth
 -> END

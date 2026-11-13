@@ -209,7 +209,7 @@
       "momente": [
         {
           "wenn": {
-            "zug": 8
+            "abZug": 22
           },
           "sprecher": "slick",
           "text": "moment.slick.musik"
@@ -234,8 +234,8 @@
             "merkmal": "schachGegeben"
           },
           "sprecher": "slick",
-          "text": "moment.slick.odum",
-          "musik": "aus"
+          "musik": "aus",
+          "dialog": "riverton-pavillon.clubkampf_odum"
         }
       ]
     },

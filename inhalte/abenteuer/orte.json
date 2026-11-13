@@ -1049,7 +1049,7 @@
             "karte": "riverton.wohnwagen",
             "ausloeser": "wohnwagenAusgang"
           },
-          "wenn": "clubkampfRivertonBesprochen",
+          "wenn": "rivertonMontagGesehen",
           "dialog": "riverton-aussen.wohnwagen_zu"
         },
         {

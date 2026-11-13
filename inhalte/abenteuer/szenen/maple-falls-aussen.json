@@ -2,7 +2,7 @@
   "karte": "mapleFalls.aussen",
   "datei": "karten/maple-falls-aussen.json",
   "art": "aussen",
-  "beschreibung": "Die Birch Lane in Maple Falls an einem Spätsommernachmittag, 64 × 43 Kacheln. Oben kommt der Bach drei Kacheln breit vom Westrand, windet sich hinter den Gärten in sanften Bögen und vor der Schule nach Norden aus der Karte fließt. In den Gärten der Nordseite stehen Ahorne und Laubbäume im Wechsel, ein Gemüsebeet, eine Gartenbank und Büsche. Auf der Nordseite die Holzhäuser mit Veranda: das alte Whitlock-Haus, Lilys Haus und das Haus der Martínez, jedes mit niedrigem Zaun, offener Pforte und Briefkasten in der Zaunlinie. Dann das Falls Diner mit der rosa Leuchtschrift über der Markise, und die Maple Falls High mit Freitreppe; links der Treppe der Fahnenmast, rechts vor der Schule die Schulbushaltestelle mit Bank und Mülltonne, offen zur Straße. Die Birch Lane beginnt links an einem Wendehammer mit Gehweg rundherum und Schild „Sackgasse“ und führt rechts zum Park. Am südlichen Gehweg stehen klassische Laternen in gleichen Abständen, auf dem Grünstreifen dahinter grüne und rote Straßenbäume im Wechsel. Auf der Südseite die Häuser von Mrs. Calloway, Hayes (leer, Schild „Zu verkaufen“ an der Einfahrt), Fisk und ein viertes Haus. Gegenüber der Schule der eingezäunte Spielplatz auf Sand: ein Trampelpfad führt vom Gehweg zum Tor, oben zwei Bänke für Eltern mit Blick auf Sandkasten, Schaukel, Rutsche und Klettergerüst. Vor den Häusern der Südseite läuft ein Plattenweg an der Hecke entlang.",
+  "beschreibung": "Die Birch Lane in Maple Falls an einem Spätsommernachmittag, 64 × 43 Kacheln. Oben kommt der Bach drei Kacheln breit vom Westrand, windet sich hinter den Gärten in sanften Bögen und vor der Schule nach Norden aus der Karte fließt. In den Gärten der Nordseite stehen Ahorne und Laubbäume im Wechsel, ein Gemüsebeet, eine Gartenbank und Büsche. Auf der Nordseite die Holzhäuser mit Veranda: das alte Whitlock-Haus (als einziges grau und ungestrichen, Roman Kap. 1 und 5), Lilys Haus mit dem schiefen Kreidebrett auf dem Gehweg davor (Roman Kap. 6) und das Haus der Martínez, an dessen Zaun Carla steht, jedes mit niedrigem Zaun, offener Pforte und Briefkasten in der Zaunlinie. Dann das Falls Diner mit der rosa Leuchtschrift über der Markise, und die Maple Falls High mit Freitreppe; links der Treppe der Fahnenmast, rechts vor der Schule die Schulbushaltestelle mit Bank und Mülltonne, offen zur Straße. Die Birch Lane beginnt links an einem Wendehammer mit Gehweg rundherum und Schild „Sackgasse“ und führt rechts zum Park. Am südlichen Gehweg stehen klassische Laternen in gleichen Abständen, auf dem Grünstreifen dahinter grüne und rote Straßenbäume im Wechsel. Auf der Südseite die Häuser von Mrs. Calloway (vor ihrem Haus zwei Stühle, auf einem sitzt sie, der andere ist leer), Hayes (leer, Schild „Zu verkaufen“ an der Einfahrt), Fisk und ein viertes Haus. Gegenüber der Schule der eingezäunte Spielplatz auf Sand: ein Trampelpfad führt vom Gehweg zum Tor, oben zwei Bänke für Eltern mit Blick auf Sandkasten, Schaukel, Rutsche und Klettergerüst. Vor den Häusern der Südseite läuft ein Plattenweg an der Hecke entlang. Zwischen den Häusern der Südseite steht statt des flachen Schuppens (R002) ein kleines Haus mit grünem Dach.",
   "boden": "gras",
   "wandart": "hecke",
   "boeden": {
@@ -90,7 +90,7 @@
       "feld": [29, 9]
     },
     {
-      "moebel": "mf4VillaOrange",
+      "moebel": "mf4VillaWhitlock",
       "feld": [1, 10]
     },
     {
@@ -774,8 +774,8 @@
       "feld": [54, 32]
     },
     {
-      "moebel": "wc5GartenhausB",
-      "feld": [14, 30]
+      "moebel": "svHausGruen",
+      "feld": [14, 31]
     },
     {
       "moebel": "mf7Gartenhaus",
@@ -916,6 +916,18 @@
     {
       "moebel": "mf11HausHintenBBlau",
       "feld": [41, 33]
+    },
+    {
+      "moebel": "mf12Kreidebrett",
+      "feld": [15, 24]
+    },
+    {
+      "moebel": "mf3StuhlDunkelRechts",
+      "feld": [4, 29]
+    },
+    {
+      "moebel": "mf3StuhlDunkelLinks",
+      "feld": [6, 29]
     }
   ],
   "ausloeser": [
@@ -957,6 +969,10 @@
     {
       "name": "park",
       "feld": [63, 27]
+    },
+    {
+      "name": "kreidebrett",
+      "feld": [16, 24]
     }
   ],
   "figuren": [
@@ -967,6 +983,14 @@
     {
       "name": "lily",
       "feld": [14, 24]
+    },
+    {
+      "name": "calloway",
+      "feld": [5, 30]
+    },
+    {
+      "name": "carla",
+      "feld": [28, 24]
     }
   ],
   "belebung": [
@@ -1143,7 +1167,7 @@
       }
     }
   ],
-  "zustand": ["neu", "gebraucht"],
+  "zustand": ["alt", "gebraucht", "neu"],
   "stil": ["klassisch", "modern", "natur", "landhaus", "rustikal"],
   "markierung": ["s"]
 }

@@ -6,6 +6,8 @@ als Spur liegen. Kreide auf Pflaster ist flach, deshalb selbst gezeichnet.
 
 - ``kreidebrett.png`` (48 × 16, eine Gehwegreihe hoch): weiße Kreidelinien, schief, eine Reihe mit neun Feldern, einzelne
   Felder schraffiert, ein kleines braunes Pferd aus Plastik.
+- ``kreidebrett_springer.png`` (48 × 16): dasselbe Brett nach Lilys Lektion (``lilyGeholfen``),
+  rechts daneben Springerzüge als L in Weiß und Gelb bis zum Rand (Ink ``kreidebrett``).
 
 Aufruf: ``python kreidebrett.py <zielordner>`` (im privaten Repository: spiel/eigene/).
 """
@@ -43,9 +45,25 @@ def kreidebrett() -> Image.Image:
     return bild
 
 
+GELB = (250, 226, 120, 220)
+
+
+def mit_springerzuegen() -> Image.Image:
+    """Das Brett mit dazugemalten L-Zügen rechts davon, abwechselnd weiß und gelb."""
+    bild = kreidebrett()
+    z = ImageDraw.Draw(bild)
+    for nummer, x in enumerate((38, 42)):
+        farbe = KREIDE if nummer % 2 == 0 else GELB
+        z.line((x, 2, x, 10), fill=farbe)  # zwei Felder hinunter …
+        z.line((x, 10, x + 4, 10), fill=farbe)  # … und eins zur Seite
+    z.point((46, 10), fill=GELB)
+    return bild
+
+
 def main() -> None:
     ziel = Path(sys.argv[1] if len(sys.argv) > 1 else ".")
     kreidebrett().save(ziel / "kreidebrett.png")
+    mit_springerzuegen().save(ziel / "kreidebrett_springer.png")
     print("Kreidebrett nach", ziel)
 
 

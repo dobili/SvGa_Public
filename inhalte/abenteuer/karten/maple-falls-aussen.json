@@ -11,7 +11,7 @@
  "tilewidth": 16,
  "tileheight": 16,
  "nextlayerid": 5,
- "nextobjectid": 246,
+ "nextobjectid": 248,
  "layers": [
   {
    "id": 1,
@@ -8494,7 +8494,7 @@
      "id": 16,
      "name": "owen",
      "type": "figur",
-     "x": 80,
+     "x": 64,
      "y": 496,
      "width": 16,
      "height": 16,
@@ -13859,6 +13859,11 @@
        "name": "kollision",
        "type": "bool",
        "value": false
+      },
+      {
+       "name": "wenn",
+       "type": "string",
+       "value": "nicht lilyGeholfen"
       }
      ]
     },
@@ -13905,6 +13910,62 @@
        "name": "kollision",
        "type": "bool",
        "value": true
+      }
+     ]
+    },
+    {
+     "id": 246,
+     "name": "mf12KreidebrettSpringer",
+     "type": "moebel",
+     "x": 240,
+     "y": 384,
+     "width": 48,
+     "height": 16,
+     "rotation": 0,
+     "visible": true,
+     "properties": [
+      {
+       "name": "tiefe",
+       "type": "int",
+       "value": 1
+      },
+      {
+       "name": "kollision",
+       "type": "bool",
+       "value": false
+      },
+      {
+       "name": "wenn",
+       "type": "string",
+       "value": "lilyGeholfen"
+      }
+     ]
+    },
+    {
+     "id": 247,
+     "name": "mf12SchachtischVeranda",
+     "type": "moebel",
+     "x": 80,
+     "y": 464,
+     "width": 16,
+     "height": 16,
+     "rotation": 0,
+     "visible": true,
+     "properties": [
+      {
+       "name": "tiefe",
+       "type": "int",
+       "value": 472
+      },
+      {
+       "name": "kollision",
+       "type": "bool",
+       "value": true
+      },
+      {
+       "name": "wenn",
+       "type": "string",
+       "value": "nadelIronwood > 0"
       }
      ]
     }

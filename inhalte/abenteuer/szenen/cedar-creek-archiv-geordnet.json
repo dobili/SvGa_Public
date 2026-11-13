@@ -2,7 +2,7 @@
   "karte": "cedarCreek.archiv",
   "datei": "karten/cedar-creek-archiv-geordnet.json",
   "art": "innen",
-  "beschreibung": "Zustand: nach der Nebenaufgabe „Das Archiv“ (archivGeordnet, Szene 18) stehen links statt der nassen, aufgeweichten Kartons trockene, geschlossene Kartons, weil der Held der Bibliothekarin Okafor beim Umräumen nach dem Wasserschaden geholfen hat. Das Archiv im Keller der Bibliothek von Cedar Creek: ein niedriger, kühler Raum mit Steinboden und hell gekalkten Ziegelwänden, ordentlich, aber lange nicht benutzt. Es riecht nach altem Papier.\n\nRechts an der Nordwand führt eine steile Holztreppe hinauf in den Lesesaal; sie liegt genau unter der Kellertür der Bibliothek. Links davon stehen vier hohe Regale voller gebundener Zeitungsjahrgänge und Mappen, zwischen zwei Regalen hängt ein vergilbtes Foto eines Boxers. Das vierte Regal ganz rechts neben der Treppe liegt im Schatten; erst mit einer Laterne sieht man, was darin steht.\n\nIn der Mitte stehen die Archivkartons in zwei sauberen Reihen, jeder mit einer Jahreszahl beschriftet. In der unteren Reihe steht links ein offener Karton: „1850“. Rechts unten an der Südwand der Lesetisch mit aufgeschlagenem Buch, an dem man Akten sichtet; darauf liegt das alte Programmheft, dahinter ein Stuhl, auf dem Tisch eine Leselampe mit warmem Licht. Am Westende der Reihen zwei Stapel höherer Kartons. Auf dem Boden vorn, vor der unteren Reihe, ein dunkler Wasserfleck, der aussieht wie ein Springer.\n\nLaufwege: von der Treppe nach unten, nach links zwischen Regalen und Kartonreihen hindurch zum offenen Karton, nach rechts zum Lesetisch, nach vorn zum Fleck.",
+  "beschreibung": "Zustand: nach der Nebenaufgabe „Das Archiv“ (archivGeordnet, Szene 18) stehen links statt der nassen, aufgeweichten Kartons trockene, geschlossene Kartons, weil der Held der Bibliothekarin Okafor beim Umräumen nach dem Wasserschaden geholfen hat. Das Archiv im Keller der Bibliothek von Cedar Creek: ein niedriger, kühler Raum mit Steinboden und hell gekalkten Ziegelwänden, ordentlich, aber lange nicht benutzt. Es riecht nach altem Papier.\n\nRechts an der Nordwand führt eine steile Holztreppe hinauf in den Lesesaal; sie liegt genau unter der Kellertreppe im abgetrennten Bereich des Lesesaals; der Keller liegt unter dem Ostteil des Saals. Links davon stehen vier hohe Regale voller gebundener Zeitungsjahrgänge und Mappen, zwischen zwei Regalen hängt ein vergilbtes Foto eines Boxers. Das vierte Regal ganz rechts neben der Treppe liegt im Schatten; erst mit einer Laterne sieht man, was darin steht.\n\nIn der Mitte stehen die Archivkartons in zwei sauberen Reihen, jeder mit einer Jahreszahl beschriftet. In der unteren Reihe steht links ein offener Karton: „1850“. Rechts unten an der Südwand der Lesetisch mit aufgeschlagenem Buch, an dem man Akten sichtet; darauf liegt das alte Programmheft, dahinter ein Stuhl, auf dem Tisch eine Leselampe mit warmem Licht. Am Westende der Reihen zwei Stapel höherer Kartons. Auf dem Boden vorn, vor der unteren Reihe, ein dunkler Wasserfleck, der aussieht wie ein Springer.\n\nLaufwege: von der Treppe nach unten, nach links zwischen Regalen und Kartonreihen hindurch zum offenen Karton, nach rechts zum Lesetisch, nach vorn zum Fleck.",
   "wand": "backstein",
   "boden": "stein",
   "raster": [
@@ -21,131 +21,218 @@
   "objekte": [
     {
       "moebel": "cc4Archivregal",
-      "feld": [1, 1]
+      "feld": [
+        1,
+        1
+      ]
     },
     {
       "moebel": "cc4ArchivregalB",
-      "feld": [3, 1]
+      "feld": [
+        3,
+        1
+      ]
     },
     {
       "moebel": "cc4Boxerfoto",
-      "feld": [5, 1],
+      "feld": [
+        5,
+        1
+      ],
       "an_wand": true
     },
     {
       "moebel": "cc4Archivregal",
-      "feld": [6, 1]
+      "feld": [
+        6,
+        1
+      ]
     },
     {
       "moebel": "cc12RegalSchatten",
-      "feld": [8, 1],
+      "feld": [
+        8,
+        1
+      ],
       "id": "dunklesRegal"
     },
     {
       "moebel": "cc4Treppe",
-      "feld": [10, 1]
+      "feld": [
+        10,
+        1
+      ]
     },
     {
       "moebel": "cc4Karton",
-      "feld": [1, 4]
+      "feld": [
+        1,
+        4
+      ]
     },
     {
       "moebel": "cc4Karton",
-      "feld": [1, 6]
+      "feld": [
+        1,
+        6
+      ]
     },
     {
       "moebel": "cc12KartonsOben",
-      "feld": [3, 4]
+      "feld": [
+        3,
+        4
+      ]
     },
     {
       "moebel": "cc12KartonsUnten",
-      "feld": [3, 6],
+      "feld": [
+        3,
+        6
+      ],
       "id": "karton1858"
     },
     {
       "moebel": "cc12Wasserfleck",
-      "feld": [6, 8]
+      "feld": [
+        6,
+        8
+      ]
     },
     {
       "moebel": "cc4StuhlHinten",
-      "feld": [11, 7]
+      "feld": [
+        11,
+        7
+      ]
     },
     {
       "moebel": "cc5Tisch",
-      "feld": [11, 8],
+      "feld": [
+        11,
+        8
+      ],
       "id": "tisch"
     },
     {
       "moebel": "cc4Leselampe",
       "auf": "tisch",
-      "versatz": [9, -2]
+      "versatz": [
+        9,
+        -2
+      ]
     },
     {
       "moebel": "cc12BuchOffen",
       "auf": "tisch",
-      "versatz": [-6, 2]
+      "versatz": [
+        -6,
+        2
+      ]
     },
     {
       "moebel": "cc12Programmheft",
       "auf": "tisch",
-      "versatz": [-7, -7]
+      "versatz": [
+        -7,
+        -7
+      ]
     }
   ],
   "ausloeser": [
     {
       "name": "start",
-      "feld": [11, 5],
+      "feld": [
+        11,
+        5
+      ],
       "eigenschaften": {
         "richtung": "unten"
       }
     },
     {
       "name": "kellerAusgang",
-      "feld": [11, 3]
+      "feld": [
+        11,
+        3
+      ]
     },
     {
       "name": "kellerAusgang",
-      "feld": [10, 3]
+      "feld": [
+        10,
+        3
+      ]
     },
     {
       "name": "kellerAusgang",
-      "feld": [10, 4]
+      "feld": [
+        10,
+        4
+      ]
     },
     {
       "name": "kellerAusgang",
-      "feld": [11, 4]
+      "feld": [
+        11,
+        4
+      ]
     },
     {
       "name": "kellerAusgang",
-      "feld": [12, 3]
+      "feld": [
+        12,
+        3
+      ]
     },
     {
       "name": "kellerAusgang",
-      "feld": [12, 4]
+      "feld": [
+        12,
+        4
+      ]
     },
     {
       "name": "boxerfoto",
-      "feld": [5, 3]
+      "feld": [
+        5,
+        3
+      ]
     },
     {
       "name": "programmheft",
-      "feld": [10, 9],
+      "feld": [
+        10,
+        9
+      ],
       "auf_moebel": true
     },
     {
       "name": "karton1858",
-      "feld": [3, 8],
+      "feld": [
+        3,
+        8
+      ],
       "auf_moebel": true
     },
     {
       "name": "wasserfleck",
-      "feld": [7, 9]
+      "feld": [
+        7,
+        9
+      ]
     }
   ],
   "figuren": [],
   "belebung": [],
-  "zustand": ["gebraucht", "alt"],
-  "stil": ["klassisch", "einfach"],
+  "zustand": [
+    "gebraucht",
+    "alt"
+  ],
+  "stil": [
+    "klassisch",
+    "einfach"
+  ],
   "dicht": true,
   "zustand_der_karte": "archivGeordnet"
 }

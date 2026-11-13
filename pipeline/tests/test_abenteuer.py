@@ -284,6 +284,18 @@ def test_ink_szene_und_tiled_karte_liegen_bereit():
     assert namen <= ausloeser
 
 
+def test_tagebuchseiten_haben_ihren_text():
+    """Jedes schreibeTagebuch("name") in den Dialogen hat den Text tagebuch.eintrag.<name>."""
+    texte = set(_lade("texte/de.json"))
+    fehler = [
+        f"{ink.name}: tagebuch.eintrag.{name} fehlt"
+        for ink in sorted((INHALTE / "dialoge" / "de").glob("*.ink"))
+        for name in re.findall(r'schreibeTagebuch\("([A-Za-z0-9]+)"\)', ink.read_text("utf-8"))
+        if f"tagebuch.eintrag.{name}" not in texte
+    ]
+    assert fehler == []
+
+
 def test_klangquellen_nennen_objekte_der_karte():
     """Jede Klangquelle (T28) nennt ein Objekt, das es in der Tiled-Karte gibt."""
     fehler: list[str] = []

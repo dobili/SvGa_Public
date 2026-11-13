@@ -23,6 +23,21 @@ function kebab(name: string): string {
   return name.replace(/[A-Z]/g, (b) => `-${b.toLowerCase()}`);
 }
 
+/** Ordner der großen Porträts (64 × 64 oder 96 × 96, aus dem privaten Paket). */
+const GROSS = "portraets/gross/";
+/** Formate der großen Porträts, in dieser Reihenfolge gesucht. */
+export const GROSSE_FORMATE: readonly string[] = ["webp", "png"];
+
+/**
+ * Die Dateien eines großen Porträts zum Pfad des Ersatzbilds, in Suchreihenfolge.
+ * Beispiel: „portraets/mira-lacht-ohne-spott.svg“ → „portraets/gross/mira-lacht-ohne-spott.webp“,
+ * dann „….png“.
+ */
+export function grossePortraets(pfad: string): string[] {
+  const name = pfad.replace(/^portraets\//, "").replace(/\.svg$/, "");
+  return GROSSE_FORMATE.map((format) => `${GROSS}${name}.${format}`);
+}
+
 /**
  * Dateiname des Porträts.
  * Beispiel: („coachDelgado“, null) → „portraets/coach-delgado.svg“; („mira“, „lachtOhneSpott“) →

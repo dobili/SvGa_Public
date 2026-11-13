@@ -20,6 +20,7 @@ import { tSpiel } from "../texte/texte";
 import { notizen } from "./notizbuch";
 import { finchKarteSichtbar } from "../regeln/finchjagd";
 import { FinchKarte } from "./FinchKarte";
+import { EigeneSeiten } from "./Tagebuchseite";
 
 export function Tagebuch({
   stand,
@@ -124,6 +125,7 @@ export function Tagebuch({
         </ul>
       )}
       {stand.gegenstaende.includes("notizbuch") && <Turnierheft stand={stand} daten={daten} />}
+      <EigeneSeiten eintraege={stand.eintraege ?? []} />
       <MeinePartien beiPartie={beiPartie} />
       <button type="button" className="knopf-haupt" onClick={beiSchliessen}>
         {tSpiel("tagebuch.schliessen")}

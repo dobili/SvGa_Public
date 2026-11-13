@@ -69,4 +69,10 @@ describe("Tonplan", () => {
       geraeusche: 0,
     });
   });
+  it("Kennungen mit Punkt (Klangplan: ambrose.lassMich) bilden Dateinamen in kebab-case", () => {
+    expect(dateienFuer("musik", "ambrose.lassMich")).toEqual([
+      "musik/ambrose.lass-mich.m4a",
+      "musik/ambrose.lass-mich.ogg",
+    ]);
+  });
 });

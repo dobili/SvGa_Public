@@ -30,6 +30,8 @@ interface Merker<T> {
 /** Was nach dem Dialog geschehen soll; die Oberwelt liest es in beiDialogende. */
 export interface Nachdialogmerker {
   readonly abspann: Merker<boolean>;
+  readonly fensterbank: Merker<boolean>;
+  readonly tagebuchseite: Merker<string | null>;
   readonly laden: Merker<string | null>;
   readonly auftrag: Merker<Partieauftrag | null>;
   readonly runde: Merker<string | null>;
@@ -89,6 +91,19 @@ export function dialogwirkungen(k: Wirkungskontext): Wirkungen {
   const mitWirkung = (w: Parameters<typeof wendeWirkungenAn>[1][number]) =>
     k.schreibe(wendeWirkungenAn(k.stand(), [w], new Date()));
   return {
+    schreibeTagebuch: (name) => {
+      // Die Seite steht sofort im Spielstand (einmal je Name); die Animation folgt nach dem Dialog.
+      const aktuell = k.stand();
+      const eintraege = aktuell.eintraege ?? [];
+      if (!eintraege.some((e) => e.name === name)) {
+        const geschrieben = new Date().toISOString();
+        k.schreibe({ ...aktuell, eintraege: [...eintraege, { name, geschrieben }] });
+      }
+      m().tagebuchseite.current = name;
+    },
+    zeigeFensterbank: () => {
+      m().fensterbank.current = true;
+    },
     zeigeAbspann: () => {
       m().abspann.current = true;
     },

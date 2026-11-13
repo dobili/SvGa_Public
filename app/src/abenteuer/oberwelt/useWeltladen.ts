@@ -9,6 +9,7 @@
  * Abhängigkeiten: oberwelt/weltdaten.ts, oberwelt/oberweltspiel.ts, oberwelt/toenung.ts.
  */
 import { klangorte } from "../ton/klangquelle";
+import { istTeilchenart } from "./teilchen";
 import { tonregie } from "../ton/tonregie";
 import { useEffect, useState, type RefObject } from "react";
 import { variablenAusBesitz, variablenNachBesuch } from "../regeln/dialogvariablen";
@@ -75,6 +76,8 @@ function starteSpiel(k: Oberweltkern, a: Weltanschluss, w: Weltdaten, stand: Abe
     hintergrund: w.hintergrund,
     belebungsbilder: w.belebungsbilder,
     toenung,
+    // Teilchen der Karte aus orte.json (T8); Winterkarten haben Schnee.
+    teilchen: istTeilchenart(eintrag?.teilchen) ? eintrag.teilchen : null,
     laterne: stand.gegenstaende.includes(LATERNE),
     winter: w.winter,
     kachelsatz: KACHELSATZ,

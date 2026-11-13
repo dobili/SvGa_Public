@@ -119,13 +119,7 @@
             "art": "partie",
             "begegnung": "mapleFalls.clubkampf",
             "ausgang": ["sieg", "remis"]
-          },
-          "wirkungen": [
-            {
-              "art": "karte",
-              "karte": "mentorzug"
-            }
-          ]
+          }
         },
         {
           "text": "quest.viertesBrett.schritt5",
@@ -876,7 +870,7 @@
           "text": "quest.mamasFinale.schritt3",
           "ereignis": {
             "art": "dialog",
-            "knoten": "ironwood-kantine.mama_foto"
+            "knoten": "maple-falls-wohnzimmer.mama_foto"
           }
         },
         {

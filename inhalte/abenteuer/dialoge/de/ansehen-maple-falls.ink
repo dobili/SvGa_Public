@@ -3,15 +3,18 @@
 // Je Raum drei Gegenstände ohne Spielwirkung (docs/spiel/09_Weltbeschreibung.md, Abschnitt 3
 // Punkt 2 und 5.1): beim ersten Ansehen ein Satz (manchmal mit einem Satz von Ambrose), danach
 // ein zweiter. Keine Quests, keine Belohnungen. Einstiege wie in orte.json (Auslöser in
-// camelCase, Knoten in snake_case): foto_grandma, karton_kueche, pizzakarton, hutschachtel,
+// camelCase, Knoten in snake_case): karton_kueche, pizzakarton, hutschachtel,
 // spiegel, zeitungen1961, pokalvitrine, brett_ohne_dame, plakat_zaehlen.
+// Neu nach dem Roman zu Akt 1 (docs/spiel/roman/akt1_teil1.md, akt1_teil2.md), noch ohne Auslöser
+// auf den Karten (Karten macht ein eigener Auftrag): kiste_whitlock (Dachboden, neben der Treppe),
+// tisch_pizzakarton (Wohnzimmer, Zustand nach dem ersten Abend), kreidebrett (Birch Lane, vor
+// Lilys Haus), bildschirm_pult (Clubraum, Zustand nach Victor).
 //
 // Variablen: Die Hülle legt für jeden Dialog eine neue Ink-Geschichte an; Besuchszähler von Ink
 // überleben das nicht. Deshalb merkt sich je Gegenstand eine Variable „angesehen…“ (Spielstand,
 // dialogvariablen), ob er schon einmal angesehen wurde.
 // Nichts hier verrät Akt 2 (Bibel, Abschnitt 2.3: Mamas Vergangenheit bleibt verborgen).
 
-VAR angesehenFotoGrandma = false
 VAR angesehenKartonKueche = false
 VAR angesehenPizzakarton = false
 VAR angesehenHutschachtel = false
@@ -20,18 +23,15 @@ VAR angesehenZeitungen1961 = false
 VAR angesehenPokalvitrine = false
 VAR angesehenBrettOhneDame = false
 VAR angesehenPlakatZaehlen = false
+VAR angesehenKisteWhitlock = false
+VAR ersteLektionBesprochen = false
+VAR angesehenTischPizzakarton = false
+VAR angesehenKreidebrett = false
+VAR lilyGeholfen = false
+VAR angesehenBildschirmPult = false
+VAR nadelCedarCreek = 0
 
 // ---------------------------------------------------------------- Wohnzimmer
-
-=== foto_grandma ===
-{angesehenFotoGrandma:
-    Grandma Whitlock lächelt auf dem Foto, als hätte sie gerade einen guten Zug gesehen. #sprecher:erzaehler
-- else:
-    ~ angesehenFotoGrandma = true
-    Ein gerahmtes Foto: eine alte Dame mit weißem Dutt, vor ihr ein Schachbrett. Auf der Rückseite steht „Grandma Whitlock“. #sprecher:erzaehler
-    Sie hält den König richtig. Das sieht man sogar auf einem Bild. #sprecher:ambrose #stimmung:stolz
-}
--> END
 
 === karton_kueche ===
 {angesehenKartonKueche:
@@ -49,6 +49,37 @@ VAR angesehenPlakatZaehlen = false
     ~ angesehenPizzakarton = true
     Ein leerer Pizzakarton auf dem Boden. Ein Stück fehlt, und niemand gibt es zu. #sprecher:erzaehler
     Zu meiner Zeit aß man von Tellern. Und man räumte sie weg. #sprecher:ambrose
+}
+-> END
+
+// Roman, Kapitel 4: Der Tisch steht nach dem ersten Abend, ein gefalteter Pizzakarton unter einem
+// Bein. Gehört zur Zustandsfassung des Wohnzimmers mit Tisch.
+=== tisch_pizzakarton ===
+{angesehenTischPizzakarton:
+    Der Tisch wackelt nur noch, wenn man sich darauf stützt. Das ist jetzt eben so. #sprecher:erzaehler
+- else:
+    ~ angesehenTischPizzakarton = true
+    Unter einem Tischbein steckt ein gefalteter Pizzakarton. Der Tisch wackelt nicht mehr. Fast nicht. #sprecher:erzaehler
+    Bei uns legte man ein Spielkartenblatt unter. Herz Sieben, meistens. #sprecher:ambrose #stimmung:lacht
+}
+-> END
+
+// Roman, Kapitel 6: Lilys Kreidebrett auf dem Gehweg vor dem Nachbarhaus, schief, neun Felder in
+// einer Reihe. Bleibt als Spur liegen und verblasst über die Akte (Karten). Nach Lilys Lektion
+// (lilyGeholfen) sind Springerzüge dazugemalt.
+=== kreidebrett ===
+{
+- lilyGeholfen:
+    Neben dem Kreidebrett ist ein L gemalt, dann noch eins und noch eins, bis zur Ecke. Weiß, schwarz, weiß, schwarz. #sprecher:erzaehler
+    {not angesehenKreidebrett:
+        ~ angesehenKreidebrett = true
+        Neun Felder in einer Reihe. Sie wird es merken, wenn sie so weit ist. Der Springer zuerst. #sprecher:ambrose #stimmung:lacht
+    }
+- angesehenKreidebrett:
+    Das Plastikpferd liegt noch auf dem Kreidebrett. Es wartet. #sprecher:erzaehler
+- else:
+    ~ angesehenKreidebrett = true
+    Ein Schachbrett aus Kreide auf dem Gehweg, schief, mit neun Feldern in einer Reihe. Darauf steht ein Plastikpferd. #sprecher:erzaehler #klang:kreide
 }
 -> END
 
@@ -84,6 +115,25 @@ VAR angesehenPlakatZaehlen = false
 }
 -> END
 
+// Roman, Kapitel 1: Die Kiste aus dem Flur, die {held} am ersten Tag hinaufträgt. Die Schrift ist
+// dieselbe wie auf allen Kisten und auf der Rückseite der Karten (Kapitel 3).
+=== kiste_whitlock ===
+// Das Foto von Mrs. Whitlock liegt in der Kiste, nicht mehr im Wohnzimmer: Laut Roman ist alles von
+// ihr auf dem Dachboden (Entscheidung des Hauptchats 13.11.2026).
+{angesehenKisteWhitlock:
+    {ersteLektionBesprochen:
+        Dieselbe steile Schrift wie auf dem Fingerzeig. Du drehst die Karte in der Tasche um und vergleichst. #sprecher:erzaehler
+    - else:
+        Die Kiste steht bei den anderen. „Bettwäsche“, „Briefe 1970–1989“, „Weihnachten“. Alles in derselben steilen Schrift. #sprecher:erzaehler
+    }
+- else:
+    ~ angesehenKisteWhitlock = true
+    Eine Kiste aus Holz, nicht aus Pappe. Auf dem Deckel steht in steiler, altmodischer Schrift: „Whitlock – nicht wegwerfen“. #sprecher:erzaehler
+    Obenauf ein gerahmtes Foto: eine Frau mit weißem Dutt, vor ihr ein Schachbrett. Auf der Rückseite: „Margaret, Sonntag“. #sprecher:erzaehler #klang:holzklacken
+    Sie hält den König richtig. Das sieht man sogar auf einem Bild. #sprecher:ambrose #stimmung:still
+}
+-> END
+
 // ---------------------------------------------------------------- Clubraum
 
 === pokalvitrine ===
@@ -91,7 +141,7 @@ VAR angesehenPlakatZaehlen = false
     Ein Platz in der Vitrine ist leer. Daneben klebt ein Zettel in Coach Delgados Schrift: „Reserviert“. #sprecher:erzaehler
 - else:
     ~ angesehenPokalvitrine = true
-    In der Vitrine stehen drei Pokale von 1994, darauf „Kreismeister Schach, Maple Falls High“. #sprecher:erzaehler
+    In der Vitrine stehen drei Pokale, alle von 1994, darauf „Kreismeister Schach, Schule Maple Falls“. #sprecher:erzaehler
 }
 -> END
 
@@ -110,7 +160,22 @@ VAR angesehenPlakatZaehlen = false
     Unten auf dem Plakat steht klein: Erst zählen, dann schlagen. #sprecher:erzaehler
 - else:
     ~ angesehenPlakatZaehlen = true
-    Ein handgemaltes Plakat: „Erst zählen, dann schlagen!“ Darunter ist mit Filzstift eine Trillerpfeife gezeichnet. #sprecher:erzaehler
+    Ein handgemaltes Plakat in großen Buchstaben: ERST ZÄHLEN. Darunter ist mit Filzstift eine Trillerpfeife gezeichnet. #sprecher:erzaehler
     Gegen dieses Plakat habe ich nichts einzuwenden. Ausnahmsweise. #sprecher:ambrose
+}
+-> END
+
+// Roman, Kapitel 9 (neu): Der Bildschirm von Perfect Move bleibt nach Victors Besuch im Clubraum
+// stehen (Zustandsfassung des Clubraums, Karten). Der Konzern ist verlockend, nicht böse.
+=== bildschirm_pult ===
+{
+- nadelCedarCreek > 0:
+    Jemand hat den Bildschirm wieder eingeschaltet. Die Figuren ziehen von selbst. Niemand sieht hin. Fast niemand. #sprecher:erzaehler
+- angesehenBildschirmPult:
+    Coach Delgado hat ein Handtuch über den Bildschirm gehängt. Es rutscht immer wieder herunter. #sprecher:erzaehler
+- else:
+    ~ angesehenBildschirmPult = true
+    Ein Bildschirm auf dem Pult, ausgeschaltet. Auf dem Rahmen ein Aufkleber: „Perfect Move – Pilotschule“. #sprecher:erzaehler
+    Ein Brett, das allein spielt. Gegen wen eigentlich? #sprecher:ambrose #stimmung:still
 }
 -> END

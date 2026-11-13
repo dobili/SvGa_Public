@@ -24,6 +24,8 @@ import type { Kartensorte } from "../schnittstelle/karten";
 import { tSpiel } from "../texte/texte";
 import { Abspann } from "./Abspann";
 import { Deckwahl } from "./Deckwahl";
+import { Fensterbank } from "./Fensterbank";
+import { Tagebuchseite } from "./Tagebuchseite";
 import { Fortsetzungskarte, Partieergebniskarte, Rundenergebniskarte } from "./Ergebniskarten";
 import { Gedaechtnisstellung } from "./Gedaechtnisstellung";
 import { szeneAus, useOberweltkern } from "./kern";
@@ -270,6 +272,19 @@ export function Oberwelt() {
       )}
       {abspann && welt && (
         <Abspann stand={stand} daten={welt.daten} beiSchliessen={dialoge.schliesseAbspann} />
+      )}
+      {dialoge.tagebuchseite && (
+        <Tagebuchseite
+          name={dialoge.tagebuchseite}
+          beiSchliessen={dialoge.schliesseTagebuchseite}
+        />
+      )}
+      {dialoge.fensterbank && welt && (
+        <Fensterbank
+          gefunden={stand.funde}
+          funde={welt.daten.funde}
+          beiSchliessen={dialoge.schliesseFensterbank}
+        />
       )}
       {reisen && welt && (
         <Reisen

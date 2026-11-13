@@ -135,6 +135,9 @@ export function abenteuerstandAus(roh: unknown): Abenteuerstand | null {
     funde: liste<{ kennung: string; gefunden: string }>(roh.funde).filter(
       (f) => istObjekt(f) && typeof f.kennung === "string",
     ),
+    eintraege: liste<{ name: string; geschrieben: string }>(roh.eintraege).filter(
+      (e) => istObjekt(e) && typeof e.name === "string" && typeof e.geschrieben === "string",
+    ),
     fragmente: { gefunden: liste(istObjekt(roh.fragmente) ? roh.fragmente.gefunden : []) },
     protokoll: liste(roh.protokoll),
     laufendePartie: typeof roh.laufendePartie === "string" ? roh.laufendePartie : null,

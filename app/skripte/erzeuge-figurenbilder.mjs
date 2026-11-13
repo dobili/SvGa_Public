@@ -78,6 +78,8 @@ const FIGUREN = {
   hector: ["short16", "schwarz", "h6", "variant04", "ececec", "", "variant03", ""], // Diner, Schürze
   carla: ["long12", "schwarz", "h5", "variant07", "3b5998", "", "", ""], // Junos Schwester, 17
   pratt: ["short07", "grau", "h4", "variant11", "5b6770", "", "variant04", ""], // Hausmeister
+  // Kanalweg, neu nach dem Roman zu Akt 2 (Kapitel 24): Sprecherin noch ohne Karte
+  noor: ["long09", "schwarz", "h6", "variant18", "2c2c54", "", "", "variant05"], // Graffiti, 19, Tuch
   "skater-jo": ["long07", "kupfer", "h3", "variant10", "00b159", "", "", "variant03"], // Skaterin, 16
   nia: ["long15", "schwarz", "h8", "variant06", "5bc0de", "", "", ""], // Route 1
   wanderer: ["short05", "grau", "h5", "variant17", "5f705c", "", "variant02", "variant08"], // Route 1

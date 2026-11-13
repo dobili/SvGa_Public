@@ -15,7 +15,18 @@ from PIL import Image, ImageDraw
 from pipeline.abenteuer.belebungsvorschau import teile as belebungsteile
 from pipeline.abenteuer.bodenraster import bodenfeld, brueckenzeichen, randnachbar, randsichten
 from pipeline.abenteuer.bodenvariation import lade_kachel, variiere
-from pipeline.abenteuer.kartenbau import GESPERRT, INHALTE, LEER, WAND, WASSER, K, lade, platziere, raster
+from pipeline.abenteuer.kartenbau import (
+    GESPERRT,
+    INHALTE,
+    LEER,
+    WAND,
+    WASSER,
+    K,
+    lade,
+    platziere,
+    raster,
+    sitzrichtung,
+)
 from pipeline.abenteuer.katalog import katalogbefund, katalogeintraege
 from pipeline.abenteuer.klippe import (
     HOEHE_STANDARD,
@@ -34,6 +45,9 @@ from pipeline.abenteuer.winter import ist_winter, winterbefunde, winterlich, win
 from pipeline.abenteuer.zusammenhang import HOLZ
 from pipeline.abenteuer.zustaende import bildname
 
+# Sitzende Figuren wie in der App (oberwelt/sitzrichtung.ts): Rahmenfolge und Anhebung in Pixeln.
+SITZ_RAHMEN = ("rechts", "oben", "links", "unten")
+SITZ_HUB = 6
 KRONE = (246, 246, 248, 255)
 KRONENRAND = (58, 58, 80, 255)
 DUNKEL = (26, 22, 18, 255)
@@ -323,8 +337,10 @@ def vorschau(szene: dict, privat: Path, grund: Image.Image) -> Image.Image:
         figur = next((x for x in ort["figuren"] if x["kennung"].split(".", 1)[1] == f["name"]), None)
         sprite = privat / "spiel" / figur["sprite"] if figur else None
         if sprite and sprite.exists():
-            teil = Image.open(sprite).convert("RGBA").crop((48, 0, 64, 32))
-            x, y = f["feld"][0] * K, f["feld"][1] * K - K
+            sitzt = sitzrichtung(f)
+            rahmen = SITZ_RAHMEN.index(sitzt) if sitzt else SITZ_RAHMEN.index("unten")
+            teil = Image.open(sprite).convert("RGBA").crop((rahmen * K, 0, (rahmen + 1) * K, 2 * K))
+            x, y = f["feld"][0] * K, f["feld"][1] * K - K - (SITZ_HUB if sitzt else 0)
             teile.append((y + K + K // 2, x, y, teil))
     teile += belebungsteile(szene, privat, lambda pfad: Image.open(pfad).convert("RGBA"))
     for _, x, y, teil in sorted(teile, key=lambda t: t[0]):

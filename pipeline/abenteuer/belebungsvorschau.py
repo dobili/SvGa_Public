@@ -19,6 +19,8 @@ from PIL import Image
 K = 16
 STATISTEN = 40
 VORN = 3  # Reihenfolge der Standbilder: rechts, oben, links, unten
+SITZ_RAHMEN = ("rechts", "oben", "links", "unten")
+SITZ_HUB = 6  # sitzende Statisten stehen so viel höher (oberwelt/sitzrichtung.ts)
 # Arten und Wortstämme wie in der App (app/src/abenteuer/oberwelt/tierarten.json, eine Quelle).
 _TIERARTEN = json.loads(
     (Path(__file__).resolve().parents[2] / "app/src/abenteuer/oberwelt/tierarten.json").read_text(
@@ -90,6 +92,11 @@ def teile(szene: dict, privat: Path, oeffne) -> list[tuple[int, int, int, object
         if b.get("eigenschaften", {}).get("verhalten") == "schwimmen":
             sichtbar = round(hoehe * WASSERLINIE)
         rahmen = VORN if b.get("typ") == "statist" else SEITE
+        # Sitzende Statisten (R020): Standbild ihrer Blickrichtung, SITZ_HUB höher (wie die App).
+        sitzt = b.get("eigenschaften", {}).get("sitzt") if b.get("typ") == "statist" else None
+        sitzt = "unten" if sitzt == "ja" else sitzt
+        if sitzt in SITZ_RAHMEN:
+            rahmen = SITZ_RAHMEN.index(sitzt)
         bild = oeffne(pfad).crop((rahmen * breite, 0, (rahmen + 1) * breite, sichtbar))
         massstab = 1 if b.get("typ") == "statist" else MASSSTAB.get(art, 1)
         if massstab != 1:
@@ -99,5 +106,6 @@ def teile(szene: dict, privat: Path, oeffne) -> list[tuple[int, int, int, object
         for i in range(anzahl):
             dx, dy = i * (breite // 2 + 4), (i % 2) * 6
             # Schwimmer sinken um den abgeschnittenen Teil tiefer ins Wasser.
-            ergebnis.append((y + K + dy, x + dx, y + K - sichtbar + dy, bild))
+            hub = SITZ_HUB if sitzt in SITZ_RAHMEN else 0
+            ergebnis.append((y + K + dy, x + dx, y + K - sichtbar + dy - hub, bild))
     return ergebnis

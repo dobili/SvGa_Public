@@ -29,6 +29,7 @@ import {
   stelleAufKachel,
 } from "./figurbilder";
 import { ladeMoebelbilder, stelleMoebelAuf, type Moebel } from "./moebel";
+import { setzeSitzend } from "./figurensitz";
 import { EINGABEPAUSE_MS, gegenrichtung, pausenschritt } from "./eingabepause";
 import { baueSperrkarte } from "./sperrkarte";
 import type { Toenung } from "./toenung";
@@ -236,7 +237,7 @@ export class Oberweltszene extends Phaser.Scene {
     this.tasten = this.input.keyboard?.createCursorKeys() ?? null;
   }
 
-  /** Figuren der Karte als feste Sprites mit Kollision: Der Held bleibt vor ihnen stehen. */
+  /** Figuren als feste Sprites mit Kollision; wer weiter unten steht, wird davor gezeichnet. */
   private stelleFigurenAuf(held: Phaser.Physics.Arcade.Sprite): void {
     const gruppe = this.physics.add.staticGroup();
     for (const a of this.ausloeser) {
@@ -250,7 +251,7 @@ export class Oberweltszene extends Phaser.Scene {
       ) as Phaser.Physics.Arcade.Sprite;
       figur.setName(a.name);
       if (eigenes) stelleAufKachel(figur, KACHEL);
-      // Wer weiter unten steht, wird davor gezeichnet (Köpfe ragen in die Kachel darüber).
+      if (eigenes && a.sitzt) setzeSitzend(figur, a.sitzt);
       figur.setDepth(figur.y);
     }
     this.physics.add.collider(held, gruppe);

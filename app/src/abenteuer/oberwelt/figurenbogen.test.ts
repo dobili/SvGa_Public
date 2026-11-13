@@ -66,6 +66,21 @@ describe("Figurenbogen mit kleiner Leinwand", () => {
     expect(pixelBei(data, info.width, 18 * RAHMEN + fussX, 2 * RAHMEN - 1)).toEqual(ROT);
   });
 
+  it("legt Sitzbilder in eine dritte Reihe, fehlende Richtungen aus dem Standbild", async () => {
+    const ordner = await export24();
+    const sitz = join(ordner, "animations", "Sitting", "south");
+    mkdirSync(sitz, { recursive: true });
+    writeFileSync(join(sitz, "frame_000.png"), await bild(LAUF));
+    const png = await baueFigurenbogen(ordner);
+    if (!png) throw new Error("kein Bogen");
+    const { data, info } = await sharp(png).raw().toBuffer({ resolveWithObject: true });
+    expect(info.height).toBe(3 * RAHMEN);
+    // Sitzbild „unten“: Rahmen 48 + 3, Spalte 3 der dritten Reihe.
+    expect(pixelBei(data, info.width, 3 * RAHMEN + RAHMEN / 2, 3 * RAHMEN - 1)).toEqual(ROT);
+    // „rechts“ ohne Sitzbild: das Standbild, ebenfalls mit Fuß unten mittig.
+    expect(pixelBei(data, info.width, RAHMEN / 2, 3 * RAHMEN - 1)).toEqual(ROT);
+  });
+
   it("lässt ein 32er-Bild unverändert", () => {
     const pixel = Buffer.alloc(RAHMEN * RAHMEN * 4, 7);
     expect(imRahmen(pixel, RAHMEN, RAHMEN).equals(pixel)).toBe(true);

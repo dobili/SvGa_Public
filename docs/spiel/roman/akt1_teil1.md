@@ -15,10 +15,9 @@ Nicht schlecht. Nach Holz und nach Äpfeln, die lange in einer Schale gelegen ha
 einem Waschmittel, das wir nie benutzt hatten. Aber es war nicht unser Geruch, und ich stand im
 Flur mit einem Karton auf dem Arm und wusste nicht, wohin damit.
 
-„Wohnzimmer“, sagte Mama von draußen. „Alles, wo nichts draufsteht, ins Wohnzimmer.“
+„Wohnzimmer“, sagte Mama von draußen. „Alles, wo nur ein Name draufsteht, ins Wohnzimmer.“
 
-Auf meinem Karton stand nichts drauf. Auf den meisten stand nichts drauf. Wir hatten in drei
-Tagen gepackt, und am dritten Tag hatte Mama aufgehört zu beschriften.
+Auf meinem Karton stand nur mein Name. Auf den meisten stand nur ein Name, ihrer oder meiner. Wir hatten in drei Tagen gepackt, und am dritten Tag hatte Mama aufgehört aufzuschreiben, was drin war.
 
 Das Wohnzimmer war groß und leer bis auf ein Sofa, das die Möbelpacker schief vor das Fenster
 gestellt hatten. Durch die Scheiben fiel das Licht in langen staubigen Streifen. Draußen stand
@@ -97,9 +96,7 @@ Altes Holz, dunkel an den Ecken, wo Hände es getragen hatten. Die Felder waren 
 sondern eingelegt, helles Holz und dunkles, und am Rand waren Buchstaben eingebrannt, so klein,
 dass ich mich bücken musste: _A. W. 1857._
 
-Die Figuren standen nicht in ihrer Reihe. Sie standen mitten in einer Partie. Türme auf halbem
-Weg, ein Springer weit vorn, Bauern, die sich gegenüberstanden wie Leute, die sich nicht aus dem
-Weg gehen wollen. Es fehlten viele. Was übrig war, sah müde aus und entschlossen.
+Die Figuren standen nicht in ihrer Reihe. Sie standen mitten in einer Partie. Ein Turm weit vorn, zwei Springer dicht beieinander, als hielten sie sich aneinander fest, eine Handvoll Bauern. Es fehlten die meisten. Was übrig war, sah müde aus und entschlossen.
 
 Jemand hatte hier gespielt und war aufgestanden. Und niemand hatte seitdem aufgeräumt.
 
@@ -265,12 +262,24 @@ gemacht. Ich habe ihr nie danken können. Sie hat mich nicht gehört.“
 
 Er sagte es leichthin. Aber er sah mich nicht an dabei.
 
+„Noch eine?“, fragte er dann, und das zweite Brett leuchtete auf.
+
+Unten rief Mama etwas von Abendessen.
+
+„Später“, sagte ich.
+
+Es war nur ein Wort. Aber er wurde still, als hätte ich etwas umgestoßen.
+
+„Später“, wiederholte Ambrose. „Ich kenne das Wort. Ich habe sehr lange darauf gewartet, dass es endet.“
+
+Ich verstand es nicht. Noch lange nicht.
+
 `[Klang: Ambroses Thema leise unter der Partie. Bei „Niemand“ ein kurzer heller Ton (das Aha-Motiv; es kehrt bei jeder gelernten Einsicht wieder). Am Ende Abendstimmung: Grillen durch das Fenster.]`
 `[Bild: Das zweite Brett erscheint als Licht. Draußen wird es im Fenster dunkler, während die Partie läuft (Zustand Abend).]`
 
 ---
 
-## Kapitel 4: Schwarz steht besser
+## Kapitel 4: Weiß steht besser
 
 _Szene 4 (Abend im neuen Haus), erweitert um die Nacht. Wohnzimmer, Dachboden. Stimmung: warm,
 ein kleiner Riss, dann Nähe._
@@ -291,13 +300,12 @@ herum neben sich. Sie sah auf, als ich hereinkam, und ihr Blick fiel auf das Bre
 
 Sie sah mich nicht an. Sie sah die Stellung an. Zwei Sekunden, drei.
 
-„Schwarz steht besser“, sagte sie.
+„Weiß steht besser“, sagte sie.
 
 Dann hörte sie, was sie gesagt hatte. Ich sah es. Ihr Gesicht machte zu, wie eine Tür, die jemand
 leise schließt.
 
-„Hab ich irgendwo gelesen“, sagte sie und griff nach dem Schraubenzieher. „Dass Schwarz oft … ach,
-keine Ahnung. Wo hast du das her?“
+„Hab ich irgendwo gelesen“, sagte sie und griff nach dem Schraubenzieher. „Dass Weiß oft … ach, keine Ahnung. Wo hast du das her?“
 
 „Vom Dachboden.“
 
@@ -354,11 +362,11 @@ höre man ihn nicht mehr.
 „Er.“
 
 Mehr sagte er nicht. Ich fragte nicht weiter. Ich lag da und hörte auf das Wasser, und
-irgendwann, kurz bevor ich einschlief, dachte ich: Mama hat recht gehabt. Schwarz steht besser.
+irgendwann, kurz bevor ich einschlief, dachte ich: Mama hat recht gehabt. Weiß steht besser.
 
 Ich wusste nur nicht, woher ich das wusste.
 
-`[Klang: Bei „Schwarz steht besser“ setzt die Musik für zwei Sekunden aus. Nachtszene ohne Musik: Kühlschrank, Wasserfall, ein Auto. Ganz am Schluss vier Töne von Ambroses Thema.]`
+`[Klang: Bei „Weiß steht besser“ setzt die Musik für zwei Sekunden aus. Nachtszene ohne Musik: Kühlschrank, Wasserfall, ein Auto. Ganz am Schluss vier Töne von Ambroses Thema.]`
 `[Bild: Mamas Porträt mit einer Fassung „ertappt“. Nacht: Zimmer in Blau, Laternenlicht durch das Fenster, Ambrose als heller Umriss.]`
 `[Karte: Zimmer des Helden mit Schreibtisch für das Brett fehlt bisher; die Nachtszene kann auch auf dem Dachboden spielen, wenn kein Zimmer gebaut wird.]`
 

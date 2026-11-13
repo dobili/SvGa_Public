@@ -43,6 +43,12 @@ button:focus-visible{outline:3px solid var(--gold);outline-offset:2px}
   padding:8px 12px;border-radius:6px;background:color-mix(in srgb,var(--flaeche) 94%,transparent);border:1px solid var(--linie);font-size:.85rem;text-align:center;cursor:pointer}
 #hinweis[hidden]{display:none}
 @media (prefers-reduced-motion:no-preference){.karte{transition:opacity .15s}}
+.netz{position:absolute;left:0;top:0;pointer-events:none;z-index:1;display:none}
+body.raster .netz{display:block}
+.netz .fein{stroke:rgba(255,255,255,.22);stroke-width:1}
+.netz .grob{stroke:rgba(255,235,120,.55);stroke-width:2}
+.netz text{font:700 11px var(--text);fill:#fff;paint-order:stroke;stroke:rgba(13,20,34,.85);stroke-width:3px}
+#raster[aria-pressed="true"]{background:var(--gold);color:#16253d;border-color:var(--gold)}
 </style>
 <div id="leiste">
   <h1>Weltkarte</h1>
@@ -50,6 +56,7 @@ button:focus-visible{outline:3px solid var(--gold);outline-offset:2px}
   <button type="button" id="alle">Alle zeigen</button>
   <button type="button" id="neu">Von vorn</button>
   <button type="button" id="passt">Einpassen</button>
+  <button type="button" id="raster" aria-pressed="false" title="Koordinatenraster: Feld x (Spalte von links) und y (Zeile von oben), ab 0, wie in den Kartendateien">Raster</button>
   <button type="button" id="minus" aria-label="Verkleinern">−</button>
   <button type="button" id="plus" aria-label="Vergrößern">+</button>
 </div>
@@ -109,11 +116,25 @@ function platz(id, von, ausgang) {
   return { x: p.x + q.w + ABSTAND, y: p.y };
 }
 
+// Koordinatenraster: feine Linie je Feld, kräftige Linie und Beschriftung „x,y“ alle fünf Felder.
+// Die Zahlen sind die Felder der Kartendatei (Spalte von links, Zeile von oben, ab 0).
+function netz(k) {
+  const ns = "http://www.w3.org/2000/svg", svg = document.createElementNS(ns, "svg");
+  svg.setAttribute("class", "netz"); svg.setAttribute("width", k.w); svg.setAttribute("height", k.h);
+  const linie = (x1, y1, x2, y2, grob) => { const l = document.createElementNS(ns, "line"); l.setAttribute("x1", x1); l.setAttribute("y1", y1); l.setAttribute("x2", x2); l.setAttribute("y2", y2); l.setAttribute("class", grob ? "grob" : "fein"); svg.append(l); };
+  for (let x = 0; x <= k.tb; x++) linie(x * k.k, 0, x * k.k, k.h, x % 5 === 0);
+  for (let y = 0; y <= k.th; y++) linie(0, y * k.k, k.w, y * k.k, y % 5 === 0);
+  for (let x = 0; x < k.tb; x += 5) for (let y = 0; y < k.th; y += 5) {
+    const t = document.createElementNS(ns, "text"); t.setAttribute("x", x * k.k + 3); t.setAttribute("y", y * k.k + 13); t.textContent = x + "," + y; svg.append(t);
+  }
+  return svg;
+}
 function baue(id) {
   const k = nach[id], karte = document.createElement("div");
   karte.className = "karte"; karte.dataset.id = id; karte.style.width = k.w + "px"; karte.style.height = k.h + "px";
   const bild = document.createElement("img"); bild.alt = k.name; bild.width = k.w; bild.height = k.h; bild.draggable = false;
   karte.append(bild);
+  karte.append(netz(k));
   if (k.f.length > 1) {
     const reihe = document.createElement("div"); reihe.className = "zustaende";
     k.f.forEach((f, i) => {
@@ -193,6 +214,12 @@ function zeichne() {
 }
 
 // Karte greifen: ziehen verschiebt, gedrückt halten ohne Bewegung blendet aus.
+function feldZeigen(ev, id, karte) {
+  const k = nach[id], r = karte.getBoundingClientRect(), hw = document.getElementById("hinweis");
+  const x = Math.floor((ev.clientX - r.left) / r.width * k.tb), y = Math.floor((ev.clientY - r.top) / r.height * k.th);
+  if (x < 0 || y < 0 || x >= k.tb || y >= k.th) return;
+  hw.textContent = k.name + " (" + k.id + "): Feld " + x + "," + y + " (antippen schließt)"; hw.hidden = false;
+}
 function kartengriff(e, id, karte) {
   if (zeiger.size >= 1) return; // zweiter Finger: Zoomen übernimmt die Sicht
   e.stopPropagation(); karte.setPointerCapture(e.pointerId);
@@ -206,7 +233,7 @@ function kartengriff(e, id, karte) {
     offen[id].x = Math.round(ox + dx); offen[id].y = Math.round(oy + dy);
     karte.style.left = offen[id].x + "px"; karte.style.top = offen[id].y + "px"; zeichne();
   };
-  const ende = () => { clearTimeout(uhr); karte.style.zIndex = ""; karte.removeEventListener("pointermove", zug); karte.removeEventListener("pointerup", ende); karte.removeEventListener("pointercancel", ende); merke(); };
+  const ende = (ev) => { if (!bewegt && ev && ev.type === "pointerup" && document.body.classList.contains("raster")) feldZeigen(ev, id, karte); clearTimeout(uhr); karte.style.zIndex = ""; karte.removeEventListener("pointermove", zug); karte.removeEventListener("pointerup", ende); karte.removeEventListener("pointercancel", ende); merke(); };
   karte.addEventListener("pointermove", zug); karte.addEventListener("pointerup", ende); karte.addEventListener("pointercancel", ende);
 }
 
@@ -244,6 +271,10 @@ document.getElementById("hinweis").addEventListener("click", (e) => { e.currentT
 document.getElementById("alle").addEventListener("click", alleZeigen);
 document.getElementById("neu").addEventListener("click", vonVorn);
 document.getElementById("passt").addEventListener("click", einpassen);
+const rasterKnopf = document.getElementById("raster");
+function rasterSetzen(an) { document.body.classList.toggle("raster", an); rasterKnopf.setAttribute("aria-pressed", String(an)); try { localStorage.setItem(SPEICHER + "Raster", an ? "1" : ""); } catch (e) { /* ohne Speicher geht es auch */ } }
+rasterKnopf.addEventListener("click", () => rasterSetzen(!document.body.classList.contains("raster")));
+try { rasterSetzen(localStorage.getItem(SPEICHER + "Raster") === "1"); } catch (e) { rasterSetzen(false); }
 document.getElementById("plus").addEventListener("click", () => zoom(1.25));
 document.getElementById("minus").addEventListener("click", () => zoom(0.8));
 

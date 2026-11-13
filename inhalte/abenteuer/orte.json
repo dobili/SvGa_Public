@@ -1786,13 +1786,15 @@
           "kennung": "ironwood.victor",
           "name": "figur.victor.name",
           "sprite": "figuren/victor.png",
-          "dialog": "ironwood-aussen.victor"
+          "dialog": "ironwood-aussen.victor",
+          "wenn": "nadelIronwood > 0 und nicht einladungGesehen"
         },
         {
           "kennung": "ironwood.grahamHale",
           "name": "figur.grahamHale.name",
           "sprite": "figuren/graham-hale.png",
-          "dialog": "ironwood-aussen.graham_hale"
+          "dialog": "ironwood-aussen.graham_hale",
+          "wenn": "nadelIronwood > 0"
         }
       ],
       "ausloeser": [

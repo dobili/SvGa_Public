@@ -295,7 +295,7 @@ die Herkünfte stehen in einer Liste und im Abspann. Keine KI-Musik.
 
 | Schritt | Inhalt                                                                                                                                                                                                                                                                                                                       | Dateien  | Kosten               | Aufwand [Schätzung]                                     |
 | ------- | ---------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------- | -------- | -------------------- | ------------------------------------------------------- |
-| 1       | **Probe:** `ambrose`, `aha`, `victor`, `konzern`, `hale` als Noten, gerendert mit VCSL (altes Klavier, Cembalo, Glockenspiel). Der Autor hört an und entscheidet, ob der Klang reicht                                                                                                                                        | 5        | 0 $                  | eine Sitzung                                            |
+| 1       | **Probe (gebaut 13.11.2026):** `ambrose`, `victor_konzern`, `mama`, `held`, `aha` und 45 s `maple_falls`, gesetzt und gerendert mit `python -m pipeline.abenteuer.ton.hoerprobe --laden` (VCSL, VSCO 2 CE). Der Autor hört an und entscheidet, ob der Klang reicht                                                           | 5        | 0 $                  | eine Sitzung                                            |
 | 2       | **Geräusche Akt 1:** 24 Dauergeräusche, 32 einmalige, 5 Schritte. Linkliste aus Freesound (CC0 zuerst) und Sonniss, Schnitt zu Schleifen, Liste der Herkünfte                                                                                                                                                                | 61       | 0 $                  | zwei Sitzungen und eine Stunde Herunterladen beim Autor |
 | 3       | **Musik Akt 1, selbst gesetzt:** `mapleFalls` mit Fassungen (`club`, `lernen`, `clubkampf`, `weg`, `weg.fluss`, `weg.zedern`, `busfahrt`), `cedarCreek` mit Fassungen (`bibliothek`, `archiv`, `clubkampf`, `steg`), `ambrose.erinnerung`, `ambrose.walzer`, `ambrose.lassMich`, `nachtstueck`, `titel`, dazu die Kurzmotive | etwa 22  | 0 bis 50 $ (Gitarre) | zwei bis drei Sitzungen und Anhören                     |
 | 4       | **Musik Akt 1, fertig:** `diner` (Jukebox) aus einem Jazzpaket oder Incompetech                                                                                                                                                                                                                                              | 1 bis 2  | 0 bis 6 $            | kurz                                                    |
@@ -311,8 +311,7 @@ die Herkünfte stehen in einer Liste und im Abspann. Keine KI-Musik.
 - Jedes Stück vor der Übernahme anhören.
 - Klären, ob der Autor die Freesound-Downloads selbst macht oder einen API-Schlüssel hinterlegt
   (Abschnitt 4.2).
-- Teil D des Klangplans (D1, D5) beschreibt noch den alten Stand mit öffentlichen Tondateien. Er
-  sollte auf dieses Dokument verweisen.
+- Teil D des Klangplans ist seit dem 13.11.2026 berichtigt (D1, D5 verweisen hierher).
 
 ---
 

@@ -753,26 +753,27 @@ Recherche vom 13.11.2026. Die Lizenzseiten wurden selbst abgerufen; was dort nic
 konnte, ist mit „(nicht geprüft)“ markiert. **Kein Stück wurde angehört**: Ob es zum Stil passt, ist
 aus Instrumentenangaben, Schlagworten und Beschreibungen geschlossen. Vor jeder Übernahme anhören.
 
-### D1. Was für ein öffentliches GPL-Repository gilt
+### D1. Wo die Tondateien liegen und was daraus folgt
 
-Das Repository ist öffentlich, also wird jede Tondatei als Rohdatei weitergegeben, nicht nur im
-fertigen Spiel. Drei Folgen:
+**Korrektur vom 13.11.2026:** Die Tondateien kommen **nicht** ins öffentliche GPL-Repository,
+sondern wie die Grafik von LimeZu ins private Repository (`musik/` und `klang/`, siehe
+`23_Technik_Atmosphaere.md`, Abschnitt 5). Die erste Fassung dieses Teils ging von öffentlichen
+Dateien aus und ließ deshalb nur CC0 und CC BY zu. Das gilt nicht mehr. Ausführliche Recherche mit
+Kosten und Empfehlung: `28_Tonquellen.md`.
 
-1. **Brauchbar sind nur freie Lizenzen:** CC0 und CC BY 4.0 sind laut FSF mit der GPL verträglich
-   („Both public domain works and the lax license provided by CC0 are compatible with the GNU
-   GPL“; zu CC BY 4.0: „It is compatible with all versions of the GNU GPL“,
-   gnu.org/licenses/license-list). Medien dürfen eine andere Lizenz haben als der Code
-   (OpenGameArt-FAQ: „game code and game media are separate entities“).
-2. **CC BY-SA 4.0 nur in eine Richtung:** Eine bearbeitete Fassung darf unter GPL-3.0 stehen
-   (creativecommons.org/compatiblelicenses: „one-way only“), aber nicht unter CC0 oder CC BY. CC BY
-   3.0 und CC BY-SA 3.0 dürfen als eigene Datei mit ihrer Lizenz im Repository liegen, lassen sich
-   aber nicht unter die GPL stellen.
-3. **„Nicht kommerziell“ (NC) ist ausgeschlossen:** Die GPL erlaubt jedem den Verkauf, NC verbietet
-   ihn.
+1. **Kommerzielle Spiellizenzen sind brauchbar**, auch solche, die das Weitergeben der Dateien
+   verbieten (Sonniss, Pakete auf itch.io mit eigener Lizenz, Unity Asset Store, Humble-Pakete).
+   Die GPL berührt die Tondateien nicht, weil sie nicht im Code-Repository liegen. Die Dateien
+   werden nur im Paket der App ausgeliefert, ohne eigene Downloadliste.
+2. **Namensnennung bleibt Pflicht**, wo die Lizenz sie verlangt (CC BY, viele Pakete), auf der
+   Abspannseite „Musik und Geräusche“ und in der Liste der Herkünfte (D4).
+3. **„Nicht kommerziell“ (NC) bleibt ausgeschlossen**, weil das Spiel verkauft werden darf.
+4. **Kein KI-Training:** Dateien, deren Lizenz es verbietet (etwa Sonniss), gehen nicht an Bild-
+   oder Musik-KI.
 
 ### D2. Quellen
 
-| Quelle                                   | Lizenz                                             | Im öffentlichen Repo?                                                                                                               | Namensnennung                                                                                                                                                          | Preis               | Beleg                                                                                                                 |
+| Quelle                                   | Lizenz                                             | Im öffentlichen Repo? (alter Maßstab, siehe D1)                                                                                     | Namensnennung                                                                                                                                                          | Preis               | Beleg                                                                                                                 |
 | ---------------------------------------- | -------------------------------------------------- | ----------------------------------------------------------------------------------------------------------------------------------- | ---------------------------------------------------------------------------------------------------------------------------------------------------------------------- | ------------------- | --------------------------------------------------------------------------------------------------------------------- |
 | **OpenGameArt.org**                      | je Datei CC0, CC BY 3.0/4.0, CC BY-SA, OGA-BY, GPL | ja bei CC0, CC BY 4.0, OGA-BY, GPL 3, CC BY-SA 4.0 (siehe D1); CC BY 3.0 nur als eigene Datei                                       | außer bei CC0 Pflicht: „[Titel]“ by [Urheber] licensed [Lizenz]: [Link]                                                                                                | kostenlos           | opengameart.org/content/faq: „the licenses that can be selected on this site are meant to be GPL-compatible“          |
 | **Freesound.org**                        | je Datei CC0, CC BY 4.0, CC BY-NC                  | CC0 und CC BY: ja; **NC nie**                                                                                                       | bei CC BY: Titel, Urheber, Link, Lizenz                                                                                                                                | kostenlos           | freesound.org/help/faq: „For "attribution" you should always mention the original creators“                           |
@@ -791,7 +792,8 @@ fertigen Spiel. Drei Folgen:
 **KI-Musik:** Nach dem Bericht des US Copyright Office (Januar 2025) machen Eingaben allein den
 Nutzer nicht zum Urheber („prompts alone do not provide sufficient human control“). Eine GPL- oder
 CC-Angabe an einer solchen Datei wäre rechtlich leer, die AGB des Anbieters gelten trotzdem, und es
-bleibt das Risiko, dass das Modell fremde Werke nachbildet. Für dieses Repository deshalb nicht.
+bleibt das Risiko, dass das Modell fremde Werke nachbildet. Deshalb nicht (Begründung mit dem
+Stand der Anbieter: `28_Tonquellen.md`, Abschnitt 3.2).
 
 ### D3. Kandidaten für die fünf Schlüsselstücke
 
@@ -870,16 +872,14 @@ Stück hat ihre gemeinsamen Töne. Fertige Stücke taugen für Ortsthemen, Wege 
 
 ### D5. Empfehlung
 
-Musik und Geräusche nur aus CC0- und CC-BY-4.0-Quellen nehmen (OpenGameArt, Freesound, Kenney,
-Incompetech, CC0-Pakete auf itch.io) und jede Herkunft mit Titel, Urheber, Lizenz und Link im
-Repository und im Abspann festhalten; Pixabay, Sonniss, BBC, den Unity Asset Store und KI-Dienste
-meiden, weil sie die Weitergabe der Rohdatei verbieten oder offenlassen. Für die Ortsthemen ein
-Paket aus einer Hand wählen (etwa „Pelican Breeze“, CC0) und die Leitmotive aus A1 selbst setzen,
-weil kein fertiges Stück ihre gemeinsamen vier Töne hat. Als Startbesetzung, nach dem Anhören:
-„Clear Air“ für Maple Falls, „Harpsichord Flurry“ (aus der MIDI gekürzt) für Ambrose, „Cymbal
-Swell 2“ mit „Single Chime 2“ für den König, „Church Clock Strikes 8“ für die Turmuhr und
-„Investigations“ beziehungsweise „Thinking Music“ für die Clubkämpfe in Maple Falls und Cedar
-Creek.
+Ersetzt durch `28_Tonquellen.md` (13.11.2026), weil die Tondateien privat bleiben (D1). Kurz: Die
+Leitmotive und die mit ihnen verwobenen Ortsthemen (Maple Falls, Cedar Creek) setzen wir selbst als
+Noten und rendern sie mit CC0-Instrumenten (Werkzeug `pipeline/abenteuer/ton/`, Hörproben mit
+`python -m pipeline.abenteuer.ton.hoerprobe`). Die übrige Ortsmusik kommt aus fertigen Paketen, je
+Ort eines (Incompetech, CC0- und kommerzielle Pakete auf itch.io). Die Geräusche kommen von
+Freesound (CC0 und CC BY) und aus den Sonniss-GDC-Paketen. Keine KI-Musik. Die Kandidaten aus D3
+und D3a bleiben gültig; die Spalte „Im öffentlichen Repo?“ in D2 ist nur noch für Dateien wichtig,
+die doch einmal öffentlich liegen sollen.
 
 ---
 

@@ -13,9 +13,8 @@
 // nach der Erinnerung an New York nennt Ambrose {held} zum ersten Mal beim Namen
 // (ambroseNenntNamen, Knoten name_im_archiv). In Akt 1 glaubt Ambrose, das Opfer sei falsch
 // gewesen; die Auflösung kommt in Akt 3 (roman/akt1_befunde.md, Abschnitt 7).
-// Später, wenn mittel-2 sie gebaut hat: #musik:archiv (Cello unter dem Klavier), #musik:ambroseVoll
-// bei der Erzählung, #bild:zeitung1858 (Großansicht), #bild:stellung1858 beim Läuferzug, eine
-// Porträtfassung „alt“ für Ambrose ab „Leg es weg“, #musik:walzer1857 in der Erinnerung.
+// Klang nach 21_Klangplan.md (S14 bis S17); Bilder zeitung1858, stellung1858, erinnerungNewYork.
+// Eine Porträtfassung „alt“ für Ambrose ab „Leg es weg“ gibt es noch nicht (bis dahin bitter).
 //
 // Variablen: erinnerungNewYorkBestanden und nadelCedarCreek setzt die Hülle
 // (regeln/dialogvariablen.ts); die übrigen setzt Ink selbst.
@@ -101,8 +100,8 @@ Im Karton liegt eine Zeitung. Vier Seiten, dünn, die Schrift so klein, dass sie
 === erzaehlung_1858 ===
 ~ erzaehlung1858Gesehen = true
 Auf der dritten Seite, zwischen einer Anzeige für Schiffspassagen und dem Preis für Baumwolle, steht ein Absatz. #sprecher:erzaehler
-„Mr. Hale, Ingenieur, schlägt Mr. Whitlock im Match, vier zu drei.“ #sprecher:erzaehler
-„Mr. Whitlocks Opfer im letzten Spiel wird noch lange besprochen werden. Mr. Hale nannte es ‚bemerkenswert unnötig‘.“ #sprecher:erzaehler #pause:3
+„Mr. Hale, Ingenieur, schlägt Mr. Whitlock im Match, vier zu drei.“ #sprecher:erzaehler #bild:zeitung1858 #klang:zeitung
+„Mr. Whitlocks Opfer im letzten Spiel wird noch lange besprochen werden. Mr. Hale nannte es ‚bemerkenswert unnötig‘.“ #sprecher:erzaehler #musik:aus #pause:3
 Du liest es zweimal. #sprecher:erzaehler
 Leg es weg. #sprecher:ambrose #stimmung:bitter #pause:2
 Er steht neben dem Tisch, im Lichtkegel. Zum ersten Mal sieht er alt aus. #sprecher:erzaehler
@@ -111,7 +110,7 @@ Er steht neben dem Tisch, im Lichtkegel. Zum ersten Mal sieht er alt aus. #sprec
     Die Lampe flackert. Irgendwo tropft Wasser. #sprecher:erzaehler #pause:2
 * [„Ambrose.“]
     Die Lampe flackert. Irgendwo tropft Wasser. #sprecher:erzaehler #pause:2
-- Vier zu drei. Sieben Partien, in einem Saal über einem Kaffeehaus, und die halbe Stadt stand auf der Treppe. #sprecher:ambrose
+- Vier zu drei. Sieben Partien, in einem Saal über einem Kaffeehaus, und die halbe Stadt stand auf der Treppe. #sprecher:ambrose #musik:ambrose.erinnerung
 Ich war siebenundzwanzig und der Beste, den sie hatten. Ich wusste es. Das war das Unglück. #sprecher:ambrose
 * [„Und der andere?“]
     Ein Ingenieur, Brückenbauer aus dem Norden. Er spielte, wie man eine Brücke baut. #sprecher:ambrose
@@ -131,7 +130,7 @@ Aber ich sah ein Opfer. Einen Turm, mitten in seine Stellung. Ich wusste nicht e
 Nein. #sprecher:ambrose #pause:3
 Das Wort bleibt im Raum. #sprecher:erzaehler
 Es gab eine Verteidigung. Einen einzigen stillen Zug. Er brauchte vierzig Minuten. #sprecher:ambrose
-Er sah mich nicht an dabei. Dann stellte er einen Läufer ein Feld zurück, und alles fiel zusammen. #sprecher:ambrose
+Er sah mich nicht an dabei. Dann stellte er einen Läufer ein Feld zurück, und alles fiel zusammen. #sprecher:ambrose #bild:stellung1858
 Bemerkenswert unnötig. Er hatte recht. Das habe ich ihm nie verziehen. #sprecher:ambrose #stimmung:bitter
 * [„Das ist wie bei mir gegen Victor.“]
     Nein. Du hattest eine verlorene Stellung. #sprecher:ambrose
@@ -140,7 +139,7 @@ Bemerkenswert unnötig. Er hatte recht. Das habe ich ihm nie verziehen. #spreche
 - Ich habe Revanche verlangt. Im Jahr darauf, in einem langen Brief. Er schrieb zurück. Ein Wort. #sprecher:ambrose
 * [„Welches?“]
 * [Warten]
-- Später. #sprecher:ambrose #stimmung:bitter #pause:3
+- Später. #sprecher:ambrose #stimmung:bitter #klang:spaeter #musik:aus #geraeusch:aus #pause:2
 {ersterTagSpaeter: Du hast es am ersten Tag zu ihm gesagt, auf dem Dachboden, ohne nachzudenken. Er hat so seltsam geantwortet. #sprecher:erzaehler}
 * {kenntHale} [„Hale wie Victor?“]
     ~ ambroseVertrauen = ambroseVertrauen + 1
@@ -170,9 +169,9 @@ Ein dünnes, vergilbtes Heft. Es liegt in einem Karton, den du noch nicht öffne
 -> END
 
 === erinnerung ===
-„Erster Amerikanischer Schachkongress. New York, 1857.“ Ein Programmheft mit einem Adler auf dem Umschlag. #sprecher:erzaehler
+„Erster Amerikanischer Schachkongress. New York, 1857.“ Ein Programmheft mit einem Adler auf dem Umschlag. #sprecher:erzaehler #bild:erinnerungNewYork
 Ambrose macht ein Geräusch, das du von ihm nicht kennst. #sprecher:erzaehler
-Ich war dort. Ich stand in der dritten Reihe. #sprecher:ambrose #stimmung:stolz
+Ich war dort. Ich stand in der dritten Reihe. #sprecher:ambrose #stimmung:stolz #musik:ambrose.walzer
 Ein Junge aus meiner Stadt spielte gegen einen Meister aus dem Westen, Paulsen. Der Junge hieß Morphy. #sprecher:ambrose
 Er saß da, als ginge ihn das alles nichts an, und sah aus dem Fenster. #sprecher:ambrose
 Setz dich. Du spielst seine Züge. Ich sage dir nichts. #sprecher:ambrose
@@ -189,8 +188,8 @@ Setz dich. Du spielst seine Züge. Ich sage dir nichts. #sprecher:ambrose
     -> END
 }
 ~ newYorkBesprochen = true
-Er opferte seine Dame, und ich vergaß zu atmen. Dreihundert Leute, und man hätte eine Nadel fallen hören. #sprecher:ambrose #stimmung:stolz
-Siehst du? Das. Das ist Schach. Nicht dieses Zählen. #sprecher:ambrose
+Er opferte seine Dame, und ich vergaß zu atmen. Dreihundert Leute, und man hätte eine Nadel fallen hören. #sprecher:ambrose #stimmung:stolz #musik:aus #pause:2
+Siehst du? Das. Das ist Schach. Nicht dieses Zählen. #sprecher:ambrose #musik:ambrose.walzer
 * [„Gestern hast du gesagt, Zählen ist alles.“]
     Er fährt herum. Er sucht nach einer Antwort und hat keine. #sprecher:erzaehler #pause:2
     Das habe ich gesagt. #sprecher:ambrose #stimmung:still
@@ -206,7 +205,7 @@ Siehst du? Das. Das ist Schach. Nicht dieses Zählen. #sprecher:ambrose
 === name_im_archiv ===
 {ambroseNenntNamen: -> END}
 ~ ambroseNenntNamen = true
-Über dir schlägt die Uhr. Sieben Mal. Du legst die Zeitung zurück, das Programm obenauf. #sprecher:erzaehler #klang:turmuhr
+Über dir schlägt die Uhr. Sieben Mal. Du legst die Zeitung zurück, das Programm obenauf. #sprecher:erzaehler #klang:turmuhr7 #musik:aus
 Als du den Deckel schließen willst, sagt er: #sprecher:erzaehler
 {held}. #sprecher:ambrose #pause:2
 Er hat dich noch nie beim Namen genannt. Immer nur „Kind“. Oder „Lehrling“. #sprecher:erzaehler
@@ -214,6 +213,6 @@ Er hat dich noch nie beim Namen genannt. Immer nur „Kind“. Oder „Lehrling�
 * [Den Deckel offen lassen]
 - Ich habe das noch niemandem erzählt. #sprecher:ambrose
 Er sieht zur Wendeltreppe. #sprecher:erzaehler
-Es gab allerdings auch niemanden. #sprecher:ambrose
+Es gab allerdings auch niemanden. #sprecher:ambrose #musik:karte
 -> END
 

@@ -34,7 +34,6 @@ VAR schildCedarGesehen = false
 VAR teamAngekommen = false
 VAR nadelRiverton = 0
 VAR nadelIronwood = 0
-VAR clubkampfZaehlGesagt = false
 VAR ambroseNenntNamen = false
 
 // ---------------------------------------------------------------- Ankunft
@@ -42,10 +41,11 @@ VAR ambroseNenntNamen = false
 === ankunft ===
 // Runde 11 (VC26 bis VC30, Roman Kapitel 10 und 11): ein Knoten für beide Wege. {held} und Juno
 // kommen am Freitag still an; Coach und Bus kommen erst am Samstagmorgen (team_kommt). Ambrose
-// spricht in dieser Szene nur am Plakat. Später: #musik:cedarCreek (Klavier allein) nach der Uhr.
+// spricht in dieser Szene nur am Plakat. Klang: Stille S12 (Turmuhr, vier Schläge), dann die
+// Musik der Karte.
 ~ ankunftCedarCreekGesehen = true
-{not schildCedarGesehen: Zwischen den Bäumen schlägt eine Uhr. Viermal, langsam. #sprecher:erzaehler #klang:turmuhr #pause:3}
-Cedar Creek ist kleiner als Maple Falls und sieht älter aus. In der Mitte, wo woanders eine Kirche steht, steht die Bibliothek. #sprecher:erzaehler
+{not schildCedarGesehen: Zwischen den Bäumen schlägt eine Uhr. Viermal, langsam. #sprecher:erzaehler #klang:turmuhr4 #musik:aus #pause:3}
+Cedar Creek ist kleiner als Maple Falls und sieht älter aus. In der Mitte, wo woanders eine Kirche steht, steht die Bibliothek. #sprecher:erzaehler #musik:karte
 Auf ihrer Treppe sitzen zwei Kinder, die gleich aussehen, mit Figuren in den Händen und ohne Brett. #sprecher:erzaehler
 Ich hab gewonnen! #sprecher:ivy
 Du hast den Turm bewegt, als ich nicht geguckt hab! #sprecher:jonah
@@ -99,10 +99,10 @@ Da bist du ja! Gleich geht es los! #sprecher:mae #stimmung:froh
 === sterne ===
 // Runde 11 (VC77 bis VC81, Roman Kapitel 14): weit, warm, zärtlich. Keine Erklärung der
 // Spielwirkung; die Müdigkeit zeigt sich erst am Morgen am Brett. Ambroses Erinnerung nur, wenn
-// die Hand auf dem Brett liegt (sterne_ambrose). Später: keine Musik, nur Bach, Grillen, Holz;
-// #klang:sternschnuppe (heller Glockenton) bei der ersten, danach #musik:nachtstueck.
+// die Hand auf dem Brett liegt (sterne_ambrose). Klang: Stille S20 bis zur ersten Sternschnuppe,
+// dann das Nachtstück.
 ~ sternennachtGesehen = true
-Am Steg liegen Decken. Mae hat ein Teleskop aufgebaut, das größer ist als sie selbst. #sprecher:erzaehler
+Am Steg liegen Decken. Mae hat ein Teleskop aufgebaut, das größer ist als sie selbst. #sprecher:erzaehler #musik:aus #geraeusch:grillen
 Dex hat eine rote Lampe gebastelt, „damit die Augen sich nicht erschrecken“. Alle paar Minuten geht sie aus. #sprecher:erzaehler
 Mrs. Okafor hatte gesagt, eine halbe Stunde. Das war vor zwei Stunden. #sprecher:erzaehler
 Die da ist Kassiopeia. Sieht aus wie ein W. Und das ist der Große Wagen, und das … #sprecher:mae
@@ -112,11 +112,11 @@ Doch. Sonst weiß man nicht, was man sieht. #sprecher:mae
     Das Brett liegt neben dir auf der Decke, in sein Handtuch gewickelt. #sprecher:erzaehler
     -> sterne_ambrose ->
 * [Nach oben sehen]
-    Über den Zedern kommen mehr Sterne heraus, als du je gesehen hast. #sprecher:erzaehler
+    Über den Zedern kommen mehr Sterne heraus, als du je gesehen hast. #sprecher:erzaehler #bild:sternenhimmel
 - Da! #sprecher:mae #stimmung:froh
 Das war ein Flugzeug. #sprecher:dex
-Dann ein Strich über den Himmel, hell und schon vorbei. #sprecher:erzaehler #pause
-Hast du dir was gewünscht? #sprecher:juno
+Dann ein Strich über den Himmel, hell und schon vorbei. #sprecher:erzaehler #klang:sternschnuppe #pause
+Hast du dir was gewünscht? #sprecher:juno #musik:nachtstueck
 * [Nicken]
 * [Nach oben sehen]
 - Man darf es nicht sagen. #sprecher:mae
@@ -136,20 +136,18 @@ Nach Mitternacht geht ihr hinüber in den Lesesaal. Die Matten liegen zwischen d
 
 === ende_akt1 ===
 // Runde 11 (VC95 bis VC104, Roman Kapitel 16): leise, entschlossen; am Schluss ein Schatten, den
-// niemand ausdeutet. Erst der Fehler (nur wenn im Clubkampf „Lass mich“ lief), dann der Wunsch als
-// Folge. Hier fällt das dritte „Später“ von Akt 1. Später, wenn mittel-2 sie gebaut hat:
-// #musik:abendstueck, bei „Eine Partie ohne Makel“ nur Ambroses Thema, sein Lachen ohne Musik,
-// Porträtfassung „lacht ohne Spott“; im Bus das Thema von Maple Falls, bei der Nachricht Abbruch
-// und #musik:konzernmotiv; #bild:fotoRiverton als Großansicht.
+// niemand ausdeutet. Erst der Fehler („Lass mich“ kam als Partiemoment im Clubkampf), dann der
+// Wunsch als Folge. Hier fällt das dritte „Später“. Klang nach 21_Klangplan.md (S25, S26).
+// Porträtfassung „lacht ohne Spott“ gibt es noch nicht.
 ~ endeAkt1Gesehen = true
-Das Wasser ist rot von der Sonne. Die Zedern stehen schwarz dagegen. #sprecher:erzaehler
+Das Wasser ist rot von der Sonne. Die Zedern stehen schwarz dagegen. #sprecher:erzaehler #musik:cedarCreek.steg
 Du setzt dich ans Ende der Bretter und legst das Brett neben dich, ohne Handtuch. Er steht am Geländer. #sprecher:erzaehler
-{clubkampfZaehlGesagt: -> fehler_am_steg ->}
+-> fehler_am_steg ->
 * [„Was willst du eigentlich?“]
 * [„Du findest das Zählen langweilig. Was willst du?“]
 - Was ich will. #sprecher:ambrose #pause:2
 Ein Fisch springt. Die Ringe laufen auseinander. #sprecher:erzaehler #pause:2
-Eine Partie ohne Makel. #sprecher:ambrose
+Eine Partie ohne Makel. #sprecher:ambrose #musik:ambrose
 Er sagt es einfach so. Nicht stolz. Wie man etwas zugibt. #sprecher:erzaehler
 Eine. Von Anfang bis Ende richtig und von Anfang bis Ende schön. #sprecher:ambrose
 * [„Die Fernpartie.“]
@@ -164,13 +162,13 @@ Es fehlte nur noch seine Antwort. Ein Zug. Jemand sagte: Später. #sprecher:ambr
     Du weißt nicht, was du da sagst. #sprecher:ambrose
     ** [„Nein. Aber ich sag es trotzdem.“]
     ** [„Ich werde besser. Du bringst es mir bei.“]
-    -- Ambrose lacht. Zum ersten Mal ohne Spott. Es klingt wie jemand, der sehr lange die Luft angehalten hat. #sprecher:erzaehler
+    -- Ambrose lacht. Zum ersten Mal ohne Spott. Es klingt wie jemand, der sehr lange die Luft angehalten hat. #sprecher:erzaehler #musik:aus #pause:4
     Ein Kind. Bei allen Heiligen. Ein Kind mit einem Radiergummi als Dame. #sprecher:ambrose #stimmung:lacht
 * [„Ich bin nicht gut genug. Noch nicht.“]
     Nein. Noch nicht. #sprecher:ambrose #pause:2
     Ich habe Zeit. #sprecher:ambrose
-- Hinter euch hupt der Bus. Mr. Kettering fährt, wie er seit einunddreißig Jahren fährt. #sprecher:erzaehler #klang:bus
-Die Witwe. – Der Hühnerstall. – Achtung, der lange Otis. #sprecher:kettering
+- Hinter euch hupt der Bus. Mr. Kettering fährt, wie er seit einunddreißig Jahren fährt. #sprecher:erzaehler #klang:bus_hupe
+Die Witwe. – Der Hühnerstall. – Achtung, der lange Otis. #sprecher:kettering #musik:busfahrt #geraeusch:bus_innen
 Sam schläft nach der dritten Kurve ein, den Kopf auf dem Schachkoffer. #sprecher:erzaehler
 Vorn rechnet der Coach etwas auf einem Spielbericht. Keine Schachaufgabe: Zahlen mit Dollarzeichen. #sprecher:erzaehler
 * [Juno fragen, was der Coach rechnet]
@@ -178,10 +176,10 @@ Vorn rechnet der Coach etwas auf einem Spielbericht. Keine Schachaufgabe: Zahlen
 * [Aus dem Fenster sehen]
     Die Zedern bleiben zurück, eine nach der anderen. #sprecher:erzaehler
 - Zwei Clubnadeln. Ein Ahornblatt, ein Buch. {sternennachtGesehen:Sternschnuppen: elf.} #sprecher:juno
-Ihr Handy summt. Ihr Gesicht verändert sich. #sprecher:erzaehler
+Ihr Handy summt. Ihr Gesicht verändert sich. #sprecher:erzaehler #klang:handy
 Meine Cousine. Aus Riverton. Die haben da einen Club im Park, schon immer. Der wird neu aufgestellt. #sprecher:juno
-Ein Foto: eine Reihe Tische mit Bildschirmen, an denen niemand sitzt. Darunter: „Mit Perfect Move. Ist das nicht toll?“ #sprecher:erzaehler #pause:2
-Im Rucksack liegt das Brett. Schwarz ist am Zug. #sprecher:erzaehler
+Ein Foto: eine Reihe Tische mit Bildschirmen, an denen niemand sitzt. Darunter: „Mit Perfect Move. Ist das nicht toll?“ #sprecher:erzaehler #bild:fotoRiverton #musik:aus #pause:2
+Im Rucksack liegt das Brett. Schwarz ist am Zug. #sprecher:erzaehler #klang:konzern
 Später, denkst du. Aber nicht mehr lange. #sprecher:erzaehler
 -> END
 
@@ -213,7 +211,7 @@ Antworten kannst du ihm nicht, nicht vor den anderen. #sprecher:erzaehler
 // Übergreifender Fund E4.2 (Bibel, Szene 23): Auflösung in Riverton bei Mrs. Albescu (Szene 33).
 // gefundenSchluessel setzt die Hülle bei gibFund (regeln/dialogvariablen.ts). Runde 11 (VC84,
 // VC85, Roman Kapitel 14): Rosa sagt es einfach, Ambrose schweigt.
-{nachtImLesesaal: Am Morgen liegt Nebel auf dem Bach. #sprecher:erzaehler}
+{nachtImLesesaal: Am Morgen liegt Nebel auf dem Bach. Irgendwo surrt eine Angelschnur. #sprecher:erzaehler #klang:angelschnur}
 Im Schilf am Steg glänzt etwas Rostiges: ein großer Schlüssel mit einem runden Griff. #sprecher:erzaehler
 {not rosaGetroffen: Am Ende des Stegs sitzt eine Frau mit Angel. Sie dreht sich nicht um. #sprecher:erzaehler}
 Den hat ein Angler verloren. Vor zwei Jahren schon. #sprecher:rosa
@@ -288,11 +286,11 @@ Ruhig, ruhig. Der König läuft nicht weg. #sprecher:rosa
 === victor_tablet ===
 // Runde 11 (VC74 bis VC76, Roman Kapitel 13): erst sieht man ihn verlieren, dann kommt die Frage;
 // der Riss ist eine gemessene Stille von drei Sekunden (#pause:3). Victor durchgehend kalt; die
-// Porträtfassung „Riss“ für genau eine Zeile gibt es noch nicht (bis dahin muede).
-// Später: #musik:aus, sobald Victor im Bild ist (nur Klicken und Uhr), #musik:victor beim Gehen.
+// Porträtfassung „Riss“ für genau eine Zeile gibt es noch nicht (bis dahin muede). Klang: Stillen
+// S18 und S19 (21_Klangplan.md), Victors Thema beim Gehen.
 ~ victorCedarCreekGesehen = true
-An der Haltestelle sitzt jemand. Gerade, die Füße nebeneinander, das Tablet auf den Knien. Das Plakat hängt über ihm. #sprecher:erzaehler
-Er zieht. Das Programm antwortet sofort. Ein leises Klicken, wie ein Fingernagel auf Glas. #sprecher:erzaehler
+An der Haltestelle sitzt jemand. Gerade, die Füße nebeneinander, das Tablet auf den Knien. Das Plakat hängt über ihm. #sprecher:erzaehler #musik:aus
+Er zieht. Das Programm antwortet sofort. Ein leises Klicken, wie ein Fingernagel auf Glas. #sprecher:erzaehler #klang:tablet
 * [„Spielst du gegen das Ding?“]
     Ich trainiere. Mein Vater ist im Rathaus. #sprecher:victor #stimmung:kalt
     Der Bezirk hat drei Bibliotheken. Er will alle drei. Für Bildschirme. Es ist effizienter. #sprecher:victor #stimmung:kalt
@@ -306,14 +304,14 @@ Er zieht. Das Programm antwortet sofort. Ein leises Klicken, wie ein Fingernagel
     -> victor_weg
 - Er tippt auf „Neue Partie“. #sprecher:erzaehler
 * [„Macht dir das eigentlich Spaß?“]
-    Seine Hand bleibt über dem Bildschirm stehen. #sprecher:erzaehler #pause:3
+    Seine Hand bleibt über dem Bildschirm stehen. #sprecher:erzaehler #geraeusch:aus #pause:3
     Das ist keine Frage, die man beim Training stellt. #sprecher:victor #stimmung:muede
-    Er zieht. Das Programm antwortet. Aber er hat drei Sekunden gebraucht. Du hast mitgezählt. #sprecher:erzaehler
+    Er zieht. Das Programm antwortet. Aber er hat drei Sekunden gebraucht. Du hast mitgezählt. #sprecher:erzaehler #klang:tablet
 * [Gehen]
 - -> victor_weg
 
 === victor_weg ===
-Erst auf dem Weg zum Steg, zwischen den Zedernhecken, hörst du Ambrose wieder. #sprecher:erzaehler
+Erst auf dem Weg zum Steg, zwischen den Zedernhecken, hörst du Ambrose wieder. #sprecher:erzaehler #musik:victor
 Er hält den Kopf wie er. Ein wenig schief. Wenn er rechnet. #sprecher:ambrose
 * [„Wie wer?“]
     Keine Antwort. #sprecher:erzaehler #pause:2
@@ -391,7 +389,8 @@ Auf dem Handy eine Nachricht von Mama: „Mit dem Zug zurück, vor dem Dunkelwer
 
 === team_kommt ===
 ~ teamAngekommen = true
-Über dem Ort schlägt die Uhr acht. Auf der Straße klappert ein Bus, dann ein Pfiff auf zwei Fingern. #sprecher:erzaehler #klang:pfiff
+Über dem Ort schlägt die Uhr acht. Auf der Straße klappert ein Bus. #sprecher:erzaehler #klang:bus
+Dann ein Pfiff auf zwei Fingern. #sprecher:erzaehler #klang:pfiff_finger
 Morgen, Vorhut! Steht die Bibliothek noch? #sprecher:coachDelgado
 Ich hab im Bus geschlafen. Mit dem Kopf auf dem Schachkoffer. Der ist hart. #sprecher:sam
 * [„Wir haben elf Sternschnuppen gesehen.“]

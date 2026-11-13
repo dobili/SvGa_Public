@@ -112,7 +112,7 @@ Und das alte Brett nimmst du mit, oder? Dann verlier es nicht. #sprecher:mutter
 
 === aufbruch_freitag ===
 // Stimmung: frei, Sommerende (Dokument 19, Abschnitt 4). Mama zeigt die Veränderung von {held}
-// von außen (Roman, Kapitel 10). Später: #musik:wegthema beim Hinausgehen (baut mittel-2).
+// von außen (Roman, Kapitel 10). Musik: die der Karte; das Wegthema beginnt auf der Landstraße.
 Coach Delgado hat angerufen. Ihr spielt Samstag in Cedar Creek. Und du willst schon morgen los? #sprecher:mutter
 * [„Zu Fuß, mit Juno. Sie kennt den Weg.“]
     Zu Fuß. #sprecher:mutter

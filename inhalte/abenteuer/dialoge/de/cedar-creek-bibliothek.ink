@@ -30,8 +30,6 @@ VAR clubkampfCedarCreekBesprochen = 0
 VAR teamAngekommen = false
 VAR nadelRiverton = 0
 VAR nadelIronwood = 0
-VAR clubkampfBauerAbgelehnt = false
-VAR clubkampfZaehlGesagt = false
 VAR ambroseNenntNamen = false
 
 // ---------------------------------------------------------------- Mrs. Okafor
@@ -49,7 +47,7 @@ VAR ambroseNenntNamen = false
 === okafor_erstes_treffen ===
 // Runde 11 (VC33 bis VC39, Roman Kapitel 11): Mrs. Okafor auf der Leiter, ihre Kennfrage an Juno,
 // das lange Ansehen, „Whitlock.“ mit Stille (Klang: alles setzt aus bis auf die Uhr), die sechs
-// Wörter, „Aha.“ und kein Weiterfragen. Später: #musik:stille bei „Whitlock“.
+// Wörter, „Aha.“ und kein Weiterfragen. Klang: Stille S13 bei „Whitlock“.
 ~ okaforGetroffen = true
 Hohe Regale, grüne Leselampen, vier Bretter, an denen niemand sitzt. Eine kleine Frau steht auf einer Leiter. #sprecher:erzaehler
 Sie stellt ein Buch zurück und steigt herunter, ohne sich festzuhalten. #sprecher:erzaehler
@@ -65,7 +63,7 @@ Darf ich? #sprecher:okafor
 * [Nicken]
 - Sie hält es ins Licht der grünen Lampe und fährt mit dem Daumen über den Rand. #sprecher:erzaehler
 A. W. Achtzehnhundertsiebenundfünfzig. #sprecher:okafor
-Whitlock. #sprecher:okafor #pause:3
+Whitlock. #sprecher:okafor #musik:aus #pause:3
 * [„Sie kennen den Namen?“]
 * [Still bleiben]
 - Er steht in einer Fußnote. In einem alten Schachkalender, unten im Archiv. #sprecher:okafor
@@ -73,7 +71,7 @@ Niemand schreibt über ihn. Eine Fußnote, sechs Wörter. #sprecher:okafor
 Woher hast du das? #sprecher:okafor
 * [„Vom Dachboden. Wir sind in das Haus gezogen.“]
 * [„Es lag in einer Kiste.“]
-- Aha. #sprecher:okafor
+- Aha. #sprecher:okafor #musik:karte
 Sie gibt dir das Brett zurück, mit beiden Händen. Dann nimmt sie die Brille ab und putzt sie. Sie fragt nicht weiter. #sprecher:erzaehler
 Manche Dinge erzählt man, wenn man so weit ist. #sprecher:okafor
 Sechs Wörter. #sprecher:ambrose #pause
@@ -98,7 +96,7 @@ Eine Fußnote. #sprecher:ambrose #stimmung:bitter
 === okafor_clubkampf ===
 // Runde 11 (VC86 bis VC88, Roman Kapitel 15): still gespannt, die Uhr zählt mit. Keine Ansage der
 // Falle vor der Partie. Mrs. Okafor nach der Sternennacht in der Fassung „müde“ (gibt es noch
-// nicht). Später: #musik:clubkampfCedarCreek mit dem Ticken der Uhr darunter.
+// nicht). Die Partie spielt cedarCreek.clubkampf; die Momente darin stehen in begegnungen.json.
 In der Bibliothek flüstert man auch beim Schach. Der lange Tisch ist geräumt bis auf ein Brett. #sprecher:erzaehler
 Daneben liegt die Nadel: ein kleines Buch aus Metall, aufgeschlagen, mit einem Springer. #sprecher:erzaehler
 {teamAngekommen: Außerhalb des Lichtkreises sitzen sie alle. Der Coach hält die Pfeife in der Faust, damit sie nicht pfeift. #sprecher:erzaehler}
@@ -118,7 +116,7 @@ Setz dich. #sprecher:okafor
 === okafor_nach_sieg ===
 // Runde 11 (VC91, VC92, Roman Kapitel 15): Ambrose schweigt nach der Partie („Er sagt nichts.
 // Aber er ist da.“); die Karte Mentor-Zug vergibt die Quest ohne Kommentar; zum Steg schickt Juno.
-// Später: #klang:turmuhr mit zwölf Schlägen vor der Fanfare.
+// Klang: Stille S24 (zwölf Uhrschläge), dann die Fanfare.
 ~ clubkampfCedarCreekBesprochen = nadelCedarCreek
 {ausgangCedarCreekClubkampf == "remis":
     Remis. Das war knapp. Die Bronzenadel gehört dir. #sprecher:okafor
@@ -132,7 +130,8 @@ Das war keine Falle wert. Du hast sie alle gesehen. #sprecher:okafor
 -> okafor_nadel
 
 === okafor_nadel ===
-Sie reicht dir die Nadel über das Brett. {sternennachtGesehen:Revanche, wenn ich ausgeschlafen bin.|Noch einmal, wenn du magst.} #sprecher:okafor
+Über euch schlägt die Uhr. Zwölf Schläge, einer nach dem anderen. #sprecher:erzaehler #klang:turmuhr12 #musik:aus #pause:3
+Sie reicht dir die Nadel über das Brett. {sternennachtGesehen:Revanche, wenn ich ausgeschlafen bin.|Noch einmal, wenn du magst.} #sprecher:okafor #klang:fanfare
 {teamAngekommen: Coach Delgado pfeift. In der Bibliothek. Miss Ashby lässt einen Stempel fallen. #sprecher:erzaehler #klang:pfiff}
 Das am Schluss hat keinen Namen. Darf ich ihm einen geben? #sprecher:mae #stimmung:froh
 * [Nicken]
@@ -274,45 +273,7 @@ Wir streiten nicht mehr. Es ist furchtbar. #sprecher:ivy
 -> END
 
 // ================================================================ Runde 11: Roman, Kapitel 15
-// Zwei Dialoge mitten im Clubkampf (Begegnung cedarCreek.clubkampf). Die Technik, die einen Dialog
-// während einer Partie auslöst, baut mittel-2; bis dahin stehen die Knoten hier bereit und laufen
-// nicht von selbst. Stimmung: still gespannt, die Uhr zählt mit. Die Karte Mentor-Zug vergibt die
-// Quest erst nach dem Clubkampf (quests.json, cedarCreek.clubkampf, Schritt 4): Ambrose hält sich
-// in der Partie zurück. Später: #musik:clubkampfCedarCreek setzt beim Bauern aus; bei „Lass mich“
-// drängt #musik:ambrose herein und reißt bei „Ich weiß es nicht“ ab; bei „Zähl“ #klang:aha.
-//
-// Auslöser clubkampf_bauer: Mrs. Okafor bietet einen Bauern vor ihrem König an, der ungedeckt
-// aussieht; nimmt ihn ein Turm, verlässt er die Grundreihe, und das Grundreihenmatt droht (Roman:
-// etwa der 20. Zug). Der Dialog läuft, bevor der Zug des Helden ausgeführt wird.
-//
-// Auslöser clubkampf_lass_mich: Ein Turmopfer gegen ihre Königsstellung ist möglich, aber nicht
-// korrekt (ein stiller Läuferzug verteidigt), und {held} hat weniger als vier Minuten auf der Uhr.
-// Einmal je Partie. Danach entscheidet {held} selbst; der Dialog führt keinen Zug aus.
-
-=== clubkampf_bauer ===
-Ein Bauer steht vor ihrem König. Niemand passt auf ihn auf. Du zählst zweimal: kein Verteidiger. #sprecher:erzaehler
-Was glaubst du denn, warum er dort steht? #sprecher:okafor #pause
-* [Die Hand zurückziehen]
-    ~ clubkampfBauerAbgelehnt = true
-    Du siehst noch einmal hin. Nicht auf den Bauern. Auf deinen König, hinter seinen drei Bauern. #sprecher:erzaehler
-    Grundreihe. Der König, der keine Luft kriegt. Du machst ihm ein Fenster auf. #sprecher:erzaehler
-    Geduld. Wo hast du die her? #sprecher:okafor #stimmung:froh
-* [Den Bauern trotzdem nehmen]
-    Nun denn. #sprecher:okafor
-- -> END
-
-=== clubkampf_lass_mich ===
-~ clubkampfZaehlGesagt = true
-Lass mich. #sprecher:ambrose #stimmung:stolz
-// Den Namen sagt er nur, wenn er ihn im Archiv schon einmal gesagt hat (Dokument 19, 5.2).
-Nur dieses eine Mal. Ich sehe es. Der Turm, {ambroseNenntNamen:{held}|Lehrling}, der Turm, mitten hinein. #sprecher:ambrose
-Sie muss ihn nehmen, und dann … #sprecher:ambrose
-Es wäre schön. Es wäre so schön. #sprecher:ambrose
-* [„Stimmt es?“]
-    Stille. Die Uhr tickt. Drei Minuten. #sprecher:erzaehler #pause
-    Ich weiß es nicht. #sprecher:ambrose #stimmung:traurig #pause:2
-* [Die Hand auf dem Turm lassen]
-    {erzaehlung1858Gesehen: Ein Turm, einfach hingestellt. Du hast die Geschichte im Archiv gehört. #sprecher:erzaehler}
-    Ich weiß nicht, ob es stimmt. #sprecher:ambrose #stimmung:traurig #pause:2
-- Vergib mir. Zähl. #sprecher:ambrose
--> END
+// Die Momente mitten im Clubkampf (der angebotene Bauer, „Lass mich“ bis „Vergib mir. Zähl.“,
+// Dialogprüfung VC89, VC90) stehen als Partiemomente in begegnungen.json bei cedarCreek.clubkampf
+// (Technik T5 von mittel-2), Texte unter moment.okafor.* und moment.ambrose.* in texte/de.json.
+// Die Karte Mentor-Zug vergibt die Quest erst nach dem Clubkampf.

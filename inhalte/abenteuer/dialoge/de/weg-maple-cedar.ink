@@ -187,7 +187,7 @@ Münzen im Fluss. Jemand hat sich hier etwas gewünscht und es sich anders über
 === rast ===
 // Fährstelle am Flussweg (Auslöser „rast“): der Stein mit dem eingeritzten Brett, Silas mit der
 // Angel, Ambroses erster Satz seit dem Aufbruch und seine erste eigene Erinnerung (Roman, Kapitel 10;
-// VC15 bis VC18). Später: #musik:flussweg (Wasser statt Mundharmonika).
+// VC15 bis VC18). Musik und Fluss kommen von der Karte (weg.fluss, fluss).
 {faehrsteinGesehen: -> faehrstein_spaeter}
 -> faehrstein
 
@@ -195,7 +195,7 @@ Münzen im Fluss. Jemand hat sich hier etwas gewünscht und es sich anders über
 // VC19, VC20: Gründungsjahr statt Witz; die Uhr spricht. Am Ende des Flusswegs stehen die Zedern.
 ~ schildCedarGesehen = true
 Die Zedern stehen so dicht, dass die Schritte auf den Nadeln kein Geräusch mehr machen. Selbst Juno redet leiser. #sprecher:erzaehler
-Ein Schild aus Holz: „Cedar Creek. Gegr. 1851.“ Dahinter, zwischen den Bäumen, schlägt eine Uhr. Viermal, langsam. #sprecher:erzaehler #klang:turmuhr #pause:3
+Ein Schild aus Holz: „Cedar Creek. Gegr. 1851.“ Dahinter, zwischen den Bäumen, schlägt eine Uhr. Viermal, langsam. #sprecher:erzaehler #klang:turmuhr4 #musik:aus #pause:3
 -> END
 
 // ---------------------------------------------------------------- Runde 6: Gatter S1 (Kürbishof)

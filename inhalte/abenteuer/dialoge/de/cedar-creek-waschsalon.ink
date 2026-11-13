@@ -27,7 +27,7 @@ VAR okaforGetroffen = false
 
 === boateng_erstes_treffen ===
 // Runde 11 (VC45, VC51, Roman Kapitel 11): Bild statt Vorstellung; das Brummen von Anfang an.
-// Später: #musik:waschsalon (leises Radio).
+// Dauergeräusch und Radio kommen von der Karte (waschmaschine, 21_Klangplan.md B1).
 ~ boatengGetroffen = true
 {okaforGetroffen: Mrs. Okafor hat dich mit einem Sack Tischdecken herübergeschickt. #sprecher:erzaehler}
 Maschinen brummen, warme Luft, es riecht nach Seife. Hinter dem Tresen ein alter Mann mit sehr großen, ruhigen Händen. #sprecher:erzaehler #klang:waschmaschine
@@ -57,7 +57,7 @@ Die Maschine ist gleich fertig. Du auch? #sprecher:boateng
 }
 
 === trockner_raetsel ===
-Das Brett auf dem Trockner vibriert leise, die Figuren halten. Weiß am Zug, Matt in zwei. #sprecher:erzaehler #klang:waschmaschine
+Das Brett auf dem Trockner vibriert leise, die Figuren halten. Weiß am Zug, Matt in zwei. #sprecher:erzaehler #klang:trockner_figuren
 Der König hinter seinen Bauern. Kein Fenster, keine Luft. #sprecher:ambrose
 Das kennst du jetzt. #sprecher:ambrose
 * [Die Stellung lösen]

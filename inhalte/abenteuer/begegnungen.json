@@ -109,7 +109,40 @@
         "art": "grundstellung"
       },
       "kartenErlaubt": true,
-      "zeit": "wahl"
+      "zeit": "wahl",
+      "momente": [
+        {
+          "wenn": { "zug": 20 },
+          "sprecher": "okafor",
+          "text": "moment.okafor.bauer",
+          "musik": "aus"
+        },
+        {
+          "wenn": { "zug": 22 },
+          "sprecher": "okafor",
+          "text": "moment.okafor.geduld",
+          "musik": "karte"
+        },
+        {
+          "wenn": { "zug": 28 },
+          "sprecher": "ambrose",
+          "text": "moment.ambrose.lassMich",
+          "musik": "ambrose.lassMich"
+        },
+        {
+          "wenn": { "zug": 29 },
+          "sprecher": "ambrose",
+          "text": "moment.ambrose.weissNicht",
+          "musik": "aus"
+        },
+        {
+          "wenn": { "zug": 30 },
+          "sprecher": "ambrose",
+          "text": "moment.ambrose.zaehl",
+          "klang": "aha",
+          "musik": "karte"
+        }
+      ]
     },
     {
       "kennung": "wegMapleCedar.nia",

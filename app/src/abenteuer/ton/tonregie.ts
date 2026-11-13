@@ -21,12 +21,14 @@ import {
   type Abenteuerton,
   type Tonlage,
 } from "./tonplan";
+import { KEINE_NAEHE, naehe, type Klangort, type Naehe } from "./klangquelle";
 import { Tonspieler, type Laden } from "./tonspieler";
 
 /** Was die Regie vom Spieler braucht (im Test ein Mitschreiber). */
 export interface Spielwerk {
   setzePegel(musik: number, geraeusche: number): void;
-  spieleSchleife(spur: "musik" | "geraeusch", angabe: string | null): Promise<void>;
+  spieleSchleife(spur: "musik" | "geraeusch" | "quelle", angabe: string | null): Promise<void>;
+  setzeNaehe(anteil: number): void;
   spieleEinmal(angabe: string): Promise<void>;
   stoppeAlles(): void;
 }
@@ -34,6 +36,9 @@ export interface Spielwerk {
 export class Tonregie {
   private lage: Tonlage = STILLE_LAGE;
   private laut = false;
+  /** Klangquellen der aktuellen Karte (T28) und was davon gerade beim Helden klingt. */
+  private orte: readonly Klangort[] = [];
+  private nah: Naehe = KEINE_NAEHE;
 
   constructor(private readonly werk: () => Spielwerk | null) {}
 
@@ -46,8 +51,21 @@ export class Tonregie {
   }
 
   /** Eine Karte wurde betreten: ihre Musik und ihr Dauergeräusch aus orte.json. */
-  karteBetreten(musik?: string | null, geraeusch?: string | null): void {
+  karteBetreten(
+    musik?: string | null,
+    geraeusch?: string | null,
+    quellen: readonly Klangort[] = [],
+  ): void {
     this.lage = betritt(this.lage, musik, geraeusch);
+    this.orte = quellen;
+    this.nah = KEINE_NAEHE;
+    this.spiele();
+  }
+
+  /** Der Held steht auf einem neuen Feld: Klangquellen in der Nähe lauter oder leiser (T28). */
+  heldBei(x: number, y: number): void {
+    if (this.orte.length === 0) return;
+    this.nah = naehe(this.orte, x, y);
     this.spiele();
   }
 
@@ -70,6 +88,8 @@ export class Tonregie {
   /** Das Abenteuer wird verlassen: alles blendet aus, die Lage beginnt neu. */
   verlassen(): void {
     this.lage = STILLE_LAGE;
+    this.orte = [];
+    this.nah = KEINE_NAEHE;
     this.werk()?.stoppeAlles();
   }
 
@@ -84,6 +104,9 @@ export class Tonregie {
     const s = this.laut ? soll(this.lage) : { musik: null, geraeusch: null };
     void werk.spieleSchleife("musik", s.musik);
     void werk.spieleSchleife("geraeusch", s.geraeusch);
+    // Die Quelle schweigt im Dialog mit eigener Musik nicht: Sie gehört zum Ort, nicht zur Szene.
+    void werk.spieleSchleife("quelle", this.laut ? this.nah.musik : null);
+    werk.setzeNaehe(this.laut && this.nah.musik ? this.nah.anteil : 0);
   }
 }
 

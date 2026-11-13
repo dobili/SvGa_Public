@@ -8,6 +8,7 @@
  * die Welt gewartet haben), gibt die Oberwelt als `beiWelt` mit.
  * Abhängigkeiten: oberwelt/weltdaten.ts, oberwelt/oberweltspiel.ts, oberwelt/toenung.ts.
  */
+import { klangorte } from "../ton/klangquelle";
 import { tonregie } from "../ton/tonregie";
 import { useEffect, useState, type RefObject } from "react";
 import { variablenAusBesitz, variablenNachBesuch } from "../regeln/dialogvariablen";
@@ -15,7 +16,7 @@ import type { Abenteuerstand } from "../schnittstelle/spielstand";
 import { fehlertext } from "../texte/texte";
 import { szeneAus, type Oberweltkern } from "./kern";
 import { beendeOberwelt, starteOberwelt } from "./oberweltspiel";
-import type { Ausloesertreffer } from "./szene";
+import { KACHEL, type Ausloesertreffer } from "./szene";
 import { aktuelleToenung } from "./toenung";
 import { KACHELSATZ, ladeWelt, type Weltdaten } from "./weltdaten";
 
@@ -57,7 +58,12 @@ function starteSpiel(k: Oberweltkern, a: Weltanschluss, w: Weltdaten, stand: Abe
   const toenung = aktuelleToenung(w.karte, w.kennung, stand.dialogvariablen, eintrag);
   k.zeigeToenung(toenung);
   // Musik und Dauergeräusch der Karte aus orte.json (T1, T2); fehlt die Datei, bleibt es still.
-  tonregie.karteBetreten(eintrag?.musik, eintrag?.geraeusch);
+  // Klangquellen mit Reichweite (T28): Ort aus dem benannten Objekt der Tiled-Karte.
+  tonregie.karteBetreten(
+    eintrag?.musik,
+    eintrag?.geraeusch,
+    klangorte(w.karte, eintrag?.klangquellen ?? [], KACHEL),
+  );
   k.spiel.current = starteOberwelt(rahmen, {
     karte: w.karte,
     kachelbild: w.kachelbild,
@@ -83,6 +89,7 @@ function starteSpiel(k: Oberweltkern, a: Weltanschluss, w: Weltdaten, stand: Abe
       beiAusloeser: a.beiTreffer,
       beiKachel: (x, y) => {
         if (a.kachelanzeige.current) a.kachelanzeige.current.textContent = `${x},${y}`;
+        tonregie.heldBei(x, y);
       },
     },
   });

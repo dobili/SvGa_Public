@@ -25,7 +25,7 @@ Es gelten die Grundsätze aus 12, Abschnitt 0, unverändert:
 
 1. **Nichts an den Hauptszenen ändert sich.** Keine neue Figur weiß vor der zuständigen Hauptszene
    etwas über Mamas Vergangenheit (bis Szene 39 nichts, bis Szene 43 nichts über das Finale und
-   das Versteck), über den Brief von Hale (Szene 41), über Novas Gerät (Szene 56) oder über die
+   das Versteck), über den leeren Umschlag im Postsack von 1866 (Szene 41), über Novas Gerät (Szene 56) oder über die
    Vitrine der Hales (Szene 57). Andeutungen ja, Auflösungen nein. Jede Figur hat deshalb Sätze
    **vor** und **nach** der Szene, die ihr Wissen freigibt.
 2. **Kleine Aufgaben** tragen `klein: true`: Sie zählen nicht für „alle Nebenquests einer Stadt“
@@ -34,8 +34,9 @@ Es gelten die Grundsätze aus 12, Abschnitt 0, unverändert:
 3. **Belohnungen:** Münzen (5 bis 15 je Aufgabe), Funde fürs Album, Spuren in der Welt.
 4. **Schach im Alltag:** Jede Aufgabe hat einen Schachbezug zum Kapitel des Ortes (Ironwood und N3:
    Fesselung, Spieß, hängende Figuren, Kapitel 4 und 7; W4 und Silicon Bay: drei Ziele und
-   Todsünden der Eröffnung, Zählen, Fallen, Kapitel 1, 2 und 4). Buchbezug im Dialog nur mit Kapitel
-   und Abschnitt, nie mit Seiten.
+   Todsünden der Eröffnung, Zählen, Fallen, Kapitel 1, 2 und 4). Keine Verweise auf das Buch und keine
+   Buchtexte in Spieltexten (Entscheidung vom 10.11.2026, `docs/spiel/ENTSCHEIDUNGEN.md`); Kapitel und
+   Abschnitt sind Angaben für Schreiber und Daten.
 5. **Lieber wenige gute Häuser als viele leere:** Kein neuer Innenraum in Ironwood und Silicon Bay;
    neu sind nur die Außenkarte `siliconBay.hafen` und die zwei Karten des Steinbruchs.
 6. **Pronomen:** Bei {held} immer neutral (Bibel 5.2); Big Joe und Mr. Kerrigan sagen „Kumpel“.
@@ -49,13 +50,13 @@ Steinbruch.
 
 ### 1.1 Neue Nebenfiguren
 
-| Figur                      | Alter, Pronomen  | Hintergrund (ein Satz)                                                                                                            | Platz (Karte)                                                    | Tagesablauf (Tönung je Szene, keine Uhrzeit)                                                           |
-| -------------------------- | ---------------- | --------------------------------------------------------------------------------------------------------------------------------- | ---------------------------------------------------------------- | ------------------------------------------------------------------------------------------------------ |
-| Walt Kerrigan              | 63, er           | Pförtner am Werkstor seit 1993, schreibt jeden auf, der hineingeht, und kennt alle Schichten auswendig.                           | aussen: Pförtnerhaus am Werkstor (62, 24)                        | Morgens Schichtwechsel mit Klemmbrett, tagsüber Kreuzworträtsel, abends Lampe im Häuschen.            |
-| Agnes Brody                | 74, sie          | Nachbarin von Oma Ruth in der Elm Street Nr. 8, heizt noch mit Kohle und fegt jeden Morgen den Gehweg bis zur Treppe.             | aussen: Elm Street und Kohlenhof (läuft hin und her)             | Morgens fegen, mittags zwei Eimer Kohle holen, abends am Fenster.                                     |
-| Mila und Benny Larsen       | 10, sie; 8, er   | Geschwister aus der Elm Street, malen jeden Tag ein Schachbrett mit Kreide auf den Gehweg und spielen mit Kronkorken.             | aussen: Kreidebrett auf dem Gehweg Süd der Elm Street (30, 15)   | Nach der Schule am Kreidebrett, bei Regen unter dem Vordach der Kneipe, abends ruft ihre Mutter.     |
-| Rocco Bellini              | 52, er           | Kantinenkoch seit dreißig Jahren, kocht jeden Tag denselben Eintopf und behauptet jeden Tag, er sei heute besser.          | kantine: hinter der Essensausgabe (5, 3)                         | Morgens Kartoffeln, mittags Ausgabe, nachmittags wischt er die Tische, beim Clubabend Kaffee.        |
-| Ignatius „Iggy“ Flores     | 77, er           | War Schaffner im letzten Personenzug, der in Ironwood hielt, und füttert seitdem am alten Bahnsteig die Tauben.                    | aussen: Bank am Platz neben der Lok (20, 43)                     | Vormittags Tauben, mittags schläft er auf der Bank, nachmittags erklärt er Kindern die Lok.         |
+| Figur                  | Alter, Pronomen | Hintergrund (ein Satz)                                                                                                | Platz (Karte)                                                  | Tagesablauf (Tönung je Szene, keine Uhrzeit)                                                     |
+| ---------------------- | --------------- | --------------------------------------------------------------------------------------------------------------------- | -------------------------------------------------------------- | ------------------------------------------------------------------------------------------------ |
+| Walt Kerrigan          | 63, er          | Pförtner am Werkstor seit 1993, schreibt jeden auf, der hineingeht, und kennt alle Schichten auswendig.               | aussen: Pförtnerhaus am Werkstor (62, 24)                      | Morgens Schichtwechsel mit Klemmbrett, tagsüber Kreuzworträtsel, abends Lampe im Häuschen.       |
+| Agnes Brody            | 74, sie         | Nachbarin von Oma Ruth in der Elm Street Nr. 8, heizt noch mit Kohle und fegt jeden Morgen den Gehweg bis zur Treppe. | aussen: Elm Street und Kohlenhof (läuft hin und her)           | Morgens fegen, mittags zwei Eimer Kohle holen, abends am Fenster.                                |
+| Mila und Benny Larsen  | 10, sie; 8, er  | Geschwister aus der Elm Street, malen jeden Tag ein Schachbrett mit Kreide auf den Gehweg und spielen mit Kronkorken. | aussen: Kreidebrett auf dem Gehweg Süd der Elm Street (30, 15) | Nach der Schule am Kreidebrett, bei Regen unter dem Vordach der Kneipe, abends ruft ihre Mutter. |
+| Rocco Bellini          | 52, er          | Kantinenkoch seit dreißig Jahren, kocht jeden Tag denselben Eintopf und behauptet jeden Tag, er sei heute besser.     | kantine: hinter der Essensausgabe (5, 3)                       | Morgens Kartoffeln, mittags Ausgabe, nachmittags wischt er die Tische, beim Clubabend Kaffee.    |
+| Ignatius „Iggy“ Flores | 77, er          | War Schaffner im letzten Personenzug, der in Ironwood hielt, und füttert seitdem am alten Bahnsteig die Tauben.       | aussen: Bank am Platz neben der Lok (20, 43)                   | Vormittags Tauben, mittags schläft er auf der Bank, nachmittags erklärt er Kindern die Lok.      |
 
 Statisten aus 09 (4a), die bleiben: Schichtwechsel (Gruppe), Frau trägt Kohle (wird Mrs. Brody),
 Kinder mit Kreide (werden Mila und Benny), Mann füttert Tauben (wird Mr. Flores), Kantinenkoch (wird
@@ -123,34 +124,34 @@ Sprechweise und Beispielsätze:
 
 ### 1.3 Gebäude
 
-| Gebäude                     | Status                | Figur                   | Dinge zum Ansehen (Auslöser `gegenstand`)                                                                                     |
-| --------------------------- | --------------------- | ----------------------- | ----------------------------------------------------------------------------------------------------------------------------- |
-| Kantine (Werkhof)           | vorhanden, betretbar  | Big Joe, Hank, Priya, + Rocco | `pokalregal`, `stahlbrett`; neu `schichtplan`, `kaffeemaschine`, `fotoMannschaft` (09, 5.5)                            |
-| Haus von Oma Ruth           | vorhanden, betretbar  | Oma Ruth                | `medaille`, `partieformular2001`; neu `telefon` („Sonntags. Immer.“)                                                 |
-| Umkleide                    | vorhanden, betretbar  | –                       | `schliessfach`; neu `helm` („Ein Helm mit Namen: ‚H. M.‘. Hank vergisst ihn jede Woche.“)                                     |
-| Heimatmuseum                | vorhanden, betretbar  | Mr. Teague              | `postsack`, `vitrine1858`, `fundGlasfunke`; neu `fotoBruecke` (Brücke im Bau, keine Namen)                                    |
-| Eisenwaren Edna             | Kulisse mit Fenster   | Edna                    | `eisenwarenfenster` (Laden)                                                                                                   |
-| Pförtnerhaus                | Kulisse               | Mr. Kerrigan                | Kerrigan selbst; nach N-SB3 hängt Kendras Postkarte im Fenster                                                                    |
-| Kneipe „Zum Hochofen“       | Kulisse               | –                       | Leuchtschild „Zum Hoch“ (Ansehen `leuchtschild`)                                                                              |
-| Kirche St. Barbara          | Kulisse               | –                       | Barbara-Figur mit Grubenlampe (Ansehen `barbara`, „Sie passt auf die auf, die im Dunkeln arbeiten.“)                           |
-| Lok am Platz                | Kulisse               | Mr. Flores              | Schild „Nicht klettern“                                                                                                       |
-| Parkplatz                   | Kulisse               | –                       | `pickup`: Big Joes Pickup mit Kranhaken am Spiegel („Da hängt ein Kranhaken. Natürlich.“)                                     |
+| Gebäude               | Status               | Figur                         | Dinge zum Ansehen (Auslöser `gegenstand`)                                                            |
+| --------------------- | -------------------- | ----------------------------- | ---------------------------------------------------------------------------------------------------- |
+| Kantine (Werkhof)     | vorhanden, betretbar | Big Joe, Hank, Priya, + Rocco | `pokalregal`, `stahlbrett`; neu `schichtplan`, `kaffeemaschine`, `fotoMannschaft` (09, 5.5)          |
+| Haus von Oma Ruth     | vorhanden, betretbar | Oma Ruth                      | `medaille`, `partieformular2001`; neu `telefon` („Sonntags. Immer.“)                                 |
+| Umkleide              | vorhanden, betretbar | –                             | `schliessfach`; neu `helm` („Ein Helm mit Namen: ‚H. M.‘. Hank vergisst ihn jede Woche.“)            |
+| Heimatmuseum          | vorhanden, betretbar | Mr. Teague                    | `postsack`, `vitrine1858`, `fundGlasfunke`; neu `fotoBruecke` (Brücke im Bau, keine Namen)           |
+| Eisenwaren Edna       | Kulisse mit Fenster  | Edna                          | `eisenwarenfenster` (Laden)                                                                          |
+| Pförtnerhaus          | Kulisse              | Mr. Kerrigan                  | Kerrigan selbst; nach N-SB3 hängt Kendras Postkarte im Fenster                                       |
+| Kneipe „Zum Hochofen“ | Kulisse              | –                             | Leuchtschild „Zum Hoch“ (Ansehen `leuchtschild`)                                                     |
+| Kirche St. Barbara    | Kulisse              | –                             | Barbara-Figur mit Grubenlampe (Ansehen `barbara`, „Sie passt auf die auf, die im Dunkeln arbeiten.“) |
+| Lok am Platz          | Kulisse              | Mr. Flores                    | Schild „Nicht klettern“                                                                              |
+| Parkplatz             | Kulisse              | –                             | `pickup`: Big Joes Pickup mit Kranhaken am Spiegel („Da hängt ein Kranhaken. Natürlich.“)            |
 
 ### 1.4 Funde und Entdeckungen
 
 Abschnitte wie im Ortsplan (`orte/ironwood.md`, 1.2). Funde fett.
 
-| Abschnitt          | Entdeckung                                                                                                                                       |
-| ------------------ | ------------------------------------------------------------------------------------------------------------------------------------------------ |
-| B1 Treppe          | `aussichtTreppe` (neu): „Das Werk atmet. Siehst du den Rauch?“ (Ambrose: „Eine Stadt, die arbeitet. Das gefällt mir.“)                          |
-| B2 Laden und Gasse | Kreidebrett (N-IW1), Eisenwarenfenster                                                                                                           |
-| C1 Elm Street Ost  | Mrs. Brody, Spitzengardine von Nr. 10 (vor Szene 39 nur Ansehen)                                                                                 |
-| D2 Werkstor        | **„Stahlperle“** im Rinnstein vor dem Tor (`fundStahlperle`, 5 Münzen; Juno: „Sieht aus wie ein Bauer, der zu heiß gebadet hat.“)               |
+| Abschnitt          | Entdeckung                                                                                                                                                                                                                                                        |
+| ------------------ | ----------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------- |
+| B1 Treppe          | `aussichtTreppe` (neu): „Das Werk atmet. Siehst du den Rauch?“ (Ambrose: „Eine Stadt, die arbeitet. Das gefällt mir.“)                                                                                                                                            |
+| B2 Laden und Gasse | Kreidebrett (N-IW1), Eisenwarenfenster                                                                                                                                                                                                                            |
+| C1 Elm Street Ost  | Mrs. Brody, Spitzengardine von Nr. 10 (vor Szene 39 nur Ansehen)                                                                                                                                                                                                  |
+| D2 Werkstor        | **„Stahlperle“** im Rinnstein vor dem Tor (`fundStahlperle`, 5 Münzen; Juno: „Sieht aus wie ein Bauer, der zu heiß gebadet hat.“)                                                                                                                                 |
 | A3 Brücke          | `nietenBruecke` (neu, Ansehen: „J. H.“; Juno vor Szene 50: „Schon wieder J. H. Wer baut hier eigentlich alles?“); **„Essensmarke aus Messing“** unter der Bank im Wartehäuschen (`fundEssensmarke`, Album; Ambrose: „Messing gegen Suppe. Ein ehrlicher Handel.“) |
-| B3 Alter Bahnhof   | Mr. Flores (N-IW3), Uhrturm (Ansehen: „Zwanzig nach vier. Seit 1979.“)                                                                           |
-| D3 Parkplatz       | `pickup`                                                                                                                                         |
-| D4 Gus             | (Gus, Szene 45)                                                                                                                                  |
-| E4 Steinbruchweg   | Gittertor mit Schild (Ansehen), Blick auf die Bruchkante                                                                                          |
+| B3 Alter Bahnhof   | Mr. Flores (N-IW3), Uhrturm (Ansehen: „Zwanzig nach vier. Seit 1979.“)                                                                                                                                                                                            |
+| D3 Parkplatz       | `pickup`                                                                                                                                                                                                                                                          |
+| D4 Gus             | (Gus, Szene 45)                                                                                                                                                                                                                                                   |
+| E4 Steinbruchweg   | Gittertor mit Schild (Ansehen), Blick auf die Bruchkante                                                                                                                                                                                                          |
 
 Für die Entdecker-Nadel (E5) zählen wie in Teil 1 nur die Funde aus der Bibel (Abschnitt 12 dort);
 alle neuen Funde hier (Stahlperle, Essensmarke und die Funde aus kleinen Aufgaben) sind Zugabe fürs
@@ -164,11 +165,11 @@ Münzen, keine Karte). Hier ausgearbeitet und gegen die Hauptgeschichte geprüft
 
 ### 2.1 Figuren
 
-| Figur                   | Alter, Pronomen | Hintergrund (ein Satz)                                                                                                    | Platz                                         |
-| ----------------------- | --------------- | ------------------------------------------------------------------------------------------------------------------------- | --------------------------------------------- |
-| Mr. Amos Hargrove       | 81, er          | Letzter Vorarbeiter von „Hargrove & Söhne“, gegründet 1868 von seinem Urgroßvater; kommt jeden Tag, obwohl nichts mehr bricht. | Grube: Bank vor der Bude (52, 9)        |
-| Lena Sato               | 38, sie         | Fotografin, macht ein Buch über Ironwood, „bevor es sich ändert“, und fotografiert seit drei Wochen dasselbe Wasserloch.    | Grube: Aussichtspunkt (24, 9)                 |
-| Ruby und Jesse          | 11, sie; 10, er | Kinder von Stahlwerkern mit Taschenlampen, mutig bis zum Stollenmund und keinen Schritt weiter.                            | Grube: am Stollenmund (54, 43)                |
+| Figur             | Alter, Pronomen | Hintergrund (ein Satz)                                                                                                         | Platz                            |
+| ----------------- | --------------- | ------------------------------------------------------------------------------------------------------------------------------ | -------------------------------- |
+| Mr. Amos Hargrove | 81, er          | Letzter Vorarbeiter von „Hargrove & Söhne“, gegründet 1868 von seinem Urgroßvater; kommt jeden Tag, obwohl nichts mehr bricht. | Grube: Bank vor der Bude (52, 9) |
+| Lena Sato         | 38, sie         | Fotografin, macht ein Buch über Ironwood, „bevor es sich ändert“, und fotografiert seit drei Wochen dasselbe Wasserloch.       | Grube: Aussichtspunkt (24, 9)    |
+| Ruby und Jesse    | 11, sie; 10, er | Kinder von Stahlwerkern mit Taschenlampen, mutig bis zum Stollenmund und keinen Schritt weiter.                                | Grube: am Stollenmund (54, 43)   |
 
 - **Mr. Hargrove:** „Stein bricht da, wo er schwach ist. Bretter auch.“ (13) – „Mein Urgroßvater hat
   den Granit für die Brücken geliefert. Die stehen noch. Er nicht.“
@@ -226,15 +227,15 @@ Züge“; keine Karte (13 §3).
 
 ### 2.3 Funde und Entdeckungen
 
-| Abschnitt     | Entdeckung                                                                                         |
-| ------------- | -------------------------------------------------------------------------------------------------- |
-| G1 Zufahrt    | Schild „Hargrove & Söhne, gegr. 1868“ (Ansehen `schildHargrove`)                                   |
-| G2 Aussicht   | `aussichtGrube`: der Himmel im Wasserloch; Lena                                                    |
-| G3 Bude       | Mr. Hargrove (N-ST1)                                                                               |
+| Abschnitt      | Entdeckung                                                                                                                   |
+| -------------- | ---------------------------------------------------------------------------------------------------------------------------- |
+| G1 Zufahrt     | Schild „Hargrove & Söhne, gegr. 1868“ (Ansehen `schildHargrove`)                                                             |
+| G2 Aussicht    | `aussichtGrube`: der Himmel im Wasserloch; Lena                                                                              |
+| G3 Bude        | Mr. Hargrove (N-ST1)                                                                                                         |
 | G4 Brechanlage | Lore am Prellbock, nach N-ST1 die zweite Lore daneben und der freigelegte Granitblock mit geritzten Zügen (Fragment-Hinweis) |
-| G5 Wasserloch | flache Steine (`steine`, Ansehen: „Vier Sprünge. Ambrose sagt, er hätte fünf geschafft.“)          |
-| G6 Stollenmund | Ruby und Jesse, Graffiti-Wand „Ironwood 1980“ (Ansehen; keine Namen, die in der Geschichte vorkommen) |
-| Stollen       | `lampenhaken`, Nische (N-ST2), Echo (N-ST3)                                                        |
+| G5 Wasserloch  | flache Steine (`steine`, Ansehen: „Vier Sprünge. Ambrose sagt, er hätte fünf geschafft.“)                                    |
+| G6 Stollenmund | Ruby und Jesse, Graffiti-Wand „Ironwood 1980“ (Ansehen; keine Namen, die in der Geschichte vorkommen)                        |
+| Stollen        | `lampenhaken`, Nische (N-ST2), Echo (N-ST3)                                                                                  |
 
 ## 3. Weg W4: Raststätte und Glasbrücke (Akt 3)
 
@@ -244,11 +245,11 @@ Stellungsduell 3 + 2, Funde „Werbe-Anstecker ZERO“ und „verlorener Ohrstö
 
 ### 3.1 Neue Nebenfiguren
 
-| Figur              | Alter, Pronomen | Hintergrund (ein Satz)                                                                                     | Platz                                   |
-| ------------------ | --------------- | ---------------------------------------------------------------------------------------------------------- | --------------------------------------- |
-| Lonnie Briggs      | 58, er          | Fährt die Linie Ironwood–Raststätte seit zwanzig Jahren; in die Stadt darf sein alter Bus nicht mehr.       | Ironwood Haltestelle; Raststätte Busbucht |
-| Bertram Oakes      | 70, er          | Zählt seit vierzig Jahren die Vögel im Watt und schreibt sie mit Bleistift in ein Heft.                    | Raststätte: Vogelhütte (68, 22)          |
-| Skye Marlow        | 26, sie         | Die Joggerin mit Smartwatch (heute `wegIronwoodSilicon.joggerin`), Programmiererin, läuft jeden Tag eine Runde über die Brücke. | Glasbrücke                    |
+| Figur         | Alter, Pronomen | Hintergrund (ein Satz)                                                                                                          | Platz                                     |
+| ------------- | --------------- | ------------------------------------------------------------------------------------------------------------------------------- | ----------------------------------------- |
+| Lonnie Briggs | 58, er          | Fährt die Linie Ironwood–Raststätte seit zwanzig Jahren; in die Stadt darf sein alter Bus nicht mehr.                           | Ironwood Haltestelle; Raststätte Busbucht |
+| Bertram Oakes | 70, er          | Zählt seit vierzig Jahren die Vögel im Watt und schreibt sie mit Bleistift in ein Heft.                                         | Raststätte: Vogelhütte (68, 22)           |
+| Skye Marlow   | 26, sie         | Die Joggerin mit Smartwatch (heute `wegIronwoodSilicon.joggerin`), Programmiererin, läuft jeden Tag eine Runde über die Brücke. | Glasbrücke                                |
 
 - **Mr. Briggs:** Vor Szene 50 in Ironwood: „Silicon Bay? Ohne Einladung lassen die dich nicht mal
   aussteigen.“ An der Raststätte: „Weiter fahr ich nicht. Die Stadt da vorne lässt keine alten Busse
@@ -273,18 +274,18 @@ Stellungsduell 3 + 2, Funde „Werbe-Anstecker ZERO“ und „verlorener Ohrstö
 
 ### 3.3 Funde und Entdeckungen
 
-| Karte, Abschnitt     | Entdeckung                                                                                             |
-| -------------------- | ------------------------------------------------------------------------------------------------------ |
-| Raststätte R1        | (**Werbe-Anstecker ZERO** am Picknicktisch), Mr. Briggs                                                |
-| Raststätte R2        | (Rätseltafel am Kaffeeautomaten)                                                                       |
-| Raststätte R3        | (Mrs. Kowalczyk), Wegweiser am Pfadbeginn                                                              |
-| Raststätte R4        | Austernfischer, Radfahrer                                                                              |
-| Raststätte R5        | Vogelhütte (N-W4a)                                                                                     |
-| Raststätte R6        | `aussichtDuene` (neu): Pelikaninsel, Glastürme (Ambrose: „So viel Licht, und kein einziges Fenster steht offen.“) |
-| Raststätte R7, R8    | Möwen am Priel, Krebsspuren; Ortsschild                                                                |
-| Glasbrücke B1–B3     | letzte Möwe, Schild „Smart City“, (**Ohrstöpsel** unter der Glasbank)                                  |
-| Glasbrücke B4        | `aussichtPlattform` (neu): Autobahnkreuz und Campus                                                    |
-| Glasbrücke B5–B7     | (Skye, Stellungsduell), Lieferroboter, Werbetafel ZERO                                                  |
+| Karte, Abschnitt  | Entdeckung                                                                                                        |
+| ----------------- | ----------------------------------------------------------------------------------------------------------------- |
+| Raststätte R1     | (**Werbe-Anstecker ZERO** am Picknicktisch), Mr. Briggs                                                           |
+| Raststätte R2     | (Rätseltafel am Kaffeeautomaten)                                                                                  |
+| Raststätte R3     | (Mrs. Kowalczyk), Wegweiser am Pfadbeginn                                                                         |
+| Raststätte R4     | Austernfischer, Radfahrer                                                                                         |
+| Raststätte R5     | Vogelhütte (N-W4a)                                                                                                |
+| Raststätte R6     | `aussichtDuene` (neu): Pelikaninsel, Glastürme (Ambrose: „So viel Licht, und kein einziges Fenster steht offen.“) |
+| Raststätte R7, R8 | Möwen am Priel, Krebsspuren; Ortsschild                                                                           |
+| Glasbrücke B1–B3  | letzte Möwe, Schild „Smart City“, (**Ohrstöpsel** unter der Glasbank)                                             |
+| Glasbrücke B4     | `aussichtPlattform` (neu): Autobahnkreuz und Campus                                                               |
+| Glasbrücke B5–B7  | (Skye, Stellungsduell), Lieferroboter, Werbetafel ZERO                                                            |
 
 ## 4. Silicon Bay (Akt 3)
 
@@ -294,13 +295,13 @@ Hafenviertel mit dem leeren Laden und dem Fährmann der Inselfähre.
 
 ### 4.1 Neue Nebenfiguren
 
-| Figur              | Alter, Pronomen | Hintergrund (ein Satz)                                                                                                          | Platz                                          | Tagesablauf                                                              |
-| ------------------ | --------------- | ------------------------------------------------------------------------------------------------------------------------------- | ---------------------------------------------- | ------------------------------------------------------------------------ |
-| Priscilla „Cilla“ Yu | 58, sie       | Fährt die Straßenbahn seit dem ersten Tag und hat als Einzige noch einen Fahrplan aus Papier, „falls der Strom ausfällt“.        | Campus: Endhaltestelle (63, 27)               | Pause an der Endhaltestelle, dann eine Runde (Straßenbahn als Objekt).  |
-| Ellis Navarro        | 41, er          | Wachmann des Campus, bewacht Bildschirme und verliert in jeder Pause auf dem Handy gegen ZERO.                                   | Campus: Runde über den Boulevard              | Tagsüber Runde, nachts im Hotel-Eingang (Szene 61, Statist).             |
-| Kendra Kerrigan        | 29, sie         | Datenanalystin bei Perfect Move, Tochter von Mr. Kerrigan aus Ironwood, hat seit einem Jahr keinen freien Tag bekommen.               | Campus: Stufe vor dem Innovation Lab (7, 47)  | Mittagspause auf der Stufe, sonst hinter der Glasscheibe.                |
-| Wendell Ames       | 79, er          | Hatte den Kurzwarenladen am Hafen seit 1952 (vom Vater), hat ihn nie an Perfect Move verkauft und hängt jede Woche „Bald geöffnet“ neu ins Fenster. | Hafen: Kiste vor dem Laden (20, 16) | Sitzt vor dem Laden, sieht aufs Wasser, schließt abends die leere Tür ab. |
-| Silas Pike         | 66, er          | Fährmann der Inselfähre, fährt „nur sonntags“ und sagt nie, welcher Tag heute ist (Sperre S6).                                   | Hafen: Fährhäuschen (58, 21)                  | Flickt Seile, bis die Fähre fährt.                                      |
+| Figur                | Alter, Pronomen | Hintergrund (ein Satz)                                                                                                                              | Platz                                        | Tagesablauf                                                               |
+| -------------------- | --------------- | --------------------------------------------------------------------------------------------------------------------------------------------------- | -------------------------------------------- | ------------------------------------------------------------------------- |
+| Priscilla „Cilla“ Yu | 58, sie         | Fährt die Straßenbahn seit dem ersten Tag und hat als Einzige noch einen Fahrplan aus Papier, „falls der Strom ausfällt“.                           | Campus: Endhaltestelle (63, 27)              | Pause an der Endhaltestelle, dann eine Runde (Straßenbahn als Objekt).    |
+| Ellis Navarro        | 41, er          | Wachmann des Campus, bewacht Bildschirme und verliert in jeder Pause auf dem Handy gegen ZERO.                                                      | Campus: Runde über den Boulevard             | Tagsüber Runde, nachts im Hotel-Eingang (Szene 61, Statist).              |
+| Kendra Kerrigan      | 29, sie         | Datenanalystin bei Perfect Move, Tochter von Mr. Kerrigan aus Ironwood, hat seit einem Jahr keinen freien Tag bekommen.                             | Campus: Stufe vor dem Innovation Lab (7, 47) | Mittagspause auf der Stufe, sonst hinter der Glasscheibe.                 |
+| Wendell Ames         | 79, er          | Hatte den Kurzwarenladen am Hafen seit 1952 (vom Vater), hat ihn nie an Perfect Move verkauft und hängt jede Woche „Bald geöffnet“ neu ins Fenster. | Hafen: Kiste vor dem Laden (20, 16)          | Sitzt vor dem Laden, sieht aufs Wasser, schließt abends die leere Tür ab. |
+| Silas Pike           | 66, er          | Fährmann der Inselfähre, fährt „nur sonntags“ und sagt nie, welcher Tag heute ist (Sperre S6).                                                      | Hafen: Fährhäuschen (58, 21)                 | Flickt Seile, bis die Fähre fährt.                                        |
 
 Sprechweise und Beispielsätze:
 
@@ -314,8 +315,9 @@ Sprechweise und Beispielsätze:
   nach heißem Eisen? Hier riecht nichts.“ – „Sag Papa nicht, dass ich müde aussehe.“ (Kein Wort über
   Novas Zahlen oder die Geräte; das gehört Szene 56.)
 - **Mr. Ames:** langsam, Hafenbilder. „Bald geöffnet. Hab ich selbst hingehängt. Man soll die
-  Hoffnung nicht in den Keller räumen.“ – Ab Akt 4: „Eine Frau von der Akademie fragt jede Woche, ob der
-  Laden noch frei ist. Ich sag immer: Bald.“ (Andeutung auf Dr. Lins Club im Post-Game, 13 §7.2.)
+  Hoffnung nicht in den Keller räumen.“ – Ab Akt 4 ein Satz darüber, dass die Frau von der Akademie gekündigt hat
+  und einen Club in einem Keller aufmacht (Wortlaut offen; Andeutung auf Dr. Lins Kellerclub, Epilog
+  und Post-Game, 13 §7.2). Sein Laden bleibt leer und ist nicht ihr Club.
 - **Mr. Pike:** einsilbig. „Sonntags.“ – „Heute? Frag den Pelikan.“ – Nach der Nadel: „Ist
   Sonntag. Steig ein.“
 
@@ -361,50 +363,50 @@ Sprechweise und Beispielsätze:
 
 ### 4.3 Gebäude
 
-| Gebäude                  | Status                   | Figur                 | Dinge zum Ansehen                                                                                     |
-| ------------------------ | ------------------------ | --------------------- | ----------------------------------------------------------------------------------------------------- |
-| Akademie                 | vorhanden, betretbar     | Dr. Lin, Nova, Theo   | neu `rangliste`, `dreiZiele`, `glaspokal` (09, 5.6)                                                   |
-| Serverraum               | vorhanden, betretbar     | –                     | `schummelgeraete`                                                                                     |
-| Lobby (Konzernturm)      | vorhanden, betretbar     | Empfangsroboter, Victor | `vitrineHale`; neu `zeitleiste` (Firmengeschichte, nur der Name „Hale“, keine Jahreszahl 1858)       |
-| Hotel Bayview            | Kulisse                  | –                     | `hotel` (Szene 61)                                                                                    |
-| Food-Truck               | Kulisse, Laden           | Rosie, Dash           | Laden von Rosie (Bibel 18.2, 22)                                                                      |
-| Ames Kurzwaren           | Kulisse (leerer Laden)   | Mr. Ames              | `schaufenster` (ein Holzbrett, Zettel „Bald geöffnet“)                                                |
-| Fischhalle               | Kulisse                  | –                     | `netze`                                                                                               |
-| Perfect Move Store       | Kulisse                  | –                     | Bildschirm mit Novas Gesicht (Ansehen: „Mit Perfect Move trainiert jeder wie ein Champion!“, ihr Werbesatz aus 9.2) |
-| Fährhäuschen             | Kulisse                  | Mr. Pike             | Fahrplan „Pelikaninsel – sonntags“                                                                    |
+| Gebäude             | Status                 | Figur                   | Dinge zum Ansehen                                                                                                   |
+| ------------------- | ---------------------- | ----------------------- | ------------------------------------------------------------------------------------------------------------------- |
+| Akademie            | vorhanden, betretbar   | Dr. Lin, Nova, Theo     | neu `rangliste`, `dreiZiele`, `glaspokal` (09, 5.6)                                                                 |
+| Serverraum          | vorhanden, betretbar   | –                       | `schummelgeraete`                                                                                                   |
+| Lobby (Konzernturm) | vorhanden, betretbar   | Empfangsroboter, Victor | `vitrineHale`; neu `zeitleiste` (Firmengeschichte, nur der Name „Hale“, keine Jahreszahl 1858)                      |
+| Hotel Bayview       | Kulisse                | –                       | `hotel` (Szene 61)                                                                                                  |
+| Food-Truck          | Kulisse, Laden         | Rosie, Dash             | Laden von Rosie (Bibel 18.2, 22)                                                                                    |
+| Ames Kurzwaren      | Kulisse (leerer Laden) | Mr. Ames                | `schaufenster` (ein Holzbrett, Zettel „Bald geöffnet“)                                                              |
+| Fischhalle          | Kulisse                | –                       | `netze`                                                                                                             |
+| Perfect Move Store  | Kulisse                | –                       | Bildschirm mit Novas Gesicht (Ansehen: „Mit Perfect Move trainiert jeder wie ein Champion!“, ihr Werbesatz aus 9.2) |
+| Fährhäuschen        | Kulisse                | Mr. Pike                | Fahrplan „Pelikaninsel – sonntags“                                                                                  |
 
 ### 4.4 Funde und Entdeckungen
 
-| Viertel, Abschnitt   | Entdeckung                                                                                                                         |
-| -------------------- | ---------------------------------------------------------------------------------------------------------------------------------- |
-| Campus A2            | (Rosie, Dash)                                                                                                                      |
-| Campus B2, C2        | Ellis (N-SB2), Lieferroboter (`roboter`, Szene 53)                                                                                 |
-| Campus D2            | Cilla (N-SB1), Infosäule mit Stadtplan                                                                                             |
-| Campus A3            | Kendra (N-SB3)                                                                                                                     |
-| Campus B3            | **„Kastanie im Kübel“** (`fundKastanie`, 5 Münzen; Ambrose: „Eine Kastanie. Irgendwo in dieser Stadt hat doch ein Baum überlebt.“) |
-| Campus D3            | `aussichtBucht`: Fähren und Pelikaninsel                                                                                           |
-| Hafen B1             | Mr. Ames, Schaufenster                                                                                                             |
-| Hafen C2             | `fernrohr` (Pelikaninsel); **„Seeglas, grün“** an der Kaikante (`fundSeeglas`, 5 Münzen; Ambrose: „Glas, das das Meer rund geschliffen hat. Das einzige Glas hier, das mir gefällt.“) |
-| Hafen D1, D2         | Mr. Pike, Inselfähre (S6)                                                                                                         |
+| Viertel, Abschnitt | Entdeckung                                                                                                                                                                            |
+| ------------------ | ------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------- |
+| Campus A2          | (Rosie, Dash)                                                                                                                                                                         |
+| Campus B2, C2      | Ellis (N-SB2), Lieferroboter (`roboter`, Szene 53)                                                                                                                                    |
+| Campus D2          | Cilla (N-SB1), Infosäule mit Stadtplan                                                                                                                                                |
+| Campus A3          | Kendra (N-SB3)                                                                                                                                                                        |
+| Campus B3          | **„Kastanie im Kübel“** (`fundKastanie`, 5 Münzen; Ambrose: „Eine Kastanie. Irgendwo in dieser Stadt hat doch ein Baum überlebt.“)                                                    |
+| Campus D3          | `aussichtBucht`: Fähren und Pelikaninsel                                                                                                                                              |
+| Hafen B1           | Mr. Ames, Schaufenster                                                                                                                                                                |
+| Hafen C2           | `fernrohr` (Pelikaninsel); **„Seeglas, grün“** an der Kaikante (`fundSeeglas`, 5 Münzen; Ambrose: „Glas, das das Meer rund geschliffen hat. Das einzige Glas hier, das mir gefällt.“) |
+| Hafen D1, D2       | Mr. Pike, Inselfähre (S6)                                                                                                                                                             |
 
 ## 5. Brücken zur Hauptgeschichte (ohne Änderung der Hauptszenen)
 
-| Brücke                                                    | Wo                          | Wirkung in der Geschichte                                                                                                  |
-| --------------------------------------------------------- | --------------------------- | -------------------------------------------------------------------------------------------------------------------------- |
-| „Gäste erst zum Turnier“                                  | Mr. Kerrigan                    | erklärt, warum die Kantine vor Szene 38 zu ist; das Turnier ist das, was Mama in Szene 38 verbietet.                       |
-| Lücke im Pokalregal, Roccos Warnung                       | Rocco                       | zwischen Szene 39 und 43: hält die Spannung bis zu Mamas Partie, ohne mehr zu sagen als Szene 39.                                                       |
-| Saubere Gardine, „frag nicht, wie“                        | Mrs. Brody                  | Oma Ruth ist vor Szene 39 nur eine Nachbarin; danach erinnert Brody an Laurie mit Kreide (Szene 39 gibt das frei).         |
-| Kreidebrett auf dem Gehweg                                | Mila und Benny, Mrs. Brody   | Mama hat als Kind genau dort gespielt (erst nach Szene 39 gesagt); Kreide wird zum Bild für Mamas Anfang.                 |
-| Steckschach im Stollen                                    | N-ST2, Big Joe, Mama        | nach Szene 43: Mama findet ein Stück ihrer Jugend wieder; im Wohnzimmer neben dem Foto (13 §7.4).                         |
-| Post, die keiner aufmacht                                 | Mr. Flores                  | Nachhall von Szene 41 (Postsack), ohne Inhalt des Umschlags.                                                                             |
-| J. H. auf Brücke und im Lieferbuch                        | Nieten, Juno, N-ST1         | Juno fragt weiter („Wer baut hier alles?“); das Lieferbuch nennt nur „abgenommen: J. H.“, Ambrose schweigt; W6 löst es auf. |
-| Kerrigan und Kendra, Ruth und Laurie                          | Kerrigan, Kendra (N-SB3)        | Zwei Familien, die nur sonntags telefonieren: Ironwood verliert seine Kinder an andere Städte, wie Mama damals.           |
-| Brief an Kapitän Ruben                                    | Big Joe (nach Szene 39)     | „Bring das Ruben in Lockport, Kumpel.“ Startet L3 von mittel-3 (`14_Akt2_Leben_teil1.md` 4.3), das `lastkahnFrei` setzt; danach fährt der Lastkahn vom Anleger in Ironwood. |
-| Busfahrer ohne Einladung                                  | Mr. Briggs                  | erklärt die Sperre des Busses bis Szene 50 in der Welt.                                                                    |
-| Vögel hören an der Brücke auf                             | Mr. Oakes                   | bereitet Szene 53 vor („Wo wohnen hier die Tiere?“ – „Die stören die Sensoren.“).                                        |
-| Frau von der Akademie löst Aufgaben auf Papier            | Cilla, Mr. Ames (ab Akt 4)  | Dr. Lin bleibt die ehrliche Spielerin (Bibel 18.2); ihr Club im leeren Laden (Post-Game) ist erst ab Akt 4 angedeutet. |
-| Novas Werbesatz im Schaufenster                           | Perfect Move Store          | dieselbe Werbung wie in Riverton (Szene 29); kein Hinweis auf das Gerät vor Szene 56.                                     |
-| Ellis hört auf, gegen ZERO zu zählen                      | N-SB2                       | Gegenbild zu Ambrose, der gebannt zusieht (Szenen 55, 61), ohne die Szenen zu ändern.                                     |
+| Brücke                                         | Wo                         | Wirkung in der Geschichte                                                                                                                                                   |
+| ---------------------------------------------- | -------------------------- | --------------------------------------------------------------------------------------------------------------------------------------------------------------------------- |
+| „Gäste erst zum Turnier“                       | Mr. Kerrigan               | erklärt, warum die Kantine vor Szene 38 zu ist; das Turnier ist das, was Mama in Szene 38 verbietet.                                                                        |
+| Lücke im Pokalregal, Roccos Warnung            | Rocco                      | zwischen Szene 39 und 43: hält die Spannung bis zu Mamas Partie, ohne mehr zu sagen als Szene 39.                                                                           |
+| Saubere Gardine, „frag nicht, wie“             | Mrs. Brody                 | Oma Ruth ist vor Szene 39 nur eine Nachbarin; danach erinnert Brody an Laurie mit Kreide (Szene 39 gibt das frei).                                                          |
+| Kreidebrett auf dem Gehweg                     | Mila und Benny, Mrs. Brody | Mama hat als Kind genau dort gespielt (erst nach Szene 39 gesagt); Kreide wird zum Bild für Mamas Anfang.                                                                   |
+| Steckschach im Stollen                         | N-ST2, Big Joe, Mama       | nach Szene 43: Mama findet ein Stück ihrer Jugend wieder; im Wohnzimmer neben dem Foto (13 §7.4).                                                                           |
+| Post, die keiner aufmacht                      | Mr. Flores                 | Nachhall von Szene 41 (Postsack), ohne Inhalt des Umschlags.                                                                                                                |
+| J. H. auf Brücke und im Lieferbuch             | Nieten, Juno, N-ST1        | Juno fragt weiter („Wer baut hier alles?“); das Lieferbuch nennt nur „abgenommen: J. H.“, Ambrose schweigt; W6 löst es auf.                                                 |
+| Kerrigan und Kendra, Ruth und Laurie           | Kerrigan, Kendra (N-SB3)   | Zwei Familien, die nur sonntags telefonieren: Ironwood verliert seine Kinder an andere Städte, wie Mama damals.                                                             |
+| Brief an Kapitän Ruben                         | Big Joe (nach Szene 39)    | „Bring das Ruben in Lockport, Kumpel.“ Startet L3 von mittel-3 (`14_Akt2_Leben_teil1.md` 4.3), das `lastkahnFrei` setzt; danach fährt der Lastkahn vom Anleger in Ironwood. |
+| Busfahrer ohne Einladung                       | Mr. Briggs                 | erklärt die Sperre des Busses bis Szene 50 in der Welt.                                                                                                                     |
+| Vögel hören an der Brücke auf                  | Mr. Oakes                  | bereitet Szene 53 vor („Wo wohnen hier die Tiere?“ – „Die stören die Sensoren.“).                                                                                           |
+| Frau von der Akademie löst Aufgaben auf Papier | Cilla, Mr. Ames (ab Akt 4) | Dr. Lin bleibt die ehrliche Spielerin (Bibel 18.2); ihr Kellerclub (Epilog, Post-Game) ist erst ab Akt 4 angedeutet; sie kündigt vor der Meisterschaft selbst.              |
+| Novas Werbesatz im Schaufenster                | Perfect Move Store         | dieselbe Werbung wie in Riverton (Szene 29); kein Hinweis auf das Gerät vor Szene 56.                                                                                       |
+| Ellis hört auf, gegen ZERO zu zählen           | N-SB2                      | Gegenbild zu Ambrose, der gebannt zusieht (Szenen 55, 61), ohne die Szenen zu ändern.                                                                                       |
 
 ## 6. Wege, Sperren und Rückwege
 
@@ -412,18 +414,18 @@ Grundsatz aus 12: Man **sieht**, was hinter der Sperre liegt, und eine Figur dav
 Grund** in einem Satz; der Grund ist Alltag. Jede Sperre ist gegen den Bedarf der Hauptgeschichte
 geprüft (Spalte „Gebraucht ab“).
 
-| Nr. | Karte, Stelle                               | Grund in der Welt (Figur, Satz)                                                                | Öffnung                                          | Gebraucht ab | Lohn des Rückwegs                                                                      |
-| --- | ------------------------------------------- | ---------------------------------------------------------------------------------------------- | ------------------------------------------------ | ------------ | -------------------------------------------------------------------------------------- |
-| –   | Ironwood, Kantinentür                       | Mr. Kerrigan: „Gäste erst zum Turnier, Kumpel.“                                                   | nach Szene 38 (`verbotGesehen`)                  | Szene 39     | Club, Rocco, N-IW2                                                                     |
-| –   | Ironwood, Haus von Oma Ruth                 | Tür bleibt zu, niemand öffnet (heute)                                                          | `elmStreetBekannt` (Szene 39)                    | Szene 39     | Szene 39a beim zweiten Besuch (Turnierheft)                                             |
-| –   | Ironwood, Kai: Lastkahn                     | Kahn liegt nicht am Kai; Schild „Anleger“                                                      | `lastkahnFrei` (mittel-3, „Post für den Kapitän“, ab Szene 39) | nie          | Schnellreise nach Lockport und Riverton (13 §3, mittel-3)                               |
-| –   | Ironwood, Umkleide, dunkler Spind           | Lampe kaputt                                                                                   | Laterne                                          | nie          | Fund „Turm aus Holz“ (Waldholz 3/3, Bibel 12)                                           |
-| S4  | Steinbruch, Stollenmund                     | Ruby: „So dunkel, dass die Taschenlampe Angst kriegt.“                                        | Laterne (Edna, 60 Münzen)                        | nie          | Echo (N-ST3), später Mamas Versteck (N-ST2)                                            |
-| –   | Stollen, Nische                             | nur Steine                                                                                     | `mamaSpielt` (Szene 43), Big Joe erzählt          | nie          | „Mamas altes Steckschach“                                                              |
-| –   | Ironwood, Bus nach Silicon Bay              | Mr. Briggs: „Ohne Einladung lassen die dich nicht mal aussteigen.“                            | nach Szene 50 (`einladungGesehen`)               | Szene 51     | Akt 3                                                                                  |
-| –   | Ironwood, Bus nach Riverton                 | Fahrschein 10 Münzen                                                                           | `besuchtIronwood`; frei nach der Clubnadel        | nie          | Schnellreise                                                                           |
-| S6  | Silicon Bay, Inselfähre                     | Mr. Pike: „Sonntags.“                                                                        | `nadelSiliconBay` (13 §4)                         | nie          | Nebenort N4                                                                            |
-| –   | Silicon Bay, Küstenfähre                    | Fährterminal „Nur mit Ticket“                                                                  | `nadelSiliconBay` (heute)                         | Szene 62     | Akt 3 weiter                                                                           |
+| Nr. | Karte, Stelle                     | Grund in der Welt (Figur, Satz)                                    | Öffnung                                                        | Gebraucht ab | Lohn des Rückwegs                                         |
+| --- | --------------------------------- | ------------------------------------------------------------------ | -------------------------------------------------------------- | ------------ | --------------------------------------------------------- |
+| –   | Ironwood, Kantinentür             | Mr. Kerrigan: „Gäste erst zum Turnier, Kumpel.“                    | nach Szene 38 (`verbotGesehen`)                                | Szene 39     | Club, Rocco, N-IW2                                        |
+| –   | Ironwood, Haus von Oma Ruth       | Tür bleibt zu, niemand öffnet (heute)                              | `elmStreetBekannt` (Szene 39)                                  | Szene 39     | Szene 39a beim zweiten Besuch (Turnierheft)               |
+| –   | Ironwood, Kai: Lastkahn           | Kahn liegt nicht am Kai; Schild „Anleger“                          | `lastkahnFrei` (mittel-3, „Post für den Kapitän“, ab Szene 39) | nie          | Schnellreise nach Lockport und Riverton (13 §3, mittel-3) |
+| –   | Ironwood, Umkleide, dunkler Spind | Lampe kaputt                                                       | Laterne                                                        | nie          | Fund „Turm aus Holz“ (Waldholz 3/3, Bibel 12)             |
+| S4  | Steinbruch, Stollenmund           | Ruby: „So dunkel, dass die Taschenlampe Angst kriegt.“             | Laterne (Edna, 60 Münzen)                                      | nie          | Echo (N-ST3), später Mamas Versteck (N-ST2)               |
+| –   | Stollen, Nische                   | nur Steine                                                         | `mamaSpielt` (Szene 43), Big Joe erzählt                       | nie          | „Mamas altes Steckschach“                                 |
+| –   | Ironwood, Bus nach Silicon Bay    | Mr. Briggs: „Ohne Einladung lassen die dich nicht mal aussteigen.“ | nach Szene 50 (`einladungGesehen`)                             | Szene 51     | Akt 3                                                     |
+| –   | Ironwood, Bus nach Riverton       | Fahrschein 10 Münzen                                               | `besuchtIronwood`; frei nach der Clubnadel                     | nie          | Schnellreise                                              |
+| S6  | Silicon Bay, Inselfähre           | Mr. Pike: „Sonntags.“                                              | `nadelSiliconBay` (13 §4)                                      | nie          | Nebenort N4                                               |
+| –   | Silicon Bay, Küstenfähre          | Fährterminal „Nur mit Ticket“                                      | `nadelSiliconBay` (heute)                                      | Szene 62     | Akt 3 weiter                                              |
 
 **Rückwege mit Lohn** (13 §0.5 und §7):
 
@@ -446,14 +448,14 @@ geprüft (Spalte „Gebraucht ab“).
 
 ## 7. Zeitbudget und Münzen
 
-| Ort                             | Neue Aufgaben (Minuten)        | Figuren, Funde, Aussichten (Minuten) | Summe     | Münzen neu |
-| ------------------------------- | ------------------------------ | ------------------------------------ | --------- | ---------- |
-| Ironwood                        | 12–17 (N-IW1, N-IW2, N-IW3)    | 4–6                                  | 16–23     | 35 + 5     |
-| Steinbruch N3                   | 11–15 (N-ST1, N-ST2, N-ST3)    | 3–5 (Grube, Aussicht)                | 14–20     | 30         |
-| **Akt 2 zusätzlich (Teil 2)**   |                                |                                      | **30–43** | **≈ 70**   |
-| W4                              | 3–4 (N-W4a)                    | 2–3 (zwei Aussichten)                | 5–7       | 10         |
-| Silicon Bay                     | 14–19 (N-SB1, N-SB2, N-SB3)    | 4–6 (Hafen, Figuren, Funde)          | 18–25     | 40 + 10    |
-| **Akt 3 zusätzlich (Anfang)**   |                                |                                      | **23–32** | **≈ 60**   |
+| Ort                           | Neue Aufgaben (Minuten)     | Figuren, Funde, Aussichten (Minuten) | Summe     | Münzen neu |
+| ----------------------------- | --------------------------- | ------------------------------------ | --------- | ---------- |
+| Ironwood                      | 12–17 (N-IW1, N-IW2, N-IW3) | 4–6                                  | 16–23     | 35 + 5     |
+| Steinbruch N3                 | 11–15 (N-ST1, N-ST2, N-ST3) | 3–5 (Grube, Aussicht)                | 14–20     | 30         |
+| **Akt 2 zusätzlich (Teil 2)** |                             |                                      | **30–43** | **≈ 70**   |
+| W4                            | 3–4 (N-W4a)                 | 2–3 (zwei Aussichten)                | 5–7       | 10         |
+| Silicon Bay                   | 14–19 (N-SB1, N-SB2, N-SB3) | 4–6 (Hafen, Figuren, Funde)          | 18–25     | 40 + 10    |
+| **Akt 3 zusätzlich (Anfang)** |                             |                                      | **23–32** | **≈ 60**   |
 
 Kleine Aufgaben und Nebenorte fallen wie in Akt 1 nicht unter die Staffelzeiten von R40; sie kommen
 obendrauf und werden mit `spielzeitJeOrt` nachgemessen (Befund 17). Liegt ein Testlauf darüber,

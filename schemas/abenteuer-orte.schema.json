@@ -63,6 +63,28 @@
           "type": "string",
           "pattern": "^klang/[a-z0-9-]+\\.(ogg|m4a)$"
         },
+        "klangquellen": {
+          "description": "Klangquellen mit Reichweite (Atmosphäre T28): Musik, die nur um ein Ding der Karte klingt (Rosies Wagen, Remys Trompete). objekt ist der Name eines Objekts der Tiled-Karte (jeder Art), musik eine Kennung wie bei #musik; voll bis zur halben Reichweite, dann leiser bis still; die Musik der Karte weicht im selben Maß",
+          "type": "array",
+          "items": {
+            "type": "object",
+            "additionalProperties": false,
+            "required": ["objekt", "musik"],
+            "properties": {
+              "objekt": { "type": "string", "minLength": 1 },
+              "musik": {
+                "type": "string",
+                "pattern": "^[a-z0-9][a-zA-Z0-9-]*$"
+              },
+              "reichweite": {
+                "description": "Felder; fehlt: 20",
+                "type": "integer",
+                "minimum": 2,
+                "maximum": 60
+              }
+            }
+          }
+        },
         "licht": {
           "description": "Lichtstimmung der Karte (Atmosphäre T6) als Schleier: tag (kein Schleier), abend, nacht, nebel oder eine andere Tönung (dunst, serverblau, sepia, dunkel). Geht vor der Eigenschaft toenung der Szene; ein Dialog mit setzeToenung geht vor dem Licht",
           "$ref": "#/$defs/licht"

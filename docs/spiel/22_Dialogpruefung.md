@@ -4313,3 +4313,83 @@ c. Szene 99 der Bibel hat weiter „in einer Bretterhütte der Siedlung“ (B:23
 - **Straßengegner:** nur die Abbildungsnummern und die Uhr gegen die Szenen gehalten, nicht die Stellungen selbst (kein Brett, keine Engine).
 - **I5:** Die Bibel habe ich in den Abschnitten 4, 11 bis 14, 20 bis 23 und 25 bis 35 gelesen, den Rest (Abschnitte 1 bis 3, 5 bis 10, 15 bis 19) nur per Stichwortsuche. „Bibel schweigt“ heißt: kein Treffer zu den gesuchten Wörtern und nichts in den gelesenen Abschnitten. Den Roman habe ich nur an den Stellen der 15 Punkte nachgeschlagen, nicht ganz gelesen.
 - **Regelwerk R27/R29** (`06_Regelwerk.md`) nur zum Mentor-Zug nachgeschlagen (Zeilen 290, 309–312), nicht geprüft.
+
+## Teil J: Teil I ausgeführt (Vermerk, 13.11.2026)
+
+Auf Auftrag des Hauptchats sind I1 bis I3 und die Textbefunde aus I4 ausgeführt, je
+Dokumentgruppe ein Commit. Die Zeilennummern in Teil I gelten für den Stand davor. Nach der
+Änderung an `inhalte/abenteuer/texte/de.json` liefen `python -m pytest pipeline/tests` (893
+bestanden, 16 übersprungen) und `npm run pruefen` (2573 Tests bestanden).
+
+### J1 Ausgeführt
+
+- **Bibel:** vier Reststellen (Kades Gerät im Schuh, Zimmer über dem Laden, Großvater und die
+  Seite, Fragment 8 steht in den Daten); Szene 101 auf der Gehsteigkante.
+- **I1:** alle außer I1.17 (`15_Routen_Ereignisse.md` bleibt unberührt, Frage an den Autor).
+- **I2:** alle 21. Gebautes, das nicht mehr passt, trägt den Vermerk „(noch umzubauen,
+  Entscheidung 13.11.2026)“.
+- **I3:** alle 20, I3.20 nur zum Teil: Céleste ist im Simultan nicht ersetzt, die fünfte
+  Gegnerin ist offen.
+- **`texte/de.json`:** „Die Familie“, Kiras Satz zum Falken, Hale siezt im Fundtext, Zettel von
+  A. W., Questschritt „zu Fuß mit Juno“.
+
+### J2 Offen
+
+- **Vom Hauptchat zu entscheiden:** fünfte Gegnerin im Simultan (Capital; auch Dokument 15 und
+  `partieformen.json` nennen Céleste); Mamas Zimmer in Ironwood unter dem Dach (so der Roman;
+  als Absatz „Geschichte“ nachgetragen, die gebaute Lage steht daneben); Ghost Town ist jetzt
+  von der Statistenregel 10.53 ausgenommen; Lage des Kellers von Dr. Lin; Wortlaut für Mr. Ames
+  ab Akt 4; „Schulbus 7:42“ im Fahrplan der Birch Lane (Dokument 12) ist geblieben.
+- **Ink, nicht angefasst:** `hochebene.ink` (alter Falkensatz), `desert-springs-antiquariat.ink`
+  („Komm nach Norden“), `port-delacroix-werkstatt.ink` („Nachfahren“).
+
+### J3 Aufträge für die Datenbauer (mittel-1, mittel-2)
+
+1. Questschritt 5 von `mapleFalls.besserWerden` hängt noch am Auslöser `bushaltestelle`; er
+   braucht den Parkausgang zum Weg.
+2. Epilog (Dachboden, Lily) fehlt in den Daten; der Extra-Zettel gehört dorthin.
+3. Halbfinale: Zugerraten des Turmzugs immer; die Karte mit goldenem Rand zeigt nur „Er ist da“.
+4. Erinnerung 1858: Stellungsduell aus Ambroses eigener Partie statt Bird–Morphy.
+5. Fernpartie (Szene 100): Voraussetzungen Brief, Seite und Fragmente 0 bis 8 fehlen.
+6. Mamas Partie: Das Foto wird zu Hause in Maple Falls gezeigt, nicht in der Kantine; geführter
+   Moment unabhängig vom Ausgang.
+
+### J4 Aufträge für die Kartenbauer
+
+- **Maple Falls:** Zustand `schulbus` im Park entfällt; Halfpipe zurück auf die Karte;
+  Zustandsfassung Clubraum mit Bildschirm auf dem Pult; am Brett fehlt die schwarze Dame.
+- **Cedar Creek:** Schulbus am Samstagmorgen; Matten im Lesesaal für die Nacht davor.
+- **Riverton:** sechs Bildschirmtische in einer Reihe; Pavillon mit vier Steintischen, im Zustand
+  `perfect-move` vier Bildschirmtische im Kreis und vier helle Flecken; Noors Wandbild in vier
+  Stufen.
+- **Ironwood:** Mamas Zimmer unter dem Dach (wenn bestätigt).
+- **Ghost Town:** Laden mit Treppe und Zimmer darüber, Erinnerungskarte als Zimmer, Gideon an
+  der Tür (Figur fehlt), kein Ortsschild, Grabstein mit eingeritztem Brett, Sternenhimmel am
+  Ende des Bretterwegs, keine Statisten, Mr. Pruitt in der Saloontür.
+- **Summit City:** Wards Hütte mit leeren Wänden, eine Stunde über der Stadt; Bergstation als
+  offene Plattform.
+- **Crossroads:** Coach Delgado, Schulbus, Sam, Carla, Theo fehlen.
+- **Capital:** Arena rund und weiß mit Muscheldach.
+- **Silicon Bay:** Dr. Lins Club als Keller mit Heizlüfter.
+
+### J5 Nachtrag nach den Entscheidungen des Hauptchats und des Autors (13.11.2026)
+
+- **Entschieden und eingetragen:** Céleste bleibt fünfte Gegnerin im Simultan, als Mitglied der
+  Familie Whitlock-Duval (`orte/capital.md`). Dr. Lins Keller liegt unter einem Wohnhaus am Rand
+  von Silicon Bay, nahe Rosies Truck (`orte/silicon-bay.md`, `13_Wegenetz.md`). Mamas Zimmer
+  unter dem Dach, Ghost Town als Ausnahme von 10.53 und „Schulbus 7:42“ bleiben. Der Satz für
+  Mr. Ames ab Akt 4 bleibt offen.
+- **Das Spiel steht für sich (Autor):** kein Knopf „Im Buch nachlesen“, keine Dialoge mit Hinweis
+  auf das Buch; Buchinhalt nur als gesammelte Seiten, die ihren Inhalt im Spiel zeigen. Damit ist
+  **I1.17** ausgeführt: `15_Routen_Ereignisse.md`, Abschnitt 1.2 und Abschnitt 5. Die Seiten sind
+  Seiten aus Ambroses altem Buch, ohne Kapitelnummer; der Wanderer nennt weder Buch noch Kapitel
+  und schenkt am Ende die gebundene Sammlung fürs Album statt des gedruckten Buchs.
+- **`11_Karten_und_Gegenstaende.md`:** Der Buchbezug steht nur noch in den Daten, nicht auf der
+  Karte; Ambroses Satz „… sondern im Buch“ ist gestrichen.
+- **Schutzengel (K4):** Ambrose hält den Zug mit einer Zeile auf (Bibel, Szene 69; Dokument 11).
+- **In der Bibel** fand sich keine weitere Stelle, die den Spieler zum Buch schickt. Die Zeilen
+  „Buchbezug:“ sind Angaben für Schreiber und bleiben.
+- **Offen:** Ob der Wanderer als Figur bleibt (er war als Gruß an das Buch gedacht). Ob es die
+  Lernkarten aus Dokument 11, Abschnitt 5, noch gibt: Sie belohnen im Spiel, wer in der App ein
+  Buchkapitel abschließt. Der Gutachter hat die neue Entscheidung des Autors nicht in
+  `ENTSCHEIDUNGEN.md` nachlesen können; sie war auf dem übernommenen Stand noch nicht eingetragen.

@@ -131,6 +131,11 @@ Tipp. Jeder Moment kommt höchstens einmal je Partie.
   `nacht`, `nebel`, `dunst`, `serverblau`, `sepia`, `dunkel`) geht vor der `toenung` der Szene,
   ohne die Szene anzufassen. `licht_zustaende` (Bedingung → Licht, der letzte passende gilt)
   ersetzt `licht`, etwa `{"nadelGhostCanyon >= 1": "abend"}`. `setzeToenung` im Dialog geht vor.
+- **Klangquellen** (Atmosphäre T28): `klangquellen` je Karte in `orte.json`,
+  `[{"objekt": "rosiesWagen", "musik": "rosie", "reichweite": 20}]`. `objekt` ist der Name eines
+  Objekts der Tiled-Karte (jede Art), `musik` eine Kennung wie bei `#musik`, `reichweite` in
+  Feldern (Vorgabe 20). Voll bis zur halben Reichweite, dann leiser bis still; die Musik der Karte
+  weicht im selben Maß. pytest prüft, dass es das Objekt gibt.
 - **Liste für den Autor:** `python -m pipeline.abenteuer.zustaende` (Text) oder `--json`.
   `pipeline/tests/test_abenteuer_zustaende.py` prüft Lesbarkeit, bekannte Variablen, Dateinamen und
   den „Zustand:“-Satz.

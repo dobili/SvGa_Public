@@ -17,8 +17,11 @@ Quellen: `05_Story_Bibel.md` (Abschnitte 0 bis 3, Szenen 1 bis 25, Nebenfiguren 
 
 ## 0. Grundsätze
 
-1. **Nichts an den Hauptszenen ändert sich.** Alles hier ist freiwillig, klein und im Tagebuch als
-   Nebenaufgabe sichtbar. Keine neue Figur weiß etwas über Ambrose, das Brett, 1858 oder Josiah
+1. **Nichts an den Hauptszenen ändert sich.** Fast alles hier ist freiwillig, klein und im Tagebuch als
+   Nebenaufgabe sichtbar. Ausnahmen seit dem Roman: Mrs. Calloway spricht {held} am ersten Schultag an
+   (kurzes Pflichtgespräch auf dem Weg zur Haltestelle), der Abend im Diner mit Mama und Hector ist eine
+   eigene Szene (`akt1.dinerAbend`), und Ada am Apfelstand und die Fährstelle gehören zum ersten Fußweg
+   nach Cedar Creek (Szene 13). Keine neue Figur weiß etwas über Ambrose, das Brett, 1858 oder Josiah
    Hale, bevor die Hauptszenen es erzählen. Andeutungen ja (Mrs. Whitlock spielte Schach, alte
    Zeitungen im Keller, ein Mann im Anzug mit Telefon), Auflösungen nein.
 2. **Quest-Arten wie vorhanden:** `raetsel`, `hilfe`, `begegnung` (`quests.json`). Neue Aufgaben
@@ -37,7 +40,9 @@ Quellen: `05_Story_Bibel.md` (Abschnitte 0 bis 3, Szenen 1 bis 25, Nebenfiguren 
    der Weg Kapitel 1 (Notation, Zählen von Angreifern und Verteidigern, hängende Figuren), Cedar
    Creek die Mattbilder (Grundreihe, Arabisch, Anastasia, Boden, Lolli). Bewusste Ausnahme: der
    Stein der Fährleute (N-W2) am Flussweg ist schon ein Grundreihenmatt, als Vorgeschmack auf Cedar
-   Creek. Buchbezug im Dialog nur als „Kapitel 1“ mit Abschnitt, nie mit Seiten.
+   Creek. Keine Verweise auf das Buch und keine Buchtexte in Spieltexten (Entscheidung vom
+   10.11.2026, `docs/spiel/ENTSCHEIDUNGEN.md`); die Kapitelangaben hier sind Angaben für Schreiber
+   und Daten.
 5. **Lieber wenige gute Häuser als viele leere:** neu betretbar sind nur das Diner in Maple Falls
    und die Drechslerei in Cedar Creek. Alles andere bleibt Kulisse, aber mit Figuren davor.
 
@@ -156,17 +161,17 @@ Jeder Abschnitt bekommt etwas zum Entdecken (Regel 7a.2); Funde sind fett.
 Abschnitte wie im Ortsplan (`orte/maple-falls.md`, 1.1): Birch Lane A bis H zu je 8 Spalten, Park
 A bis F zu je 8 Spalten (F nur 4).
 
-| Abschnitt (West nach Ost) | Nordseite                                                                                                                                                                                              | Südseite                                                                                                                   |
-| ------------------------- | ------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------ | -------------------------------------------------------------------------------------------------------------------------- |
-| Birch Lane A–B (0–15)     | Haus Whitlock, Briefkasten mit verblichenem „Whitlock“ (`briefkastenWhitlock`); Haus Lily, Katze                                                                                                       | Mrs. Calloway auf der Veranda (`blumenkasten`); Haltestelle mit `fahrplan` („Schulbus 7:42“)                               |
-| Birch Lane C–D (16–31)    | Lily (Ende), Haus Martínez mit Carla am Fahrrad (N-MF3); Eichhörnchen im Ahorn                                                                                                                         | Haus Hayes, Schild „Zu verkaufen“, leere Einfahrt; Haus Fisk                                                               |
-| Birch Lane E (32–39)      | Diner mit Parkplatz, Leuchtreklame mit flackerndem „p“ (`reklame`)                                                                                                                                     | Haus Fisk, dahinter der Hinterweg                                                                                          |
-| Birch Lane F–H (40–63)    | Durchgang zum Ufer, Schule, Mr. Pratt am Fahnenmast (`fahnenmast`)                                                                                                                                     | Haus Süd 4; Spielplatz mit Owen; **„Bauer aus Plastik“** im Sandkasten (`fundBauer`, 5 Münzen; Pratt: „Aus dem Schulset!“) |
-| Park A (0–7)              | Steg mit Absperrband (S5); dahinter **Initialen** am alten Pfosten (`fundInitialen`) und Blick zum Wasserfall (`aussichtWasserfall`); große Eiche mit Mr. Abernathys Bank (vorhanden) und zweiter Bank | Wiese, Laub zum Durchlaufen                                                                                                |
-| Park B (8–15)             | Fußsteg zum Zedernpfad (S2), Startlinie für Jos Rennen am Uferweg                                                                                                                                      | Hauptweg mit Kurve, freier Platz für das öffentliche Brett (später)                                                        |
-| Park C (16–23)            | Halfpipe, Jo (vorhanden)                                                                                                                                                                               | Wiese, Enten am Teichufer                                                                                                  |
-| Park D (24–31)            | Kiosk Mr. Patel (vorhanden), Uferweg folgt der Biegung                                                                                                                                                 | Bushaltestelle (Szene 13: Schulbus; später Überlandbus)                                                                    |
-| Park E–F (32–43)          | Brücke der Parkstraße über den Fluss                                                                                                                                                                   | Fluss läuft nach Osten weiter, zur Landstraße                                                                              |
+| Abschnitt (West nach Ost) | Nordseite                                                                                                                                                                                              | Südseite                                                                                                                                                                                         |
+| ------------------------- | ------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------ | ------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------ |
+| Birch Lane A–B (0–15)     | Haus Whitlock, Briefkasten mit verblichenem „Whitlock“ (`briefkastenWhitlock`); Haus Lily, Katze                                                                                                       | Mrs. Calloway auf der Veranda (`blumenkasten`); Haltestelle mit `fahrplan` („Schulbus 7:42“)                                                                                                     |
+| Birch Lane C–D (16–31)    | Lily (Ende), Haus Martínez mit Carla am Fahrrad (N-MF3); Eichhörnchen im Ahorn                                                                                                                         | Haus Hayes, Schild „Zu verkaufen“, leere Einfahrt; Haus Fisk                                                                                                                                     |
+| Birch Lane E (32–39)      | Diner mit Parkplatz, Leuchtreklame mit flackerndem „p“ (`reklame`)                                                                                                                                     | Haus Fisk, dahinter der Hinterweg                                                                                                                                                                |
+| Birch Lane F–H (40–63)    | Durchgang zum Ufer, Schule, Mr. Pratt am Fahnenmast (`fahnenmast`)                                                                                                                                     | Haus Süd 4; Spielplatz mit Owen; **„Bauer aus Plastik“** im Sandkasten (`fundBauer`, 5 Münzen; Pratt: „Aus dem Schulset!“)                                                                       |
+| Park A (0–7)              | Steg mit Absperrband (S5); dahinter **Initialen** am alten Pfosten (`fundInitialen`) und Blick zum Wasserfall (`aussichtWasserfall`); große Eiche mit Mr. Abernathys Bank (vorhanden) und zweiter Bank | Wiese, Laub zum Durchlaufen                                                                                                                                                                      |
+| Park B (8–15)             | Fußsteg zum Zedernpfad (S2), Startlinie für Jos Rennen am Uferweg                                                                                                                                      | Hauptweg mit Kurve, freier Platz für das öffentliche Brett (später)                                                                                                                              |
+| Park C (16–23)            | Halfpipe, Jo (vorhanden)                                                                                                                                                                               | Wiese, Enten am Teichufer                                                                                                                                                                        |
+| Park D (24–31)            | Kiosk Mr. Patel (vorhanden), Uferweg folgt der Biegung                                                                                                                                                 | Bushaltestelle (in Szene 13 steigt niemand ein und es steht kein Schulbus da: {held} und Juno gehen am Freitag zu Fuß los; der Überlandbus dient der Rückfahrt in Szene 25 und späteren Fahrten) |
+| Park E–F (32–43)          | Brücke der Parkstraße über den Fluss                                                                                                                                                                   | Fluss läuft nach Osten weiter, zur Landstraße                                                                                                                                                    |
 
 ## 2. Landstraße und Flussweg (`wegMapleCedar`)
 
@@ -349,18 +354,18 @@ Späne am Boden als Bodenkram (Kartenregeln 8.4.3: passend am Boden). Tür in de
 
 ### 3.4 Funde und Entdeckungen
 
-| Abschnitt                    | Entdeckung                                                                                                |
-| ---------------------------- | --------------------------------------------------------------------------------------------------------- |
-| Hauptstraße West, Ankunft    | (Ortsschild), Drechslerei mit Holzstapel vor der Tür                                                      |
-| Hauptstraße, Waschsalon      | (Hund vor der Tür)                                                                                        |
-| Laterne zwischen den Häusern | **„Messingknopf mit Anker“** im Rinnstein (`fundKnopf`, 5 Münzen; Miss Ashby: „Von einer alten Uniform?“) |
-| Bibliothek                   | Zwillinge auf der Treppe, Bücherkasten                                                                    |
-| Anschlagtafel, Haltestelle   | (Plakat Perfect Move), Rätsel der Woche, Mr. Kettering                                                    |
-| Häuser Süd                   | Mrs. Holm an der Zedernhecke                                                                              |
-| Zedernwiese                  | Ast für N-CC2; **„Eisvogelfeder“** (`fundFeder`, Album)                                                   |
-| Bach, Kanuverleih            | Hattie Quill (N-CC3)                                                                                      |
-| Steg                         | (Rosa; Schlüssel im Schilf, vorhanden)                                                                    |
-| Brücke zum Zedernwald        | (Schild „Weg gesperrt“ in Akt 1)                                                                          |
+| Abschnitt                    | Entdeckung                                                                                                                        |
+| ---------------------------- | --------------------------------------------------------------------------------------------------------------------------------- |
+| Hauptstraße West, Ankunft    | (Ortsschild), Drechslerei mit Holzstapel vor der Tür                                                                              |
+| Hauptstraße, Waschsalon      | (Hund vor der Tür)                                                                                                                |
+| Laterne zwischen den Häusern | **„Messingknopf mit Anker“** im Rinnstein (`fundKnopf`, 5 Münzen; Miss Ashby: „Von einer alten Uniform?“)                         |
+| Bibliothek                   | Zwillinge auf der Treppe, Bücherkasten                                                                                            |
+| Anschlagtafel, Haltestelle   | (Plakat Perfect Move), Rätsel der Woche, Mr. Kettering; am Samstagmorgen der Schulbus, mit dem das Team ankommt (Zustandsfassung) |
+| Häuser Süd                   | Mrs. Holm an der Zedernhecke                                                                                                      |
+| Zedernwiese                  | Ast für N-CC2; **„Eisvogelfeder“** (`fundFeder`, Album)                                                                           |
+| Bach, Kanuverleih            | Hattie Quill (N-CC3)                                                                                                              |
+| Steg                         | (Rosa; Schlüssel im Schilf, vorhanden)                                                                                            |
+| Brücke zum Zedernwald        | (Schild „Weg gesperrt“ in Akt 1)                                                                                                  |
 
 ## 4. Brücken zur Hauptgeschichte (ohne Änderung der Hauptszenen)
 
@@ -491,8 +496,10 @@ der Kuhweide sind die ausgebüxten Kühe vom Kürbishof Miller (N1); das verknü
 zu `radio`: ein altes Röhrenradio auf dem Tresen, gleicher Satz („Lieder aus den Sechzigern, die
 Schule wurde im selben Jahr gebaut“). Zwei statt vier Sitzecken, weil Nischenbänke fehlen.
 
-**Nachtrag Runde 4 (Haupt-Chat, 9.11.2026), Park:** Der Katalog hat keine Halfpipe. Entscheidung: Im
-Park entsteht ein kleiner Basketballplatz; Jo sitzt auf der langen Bank daneben und spielt dort Blitz
-um Limo (eine Mauer gibt der Katalog nicht her). In Runde 5 werden alle Texte mit „Halfpipe“ (Story-Bibel Szenen 10 und 10a,
-Dialoge, 09 Belebung) auf „Bank am Basketballplatz“ umgestellt. Fahnenmast und Wasserfall gibt es als
+**Nachtrag Runde 4 (Haupt-Chat, 9.11.2026), Park:** Der Katalog hat keine Halfpipe; im Park entsteht
+ein kleiner Basketballplatz. Die damals angekündigte Umstellung aller Texte auf „Bank am
+Basketballplatz“ ist zurückgenommen: Die Halfpipe bleibt in der Geschichte (Story-Bibel Szenen 10
+und 10a, Roman), Jo sitzt auf ihrer Kante und spielt dort Blitz um Limo, und die Texte werden nicht
+umgestellt. Die Halfpipe kommt als eigenes Bild neben dem Basketballplatz auf die Karte zurück
+(`docs/spiel/ENTSCHEIDUNGEN.md`, 10.11.2026). Fahnenmast und Wasserfall gibt es als
 eigene Standbilder (`spiel/eigene/fahnenmast_schule.png`, `wasserfall_3hoch.png`).

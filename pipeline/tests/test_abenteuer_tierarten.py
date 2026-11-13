@@ -77,3 +77,10 @@ def test_ansichten_stehen_unten_buendig():
     assert streifen.size == (16, 6)
     for rahmen in (0, 1, 3):  # rechts, oben, unten (links ist gespiegelt)
         assert streifen.getpixel((rahmen * 4 + 1, 5))[0] == 255
+
+
+def test_massstab_verkleinert_nur():
+    """Feld massstab (Hase, Ente): nur verkleinern, nie vergrößern (Kartengutachten Akt 1)."""
+    for art, a in _daten()["arten"].items():
+        if "massstab" in a:
+            assert 0 < a["massstab"] <= 1, art

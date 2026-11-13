@@ -15,11 +15,19 @@ import tierarten from "./tierarten.json";
 export interface Tierbild {
   readonly breite: number;
   readonly hoehe: number;
+  /**
+   * Zeichengröße im Verhältnis zum Bogen (tierarten.json, Feld massstab; ohne Angabe 1). Hase und
+   * Ente wirkten neben Reh und Figuren zu groß (Kartengutachten Akt 1).
+   */
+  readonly massstab: number;
 }
 
 /** Die Bögen, die belebungsbilder.py baut: Art → Rahmengröße (aus tierarten.json, wie dort). */
 export const TIERBILDER: Readonly<Record<string, Tierbild>> = Object.fromEntries(
-  Object.entries(tierarten.arten).map(([art, a]) => [art, { breite: a.breite, hoehe: a.hoehe }]),
+  Object.entries(tierarten.arten).map(([art, a]) => [
+    art,
+    { breite: a.breite, hoehe: a.hoehe, massstab: "massstab" in a ? a.massstab : 1 },
+  ]),
 );
 
 /**

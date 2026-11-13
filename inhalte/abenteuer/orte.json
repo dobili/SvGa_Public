@@ -553,25 +553,25 @@
         {
           "kennung": "cedarCreek.zwillinge",
           "name": "figur.zwillinge.name",
-          "sprite": "figuren/zwillinge.png",
+          "sprite": "figuren/statist-05.png",
           "dialog": "cedar-creek-aussen.zwillinge"
         },
         {
           "kennung": "cedarCreek.kettering",
           "name": "figur.kettering.name",
-          "sprite": "figuren/kettering.png",
+          "sprite": "figuren/statist-14.png",
           "dialog": "cedar-creek-aussen.kettering"
         },
         {
           "kennung": "cedarCreek.zwillingeDrinnen",
           "name": "figur.zwillinge.name",
-          "sprite": "figuren/zwillinge.png",
+          "sprite": "figuren/statist-05.png",
           "dialog": "cedar-creek-bibliothek.zwillinge"
         },
         {
           "kennung": "cedarCreek.dunmore",
           "name": "figur.dunmore.name",
-          "sprite": "figuren/dunmore.png",
+          "sprite": "figuren/statist-13.png",
           "dialog": "cedar-creek-drechslerei.dunmore"
         }
       ],
@@ -659,7 +659,9 @@
           "ziel": {
             "karte": "wegMapleCedar.zedernpfad",
             "ausloeser": "zedernWeiterCedar"
-          }
+          },
+          "wenn": "nadelCedarCreek",
+          "dialog": "cedar-creek-aussen.zedernpfad_zu"
         },
         {
           "name": "flussweg",
@@ -838,27 +840,27 @@
         {
           "kennung": "wegMapleCedar.ada",
           "name": "figur.ada.name",
-          "sprite": "figuren/ada.png",
+          "sprite": "figuren/statist-11.png",
           "dialog": "weg-maple-cedar.ada"
         },
         {
           "kennung": "wegMapleCedar.tessa",
           "name": "figur.tessa.name",
-          "sprite": "figuren/tessa.png",
+          "sprite": "figuren/statist-23.png",
           "dialog": "weg-maple-cedar.tessa",
           "wenn": "nadelCedarCreek == 0"
         },
         {
           "kennung": "wegMapleCedar.tessaFluss",
           "name": "figur.tessa.name",
-          "sprite": "figuren/tessa.png",
+          "sprite": "figuren/statist-23.png",
           "dialog": "weg-maple-cedar.tessa",
           "wenn": "nadelCedarCreek > 0 und nadelRiverton == 0"
         },
         {
           "kennung": "wegMapleCedar.tessaZedern",
           "name": "figur.tessa.name",
-          "sprite": "figuren/tessa.png",
+          "sprite": "figuren/statist-23.png",
           "dialog": "weg-maple-cedar.tessa",
           "wenn": "nadelRiverton > 0 und nadelIronwood == 0"
         }
@@ -3573,6 +3575,7 @@
           "name": "weiterBergstrasse",
           "karte": "wegDesertSummit.diner",
           "art": "uebergang",
+          "dialog": "weg-desert-summit.diner_ankunft",
           "ziel": {
             "karte": "wegDesertSummit.bergstrasse",
             "ausloeser": "zurueckDiner"
@@ -4257,6 +4260,18 @@
           "name": "figur.rosie.name",
           "sprite": "figuren/rosie.png",
           "dialog": "crossroads-aussen.rosie"
+        },
+        {
+          "kennung": "crossroads.coach",
+          "name": "figur.coachDelgado.name",
+          "sprite": "figuren/coach-delgado.png",
+          "dialog": "crossroads-aussen.coach"
+        },
+        {
+          "kennung": "crossroads.theo",
+          "name": "figur.theo.name",
+          "sprite": "figuren/theo.png",
+          "dialog": "crossroads-raststaette.theo"
         }
       ],
       "ausloeser": [
@@ -4784,6 +4799,7 @@
           "name": "figur.victor.name",
           "sprite": "figuren/victor.png",
           "dialog": "ghost-town-saloon.victor",
+          "wenn": "grabGesehen",
           "gegner": "summitCity.victor"
         }
       ],
@@ -4909,10 +4925,10 @@
       ],
       "figuren": [
         {
-          "kennung": "erinnerungSiedlung.postreiter",
-          "name": "figur.postreiter.name",
+          "kennung": "erinnerungSiedlung.gideon",
+          "name": "figur.gideon.name",
           "sprite": "figuren/postreiter.png",
-          "dialog": "erinnerung-siedlung.postreiter"
+          "dialog": "erinnerung-siedlung.gideon"
         }
       ],
       "ausloeser": [
@@ -5030,6 +5046,7 @@
           "karte": "wegGhostCapital.leuchtturm",
           "art": "uebergang",
           "dialog": "capital-arena-aussen.ankunft_zu_fuss",
+          "wenn": "abeGetroffen",
           "ziel": {
             "karte": "capitalArena.aussen",
             "ausloeser": "wegGhost"

@@ -11,6 +11,8 @@
  * Beispiel: Objekt „tauben“ (type tier, verhalten ausweichen) → Art „taube“, eine Schar aus drei
  * bis fünf Tauben, Bild „tiere/taube.png“ mit Rahmen 16 × 16.
  */
+import { sitzrichtung } from "./sitzrichtung";
+import type { Richtung } from "./szene";
 
 /** Tageszeit, zu der ein Statist unterwegs ist (Eigenschaft `wann`; ohne Angabe: immer). */
 export type Tageszeit = "morgen" | "tag" | "abend" | "nacht" | "immer";
@@ -40,6 +42,8 @@ export interface Belebung {
   /** Eigenes Bild (Eigenschaft `bild`, etwa „statist-07“ oder „hund“), sonst null. */
   readonly bild: string | null;
   readonly verhalten: Tierverhalten;
+  /** Blickrichtung eines sitzenden Statisten (Eigenschaft `sitzt`), sonst null; er läuft nicht. */
+  readonly sitzt: Richtung | null;
 }
 
 const VERHALTEN: readonly Tierverhalten[] = [
@@ -83,18 +87,21 @@ function alsBelebung(o: Tiledobjekt): Belebung | null {
   const feld = { x: Math.round((o.x ?? 0) / KACHEL), y: Math.round((o.y ?? 0) / KACHEL) };
   const wann = eigenschaft(o, "wann") as Tageszeit | undefined;
   const verhalten = eigenschaft(o, "verhalten") as Tierverhalten | undefined;
+  const sitzt = o.type === "statist" ? sitzrichtung(eigenschaft(o, "sitzt")) : null;
   return {
     name: o.name,
     typ: o.type,
     feld,
-    von: liesFeld(eigenschaft(o, "von")) ?? feld,
-    bis: liesFeld(eigenschaft(o, "bis")) ?? feld,
+    // Wer sitzt, bleibt auf seinem Feld (figurensitz.ts).
+    von: sitzt ? feld : (liesFeld(eigenschaft(o, "von")) ?? feld),
+    bis: sitzt ? feld : (liesFeld(eigenschaft(o, "bis")) ?? feld),
     wann: wann && TAGESZEITEN.includes(wann) ? wann : "immer",
     sagt: o.type === "statist" ? (eigenschaft(o, "sagt") ?? null) : null,
     zeigt: o.type === "statist" ? (eigenschaft(o, "zeigt") ?? null) : null,
     bild: eigenschaft(o, "bild") ?? null,
     // Unbekanntes Verhalten (etwa „wirbeln“ beim Staubteufel) steht still wie „sitzen“.
     verhalten: verhalten && VERHALTEN.includes(verhalten) ? verhalten : "sitzen",
+    sitzt,
   };
 }
 

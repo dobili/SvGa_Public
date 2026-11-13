@@ -20,6 +20,7 @@ import type { Color, Role } from "chessops/types";
 import { FIGURENWERT, gegner, stellungAusFen, type Stellung } from "../../schach/stellung";
 import type { Begegnungsdaten } from "../daten/laden";
 import { gelegenheit } from "./gelegenheiten";
+import { inOpposition, istGabel, zielfelder } from "./stellungsmerkmale";
 
 /** Ein Moment einer Begegnung, wie in begegnungen.json. */
 export type Partiemoment = NonNullable<Begegnungsdaten["momente"]>[number];
@@ -51,6 +52,9 @@ const ROLLE: Readonly<Record<string, Role>> = {
   turm: "rook",
   dame: "queen",
 };
+
+/** Opposition und Gabel mit optionaler Seite: „gabel“, „gabelGegeben“ (Held), „gabelGegen“. */
+const SEITENMERKMAL = /^(opposition|gabel)(Gegeben|Gegen)?$/;
 
 const GEZAEHLTE_ROLLEN: readonly Role[] = ["pawn", "knight", "bishop", "rook", "queen"];
 
@@ -111,6 +115,16 @@ export function merkmalTrifft(merkmal: string, verlauf: Partieverlauf, h: number
   if (merkmal === "damenTausch") return damen(s.vor) > 0 && damen(s.nach) === 0;
   if (merkmal === "materialMinus3") {
     return bilanz(s.vor, verlauf.held) > -RUECKSTAND && bilanz(s.nach, verlauf.held) <= -RUECKSTAND;
+  }
+  // Opposition und Gabel (regeln/stellungsmerkmale.ts) entstehen mit diesem Halbzug.
+  // Ohne Zusatz für beide Seiten; „…Gegeben“ nur nach einem Zug des Helden, „…Gegen“ nur nach
+  // einem Zug des Gegners (wie schachGegeben und schachGegen).
+  const seitig = SEITENMERKMAL.exec(merkmal);
+  if (seitig?.[1]) {
+    if (seitig[2] && (seitig[2] === "Gegeben") !== heldZog) return false;
+    if (seitig[1] === "opposition") return inOpposition(s.nach.brett) && !inOpposition(s.vor.brett);
+    const farbe = heldZog ? verlauf.held : gegner(verlauf.held);
+    return zielfelder(s.vor.brett, s.nach.brett, farbe).some((f) => istGabel(s.nach.brett, f));
   }
   if (merkmal === "koeder" || merkmal === "turmopfer") {
     // Gelegenheiten gelten vor dem Zug des Helden: nach einem Zug des Gegners.

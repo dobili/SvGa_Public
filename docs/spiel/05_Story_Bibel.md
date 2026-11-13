@@ -1575,7 +1575,7 @@ Zielstärke E + 580 (Club 7, R4). Eröffnung: Königsgambit und Evans-Gambit (Ka
 **Tomás** (Clubmitglied). Tomás Castillo, 17, er, Miras Bruder, Mechaniker in der Garage, spielt
 solide und passt auf seine Schwester auf. Stellt die Aufgabenreihe zu Mattbildern mit Opfer.
 
-**Dot** (Clubmitglied). Dorothy Marsh, siebzig, sie, Motelbesitzerin, spielt seit fünfzig Jahren Fernschach per Post und hat Briefe aus aller Welt; vierzig Jahre lang war die alte Mrs. Whitlock aus Maple Falls ihre Gegnerin. Stellt die Aufgabenreihe zum Königsangriff und
+**Dot** (Clubmitglied). Dorothy Marsh, siebzig, sie, Motelbesitzerin, spielt seit fünfzig Jahren Fernschach per Post und hat Briefe aus aller Welt; vierzig Jahre lang war die alte Mrs. Whitlock (Margaret) aus Maple Falls ihre Gegnerin. Die letzte Partie blieb im 31. Zug liegen, Dot stand besser (ihr Turm auf der siebten Reihe); {held} kann sie als Nebenaufgabe für Margaret mit Schwarz zu Ende spielen (Begegnung `desertSprings.dotFernpartie`, Stellung `3r2k1/ppR2ppp/2n1p3/3p4/3P4/P3PN2/1P3PPP/6K1 b - - 0 31`, Weiß etwa +1,5). Stellt die Aufgabenreihe zum Königsangriff und
 kennt das Antiquariat, in dem der Brief liegt (Szene 76).
 
 **Buck** (Straßengegner, Sprüche). Buck Harmon, sechzig, er, Tankwart, spielt auf der Motorhaube
@@ -1890,10 +1890,7 @@ Belohnung: Flüstern (R27, Rätsel). Etwa 8 Minuten.
 
 **77. Erinnerung: Das letzte Spiel 1858** · N begegnung (Erinnerung) `desertSprings.erinnerung1858`
 Ort `desertSprings.garage` (Abend) · Ambrose, Mira. Ereignis: Stellungsduell aus Ambroses erfundener
-siebter Matchpartie gegen Hale (1858), am Moment seines tollkühnen Opfers: Diesmal spielt {held} die
-Stellung weiter, mit Weiß, gegen Hale (Rolle `story`, E + 500). Die Stellung baut ein Folgeauftrag
-mit der Engine (erfunden, C3: „Ambroses eigene Partie bleibt erfunden“; Vorteil +0,8 bis +2,5 nach
-R13, weil das Opfer korrekt war und Ambrose es nur falsch fortsetzte). Mira schaut zu und ruft:
+siebter Matchpartie gegen Hale (1858). Das Duell beginnt nach Hales stillem Läuferzug, also nach dem Turmopfer und bevor Ambrose fahrig wurde (Entscheidung vom 13.11.2026, wie die Randnotiz des Romans): Diesmal spielt {held} die Stellung weiter, mit Weiß, gegen Hale (Rolle `story`, E + 500). Stellung (erfunden, C3: „Ambroses eigene Partie bleibt erfunden“): `rr3bk1/pp3ppp/1npq4/3p2N1/3P4/1PPB4/P4PPP/R3Q1K1 w - - 0 26`. Weiß hat genau einen Turm weniger; nur Lxh7+ hält den Vorteil (etwa +2,0, im Rahmen von R13: +0,8 bis +2,5), weil das Opfer korrekt war und Ambrose es nur falsch fortsetzte. Mira schaut zu und ruft:
 „Das Opfer war richtig! Du hast nur danach gezögert!“ Ambrose lacht: „Hundertsechzig Jahre, und ein
 Kind sagt es mir.“ Belohnung: **Partiefragment 6** (keine weitere starke Karte, ENTSCHEIDUNGEN 08.11.: nur die
 erste Erinnerung je Staffel gibt die Bauernvorgabe), 20 Münzen. Etwa 10 Minuten.

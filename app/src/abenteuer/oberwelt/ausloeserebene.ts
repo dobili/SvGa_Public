@@ -14,6 +14,8 @@
  * Treppe mitten im Raum). Beispiel: Auf dem Gehweg vor dem Waschsalon wechselt erst die Taste nach
  * oben die Karte; wer am Laden vorbeigeht, bleibt draußen.
  */
+import { sitzrichtung } from "./sitzrichtung";
+import type { Richtung } from "./szene";
 
 /** Ein Auslöser der Karte in Kachelkoordinaten. */
 export interface Ausloeser {
@@ -23,6 +25,8 @@ export interface Ausloeser {
   readonly y: number;
   /** Richtungen, in denen man von diesem Feld in den Durchgang geht (nur Auslöser). */
   readonly durchgang?: readonly string[];
+  /** Blickrichtung einer sitzenden Figur (Eigenschaft `sitzt`, figurensitz.ts). */
+  readonly sitzt?: Richtung;
 }
 
 /** Ein Objekt der Tiled-Ebene, so weit es hier gebraucht wird (Pixelkoordinaten). */
@@ -47,6 +51,10 @@ export function liesAusloeser(objekte: readonly Tiledobjekt[], kachel: number): 
     .filter((o) => !KEINE_AUSLOESER.includes(o.type ?? ""))
     .map((o) => {
       const angabe = o.properties?.find((e) => e.name === "durchgang")?.value;
+      const sitzt =
+        o.type === "figur"
+          ? sitzrichtung(o.properties?.find((e) => e.name === "sitzt")?.value)
+          : null;
       return {
         name: o.name ?? "",
         typ: o.type === "figur" ? ("figur" as const) : ("ausloeser" as const),
@@ -54,6 +62,7 @@ export function liesAusloeser(objekte: readonly Tiledobjekt[], kachel: number): 
         y: Math.round((o.y ?? 0) / kachel),
         // „oben“ oder „oben,links“: die Szene nennt den Durchgang selbst (Treppe mitten im Raum).
         ...(typeof angabe === "string" && angabe ? { durchgang: angabe.split(",") } : {}),
+        ...(sitzt ? { sitzt } : {}),
       };
     });
 }

@@ -29,6 +29,8 @@ VAR hollisGetroffen = false
 VAR hollisKarteGegeben = false
 VAR ausgangPinewoodCampHollis = ""
 VAR kioskGesehen = false
+// Gutachten M3.4: „Es ist still“ (Kapitel 54, Schluss) fällt beim Eintritt ins Camp, nicht am Rangerhaus.
+VAR esIstStillGesagt = false
 
 // ---------------------------------------------------------------- Ankunft (Szene 95)
 
@@ -41,6 +43,7 @@ VAR kioskGesehen = false
 
 === ankunft_camp ===
 // Kapitel 55 (Roman): vierzig Kinder aus dem ganzen Staat, ein Drittel kennt {held}.
+{not esIstStillGesagt: -> es_ist_still ->}
 ~ ankunftCampGesehen = true
 Das Camp liegt an einem See zwischen den Bäumen. Zelte im Halbkreis, ein Steg, Kanus kieloben. #sprecher:erzaehler #musik:pinewood #geraeusch:camp
 Ein Schild aus einem halben Baumstamm: „Pinewood Camp. Schach, Schwimmen, Schlafen. In dieser Reihenfolge.“ #sprecher:erzaehler #bild:schild_camp
@@ -48,6 +51,18 @@ Vierzig Kinder aus dem ganzen Staat. Ein Drittel davon kennst du. #sprecher:erza
 Dex hat etwas gebaut, das Marshmallows von selbst dreht. Es funktioniert fast. Mae hat ihr Teleskop dabei. Lou hat Muscheln im Haar und einen Plan. #sprecher:erzaehler
 Die kennen sich alle seit einer Woche. Mae hat allen die Sterne erklärt. Ich brauch ein zweites Tagebuch. #sprecher:juno #stimmung:froh
 -> END
+
+// Kapitel 54, Schluss (Roman): erstes Zeichen des Abschieds, ohne das Wort; am Waldrand vor dem Camp.
+=== es_ist_still ===
+~ esIstStillGesagt = true
+Nebel hängt zwischen den Stämmen. Im weichen Boden sind Spuren, breit, mit fünf Zehen. Mama geht ein wenig schneller. #sprecher:erzaehler #bild:baerenspuren
+{held}. Die Stellung auf dem kleinen Brett in deiner Tasche. Ich sehe sie nicht mehr im Dunkeln. #sprecher:ambrose #bild:aus
+* [„Was heißt das?“]
+- Ich weiß es nicht genau. Seit der Bergstation. Seit dieser Zug gekommen ist. #sprecher:ambrose
+Wenn ich die Augen schließe, ist da nichts mehr. Das erste Mal seit achtzehnhundertsechsundsechzig ist es still. #sprecher:ambrose #stimmung:friedlich
+Du bleibst stehen. #sprecher:erzaehler #pause:2
+Geh weiter. Es ist gut. Es ist sehr gut. Ich wollte es dir nur sagen. #sprecher:ambrose #stimmung:friedlich
+->->
 
 // ---------------------------------------------------------------- Ezra
 
@@ -95,13 +110,16 @@ Und Räuberschach: Wer alles verliert, gewinnt. Schlagen ist Pflicht. Wer als Er
 // VARIANTE-FEHLT: Tandem und Räuberschach. Bis sie gebaut sind, wird am Feuer erzählt statt gespielt.
 Am Abend brennt das Feuer. Du sitzt neben Sam, gegenüber Dex und Mae, und Figuren fliegen über den Tisch. #sprecher:erzaehler #licht:nacht #musik:lagerfeuer #klang:tandem
 Springer! Ich brauch einen Springer! #sprecher:dex
-Sam stellt eine Dame mitten in die feindliche Stellung, aus der Hand. Die Chefin ist zurück! #sprecher:sam #stimmung:froh
+Sam stellt eine Dame mitten in die feindliche Stellung, aus der Hand. #sprecher:erzaehler
+Die Chefin ist zurück! #sprecher:sam #stimmung:froh
 Er wird gekitzelt. #sprecher:erzaehler
-Das ist kein Schach. Es ist Wahnsinn. Figuren fallen vom Himmel. #sprecher:ambrose #stimmung:lachtOhneSpott
+Das ist kein Schach. #sprecher:ambrose
+* [„Nein.“]
+- Es ist Wahnsinn. Figuren fallen vom Himmel. #sprecher:ambrose #stimmung:lachtOhneSpott
 Ich hätte gern mitgespielt. Mit zwanzig. Ich wäre unerträglich gewesen. #sprecher:ambrose
 Dann Räuberschach gegen Lou. Alles ist verkehrt herum. Du stellst deine Dame hin und flehst, dass jemand sie nimmt. #sprecher:erzaehler #musik:held.rueckwaerts
 Lou gewinnt. Sie hatte einen Plan. #sprecher:erzaehler
-Ein Spiel, bei dem man alles hergibt, und am Ende hat der gewonnen, dem nichts bleibt. #sprecher:ambrose #stimmung:still
+Ein Spiel, bei dem man alles hergibt, und am Ende hat der gewonnen, dem nichts bleibt. #sprecher:ambrose #stimmung:still #pause:2
 Es ist nicht das dümmste Spiel, das ich gesehen habe. #sprecher:ambrose
 -> steg_nacht
 
@@ -121,10 +139,13 @@ Dieselbe Stelle am Himmel. Ein Jahr später, fünfhundert Meilen weiter. #sprech
     Ja. Eben. #sprecher:sam
 }
 Sie stehen noch wie früher. Das habe ich schon einmal bemerkt. An einem anderen Steg. #sprecher:ambrose
-Ich war damals beleidigt, weil ich nur eine Fußnote bin. Sechs Wörter. #sprecher:ambrose #stimmung:lachtOhneSpott
+Ich war damals beleidigt, weil ich nur eine Fußnote bin. Erinnerst du dich? #sprecher:ambrose
+* [„Sechs Wörter.“]
+- Sechs Wörter. #sprecher:ambrose #stimmung:lachtOhneSpott
 Vierzig Kinder. In hundert Jahren weiß niemand mehr, wie sie hießen. Und es wird nicht das Geringste ausmachen. #sprecher:ambrose #stimmung:friedlich
-Sie haben heute Abend gespielt. Das war es. Das war immer alles. #sprecher:ambrose #stimmung:friedlich
-Über euch fällt ein Stern. Mae schreit auf. Du wünschst dir etwas und weißt, dass es nicht in Erfüllung geht. Das ist in Ordnung. #sprecher:erzaehler #klang:sternschnuppe
+Sie haben heute Abend gespielt. Das war es. Das war immer alles. #sprecher:ambrose #stimmung:friedlich #pause:2
+Über euch fällt ein Stern. Mae schreit auf. #sprecher:erzaehler #klang:sternschnuppe
+Du wünschst dir etwas und weißt, dass es nicht in Erfüllung geht. Das ist in Ordnung. #sprecher:erzaehler
 -> END
 
 === lagerfeuer_alltag ===
@@ -159,7 +180,8 @@ Eine Stellung, du hast Weiß. Keine Uhr. Der Wald hat Zeit, wir auch. #sprecher:
 === hollis_nach_sieg ===
 {not hollisKarteGegeben:
     ~ hollisKarteGegeben = true
-    Gut gespielt. Ruhig, wie ein Baum, der wächst. Eine Partie, die für nichts zählt. Die braucht man auch. #sprecher:hollis #stimmung:froh
+    Gut gespielt. Ruhig, wie ein Baum, der wächst. #sprecher:hollis #stimmung:froh
+Es war die erste Partie seit langem, die für nichts zählte. Du merkst, wie sehr dir das gefehlt hat. #sprecher:erzaehler
     Hier. Jeder verdient im Wald eine zweite Chance. Auch auf dem Brett. #sprecher:hollis
     ~ gibKarte("zweiteChance")
 }

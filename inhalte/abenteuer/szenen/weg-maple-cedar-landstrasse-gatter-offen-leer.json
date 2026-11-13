@@ -33,10 +33,10 @@
     "#...................................................ee.................................................................#",
     "#...................................................ee.................................................................#",
     "#...................................................ee.................................................................#",
-    "#....................................eee............ee.................................................................#",
-    "#....................................eee............ee.................................................................#",
-    "#.................lllllllllll........eee............ee.................................................................#",
-    "#...............lllllllllllllll......eee............ee.................................................................#",
+    "#...................................................ee.................................................................#",
+    "#...................................................ee.................................................................#",
+    "#.................lllllllllll.......................ee.................................................................#",
+    "#...............lllllllllllllll.....................ee.................................................................#",
     "lllllllllllllllllllllllllllllllllllllllll...........ee........llllllllllllllllllllllllllllllllllllllllllllllllllllllllll",
     "lllllllllllllllllll.........llllllllllllll..........ee........llllllllllllllllllllllllllllllllllllllllllllllllllllllllll",
     "lllllllllllllllll.............lllllllllllll.........ee........llllllllllllllllllllllllllllllllllllllllllllllllllllllllll",
@@ -939,12 +939,15 @@
       "bauteil_ok": true
     },
     {
-      "moebel": "wg4ZaunBottomRight",
+      "moebel": "wg4ZaunBottomMiddle",
       "feld": [36, 11],
       "bauteil_ok": true
     },
+    { "moebel": "wg4ZaunBottomMiddle", "feld": [37, 11], "bauteil_ok": true },
+    { "moebel": "wg4ZaunBottomMiddle", "feld": [38, 11], "bauteil_ok": true },
+    { "moebel": "wg4ZaunBottomMiddle", "feld": [39, 11], "bauteil_ok": true },
     {
-      "moebel": "wg4ZaunBottomLeft",
+      "moebel": "wg4ZaunBottomMiddle",
       "feld": [40, 11],
       "bauteil_ok": true
     },
@@ -1935,15 +1938,6 @@
       "feld": [99, 17]
     },
     {
-      "moebel": "mf8Wohnmobil",
-      "feld": [88, 19],
-      "bauteil_ok": true
-    },
-    {
-      "moebel": "mf8FlohmarktPlakat",
-      "feld": [95, 12]
-    },
-    {
       "moebel": "mf8FlohmarktPlakat",
       "feld": [92, 16]
     },
@@ -2195,7 +2189,10 @@
     {
       "name": "bauer",
       "typ": "statist",
-      "feld": [30, 12],
+      "feld": [
+        30,
+        12
+      ],
       "eigenschaften": {
         "von": "30,12",
         "bis": "35,12",
@@ -2206,7 +2203,10 @@
     {
       "name": "radfahrer",
       "typ": "statist",
-      "feld": [61, 15],
+      "feld": [
+        61,
+        15
+      ],
       "eigenschaften": {
         "von": "61,15",
         "bis": "74,15",
@@ -2217,7 +2217,10 @@
     {
       "name": "kuehe",
       "typ": "tier",
-      "feld": [19, 20],
+      "feld": [
+        19,
+        20
+      ],
       "eigenschaften": {
         "von": "19,20",
         "bis": "27,20",
@@ -2227,7 +2230,10 @@
     {
       "name": "hase",
       "typ": "tier",
-      "feld": [106, 13],
+      "feld": [
+        106,
+        13
+      ],
       "eigenschaften": {
         "von": "106,13",
         "bis": "112,13",
@@ -2237,7 +2243,10 @@
     {
       "name": "kraehen",
       "typ": "tier",
-      "feld": [20, 12],
+      "feld": [
+        20,
+        12
+      ],
       "eigenschaften": {
         "von": "20,12",
         "bis": "26,12",
@@ -2247,7 +2256,10 @@
     {
       "name": "reh",
       "typ": "tier",
-      "feld": [104, 14],
+      "feld": [
+        104,
+        14
+      ],
       "eigenschaften": {
         "von": "104,14",
         "bis": "104,14",
@@ -2258,7 +2270,10 @@
     {
       "name": "frauMitPferden",
       "typ": "statist",
-      "feld": [23, 17],
+      "feld": [
+        23,
+        17
+      ],
       "eigenschaften": {
         "tun": "beobachtet die wilden Pferde auf der Weide",
         "wann": "tag",
@@ -2266,29 +2281,12 @@
       }
     },
     {
-      "name": "verkaeuferin",
-      "typ": "statist",
-      "feld": [95, 22],
-      "eigenschaften": {
-        "tun": "verkauft ihren Dachboden auf dem Hof",
-        "wann": "tag",
-        "sagt": "statist.wegMapleCedar.landstrasse.verkaeuferin"
-      }
-    },
-    {
-      "name": "kundeMitLampe",
-      "typ": "statist",
-      "feld": [94, 21],
-      "eigenschaften": {
-        "tun": "hält eine alte Lampe gegen das Licht",
-        "wann": "tag",
-        "sagt": "statist.wegMapleCedar.landstrasse.kundeMitLampe"
-      }
-    },
-    {
       "name": "wildpferde",
       "typ": "tier",
-      "feld": [24, 22],
+      "feld": [
+        24,
+        22
+      ],
       "eigenschaften": {
         "verhalten": "ausweichen",
         "von": "20,21",
@@ -2298,11 +2296,41 @@
     {
       "name": "eichhoernchen",
       "typ": "tier",
-      "feld": [72, 20],
+      "feld": [
+        72,
+        20
+      ],
       "eigenschaften": {
         "verhalten": "flitzen",
         "von": "70,19",
         "bis": "76,20"
+      }
+    },
+    {
+      "name": "wanderin",
+      "typ": "statist",
+      "feld": [
+        85,
+        16
+      ],
+      "eigenschaften": {
+        "von": "80,16",
+        "bis": "92,16",
+        "tun": "wandert nach Cedar Creek",
+        "wann": "tag",
+        "sagt": "statist.wegMapleCedar.landstrasse.wanderin"
+      }
+    },
+    {
+      "name": "hundefuehrer",
+      "typ": "statist",
+      "feld": [72, 18],
+      "eigenschaften": {
+        "von": "68,18",
+        "bis": "76,18",
+        "tun": "führt einen Hund, der schräg über die Wiese zieht",
+        "wann": "tag",
+        "sagt": "statist.wegMapleCedar.landstrasse.hundefuehrer"
       }
     }
   ],

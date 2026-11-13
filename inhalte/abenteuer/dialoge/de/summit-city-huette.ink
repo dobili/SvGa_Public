@@ -1,5 +1,5 @@
 // Ort: Hütte der Großmeisterin in Summit City (Akt 4, Club 8 „Endspielrunde in der Berghütte“):
-// Kaminfeuer, Bücherregal, Endspieldiagramme an der Wand. Figuren: Ward (Clubchefin), Kit und
+// Kaminfeuer, leere Wände, nur ein Thermometer (Roman Kapitel 48). Figuren: Ward (Clubchefin), Kit und
 // Haraldsen (Story-Bibel 27.2, Weltbeschreibung 5.10).
 //
 // Szenen der Bibel (Abschnitt 29): 84 Lektion Opposition (Buch Kapitel 8, Opposition und
@@ -19,6 +19,7 @@ EXTERNAL beginnePartie(begegnung)
 EXTERNAL beginneAufgaben(runde)
 
 VAR held = "Du"
+VAR wardBleibGesehen = false
 VAR wardLaurieGesagt = false
 VAR clubkampfHeimwegGesehen = false
 VAR fernpartieEndspielGesagt = false
@@ -43,6 +44,8 @@ VAR haraldsenGetroffen = false
 - nadelSummitCity > clubkampfSummitCityNadel: -> ward_nach_sieg
 - erinnerungHastingsBestanden and not erinnerungHastingsBesprochen: -> ward_nach_erinnerung
 - not (reiheKitBestanden and reiheHaraldsenBestanden): -> ward_reihe_offen
+- not fernpartieEndspielGesagt: -> abend_fernpartie
+- not wardBleibGesehen: -> ward_bleib
 - not victorKriseGesehen: -> victor_krise
 - not victorSeiteGegeben: -> ward_victor_fort
 - nadelSummitCity == 0 and ausgangSummitCityClubkampf == "niederlage": -> ward_nach_niederlage
@@ -54,7 +57,10 @@ VAR haraldsenGetroffen = false
 ~ wardLektionGesehen = true
 Die Hütte ist aus dunklem Holz. Im Kamin brennt auch im Juli Feuer. An den Wänden hängt nichts außer einem Thermometer. #sprecher:erzaehler
 Eleanor Ward sitzt im Sessel am Feuer und liest den Absatz zu Ende. Dann legt sie ein Lesezeichen ein. #sprecher:erzaehler
-Sie betrachtet dich, wie man eine Stellung betrachtet. Sieben. Wie hast du Big Joe geschlagen? #sprecher:ward
+Sie betrachtet dich, wie man eine Stellung betrachtet. #sprecher:erzaehler
+Sieben. #sprecher:ward
+* [„Ja.“]
+- Wie hast du Big Joe geschlagen? #sprecher:ward
 * [„Grundreihe. Ein Springeropfer, damit der Turm hinunterkommt.“]
 - Und die kleine Castillo? #sprecher:ward
 * [„Ein Läufer, der nicht ging. Dann vierzig Züge Endspiel.“]
@@ -79,15 +85,15 @@ Erst Kit, dann Haraldsen. Bauern, dann Türme. Dann sehen wir weiter. #sprecher:
 - else:
     Jetzt Haraldsen. Er erklärt Türme, als wären es Seilbahnen. Hör trotzdem zu. #sprecher:ward
 }
-+ {not erinnerungHastingsBestanden} [„Wie haben Sie Schach lieben gelernt?“]
-    -> ward_erinnerung
++ {wardBleibGesehen and not erinnerungHastingsBestanden} [„Das Heft im Packpapier.“]
+    -> ward_heft
 + [„Bis morgen.“]
     -> END
 
 // Kapitel 48, dritter Abend auf dem Weg hinunter: Die Fernpartie ist auch ein Endspiel.
 === abend_fernpartie ===
 ~ fernpartieEndspielGesagt = true
-Auf dem Weg hinunter gehen in der Stadt die Lichter an. #sprecher:erzaehler
+Am dritten Abend, auf dem Weg hinunter, gehen in der Stadt die Lichter an. #sprecher:erzaehler
 * [„Die Fernpartie. Das ist auch ein Endspiel.“]
 - Ein Turm gegen zwei Springer. Und Bauern. Ich habe hundertsechzig Jahre darauf gestarrt. #sprecher:ambrose
 * [„Kannst du es gewinnen?“]
@@ -103,6 +109,7 @@ Ohne ihn spielen wir nicht. Ich will, dass er zusieht. #sprecher:ward
 
 === ward_clubkampf ===
 {not wardLaurieGesagt: -> ward_laurie}
+Du musst nicht gewinnen. Ein Remis genügt für die Nadel. #sprecher:ward
 Ich vereinfache. Ich tausche, was sich tauschen lässt. Die meisten wollen im Mittelspiel gewinnen, weil sie das Ende fürchten. #sprecher:ward
 Was willst du? #sprecher:ward
 + [„Das Ende.“]
@@ -134,7 +141,8 @@ Sie führt dich dorthin, wo sie zu Hause ist. Und du gehst mit. #sprecher:ambros
 * [„Ja.“]
 - Weißt du, was du tust? #sprecher:ambrose
 * [„Ich hab es geprüft, so gut ich kann.“]
-- Er lacht leise. Dann sage ich nichts mehr. #sprecher:ambrose #stimmung:lacht
+- Er lacht leise. #sprecher:erzaehler
+Dann sage ich nichts mehr. #sprecher:ambrose #stimmung:lacht
 -> END
 
 === ward_nach_niederlage ===
@@ -149,7 +157,8 @@ Noch einmal, wenn du es weißt. Nicht vorher. #sprecher:ward
 === ward_nach_sieg ===
 ~ clubkampfSummitCityNadel = nadelSummitCity
 {ausgangSummitCityClubkampf == "remis":
-    Remis. Ich habe bis zum letzten Bauern gespielt, und du auch. Das ist mehr wert, als du denkst. #sprecher:ward
+    Remis. Bis zum letzten Bauern. #sprecher:ward
+    Sie nimmt den Silbergipfel vom Kaminsims. Ein Remis genügt. #sprecher:erzaehler
     -> ward_nadel
 }
 Sie spielt es zu Ende, jeden Zug, bis zum letzten Bauern. Dann lehnt sie sich zurück und sieht dich lange an. #sprecher:erzaehler
@@ -164,13 +173,15 @@ Dass du gezählt hast, so gut du konntest, und dann gegangen bist. #sprecher:erz
 Du hast gehofft. #sprecher:ward
 * [„Ja.“]
 - In einem Endspiel. Ich habe vierzig Jahre geglaubt, im Endspiel gebe es nichts zu hoffen. Nur zu wissen. #sprecher:ward
-Sie lächelt, zum zweiten Mal in sechs Tagen. Da siehst du, wie alt man werden kann, ohne fertig zu sein. #sprecher:ward
+{erinnerungHastingsBesprochen:Sie lächelt, zum zweiten Mal in sechs Tagen.|Dann lächelt sie. Es macht sie zwanzig Jahre jünger.} #sprecher:erzaehler
+Da siehst du, wie alt man werden kann, ohne fertig zu sein. #sprecher:ward
 -> ward_nadel
 
 === ward_nadel ===
 Sie steckt dir die Nadel an. Die achte. #sprecher:erzaehler #klang:fanfare
 Victor klatscht, allein, dreimal, ungeschickt. Dann Mama, Kit und Mr. Haraldsen. #sprecher:erzaehler
-In der Tür steht Juno, keuchend. Acht! Acht! Ich hab eine Seite frei gelassen! #sprecher:juno #stimmung:froh
+In der Tür steht Juno, keuchend. #sprecher:erzaehler
+Acht! Acht! Ich hab eine Seite frei gelassen! #sprecher:juno #stimmung:froh
 * [„Es war keine schöne Partie.“]
 - Sie war makellos. #sprecher:ambrose
 Fast. Ein, zwei Züge waren ungenau. Aber sie war schön. Ich wusste nicht, dass etwas so Stilles schön sein kann. #sprecher:ambrose #stimmung:froh
@@ -179,8 +190,8 @@ Ich lerne noch. Stell dir das vor. #sprecher:ambrose #stimmung:lacht
 
 === ward_alltag ===
 {~Ein Endspiel ist eine Wahrheit. Man kann sie nicht wegreden.|Tee? Die Kanne hat einen Sprung. Sie hält trotzdem seit vierzig Jahren.|Ich habe einmal sieben Stunden um einen halben Punkt gespielt. Es hat sich gelohnt.} #sprecher:ward
-+ {not erinnerungHastingsBestanden} [„Wie haben Sie Schach lieben gelernt?“]
-    -> ward_erinnerung
++ {wardBleibGesehen and not erinnerungHastingsBestanden} [„Das Heft im Packpapier.“]
+    -> ward_heft
 + {nadelSummitCity > 0 and nadelSummitCity < 3} [„Revanche um eine bessere Nadel?“]
     Gern. Aber diesmal bis zum letzten Bauern. #sprecher:ward
     ~ beginnePartie("summitCity.clubkampf")
@@ -191,13 +202,21 @@ Ich lerne noch. Stell dir das vor. #sprecher:ambrose #stimmung:lacht
 // ---------------------------------------------------------------- Erinnerung Hastings 1895 (Szene 85)
 
 === ward_erinnerung ===
-// Kapitel 49: Am vierten Abend lässt Ward den Helden nicht gehen. Erst Laurie, dann Hastings.
+-> ward_bleib
+
+// Gutachten M2.1, Roman Kapitel 49: der vierte Abend als Pflicht, nach beiden Reihen und vor Victors
+// Partie; Ward bittet zu bleiben, der Held fragt nicht.
+=== ward_bleib ===
+~ wardBleibGesehen = true
 Bleib. Unten ist heute das Drachenfest. Die halbe Stadt spielt mit einer Figur, die es nicht gibt. #sprecher:ward
 Big Joe hat mich angerufen. Da komme ein Kind, das zählt, bevor es schlägt, und trotzdem opfert. Das Kind sei von Laurie. #sprecher:ward
 Ich habe sie in neunzehn Zügen geschlagen. Sie war die Beste, die ich in dem Jahr gesehen hatte. Ich habe es ihr nicht gesagt. #sprecher:ward
 * [„Sie ist unten. In der Stadt.“]
 - Ich weiß. Sie steckt die Hände noch immer in die Ärmel. Ich werde es ihr sagen, bevor ihr fahrt. #sprecher:ward
 Es ist dreißig Jahre zu spät. Aber man macht manche Züge trotzdem noch. #sprecher:ward
+-> ward_heft
+
+=== ward_heft ===
 Sie holt ein dünnes Heft aus dem Regal, mit einem Umschlag aus Packpapier. #sprecher:erzaehler #musik:hastings
 Hastings, 1895. Ein alter Mann namens Steinitz. Er war Weltmeister gewesen, und alle sagten, er sei fertig. Rate. Du hast Weiß. #sprecher:ward
 + [Die Partie spielen]
@@ -212,7 +231,7 @@ Hastings, 1895. Ein alter Mann namens Steinitz. Er war Weltmeister gewesen, und 
 Ein Turm, der hängt und hängt und nicht geschlagen werden darf, weil dahinter jedes Mal etwas Schlimmeres wartet. #sprecher:erzaehler
 * [„Das ist kein Endspiel.“]
 - Nein. Das ist ein Angriff, wie ihn sich ein Endspieler ausdenkt. Er war neunundfünfzig. #sprecher:ward
-Zum ersten Mal lächelt sie. Es macht sie zwanzig Jahre jünger. #sprecher:erzaehler
+{ausgangSummitCityClubkampf == "":Zum ersten Mal lächelt sie.|Sie lächelt.} Es macht sie zwanzig Jahre jünger. #sprecher:erzaehler
 Achtzehnhundertfünfundneunzig. Neunundzwanzig Jahre nach mir. #sprecher:ambrose
 Ich dachte, danach hätten sie nur noch gerechnet. Brückenbauer, überall. Und sie spielen noch schöner. Schöner als wir. #sprecher:ambrose
 * [„Macht dich das traurig?“]
@@ -245,7 +264,8 @@ Sein Telefon klingelt. Auf dem Bildschirm steht „Vater“. Er sieht darauf, dr
 Es hat gesagt, plus zwei Komma eins. Die ganze Zeit. Ich hab doch gemacht, was es gesagt hat. #sprecher:victor #stimmung:muede
 Er steht auf. Der Stuhl bleibt stehen. Er ist zu gut erzogen, um einen Stuhl umzuwerfen. #sprecher:erzaehler
 Draußen ruft der Mann im grauen Anzug, dann rennende Schritte auf dem Pfad. Aufwärts. Nicht hinunter. #sprecher:erzaehler #pause:2
-Ward stellt den schwarzen König zurück. Er spielt, als wäre er nicht da. #sprecher:ward
+Ward hebt den schwarzen König auf und stellt ihn zurück. #sprecher:erzaehler #pause
+Er spielt, als wäre er nicht da. #sprecher:ward
 * [„Er hat die Brücke gesehen. Er wusste es.“]
 - Natürlich wusste er es. Er ist der Begabteste, den ich in zwanzig Jahren hier oben hatte. #sprecher:ward
 Er hat sich selbst nicht geglaubt. Jemand hat ihm sehr gründlich beigebracht, sich nicht zu glauben. #sprecher:ward
@@ -267,7 +287,7 @@ Worauf wartest du? Ich bin vierundsechzig. Ich renne keinem mehr nach. #sprecher
 {not kitGetroffen:
     ~ kitGetroffen = true
     Am Fenster sitzt ein Mädchen in Wanderschuhen und zählt Felder mit dem Finger. #sprecher:erzaehler
-    Kit. Fünfzehn. Mein Vater ist Bergführer, ich bin Wards Schülerin. #sprecher:kit
+    Kit. Ward sagt, ich soll dir die Bauern zeigen. Sie sagt nie bitte. #sprecher:kit
 }
 Der Bauer läuft, der König rennt. Wer ist schneller? Zähl. Wenn der König in das Quadrat kommt, hat er ihn. #sprecher:kit
 Quadrat, Opposition, ein Tempo in Reserve. Meine Aufgaben sind klein. Aber gemein. #sprecher:kit
@@ -303,6 +323,7 @@ Quadrat, Opposition, ein Tempo in Reserve. Meine Aufgaben sind klein. Aber gemei
     Haraldsen. Ich fahre die Seilbahn, seit sie gebaut wurde. Und ich spiele Turmendspiele, seit ich denken kann. #sprecher:haraldsen
 }
 Ein Turm hinter dem Freibauern. Wie ein Seil hinter der Gondel. Er schiebt, und er hält, beides zugleich. #sprecher:haraldsen
+Und eine Stellung, die nenne ich die Brücke. Die baust du, dann kommst du hinüber. #sprecher:haraldsen
 Philidor, Lucena. Klingen wie Gipfel. Sind auch welche. #sprecher:haraldsen
 + [„Ich bin bereit.“]
     ~ beginneAufgaben("summitCity.reiheHaraldsen")
@@ -318,19 +339,15 @@ Philidor, Lucena. Klingen wie Gipfel. Sind auch welche. #sprecher:haraldsen
 // ---------------------------------------------------------------- Gegenstände
 
 === pokal ===
-Auf dem Regal steht ein Pokal: „Landesmeisterin 1985 – E. Ward“. Daneben ein Foto vom Gipfel. #sprecher:erzaehler
-{wardLektionGesehen:
-    Damals hatte ich noch keine grauen Haare. Nur einen Turm mehr. #sprecher:ward
-}
+An der Wand hängt ein Thermometer. Sonst nichts. Keine Pokale. #sprecher:erzaehler
 -> END
 
 === kaminfeuer ===
-{~Das Feuer knackt. Daneben stapelt sich Holz bis unter die Decke.|Über dem Kamin hängt ein Diagramm: König und Bauer gegen König. Darunter steht „Opposition!“.|Eine Teekanne mit Sprung steht warm auf dem Kaminsims.} #sprecher:erzaehler
+{~Das Feuer knackt. Daneben stapelt sich Holz bis unter die Decke.|Auf dem Kaminsims steht eine Teekanne mit Sprung. Darüber ist die Wand leer.|Im Juli brennt hier ein Feuer. Es ist das Einzige, das Ward schmückt.} #sprecher:erzaehler
 -> END
 
-// >>> Runde 6 (mittel-4)
 === foto ===
-In der Vitrine steht ein altes Foto: eine Mannschaft vor dieser Hütte, die Spieler mit Wollmützen und einem Pokal in der Mitte. #sprecher:erzaehler
+Ein leerer Haken an der Wand. Was hier einmal hing, hat Ward abgenommen. #sprecher:erzaehler
 -> END
 
 === teekanne ===

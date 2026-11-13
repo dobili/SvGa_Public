@@ -34,11 +34,11 @@
     "#.........ee.........pppp.......................ee~~~~~....#",
     "#.........ee.........pppp.......................ee.~~~~~...#",
     "ppppppppppppppppppppppppppppppppppppppppppppppppee.~~~~~...#",
-    "ssssssssssssssssssssssssssssssssssssssssssssssspee.~~~~~...#",
+    "ssssspppppppppppppssssssssssssssssssssssssssssspee.~~~~~...#",
     "ssssssssssssssssssssssssssssssssssssssssssssssspee.~~~~~...#",
     "ssssssssssssssssssssssssssssssssssssssssssssssspee..~~~~~..#",
-    "ppppppppppppppppppppppppppppppbbbbbbbbbbbbbbbbbpee..~~~~~..#",
-    "#pp..........................pbbbbbbbbbbbbbbbbbpee..~~~~~..#",
+    "ppppssssssssssssssspppppppppppbbbbbbbbbbbbbbbbbpee..~~~~~..#",
+    "#pp.ppppppppppppppp..........pbbbbbbbbbbbbbbbbbpee..~~~~~..#",
     "#pp..........................pbbbbbbbbbbbbbbbbbpee..~~~~~..#",
     "#p...........................pbbbbbbbbbbbbbbbbbpee..~~~~~..#",
     "#p...........................pppppppppppppppppppee...~~~~~.#",
@@ -90,6 +90,13 @@
       "id": "bibliothek",
       "bauteil_ok": true
     },
+    { "moebel": "rv5Bahnhofsuhr", "auf": "bibliothek", "versatz": [-99, -24] },
+    { "moebel": "sd6Schilf", "feld": [51, 10] },
+    { "moebel": "sd6Schilf", "feld": [50, 12] },
+    { "moebel": "sd6Schilf", "feld": [50, 17] },
+    { "moebel": "n5Teleskop", "feld": [45, 12], "wenn": "maeEingeladen und nicht sternennachtGesehen und nadelCedarCreek == 0" },
+    { "moebel": "rv8Plane", "feld": [46, 17], "wenn": "maeEingeladen und nicht sternennachtGesehen und nadelCedarCreek == 0" },
+    { "moebel": "rv8Plane", "feld": [47, 17], "wenn": "maeEingeladen und nicht sternennachtGesehen und nadelCedarCreek == 0" },
     {
       "moebel": "mfLaterne",
       "feld": [19, 16],
@@ -453,6 +460,13 @@
       "feld": [21, 24],
       "bauteil_ok": true
     },
+    { "moebel": "cc4Hecke", "feld": [5, 25] },
+    { "moebel": "cc4Hecke", "feld": [7, 25] },
+    { "moebel": "cc4Hecke", "feld": [9, 25] },
+    { "moebel": "cc4Hecke", "feld": [11, 25] },
+    { "moebel": "cc4Hecke", "feld": [13, 25] },
+    { "moebel": "cc4Hecke", "feld": [15, 25] },
+    { "moebel": "cc4Hecke", "feld": [17, 25] },
     {
       "moebel": "cc8HeckeSenkrecht",
       "feld": [21, 26],
@@ -522,7 +536,7 @@
     },
     {
       "moebel": "cc7Picknicktisch",
-      "feld": [37, 28]
+      "feld": [36, 32]
     },
     {
       "moebel": "cc7Fussbruecke",
@@ -594,11 +608,11 @@
     },
     {
       "moebel": "cc12SchuppenRot",
-      "feld": [43, 9]
+      "feld": [43, 9], "versatz": [0, -8]
     },
     {
       "moebel": "cc12SchuppenBraun",
-      "feld": [44, 43]
+      "feld": [44, 43], "versatz": [0, -8]
     },
     {
       "moebel": "cc8HeckeSenkrecht",
@@ -741,7 +755,7 @@
     },
     {
       "name": "zwillinge",
-      "feld": [23, 24]
+      "feld": [22, 23]
     },
     {
       "name": "kettering",
@@ -923,7 +937,7 @@
     {
       "name": "fahrgast",
       "typ": "statist",
-      "feld": [42, 28],
+      "feld": [39, 28],
       "eigenschaften": {
         "tun": "wartet mit einer Tasche an der Haltestelle",
         "wann": "tag"

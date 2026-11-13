@@ -189,26 +189,6 @@
       "eigenschaften": {
         "verhalten": "fliegen"
       }
-    },
-    {
-      "name": "touristMitKarte",
-      "typ": "statist",
-      "feld": [6, 10],
-      "eigenschaften": {
-        "tun": "liest das Schild über der Theke",
-        "wann": "tag",
-        "sagt": "statist.ghostTown.saloon.touristMitKarte"
-      }
-    },
-    {
-      "name": "touristinMitHut",
-      "typ": "statist",
-      "feld": [13, 8],
-      "eigenschaften": {
-        "tun": "probiert einen Cowboyhut an",
-        "wann": "tag",
-        "sagt": "statist.ghostTown.saloon.touristinMitHut"
-      }
     }
   ],
   "variante": "b"

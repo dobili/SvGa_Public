@@ -11,7 +11,7 @@
  "tilewidth": 16,
  "tileheight": 16,
  "nextlayerid": 5,
- "nextobjectid": 30,
+ "nextobjectid": 31,
  "layers": [
   {
    "id": 1,
@@ -168,10 +168,10 @@
     0,
     0,
     0,
-    0,
-    0,
-    0,
     1,
+    0,
+    0,
+    0,
     0,
     0,
     0,
@@ -335,10 +335,10 @@
     2,
     2,
     2,
-    2,
-    2,
-    2,
     0,
+    2,
+    2,
+    2,
     2,
     2,
     2,
@@ -528,7 +528,7 @@
      "id": 1,
      "name": "start",
      "type": "ausloeser",
-     "x": 112,
+     "x": 64,
      "y": 144,
      "width": 16,
      "height": 16,
@@ -546,7 +546,7 @@
      "id": 2,
      "name": "waschsalonAusgang",
      "type": "ausloeser",
-     "x": 112,
+     "x": 64,
      "y": 160,
      "width": 16,
      "height": 16,
@@ -591,7 +591,7 @@
      "name": "automat",
      "type": "ausloeser",
      "x": 176,
-     "y": 80,
+     "y": 112,
      "width": 16,
      "height": 16,
      "rotation": 0,
@@ -601,8 +601,8 @@
      "id": 7,
      "name": "boateng",
      "type": "figur",
-     "x": 128,
-     "y": 96,
+     "x": 160,
+     "y": 80,
      "width": 16,
      "height": 16,
      "rotation": 0,
@@ -612,7 +612,7 @@
      "id": 8,
      "name": "kundin",
      "type": "statist",
-     "x": 160,
+     "x": 112,
      "y": 112,
      "width": 16,
      "height": 16,
@@ -901,19 +901,42 @@
     },
     {
      "id": 20,
-     "name": "cc4AutomatLinks",
+     "name": "cc13Radio",
      "type": "moebel",
-     "x": 192,
-     "y": 64,
+     "x": 184,
+     "y": 28,
      "width": 16,
-     "height": 64,
+     "height": 16,
      "rotation": 0,
      "visible": true,
      "properties": [
       {
        "name": "tiefe",
        "type": "int",
-       "value": 120
+       "value": 57
+      },
+      {
+       "name": "kollision",
+       "type": "bool",
+       "value": false
+      }
+     ]
+    },
+    {
+     "id": 21,
+     "name": "cc7AutomatFront",
+     "type": "moebel",
+     "x": 176,
+     "y": 64,
+     "width": 32,
+     "height": 48,
+     "rotation": 0,
+     "visible": true,
+     "properties": [
+      {
+       "name": "tiefe",
+       "type": "int",
+       "value": 104
       },
       {
        "name": "kollision",
@@ -923,7 +946,7 @@
      ]
     },
     {
-     "id": 21,
+     "id": 22,
      "name": "cc4Falttisch",
      "type": "moebel",
      "x": 64,
@@ -946,11 +969,11 @@
      ]
     },
     {
-     "id": 22,
-     "name": "cc4Falttisch",
+     "id": 23,
+     "name": "crTheke",
      "type": "moebel",
-     "x": 96,
-     "y": 80,
+     "x": 144,
+     "y": 96,
      "width": 32,
      "height": 32,
      "rotation": 0,
@@ -959,7 +982,7 @@
       {
        "name": "tiefe",
        "type": "int",
-       "value": 104
+       "value": 120
       },
       {
        "name": "kollision",
@@ -969,7 +992,7 @@
      ]
     },
     {
-     "id": 23,
+     "id": 24,
      "name": "cc4Waeschekorb",
      "type": "moebel",
      "x": 48,
@@ -992,7 +1015,7 @@
      ]
     },
     {
-     "id": 24,
+     "id": 25,
      "name": "rv5Wartebank",
      "type": "moebel",
      "x": 16,
@@ -1015,7 +1038,7 @@
      ]
     },
     {
-     "id": 25,
+     "id": 26,
      "name": "cc12Comicheft",
      "type": "moebel",
      "x": 20,
@@ -1038,11 +1061,11 @@
      ]
     },
     {
-     "id": 26,
+     "id": 27,
      "name": "cc4WaeschekorbGruen",
      "type": "moebel",
-     "x": 64,
-     "y": 112,
+     "x": 144,
+     "y": 128,
      "width": 16,
      "height": 32,
      "rotation": 0,
@@ -1051,7 +1074,7 @@
       {
        "name": "tiefe",
        "type": "int",
-       "value": 136
+       "value": 152
       },
       {
        "name": "kollision",
@@ -1061,7 +1084,7 @@
      ]
     },
     {
-     "id": 27,
+     "id": 28,
      "name": "cc4Pflanze",
      "type": "moebel",
      "x": 192,
@@ -1084,10 +1107,10 @@
      ]
     },
     {
-     "id": 28,
+     "id": 29,
      "name": "sb8GlastuerSued",
      "type": "moebel",
-     "x": 112,
+     "x": 64,
      "y": 160,
      "width": 16,
      "height": 16,
@@ -1107,10 +1130,10 @@
      ]
     },
     {
-     "id": 29,
+     "id": 30,
      "name": "cc4Fussmatte",
      "type": "moebel",
-     "x": 112,
+     "x": 64,
      "y": 147,
      "width": 16,
      "height": 16,

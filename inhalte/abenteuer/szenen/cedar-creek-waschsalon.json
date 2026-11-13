@@ -16,7 +16,7 @@
     "#............#",
     "#............#",
     "#............#",
-    "#######.######"
+    "####.#########"
   ],
   "objekte": [
     {
@@ -94,16 +94,10 @@
       "feld": [
         11,
         1
-      ]
+      ], "id": "regal"
     },
-    {
-      "moebel": "cc4AutomatLinks",
-      "feld": [
-        12,
-        4
-      ],
-      "bauteil_ok": true
-    },
+    { "moebel": "cc13Radio", "auf": "regal" },
+    { "moebel": "cc7AutomatFront", "feld": [11, 4] },
     {
       "moebel": "cc4Falttisch",
       "feld": [
@@ -112,14 +106,7 @@
       ],
       "id": "platte"
     },
-    {
-      "moebel": "cc4Falttisch",
-      "feld": [
-        6,
-        5
-      ],
-      "id": "platte2"
-    },
+    { "moebel": "crTheke", "feld": [9, 6], "id": "tresen" },
     {
       "moebel": "cc4Waeschekorb",
       "feld": [
@@ -146,8 +133,8 @@
     {
       "moebel": "cc4WaeschekorbGruen",
       "feld": [
-        4,
-        7
+        9,
+        8
       ]
     },
     {
@@ -160,7 +147,7 @@
     {
       "moebel": "sb8GlastuerSued",
       "feld": [
-        7,
+        4,
         10
       ],
       "an_wand": true
@@ -168,7 +155,7 @@
     {
       "moebel": "cc4Fussmatte",
       "feld": [
-        7,
+        4,
         9
       ],
       "versatz": [
@@ -181,7 +168,7 @@
     {
       "name": "start",
       "feld": [
-        7,
+        4,
         9
       ],
       "eigenschaften": {
@@ -191,7 +178,7 @@
     {
       "name": "waschsalonAusgang",
       "feld": [
-        7,
+        4,
         10
       ]
     },
@@ -222,7 +209,7 @@
       "name": "automat",
       "feld": [
         11,
-        5
+        7
       ]
     }
   ],
@@ -230,8 +217,8 @@
     {
       "name": "boateng",
       "feld": [
-        8,
-        6
+        10,
+        5
       ]
     }
   ],
@@ -240,7 +227,7 @@
       "name": "kundin",
       "typ": "statist",
       "feld": [
-        10,
+        7,
         7
       ],
       "eigenschaften": {

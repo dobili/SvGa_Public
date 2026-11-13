@@ -9,6 +9,8 @@
  * Bildausschnitts steht.
  * Abhängigkeiten: Phaser, figurbilder.ts.
  */
+import { rahmenzahl, setzeSitzend } from "./figurensitz";
+import { sitzbild } from "./sitzrichtung";
 import Phaser from "phaser";
 import { passtZurStunde, statistenbild, type Belebung, type Feld } from "./belebung";
 import {
@@ -129,6 +131,7 @@ export class Belebungsschicht {
     if (eigen) {
       erzeugeLaufanimationen(this.szene, bogen);
       sprite.setOrigin(0.5, fussUrsprungY(sprite, this.kachel));
+      if (v.sitzt) setzeSitzend(sprite, v.sitzt);
     }
     this.fuegeHinzu(v, sprite, eigen ? bogen : null, this.neueSperre());
   }
@@ -151,8 +154,9 @@ export class Belebungsschicht {
       const ansicht = tierAnsicht(sprite.height, this.kachel, v.verhalten === "schwimmen");
       if (ansicht.sichtbar < sprite.height) sprite.setCrop(0, 0, sprite.width, ansicht.sichtbar);
       sprite.setOrigin(0.5, ansicht.ursprungY);
+      sprite.setScale(TIERBILDER[art]?.massstab ?? 1);
       // Große Tiere (Ziege, Kuh) brauchen in der Schar mehr als eine Kachel Abstand.
-      const weite = Math.ceil(sprite.width / this.kachel);
+      const weite = Math.ceil(sprite.displayWidth / this.kachel);
       const d = v.verhalten === "schwimmen" ? schwimmversatz(v.von, v.bis, i, 1) : scharversatz(i);
       // Das erste Tier einer Schar hält den Helden auf (belebungsbewegung.ts, haeltAuf); die
       // übrigen stehen locker darum und bleiben durchlässig, damit eine Schar keinen Weg zustellt.
@@ -216,7 +220,10 @@ export class Belebungsschicht {
     if (!steht(d.b)) d.sprite.anims.play(laufname(d.bogen, d.b.richtung), true);
     else {
       if (d.sprite.anims.isPlaying) d.sprite.anims.stop();
-      d.sprite.setFrame(standbild(d.b.richtung));
+      // Wer sitzt, behält sein Sitzbild (figurensitz.ts), sonst das Standbild der Richtung.
+      d.sprite.setFrame(
+        d.v.sitzt ? sitzbild(rahmenzahl(d.sprite), d.v.sitzt) : standbild(d.b.richtung),
+      );
     }
   }
 

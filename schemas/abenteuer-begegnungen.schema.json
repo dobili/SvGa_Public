@@ -190,7 +190,7 @@
           }
         },
         "momente": {
-          "description": "Partiemomente (Atmosphäre T5 und T11, docs/spiel/23): eine Sprechzeile (text) oder ein Ink-Dialog (dialog, Uhr des Helden hält an) über dem Brett. Ausgelöst, wenn alle Bedingungen in wenn gelten; jeder Moment höchstens einmal je Partie, die Engine wartet nicht. Merkmale: schachGegen (der Held steht im Schach), schachGegeben, damenTausch (die letzten Damen verschwinden), materialMinus3 (der Held fällt auf drei Bauerneinheiten zurück), geschlagen:<figur> (der Gegner schlägt eine Figur des Helden: bauer, springer, laeufer, turm, dame); vor dem Zug des Helden: koeder (ein Bauer ist schlagbar, danach setzt der Gegner in höchstens zwei Zügen matt), turmopfer (ein Turm kann neben den gegnerischen König ziehen und ginge im Abtausch verloren)",
+          "description": "Partiemomente (Atmosphäre T5 und T11, docs/spiel/23): eine Sprechzeile (text) oder ein Ink-Dialog (dialog, Uhr des Helden hält an) über dem Brett. Ausgelöst, wenn alle Bedingungen in wenn gelten; jeder Moment höchstens einmal je Partie, die Engine wartet nicht. Merkmale: schachGegen (der Held steht im Schach), schachGegeben, damenTausch (die letzten Damen verschwinden), materialMinus3 (der Held fällt auf drei Bauerneinheiten zurück), geschlagen:<figur> (der Gegner schlägt eine Figur des Helden: bauer, springer, laeufer, turm, dame); vor dem Zug des Helden: koeder (ein Bauer ist schlagbar, danach setzt der Gegner in höchstens zwei Zügen matt), turmopfer (ein Turm kann neben den gegnerischen König ziehen und ginge im Abtausch verloren); nach dem letzten Halbzug: opposition (die ziehende Seite stellt die Könige in Opposition, Kapitel 8), gabel (die gezogene Figur greift zwei lohnende gegnerische Figuren an, Kapitel 1); beide auch mit Seite: …Gegeben nach einem Zug des Helden, …Gegen nach einem Zug des Gegners",
           "type": "array",
 
           "items": {
@@ -219,7 +219,7 @@
                   },
                   "merkmal": {
                     "type": "string",
-                    "pattern": "^(schachGegen|schachGegeben|damenTausch|materialMinus3|koeder|turmopfer|geschlagen:(bauer|springer|laeufer|turm|dame))$"
+                    "pattern": "^(schachGegen|schachGegeben|damenTausch|materialMinus3|koeder|turmopfer|opposition|oppositionGegeben|oppositionGegen|gabel|gabelGegeben|gabelGegen|geschlagen:(bauer|springer|laeufer|turm|dame))$"
                   },
                   "uhrUnter": {
                     "description": "Sekunden auf der Uhr des Helden: nur wenn weniger übrig sind (Partie mit Uhr)",

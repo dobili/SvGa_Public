@@ -19,6 +19,9 @@ TEXTE = Path(__file__).resolve().parents[2] / "inhalte" / "abenteuer" / "texte" 
 # Mindestzahlen je Außenkarte: (Statisten, davon ansprechbar, Tiere)
 STADT = (12, 6, 4)
 WEG = (4, 3, 6)
+# Ausnahme von Regel 10.53: Ghost Town ist seit hundert Jahren leer, nur Mr. Pruitt spricht (Roman,
+# Kapitel 56; Entscheidung des Hauptchats zum Gutachten M3.2, 13.11.2026). Tiere bleiben.
+MENSCHENLEER = {"ghostTown.aussen"}
 
 
 def _zaehle(szene: dict) -> tuple[int, int, int]:
@@ -61,7 +64,7 @@ def pruefe_belebung(szene: dict, art_des_orts: str | None, stadtkarte: bool, tex
     Sonderfall: Innenräume, Erinnerungen und Plätze einer Stadt prüft nur ``pruefe_saetze``.
     """
     befunde = pruefe_saetze(szene, texte)
-    if szene.get("art") != "aussen":
+    if szene.get("art") != "aussen" or szene.get("karte") in MENSCHENLEER:
         return befunde
     if stadtkarte:
         soll, wort = STADT, "Stadt"

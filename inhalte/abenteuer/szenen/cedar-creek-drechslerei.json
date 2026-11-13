@@ -60,7 +60,7 @@
       ]
     },
     {
-      "moebel": "cc4Holzregal",
+      "moebel": "pd6Werkzeugschrank",
       "feld": [
         8,
         1
@@ -81,6 +81,8 @@
         1
       ]
     },
+    { "moebel": "pd9Werkbank", "feld": [10, 6], "id": "drechselbank" },
+    { "moebel": "cc4Spaene", "feld": [10, 9] },
     {
       "moebel": "cc4Hocker",
       "feld": [

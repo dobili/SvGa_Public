@@ -2,7 +2,7 @@
   "karte": "mapleFalls.diner",
   "datei": "karten/maple-falls-diner.json",
   "art": "innen",
-  "beschreibung": "Das Falls Diner an der Birch Lane, ein Diner wie aus den Fünfzigern: rote Wände, weiße Fliesen. Im Norden liegt hinter einer echten Wand die Großküche; in ihrer Wandfläche zum Gastraum die Durchreiche (eine Öffnung mit Ablage, durch die man in die helle Küche sieht), daneben die Pinnwand mit den gelösten Tischsets, das Foto von der Eröffnung der Schule 1962 und rechts die Küchentür. Davor die lange rote Bar: Die Gäste sitzen auf vier roten Hockern an ihrer Nordseite, mit dem Rücken zur Küchenwand; das Personal steht südlich hinter der Bar und geht am Ostende an der Durchreiche vorbei zur Küchentür. Auf der Bar steht die Kaffeemaschine, zum Personal gedreht. Am Westende der Bar die alte Kassentheke. Im Eingang liegt ein rot gemusterter Teppich. Links unten zwei Sitznischen mit runden Tischen zwischen gepolsterten roten Bänken mit hoher Lehne, links oben die Spielautomaten-Ecke mit Bildern, eine dritte Nische vor der Wand der Toiletten; in dieser Wand die Türen zu zwei Toiletten. In der Küche zwei Kühlschränke, drei Herde unter drei Hauben, Grillplatte, Fritteuse, Spültisch und in der Mitte eine Reihe von vier Arbeitstischen aus Edelstahl, auf dem ersten Brotbrett und Milchshake-Mixer; dahinter das Lager mit Vorratsregalen voller Konserven und Kartons. Unten die niedrige Glastür mit Fußmatte. Laufwege: von der Tür über den Teppich nach oben, rechts zu den Hockern an der Bar, links zu den Nischen und zu den Toiletten.",
+  "beschreibung": "Das Falls Diner an der Birch Lane, ein Diner wie aus den Fünfzigern: rote Wände, weiße Fliesen. Im Norden liegt hinter einer echten Wand die Großküche; in ihrer Wandfläche zum Gastraum die Durchreiche (eine Öffnung mit Ablage, durch die man in die helle Küche sieht), daneben die Pinnwand mit den gelösten Tischsets, das Foto von der Eröffnung der Schule 1962 und rechts die Küchentür. Davor die lange rote Bar: Die Gäste sitzen auf vier roten Hockern an ihrer Nordseite, mit dem Rücken zur Küchenwand; das Personal steht südlich hinter der Bar und geht am Ostende an der Durchreiche vorbei zur Küchentür. Auf der Bar steht die Kaffeemaschine, zum Personal gedreht. Am Westende der Bar die alte Kassentheke, daneben auf der Bar der Stapel ungelöster Tischsets mit Schachaufgaben (Roman Kap. 7). Hinter der Bar steht Hector, der Besitzer, mit Blick zu den Gästen. Im Eingang liegt ein rot gemusterter Teppich. Links unten zwei Sitznischen mit runden Tischen zwischen gepolsterten roten Bänken mit hoher Lehne, links oben die Spielautomaten-Ecke mit Bildern, eine dritte Nische vor der Wand der Toiletten; in dieser Wand die Türen zu zwei Toiletten. In der Küche zwei Kühlschränke, drei Herde unter drei Hauben, Grillplatte, Fritteuse, Spültisch und in der Mitte eine Reihe von vier Arbeitstischen aus Edelstahl, auf dem ersten Brotbrett und Milchshake-Mixer; dahinter das Lager mit Vorratsregalen voller Konserven und Kartons. Unten die niedrige Glastür mit Fußmatte. Laufwege: von der Tür über den Teppich nach oben, rechts zu den Hockern an der Bar, links zu den Nischen und zu den Toiletten. Die Türen zu Küche und Toiletten sind wandhohe Innentüren (R005a). Das Diner ist innen 30 breit; der Autor hat den Raum schon gesehen, deshalb wird nach KARTENREGELN 10.75 das Gebäude außen verlängert (Roman: lang und schmal wie ein Wagen), nicht der Raum verkleinert.",
   "wand": "rot",
   "boden": "fliesenWeiss",
   "raster": [
@@ -85,18 +85,18 @@
       "an_wand": true
     },
     {
-      "moebel": "wzTuer",
-      "feld": [27, 8],
+      "moebel": "mf12InnentuerGlas",
+      "feld": [27, 7],
       "an_wand": true
     },
     {
-      "moebel": "wzTuer",
-      "feld": [2, 8],
+      "moebel": "mf12InnentuerHolz",
+      "feld": [2, 7],
       "an_wand": true
     },
     {
-      "moebel": "wzTuer",
-      "feld": [4, 8],
+      "moebel": "mf12InnentuerHolz",
+      "feld": [4, 7],
       "an_wand": true
     },
     {
@@ -211,7 +211,7 @@
     {
       "moebel": "mf4Fussmatte",
       "feld": [7, 14],
-      "versatz": [0, 8]
+      "versatz": [0, 2]
     },
     {
       "moebel": "sb8GlastuerSued",
@@ -355,6 +355,11 @@
     {
       "moebel": "mf5Handwaschbecken",
       "feld": [4, 5]
+    },
+    {
+      "moebel": "mf12Tischsets",
+      "auf": "t0",
+      "versatz": [-5, 2]
     }
   ],
   "ausloeser": [
@@ -370,7 +375,12 @@
       "feld": [7, 15]
     }
   ],
-  "figuren": [],
+  "figuren": [
+    {
+      "name": "hector",
+      "feld": [20, 14]
+    }
+  ],
   "belebung": [
     {
       "name": "kellnerin",

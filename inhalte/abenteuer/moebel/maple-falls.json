@@ -3749,6 +3749,52 @@
       "zustand": "neu",
       "stil": "modern",
       "hinweis": "Bildschirm von Perfect Move auf einem Ständerpult (Roman Kap. 9, Ink bildschirm_pult)"
+    },
+    "mf12InnentuerHolz": {
+      "quelle": "spiel/eigene/innentuer_holz.png",
+      "breite": 16,
+      "hoehe": 48,
+      "kollision": false,
+      "art": "tuer",
+      "zustand": "gebraucht",
+      "stil": "klassisch",
+      "begehbar": true,
+      "begehbar_grund": "hängt in der Wand",
+      "hinweis": "wandhohe Innentür (R005, R005a); Bild aus docs/spiel/auftraege/bildwuensche/innentuer.py"
+    },
+    "mf12InnentuerGlas": {
+      "quelle": "spiel/eigene/innentuer_glas.png",
+      "breite": 16,
+      "hoehe": 48,
+      "kollision": false,
+      "art": "tuer",
+      "zustand": "gebraucht",
+      "stil": "klassisch",
+      "begehbar": true,
+      "begehbar_grund": "hängt in der Wand",
+      "hinweis": "wandhohe Innentür mit Glas, Küche (R005a); Bild aus docs/spiel/auftraege/bildwuensche/innentuer.py"
+    },
+    "mf12Tischsets": {
+      "quelle": "spiel/eigene/tischsets_stapel.png",
+      "breite": 16,
+      "hoehe": 16,
+      "kollision": true,
+      "art": "deko",
+      "zustand": "gebraucht",
+      "stil": "klassisch",
+      "hinweis": "Stapel ungelöster Tischsets (Roman Kap. 7); Bild aus bildwuensche/tischsets.py"
+    },
+    "mf12TischsetGerahmt": {
+      "quelle": "spiel/eigene/tischset_gerahmt.png",
+      "breite": 16,
+      "hoehe": 16,
+      "kollision": false,
+      "art": "bild",
+      "zustand": "neu",
+      "stil": "klassisch",
+      "begehbar": true,
+      "begehbar_grund": "hängt an der Wand",
+      "hinweis": "gelöstes Tischset im Rahmen (Hector Stufe B); Bild aus bildwuensche/tischsets.py"
     }
   }
 }

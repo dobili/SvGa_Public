@@ -45,8 +45,12 @@ VAR initialenGefunden = false
 }
 
 === bibliothekar_sucht ===
+// Szene 7 nach dem Roman, Kapitel 6, und der Dialogprüfung (VM37 bis VM42). Mr. Abernathy duzt
+// {held} (Entscheidung mittel-1: ein Schulkind; das „Sie“ klang fremd). Park: Rollen auf Beton,
+// Enten, der Wasserfall lauter als in der Stadt.
 ~ abernathyGetroffen = true
-Ein alter Herr mit Thermoskanne sucht unter einer Bank, dann in seiner Jackentasche. #sprecher:erzaehler
+Von hier sieht man den Wasserfall zum ersten Mal richtig, ein weißes Band zwischen den Bäumen. #sprecher:erzaehler #klang:wasserfall
+Auf der Nachbarbank klopft ein sehr alter Mann seine Taschen ab. Neben ihm eine Thermoskanne. #sprecher:erzaehler
 Ich hatte doch … nein, das ist meine Brille. Das Brett, das Brett! #sprecher:abernathy
 Abernathy, sehr erfreut. Früher Bibliothekar, heute Sucher von Dingen. #sprecher:abernathy
 Mein Reisebrett. Ich habe es auf einer Bank vergessen. Aber auf welcher? #sprecher:abernathy
@@ -59,7 +63,7 @@ Mein Reisebrett. Ich habe es auf einer Bank vergessen. Aber auf welcher? #sprech
 
 === bibliothekar_wartet ===
 {parkbankBrettGefunden:
-    Ah, Sie haben es gesehen? Und die Stellung? Weiß am Zug, so heißt es, gewinnt eine Figur. #sprecher:abernathy
+    Ah, du hast es gesehen? Und die Stellung? Weiß am Zug, so heißt es, gewinnt eine Figur. #sprecher:abernathy
 - else:
     Eine Bank, ein grünes Brett. Weiter weiß ich leider auch nicht. #sprecher:abernathy
 }
@@ -67,23 +71,22 @@ Mein Reisebrett. Ich habe es auf einer Bank vergessen. Aber auf welcher? #sprech
 
 === bibliothekar_brief ===
 ~ abernathyBrief = true
-Mein Brett! Und Sie haben die Stellung gelöst? Wunderbar. #sprecher:abernathy #stimmung:froh
-Wissen Sie, woher sie stammt? #sprecher:abernathy
-Aus einem Brief der alten Mrs. Whitlock. Ich habe beim Ausräumen geholfen. #sprecher:abernathy
-Der Brief war sehr alt, nur Züge darin. #sprecher:abernathy
-Und eine Unterschrift: A. W. Ich habe alles abgeschrieben. #sprecher:abernathy
-Das ist meine Partie. Die letzte. Ein Stück davon. #sprecher:ambrose #stimmung:traurig #pause
-* [„Ambrose? Was für eine Partie?“]
-    Nicht jetzt. Irgendwann erzähle ich es dir. Versprochen. #sprecher:ambrose
-* [„Danke, Mr. Abernathy.“]
-    Ich danke Ihnen. Behalten Sie die Abschrift. #sprecher:abernathy
-    Sie gehört eher ins Whitlock-Haus als zu mir. #sprecher:abernathy
-- Er hat das abgeschrieben? Mit Bleistift? #sprecher:ambrose #stimmung:lacht
-Ich bin gerührt. Und beleidigt, es fehlt ein Bauer. #sprecher:ambrose
+Mein Brett! Und du hast die Stellung gelöst? Wunderbar. #sprecher:abernathy #stimmung:froh
+Er bedankt sich dreimal, jedes Mal für etwas anderes. #sprecher:erzaehler
+Die Stellung stammt aus einem Brief. Er lag offen auf Margarets Küchentisch, als wir ausgeräumt haben. #sprecher:abernathy
+Nichts als Schachzüge, Zeile um Zeile. Unterschrift: A. W. #sprecher:abernathy
+So etwas wirft man doch nicht einfach weg. Ich habe es abgeschrieben. Behalt die Abschrift. #sprecher:abernathy
+Auf dem Heimweg ist Ambrose lange still. #sprecher:erzaehler #pause
+Er hat das abgeschrieben. Mit Bleistift. Auf einen Zettel. #sprecher:ambrose #stimmung:still #pause
+* [„Kennst du die Stellung?“]
+    Ob ich sie kenne. Es ist meine. Der Anfang. Vier Züge, und im vierten mein Gambit. #sprecher:ambrose #stimmung:still #pause
+* [„Was für eine Partie?“]
+    Eine alte. Frag mich ein andermal, Kind. #sprecher:ambrose #stimmung:still
+- Ich bin gerührt. Und beleidigt. Es fehlt ein Bauer. #sprecher:ambrose
 -> END
 
 === bibliothekar_alltag ===
-{~Heute habe ich nur die Thermoskanne vergessen. Ein guter Tag.|Mrs. Whitlock spielte gern. Nie gegen mich. Gegen ihr altes Brett, sagte sie.|Ein Bibliothekar hört nie auf zu sortieren. Jetzt sortiere ich Enten.} #sprecher:abernathy
+{~Heute habe ich nur die Thermoskanne vergessen. Ein guter Tag.|Margaret spielte jeden Sonntag. Per Post. Ein Zug, eine Briefmarke.|Ein Bibliothekar hört nie auf zu sortieren. Jetzt sortiere ich Enten.} #sprecher:abernathy
 -> END
 
 // ---------------------------------------------------------------- Die Parkbank
@@ -127,15 +130,15 @@ Zähl, Kind. Wer greift an, wer verteidigt? #sprecher:ambrose
 }
 
 === jo_erstes_treffen ===
+// Szene 10 nach dem Roman, Kapitel 7, und der Dialogprüfung (VM52 bis VM56).
 ~ joGetroffen = true
-Auf der Kante der Halfpipe liegt ein zerkratztes Brett. Eine Skaterin sitzt davor. #sprecher:erzaehler
+Auf der Kante der Halfpipe liegt ein Brett, so zerkratzt, dass man die dunklen Felder nur noch erraten kann. Die Figuren stehen schon, mitten in einer Stellung. #sprecher:erzaehler
 Jo. Ich spiele um Limo. #sprecher:skaterJo
 -> jo_angebot
 
 === jo_angebot ===
-Ich stelle eine Stellung auf, du hast ein bisschen Vorteil. Zehn, fünfzehn Züge. #sprecher:skaterJo
-Hältst du ihn, gewinnst du. #sprecher:skaterJo
-Wer verliert, holt Limo. #sprecher:skaterJo
+Fünf Minuten. Eine Partie. Ich spiel nicht von vorn, dauert zu lang. #sprecher:skaterJo
+Du stehst besser. Wer verliert, holt Limo. #sprecher:skaterJo
 * [„Abgemacht.“]
     -> jo_duell
 * [„Ein andermal.“]
@@ -145,12 +148,11 @@ Wer verliert, holt Limo. #sprecher:skaterJo
 === jo_duell ===
 // Stellungsduell aus Abbildung 1.21 (Regelwerk C1, R13), Begegnung in begegnungen.json.
 ~ beginnePartie("mapleFalls.skaterJo")
-Jo stellt die Figuren auf. Schnell, ohne hinzusehen. #sprecher:erzaehler
+Jo dreht das Brett zu dir. Ihre Hände sind schneller als ihre Augen. #sprecher:erzaehler
 -> END
 
 === jo_nach_sieg ===
 Okay, okay. Limo geht auf mich. Noch eine? #sprecher:skaterJo
-Wer im Park gewinnt, gewinnt bald auch im Club. #sprecher:ambrose
 + [„Noch eine.“]
     -> jo_duell
 + [„Gleich.“]
@@ -162,7 +164,7 @@ Wer im Park gewinnt, gewinnt bald auch im Club. #sprecher:ambrose
 - else:
     Limo, bitte. Mit Eis. #sprecher:skaterJo
 }
-Du hast deinen Vorteil verschenkt. Nicht schlimm. Dafür ist der Park da. #sprecher:ambrose
+Du hast vergessen zu fragen, was hängt. #sprecher:ambrose
 + [„Revanche.“]
     -> jo_duell
 + [„Gleich.“]
@@ -176,27 +178,29 @@ Du hast deinen Vorteil verschenkt. Nicht schlimm. Dafür ist der Park da. #sprec
 === jo_limo ===
 ~ limoGefragt = true
 {ausgangMapleFallsSkaterJo == "niederlage":
-    Fünf Minuten, eine Partie. Wer verliert, holt Limo. So ist das hier. #sprecher:skaterJo
+    Wer verliert, holt Limo. So ist das hier. #sprecher:skaterJo
 - else:
     Limo geht eigentlich auf mich. Aber ich bin pleite. Holst du eine? Dann erzähl ich dir was. #sprecher:skaterJo
 }
 Zitrone. Mr. Patel weiß Bescheid, der Kiosk ist gleich da drüben. #sprecher:skaterJo
 + [„Ich hol eine.“]
-    Ich warte. Ich hab ja Zeit, ich bin Skaterin. #sprecher:skaterJo
+    Ich warte. #sprecher:skaterJo
     -> END
 + [„Erst noch eine Partie.“]
     -> jo_duell
 
 === jo_limo_gebracht ===
 ~ limoGebracht = true
-Du reichst Jo die kalte Zitronenlimo. Sie trinkt die halbe Dose auf einmal und setzt sich auf die Kante der Halfpipe. #sprecher:erzaehler
+Du reichst Jo die kalte Zitronenlimo. Sie trinkt die halbe Flasche in einem Zug, setzt sich auf die Kante und lässt die Beine baumeln. #sprecher:erzaehler
 {ausgangMapleFallsSkaterJo == "niederlage":
-    Okay. Weil du so nett bist: Ich greif immer an. Rückwärts zieh ich nicht gern. Ist so. #sprecher:skaterJo
+    Ich greif immer an. Rückwärts zieh ich nicht gern. Ist so. #sprecher:skaterJo #pause
+    Auf dem Board auch nicht. #sprecher:skaterJo
 - else:
     Danke. Du hast mich ja schon geschlagen, also verrat ich nicht mehr viel. #sprecher:skaterJo
     Nur so viel: Rückwärts zieh ich nicht gern. Revanche, wenn ich satt bin. #sprecher:skaterJo
 }
 Eine Limonade für eine Schwäche. Ein guter Handel. #sprecher:ambrose #stimmung:lacht
+Sie lacht, kurz und rau, und wirft dir die leere Flasche zu. #sprecher:erzaehler
 -> END
 
 // ---------------------------------------------------------------- Bushaltestelle
@@ -209,8 +213,9 @@ Eine Limonade für eine Schwäche. Ein guter Handel. #sprecher:ambrose #stimmung
 - ankunftCedarCreekGesehen:
     Der Linienbus nach Cedar Creek fährt jede Stunde. Der Fahrer nickt dir zu. #sprecher:erzaehler #klang:bus
 - else:
-    Der gelbe Schulbus wartet. Coach Delgado winkt mit der Trillerpfeife. #sprecher:erzaehler #klang:bus
-    Juno sitzt schon hinten und hält dir einen Platz frei. #sprecher:erzaehler
+    // Roman, Kapitel 10: {held} und Juno gehen am Freitag zu Fuß, das Team fährt am Samstag mit dem
+    // Bus. Der Bus bleibt hier als Abkürzung; der Ablauf in Cedar Creek bleibt unverändert.
+    Hier hält der Bus nach Cedar Creek. Juno wollte eigentlich zu Fuß gehen, am Fluss entlang. #sprecher:erzaehler #klang:bus
     Ein Wagen ohne Pferde. Ich werde mich nie daran gewöhnen. #sprecher:ambrose
 }
 * [Einsteigen]
@@ -231,10 +236,11 @@ Eine Limonade für eine Schwäche. Ein guter Handel. #sprecher:ambrose #stimmung
     ~ patelGetroffen = true
     Ein kleiner Kiosk mit bunter Markise. Hinter der Theke sortiert ein Mann Zeitschriften. #sprecher:erzaehler
     Willkommen bei Patel! Zeitungen, Limo und Schachkarten für unterwegs. #sprecher:patel #stimmung:froh
-    Wer hier gewinnt oder ein Rätsel knackt, bekommt ein paar Münzen zugesteckt, so ist das in Maple Falls. Bei mir wirst du sie wieder los. #sprecher:patel
+    Münzen gibt es hier fürs Gewinnen. Bei mir wirst du sie wieder los. #sprecher:patel
 }
 {limoGefragt and not limoGebracht and not hatLimo:
     Für Jo? Die mit dem zerkratzten Brett? Die trinkt nur Zitrone. #sprecher:patel
+    Er zählt das Wechselgeld zweimal. Du bist nicht der Erste. Aber die meisten kommen nicht wieder. #sprecher:patel
 }
 ~ oeffneLaden("mapleFalls.kiosk")
 -> END
@@ -246,7 +252,7 @@ Eine Limonade für eine Schwäche. Ein guter Handel. #sprecher:ambrose #stimmung
 - ankunftCedarCreekGesehen:
     Die Landstraße nach Cedar Creek. Du kennst den Weg schon. #sprecher:erzaehler
 - else:
-    Zu Fuß? Gut. Der Bus fährt nachher auch. #sprecher:ambrose
+    Juno wartet am Ortsschild. Zwei Stunden, am Fluss entlang. #sprecher:erzaehler
 }
 -> END
 

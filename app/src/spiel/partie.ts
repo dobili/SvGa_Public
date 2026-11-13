@@ -126,6 +126,11 @@ export interface Partieeinstellung {
      */
     readonly abgelenktAb?: { readonly halbzug: number; readonly faktor: number };
     /**
+     * Schon angewandte Stärkewechsel der Begegnung (Nummern in `staerkeNach`, begegnungen.json):
+     * Ein Dialog in der Partie hat den Gegner stärker gemacht (abenteuer/regeln/staerkewechsel.ts).
+     */
+    readonly staerkeWechsel?: readonly number[];
+    /**
      * Schachvariante eines Nebenschauplatzes (Akt 4, docs/spiel/10, V1): „blind“ blendet die
      * Figuren auf dem Brett aus (Rahmenklasse in app/App.tsx); die Regeln bleiben die normalen.
      */

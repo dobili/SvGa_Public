@@ -95,34 +95,39 @@ Da bist du ja! Gleich geht es los! #sprecher:mae #stimmung:froh
     -> END
 
 === sterne ===
+// Runde 11 (VC77 bis VC81, Roman Kapitel 14): weit, warm, zärtlich. Keine Erklärung der
+// Spielwirkung; die Müdigkeit zeigt sich erst am Morgen am Brett. Ambroses Erinnerung nur, wenn
+// die Hand auf dem Brett liegt (sterne_ambrose). Später: keine Musik, nur Bach, Grillen, Holz;
+// #klang:sternschnuppe (heller Glockenton) bei der ersten, danach #musik:nachtstueck.
 ~ sternennachtGesehen = true
-Ihr liegt auf der Decke und schaut nach oben. Der Bach plätschert, irgendwo quakt ein Frosch. #sprecher:erzaehler
-Da! Und da! Drei auf einmal! #sprecher:mae #stimmung:froh
-Das war ein Flugzeug. #sprecher:dex
-Mrs. Okafor erzählt von den Sternen über Lagos. Es wird spät, dann sehr spät. #sprecher:erzaehler
-Keiner will nach Hause. #sprecher:erzaehler
-// Runde 11 (Roman, Kapitel 14): Ambrose spricht nur, wenn das Brett dabei ist (die Hand auf dem
-// Brett), Mrs. Okafor erzählt von ihrem Onkel. Später: #klang:sternschnuppe (heller Glockenton) und
-// #musik:nachtstueck, sobald mittel-2 sie gebaut hat.
+Am Steg liegen Decken. Mae hat ein Teleskop aufgebaut, das größer ist als sie selbst. #sprecher:erzaehler
+Dex hat eine rote Lampe gebastelt, „damit die Augen sich nicht erschrecken“. Alle paar Minuten geht sie aus. #sprecher:erzaehler
+Mrs. Okafor hatte gesagt, eine halbe Stunde. Das war vor zwei Stunden. #sprecher:erzaehler
+Die da ist Kassiopeia. Sieht aus wie ein W. Und das ist der Große Wagen, und das … #sprecher:mae
+Mae. Du musst nicht alles benennen. #sprecher:dex
+Doch. Sonst weiß man nicht, was man sieht. #sprecher:mae
 * [Die Hand auf das Brett legen]
     Das Brett liegt neben dir auf der Decke, in sein Handtuch gewickelt. #sprecher:erzaehler
     -> sterne_ambrose ->
 * [Nach oben sehen]
     Über den Zedern kommen mehr Sterne heraus, als du je gesehen hast. #sprecher:erzaehler
-- Als ich so alt war wie ihr, hat mein Onkel mir Schach beigebracht. Auf einem Dach in Lagos. #sprecher:okafor
-Er sagte: Geduld, Grace. Die Nacht ist lang, und der Gegner wird müde vor dir. #sprecher:okafor
-Ich habe sechzig Jahre geglaubt, das sei ein Rat fürs Schach. #sprecher:okafor #pause
-* [„Und wofür ist er jetzt?“]
-    Für alles, was lang ist. Nächte, Partien, Leben. #sprecher:okafor
-* [Nichts sagen]
-- 
-Zu meiner Zeit sah man über dem Mississippi mehr Sterne als Wasser. Diese hier sind auch nicht übel. #sprecher:ambrose
-Um Mitternacht gähnt Mrs. Okafor. So spät war ich seit Jahren nicht wach. #sprecher:okafor
-Morgen bin ich bestimmt müde. #sprecher:okafor
+- Da! #sprecher:mae #stimmung:froh
+Das war ein Flugzeug. #sprecher:dex
+Dann ein Strich über den Himmel, hell und schon vorbei. #sprecher:erzaehler #pause
+Hast du dir was gewünscht? #sprecher:juno
+* [Nicken]
+* [Nach oben sehen]
+- Man darf es nicht sagen. #sprecher:mae
+Mrs. Okafor ist aufgestanden und steht hinter euch, die Decke um die Schultern. #sprecher:erzaehler
+Als ich so alt war wie ihr, hat mein Onkel mir Schach beigebracht. Auf einem Dach in Lagos. #sprecher:okafor
+Er sagte: Geduld, Grace. Die Nacht ist lang, und der Gegner wird müde vor dir. #sprecher:okafor #pause
+Ich habe sechzig Jahre geglaubt, das sei ein Rat fürs Schach. #sprecher:okafor #pause:2
+* [Weiter nach oben sehen]
+* [Die Augen schließen]
+- Sie bleibt bis nach Mitternacht. Ihr zählt elf Sternschnuppen. #sprecher:erzaehler
+Dex’ Lampe geht endgültig aus. Niemand vermisst sie. #sprecher:erzaehler
 ~ setzeZustand("cedarCreek.okafor", 1.3, "zustand.schlechtGeschlafen")
-Du hast das nicht geplant, {held}. Es war einfach ein schöner Abend. #sprecher:ambrose
-Aber du wirst es morgen am Brett merken. #sprecher:ambrose
-// Runde 11: Die Nacht verbringen {held} und Juno im Lesesaal (Roman, Kapitel 10 und 14).
+// Die Nacht verbringen {held} und Juno im Lesesaal (Roman, Kapitel 10 und 14).
 ~ nachtImLesesaal = true
 Nach Mitternacht geht ihr hinüber in den Lesesaal. Die Matten liegen zwischen den Regalen. #sprecher:erzaehler
 -> END
@@ -191,21 +196,25 @@ Und du hast heute eine Frau geschlagen, gegen die ich nicht sicher wäre. #sprec
 // Delacroix vor (Geburtsort, Vater Klavierbauer; akt1_befunde.md, Abschnitt 7), ohne es zu nennen.
 // Tunnel aus „sterne“.
 === sterne_ambrose ===
-Sie stehen noch wie früher. Alles andere hat sich verändert: Lichter ohne Flamme, Wagen ohne Pferde. #sprecher:ambrose
+Sie stehen noch wie früher. Alles andere hat sich verändert: Lichter ohne Flamme, Wagen ohne Pferde. #sprecher:ambrose #stimmung:still
 Wo ich geboren bin, saß ich nachts am Kai. Mein Vater baute Klaviere und lieferte sie flussauf aus. Er kam spät. #sprecher:ambrose
 Ich sah hinauf und dachte, ich würde einmal so bekannt wie einer von denen. Einer mit Namen. #sprecher:ambrose
-Eine Fußnote. Sechs Wörter. #sprecher:ambrose #stimmung:traurig
-Antworten kannst du ihm nicht, nicht vor den anderen. Du lässt die Hand auf dem Brett. #sprecher:erzaehler
-->->
+Eine Fußnote. Sechs Wörter. #sprecher:ambrose #stimmung:still #pause:2
+Antworten kannst du ihm nicht, nicht vor den anderen. #sprecher:erzaehler
+* [Die Hand auf dem Brett lassen]
+* [Nach oben sehen]
+- ->->
 
 === fund_schluessel ===
 // Übergreifender Fund E4.2 (Bibel, Szene 23): Auflösung in Riverton bei Mrs. Albescu (Szene 33).
-// gefundenSchluessel setzt die Hülle bei gibFund (regeln/dialogvariablen.ts).
-Im Schilf am Steg glänzt etwas Rostiges: ein großer Schlüssel mit einem Ring aus Messing. #sprecher:erzaehler
+// gefundenSchluessel setzt die Hülle bei gibFund (regeln/dialogvariablen.ts). Runde 11 (VC84,
+// VC85, Roman Kapitel 14): Rosa sagt es einfach, Ambrose schweigt.
+{nachtImLesesaal: Am Morgen liegt Nebel auf dem Bach. #sprecher:erzaehler}
+Im Schilf am Steg glänzt etwas Rostiges: ein großer Schlüssel mit einem runden Griff. #sprecher:erzaehler
+{not rosaGetroffen: Am Ende des Stegs sitzt eine Frau mit Angel. Sie dreht sich nicht um. #sprecher:erzaehler}
 Den hat ein Angler verloren. Vor zwei Jahren schon. #sprecher:rosa
-Nimm ihn ruhig, mir schließt er nichts auf. #sprecher:rosa
+Nimm ihn mit. Vielleicht findest du das Schloss. #sprecher:rosa
 ~ gibFund("schluessel")
-Ein Schlüssel ohne Tür. Irgendwo wartet eine Tür ohne Schlüssel. #sprecher:ambrose
 -> END
 
 === steg_alltag ===
@@ -235,11 +244,10 @@ Der Gegner auch. Ich bin Rosa. #sprecher:rosa
 -> rosa_angebot
 
 === rosa_angebot ===
-Ich stelle dir ein Mattbild auf. Du hast Weiß und einen Vorteil, zehn Züge lang. #sprecher:rosa
-Hältst du ihn, hast du gewonnen. #sprecher:rosa
+Ich stell dir was hin. Du hast Weiß und darfst angreifen. Zehn Züge. Nicht zappeln. #sprecher:rosa
 * [„Abgemacht.“]
     -> rosa_duell
-* [„Später.“]
+* [„Nicht jetzt.“]
     Die Fische warten. Ich auch. #sprecher:rosa
     -> END
 
@@ -253,15 +261,15 @@ Nicht gezappelt. Gut. Noch eine Runde, während die Fische schlafen? #sprecher:r
 Ruhige Hände, ruhiger Kopf. Das hatte ich in deinem Alter nicht. #sprecher:ambrose
 + [„Noch eine.“]
     -> rosa_duell
-+ [„Später.“]
++ [„Nicht jetzt.“]
     -> END
 
 === rosa_nach_niederlage ===
 Gezappelt. Der Vorteil ist weggeschwommen. Noch mal? #sprecher:rosa
-Ein Vorteil ist wie ein Fisch an der Leine. Man muss ihn halten, nicht nur fangen. #sprecher:ambrose
+Ruhig, ruhig. Der König läuft nicht weg. #sprecher:rosa
 + [„Revanche.“]
     -> rosa_duell
-+ [„Später.“]
++ [„Nicht jetzt.“]
     -> END
 
 // ---------------------------------------------------------------- Victor
@@ -274,37 +282,37 @@ Ein Vorteil ist wie ein Fisch an der Leine. Man muss ihn halten, nicht nur fange
 }
 
 === victor_tablet ===
+// Runde 11 (VC74 bis VC76, Roman Kapitel 13): erst sieht man ihn verlieren, dann kommt die Frage;
+// der Riss ist eine gemessene Stille von drei Sekunden (#pause:3). Victor durchgehend kalt; die
+// Porträtfassung „Riss“ für genau eine Zeile gibt es noch nicht (bis dahin muede).
+// Später: #musik:aus, sobald Victor im Bild ist (nur Klicken und Uhr), #musik:victor beim Gehen.
 ~ victorCedarCreekGesehen = true
-An der Bushaltestelle sitzt Victor allein. Auf seinem Tablet leuchtet ein Brett, er spielt gegen das Programm. #sprecher:erzaehler
-Er sieht nicht auf. #sprecher:erzaehler
-* [„Macht dir das eigentlich Spaß?“]
-    Er schweigt lange. #sprecher:erzaehler #pause
-    Das ist keine Frage, die man beim Training stellt. #sprecher:victor #stimmung:muede
-    -> victor_tablet_ende
-* [„Hallo, Victor.“]
-    Hallo. Ich trainiere. #sprecher:victor #stimmung:kalt
-    -> victor_tablet_ende
+An der Haltestelle sitzt jemand. Gerade, die Füße nebeneinander, das Tablet auf den Knien. Das Plakat hängt über ihm. #sprecher:erzaehler
+Er zieht. Das Programm antwortet sofort. Ein leises Klicken, wie ein Fingernagel auf Glas. #sprecher:erzaehler
+* [„Spielst du gegen das Ding?“]
+    Ich trainiere. Mein Vater ist im Rathaus. #sprecher:victor #stimmung:kalt
+    Der Bezirk hat drei Bibliotheken. Er will alle drei. Für Bildschirme. Es ist effizienter. #sprecher:victor #stimmung:kalt
 * [Leise weitergehen]
     -> END
-
-=== victor_tablet_ende ===
-Das Programm auf dem Tablet zieht, ohne zu zögern. Victor verliert die Partie und startet sofort eine neue. #sprecher:erzaehler
-Ambrose sagt kein Wort. Das ist ungewöhnlich für ihn. #sprecher:erzaehler
-// Runde 11 (Roman, Kapitel 13): Victor verliert täglich gegen das Programm; sein Vater will die
-// drei Bibliotheken des Bezirks. Auf dem Weg zum Steg erkennt Ambrose Hale in Victor, ohne es
-// auszusprechen. Später, wenn mittel-2 es gebaut hat: #pause:3 nach der Frage (die drei Sekunden).
+- Auf dem Brett geht es sehr schnell und sehr genau. Er verliert. Langsam, Zug um Zug, gegen etwas, das nie zögert. #sprecher:erzaehler
 * [„Gewinnst du manchmal?“]
     Remis. Einmal im Monat. #sprecher:victor #stimmung:kalt
-    Gegen Schwächere ist ein Remis eine Niederlage, sagt mein Vater. Gegen das hier ist es ein Erfolg. #sprecher:victor
-* [„Was macht dein Vater in Cedar Creek?“]
-    Er ist im Rathaus. Der Bezirk hat drei Bibliotheken. Er will alle drei. #sprecher:victor #stimmung:kalt
-    Für Bildschirme. Es ist effizienter. #sprecher:victor
-* [Aufstehen und gehen]
-- Klick. Klick. Das Programm antwortet sofort, jedes Mal. #sprecher:erzaehler
+    Mein Vater sagt, ein Remis gegen Schwächere ist eine Niederlage. Gegen das hier ist es ein Erfolg. #sprecher:victor
+* [Gehen]
+    -> victor_weg
+- Er tippt auf „Neue Partie“. #sprecher:erzaehler
+* [„Macht dir das eigentlich Spaß?“]
+    Seine Hand bleibt über dem Bildschirm stehen. #sprecher:erzaehler #pause:3
+    Das ist keine Frage, die man beim Training stellt. #sprecher:victor #stimmung:muede
+    Er zieht. Das Programm antwortet. Aber er hat drei Sekunden gebraucht. Du hast mitgezählt. #sprecher:erzaehler
+* [Gehen]
+- -> victor_weg
+
+=== victor_weg ===
 Erst auf dem Weg zum Steg, zwischen den Zedernhecken, hörst du Ambrose wieder. #sprecher:erzaehler
 Er hält den Kopf wie er. Ein wenig schief. Wenn er rechnet. #sprecher:ambrose
 * [„Wie wer?“]
-    Keine Antwort. #sprecher:erzaehler
+    Keine Antwort. #sprecher:erzaehler #pause:2
 * [Nichts sagen]
 - -> END
 

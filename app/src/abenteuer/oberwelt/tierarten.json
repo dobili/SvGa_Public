@@ -35,7 +35,8 @@
       "quelle": "modern-farm/Animals/Ducks/Duck_Green_Head_16x16.png",
       "breite": 32,
       "hoehe": 32,
-      "schnitt": "reihen"
+      "schnitt": "reihen",
+      "massstab": 0.6
     },
     "gans": {
       "quelle": "modern-farm/Animals/Ducks/Duck_White_16x16.png",
@@ -47,7 +48,8 @@
       "quelle": "modern-farm/Animals/Rabbits/Rabbit_Brown_Dark_Ears_16x16.png",
       "breite": 32,
       "hoehe": 32,
-      "schnitt": "reihen"
+      "schnitt": "reihen",
+      "massstab": 0.6
     },
     "schwein": {
       "quelle": "modern-farm/Animals/Pigs/Pig_Pink_16x16.png",

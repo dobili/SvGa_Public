@@ -151,8 +151,9 @@ export class Belebungsschicht {
       const ansicht = tierAnsicht(sprite.height, this.kachel, v.verhalten === "schwimmen");
       if (ansicht.sichtbar < sprite.height) sprite.setCrop(0, 0, sprite.width, ansicht.sichtbar);
       sprite.setOrigin(0.5, ansicht.ursprungY);
+      sprite.setScale(TIERBILDER[art]?.massstab ?? 1);
       // Große Tiere (Ziege, Kuh) brauchen in der Schar mehr als eine Kachel Abstand.
-      const weite = Math.ceil(sprite.width / this.kachel);
+      const weite = Math.ceil(sprite.displayWidth / this.kachel);
       const d = v.verhalten === "schwimmen" ? schwimmversatz(v.von, v.bis, i, 1) : scharversatz(i);
       // Das erste Tier einer Schar hält den Helden auf (belebungsbewegung.ts, haeltAuf); die
       // übrigen stehen locker darum und bleiben durchlässig, damit eine Schar keinen Weg zustellt.

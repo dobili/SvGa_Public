@@ -154,3 +154,37 @@
   background: var(--gold);
   color: var(--navy);
 }
+
+/* Partiemoment (Atmosphäre T5, anbindung/Momentzeile.tsx): Sprechzeile oben über der Hülle,
+   ohne das Brett zu verschieben; Tipp blendet sie aus. */
+.abenteuer-moment {
+  position: fixed;
+  z-index: 20;
+  top: calc(var(--raster) * 1.5);
+  left: calc(var(--raster) * 1.5);
+  right: calc(var(--raster) * 1.5);
+  display: flex;
+  gap: var(--raster);
+  align-items: center;
+  padding: var(--raster) calc(var(--raster) * 1.5);
+  border: 0;
+  border-radius: var(--radius);
+  background: rgba(22, 37, 61, 0.94);
+  color: var(--creme);
+  font: inherit;
+  text-align: left;
+  box-shadow: 0 2px 12px rgba(0, 0, 0, 0.4);
+  animation: abenteuer-moment-ein 0.4s ease-out;
+}
+
+@keyframes abenteuer-moment-ein {
+  from {
+    opacity: 0;
+    transform: translateY(-0.5rem);
+  }
+
+  to {
+    opacity: 1;
+    transform: none;
+  }
+}

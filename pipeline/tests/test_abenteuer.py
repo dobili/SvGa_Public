@@ -113,6 +113,12 @@ def test_querverweise_stimmen():
         if "kapitel" in karte:
             schluessel.append(f"karte.{karte['kennung']}.geschenkt")
         fehler.extend(f"Text {s} fehlt" for s in schluessel if s not in texte)
+    # Partiemomente (Atmosphäre T5): Text und Name des Sprechers stehen in den Spieltexten.
+    for begegnung in _lade("begegnungen.json")["begegnungen"]:
+        for moment in begegnung.get("momente", []):
+            for schluessel in (moment["text"], f"figur.{moment['sprecher']}.name"):
+                if schluessel not in texte:
+                    fehler.append(f"{begegnung['kennung']}: Moment-Text {schluessel} fehlt")
     # Freie Karten (R29) gibt es in karten.json.
     for begegnung in _lade("begegnungen.json")["begegnungen"]:
         for k in begegnung.get("freieKarten", []):

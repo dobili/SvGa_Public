@@ -55,6 +55,28 @@ Hintergrund: `docs/spiel/04_Architektur.md`, Abschnitt 2 und 9.
 - Beispiel: `dialoge/de/maple-falls-dachboden.ink` (Fund des Bretts, Ambrose erwacht, erste Karte,
   Übergang in die erste Partie).
 
+## Partiemomente (`begegnungen.json`, `momente`)
+
+Eine Sprechzeile mit Porträt erscheint mitten in der Partie oben über dem Brett (Atmosphäre T5).
+Sie blockiert nichts, die Engine wartet nicht, und sie verschwindet nach einer Lesedauer oder auf
+Tipp. Jeder Moment kommt höchstens einmal je Partie.
+
+```json
+"momente": [
+  { "wenn": { "zug": 12 }, "sprecher": "ambrose", "text": "moment.clubkampf.zaehl", "klang": "herzschlag" },
+  { "wenn": { "merkmal": "schachGegen" }, "sprecher": "ambrose", "text": "moment.okafor.lassMich", "musik": "aus" }
+]
+```
+
+- `zug`: direkt nach dem n-ten Zug des Helden.
+- `merkmal` gilt für den letzten Halbzug: `schachGegen` (der Held steht im Schach),
+  `schachGegeben`, `damenTausch` (die letzte Dame verschwindet), `materialMinus3` (der Held fällt
+  auf drei Bauerneinheiten Rückstand), `geschlagen:<figur>` (der Gegner schlägt `bauer`,
+  `springer`, `laeufer`, `turm` oder `dame` des Helden).
+- Lösen mehrere Momente zugleich aus, spricht der erste der Liste; die anderen sind verbraucht.
+- `text` steht in `texte/<sprache>.json`, der Name kommt aus `figur.<sprecher>.name`; `klang` und
+  `musik` wirken wie die Dialogtags.
+
 ## Aufgabenrunden (`runden.json`)
 
 - Eine Runde (Ink: `beginneAufgaben("ort.runde")`) nennt Steller (Figur), Buchübungen (`ueb:…`,

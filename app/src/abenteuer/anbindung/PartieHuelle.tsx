@@ -13,7 +13,8 @@
  * Eine beendete Partie lässt sich Zug für Zug nachspielen (◀ ▶ unter dem Brett); so öffnet auch
  * „Meine Partien“ im Tagebuch eine alte Partie (docs/spiel/18, Abschnitt 8).
  * Sonderfälle: Partie ohne Uhr zeigt keine Uhren; Blindschach blendet die Figuren aus; eine
- * unbekannte Id zeigt einen Hinweis und den Weg zurück.
+ * unbekannte Id zeigt einen Hinweis und den Weg zurück. Partiemomente der Begegnung (T5) zeigt
+ * anbindung/Momentzeile.tsx über dem Brett.
  */
 import { useMemo, useState } from "react";
 import type { Markierung } from "../../analyse/werkzeug";
@@ -31,6 +32,7 @@ import { ANSICHT_ABENTEUER } from "../schnittstelle/modul";
 import { tSpiel } from "../texte/texte";
 import { Huelle } from "./Huelle";
 import { gegnerName, sprecherAusPfad, statustext } from "./huellentexte";
+import { Momentzeile } from "./Momentzeile";
 import { Testleiste } from "./Testleiste";
 
 /** Unter so viel Restzeit (ms) wird die Uhr rot, wie in der App. */
@@ -180,6 +182,8 @@ function Spielfeld({ s, partie }: { s: Partiesteuerung; partie: Partie }) {
   const amZug = leserAmZug(partie) && !partie.ende;
   return (
     <>
+      {/* Partiemomente der Begegnung (T5): Sprechzeile über dem Brett, blockiert nichts. */}
+      <Momentzeile partie={partie} />
       {partie.uhr && (
         <Uhr uhr={partie.uhr} farbe={gegenfarbe(eigene)} name={gegner} jetztMs={s.jetztMs} />
       )}

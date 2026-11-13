@@ -164,6 +164,61 @@
         "zaehltFuerApp": {
           "description": "Fehlend: ja für Partien aus der Grundstellung (Entscheidung A2)",
           "type": "boolean"
+        },
+        "momente": {
+          "description": "Partiemomente (Atmosphäre T5, docs/spiel/23): eine Sprechzeile über dem Brett, ausgelöst nach dem n-ten Zug des Helden oder von einem Merkmal des letzten Halbzugs; jeder Moment höchstens einmal je Partie, die Engine wartet nicht. Merkmale: schachGegen (der Held steht im Schach), schachGegeben, damenTausch (die letzten Damen verschwinden), materialMinus3 (der Held fällt auf drei Bauerneinheiten zurück), geschlagen:<figur> (der Gegner schlägt eine Figur des Helden: bauer, springer, laeufer, turm, dame)",
+          "type": "array",
+          "maxItems": 12,
+          "items": {
+            "type": "object",
+            "additionalProperties": false,
+            "required": ["wenn", "sprecher", "text"],
+            "properties": {
+              "wenn": {
+                "oneOf": [
+                  {
+                    "type": "object",
+                    "additionalProperties": false,
+                    "required": ["zug"],
+                    "properties": {
+                      "zug": { "type": "integer", "minimum": 1, "maximum": 150 }
+                    }
+                  },
+                  {
+                    "type": "object",
+                    "additionalProperties": false,
+                    "required": ["merkmal"],
+                    "properties": {
+                      "merkmal": {
+                        "type": "string",
+                        "pattern": "^(schachGegen|schachGegeben|damenTausch|materialMinus3|geschlagen:(bauer|springer|laeufer|turm|dame))$"
+                      }
+                    }
+                  }
+                ]
+              },
+              "sprecher": {
+                "description": "Figur wie im Dialogtag #sprecher (Porträt und Name)",
+                "type": "string",
+                "pattern": "^[a-z][a-zA-Z0-9]*$"
+              },
+              "text": {
+                "description": "Textschlüssel der Spieltexte",
+                "type": "string",
+                "pattern": "^moment\\.[a-z][a-zA-Z0-9]*\\.[a-z][a-zA-Z0-9]*$"
+              },
+              "klang": {
+                "description": "Geräusch einmal, wie #klang (klang/<kennung>.m4a)",
+                "type": "string",
+                "pattern": "^[a-z0-9][a-zA-Z0-9-]*$"
+              },
+              "musik": {
+                "description": "Musikwechsel wie #musik (Kennung oder aus)",
+                "type": "string",
+                "pattern": "^[a-z0-9][a-zA-Z0-9-]*$"
+              }
+            }
+          }
         }
       }
     }

@@ -34,6 +34,9 @@ VAR dotOkoroErzaehlt = false
 // Kapitel 45: Stellungsduell ab Hales Läuferzug (Begegnung desertSprings.erinnerung1858, Gegner
 // desertSprings.hale1858); den Ausgang setzt die Hülle (R42).
 VAR ausgangDesertSpringsErinnerung1858 = ""
+// Gutachten M1.1: Reihenfolge wie im Roman (Brief, Kapitel 44; Erinnerung, Kapitel 45; Clubkampf,
+// Kapitel 46). briefGelesen setzt desert-springs-antiquariat.ink.
+VAR briefGelesen = false
 VAR erinnerung1858Besprochen = false
 // Kapitel 43 (Roman): Dot und Margaret, Tomás und der Dosenpokal, Miras „Weil ich kann“.
 VAR miraGarageGesehen = false
@@ -65,6 +68,8 @@ VAR dotFernpartieBesprochen = false
 - nadelDesertSprings > clubkampfDesertSpringsNadel: -> mira_nach_sieg
 - ausgangDesertSpringsErinnerung1858 != "" and ausgangDesertSpringsErinnerung1858 != "abgebrochen" and not erinnerung1858Besprochen: -> mira_nach_erinnerung
 - not (reiheTomasBestanden and reiheDotBestanden): -> mira_reihe_offen
+- nadelDesertSprings == 0 and not briefGelesen: -> mira_wartet_brief
+- nadelDesertSprings == 0 and not erinnerung1858Besprochen: -> mira_erinnerung
 - nadelDesertSprings == 0 and ausgangDesertSpringsClubkampf == "niederlage": -> mira_nach_niederlage
 - nadelDesertSprings == 0: -> mira_clubkampf
 - else: -> mira_alltag
@@ -86,6 +91,10 @@ Ich opfere den Läufer. #sprecher:mira
 * [„Wir haben noch nicht angefangen.“]
 - Ich sag's dir nur. Weil ich kann. #sprecher:mira
 ->->
+
+=== mira_wartet_brief ===
+Morgen Abend spielen wir. Heute bin ich im Canyon. Dot sagt, du sollst erst zu Mr. Okoro. #sprecher:mira
+-> END
 
 === mira_clubkampf ===
 // Kapitel 46 (Roman): ganz Desert Springs in der Garage; Nadel als Kupferkaktus mit Blüte.
@@ -115,20 +124,24 @@ Sie opfert, weil es schön ist. Nicht immer, weil es geht. Ich erkenne es. #spre
 -> END
 
 === clubkampf_atme ===
+// Kapitel 46 (Roman): {held} spricht den Satz selbst (Gutachten M1.4). Der Moment hängt am Schach
+// gegen {held} ab Zug 14 (begegnungen.json): Mira greift dann nach einem schnellen Schach.
 {atmeMomentGesehen: -> END}
 ~ atmeMomentGesehen = true
-Miras Summen hört auf. Ihre Hand geht vor, schnell. Die Hand von jemandem, unter dem der Boden weggebrochen ist. #sprecher:erzaehler #musik:aus
+Miras Summen hört auf. Ihre Hand geht vor, schnell, zu einem Schach. Die Hand von jemandem, unter dem der Boden weggebrochen ist. #sprecher:erzaehler #musik:aus
 * [„Mira. Atme.“]
     ~ atmeGesagt = true
     Sie starrt dich an. #sprecher:erzaehler #musik:atme
-    Er hat richtig geopfert und dann Angst gekriegt, hast du gesagt. Die Stellung ist noch nicht verloren. Guck hin. Zähl. #sprecher:erzaehler
+    * * [„Weißt du noch, was du gestern gesagt hast?“]
+    - - „Er hat richtig geopfert und dann Angst gekriegt. Dein Läufer war nicht richtig. Aber die Stellung ist noch nicht verloren. Guck hin. Zähl.“ #sprecher:erzaehler
+    In der Garage ist es still. Tomás hat den Schraubenschlüssel sinken lassen. #sprecher:erzaehler
     Mira zieht die Hand zurück und setzt sich auf ihre Finger. Sie sieht hin, lange, die Zunge zwischen den Zähnen. #sprecher:erzaehler #musik:mira.held
 * [Schweigen]
     Du sagst nichts. Ihre Hand zieht. #sprecher:erzaehler #musik:desertSprings.clubkampf
 - -> END
 
 === mira_nach_niederlage ===
-Ich hab gewonnen. Das Opfer war richtig. Noch mal? #sprecher:mira
+Ich hab gewonnen. Noch mal. Jetzt. #sprecher:mira
 * [„Noch mal.“]
     ~ beginnePartie("desertSprings.clubkampf")
     -> END
@@ -161,8 +174,6 @@ Ambrose sagt nichts. Aber er sieht dich an, wie er dich noch nie angesehen hat. 
 
 === mira_alltag ===
 {~Im Canyon antwortet das Echo. Am Brett nicht. Deshalb mag ich das Brett.|Opfer sind schöner als Recht haben.|Warum hat das Huhn die Straße überquert? Um den König zu schützen.} #sprecher:mira
-+ {nadelDesertSprings > 0 and not erinnerung1858Besprochen} [„Ambrose, zeig sie mir. Die siebte von 1858.“]
-    -> mira_erinnerung
 + {nadelDesertSprings > 0 and nadelDesertSprings < 3} [„Revanche um eine bessere Nadel?“]
     Jetzt. #sprecher:mira
     ~ beginnePartie("desertSprings.clubkampf")
@@ -200,10 +211,15 @@ Du siehst auf die Stellung nach dem Läuferzug. Bevor er fahrig wurde. Du zähls
 // Kapitel 45, Schluss: Miras Motiv bricht herein; Ambroses Lachen ohne Musik, lang (S59);
 // dann sein Thema rein (ambrose.rein), zum ersten Mal ohne den fremden Ton.
 ~ erinnerung1858Besprochen = true
-Du hast mehr Angreifer am König. Springer, Läufer, die Dame, ein Bauer. Gegen einen Läufer und einen fernen Turm. #sprecher:erzaehler
+{ausgangDesertSpringsErinnerung1858 == "niederlage":
+    Du zählst noch einmal nach. Springer, Läufer, die Dame, ein Bauer. Gegen einen Läufer und einen fernen Turm. #sprecher:erzaehler
+- else:
+    Du hast mehr Angreifer am König. Springer, Läufer, die Dame, ein Bauer. Gegen einen Läufer und einen fernen Turm. #sprecher:erzaehler
+}
 Das Opfer war richtig! #sprecher:mira #musik:mira
 Mira ist vom Reifenstapel gesprungen, den Mund voll Keks. Das Brett aus Licht sieht sie nicht, aber du hast die Stellung daneben mitgebaut. #sprecher:erzaehler
-Der Turm ist richtig da! Der Läufer geht zurück, na und? Dann kommt die Dame rüber, und der Bauer läuft. Das gewinnt. #sprecher:mira
+Der Turm ist richtig da! Der Läufer geht zurück, na und? Dann kommt die Dame rüber, und der Bauer läuft, und er kann nicht mehr alles decken. #sprecher:mira
+Das gewinnt. Nicht gleich. Aber das gewinnt. #sprecher:mira
 Wer hat das gespielt? #sprecher:mira
 * [„Ein Bekannter.“]
 - Der hat aber danach gezögert. Das hier ist Quatsch. Das ist Angst. #sprecher:mira

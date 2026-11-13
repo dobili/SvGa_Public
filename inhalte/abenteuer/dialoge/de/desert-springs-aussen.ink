@@ -37,9 +37,7 @@ VAR highwayAufbruchGesehen = false
 Desert Springs ist eine Straße. Eine Tankstelle, ein Diner, an dessen Leuchtreklame drei Buchstaben fehlen. #sprecher:erzaehler #musik:desertSprings #geraeusch:wueste
 Ein Motel mit zwölf Türen in zwölf Farben. Im Schwimmbecken ohne Wasser hat jemand Kakteen gepflanzt. #sprecher:erzaehler
 Am Ortseingang ein Schild: „Desert Springs. Einwohner: 211. Schachspieler: 211.“ #sprecher:erzaehler #bild:ortsschild_211
-{versoehnungGesehen:
-    Eine Stadt, so klein wie ein Brett. Und trotzdem spielt man hier. #sprecher:ambrose #bild:aus
-}
+Ambrose schweigt. Das Schild sagt alles. #sprecher:erzaehler #bild:aus
 -> END
 
 === canyon ===
@@ -78,6 +76,7 @@ Drei Minuten, zwei Sekunden je Zug. Eine Stellung, du hast Weiß. Na, traust du 
 === buck_nach_sieg ===
 {not buckKarteGegeben:
     ~ buckKarteGegeben = true
+    Mitten in der Partie hast du einen guten Zug gefunden und gesagt: „Na, das wird teuer.“ Buck hat sofort gezogen, zu schnell. #sprecher:erzaehler
     Na, jetzt willst du's aber wissen! Hier, die hab ich mal einem Lkw-Fahrer abgewonnen. #sprecher:buck #stimmung:lacht
     {versoehnungGesehen: Das war beinahe fein. #sprecher:ambrose}
     ~ gibKarte("grossesMaul")

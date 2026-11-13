@@ -520,13 +520,6 @@
           },
           "sprecher": "mira",
           "dialog": "desert-springs-garage.clubkampf_atme"
-        },
-        {
-          "wenn": {
-            "abZug": 24
-          },
-          "sprecher": "mira",
-          "dialog": "desert-springs-garage.clubkampf_atme"
         }
       ]
     },

@@ -18,6 +18,8 @@ VAR siegelBestanden = false
 VAR gefundenUmschlag = false
 VAR briefGelesen = false
 VAR held = "Du"
+// Gutachten M1.10: Wer „Nicht jetzt“ wählt, hört die Kellerszene nicht noch einmal.
+VAR kisteGesehen = false
 
 === okoro ===
 {
@@ -36,6 +38,10 @@ Okoro. Bücher, Karten, alte Fahrpläne. Was hier liegt, hat schon einmal jemand
 -> okoro_laden
 
 === okoro_kiste ===
+{kisteGesehen:
+    Das Blatt mit dem Siegel liegt noch auf der Kiste im Keller. #sprecher:erzaehler
+    -> kiste_wahl
+}
 // Kapitel 44 (Roman): sieben Kisten im Keller, Ambroses eigene Briefe nach Jahren gebündelt,
 // das Siegel mit einer Fesselung wie in Ironwood.
 ~ okoroGetroffen = true
@@ -50,9 +56,13 @@ Die Schrift darauf ist schräg und ungeduldig. Meine. Er hat sie aufgehoben. Jed
 Unter dem Bündel 1866 liegt ein einzelnes Blatt, zweimal gefaltet, mit Wachs verschlossen. Ins Wachs ist eine Stellung gedrückt. #sprecher:erzaehler
 Wieder eine Fesselung. Eine andere, schwerer. #sprecher:erzaehler
 Wer mit der Post spielte, drückte dem anderen eine Stellung aufs Siegel. Wer sie nicht löste, hatte den Brief nicht verdient. #sprecher:ambrose
-Er hat ihn versiegelt und nicht in den Umschlag gelegt. Hale. Der Mann, der jede Niete signiert. #sprecher:ambrose
+Er hat ihn versiegelt und nicht in den Umschlag gelegt. Der Umschlag ging leer hinaus. Hale. Der Mann, der jede Niete signiert. #sprecher:ambrose
 * [„Ein Fehler.“]
 - Sein einziger, soweit ich weiß. #sprecher:ambrose #stimmung:lachtOhneSpott
+~ kisteGesehen = true
+-> kiste_wahl
+
+= kiste_wahl
 * [Die Stellung lösen]
     ~ beginneAufgaben("desertSprings.siegel")
     -> END
@@ -69,8 +79,9 @@ Zwölf Zeilen. Senkrecht, gerade, jede gleich lang. Du liest laut, bei einer Gl�
 „Whitlock, mein neununddreißigster Zug ist seit Dienstag unterwegs zu Ihnen. Sie werden zurückschlagen müssen.“ #sprecher:erzaehler
 „Danach stehen wir in einem Endspiel, und ich weiß nicht, wie es ausgeht. Ich weiß es zum ersten Mal nicht, und es gefällt mir.“ #sprecher:erzaehler
 „Ich habe Ihnen 1859 ein Wort geschrieben, für das ich mich seither schäme. Ich hielt Ihr Spiel für Leichtsinn.“ #sprecher:erzaehler
-„Ich habe sieben Jahre gebraucht, um zu begreifen, dass es Mut war. Und dass ich davon zu wenig habe.“ #sprecher:erzaehler
-„Ein Endspiel spielt man nicht mit der Post. Kommen Sie nach Norden. Ich lasse ein Zimmer richten.“ #sprecher:erzaehler
+„Ich habe sieben Jahre und diese Partie gebraucht, um zu begreifen, dass es Mut war. Und dass ich davon zu wenig habe.“ #sprecher:erzaehler
+„Ein Endspiel spielt man nicht mit der Post. Kommen Sie nach Norden.“ #sprecher:erzaehler
+„Wir spielen die letzten Züge an einem Brett, von Angesicht zu Angesicht. Ich lasse ein Zimmer richten.“ #sprecher:erzaehler
 „Ich warte. J. Hale“ #sprecher:erzaehler #pause:5
 Ambrose hat die Hand vor den Mund gelegt. Seine Schultern beben, und du hörst nichts. Das ist schlimmer. #sprecher:erzaehler #bild:aus #pause:3
 Er hat gewartet. #sprecher:ambrose #stimmung:riss #musik:ambrose.hale
@@ -86,7 +97,10 @@ Auf der Rückseite stehen vier Züge, sauber untereinander. #sprecher:erzaehler
 Neunundzwanzig bis zweiunddreißig. Zur Kontrolle. Damit wir dieselbe Stellung aufbauen, wenn ich ankomme. #sprecher:ambrose
 Zwei Umschläge am selben Dienstag. Der mit dem Zug kam an. Der mit der Einladung blieb leer in einem Postsack liegen. #sprecher:ambrose
 Seine Antwort auf meinen letzten Zug hat er nie abgeschickt. An wen auch. Sie steht auf der Seite, die fehlt. #sprecher:ambrose #stimmung:still
-Du faltest den Brief und legst ihn in den Umschlag aus Ironwood. Er passt genau. #sprecher:erzaehler
+Den Brief hat er auf seinem Tisch gefunden, als es zu spät war, und nie geöffnet. #sprecher:ambrose #stimmung:still
+{gefundenUmschlag:
+    Du faltest den Brief und legst ihn in den Umschlag aus Ironwood. Er passt genau. #sprecher:erzaehler
+}
 ~ gibFund("halesBrief")
 Oben sieht Mr. Okoro dein Gesicht und fragt nichts. #sprecher:erzaehler
 Manche Bücher stehen fünfzig Jahre im Regal, bis der Richtige kommt. Das ist kein Unglück. Das ist ein Antiquariat. #sprecher:okoro

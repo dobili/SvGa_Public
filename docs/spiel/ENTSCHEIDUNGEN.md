@@ -963,3 +963,24 @@ bei der letzten Durchsicht: Karten einzeln an- und ausschalten, die Übergänge 
 sehen, das Ganze verschieben und zoomen. Mit dieser Seite arbeitet er am besten. Sie entsteht aus
 den gebauten Karten (Hintergründe gerendert) und wird unter derselben Adresse wie zuletzt
 aktualisiert.
+
+## Karteneditor für den Autor am Ende; Szenendateien bleiben die einzige Quelle (13.11.2026)
+
+Wunsch des Autors: Damit er das Spiel später ohne KI-Hilfe pflegen kann, entsteht am Ende ein
+Karteneditor, mit dem er vorhandene Karten mit den Assets ändern und neue bauen kann. Er wird jetzt
+schon mitgedacht.
+
+Bestand: Jede Karte hat bereits eine Infodatei, `inhalte/abenteuer/szenen/<karte>.json`. Sie enthält
+das Raster (Wände, Böden, Wasser als Zeichen je Kachel), alle Objekte mit Kennung aus dem
+Möbelkatalog (`inhalte/abenteuer/moebel/`, Bildpfad im privaten Paket), Feld, Versatz in Pixeln, „an
+der Wand“ und Bedingung („wenn“), dazu Figuren, Auslöser und Belebung. Der Kartenbau
+(`pipeline/abenteuer/kartenbau.py`) erzeugt daraus die Tiled-Karte für die App, `kartenbild` das
+Hintergrundbild. Drehungen gibt es nicht als Feld; gedrehte Ansichten sind eigene Bilder im Katalog
+(etwa `_quer`, `_laengs`).
+
+Festlegung: Die Szenendateien bleiben die einzige Quelle jeder Karte. Niemand ändert die erzeugten
+Tiled-Karten oder Bilder von Hand, sonst gehen Änderungen beim nächsten Bau verloren. Der Editor
+liest und schreibt später genau diese Dateien und zeigt die Vorschau mit `kartenbild`; die Prüfungen
+des Kartenbaus (Durchgänge, Überdeckung, Grundriss) laufen im Editor mit. Neue Felder in den
+Szenendateien werden im Schema beschrieben, damit der Editor sie kennt. Bis dahin kann der Autor die
+erzeugten Karten mit dem freien Programm Tiled ansehen.

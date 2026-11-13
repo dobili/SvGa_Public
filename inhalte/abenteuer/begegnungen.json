@@ -268,7 +268,23 @@
       "startstellung": {
         "art": "grundstellung"
       },
-      "kartenErlaubt": true
+      "kartenErlaubt": true,
+      "momente": [
+        {
+          "wenn": {
+            "abZug": 14
+          },
+          "sprecher": "mutter",
+          "dialog": "ironwood-kantine.mama_moment_rost"
+        },
+        {
+          "wenn": {
+            "abZug": 28
+          },
+          "sprecher": "ambrose",
+          "dialog": "ironwood-kantine.mama_moment_angriff"
+        }
+      ]
     },
     {
       "kennung": "ironwood.clubkampf",
@@ -281,7 +297,23 @@
         "art": "grundstellung"
       },
       "kartenErlaubt": true,
-      "zeit": "wahl"
+      "zeit": "wahl",
+      "momente": [
+        {
+          "wenn": {
+            "abZug": 20
+          },
+          "sprecher": "ambrose",
+          "dialog": "ironwood-kantine.clubkampf_schraubstock"
+        },
+        {
+          "wenn": {
+            "abZug": 28
+          },
+          "sprecher": "ambrose",
+          "dialog": "ironwood-kantine.clubkampf_stimmt_es"
+        }
+      ]
     },
     {
       "kennung": "wegIronwoodSilicon.joggerin",

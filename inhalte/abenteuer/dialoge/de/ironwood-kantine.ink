@@ -236,7 +236,6 @@ Am Stahlbrett. Mama hat Weiß. Sie sieht die Figuren an, eine nach der anderen, 
 * [„Ich bin bereit.“]
     Ihre Hand zittert, als sie den ersten Bauern anfasst. Damenbauer, zwei Felder. Dann der daneben. #sprecher:erzaehler
     Damengambit. Hat sie von mir. #sprecher:bigJoe #stimmung:froh
-    Du spielst Schach. Mit deiner Mutter. Sie ist nicht hergekommen, um geschont zu werden. #sprecher:ambrose
     ~ beginnePartie("ironwood.mama")
     -> END
 * [„Gleich, Mama.“]
@@ -265,6 +264,42 @@ Und ab jetzt fahre ich mit. Zu den Turnieren. Jemand muss ja auf die Zeit achten
 Du spielst zu langsam. #sprecher:mutter
 Deine Mutter, wenn ich das sagen darf, spielt besser, als sie lügt. #sprecher:ambrose #stimmung:lachtOhneSpott
 Juno klebt das Foto ins Tagebuch. Mit Glitzer. Diesmal ja. #sprecher:juno #stimmung:froh
+-> END
+
+// ---------------------------------------------------------------- Partiemomente (Roman, Kap. 27/28)
+// Feste Momente in den Partien (begegnungen.json, momente). Sie sagen nichts über die Stellung,
+// was nicht in jeder Partie stimmt: Die Engine wartet nicht auf das Bild aus dem Roman.
+
+=== mama_moment_rost ===
+Mama wird langsamer. Sie rechnet, zieht die Hand zurück und sagt ein Wort, das du von ihr nicht kennst. #sprecher:erzaehler
+Eingerostet. Wie ein altes Tor. #sprecher:mutter #stimmung:lachtOhneSpott
+Schmieröl ist im Schrank. #sprecher:bigJoe
+-> END
+
+=== mama_moment_angriff ===
+Ihre Figuren rücken vor, eine nach der anderen, schön und entschlossen, auf deinen König zu. #sprecher:erzaehler #musik:aus
+* [„Ambrose. Was mache ich?“]
+- Er schweigt. Der Ofen bullert. #sprecher:erzaehler #pause:2
+Du spielst Schach. Mit deiner Mutter. Sie ist nicht hergekommen, um geschont zu werden. #sprecher:ambrose
+-> END
+
+=== clubkampf_schraubstock ===
+Er stellt eine Figur hin, und sie bleibt dort. Dann die nächste daneben. Jede hält eine von deinen fest. #sprecher:erzaehler
+Was dranhängt, kann nicht weg. #sprecher:bigJoe
+Das ist auch Schach. Kein Funken. Kein einziger. Und doch steht alles genau, wo es stehen muss. #sprecher:ambrose
+Der Brückenbauer hätte ihn gemocht. #sprecher:ambrose #stimmung:still
+-> END
+
+=== clubkampf_stimmt_es ===
+Big Joe reibt sich das Gesicht mit beiden Händen. Als er sie wegnimmt, braucht er einen Moment, bis er das Brett wiederfindet. #sprecher:erzaehler
+{mamaSpielt: Grundreihe. Immer. #sprecher:erzaehler}
+Siehst du etwas? Dann sag mir: Stimmt es? #sprecher:ambrose
+Diesmal fragt er. Nicht du. #sprecher:erzaehler
+* [„Ich zähle noch.“]
+    Dann zähl. Dreimal, wenn es sein muss. #sprecher:ambrose
+* [„Es stimmt.“]
+    Dann spiel es. #sprecher:ambrose
+- Und sieh ihm dabei ins Gesicht. Das ist die Hälfte. #sprecher:ambrose #stimmung:lachtOhneSpott
 -> END
 
 // Kapitel 27: Mamas Satz unter dem Finale (Tunnel, nur mit dem blauen Heft).

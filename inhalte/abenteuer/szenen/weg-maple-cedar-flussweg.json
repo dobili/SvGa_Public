@@ -9,7 +9,8 @@
     "e": "erde",
     "s": "asphalt",
     "p": "pflaster",
-    "k": "schotter"
+    "k": "schotter",
+    "l": "landstrasse"
   },
   "bruecken": ["h"],
   "zustand": ["neu", "gebraucht", "alt"],
@@ -35,14 +36,14 @@
     "#......................................................................................................................#",
     "#......................................................................................................................#",
     "#......................................................................................................................#",
-    "#..................eeeeeeeeeeeeeeeeee..................................................................................#",
-    "#................eeeeeeeeeeeeeeeeeeeeee................................................................................#",
-    "#.............eeeeee................eeeeee..................................eeeeeeeeeeeeeeeeeeeeeee.......kkkkpppppppppp",
-    "eeeeeeeeeeeeeeeeee....................eeeeee...........................eeeeeeeeeeeeeeeeeeeeeeeeeeeeeeeekkkkkkkssssssssss",
-    "eeeeeeeeeeeeeee..........................eeeeee.....................eeeeeeeee.....................eeeeekkkkkkkssssssssss",
-    "#..........................................eeeee..................eeeeee................................kkkkkkssssssssss",
-    "#.............................................eeeeeeeeeeeeeeeeeeeeeee.....................................kkkk.ppppppppp",
-    "#.............................~~~~~............eeeeeeeeeeeeeeeeeeee...................................~~~~~~...........#",
+    "#.................llllllllllllllllllll.................................................................................#",
+    "#...............llllllllllllllllllllllll...............................................................................#",
+    "#............llllllllllllllllllllllllllllll................................lllllllllllllllllllllllll......llllpppppppppp",
+    "lllllllllllllllllll..................llllllll.........................llllllllllllllllllllllllllllllllllllllllssssssssss",
+    "lllllllllllllllll......................llllllllll..................lllllllllllllllllllllllllllllllllllllllllllssssssssss",
+    "llllllllllllll............................llllllllllllllllllllllllllllllllll.......................lllllllllllssssssssss",
+    "#...........................................lllllllllllllllllllllllllll...................................llll.ppppppppp",
+    "#.............................~~~~~.........lllllllllllllllllllllllllll...............................~~~~~~...........#",
     "~~.........................~~~~~~~~~~~..................ee.....................~~~~~~~~~~...........~~~~~~~~...........#",
     "~~~~.....................~~~~~~~~~~~~~~~~~~...~~........ee........~~~~~~~~~~~~~~~~~~~~~~~~~........~~~~~~~~~~~~~..~~~~~~",
     "~~~~~~......~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~hh~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~....~~~~~~~~~~~~~~~~~~~~~~~",
@@ -212,10 +213,6 @@
       "feld": [95, 19]
     },
     {
-      "moebel": "wg4FelsgruppeB",
-      "feld": [102, 17]
-    },
-    {
       "moebel": "wg6BootLaengs",
       "feld": [100, 22],
       "an_wand": false,
@@ -294,14 +291,6 @@
     {
       "moebel": "wg4SteinB",
       "feld": [92, 17]
-    },
-    {
-      "moebel": "wg4BlumeBlau",
-      "feld": [69, 19]
-    },
-    {
-      "moebel": "wg4BlumeBlau",
-      "feld": [70, 19]
     },
     {
       "moebel": "wg4BlumeBlau",
@@ -512,14 +501,6 @@
       "feld": [85, 18]
     },
     {
-      "moebel": "wg4BlumeBlau",
-      "feld": [63, 20]
-    },
-    {
-      "moebel": "wg4SteinB",
-      "feld": [51, 17]
-    },
-    {
       "moebel": "wg4PilzeB",
       "feld": [110, 20]
     },
@@ -538,10 +519,6 @@
     {
       "moebel": "wg4BlumenWeiss",
       "feld": [93, 11]
-    },
-    {
-      "moebel": "wg4SteinB",
-      "feld": [1, 17]
     },
     {
       "moebel": "wg4BlumeBlau",
@@ -608,10 +585,6 @@
       "feld": [66, 16]
     },
     {
-      "moebel": "wg4SteinB",
-      "feld": [65, 17]
-    },
-    {
       "moebel": "wg4Stein",
       "feld": [116, 13]
     },
@@ -668,10 +641,6 @@
       "feld": [19, 11]
     },
     {
-      "moebel": "wg4BlumenWeiss",
-      "feld": [18, 12]
-    },
-    {
       "moebel": "wg4BuschKlein",
       "feld": [39, 17]
     },
@@ -706,14 +675,6 @@
     {
       "moebel": "wg4Stein",
       "feld": [54, 13]
-    },
-    {
-      "moebel": "wg4SteinB",
-      "feld": [46, 19]
-    },
-    {
-      "moebel": "wg4GrasB",
-      "feld": [44, 15]
     },
     {
       "moebel": "wg4GrasB",
@@ -1024,10 +985,6 @@
       "feld": [83, 11]
     },
     {
-      "moebel": "wg4Farn",
-      "feld": [63, 17]
-    },
-    {
       "moebel": "wg4Stein",
       "feld": [110, 18]
     },
@@ -1211,15 +1168,20 @@
     },
     {
       "moebel": "wg4Erle",
-      "feld": [44, 18]
-    },
-    {
-      "moebel": "wg4Erle",
       "feld": [77, 18]
     },
     {
       "moebel": "wg4Erle",
       "feld": [90, 18]
+    },
+    {
+      "moebel": "wg4Stein",
+      "feld": [58, 21],
+      "id": "faehrstein"
+    },
+    {
+      "moebel": "wg6Seil",
+      "feld": [99, 21]
     }
   ],
   "ausloeser": [
@@ -1229,14 +1191,6 @@
       "eigenschaften": {
         "richtung": "rechts"
       }
-    },
-    {
-      "name": "zurueckLandstrasse",
-      "feld": [0, 15]
-    },
-    {
-      "name": "zurueckLandstrasse",
-      "feld": [0, 16]
     },
     {
       "name": "weiterCedar",
@@ -1275,6 +1229,23 @@
     {
       "name": "finchBauerA",
       "feld": [54, 21]
+    },
+    {
+      "name": "zurueckLandstrasse",
+      "feld": [0, 15]
+    },
+    {
+      "name": "zurueckLandstrasse",
+      "feld": [0, 16]
+    },
+    {
+      "name": "zurueckLandstrasse",
+      "feld": [0, 17]
+    },
+    {
+      "name": "faehrstein",
+      "feld": [58, 21],
+      "auf_moebel": true
     }
   ],
   "figuren": [],

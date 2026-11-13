@@ -14,6 +14,7 @@
 EXTERNAL beginnePartie(begegnung)
 EXTERNAL beginneAufgaben(runde)
 EXTERNAL setzeSzene(kennung)
+EXTERNAL schreibeTagebuch(name)
 
 VAR held = "Du"
 VAR ambroseVertrauen = 0
@@ -387,9 +388,11 @@ Als der Raum leer ist, meldet sich das Brett in deiner Tasche. #sprecher:erzaehl
 * [Nichts fragen]
     Du fragst nicht. #sprecher:erzaehler
 // Roman, Kapitel 9 (neu): {held} schreibt das Ziel selbst ins Tagebuch, als Handlung statt als
-// Menüeintrag. Die kleine Schreibanimation im Tagebuch der Oberfläche ist ein eigener Auftrag.
-- Juno hat dir das Clubtagebuch übers Wochenende geliehen. Du schlägst eine neue Seite auf. #sprecher:erzaehler
-In deiner eigenen Schrift, ohne Glitzer, schreibst du: „Ich will besser werden.“ #sprecher:erzaehler #pause #klang:tagebuch #musik:aus
+// Menüeintrag. schreibeTagebuch zeigt die Seite mit Schreibanimation (Text
+// tagebuch.eintrag.besserWerden, „Ich will besser werden.“).
+- Juno hat dir das Clubtagebuch übers Wochenende geliehen. Du schlägst eine neue Seite auf. #sprecher:erzaehler #musik:aus
+In deiner eigenen Schrift, ohne Glitzer. #sprecher:erzaehler #klang:tagebuch
+~ schreibeTagebuch("besserWerden")
 -> END
 
 === victor_weg ===

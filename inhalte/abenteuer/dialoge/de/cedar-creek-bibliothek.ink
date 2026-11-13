@@ -30,6 +30,9 @@ VAR clubkampfCedarCreekBesprochen = 0
 VAR teamAngekommen = false
 VAR nadelRiverton = 0
 VAR nadelIronwood = 0
+VAR clubkampfBauerAbgelehnt = false
+VAR clubkampfZaehlGesagt = false
+VAR ambroseNenntNamen = false
 
 // ---------------------------------------------------------------- Mrs. Okafor
 
@@ -246,4 +249,48 @@ Vierzehn zu vierzehn. Die gerechteste Zahl, die es gibt. Und die langweiligste. 
 === zwillinge_d ===
 Jonah sitzt im Club am Brett, gegen Dex. Ivy sitzt daneben und liest. #sprecher:erzaehler
 „Wir streiten nicht mehr“, sagt Ivy, ohne aufzusehen. „Es ist furchtbar.“ #sprecher:erzaehler
+-> END
+
+// ================================================================ Runde 11: Roman, Kapitel 15
+// Zwei Dialoge mitten im Clubkampf (Begegnung cedarCreek.clubkampf). Die Technik, die einen Dialog
+// während einer Partie auslöst, baut mittel-2; bis dahin stehen die Knoten hier bereit und laufen
+// nicht von selbst. Stimmung: still gespannt, die Uhr zählt mit. Die Karte Mentor-Zug vergibt die
+// Quest erst nach dem Clubkampf (quests.json, cedarCreek.clubkampf, Schritt 4): Ambrose hält sich
+// in der Partie zurück. Später: #musik:clubkampfCedarCreek setzt beim Bauern aus; bei „Lass mich“
+// drängt #musik:ambrose herein und reißt bei „Ich weiß es nicht“ ab; bei „Zähl“ #klang:aha.
+//
+// Auslöser clubkampf_bauer: Mrs. Okafor bietet einen Bauern vor ihrem König an, der ungedeckt
+// aussieht; nimmt ihn ein Turm, verlässt er die Grundreihe, und das Grundreihenmatt droht (Roman:
+// etwa der 20. Zug). Der Dialog läuft, bevor der Zug des Helden ausgeführt wird.
+//
+// Auslöser clubkampf_lass_mich: Ein Turmopfer gegen ihre Königsstellung ist möglich, aber nicht
+// korrekt (ein stiller Läuferzug verteidigt), und {held} hat weniger als vier Minuten auf der Uhr.
+// Einmal je Partie. Danach entscheidet {held} selbst; der Dialog führt keinen Zug aus.
+
+=== clubkampf_bauer ===
+Ein Bauer steht vor ihrem König. Niemand passt auf ihn auf. Du zählst zweimal: kein Verteidiger. #sprecher:erzaehler
+Was glaubst du denn, warum er dort steht? #sprecher:okafor #pause
+* [Die Hand zurückziehen]
+    ~ clubkampfBauerAbgelehnt = true
+    Du siehst noch einmal hin. Nicht auf den Bauern. Auf deinen König, hinter seinen drei Bauern. #sprecher:erzaehler
+    Grundreihe. Der König, der keine Luft kriegt. Du machst ihm ein Fenster auf. #sprecher:erzaehler
+    Geduld. Wo hast du die her? #sprecher:okafor #stimmung:froh
+* [Den Bauern trotzdem nehmen]
+    Nun denn. #sprecher:okafor
+- -> END
+
+=== clubkampf_lass_mich ===
+~ clubkampfZaehlGesagt = true
+Lass mich. #sprecher:ambrose #stimmung:stolz
+// Den Namen sagt er nur, wenn er ihn im Archiv schon einmal gesagt hat (Dokument 19, 5.2).
+Nur dieses eine Mal. Ich sehe es. Der Turm, {ambroseNenntNamen:{held}|Lehrling}, der Turm, mitten hinein. #sprecher:ambrose
+Sie muss ihn nehmen, und dann … #sprecher:ambrose
+Es wäre schön. Es wäre so schön. #sprecher:ambrose
+* [„Stimmt es?“]
+    Stille. Die Uhr tickt. Drei Minuten. #sprecher:erzaehler #pause
+    Ich weiß es nicht. #sprecher:ambrose #stimmung:traurig
+* [Die Hand auf dem Turm lassen]
+    {erzaehlung1858Gesehen: Ein Turm, einfach hingestellt. Du hast die Geschichte im Archiv gehört. #sprecher:erzaehler}
+    Ich weiß nicht, ob es stimmt. #sprecher:ambrose #stimmung:traurig
+- Vergib mir. Zähl. #sprecher:ambrose
 -> END

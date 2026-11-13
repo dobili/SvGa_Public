@@ -63,6 +63,7 @@
         1
       ]
     },
+    { "moebel": "cc13BodenNass", "feld": [1, 7] },
     {
       "moebel": "cc4KartonHoch",
       "feld": [
@@ -145,8 +146,8 @@
       "moebel": "cc12Programmheft",
       "auf": "tisch",
       "versatz": [
-        -7,
-        -7
+        3,
+        3
       ]
     }
   ],

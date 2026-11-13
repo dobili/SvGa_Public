@@ -362,7 +362,14 @@ export function Oberwelt() {
           ergebnis={rundenergebnis}
           club={tSpiel(welt?.ort.club?.name ?? "club.mapleFalls.name")}
           beiNochmal={runden.starteRunde}
-          beiWeiter={runden.schliesseRundenergebnis}
+          beiWeiter={() => {
+            runden.schliesseRundenergebnis();
+            // Ein Dialog nach der Runde (runden.json `danach`) startet von selbst.
+            const danach = welt?.daten.runden.find(
+              (r) => r.kennung === rundenergebnis.auftrag.runde,
+            );
+            if (danach?.danach) oeffneDialog(danach.danach);
+          }}
         />
       )}
       {offeneRunde && (

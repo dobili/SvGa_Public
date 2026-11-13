@@ -30,6 +30,7 @@ DATEIEN = {
     "vorfuehrungen.json": "abenteuer-vorfuehrungen.schema.json",
     "partieformen.json": "abenteuer-partieformen.schema.json",
     "texte/de.json": "abenteuer-texte.schema.json",
+    "portraetblatt.json": "abenteuer-portraetblatt.schema.json",
 }
 
 
@@ -284,6 +285,19 @@ def test_ink_szene_und_tiled_karte_liegen_bereit():
     namen = {o["name"] for o in objekte["objects"] if o.get("type") not in ("moebel", "statist", "tier")}
     ausloeser = {a["name"] for a in _lade("orte.json")["orte"][0]["ausloeser"]}
     assert namen <= ausloeser
+
+
+def test_dialog_nach_der_runde_gibt_es():
+    """Jeder Knoten in runden.json `danach` steht in seiner Ink-Datei."""
+    fehler: list[str] = []
+    for runde in _lade("runden.json")["runden"]:
+        if "danach" not in runde:
+            continue
+        datei, knoten = runde["danach"].split(".", 1)
+        ink = INHALTE / "dialoge" / "de" / f"{datei}.ink"
+        if not ink.exists() or f"=== {knoten} ===" not in ink.read_text(encoding="utf-8"):
+            fehler.append(f"{runde['kennung']}: Dialog {runde['danach']} fehlt")
+    assert fehler == []
 
 
 def test_tagebuchseiten_haben_ihren_text():

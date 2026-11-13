@@ -1666,3 +1666,9 @@ die 40 häufigsten Gambits. Ein paar Zahlen (Anteil an allen Partien des Bandes)
       danach 24 $ für einen Monat, Rechte bei uns); erst danach über alle Figuren entscheiden.
       Der Autor probiert beides aus (13.11.2026): Probeprompt für Gemini und Link zu PixelLab
       stehen im Chat; er schickt die Bilder, danach wird entschieden.
+- [ ] RO11. **Lernkarten für abgeschlossene Buchkapitel:** Der Kartenplan belohnt im Spiel, wer in
+      der App ein Kapitel des Buches abschließt, mit einer Lernkarte. Das schickt den Spieler
+      mittelbar zum Buch und passt nicht zu einem Spiel, das für sich steht. Empfehlung: Die
+      Lernkarten gibt es stattdessen für die Lektionen im Spiel selbst (Club, Trainer, gesammelte
+      Seiten); in der Buch-App kann es später eine eigene Belohnung geben. Noch nicht umgesetzt;
+      Zustimmung oder Widerspruch genügt.

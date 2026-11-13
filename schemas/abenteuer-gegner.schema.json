@@ -96,12 +96,12 @@
       ]
     },
     "steckbriefzeile": {
-      "description": "Aus dem Profil erzeugte Zeile im Clubtagebuch (Entscheidung C7)",
+      "description": "Aus dem Profil erzeugte Zeile im Clubtagebuch (Entscheidung C7); art text: freier Satz, wert ist ein Textschlüssel der Spieltexte (steckbrief.<gegner>.<name>)",
       "type": "object",
       "additionalProperties": false,
       "required": ["art", "wert"],
       "properties": {
-        "art": { "enum": ["fehlerart", "fleck", "stil", "eroeffnung"] },
+        "art": { "enum": ["fehlerart", "fleck", "stil", "eroeffnung", "text"] },
         "wert": { "type": "string", "minLength": 1 }
       }
     },

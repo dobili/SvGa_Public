@@ -113,12 +113,27 @@ def test_querverweise_stimmen():
         if "kapitel" in karte:
             schluessel.append(f"karte.{karte['kennung']}.geschenkt")
         fehler.extend(f"Text {s} fehlt" for s in schluessel if s not in texte)
-    # Partiemomente (Atmosphäre T5): Text und Name des Sprechers stehen in den Spieltexten.
+    # Partiemomente (Atmosphäre T5, T11): Text und Name des Sprechers stehen in den Spieltexten,
+    # ein geführter Moment nennt einen Knoten, den es in der Ink-Datei gibt.
+    dialogordner = HAUPTORDNER / "inhalte" / "abenteuer" / "dialoge" / "de"
     for begegnung in _lade("begegnungen.json")["begegnungen"]:
         for moment in begegnung.get("momente", []):
-            for schluessel in (moment["text"], f"figur.{moment['sprecher']}.name"):
-                if schluessel not in texte:
-                    fehler.append(f"{begegnung['kennung']}: Moment-Text {schluessel} fehlt")
+            schluessel = [f"figur.{moment['sprecher']}.name"]
+            if "text" in moment:
+                schluessel.append(moment["text"])
+            for s in schluessel:
+                if s not in texte:
+                    fehler.append(f"{begegnung['kennung']}: Moment-Text {s} fehlt")
+            if "dialog" in moment:
+                datei, knoten = moment["dialog"].split(".", 1)
+                ink = dialogordner / f"{datei}.ink"
+                if not ink.exists() or f"=== {knoten} ===" not in ink.read_text(encoding="utf-8"):
+                    fehler.append(f"{begegnung['kennung']}: Moment-Dialog {moment['dialog']} fehlt")
+    # Steckbriefzeilen mit freiem Text: Der Satz steht in den Spieltexten.
+    for profil in _lade("gegner.json")["gegner"]:
+        for zeile in profil["steckbrief"]:
+            if zeile["art"] == "text" and zeile["wert"] not in texte:
+                fehler.append(f"{profil['kennung']}: Steckbrieftext {zeile['wert']} fehlt")
     # Freie Karten (R29) gibt es in karten.json.
     for begegnung in _lade("begegnungen.json")["begegnungen"]:
         for k in begegnung.get("freieKarten", []):

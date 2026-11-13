@@ -4,7 +4,8 @@
  * Rolle im Gesamtbild: Die Deckwahl zeigt mit der Lupe vor der Partie zwei Zeilen aus dem Steckbrief
  * und die Sprüche, gegen die der Gegner immun ist (docs/spiel/10, S4). Die Zeilen stehen in
  * gegner.json als Art und Wert; die Namen der Fehlerarten und Stile kommen aus den Texten der App
- * (dieselben Bots, Entscheidung A3), Flecken und Eröffnungen aus den Texten des Spiels.
+ * (dieselben Bots, Entscheidung A3), Flecken, Eröffnungen und freie Sätze (Art „text“) aus den
+ * Texten des Spiels.
  * Abhängigkeiten: i18n/sprache.ts, texte/texte.ts, daten/laden.ts.
  */
 import { istTextschluessel, t } from "../../i18n/sprache";
@@ -38,6 +39,9 @@ export function steckbriefzeile(zeile: Gegnerdaten["steckbrief"][number]): strin
       return tSpiel(`steckbrief.fleck.${zeile.wert}`);
     case "eroeffnung":
       return tSpiel("steckbrief.eroeffnung", { text: zeile.wert.replace(PRAXIS, "") });
+    case "text":
+      // Freier Satz (Mrs. Okafor: Lagos); der Wert ist ein Textschlüssel der Spieltexte.
+      return tSpiel(zeile.wert);
   }
 }
 

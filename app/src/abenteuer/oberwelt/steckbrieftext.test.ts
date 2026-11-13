@@ -16,6 +16,10 @@ describe("Steckbrief", () => {
     }
   });
 
+  it("zeigt den freien Satz über Mrs. Okafor", () => {
+    expect(steckbriefzeile({ art: "text", wert: "steckbrief.okafor.lagos" })).toContain("Lagos");
+  });
+
   it("die Lupe nennt bei Rosa die Sprüche, die verpuffen", () => {
     const rosa = GEGNER.find((g) => g.kennung === "cedarCreek.rosa");
     if (!rosa) throw new Error("Rosa fehlt");

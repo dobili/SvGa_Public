@@ -473,8 +473,7 @@ Damit die Bühnenbilder die Rückkehr tragen, ohne später neu gezeichnet zu wer
 - `ironwood.aussen`: Haltebucht für den Werksbus; Tor zum Steinbruch hinter dem Bahnhof.
 - `ironwood.museum`: Platz in der Vitrine neben der Zeitung von 1858 für Brief und Umschlag (R5).
 - `ironwood.kantine`: Wandfläche für das Logo von Perfect Move (Objekt, später entfernt).
-- `siliconBay.aussen`: Anleger für die Fähre zur Pelikaninsel; ein Kellereingang für Dr. Lins
-  Club (Epilog und Post-Game); der leere Laden von Mr. Ames mit Schild „Bald geöffnet“ bleibt Kulisse
+- `siliconBay.aussen`: Anleger für die Fähre zur Pelikaninsel; ein Kellereingang für Dr. Lins Club unter einem Wohnhaus am Stadtrand, nahe Rosies Truck (Epilog und Post-Game); der leere Laden von Mr. Ames mit Schild „Bald geöffnet“ bleibt Kulisse
   und ist nicht ihr Club.
 - `portDelacroix.aussen`: Fähranleger in beide Richtungen; Steg zum Bayou mit Hochwassermarke.
 - `wegDelacroixDesert.canyonpfad`: Abzweig zur Sternwarte, nach der Versöhnung sichtbar (Objekt mit Bedingung).

@@ -250,9 +250,7 @@ ein Fanshop mit Schals und T-Shirts.
   `fernpartieGespielt` und `novaBitteGehoert`, der Wachmann erklärt). `ereignisWeltschachtag` (140, 13)
   mit Quest `wegGhostCapital.weltschachtag` (klein): Simultan `wegGhostCapital.simultan`
   (partieformen.json: fünf Stellungsduelle aus Kapitel 6, Abschnitt 6.8, Abbildungen 6.33 bis 6.38,
-  gegen Slick, Big Joe, Mrs. Okafor, Hollis und eine fünfte Gegnerin; drei Punkte bestehen; gebaut ist
-  als fünfte Céleste, die nach Bibel, Szene 68, nur eine einzige Partie spielt: Besetzung offen,
-  noch umzubauen, Entscheidung 13.11.2026), danach Abes Partie gegen die Welt, Foto, 25
+  gegen Slick, Big Joe, Mrs. Okafor, Hollis und Céleste; drei Punkte bestehen; Céleste ist als Mitglied der Familie Whitlock-Duval dabei, nicht als Nachfahrin, Entscheidung 13.11.2026), danach Abes Partie gegen die Welt, Foto, 25
   Münzen. Figur Wanderer (`wegGhostCapital.wanderer`, (124, 15)) nimmt die Buchseiten zurück.
   `seite12` am Anleger (A (59, 8), B (99, 8), C (33, 8)), `faehrterminal` (A (48, 12), B (88, 12), C
   (22, 12)).

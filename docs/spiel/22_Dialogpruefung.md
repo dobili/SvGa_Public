@@ -4371,3 +4371,25 @@ bestanden, 16 übersprungen) und `npm run pruefen` (2573 Tests bestanden).
 - **Crossroads:** Coach Delgado, Schulbus, Sam, Carla, Theo fehlen.
 - **Capital:** Arena rund und weiß mit Muscheldach.
 - **Silicon Bay:** Dr. Lins Club als Keller mit Heizlüfter.
+
+### J5 Nachtrag nach den Entscheidungen des Hauptchats und des Autors (13.11.2026)
+
+- **Entschieden und eingetragen:** Céleste bleibt fünfte Gegnerin im Simultan, als Mitglied der
+  Familie Whitlock-Duval (`orte/capital.md`). Dr. Lins Keller liegt unter einem Wohnhaus am Rand
+  von Silicon Bay, nahe Rosies Truck (`orte/silicon-bay.md`, `13_Wegenetz.md`). Mamas Zimmer
+  unter dem Dach, Ghost Town als Ausnahme von 10.53 und „Schulbus 7:42“ bleiben. Der Satz für
+  Mr. Ames ab Akt 4 bleibt offen.
+- **Das Spiel steht für sich (Autor):** kein Knopf „Im Buch nachlesen“, keine Dialoge mit Hinweis
+  auf das Buch; Buchinhalt nur als gesammelte Seiten, die ihren Inhalt im Spiel zeigen. Damit ist
+  **I1.17** ausgeführt: `15_Routen_Ereignisse.md`, Abschnitt 1.2 und Abschnitt 5. Die Seiten sind
+  Seiten aus Ambroses altem Buch, ohne Kapitelnummer; der Wanderer nennt weder Buch noch Kapitel
+  und schenkt am Ende die gebundene Sammlung fürs Album statt des gedruckten Buchs.
+- **`11_Karten_und_Gegenstaende.md`:** Der Buchbezug steht nur noch in den Daten, nicht auf der
+  Karte; Ambroses Satz „… sondern im Buch“ ist gestrichen.
+- **Schutzengel (K4):** Ambrose hält den Zug mit einer Zeile auf (Bibel, Szene 69; Dokument 11).
+- **In der Bibel** fand sich keine weitere Stelle, die den Spieler zum Buch schickt. Die Zeilen
+  „Buchbezug:“ sind Angaben für Schreiber und bleiben.
+- **Offen:** Ob der Wanderer als Figur bleibt (er war als Gruß an das Buch gedacht). Ob es die
+  Lernkarten aus Dokument 11, Abschnitt 5, noch gibt: Sie belohnen im Spiel, wer in der App ein
+  Buchkapitel abschließt. Der Gutachter hat die neue Entscheidung des Autors nicht in
+  `ENTSCHEIDUNGEN.md` nachlesen können; sie war auf dem übernommenen Stand noch nicht eingetragen.

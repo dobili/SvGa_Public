@@ -1832,8 +1832,7 @@ Ort `portDelacroix.turnhalle` · Miss Odile, Remy, Lou, Kinder der Stadt. Ereign
 drei Duelle, Datenauftrag), jedes Kind spendet einen Dollar in die Kasse für das Musikhaus. Remy
 spielt das dritte Brett und entschuldigt sich danach: „Ich hab dich beobachtet. Du redest mit dem
 Brett, aber du spielst allein. Tut mir leid.“ Belohnung: 30 Münzen (gehen in die Kasse), Wiederaufbau
-Schritt 2, und von Miss Odile die Karte **Schutzengel** (K4): „Damit du nicht wieder etwas
-verlierst, was dir wichtig ist.“ Etwa 10 Minuten.
+Schritt 2, und von Miss Odile die Karte **Schutzengel** (K4): „Damit du nicht wieder etwas verlierst, was dir wichtig ist.“ Wirkung: Ambrose hält einen Zug, der Material verliert, mit einer Zeile auf (Entscheidung vom 13.11.2026, `docs/spiel/ENTSCHEIDUNGEN.md`). Etwa 10 Minuten.
 
 **70. Das Schild** · N hilfe `portDelacroix.wiederaufbau` (Besuch 3 von 3)
 Ort `portDelacroix.musikhaus` · Miss Odile, Remy, Lou, Henri, Mama. Ereignis: Dialog, Ort. Beim

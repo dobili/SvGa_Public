@@ -45,6 +45,9 @@ export interface Dialoge {
   readonly beiDialogende: (variablen: Dialogvariablen) => void;
   readonly abspann: boolean;
   readonly schliesseAbspann: () => void;
+  /** Fensterbank mit den Funden (T15), nach `zeigeFensterbank()` im Dialog. */
+  readonly fensterbank: boolean;
+  readonly schliesseFensterbank: () => void;
   readonly offenerLaden: string | null;
   readonly schliesseLaden: () => void;
   /** Vorführung (Statist mit `zeigt` oder Dialog), solange das kleine Brett offen ist. */
@@ -56,6 +59,7 @@ export interface Dialoge {
 function useMerker(): Nachdialogmerker {
   return {
     abspann: useRef(false),
+    fensterbank: useRef(false),
     laden: useRef<string | null>(null),
     auftrag: useRef(null),
     runde: useRef<string | null>(null),
@@ -101,6 +105,7 @@ function starteFolge(
 export function useDialogende(k: Oberweltkern, partie: Partien, runden: Runden): Dialoge {
   const [dialog, setzeDialog] = useState<OffenerDialog | null>(null);
   const [abspann, setzeAbspann] = useState(false);
+  const [fensterbank, setzeFensterbank] = useState(false);
   const [offenerLaden, setzeOffenerLaden] = useState<string | null>(null);
   const [vorfuehrung, setzeVorfuehrung] = useState<string | null>(null);
   // Dialogvariablen beim Öffnen des Dialogs: Was die Hülle danach setzt, überschreibt Ink nicht.
@@ -127,6 +132,7 @@ export function useDialogende(k: Oberweltkern, partie: Partien, runden: Runden):
     const reise = nimm(m.reise, null);
     if (reise) k.wechsleKarte(reise.karte, reise.ausloeser);
     if (nimm(m.abspann, false)) setzeAbspann(true);
+    if (nimm(m.fensterbank, false)) setzeFensterbank(true);
     const laden = nimm(m.laden, null);
     if (laden) setzeOffenerLaden(laden);
     const u = nimm(uebergang, null);
@@ -156,6 +162,8 @@ export function useDialogende(k: Oberweltkern, partie: Partien, runden: Runden):
     beiDialogende,
     abspann,
     schliesseAbspann: () => setzeAbspann(false),
+    fensterbank,
+    schliesseFensterbank: () => setzeFensterbank(false),
     offenerLaden,
     schliesseLaden: () => setzeOffenerLaden(null),
     vorfuehrung,

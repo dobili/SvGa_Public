@@ -30,6 +30,7 @@ interface Merker<T> {
 /** Was nach dem Dialog geschehen soll; die Oberwelt liest es in beiDialogende. */
 export interface Nachdialogmerker {
   readonly abspann: Merker<boolean>;
+  readonly fensterbank: Merker<boolean>;
   readonly laden: Merker<string | null>;
   readonly auftrag: Merker<Partieauftrag | null>;
   readonly runde: Merker<string | null>;
@@ -89,6 +90,9 @@ export function dialogwirkungen(k: Wirkungskontext): Wirkungen {
   const mitWirkung = (w: Parameters<typeof wendeWirkungenAn>[1][number]) =>
     k.schreibe(wendeWirkungenAn(k.stand(), [w], new Date()));
   return {
+    zeigeFensterbank: () => {
+      m().fensterbank.current = true;
+    },
     zeigeAbspann: () => {
       m().abspann.current = true;
     },

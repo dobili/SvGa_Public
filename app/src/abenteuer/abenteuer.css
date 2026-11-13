@@ -586,3 +586,17 @@ body.abenteuer-mit-kulisse {
     opacity: 1;
   }
 }
+
+/* Fensterbank mit den Funden (Atmosphäre T15, oberwelt/Fensterbank.tsx). */
+.abenteuer-fensterbank ul {
+  max-height: 50vh;
+  overflow-y: auto;
+  margin: 0 0 var(--raster);
+  padding: 0;
+  list-style: none;
+  text-align: left;
+}
+
+.abenteuer-fensterbank li + li {
+  margin-top: calc(var(--raster) * 0.75);
+}

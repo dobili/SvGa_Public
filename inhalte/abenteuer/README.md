@@ -52,7 +52,7 @@ Hintergrund: `docs/spiel/04_Architektur.md`, Abschnitt 2 und 9.
   `gibKarte(kennung)`, `setzeSzene(kennung)`, `beginnePartie(begegnung)`, `beginneAufgaben(runde)`,
   `setzeZustand(gegner, faktor, grund)`, `schalteSteckbrief(gegner, zeile)`, `gibFund(kennung)`,
   `oeffneLaden(kennung)`, `reise(karte, ausloeser)`, `beginneGedaechtnis(kennung)`,
-  `beginneSimultan(kennung)`, `zeigeVorfuehrung(kennung)`, `setzeToenung(name)`, `zeigeAbspann()`
+  `beginneSimultan(kennung)`, `zeigeVorfuehrung(kennung)`, `setzeToenung(name)`, `zeigeAbspann()`, `zeigeFensterbank()` (alle Funde des Helden, T15)
   und `zahle(muenzen)`. `zahle` zieht einen festen Preis ab (Lastkahn: 5 Münzen); reicht das Geld
   nicht, geschieht nichts. Deshalb fragt der Dialog vorher die Variable `muenzen` ab
   (`VAR muenzen = 0`, beim Öffnen aus dem Spielstand gesetzt) und sagt sonst „nicht genug“.

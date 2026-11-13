@@ -47,7 +47,8 @@
           "datei": "karten/maple-falls-aussen.json",
           "name": "ort.mapleFalls.aussen",
           "innen": false,
-          "musik": "musik/maple-falls.ogg"
+          "musik": "musik/maple-falls.ogg",
+          "geraeusch": "klang/wasserfall.m4a"
         },
         {
           "kennung": "mapleFalls.clubraum",
@@ -65,9 +66,10 @@
           "datei": "karten/maple-falls-park.json",
           "name": "ort.mapleFalls.park",
           "innen": false,
+          "musik": "musik/maple-falls.ogg",
+          "geraeusch": "klang/wasserfall.m4a",
           "zustaende": {
-            "nadelMapleFalls >= 1": "karten/maple-falls-park-steg-neu.json",
-            "aufbruchGesehen und nicht ankunftCedarCreekGesehen": "karten/maple-falls-park-schulbus.json"
+            "nadelMapleFalls >= 1": "karten/maple-falls-park-steg-neu.json"
           }
         },
         {
@@ -134,6 +136,18 @@
           "name": "figur.hector.name",
           "sprite": "figuren/kellner.png",
           "dialog": "maple-falls-diner.hector"
+        },
+        {
+          "kennung": "mapleFalls.calloway",
+          "name": "figur.calloway.name",
+          "sprite": "figuren/statist-11.png",
+          "dialog": "maple-falls-aussen.calloway"
+        },
+        {
+          "kennung": "mapleFalls.carla",
+          "name": "figur.carla.name",
+          "sprite": "figuren/statist-26.png",
+          "dialog": "maple-falls-aussen.carla"
         }
       ],
       "ausloeser": [
@@ -369,6 +383,12 @@
           "karte": "mapleFalls.clubraum",
           "art": "gegenstand",
           "dialog": "ansehen-maple-falls.bildschirm_pult"
+        },
+        {
+          "name": "kreidebrett",
+          "karte": "mapleFalls.aussen",
+          "art": "gegenstand",
+          "dialog": "ansehen-maple-falls.kreidebrett"
         }
       ],
       "club": {
@@ -5241,7 +5261,9 @@
           "kennung": "kuerbishof.hof",
           "datei": "karten/kuerbishof-hof.json",
           "name": "ort.kuerbishof.hof",
-          "innen": false
+          "innen": false,
+          "musik": "musik/weg.kuerbishof.m4a",
+          "geraeusch": "klang/huehner.m4a"
         }
       ],
       "figuren": [

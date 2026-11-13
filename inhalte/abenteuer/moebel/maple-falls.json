@@ -3831,6 +3831,55 @@
       "begehbar": true,
       "begehbar_grund": "hängt unter dem Fenster an der Wand",
       "hinweis": "Fensterbrett im Zimmer des Helden (T15); Bild aus bildwuensche/fensterbank.py"
+    },
+    "mf4VillaWhitlock": {
+      "quelle": "spiel/eigene/villa_whitlock.png",
+      "breite": 144,
+      "hoehe": 208,
+      "kollision": true,
+      "art": "gebaeude",
+      "blick": "unten",
+      "zustand": "alt",
+      "stil": "klassisch",
+      "tuer": [[2, 10]],
+      "maske": [
+        ".........",
+        "#########",
+        "#########",
+        "#########",
+        "#########",
+        "#########",
+        "#########",
+        "#########",
+        "#########",
+        "#########",
+        "##.######",
+        "#...#####",
+        "#...#####"
+      ],
+      "hinweis": "Whitlock-Haus, verblasst und ungestrichen (Roman Kap. 1, 5; Ortsblatt); Bild aus bildwuensche/whitlock_haus.py"
+    },
+    "mf12Kreidebrett": {
+      "quelle": "spiel/eigene/kreidebrett.png",
+      "breite": 48,
+      "hoehe": 16,
+      "kollision": false,
+      "art": "boden",
+      "zustand": "gebraucht",
+      "stil": "landhaus",
+      "begehbar": true,
+      "begehbar_grund": "Kreide auf dem Gehweg",
+      "hinweis": "Lilys Kreidebrett (Roman Kap. 6); Bild aus bildwuensche/kreidebrett.py"
+    },
+    "mf12HalfpipeHolz": {
+      "quelle": "spiel/eigene/halfpipe_holz.png",
+      "breite": 64,
+      "hoehe": 48,
+      "kollision": true,
+      "art": "sport",
+      "zustand": "gebraucht",
+      "stil": "modern",
+      "hinweis": "Halfpipe aus Holz mit sichtbarer Fahrfläche (Gemini Teil 4; R022: die alte war eine Seitenansicht)"
     }
   }
 }

@@ -2,7 +2,7 @@
   "karte": "kuerbishof.hof",
   "datei": "karten/kuerbishof-hof.json",
   "art": "aussen",
-  "beschreibung": "Ein breites Bauernhaus und die Scheune zwischen Maisirrgarten und Kürbisfeld. Der Irrgarten links hat Gänge zwischen hohem Mais, der Eingang liegt am Hofweg, in der Mitte steht die Vogelscheuche „Morphy“; rechts das Kürbisfeld, ein großes Beet mit dunkler Ackererde und Holzrahmen, die Kürbisse in Reihen darin, mit der zweiten Vogelscheuche. Der Mais steht auf durchgehendem Ackerboden ohne Rahmen. Der Zaun vor dem Kürbisfeld hat an allen vier Enden einen Pfosten. Viele Heuballen, Sonnenblumen am Hofweg, am Hofladen eine Verkäuferin mit Kürbiskisten, vier Apfelbäume auf der Wiese, links unten die Kuhweide mit Zaun und Gatter. Der Traktor steht vor der Scheune.",
+  "beschreibung": "Ein breites Bauernhaus und die Scheune zwischen Maisirrgarten und Kürbisfeld. Der Irrgarten links hat Gänge zwischen hohem Mais, der Eingang liegt am Hofweg, in der Mitte steht die Vogelscheuche „Morphy“; rechts das Kürbisfeld, ein großes Beet mit dunkler Ackererde und Holzrahmen, die Kürbisse in Reihen darin, mit der zweiten Vogelscheuche. Der Mais steht auf durchgehendem Ackerboden ohne Rahmen. Der Zaun vor dem Kürbisfeld hat an allen vier Enden einen Pfosten. Viele Heuballen, Sonnenblumen am Hofweg, am Hofladen eine Verkäuferin mit Kürbiskisten, vier Apfelbäume auf der Wiese, links unten die Kuhweide mit Zaun und Gatter. Der Traktor steht vor der Scheune. Zwischen den Obstbäumen hinter Haus und Scheune dreht sich ein Windrad (Ortsblatt).",
   "boden": "gras",
   "wandart": "gras",
   "boeden": {
@@ -1523,6 +1523,10 @@
       "moebel": "n1ZaunEndeLinks",
       "feld": [46, 19],
       "bauteil_ok": true
+    },
+    {
+      "moebel": "kh12Windrad",
+      "feld": [24, 0]
     }
   ],
   "ausloeser": [

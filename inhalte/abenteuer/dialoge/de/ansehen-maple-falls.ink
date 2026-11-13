@@ -149,7 +149,7 @@ VAR nadelCedarCreek = 0
     Ein Platz in der Vitrine ist leer. Daneben klebt ein Zettel in Coach Delgados Schrift: „Reserviert“. #sprecher:erzaehler
 - else:
     ~ angesehenPokalvitrine = true
-    In der Vitrine stehen drei Pokale von 1994, darauf „Kreismeister Schach, Maple Falls High“. #sprecher:erzaehler
+    In der Vitrine stehen drei Pokale, alle von 1994, darauf „Kreismeister Schach, Schule Maple Falls“. #sprecher:erzaehler
 }
 -> END
 
@@ -168,7 +168,7 @@ VAR nadelCedarCreek = 0
     Unten auf dem Plakat steht klein: Erst zählen, dann schlagen. #sprecher:erzaehler
 - else:
     ~ angesehenPlakatZaehlen = true
-    Ein handgemaltes Plakat: „Erst zählen, dann schlagen!“ Darunter ist mit Filzstift eine Trillerpfeife gezeichnet. #sprecher:erzaehler
+    Ein handgemaltes Plakat in großen Buchstaben: ERST ZÄHLEN. Darunter ist mit Filzstift eine Trillerpfeife gezeichnet. #sprecher:erzaehler
     Gegen dieses Plakat habe ich nichts einzuwenden. Ausnahmsweise. #sprecher:ambrose
 }
 -> END

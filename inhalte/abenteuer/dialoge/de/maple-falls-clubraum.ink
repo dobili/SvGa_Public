@@ -80,11 +80,18 @@ Ein Radiergummi als Dame. Ich habe Schlimmeres gesehen. Aber nicht oft. #spreche
 -> END
 
 === coach_clubkampf ===
-Die Aufgaben sind erledigt. Dann ist es so weit: du gegen mich, um die Clubnadel. #sprecher:coachDelgado #klang:pfiff
-Ich spiele ehrlich. Du auch. Und danach gibt es Kekse, egal wie es ausgeht. #sprecher:coachDelgado
+// Szene 11 nach dem Roman, Kapitel 8, und der Dialogprüfung (VM57 bis VM60). Stimmung:
+// Herzklopfen, das erste echte. Klang: Clubkampf-Thema mit Schlagwerk; die Pfeife liegt auf dem Pult.
+Die Tische stehen anders. Eine Insel in der Mitte, die Stühle der anderen im Halbkreis. Die Pfeife liegt auf dem Pult. #sprecher:erzaehler
+Die Aufgaben sind erledigt. Dann ist es so weit: du gegen mich, um die Clubnadel. #sprecher:coachDelgado
+Eine Partie. Ich spiele, wie ich spiele, ich schenke dir nichts. Wenn du verlierst, kommst du wieder, so oft du willst. #sprecher:coachDelgado
+Sie legt eine Anstecknadel auf den Tisch. Ein kleines Ahornblatt aus Metall, mit einem Schachbrettmuster darin. #sprecher:erzaehler
 * [„Ich bin bereit.“]
-    Sie sieht nur ihren eigenen Angriff. Das ist dein Fenster. #sprecher:ambrose
-    -> coach_partie
+    Deine Hände sind kalt. #sprecher:erzaehler
+    Du wirst die Karten nicht brauchen. #sprecher:ambrose
+    * * [„Woher weißt du das?“]
+        Ich weiß es nicht. Ich sage es, damit du aufhörst zu zittern. #sprecher:ambrose
+        -> coach_partie
 * [„Noch nicht.“]
     Kein Problem. Das Brett läuft nicht weg. #sprecher:coachDelgado
     -> END
@@ -99,13 +106,19 @@ Ich spiele ehrlich. Du auch. Und danach gibt es Kekse, egal wie es ausgeht. #spr
     Remis! Das war knapp. #sprecher:coachDelgado
     Die Bronzenadel hast du. Noch einmal, wenn du willst? #sprecher:coachDelgado
 - else:
-    Gute Partie! Mein Angriff war schön, nur leider nicht für mich. #sprecher:coachDelgado #stimmung:froh #klang:pfiff
+    Sie legt ihren König um. Sanft, mit einem Finger. #sprecher:erzaehler #pause
+    Abpfiff! Gute Partie! Du hast gezählt, als ich nicht gezählt habe. #sprecher:coachDelgado #stimmung:froh #klang:pfiff
 }
-Viertes Brett, du bist dran. Samstag spielen wir in Cedar Creek. #sprecher:coachDelgado
-Hier, deine Clubnadel. Juno klebt sie gleich ins Tagebuch. #sprecher:coachDelgado
-Dein erster Sieg in einem Club, Lehrling. Merk dir dieses Gefühl. #sprecher:ambrose #stimmung:stolz
-Es kommt seltener, als man glaubt. #sprecher:ambrose
-Und noch ein Versprechen, nenn es Mentor-Zug: Einmal ziehe ich für dich. Ich hoffe, du brauchst es nie. #sprecher:ambrose
+Sie steckt dir die Nadel an. Selbst, etwas schief. #sprecher:erzaehler
+Viertes Brett. Samstag spielen wir in Cedar Creek. #sprecher:coachDelgado
+{not heimwegNadelGesehen:
+    Juno umarmt dich so heftig, dass das Tagebuch auf den Boden fällt. #sprecher:erzaehler
+    Ich hab's dir gesagt. #sprecher:sam #stimmung:froh
+}
+// Die Karte Mentor-Zug vergibt heute noch die Quest an dieser Stelle (quests.json). Der Roman gibt
+// sie erst nach dem Clubkampf von Cedar Creek (roman/akt1_befunde.md, Abschnitt 4); das ändert
+// den Ablauf und ist dem Hauptchat gemeldet.
+Noch ein Versprechen: Einmal ziehe ich für dich. Ich hoffe, du brauchst es nie. #sprecher:ambrose
 {not heimwegNadelGesehen:
     -> pratt_und_heimweg ->
 }
@@ -284,36 +297,41 @@ Und ein Matt in eins, das hab ich selbst gefunden. #sprecher:juno
 }
 
 === victor_trifft ===
+// Szene 12 nach dem Roman, Kapitel 9, und der Dialogprüfung (VM61, VM62). Stimmung: kalt, kurz,
+// ein Stich. Graham Hale ist freundlich und müde, nicht böse; Victor kühl, genau ein Riss.
+// Klang: Beim Wagen setzt die Musik aus; Victors Thema kalt; in der Partie ein Metronom; bei
+// „Hale“ ein tiefer Ton, Ambroses Thema bricht ab.
 ~ victorGesehen = true
-Im Clubraum redet ein Mann im Anzug auf zwei Leute vom Schulamt ein. Auf seinem Tablet leuchtet „Perfect Move“. #sprecher:erzaehler
-Unsere App ersetzt keinen Trainer. Sie ist nur der bessere. #sprecher:grahamHale
-Ein Pilotprojekt, kostenlos. #sprecher:grahamHale
-Coach Delgado verschränkt die Arme. Neben dem Mann lehnt ein Junge in deinem Alter. #sprecher:erzaehler
-Gelangweilt. #sprecher:erzaehler
-Victor Hale. Du hast eine Clubnadel? Zeig mal, was eine Nadel hier wert ist. #sprecher:victor #stimmung:kalt
-Hale. #sprecher:ambrose #pause
-Ambrose verstummt mitten im Wort. #sprecher:erzaehler
+Ein schwarzer Wagen hält vor der Schule. Ein Mann steigt aus, ein Telefon am Ohr, ein zweites in der Hand. #sprecher:erzaehler #pause
+Coach Delgado hat die Trainingsjacke bis oben zugezogen. #sprecher:erzaehler
+Der Mann gibt jedem die Hand, auch dir. Er hat ein freundliches, müdes Gesicht. #sprecher:erzaehler
+Ein Programm, das nie krank wird und nie die Geduld verliert. Perfect Move. Schach für die Zukunft. #sprecher:grahamHale
+Was kostet das? #sprecher:coachDelgado
+Für Pilotschulen zunächst nichts. #sprecher:grahamHale
+Am Fenster steht ein Junge, ein Tablet unter dem Arm. Er hat sich nicht gesetzt. Er sieht auf deine Nadel. #sprecher:erzaehler
+Victor Hale. Zeig mal, was eine Nadel hier wert ist. #sprecher:victor #stimmung:kalt
+In deiner Tasche bricht Ambrose mitten im Satz ab. #sprecher:erzaehler #pause:2
 -> victor_wartet
 
 === victor_wartet ===
 Ich spiele nicht von vorn gegen Anfänger. Mein Trainer gibt mir Stellungen. #sprecher:victor
-Hier: Wir sind in Zug zwölf, du hast Schwarz und eine Figur weniger. Halt sie, wenn du kannst. #sprecher:victor #stimmung:kalt
-Diese Stellung ist verloren, ehrlich gesagt. Aber verlieren kann man auf viele Arten. #sprecher:ambrose
-Wähle eine gute. #sprecher:ambrose
+Spanisch, Zug zwölf. Du hast Schwarz und einen Springer weniger. #sprecher:victor #stimmung:kalt
+Das sage ich dir vorher, damit du dich nachher nicht beschwerst. #sprecher:victor
+Diese Stellung ist verloren, ehrlich gesagt. Aber verlieren kann man auf viele Arten. #sprecher:ambrose #stimmung:still
 * [„Ich spiele.“]
     -> victor_partie
-* [„Das ist unfair.“]
-    Unfair ist, dass du glaubst, eine Nadel sei etwas wert. Spielst du oder nicht? #sprecher:victor
+* [„Das ist nicht fair.“]
+    Es ist genau. Fair ist etwas anderes. #sprecher:victor #stimmung:kalt
     -> victor_partie
 * [„Nicht jetzt.“]
-    Nicht jetzt. Natürlich. #sprecher:victor
+    Natürlich. #sprecher:victor
     -> END
 
 === victor_partie ===
-// Regelwerk R33: Weiß Victor, Schwarz der Leser in einer Trainingsstellung um Zug 12 ohne
-// Springer, Karten gesperrt; die Begegnung steht in begegnungen.json.
+// Regelwerk R33: Weiß Victor, Schwarz der Leser in einer Trainingsstellung um Zug 12 mit einem
+// Springer weniger, Karten gesperrt; die Begegnung steht in begegnungen.json.
 ~ beginnePartie("mapleFalls.victor")
-Victor stellt die Figuren auf. Seine Hände sind ruhig, sein Blick nicht. #sprecher:erzaehler
+Victor stellt die Figuren auf. Schnell, ohne hinzusehen. #sprecher:erzaehler
 -> END
 
 === victor_nachher ===
@@ -326,18 +344,24 @@ Victor stellt die Figuren auf. Seine Hände sind ruhig, sein Blick nicht. #sprec
 
 === victor_niederlage ===
 ~ setzeSzene("akt1.victorNiederlage")
+Irgendwann lehnt er sich einen Fingerbreit zurück. #sprecher:erzaehler
+Das genügt. #sprecher:victor
 Du hast in Zug zwölf verloren. Den Rest hast du nur nicht gemerkt. #sprecher:victor #stimmung:kalt
-Er gibt dir nicht die Hand. #sprecher:erzaehler
+Er räumt die Figuren ein, jede in ihr Fach. Er gibt dir nicht die Hand. #sprecher:erzaehler
 Gut gespielt, Victor. Nächstes Mal schneller, ja? Wir haben um vier den Termin. #sprecher:grahamHale
-Der war nicht nett. Aber er war gut. #sprecher:juno
-Das kommt ins Tagebuch. Ohne Glitzer. #sprecher:juno
+Etwas geht über Victors Gesicht. Sehr kurz. #sprecher:erzaehler #pause
+Ja. #sprecher:victor
+Dann sind sie weg. #sprecher:erzaehler
+Der war nicht nett. #sprecher:juno #pause
+Niemand widerspricht. #sprecher:erzaehler
+Aber er war gut. #sprecher:juno
 -> victor_ambrose
 
 === victor_ueberrascht ===
 ~ victorUeberrascht = 1
 ~ setzeSzene("akt1.victorUeberrascht")
-Victor wird blass. Er rechnet leise nach, Zug für Zug. #sprecher:erzaehler
-Glück. Das passiert einmal. #sprecher:victor #stimmung:muede
+Victor sieht auf das Brett. Drei Sekunden lang rührt er sich nicht. #sprecher:erzaehler #pause:3
+Glück. Das passiert einmal. #sprecher:victor #stimmung:kalt
 Victor? Wir fahren. #sprecher:grahamHale
 Er geht, ohne sich umzudrehen. Juno hält dir die Hand zum Abklatschen hin. #sprecher:erzaehler
 -> victor_ambrose
@@ -345,31 +369,31 @@ Er geht, ohne sich umzudrehen. Juno hält dir die Hand zum Abklatschen hin. #spr
 === victor_ambrose ===
 // Roman, Kapitel 9 (neu): Der Bildschirm bleibt im Clubraum stehen; Coach Delgado ist verlockt,
 // nicht böse (docs/spiel/19, Abschnitt 3). Ihre Entscheidung fällt in Akt 2. Klang: Konzernmotiv
-// (ein kalter Ton), dann Stille.
+// (ein kalter Ton), dann Stille. Danach still wie auf dem Dachboden im Roman: nur Wind.
 Auf dem Pult steht noch der Bildschirm. Darauf ziehen die Figuren von selbst. #sprecher:erzaehler
 Coach Delgado schaltet ihn aus. Sie steht eine Weile davor. #sprecher:erzaehler #pause
 Kostet zunächst nichts. #sprecher:coachDelgado #stimmung:ernst
 Sie sagt es zu niemandem. #sprecher:erzaehler
 Als der Raum leer ist, meldet sich das Brett in deiner Tasche. #sprecher:erzaehler
 {ausgangMapleFallsVictor == "niederlage":
-    Er hat nicht dich besiegt, sondern diese Stellung. Und in der Stellung hast du dich gewehrt. #sprecher:ambrose
+    Ambrose zeigt dir zwei Stellen. Genau und ohne ein Wort zu viel. #sprecher:erzaehler
 - else:
     Du hast eine verlorene Stellung gehalten. Das hätte zu meiner Zeit für eine Zeitungsmeldung gereicht. #sprecher:ambrose #stimmung:stolz
 }
-* [„Warum warst du vorhin so still?“]
-    Ein Name. Es gibt viele Hales. #sprecher:ambrose #stimmung:traurig
-    Mehr sagt er nicht. #sprecher:erzaehler
-* [„Ich will besser werden.“]
-    ~ ambroseVertrauen = ambroseVertrauen + 1
-    Das ist der erste kluge Satz, den du heute sagst. #sprecher:ambrose
-- Du nimmst es dir fest vor: besser werden. Ohne Glück. #sprecher:erzaehler
+* [„Du bist erschrocken. Vorhin.“]
+    Bin ich das. #sprecher:ambrose
+    * * [„Hale.“]
+        Er steht mit dem Rücken zu dir. Die alte Stellung liegt zwischen euch. Schwarz ist am Zug, seit hundertsechzig Jahren. #sprecher:erzaehler #pause
+        Ein Name. Es gibt viele Hales. #sprecher:ambrose #stimmung:traurig
+        Du weißt, dass er lügt. Er lügt nicht besser als Mama. #sprecher:erzaehler
+* [Nichts fragen]
+    Du fragst nicht. #sprecher:erzaehler
 // Roman, Kapitel 9 (neu): {held} schreibt das Ziel selbst ins Tagebuch, als Handlung statt als
 // Menüeintrag. Die kleine Schreibanimation im Tagebuch der Oberfläche ist ein eigener Auftrag.
-Juno hat dir das Clubtagebuch übers Wochenende geliehen. Du schlägst eine neue Seite auf. #sprecher:erzaehler
+- Juno hat dir das Clubtagebuch übers Wochenende geliehen. Du schlägst eine neue Seite auf. #sprecher:erzaehler
 In deiner eigenen Schrift, ohne Glitzer, schreibst du: „Ich will besser werden.“ #sprecher:erzaehler #pause
-Dann gehen wir nach Cedar Creek. Sag deiner Mutter Bescheid. #sprecher:ambrose
 -> END
 
 === victor_weg ===
-Victor und sein Vater sind gegangen. Auf dem Tisch liegt ein Prospekt von Perfect Move. #sprecher:erzaehler
+Victor und sein Vater sind gegangen. Der Bildschirm steht noch auf dem Pult. Ausgeschaltet. #sprecher:erzaehler
 -> END

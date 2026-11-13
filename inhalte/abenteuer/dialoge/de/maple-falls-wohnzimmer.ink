@@ -138,7 +138,7 @@ Brett nicht verlieren. #sprecher:mutter #stimmung:froh
 -> END
 
 === mutter_alltag ===
-{~Ich hab gleich Nachtschicht. Im Kühlschrank ist noch Pizza.|Hast du die Kartons in deinem Zimmer schon ausgepackt? Einen wenigstens?|Wenn du rausgehst: Hauptsache, du bist vor zehn zu Hause.|Die Nachbarin hat Kuchen gebracht. Die Leute hier sind nett.} #sprecher:mutter
+{~Ich hab gleich Nachtschicht. Im Kühlschrank ist noch Pizza.|Hast du die Kartons in deinem Zimmer schon ausgepackt? Einen wenigstens?|Wenn du rausgehst: Hauptsache, du bist vor zehn zu Hause.|Mrs. Calloway von gegenüber hat Kuchen gebracht. Die Leute hier sind nett.} #sprecher:mutter
 -> END
 
 // ---------------------------------------------------------------- Abend im Diner

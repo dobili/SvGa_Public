@@ -292,6 +292,6 @@ Ins Geländer hat jemand Buchstaben geritzt: „M. W. + E. C. 1952“. #sprecher
     -> END
 - else:
     Hinter der Brücke liegt eine umgestürzte Zeder quer über dem Pfad. Von hier kommst du nicht weiter. #sprecher:erzaehler
-    Den Stamm muss jemand mit Seil und Flaschenzug wegziehen. Frag in Cedar Creek, wer dort Holz brauchen kann. #sprecher:ambrose
+    Den Stamm muss jemand mit Seil und Flaschenzug wegziehen. Vielleicht braucht in Cedar Creek jemand Holz. #sprecher:erzaehler
     -> END
 }

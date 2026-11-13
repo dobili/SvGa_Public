@@ -26,6 +26,9 @@ const LESEN_JE_ZEICHEN_MS = 50;
 const LESEN_HOECHSTENS_MS = 9000;
 
 /** Die Momente der Begegnung (leer, solange geladen wird oder wenn es keine gibt). */
+/** Sprecher ohne Porträt und Namen, wie im Dialog (dialog/Dialog.tsx). */
+const ERZAEHLER = "erzaehler";
+
 function useMomente(begegnung: string): readonly Partiemoment[] {
   const [geladen, setzeGeladen] = useState<{
     begegnung: string;
@@ -96,6 +99,8 @@ function Sprechzeile({ moment, beiEnde }: { moment: Partiemoment; beiEnde: () =>
     // Einmal je Moment; die Hülle reicht bei jedem Takt einen neuen Rückruf.
     // eslint-disable-next-line react-hooks/exhaustive-deps
   }, [moment]);
+  // Erzählzeilen (Sprecher „erzaehler“, etwa im Clubkampf gegen Miss Odile) ohne Porträt und Namen.
+  const erzaehlt = moment.sprecher === ERZAEHLER;
   return (
     <button
       type="button"
@@ -104,9 +109,9 @@ function Sprechzeile({ moment, beiEnde }: { moment: Partiemoment; beiEnde: () =>
       aria-label={tSpiel("huelle.momentSchliessen")}
       onClick={beiEnde}
     >
-      <Portraet sprecher={moment.sprecher} stimmung={null} zeile={text} />
+      {erzaehlt ? null : <Portraet sprecher={moment.sprecher} stimmung={null} zeile={text} />}
       <span role="status" aria-live="polite">
-        <strong>{tSpiel(`figur.${moment.sprecher}.name`)}</strong> {text}
+        {erzaehlt ? null : <strong>{tSpiel(`figur.${moment.sprecher}.name`)}</strong>} {text}
       </span>
     </button>
   );

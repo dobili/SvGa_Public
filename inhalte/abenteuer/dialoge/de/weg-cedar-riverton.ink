@@ -189,7 +189,7 @@ Einfache Fahrt. Wer fuhr damals, und kam er an? #sprecher:ambrose
 
 // ---------------------------------------------------------------- Runde 6: Zugpartie am Stellwerk (15, 2.2)
 
-// Rosalind Marsh spielt seit 23 Jahren eine Partie mit Lokführer Earl Dubois, ein Zug pro
+// Marian Marsh spielt seit 23 Jahren eine Partie mit Lokführer Earl Dubois, ein Zug pro
 // Vorbeifahrt. Heute hat sie sich die Hand verstaucht. {held} findet, warum ihr erster Einfall
 // eine Figur einstellt (Kapitel 1, was hängt?), und hängt einen besseren Zug ans Signal.
 === ereignis_zugpartie ===
@@ -198,7 +198,7 @@ Einfache Fahrt. Wer fuhr damals, und kam er an? #sprecher:ambrose
 {rosalindGetroffen: -> zugpartie_angebot}
 ~ rosalindGetroffen = true
 Vor dem Stellwerk sitzt eine ältere Frau auf der Bank, die rechte Hand im Verband. #sprecher:erzaehler
-„Rosalind Marsh. Ich spiele seit dreiundzwanzig Jahren eine Partie mit Earl, dem Lokführer vom Güterzug. Ein Zug pro Vorbeifahrt.“ #sprecher:erzaehler
+„Marian Marsh. Ich spiele seit dreiundzwanzig Jahren eine Partie mit Earl, dem Lokführer vom Güterzug. Ein Zug pro Vorbeifahrt.“ #sprecher:erzaehler
 -> zugpartie_angebot
 
 === zugpartie_angebot ===
@@ -213,7 +213,7 @@ Vor dem Stellwerk sitzt eine ältere Frau auf der Bank, die rechte Hand im Verba
 
 === zugpartie_geloest ===
 ~ zugpartieErledigt = true
-Rosalind sieht auf das Brett. „Der Läufer hätte gehangen. Und Earl sieht so etwas sofort.“ #sprecher:erzaehler
+Marian sieht auf das Brett. „Der Läufer hätte gehangen. Und Earl sieht so etwas sofort.“ #sprecher:erzaehler
 Du hängst den besseren Zug ans Signal. Der Güterzug rattert vorbei, aus dem Führerhaus winkt eine Hand mit einer Tafel. #sprecher:erzaehler
 „Hier, die alte Signalkelle aus dem Stellwerk. Die brauch ich nicht mehr, seit es Strom gibt.“ #sprecher:erzaehler
 ~ gibFund("signalkelle")

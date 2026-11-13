@@ -1,0 +1,37 @@
+{
+  "$schema": "https://json-schema.org/draft/2020-12/schema",
+  "$id": "https://schach-von-grund-auf.com/schemas/abenteuer-portraetblatt.schema.json",
+  "title": "Porträtblätter des Schach-Abenteuers",
+  "description": "Aufbau der Porträtblätter (portraets/blatt/<figur>.png im privaten Paket): ein Blatt je Figur mit Feldern gleicher Größe, Zeile für Zeile gezählt. fassungen nennt das Feld jeder Fassung, stimmungen ordnet die Werte von #stimmung einer Fassung zu; unbekannte Stimmungen zeigen die Grundfassung.",
+  "type": "object",
+  "additionalProperties": false,
+  "required": [
+    "schemaVersion",
+    "feldPixel",
+    "spalten",
+    "zeilen",
+    "grundfassung",
+    "fassungen",
+    "stimmungen"
+  ],
+  "properties": {
+    "schemaVersion": { "const": 1 },
+    "feldPixel": { "type": "integer", "minimum": 16, "maximum": 256 },
+    "spalten": { "type": "integer", "minimum": 1, "maximum": 8 },
+    "zeilen": { "type": "integer", "minimum": 1, "maximum": 8 },
+    "grundfassung": { "type": "string", "pattern": "^[a-z][a-zA-Z]*$" },
+    "fassungen": {
+      "description": "Fassung → Feld (0 = oben links, dann zeilenweise)",
+      "type": "object",
+      "additionalProperties": { "type": "integer", "minimum": 0, "maximum": 63 }
+    },
+    "stimmungen": {
+      "description": "Wert von #stimmung → Fassung",
+      "type": "object",
+      "additionalProperties": {
+        "type": "string",
+        "pattern": "^[a-z][a-zA-Z]*$"
+      }
+    }
+  }
+}

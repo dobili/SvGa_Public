@@ -651,3 +651,10 @@ body.abenteuer-mit-kulisse {
   width: 96px;
   height: 96px;
 }
+
+/* Porträtblatt (dialog/Portraet.tsx): ein Feld des Blatts, 96 Pixel, scharfe Pixel. */
+.abenteuer-portraet-blatt {
+  display: block;
+  background-repeat: no-repeat;
+  image-rendering: pixelated;
+}

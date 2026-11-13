@@ -32,11 +32,13 @@ VAR highwayAufbruchGesehen = false
     Der Pfad aus dem Canyon endet an der Hauptstraße von Desert Springs. #sprecher:erzaehler
     -> END
 }
+// Kapitel 43 (Roman): Desert Springs ist eine Straße. Musik sparsam, Windspiel.
 ~ ankunftDesertSpringsGesehen = true
-Der Pfad aus dem Canyon endet an einer staubigen Hauptstraße. Ein Motel, ein Diner, eine Tankstelle, ein alter Bahnhof. #sprecher:erzaehler
-Aus einer offenen Garage am Motel klappern Figuren. Jemand ruft: „Schach!“ #sprecher:erzaehler
+Desert Springs ist eine Straße. Eine Tankstelle, ein Diner, an dessen Leuchtreklame drei Buchstaben fehlen. #sprecher:erzaehler #musik:desertSprings #geraeusch:wueste
+Ein Motel mit zwölf Türen in zwölf Farben. Im Schwimmbecken ohne Wasser hat jemand Kakteen gepflanzt. #sprecher:erzaehler
+Am Ortseingang ein Schild: „Desert Springs. Einwohner: 211. Schachspieler: 211.“ #sprecher:erzaehler #bild:ortsschild_211
 {versoehnungGesehen:
-    Eine Stadt, so klein wie ein Brett. Und trotzdem spielt man hier. #sprecher:ambrose
+    Eine Stadt, so klein wie ein Brett. Und trotzdem spielt man hier. #sprecher:ambrose #bild:aus
 }
 -> END
 
@@ -56,9 +58,9 @@ Der Pfad führt zurück in den Canyon, zum Felsbogen. #sprecher:erzaehler
 
 === buck_erstes_treffen ===
 ~ buckGetroffen = true
-An der Tankstelle lehnt ein Mann mit Schirmmütze an einem Pick-up. Auf der Motorhaube steht ein Brett. #sprecher:erzaehler
-Buck! Benzin, Wasser und Schach, alles aus einer Hand. #sprecher:buck #stimmung:froh
-Hier draußen fährt keiner langsam. Auch nicht am Brett. #sprecher:buck
+An der Tankstelle steht ein Brett auf der Motorhaube eines Pick-ups. Daneben lehnt ein Mann mit Zahnstocher. #sprecher:erzaehler #klang:zapfsaeule
+Stimmt nicht ganz, das mit den 211. Der Pfarrer weigert sich. Aber seine Frau spielt für zwei. #sprecher:buck
+Er spuckt den Zahnstocher aus. Buck. Drei Minuten. Hier draußen fährt keiner langsam. Auch nicht am Brett. #sprecher:buck
 -> buck_angebot
 
 === buck_angebot ===
@@ -69,7 +71,7 @@ Drei Minuten, zwei Sekunden je Zug. Eine Stellung, du hast Weiß. Na, traust du 
     }
     ~ beginnePartie("desertSprings.buck")
     -> END
-* [„Später.“]
+* [„Nicht jetzt.“]
     Die Tankstelle hat immer offen. Ich auch. #sprecher:buck
     -> END
 
@@ -77,6 +79,7 @@ Drei Minuten, zwei Sekunden je Zug. Eine Stellung, du hast Weiß. Na, traust du 
 {not buckKarteGegeben:
     ~ buckKarteGegeben = true
     Na, jetzt willst du's aber wissen! Hier, die hab ich mal einem Lkw-Fahrer abgewonnen. #sprecher:buck #stimmung:lacht
+    {versoehnungGesehen: Das war beinahe fein. #sprecher:ambrose}
     ~ gibKarte("grossesMaul")
 }
 Schnell und gut. Das gibt's hier draußen selten. Noch eine Runde? #sprecher:buck
@@ -92,7 +95,7 @@ Zu langsam an der Zapfsäule! Noch mal? #sprecher:buck #stimmung:lacht
 + [„Revanche.“]
     ~ beginnePartie("desertSprings.buck")
     -> END
-+ [„Später.“]
++ [„Nicht jetzt.“]
     -> END
 
 // ---------------------------------------------------------------- Abend am Motel
@@ -106,14 +109,25 @@ Zu langsam an der Zapfsäule! Noch mal? #sprecher:buck #stimmung:lacht
 }
 
 === abend_motel ===
+// Kapitel 46 (Roman): Nacht am Beckenrand, Sternschnuppen (#teilchen), eigenes Stück motel.nacht;
+// Victors Nachricht mit victor.maschine.
 ~ abendMotelGesehen = true
-Nachts ist es kühl. Über dem Motel stehen mehr Sterne, als du je gesehen hast. #sprecher:erzaehler
-Dein Telefon klingelt. Juno zählt die Nadeln, laut und langsam. #sprecher:erzaehler
-Eins, zwei, drei, vier, fünf, sechs, sieben! Sieben Nadeln! Ich klebe sie alle ins Tagebuch! #sprecher:juno #stimmung:froh
-Dann kommt eine Nachricht von Victor: „Ich glaube dir. Wegen des Bretts.“ #sprecher:erzaehler
-Und gleich danach: „Landesmeisterschaft im Sommer. Ich hab gehört, Nova spielt auch.“ #sprecher:erzaehler #pause
-Im Rucksack liegt noch das Tablet von Theo. Ambrose sieht es lange an. #sprecher:erzaehler
-Gib es Theo zurück, wenn du ihn siehst. Ich brauche es nicht mehr. #sprecher:ambrose #stimmung:still
+In der Nacht sitzt du am Rand des Schwimmbeckens, die Füße zwischen den Kakteen. Die Sterne gehen bis auf den Boden hinunter. #sprecher:erzaehler #licht:nacht #teilchen:sternschnuppen #musik:motel.nacht
+Das Telefon summt. Juno. #sprecher:erzaehler #klang:handy
+Sieben! Ich hab's nachgezählt. Blatt, Buch, Achteck, Zahnrad, Glas, Lyra, Kaktus. Der Kaktus kriegt Glitzer. #sprecher:juno #stimmung:froh
+Wie geht es ihm? #sprecher:juno
+Er steht am Beckenrand und sieht hinauf. #sprecher:erzaehler
+* [„Er hat gelacht. Eine Viertelstunde lang.“]
+- Worüber? #sprecher:juno
+* [„Über sich.“]
+- Oh. Oh, das ist gut. Das schreib ich auf. #sprecher:juno
+Als sie aufgelegt hat, ist da noch eine Nachricht. Ohne Gruß. „Ich glaube dir. Wegen des Bretts.“ #sprecher:erzaehler
+Eine Minute später: „Landesmeisterschaft im Sommer. Nova spielt auch. Mein Vater hat mir einen Trainer besorgt. Er ist kein Mensch.“ #sprecher:erzaehler #musik:victor.maschine
+Der zweite Satz gefällt dir nicht. #sprecher:erzaehler #pause
+Das Tablet von dem Jungen mit den Zahlen. Es liegt in deinem Rucksack. Gib es ihm zurück, wenn du ihn siehst. #sprecher:ambrose #musik:motel.nacht
+Ich brauche es nicht mehr. #sprecher:ambrose #stimmung:still
+* [„Sicher?“]
+- Nein. Aber ich hoffe es. Und ich habe es geprüft, so gut ich kann. #sprecher:ambrose #stimmung:lachtOhneSpott
 -> END
 
 // ---------------------------------------------------------------- Bahnhof und Ende von Akt 3
@@ -128,12 +142,16 @@ Gib es Theo zurück, wenn du ihn siehst. Ich brauche es nicht mehr. #sprecher:am
 }
 
 === bahnhof_ende ===
+// Kapitel 46, Schluss: Mama holt {held} ab; Mamas Thema, Schluss auf dem Endspielmotiv.
 ~ endeAkt3Gesehen = true
-Am Bahnsteig wartet Mama mit zwei Fahrkarten und einer Thermoskanne. #sprecher:erzaehler
-Nächster Halt: Summit City. Großmeisterin Ward. #sprecher:mutter
-Ich hab schon Urlaub eingereicht. #sprecher:mutter #stimmung:froh
-Summit City. Dann wird es ernst. #sprecher:ambrose
-Aber diesmal sind wir zu zweit. Zu dritt, mit deiner Mutter. #sprecher:ambrose
+Mama ist da. Sonnenbrand auf der Nase, das blaue Heft unter dem Arm. Es ist dicker geworden. #sprecher:erzaehler #musik:mama.schnee
+Port Delacroix lässt grüßen. Das Dach vom Musikhaus ist drauf. Miss Odile sagt, das nächste Mal hängst du das Schild auf. #sprecher:mutter #stimmung:froh
+Und danach: Summit City. Großmeisterin Ward. Ich hab schon Urlaub eingereicht. #sprecher:mutter
+* [„Wer ist das?“]
+- Die Beste im Staat. Sie hat mich mal in neunzehn Zügen geschlagen, als ich sechzehn war. #sprecher:mutter
+Sie spielt Endspiele, als hätte sie alle Zeit der Welt. Kalt wie ein Berg. #sprecher:mutter
+Ein Endspiel. Auf Junos Reisebrett steht eine Stellung, die seit hundertsechzig Jahren auf einen einzigen Zug wartet. #sprecher:erzaehler #musik:endspiel
+Schwarz am Zug. #sprecher:erzaehler #pause:3
 -> bahnhof_fahrten
 
 === bahnhof_fahrten ===
@@ -156,7 +174,7 @@ Der Zug fährt gleich. Wohin? #sprecher:erzaehler
 }
 ~ highwayAufbruchGesehen = true
 Am Ende der Hauptstraße beginnt der Highway. Mama klimpert mit einem Autoschlüssel. #sprecher:erzaehler
-Die Fahrkarten hab ich zurückgegeben. Dot leiht uns ihr Auto. Es ist alt, aber es fährt, und wir sehen mehr als vom Zug aus. #sprecher:mutter
+Dot leiht uns ihr Auto. Es ist alt, aber es fährt, und wir sehen mehr als vom Zug aus. #sprecher:mutter
 Juno kommt in Summit City dazu, mit dem Bus. Sommerferien. #sprecher:mutter #stimmung:froh
 Ein Auto. Zu meiner Zeit nahm man die Postkutsche, und die Postkutsche nahm einen nicht immer mit. #sprecher:ambrose #stimmung:lacht
 Die Straße flimmert. Nach einer Stunde taucht ein Diner mit Neonschild auf. Mama hält an. #sprecher:erzaehler

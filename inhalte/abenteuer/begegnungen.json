@@ -451,7 +451,32 @@
         "art": "grundstellung"
       },
       "kartenErlaubt": false,
-      "zeit": "wahl"
+      "zeit": "wahl",
+      "momente": [
+        {
+          "wenn": {
+            "zug": 2
+          },
+          "sprecher": "erzaehler",
+          "text": "moment.odile.summt",
+          "musik": "odile"
+        },
+        {
+          "wenn": {
+            "abZug": 12
+          },
+          "sprecher": "erzaehler",
+          "text": "moment.held.plan",
+          "musik": "held"
+        },
+        {
+          "wenn": {
+            "abZug": 22
+          },
+          "sprecher": "erzaehler",
+          "text": "moment.odile.stille"
+        }
+      ]
     },
     {
       "kennung": "desertSprings.clubkampf",
@@ -464,7 +489,31 @@
         "art": "grundstellung"
       },
       "kartenErlaubt": true,
-      "zeit": "wahl"
+      "zeit": "wahl",
+      "momente": [
+        {
+          "wenn": {
+            "abZug": 8
+          },
+          "sprecher": "ambrose",
+          "dialog": "desert-springs-garage.clubkampf_sturm"
+        },
+        {
+          "wenn": {
+            "merkmal": "schachGegen",
+            "abZug": 14
+          },
+          "sprecher": "mira",
+          "dialog": "desert-springs-garage.clubkampf_atme"
+        },
+        {
+          "wenn": {
+            "abZug": 24
+          },
+          "sprecher": "mira",
+          "dialog": "desert-springs-garage.clubkampf_atme"
+        }
+      ]
     },
     {
       "kennung": "summitCity.clubkampf",

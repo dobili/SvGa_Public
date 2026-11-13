@@ -241,7 +241,7 @@ Edna. Eisenwaren. Was du hier kaufst, hält. #sprecher:edna
     An der Bushaltestelle liegen ein paar Schneeflocken auf der Bank, wo Victor saß. #sprecher:erzaehler
     -> END
 - else:
-    Victor steht mit einem Tablet am Werkstor und tippt. Er nickt dir zu, mehr nicht. #sprecher:erzaehler
+    // Steht erst nach der Nadel am Werkstor (orte.json, wenn; Gutachten L1.3).
     -> END
 }
 
@@ -252,7 +252,7 @@ Edna. Eisenwaren. Was du hier kaufst, hält. #sprecher:edna
     Graham Hale telefoniert am Werkstor. „Ja, unterschrieben. Ja, ab Montag.“ #sprecher:erzaehler
     -> END
 - else:
-    Ein Mann im Anzug spricht am Werkstor mit dem Pförtner. Auf seiner Mappe steht „Perfect Move“. #sprecher:erzaehler
+    // Steht erst nach der Nadel am Werkstor (orte.json, wenn; Gutachten L1.3).
     -> END
 }
 

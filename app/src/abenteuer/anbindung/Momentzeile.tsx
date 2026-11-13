@@ -13,13 +13,13 @@ import { useEffect, useMemo, useState } from "react";
 import { stellungen, type Partie } from "../../spiel/partie";
 import { restzeit } from "../../spiel/uhr";
 import type { Partiesteuerung } from "../../ui/komponenten/partie/usePartie";
-import { ladeSpieldaten } from "../daten/laden";
 import { Portraet } from "../dialog/Portraet";
 import { faelligerMoment, type Partiemoment } from "../regeln/partiemomente";
 import { tSpiel } from "../texte/texte";
 import { tonregie } from "../ton/tonregie";
 import { ambroseFehlt, anwesendeMomente } from "../regeln/abwesenheit";
 import { useAbenteuerstand } from "./dienste";
+import { useBegegnung } from "./useBegegnung";
 import { Momentdialog } from "./Momentdialog";
 
 /** Lesedauer: Grundzeit plus je Zeichen, höchstens so lange (ms). */
@@ -27,31 +27,13 @@ const LESEN_GRUND_MS = 3000;
 const LESEN_JE_ZEICHEN_MS = 50;
 const LESEN_HOECHSTENS_MS = 9000;
 
-/** Die Momente der Begegnung (leer, solange geladen wird oder wenn es keine gibt). */
 /** Sprecher ohne Porträt und Namen, wie im Dialog (dialog/Dialog.tsx). */
 const ERZAEHLER = "erzaehler";
 
-function useMomente(begegnung: string): readonly Partiemoment[] {
-  const [geladen, setzeGeladen] = useState<{
-    begegnung: string;
-    momente: readonly Partiemoment[];
-  } | null>(null);
-  useEffect(() => {
-    let aktiv = true;
-    ladeSpieldaten()
-      .then((daten) => {
-        const b = daten.begegnungen.find((x) => x.kennung === begegnung);
-        if (aktiv) setzeGeladen({ begegnung, momente: b?.momente ?? [] });
-      })
-      .catch((fehler: unknown) => {
-        // Ohne Spieldaten gibt es keine Momente; die Partie läuft trotzdem.
-        console.warn("Partiemomente nicht geladen", fehler);
-      });
-    return () => {
-      aktiv = false;
-    };
-  }, [begegnung]);
-  return geladen?.begegnung === begegnung ? geladen.momente : [];
+/** Die Momente der Begegnung (leer, solange geladen wird oder wenn es keine gibt). */
+function useMomente(partiekennung: string): readonly Partiemoment[] {
+  const begegnung = useBegegnung(partiekennung);
+  return useMemo(() => begegnung?.momente ?? [], [begegnung]);
 }
 
 /** Der gerade gezeigte Moment mit seinem Schlüssel (Halbzug und Index). */
@@ -131,11 +113,9 @@ export function Momentzeile({
   readonly s: Partiesteuerung;
   readonly partie: Partie;
 }) {
-  // Die Kennung der Partie trägt hinter „#“ eine Wiederholungsmarke (wie regeln/rueckweg.ts).
-  const begegnung = (partie.einstellung.abenteuer?.kennung ?? "").split("#")[0] ?? "";
   // Im Tiefpunkt spricht Ambrose nicht (regeln/abwesenheit.ts).
   const stand = useAbenteuerstand();
-  const alle = useMomente(begegnung);
+  const alle = useMomente(partie.einstellung.abenteuer?.kennung ?? "");
   const fehlt = ambroseFehlt(stand?.dialogvariablen ?? {});
   const momente = useMemo(() => anwesendeMomente(alle, fehlt), [alle, fehlt]);
   const verlauf = useVerlauf(partie, momente, s.jetztMs);

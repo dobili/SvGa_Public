@@ -325,11 +325,15 @@ def baue(pfad: Path) -> list[str]:
 
 
 def hinweise(pfad: Path) -> list[str]:
-    """Hinweise, die nicht als Befund zählen: Fahrzeuge quer zu ihrer Fahrbahn (Regel 10.65)."""
+    """Hinweise, die nicht als Befund zählen: Fahrzeuge quer zu ihrer Fahrbahn (Regel 10.65),
+    Felswände, die frei im Gelände enden (Regel 10.74)."""
     from pipeline.abenteuer.fahrzeuge import fahrzeughinweise
 
     szene, moebel = lade(pfad), lade_moebel()
-    return fahrzeughinweise(szene, raster(szene), platziere(szene, moebel)[0], moebel)
+    from pipeline.abenteuer.hoehen import hoehenhinweise
+
+    fahrzeuge = fahrzeughinweise(szene, raster(szene), platziere(szene, moebel)[0], moebel)
+    return fahrzeuge + hoehenhinweise(szene, raster(szene))
 
 
 def main() -> int:

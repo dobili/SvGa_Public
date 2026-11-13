@@ -72,17 +72,29 @@ def _rolle_ohne_rand(zeilen: list[str], x: int, y: int, hoehe: int = HOEHE_STAND
         if unten >= len(zeilen):
             return None
         if zeilen[unten][x] != WAND:
-            return rolle if all(_ist_wand(zeilen, x, y + i) for i in range(abstand)) else None
+            if not all(_ist_wand(zeilen, x, y + i) for i in range(abstand)):
+                return None
+            # Niedrige Stufe (Hang am Ende einer Wand, zwei Reihen hoch): Das oberste Feld trägt
+            # die gewellte Kante, sonst endet der Fels oben wie abgeschnitten (R028).
+            oben_frei = y > 0 and not _ist_wand(zeilen, x, y - 1)
+            return "kante" if 1 < abstand < hoehe and oben_frei else rolle
     return None
 
 
 def _variante(zeilen: list[str], x: int, y: int, grasboden: set[str]) -> str:
     """Gras oder Erde, je nach dem Boden über der Kante (erste Nicht-Wand-Reihe darüber)."""
     oben = y - 1
-    while oben >= 0 and zeilen[oben][x] == WAND:
+    # Treppenfelder in der Wand zählen nicht als Boden darüber (schräger Weg durch die Kante).
+    while oben >= 0 and (zeilen[oben][x] == WAND or treppenfeld(zeilen, x, oben) is not None):
         oben -= 1
-    zeichen = zeilen[oben][x] if oben >= 0 else WAND
-    return "gras" if zeichen in grasboden else "erde"
+    # Reicht die Wand bis an den oberen Rand (Seitenkante über dem Wandende), zählt der nächste Boden.
+    zeichen = zeilen[oben][x] if oben >= 0 else _naechster_boden(zeilen, x, y)
+    if zeichen in grasboden:
+        return "gras"
+    # Ein schmaler Weg über der Kante macht die Wiese nicht zur Erdfläche (R027, Zedernpfad: braune
+    # Kacheln neben der Treppe): Liegt bis zu BREITE_RAMPE Felder daneben Gras, bleibt es Gras.
+    nah = range(max(0, x - BREITE_RAMPE), min(len(zeilen[0]), x + BREITE_RAMPE + 1))
+    return "gras" if oben >= 0 and any(zeilen[oben][a] in grasboden for a in nah) else "erde"
 
 
 def klippenfeld(
@@ -160,8 +172,34 @@ def _flaechenfeld(zeilen: list[str], x: int, y: int, grasboden: set[str]) -> tup
     spalte = (
         links if boden_links and not boden_rechts else rechts if boden_rechts and not boden_links else mitte
     )
+    if boden_links and boden_rechts:
+        # Seitenkante der Hochfläche (eine Spalte „#“ über einem Wandende, R028): Rand auf der
+        # Seite, die tiefer liegt; die Hochfläche liegt dort, wohin die Wand darunter weiterläuft.
+        spalte = {"links": rechts, "rechts": links}.get(hochseite(zeilen, x, y), mitte)
     reihe = REIHE_RAND if 0 < y and not _ist_wand(zeilen, x, y - 1) else REIHE_OBEN
     return (spalte, reihe)
+
+
+def hochseite(zeilen: list[str], x: int, y: int) -> str | None:
+    """Auf welcher Seite einer Seitenkante die Hochfläche liegt: „links“, „rechts“ oder None.
+
+    Eine Seitenkante ist eine einzelne Spalte „#“ mit Boden links und rechts. Sie setzt das Ende
+    einer Felswand fort; die Hochfläche liegt auf der Seite, auf der die Wand am Fuß der Spalte
+    weiterläuft. Beispiel: Wand von Spalte 0 bis 17, darüber eine Spalte „#“ bei 17 bis zum
+    Kartenrand → „links“ (links oben, rechts unten).
+    Sonderfall: Spalte ohne Wand am Fuß (frei stehender Pfosten aus „#“) → None.
+    """
+    unten = y
+    while (
+        _ist_wand(zeilen, x, unten)
+        and not _ist_wand(zeilen, x - 1, unten)
+        and not _ist_wand(zeilen, x + 1, unten)
+    ):
+        unten += 1
+    if not _ist_wand(zeilen, x, unten):
+        return None
+    links, rechts = _ist_wand(zeilen, x - 1, unten), _ist_wand(zeilen, x + 1, unten)
+    return "links" if links and not rechts else "rechts" if rechts and not links else None
 
 
 def treppenfeld(zeilen: list[str], x: int, y: int, strasse: set[str] | None = None) -> tuple[int, int] | None:
@@ -176,9 +214,14 @@ def treppenfeld(zeilen: list[str], x: int, y: int, strasse: set[str] | None = No
     if _ist_wand(zeilen, x, y) or zeilen[y][x] in (strasse or set()):
         return None
     # Nur echte Rampen: Boden darüber und darunter. Eine Einbuchtung der Kante ist keine Treppe
-    # (Gutachten Steinbruchgrube, dritte Prüfung: Tritte ohne Weg auf der Kantenkrone).
-    if _ist_wand(zeilen, x, y - 1) or _ist_wand(zeilen, x, y + 1) or y == 0 or y + 1 >= len(zeilen):
+    # (Gutachten Steinbruchgrube, dritte Prüfung: Tritte ohne Weg auf der Kantenkrone). Läuft der
+    # Weg schräg durch die Wand, liegt der Boden darüber oder darunter ein Feld daneben (R027:
+    # Auf dem Zedernpfad fehlten deshalb Treppenkacheln, der Erdweg schien durch).
+    if y == 0 or y + 1 >= len(zeilen):
         return None
+    for reihe in (y - 1, y + 1):
+        if all(_ist_wand(zeilen, a, reihe) for a in (x - 1, x, x + 1)):
+            return None
     links = next((r for d in range(1, BREITE_RAMPE + 1) if (r := _rolle_wand(zeilen, x - d, y))), None)
     rechts = next((r for d in range(1, BREITE_RAMPE + 1) if (r := _rolle_wand(zeilen, x + d, y))), None)
     if links is None or rechts is None:

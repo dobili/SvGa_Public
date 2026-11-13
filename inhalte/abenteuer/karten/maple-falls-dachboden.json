@@ -11,7 +11,7 @@
  "tilewidth": 16,
  "tileheight": 16,
  "nextlayerid": 5,
- "nextobjectid": 30,
+ "nextobjectid": 32,
  "layers": [
   {
    "id": 1,
@@ -632,6 +632,17 @@
     },
     {
      "id": 10,
+     "name": "kisteWhitlock",
+     "type": "ausloeser",
+     "x": 64,
+     "y": 64,
+     "width": 16,
+     "height": 16,
+     "rotation": 0,
+     "visible": true
+    },
+    {
+     "id": 11,
      "name": "mf4Luke",
      "type": "moebel",
      "x": 16,
@@ -654,7 +665,7 @@
      ]
     },
     {
-     "id": 11,
+     "id": 12,
      "name": "mf12FensterAhorn",
      "type": "moebel",
      "x": 112,
@@ -677,7 +688,7 @@
      ]
     },
     {
-     "id": 12,
+     "id": 13,
      "name": "mf2BildWald",
      "type": "moebel",
      "x": 64,
@@ -700,7 +711,7 @@
      ]
     },
     {
-     "id": 13,
+     "id": 14,
      "name": "mf2Kleiderschrank",
      "type": "moebel",
      "x": 144,
@@ -723,7 +734,7 @@
      ]
     },
     {
-     "id": 14,
+     "id": 15,
      "name": "mf2Buecherregal",
      "type": "moebel",
      "x": 176,
@@ -746,7 +757,7 @@
      ]
     },
     {
-     "id": 15,
+     "id": 16,
      "name": "mf2TeppichAlt",
      "type": "moebel",
      "x": 48,
@@ -769,7 +780,7 @@
      ]
     },
     {
-     "id": 16,
+     "id": 17,
      "name": "mf3Rundtisch",
      "type": "moebel",
      "x": 64,
@@ -792,7 +803,7 @@
      ]
     },
     {
-     "id": 17,
+     "id": 18,
      "name": "mf3BrettKlein",
      "type": "moebel",
      "x": 74,
@@ -815,7 +826,7 @@
      ]
     },
     {
-     "id": 18,
+     "id": 19,
      "name": "mf3StuhlDunkelRechts",
      "type": "moebel",
      "x": 48,
@@ -838,7 +849,7 @@
      ]
     },
     {
-     "id": 19,
+     "id": 20,
      "name": "mf3StuhlDunkelLinks",
      "type": "moebel",
      "x": 96,
@@ -861,7 +872,7 @@
      ]
     },
     {
-     "id": 20,
+     "id": 21,
      "name": "mf2Stehlampe",
      "type": "moebel",
      "x": 112,
@@ -884,7 +895,7 @@
      ]
     },
     {
-     "id": 21,
+     "id": 22,
      "name": "mf7Truhe",
      "type": "moebel",
      "x": 176,
@@ -907,7 +918,7 @@
      ]
     },
     {
-     "id": 22,
+     "id": 23,
      "name": "mf12KartonAltHoch",
      "type": "moebel",
      "x": 176,
@@ -930,7 +941,7 @@
      ]
     },
     {
-     "id": 23,
+     "id": 24,
      "name": "mf12KartonAltHoch",
      "type": "moebel",
      "x": 176,
@@ -953,7 +964,7 @@
      ]
     },
     {
-     "id": 24,
+     "id": 25,
      "name": "mf7Truhe",
      "type": "moebel",
      "x": 144,
@@ -976,7 +987,7 @@
      ]
     },
     {
-     "id": 25,
+     "id": 26,
      "name": "mf7Teddy",
      "type": "moebel",
      "x": 152,
@@ -999,7 +1010,7 @@
      ]
     },
     {
-     "id": 26,
+     "id": 27,
      "name": "mf12KartonAltHoch",
      "type": "moebel",
      "x": 16,
@@ -1022,7 +1033,7 @@
      ]
     },
     {
-     "id": 27,
+     "id": 28,
      "name": "mf2Zeitungsstapel",
      "type": "moebel",
      "x": 112,
@@ -1045,7 +1056,7 @@
      ]
     },
     {
-     "id": 28,
+     "id": 29,
      "name": "mf12Hutschachtel",
      "type": "moebel",
      "x": 80,
@@ -1068,7 +1079,7 @@
      ]
     },
     {
-     "id": 29,
+     "id": 30,
      "name": "mf2Standspiegel",
      "type": "moebel",
      "x": 16,
@@ -1082,6 +1093,29 @@
        "name": "tiefe",
        "type": "int",
        "value": 120
+      },
+      {
+       "name": "kollision",
+       "type": "bool",
+       "value": true
+      }
+     ]
+    },
+    {
+     "id": 31,
+     "name": "mf12KartonWhitlock",
+     "type": "moebel",
+     "x": 48,
+     "y": 48,
+     "width": 48,
+     "height": 32,
+     "rotation": 0,
+     "visible": true,
+     "properties": [
+      {
+       "name": "tiefe",
+       "type": "int",
+       "value": 72
       },
       {
        "name": "kollision",

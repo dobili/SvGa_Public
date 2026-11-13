@@ -68,6 +68,8 @@ const FIGUREN = {
   juno: ["long12", "schwarz", "h5", "variant05", "ffc425", "", "", ""], // 14, beste Freundin
   mutter: ["long04", "rot", "h2", "variant08", "88d8b0", "", "", ""], // Mama Laura, Krankenpflegerin
   "graham-hale": ["short03", "hellbraun", "h1", "variant23", "a9a9a9", "light02", "", ""], // Victors Vater
+  hale1858: ["short03", "dunkelbraun", "h1", "variant23", "2c3e50", "", "variant02", ""], // Josiah Hale 1858, Ingenieur (Erinnerung)
+  gideon: ["short05", "schwarz", "h4", "variant23", "6b4f3a", "", "variant06", ""], // Schmied 1866, Lederschurz (Erinnerung)
   // Maple Falls
   "coach-delgado": ["short20", "dunkelbraun", "h6", "variant14", "d11141", "", "", ""], // Coach, Sportwörter
   sam: ["short11", "braun", "h3", "variant03", "44c585", "", "", ""], // Clubmitglied

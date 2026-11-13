@@ -488,6 +488,9 @@
     },
     {
       "kennung": "desertSprings.clubkampf",
+      "staerkeNach": [
+        { "wenn": "atmeGesagt", "stufe": 1, "profil": "positionsspieler" }
+      ],
       "gegner": "desertSprings.mira",
       "farbe": "zufall",
       "format": {
@@ -522,6 +525,35 @@
           "dialog": "desert-springs-garage.clubkampf_atme"
         }
       ]
+    },
+    {
+      "kennung": "desertSprings.dotFernpartie",
+      "gegner": "desertSprings.dot",
+      "farbe": "black",
+      "format": {
+        "art": "partie"
+      },
+      "startstellung": {
+        "art": "fen",
+        "fen": "3r2k1/ppR2ppp/2n1p3/3p4/3P4/P3PN2/1P3PPP/6K1 b - - 0 31"
+      },
+      "kartenErlaubt": false,
+      "zeit": "wahl"
+    },
+    {
+      "kennung": "desertSprings.erinnerung1858",
+      "gegner": "desertSprings.hale1858",
+      "farbe": "white",
+      "format": {
+        "art": "stellungsduell",
+        "zuege": 12,
+        "mindestvorteil": 1.0
+      },
+      "startstellung": {
+        "art": "fen",
+        "fen": "r2r1bk1/pp1q1ppp/1np5/3p2N1/3P4/1PPB4/P4PPP/3Q2K1 w - - 0 26"
+      },
+      "kartenErlaubt": false
     },
     {
       "kennung": "summitCity.clubkampf",
@@ -627,7 +659,23 @@
         "art": "fen",
         "fen": "6k1/p2R4/2n4p/1p6/2n1P3/6KP/P5P1/8 w - - 0 41"
       },
-      "kartenErlaubt": false
+      "kartenErlaubt": false,
+      "momente": [
+        {
+          "wenn": {
+            "abZug": 5
+          },
+          "sprecher": "ambrose",
+          "dialog": "ghost-town-saloon.fernpartie_wie_er"
+        },
+        {
+          "wenn": {
+            "abZug": 11
+          },
+          "sprecher": "erzaehler",
+          "dialog": "ghost-town-saloon.fernpartie_zaehlen"
+        }
+      ]
     },
     {
       "kennung": "capitalArena.runde1",

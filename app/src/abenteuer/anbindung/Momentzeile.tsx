@@ -21,6 +21,7 @@ import { ambroseFehlt, anwesendeMomente } from "../regeln/abwesenheit";
 import { useAbenteuerstand } from "./dienste";
 import { useBegegnung } from "./useBegegnung";
 import { Momentdialog } from "./Momentdialog";
+import { Zugerratenmoment } from "./Zugerratenmoment";
 
 /** Lesedauer: Grundzeit plus je Zeichen, höchstens so lange (ms). */
 const LESEN_GRUND_MS = 3000;
@@ -140,6 +141,12 @@ export function Momentzeile({
   }, [gezeigt]);
   if (!gezeigt || partie.ende) return null;
   const schliesse = () => setzeGezeigt(null);
+  // Zugerraten (Halbfinale): Der Dialog wartet auf die Antwort des Gegners und den gesuchten Zug.
+  if (gezeigt.moment.dialog && gezeigt.moment.zugerraten) {
+    return (
+      <Zugerratenmoment verweis={gezeigt.moment.dialog} s={s} partie={partie} beiEnde={schliesse} />
+    );
+  }
   if (gezeigt.moment.dialog) {
     return (
       <Momentdialog verweis={gezeigt.moment.dialog} halteUhr={s.halteUhr} beiEnde={schliesse} />

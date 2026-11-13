@@ -10,6 +10,11 @@
 // schuppen_zu (wenn schuppenOffen).
 // Die Ankunft läuft auch beim ersten Gespräch draußen, falls der Übergang sie nicht gezeigt hat.
 //
+// Runde 11 (13.11.2026): an den Roman zu Akt 2 angeglichen (roman/akt2_teil1.md und
+// akt2_teil2.md, Kapitel 18 bis 22), Klang nach 21_Klangplan.md (Akt 2). Stufen der kleinen
+// Geschichten in Riverton (Ortsblatt Riverton, Dokument 20): A bis zur Nadel von Riverton, B danach,
+// C nach der Nadel von Ironwood, D nach dem Ende von Akt 3 (endeAkt3Gesehen).
+//
 // Variablen: nadelRiverton setzt die Hülle (Zahl, R42). schuppenOffen setzt albescu_schluessel,
 // clubkampfRivertonBesprochen setzt riverton-pavillon.ink. gefundenSchluessel setzt die Hülle,
 // sobald der Schlüssel am Steg in Cedar Creek gefunden ist (cedar-creek-aussen.fund_schluessel).
@@ -32,6 +37,9 @@ VAR schuppenOffen = false
 VAR holzlaeuferGefunden = false
 VAR nadelRiverton = 0
 VAR clubkampfRivertonBesprochen = false
+VAR nadelIronwood = 0
+VAR endeAkt3Gesehen = false
+VAR eliGesehen = false
 
 // ---------------------------------------------------------------- Ankunft
 
@@ -44,11 +52,13 @@ Der Feldweg neben den Gleisen endet an einem Bahnhof aus rotem Backstein. Es beg
 -> ankunft
 
 === ankunft ===
+// Kapitel 18: laut, nass, lebendig. Musik und Regen kommen von der Karte (riverton, regen).
 ~ ankunftRivertonGesehen = true
-Riverton. Überall Plakate: „Perfect Move Park – Schach für alle, ohne Wartezeit“. #sprecher:erzaehler
-Ohne Wartezeit. Als wäre das Warten nicht das Schönste am Schach. #sprecher:ambrose #stimmung:streng
-Juno zeigt auf ein Schild mit einem Pfeil: „Zum Park“. #sprecher:erzaehler
-Da lang! Und schneller, sonst ist der Pavillon weg, bevor wir da sind. #sprecher:juno
+Riverton riecht nach Regen auf Stein. Backstein, rot und rußig, Feuerleitern, Schornsteine, aus denen nichts mehr kommt. #sprecher:erzaehler
+Ein Bus hupt. Jemand ruft über die Straße nach einem Earl. Aus zwei Fenstern kommen zwei Musiken und streiten sich. #sprecher:erzaehler
+Hier bin ich geboren. Also fast. Meine Cousine. Die ist hier geboren. #sprecher:juno #stimmung:froh
+An jeder Laterne ein Plakat, sauber und glänzend auf dem nassen Stein: „Perfect Move Park. Schach für alle. Ohne Wartezeit.“ #sprecher:erzaehler
+Ohne Wartezeit. Als wäre das Warten nicht das Schönste daran. #sprecher:ambrose
 -> END
 
 // ---------------------------------------------------------------- Übergänge
@@ -121,35 +131,45 @@ Komm, wir schließen auf. Das Rad soll fahren, nicht stehen. #sprecher:albescu
 // ---------------------------------------------------------------- Nova und Victor
 
 === nova ===
+// Kapitel 18: zwei Gesichter, Kamera an und aus; sie setzt sich in den Regen (Porträtfassung
+// „Kamera aus“ gibt es noch nicht).
 {
 - not ankunftRivertonGesehen: -> ankunft
 - novaGesehen:
-    Nova sitzt allein auf einer Bank unter dem Schirm. Die Kameras sind weg. #sprecher:erzaehler
-    Sie sieht nicht auf. #sprecher:erzaehler
+    Nova sitzt auf der Kante des Podiums. Die Kameras sind weg. Sie sieht nicht auf. #sprecher:erzaehler
     -> END
 }
 ~ novaGesehen = true
-Unter einem großen Schirm steht ein Mädchen im glänzenden Trainingsanzug vor zwei Kameras. #sprecher:erzaehler
-Mit Perfect Move trainiert jeder wie ein Champion! Ohne Wartezeit, ohne Fehler, ohne Grenzen! #sprecher:nova #stimmung:froh
-Die Kameras gehen aus. Ihr Lächeln bleibt noch einen Moment stehen, dann fällt es herunter. #sprecher:erzaehler #pause
+Auf dem Podium steht ein Mädchen in einer weißen Jacke mit dem Zeichen des Konzerns und lächelt in die Kameras. #sprecher:erzaehler
+Mit Perfect Move trainiert jeder wie ein Champion! Kein Warten auf einen Gegner. Keine schlechten Tage. #sprecher:nova #stimmung:froh
+Der Tisch ist immer bereit, immer geduldig, immer genau so stark, wie du ihn brauchst. #sprecher:nova #stimmung:froh
+Dann gehen die roten Lichter an den Kameras aus. Ihr Lächeln fällt herunter wie etwas, das man loslässt. #sprecher:erzaehler #pause:2
 Kann ich jetzt kurz sitzen? #sprecher:nova
+Sie fragt niemanden. Sie setzt sich auf die Kante des Podiums, in den Regen. #sprecher:erzaehler
+* [Juno ansehen]
+* [Weiter zusehen]
+- Nova Sinclair. Landesmeisterin. Der Highschools. Die hat noch nie verloren. #sprecher:juno
 -> END
 
 === victor ===
+// Kapitel 18: Victor spricht die Sätze des Vaters; kein freundlicher Satz vor Akt 3.
 {
 - not ankunftRivertonGesehen: -> ankunft
 - victorRivertonGesehen: -> victor_alltag
 }
 ~ victorRivertonGesehen = true
-Neben den Kameras steht Victor im Trainingsanzug des Konzerns. Er sagt Sätze, die nach seinem Vater klingen. #sprecher:erzaehler
-{held}. Du bist weit gekommen. Für jemanden, der Italienisch spielt. #sprecher:victor #stimmung:kalt
-Die Tische machen keine Fehler. Das ist der Punkt. #sprecher:victor
+Neben dem Podium steht Victor, im selben Weiß, die Hände auf dem Rücken. Auf seiner Jacke steht sein Name. #sprecher:erzaehler
+Ins Mikrofon sagt er drei Sätze. Trainingspläne, die sich anpassen. Auswertung in Echtzeit. Es sind die Sätze seines Vaters. #sprecher:erzaehler
+Dann kommt er herüber, nicht schnell. Du. #sprecher:victor #stimmung:kalt
+Er sieht auf deine Jacke. Zwei. #sprecher:victor
+* [„Zwei.“]
+* [Nichts sagen]
+- Er nickt, als trüge er eine Zahl in eine Liste ein. Dann sieht er zu den Tischen. #sprecher:erzaehler
+Sie machen keine Fehler. Das ist der Punkt. #sprecher:victor
 * [„Und das ist gut?“]
+    Er antwortet nicht gleich. Wieder diese Sekunden. #sprecher:erzaehler #pause:2
     Mein Vater sagt ja. #sprecher:victor
-    Er sieht dabei auf die Pfützen, nicht auf dich. #sprecher:erzaehler
-* [„Der Pavillon muss deshalb weg.“]
-    Der Pavillon ist alt. Alt ist nicht dasselbe wie gut. #sprecher:victor
-    Er sagt es, als hätte er es auswendig gelernt. #sprecher:erzaehler
+* [Gehen]
 - -> END
 
 === victor_alltag ===
@@ -159,23 +179,50 @@ Victor steht unter dem Banner und tippt auf ein Tablet. Einmal sieht er zum Pavi
 // ---------------------------------------------------------------- Gegenstände
 
 === bildschirmtische ===
+// Kapitel 18: sechs weiße Tische in einer Reihe, das einzige Gerade im Park. Ambrose sieht hin
+// (Stimmung fern), nennt sie einen Rechenschieber mit Beleuchtung und sieht weiter hin.
 {
 - not ankunftRivertonGesehen: -> ankunft
-- bildschirmtischeGesehen:
-    Auf allen Bildschirmen laufen Partien, Zug um Zug, ohne Pause. Niemand sitzt davor. #sprecher:erzaehler
-    Ambrose sieht trotzdem hin. Lange. #sprecher:erzaehler
-    -> END
+- bildschirmtischeGesehen: -> bildschirmtische_wieder
 }
 ~ bildschirmtischeGesehen = true
-Auf der Wiese stehen zwanzig Tische mit Bildschirmen statt Brettern. #sprecher:erzaehler
-Auf einem gewinnt die Maschine eine Partie in elf Sekunden. #sprecher:erzaehler
-Eine Rechenmaschine, die nie zweifelt, ist kein Spieler. #sprecher:ambrose #stimmung:streng
-Und doch. Dieser Zug eben. Den hätte ich nicht gesehen. #sprecher:ambrose #stimmung:fern
-* [„Ambrose? Alles in Ordnung?“]
-    Gewiss. Ich habe nur nachgedacht. Das darf man doch noch. #sprecher:ambrose
-* [Weitergehen]
-    Ambrose schweigt, bis du den Park verlässt. #sprecher:erzaehler
-- -> END
+Auf der Wiese stehen sechs Tische in einer Reihe, weiß, mit Bildschirmen, die im Regen leuchten. Über jedem ein kleines Dach aus Glas. #sprecher:erzaehler #musik:konzern.flaeche
+Auf einem läuft eine Partie. Niemand sitzt davor. Die Figuren ziehen von selbst, wie Wasser einen Hang hinunter. #sprecher:erzaehler
+* [„Ambrose?“]
+    Er dreht sich nicht um. #sprecher:erzaehler
+* [Hinsehen]
+- Sie hat nicht gezögert. Kein einziges Mal. Achtundzwanzig Züge. Und in keinem … #sprecher:ambrose #stimmung:fern #pause:2
+Eine Rechenmaschine, die nie zweifelt, ist kein Spieler. Das ist ein Rechenschieber mit Beleuchtung. #sprecher:ambrose
+Er sagt es laut, mit seiner alten Stimme. Aber er sieht weiter hin. #sprecher:erzaehler
+-> END
+
+=== bildschirmtische_wieder ===
+{
+- not eliGesehen: -> eli
+- else:
+    Auf allen Bildschirmen laufen Partien, Zug um Zug, ohne Pause. Ambrose sieht hin. Lange. #sprecher:erzaehler #musik:konzern.flaeche
+    -> END
+}
+
+// ---------------------------------------------------------------- Eli (kleine Geschichte)
+// Neu im Roman (Kapitel 19, Dokument 19, Abschnitt 3): Der Tisch ist geduldig mit einem, der nicht
+// reden mag. Eli spricht nicht; Stufen nach dem Ortsblatt Riverton. Auslöser „eli“ fehlt noch auf
+// der Karte; bis dahin erreicht man ihn über die Bildschirmtische.
+=== eli ===
+~ eliGesehen = true
+{
+- endeAkt3Gesehen:
+    Eli spielt heute unter der Brücke, an einem Klappbrett. Gestern saß er am Tisch. Beides ist recht. #sprecher:erzaehler
+- nadelIronwood > 0:
+    Eli sitzt am Rand unter der Brücke und schaut den anderen zu. Er sagt nichts. Er geht auch nicht. #sprecher:erzaehler
+- nadelRiverton > 0:
+    Eli sitzt wieder am leuchtenden Tisch. Neben dem Bildschirm steht eine Dose Limonade. Tamsin hat sie hingestellt. #sprecher:erzaehler
+- else:
+    An einem Tisch sitzt jetzt ein Junge, kleiner als Tamsin, allein. Der Bildschirm wirft Licht auf sein Gesicht. #sprecher:erzaehler
+    Er sieht nicht auf. Der Tisch wartet geduldig, bis er zieht. #sprecher:erzaehler
+    Geduldig ist er, das muss man ihm lassen. Geduldiger als ich. #sprecher:ambrose
+}
+-> END
 
 === handyladen ===
 Ein Laden voller Tablets mit dem Logo von Perfect Move. Im Schaufenster: „Dein persönlicher Trainer, schon ab heute.“ #sprecher:erzaehler

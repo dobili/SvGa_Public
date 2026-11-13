@@ -8,6 +8,9 @@
 // Die Quest riverton.parkclub wartet auf den Knoten „slick“; deshalb steht dort vor dem
 // Verzweigen eine Zeile (gemeldet wird der Knoten, in dem die erste Zeile steht).
 //
+// Runde 11 (13.11.2026): an den Roman zu Akt 2 angeglichen (Kapitel 18, 19, 22), Klang nach
+// 21_Klangplan.md (Akt 2).
+//
 // Variablen: reiheTamsinBestanden, reiheRayBestanden, slickBeobachtenBestanden,
 // ausgangRivertonClubkampf und nadelRiverton setzt die Hülle (R42). clubkampfRivertonBesprochen
 // (Wahrheitswert) öffnet den Wohnwagen (orte.json, wenn); clubkampfRivertonNadel (Zahl) merkt
@@ -46,20 +49,26 @@ VAR limonadenglasGesehen = false
 }
 
 === slick_erstes_treffen ===
+// Kapitel 18: Slick redet schnell und verstummt bei Mr. Odum (Stille S29: die Trompete setzt aus).
 ~ slickGetroffen = true
-Ein junger Mann in Kurierjacke klatscht einen Springer aufs Marmorbrett. „Gabel. #sprecher:erzaehler
-Zahlst du Limo?“ #sprecher:erzaehler
-Slick. Mir gehört der Club, bis Sonntag. Danach gehört er denen da draußen. #sprecher:slick
-Sie haben uns den Pavillon gelassen. Bis Sonntag. Großzügig, oder? #sprecher:slick #stimmung:ernst
-* [„Wir wollen hier spielen.“]
-    Dann spielst du das letzte Spiel im Pavillon. Sonntag, gegen mich. #sprecher:slick
-    Vorher fragen dich Tamsin und Ray ab. #sprecher:slick
+Steintische mit eingelassenen Brettern, glatt gespielt von sehr vielen Händen. An jedem schlagen zwei Leute auf die Uhren. #sprecher:erzaehler
+Mittendrin einer mit Kuriertasche, ein Bein über der Bank. Er spielt, ohne hinzusehen, und redet dabei. #sprecher:erzaehler
+Zwei Angriffe, ein Zug. Das nennt man Gabel, und ich esse damit. Schade um deinen Turm. #sprecher:slick #stimmung:froh
+Er schlägt auf die Uhr. Dann sieht er euch. Kundschaft! #sprecher:slick
+Slick. Eigentlich Marcus, aber so nennt mich keiner. Nicht mal meine Mutter. #sprecher:slick
+* [„Wir sind aus Maple Falls.“]
+* [Auf die Nadeln zeigen]
+- Maple Falls! Zwei Nadeln, schau an. Die von der Delgado und die von der alten Okafor. #sprecher:slick
+Die Okafor hat mich mal vierzig Züge lang warten lassen. Vierzig. Ich bin dabei gealtert. #sprecher:slick
+Das hier ist der Parkclub. Seit 1953. Mr. Odum hat ihn gehabt, vierzig Jahre. Im Frühjahr hat er ihn mir gegeben, und dann ist er … #sprecher:slick #musik:aus #pause:2
+Na ja. Dann eben ich. #sprecher:slick
 * [„Was passiert mit dem Pavillon?“]
-    Trainingszentrum, sagen sie. Mit Bildschirmen. #sprecher:slick
-    Mein Lehrer hat hier vierzig Jahre Kindern Schach gezeigt. #sprecher:slick
-    Egal. Sonntag spielst du gegen mich. Vorher fragen dich Tamsin und Ray ab. #sprecher:slick
-- Zwei Angriffe, ein Zug. Das nennt man Gabel, und ich esse damit. #sprecher:slick #stimmung:froh
-Ein Mann, der schneller zieht, als er denkt. Das ist eine Gabe und eine Schwäche. #sprecher:ambrose
+* [Hinaus auf die Wiese sehen]
+- Der Stadtrat hat die Wiese verpachtet. Den Pavillon auch. Trainingszentrum soll das werden. #sprecher:slick #musik:karte
+Sie haben uns den Pavillon gelassen. Er drückt die Dose zusammen. Bis Sonntag. #sprecher:slick
+Sonntag ist das letzte Spiel. Wer spielt es? #sprecher:tamsin
+Na, wer wohl. Wenn schon Schluss, dann mit Gästen. Vorher fragen dich Tamsin und Ray ab. #sprecher:slick
+Ambrose steht nicht neben dir. Er steht am Rand des Pavillons, wo das Dach aufhört, und sieht hinaus auf die Tische. #sprecher:erzaehler
 -> END
 
 === slick_reihe_offen ===

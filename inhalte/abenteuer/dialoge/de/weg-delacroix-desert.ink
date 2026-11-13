@@ -26,24 +26,18 @@ VAR versoehnungGesehen = false
 VAR eidechsenhautGefunden = false
 VAR nietenCanyonGefunden = false
 VAR gefundenNietenkopf = false
+VAR nietenAmbroseGesehen = false
 
 // ---------------------------------------------------------------- Mrs. Holloway
 
 === holloway ===
-// Kapitel 41 (Roman): Der Canyon ist still (S55), Ambrose spricht zum ersten Mal hier (sein Thema
-// auf der Gitarre). Mrs. Holloway füllt am Wanderschild ihre Flasche.
+// Kapitel 41 (Roman): Mrs. Holloway füllt am Wanderschild ihre Flasche. Der stille Canyon und
+// Ambroses erste Sätze stehen am Anfang von mira_stein (Pflichtschritt, Gutachten M1.7).
 {hollowayGetroffen:
     {~Mehr Wasser als Weg.|Wer angreift, braucht mehr Figuren am König. Und mehr Wasser.} #sprecher:holloway
     -> END
 }
 ~ hollowayGetroffen = true
-Die Wände sind rot und gestreift, Schicht über Schicht, als hätte jemand die Zeit aufgeschnitten. #sprecher:erzaehler #musik:aus #geraeusch:canyon
-Eine Eidechse rührt sich nicht. Hoch oben kreist ein Vogel, ohne die Flügel zu bewegen. #sprecher:erzaehler
-{ambroseSprichtWieder:
-    Ich war nie in einer Wüste. #sprecher:ambrose #musik:ambrose.gitarre
-    Sie ist so still wie ein Club. Wie ein guter. Einer, in dem man hört, wenn jemand nachdenkt. #sprecher:ambrose
-    -> holloway_gefaellt ->
-}
 Eine Frau mit Strohhut füllt am Wanderschild ihre Flasche an einem Rohr, aus dem ein dünner Strahl kommt. #sprecher:erzaehler
 Wer angreift, braucht mehr Figuren am König als der Verteidiger. Sonst ist es kein Angriff, sondern ein Ausflug. #sprecher:holloway
 Gilt auch fürs Wandern. Mehr Wasser als Weg. #sprecher:holloway
@@ -52,7 +46,8 @@ Gilt auch fürs Wandern. Mehr Wasser als Weg. #sprecher:holloway
 = holloway_gefaellt
 * [„Gefällt sie dir?“]
 - Ich weiß es noch nicht. Ich bin es nicht mehr gewohnt, etwas nicht sofort zu wissen. #sprecher:ambrose
-Er sieht zu dem Vogel hinauf. Es ist angenehm. #sprecher:ambrose #stimmung:still
+Er sieht zu dem Vogel hinauf. #sprecher:erzaehler
+Es ist angenehm. #sprecher:ambrose #stimmung:still
 ->->
 
 // ---------------------------------------------------------------- Rätseltafel und Rückweg
@@ -83,12 +78,19 @@ Der Pfad führt zurück zum einsamen Bahnhof. Der nächste Zug fährt nach Port 
     -> END
 }
 ~ miraSteinGesehen = true
-Mitten im trockenen Bachbett liegt ein Stein, flach wie ein Tisch. Darauf ein Mädchen, zwei Zöpfe, Schrammen an beiden Knien. #sprecher:erzaehler #musik:aus
+// Gutachten M1.7: Ambrose spricht hier wieder (Bibel, Szene 71), ohne Bedingung.
+~ ambroseSprichtWieder = true
+Die Wände sind rot und gestreift, Schicht über Schicht, als hätte jemand die Zeit aufgeschnitten. #sprecher:erzaehler #musik:aus #geraeusch:canyon
+Eine Eidechse rührt sich nicht. Hoch oben kreist ein Vogel, ohne die Flügel zu bewegen. Er ist noch blass, aber er ist da. #sprecher:erzaehler
+Ich war nie in einer Wüste. #sprecher:ambrose #musik:ambrose.gitarre
+Sie ist so still wie ein Club. Wie ein guter. Einer, in dem man hört, wenn jemand nachdenkt. #sprecher:ambrose
+-> holloway.holloway_gefaellt ->
+Hinter der nächsten Biegung, mitten im trockenen Bachbett liegt ein Stein, flach wie ein Tisch. Darauf ein Mädchen, zwei Zöpfe, Schrammen an beiden Knien. #sprecher:erzaehler #musik:aus
 Sie spielt gegen niemanden. Sie zieht für Weiß, dreht das Brett um, zieht für Schwarz. Ernst wie ein Chirurg. #sprecher:erzaehler
 Sie hält die weiße Dame einen Atemzug lang in der Luft. Dann stellt sie sie mitten zwischen die schwarzen Figuren. #sprecher:erzaehler #bild:mira_damenopfer
-{ambroseSprichtWieder: Oh. #sprecher:ambrose}
+Oh. #sprecher:ambrose
 Sie dreht das Brett um und schlägt die Dame. Dreht es wieder. Ein Springer, ein Läufer, und der schwarze König liegt um. #sprecher:erzaehler #bild:aus
-{ambroseSprichtWieder: -> mira_ambrose ->}
+-> mira_ambrose ->
 -> mira_spricht
 
 = mira_ambrose
@@ -137,18 +139,24 @@ Wo der Canyon sich öffnet, steht ein Bogen aus Fels. Ein Tor ohne Mauer, so hoc
 Das Licht kommt flach und färbt alles: den Fels, den Sand, deine Hände. Kupfer. Dann Gold. #sprecher:erzaehler
 Wenn nicht hier, dann nirgends. Du stellst den Geigenkasten auf einen Stein und nimmst das Brett heraus. #sprecher:erzaehler
 * [„Setz dich.“]
-- Er setzt sich dir gegenüber auf den Fels. Der Wind geht durch den Bogen. #sprecher:erzaehler #pause:4
+- Er sieht dich an. Dann setzt er sich, dir gegenüber, auf den Fels. Zum zweiten Mal in seinem Tod. Der Wind geht durch den Bogen. #sprecher:erzaehler #pause:4
 Ich habe einer Maschine zugesehen. Tausendachthundert Partien in einer Nacht. #sprecher:ambrose #stimmung:still
 Ich habe zugesehen, weil sie nie zweifelt. Weil sie die Gewissheit hat, bevor man die Hand hebt. #sprecher:ambrose
+Du sagst nichts. #sprecher:erzaehler #pause
 Dann hat ein Junge mit einer Trompete dich einen Betrüger genannt. Er hatte recht, und es war meine Schuld. #sprecher:ambrose
 Ich habe dir einen Zug gegeben, den ich nicht verstand. Ich habe ihn nur wiedererkannt. Wie ein Papagei. #sprecher:ambrose #stimmung:ertappt
 Sechs Tage im Kasten habe ich gehört, wie du nachdenkst. Und ich wusste nicht, was du ziehen wirst. #sprecher:ambrose
-Ich wusste es nicht, {held}. Zum ersten Mal. Ich habe mir die Nägel abgekaut, die ich nicht habe. #sprecher:ambrose
+Er hebt den Kopf. Ich wusste es nicht, {held}. Zum ersten Mal. Ich habe mir die Nägel abgekaut, die ich nicht habe. #sprecher:ambrose
+Das Licht wird röter. #sprecher:erzaehler #pause
 Du hast gefragt: Und ich? Ich schulde dir die Antwort. #sprecher:ambrose
 Die Maschine zweifelt nie. Das ist wahr, und es ist schön, und ich nehme nichts davon zurück. #sprecher:ambrose
-Aber ich habe etwas vergessen. Du zweifelst. Du zählst dreimal. Und dann spielst du trotzdem. #sprecher:ambrose #stimmung:riss
+Aber ich habe etwas vergessen. Du zweifelst. Du zählst dreimal. Du hast Angst, dass es nicht stimmt. #sprecher:ambrose #stimmung:riss
+Und dann spielst du trotzdem. #sprecher:ambrose #stimmung:riss
+Seine Stimme bricht. #sprecher:erzaehler #pause:2
 Das ist schöner. #sprecher:ambrose #musik:ambrose.held
-Ein Opfer von jemandem, der hofft, dass es stimmt, und dem dabei das Herz schlägt. Dafür läuft der Verlierer zum Telegrafenamt. #sprecher:ambrose
+Ein Opfer von jemandem, der weiß, dass es stimmt, ist eine Rechnung. #sprecher:ambrose
+Ein Opfer von jemandem, der hofft, dass es stimmt, und es geprüft hat, so gut er kann, und dem dabei das Herz schlägt … #sprecher:ambrose #pause
+Das ist das, wofür der Verlierer zum Telegrafenamt läuft. #sprecher:ambrose
 * [„Du warst ein Idiot.“]
 - Ja. #sprecher:ambrose
 * [„Ich hab dich vermisst.“]
@@ -185,9 +193,12 @@ Zweite Frage: Hat er einen Zug, der alles hält? Den suchst du. Für ihn. So gr�
 - Dann hoffst du. Und spielst es. Und siehst ihm ins Gesicht. #sprecher:ambrose #stimmung:lachtOhneSpott
 Das ist der Teil, den keine Maschine kann. Sie muss nie hoffen. Arme Maschine. #sprecher:ambrose
 Ihr übt, bis das Licht fort ist. #sprecher:erzaehler
-Ab jetzt spielen wir wieder zusammen. Aber du entscheidest. #sprecher:ambrose
-Den Mentor-Zug aus Port Delacroix habe ich dir aufgehoben. Jetzt darfst du ihn spielen. #sprecher:ambrose
--> END
+Im Geigenkasten liegt eine Karte, die du seit Port Delacroix nicht angefasst hast. #sprecher:erzaehler
+Als ihr absteigt, im letzten Grau, siehst du unter dem Felsbogen etwas, das du vorher nicht bemerkt hast. #sprecher:erzaehler
+{nietenCanyonGefunden:
+    -> fund_nieten.nieten_ambrose
+}
+-> fund_nieten
 
 // ---------------------------------------------------------------- Funde
 
@@ -200,16 +211,22 @@ Den Mentor-Zug aus Port Delacroix habe ich dir aufgehoben. Jetzt darfst du ihn s
 Zwischen zwei Steinen liegt eine Eidechsenhaut, dünn wie Papier und ganz heil. #sprecher:erzaehler
 ~ gibFund("eidechsenhaut")
 {ambroseSprichtWieder:
-    Sie hat sich aus der alten Haut befreit. Manchmal muss man das. #sprecher:ambrose
+    Sie lässt ihr Kleid einfach liegen. Donnerwetter. #sprecher:ambrose
 }
 -> END
 
 === fund_nieten ===
-// Kapitel 42, Schluss: die Brücke von 1879 unter dem Felsbogen, Hales Motiv auf dem Horn.
-{nietenCanyonGefunden:
+// Kapitel 42, Schluss: die Brücke von 1879 unter dem Felsbogen, Hales Motiv auf dem Horn. Läuft am
+// Ende der Lektion von selbst (Gutachten M1.8); wer sie früher antippt, bekommt nur das Bild.
+{nietenCanyonGefunden and not versoehnungGesehen:
     Die Nieten der Brücke glänzen, Reihe um Reihe. Am Pfeiler die Platte: 1879. #sprecher:erzaehler
     -> END
 }
+{nietenCanyonGefunden and nietenAmbroseGesehen:
+    Die Nieten der Brücke glänzen, Reihe um Reihe. Am Pfeiler die Platte: 1879. #sprecher:erzaehler
+    -> END
+}
+{nietenCanyonGefunden: -> nieten_ambrose}
 ~ nietenCanyonGefunden = true
 Unter dem Felsbogen überspannt eine Brücke die Schlucht, wo sie am engsten ist. Schwarzes Eisen, lauter Dreiecke. #sprecher:erzaehler
 Auf jeder Niete, klein und sauber: J. H. Am Pfeiler, eingegossen in eine Platte: 1879. #sprecher:erzaehler #bild:platte_1879
@@ -221,6 +238,7 @@ Ambrose sagt nichts. Aber du spürst, dass er hinsieht. #sprecher:erzaehler #bil
 -> END
 
 = nieten_ambrose
+~ nietenAmbroseGesehen = true
 * [„Dreizehn Jahre danach.“]
 - Er hat gelebt. Lange. Er hat weitergebaut, bis hierher, ans Ende von allem. #sprecher:ambrose #musik:hale.horn #bild:aus
 Er legt die Hand auf das Eisen. Gut so. #sprecher:ambrose #stimmung:still

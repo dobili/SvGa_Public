@@ -4251,6 +4251,18 @@
           "name": "figur.rosie.name",
           "sprite": "figuren/rosie.png",
           "dialog": "crossroads-aussen.rosie"
+        },
+        {
+          "kennung": "crossroads.coach",
+          "name": "figur.coachDelgado.name",
+          "sprite": "figuren/coach-delgado.png",
+          "dialog": "crossroads-aussen.coach"
+        },
+        {
+          "kennung": "crossroads.theo",
+          "name": "figur.theo.name",
+          "sprite": "figuren/theo.png",
+          "dialog": "crossroads-raststaette.theo"
         }
       ],
       "ausloeser": [
@@ -4778,6 +4790,7 @@
           "name": "figur.victor.name",
           "sprite": "figuren/victor.png",
           "dialog": "ghost-town-saloon.victor",
+          "wenn": "grabGesehen",
           "gegner": "summitCity.victor"
         }
       ],
@@ -4903,10 +4916,10 @@
       ],
       "figuren": [
         {
-          "kennung": "erinnerungSiedlung.postreiter",
-          "name": "figur.postreiter.name",
+          "kennung": "erinnerungSiedlung.gideon",
+          "name": "figur.gideon.name",
           "sprite": "figuren/postreiter.png",
-          "dialog": "erinnerung-siedlung.postreiter"
+          "dialog": "erinnerung-siedlung.gideon"
         }
       ],
       "ausloeser": [

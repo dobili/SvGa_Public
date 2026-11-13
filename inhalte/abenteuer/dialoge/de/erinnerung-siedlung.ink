@@ -13,13 +13,14 @@
 VAR kerzeGesehen = false
 VAR kerzeRichtig = 0
 
-=== postreiter ===
+// Gideon sitzt an der Bettkante (Figur erinnerungSiedlung.gideon, Gutachten M3.3). Der Postreiter
+// wartet unten und ist nicht zu sehen.
+=== gideon ===
 {kerzeGesehen:
-    Unten schnaubt ein Pferd. Hufe entfernen sich nach Norden. #sprecher:erzaehler #klang:stiefel_pferd
-- else:
-    Unten wartet der Postreiter neben seinem Pferd. Er will weiter, vor dem Schnee. #sprecher:erzaehler
+    Gideon hält das Brett auf den Knien. Er rührt die Figuren nicht an. #sprecher:erzaehler
+    -> END
 }
--> END
+-> kerze
 
 // Kapitel 57 (Roman): Erinnerung bei Kerzenlicht (Klangplan S72: nur Kerze, Atem, Feder;
 // Ambroses Thema fehlt bis zum Königszug, dann ambrose.1866). {held} rät die vier Züge mit;
@@ -41,7 +42,7 @@ Gideon. Stell es hin. Setz dich. Sieh her. Ich zeige dir, wie die Partie hierher
 -> zug37
 
 === zug37 ===
-Der 37. Zug. Sein Turm auf d7 bedroht mich. Was schreibe ich? #sprecher:ambrose #stimmung:jung
+Der 37. Zug. Sein Turm steht auf d7. Was habe ich gespielt? #sprecher:ambrose #stimmung:jung
 * [37. Txd7]
     ~ kerzeRichtig = kerzeRichtig + 1
     Ja. Der Turm geht auf die siebte Reihe und holt alles dort ab. #sprecher:ambrose #stimmung:jung
@@ -98,19 +99,18 @@ Ein kleiner Zug. Der einzige, den es gab. Jedes Kind hätte ihn gefunden. #sprec
 
 === letzter_brief ===
 ~ kerzeGesehen = true
-{kerzeRichtig == 4:
-    Vier von vier. Du kennst meine Züge besser als ich. #sprecher:ambrose
-- else:
-    {kerzeRichtig} von vier. Die Partie gehört jetzt auch dir. #sprecher:ambrose
-}
-Die Feder kratzt. Zweimal muss er absetzen. „40. König schlägt g3.“ Mehr schreibt die Hand nicht. #sprecher:erzaehler
+Gideon hält das Blatt. Die Feder kratzt. Zweimal muss ich absetzen. #sprecher:erzaehler
+„40. König schlägt g3.“ #sprecher:erzaehler #pause
+Darunter wollte ich schreiben, dass ich ihm verziehen habe. Irgendwann um den zwanzigsten Zug, ohne es zu merken. Die Hand tut es nicht mehr. #sprecher:ambrose #stimmung:jung
 Gib es dem Postreiter. Bring ihn nach Norden. Er wartet. #sprecher:ambrose #stimmung:jung
 Wer? #sprecher:gideon
 Ein unerträglicher Mann. Der beste Gegner, den ich hatte. #sprecher:ambrose #stimmung:jung
 Und das Brett, Mister? Wem soll ich es geben? #sprecher:gideon
 Meiner Schwester. Claire. Die Adresse steht innen im Deckel. Und die Stellung rührt niemand an. Er ist dran. #sprecher:ambrose #stimmung:jung
 Stiefel auf der Treppe, schwer, Stufe um Stufe. Unten ein Pferd. Hufe, die sich entfernen. #sprecher:erzaehler #klang:stiefel_pferd #geraeusch:aus
-Es ist still. Sehr schön still. Die Flamme wird klein. Sie wird blau. Sie geht aus. #sprecher:erzaehler #musik:aus #pause:2
+Es ist still. Sehr schön still. #sprecher:erzaehler #musik:aus
+Die Flamme wird klein. Sie wird blau. #sprecher:erzaehler
+Sie geht aus. #sprecher:erzaehler #pause:2
 -> END
 
 === rueckkehr ===

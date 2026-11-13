@@ -30,10 +30,7 @@ VAR held = "Du"
 
 === victor ===
 {
-- not grabGesehen:
-    Victor sitzt am staubigen Tisch und wischt mit dem Ärmel über ein altes Brett. #sprecher:erzaehler
-    Ich bin gerade angekommen. Mr. Pruitt sagt, am Friedhof liegt einer mit einem Schachbrett. #sprecher:victor
-    -> END
+// Victor steht erst nach dem Grab im Saloon (orte.json, wenn grabGesehen; sein Bus kommt am Grab).
 - not kerzeGesehen: -> victor_wartet
 - ausgangGhostTownFernpartie == "" or ausgangGhostTownFernpartie == "abgebrochen": -> victor_aufstellen
 - not fernpartieGespielt: -> victor_nach_fernpartie
@@ -44,7 +41,7 @@ VAR held = "Du"
 ~ victorSaloonGetroffen = true
 Victor stellt Figuren auf, nimmt sie wieder weg, stellt sie neu auf. #sprecher:erzaehler
 Mir fehlt noch etwas. Ambrose muss doch seinen letzten Zug irgendwo aufgeschrieben haben. #sprecher:victor
-Hinter dem Tresen. Ich erinnere mich an einen Reiter mit einem Abzeichen. #sprecher:ambrose #stimmung:fern
+Hinter dem Tresen. Der Postreiter hat hier unten gewartet. #sprecher:ambrose #stimmung:fern
 -> END
 
 === victor_aufstellen ===
@@ -73,14 +70,16 @@ Der Springer im sechsundzwanzigsten. Hier habe ich drei Wochen nachgedacht. Übe
 Dann der fünfunddreißigste. Ein Läufer schlägt den Bauern vor dem König. Gleich darauf ein Springer. #sprecher:erzaehler
 Zwei. Er opfert zwei Figuren hintereinander. #sprecher:victor
 * [„Stimmt es?“]
-- Er rechnet, mit schiefem Kopf, lange. Ja. Knapp. Aber ja. Der hat nicht einfach gehofft, oder? #sprecher:victor
+- Er rechnet, mit schiefem Kopf, lange. #sprecher:erzaehler
+Ja. Knapp. Aber ja. Der hat nicht einfach gehofft, oder? #sprecher:victor
 Dreimal nachgerechnet. Und dann habe ich gehofft. #sprecher:ambrose
 Die letzten Züge kennst du aus einem Zimmer mit Rosen. Der König schlägt die Dame, einen Schritt ins Freie. #sprecher:erzaehler
 Es ist die Stellung, die du an einem Abend im Spätsommer unter einer Decke gefunden hast. Schwarz am Zug. Seit hundertsechzig Jahren. #sprecher:erzaehler #musik:aus #pause:3
-Victor legt die Seite neben das Brett. 40. … b5. Er fasst den Bauern an. Darf ich? #sprecher:victor
+Victor legt die Seite neben das Brett. 40. … b5. Er fasst den Bauern an. #sprecher:erzaehler
+Darf ich? #sprecher:victor
 Er fragt nicht dich. #sprecher:erzaehler
 Sag ihm, es wäre mir eine Ehre. #sprecher:ambrose #stimmung:riss
-Victor schiebt den Bauern vor. Ein Feld. Holz auf Holz. #sprecher:erzaehler #klang:holz_zug #musik:b5
+Victor schiebt den Bauern vor. Ein Feld. Holz auf Holz. #sprecher:erzaehler #klang:holz_zug #musik:b5 #pause:3
 So. So. Da ist er. #sprecher:ambrose #stimmung:friedlich
 Diese Partie gehört euch. Keine Karten. Kein Wort von mir. Die nächsten Züge sind deine. #sprecher:ambrose
 * [„Ich spiele für dich.“]
@@ -111,23 +110,22 @@ Du weißt es nicht. #sprecher:erzaehler #pause:2
 // Kapitel 58, Schluss: jeder Ausgang führt weiter, Ambroses Schlusssatz bleibt derselbe
 // (ambrose.schluss, zum ersten Mal mit Schlusston). Porträt „weint und lächelt“ nur hier.
 ~ fernpartieGespielt = true
-{
-- ausgangGhostTownFernpartie == "sieg":
-    Victor sieht lange auf das Brett. Dann legt er seinen König um, ganz langsam, und lacht. #sprecher:erzaehler
-- ausgangGhostTownFernpartie == "remis":
-    Am Ende stehen auf dem alten Brett zwei Könige und ein Springer. Mehr ist nicht mehr zu wollen. Remis? #sprecher:victor
+// Gutachten M3.7: stellungsneutral; eine Niederlage erzählt das Spiel hier als Remis.
+{ausgangGhostTownFernpartie == "sieg":
+    Victor sieht lange auf das Brett. Dann gibt er dir die Hand. #sprecher:erzaehler
 - else:
-    Victors Springer kommt zurück, im genau richtigen Augenblick. Er hält deinen König fest, dann stellt er ihn behutsam wieder auf. #sprecher:erzaehler
-}
-{ausgangGhostTownFernpartie != "sieg":
+    Mehr ist nicht mehr zu wollen. Remis? #sprecher:victor
     -> verzaehlt ->
 }
-Er steht neben dem Tisch und sieht auf das ganze Brett. Er weint. Es läuft ihm über das Gesicht, und er lächelt dabei. #sprecher:erzaehler #stimmung:weintUndLaechelt #musik:aus #pause:3
+Ambrose steht neben dem Tisch und sieht auf das ganze Brett. Er weint. Es läuft ihm über das Gesicht, und er lächelt dabei. #sprecher:erzaehler #stimmung:weintUndLaechelt #musik:aus #pause:3
 Hundertsechzig Jahre. Und sie ist schön. #sprecher:ambrose #stimmung:weintUndLaechelt
-Sie ist zu Ende. Jemand hat sie zu Ende gespielt. Ein Kind, das zählt und hofft, und ein Hale, der einen Springer rückwärts zieht. #sprecher:ambrose
+Sie ist zu Ende. Jemand hat sie zu Ende gespielt. #sprecher:ambrose
+Ein Kind, das zählt und hofft, und ein Hale. #sprecher:ambrose
 Ich wollte eine Partie ohne Makel. Mein ganzes Leben, und danach noch einmal so lang. #sprecher:ambrose
 Vierzig Züge von mir. Einer von ihm, den er einem Toten geschrieben hat. Und eure, mit allem, was ihr gewagt habt. #sprecher:ambrose
+Er wischt sich über die Augen. #sprecher:erzaehler #pause:2
 Nicht makellos. Schön. #sprecher:ambrose #stimmung:friedlich #musik:ambrose.schluss
+{ausgangGhostTownFernpartie == "sieg": Du hast für mich gewonnen, was ich nie gebraucht hätte. #sprecher:ambrose}
 Das beste, das ich je gespielt habe. Ich hab eine Stunde lang an nichts gedacht. Nur daran. #sprecher:victor
 Er schreibt mit Junos Bleistift etwas unter die Seite. Du siehst nicht, was. Er legt sie zurück in sein Buch. #sprecher:erzaehler
 Für den Tag, an dem wieder jemand weiterspielt. #sprecher:victor
@@ -136,7 +134,8 @@ In der Tür nimmt Mr. Pruitt den Hut ab. #sprecher:erzaehler
 -> END
 
 = verzaehlt
-* [„Ambrose. Ich hab mich verzählt. Es tut mir leid.“]
+* [„Es tut mir leid.“]
+* [„Sie ist remis.“]
 - {held}. #sprecher:ambrose
 ->->
 

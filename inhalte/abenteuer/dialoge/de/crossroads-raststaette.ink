@@ -34,8 +34,14 @@ VAR varianteRaeuberschachGelernt = false
 VAR varianteTandemGelernt = false
 VAR varianteSchach960Gelernt = false
 VAR varianteFalkeUndBisonGelernt = false
-// Kapitel 53 (Roman): Theo bekommt das Tablet zurück (noch ohne Figur, Einstieg theo).
+// Kapitel 53 (Roman): Theo bekommt das Tablet zurück (Figur crossroads.theo am Fenster, M3.1).
 VAR theoTabletZurueck = false
+// Gutachten M3.9: Der Abend im Kaffeehaus erst, wenn draußen alle gesprochen sind.
+VAR slickGetroffen = false
+VAR miraCrossroadsGetroffen = false
+VAR bigJoeCrossroadsGetroffen = false
+VAR coachCrossroadsGetroffen = false
+VAR kaffeehausGesehen = false
 
 // ---------------------------------------------------------------- Darlene
 
@@ -49,6 +55,7 @@ VAR theoTabletZurueck = false
 - else:
     {~Kaffee? Geht aufs Haus, wenn du was kaufst.|Ich hab alles, was die Läden davor hatten. Nur netter verpackt.|Der Tisch da hinten? Da spielt man alles, nur kein normales Schach.} #sprecher:darlene
 }
+{slickGetroffen and miraCrossroadsGetroffen and bigJoeCrossroadsGetroffen and coachCrossroadsGetroffen and novaBitteGehoert and not kaffeehausGesehen: -> kaffeehaus}
 ~ oeffneLaden("crossroads.raststaette")
 -> END
 
@@ -66,6 +73,7 @@ Eine Kiste, ein Schlüssel und ein Auftrag. So fingen meine besten Reisen an. #s
 // ---------------------------------------------------------------- Nova (Szene 93)
 
 === nova ===
+{novaBitteGehoert and slickGetroffen and miraCrossroadsGetroffen and bigJoeCrossroadsGetroffen and coachCrossroadsGetroffen and not kaffeehausGesehen: -> kaffeehaus}
 {novaBitteGehoert:
     {~Dr. Lin sagt, wir legen alles vor. Die Berichte, den Empfänger. Alles.|Ich hab Angst. Aber eine gute Angst. Glaube ich.|Zum ersten Mal weiß ich nicht, ob ich gewinne. Das fühlt sich gut an.} #sprecher:nova
     -> END
@@ -77,18 +85,31 @@ Eine Kiste, ein Schlüssel und ein Auftrag. So fingen meine besten Reisen an. #s
 // Stimme. Der Ohrstöpsel von der Glasbrücke wird zum Beweis.
 ~ novaBitteGehoert = true
 In der hintersten Ecke, an einem Tisch für zwei, sitzt Nova allein. Pullover, zu groß, die Ärmel über den Händen. Ein Kakao, den sie nicht angerührt hat. #sprecher:erzaehler #musik:aus
-Dr. Lin hat angerufen. Sie hat die Berichte gefunden. Alle. #sprecher:nova
+Dr. Lin hat angerufen. Sie hat die Berichte gefunden. Alle. Sie hat gekündigt. #sprecher:nova
 Sie hat nicht gefragt, ob es stimmt. Sie hat gefragt, wie es mir geht. Das hat mich seit zwei Jahren keiner gefragt. #sprecher:nova #stimmung:riss
-Ich sage aus. Bei der Meisterschaft. Du hast noch den einen. Den von der Brücke. #sprecher:nova
+Ich sage aus. Bei der Meisterschaft. Sie kommt mit. Sie bringt die Berichte. #sprecher:nova
+Du hast noch den einen. Den von der Brücke. #sprecher:nova
 Du legst den Ohrstöpsel auf den Tisch. Ein halbes Jahr hast du ihn getragen, neben einem Springer. #sprecher:erzaehler
 Hilfst du mir? #sprecher:nova
 * [„Ja.“]
     ~ novaHilfeZugesagt = true
 - Sie nickt und zieht den Kakao zu sich. #sprecher:erzaehler
 Ich hab Angst. Nicht vor denen. Davor, was ich bin, wenn ich es nicht mehr im Ohr habe. Vielleicht bin ich schlecht. #sprecher:nova
-* [„Vierundsiebzig Prozent. Im Training hattest du es nie.“]
-- Sie starrt dich an. Dann geht etwas über ihr Gesicht. Kein Lächeln vom Podium. Es dauert länger, und es geht nicht wieder aus. #sprecher:erzaehler #stimmung:echtesLaecheln
-Es wird ein langer Abend, an einem Tisch aus vier Tischen, zwischen Menschen aus acht Städten. Du kennst jeden. #sprecher:erzaehler #musik:crossroads
+* [„Vierundsiebzig Prozent.“]
+- „Ich hab deine Trainingspartien gesehen. Du bist besser als ich.“ #sprecher:erzaehler
+„Im Training hattest du es nie. Das waren deine.“ #sprecher:erzaehler #pause
+Sie starrt dich an. Dann geht etwas über ihr Gesicht. Kein Lächeln vom Podium. Es dauert länger, und es geht nicht wieder aus. #sprecher:erzaehler #bild:nova_laechelt
+-> kaffeehaus_pruefen
+
+=== kaffeehaus_pruefen ===
+{slickGetroffen and miraCrossroadsGetroffen and bigJoeCrossroadsGetroffen and coachCrossroadsGetroffen and novaBitteGehoert and not kaffeehausGesehen: -> kaffeehaus}
+-> END
+
+// Kapitel 53, Schluss: erst, wenn {held} draußen alle gesprochen hat.
+=== kaffeehaus ===
+~ kaffeehausGesehen = true
+Es wird ein langer Abend, an einem Tisch aus vier Tischen, zwischen Menschen aus acht Städten. Du kennst jeden. #sprecher:erzaehler #musik:crossroads #geraeusch:kaffeehaus
+Du weißt, wie jeder von ihnen spielt. Was jeder übersieht. Was jeder kann, das du nie können wirst. #sprecher:erzaehler
 Weißt du, was das ist? Ein Kaffeehaus. Es sieht nicht so aus. Aber es ist eines. So hat es geklungen. #sprecher:ambrose #stimmung:still
 -> END
 

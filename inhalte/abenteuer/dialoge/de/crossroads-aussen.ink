@@ -55,7 +55,8 @@ Alle Wege führen zur Capital Arena. Und alle machen hier Pause. #sprecher:mutte
 ~ slickGetroffen = true
 Auf dem Geländer der Veranda sitzt jemand und redet auf drei Kinder mit einem Klappbrett ein. Dünner geworden, brauner. #sprecher:erzaehler
 … und ich sag, Wände sind was für Leute, die Angst vor Wetter haben … #sprecher:slick
-Er sieht dich und rutscht vom Geländer. Maple Falls! #sprecher:slick #stimmung:froh
+Er sieht dich und rutscht vom Geländer. #sprecher:erzaehler
+Maple Falls! #sprecher:slick #stimmung:froh
 Hast du den Springer? #sprecher:tamsin
 * [Den Springer aus Stein hervorholen]
 - Slick dreht ihn in den Fingern. Die Mähne ist an einer Stelle abgestoßen. #sprecher:erzaehler
@@ -117,7 +118,7 @@ Hinter ihm steigen Hank und Priya aus. Hank nickt, was bei ihm eine Rede ist. #s
 -> END
 
 // ---------------------------------------------------------------- Coach Delgado (Kapitel 53)
-// Noch ohne Figur auf der Karte (Schulbus mit Fahrrad auf dem Dach); Einstieg crossroads-aussen.coach.
+// Figur crossroads.coach auf dem Parkplatz (Gutachten M3.1).
 
 === coach ===
 {coachCrossroadsGetroffen:
@@ -131,8 +132,9 @@ Carla spielt Brett drei. Sie hat gesagt, nur dieses eine Mal. Sie hat es dreimal
 Viertes Brett! Du stehst auf einem Plakat! Mit Ketchup! #sprecher:coachDelgado
 * [„Was ist mit dem Bildschirm im Clubraum?“]
 - Sie wird nicht verlegen. Sie sieht dich gerade an. #sprecher:erzaehler
-Ich hab unterschrieben. Im September. Wir hatten kein Geld für den Bus nach Cedar Creek. #sprecher:coachDelgado
-Die haben den Bus bezahlt, die Bretter und das Startgeld. Im Frühjahr wollten sie dafür den Raum. Ohne mich. #sprecher:coachDelgado
+Ich hab unterschrieben. Im September, in der Woche, nachdem der Junge mit dem Tablet bei uns war. #sprecher:coachDelgado
+Wir hatten kein Geld für den Bus nach Cedar Creek. Die haben den Bus bezahlt und die Bretter und das Startgeld für sieben Kinder. #sprecher:coachDelgado
+Im Frühjahr wollten sie dafür den Raum. Dienstags und donnerstags, für ihr Programm, ohne mich. #sprecher:coachDelgado
 Da hab ich gekündigt. Den Vertrag, nicht die Schule. #sprecher:coachDelgado
 Der Bildschirm steht im Flur und zeigt den Vertretungsplan. Das Beste, was er je gezeigt hat. #sprecher:coachDelgado #stimmung:lachtOhneSpott
 Für den Bus backen wir Kuchen. Mr. Pratt verkauft ihn. Er ist erschreckend gut darin. #sprecher:coachDelgado

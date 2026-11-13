@@ -768,7 +768,7 @@
      "id": 5,
      "name": "lkwFahrer",
      "type": "statist",
-     "x": 128,
+     "x": 112,
      "y": 128,
      "width": 16,
      "height": 16,
@@ -778,7 +778,7 @@
       {
        "name": "tun",
        "type": "string",
-       "value": "isst Pfannkuchen am Ende der Theke"
+       "value": "sitzt auf dem Hocker am Thekenende und isst Pfannkuchen"
       },
       {
        "name": "wann",
@@ -791,9 +791,9 @@
        "value": "statist.mapleFalls.diner.lkwFahrer"
       },
       {
-       "name": "verhalten",
+       "name": "sitzt",
        "type": "string",
-       "value": "sitzen"
+       "value": "oben"
       }
      ]
     },
@@ -801,8 +801,8 @@
      "id": 6,
      "name": "rentnerinnen",
      "type": "statist",
-     "x": 208,
-     "y": 128,
+     "x": 224,
+     "y": 112,
      "width": 16,
      "height": 16,
      "rotation": 0,
@@ -811,7 +811,7 @@
       {
        "name": "tun",
        "type": "string",
-       "value": "teilen sich ein Stück Apfelkuchen in der Nische"
+       "value": "sitzen in der Nische und teilen sich ein Stück Apfelkuchen"
       },
       {
        "name": "wann",
@@ -824,9 +824,9 @@
        "value": "statist.mapleFalls.diner.rentnerinnen"
       },
       {
-       "name": "verhalten",
+       "name": "sitzt",
        "type": "string",
-       "value": "sitzen"
+       "value": "links"
       }
      ]
     },

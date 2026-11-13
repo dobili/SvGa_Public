@@ -174,7 +174,9 @@ def test_moebel_bekannt_und_frei_von_ausloesern():
         for objekt in k.objekte(karte):
             if objekt.moebel:
                 assert objekt.name in k.MOEBEL, f"{eintrag['kennung']}: Möbel {objekt.name} fehlt"
-            elif not objekt.belebung and objekt.name not in ansehen:
+            # Sitzende Figuren (R020) stehen auf einem Stuhl oder einer Bank; dass es ein
+            # Sitzmöbel ist, prüft der Kartenbau (kartenbau.sitzrichtung, ist_sitzmoebel).
+            elif not objekt.belebung and objekt.name not in ansehen and not objekt.eigenschaften.get("sitzt"):
                 assert objekt.feld not in gesperrt, f"{eintrag['kennung']}: {objekt.name} zugestellt"
 
 

@@ -8461,12 +8461,19 @@
      "id": 13,
      "name": "calloway",
      "type": "figur",
-     "x": 80,
+     "x": 64,
      "y": 496,
      "width": 16,
      "height": 16,
      "rotation": 0,
-     "visible": true
+     "visible": true,
+     "properties": [
+      {
+       "name": "sitzt",
+       "type": "string",
+       "value": "rechts"
+      }
+     ]
     },
     {
      "id": 14,
@@ -8494,12 +8501,19 @@
      "id": 16,
      "name": "owen",
      "type": "figur",
-     "x": 112,
+     "x": 96,
      "y": 496,
      "width": 16,
      "height": 16,
      "rotation": 0,
-     "visible": true
+     "visible": true,
+     "properties": [
+      {
+       "name": "sitzt",
+       "type": "string",
+       "value": "links"
+      }
+     ]
     },
     {
      "id": 17,
@@ -13923,7 +13937,7 @@
      "name": "mf12SchachtischVeranda",
      "type": "moebel",
      "x": 80,
-     "y": 480,
+     "y": 496,
      "width": 16,
      "height": 16,
      "rotation": 0,
@@ -13932,7 +13946,7 @@
       {
        "name": "tiefe",
        "type": "int",
-       "value": 488
+       "value": 504
       },
       {
        "name": "kollision",

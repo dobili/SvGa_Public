@@ -214,23 +214,23 @@
     {
       "name": "lkwFahrer",
       "typ": "statist",
-      "feld": [8, 8],
+      "feld": [7, 8],
       "eigenschaften": {
-        "tun": "isst Pfannkuchen am Ende der Theke",
+        "tun": "sitzt auf dem Hocker am Thekenende und isst Pfannkuchen",
         "wann": "tag",
         "sagt": "statist.mapleFalls.diner.lkwFahrer",
-        "verhalten": "sitzen"
+        "sitzt": "oben"
       }
     },
     {
       "name": "rentnerinnen",
       "typ": "statist",
-      "feld": [13, 8],
+      "feld": [14, 7],
       "eigenschaften": {
-        "tun": "teilen sich ein Stück Apfelkuchen in der Nische",
+        "tun": "sitzen in der Nische und teilen sich ein Stück Apfelkuchen",
         "wann": "tag",
         "sagt": "statist.mapleFalls.diner.rentnerinnen",
-        "verhalten": "sitzen"
+        "sitzt": "links"
       }
     }
   ]

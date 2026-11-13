@@ -92,6 +92,21 @@ Da! Und da! Drei auf einmal! #sprecher:mae #stimmung:froh
 Das war ein Flugzeug. #sprecher:dex
 Mrs. Okafor erzählt von den Sternen über Lagos. Es wird spät, dann sehr spät. #sprecher:erzaehler
 Keiner will nach Hause. #sprecher:erzaehler
+// Runde 11 (Roman, Kapitel 14): Ambrose spricht nur, wenn das Brett dabei ist (die Hand auf dem
+// Brett), Mrs. Okafor erzählt von ihrem Onkel. Später: #klang:sternschnuppe (heller Glockenton) und
+// #musik:nachtstueck, sobald mittel-2 sie gebaut hat.
+* [Die Hand auf das Brett legen]
+    Das Brett liegt neben dir auf der Decke, in sein Handtuch gewickelt. #sprecher:erzaehler
+    -> sterne_ambrose ->
+* [Nach oben sehen]
+    Über den Zedern kommen mehr Sterne heraus, als du je gesehen hast. #sprecher:erzaehler
+- Als ich so alt war wie ihr, hat mein Onkel mir Schach beigebracht. Auf einem Dach in Lagos. #sprecher:okafor
+Er sagte: Geduld, Grace. Die Nacht ist lang, und der Gegner wird müde vor dir. #sprecher:okafor
+Ich habe sechzig Jahre geglaubt, das sei ein Rat fürs Schach. #sprecher:okafor #pause
+* [„Und wofür ist er jetzt?“]
+    Für alles, was lang ist. Nächte, Partien, Leben. #sprecher:okafor
+* [Nichts sagen]
+- 
 Zu meiner Zeit sah man über dem Mississippi mehr Sterne als Wasser. Diese hier sind auch nicht übel. #sprecher:ambrose
 Um Mitternacht gähnt Mrs. Okafor. So spät war ich seit Jahren nicht wach. #sprecher:okafor
 Morgen bin ich bestimmt müde. #sprecher:okafor
@@ -123,6 +138,16 @@ Oh. Der Schachclub im Park von Riverton wird „neu aufgestellt“. #sprecher:ju
 Mit Perfect Move. #sprecher:juno
 Neu aufgestellt. So nennt man es, wenn jemand die Figuren vom Brett wischt. #sprecher:ambrose #stimmung:streng
 -> END
+
+// Runde 11 (Roman, Kapitel 14): Ambrose in der Sternennacht, nur mit dem Brett. Bereitet Port
+// Delacroix vor (Vater, der Klaviere stimmt), ohne es zu nennen. Tunnel aus „sterne“.
+=== sterne_ambrose ===
+Sie stehen noch wie früher. Alles andere hat sich verändert: Lichter ohne Flamme, Wagen ohne Pferde. #sprecher:ambrose
+In New Orleans saß ich nachts am Kai. Mein Vater stimmte Klaviere in reichen Häusern und kam spät. #sprecher:ambrose
+Ich sah hinauf und dachte, ich würde einmal so bekannt wie einer von denen. Einer mit Namen. #sprecher:ambrose
+Eine Fußnote. Sechs Wörter. #sprecher:ambrose #stimmung:traurig
+Antworten kannst du ihm nicht, nicht vor den anderen. Du lässt die Hand auf dem Brett. #sprecher:erzaehler
+->->
 
 === fund_schluessel ===
 // Übergreifender Fund E4.2 (Bibel, Szene 23): Auflösung in Riverton bei Mrs. Albescu (Szene 33).

@@ -37,6 +37,7 @@ import { Steuerkreuz } from "./Steuerkreuz";
 import type { Ausloesertreffer, Richtung } from "./szene";
 import { Tagebuch } from "./Tagebuch";
 import { useAufgabenrunde } from "./useAufgabenrunde";
+import { useBuehne } from "./useBuehne";
 import { useDialogende } from "./useDialogende";
 import { LUPE, usePartiestart } from "./usePartiestart";
 import { useWeltladen } from "./useWeltladen";
@@ -65,6 +66,7 @@ function ladenDaten(w: Weltdaten, kennung: string) {
 
 export function Oberwelt() {
   const k = useOberweltkern();
+  const buehne = useBuehne(k);
   const { dienste, stand, standRef, welt, weltRef, spiel, meldung, setzeMeldung } = k;
   const { schreibe, melde, wechsleKarte } = k;
   const partie = usePartiestart(k);
@@ -222,7 +224,11 @@ export function Oberwelt() {
           variablen={{ ...stand.dialogvariablen, ...variablenAusBesitz(stand) }}
           heldname={stand.held.name}
           beiKnoten={(knoten) => melde({ art: "dialog", knoten: `${dialog.datei}.${knoten}` })}
-          beiEnde={dialoge.beiDialogende}
+          beiEnde={(variablen) => {
+            buehne.ende();
+            dialoge.beiDialogende(variablen);
+          }}
+          beiZeile={buehne.zeile}
         />
       )}
       {deckwahl && welt && (

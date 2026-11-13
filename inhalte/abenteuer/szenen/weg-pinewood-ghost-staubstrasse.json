@@ -815,5 +815,6 @@
   ],
   "zustand": ["neu", "gebraucht", "alt", "verwittert"],
   "stil": ["natur", "einfach", "laendlich", "klassisch", "industrie", "modern", "rustikal"],
-  "toenung": "sepia"
+  "toenung": "sepia",
+  "abkuerzung_ok": "offenesGelaende"
 }

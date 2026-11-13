@@ -216,7 +216,23 @@ Er sieht nicht auf. #sprecher:erzaehler
 === victor_tablet_ende ===
 Das Programm auf dem Tablet zieht, ohne zu zögern. Victor verliert die Partie und startet sofort eine neue. #sprecher:erzaehler
 Ambrose sagt kein Wort. Das ist ungewöhnlich für ihn. #sprecher:erzaehler
--> END
+// Runde 11 (Roman, Kapitel 13): Victor verliert täglich gegen das Programm; sein Vater will die
+// drei Bibliotheken des Bezirks. Auf dem Weg zum Steg erkennt Ambrose Hale in Victor, ohne es
+// auszusprechen. Später, wenn mittel-2 es gebaut hat: #pause:3 nach der Frage (die drei Sekunden).
+* [„Gewinnst du manchmal?“]
+    Remis. Einmal im Monat. #sprecher:victor #stimmung:kalt
+    Gegen Schwächere ist ein Remis eine Niederlage, sagt mein Vater. Gegen das hier ist es ein Erfolg. #sprecher:victor
+* [„Was macht dein Vater in Cedar Creek?“]
+    Er ist im Rathaus. Der Bezirk hat drei Bibliotheken. Er will alle drei. #sprecher:victor #stimmung:kalt
+    Für Bildschirme. Es ist effizienter. #sprecher:victor
+* [Aufstehen und gehen]
+- Klick. Klick. Das Programm antwortet sofort, jedes Mal. #sprecher:erzaehler
+Erst auf dem Weg zum Steg, zwischen den Zedernhecken, hörst du Ambrose wieder. #sprecher:erzaehler
+Er hält den Kopf wie er. Ein wenig schief. Wenn er rechnet. #sprecher:ambrose
+* [„Wie wer?“]
+    Keine Antwort. #sprecher:erzaehler
+* [Nichts sagen]
+- -> END
 
 === victor_alltag ===
 Victor spielt weiter auf seinem Tablet. Er sieht nicht auf. #sprecher:erzaehler

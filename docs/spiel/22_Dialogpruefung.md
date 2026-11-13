@@ -3276,3 +3276,1040 @@ sind damit erledigt.
 - **`roman/akt2_teil2.md`, Zeilen 139–144:** Der Bauernzug ist schon gespielt, wenn Ambrose
   „Halt“ sagt. Nach der Entscheidung liegt der Halt davor.
 - **Coach-Satz:** „eine Legende, die niemand kennt“ kommt im Roman zu Akt 1 nicht vor.
+
+## Teil I: Übrige Dokumente und Spieldaten gegen die angeglichene Bibel (Liste, nichts geändert)
+
+Auftrag des Hauptchats vom 13.11.2026: die Dokumente, die dieselben Angaben tragen wie die Bibel,
+gegen die angeglichene Bibel und den Roman prüfen. Geändert ist nur dieses Dokument. Ink-Dateien
+sind nicht geprüft (sie werden gerade umgeschrieben). Vier Lesedurchgänge durch Helfer, je einer
+für I1, I2, I3 und I4 mit I5; jeder hat seine „alt“-Wortlaute per Skript an der genannten Zeile
+bestätigt. Der Gutachter hat sieben Stellen selbst nachgeschlagen (`quests.json` Zeilen 120–128,
+`texte/de.json` Zeilen 110, 598 und 656, Bibel „Ohrempfänger“ und „Bretterhütte“, Bibel Zeilen
+1974–1977, `orte/maple-falls.md` Zeile 116, `13_Wegenetz.md` Zeile 398, `orte/ghost-town.md`
+Zeile 88); alle stimmen.
+
+| Teil | Gegenstand                                              | Befunde                                                 |
+| ---- | ------------------------------------------------------- | ------------------------------------------------------- |
+| I1   | Dokumente 12, 13, 14 (beide Teile), 15, 16              | 19                                                      |
+| I2   | Ortsdokumente Akt 1 und 2                               | 21                                                      |
+| I3   | Dokument 20 und Ortsdokumente Akt 3 und 4               | 20                                                      |
+| I4   | `quests.json`, `begegnungen.json` (mit `texte/de.json`) | 18 (13 an den Daten, 5 an der Bibel)                    |
+| I5   | übrige Punkte aus `akt4_befunde.md`, Abschnitt 7        | 15 geprüft: 4 stimmen, 10 Bibel schweigt, 1 Widerspruch |
+
+Eigene Leben-Dokumente zu Akt 3 und 4 gibt es nicht. Die Zeilennummern der Bibel gelten für den
+Stand nach Teil H.
+
+**Die Bibel selbst ist an vier Stellen noch nicht angeglichen** (in den Helferberichten gefunden,
+vom Gutachter nachgeschlagen): „Ohrempfänger“ bei Kade (Zeilen 2058 und 2154; entschieden ist das
+Gerät im Schuh), „Bretterhütte“ in Szene 99 (Zeile 2336; Roman und Ortsblatt haben das Zimmer über
+dem Laden), „weil sein Vater sie ‚wertlos‘ fand“ (Zeilen 1975–1976; entschieden ist der Großvater)
+und der Hinweis „Fragment 8 fehlt noch“.
+
+### I1 Leben, Wegenetz, Routen, Statisten
+
+Geprüft am 13.11.2026 gegen `05_Story_Bibel.md` im jetzigen Stand (nach Teil H), gegen G2, G4,
+Teil H von `22_Dialogpruefung.md` und die Abschnitte 7 von `roman/akt1_befunde.md` bis
+`akt4_befunde.md`. Nichts im Repository ist geändert.
+
+Vollständig gelesen: `12_Akt1_Leben.md` (498 Zeilen), `13_Wegenetz.md` (483),
+`14_Akt2_Leben_teil1.md` (546), `14_Akt2_Leben_teil2.md` (526), `15_Routen_Ereignisse.md` (639),
+`16_Statisten_und_Tiere.md` (293). Ein eigenes Leben-Dokument zu Akt 3 oder 4 gibt es nicht
+(`ls docs/spiel`: nach 14 folgen 15, 16, 16a, 17 bis 23); Angaben zu Akt 3 und 4 stehen in 13
+(Abschnitte 4, 5, 7), in 14 Teil 2 (Weg 4, Silicon Bay) und in 15.
+
+Zeilenangaben gelten für den Stand dieses Zweigs. Zitate über einen Zeilenumbruch hinweg sind mit
+einem Leerzeichen zusammengezogen; bei Tabellenzeilen ist nur der Zellentext zitiert.
+Abkürzungen: **Bibel** = `docs/spiel/05_Story_Bibel.md`; **R1-2** = `roman/akt1_teil2.md` usw.;
+**Bef1 bis Bef4** = Abschnitt 7 von `roman/akt1_befunde.md` bis `akt4_befunde.md`; **ENT** =
+`docs/spiel/ENTSCHEIDUNGEN.md`; **DP** = `22_Dialogpruefung.md`.
+
+Art: **Änderung** = das Dokument sagt etwas anderes als Bibel oder Roman; **Nachtrag** = das
+Dokument schweigt an einer Stelle, an der es die Angabe führen müsste.
+
+#### `12_Akt1_Leben.md`
+
+**I1.1** · `12_Akt1_Leben.md` · Zeilen 20–21 (Grundsatz 1) · Änderung
+
+- alt: „Alles hier ist freiwillig, klein und im Tagebuch als Nebenaufgabe sichtbar.“
+- neu: „Fast alles hier ist freiwillig, klein und im Tagebuch als Nebenaufgabe sichtbar. Ausnahmen seit dem Roman: Mrs. Calloway spricht {held} am ersten Schultag an (kurzes Pflichtgespräch), der Abend im Diner mit Mama und Hector ist eine eigene Szene (`akt1.dinerAbend`), und Ada am Apfelstand und die Fährstelle gehören zum ersten Fußweg nach Cedar Creek (Szene 13).“
+- Beleg: Bibel Z. 515 (Szene 13: „8 für den Weg zu Fuß mit Ada, Silas und Ambroses Erinnerung“) und Z. 622 (Zeitrechnung: „die Erweiterungen des Romans“); R1-2 Z. 530 („Pflichtgespräch auf dem Weg zur Haltestelle“) und Z. 533 („Neue Szene `akt1.dinerAbend`“); R1-3 Z. 440 und 441.
+
+**I1.2** · `12_Akt1_Leben.md` · Zeile 40 (Grundsatz 4) · Änderung
+
+- alt: „Buchbezug im Dialog nur als „Kapitel 1“ mit Abschnitt, nie mit Seiten.“
+- neu: „Kein Buchbezug im Dialog (Entscheidung vom 10.11.2026); das Kapitel steht nur in den Daten und in diesem Dokument.“
+- Beleg: ENT Z. 862–876 („Keine Verweise auf das Buch in Dialogen und Spieltexten: keine Kapitel, Abschnitte, Seiten“); Bibel Z. 107 und Z. 678; DP H1, „G4 5“. Die Kapitelangaben in den Ablaufbeschreibungen von 12 (etwa Z. 98, 111, 113, 208) sind Angaben für Schreiber und können bleiben; kein Beispielsatz in 12 nennt ein Kapitel.
+
+**I1.3** · `12_Akt1_Leben.md` · Zeile 168 (Tabelle 1.4, Park D) · Änderung
+
+- alt: „Bushaltestelle (Szene 13: Schulbus; später Überlandbus)“
+- neu: „Bushaltestelle (in Szene 13 steigt niemand ein: {held} und Juno gehen am Freitag zu Fuß los; der Bus dient der Rückfahrt in Szene 25 und späteren Fahrten)“
+- Beleg: Bibel Z. 515 („Der erste Weg wird zu Fuß gegangen … Der Bus an der Haltestelle im Park … bleibt für die Rückfahrt und für spätere Fahrten“); Bef1 („Weg nach Cedar Creek“); R1-3 Z. 438.
+
+**I1.4** · `12_Akt1_Leben.md` · Zeilen 494–497 (Nachtrag Runde 4, Park) · Änderung, **zu entscheiden**
+
+- alt: „In Runde 5 werden alle Texte mit „Halfpipe“ (Story-Bibel Szenen 10 und 10a, Dialoge, 09 Belebung) auf „Bank am Basketballplatz“ umgestellt.“
+- neu: „Die Halfpipe bleibt in der Geschichte (Bibel Szenen 10 und 10a, Roman Kapitel 6 und 7); die Texte werden nicht umgestellt. Auf der Karte steht sie als eigenes Bild neben dem Basketballplatz.“
+- Beleg: Bibel Z. 263 („auf der Halfpipe-Kante“), Z. 307, Z. 413, Z. 420; R1-2 Z. 149 und Z. 227; ENT Z. 825–826 („Park, Halfpipe: Die Geschichte braucht sie“). Die angekündigte Umstellung ist nie geschehen, die angeglichene Bibel trägt die Halfpipe weiter. Offen bleibt der Kartenstand: `orte/maple-falls.md` Z. 809 sagt „Die Halfpipe ist weg (R022)“. Schon in DP A1.7 als Abweichung des Romans gegen 12 gemeldet.
+
+#### `13_Wegenetz.md`
+
+**I1.5** · `13_Wegenetz.md` · Zeile 398 (Tabelle 7.1, Szene 109) · Änderung
+
+- alt: „Maple Falls (Dachboden)“
+- alt: „Das Brett wird still, Schlussstellung der Fernpartie“
+- neu (Ort): „Capital Arena (Treppe vor der Halle), dann Maple Falls (Dachboden)“
+- neu (Erlebnis): „Abschied auf der Treppe: Das Brett wird still, Schlussstellung der Fernpartie. Nach dem Abspann der Epilog auf dem Dachboden, ein Jahr später: Lily kommt herauf, letzter Satz „Was hängt?““
+- Beleg: Bibel Z. 2418–2425 (Szene 109: Ort `capitalArena.aussen`, „allein auf der Treppe vor der Halle“; „Epilog (ein Jahr später, im Herbst, Dachboden in Maple Falls): Lily kommt herauf“); Bef4 („Ambrose sitzt fünfmal … die Treppe der Arena das fünfte und letzte“); DP G2, Zeile 2466.
+
+**I1.6** · `13_Wegenetz.md` · Zeile 422 (Tabelle 7.2, Maple Falls) · Nachtrag
+
+- alt: „Herbstlaub, Kürbisse auf den Veranden; Haus Hayes verkauft, Umzugswagen der neuen Familie; Nadel-Plakat im Clubraum“
+- neu: derselbe Text, ergänzt um: „; im Clubraum steht seit Szene 12 der Bildschirm von Perfect Move (Vertrag seit September)“
+- alt: „Sommerferien; Plakat „Daumen drücken!“ an der Schule; Abernathy hat einen jungen Schüler auf der Bank“
+- neu: derselbe Text, ergänzt um: „; Clubraum ohne Bildschirm (Coach Delgado hat im Frühjahr gekündigt)“
+- Beleg: Bibel Z. 310 („nach Szene 12 steht ein Bildschirm von Perfect Move auf dem Pult“) und Z. 2104 (September unterschrieben, im Frühjahr gekündigt); R1-2 Z. 537; R4-2 Z. 234–243 und Z. 498 („Zustand Clubraum ohne Bildschirm“). Die Tabelle führt den Weltzustand je Akt und nennt den Clubraum schon (Nadel-Plakat), aber nicht den Bildschirm.
+
+**I1.7** · `13_Wegenetz.md` · Zeile 426 (Tabelle 7.2, Silicon Bay) · Änderung
+
+- alt: „Dr. Lins Club ohne Bildschirme in einem alten Laden“
+- neu: „Dr. Lins Kellerclub ohne Bildschirme (im Epilog kurz zu sehen, im Post-Game besuchbar)“
+- alt: „Plakate der Meisterschaft; Nova ist fort; Theo ohne Tablet am Food-Truck“
+- neu: derselbe Text, ergänzt um: „; Dr. Lin hat gekündigt und eröffnet einen Club in einem Keller“
+- Beleg: Bibel Z. 2100 („Sie hat schon vor der Meisterschaft bei Perfect Move gekündigt und gründet einen Kellerclub ohne Bildschirme (im Epilog zu sehen)“), Z. 2425, Z. 2432; R4-2 Z. 174–175 („Sie macht einen Club auf. In einem Keller.“); R4-4 Z. 1106.
+
+**I1.8** · `13_Wegenetz.md` · Zeile 463 (Abschnitt 7.4) · Nachtrag
+
+- alt: „`mapleFalls.clubraum`: freie Wandfläche für das Nadel-Plakat.“
+- neu: „`mapleFalls.clubraum`: freie Wandfläche für das Nadel-Plakat; Platz auf dem Pult für den Bildschirm von Perfect Move (Objekt mit Bedingung: ab Szene 12, fort in Akt 4).“
+- Beleg: wie I1.6 (Bibel Z. 310; Bef1 „Bildschirm, der stehen bleibt“).
+
+**I1.9** · `13_Wegenetz.md` · Zeilen 475–476 (Abschnitt 7.4) · Änderung
+
+- alt: „ein leerer Laden mit Schild „Bald geöffnet“ (Dr. Lins Club im Post-Game)“
+- neu: „ein Kellereingang für Dr. Lins Club (Epilog und Post-Game); der leere Laden mit Schild „Bald geöffnet“ kann als Kulisse bleiben, ist aber nicht ihr Club“
+- Beleg: wie I1.7.
+
+#### `14_Akt2_Leben_teil1.md`
+
+**I1.10** · `14_Akt2_Leben_teil1.md` · Zeile 36 (Grundsatz 4) · Änderung
+
+- alt: „Buchbezug im Dialog nur als Kapitel und Abschnitt, nie mit Seiten.“
+- neu: „Kein Buchbezug im Dialog (Entscheidung vom 10.11.2026); Kapitel und Abschnitt stehen nur in den Daten und in diesem Dokument.“
+- Beleg: wie I1.2. Kein Beispielsatz in Teil 1 nennt ein Kapitel.
+
+**I1.11** · `14_Akt2_Leben_teil1.md` · Zeilen 263 und 286–287 (Noor Haddad) · Nachtrag und Änderung
+
+- alt: „Kunststudentin aus Riverton, sprüht ein riesiges Schachbrett auf die Mauer der alten Spinnerei, mit Erlaubnis, sagt sie.“
+- neu: „Kunststudentin aus Riverton, sprüht ein riesiges Wandbild mit Schachfiguren auf die Mauer der alten Spinnerei, in der ihr Großvater gearbeitet hat: die Werkbank, auf der die Arbeiter in der Pause spielten; mit Erlaubnis, sagt sie.“
+- alt: „In Akt 3 ist die Wand fertig (Objektebene, 13 §7.3), Noor hat ein neues Motiv.“
+- neu: „Das Wandbild wächst in vier Stufen über die Akte (Umrisse, Farbe, fertig mit Signatur, Künstlerin fort); ein bis zwei Sätze je Stufe.“
+- Beleg: Bef2 („Graffiti-Künstlerin: Ist Noor Haddad aus `14_Akt2_Leben_teil1.md`, nicht neu; neu ist nur, dass sie die Werkbank ihres Großvaters malt.“); R2-3 Z. 88–98, Z. 173 („Graffiti in vier Stufen über die Akte“), Z. 336. Die Aufgabe N-W3a (Spieß an der Wand, Z. 279–289) verträgt sich damit: Im Roman stehen an der Mauer „Ein Turm. Ein halber Springer.“
+
+**I1.12** · `14_Akt2_Leben_teil1.md` · Zeile 441 (Tabelle 5, Finns Dose) · Änderung
+
+- alt: „(Hales Brief bleibt in Szene 41 und Akt 3)“
+- neu: „(Hales leerer Umschlag bleibt in Szene 41, sein Brief in Szene 76)“
+- Beleg: Bibel Z. 1198–1203 (Szene 41: „Der Umschlag ist leer; der Brief fehlt.“) und Z. 1887 („Hale hatte den Brief versiegelt und vergessen, ihn in den Umschlag zu legen“); Bef3 („der Umschlag ging leer hinaus“).
+
+#### `14_Akt2_Leben_teil2.md`
+
+**I1.13** · `14_Akt2_Leben_teil2.md` · Zeile 28 (Grundsatz 1) · Änderung
+
+- alt: „über den Brief von Hale (Szene 41)“
+- neu: „über den leeren Umschlag von Hale (Szene 41)“
+- Beleg: wie I1.12.
+
+**I1.14** · `14_Akt2_Leben_teil2.md` · Zeilen 37–38 (Grundsatz 4) · Änderung
+
+- alt: „Buchbezug im Dialog nur mit Kapitel und Abschnitt, nie mit Seiten.“
+- neu: „Kein Buchbezug im Dialog (Entscheidung vom 10.11.2026); Kapitel und Abschnitt stehen nur in den Daten und in diesem Dokument.“
+- Beleg: wie I1.2. Kein Beispielsatz in Teil 2 nennt ein Kapitel.
+
+**I1.15** · `14_Akt2_Leben_teil2.md` · Zeilen 317–318 (Mr. Ames) · Änderung
+
+- alt: „Ab Akt 4: „Eine Frau von der Akademie fragt jede Woche, ob der Laden noch frei ist. Ich sag immer: Bald.“ (Andeutung auf Dr. Lins Club im Post-Game, 13 §7.2.)“
+- neu (Vorschlag, Wortlaut vom Hauptchat): „Ab Akt 4: „Die Frau Doktor von der Akademie hat gekündigt. Sie macht jetzt etwas in einem Keller, sagt man. Mein Laden wäre heller gewesen.“ (Andeutung auf Dr. Lins Kellerclub, Epilog und Post-Game.)“
+- Beleg: wie I1.7. Nebenbei: Ames’ erster Satz in Z. 316–317 („Man soll die Hoffnung nicht in den Keller räumen.“) bekommt mit dem Kellerclub eine ungewollte Pointe.
+
+**I1.16** · `14_Akt2_Leben_teil2.md` · Zeile 405 (Tabelle 5) · Änderung
+
+- alt: „ihr Club im leeren Laden (Post-Game) ist erst ab Akt 4 angedeutet.“
+- neu: „ihr Kellerclub (Epilog, Post-Game) ist erst ab Akt 4 angedeutet; sie kündigt vor der Meisterschaft.“
+- Beleg: wie I1.7.
+
+#### `15_Routen_Ereignisse.md`
+
+**I1.17** · `15_Routen_Ereignisse.md` · Zeilen 91–94 und 106–110 (Abschnitt 1.2, Die verlorenen Seiten) · Änderung, **zu entscheiden**
+
+- alt: „Für jede sagt er einen Satz, warum er dieses Kapitel geschrieben hat.“
+- alt: „In der App öffnet der Knopf „Im Buch nachlesen“ die Kapitelübersicht.“
+- neu: „Die Seiten stammen aus Ambroses altem Buch. {held} kann sie im Album lesen; Ambrose sagt höchstens, dass es eine seiner Seiten ist. Keine Figur nennt ein Kapitel, und kein Knopf im Spiel führt ins Buch.“
+- Beleg: ENT Z. 868–873 („Keine Verweise auf das Buch in Dialogen und Spieltexten … Erlaubt bleibt die Schnitzeljagd: Hin und wieder findet der Held eine Seite aus Ambroses altem Buch. Dort kann er sie lesen, und Ambrose sagt höchstens, dass es eine seiner Seiten ist.“); Bibel Z. 678. Dokument 15 (Stand „10.11.2026, morgens“) lässt die Seiten aus dem Manuskript des Wanderers stammen („ein kleiner Gruß an das Buch, zu dem die App gehört“, Z. 93–94), mit Kapitelsätzen und einem geschenkten gedruckten Buch am Ende. Ob der Wanderer bleibt, entscheidet der Autor; betroffen sind dann auch Grundsatz 6 (Z. 42–43, „einen einzigen Satz mit Fundstelle“), Z. 99–102 und Z. 632–635. Der Spieltext dazu ist in DP B2 (Szene W4, `seite00`) schon gemeldet.
+
+#### `16_Statisten_und_Tiere.md`
+
+**I1.18** · `16_Statisten_und_Tiere.md` · Zeilen 69–70 (Abschnitt 3.2, Art 5) · Änderung
+
+- alt: „**Rat aus dem Buch:** ein Satz Schachweisheit mit Bezug auf ein Kapitel (W4d), ohne Buchtext über ein kurzes Regelzitat hinaus.“
+- neu: „**Rat:** ein Satz Schachweisheit in den Worten der Figur. Das Kapitel steht nur in den Daten; im Satz kommen weder Buch noch Kapitel vor.“
+- Beleg: wie I1.2. Der Beispielsatz des Lkw-Fahrers (Z. 71–72) nennt kein Kapitel und kann bleiben.
+
+**I1.19** · `16_Statisten_und_Tiere.md` · Zeilen 172–173 (Vorrat 4.2, Nr. 14) · Änderung
+
+- alt: „Heute schreibt man überall wie im Buch.“
+- neu: „Heute schreibt man überall „e4“ (algebraische Notation).“
+- Beleg: wie I1.2. Die Helfer nehmen Statistensätze aus diesem Vorrat (Z. 137); „wie im Buch“ wäre ein Verweis auf das Buch im Spieltext.
+
+#### Zählung
+
+| Datei                       | Befunde | Kennungen       |
+| --------------------------- | ------- | --------------- |
+| `12_Akt1_Leben.md`          | 4       | I1.1 bis I1.4   |
+| `13_Wegenetz.md`            | 5       | I1.5 bis I1.9   |
+| `14_Akt2_Leben_teil1.md`    | 3       | I1.10 bis I1.12 |
+| `14_Akt2_Leben_teil2.md`    | 4       | I1.13 bis I1.16 |
+| `15_Routen_Ereignisse.md`   | 1       | I1.17           |
+| `16_Statisten_und_Tiere.md` | 2       | I1.18, I1.19    |
+| **Summe**                   | **19**  |                 |
+
+Nach Thema: Buchverweise 6 (I1.2, I1.10, I1.14, I1.17, I1.18, I1.19); Dr. Lins Kellerclub 4
+(I1.7, I1.9, I1.15, I1.16); Bildschirm im Clubraum und Coach Delgado 2 (I1.6, I1.8); Weg zu Fuß
+und Pflichtszenen des Romans 2 (I1.1, I1.3); leerer Umschlag 2 (I1.12, I1.13); Epilog 1 (I1.5);
+Noor Haddad 1 (I1.11); Halfpipe 1 (I1.4). Zwei Befunde brauchen eine Entscheidung (I1.4, I1.17).
+
+#### Hinweise ohne Zählung
+
+Keine Abweichung von einer Entscheidung, aber beim Angleichen aufgefallen:
+
+1. **Initialen am Steg:** 12 Z. 397 hat „M. W. + E. C. 1959“ am alten Pfosten, 13 Z. 108 „M. W. + E. C. 1952“ im Geländer. Die beiden Dokumente widersprechen einander (Mrs. Calloway ist 79; 1952 wäre sie sechs gewesen).
+2. **„M. W.“ als Mädchen:** Die Initialen setzen voraus, dass Margaret als Whitlock geboren ist. Nach Bibel Z. 40 kam der Name durch die Heirat von Claires Enkelin mit einem Vetter ins Haus zurück; das passt nur, wenn Margaret deren Tochter ist. Die Bibel sagt dazu nichts.
+3. **Zwei Gideons:** Der Hausmeister heißt „Mr. Gideon Pratt“ (12 Z. 62), der Schmied von 1866 seit der Entscheidung zu Akt 4 ebenfalls Gideon (Bibel Z. 2337). Ebenso „Wren Okoro“ (15 Z. 362) neben Tobias Wren (Bibel Z. 2337) und Mr. Okoro (Bibel Z. 1886).
+4. **Flohmarkt am Samstag** (15 Z. 186, Z. 203): Der erste Gang ist jetzt am Freitag, der Samstag ist der Tag des Clubkampfs in Cedar Creek. Das verträgt sich (Schild beim ersten Gang, Flohmarkt bei einer Rückkehr), nur kann {held} Odette dann nicht auf dem ersten Fußweg treffen, wie es die Ink-Datei des Wegs heute tut (DP B2, Szene W6).
+5. **Zedernpfad:** 13 Z. 332 nennt in der Liste für die Bibel noch „Dex öffnet den Zedernpfad“, 13 Z. 107 und 12 Z. 396 nennen Mr. Dunmore.
+6. **Victor bei den Kreidespringern** (15 Z. 169–170): „Er spielt hier zum ersten Mal ohne Vater, ohne Kamera und ohne Namen.“ Ohne Vater und Kamera spielt er schon in Szene 88 an der Bergstation (Bibel Z. 2256–2261); neu ist in Capital nur „ohne Namen“.
+
+#### Ohne Befund geprüft
+
+- **Weg nach Cedar Creek** (Freitag zu Fuß, Lesesaal, Team am Samstag im Bus): 12 Abschnitt 2 und 3 und 13 Abschnitt 2 und 7.1 nennen keinen Schulbus für die Hinfahrt außer der Stelle in I1.3. 13 Z. 393 (Szene 25, Rückfahrt im Bus) und 13 Z. 407 (R1, Thermoskanne im Bus) stimmen. Mr. Kettering mit „einunddreißig Jahren“ (12 Z. 267) stimmt mit R1-4 Z. 392.
+- **Zwei Wegkarten, Zedernpfad bis zur zweiten Nadel gesperrt:** 12 Z. 173 und Z. 396, 13 Z. 86–89, Z. 107 und Z. 111–119 stimmen (Öffnung nach der Clubnadel von Cedar Creek).
+- **Clubraum (Erdgeschoss, Raum 12), Bildschirm statt Prospekt:** In keinem der sechs Dokumente steht ein Stockwerk oder ein Prospekt. Der Bildschirm fehlt nur in 13 (I1.6, I1.8).
+- **„Später“ nur an drei Stellen:** Keines der Dokumente führt „Später“ als Antwortwahl.
+- **Mentor-Zug erst nach dem Clubkampf Cedar Creek:** nur 13 Z. 228 (Akt 3, R29) nennt die Karte; stimmt.
+- **Mama: „Weiß steht besser“:** kommt in keinem der Dokumente vor.
+- **Oktober 1858:** 13 Z. 423 und Z. 473 und 14 Teil 2 Z. 131 nennen nur „1858“; 16 Z. 129 und Z. 179 (Opernpartie, Morphy 1858) sind Schachgeschichte.
+- **Postsäcke von 1866:** 13 Z. 411 („im Postsack von 1866“) stimmt; „1870“ kommt nicht vor.
+- **Hales Umschlag, Brief, Anrede:** 13 Z. 233–234, Z. 409, Z. 411, Z. 425 und Z. 473 (R3, R5, Vitrine) vertragen sich mit dem leeren Umschlag und dem Brief aus Desert Springs; ein Wortlaut des Briefs („Komm“ oder „Kommen Sie“) steht nirgends. 14 Teil 2 Z. 81–83 und Z. 399 (Mr. Flores, Postsack) stimmen mit Szene 41.
+- **Ambrose bricht 1866 von sich aus auf, letzter Zug aus der Siedlung:** 13 Z. 315–324 (Goldmine N7: Logbuch von 1866, „ein Fremder“ schreibt bei Kerzenlicht) verträgt sich mit Bibel Z. 2335–2339; ein Schmied wird dort nicht genannt.
+- **Fragment 7, Fragment-Hinweise:** 13 Grundsatz 9 und 14 Teil 2 Z. 190–197 führen nur Album-Einträge ohne Halbzüge; kein Widerspruch.
+- **Abstammung der Whitlock-Duvals, Brett über Claires Töchter:** in keinem der Dokumente behandelt; 12 Z. 59, Z. 69–73 und Z. 397 (Mrs. Whitlock, Fernschach per Post, Mrs. Calloway) stimmen mit Bibel Z. 1578 (Dot) und R1-2 Z. 530 (siehe aber Hinweis 2).
+- **Juno weiß seit Dezember von Ambrose:** In 14 Teil 1 und Teil 2 spricht Juno in Akt 2 nie über oder mit Ambrose; ihre Sätze (Teil 1 Z. 124, Teil 2 Z. 148–149) stehen für sich.
+- **Geigenkasten ab Szene 63, Unsterbliche (Halt vor 19. e5), Mamas Partie:** nicht berührt. 14 Teil 2 Z. 77–79 (Rocco) und Z. 203–209 (Mamas Versteck nach Szene 43) setzen keinen Ausgang der Partie voraus. 16 Z. 181–182 (Anderssen 1851, beide Türme und die Dame) ist Schachgeschichte und stimmt.
+- **Graham Hale, Mr. Dorrance:** 12 Z. 75–77 und Z. 372 (Mann im Anzug) stimmen mit R1-2 Z. 533; Mr. Dorrance kommt nicht vor.
+- **Dr. Lin kündigt selbst, sagt aber aus:** 13 Z. 410 (R4) und 15 Z. 122–124 („Dr. Lin und Nova legen in Akt 4 die Beweise vor“) stimmen mit Bibel Z. 2057 und Z. 2386–2387.
+- **Coach Delgado:** 13 Z. 408 (R2) und Z. 412 (R6) vertragen sich mit Vertrag (September) und Kündigung (Frühjahr).
+- **Remis genügt in Summit City:** 13 Z. 278 (S10, „wenn die Nadel erspielt ist“) verträgt sich damit.
+- **Drachenfest:** 13 Z. 429 („Sommer, Drachenfest am Abend“) stimmt.
+- **Epilog mit Lily:** außer I1.5 nur 13 Z. 412 (Lily in der Simultan); kein Widerspruch.
+- **Halbfinale, Karte zeigt keinen Zug:** in keinem der Dokumente behandelt.
+- **Lage in Akt 2** (Wohnwagen am Westende des Parks an der Steinbrücke; Elm Street 10, Eckhaus; „J. H.“ an der Stahlbrücke): 14 Teil 1 Z. 129–131 und Z. 137, 14 Teil 2 Z. 55, Z. 71, Z. 147 und Z. 149 stimmen.
+- **Szenennummern:** 13 Z. 393–400 (25, 26, 38, 64, 69, 70, 80, 110), 13 Z. 410–413 (79, 76, 41, 47, 88), 15 Z. 359 (Felsbogen, Szene 73) und 15 Z. 417 (Szene 82) stimmen mit der Bibel.
+
+#### Nicht geprüft
+
+- **Roman:** nicht gelesen, nur durchsucht. Gelesen sind die Stellen, auf die ein Befund zeigt (R1-2 Z. 526–537, R1-3 Z. 50–80 und Z. 434–444, R2-3 Z. 86–104, R4-2 Z. 170–178, Z. 232–246 und Z. 496–500), dazu Stichwortsuchen nach den Figuren aus 12, 14 und 15. Von den Nebenfiguren aus 14 und 15 kommen im Roman Akt 2 bis 4 nur Noor und Earl vor; ob sonst eine Romanszene einer Nebenaufgabe widerspricht (Ort, Tageszeit, wer dabei ist), habe ich nicht geprüft. Die Tabellen „Neu gegenüber der Story-Bibel“ sind nur für Akt 1 Teil 2 und 3 und Akt 4 Teil 2 (fünf Zeilen) gelesen.
+- **Bibel:** nicht ganz gelesen. Nachgeschlagen sind die Szenen 12 bis 15, 24, 25, 38, 41, 43, 51, 57, 76, 77, 79, 80, 88, 91, 99, 102, 103, 109, 110, Abschnitt 1 (Zeitlinie) und 27.1; dazu der Wortunterschied der fünf Angleichungs-Commits (alles, was sich heute geändert hat) und Stichwortsuchen. Angaben der sechs Dokumente, die schon vor der Angleichung von der Bibel abwichen und keinen Prüfpunkt berühren, sind nur zufällig aufgefallen (I1.5, Hinweis 6).
+- **`22_Dialogpruefung.md`:** gelesen sind Teil G (G1 bis G5) und Teil H, dazu A1.7, Szene W4, Szene W6 und „Übergreifend Weg und Cedar Creek“. Teile A bis F sonst nicht.
+- **Schach:** Stellungen, Zugfolgen und Kapitelzuordnungen in 12 bis 16 (etwa Finchs Falle in 15 Abschnitt 1.1, der Vorrat in 16 Abschnitt 4) sind nicht nachgerechnet; `16a_Vorrat_Zitate_Zuege.md` ist nicht gelesen.
+- **Andere Dokumente und Daten:** `orte/*.md`, `20_Ortsblaetter.md`, `19_Ton_und_Spannungsbogen.md`, `06_Regelwerk.md`, `08` bis `11`, Ink-Dateien, `orte.json`, `quests.json`, `funde.json` sind nicht geprüft; `orte/maple-falls.md`, `orte/ironwood.md` und `ENTSCHEIDUNGEN.md` nur an den zitierten Stellen. Ob die Kennungen und Kacheln in 12 bis 14 noch zu den Karten passen, war nicht Teil der Prüfung.
+- **Zeiten und Münzen:** Die Zeitbudgets in 12 Abschnitt 6 und 14 Abschnitt 7 sind nicht gegen die neue Zeitrechnung der Bibel (Akt 1: etwa 300 Minuten) gerechnet; sie zählen nur den Zusatz und nennen keine Summe des Akts.
+- **Die „neu“-Wortlaute** sind Vorschläge. Wo sie einen Satz einer Figur erfinden (I1.15) oder eine Entscheidung brauchen (I1.4, I1.17), steht das dabei.
+
+### I2 Ortsdokumente Akt 1 und 2
+
+Geprüft am 13.11.2026 gegen die angeglichene Story-Bibel (`05_Story_Bibel.md`, Stand dieses Zweigs,
+2611 Zeilen), den Roman und die Entscheidungen (`22_Dialogpruefung.md` G2, G4, Teil H;
+`roman/akt1_befunde.md` und `akt2_befunde.md`, je Abschnitt 7). Nur Angaben zur Geschichte; Kartenbau
+ist nicht geprüft. Nichts im Repository ist geändert.
+
+**Ergebnis: 21 Befunde.** Davon 9 „alter Stand“ oder Folge einer Entscheidung (I2.1, I2.3, I2.7,
+I2.8, I2.9, I2.18, I2.19 und die Tischzahlen I2.15, I2.16), 6 Nachträge (die Entscheidung fehlt im
+Ortsdokument: I2.2, I2.5, I2.10, I2.11, I2.12, I2.17), 6 Widersprüche zu Bibel oder Roman, die nicht
+aus der Angleichung stammen oder nicht ausdrücklich entschieden sind (I2.4, I2.6, I2.13, I2.14,
+I2.20, I2.21).
+
+Die Zeilennummern der Bibel gelten für den jetzigen Stand (nach der Angleichung), nicht für die
+Zählung in Teil G2. „alt“ ist wörtlich aus der genannten Zeile; wo ein Satz über die Zeile
+hinausläuft, steht das in der Anmerkung.
+
+#### `orte/maple-falls.md`
+
+**I2.1** · `orte/maple-falls.md`, Zeile 116
+
+- alt: „`bushaltestelle`: Szene 13 wartet hier der Schulbus (Bibel), danach der Überlandbus mit Mr. Kettering (12)“
+- neu: „`bushaltestelle`: In Szene 13 (Freitag) steigt {held} hier nicht ein („Heute fährt er ohne dich.“) und geht mit Juno zu Fuß über Landstraße und Flussweg; der Schulbus bringt am Samstag den Coach und das Team. Der Bus bleibt für die Rückfahrt und spätere Fahrten (Überlandbus mit Mr. Kettering, 12)“
+- Beleg: Bibel Z. 515 (Szene 13) und Z. 520 (Szene 14); Roman `akt1_teil3.md` Z. 14–18, 438; Entscheidung `akt1_befunde.md` Z. 168.
+- Anmerkung: Alter Stand (Busfahrt in Szene 13).
+
+**I2.2** · `orte/maple-falls.md`, Zeile 201
+
+- alt: „`schule`, `pokalvitrine`, `brettOhneDame`, `plakatZaehlen`; vier Bretter“
+- neu: „`schule`, `pokalvitrine`, `brettOhneDame`, `plakatZaehlen`; vier Bretter; nach Szene 12 der Bildschirm von Perfect Move auf dem Pult (Zustandsfassung)“
+- Beleg: Bibel Z. 310 (Tabelle 3.1) und Z. 489 (Szene 12); Roman `akt1_teil2.md` Z. 415, 479, 522; Entscheidung `akt1_befunde.md` Z. 172.
+- Anmerkung: Nachtrag: Der Bildschirm fehlt im Ortsdokument ganz (Suche nach „Bildschirm von“, „Perfect Move“ im Clubraum: kein Treffer).
+
+**I2.3** · `orte/maple-falls.md`, Zeile 222
+
+- alt: „zwei: Birch Lane (Schulbus morgens, Szene 5) und Park (Szene 13 wartet dort der Schulbus; danach Überlandbus)“
+- neu: „zwei: Birch Lane (Schulbus morgens, Szene 5) und Park (Szene 13: {held} und Juno gehen am Freitag zu Fuß, die Haltestelle sagt nur „Heute fährt er ohne dich.“; Bus für die Rückfahrt und spätere Fahrten, Überlandbus)“
+- Beleg: Bibel Z. 515; Roman `akt1_teil3.md` Z. 438. Die Spalte „Grund“ derselben Zeile („Story-Bibel Szene 5 und 13 (Befund 23)“) beruft sich auf die alte Szene 13.
+- Anmerkung: Alter Stand.
+
+**I2.4** · `orte/maple-falls.md`, Zeile 232
+
+- alt: „Am Clubkampf spielen sechs Bretter gleichzeitig, Eltern warten an der Tür.“
+- neu: „Der Club hat sieben Kinder; die Kreisliga spielt man zu viert, und der Clubkampf um die Nadel ist eine Partie gegen Coach Delgado. Eltern warten an der Tür.“
+- Beleg: Bibel Z. 377 („Es fehlt ein viertes Brett für die Kreisliga“), Z. 480–481 (Szene 11: Partie gegen den Clubchef), Z. 2104 („sieben Kinder“); Roman `akt1_teil2.md` Z. 68 („vier Inseln“) und Z. 80 („Kreisliga spielt man zu viert. Wir sind sieben“).
+- Anmerkung: Kein Punkt der Angleichung, aber Widerspruch zur Geschichte; betrifft nur die Begründung der Raumgröße (die sechs Tische selbst sind Kartenbau).
+
+**I2.5** · `orte/maple-falls.md`, Zeile 244
+
+- alt: „Nach dem gewonnenen Clubkampf steht der neue Pokal auf dem Lehrertisch von Coach Delgado.“
+- neu: „unverändert lassen und eine Zeile ergänzen: „| `mapleFalls.clubraum` | `bildschirm` | `victorTrifftGesehen` (nach Szene 12) | Der Bildschirm von Perfect Move steht auf dem Pult und bleibt dort stehen. |“ (Name von Zustand und Bedingung legt der Hauptchat fest)“
+- Beleg: Bibel Z. 489 („der Bildschirm bleibt nach der Szene im Clubraum stehen (Zustandsfassung)“), Z. 329; Roman `akt1_teil2.md` Z. 521–522, 537.
+- Anmerkung: Nachtrag: Die Zustandstabelle 3.4 kennt für den Clubraum nur den Pokal. Pokal und Bildschirm stünden beide auf dem Lehrertisch; das muss der Kartenbau lösen.
+
+**I2.6** · `orte/maple-falls.md`, Zeile 381
+
+- alt: „Brett ohne weiße Dame“
+- neu: „Brett ohne schwarze Dame (an ihrer Stelle ein Radiergummi)“
+- Beleg: Bibel Z. 310 („ein Brett mit fehlender schwarzer Dame“); Roman `akt1_teil2.md` Z. 71.
+- Anmerkung: Kein Punkt der Angleichung, aber Widerspruch.
+
+**I2.7** · `orte/maple-falls.md`, Zeile 679
+
+- alt: „_Schulbus schon zu sehen?_ Nein, erst in Szene 13 (Aufbruch).“
+- neu: „_Schulbus schon zu sehen?_ Nein. In Szene 13 (Aufbruch am Freitag) gehen {held} und Juno zu Fuß; der Schulbus fährt erst am Samstag mit dem Coach und dem Team.“
+- Beleg: Bibel Z. 515, 520; Roman `akt1_teil3.md` Z. 16–18.
+- Anmerkung: Alter Stand.
+
+**I2.8** · `orte/maple-falls.md`, Zeile 689
+
+- alt: „Szene 13 bis zur Ankunft in Cedar Creek: Der Schulbus wartet vor der Haltestelle; mit neuem Steg (liegt nach der Nadel).“
+- neu: „Zustand `schulbus` entfällt in dieser Form oder bekommt eine neue Bedingung: Zwischen Aufbruch (Freitag) und Ankunft in Cedar Creek wartet kein Schulbus auf {held}; der Bus mit dem Team fährt am Samstag und steht dann in Cedar Creek.“
+- Beleg: Bibel Z. 515 („Der erste Weg wird zu Fuß gegangen“), Z. 520; Roman `akt1_teil3.md` Z. 438.
+- Anmerkung: Alter Stand; die Bedingung `aufbruchGesehen und nicht ankunftCedarCreekGesehen` deckt genau die Zeit ab, in der {held} zu Fuß unterwegs ist. Dieselbe Angabe steht in `cedar-creek.md` Z. 781–782 („Auch der Schulbus im Park (Zustand `schulbus`)“), dort nur als Maßangabe. Was genau an die Stelle tritt, muss der Hauptchat entscheiden.
+
+#### `orte/cedar-creek.md`
+
+**I2.9** · `orte/cedar-creek.md`, Zeile 296
+
+- alt: „Rosa (Steg), Victor (Szene 21); Coach, Juno, Sam (Szene 14); Figuren aus 12“
+- neu: „Rosa (Steg), Victor (Szene 21); Juno (Szene 14, Ankunft zu Fuß am Freitagnachmittag); Coach, Sam und das Team erst am Samstag mit dem Bus; Figuren aus 12“
+- Beleg: Bibel Z. 520 (Szene 14); Roman `akt1_teil3.md` Z. 16–18, 116–125.
+- Anmerkung: Alter Stand.
+
+**I2.10** · `orte/cedar-creek.md`, Zeile 297
+
+- alt: „15, 16, 24“
+- neu: „14 (Nacht auf Matten), 15, 16, 24“
+- Beleg: Bibel Z. 522 („{held} und Juno schlafen die Nacht davor auf Matten im Lesesaal (Mrs. Okafor: „Ihr seid die Vorhut.“)“); Roman `akt1_teil3.md` Z. 168–176.
+- Anmerkung: Nachtrag: Die Übernachtung im Lesesaal fehlt in der Tabelle 3.1 (Suche nach „Matten“, „Vorhut“, „übernacht“: kein Treffer im ganzen Dokument).
+
+**I2.11** · `orte/cedar-creek.md`, Zeile 341
+
+- alt: „Kein fester Wechsel.“
+- neu: „Zustand für die Nacht von Freitag auf Samstag: Matten im Lesesaal ({held} und Juno übernachten dort vor dem Auswärtsspiel).“
+- Beleg: Roman `akt1_teil3.md` Z. 256 („Lesesaal mit Matten als Zustandsfassung für die Nacht“) und Z. 438; Bibel Z. 522.
+- Anmerkung: Nachtrag; gemeint ist die Zeile `cedarCreek.bibliothek` (derselbe Satz steht auch in Z. 343 bei der Drechslerei, die bleibt).
+
+#### `orte/riverton.md`
+
+**I2.12** · `orte/riverton.md`, Zeile 474
+
+- alt: „Noors Graffiti in zwei Stufen (Akt 2 halb, Akt 3 fertig)“
+- neu: „Noors Wandbild in vier Stufen über die Akte (Umrisse, Farbe, fertig mit Signatur, Künstlerin fort); es zeigt neben Turm und Springer die Werkbank, auf der ihr Großvater in der Pause spielte“
+- Beleg: Roman `akt2_teil3.md` Z. 88–98, 173, 336; Entscheidung `akt2_befunde.md` Z. 99.
+- Anmerkung: Nachtrag zur Entscheidung „Graffiti-Künstlerin“; die Bibel (Z. 997) sagt weiter nur „Graffiti mit Schachfiguren“.
+
+**I2.13** · `orte/riverton.md`, Zeile 600
+
+- alt: „bleiben, sechs Tische in zwei Reihen südwestlich vor dem Pavillon“
+- neu: „bleiben, sechs Tische in einer geraden Reihe auf der Wiese vor dem Pavillon“
+- Beleg: Roman `akt2_teil1.md` Z. 145 („Sechs Tische in einer Reihe“) und Z. 265 („in einer geraden Reihe (sechs), das einzige Gerade im Park“). Die Entscheidung `akt2_befunde.md` Z. 98 legt nur die Zahl fest.
+- Anmerkung: Grenzfall zur Kartenfrage; die Zahl stimmt, nur die Anordnung weicht ab. Gleiche Angabe in Z. 764 („sechs Tische in zwei“).
+
+**I2.14** · `orte/riverton.md`, Zeile 681
+
+- alt: „vier lange rechteckige“
+- neu: „vier Steintische (Marmor), einer mit der Mulde, statt „vier lange rechteckige Tische mit je zwei Brettern nebeneinander““
+- Beleg: Entscheidung `akt2_befunde.md` Z. 98 („vier Steintische im Pavillon“); Bibel Z. 985 („Marmorbretter“), Z. 1147; Roman `akt2_teil1.md` Z. 265, 397.
+- Anmerkung: Die Hauptfassung aus Runde 8 widerspricht hier dem Bühnenbild 4.2 desselben Dokuments (Z. 962–968: vier Marmortische), auf das sich die Entscheidung stützt. Der Satz läuft in Z. 682 weiter.
+
+**I2.15** · `orte/riverton.md`, Zeile 709
+
+- alt: „sechs Bildschirmtische statt der langen Tische, Kartons, Rechnerschränke, Schild von Perfect Move“
+- neu: „vier Bildschirmtische im Kreis statt der vier Steintische; auf dem Holzboden vier helle Flecken, wo sie standen; Kartons, Rechnerschränke, Schild von Perfect Move“
+- Beleg: Roman `akt2_teil2.md` Z. 325 („Vier Stück, im Kreis, weiß. Die Steintische waren weg. … vier helle Flecken im Holz.“), Z. 385–386, 404; Bibel Z. 1147.
+- Anmerkung: Widerspruch zum Roman (die Bibel nennt keine Zahl).
+
+**I2.16** · `orte/riverton.md`, Zeile 770
+
+- alt: „Auch innen Bildschirmtische, je drei links und rechts statt der langen“
+- neu: „Auch innen Bildschirmtische, vier im Kreis statt der vier Steintische“
+- Beleg: wie I2 zu Z. 709: Roman `akt2_teil2.md` Z. 325.
+- Anmerkung: Der Satz läuft in Z. 771 weiter („Holztische mit Laptops (Szene 37)“).
+
+**I2.17** · `orte/riverton.md`, Zeile 1346
+
+- alt: „die Wand zeigt Turm und Springer vollständig“
+- neu: „die Wand ist fertig und signiert: Turm, Springer und die Werkbank, auf der Noors Großvater in der Pause spielte“
+- Beleg: Roman `akt2_teil3.md` Z. 96–98 („Ich mal die Bank.“), 173, 336; Entscheidung `akt2_befunde.md` Z. 99.
+- Anmerkung: Nachtrag wie zu Z. 474; ebenso Z. 1345 („Noor beginnt die Schachfiguren an der freien Wand“) und Z. 1411.
+
+#### `orte/ironwood.md`
+
+**I2.18** · `orte/ironwood.md`, Zeile 276
+
+- alt: „Postsäcke, die seit hundertfünfzig Jahren niemand geöffnet hat“
+- neu: „Postsäcke, die seit hundertsechzig Jahren niemand geöffnet hat“
+- Beleg: Bibel Z. 940 („Postsäcke von 1866“), Z. 1200; Roman `akt2_teil4.md` Z. 27 und Z. 83–84 („hundertsechzig Jahre lang“); Entscheidung `akt2_befunde.md` Z. 102.
+- Anmerkung: Folge der Entscheidung 1866 statt 1870 (2026 − 1866 = 160).
+
+**I2.19** · `orte/ironwood.md`, Zeile 347
+
+- alt: „Der Brief von 1866 blieb im Postamt des Holzbahnhofs liegen;“
+- neu: „Der Postsack von 1866 mit Hales leerem Umschlag blieb im Postamt des Holzbahnhofs liegen (der Brief selbst blieb versiegelt bei Hale);“
+- Beleg: Bibel Z. 813 („Der Umschlag geht leer hinaus und bleibt im Postamt der Bahnstation Ironwood liegen“), Z. 1203; Roman `akt2_teil4.md` Z. 60–62; Teil G2 zu Zeile 835.
+- Anmerkung: Alter Stand (Brief statt leerer Umschlag).
+
+**I2.20** · `orte/ironwood.md`, Zeile 436
+
+- alt: „rechts **Mamas Zimmer** (Spalten 11–17) hinter einer Innenwand (Spalte 10) mit Tür bei“
+- neu: „Mamas Zimmer liegt unter dem Dach (klein, mit Dachschräge, Blick auf die Schornsteine), nicht neben der Wohnküche; {held} war nie darin, die Tür war immer zu“
+- Beleg: Roman `akt2_teil3.md` Z. 258 und Z. 325 („Mamas Zimmer klein mit Dachschräge und Blick auf die Schornsteine“); Entscheidung `akt2_befunde.md` Z. 94 („Mamas Zimmer war immer zu“).
+- Anmerkung: Abweichung vom Roman, nicht ausdrücklich entschieden; die Bibel (Z. 1016) sagt nur „innen (klein)“. Der Umbau wäre eine Kartenfrage, die Lage des Zimmers ist aber eine Angabe der Geschichte.
+
+**I2.21** · `orte/ironwood.md`, Zeile 649
+
+- alt: „arbeitet Nachtschicht), aber vollständig: Bett, Kleiderschrank, Schreibtisch.“
+- neu: „Das Zimmer ist seit 2001 unverändert (Oma Ruth hält es so, „falls sie mal wieder schlafen will“): Bett, Kleiderschrank, Schreibtisch, Poster, Medaille, Partieformular unter Glas.“
+- Beleg: Bibel Z. 935–936 („Hält Mamas altes Zimmer unverändert“), Z. 1016, Z. 1168–1170; Roman `akt2_teil3.md` Z. 258.
+- Anmerkung: Kein Punkt der Angleichung, aber Widerspruch: Der Satz beginnt in Z. 648 („Das Zimmer bleibt karg (Mama“) und begründet die Einrichtung damit, dass Mama Nachtschicht arbeitet; es ist aber ihr Jugendzimmer bei Oma Ruth, in dem sie nicht mehr wohnt.
+
+#### Zählung je Datei
+
+| Datei                  | Befunde | Kennungen       |
+| ---------------------- | ------- | --------------- |
+| `maple-falls.md`       | 8       | I2.1 bis I2.8   |
+| `cedar-creek.md`       | 3       | I2.9 bis I2.11  |
+| `riverton.md`          | 6       | I2.12 bis I2.17 |
+| `ironwood.md`          | 4       | I2.18 bis I2.21 |
+| `pinewood.md`          | 0       | –               |
+| `erinnerung-london.md` | 0       | –               |
+| `kuerbishof.md`        | 0       | –               |
+| `jahrmarkt.md`         | 0       | –               |
+| `README.md`            | 0       | –               |
+| **Summe**              | **21**  |                 |
+
+Am wichtigsten: der Schulbus in Szene 13 (I2.1, I2.3, I2.7, I2.8; vier Stellen, davon eine gebaute
+Zustandsfassung), die fehlenden Zustandsfassungen „Bildschirm im Clubraum“ (I2.2, I2.5) und „Matten
+im Lesesaal“ (I2.10, I2.11), der Pavillon nach Szene 37 mit sechs statt vier Bildschirmtischen
+(I2.15, I2.16) und der „Brief“, der in Ironwood liegen blieb (I2.19).
+
+#### Ohne Befund geprüft
+
+- **Weg nach Cedar Creek:** `cedar-creek.md` hat Landstraße und Flussweg als zwei Karten, die Ankunft
+  zu Fuß am Westrand (Z. 200, 307), den Bus für die Rückfahrt (Z. 203–204). Der Zedernpfad ist über
+  den Stamm S2 gesperrt, Bedingung `nadelCedarCreek` (Z. 695–696), also bis zur zweiten Nadel; die
+  Kuppe ist von Cedar Creek aus offen. Das stimmt mit Bibel Z. 313.
+- **Clubraum:** Erdgeschoss („Im Erdgeschoss, hinter dem dritten Fenster“, `maple-falls.md` Z. 176),
+  Pokale von 1994, Plakat „ERST ZÄHLEN“. Kein „erster Stock“, kein „Prospekt“ in den neun Dateien.
+  „Raum 12“ kommt nicht vor; das ist kein Widerspruch (ein Türschild wäre eine Kartenfrage).
+- **Cedar Creek:** Bibliothek von 1890, vier Bretter, Archiv mit Karton „1850–1859“, Programmheft,
+  Victor im Wartehäuschen (Szene 21), Plakat von Perfect Move, Schlüssel im Schilf, Ortsschild
+  „gegr. 1851“; Platzhalter „Zeitung von 1858 ab Akt 2“.
+- **Riverton:** sechs Bildschirmtische auf der Wiese (Z. 525, 600), vier Marmortische im Bühnenbild
+  (Z. 584, 962–968), Wohnwagen am Westende des Parks, eine Steinbrücke, Gedenktafel für Mr. Odum,
+  große Uhr als Auslöser von Szene 35, Nietenkopf am Geländer der Eisenbrücke, Zeitnot-Trick auf der
+  Brücke.
+- **Ironwood:** Elm Street Nr. 10 als Eckhaus (Z. 131, 265, 344), Stahlbrücke der Schnellstraße mit
+  „J. H.“ (Z. 340), Postsäcke von 1866 mit Wachssiegel (Z. 496, 636–637; kein „1870“ für die Säcke,
+  1870 ist nur das Baujahr des Bahnhofs), „Zeitung von 1858“ in der Vitrine, freies Fach für Brief
+  und Umschlag (R5), Lücke im Pokalregal für 2001, Partieformular unter Glas, Turnierheft in der
+  Schublade, Mamas Partie in der Kantine (Szene 43), Schnee ab Szene 50.
+- **Stichwörter ohne Treffer als Geschichtsangabe** in allen neun Dateien: „Später“ als Antwortwahl,
+  Mentor-Zug, „Schwarz steht besser“ / „Weiß steht besser“, Halt in der Unsterblichen (Zug 18 oder 19. e5), Spieß mit Dame und Turm, „Siegel passt“, was Juno über Ambrose weiß, Coach Delgados
+  Vertrag, Laufzeit eines Zugs der Fernpartie, Abernathys Zettel, Ambroses Kindheit. Diese Punkte
+  stehen in den Ortsdokumenten gar nicht; dort ist nichts anzugleichen.
+- **Buchverweise:** In den Ortsdokumenten stehen nur Fundstellen der Schnitzeljagd („Buchseite
+  Kapitel 0“, `seite01`, `seite07`, `seite11`); die sind nach der Entscheidung vom 10.11.2026
+  erlaubt. Kein Spieltext mit Buchverweis.
+- **`erinnerung-london.md`:** Szene 35 „am Abend nach Szene 29“, Bahnhofshalle, Ambrose zwanzig,
+  beide Türme und die Dame; keine Zugnummer, kein Halt genannt. Stimmt mit Bibel Z. 1124–1135 und
+  Roman `akt2_teil2.md` Z. 78–165.
+- **`pinewood.md`:** Szenen 94 bis 97, Greta, Ezra, Hollis, Juniper, Dex, Mae, Lou, Tamsin, Mae und
+  die Sterne; stimmt mit Bibel Z. 2303–2327 und Roman `akt4_teil2.md` Z. 376–470.
+- **`kuerbishof.md`, `jahrmarkt.md`:** Nebenorte aus `13_Wegenetz.md`; weder Bibel noch Roman
+  nennen Kürbishof, Familie Miller, Jahrmarkt, Dolores oder Ike (Suche ohne Treffer). Ein Widerspruch
+  ist deshalb nicht möglich.
+- **`README.md`:** nur Verfahren, keine Angabe zur Geschichte.
+
+#### Nicht geprüft
+
+- **Vollständig gelesen** habe ich in den Ortsdokumenten nur die Teile „Ortsbild“ und „Abgleich mit
+  der Geschichte“ sowie die Übergangs-, Platzhalter- und Zustandstabellen, dazu
+  `erinnerung-london.md`, `kuerbishof.md`, `jahrmarkt.md` und `README.md` ganz. Den Rest (Ortspläne
+  mit Feldern, Bühnenbilder, Runden- und Gutachtenabschnitte; in `riverton.md` etwa Z. 60–460 und
+  715–1572, in `ironwood.md` Z. 29–126, 202–248 und 506–852, in `maple-falls.md` Z. 36–125 und
+  441–819, in `cedar-creek.md` Z. 106–193 und 461–959, in `pinewood.md` Z. 47–132 und 179–394) habe
+  ich **nur per Stichwortsuche** durchgesehen (Szenennummern, Namen der Hauptfiguren, Jahreszahlen,
+  Bus, Brief, Siegel, Graffiti, Tische und die Stichwörter des Auftrags). Geschichtsangaben ohne
+  diese Wörter können mir dort entgangen sein.
+- **Roman:** gelesen nur an den Stellen, die ein Ortsdokument berühren (`akt1_teil2.md` Z. 64–84,
+  405–420, 474–492; `akt1_teil3.md` Z. 8–262; `akt2_teil2.md` Z. 78–216; `akt2_teil3.md` Z. 86–100;
+  `akt2_teil4.md` Z. 14–112; `akt4_teil2.md` Z. 376–470), sonst per Suche. Die Listen „Neu gegenüber
+  der Story-Bibel“ am Ende der Romanteile habe ich nicht systematisch gegen die Ortsdokumente
+  gehalten. Dort stehen weitere Kartenwünsche des Romans, die in den Ortsdokumenten fehlen und die
+  ich als Kartenfragen **nicht** als Befund führe: Turmuhr im Türmchen der Bibliothek, die vier
+  schlägt (`akt1_teil3.md` Z. 124, 256; in `cedar-creek.md` kommt keine Uhr vor), rundes
+  Dachbodenfenster, die Decke über dem Brett, Mulde im Steintisch, Nachtfassung der Bahnhofshalle,
+  Abendfassung des Parks von Riverton, Eckhaus „mit dem grünen Geländer“, Messingschild „2001“ in
+  der Lücke des Pokalregals, Zelte statt Hütten im Camp, Fensterbank im Zimmer des Helden.
+- **Bibel:** gelesen Z. 293–657 (Welt und Szenen Akt 1) und Z. 790–1354 (Akt 2), dazu einzelne
+  Stellen aus Akt 4; den Rest nur per Suche.
+- **Nicht entschieden und von mir nur gemeldet:** was an die Stelle des Zustands `schulbus` tritt
+  (I2.8), ob Mamas Zimmer wirklich unter das Dach verlegt wird (I2.20), ob die Bildschirmtische in
+  einer Reihe stehen sollen (I2.13). Der Name `victorTrifftGesehen` in I2.5 ist ein Platzhalter von
+  mir, keine vorhandene Kennung.
+- **Nicht aufgenommen, weil unsicher:** `maple-falls.md` Z. 671 und 676 legen das Reisebrett „auf
+  Abernathys Bank“ (Auslöser `parkbank`), während die Bibel (Z. 391) und Z. 112 von `maple-falls.md` es auf
+  die zweite Bank legen; das kann auch nur ungenau formuliert sein. In
+  `riverton.md` Z. 465 verträgt sich „Gitter vor der Treppe“ des Pavillons nach Szene 37 nur
+  knapp mit dem Roman, in dem {held} am Montag in den Pavillon sieht; kein klarer Widerspruch.
+- **Nicht geprüft** sind die übrigen Ortsdokumente (`capital.md`, `crossroads.md`, `delta.md`,
+  `desert-springs.md`, `ghost-town.md`, `nebenorte-sued.md`, `pelikaninsel.md`,
+  `port-delacroix.md`, `silicon-bay.md`, `summit-city.md`, `summit-weg.md`), `orte.json`, die
+  Szenen- und Kartendateien und die Ink-Dialoge.
+- **Prüfung der Zitate:** Ein Skript hat für alle 21 Befunde geprüft, dass der „alt“-Wortlaut als
+  Teilstring in der genannten Zeile der genannten Datei steht (21 geprüft, 0 Fehler). Die
+  Belegzeilen in Bibel und Roman habe ich von Hand nachgeschlagen, nicht per Skript.
+
+### I3 Ortsblätter und Ortsdokumente Akt 3 und 4
+
+Geprüft am 13.11.2026 gegen `05_Story_Bibel.md` im jetzigen Stand (2611 Zeilen), `22_Dialogpruefung.md`
+(G2, G4, Teil H) und Abschnitt 7 der vier Befund-Dateien. Nichts im Repository geändert.
+
+Abkürzungen: **Bibel:Zeile** = `docs/spiel/05_Story_Bibel.md`; **R4-3:80** = `roman/akt4_teil3.md`,
+Zeile 80; **Bef4** = `roman/akt4_befunde.md`, Abschnitt 7; **DP** = `22_Dialogpruefung.md`. Zitate
+über einen Zeilenumbruch hinweg sind mit einem Leerzeichen zusammengezogen.
+
+Art des Befunds:
+
+- **Altstand:** Die Stelle trägt den Stand vor der Angleichung (G2, G4, Teil H, Abschnitte 7).
+- **Roman:** Die Stelle widerspricht dem Roman; die Bibel schweigt dazu oder ist dort ungenauer.
+- **Offen:** Bibel und Roman sagen Verschiedenes, die Bibel ist an dieser Stelle nicht angeglichen;
+  das Ortsdokument folgt der Bibel. Hier muss der Hauptchat entscheiden.
+- **Grenzfall:** Schauplatz weicht vom Roman ab, ist aber eher eine Kartenfrage. Aufgenommen, weil
+  eine Figur oder ein Gegenstand der Geschichte daran hängt.
+
+Kurzfassung: 20 Befunde in 8 von 12 Dateien. Die meisten Dateien enthalten fast nur Kartenbau; die
+typischen Altstände der Bibel (Einladung, Siegel, „Komm nach Norden“, Fragment 7, Postsäcke 1870,
+Dorrance, Kira, Remis) kommen in keinem der zwölf Dokumente vor. Schwerpunkt ist `orte/ghost-town.md`
+(8 Befunde): Das Dokument ist vor dem Roman geschrieben und kennt weder Gideon noch den Stein noch
+das Zimmer über dem Laden.
+
+---
+
+#### `docs/spiel/20_Ortsblaetter.md`
+
+**I3.1** · Zeile 289 · Altstand (klein)
+
+- alt: „Sagt Mama, dass sie die Beste war.“ (Spalte B, also „nach der Nadel dieses Orts“, Zeile 29)
+- neu: Spalte A: „Leere Wände. Lobt nicht. Vor dem Clubkampf sagt sie Mama, dass sie die Beste in dem Jahr war.“ Spalte B: „Mama sitzt beim Clubkampf am Fenster; Ward hat es ihr gesagt.“
+- Beleg: Bef4 („Ward sagt es Mama, „bevor ihr fahrt“ (vor dem Clubkampf)“); R4-1:638, vor der Partie, die Nadel liegt noch auf dem Kaminsims; R4-1:772 („Kurze Szene vor dem Clubkampf“).
+
+**I3.2** · Zeile 335 · Altstand (klein)
+
+- alt: „Die Treppe, auf der das Spiel endet.“
+- neu: „Die Treppe, auf der Ambrose Abschied nimmt (letzte Karte der Hauptgeschichte; das Spiel endet danach im Epilog auf dem Dachboden).“
+- Beleg: Bibel:2425 („Reihenfolge: Abschied, dann Abspann …, dann Epilog, danach Post-Game“; letzter Satz des Spiels „Was hängt?“ auf dem Dachboden); R4-4:1156 („Treppe der Arena im Abendlicht (letzte Karte der Hauptgeschichte). Dachboden als Schlusskarte“); DP H1, G4 14.
+
+#### `docs/spiel/orte/silicon-bay.md`
+
+**I3.3** · Zeilen 432 und 468 · Altstand
+
+- alt (432): „später (Post-Game): Dr. Lins Club, 16 × 11“
+- alt (468): „Post-Game: Dr. Lins Club ohne Bildschirme, Ladenschild als Objekt mit Bedingung“
+- neu (432): „später (Epilog und Post-Game): Dr. Lins Kellerclub, 16 × 11“
+- neu (468): „Epilog und Post-Game: Dr. Lins Kellerclub ohne Bildschirme (Keller, Heizlüfter, acht Kinder, Nova kommt jeden Tag), Schild als Objekt mit Bedingung“
+- Beleg: Bibel:2100 („Sie hat schon vor der Meisterschaft bei Perfect Move gekündigt und gründet einen Kellerclub ohne Bildschirme (im Epilog zu sehen).“); Bibel:2432 („der Epilog zeigt ihn nur kurz, hier ist er besuchbar“); R4-2:174–175; R4-4:1106; `20_Ortsblaetter.md`:204. Nicht entschieden ist, ob der Keller unter dem leeren Laden „Ames Kurzwaren“ am Hafen liegt; das Ortsdokument beschreibt bisher ein Ladenlokal mit Schaufenster.
+
+#### `docs/spiel/orte/port-delacroix.md`
+
+**I3.4** · Zeile 165 · Roman
+
+- alt: „über dem Eingang hängt kein Schild mehr“
+- neu: „über dem Eingang hängt das Schild an einer einzigen Schraube“
+- Beleg: R3-2:81–82 („hing ein Schild an einer einzigen Schraube. _Maison de Musique._ … _Club d’Échecs, depuis 1889._“); `20_Ortsblaetter.md`:217 und 228 (Wahrzeichen; Stufe A „Schild an einer Schraube“). Das Schild ist der Gegenstand von Szene 70 (Bibel:1841).
+
+**I3.5** · Zeile 187 · Altstand
+
+- alt: „68 Nachfahren“
+- neu: „68 Die Familie“
+- Beleg: Bibel:1818 („**68. Die Familie** · `akt3.nachfahren`“); DP G2 zu Zeile 1851, H1 (G4 12: Kennungen unverändert, nur der Titel); Bef3 („Die Whitlock-Duvals stammen von einem Bruder ab“).
+
+#### `docs/spiel/orte/nebenorte-sued.md`
+
+**I3.6** · Zeilen 65–66 · Grenzfall
+
+- alt: „in der Kammer der Bergleute steht noch ein Tisch, auf dem jemand einmal einen Brief geschrieben hat.“
+- neu: „in der Kammer der Bergleute steht noch ein Tisch mit dem Logbuch der letzten Schicht.“
+- Beleg: Der Satz liest sich als Anspielung auf Ambroses letzten Brief. Den schreibt er nicht im Stollen, sondern im Bett, Gideon hält ihm das Blatt (Bibel:2337; R4-3:143 und 251–253). Wenn ein anderer Brief gemeint ist, bleibt der Satz; dann sollte er sagen, wessen.
+
+#### `docs/spiel/orte/summit-city.md`
+
+**I3.7** · Zeilen 80–81 und 177 (dazu 165 Auslöser `pokal`, 332) · Roman
+
+- alt (80–81): „rechts eine Vitrine mit dem **Pokal von 1985** (`pokal`), daneben Endspieldiagramme in Rahmen und das Foto vom Gipfel.“
+- alt (177): „Wards Hütte mit Kamin, Pokal, Foto und Teekanne“
+- neu (80–81): „die Wände sind leer; es hängt nur ein Thermometer (nach der Meisterschaft ein einziges Foto: zwei Könige auf einem Brett).“
+- neu (177): „Wards Hütte mit Kamin, leeren Wänden, Thermometer und Teekanne“
+- Beleg: R4-1:144 („An den Wänden hingen keine Pokale. Es hing überhaupt nichts an den Wänden, außer einem Thermometer.“); R4-1:770 („ihre Hütte hat leere Wände“); `20_Ortsblaetter.md`:278 und 289 (die leeren Wände sind Wards kleine Geschichte: Stufe A leer, C/D ein Bild). Die Bibel nennt weder Pokal noch Foto; beides stammt aus `09_Weltbeschreibung.md`:315.
+
+**I3.8** · Zeilen 87–88 und 166 · Grenzfall
+
+- alt (87–88): „davor die **Bank am Fenster** (Szene 88, Victor).“
+- alt (166): „Bank am Fenster über den Wolken, Victor“
+- neu: „draußen die Plattform mit Geländer und dem großen Rad der Seilbahn über dem Wolkenmeer; dort sitzt Victor, den Rücken am Geländer (Szene 88).“
+- Beleg: R4-1:424–428 („Die Bergstation lag auf dem Grat. … eine Plattform mit einem Geländer. … Er saß auf der Plattform, den Rücken am Geländer“); R4-1:618 („Bergstation mit Plattform, Rad und Geländer; ringsum Himmel“). Die Bibel sagt nur „an der Bergstation der Seilbahn, über den Wolken“ (Bibel:2257–2258).
+
+**I3.9** · Zeilen 146–147 (dazu 62: „Weg zum Markt“) · Roman
+
+- alt: „Wards Hütte steht am Westrand des Ortes, mit einer Veranda, auf der ein Schachbrett im Wind liegt.“
+- neu: „Wards Hütte liegt eine Stunde über der Stadt, an einem Pfad, den man nur zu Fuß geht.“
+- Beleg: Bibel:2108–2109 („lebt in einer Berghütte über der Stadt“); R4-1:139 („lag eine Stunde über der Stadt, an einem Pfad, den man nur zu Fuß“); R4-1:197 („Jeden Morgen den Pfad hinauf, jeden Abend hinunter“); `20_Ortsblaetter.md`:281. Die Lage auf der Karte ist Sache des Kartenbaus; der Satz im Ortsbild widerspricht aber Bibel und Roman.
+
+#### `docs/spiel/orte/crossroads.md`
+
+**I3.10** · Zeilen 152–153 · Altstand (Nachtrag fehlt)
+
+- alt (152): „Slick, Mira, Big Joe, Rosie“
+- alt (153): „Darlene, Nova“
+- neu (152): „Slick, Mira (mit Tomás), Big Joe, Rosie, Coach Delgado mit dem Schulbus (Sam, Carla)“
+- neu (153): „Darlene, Nova, Theo“
+- Beleg: Bibel:2298 („Coach Delgado sagt offen, dass sie den Vertrag mit Perfect Move unterschrieben und wieder gekündigt hat.“) und Bibel:2104 („sie erzählt es in Crossroads (Szene 93)“); DP G2 zu Zeilen 2340–2341, H1; R4-2:226–243 (Coach Delgado neben dem Schulbus, Carla mit Fahrrad auf dem Dachträger); R4-2:168–175 (Theo); `20_Ortsblaetter.md`:297–299 („Schulbus mit Fahrrad“; „sechs Fäden … Slick, Big Joe, Theo, Nova, Coach Delgado, Carla“). Im ganzen Dokument kommen Coach Delgado, Theo und der Schulbus nicht vor (Suche).
+
+#### `docs/spiel/orte/ghost-town.md`
+
+**I3.11** · Zeilen 37–39 und 85 (dazu Titel Zeile 1, 81, 83, 97, 144, 147, 219–232, 325) · Offen
+
+- alt (37–39): „Man gelangt über das versteckte Postreiterabzeichen im Saloon (`abzeichen`, erst nach `abzeichenGefunden`) in die Bretterhütte von 1866“
+- alt (85): „Eine Bretterhütte der Bergbausiedlung.“
+- neu (Vorschlag, falls der Roman gilt): „Man gelangt nachts über die Treppe im Laden gegenüber dem Saloon in das Zimmer darüber (Fetzen Rosentapete, Bettgestell aus Eisen) und von dort in dasselbe Zimmer im Februar 1866“ und „Ein Zimmer über dem Laden: Bett, Tisch mit Kerze, Stuhl mit dem Brett, Tapete mit Rosen.“
+- Beleg: R4-3:47–49 („Der Laden. … Darüber war ein Zimmer. … Es hatte eine Tapete mit Rosen.“); R4-3:143 („Erinnerung: ein Zimmer über dem Laden, Nacht“); R4-3:151; R4-3:339 („Laden mit Treppe, Zimmer darüber. Erinnerungskarte: dasselbe Zimmer 1866“); `20_Ortsblaetter.md`:318. Dagegen Bibel:2336 („in einer Bretterhütte der Siedlung“) und Bibel:2462 (Postreiterabzeichen als „Flashback-Auslöser“). Die Bibel ist hier nicht angeglichen und in sich uneben: Bibel:2337 lässt Gideon den Brief „hinunter zum Postreiter“ tragen, was nur zum Zimmer im ersten Stock passt. Das Ortsdokument folgt der Bibel; Entscheidung nötig.
+
+**I3.12** · Zeilen 55, 103–105, 184 und 266 · Roman
+
+- alt (55): „Ortsschild „Gold Hill, pop. 0““
+- alt (103–105): „Gold Hill hieß die Stadt, als hier noch jemand wohnte; jetzt nennt sie jeder Ghost Town, und das Ortsschild am Westeingang zählt die Einwohner mit einer verwitterten Null.“
+- alt (184): „Ortsschild „Gold Hill““
+- alt (266): „„Gold Hill, pop. 312“, mit Kreide auf Null“
+- neu: Ortsschild und Name streichen: „Die Stadt hat kein Schild; die Einwohnerzahl ist Mr. Pruitt („Ich bin die Einwohnerzahl“).“
+- Beleg: R4-3:30 („Die Stadt kam ohne Schild.“); R4-3:61. Bibel und Roman kennen keinen Namen „Gold Hill“. Wenn der Name bleiben soll, muss er in Bibel und Roman nachgetragen werden.
+
+**I3.13** · Zeilen 62, 121 und 195 · Roman (Folge von Gideon, Bef4)
+
+- alt (62): „Reihen von Holzkreuzen und Grabhügeln; am Ostrand das **Grab ohne Namen**“
+- alt (121): „Am äußersten Rand, fast schon draußen, liegt ein Grab ohne Namen.“
+- alt (195): Zeile „Grab ohne Namen“, Material „Erde, Holz“
+- neu (62): „Holzkreuze, die meisten umgefallen, ein paar Steine; ganz hinten, wo der Zaun aufhört, der **Stein ohne Namen** mit dem eingeritzten Brett“
+- neu (121): „Am äußersten Rand, fast schon draußen, liegt ein niedriger, grob behauener Stein ohne Namen; in ihn ist ein Schachbrett eingeritzt, acht mal acht.“
+- neu (195): „Stein ohne Namen (eingeritztes Brett, Großansicht; nach Szene 98 liegt Junos gelbe Blume darauf)“, Material „Stein“
+- Beleg: R4-3:80–82 („lag ein einzelner Stein. Er war niedrig, grob behauen. Es stand kein Name darauf. Es war etwas eingeritzt. Vierecke. Acht mal acht.“); R4-3:91 („Der Schmied hat den Stein gemacht“); R4-3:105 („Er hieß Gideon.“); Bibel:2337 (Gideon); `20_Ortsblaetter.md`:315 und 317 (Wahrzeichen; die gelbe Blume ist das einzig Farbige). Bibel:2331 sagt weiter „Grab ohne Namen“; das verträgt sich mit dem Stein.
+
+**I3.14** · Zeilen 88, 144, 232 und 327 · Altstand
+
+- alt (88): „der Postreiter wartet an der Tür.“
+- alt (144): „Bretterhütte, Fieber (nur angedeutet), Kerze (`kerze`), Brett, Postreiter an der Tür“
+- alt (232): „Figur: `postreiter` an der Tür (6, 7).“
+- alt (327): „Er wartet jetzt an der Tür (7, 8).“
+- neu (88): „Gideon, der Schmied der Siedlung, steht in der Tür; der Postreiter wartet unten vor dem Haus (nur zu hören: Pferd, Hufe).“
+- neu (144): „Fieber (nur angedeutet), Kerze (`kerze`), Brett, Gideon in der Tür mit einer Schüssel; der Postreiter wartet unten“
+- neu (232, 327): „Figur: `gideon` an der Tür“
+- Beleg: Bibel:2337 („Bei ihm ist Gideon, der Schmied der Siedlung …; Gideon hält ihm das Blatt und trägt den Brief hinunter zum Postreiter“); Bef4 („Der Schmied von 1866 heißt Gideon“); DP H1; R4-3:196–200 und 264 („Unten ist der Postreiter“). Zeile 135 („Draußen wartet der Postreiter.“) kann bleiben; in der Aufzählung davor fehlt Gideon.
+
+**I3.15** · Zeilen 130–131, 146 und 162 · Altstand (Bef4: Ambrose sitzt fünfmal)
+
+- alt (130–131): „Auf dem Hügel im Südwesten steht eine Bank, von der aus man über die Dächer und den Friedhof bis zum Horizont sieht.“
+- alt (146): „Ort mit Blick in die Sterne (`sternenhimmel`)“
+- alt (162): „Platz für Szene 101 (`sternenhimmel`) mit freier Sicht“
+- neu (130–131): „Am Ende des Gehsteigs, wo die Bretter aufhören, sitzt man auf der Kante, die Füße im Staub, und sieht über den Friedhof in die Sterne.“
+- neu (146): „Ende des Gehsteigs an der Hauptstraße, Blick über den Friedhof in die Sterne (`sternenhimmel`); Ambrose setzt sich neben {held} auf die Kante (das vierte Mal)“
+- neu (162): Zeile „Hügel mit Bank“ entfällt; der Platz für Szene 101 ist das Ende des Bretterwegs
+- Beleg: Bef4 („Der Gehsteig in Ghost Town ist das vierte Mal, die Treppe der Arena das fünfte und letzte“); R4-3:608 („am Ende des Gehsteigs, wo die Bretter aufhörten“); R4-3:631 („Neben mich, auf die Kante, die Füße im Staub. Es war das vierte Mal.“); R4-3:587 („Hauptstraße bei Nacht“). Bibel:2355 nennt nur `ghostTown.aussen` (Nacht, Sterne).
+
+**I3.16** · Zeilen 133–134 · Roman
+
+- alt: „Die Siedlung besteht aus Zelten und Bretterhütten, die Mine ist gerade eröffnet. In einer der Hütten liegt Ambrose im Fieber.“
+- neu: „Die Stadt ist drei Jahre alt und voll: 1863 wurde Gold gefunden, viertausend Menschen kamen in zwei Jahren. Im Zimmer über dem Laden liegt Ambrose im Fieber; bei ihm ist der Schmied Gideon.“
+- Beleg: R4-3:65–68 („Achtzehnhundertdreiundsechzig Gold gefunden, viertausend Menschen in zwei Jahren. Drei Saloons, eine Zeitung“); R4-3:85–86 (Februar 1866); hängt an I3.11.
+
+**I3.17** · Zeile 217 (dazu 145) · Roman (klein)
+
+- alt (217): „Figur: `pruitt` am Tisch.“
+- neu (217): „Figur: `pruitt` in der Tür (er sieht zu); am Tisch sitzen {held} und Victor.“
+- Beleg: R4-3:350–358 (Pruitt rückt den Tisch in die Mitte unter das Loch im Dach, stellt zwei Stühle daran; „Er blieb in der Tür stehen und sah zu.“). Im Roman sind in Szene 100 auch Mama und Juno im Saloon (R4-3:352–353); Bibel:2343 und Zeile 145 nennen sie nicht. Bef4 lässt offen, was Mama und Mr. Pruitt von den Gesprächen mit Ambrose halten.
+
+**I3.18** · Zeilen 258–259, 303 und 352 · Widerspruch zur Bibel (kein Altstand von heute)
+
+- alt (258–259): „Mr. Pruitts Metallsucher und 12 Sommergäste und Durchreisende, 8 davon ansprechbar“
+- alt (303): „Ein Tourist lehnt an der Theke.“
+- alt (352): „Eine Touristin sitzt am Tisch.“
+- neu: Ghost Town ohne Statisten: „Mr. Pruitts Metallsucher; sonst niemand (Ausnahme von Regel 10.53)“; Tourist und Touristin im Saloon entfallen.
+- Beleg: Bibel:2141–2142 („einzige Figur in Ghost Town“); R4-3:37 („Es war niemand da.“) und R4-3:61 („Ich hab seit April keinen gehabt.“); `20_Ortsblaetter.md`:320 und 322 („Nur Mr. Pruitt“; „Nicht hier: … Statisten.“). Die Statisten kommen aus der Belebungsregel 10.53; ob Ghost Town davon ausgenommen wird, ist eine Entscheidung des Hauptchats. Die Touristin am Tisch stört zusätzlich Szene 100 (der Tisch gehört der Fernpartie).
+
+#### `docs/spiel/orte/capital.md`
+
+**I3.19** · Zeile 172 · Grenzfall
+
+- alt: „Die Capital Arena ist kein Betonklotz, sondern ein alter Prachtbau mit Kuppeln und Glasdach“
+- neu: „Die Capital Arena ist rund und weiß, mit einem Dach wie eine Muschel“
+- Beleg: R4-4:38 („Sie war rund und weiß, mit einem Dach wie eine Muschel.“); R4-4:96; `20_Ortsblaetter.md`:335. Die Bibel beschreibt das Gebäude nicht. Ebenso Zeile 166: Leuchtturm „rot und weiß gestreift“ gegen „weiß mit rotem Band“ (`20_Ortsblaetter.md`:329); reine Bildfrage, nicht gezählt.
+
+**I3.20** · Zeile 252 · Widerspruch zur Bibel (kein Altstand von heute)
+
+- alt: „gegen Slick, Big Joe, Mrs. Okafor, Céleste und Hollis“
+- neu: „gegen Slick, Big Joe, Mrs. Okafor, Lou und Hollis“ (oder eine andere Bekannte, die spielt)
+- Beleg: Bibel:1440 („die junge Céleste spielt eine einzige Partie aus Neugier, und Ambrose lernt loszulassen“) und Bibel:1824–1825 („Sie muss es nicht lieben. Es reicht, dass sie einmal gespielt hat.“). Eine zweite Partie Célestes im Simultan am Weltschachtag nimmt Szene 68 die Pointe. Die Besetzung stammt aus `15_Routen_Ereignisse.md`:536; dort wäre sie mit zu ändern. Wen der Hauptchat einsetzt, ist offen; „Lou“ ist nur ein Vorschlag.
+
+---
+
+#### Zählung je Datei
+
+| Datei                    | Befunde | Kennungen       | davon Altstand | Roman | Offen | Grenzfall | Bibel (älter) |
+| ------------------------ | ------- | --------------- | -------------- | ----- | ----- | --------- | ------------- |
+| `20_Ortsblaetter.md`     | 2       | I3.1, I3.2      | 2              | –     | –     | –         | –             |
+| `orte/silicon-bay.md`    | 1       | I3.3            | 1              | –     | –     | –         | –             |
+| `orte/port-delacroix.md` | 2       | I3.4, I3.5      | 1              | 1     | –     | –         | –             |
+| `orte/delta.md`          | 0       | –               | –              | –     | –     | –         | –             |
+| `orte/pelikaninsel.md`   | 0       | –               | –              | –     | –     | –         | –             |
+| `orte/nebenorte-sued.md` | 1       | I3.6            | –              | –     | –     | 1         | –             |
+| `orte/desert-springs.md` | 0       | –               | –              | –     | –     | –         | –             |
+| `orte/summit-city.md`    | 3       | I3.7 bis I3.9   | –              | 2     | –     | 1         | –             |
+| `orte/summit-weg.md`     | 0       | –               | –              | –     | –     | –         | –             |
+| `orte/crossroads.md`     | 1       | I3.10           | 1              | –     | –     | –         | –             |
+| `orte/ghost-town.md`     | 8       | I3.11 bis I3.18 | 2              | 4     | 1     | –         | 1             |
+| `orte/capital.md`        | 2       | I3.19, I3.20    | –              | –     | –     | 1         | 1             |
+| **Summe**                | **20**  |                 | **7**          | **7** | **1** | **3**     | **2**         |
+
+Altstand: I3.1, I3.2, I3.3, I3.5, I3.10, I3.14, I3.15. Roman: I3.4, I3.7, I3.9, I3.12, I3.13, I3.16,
+I3.17. Offen: I3.11. Grenzfall: I3.6, I3.8, I3.19. Widerspruch zur Bibel, der nicht von der
+Angleichung kommt: I3.18, I3.20.
+
+#### Ohne Befund geprüft
+
+- **`20_Ortsblaetter.md`, alle Akte, Zeile für Zeile gelesen.** Stimmt mit Bibel und Roman überein:
+  Raum 12 im Erdgeschoss, Bildschirm im Clubraum und später im Flur (Zeilen 54, 63, 352); Weg mit zwei
+  Karten, Zedernpfad gesperrt (67); Lesesaal mit Matten (359); sechs Bildschirmtische und vier
+  Steintische in Riverton (130, 131, 138); Noor Haddad (151); Elm Street 10 (163); Postsäcke von 1866
+  (173; die „Nachfahren“ dort sind die der Briefempfänger); Dot fünfzig Jahre Fernschach, „auch gegen
+  Margaret Whitlock“, „Wir waren im 31. Zug“ (248, 255; R3-3:314–323); 211 Einwohner, der Pfarrer
+  spielt nicht (243); Mira 10; sieben Kisten bei Mr. Okoro (257); Brücke von 1879 (237); Dr. Lins
+  Keller mit acht Kindern im Epilog (204); Theo in Crossroads (203); Remys Entschuldigung bei der
+  Benefiz (229); Juli in Summit City (280); „außer am Drachenfest“ (285); Crossroads mit sechs Fäden
+  samt Coach Delgado und Carla (299); Ghost Town mit Stein, Schmied, Rosentapete, gelber Blume, „Die
+  Fernpartie von 1865/66“ (315–322); Arena mit dreitausend Menschen, „im Finale keine Karten und kein
+  Geist“, Bildschirme gehen nach der Aussage aus (334–341); Epilog-Einträge von Maple Falls (60–63).
+- **`orte/silicon-bay.md`:** Abschnitte 1.7, 2, 3 (Zeilen 464–620) und die Bühnenbilder Akademie,
+  Serverraum, Lobby (708–724, 792–818) gelesen. Vitrine „Hale – Ingenieure seit 1850“ mit Notizbuch,
+  Fund Ohrempfänger, Szenennummern 51 bis 62 stimmen. Zeilen 475–477 (freies Fach für Hales Seite) sind
+  ausdrücklich „keine Festlegung der Geschichte“; nach Bibel:2350–2351 legt Victor die Seite zurück in
+  sein Buch, nicht in die Vitrine.
+- **`orte/port-delacroix.md`:** Kopf, Abschnitte 1.4, 2, 3, 4.2 bis 4.4 (Zeilen 1–12, 136–222,
+  293–325) gelesen. Szenen 62 bis 70, Musikhaus „seit 1889“, Henris Klavier, altes Foto (junger Mann
+  mit Schachbrett), Whitlock-Duval stimmen. Der Geigenkasten (Szenen 63 bis 68, Schiedsrichtertisch,
+  Hocker in der Werkstatt) kommt nicht vor; das ist kein Widerspruch, aber ein möglicher Nachtrag in
+  der Tabelle 3.1 und in 4.1.
+- **`orte/delta.md`:** Kopf, Abschnitte 2 und 3 (Zeilen 1–14, 152–254) gelesen. Szene 62, Mr. Ruiz,
+  Mr. Guidry, Ambroses Satz „Salz und Holz. Ich kenne diese Luft.“ stimmen.
+- **`orte/pelikaninsel.md`:** Abschnitte 2 und 3 (Zeilen 52–80) gelesen; keine Angaben zur
+  Hauptgeschichte.
+- **`orte/desert-springs.md`:** Zeilen 1–207 bis auf Koordinaten gelesen. Brücke von 1879 mit „J. H.“,
+  Miras Stein (Szene 72), Antiquariat im alten Bahnhof mit Kellerluke und Briefkiste, Hales Brief als
+  Leihgabe im Post-Game stimmen. Siegel, Umschlag und Wortlaut des Briefs kommen nicht vor. Der
+  Statistenname „Wren Okoro“ (Zeile 195) klingt an zwei andere Figuren an (Tobias Wren, Mr. Okoro);
+  kein Widerspruch.
+- **`orte/summit-weg.md`:** Abschnitte 2 und 3 (Zeilen 132–200) gelesen. Szene 81, Earl Dubois,
+  „seit '89 kaputt“ stimmen.
+- **`orte/summit-city.md`:** außer den Befunden: Szenen 82 bis 91, Drachenfest als Abend ohne feste
+  Objekte (Zeilen 168, 364–366; verträgt sich mit „an einem anderen Abend besuchbar“), Kira am
+  Steintisch ohne Altersangabe, Fund `diplomKira` stimmen. Remis und Nadel kommen nicht vor.
+- **`orte/capital.md`:** Abschnitte 2 und 3 (Zeilen 157–272) gelesen. Szenen 102 bis 109, Treppe für
+  den Abschied (Zeilen 88, 176, 195), Funkprüfer, Pressetisch stimmen. Epilog und Abspann kommen nicht
+  vor (der Epilog spielt in Maple Falls).
+- **Stichwortsuche über alle zwölf Dateien ohne Treffer zum Altstand:** Siegel, „Komm nach“,
+  Einladung (nur `akt2.einladung`), „letzten Züge“, Fragment, Nachkomm/Abstamm, Tobias, Gideon,
+  Dorrance, Vertriebschef, Silber, 1870, 1852, 1857, Geigenkasten, Remis, Mentor, Epilog, Abspann,
+  Lily, Delgado, Kade, Großvater (nur der Satz der Familien in Szene 64).
+
+#### Nicht geprüft
+
+- **Ortsdateien nicht Zeile für Zeile.** Vollständig gelesen ist nur `20_Ortsblaetter.md`. In den
+  elf Ortsdateien habe ich Kopf, Ortsbild (Abschnitt 2), Abgleich mit der Geschichte (Abschnitt 3) und
+  die Bühnenbilder mit Szenenbezug gelesen und den Rest (Ortsplan mit Abschnittstabellen, Übergänge,
+  Rundenberichte, Gutachten-Antworten, Bildwünsche) nur per Suche nach Namen, Jahreszahlen und
+  Gegenständen durchgesehen. Nur per Suche: `silicon-bay.md` Zeilen 13–463 und 621–707, 725–791,
+  819–897; `port-delacroix.md` 13–135 und 222–292, 326–409; `delta.md` 15–151 und 255–386;
+  `pelikaninsel.md` 1–51 und 81–151; `nebenorte-sued.md` 9–38, 77–101, 130–178; `summit-city.md`
+  13–76, 121–132, 192–298, 318–404; `summit-weg.md` 1–131 und 201–417; `crossroads.md` 1–127 und
+  164–280; `ghost-town.md` 42–74 und 177–201 (nur Treffer), 277–294, 337–343, 354–386; `capital.md`
+  1–156 und 273–375. Eine Geschichtsangabe in einem Satz ohne eines meiner Suchwörter kann mir dort
+  entgangen sein.
+- **Sätze der Statisten** (Regel 10.53) habe ich nicht gegen die Geschichte geprüft, nur ihre
+  Kurzangaben in Klammern gesehen.
+- **Roman nur stellenweise.** Ganz gelesen: Kapitel 56, 57 und Teile von 58, 59 (`akt4_teil3.md`),
+  Kapitel 53 in Teilen (`akt4_teil2.md`). Sonst nur die Stellen, die ich als Beleg brauchte (Suche und
+  Umfeld). Akt 1 und 2 des Romans habe ich für das Ortsblatt nur per Suche an einzelnen Punkten
+  nachgeschlagen (Turmuhr, 1890, helle Flecken im Pavillon); die Akt-1- und Akt-2-Blöcke des
+  Ortsblatts sind sonst gegen G2, Teil H und die Abschnitte 7 geprüft, nicht gegen jedes Kapitel.
+- **Bibel:** Teil 3 und 4 (Zeilen 1420–2611) gelesen, Teil 1 und 2 nur über G2 und Suche.
+- **Nicht nachgeschlagen:** `09_Weltbeschreibung.md`, `13_Wegenetz.md`, `15_Routen_Ereignisse.md`,
+  `16_Statisten_und_Tiere.md`, `orte.json`, Ink-Dateien, auf die sich die Ortsdateien berufen. Ob die
+  dortigen Angaben (etwa Pokal von 1985, Bretterhütte, Céleste im Simultan) mit angeglichen werden
+  müssen, ist nicht Teil dieses Auftrags.
+- **Kleine Geschichten des Ortsblatts** (Stufen A bis D) sind nur dort gegen den Roman geprüft, wo der
+  Roman sie nennt (Epilog, Crossroads, „Neu“-Tabellen); die übrigen Stufen kann ich nicht belegen.
+
+#### Nebenbei aufgefallen (außerhalb des Auftrags, nicht gezählt)
+
+- **Bibel:1975–1976** sagt noch: „Victor hat die Seite seit Jahren in seinem Schachbuch versteckt,
+  weil sein Vater sie „wertlos“ fand“. Das widerspricht Bibel:2070 und Bibel:2263 (der Großvater hält
+  sie für wertlos, Graham Hale weiß nichts von dem Buch; DP H1, G4 15).
+- **Bibel:2336 und 2462** (Bretterhütte; Postreiterabzeichen als Flashback-Auslöser) gegen den Roman
+  (Zimmer über dem Laden, Treppe im Laden): siehe I3.11. `09_Weltbeschreibung.md`:346 trägt dieselbe
+  Bretterhütte, `09_Weltbeschreibung.md`:315 den Pokal von 1985 (I3.7).
+- **Roman, `akt4_teil3.md`:580** nennt im Bildvermerk eine „Tagebuch-Doppelseite mit neun
+  eingeklebten Zetteln“, und die „Neu“-Tabelle derselben Datei spricht von „neun Zetteln in Junos
+  Tagebuch“. Nach Bef4 kleben acht Zettel, das neunte Stück ist der Brief (so auch R4-3:363–369).
+
+Stand der Prüfung: 13.11.2026, Zweig `claude/brave-hopper-fpak3o`. Nichts im Repository geändert.
+Maßgeblich ist `docs/spiel/05_Story_Bibel.md` im jetzigen Stand (nach Teil H). Abkürzungen:
+**B** = `docs/spiel/05_Story_Bibel.md`, **Q** = `inhalte/abenteuer/quests.json`,
+**BG** = `inhalte/abenteuer/begegnungen.json`, **T** = `inhalte/abenteuer/texte/de.json`,
+**DP** = `docs/spiel/22_Dialogpruefung.md`, **Bef1…4** = `docs/spiel/roman/aktN_befunde.md`,
+**R4-n** = `docs/spiel/roman/akt4_teiln.md`. Zeilennummern gelten für den heutigen Stand.
+
+### I4 quests.json und begegnungen.json
+
+Zwei Gruppen: **A** = die Daten weichen von der angeglichenen Bibel ab (Daten ändern);
+**B** = die Bibel hinkt den Daten oder einer älteren Entscheidung nach (Bibel ändern). Die Texte in
+T sind nur dort geprüft, wo ein Quest-Titel oder Schritt darauf zeigt, und an den Stichworten des
+Auftrags.
+
+#### Gruppe A: Daten ändern
+
+**I4.1 Mentor-Zug wird schon in Maple Falls vergeben** · Q, Zeilen 123–128 (Quest `mapleFalls.viertesBrett`, Schritt Clubkampf)
+
+- alt (Q:123–128): `"wirkungen": [` / `{` / `"art": "karte",` / `"karte": "mentorzug"` / `}` / `]`
+- neu: Wirkung streichen (der Schritt hat dann keine `wirkungen`). Die Vergabe in `cedarCreek.clubkampf` (Q:436–439) bleibt.
+- Beleg: B:606 („Die Karte **Mentor-Zug** wird erst nach dem Clubkampf vergeben, beim ersten Sieg (nur hier, bei Club 2).“), B:652 („nach dem Clubkampf in Cedar Creek, nur Club 2 (Szene 24)“), Bef1:118–119, DP Teil H1 („G4 4“).
+- Hinweis: Die Vergaben in den Clubs 3 bis 8 (Q:663, 952, 1284, 1667, 1706, 2141) stimmen mit den Szenen 36, 48, 60, 67/73, 78 und 91 der Bibel überein („Mentor-Zug (R27)“). Ich lese „nur Club 2“ deshalb als „in Akt 1 nur Club 2“. Das Regelwerk (`06_Regelwerk.md`:290, „Erste Clubnadel eines Clubs (jede Stufe)“) sagt weiter „jeder Club“ und ist nach DP H2 nicht angeglichen.
+
+**I4.2 Aufbruch nach Cedar Creek: Schritt verlangt den Bus** · Q, Zeilen 193–199; T, Zeile 110
+
+- alt (T:110): „Am Stadtpark in den Bus nach Cedar Creek steigen.“
+- alt (Q:195–199): `"ereignis": {` / `"art": "ort",` / `"karte": "mapleFalls.park",` / `"ausloeser": "bushaltestelle"` / `}`
+- neu (T:110): „Am Freitag nach der Schule mit Juno zu Fuß nach Cedar Creek gehen: vom Stadtpark über die Landstraße und den Flussweg.“
+- neu (Q): `"ereignis": { "art": "ort", "karte": "wegMapleCedar.landstrasse" }` (wie der erste Schritt von `riverton.parkclub`, Q:585–590; möglich wäre auch die Ankunft auf `cedarCreek.aussen`).
+- Beleg: B:515 („Der erste Weg wird zu Fuß gegangen: vom Parkausgang über Landstraße und Flussweg. Der Bus an der Haltestelle im Park … bleibt für die Rückfahrt und für spätere Fahrten“), B:520 („Ankunft zu Fuß vom Flussweg, Freitagnachmittag“), Bef1 Abschnitt 7 („Weg nach Cedar Creek“).
+- Hinweis: Schritt 4 (T:109, „Mama vom Auswärtsspiel in Cedar Creek erzählen.“) passt weiter.
+
+**I4.3 Titel von Szene 68** · T, Zeile 598 (Quest `portDelacroix.nachfahren`, Q:1541–1542)
+
+- alt (T:598): „Die Nachfahren“
+- neu: „Die Familie“
+- Beleg: B:1818 („**68. Die Familie** · `akt3.nachfahren` · N begegnung `portDelacroix.nachfahren`“), Bef3 Abschnitt 7 („Abstammung“), DP H1 („G4 12: Kennungen unverändert, nur der Titel“). Die Kennungen `portDelacroix.nachfahren`, `quest.nachfahren.*` und `akt3.nachfahren` (Q:1541, 1542, 1569) bleiben. Die Schritte (T:599–600) nennen keine Nachfahren.
+
+**I4.4 Halbfinale: neue Mechanik fehlt in der Begegnung** · BG, Zeilen 494–510
+
+- alt (BG:504): `"freieKarten": ["mentorzug"],`
+- neu: Die Zeile bleibt. Dazu fehlt ein Feld für den Schlüsselmoment (Zugerraten des Turmzugs, beliebig viele Versuche, Uhr hält an) und eine Kennzeichnung, dass die freie Karte hier keinen Zug zeigt, sondern nur „Er ist da“ (goldener Rand). Solange das fehlt, führt die freie Karte den besten Engine-Zug aus wie überall (`karten.json`, Karte `mentorzug`, Wirkung `mentorzug`; T:449: „Einmal ziehe ich für dich.“).
+- Beleg: B:2401 („Der Spieler findet den Turmzug in jedem Fall selbst (Zugerraten, beliebig viele Versuche, die Uhr hält an), ob er die Karte spielt oder nicht. Die Karte Mentor-Zug hat hier einen goldenen Rand und zeigt keinen Zug“), B:2489, B:2522, DP H1 („G4 13“ und Nachtrag).
+- Stimmt schon: freie vierte Karte (BG:504), Stärkewechsel nach Halbzug 40 mit Faktor 1,5 (BG:505–508; B:2396–2397, B:2518–2519), Schritt nur bei Sieg (Q:1984, B:2401 „Bei Niederlage: Wiedereinstieg“).
+
+**I4.5 Abschied: Epilog fehlt, Zettel hat einen anderen Wortlaut** · Q, Zeilen 2023–2036; T, Zeile 656
+
+- alt (T:656): „Auf dem Brett im Dachboden liegt ein Zettel in alter Schrift: „Du hast es ohne mich geschafft. Das war der Sinn. A.““
+- neu (T:656): „Auf dem Dachboden steht eine Figur auf dem Brett anders als am Abend. Daneben liegt ein Zettel in alter Schrift: „Du hast mich nicht gebraucht. Das ist das schönste Geschenk. – A. W.““
+- alt (Q:2024–2028): `"text": "quest.meisterschaft.schritt7",` / `"ereignis": {` / `"art": "dialog",` / `"knoten": "capital-arena-aussen.abschied"` / `},` (letzter Schritt der Quest; danach kommt nichts)
+- neu (Q): Nach dem Abschied fehlt der Epilog (ein Jahr später, Herbst, Dachboden in Maple Falls: Lily, letzter Satz „Was hängt?“, Dr. Lins Kellerclub im Bild). Das Wort „Epilog“ kommt in `inhalte/abenteuer` und `app/src` nicht vor; T hat nur elf Schlüssel `abspann.*` (T:647–657) ohne Epilog. Der Zettel gehört nach der Bibel in den Epilog, nicht in den Abspann.
+- Beleg: B:2419–2426 (Szene 109: „Reihenfolge: Abschied, dann Abspann mit den Figuren aller Städte, dann Epilog, danach Post-Game“), B:2533, R4-4:1156 (Zettel wörtlich wie in der Bibel), DP H1 („G4 14“).
+
+**I4.6 Erinnerung 1858 ist in den Daten eine Morphy-Partie zum Erraten** · Q, Zeilen 1789–1793; T, Zeile 644
+
+- alt (T:644): „Mit Ambrose Morphys Züge nach dem Opfer spielen.“
+- alt (Q:1790–1793): `"ereignis": {` / `"art": "aufgaben",` / `"runde": "desertSprings.erinnerung1858"` / `},`
+- neu (T:644): „Ambroses letzte Matchpartie von 1858 nach dem Opfer weiterspielen, mit Weiß gegen Hale.“
+- neu (Q): `"ereignis": { "art": "partie", "begegnung": "desertSprings.erinnerung1858", "ausgang": ["sieg", "remis", "niederlage"] }` und in BG eine neue Begegnung (Stellungsduell, Leser Weiß, Gegner Hale, Rolle `story`); die gibt es dort nicht.
+- Beleg: B:1892–1900 (Szene 77: „Stellungsduell aus Ambroses erfundener siebter Matchpartie gegen Hale (1858), am Moment seines tollkühnen Opfers“), Bef3 Abschnitt 7 („Erinnerung 1858: … im Spiel bleibt das Stellungsduell am Moment des Opfers (Bibel)“).
+- Zu entscheiden: Die Daten folgen einer älteren Entscheidung (`docs/spiel/ENTSCHEIDUNGEN.md`:598, 8.11.2026: „Erinnerung 1858 (Bird–Morphy ab Zug 11 mit Schwarz, bei Mira)“; so auch `runden.json`, Runde `desertSprings.erinnerung1858`). Die Entscheidung vom 13.11. in Bef3 sagt das Gegenteil. Bird–Morphy wäre sonst zweimal im Spiel (Ironwood ab Zug 17, Desert Springs ab Zug 11), und Miras Satz „Das Opfer war richtig!“ (B:1898) hätte keine Stellung. Fragment 6 und 20 Münzen (Q:1794–1803) stimmen mit B:1899–1900.
+
+**I4.7 Satz zum Fund „Falke aus Holz“** · T, Zeile 799 (Fund `falkeAusHolz`, `funde.json`:236–239)
+
+- alt (T:799): „Eine Spielfigur aus Kiras Werkunterricht, für das Spiel Falke und Bison. „Damit du nicht vergisst, wie man fliegt.““
+- neu: „Eine Spielfigur aus Kiras Werkunterricht, für das Spiel Falke und Bison. „Den hab ich verschnitten. Aber er zieht trotzdem.““
+- Beleg: B:2455 (Kira: „Den hab ich verschnitten. Aber er zieht trotzdem.“), R4-1:95, Bef4 Abschnitt 7 (E1.7).
+
+**I4.8 Fundtext zu Hales Brief duzt** · T, Zeile 639
+
+- alt (T:639): „Im Keller des Antiquariats, 1866. Komm nach Norden. Ich warte.“
+- neu: „Im Keller des Antiquariats, 1866. Kommen Sie nach Norden. Ich warte.“
+- Beleg: B:1887 („Kommen Sie nach Norden. Wir spielen die letzten Züge an einem Brett.“ Schluss: „Ich warte.“), B:1347, B:1452.
+
+**I4.9 Clubkampf Summit City: Schritt sagt „gewinnen“** · T, Zeile 756 (Q:2127–2132) · klein
+
+- alt (T:756): „Den Clubkampf gegen Ward gewinnen.“
+- neu: „Gegen Ward um die Clubnadel spielen. Ein Remis genügt.“
+- Beleg: B:2281 („Ein Remis genügt für die Nadel.“), Bef4 Abschnitt 7 (E1.8). Die Daten selbst stimmen: `"ausgang": ["sieg", "remis"]` (Q:2131). Die Clubs 2 bis 5 schreiben „um die Clubnadel spielen“ (etwa T:137, „Gegen Mrs. Okafor um die Clubnadel spielen.“; ebenso T:256, 279, 576).
+
+**I4.10 Mamas Partie: Das Foto wird in der Kantine gezeigt statt zu Hause** · Q, Zeilen 875–881
+
+- alt (Q:877–880): `"ereignis": {` / `"art": "dialog",` / `"knoten": "ironwood-kantine.mama_foto"` / `}`
+- neu: Knoten im Wohnzimmer von Maple Falls (etwa `maple-falls-wohnzimmer.mama_foto`); erst danach fährt Mama mit nach Ironwood.
+- Beleg: B:1216–1220 (Szene 43: „Ort `mapleFalls.wohnzimmer`, dann `ironwood.kantine`“; „{held} zeigt Mama das Foto … Sie fährt mit {held} nach Ironwood, zuerst zu Oma Ruth, dann in die Kantine“), R2-4 (`akt2_teil4.md`):133–136 („Wohnzimmer, dann Ironwood“; „Ich legte das Foto auf den Küchentisch.“).
+- Einschränkung: Die Ink-Datei habe ich nicht gelesen; der Knotenname zeigt nur, in welcher Datei der Dialog liegt.
+- Stimmt schon: Partie führt bei jedem Ausgang weiter (Q:887, `["sieg", "remis", "niederlage"]`; B:1223, B:1225 „geführter Moment unabhängig vom Ausgang“), Mama hat Weiß (BG:198–209, `"farbe": "black"` für den Leser), Karten erlaubt.
+
+**I4.11 Fernpartie ohne Voraussetzung** · Q, Zeilen 1836–1844
+
+- alt (Q:1841–1844): `"start": {` / `"art": "ort",` / `"karte": "ghostTown.aussen"` / `},` (kein Feld `voraussetzung`)
+- neu: `"voraussetzung": ["desertSprings.brief", "siliconBay.fehlendeSeite"]` und eine Prüfung auf die Fragmente 0 bis 8 vor dem Schritt mit der Partie (Q:1873–1879).
+- Beleg: B:2343–2344 (Szene 100: „Voraussetzung: Hales Brief (Akt 3, Szene 76), Hales Seite (Szene 88), die Fragmente 0 bis 8.“).
+- Einschränkung: Die Sperre kann im Dialog liegen (Ink nicht geprüft).
+
+**I4.12 Erinnerung Bird–Morphy: 20 Münzen fehlen** · Q, Zeilen 1064–1075 · klein
+
+- alt (Q:1069–1074): `"wirkungen": [` / `{` / `"art": "fragment",` / `"halbzug": 4` / `}` / `]`
+- neu: dazu `{ "art": "muenzen", "anzahl": 20 }`, wie bei London (Q:812–821), 1858 (Q:1794–1803) und Hastings.
+- Beleg: B:1259–1261 („Belohnung: **Partiefragment 4**; … stattdessen 20 Münzen“).
+
+**I4.13 Titel der Erinnerung Hastings** · T, Zeile 757 · klein
+
+- alt (T:757): „Hastings 1895“
+- neu: „Erinnerung: Hastings 1895“
+- Beleg: B:2233 („**85. Erinnerung: Hastings 1895**“); die vier anderen Erinnerungen heißen in T „Erinnerung: …“ (T:145, 266, 286, 643).
+
+#### Gruppe B: Bibel ändern (die Daten sind der neuere Stand)
+
+**I4.14 Gefahrenradar und Lilys Belohnung** · B, Zeile 402 und Zeile 651
+
+- alt (B:402): „Belohnung: Karte **Gefahrenradar**.“
+- neu: „Belohnung: Karte **Ambroses Flüstern** (R27, Hilfe).“
+- alt (B:651): „Clubnadel Maple Falls (Quest `mapleFalls.viertesBrett`)“
+- neu: „zweite Aufgabenreihe in Maple Falls, Junos Heft (Quest `mapleFalls.viertesBrett`)“
+- Beleg: Q:297–326 (`mapleFalls.lilysSpringer` gibt `fluestern`), Q:103–114 (`gefahrenradar` nach `mapleFalls.reiheJuno`), B:654 (Tabelle: „Ambroses Flüstern | Szenen 7, 8, 17, 18“). Die Bibel widerspricht sich hier selbst (Szene 8 gegen Tabelle).
+
+**I4.15 Bauernvorgabe steht in der Bibel noch bei London** · B, Zeilen 1134–1135, 1260 und 1389
+
+- alt (B:1134–1135): „bei mindestens 70 Prozent Karte“ / „**Bauernvorgabe** (R27, R31).“
+- neu: „dazu 20 Münzen (keine weitere Vorgabe, die Bauernvorgabe gab es in Szene 20).“
+- alt (B:1260): „starke Karte (die Bauernvorgabe gab es in Szene 35), stattdessen 20 Münzen (Abweichung von R27,“
+- neu: „starke Karte (die Bauernvorgabe gab es in Szene 20), stattdessen 20 Münzen (Abweichung von R27,“
+- alt (B:1389): „Szene 35, Flashback London (≥ 70 %)“
+- neu: „Szene 20, Erinnerung New York (Akt 1); in Akt 2 keine weitere“
+- Beleg: Q:544–574 (`cedarCreek.erinnerungNewYork`: Fragment 1 und `bauernvorgabe`), Q:795–824 (`riverton.flashbackLondon`: Fragment 3 und 20 Münzen), B:655 (Tabelle Akt 1: „Bauernvorgabe | Szene 20, Erinnerung New York“), B:1899–1900 („nur die erste Erinnerung je Staffel gibt die Bauernvorgabe“).
+
+**I4.16 Straßengegner und zwei Karten, die es in den Daten nicht gibt** · B, Zeilen 1875, 2268, 1792–1793, 1835, 2008–2009
+
+- alt (B:1875): „(Abbildung 8.44, geprüft im dritten Auftrag)“ · neu: „(Abbildung 1.36; 8.44 ist mit +2,84 zu stark für R13)“ · Beleg: BG:305, `docs/spiel/ENTSCHEIDUNGEN.md`:600.
+- alt (B:2268): „(Abbildung 8.44 oder 8.48, beide im dritten Auftrag geprüft)“ · neu: „(Abbildung 6.21)“ · Beleg: BG:400. Eine Entscheidung dazu habe ich nicht gefunden; wenn 8.48 gelten soll, wäre BG zu ändern.
+- alt (B:1793): „Spruch **Pokerface** (S8)“ und alt (B:1835): „die Karte **Schutzengel** (K4)“ sowie die Tabellenzeilen B:2008–2009 · neu: streichen oder durch die vorhandenen Karten ersetzen · Beleg: `docs/spiel/ENTSCHEIDUNGEN.md`:599 („Pokerface und Schutzengel nicht als eigene Karten (ersetzt durch vorhandene)“); in Q und `karten.json` kommen beide nicht vor.
+
+**I4.17 Kennungen in den Szenenköpfen** · B, Zeilen 479, 487, 2310 · klein
+
+- alt (B:479): „H `mapleFalls.clubkampf`“ · neu: „H `mapleFalls.viertesBrett` · Begegnung `mapleFalls.clubkampf`“ · Beleg: Q:86, BG:43.
+- alt (B:487): „H `mapleFalls.victor`“ · neu: „H `mapleFalls.besserWerden` · Begegnung `mapleFalls.victor`“ · Beleg: Q:140 (Titel „Ich will besser werden“, T:105), BG:72.
+- alt (B:2310): „N begegnung `pinewoodCamp.lagerfeuer`“ · neu: „H `pinewoodCamp.sommercamp`“ · Beleg: Q:2289 (Hauptquest, Szenen `akt4.camp` und `akt4.lagerfeuer`).
+
+**I4.18 Hinweis zu Fragment 8 ist überholt** · B, Zeilen 2596–2597 · klein
+
+- alt (B:2596–2597): „Fragment 8“ / „(Ward, Summit City) fehlt noch, bis die Quests von Akt 4 stehen.“
+- neu: „Summit City 8).“
+- Beleg: Q:2148–2175 (`summitCity.erinnerungHastings`: `"halbzug": 8`). Alle neun Wirkungen `fragment` (0 bis 8) stehen in Q und passen zur Tabelle B:2584–2594.
+
+### I5 Übrige Punkte aus Akt 4, Abschnitt 7, gegen die Bibel
+
+Ergebnis je Punkt (15 Punkte). Gesucht jeweils per Stichwort in der ganzen Bibel und gelesen in
+den Abschnitten 25 bis 35.
+
+| Nr. | Punkt aus Bef4, Abschnitt 7                                         | Ergebnis               | Stelle in der Bibel                                                                                                                                    |
+| --- | ------------------------------------------------------------------- | ---------------------- | ------------------------------------------------------------------------------------------------------------------------------------------------------ |
+| 1   | 40… b5 ist ein Schritt auf der b-Linie                              | Bibel stimmt           | B:2562 („19. Rb1 b6“), B:2565 („40. Kxg3 b5“), B:2577, B:2605 („Bauern a7, b5, h6“). Nirgends „Randbauer“ oder „zwei Felder“.                          |
+| 2   | Neun Fragmente aus sieben Orten; acht Zettel plus Briefrückseite    | Bibel stimmt (Zählung) | B:2575, B:2584–2594, B:2595–2596 (sieben Orte), B:1889 (Fragment 7 auf der Rückseite des Briefs). Kein Fragment von Kira (B:2217–2218: nur der Falke). |
+|     | … im Tagebuch eingeklebt                                            | Bibel schweigt         | Die Bibel sagt nirgends, wo die Fragmente liegen (kein Treffer zu „Zettel“ in diesem Sinn).                                                            |
+| 3   | Ambrose sitzt fünfmal (Gehsteig viertes, Arenatreppe fünftes Mal)   | Bibel schweigt         | Szene 101 (B:2354–2358) und Szene 109 (B:2419–2426) nennen kein Sitzen; die Bibel zählt nicht.                                                         |
+| 4   | Kades Gerät: zwei Jahre, erst Tasche, zuletzt Schuh                 | **Bibel widerspricht** | B:2058, B:2154 („Ohrempfänger“); siehe I5.1.                                                                                                           |
+| 5   | Ward sagt es Mama „bevor ihr fahrt“; Held bleibt sechs Tage         | Bibel schweigt         | Szenen 83 bis 91 (B:2222–2283) kennen weder Wards Satz an Mama noch eine Zahl von Tagen.                                                               |
+| 6   | Ghost Town ist eine Goldgräberstadt                                 | Bibel stimmt           | B:2142 („Goldgräberzeit“), B:2331 („Verlassene Goldgräberstadt“). „Bergbausiedlung“ (B:38, B:2068) verträgt sich damit.                                |
+| 7   | Victor sah das Gerät im Januar, sagte es keinem, der handeln konnte | Bibel schweigt (Monat) | B:2390 nur: „Ich hab es gesehen. In Silicon Bay.“ Akt 3 spielt im Winter (B:1455, B:1605). Reibung, kein Widerspruch: siehe Anmerkung a.               |
+| 8   | Der Pfarrer spielt nicht                                            | Bibel schweigt         | Kein Pfarrer in der Bibel.                                                                                                                             |
+| 9   | „Unterarme wie Big Joe“                                             | Bibel schweigt         | Earl Dubois nur als „Fernfahrer“ (B:2170, B:2194).                                                                                                     |
+| 10  | Brett im Geigenkasten                                               | Bibel stimmt           | B:1777 (Szene 63), B:1821 (Szene 68). In Akt 4 nennt die Bibel den Behälter nicht mehr; „Rucksack“ nur in Akt 1 (B:527) und für das Tablet (B:1914).   |
+| 11  | Graham Hale: „acht Jahre“                                           | Bibel schweigt         | Verträgt sich: Victor ist 15 (B:137), bekam das Buch mit sieben (B:2070), „Jede Partie … die der Vater nachrechnet“ (B:140–141).                       |
+| 12  | Owen ist im Epilog acht                                             | Bibel schweigt         | Kein Owen in der Bibel; der Epilog nennt nur Lily (B:2425).                                                                                            |
+| 13  | Eine Nacht im Hotel vor dem Turnier                                 | Bibel schweigt         | Szene 103 (B:2368–2373) beginnt in der Arena; B:2071 („an einem langen Sommerabend“) verträgt sich.                                                    |
+| 14  | Im Finale lässt Victor den Helden ins Spanische                     | Bibel schweigt         | Szene 108 (B:2411–2417) nennt keine Eröffnung. Der Rückbezug stimmt: Trainingsstellung „aus dem Spanier um Zug 12“ (B:492–493).                        |
+| 15  | Das Nachtstück kommt genau dreimal vor                              | Bibel schweigt         | Kein Treffer zu „Nachtstück“; die Bibel führt keine Musikstücke.                                                                                       |
+
+**I5.1 Kades Gerät: Bibel sagt „Ohrempfänger“, der Roman „im Schuh“** · B, Zeilen 2058, 2154, 2394–2395
+
+- alt (B:2058): „Junior des Konzerns mit Ohrempfänger, bis das Signal abgeschaltet wird“
+- neu: „Junior des Konzerns mit einem Gerät im Schuh, bis das Signal abgeschaltet wird“
+- alt (B:2154): „Konzern-Junior mit Ohrempfänger“
+- neu: „Konzern-Junior mit Gerät im Schuh“
+- alt (B:2395): „Grundstellung gegen den Konzern-Junior, der noch ein Gerät trägt“
+- neu: „Grundstellung gegen den Konzern-Junior, der noch ein Gerät trägt (seit zwei Jahren bei sich, erst in der Tasche, zuletzt im Schuh; der Funkprüfer findet es in der Sohle)“
+- Beleg: Bef4 Abschnitt 7 („**Kades Gerät:** zwei Jahre bei sich getragen, erst in der Tasche, zuletzt im Schuh.“), R4-4:460–467 („Er hielt es tief. Auf die Schuhe.“ … „nahm etwas aus der Sohle, flach und grau wie ein Kieselstein“), R4-4:514–515, R4-4:1175 („Das Gerät steckt im Schuh“), DP:2577 („Gerät im Schuh statt im Ohr“, vom Romanautor selbst gemeldet).
+- Der Ohrempfänger als Beweisstück aus Szene 56 (B:1722, B:1955, B:2100, B:2388) bleibt; er gehört zu Nova und zur Akademie.
+
+**Anmerkungen (keine eigenen Befunde, beim Prüfen aufgefallen):**
+
+a. Zu Punkt 7: B:1474–1476 sagt, Victor sage in Silicon Bay „zum ersten Mal laut: „Das ist falsch.““ und schweige „danach vor seinem Vater“. Das verträgt sich mit „keinem, der etwas hätte tun können“, aber DP:2019 hält fest, dass der Roman zu Akt 3 diesen Satz nicht hat.
+b. Zu Punkt 2: Im Roman selbst steht noch zweimal „neun“: R4-3:580 („Tagebuch-Doppelseite mit neun eingeklebten Zetteln“, Bildnotiz) und R4-3:730 („aus den neun Zetteln in Junos Tagebuch“). Der Erzähltext ist berichtigt (R4-3:366–371: „Acht kleine Zettel … Das neunte Stück lag lose daneben“).
+c. Szene 99 der Bibel hat weiter „in einer Bretterhütte der Siedlung“ (B:2336); der Roman hat ein Zimmer über einem Laden (DP:2569–2570). Das steht nicht in der Liste des Auftrags; DP G3 hat „Szene 99 bleibt“ vermerkt.
+
+### Zählung
+
+- **I4:** 18 Befunde. Gruppe A (Daten ändern): 13, davon 4 klein (I4.9, I4.12, I4.13 und der Wortlaut in I4.8). Gruppe B (Bibel ändern): 5, davon 2 klein.
+- **I5:** 15 Punkte geprüft: 4 „Bibel stimmt“ (1, 2 in der Zählung, 6, 10), 10 „Bibel schweigt“ (3, 5, 7, 8, 9, 11, 12, 13, 14, 15; dazu der Tagebuch-Teil von 2), 1 „Bibel widerspricht“ (4, Befund I5.1 mit drei Stellen).
+
+- **Zitate:** Jeder „alt“-Wortlaut (61 Teilstücke) und 263 weitere Zitate und Zeilenangaben sind per Skript gegen die genannten Zeilen geprüft, ohne Fehler (`pruef_i4.py` im Arbeitsordner der Sitzung, nicht im Repository). Zeilenumbrüche in den JSON-Dateien sind mit „ / “ wiedergegeben.
+
+### Ohne Befund geprüft
+
+- **Mentor-Zug sonst:** Vergabe nach dem Clubkampf in Cedar Creek bei Sieg oder Remis (Q:425–440; B:606); Clubs 3 bis 8 wie in den Szenen 36, 48, 60, 78, 91; Port Delacroix gibt im Clubkampf keine Karte (Q:1470–1484), sie kommt am Felsbogen mit der Versöhnung (Q:1659–1669; B:1816 „erst nach der Versöhnung spielbar“). Die Sperre von Szene 63 bis 73 liegt nicht in den Daten, sondern in `app/src/abenteuer/regeln/karten.ts`:235–240 (Variablen `tiefpunktGesehen`, `versoehnungGesehen`); nur nachgeschlagen. Clubkampf Port Delacroix und Finale `"kartenErlaubt": false` (BG:339–350, 512–523), Fernpartie ebenso (BG:424–437).
+- **Szene 14:** Start der Quest `cedarCreek.clubkampf` auf `cedarCreek.aussen` ohne Bus (Q:379–386).
+- **Szene 91:** `"ausgang": ["sieg", "remis"]` (Q:2131).
+- **Szene 99:** Q und BG nennen den Schmied nicht; „Tobias“ steht in den Daten (ohne Ink) nur als `figur.tobias.name` „Tobias Wren“ (T:713), „Gideon“ gar nicht.
+- **Szene 100:** Begegnung `ghostTown.fernpartie` mit der FEN aus B:2604, Leser Weiß, 15 Züge, Mindestvorteil 1,0, ohne Uhr, Karten gesperrt, Gegner Victor (BG:424–437; B:2606–2607); der schwarze Bauer steht auf b5.
+- **Szene 104 bis 108:** Reihenfolge Arena, Vorrunde, Aussage, Halbfinale, Vor dem Finale, Finale, Abschied (Q:1934–2037); „mindestens 2,5 von 4“ (T:743); Runde 4 mit fester Uhr 5 + 3 (BG:478–492); Namen Bea Lindqvist, Marcus Oyelaran, Tobias Wren, Kade Sterling (T:711–714).
+- **Drachenfest:** In Q, BG und `orte.json` (Auslöser `drachenbrunnen`, Zeilen 3739–3744) an keine Reihenfolge gebunden; das passt zu B:2276 („auch an einem anderen Abend besuchbar“).
+- **Fragmente:** Wirkungen `fragment` 0 bis 8 in Q an den neun Stellen der Tabelle B:2584–2594.
+- **Akt 1:** Fingerzeig in Szene 2, Zweite Chance zweimal nach Sams Revanche, Flüstern in den Szenen 7, 17, 18, Bauernvorgabe und Fragment 1 in Szene 20 (mit Voraussetzung `cedarCreek.archiv1858`), Sternennacht Faktor 1,3, Victors Trainingsstellung (Schwarz, Zug 12, ein Springer weniger, Karten gesperrt, zählt nicht), Rosa mit Abbildung 1.41.
+- **Akt 2:** Reihenfolge Riverton (Aufbruch, Ankunft, Bildschirmtische, Reihen, Clubkampf, Wohnwagen), Fahrrad, Zuschauen (zwei Steckbriefzeilen, analysiert), Fragmente 2, 3, 4, Postsack (Umschlag, Steckbriefzeile, Flüstern), Feier nach Mamas Partie mit Faktor 1,4, Harlan 3.77, Schaffner 3 + 2, Gus 6.14 mit 10 + 5.
+- **Akt 3:** Reihenfolge Silicon Bay (Abfahrt bis Hotelnacht), Spielberichte (Steckbrief, analysiert, Ohrempfänger), Wiederaufbau in drei Besuchen mit Springervorgabe am Ende, Fragment 5, Brief mit Fragment 7 und Flüstern, Reihenfolge Desert Springs, Batiste 6.5 ohne Uhr, Céleste aus der Grundstellung.
+- **Akt 4:** Reihenfolge Summit City (Ankunft, Ward, Reihen, Victors Krise, Bergstation, Clubkampf), `summitCity.victorFrei` ohne Uhr mit Karten, Fragment 8 und 20 Münzen, Crossroads, Camp, Ghost Town (Grab, Kerze, Fernpartie, Nacht), Hollis 6.14 ohne Uhr.
+- **Namen der Figuren** in T (`figur.*.name`, 115 Einträge überflogen) gegen die Bibel: keine Abweichung gefunden.
+
+### Nicht geprüft
+
+- **Ink-Dateien** (`inhalte/abenteuer/dialoge/de/*.ink`): auftragsgemäß nicht gelesen. Deshalb offen: ob Belohnungen, Sperren und Szenen, die Q nicht führt, im Dialog gesetzt werden. Das betrifft die Clubnadeln, die 50 Münzen je Clubkampf, den Gegenstand „Hales Brief“, Spickzettel und Grübelfalle in Szene 34 und 37, die 30 Münzen der Simultan, die Voraussetzungen der Szenen 33, 35 („am Abend nach Szene 29“), 39a, 48 (nach Mamas Partie) und 100 sowie den „geführten Moment“ in Mamas Partie. Nur die Dateinamen habe ich gesucht: Die Szenen `akt1.erinnerungNewYork`, `akt1.victorCedarCreek`, `akt2.flashbackLondon`, `akt2.ladenRiverton`, `akt3.vitrine` und `akt3.schweigen` aus den Szenenköpfen der Bibel kommen in Q, in den Ink-Dateien und in `app/src` nicht vor; ob das stört, kann ich ohne die Dialoge nicht sagen.
+- **Mentor-Zug, Auslegung:** „nur Club 2“ habe ich als „in Akt 1 nur Club 2“ gelesen. Sollte gemeint sein, dass es die Karte im ganzen Spiel nur einmal gibt, wären auch Q:663, 952, 1284, 1667, 1706 und 2141 Befunde und die Szenen 36, 48, 60, 67, 78, 91 der Bibel zu ändern.
+- **`texte/de.json`:** nur die Quest-Texte, die Figurennamen und Stichwortsuchen (Bus, Nachfahr, Familie, Tobias, Gideon, Schmied, Drache, Epilog, Abspann, Kira, Siegel, Halbfinale, Goldgräber, Geigenkasten, Rucksack, „Schwarz steht“). Nicht gelesen: die 321 Statisten-Sätze (`statist.*`), Laden-, Karten- und Fundtexte außer den genannten.
+- **`karten.json`:** nur die Karte `mentorzug`. **`runden.json`:** nur die acht Runden der Erinnerungen und Rätsel, die oben vorkommen; die Zugnummern des Zugerratens (etwa London „ab Zug 17“ gegen den Halt vor 19. e5 in B:1132) habe ich nicht nachgerechnet.
+- **`gegner.json`, `orte.json`, `funde.json`, `laeden.json`:** nicht geprüft (Stärken, Stile, Auslöser, Preise), außer den zitierten Zeilen. Zielstärken und Profile der Bibel sind also nicht gegen die Daten gehalten.
+- **Nebenquests ohne Szene in der Bibel** (die 30 Quests mit `"klein": true` und die Rätseltafeln der Wege, etwa Lockport, Goldmine, Kreidespringer, Finch-Jagd): nicht gegen die Bibel geprüft, weil die Szenenlisten sie nicht führen; nur auf die Stichworte des Auftrags durchgesehen.
+- **Straßengegner:** nur die Abbildungsnummern und die Uhr gegen die Szenen gehalten, nicht die Stellungen selbst (kein Brett, keine Engine).
+- **I5:** Die Bibel habe ich in den Abschnitten 4, 11 bis 14, 20 bis 23 und 25 bis 35 gelesen, den Rest (Abschnitte 1 bis 3, 5 bis 10, 15 bis 19) nur per Stichwortsuche. „Bibel schweigt“ heißt: kein Treffer zu den gesuchten Wörtern und nichts in den gelesenen Abschnitten. Den Roman habe ich nur an den Stellen der 15 Punkte nachgeschlagen, nicht ganz gelesen.
+- **Regelwerk R27/R29** (`06_Regelwerk.md`) nur zum Mentor-Zug nachgeschlagen (Zeilen 290, 309–312), nicht geprüft.

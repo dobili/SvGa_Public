@@ -79,7 +79,7 @@ VAR nadelCedarCreek = 0
     Das Plastikpferd liegt noch auf dem Kreidebrett. Es wartet. #sprecher:erzaehler
 - else:
     ~ angesehenKreidebrett = true
-    Ein Schachbrett aus Kreide auf dem Gehweg, schief, mit neun Feldern in einer Reihe. Darauf steht ein Plastikpferd. #sprecher:erzaehler
+    Ein Schachbrett aus Kreide auf dem Gehweg, schief, mit neun Feldern in einer Reihe. Darauf steht ein Plastikpferd. #sprecher:erzaehler #klang:kreide
 }
 -> END
 

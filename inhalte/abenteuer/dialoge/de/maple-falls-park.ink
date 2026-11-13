@@ -49,7 +49,7 @@ VAR initialenGefunden = false
 // {held} (Entscheidung mittel-1: ein Schulkind; das „Sie“ klang fremd). Park: Rollen auf Beton,
 // Enten, der Wasserfall lauter als in der Stadt.
 ~ abernathyGetroffen = true
-Von hier sieht man den Wasserfall zum ersten Mal richtig, ein weißes Band zwischen den Bäumen. #sprecher:erzaehler #klang:wasserfall
+Von hier sieht man den Wasserfall zum ersten Mal richtig, ein weißes Band zwischen den Bäumen. #sprecher:erzaehler
 Auf der Nachbarbank klopft ein sehr alter Mann seine Taschen ab. Neben ihm eine Thermoskanne. #sprecher:erzaehler
 Ich hatte doch … nein, das ist meine Brille. Das Brett, das Brett! #sprecher:abernathy
 Abernathy, sehr erfreut. Früher Bibliothekar, heute Sucher von Dingen. #sprecher:abernathy

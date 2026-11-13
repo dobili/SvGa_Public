@@ -47,10 +47,10 @@ VAR dinerAbendGesehen = false
 // Stimmung: fremd, müde, Sommerende. Keine Musik bis zur Pizza; Wasserfall fern.
 ~ ankunftGesehen = true
 ~ setzeSzene("akt1.ankunft")
-Der Umzugswagen ist weg. Kartons, ein Sofa schief vor dem Fenster, sonst nichts. Das Licht fällt in langen staubigen Streifen. #sprecher:erzaehler
+Der Umzugswagen ist weg. Kartons, ein Sofa schief vor dem Fenster, sonst nichts. Das Licht fällt in langen staubigen Streifen. #sprecher:erzaehler #musik:aus
 Auf den meisten Kartons steht nur ein Name, deiner oder ihrer. #sprecher:erzaehler
 Alles, wo nur ein Name draufsteht, ins Wohnzimmer. #sprecher:mutter #stimmung:muede
-Hinter den Dächern rauscht etwas, gleichmäßig, wie eine ferne Straße. #sprecher:erzaehler #klang:wasserfall
+Hinter den Dächern rauscht etwas, gleichmäßig, wie eine ferne Straße. #sprecher:erzaehler
 Hörst du das? Der Wasserfall. Daher der Name. #sprecher:mutter
 Man gewöhnt sich dran, sagt die Maklerin. Nach einer Woche hört man ihn nicht mehr. #sprecher:mutter
 * [„Es ist ziemlich groß.“]
@@ -67,14 +67,14 @@ Der Dachboden ist noch voll von ihren Sachen. Deshalb war das Haus so günstig. 
 * [„Erst Pizza?“]
     Gleich. #sprecher:mutter
 - Bring die hier hoch zu den anderen, ja? Ich kann heute keine Treppe mehr sehen. #sprecher:mutter #stimmung:muede
-Etwas darin verrutscht, als du sie anhebst. Ein leises hölzernes Klacken, wie Kegel, die aneinanderstoßen. #sprecher:erzaehler #klang:holzklacken
+Etwas darin verrutscht, als du sie anhebst. Ein leises hölzernes Klacken, wie Kegel, die aneinanderstoßen. #sprecher:erzaehler #klang:holzklacken #musik:karte
 -> END
 
 === ankunft_kurz ===
 ~ ankunftGesehen = true
 ~ setzeSzene("akt1.ankunft")
 Da bist du ja. Warst du schon auf dem Dachboden? Staubig, oder? #sprecher:mutter #stimmung:muede
-Hörst du das Rauschen? Der Wasserfall. Nach einer Woche hört man ihn nicht mehr, sagt die Maklerin. #sprecher:mutter #klang:wasserfall
+Hörst du das Rauschen? Der Wasserfall. Nach einer Woche hört man ihn nicht mehr, sagt die Maklerin. #sprecher:mutter
 -> mutter
 
 === erster_abend ===
@@ -86,9 +86,9 @@ Du kommst mit dem alten Brett die Treppe herunter. Auf der neunten Stufe knarrt 
 Die hat schon geknarrt, als das Haus neu war. #sprecher:ambrose
 Mama sitzt auf dem Boden und schraubt den Tisch zusammen, die Anleitung verkehrt herum neben sich. #sprecher:erzaehler
 Ihr Blick fällt auf das Brett. Sie sieht dich nicht an. Sie sieht die Stellung an. #sprecher:erzaehler #pause:2
-Weiß steht besser. #sprecher:mutter #pause:2
-Dann hört sie, was sie gesagt hat. Ihr Gesicht macht zu, wie eine Tür, die jemand leise schließt. #sprecher:erzaehler
-Hab ich irgendwo gelesen. Dass Weiß oft … ach, keine Ahnung. Wo hast du das her? #sprecher:mutter
+Weiß steht besser. #sprecher:mutter #pause:2 #musik:aus
+Dann hört sie, was sie gesagt hat. Ihr Gesicht macht zu, wie eine Tür, die jemand leise schließt. #sprecher:erzaehler #musik:karte
+Hab ich irgendwo gelesen. Dass Weiß oft … ach, keine Ahnung. Wo hast du das her? #sprecher:mutter #stimmung:ertappt
 * [„Vom Dachboden.“]
     Schön. Ist alt, oder? Pass auf, dass keine Figur wegkommt. #sprecher:mutter
 * [„Spielst du Schach?“]
@@ -148,7 +148,7 @@ Brett nicht verlieren. #sprecher:mutter #stimmung:froh
 // Erzählerzeile (ihr Geheimnis ein zweites Mal ohne Worte); Hector erzählt vom Mann im Anzug
 // (Graham Hale als Vorzeichen). Stimmung: warm, am Ende ein Schatten. Klang: eigenes kleines
 // Diner-Stück wie aus einer Musikbox, Bratgeräusche, Geschirr; bei Hectors Bericht fällt die
-// Musik einen Takt aus. Vorgemerkt für mittel-2: #musik:diner am Anfang, #pause:3 nach Mamas Finger.
+// Musik einen Takt aus.
 // Die Szene spielt im Dialog; der Ort Diner bekommt für Hector eine Figur, wenn die Karten so weit
 // sind (maple-falls-diner.ink, kleine Geschichte Hector).
 === diner_einladung ===
@@ -164,7 +164,7 @@ Diner? Ich lade dich ein. #sprecher:mutter #stimmung:froh
 - -> diner_abend
 
 === diner_abend ===
-Das Diner an der Hauptstraße ist lang und schmal wie ein Eisenbahnwagen. Rote Bänke, eine Theke aus Blech. #sprecher:erzaehler #klang:diner
+Das Diner an der Hauptstraße ist lang und schmal wie ein Eisenbahnwagen. Rote Bänke, eine Theke aus Blech. #sprecher:erzaehler #musik:diner #geraeusch:diner_kueche #klang:tuerglocke
 Es riecht nach Zwiebeln und Kaffee. Aus der Musikbox kommt leise ein altes Lied. #sprecher:erzaehler
 Bestellung läuft! #sprecher:hector #stimmung:froh
 Er ruft es in die Küche, obwohl außer ihm niemand in der Küche ist. Auf seiner Schürze steht „Hector“. #sprecher:erzaehler
@@ -176,7 +176,7 @@ Nimm zwei. Ist schwer diese Woche. Ich krieg's nicht raus. #sprecher:hector
 - Neben der Kasse liegt ein Stapel Sets, mindestens zwanzig. Auf keinem ist etwas eingezeichnet. #sprecher:erzaehler
 Du suchst. Was hängt? Wohin kann die Dame? #sprecher:erzaehler #pause
 Mama sieht zu. Sie sagt nichts. #sprecher:erzaehler
-Aber ihr Finger bewegt sich, einen Zentimeter über dem Papier, auf ein Feld. Eine halbe Sekunde vor deinem Stift. #sprecher:erzaehler #pause
+Aber ihr Finger bewegt sich, einen Zentimeter über dem Papier, auf ein Feld. Eine halbe Sekunde vor deinem Stift. #sprecher:erzaehler #pause:3
 Du tust, als hättest du es nicht gesehen. Dann zeichnest du den Pfeil ein. #sprecher:erzaehler
 Hector hält das Set ins Licht wie einen Geldschein. #sprecher:erzaehler
 Matt in eins! Am ersten Abend! Das kommt an die Wand. #sprecher:hector #stimmung:froh
@@ -189,13 +189,13 @@ Deine Mutter war schneller. Ich sage es nur, damit du es weißt. #sprecher:ambro
 Gestern saß hier einer. Anzug, zwei Telefone, kein Lächeln. #sprecher:hector
 Hat Kaffee bestellt und nur auf Zahlen geguckt. Wollte wissen, wem das Schulgebäude gehört. #sprecher:hector
 Hab gesagt: der Schule. #sprecher:hector #stimmung:lacht
-Dann lacht er nicht mehr. Die Musikbox setzt für einen Takt aus. #sprecher:erzaehler #pause
-Hat er nicht komisch gefunden. #sprecher:hector
+Dann lacht er nicht mehr. Die Musikbox setzt für einen Takt aus. #sprecher:erzaehler #pause #musik:aus
+Hat er nicht komisch gefunden. #sprecher:hector #musik:diner
 * [„Wer war das?“]
     Keine Ahnung. Hat nicht mal Trinkgeld gegeben. Kaffee schwarz, ohne alles. #sprecher:hector
 * [Nichts sagen]
 - Gibt es hier Ketchup? #sprecher:mutter
 Draußen ist es dunkel geworden. Hinter dem Fenster die Hauptstraße, die einzige Ampel, dahinter schwarze Bäume. #sprecher:erzaehler
 Es ist ein guter Abend. Du merkst es erst, als er fast vorbei ist. #sprecher:erzaehler
-Du hast den ganzen Tag nicht an die alte Wohnung gedacht. #sprecher:erzaehler
+Du hast den ganzen Tag nicht an die alte Wohnung gedacht. #sprecher:erzaehler #musik:karte #geraeusch:aus
 -> END

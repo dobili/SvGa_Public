@@ -46,7 +46,7 @@ VAR abendDameGesehen = false
 === dachboden_brett ===
 // Szene 2 nach dem Roman, Kapitel 2, und der Dialogprüfung (VM8 bis VM13). Stimmung: still,
 // dann Staunen, nie gruselig. Klang: keine Musik, Holzknacken, Wind am Fenster.
-Staub, Kisten, ein Lampenschirm ohne Lampe. Unter einer Decke liegt etwas Flaches, Schweres. #sprecher:erzaehler
+Staub, Kisten, ein Lampenschirm ohne Lampe. Unter einer Decke liegt etwas Flaches, Schweres. #sprecher:erzaehler #musik:aus
 // Roman, Kapitel 2: Die Decke ist das Einzige ohne Staub (Mrs. Whitlock hat das Brett gepflegt).
 { not brettBeruehrt:
     Auf allem hier oben liegt Staub. Nur auf dieser Decke nicht. #sprecher:erzaehler
@@ -64,9 +64,9 @@ Staub, Kisten, ein Lampenschirm ohne Lampe. Unter einer Decke liegt etwas Flache
 ~ brettBeruehrt = true
 Ein Schachbrett. Altes Holz, dunkel an den Ecken. Am Rand eingebrannt, ganz klein: A. W. 1857. #sprecher:erzaehler
 Die Figuren stehen mitten in einer Partie. Ein Turm weit vorn, zwei Springer dicht beieinander, eine Handvoll Bauern. #sprecher:erzaehler
-Du hebst den weißen König an. Er ist schwerer, als du dachtest. #sprecher:erzaehler #pause
-Das Licht im Fenster wird anders. Der Staub beginnt, sich langsam zu drehen. Die Dielen knacken. Einmal, zweimal. #sprecher:erzaehler #klang:knarren #pause:2
-Wer wagt es, mein Brett zu berühren? #sprecher:ambrose #stimmung:streng
+Du hebst den weißen König an. Er ist schwerer, als du dachtest. #sprecher:erzaehler #pause #klang:koenig_heben
+Das Licht im Fenster wird anders. Der Staub beginnt, sich langsam zu drehen. Die Dielen knacken. Einmal, zweimal. #sprecher:erzaehler #pause:2 #klang:glocke_hell
+Wer wagt es, mein Brett zu berühren? #sprecher:ambrose #stimmung:streng #erscheint #geist #musik:ambrose
 * [„Wer … wer ist da?“]
     Ein Meister. Einst. Jetzt offenbar ein Mieter in einer Kiste. #sprecher:ambrose
     -> ambrose_erwacht
@@ -151,7 +151,7 @@ Nun? Die Figuren stehen, und ich habe Zeit. Zu viel davon. #sprecher:ambrose
 - "remis": Remis. Weder du noch ich. Für den ersten Abend ist das gar nicht übel. #sprecher:ambrose
 - else: Verloren. Gut. Jetzt weißt du, was du lernen willst. #sprecher:ambrose
 }
-Draußen dämmert es. Ihr habt über eine Stunde gespielt. Durch das Fenster zirpen Grillen. #sprecher:erzaehler
+Draußen dämmert es. Ihr habt über eine Stunde gespielt. Durch das Fenster zirpen Grillen. #sprecher:erzaehler #licht:abend #geraeusch:grillen
 Du hast zweimal gefragt, bevor du gezogen hast. Die meisten, gegen die ich spielte, haben in ihrem Leben nicht zweimal gefragt. #sprecher:ambrose
 Der Fingerzeig bleibt dir. Ich zeige die Figur, die arbeiten will. Den Zug findest du selbst. #sprecher:ambrose
 * [„Was hängt? Das hast du mich gefragt.“]
@@ -201,14 +201,13 @@ Ich habe es versucht. #sprecher:ambrose #stimmung:still
 // Stimmung: warm, Nähe, leiser Humor; dann die offene Partie als Frage des ganzen Spiels.
 // Ort vorerst der Dachboden, bis es ein Zimmer für {held} gibt (Roman: Brett auf dem Schreibtisch).
 // Klang (docs/spiel/21_Klangplan.md): keine Musik, nur Kühlschrank, Wasserfall, ein Auto; ganz am
-// Schluss vier Töne von Ambroses Thema. Vorgemerkt für mittel-2, sobald es die Marken gibt:
-// #pause:3 vor „Ich. Und einer, …“ und vor „Er.“, #musik:ambroseVierTone auf der letzten Zeile.
+// Schluss vier Töne von Ambroses Thema (#musik:ambrose auf der letzten Zeile).
 === erste_nacht ===
 ~ ersteNachtGesehen = true
 ~ setzeSzene("akt1.ersteNacht")
-Nacht. Das Haus ist still, nur du nicht. Die Schatten stehen an den falschen Stellen. #sprecher:erzaehler
+Nacht. Das Haus ist still, nur du nicht. Die Schatten stehen an den falschen Stellen. #sprecher:erzaehler #musik:aus #licht:nacht #geraeusch:kuehlschrank
 Du steigst mit dem Brett noch einmal hinauf und legst es unter das runde Fenster. Die neunte Stufe knarrt. #sprecher:erzaehler #klang:knarren
-Unten summt der Kühlschrank. Von weit her rauscht der Wasserfall. #sprecher:erzaehler #klang:kuehlschrank
+Unten summt der Kühlschrank. Von weit her rauscht der Wasserfall. #sprecher:erzaehler
 * [„Bist du wach?“]
     Ich schlafe nicht. Das ist eine der Unannehmlichkeiten. #sprecher:ambrose
 * [„Kannst du auch nicht schlafen?“]
@@ -224,17 +223,17 @@ Er hat keine Ahnung, was ein Kühlschrank ist. Und er ist zu stolz, um zu fragen
     Lach nur. Ich bin seit hundertsechzig Jahren tot. Mir darf einiges entgangen sein. #sprecher:ambrose #stimmung:lacht
 * [„Ein Kasten, der das Essen kalt hält.“]
     Ein Eiskeller in der Küche. Herrje. Ihr seid verwöhnt. #sprecher:ambrose #stimmung:lacht
-- Hundertsechzig Jahre. Du versuchst, es dir vorzustellen, und kannst es nicht. #sprecher:erzaehler
+- Hundertsechzig Jahre. Du versuchst, es dir vorzustellen, und kannst es nicht. #sprecher:erzaehler #klang:auto_nacht
 Unter dem Fenster liegt die alte Stellung. Niemand hat sie angerührt. #sprecher:erzaehler
 * [„Wer hat diese Partie gespielt?“]
 * [„Warum darf niemand die Figuren anrühren?“]
-- Lange kommt keine Antwort. Der Wasserfall rauscht. #sprecher:erzaehler #pause
+- Lange kommt keine Antwort. Der Wasserfall rauscht. #sprecher:erzaehler #pause:3
 Ich. Und einer, der mir noch einen Zug schuldet. #sprecher:ambrose #stimmung:still
 * [„Und wer ist am Zug?“]
-- Er. #sprecher:ambrose #stimmung:still #pause
+- Er. #sprecher:ambrose #stimmung:still #pause:3
 Mehr sagt er nicht. Du fragst nicht weiter. #sprecher:erzaehler
 Kurz bevor dir die Augen zufallen, denkst du: Mama hatte recht. Weiß steht besser. #sprecher:erzaehler
-Du weißt nur nicht, woher du das weißt. #sprecher:erzaehler
+Du weißt nur nicht, woher du das weißt. #sprecher:erzaehler #musik:ambrose #geraeusch:aus
 -> END
 
 // ---------------------------------------------------------------- Abende auf dem Dachboden
@@ -246,7 +245,7 @@ Du weißt nur nicht, woher du das weißt. #sprecher:erzaehler
 
 === abend_nach_sam ===
 ~ abendSamGesehen = true
-Abend. Durch das runde Fenster zirpen Grillen. Ihr geht Sams Stellungen noch einmal durch. #sprecher:erzaehler
+Abend. Durch das runde Fenster zirpen Grillen. Ihr geht Sams Stellungen noch einmal durch. #sprecher:erzaehler #licht:abend #musik:mapleFalls.lernen
 Ambrose geht am Fenster auf und ab. Bei jemandem, durch den man hindurchsehen kann, lenkt das sehr ab. #sprecher:erzaehler
 Du zählst richtig. Aber du zählst wie ein Buchhalter. #sprecher:ambrose #stimmung:streng
 Es geht nicht nur darum, wie viele. Es geht darum, wer zuerst schlägt und was er dabei aufs Spiel setzt. #sprecher:ambrose
@@ -260,7 +259,7 @@ Mit der Dame fängt man keinen Tausch an. Man schickt den Bauern vor. #sprecher:
 
 === abend_nach_juno ===
 ~ abendJunoGesehen = true
-Abend. Junos Aufgaben liegen ausgebreitet auf dem Dachboden, in rosa Tinte. Neben guten Zügen klebt ein Stern. #sprecher:erzaehler
+Abend. Junos Aufgaben liegen ausgebreitet auf dem Dachboden, in rosa Tinte. Neben guten Zügen klebt ein Stern. #sprecher:erzaehler #licht:abend #musik:mapleFalls.lernen
 Es gibt wenige Sterne. Es stört sie nicht. #sprecher:erzaehler
 Sie schreibt alles auf. Das ist mehr wert, als sie glaubt. Wer aufschreibt, kann zurückblättern. #sprecher:ambrose
 * [„Und du? Hast du deine Partien aufgeschrieben?“]
@@ -272,7 +271,7 @@ Sie schreibt alles auf. Das ist mehr wert, als sie glaubt. Wer aufschreibt, kann
 
 === abend_nach_dame ===
 ~ abendDameGesehen = true
-Abend. Du denkst an Sam, den Kopf auf dem Tisch, und an seine gefangene Dame. #sprecher:erzaehler
+Abend. Du denkst an Sam, den Kopf auf dem Tisch, und an seine gefangene Dame. #sprecher:erzaehler #licht:abend #musik:mapleFalls.lernen
 Du hast es ihm erklärt, nicht ich. Wie hast du es gesagt? #sprecher:ambrose
 * [„Die Dame läuft allein über einen leeren Platz.“]
     Und jeder kann auf sie zeigen. Während die anderen in Ruhe ihre Leute aufstellen. #sprecher:ambrose

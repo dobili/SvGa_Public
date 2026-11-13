@@ -121,7 +121,7 @@ Zeig es mir an meinem Brett! #sprecher:lily #stimmung:froh
 
 === lily_danke ===
 ~ lilyGeholfen = true
-Ein L! Und immer auf die andere Farbe! Weiß, schwarz, weiß, schwarz! #sprecher:lily #stimmung:froh
+Ein L! Und immer auf die andere Farbe! Weiß, schwarz, weiß, schwarz! #sprecher:lily #stimmung:froh #klang:aha
 Sie lässt das Plastikpferd über den ganzen Gehweg hüpfen, bis zur Ecke. #sprecher:erzaehler
 Ambrose sagt nichts. Aber er sieht ihr nach. #sprecher:erzaehler #pause:2
 -> END
@@ -150,7 +150,7 @@ Juno winkt dir von der Haltestelle aus zu. #sprecher:erzaehler
 
 === calloway_a ===
 ~ callowayGetroffen = true
-Gegenüber sitzt eine alte Frau auf ihrer Veranda. Sie hat zwei Stühle. Auf dem zweiten sitzt niemand. #sprecher:erzaehler
+Gegenüber sitzt eine alte Frau auf ihrer Veranda. Sie hat zwei Stühle. Auf dem zweiten sitzt niemand. #sprecher:erzaehler #musik:aus
 Du bist {held}. Ich bin Eunice Calloway. Ich wohne hier seit vierundsechzig. #sprecher:calloway
 Ich habe gesehen, wie ihr die Kisten getragen habt. Alle auf einmal. Das ist schlecht für den Rücken. #sprecher:calloway
 * [„Guten Morgen, Mrs. Calloway.“]
@@ -162,10 +162,10 @@ Sie sagt „spielt“. Nicht „spielte“. #sprecher:erzaehler #pause
 Die Kisten auf dem Dachboden hat nie jemand aufgemacht. Nicht mal sie. #sprecher:calloway
 Dann blinzelt sie, als käme sie von weit her zurück, und lächelt. #sprecher:erzaehler
 Du kommst zu spät zur Schule, Kind. #sprecher:calloway #stimmung:froh
-// Roman: Ambrose schweigt, bis sie außer Hörweite sind. Vorgemerkt: #pause:3 vor seinem Satz.
-Ambrose schweigt, bis ihr außer Hörweite seid. #sprecher:erzaehler #pause
+// Roman: Ambrose schweigt, bis sie außer Hörweite sind.
+Ambrose schweigt, bis ihr außer Hörweite seid. #sprecher:erzaehler #pause:3
 Per Post. Sechzig Jahre lang. #sprecher:ambrose #stimmung:still
-An meinem Tisch. #sprecher:ambrose #stimmung:still
+An meinem Tisch. #sprecher:ambrose #stimmung:still #musik:karte
 ->->
 
 === calloway_a_wieder ===

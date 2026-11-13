@@ -51,7 +51,7 @@ VAR heimwegNadelGesehen = false
 === coach_erstes_treffen ===
 // Szene 5, zweiter Teil, nach dem Roman, Kapitel 5, und der Dialogprüfung (VM30 bis VM33).
 ~ clubBeigetreten = true
-Raum 12, Erdgeschoss, Blick auf den Fahnenmast. Die Tische sind zu vier Inseln zusammengeschoben. Pokale von 1994, ein Plakat: ERST ZÄHLEN. #sprecher:erzaehler
+Raum 12, Erdgeschoss, Blick auf den Fahnenmast. Die Tische sind zu vier Inseln zusammengeschoben. Pokale von 1994, ein Plakat: ERST ZÄHLEN. #sprecher:erzaehler #klang:schulglocke #musik:mapleFalls.club
 Aufstellung! Juno, wen bringst du mir da? #sprecher:coachDelgado #klang:klatschen
 Ein viertes Brett, Coach. #sprecher:juno #stimmung:froh
 Na, das wollen wir sehen. Delgado. Mathe in der Sechsten und Achten, Schach immer. #sprecher:coachDelgado
@@ -82,7 +82,7 @@ Ein Radiergummi als Dame. Ich habe Schlimmeres gesehen. Aber nicht oft. #spreche
 === coach_clubkampf ===
 // Szene 11 nach dem Roman, Kapitel 8, und der Dialogprüfung (VM57 bis VM60). Stimmung:
 // Herzklopfen, das erste echte. Klang: Clubkampf-Thema mit Schlagwerk; die Pfeife liegt auf dem Pult.
-Die Tische stehen anders. Eine Insel in der Mitte, die Stühle der anderen im Halbkreis. Die Pfeife liegt auf dem Pult. #sprecher:erzaehler
+Die Tische stehen anders. Eine Insel in der Mitte, die Stühle der anderen im Halbkreis. Die Pfeife liegt auf dem Pult. #sprecher:erzaehler #musik:mapleFalls.clubkampf
 Die Aufgaben sind erledigt. Dann ist es so weit: du gegen mich, um die Clubnadel. #sprecher:coachDelgado
 Eine Partie. Ich spiele, wie ich spiele, ich schenke dir nichts. Wenn du verlierst, kommst du wieder, so oft du willst. #sprecher:coachDelgado
 Sie legt eine Anstecknadel auf den Tisch. Ein kleines Ahornblatt aus Metall, mit einem Schachbrettmuster darin. #sprecher:erzaehler
@@ -106,11 +106,11 @@ Sie legt eine Anstecknadel auf den Tisch. Ein kleines Ahornblatt aus Metall, mit
     Remis! Das war knapp. #sprecher:coachDelgado
     Die Bronzenadel hast du. Noch einmal, wenn du willst? #sprecher:coachDelgado
 - else:
-    Sie legt ihren König um. Sanft, mit einem Finger. #sprecher:erzaehler #pause
-    Abpfiff! Gute Partie! Du hast gezählt, als ich nicht gezählt habe. #sprecher:coachDelgado #stimmung:froh #klang:pfiff
+    Sie legt ihren König um. Sanft, mit einem Finger. #sprecher:erzaehler #pause #musik:aus
+    Abpfiff! Gute Partie! Du hast gezählt, als ich nicht gezählt habe. #sprecher:coachDelgado #stimmung:froh #klang:pfiff_finger
 }
-Sie steckt dir die Nadel an. Selbst, etwas schief. #sprecher:erzaehler
-Viertes Brett. Samstag spielen wir in Cedar Creek. #sprecher:coachDelgado
+Sie steckt dir die Nadel an. Selbst, etwas schief. #sprecher:erzaehler #klang:fanfare
+Viertes Brett. Samstag spielen wir in Cedar Creek. #sprecher:coachDelgado #musik:karte
 {not heimwegNadelGesehen:
     Juno umarmt dich so heftig, dass das Tagebuch auf den Boden fällt. #sprecher:erzaehler
     Ich hab's dir gesagt. #sprecher:sam #stimmung:froh
@@ -148,13 +148,13 @@ Noch einmal? Ich habe Zeit. Und Kekse. #sprecher:coachDelgado
 // Neu gegenüber der Story-Bibel: Mr. Pratt an der Tür (die Stadt nimmt den Sieg wahr) und das
 // Heimweg-Gespräch, der erste Schritt in Ambroses Bogen (schön gegen richtig). Nur nach der
 // ersten Nadel, etwa eine Minute. Klang: nach der Siegfanfare Stille, dann Abendgeräusche; die
-// Laternen gehen an. Vorgemerkt für mittel-2: #pause:3 vor „Nein. Das ist das Merkwürdige.“
+// Laternen gehen an.
 === pratt_und_heimweg ===
 ~ heimwegNadelGesehen = true
 An der Tür steht der Hausmeister, einen Lappen in der Hand, und sieht auf die Pokale von 1994. #sprecher:erzaehler
 Die haben auch gezählt. Bevor sie geschlagen haben. #sprecher:pratt
 Dann geht er wieder. #sprecher:erzaehler
-Auf dem Heimweg sagt Ambrose lange nichts. Ahornblätter auf dem Gehweg. Die Laternen gehen an, eine nach der anderen. #sprecher:erzaehler #pause
+Auf dem Heimweg sagt Ambrose lange nichts. Ahornblätter auf dem Gehweg. Die Laternen gehen an, eine nach der anderen. #sprecher:erzaehler #pause #licht:abend #musik:aus
 Es war keine schöne Partie. #sprecher:ambrose
 * [„Ich habe sie aber nicht verloren.“]
     Nein. Du hast gezählt, bis nichts mehr übrig war. Buchhaltung, Zug um Zug. #sprecher:ambrose
@@ -163,8 +163,8 @@ Es war keine schöne Partie. #sprecher:ambrose
 - Zu meiner Zeit hätte man so etwas nicht aufgeschrieben. #sprecher:ambrose #stimmung:streng
 * [„Bist du enttäuscht?“]
 - Er bleibt unter einer Laterne stehen. Man sieht fast durch ihn hindurch. #sprecher:erzaehler #pause
-Nein. #sprecher:ambrose #stimmung:still
-Nein. Das ist das Merkwürdige. #sprecher:ambrose #stimmung:still
+Nein. #sprecher:ambrose #stimmung:still #pause:3
+Nein. Das ist das Merkwürdige. #sprecher:ambrose #stimmung:still #musik:karte
 ->->
 
 // ---------------------------------------------------------------- Sam
@@ -300,15 +300,15 @@ Und ein Matt in eins, das hab ich selbst gefunden. #sprecher:juno
 // Klang: Beim Wagen setzt die Musik aus; Victors Thema kalt; in der Partie ein Metronom; bei
 // „Hale“ ein tiefer Ton, Ambroses Thema bricht ab.
 ~ victorGesehen = true
-Ein schwarzer Wagen hält vor der Schule. Ein Mann steigt aus, ein Telefon am Ohr, ein zweites in der Hand. #sprecher:erzaehler #pause
+Ein schwarzer Wagen hält vor der Schule. Ein Mann steigt aus, ein Telefon am Ohr, ein zweites in der Hand. #sprecher:erzaehler #pause #musik:aus #klang:wagen
 Coach Delgado hat die Trainingsjacke bis oben zugezogen. #sprecher:erzaehler
 Der Mann gibt jedem die Hand, auch dir. Er hat ein freundliches, müdes Gesicht. #sprecher:erzaehler
 Ein Programm, das nie krank wird und nie die Geduld verliert. Perfect Move. Schach für die Zukunft. #sprecher:grahamHale
 Was kostet das? #sprecher:coachDelgado
 Für Pilotschulen zunächst nichts. #sprecher:grahamHale
 Am Fenster steht ein Junge, ein Tablet unter dem Arm. Er hat sich nicht gesetzt. Er sieht auf deine Nadel. #sprecher:erzaehler
-Victor Hale. Zeig mal, was eine Nadel hier wert ist. #sprecher:victor #stimmung:kalt
-In deiner Tasche bricht Ambrose mitten im Satz ab. #sprecher:erzaehler #pause:2
+Victor Hale. Zeig mal, was eine Nadel hier wert ist. #sprecher:victor #stimmung:kalt #musik:victor
+In deiner Tasche bricht Ambrose mitten im Satz ab. #sprecher:erzaehler #klang:hale #pause:3
 -> victor_wartet
 
 === victor_wartet ===
@@ -348,7 +348,7 @@ Du hast in Zug zwölf verloren. Den Rest hast du nur nicht gemerkt. #sprecher:vi
 Er räumt die Figuren ein, jede in ihr Fach. Er gibt dir nicht die Hand. #sprecher:erzaehler
 Gut gespielt, Victor. Nächstes Mal schneller, ja? Wir haben um vier den Termin. #sprecher:grahamHale
 Etwas geht über Victors Gesicht. Sehr kurz. #sprecher:erzaehler #pause
-Ja. #sprecher:victor
+Ja. #sprecher:victor #stimmung:riss
 Dann sind sie weg. #sprecher:erzaehler
 Der war nicht nett. #sprecher:juno #pause
 Niemand widerspricht. #sprecher:erzaehler
@@ -368,7 +368,7 @@ Er geht, ohne sich umzudrehen. Juno hält dir die Hand zum Abklatschen hin. #spr
 // Roman, Kapitel 9 (neu): Der Bildschirm bleibt im Clubraum stehen; Coach Delgado ist verlockt,
 // nicht böse (docs/spiel/19, Abschnitt 3). Ihre Entscheidung fällt in Akt 2. Klang: Konzernmotiv
 // (ein kalter Ton), dann Stille. Danach still wie auf dem Dachboden im Roman: nur Wind.
-Auf dem Pult steht noch der Bildschirm. Darauf ziehen die Figuren von selbst. #sprecher:erzaehler
+Auf dem Pult steht noch der Bildschirm. Darauf ziehen die Figuren von selbst. #sprecher:erzaehler #klang:konzern
 Coach Delgado schaltet ihn aus. Sie steht eine Weile davor. #sprecher:erzaehler #pause
 Kostet zunächst nichts. #sprecher:coachDelgado #stimmung:ernst
 Sie sagt es zu niemandem. #sprecher:erzaehler
@@ -389,7 +389,7 @@ Als der Raum leer ist, meldet sich das Brett in deiner Tasche. #sprecher:erzaehl
 // Roman, Kapitel 9 (neu): {held} schreibt das Ziel selbst ins Tagebuch, als Handlung statt als
 // Menüeintrag. Die kleine Schreibanimation im Tagebuch der Oberfläche ist ein eigener Auftrag.
 - Juno hat dir das Clubtagebuch übers Wochenende geliehen. Du schlägst eine neue Seite auf. #sprecher:erzaehler
-In deiner eigenen Schrift, ohne Glitzer, schreibst du: „Ich will besser werden.“ #sprecher:erzaehler #pause
+In deiner eigenen Schrift, ohne Glitzer, schreibst du: „Ich will besser werden.“ #sprecher:erzaehler #pause #klang:tagebuch #musik:aus
 -> END
 
 === victor_weg ===

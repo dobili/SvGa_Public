@@ -29,6 +29,10 @@ VAR nadelCedarCreek = 0
 VAR endeAkt1Gesehen = false
 VAR aufbruchRivertonGesehen = false
 VAR gefundenSchluessel = false
+VAR nachtImLesesaal = false
+VAR teamAngekommen = false
+VAR nadelRiverton = 0
+VAR nadelIronwood = 0
 
 // ---------------------------------------------------------------- Ankunft
 
@@ -47,6 +51,7 @@ Eine Stadt mit Bäumen, die älter sind als ich. Endlich etwas, das mich nicht j
 
 === plakat ===
 {not ankunftCedarCreekGesehen: -> ankunft}
+{nachtImLesesaal and not teamAngekommen: -> team_kommt}
 Ein großes, glänzendes Plakat: „Perfect Move – Schach für die Zukunft. Bald auch in deiner Stadt.“ #sprecher:erzaehler
 Darauf ein Schachbrett aus Licht und eine Hand, die keinem Menschen gehört. #sprecher:erzaehler
 Ein Plakat, das droht. Wie reizend. #sprecher:ambrose #stimmung:streng
@@ -76,6 +81,8 @@ Da bist du ja! Gleich geht es los! #sprecher:mae #stimmung:froh
     -> sterne
 * [„Ich bin zu müde. Ein andermal.“]
     Okay. Morgen erzähle ich dir alles. Jede einzelne Sternschnuppe. #sprecher:mae
+    ~ nachtImLesesaal = true
+    Du gehst früh hinüber in den Lesesaal. Durch das Fenster hörst du die anderen am Steg lachen. #sprecher:erzaehler
     -> END
 
 === sterne ===
@@ -91,6 +98,9 @@ Morgen bin ich bestimmt müde. #sprecher:okafor
 ~ setzeZustand("cedarCreek.okafor", 1.3, "zustand.schlechtGeschlafen")
 Du hast das nicht geplant, {held}. Es war einfach ein schöner Abend. #sprecher:ambrose
 Aber du wirst es morgen am Brett merken. #sprecher:ambrose
+// Runde 11: Die Nacht verbringen {held} und Juno im Lesesaal (Roman, Kapitel 10 und 14).
+~ nachtImLesesaal = true
+Nach Mitternacht geht ihr hinüber in den Lesesaal. Die Matten liegen zwischen den Regalen. #sprecher:erzaehler
 -> END
 
 === ende_akt1 ===
@@ -217,6 +227,7 @@ Victor spielt weiter auf seinem Tablet. Er sieht nicht auf. #sprecher:erzaehler
 === bus_zurueck ===
 {
 - not ankunftCedarCreekGesehen: -> ankunft
+- nachtImLesesaal and not teamAngekommen: -> team_kommt
 - endeAkt1Gesehen:
     Der Bus nach Maple Falls. Die Fenster sind golden vom Abendlicht. #sprecher:erzaehler #klang:bus
 - nadelCedarCreek > 0:
@@ -228,6 +239,8 @@ Victor spielt weiter auf seinem Tablet. Er sieht nicht auf. #sprecher:erzaehler
     Der Bus rollt die Landstraße entlang. Hinter dir werden die Zedern kleiner. #sprecher:erzaehler
     ~ reise("mapleFalls.park", "bushaltestelle")
     -> END
++ [Mit dem Busfahrer reden]
+    -> kettering
 * [Noch bleiben]
     -> END
 
@@ -240,6 +253,9 @@ Victor spielt weiter auf seinem Tablet. Er sieht nicht auf. #sprecher:erzaehler
     Der Flussweg endet an der Bushaltestelle von Cedar Creek. #sprecher:erzaehler
     -> END
 }
+// Runde 11: Wer zu Fuß kommt, kommt am Freitag, das Team erst am Samstag (Roman, Kapitel 10). Die
+// alte Fassung darunter bleibt bis zur Dialogprüfung stehen, läuft aber nicht.
+-> ankunft_freitag
 ~ ankunftCedarCreekGesehen = true
 Der Flussweg endet zwischen roten Zedern an der Bushaltestelle. Vor dir eine Bibliothek aus Backstein. #sprecher:erzaehler
 Da bist du ja! Zu Fuß? #sprecher:juno #stimmung:froh
@@ -274,3 +290,72 @@ Auf dem Handy eine Nachricht von Mama: „Mit dem Zug zurück, vor dem Dunkelwer
     Dann spielen wir wenigstens das letzte Spiel. Das ist auch was. #sprecher:juno
 - Bäume, die älter sind als ich. Endlich jemand in meinem Alter. #sprecher:ambrose #stimmung:lacht
 -> END
+
+// ================================================================ Runde 11: Roman, Kapitel 10
+// Geänderter Ablauf (docs/spiel/roman/akt1_teil3.md, „Neu gegenüber der Story-Bibel“): {held}
+// und Juno kommen am Freitag zu Fuß an, schlafen im Lesesaal, das Team kommt am Samstag mit dem
+// Bus. Der Bus bleibt für die Rückfahrt und zum Hin- und Herfahren. Die Turmuhr schlägt bei der
+// Ankunft (Klang turmuhr, neu; Dokument 21 ordnet ihn zu). Stimmung: still, dann forschend.
+// Später, wenn mittel-2 sie gebaut hat: #musik:cedarCreek beim Ankommen, #pause:3 nach der Uhr.
+
+=== ankunft_freitag ===
+~ ankunftCedarCreekGesehen = true
+Am Ende des Pfades steht ein Schild aus Holz: „Cedar Creek. Gegr. 1851.“ #sprecher:erzaehler
+Zwischen den Bäumen schlägt eine Uhr. Vier Schläge, langsam, als hätte sie alle Zeit der Welt. #sprecher:erzaehler #klang:turmuhr #pause
+Die Bibliothek. Mrs. Okafor erwartet uns. Der Coach kommt erst morgen mit dem Bus. #sprecher:juno #stimmung:froh
+Und heute Nacht schlafen wir zwischen den Büchern! Das kommt ins Tagebuch. #sprecher:juno
+Eine Uhr, die sich Zeit lässt. Endlich ein Ort nach meinem Takt. #sprecher:ambrose
+-> END
+
+// Samstagmorgen an der Haltestelle (Roman, Kapitel 14, Schluss): Bus und Pfiff. Läuft nach der
+// Nacht im Lesesaal beim ersten Gespräch an der Haltestelle (plakat, bus_zurueck).
+=== team_kommt ===
+~ teamAngekommen = true
+Über dem Ort schlägt die Uhr acht. Auf der Straße klappert ein Bus, dann ein Pfiff auf zwei Fingern. #sprecher:erzaehler #klang:pfiff
+Morgen, Vorhut! Steht die Bibliothek noch? #sprecher:coachDelgado
+Ich hab im Bus geschlafen. Mit dem Kopf auf dem Schachkoffer. Der ist hart. #sprecher:sam
+* [„Wir haben elf Sternschnuppen gesehen.“]
+    Elf? Und ich hab geschlafen. Typisch. #sprecher:sam
+* [„Mrs. Okafor ist heute müde.“]
+    Müde ist gut. Müde ist sehr gut. #sprecher:coachDelgado
+- Clubkampf am Vormittag. Bis dahin: Kopf frei, Figuren sortiert. #sprecher:coachDelgado #klang:pfiff
+Der Bus wartet bis heute Abend. Mr. Kettering fährt uns zurück. #sprecher:coachDelgado
+-> END
+
+// ---------------------------------------------------------------- Mr. Kettering, der Busfahrer
+// Kleine Geschichte (Dokument 20, Cedar Creek). Stufen wie auf dem Weg: A bis zur Nadel von Cedar
+// Creek, B danach bis zur Nadel von Riverton, C in Akt 2, D nach Akt 2 (nadelIronwood). Ohne
+// Porträt; seine Sätze stehen in Anführungszeichen beim Erzähler. Einstieg: Wahl in bus_zurueck.
+
+=== kettering ===
+{
+- nadelIronwood > 0: -> kettering_d
+- nadelRiverton > 0: -> kettering_c
+- nadelCedarCreek > 0: -> kettering_b
+- else: -> kettering_a
+}
+
+=== kettering_a ===
+Der Busfahrer hat die Mütze in den Nacken geschoben und liest Zeitung. #sprecher:erzaehler
+„Einunddreißig Jahre fahr ich diese Strecke. Jede Kurve hat einen Namen. Die meisten hab ich vergeben.“ #sprecher:erzaehler
+* [„Welche Kurve ist die schönste?“]
+    „Die Witwe. Nach der sieht man den Wasserfall.“ #sprecher:erzaehler
+* [„Wird es nicht langweilig?“]
+    „Die Kurven sind dieselben. Die Leute nicht.“ #sprecher:erzaehler
+- -> bus_zurueck
+
+=== kettering_b ===
+„Die Linie wird geprüft, haben sie gesagt. Was es da zu prüfen gibt, weiß ich nicht.“ #sprecher:erzaehler
+Er faltet die Zeitung zusammen. „Ich fahr sie jedenfalls, solange sie mich lassen.“ #sprecher:erzaehler
+-> bus_zurueck
+
+=== kettering_c ===
+An der Haltestelle hängt ein neuer Fahrplan. Die Spalten sind kürzer als früher. #sprecher:erzaehler
+Mr. Kettering sieht hinüber und sagt nichts. Er nickt dir zu und lässt den Motor an. #sprecher:erzaehler
+-> bus_zurueck
+
+=== kettering_d ===
+Der neue Fahrplan ist überklebt. Darauf steht mit Kugelschreiber: „Fährt doch.“ #sprecher:erzaehler
+„Einunddreißig Jahre“, sagt Mr. Kettering. „Und ein paar Monate. Wer zählt mit?“ #sprecher:erzaehler
+Ein Mann, der seine Strecke nicht hergibt. Zu meiner Zeit hätte er Postkutschen gefahren. #sprecher:ambrose
+-> bus_zurueck

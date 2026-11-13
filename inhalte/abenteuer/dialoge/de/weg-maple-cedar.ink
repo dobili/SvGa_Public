@@ -35,6 +35,10 @@ VAR flohmarktKarteErhalten = false
 VAR seite00Gefunden = false
 VAR finchBauerAGefunden = false
 VAR gatterOffenGesehen = false
+VAR nadelRiverton = 0
+VAR nadelIronwood = 0
+VAR adaGetroffen = false
+VAR faehrsteinGesehen = false
 
 // ---------------------------------------------------------------- Rätseltafel
 
@@ -267,3 +271,146 @@ Ein weißer Bauer aus hellem Holz. Unter dem Fuß ist ein Feld eingebrannt. #spr
     Hinter dem Stamm sieht man schon den Park von Maple Falls. #sprecher:erzaehler
     -> END
 }
+
+// ================================================================ Runde 11: Roman, Kapitel 10
+// Neu gegenüber der Story-Bibel (docs/spiel/roman/akt1_teil3.md, Tabelle am Ende): Ada und die
+// Krähen, die Ehrlichkeitskasse in drei Stufen, Silas am Stein der Fährstelle mit Ambroses erster
+// eigener Erinnerung (nur beim ersten Besuch), Tessa in vier Stufen. Stimmung: frei, Sommerende,
+// Atem holen (Dokument 19, Abschnitt 4; Ortsblatt „Weg“ in Dokument 20).
+//
+// Stufen der kleinen Geschichten (Dokument 20, Ortsblatt Weg). Die Spalte B des Ortsblatts („nach
+// der Nadel von Maple Falls“) liegt vor dem ersten Weg; deshalb zählt hier der erste Weg als A:
+//   A erster Weg (nadelCedarCreek == 0), B nach der Nadel von Cedar Creek (bis zur Nadel von
+//   Riverton), C in Akt 2 (nadelRiverton > 0), D nach Akt 2 (nadelIronwood > 0).
+//
+// Auslöser für die Karten (fehlen noch, Karten baut ein anderer Helfer):
+//   apfelstand  Landstraße, Kasse am Apfelstand (Gegenstand)   → weg-maple-cedar.apfelstand
+//   ada         Landstraße, Figur „Ada“ (heute Statistin apfelverkaeuferin) → weg-maple-cedar.ada
+//   faehrstein  Flussweg, Stein mit eingeritztem Brett an der Fährstelle   → weg-maple-cedar.faehrstein
+//   tessa       Landstraße, Flussweg oder Zedernpfad je Stufe (heute Statistin joggerin) → weg-maple-cedar.tessa
+// Ada, Silas und Otis haben noch kein Porträt; ihre Sätze stehen deshalb in Anführungszeichen beim
+// Erzähler (wie Walt Miller und Odette Finch oben).
+
+// ---------------------------------------------------------------- Ehrlichkeitskasse
+
+=== apfelstand ===
+{
+- nadelIronwood > 0: -> apfelstand_d
+- nadelRiverton > 0: -> apfelstand_c
+- nadelCedarCreek > 0: -> apfelstand_b
+- else: -> apfelstand_a
+}
+
+=== apfelstand_a ===
+Ein Tisch am Gatter: Äpfel, Flaschen mit dunklem Sirup und eine Blechdose mit Schlitz. Niemand ist da. #sprecher:erzaehler
+Auf einem Pappschild steht: „Äpfel 1 Dollar. Sirup 4. Bitte ehrlich.“ #sprecher:erzaehler
+Juno legt einen Dollar in die Dose und nimmt zwei Äpfel. Einen gibt sie dir. #sprecher:erzaehler
+Eine Kasse ohne Wächter. Zu meiner Zeit hätte man darüber gelacht. Oder geweint. #sprecher:ambrose
+{not adaGetroffen: -> ada}
+-> END
+
+=== apfelstand_b ===
+An der Blechdose klebt jetzt ein Zettel in großer Schrift. #sprecher:erzaehler
+„Wer es war, kann es zurücklegen. Ich frag nicht.“ #sprecher:erzaehler
+Eine Frau, die nicht fragt. Das ist mehr Vertrauen, als ich je hatte. #sprecher:ambrose
+-> END
+
+=== apfelstand_c ===
+Der Zettel hängt noch an der Dose. Darunter hat jemand einen Apfelkern geklebt. #sprecher:erzaehler
+„Stimmt wieder“, steht in Adas Schrift daneben. „Mit Zinsen.“ #sprecher:erzaehler
+Ein Apfelkern als Entschuldigung. Das gefällt mir. #sprecher:ambrose #stimmung:lacht
+-> END
+
+=== apfelstand_d ===
+Die Kasse stimmt, der Zettel hängt noch. Daneben ein Zeitungsausschnitt in einer Klarsichthülle. #sprecher:erzaehler
+Ein Foto von der Joggerin, die Arme oben, hinter ihr ein Zielband. Sie selbst ist heute nicht da. #sprecher:erzaehler
+-> END
+
+// ---------------------------------------------------------------- Ada und die Krähen
+
+=== ada ===
+{adaGetroffen: -> ada_alltag}
+~ adaGetroffen = true
+Eine Frau in Gummistiefeln kommt über die Wiese, in jeder Hand einen Eimer. #sprecher:erzaehler
+„Die Kasse stimmt fast immer. Fast.“ #sprecher:erzaehler
+Sie stellt die Eimer ab und sieht auf das Feld. „Drei Krähen, zwei Vogelscheuchen. Wer gewinnt?“ #sprecher:erzaehler
+* [„Die Krähen. Drei gegen zwei.“]
+    Sie sieht dich an, zum ersten Mal richtig. „Die zählen in der Schule jetzt, was?“ #sprecher:erzaehler
+* [„Die Vogelscheuchen. Die laufen nicht weg.“]
+    „Weglaufen tun sie nicht. Aber es sind drei gegen zwei.“ #sprecher:erzaehler
+    Sie zählt, wer angreift und wer verteidigt. Eine Bäuerin nach meinem Herzen. #sprecher:ambrose
+- Sie nimmt den Deckel von der Dose, zählt mit den Lippen und seufzt. #sprecher:erzaehler
+„Diese Woche fehlen wieder sechs. Ich frag nicht, wer. Ich schreib bloß einen Zettel.“ #sprecher:erzaehler
+Ein Traktor fährt vorbei. Der Mann darauf hebt zwei Finger vom Lenkrad. Das ist alles. #sprecher:erzaehler
+„Otis. Redet mit den Kühen.“ Sie nimmt die Eimer wieder auf. „Gatter zu, wenn ihr geht.“ #sprecher:erzaehler
+-> END
+
+=== ada_alltag ===
+{
+- nadelRiverton > 0: „Die Kasse stimmt. Ich lass den Zettel trotzdem hängen. Man weiß ja nie.“ #sprecher:erzaehler
+- nadelCedarCreek > 0: „Der Zettel hängt. Mal sehen, wer ihn liest.“ #sprecher:erzaehler
+- else: „Drei Krähen, zwei Vogelscheuchen. Ich sag ja: Die Krähen gewinnen.“ #sprecher:erzaehler
+}
+-> END
+
+// ---------------------------------------------------------------- Silas am Stein der Fährstelle
+
+=== faehrstein ===
+{faehrsteinGesehen: -> faehrstein_spaeter}
+~ faehrsteinGesehen = true
+Wo das Ufer flach ist, liegt ein großer Stein im Gras. Darin sind Linien eingeritzt, acht mal acht. #sprecher:erzaehler
+Daneben sitzt ein alter Mann auf einem Klappstuhl. Die Angel hängt im Wasser, der Eimer ist leer. #sprecher:erzaehler
+„Mein Großvater hat hier Leute übergesetzt. Als es die Brücke noch nicht gab.“ #sprecher:erzaehler
+„Die Fährleute haben auf dem Stein gespielt, während sie warteten. Mit Kieseln. Helle und dunkle.“ #sprecher:erzaehler
+* [Die Hand auf den Stein legen]
+    Der Stein ist warm von der Sonne. #sprecher:erzaehler
+* [„Beißen die Fische heute?“]
+    Er zieht die Angel heraus. Der Haken ist leer. „Die wissen, wann ich komme.“ #sprecher:erzaehler
+- Hier ist es schöner. Auf Straßen wie der dort oben bin ich wochenlang gefahren. #sprecher:ambrose
+In einer Kutsche, die jede Furche mitnahm. Am Fluss kann man wenigstens denken. #sprecher:ambrose
+* [„Wohin bist du gefahren?“]
+    Nach Norden. Es ist lange her. #sprecher:ambrose
+* [Nichts sagen]
+- Auf so etwas habe ich auch gespielt. An einem Kai, auf einem Fass, mit Knöpfen. Ich war neun. #sprecher:ambrose
+Ich verlor gegen einen Matrosen aus Marseille und weinte. Er schenkte mir eine Orange. #sprecher:ambrose
+Daran habe ich seit … Ich wusste nicht, dass ich das noch weiß. #sprecher:ambrose #stimmung:lacht
+Juno hat nichts gehört. Sie fotografiert den Stein für das Tagebuch. #sprecher:erzaehler
+-> END
+
+=== faehrstein_spaeter ===
+Der Stein mit dem eingeritzten Brett. Man fühlt die Linien eher, als man sie sieht. #sprecher:erzaehler
+{nadelCedarCreek == 0: „Fische? Die wissen, wann ich komme.“ #sprecher:erzaehler}
+-> END
+
+// ---------------------------------------------------------------- Tessa, die Joggerin
+
+=== tessa ===
+{
+- nadelIronwood > 0: -> tessa_d
+- nadelRiverton > 0: -> tessa_c
+- nadelCedarCreek > 0: -> tessa_b
+- else: -> tessa_a
+}
+
+=== tessa_a ===
+Eine Frau läuft vorbei, rot im Gesicht. Am Gatter bleibt sie stehen und keucht. #sprecher:erzaehler
+Noch – drei Kilometer! Halbe – Strecke! #sprecher:joggerin
+Und weg ist sie. #sprecher:erzaehler
+-> END
+
+=== tessa_b ===
+Die Joggerin kommt dir am Fluss entgegen, diesmal ohne Keuchen. #sprecher:erzaehler
+Bis zum Steg! Ganz! Morgen weiter! #sprecher:joggerin #stimmung:froh
+Am Steg steht ihre Wasserflasche, wie ein Merkzeichen. #sprecher:erzaehler
+-> END
+
+=== tessa_c ===
+Unter den Zedern läuft dir jemand entgegen, gleichmäßig, ohne Hast. Die Joggerin. #sprecher:erzaehler
+Sie hebt nur die Hand und läuft weiter. Zum Reden braucht sie den Atem nicht mehr. #sprecher:erzaehler
+Die ganze Strecke. Wer hätte das gedacht? Sie vermutlich nicht. #sprecher:ambrose
+-> END
+
+=== tessa_d ===
+Von der Joggerin ist heute nichts zu sehen. #sprecher:erzaehler
+Am Apfelstand hängt ein Zeitungsausschnitt. Vielleicht weiß Ada mehr. #sprecher:erzaehler
+-> END

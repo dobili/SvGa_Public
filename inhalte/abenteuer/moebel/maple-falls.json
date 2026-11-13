@@ -3795,6 +3795,42 @@
       "begehbar": true,
       "begehbar_grund": "hängt an der Wand",
       "hinweis": "gelöstes Tischset im Rahmen (Hector Stufe B); Bild aus bildwuensche/tischsets.py"
+    },
+    "mf12FensterRund": {
+      "quelle": "spiel/eigene/fenster_rund.png",
+      "breite": 32,
+      "hoehe": 32,
+      "kollision": false,
+      "art": "fenster",
+      "zustand": "alt",
+      "stil": "rustikal",
+      "begehbar": true,
+      "begehbar_grund": "hängt an der Wand",
+      "hinweis": "rundes Giebelfenster (Roman Kap. 2, 4); Bild aus bildwuensche/fenster_rund.py"
+    },
+    "mf12Lichtkegel": {
+      "quelle": "spiel/eigene/lichtkegel.png",
+      "breite": 48,
+      "hoehe": 48,
+      "kollision": false,
+      "art": "licht",
+      "zustand": "alt",
+      "stil": "rustikal",
+      "begehbar": true,
+      "begehbar_grund": "Licht auf dem Boden",
+      "hinweis": "Lichtkegel vom runden Fenster; Bild aus bildwuensche/fenster_rund.py"
+    },
+    "mf12Fensterbank": {
+      "quelle": "spiel/eigene/fensterbank.png",
+      "breite": 32,
+      "hoehe": 16,
+      "kollision": false,
+      "art": "fensterbank",
+      "zustand": "gebraucht",
+      "stil": "klassisch",
+      "begehbar": true,
+      "begehbar_grund": "hängt unter dem Fenster an der Wand",
+      "hinweis": "Fensterbrett im Zimmer des Helden (T15); Bild aus bildwuensche/fensterbank.py"
     }
   }
 }

@@ -54,8 +54,10 @@
           "datei": "karten/maple-falls-clubraum.json",
           "name": "ort.mapleFalls.clubraum",
           "innen": true,
+          "musik": "musik/maple-falls.club.m4a",
           "zustaende": {
-            "nadelMapleFalls >= 1": "karten/maple-falls-clubraum-pokal.json"
+            "nadelMapleFalls >= 1": "karten/maple-falls-clubraum-pokal.json",
+            "victorGesehen": "karten/maple-falls-clubraum-bildschirm.json"
           }
         },
         {
@@ -72,7 +74,12 @@
           "kennung": "mapleFalls.diner",
           "datei": "karten/maple-falls-diner.json",
           "name": "ort.mapleFalls.diner",
-          "innen": true
+          "innen": true,
+          "musik": "musik/diner.m4a",
+          "geraeusch": "klang/diner_kueche.m4a",
+          "zustaende": {
+            "nadelMapleFalls >= 1 und dinerAbendGesehen": "karten/maple-falls-diner-tischset.json"
+          }
         }
       ],
       "figuren": [
@@ -121,6 +128,12 @@
           "name": "figur.lily.name",
           "sprite": "figuren/lily.png",
           "dialog": "maple-falls-aussen.lily"
+        },
+        {
+          "kennung": "mapleFalls.hector",
+          "name": "figur.hector.name",
+          "sprite": "figuren/kellner.png",
+          "dialog": "maple-falls-diner.hector"
         }
       ],
       "ausloeser": [
@@ -350,6 +363,12 @@
           "karte": "mapleFalls.dachboden",
           "art": "gegenstand",
           "dialog": "ansehen-maple-falls.kiste_whitlock"
+        },
+        {
+          "name": "bildschirmPult",
+          "karte": "mapleFalls.clubraum",
+          "art": "gegenstand",
+          "dialog": "ansehen-maple-falls.bildschirm_pult"
         }
       ],
       "club": {
@@ -671,26 +690,32 @@
           "datei": "karten/weg-maple-cedar-landstrasse.json",
           "name": "ort.wegMapleCedar.landstrasse",
           "innen": false,
-          "musik": "musik/landstrasse.ogg",
+          "musik": "musik/weg.m4a",
           "zustaende": {
             "nadelMapleFalls < 1": "karten/weg-maple-cedar-landstrasse-flohmarkt-leer.json",
             "wegMapleCedarTafelBestanden": "karten/weg-maple-cedar-landstrasse-gatter-offen.json",
             "wegMapleCedarTafelBestanden und nadelMapleFalls < 1": "karten/weg-maple-cedar-landstrasse-gatter-offen-leer.json"
-          }
+          },
+          "geraeusch": "klang/zaun_wind.m4a",
+          "licht": "tag"
         },
         {
           "kennung": "wegMapleCedar.flussweg",
           "datei": "karten/weg-maple-cedar-flussweg.json",
           "name": "ort.wegMapleCedar.flussweg",
           "innen": false,
-          "musik": "musik/landstrasse.ogg"
+          "musik": "musik/weg.fluss.m4a",
+          "geraeusch": "klang/fluss.m4a",
+          "licht": "tag"
         },
         {
           "kennung": "wegMapleCedar.zedernpfad",
           "datei": "karten/weg-maple-cedar-zedernpfad.json",
           "name": "ort.wegMapleCedar.zedernpfad",
           "innen": false,
-          "musik": "musik/landstrasse.ogg"
+          "musik": "musik/weg.zedern.m4a",
+          "geraeusch": "klang/wald_still.m4a",
+          "licht": "dunst"
         }
       ],
       "figuren": [
@@ -706,6 +731,18 @@
           "sprite": "figuren/nia.png",
           "dialog": "weg-maple-cedar.gegnerin",
           "gegner": "wegMapleCedar.nia"
+        },
+        {
+          "kennung": "wegMapleCedar.ada",
+          "name": "figur.ada.name",
+          "sprite": "figuren/ada.png",
+          "dialog": "weg-maple-cedar.ada"
+        },
+        {
+          "kennung": "wegMapleCedar.tessa",
+          "name": "figur.tessa.name",
+          "sprite": "figuren/tessa.png",
+          "dialog": "weg-maple-cedar.tessa"
         }
       ],
       "ausloeser": [
@@ -816,6 +853,16 @@
           "karte": "wegMapleCedar.flussweg",
           "art": "gegenstand",
           "dialog": "weg-maple-cedar.finch_bauer_a"
+        },
+        {
+          "name": "apfelstand",
+          "art": "gegenstand",
+          "dialog": "weg-maple-cedar.apfelstand"
+        },
+        {
+          "name": "faehrstein",
+          "art": "gegenstand",
+          "dialog": "weg-maple-cedar.faehrstein"
         }
       ]
     },

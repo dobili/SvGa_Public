@@ -30,6 +30,9 @@ VAR dotGetroffen = false
 VAR dotOkoroErzaehlt = false
 VAR erinnerung1858Bestanden = false
 VAR erinnerung1858Besprochen = false
+// Kapitel 43 (Roman): Dot und Margaret, Tomás und der Dosenpokal, Miras „Weil ich kann“.
+VAR miraGarageGesehen = false
+VAR margaretErzaehlt = false
 
 // ---------------------------------------------------------------- Vor der Versöhnung
 
@@ -56,7 +59,7 @@ VAR erinnerung1858Besprochen = false
 }
 
 === mira_reihe_offen ===
-Du bist gekommen. Gut. #sprecher:mira
+{not miraGarageGesehen: -> mira_weil_ich_kann ->}
 {not reiheTomasBestanden:
     Erst Tomás, dann Dot, dann ich. Tomás ist langsam. Aber er hat recht. #sprecher:mira
 - else:
@@ -64,8 +67,16 @@ Du bist gekommen. Gut. #sprecher:mira
 }
 -> END
 
+=== mira_weil_ich_kann ===
+~ miraGarageGesehen = true
+Als es dunkel wird, kommt Mira. Staubig bis zu den Ohren. Sie setzt sich an einen Tisch und sieht dich an. #sprecher:erzaehler #musik:mira
+Ich opfere den Läufer. #sprecher:mira
+* [„Wir haben noch nicht angefangen.“]
+- Ich sag's dir nur. Weil ich kann. #sprecher:mira
+->->
+
 === mira_clubkampf ===
-Ich opfere den Läufer. Weil ich kann. Spielen wir? #sprecher:mira
+Jetzt ich. Spielen wir? #sprecher:mira
 Sie opfert früh und gern. Wer kühl rechnet, gewinnt. Aber du entscheidest. #sprecher:ambrose
 * [„Spielen wir.“]
     ~ beginnePartie("desertSprings.clubkampf")
@@ -79,7 +90,7 @@ Ich hab gewonnen. Das Opfer war richtig. Noch mal? #sprecher:mira
 * [„Noch mal.“]
     ~ beginnePartie("desertSprings.clubkampf")
     -> END
-* [„Später.“]
+* [„Nicht jetzt.“]
     -> END
 
 === mira_nach_sieg ===
@@ -136,18 +147,25 @@ Hundertsechzig Jahre, und ein Kind sagt es mir. #sprecher:ambrose #stimmung:lach
 }
 
 === tomas_reihe ===
-{not tomasGetroffen:
-    ~ tomasGetroffen = true
-    Unter einem alten Auto rollt ein junger Mann hervor und wischt sich die Hände ab. #sprecher:erzaehler
-    Tomás. Miras Bruder. Ich repariere Autos und passe auf, dass sie nicht alles opfert. #sprecher:tomas
-}
-Ein Opfer ist gut, wenn danach Matt steht. Sonst ist es nur weg. Findest du die Matts? #sprecher:tomas
+{not tomasGetroffen: -> tomas_erstes_treffen ->}
+Sie opfert. Immer. Wenn du nicht weißt, wie ein Matt nach einem Opfer aussieht, bist du in zwölf Zügen fertig. #sprecher:tomas
 * [„Zeig her.“]
     ~ beginneAufgaben("desertSprings.reiheTomas")
     -> END
-* [„Später.“]
+* [„Nicht jetzt.“]
     Kein Problem. Das Auto wartet auch. #sprecher:tomas
     -> END
+
+=== tomas_erstes_treffen ===
+~ tomasGetroffen = true
+Ein Auto auf der Hebebühne, Werkzeug an der Wand, zwischen Ölkanistern drei Klapptische. Unter dem Auto ragen Stiefel hervor. #sprecher:erzaehler #geraeusch:garage
+Mira ist im Canyon. Die kommt, wenn es dunkel wird. #sprecher:tomas
+Er rollt heraus, einen Schraubenschlüssel in der Hand. Ich bin Tomás. Der Bruder, der Club und die Aufsicht. #sprecher:tomas
+Auf dem Regal über der Werkbank glänzt ein Pokal. Aus einer Limonadendose, aufgeschnitten, gebogen, mit Draht. #sprecher:erzaehler #bild:dosenpokal
+Den hat sie selbst gemacht. Mit sechs. In der Zeitung war ein Typ aus Riverton mit einem ganzen Regal davon. #sprecher:tomas
+Sie hat gesagt: Wenn der das darf, darf sie das auch. #sprecher:tomas
+Du denkst an einen Wohnwagen unter einer Brücke. „Ich hab seit März keinen neuen.“ Du machst ein Foto. Du weißt, wem du es schickst. #sprecher:erzaehler #bild:aus
+->->
 
 === tomas_alltag ===
 {~Mira hat heute schon drei Damen geopfert. Zwei waren richtig.|Ein Motor und ein Angriff brauchen dasselbe: alle Teile an der richtigen Stelle.|Wenn du Mira schlägst, ist sie einen Tag lang still. Dann redet sie doppelt.} #sprecher:tomas
@@ -165,24 +183,39 @@ Ein Opfer ist gut, wenn danach Matt steht. Sonst ist es nur weg. Findest du die 
 }
 
 === dot_warten ===
-~ dotGetroffen = true
-Eine alte Dame sitzt in einem Gartenstuhl und schreibt einen Brief. Neben ihr liegt ein Taschenschachbrett. #sprecher:erzaehler
-Dot. Mir gehört das Motel. #sprecher:dot
+{not dotGetroffen: -> dot_margaret ->}
 Erst Tomás, Liebes. Ich bin danach dran. #sprecher:dot
 -> END
 
+// Kapitel 43 (Roman): Dots Weltkarte und Margaret aus Maple Falls. Das Thema von Maple Falls
+// klingt drei Takte wie aus der Ferne (Klangplan).
+=== dot_margaret ===
+~ dotGetroffen = true
+~ margaretErzaehlt = true
+Dot ist siebzig und trägt am Nachmittag Lockenwickler. Hinter der Motel-Theke hängt eine Weltkarte voller Nadeln. #sprecher:erzaehler #geraeusch:motel
+Von jeder Nadel läuft ein Faden zu einer Postkarte. #sprecher:erzaehler #bild:weltkarte_nadeln
+Fernschach. Fünfzig Jahre. Einer in Reykjavík braucht vier Monate für einen Zug, der fährt zur See. #sprecher:dot
+Eine in Kapstadt schummelt, glaube ich. Aber charmant. #sprecher:dot
+Sie tippt auf eine Nadel im Nordosten. Daran hängt kein Faden mehr. #sprecher:erzaehler #bild:aus
+Hier hatte ich eine, vierzig Jahre lang. Margaret. Aus einem Kaff mit einem Wasserfall. Ich hab sie nie gesehen. #sprecher:dot #musik:mapleFalls
+Im letzten Brief schrieb sie, sie räumt jetzt auf. Dann kam nichts mehr. Wir waren im einunddreißigsten Zug. #sprecher:dot
+Ich stand besser. Ich sag das nicht gern, wenn jemand nicht mehr widersprechen kann. #sprecher:dot
+* [„Sie hat ein Brett abgestaubt. Sechzig Jahre lang.“]
+- Dot sieht dich an. Du kommst aus dem Kaff. #sprecher:dot
+* [„Ich wohne in ihrem Haus.“]
+- Sie nimmt die Lesebrille ab und setzt sie wieder auf. Dann legt sie einen Stapel Postkarten hin. Oben ein Wasserfall. #sprecher:erzaehler #bild:postkarten_wasserfall
+Dann weißt du vielleicht, was sie gezogen hätte. #sprecher:dot #bild:aus
+An meinem Tisch. Vierzig Jahre. Mit dieser Frau. #sprecher:ambrose #stimmung:riss #musik:desertSprings
+->->
+
 === dot_reihe ===
-{not dotGetroffen:
-    ~ dotGetroffen = true
-    Eine alte Dame sitzt in einem Gartenstuhl und schreibt einen Brief. Neben ihr liegt ein Taschenschachbrett. #sprecher:erzaehler
-    Dot. Mir gehört das Motel. #sprecher:dot
-}
+{not dotGetroffen: -> dot_margaret ->}
 Ich spiele seit fünfzig Jahren per Post. Ein Zug pro Woche, aber jeder sitzt. #sprecher:dot
 Meine Aufgaben greifen den König an. Langsam, Liebes, wie ein Brief. #sprecher:dot
 * [„Ich bin bereit.“]
     ~ beginneAufgaben("desertSprings.reiheDot")
     -> END
-* [„Später.“]
+* [„Nicht jetzt.“]
     Die Post kommt auch nicht schneller. #sprecher:dot
     -> END
 

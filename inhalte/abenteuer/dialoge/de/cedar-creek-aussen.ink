@@ -47,7 +47,9 @@ VAR ambroseNenntNamen = false
 {not schildCedarGesehen: Zwischen den Bäumen schlägt eine Uhr. Viermal, langsam. #sprecher:erzaehler #klang:turmuhr #pause:3}
 Cedar Creek ist kleiner als Maple Falls und sieht älter aus. In der Mitte, wo woanders eine Kirche steht, steht die Bibliothek. #sprecher:erzaehler
 Auf ihrer Treppe sitzen zwei Kinder, die gleich aussehen, mit Figuren in den Händen und ohne Brett. #sprecher:erzaehler
-„Ich hab gewonnen!“ – „Du hast den Turm bewegt, als ich nicht geguckt hab!“ – „Du guckst nie!“ #sprecher:erzaehler
+Ich hab gewonnen! #sprecher:ivy
+Du hast den Turm bewegt, als ich nicht geguckt hab! #sprecher:jonah
+Du guckst nie! #sprecher:ivy
 * [„Wer hat denn gewonnen?“]
     Beide zeigen auf sich. Dann aufeinander. #sprecher:erzaehler
 * [Leise vorbeigehen]
@@ -168,7 +170,7 @@ Es fehlte nur noch seine Antwort. Ein Zug. Jemand sagte: Später. #sprecher:ambr
     Nein. Noch nicht. #sprecher:ambrose #pause:2
     Ich habe Zeit. #sprecher:ambrose
 - Hinter euch hupt der Bus. Mr. Kettering fährt, wie er seit einunddreißig Jahren fährt. #sprecher:erzaehler #klang:bus
-Er sagt jede Kurve an: „Die Witwe.“ – „Der Hühnerstall.“ – „Achtung, der lange Otis.“ #sprecher:erzaehler
+Die Witwe. – Der Hühnerstall. – Achtung, der lange Otis. #sprecher:kettering
 Sam schläft nach der dritten Kurve ein, den Kopf auf dem Schachkoffer. #sprecher:erzaehler
 Vorn rechnet der Coach etwas auf einem Spielbericht. Keine Schachaufgabe: Zahlen mit Dollarzeichen. #sprecher:erzaehler
 * [Juno fragen, was der Coach rechnet]
@@ -402,8 +404,8 @@ Der Bus wartet bis heute Abend. Mr. Kettering fährt uns zurück. #sprecher:coac
 
 // ---------------------------------------------------------------- Mr. Kettering, der Busfahrer
 // Kleine Geschichte (Dokument 20, Cedar Creek). Stufen wie auf dem Weg: A bis zur Nadel von Cedar
-// Creek, B danach bis zur Nadel von Riverton, C in Akt 2, D nach Akt 2 (nadelIronwood). Ohne
-// Porträt; seine Sätze stehen in Anführungszeichen beim Erzähler. Einstieg: Wahl in bus_zurueck.
+// Creek, B danach bis zur Nadel von Riverton, C in Akt 2, D nach Akt 2 (nadelIronwood). Spricht
+// mit eigener Kennung „kettering“ (noch ohne Porträt). Einstieg: Wahl in bus_zurueck.
 
 === kettering ===
 {
@@ -415,16 +417,17 @@ Der Bus wartet bis heute Abend. Mr. Kettering fährt uns zurück. #sprecher:coac
 
 === kettering_a ===
 Der Busfahrer hat die Mütze in den Nacken geschoben und liest Zeitung. #sprecher:erzaehler
-„Einunddreißig Jahre fahr ich diese Strecke. Jede Kurve hat einen Namen. Die meisten hab ich vergeben.“ #sprecher:erzaehler
+Einunddreißig Jahre fahr ich diese Strecke. Jede Kurve hat einen Namen. Die meisten hab ich vergeben. #sprecher:kettering
 * [„Welche Kurve ist die schönste?“]
-    „Die Witwe. Nach der sieht man den Wasserfall.“ #sprecher:erzaehler
+    Die Witwe. Nach der sieht man den Wasserfall. #sprecher:kettering
 * [„Wird es nicht langweilig?“]
-    „Die Kurven sind dieselben. Die Leute nicht.“ #sprecher:erzaehler
+    Die Kurven sind dieselben. Die Leute nicht. #sprecher:kettering
 - -> bus_zurueck
 
 === kettering_b ===
-„Die Linie wird geprüft, haben sie gesagt. Was es da zu prüfen gibt, weiß ich nicht.“ #sprecher:erzaehler
-Er faltet die Zeitung zusammen. „Ich fahr sie jedenfalls, solange sie mich lassen.“ #sprecher:erzaehler
+Die Linie wird geprüft, haben sie gesagt. Was es da zu prüfen gibt, weiß ich nicht. #sprecher:kettering
+Er faltet die Zeitung zusammen. #sprecher:erzaehler
+Ich fahr sie jedenfalls, solange sie mich lassen. #sprecher:kettering
 -> bus_zurueck
 
 === kettering_c ===
@@ -434,14 +437,14 @@ Mr. Kettering sieht hinüber und sagt nichts. Er nickt dir zu und lässt den Mot
 
 === kettering_d ===
 Der neue Fahrplan ist überklebt. Darauf steht mit Kugelschreiber: „Fährt doch.“ #sprecher:erzaehler
-„Einunddreißig Jahre“, sagt Mr. Kettering. „Und ein paar Monate. Wer zählt mit?“ #sprecher:erzaehler
+Einunddreißig Jahre. Und ein paar Monate. Wer zählt mit? #sprecher:kettering
 Ein Mann, der seine Strecke nicht hergibt. Zu meiner Zeit hätte er Postkutschen gefahren. #sprecher:ambrose
 -> bus_zurueck
 
 // ================================================================ Runde 11: Roman, Kapitel 11
 // Kleine Geschichte der Zwillinge Ivy und Jonah Pell (Dokument 20, Cedar Creek), draußen auf der
 // Bibliothekstreppe: A bis zur Nadel von Cedar Creek, B danach bis zur Nadel von Riverton. Ab
-// Stufe C sitzen sie drinnen (cedar-creek-bibliothek.zwillinge). Ohne Porträt; Sätze beim Erzähler.
+// Stufe C sitzen sie drinnen (cedar-creek-bibliothek.zwillinge). Kennungen ivy und jonah.
 // Auslöser für die Karte (fehlt noch): zwillinge (Figur auf der Treppe, Stufe A und B).
 
 === zwillinge ===
@@ -455,7 +458,9 @@ Ein Mann, der seine Strecke nicht hergibt. Zu meiner Zeit hätte er Postkutschen
 
 === zwillinge_a ===
 Auf der Bibliothekstreppe sitzen zwei Kinder, die genau gleich aussehen. Sie haben Figuren in den Händen und kein Brett. #sprecher:erzaehler
-„Ich hab gewonnen!“ – „Du hast den Turm bewegt, als ich nicht geguckt hab!“ – „Du guckst nie!“ #sprecher:erzaehler
+Ich hab gewonnen! #sprecher:ivy
+Du hast den Turm bewegt, als ich nicht geguckt hab! #sprecher:jonah
+Du guckst nie! #sprecher:ivy
 * [„Wer hat denn gewonnen?“]
     Beide zeigen auf sich. Dann aufeinander. Dann wieder auf sich. #sprecher:erzaehler
 * [Leise vorbeigehen]
@@ -465,6 +470,7 @@ Auf der Bibliothekstreppe sitzen zwei Kinder, die genau gleich aussehen. Sie hab
 
 === zwillinge_b ===
 Die Zwillinge sitzen wieder auf der Treppe. Zwischen ihnen liegt jetzt ein Zettel mit Strichen. #sprecher:erzaehler
-„Miss Ashby zählt mit“, sagt das Mädchen. „Sie ist die Schiedsrichterin. Sie guckt immer.“ #sprecher:erzaehler
-„Dreizehn zu zwölf“, sagt der Junge. „Für mich.“ – „Für mich!“ #sprecher:erzaehler
+Miss Ashby zählt mit. Sie ist die Schiedsrichterin. Sie guckt immer. #sprecher:ivy
+Dreizehn zu zwölf. Für mich. #sprecher:jonah
+Für mich! #sprecher:ivy
 -> END

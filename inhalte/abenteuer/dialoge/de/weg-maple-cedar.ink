@@ -323,8 +323,8 @@ Ein weißer Bauer aus hellem Holz. Unter dem Fuß ist ein Feld eingebrannt. #spr
 //   ada         Landstraße, Figur „Ada“ (heute Statistin apfelverkaeuferin) → weg-maple-cedar.ada
 //   Fährstelle  Flussweg, Stein mit eingeritztem Brett: läuft über den vorhandenen Auslöser „rast“
 //   tessa       Landstraße, Flussweg oder Zedernpfad je Stufe (heute Statistin joggerin) → weg-maple-cedar.tessa
-// Ada, Silas und Otis haben noch kein Porträt; ihre Sätze stehen deshalb in Anführungszeichen beim
-// Erzähler (wie Walt Miller und Odette Finch oben).
+// Ada und Silas sprechen mit eigener Kennung (Namen in texte/de.json); ein Porträt gibt es noch
+// nicht, die App zeigt dann keines.
 
 // ---------------------------------------------------------------- Ehrlichkeitskasse
 
@@ -366,23 +366,26 @@ Ein Foto von der Joggerin, die Arme oben, hinter ihr ein Zielband. Sie selbst is
 {adaGetroffen: -> ada_alltag}
 ~ adaGetroffen = true
 Eine Frau in Gummistiefeln kommt über die Wiese, in jeder Hand einen Eimer. #sprecher:erzaehler
-„Die Kasse stimmt fast immer. Fast.“ #sprecher:erzaehler
-Sie stellt die Eimer ab und sieht auf das Feld. „Drei Krähen, zwei Vogelscheuchen. Wer gewinnt?“ #sprecher:erzaehler
+Die Kasse stimmt fast immer. Fast. #sprecher:ada
+Sie stellt die Eimer ab und sieht auf das Feld. #sprecher:erzaehler
+Drei Krähen, zwei Vogelscheuchen. Wer gewinnt? #sprecher:ada #klang:kraehen
 * [„Die Krähen. Drei gegen zwei.“]
-    Sie sieht dich an, zum ersten Mal richtig. „Die zählen in der Schule jetzt, was?“ #sprecher:erzaehler
+    Sie sieht dich an, zum ersten Mal richtig. #sprecher:erzaehler
+    Die zählen in der Schule jetzt, was? #sprecher:ada
 * [„Die Vogelscheuchen. Die laufen nicht weg.“]
-    „Weglaufen tun sie nicht. Aber es sind drei gegen zwei.“ #sprecher:erzaehler
-- Sie nimmt den Deckel von der Dose, zählt mit den Lippen und seufzt. #sprecher:erzaehler
-„Diese Woche fehlen wieder sechs. Ich frag nicht, wer. Ich schreib bloß einen Zettel.“ #sprecher:erzaehler
+    Weglaufen tun sie nicht. Aber es sind drei gegen zwei. #sprecher:ada
+- Sie nimmt den Deckel von der Dose, zählt mit den Lippen und seufzt. #sprecher:erzaehler #klang:kasse_muenzen
+Diese Woche fehlen wieder sechs. Ich frag nicht, wer. Ich schreib bloß einen Zettel. #sprecher:ada
 Ein Traktor fährt vorbei. Der Mann darauf hebt zwei Finger vom Lenkrad. Das ist alles. #sprecher:erzaehler
-„Otis. Redet mit den Kühen.“ Sie nimmt die Eimer wieder auf. „Gatter zu, wenn ihr geht.“ #sprecher:erzaehler
+Otis. Redet mit den Kühen. #sprecher:ada
+Gatter zu, wenn ihr geht. #sprecher:ada
 -> END
 
 === ada_alltag ===
 {
-- nadelRiverton > 0: „Die Kasse stimmt. Ich lass den Zettel trotzdem hängen. Man weiß ja nie.“ #sprecher:erzaehler
-- nadelCedarCreek > 0: „Der Zettel hängt. Mal sehen, wer ihn liest.“ #sprecher:erzaehler
-- else: „Drei Krähen, zwei Vogelscheuchen. Ich sag ja: Die Krähen gewinnen.“ #sprecher:erzaehler
+- nadelRiverton > 0: Die Kasse stimmt. Ich lass den Zettel trotzdem hängen. Man weiß ja nie. #sprecher:ada
+- nadelCedarCreek > 0: Der Zettel hängt. Mal sehen, wer ihn liest. #sprecher:ada
+- else: Drei Krähen, zwei Vogelscheuchen. Ich sag ja: Die Krähen gewinnen. #sprecher:ada
 }
 -> END
 
@@ -393,12 +396,13 @@ Ein Traktor fährt vorbei. Der Mann darauf hebt zwei Finger vom Lenkrad. Das ist
 ~ faehrsteinGesehen = true
 Wo das Ufer flach ist, liegt ein großer Stein im Gras. Darin sind Linien eingeritzt, acht mal acht. #sprecher:erzaehler
 Daneben sitzt ein alter Mann auf einem Klappstuhl. Die Angel hängt im Wasser, der Eimer ist leer. #sprecher:erzaehler
-„Mein Großvater hat hier Leute übergesetzt. Als es die Brücke noch nicht gab.“ #sprecher:erzaehler
-„Die Fährleute haben auf dem Stein gespielt, während sie warteten. Mit Kieseln. Helle und dunkle.“ #sprecher:erzaehler
+Mein Großvater hat hier Leute übergesetzt. Als es die Brücke noch nicht gab. #sprecher:silas
+Die Fährleute haben auf dem Stein gespielt, während sie warteten. Mit Kieseln. Helle und dunkle. #sprecher:silas
 * [Die Hand auf den Stein legen]
     Der Stein ist warm von der Sonne. #sprecher:erzaehler
 * [„Beißen die Fische heute?“]
-    Er zieht die Angel heraus. Der Haken ist leer. „Die wissen, wann ich komme.“ #sprecher:erzaehler
+    Er zieht die Angel heraus. Der Haken ist leer. #sprecher:erzaehler
+    Die wissen, wann ich komme. #sprecher:silas
 - Hier ist es schöner. Es ist das Erste, was Ambrose seit dem Aufbruch sagt. #sprecher:erzaehler
 Auf Straßen wie der dort oben bin ich wochenlang gefahren. In einer Kutsche, die jede Furche mitnahm. #sprecher:ambrose
 Am Fluss kann man wenigstens denken. #sprecher:ambrose
@@ -414,7 +418,7 @@ Juno hat nichts gehört. Sie fotografiert den Stein für das Tagebuch. #sprecher
 
 === faehrstein_spaeter ===
 Der Stein mit dem eingeritzten Brett. Man fühlt die Linien eher, als man sie sieht. #sprecher:erzaehler
-{nadelCedarCreek == 0: „Fische? Die wissen, wann ich komme.“ #sprecher:erzaehler}
+{nadelCedarCreek == 0: Fische? Die wissen, wann ich komme. #sprecher:silas}
 -> END
 
 // ---------------------------------------------------------------- Tessa, die Joggerin

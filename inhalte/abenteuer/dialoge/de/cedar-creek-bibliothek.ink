@@ -250,7 +250,7 @@ Dex kommt, Juno kommt, Mrs. Okafor passt auf. Kommst du auch? #sprecher:mae
 // ================================================================ Runde 11: Roman, Kapitel 11
 // Kleine Geschichte der Zwillinge Ivy und Jonah Pell (Dokument 20, Cedar Creek), drinnen ab
 // Stufe C: C nach Akt 1 (nadelRiverton > 0), D nach Akt 2 (nadelIronwood > 0). Stufe A und B
-// stehen in cedar-creek-aussen.ink (Treppe). Ohne Porträt; Sätze beim Erzähler.
+// stehen in cedar-creek-aussen.ink (Treppe). Kennungen ivy und jonah.
 // Auslöser für die Karte (fehlt noch): zwillinge (Figur in der Bibliothek ab Stufe C).
 
 === zwillinge ===
@@ -270,7 +270,7 @@ Vierzehn zu vierzehn. Die gerechteste Zahl, die es gibt. Und die langweiligste. 
 
 === zwillinge_d ===
 Jonah sitzt im Club am Brett, gegen Dex. Ivy sitzt daneben und liest. #sprecher:erzaehler
-„Wir streiten nicht mehr“, sagt Ivy, ohne aufzusehen. „Es ist furchtbar.“ #sprecher:erzaehler
+Wir streiten nicht mehr. Es ist furchtbar. #sprecher:ivy
 -> END
 
 // ================================================================ Runde 11: Roman, Kapitel 15

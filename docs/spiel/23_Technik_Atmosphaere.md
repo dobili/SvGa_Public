@@ -229,3 +229,8 @@ Findens. Die Fensterbank im Zimmer des Helden ruft sie aus ihrem Dialog auf; kei
 | T27 | Abspann aus Standbildern mit Musik, spielbare Schlussszene | Abspann (gibt es) mit `#bild`-Folge und `#musik`                                         |
 
 Reihenfolge: f, g, h, i; jede für sich mit Tests, eigener Commit, Meldung an den Haupt-Chat.
+
+Stand 13.11.2026 abends: f, g, h und i sind fertig. Offen für den Clubkampf ist nur der Eintrag
+der beiden Momente in `begegnungen.json`, sobald die Knoten von mittel-3 auf demselben Zweig
+liegen; Klangquellen und die Fensterbank warten auf ihre Einträge in `orte.json` und im Dialog
+der Fensterbank.

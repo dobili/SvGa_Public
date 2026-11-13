@@ -1667,3 +1667,15 @@ die 40 häufigsten Gambits. Ein paar Zahlen (Anteil an allen Partien des Bandes)
       Lernkarten gibt es stattdessen für die Lektionen im Spiel selbst (Club, Trainer, gesammelte
       Seiten); in der Buch-App kann es später eine eigene Belohnung geben. Noch nicht umgesetzt;
       Zustimmung oder Widerspruch genügt.
+- [ ] RO13. **Woher Musik und Geräusche kommen:** Es gibt noch keine Tondatei. Empfehlung nach der
+      Recherche: Die Leitmotive (Held, Ambrose, Mama, Victor, Aha) und die Ortsthemen von Maple
+      Falls und Cedar Creek setzen wir selbst als Noten und lassen sie mit freien Instrumenten
+      (gemeinfreie Klavier-, Cembalo- und Orchesterproben) spielen; das kostet nichts, und die
+      Motive kehren überall gleich wieder. Die übrige Ortsmusik kommt aus fertigen Paketen je Ort
+      (Jazz für Riverton, Western-Gitarre für Desert Springs usw.), zusammen etwa 20 bis 150 $.
+      Geräusche aus freien Sammlungen (Freesound, GDC-Bundle), etwa 95 % abgedeckt; dafür braucht es
+      ein kostenloses Freesound-Konto des Autors. KI-Musik nicht, weil sich Motive damit nicht
+      genau wiederholen lassen und die Rechte unklar sind. Ein Komponist für alles läge bei 54 000
+      bis 84 000 $, für die zehn wichtigsten Stücke bei 4 000 bis 6 000 $ (später möglich). Schon
+      in Arbeit: eine Hörprobe mit fünf Motiven und dem Thema von Maple Falls; der Autor hört sie
+      an und entscheidet dann. Gekauft wird nichts ohne seine Zustimmung.

@@ -43,6 +43,10 @@
       "feld": [11, 1]
     },
     {
+      "moebel": "cc13Bibliotheksleiter",
+      "feld": [12, 2], "vorn": true
+    },
+    {
       "moebel": "cc4PinnwandK",
       "feld": [13, 1],
       "an_wand": true,
@@ -226,26 +230,26 @@
     },
     {
       "moebel": "cc4PflanzeK",
-      "feld": [3, 9]
+      "feld": [1, 9]
     },
     {
       "moebel": "cc13MatteGruenLinks",
-      "feld": [14, 7],
+      "feld": [8, 12],
       "bauteil_ok": true
     },
     {
       "moebel": "cc13MatteGruenRechts",
-      "feld": [15, 7],
+      "feld": [9, 12],
       "bauteil_ok": true
     },
     {
       "moebel": "cc13MatteGrauLinks",
-      "feld": [16, 7],
+      "feld": [11, 12],
       "bauteil_ok": true
     },
     {
       "moebel": "cc13MatteGrauRechts",
-      "feld": [17, 7],
+      "feld": [12, 12],
       "bauteil_ok": true
     }
   ],

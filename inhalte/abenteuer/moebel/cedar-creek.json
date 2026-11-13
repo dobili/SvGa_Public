@@ -1931,6 +1931,18 @@
       "begehbar": true,
       "begehbar_grund": "steht auf dem Regal",
       "hinweis": "Altes Radio im Waschsalon (Kartenliste Akt 1), gleiches Bild wie mf9RadioAlt"
+    },
+    "cc13Bibliotheksleiter": {
+      "quelle": "modern-interiors/1_Interiors/16x16/Theme_Sorter_Singles/5_Classroom_and_Library_Singles/Classroom_and_Library_Singles_41.png",
+      "breite": 16,
+      "hoehe": 32,
+      "kollision": false,
+      "art": "deko",
+      "zustand": "gebraucht",
+      "stil": "klassisch",
+      "begehbar": true,
+      "begehbar_grund": "lehnt am Regal, man geht daran vorbei",
+      "hinweis": "Leiter in der Bibliothek, auf der Mrs. Okafor bei der ersten Begegnung steht (Kartenliste Akt 1)"
     }
   }
 }

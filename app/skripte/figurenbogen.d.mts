@@ -8,3 +8,12 @@ export function baueFigurenbogen(ordner: string): Promise<Buffer | null>;
 
 /** Setzt ein Bild unten bündig und waagrecht mittig in einen 32er-Rahmen, ohne Schatten. */
 export function imRahmen(pixel: Buffer, breite: number, hoehe: number): Buffer;
+
+/** Zeile, auf der die Füße der Standbilder im Bogen stehen (30). */
+export const FUSSZEILE: number;
+
+/** Verschiebt einen 32er-Rahmen um dy Zeilen (positiv nach unten). */
+export function verschoben(rahmen: Buffer, dy: number): Buffer;
+
+/** Die unterste Zeile mit einem deckenden Pixel, oder -1. */
+export function untersteZeile(rahmen: Buffer): number;

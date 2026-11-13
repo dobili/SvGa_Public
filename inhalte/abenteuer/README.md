@@ -226,7 +226,10 @@ weniger Opfer). Jeder Eintrag wirkt einmal je Partie, auch nach dem Neuladen.
   die Standbilder), den Bodenschatten des Exports überall entfernt; fehlt eine Laufrichtung, wird
   links aus rechts gespiegelt, sonst bleibt das Standbild. `<name>` ist der Name des alten Bogens
   (`figuren/juno.png` → `figuren-neu/juno/`, der Held `held-0`); wo es keinen neuen gibt, gilt
-  LimeZu. Die Figur ist etwa 28 Pixel hoch, die Kollision bleibt die Kachel der Füße.
+  LimeZu. Die Figur ist etwa 28 Pixel hoch, die Kollision bleibt die Kachel der Füße. Jede Figur
+  wird so verschoben, dass die Füße ihrer Standbilder auf Zeile 30 stehen (Kinder stehen im Export
+  oft höher). Einen alten Bogen braucht es nicht: `sprite: figuren/ada.png` findet
+  `figuren32/ada.png`, ebenso Statisten mit `eigenschaften.bild: "otis"`.
 - Beispiel: `karten/maple-falls-dachboden.json` (12 × 10, Auslöser `start`, `brett`, `treppe`),
   erzeugt mit einem kleinen Skript; die Kacheln 1–8 sind Boden, Wand, Kiste, Teppich, Brett,
   Treppe, Lampe, Fenster.

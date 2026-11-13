@@ -15,6 +15,10 @@
  *   32 × 32 aufgefüllt (Füße unten mittig, wie die Erwachsenen).
  * - Der Bodenschatten des Exports (Farbe #4f4f4e unter den Füßen, in Lauf- und Standbildern)
  *   wird überall entfernt, damit alle Figuren gleich aussehen; einen eigenen Schatten gibt es nicht.
+ * - Füße auf Zeile 30 (FUSSZEILE): PixelLab stellt kleine Figuren (Kinder auf 32er-Leinwand) oft
+ *   höher, sodass sie schwebten (Prüfung im Spiel, 13.11.2026). Jede Figur wird so senkrecht
+ *   verschoben, dass die tiefste Zeile ihrer Standbilder auf FUSSZEILE liegt; alle Rahmen der Figur
+ *   gleich, damit das Auf und Ab beim Laufen bleibt.
  * - Fehlt eine Laufrichtung, wird links aus rechts gespiegelt (und umgekehrt); sonst bleibt das
  *   Standbild stehen. Fehlt ein Standbild, gilt das erste Laufbild oder das Spiegelbild.
  * - Sitzbilder (Wunsch des Autors R020, Doc 24): Hat der Export `animations/Sitting/<richtung>/`,
@@ -35,6 +39,8 @@ const KANAELE = 4;
 /** Schattenfarbe des Exports und ab welcher Zeile (im 32er-Rahmen) sie als Schatten gilt. */
 const SCHATTEN = [0x4f, 0x4f, 0x4e];
 const SCHATTEN_AB_ZEILE = 24;
+/** Zeile, auf der die Füße der Standbilder stehen (wie bei LimeZu und kartenbild.py). */
+export const FUSSZEILE = 30;
 
 /** Richtungen in der Ordnung von LimeZu, mit dem Namen bei PixelLab und dem Spiegelpartner. */
 const RICHTUNGEN = [
@@ -106,6 +112,45 @@ async function leinwandVon(ordner, ersatz) {
   const zustaende = Array.isArray(daten.states) ? daten.states : [daten];
   const groesse = zustaende.map((z) => z?.character?.size?.width).find((w) => w > 0);
   return Math.min(groesse ?? ersatz ?? RAHMEN, RAHMEN);
+}
+
+/** Die unterste Zeile mit einem deckenden Pixel, oder -1 bei einem leeren Rahmen. */
+export function untersteZeile(rahmen) {
+  for (let y = RAHMEN - 1; y >= 0; y--) {
+    for (let x = 0; x < RAHMEN; x++) {
+      if (rahmen[(y * RAHMEN + x) * KANAELE + KANAELE - 1] > 0) return y;
+    }
+  }
+  return -1;
+}
+
+/** Verschiebt einen 32er-Rahmen um dy Zeilen (positiv nach unten); was hinausfällt, entfällt. */
+export function verschoben(rahmen, dy) {
+  if (dy === 0) return rahmen;
+  const aus = Buffer.alloc(rahmen.length);
+  const zeile = RAHMEN * KANAELE;
+  for (let y = 0; y < RAHMEN; y++) {
+    const ziel = y + dy;
+    if (ziel >= 0 && ziel < RAHMEN) rahmen.copy(aus, ziel * zeile, y * zeile, (y + 1) * zeile);
+  }
+  return aus;
+}
+
+/**
+ * Setzt alle Rahmen einer Figur so, dass die Füße der Standbilder auf FUSSZEILE stehen.
+ * Beispiel: Kind mit Füßen auf Zeile 26 → alle Rahmen 4 Zeilen tiefer.
+ */
+export function aufFusszeile(richtungen) {
+  const fuesse = richtungen.map((r) => (r.still ? untersteZeile(r.still) : -1));
+  const tiefste = Math.max(...fuesse);
+  if (tiefste < 0) return richtungen;
+  const dy = FUSSZEILE - tiefste;
+  const schiebe = (rahmen) => (rahmen ? verschoben(rahmen, dy) : rahmen);
+  return richtungen.map((r) => ({
+    still: schiebe(r.still),
+    lauf: r.lauf ? r.lauf.map(schiebe) : r.lauf,
+    sitz: schiebe(r.sitz),
+  }));
 }
 
 /** Spiegelt einen 32er-Rahmen waagerecht. */
@@ -196,7 +241,7 @@ async function sammle(ordner) {
  * Beispiel: figuren-neu/juno → 768 × 64 Pixel, Rahmen 32 × 32.
  */
 export async function baueFigurenbogen(ordner) {
-  const richtungen = await sammle(ordner);
+  const richtungen = aufFusszeile(await sammle(ordner));
   if (richtungen.every((r) => !r.still)) return null;
   const leer = Buffer.alloc(RAHMEN * RAHMEN * KANAELE);
   const reihen = richtungen.some((r) => r.sitz) ? SITZREIHE + 1 : SITZREIHE;

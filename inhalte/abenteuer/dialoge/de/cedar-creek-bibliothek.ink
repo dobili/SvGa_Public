@@ -47,34 +47,47 @@ VAR ambroseNenntNamen = false
 }
 
 === okafor_erstes_treffen ===
+// Runde 11 (VC33 bis VC39, Roman Kapitel 11): Mrs. Okafor auf der Leiter, ihre Kennfrage an Juno,
+// das lange Ansehen, „Whitlock.“ mit Stille (Klang: alles setzt aus bis auf die Uhr), die sechs
+// Wörter, „Aha.“ und kein Weiterfragen. Später: #musik:stille bei „Whitlock“.
 ~ okaforGetroffen = true
-Hohe Regale, grüne Leselampen, vier Bretter an einem langen Tisch. Eine ältere Dame sieht von einem Buch auf. #sprecher:erzaehler
-// Runde 11: Am Freitag ist nur die Vorhut da (Roman, Kapitel 11).
-{not teamAngekommen: Ihr seid die Vorhut. Die Matten liegen im Lesesaal. #sprecher:okafor}
-Das Team aus Maple Falls. Willkommen. Ich bin Grace Okafor. #sprecher:okafor #stimmung:froh
-Ihr Blick bleibt an deinem Rucksack hängen. Am Rand des alten Bretts sieht man eingebrannte Buchstaben: A. W. 1857. #sprecher:erzaehler
-Whitlock. #sprecher:okafor #pause
-* [„Woher kennen Sie den Namen?“]
-    Aus einer Fußnote in einem alten Schachkalender. Unten im Archiv. #sprecher:okafor
-* [„Das Brett lag auf unserem Dachboden.“]
-    Im Whitlock-Haus in Maple Falls? Dann passt es. #sprecher:okafor
-// Runde 11: „Sechs Wörter“ (Roman, Kapitel 11). Sie fragt nicht weiter; das ist ihre Art.
-- Niemand schreibt über ihn. Eine Fußnote, sechs Wörter. #sprecher:okafor
-Was glaubst du denn, warum ein Brett so alt wird? Weil jemand es liebt. #sprecher:okafor
-Sie kennt meinen Namen. Nach hundertsechzig Jahren. #sprecher:ambrose #stimmung:traurig
-Ich weiß nicht, ob ich mich freuen soll. #sprecher:ambrose
-Sechs Wörter. Eine Fußnote. #sprecher:ambrose #stimmung:bitter
-Im Keller hatten wir einen Wasserschaden. Hilfst du mir beim Umräumen, suchen wir den Kalender gemeinsam. #sprecher:okafor
-* [„Klar helfe ich.“]
-    Danke. Die Treppe hinten führt hinunter. Ich komme gleich nach. #sprecher:okafor
+Hohe Regale, grüne Leselampen, vier Bretter, an denen niemand sitzt. Eine kleine Frau steht auf einer Leiter. #sprecher:erzaehler
+Sie stellt ein Buch zurück und steigt herunter, ohne sich festzuhalten. #sprecher:erzaehler
+{teamAngekommen: Das Team aus Maple Falls. Grace Okafor. #sprecher:okafor|Ihr seid die Vorhut. Grace Okafor. Die Matten liegen im Lesesaal. #sprecher:okafor}
+Juno Martínez. Du hast im Frühjahr gegen Mae deine Dame auf ein Feld gestellt, auf dem ein Springer stand. #sprecher:okafor
+Ich dachte, der gehört mir. #sprecher:juno
+Was glaubst du denn, warum er dort stand? #sprecher:okafor
+* [Juno anstoßen]
+* [Nichts sagen]
+- Dann sieht sie dich an. Dann deinen Rucksack, aus dem eine Ecke des Bretts ragt. Sie sagt lange nichts. #sprecher:erzaehler #pause:2
+Darf ich? #sprecher:okafor
+* [Ihr das Brett geben]
+* [Nicken]
+- Sie hält es ins Licht der grünen Lampe und fährt mit dem Daumen über den Rand. #sprecher:erzaehler
+A. W. Achtzehnhundertsiebenundfünfzig. #sprecher:okafor
+Whitlock. #sprecher:okafor #pause:3
+* [„Sie kennen den Namen?“]
+* [Still bleiben]
+- Er steht in einer Fußnote. In einem alten Schachkalender, unten im Archiv. #sprecher:okafor
+Niemand schreibt über ihn. Eine Fußnote, sechs Wörter. #sprecher:okafor
+Woher hast du das? #sprecher:okafor
+* [„Vom Dachboden. Wir sind in das Haus gezogen.“]
+* [„Es lag in einer Kiste.“]
+- Aha. #sprecher:okafor
+Sie gibt dir das Brett zurück, mit beiden Händen. Dann nimmt sie die Brille ab und putzt sie. Sie fragt nicht weiter. #sprecher:erzaehler
+Manche Dinge erzählt man, wenn man so weit ist. #sprecher:okafor
+Sechs Wörter. #sprecher:ambrose #pause
+Eine Fußnote. #sprecher:ambrose #stimmung:bitter
+{teamAngekommen: Nach dem Spiel gehen wir hinunter und sehen nach.|Nach dem Spiel morgen gehen wir hinunter und sehen nach.} Oder heute schon, wenn du mir tragen hilfst. #sprecher:okafor
+* [„Ich helfe tragen.“]
+    Wir hatten Wasser im Keller. Die Treppe hinten führt hinunter. Ich komme gleich nach. #sprecher:okafor
 * [„Erst will ich spielen.“]
-    Gut so. Erst die Aufgaben von Dex und Mae, dann gegen mich. #sprecher:okafor
-    Der Keller wartet. #sprecher:okafor
+    Erst Dex, dann Mae. Eins nach dem anderen. Der Keller wartet. #sprecher:okafor
 - -> END
 
 === okafor_reihe_offen ===
 {
-- not reiheDexBestanden: Fang bei Dex an, dann kommt Mae. Geduld. Ein Matt ist ein Bild, und Bilder lernt man eins nach dem anderen. #sprecher:okafor
+- not reiheDexBestanden: Fang bei Dex an. Dann Mae. Eins nach dem anderen. #sprecher:okafor
 - else: Dex hast du geschafft. Jetzt Mae. Sie kennt mehr Mattbilder als ich. #sprecher:okafor
 }
 {not archivGeordnet:
@@ -151,15 +164,14 @@ Das heißt: Schau auch auf meine Züge, nicht nur auf deine. Noch einmal? #sprec
 === dex_erstes_treffen ===
 ~ dexGetroffen = true
 Ein Junge sitzt zwischen Kabeln und einem halb gebauten Roboter. Daneben ein Brett. #sprecher:erzaehler
-Dex. Mrs. Okafor ist meine Oma. Ich baue Dinge, die fast funktionieren. #sprecher:dex
-Schach ist wie ein Schaltplan. Wenn der Turm hier steht, ist das wie ein Kurzschluss. #sprecher:dex
-Alles ist tot. #sprecher:dex
-Ein Bastler. Zu meiner Zeit bauten solche Leute Dampfkessel. #sprecher:ambrose
-Manche explodierten. #sprecher:ambrose
+Dex. Halt mal. #sprecher:dex
+Er drückt dir eine Zange in die Hand. #sprecher:erzaehler
+Fast fertig. Es ist immer fast fertig. #sprecher:dex
+Schach ist wie ein Schaltplan. Wenn der Turm hier steht, ist das wie ein Kurzschluss. Alles ist tot. #sprecher:dex
 -> dex_reihe
 
 === dex_reihe ===
-Meine Aufgaben sind Matt in eins. Ein Zug, und der König kann nirgends mehr hin. #sprecher:dex
+Siehst du? Kurzschluss. Matt in eins. Such. #sprecher:dex
 * [„Her damit.“]
     ~ beginneAufgaben("cedarCreek.reiheDex")
     -> END
@@ -196,9 +208,10 @@ Erst Dex, dann ich. Meine sind schwerer. Matt in zwei! #sprecher:mae
 -> END
 
 === mae_reihe ===
-Matt in zwei und Mattbilder: Grundreihe, Erstickung, Anastasia, das Arabische. #sprecher:mae
-Mattbilder sind wie Gesichter. Wer eines kennt, erkennt es in jeder Menge. #sprecher:ambrose
-Präg sie dir ein, {held}. Sie kommen wieder. #sprecher:ambrose
+Das hier ist das Arabische. Und das … #sprecher:mae
+Sie senkt die Stimme. #sprecher:erzaehler
+Das ist das Erstickte. Da hat der König so viele Freunde um sich, dass er keine Luft kriegt. #sprecher:mae
+Mattbilder sind wie Gesichter. Wer eines kennt, erkennt es in jeder Menge. #sprecher:ambrose #stimmung:still
 * [„Los geht's.“]
     ~ beginneAufgaben("cedarCreek.reiheMae")
     -> END

@@ -30,6 +30,7 @@ VAR endeAkt1Gesehen = false
 VAR aufbruchRivertonGesehen = false
 VAR gefundenSchluessel = false
 VAR nachtImLesesaal = false
+VAR schildCedarGesehen = false
 VAR teamAngekommen = false
 VAR nadelRiverton = 0
 VAR nadelIronwood = 0
@@ -39,14 +40,20 @@ VAR ambroseNenntNamen = false
 // ---------------------------------------------------------------- Ankunft
 
 === ankunft ===
+// Runde 11 (VC26 bis VC30, Roman Kapitel 10 und 11): ein Knoten für beide Wege. {held} und Juno
+// kommen am Freitag still an; Coach und Bus kommen erst am Samstagmorgen (team_kommt). Ambrose
+// spricht in dieser Szene nur am Plakat. Später: #musik:cedarCreek (Klavier allein) nach der Uhr.
 ~ ankunftCedarCreekGesehen = true
-Der gelbe Schulbus hält mit einem Seufzer. Rote Zedern, ein Bach, eine Bibliothek aus Backstein. #sprecher:erzaehler #klang:bus
-Auswärtsspiel, Leute! Wir spielen im Bibliotheksclub. #sprecher:coachDelgado #klang:pfiff
-Die Chefin dort ist eine Legende, die niemand kennt. #sprecher:coachDelgado
-Eine Bibliothek als Club. Spielen die da flüsternd? #sprecher:sam
-Ich hab Kekse dabei. Für die Nerven. Und fürs Tagebuch, falls wir gewinnen. #sprecher:juno #stimmung:froh
-Bevor ihr reingeht: Seht euch ruhig um. Der Bus fährt erst am Abend zurück. #sprecher:coachDelgado
-Eine Stadt mit Bäumen, die älter sind als ich. Endlich etwas, das mich nicht jung fühlen lässt. #sprecher:ambrose
+{not schildCedarGesehen: Zwischen den Bäumen schlägt eine Uhr. Viermal, langsam. #sprecher:erzaehler #klang:turmuhr #pause:3}
+Cedar Creek ist kleiner als Maple Falls und sieht älter aus. In der Mitte, wo woanders eine Kirche steht, steht die Bibliothek. #sprecher:erzaehler
+Auf ihrer Treppe sitzen zwei Kinder, die gleich aussehen, mit Figuren in den Händen und ohne Brett. #sprecher:erzaehler
+„Ich hab gewonnen!“ – „Du hast den Turm bewegt, als ich nicht geguckt hab!“ – „Du guckst nie!“ #sprecher:erzaehler
+* [„Wer hat denn gewonnen?“]
+    Beide zeigen auf sich. Dann aufeinander. #sprecher:erzaehler
+* [Leise vorbeigehen]
+    Sie verstummen und sehen euch nach. #sprecher:erzaehler
+- Hier flüstert sogar die Straße. #sprecher:juno
+Mrs. Okafor erwartet uns. Der Coach kommt erst morgen mit dem Bus. #sprecher:juno
 -> END
 
 // ---------------------------------------------------------------- Plakat
@@ -55,10 +62,10 @@ Eine Stadt mit Bäumen, die älter sind als ich. Endlich etwas, das mich nicht j
 {not ankunftCedarCreekGesehen: -> ankunft}
 {nachtImLesesaal and not teamAngekommen: -> team_kommt}
 Ein großes, glänzendes Plakat: „Perfect Move – Schach für die Zukunft. Bald auch in deiner Stadt.“ #sprecher:erzaehler
-Darauf ein Schachbrett aus Licht und eine Hand, die keinem Menschen gehört. #sprecher:erzaehler
+Darauf ein Kind, das in einen Bildschirm lächelt. Es ist das einzige Glänzende weit und breit. #sprecher:erzaehler
 Ein Plakat, das droht. Wie reizend. #sprecher:ambrose #stimmung:streng
 * [„Das ist die Firma von Victors Vater.“]
-    Dann wissen wir, wer den Leim angerührt hat. #sprecher:ambrose
+    So. Dann hat die Drohung einen Namen. #sprecher:ambrose
 * [„Vielleicht ist das gar nicht so schlecht.“]
     Vielleicht. Eine Maschine, die Schach spielt. #sprecher:ambrose
     Ich gestehe: Ich bin neugierig. #sprecher:ambrose
@@ -328,25 +335,14 @@ Victor spielt weiter auf seinem Tablet. Er sieht nicht auf. #sprecher:erzaehler
     -> END
 
 // ---------------------------------------------------------------- Ankunft zu Fuß (W5)
-// Ankunft über den Flussweg statt mit dem Bus; setzt dieselbe Variable wie „ankunft“, damit die
-// Ankunft mit dem Bus danach nicht noch einmal läuft.
+// Ankunft über den Flussweg: dieselbe Szene wie „ankunft“ (Runde 11, VC30).
 
 === ankunft_zu_fuss ===
 {ankunftCedarCreekGesehen:
     Der Flussweg endet an der Bushaltestelle von Cedar Creek. #sprecher:erzaehler
     -> END
 }
-// Runde 11: Wer zu Fuß kommt, kommt am Freitag, das Team erst am Samstag (Roman, Kapitel 10). Die
-// alte Fassung darunter bleibt bis zur Dialogprüfung stehen, läuft aber nicht.
--> ankunft_freitag
-~ ankunftCedarCreekGesehen = true
-Der Flussweg endet zwischen roten Zedern an der Bushaltestelle. Vor dir eine Bibliothek aus Backstein. #sprecher:erzaehler
-Da bist du ja! Zu Fuß? #sprecher:juno #stimmung:froh
-Respekt. Wir sind mit dem Bus vorgefahren. #sprecher:juno
-Auswärtsspiel im Bibliotheksclub, Leute! Die Chefin dort ist eine Legende, die niemand kennt. #sprecher:coachDelgado #klang:pfiff
-Seht euch ruhig um. Der Bus fährt erst am Abend zurück. #sprecher:coachDelgado
-Ein Weg zu Fuß, ein Fluss, eine fremde Stadt. So reiste ich, als ich jung war. #sprecher:ambrose #stimmung:stolz
--> END
+-> ankunft
 
 // ---------------------------------------------------------------- Aufbruch nach Riverton (Akt 2)
 // Übergang „zedernwald“ am Steg (orte.json, wenn: endeAkt1Gesehen): läuft vor dem Wechsel auf
@@ -378,20 +374,9 @@ Auf dem Handy eine Nachricht von Mama: „Mit dem Zug zurück, vor dem Dunkelwer
 // Geänderter Ablauf (docs/spiel/roman/akt1_teil3.md, „Neu gegenüber der Story-Bibel“): {held}
 // und Juno kommen am Freitag zu Fuß an, schlafen im Lesesaal, das Team kommt am Samstag mit dem
 // Bus. Der Bus bleibt für die Rückfahrt und zum Hin- und Herfahren. Die Turmuhr schlägt bei der
-// Ankunft (Klang turmuhr, neu; Dokument 21 ordnet ihn zu). Stimmung: still, dann forschend.
-// Später, wenn mittel-2 sie gebaut hat: #musik:cedarCreek beim Ankommen, #pause:3 nach der Uhr.
+// Ankunft (Klang turmuhr, neu; Dokument 21 ordnet ihn zu); die Ankunft selbst steht im Knoten
+// „ankunft“ oben. Stimmung: still, dann forschend.
 
-=== ankunft_freitag ===
-~ ankunftCedarCreekGesehen = true
-Am Ende des Pfades steht ein Schild aus Holz: „Cedar Creek. Gegr. 1851.“ #sprecher:erzaehler
-Zwischen den Bäumen schlägt eine Uhr. Vier Schläge, langsam, als hätte sie alle Zeit der Welt. #sprecher:erzaehler #klang:turmuhr #pause
-Die Bibliothek. Mrs. Okafor erwartet uns. Der Coach kommt erst morgen mit dem Bus. #sprecher:juno #stimmung:froh
-Und heute Nacht schlafen wir zwischen den Büchern! Das kommt ins Tagebuch. #sprecher:juno
-Eine Uhr, die sich Zeit lässt. Endlich ein Ort nach meinem Takt. #sprecher:ambrose
--> END
-
-// Samstagmorgen an der Haltestelle (Roman, Kapitel 14, Schluss): Bus und Pfiff. Läuft nach der
-// Nacht im Lesesaal beim ersten Gespräch an der Haltestelle (plakat, bus_zurueck).
 === team_kommt ===
 ~ teamAngekommen = true
 Über dem Ort schlägt die Uhr acht. Auf der Straße klappert ein Bus, dann ein Pfiff auf zwei Fingern. #sprecher:erzaehler #klang:pfiff

@@ -20,6 +20,7 @@ EXTERNAL beginnePartie(begegnung)
 EXTERNAL beginneAufgaben(runde)
 
 VAR held = "Du"
+VAR rivertonMontagGesehen = false
 VAR slickGetroffen = false
 VAR tamsinGetroffen = false
 VAR rayGetroffen = false
@@ -87,7 +88,13 @@ Ambrose steht nicht neben dir. Er steht am Rand des Pavillons, wo das Dach aufh�
 // Kapitel 22: Sonntag, Regen auf Blech, alle sind gekommen. Slick redet nicht. Die Zeit wählt
 // {held} im Spiel; die Wahl hier ist die Antwort im Gespräch (lang ist die ehrliche Fassung).
 // Momente in der Partie stehen in begegnungen.json (riverton.clubkampf). Musik riverton.clubkampf.
-Am Sonntag regnet es richtig. Es trommelt so laut aufs Blechdach, dass man schreien muss. #sprecher:erzaehler #musik:riverton.clubkampf
+// Gutachten K2.9: erst die Frage, dann der Sonntag.
+Sonntag ist das letzte Spiel. Bist du so weit? #sprecher:slick
+* [„Ich bin so weit.“]
+* [„Noch nicht.“]
+    Bis Sonntag ist noch Zeit. Nicht viel. #sprecher:slick
+    -> END
+- Am Sonntag regnet es richtig. Es trommelt so laut aufs Blechdach, dass man schreien muss. #sprecher:erzaehler #musik:riverton.clubkampf
 Trotzdem sind alle gekommen, unter Schirmen in drei Reihen. Pops, Mr. Harlan, Mrs. Albescu, Mr. Quinn zwischen zwei Zügen. #sprecher:erzaehler
 Slick hat den Tisch mit der Mulde freigeräumt. Er hat die Kuriertasche abgelegt, zum ersten Mal. Er redet nicht. #sprecher:erzaehler
 Blitz? Drei Minuten. Wie es sich gehört. #sprecher:slick
@@ -99,12 +106,17 @@ Er lebt von der Eile. Nimm ihm die Eile. #sprecher:ambrose
     Gut. Dann eben lang. Soll ja was davon bleiben. #sprecher:slick
 * [„Blitz. Drei Minuten.“]
     Mutig. Oder dumm. Wir finden es raus. #sprecher:slick #stimmung:froh
-* [„Noch nicht.“]
-    Bis Sonntag ist noch Zeit. Nicht viel. #sprecher:slick
-    -> END
 - Er beugt sich vor, und einen Moment ist er wieder der Alte. #sprecher:erzaehler
 Das hier ist der letzte Tisch mit echten Figuren. Wenn du verlierst, verlierst du gegen Riverton. #sprecher:slick
 ~ beginnePartie("riverton.clubkampf")
+-> END
+
+// Gutachten K2.10: Mr. Odums Satz als geführter Moment, mit der stehenden Hand (Partiemoment
+// schachGegeben in begegnungen.json).
+=== clubkampf_odum ===
+Slicks Hand bleibt in der Luft stehen, über dem Brett. #sprecher:erzaehler #pause:2
+Mr. Odum hat das immer gesagt. Marcus, du rennst nach vorn, und hinter dir brennt das Haus. #sprecher:slick
+Jedes Mal. Vierzehn Jahre lang. #sprecher:slick
 -> END
 
 === slick_nach_niederlage ===
@@ -144,11 +156,15 @@ Lang spielen. Ich. Wer hätte das gedacht. #sprecher:slick
     Dann spielen wir eben auf der Treppe. Die Treppe gehört der Stadt. #sprecher:slick
     -> slick_alltag_wahl
 }
+// Gutachten K2.8: der Montag als eigener Zustand; erst danach öffnet der Wohnwagen.
+~ rivertonMontagGesehen = true
+Am Montag, nach der Schule, fahrt ihr noch einmal hin. Juno hat gesagt, man müsse es sehen. #sprecher:erzaehler #musik:aus
 Im Pavillon stehen Bildschirmtische. Vier Stück, im Kreis, weiß. Die Steintische sind weg. #sprecher:erzaehler #musik:konzern.flaeche
 Auf dem Boden sieht man noch, wo sie standen: vier helle Flecken im Holz. #sprecher:erzaehler #pause:2
-Slick kniet in der Mitte und packt die Steinplatte mit der Mulde in seine Kuriertasche. Sie passt kaum hinein. #sprecher:erzaehler
+Slick kniet in der Mitte und packt die Steinplatte mit der Mulde in seine Kuriertasche. Ohne das Reden sieht er jünger aus. #sprecher:erzaehler
 Die haben sie mir gelassen. Einer von den Arbeitern hat weggeguckt. #sprecher:slick
-Er zieht den Riemen fest. #sprecher:erzaehler
+* [Warten]
+- Er zieht den Riemen fest. #sprecher:erzaehler
 Dann spielen wir eben auf der Treppe. Ich wohn im Wohnwagen am Fluss, an der alten Steinbrücke. #sprecher:slick
 -> slick_alltag_wahl
 
@@ -215,8 +231,9 @@ Zuschauen? Slick und Ray spielen schon wieder. #sprecher:tamsin
 
 === tamsin_zettel ===
 ~ tamsinZettelGegeben = true
-Er sieht alles, was laut ist. Aber wenn Ray leise einen Turm zur Seite schiebt, spielt er einfach weiter. #sprecher:tamsin
-Er guckt nur nach vorn. Nie nach hinten. #sprecher:tamsin
+// Gutachten K2.15: Die Entdeckung gehört dem Helden; Tamsin sagt nur die zwei Sätze.
+Er guckt nur nach vorn. #sprecher:tamsin #pause
+Nie nach hinten. #sprecher:tamsin
 Sie schreibt etwas auf einen Zettel und schiebt ihn dir zu: „Schottisch. Immer. Und Evans, wenn er gut drauf ist.“ #sprecher:erzaehler
 Hast du nicht von mir. #sprecher:tamsin
 -> END
@@ -263,9 +280,10 @@ Er legt seine große Hand auf den Stein. #sprecher:erzaehler
 Hier hab ich neunundsechzig gegen Odum verloren. Und zweiundsiebzig. #sprecher:ray
 Und jedes Jahr danach. Der Stein ist hier dünner als da drüben. Fühl mal. #sprecher:ray
 * [Die Hand auf den Stein legen]
-    Es stimmt. Eine flache Mulde, wo sechzig Jahre lang Hände gelegen haben. #sprecher:erzaehler #pause
 * [Nicken]
-- Eine Gabel ist ein Zug, der zwei Briefe auf einmal zustellt. #sprecher:ambrose
+    Du nickst. Dann legst du die Hand doch hin. #sprecher:erzaehler
+- Es stimmt. Eine flache Mulde, wo sechzig Jahre lang Hände gelegen haben. #sprecher:erzaehler #pause:2
+Eine Gabel ist ein Zug, der zwei Briefe auf einmal zustellt. #sprecher:ambrose
 Er sagt es freundlich. Aber zwischen zwei Sätzen geht sein Blick hinaus auf die Wiese. #sprecher:erzaehler
 -> ray_reihe_wahl
 

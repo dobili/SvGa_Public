@@ -223,9 +223,9 @@ Im Pumpenhaus brummt eine alte Pumpe. An der Tür hängt ein Zettel: „Läuft. 
 }
 ~ seite02Gefunden = true
 ~ buchseiten = buchseiten + 1
-An der Reling hat sich ein Blatt Papier verfangen, nass vom Gischt. Eine lose Seite voller Schachdiagramme. #sprecher:erzaehler
+An der Reling hat sich ein Blatt Papier verfangen, nass vom Gischt. Darauf eine gezeichnete Stellung. #sprecher:erzaehler
 ~ gibFund("seite02")
-Jemand verliert sein Buch Seite für Seite. Heben wir sie auf. #sprecher:ambrose
+Der Wind verteilt Stellungen übers ganze Land. Heben wir sie auf. #sprecher:ambrose
 -> END
 
 === finch_turm_a ===

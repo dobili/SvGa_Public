@@ -169,7 +169,8 @@ Bank davor, auf der Abe Lindgren sitzt, ein alter Mann mit Kapitänsmütze, der 
 ein Schachbrett auf den Knien hat. Von hier sieht man im Osten zum ersten Mal die Stadt: Kuppeln,
 Glas, Fahnen.
 
-Die Capital Arena ist kein Betonklotz, sondern ein alter Prachtbau mit Kuppeln und Glasdach, in dem
+Die Capital Arena ist rund und weiß, mit einem Dach wie eine Muschel (gebaut ist ein alter Prachtbau mit
+Kuppeln und Glasdach; noch umzubauen, Entscheidung 13.11.2026), in der
 heute die Landesmeisterschaft spielt. Eine breite Freitreppe führt hinauf, links und rechts wehen
 Fahnen, auf dem Vorplatz plätschert ein Brunnen, zwei Imbisswagen verkaufen Limonade und Brezeln,
 und Fans aus allen Städten des Spiels laufen mit Schals herum. Der Sommerabend ist lang: Wenn
@@ -249,7 +250,9 @@ ein Fanshop mit Schals und T-Shirts.
   `fernpartieGespielt` und `novaBitteGehoert`, der Wachmann erklärt). `ereignisWeltschachtag` (140, 13)
   mit Quest `wegGhostCapital.weltschachtag` (klein): Simultan `wegGhostCapital.simultan`
   (partieformen.json: fünf Stellungsduelle aus Kapitel 6, Abschnitt 6.8, Abbildungen 6.33 bis 6.38,
-  gegen Slick, Big Joe, Mrs. Okafor, Céleste und Hollis; drei Punkte bestehen), danach Abes Partie gegen die Welt, Foto, 25
+  gegen Slick, Big Joe, Mrs. Okafor, Hollis und eine fünfte Gegnerin; drei Punkte bestehen; gebaut ist
+  als fünfte Céleste, die nach Bibel, Szene 68, nur eine einzige Partie spielt: Besetzung offen,
+  noch umzubauen, Entscheidung 13.11.2026), danach Abes Partie gegen die Welt, Foto, 25
   Münzen. Figur Wanderer (`wegGhostCapital.wanderer`, (124, 15)) nimmt die Buchseiten zurück.
   `seite12` am Anleger (A (59, 8), B (99, 8), C (33, 8)), `faehrterminal` (A (48, 12), B (88, 12), C
   (22, 12)).

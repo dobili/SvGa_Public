@@ -265,4 +265,106 @@ Regeln, die daraus folgen:
 
 ## Teil D: Beschaffung
 
-_Wird mit der Recherche ergänzt._
+Recherche vom 13.11.2026. Die Lizenzseiten wurden selbst abgerufen; was dort nicht gelesen werden
+konnte, ist mit „(nicht geprüft)“ markiert. **Kein Stück wurde angehört**: Ob es zum Stil passt, ist
+aus Instrumentenangaben, Schlagworten und Beschreibungen geschlossen. Vor jeder Übernahme anhören.
+
+### D1. Was für ein öffentliches GPL-Repository gilt
+
+Das Repository ist öffentlich, also wird jede Tondatei als Rohdatei weitergegeben, nicht nur im
+fertigen Spiel. Drei Folgen:
+
+1. **Brauchbar sind nur freie Lizenzen:** CC0 und CC BY 4.0 sind laut FSF mit der GPL verträglich
+   („Both public domain works and the lax license provided by CC0 are compatible with the GNU
+   GPL“; zu CC BY 4.0: „It is compatible with all versions of the GNU GPL“,
+   gnu.org/licenses/license-list). Medien dürfen eine andere Lizenz haben als der Code
+   (OpenGameArt-FAQ: „game code and game media are separate entities“).
+2. **CC BY-SA 4.0 nur in eine Richtung:** Eine bearbeitete Fassung darf unter GPL-3.0 stehen
+   (creativecommons.org/compatiblelicenses: „one-way only“), aber nicht unter CC0 oder CC BY. CC BY
+   3.0 und CC BY-SA 3.0 dürfen als eigene Datei mit ihrer Lizenz im Repository liegen, lassen sich
+   aber nicht unter die GPL stellen.
+3. **„Nicht kommerziell“ (NC) ist ausgeschlossen:** Die GPL erlaubt jedem den Verkauf, NC verbietet
+   ihn.
+
+### D2. Quellen
+
+| Quelle                                   | Lizenz                                             | Im öffentlichen Repo?                                                                                                               | Namensnennung                                                                                                                                                          | Preis               | Beleg                                                                                                                 |
+| ---------------------------------------- | -------------------------------------------------- | ----------------------------------------------------------------------------------------------------------------------------------- | ---------------------------------------------------------------------------------------------------------------------------------------------------------------------- | ------------------- | --------------------------------------------------------------------------------------------------------------------- |
+| **OpenGameArt.org**                      | je Datei CC0, CC BY 3.0/4.0, CC BY-SA, OGA-BY, GPL | ja bei CC0, CC BY 4.0, OGA-BY, GPL 3, CC BY-SA 4.0 (siehe D1); CC BY 3.0 nur als eigene Datei                                       | außer bei CC0 Pflicht: „[Titel]“ by [Urheber] licensed [Lizenz]: [Link]                                                                                                | kostenlos           | opengameart.org/content/faq: „the licenses that can be selected on this site are meant to be GPL-compatible“          |
+| **Freesound.org**                        | je Datei CC0, CC BY 4.0, CC BY-NC                  | CC0 und CC BY: ja; **NC nie**                                                                                                       | bei CC BY: Titel, Urheber, Link, Lizenz                                                                                                                                | kostenlos           | freesound.org/help/faq: „For "attribution" you should always mention the original creators“                           |
+| **Kenney.nl**                            | CC0                                                | ja                                                                                                                                  | nicht nötig                                                                                                                                                            | kostenlos           | kenney.nl/support: „all game assets on the asset pages are public domain licensed (CC0)“                              |
+| **Incompetech (Kevin MacLeod)**          | CC BY 4.0 (oder Kauflizenz ohne Nennung)           | ja                                                                                                                                  | Pflicht, sichtbar im Abspann: „Titel Kevin MacLeod (incompetech.com) Licensed under Creative Commons: By Attribution 4.0 https://creativecommons.org/licenses/by/4.0/“ | kostenlos           | incompetech.com/music/royalty-free/faq.html („Video Games — Most commonly, credits are placed on a "Credits" screen“) |
+| **itch.io, Pakete mit CC0 oder CC BY**   | je Paket                                           | nur wenn die Seite CC0 oder CC BY nennt; eigene Lizenzen verbieten meist das Weiterverteilen                                        | je Paket                                                                                                                                                               | 0 bis 15 $          | Beispiel eines Verbots: ELV Games, Farming RPG Music Pack („You cannot: Resell these asset packs, not even modified“) |
+| **Pixabay** (Musik und Geräusche)        | Pixabay Content License                            | **nein**: verboten ist die Weitergabe „on a Standalone basis“, also unverändert als Datei                                           | nicht nötig                                                                                                                                                            | kostenlos           | pixabay.com/service/terms, Abschnitt 5                                                                                |
+| **Sonniss GDC Bundle**                   | eigene Lizenz                                      | **nein**: „may not distribute … the sound effects as sound effects“                                                                 | –                                                                                                                                                                      | kostenlos           | sonniss.com/gdc-bundle-license                                                                                        |
+| **BBC Sound Effects**                    | nur persönlich, Bildung, Forschung                 | **nein** (Lizenzseite lädt nur mit JavaScript, nicht geprüft)                                                                       | –                                                                                                                                                                      | –                   | sound-effects.bbcrewind.co.uk                                                                                         |
+| **Unity Asset Store**                    | Standard-EULA                                      | **nein**: Weitergabe nur „as incorporated and embedded“ in ein Produkt; einzeln herunterladbare Dateien zählen nicht dazu           | –                                                                                                                                                                      | kostenpflichtig     | unity.com/legal/as-terms §2.2.1, assetstore.unity.com/browse/eula-faq                                                 |
+| **GameDev Market, Humble-Bundle-Pakete** | proprietär                                         | vermutlich nein (Lizenzseiten nicht ladbar, nicht geprüft)                                                                          | –                                                                                                                                                                      | kostenpflichtig     | –                                                                                                                     |
+| **Suno** (KI)                            | AGB vom 10.08.2026                                 | kostenlose und Basic-Stufe: **nein** (nur privat); Pro/Premier: Rechte gehen an den Nutzer, ob ein Urheberrecht entsteht, ist offen | –                                                                                                                                                                      | Pro kostenpflichtig | suno.com/terms: „Suno makes no representation or warranty to you that any copyright will vest in any Output“          |
+| **Udio** (KI)                            | AGB                                                | **nein**: nur privat, Herunterladen nicht erlaubt                                                                                   | –                                                                                                                                                                      | –                   | udio.com/terms-of-service                                                                                             |
+| **Stable Audio** (KI)                    | Stability Community License (Modelle)              | Ausgaben gehören dem Nutzer bis 1 Mio. $ Jahresumsatz; AGB des Webdiensts nicht geprüft                                             | –                                                                                                                                                                      | –                   | stability.ai/license                                                                                                  |
+
+**KI-Musik:** Nach dem Bericht des US Copyright Office (Januar 2025) machen Eingaben allein den
+Nutzer nicht zum Urheber („prompts alone do not provide sufficient human control“). Eine GPL- oder
+CC-Angabe an einer solchen Datei wäre rechtlich leer, die AGB des Anbieters gelten trotzdem, und es
+bleibt das Risiko, dass das Modell fremde Werke nachbildet. Für dieses Repository deshalb nicht.
+
+### D3. Kandidaten für die fünf Schlüsselstücke
+
+Lizenz und Urheber auf der Seite selbst gelesen; für Incompetech aus dem offiziellen Katalog
+(incompetech.com/music/royalty-free/pieces.json), die MP3-Links antworten. Nicht angehört.
+
+| Stück                                          | Kandidat                            | Urheber           | Link                                                                                 | Lizenz    | Anmerkung                                                                                                                 |
+| ---------------------------------------------- | ----------------------------------- | ----------------- | ------------------------------------------------------------------------------------ | --------- | ------------------------------------------------------------------------------------------------------------------------- |
+| `mapleFalls`                                   | Clear Air                           | Kevin MacLeod     | https://incompetech.com/music/royalty-free/mp3-royaltyfree/Clear%20Air.mp3           | CC BY 4.0 | Gitarre und Klavier, ruhig, 68 BPM, 3:04, ohne Schlagzeug. Passt am besten zur Vorgabe.                                   |
+|                                                | A Small Fire Will Do (Calming Loop) | Trex0n            | https://opengameart.org/content/a-small-fire-will-do-calming-loop                    | CC0       | akustische Gitarre, „village“, schon als Schleife                                                                         |
+|                                                | Sunset Plains                       | Yoiyami           | https://opengameart.org/content/sunset-plains                                        | CC0       | sanfte Gitarre, aber mit Flächenklängen; eher New Age                                                                     |
+| `ambrose`                                      | Harpsichord Flurry                  | Spring Spring     | https://opengameart.org/content/harpsichord-flurry                                   | CC0       | Cembalo mit Cello-Pizzicato; **MIDI liegt bei**, also lässt sich das Motiv aus A1 damit neu setzen                        |
+|                                                | Sinfonia Number 5 (nach J. S. Bach) | Kevin MacLeod     | https://incompetech.com/music/royalty-free/mp3-royaltyfree/Sinfonia%20Number%205.mp3 | CC BY 4.0 | Cembalo allein, ernst; ein Ausschnitt für `ambrose.erinnerung`                                                            |
+|                                                | Harpsichord                         | Alexandr Zhelanov | https://opengameart.org/content/harpsichord                                          | CC BY 3.0 | barock; nur als eigene Datei, nicht unter GPL zu stellen                                                                  |
+| `koenig_heben` und `glocke_hell`               | Cymbal Swell 2.wav (Anschwellen)    | rubberduckie      | https://freesound.org/people/rubberduckie/sounds/219835/                             | CC0       | Becken mit weichen Schlägeln; Ausschnitt, tiefer und weicher abmischen                                                    |
+|                                                | Mystical female choir swell 01      | Johnmode          | https://freesound.org/people/Johnmode/sounds/819290/                                 | CC0       | Chor mit Hall, 7,6 s; geisterhaft, nicht gruselig                                                                         |
+|                                                | Single Chime 2 (Glockenton)         | steffcaffrey      | https://freesound.org/people/steffcaffrey/sounds/449947/                             | CC0       | ein Schlag eines Windspiels, 4,5 s                                                                                        |
+|                                                | Single chime (Glockenton)           | LloydEvans09      | https://freesound.org/people/LloydEvans09/sounds/185822/                             | CC0       | 7,7 s, trocken, Hall selbst hinzufügen                                                                                    |
+| `turmuhr`                                      | Church Clock Strikes 8.wav          | JarredGibb        | https://freesound.org/people/JarredGibb/sounds/219055/                               | CC0       | acht Schläge, 22 s; einzelne Schläge herausschneiden für `#klang:turmuhr:N`                                               |
+|                                                | mourezebellsHPF1.wav                | AGC66             | https://freesound.org/people/AGC66/sounds/394657/                                    | CC0       | sechs Schläge mit Wind, 15 s                                                                                              |
+|                                                | church_clock_striking.wav           | reinsamba         | https://freesound.org/people/reinsamba/sounds/38010/                                 | CC BY 4.0 | Kleinstadt, neun Schläge, 1:15; Nennung nötig. **Nicht** Freesound 481969 (CC0 angegeben, aber „ASK FOR COMMERCIAL USE!“) |
+| `mapleFalls.clubkampf`, `cedarCreek.clubkampf` | Thinking Music                      | Kevin MacLeod     | https://incompetech.com/music/royalty-free/mp3-royaltyfree/Thinking%20Music.mp3      | CC BY 4.0 | Streicher und Harfe, spannend mit Augenzwinkern, ohne Schlagzeug; eher für Cedar Creek                                    |
+|                                                | Investigations                      | Kevin MacLeod     | https://incompetech.com/music/royalty-free/mp3-royaltyfree/Investigations.mp3        | CC BY 4.0 | Pizzicato, Glockenspiel, Marimba; leichtes Schlagwerk, eher für Maple Falls                                               |
+|                                                | winter courtyard                    | Bobjt             | https://opengameart.org/content/winter-courtyard                                     | CC0       | akustisch, „tense conversation“, MIDI vorhanden                                                                           |
+
+**Ein ganzes Paket für die Ortsthemen** (passend zu Grundsatz A5, eine Hand je Ort): „Pelican
+Breeze: The Cozy Farm Music Pack“ (Agavius), https://agavius.itch.io/pelicanbreeze, laut Seite
+„Creative Commons Zero v1.0 Universal“ und „No generative AI was used“, 3,99 $ (im Angebot 2,79 $);
+akustische Gitarre, Holzbläser, Marimba, im Stil von Stardew Valley. Weitere mit CC BY:
+„Enchanted Village“ (musicMenace, ab 5 $) und „RPG Town Theme“ (Sirental, kostenlos, CC BY 4.0;
+das Gitarrensample zusätzlich „by CodexBeats (ProdByNic) CC BY“ nennen).
+
+**Die Leitmotive gibt es nirgends fertig.** Ambroses Kopf, Victors Fassung, das Aha und der
+Konzernton (A1) müssen dieselben Töne haben, sonst trägt die Verwandtschaft nicht. Zwei Wege ohne
+Lizenzfrage: die kurzen Motive wie die Zugtöne in `app/src/app/ton.ts` im Browser erzeugen (für
+`aha`, `konzern`, `victor` genügt das), oder sie als MIDI setzen und mit einem frei lizenzierten
+Klangsatz rendern (dessen Lizenz dann eigens prüfen; nicht geprüft). Die CC0-MIDI-Datei von
+„Harpsichord Flurry“ ist ein guter Ausgangspunkt für `ambrose`.
+
+### D4. Ordnung im Repository
+
+- Je Tondatei ein Eintrag in einer Liste der Herkünfte (`docs/LIZENZEN.md` oder eine eigene
+  `KLANG_QUELLEN.md`): Kennung aus diesem Plan, Titel, Urheber, Link, Lizenz, Änderungen (Schnitt,
+  Schleife, Lautstärke).
+- Alle Namensnennungen erscheinen im Spiel auf einer Seite „Musik und Geräusche“ im Abspann.
+- Bearbeitete Fassungen von CC-BY-SA-4.0-Dateien stehen unter GPL-3.0 oder CC BY-SA 4.0, nie unter
+  CC0.
+
+### D5. Empfehlung
+
+Musik und Geräusche nur aus CC0- und CC-BY-4.0-Quellen nehmen (OpenGameArt, Freesound, Kenney,
+Incompetech, CC0-Pakete auf itch.io) und jede Herkunft mit Titel, Urheber, Lizenz und Link im
+Repository und im Abspann festhalten; Pixabay, Sonniss, BBC, den Unity Asset Store und KI-Dienste
+meiden, weil sie die Weitergabe der Rohdatei verbieten oder offenlassen. Für die Ortsthemen ein
+Paket aus einer Hand wählen (etwa „Pelican Breeze“, CC0) und die Leitmotive aus A1 selbst setzen,
+weil kein fertiges Stück ihre gemeinsamen vier Töne hat. Als Startbesetzung, nach dem Anhören:
+„Clear Air“ für Maple Falls, „Harpsichord Flurry“ (aus der MIDI gekürzt) für Ambrose, „Cymbal
+Swell 2“ mit „Single Chime 2“ für den König, „Church Clock Strikes 8“ für die Turmuhr und
+„Investigations“ beziehungsweise „Thinking Music“ für die Clubkämpfe in Maple Falls und Cedar
+Creek.

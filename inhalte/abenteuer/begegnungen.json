@@ -489,7 +489,31 @@
         "art": "grundstellung"
       },
       "kartenErlaubt": true,
-      "zeit": "wahl"
+      "zeit": "wahl",
+      "momente": [
+        {
+          "wenn": {
+            "abZug": 8
+          },
+          "sprecher": "ambrose",
+          "dialog": "desert-springs-garage.clubkampf_sturm"
+        },
+        {
+          "wenn": {
+            "merkmal": "schachGegen",
+            "abZug": 14
+          },
+          "sprecher": "mira",
+          "dialog": "desert-springs-garage.clubkampf_atme"
+        },
+        {
+          "wenn": {
+            "abZug": 24
+          },
+          "sprecher": "mira",
+          "dialog": "desert-springs-garage.clubkampf_atme"
+        }
+      ]
     },
     {
       "kennung": "summitCity.clubkampf",

@@ -437,6 +437,14 @@
           },
           "sprecher": "ambrose",
           "text": "moment.ambrose.zuklappen"
+        },
+        {
+          "wenn": {
+            "abZug": 18
+          },
+          "sprecher": "erzaehler",
+          "text": "moment.lin.vorsichtig",
+          "musik": "aus"
         }
       ]
     },

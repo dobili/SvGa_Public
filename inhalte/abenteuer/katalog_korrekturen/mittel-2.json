@@ -950,5 +950,113 @@
     "reihe": false,
     "sicher": 0.9,
     "korrektur": "mittel-2"
+  },
+  "spiel/eigene/holztor_zu.png": {
+    "beschreibung": "Geschlossenes zweiflügeliges Holzgatter zwischen zwei Pfosten, von vorn, für einen Weidezaun über einem Feldweg; 3 Kacheln breit.",
+    "art": "zaun",
+    "ganz": true,
+    "befestigung": "boden",
+    "gegenstuecke": "spiel/eigene/holztor_offen_links.png, spiel/eigene/holztor_offen_rechts.png",
+    "innen_aussen": "aussen",
+    "stil": "laendlich",
+    "material": "holz",
+    "zustand": "gebraucht",
+    "epoche": "gegenwart",
+    "orte": [
+      "wegMapleCedar.landstrasse"
+    ],
+    "nur_pfad": true,
+    "sicher": 0.9,
+    "korrektur": "mittel-2"
+  },
+  "spiel/eigene/holztor_offen_links.png": {
+    "beschreibung": "Linker Flügel des Holzgatters, geöffnet und an seinen Pfosten zurückgeschwenkt, von vorn.",
+    "art": "zaun",
+    "ganz": false,
+    "befestigung": "boden",
+    "gegenstuecke": "spiel/eigene/holztor_zu.png, spiel/eigene/holztor_offen_rechts.png",
+    "innen_aussen": "aussen",
+    "stil": "laendlich",
+    "material": "holz",
+    "zustand": "gebraucht",
+    "epoche": "gegenwart",
+    "orte": [
+      "wegMapleCedar.landstrasse"
+    ],
+    "nur_pfad": true,
+    "sicher": 0.9,
+    "korrektur": "mittel-2"
+  },
+  "spiel/eigene/holztor_offen_rechts.png": {
+    "beschreibung": "Rechter Flügel des Holzgatters, geöffnet und an seinen Pfosten zurückgeschwenkt, von vorn.",
+    "art": "zaun",
+    "ganz": false,
+    "befestigung": "boden",
+    "gegenstuecke": "spiel/eigene/holztor_zu.png, spiel/eigene/holztor_offen_links.png",
+    "innen_aussen": "aussen",
+    "stil": "laendlich",
+    "material": "holz",
+    "zustand": "gebraucht",
+    "epoche": "gegenwart",
+    "orte": [
+      "wegMapleCedar.landstrasse"
+    ],
+    "nur_pfad": true,
+    "sicher": 0.9,
+    "korrektur": "mittel-2"
+  },
+  "spiel/eigene/springer_missraten_1.png": {
+    "beschreibung": "Gedrechselter Holzspringer, Schachfigur, sichtlich misslungen (Versuch 1 von 3), steht klein auf einer Fensterbank oder Werkbank.",
+    "art": "deko",
+    "ganz": true,
+    "befestigung": "auf",
+    "innen_aussen": "innen",
+    "raumfunktion": "werkstatt",
+    "stil": "rustikal",
+    "material": "holz",
+    "zustand": "gebraucht",
+    "epoche": "gegenwart",
+    "orte": [
+      "cedarCreek.drechslerei"
+    ],
+    "nur_pfad": true,
+    "sicher": 0.9,
+    "korrektur": "mittel-2"
+  },
+  "spiel/eigene/springer_missraten_2.png": {
+    "beschreibung": "Gedrechselter Holzspringer, Schachfigur, sichtlich misslungen (Versuch 2 von 3), steht klein auf einer Fensterbank oder Werkbank.",
+    "art": "deko",
+    "ganz": true,
+    "befestigung": "auf",
+    "innen_aussen": "innen",
+    "raumfunktion": "werkstatt",
+    "stil": "rustikal",
+    "material": "holz",
+    "zustand": "gebraucht",
+    "epoche": "gegenwart",
+    "orte": [
+      "cedarCreek.drechslerei"
+    ],
+    "nur_pfad": true,
+    "sicher": 0.9,
+    "korrektur": "mittel-2"
+  },
+  "spiel/eigene/springer_missraten_3.png": {
+    "beschreibung": "Gedrechselter Holzspringer, Schachfigur, sichtlich misslungen (Versuch 3 von 3), steht klein auf einer Fensterbank oder Werkbank.",
+    "art": "deko",
+    "ganz": true,
+    "befestigung": "auf",
+    "innen_aussen": "innen",
+    "raumfunktion": "werkstatt",
+    "stil": "rustikal",
+    "material": "holz",
+    "zustand": "gebraucht",
+    "epoche": "gegenwart",
+    "orte": [
+      "cedarCreek.drechslerei"
+    ],
+    "nur_pfad": true,
+    "sicher": 0.9,
+    "korrektur": "mittel-2"
   }
 }

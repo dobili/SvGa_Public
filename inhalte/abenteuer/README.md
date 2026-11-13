@@ -29,7 +29,7 @@ Hintergrund: `docs/spiel/04_Architektur.md`, Abschnitt 2 und 9.
 
 - Knoten `=== name ===` sind die Einsprungpunkte; Quests warten auf „datei.knoten“.
 - Tags am Zeilenende steuern die Anzeige: `#sprecher:ambrose` (Porträt und Name),
-  `#stimmung:streng` (Porträtvariante), `#klang:knarren` (Geräusch), `#pause`.
+  `#stimmung:streng` (Porträtvariante), `#klang:knarren` (Geräusch), `#pause` (eine Sekunde) oder `#pause:3` (Sekunden, höchstens 10; „Weiter“ ist so lange gesperrt).
 - Externe Funktionen (`EXTERNAL`) führt die React-Hülle aus und schreibt in den Spielstand:
   `gibKarte(kennung)`, `setzeSzene(kennung)`, `beginnePartie(begegnung)`, `beginneAufgaben(runde)`,
   `setzeZustand(gegner, faktor, grund)`, `schalteSteckbrief(gegner, zeile)`, `gibFund(kennung)`,

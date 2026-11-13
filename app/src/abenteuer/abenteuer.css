@@ -508,3 +508,13 @@ body.abenteuer-mit-kulisse {
 .abenteuer-vorfuehrung .brettschalter-gruppe {
   display: none;
 }
+
+/* Pause im Dialog (#pause, T3): „Weiter“ ist gesperrt und blendet nach der Pause wieder ein. */
+.abenteuer-dialog-weiter,
+.abenteuer-dialog-wahlen button {
+  transition: opacity 0.4s ease;
+}
+.abenteuer-dialog-weiter:disabled,
+.abenteuer-dialog-wahlen button:disabled {
+  opacity: 0;
+}

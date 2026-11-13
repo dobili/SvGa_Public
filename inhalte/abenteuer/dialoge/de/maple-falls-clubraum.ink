@@ -49,25 +49,28 @@ VAR heimwegNadelGesehen = false
 }
 
 === coach_erstes_treffen ===
+// Szene 5, zweiter Teil, nach dem Roman, Kapitel 5, und der Dialogprüfung (VM30 bis VM33).
 ~ clubBeigetreten = true
-Ein Klassenzimmer mit Pokalen von 1994. Sechs Kinder, vier Bretter, eine Frau mit Trillerpfeife. #sprecher:erzaehler
-Juno hat jemanden mitgebracht! Willkommen im Team, das noch keins ist. #sprecher:coachDelgado #stimmung:froh #klang:pfiff
-Wir arbeiten dran. #sprecher:coachDelgado
-Ich bin Coach Delgado. Mathe am Vormittag, Schach am Nachmittag. #sprecher:coachDelgado
-Uns fehlt ein viertes Brett für die Kreisliga. Wer die Clubnadel holt, spielt mit. #sprecher:coachDelgado
+Raum 12, Erdgeschoss, Blick auf den Fahnenmast. Die Tische sind zu vier Inseln zusammengeschoben. Pokale von 1994, ein Plakat: ERST ZÄHLEN. #sprecher:erzaehler
+Aufstellung! Juno, wen bringst du mir da? #sprecher:coachDelgado #klang:klatschen
+Ein viertes Brett, Coach. #sprecher:juno #stimmung:froh
+Na, das wollen wir sehen. Delgado. Mathe in der Sechsten und Achten, Schach immer. #sprecher:coachDelgado
+Willkommen im Team, das noch keins ist. Wir arbeiten dran. #sprecher:coachDelgado #stimmung:froh
+Kreisliga spielt man zu viert. Wer die Clubnadel holt, spielt mit. Die Nadel holt man gegen mich. #sprecher:coachDelgado
+* [„Gegen Sie?“]
+    Gegen mich. Aber vorher zeigst du mir, dass du zählen kannst. Sam und Juno haben Aufgaben für dich. #sprecher:coachDelgado
 * [„Was muss ich tun?“]
-    Zwei Dinge. Erst die Aufgaben von Sam und Juno, dann eine Partie gegen mich. #sprecher:coachDelgado
-* [„Gegen wen muss ich spielen?“]
-    Gegen mich. Aber erst die Aufgaben von Sam und Juno. Erst zählen, dann schlagen. #sprecher:coachDelgado
-- Erst zählen, dann schlagen. Das ist hier Gesetz, und ich bin die Polizei. #sprecher:coachDelgado #stimmung:ernst
-Ein Junge am ersten Brett verschränkt die Arme. Das ist Sam. #sprecher:erzaehler
-Eine Frau, die Gesetze macht und pfeift. Ich mag sie jetzt schon. #sprecher:ambrose
+    Erst die Aufgaben von Sam und Juno. Dann eine Partie gegen mich. #sprecher:coachDelgado
+- Das ist hier Gesetz, und ich bin die Polizei. #sprecher:coachDelgado #stimmung:froh #klang:pfiff
+Am Fenster sitzt ein Junge, die Füße auf dem Stuhl. Er hat die ganze Zeit zugehört, ohne herzusehen. Das ist Sam. #sprecher:erzaehler
+Auf einem der Bretter fehlt die schwarze Dame. An ihrer Stelle steht ein Radiergummi. #sprecher:erzaehler
+Ein Radiergummi als Dame. Ich habe Schlimmeres gesehen. Aber nicht oft. #sprecher:ambrose
 ~ setzeSzene("akt1.ersterSchultag")
 -> END
 
 === coach_reihe_offen ===
 {
-- not reiheSamBestanden: Fang mit Sam an, dann kommt Juno. Sam tut streng, ist aber fair. #sprecher:coachDelgado
+- not reiheSamBestanden: Fang mit Sam an, dann kommt Juno. #sprecher:coachDelgado
 - else: Sam hast du geschafft. Jetzt noch Juno. Sie hat die Aufgaben selbst aufgeschrieben. #sprecher:coachDelgado
 }
 {reiheSamBestanden:
@@ -169,8 +172,11 @@ Nein. Das ist das Merkwürdige. #sprecher:ambrose #stimmung:still
 
 === sam_erstes_treffen ===
 ~ samGetroffen = true
-Du bist also das neue vierte Brett? Mal sehen. Ich bin Sam, erstes Brett. #sprecher:sam
-Dame raus, Zug zwei. Funktioniert immer. Fast immer. #sprecher:sam
+Viertes Brett? Wir haben ein erstes Brett. Mich. Reicht doch. #sprecher:sam
+Ich spiel Dame raus in Zug zwei. Funktioniert immer. #sprecher:sam
+Fast immer. #sprecher:coachDelgado
+Fast immer. #sprecher:sam
+Dann grinst er, weil er nicht anders kann. #sprecher:erzaehler
 * [„Zeig mir deine Aufgaben.“]
     -> sam_reihe
 * [„Gleich.“]
@@ -178,21 +184,24 @@ Dame raus, Zug zwei. Funktioniert immer. Fast immer. #sprecher:sam
     -> END
 
 === sam_reihe ===
-Okay, meine Aufgaben. Zählen und hängende Figuren. #sprecher:sam
-Wer zählt, gewinnt. Sagt der Coach. #sprecher:sam
-* [„Los.“]
+Hier. Die Figur steht da wie geschenkt. Na los, nimm sie. #sprecher:sam
+* [„Erst zählen.“]
+    Langweilig. Aber gut. #sprecher:sam
     ~ beginneAufgaben("mapleFalls.reiheSam")
     -> END
 * [„Gleich.“]
     -> END
 
 === sam_klagt ===
+// Szene 9 nach dem Roman, Kapitel 6, und der Dialogprüfung (VM48 bis VM51).
 ~ samKlagt = true
-Sam starrt auf sein Brett. Die schwarze Dame fehlt im Kasten. #sprecher:erzaehler
+Sam liegt mit dem Kopf auf dem Tisch. #sprecher:erzaehler
 Die Chefin wurde gefangen. Schon wieder. Das zählt nicht, das war Pech! #sprecher:sam
-Sam ist mutig. Nur ist seine Dame mutiger als klug. #sprecher:ambrose
+Wie oft war es Pech? Ich hab elfmal. #sprecher:juno
+Du schreibst das auf? #sprecher:sam
+Ich schreibe alles auf. #sprecher:juno #stimmung:froh
 * [„Soll ich dir zeigen, warum?“]
-    Du? Mir? … Okay, okay. Zeig mir das. #sprecher:sam
+    Du? Mir? … Okay. Okay. Zeig mir das noch mal mit dem Zählen. #sprecher:sam
     ~ beginneAufgaben("mapleFalls.todsuenden")
     -> END
 * [„Pech gibt es nicht im Schach.“]
@@ -215,8 +224,6 @@ Und? Zeigst du mir jetzt, warum die Chefin immer gefangen wird? #sprecher:sam
 - else:
     Noch mal! Diesmal mache ich alles richtig. Fast alles. #sprecher:sam
 }
-Übrigens: Der Coach guckt nur auf ihren eigenen Angriff. Immer. #sprecher:sam
-Das hast du nicht von mir. #sprecher:sam
 * [„Revanche.“]
     ~ beginnePartie("mapleFalls.samRevanche")
     -> END
@@ -224,10 +231,14 @@ Das hast du nicht von mir. #sprecher:sam
     -> END
 
 === sam_nach_revanche ===
+// Der Tipp zur Trainerin ist Sams Lohn nach der Revanche (Roman, Kapitel 6; Dialogprüfung VM49).
 ~ samVersoehnt = true
-Okay, okay. Die Dame gewinnt nicht allein. Hab's kapiert. #sprecher:sam
+Okay. Die Dame bleibt zu Hause. Fürs Erste. #sprecher:sam
 Du bist gut, {held}. Nicht so gut wie ich. Noch nicht. #sprecher:sam #stimmung:froh
-Ein Rivale wird zum Freund. Das ist die schönste Eröffnung, die es gibt. #sprecher:ambrose
+Er erzählt weiter, ohne dass du fragst. #sprecher:erzaehler
+Der Coach guckt nur auf ihren eigenen Angriff. Immer. #sprecher:sam
+Hab ich nie ausnutzen können. Aber du vielleicht. #sprecher:sam
+Juno schreibt es ins Tagebuch. Mit Glitzer. #sprecher:erzaehler
 -> END
 
 === sam_alltag ===
@@ -259,7 +270,7 @@ Und ein Matt in eins, das hab ich selbst gefunden. #sprecher:juno
     -> END
 
 === juno_club_alltag ===
-{~Das Clubtagebuch wächst! Bald brauche ich ein zweites.|Sam ist heute fast nett. Das kommt ins Tagebuch.|Ich hab gegen den Coach eine Figur gewonnen. Dann sieben verloren. Aber eine gewonnen!} #sprecher:juno
+{~Das Clubtagebuch wächst! Bald brauche ich ein zweites.|Sam ist heute fast nett. Das kommt ins Tagebuch.|Ich hab gegen den Coach eine Figur gewonnen. Dann sieben verloren. Aber eine gewonnen!|Für jeden guten Zug klebe ich einen Stern. Es gibt wenige Sterne.} #sprecher:juno
 -> END
 
 // ---------------------------------------------------------------- Victor

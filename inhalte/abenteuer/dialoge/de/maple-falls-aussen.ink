@@ -43,23 +43,26 @@ Morgen! Ich erklär dir morgen alles! #sprecher:juno #stimmung:froh
 -> END
 
 === juno_trifft ===
+// Szene 5 nach dem Roman, Kapitel 5, und der Dialogprüfung (VM27 bis VM29). Stimmung: fremd,
+// dann überrumpelt. Juno redet schnell; das Brett steckt im Rucksack.
 ~ junoGetroffen = true
-Du bist das Kind aus dem Whitlock-Haus! Ich bin Juno. Ich wohne zwei Häuser weiter. #sprecher:juno #stimmung:froh
-Alle reden über euch. #sprecher:juno
+An der Bushaltestelle steht ein Mädchen mit zwei Zöpfen und einem Heft, das ein Gummiband zusammenhält. Ihr ganzes Gesicht geht auf. #sprecher:erzaehler
+Du bist das Kind aus dem Whitlock-Haus! #sprecher:juno #stimmung:froh
+Juno Martínez. Zwei Häuser weiter, das gelbe. Alle reden über euch. #sprecher:juno
 Mrs. Whitlock hatte siebzehn Katzen, sagt man. Es waren drei. #sprecher:juno
-Sie sieht das Brett unter deinem Arm. #sprecher:erzaehler
+Sie sieht die Ecke des Bretts aus deinem Rucksack ragen. #sprecher:erzaehler
 * [„Ich hab es auf dem Dachboden gefunden.“]
     Ein echtes altes Schachbrett? Das ist ja wie im Film! #sprecher:juno
 * [„Das ist nur ein altes Brett.“]
     Nur? Das ist ein Zeichen! #sprecher:juno
-- Wir haben ein Schachteam. Coach Delgado sucht dringend ein viertes Brett für die Kreisliga. #sprecher:juno
-Ich spiele auch. Schlecht. Aber mit Herz. #sprecher:juno
-* [„Ich komme mit.“]
-    Perfekt! Nach der Schule, Raum 12 im Erdgeschoss. #sprecher:juno #stimmung:froh
+- Wir brauchen ein viertes Brett, und ich brauche jemanden zum Reden. Spielst du Schach? Sag ja. #sprecher:juno
+* [„Ein bisschen.“]
+    Ein bisschen reicht! Ich spiele auch nur ein bisschen. Ich verliere meistens. #sprecher:juno #stimmung:froh
 * [„Ich kann kaum Schach.“]
-    Ich auch nicht. Deshalb brauche ich jemanden zum Reden. #sprecher:juno
-    Nach der Schule, Raum 12 im Erdgeschoss. Keine Ausrede. #sprecher:juno
-- Eine junge Dame mit Tagebuch und Glitzer. Sie wird dich überallhin schleppen. Gut so. #sprecher:ambrose
+    Ich auch nicht. Ich verliere meistens. Es stört mich nicht. #sprecher:juno
+- Sie klopft auf das Heft. Das ist das Clubtagebuch. Da kommt alles rein. Du kommst auch rein. Wie schreibt man dich? #sprecher:juno
+Nach der Schule, Raum 12 im Erdgeschoss. Keine Ausrede. #sprecher:juno
+Eine junge Dame mit Tagebuch und Glitzer. Sie wird dich überallhin schleppen. #sprecher:ambrose
 -> END
 
 === juno_zum_club ===
@@ -83,9 +86,10 @@ Raum 12, Erdgeschoss! Coach Delgado beißt nicht. Meistens. #sprecher:juno
 }
 
 === lily_fragt ===
+// Szene 8 nach dem Roman, Kapitel 6, und der Dialogprüfung (VM43 bis VM47).
 ~ lilyGetroffen = true
-Ein kleines Mädchen sitzt vor dem Nachbarhaus und starrt auf einen Springer aus Plastik. #sprecher:erzaehler
-Du kannst Schach, oder? Mein Cousin sagt, ich bin zu doof für das Pferd. #sprecher:lily
+Ein kleines Mädchen sitzt auf dem Bordstein. Auf dem Gehweg ein Schachbrett aus Kreide, schief, neun Felder in einer Reihe. Darauf ein Plastikpferd. #sprecher:erzaehler
+Du kannst Schach, oder? Mein Cousin sagt, Mädchen können das Pferd nicht. #sprecher:lily
 Der Pferd hüpft doch einfach irgendwohin, oder? #sprecher:lily
 * [„Ich zeig es dir.“]
     -> lily_lektion
@@ -102,17 +106,24 @@ Zeigst du mir jetzt das Pferd? Den Springer, meine ich. #sprecher:lily
     -> END
 
 === lily_lektion ===
-Lehre es ihr. Dann weißt du, ob du es kannst. Ich sage nichts. #sprecher:ambrose
+Erklär es ihr. #sprecher:ambrose
+* [„Du kannst das besser.“]
+    Sie hört mich nicht. Und selbst wenn. #sprecher:ambrose
+* [Neben sie auf den Bordstein setzen]
+- Lehre es ihr. Dann weißt du, ob du es kannst. #sprecher:ambrose
 Du setzt den Springer auf ihr Brett und fährst mit dem Finger: zwei Felder geradeaus, eins zur Seite. Wie ein L. #sprecher:erzaehler
 Dann lässt du ihn über einen Bauern hüpfen. Das darf nur er. #sprecher:erzaehler
+* [„Und er springt immer auf die andere Farbe.“]
+- Lily sieht dich an, als hättest du ihr ein Geheimnis verraten. #sprecher:erzaehler
 Zeig es mir an meinem Brett! #sprecher:lily #stimmung:froh
 ~ beginneAufgaben("mapleFalls.springerLily")
 -> END
 
 === lily_danke ===
 ~ lilyGeholfen = true
-Ein L! Immer ein L! Mein Cousin wird staunen. #sprecher:lily #stimmung:froh
-Du hast es erklärt, ohne mich. Ich bin, nun ja, ein wenig stolz. Sag es niemandem. #sprecher:ambrose #stimmung:stolz
+Ein L! Und immer auf die andere Farbe! Weiß, schwarz, weiß, schwarz! #sprecher:lily #stimmung:froh
+Sie lässt das Plastikpferd über den ganzen Gehweg hüpfen, bis zur Ecke. #sprecher:erzaehler
+Ambrose sagt nichts. Aber er sieht ihr nach. #sprecher:erzaehler #pause:2
 -> END
 
 === lily_alltag ===

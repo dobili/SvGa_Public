@@ -622,40 +622,13 @@
     {
      "id": 3,
      "name": "dunmore",
-     "type": "statist",
+     "type": "figur",
      "x": 32,
-     "y": 80,
+     "y": 96,
      "width": 16,
      "height": 16,
      "rotation": 0,
-     "visible": true,
-     "properties": [
-      {
-       "name": "von",
-       "type": "string",
-       "value": "2,5"
-      },
-      {
-       "name": "bis",
-       "type": "string",
-       "value": "2,5"
-      },
-      {
-       "name": "tun",
-       "type": "string",
-       "value": "dreht an der Drehbank"
-      },
-      {
-       "name": "wann",
-       "type": "string",
-       "value": "tag"
-      },
-      {
-       "name": "bild",
-       "type": "string",
-       "value": "statist-13"
-      }
-     ]
+     "visible": true
     },
     {
      "id": 4,

@@ -456,6 +456,13 @@
         10,
         11
       ]
+    },
+    {
+      "name": "zwillingeDrinnen",
+      "feld": [
+        9,
+        13
+      ]
     }
   ],
   "belebung": [

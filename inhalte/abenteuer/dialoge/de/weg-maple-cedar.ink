@@ -150,7 +150,7 @@ Okay, okay. Du bist schneller, als du aussiehst. Noch mal? #sprecher:nia
 
 === nia_nach_niederlage ===
 Board tragen! War nur Spaß. Noch eine Runde? #sprecher:nia
-{faehrsteinGesehen: Bei drei Minuten denkt man nicht, man sieht. Das kommt mit der Übung. #sprecher:ambrose}
+{faehrsteinGesehen: Drei Minuten. Zu meiner Zeit brauchte ein Gentleman so lange, um den Hut abzulegen. #sprecher:ambrose}
 + [„Revanche.“]
     -> nia_duell
 + [„Nicht jetzt.“]
@@ -167,8 +167,13 @@ Board tragen! War nur Spaß. Noch eine Runde? #sprecher:nia
 Im Gras unter einem Busch steckt ein vergilbtes Blatt in einer Blechdose. #sprecher:erzaehler
 Ein Partieformular, eng beschrieben, die Tinte verblasst. #sprecher:erzaehler
 ~ gibFund("formular1857")
-Diese Handschrift. Ich kenne sie, aber ich kann sie nicht mehr lesen. #sprecher:ambrose #stimmung:traurig #pause:2
-Heb es gut auf, Kind. #sprecher:ambrose
+// Gutachten K1.11: Vor dem Fluss schweigt Ambrose (Roman Kapitel 10); die Handschrift erkennt er
+// erst beim Entziffern im Waschsalon.
+{faehrsteinGesehen:
+    Heb es gut auf, Kind. #sprecher:ambrose #stimmung:traurig
+- else:
+    Im Rucksack bleibt es still. #sprecher:erzaehler #pause:2
+}
 -> END
 
 === fund_muenzen ===
@@ -279,7 +284,7 @@ Im Graben neben dem Hof steckt ein Blatt Papier, feucht vom Tau. #sprecher:erzae
 Ein loses Blatt mit einer gezeichneten Stellung. Jemand hat mit Bleistift „Weiß zieht“ darunter geschrieben. #sprecher:erzaehler
 ~ gibFund("seite00")
 ~ buchseiten = buchseiten + 1
-Eine Stellung, die der Wind gebracht hat. Heb sie auf, man weiß nie. #sprecher:ambrose
+{faehrsteinGesehen: Eine Stellung, die der Wind gebracht hat. Heb sie auf, man weiß nie. #sprecher:ambrose|Im Rucksack bleibt es still. #sprecher:erzaehler #pause:2}
 -> END
 
 === finch_bauer_a ===
@@ -346,7 +351,7 @@ Juno legt einen Dollar in die Dose und nimmt zwei Äpfel. Einen gibt sie dir. #s
 === apfelstand_b ===
 An der Blechdose klebt jetzt ein Zettel in großer Schrift. #sprecher:erzaehler
 „Wer es war, kann es zurücklegen. Ich frag nicht.“ #sprecher:erzaehler
-Eine Frau, die nicht fragt. Das ist mehr Vertrauen, als ich je hatte. #sprecher:ambrose
+Eine Frau, die nicht fragt. #sprecher:ambrose
 -> END
 
 === apfelstand_c ===
@@ -394,6 +399,9 @@ Gatter zu, wenn ihr geht. #sprecher:ada
 === faehrstein ===
 {faehrsteinGesehen: -> faehrstein_spaeter}
 ~ faehrsteinGesehen = true
+// Gutachten K1.12: Ambroses erster Satz seit dem Aufbruch, mit Porträt und Pause, vor dem Stein.
+Hier ist es schöner. #sprecher:ambrose #stimmung:still
+Es ist das Erste, was er seit dem Aufbruch sagt. #sprecher:erzaehler #pause:2
 Wo das Ufer flach ist, liegt ein großer Stein im Gras. Darin sind Linien eingeritzt, acht mal acht. #sprecher:erzaehler
 Daneben sitzt ein alter Mann auf einem Klappstuhl. Die Angel hängt im Wasser, der Eimer ist leer. #sprecher:erzaehler
 Mein Großvater hat hier Leute übergesetzt. Als es die Brücke noch nicht gab. #sprecher:silas
@@ -403,8 +411,7 @@ Die Fährleute haben auf dem Stein gespielt, während sie warteten. Mit Kieseln.
 * [„Beißen die Fische heute?“]
     Er zieht die Angel heraus. Der Haken ist leer. #sprecher:erzaehler
     Die wissen, wann ich komme. #sprecher:silas
-- Hier ist es schöner. Es ist das Erste, was Ambrose seit dem Aufbruch sagt. #sprecher:erzaehler
-Auf Straßen wie der dort oben bin ich wochenlang gefahren. In einer Kutsche, die jede Furche mitnahm. #sprecher:ambrose
+- Auf Straßen wie der dort oben bin ich wochenlang gefahren. In einer Kutsche, die jede Furche mitnahm. #sprecher:ambrose
 Am Fluss kann man wenigstens denken. #sprecher:ambrose
 * [„Wohin bist du gefahren?“]
     Er antwortet nicht gleich. #sprecher:erzaehler #pause:2

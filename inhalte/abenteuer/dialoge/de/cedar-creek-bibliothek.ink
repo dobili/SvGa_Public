@@ -122,7 +122,7 @@ Daneben liegt die Nadel: ein kleines Buch aus Metall, aufgeschlagen, mit einem S
 {sternennachtGesehen: Ich bin gestern zu lange aufgeblieben. Das ist deine Schuld und die der Sterne. Ich beschwere mich nicht. #sprecher:okafor}
 Setz dich. #sprecher:okafor
 * [„Ich bin bereit.“]
-    Sie wartet. Ich kenne das. Ich habe es nie ausgehalten. #sprecher:ambrose
+    Die Uhr im Türmchen tickt. Man hört sie durch die Decke. #sprecher:erzaehler
     -> okafor_partie
 * [„Noch nicht.“]
     Geduld ist auch ein Zug. #sprecher:okafor

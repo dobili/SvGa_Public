@@ -212,6 +212,10 @@
         {
           "art": "eroeffnung",
           "wert": "praxis:Philidor Defense"
+        },
+        {
+          "art": "text",
+          "wert": "steckbrief.okafor.lagos"
         }
       ]
     },

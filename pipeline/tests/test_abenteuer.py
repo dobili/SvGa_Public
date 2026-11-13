@@ -129,6 +129,11 @@ def test_querverweise_stimmen():
                 ink = dialogordner / f"{datei}.ink"
                 if not ink.exists() or f"=== {knoten} ===" not in ink.read_text(encoding="utf-8"):
                     fehler.append(f"{begegnung['kennung']}: Moment-Dialog {moment['dialog']} fehlt")
+    # Steckbriefzeilen mit freiem Text: Der Satz steht in den Spieltexten.
+    for profil in _lade("gegner.json")["gegner"]:
+        for zeile in profil["steckbrief"]:
+            if zeile["art"] == "text" and zeile["wert"] not in texte:
+                fehler.append(f"{profil['kennung']}: Steckbrieftext {zeile['wert']} fehlt")
     # Freie Karten (R29) gibt es in karten.json.
     for begegnung in _lade("begegnungen.json")["begegnungen"]:
         for k in begegnung.get("freieKarten", []):

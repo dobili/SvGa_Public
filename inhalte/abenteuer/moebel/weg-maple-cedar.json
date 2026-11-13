@@ -749,6 +749,28 @@
       "art": "deko",
       "zustand": "alt",
       "stil": "natur"
+    },
+    "wg4TorOffen1": {
+      "quelle": "modern-farm/Single_Files_16x16/Fences_16x16/Wooden_Fence_Type_4_Brown_Gate_1_16x16.png",
+      "breite": 16,
+      "hoehe": 16,
+      "kollision": false,
+      "art": "zaun",
+      "zustand": "gebraucht",
+      "stil": "laendlich",
+      "begehbar": true,
+      "begehbar_grund": "offenes Gatter zum Kürbishof (R044), man geht hindurch"
+    },
+    "wg4TorOffen2": {
+      "quelle": "modern-farm/Single_Files_16x16/Fences_16x16/Wooden_Fence_Type_4_Brown_Gate_2_16x16.png",
+      "breite": 16,
+      "hoehe": 16,
+      "kollision": false,
+      "art": "zaun",
+      "zustand": "gebraucht",
+      "stil": "laendlich",
+      "begehbar": true,
+      "begehbar_grund": "offenes Gatter zum Kürbishof (R044), man geht hindurch"
     }
   }
 }

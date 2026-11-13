@@ -614,12 +614,14 @@
           "datei": "karten/weg-maple-cedar-landstrasse.json",
           "name": "ort.wegMapleCedar.landstrasse",
           "innen": false,
-          "musik": "musik/landstrasse.ogg",
+          "musik": "musik/weg.m4a",
           "zustaende": {
             "nadelMapleFalls < 1": "karten/weg-maple-cedar-landstrasse-flohmarkt-leer.json",
             "wegMapleCedarTafelBestanden": "karten/weg-maple-cedar-landstrasse-gatter-offen.json",
             "wegMapleCedarTafelBestanden und nadelMapleFalls < 1": "karten/weg-maple-cedar-landstrasse-gatter-offen-leer.json"
-          }
+          },
+          "geraeusch": "klang/zaun_wind.m4a",
+          "licht": "tag"
         },
         {
           "kennung": "wegMapleCedar.flussweg",
@@ -649,6 +651,18 @@
           "sprite": "figuren/nia.png",
           "dialog": "weg-maple-cedar.gegnerin",
           "gegner": "wegMapleCedar.nia"
+        },
+        {
+          "kennung": "wegMapleCedar.ada",
+          "name": "figur.ada.name",
+          "sprite": "figuren/ada.png",
+          "dialog": "weg-maple-cedar.ada"
+        },
+        {
+          "kennung": "wegMapleCedar.tessa",
+          "name": "figur.tessa.name",
+          "sprite": "figuren/tessa.png",
+          "dialog": "weg-maple-cedar.tessa"
         }
       ],
       "ausloeser": [
@@ -759,6 +773,11 @@
           "karte": "wegMapleCedar.flussweg",
           "art": "gegenstand",
           "dialog": "weg-maple-cedar.finch_bauer_a"
+        },
+        {
+          "name": "apfelstand",
+          "art": "gegenstand",
+          "dialog": "weg-maple-cedar.apfelstand"
         }
       ]
     },

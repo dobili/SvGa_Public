@@ -56,12 +56,12 @@
         "musik": {
           "description": "Musikstück der Karte im Zusatzpaket (Schleife, app/src/abenteuer/ton/); gespielt wird zuerst die m4a-Fassung, dann ogg; fehlt die Datei oder die Angabe, bleibt die Karte still",
           "type": "string",
-          "pattern": "^musik/[a-z0-9-]+\\.(ogg|m4a)$"
+          "pattern": "^musik/[a-z0-9._-]+\\.(ogg|m4a)$"
         },
         "geraeusch": {
           "description": "Dauergeräusch der Karte (Schleife unter der Musik: Wasserfall, Regen, Ticken der Uhr); wie musik, aus dem Ordner klang",
           "type": "string",
-          "pattern": "^klang/[a-z0-9-]+\\.(ogg|m4a)$"
+          "pattern": "^klang/[a-z0-9._-]+\\.(ogg|m4a)$"
         },
         "teilchen": {
           "description": "Teilchen über der Karte (Atmosphäre T8): staub (im Lichtstreifen), sternschnuppen (selten), nebel (ziehende Schwaden); Winterkarten haben Schnee",

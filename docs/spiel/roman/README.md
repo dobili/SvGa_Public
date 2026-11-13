@@ -32,3 +32,12 @@ oder ein Musikstück auswählt, liest das Kapitel und weiß, wie sich die Stelle
 | 1   | `akt1_teil4.md`                 | offen                |
 | 1   | `akt1_befunde.md`               | offen, nach dem Text |
 | 2–4 | —                               | offen                |
+
+## Nächste Schritte (Stand 13.11.2026)
+
+1. Der Autor liest Akt 1 und beantwortet die Fragen R1 bis R4 in `akt1_befunde.md`.
+2. Danach Akt 2 bis 4 im selben Aufbau (je vier Teile und ein Befund).
+3. Danach `19_Ton_und_Spannungsbogen.md` noch einmal überarbeiten, dann Ortsblätter für Akt 2 bis 4
+   (`20_Ortsblaetter.md`), dann der Klangplan (`21_Klangplan.md`) und die Prüfung der vorhandenen
+   Dialoge gegen den Roman (`22_Dialogpruefung.md`).
+4. Erst danach werden Karten und Spieldialoge von Akt 1 überarbeitet.

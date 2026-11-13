@@ -198,3 +198,35 @@ Regeln:
    Ortsblättern ab.
 4. **Gegner:** Der Spielstil der Clubmitglieder folgt dem Stil des Clubs (Ortsblatt, Zeile
    „Schach“), mit einer Ausnahme je Club, damit es nicht eintönig wird.
+
+## 8. Überarbeitung nach dem Roman zu Akt 1 (13.11.2026)
+
+Der Roman (`roman/akt1_teil1.md` bis `akt1_teil4.md`, Befunde in `roman/akt1_befunde.md`) hat
+diese Vorgaben geschärft. Sie gelten zusätzlich zu den Abschnitten 2 bis 6.
+
+**Zeit für die Geschichte (Frage des Autors).** Bisher war in Akt 1 nur etwa ein Fünftel der
+Spielzeit Geschichte. Drei Regeln für alle Akte:
+
+1. Etwa ein Drittel Geschichte, zwei Drittel Schach: je Akt 80 bis 100 Minuten Erzählung
+   einschließlich Laufen.
+2. Nie mehr als 30 Minuten Schach am Stück ohne Geschichte. Nach jedem Clubkampf folgt eine Szene
+   ohne Brett.
+3. Die Geschichte geht in die Partien hinein: Jede Partie der Hauptgeschichte hat ein bis zwei
+   feste Momente, in denen jemand spricht oder etwas geschieht.
+
+**Atmosphäre entsteht außerhalb des Dialogtexts.** Von 16 Kapiteln tragen nur zwei ihre Stimmung
+allein über den Text. Zu jeder Szene gehört deshalb eine Angabe zu Klang, Pause, Licht und Bild
+(Randnotizen im Roman; gesammelt im Klangplan).
+
+**Ergänzungen zu den Figurenbögen in Akt 1:**
+
+| Figur         | Ergänzung                                                                                                                                                                                                                  |
+| ------------- | -------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------- |
+| Ambrose       | Nennt {held} bis zum Archiv nur „Kind“ oder „Lehrling“. Im Clubkampf von Cedar Creek will er das Turmopfer von 1858 wiederholen, weiß nicht, ob es stimmt, und sagt „Vergib mir. Zähl.“ Erst danach gesteht er den Wunsch. |
+| Mama          | Zeigt ihr Können zweimal ohne Worte: „Schwarz steht besser“ und der Finger über dem Tischset im Diner.                                                                                                                     |
+| Coach Delgado | Eigener kleiner Bogen: Der Bildschirm bleibt in ihrem Clubraum stehen („Kostet zunächst nichts“); im Bus rechnet sie Dollarbeträge. Ihre Entscheidung fällt in Akt 2.                                                      |
+| Victor        | Der Riss ist messbar: drei Sekunden Zögern. Er verliert selbst täglich gegen das Programm.                                                                                                                                 |
+
+**Leitmotive.** „Später“ fällt in Akt 1 dreimal (erster Tag, Archiv, Steg). Musikalisch teilen
+Ambrose und Victor dieselben vier Töne, warm und kalt; man soll die Verwandtschaft erst spät
+hören.

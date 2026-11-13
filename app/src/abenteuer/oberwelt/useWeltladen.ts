@@ -8,6 +8,7 @@
  * die Welt gewartet haben), gibt die Oberwelt als `beiWelt` mit.
  * Abhängigkeiten: oberwelt/weltdaten.ts, oberwelt/oberweltspiel.ts, oberwelt/toenung.ts.
  */
+import { tonregie } from "../ton/tonregie";
 import { useEffect, useState, type RefObject } from "react";
 import { variablenAusBesitz, variablenNachBesuch } from "../regeln/dialogvariablen";
 import type { Abenteuerstand } from "../schnittstelle/spielstand";
@@ -53,6 +54,9 @@ function starteSpiel(k: Oberweltkern, a: Weltanschluss, w: Weltdaten, stand: Abe
   if (!rahmen) return;
   const toenung = aktuelleToenung(w.karte, w.kennung, stand.dialogvariablen);
   k.zeigeToenung(toenung);
+  // Musik und Dauergeräusch der Karte aus orte.json (T1, T2); fehlt die Datei, bleibt es still.
+  const eintrag = w.ort.karten.find((x) => x.kennung === w.kennung);
+  tonregie.karteBetreten(eintrag?.musik, eintrag?.geraeusch);
   k.spiel.current = starteOberwelt(rahmen, {
     karte: w.karte,
     kachelbild: w.kachelbild,

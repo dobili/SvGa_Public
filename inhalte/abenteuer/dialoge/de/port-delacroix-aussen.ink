@@ -16,7 +16,7 @@
 // Runde 11 (13.11.2026): Ankunft nach dem Roman (roman/akt3_teil2.md, Kapitel 35): die braune
 // Wasserlinie an allen Häusern, die Ruine des Musikhauses, die Trompete zwischen Trauer und Tanz.
 //
-// Ambrose schweigt nach dem Vorwurf (Szene 63) bis zu den Nachfahren (Szene 68,
+// Ambrose schweigt nach dem Vorwurf (Szene 63) bis zur Familie (Szene 68,
 // ambroseSprichtWieder); seine Zeilen hängen daran. Variablen: ausgangPortDelacroixBatiste und
 // nadelPortDelacroix setzt die Hülle (R42), die übrigen setzt Ink.
 
@@ -52,10 +52,13 @@ VAR abschiedPortDelacroixGesehen = false
     -> END
 }
 ~ ankunftPortDelacroixGesehen = true
+Diese Luft. Salz und Holz. Und Teer. Und etwas Süßes, das fault: die Magnolien. Ich kenne diese Luft. #sprecher:ambrose #stimmung:fern
+* [„Du bist hier geboren.“]
+- Ich bin hier weggegangen. Das ist nicht dasselbe. #sprecher:ambrose
 Schmale Häuser mit Balkonen aus geschmiedetem Eisen, Fensterläden in Grün und Blau, Palmen. Auf vielen Dächern liegen Planen. #sprecher:erzaehler
 An den Hauswänden läuft in Hüfthöhe ein brauner Strich entlang, von Haus zu Haus, schnurgerade. #sprecher:erzaehler
 * [„Was ist das?“]
-- Da stand das Wasser. #sprecher:mutter
+- Da stand das Wasser. #sprecher:mutter #pause
 Am Kai ist eine Lücke. Mauern ohne Dach, durch die leeren Fenster sieht man den Himmel. #sprecher:erzaehler
 Über dem Eingang hängt ein Schild an einer einzigen Schraube: „Maison de Musique. Club d’Échecs, depuis 1889.“ #sprecher:erzaehler
 Das Musikhaus. Mein Vater hat die Orgel darin gestimmt. #sprecher:ambrose #stimmung:fern
@@ -102,7 +105,6 @@ Ihr redet wenig. Es ist das Schweigen von zwei, die sich gestritten haben und wi
 - brettHaus1Gesehen: -> haus_schon_besucht
 }
 ~ brettHaus1Gesehen = true
-An fremde Türen klopfen, in einer Stadt, in der man dich gestern einen Betrüger genannt hat. Niemand schlägt die Tür zu. #sprecher:erzaehler
 Ein alter Mann gibt dir ein Brett, dessen eine Hälfte heller ist als die andere. #sprecher:erzaehler
 „Die dunkle Seite stand im Wasser. Spielt sich noch.“ #sprecher:erzaehler
 -> brett_gezaehlt
@@ -141,7 +143,15 @@ Jemand reicht dir im Vorbeigehen etwas Heißes in einer Serviette, Teig mit Zuck
 ~ bretterGesammelt = bretterGesammelt + 1
 {bretterGesammelt >= 4: -> bretter_vollstaendig}
 {bretterGesammelt} von vier Häusern. Aus jedem zweiten Haus kommt Hämmern. #sprecher:erzaehler
-{bretterGesammelt == 1: Es redet niemand neben dir. Es sagt niemand „Zug vierzehn“. Es ist still in deinem Kopf, wie wenn ein Zahn fehlt. #sprecher:erzaehler}
+{bretterGesammelt == 1: -> brett_erstes}
+-> END
+
+// Gutachten L3.10: der Rahmen beim ersten Brett, gleich an welchem Haus.
+=== brett_erstes ===
+An fremde Türen klopfen, in einer Stadt, in der es gestern hieß, du schummelst. Niemand schlägt die Tür zu. #sprecher:erzaehler
+Es redet niemand neben dir. Es sagt niemand „Zug vierzehn“. #sprecher:erzaehler
+Es ist still in deinem Kopf, zum ersten Mal seit dem Sommer. Es ist gut. #sprecher:erzaehler #pause
+Und es ist, wie wenn ein Zahn fehlt. #sprecher:erzaehler
 -> END
 
 === bretter_vollstaendig ===
@@ -152,7 +162,8 @@ Remy stimmt am anderen Ende seine Trompete. Er sieht auf den Karren. Dann sieht 
 - Am Abend liegt an deinem Platz im Zelt eine Postkarte. Vorn eine Brücke im Regen. #sprecher:erzaehler #musik:riverton.postkarte
 „Maple Falls! Wir spielen jetzt unter der alten Steinbrücke. Dach haben wir, Wände nicht. Tamsin sagt, das zählt als Pavillon.“ #sprecher:erzaehler
 „Elf Kinder letzten Samstag. Der Stein liegt in der Mitte. Bring den Springer mal vorbei, er fehlt uns. – S.“ #sprecher:erzaehler
-Du liest sie dreimal. Dann baust du auf Junos Reisebrett die Stellung von Batiste auf und spielst sie allein noch einmal durch. #sprecher:erzaehler
+Du liest sie dreimal. #sprecher:erzaehler
+{ausgangPortDelacroixBatiste == "sieg": Dann baust du auf Junos Reisebrett die Stellung von Batiste auf und spielst sie allein durch, bis du verstehst, was du getan hast. #sprecher:erzaehler}
 -> END
 
 === haus_ohne_auftrag ===
@@ -176,7 +187,7 @@ Hier warst du schon. Jemand winkt dir aus dem Fenster zu. #sprecher:erzaehler
 === batiste_erstes_treffen ===
 ~ batisteGetroffen = true
 Am Kai liegt ein Boot kieloben auf zwei Böcken. Ein Mann streicht Pech in die Fugen. Auf einem Eimer steht ein Brett. #sprecher:erzaehler
-Du bist der mit dem Rucksack. #sprecher:batiste
+Du bist das Kind mit dem Rucksack. #sprecher:batiste
 * [„Ja.“]
 - Hm. Remy ist ein guter Junge. Er hat im Sturm seine Trompete über den Kopf gehalten, vier Stunden lang. #sprecher:batiste
 Wer so was gemacht hat, wird empfindlich, wenn einer mit Glas an der Jacke kommt. #sprecher:batiste

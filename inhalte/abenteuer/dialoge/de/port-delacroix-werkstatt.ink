@@ -2,7 +2,7 @@
 // Henri und Céleste Whitlock-Duval; Gegenstand: die Werkbank (Story-Bibel 19.4).
 //
 // Szenen der Bibel (Abschnitt 20): 66 Flashback „Die Werkstatt“ (Runde
-// portDelacroix.flashbackWerkstatt, Quest gleichen Namens, Partiefragment 5) und 68 Die Nachfahren
+// portDelacroix.flashbackWerkstatt, Quest gleichen Namens, Partiefragment 5) und 68 Die Familie
 // (Quest portDelacroix.nachfahren, O2): Henri zeigt das alte Foto, Ambrose bricht sein Schweigen,
 // Céleste spielt eine Partie aus Neugier (Begegnung portDelacroix.celeste).
 // Einstiege wie in orte.json: henri, celeste, werkbank.
@@ -22,6 +22,8 @@
 EXTERNAL beginnePartie(begegnung)
 EXTERNAL beginneAufgaben(runde)
 
+VAR leimAuftrag = false
+VAR odileHandGegeben = false
 VAR tiefpunktGesehen = false
 VAR ambroseSprichtWieder = false
 VAR henriGetroffen = false
@@ -37,6 +39,7 @@ VAR angesehenLaptop = false
 === henri ===
 {
 - not tiefpunktGesehen: -> henri_vorher
+- not odileHandGegeben: -> henri_vorher
 - not fotoAmbroseGesehen: -> henri_foto
 - else: -> henri_alltag
 }
@@ -48,7 +51,7 @@ VAR angesehenLaptop = false
 }
 ~ henriGetroffen = true
 Ein Mann mit Sägemehl in den Augenbrauen kommt dir entgegen. Er lacht viel und arbeitet dabei weiter. #sprecher:erzaehler
-Henri Whitlock-Duval. Leim für den Club? Natürlich für den Club. Umsonst. #sprecher:henri
+Henri Whitlock-Duval. {leimAuftrag:Leim für den Club? Natürlich für den Club. Umsonst.|Klavierbauer, seit sechs Generationen.} #sprecher:henri
 Meine Großmutter hat dort Klavier gespielt, wenn die Herren ihre Partien hatten. Das einzige Publikum, das nie klatscht und nie geht. #sprecher:henri
 Ein Klavier hat zweihundertdreißig Saiten. Ihr Spiel hat nur vierundsechzig Felder? Klingt erholsam. #sprecher:henri
 -> END
@@ -58,9 +61,12 @@ Ein Klavier hat zweihundertdreißig Saiten. Ihr Spiel hat nur vierundsechzig Fel
 ~ henriGetroffen = true
 Durch ein Loch im Dach, über das eine Plane gespannt ist, fällt blaues Licht. Die Werkbank steht an derselben Stelle. #sprecher:erzaehler
 Das hier wird Sie interessieren, wenn Sie Schach mögen. #sprecher:henri
-Ein ovales Foto, sehr alt, braun. Ein junger Mann im Rock mit hohem Kragen, vor ihm ein Schachbrett. #sprecher:erzaehler #musik:aus #pause
-Ein Vorfahr. Keiner weiß mehr, wer. Er soll nach New Orleans gegangen sein und nie wiedergekommen. #sprecher:henri
+Ein ovales Foto, sehr alt, braun. Ein junger Mann im Rock mit hohem Kragen, vor ihm ein Schachbrett. #sprecher:erzaehler
+Ein Vorfahr. Keiner weiß mehr, wer. Ein Bruder von irgendwem. #sprecher:henri
+Er soll weggegangen sein, nach New Orleans, und nie wiedergekommen. #sprecher:henri
 Die Familie hat nicht gern von ihm gesprochen. Ein Spieler, hieß es. Ich fand, er sieht nett aus. #sprecher:henri
+* [Das Foto ansehen]
+- Der Deckel des Geigenkastens ist zu. Du hast ihn nicht angerührt. #sprecher:erzaehler #musik:aus #pause:2
 Das bin ich. #sprecher:ambrose #stimmung:still #musik:ambrose.verstimmt
 * [Hinsehen]
 - Du siehst ihn, zum ersten Mal seit sechs Tagen: schmal, hochgeschlossen, blasser als früher. #sprecher:erzaehler
@@ -136,6 +142,9 @@ Aber ich weiß jetzt, dass ich sie am falschen Ort gesucht habe. #sprecher:ambro
 
 === werkbank ===
 {
+- not leimAuftrag:
+    Eine alte Werkbank voller Späne. Henri arbeitet hier. Du hast keinen Grund, sie anzufassen. #sprecher:erzaehler
+    -> END
 - flashbackWerkstattBestanden and not claireErzaehlt: -> werkbank_nach_flashback
 - flashbackWerkstattBestanden:
     Auf der Werkbank liegen Späne. Sie riechen wie vor hundertachtzig Jahren. #sprecher:erzaehler
@@ -180,10 +189,18 @@ Auf der Werkbank steht ein Brett, helles Holz und dunkles, die Ecken noch scharf
     -> END
 
 === werkbank_nach_flashback ===
+// Gutachten L3.6: startet nach der Runde von selbst (runden.json „danach“).
+{not flashbackWerkstattBestanden: Das Gold verblasst. Henri hobelt, Céleste tippt. #sprecher:erzaehler}
+{not flashbackWerkstattBestanden: -> END}
+{claireErzaehlt: -> END}
 ~ claireErzaehlt = true
 „Er lässt ihn stehen? Den ganzen Läufer? Das ist doch Verschwendung.“ – „Das ist Musik, Papa.“ #sprecher:erzaehler #musik:ambrose.vierhaendig
 Bei jedem Opfer klatscht Claire. Sie versteht nichts davon. Sie klatscht, weil du so strahlst. #sprecher:erzaehler
-„Wenn ich groß bin, will ich das Brett haben.“ – „Es ist meines.“ – „Dann eben, wenn du tot bist.“ #sprecher:erzaehler
+* [Claire zusehen]
+- „Wenn ich groß bin, will ich das Brett haben.“ #sprecher:erzaehler
+„Es ist meines. Ich habe es gerade erst gebaut.“ #sprecher:erzaehler
+„Dann eben, wenn du tot bist.“ #sprecher:erzaehler #pause
+„Claire!“, sagt dein Vater. Du lachst. Du bist einundzwanzig, und du hast alle Zeit der Welt. #sprecher:erzaehler
 * [„Abgemacht. Aber du musst darauf aufpassen.“]
 - „Ich pass immer auf“, sagt Claire. #sprecher:erzaehler
 Das Gold verblasst. Du stehst in der Werkstatt, dein Gesicht ist nass, und du weißt nicht, ob es deine Tränen sind. #sprecher:erzaehler #musik:aus
@@ -191,7 +208,7 @@ Claire. Sie hat nach Norden geheiratet. In eine Stadt mit einem Wasserfall. Sie 
 Sie hat aufgepasst. Und ihre Tochter. Und deren Tochter. Bis zu einer alten Frau, die es sechzig Jahre abgestaubt hat. #sprecher:ambrose #stimmung:still
 * [Warten]
 - Deshalb bist du hier. #sprecher:ambrose #stimmung:still #pause:2
-Dann schweigt er wieder. Es war sein einer Satz für diesen Tag. #sprecher:erzaehler
+Dann schweigt er wieder. Es war sein einer Satz für diesen Tag, und er hat ihn längst verbraucht. #sprecher:erzaehler
 -> END
 
 // ---------------------------------------------------------------- Ansehen (Runde 6)

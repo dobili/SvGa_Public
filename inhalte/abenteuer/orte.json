@@ -2623,6 +2623,7 @@
           "name": "weiterDeich",
           "karte": "wegSiliconDelacroix.faehre",
           "art": "uebergang",
+          "dialog": "weg-silicon-delacroix.bug",
           "ziel": {
             "karte": "wegSiliconDelacroix.deich",
             "ausloeser": "zurueckFaehre"

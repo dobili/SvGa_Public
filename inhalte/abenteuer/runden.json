@@ -279,7 +279,8 @@
         "partie": "klassik-unsterbliche",
         "abZug": 1,
         "seite": "white"
-      }
+      },
+      "danach": "port-delacroix-werkstatt.werkbank_nach_flashback"
     },
     {
       "kennung": "wegDelacroixDesert.tafel",

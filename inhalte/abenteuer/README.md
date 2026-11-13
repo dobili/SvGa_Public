@@ -45,6 +45,13 @@ Hintergrund: `docs/spiel/04_Architektur.md`, Abschnitt 2 und 9.
 - Porträtfassungen (T4): `#stimmung:jung|ertappt|riss|alt|lachtOhneSpott|muede` zeigt
   `portraets/<sprecher>-<fassung>.svg` (kebab-case, etwa `mira-lacht-ohne-spott.svg`); fehlt die
   Datei, die Grundfassung. Andere Stimmungen zeigen immer die Grundfassung.
+- Tondateien: Die Kennung wird zum Dateinamen (camelCase → kebab-case, ein Punkt bleibt:
+  `ambrose.lassMich` → `musik/ambrose.lass-mich.m4a`). Im privaten Repository liegt der Ton von
+  Akt 1 direkt in `musik/` und `klang/` (Grundpaket), der Ton der Akte 2 bis 4 in `musik/akt2/` …
+  `klang/akt4/`; das Spiel lädt ihn beim Betreten des Akts nach, das Spielmenü bietet „Musik der
+  späteren Akte jetzt laden“. Kurze Motive erzeugt der Browser selbst, ohne Datei: `#klang:aha`,
+  `konzern`, `hale`, `aufgabe`, `fehler`, `atme`, `kerzenton` und `blindschach.<feld>` (ein Ton je
+  Feld: Linie = Stufe, Reihe = Lage). Eine Datei gleichen Namens wird dann nicht gebraucht.
 - Bild (T7): `#bild:kennung` zeigt `bilder/<kennung>.webp` (privater Ordner `bilder/`, höchstens
   1024 Pixel breit) groß über der Zeile; „Weiter“ schließt es mit der Zeile. Fehlt die Datei,
   erscheint die Zeile ohne Bild.

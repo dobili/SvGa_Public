@@ -17,4 +17,10 @@ describe("Fensterbank", () => {
     ];
     expect(fensterbankfunde(gefunden, FUNDE).map((f) => f.kennung)).toEqual(["b", "a"]);
   });
+
+  it("reicht das Bild des Fundes weiter, wenn funde.json eines nennt", () => {
+    const mitBild = [{ ...FUNDE[0], bild: "bilder/fund-a.webp" }] as Funddaten[];
+    const liste = fensterbankfunde([{ kennung: "a", gefunden: "2026-11-13T10:00:00Z" }], mitBild);
+    expect(liste[0]?.bild).toBe("bilder/fund-a.webp");
+  });
 });

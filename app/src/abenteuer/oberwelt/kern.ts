@@ -40,7 +40,10 @@ export interface Oberweltkern {
   readonly setzeWelt: (w: Weltdaten) => void;
   readonly spiel: RefObject<Phaser.Game | null>;
   readonly meldung: string | null;
-  readonly setzeMeldung: (text: string | null) => void;
+  /** Bild zur Meldung im Zusatzpaket (Fundbild), sonst null. */
+  readonly meldungsbild: string | null;
+  /** Zeigt eine Meldung, optional mit Bild; null schließt sie samt Bild. */
+  readonly setzeMeldung: (text: string | null, bild?: string) => void;
   /** Schreibt den Spielstand in die App und merkt ihn hier. */
   readonly schreibe: (neu: Abenteuerstand) => void;
   /** Merkt einen Stand hier, ohne ihn zu schreiben (der Aufrufer schreibt und wartet darauf). */
@@ -160,7 +163,13 @@ export function useOberweltkern(): Oberweltkern {
   const dienste = appdienste();
   const [stand, setzeStand] = useState<Abenteuerstand | null>(() => dienste.liesStand());
   const [geladeneWelt, setzeWelt] = useState<Weltdaten | null>(null);
-  const [meldung, setzeMeldung] = useState<string | null>(null);
+  const [meldungsstand, setzeMeldungsstand] = useState<{ text: string; bild?: string } | null>(
+    null,
+  );
+  const setzeMeldung = (text: string | null, bild?: string) =>
+    setzeMeldungsstand(text === null ? null : { text, ...(bild ? { bild } : {}) });
+  const meldung = meldungsstand?.text ?? null;
+  const meldungsbild = meldungsstand?.bild ?? null;
   const [toenung, setzeToenung] = useState<Toenung | null>(null);
   const spiel = useRef<Phaser.Game | null>(null);
   const standRef = useRef(stand);
@@ -192,6 +201,7 @@ export function useOberweltkern(): Oberweltkern {
     },
     spiel,
     meldung,
+    meldungsbild,
     setzeMeldung,
     schreibe,
     merke,

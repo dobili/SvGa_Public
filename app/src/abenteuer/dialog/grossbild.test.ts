@@ -11,6 +11,11 @@ describe("bildpfad", () => {
     expect(bildpfad({ sprecher: "ambrose", bild: "foto-tische" })).toBe("bilder/foto-tische.webp");
   });
 
+  it("setzt Unterstriche wie camelCase in Bindestriche um", () => {
+    expect(bildpfad({ bild: "blaues_heft" })).toBe("bilder/blaues-heft.webp");
+    expect(bildpfad({ bild: "brief_vonAda" })).toBe("bilder/brief-von-ada.webp");
+  });
+
   it("zeigt nichts ohne Tag, bei #bild:aus und bei unsinnigen Kennungen", () => {
     expect(bildpfad({ sprecher: "ambrose" })).toBeNull();
     expect(bildpfad({ bild: "aus" })).toBeNull();

@@ -600,3 +600,31 @@ body.abenteuer-mit-kulisse {
 .abenteuer-fensterbank li + li {
   margin-top: calc(var(--raster) * 0.75);
 }
+
+/* Tagebuchseite mit Schreibanimation (Roman Kap. 9, oberwelt/Tagebuchseite.tsx): Handschrift ohne
+   Webschrift, damit das Paket nicht wächst. */
+.abenteuer-handschrift {
+  font-family: "Segoe Print", "Bradley Hand", "Comic Sans MS", cursive;
+  font-style: italic;
+}
+
+.abenteuer-tagebuchseite .abenteuer-handschrift {
+  min-height: 3em;
+  font-size: 1.4rem;
+}
+
+.abenteuer-feder {
+  display: inline-block;
+  width: 0.15em;
+  height: 1em;
+  margin-left: 0.05em;
+  background: currentColor;
+  vertical-align: text-bottom;
+  animation: abenteuer-feder 0.8s steps(2) infinite;
+}
+
+@keyframes abenteuer-feder {
+  50% {
+    opacity: 0;
+  }
+}

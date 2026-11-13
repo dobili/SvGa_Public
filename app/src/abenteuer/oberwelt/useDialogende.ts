@@ -48,6 +48,9 @@ export interface Dialoge {
   /** Fensterbank mit den Funden (T15), nach `zeigeFensterbank()` im Dialog. */
   readonly fensterbank: boolean;
   readonly schliesseFensterbank: () => void;
+  /** Tagebuchseite mit Schreibanimation (Name des Eintrags), nach `schreibeTagebuch` im Dialog. */
+  readonly tagebuchseite: string | null;
+  readonly schliesseTagebuchseite: () => void;
   readonly offenerLaden: string | null;
   readonly schliesseLaden: () => void;
   /** Vorführung (Statist mit `zeigt` oder Dialog), solange das kleine Brett offen ist. */
@@ -60,6 +63,7 @@ function useMerker(): Nachdialogmerker {
   return {
     abspann: useRef(false),
     fensterbank: useRef(false),
+    tagebuchseite: useRef<string | null>(null),
     laden: useRef<string | null>(null),
     auftrag: useRef(null),
     runde: useRef<string | null>(null),
@@ -106,6 +110,7 @@ export function useDialogende(k: Oberweltkern, partie: Partien, runden: Runden):
   const [dialog, setzeDialog] = useState<OffenerDialog | null>(null);
   const [abspann, setzeAbspann] = useState(false);
   const [fensterbank, setzeFensterbank] = useState(false);
+  const [tagebuchseite, setzeTagebuchseite] = useState<string | null>(null);
   const [offenerLaden, setzeOffenerLaden] = useState<string | null>(null);
   const [vorfuehrung, setzeVorfuehrung] = useState<string | null>(null);
   // Dialogvariablen beim Öffnen des Dialogs: Was die Hülle danach setzt, überschreibt Ink nicht.
@@ -133,6 +138,8 @@ export function useDialogende(k: Oberweltkern, partie: Partien, runden: Runden):
     if (reise) k.wechsleKarte(reise.karte, reise.ausloeser);
     if (nimm(m.abspann, false)) setzeAbspann(true);
     if (nimm(m.fensterbank, false)) setzeFensterbank(true);
+    const seite = nimm(m.tagebuchseite, null);
+    if (seite) setzeTagebuchseite(seite);
     const laden = nimm(m.laden, null);
     if (laden) setzeOffenerLaden(laden);
     const u = nimm(uebergang, null);
@@ -164,6 +171,8 @@ export function useDialogende(k: Oberweltkern, partie: Partien, runden: Runden):
     schliesseAbspann: () => setzeAbspann(false),
     fensterbank,
     schliesseFensterbank: () => setzeFensterbank(false),
+    tagebuchseite,
+    schliesseTagebuchseite: () => setzeTagebuchseite(null),
     offenerLaden,
     schliesseLaden: () => setzeOffenerLaden(null),
     vorfuehrung,

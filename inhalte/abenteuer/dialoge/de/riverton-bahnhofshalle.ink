@@ -9,6 +9,11 @@
 // Einstiege wie in orte.json: harlan, pops, zug, uhr, zeitungsstand, fund_zeitungsausschnitt,
 // fund_taubenfeder.
 //
+// Runde 11 (13.11.2026): an den Roman zu Akt 2 angeglichen (Kapitel 19 und 21), Klang nach
+// 21_Klangplan.md. Kleine Geschichte Mr. Harlan (Ortsblatt Riverton): A niemand spielt ohne Uhr
+// mit ihm, B nach drei Partien die Lupe, C Tamsin spielt mit ihm ohne Uhr (nadelIronwood > 0),
+// D eine zweite kleine Uhr „Für Leute mit Zeit“ (endeAkt3Gesehen).
+//
 // Variablen: ausgangRivertonHarlan, odumAufgabeBestanden, flashbackLondonBestanden setzt die Hülle
 // (R42); bildschirmtischeGesehen setzt riverton-aussen.ink; Funde merkt sich Ink selbst.
 
@@ -28,6 +33,11 @@ VAR flashbackLondonBestanden = false
 VAR zeitungsausschnittGefunden = false
 VAR odumAufgabeBestanden = false
 VAR taubenfederGefunden = false
+VAR harlanOhneUhrGesagt = false
+VAR popsOdumErzaehlt = false
+VAR nadelRiverton = 0
+VAR nadelIronwood = 0
+VAR endeAkt3Gesehen = false
 
 // ---------------------------------------------------------------- Mr. Harlan
 
@@ -43,34 +53,54 @@ VAR taubenfederGefunden = false
 // Nach drei Siegen schenkt Harlan seine Lupe (docs/spiel/05, Szene 31a; Quest riverton.lupe gibt
 // den Gegenstand); nur so, nicht im Laden (Antwort des Autors zu Q20-3).
 === harlan_lupe ===
+// Kapitel 19: eine kleine Lupe aus Messing, kein Gerät; Ambrose lobt die Ehrlichkeit, nicht den Nutzen.
 ~ lupeGeschenkt = true
-Dreimal. Das hat seit dem Bahnstreik keiner geschafft. #sprecher:harlan
-Er nimmt die Lupenbrille ab und legt sie dir in die Hand. „Wer genau hinsieht, braucht keine Eile.“ #sprecher:erzaehler
-Vor jeder Partie wirst du jetzt mehr über deinen Gegner wissen. Vorbereitung ist ein halber Sieg. #sprecher:ambrose
+Er greift in die Westentasche und legt dir etwas in die Hand. Eine kleine Lupe aus Messing, zum Aufklappen, blank gerieben. #sprecher:erzaehler
+Fünfzig Jahre an Uhrwerken. Man sieht damit nicht die Zahnräder. Man sieht, wo es hakt. #sprecher:harlan
+Bei mir: Ich denke zu lange. Du darfst das wissen. Die meisten wollen es nicht wissen, sie wollen nur schneller sein. #sprecher:harlan
+Ein ehrliches Werkzeug. Es zeigt nur, was ohnehin da ist. #sprecher:ambrose
 -> END
 
 === harlan_erstes_treffen ===
+// Kapitel 19: Pops stellt ihn vor; die große Uhr tickt so laut, dass man es im Bauch spürt.
 ~ harlanGetroffen = true
-Auf der Bank unter der großen Uhr sitzt ein alter Herr mit Lupenbrille vor einem Brett. Er hat den Zug noch nicht gemacht. #sprecher:erzaehler
-Harlan. Ich habe diese Uhr vierzig Jahre aufgezogen. #sprecher:harlan
-Eile ist der Feind der Feder. Und der Unruh. #sprecher:harlan
-Ich hab schon mal gegen ihn gespielt, ohne Uhr. Er hat eine Stunde für zwölf Züge gebraucht und dann gewonnen. #sprecher:juno
+Unter der großen Uhr sitzt ein Mann mit Lupenbrille auf einer Bank und sieht auf ein Brett. Er bewegt sich nicht. #sprecher:erzaehler
+Mr. Harlan. Uhrmacher. Zieht die da oben jeden Morgen auf, seit zweiundvierzig Jahren. #sprecher:pops
+Wenn du mit ihm spielst, bring Zeit mit. Oder nimm ihm welche weg. #sprecher:pops
+Er hat eine Stunde für zwölf Züge gebraucht. Und dann gewonnen. #sprecher:juno
+Mr. Harlan hebt den Kopf, sehr langsam. Hinter den Gläsern sind seine Augen riesig. #sprecher:erzaehler
 -> harlan_angebot
 
 === harlan_angebot ===
-Eine Stellung mit Vorteil für Weiß, zehn Züge. Mit Uhr oder ohne, wie Sie wünschen. #sprecher:harlan
+Eine Stellung, zehn Züge. Mit Uhr? #sprecher:harlan
+Er sieht hinauf zur großen Uhr. #sprecher:erzaehler
+Eile ist der Feind der Feder. Und der Unruh. Aber bitte. #sprecher:harlan
 Ein Mann, der jeden Zug zehn Minuten wiegt. Gib ihm keine zehn Minuten. #sprecher:ambrose
 * [„Spielen wir.“]
     ~ beginnePartie("riverton.harlan")
     -> END
-* [„Später.“]
+* [„Nicht jetzt.“]
     Ich habe Zeit. Das ist mein einziger Reichtum. #sprecher:harlan
     -> END
 
 === harlan_nach_sieg ===
+// Kapitel 19: Der Sieg fühlt sich nicht gut an; die Zeitwahl bekommt ein Gewissen (Stufe A).
+Er nimmt die Lupenbrille ab und reibt sich die Nase. #sprecher:erzaehler
 Die Unruh tickt für alle gleich. Nur nicht für mich. #sprecher:harlan
-Du hast ihm die Zeit genommen und dir die Ruhe behalten. So gewinnt man ehrlich. #sprecher:ambrose
-+ [„Noch eine Partie?“]
+{not harlanOhneUhrGesagt: -> harlan_ohne_uhr}
+-> harlan_noch_eine
+
+=== harlan_ohne_uhr ===
+~ harlanOhneUhrGesagt = true
+* [„Ohne Uhr hätten Sie gewonnen.“]
+    Ohne Uhr gewinne ich immer. #sprecher:harlan
+    Er lächelt, ein wenig schief. #sprecher:erzaehler
+    Deshalb spielt niemand mehr mit mir. #sprecher:harlan #pause
+* [Nicken]
+- -> harlan_noch_eine
+
+=== harlan_noch_eine ===
++ [„Noch eine Partie? Ohne Uhr, wenn Sie wollen.“]
     ~ beginnePartie("riverton.harlan")
     -> END
 + [„Auf Wiedersehen, Mr. Harlan.“]
@@ -78,27 +108,41 @@ Du hast ihm die Zeit genommen und dir die Ruhe behalten. So gewinnt man ehrlich.
 
 === harlan_nach_niederlage ===
 Langsam ist auch eine Geschwindigkeit. Noch einmal? #sprecher:harlan
-Mit viel Zeit ist er stark. Wähle das nächste Mal die Uhr. #sprecher:ambrose
-Das ist keine Schande. #sprecher:ambrose
 + [„Noch einmal.“]
     ~ beginnePartie("riverton.harlan")
     -> END
-+ [„Später.“]
++ [„Nicht jetzt.“]
     -> END
 
 // ---------------------------------------------------------------- Pops
 
 === pops ===
-{popsGetroffen:
-    {~Ein Kiosk ist eine Bibliothek, die man essen kann.|Taschenschach seit dreißig Jahren. Die Bildschirme da draußen verkaufen sich besser. Noch.|Slick kauft jeden Morgen eine Limo. Heute zwei. Er ist nervös.} #sprecher:pops
+{
+- popsGetroffen and harlanGetroffen and not popsOdumErzaehlt: -> pops_odum
+- popsGetroffen:
+    {~Ein Kiosk ist eine Bibliothek, die man essen kann. Willst du ein Sandwich?|Taschenschach seit dreißig Jahren. Die Bildschirme da draußen verkaufen sich besser. Noch.|Slick kauft jeden Morgen eine Limo. Heute zwei. Er ist nervös.} #sprecher:pops
     -> pops_laden
 }
 ~ popsGetroffen = true
-Hinter einem Zeitungsstand voller Hefte und Taschenschachspiele sitzt ein Mann mit Strickweste. #sprecher:erzaehler
+Ein runder, freundlicher Mann hinter einem Zeitungsstand. Neben den Zeitungen hängt eine Reihe Taschenschachspiele, in allen Farben. #sprecher:erzaehler
 Pops. Zeitungen, Limo, Taschenschach. Seit dreißig Jahren. #sprecher:pops
-Der alte Mr. Odum hat hier jeden Morgen eine Zeitung gekauft. Er las die Schachspalte zuerst, noch vor dem Wetter. #sprecher:pops
-Er hat Slick das Spielen beigebracht. Und halb Riverton dazu. #sprecher:pops
-Schau dich um. Für Münzen gibt es hier Karten für unterwegs. #sprecher:pops
+Ein Kiosk ist eine Bibliothek, die man essen kann. Schau dich um. Für Münzen gibt es hier Karten für unterwegs. #sprecher:pops
+-> pops_laden
+
+// Kapitel 19: Pops erzählt von Mr. Odum, ohne dass man fragt (etwa eine Minute; Musik riverton.pops).
+=== pops_odum ===
+~ popsOdumErzaehlt = true
+Pops bündelt Zeitungen. Er erzählt, ohne dass du gefragt hast. #sprecher:erzaehler #musik:riverton.pops
+Der alte Odum kam jeden Morgen um sieben, vierzig Jahre lang. Schlug die Zeitung von hinten auf, bei der Schachspalte. #sprecher:pops
+Slick hat er mit zwölf im Park aufgelesen. Ein Junge, der Flaschen sammelte und zu schnell redete. #sprecher:pops
+Im März ist er gestorben, im Schlaf. Im April hat der Stadtrat getagt. #sprecher:pops #pause
+* [„Und der Pavillon?“]
+* [Zuhören]
+- Der hätte das nicht zugelassen. Der hätte sich vor die Bagger gesetzt und eine Partie angefangen. #sprecher:pops
+Und niemand hätte sich getraut, ihn zu stören, bevor sie fertig ist. #sprecher:pops
+Er schnürt das Bündel zu. #sprecher:erzaehler
+Slick ist ein guter Junge. Aber er glaubt, er muss lauter sein als der Alte. #sprecher:pops
+Damit keiner merkt, dass er nicht der Alte ist. #sprecher:pops #musik:karte
 -> pops_laden
 
 === pops_laden ===
@@ -167,7 +211,7 @@ Willst du es versuchen? Für Elias. #sprecher:pops
 * [„Ich versuche es.“]
     ~ beginneAufgaben("riverton.odumAufgabe")
     -> END
-* [„Später.“]
+* [„Nicht jetzt.“]
     Die Aufgabe ist alt. Sie läuft nicht weg. #sprecher:pops
     -> END
 

@@ -2131,6 +2131,7 @@
           "name": "weiterGlasbruecke",
           "karte": "wegIronwoodSilicon.raststaette",
           "art": "uebergang",
+          "dialog": "weg-ironwood-silicon.glasbruecke",
           "ziel": {
             "karte": "wegIronwoodSilicon.glasbruecke",
             "ausloeser": "zurueckRaststaette"

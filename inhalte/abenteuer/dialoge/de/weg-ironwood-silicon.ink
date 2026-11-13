@@ -8,6 +8,11 @@
 // Einstiege wie in orte.json: kowalczyk, joggerin, zurueck_ironwood, tafel, fund_anstecker,
 // fund_ohrstoepsel. Die Ankunft in Silicon Bay erzählt silicon-bay-aussen.ankunft_zu_fuss.
 //
+// Runde 11 (13.11.2026): an den Roman angeglichen (roman/akt3_teil1.md, Kapitel 30): Mrs. Kowalczyk
+// („Erst laden, dann fahren“), die Glasbrücke als Gegenstück zur Eisenbrücke, der Ohrstöpsel in der
+// Mitte der Brücke. Klang nach 21_Klangplan.md (Akt 3). Keine Hinweise auf ein Buch (Entscheidung
+// vom 13.11.2026).
+//
 // Variablen: ausgangWegIronwoodSiliconJoggerin und wegIronwoodSiliconTafelBestanden setzt die
 // Hülle (R42), „abgebrochen“ zählt wie nicht gespielt (R35). Die Funde (Anstecker, Ohrstöpsel)
 // gibt gibFund; Ink merkt sie sich zusätzlich selbst. ohrstoepselGefunden
@@ -18,6 +23,7 @@ EXTERNAL beginneAufgaben(runde)
 EXTERNAL gibFund(kennung)
 
 VAR held = "Du"
+VAR glasbrueckeGesehen = false
 VAR buchseiten = 0
 VAR finchFiguren = 0
 VAR kreideTreffpunkte = 0
@@ -40,15 +46,14 @@ VAR seite04Gefunden = false
 
 === kowalczyk ===
 {kowalczykGetroffen:
-    {~Silicon Bay? Da parkt keiner. Da fährt alles von allein.|Erst die Figuren raus, Kind. Dann die Dame. Merk dir das.|Ich fahr gleich weiter. Neun Stunden bis zur Küste.} #sprecher:kowalczyk
+    {~Silicon Bay? Da parkt keiner. Da fährt alles von allein.|Erst die Figuren raus. Dann die Dame.|Ich fahr gleich weiter. Neun Stunden bis zur Küste.} #sprecher:kowalczyk
     -> END
 }
 ~ kowalczykGetroffen = true
-Am Kaffeeautomaten lehnt eine Frau in Latzhose. Auf ihrer Tasse steht „Königin der Landstraße“. #sprecher:erzaehler
-Du spielst Schach? Mein Vater hat's mir im Führerhaus beigebracht. #sprecher:kowalczyk
-Er hat immer gesagt: Erst die Figuren raus, dann die Dame. Sonst jagen sie dir die Dame übers Brett. #sprecher:kowalczyk
-Die Dame zu früh, das ist eine Todsünde. Ich hab's ihm erst geglaubt, als meine weg war. #sprecher:kowalczyk
-Eine Kutscherin mit Verstand. Die Landstraße erzieht gut. #sprecher:ambrose
+Eine Fernfahrerin mit Armen wie Big Joe sieht dir zu, wie du in die erste Falle der Tafel hineintrittst. #sprecher:erzaehler
+Erst die Figuren raus. Dann die Dame. #sprecher:kowalczyk
+Ich fahr seit dreißig Jahren. Erst laden, dann fahren. Ist dasselbe. #sprecher:kowalczyk
+Sie heißt Kowalczyk. Du fragst nicht, ob sie mit jemandem verwandt ist. #sprecher:erzaehler
 -> END
 
 // ---------------------------------------------------------------- Rätseltafel
@@ -58,8 +63,7 @@ Eine Kutscherin mit Verstand. Die Landstraße erzieht gut. #sprecher:ambrose
     Auf der Tafel am Automaten steht in Filzstift: „Gelöst. Kaffee ist trotzdem kaputt.“ #sprecher:erzaehler
     -> END
 }
-Neben dem Kaffeeautomaten hängt eine Tafel: „Wer hier hängt, verliert. Drei Stellungen für die Pause.“ #sprecher:erzaehler
-Hängende Figuren. Die erste Frage vor jedem Zug, {held}. Du kennst sie. #sprecher:ambrose
+Am Kaffeeautomaten hängt eine Blechtafel mit Magnetfiguren, wie am Ortsausgang von Maple Falls: „Wer hier hängt, verliert.“ #sprecher:erzaehler
 + [Die Aufgaben lösen]
     ~ beginneAufgaben("wegIronwoodSilicon.tafel")
     -> END
@@ -89,7 +93,7 @@ Sie läuft schnell und denkt schnell. Lass sie laufen, {held}. Denk du. #spreche
 + [„Los.“]
     ~ beginnePartie("wegIronwoodSilicon.joggerin")
     -> END
-* [„Später.“]
+* [„Nicht jetzt.“]
     Ich lauf noch zwei Runden. #sprecher:joggerin
     -> END
 
@@ -99,7 +103,7 @@ Sie hat schneller gezogen, nicht besser. Noch einmal, und diesmal in deinem Takt
 + [„Noch einmal.“]
     ~ beginnePartie("wegIronwoodSilicon.joggerin")
     -> END
-* [„Später.“]
+* [„Nicht jetzt.“]
     -> END
 
 === joggerin_nach_sieg ===
@@ -130,16 +134,35 @@ Gratis. Natürlich. #sprecher:juno
 -> END
 
 === fund_ohrstoepsel ===
+// Kapitel 30: Der Stöpsel liegt in der Mitte der Brücke; der Held steckt ihn ein, ohne zu wissen,
+// warum. Ambrose sagt nichts dazu (er freut sich auf die Stadt).
 {ohrstoepselGefunden:
-    Auf dem Geländer der Brücke ist nichts mehr. #sprecher:erzaehler
+    Auf dem Glas ist nichts mehr. Unter dir fließen die Lichter der Autobahn. #sprecher:erzaehler
     -> END
 }
 ~ ohrstoepselGefunden = true
+In der Mitte der Brücke liegt etwas auf dem Glas. Klein, hautfarben, wie ein Kieselstein. Ein Ohrstöpsel. #sprecher:erzaehler
+Er ist schwerer, als er sein sollte. An einer Seite ist ein winziges Loch, darin glänzt etwas Metallenes. #sprecher:erzaehler
+Hat jemand verloren. #sprecher:juno
 ~ gibFund("ohrstoepsel")
 ~ gibFund("spurPM2")
 ~ spurenPM = spurenPM + 1
-Am Geländer klemmt ein winziger, schwarzer Ohrstöpsel. Er ist schwerer, als er aussieht. #sprecher:erzaehler
-Für einen Ohrstöpsel ist er sehr schwer. Behalte ihn, {held}. #sprecher:ambrose
+Du steckst ihn ein. Du hast dir angewöhnt, Dinge einzustecken. #sprecher:erzaehler
+-> END
+
+// Kapitel 30: die Glasbrücke als Gegenstück zur Eisenbrücke. Läuft beim Übergang vom Rastplatz
+// auf die Brücke (orte.json, weiterGlasbruecke); ab dem zweiten Mal nur ein Satz.
+=== glasbruecke ===
+{glasbrueckeGesehen:
+    Glas unter den Schuhen. Zwölf Meter tiefer die Autobahn, ein Fluss aus weißen und roten Lichtern. #sprecher:erzaehler
+    -> END
+}
+~ glasbrueckeGesehen = true
+Die Brücke ist aus Glas. Der Boden, das Geländer, alles. Zwölf Meter tiefer fließen die Lichter der Autobahn. #sprecher:erzaehler
+Juno geht auf Zehenspitzen und hält sich an dir fest. Woher weißt du, dass das trägt? #sprecher:juno
+* [„Das trägt.“]
+* [„Ich weiß es nicht.“]
+- Du denkst an eine andere Brücke, aus schwarzem Eisen, mit Tausenden von Nieten, jede signiert. An der hast du nicht gezweifelt. #sprecher:erzaehler
 -> END
 
 // ---------------------------------------------------------------- Ereignis: Live auf der Glasbrücke
@@ -167,7 +190,7 @@ Fallen erkennt man, bevor man hineintritt, {held}. #sprecher:ambrose
 + [„Ich spiele mit.“]
     ~ beginneAufgaben("wegIronwoodSilicon.stream")
     -> END
-+ [„Später.“]
++ [„Nicht jetzt.“]
     Der Stream läuft bis heute Abend. Komm wieder! #sprecher:kiki
     -> END
 
@@ -209,7 +232,8 @@ Hier, ein Foto vom Ringlicht, signiert. Der Chat mochte dich. #sprecher:kiki #st
     -> END
 }
 ~ kreide2Gefunden = true
-An der Wand des Containers hinter dem Rasthaus ist ein Springer aus Kreide gemalt. Darunter, ganz klein: „K2. Wer das Wort kennt, spielt mit.“ #sprecher:erzaehler
+An der Wand des Containers hinter dem Rasthaus ist ein Springer aus Kreide gemalt. #sprecher:erzaehler
+Darunter, ganz klein: „K2. Wer das Wort kennt, spielt mit.“ #sprecher:erzaehler
 Ein Club ohne Haus. Die besten Clubs, die ich kannte, hatten nur einen Tisch und einen Ofen. #sprecher:ambrose
 ~ gibFund("kreide2")
 ~ kreideTreffpunkte = kreideTreffpunkte + 1
@@ -221,7 +245,8 @@ Ein Club ohne Haus. Die besten Clubs, die ich kannte, hatten nur einen Tisch und
     -> END
 }
 ~ finchBauerBGefunden = true
-Am Rand des Blumenkübels klebt ein kleiner Fink aus Blech. Zwischen den Stielen steckt ein weißer Bauer aus Buchsbaum. Unter seinem Fuß ist ein Feld eingebrannt. #sprecher:erzaehler
+Am Rand des Blumenkübels klebt ein kleiner Fink aus Blech. #sprecher:erzaehler
+Zwischen den Stielen steckt ein weißer Bauer aus Buchsbaum. Unter seinem Fuß ist ein Feld eingebrannt. #sprecher:erzaehler
 ~ gibFund("finchBauerB")
 ~ finchFiguren = finchFiguren + 1
 -> END
@@ -232,8 +257,8 @@ Am Rand des Blumenkübels klebt ein kleiner Fink aus Blech. Zwischen den Stielen
     -> END
 }
 ~ seite04Gefunden = true
-Unter der Rätseltafel klemmt ein Blatt Papier, vom Wind hergeweht und voller Schachdiagramme. #sprecher:erzaehler
-Eine Seite aus einem Buch. Jemand vermisst sie bestimmt. #sprecher:ambrose
+Unter der Rätseltafel klemmt ein loses Blatt, vom Wind hergeweht. Darauf eine gezeichnete Stellung. #sprecher:erzaehler
+Jemand hat hier in der Pause gerechnet. Heb es auf. #sprecher:ambrose
 ~ gibFund("seite04")
 ~ buchseiten = buchseiten + 1
 -> END
@@ -242,7 +267,7 @@ Eine Seite aus einem Buch. Jemand vermisst sie bestimmt. #sprecher:ambrose
 
 === schild_smart_city ===
 Am Fuß der Rampe steht ein Schild: „Ab hier: Smart City. Bitte Sensoren nicht verdecken.“ #sprecher:erzaehler
-Welche Sensoren? Ich sehe nur Möwen. #sprecher:ambrose
+Welche Sensoren? Ich sehe nur Glas. Schönes Glas, das gebe ich zu. #sprecher:ambrose
 -> END
 
 === werbetafel_zero ===

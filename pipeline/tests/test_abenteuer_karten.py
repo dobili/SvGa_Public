@@ -14,6 +14,7 @@ import pytest
 
 from pipeline.abenteuer import karten as k
 from pipeline.abenteuer import moebelliste
+from pipeline.abenteuer.kartenbau import ist_sitzmoebel
 
 HAUPTORDNER = Path(__file__).resolve().parents[2]
 INHALTE = HAUPTORDNER / "inhalte" / "abenteuer"
@@ -169,13 +170,25 @@ def test_moebel_bekannt_und_frei_von_ausloesern():
             continue
         karte = k.lade_karte(datei)
         gesperrt = k.moebelfelder(karte)
+        # Sitzende Figuren (R020) dürfen auf einem Sitzmöbel stehen, aber auf keinem anderen Möbel.
+        nur_sitze = {**karte, "layers": [_nur_sitzmoebel(e) for e in karte["layers"]]}
+        ohne_sitze = gesperrt - k.moebelfelder(nur_sitze)
         # Gegenstände zum Ansehen dürfen auf einem Möbel liegen (man steht davor, wie beim Brett).
         ansehen = {a["name"] for a in ort["ausloeser"] if a["art"] == "gegenstand"}
         for objekt in k.objekte(karte):
             if objekt.moebel:
                 assert objekt.name in k.MOEBEL, f"{eintrag['kennung']}: Möbel {objekt.name} fehlt"
             elif not objekt.belebung and objekt.name not in ansehen:
-                assert objekt.feld not in gesperrt, f"{eintrag['kennung']}: {objekt.name} zugestellt"
+                sperre = ohne_sitze if objekt.eigenschaften.get("sitzt") else gesperrt
+                assert objekt.feld not in sperre, f"{eintrag['kennung']}: {objekt.name} zugestellt"
+
+
+def _nur_sitzmoebel(ebene: dict) -> dict:
+    """Die Ebene mit nur den Sitzmöbeln (Stühle, Bänke, Sessel, Sofas) unter ihren Möbeln."""
+    if "objects" not in ebene:
+        return ebene
+    behalten = [o for o in ebene["objects"] if o.get("type") != "moebel" or ist_sitzmoebel(o.get("name", ""))]
+    return {**ebene, "objects": behalten}
 
 
 def test_moebel_namen_eindeutig():

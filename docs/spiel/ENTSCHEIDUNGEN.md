@@ -944,13 +944,14 @@ vollständig im Ereignis; gesammelte Seiten zeigen ihren Inhalt selbst.
 Der Klangplan kommt auf etwa 120 MB. Der Autor ist einverstanden, dass der Ton von Akt 1 mit dem
 Grundpaket kommt und alle weiteren Pakete nachgeladen werden.
 
-## Neue Karte „Schutzengel“ (13.11.2026)
+## Karte „Schutzengel“: Ambrose hält den Zug auf (13.11.2026)
 
-Idee des Autors: Solange die Karte aktiv ist, wird ein Zug des Helden, der deutlich an
-Stellungsbewertung verliert, nicht sofort ausgeführt. Ambrose springt mit einer Dialogzeile ein
-und hält ihn auf („Das spielst du besser nicht.“), mit oder ohne kurze Begründung; der Held zieht
-neu. Empfehlung des Hauptchats, schon in Arbeit: Die Karte wirkt einmal je Partie (auf höheren
-Kartenstufen öfter), greift ab einem Verlust von etwa zwei Bauerneinheiten oder bei einem
-übersehenen Matt, und nennt als Begründung höchstens die Art des Fehlers („Da hängt etwas.“,
-„Dein König.“), nie den besseren Zug. In Partien ohne Ambrose (Port Delacroix nach dem Vorwurf,
-Finale) ist sie gesperrt.
+Die Karte gibt es schon im Plan (K4 in Dokument 11: für die nächsten fünf eigenen Züge fragt die
+App einmal „Bist du sicher?“, wenn ein Zug zwei Bauern oder mehr verliert; Vergabe in Port
+Delacroix, danach im Laden von Desert Springs). Wunsch des Autors: Nicht die App fragt, sondern
+Ambrose springt mit einer Dialogzeile ein und hält den Zug auf („Das spielst du besser nicht.“),
+mit oder ohne kurze Begründung; der Zug wird nicht ausgeführt, der Held zieht neu. Empfehlung des
+Hauptchats, in Arbeit bei mittel-2: Maßstab ist der Verlust an Stellungsbewertung (etwa zwei
+Bauerneinheiten gegenüber dem besten Zug, oder ein übersehenes Matt); als Begründung höchstens die
+Art des Fehlers („Da hängt etwas.“, „Dein König.“), nie der bessere Zug; in Partien ohne Ambrose
+(Finale) ist die Karte gesperrt. Dauer und Häufigkeit bleiben wie in Dokument 11.

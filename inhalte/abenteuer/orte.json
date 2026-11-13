@@ -323,7 +323,22 @@
           "datei": "karten/cedar-creek-aussen.json",
           "name": "ort.cedarCreek.aussen",
           "innen": false,
-          "musik": "musik/cedar-creek.ogg"
+          "musik": "musik/cedar-creek.m4a",
+          "geraeusch": "klang/bach.m4a",
+          "licht": "tag",
+          "licht_zustaende": {
+            "endeAkt1Gesehen": "abend"
+          },
+          "klangquellen": [
+            {
+              "objekt": "mf2Bibliothek",
+              "musik": "turmuhr",
+              "reichweite": 18
+            }
+          ],
+          "zustaende": {
+            "teamAngekommen und nicht endeAkt1Gesehen": "karten/cedar-creek-aussen-samstag.json"
+          }
         },
         {
           "kennung": "cedarCreek.bibliothek",
@@ -394,6 +409,18 @@
           "name": "figur.victor.name",
           "sprite": "figuren/victor.png",
           "dialog": "cedar-creek-aussen.victor"
+        },
+        {
+          "kennung": "cedarCreek.zwillinge",
+          "name": "figur.zwillinge.name",
+          "sprite": "figuren/zwillinge.png",
+          "dialog": "cedar-creek-aussen.zwillinge"
+        },
+        {
+          "kennung": "cedarCreek.kettering",
+          "name": "figur.kettering.name",
+          "sprite": "figuren/kettering.png",
+          "dialog": "cedar-creek-aussen.kettering"
         }
       ],
       "ausloeser": [

@@ -170,29 +170,40 @@ An Tisch zwei räumt ein Junge in Weiß seine Figuren ein. Er hält den Kopf gan
 -> aussage
 
 === aussage ===
+// Roman Kapitel 62: Nova spricht allein, Dr. Lin legt die Mappe hin, die Bildschirme gehen aus
+// (abschaltton, das Konzernmotiv kehrt nicht wieder), Victor stellt sich neben Nova, acht Clubs stehen.
 ~ aussageGesehen = true
-{
-- novaHilfeZugesagt:
-    Am Pressetisch steht Nova neben Dr. Lin. Du stellst dich an ihre andere Seite, wie versprochen. #sprecher:erzaehler
-- novaBitteGehoert:
-    Am Pressetisch steht Nova neben Dr. Lin. Sie sucht im Saal, bis sie dich findet. Dann atmet sie aus. #sprecher:erzaehler
-- else:
-    Am Pressetisch steht Nova neben Dr. Lin, sehr gerade und sehr blass. #sprecher:erzaehler
-}
-Die Turnierleiterin hört zu, Graham Hale auch. #sprecher:erzaehler
-Bei Perfect Move haben wir mit Geräten gespielt. Mit einem Empfänger im Ohr. Ich auch. #sprecher:nova #stimmung:ernst
-Dr. Lin legt die Spielberichte auf den Tisch und daneben den kleinen Empfänger aus dem Serverraum. #sprecher:erzaehler
-Achtundneunzig Prozent Genauigkeit mit Gerät, vierundsiebzig ohne. Die Zahlen lügen nicht. #sprecher:lin
-Graham Hale wird blass. Er hat davon nichts gewusst. #sprecher:erzaehler
-Victor stellt sich neben Nova. „Ich hab es gesehen. In Silicon Bay.“ #sprecher:erzaehler
-{
-- novaHilfeZugesagt:
-    Nova greift kurz nach deiner Hand. „Danke. Allein hätte ich es mir anders überlegt.“ #sprecher:erzaehler
-- novaBitteGehoert:
-    Nova nickt dir zu. Sie hat es allein geschafft, und du warst im Saal. #sprecher:erzaehler
-}
-Im Halbfinale läuft ein Funkprüfer mit. Wer ein Gerät trägt, wird gefunden. #sprecher:turnierleiterin
-Wer ehrlich spielt, hat nichts zu fürchten. Das gilt auch für Erwachsene. #sprecher:ambrose
+Die Scheinwerfer gehen an. Die Turnierleiterin klopft an das Mikrofon. Es wird nicht sofort still. Dann wird es still. #sprecher:erzaehler #musik:aus #klang:scheinwerfer
+Die Turnierleitung hat eine Erklärung entgegengenommen. Die Betroffene möchte selbst sprechen. #sprecher:turnierleiterin
+Nova geht nach vorn. Allein. Dr. Lin bleibt zwei Schritte hinter ihr. Novas Knie zittern, und sie drückt sie durch. #sprecher:erzaehler
+{novaHilfeZugesagt: Du stehst in der ersten Reihe, wie versprochen. Sie sucht dich und findet dich. #sprecher:erzaehler}
+Ich bin sechzehn. Seit zwei Jahren habe ich in jedem Turnier ein Gerät im Ohr getragen, das mir Züge angesagt hat. #sprecher:nova #stimmung:ernst
+* [Zuhören]
+- In der Halle hält jemand die Luft an. Dann viele. #sprecher:erzaehler #pause:2
+Ich hätte Nein sagen können. #sprecher:nova
+Ich war vierzehn. Ich wollte gewinnen, dann wollte ich nicht mehr, und dann habe ich mich nicht mehr getraut. #sprecher:nova
+Ich gebe die Titel zurück. Heute habe ich eine Partie ohne gespielt. Es ist das einzige Ergebnis der letzten zwei Jahre, das mir gehört. #sprecher:nova
+-> aussage_lin
+
+=== aussage_lin ===
+Dr. Lin legt die Mappe auf den Tisch und eine Schachtel aus weißem Karton daneben, mit Mulden aus Schaumstoff. #sprecher:erzaehler
+Ich habe ihre Spielberichte unterschrieben. Ich habe sie nie so genau angesehen, wie ich es von jedem Schüler verlangt hätte. #sprecher:lin
+Das ist mein Fehler, und er ist nicht klein. Die Kinder haben getan, was Erwachsene von ihnen verlangt haben. #sprecher:lin
+Das Halbfinale wird unter Funkaufsicht gespielt. Perfect Move ist von der weiteren Leitung entbunden. #sprecher:turnierleiterin
+* [Zu den Wänden sehen]
+- An den Wänden gehen die Bildschirme aus. Einer nach dem anderen, im Kreis. #sprecher:erzaehler #klang:abschaltton #pause:2
+-> aussage_victor
+
+=== aussage_victor ===
+Graham Hale steht bei den Sponsoren, ein Telefon in der Hand und eines am Ohr, und hat beide vergessen. Sein Gesicht ist grau. #sprecher:erzaehler
+Das wusste ich nicht. Ich habe die Engine für das Training gebaut. Ich habe nie … #sprecher:grahamHale
+Neben ihm steht Victor, im zu großen Pullover. Er geht los, quer durch die Halle, und stellt sich neben Nova. Nicht vor sie. Neben sie. #sprecher:erzaehler #musik:victor.warm
+Ich hab es gesehen. In Silicon Bay, im Januar. Und ich hab es keinem gesagt, der etwas hätte tun können. #sprecher:victor
+In Summit City hatte ich selbst eines in der Tasche. Ich hab es getragen. #sprecher:victor
+* [Victor ansehen]
+- Jemand hat mich gefragt, ob mir das Spaß macht. Vor einem Jahr, an einer Bushaltestelle. Ich hab ein Jahr für die Antwort gebraucht. #sprecher:victor
+Niemand klatscht. Aber auf der Tribüne steht eine kleine, aufrechte Frau im dunkelblauen Kleid auf. Dann ein Mann mit Händen wie Schaufeln. #sprecher:erzaehler
+Acht Clubs stehen. Nova sucht, und sie findet ihre Eltern. Sie stehen auch. #sprecher:erzaehler #pause:2
 -> END
 
 // ---------------------------------------------------------------- Halbfinale (Szene 106)

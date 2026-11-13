@@ -182,24 +182,16 @@
       ]
     }
   ],
-  "figuren": [],
-  "belebung": [
+  "figuren": [
     {
       "name": "dunmore",
-      "typ": "statist",
       "feld": [
         2,
-        5
-      ],
-      "eigenschaften": {
-        "von": "2,5",
-        "bis": "2,5",
-        "tun": "dreht an der Drehbank",
-        "wann": "tag",
-        "bild": "statist-13"
-      }
+        6
+      ]
     }
   ],
+  "belebung": [],
   "zustand": [
     "neu",
     "gebraucht",

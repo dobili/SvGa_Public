@@ -185,6 +185,13 @@
           "wenn": "endeAkt1Gesehen"
         },
         {
+          "kennung": "mapleFalls.prattSteg",
+          "name": "figur.pratt.name",
+          "sprite": "figuren/pratt.png",
+          "dialog": "maple-falls-park.steg",
+          "wenn": "nadelMapleFalls > 0"
+        },
+        {
           "kennung": "mapleFalls.junoClub",
           "name": "figur.juno.name",
           "sprite": "figuren/juno.png",
@@ -867,6 +874,13 @@
           "name": "figur.ada.name",
           "sprite": "figuren/ada.png",
           "dialog": "weg-maple-cedar.ada"
+        },
+        {
+          "kennung": "wegMapleCedar.pratt",
+          "name": "figur.pratt.name",
+          "sprite": "figuren/pratt.png",
+          "dialog": "weg-maple-cedar.tafel",
+          "wenn": "nadelMapleFalls == 0"
         },
         {
           "kennung": "wegMapleCedar.tessa",

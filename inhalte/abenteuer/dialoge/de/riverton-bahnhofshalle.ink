@@ -44,11 +44,27 @@ VAR endeAkt3Gesehen = false
 === harlan ===
 {
 - not harlanGetroffen: -> harlan_erstes_treffen
+- lupeGeschenkt and nadelIronwood > 0: -> harlan_spaeter
 - ausgangRivertonHarlan == "" or ausgangRivertonHarlan == "abgebrochen": -> harlan_angebot
 - siegeRivertonHarlan >= 3 and not lupeGeschenkt: -> harlan_lupe
 - ausgangRivertonHarlan == "niederlage": -> harlan_nach_niederlage
 - else: -> harlan_nach_sieg
 }
+
+// Kleine Geschichte Mr. Harlan, Stufen C und D (Ortsblatt Riverton).
+=== harlan_spaeter ===
+{endeAkt3Gesehen:
+    Neben der großen Uhr hängt jetzt eine zweite, kleine. Darunter ein Pappschild: „Für Leute mit Zeit.“ #sprecher:erzaehler
+    Mr. Harlan sieht von seinem Brett auf. Setz dich. Hier tickt nichts. #sprecher:harlan
+- else:
+    Auf der Bank unter der Uhr spielt Tamsin gegen Mr. Harlan. Ohne Uhr. Sie zählt nicht. #sprecher:erzaehler
+    Sie ist die Erste seit Jahren, die wartet, bis ich ziehe. #sprecher:harlan
+}
++ [„Eine Partie, Mr. Harlan?“]
+    ~ beginnePartie("riverton.harlan")
+    -> END
++ [Zusehen]
+    -> END
 
 // Nach drei Siegen schenkt Harlan seine Lupe (docs/spiel/05, Szene 31a; Quest riverton.lupe gibt
 // den Gegenstand); nur so, nicht im Laden (Antwort des Autors zu Q20-3).

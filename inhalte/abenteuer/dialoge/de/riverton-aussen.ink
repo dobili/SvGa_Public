@@ -105,27 +105,50 @@ Zurück auf den Feldweg am Bahndamm. Der Zug wäre schneller, aber der Weg ist s
 }
 
 === albescu_erstes_treffen ===
+// Kapitel 20: Der Wandel trifft nicht nur das Schach (Räder kommen jetzt im Karton aus dem
+// Handyladen); ihr Mann lebt nicht mehr. Juno fragt, weil sie mit jedem redet.
 ~ albescuGetroffen = true
-Vor der geschlossenen Fahrradwerkstatt fegt eine Frau Laub von der Treppe. Im Fenster hängt „Geschlossen“. #sprecher:erzaehler
-Albescu. Das war meine Werkstatt, bis im Frühjahr keiner mehr Räder reparieren ließ. #sprecher:albescu
-Hinten im Schuppen steht noch mein altes Rad. Aber der Schlüssel ist weg, seit zwei Jahren. #sprecher:albescu
-Mein Mann hat ihn beim Angeln verloren. #sprecher:albescu
-Beim Angeln. An einem Steg vielleicht? Halte die Augen offen, {held}. #sprecher:ambrose
+Hinter dem Park eine Werkstatt mit heruntergelassenem Rollladen: „Albescu. Fahrräder. Reparatur am selben Tag.“ Die Buchstaben blättern ab. #sprecher:erzaehler
+Davor fegt eine Frau Laub, das der Wind sofort wieder hinlegt. #sprecher:erzaehler #klang:besen_stein
+Juno fragt nach dem Weg zu einem Laden, den sie gar nicht sucht. Die Frau stützt sich auf den Besen. #sprecher:erzaehler
+Im Frühjahr hab ich zugemacht. Die Leute bestellen ihre Räder jetzt im Handyladen. #sprecher:albescu
+Man tippt eine Zahl ein, und nach drei Tagen kommt ein Karton. #sprecher:albescu
+Im Schuppen hinten steht noch alles, wie mein Mann es gelassen hat. Ich komm nicht hinein. #sprecher:albescu
+* [„Warum nicht?“]
+* [Zuhören]
+- Der Schlüssel. Er hatte ihn immer an der Angelweste. Vor zwei Jahren kommt er vom Bach bei Cedar Creek, und der Schlüssel ist weg. #sprecher:albescu
+Er hat den ganzen Sommer gesucht. Dann hat er gesagt, wir lassen ein neues Schloss machen. #sprecher:albescu
+Sie fegt ein Blatt beiseite. #sprecher:erzaehler
+Wir sind nicht mehr dazu gekommen. #sprecher:albescu #pause:2
+{gefundenSchluessel: -> albescu_schluessel}
 -> END
 
 === albescu_wartet ===
-{~Der Schlüssel ist groß und rostig, mit einem Ring aus Messing. Wenn du ihn siehst, du erkennst ihn.|Mein Mann angelte überall, am liebsten in Cedar Creek. Er sagte, dort beißen die Fische freundlicher.} #sprecher:albescu
+{~Der Schlüssel ist groß und rostig, mit einem runden Griff. Wenn du ihn siehst, erkennst du ihn.|Mein Mann angelte überall, am liebsten bei Cedar Creek. Er sagte, dort beißen die Fische freundlicher.} #sprecher:albescu
 -> END
 
 === albescu_schluessel ===
 ~ schuppenOffen = true
-Du hältst ihr den rostigen Schlüssel mit dem Messingring hin. #sprecher:erzaehler
-Den hat mein Mann beim Angeln verloren. Vor zwei Jahren! Wo hast du ihn her? #sprecher:albescu #stimmung:froh
-Komm, wir schließen auf. Das Rad soll fahren, nicht stehen. #sprecher:albescu
+Der Schlüssel aus dem Schilf. Du hast ihn vergessen, wie man Dinge vergisst, die nichts wiegen. #sprecher:erzaehler
+Du hältst ihn ihr hin. Sie sieht ihn an. Sie nimmt ihn nicht gleich. #sprecher:erzaehler #pause:2
+Den hat mein Mann verloren. Beim Angeln. Vor zwei Jahren! #sprecher:albescu #stimmung:froh
+Sie lacht, und gleichzeitig wischt sie sich mit dem Handrücken über die Augen. #sprecher:erzaehler
+Das Schloss klemmt. Es braucht euch beide und einen Tropfen Öl aus einem Kännchen in ihrer Schürze. Dann geht die Tür auf. #sprecher:erzaehler #klang:schloss
 -> END
 
 === albescu_alltag ===
-{~Fährt es gut? Die Bremsen hab ich frisch eingestellt. Im Kopf.|Ich mache die Werkstatt vielleicht wieder auf. Für Räder, nicht für Bildschirme.} #sprecher:albescu
+// Kleine Geschichte Mrs. Albescu (Ortsblatt Riverton): B Schuppen offen, C sie repariert wieder
+// Räder vor der Tür, D ein handgemaltes Schild.
+{
+- endeAkt3Gesehen:
+    Über der Werkstatt hängt ein neues Schild, mit der Hand gemalt: „Reparatur am selben Tag“. #sprecher:erzaehler
+    Mrs. Albescu winkt mit einem Schraubenschlüssel. Die Kette springt? Komm her. #sprecher:albescu #stimmung:froh
+- nadelIronwood > 0:
+    Vor der Werkstatt steht ein Rad auf dem Kopf. Mrs. Albescu sitzt auf einem Hocker davor und dreht an der Kette. #sprecher:erzaehler
+    Dafür brauche ich keine Knie. Nur Zeit. #sprecher:albescu
+- else:
+    {~Fährt es gut? Die Bremsen hab ich frisch eingestellt. Im Kopf.|Wenn die Kette springt, kommst du her, und ich zeige dir, wie man das macht.} #sprecher:albescu
+}
 -> END
 
 // ---------------------------------------------------------------- Nova und Victor
@@ -145,10 +168,10 @@ Mit Perfect Move trainiert jeder wie ein Champion! Kein Warten auf einen Gegner.
 Der Tisch ist immer bereit, immer geduldig, immer genau so stark, wie du ihn brauchst. #sprecher:nova #stimmung:froh
 Dann gehen die roten Lichter an den Kameras aus. Ihr Lächeln fällt herunter wie etwas, das man loslässt. #sprecher:erzaehler #pause:2
 Kann ich jetzt kurz sitzen? #sprecher:nova
-Sie fragt niemanden. Sie setzt sich auf die Kante des Podiums, in den Regen. #sprecher:erzaehler
 * [Juno ansehen]
 * [Weiter zusehen]
-- Nova Sinclair. Landesmeisterin. Der Highschools. Die hat noch nie verloren. #sprecher:juno
+- Sie fragt niemanden. Sie setzt sich auf die Kante des Podiums, in den Regen. #sprecher:erzaehler
+Nova Sinclair. Landesmeisterin. Der Highschools. Die hat noch nie verloren. #sprecher:juno
 -> END
 
 === victor ===

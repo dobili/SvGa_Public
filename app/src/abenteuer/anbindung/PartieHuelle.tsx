@@ -35,6 +35,7 @@ import { gegnerName, sprecherAusPfad, statustext } from "./huellentexte";
 import { Momentzeile } from "./Momentzeile";
 import { Schutzengelzeile } from "./Schutzengelzeile";
 import { useSchutzengel } from "./useSchutzengel";
+import { useStaerkewechsel } from "./useStaerkewechsel";
 import { Testleiste } from "./Testleiste";
 
 /** Unter so viel Restzeit (ms) wird die Uhr rot, wie in der App. */
@@ -171,6 +172,8 @@ function Spielfeld({ s, partie }: { s: Partiesteuerung; partie: Partie }) {
   const gegner = gegnerName(partie);
   // Schutzengel (K4): Solange er wacht, prüft die Engine jeden Zug, bevor er gespielt wird.
   const engel = useSchutzengel(s, partie);
+  // Spielstärke durch Dialog (staerkeNach in begegnungen.json), etwa „Atme“ gegen Mira.
+  useStaerkewechsel(partie);
   const bedienung = useLeserzug(engel.steuerung, s.fen, false);
   // Nachspielen der beendeten Partie: Zahl der gezeigten Halbzüge; null = Schlussstellung.
   const [stelle, setzeStelle] = useState<number | null>(null);

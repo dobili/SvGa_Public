@@ -119,6 +119,14 @@ Tipp. Jeder Moment kommt höchstens einmal je Partie.
 - `text` steht in `texte/<sprache>.json`, der Name kommt aus `figur.<sprecher>.name`; `klang` und
   `musik` wirken wie die Dialogtags.
 
+## Spielstärke durch Dialog (`begegnungen.json`, `staerkeNach`)
+
+`"staerkeNach": [{ "wenn": "atmeGesagt", "stufe": 1, "profil": "positionsspieler" }]`: Sobald die
+Bedingung gilt (Sprache wie `wenn` in `orte.json`, meist eine Variable aus einem Partiemoment mit
+Dialog), spielt der Gegner für den Rest der Partie um `stufe` Stufen stärker (negativ: schwächer, in
+allen Phasen, Grenzen 1 bis 10) und mit `profil` im Stil dieses Namens (`positionsspieler`: ruhiger,
+weniger Opfer). Jeder Eintrag wirkt einmal je Partie, auch nach dem Neuladen.
+
 ## Aufgabenrunden (`runden.json`)
 
 - `danach` (`datei.knoten`): Ein Dialog, der nach der Runde von selbst startet, sobald die

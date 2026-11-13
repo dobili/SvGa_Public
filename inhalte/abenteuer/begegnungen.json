@@ -480,6 +480,9 @@
     },
     {
       "kennung": "desertSprings.clubkampf",
+      "staerkeNach": [
+        { "wenn": "atmeGesagt", "stufe": 1, "profil": "positionsspieler" }
+      ],
       "gegner": "desertSprings.mira",
       "farbe": "zufall",
       "format": {

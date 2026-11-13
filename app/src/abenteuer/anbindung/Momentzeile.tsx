@@ -18,6 +18,8 @@ import { Portraet } from "../dialog/Portraet";
 import { faelligerMoment, type Partiemoment } from "../regeln/partiemomente";
 import { tSpiel } from "../texte/texte";
 import { tonregie } from "../ton/tonregie";
+import { ambroseFehlt, anwesendeMomente } from "../regeln/abwesenheit";
+import { useAbenteuerstand } from "./dienste";
 import { Momentdialog } from "./Momentdialog";
 
 /** Lesedauer: Grundzeit plus je Zeichen, höchstens so lange (ms). */
@@ -131,7 +133,11 @@ export function Momentzeile({
 }) {
   // Die Kennung der Partie trägt hinter „#“ eine Wiederholungsmarke (wie regeln/rueckweg.ts).
   const begegnung = (partie.einstellung.abenteuer?.kennung ?? "").split("#")[0] ?? "";
-  const momente = useMomente(begegnung);
+  // Im Tiefpunkt spricht Ambrose nicht (regeln/abwesenheit.ts).
+  const stand = useAbenteuerstand();
+  const alle = useMomente(begegnung);
+  const fehlt = ambroseFehlt(stand?.dialogvariablen ?? {});
+  const momente = useMemo(() => anwesendeMomente(alle, fehlt), [alle, fehlt]);
   const verlauf = useVerlauf(partie, momente, s.jetztMs);
   const faellig = useMemo(
     () => (momente.length === 0 ? null : faelligerMoment(momente, verlauf)),

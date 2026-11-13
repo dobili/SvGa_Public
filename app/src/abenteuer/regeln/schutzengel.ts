@@ -11,6 +11,7 @@
  * Abhängigkeiten: engine/spielbewerter.ts (Wert aus Sicht einer Seite).
  */
 import { wertFuer } from "../../engine/spielbewerter";
+import { ambroseFehlt } from "./abwesenheit";
 import type { Wert } from "../../engine/uci";
 import type { Kartenspiel } from "../schnittstelle/karten";
 import type { Abenteuerstand, Partiekarten } from "../schnittstelle/spielstand";
@@ -85,6 +86,5 @@ export function schutzengelGesperrt(
   variablen: Abenteuerstand["dialogvariablen"],
   begegnung: string,
 ): boolean {
-  const getrennt = variablen.tiefpunktGesehen === true && variablen.versoehnungGesehen !== true;
-  return getrennt || OHNE_AMBROSE.includes(begegnung.split("#")[0] ?? "");
+  return ambroseFehlt(variablen) || OHNE_AMBROSE.includes(begegnung.split("#")[0] ?? "");
 }

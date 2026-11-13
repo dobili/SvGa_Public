@@ -82,3 +82,22 @@ der eigene Plan gegen Miss Odile (die Stille ist der Moment); „Atme“ gegen M
 | T19 | Wahl mitten in einer Partie mit Wirkung auf den Gegner („Atme“)                          | Kapitel 46    |
 | T20 | Lichtstimmung, die sich innerhalb einer Szene in Stufen ändert (Kupfer, Gold, Rot, Grau) | Kapitel 42    |
 | T21 | Langer Text als Großansicht in Handschrift (Brief)                                       | Kapitel 44    |
+
+## 7. Entscheidungen nach der Prüfung des Gutachters (13.11.2026)
+
+Der Gutachter-Chat hat Akt 3 geprüft (`22_Dialogpruefung.md`, Teil D). Entschieden vom Hauptchat;
+der Roman ist entsprechend geändert.
+
+| Frage                                   | Entscheidung                                                                                                                                                                                                                                               |
+| --------------------------------------- | ---------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------- |
+| Ambroses letzter Zug                    | Wie in der Bibel (Szene 99): in der Siedlung im Fieber geschrieben und einem Postreiter gegeben.                                                                                                                                                           |
+| Warum brach Ambrose 1866 auf?           | Aus Ungeduld, weil Hales 39. Zug wochenlang ausblieb (Winter). Die Einladung hat ihn nie erreicht; das folgt der Zeitlinie in Abschnitt 17 der Bibel, nicht dem Satz in Szene 73.                                                                          |
+| Siegel                                  | In Ironwood ist es das Siegel des Postmeisters am Postsack. Hales Brief trägt ein eigenes Siegel mit einer anderen Fesselung: Fernspieler drückten einander Aufgaben ins Wachs.                                                                            |
+| Wie kam der Brief in Hales Nachlass?    | Hale hat ihn versiegelt und vergessen, ihn in den Umschlag zu legen; der Umschlag ging leer hinaus. Der einzige Fehler des gewissenhaften Mannes. Er fand den Brief auf seinem Tisch, als es zu spät war, und hat ihn nie geöffnet.                        |
+| Züge auf der Rückseite                  | Vier Züge, 29 bis 32 (Fragment 7), als Kontrolle der Stellung; nicht „die letzten“.                                                                                                                                                                        |
+| Das Brett                               | 1852 gebaut, die Buchstaben „A. W. 1857“ erst fünf Jahre später eingebrannt.                                                                                                                                                                               |
+| Ambrose im Geigenkasten                 | Er hörte nur, was in der Turnhalle geschah (der Kasten stand auf dem Schiedsrichtertisch).                                                                                                                                                                 |
+| Abstammung                              | Die Whitlock-Duvals stammen von einem Bruder ab, der die Werkstatt weiterführte; das Brett ging über Claires Töchter nach Maple Falls. Mrs. Whitlock war die Letzte von Claires Linie; Céleste ist die Jüngste der Familie. **In der Bibel nachzutragen.** |
+| „Josiah“ und „Ur-ur-ur … Ein Hale eben“ | Fallen erst in Akt 4 (Kapitel 51). In Kapitel 32 gestrichen.                                                                                                                                                                                               |
+| Erinnerung 1858                         | Der Roman erzählt die Stellung nach Hales Läuferzug; im Spiel bleibt das Stellungsduell am Moment des Opfers (Bibel). Miras Urteil: „Das gewinnt. Nicht gleich.“                                                                                           |
+| Randnotiz zu Kapitel 36                 | Ambroses Thema kehrt in Kapitel 38 zurück (nicht erst 40).                                                                                                                                                                                                 |

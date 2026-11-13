@@ -248,7 +248,7 @@ mir über den Kopf. „Fast.“
 
 Aus dem Zelt neben der Ruine kam die Trompete. Sie spielte nur das Langsame.
 
-`[Klang: Turnhalle: Hall, Stimmen, Stühle; kein Thema. Remys Mauer: tiefe, näherkommende Töne. „König nach h1“: das perlende Konzernmotiv, aus Ambroses Mund. Stuhl fällt um: Stille der ganzen Halle. „Er hat nicht ganz unrecht“: nichts, kein Ton. „Dann spiele ich ohne dich“: Ambroses Thema, vier Töne, absteigend, und dann endet es; es kehrt bis Kapitel 40 nicht wieder. Draußen: die Trompete, nur langsam.]`
+`[Klang: Turnhalle: Hall, Stimmen, Stühle; kein Thema. Remys Mauer: tiefe, näherkommende Töne. „König nach h1“: das perlende Konzernmotiv, aus Ambroses Mund. Stuhl fällt um: Stille der ganzen Halle. „Er hat nicht ganz unrecht“: nichts, kein Ton. „Dann spiele ich ohne dich“: Ambroses Thema, vier Töne, absteigend, und dann endet es; es kehrt bis Kapitel 38 nicht wieder. Draußen: die Trompete, nur langsam.]`
 `[Bild: Bretter, die nicht zusammenpassen. Der König in der Ecke leuchtet kalt (in der Farbe des Konzerns). Die Halle, alle Gesichter zum Helden gedreht (Standbild). Ambrose nickt und wird durchsichtig bis fast zum Verschwinden. Das Brett auf dem Schiedsrichtertisch.]`
 `[Karte: Turnhalle mit Biertischen unter Basketballkörben. Ab hier fehlt Ambrose auf allen Karten; im Menü sind seine Karten grau.]`
 
@@ -335,7 +335,7 @@ Am Abend lag an meinem Platz im Zelt, wo Mama und ich schliefen, eine Postkarte.
 hatte sie nachgeschickt. Vorn eine Brücke im Regen. Hinten, in einer Schrift, die es eilig
 hatte:
 
-_Maple Falls! Wir spielen jetzt unter der zweiten Brücke. Dach haben wir, Wände nicht. Tamsin
+_Maple Falls! Wir spielen jetzt unter der alten Steinbrücke. Dach haben wir, Wände nicht. Tamsin
 sagt, das zählt als Pavillon. Elf Kinder letzten Samstag. Der Stein liegt in der Mitte. Bring
 den Springer mal vorbei, er fehlt uns. – S._
 
@@ -428,8 +428,7 @@ Kleid mit Leimflecken.
 „Dann zeig es viermal.“
 
 Auf der Werkbank stand ein Brett. Ein richtiges jetzt, eingelegt, helles Holz und dunkles, an
-den Ecken noch scharf. Am Rand roch es nach frischer Beize, und neben dem Brett lag ein
-Brenneisen.
+den Ecken noch scharf. Am Rand roch es nach frischer Beize. Der Rand war noch glatt und leer; die Buchstaben habe ich erst fünf Jahre später eingebrannt, in dem Jahr, als ich aus New York zurückkam.
 
 Ich stellte die Figuren auf. Ich spielte es ihnen vor, von Anfang an. Den Bauern, der sich
 anbietet. Den Läufer, der hinausgeht und angegriffen wird und einfach stehen bleibt.
@@ -473,7 +472,7 @@ Dann schwieg er wieder. Es war sein einer Satz für diesen Tag, und er hatte ihn
 verbraucht.
 
 `[Klang: Rue des Facteurs: Sägen, die singen; einzelne Klaviertöne aus offenen Türen. „Hier war es“: Ambroses Thema kehrt zurück, ganz zart, auf einem einzelnen verstimmten Klavier. Erinnerung 1840: der Vater schlägt eine Saite an (ein einzelner Ton, der gestimmt wird, bis er rein ist; es ist der erste Ton von Ambroses Thema). 1852: das Thema als fröhliches Stück zu vier Händen; Claires Klatschen. Rückkehr: der eine Ton, rein, verklingt.]`
-`[Bild: Flügel auf dem Gehweg. Erinnerung in Gold statt Sepia (heller als London). Der kleine Ambrose mit Besen (eigene Figur). Brett aus Abfallholz mit Klötzchen. 1852: das Brett, neu, scharfe Ecken, Brenneisen daneben. Claire auf dem Schemel.]`
+`[Bild: Flügel auf dem Gehweg. Erinnerung in Gold statt Sepia (heller als London). Der kleine Ambrose mit Besen (eigene Figur). Brett aus Abfallholz mit Klötzchen. 1852: das Brett, neu, scharfe Ecken, noch ohne die Buchstaben am Rand (die kommen 1857). Claire auf dem Schemel.]`
 `[Karte: Straße der Instrumentenbauer mit Blechschildern. Werkstatt als Erinnerungskarte in zwei Fassungen (1840 unordentlich und warm, 1852 aufgeräumter). In der Gegenwart ist Ambrose für einen Augenblick wieder sichtbar.]`
 
 ---
@@ -709,8 +708,7 @@ anrollen, das Rattern auf dem Pflaster, kleiner werdend.
 
 Ambrose sah ihr nach.
 
-Ich wartete darauf, dass er traurig wurde. Dass er sagte: _Die Letzte meiner Familie, und sie
-findet es langweilig._
+Ich wartete darauf, dass er traurig wurde. Dass er sagte: _Die Jüngste meiner Familie, und sie findet es langweilig._
 
 „Sie muss es nicht lieben“, sagte Ambrose.
 
@@ -795,7 +793,7 @@ Ich sah zum Geigenkasten hinüber. Der Deckel stand offen.
 | Remy hielt im Sturm vier Stunden die Trompete über den Kopf.                                                   | Sein Misstrauen hat einen Grund.                                                                               | Batiste erzählt es.                                                                                          |
 | Bretter sammeln ausführlich (helle und dunkle Hälfte, Marmeladenglas, Brett von der Wand).                     | Die Stadt nimmt den Helden an; Stille ohne Ambrose als Gefühl.                                                 | Vier kurze Haustürtexte; in der Musik Lücken, wo Ambrose spräche.                                            |
 | Batiste: drei Besuche, der Spruch prallt ab; „Jetzt hat es auch keiner gehört.“                                | Erster Sieg allein.                                                                                            | Zeilen in Szene 65.                                                                                          |
-| Postkarte von Slick: der Club unter der zweiten Brücke, „Dach haben wir, Wände nicht“.                         | Slicks Bogen (Dokument 19, 5.4); Trost im Tiefpunkt.                                                           | Fund oder Brief im Zelt.                                                                                     |
+| Postkarte von Slick: der Club unter der alten Steinbrücke, „Dach haben wir, Wände nicht“.                      | Slicks Bogen (Dokument 19, 5.4); Trost im Tiefpunkt.                                                           | Fund oder Brief im Zelt.                                                                                     |
 | Erinnerung in zwei Teilen ausgebaut; Claire: „Dann eben, wenn du tot bist.“ – „Abgemacht.“                     | Erklärt, warum das Brett in Maple Falls liegt, als Versprechen; verbindet mit Mrs. Whitlock.                   | Dialog im Flashback; Schlusszeile „Deshalb bist du hier“.                                                    |
 | Ambroses Thema entsteht aus dem Ton, den der Vater stimmt.                                                     | Musikalische Herkunft des Themas.                                                                              | Eintrag im Klangplan.                                                                                        |
 | Clubkampf: Der Held hat zum ersten Mal einen eigenen Plan (Bauern am Königsflügel).                            | Der wichtigste Schritt des Helden im ganzen Spiel: vom Vermeiden zum Wollen. Das „eigene Schach“ beginnt hier. | Fester Moment in der Partie ist die Stille; nach der Partie Miss Odiles Satz.                                |

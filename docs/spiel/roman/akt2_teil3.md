@@ -85,7 +85,7 @@ Links und rechts standen Fabriken. Sie waren aus demselben roten Stein wie River
 niemand war darin. Fenster ohne Glas. Ein Schornstein, aus dem ein Baum wuchs. Auf den Zäunen
 saßen Krähen und sahen uns nach, als hätten sie hier das Sagen.
 
-An einer langen Mauer stand ein Mädchen auf einer Leiter. Sie hatte Farbdosen in einem Eimer
+An einer langen Mauer stand eine junge Frau auf einer Leiter, neunzehn vielleicht. Auf ihrem Eimer stand mit Filzstift _Noor_. Sie hatte Farbdosen in einem Eimer
 und ein Tuch vor dem Mund, und auf der Mauer wuchs etwas, das noch nicht fertig war: Umrisse,
 riesig, in Schwarz. Ein Turm. Ein halber Springer.
 
@@ -237,7 +237,7 @@ die Ärmel stecke, wenn sie nachdenke.
 Hinter ihm, im Pokalregal, standen sie dicht an dicht. Nur an einer Stelle nicht. Eine Lücke,
 so breit wie eine Hand, und darunter ein Schildchen aus Messing: _2001._
 
-„Elm Street“, sagte Big Joe. „Das dritte Haus mit dem grünen Geländer. Geh hin. Sie wartet
+„Elm Street“, sagte Big Joe. „Nummer zehn, das Eckhaus mit dem grünen Geländer. Geh hin. Sie wartet
 seit fünfundzwanzig Jahren, dass jemand klingelt.“ Er räusperte sich. „Und wenn du deine
 Mutter siehst. Sag ihr, Big Joe lässt grüßen. Und dass es ihm leidtut.“
 
@@ -247,17 +247,15 @@ Ich wusste es nicht.
 
 Die Frau, die die Tür aufmachte, war klein und hatte Mamas Kinn.
 
-Sie sah mich an und sagte nichts. Dann zog sie mich an sich, und ich stand auf der Schwelle
-eines Hauses, in dem ich nie gewesen war, in den Armen einer Großmutter, die ich von Fotos
-kannte, und sie roch nach Mamas Waschmittel. Dem alten. Dem von früher.
+Sie sah mich an und sagte nichts. Dann zog sie mich an sich, und ich stand auf der Schwelle eines Hauses, in dem ich seit dem Umzug nicht mehr gewesen war, in den Armen meiner Großmutter, und sie roch nach Mamas Waschmittel. Dem alten. Dem von früher.
 
-„Du bist gewachsen“, sagte Oma Ruth in meine Schulter. „Auf den Bildern bist du kleiner.“
+„Du bist gewachsen“, sagte Oma Ruth in meine Schulter. „Seit dem Frühjahr. Das gehört verboten.“
 
 Sie machte Kakao. Sie stellte Juno Fragen, als wäre Juno die Hauptperson, und Juno
 beantwortete sie alle. Dann wischte sie sich die Hände an der Schürze ab und sagte: „Komm. Ich
 zeig dir was. Sie wird mir böse sein. Soll sie.“
 
-Das Zimmer lag unter dem Dach. Es war klein, mit einer Schräge, und es war das Zimmer eines
+Das Zimmer lag unter dem Dach. Ich war nie darin gewesen; die Tür war immer zu, solange ich denken konnte. Es war klein, mit einer Schräge, und es war das Zimmer eines
 Mädchens, das vor fünfundzwanzig Jahren hinausgegangen war. Poster von Bands, die ich nicht
 kannte. Ein Bett mit einer gehäkelten Decke. Ein Schreibtisch am Fenster, und durch das
 Fenster sah man die Schornsteine.
@@ -324,23 +322,23 @@ Niederlagen nicht aufgeschrieben. Ich habe sie auswendig gelernt.“
 
 `[Klang: Ironwood: tiefes Thema mit Blechbläsern und einem schweren, langsamen Schlag (wie ein Schmiedehammer), darüber eine einzelne warme Klarinette; Fauchen des Hochofens in Abständen, fernes Rangieren. Kantine: der Ofen bullert, Tassen, das Thema wird warm (Akkordeon). Bei „Bist du Lauries Kind?“ setzt alles aus. Elm Street: Stille bis zur Umarmung, dann ein neues, kleines Motiv (Mamas Thema: fünf Töne, Klavier), das hier zum ersten Mal erklingt. Beim leeren Blatt bricht es nach vier Tönen ab.]`
 `[Bild: Himmel, der orange aufleuchtet (Lichtwechsel in Abständen). Stahlbrett mit Schweißnähten. Lücke im Pokalregal mit Messingschild „2001“. Foto der jungen Mama (Großansicht). Partieformular unter Glas mit Kreis um Zug 33. Das blaue Heft, aufgeschlagen auf der leeren Seite.]`
-`[Karte: Reihenhäuser alle gleich, eines mit grünem Geländer. Kreidebretter auf den Gehwegen. Kantine lang und niedrig. Mamas Zimmer klein mit Dachschräge und Blick auf die Schornsteine.]`
+`[Karte: Reihenhäuser alle gleich; das Eckhaus Nummer zehn mit grünem Geländer. Kreidebretter auf den Gehwegen. Kantine lang und niedrig. Mamas Zimmer klein mit Dachschräge und Blick auf die Schornsteine.]`
 
 ---
 
 ## Neu gegenüber der Story-Bibel (Akt 2, Teil 3)
 
-| Neu                                                                                          | Wozu                                                                                            | Folge für das Spiel                                      |
-| -------------------------------------------------------------------------------------------- | ----------------------------------------------------------------------------------------------- | -------------------------------------------------------- |
-| Der Springer aus Riverton steht auf der Fensterbank des Helden.                              | Funde werden sichtbar; das Zimmer erzählt die Reise.                                            | Fensterbank im Zimmer des Helden zeigt Funde (Zustände). |
-| Coach Delgados Zettel mit drei Ausrufezeichen.                                               | Ihr kleiner Bogen: Ein echtes Turnier macht sie wieder froh.                                    | Großansicht des Zettels.                                 |
-| Das Verbot kommt trocken, ohne Pause; „eine Unterscheidung, die Advokaten machen“.           | Die Geschichte bestraft nichts, benennt aber, was der Held tut.                                 | Ein Satz für Ambrose.                                    |
-| Die Graffiti-Künstlerin malt die Werkbank, auf der ihr Großvater in der Pause spielte.       | Ihre kleine Geschichte bekommt einen Grund; verbindet Kanalweg und Ironwood.                    | Vier Stufen des Wandbilds; ein bis zwei Sätze je Stufe.  |
-| Die Brücke als Bild des Ingenieurs: „lauter Dreiecke, jedes genau so groß wie das nächste“.  | Hale wird als Mensch spürbar, bevor man seinen Namen kennt: genau, streng, schön auf seine Art. | Bildvorgabe für die Brücke; Ansehen-Text.                |
-| Ambrose über den Zeitnot-Trick: „Ich sage es dir, weil ich es früher niemandem gesagt habe.“ | Er wird ehrlicher; die Karte bekommt ein Gewissen.                                              | Zeile in Szene 40.                                       |
-| Ambrose streckt die Hand über das Eisen, ohne es zu berühren.                                | Er erkennt die Initialen und kann es nicht sagen.                                               | Kleine Bewegung oder Erzählerzeile; `#stimmung:still`.   |
-| Big Joe erkennt Mama an der Art, wie der Held auf das Brett sieht; „Hier hieß sie Laurie.“   | Wärme; Mamas früheres Leben hat einen eigenen Namen.                                            | Zeilen in Szene 39; Frage nach den Händen in den Ärmeln. |
-| Mama steckt beim Nachdenken die Hände in die Ärmel (auch auf dem Foto von 2001).             | Wiedererkennbare Geste; kehrt in Kapitel 27 wieder.                                             | Porträtfassung „denkt nach“ für Mama.                    |
-| Oma Ruth: Big Joe hat drei Tage gewartet und geklingelt; „zwei Dickköpfe“.                   | Erklärt sein „Es tut ihm leid“ ohne Schuldigen.                                                 | Dialog in Mamas Zimmer.                                  |
-| Das blaue Heft mit „Was ich gelernt habe“; die Seite des Finales ist leer.                   | Das stärkste Bild des Akts; begründet das Partienotizbuch als Spielmechanik.                    | Großansicht; die drei Beispielsätze als Text im Heft.    |
-| Mamas Thema (fünf Töne), das am leeren Blatt abbricht.                                       | Musikalisches Motiv, das in Kapitel 27 zu Ende gespielt wird.                                   | Eintrag im Klangplan.                                    |
+| Neu                                                                                                                                     | Wozu                                                                                            | Folge für das Spiel                                      |
+| --------------------------------------------------------------------------------------------------------------------------------------- | ----------------------------------------------------------------------------------------------- | -------------------------------------------------------- |
+| Der Springer aus Riverton steht auf der Fensterbank des Helden.                                                                         | Funde werden sichtbar; das Zimmer erzählt die Reise.                                            | Fensterbank im Zimmer des Helden zeigt Funde (Zustände). |
+| Coach Delgados Zettel mit drei Ausrufezeichen.                                                                                          | Ihr kleiner Bogen: Ein echtes Turnier macht sie wieder froh.                                    | Großansicht des Zettels.                                 |
+| Das Verbot kommt trocken, ohne Pause; „eine Unterscheidung, die Advokaten machen“.                                                      | Die Geschichte bestraft nichts, benennt aber, was der Held tut.                                 | Ein Satz für Ambrose.                                    |
+| Die Graffiti-Künstlerin (Noor Haddad, schon in `14_Akt2_Leben_teil1.md`) malt die Werkbank, auf der ihr Großvater in der Pause spielte. | Ihre kleine Geschichte bekommt einen Grund; verbindet Kanalweg und Ironwood.                    | Vier Stufen des Wandbilds; ein bis zwei Sätze je Stufe.  |
+| Die Brücke als Bild des Ingenieurs: „lauter Dreiecke, jedes genau so groß wie das nächste“.                                             | Hale wird als Mensch spürbar, bevor man seinen Namen kennt: genau, streng, schön auf seine Art. | Bildvorgabe für die Brücke; Ansehen-Text.                |
+| Ambrose über den Zeitnot-Trick: „Ich sage es dir, weil ich es früher niemandem gesagt habe.“                                            | Er wird ehrlicher; die Karte bekommt ein Gewissen.                                              | Zeile in Szene 40.                                       |
+| Ambrose streckt die Hand über das Eisen, ohne es zu berühren.                                                                           | Er erkennt die Initialen und kann es nicht sagen.                                               | Kleine Bewegung oder Erzählerzeile; `#stimmung:still`.   |
+| Big Joe erkennt Mama an der Art, wie der Held auf das Brett sieht; „Hier hieß sie Laurie.“                                              | Wärme; Mamas früheres Leben hat einen eigenen Namen.                                            | Zeilen in Szene 39; Frage nach den Händen in den Ärmeln. |
+| Mama steckt beim Nachdenken die Hände in die Ärmel (auch auf dem Foto von 2001).                                                        | Wiedererkennbare Geste; kehrt in Kapitel 27 wieder.                                             | Porträtfassung „denkt nach“ für Mama.                    |
+| Oma Ruth: Big Joe hat drei Tage gewartet und geklingelt; „zwei Dickköpfe“.                                                              | Erklärt sein „Es tut ihm leid“ ohne Schuldigen.                                                 | Dialog in Mamas Zimmer.                                  |
+| Das blaue Heft mit „Was ich gelernt habe“; die Seite des Finales ist leer.                                                              | Das stärkste Bild des Akts; begründet das Partienotizbuch als Spielmechanik.                    | Großansicht; die drei Beispielsätze als Text im Heft.    |
+| Mamas Thema (fünf Töne), das am leeren Blatt abbricht.                                                                                  | Musikalisches Motiv, das in Kapitel 27 zu Ende gespielt wird.                                   | Eintrag im Klangplan.                                    |

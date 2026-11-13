@@ -99,7 +99,7 @@ Ambrose blieb davor stehen.
 
 „Die habe ich gelesen“, sagte er. Etwas von seiner Stimme kam zurück. „In der Nacht nach dem
 Match. Vier zu drei. Ich saß in meinem Zimmer und wollte nie wieder eine Figur anrühren, und
-auf dem Tisch lag diese Zeitung, drei Wochen alt, aus London. Der junge Morphy gegen einen
+auf dem Tisch lag diese Zeitung, sechs Wochen alt, aus London. Der junge Morphy gegen einen
 Mann namens Bird.“ Er lachte, heiser. „Ich habe sie nachgespielt. Zwanzigmal. Bis es hell
 wurde.“
 
@@ -170,9 +170,7 @@ Gewinn. Alle wussten es. Joe stand hinten an der Wand und hat sich nicht getraut
 Sie legte das Foto hin.
 
 „Zug dreiunddreißig. Ich greife an. Ich sehe nur meinen Angriff, ich sehe, wie schön er ist,
-ich ziehe den Turm vor. Und hinter meinem Turm steht meine Dame, und auf derselben Linie, ganz
-hinten, am anderen Ende des Brettes, steht sein Läufer. Die ganze Zeit schon. Seit zwanzig
-Zügen.“ Ihre Stimme war ruhig. „Ein Spieß. Das Einfachste, was es gibt. Ich hab den Läufer
+ich ziehe den Turm vor. Und damit steht er hinter meiner Dame, auf derselben Schräge, die Dame vorn, der Turm dahinter. Und ganz hinten, am anderen Ende des Brettes, steht sein Läufer und sieht die Schräge entlang. Die ganze Zeit schon. Seit zwanzig Zügen. Die Dame muss weg, und der Turm dahinter fällt.“ Ihre Stimme war ruhig. „Ein Spieß. Das Einfachste, was es gibt. Ich hab den Läufer
 nicht gesehen. Fünfundzwanzig Jahre, und ich sehe ihn jede Nacht.“
 
 _Wenn ich angreife, sehe ich nichts anderes. Aufpassen!!_
@@ -264,13 +262,11 @@ beigebracht hatte, und zählte, wie Coach Delgado es wollte.
 
 Im dreißigsten Zug sah ich es.
 
-Ihr Turm, weit vorn. Ihre Dame dahinter, auf derselben Linie. Und mein Läufer, in der Ecke,
-wo er seit zwanzig Zügen stand und nichts tat.
+Ihre Dame, weit vorn. Dahinter, auf derselben Schräge, das Feld, auf das ihr Turm wollte. Und mein Läufer, in der Ecke, wo er seit zwanzig Zügen stand und nichts tat.
 
 Wenn sie den Turm noch ein Feld vorzog.
 
-Mir wurde kalt. Es war dieselbe Stellung. Nicht genau, aber dasselbe Bild. Mae hatte recht
-gehabt: Wer eines kennt, erkennt es in jeder Menge.
+Mir wurde kalt. Es war dieselbe Stellung. Nicht genau, aber dasselbe Bild. Ambrose hatte recht gehabt, damals in der Bibliothek: Wer eines kennt, erkennt es in jeder Menge.
 
 „Ambrose“, flüsterte ich.
 
@@ -288,7 +284,7 @@ Mama hob die Hand. Sie hatte den Turm schon berührt.
 Und dann hielt sie inne.
 
 Sie steckte die Hände nicht in die Ärmel. Sie saß da, die Finger auf dem Turm, und sah nicht
-auf ihren Angriff. Sie sah nach hinten. Langsam ging ihr Blick die Linie entlang, Feld für
+auf ihren Angriff. Sie sah nach hinten. Langsam ging ihr Blick die Schräge entlang, Feld für
 Feld, bis in meine Ecke.
 
 Ich sah, wie sie ihn fand.
@@ -298,7 +294,7 @@ zugemacht.
 
 Mama nahm die Hand vom Turm.
 
-Sie zog die Dame. Ein Feld zur Seite. Aus der Linie heraus.
+Sie zog die Dame. Ein Feld zur Seite. Aus der Schräge heraus.
 
 „Ich hab ihn gesehen“, sagte sie. Es war kaum ein Flüstern. „Den Läufer. Diesmal hab ich ihn
 gesehen.“
@@ -333,7 +329,7 @@ langsam.“
 Juno klebte das Foto ins Tagebuch. „Mit Glitzer“, sagte sie. „Diesmal ja.“
 
 `[Klang: Küche: Kühlschrank, Wasserfall. Mamas Erzählung ohne Musik; bei „jede Nacht“ Mamas Thema, vier Töne, abgebrochen. Kantine: Ofen, Stille beim Eintreten, dann das Ironwood-Thema warm mit Akkordeon. Partie: sehr leise, nur der Ofen und ab und zu der Schmiedehammer von draußen. Als Mama innehält, fällt alles weg. „Ich hab ihn gesehen“: Mamas Thema, zum ersten Mal vollständig, alle fünf Töne und die Auflösung. Schluss: das Thema mit dem ganzen Kantinenklang.]`
-`[Bild: Foto auf dem Küchentisch. Mamas Porträtfassungen: „verschlossen“, „erzählt“, „denkt nach“ (Hände in den Ärmeln), „hat ihn gesehen“. Die Linie Turm, Dame, Läufer leuchtet kurz auf, wenn Mama sie entlangsieht. Das Heft mit dem neuen Satz als Großansicht.]`
+`[Bild: Foto auf dem Küchentisch. Mamas Porträtfassungen: „verschlossen“, „erzählt“, „denkt nach“ (Hände in den Ärmeln), „hat ihn gesehen“. Die Schräge Läufer, Dame, Turm leuchtet kurz auf, wenn Mama sie entlangsieht. Das Heft mit dem neuen Satz als Großansicht.]`
 `[Karte: Kantine voll besetzt (Zustandsfassung). Wagen vor dem Haus mit dem grünen Geländer.]`
 
 ---
@@ -451,8 +447,7 @@ und er legte seinen König um, mit einem Finger, sodass es auf dem Stahl leise k
 
 In der ersten Reihe hatte Mama beide Hände vor dem Mund.
 
-„Das war ihr Fehler von damals“, sagte Big Joe und sah nicht mich an, sondern sie. „Auf der
-anderen Seite vom Brett. Jetzt ist er erledigt, Laurie. Von euch beiden.“ Er steckte mir das
+„Grundreihe“, sagte Big Joe und sah nicht mich an, sondern sie. „Du hast es dem Kumpel gesagt, Laurie. Ich hab gesehen, wie du dich vorgebeugt hast. Dreißig Jahre, und du kennst mich immer noch.“ Er steckte mir das
 Zahnrad an die Jacke, neben das Achteck, das Buch und das Blatt. „Revanche, wenn ich
 ausgeschlafen bin!“
 
@@ -532,8 +527,7 @@ Es waren die ersten Flocken des Jahres. Sie kamen einzeln, zögernd, und blieben
 Asphalt nicht liegen. Aber auf dem Schild blieben sie liegen, und auf dem Dach des schwarzen
 Wagens.
 
-Ich stand am Geländer der kleinen Brücke hinter dem Werkstor, die über das Abstellgleis
-führt. Ich hatte die Hände in den Taschen. In der linken lag das Zahnrad, das ich von der
+Ich stand am Geländer der alten Stahlbrücke gleich hinter dem Werkstor, über die die Schnellstraße ins Tal hinausgeht. Ich hatte die Hände in den Taschen. In der linken lag das Zahnrad, das ich von der
 Jacke genommen hatte, ich weiß nicht, warum.
 
 „Robin.“
@@ -611,7 +605,7 @@ Mit Glitzer.
 
 `[Klang: Werkstor: kein Thema, nur Wind und fernes Werk. Graham Hales Rede mit dem glatten Konzernton darunter. Big Joe kommt heraus: Stille, nur das Klirren der Pokale bei jedem Schritt. „Vater, vielleicht …“: der Ton setzt eine halbe Sekunde aus. Schnee: Mamas Thema leise auf dem Klavier. Brücke: Victors Thema, zum ersten Mal nicht kalt, sondern unsicher (dieselben Töne, zögernd, mit einer Pause vor dem letzten). Bus fährt ab. „J. H.“: Ambroses Thema und Victors Thema gleichzeitig; man hört zum ersten Mal, dass es dieselbe Melodie ist. Abspann von Akt 2: Schnee, Stille.]`
 `[Bild: Weißes Schild am Werkstor, auf dem Schnee liegen bleibt. Karton mit Pokalen. Victor ohne Tablet (neue Fassung der Figur), Flocken auf der Jacke. Einladung in Silber (Großansicht). Ambroses Hand auf der Niete. Tagebuchseite „Silicon Bay?“ mit Glitzer.]`
-`[Karte: Werkstor mit Schild (Zustand nach dem Kauf), Kantine geschlossen. Erster Schnee als Teilchen und dünner weißer Schleier auf Dächern. Brücke über das Abstellgleis mit genietetem Geländer.]`
+`[Karte: Werkstor mit Schild (Zustand nach dem Kauf), Kantine geschlossen. Erster Schnee als Teilchen und dünner weißer Schleier auf Dächern. Stahlbrücke der Schnellstraße mit genietetem Geländer.]`
 
 ---
 

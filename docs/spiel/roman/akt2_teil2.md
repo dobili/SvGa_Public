@@ -83,7 +83,7 @@ Tagebuch, und ich saß unter der großen Uhr und hörte ihr zu. Mr. Harlan war n
 gegangen. Pops hatte den Rollladen heruntergelassen. Die Halle war fast leer.
 
 Durch die hohen Fenster sah man den Park. Die Platanen waren schwarz. Dazwischen leuchteten
-die zwölf Tische, weiß und still, und an dreien saß jemand.
+die sechs Tische, weiß und still, und an zweien saß jemand.
 
 „Ich war einmal jünger als du jetzt“, sagte Ambrose. „Fast.“
 
@@ -134,11 +134,11 @@ Es sah aus wie ein Unfall. Weiß hatte schon einen Läufer hergegeben. Die schwa
 tief in der weißen Stellung und fraß. Jeder, den ich kannte, Sam, der Coach, Mrs. Okafor, wäre
 jetzt blass geworden.
 
-Der große Mann zog einen Bauern.
+Der große Mann zog einen Läufer. Mitten hinein, tief ins schwarze Lager.
 
-Ein Raunen. Schwarz schlug einen Turm. Einfach so, einen ganzen Turm, mit Schach.
+Ein Raunen. Schwarz schlug einen Turm. Einfach so, einen ganzen Turm.
 
-Der große Mann zog seinen König ein Feld zur Seite. Sonst nichts.
+Der große Mann zog einen Bauern vor. Sonst nichts.
 
 „Jetzt“, sagte Ambrose. Der alte, nicht der junge. „Halt. Schau hin. Er hat einen Turm
 weniger, und sein zweiter Turm hängt auch. Was hättest du getan?“
@@ -153,10 +153,11 @@ standen und schliefen. Die schwarze Dame war weit weg und satt.
 
 „Er lässt ihn hängen.“
 
-Schwarz nahm den zweiten Turm.
+Schwarz nahm den zweiten Turm, mit Schach. Der große Mann zog seinen König ein Feld nach vorn,
+als träte er einem Besucher entgegen.
 
-Jemand im Raum lachte, kurz, ungläubig. Der große Mann lächelte nicht. Er hob einen Springer,
-und danach den Läufer, und dann, ganz ruhig, mit zwei Fingern, seine Dame, und stellte sie
+Jemand im Raum lachte, kurz, ungläubig. Der große Mann lächelte nicht. Er hob einen Springer
+und gab Schach. Und dann nahm er, ganz ruhig, mit zwei Fingern, seine Dame und stellte sie
 dorthin, wo sie geschlagen werden musste.
 
 Der Raum hielt den Atem an.
@@ -225,7 +226,7 @@ Reihen, drei. Leute aus dem Park, die ich vom Sehen kannte. Pops, der seinen Sta
 geschlossen hatte. Mr. Harlan mit einem Regenmantel, der ihm zu groß war. Mrs. Albescu.
 Mr. Quinn in Uniform, zwischen zwei Zügen. Ray hatte seinen besten Hut auf.
 
-Auf der Wiese leuchteten die zwölf Tische. Niemand saß daran.
+Auf der Wiese leuchteten die sechs Tische. Niemand saß daran.
 
 Slick hatte einen einzigen Tisch freigeräumt, den in der Mitte, den mit der Mulde. Er hatte
 seine Kuriertasche abgelegt, zum ersten Mal, seit ich ihn kannte, und er redete nicht.
@@ -321,8 +322,7 @@ an und hielt mich einen Moment an der Schulter fest.
 Am Montag, nach der Schule, fuhren wir noch einmal hin. Ich weiß nicht, warum. Juno hatte
 gesagt, man müsse es sehen.
 
-Im Pavillon standen Bildschirmtische. Acht Stück, im Kreis, weiß. Die Steintische waren weg.
-Auf dem Boden sah man noch, wo sie gestanden hatten: acht helle Flecken im Holz.
+Im Pavillon standen Bildschirmtische. Vier Stück, im Kreis, weiß. Die Steintische waren weg. Auf dem Boden sah man noch, wo sie gestanden hatten: vier helle Flecken im Holz.
 
 Slick kniete in der Mitte und packte ein Brett in seine Kuriertasche. Es war eine der
 Steinplatten. Die mit der Mulde. Sie passte kaum hinein.
@@ -330,7 +330,7 @@ Steinplatten. Die mit der Mulde. Sie passte kaum hinein.
 „Die haben sie mir gelassen“, sagte er. „Einer von den Arbeitern hat weggeguckt.“ Er zog den
 Riemen fest. „Dann spielen wir eben auf der Treppe.“
 
-Er wohnte in einem Wohnwagen am Fluss, unter der zweiten Brücke. Drinnen war es eng und warm.
+Er wohnte in einem Wohnwagen am Westende des Parks, an der alten Steinbrücke. Drinnen war es eng und warm.
 An der Wand hing ein Kurierrad. Auf einem Brett über dem Bett standen Pokale, und ich
 brauchte einen Moment, bis ich sah, dass sie aus Limonadendosen gemacht waren, aufgeschnitten,
 gebogen, mit Draht. _Parkmeister 2019. Parkmeister 2020. Bester Verlierer 2017._
@@ -352,7 +352,7 @@ Mähne war an einer Stelle abgestoßen.
 Ich nahm ihn. Er war kalt und schwer.
 
 Draußen, auf der Stufe des Wohnwagens, blieb ich stehen. Der Fluss lief schwarz unter der
-Brücke. Oben im Park leuchtete es, weiß, jetzt an zwanzig Stellen.
+Brücke. Oben im Park leuchtete es, weiß, jetzt an zehn Stellen.
 
 „Er hat recht“, sagte Ambrose.
 
@@ -382,7 +382,7 @@ Es war nicht die Antwort, die er gesucht hatte. Das wusste ich. Aber es war die 
 ich hatte.
 
 `[Klang: Clubkampf: Regen auf Blech als Grundgeräusch, das Stadtthema schnell mit Trompete, Uhrenschläge. Bei den leisen Zügen wird die Musik Zug um Zug dünner, bis nur der Regen bleibt. Slicks langes Nachdenken: nur Regen und das Ticken. Sieg: Applaus, der wie Regen klingt, dann die Fanfare. Montag: Stille; der helle Synthesizerton im Pavillon, wo vorher die Uhren klopften. Wohnwagen: Stadtthema auf einer einzelnen Mundharmonika, langsam. Schluss: Fluss; Ambroses Thema und das Konzernmotiv gleichzeitig, sie passen nicht zusammen.]`
-`[Bild: Zuschauer unter Schirmen in drei Reihen. Slicks Hand, die in der Luft stehen bleibt (Standbild oder Porträtfassung „hält inne“). Nadel als grünes Achteck mit Uhr. Montag: acht helle Flecken im Holzboden. Dosenpokale. Springer mit abgestoßener Mähne als Fundbild.]`
+`[Bild: Zuschauer unter Schirmen in drei Reihen. Slicks Hand, die in der Luft stehen bleibt (Standbild oder Porträtfassung „hält inne“). Nadel als grünes Achteck mit Uhr. Montag: vier helle Flecken im Holzboden. Dosenpokale. Springer mit abgestoßener Mähne als Fundbild.]`
 `[Karte: Pavillon in zwei Fassungen (Steintische, Bildschirmtische mit Flecken). Wohnwagen eng, mit Pokalbrett. Park am Abend mit mehr leuchtenden Tischen als zuvor.]`
 
 ---
@@ -401,6 +401,6 @@ ich hatte.
 | Clubkampf: leise Züge nach hinten, Slicks Hand bleibt stehen, Mr. Odums Satz.                                           | Fester Moment in der Partie (Regel 3 aus den Befunden zu Akt 1); Slick lernt etwas.            | Dialog in der Partie, ausgelöst, wenn Slicks König bedroht ist.                |
 | Slick spielt danach zum ersten Mal langsam und gut.                                                                     | Erster Schritt seines Bogens (Dokument 19, 5.4).                                               | Sein Profil wechselt nach dem Moment den Stil (weniger Tempo, weniger Fehler). |
 | Nadel als grünes Achteck mit Uhr.                                                                                       | Nadel mit Gesicht des Orts.                                                                    | Nadelbild.                                                                     |
-| Die Steinplatte mit der Mulde nimmt Slick mit; acht helle Flecken im Boden.                                             | Verlust als Bild; die Platte kehrt später zurück (unter der Brücke, im Abspann).               | Ding in der Wohnwagenkarte und später in Akt 3/4.                              |
+| Die Steinplatte mit der Mulde nimmt Slick mit; vier helle Flecken im Boden.                                             | Verlust als Bild; die Platte kehrt später zurück (unter der Brücke, im Abspann).               | Ding in der Wohnwagenkarte und später in Akt 3/4.                              |
 | Dosenpokale hat Mr. Odum gebaut; „seit März keinen neuen“.                                                              | Was Slick verloren hat. In Akt 3 baut Mira in Desert Springs einen (steht schon in der Bibel). | Ansehen-Texte; im Abspann ein neuer Dosenpokal.                                |
 | Schluss: Ambroses Frage und die Antwort „Ich weiß, mit wem ich lieber spiele.“                                          | Der Held hat eine eigene Haltung; sie ist noch keine Lösung.                                   | Wahl im Dialog mit dieser Antwort als ehrlicher Fassung.                       |

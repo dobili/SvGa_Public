@@ -538,7 +538,23 @@
       "startstellung": {
         "art": "grundstellung"
       },
-      "kartenErlaubt": true
+      "kartenErlaubt": true,
+      "momente": [
+        {
+          "wenn": {
+            "abZug": 5
+          },
+          "sprecher": "victor",
+          "text": "moment.victor.luftig"
+        },
+        {
+          "wenn": {
+            "merkmal": "geschlagen:laeufer"
+          },
+          "sprecher": "victor",
+          "text": "moment.victor.haengt"
+        }
+      ]
     },
     {
       "kennung": "summitCity.sol",

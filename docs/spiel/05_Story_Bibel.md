@@ -2063,12 +2063,12 @@ Alle Namen sind Arbeitsnamen; „ZERO“ wird vor der Veröffentlichung umbenann
 
 ## 26. Zeitlinie, Ergänzung für Akt 4
 
-| Jahr          | Ereignis                                                                                                                                                   |
-| ------------- | ---------------------------------------------------------------------------------------------------------------------------------------------------------- |
-| 1866          | Ambrose schreibt in einer Bergbausiedlung (später Ghost Town) bei Kerzenlicht seinen letzten Zug auf und schickt ihn ab; er erreicht Hale nach seinem Tod. |
-| 1867          | Hale schreibt seine Antwort in sein Notizbuch und reißt die Seite später heraus, „für den Tag, an dem jemand weiterspielt“ (Familiengeschichte der Hales). |
-| um 1990       | Die Seite liegt in einem Schachbuch von Victors Großvater; Graham Hale hält sie für wertlos.                                                               |
-| Sommer, jetzt | Akt 4: Bergsommer in Summit City, Sommercamp, Mittagshitze in Ghost Town, die Landesmeisterschaft an einem langen Sommerabend (09, Abschnitt 2).           |
+| Jahr          | Ereignis                                                                                                                                                                                                              |
+| ------------- | --------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------- |
+| 1866          | Hales 39. Zug erreicht Ambrose, nachgeschickt, in einer Bergbausiedlung (später Ghost Town). Dort schreibt er bei Kerzenlicht seinen letzten Zug (40. Kxg3) auf und schickt ihn ab; er erreicht Hale nach seinem Tod. |
+| 1867          | Hale schreibt seine Antwort in sein Notizbuch und reißt die Seite später heraus, „für den Tag, an dem jemand weiterspielt“ (Familiengeschichte der Hales).                                                            |
+| um 1990       | Die Seite liegt in einem Schachbuch von Victors Großvater; er hält sie für wertlos, hebt sie aber auf und gibt das Buch Victor, als der sieben ist. Graham Hale weiß nichts von dem Buch.                             |
+| Sommer, jetzt | Akt 4: Bergsommer in Summit City, Sommercamp, Mittagshitze in Ghost Town, die Landesmeisterschaft an einem langen Sommerabend (09, Abschnitt 2).                                                                      |
 
 ## 27. Figuren in Akt 4
 
@@ -2090,20 +2090,18 @@ wieder gern. Er gibt die Seite aus dem Notizbuch weiter, steht im Finale als Fre
 sagt seinem Vater zum ersten Mal Nein. Neuer Beispielsatz: „Ich will einmal verlieren dürfen.
 Einfach so. Ohne dass jemand nachrechnet.“
 
-**Graham Hale.** Überfordert, nicht böse (Dokument 02, 2.3). Er erfährt bei der Meisterschaft, dass
-im Konzern geschummelt wurde, und stellt sich danach öffentlich hinter seinen Sohn. Beispiel: „Ich
+**Graham Hale.** Überfordert, nicht böse (Dokument 02, 2.3). Er hat ZERO gebaut, für das Training, und wusste nichts vom Missbrauch. Er erfährt bei der Meisterschaft, dass im Konzern geschummelt wurde, und stellt sich danach öffentlich hinter seinen Sohn. Beispiel: „Ich
 habe gerechnet und vergessen, wofür. Entschuldige, Victor.“
 
 **Nova.** Sie sagt bei der Meisterschaft aus, zusammen mit Dr. Lin, und spielt ihre letzte
 Vorrundenpartie ohne Gerät; danach ist sie frei. Beispiel: „Zum ersten Mal weiß ich nicht, ob ich
 gewinne. Das fühlt sich gut an.“
 
-**Dr. Lin.** Legt die Spielberichte und den Ohrempfänger vor (Akt 3, Szene 56) und verliert ihre
-Stelle bei Perfect Move; sie gründet danach einen Club ohne Bildschirme (Ausblick im Abspann).
+**Dr. Lin.** Legt die Spielberichte und den Ohrempfänger vor (Akt 3, Szene 56). Sie hat schon vor der Meisterschaft bei Perfect Move gekündigt und gründet einen Kellerclub ohne Bildschirme (im Epilog zu sehen).
 
 **Mama, Juno, Coach Delgado, die Clubchefs.** Alle kommen zur Landesmeisterschaft (Capital Arena):
 Mama als Begleitung, Juno mit dem Tagebuch, die Clubchefs von Akt 1 bis 3 als Publikum. Beim Finale
-sitzen sie zusammen; das ist das Bild des Abspanns.
+sitzen sie zusammen; das ist das Bild des Abspanns. Coach Delgado hatte den Vertrag mit Perfect Move im September unterschrieben, in der Woche nach Victors Besuch (Bus, Bretter und Startgeld für sieben Kinder), und im Frühjahr wieder gekündigt, als der Konzern den Clubraum wollte; sie erzählt es in Crossroads (Szene 93).
 
 ### 27.2 Summit City
 
@@ -2262,8 +2260,7 @@ Einfach so.“ Wahl: „Dann spielen wir. Ohne Uhr, ohne Gerät.“ / „Erzähl
 Grundstellung (Begegnung `summitCity.victorFrei`, Rolle `story`, E + 400, ohne Uhr, Karten erlaubt,
 zählt für die App, jeder Ausgang führt weiter). Victor lacht zum ersten Mal im Spiel, wenn {held}
 einen guten Zug macht. Danach zieht er aus seinem Schachbuch eine vergilbte Seite: Hales Antwort,
-die in der Vitrine fehlte (Akt 3, Szene 57). „Mein Großvater sagte: für den Tag, an dem jemand
-weiterspielt.“ Ambrose (`#pause`): „Ein Hale. Ur-ur-ur … Herrje. Ein Hale eben.“ Gegenstand
+die in der Vitrine fehlte (Akt 3, Szene 57). „Das hat meinem Großvater gehört. Er hat gesagt, da ist etwas drin, das soll ich aufheben. Es sei wertlos. Aber man hebe es auf. Mein Vater weiß nicht, dass ich es habe.“ Auf der Seite steht in Hales Schrift: „Für den Tag, an dem jemand weiterspielt.“ Ambrose (`#pause`): „Ein Hale. Ur-ur-ur … Herrje. Ein Hale eben.“ Victor fragt: „Was sagt er?“; {held} sagt es ihm. Von jetzt an weiß Victor von Ambrose (nach Juno der Zweite) und spricht ihn über {held} an. Gegenstand
 **„Hales Seite“** (übergreifende Quest „Die fehlende Seite“ aufgelöst). Etwa 25 Minuten.
 
 **89. Sol auf dem Gipfel** · S `summitCity.sol` · Sprüche
@@ -2276,12 +2273,12 @@ Ort `summitCity.aussen` (Marktplatz am Abend) · Bergführer, Kinder, Murmeltier
 Jahr spielt ganz Summit City mit dem Drachen (Dame + Springer) nach einer alten Bergwerkssage. {held}
 spielt eine Partie (V, Belohnung Fund „Drachenschuppe aus Glas“, Extra „Drachenfigur“ am
 Varianten-Tisch). Ambrose: „Ein Drache auf dem Brett. Zu meiner Zeit hätte man mich dafür aus dem
-Kaffeehaus geworfen. Herrlich.“ Etwa 10 Minuten.
+Kaffeehaus geworfen. Herrlich.“ Im Roman liegt das Fest am Abend vor Victors Niederlage (Szene 87); im Spiel ist es auch an einem anderen Abend besuchbar. Etwa 10 Minuten.
 
 **91. Clubkampf Summit City** · `akt4.clubnadelSummit` · H `summitCity.endspiel`
 Ort `summitCity.huette` · Ward, Victor als Zuschauer, Ambrose. Ereignis: Partie gegen die Clubchefin
 (Zielstärke E + 640), Wahl der Zeitklasse, Karten erlaubt. Ward vereinfacht gern; wer ins Endspiel
-will, braucht die Lektionen aus Szene 84 und 86. Belohnung: **Clubnadel Summit City** (die achte),
+will, braucht die Lektionen aus Szene 84 und 86. Ein Remis genügt für die Nadel. Belohnung: **Clubnadel Summit City** (die achte),
 Ambroses Notiz, Mentor-Zug (R27), 50 Münzen. Ward: „Du hast mich besiegt. Gut. Jetzt zeig mir, wie.“
 Juno zählt im Tagebuch: acht Nadeln, Punkte für die Liga (R22). Etwa 30 Minuten.
 
@@ -2298,7 +2295,7 @@ Etwa 20 Minuten.
 **93. Crossroads** · `akt4.crossroads`
 Ort `crossroads.aussen`, `crossroads.raststaette` · Darlene, viele Bekannte. Ereignis: Dialog, Laden,
 Varianten-Tisch. An der Kreuzung von vier Straßen treffen sich alle: Slick auf dem Weg zur
-Meisterschaft, Mira mit Tomás, Big Joe als Fahrer des Werksbusses, Rosie mit dem Food-Truck. Am
+Meisterschaft, Mira mit Tomás, Big Joe als Fahrer des Werksbusses, Rosie mit dem Food-Truck. Coach Delgado sagt offen, dass sie den Vertrag mit Perfect Move unterschrieben und wieder gekündigt hat. Am
 Varianten-Tisch stehen alle Varianten, die {held} unterwegs gelernt hat (V1 bis V6, L1 bis L10). Nova
 sitzt allein in einer Ecke und sagt: „Dr. Lin hat angerufen. Ich sage aus. Hilfst du mir?“ Wahl,
 beide führen weiter. Etwa 10 Minuten.
@@ -2337,8 +2334,7 @@ Rand: „Ein Reisender aus dem Süden, 1866. Er hatte ein Schachbrett bei sich.�
 
 **99. Flashback: Die letzte Kerze, 1866** · `akt4.flashbackKerze` · F2 (3)
 Ort Sepia-Karte `flashback.siedlung` · Ambrose als Held. Ereignis: Ambrose in einer Bretterhütte der
-Siedlung, Fieber, eine Kerze, das Brett auf dem Tisch. Er schreibt seinen letzten Zug auf und gibt
-den Brief einem Postreiter: „Bring ihn nach Norden. Er wartet.“ Keine Einzelheiten zum Sterben; die
+Siedlung, Fieber, eine Kerze, das Brett auf dem Tisch. Bei ihm ist Gideon, der Schmied der Siedlung (nicht Tobias; Tobias Wren ist der Turniergegner in der Arena); Ambrose zeigt ihm die Stellung. Er schreibt seinen letzten Zug auf, Gideon hält ihm das Blatt und trägt den Brief hinunter zum Postreiter: „Bring ihn nach Norden. Er wartet.“ Keine Einzelheiten zum Sterben; die
 Kerze geht aus, Szenenwechsel (Stilregel 5.3). Zugerraten: die letzten vier Züge der Fernpartie bis
 zu Ambroses letztem Zug (erfundene Partie, Stellung baut ein Folgeauftrag mit der Engine). Etwa 3
 Minuten.
@@ -2392,8 +2388,7 @@ Dialog. Nova sagt vor der Turnierleitung aus; Dr. Lin legt die Spielberichte (98
 und den Ohrempfänger vor (Akt 3, Szene 56; Buchbezug Kapitel 12, Abschnitt 12.2). Die
 Turnierleitung lässt im Halbfinale einen Funkprüfer mitlaufen. Graham Hale erfährt es vor seinem
 Sohn und ist erschüttert; Victor stellt sich neben Nova: „Ich hab es gesehen. In Silicon Bay.“
-Niemand wird vorgeführt; der verantwortliche Vertriebschef des Konzerns wird nur als Name genannt
-und geht. Etwa 5 Minuten.
+Niemand wird vorgeführt; der verantwortliche Vertriebschef, Mr. Dorrance, wird nur als Name genannt und tritt nicht auf („nicht mehr im Haus“). Graham Hale: „Ich habe die Engine gebaut. Für das Training.“ Etwa 5 Minuten.
 
 **106. Halbfinale: Gemeinsam** · `akt4.halbfinale` · Begegnung `capitalArena.halbfinale` · R29
 Ort `capitalArena.halle` · Kade Sterling, Ambrose, Funkprüfer. Ereignis: Partie aus der
@@ -2403,9 +2398,7 @@ spielt ab dann allein, sichtbar verunsichert (Zustand wie „abgelenkt“, Fakto
 Partie, siehe Technikliste). **R29:** Der Mentor-Zug liegt ohne Besitz als vierte Karte frei im Deck,
 einmal spielbar, ohne Verbrauch und ohne Folge für die Wertung: „Held und Ambrose spielen
 gemeinsam.“ Ambrose vor der Partie: „Ein einziges Mal. Wenn du mich rufst, komme ich. Wenn nicht,
-schaue ich zu.“ Wer den Mentor-Zug spielt, sieht Ambroses Zug als goldenen Pfeil und hört: „Das ist
-meine unsterbliche Partie. Mit dir.“ Wer ihn nicht spielt, schaltet den **Extra-Abspann** frei
-(Szene 109). Bei Niederlage: Wiedereinstieg am Kipppunkt nach R14 (dann wieder mit freiem
+schaue ich zu.“ Im Schlüsselmoment sieht {held} den Zug (ein Turmopfer) selbst und ruft Ambrose nur, um ihn zu prüfen. Die Karte Mentor-Zug hat hier einen goldenen Rand und zeigt keinen Zug, sondern nur „Er ist da“; Ambrose weiß es auch nicht („Ich weiß es nicht.“). Der Spieler findet den Turmzug selbst (Zugerraten, beliebig viele Versuche, die Uhr hält an); dann stellen beide den Turm gemeinsam hin. Danach Ambrose: „Das ist meine unsterbliche Partie. Mit dir.“ Wer die Karte nicht spielt, schaltet den **Extra-Abspann** frei (Zettel im Epilog, Szene 109). Bei Niederlage: Wiedereinstieg am Kipppunkt nach R14 (dann wieder mit freiem
 Mentor-Zug). Etwa 35 Minuten.
 
 **107. Vor dem Finale** · `akt4.vorDemFinale`
@@ -2418,20 +2411,18 @@ sage heute nichts. Das Brett gehört euch.“ Etwa 4 Minuten.
 **108. Finale gegen Victor** · `akt4.finale` · Begegnung `capitalArena.finale` · R28
 Ort `capitalArena.halle` (Bühne, Publikum aus allen Städten) · Victor. Ereignis: Partie aus der
 Grundstellung (Zielstärke nach Liga: Bronze E + 700, Silber E + 800, Gold E + 900, R22), Wahl der
-Zeitklasse, **keine Karten** (R28), keine Sprüche, Ambrose schweigt. Jeder Ausgang führt weiter: Sieg
+Zeitklasse, **keine Karten** (R28), keine Sprüche, Ambrose schweigt. Jeder Ausgang führt weiter, und bei jedem Ausgang freut sich Victor über die Partie und läuft mit dem Formular zu seinem Vater: Sieg
 (Landesmeister, Qualifikation für die Weltmeisterschaft in der erreichten Liga), Remis (geteilter
 Titel, „das schönste Remis des Turniers“), Niederlage (Vizemeister, Victor: „Du hast mich gezwungen,
 gut zu spielen. Danke.“). Revanche jederzeit im Post-Game. Etwa 40 Minuten.
 
-**109. Abschied** · `akt4.abschied` · Abspann
+**109. Abschied** · `akt4.abschied` · Abspann und Epilog
 Ort `capitalArena.aussen` (Abend, langes Sommerlicht), dann Dachboden in Maple Falls · Ambrose, {held},
 Juno, Mama, Victor. Ereignis: Dialog. Nach der Siegerehrung, allein auf der Treppe vor der Halle,
 spricht Ambrose zum letzten Mal: „Ich wollte eine Partie ohne Makel. Ich habe etwas Besseres
 bekommen: Menschen, die kämpfen, Fehler machen und wachsen. Du hast mir das gezeigt.“ Wahl: „Danke.“ /
 „Ich werde dich vermissen.“ / „Später?“ Auf „Später?“ lacht er: „Nein. Dieses eine Mal nicht später.“
-Das Brett wird still; die Figuren stehen in der Schlussstellung der Fernpartie. Abspann mit den
-Figuren aller Städte. **Extra-Abspann** (nur ohne Mentor-Zug im Halbfinale, Dokument 02, 2.7):
-Zurück auf dem Dachboden steht eine Figur auf dem Brett anders als am Abend; daneben ein Zettel in
+Das Brett wird still; die Figuren stehen in der Schlussstellung der Fernpartie. Reihenfolge: Abschied, dann Abspann mit den Figuren aller Städte, dann Epilog, danach Post-Game (Szene 110). **Epilog** (ein Jahr später, im Herbst, Dachboden in Maple Falls): Lily kommt herauf, {held} zeigt ihr die erste Lektion; letzter Satz des Spiels: „Was hängt?“ Dr. Lins Kellerclub ist im Epilog zu sehen. Der **Extra-Abspann** (nur ohne Mentor-Zug im Halbfinale, Dokument 02, 2.7) gehört in den Epilog: Auf dem Dachboden steht eine Figur auf dem Brett anders als am Abend; daneben liegt ein Zettel in
 alter Schrift: „Du hast mich nicht gebraucht. Das ist das schönste Geschenk. – A. W.“ Etwa 8 Minuten.
 
 **110. Post-Game** · `akt5.postGame`
@@ -2459,20 +2450,20 @@ Kürzungen, falls nötig: Vorrunde der Meisterschaft als vier Stellungsduelle st
 
 ## 30. Entdeckungen in Akt 4
 
-| Ort           | Fund                           | Wo                           | Satz                                                   | Wirkung                                    |
-| ------------- | ------------------------------ | ---------------------------- | ------------------------------------------------------ | ------------------------------------------ |
-| Weg 7         | Neonbuchstabe „K“              | hinter dem Diner             | Earl: „Das K von King's Diner. Ist seit '89 kaputt.“   | 10 Münzen                                  |
-| Hochebene     | Falke aus Holz                 | Geschenk von Kira (Szene 82) | Kira: „Damit du nicht vergisst, wie man fliegt.“       | Extra „Falke und Bison“ am Varianten-Tisch |
-| Summit City   | Hales Seite                    | Victor (Szene 88)            | „Für den Tag, an dem jemand weiterspielt.“             | Auflösung „Die fehlende Seite“             |
-| Summit City   | Drachenschuppe aus Glas        | Drachenfest (Szene 90)       | „Ein Drache, der Licht fängt.“                         | Extra „Drachenfigur“                       |
-| Summit City   | Murmeltierpfeife               | Bergstation (versteckt)      | „Pfeif, und sie pfeifen zurück.“                       | 5 Münzen                                   |
-| Weg 8         | Bisonhaar am Zaun              | Geysirbecken                 | Ambrose: „Ein Tier, das niemandem ausweicht. Respekt.“ | 5 Münzen                                   |
-| Crossroads    | Postkarte aller Städte         | Ständer an der Kasse         | Juno: „Wir waren überall!“                             | Album                                      |
-| Pinewood Camp | Marshmallow-Stock mit Kerben   | Lagerfeuer (Szene 95)        | Ezra: „Jede Kerbe ein Sieg.“                           | zählt Siege im Album                       |
-| Ghost Town    | Postreiterabzeichen von 1866   | Saloon (versteckt, Laterne)  | Ambrose: „Er hat meinen Brief getragen.“               | Album, Flashback-Auslöser                  |
-| Ghost Town    | Schlussstellung der Fernpartie | Saloon (Szene 100)           | „Nicht makellos. Schön.“                               | Bretthintergrund „Fernpartie 1866“         |
-| Weg 11        | Leuchtturmlinse                | Leuchtturm                   | Abe: „Sie hat hundert Schiffe heimgebracht.“           | 10 Münzen                                  |
-| Capital Arena | Teilnehmerausweis              | Szene 103                    | „{held}, Maple Falls.“                                 | Album                                      |
+| Ort           | Fund                           | Wo                           | Satz                                                      | Wirkung                                    |
+| ------------- | ------------------------------ | ---------------------------- | --------------------------------------------------------- | ------------------------------------------ |
+| Weg 7         | Neonbuchstabe „K“              | hinter dem Diner             | Earl: „Das K von King's Diner. Ist seit '89 kaputt.“      | 10 Münzen                                  |
+| Hochebene     | Falke aus Holz                 | Geschenk von Kira (Szene 82) | Kira: „Den hab ich verschnitten. Aber er zieht trotzdem.“ | Extra „Falke und Bison“ am Varianten-Tisch |
+| Summit City   | Hales Seite                    | Victor (Szene 88)            | „Für den Tag, an dem jemand weiterspielt.“                | Auflösung „Die fehlende Seite“             |
+| Summit City   | Drachenschuppe aus Glas        | Drachenfest (Szene 90)       | „Ein Drache, der Licht fängt.“                            | Extra „Drachenfigur“                       |
+| Summit City   | Murmeltierpfeife               | Bergstation (versteckt)      | „Pfeif, und sie pfeifen zurück.“                          | 5 Münzen                                   |
+| Weg 8         | Bisonhaar am Zaun              | Geysirbecken                 | Ambrose: „Ein Tier, das niemandem ausweicht. Respekt.“    | 5 Münzen                                   |
+| Crossroads    | Postkarte aller Städte         | Ständer an der Kasse         | Juno: „Wir waren überall!“                                | Album                                      |
+| Pinewood Camp | Marshmallow-Stock mit Kerben   | Lagerfeuer (Szene 95)        | Ezra: „Jede Kerbe ein Sieg.“                              | zählt Siege im Album                       |
+| Ghost Town    | Postreiterabzeichen von 1866   | Saloon (versteckt, Laterne)  | Ambrose: „Er hat meinen Brief getragen.“                  | Album, Flashback-Auslöser                  |
+| Ghost Town    | Schlussstellung der Fernpartie | Saloon (Szene 100)           | „Nicht makellos. Schön.“                                  | Bretthintergrund „Fernpartie 1866“         |
+| Weg 11        | Leuchtturmlinse                | Leuchtturm                   | Abe: „Sie hat hundert Schiffe heimgebracht.“              | 10 Münzen                                  |
+| Capital Arena | Teilnehmerausweis              | Szene 103                    | „{held}, Maple Falls.“                                    | Album                                      |
 
 **Übergreifende Quests (E4):** „Die fehlende Seite“ (Akt 3) wird in Szene 88 aufgelöst; die
 Fernpartie (Fragmente aus allen Akten, Hales Brief, Hales Seite) schließt in Szene 100 ab. Neu für das
@@ -2492,14 +2483,14 @@ Im Turnier gibt es keinen Laden am Brett; vor der Meisterschaft lohnt sich Cross
 
 ## 32. Hilfskarten, Sprüche und Sperren in Akt 4
 
-| Karte oder Regel                 | Wo                                              | Warum                                                       |
-| -------------------------------- | ----------------------------------------------- | ----------------------------------------------------------- |
-| Mentor-Zug (R27)                 | Clubnadel Summit City                           | erste Nadel des Clubs                                       |
-| Kühler Kopf                      | Szene 89, erster Sieg gegen Sol                 | für die Partie gegen Tobias (Uhr)                           |
-| Mentor-Zug frei als vierte Karte | Szene 106, Halbfinale (R29)                     | „gemeinsam“; ohne Verbrauch; nicht gespielt → Extra-Abspann |
-| Keine Karten                     | Szene 100 (Fernpartie), Szene 108 (Finale, R28) | die Partien gehören den Spielern                            |
-| Keine Sprüche                    | gesamte Meisterschaft (S2)                      | Ruhe im Turnier                                             |
-| Uhr fest 5 + 3                   | Szene 104, Runde 4 (R16)                        | Zeitdruck-Spezialist; Zeitbonus und Kühler Kopf nur hier    |
+| Karte oder Regel                 | Wo                                              | Warum                                                                                                       |
+| -------------------------------- | ----------------------------------------------- | ----------------------------------------------------------------------------------------------------------- |
+| Mentor-Zug (R27)                 | Clubnadel Summit City                           | erste Nadel des Clubs                                                                                       |
+| Kühler Kopf                      | Szene 89, erster Sieg gegen Sol                 | für die Partie gegen Tobias (Uhr)                                                                           |
+| Mentor-Zug frei als vierte Karte | Szene 106, Halbfinale (R29)                     | „gemeinsam“; goldener Rand, zeigt nur „Er ist da“; ohne Verbrauch; nicht gespielt → Extra-Abspann im Epilog |
+| Keine Karten                     | Szene 100 (Fernpartie), Szene 108 (Finale, R28) | die Partien gehören den Spielern                                                                            |
+| Keine Sprüche                    | gesamte Meisterschaft (S2)                      | Ruhe im Turnier                                                                                             |
+| Uhr fest 5 + 3                   | Szene 104, Runde 4 (R16)                        | Zeitdruck-Spezialist; Zeitbonus und Kühler Kopf nur hier                                                    |
 
 ## 33. Offene Fragen an den Autor (Akt 4)
 
@@ -2511,11 +2502,11 @@ Im Turnier gibt es keinen Laden am Brett; vor der Meisterschaft lohnt sich Cross
 2. **Halbfinale mit Stärkewechsel mitten in der Partie.** Empfehlung: ja, das zeigt das Aufdecken im
    Spiel selbst. Falls zu teuer: zwei Partien (erst gegen Kade mit Gerät, Stellungsduell „überleben“
    über zwölf Züge; dann die echte Partie).
-3. **Wer den Konzern verantwortet.** Empfehlung: ein namentlich genannter Vertriebschef, der geht;
+3. **Wer den Konzern verantwortet.** Empfehlung: ein namentlich genannter Vertriebschef (Mr. Dorrance, tritt nicht auf), der geht;
    Graham Hale bleibt überfordert und einsichtig, kein Erwachsener wird vorgeführt (Dokument 02, 2.3).
 4. **Finale verloren.** Empfehlung: Die Geschichte endet bei jedem Ausgang gleich gut; der Titel ist
    egal, die Freundschaft nicht. Revanche im Post-Game.
-5. **Ambroses Abschied endgültig?** Empfehlung: ja, mit dem Extra-Abspann als leisem Gruß; im
+5. **Ambroses Abschied endgültig?** Empfehlung: ja, mit dem Extra-Abspann (Zettel im Epilog) als leisem Gruß; im
    Post-Game spricht er nicht mehr, nur der Zettel bleibt im Album.
 6. **Varianten an Nebenschauplätzen** brauchen Fairy-Stockfish (Technikliste); Empfehlung: L1, L2 und
    die Variante der Wüstenstraße (L8) zuerst, die übrigen mit dem Zusatzpaket.
@@ -2529,7 +2520,7 @@ Im Turnier gibt es keinen Laden am Brett; vor der Meisterschaft lohnt sich Cross
    Gegnerprofil von „mit Gerät“ auf „allein, abgelenkt 1,5“; braucht einen Auslöser in der
    Partieansicht oder eine zweigeteilte Begegnung.
 3. **Freie vierte Karte** (R29, Vorschlag V6 aus dem Regelwerk): `Partieauftrag.freieKarten` und eine
-   Dialogvariable `mentorzugImHalbfinaleGespielt` für den Extra-Abspann.
+   Dialogvariable `mentorzugImHalbfinaleGespielt` für den Extra-Abspann. Die Karte zeigt im Halbfinale keinen Zug, sondern nur „Er ist da“ (goldener Rand); danach Zugerraten des Turmzugs mit beliebig vielen Versuchen bei angehaltener Uhr.
 4. **Varianten** (10, Abschnitt 3 und 3a): Schach960 (L1) und Blindschach (L2) mit der vorhandenen
    Engine; Königsrennen (L8), Drei-Schach (L3), Atomschach (L4), König der Hügel (L7), Drache (L10),
    Falke und Bison (L9), Räuberschach mit Fairy-Stockfish als Zusatzpaket; Entenschach (L6) prüfen;
@@ -2540,8 +2531,7 @@ Im Turnier gibt es keinen Laden am Brett; vor der Meisterschaft lohnt sich Cross
 6. **Fernpartie** (Szene 99, 100): erfundene Partie 1865/66 mit der Engine bauen, Fragmente 0 bis 8 als
    Halbzüge festlegen, Endspielstellung für das Stellungsduell (R13) prüfen; Ambroses letzter Zug
    als Zugerraten.
-7. **Abspann und Extra-Abspann:** eine Abspann-Ansicht mit allen Figuren und Credits (LIZENZEN),
-   Extra-Abspann abhängig von der Dialogvariable aus Punkt 3.
+7. **Abspann, Epilog und Extra-Abspann:** eine Abspann-Ansicht mit allen Figuren und Credits (LIZENZEN), danach der Epilog auf dem Dachboden (Lily); der Extra-Abspann (Zettel im Epilog) hängt von der Dialogvariable aus Punkt 3 ab.
 8. **Neue Figurenbilder** (Porträt-Skript): Ward, Kit, Haraldsen, Sol, Darlene, Hollis, Ezra,
    Pruitt, Bea, Marcus, Tobias, Kade, Turnierleiterin, die Vell-Familie, Figuren der Wege.
 9. **Post-Game:** zweiter Durchlauf (+300, R10), getrennte Nadeln des zweiten Durchlaufs (V5),

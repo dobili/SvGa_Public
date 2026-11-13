@@ -106,6 +106,8 @@ Du lässt die Figuren stehen, wie sie jetzt stehen. #sprecher:erzaehler
 -> END
 
 === fund_abzeichen ===
+// Kapitel 57 (Roman): In der Nacht im Saloon; im Zimmer über dem Laden hängt noch ein Fetzen
+// Rosentapete. Danach führt der Übergang in die Erinnerung (erinnerung-siedlung.kerze).
 {
 - abzeichenGefunden:
     Das Abzeichen glänzt in deiner Hand. Die Farben werden wieder braun. #sprecher:erzaehler
@@ -115,15 +117,18 @@ Du lässt die Figuren stehen, wie sie jetzt stehen. #sprecher:erzaehler
     -> END
 }
 ~ abzeichenGefunden = true
+In der Nacht schlaft ihr im Saloon auf dem Boden. Mr. Pruitt hat eine Laterne auf die Theke gestellt. Du kannst nicht schlafen. #sprecher:erzaehler #licht:nacht #geraeusch:saloon
 {hatLaterne:
-    Du leuchtest mit der Laterne hinter den Tresen. Zwischen Flaschen liegt ein Abzeichen aus Messing. #sprecher:erzaehler
+    Du leuchtest mit deiner Laterne hinter den Tresen. Zwischen Flaschen liegt ein Abzeichen aus Messing: ein Pferd und die Zahl 1866. #sprecher:erzaehler
 - else:
-    Du tastest hinter dem Tresen im Halbdunkel. Zwischen Flaschen liegt ein Abzeichen aus Messing. #sprecher:erzaehler
+    Hinter dem Tresen, zwischen Flaschen, liegt ein Abzeichen aus Messing: ein Pferd und die Zahl 1866. #sprecher:erzaehler
 }
-Darauf ein Pferd und die Zahl 1866. #sprecher:erzaehler
 ~ gibFund("postreiterabzeichen")
 Er hat meinen Brief getragen. #sprecher:ambrose #stimmung:fern #pause
-Die Farben werden braun wie ein altes Foto. #sprecher:erzaehler
+Gegenüber im Laden hält die Treppe noch. Das Zimmer darüber ist leer. In einer Ecke hängt ein Fetzen Tapete, groß wie deine Hand. Rosen. #sprecher:erzaehler #bild:tapete_rosen
+Dreihundertzwölf. Auf dieser Wand. Ich bin nie über die andere hinausgekommen. #sprecher:ambrose #stimmung:still #bild:aus
+Der Mond scheint durch ihn hindurch. #sprecher:erzaehler
+Am Felsbogen habe ich gesagt: ein andermal. Es ist ein andermal. #sprecher:ambrose #stimmung:friedlich
 -> END
 
 // ---------------------------------------------------------------- Ansehen (Runde 6)

@@ -23,7 +23,10 @@
           "datei": "karten/maple-falls-wohnzimmer.json",
           "name": "ort.mapleFalls.wohnzimmer",
           "innen": true,
+          "musik": "musik/maple-falls.ogg",
+          "geraeusch": "klang/wasserfall.m4a",
           "zustaende": {
+            "ersterAbendGesehen": "karten/maple-falls-wohnzimmer-tisch.json",
             "aufbruchGesehen": "karten/maple-falls-wohnzimmer-ausgepackt.json"
           }
         },
@@ -293,6 +296,12 @@
           "karte": "mapleFalls.park",
           "art": "gegenstand",
           "dialog": "maple-falls-park.steg"
+        },
+        {
+          "name": "tischPizzakarton",
+          "karte": "mapleFalls.wohnzimmer",
+          "art": "gegenstand",
+          "dialog": "ansehen-maple-falls.tisch_pizzakarton"
         }
       ],
       "club": {

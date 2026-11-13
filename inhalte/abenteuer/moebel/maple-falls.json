@@ -3704,6 +3704,17 @@
       "stil": "schule",
       "begehbar": true,
       "begehbar_grund": "hängt an der Wand"
+    },
+    "mf12PizzakartonUnterBein": {
+      "quelle": "spiel/eigene/pizzakarton_flach.png",
+      "breite": 16,
+      "hoehe": 16,
+      "kollision": false,
+      "art": "karton",
+      "zustand": "gebraucht",
+      "stil": "modern",
+      "begehbar": true,
+      "begehbar_grund": "gefaltet unter einem Tischbein, flach am Boden (Roman Kap. 4)"
     }
   }
 }

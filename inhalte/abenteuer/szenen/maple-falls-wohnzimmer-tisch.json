@@ -1,0 +1,240 @@
+{
+  "karte": "mapleFalls.wohnzimmer",
+  "datei": "karten/maple-falls-wohnzimmer-tisch.json",
+  "art": "innen",
+  "beschreibung": "Zustand: nach dem ersten Abend (ersterAbendGesehen, Roman Kap. 4) steht der Esstisch in der Küche, zwei Stühle schauen zu ihm; weil er wackelt, steckt der gefaltete Pizzakarton vom ersten Abend unter dem rechten Bein (Auslöser tischPizzakarton). Im Wohnzimmer liegt er deshalb nicht mehr am Boden; die Umzugskartons stehen noch. Das Erdgeschoss des alten Whitlock-Hauses am Tag des Umzugs, zwei Räume nebeneinander (20 × 13; das Haus außen ist eine Villa aus Holz, 9 breit, Tür im linken Drittel, KARTENREGELN 10.75: bis 18 breit, der Autor hat den Raum schon gesehen, deshalb bleibt er). Links das Wohnzimmer mit hellen Dielen und cremefarbenen Wänden: In der Nordwestecke hinter der Haustür führt eine steile Holztreppe an der Wand entlang nach oben (10.76: hinten links, hinter der Tür), unten ist Platz zum Antreten. An der Nordwand eine niedrige Kommode unter dem Fenster, vor dem ein Ahornast hängt (Roman Kap. 1), daneben ein gerahmtes Bild, ein Sideboard mit dem Fernseher auf seinem Standfuß und rechts die geschlossene Tür zum Schlafzimmer. Vor dem Fernseher liegt der gemusterte Teppich, dahinter stehen zwei gelbe Sessel mit Blick zum Fernseher, daneben eine Stehlampe. Die Umzugskartons stehen in zwei Gruppen an den Wänden: übereinander an der Westwand und als Stapel hinter den Sesseln. Neben dem Fernseher ein schmales Bücherregal, eine Zimmerpflanze in der Südwestecke, unten die Haustür, innen davor die Fußmatte. Durch einen offenen Durchgang geht es nach rechts in die Küche mit Fliesen: Küchenzeile mit zwei Arbeitsplatten, Herd und Kühlschrank an der Nordwand, darüber ein Fenster. In der Mitte der runde Esstisch mit zwei Stühlen. Mama steht daneben und sortiert Papiere. Vorn links der Karton „Küche?“, in der Südostecke eine Palme. Laufwege: von der Haustür hinauf und nach links zur Treppe; nach rechts über den Durchgang zu Mama.",
+  "wand": "creme",
+  "boden": "holzHell",
+  "raster": [
+    "####################",
+    "####################",
+    "####################",
+    "#..........#fffffff#",
+    "#..........#fffffff#",
+    "#..........#fffffff#",
+    "#..........#fffffff#",
+    "#...........fffffff#",
+    "#...........fffffff#",
+    "#..........#fffffff#",
+    "#..........#fffffff#",
+    "#..........#fffffff#",
+    "#####.##############"
+  ],
+  "objekte": [
+    {
+      "moebel": "mf4Treppe",
+      "feld": [1, 1],
+      "id": "treppe"
+    },
+    {
+      "moebel": "mf4Anrichte",
+      "feld": [7, 2],
+      "id": "tvboard"
+    },
+    {
+      "moebel": "mf12FensterAhorn",
+      "feld": [4, 1],
+      "an_wand": true
+    },
+    {
+      "moebel": "wzBild",
+      "feld": [6, 1],
+      "an_wand": true,
+      "versatz": [0, 4]
+    },
+    {
+      "moebel": "mf4Lowboard",
+      "feld": [4, 2],
+      "id": "anrichte"
+    },
+    {
+      "moebel": "wzTuer",
+      "feld": [10, 1],
+      "an_wand": true
+    },
+    {
+      "moebel": "wzTeppich",
+      "feld": [6, 4]
+    },
+    {
+      "moebel": "mf4SesselHinten",
+      "feld": [6, 6],
+      "zu": "tvboard"
+    },
+    {
+      "moebel": "mf4SesselHinten",
+      "feld": [8, 6],
+      "zu": "tvboard"
+    },
+    {
+      "moebel": "wzStehlampe",
+      "feld": [10, 5]
+    },
+    {
+      "moebel": "mf4KartonStapel",
+      "feld": [1, 7]
+    },
+    {
+      "moebel": "mf4KartonBreit",
+      "feld": [1, 9]
+    },
+    {
+      "moebel": "wzPflanze",
+      "feld": [1, 10]
+    },
+    {
+      "moebel": "wzFenster",
+      "feld": [14, 1],
+      "an_wand": true
+    },
+    {
+      "moebel": "wzArbeitsplatte",
+      "feld": [13, 2],
+      "versatz": [2, 6]
+    },
+    {
+      "moebel": "wzArbeitsplatte",
+      "feld": [15, 2],
+      "versatz": [0, 6]
+    },
+    {
+      "moebel": "wzHerd",
+      "feld": [17, 2]
+    },
+    {
+      "moebel": "wzKuehlschrank",
+      "feld": [18, 1]
+    },
+    {
+      "moebel": "mf4KartonBreit",
+      "feld": [12, 9],
+      "id": "kartonKuecheBox"
+    },
+    {
+      "moebel": "mf4KartonStapel",
+      "feld": [12, 3]
+    },
+    {
+      "moebel": "mf4Palme",
+      "feld": [17, 10]
+    },
+    {
+      "moebel": "mf4Karton",
+      "feld": [8, 9],
+      "id": "pizza"
+    },
+    {
+      "moebel": "mf4KartonStapel",
+      "feld": [9, 9]
+    },
+    {
+      "moebel": "mf4KartonBreit",
+      "feld": [10, 9]
+    },
+    {
+      "moebel": "mf4Fussmatte",
+      "feld": [5, 11],
+      "versatz": [0, 3]
+    },
+    {
+      "moebel": "mf4RegalSchmal",
+      "feld": [9, 1]
+    },
+    {
+      "moebel": "mf4FernseherStand",
+      "auf": "tvboard"
+    },
+    {
+      "moebel": "mf5TuerSuedHolz",
+      "feld": [5, 12],
+      "an_wand": true
+    },
+    {
+      "moebel": "mf4KartonBreit",
+      "feld": [1, 5]
+    },
+    {
+      "moebel": "mf12PizzakartonUnterBein",
+      "feld": [15, 7],
+      "versatz": [0, 4]
+    },
+    {
+      "moebel": "mf4Esstisch",
+      "feld": [14, 6],
+      "id": "esstisch"
+    },
+    {
+      "moebel": "mf3StuhlHellRechts",
+      "feld": [13, 6],
+      "zu": "esstisch"
+    },
+    {
+      "moebel": "mf3StuhlHellLinks",
+      "feld": [16, 6],
+      "zu": "esstisch"
+    },
+    {
+      "moebel": "mf4KartonStapel",
+      "feld": [17, 4]
+    }
+  ],
+  "ausloeser": [
+    {
+      "name": "start",
+      "feld": [5, 11],
+      "eigenschaften": {
+        "richtung": "oben"
+      }
+    },
+    {
+      "name": "haustuer",
+      "feld": [5, 12]
+    },
+    {
+      "name": "treppeOben",
+      "feld": [2, 3]
+    },
+    {
+      "name": "treppeOben",
+      "feld": [1, 3]
+    },
+    {
+      "name": "treppeOben",
+      "feld": [1, 4]
+    },
+    {
+      "name": "treppeOben",
+      "feld": [2, 4]
+    },
+    {
+      "name": "treppeOben",
+      "feld": [3, 3]
+    },
+    {
+      "name": "treppeOben",
+      "feld": [3, 4]
+    },
+    {
+      "name": "kartonKueche",
+      "feld": [12, 10],
+      "auf_moebel": true
+    },
+    {
+      "name": "tischPizzakarton",
+      "feld": [15, 7],
+      "auf_moebel": true
+    }
+  ],
+  "figuren": [
+    {
+      "name": "mutter",
+      "feld": [17, 8]
+    }
+  ],
+  "zustand": ["neu", "gebraucht", "alt"],
+  "stil": ["modern", "klassisch", "rustikal"],
+  "boeden": {
+    "f": "fliesenWeiss"
+  },
+  "zustand_der_karte": "ersterAbendGesehen"
+}

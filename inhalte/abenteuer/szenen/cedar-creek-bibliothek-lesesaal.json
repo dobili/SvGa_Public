@@ -1,0 +1,303 @@
+{
+  "karte": "cedarCreek.bibliothek",
+  "datei": "karten/cedar-creek-bibliothek-lesesaal.json",
+  "art": "innen",
+  "beschreibung": "Zustand: Nacht im Lesesaal vor dem Clubkampf (nachtImLesesaal, das Team ist noch nicht da). Der Saal ist still, die Leser sind gegangen. Zwischen den freistehenden Regalen liegen zwei Schlafmatten, eine grüne und eine graue, für den Helden und Juno. Mrs. Okafor schließt noch ab und steht am Ende des Schachtischs; Dex, Mae und die Zwillinge sind nach Hause gegangen.\n\nDer Lesesaal der Stadtbibliothek von Cedar Creek, ein Backsteinbau von 1890, an einem stillen Nachmittag: ein hoher, ruhiger Raum mit dunklen Dielen und hellgrauen Wänden. Durch ein Fenster in der Nordwand fällt schräges Licht. Es riecht nach Papier, Bohnerwachs und ein wenig nach Kaffee.\n\nMan kommt links durch den Vorraum herein, der unter dem Balkon des Eingangsbaus liegt: unten die Haustür, in seiner Rückwand die verschlossene Tür zum Treppenhaus in die oberen Stockwerke, rechts der Durchgang in den Saal.\n\nAn der Nordwand stehen hohe Bücherregale einer Serie, dazwischen ein Fenster, die Pinnwand mit dem Schild „Bitte flüstern“ und das niedrige Zeitungsregal mit den Zeitungen über Stangen. Oben rechts ist ein kleiner Bereich abgetrennt; man geht an der Nordwand hinein und steht hinter einem Geländer, von dem die Kellertreppe hinunter ins Archiv führt.\n\nIn der Mitte links der lange Tisch des Schachclubs aus zwei grünen Lesetischen, auf jedem zwei Bretter mit aufgebauten Figuren, oben und unten je vier gleiche Stühle mit Blick zum Tisch. Hier trifft sich der Club von Mrs. Okafor; Dex steht am linken Ende, Mae wartet unten, Mrs. Okafor am rechten Ende. Rechts daneben zwei Reihen freistehender Bücherregale, davor zwei Lesetische mit Leselampen und Stühlen, daneben eine Stehlampe.\n\nGleich rechts neben dem Durchgang der Ausleihtresen mit der alten Kasse, in der Südostecke der alte Globus auf einer Kommode, Pflanzen in den Ecken. Eine Leserin trägt Bücher durch den Saal, ein Student sucht zwischen den Regalreihen, ein Rentner liest an den Lesetischen Zeitung. An der Westwand stehen zwei schmale Regale quer zum Raum.\n\nLaufwege: von der Haustür durch den Vorraum nach rechts in den Saal, links um den Schachtisch, rechts an den Lesetischen vorbei, an der Nordwand entlang zum Zeitungsregal und in den Bereich mit der Kellertreppe.",
+  "wand": "hellgrau",
+  "boden": "dielen",
+  "raster": [
+    "##########################",
+    "##########################",
+    "##########################",
+    "#####....................#",
+    "#####.............#......#",
+    "#####...tttttt....#......#",
+    "#####...tttttt....#......#",
+    "#####...tttttt....#......#",
+    "#####...tttttt....########",
+    "#...#...tttttt....########",
+    "#.................########",
+    "#........................#",
+    "#...#....................#",
+    "#...#....................#",
+    "#...#....................#",
+    "##.#######################",
+    "##########################"
+  ],
+  "objekte": [
+    {
+      "moebel": "cc4RegalB",
+      "feld": [5, 1]
+    },
+    {
+      "moebel": "cc4RegalD",
+      "feld": [7, 1]
+    },
+    {
+      "moebel": "cc4Fenster",
+      "feld": [9, 1],
+      "an_wand": true
+    },
+    {
+      "moebel": "cc4RegalB",
+      "feld": [11, 1]
+    },
+    {
+      "moebel": "cc4PinnwandK",
+      "feld": [13, 1],
+      "an_wand": true,
+      "versatz": [0, 6]
+    },
+    {
+      "moebel": "cc12Zeitungsregal",
+      "feld": [15, 1]
+    },
+    {
+      "moebel": "cc5Tisch",
+      "feld": [9, 7],
+      "id": "schach1"
+    },
+    {
+      "moebel": "cc5Tisch",
+      "feld": [11, 7],
+      "id": "schach2"
+    },
+    {
+      "moebel": "cc4Brett",
+      "auf": "schach1",
+      "versatz": [-7, 0]
+    },
+    {
+      "moebel": "cc4Brett",
+      "auf": "schach1",
+      "versatz": [7, 0]
+    },
+    {
+      "moebel": "cc4Brett",
+      "auf": "schach2",
+      "versatz": [-7, 0]
+    },
+    {
+      "moebel": "cc4Brett",
+      "auf": "schach2",
+      "versatz": [7, 0]
+    },
+    {
+      "moebel": "cc4StuhlVorn",
+      "feld": [9, 6],
+      "zu": "schach1"
+    },
+    {
+      "moebel": "cc4StuhlRuecken",
+      "feld": [9, 8],
+      "zu": "schach1"
+    },
+    {
+      "moebel": "cc4StuhlVorn",
+      "feld": [10, 6],
+      "zu": "schach1"
+    },
+    {
+      "moebel": "cc4StuhlRuecken",
+      "feld": [10, 8],
+      "zu": "schach1"
+    },
+    {
+      "moebel": "cc4StuhlVorn",
+      "feld": [11, 6],
+      "zu": "schach2"
+    },
+    {
+      "moebel": "cc4StuhlRuecken",
+      "feld": [11, 8],
+      "zu": "schach2"
+    },
+    {
+      "moebel": "cc4StuhlVorn",
+      "feld": [12, 6],
+      "zu": "schach2"
+    },
+    {
+      "moebel": "cc4StuhlRuecken",
+      "feld": [12, 8],
+      "zu": "schach2"
+    },
+    {
+      "moebel": "cc4Tresen",
+      "feld": [6, 11]
+    },
+    {
+      "moebel": "cc4PflanzeK",
+      "feld": [1, 13]
+    },
+    {
+      "moebel": "cc4RegalD",
+      "feld": [14, 5],
+      "versatz": [0, 0]
+    },
+    {
+      "moebel": "cc4RegalB",
+      "feld": [16, 5],
+      "versatz": [0, 0]
+    },
+    {
+      "moebel": "cc4RegalD",
+      "feld": [14, 9],
+      "versatz": [0, 0]
+    },
+    {
+      "moebel": "cc4RegalB",
+      "feld": [16, 9],
+      "versatz": [0, 0]
+    },
+    {
+      "moebel": "cc4StuhlVorn",
+      "feld": [17, 12],
+      "zu": "lese1"
+    },
+    {
+      "moebel": "cc5Tisch",
+      "feld": [17, 13],
+      "id": "lese1"
+    },
+    {
+      "moebel": "cc4Leselampe",
+      "auf": "lese1",
+      "versatz": [6, 0]
+    },
+    {
+      "moebel": "cc4StuhlVorn",
+      "feld": [20, 12],
+      "zu": "lese2"
+    },
+    {
+      "moebel": "cc5Tisch",
+      "feld": [20, 13],
+      "id": "lese2"
+    },
+    {
+      "moebel": "cc4Leselampe",
+      "auf": "lese2",
+      "versatz": [6, 0]
+    },
+    {
+      "moebel": "cc4Stehlampe",
+      "feld": [19, 12]
+    },
+    {
+      "moebel": "cc5Anrichte",
+      "feld": [23, 11],
+      "id": "anrichte"
+    },
+    {
+      "moebel": "cc4Globus",
+      "auf": "anrichte"
+    },
+    {
+      "moebel": "cc6TuerSued",
+      "feld": [2, 16],
+      "an_wand": true
+    },
+    {
+      "moebel": "cc5Fussmatte",
+      "feld": [2, 14],
+      "versatz": [0, 19]
+    },
+    {
+      "moebel": "cc6RegalSeiteHell",
+      "feld": [5, 4]
+    },
+    {
+      "moebel": "cc6RegalSeiteDunkel",
+      "feld": [5, 7]
+    },
+    {
+      "moebel": "cc12TreppeAb",
+      "feld": [19, 3]
+    },
+    {
+      "moebel": "cc4Kellertuer",
+      "feld": [2, 7],
+      "an_wand": true
+    },
+    {
+      "moebel": "cc4PflanzeK",
+      "feld": [24, 12]
+    },
+    {
+      "moebel": "cc4PflanzeK",
+      "feld": [3, 9]
+    },
+    {
+      "moebel": "cc13MatteGruenLinks",
+      "feld": [14, 7],
+      "bauteil_ok": true
+    },
+    {
+      "moebel": "cc13MatteGruenRechts",
+      "feld": [15, 7],
+      "bauteil_ok": true
+    },
+    {
+      "moebel": "cc13MatteGrauLinks",
+      "feld": [16, 7],
+      "bauteil_ok": true
+    },
+    {
+      "moebel": "cc13MatteGrauRechts",
+      "feld": [17, 7],
+      "bauteil_ok": true
+    }
+  ],
+  "ausloeser": [
+    {
+      "name": "start",
+      "feld": [2, 14],
+      "eigenschaften": {
+        "richtung": "oben"
+      }
+    },
+    {
+      "name": "bibliothekAusgang",
+      "feld": [2, 15]
+    },
+    {
+      "name": "kellertreppe",
+      "feld": [21, 4]
+    },
+    {
+      "name": "schildFluestern",
+      "feld": [13, 3]
+    },
+    {
+      "name": "zeitungsregal",
+      "feld": [16, 4]
+    },
+    {
+      "name": "globus",
+      "feld": [23, 13],
+      "auf_moebel": false
+    },
+    {
+      "name": "kellertreppe",
+      "feld": [22, 4]
+    },
+    {
+      "name": "treppenhaus",
+      "feld": [2, 9]
+    }
+  ],
+  "figuren": [
+    {
+      "name": "okafor",
+      "feld": [13, 7]
+    }
+  ],
+  "belebung": [],
+  "zustand": ["gebraucht", "alt"],
+  "stil": ["klassisch"],
+  "boeden": {
+    "t": "teppichRot"
+  },
+  "zustand_der_karte": "nachtImLesesaal und nicht teamAngekommen"
+}

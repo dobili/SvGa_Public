@@ -442,7 +442,12 @@
           "name": "ort.cedarCreek.bibliothek",
           "innen": true,
           "musik": "musik/cedar-creek.bibliothek.m4a",
-          "geraeusch": "klang/uhr_ticken.m4a"
+          "geraeusch": "klang/uhr_ticken.m4a",
+          "licht_zustaende": { "nachtImLesesaal und nicht teamAngekommen": "nacht" },
+          "zustaende": {
+            "nachtImLesesaal und nicht teamAngekommen": "karten/cedar-creek-bibliothek-lesesaal.json",
+            "teamAngekommen und nadelCedarCreek == 0": "karten/cedar-creek-bibliothek-clubkampf.json"
+          }
         },
         {
           "kennung": "cedarCreek.archiv",

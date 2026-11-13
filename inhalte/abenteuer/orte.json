@@ -13,9 +13,21 @@
           "datei": "karten/maple-falls-dachboden.json",
           "name": "ort.mapleFalls.dachboden",
           "innen": true,
-          "musik": "musik/dachboden.ogg",
+          "geraeusch": "klang/wind_fenster.m4a",
+          "teilchen": "staub",
           "zustaende": {
             "ersterAbendGesehen": "karten/maple-falls-dachboden-ohne-brett.json"
+          }
+        },
+        {
+          "kennung": "mapleFalls.zimmer",
+          "datei": "karten/maple-falls-zimmer.json",
+          "name": "ort.mapleFalls.zimmer",
+          "innen": true,
+          "musik": "musik/maple-falls.ogg",
+          "geraeusch": "klang/wasserfall.m4a",
+          "zustaende": {
+            "ersterAbendGesehen": "karten/maple-falls-zimmer-brett.json"
           }
         },
         {
@@ -125,16 +137,16 @@
           "name": "treppe",
           "art": "uebergang",
           "ziel": {
-            "karte": "mapleFalls.wohnzimmer",
-            "ausloeser": "treppeOben"
+            "karte": "mapleFalls.zimmer",
+            "ausloeser": "treppeDachboden"
           }
         },
         {
           "name": "treppeOben",
           "art": "uebergang",
           "ziel": {
-            "karte": "mapleFalls.dachboden",
-            "ausloeser": "treppe"
+            "karte": "mapleFalls.zimmer",
+            "ausloeser": "treppeUnten"
           }
         },
         {
@@ -302,6 +314,42 @@
           "karte": "mapleFalls.wohnzimmer",
           "art": "gegenstand",
           "dialog": "ansehen-maple-falls.tisch_pizzakarton"
+        },
+        {
+          "name": "treppeDachboden",
+          "karte": "mapleFalls.zimmer",
+          "art": "uebergang",
+          "ziel": {
+            "karte": "mapleFalls.dachboden",
+            "ausloeser": "treppe"
+          }
+        },
+        {
+          "name": "treppeUnten",
+          "karte": "mapleFalls.zimmer",
+          "art": "uebergang",
+          "ziel": {
+            "karte": "mapleFalls.wohnzimmer",
+            "ausloeser": "treppeOben"
+          }
+        },
+        {
+          "name": "fensterbank",
+          "karte": "mapleFalls.zimmer",
+          "art": "gegenstand",
+          "dialog": "maple-falls-dachboden.fensterbank"
+        },
+        {
+          "name": "brettSchreibtisch",
+          "karte": "mapleFalls.zimmer",
+          "art": "gegenstand",
+          "dialog": "maple-falls-dachboden.ambrose"
+        },
+        {
+          "name": "kisteWhitlock",
+          "karte": "mapleFalls.dachboden",
+          "art": "gegenstand",
+          "dialog": "ansehen-maple-falls.kiste_whitlock"
         }
       ],
       "club": {

@@ -1,7 +1,7 @@
 /**
  * Figurenbögen aus PixelLab zusammensetzen (Wunsch des Haupt-Chats, 13.11.2026): je Figur ein
  * Ordner im privaten Repository (`figuren-neu/<name>/rotations/<richtung>.png` 32 × 32 und
- * `animations/Walk/<richtung>/frame_00N.png` 48 × 48 mit der Figur mittig) wird zu einem Bogen mit
+ * `animations/Walk/<richtung>/frame_00N.png` oder `animations/Walking/…`, 48 × 48 mit der Figur mittig) wird zu einem Bogen mit
  * Rahmen 32 × 32 in der Ordnung von LimeZu: obere Reihe die Standbilder (rechts, oben, links,
  * unten), untere Reihe ab Rahmen 24 je Richtung sechs Laufbilder. So liest die App beide Formate
  * gleich (app/src/abenteuer/oberwelt/figurbilder.ts).
@@ -81,10 +81,13 @@ export function gespiegelt(rahmen) {
   return aus;
 }
 
+/** Namen des Laufordners im Export (PixelLab nennt ihn je nach Fassung so oder so). */
+const LAUFORDNER = ["Walk", "Walking"];
+
 /** Die Laufbilder einer Richtung (bis zu sechs), oder null. */
 async function laufbilder(ordner, richtung) {
-  const pfad = join(ordner, "animations", "Walk", richtung);
-  if (!existsSync(pfad)) return null;
+  const pfad = LAUFORDNER.map((n) => join(ordner, "animations", n, richtung)).find(existsSync);
+  if (!pfad) return null;
   const namen = (await readdir(pfad)).filter((n) => n.endsWith(".png")).sort();
   if (namen.length === 0) return null;
   return Promise.all(

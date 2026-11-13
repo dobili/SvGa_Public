@@ -815,7 +815,41 @@
         "art": "grundstellung"
       },
       "kartenErlaubt": false,
-      "zeit": "wahl"
+      "zeit": "wahl",
+      "momente": [
+        {
+          "wenn": {
+            "zug": 2
+          },
+          "sprecher": "erzaehler",
+          "text": "moment.finale.niemand",
+          "musik": "finale.eroeffnung"
+        },
+        {
+          "wenn": {
+            "zug": 12
+          },
+          "sprecher": "victor",
+          "text": "moment.victor.zugZwoelf",
+          "musik": "zug.zwoelf"
+        },
+        {
+          "wenn": {
+            "abZug": 20
+          },
+          "sprecher": "erzaehler",
+          "text": "moment.finale.allesDa",
+          "musik": "finale.mittelspiel"
+        },
+        {
+          "wenn": {
+            "abZug": 32
+          },
+          "sprecher": "erzaehler",
+          "text": "moment.finale.einenDenDuMerkst",
+          "musik": "held.allein"
+        }
+      ]
     },
     {
       "kennung": "wegCrossroadsPinewood.blindschach",

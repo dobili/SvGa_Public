@@ -344,8 +344,12 @@ Aus der Halle kommt ein Gong. Deine Hände zittern nicht mehr. #sprecher:erzaehl
 -> finale_angebot
 
 === finale_angebot ===
-Finale auf der Bühne. Keine Karten, keine Sprüche. Nur ihr zwei. #sprecher:turnierleiterin
+// Roman Kapitel 65: ein Tisch im Lichtkreis; keine Karten, keine Hilfen, Ambrose nicht im Bild.
+Auf der Bühne steht ein einziger Tisch mit einem Brett aus Holz, unter einem Scheinwerfer. Du siehst nur den Lichtkreis. #sprecher:erzaehler #musik:aus
+Victor kommt im zu großen Pullover. Er dreht vor der Schiedsrichterin die Taschen nach außen, obwohl niemand es verlangt. #sprecher:erzaehler
+Keine Karten. Keine Hilfen. #sprecher:turnierleiterin
 + [„Ich bin bereit.“]
+    Seine Hand ist trocken und warm. Neben dir steht niemand. #sprecher:erzaehler
     ~ beginnePartie("capitalArena.finale")
     -> END
 + [„Gleich.“]
@@ -355,16 +359,30 @@ Finale auf der Bühne. Keine Karten, keine Sprüche. Nur ihr zwei. #sprecher:tur
 ~ finaleBesprochen = true
 {
 - ausgangCapitalArenaFinale == "sieg":
-    Landesmeisterschaft gewonnen! Die Halle steht auf. Victor reicht dir als Erster die Hand. #sprecher:erzaehler
-    Du hast mich gezwungen, gut zu spielen. Und dann noch besser. #sprecher:victor #stimmung:froh
+    Victor legt seinen König mit einem Finger um. Die Halle ist still. Sie weiß noch nicht, was sie gesehen hat. #sprecher:erzaehler
+    Dann fängt er an zu lachen, das helle Lachen von der Bergstation. Er nimmt deine Hand mit beiden Händen. #sprecher:erzaehler
+    Hast du es gesehen? Bis zum Ende? #sprecher:victor #stimmung:lacht
 - ausgangCapitalArenaFinale == "remis":
-    Remis. Der Titel wird geteilt. Die Turnierleiterin nennt es das schönste Remis des Turniers. #sprecher:erzaehler
-    Zwei Meister. Das ist gerecht. #sprecher:victor #stimmung:froh
+    Remis. Victor sieht auf das Brett und fängt an zu lachen. Er nimmt deine Hand mit beiden Händen. #sprecher:erzaehler
+    Hast du gesehen, wie wir gespielt haben? #sprecher:victor #stimmung:lacht
 - else:
-    Victor ist Landesmeister, du Vizemeister. Er umarmt dich trotzdem zuerst. #sprecher:erzaehler
-    Du hast mich gezwungen, gut zu spielen. Danke. #sprecher:victor #stimmung:froh
+    Du legst deinen König um. Victor sieht auf das Brett und fängt an zu lachen. Er nimmt deine Hand mit beiden Händen. #sprecher:erzaehler
+    Du hast mich gezwungen, gut zu spielen. Hast du gesehen, wie? #sprecher:victor #stimmung:lacht
 }
-Auf den Tribünen jubeln alle Städte zugleich. Draußen auf der Treppe ist es ruhiger. #sprecher:erzaehler
+* [„Nein. Ich hab gehofft.“]
+- -> finale_lauf
+
+// Victors Lauf zum Vater, bei jedem Ausgang (Story-Bibel, Szene 108); Musik victor.lauf.
+=== finale_lauf ===
+Er reißt das Formular vom Tisch und rennt. Von der Bühne, durch den Mittelgang, das Blatt hoch über dem Kopf wie eine Fahne. #sprecher:erzaehler #musik:victor.lauf
+Vater! Guck dir an, wie wir gespielt haben! Das ist die schönste Partie, die ich je … #sprecher:victor #stimmung:lacht
+Der Rest geht unter. Ein Pfiff auf zwei Fingern, eine Trompete, Big Joe brüllt etwas mit „Kumpel“, Mira schreit: „Noch mal! Jetzt!“ #sprecher:erzaehler
+Juno rennt in dich hinein. Sie hat beide Tagebücher verloren und merkt es nicht. #sprecher:erzaehler
+Wie soll ich das denn aufschreiben? #sprecher:juno #stimmung:froh
+* [Über ihre Schulter sehen]
+- Ganz hinten an der Wand steht Ward und hat den Kopf zur Seite gedreht, als stünde jemand neben ihr. #sprecher:erzaehler
+Neben ihr ist ein hellerer Fleck vor der Wand, schmal, hochgeschlossen. Er sieht Victor nach. #sprecher:erzaehler
+Du kannst ihn nicht hören. Aber du siehst seine Lippen: Er läuft zum Telegrafenamt. #sprecher:erzaehler #pause:2
 -> END
 
 // ---------------------------------------------------------------- Die Gegner der Vorrunde

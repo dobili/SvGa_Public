@@ -354,3 +354,9 @@ Ein leerer Haken an der Wand. Was hier einmal hing, hat Ward abgenommen. #sprech
 Auf dem runden Tisch steht eine Teekanne, noch warm. Daneben ein Brett, auf dem eine Partie wartet. #sprecher:erzaehler
 -> END
 // <<< Runde 6 (mittel-4)
+
+// Gutachten M2.8: Moment bei Opposition im Clubkampf (Merkmal opposition, begegnungen.json).
+=== clubkampf_ah ===
+Zwei Könige, ein Feld dazwischen. Sie ist am Zug. #sprecher:erzaehler #musik:aus #pause:2
+Ah. #sprecher:ward
+-> END

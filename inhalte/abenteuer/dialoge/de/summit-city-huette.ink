@@ -95,7 +95,7 @@ Deshalb lernst du es. Nicht ich. #sprecher:ambrose #stimmung:still
 -> END
 
 === ward_victor_fort ===
-Er ist zur Seilbahn. Ich laufe keinem nach, der wegläuft. Du vielleicht schon. #sprecher:ward
+Er ist den Pfad hinauf. Ich bin vierundsechzig. Ich renne keinem mehr nach. Du vielleicht schon. #sprecher:ward
 Ohne ihn spielen wir nicht. Ich will, dass er zusieht. #sprecher:ward
 -> END
 
@@ -184,19 +184,28 @@ Ein Drache auf dem Brett. Dame und Springer in einer Figur. Zu meiner Zeit hätt
 // ---------------------------------------------------------------- Victor verliert (Szene 87)
 
 === victor_krise ===
+// Kapitel 50: Victor spielt mit dem Gerät in der Tasche; das Summen ersetzt sein Thema (Musik geraet).
 ~ victorKriseGesehen = true
-Die Tür geht auf. Victor kommt herein, ohne zu klopfen, und setzt sich Ward gegenüber. #sprecher:erzaehler
-Ich soll gegen Sie spielen. Zur Vorbereitung. Mein Vater hat angerufen. #sprecher:victor
-Ward stellt die Figuren auf, ohne ein Wort. Sie spielen. #sprecher:erzaehler
-Nach jedem Zug brummt etwas in Victors Tasche. Er sieht nicht aufs Brett, er wartet auf das Brummen. #sprecher:erzaehler
-Nach zwei Stunden steht ein Turmendspiel auf dem Brett. Victor hat einen Bauern mehr. Dann brummt es zweimal, und er zieht den König in die falsche Richtung. #sprecher:erzaehler
-Drei Züge später gibt er auf. #sprecher:erzaehler
-Sein Telefon klingelt. Er nimmt ab, ohne etwas zu sagen. #sprecher:erzaehler
-Victor? Was sagt die Bewertung? Bist du dem Coach gefolgt? #sprecher:grahamHale
-Victor legt auf. Er zieht ein kleines schwarzes Gerät aus der Tasche, wirft es auf den Tisch und läuft hinaus. #sprecher:erzaehler
-Er spielt, als wäre er nicht da. #sprecher:ward
-Kopf und Ruhe, {held}. Wer einer Maschine in der Tasche glaubt, sieht das Brett nicht mehr. #sprecher:ambrose #stimmung:still
-Geh ihm nach. Ich glaube, er braucht jetzt keinen Erwachsenen. #sprecher:ambrose
+Am fünften Tag ist Victor an der Reihe. Der Mann im grauen Anzug wartet draußen. In die Hütte lässt Ward ihn nicht. #sprecher:erzaehler #musik:geraet
+Hier drin sind Spieler und ein Feuer. Sie sind keines von beiden. #sprecher:ward
+Du sitzt am Fenster. Victor legt nichts auf den Tisch. Seine rechte Hand hat er in der Jackentasche. #sprecher:erzaehler
+Nach dreißig Zügen hat er einen Bauern mehr und ein Turmendspiel, das du kennst. Haraldsen hat es dir gezeigt. Die Brücke. #sprecher:erzaehler
+* [Zusehen]
+- Er zieht nicht. Er hält die Schulter schief, als horche er auf etwas. Es summt. Kurz. Dann zwei lange. #sprecher:erzaehler #klang:geraet_summen
+Victor zieht den Turm. Nicht auf die vierte Reihe. Ward zieht ihren König ein Feld. Die Brücke ist nicht mehr zu bauen. #sprecher:erzaehler
+Zug um Zug rinnt es ihm durch die Finger. Ward stellt sich nur immer dorthin, wo er vorbeiwill. Opposition. #sprecher:erzaehler
+Nach siebzig Zügen hat er verloren. Ein gewonnenes Endspiel, mit einem Bauern mehr. #sprecher:erzaehler
+Sein Telefon klingelt. Auf dem Bildschirm steht „Vater“. Er sieht darauf, drei Sekunden, vier. Er drückt es weg. #sprecher:erzaehler #klang:telefon
+* [Victor ansehen]
+- Er wirft etwas Graues, Flaches auf den Tisch. Es schlittert über das Brett und stößt die Könige um. #sprecher:erzaehler #klang:figuren_kippen #musik:aus
+Es hat gesagt, plus zwei Komma eins. Die ganze Zeit. Ich hab doch gemacht, was es gesagt hat. #sprecher:victor #stimmung:muede
+Er steht auf. Der Stuhl bleibt stehen. Er ist zu gut erzogen, um einen Stuhl umzuwerfen. #sprecher:erzaehler
+Draußen ruft der Mann im grauen Anzug, dann rennende Schritte auf dem Pfad. Aufwärts. Nicht hinunter. #sprecher:erzaehler #pause:2
+Ward stellt den schwarzen König zurück. Er spielt, als wäre er nicht da. #sprecher:ward
+* [„Er hat die Brücke gesehen. Er wusste es.“]
+- Natürlich wusste er es. Er ist der Begabteste, den ich in zwanzig Jahren hier oben hatte. #sprecher:ward
+Er hat sich selbst nicht geglaubt. Jemand hat ihm sehr gründlich beigebracht, sich nicht zu glauben. #sprecher:ward
+Worauf wartest du? Ich bin vierundsechzig. Ich renne keinem mehr nach. #sprecher:ward
 -> END
 
 // ---------------------------------------------------------------- Kit

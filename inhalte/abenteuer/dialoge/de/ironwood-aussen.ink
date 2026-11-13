@@ -37,6 +37,8 @@ VAR nadelIronwood = 0
 VAR kaufGesehen = false
 VAR einladungGesehen = false
 VAR kreidebrettGesehen = false
+// Roman, Kapitel 23: Das Verbot kommt zu Hause (maple-falls-wohnzimmer.nicht_ironwood) oder hier.
+VAR verbotGesehen = false
 
 // ---------------------------------------------------------------- Ankunft und Verbot
 
@@ -46,17 +48,29 @@ VAR kreidebrettGesehen = false
     -> END
 }
 ~ ankunftIronwoodGesehen = true
+// Roman, Kapitel 23 und 25: Wer vorher zu Hause war, kennt das Verbot schon
+// (maple-falls-wohnzimmer.nicht_ironwood); sonst kommt es hier als Anruf, trocken und ohne Pause.
+// Ironwood ist grau, wie Dinge grau sind, die gearbeitet haben. Klang: tiefes Thema mit Blech und
+// einem langsamen Schlag, dazu das Fauchen des Hochofens in Abständen; Lichtwechsel orange.
+Von der Brücke führt ein Abhang hinunter in eine Stadt aus Backstein und Stahl. Reihenhäuser, eins am anderen, alle gleich. #sprecher:erzaehler #musik:ironwood
+Über den Hallen leuchtet der Himmel orange auf. Einen Atemzug später kommt das Geräusch, ein tiefes Fauchen. #sprecher:erzaehler #klang:hochofen #licht:ironwood
+{verbotGesehen:
+    Auf den Gehwegen malen Kinder Schachbretter mit Kreide. Richtige, acht mal acht. #sprecher:erzaehler
+    Die können hier zählen. #sprecher:juno
+    Mama hat Nein gesagt. Nicht zum Turnier. Gucken ist kein Turnier. #sprecher:juno
+    -> END
+}
+~ verbotGesehen = true
 ~ setzeSzene("akt2.verbot")
-Von der Brücke führt ein Abhang hinunter in eine Stadt aus Backstein und Stahl. Aus den Schornsteinen steigt Rauch. #sprecher:erzaehler
 Coach Delgado hat uns für ein Freundschaftsturnier hier angemeldet! Ich hab es deiner Mama gesagt. #sprecher:juno
-Dein Handy klingelt. Mama. #sprecher:erzaehler #pause
-Nein. Nicht Ironwood. #sprecher:mutter #stimmung:ernst
-Frag nicht, bitte. Nicht heute. #sprecher:mutter
-Und heute Abend bist du zu Hause, ja? Ich hab Nachtschicht, aber ich ruf an. #sprecher:mutter
-* [„Warum nicht Ironwood?“]
+Dein Handy klingelt. Mama. #sprecher:erzaehler
+Nein. #sprecher:mutter #stimmung:verschlossen
+Nicht Ironwood. #sprecher:mutter #stimmung:verschlossen
+* [„Warum?“]
+    Frag nicht. Bitte. Nicht heute. #sprecher:mutter #stimmung:verschlossen
     Sie hat schon aufgelegt. #sprecher:erzaehler
 * [„Okay, Mama.“]
-    Danke. Hab dich lieb. #sprecher:mutter
+    Danke. Frag nicht. Bitte. #sprecher:mutter
 - Deine Mutter hat Angst. Vor einer Stadt. Das ist selten. #sprecher:ambrose
 Wir sind ja schon da. Wir gucken uns nur um. Gucken ist kein Turnier. #sprecher:juno
 -> END

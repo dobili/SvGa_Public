@@ -28,6 +28,11 @@ VAR nadelMapleFalls = 0
 // maple-falls-park.ink, dinerAbendGesehen diese Datei.
 VAR joGetroffen = false
 VAR dinerAbendGesehen = false
+// Akt 2, Szene 38 (Roman, Kapitel 23): nadelRiverton setzt die Hülle, verbotGesehen setzt diese
+// Datei oder, wer ohne Heimweg nach Ironwood geht, ironwood-aussen.ankunft_zu_fuss (Anruf).
+VAR nadelRiverton = 0
+VAR verbotGesehen = false
+VAR ankunftIronwoodGesehen = false
 
 === mutter ===
 {
@@ -39,6 +44,7 @@ VAR dinerAbendGesehen = false
 - ersteLektionBesprochen and not ersterAbendGesehen: -> erster_abend
 - kenntHale and nadelMapleFalls > 0 and not aufbruchGesehen: -> aufbruch
 - joGetroffen and not dinerAbendGesehen: -> diner_einladung
+- nadelRiverton > 0 and not verbotGesehen and not ankunftIronwoodGesehen: -> nicht_ironwood
 - else: -> mutter_alltag
 }
 
@@ -198,4 +204,36 @@ Hat er nicht komisch gefunden. #sprecher:hector #musik:diner
 Draußen ist es dunkel geworden. Hinter dem Fenster die Hauptstraße, die einzige Ampel, dahinter schwarze Bäume. #sprecher:erzaehler
 Es ist ein guter Abend. Du merkst es erst, als er fast vorbei ist. #sprecher:erzaehler
 Du hast den ganzen Tag nicht an die alte Wohnung gedacht. #sprecher:erzaehler #musik:karte #geraeusch:aus
+-> END
+
+// ---------------------------------------------------------------- Akt 2: Nicht Ironwood
+
+// Szene 38 nach dem Roman, Kapitel 23 („Frag nicht“). Stimmung: häuslich, dann eine geschlossene
+// Tür. Das Verbot kommt trocken: bei „Nein“ keine Musik und keine Pause, der Dialog geht einfach
+// weiter. Danach Tür, Wagen, das Thema von Maple Falls nur auf dem Klavier. Mamas Porträt
+// „verschlossen“ (fällt auf die Grundfassung zurück, solange es das Bild nicht gibt).
+=== nicht_ironwood ===
+~ verbotGesehen = true
+~ setzeSzene("akt2.verbot")
+Im November kommt ein Zettel von Coach Delgado, schief kopiert: „Freundschaftsturnier beim Stahlwerker-Club Ironwood. Vier Bretter. Wir fahren!!!“ #sprecher:erzaehler #bild:zettel_ironwood #musik:aus #geraeusch:kuehlschrank
+Drei Ausrufezeichen. So viele hat sie seit Wochen nicht gemacht. Du legst ihn neben Mamas Tasse. #sprecher:erzaehler #bild:aus
+Mama liest ihn im Stehen, den Mantel schon an, die Schlüssel in der Hand. Ihre Augen halten an. #sprecher:erzaehler
+Nein. #sprecher:mutter #stimmung:verschlossen
+Nicht Ironwood. #sprecher:mutter #stimmung:verschlossen
+* [„Aber der Coach hat …“]
+    Der Coach kann fahren, wohin sie will. #sprecher:mutter #stimmung:verschlossen
+* [„Warum?“]
+- Sie legt den Zettel hin, mit der Schrift nach unten. #sprecher:erzaehler
+Du fährst nach Riverton, du läufst durch Wälder, ich sage zu allem Ja. Dieses eine Mal sage ich Nein. #sprecher:mutter
+Frag nicht. Bitte. Nicht heute. #sprecher:mutter #stimmung:verschlossen
+Dann ist sie an der Tür, und die Tür ist zu. Der Wagen springt an und rollt die Einfahrt hinunter. Nachtschicht. #sprecher:erzaehler #klang:wagen
+Deine Mutter hat Angst. Vor einer Stadt. Das ist selten. #sprecher:ambrose #musik:mapleFalls.klavier
+Vor Menschen hat man Angst, vor Schulden, vor dem Zahnarzt. Aber vor einer Stadt. #sprecher:ambrose
+* [„Sie hat nur gesagt: nicht zum Turnier.“]
+    Das ist eine Unterscheidung, die Advokaten machen. #sprecher:ambrose
+    Er klingt nicht tadelnd. Er klingt neugierig. Zum ersten Mal seit Riverton interessiert ihn etwas mehr als die Tische. #sprecher:erzaehler
+* [Den Zettel umdrehen]
+    Ein Turnier, eine Stadt, ein Nein. Ich frage mich, was dahintersteckt. #sprecher:ambrose
+- Am Samstag steht das grüne Fahrrad vor der Tür. Juno sitzt schon auf dem Gepäckträger. #sprecher:erzaehler #klang:fahrradklingel #geraeusch:aus
+Ich frag gar nicht. Ich komm einfach mit. #sprecher:juno #stimmung:froh
 -> END

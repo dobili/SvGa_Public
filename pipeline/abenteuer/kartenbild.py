@@ -32,7 +32,7 @@ from pipeline.abenteuer.strasse import markiere
 from pipeline.abenteuer.toenung import schleier
 from pipeline.abenteuer.winter import ist_winter, winterbefunde, winterlich, winterliche_moebel
 from pipeline.abenteuer.zusammenhang import HOLZ
-from pipeline.abenteuer.zustaende import zustandsname
+from pipeline.abenteuer.zustaende import bildname
 
 KRONE = (246, 246, 248, 255)
 KRONENRAND = (58, 58, 80, 255)
@@ -342,28 +342,20 @@ def randspur(szene: dict, gezeichnet: dict) -> list[str]:
     return randluecken(gezeichnet, raender, trennt, frozenset(HOLZ))
 
 
-def bildname(szene: dict) -> tuple[str, bool]:
-    """Name des Bildes und ob es ein Bild für das Spiel ist (sonst nur Vorschau).
+def zeichne(szene: dict, privat: Path) -> tuple[Image.Image, Image.Image, dict]:
+    """Hintergrund (für das Spiel), Vorschau mit Möbeln und Tönung, gezeichnete Felder (Randspur).
 
-    Die Grundkarte heißt „<kennung>“, ein Zustand (``zustaende`` in orte.json, Runde 8)
-    „<kennung>-<zustand>“ mit dem Teil des Dateinamens hinter der Grundkarte, wie die App ihn lädt
-    (oberwelt/kartenfassung.ts). Varianten (KARTENREGELN 10.37) bekommen nur eine Vorschau
-    „…-<variante>“; eine Szene, die weder Grundkarte noch Zustand ist, ebenfalls, damit sie das Bild
-    der Grundkarte nicht überschreibt. Beispiel: port-delacroix-musikhaus-neu.json →
-    („portDelacroix.musikhaus-neu“, True).
+    Gemeinsam für main und die Weltkarte (pipeline/abenteuer/weltkarte.py), die nur die Vorschau
+    braucht und nichts ins private Paket schreibt.
     """
-    name = szene["karte"]
-    karte = next(
-        (k for o in lade(INHALTE / "orte.json")["orte"] for k in o["karten"] if k["kennung"] == name),
-        {},
-    )
-    datei = szene.get("datei", "")
-    zustand = datei in karte.get("zustaende", {}).values() and datei != karte.get("datei")
-    if zustand:
-        name += f"-{zustandsname(datei, karte['datei'])}"
-    if szene.get("variante"):
-        return f"{name}-{szene['variante']}", False
-    return name, zustand or datei == karte.get("datei")
+    gezeichnet: dict = {}
+    grund = hintergrund(szene, privat, gezeichnet)
+    mat = lade(INHALTE / "materialien.json")
+    grund = variiere(szene, grund, gezeichnet, mat, lade_kachel(privat, mat["boegen"]))
+    markiere(grund, raster(szene), szene, gezeichnet, mat["boeden"])
+    if ist_winter(szene):
+        grund = winterlich(grund)
+    return grund, schleier(vorschau(szene, privat, grund), szene.get("toenung")), gezeichnet
 
 
 def main() -> None:
@@ -372,19 +364,11 @@ def main() -> None:
     (privat / "spiel" / "grafik" / "karten").mkdir(parents=True, exist_ok=True)
     for name in sys.argv[3:]:
         szene = lade(Path(name))
-        gezeichnet: dict = {}
-        grund = hintergrund(szene, privat, gezeichnet)
-        mat = lade(INHALTE / "materialien.json")
-        grund = variiere(szene, grund, gezeichnet, mat, lade_kachel(privat, mat["boegen"]))
-        markiere(grund, raster(szene), szene, gezeichnet, mat["boeden"])
-        if ist_winter(szene):
-            grund = winterlich(grund)
+        grund, bild, gezeichnet = zeichne(szene, privat)
         name, spielbild = bildname(szene)
         if spielbild:
             grund.convert("RGB").save(privat / "spiel" / "grafik" / "karten" / f"{name}.png")
-        schleier(vorschau(szene, privat, grund), szene.get("toenung")).convert("RGB").save(
-            vorschauordner / f"{name}.png"
-        )
+        bild.convert("RGB").save(vorschauordner / f"{name}.png")
         befunde = sorted(set(bildbefunde(szene, privat))) + randspur(szene, gezeichnet)
         if not spielbild and not szene.get("variante"):
             befunde.append(f"{szene['datei']} ist weder Grundkarte noch Zustand in orte.json: nur Vorschau")

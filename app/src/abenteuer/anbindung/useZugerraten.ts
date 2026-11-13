@@ -27,7 +27,8 @@ const RECHENZEIT_MS = 2000;
 /** Gesuchter Zug je Stellung (UCI oder null, wenn die Engine nichts sagt). */
 const gesucht = new Map<string, Promise<string | null>>();
 
-function gesuchterZug(fen: string): Promise<string | null> {
+/** Der gesuchte Zug (UCI) einer Stellung, einmal gerechnet; null ohne Antwort der Engine. */
+export function gesuchterZug(fen: string): Promise<string | null> {
   let zug = gesucht.get(fen);
   if (!zug) {
     zug = engine

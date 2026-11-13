@@ -2,7 +2,7 @@
   "karte": "mapleFalls.zimmer",
   "datei": "karten/maple-falls-zimmer.json",
   "art": "innen",
-  "beschreibung": "Das Zimmer des Helden im Obergeschoss des Whitlock-Hauses (Roman Kap. 4: „Zimmer des Helden mit Schreibtisch für das Brett“; T15 Fensterbank), 16 × 12. Das Haus außen ist eine Villa aus Holz, 9 breit und 2 Geschosse hoch; der Aufgang liegt nach KARTENREGELN 10.76 hinten links hinter der Haustür, auf jeder Geschosskarte an derselben Stelle. Deshalb liegt links der Treppenabsatz: An der Nordwand führt die steile Holztreppe weiter zum Dachboden (neunte Stufe knarrt), darunter öffnet sich mit Geländer die Treppe ins Erdgeschoss. Rechts das Zimmer mit Dielen und cremefarbenen Wänden: an der Nordwand ein Bücherregal, das Fenster zur Birch Lane und darunter das Fensterbrett, auf dem sich im Lauf der Reise die Funde sammeln (zuerst ein Springer mit abgestoßener Mähne). Daneben ein Poster und rechts in der Ecke der Schreibtisch, auf dem später das alte Brett liegt, mit einem Stuhl davor. An der Ostwand das Bett mit dem Kopfende zur Wand, davor ein runder Teppich, über dem Kopfende eine Kommode mit Tischlampe. Vorn stehen noch drei Umzugskartons, in der Ecke eine Pflanze. Laufwege: von der Treppe nach rechts zur Fensterbank, zum Schreibtisch und zum Bett; die Treppe zum Dachboden erreicht man vom Absatz aus.",
+  "beschreibung": "Das Zimmer des Helden im Obergeschoss des Whitlock-Hauses (Roman Kap. 4: „Zimmer des Helden mit Schreibtisch für das Brett“; T15 Fensterbank), 16 × 12. Das Haus außen ist eine Villa aus Holz, 9 breit und 2 Geschosse hoch; der Aufgang liegt nach KARTENREGELN 10.76 hinten links hinter der Haustür, auf jeder Geschosskarte an derselben Stelle. Deshalb liegt links der Treppenabsatz: An der Nordwand führt die steile Holztreppe weiter zum Dachboden (neunte Stufe knarrt); direkt davor liegt die Öffnung mit Geländer, durch die die Treppe aus dem Erdgeschoss heraufkommt. Rechts das Zimmer mit Dielen und cremefarbenen Wänden: an der Nordwand ein Bücherregal, das Fenster zur Birch Lane und darunter das Fensterbrett, auf dem sich im Lauf der Reise die Funde sammeln (zuerst ein Springer mit abgestoßener Mähne). Daneben eine Landkarte und rechts in der Ecke der Schreibtisch, auf dem später das alte Brett liegt, mit einem Stuhl davor. An der Ostwand das Bett mit dem Kopfende zur Wand, davor ein runder Teppich, über dem Kopfende eine Kommode mit Tischlampe. Links unten ein Kleiderschrank, vorn stehen noch Umzugskartons, in der Ecke eine Pflanze. Laufwege: von der Treppe nach rechts zur Fensterbank, zum Schreibtisch und zum Bett; die Treppe zum Dachboden erreicht man vom Absatz aus. Aufgang (KARTENREGELN 10.76, Kartengutachten Akt 1): eine Holztreppe an der Westwand hinter der Haustür, die nach Norden ansteigt; im Obergeschoss liegt genau darüber die Öffnung mit Geländer, und die nächste Treppe zum Dachboden setzt den Lauf an der Nordwand fort; auf dem Dachboden kommt man an derselben Stelle durch dieselbe Öffnung an.",
   "wand": "creme",
   "boden": "holzHell",
   "zustand": ["neu", "gebraucht", "alt"],
@@ -28,7 +28,7 @@
       "id": "treppeDach"
     },
     {
-      "moebel": "mf4TreppeAb",
+      "moebel": "mf12Treppenschacht",
       "feld": [1, 5],
       "id": "treppeAb"
     },
@@ -48,10 +48,9 @@
       "versatz": [0, 4]
     },
     {
-      "moebel": "sbPoster",
-      "feld": [11, 0],
-      "an_wand": true,
-      "versatz": [0, 4]
+      "moebel": "mf2Weltkarte",
+      "feld": [11, 1],
+      "an_wand": true
     },
     {
       "moebel": "cc3Schreibtisch",
@@ -69,7 +68,7 @@
       "id": "bett"
     },
     {
-      "moebel": "mf7TeppichRund",
+      "moebel": "mf7TeppichQuadrat",
       "feld": [9, 6]
     },
     {
@@ -96,6 +95,14 @@
     {
       "moebel": "mf7Tischlampe",
       "auf": "kommode"
+    },
+    {
+      "moebel": "mf2Kleiderschrank",
+      "feld": [5, 7]
+    },
+    {
+      "moebel": "mf4KartonStapel",
+      "feld": [11, 9]
     }
   ],
   "ausloeser": [
@@ -131,52 +138,20 @@
       "feld": [3, 4]
     },
     {
-      "name": "treppeUnten",
-      "feld": [3, 5]
-    },
-    {
-      "name": "treppeUnten",
-      "feld": [3, 6]
-    },
-    {
-      "name": "treppeUnten",
-      "feld": [3, 7]
-    },
-    {
-      "name": "treppeUnten",
-      "feld": [3, 8]
-    },
-    {
-      "name": "treppeUnten",
-      "feld": [3, 9]
-    },
-    {
-      "name": "treppeUnten",
-      "feld": [4, 5]
-    },
-    {
-      "name": "treppeUnten",
-      "feld": [4, 6]
-    },
-    {
-      "name": "treppeUnten",
-      "feld": [4, 7]
-    },
-    {
-      "name": "treppeUnten",
-      "feld": [4, 8]
-    },
-    {
-      "name": "treppeUnten",
-      "feld": [4, 9]
-    },
-    {
       "name": "fensterbank",
       "feld": [9, 3]
     },
     {
       "name": "fensterbank",
       "feld": [10, 3]
+    },
+    {
+      "name": "treppeUnten",
+      "feld": [2, 6]
+    },
+    {
+      "name": "treppeUnten",
+      "feld": [2, 7]
     }
   ],
   "figuren": []

@@ -11,7 +11,7 @@
  "tilewidth": 16,
  "tileheight": 16,
  "nextlayerid": 5,
- "nextobjectid": 36,
+ "nextobjectid": 30,
  "layers": [
   {
    "id": 1,
@@ -724,116 +724,6 @@
     },
     {
      "id": 8,
-     "name": "treppeUnten",
-     "type": "ausloeser",
-     "x": 48,
-     "y": 80,
-     "width": 16,
-     "height": 16,
-     "rotation": 0,
-     "visible": true
-    },
-    {
-     "id": 9,
-     "name": "treppeUnten",
-     "type": "ausloeser",
-     "x": 48,
-     "y": 96,
-     "width": 16,
-     "height": 16,
-     "rotation": 0,
-     "visible": true
-    },
-    {
-     "id": 10,
-     "name": "treppeUnten",
-     "type": "ausloeser",
-     "x": 48,
-     "y": 112,
-     "width": 16,
-     "height": 16,
-     "rotation": 0,
-     "visible": true
-    },
-    {
-     "id": 11,
-     "name": "treppeUnten",
-     "type": "ausloeser",
-     "x": 48,
-     "y": 128,
-     "width": 16,
-     "height": 16,
-     "rotation": 0,
-     "visible": true
-    },
-    {
-     "id": 12,
-     "name": "treppeUnten",
-     "type": "ausloeser",
-     "x": 48,
-     "y": 144,
-     "width": 16,
-     "height": 16,
-     "rotation": 0,
-     "visible": true
-    },
-    {
-     "id": 13,
-     "name": "treppeUnten",
-     "type": "ausloeser",
-     "x": 64,
-     "y": 80,
-     "width": 16,
-     "height": 16,
-     "rotation": 0,
-     "visible": true
-    },
-    {
-     "id": 14,
-     "name": "treppeUnten",
-     "type": "ausloeser",
-     "x": 64,
-     "y": 96,
-     "width": 16,
-     "height": 16,
-     "rotation": 0,
-     "visible": true
-    },
-    {
-     "id": 15,
-     "name": "treppeUnten",
-     "type": "ausloeser",
-     "x": 64,
-     "y": 112,
-     "width": 16,
-     "height": 16,
-     "rotation": 0,
-     "visible": true
-    },
-    {
-     "id": 16,
-     "name": "treppeUnten",
-     "type": "ausloeser",
-     "x": 64,
-     "y": 128,
-     "width": 16,
-     "height": 16,
-     "rotation": 0,
-     "visible": true
-    },
-    {
-     "id": 17,
-     "name": "treppeUnten",
-     "type": "ausloeser",
-     "x": 64,
-     "y": 144,
-     "width": 16,
-     "height": 16,
-     "rotation": 0,
-     "visible": true
-    },
-    {
-     "id": 18,
      "name": "fensterbank",
      "type": "ausloeser",
      "x": 144,
@@ -844,7 +734,7 @@
      "visible": true
     },
     {
-     "id": 19,
+     "id": 9,
      "name": "fensterbank",
      "type": "ausloeser",
      "x": 160,
@@ -855,7 +745,29 @@
      "visible": true
     },
     {
-     "id": 20,
+     "id": 10,
+     "name": "treppeUnten",
+     "type": "ausloeser",
+     "x": 32,
+     "y": 96,
+     "width": 16,
+     "height": 16,
+     "rotation": 0,
+     "visible": true
+    },
+    {
+     "id": 11,
+     "name": "treppeUnten",
+     "type": "ausloeser",
+     "x": 32,
+     "y": 112,
+     "width": 16,
+     "height": 16,
+     "rotation": 0,
+     "visible": true
+    },
+    {
+     "id": 12,
      "name": "mf4Treppe",
      "type": "moebel",
      "x": 16,
@@ -878,20 +790,20 @@
      ]
     },
     {
-     "id": 21,
-     "name": "mf4TreppeAb",
+     "id": 13,
+     "name": "mf12Treppenschacht",
      "type": "moebel",
      "x": 16,
      "y": 80,
-     "width": 96,
-     "height": 80,
+     "width": 48,
+     "height": 48,
      "rotation": 0,
      "visible": true,
      "properties": [
       {
        "name": "tiefe",
        "type": "int",
-       "value": 152
+       "value": 120
       },
       {
        "name": "kollision",
@@ -901,7 +813,7 @@
      ]
     },
     {
-     "id": 22,
+     "id": 14,
      "name": "mf7Buecherregal",
      "type": "moebel",
      "x": 112,
@@ -924,7 +836,7 @@
      ]
     },
     {
-     "id": 23,
+     "id": 15,
      "name": "wzFenster",
      "type": "moebel",
      "x": 144,
@@ -947,7 +859,7 @@
      ]
     },
     {
-     "id": 24,
+     "id": 16,
      "name": "mf12Fensterbank",
      "type": "moebel",
      "x": 144,
@@ -970,13 +882,13 @@
      ]
     },
     {
-     "id": 25,
-     "name": "sbPoster",
+     "id": 17,
+     "name": "mf2Weltkarte",
      "type": "moebel",
      "x": 176,
-     "y": 4,
+     "y": 16,
      "width": 32,
-     "height": 48,
+     "height": 32,
      "rotation": 0,
      "visible": true,
      "properties": [
@@ -993,7 +905,7 @@
      ]
     },
     {
-     "id": 26,
+     "id": 18,
      "name": "cc3Schreibtisch",
      "type": "moebel",
      "x": 208,
@@ -1016,7 +928,7 @@
      ]
     },
     {
-     "id": 27,
+     "id": 19,
      "name": "mf3StuhlHellRechts",
      "type": "moebel",
      "x": 192,
@@ -1039,7 +951,7 @@
      ]
     },
     {
-     "id": 28,
+     "id": 20,
      "name": "rv5BettKopfRechts",
      "type": "moebel",
      "x": 192,
@@ -1062,8 +974,8 @@
      ]
     },
     {
-     "id": 29,
-     "name": "mf7TeppichRund",
+     "id": 21,
+     "name": "mf7TeppichQuadrat",
      "type": "moebel",
      "x": 144,
      "y": 96,
@@ -1085,7 +997,7 @@
      ]
     },
     {
-     "id": 30,
+     "id": 22,
      "name": "mf4KartonStapel",
      "type": "moebel",
      "x": 112,
@@ -1108,7 +1020,7 @@
      ]
     },
     {
-     "id": 31,
+     "id": 23,
      "name": "mf4Karton",
      "type": "moebel",
      "x": 128,
@@ -1131,7 +1043,7 @@
      ]
     },
     {
-     "id": 32,
+     "id": 24,
      "name": "mf4KartonBreit",
      "type": "moebel",
      "x": 144,
@@ -1154,7 +1066,7 @@
      ]
     },
     {
-     "id": 33,
+     "id": 25,
      "name": "wzPflanze",
      "type": "moebel",
      "x": 224,
@@ -1177,7 +1089,7 @@
      ]
     },
     {
-     "id": 34,
+     "id": 26,
      "name": "mf8Kommode",
      "type": "moebel",
      "x": 208,
@@ -1200,7 +1112,7 @@
      ]
     },
     {
-     "id": 35,
+     "id": 27,
      "name": "mf7Tischlampe",
      "type": "moebel",
      "x": 216,
@@ -1219,6 +1131,52 @@
        "name": "kollision",
        "type": "bool",
        "value": false
+      }
+     ]
+    },
+    {
+     "id": 28,
+     "name": "mf2Kleiderschrank",
+     "type": "moebel",
+     "x": 80,
+     "y": 112,
+     "width": 32,
+     "height": 48,
+     "rotation": 0,
+     "visible": true,
+     "properties": [
+      {
+       "name": "tiefe",
+       "type": "int",
+       "value": 152
+      },
+      {
+       "name": "kollision",
+       "type": "bool",
+       "value": true
+      }
+     ]
+    },
+    {
+     "id": 29,
+     "name": "mf4KartonStapel",
+     "type": "moebel",
+     "x": 176,
+     "y": 144,
+     "width": 16,
+     "height": 32,
+     "rotation": 0,
+     "visible": true,
+     "properties": [
+      {
+       "name": "tiefe",
+       "type": "int",
+       "value": 168
+      },
+      {
+       "name": "kollision",
+       "type": "bool",
+       "value": true
       }
      ]
     }

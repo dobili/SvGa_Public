@@ -2,7 +2,7 @@
   "karte": "mapleFalls.wohnzimmer",
   "datei": "karten/maple-falls-wohnzimmer.json",
   "art": "innen",
-  "beschreibung": "Das Erdgeschoss des alten Whitlock-Hauses am Tag des Umzugs, zwei Räume nebeneinander (20 × 13; das Haus außen ist eine Villa aus Holz, 9 breit, Tür im linken Drittel, KARTENREGELN 10.75: bis 18 breit, der Autor hat den Raum schon gesehen, deshalb bleibt er). Links das Wohnzimmer mit hellen Dielen und cremefarbenen Wänden: In der Nordwestecke hinter der Haustür führt eine steile Holztreppe an der Wand entlang nach oben (10.76: hinten links, hinter der Tür), unten ist Platz zum Antreten. An der Nordwand eine niedrige Kommode unter dem Fenster, vor dem ein Ahornast hängt (Roman Kap. 1), daneben ein gerahmtes Bild, ein Sideboard mit dem Fernseher auf seinem Standfuß und rechts die geschlossene Tür zum Schlafzimmer. Vor dem Fernseher liegt der gemusterte Teppich, dahinter stehen zwei gelbe Sessel mit Blick zum Fernseher, daneben eine Stehlampe. Die Umzugskartons stehen in zwei Gruppen an den Wänden: übereinander an der Westwand und als Stapel hinter den Sesseln, davor liegt flach der leere Pizzakarton vom Abend. Neben dem Fernseher ein schmales Bücherregal, eine Zimmerpflanze in der Südwestecke, unten die Haustür, innen davor die Fußmatte. Durch einen offenen Durchgang geht es nach rechts in die Küche mit Fliesen: Küchenzeile mit zwei Arbeitsplatten, Herd und Kühlschrank an der Nordwand, darüber ein Fenster. Einen Esstisch gibt es noch nicht: Er liegt flach verpackt in einem breiten Karton in der Mitte, ein Stuhl steht an der Ostwand. Mama steht daneben und sortiert Papiere. Vorn links der Karton „Küche?“, in der Südostecke eine Palme. Laufwege: von der Haustür hinauf und nach links zur Treppe; nach rechts über den Durchgang zu Mama.",
+  "beschreibung": "Das Erdgeschoss des alten Whitlock-Hauses am Tag des Umzugs, zwei Räume nebeneinander (20 × 13; das Haus außen ist eine Villa aus Holz, 9 breit, Tür im linken Drittel, KARTENREGELN 10.75: bis 18 breit, der Autor hat den Raum schon gesehen, deshalb bleibt er). Links das Wohnzimmer mit hellen Dielen und cremefarbenen Wänden: An der Westwand hinter der Haustür führt eine Holztreppe nach Norden hinauf (10.76: hinten links, hinter der Tür), unten ist Platz zum Antreten; in der Nordwestecke darüber Kartons. An der Nordwand eine niedrige Kommode unter dem Fenster, vor dem ein Ahornast hängt (Roman Kap. 1), daneben ein gerahmtes Bild, ein Sideboard mit dem Fernseher auf seinem Standfuß und rechts die geschlossene Tür zum Schlafzimmer. Vor dem Fernseher liegt der gemusterte Teppich, dahinter stehen zwei gelbe Sessel mit Blick zum Fernseher, daneben eine Stehlampe. Die Umzugskartons stehen in zwei Gruppen an den Wänden: übereinander an der Westwand und als Stapel hinter den Sesseln, davor liegt flach der leere Pizzakarton vom Abend. Neben dem Fernseher ein schmales Bücherregal, eine Zimmerpflanze in der Südwestecke, unten die Haustür, innen davor die Fußmatte. Durch einen offenen Durchgang geht es nach rechts in die Küche mit Fliesen: Küchenzeile mit zwei Arbeitsplatten, Herd und Kühlschrank an der Nordwand, darüber ein Fenster. Einen Esstisch gibt es noch nicht: Er liegt flach verpackt in einem breiten Karton in der Mitte, ein Stuhl steht an der Ostwand. Mama steht daneben und sortiert Papiere. Vorn links der Karton „Küche?“, in der Südostecke eine Palme. Laufwege: von der Haustür hinauf und nach links zur Treppe; nach rechts über den Durchgang zu Mama. Aufgang (KARTENREGELN 10.76, Kartengutachten Akt 1): eine Holztreppe an der Westwand hinter der Haustür, die nach Norden ansteigt; im Obergeschoss liegt genau darüber die Öffnung mit Geländer, und die nächste Treppe zum Dachboden setzt den Lauf an der Nordwand fort; auf dem Dachboden kommt man an derselben Stelle durch dieselbe Öffnung an.",
   "wand": "creme",
   "boden": "holzHell",
   "raster": [
@@ -23,7 +23,7 @@
   "objekte": [
     {
       "moebel": "mf4Treppe",
-      "feld": [1, 1],
+      "feld": [1, 5],
       "id": "treppe"
     },
     {
@@ -68,15 +68,15 @@
     },
     {
       "moebel": "wzStehlampe",
-      "feld": [10, 5]
+      "feld": [9, 4]
     },
     {
       "moebel": "mf4KartonStapel",
-      "feld": [1, 7]
+      "feld": [1, 3]
     },
     {
       "moebel": "mf4KartonBreit",
-      "feld": [1, 9]
+      "feld": [2, 3]
     },
     {
       "moebel": "wzPflanze",
@@ -155,7 +155,7 @@
     },
     {
       "moebel": "mf4KartonBreit",
-      "feld": [1, 5]
+      "feld": [3, 3]
     },
     {
       "moebel": "mf4KartonBreit",
@@ -184,38 +184,98 @@
       "feld": [5, 12]
     },
     {
-      "name": "treppeOben",
-      "feld": [2, 3]
-    },
-    {
-      "name": "treppeOben",
-      "feld": [1, 3]
-    },
-    {
-      "name": "treppeOben",
-      "feld": [1, 4]
-    },
-    {
-      "name": "treppeOben",
-      "feld": [2, 4]
-    },
-    {
-      "name": "treppeOben",
-      "feld": [3, 3]
-    },
-    {
-      "name": "treppeOben",
-      "feld": [3, 4]
-    },
-    {
       "name": "kartonKueche",
       "feld": [12, 10],
       "auf_moebel": true
     },
     {
       "name": "pizzakarton",
-      "feld": [7, 11],
+      "feld": [7, 10],
       "auf_moebel": true
+    },
+    {
+      "name": "treppeOben",
+      "feld": [1, 5],
+      "eigenschaften": {
+        "durchgang": "oben"
+      }
+    },
+    {
+      "name": "treppeOben",
+      "feld": [1, 6],
+      "eigenschaften": {
+        "durchgang": "oben"
+      }
+    },
+    {
+      "name": "treppeOben",
+      "feld": [1, 7],
+      "eigenschaften": {
+        "durchgang": "oben"
+      }
+    },
+    {
+      "name": "treppeOben",
+      "feld": [1, 8],
+      "eigenschaften": {
+        "durchgang": "oben"
+      }
+    },
+    {
+      "name": "treppeOben",
+      "feld": [2, 5],
+      "eigenschaften": {
+        "durchgang": "oben"
+      }
+    },
+    {
+      "name": "treppeOben",
+      "feld": [2, 6],
+      "eigenschaften": {
+        "durchgang": "oben"
+      }
+    },
+    {
+      "name": "treppeOben",
+      "feld": [2, 7],
+      "eigenschaften": {
+        "durchgang": "oben"
+      }
+    },
+    {
+      "name": "treppeOben",
+      "feld": [2, 8],
+      "eigenschaften": {
+        "durchgang": "oben"
+      }
+    },
+    {
+      "name": "treppeOben",
+      "feld": [3, 5],
+      "eigenschaften": {
+        "durchgang": "oben"
+      }
+    },
+    {
+      "name": "treppeOben",
+      "feld": [3, 6],
+      "eigenschaften": {
+        "durchgang": "oben"
+      }
+    },
+    {
+      "name": "treppeOben",
+      "feld": [3, 7],
+      "eigenschaften": {
+        "durchgang": "oben"
+      }
+    },
+    {
+      "name": "treppeOben",
+      "feld": [3, 8],
+      "eigenschaften": {
+        "durchgang": "oben"
+      }
     }
   ],
   "figuren": [

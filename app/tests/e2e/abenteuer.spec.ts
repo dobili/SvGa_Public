@@ -160,8 +160,11 @@ test("Übergang von vorn: vom Dachboden über die Luke ins Zimmer des Helden", a
   await expect(page.locator(".abenteuer-welt canvas")).toBeVisible({ timeout: 30000 });
   await page.waitForTimeout(800);
   await expect.poll(() => kachel(page), { timeout: 10000 }).toBe("2,5");
-  // Links neben die Luke, dann von unten auf die Luke (1,4): Der Held schaut sie vorher an.
+  // Seit dem Kartengutachten Akt 1 ist der Abgang eine Treppenöffnung mit Geländer; begehbar sind
+  // nur ihre Mitte (2,3) und (2,4). Erst nach links, zurück vor die Öffnung, dann von unten hinein:
+  // Der Held schaut die Öffnung vorher an.
   await laufeBis(page, "ArrowLeft", "1,5");
+  await laufeBis(page, "ArrowRight", "2,5");
   await page.keyboard.down("ArrowUp");
   // Seit Runde 12 führt die Luke ins Zimmer des Helden im Obergeschoss. Dort kommt der Held rechts
   // neben der Treppe zum Dachboden an, auf (4,4) mit Blick von ihr weg (oberwelt/ankunft.ts); auf

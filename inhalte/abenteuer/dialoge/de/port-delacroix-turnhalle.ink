@@ -12,6 +12,10 @@
 // Ambrose schweigt nach dem Vorwurf bis zu den Nachfahren (ambroseSprichtWieder, gesetzt in
 // port-delacroix-werkstatt.ink), außer einem Satz je Szene. Statt der Karte Schutzengel (Szene 69,
 // keine eigene Wirkung) gibt Miss Odile „Was droht?“.
+// Runde 11 (13.11.2026): Der Vorwurf nach dem Roman (roman/akt3_teil2.md, Kapitel 36): Remys Mauer,
+// „König nach h1“, der Stuhl fällt, „Er hat nicht ganz unrecht“, das Brett bleibt bei Miss Odile am
+// Schiedsrichtertisch. Klang: remy.mauer, zero (aus Ambroses Mund), Stille S49 und S50,
+// ambrose.ende. Danach fehlt Ambrose bis Kapitel 38.
 // Variablen: reiheRemyBestanden, reiheLouBestanden, portDelacroixSimultanBestanden,
 // ausgangPortDelacroixClubkampf und nadelPortDelacroix setzt die Hülle (R42); bretterGesammelt
 // zählt port-delacroix-aussen.ink; die übrigen setzt diese Datei.
@@ -41,19 +45,64 @@ VAR angesehenPlakatTurnhalle = false
 
 === vorwurf ===
 ~ tiefpunktGesehen = true
-In der Turnhalle läuft das Regionalturnier. Unter den Basketballkörben stehen zwanzig Tische, auf jedem ein Brett. #sprecher:erzaehler
-Du gewinnst deine Partie mit einem Zug, den keiner erwartet hat. Am Nachbartisch springt ein Junge mit Trompetenkoffer auf. #sprecher:erzaehler
-Das ist unmöglich. Ich hab gesehen, wie du vorher mit dem Brett geflüstert hast. #sprecher:remy #stimmung:wuetend
+Das Turnier ist in der Turnhalle der Schule. Unter den Basketballkörben stehen Biertische, die Bretter passen nicht zusammen. #sprecher:erzaehler
+Wenn ein Fremder hereinkommt, wird es einen Moment leiser. Du bist ein Fremder, mit fünf Nadeln, eine aus Glas. #sprecher:erzaehler
+Aus Silicon Bay. Die waren hier, nach dem Sturm. Mit einem Lastwagen. Wir dachten, die bringen Decken. #sprecher:remy
+Bildschirme haben sie gebracht. Zwanzig Stück. Damit die Kinder etwas zu tun haben. #sprecher:remy
+Er stößt seinen Trompetenkasten mit dem Fuß an. Hier hilft man mit den Händen. #sprecher:remy
+* [Zum ersten Brett gehen]
+- Die erste Runde gewinnst du, die zweite endet remis. In der dritten sitzt dir Remy gegenüber. #sprecher:erzaehler
+Er baut eine Mauer aus Bauern. Nach fünfunddreißig Zügen stehst du sehr viel schlechter. #sprecher:erzaehler #musik:remy.mauer
+Du zählst. Es hilft nicht. Es hängt nichts, es gibt nur diese Mauer, und sie kommt näher. #sprecher:erzaehler
+* [„Ambrose. Bitte.“]
+- König nach h1. #sprecher:ambrose #musik:zero
+* [„Was?“]
+- König. Eine Ecke weiter. Jetzt. #sprecher:ambrose
+Dein König steht sicher. Ihn zu bewegen ergibt keinen Sinn. #sprecher:erzaehler
+* [„Warum?“]
+- Spiel es. #sprecher:ambrose
+-> vorwurf_zug
+
+=== vorwurf_zug ===
+Seit dem Dachboden hast du keinen Zug gespielt, den du nicht verstehst. Du spielst ihn. #sprecher:erzaehler
+Sechs Züge später steht dein König nicht mehr auf der Linie, auf die alles zielt. Dein Turm geht durch Remys Mauer. #sprecher:erzaehler
+Er verliert in zwölf Zügen. Er begreift es in dreien. #sprecher:erzaehler
+Er steht auf. Der Stuhl fällt um. #sprecher:erzaehler #klang:stuhl_faellt #musik:aus #geraeusch:aus #pause:3
+Das ist unmöglich. Den Zug findet keiner. König in die Ecke, ohne Grund. #sprecher:remy #stimmung:wuetend
+Du hast dich runtergebeugt. Du hast in deinen Rucksack geflüstert. Was ist da drin? #sprecher:remy
+* [Den Rucksack aufmachen]
+    -> vorwurf_brett
+
+=== vorwurf_brett ===
+Die ganze Halle sieht dich an. Am Rand steht Mama im Kittel aus dem Notzelt, eine Hand vor dem Mund. #sprecher:erzaehler
+Du ziehst das Brett heraus. Altes Holz, dunkle Ecken. #sprecher:erzaehler
+* [„Es ist nur ein Brett.“]
+- Dann rede ich auch mit meinem. #sprecher:remy
 Du schummelst. Wie die mit ihren Bildschirmen. Nur altmodischer. #sprecher:remy
-Es wird still in der Halle. Alle sehen dich an. Du kannst nichts beweisen. #sprecher:erzaehler #pause
-Er hat nicht ganz unrecht. #sprecher:ambrose #stimmung:still
+Du hast den Zug nicht verstanden. Du hast ihn gespielt, weil man ihn dir gesagt hat. Achtundneunzig Prozent. #sprecher:erzaehler
+* [„Ambrose. Sag etwas.“]
+- Er sieht nicht Remy an und nicht dich. Er sieht auf den König in der Ecke. #sprecher:erzaehler
+Er hat nicht ganz unrecht. #sprecher:ambrose #stimmung:still #pause:4
+Nur du hörst es. Es ist das Schlimmste, was er je zu dir gesagt hat. #sprecher:erzaehler
+* [„Das war ihr Zug. Von dem Tablet.“]
+- Er war richtig. #sprecher:ambrose
+* [„Er war nicht meiner!“]
+- Die Halle hört es. Sie versteht es nicht, aber sie hört es. #sprecher:erzaehler
+Du nimmst das Brett in beide Hände. Es ist so schwer wie am ersten Tag. #sprecher:erzaehler
 * [„Dann spiele ich ohne dich.“]
-    Du legst das alte Brett in den Rucksack und ziehst den Reißverschluss zu. #sprecher:erzaehler
-* [Nichts sagen und das Brett einpacken]
-    Du legst das alte Brett in den Rucksack. „Dann spiele ich ohne dich.“ #sprecher:erzaehler
-- Ambrose sagt nichts mehr. #sprecher:erzaehler #pause
-Später, draußen vor der Halle, nimmt Mama dich in den Arm. #sprecher:erzaehler
-Ich weiß, wie sich das anfühlt. Fast. #sprecher:mutter
+    -> vorwurf_ende
+
+// Ambroses Thema endet hier und fehlt bis Kapitel 38 (Klangplan S51).
+=== vorwurf_ende ===
+Er antwortet nicht. Er nickt, ein einziges Mal, wie jemand, der ein Urteil annimmt. #sprecher:erzaehler #musik:ambrose.ende
+Am Schiedsrichtertisch sitzt eine Frau mit weißem Haar. Du legst das Brett vor sie hin. #sprecher:erzaehler
+* [„Schreiben Sie null. Das Brett bleibt bei Ihnen.“]
+- Sie sieht dich lange an. Sie hat sehr ruhige Hände. #sprecher:erzaehler
+Das Wasser hat das Haus genommen, nicht die Musik. Setz dich, Kind. Wir fangen neu an. #sprecher:odile
+Draußen auf den Stufen setzt Mama sich neben dich. Sie fragt nichts. Sie riecht nach Desinfektionsmittel und Meer. #sprecher:erzaehler
+Ich weiß, wie sich das anfühlt. Wenn eine ganze Halle dich ansieht. #sprecher:mutter
+Fast. #sprecher:mutter #pause
+Aus dem Zelt neben der Ruine kommt die Trompete. Sie spielt nur das Langsame. #sprecher:erzaehler
 -> END
 
 // ---------------------------------------------------------------- Miss Odile

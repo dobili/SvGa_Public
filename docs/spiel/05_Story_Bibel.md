@@ -1437,23 +1437,22 @@ der Veröffentlichung umbenannt werden (Dokument 02, Abschnitt 5).
    Wiederaufbau.
 4. Dort wirft man {held} vor, mit dem Brett zu schummeln wie der Konzern mit der Maschine; {held}
    spielt den Clubkampf allein, und Ambrose zieht sich zu ZERO zurück (Tiefpunkt).
-5. Ambrose findet seine Nachfahren, die Klavierbauer Whitlock-Duval, die ohne Schach glücklich
-   sind; die junge Céleste spielt eine einzige Partie aus Neugier, und Ambrose lernt loszulassen.
+5. Ambrose findet seine Familie, die Klavierbauer Whitlock-Duval (Nachkommen eines älteren Bruders, der die Werkstatt weiterführte), die ohne Schach glücklich sind; die junge Céleste spielt eine einzige Partie aus Neugier, und Ambrose lernt loszulassen.
 6. Im Canyon vor Desert Springs versöhnen sich {held} und Ambrose; er lehrt das romantische Opfer
    und erzählt endlich, wie er 1866 auf der Reise zu Hale starb.
 7. In Desert Springs findet {held} den Brief zum leeren Umschlag: Hale hat auf Ambrose gewartet.
 
 ## 17. Zeitlinie, Ergänzung für Akt 3
 
-| Jahr         | Ereignis                                                                                                                                                                                                            |
-| ------------ | ------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------- |
-| 1831         | Ambrose wird in **Port Delacroix** geboren, einer Hafenstadt im Delta eine Tagesreise flussab von New Orleans; Teil 1 nennt New Orleans, weil er dort spielte (siehe Bericht).                                      |
-| 1840         | Der neunjährige Ambrose fegt Sägespäne in der Klavierwerkstatt seines Vaters und lernt dort Schach auf einem Brett aus Resthölzern (Flashback, Szene 66).                                                           |
-| 1852         | Nach der Londonreise spielt Ambrose seinem Vater und der kleinen Schwester Claire in der Werkstatt den Anfang der „Unsterblichen Partie“ vor (Flashback, Szene 66).                                                 |
-| 1866         | Hale schreibt aus dem Westen: „Komm nach Norden. Wir spielen die letzten Züge an einem Brett.“ Ambrose bricht auf und stirbt unterwegs; der Brief erreicht ihn nie (Umschlag in Ironwood, Brief in Desert Springs). |
-| 1879         | Josiah Hale baut die Eisenbahnbrücke über den Canyon bei Desert Springs, seine letzte Brücke; die Nieten tragen „J. H.“ wie in Ironwood.                                                                            |
-| 1885         | Hale stirbt in Desert Springs. Sein Nachlass geht an seine Söhne; ein Notizbuch bleibt in der Familie (übergreifende Quest für Akt 4).                                                                              |
-| letztes Jahr | Ein Hurrikan trifft Port Delacroix im Spätsommer und zerstört das alte Musikhaus. Akt 3 spielt im Winter und Frühjahr danach: Wiederaufbau.                                                                         |
+| Jahr         | Ereignis                                                                                                                                                                                                                                                                                                                                                                                                                                                |
+| ------------ | ------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------- |
+| 1831         | Ambrose wird in **Port Delacroix** geboren, einer Hafenstadt im Delta eine Tagesreise flussab von New Orleans; Teil 1 nennt New Orleans, weil er dort spielte (siehe Bericht).                                                                                                                                                                                                                                                                          |
+| 1840         | Der neunjährige Ambrose fegt Sägespäne in der Klavierwerkstatt seines Vaters und lernt dort Schach auf einem Brett aus Resthölzern (Flashback, Szene 66).                                                                                                                                                                                                                                                                                               |
+| 1852         | Nach der Londonreise spielt Ambrose seinem Vater und der kleinen Schwester Claire in der Werkstatt den Anfang der „Unsterblichen Partie“ vor, auf dem Brett, das er gerade gebaut hat; die Buchstaben „A. W. 1857“ brennt er erst fünf Jahre später ein (Flashback, Szene 66). Die Werkstatt führt später ein älterer Bruder weiter; er bleibt namenlos und kommt im Flashback nicht vor.                                                               |
+| 1866         | Hale schickt aus dem Westen seinen 39. Zug und am selben Tag die Einladung: „Kommen Sie nach Norden. Wir spielen die letzten Züge an einem Brett.“ Der Zug ist im Winter wochenlang unterwegs; Ambrose bricht aus Ungeduld von sich aus auf und stirbt unterwegs. Die Einladung erreicht ihn nie: Der Umschlag ging leer hinaus (Ironwood), den versiegelten Brief fand Hale zu spät auf seinem Tisch und öffnete ihn nie (Nachlass in Desert Springs). |
+| 1879         | Josiah Hale baut die Eisenbahnbrücke über den Canyon bei Desert Springs, seine letzte Brücke; die Nieten tragen „J. H.“ wie in Ironwood.                                                                                                                                                                                                                                                                                                                |
+| 1885         | Hale stirbt in Desert Springs. Sein Nachlass geht an seine Söhne; ein Notizbuch bleibt in der Familie (übergreifende Quest für Akt 4).                                                                                                                                                                                                                                                                                                                  |
+| letztes Jahr | Ein Hurrikan trifft Port Delacroix im Spätsommer und zerstört das alte Musikhaus. Akt 3 spielt im Winter und Frühjahr danach: Wiederaufbau.                                                                                                                                                                                                                                                                                                             |
 
 ## 18. Figuren in Akt 3
 
@@ -1466,7 +1465,7 @@ Ambrose ZERO beim Spielen zu. Er wird stiller, spricht von „vollkommenen“ Pa
 den Whitlock-Duvals sieht er, dass seine Familie ohne ihn und ohne Schach glücklich geworden ist,
 und im Canyon begreift er, dass Schach durch Menschen schön wird, die Fehler machen. Neue
 Stimmungen: `gebannt` (vor dem Bildschirm), `still` (im Tiefpunkt, nur ein Satz je Szene).
-Erst jetzt spricht er über 1866, kurz und ohne Einzelheiten (Abschnitt 5.3 gilt weiter).
+Erst jetzt, am Felsbogen (Szene 73), erzählt er von 1866, kurz und ohne Einzelheiten (Abschnitt 5.3 gilt weiter); in Akt 2 fielen nur Splitter („elf Tage“, „nicht angekommen“).
 
 - „Sie zweifelt nie. Siehst du, wie schön das ist? … Oder wie leer?“
 - „Ich bin in dieser Werkstatt aufgewachsen. Sie riecht noch genauso.“
@@ -1576,8 +1575,7 @@ Zielstärke E + 580 (Club 7, R4). Eröffnung: Königsgambit und Evans-Gambit (Ka
 **Tomás** (Clubmitglied). Tomás Castillo, 17, er, Miras Bruder, Mechaniker in der Garage, spielt
 solide und passt auf seine Schwester auf. Stellt die Aufgabenreihe zu Mattbildern mit Opfer.
 
-**Dot** (Clubmitglied). Dorothy Marsh, siebzig, sie, Motelbesitzerin, spielt seit fünfzig Jahren
-Fernschach per Post und hat Briefe aus aller Welt. Stellt die Aufgabenreihe zum Königsangriff und
+**Dot** (Clubmitglied). Dorothy Marsh, siebzig, sie, Motelbesitzerin, spielt seit fünfzig Jahren Fernschach per Post und hat Briefe aus aller Welt; vierzig Jahre lang war die alte Mrs. Whitlock aus Maple Falls ihre Gegnerin. Stellt die Aufgabenreihe zum Königsangriff und
 kennt das Antiquariat, in dem der Brief liegt (Szene 76).
 
 **Buck** (Straßengegner, Sprüche). Buck Harmon, sechzig, er, Tankwart, spielt auf der Motorhaube
@@ -1680,7 +1678,7 @@ gegen Straßengegner (S2), nie im Club. Mentor-Zug ist von Szene 63 (Tiefpunkt) 
 **51. Abfahrt im Schnee** · `akt3.abfahrt` · H `siliconBay.akademie`
 Ort `ironwood.aussen` (Bushaltestelle an der Schnellstraße) · Mama, Juno, Ambrose. Ereignis: Dialog.
 Mama erlaubt das Turnier in Silicon Bay („Ich hab Nachtschicht. Juno, du passt auf.“). Ambrose
-starrt auf Victors Einladung: „Eine Stadt aus Glas. Wie man wohl darin Schach spielt?“ Etwa 3 Minuten.
+starrt auf Victors Einladung: „Eine Stadt aus Glas. Wie man wohl darin Schach spielt?“ Juno weiß seit Dezember von Ambrose; ab hier spricht sie ihn über {held} an. Etwa 3 Minuten.
 
 **51a. Das Reisebrett** · Gegenstand Reisebrett (11, I3)
 Ort `ironwood.aussen` (Bushaltestelle) · Juno, Ambrose. Ereignis: Dialog. Bevor der Bus fährt, drückt
@@ -1774,12 +1772,9 @@ unruhig, je näher die Küste kommt: „Diese Luft. Salz und Holz. Ich kenne die
 erste Blick auf die Stadt: abgedeckte Dächer, Bauzäune, Musik aus einem Zelt. Etwa 15 Minuten.
 
 **63. Der Vorwurf** · `akt3.tiefpunkt` · H `portDelacroix.tiefpunkt` · R28, R29
-Ort `portDelacroix.turnhalle` · Miss Odile, Remy, Lou, Mama, Ambrose. Ereignis: Dialog. Beim
-Regionalturnier gewinnt {held} eine Partie mit einem Zug, den Remy für „unmöglich“ hält. Er hat
-gesehen, wie {held} vorher mit dem Brett geflüstert hat, und sagt vor allen: „Du schummelst. Wie die
+Ort `portDelacroix.turnhalle` · Miss Odile, Remy, Lou, Mama, Ambrose. Ereignis: Dialog. Beim Regionalturnier gewinnt {held} gegen Remy mit einem Zug, den Remy für „unmöglich“ hält. Der Zug stammt von ZERO: Ambrose hat ihn auf dem Tablet gesehen und weitergegeben, ohne ihn zu verstehen. Remy hat gesehen, wie {held} vorher mit dem Brett geflüstert hat, und sagt vor allen: „Du schummelst. Wie die
 mit ihren Bildschirmen. Nur altmodischer.“ Stille in der Halle. {held} kann nichts beweisen. Ambrose
-sagt nur: „Er hat nicht ganz unrecht.“ (`#stimmung:still`). {held} entscheidet: „Dann spiele ich
-ohne dich.“ Ab jetzt: Mentor-Zug gesperrt (R29), Clubkampf ohne Karten (R28), Ambrose schweigt bis
+sagt nur: „Er hat nicht ganz unrecht.“ (`#stimmung:still`). {held} begreift, dass der Zug nicht der eigene war („Das war ihr Zug.“), entscheidet: „Dann spiele ich ohne dich.“, gibt die Partie gegen Remy auf und legt das Brett am Schiedsrichtertisch ab („Das hier bleibt bei Ihnen, solange ich spiele.“). Miss Odile legt es in einen leeren Geigenkasten und schließt den Deckel; der Kasten steht während des Clubkampfs (Szene 67) auf dem Schiedsrichtertisch, Ambrose hört darin nur, was in der Halle geschieht. Danach schenkt sie {held} den Kasten; das Brett reist von da an im Geigenkasten. Ab jetzt: Mentor-Zug gesperrt (R29), Clubkampf ohne Karten (R28), Ambrose schweigt bis
 Szene 68 außer einem Satz je Szene. Mama nimmt {held} danach in den Arm: „Ich weiß, wie sich das
 anfühlt. Fast.“ Etwa 5 Minuten.
 
@@ -1803,11 +1798,10 @@ Ort Sepia-Karte `flashback.werkstatt` · der junge Ambrose als Held. Auslöser: 
 Whitlock-Duval riecht {held} frisch gehobeltes Holz; Ambrose, der seit Tagen schweigt, sagt: „Hier.
 Hier war es.“ Teil 1 (1840, etwa 1 Minute): Der neunjährige Ambrose fegt Späne, der Vater stellt
 Figuren aus Resthölzern auf: „Ein Klavier und ein Schachbrett haben eines gemeinsam, Ambrose. Jede
-Taste, jede Figur muss ihren Platz kennen.“ Teil 2 (1852, etwa 3 Minuten): Ambrose, 21, zurück aus
-London, spielt Vater und der kleinen Schwester Claire den Anfang der „Unsterblichen Partie“ vor:
+Taste, jede Figur muss ihren Platz kennen.“ Teil 2 (1852, etwa 3 Minuten): Ambrose, 21, zurück aus London, spielt Vater und der kleinen Schwester Claire auf dem Brett, das er gerade gebaut hat (Rand noch leer, „A. W. 1857“ kommt fünf Jahre später), den Anfang der „Unsterblichen Partie“ vor:
 Zugerraten von `klassik-unsterbliche` aus `inhalte/zusatzpartien/klassiker.json`, mit Weiß von Zug 1
 bis Zug 11 (Königsgambit, der Läufer wird schon im 5. Zug angegriffen). Claire klatscht bei jedem
-Opfer. Zurück in der Gegenwart, leise: „Claire. Sie hat das Brett geerbt. Deshalb bist du hier.“
+Opfer. Zurück in der Gegenwart, leise: „Claire. Sie hat das Brett geerbt. Deshalb bist du hier.“ (Claire heiratete nach Norden; das Brett ging von ihr an ihre Tochter und deren Tochter, bis zur alten Mrs. Whitlock.)
 Belohnung: **Partiefragment 5**. Hinweis: Die Sammlung hat vor 1866 nur drei Partien, alle schon
 benutzt; deshalb der Anfang der Partie, deren Ende der Flashback in Riverton zeigt (Bericht).
 Etwa 4 Minuten.
@@ -1821,11 +1815,10 @@ hier hat es gesehen.“ Remy schweigt, aber nickt. Belohnung: **Clubnadel Port D
 ohne Karten ist Gold möglich), Ambroses Notiz erst nach Szene 73 (er kommentiert nicht), 50 Münzen,
 Mentor-Zug wie R27, aber erst nach der Versöhnung spielbar. Etwa 30 Minuten.
 
-**68. Die Nachfahren** · `akt3.nachfahren` · N begegnung `portDelacroix.nachfahren` · O2
+**68. Die Familie** · `akt3.nachfahren` · N begegnung `portDelacroix.nachfahren` · O2
 Ort `portDelacroix.werkstatt` · Henri, Céleste, Ambrose. Ereignis: Dialog, dann Partie. Henri zeigt
-die Werkstatt, die Klaviere, ein altes Foto an der Wand: ein junger Mann mit einem Schachbrett, „ein
-Vorfahr, keiner weiß mehr, wer“. Ambrose bricht sein Schweigen: „Das bin ich.“ (`#pause`) Céleste
-findet Schach langweilig, aber das alte Brett in {held}s Rucksack „sieht cool aus“. Sie spielt eine
+die Werkstatt, die Klaviere, ein altes Foto an der Wand: ein junger Mann mit einem Schachbrett, „Ein Vorfahr. Keiner weiß mehr, wer. Ein Bruder von irgendwem.“. Ambrose bricht sein Schweigen: „Das bin ich.“ (`#pause`) Céleste
+findet Schach langweilig, aber das alte Brett im Geigenkasten, den {held} auf einen Hocker stellt, „sieht cool aus“. Sie spielt eine
 Partie aus Neugier (Begegnung aus der Grundstellung, Rolle `story`, sehr schwach, A − 300; zählt
 für die App), schiebt „die Pferde rum“ und verliert gern: „Okay, das war nicht so schlecht. Aber ich
 geh jetzt skaten.“ Ambrose, zum ersten Mal seit Tagen warm: „Sie muss es nicht lieben. Es reicht,
@@ -1870,8 +1863,7 @@ Ort `wegDelacroixDesert.felsbogen` (Abend, Licht wie Kupfer) · Ambrose, {held}.
 Felsbogen bleibt {held} stehen. Ambrose bittet um Verzeihung, auf seine Art: „Ich habe einer Maschine
 zugesehen, weil sie nie zweifelt. Aber ich habe vergessen, dass du zweifelst. Und trotzdem spielst.
 Das ist schöner.“ Wahl: „Ich hab dich vermisst.“ / „Du warst ein Idiot.“ / „Erzähl mir von 1866.“
-Bei jeder Wahl erzählt er kurz und ohne Einzelheiten: Hale hatte geschrieben, er solle kommen; er
-brach auf, wurde unterwegs krank und kam nie an. „Ich bin nicht angekommen. Darum warte ich noch.“
+Bei jeder Wahl erzählt er kurz und ohne Einzelheiten: Hales 39. Zug blieb im Winter wochenlang aus; Ambrose hielt das Warten nicht aus, brach von sich aus nach Norden auf, wurde unterwegs krank und kam nie an. Hales Einladung hat ihn nie erreicht. „Ich bin nicht angekommen. Darum warte ich noch.“
 Er lehrt das **romantische Opfer** (Buch Kapitel 1, Abschnitt 1.6, Goldene Angriffsregel; Kapitel
 11, Abschnitt 11.2, Morphy) in einer Lektion mit zwei Bildschirmen. Ab jetzt ist der Mentor-Zug
 wieder spielbar (R29). Unter dem Felsbogen läuft die alte Eisenbahnbrücke; an ihren Nieten steht
@@ -1892,13 +1884,9 @@ Kapitel 6, Abschnitte 6.3, 6.6; Übungen 7, 27, 33, 34). Erste bestandene Reihe:
 
 **76. Der Brief** · N rätsel `desertSprings.brief` · E4 (Auflösung „Umschlag ohne Brief“)
 Ort `desertSprings.antiquariat` · Mr. Okoro, Dot, Ambrose. Ereignis: Stellungsrätsel und Dialog. Dot
-erzählt, dass Mr. Okoro „den Kram von einem alten Brückenbauer“ im Keller hat. In einer Kiste liegt
-ein Bündel Briefe; einer ist mit einem Siegel verschlossen, auf dem dieselbe Stellung geprägt ist
-wie auf dem Umschlag aus Ironwood (Runde `desertSprings.siegel`, 1 Aufgabe, Thema `fesselung`). Wer
-den Umschlag hat (`hatUmschlagOhneBrief`), sieht: Das Siegel passt. Der Brief, 1866, von Josiah
-Hale: „Komm nach Norden. Wir spielen die letzten Züge an einem Brett. Ich warte.“ Ambrose liest mit
+erzählt, dass Mr. Okoro „den Kram von einem alten Brückenbauer“ im Keller hat. In einer Kiste liegen Ambroses Briefe, nach Jahren gebündelt; unter dem Bündel 1866 liegt ein einzelnes, nie geöffnetes Blatt mit Hales eigenem Siegel. Darin ist eine andere, schwerere Fesselung geprägt als im Siegel des Postmeisters am Postsack von Ironwood (Fernspieler drückten einander Aufgaben ins Wachs). Hale hatte den Brief versiegelt und vergessen, ihn in den Umschlag zu legen (Runde `desertSprings.siegel`, 1 Aufgabe, Thema `fesselung`). Wer den Umschlag hat (`hatUmschlagOhneBrief`), sieht: Der Brief passt genau hinein. Der Brief, 1866, von Josiah Hale (Wortlaut: Roman Kapitel 44): Sein 39. Zug sei unterwegs; für das Wort von 1859 schäme er sich; „Kommen Sie nach Norden. Wir spielen die letzten Züge an einem Brett.“ Schluss: „Ich warte.“ Ambrose liest mit
 {held} (`#pause`), dann: „Er hat gewartet. Er hat wirklich gewartet.“ Wirkung: Gegenstand
-**„Hales Brief“**, Fragment 7 (die letzten Züge, die Hale vorschlug), Dialogvariable `briefGelesen`.
+**„Hales Brief“**, Fragment 7 (vier Züge, 29 bis 32, auf der Rückseite des Briefs, zur Kontrolle der Stellung), Dialogvariable `briefGelesen`.
 Belohnung: Flüstern (R27, Rätsel). Etwa 8 Minuten.
 
 **77. Erinnerung: Das letzte Spiel 1858** · N begegnung (Erinnerung) `desertSprings.erinnerung1858`
@@ -1979,8 +1967,7 @@ Straßengegner.
 
 **Übergreifende Quests (E4):**
 
-1. **„Umschlag ohne Brief“ (aus Akt 2) – aufgelöst** in Szene 76: Das Siegel passt, Hale hat auf
-   Ambrose gewartet. Voraussetzung im Datenauftrag: Gegenstand `umschlagOhneBrief`.
+1. **„Umschlag ohne Brief“ (aus Akt 2) – aufgelöst** in Szene 76: Der Brief passt in den Umschlag, Hale hat auf Ambrose gewartet. Voraussetzung im Datenauftrag: Gegenstand `umschlagOhneBrief`.
 2. **„Nietenkopf J. H.“ (aus Akt 2) – aufgelöst** in Szene 73: dieselben Nieten an der Canyonbrücke
    von 1879; Hale baute weiter und lebte lange.
 3. **„Die fehlende Seite“ (neu, geht in Akt 4 auf):** Das Foto der Notizbuchseite aus der Vitrine

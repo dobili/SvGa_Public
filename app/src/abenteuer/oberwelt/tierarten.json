@@ -104,9 +104,9 @@
       "schnitt": "reihen"
     },
     "reh": {
-      "quelle": "spiel/eigene/reh_{}.png",
+      "quelle": "spiel/eigene/reh_{}_v2.png",
       "breite": 32,
-      "hoehe": 32,
+      "hoehe": 28,
       "schnitt": "ansichten"
     },
     "hirsch": {
@@ -123,27 +123,27 @@
       "ansichten": ["rechts", "oben", "unten"]
     },
     "pferd": {
-      "quelle": "spiel/eigene/pferd_braun_{}.png",
-      "breite": 32,
-      "hoehe": 32,
+      "quelle": "spiel/eigene/pferd_braun_{}_v2.png",
+      "breite": 48,
+      "hoehe": 50,
       "schnitt": "ansichten"
     },
     "schimmel": {
-      "quelle": "spiel/eigene/pferd_grau_{}.png",
-      "breite": 32,
-      "hoehe": 32,
+      "quelle": "spiel/eigene/pferd_grau_{}_v2.png",
+      "breite": 48,
+      "hoehe": 50,
       "schnitt": "ansichten"
     },
     "kojote": {
-      "quelle": "spiel/eigene/kojote_{}.png",
-      "breite": 28,
-      "hoehe": 28,
+      "quelle": "spiel/eigene/kojote_{}_v2.png",
+      "breite": 32,
+      "hoehe": 25,
       "schnitt": "ansichten"
     },
     "fuchs": {
-      "quelle": "spiel/eigene/fuchs_{}.png",
-      "breite": 22,
-      "hoehe": 22,
+      "quelle": "spiel/eigene/fuchs_{}_v2.png",
+      "breite": 32,
+      "hoehe": 20,
       "schnitt": "ansichten"
     }
   },

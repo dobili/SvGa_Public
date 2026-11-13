@@ -30,18 +30,30 @@ VAR gefundenNietenkopf = false
 // ---------------------------------------------------------------- Mrs. Holloway
 
 === holloway ===
+// Kapitel 41 (Roman): Der Canyon ist still (S55), Ambrose spricht zum ersten Mal hier (sein Thema
+// auf der Gitarre). Mrs. Holloway füllt am Wanderschild ihre Flasche.
 {hollowayGetroffen:
-    {~Trink Wasser. Mehr als du denkst.|Der Roadrunner war heute schon dreimal hier. Er hat einen Plan.} #sprecher:holloway
+    {~Mehr Wasser als Weg.|Wer angreift, braucht mehr Figuren am König. Und mehr Wasser.} #sprecher:holloway
     -> END
 }
 ~ hollowayGetroffen = true
-Unter einem Felsvorsprung sitzt eine Frau mit breitem Hut im Schatten und teilt ihr Wasser mit einer Eidechse. #sprecher:erzaehler
-Holloway. Ich wandere hier seit vierzig Jahren. Die Wüste lehrt Geduld und Angriff. #sprecher:holloway
-Wer angreift, braucht mehr Figuren am König als der Verteidiger. So einfach, und doch vergisst es jeder. #sprecher:holloway
+Die Wände sind rot und gestreift, Schicht über Schicht, als hätte jemand die Zeit aufgeschnitten. #sprecher:erzaehler #musik:aus #geraeusch:canyon
+Eine Eidechse rührt sich nicht. Hoch oben kreist ein Vogel, ohne die Flügel zu bewegen. #sprecher:erzaehler
 {ambroseSprichtWieder:
-    Ich war nie in einer Wüste. Sie ist so still wie ein Club. #sprecher:ambrose
+    Ich war nie in einer Wüste. #sprecher:ambrose #musik:ambrose.gitarre
+    Sie ist so still wie ein Club. Wie ein guter. Einer, in dem man hört, wenn jemand nachdenkt. #sprecher:ambrose
+    -> holloway_gefaellt ->
 }
+Eine Frau mit Strohhut füllt am Wanderschild ihre Flasche an einem Rohr, aus dem ein dünner Strahl kommt. #sprecher:erzaehler
+Wer angreift, braucht mehr Figuren am König als der Verteidiger. Sonst ist es kein Angriff, sondern ein Ausflug. #sprecher:holloway
+Gilt auch fürs Wandern. Mehr Wasser als Weg. #sprecher:holloway
 -> END
+
+= holloway_gefaellt
+* [„Gefällt sie dir?“]
+- Ich weiß es noch nicht. Ich bin es nicht mehr gewohnt, etwas nicht sofort zu wissen. #sprecher:ambrose
+Er sieht zu dem Vogel hinauf. Es ist angenehm. #sprecher:ambrose #stimmung:still
+->->
 
 // ---------------------------------------------------------------- Rätseltafel und Rückweg
 
@@ -50,7 +62,7 @@ Wer angreift, braucht mehr Figuren am König als der Verteidiger. So einfach, un
     Auf dem Wanderschild hat jemand mit Kreide einen kleinen Kaktus gemalt. Darunter: „Gelöst“. #sprecher:erzaehler
     -> END
 }
-Am Wanderschild „Desert Springs, 4 Meilen“ hängt eine Tafel mit drei Diagrammen: „Der König steht im Freien. Greif an!“ #sprecher:erzaehler
+Am Wanderschild „Desert Springs, 4 Meilen“ hängt eine Rätseltafel, das Blech heiß von der Sonne: „Der König steht im Freien. Greif an!“ #sprecher:erzaehler
 * [Die Aufgaben lösen]
     ~ beginneAufgaben("wegDelacroixDesert.tafel")
     -> END
@@ -64,18 +76,42 @@ Der Pfad führt zurück zum einsamen Bahnhof. Der nächste Zug fährt nach Port 
 // ---------------------------------------------------------------- Mira auf dem Stein
 
 === mira_stein ===
+// Kapitel 41 (Roman): Mira spielt gegen sich selbst und opfert die Dame. Ambrose merkt, wie er
+// klingt (wie vor dem Tablet), und entschuldigt sich. Musik: Miras Motiv; Echo auf den Stimmen.
 {miraSteinGesehen:
     Der flache Stein ist leer. Im Staub sieht man noch die Abdrücke eines Bretts. #sprecher:erzaehler
     -> END
 }
 ~ miraSteinGesehen = true
-Mitten im Canyon sitzt ein Mädchen auf einem flachen Stein und spielt gegen sich selbst. #sprecher:erzaehler
-Sie schiebt ihre Dame mitten zwischen die schwarzen Figuren und opfert sie. Dann grinst sie. #sprecher:erzaehler
-{ambroseSprichtWieder:
-    Sie spielt wie ich mit zwanzig. Nur besser. #sprecher:ambrose #stimmung:froh
-}
-Wer bist du? Bist du gut? #sprecher:mira
-Dann komm morgen in die Garage am Motel. #sprecher:mira
+Mitten im trockenen Bachbett liegt ein Stein, flach wie ein Tisch. Darauf ein Mädchen, zwei Zöpfe, Schrammen an beiden Knien. #sprecher:erzaehler #musik:aus
+Sie spielt gegen niemanden. Sie zieht für Weiß, dreht das Brett um, zieht für Schwarz. Ernst wie ein Chirurg. #sprecher:erzaehler
+Sie hält die weiße Dame einen Atemzug lang in der Luft. Dann stellt sie sie mitten zwischen die schwarzen Figuren. #sprecher:erzaehler #bild:mira_damenopfer
+{ambroseSprichtWieder: Oh. #sprecher:ambrose}
+Sie dreht das Brett um und schlägt die Dame. Dreht es wieder. Ein Springer, ein Läufer, und der schwarze König liegt um. #sprecher:erzaehler #bild:aus
+{ambroseSprichtWieder: -> mira_ambrose ->}
+-> mira_spricht
+
+= mira_ambrose
+Sie spielt wie ich mit zwanzig. Nur besser. Viel besser. #sprecher:ambrose #stimmung:froh
+Sie zögert nicht. Aber sie rechnet. Sie rechnet, und sie zögert nicht, und … #sprecher:ambrose
+Er hört auf. Er hat gemerkt, wie er klingt. Wie vor einem Tablet in einer weißen Nacht. #sprecher:erzaehler #pause
+Verzeih. #sprecher:ambrose #stimmung:ertappt
+* [„Schon gut.“]
+- Nein. Es ist nicht gut. Aber es ist anders. Siehst du den Unterschied? #sprecher:ambrose
+Ich sehe ihn erst jetzt. Sie hat sich die Knie aufgeschlagen. #sprecher:ambrose #stimmung:still
+->->
+
+= mira_spricht
+Sie mustert dich, von den Schuhen bis zu den Nadeln. #sprecher:erzaehler #musik:mira
+Wer bist du? #sprecher:mira
+* [„{held}.“]
+- Bist du gut? #sprecher:mira
+* [„Ich werde besser.“]
+- Sie denkt darüber nach. Es scheint ihr als Antwort zu genügen. #sprecher:erzaehler
+Im Canyon antwortet das Echo. Am Brett nicht. Deshalb mag ich das Brett. #sprecher:mira
+Ich bin Mira. Komm morgen in die Garage. Am Motel. #sprecher:mira
+Wenn du gut bist, spielen wir. Wenn nicht, auch, aber kürzer. #sprecher:mira
+Sie springt vom Stein und läuft barfuß über den heißen Sand davon, das Brett unter dem Arm. #sprecher:erzaehler
 -> END
 
 // ---------------------------------------------------------------- Die Versöhnung

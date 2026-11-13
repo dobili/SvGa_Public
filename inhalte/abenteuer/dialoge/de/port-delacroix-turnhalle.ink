@@ -16,6 +16,9 @@
 // „König nach h1“, der Stuhl fällt, „Er hat nicht ganz unrecht“, das Brett bleibt bei Miss Odile am
 // Schiedsrichtertisch. Klang: remy.mauer, zero (aus Ambroses Mund), Stille S49 und S50,
 // ambrose.ende. Danach fehlt Ambrose bis Kapitel 38.
+// Kapitel 39 nach dem Roman: Geigenkasten und Karten auf dem Schiedsrichtertisch, „Spiel deine
+// Partie“ aus dem Kasten, im Spiel Raumklang und der erste eigene Plan (Partiemomente in
+// begegnungen.json), nach dem Sieg steht die ganze Halle; Nadel als Lyra mit Grünspan.
 // Variablen: reiheRemyBestanden, reiheLouBestanden, portDelacroixSimultanBestanden,
 // ausgangPortDelacroixClubkampf und nadelPortDelacroix setzt die Hülle (R42); bretterGesammelt
 // zählt port-delacroix-aussen.ink; die übrigen setzt diese Datei.
@@ -141,11 +144,22 @@ Und wenn du um die Nadel spielen willst: erst Remy, dann Lou, dann ich. #spreche
     -> END
 
 === odile_clubkampf ===
-Spiel langsam. Ein Plan ist kein Sprint. #sprecher:odile
-Heute ohne Karten, nur du und das Brett. Die Uhr darfst du wählen. #sprecher:odile
-{not ambroseSprichtWieder:
-    Spiel deine Partie. #sprecher:ambrose #stimmung:still
+{nadelPortDelacroix > 0:
+    Noch einmal? Gut. Ein Plan ist kein Sprint. #sprecher:odile
+    -> odile_clubkampf_wahl
 }
+Die Turnhalle ist voll. Sie sind alle gekommen, um den zu sehen, der in seinen Rucksack flüstert. #sprecher:erzaehler #musik:aus
+Du stellst den Geigenkasten auf den Schiedsrichtertisch, geschlossen. Deine Karten liegen daneben, mit dem Bild nach unten. #sprecher:erzaehler
+Miss Odile setzt sich dir gegenüber, in einem Kleid mit kleinen Notenschlüsseln. #sprecher:erzaehler
+Ein Plan ist kein Sprint. Ich spiele langsam. Du wirst denken, es passiert nichts. #sprecher:odile
+Es passiert die ganze Zeit etwas. Bauern sind die Melodie. Die Figuren spielen nur dazu. #sprecher:odile
+* [Die Hände auf den Tisch legen]
+- Bevor ihr anfangt, hörst du ihn. Aus dem Kasten, drei Meter entfernt. Drei Wörter. #sprecher:erzaehler
+Spiel deine Partie. #sprecher:ambrose #stimmung:still
+Dann ist er fort, und du bist allein mit vierundsechzig Feldern. #sprecher:erzaehler
+-> odile_clubkampf_wahl
+
+=== odile_clubkampf_wahl ===
 + [„Ich bin bereit.“]
     ~ beginnePartie("portDelacroix.clubkampf")
     -> END
@@ -156,6 +170,9 @@ Heute ohne Karten, nur du und das Brett. Die Uhr darfst du wählen. #sprecher:od
 === odile_nach_partie ===
 ~ clubkampfPortDelacroixNadel = nadelPortDelacroix
 {
+- ausgangPortDelacroixClubkampf == "sieg" and not odileHandGegeben:
+    Miss Odile sieht es an. Sie nickt, im Takt von etwas, das nur sie hört. #sprecher:erzaehler #musik:held
+    Der Königsflügel. Immer mein Königsflügel. Mein Mann hat mir das vierzig Jahre lang gesagt. #sprecher:odile
 - ausgangPortDelacroixClubkampf == "sieg":
     Miss Odile legt ihren König um und lächelt. #sprecher:erzaehler
 - ausgangPortDelacroixClubkampf == "remis":
@@ -163,17 +180,24 @@ Heute ohne Karten, nur du und das Brett. Die Uhr darfst du wählen. #sprecher:od
 - else:
     Miss Odile hat gewonnen. Sie sieht nicht aus, als hätte sie gewonnen. #sprecher:erzaehler
 }
-{not odileHandGegeben:
-    ~ odileHandGegeben = true
-    Dann steht sie auf, reicht dir die Hand und spricht laut, damit alle es hören. #sprecher:erzaehler
-    Das war deine Partie. Jeder hier hat es gesehen. #sprecher:odile
-    Remy schweigt. Aber er nickt. #sprecher:erzaehler #pause
-}
+{not odileHandGegeben: -> odile_hand}
 {nadelPortDelacroix > 0:
-    Die sechste Nadel. Ganz ohne Karten. #sprecher:odile
+    Eine bessere Nadel. Ganz ohne Karten. #sprecher:odile
 - else:
     Noch einmal, wenn du willst. Ich bin hier, bis das Musikhaus wieder steht. #sprecher:odile
 }
+-> END
+
+// Kapitel 39: Sie steht auf, und die ganze Halle steht mit ihr. Remy nickt einmal.
+=== odile_hand ===
+~ odileHandGegeben = true
+Sie steht auf. Sie ist nicht groß. Aber als sie steht, steht die ganze Halle mit ihr. #sprecher:erzaehler
+Das war deine Partie. Jeder hier hat es gesehen. #sprecher:odile
+Niemand klatscht. Aber Gesichter, die dich vor einer Woche nicht angesehen haben, sehen dich an. #sprecher:erzaehler
+Remy steht an der Wand, die Trompete unter dem Arm. Er sagt nichts. Er nickt. Einmal. #sprecher:erzaehler #pause
+{nadelPortDelacroix > 0: Die Nadel ist eine kleine Lyra aus Messing, grün angelaufen, wo das Salzwasser war. Miss Odile steckt sie dir an, neben das Glas. #sprecher:erzaehler}
+* [Zum Schiedsrichtertisch gehen]
+- Du legst die Hand auf den Geigenkasten. Du öffnest ihn nicht. Noch nicht. #sprecher:erzaehler
 -> END
 
 // ---------------------------------------------------------------- Benefiz-Simultan (Besuch 2)

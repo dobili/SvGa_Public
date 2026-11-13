@@ -57,8 +57,12 @@
       "versatz": [
         0,
         4
-      ]
+      ],
+      "id": "fensterbank"
     },
+    { "moebel": "cc13SpringerMissraten1", "auf": "fensterbank", "versatz": [-10, 0], "wenn": "nadelCedarCreek > 0 und nadelRiverton == 0" },
+    { "moebel": "cc13SpringerMissraten2", "auf": "fensterbank", "versatz": [0, 0], "wenn": "nadelCedarCreek > 0 und nadelRiverton == 0" },
+    { "moebel": "cc13SpringerMissraten3", "auf": "fensterbank", "versatz": [10, 0], "wenn": "nadelCedarCreek > 0 und nadelRiverton == 0" },
     {
       "moebel": "pd6Werkzeugschrank",
       "feld": [

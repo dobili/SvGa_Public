@@ -128,6 +128,11 @@
         "gegner": {
           "description": "Kennung im Gegnerverzeichnis, wenn die Figur Schach spielt",
           "$ref": "#/$defs/figurkennung"
+        },
+        "wenn": {
+          "description": "Die Figur steht nur auf der Karte, wenn diese Bedingung beim Betreten gilt (Stufen A bis D der kleinen Geschichten, Haupt-Chat 13.11.2026). Sprache wie bei Auslösern (app/src/abenteuer/regeln/bedingung.ts). Beispiel: Tessa am Flussweg erst mit „tessaStufe >= 2“.",
+          "type": "string",
+          "minLength": 1
         }
       }
     },

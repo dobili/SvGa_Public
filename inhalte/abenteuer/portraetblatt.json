@@ -29,6 +29,14 @@
     "kalt": "bitter",
     "bitter": "bitter",
     "wuetend": "bitter",
-    "riss": "bitter"
+    "riss": "bitter",
+    "verschlossen": "bitter",
+    "erzaehlt": "laechelt",
+    "denktNach": "nachdenklich",
+    "hatIhnGesehen": "ueberrascht",
+    "echtesLaecheln": "laechelt",
+    "weintUndLaechelt": "laechelt",
+    "jung": "neutral",
+    "alt": "neutral"
   }
 }

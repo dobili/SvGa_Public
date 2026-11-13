@@ -285,7 +285,7 @@ Sie ging. Ich hörte ihre Schritte auf der Wendeltreppe, dann nichts mehr.
 Ich öffnete den Karton.
 
 Es war eine Zeitung. Vier Seiten, dünn, die Schrift so klein, dass sie vor meinen Augen
-schwamm. _Crescent City Herald._ Ein Datum im Mai 1858. Und in der Mitte der dritten Seite,
+schwamm. _Crescent City Herald._ Ein Datum im Oktober 1858. Und in der Mitte der dritten Seite,
 zwischen einer Anzeige für Schiffspassagen und dem Preis für Baumwolle, ein Absatz:
 
 _Mr. Hale, Ingenieur, schlägt Mr. Whitlock im Match, vier zu drei. Mr. Whitlocks Opfer im

@@ -381,8 +381,7 @@ Ich sah ihn an. Er hielt den Kopf ein wenig schief.
 
 „Wer hat das geschrieben?“, fragte ich.
 
-„Mein …“ Victor zählte. „Der Vater vom Vater vom Großvater meines Vaters. Josiah. Er hat
-Brücken gebaut.“ Er zuckte die Schultern. „Er soll Schach gespielt haben. Per Post, mit
+„Mein …“ Victor zählte. „Der Vater vom Vater vom Großvater meines Vaters. Er hat Brücken gebaut.“ Er zuckte die Schultern. „Er soll Schach gespielt haben. Per Post, mit
 irgendwem aus dem Süden. Mein Vater sagt, es war die einzige Zeitverschwendung, die er sich
 erlaubt hat.“
 
@@ -390,8 +389,7 @@ Juno machte ein Foto. Der Blitz spiegelte sich in der Scheibe.
 
 Ambrose stand vor dem Glas, die Hand erhoben, und rührte es nicht an.
 
-„Ur-ur-ur“, sagte er. Seine Stimme schwankte zwischen Lachen und etwas anderem. „Herrje. Ein
-Hale eben.“
+„Er hat sie aufgehoben“, sagte er. Seine Stimme schwankte zwischen Lachen und etwas anderem. „Meine Züge. In einem Buch.“
 
 `[Klang: Akademie: das Thema von Silicon Bay ganz leise, wie Raumklang; Tippen auf Glas. ZERO spielt: eine schnelle, perlende Tonfolge, vollkommen gleichmäßig, wunderschön (das Konzernmotiv, jetzt als Melodie). Ambrose gebannt: sein Thema versucht mitzuspielen und wird schneller, bis es nicht mehr mitkommt. Lobby: Hall, Schritte auf Stein. Vitrine: Stille; dann beide Themen (Ambrose, Victor) als eine Melodie, einstimmig, sehr leise.]`
 `[Bild: Raum ohne Ecken, Tische mit leuchtenden Brettern. Theos Kurve, die zuckt. Tablet mit ZERO (Partie in zwölf Sekunden als schnelle Folge). Ambrose über das Tablet gebeugt, Fassung „gebannt“. Vitrine mit Rechenschieber, Brückenzeichnung, Notizbuch mit herausgerissener Seite (Großansicht).]`

@@ -768,7 +768,7 @@ Sein Springer stand gut. Sehr gut. Aber um dorthin zu kommen, hatte er ein Feld 
 Und dieses Feld hatte etwas gedeckt. Eine Linie. Eine lange, schräge Linie, quer über das
 ganze Brett, an deren einem Ende mein Läufer stand, in seiner Ecke, seit zwanzig Zügen.
 
-Und am anderen Ende sein Turm. Und dahinter sein König.
+Und am anderen Ende sein König. Und dahinter sein Turm.
 
 Ein Spieß.
 

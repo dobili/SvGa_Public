@@ -142,7 +142,7 @@ _Perfect Move Park. Schach für alle. Ohne Wartezeit._
 „Ohne Wartezeit“, sagte Ambrose. „Als wäre das Warten nicht das Schönste daran.“
 
 Der Park lag am Fluss, unter alten Platanen, deren Rinde in Flecken abblätterte. Auf der
-großen Wiese standen sie. Zwölf Tische in zwei Reihen, weiß, mit Bildschirmen, die im Regen
+großen Wiese standen sie. Sechs Tische in einer Reihe, weiß, mit Bildschirmen, die im Regen
 leuchteten, und über jedem ein kleines Dach aus Glas. Davor ein Podium. Kameras unter
 Plastikhauben. Leute mit Schirmen, nicht viele.
 
@@ -261,8 +261,8 @@ alten Stimme. „Das ist ein Rechenschieber mit Beleuchtung.“
 Aber er sah weiter hin.
 
 `[Klang: Riverton: Stadtthema mit gedämpfter Trompete, Kontrabass, Besen auf der Trommel; Regen durchgehend, Stimmen, Hupen. Bei den Bildschirmtischen legt sich ein glatter, heller Synthesizerton über alles (Konzernmotiv, jetzt als Fläche); er verschwindet im Pavillon. Pavillon: Klopfen der Uhren als Rhythmus, darüber das Stadtthema schneller. Bei „dann ist er …“ setzt die Trompete aus. Ambrose am Rand: der Synthesizerton kommt leise zurück, sein Thema versucht zu antworten und bricht ab.]`
-`[Bild: Pfützen mit Spiegelung. Zwölf weiße Tische, die im Regen leuchten. Novas Porträt mit zwei Fassungen (Kamera an, Kamera aus). Victor in Weiß mit Namensschild. Ambrose mit dem Rücken zum Spieler, Fassung „fern“.]`
-`[Karte: Pavillon achteckig, offen, mit Steintischen. Bildschirmtische in zwei geraden Reihen, das einzige Gerade im Park. Banner an Laternen.]`
+`[Bild: Pfützen mit Spiegelung. Sechs weiße Tische, die im Regen leuchten. Novas Porträt mit zwei Fassungen (Kamera an, Kamera aus). Victor in Weiß mit Namensschild. Ambrose mit dem Rücken zum Spieler, Fassung „fern“.]`
+`[Karte: Pavillon achteckig, offen, mit Steintischen. Bildschirmtische in einer geraden Reihe (sechs), das einzige Gerade im Park; im Pavillon vier Steintische. Banner an Laternen.]`
 
 ---
 
@@ -367,7 +367,7 @@ einfach weiter. Und drei Züge später hing etwas.
 Zettel und schob ihn mir zu. _Schottisch. Immer. Und Evans, wenn er gut drauf ist._ „Hast du
 nicht von mir.“
 
-Draußen wurde es dunkel. Die zwölf Tische auf der Wiese leuchteten weiter, weiß und geduldig.
+Draußen wurde es dunkel. Die sechs Tische auf der Wiese leuchteten weiter, weiß und geduldig.
 An einem saß jetzt jemand. Ein Junge, kleiner als Tamsin, allein, und der Bildschirm warf
 Licht auf sein Gesicht.
 

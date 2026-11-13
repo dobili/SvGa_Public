@@ -147,7 +147,29 @@
           "kennung": "mapleFalls.carla",
           "name": "figur.carla.name",
           "sprite": "figuren/statist-26.png",
-          "dialog": "maple-falls-aussen.carla"
+          "dialog": "maple-falls-aussen.carla",
+          "wenn": "nicht endeAkt1Gesehen"
+        },
+        {
+          "kennung": "mapleFalls.carlaSchule",
+          "name": "figur.carla.name",
+          "sprite": "figuren/statist-26.png",
+          "dialog": "maple-falls-aussen.carla",
+          "wenn": "endeAkt1Gesehen und nadelIronwood == 0"
+        },
+        {
+          "kennung": "mapleFalls.carlaClub",
+          "name": "figur.carla.name",
+          "sprite": "figuren/statist-26.png",
+          "dialog": "maple-falls-aussen.carla",
+          "wenn": "nadelIronwood > 0"
+        },
+        {
+          "kennung": "mapleFalls.owen",
+          "name": "figur.owen.name",
+          "sprite": "figuren/statist-07.png",
+          "dialog": "maple-falls-aussen.calloway",
+          "wenn": "endeAkt1Gesehen"
         }
       ],
       "ausloeser": [

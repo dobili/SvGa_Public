@@ -21,6 +21,9 @@ Figur neu ist.
 - Leinwand 32×32, Ansicht „Low Top-Down“, Detail „Highly detailed“, Umriss „Default“.
 - Kinder und Jugendliche: im Prompt „short, child height“; sie werden etwa 28 Pixel hoch und passen
   unter den Türsturz (Türöffnungen sind zwei Kacheln hoch).
+- Kinder von 7 bis 11 Jahren: Leinwand 24×24 (Probe mit Lily, 13.11.2026: auf 32×32 füllte das
+  Kind trotz „child height“ die Leinwand und wurde größer als Juno). Die Figur wird etwa 22 Pixel
+  hoch; der Paketbau füllt die Bilder auf 32×32 auf, Füße unten.
 - Erwachsene: ohne diesen Zusatz; geprüft wird nach dem Erzeugen, dass sie höchstens 32 Pixel hoch
   sind.
 

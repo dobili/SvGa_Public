@@ -23,6 +23,7 @@ EXTERNAL gibFund(kennung)
 EXTERNAL reise(karte, ausloeser)
 EXTERNAL oeffneLaden(laden)
 
+VAR held = "Du"
 VAR harlanGetroffen = false
 VAR ausgangRivertonHarlan = ""
 VAR siegeRivertonHarlan = 0
@@ -38,6 +39,7 @@ VAR popsOdumErzaehlt = false
 VAR nadelRiverton = 0
 VAR nadelIronwood = 0
 VAR endeAkt3Gesehen = false
+VAR londonNachgespraechGesehen = false
 
 // ---------------------------------------------------------------- Mr. Harlan
 
@@ -179,27 +181,55 @@ Der Zug nach Cedar Creek steht abfahrbereit am Bahnsteig. Durch die Fenster sieh
 // ---------------------------------------------------------------- Die große Uhr
 
 === uhr ===
+// Kapitel 21: Am Samstagabend ist der Zug weg; Juno schläft; neun Uhrschläge werden Hufschlag
+// (Klang uhr_hufschlag). Nach der Erinnerung das Nachgespräch (london_nachgespraech).
 {
+- flashbackLondonBestanden and not londonNachgespraechGesehen: -> london_nachgespraech
 - flashbackLondonBestanden:
-    Die große Uhr schlägt. Ambrose sagt nichts, aber du spürst, dass er an London denkt. #sprecher:erzaehler
+    Die große Uhr tickt. Ambrose sagt nichts, aber du spürst, dass er an London denkt. #sprecher:erzaehler
     -> END
 - not bildschirmtischeGesehen:
-    Eine riesige Bahnhofsuhr mit römischen Ziffern. Der Zeiger springt laut von Minute zu Minute. #sprecher:erzaehler
+    Eine Uhr, so groß wie ein Wagenrad. Sie tickt so laut, dass man es im Bauch spürt. #sprecher:erzaehler
     -> END
 }
-Die große Uhr schlägt. Draußen leuchten die Bildschirmtische im Regen. #sprecher:erzaehler
-Ich war einmal jünger als du jetzt. Fast. London, 1851. #sprecher:ambrose #stimmung:fern
-Ein Kaffeehaus am Strand, Zeitungsleser, Kaffeeduft. Hinter zwei Spielern stand ein junger Mann, der nicht atmen wollte. #sprecher:ambrose
-Das war ich. #sprecher:ambrose
-Komm mit. Ich zeige dir, was ich sah. Schließ die Augen und hör der Uhr zu. #sprecher:ambrose
-* [„Zeig es mir.“]
-    Die Uhr schlägt noch einmal, langsamer. Die Bahnhofshalle verblasst zu einem braunen Bild. #sprecher:erzaehler
+Am Samstagabend ist euer Zug weg. Der nächste fährt in fünfzig Minuten. Juno schläft auf der Bank ein, den Kopf auf dem Tagebuch. #sprecher:erzaehler
+Durch die hohen Fenster leuchten die sechs Tische im Park, weiß und still. #sprecher:erzaehler
+Ich war einmal jünger als du jetzt. Fast. #sprecher:ambrose
+Er sieht nicht zu den Fenstern. Er sieht hinauf zur Uhr. #sprecher:erzaehler
+Mein Vater baute Klaviere. Für das Holz fuhr er nach London, einmal im Jahr. Als ich zwanzig war, nahm er mich mit. #sprecher:ambrose
+Ich sollte lernen, wie man Fichte prüft. Man klopft darauf und hört zu. Ich habe nichts gehört. Ich dachte an etwas anderes. #sprecher:ambrose
+* [„Woran?“]
+* [Zuhören]
+- Die Uhr schlägt. Neunmal. Mit jedem Schlag wird die Halle heller, und der Hall wird zu Hufen auf Pflaster. #sprecher:erzaehler #klang:uhr_hufschlag #musik:aus
+Komm. Ich zeige es dir. #sprecher:ambrose
+* [Mitgehen]
     ~ reise("erinnerungLondon.strand", "ankunft")
     -> END
 * [„Später.“]
-    Später. Das Kaffeehaus wartet seit hundertfünfundsiebzig Jahren. #sprecher:ambrose
-    Es wartet auch noch eine Stunde. #sprecher:ambrose
+    Später. Das Kaffeehaus wartet seit hundertfünfundsiebzig Jahren. Es wartet auch noch eine Stunde. #sprecher:ambrose #stimmung:bitter
     -> END
+
+// Kapitel 21, Schluss: der Gedanke, der Ambrose in Akt 3 trägt. Wer alles sieht, muss nicht hoffen.
+// Musik ambrose.zweifel (Ambroses Kopf mit dem Konzernton). Juno merkt es und schreibt nichts auf.
+=== london_nachgespraech ===
+~ londonNachgespraechGesehen = true
+Du sitzt wieder auf der Bank unter der Uhr. Juno schläft. Deine Hände sind deine. #sprecher:erzaehler
+Sie nennen sie die Unsterbliche. Heute noch, nehme ich an. #sprecher:ambrose
+* [„Ja.“]
+* [Nicken]
+- Er ist lange still. Draußen, hinter den Fenstern, leuchten die Tische. #sprecher:erzaehler #pause:2
+Diese Maschinen. Sie würden das nie spielen. Zwei Türme und die Dame. Sie würden ausrechnen, dass es anders sicherer ist. #sprecher:ambrose
+Oder doch? #sprecher:ambrose #stimmung:fern #musik:ambrose.zweifel #pause:2
+Wenn sie alles sehen, jeden Zug bis zum Ende, dann sehen sie auch das. Dann wissen sie, dass es stimmt, bevor sie die Hand heben. #sprecher:ambrose
+Sie müssten nicht hoffen. #sprecher:ambrose
+{held}. Was wäre, wenn sie die Partie spielen könnten, die ich nie spielte? #sprecher:ambrose #stimmung:fern
+* [„Ich weiß es nicht.“]
+* [Schweigen]
+- Juno ist aufgewacht. Sie sieht dich an, verschlafen, dann genauer. #sprecher:erzaehler
+Du bist so still. Ist was? #sprecher:juno
+* [„Nein.“]
+- Sie glaubt dir nicht. Sie schreibt nichts auf. #sprecher:erzaehler
+-> END
 
 // ---------------------------------------------------------------- Zeitungsstand und Funde
 

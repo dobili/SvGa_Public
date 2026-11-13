@@ -66,7 +66,7 @@ Das weiß jeder. Bis er angreift. #sprecher:fenwick
     -> END
 }
 Am Wegweiser „Riverton, 3 Meilen“ hängt eine Holztafel mit drei Diagrammen: „Ein Zug, zwei Angriffe. Findest du sie?“ #sprecher:erzaehler
-Doppelangriffe. Ein Zug, der zwei Briefe auf einmal zustellt. #sprecher:ambrose
+Doppelangriffe. Ein Zug, zwei Ziele. #sprecher:ambrose
 * [Die Aufgaben lösen]
     ~ beginneAufgaben("wegCedarRiverton.tafel")
     -> END
@@ -142,7 +142,7 @@ Ihr habt keinen. #sprecher:erzaehler
 
 === quinn_nach_niederlage ===
 Verspätung. Das passiert den Besten. Noch einmal? #sprecher:schaffner
-Mit Uhr sieht man weniger als ohne. Das ist der Preis der Eile. #sprecher:ambrose
+Lass dich nicht hetzen. #sprecher:ambrose
 + [„Revanche.“]
     ~ beginnePartie("wegCedarRiverton.schaffner")
     -> END
@@ -189,7 +189,7 @@ Einfache Fahrt. Wer fuhr damals, und kam er an? #sprecher:ambrose
 
 // ---------------------------------------------------------------- Runde 6: Zugpartie am Stellwerk (15, 2.2)
 
-// Rosalind Kettering spielt seit 23 Jahren eine Partie mit Lokführer Earl Dubois, ein Zug pro
+// Rosalind Marsh spielt seit 23 Jahren eine Partie mit Lokführer Earl Dubois, ein Zug pro
 // Vorbeifahrt. Heute hat sie sich die Hand verstaucht. {held} findet, warum ihr erster Einfall
 // eine Figur einstellt (Kapitel 1, was hängt?), und hängt einen besseren Zug ans Signal.
 === ereignis_zugpartie ===
@@ -198,7 +198,7 @@ Einfache Fahrt. Wer fuhr damals, und kam er an? #sprecher:ambrose
 {rosalindGetroffen: -> zugpartie_angebot}
 ~ rosalindGetroffen = true
 Vor dem Stellwerk sitzt eine ältere Frau auf der Bank, die rechte Hand im Verband. #sprecher:erzaehler
-„Rosalind Kettering. Ich spiele seit dreiundzwanzig Jahren eine Partie mit Earl, dem Lokführer vom Güterzug. Ein Zug pro Vorbeifahrt.“ #sprecher:erzaehler
+„Rosalind Marsh. Ich spiele seit dreiundzwanzig Jahren eine Partie mit Earl, dem Lokführer vom Güterzug. Ein Zug pro Vorbeifahrt.“ #sprecher:erzaehler
 -> zugpartie_angebot
 
 === zugpartie_angebot ===

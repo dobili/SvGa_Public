@@ -224,8 +224,8 @@ Am Pfosten des Stegs ist ein Fink aus Kreide gemalt. Darunter, im Schatten der B
     -> END
 }
 ~ seite09Gefunden = true
-An der Klappe des Sturmkellers hat sich ein Blatt Papier verfangen, voller Schachdiagramme. #sprecher:erzaehler
-Eine Seite aus einem Buch. Der Sturm trägt alles irgendwohin, sogar Bücher. #sprecher:ambrose
+An der Klappe des Sturmkellers hat sich ein loses Blatt verfangen. Darauf eine gezeichnete Stellung. #sprecher:erzaehler
+Der Sturm trägt alles irgendwohin. Sogar Stellungen. #sprecher:ambrose
 ~ gibFund("seite09")
 ~ buchseiten = buchseiten + 1
 -> END

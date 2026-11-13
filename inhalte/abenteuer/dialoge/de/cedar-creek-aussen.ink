@@ -366,13 +366,13 @@ Victor spielt weiter auf seinem Tablet. Er sieht nicht auf. #sprecher:erzaehler
 - else:
     Der Linienbus nach Maple Falls fährt jede Stunde. {teamAngekommen:Das Auswärtsspiel läuft noch.|Morgen ist der Clubkampf.} #sprecher:erzaehler
 }
-* [Nach Maple Falls fahren]
++ [Nach Maple Falls fahren]
     Der Bus rollt die Landstraße entlang. Hinter dir werden die Zedern kleiner. #sprecher:erzaehler
     ~ reise("mapleFalls.park", "bushaltestelle")
     -> END
 + [Mit dem Busfahrer reden]
     -> kettering
-* [Noch bleiben]
++ [Noch bleiben]
     -> END
 
 // ---------------------------------------------------------------- Ankunft zu Fuß (W5)
@@ -458,9 +458,9 @@ Der Bus wartet bis heute Abend. Mr. Kettering fährt uns zurück. #sprecher:coac
 === kettering_a ===
 Der Busfahrer hat die Mütze in den Nacken geschoben und liest Zeitung. #sprecher:erzaehler
 Einunddreißig Jahre fahr ich diese Strecke. Jede Kurve hat einen Namen. Die meisten hab ich vergeben. #sprecher:kettering
-* [„Welche Kurve ist die schönste?“]
++ [„Welche Kurve ist die schönste?“]
     Die Witwe. Nach der sieht man den Wasserfall. #sprecher:kettering
-* [„Wird es nicht langweilig?“]
++ [„Wird es nicht langweilig?“]
     Die Kurven sind dieselben. Die Leute nicht. #sprecher:kettering
 - -> bus_zurueck
 

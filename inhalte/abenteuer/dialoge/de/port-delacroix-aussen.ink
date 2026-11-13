@@ -10,6 +10,7 @@
 // Einstiege wie in orte.json: ankunft_zu_fuss, deich, bayou, batiste, arceneaux, brett_haus1 bis
 // brett_haus4, gebaeckstand, wuestenzug.
 //
+// Roman Kapitel 41, Anfang: abschied_mama am Übergang zum Wüstenzug (Mama bleibt, Geigenkasten).
 // Kapitel 37 nach dem Roman: Bretter erbitten (niemand schlägt die Tür zu), Batiste am Boot,
 // Slicks Postkarte am Abend; Ambrose fehlt, in seinem Kopf ist es still „wie wenn ein Zahn fehlt“.
 // Runde 11 (13.11.2026): Ankunft nach dem Roman (roman/akt3_teil2.md, Kapitel 35): die braune
@@ -41,6 +42,7 @@ VAR bayouOffen = false
 VAR hatGummistiefel = false
 VAR nadelSummitCity = 0
 VAR angesehenBauzaun = false
+VAR abschiedPortDelacroixGesehen = false
 
 // ---------------------------------------------------------------- Ankunft und Wege
 
@@ -69,6 +71,7 @@ Zurück auf den Deichweg zur Fähre. #sprecher:erzaehler
 -> END
 
 === wuestenzug ===
+{nadelPortDelacroix > 0 and not abschiedPortDelacroixGesehen: -> abschied_mama}
 {nadelPortDelacroix > 0:
     Am Bahnhof wartet der Wüstenzug nach Westen. Hinter den Bergen liegt Desert Springs. #sprecher:erzaehler
     {ambroseSprichtWieder:
@@ -77,6 +80,18 @@ Zurück auf den Deichweg zur Fähre. #sprecher:erzaehler
 - else:
     Am Bahnhof steht ein Zug nach Westen. Erst willst du hier noch etwas zu Ende bringen. #sprecher:erzaehler
 }
+-> END
+
+// Roman Kapitel 41, Anfang: Mama bleibt im Notzelt; der Held fährt allein mit dem Geigenkasten.
+=== abschied_mama ===
+~ abschiedPortDelacroixGesehen = true
+Am Bahnhof steht der Wüstenzug nach Westen. Mama bleibt hier; das Notzelt braucht sie noch zwei Wochen. #sprecher:erzaehler
+Fahr. Du bist in sechs Monaten weiter gekommen als ich in fünfundzwanzig Jahren. #sprecher:mutter
+Ich hole dich ein. #sprecher:mutter
+* [Mama umarmen]
+- Sie riecht nach Desinfektionsmittel und Meer. #sprecher:erzaehler
+Der Geigenkasten liegt neben dir auf dem Sitz. Der Deckel ist offen. #sprecher:erzaehler
+Ihr redet wenig. Es ist das Schweigen von zwei, die sich gestritten haben und wieder anfangen wollen. #sprecher:erzaehler
 -> END
 
 // ---------------------------------------------------------------- Bretter sammeln (Besuch 1)

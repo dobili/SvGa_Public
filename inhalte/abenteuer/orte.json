@@ -170,6 +170,13 @@
           "sprite": "figuren/statist-07.png",
           "dialog": "maple-falls-aussen.calloway",
           "wenn": "endeAkt1Gesehen"
+        },
+        {
+          "kennung": "mapleFalls.junoClub",
+          "name": "figur.juno.name",
+          "sprite": "figuren/juno.png",
+          "dialog": "maple-falls-clubraum.juno",
+          "wenn": "clubBeigetreten"
         }
       ],
       "ausloeser": [
@@ -465,7 +472,9 @@
           "innen": true,
           "musik": "musik/cedar-creek.bibliothek.m4a",
           "geraeusch": "klang/uhr_ticken.m4a",
-          "licht_zustaende": { "nachtImLesesaal und nicht teamAngekommen": "nacht" },
+          "licht_zustaende": {
+            "nachtImLesesaal und nicht teamAngekommen": "nacht"
+          },
           "zustaende": {
             "nachtImLesesaal und nicht teamAngekommen": "karten/cedar-creek-bibliothek-lesesaal.json",
             "teamAngekommen und nadelCedarCreek == 0": "karten/cedar-creek-bibliothek-clubkampf.json"

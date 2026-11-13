@@ -3923,6 +3923,16 @@
       "zustand": "alt",
       "stil": "klassisch",
       "hinweis": "das alte Brett unter der staubfreien Decke (Roman Kap. 2); Bild aus bildwuensche/brett_decke.py"
+    },
+    "mf12BrettRadiergummi": {
+      "quelle": "spiel/eigene/brett_radiergummi.png",
+      "breite": 16,
+      "hoehe": 12,
+      "kollision": true,
+      "art": "deko",
+      "zustand": "gebraucht",
+      "stil": "schule",
+      "hinweis": "Clubbrett ohne schwarze Dame, Radiergummi auf d8 (Roman Kap. 5); Bild aus bildwuensche/brett_radiergummi.py"
     }
   }
 }

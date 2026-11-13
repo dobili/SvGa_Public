@@ -48,10 +48,13 @@ export function Momentdialog({
   verweis,
   halteUhr,
   beiEnde,
+  zusatz,
 }: {
   readonly verweis: string;
   readonly halteUhr: (an: boolean) => void;
   readonly beiEnde: () => void;
+  /** Zusätzliche Variablen nur für diesen Dialog (zugerratenTurm im Halbfinale). */
+  readonly zusatz?: Dialogvariablen;
 }) {
   const stand = useAbenteuerstand();
   const [datei, knoten] = verweis.split(".", 2);
@@ -91,7 +94,7 @@ export function Momentdialog({
         json={json}
         knoten={knoten}
         wirkungen={WIRKUNGEN_IN_DER_PARTIE}
-        variablen={{ ...stand.dialogvariablen, ...variablenAusBesitz(stand) }}
+        variablen={{ ...stand.dialogvariablen, ...variablenAusBesitz(stand), ...zusatz }}
         heldname={stand.held.name}
         beiKnoten={() => undefined}
         beiEnde={ende}

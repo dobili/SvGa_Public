@@ -38,6 +38,11 @@
           "type": "string",
           "pattern": "^[a-h][1-8]$"
         },
+        "bild": {
+          "description": "Bild des Fundes im Zusatzpaket (Bildliste von mittel-3), gezeigt im Fund-Fenster und auf der Fensterbank; fehlt die Datei, bleibt es beim Text",
+          "type": "string",
+          "pattern": "^bilder/fund-[a-z0-9]+(-[a-z0-9]+)*\\.webp$"
+        },
         "extra": {
           "description": "Extra der App, das der Fund freischaltet (E3; wirkt, sobald die Extras angebunden sind)",
           "type": "string",

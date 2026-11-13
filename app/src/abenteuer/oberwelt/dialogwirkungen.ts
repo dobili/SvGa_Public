@@ -47,7 +47,8 @@ export interface Wirkungskontext {
   readonly stand: () => Abenteuerstand;
   readonly welt: Weltdaten | null;
   readonly schreibe: (neu: Abenteuerstand) => void;
-  readonly meldung: (text: string) => void;
+  /** Meldung zeigen, optional mit Bild (Fundbild). */
+  readonly meldung: (text: string, bild?: string) => void;
   /** Neue Tönung zeigen (Zustand der Hülle und Szene). */
   readonly toenung: (toenung: Toenung | null) => void;
   /** Die Merker; als Funktion, damit die Oberwelt ihre Refs nicht beim Zeichnen weitergibt. */
@@ -68,6 +69,7 @@ function gibFund(k: Wirkungskontext, kennung: string): void {
     tSpiel(fund?.extra ? "fund.gefundenExtra" : "fund.gefunden", {
       name: tSpiel(fund?.name ?? kennung),
     }),
+    fund?.bild,
   );
 }
 

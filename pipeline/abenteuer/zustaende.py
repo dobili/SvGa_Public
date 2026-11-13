@@ -35,6 +35,28 @@ def zustandsname(datei: str, basis: str) -> str:
     return stamm[len(vorne) :] if stamm.startswith(vorne) and len(stamm) > len(vorne) else stamm
 
 
+def bildname(szene: dict) -> tuple[str, bool]:
+    """Name des Bildes und ob es ein Bild für das Spiel ist (sonst nur Vorschau).
+
+    Die Grundkarte heißt „<kennung>“, ein Zustand (``zustaende`` in orte.json, Runde 8)
+    „<kennung>-<zustand>“ mit dem Teil des Dateinamens hinter der Grundkarte, wie die App ihn lädt
+    (oberwelt/kartenfassung.ts). Varianten (KARTENREGELN 10.37) bekommen nur eine Vorschau
+    „…-<variante>“; eine Szene, die weder Grundkarte noch Zustand ist, ebenfalls, damit sie das Bild
+    der Grundkarte nicht überschreibt. Beispiel: port-delacroix-musikhaus-neu.json →
+    („portDelacroix.musikhaus-neu“, True).
+    """
+    name = szene["karte"]
+    orte = json.loads((INHALTE / "orte.json").read_text(encoding="utf-8"))["orte"]
+    karte = next((k for o in orte for k in o["karten"] if k["kennung"] == name), {})
+    datei = szene.get("datei", "")
+    zustand = datei in karte.get("zustaende", {}).values() and datei != karte.get("datei")
+    if zustand:
+        name += f"-{zustandsname(datei, karte['datei'])}"
+    if szene.get("variante"):
+        return f"{name}-{szene['variante']}", False
+    return name, zustand or datei == karte.get("datei")
+
+
 def szenen_nach_datei() -> dict[str, dict]:
     """Datei der Tiled-Karte → Szene (nur Hauptfassungen, keine Varianten B und C)."""
     ergebnis = {}

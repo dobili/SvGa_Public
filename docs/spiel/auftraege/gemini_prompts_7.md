@@ -89,3 +89,28 @@ BUILDINGS: every building is seen from the front and from above at the same time
 
 OBJECTS: a 1950s diner jukebox, rounded arched top with a glowing coloured light band (warm orange, pink and blue), chrome trim, a glass window showing records, a speaker grille at the bottom, standing on the floor against a wall, in two versions side by side with plenty of magenta space: 1. seen from the front and slightly above (as it stands against the north wall of a room), 2. the same with the lights a little brighter. The jukebox is 1 tile wide and 2 tiles tall, as tall as a standing person.
 ```
+
+## 5. Missratene Holzspringer für die Drechslerei
+
+**Warum:** In Stufe B liegen in Dunmores Drechslerei drei missratene Springer auf der Fensterbank
+(Ink cedar-creek-drechslerei.dunmore_b: „zu kurze Ohren, schielt, sieht aus wie ein Hund“); die
+Großfiguren im Paket sind dafür viel zu groß. Die Fensterbank liegt schon unter dem Werkstattfenster,
+die Springer kommen als Möbel mit „wenn“ dazu.
+**Datei:** `ki-roh/holzspringer.jpg`. **Ziel:** drei Figuren à 10 × 14 Pixel, zusammen als Streifen
+32 × 16 Pixel (passt auf die Fensterbank mf12Fensterbank, 32 × 16).
+
+```
+Pixel art game sprite sheet for a top-down RPG.
+
+VIEW: straight front-facing top-down view like classic 16-bit RPG town maps (camera looks down at about 45 degrees: we see the top of objects and a little of their front side). NOT isometric, NOT rotated, NOT diagonal.
+
+PIXEL STYLE: chunky pixel art on a 16x16 pixel tile grid, enlarged so that every sprite pixel is an exactly square block of 10x10 screen pixels on a strict grid. Hard edges, no anti-aliasing, no gradients, no blur. 1-pixel dark slate outline (#3A3A50). 2-3 flat shades per color, light from the top left. Simple, readable shapes. A person in this game is 1 tile wide and 2 tiles tall.
+
+BACKGROUND: solid flat magenta (#FF00FF) everywhere. No shadow, no ground, no road, no text, no letters, no frame. Plenty of magenta space between objects.
+
+STYLE REFERENCE: The attached image is a style reference only. Its large middle block shows the TARGET STYLE (buildings of the game's main tileset): match their pixel size, thin dark outlines, soft muted colours, simple flat shading, roof and wall proportions and level of detail. The top row is the colour palette. The bottom row shows earlier objects at the right scale next to a person (the dark rectangle is 1 tile wide and 2 tiles tall). Do NOT copy any object, building or text from the reference. Draw only the objects described below.
+
+BUILDINGS: every building is seen from the front and from above at the same time, like in classic 16-bit RPG towns: the upper half of the picture is the ROOF seen from above (with a ridge line, roof tiles or planks, a chimney, a darker shaded side), the lower half is the FRONT WALL with door and windows. The building must look solid and three-dimensional, never like a flat sticker. The door is in the front wall at the bottom.
+
+OBJECTS: three small hand-carved wooden chess knights made of pale red cedar wood on a lathe, each one clearly a failed attempt, standing side by side with plenty of magenta space: 1. a knight whose ears are much too short, 2. a knight with crooked, squinting eyes, 3. a knight whose head looks more like a dog than a horse. Each knight is a little smaller than half a tile (about 10 pixels wide and 14 pixels tall at game scale), standing upright on a round turned base, seen from the front and slightly above.
+```

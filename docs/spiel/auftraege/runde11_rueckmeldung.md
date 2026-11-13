@@ -13,12 +13,10 @@ Erledigte Nummern in der Meldung nennen; ich hake sie in der Sammlung ab.
 1. **Abziehbilder (R055, Hauptpunkt).** Ein Abziehbild ist ein von Hand gezeichnetes Bild ohne Tiefe:
    Man sieht nur eine Front, kein Dach von oben, keine Oberseite, keine Seitenfläche, keinen Schatten.
    Es fällt neben den Paketen (LimeZu) heraus. Regel ab jetzt (KARTENREGELN 10.71):
-   - Erst im Katalog nach einem Paketbild suchen (`register/katalog.json`, 15759 Einträge).
-   - Gibt es keines, ein Bild **aus Paketteilen zusammensetzen** (Dach, Wand, Tür aus LimeZu), wie
-     `laden_*`, `altstadt_*`, `haus_farm*`.
-   - Nur wenn auch das nicht geht: Wunsch für Gemini melden. Der Haupt-Chat sammelt sie in **einer**
-     Datei für den Autor.
-   - Selbst gezeichnete Flächen sind nur für Flaches erlaubt (Schilder, Markierungen, Böden, Plakate).
+   - Reihenfolge und Kontrolle stehen in KARTENREGELN 10.71 (Stand 12.11.2026): Katalogbild, dann
+     Zusammenbau aus dem Baukasten (`topdown-16/`, vom Autor gekauft, und LimeZu-Teile), dann
+     Gemini-Wunsch an den Haupt-Chat; nie selbst zeichnen außer Flaches. Jeder Zusammenbau wird am
+     Bild kontrolliert und vom Gutachter einzeln geprüft, bevor er in eine Karte kommt.
 2. **Der Gutachter sichtet alle 558 eigenen Bilder** und führt die Liste
    `gutachten/ABZIEHBILDER.md`: Bild, wo benutzt, Urteil, Ersatz aus dem Katalog oder „Gemini“. Die
    Helfer tauschen danach aus.

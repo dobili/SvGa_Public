@@ -6,7 +6,7 @@
  */
 import { readdirSync, readFileSync } from "node:fs";
 import { describe, expect, it } from "vitest";
-import { liesAusloeser, type Ausloeser } from "./ausloeserebene";
+import { liesAusloeser, mitDurchgang, type Ausloeser } from "./ausloeserebene";
 import { ankunftsort } from "./ankunft";
 import { begehbar, laufwege, sperrkacheln, type Sperrangabe, type Tiledkarte } from "./begehbar";
 import { erreichbar, gehe, kuerzesterWeg, loestAus, type Kachelort } from "./uebergangslauf";
@@ -84,10 +84,16 @@ function pruefeKarte(
   moebel: Record<string, Sperrangabe>,
 ): string[] {
   const karte = lies<Tiledkarte>(datei);
-  const alle = liesAusloeser(
+  const roh = liesAusloeser(
     karte.layers.flatMap((e) => e.objects ?? []),
     KACHEL,
   );
+  // Durchgang wie in der Szene: nur Wände und Möbel zählen, Figuren können weggehen (R060).
+  const statisch = begehbar(karte, sperrkacheln(karte, moebel, KACHEL, false));
+  const uebergaenge = [...new Set(roh.map((a) => a.name))].filter(
+    (name) => regel(ort, kennung, name)?.art === "uebergang",
+  );
+  const alle = mitDurchgang(roh, statisch, uebergaenge);
   // Statisten und Tiere stehen an ihrem Platz (auch die, die später loslaufen).
   const gesperrt = sperrkacheln(karte, moebel, KACHEL);
   for (const w of laufwege(karte, KACHEL)) gesperrt.add(`${w.start.x},${w.start.y}`);
@@ -106,6 +112,10 @@ function pruefeKarte(
     const felder = felderVon(ziel);
     for (const f of felder) {
       if (!frei(f.x, f.y)) befunde.push(`${datei} ${ziel}: Feld (${f.x}, ${f.y}) ist gesperrt`);
+      // Frei im Raum ohne Angabe: Jede Richtung löste aus, also auch bloßes Darüberlaufen.
+      if (f.durchgang?.length === ALLE_RICHTUNGEN) {
+        befunde.push(`${datei} ${ziel}: Feld (${f.x}, ${f.y}) braucht die Angabe „durchgang“`);
+      }
     }
     if (ankunftsort(karte, moebel, ziel, KACHEL)?.aufAusloeser) {
       befunde.push(`${datei} ${ziel}: kein freies Feld neben dem Durchgang für die Ankunft`);
@@ -284,6 +294,9 @@ function versperrerPaare(
   return befunde;
 }
 
+/** So viele Richtungen hat ein Übergang, der frei im Raum liegt und keine Angabe trägt. */
+const ALLE_RICHTUNGEN = 4;
+
 const NACHBARN = [
   { x: 0, y: -1 },
   { x: 0, y: 1 },
@@ -340,13 +353,19 @@ describe("Übergänge zu Fuß", () => {
     ]);
   });
 
-  it("geht einen Weg ab und meldet den Übergang erst beim Betreten", () => {
-    const alle: Ausloeser[] = [
-      { name: "tuer", typ: "ausloeser", x: 2, y: 0 },
-      { name: "start", typ: "ausloeser", x: 0, y: 2 },
-    ];
+  it("geht einen Weg ab und löst den Übergang erst beim Gehen in den Durchgang aus", () => {
     const frei = (x: number, y: number) =>
       x >= 0 && y >= 0 && x < 3 && y < 3 && !(x === 1 && y === 1);
+    const alle = mitDurchgang(
+      [
+        { name: "tuer", typ: "ausloeser", x: 2, y: 0 },
+        { name: "start", typ: "ausloeser", x: 0, y: 2 },
+      ],
+      frei,
+      ["tuer"],
+    );
+    // Die Tür liegt in der Ecke oben rechts: Durchgang nach oben und nach rechts (Kartenrand).
+    expect(alle[0]?.durchgang).toEqual(["oben", "rechts"]);
     const weg = kuerzesterWeg(frei, { x: 0, y: 2 }, [{ x: 2, y: 0 }]);
     expect(weg).toHaveLength(5);
     expect(loestAus(gehe(alle, weg ?? []), "tuer")).toBe(true);

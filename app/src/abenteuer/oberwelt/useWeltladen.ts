@@ -68,6 +68,10 @@ function starteSpiel(k: Oberweltkern, a: Weltanschluss, w: Weltdaten, stand: Abe
     winter: w.winter,
     kachelsatz: KACHELSATZ,
     start: stand.position,
+    // Übergänge dieser Karte: Sie wechseln erst beim Gehen in den Durchgang (R060).
+    uebergaenge: w.ort.ausloeser
+      .filter((x) => x.art === "uebergang" && (!x.karte || x.karte === w.kennung))
+      .map((x) => x.name),
     // Fahrrad (docs/spiel/08, W3): doppeltes Tempo draußen.
     tempofaktor: !w.innen && stand.gegenstaende.includes(FAHRRAD) ? FAHRRAD_TEMPO : 1,
     melder: {

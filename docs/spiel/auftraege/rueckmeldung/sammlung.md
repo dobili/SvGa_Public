@@ -1,6 +1,6 @@
 # Sammlung der Rückmeldungen zum Schach-Abenteuer (Beta)
 
-Stand: 11.11.2026. Offene Punkte: 68. Erste Abgabe: 11.11.2026 (R001 bis R070, ohne die unbenutzte Nummer R035).
+Stand: 11.11.2026. Offene Punkte: 147 (davon 80 seit der ersten Abgabe neu: R071 bis R151). Erste Abgabe: 11.11.2026 (R001 bis R070, ohne die unbenutzte Nummer R035). Zweite Abgabe: R071 bis R151.
 
 Hinweis: Es gibt zwei Karten, die mit „Zedern“ beginnen: Zedernpfad (Maple Falls nach Cedar Creek) und Zedernwald (Cedar Creek nach Riverton). Alle bisherigen Anmerkungen des Autors, auch wo er „Zedernwald“ sagte, betreffen den Zedernpfad.
 
@@ -18,12 +18,21 @@ Reihenfolge je Kategorie: zuerst, was das Weiterspielen verhindert, dann Stören
 - [ ] R034. Alle Außenkarten, Weltkarte (Auftrag an den Hauptchat): Der Autor bittet darum, dass eine KI die Weltkarte tatsächlich zusammenpuzzelt, indem sie die Karten über ihre Zugänge aneinanderlegt. Innenräume werden dafür nicht gebraucht. Die Weltkarte muss konsistent sein, nichts darf überlappen.
   Ergänzung des Autors: Beim Zusammensetzen auch die Übergänge von Karte zu Karte prüfen, damit zum Beispiel Flüsse und Flusswege glaubwürdig ineinander übergehen. Kleine Inkonsistenzen sind in Ordnung, wenn man sie mit einem kleinen Zwischenstück erklären kann, das nicht als Karte gezeichnet wird (sonst werden es zu viele Karten). Beispiel: Auf der Landstraße taucht oben direkt das Feld auf, das im Stadtpark noch nicht zu sehen war; das lässt sich mit einem kurzen, nicht gezeichneten Wegstück dazwischen erklären. Nicht in Ordnung wäre etwa, wenn auf der Landstraße unten links plötzlich kein Wasser mehr wäre, wo es im Anschluss noch Wasser gab; da fragt man sich, warum. Das gilt für das ganze Puzzle.
 - [ ] R036. Übergang Stadtpark zur Landstraße (Maple Falls): Im Stadtpark ist die Straße gepflastert und hat Straßenmarkierungen, ein Bus fährt darüber. Beim Kartenwechsel zur Landstraße ist sie plötzlich nur noch das bräunliche Asset, wie ein Trampelpfad. Ein Übergang von der gepflasterten Straße zur Landstraße fehlt.
+- [ ] R131. Übergang Riverton Außen zum Kanalweg: Auf der Riverton-Außenkarte ist beim Übergang noch ein Trampelpfad, auf der Kanalweg-Karte direkt daneben (am Kanal) dagegen Pflasterung. Der Übergang fehlt. Vorschlag des Autors: Schon auf der Riverton-Karte am Kanal entlang pflastern. Der Belag soll an den Kartengrenzen einheitlich sein.
+- [ ] R132. Übergang Kanalweg zu Lockport Außen (Schleusendorf, `lockport-aussen`): Hier geht ein Trampelpfad plötzlich in Pflasterung über. Das muss einheitlich sein. Zusammenhang mit R131, R036, R049 und R034.
 - [ ] R060. Alle Karten, Auslösen des Kartenwechsels: Auf der Übersichtskarte ist markiert, in welchem Bereich die Figur stehen muss, um in einen Raum oder auf die nächste Karte zu kommen. Beispiel Waschsalon (Ortskern): Markiert ist die Kachel des Fußwegs direkt vor dem Waschsalon. Der Autor vermutet, dass er schon beim bloßen Darüberlaufen automatisch in den Waschsalon kommt. Das soll nicht sein. Der Wechsel soll erst stattfinden, wenn die Figur auf der Kachel steht und sich auf die Tür zubewegt, also die Pfeiltaste in Richtung Tür gedrückt wird (im Beispiel: Pfeiltaste nach oben). Dasselbe gilt für Übergänge zwischen Außenkarten (etwa Landstraße): Steht die Figur direkt am Kartenrand, soll noch nicht gewechselt werden, sondern erst, wenn die Pfeiltaste in Richtung der nächsten Karte gedrückt wird. Auftrag: bei allen Karten die Funktionslogik prüfen. Der Autor vermutet das Verhalten nur, getestet hat er es nicht ausdrücklich („ich vermute“).
+- [ ] R072. Bahndamm: Der Bahnsteig unterbricht den Bahndamm. Das war nach Aussage des Autors bei der anderen Karte (Bahnhaltestelle) schon einmal so.
+- [ ] R073. Bahndamm, oben, eingezäunte kleine Kuhherde (drei Kühe): Das Tor des Gatters öffnet sich Richtung Bahndamm. Es kann dementsprechend nicht geöffnet werden, weil der Bahndamm die Tür blockieren würde.
+- [ ] R074. Bahndamm, Haus oben (das mit den Vögeln): Es steht zum Teil auf dem Abhang des Bahndamms und könnte so gar nicht dort stehen.
+- [ ] R078. Übergang Bahndamm zu Riverton, Außen (`riverton-aussen`, vom Autor bestätigt; Logiklücke): Puzzelt man die beiden Karten über den Übergang des Trampelpfads (Bahndamm-Karte) zur Riverton-Karte zusammen, wirkt es, als ginge die Hauptstraße von Riverton direkt in die Wellblechhütte über (siehe R077); die Straße endet im Nichts. Man kann das mit einer Zwischenkarte erklären, es ist aber ungünstig. Wunsch des Autors: die Bahndamm-Karte auf der rechten Seite in der Führung von Gleisen und Trampelpfad umgestalten (Schienen ganz am rechten Ende ein Stück in einer Kurve nach unten, Trampelpfad weiter unten rechts enden lassen). Legt man dann die Trampelpfad-Übergänge beider Karten zusammen, soll die Hauptstraße von Riverton optisch links unterhalb der Bahndamm-Karte weiterlaufen. Zusammenhang mit R034 und R079.
+- [ ] R079. Übergang Bahndamm zu Riverton: Beim Kartenwechsel geht es ruckartig vom Bahndamm zu keinem Bahndamm. In Riverton liegen die Schienen einfach auf dem Boden, vorher lagen sie in der Bahndamm-Karte auf einem Damm. Es fehlt logisch ein Abstieg des Bahndamms. Vorschlag: in der Riverton-Karte andeuten, dass der Damm leicht abfällt, sodass es zum Bahnsteig hin wieder eben wird. Dafür braucht es wahrscheinlich einige Assets. Zusammenhang mit R072 und R078.
+- [ ] R119. Kanalweg, Fußweg oberhalb der erstgenannten Straße (R118): Eine Bank, ein Straßenschild, ein Mülleimer (der Autor glaubt) neben dem Bushaltestellenschild und zwei Straßenlaternen blockieren den ganzen Fußgängerweg. Die beiden Laternen stehen auch zu eng beieinander. Vorschlag des Autors: eine Laterne direkt an der Kreuzung, wo es hinüber geht, dann gleichmäßige Abstände zwischen den Laternen. Bank und Bushaltestellenschild zwischen die Laternen setzen. Außerdem so pflastern, dass man entweder vor oder hinter der Bank auf dem Fußweg vorbeikommt.
 
 ## Karten und Grafik
 
 ### Alle Karten (Regel)
 
+- [ ] R127. Alle Karten, Zäune: Die Zaun-Assets sind für Zäune gedacht, die von links nach rechts laufen, und nicht für Zäune, die von oben nach unten verlaufen. Übereinandergestellt funktionieren sie dafür nicht. Auf allen Karten prüfen und passende Assets für senkrechte Zäune verwenden (siehe R115, R121; zuvor ähnlich R045).
 - [ ] R065. Alle Gebäude mit Innenraum (Auftrag an eine KI): Bei jedem Gebäude, das man von außen sieht, prüfen, ob Form und Größe des Innenraums zum Gebäude-Asset passen könnten. Der Raum darf nicht so riesig sein, dass er nicht ins Gebäude passen würde. Ist er kleiner, muss es Hinweise auf weitere Räume geben (Türen, auch verschlossene), die man nicht modellieren muss, damit sich erklärt, warum das Gebäude viel größer ist. Bisher ist dem Autor bei der ersten Durchsicht nur die Bibliothek aufgefallen. Zusammenhang mit R063, R064.
 - [ ] R055. Alle Karten, „Abziehbild“-Assets: Der Autor weiß nicht, woher die Kartenbauer diese Assets haben. Sie haben keine Tiefe und können nicht verwendet werden (siehe R002, R021, R022, R054). Er vermutet, dass sie auch auf anderen Karten eingesetzt sind; alle prüfen und überarbeiten. Mögliche Wege laut Autor: Er lässt Assets im passenden Stil zeichnen (Gemini), oder es werden passende, gut kombinierbare Asset-Packs gesucht. Die Entscheidung liegt beim Hauptchat.
 - [ ] R042. Alle Karten, Bodenübergänge: Prüfen, ob die Übergänge zwischen zwei verschiedenen Boden-Assets so sinnvoll sind, wie sie sind. Sollen es scharfe Kanten sein, oder braucht es ein Übergangs-Asset? Siehe R041.
@@ -130,6 +139,106 @@ Der Raum der Stadtbibliothek an sich sieht nach Einschätzung des Autors gut aus
 - [ ] R069. Zedernwald, Brücke über den kleinen Fluss: Ein kleiner „Mini-Fluss“ geht durch die Karte, die Brücke liegt relativ mittig, ein Stückchen weiter rechts. Sie steht nicht mittig über dem Fluss. Wunsch: besser setzen, sodass sie mittiger über dem Fluss steht, falls machbar.
 - [ ] R070. Zedernwald, oben rechts, kleines Camp: Das Lagerfeuer steht mitten auf dem Weg. Das sollte nicht so sein.
 
+### Weg Cedar Creek nach Riverton, Bahndamm (`weg-cedar-riverton-bahndamm`)
+
+- [ ] R071. Bahndamm, oben: Einige Vögel stehen direkt auf einem Haus, auf der Hausfront. Es ist auch wieder ein „Abziehbild“-Haus (siehe R055). Die Vögel dürfen nicht auf der Fassade stehen.
+- [ ] R075. Bahndamm, Bahnhaltestelle: Die Bänke stehen direkt in einer der Laternen.
+- [ ] R076. Bahndamm, relativ mittig im Bild am Weg: Ein kleines umzäuntes Gebiet mit Sonnenblumen und Kürbissen. Darin stehen zwei kleine „Abziehbild“-Häuschen (siehe R055). Die Sonnenblumen und Kürbisse wachsen teilweise auf dem Trampelpfad, das ergibt keinen Sinn.
+- [ ] R077. Bahndamm, ganz rechts unten: ein gepflasterter Platz mit einer alten Hütte mit Wellblechdach, oben ein Zaun. Der Zaun geht nicht ganz bis zum Rand. Die Hütte wirkt fehl am Platz; der Autor weiß nicht, ob sie von der Geschichte her Sinn macht (Hauptchat prüfen, sonst überlegen). Der gepflasterte Boden hat wieder eine harte Kante zum Gras; ein Übergangs-Asset wäre schöner (siehe R042). Zusammenhang mit R078.
+
+### Riverton, Außen (der Autor sagt „Riverton-Karte“; vermutlich `riverton-aussen`)
+
+- [ ] R087. Riverton Außen, Brücke über den Fluss ganz rechts (Hauptstraße-Seite): Das Brücken-Asset hat die falsche Perspektive. Man sieht rechts Kanalöffnungen, die man bei Blick von oben nicht sehen dürfte. Es passt optisch nicht gut, ist zu lang und überlappt unten mit der nächsten Insel, dem nächsten Bereich, wo eigentlich schon der Weg entlanggehen sollte. Stattdessen ist dort einfach darunter gepflastert: Der Trampelpfad ist unterbrochen und ein Stück der Brücke ragt darüber. Das würde man so nicht bauen.
+- [ ] R082. Riverton Außen, Hauptstraße: Die Straßenmarkierungen sind nicht überall auf der Straße durchgehalten, besonders am Rand und an der Kreuzung.
+- [ ] R088. Riverton Außen, Kanal an allen Bildrändern (zuerst rechts, mittig, gemeldet): Die Umrandung des Kanals ist nicht zu Ende gezogen. Die Kanalränder sind befestigt, am Bildrand fehlen die Assets dafür. Ergänzung des Autors: Das gilt auch für die linke Seite und für unten. Im Grunde fehlt an allen Stellen, wo der Kanal an den Bildrand stößt, der befestigte Rand.
+- [ ] R086. Riverton Außen, abgegrenzter Bereich ganz rechts (siehe R085): Eine Straßenlaterne relativ nah an der Brücke überlappt mit dem Zaun des Bereichs.
+- [ ] R085. Riverton Außen, ganz rechts auf der Karte, relativ mittig: ein abgegrenzter Bereich mit zwei Wellblechhütten und vielen Kisten. Rechts davon steht wieder ein „Abziehbild“-Häuschen (siehe R055).
+- [ ] R083. Riverton Außen, neben dem Haus mit dem Schild „Groove“ (zweites Haus von links, oberhalb der Hauptstraße): Direkt daneben steht ein kleiner Wegweiser mit zwei Schildern. Dem Autor erschließt sich nicht, warum er dort steht. Vorschlag: ein Stück weiter oben neben den Trampelpfad stellen.
+- [ ] R084. Riverton Außen, Trampelpfad (der oben neben dem Wegweiser, R083): Ein Busch steht mitten auf dem Weg.
+- [ ] R091. Riverton Außen, längliches Holzhaus rechts neben den „Bildschirmtischen“ (Wortlaut; der Autor benutzt den Begriff später in R092 erneut als Kartenobjekt, er ist also vermutlich echt): Direkt vor der Tür steht ein Tisch mit einem Schachbrett. Dadurch kann man nicht in das Haus hineingehen. Ist das von der Geschichte nicht so gewollt, muss es geändert werden (Hauptchat prüfen).
+- [ ] R089. Riverton Außen, Bakery, relativ mittig im Bild: wieder ein „Abziehbild“-Haus, das nicht zu den sonstigen Assets passt (siehe R055).
+- [ ] R090. Riverton Außen, ganz unten links im Bild: das dritte Haus von links ist ein „Abziehbild“-Haus (siehe R055).
+- [ ] R092. Riverton Außen, Nachspielvariante (`riverton-aussen-nachspiel`): Die Bildschirmtische verschwinden, und die Wiese ist dann komplett leer. Wunsch: etwas Nettes überlegen, was stattdessen dort stehen könnte, damit die Wiese nicht so leer bleibt.
+- [ ] R113. Riverton Außen, Fahrradschuppen: Das Gebäude-Asset ist ein „Abziehbild“ und muss ausgetauscht werden (siehe R055). Der Autor sagte „wie gesagt“, ich habe den Fahrradschuppen unter den früheren Punkten (R085, R089, R090) nicht ausdrücklich benannt; welches der gemeldeten Abziehbild-Häuschen es ist, hat er nicht gesagt (Hauptchat über `riverton-schuppen` prüfen). Der Innenraum (Riverton, Schuppen, `riverton-schuppen`) sieht nach Einschätzung des Autors ganz gut aus, kann so bleiben.
+- [ ] R080. Riverton, oben rechts neben dem Bahngleis: Ein kleiner gepflasterter Streifen, auf dem ein Stapel Holz liegt. Das wirkt komisch: Warum pflastert man ein Stück entlang der Gleise, biegt kurz nach unten ab und pflastert nur, damit dort ein Holzhaufen auf Pflaster steht? Vorschlag: die Pflasterung entweder komplett an den Schienen entlangziehen oder weglassen und Gras lassen. Auch der Holzhaufen an sich macht dort wenig Sinn; er könnte näher an das große Farmhaus, das fast direkt daneben steht.
+- [ ] R081. Riverton, oben rechts, rechts unter dem Wasserturm: wieder ein „Abziehbild“-Häuschen (siehe R055).
+
+### Riverton, Bahnhofshalle (`riverton-bahnhofshalle`, Varianten `riverton-bahnhofshalle-plakat`, `riverton-bahnhofshalle-slick-auf-der-bank`)
+
+- [ ] R097. Bahnhofshalle, oben in der Mitte an der Wand: Dort stehen Assets mit „Ticket-Schaltern“ als Überschrift. Es sieht aus, als wären drei identische Assets ineinandergeschoben und in die Wand gesetzt worden. Das sieht komplett falsch aus. Der Autor weiß nicht, wofür das Asset eigentlich gedacht ist, und meint, es gehört eher auf einen Tresen, sodass aus dem Tresen ein Ticketschalter wird. In den Online-Vorlagen nachsehen, wofür es gemeint ist. Es fehlt im Grunde ein Ticketschalter, an dem man wirklich etwas kaufen kann. Es muss unbedingt etwas Vernünftiges besorgt werden.
+- [ ] R100. Bahnhofshalle, Sitzreihen in der Mitte: Es gibt drei Reihen von Sitzen. Die oberen beiden sehen identisch aus. Die untere Reihe (direkt vor einem, wenn man hereinkommt: zwei Paar Stühle) hat plötzlich eine Lücke in der Mitte, zwei Stühle nebeneinander, Lücke, wieder zwei Stühle. Das ergibt keinen Sinn, sie soll wie die Reihen darüber sein.
+- [ ] R093. Bahnhofshalle, rechte Seite: Ein Koffer steht mitten im Weg. Er könnte näher an eine der Säulen. Den würde ein Reisender nie einfach so stehen lassen.
+- [ ] R094. Bahnhofshalle, unten rechts: Dasselbe mit einem Gepäckstück, das der Autor für einen Trolley hält („glaube ich“): Es steht mitten im Weg. Siehe R093.
+- [ ] R096. Bahnhofshalle, oben rechts in der Ecke an der Wand: Die Automaten. Der eine steht weiter unten als der andere. Das würde man nicht so machen; der rechte Automat wirkt, als stünde er nicht ganz an der Wand.
+- [ ] R098. Bahnhofshalle, oben links in der Ecke auf dem Boden: Ein Asset, das aussieht wie neun identische Assets in drei mal drei Reihen. Der Autor weiß nicht, was es darstellen soll und ob es zur Geschichte gehört (Hauptchat prüfen); es ergibt zunächst keinen Sinn.
+- [ ] R099. Bahnhofshalle, direkt unter R098: Ein Tisch mit einer Glasplatte. Der Autor weiß nicht genau, wofür er da ist und was er darstellen soll (Hauptchat prüfen).
+- [ ] R101. Bahnhofshalle, Variante „Slick auf der Bank“ (`riverton-bahnhofshalle-slick-auf-der-bank`): Sein Schachbrett soll auf der Bank links liegen. Stattdessen hängt es oben an der Lehne in der Luft. Seine Tasche steht eher neben der Säule als neben der Bank.
+- [ ] R102. Bahnhofshalle, Variante „Slick auf der Bank“: Slick selbst ist nicht zu entdecken, obwohl er hier angeblich Schach spielen soll. Der Autor weiß nicht, ob es Absicht ist, dass er nicht gezeichnet wurde (Hauptchat prüfen). Spielt er dort Schach, wäre es sinnvoll, das Schachbrett auf die Sitzfläche eines der Stühle zu legen, während er auf dem Stuhl daneben sitzt. Zusammenhang mit R101 und R020.
+- [ ] R103. Bahnhofshalle, Variante Plakat (`riverton-bahnhofshalle-plakat`): Oben links wird ein Plakat hinzugefügt, das exakt hinter dem Fenster-Asset liegt und vom Fenster komplett verdeckt wird. Es muss eine freie Stelle an der Wand gefunden werden, wo das Plakat unterkommt.
+- [ ] R095. Bahnhofshalle, rechte Seite an der Wand: Ein stählernes Schließfach. Wunsch: ruhig zwei Reihen von Schließfächern mit jeweils zwei Schließfächern.
+
+### Erinnerung London, Strand (`erinnerung-london-strand`)
+
+- [ ] R104. Erinnerung London, Strand, Gesamtbild: Die Karte sieht sehr merkwürdig aus, weil viele „Abziehbild“-Assets ohne Tiefe verwendet werden, zum Beispiel die Kutsche und die Straßenlaternen. Auch die Häuser im Hintergrund wirken falsch: Die Dimensionen stimmen vermutlich nicht. Stellt man eine Figur direkt vor eine Tür, wäre die Tür doppelt so hoch wie die Figur. Die Häuser wirken komisch gestreckt. Der Autor weiß nicht mehr, woher die Häuser-Assets kommen und ob er sie mit Gemini erstellt hat. Auf jeden Fall werden andere gebraucht, die im Stil besser passen. Wunsch: Auf dem ganzen Bild überall auf vernünftige Assets achten, die zum Stil des Spiels passen. Zusammenhang mit R055.
+- [ ] R105. Erinnerung London, Strand, Begrenzung der Szene: Dem Autor ist unklar, wie die Karte gedacht ist. Links und rechts ist sie nicht abgeschlossen (eine Straße, die entlangläuft, aber man kann nach links, rechts, oben und unten nicht hinaus). Drumherum liegt ein dunkler, schwarzer Rahmen um die ganze Szenerie. Fragen des Autors (Hauptchat klären): Bleibt die Figur später am Rand einfach hängen? Soll man sich in dieser Szene überhaupt bewegen können, oder ist es nur eine Erinnerung, die als Bild gezeigt wird?
+
+### Riverton, Slicks Wohnwagen (`riverton-wohnwagen`; „River“ im Diktat war Slick, vom Autor bestätigt)
+
+- [ ] R111. Wohnwagen, Gesamtbild: Der komplette Wohnwagen braucht eine neue Überarbeitung mit vernünftigen Assets und einer vernünftigen Raumeinteilung. Wunsch des Autors: einen Grundriss eines echten Wohnwagens aus dem Internet besorgen und versuchen, ihn nachzubauen.
+  Ergänzung des Autors: Er fragt, ob das überhaupt ein Wohnwagen sein soll. Das Gebäude-Asset sieht eher aus wie ein kleines Haus auf Rädern, das man als Anhänger benutzen kann, also kein klassischer Wohnwagen (Hauptchat klären, ob es so gewollt ist). Ist es so gewollt, muss man sich nicht an klassische Wohnwagen-Grundrisse halten. Der Autor hat bereits einen Test veranlasst (und hofft, dass er irgendwann durchläuft), der die Gebäude-Assets ansieht und überlegt, welche Form der Innenraum haben müsste. Das ist hier besonders wichtig, weil es nur ein Gebäude mit einem einzigen Raum ist. Zusammenhang mit R065.
+- [ ] R109. Wohnwagen, Toilette und Kühlschrank: Eine Toilette steht in einer Nische, daneben ein vermutlich defekter Kühlschrank (der Autor weiß nicht, ob es einer sein soll). Die Rückwand schimmert durch das Asset des Kühlschranks hindurch. Ist es ein Kühlschrank, ergibt es keinen Sinn, dass er neben der Toilette steht. Eine Toilette steht auch nicht einfach so im Raum, ein Toilettenbereich ist immer abgetrennt.
+- [ ] R107. Wohnwagen, Spülbecken: Es ist einfach auf eine Kommode geklebt. Es passt perspektivisch überhaupt nicht, ein „Abziehbild“ ohne Tiefe, das an der Front der Kommode klebt (siehe R055).
+- [ ] R110. Wohnwagen, Bett links mit Schachbrett: Zwei Pokale stehen mitten auf dem Bett. Der Autor hat das Gefühl, dass hinter dem Bett-Asset noch etwas ist, worauf die Pokale stehen, man erkennt es aber nicht.
+- [ ] R108. Wohnwagen, Tisch mit zwei Stühlen links und rechts: Der Tisch steht nicht mittig zwischen den Stühlen.
+- [x] R106. Wohnwagen, Rucksack an der Wand: Der Autor glaubt, dass das gewollt ist. Kein Handlungsbedarf.
+
+### Weg Riverton nach Ironwood, Kanalweg (der Autor sagt „Weg-Riverton-Ironwood, Kanalweg“; Karte „Weg Riverton-Ironwood-Kanalweg“, vom Autor so benannt; Dateiname vermutlich `weg-riverton-ironwood-1`, Variante `weg-riverton-ironwood-1-graffiti`)
+
+Lange vertikale Karte; der Autor ging sie von oben nach unten durch.
+
+- [ ] R114. Kanalweg, oben links: Die beiden Schornsteine sind „Abziehbild“-Assets (siehe R055).
+- [ ] R115. Kanalweg, oben links direkt unter dem ersten Haus: Der Platz soll eingezäunt sein. Links und rechts sind aber Holzzaun-Assets benutzt, die eigentlich für Zäune gedacht sind, die von links nach rechts laufen. Sie wurden übereinandergestellt, um einen Zaun von unten nach oben zu bilden. Das funktioniert nicht. Siehe R127.
+- [ ] R116. Kanalweg, direkt darunter, gemauerte Wand mit Graffiti: Das Turm-Graffiti hängt zu tief. Überhaupt hängen die Schach-Graffitis zu tief, sie berühren fast den Boden. Nicht dramatisch, aber: etwas verkleinern und nur auf den Wandbereich setzen, sodass der Sockel der Wand nicht besprüht ist.
+- [ ] R117. Kanalweg, Schach-Graffitis allgemein: Sie sind im Grunde nur Umrandungen. Wunsch: schönere, feiner ausgestaltete Graffitis der Schachfiguren (nicht dramatisch).
+- [ ] R118. Kanalweg, erster Weg, der nach links zum Kartenrand abzweigt (eine Art Hauptstraße): Die Straßenmarkierung geht wieder nicht bis zum Rand.
+- [ ] R120. Kanalweg, Tanker: Das Asset ist nur ein „Abziehbild“. Es muss etwas Vernünftiges her (siehe R055).
+- [ ] R121. Kanalweg, ein Stück unterhalb links vom Tanker: umzäunte Parzellen mit Hütten. Die Hütten sind „Abziehbild“-Assets. Dazu das Zaun-Problem: Die Zaun-Assets sind nicht für Zäune geeignet, die von oben nach unten verlaufen (siehe R127).
+- [ ] R122. Kanalweg, Parzelle mit Kohlköpfen: Die Kohlköpfe sind nicht gleichmäßig auf dem Feld verteilt, sondern berühren teilweise den Rand des Feldes.
+- [ ] R123. Kanalweg, dort wo der Kanal abzweigt: Eine Brücke, die von oben nach unten verläuft und über die Fußgänger gehen sollen. Das Asset ist nur ein „Abziehbild“ (siehe R055).
+- [ ] R124. Kanalweg, weiter unten auf der linken Seite: weitere kleine Felder, jeweils ein rechteckiger Pflanzkasten, mit Kohlköpfen, Gerste, Kürbissen und Möhren. Auch hier bleibt die Bepflanzung nicht innerhalb der braunen Erde, sondern liegt teilweise auf dem Rand der Kästen. Zusammenhang mit R038, R046, R048.
+- [ ] R125. Kanalweg, fast direkt unter diesen Parzellen, rechts am Kanal: Ein Boot an einem Holzsteg. Dem Steg fehlen die Füße, die ins Wasser ragen. Das Boot ist nirgendwo festgemacht (siehe R050).
+
+### Riverton, Parkpavillon (`riverton-pavillon`, Variante `riverton-pavillon-perfect-move`)
+
+- [ ] R128. Parkpavillon, Schachfiguren auf dem Brett in der Mitte: Sie sind sehr hässlich. Wunsch: vernünftige, ordentliche Schachfiguren zeichnen oder passende Assets im Internet besorgen. Der Autor hält das auch für eine mögliche Aufgabe für Gemini.
+- [ ] R129. Parkpavillon, links und rechts von der Eingangstür direkt neben den Pflanzen: zwei große Koffer (der Autor glaubt, es sollen Koffer sein). Es sind „Abziehbild“-Assets. Ein neues Asset wird gebraucht (siehe R055).
+- [ ] R130. Parkpavillon, Variante Perfect Move (`riverton-pavillon-perfect-move`), Idee: Das Schachbrett in der Mitte komplett mit Teppichen bedecken. Damit wird dargestellt, dass die Firma Perfect Move das nicht digitale Schach gar nicht mehr braucht; deshalb wird das riesige Schachbrett in der Mitte nicht gebraucht und mit Teppichen abgedeckt. Zusammenhang mit R128 (bei der Grundvariante sollen die Figuren schöner werden).
+
+### Lockport, Außen (Schleusendorf; der Autor sagt „Logport“ = `lockport-aussen`, Varianten `lockport-aussen-boot-an-land`, `lockport-aussen-steg-offen`)
+
+- [ ] R133. Lockport Außen, oben rechts: Über den Kanal führen zwei Fußgängerbrücken (vermutlich), bei beiden hängt ein „Gesperrt“-Schild darüber. Sowohl das Schild als auch die Brücken sind „Abziehbild“-Assets. Es werden vernünftige Assets im passenden Stil gebraucht (siehe R055).
+- [ ] R134. Lockport Außen, oben rechts, das erste Haus: ein „Abziehbild“-Haus (siehe R055).
+- [ ] R135. Lockport Außen, Gebäude oben in der Mitte: kein Abziehbild, passt aber vom Stil nicht. Dasselbe gilt für das zweite Gebäude von links oben, zwischen den beiden großen Gebäuden.
+- [ ] R136. Lockport Außen, Häuserreihe oberhalb des Kanals, von links nach rechts (Aufzählung des Autors; Zuordnung zu R134 und R135 und Abgleich mit dem Bild bitte durch den Hauptchat): 1. ganz links ein kleiner Schuppen am Kanal: Abziehbild, nicht in Ordnung. 2. das nächste Gebäude rechts daneben, über den gepflasterten Weg: in Ordnung. 3. das Gebäude rechts daneben: nicht in Ordnung. 4. wieder ein Gebäude: in Ordnung. 5. und 6. zwei Gebäude: nicht in Ordnung. 7. ein Gebäude: in Ordnung. 8. ganz rechts ein Gebäude: nicht in Ordnung. Die nicht in Ordnung befindlichen müssen ausgetauscht werden.
+- [ ] R137. Lockport Außen, Kanal: Auf dem Kanal liegt wieder ein „Abziehbild“, eine Fähre, vom Autor korrigiert „einen Tanker meine ich“. Es muss ein vernünftiges Asset werden (siehe R055, R120).
+- [ ] R138. Lockport Außen, rechts direkt unter dem Kanal: Ein Wellblechhaus steht zum Teil auf dem Rasen und zum Teil auf dem Gepflasterten. Es sollte nur auf einem von beiden stehen, wahrscheinlich eher auf dem gepflasterten Bereich.
+- [ ] R139. Lockport Außen, untere Hälfte des Bildes, an der gepflasterten Straße: mehrere „Abziehbild“-Gebäude. In der unteren Hälfte sind nur das Gebäude mit dem Schild „Schleuse“ und das Gebäude mit dem Schild „Ankertaue“ vom Asset her in Ordnung. Alle anderen Gebäude in der unteren Hälfte müssen ausgetauscht werden (siehe R055).
+- [ ] R140. Lockport Außen, Schild „Ankertaue“: Es überdeckt das Schild, das das Gebäude-Asset selbst hat, nur teilweise, und liegt ein bisschen zu tief. Es soll das eigentliche Schild des Gebäudes vollständig abdecken (siehe R059).
+- [ ] R141. Lockport Außen, Schild „Schleuse“: Es hängt vorne an einer Markise des Gebäudes. Das geht nicht, es muss an die Hauswand.
+- [ ] R142. Lockport Außen, ganze Karte: Die Übergänge zwischen dem gepflasterten Boden-Asset und dem Gras sind sehr scharf (siehe R041, R042). Der Autor hat das bei vielen Karten bemängelt und bittet, sich etwas zu überlegen.
+- [ ] R143. Lockport Außen, unten in der Mitte auf dem gepflasterten Bereich (Brunnen, daneben eine Bank): Rechts unterhalb des Brunnens steht ein Baum, der scheinbar einfach aus dem gepflasterten Boden wächst. Entweder die Pflasterung an der Stelle auflösen, damit der Baum auf Gras steht, oder den Baum auf das Gras daneben verlagern.
+
+### Lockport, Gasthaus zur Schleuse (der Autor sagt „logport.gasthaus“ = `lockport-gasthaus`)
+
+- [ ] R147. Gasthaus, Figuren und Stühle: An zwei Stellen steht auf einer Figur direkt ein Stuhl. Siehe R019 und R008.
+- [ ] R144. Gasthaus, oben rechts, neben dem Alkoholschrank: Ein Bild hängt ein bisschen zu tief an der Wand, es liegt scheinbar auf der Sockelleiste der Wand.
+- [ ] R145. Gasthaus, im Raum neben dem Bild (R144): Ein Kachelofen steht scheinbar mitten im Raum. Ein Kachelofen würde an der Wand stehen.
+- [ ] R146. Gasthaus, relativ mittig oben an der Wand: Wieder das Gebilde mit den Farben Rot, Blau, Grün, das dem Autor schon im Clubraum aufgefallen war (siehe R013). Er weiß nicht, ob es ein Aufkleber für die Wand sein soll oder etwas mit Tiefe. Soll es Tiefe haben, muss das Asset gegen etwas mit wirklicher Tiefe getauscht werden, denn es ist nur ein „Abziehbild“.
+- [ ] R148. Gasthaus, Kegelbahn unten, Bande: Die Bande hat keine wirkliche Tiefe, sie sieht aus, als wäre sie aufgemalt. Viel Tiefe braucht sie nicht, soll aber nicht aufgemalt wirken.
+- [ ] R149. Gasthaus, Ende der Kegelbahn: Rechts neben den Kegeln steht ein bräunliches, rechteckiges Asset, nur ein „Abziehbild“. Der Autor vermutet, es soll eine Art Wand sein, die die Kugel aufhält, wenn sie durch die Kegel kommt und sie umwirft. Ein vernünftiges Asset wird gebraucht.
+- [ ] R150. Gasthaus, Regal für die Kegel, fast ganz links: ein „Abziehbild“. Dafür wird ein vernünftiges Asset gebraucht (siehe R055).
+- [ ] R151. Gasthaus, Raumform gegenüber dem Gebäude-Asset (typisches Beispiel für R065): Der gestaltete Innenraum passt nicht ganz zum Gebäude-Asset, das außen benutzt wird. Das Gebäude-Asset würde eher einen T-förmigen Innenraum nahelegen: Man stelle sich ein „T“ vor (diktiert „TD“, vermutlich „T“) und drehe es um etwa 90 Grad nach links. Das ist nur eine grobe Beschreibung des Autors; die KI soll genau nachsehen, wie der Raum aussehen müsste.
+
 ### Maple Falls, Wohnzimmer (`maple-falls-wohnzimmer-ausgepackt`)
 
 - [ ] R001. Maple Falls, Wohnzimmer (Familie, am Anfang; Autor meint den ausgepackten Zustand später): Die Küche ist im unteren Bereich noch kahl. Etwas ergänzen, damit es belebter aussieht.
@@ -139,6 +248,7 @@ Der Raum der Stadtbibliothek an sich sieht nach Einschätzung des Autors gut aus
 - [ ] R008. Alle Karten (zuerst gesehen im Diner, Küche): Eine Person in der Küche steht mit dem Gesicht zur Wand. Bewegen sich Figuren im Spiel von selbst hin und her, ist das in Ordnung. Stehen sie still, müssen sie logisch platziert sein, an einer sinnvollen Stelle und mit sinnvoller Blickrichtung. Der Autor bittet, das bei allen Karten zu prüfen, bei denen sich Figuren nicht von selbst bewegen.
 - [ ] R020. Alle Karten, besonders Clubraum Maple Falls High: Figuren sollen sich bewegen, wenn es Sinn macht, und nicht wie Säulen herumstehen. Im Clubraum sollen sie eigentlich auf den Stühlen sitzen, weil sie Schach spielen. Der Autor weiß nicht, ob man das grafisch hinbekommt; der Hauptchat soll entscheiden, auch in Bezug auf die Geschichte. Zusammenhang mit R008 und R019.
 - [ ] R043. Landstraße, Tiere rechts im Bild: Das Größenverhältnis stimmt nicht. Der Hase ist fast so groß wie das Reh (der Autor glaubt, es ist ein Reh). Das ergibt wenig Sinn.
+- [ ] R126. Kanalweg, fast ganz unten auf der rechten Seite des Kanals: Enten, zwei davon im Wasser, eine draußen. Bei den Enten im Wasser sind die Füße zu sehen; sie müssten aber schwimmen, dann sieht man die Füße nicht. Der Autor weiß nicht, ob es nur ein Enten-Asset gibt. Es stört ihn prinzipiell nicht (Schönheitsfehler); an Land sieht man die Füße zu Recht, im Wasser eigentlich nicht. Wunsch: ein Schwimm-Asset für Enten im Wasser, falls vorhanden.
 
 ## Geschichte und Texte
 
@@ -153,5 +263,6 @@ Der Raum der Stadtbibliothek an sich sieht nach Einschätzung des Autors gut aus
 ## Ideen und Wünsche
 
 ## Unklar
+
 
 

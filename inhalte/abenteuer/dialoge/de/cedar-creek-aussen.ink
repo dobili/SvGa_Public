@@ -134,7 +134,7 @@ Die Sonne geht hinter den Zedern unter. Am Steg ist es still, nur der Bach redet
 - Eine Partie ohne Makel. Eine, über die man in hundert Jahren noch spricht. #sprecher:ambrose
 // Runde 11: Die Fernpartie war die Partie ohne Makel, langsam und ehrlich (Roman, Kapitel 16).
 Mein Leben lang glaubte ich, man müsse wählen: richtig oder schön. Hale spielte richtig, ich schön. #sprecher:ambrose
-Auf diesem Brett hatte ich sie, die eine. Gegen ihn, per Brief. Jeder Zug drei Wochen unterwegs. #sprecher:ambrose
+Auf diesem Brett hatte ich sie, die eine. Gegen ihn, per Brief. Jeder Zug tagelang unterwegs, manchmal Wochen. #sprecher:ambrose
 Ich habe nie so langsam gespielt. So ehrlich. #sprecher:ambrose
 Ich hatte sie fast. Dann sagte jemand „Später“. #sprecher:ambrose #stimmung:traurig #pause
 * [„Dann spielen wir sie eben jetzt.“]
@@ -181,10 +181,11 @@ Und du hast heute eine Frau geschlagen, gegen die ich nicht sicher wäre. #sprec
 ->->
 
 // Runde 11 (Roman, Kapitel 14): Ambrose in der Sternennacht, nur mit dem Brett. Bereitet Port
-// Delacroix vor (Vater, der Klaviere stimmt), ohne es zu nennen. Tunnel aus „sterne“.
+// Delacroix vor (Geburtsort, Vater Klavierbauer; akt1_befunde.md, Abschnitt 7), ohne es zu nennen.
+// Tunnel aus „sterne“.
 === sterne_ambrose ===
 Sie stehen noch wie früher. Alles andere hat sich verändert: Lichter ohne Flamme, Wagen ohne Pferde. #sprecher:ambrose
-In New Orleans saß ich nachts am Kai. Mein Vater stimmte Klaviere in reichen Häusern und kam spät. #sprecher:ambrose
+Wo ich geboren bin, saß ich nachts am Kai. Mein Vater baute Klaviere und lieferte sie flussauf aus. Er kam spät. #sprecher:ambrose
 Ich sah hinauf und dachte, ich würde einmal so bekannt wie einer von denen. Einer mit Namen. #sprecher:ambrose
 Eine Fußnote. Sechs Wörter. #sprecher:ambrose #stimmung:traurig
 Antworten kannst du ihm nicht, nicht vor den anderen. Du lässt die Hand auf dem Brett. #sprecher:erzaehler

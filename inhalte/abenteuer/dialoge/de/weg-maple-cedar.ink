@@ -241,10 +241,12 @@ Odette packt eine Lampe in Zeitungspapier. „Am Leuchtturm bei Capital sehen wi
 }
 ~ seite00Gefunden = true
 Im Graben neben dem Hof steckt ein Blatt Papier, feucht vom Tau. #sprecher:erzaehler
-Eine lose Seite voller Schachdiagramme. #sprecher:erzaehler
+// Runde 11: Kein Buchverweis (Entscheidung vom 10.11.2026, Befund in 22_Dialogpruefung.md); ein
+// loses Blatt mit einer Stellung. Die Sammlung „buchseiten“ bleibt als Zähler bestehen.
+Ein loses Blatt mit einer gezeichneten Stellung. Jemand hat mit Bleistift „Weiß zieht“ darunter geschrieben. #sprecher:erzaehler
 ~ gibFund("seite00")
 ~ buchseiten = buchseiten + 1
-Eine Seite aus einem Buch, das es zu meiner Zeit noch nicht gab. Heb sie auf. #sprecher:ambrose
+Eine Stellung, die der Wind gebracht hat. Heb sie auf, man weiß nie. #sprecher:ambrose
 -> END
 
 === finch_bauer_a ===

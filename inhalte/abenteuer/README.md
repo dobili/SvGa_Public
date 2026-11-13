@@ -150,6 +150,11 @@ weniger Opfer). Jeder Eintrag wirkt einmal je Partie, auch nach dem Neuladen.
   Variable zählt als 0, leerer Text oder falsch. Dieselbe Sprache steht in
   `app/src/abenteuer/regeln/bedingung.ts`, `pipeline/abenteuer/bedingung.py` und
   `pipeline/abenteuer/bedingung.cjs` (Gesamtsimulation).
+- **Figuren mit Bedingung:** Eine Figur in `orte.json` kann `wenn` tragen; sie steht dann nur auf
+  der Karte, wenn die Bedingung beim Betreten gilt (Stufen A bis D der kleinen Geschichten). Soll
+  dieselbe Person auf zwei Karten stehen, bekommt sie je Karte ein eigenes Objekt und eine eigene
+  Kennung mit demselben Dialog, etwa `wegMapleCedar.tessa` (Landstraße, `nadelCedarCreek == 0`) und
+  `wegMapleCedar.tessaFluss` (Flussweg, `nadelCedarCreek > 0 und nadelRiverton == 0`).
 - **Zustände:** `"zustaende": { "<bedingung>": "karten/<basis>-<zustand>.json", … }`. Der letzte
   Eintrag, dessen Bedingung gilt, wird geladen; ohne passenden die Grundkarte. Je Zustand eine
   Szene `szenen/<basis>-<zustand>.json` mit `zustand_der_karte` = derselben Bedingung und einer

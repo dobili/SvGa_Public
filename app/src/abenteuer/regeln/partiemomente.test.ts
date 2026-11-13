@@ -83,3 +83,35 @@ describe("faelligerMoment", () => {
     expect(faelligerMoment(m, verlauf([...schach, "Kxf2", "Qf6", "Nf3", "Qxf3+"]))).toBeNull();
   });
 });
+
+describe("verbundene Bedingungen (T11)", () => {
+  const tag = (wenn: Partiemoment["wenn"]): Partiemoment => ({ ...moment(wenn), dialog: "a.b" });
+
+  it("verlangt alle Bedingungen zugleich", () => {
+    const m = [tag({ merkmal: "schachGegen", abZug: 3 })];
+    // 2...Dh4#: Schach gegen den Helden, aber erst nach zwei Zügen des Helden.
+    expect(faelligerMoment(m, verlauf(NARR))).toBeNull();
+    expect(faelligerMoment([tag({ merkmal: "schachGegen", abZug: 2 })], verlauf(NARR))).toEqual({
+      index: 0,
+      halbzug: 4,
+    });
+  });
+
+  it("prüft die Uhr nur im letzten Halbzug", () => {
+    const m = [tag({ uhrUnter: 240 })];
+    const v = verlauf(NARR.slice(0, 3));
+    expect(faelligerMoment(m, v)).toBeNull();
+    expect(faelligerMoment(m, { ...v, uhrHeldMs: 250_000 })).toBeNull();
+    expect(faelligerMoment(m, { ...v, uhrHeldMs: 239_000 })).toEqual({ index: 0, halbzug: 3 });
+  });
+
+  it("findet den Köder nach dem Zug des Gegners", () => {
+    // Weiß stellt die Grundreihe her; nach ...Dd8-e8 liegt der Köder auf d7.
+    const fens = [
+      "3q2k1/3p1ppp/8/8/8/8/5PPP/3R2K1 b - - 0 1",
+      "4q1k1/3p1ppp/8/8/8/8/5PPP/3R2K1 w - - 1 2",
+    ];
+    const v = { fens, vomHelden: [false], held: "white" as const };
+    expect(faelligerMoment([tag({ merkmal: "koeder" })], v)).toEqual({ index: 0, halbzug: 1 });
+  });
+});

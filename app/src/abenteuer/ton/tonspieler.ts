@@ -1,6 +1,7 @@
 /**
  * Spielt Musik und Geräusche des Abenteuers mit Web Audio: je eine Spur für Musik und Dauergeräusch
- * mit Überblenden, dazu einmalige Klänge (Atmosphäre T1, T2).
+ * mit Überblenden, dazu einmalige Klänge (Atmosphäre T1, T2) und eine Spur für die Klangquelle in
+ * der Nähe des Helden (T28), deren Lautstärke dem Abstand folgt; die Musik der Karte weicht ihr.
  *
  * Rolle im Gesamtbild: dünne Schicht unter ton/tonregie.ts; was klingen soll, entscheidet
  * ton/tonplan.ts. Die Dateien kommen über `lade` (im Spiel aus dem Paket, im Test erfunden).
@@ -27,14 +28,22 @@ interface Schleife {
   readonly regler: GainNode;
 }
 
-type Spur = "musik" | "geraeusch";
+type Spur = "musik" | "geraeusch" | "quelle";
+/** Wie schnell die Nähe einer Klangquelle der Bewegung folgt (Zeitkonstante, Sekunden). */
+const NAEHE_S = 0.3;
 
 export class Tonspieler {
   private readonly puffer = new Map<string, Promise<AudioBuffer | null>>();
-  private readonly laufend: Record<Spur, Schleife | null> = { musik: null, geraeusch: null };
+  private readonly laufend: Record<Spur, Schleife | null> = {
+    musik: null,
+    geraeusch: null,
+    quelle: null,
+  };
   /** Zähler je Spur: Ein späterer Wunsch macht einen früheren, noch ladenden ungültig. */
-  private readonly wunsch: Record<Spur, number> = { musik: 0, geraeusch: 0 };
+  private readonly wunsch: Record<Spur, number> = { musik: 0, geraeusch: 0, quelle: 0 };
   private readonly gesamt: Record<"musik" | "geraeusche", GainNode>;
+  /** Anteil der Kartenmusik und der Klangquelle (T28), zusammen 1. */
+  private readonly anteil: Record<"karte" | "quelle", GainNode>;
 
   constructor(
     private readonly ctx: AudioContext,
@@ -43,6 +52,17 @@ export class Tonspieler {
     this.gesamt = { musik: ctx.createGain(), geraeusche: ctx.createGain() };
     this.gesamt.musik.connect(ctx.destination);
     this.gesamt.geraeusche.connect(ctx.destination);
+    this.anteil = { karte: ctx.createGain(), quelle: ctx.createGain() };
+    this.anteil.karte.connect(this.gesamt.musik);
+    this.anteil.quelle.connect(this.gesamt.musik);
+    this.anteil.quelle.gain.value = 0;
+  }
+
+  /** Nähe der Klangquelle 0 bis 1 (T28): die Quelle so laut, die Kartenmusik um so viel leiser. */
+  setzeNaehe(anteil: number): void {
+    const jetzt = this.ctx.currentTime;
+    this.anteil.quelle.gain.setTargetAtTime(anteil, jetzt, NAEHE_S);
+    this.anteil.karte.gain.setTargetAtTime(1 - anteil, jetzt, NAEHE_S);
   }
 
   /** Pegel 0 bis 1 für Musik und Geräusche (Einstellungen, ton/tonplan.ts `pegel`). */
@@ -61,12 +81,12 @@ export class Tonspieler {
     const nummer = ++this.wunsch[spur];
     this.blendeAus(spur, angabe === null ? AUSBLENDEN_S : UEBERBLENDEN_S);
     if (angabe === null) return;
-    const puffer = await this.holePuffer(spur === "musik" ? "musik" : "klang", angabe);
+    const puffer = await this.holePuffer(spur === "geraeusch" ? "klang" : "musik", angabe);
     if (!puffer || nummer !== this.wunsch[spur]) return;
     const regler = this.ctx.createGain();
     regler.gain.setValueAtTime(STILLE, this.ctx.currentTime);
     regler.gain.exponentialRampToValueAtTime(1, this.ctx.currentTime + UEBERBLENDEN_S);
-    regler.connect(spur === "musik" ? this.gesamt.musik : this.gesamt.geraeusche);
+    regler.connect(this.ziel(spur));
     const quelle = this.ctx.createBufferSource();
     quelle.buffer = puffer;
     quelle.loop = true;
@@ -87,10 +107,17 @@ export class Tonspieler {
 
   /** Blendet alles aus (Abenteuer verlassen). */
   stoppeAlles(): void {
-    this.wunsch.musik++;
-    this.wunsch.geraeusch++;
-    this.blendeAus("musik", AUSBLENDEN_S);
-    this.blendeAus("geraeusch", AUSBLENDEN_S);
+    for (const spur of ["musik", "geraeusch", "quelle"] as const) {
+      this.wunsch[spur]++;
+      this.blendeAus(spur, AUSBLENDEN_S);
+    }
+  }
+
+  /** Wohin eine Spur klingt: Musik und Quelle über ihren Anteil, Geräusche direkt. */
+  private ziel(spur: Spur): GainNode {
+    if (spur === "musik") return this.anteil.karte;
+    if (spur === "quelle") return this.anteil.quelle;
+    return this.gesamt.geraeusche;
   }
 
   private blendeAus(spur: Spur, dauer: number): void {

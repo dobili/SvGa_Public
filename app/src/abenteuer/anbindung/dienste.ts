@@ -61,6 +61,18 @@ function standJetzt(): Abenteuerstand | null {
   return speicherzustand().daten.abenteuer;
 }
 
+/**
+ * Schreibt die Dialogvariablen in den Spielstand (Dialog mitten in einer Partie, T11); ohne
+ * Spielstand nichts. Ausgabe: ob das Speichern gelang.
+ */
+export function schreibeDialogvariablen(
+  variablen: Abenteuerstand["dialogvariablen"],
+): Promise<boolean> {
+  return aendere((d) =>
+    d.abenteuer ? { ...d, abenteuer: { ...d.abenteuer, dialogvariablen: variablen } } : d,
+  );
+}
+
 /** Der Spielstand reaktiv für die Oberfläche der Hülle. */
 export function useAbenteuerstand(): Abenteuerstand | null {
   return useSpeicher((z) => z.daten.abenteuer);

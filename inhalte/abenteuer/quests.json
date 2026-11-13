@@ -1769,6 +1769,40 @@
       ]
     },
     {
+      "kennung": "desertSprings.dotsPartie",
+      "titel": "quest.dotsPartie.titel",
+      "typ": "begegnung",
+      "ort": "desertSprings",
+      "haupt": false,
+      "start": {
+        "art": "dialog",
+        "knoten": "desert-springs-garage.dot_fernpartie"
+      },
+      "schritte": [
+        {
+          "text": "quest.dotsPartie.schritt1",
+          "ereignis": {
+            "art": "partie",
+            "begegnung": "desertSprings.dotFernpartie",
+            "ausgang": ["sieg", "remis", "niederlage"]
+          },
+          "wirkungen": [
+            {
+              "art": "muenzen",
+              "anzahl": 15
+            }
+          ]
+        },
+        {
+          "text": "quest.dotsPartie.schritt2",
+          "ereignis": {
+            "art": "dialog",
+            "knoten": "desert-springs-garage.dot_nach_fernpartie"
+          }
+        }
+      ]
+    },
+    {
       "kennung": "desertSprings.erinnerung1858",
       "titel": "quest.erinnerung1858.titel",
       "typ": "begegnung",

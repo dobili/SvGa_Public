@@ -16,6 +16,7 @@
 
 EXTERNAL beginnePartie(begegnung)
 EXTERNAL beginneAufgaben(runde)
+EXTERNAL gibFund(kennung)
 
 VAR held = "Du"
 VAR miraSteinGesehen = false
@@ -38,6 +39,10 @@ VAR miraGarageGesehen = false
 VAR atmeGesagt = false
 VAR atmeMomentGesehen = false
 VAR margaretErzaehlt = false
+// Nebenaufgabe „Dots Partie“ (Tabelle „Neu gegenüber“, Akt 3 Teil 3): {held} spielt Margarets
+// Seite ab dem 31. Zug (Begegnung desertSprings.dotFernpartie); den Ausgang setzt die Hülle.
+VAR ausgangDesertSpringsDotFernpartie = ""
+VAR dotFernpartieBesprochen = false
 
 // ---------------------------------------------------------------- Vor der Versöhnung
 
@@ -257,6 +262,8 @@ Du denkst an einen Wohnwagen unter einer Brücke. „Ich hab seit März keinen n
 - not reiheTomasBestanden: -> dot_warten
 - not reiheDotBestanden: -> dot_reihe
 - not dotOkoroErzaehlt: -> dot_okoro
+- ausgangDesertSpringsDotFernpartie != "" and ausgangDesertSpringsDotFernpartie != "abgebrochen" and not dotFernpartieBesprochen: -> dot_nach_fernpartie
+- margaretErzaehlt and (ausgangDesertSpringsDotFernpartie == "" or ausgangDesertSpringsDotFernpartie == "abgebrochen"): -> dot_fernpartie
 - else: -> dot_alltag
 }
 
@@ -283,6 +290,7 @@ Ich stand besser. Ich sag das nicht gern, wenn jemand nicht mehr widersprechen k
 * [„Ich wohne in ihrem Haus.“]
 - Sie nimmt die Lesebrille ab und setzt sie wieder auf. Dann legt sie einen Stapel Postkarten hin. Oben ein Wasserfall. #sprecher:erzaehler #bild:postkarten_wasserfall
 Dann weißt du vielleicht, was sie gezogen hätte. #sprecher:dot #bild:aus
+~ gibFund("postkartenMargaret")
 An meinem Tisch. Vierzig Jahre. Mit dieser Frau. #sprecher:ambrose #stimmung:riss #musik:desertSprings
 ->->
 
@@ -303,6 +311,34 @@ Du magst alte Sachen, oder? Dein Brett sieht aus, als hätte es Geschichten. #sp
 Mr. Okoro im Antiquariat hat den Kram von einem alten Brückenbauer im Keller. #sprecher:dot
 Kisten voller Briefe. Frag ihn. #sprecher:dot
 Ein Brückenbauer. Hier, in der Wüste. #sprecher:ambrose #pause
+-> END
+
+// Nebenaufgabe: Margarets Partie zu Ende spielen (Dot steht besser, Turm auf der siebten Reihe).
+=== dot_fernpartie ===
+Dot legt ein kleines Steckbrett auf die Theke. Die Stellung nach dem einunddreißigsten Zug, seit Jahren unverändert. #sprecher:erzaehler
+Margaret hatte Schwarz. Mein Turm steht auf ihrer siebten Reihe. Spielst du für sie weiter, Liebes? #sprecher:dot
+* [„Ich spiele für Margaret.“]
+    Sie hat nie schnell gezogen. Lass dir Zeit. #sprecher:ambrose
+    ~ beginnePartie("desertSprings.dotFernpartie")
+    -> END
+* [„Nicht jetzt.“]
+    Vierzig Jahre hat sie gewartet. Die Stellung auch. #sprecher:dot
+    -> END
+
+=== dot_nach_fernpartie ===
+~ dotFernpartieBesprochen = true
+{ausgangDesertSpringsDotFernpartie:
+- "sieg":
+    Dot nimmt die Lesebrille ab. Du hast mich geschlagen. Mit ihren Figuren. #sprecher:dot #stimmung:froh
+    Sie hätte gelacht, glaube ich. Sie hat nie gelacht, wenn sie verloren hat. #sprecher:dot
+- "remis":
+    Remis. Das ist gerecht. Wir hätten uns nie geeinigt, wer besser war. #sprecher:dot
+- else:
+    Ich hab gewonnen. Ich sag das nicht gern. Sie hätte bis zum Schluss gekämpft, so wie du. #sprecher:dot
+}
+Sie zieht einen Faden von der Nadel im Nordosten zu einer leeren Postkarte und knotet ihn fest. #sprecher:erzaehler
+Jetzt ist die Partie fertig. #sprecher:dot
+An meinem Tisch hat sie das Brett abgestaubt. Jeden Tag. Jetzt weiß ich, wofür. #sprecher:ambrose #stimmung:still
 -> END
 
 === dot_alltag ===

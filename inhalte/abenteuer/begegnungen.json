@@ -516,6 +516,20 @@
       ]
     },
     {
+      "kennung": "desertSprings.dotFernpartie",
+      "gegner": "desertSprings.dot",
+      "farbe": "black",
+      "format": {
+        "art": "partie"
+      },
+      "startstellung": {
+        "art": "fen",
+        "fen": "3r2k1/ppR2ppp/2n1p3/3p4/3P4/P3PN2/1P3PPP/6K1 b - - 0 31"
+      },
+      "kartenErlaubt": false,
+      "zeit": "wahl"
+    },
+    {
       "kennung": "desertSprings.erinnerung1858",
       "gegner": "desertSprings.hale1858",
       "farbe": "white",

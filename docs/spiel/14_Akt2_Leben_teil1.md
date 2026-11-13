@@ -33,7 +33,7 @@ Es gelten die Grundsätze aus `12_Akt1_Leben.md`, Abschnitt 0, unverändert:
 4. **Schach im Alltag nach dem Kapitel des Ortes:** Riverton und Weg 2 Kapitel 7 (Abschnitt 7.2, Motiv 1
    Gabel) und Kapitel 4 (Doppelangriff); Weg 3 Kapitel 4, **Fesselung** (wie seine Tafel, Bibel 10.3);
    Lockport Kapitel 4 und 7 (Gabel, Fesselung). Bewusste Ausnahme wie der Fährstein in Akt 1: Noors Wand
-   auf Weg 3 ist ein **Spieß**, Vorgeschmack auf Priya in Ironwood (Prüfbericht Akt 2, Befund 25). Buchbezug im Dialog nur als Kapitel und Abschnitt, nie mit Seiten.
+   auf Weg 3 ist ein **Spieß**, Vorgeschmack auf Priya in Ironwood (Prüfbericht Akt 2, Befund 25). Keine Verweise auf das Buch und keine Buchtexte in Spieltexten (Entscheidung vom 10.11.2026, `docs/spiel/ENTSCHEIDUNGEN.md`); Kapitel und Abschnitt sind Angaben für Schreiber und Daten.
 5. **Lieber wenige gute Häuser als viele leere:** neu betretbar ist nur das Gasthaus in Lockport. Alles
    andere bleibt Kulisse mit Figuren davor.
 6. **Keine Uhrzeit** (13, Grundsatz 7): Tagesabläufe sind `wann`-Varianten je Szene; Regen und Nebel sind
@@ -258,10 +258,10 @@ Anstreicher an der Eisenbrücke, Abzweig nach Lockport mit Wegweiser, Rastanlege
 
 ### 3.1 Neue Nebenfiguren
 
-| Figur       | Alter, Pronomen | Hintergrund (ein Satz)                                                                                                   | Platz (Karte)                      | Tagesablauf (`wann`)                                                                    |
-| ----------- | --------------- | ------------------------------------------------------------------------------------------------------------------------ | ---------------------------------- | --------------------------------------------------------------------------------------- |
-| Noor Haddad | 19, sie         | Kunststudentin aus Riverton, sprüht ein riesiges Schachbrett auf die Mauer der alten Spinnerei, mit Erlaubnis, sagt sie. | kanalweg: vor der Fabrikmauer (K2) | Morgen grundiert sie, Tag sprüht sie, Abend fotografiert sie die Wand im letzten Licht. |
-| Corwin Lund | 58, er          | Anstreicher der Kanalverwaltung, streicht seit vier Jahren die Eisenbrücke und ist immer gerade am anderen Ende fertig.  | bruecke: Brückenkopf (BR4)         | Morgen rührt er Farbe, Tag streicht er, Abend sitzt er auf der Bank in BR6.             |
+| Figur       | Alter, Pronomen | Hintergrund (ein Satz)                                                                                                                                                                                                                 | Platz (Karte)                      | Tagesablauf (`wann`)                                                                    |
+| ----------- | --------------- | -------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------- | ---------------------------------- | --------------------------------------------------------------------------------------- |
+| Noor Haddad | 19, sie         | Kunststudentin aus Riverton, sprüht ein riesiges Wandbild mit Schachfiguren auf die Mauer der alten Spinnerei, in der ihr Großvater gearbeitet hat: die Werkbank, auf der die Arbeiter in der Pause spielten; mit Erlaubnis, sagt sie. | kanalweg: vor der Fabrikmauer (K2) | Morgen grundiert sie, Tag sprüht sie, Abend fotografiert sie die Wand im letzten Licht. |
+| Corwin Lund | 58, er          | Anstreicher der Kanalverwaltung, streicht seit vier Jahren die Eisenbrücke und ist immer gerade am anderen Ende fertig.                                                                                                                | bruecke: Brückenkopf (BR4)         | Morgen rührt er Farbe, Tag streicht er, Abend sitzt er auf der Bank in BR6.             |
 
 Sprechweise und Beispielsätze:
 
@@ -283,8 +283,9 @@ Sprechweise und Beispielsätze:
   Figuren hintereinander stehen und die vordere weg muss“. (2) Aufgabenrunde `wegRivertonIronwood.wand`
   mit `anzahl` 2, Thema `spiess` (R30a; Kapitel 4, Spieß; bewusste Ausnahme vom Grundsatz „Weg = Thema
   des letzten Clubs“, Vorgeschmack auf Priya in Ironwood). (3) Noor sprüht die Lösung an die Wand.
-- **Belohnung:** 10 Münzen, Fund „Foto von Noors Wand“ (`fotoWand`, Album). Rückkehr: In Akt 3 ist die
-  Wand fertig (Objektebene, 13 §7.3), Noor hat ein neues Motiv.
+- **Belohnung:** 10 Münzen, Fund „Foto von Noors Wand“ (`fotoWand`, Album). Rückkehr: Das Wandbild
+  wächst in vier Stufen über die Akte (Umrisse, Farbe, fertig mit Signatur, Künstlerin fort;
+  Objektebene); ein bis zwei Sätze je Stufe.
 - **Zeit:** 3 bis 5 Minuten.
 - **Voraussetzung:** keine.
 
@@ -428,18 +429,18 @@ Falls (13 §3, neue Technik, einmal für beide).
 
 ## 5. Brücken zur Hauptgeschichte (ohne Änderung der Hauptszenen)
 
-| Brücke                                            | Wo                  | Wirkung in der Geschichte                                                                                       |
-| ------------------------------------------------- | ------------------- | --------------------------------------------------------------------------------------------------------------- |
-| Kyle darf im Laden nicht spielen                  | N-RT3               | Der Konzern mag das echte Brett nicht; leise Vorbereitung auf Novas Erschöpfung (Szene 29), ohne ihr Geheimnis. |
-| „Gabel-Walzer“ für Slick                          | Dima (N-RT1)        | Slick ist im Viertel beliebt; stützt Szene 36 (Zuschauer unter Schirmen) und Szene 37.                          |
-| Margie: „Ein Griff, zwei Äpfel. So spielt Slick.“ | Markt               | Steckbrief-Gefühl vor Szene 34 (Slick sieht Gabeln sofort), ohne Steckbriefzeile.                               |
-| Pip springt wie ein Springer                      | N-RT2               | Parkschach ist Teil des Alltags (09, 4a); macht den Verlust des Pavillons fühlbar.                              |
-| Regen hört nach dem Clubkampf auf                 | Desmond Grant       | Szene 36/37 bekommt ein Bild in der Welt; erklärt die Sperre des Kanalwegs.                                     |
-| Quinn: „Pops macht den besten Kaffee“             | Bahndamm            | führt zu Szene 30a (Quinn trinkt Kaffee am Zeitungsstand).                                                      |
-| Ruben ohne Fracht, Brief von Big Joe              | L3                  | Das Werk bestellt weniger: leise Vorbereitung auf Szene 49 (Kantine vermietet), ohne den Verkauf zu nennen.     |
-| Corwin: „Die Brücke ist älter als das Werk“       | Eisenbrücke         | Gefühl von Geschichte vor dem Nietenkopf (Szene 40); keine Initialen, kein Name.                                |
-| Finns Dose mit Zettel                             | Kanalweg → Lockport | lockt zum Nebenort; kein Bezug zu Briefen der Hauptgeschichte (Hales Brief bleibt in Szene 41 und Akt 3).       |
-| Gummistiefel                                      | L2                  | Schlüssel für Akt 3 (Bayou, Watt; 13 Grundsatz 4).                                                              |
+| Brücke                                            | Wo                  | Wirkung in der Geschichte                                                                                                         |
+| ------------------------------------------------- | ------------------- | --------------------------------------------------------------------------------------------------------------------------------- |
+| Kyle darf im Laden nicht spielen                  | N-RT3               | Der Konzern mag das echte Brett nicht; leise Vorbereitung auf Novas Erschöpfung (Szene 29), ohne ihr Geheimnis.                   |
+| „Gabel-Walzer“ für Slick                          | Dima (N-RT1)        | Slick ist im Viertel beliebt; stützt Szene 36 (Zuschauer unter Schirmen) und Szene 37.                                            |
+| Margie: „Ein Griff, zwei Äpfel. So spielt Slick.“ | Markt               | Steckbrief-Gefühl vor Szene 34 (Slick sieht Gabeln sofort), ohne Steckbriefzeile.                                                 |
+| Pip springt wie ein Springer                      | N-RT2               | Parkschach ist Teil des Alltags (09, 4a); macht den Verlust des Pavillons fühlbar.                                                |
+| Regen hört nach dem Clubkampf auf                 | Desmond Grant       | Szene 36/37 bekommt ein Bild in der Welt; erklärt die Sperre des Kanalwegs.                                                       |
+| Quinn: „Pops macht den besten Kaffee“             | Bahndamm            | führt zu Szene 30a (Quinn trinkt Kaffee am Zeitungsstand).                                                                        |
+| Ruben ohne Fracht, Brief von Big Joe              | L3                  | Das Werk bestellt weniger: leise Vorbereitung auf Szene 49 (Kantine vermietet), ohne den Verkauf zu nennen.                       |
+| Corwin: „Die Brücke ist älter als das Werk“       | Eisenbrücke         | Gefühl von Geschichte vor dem Nietenkopf (Szene 40); keine Initialen, kein Name.                                                  |
+| Finns Dose mit Zettel                             | Kanalweg → Lockport | lockt zum Nebenort; kein Bezug zu Briefen der Hauptgeschichte (Hales leerer Umschlag bleibt in Szene 41, sein Brief in Szene 76). |
+| Gummistiefel                                      | L2                  | Schlüssel für Akt 3 (Bayou, Watt; 13 Grundsatz 4).                                                                                |
 
 ## 6. Wege, Sperren und Rückwege
 

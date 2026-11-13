@@ -66,8 +66,8 @@ Je Karte gemischt, keine Art mehr als dreimal:
    > Frau am Waldrand, die wilde Pferde beobachtet: „Ich verstehe nicht, warum der Springer
    > springt. Pferde rennen doch geradeaus. Und über andere Pferde springen sie nie.“ Ambrose:
    > „Weil ein Ritter nicht durch die Tür geht, sondern über die Mauer.“
-5. **Rat aus dem Buch:** ein Satz Schachweisheit mit Bezug auf ein Kapitel (W4d), ohne Buchtext
-   über ein kurzes Regelzitat hinaus.
+5. **Rat:** ein Satz Schachweisheit in den Worten der Figur, ohne Verweis auf das Buch und ohne
+   Buchtext (Entscheidung vom 10.11.2026, `docs/spiel/ENTSCHEIDUNGEN.md`).
    > Lkw-Fahrer: „Mein Vater sagte immer: Erst schauen, was hängt, dann ziehen. Gilt auch beim
    > Rangieren.“
 6. **Kleine Geschichte in zwei Teilen:** Beim ersten Besuch sagt jemand etwas, bei einem späteren
@@ -170,7 +170,7 @@ stehen.
 13. Die heutigen Standardfiguren heißen Staunton-Figuren, nach dem englischen Meister Howard
     Staunton. Sie kamen 1849 auf den Markt.
 14. Englische Bücher schrieben früher „P-K4“ statt „e4“ (beschreibende Notation). Heute schreibt
-    man überall wie im Buch.
+    man überall „e4“ (algebraische Notation).
 15. Der Schachautomat „Türke“ von Wolfgang von Kempelen (1770) spielte gegen Napoleon und Benjamin
     Franklin. In der Kiste saß ein Mensch.
 

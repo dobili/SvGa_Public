@@ -1832,8 +1832,7 @@ Ort `portDelacroix.turnhalle` · Miss Odile, Remy, Lou, Kinder der Stadt. Ereign
 drei Duelle, Datenauftrag), jedes Kind spendet einen Dollar in die Kasse für das Musikhaus. Remy
 spielt das dritte Brett und entschuldigt sich danach: „Ich hab dich beobachtet. Du redest mit dem
 Brett, aber du spielst allein. Tut mir leid.“ Belohnung: 30 Münzen (gehen in die Kasse), Wiederaufbau
-Schritt 2, und von Miss Odile die Karte **Schutzengel** (K4): „Damit du nicht wieder etwas
-verlierst, was dir wichtig ist.“ Etwa 10 Minuten.
+Schritt 2, und von Miss Odile die Karte **Schutzengel** (K4): „Damit du nicht wieder etwas verlierst, was dir wichtig ist.“ Wirkung: Ambrose hält einen Zug, der Material verliert, mit einer Zeile auf (Entscheidung vom 13.11.2026, `docs/spiel/ENTSCHEIDUNGEN.md`). Etwa 10 Minuten.
 
 **70. Das Schild** · N hilfe `portDelacroix.wiederaufbau` (Besuch 3 von 3)
 Ort `portDelacroix.musikhaus` · Miss Odile, Remy, Lou, Henri, Mama. Ereignis: Dialog, Ort. Beim
@@ -1973,7 +1972,7 @@ Straßengegner.
 3. **„Die fehlende Seite“ (neu, geht in Akt 4 auf):** Das Foto der Notizbuchseite aus der Vitrine
    der Hales (Szene 57) zeigt Ambroses Züge der Fernpartie; Hales Antwort stand auf der
    herausgerissenen Seite. Plan für Akt 4: Victor hat die Seite seit Jahren in seinem Schachbuch
-   versteckt, weil sein Vater sie „wertlos“ fand; er gibt sie {held} nach seiner Krise (Summit City).
+   versteckt (sie liegt im Buch des Großvaters, der sie „wertlos“ nannte und doch aufhob; der Vater weiß nichts davon); er gibt sie {held} nach seiner Krise (Summit City).
    Mit Hales Brief (Fragment 7), der Seite und allen Fragmenten wird in Ghost Town die Fernpartie
    vollständig, und Ambrose spielt sie am Ende mit {held} zu Ende.
 
@@ -2055,7 +2054,7 @@ Alle Namen sind Arbeitsnamen; „ZERO“ wird vor der Veröffentlichung umbenann
 4. In Ghost Town, an Ambroses Grab, spielen {held} und Victor die Fernpartie von 1866 zu Ende:
    {held} mit Ambroses Zügen, Victor mit denen seines Vorfahren.
 5. Bei der Landesmeisterschaft legen Dr. Lin und Nova die Beweise vor; im Halbfinale spielt ein
-   Junior des Konzerns mit Ohrempfänger, bis das Signal abgeschaltet wird, und {held} und Ambrose
+   Junior des Konzerns mit einem Gerät im Schuh, bis das Signal abgeschaltet wird, und {held} und Ambrose
    spielen ein einziges Mal gemeinsam.
 6. Das Finale gegen Victor ist ein faires Duell zweier Freunde, ohne Karten, ohne Geist.
 7. Danach verabschiedet sich Ambrose: Er hat seine Partie zu Ende gespielt und gesehen, dass Schach
@@ -2151,7 +2150,7 @@ Vier Vorrundengegner mit klarem Stil (Konzeptsammlung, Top-Vier-Pendant), Stärk
 | 2     | Marcus Oyelaran (16, er) | Taktiker                           | sieht jede Gabel, übersieht stille Züge                           |
 | 3     | Nova (16, sie)           | Positionsspielerin, **ohne Gerät** | nach ihrer Aussage; die erste ehrliche Turnierpartie ihres Lebens |
 | 4     | Tobias Wren (18, er)     | Zeitdruck-Spezialist               | einzige Partie mit fester Uhr 5 + 3 (R16); Kühler Kopf erlaubt    |
-| HF    | Kade Sterling (17, er)   | Konzern-Junior mit Ohrempfänger    | bis das Signal abgeschaltet wird (Szene 104)                      |
+| HF    | Kade Sterling (17, er)   | Konzern-Junior mit Gerät im Schuh  | bis das Signal abgeschaltet wird (Szene 104)                      |
 | F     | Victor                   | Positionsspieler                   | faires Duell, keine Karten (R28)                                  |
 
 Im Turnier gibt es keine Sprüche (S2); nur Tobias spielt mit Uhr, deshalb sind Zeitbonus und Kühler
@@ -2333,8 +2332,7 @@ Rand: „Ein Reisender aus dem Süden, 1866. Er hatte ein Schachbrett bei sich.�
 „Hier bin ich angekommen. Nur nicht dort, wo ich wollte.“ Etwa 5 Minuten.
 
 **99. Flashback: Die letzte Kerze, 1866** · `akt4.flashbackKerze` · F2 (3)
-Ort Sepia-Karte `flashback.siedlung` · Ambrose als Held. Ereignis: Ambrose in einer Bretterhütte der
-Siedlung, Fieber, eine Kerze, das Brett auf dem Tisch. Bei ihm ist Gideon, der Schmied der Siedlung (nicht Tobias; Tobias Wren ist der Turniergegner in der Arena); Ambrose zeigt ihm die Stellung. Er schreibt seinen letzten Zug auf, Gideon hält ihm das Blatt und trägt den Brief hinunter zum Postreiter: „Bring ihn nach Norden. Er wartet.“ Keine Einzelheiten zum Sterben; die
+Ort Sepia-Karte `flashback.siedlung` · Ambrose als Held. Ereignis: Ambrose im Zimmer über dem Laden der Siedlung (Rosentapete; erreichbar über die Treppe im Laden), Fieber, eine Kerze, das Brett auf dem Tisch. Bei ihm ist Gideon, der Schmied der Siedlung (nicht Tobias; Tobias Wren ist der Turniergegner in der Arena); Ambrose zeigt ihm die Stellung. Er schreibt seinen letzten Zug auf, Gideon hält ihm das Blatt und trägt den Brief hinunter zum Postreiter: „Bring ihn nach Norden. Er wartet.“ Keine Einzelheiten zum Sterben; die
 Kerze geht aus, Szenenwechsel (Stilregel 5.3). Zugerraten: die letzten vier Züge der Fernpartie bis
 zu Ambroses letztem Zug (erfundene Partie, Stellung baut ein Folgeauftrag mit der Engine). Etwa 3
 Minuten.
@@ -2352,7 +2350,7 @@ die Seite zurück ins Buch: „Für den Tag, an dem wieder jemand weiterspielt.�
 `akt4.fernpartie`, Dialogvariable `fernpartieGespielt`. Etwa 25 Minuten.
 
 **101. Die Nacht in Ghost Town** · `akt4.ambroseSagtEs`
-Ort `ghostTown.aussen` (Nacht, Sterne) · Ambrose, {held}. Ereignis: Dialog. Ambrose sagt zum ersten
+Ort `ghostTown.aussen` (Nacht, Sterne; Gehsteigkante am Ende des Bretterwegs) · Ambrose, {held}. Ereignis: Dialog. Ambrose setzt sich neben {held} auf die Kante (das vierte Mal, dass er sitzt) und sagt zum ersten
 Mal offen, dass er gehen wird, wenn alles gespielt ist: „Noch eine Partie will ich sehen. Deine,
 gegen ihn. Dann ist es gut.“ Wahl: „Bleib.“ / „Ich weiß.“ Er antwortet auf beide: „Ein Geist, der
 bleibt, wird ein Möbelstück. Ich war lange genug ein Brett.“ Etwa 3 Minuten.
@@ -2459,7 +2457,7 @@ Kürzungen, falls nötig: Vorrunde der Meisterschaft als vier Stellungsduelle st
 | Weg 8         | Bisonhaar am Zaun              | Geysirbecken                 | Ambrose: „Ein Tier, das niemandem ausweicht. Respekt.“    | 5 Münzen                                   |
 | Crossroads    | Postkarte aller Städte         | Ständer an der Kasse         | Juno: „Wir waren überall!“                                | Album                                      |
 | Pinewood Camp | Marshmallow-Stock mit Kerben   | Lagerfeuer (Szene 95)        | Ezra: „Jede Kerbe ein Sieg.“                              | zählt Siege im Album                       |
-| Ghost Town    | Postreiterabzeichen von 1866   | Saloon (versteckt, Laterne)  | Ambrose: „Er hat meinen Brief getragen.“                  | Album, Flashback-Auslöser                  |
+| Ghost Town    | Postreiterabzeichen von 1866   | Saloon (versteckt, Laterne)  | Ambrose: „Er hat meinen Brief getragen.“                  | Album                                      |
 | Ghost Town    | Schlussstellung der Fernpartie | Saloon (Szene 100)           | „Nicht makellos. Schön.“                                  | Bretthintergrund „Fernpartie 1866“         |
 | Weg 11        | Leuchtturmlinse                | Leuchtturm                   | Abe: „Sie hat hundert Schiffe heimgebracht.“              | 10 Münzen                                  |
 | Capital Arena | Teilnehmerausweis              | Szene 103                    | „{held}, Maple Falls.“                                    | Album                                      |
@@ -2593,8 +2591,7 @@ Fragments): Fragment n enthält die Halbzüge 8n + 1 bis 8n + 8, also die Züge 
 | 8        | 65–72    | 33–36 | Akt 4, Szene 85: Erinnerung Hastings (Ward) | **35. Lxh6! gxh6 36. Sxf6+!**: das Doppelopfer |
 
 Hinweis für die Daten: Die vorhandenen Wirkungen `fragment` passen zu dieser Tabelle (Maple Falls 0,
-Cedar Creek 1 und 2, Riverton 3, Ironwood 4, Port Delacroix 5, Desert Springs 6 und 7); Fragment 8
-(Ward, Summit City) fehlt noch, bis die Quests von Akt 4 stehen.
+Cedar Creek 1 und 2, Riverton 3, Ironwood 4, Port Delacroix 5, Desert Springs 6 und 7); Fragment 8 (Ward, Summit City) steht inzwischen ebenfalls in `quests.json`.
 
 **Stellungen** (FEN):
 

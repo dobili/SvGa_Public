@@ -86,35 +86,26 @@ Die Pfeilspitze und der „Springer aus Holz“ von Route 2 (05, Abschnitt 12) p
 Springer wird Finchs erste Figur, die man findet, ohne von der Jagd zu wissen. Odette auf dem
 Flohmarkt sieht ihn dann später: „Den hast du schon? Du bist schneller als die letzten drei.“
 
-### 1.2 Die verlorenen Seiten (13 Buchseiten, eine je Kapitel)
+### 1.2 Die verlorenen Seiten (13 Seiten aus Ambroses altem Buch)
 
-**Figur:** der Wanderer mit dem gelben Rucksack (er, ohne Namen). Er läuft quer durchs Land zu
-seinem Verlag in Capital. In seinem Rucksack steckt das Manuskript eines Schachbuchs „für
-Einsteiger und leicht Fortgeschrittene“, Kapitel 0 bis 12. Ein kleiner Gruß an das Buch, zu dem die
-App gehört; der Autor taucht so als stille Figur auf. **Widerspruch genügt.**
+**Figur:** der Wanderer mit dem gelben Rucksack (er, ohne Namen). Er läuft quer durchs Land nach Capital und sammelt alte Schachblätter. In seinem Rucksack stecken lose Seiten aus einem sehr alten Schachbuch: Es sind Seiten aus Ambroses altem Buch (Entscheidung vom 10.11.2026). Stand nach der Entscheidung des Autors vom 13.11.2026: Das Spiel steht für sich. Es gibt keinen Knopf „Im Buch nachlesen“ und keine Dialoge mit Hinweis auf das Buch; Inhalt aus dem Buch kommt nur als gesammelte Seiten vor, die ihren Inhalt im Spiel zeigen (unter 10 %). Ob der Wanderer als Figur so bleibt, entscheidet der Hauptchat.
 
-**Was passiert:** Bei jedem Wind fliegen ihm Seiten davon. Auf jedem der 13 Wege liegt eine, je
-Kapitel eine.
+**Was passiert:** Bei jedem Wind fliegen ihm Seiten davon. Auf jedem der 13 Wege liegt eine.
 
 - **Was die Seite zeigt:**
-  - Kapitelnummer und Titel;
-  - einen einzigen Satz mit Fundstelle;
-  - die erste Abbildung des Kapitels als Brett (aus den App-Daten).
+  - eine Überschrift (das Thema, ohne Kapitelnummer); - einen einzigen Satz; - eine Stellung als Brett (aus den App-Daten). Die Seite zeigt ihren Inhalt im Spiel, im Album; die Zuordnung zum Kapitel steht nur in den Daten.
 
-  Keine Lösungen und keine Aufgaben aus dem Buch.
+  Keine Lösungen und keine Aufgaben aus dem Buch, kein Verweis auf das Buch.
 
 - **Was der Wanderer sagt:** Wer ihn wieder trifft (zufällig auf einem späteren Weg, auf einer
-  Bank), gibt ihm die Seiten zurück. Für jede sagt er einen Satz, warum er dieses Kapitel geschrieben
-  hat. Diese Sätze schreibt der Autor selbst oder segnet sie ab.
-- **Ende in Capital, nach dem Finale:** Er schenkt {held} das gedruckte Buch. In der App öffnet der
-  Knopf „Im Buch nachlesen“ die Kapitelübersicht.
+  Bank), gibt ihm die Seiten zurück. Für jede sagt er einen Satz, wo er sie gefunden hat oder was ihm an dem Blatt gefällt, ohne Buch und Kapitel zu nennen. Ambrose sagt höchstens, dass es eine seiner Seiten ist.
+- **Ende in Capital, nach dem Finale:** Er schenkt {held} die gebundene Sammlung der 13 Seiten fürs Album. Kein Knopf führt aus dem Spiel ins Buch.
 - **Lohn:**
   - je Seite 5 Münzen;
   - alle 13: der Bretthintergrund „Manuskript“ (Papier mit Bleistiftnotizen) und das Album-Foto
     „Der Wanderer“.
 
-Die Reihenfolge der Kapitel folgt den Clubs am Weg (Abschnitt 3). So passt die Seite meist zu dem,
-was {held} gerade lernt.
+Die Reihenfolge der Kapitel folgt den Clubs am Weg (Abschnitt 3). So passt die Seite meist zu dem, was {held} gerade lernt (die Reihenfolge steht nur in den Daten).
 
 ### 1.3 Die Spuren von Perfect Move (sechs Spuren, eine Mappe)
 
@@ -629,10 +620,8 @@ Neu oder zu erweitern:
 
 ## 5. Offene Punkte für den Autor (Widerspruch genügt)
 
-- **Der Wanderer mit dem gelben Rucksack** ist ein stiller Gruß an dich und dein Buch. Die 13
-  Sätze („warum ich dieses Kapitel geschrieben habe“) kommen von dir oder werden dir vorgelegt.
-- **Buchseiten:** Sie zeigen nur Titel, einen Satz und die erste Abbildung. Wenn dir das schon zu
-  viel ist, zeigen sie nur den Titel.
+- **Der Wanderer mit dem gelben Rucksack** war als stiller Gruß an dich und dein Buch gedacht. Nach deiner Entscheidung vom 13.11.2026 (das Spiel steht für sich) nennt er weder Buch noch Kapitel; die Seiten sind Seiten aus Ambroses altem Buch (Abschnitt 1.2).
+- **Buchseiten:** Sie zeigen nur eine Überschrift, einen Satz und eine Stellung, im Spiel selbst und ohne Kapitelnummer.
 - **Earl Dubois** ist sowohl Lokführer in Akt 2 (früher) als auch Fernfahrer in Akt 4. Er hat den
   Beruf gewechselt, und die Zugpartie verbindet beides.
 - **Victor bei den Kreidespringern:** ein kleiner Moment vor dem Finale, der Hauptgeschichte

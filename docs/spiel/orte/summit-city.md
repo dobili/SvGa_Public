@@ -55,17 +55,17 @@ Erdweg (zwei Felder) nach Südosten zum **Südrand (56–57, 55)**, Weg 8 zum Ge
  R55 └──────────────────────────────╨ Südrand 34–36 ──────────┘  ← Bergstraße
 ```
 
-| Abschnitt (Felder)             | Thema          | Inhalt                                                                                    | Zum Entdecken                |
-| ------------------------------ | -------------- | ----------------------------------------------------------------------------------------- | ---------------------------- |
-| S1 Ortseingang (28–42 / 44–55) | Ankunft        | Pflasterweg vom Südrand, Ortsschild, Plakat „Landesmeisterschaft“ (Szene 83), Bank        | Plakat, Murmeltier pfeift    |
-| S2 Marktplatz (26–46 / 28–40)  | Sommerfest     | Drachenbrunnen in der Mitte, Wimpelketten, Marktstände, Bänke, Laternen (Drachenfest L10) | `drachenbrunnen`, Stände     |
-| S3 Ward (2–14 / 18–30)         | die Hütte      | Wards Blockhütte mit Veranda, Holzstapel, Bank; Weg zum Markt                             | `huetteTuer`                 |
-| S4 Laden (16–28 / 19–29)       | Bergausrüstung | Bergladen mit Schaufenster, Rucksäcke und Seile vor der Tür                               | `bergladenTuer`              |
-| S5 Gipfelfelsen (2–24 / 6–12)  | Aussicht       | erhöhte Felsplatte über einer Felsstufe mit Treppe; **Sol** (Szene 89), Fernrohr          | Sol                          |
-| S6 Talstation (48–66 / 6–27)   | Seilbahn       | Talstation, Mast vor der Gipfelwand, Weg vom Markt hinauf; Seilbahnwärter                 | `seilbahnTal`                |
-| S7 Hütten West (2–24 / 32–54)  | Ferienhütten   | kleine Holzhütten, Ziegen, Holzhacker                                                     | Holzhacker (Statist), Ziegen |
-| S8 Hütten Ost (48–68 / 37–54)  | Wiese          | Hütten am Hang, Pinien, Adler am Himmel (Szene)                                           | Adler                        |
-| S9 Ostausgang (47–69 / 31–37)  | nach Weg 8     | Straße nach Osten, Wegweiser „Geysirbecken“, Ranger-Hinweis                               | Wegweiser                    |
+| Abschnitt (Felder)             | Thema          | Inhalt                                                                                                                                                                              | Zum Entdecken                |
+| ------------------------------ | -------------- | ----------------------------------------------------------------------------------------------------------------------------------------------------------------------------------- | ---------------------------- |
+| S1 Ortseingang (28–42 / 44–55) | Ankunft        | Pflasterweg vom Südrand, Ortsschild, Plakat „Landesmeisterschaft“ (Szene 83), Bank                                                                                                  | Plakat, Murmeltier pfeift    |
+| S2 Marktplatz (26–46 / 28–40)  | Sommerfest     | Drachenbrunnen in der Mitte, Wimpelketten, Marktstände, Bänke, Laternen (Drachenfest L10)                                                                                           | `drachenbrunnen`, Stände     |
+| S3 Ward (2–14 / 18–30)         | die Hütte      | Wards Blockhütte mit Veranda, Holzstapel, Bank; Weg zum Markt (gebaut im Ort; die Hütte liegt eine Stunde über der Stadt an einem Fußpfad, noch umzubauen, Entscheidung 13.11.2026) | `huetteTuer`                 |
+| S4 Laden (16–28 / 19–29)       | Bergausrüstung | Bergladen mit Schaufenster, Rucksäcke und Seile vor der Tür                                                                                                                         | `bergladenTuer`              |
+| S5 Gipfelfelsen (2–24 / 6–12)  | Aussicht       | erhöhte Felsplatte über einer Felsstufe mit Treppe; **Sol** (Szene 89), Fernrohr                                                                                                    | Sol                          |
+| S6 Talstation (48–66 / 6–27)   | Seilbahn       | Talstation, Mast vor der Gipfelwand, Weg vom Markt hinauf; Seilbahnwärter                                                                                                           | `seilbahnTal`                |
+| S7 Hütten West (2–24 / 32–54)  | Ferienhütten   | kleine Holzhütten, Ziegen, Holzhacker                                                                                                                                               | Holzhacker (Statist), Ziegen |
+| S8 Hütten Ost (48–68 / 37–54)  | Wiese          | Hütten am Hang, Pinien, Adler am Himmel (Szene)                                                                                                                                     | Adler                        |
+| S9 Ostausgang (47–69 / 31–37)  | nach Weg 8     | Straße nach Osten, Wegweiser „Geysirbecken“, Ranger-Hinweis                                                                                                                         | Wegweiser                    |
 
 **Wegeführung:** Hauptweg drei Felder Pflaster Südrand → Markt (Reihen 40–55), Markt 26–46 / 28–40,
 Erdweg nach Südosten (Reihen 33–34, dann Spalten 56–57 zum Südrand); Abzweige: Weg zu Wards Hütte und Bergladen (zwei Felder, Reihe 30),
@@ -77,15 +77,19 @@ Süden (34–36, Bergstraße) und Süden (56–57, Weg 8).
 ### 1.2 Wards Hütte (`summitCity.huette`, 18 × 13)
 
 Blockhütte, Holzwände, dunkle Dielen. Nordwand: **Kamin** in der Mitte (`kaminfeuer`), links ein
-Bücherregal, rechts eine Vitrine mit dem **Pokal von 1985** (`pokal`), daneben Endspieldiagramme in
-Rahmen und das Foto vom Gipfel. Vor dem Kamin zwei Sessel und ein Tisch mit dem **alten Holzbrett**
+Bücherregal; die Wände sind leer; es hängt nur ein Thermometer (nach der Meisterschaft ein einziges
+Foto: zwei Könige auf einem Brett). Gebaut sind rechts noch eine Vitrine mit dem Pokal von 1985
+(`pokal`), Endspieldiagramme in Rahmen und das Foto vom Gipfel (noch umzubauen, Entscheidung
+13.11.2026). Vor dem Kamin zwei Sessel und ein Tisch mit dem **alten Holzbrett**
 (Ward). Zwei Clubtische mit Brettern im Süden (Kit, Haraldsen). Tür in der Südwand (8–9, 12),
 `huetteAusgang`.
 
 ### 1.3 Bergstation (`summitCity.bergstation`, 18 × 12)
 
-Halle aus Holz und Glas über den Wolken. Nordwand mit großen Fenstern (Wolken, Gipfel), davor die
-**Bank am Fenster** (Szene 88, Victor). Rechts die Plattform mit der **Gondel** (`seilbahnBerg`, man
+Halle aus Holz und Glas über den Wolken. Nordwand mit großen Fenstern (Wolken, Gipfel), draußen die
+offene Plattform mit Geländer und dem großen Rad der Seilbahn über dem Wolkenmeer; dort sitzt Victor,
+den Rücken am Geländer (Szene 88; gebaut ist eine Bank am Fenster in der Halle, noch umzubauen,
+Entscheidung 13.11.2026). Rechts die Plattform mit der **Gondel** (`seilbahnBerg`, man
 kommt mit ihr an und fährt mit ihr zurück). Links Fahrkartenschalter, Fahrplan, Kaffeeautomat,
 Schließfächer; im Eck die **Murmeltierpfeife** (`fundMurmeltierpfeife`). Kein Ausgang zu Fuß.
 
@@ -144,7 +148,8 @@ ganze Stadt nach der alten Bergwerkssage Schach mit dem Drachen.
 An der Talstation surrt das Seil, alle zehn Minuten schwebt eine Gondel in die Wolken. Murmeltiere
 pfeifen am Hang, Ziegen stehen auf Felsen, die zu steil für Ziegen sind. Ein Plakat am Ortseingang
 kündigt die Landesmeisterschaft in der Capital Arena an, „präsentiert von Perfect Move“. Wards Hütte
-steht am Westrand des Ortes, mit einer Veranda, auf der ein Schachbrett im Wind liegt. Im Bergladen
+liegt eine Stunde über der Stadt, an einem Pfad, den man nur zu Fuß geht (gebaut steht sie am Westrand
+des Ortes, mit einer Veranda; noch umzubauen, Entscheidung 13.11.2026). Im Bergladen
 riecht es nach Leder und Seil.
 
 ### 2.2 Die Hochebene
@@ -162,8 +167,10 @@ und daneben die Werkstatt, in der Joss Vell den Bus repariert. Die Hälfte der S
 - **83 Ankunft** (`aussen`): Seilbahn, Holzhütten, Murmeltiere, Plakat Landesmeisterschaft; Victor mit
   einem Mann im Anzug (Statisten in der Szene, kein fester Platz).
 - **84, 85, 86, 87, 91** (`huette`): Ward am Kaminfeuer, Brett für Endspiele, Kit und Haraldsen
-  (Aufgabenreihen), Victor als Zuschauer, Tisch für den Clubkampf. Auslöser `pokal`, `kaminfeuer`.
-- **88** (`bergstation`): Bank am Fenster über den Wolken, Victor; Fund `fundMurmeltierpfeife`.
+  (Aufgabenreihen), Victor als Zuschauer, Tisch für den Clubkampf. Auslöser `kaminfeuer`; der
+  gebaute Auslöser `pokal` passt nicht mehr zu den leeren Wänden (noch umzubauen, Entscheidung 13.11.2026).
+- **88** (`bergstation`): Plattform mit Geländer und Rad über dem Wolkenmeer, Victor mit dem Rücken
+  am Geländer; Fund `fundMurmeltierpfeife`.
 - **89** (`aussen`, Gipfelfelsen): Sol.
 - **90** (`aussen`, Marktplatz am Abend): Drachenfest, `drachenbrunnen`.
 - **82** (`hochebene`): Kira am Steintisch (`steintisch`), Annek an der Schule, Joss in der Werkstatt
@@ -174,7 +181,7 @@ und daneben die Werkstatt, in der Joss Vell den Bus repariert. Die Hälfte der S
 ### 3.2 Was aus dem Ortsbild bleibt, was sich ändert, was entfällt
 
 - **Bleibt:** Seilbahn mit Tal- und Bergstation, Holzhütten, Gipfelfelsen mit Sol, Murmeltiere,
-  Ziegen, Marktplatz mit Drachenbrunnen, Wards Hütte mit Kamin, Pokal, Foto und Teekanne, Bergladen.
+  Ziegen, Marktplatz mit Drachenbrunnen, Wards Hütte mit Kamin, leeren Wänden, Thermometer und Teekanne, Bergladen.
 - **Ändert sich:** Haraldsen ist Clubmitglied (Dialog in der Hütte); den Laden führt in der Karte eine
   Ladenhilfe (Statist), Haraldsen steht in der Hütte.
 - **Entfällt:** nichts.
@@ -210,7 +217,8 @@ Felsstufe 13–15 mit Treppe bei 10–11). **Ränder** wie 1.1.
 ### 4.2 Innenräume
 
 - **Hütte:** Wand `holz`, Boden `holzDunkel`, Kamin (8, 1), Regal (2, 1), Vitrine mit Pokal (14, 1),
-  Diagramme an der Wand, Sessel (6, 4) und (11, 4) mit Tisch und Brett (8, 4); Clubtische (3, 8) und (13, 8);
+  Diagramme an der Wand (beides noch umzubauen, Entscheidung 13.11.2026: leere Wände, nur ein
+  Thermometer), Sessel (6, 4) und (11, 4) mit Tisch und Brett (8, 4); Clubtische (3, 8) und (13, 8);
   Ward (9, 5), Kit (4, 10), Haraldsen (14, 10).
 - **Bergstation:** Wand `hellgrau`, Boden `fliesenGrau`, Fenster mit Wolken in der Nordwand, Bank (5, 3),
   Gondel 13–16 / 2–5 mit `seilbahnBerg` davor, Schalter (2, 7), Fahrplan, Kaffeeautomat, Schließfächer,

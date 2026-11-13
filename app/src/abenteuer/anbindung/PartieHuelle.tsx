@@ -33,6 +33,8 @@ import { tSpiel } from "../texte/texte";
 import { Huelle } from "./Huelle";
 import { gegnerName, sprecherAusPfad, statustext } from "./huellentexte";
 import { Momentzeile } from "./Momentzeile";
+import { Schutzengelzeile } from "./Schutzengelzeile";
+import { useSchutzengel } from "./useSchutzengel";
 import { Testleiste } from "./Testleiste";
 
 /** Unter so viel Restzeit (ms) wird die Uhr rot, wie in der App. */
@@ -167,7 +169,9 @@ function Spielfeld({ s, partie }: { s: Partiesteuerung; partie: Partie }) {
   });
   const eigene = partie.einstellung.eigeneFarbe;
   const gegner = gegnerName(partie);
-  const bedienung = useLeserzug(s, s.fen, false);
+  // Schutzengel (K4): Solange er wacht, prüft die Engine jeden Zug, bevor er gespielt wird.
+  const engel = useSchutzengel(s, partie);
+  const bedienung = useLeserzug(engel.steuerung, s.fen, false);
   // Nachspielen der beendeten Partie: Zahl der gezeigten Halbzüge; null = Schlussstellung.
   const [stelle, setzeStelle] = useState<number | null>(null);
   const anzahl = partie.zuege.length;
@@ -184,6 +188,9 @@ function Spielfeld({ s, partie }: { s: Partiesteuerung; partie: Partie }) {
     <>
       {/* Partiemomente der Begegnung (T5): Sprechzeile über dem Brett, blockiert nichts. */}
       <Momentzeile s={s} partie={partie} />
+      {engel.halt && !partie.ende && (
+        <Schutzengelzeile grund={engel.halt} beiEnde={engel.schliesse} />
+      )}
       {partie.uhr && (
         <Uhr uhr={partie.uhr} farbe={gegenfarbe(eigene)} name={gegner} jetztMs={s.jetztMs} />
       )}

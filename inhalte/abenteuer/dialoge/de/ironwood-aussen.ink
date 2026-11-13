@@ -125,12 +125,31 @@ Zu Fuß ist es ein halber Tag. #sprecher:erzaehler
 
 // Szene 51 „Abfahrt im Schnee“ und 51a „Das Reisebrett“ (Akt 3).
 === bus_silicon_bay_abfahrt ===
+// Roman, Kapitel 30 (Außenstelle), erster Teil: Juno weiß seit Dezember von Ambrose; Mama an der
+// Haltestelle; das Reisebrett (Gegenstand gibt die Quest siliconBay, Szene akt3.abfahrt). Der Weg
+// danach (Schnellstraße, Raststätte, Glasbrücke) steht in weg-ironwood-silicon.ink.
+// Klang: Mamas Thema warm mit Schnee (mama.schnee).
 ~ abfahrtSiliconGesehen = true
-Schnee liegt auf dem Wartehäuschen. Mama hat dich hergefahren, Juno hüpft von einem Fuß auf den anderen. #sprecher:erzaehler
-Ich hab Nachtschicht. Juno, du passt auf. Und du rufst an, jeden Abend. #sprecher:mutter
-Juno drückt dir eine kleine Holzkiste in die Hand: ihr Reisebrett, auf dem Deckel „Clubtagebuch, Außenstelle“. #sprecher:erzaehler
-Damit du nicht vergisst, wie man verliert. Spiel mit Ambrose. Oder mit mir. #sprecher:juno #stimmung:froh
-Eine Stadt aus Glas. Wie man wohl darin Schach spielt? #sprecher:ambrose
+Im Dezember, auf der Treppe vor der Schule, fragt Juno zum dritten Mal, was Victor auf der Brücke wollte. #sprecher:erzaehler #musik:mama.schnee
+* [„In dem Brett wohnt jemand.“]
+- Sie lacht nicht. Sie blättert im Tagebuch weit zurück, bis in den September, und dreht es zu dir um. #sprecher:erzaehler
+In rosa Tinte, zwischen einer verlorenen Partie und einem Sticker: „{held} redet mit dem Brett. Nicht fragen. Noch nicht.“ #sprecher:erzaehler #bild:tagebuch_september
+Ich hab gewartet. Wie heißt er? Ist er nett? Kann er mich sehen? Findet er meine Züge schlimm? #sprecher:juno #stimmung:froh #bild:aus
+Sag ihr, dass ihr Turm in Cedar Creek einen ehrenvollen Tod gestorben ist. #sprecher:ambrose #stimmung:lachtOhneSpott
+Sie strahlt eine Woche lang. #sprecher:erzaehler
+Jetzt ist Januar. An der Haltestelle an der Schnellstraße liegt der Schnee fest. Der Bus nach Silicon Bay hat den Motor an. #sprecher:erzaehler #geraeusch:schnee_schritte
+Ich hab Nachtschicht. Die ganze Woche. Sonst käme ich mit. Juno, du passt auf. #sprecher:mutter
+Ich passe immer auf. #sprecher:juno
+Du verlierst deine Mütze, wenn du sie aufhast. #sprecher:mutter
+Aber ich merke es. #sprecher:juno
+Mama zieht dich an sich, kurz und fest. Seit Ironwood tut sie das öfter. #sprecher:erzaehler
+Guck dir alles an. Und glaub nicht alles, was glänzt. #sprecher:mutter
+Ich hab mal ein Turnier in so einem Glaskasten gespielt. Man friert darin, und man weiß nicht, warum. #sprecher:mutter #stimmung:denktNach
+Juno drückt dir eine kleine Holzkiste mit Stickern in die Hand. Auf dem Deckel in rosa Buchstaben: „Clubtagebuch, Außenstelle.“ #sprecher:erzaehler #bild:reisebrett
+Darin ein Brett zum Aufklappen, mit Magnetfiguren. #sprecher:erzaehler #bild:aus
+Damit du nicht vergisst, wie man verliert. Spiel mit Ambrose. Oder mit mir, wenn ich anrufe. #sprecher:juno #stimmung:froh
+Ein Brett für die Tasche. Meines ist schwerer. Und gesprächiger. #sprecher:ambrose
+Eine Stadt aus Glas. Wie man wohl darin Schach spielt? #sprecher:ambrose #stimmung:froh
 -> bus_silicon_bay_einsteigen
 
 === bus_silicon_bay_einsteigen ===

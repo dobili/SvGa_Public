@@ -69,6 +69,8 @@ function geschichte(welt, st, datei) {
     "schalteSteckbrief",
     "setzeToenung",
     "zeigeVorfuehrung",
+    "zeigeFensterbank",
+    "schreibeTagebuch",
   ];
   for (const f of ohneFolgen) binde(f, () => {});
   return (welt.geschichten[datei] = s);

@@ -35,6 +35,11 @@ export type Kartenwirkung =
   /** Ambrose zieht für den Leser den Engine-Zug (in Akt 3 gesperrt, im Finale freiwillig). */
   | { readonly art: "mentorzug" }
   /**
+   * Schutzengel (K4): Für die nächsten `zuege` eigenen Züge hält Ambrose einen groben Fehler einmal
+   * auf (regeln/schutzengel.ts); der Held zieht neu.
+   */
+  | { readonly art: "schutzengel"; readonly zuege: number }
+  /**
    * Vorgabe vor Partiebeginn: der Gegner startet ohne die Figur auf diesem Feld. Das Feld gilt aus
    * Sicht eines weißen Gegners („f2“, „g1“); spielt der Gegner Schwarz, wird die Reihe gespiegelt
    * (Regelwerk R26: f2 → f7, g1 → g8).
@@ -116,4 +121,6 @@ export interface Kartenspiel {
    * verbraucht, zählt nicht für Nadel und Wertung.
    */
   readonly frei?: boolean;
+  /** Nur Schutzengel (K4): Ambrose hat schon einen Zug aufgehalten; die Karte wacht nicht mehr. */
+  readonly ausgeloest?: boolean;
 }

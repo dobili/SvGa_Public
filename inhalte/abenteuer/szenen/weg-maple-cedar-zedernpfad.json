@@ -2869,7 +2869,7 @@
       "feld": [239, 31]
     }
   ],
-  "figuren": [],
+  "figuren": [{ "name": "tessaZedern", "feld": [95, 15] }],
   "belebung": [
     {
       "name": "specht",

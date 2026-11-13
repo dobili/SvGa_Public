@@ -800,7 +800,8 @@
             "abZug": 21
           },
           "sprecher": "erzaehler",
-          "dialog": "capital-arena-halle.halbfinale_turm"
+          "dialog": "capital-arena-halle.halbfinale_turm",
+          "zugerraten": true
         }
       ]
     },

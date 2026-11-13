@@ -36,6 +36,7 @@ import { Momentzeile } from "./Momentzeile";
 import { Schutzengelzeile } from "./Schutzengelzeile";
 import { useSchutzengel } from "./useSchutzengel";
 import { useStaerkewechsel } from "./useStaerkewechsel";
+import { useZugerraten } from "./useZugerraten";
 import { Testleiste } from "./Testleiste";
 
 /** Unter so viel Restzeit (ms) wird die Uhr rot, wie in der App. */
@@ -174,7 +175,9 @@ function Spielfeld({ s, partie }: { s: Partiesteuerung; partie: Partie }) {
   const engel = useSchutzengel(s, partie);
   // Spielstärke durch Dialog (staerkeNach in begegnungen.json), etwa „Atme“ gegen Mira.
   useStaerkewechsel(partie);
-  const bedienung = useLeserzug(engel.steuerung, s.fen, false);
+  // Zugerraten im Halbfinale (regeln/zugerraten.ts): prüft den Zug vor dem Schutzengel.
+  const raten = useZugerraten(engel.steuerung, partie);
+  const bedienung = useLeserzug(raten.steuerung, s.fen, false);
   // Nachspielen der beendeten Partie: Zahl der gezeigten Halbzüge; null = Schlussstellung.
   const [stelle, setzeStelle] = useState<number | null>(null);
   const anzahl = partie.zuege.length;
@@ -193,6 +196,11 @@ function Spielfeld({ s, partie }: { s: Partiesteuerung; partie: Partie }) {
       <Momentzeile s={s} partie={partie} />
       {engel.halt && !partie.ende && (
         <Schutzengelzeile grund={engel.halt} beiEnde={engel.schliesse} />
+      )}
+      {raten.zeile && (
+        <p className="abenteuer-moment" role="status" data-testid="abenteuer-zugerraten">
+          {tSpiel(raten.zeile)}
+        </p>
       )}
       {partie.uhr && (
         <Uhr uhr={partie.uhr} farbe={gegenfarbe(eigene)} name={gegner} jetztMs={s.jetztMs} />

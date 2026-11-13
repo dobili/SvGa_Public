@@ -323,6 +323,12 @@
   font-weight: 600;
 }
 
+/* Freie Karte der Begegnung (R29, Mentor-Zug im Halbfinale): goldener Rand. */
+.abenteuer-karte[data-frei="true"] {
+  border-color: var(--gold);
+  box-shadow: 0 0 0 2px var(--gold);
+}
+
 .abenteuer-karte:disabled {
   opacity: 0.5;
 }

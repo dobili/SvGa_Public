@@ -11,6 +11,7 @@ import {
   kartenSpielbar,
   kartenstufeDerPartie,
   mitGespielterKarte,
+  nurAnwesenheit,
   vorgabeFen,
 } from "./karten";
 import { leererAbenteuerstand } from "./spielstand";
@@ -145,5 +146,32 @@ describe("Deck und Spielen (R24)", () => {
     expect(nachFingerzeig.partiekarten?.letzterHalbzug).toBe(2);
     const nachChance = mitGespielterKarte(nachFingerzeig, sorte("zweiteChance"), 4);
     expect(nachChance.karten.map((k) => k.kennung)).toEqual(["fingerzeig"]);
+  });
+});
+
+describe("nurAnwesenheit (Mentor-Zug im Halbfinale, R29)", () => {
+  const basis: Partiekarten = {
+    deck: ["mentorzug"],
+    gespielt: [],
+    wiedereinstieg: false,
+    letzterHalbzug: null,
+  };
+
+  it("zeigt bei freier Karte keinen Zug, nur Ambrose", () => {
+    expect(nurAnwesenheit({ ...basis, frei: ["mentorzug"] }, "mentorzug")).toBe(true);
+  });
+
+  it("spielt den Zug wie bisher, wenn die Karte aus dem Besitz kommt", () => {
+    expect(nurAnwesenheit(basis, "mentorzug")).toBe(false);
+  });
+
+  it("setzt beim Spielen der freien Karte mentorzugFreiGespielt", () => {
+    const sorte = SORTEN.find((s) => s.kennung === "mentorzug");
+    if (!sorte) throw new Error("Mentor-Zug fehlt in karten.json");
+    const stand = {
+      ...leererAbenteuerstand(new Date("2026-11-13T18:00:00Z"), "Kim", 800, true),
+      partiekarten: { ...basis, frei: ["mentorzug"] },
+    };
+    expect(mitGespielterKarte(stand, sorte, 41).dialogvariablen.mentorzugFreiGespielt).toBe(true);
   });
 });

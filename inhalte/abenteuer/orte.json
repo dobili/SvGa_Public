@@ -345,7 +345,8 @@
           "datei": "karten/cedar-creek-bibliothek.json",
           "name": "ort.cedarCreek.bibliothek",
           "innen": true,
-          "musik": "musik/bibliothek.ogg"
+          "musik": "musik/cedar-creek.bibliothek.m4a",
+          "geraeusch": "klang/uhr_ticken.m4a"
         },
         {
           "kennung": "cedarCreek.archiv",
@@ -354,19 +355,26 @@
           "innen": true,
           "zustaende": {
             "archivGeordnet": "karten/cedar-creek-archiv-geordnet.json"
-          }
+          },
+          "musik": "musik/cedar-creek.archiv.m4a",
+          "geraeusch": "klang/archiv.m4a",
+          "licht": "nacht"
         },
         {
           "kennung": "cedarCreek.waschsalon",
           "datei": "karten/cedar-creek-waschsalon.json",
           "name": "ort.cedarCreek.waschsalon",
-          "innen": true
+          "innen": true,
+          "musik": "musik/cedar-creek.m4a",
+          "geraeusch": "klang/waschmaschine.m4a"
         },
         {
           "kennung": "cedarCreek.drechslerei",
           "datei": "karten/cedar-creek-drechslerei.json",
           "name": "ort.cedarCreek.drechslerei",
-          "innen": true
+          "innen": true,
+          "musik": "musik/cedar-creek.m4a",
+          "geraeusch": "klang/holzknacken.m4a"
         }
       ],
       "figuren": [
@@ -421,6 +429,18 @@
           "name": "figur.kettering.name",
           "sprite": "figuren/kettering.png",
           "dialog": "cedar-creek-aussen.kettering"
+        },
+        {
+          "kennung": "cedarCreek.zwillingeDrinnen",
+          "name": "figur.zwillinge.name",
+          "sprite": "figuren/zwillinge.png",
+          "dialog": "cedar-creek-bibliothek.zwillinge"
+        },
+        {
+          "kennung": "cedarCreek.dunmore",
+          "name": "figur.dunmore.name",
+          "sprite": "figuren/dunmore.png",
+          "dialog": "cedar-creek-drechslerei.dunmore"
         }
       ],
       "ausloeser": [

@@ -3716,6 +3716,121 @@
       "stil": "modern",
       "begehbar": true,
       "begehbar_grund": "gefaltet unter einem Tischbein, flach am Boden (Roman Kap. 4)"
+    },
+    "mf13SpindeGrau": {
+      "quelle": "hafen-16/workshop/lockers_grey_2.png",
+      "breite": 32,
+      "hoehe": 32,
+      "kollision": true,
+      "art": "schrank",
+      "blick": "unten",
+      "zustand": "gebraucht",
+      "stil": "schule",
+      "hinweis": "drei Spinde mit sichtbarer Oberseite (R011: die alten Spinde waren frontal)"
+    },
+    "mf13Pokalvitrine": {
+      "quelle": "modern-interiors/1_Interiors/16x16/Theme_Sorter_Black_Shadow_Singles/22_Museum_Black_Shadow_Singles_16x16/Museum_Black_Shadow_Singles_308.png",
+      "breite": 32,
+      "hoehe": 48,
+      "kollision": true,
+      "art": "vitrine",
+      "blick": "unten",
+      "zustand": "gebraucht",
+      "stil": "klassisch",
+      "hinweis": "Glasvitrine mit Holzrahmen und sichtbarer Glasplatte oben (R011: der alte Vitrinenschrank war frontal)"
+    },
+    "mf13BildschirmPult": {
+      "quelle": "modern-interiors/1_Interiors/16x16/Theme_Sorter_Black_Shadow_Singles/16_Grocery_Store_Black_Shadow_Singles_16x16/Grocery_Store_Black_Shadow_Singles_240.png",
+      "breite": 16,
+      "hoehe": 32,
+      "kollision": true,
+      "art": "geraet",
+      "blick": "unten",
+      "zustand": "neu",
+      "stil": "modern",
+      "hinweis": "Bildschirm von Perfect Move auf einem Ständerpult (Roman Kap. 9, Ink bildschirm_pult)"
+    },
+    "mf12InnentuerHolz": {
+      "quelle": "spiel/eigene/innentuer_holz.png",
+      "breite": 16,
+      "hoehe": 48,
+      "kollision": false,
+      "art": "tuer",
+      "zustand": "gebraucht",
+      "stil": "klassisch",
+      "begehbar": true,
+      "begehbar_grund": "hängt in der Wand",
+      "hinweis": "wandhohe Innentür (R005, R005a); Bild aus docs/spiel/auftraege/bildwuensche/innentuer.py"
+    },
+    "mf12InnentuerGlas": {
+      "quelle": "spiel/eigene/innentuer_glas.png",
+      "breite": 16,
+      "hoehe": 48,
+      "kollision": false,
+      "art": "tuer",
+      "zustand": "gebraucht",
+      "stil": "klassisch",
+      "begehbar": true,
+      "begehbar_grund": "hängt in der Wand",
+      "hinweis": "wandhohe Innentür mit Glas, Küche (R005a); Bild aus docs/spiel/auftraege/bildwuensche/innentuer.py"
+    },
+    "mf12Tischsets": {
+      "quelle": "spiel/eigene/tischsets_stapel.png",
+      "breite": 16,
+      "hoehe": 16,
+      "kollision": true,
+      "art": "deko",
+      "zustand": "gebraucht",
+      "stil": "klassisch",
+      "hinweis": "Stapel ungelöster Tischsets (Roman Kap. 7); Bild aus bildwuensche/tischsets.py"
+    },
+    "mf12TischsetGerahmt": {
+      "quelle": "spiel/eigene/tischset_gerahmt.png",
+      "breite": 16,
+      "hoehe": 16,
+      "kollision": false,
+      "art": "bild",
+      "zustand": "neu",
+      "stil": "klassisch",
+      "begehbar": true,
+      "begehbar_grund": "hängt an der Wand",
+      "hinweis": "gelöstes Tischset im Rahmen (Hector Stufe B); Bild aus bildwuensche/tischsets.py"
+    },
+    "mf12FensterRund": {
+      "quelle": "spiel/eigene/fenster_rund.png",
+      "breite": 32,
+      "hoehe": 32,
+      "kollision": false,
+      "art": "fenster",
+      "zustand": "alt",
+      "stil": "rustikal",
+      "begehbar": true,
+      "begehbar_grund": "hängt an der Wand",
+      "hinweis": "rundes Giebelfenster (Roman Kap. 2, 4); Bild aus bildwuensche/fenster_rund.py"
+    },
+    "mf12Lichtkegel": {
+      "quelle": "spiel/eigene/lichtkegel.png",
+      "breite": 48,
+      "hoehe": 48,
+      "kollision": false,
+      "art": "licht",
+      "zustand": "alt",
+      "stil": "rustikal",
+      "begehbar": true,
+      "begehbar_grund": "Licht auf dem Boden",
+      "hinweis": "Lichtkegel vom runden Fenster; Bild aus bildwuensche/fenster_rund.py"
+    },
+    "mf12Fensterbank": {
+      "quelle": "spiel/eigene/fensterbank.png",
+      "breite": 32,
+      "hoehe": 16,
+      "kollision": false,
+      "art": "fensterbank",
+      "zustand": "gebraucht",
+      "stil": "klassisch",
+      "begehbar": true,
+      "begehbar_grund": "hängt unter dem Fenster an der Wand",
+      "hinweis": "Fensterbrett im Zimmer des Helden (T15); Bild aus bildwuensche/fensterbank.py"
     }
   }
 }

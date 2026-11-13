@@ -54,8 +54,10 @@
           "datei": "karten/maple-falls-clubraum.json",
           "name": "ort.mapleFalls.clubraum",
           "innen": true,
+          "musik": "musik/maple-falls.club.m4a",
           "zustaende": {
-            "nadelMapleFalls >= 1": "karten/maple-falls-clubraum-pokal.json"
+            "nadelMapleFalls >= 1": "karten/maple-falls-clubraum-pokal.json",
+            "victorGesehen": "karten/maple-falls-clubraum-bildschirm.json"
           }
         },
         {
@@ -72,7 +74,12 @@
           "kennung": "mapleFalls.diner",
           "datei": "karten/maple-falls-diner.json",
           "name": "ort.mapleFalls.diner",
-          "innen": true
+          "innen": true,
+          "musik": "musik/diner.m4a",
+          "geraeusch": "klang/diner_kueche.m4a",
+          "zustaende": {
+            "nadelMapleFalls >= 1 und dinerAbendGesehen": "karten/maple-falls-diner-tischset.json"
+          }
         }
       ],
       "figuren": [
@@ -121,6 +128,12 @@
           "name": "figur.lily.name",
           "sprite": "figuren/lily.png",
           "dialog": "maple-falls-aussen.lily"
+        },
+        {
+          "kennung": "mapleFalls.hector",
+          "name": "figur.hector.name",
+          "sprite": "figuren/kellner.png",
+          "dialog": "maple-falls-diner.hector"
         }
       ],
       "ausloeser": [
@@ -350,6 +363,12 @@
           "karte": "mapleFalls.dachboden",
           "art": "gegenstand",
           "dialog": "ansehen-maple-falls.kiste_whitlock"
+        },
+        {
+          "name": "bildschirmPult",
+          "karte": "mapleFalls.clubraum",
+          "art": "gegenstand",
+          "dialog": "ansehen-maple-falls.bildschirm_pult"
         }
       ],
       "club": {

@@ -24,14 +24,15 @@ oder ein Musikstück auswählt, liest das Kapitel und weiß, wie sich die Stelle
 
 ## Stand
 
-| Akt | Datei                           | Stand                |
-| --- | ------------------------------- | -------------------- |
-| 1   | `akt1_teil1.md` (Kapitel 1–4)   | fertig               |
-| 1   | `akt1_teil2.md` (Kapitel 5–9)   | fertig               |
-| 1   | `akt1_teil3.md` (Kapitel 10–12) | fertig               |
-| 1   | `akt1_teil4.md`                 | offen                |
-| 1   | `akt1_befunde.md`               | offen, nach dem Text |
-| 2–4 | —                               | offen                |
+| Akt | Datei                                                                  | Stand                |
+| --- | ---------------------------------------------------------------------- | -------------------- |
+| 1   | `akt1_teil1.md` (Kapitel 1–4)                                          | fertig               |
+| 1   | `akt1_teil2.md` (Kapitel 5–9)                                          | fertig               |
+| 1   | `akt1_teil3.md` (Kapitel 10–12)                                        | fertig               |
+| 1   | `akt1_teil4.md`                                                        | offen                |
+| 1   | `akt1_befunde.md`                                                      | offen, nach dem Text |
+| 2   | `akt2_teil1.md` bis `akt2_teil4.md` (Kapitel 17–29), `akt2_befunde.md` | fertig               |
+| 3–4 | —                                                                      | offen                |
 
 ## Nächste Schritte (Stand 13.11.2026)
 

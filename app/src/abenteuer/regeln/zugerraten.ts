@@ -47,12 +47,21 @@ export function versuchTrifft(fen: string, gesuchtUci: string, san: string): boo
 }
 
 /**
+ * Ist der gesuchte Zug ein Turmzug? Setzt vor dem Momentdialog die Ink-Variable zugerratenTurm,
+ * damit der Text („Einen Turm …“) zum Zug passt (Wunsch des Haupt-Chats, 13.11.2026).
+ * Beispiel: Turm f1, gesucht „f1f7“ → ja; „h2h3“ → nein; unlesbare Stellung → nein.
+ */
+export function istTurmzug(fen: string, gesuchtUci: string): boolean {
+  const gelesen = stellungAusFen(fen);
+  const von = parseSquare(gesuchtUci.slice(0, 2));
+  if (!gelesen.ok || von === undefined) return false;
+  return gelesen.wert.brett.get(von)?.role === "rook";
+}
+
+/**
  * Der Hinweis nach drei Fehlversuchen: beim Turmzug die Frage nach dem Turm, sonst eine
  * allgemeine Frage. Beide nennen keinen Zug und kein Feld.
  */
 export function hinweisschluessel(fen: string, gesuchtUci: string): string {
-  const gelesen = stellungAusFen(fen);
-  const von = parseSquare(gesuchtUci.slice(0, 2));
-  if (!gelesen.ok || von === undefined) return HINWEIS_ALLGEMEIN;
-  return gelesen.wert.brett.get(von)?.role === "rook" ? HINWEIS_TURM : HINWEIS_ALLGEMEIN;
+  return istTurmzug(fen, gesuchtUci) ? HINWEIS_TURM : HINWEIS_ALLGEMEIN;
 }

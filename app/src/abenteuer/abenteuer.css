@@ -603,6 +603,22 @@ body.abenteuer-mit-kulisse {
   margin-top: calc(var(--raster) * 0.75);
 }
 
+/* Bild eines Fundes (oberwelt/Fundbild.tsx): groß im Fund-Fenster, klein auf der Fensterbank. */
+.abenteuer-fundbild {
+  display: block;
+  max-width: 100%;
+  max-height: 40vh;
+  margin: 0 auto var(--raster);
+  image-rendering: pixelated;
+}
+
+.abenteuer-fundbild-klein {
+  display: inline-block;
+  max-height: calc(var(--raster) * 4);
+  margin: 0 calc(var(--raster) * 0.5) 0 0;
+  vertical-align: middle;
+}
+
 /* Tagebuchseite mit Schreibanimation (Roman Kap. 9, oberwelt/Tagebuchseite.tsx): Handschrift ohne
    Webschrift, damit das Paket nicht wächst. */
 .abenteuer-handschrift {

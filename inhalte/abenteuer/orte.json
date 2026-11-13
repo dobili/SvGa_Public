@@ -465,7 +465,9 @@
           "innen": true,
           "musik": "musik/cedar-creek.bibliothek.m4a",
           "geraeusch": "klang/uhr_ticken.m4a",
-          "licht_zustaende": { "nachtImLesesaal und nicht teamAngekommen": "nacht" },
+          "licht_zustaende": {
+            "nachtImLesesaal und nicht teamAngekommen": "nacht"
+          },
           "zustaende": {
             "nachtImLesesaal und nicht teamAngekommen": "karten/cedar-creek-bibliothek-lesesaal.json",
             "teamAngekommen und nadelCedarCreek == 0": "karten/cedar-creek-bibliothek-clubkampf.json"
@@ -3564,6 +3566,7 @@
           "name": "weiterBergstrasse",
           "karte": "wegDesertSummit.diner",
           "art": "uebergang",
+          "dialog": "weg-desert-summit.diner_ankunft",
           "ziel": {
             "karte": "wegDesertSummit.bergstrasse",
             "ausloeser": "zurueckDiner"
@@ -5034,6 +5037,7 @@
           "karte": "wegGhostCapital.leuchtturm",
           "art": "uebergang",
           "dialog": "capital-arena-aussen.ankunft_zu_fuss",
+          "wenn": "abeGetroffen",
           "ziel": {
             "karte": "capitalArena.aussen",
             "ausloeser": "wegGhost"

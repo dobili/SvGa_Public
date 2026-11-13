@@ -46,6 +46,7 @@ import { useDialogende } from "./useDialogende";
 import { LUPE, usePartiestart } from "./usePartiestart";
 import { useWeltladen } from "./useWeltladen";
 import { Vorfuehrung } from "./Vorfuehrung";
+import { Fundbild } from "./Fundbild";
 import { aktionFuer, ausloeserFuer, figurZu, sprechblaseFuer, type Weltdaten } from "./weltdaten";
 
 /** Gegenstand „Reisebrett“ (docs/spiel/11, I3): Übungspartie gegen Ambrose. */
@@ -71,7 +72,7 @@ function ladenDaten(w: Weltdaten, kennung: string) {
 export function Oberwelt() {
   const k = useOberweltkern();
   const buehne = useBuehne(k);
-  const { dienste, stand, standRef, welt, weltRef, spiel, meldung, setzeMeldung } = k;
+  const { dienste, stand, standRef, welt, weltRef, spiel, meldung, meldungsbild, setzeMeldung } = k;
   const { schreibe, melde, wechsleKarte } = k;
   const partie = usePartiestart(k);
   const { deckwahl, ergebnis, offenePartie } = partie;
@@ -339,6 +340,7 @@ export function Oberwelt() {
       )}
       {meldung && (
         <section className="abenteuer-ergebnis" role="status" data-testid="abenteuer-meldung">
+          <Fundbild bild={meldungsbild} />
           <p>{meldung}</p>
           <button type="button" className="knopf-zweit" onClick={() => setzeMeldung(null)}>
             {tSpiel("ergebnis.weiter")}

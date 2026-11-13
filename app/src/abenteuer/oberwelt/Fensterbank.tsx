@@ -3,7 +3,8 @@
  *
  * Rolle im Gesamtbild: Der Dialog an der Fensterbank ruft `zeigeFensterbank()` (Ink); nach dem
  * Dialog öffnet die Oberwelt diese Ansicht (oberwelt/useDialogende.ts). Die Karte bleibt
- * unberührt. Reihenfolge: wie gefunden; Name und Satz aus funde.json und den Spieltexten.
+ * unberührt. Reihenfolge: wie gefunden; Name und Satz aus funde.json und den Spieltexten, das
+ * Bild (Feld `bild`) klein davor, wenn es im Paket liegt.
  * Abhängigkeiten: oberwelt/fensterbankfunde.ts, texte/texte.ts, app/blattstapel.ts.
  */
 import { useZurueckSchliesst } from "../../app/blattstapel";
@@ -11,6 +12,7 @@ import type { Funddaten } from "../daten/laden";
 import type { Abenteuerstand } from "../schnittstelle/spielstand";
 import { tSpiel } from "../texte/texte";
 import { fensterbankfunde } from "./fensterbankfunde";
+import { Fundbild } from "./Fundbild";
 
 /** Die Ansicht der Fensterbank; „Weiter“ oder Zurück schließt sie. */
 export function Fensterbank({
@@ -36,6 +38,7 @@ export function Fensterbank({
         <ul>
           {liste.map((f) => (
             <li key={f.kennung}>
+              <Fundbild bild={f.bild ?? null} klein />
               <strong>{tSpiel(f.name)}</strong> {tSpiel(f.text)}
             </li>
           ))}

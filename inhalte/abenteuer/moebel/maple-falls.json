@@ -3880,6 +3880,28 @@
       "zustand": "gebraucht",
       "stil": "modern",
       "hinweis": "Halfpipe aus Holz mit sichtbarer Fahrfläche (Gemini Teil 4; R022: die alte war eine Seitenansicht)"
+    },
+    "mf12KreidebrettSpringer": {
+      "quelle": "spiel/eigene/kreidebrett_springer.png",
+      "breite": 48,
+      "hoehe": 16,
+      "kollision": false,
+      "art": "boden",
+      "zustand": "gebraucht",
+      "stil": "landhaus",
+      "begehbar": true,
+      "begehbar_grund": "Kreide auf dem Gehweg",
+      "hinweis": "Kreidebrett nach Lilys Lektion mit Springerzügen (lilyGeholfen); Bild aus bildwuensche/kreidebrett.py"
+    },
+    "mf12SchachtischVeranda": {
+      "quelle": "modern-interiors/1_Interiors/16x16/Theme_Sorter_Black_Shadow_Singles/12_Kitchen_Black_Shadow_Singles_16x16/Kitchen_Shadow_Singles_274.png",
+      "breite": 16,
+      "hoehe": 16,
+      "kollision": true,
+      "art": "tisch",
+      "zustand": "gebraucht",
+      "stil": "klassisch",
+      "hinweis": "kleiner Tisch mit Schachbrett zwischen Mrs. Calloways Stühlen (Stufe D, Ink calloway_d)"
     }
   }
 }

@@ -5,6 +5,7 @@ import {
   HINWEIS_ALLGEMEIN,
   HINWEIS_TURM,
   hinweisschluessel,
+  istTurmzug,
   versuchTrifft,
   zugerratenLaeuft,
 } from "./zugerraten";
@@ -54,5 +55,13 @@ describe("hinweisschluessel", () => {
   it("fragt beim Turmzug nach dem Turm, sonst allgemein", () => {
     expect(hinweisschluessel(TURMSTELLUNG, "f1f7")).toBe(HINWEIS_TURM);
     expect(hinweisschluessel(TURMSTELLUNG, "h2h3")).toBe(HINWEIS_ALLGEMEIN);
+  });
+});
+
+describe("istTurmzug", () => {
+  it("erkennt den Turmzug für die Ink-Variable zugerratenTurm", () => {
+    expect(istTurmzug(TURMSTELLUNG, "f1f7")).toBe(true);
+    expect(istTurmzug(TURMSTELLUNG, "g1f2")).toBe(false);
+    expect(istTurmzug("kaputt", "f1f7")).toBe(false);
   });
 });

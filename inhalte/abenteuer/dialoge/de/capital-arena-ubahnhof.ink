@@ -65,7 +65,7 @@ Zum ersten Mal ohne Kamera. Es war das beste Blitz meines Lebens. #sprecher:vict
 Hier, ein Stück Kreide. Für die nächste Wand. Und für die Uhr. #sprecher:mo
 ~ gibKarte("sanduhr")
 ~ gibFund("fotoKreidenacht")
-Ein Spiel ohne Namen, ohne Kamera, nur zwei Menschen und eine Uhr. So hat alles angefangen. #sprecher:ambrose #stimmung:friedlich
+Niemand fragt hier nach einem Namen. Zwei Menschen und ein Brett. So war es im Kaffeehaus auch. #sprecher:ambrose #stimmung:friedlich
 -> END
 
 === mo_danach ===

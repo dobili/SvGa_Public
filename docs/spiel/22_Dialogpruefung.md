@@ -6186,6 +6186,13 @@ Sicht von Weiß.
   Stellung wie in Abschnitt 35 der Bibel nach 40… b5 (vom Gutachter schon nachgespielt), etwa
   +1,9 für Weiß (Kh4 oder Tc7).
 
+Nachtrag vom selben Abend: Der Hauptchat hat die Stellung von 1858 berichtigt (Commit d11b9c0a):
+`rr3bk1/pp3ppp/1npq4/3p2N1/3P4/1PPB4/P4PPP/R3Q1K1 w - - 0 26`. Der Gutachter hat sie
+nachgeprüft: Weiß hat jetzt genau einen Turm weniger, Lxh7+ steht bei etwa +2,0, die
+nächstbesten Züge verlieren (etwa −5,8). Entschieden ist außerdem, dass das Duell nach Hales
+Läuferzug beginnt (M1.5). Beides steht jetzt in der Bibel (Szene 77, dazu Dots Stellung im
+Abschnitt 18.4) und in `roman/akt3_befunde.md`, Abschnitt 7.
+
 ### M1 Kapitel 41 bis 46: Canyon, Felsbogen und Desert Springs
 
 Geprüft gegen `docs/spiel/roman/akt3_teil3.md` (Kapitel 41–46, mit Randnotizen und der Tabelle „Neu

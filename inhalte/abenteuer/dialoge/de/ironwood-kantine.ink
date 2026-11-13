@@ -174,11 +174,15 @@ Kumpel, fährst du am Kanal entlang? Bring das Ruben in Lockport. Der Mann hat s
 
 === big_joe_alltag ===
 {~Kumpel, die Kantine war dreißig Jahre unser Wohnzimmer.|Laurie spielt wieder. Ich hätte nicht gedacht, dass ich das noch erlebe.|Eine Fesselung ist wie ein Kranhaken: Was dranhängt, kann nicht weg.} #sprecher:bigJoe
++ {mamaSpielt and not feierGesehen} [„Wird heute noch gefeiert?“]
+    // Wer die Feier einmal abgelehnt hat, kann sie nachholen; sonst bliebe die Nebenquest
+    // ironwood.feier für immer offen.
+    -> feier
 + {nadelIronwood > 0 and nadelIronwood < 3} [„Revanche um eine bessere Nadel?“]
     Immer, Kumpel. #sprecher:bigJoe
     ~ beginnePartie("ironwood.clubkampf")
     -> END
-+ [„Bis später, Big Joe.“]
++ [„Bis nachher, Big Joe.“]
     -> END
 
 // ---------------------------------------------------------------- Die Feier

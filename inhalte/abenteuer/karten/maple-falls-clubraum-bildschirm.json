@@ -1320,23 +1320,37 @@
      "id": 8,
      "name": "sam",
      "type": "figur",
-     "x": 144,
-     "y": 112,
+     "x": 80,
+     "y": 128,
      "width": 16,
      "height": 16,
      "rotation": 0,
-     "visible": true
+     "visible": true,
+     "properties": [
+      {
+       "name": "sitzt",
+       "type": "string",
+       "value": "rechts"
+      }
+     ]
     },
     {
      "id": 9,
      "name": "carlaClub",
      "type": "figur",
-     "x": 256,
-     "y": 144,
+     "x": 272,
+     "y": 128,
      "width": 16,
      "height": 16,
      "rotation": 0,
-     "visible": true
+     "visible": true,
+     "properties": [
+      {
+       "name": "sitzt",
+       "type": "string",
+       "value": "rechts"
+      }
+     ]
     },
     {
      "id": 10,
@@ -1353,8 +1367,8 @@
      "id": 11,
      "name": "schuelerin",
      "type": "statist",
-     "x": 160,
-     "y": 112,
+     "x": 176,
+     "y": 128,
      "width": 16,
      "height": 16,
      "rotation": 0,
@@ -1363,7 +1377,7 @@
       {
        "name": "tun",
        "type": "string",
-       "value": "steht am Tisch und stellt die Figuren auf"
+       "value": "sitzt am Tisch und stellt die Figuren auf"
       },
       {
        "name": "wann",
@@ -1381,9 +1395,9 @@
        "value": "statist-07"
       },
       {
-       "name": "verhalten",
+       "name": "sitzt",
        "type": "string",
-       "value": "sitzen"
+       "value": "rechts"
       }
      ]
     },
@@ -1391,8 +1405,8 @@
      "id": 12,
      "name": "clubmitglied",
      "type": "statist",
-     "x": 240,
-     "y": 160,
+     "x": 176,
+     "y": 176,
      "width": 16,
      "height": 16,
      "rotation": 0,
@@ -1401,7 +1415,7 @@
       {
        "name": "tun",
        "type": "string",
-       "value": "steht am Brett und spielt eine Übungspartie"
+       "value": "sitzt am Brett und spielt eine Übungspartie"
       },
       {
        "name": "wann",
@@ -1419,9 +1433,9 @@
        "value": "statist-14"
       },
       {
-       "name": "verhalten",
+       "name": "sitzt",
        "type": "string",
-       "value": "sitzen"
+       "value": "rechts"
       }
      ]
     },
@@ -1429,8 +1443,8 @@
      "id": 13,
      "name": "mutterWartet",
      "type": "statist",
-     "x": 32,
-     "y": 176,
+     "x": 16,
+     "y": 160,
      "width": 16,
      "height": 16,
      "rotation": 0,
@@ -1439,7 +1453,7 @@
       {
        "name": "tun",
        "type": "string",
-       "value": "steht neben der Bank und wartet auf ihren Sohn"
+       "value": "sitzt auf der Bank und wartet auf ihren Sohn"
       },
       {
        "name": "wann",
@@ -1457,9 +1471,9 @@
        "value": "statist-18"
       },
       {
-       "name": "verhalten",
+       "name": "sitzt",
        "type": "string",
-       "value": "sitzen"
+       "value": "rechts"
       }
      ]
     },

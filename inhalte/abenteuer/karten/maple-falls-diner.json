@@ -11,7 +11,7 @@
  "tilewidth": 16,
  "tileheight": 16,
  "nextlayerid": 5,
- "nextobjectid": 40,
+ "nextobjectid": 41,
  "layers": [
   {
    "id": 1,
@@ -768,7 +768,7 @@
      "id": 5,
      "name": "lkwFahrer",
      "type": "statist",
-     "x": 128,
+     "x": 112,
      "y": 128,
      "width": 16,
      "height": 16,
@@ -778,7 +778,7 @@
       {
        "name": "tun",
        "type": "string",
-       "value": "isst Pfannkuchen am Ende der Theke"
+       "value": "sitzt auf dem Hocker am Thekenende und isst Pfannkuchen"
       },
       {
        "name": "wann",
@@ -791,9 +791,9 @@
        "value": "statist.mapleFalls.diner.lkwFahrer"
       },
       {
-       "name": "verhalten",
+       "name": "sitzt",
        "type": "string",
-       "value": "sitzen"
+       "value": "oben"
       }
      ]
     },
@@ -801,8 +801,8 @@
      "id": 6,
      "name": "rentnerinnen",
      "type": "statist",
-     "x": 208,
-     "y": 128,
+     "x": 224,
+     "y": 112,
      "width": 16,
      "height": 16,
      "rotation": 0,
@@ -811,7 +811,7 @@
       {
        "name": "tun",
        "type": "string",
-       "value": "teilen sich ein Stück Apfelkuchen in der Nische"
+       "value": "sitzen in der Nische und teilen sich ein Stück Apfelkuchen"
       },
       {
        "name": "wann",
@@ -824,9 +824,9 @@
        "value": "statist.mapleFalls.diner.rentnerinnen"
       },
       {
-       "name": "verhalten",
+       "name": "sitzt",
        "type": "string",
-       "value": "sitzen"
+       "value": "links"
       }
      ]
     },
@@ -1586,6 +1586,29 @@
        "name": "kollision",
        "type": "bool",
        "value": false
+      }
+     ]
+    },
+    {
+     "id": 40,
+     "name": "mf12JukeboxAn",
+     "type": "moebel",
+     "x": 16,
+     "y": 134,
+     "width": 16,
+     "height": 26,
+     "rotation": 0,
+     "visible": true,
+     "properties": [
+      {
+       "name": "tiefe",
+       "type": "int",
+       "value": 152
+      },
+      {
+       "name": "kollision",
+       "type": "bool",
+       "value": true
       }
      ]
     }

@@ -3933,6 +3933,60 @@
       "zustand": "gebraucht",
       "stil": "schule",
       "hinweis": "Clubbrett ohne schwarze Dame, Radiergummi auf d8 (Roman Kap. 5); Bild aus bildwuensche/brett_radiergummi.py"
+    },
+    "mf12SchaukelstuhlSchraeg": {
+      "quelle": "spiel/eigene/schaukelstuhl_schraeg.png",
+      "breite": 19,
+      "hoehe": 26,
+      "kollision": true,
+      "art": "stuhl",
+      "zustand": "alt",
+      "stil": "klassisch",
+      "hinweis": "Gemini-Bildwunsch 7 (gemini_prompts_7.md)",
+      "blick": "rechts"
+    },
+    "mf12FahrradSteht": {
+      "quelle": "spiel/eigene/fahrrad_steht.png",
+      "breite": 30,
+      "hoehe": 28,
+      "kollision": true,
+      "art": "fahrrad",
+      "zustand": "gebraucht",
+      "stil": "klassisch",
+      "hinweis": "Gemini-Bildwunsch 7 (gemini_prompts_7.md)",
+      "blick": "rechts"
+    },
+    "mf12FahrradKopfueber": {
+      "quelle": "spiel/eigene/fahrrad_kopfueber.png",
+      "breite": 34,
+      "hoehe": 30,
+      "kollision": true,
+      "art": "fahrrad",
+      "zustand": "gebraucht",
+      "stil": "klassisch",
+      "hinweis": "Gemini-Bildwunsch 7 (gemini_prompts_7.md)"
+    },
+    "mf12JukeboxAn": {
+      "quelle": "spiel/eigene/jukebox_an.png",
+      "breite": 16,
+      "hoehe": 26,
+      "kollision": true,
+      "art": "geraet",
+      "zustand": "gebraucht",
+      "stil": "klassisch",
+      "hinweis": "Gemini-Bildwunsch 7 (gemini_prompts_7.md)",
+      "blick": "unten"
+    },
+    "mf12SchaukelstuhlVorn": {
+      "quelle": "spiel/eigene/schaukelstuhl_vorn.png",
+      "breite": 13,
+      "hoehe": 26,
+      "kollision": true,
+      "art": "stuhl",
+      "zustand": "alt",
+      "stil": "klassisch",
+      "hinweis": "Gemini-Bildwunsch 7 (gemini_prompts_7.md)",
+      "blick": "unten"
     }
   }
 }

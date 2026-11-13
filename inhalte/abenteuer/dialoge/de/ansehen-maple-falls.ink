@@ -29,6 +29,8 @@ VAR ersteLektionBesprochen = false
 VAR angesehenTischPizzakarton = false
 VAR angesehenKreidebrett = false
 VAR lilyGeholfen = false
+VAR angesehenBildschirmPult = false
+VAR nadelCedarCreek = 0
 
 // ---------------------------------------------------------------- Wohnzimmer
 
@@ -168,5 +170,20 @@ VAR lilyGeholfen = false
     ~ angesehenPlakatZaehlen = true
     Ein handgemaltes Plakat: „Erst zählen, dann schlagen!“ Darunter ist mit Filzstift eine Trillerpfeife gezeichnet. #sprecher:erzaehler
     Gegen dieses Plakat habe ich nichts einzuwenden. Ausnahmsweise. #sprecher:ambrose
+}
+-> END
+
+// Roman, Kapitel 9 (neu): Der Bildschirm von Perfect Move bleibt nach Victors Besuch im Clubraum
+// stehen (Zustandsfassung des Clubraums, Karten). Der Konzern ist verlockend, nicht böse.
+=== bildschirm_pult ===
+{
+- nadelCedarCreek > 0:
+    Jemand hat den Bildschirm wieder eingeschaltet. Die Figuren ziehen von selbst. Niemand sieht hin. Fast niemand. #sprecher:erzaehler
+- angesehenBildschirmPult:
+    Coach Delgado hat ein Handtuch über den Bildschirm gehängt. Es rutscht immer wieder herunter. #sprecher:erzaehler
+- else:
+    ~ angesehenBildschirmPult = true
+    Ein Bildschirm auf dem Pult, ausgeschaltet. Auf dem Rahmen ein Aufkleber: „Perfect Move – Pilotschule“. #sprecher:erzaehler
+    Ein Brett, das allein spielt. Gegen wen eigentlich? #sprecher:ambrose #stimmung:still
 }
 -> END

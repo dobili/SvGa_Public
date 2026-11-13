@@ -32,8 +32,7 @@ VAR victorGesehen = false
 VAR ausgangMapleFallsVictor = ""
 VAR victorUeberrascht = 0
 VAR kenntHale = false
-// Neu nach dem Roman zu Akt 1 (Kapitel 8 und 9): heimwegNadelGesehen und bildschirmGesehen setzt
-// diese Datei.
+// Neu nach dem Roman zu Akt 1 (Kapitel 8): heimwegNadelGesehen setzt diese Datei.
 VAR heimwegNadelGesehen = false
 
 // ---------------------------------------------------------------- Coach Delgado
@@ -333,6 +332,13 @@ Er geht, ohne sich umzudrehen. Juno hält dir die Hand zum Abklatschen hin. #spr
 -> victor_ambrose
 
 === victor_ambrose ===
+// Roman, Kapitel 9 (neu): Der Bildschirm bleibt im Clubraum stehen; Coach Delgado ist verlockt,
+// nicht böse (docs/spiel/19, Abschnitt 3). Ihre Entscheidung fällt in Akt 2. Klang: Konzernmotiv
+// (ein kalter Ton), dann Stille.
+Auf dem Pult steht noch der Bildschirm. Darauf ziehen die Figuren von selbst. #sprecher:erzaehler
+Coach Delgado schaltet ihn aus. Sie steht eine Weile davor. #sprecher:erzaehler #pause
+Kostet zunächst nichts. #sprecher:coachDelgado #stimmung:ernst
+Sie sagt es zu niemandem. #sprecher:erzaehler
 Als der Raum leer ist, meldet sich das Brett in deiner Tasche. #sprecher:erzaehler
 {ausgangMapleFallsVictor == "niederlage":
     Er hat nicht dich besiegt, sondern diese Stellung. Und in der Stellung hast du dich gewehrt. #sprecher:ambrose
@@ -346,6 +352,10 @@ Als der Raum leer ist, meldet sich das Brett in deiner Tasche. #sprecher:erzaehl
     ~ ambroseVertrauen = ambroseVertrauen + 1
     Das ist der erste kluge Satz, den du heute sagst. #sprecher:ambrose
 - Du nimmst es dir fest vor: besser werden. Ohne Glück. #sprecher:erzaehler
+// Roman, Kapitel 9 (neu): {held} schreibt das Ziel selbst ins Tagebuch, als Handlung statt als
+// Menüeintrag. Die kleine Schreibanimation im Tagebuch der Oberfläche ist ein eigener Auftrag.
+Juno hat dir das Clubtagebuch übers Wochenende geliehen. Du schlägst eine neue Seite auf. #sprecher:erzaehler
+In deiner eigenen Schrift, ohne Glitzer, schreibst du: „Ich will besser werden.“ #sprecher:erzaehler #pause
 Dann gehen wir nach Cedar Creek. Sag deiner Mutter Bescheid. #sprecher:ambrose
 -> END
 

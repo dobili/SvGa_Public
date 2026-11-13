@@ -151,3 +151,25 @@ In `19_Ton_und_Spannungsbogen.md` eingearbeitet (Abschnitt 8):
       Dachboden?
 - [ ] R4. Ton und Länge: Ist das die Art Erzählung, die du dir als Leitfaden vorgestellt hast?
       Davon hängt ab, wie Akt 2 bis 4 geschrieben werden.
+
+## 7. Entscheidungen nach der Prüfung des Gutachters (13.11.2026)
+
+Der Gutachter-Chat hat den Roman gegen die Story-Bibel geprüft (`22_Dialogpruefung.md`, Teil A).
+Entschieden vom Hauptchat; der Roman ist entsprechend geändert.
+
+| Frage                                      | Entscheidung                                                                                                                                                                                                       |
+| ------------------------------------------ | ------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------ |
+| War das Opfer von 1858 richtig?            | Ja (Bibel, Szene 77). In Akt 1 sagt Ambrose „Nein“, weil er es seit 160 Jahren glaubt; Hale sagte „unnötig“, nicht „falsch“. Auflösung in Kapitel 45. Die Dialoge von Akt 1 lassen seinen Irrtum stehen.           |
+| „Schwarz steht besser“ oder Weiß?          | **Weiß steht besser.** Nach Abschnitt 35 der Bibel führt Ambrose Weiß und steht besser (+1,4), Hale hat Schwarz und ist am Zug. Mamas Satz heißt im Roman jetzt so; **in Bibel (Szene 4) und Spieldialog ändern.** |
+| Die Stellung auf dem Brett                 | Wie in Abschnitt 35: ein weißer Turm, zwei schwarze Springer, wenige Bauern. Roman angepasst.                                                                                                                      |
+| Abernathys Zettel                          | Zeigt den Anfang der Fernpartie (Fragment 0, Züge 1 bis 4), nicht „Zug neunzehn“. Roman angepasst.                                                                                                                 |
+| Wie lange war ein Zug unterwegs?           | Keine Zahl mehr („tagelang, manchmal Wochen“; die Partie dauerte über ein Jahr).                                                                                                                                   |
+| Ambroses Kindheit                          | Port Delacroix, Vater Klavierbauer (Bibel). Roman angepasst; „Schachmeister aus New Orleans“ bleibt, weil er dort spielte.                                                                                         |
+| Weg nach Cedar Creek                       | Wie im Roman: am Freitag nach der Schule zu Fuß, Nacht im Lesesaal, Team kommt am Samstag mit dem Bus. Der Weg hat zwei Karten (Landstraße, Flussweg); der Zedernpfad bleibt bis zur zweiten Nadel gesperrt.       |
+| „Später“ am ersten Tag                     | Steht jetzt auch im Roman (Kapitel 3). In den Spieldialogen fällt „Später“ in Akt 1 nur an drei Stellen (erster Tag, Archiv, Steg); die übrigen Antwortwahlen heißen „Nicht jetzt.“ oder „Gleich.“.                |
+| Beschriftung der Kartons                   | Auf den Kartons stehen Namen, kein Inhalt. Roman angepasst.                                                                                                                                                        |
+| Clubraum                                   | Erdgeschoss, Raum 12, wie im Roman (Blick auf den Fahnenmast).                                                                                                                                                     |
+| Bildschirm oder Prospekt im Clubraum       | Bildschirm, der stehen bleibt (Roman).                                                                                                                                                                             |
+| Fingerzeig vor oder nach der ersten Partie | Vor der Partie, wie in Bibel und Spiel (die Karte hilft schon in der ersten Partie). Der Roman erzählt es danach; das ist nur Erzählreihenfolge und bleibt.                                                        |
+| Buchverweis in `weg-maple-cedar.ink`       | Fällt unter die Entscheidung vom 10.11.: entfernen (mittel-3).                                                                                                                                                     |
+| Hales Brief (Akt 3)                        | Hale hat seine Antwort gefunden und ins Notizbuch geschrieben, schickt sie aber nicht: Er will sie am Brett ziehen. Auf der Rückseite des Briefs stehen die Züge 29 bis 32 zur Kontrolle (Fragment 7).             |

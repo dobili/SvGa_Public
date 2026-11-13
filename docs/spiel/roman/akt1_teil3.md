@@ -8,7 +8,7 @@ Spannung 2 bis 3.
 
 ## Kapitel 10: Die Ehrlichkeitskasse
 
-_Szene 13 (Aufbruch), erweitert um den Weg zu Fuß. Wohnzimmer, Landstraße, Flussweg, Zedernpfad.
+_Szene 13 (Aufbruch), erweitert um den Weg zu Fuß. Wohnzimmer, Landstraße, Flussweg.
 Stimmung: frei, Sommerende, Atem holen._
 
 „Zu Fuß“, sagte Mama.
@@ -41,7 +41,7 @@ Ortsausgang: Wer es löst, darf gehen. Wer nicht, auch._
 „Das macht Mr. Pratt“, sagte Juno. „Jeden Monat ein neues. Niemand weiß, warum.“
 
 Die Landstraße lief zwischen Feldern, gerade wie mit dem Lineal gezogen, und links und rechts
-standen Zäune, die im Wind leise klapperten. Es war ein heller Vormittag. Der Himmel war so
+standen Zäune, die im Wind leise klapperten. Es war früher Nachmittag, hell und warm; wir waren gleich nach der Schule los. Der Himmel war so
 groß, dass ich immer wieder hinaufsah. In der Stadt hatte ich nie viel Himmel gehabt.
 
 Juno redete. Sie erzählte von ihrer Schwester Carla, die drei Jahre im Team gewesen war und
@@ -125,7 +125,7 @@ Und dahinter, zwischen den Bäumen, schlug eine Uhr. Vier Schläge, langsam, ein
 anderen, als hätte sie alle Zeit der Welt.
 
 `[Klang: Wegthema: das Thema von Maple Falls schneller und leichter, mit Mundharmonika. Am Fluss kommt Wasser dazu, die Mundharmonika geht. Unter den Zedern setzt ein einzelnes Klavier ein (das Thema von Cedar Creek), Schritte werden dumpf. Am Schluss die Turmuhr, vier Schläge, ohne Musik.]`
-`[Bild: Drei Karten von hell zu schattig. Großer Himmel auf der Landstraße (viel freie Fläche oben). Stein mit eingeritztem Brett, ansprechbar. Ehrlichkeitskasse, ansprechbar.]`
+`[Bild: Zwei Karten von hell zu schattig; die Zedern stehen am Ende des Flusswegs (der Zedernpfad selbst öffnet erst nach der zweiten Nadel). Großer Himmel auf der Landstraße (viel freie Fläche oben). Stein mit eingeritztem Brett, ansprechbar. Ehrlichkeitskasse, ansprechbar.]`
 `[Karte: Rätseltafel am Ortsausgang. Apfelstand am Gatter. Fährstelle mit Stein und Angler. Ortsschild.]`
 
 ---

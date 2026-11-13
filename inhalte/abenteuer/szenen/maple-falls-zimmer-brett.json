@@ -164,6 +164,6 @@
       "feld": [2, 7]
     }
   ],
-  "figuren": [{ "name": "ambrose", "feld": [12, 3], "sitzt": "rechts" }],
+  "figuren": [{ "name": "ambrose", "feld": [12, 4], "sitzt": "rechts" }],
   "zustand_der_karte": "ersterAbendGesehen"
 }

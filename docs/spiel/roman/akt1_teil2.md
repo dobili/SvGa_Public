@@ -164,7 +164,7 @@ Bleistift. Auf einen Zettel.“
 
 „Kennst du die Stellung?“
 
-„Ob ich sie kenne. Es ist meine. Zug neunzehn, wenn ich nicht irre.“ Eine Pause. „Ich bin
+„Ob ich sie kenne. Es ist meine. Der Anfang. Vier Züge, und im vierten mein Gambit.“ Eine Pause. „Ich bin
 gerührt. Und beleidigt. Es fehlt ein Bauer.“
 
 Vor dem Nachbarhaus saß ein kleines Mädchen auf dem Bordstein und hatte ein Schachbrett mit

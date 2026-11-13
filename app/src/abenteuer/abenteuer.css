@@ -566,3 +566,23 @@ body.abenteuer-mit-kulisse {
     opacity: 1;
   }
 }
+
+/* Erscheinung des Porträts (Atmosphäre T9): #erscheint blendet in zwei Sekunden ein, #geist zeigt
+   die Figur halb durchsichtig (Ambrose im Kapitel 2). */
+.abenteuer-dialog-kopf[data-erscheinung="erscheint"] .abenteuer-dialog-portraet {
+  animation: abenteuer-erscheint 2s ease-in;
+}
+
+.abenteuer-dialog-kopf[data-erscheinung="geist"] .abenteuer-dialog-portraet {
+  opacity: 0.5;
+}
+
+@keyframes abenteuer-erscheint {
+  from {
+    opacity: 0;
+  }
+
+  to {
+    opacity: 1;
+  }
+}

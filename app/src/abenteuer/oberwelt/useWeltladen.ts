@@ -52,10 +52,11 @@ function merkeBesuch(k: Oberweltkern, w: Weltdaten): void {
 function starteSpiel(k: Oberweltkern, a: Weltanschluss, w: Weltdaten, stand: Abenteuerstand) {
   const rahmen = a.rahmen.current;
   if (!rahmen) return;
-  const toenung = aktuelleToenung(w.karte, w.kennung, stand.dialogvariablen);
+  const eintrag = w.ort.karten.find((x) => x.kennung === w.kennung);
+  // Licht aus orte.json (T6) vor der Tönung der Szene.
+  const toenung = aktuelleToenung(w.karte, w.kennung, stand.dialogvariablen, eintrag);
   k.zeigeToenung(toenung);
   // Musik und Dauergeräusch der Karte aus orte.json (T1, T2); fehlt die Datei, bleibt es still.
-  const eintrag = w.ort.karten.find((x) => x.kennung === w.kennung);
   tonregie.karteBetreten(eintrag?.musik, eintrag?.geraeusch);
   k.spiel.current = starteOberwelt(rahmen, {
     karte: w.karte,

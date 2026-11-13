@@ -28,6 +28,18 @@
       "type": "string",
       "pattern": "^[a-z][a-zA-Z0-9]*(\\.[a-zA-Z0-9]+)+$"
     },
+    "licht": {
+      "enum": [
+        "tag",
+        "abend",
+        "nacht",
+        "nebel",
+        "dunst",
+        "serverblau",
+        "sepia",
+        "dunkel"
+      ]
+    },
     "karte": {
       "type": "object",
       "additionalProperties": false,
@@ -50,6 +62,15 @@
           "description": "Dauergeräusch der Karte (Schleife unter der Musik: Wasserfall, Regen, Ticken der Uhr); wie musik, aus dem Ordner klang",
           "type": "string",
           "pattern": "^klang/[a-z0-9-]+\\.(ogg|m4a)$"
+        },
+        "licht": {
+          "description": "Lichtstimmung der Karte (Atmosphäre T6) als Schleier: tag (kein Schleier), abend, nacht, nebel oder eine andere Tönung (dunst, serverblau, sepia, dunkel). Geht vor der Eigenschaft toenung der Szene; ein Dialog mit setzeToenung geht vor dem Licht",
+          "$ref": "#/$defs/licht"
+        },
+        "licht_zustaende": {
+          "description": "Licht je Zustand (Atmosphäre T6): Bedingung (Sprache wie bei wenn) → Licht; der letzte Eintrag, dessen Bedingung gilt, ersetzt licht. Beispiel: {\"ausgangGhostGus == \\\"sieg\\\"\": \"abend\"}",
+          "type": "object",
+          "additionalProperties": { "$ref": "#/$defs/licht" }
         },
         "zustaende": {
           "description": "Zustände der Karte (Runde 6 und 8): Bedingung (Sprache wie bei wenn) → Tiled-JSON karten/<basis>-<zustand>.json. Der letzte Eintrag, dessen Bedingung gilt, wird geladen, mit dem Hintergrund grafik/karten/<kennung>-<zustand>.png; ohne passenden Eintrag die Grundkarte. Beispiel Musikhaus: musikhausOffen → karten/port-delacroix-musikhaus-neu.json (Zustand „neu“).",

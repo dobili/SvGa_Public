@@ -178,8 +178,8 @@ Setz dich. Du spielst seine Züge. Ich sage dir nichts. #sprecher:ambrose
 * [„Los geht's.“]
     ~ beginneAufgaben("cedarCreek.erinnerungNewYork")
     -> END
-* [„Nicht jetzt.“]
-    Nicht jetzt? Ausgerechnet heute. Nun gut. #sprecher:ambrose #stimmung:bitter
+* [„Später.“]
+    Später. Ausgerechnet heute. Nun gut. #sprecher:ambrose #stimmung:bitter
     -> END
 
 === programmheft_danach ===

@@ -18,8 +18,6 @@ EXTERNAL reise(karte, ausloeser)
 EXTERNAL gibFund(kennung)
 
 VAR held = "Du"
-// Ambrose nennt {held} erst nach dem Archiv beim Namen (cedar-creek-archiv.erzaehlung_1858).
-VAR erzaehlung1858Gesehen = false
 VAR ambroseVertrauen = 0
 VAR ankunftCedarCreekGesehen = false
 VAR maeEingeladen = false

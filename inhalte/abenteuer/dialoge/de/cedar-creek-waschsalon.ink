@@ -38,7 +38,7 @@ Auf dem Trockner dort klebt jede Woche eine neue Stellung. Wer sie löst, wäsch
 * [„Ich versuche es.“]
     Nur zu. Weiß am Zug, Matt in zwei. #sprecher:boateng
 * [„Ich habe gar keine Wäsche dabei.“]
-    Dann hast du einen Gutschein für nachher. Das ist auch was. #sprecher:boateng
+    Dann hast du einen Gutschein für später. Das ist auch was. #sprecher:boateng
 - Ein Brett auf einer Maschine, die zittert. Und die Figuren halten. #sprecher:ambrose
 -> END
 

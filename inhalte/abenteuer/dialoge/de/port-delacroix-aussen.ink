@@ -10,6 +10,9 @@
 // Einstiege wie in orte.json: ankunft_zu_fuss, deich, bayou, batiste, arceneaux, brett_haus1 bis
 // brett_haus4, gebaeckstand, wuestenzug.
 //
+// Runde 11 (13.11.2026): Ankunft nach dem Roman (roman/akt3_teil2.md, Kapitel 35): die braune
+// Wasserlinie an allen Häusern, die Ruine des Musikhauses, die Trompete zwischen Trauer und Tanz.
+//
 // Ambrose schweigt nach dem Vorwurf (Szene 63) bis zu den Nachfahren (Szene 68,
 // ambroseSprichtWieder); seine Zeilen hängen daran. Variablen: ausgangPortDelacroixBatiste und
 // nadelPortDelacroix setzt die Hülle (R42), die übrigen setzt Ink.
@@ -41,15 +44,22 @@ VAR angesehenBauzaun = false
 
 === ankunft_zu_fuss ===
 {ankunftPortDelacroixGesehen:
-    Der Deichweg endet am Kai von Port Delacroix. #sprecher:erzaehler
+    Der Deichweg endet am Kai von Port Delacroix. An allen Häusern läuft der braune Strich entlang. #sprecher:erzaehler
     -> END
 }
 ~ ankunftPortDelacroixGesehen = true
-Der Deichweg endet am Kai. Boote schaukeln, an den Häusern stehen Leitern, auf einem Dach liegt eine Plane. #sprecher:erzaehler
-Aus einem Zelt klingt eine Trompete. Jemand hat ein Schild an einen Bauzaun gehängt: „Wir bauen wieder auf.“ #sprecher:erzaehler
+Schmale Häuser mit Balkonen aus geschmiedetem Eisen, Fensterläden in Grün und Blau, Palmen. Auf vielen Dächern liegen Planen. #sprecher:erzaehler
+An den Hauswänden läuft in Hüfthöhe ein brauner Strich entlang, von Haus zu Haus, schnurgerade. #sprecher:erzaehler
+* [„Was ist das?“]
+- Da stand das Wasser. #sprecher:mutter
+Am Kai ist eine Lücke. Mauern ohne Dach, durch die leeren Fenster sieht man den Himmel. #sprecher:erzaehler
+Über dem Eingang hängt ein Schild an einer einzigen Schraube: „Maison de Musique. Club d’Échecs, depuis 1889.“ #sprecher:erzaehler
+Das Musikhaus. Mein Vater hat die Orgel darin gestimmt. #sprecher:ambrose #stimmung:fern
+Ich habe unter der Empore gesessen und gewartet, bis er fertig war. #sprecher:ambrose #stimmung:fern
+* [Warten]
+- Er macht einen Schritt darauf zu. Dann noch einen. #sprecher:erzaehler
+Aus einem Zelt neben der Ruine kommt eine Trompete, erst langsam, dann plötzlich schnell, als könne sie sich nicht entscheiden. #sprecher:erzaehler #musik:karte
 Ich geh zum Notzelt, da brauchen sie Hände. Das Turnier ist in der Turnhalle. Wir sehen uns heute Abend. #sprecher:mutter
-Hier. Ich bin hier geboren. Nicht in New Orleans, das habe ich immer erzählt, weil es besser klang. #sprecher:ambrose #stimmung:fern #pause
-Ich war acht, als wir umzogen. Ich hatte es fast vergessen. #sprecher:ambrose
 -> END
 
 === deich ===
@@ -152,7 +162,7 @@ Eine Stellung, du hast Weiß. Ohne Uhr, das Meer hat auch keine. #sprecher:batis
 + [„Gut.“]
     ~ beginnePartie("portDelacroix.batiste")
     -> END
-+ [„Später.“]
++ [„Nicht jetzt.“]
     Ich bin hier. Das Boot auch. #sprecher:batiste
     -> END
 
@@ -176,7 +186,7 @@ Das Wasser war ruhiger als du. Noch einmal? #sprecher:batiste
 + [„Noch einmal.“]
     ~ beginnePartie("portDelacroix.batiste")
     -> END
-+ [„Später.“]
++ [„Nicht jetzt.“]
     -> END
 
 // ---------------------------------------------------------------- Mrs. Arceneaux am Gebäckstand

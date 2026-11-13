@@ -19,6 +19,7 @@ EXTERNAL gibFund(kennung)
 EXTERNAL oeffneLaden(laden)
 
 VAR held = "Du"
+VAR zugerratenTurm = false
 VAR arenaGesehen = false
 VAR ausgangCapitalArenaRunde1 = ""
 VAR ausgangCapitalArenaRunde2 = ""
@@ -245,11 +246,13 @@ Dann erfahre ich, dass du mich nicht gebraucht hast. Das wäre auch ein schöner
 + [„Noch einen Moment.“]
     -> END
 
-// Geführter Moment im Halbfinale (begegnungen.json): der Turm. Ambrose rufen oder allein. Die Karte
-// mit goldenem Rand und das Zugerraten des Turmzugs regelt die Partieansicht (Story-Bibel 34.3).
+// Geführter Moment im Halbfinale (begegnungen.json): der Zug. Ambrose rufen oder allein. Die Karte
+// mit goldenem Rand und das Zugerraten regelt die Partieansicht (Story-Bibel 34.3). Das Zugerraten
+// sucht den besten Engine-Zug der echten Partie; nur wenn es ein Turmzug ist (zugerratenTurm, setzt
+// die Hülle), erzählen die Zeilen den Turm wie im Roman, sonst ohne Figur.
 === halbfinale_turm ===
-Du siehst etwas. Keine Rettung. Einen Turm, und ein Feld mitten in seiner Stellung. Der Bauer würde fehlen, und dahinter ist sein König. #sprecher:erzaehler #musik:aus
-Du zählst. Angreifer: drei. Verteidiger: einer. Zwei, wenn er richtig zieht. Ein Läufer, ein Feld zurück. Hält er? Es ist zu tief. #sprecher:erzaehler
+{zugerratenTurm:Du siehst etwas. Keine Rettung. Einen Turm, und ein Feld mitten in seiner Stellung. Der Bauer würde fehlen, und dahinter ist sein König.|Du siehst etwas. Keine Rettung. Da ist ein Zug. Er sieht falsch aus, und dahinter ist sein König.} #sprecher:erzaehler #musik:aus
+Du zählst Angreifer und Verteidiger. Dann suchst du den stillen Zug für ihn. Gibt es einen? Es ist zu tief. #sprecher:erzaehler
 * [„Ambrose.“]
     ~ ambroseImHalbfinaleGerufen = true
     -> halbfinale_zusammen
@@ -259,10 +262,10 @@ Du zählst. Angreifer: drei. Verteidiger: einer. Zwei, wenn er richtig zieht. Ei
 
 === halbfinale_zusammen ===
 Er ist sofort da, so nah, dass du die Kälte spürst. #sprecher:erzaehler #musik:ambrose.suchend
-Ich sehe es. Der Turm, {held}. Der Turm. #sprecher:ambrose
+{zugerratenTurm:Ich sehe es. Der Turm, {held}. Der Turm.|Ich sehe es. Dieser Zug, {held}. Dieser Zug.} #sprecher:ambrose
 * [„Stimmt es?“]
-- Er rechnet und kommt an dieselbe Stelle wie du, an den Läufer, der zurückgeht. Dahinter ist es dunkel. #sprecher:erzaehler
-Ich weiß es nicht. Bis zum Läufer stimmt es. Danach ist es dunkel. Die Maschine weiß es. Ich nicht. Du nicht. #sprecher:ambrose #stimmung:lacht
+- Er rechnet und kommt an dieselbe Stelle wie du, an den stillen Zug für ihn. Dahinter ist es dunkel. #sprecher:erzaehler
+Ich weiß es nicht. Bis dorthin stimmt es. Danach ist es dunkel. Die Maschine weiß es. Ich nicht. Du nicht. #sprecher:ambrose #stimmung:lacht
 * [„Zusammen.“]
 - Zusammen. #sprecher:ambrose #musik:zusammen
 Du fühlst seine Hand auf deiner, kalt und leicht wie Atem. #sprecher:erzaehler
@@ -281,8 +284,8 @@ Dann weiß ich jetzt, dass du mich nicht gebraucht hast. Das ist auch ein schön
 -> END
 
 === halbfinale_mit_dir ===
-Ambrose sieht auf den geschlagenen Turm neben der Uhr. #sprecher:erzaehler #musik:mit.dir
-Achtzehnhundertachtundfünfzig. Ein Turm, mitten in seine Stellung. #sprecher:ambrose
+{zugerratenTurm:Ambrose sieht auf den geschlagenen Turm neben der Uhr.|Ambrose sieht auf das Brett, auf den Zug, den ihr zusammen gemacht habt.} #sprecher:erzaehler #musik:mit.dir
+{zugerratenTurm:Achtzehnhundertachtundfünfzig. Ein Turm, mitten in seine Stellung.|Achtzehnhundertachtundfünfzig. Ein Zug, der falsch aussah, mitten in seine Stellung.} #sprecher:ambrose
 Er hebt die Hand, die auf deiner gelegen hat. Sie ist fast durchsichtig. #sprecher:erzaehler
 Das ist meine unsterbliche Partie. Mit dir. #sprecher:ambrose #stimmung:froh #pause:2
 * [„Sie war nicht makellos.“]

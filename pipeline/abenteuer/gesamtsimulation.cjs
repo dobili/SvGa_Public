@@ -95,14 +95,17 @@ function erlaubt(welt, st, ort, reise = false) {
 }
 
 /**
- * Ob der nächste Schritt einer offenen Quest ein Dialog in diesem Ort ist (Dialogdatei beginnt mit
- * dem Ort in Kleinbuchstaben mit Bindestrich, etwa maple-falls-wohnzimmer für mapleFalls).
+ * Ob der nächste Schritt einer offenen Hauptquest ein Dialog in diesem Ort ist (Dialogdatei beginnt
+ * mit dem Ort in Kleinbuchstaben mit Bindestrich, etwa maple-falls-wohnzimmer für mapleFalls).
+ * Nur Hauptquests: Eine offene Nebenquest (etwa die freiwillige Feier in Ironwood) zog die
+ * Simulation sonst aus Crossroads mit dem Fernbus zurück, und sie kam nie ins Pinewood Camp.
  */
 function questWartetIn(welt, st, ort) {
   const vorsilbe = ort.replace(/[A-Z]/g, (b) => "-" + b.toLowerCase()) + "-";
   return st.staende.some((s) => {
     if (s.fertig) return false;
     const q = welt.quests.find((x) => x.kennung === s.k);
+    if (!q?.haupt) return false;
     const e = q?.schritte[s.i]?.ereignis;
     return e?.art === "dialog" && e.knoten.startsWith(vorsilbe);
   });

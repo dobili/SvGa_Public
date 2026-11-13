@@ -1664,13 +1664,5 @@ die 40 häufigsten Gambits. Ein paar Zahlen (Anteil an allen Partien des Bandes)
       heruntergerechnet; (b) Figuren als Probe mit fünf Stück (Kind, Jugendliche, Erwachsener,
       Alte, Ambrose) auf zwei Wegen: Gemini und PixelLab (pixellab.ai, 40 Generierungen gratis,
       danach 24 $ für einen Monat, Rechte bei uns); erst danach über alle Figuren entscheiden.
-      Noch nichts umgesetzt: Sag, ob ich die Gemini-Prompts für die Probe schreiben soll.
-- [ ] RO11. **Knopf „Im Buch nachlesen“ bei den Routen-Ereignissen:** Der Plan für die Ereignisse
-      unterwegs sieht Seiten aus dem Manuskript und einen Knopf „Im Buch nachlesen“ vor. Seit dem
-      10.11.2026 gilt, dass Spieltexte nicht auf das Buch verweisen. Empfehlung: Knopf und Seiten
-      streichen, die Erklärung steht dann vollständig im Ereignis selbst. Noch nicht umgesetzt,
-      weil es ein Merkmal des Spiels entfernt; Widerspruch oder Zustimmung genügt.
-- [ ] RO12. **Ton braucht mehr Platz als geschätzt:** Der Klangplan kommt auf 149 Musikstücke und
-      163 Geräusche, zusammen etwa 120 MB (Akt 1 allein etwa 29 MB), statt der geschätzten 15 MB.
-      Empfehlung: Ton je Akt als eigenes Paket, das erst beim Betreten des Akts geladen wird, und
-      kurze Motive im Browser erzeugen. Schon in Arbeit bei mittel-2; Widerspruch genügt.
+      Der Autor probiert beides aus (13.11.2026): Probeprompt für Gemini und Link zu PixelLab
+      stehen im Chat; er schickt die Bilder, danach wird entschieden.

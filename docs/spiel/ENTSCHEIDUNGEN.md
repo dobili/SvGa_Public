@@ -928,3 +928,29 @@ dürfen deshalb größer sein. Es gilt die Tabelle in den Kartenregeln 10.75 (kl
 mittel bis 2-fach, groß bis 1,5-fach in der Breite); die 50-Prozent-Regel misst gegen den
 Grundriss mal Faktor. Zu jedem mehrgeschossigen Gebäudebild steht im Katalog, ob Treppe,
 Treppenhaus, Leiter oder Fahrstuhl passt und wo (Feld `aufgang`, Regel 10.76).
+
+## Das Spiel steht für sich; Buchinhalt nur als gesammelte Seiten (13.11.2026)
+
+Wunsch des Autors: Das Spiel soll ganz ohne das Buch funktionieren, weil es später vielleicht
+einzeln erscheint. Deshalb gibt es keinen Knopf „Im Buch nachlesen“ und keine Dialoge, die auf das
+Buch hinweisen oder zum Nachlesen dorthin schicken. Inhalt aus dem Buch darf vorkommen, etwa als
+Buchseiten, die man sammelt und im Spiel liest, solange es zusammen unter 10 % des Buches bleibt
+(bei rund 450 Seiten höchstens 45 Seiten). Das ergänzt die Entscheidung vom 10.11.2026. Folge für
+die Routen-Ereignisse (Dokument 15, Abschnitt 1.2): Der Knopf entfällt, die Erklärung steht
+vollständig im Ereignis; gesammelte Seiten zeigen ihren Inhalt selbst.
+
+## Ton je Akt als eigenes Paket (13.11.2026)
+
+Der Klangplan kommt auf etwa 120 MB. Der Autor ist einverstanden, dass der Ton von Akt 1 mit dem
+Grundpaket kommt und alle weiteren Pakete nachgeladen werden.
+
+## Neue Karte „Schutzengel“ (13.11.2026)
+
+Idee des Autors: Solange die Karte aktiv ist, wird ein Zug des Helden, der deutlich an
+Stellungsbewertung verliert, nicht sofort ausgeführt. Ambrose springt mit einer Dialogzeile ein
+und hält ihn auf („Das spielst du besser nicht.“), mit oder ohne kurze Begründung; der Held zieht
+neu. Empfehlung des Hauptchats, schon in Arbeit: Die Karte wirkt einmal je Partie (auf höheren
+Kartenstufen öfter), greift ab einem Verlust von etwa zwei Bauerneinheiten oder bei einem
+übersehenen Matt, und nennt als Begründung höchstens die Art des Fehlers („Da hängt etwas.“,
+„Dein König.“), nie den besseren Zug. In Partien ohne Ambrose (Port Delacroix nach dem Vorwurf,
+Finale) ist sie gesperrt.

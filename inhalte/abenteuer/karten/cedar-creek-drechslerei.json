@@ -11,7 +11,7 @@
  "tilewidth": 16,
  "tileheight": 16,
  "nextlayerid": 5,
- "nextobjectid": 24,
+ "nextobjectid": 25,
  "layers": [
   {
    "id": 1,
@@ -747,6 +747,29 @@
     },
     {
      "id": 9,
+     "name": "mf12Fensterbank",
+     "type": "moebel",
+     "x": 96,
+     "y": 36,
+     "width": 32,
+     "height": 16,
+     "rotation": 0,
+     "visible": true,
+     "properties": [
+      {
+       "name": "tiefe",
+       "type": "int",
+       "value": 0
+      },
+      {
+       "name": "kollision",
+       "type": "bool",
+       "value": false
+      }
+     ]
+    },
+    {
+     "id": 10,
      "name": "cc4Holzregal",
      "type": "moebel",
      "x": 128,
@@ -769,7 +792,7 @@
      ]
     },
     {
-     "id": 10,
+     "id": 11,
      "name": "cc4Werktisch",
      "type": "moebel",
      "x": 160,
@@ -792,12 +815,12 @@
      ]
     },
     {
-     "id": 11,
-     "name": "cc4Holzkiste",
+     "id": 12,
+     "name": "rv5Leiter",
      "type": "moebel",
-     "x": 208,
+     "x": 224,
      "y": 16,
-     "width": 32,
+     "width": 16,
      "height": 48,
      "rotation": 0,
      "visible": true,
@@ -815,7 +838,7 @@
      ]
     },
     {
-     "id": 12,
+     "id": 13,
      "name": "cc4Hocker",
      "type": "moebel",
      "x": 48,
@@ -838,7 +861,7 @@
      ]
     },
     {
-     "id": 13,
+     "id": 14,
      "name": "cc4Rundholz",
      "type": "moebel",
      "x": 16,
@@ -861,7 +884,7 @@
      ]
     },
     {
-     "id": 14,
+     "id": 15,
      "name": "cc4RundholzKlein",
      "type": "moebel",
      "x": 48,
@@ -884,7 +907,7 @@
      ]
     },
     {
-     "id": 15,
+     "id": 16,
      "name": "cc4Hocker",
      "type": "moebel",
      "x": 176,
@@ -907,7 +930,7 @@
      ]
     },
     {
-     "id": 16,
+     "id": 17,
      "name": "cc4KisteLeer",
      "type": "moebel",
      "x": 208,
@@ -930,7 +953,7 @@
      ]
     },
     {
-     "id": 17,
+     "id": 18,
      "name": "cc4RundholzMittel",
      "type": "moebel",
      "x": 208,
@@ -953,7 +976,7 @@
      ]
     },
     {
-     "id": 18,
+     "id": 19,
      "name": "cc8TuerSuedHolz",
      "type": "moebel",
      "x": 64,
@@ -976,11 +999,11 @@
      ]
     },
     {
-     "id": 19,
+     "id": 20,
      "name": "cc5Fussmatte",
      "type": "moebel",
      "x": 64,
-     "y": 152,
+     "y": 147,
      "width": 16,
      "height": 16,
      "rotation": 0,
@@ -999,7 +1022,7 @@
      ]
     },
     {
-     "id": 20,
+     "id": 21,
      "name": "cc7Werkbank",
      "type": "moebel",
      "x": 96,
@@ -1022,7 +1045,7 @@
      ]
     },
     {
-     "id": 21,
+     "id": 22,
      "name": "cc7Werkbank",
      "type": "moebel",
      "x": 128,
@@ -1045,7 +1068,7 @@
      ]
     },
     {
-     "id": 22,
+     "id": 23,
      "name": "cc5Leiste",
      "type": "moebel",
      "x": 104,
@@ -1068,7 +1091,7 @@
      ]
     },
     {
-     "id": 23,
+     "id": 24,
      "name": "cc5Werkstueck",
      "type": "moebel",
      "x": 136,

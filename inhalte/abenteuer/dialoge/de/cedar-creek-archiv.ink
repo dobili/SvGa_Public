@@ -7,6 +7,9 @@
 // cedarCreek.erinnerungNewYork). Einstiege wie in orte.json: „karton“, „programmheft“.
 // Den Karton 1850–1859 gibt es nach dem Umräumen oder nach dem Clubkampf (Bibel, Szene 18).
 // Ambrose erwähnt 1866 nicht und nennt Hales Vornamen nicht (Bibel, Szene 19).
+// Runde 11 (Roman, Kapitel 12): die siebte Partie als Tunnel mit Wahlen, „Später“ zurückgebunden
+// an den ersten Tag (ersterTagSpaeter aus maple-falls-dachboden.ink), und Ambrose nennt {held}
+// hier zum ersten Mal beim Namen (ambroseNenntNamen).
 //
 // Variablen: erinnerungNewYorkBestanden und nadelCedarCreek setzt die Hülle
 // (regeln/dialogvariablen.ts); die übrigen setzt Ink selbst.
@@ -22,6 +25,8 @@ VAR ordnenAngeboten = false
 VAR erzaehlung1858Gesehen = false
 VAR erinnerungNewYorkBestanden = false
 VAR nadelCedarCreek = 0
+VAR ersterTagSpaeter = false
+VAR ambroseNenntNamen = false
 
 // ---------------------------------------------------------------- Karton
 
@@ -113,8 +118,19 @@ Es war falsch. Er nahm den Turm, verteidigte sich ruhig und gewann. #sprecher:am
 * [„Das ist wie bei mir gegen Victor.“]
     Nein. Du hattest eine verlorene Stellung. #sprecher:ambrose
     Ich hatte eine gewonnene und habe sie verschenkt. #sprecher:ambrose
+// Runde 11 (Roman, Kapitel 12): Die siebte Partie wird ein Bild. Je höchstens zwei Zeilen, dann
+// eine Wahl. Später, wenn mittel-2 es gebaut hat: #bild:stellung1858 (stilles Standbild) beim
+// Läuferzug, #musik:ambroseVoll (Ambroses Thema zum ersten Mal vollständig).
+- Er sieht auf die Zeitung. Vier zu drei. #sprecher:erzaehler
+* [„Erzähl mir von der letzten Partie.“]
+    -> siebte_partie ->
+* [„Hat es wirklich nicht gestimmt?“]
+    -> siebte_partie_verteidigung ->
+* [Nichts fragen]
 - Ich forderte Revanche. Er schrieb mir einen Brief mit einem einzigen Wort. #sprecher:ambrose
 „Später.“ #sprecher:ambrose #stimmung:bitter #pause
+// Runde 11: Leitmotiv „Später“ (Roman, Kapitel 12) – zurückgebunden an den ersten Tag.
+{ersterTagSpaeter: Später. Du hast es am ersten Tag zu ihm gesagt, auf dem Dachboden, ohne nachzudenken. #sprecher:erzaehler}
 Dann kamen schwere Jahre, in denen niemand Schach spielte. Später wurde immer später. #sprecher:ambrose
 * {kenntHale} [„Hale. Wie Victor?“]
     Hale wie viele. #sprecher:ambrose
@@ -123,7 +139,45 @@ Dann kamen schwere Jahre, in denen niemand Schach spielte. Später wurde immer s
     ~ ambroseVertrauen = ambroseVertrauen + 1
     Danke, dass du zugehört hast. Das tut seit langer Zeit niemand mehr. #sprecher:ambrose
 - Nun. Genug Staub für heute. In dem Karton liegt noch ein Heft. Sieh es dir an, wenn du magst. #sprecher:ambrose
+// Runde 11: Ambrose nennt {held} hier zum ersten Mal beim Namen (Dokument 19, 5.2 und Abschnitt 8).
+~ ambroseNenntNamen = true
+Über dir schlägt die Uhr. Sieben Mal. Du willst den Deckel schließen. #sprecher:erzaehler #klang:turmuhr
+{held}. #sprecher:ambrose #pause
+Er hat dich noch nie beim Namen genannt. Immer nur „Kind“. Oder „Lehrling“. #sprecher:erzaehler
+* [„Ja?“]
+* [Den Deckel offen lassen]
+- Ich habe das noch niemandem erzählt. #sprecher:ambrose
+Er sieht zur Wendeltreppe. Es gab allerdings auch niemanden. #sprecher:ambrose
 -> END
+
+// ---------------------------------------------------------------- Runde 11: die siebte Partie
+// Tunnel aus erzaehlung_1858 (Roman, Kapitel 12). Saal über dem Kaffeehaus, der Turm, der stille
+// Läuferzug, vierzig Minuten. Höchstens zwei Zeilen am Stück, dann eine Wahl.
+
+=== siebte_partie ===
+Sieben Partien in einem Saal über einem Kaffeehaus. Die halbe Stadt stand auf der Treppe. #sprecher:ambrose
+Ich war siebenundzwanzig und der Beste, den sie hatten. Ich wusste es. Das war das Unglück. #sprecher:ambrose
+* [„Und der Ingenieur?“]
+    Er spielte, wie man eine Brücke baut. Jeder Stein auf den anderen, nichts Überflüssiges. #sprecher:ambrose
+    Nichts Schönes. Ich fand ihn unerträglich. #sprecher:ambrose
+* [„Und die siebte Partie?“]
+- In der siebten stand ich gewonnen. Ein Kind hätte sie gewonnen. Einen Bauern nehmen, nach Hause gehen. #sprecher:ambrose
+Aber die Leute standen auf der Treppe. Ich wollte, dass sie in hundert Jahren noch davon reden. #sprecher:ambrose
+* [„Also der Turm.“]
+    Mitten in seine Stellung. Wenn er ihn nahm, kam in sieben Zügen ein Matt, wie man es nie gesehen hatte. #sprecher:ambrose
+    Ich wusste nicht einmal, ob es stimmte. #sprecher:ambrose #stimmung:traurig
+* [Schweigen]
+- -> siebte_partie_verteidigung
+
+=== siebte_partie_verteidigung ===
+Es gab eine Verteidigung. Einen einzigen stillen Zug. #sprecher:ambrose
+Er brauchte vierzig Minuten. Er sah mich nicht an dabei. #sprecher:ambrose #pause
+* [„Und dann?“]
+    Dann stellte er einen Läufer ein Feld zurück. Alles, was ich gebaut hatte, fiel zusammen. #sprecher:ambrose
+* [Auf die Zeitung sehen]
+    Ambrose folgt deinem Blick. Bemerkenswert unnötig. #sprecher:ambrose
+- Er hatte recht. Das habe ich ihm nie verziehen. #sprecher:ambrose #stimmung:bitter
+->->
 
 === karton_alltag ===
 {~Der Karton mit den Jahren 1850 bis 1859 steht trocken im Regal. Die Zeitung liegt obenauf.|Bemerkenswert unnötig. Ich höre es noch.} #sprecher:ambrose

@@ -261,7 +261,8 @@ Sie opfert. Immer. Wenn du nicht weißt, wie ein Matt nach einem Opfer aussieht,
 ~ tomasGetroffen = true
 Ein Auto auf der Hebebühne, Werkzeug an der Wand, zwischen Ölkanistern drei Klapptische. Unter dem Auto ragen Stiefel hervor. #sprecher:erzaehler #geraeusch:garage
 Mira ist im Canyon. Die kommt, wenn es dunkel wird. #sprecher:tomas
-Er rollt heraus, einen Schraubenschlüssel in der Hand. Ich bin Tomás. Der Bruder, der Club und die Aufsicht. #sprecher:tomas
+Er rollt heraus, einen Schraubenschlüssel in der Hand. #sprecher:erzaehler
+Ich bin Tomás. Der Bruder, der Club und die Aufsicht. #sprecher:tomas
 Auf dem Regal über der Werkbank glänzt ein Pokal. Aus einer Limonadendose, aufgeschnitten, gebogen, mit Draht. #sprecher:erzaehler #bild:dosenpokal
 Den hat sie selbst gemacht. Mit sechs. In der Zeitung war ein Typ aus Riverton mit einem ganzen Regal davon. #sprecher:tomas
 Sie hat gesagt: Wenn der das darf, darf sie das auch. #sprecher:tomas

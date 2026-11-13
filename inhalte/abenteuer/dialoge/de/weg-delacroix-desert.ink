@@ -46,7 +46,8 @@ Gilt auch fürs Wandern. Mehr Wasser als Weg. #sprecher:holloway
 = holloway_gefaellt
 * [„Gefällt sie dir?“]
 - Ich weiß es noch nicht. Ich bin es nicht mehr gewohnt, etwas nicht sofort zu wissen. #sprecher:ambrose
-Er sieht zu dem Vogel hinauf. Es ist angenehm. #sprecher:ambrose #stimmung:still
+Er sieht zu dem Vogel hinauf. #sprecher:erzaehler
+Es ist angenehm. #sprecher:ambrose #stimmung:still
 ->->
 
 // ---------------------------------------------------------------- Rätseltafel und Rückweg

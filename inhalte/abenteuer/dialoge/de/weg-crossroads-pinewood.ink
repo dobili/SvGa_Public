@@ -55,7 +55,8 @@ d5. #sprecher:erzaehler
 Ein Mann sagt es, ohne die Augen zu öffnen. #sprecher:erzaehler
 Wo ist das Brett? #sprecher:juno
 Wer drei Wochen läuft, trägt kein Holz, das er nicht braucht. Das Brett ist da drin. #sprecher:greta
-Sie tippt sich an die Stirn. Am ersten Tag sieht man nichts. Am dritten die Mitte. Nach einer Woche alles. Greta. Ich mach hier den Kaffee. #sprecher:greta
+Sie tippt sich an die Stirn. #sprecher:erzaehler
+Am ersten Tag sieht man nichts. Am dritten die Mitte. Nach einer Woche alles. Greta. Ich mach hier den Kaffee. #sprecher:greta
 Sie lässt dich mitspielen. Nach sechs Zügen weißt du nicht mehr, wo dein Läufer steht. #sprecher:erzaehler #musik:blindschach
 c4. Er steht auf c4. Du hast ihn im dritten Zug dorthin gestellt. #sprecher:ambrose
 Er hat die Augen geschlossen, die Hände auf dem Rücken. Sein Gesicht ist so ruhig, wie du es noch nie gesehen hast. #sprecher:erzaehler #musik:ambrose.still
@@ -67,13 +68,14 @@ Ich habe nicht gewusst, dass man es üben kann. Auf einem Wanderweg, zum Vergnü
 Sag der Dame: Läufer schlägt f7, Schach. #sprecher:ambrose
 * [„Läufer schlägt f7, Schach.“]
 - Greta macht die Augen auf. Der steht doch gar nicht … #sprecher:greta
-Ihre Lippen bewegen sich. Doch. Der steht da. Seit dem dritten Zug. Du siehst gut, für den ersten Tag. #sprecher:greta
+Ihre Lippen bewegen sich. #sprecher:erzaehler
+Doch. Der steht da. Seit dem dritten Zug. Du siehst gut, für den ersten Tag. #sprecher:greta
 * [„Ich hab einen Freund. Der sieht für mich.“]
 - Dann halt ihn fest. Solche findet man nicht oft. #sprecher:greta
 -> greta_angebot
 
 === greta_angebot ===
-Der Geist da spielt doch, oder? Ich seh's dir an. Setz dich mit ihm auf die Bank. Ich schreib mit. #sprecher:greta
+Dein Freund spielt doch, oder? Setzt euch auf die Bank. Ihr sagt die Züge, ich schreib mit. #sprecher:greta
 + [Blindschach gegen Ambrose]
     Die Figuren verschwinden. Nur die Züge bleiben. #sprecher:erzaehler
     ~ beginnePartie("wegCrossroadsPinewood.blindschach")
@@ -83,7 +85,7 @@ Der Geist da spielt doch, oder? Ich seh's dir an. Setz dich mit ihm auf die Bank
     -> END
 
 === greta_nach_partie ===
-{~Ich hab mitgeschrieben. Siebenundzwanzig Züge, kein einziger falscher. Fast.|Die Wanderer da reden nur noch von dir.|Suppe? Bohnen, wie jeden Tag.} #sprecher:greta
+{~Du hast beide Seiten angesagt. Siebenundzwanzig Züge, kein einziger falscher. Fast.|Die Wanderer da reden nur noch von dir.|Suppe? Bohnen, wie jeden Tag.} #sprecher:greta
 {ausgangWegCrossroadsPinewoodBlindschach == "niederlage":
     Verloren gegen einen, der seit hundertsechzig Jahren kein Brett mehr sieht. Keine Schande. #sprecher:ambrose #stimmung:lacht
 }
@@ -112,7 +114,6 @@ Zwei Züge im Voraus. Was antwortet er, was ziehe ich dann? Rechne es zu Ende, {
 // ---------------------------------------------------------------- Rangerhaus und Weg
 
 === rangerhaus ===
-{gretaGetroffen and not esIstStillGesagt: -> es_ist_still}
 {not baeumeGesehen:
     ~ baeumeGesehen = true
     Die Bäume sind so dick, dass zehn Leute sie nicht umfassen. Die Rinde ist rot, weich und tief gefurcht. #sprecher:erzaehler #geraeusch:wald_tief #musik:wald.orgelpunkt
@@ -123,17 +124,6 @@ Zwei Züge im Voraus. Was antwortet er, was ziehe ich dann? Rechne es zu Ende, {
 {~Am Rangerhaus hängt ein Zettel: „Bärenspuren am Bach. Essen nicht offen lassen.“|Im Nebel zwischen den Riesenbäumen ist das Rangerhaus winzig wie eine Spielfigur.|Vor dem Rangerhaus ein Abdruck im Schlamm, so groß wie eine Pfanne.} #sprecher:erzaehler
 -> END
 
-// Kapitel 54, Schluss: erstes Zeichen des Abschieds, ohne das Wort.
-=== es_ist_still ===
-~ esIstStillGesagt = true
-Nebel hängt zwischen den Stämmen. Im weichen Boden sind Spuren, breit, mit fünf Zehen. Mama geht ein wenig schneller. #sprecher:erzaehler #bild:baerenspuren
-{held}. Die Stellung auf dem kleinen Brett in deiner Tasche. Ich sehe sie nicht mehr im Dunkeln. #sprecher:ambrose #bild:aus
-* [„Was heißt das?“]
-- Ich weiß es nicht genau. Seit der Bergstation. Seit dieser Zug gekommen ist. #sprecher:ambrose
-Wenn ich die Augen schließe, ist da nichts mehr. Das erste Mal seit achtzehnhundertsechsundsechzig ist es still. #sprecher:ambrose #stimmung:friedlich
-Du bleibst stehen. #sprecher:erzaehler #pause:2
-Geh weiter. Es ist gut. Es ist sehr gut. Ich wollte es dir nur sagen. #sprecher:ambrose #stimmung:friedlich
--> END
 
 === zurueck_crossroads ===
 Der Fernwanderweg führt zurück aus dem Wald, zur Kreuzung in der Prärie. #sprecher:erzaehler

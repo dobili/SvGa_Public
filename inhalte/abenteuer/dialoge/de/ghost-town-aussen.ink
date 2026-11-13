@@ -14,6 +14,7 @@ VAR grabGesehen = false
 VAR fernpartieGespielt = false
 VAR ambroseSagtEsGesehen = false
 VAR held = "Du"
+VAR esIstStillGesagt = false
 
 // ---------------------------------------------------------------- Ankunft und Wege
 
@@ -82,6 +83,10 @@ Die meisten fragen nach dem Gold. #sprecher:pruitt
 // Kapitel 56 (Roman): der Stein ohne Namen mit dem eingeritzten Brett; „Hier bin ich angekommen“
 // mit ambrose.angekommen; Junos gelbe Blume auf e4, das einzige Farbige im Bild.
 ~ grabGesehen = true
+{not pruittGetroffen:
+    ~ pruittGetroffen = true
+    Ein alter Mann mit Strohhut und einem Metalldetektor kommt zwischen den Kreuzen heran. Pruitt. Ich bin die Einwohnerzahl. #sprecher:pruitt #klang:metalldetektor
+}
 Ganz hinten, wo der Zaun aufhört und die Wüste anfängt, liegt ein niedriger Stein ohne Namen. Eingeritzt: acht mal acht Vierecke. #sprecher:erzaehler #bild:stein_brett
 Mr. Pruitt nimmt den Hut ab. Im Kirchenbuch steht eine Zeile dazu. Ich kann sie auswendig. #sprecher:pruitt #bild:aus
 „Ein Reisender aus dem Süden, Februar 1866. Fieber. Führte ein Schachbrett mit sich und bat, es seiner Schwester zu senden. Name unleserlich.“ #sprecher:pruitt
@@ -121,27 +126,36 @@ Er hebt die Hand, ein wenig steif, wie jemand, der das Winken noch übt. Er geht
 Im Saloon kocht Mr. Pruitt Bohnen. Juno und Victor streiten, ob man eine Remispartie ins Tagebuch kleben darf. #sprecher:erzaehler #licht:nacht #geraeusch:saloon
 Glitzer ist für alles, was man nicht vergessen will. Das ist die Regel. Ich hab sie gemacht. #sprecher:juno #stimmung:froh
 Draußen liegt Mondlicht auf den Brettern. Die Stadt kommt dir nicht mehr leer vor. Sie kommt dir vor wie etwas, das fertig ist. #sprecher:erzaehler #geraeusch:ghosttown #musik:nachtstueck
-Er wartet am Ende des Gehsteigs, wo die Bretter aufhören. Setz dich. #sprecher:ambrose
+Er wartet am Ende des Gehsteigs, wo die Bretter aufhören. #sprecher:erzaehler
+Setz dich. #sprecher:ambrose
 Du setzt dich auf die Kante. Der Staub ist noch warm vom Tag. #sprecher:erzaehler
 Ich muss dir etwas sagen. Ich glaube, du weißt es schon. #sprecher:ambrose #stimmung:still
-Im Wald ist es still geworden. Seit heute Mittag ist es mehr als das. Ich bin leichter. Das Brett hält mich nicht mehr so fest. #sprecher:ambrose
+{esIstStillGesagt:
+    Im Wald habe ich dir erzählt, dass es still geworden ist. Seit heute Mittag ist es mehr als das. #sprecher:ambrose
+- else:
+    Seit der Bergstation sehe ich die Stellung nicht mehr im Dunkeln. Seit heute Mittag ist es mehr als das. #sprecher:ambrose
+}
+Ich bin leichter. Das Brett hält mich nicht mehr so fest. #sprecher:ambrose
 Er betrachtet seine Hand. Sie ist durchsichtiger als sonst. #sprecher:erzaehler
 Ich könnte, glaube ich, ein paar Schritte weiter gehen, als das Brett liegt. Ich habe es nicht versucht. #sprecher:ambrose
 * [„Warum nicht?“]
 - Weil ich nicht weiß, ob ich dann zurückkäme. Und es gibt noch etwas, das ich sehen will. #sprecher:ambrose
 Er setzt sich neben dich, die Füße im Staub. Das vierte Mal. Du hast mitgezählt. #sprecher:erzaehler
 Noch eine Partie. Deine. Gegen ihn. In der großen Halle, vor allen Leuten. Dann ist es gut. #sprecher:ambrose #stimmung:friedlich
+* [„Und dann gehst du.“]
+- Ja. #sprecher:ambrose #pause
 * [„Bleib.“]
     Du sagst es wie jemand, der fünf ist. Er lacht nicht. #sprecher:erzaehler #musik:aus #pause:4
 * [„Ich weiß.“]
-    Natürlich weißt du es. Seit dem Wald. Vielleicht seit dem Felsbogen. #sprecher:ambrose #musik:aus #pause:4
+    Natürlich weißt du es. Vielleicht seit dem Felsbogen. #sprecher:ambrose #musik:aus #pause:4
+    Du weißt, dass er gehen muss. Bleib, sagst du trotzdem. Du wolltest es nur einmal sagen. #sprecher:erzaehler
 - Ich könnte bleiben. In deinem Zimmer auf der Fensterbank, in einem Geigenkasten. Ich könnte deine Partien kommentieren, bis du mich nicht mehr hören willst. #sprecher:ambrose #musik:nachtstueck
 Ein Geist, der bleibt, wird ein Möbelstück, {held}. Etwas, um das man herumgeht. Ich war lange genug ein Brett. #sprecher:ambrose
 In Maple Falls sitzt eine alte Frau auf einer Veranda mit zwei Stühlen. Ich möchte nicht der sein, wegen dem du einen leeren Stuhl hinstellst. #sprecher:ambrose
 * [„Mrs. Calloway lernt jetzt Schach. Von Owen.“]
 - Juno hat geschrieben: Sie haben einen Tisch zwischen die Stühle gestellt. #sprecher:erzaehler
 Dann ist es noch besser, als ich dachte. #sprecher:ambrose #stimmung:lachtOhneSpott
-Es hat mich in meinem ganzen Leben niemand gebeten zu bleiben. Ich war sehr gut im Gehen. Es ist ein seltsames Geschenk, am Ende gefragt zu werden. #sprecher:ambrose
+Ich bin froh, dass du es gesagt hast. Es hat mich in meinem ganzen Leben niemand gebeten zu bleiben. Ich war sehr gut im Gehen. Es ist ein seltsames Geschenk, am Ende gefragt zu werden. #sprecher:ambrose
 Über euch fällt ein Stern, lang und hell, bis hinter den Friedhof. #sprecher:erzaehler #teilchen:sternschnuppen #klang:sternschnuppe
 Ich habe mir auch etwas gewünscht. Ich bin tot, mir kann nichts mehr misslingen. #sprecher:ambrose
 Dass du im Finale einen Fehler machst. Einen kleinen, den du merkst. Und dass du danach den besten Zug deines Lebens spielst. #sprecher:ambrose
@@ -152,7 +166,7 @@ Dass du im Finale einen Fehler machst. Einen kleinen, den du merkst. Und dass du
 // ---------------------------------------------------------------- Ansehen (Runde 6)
 
 === ortsschild ===
-Ein Holzschild am Ortseingang: „Gold Hill, pop. 312“. Die Zahl ist durchgestrichen, darunter steht mit Kreide eine Null. #sprecher:erzaehler
+Am Ortseingang stehen zwei Pfosten. Das Schild dazwischen fehlt. #sprecher:erzaehler
 -> END
 
 === steckbrief ===

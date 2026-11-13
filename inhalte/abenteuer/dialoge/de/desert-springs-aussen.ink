@@ -58,7 +58,8 @@ Der Pfad führt zurück in den Canyon, zum Felsbogen. #sprecher:erzaehler
 ~ buckGetroffen = true
 An der Tankstelle steht ein Brett auf der Motorhaube eines Pick-ups. Daneben lehnt ein Mann mit Zahnstocher. #sprecher:erzaehler #klang:zapfsaeule
 Stimmt nicht ganz, das mit den 211. Der Pfarrer weigert sich. Aber seine Frau spielt für zwei. #sprecher:buck
-Er spuckt den Zahnstocher aus. Buck. Drei Minuten. Hier draußen fährt keiner langsam. Auch nicht am Brett. #sprecher:buck
+Er spuckt den Zahnstocher aus. #sprecher:erzaehler
+Buck. Drei Minuten. Hier draußen fährt keiner langsam. Auch nicht am Brett. #sprecher:buck
 -> buck_angebot
 
 === buck_angebot ===

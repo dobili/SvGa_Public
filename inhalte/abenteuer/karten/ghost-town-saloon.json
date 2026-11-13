@@ -11,7 +11,7 @@
  "tilewidth": 16,
  "tileheight": 16,
  "nextlayerid": 5,
- "nextobjectid": 38,
+ "nextobjectid": 36,
  "layers": [
   {
    "id": 1,
@@ -995,72 +995,6 @@
     },
     {
      "id": 8,
-     "name": "touristMitKarte",
-     "type": "statist",
-     "x": 64,
-     "y": 96,
-     "width": 16,
-     "height": 16,
-     "rotation": 0,
-     "visible": true,
-     "properties": [
-      {
-       "name": "tun",
-       "type": "string",
-       "value": "sitzt am Tresen und liest das Schild darüber"
-      },
-      {
-       "name": "wann",
-       "type": "string",
-       "value": "tag"
-      },
-      {
-       "name": "sagt",
-       "type": "string",
-       "value": "statist.ghostTown.saloon.touristMitKarte"
-      },
-      {
-       "name": "verhalten",
-       "type": "string",
-       "value": "sitzen"
-      }
-     ]
-    },
-    {
-     "id": 9,
-     "name": "touristinMitHut",
-     "type": "statist",
-     "x": 192,
-     "y": 96,
-     "width": 16,
-     "height": 16,
-     "rotation": 0,
-     "visible": true,
-     "properties": [
-      {
-       "name": "tun",
-       "type": "string",
-       "value": "sitzt am Tisch und probiert einen Cowboyhut an"
-      },
-      {
-       "name": "wann",
-       "type": "string",
-       "value": "tag"
-      },
-      {
-       "name": "sagt",
-       "type": "string",
-       "value": "statist.ghostTown.saloon.touristinMitHut"
-      },
-      {
-       "name": "verhalten",
-       "type": "string",
-       "value": "sitzen"
-      }
-     ]
-    },
-    {
-     "id": 10,
      "name": "gt7FlaschenregalBreit",
      "type": "moebel",
      "x": 32,
@@ -1083,7 +1017,7 @@
      ]
     },
     {
-     "id": 11,
+     "id": 9,
      "name": "gt7Flaschenregal",
      "type": "moebel",
      "x": 96,
@@ -1106,7 +1040,7 @@
      ]
     },
     {
-     "id": 12,
+     "id": 10,
      "name": "gt7Theke",
      "type": "moebel",
      "x": 32,
@@ -1129,7 +1063,7 @@
      ]
     },
     {
-     "id": 13,
+     "id": 11,
      "name": "gt7Klavier",
      "type": "moebel",
      "x": 192,
@@ -1152,7 +1086,7 @@
      ]
     },
     {
-     "id": 14,
+     "id": 12,
      "name": "gt7Treppe",
      "type": "moebel",
      "x": 256,
@@ -1175,7 +1109,7 @@
      ]
     },
     {
-     "id": 15,
+     "id": 13,
      "name": "gt10TischDunkel",
      "type": "moebel",
      "x": 128,
@@ -1198,7 +1132,7 @@
      ]
     },
     {
-     "id": 16,
+     "id": 14,
      "name": "gt7StuhlR",
      "type": "moebel",
      "x": 112,
@@ -1221,7 +1155,7 @@
      ]
     },
     {
-     "id": 17,
+     "id": 15,
      "name": "gt7StuhlL",
      "type": "moebel",
      "x": 160,
@@ -1244,7 +1178,7 @@
      ]
     },
     {
-     "id": 18,
+     "id": 16,
      "name": "gt7Brett",
      "type": "moebel",
      "x": 138,
@@ -1267,7 +1201,7 @@
      ]
     },
     {
-     "id": 19,
+     "id": 17,
      "name": "gt7Tisch",
      "type": "moebel",
      "x": 48,
@@ -1290,7 +1224,7 @@
      ]
     },
     {
-     "id": 20,
+     "id": 18,
      "name": "gt7StuhlR",
      "type": "moebel",
      "x": 32,
@@ -1313,7 +1247,7 @@
      ]
     },
     {
-     "id": 21,
+     "id": 19,
      "name": "gt7StuhlL",
      "type": "moebel",
      "x": 80,
@@ -1336,12 +1270,58 @@
      ]
     },
     {
-     "id": 22,
+     "id": 20,
      "name": "gt7Tisch",
      "type": "moebel",
      "x": 208,
      "y": 160,
      "width": 32,
+     "height": 32,
+     "rotation": 0,
+     "visible": true,
+     "properties": [
+      {
+       "name": "tiefe",
+       "type": "int",
+       "value": 184
+      },
+      {
+       "name": "kollision",
+       "type": "bool",
+       "value": true
+      }
+     ]
+    },
+    {
+     "id": 21,
+     "name": "gt7StuhlR",
+     "type": "moebel",
+     "x": 192,
+     "y": 160,
+     "width": 16,
+     "height": 32,
+     "rotation": 0,
+     "visible": true,
+     "properties": [
+      {
+       "name": "tiefe",
+       "type": "int",
+       "value": 184
+      },
+      {
+       "name": "kollision",
+       "type": "bool",
+       "value": true
+      }
+     ]
+    },
+    {
+     "id": 22,
+     "name": "gt7StuhlL",
+     "type": "moebel",
+     "x": 240,
+     "y": 160,
+     "width": 16,
      "height": 32,
      "rotation": 0,
      "visible": true,
@@ -1360,52 +1340,6 @@
     },
     {
      "id": 23,
-     "name": "gt7StuhlR",
-     "type": "moebel",
-     "x": 192,
-     "y": 160,
-     "width": 16,
-     "height": 32,
-     "rotation": 0,
-     "visible": true,
-     "properties": [
-      {
-       "name": "tiefe",
-       "type": "int",
-       "value": 184
-      },
-      {
-       "name": "kollision",
-       "type": "bool",
-       "value": true
-      }
-     ]
-    },
-    {
-     "id": 24,
-     "name": "gt7StuhlL",
-     "type": "moebel",
-     "x": 240,
-     "y": 160,
-     "width": 16,
-     "height": 32,
-     "rotation": 0,
-     "visible": true,
-     "properties": [
-      {
-       "name": "tiefe",
-       "type": "int",
-       "value": 184
-      },
-      {
-       "name": "kollision",
-       "type": "bool",
-       "value": true
-      }
-     ]
-    },
-    {
-     "id": 25,
      "name": "gt7Tisch",
      "type": "moebel",
      "x": 208,
@@ -1428,7 +1362,7 @@
      ]
     },
     {
-     "id": 26,
+     "id": 24,
      "name": "gt7StuhlR",
      "type": "moebel",
      "x": 192,
@@ -1451,7 +1385,7 @@
      ]
     },
     {
-     "id": 27,
+     "id": 25,
      "name": "gt7StuhlL",
      "type": "moebel",
      "x": 240,
@@ -1474,7 +1408,7 @@
      ]
     },
     {
-     "id": 28,
+     "id": 26,
      "name": "gt7Bild",
      "type": "moebel",
      "x": 144,
@@ -1497,7 +1431,7 @@
      ]
     },
     {
-     "id": 29,
+     "id": 27,
      "name": "gt7Fussmatte",
      "type": "moebel",
      "x": 160,
@@ -1520,7 +1454,7 @@
      ]
     },
     {
-     "id": 30,
+     "id": 28,
      "name": "gt10Schwingtuer",
      "type": "moebel",
      "x": 160,
@@ -1543,7 +1477,7 @@
      ]
     },
     {
-     "id": 31,
+     "id": 29,
      "name": "gt7Barhocker",
      "type": "moebel",
      "x": 48,
@@ -1566,7 +1500,7 @@
      ]
     },
     {
-     "id": 32,
+     "id": 30,
      "name": "gt7Barhocker",
      "type": "moebel",
      "x": 64,
@@ -1589,7 +1523,7 @@
      ]
     },
     {
-     "id": 33,
+     "id": 31,
      "name": "gt7Barhocker",
      "type": "moebel",
      "x": 96,
@@ -1612,7 +1546,7 @@
      ]
     },
     {
-     "id": 34,
+     "id": 32,
      "name": "gt7Barhocker",
      "type": "moebel",
      "x": 112,
@@ -1635,7 +1569,7 @@
      ]
     },
     {
-     "id": 35,
+     "id": 33,
      "name": "gt7FassKlein",
      "type": "moebel",
      "x": 144,
@@ -1658,7 +1592,7 @@
      ]
     },
     {
-     "id": 36,
+     "id": 34,
      "name": "gt7FassKlein",
      "type": "moebel",
      "x": 144,
@@ -1681,7 +1615,7 @@
      ]
     },
     {
-     "id": 37,
+     "id": 35,
      "name": "gt10Abzeichen",
      "type": "moebel",
      "x": 288,

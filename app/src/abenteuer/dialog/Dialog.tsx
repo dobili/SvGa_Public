@@ -6,7 +6,8 @@
  * gibt es die Variablen zurück (Spielstand). Die Zurück-Taste schließt den Dialog
  * (app/blattstapel.ts). Sprecher „erzaehler“ hat keinen Namen. Eine Zeile mit `#pause` sperrt
  * „Weiter“ für ihre Dauer (dialog/dialogtakt.ts, T3); `#bild:kennung` zeigt ein Bild groß über der
- * Zeile (dialog/Grossansicht.tsx, T7).
+ * Zeile (dialog/Grossansicht.tsx, T7). `#erscheint` blendet das Porträt ein, `#geist` zeigt es halb
+ * durchsichtig (T9); Bühnenanweisungen für die Karte (`#licht`, `#figur`) gehen an `beiZeile`.
  * Abhängigkeiten: dialog/geschichte.ts, dialog/dialogtakt.ts, texte/texte.ts, app/blattstapel.ts.
  */
 import { useEffect, useState } from "react";
@@ -21,6 +22,13 @@ import { Geschichte, type Dialogschritt, type Dialogvariablen, type Wirkungen } 
 
 const ERZAEHLER = "erzaehler";
 
+/** Erscheinung des Porträts (T9): einblenden (`#erscheint`) oder halb durchsichtig (`#geist`). */
+function erscheinung(tags: Readonly<Record<string, string>> | undefined): string | undefined {
+  if (tags?.geist) return "geist";
+  if (tags?.erscheint) return "erscheint";
+  return undefined;
+}
+
 export function Dialog({
   json,
   knoten,
@@ -29,6 +37,7 @@ export function Dialog({
   heldname,
   beiKnoten,
   beiEnde,
+  beiZeile,
 }: {
   readonly json: string;
   readonly knoten: string;
@@ -38,6 +47,8 @@ export function Dialog({
   /** Ein Knoten der Geschichte wurde erreicht (für Quests), auch der Startknoten. */
   readonly beiKnoten: (knoten: string) => void;
   readonly beiEnde: (variablen: Dialogvariablen) => void;
+  /** Jede neue Zeile mit ihren Tags (Bühnenanweisungen der Oberwelt, T6 und T9). */
+  readonly beiZeile?: (tags: Readonly<Record<string, string>>) => void;
 }) {
   // Die Geschichte lebt, solange der Dialog offen ist; die Oberwelt baut den Dialog je Knoten neu
   // auf (key), deshalb genügt das einmalige Anlegen hier.
@@ -55,11 +66,16 @@ export function Dialog({
   const [wartet, setzeWartet] = useState(() => dauerVon(schritt) > 0);
   useEffect(() => {
     // Musik, Geräusche und Klänge der Zeile (#musik, #geraeusch, #klang; ton/tonregie.ts).
-    if (letzteZeile?.art === "zeile") tonregie.dialogzeile(letzteZeile.zeile.tags);
+    if (letzteZeile?.art === "zeile") {
+      tonregie.dialogzeile(letzteZeile.zeile.tags);
+      beiZeile?.(letzteZeile.zeile.tags);
+    }
     const dauer = letzteZeile ? dauerVon(letzteZeile) : 0;
     if (dauer === 0) return;
     const uhr = window.setTimeout(() => setzeWartet(false), dauer);
     return () => window.clearTimeout(uhr);
+    // Nur bei einer neuen Zeile, nicht wenn die Oberwelt neue Rückrufe reicht.
+    // eslint-disable-next-line react-hooks/exhaustive-deps
   }, [letzteZeile]);
   /** Meldet jeden Knoten, der neu besucht wurde (Besuchszahl, dialog/geschichte.ts). */
   const meldeKnoten = () => {
@@ -105,7 +121,7 @@ export function Dialog({
     >
       {bild && <Grossansicht pfad={bild} />}
       {sprecher !== ERZAEHLER && (
-        <div className="abenteuer-dialog-kopf">
+        <div className="abenteuer-dialog-kopf" data-erscheinung={erscheinung(zeile?.tags)}>
           <Portraet
             sprecher={sprecher}
             stimmung={zeile?.tags.stimmung ?? null}

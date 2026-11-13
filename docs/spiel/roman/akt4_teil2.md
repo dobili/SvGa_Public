@@ -124,8 +124,8 @@ Am Ende der Veranda stand ein türkisfarbener Lastwagen mit Beulen, aus dem Damp
 winkte mit einem Pfannenwender. Dash saß auf einer Bank davor und redete auf Buck ein, den
 Tankwart, der zurückredete, und keiner hörte dem anderen zu, und beide waren glücklich.
 
-Mira saß im Schneidersitz auf einem Tisch und spielte gegen Tomás, Dot, den Pfarrer und die
-Frau des Pfarrers gleichzeitig.
+Mira saß im Schneidersitz auf einem Tisch und spielte gegen Tomás, Dot und die Frau des
+Pfarrers gleichzeitig, und die Frau des Pfarrers spielte an zwei Brettern.
 
 „Du“, sagte sie, als sie mich sah. „Noch mal. Jetzt.“
 
@@ -236,9 +236,9 @@ dieses eine Mal. Sie hat es dreimal gesagt.“
 
 Sie wurde nicht verlegen. Sie sah mich gerade an.
 
-„Ich hab unterschrieben“, sagte Coach Delgado. „Im Oktober. Ich sag es dir, wie es ist. Wir
+„Ich hab unterschrieben“, sagte Coach Delgado. „Im September, in der Woche, nachdem der Junge mit dem Tablet bei uns war. Ich sag es dir, wie es ist. Wir
 hatten kein Geld für den Bus nach Cedar Creek, und die haben den Bus bezahlt und die Bretter
-und das Startgeld für zwölf Kinder.“ Sie verschränkte die Arme. „Im Frühjahr wollten sie
+und das Startgeld für sieben Kinder.“ Sie verschränkte die Arme. „Im Frühjahr wollten sie
 dafür den Raum. Dienstags und donnerstags, für ihr Programm, ohne mich. Da hab ich gekündigt.
 Den Vertrag, nicht die Schule.“
 

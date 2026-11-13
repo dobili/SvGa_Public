@@ -23,6 +23,9 @@ describe("Porträts", () => {
     expect(portraetpfad("coachDelgado", null)).toBe("portraets/coach-delgado.svg");
     expect(portraetpfad("ambrose", "jung")).toBe("portraets/ambrose-jung.svg");
     expect(portraetpfad("ambrose", "froh")).toBe("portraets/ambrose.svg");
+    // Fassungen (T4): eigener Dateiname, kebab-case.
+    expect(portraetpfad("mira", "lachtOhneSpott")).toBe("portraets/mira-lacht-ohne-spott.svg");
+    expect(portraetpfad("ambrose", "muede")).toBe("portraets/ambrose-muede.svg");
   });
 
   it("jeder Sprecher in den Dialogen hat ein Porträt", () => {

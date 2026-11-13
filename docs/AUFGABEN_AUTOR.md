@@ -1654,3 +1654,23 @@ die 40 häufigsten Gambits. Ein paar Zahlen (Anteil an allen Partien des Bandes)
       fehlte, und wieder gekündigt. (h) Das Spiel endet auf dem Dachboden: Der Held bringt dem
       Nachbarskind Lily die erste Frage bei, „Was hängt?“. Empfehlung: alles so übernehmen. Im Roman
       umgesetzt, im Spiel noch nicht; Widerspruch genügt.
+- [ ] RO10. **Schönere Figuren und Porträts:** Die gekauften LimeZu-Pakete enthalten Generatoren
+      für Figuren und Porträts; daraus stammen die jetzigen (Figuren 16×32 Pixel, Porträtköpfe
+      32×32). Ein fertiges Paket, das modern, plastischer und groß genug für rund 100 Figuren mit
+      Kindern und Alten ist, hat die Recherche nicht gefunden; zwei schöne Kandidaten scheiden
+      wegen der Lizenz aus (Mana Seed verbietet Projekte mit KI-erzeugtem Code, der Generator von
+      RPG Maker gilt nur für RPG-Maker-Spiele). Empfehlung: (a) Porträts zuerst, mit Gemini wie bei
+      den Tieren, je Figur ein Grundbild und für Hauptfiguren fünf bis sechs Ausdrücke, auf 64×64
+      heruntergerechnet; (b) Figuren als Probe mit fünf Stück (Kind, Jugendliche, Erwachsener,
+      Alte, Ambrose) auf zwei Wegen: Gemini und PixelLab (pixellab.ai, 40 Generierungen gratis,
+      danach 24 $ für einen Monat, Rechte bei uns); erst danach über alle Figuren entscheiden.
+      Noch nichts umgesetzt: Sag, ob ich die Gemini-Prompts für die Probe schreiben soll.
+- [ ] RO11. **Knopf „Im Buch nachlesen“ bei den Routen-Ereignissen:** Der Plan für die Ereignisse
+      unterwegs sieht Seiten aus dem Manuskript und einen Knopf „Im Buch nachlesen“ vor. Seit dem
+      10.11.2026 gilt, dass Spieltexte nicht auf das Buch verweisen. Empfehlung: Knopf und Seiten
+      streichen, die Erklärung steht dann vollständig im Ereignis selbst. Noch nicht umgesetzt,
+      weil es ein Merkmal des Spiels entfernt; Widerspruch oder Zustimmung genügt.
+- [ ] RO12. **Ton braucht mehr Platz als geschätzt:** Der Klangplan kommt auf 149 Musikstücke und
+      163 Geräusche, zusammen etwa 120 MB (Akt 1 allein etwa 29 MB), statt der geschätzten 15 MB.
+      Empfehlung: Ton je Akt als eigenes Paket, das erst beim Betreten des Akts geladen wird, und
+      kurze Motive im Browser erzeugen. Schon in Arbeit bei mittel-2; Widerspruch genügt.

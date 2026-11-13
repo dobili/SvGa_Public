@@ -37,6 +37,14 @@ Hintergrund: `docs/spiel/04_Architektur.md`, Abschnitt 2 und 9.
   Tags in einer Zeile nur den letzten gelten lassen). `#geraeusch:kennung` und `#geraeusch:aus` für
   ein Dauergeräusch (`klang/<kennung>.m4a`), `#klang:knarren` spielt ein Geräusch einmal. Musik und
   Geräusch einer Karte stehen in `orte.json` (`musik`, `geraeusch`). Fehlende Dateien bleiben still.
+- Bühne (T6, T9): `#licht:abend` legt für den Rest des Dialogs ein Licht über die Karte (`tag` =
+  keines; am Dialogende kehrt das Licht der Karte zurück, Wechsel blenden in zwei Sekunden um).
+  `#figur:<objektname>:aus|halb|ein` blendet eine Figur der Karte in einer Sekunde (nur bis zum
+  Verlassen der Karte; ausgeblendet sperrt sie den Weg nicht). `#erscheint` blendet das Porträt in
+  zwei Sekunden ein, `#geist` zeigt es halb durchsichtig.
+- Porträtfassungen (T4): `#stimmung:jung|ertappt|riss|alt|lachtOhneSpott|muede` zeigt
+  `portraets/<sprecher>-<fassung>.svg` (kebab-case, etwa `mira-lacht-ohne-spott.svg`); fehlt die
+  Datei, die Grundfassung. Andere Stimmungen zeigen immer die Grundfassung.
 - Bild (T7): `#bild:kennung` zeigt `bilder/<kennung>.webp` (privater Ordner `bilder/`, höchstens
   1024 Pixel breit) groß über der Zeile; „Weiter“ schließt es mit der Zeile. Fehlt die Datei,
   erscheint die Zeile ohne Bild.
@@ -109,6 +117,10 @@ Tipp. Jeder Moment kommt höchstens einmal je Partie.
   Möbel beim Laden genauso um, aber ohne die Wasserregel (`oberwelt/winter.ts`), und lässt Schnee
   fallen (`oberwelt/schneefall.ts`). Blumen und Pilze bleiben bunt; `kartenbild` meldet sie in
   Winterszenen, sie gehören dort weg.
+- **Licht** (Atmosphäre T6): `licht` je Karte in `orte.json` (`tag` = kein Schleier, `abend`,
+  `nacht`, `nebel`, `dunst`, `serverblau`, `sepia`, `dunkel`) geht vor der `toenung` der Szene,
+  ohne die Szene anzufassen. `licht_zustaende` (Bedingung → Licht, der letzte passende gilt)
+  ersetzt `licht`, etwa `{"nadelGhostCanyon >= 1": "abend"}`. `setzeToenung` im Dialog geht vor.
 - **Liste für den Autor:** `python -m pipeline.abenteuer.zustaende` (Text) oder `--json`.
   `pipeline/tests/test_abenteuer_zustaende.py` prüft Lesbarkeit, bekannte Variablen, Dateinamen und
   den „Zustand:“-Satz.

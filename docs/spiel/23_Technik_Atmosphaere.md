@@ -149,3 +149,19 @@ Jeder Schritt ist für sich lauffähig, mit Tests, `npm run pruefen` grün, eige
   `bilder/<kennung>.webp`, höchstens 1024 Pixel breit.
 - **Porträtfassungen** (T4) und die Dialogmarken selbst (Ton, Pause, Licht in den Ink-Dateien)
   setzt, wer die Dialoge schreibt.
+
+## 6. Stand (13.11.2026)
+
+| Schritt | Punkte     | Stand                                                                                        |
+| ------- | ---------- | -------------------------------------------------------------------------------------------- |
+| a       | T3         | fertig: `#pause:3` (dialog/dialogtakt.ts)                                                    |
+| b       | T1, T2     | fertig: Tonregie, Regler im Spielmenü, `geraeusch` in orte.json                              |
+| c       | T7         | fertig: `#bild:kennung` (dialog/Grossansicht.tsx)                                            |
+| d       | T5         | fertig: `momente` in begegnungen.json (regeln/partiemomente.ts)                              |
+| e       | T6, T9, T4 | fertig: `licht`, `licht_zustaende`, `#licht`, `#figur`, `#erscheint`/`#geist`, Fassungsnamen |
+| später  | T8, T10    | nur geplant (Abschnitt 3)                                                                    |
+
+Abweichungen vom Plan: Das Licht eines Dialogs (`#licht`) gilt bis zum Dialogende, nicht nur für
+eine Zeile. Eine ausgeblendete Figur (`#figur:<name>:aus`) sperrt den Weg nicht mehr; ansprechen
+lässt sie sich weiter, bis die Karte neu geladen wird. Partiemomente kommen ohne Speicher aus,
+weil sie allein aus dem Partieverlauf folgen.

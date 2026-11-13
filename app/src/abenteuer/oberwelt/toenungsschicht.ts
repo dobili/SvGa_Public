@@ -6,6 +6,8 @@
  * Werte stehen in toenung.ts; Sepia ist ein CSS-Filter der Hülle (Oberwelt.tsx), hier nichts.
  * Leistung: Die Dunkelheit ist ein einziges vorgezeichnetes Bild (Canvas) mit Loch, das dem Helden
  * folgt; kein Zeichnen je Bild.
+ * Übergang (Atmosphäre T6): Ein Wechsel während des Besuchs blendet in zwei Sekunden um (alter
+ * Schleier aus, neuer ein); beim Betreten der Karte steht das Licht sofort.
  * Abhängigkeiten: Phaser, toenung.ts.
  */
 import Phaser from "phaser";
@@ -15,10 +17,16 @@ import { DUNKEL_DECKKRAFT, lichtkreis, SCHLEIER, type Toenung } from "./toenung"
 const TIEFE = 200000;
 /** Weicher Rand des Lichtkreises: Anteil des Halbmessers, auf dem das Licht ausläuft. */
 const WEICHER_RAND = 0.35;
+/** Dauer des Umblendens bei einem Lichtwechsel (ms, Atmosphäre T6). */
+const UMBLENDEN_MS = 2000;
+
+type Schicht = Phaser.GameObjects.Rectangle | Phaser.GameObjects.Image;
 
 export class Toenungsschicht {
   private schleier: Phaser.GameObjects.Rectangle | null = null;
   private dunkel: Phaser.GameObjects.Image | null = null;
+  /** Schon einmal gesetzt? Erst danach wird umgeblendet. */
+  private gesetzt = false;
 
   constructor(
     private readonly szene: Phaser.Scene,
@@ -27,14 +35,17 @@ export class Toenungsschicht {
 
   /** Setzt die Tönung neu (null: keine) und ob der Held eine Laterne trägt. */
   setze(toenung: Toenung | null, laterne: boolean): void {
-    this.schleier?.destroy();
-    this.dunkel?.destroy();
+    const sofort = !this.gesetzt;
+    this.gesetzt = true;
+    this.blendeAus(this.schleier, sofort);
+    this.blendeAus(this.dunkel, sofort);
     this.schleier = null;
     this.dunkel = null;
     if (toenung === "dunkel") {
       this.dunkel = this.szene.add
         .image(0, 0, this.dunkelbild(lichtkreis(laterne)))
         .setDepth(TIEFE);
+      this.blendeEin(this.dunkel, 1, sofort);
       return;
     }
     const schleier = toenung ? SCHLEIER[toenung] : undefined;
@@ -45,6 +56,29 @@ export class Toenungsschicht {
       .setOrigin(0, 0)
       .setScrollFactor(0)
       .setDepth(TIEFE);
+    this.blendeEin(this.schleier, 1, sofort);
+  }
+
+  /** Alte Schicht entfernen, im Besuch mit Ausblenden. */
+  private blendeAus(schicht: Schicht | null, sofort: boolean): void {
+    if (!schicht) return;
+    if (sofort) {
+      schicht.destroy();
+      return;
+    }
+    this.szene.tweens.add({
+      targets: schicht,
+      alpha: 0,
+      duration: UMBLENDEN_MS,
+      onComplete: () => schicht.destroy(),
+    });
+  }
+
+  /** Neue Schicht zeigen, im Besuch aus dem Nichts eingeblendet. */
+  private blendeEin(schicht: Schicht, ziel: number, sofort: boolean): void {
+    if (sofort) return;
+    schicht.setAlpha(0);
+    this.szene.tweens.add({ targets: schicht, alpha: ziel, duration: UMBLENDEN_MS });
   }
 
   /** Der Lichtkreis folgt dem Helden (Weltpixel). */

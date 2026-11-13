@@ -165,7 +165,7 @@ unverkennbar, einen Pfiff auf zwei Fingern.
 
 Der Coach war da.
 
-`[Klang: Nacht: keine Musik, nur Bach, Grillen, das Holz des Stegs. Bei der ersten Sternschnuppe ein heller, kurzer Glockenton. Danach setzt sehr leise ein neues Stück ein (Nachtstück: Klavier und Glockenspiel), das nur in dieser Szene vorkommt. Morgen: Vögel, Nebel, Angelschnur. Bus und Pfiff am Schluss.]`
+`[Klang: Nacht: keine Musik, nur Bach, Grillen, das Holz des Stegs. Bei der ersten Sternschnuppe ein heller, kurzer Glockenton. Danach setzt sehr leise ein neues Stück ein (Nachtstück: Klavier und Glockenspiel), das im ganzen Spiel nur dreimal vorkommt (hier, im Camp, in Ghost Town). Morgen: Vögel, Nebel, Angelschnur. Bus und Pfiff am Schluss.]`
 `[Bild: Sternenhimmel als eigene Ansicht über der Karte (Kamera fährt nach oben). Sternschnuppen als kurze Striche. Rotes Lämpchen, das flackert und ausgeht. Morgen: Nebelschleier über dem Bach.]`
 `[Karte: Steg bei Nacht (Zustandsfassung) mit Decken und Teleskop. Schlüssel im Schilf als Fund.]`
 

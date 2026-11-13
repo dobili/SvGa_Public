@@ -658,3 +658,14 @@ body.abenteuer-mit-kulisse {
   background-repeat: no-repeat;
   image-rendering: pixelated;
 }
+
+/* Karten Ambroses im Tiefpunkt (oberwelt/Deckwahl.tsx): grau, mit dem Grund darunter. */
+.abenteuer-karte[data-gesperrt="ja"] {
+  opacity: 0.55;
+  filter: grayscale(1);
+}
+
+.abenteuer-karte-grund {
+  display: block;
+  font-style: italic;
+}

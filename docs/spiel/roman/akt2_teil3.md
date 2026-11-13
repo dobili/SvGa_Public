@@ -58,7 +58,7 @@ einer Stadt.“
 tadelnd. Er klang neugierig, und es war das erste Mal seit Riverton, dass ihn etwas mehr
 interessierte als die Tische.
 
-Ich ging in dieser Nacht nicht auf den Dachboden. Ich lag im Bett und dachte an _Schwarz
+Ich ging in dieser Nacht nicht auf den Dachboden. Ich lag im Bett und dachte an _Weiß
 steht besser_ und an einen Finger, der sich über einem Tischset bewegt hatte, eine halbe
 Sekunde vor meinem Stift.
 

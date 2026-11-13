@@ -113,8 +113,7 @@ Pferde, die Kästen, die rechnen. Aber die stehen noch da.“
 
 Ich hätte ihm gern geantwortet. Aber ich konnte nicht, vor den anderen.
 
-„In New Orleans“, sagte er, „gab es einen Kai, an dem man nachts saß. Mein Vater stimmte
-Klaviere, für reiche Häuser, und kam spät. Ich wartete auf ihn und sah hinauf, und dachte, ich
+„Wo ich geboren bin“, sagte er, „gab es einen Kai, an dem man nachts saß. Mein Vater baute Klaviere und lieferte sie selbst aus, in die reichen Häuser flussauf, und kam spät. Ich wartete auf ihn und sah hinauf, und dachte, ich
 würde einmal so bekannt wie einer von denen. Einer mit Namen.“ Ein Atemzug, den er nicht
 brauchte. „Eine Fußnote. Sechs Wörter.“
 
@@ -354,7 +353,7 @@ Stellung, die du nicht anrühren darfst.“
 
 „Die Fernpartie.“
 
-„Gegen ihn. Per Brief. Jeder Zug drei Wochen unterwegs. Ich habe nie in meinem Leben so
+„Gegen ihn. Per Brief. Jeder Zug tagelang unterwegs, manchmal Wochen. Ich habe nie in meinem Leben so
 gespielt. So langsam. So …“ Er suchte das Wort. „So ehrlich. Und dann war ich am Ende, und es
 fehlte nur noch seine Antwort. Ein Zug.“
 
@@ -436,7 +435,7 @@ _Später_, dachte ich. _Aber nicht mehr lange._
 | --------------------------------------------------------------------------------------------------------------------- | -------------------------------------------------------------------------------------------- | ------------------------------------------------------------------------------------------------------------- |
 | Victor verliert an der Haltestelle gegen das Programm; sein Vater will alle drei Bibliotheken des Bezirks.            | Zeigt Victors Alltag und macht den Konzern für Cedar Creek greifbar.                         | Zwei Zeilen mehr in Szene 21; Verbindung zur kleinen Geschichte des Busfahrers und zu Mrs. Okafor in Akt 2.   |
 | Drei Sekunden Zögern nach der Frage; Ambrose: „Er hält den Kopf wie er.“                                              | Der Riss wird messbar; Ambrose erkennt Hale in Victor, ohne es auszusprechen.                | Pause im Dialog; ein Satz danach.                                                                             |
-| Sternennacht mit Ambroses Erinnerung an den Kai und den Vater, der Klaviere stimmt.                                   | Bereitet Port Delacroix (Akt 3) vor; gibt der Nacht ein Gefühl über die Spielwirkung hinaus. | Zwei bis drei Zeilen für Ambrose, nur wenn das Brett dabei ist.                                               |
+| Sternennacht mit Ambroses Erinnerung an den Kai seiner Geburtsstadt und den Vater, der Klaviere baut.                 | Bereitet Port Delacroix (Akt 3) vor; gibt der Nacht ein Gefühl über die Spielwirkung hinaus. | Zwei bis drei Zeilen für Ambrose, nur wenn das Brett dabei ist.                                               |
 | Mrs. Okafors Onkel auf dem Dach in Lagos: „Ich habe sechzig Jahre geglaubt, das sei ein Rat fürs Schach.“             | Ihre Geschichte in einem Satz.                                                               | Ein Satz in Szene 22.                                                                                         |
 | Clubkampf: der angebotene Bauer und ihre Frage „Was glaubst du denn, warum er dort steht?“                            | Die gelernten Mattbilder zahlen sich in einer Szene aus.                                     | Die Falle als fester Moment im Gegnerprofil oder als Dialogzeile während der Partie.                          |
 | „Lass mich“ wird eine ganze Szene: Ambrose will das Turmopfer, weiß nicht, ob es stimmt, und sagt „Vergib mir. Zähl.“ | Wendepunkt seines Bogens in Akt 1: Er wiederholt 1858 beinahe und hält an.                   | Die Karte Mentor-Zug wird hier **nicht** gespielt, sondern erst danach vergeben; Dialog mitten in der Partie. |

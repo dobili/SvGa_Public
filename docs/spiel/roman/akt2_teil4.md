@@ -186,7 +186,7 @@ wollte nicht, dass es jedem passiert. Ich wollte, dass es mir nicht passiert. Ic
 Figuren in den Keller getragen, und dann hab ich einfach … weitergemacht. Schule. Ausbildung.
 Du. Es ging ja. Es ging ganz gut.“
 
-„Du hast gesagt, Schwarz steht besser.“
+„Du hast gesagt, Weiß steht besser.“
 
 Sie sah mich an.
 

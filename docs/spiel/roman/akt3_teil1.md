@@ -368,8 +368,7 @@ Ambrose machte keinen Laut.
 
 Ich wartete. Diesmal wusste ich, dass ich warten musste.
 
-„Das sind meine Züge“, sagte er endlich. Tonlos. „Die linke Spalte. Jeden einzelnen. Ich
-habe sie in Briefe geschrieben, einen nach dem anderen, und drei Wochen gewartet. Und er hat
+„Das sind meine Züge“, sagte er endlich. Tonlos. „Die linke Spalte. Jeden einzelnen. Ich habe sie in Briefe geschrieben, einen nach dem anderen, und gewartet. Und er hat
 sie eingetragen. In ein Buch. Mit einem Lineal, vermutlich.“ Er holte Luft. „Und das dort.
 Die Seite, die fehlt. Das war seine Antwort.“
 

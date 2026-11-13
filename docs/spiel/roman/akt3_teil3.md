@@ -207,11 +207,8 @@ Ich hatte es nie gefragt. Er hatte es nie gesagt. Aber jetzt nickte er, als hät
 gewartet.
 
 „Er hatte Ja gesagt. Zur Revanche. Per Brief, weil er im Norden Brücken baute und ich im
-Süden saß und es zwischen uns ein Land gab, das sich gerade erst wieder zusammensetzte. Ein
-Zug, drei Wochen. Wir haben ein Jahr gespielt.“ Er lächelte, ein wenig. „Es war die beste
-Partie meines Lebens. Ich habe jeden Zug geprüft. Ich hatte ja Zeit. Ich habe zum ersten Mal
-gespielt wie er, gewissenhaft, und er, glaube ich, ein wenig wie ich. In seinem
-einunddreißigsten Zug steht ein Bauernopfer, das hätte er 1858 nie gespielt.“
+Süden saß und es zwischen uns ein Land gab, das sich gerade erst wieder zusammensetzte. Ein Zug, ein Brief. Wir haben über ein Jahr gespielt.“ Er lächelte, ein wenig. „Es war die beste
+Partie meines Lebens. Ich habe jeden Zug geprüft. Ich hatte ja Zeit. Ich habe zum ersten Mal gespielt wie er, gewissenhaft, und geopfert habe ich erst, als ich es dreimal nachgerechnet hatte. Und er, glaube ich, hat ein wenig gespielt wie ich. Er hat Dinge riskiert, die er 1858 nie riskiert hätte.“
 
 „Und dann?“
 
@@ -436,15 +433,13 @@ der hundertsechzig Jahre darauf gewartet hatte.
 
 _Whitlock,_
 
-_Ihr letzter Zug liegt seit neun Wochen vor mir. Ich habe ihn jeden Abend aufgestellt und
-jeden Abend wieder abgeräumt. Ich finde keine Antwort, die Ihrer würdig ist, und ich bin
-nicht der Mann, der eine unwürdige schickt._
+_Ihr letzter Zug liegt seit neun Wochen vor mir. Ich habe ihn jeden Abend aufgestellt und jeden Abend wieder abgeräumt. Meine Antwort steht seit gestern in meinem Buch. Ich schicke sie Ihnen nicht._
 
 _Ich habe Ihnen 1859 ein Wort geschrieben, für das ich mich seither schäme. Ich hielt Ihr
 Spiel damals für Leichtsinn. Ich habe sieben Jahre und diese Partie gebraucht, um zu
 begreifen, dass es Mut war, und dass ich davon zu wenig habe._
 
-_Ich mag nicht länger mit Papier spielen. Kommen Sie nach Norden. Wir spielen die letzten
+_Ich mag sie Ihnen nicht auf Papier geben. Ich will Ihr Gesicht sehen, wenn ich sie ziehe. Kommen Sie nach Norden. Wir spielen die letzten
 Züge an einem Brett, von Angesicht zu Angesicht, wie es sich gehört. Ich lasse ein Zimmer
 richten._
 
@@ -484,16 +479,13 @@ ihn, und jeder hat gedacht, der andere schweigt.“
 
 „Wie die halbe Welt, fürchte ich.“
 
-Unter dem Brief, auf der Rückseite des Blattes, stand noch etwas. Kleiner. Eine Zeile
-Schachnotation, drei Züge, sauber untereinander.
+Unter dem Brief, auf der Rückseite des Blattes, stand noch etwas. Kleiner. Schachnotation, vier Züge, sauber untereinander.
 
 „Was ist das?“
 
 Ambrose beugte sich vor. Er las. Seine Augen wurden weit.
 
-„Das sind Vorschläge“, sagte er. „Wie es weitergehen könnte. Nicht seine Antwort, die hat er
-nicht gefunden. Aber wohin er dachte.“ Er richtete sich auf. „Er wollte sie mit mir zusammen
-finden. An einem Brett.“
+„Das sind unsere letzten Züge“, sagte er. „Neunundzwanzig bis zweiunddreißig, wie er sie eingetragen hat. Zur Kontrolle. Damit wir beide dieselbe Stellung aufbauen, wenn ich ankomme.“ Er richtete sich auf. „Seine Antwort steht nicht hier. Die steht in seinem Buch. Auf der Seite, die fehlt.“
 
 Ich faltete den Brief. Ich legte ihn in den Umschlag aus Ironwood. Er passte genau.
 
@@ -860,22 +852,22 @@ Schwarz am Zug.
 
 ## Neu gegenüber der Story-Bibel (Akt 3, Teil 3)
 
-| Neu                                                                                                                                   | Wozu                                                                                                                                     | Folge für das Spiel                                                                                           |
-| ------------------------------------------------------------------------------------------------------------------------------------- | ---------------------------------------------------------------------------------------------------------------------------------------- | ------------------------------------------------------------------------------------------------------------- |
-| Mama bleibt im Notzelt: „Du bist in sechs Monaten weiter gekommen als ich in fünfundzwanzig Jahren.“                                  | Der Held geht den Weg zur Versöhnung allein.                                                                                             | Zeile in Szene 71; Mama kommt in Szene 80 nach.                                                               |
-| Ambrose bemerkt bei Mira, wie er klingt, und entschuldigt sich: „Sie hat sich die Knie aufgeschlagen.“                                | Unterschied zwischen einem Menschen, der schön spielt, und der Maschine, in einem Bild.                                                  | Zeilen in Szene 72.                                                                                           |
-| Der Held antwortet auf „Bist du gut?“: „Ich werde besser.“                                                                            | Rückbindung an das Ziel aus Akt 1.                                                                                                       | Wahl mit dieser Fassung.                                                                                      |
-| Die Versöhnung ausführlich: Ambrose hörte im Geigenkasten zu und wusste nicht, was der Held zieht.                                    | Seine Antwort auf „Und ich?“ wird aus Erlebtem begründet, nicht behauptet. Leitsatz 1 fällt hier zum ersten Mal (Dokument 19).           | Dialog von Szene 73 ausbauen; alle drei Wahlen kommen vor.                                                    |
-| 1866 erzählt: die Fernpartie als beste Partie seines Lebens; er spielte gewissenhaft, Hale mutiger; sie fuhren aneinander vorbei.     | Beide haben voneinander gelernt; der Schmerz ist ein Missverständnis.                                                                    | Zeilen in Szene 73.                                                                                           |
-| Die Lektion zum Opfer in zwei Fragen (mehr Angreifer als Verteidiger; den haltenden Zug für den Gegner suchen); „Arme Maschine.“      | Das romantische Opfer als Verbindung von Zählen und Mut. Das ist das „eigene Schach“ des Helden.                                         | Lektion mit zwei Bildschirmen; neue Hilfskarte oder Text.                                                     |
-| Ortsschild „Schachspieler: 211“; Schwimmbecken mit Kakteen.                                                                           | Persönlichkeit des Orts: verschroben, karg, herzlich.                                                                                    | Dinge auf der Karte.                                                                                          |
-| **Dot war vierzig Jahre lang Mrs. Whitlocks Fernschachgegnerin.**                                                                     | Schließt den Bogen von Mrs. Calloway (Akt 1) und Mr. Abernathy; die Welt hängt zusammen.                                                 | Dialog bei Dot; Fund „Postkarten von Margaret“; kleine Nebenaufgabe: die Partie zu Ende spielen.              |
-| Miras Dosenpokal ist von Slick inspiriert (steht in der Bibel); der Held schickt Slick ein Foto.                                      | Slicks Bogen bekommt Antwort.                                                                                                            | In Akt 4 erwähnt Slick das Foto.                                                                              |
-| Hale hat alle Briefe von Ambrose aufgehoben; zwei gleiche Siegel für Umschlag und Brief.                                              | Hale als gewissenhafter, anhänglicher Mensch.                                                                                            | Bild der Kiste; Siegelrätsel.                                                                                 |
-| **Der Brief im Wortlaut**: Hale schämt sich für „Später“, nennt Ambroses Spiel Mut, bittet ihn nach Norden.                           | Die Auflösung des Leitmotivs; Hale wird ein Mensch.                                                                                      | Text des Briefs als Großansicht.                                                                              |
-| Auf der Rückseite stehen Hales Gedanken zur Fortsetzung, nicht seine Antwort.                                                         | Die Antwort bleibt für Akt 4 (die herausgerissene Notizbuchseite).                                                                       | Partiefragment 7.                                                                                             |
-| **Die siebte Partie von 1858**: Ambrose glaubte 160 Jahre, das Opfer sei falsch gewesen. Es war richtig; er verlor die Nerven danach. | Stimmt mit der Bibel überein (Szene 77) und erklärt, warum er in Akt 1 „Nein“ sagt: Er glaubte es. Hale sagte „unnötig“, nicht „falsch“. | In Akt 1, Szene 19, muss „Hat es gestimmt?“ – „Nein.“ als sein Glaube stehen bleiben; hier wird es aufgelöst. |
-| Im Clubkampf sagt der Held zu Mira „Atme“ und schenkt ihr, was Ambrose 1858 gefehlt hat.                                              | Der Held gibt weiter, was er gelernt hat; fester Moment in der Partie.                                                                   | Wahl mitten in der Partie: schweigen oder „Atme“; mit „Atme“ spielt Mira stärker weiter.                      |
-| Nadel als Kupferkaktus mit Blüte.                                                                                                     | Nadel mit Gesicht des Orts.                                                                                                              | Nadelbild.                                                                                                    |
-| Victors zweite Zeile: „Mein Vater hat mir einen Trainer besorgt. Er ist kein Mensch.“                                                 | Vorbereitung von Akt 4.                                                                                                                  | Zeile in Szene 79.                                                                                            |
-| Ambrose zum Tablet: „Ich hoffe es. Und ich habe es geprüft, so gut ich kann.“                                                         | Er wendet die eigene Lektion auf sich an.                                                                                                | Zeile in Szene 79.                                                                                            |
+| Neu                                                                                                                                        | Wozu                                                                                                                                     | Folge für das Spiel                                                                                           |
+| ------------------------------------------------------------------------------------------------------------------------------------------ | ---------------------------------------------------------------------------------------------------------------------------------------- | ------------------------------------------------------------------------------------------------------------- |
+| Mama bleibt im Notzelt: „Du bist in sechs Monaten weiter gekommen als ich in fünfundzwanzig Jahren.“                                       | Der Held geht den Weg zur Versöhnung allein.                                                                                             | Zeile in Szene 71; Mama kommt in Szene 80 nach.                                                               |
+| Ambrose bemerkt bei Mira, wie er klingt, und entschuldigt sich: „Sie hat sich die Knie aufgeschlagen.“                                     | Unterschied zwischen einem Menschen, der schön spielt, und der Maschine, in einem Bild.                                                  | Zeilen in Szene 72.                                                                                           |
+| Der Held antwortet auf „Bist du gut?“: „Ich werde besser.“                                                                                 | Rückbindung an das Ziel aus Akt 1.                                                                                                       | Wahl mit dieser Fassung.                                                                                      |
+| Die Versöhnung ausführlich: Ambrose hörte im Geigenkasten zu und wusste nicht, was der Held zieht.                                         | Seine Antwort auf „Und ich?“ wird aus Erlebtem begründet, nicht behauptet. Leitsatz 1 fällt hier zum ersten Mal (Dokument 19).           | Dialog von Szene 73 ausbauen; alle drei Wahlen kommen vor.                                                    |
+| 1866 erzählt: die Fernpartie als beste Partie seines Lebens; er spielte gewissenhaft, Hale mutiger; sie fuhren aneinander vorbei.          | Beide haben voneinander gelernt; der Schmerz ist ein Missverständnis.                                                                    | Zeilen in Szene 73.                                                                                           |
+| Die Lektion zum Opfer in zwei Fragen (mehr Angreifer als Verteidiger; den haltenden Zug für den Gegner suchen); „Arme Maschine.“           | Das romantische Opfer als Verbindung von Zählen und Mut. Das ist das „eigene Schach“ des Helden.                                         | Lektion mit zwei Bildschirmen; neue Hilfskarte oder Text.                                                     |
+| Ortsschild „Schachspieler: 211“; Schwimmbecken mit Kakteen.                                                                                | Persönlichkeit des Orts: verschroben, karg, herzlich.                                                                                    | Dinge auf der Karte.                                                                                          |
+| **Dot war vierzig Jahre lang Mrs. Whitlocks Fernschachgegnerin.**                                                                          | Schließt den Bogen von Mrs. Calloway (Akt 1) und Mr. Abernathy; die Welt hängt zusammen.                                                 | Dialog bei Dot; Fund „Postkarten von Margaret“; kleine Nebenaufgabe: die Partie zu Ende spielen.              |
+| Miras Dosenpokal ist von Slick inspiriert (steht in der Bibel); der Held schickt Slick ein Foto.                                           | Slicks Bogen bekommt Antwort.                                                                                                            | In Akt 4 erwähnt Slick das Foto.                                                                              |
+| Hale hat alle Briefe von Ambrose aufgehoben; zwei gleiche Siegel für Umschlag und Brief.                                                   | Hale als gewissenhafter, anhänglicher Mensch.                                                                                            | Bild der Kiste; Siegelrätsel.                                                                                 |
+| **Der Brief im Wortlaut**: Hale schämt sich für „Später“, nennt Ambroses Spiel Mut, bittet ihn nach Norden.                                | Die Auflösung des Leitmotivs; Hale wird ein Mensch.                                                                                      | Text des Briefs als Großansicht.                                                                              |
+| Auf der Rückseite stehen die Züge 29 bis 32 zur Kontrolle der Stellung; Hales Antwort steht in seinem Notizbuch, auf der Seite, die fehlt. | Die Antwort bleibt für Akt 4 (die herausgerissene Notizbuchseite).                                                                       | Partiefragment 7.                                                                                             |
+| **Die siebte Partie von 1858**: Ambrose glaubte 160 Jahre, das Opfer sei falsch gewesen. Es war richtig; er verlor die Nerven danach.      | Stimmt mit der Bibel überein (Szene 77) und erklärt, warum er in Akt 1 „Nein“ sagt: Er glaubte es. Hale sagte „unnötig“, nicht „falsch“. | In Akt 1, Szene 19, muss „Hat es gestimmt?“ – „Nein.“ als sein Glaube stehen bleiben; hier wird es aufgelöst. |
+| Im Clubkampf sagt der Held zu Mira „Atme“ und schenkt ihr, was Ambrose 1858 gefehlt hat.                                                   | Der Held gibt weiter, was er gelernt hat; fester Moment in der Partie.                                                                   | Wahl mitten in der Partie: schweigen oder „Atme“; mit „Atme“ spielt Mira stärker weiter.                      |
+| Nadel als Kupferkaktus mit Blüte.                                                                                                          | Nadel mit Gesicht des Orts.                                                                                                              | Nadelbild.                                                                                                    |
+| Victors zweite Zeile: „Mein Vater hat mir einen Trainer besorgt. Er ist kein Mensch.“                                                      | Vorbereitung von Akt 4.                                                                                                                  | Zeile in Szene 79.                                                                                            |
+| Ambrose zum Tablet: „Ich hoffe es. Und ich habe es geprüft, so gut ich kann.“                                                              | Er wendet die eigene Lektion auf sich an.                                                                                                | Zeile in Szene 79.                                                                                            |

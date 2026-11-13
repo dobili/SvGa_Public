@@ -94,6 +94,9 @@
     { "moebel": "sd6Schilf", "feld": [51, 10] },
     { "moebel": "sd6Schilf", "feld": [50, 12] },
     { "moebel": "sd6Schilf", "feld": [50, 17] },
+    { "moebel": "n5Teleskop", "feld": [45, 12], "wenn": "maeEingeladen und nicht sternennachtGesehen und nadelCedarCreek == 0" },
+    { "moebel": "rv8Plane", "feld": [46, 17], "wenn": "maeEingeladen und nicht sternennachtGesehen und nadelCedarCreek == 0" },
+    { "moebel": "rv8Plane", "feld": [47, 17], "wenn": "maeEingeladen und nicht sternennachtGesehen und nadelCedarCreek == 0" },
     {
       "moebel": "mfLaterne",
       "feld": [19, 16],

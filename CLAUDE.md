@@ -99,6 +99,7 @@ python -m pipeline.zugfolgen.konstruieren --engine PFAD   # konstruierte Partien
 python -m pipeline.pruefen.tablebase   # Endspielabbildungen bis 7 Steine gegen die Lichess-Tablebase (Netz, Zwischenspeicher in buch/arbeit)
 python -m pipeline.praxisbuch.baender app/public/daten/eroeffnungsbaender.json buch/arbeit/praxisbuch/voll.tsv buch/arbeit/praxisbuch/voll2.tsv   # Eröffnungen je Elo-Band (Zählungen nur lokal)
 python -m pipeline.abenteuer.weltpuzzle --bild /tmp/welt.png   # Schach-Abenteuer: Außenkarten über ihre Zugänge aneinanderlegen (Überlappungen, offene Ringe, Randbrüche); --ort KENNUNG grenzt ein
+python -m pipeline.abenteuer.weltkarte PRIVAT ZIEL --orte mapleFalls,cedarCreek   # Weltkarte: Kartenbilder, daten.json und weltkarte.html mit Ausgängen und Reisen (nichts ins private Paket)
 python -m pipeline.wiki --zeigen   # Seiten des Wikis im Dashboard (Paket D); --senden schickt sie (nur in Actions mit BERICHT_SCHLUESSEL)
 ```
 

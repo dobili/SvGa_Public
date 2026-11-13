@@ -5,7 +5,8 @@
  * und den Startknoten, zeigt je Tipp eine Zeile, am Ende die Wahlen; beim Ende der Geschichte
  * gibt es die Variablen zurück (Spielstand). Die Zurück-Taste schließt den Dialog
  * (app/blattstapel.ts). Sprecher „erzaehler“ hat keinen Namen. Eine Zeile mit `#pause` sperrt
- * „Weiter“ für ihre Dauer (dialog/dialogtakt.ts, T3).
+ * „Weiter“ für ihre Dauer (dialog/dialogtakt.ts, T3); `#bild:kennung` zeigt ein Bild groß über der
+ * Zeile (dialog/Grossansicht.tsx, T7).
  * Abhängigkeiten: dialog/geschichte.ts, dialog/dialogtakt.ts, texte/texte.ts, app/blattstapel.ts.
  */
 import { useEffect, useState } from "react";
@@ -13,6 +14,8 @@ import { useZurueckSchliesst } from "../../app/blattstapel";
 import { tSpiel } from "../texte/texte";
 import { tonregie } from "../ton/tonregie";
 import { pausendauer } from "./dialogtakt";
+import { Grossansicht } from "./Grossansicht";
+import { bildpfad } from "./grossbild";
 import { Portraet } from "./Portraet";
 import { Geschichte, type Dialogschritt, type Dialogvariablen, type Wirkungen } from "./geschichte";
 
@@ -92,6 +95,7 @@ export function Dialog({
   if (schritt.art === "ende") return null;
   const zeile = letzteZeile?.art === "zeile" ? letzteZeile.zeile : null;
   const sprecher = zeile?.tags.sprecher ?? ERZAEHLER;
+  const bild = zeile ? bildpfad(zeile.tags) : null;
   return (
     <section
       className="abenteuer-dialog"
@@ -99,6 +103,7 @@ export function Dialog({
       aria-live="polite"
       data-testid="abenteuer-dialog"
     >
+      {bild && <Grossansicht pfad={bild} />}
       {sprecher !== ERZAEHLER && (
         <div className="abenteuer-dialog-kopf">
           <Portraet

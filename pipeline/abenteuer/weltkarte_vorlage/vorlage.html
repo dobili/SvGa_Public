@@ -1,0 +1,251 @@
+<title>Weltkarte Schach-Abenteuer</title>
+<meta name="claude:viewport-fit-sides" content="cover">
+<link rel="stylesheet" href="https://fonts.googleapis.com/css2?family=Silkscreen&family=Source+Sans+3:wght@400;600&display=swap">
+<style>
+/* Aufbau: eine bildschirmfüllende Fläche (#sicht), darin eine verschieb- und zoombare Welt (#welt) mit
+   Kartenflächen und einer SVG-Ebene für die Pfeile; oben eine schmale Leiste mit den Knöpfen. */
+:root{--bg:#e9e4d6;--flaeche:#fffdf8;--fg:#16253d;--leise:#5b6475;--gold:#b88d14;--blau:#1f6fd1;--reise:#8a3fb5;--linie:#cfc7b2;--raster:rgba(22,37,61,.06);
+--pixel:"Silkscreen",ui-monospace,monospace;--text:"Source Sans 3",system-ui,sans-serif}
+@media (prefers-color-scheme:dark){:root:not([data-theme="light"]){--bg:#0d1422;--flaeche:#1b2740;--fg:#f0eadb;--leise:#a8b0c2;--gold:#e0b84a;--blau:#5aa2ff;--reise:#c58bea;--linie:#33415e;--raster:rgba(240,234,219,.05);color-scheme:dark}}
+:root[data-theme="dark"]{--bg:#0d1422;--flaeche:#1b2740;--fg:#f0eadb;--leise:#a8b0c2;--gold:#e0b84a;--blau:#5aa2ff;--reise:#c58bea;--linie:#33415e;--raster:rgba(240,234,219,.05);color-scheme:dark}
+html,body{height:100%;margin:0}
+body{background:var(--bg);color:var(--fg);font:15px/1.4 var(--text);overflow:hidden;overscroll-behavior:none}
+#leiste{position:fixed;inset:0 0 auto 0;z-index:20;display:flex;flex-wrap:wrap;align-items:center;gap:8px;
+  padding:8px max(16px,env(safe-area-inset-right,0px)) 8px max(16px,env(safe-area-inset-left,0px));
+  background:color-mix(in srgb,var(--flaeche) 92%,transparent);border-bottom:1px solid var(--linie)}
+#leiste h1{font:400 1rem var(--pixel);margin:0 auto 0 0;letter-spacing:.03em;white-space:nowrap}
+#leiste span{color:var(--leise);font-variant-numeric:tabular-nums}
+button{font:600 .9rem var(--text);padding:6px 10px;border-radius:4px;border:2px solid var(--linie);background:var(--flaeche);color:var(--fg);cursor:pointer}
+button:focus-visible{outline:3px solid var(--gold);outline-offset:2px}
+#sicht{position:fixed;inset:0;touch-action:none;cursor:grab;
+  background-image:linear-gradient(var(--raster) 1px,transparent 1px),linear-gradient(90deg,var(--raster) 1px,transparent 1px);background-size:32px 32px}
+#sicht.zieht{cursor:grabbing}
+#welt{position:absolute;left:0;top:0;transform-origin:0 0;will-change:transform}
+#pfeile{position:absolute;left:0;top:0;overflow:visible;pointer-events:none;z-index:5}
+#pfeile path{fill:none;stroke:var(--gold);stroke-width:5;stroke-linecap:round}
+#pfeile path.reise{stroke:var(--reise);stroke-dasharray:14 10}
+#pfeile circle{fill:var(--gold)} #pfeile circle.reise{fill:var(--reise)}
+.karte{position:absolute;border-radius:6px;box-shadow:0 6px 24px rgba(0,0,0,.35);background:#1a1612;user-select:none;-webkit-user-select:none;touch-action:none;cursor:move}
+.karte img{display:block;image-rendering:pixelated;border-radius:6px;pointer-events:none;-webkit-user-drag:none}
+.karte.halten{outline:6px solid #c0392b;opacity:.75}
+.name{position:absolute;left:8px;bottom:8px;max-width:calc(100% - 16px);padding:3px 8px;border-radius:4px;background:rgba(13,20,34,.6);color:#f0eadb;
+  font:400 16px var(--pixel);pointer-events:none;white-space:nowrap;overflow:hidden;text-overflow:ellipsis}
+.name small{font:400 13px var(--text);opacity:.85;margin-left:8px}
+.zustaende{position:absolute;top:8px;left:50%;transform:translateX(-50%);display:flex;gap:4px;flex-wrap:wrap;justify-content:center;max-width:calc(100% - 16px);z-index:3}
+.zustaende button{font:600 13px var(--text);padding:4px 8px;border:1px solid rgba(240,234,219,.6);background:rgba(13,20,34,.55);color:#f0eadb;opacity:.85}
+.zustaende button[aria-pressed="true"]{background:rgba(184,141,20,.9);color:#16253d;border-color:#f0eadb;opacity:1}
+.ausgang{position:absolute;box-sizing:border-box;min-width:28px;min-height:28px;border:3px solid var(--blau);border-radius:5px;background:color-mix(in srgb,var(--blau) 38%,transparent);
+  cursor:pointer;padding:0;z-index:2}
+.ausgang.reise{border-color:var(--reise);background:color-mix(in srgb,var(--reise) 38%,transparent);border-style:dashed}
+.ausgang.offen{border-color:var(--gold);background:color-mix(in srgb,var(--gold) 45%,transparent)}
+.ausgang:focus-visible{outline:4px solid #fff;outline-offset:2px}
+#hinweis{position:fixed;left:50%;bottom:max(14px,env(safe-area-inset-bottom,0px));transform:translateX(-50%);z-index:20;max-width:min(92vw,560px);
+  padding:8px 12px;border-radius:6px;background:color-mix(in srgb,var(--flaeche) 94%,transparent);border:1px solid var(--linie);font-size:.85rem;text-align:center;cursor:pointer}
+#hinweis[hidden]{display:none}
+@media (prefers-reduced-motion:no-preference){.karte{transition:opacity .15s}}
+</style>
+<div id="leiste">
+  <h1>Weltkarte</h1>
+  <span id="zaehler"></span>
+  <button type="button" id="alle">Alle zeigen</button>
+  <button type="button" id="neu">Von vorn</button>
+  <button type="button" id="passt">Einpassen</button>
+  <button type="button" id="minus" aria-label="Verkleinern">−</button>
+  <button type="button" id="plus" aria-label="Vergrößern">+</button>
+</div>
+<div id="sicht"><div id="welt"><svg id="pfeile" width="1" height="1"></svg></div></div>
+<div id="hinweis" role="status">Blaue Fläche antippen: Karte hinter dem Ausgang zeigen. Karte ziehen: verschieben. Gedrückt halten: ausblenden. Lila gestrichelt: Reise mit Bus, Zug oder Fähre.</div>
+<script>
+const KARTEN = /*DATEN*/[];
+const START = "mapleFalls.dachboden", ABSTAND = 120, HALTEN_MS = 650, SPEICHER = "weltkarte1";
+const nach = Object.fromEntries(KARTEN.map((k) => [k.id, k]));
+const sicht = document.getElementById("sicht"), welt = document.getElementById("welt"), pfeile = document.getElementById("pfeile");
+// offen: id -> {x, y, f (Index des Zustands)}; links: Menge "karte|ausgang" der gezeigten Verbindungen.
+let offen = {}, links = new Set(), blick = { x: 40, y: 80, z: 0.5 };
+const el = {};
+
+function merke() { try { localStorage.setItem(SPEICHER, JSON.stringify({ offen, links: [...links], blick })); } catch (e) { /* ohne Speicher geht es auch */ } }
+function lies() {
+  try {
+    const d = JSON.parse(localStorage.getItem(SPEICHER) || "null");
+    if (!d || !d.offen || !Object.keys(d.offen).every((id) => nach[id])) return false;
+    offen = d.offen; links = new Set(d.links || []); blick = d.blick || blick; return Object.keys(offen).length > 0;
+  } catch (e) { return false; }
+}
+
+function setzeBlick() { welt.style.transform = `translate(${blick.x}px,${blick.y}px) scale(${blick.z})`; sicht.style.backgroundSize = `${32 * blick.z}px ${32 * blick.z}px`; sicht.style.backgroundPosition = `${blick.x}px ${blick.y}px`; sicht.style.backgroundImage = blick.z < 0.25 ? "none" : ""; }
+function zoom(faktor, mx, my) {
+  const z = Math.min(2, Math.max(0.08, blick.z * faktor));
+  mx ??= innerWidth / 2; my ??= innerHeight / 2;
+  blick.x = mx - (mx - blick.x) * (z / blick.z); blick.y = my - (my - blick.y) * (z / blick.z); blick.z = z; setzeBlick(); merke();
+}
+function einpassen() {
+  const ids = Object.keys(offen); if (!ids.length) return;
+  const x0 = Math.min(...ids.map((i) => offen[i].x)), y0 = Math.min(...ids.map((i) => offen[i].y));
+  const x1 = Math.max(...ids.map((i) => offen[i].x + nach[i].w)), y1 = Math.max(...ids.map((i) => offen[i].y + nach[i].h));
+  const oben = document.getElementById("leiste").offsetHeight + 12, rand = 24;
+  const z = Math.min(1, (innerWidth - 2 * rand) / (x1 - x0), (innerHeight - oben - 70) / (y1 - y0));
+  blick = { z, x: (innerWidth - (x1 - x0) * z) / 2 - x0 * z, y: oben + (innerHeight - oben - 60 - (y1 - y0) * z) / 2 - y0 * z };
+  setzeBlick(); merke();
+}
+
+// Rechtecke überlappen sich (mit Abstand)?
+function frei(id, x, y) {
+  const k = nach[id];
+  return Object.keys(offen).every((i) => i === id || x + k.w + ABSTAND <= offen[i].x || offen[i].x + nach[i].w + ABSTAND <= x || y + k.h + ABSTAND <= offen[i].y || offen[i].y + nach[i].h + ABSTAND <= y);
+}
+// Platz für eine neue Karte: in Richtung des Ausgangs, Schritt für Schritt weiter und seitlich versetzt.
+function platz(id, von, ausgang) {
+  const q = nach[von], p = offen[von], z = nach[id];
+  const ax = (ausgang.x + ausgang.b / 2) * q.k - q.w / 2, ay = (ausgang.y + ausgang.h / 2) * q.k - q.h / 2;
+  let dx = 0, dy = 0;
+  if (Math.abs(ax) / q.w >= Math.abs(ay) / q.h) dx = Math.sign(ax) || 1; else dy = Math.sign(ay) || 1;
+  const mx = p.x + q.w / 2, my = p.y + q.h / 2;
+  for (let weit = 0; weit < 60; weit++) for (const seite of [0, 1, -1, 2, -2, 3, -3, 4, -4]) {
+    const cx = mx + dx * (q.w / 2 + z.w / 2 + ABSTAND + weit * 220) + dy * seite * 320;
+    const cy = my + dy * (q.h / 2 + z.h / 2 + ABSTAND + weit * 220) + dx * seite * 320;
+    if (frei(id, cx - z.w / 2, cy - z.h / 2)) return { x: Math.round(cx - z.w / 2), y: Math.round(cy - z.h / 2) };
+  }
+  return { x: p.x + q.w + ABSTAND, y: p.y };
+}
+
+function baue(id) {
+  const k = nach[id], karte = document.createElement("div");
+  karte.className = "karte"; karte.dataset.id = id; karte.style.width = k.w + "px"; karte.style.height = k.h + "px";
+  const bild = document.createElement("img"); bild.alt = k.name; bild.width = k.w; bild.height = k.h; bild.draggable = false;
+  karte.append(bild);
+  if (k.f.length > 1) {
+    const reihe = document.createElement("div"); reihe.className = "zustaende";
+    k.f.forEach((f, i) => {
+      const b = document.createElement("button"); b.type = "button"; b.textContent = i ? f.n : "Grund"; if (f.t) b.title = f.t;
+      b.addEventListener("pointerdown", (e) => e.stopPropagation());
+      b.addEventListener("click", () => { offen[id].f = i; zeigeZustand(id); merke(); });
+      reihe.append(b);
+    });
+    karte.append(reihe);
+  }
+  const name = document.createElement("div"); name.className = "name"; name.textContent = k.name;
+  const klein = document.createElement("small"); klein.textContent = k.id; name.append(klein); karte.append(name);
+  for (const a of k.a) {
+    const b = document.createElement("button"); b.type = "button"; b.className = "ausgang" + (a.art === "reise" ? " reise" : "");
+    const w = Math.max(a.b * k.k, 28), h = Math.max(a.h * k.k, 28);
+    b.style.left = (a.x + a.b / 2) * k.k - w / 2 + "px"; b.style.top = (a.y + a.h / 2) * k.k - h / 2 + "px"; b.style.width = w + "px"; b.style.height = h + "px";
+    b.title = (a.art === "reise" ? "Reise nach " : "Nach ") + nach[a.z].name + " (" + a.n + ", Kachel " + a.x + "," + a.y + ")";
+    b.setAttribute("aria-label", b.title); b.dataset.schluessel = id + "|" + a.n + "|" + a.z;
+    b.addEventListener("pointerdown", (e) => e.stopPropagation());
+    b.addEventListener("click", () => oeffne(id, a));
+    karte.append(b);
+  }
+  karte.addEventListener("pointerdown", (e) => kartengriff(e, id, karte));
+  welt.append(karte); el[id] = karte; return karte;
+}
+function zeigeZustand(id) {
+  const k = nach[id], i = Math.min(offen[id].f || 0, k.f.length - 1);
+  el[id].querySelector("img").src = k.f[i].d;
+  el[id].querySelectorAll(".zustaende button").forEach((b, n) => b.setAttribute("aria-pressed", String(n === i)));
+  const hinweis = document.getElementById("hinweis");
+  if (k.f[i].t && i) { hinweis.textContent = k.name + ", Zustand " + k.f[i].n + ": " + k.f[i].t + " (antippen schließt)"; hinweis.hidden = false; }
+}
+function zeige(id, ort) {
+  if (!offen[id]) offen[id] = { x: ort.x, y: ort.y, f: 0 };
+  const karte = el[id] || baue(id);
+  karte.hidden = false; karte.style.left = offen[id].x + "px"; karte.style.top = offen[id].y + "px"; zeigeZustand(id);
+}
+function verberge(id) {
+  delete offen[id]; if (el[id]) el[id].hidden = true;
+  for (const l of [...links]) { const [a, , z] = l.split("|"); if (a === id || z === id) links.delete(l); }
+  zeichne(); merke();
+}
+function oeffne(von, a) {
+  const schluessel = von + "|" + a.n + "|" + a.z, neu = !offen[a.z];
+  if (neu) zeige(a.z, platz(a.z, von, a));
+  links.add(schluessel);
+  document.getElementById("hinweis").hidden = true;
+  zeichne(); merke();
+  const z = offen[a.z], k = nach[a.z];
+  const sx = (z.x + k.w / 2) * blick.z + blick.x, sy = (z.y + k.h / 2) * blick.z + blick.y;
+  if (neu || sx < 0 || sy < 60 || sx > innerWidth || sy > innerHeight) { blick.x += innerWidth / 2 - sx; blick.y += innerHeight / 2 - sy; setzeBlick(); merke(); }
+}
+
+// Pfeile neu zeichnen: Start ist die Mitte der Ausgangsfläche, Ziel die Mitte des Ankunftsfelds auf der Zielkarte.
+function zeichne() {
+  let s = "";
+  const gezeichnet = new Set();
+  for (const l of links) {
+    const [von, n, zu] = l.split("|");
+    if (!offen[von] || !offen[zu]) continue;
+    const q = nach[von], a = q.a.find((x) => x.n === n && x.z === zu); if (!a) continue;
+    const z = nach[zu];
+    const x1 = offen[von].x + (a.x + a.b / 2) * q.k, y1 = offen[von].y + (a.y + a.h / 2) * q.k;
+    const m = a.zm || [z.tb / 2, z.th / 2];
+    const x2 = offen[zu].x + m[0] * z.k, y2 = offen[zu].y + m[1] * z.k;
+    // Hin- und Rückweg zwischen denselben zwei Stellen nur einmal zeichnen.
+    const paar = [Math.round(x1) + "," + Math.round(y1), Math.round(x2) + "," + Math.round(y2)].sort().join("~");
+    if (gezeichnet.has(paar)) continue; gezeichnet.add(paar);
+    const dx = x2 - x1, dy = y2 - y1, quer = Math.abs(dx) >= Math.abs(dy);
+    const c1 = quer ? [x1 + dx / 2, y1] : [x1, y1 + dy / 2], c2 = quer ? [x2 - dx / 2, y2] : [x2, y2 - dy / 2];
+    const kl = a.art === "reise" ? ' class="reise"' : "";
+    s += `<path${kl} d="M${x1},${y1} C${c1[0]},${c1[1]} ${c2[0]},${c2[1]} ${x2},${y2}"/><circle${kl} cx="${x1}" cy="${y1}" r="9"/><circle${kl} cx="${x2}" cy="${y2}" r="13"/>`;
+  }
+  pfeile.innerHTML = s;
+  for (const b of welt.querySelectorAll(".ausgang")) { const [, , zu] = b.dataset.schluessel.split("|"); b.classList.toggle("offen", links.has(b.dataset.schluessel) && !!offen[zu]); }
+  document.getElementById("zaehler").textContent = Object.keys(offen).length + " von " + KARTEN.length + " Karten";
+}
+
+// Karte greifen: ziehen verschiebt, gedrückt halten ohne Bewegung blendet aus.
+function kartengriff(e, id, karte) {
+  if (zeiger.size >= 1) return; // zweiter Finger: Zoomen übernimmt die Sicht
+  e.stopPropagation(); karte.setPointerCapture(e.pointerId);
+  const sx = e.clientX, sy = e.clientY, ox = offen[id].x, oy = offen[id].y; let bewegt = false;
+  karte.style.zIndex = 4;
+  const uhr = setTimeout(() => { if (!bewegt) { karte.classList.add("halten"); setTimeout(() => { karte.classList.remove("halten"); ende(); verberge(id); }, 180); } }, HALTEN_MS);
+  const zug = (ev) => {
+    const dx = (ev.clientX - sx) / blick.z, dy = (ev.clientY - sy) / blick.z;
+    if (!bewegt && Math.hypot(ev.clientX - sx, ev.clientY - sy) < 8) return;
+    bewegt = true; clearTimeout(uhr);
+    offen[id].x = Math.round(ox + dx); offen[id].y = Math.round(oy + dy);
+    karte.style.left = offen[id].x + "px"; karte.style.top = offen[id].y + "px"; zeichne();
+  };
+  const ende = () => { clearTimeout(uhr); karte.style.zIndex = ""; karte.removeEventListener("pointermove", zug); karte.removeEventListener("pointerup", ende); karte.removeEventListener("pointercancel", ende); merke(); };
+  karte.addEventListener("pointermove", zug); karte.addEventListener("pointerup", ende); karte.addEventListener("pointercancel", ende);
+}
+
+// Sicht: ein Finger oder die Maus verschiebt, zwei Finger zoomen, das Mausrad zoomt.
+const zeiger = new Map(); let griff = null;
+sicht.addEventListener("pointerdown", (e) => {
+  zeiger.set(e.pointerId, { x: e.clientX, y: e.clientY }); sicht.setPointerCapture(e.pointerId); sicht.classList.add("zieht");
+  if (zeiger.size === 2) { const [a, b] = [...zeiger.values()]; griff = { d: Math.hypot(a.x - b.x, a.y - b.y) }; }
+});
+sicht.addEventListener("pointermove", (e) => {
+  const p = zeiger.get(e.pointerId); if (!p) return;
+  if (zeiger.size === 1) { blick.x += e.clientX - p.x; blick.y += e.clientY - p.y; setzeBlick(); }
+  p.x = e.clientX; p.y = e.clientY;
+  if (zeiger.size === 2 && griff) { const [a, b] = [...zeiger.values()]; const d = Math.hypot(a.x - b.x, a.y - b.y); if (griff.d > 0) zoom(d / griff.d, (a.x + b.x) / 2, (a.y + b.y) / 2); griff.d = d; }
+});
+const los = (e) => { zeiger.delete(e.pointerId); if (zeiger.size < 2) griff = null; if (!zeiger.size) { sicht.classList.remove("zieht"); merke(); } };
+sicht.addEventListener("pointerup", los); sicht.addEventListener("pointercancel", los);
+sicht.addEventListener("wheel", (e) => { e.preventDefault(); zoom(e.deltaY < 0 ? 1.12 : 1 / 1.12, e.clientX, e.clientY); }, { passive: false });
+
+function vonVorn() {
+  for (const id of Object.keys(offen)) if (el[id]) el[id].hidden = true;
+  offen = {}; links = new Set(); zeige(START, { x: 0, y: 0 }); zeichne(); blick.z = Math.min(1, (innerWidth - 48) / nach[START].w); einpassen();
+}
+// Alle Karten: vom Start aus der Reihe nach jeden Ausgang öffnen (Breitensuche), damit Nachbarn beieinanderliegen.
+function alleZeigen() {
+  const reihe = Object.keys(offen).length ? Object.keys(offen) : [START];
+  if (!offen[START] && !Object.keys(offen).length) zeige(START, { x: 0, y: 0 });
+  for (let i = 0; i < reihe.length; i++) for (const a of nach[reihe[i]].a) {
+    if (!offen[a.z]) { zeige(a.z, platz(a.z, reihe[i], a)); reihe.push(a.z); }
+    links.add(reihe[i] + "|" + a.n + "|" + a.z);
+  }
+  zeichne(); einpassen();
+}
+document.getElementById("hinweis").addEventListener("click", (e) => { e.currentTarget.hidden = true; });
+document.getElementById("alle").addEventListener("click", alleZeigen);
+document.getElementById("neu").addEventListener("click", vonVorn);
+document.getElementById("passt").addEventListener("click", einpassen);
+document.getElementById("plus").addEventListener("click", () => zoom(1.25));
+document.getElementById("minus").addEventListener("click", () => zoom(0.8));
+
+if (lies()) { for (const id of Object.keys(offen)) zeige(id, offen[id]); zeichne(); setzeBlick(); } else vonVorn();
+</script>

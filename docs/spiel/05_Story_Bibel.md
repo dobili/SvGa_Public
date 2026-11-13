@@ -806,13 +806,13 @@ Teil 1 unverändert. Alle Namen sind Arbeitsnamen bis zum Markencheck.
 
 ## 8. Zeitlinie, Ergänzung für Akt 2
 
-| Jahr | Ereignis                                                                                                                                                                                              |
-| ---- | ----------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------- |
-| 1851 | Der zwanzigjährige Ambrose begleitet seinen Vater auf einer Reise nach London (Klavierholz kaufen). In einem Kaffeehaus am Strand sieht er die „Unsterbliche Partie“ von Anderssen gegen Kieseritzky. |
-| 1858 | Nach der Niederlage gegen Hale liest Ambrose in der Zeitung, wie Morphy in London Bird schlägt, und spielt die Partie nachts nach (Erinnerung in Ironwood).                                           |
-| 1866 | Ein Brief von Hale an Ambrose wird nie zugestellt: Er bleibt im Postamt der Bahnstation Ironwood liegen (übergreifender Fund, Auflösung in Akt 3).                                                    |
-| 2001 | Laura (Mama), 17, verliert in Ironwood das Finale der Jugendmeisterschaft des Bundesstaats nach einem übersehenen Spieß und hört auf zu spielen. Big Joe war damals ihr Trainer.                      |
-| 2026 | Herbst: Perfect Move kauft den Parkclub von Riverton und danach den Stahlwerker-Club von Ironwood.                                                                                                    |
+| Jahr | Ereignis                                                                                                                                                                                                                                                                                                       |
+| ---- | -------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------- |
+| 1851 | Der zwanzigjährige Ambrose begleitet seinen Vater auf einer Reise nach London (Klavierholz kaufen). In einem Kaffeehaus am Strand sieht er die „Unsterbliche Partie“ von Anderssen gegen Kieseritzky.                                                                                                          |
+| 1858 | Oktober 1858: In der Nacht nach der Niederlage gegen Hale liest Ambrose in einer sechs Wochen alten Londoner Zeitung, wie Morphy Bird schlägt, und spielt die Partie nach (Erinnerung in Ironwood).                                                                                                            |
+| 1866 | Hale schickt am selben Tag seinen 39. Zug und eine Einladung nach Norden. Der Zug kommt an. Den Brief mit der Einladung hat Hale versiegelt, aber nicht in den Umschlag gelegt: Der Umschlag geht leer hinaus und bleibt im Postamt der Bahnstation Ironwood liegen (übergreifender Fund, Auflösung in Akt 3). |
+| 2001 | Laura (Mama), 17, verliert in Ironwood das Finale der Jugendmeisterschaft des Bundesstaats nach einem übersehenen Spieß und hört auf zu spielen. Big Joe war damals ihr Trainer.                                                                                                                               |
+| 2026 | Herbst: Perfect Move kauft den Parkclub von Riverton und danach den Stahlwerker-Club von Ironwood.                                                                                                                                                                                                             |
 
 Entscheidung: Der nie zugestellte Brief verbindet Akt 2 mit Akt 3 (Versöhnung in Desert Springs):
 Hale hat Ambrose nicht vergessen. Sein Inhalt wird erst in Akt 3 gelesen (Abschnitt 11.3).
@@ -824,7 +824,7 @@ Hale hat Ambrose nicht vergessen. Sein Inhalt wird erst in Akt 3 gelesen (Abschn
 **Ambrose.** Neu in Akt 2 ist die Versuchung (Konzeptsammlung): Die Bildschirmtische in Riverton
 spielen fehlerlos. Ambrose ist empört („Eine Rechenmaschine, die nie zweifelt, ist kein Spieler.“)
 und schaut doch immer wieder hin. Nach dem Flashback sagt er zum ersten Mal: „Was wäre, wenn sie
-die Partie spielen könnte, die ich nie spielte?“ {held} merkt es; Juno auch. Das bereitet Akt 3
+die Partie spielen könnte, die ich nie spielte?“ {held} merkt es; Juno merkt nur, dass {held} still wird (von Ambrose weiß sie erst seit Dezember, Szene 51). Das bereitet Akt 3
 vor (er läuft fast zur Maschine über). Sprechweise unverändert; neue Stimmung `fern` (wenn er auf
 die Tische schaut).
 
@@ -937,7 +937,7 @@ schlafen will“. Beispiel: „Deine Mutter war das stillste Kind der Straße. A
 gewonnen hat.“ Rolle: öffnet Mamas Geheimnis (Szene 39).
 
 **Mr. Teague** (Nebenfigur). Walter Teague, achtzig, er, ehrenamtlicher Hüter des Heimatmuseums im
-alten Bahnhof. Hütet Postsäcke von 1870, die nie geöffnet wurden. Rolle: übergreifender Fund „Der
+alten Bahnhof. Hütet Postsäcke von 1866, die nie geöffnet wurden. Rolle: übergreifender Fund „Der
 leere Umschlag“ (Szene 41).
 
 ### 9.4 Sprechweisen auf einen Blick (Ergänzung zu 5.4)
@@ -1129,8 +1129,7 @@ schlägt, draußen leuchten die Bildschirmtische, und Ambrose und sagt: „Ich w
 Gang durch das Kaffeehaus (Zeitungsleser, Kaffeeduft, Tabakrauch nur als Wort), Ambrose (20) steht
 hinter zwei Spielern. Dann Zugerraten (C3) der Partie Anderssen gegen Kieseritzky, London 1851,
 `klassik-unsterbliche` aus `inhalte/zusatzpartien/klassiker.json`, mit Weiß ab Zug 17 bis zum
-Matt im 23. Zug: Anderssen gibt beide Türme und die Dame. Ambrose hält vor Zug 18 an: „Jetzt gibt
-er den zweiten Turm. Was hättest du getan?“ Zurück in der Gegenwart, leise: „Diese Maschinen
+Matt im 23. Zug: Anderssen gibt beide Türme und die Dame. Zugfolge wie in `klassiker.json`: Läuferzug, Schwarz nimmt den ersten Turm. Dort, vor 19. e5, hält Ambrose an: „Er hat einen Turm weniger, und sein zweiter Turm hängt auch. Was hättest du getan?“ Der Spieler errät als Erstes den stillen Bauernzug 19. e5. Danach nimmt Schwarz den zweiten Turm mit Schach, König vor, Springerschach, Damenopfer, Läufermatt. Zurück in der Gegenwart, leise: „Diese Maschinen
 würden das nie spielen. Oder doch? Was wäre, wenn sie meine Partie spielen könnten?“ Juno merkt,
 dass {held} still ist. Belohnung: **Partiefragment 3**, bei mindestens 70 Prozent Karte
 **Bauernvorgabe** (R27, R31). Etwa 5 Minuten (2 Minuten Gang, 3 Minuten Zugerraten).
@@ -1223,10 +1222,7 @@ Damengambit (Profil `mapleFalls.mutter`, Rolle `story`, Zielstärke E + 250, ein
 Fehlerhäufigkeit im Mittelspiel, Gewicht `taktikUebersehen` hoch, blinder Fleck `roentgen`
 (Spieße!)), Karten erlaubt, zählt für die App (R37), jeder Ausgang führt weiter.
 
-- **{held} gewinnt:** Mama lacht und weint gleichzeitig. „Du hast mich mit einem Spieß erwischt.
-  Natürlich.“ Big Joe: „Kumpel, das war ihr Fehler von damals. Jetzt ist er erledigt.“
-- **Mama gewinnt oder Remis:** „Ich hab ihn gesehen. Den Läufer. Diesmal hab ich ihn gesehen.“ Sie
-  muss sich setzen.
+Fassung des Romans, **vorläufig** (die Frage RO6 liegt noch beim Autor): In der Partie entsteht das Bild von 2001 wieder, als geführter Moment unabhängig vom Ausgang, und Mama sieht den Läufer selbst: „Ich hab ihn gesehen. Den Läufer. Diesmal hab ich ihn gesehen.“ Sie muss sich setzen. Wer gewinnt, bleibt offen. Die frühere Fassung je nach Ausgang („Du hast mich mit einem Spieß erwischt.“, dazu Big Joes Satz vom „Fehler von damals“) entfällt.
 
 In beiden Fällen: Mama sagt, sie fährt ab jetzt mit zu den Turnieren. „Jemand muss ja auf die
 Zeit achten. Du spielst zu langsam.“ Ambrose leise: „Ihre Mutter, wenn ich so sagen darf, spielt
@@ -1348,8 +1344,7 @@ Münzen nach G1 (5 bis 20).
    Fund am Steg gehört nach Akt 1 (siehe Bericht); die Auflösung ist hier.
 3. **„Umschlag ohne Brief“** (neu, Ironwood, Szene 41) mit **„Nietenkopf J. H.“** (Route 3): geht
    erst in Akt 3 auf. Plan für Akt 3: In Desert Springs, nach der Versöhnung, findet {held} in
-   einem Antiquariat den Brief, der zum Umschlag gehört (das Siegel passt). Hale schreibt 1866:
-   „Komm nach Norden. Wir spielen die letzten Züge an einem Brett.“ Ambrose erfährt, dass Hale auf
+   einem Antiquariat den Brief, der zum Umschlag gehört (er passt genau hinein; sein Siegel ist Hales eigenes, mit einer anderen Fesselung als das Siegel des Postmeisters am Postsack). Hale schreibt 1866: „Kommen Sie nach Norden. Wir spielen die letzten Züge an einem Brett.“ Ambrose erfährt, dass Hale auf
    ihn gewartet hat; das trägt die Versöhnung mit dem Geist und die Enthüllung in Akt 4 (Victor
    ist ein Nachfahre). Der Nietenkopf zeigt vorher, dass Hale nach 1866 noch Brücken baute, also
    lange lebte.

@@ -112,35 +112,34 @@
       "zeit": "wahl",
       "momente": [
         {
-          "wenn": { "zug": 20 },
+          "wenn": {
+            "merkmal": "koeder",
+            "abZug": 12
+          },
           "sprecher": "okafor",
-          "text": "moment.okafor.bauer",
-          "musik": "aus"
+          "dialog": "cedar-creek-bibliothek.clubkampf_bauer"
         },
         {
-          "wenn": { "zug": 22 },
+          "wenn": {
+            "abZug": 18
+          },
           "sprecher": "okafor",
-          "text": "moment.okafor.geduld",
-          "musik": "karte"
+          "dialog": "cedar-creek-bibliothek.clubkampf_bauer"
         },
         {
-          "wenn": { "zug": 28 },
+          "wenn": {
+            "merkmal": "turmopfer",
+            "uhrUnter": 240
+          },
           "sprecher": "ambrose",
-          "text": "moment.ambrose.lassMich",
-          "musik": "ambrose.lassMich"
+          "dialog": "cedar-creek-bibliothek.clubkampf_lass_mich"
         },
         {
-          "wenn": { "zug": 29 },
+          "wenn": {
+            "abZug": 26
+          },
           "sprecher": "ambrose",
-          "text": "moment.ambrose.weissNicht",
-          "musik": "aus"
-        },
-        {
-          "wenn": { "zug": 30 },
-          "sprecher": "ambrose",
-          "text": "moment.ambrose.zaehl",
-          "klang": "aha",
-          "musik": "karte"
+          "dialog": "cedar-creek-bibliothek.clubkampf_lass_mich"
         }
       ]
     },
@@ -209,23 +208,31 @@
       "zeit": "wahl",
       "momente": [
         {
-          "wenn": { "zug": 8 },
+          "wenn": {
+            "zug": 8
+          },
           "sprecher": "slick",
           "text": "moment.slick.musik"
         },
         {
-          "wenn": { "merkmal": "geschlagen:bauer" },
+          "wenn": {
+            "merkmal": "geschlagen:bauer"
+          },
           "sprecher": "slick",
           "text": "moment.slick.autsch"
         },
         {
-          "wenn": { "zug": 20 },
+          "wenn": {
+            "zug": 20
+          },
           "sprecher": "ambrose",
           "text": "moment.ambrose.hier",
           "musik": "aus"
         },
         {
-          "wenn": { "merkmal": "schachGegeben" },
+          "wenn": {
+            "merkmal": "schachGegeben"
+          },
           "sprecher": "slick",
           "text": "moment.slick.odum",
           "musik": "aus"

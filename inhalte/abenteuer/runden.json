@@ -67,7 +67,8 @@
       "reihe": false,
       "buchuebungen": [],
       "themen": ["matt2"],
-      "anzahl": 3
+      "anzahl": 3,
+      "danach": "cedar-creek-waschsalon.trockner_danach"
     },
     {
       "kennung": "cedarCreek.erinnerungNewYork",
@@ -81,7 +82,8 @@
         "partie": "klassik-paulsen-morphy",
         "abZug": 13,
         "seite": "black"
-      }
+      },
+      "danach": "cedar-creek-archiv.programmheft_danach"
     },
     {
       "kennung": "wegMapleCedar.tafel",

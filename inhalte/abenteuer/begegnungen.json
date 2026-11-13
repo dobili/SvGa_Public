@@ -777,7 +777,32 @@
         "halbzug": 40,
         "faktor": 1.5
       },
-      "zeit": "wahl"
+      "zeit": "wahl",
+      "momente": [
+        {
+          "wenn": {
+            "abZug": 10
+          },
+          "sprecher": "erzaehler",
+          "text": "moment.kade.wasser",
+          "musik": "zero.halbfinale"
+        },
+        {
+          "wenn": {
+            "abZug": 20
+          },
+          "sprecher": "erzaehler",
+          "text": "moment.kade.schuh",
+          "musik": "aus"
+        },
+        {
+          "wenn": {
+            "abZug": 21
+          },
+          "sprecher": "erzaehler",
+          "dialog": "capital-arena-halle.halbfinale_turm"
+        }
+      ]
     },
     {
       "kennung": "capitalArena.finale",

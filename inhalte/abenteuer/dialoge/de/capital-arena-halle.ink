@@ -18,6 +18,7 @@ EXTERNAL beginnePartie(begegnung)
 EXTERNAL gibFund(kennung)
 EXTERNAL oeffneLaden(laden)
 
+VAR held = "Du"
 VAR arenaGesehen = false
 VAR ausgangCapitalArenaRunde1 = ""
 VAR ausgangCapitalArenaRunde2 = ""
@@ -35,6 +36,9 @@ VAR finaleBesprochen = false
 VAR angesehenBanner = false
 VAR spurenPM = 0
 VAR mappeGezeigt = false
+VAR halbfinaleVorherGesehen = false
+VAR halbfinaleDanachGesehen = false
+VAR ambroseImHalbfinaleGerufen = false
 VAR novaNachPartieGesehen = false
 
 === function punkt(ausgang) ===
@@ -210,21 +214,80 @@ Acht Clubs stehen. Nova sucht, und sie findet ihre Eltern. Sie stehen auch. #spr
 
 === halbfinale_angebot ===
 {
-- ausgangCapitalArenaHalbfinale == "niederlage" or ausgangCapitalArenaHalbfinale == "remis":
-    {ausgangCapitalArenaHalbfinale == "remis":
-        Remis. Im Halbfinale braucht es einen Sieger. Ihr spielt noch einmal. #sprecher:turnierleiterin
-    - else:
-        Verloren. Aber das Turnier erlaubt eine Wiederholungspartie. Noch einmal gegen Kade? #sprecher:turnierleiterin
-    }
-- else:
-    Halbfinale gegen Kade Sterling. Ein Funkprüfer läuft mit. #sprecher:turnierleiterin
-    Ein einziges Mal. Wenn du mich rufst, komme ich. Wenn nicht, schaue ich zu. #sprecher:ambrose #stimmung:friedlich
+- ausgangCapitalArenaHalbfinale == "remis":
+    Remis. Im Halbfinale braucht es einen Sieger. Ihr spielt noch einmal. #sprecher:turnierleiterin
+- ausgangCapitalArenaHalbfinale == "niederlage":
+    Verloren. Aber das Turnier erlaubt eine Wiederholungspartie. Noch einmal gegen Kade? #sprecher:turnierleiterin
+- not halbfinaleVorherGesehen:
+    -> halbfinale_vorher
 }
+-> halbfinale_wahl
+
+// Roman Kapitel 63, vor der Partie: Kade ist nicht da; die vierte Karte mit goldenem Rand.
+=== halbfinale_vorher ===
+~ halbfinaleVorherGesehen = true
+Kade Sterling gibt dir die Hand, ohne dich anzusehen. Er ist nicht unfreundlich. Er ist nicht da. #sprecher:erzaehler
+Am Rand schwenkt der Funkprüfer sein Gerät, sieht auf die Anzeige und schüttelt den Kopf. #sprecher:erzaehler
+Er sucht an der falschen Stelle. Seit das Mädchen ausgesagt hat, wissen sie, wonach er sucht. #sprecher:ambrose
+Neben deinen Karten liegt eine vierte, die du nicht hingelegt hast. „Mentor-Zug“, mit einem goldenen Rand. #sprecher:erzaehler
+Ein einziges Mal. Heute. Wenn du mich rufst, komme ich. Wenn nicht, schaue ich zu. Beides ist mir recht. #sprecher:ambrose
+* [„Was passiert, wenn ich sie spiele?“]
+- Dann spielen wir einen Zug zusammen. Nicht ich für dich. Wir. #sprecher:ambrose
+* [„Und wenn nicht?“]
+- Er lächelt. #sprecher:erzaehler
+Dann erfahre ich, dass du mich nicht gebraucht hast. Das wäre auch ein schöner Tag. #sprecher:ambrose #stimmung:froh
+-> halbfinale_wahl
+
+=== halbfinale_wahl ===
 + [„Ich bin bereit.“]
     ~ beginnePartie("capitalArena.halbfinale")
     -> END
 + [„Noch einen Moment.“]
     -> END
+
+// Geführter Moment im Halbfinale (begegnungen.json): der Turm. Ambrose rufen oder allein. Die Karte
+// mit goldenem Rand und das Zugerraten des Turmzugs regelt die Partieansicht (Story-Bibel 34.3).
+=== halbfinale_turm ===
+Du siehst etwas. Keine Rettung. Einen Turm, und ein Feld mitten in seiner Stellung. Der Bauer würde fehlen, und dahinter ist sein König. #sprecher:erzaehler #musik:aus
+Du zählst. Angreifer: drei. Verteidiger: einer. Zwei, wenn er richtig zieht. Ein Läufer, ein Feld zurück. Hält er? Es ist zu tief. #sprecher:erzaehler
+* [„Ambrose.“]
+    ~ ambroseImHalbfinaleGerufen = true
+    -> halbfinale_zusammen
+* [Allein prüfen]
+    Du prüfst, so gut du kannst. Dann hoffst du. Und siehst ihm ins Gesicht. #sprecher:erzaehler #musik:held.allein
+    -> END
+
+=== halbfinale_zusammen ===
+Er ist sofort da, so nah, dass du die Kälte spürst. #sprecher:erzaehler #musik:ambrose.suchend
+Ich sehe es. Der Turm, {held}. Der Turm. #sprecher:ambrose
+* [„Stimmt es?“]
+- Er rechnet und kommt an dieselbe Stelle wie du, an den Läufer, der zurückgeht. Dahinter ist es dunkel. #sprecher:erzaehler
+Ich weiß es nicht. Bis zum Läufer stimmt es. Danach ist es dunkel. Die Maschine weiß es. Ich nicht. Du nicht. #sprecher:ambrose #stimmung:lacht
+* [„Zusammen.“]
+- Zusammen. #sprecher:ambrose #musik:zusammen
+Du fühlst seine Hand auf deiner, kalt und leicht wie Atem. #sprecher:erzaehler
+-> END
+
+// Roman Kapitel 63, nach dem Sieg: Kade und „Das ist meine unsterbliche Partie. Mit dir.“
+=== halbfinale_danach ===
+~ halbfinaleDanachGesehen = true
+Kade sitzt da, in einem Schuh, und sieht auf seinen König. Du gehst um den Tisch und hältst ihm die Hand hin. Er nimmt sie. #sprecher:erzaehler
+Ich hab ihn nicht gesehen. Ich hab seit dem Frühjahr kein Brett mehr angeguckt. Ich war mal richtig gut. In der achten Klasse. #sprecher:kade
+* [„Dann bist du es noch. Frag Nova.“]
+- {ambroseImHalbfinaleGerufen or mentorzugFreiGespielt: -> halbfinale_mit_dir}
+Ambrose steht neben dem Brett. #sprecher:erzaehler
+Du hast mich nicht gerufen. #sprecher:ambrose #stimmung:froh
+Dann weiß ich jetzt, dass du mich nicht gebraucht hast. Das ist auch ein schöner Tag. #sprecher:ambrose #stimmung:froh
+-> END
+
+=== halbfinale_mit_dir ===
+Ambrose sieht auf den geschlagenen Turm neben der Uhr. #sprecher:erzaehler #musik:mit.dir
+Achtzehnhundertachtundfünfzig. Ein Turm, mitten in seine Stellung. #sprecher:ambrose
+Er hebt die Hand, die auf deiner gelegen hat. Sie ist fast durchsichtig. #sprecher:erzaehler
+Das ist meine unsterbliche Partie. Mit dir. #sprecher:ambrose #stimmung:froh #pause:2
+* [„Sie war nicht makellos.“]
+- Sie war das Schönste, was ich je gespielt habe. Und ich habe nur einen Zug gemacht. Und den nicht einmal allein. #sprecher:ambrose #stimmung:lacht
+-> END
 
 // ---------------------------------------------------------------- Victor: vor dem Finale und Finale
 
@@ -242,6 +305,7 @@ Acht Clubs stehen. Nova sucht, und sie findet ihre Eltern. Sie stehen auch. #spr
 }
 
 === vor_dem_finale ===
+{not halbfinaleDanachGesehen: -> halbfinale_danach}
 ~ vorDemFinaleGesehen = true
 {
 - mentorzugFreiGespielt:
@@ -346,8 +410,9 @@ Auf der Tribüne sind ein Mann und eine Frau aufgestanden. Die Frau hat die Hand
 
 === kade ===
 {
+- ausgangCapitalArenaHalbfinale == "sieg" and not halbfinaleDanachGesehen: -> halbfinale_danach
 - ausgangCapitalArenaHalbfinale == "sieg":
-    Kade sitzt allein am Brett. Ohne das Signal sieht er sehr jung aus. „Ich wollte nur gewinnen.“ #sprecher:erzaehler
+    Kade sitzt bei Nova. Sie stellt ihm eine Stellung auf. Er sieht hin. #sprecher:erzaehler
 - vorrundeGeschafft:
     Kade Sterling. Ich spiele für Perfect Move. Wir sehen uns im Halbfinale. #sprecher:kade
 - else:

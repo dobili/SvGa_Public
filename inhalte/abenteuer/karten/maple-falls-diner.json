@@ -11,7 +11,7 @@
  "tilewidth": 16,
  "tileheight": 16,
  "nextlayerid": 5,
- "nextobjectid": 40,
+ "nextobjectid": 41,
  "layers": [
   {
    "id": 1,
@@ -1586,6 +1586,29 @@
        "name": "kollision",
        "type": "bool",
        "value": false
+      }
+     ]
+    },
+    {
+     "id": 40,
+     "name": "mf12JukeboxAn",
+     "type": "moebel",
+     "x": 16,
+     "y": 134,
+     "width": 16,
+     "height": 26,
+     "rotation": 0,
+     "visible": true,
+     "properties": [
+      {
+       "name": "tiefe",
+       "type": "int",
+       "value": 152
+      },
+      {
+       "name": "kollision",
+       "type": "bool",
+       "value": true
       }
      ]
     }

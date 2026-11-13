@@ -77,8 +77,14 @@
           "datei": "karten/maple-falls-diner.json",
           "name": "ort.mapleFalls.diner",
           "innen": true,
-          "musik": "musik/diner.m4a",
           "geraeusch": "klang/diner_kueche.m4a",
+          "klangquellen": [
+            {
+              "objekt": "mf12JukeboxAn",
+              "musik": "diner",
+              "reichweite": 10
+            }
+          ],
           "zustaende": {
             "nadelMapleFalls >= 1 und dinerAbendGesehen": "karten/maple-falls-diner-tischset.json"
           }

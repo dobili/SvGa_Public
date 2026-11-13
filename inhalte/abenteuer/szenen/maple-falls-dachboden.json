@@ -4,7 +4,7 @@
   "art": "innen",
   "zustand": ["alt", "gebraucht"],
   "stil": ["klassisch", "rustikal"],
-  "beschreibung": "Der Dachboden des Whitlock-Hauses voll mit altem Hausrat (Roman Kap. 2). In der Nordwestecke die Öffnung mit Geländer, durch die die steile Treppe aus dem Obergeschoss heraufkommt (KARTENREGELN 10.76: an derselben Stelle wie unten, dieselbe Art), gleich daneben die Holzkiste, klein genug zum Tragen, mit der steilen Schrift „Whitlock – nicht wegwerfen“, die der Held am ersten Tag heraufgetragen hat (Roman Kap. 1); darüber ein Waldbild. Mitten in der Stirnwand das runde Giebelfenster; sein Licht fällt als Kegel auf den verblichenen Teppich und den niedrigen runden Tisch direkt darunter, auf dem unter einer hellen, staubfreien Decke das alte Brett liegt, eine Ecke mit zwei Figuren schaut heraus, zwei Stühle daneben. Im Lichtkegel tanzt der Staub (Teilchen staub). Rechts an der Stirnwand der Bauernschrank und ein Bücherregal voller vergilbter Bücher, davor eine Stehlampe. An Ost- und Südwand zwei mit Tüchern abgedeckte Truhen, auf einer sitzt ein Teddy, ein Kistenstapel, ein alter Karton in der Südwestecke, links die Zeitungen von 1961, die kleine gestreifte Hutschachtel und der Standspiegel. Der Schaukelstuhl aus dem Roman fehlt noch (Bildwunsch). Aufgang (KARTENREGELN 10.76, Kartengutachten Akt 1): eine Holztreppe an der Westwand hinter der Haustür, die nach Norden ansteigt; im Obergeschoss liegt genau darüber die Öffnung mit Geländer, und die nächste Treppe zum Dachboden setzt den Lauf an der Nordwand fort; auf dem Dachboden kommt man an derselben Stelle durch dieselbe Öffnung an.",
+  "beschreibung": "Der Dachboden des Whitlock-Hauses voll mit altem Hausrat (Roman Kap. 2). In der Nordwestecke die Öffnung mit Geländer, durch die die steile Treppe aus dem Obergeschoss heraufkommt (KARTENREGELN 10.76: an derselben Stelle wie unten, dieselbe Art), gleich daneben die Holzkiste, klein genug zum Tragen, mit der steilen Schrift „Whitlock – nicht wegwerfen“, die der Held am ersten Tag heraufgetragen hat (Roman Kap. 1); darüber ein Waldbild. Mitten in der Stirnwand das runde Giebelfenster; sein Licht fällt als Kegel auf den verblichenen Teppich und den niedrigen runden Tisch direkt darunter, auf dem unter einer hellen, staubfreien Decke das alte Brett liegt, eine Ecke mit zwei Figuren schaut heraus, zwei Stühle daneben. Im Lichtkegel tanzt der Staub (Teilchen staub). Rechts an der Stirnwand der Bauernschrank und ein Bücherregal voller vergilbter Bücher, davor eine Stehlampe. An Ost- und Südwand zwei mit Tüchern abgedeckte Truhen, auf einer sitzt ein Teddy, ein Kistenstapel, ein alter Karton in der Südwestecke, links die Zeitungen von 1961, die kleine gestreifte Hutschachtel und der Standspiegel. In der Südostecke steht der alte Schaukelstuhl aus dem Roman. Aufgang (KARTENREGELN 10.76, Kartengutachten Akt 1): eine Holztreppe an der Westwand hinter der Haustür, die nach Norden ansteigt; im Obergeschoss liegt genau darüber die Öffnung mit Geländer, und die nächste Treppe zum Dachboden setzt den Lauf an der Nordwand fort; auf dem Dachboden kommt man an derselben Stelle durch dieselbe Öffnung an.",
   "wand": "holz",
   "boden": "dielen",
   "raster": [
@@ -77,10 +77,6 @@
       "id": "truhe1"
     },
     {
-      "moebel": "mf12KartonAltHoch",
-      "feld": [11, 7]
-    },
-    {
       "moebel": "mf7Truhe",
       "feld": [9, 7],
       "id": "truhe2"
@@ -114,6 +110,11 @@
     {
       "moebel": "mf12BrettDecke",
       "auf": "tisch"
+    },
+    {
+      "moebel": "mf12SchaukelstuhlVorn",
+      "feld": [11, 7],
+      "versatz": [2, 6]
     }
   ],
   "ausloeser": [

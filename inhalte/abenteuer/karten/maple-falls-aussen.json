@@ -11,7 +11,7 @@
  "tilewidth": 16,
  "tileheight": 16,
  "nextlayerid": 5,
- "nextobjectid": 249,
+ "nextobjectid": 251,
  "layers": [
   {
    "id": 1,
@@ -14003,6 +14003,62 @@
        "name": "kollision",
        "type": "bool",
        "value": true
+      }
+     ]
+    },
+    {
+     "id": 249,
+     "name": "mf12FahrradKopfueber",
+     "type": "moebel",
+     "x": 464,
+     "y": 370,
+     "width": 34,
+     "height": 30,
+     "rotation": 0,
+     "visible": true,
+     "properties": [
+      {
+       "name": "tiefe",
+       "type": "int",
+       "value": 392
+      },
+      {
+       "name": "kollision",
+       "type": "bool",
+       "value": false
+      },
+      {
+       "name": "wenn",
+       "type": "string",
+       "value": "nadelMapleFalls < 1"
+      }
+     ]
+    },
+    {
+     "id": 250,
+     "name": "mf12FahrradSteht",
+     "type": "moebel",
+     "x": 464,
+     "y": 372,
+     "width": 30,
+     "height": 28,
+     "rotation": 0,
+     "visible": true,
+     "properties": [
+      {
+       "name": "tiefe",
+       "type": "int",
+       "value": 392
+      },
+      {
+       "name": "kollision",
+       "type": "bool",
+       "value": false
+      },
+      {
+       "name": "wenn",
+       "type": "string",
+       "value": "nadelMapleFalls >= 1 und nicht endeAkt1Gesehen"
       }
      ]
     }

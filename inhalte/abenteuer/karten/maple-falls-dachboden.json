@@ -897,29 +897,6 @@
     },
     {
      "id": 21,
-     "name": "mf12KartonAltHoch",
-     "type": "moebel",
-     "x": 176,
-     "y": 112,
-     "width": 32,
-     "height": 32,
-     "rotation": 0,
-     "visible": true,
-     "properties": [
-      {
-       "name": "tiefe",
-       "type": "int",
-       "value": 136
-      },
-      {
-       "name": "kollision",
-       "type": "bool",
-       "value": true
-      }
-     ]
-    },
-    {
-     "id": 22,
      "name": "mf7Truhe",
      "type": "moebel",
      "x": 144,
@@ -942,7 +919,7 @@
      ]
     },
     {
-     "id": 23,
+     "id": 22,
      "name": "mf7Teddy",
      "type": "moebel",
      "x": 152,
@@ -965,7 +942,7 @@
      ]
     },
     {
-     "id": 24,
+     "id": 23,
      "name": "mf12KartonAltHoch",
      "type": "moebel",
      "x": 16,
@@ -988,7 +965,7 @@
      ]
     },
     {
-     "id": 25,
+     "id": 24,
      "name": "mf2Zeitungsstapel",
      "type": "moebel",
      "x": 48,
@@ -1011,7 +988,7 @@
      ]
     },
     {
-     "id": 26,
+     "id": 25,
      "name": "mf12Hutschachtel",
      "type": "moebel",
      "x": 80,
@@ -1034,7 +1011,7 @@
      ]
     },
     {
-     "id": 27,
+     "id": 26,
      "name": "mf2Standspiegel",
      "type": "moebel",
      "x": 16,
@@ -1057,7 +1034,7 @@
      ]
     },
     {
-     "id": 28,
+     "id": 27,
      "name": "cc4KisteLeer",
      "type": "moebel",
      "x": 64,
@@ -1080,7 +1057,7 @@
      ]
     },
     {
-     "id": 29,
+     "id": 28,
      "name": "mf12BrettDecke",
      "type": "moebel",
      "x": 116,
@@ -1099,6 +1076,29 @@
        "name": "kollision",
        "type": "bool",
        "value": false
+      }
+     ]
+    },
+    {
+     "id": 29,
+     "name": "mf12SchaukelstuhlVorn",
+     "type": "moebel",
+     "x": 178,
+     "y": 118,
+     "width": 13,
+     "height": 26,
+     "rotation": 0,
+     "visible": true,
+     "properties": [
+      {
+       "name": "tiefe",
+       "type": "int",
+       "value": 136
+      },
+      {
+       "name": "kollision",
+       "type": "bool",
+       "value": true
       }
      ]
     }

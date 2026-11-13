@@ -172,5 +172,184 @@
     "sicher": 0.8,
     "korrektur": "mittel-4",
     "nur_pfad": true
+  },
+  "spiel/eigene/schaukelstuhl_vorn.png": {
+    "beschreibung": "Alter Schaukelstuhl aus dunklem Holz von vorn, hohe Sprossenlehne, verblichenes blaues Kissen (Gemini, Bildwunsch 7.1).",
+    "art": "stuhl",
+    "blick": "unten",
+    "ganz": true,
+    "sicher": 0.9,
+    "korrektur": "mittel-4",
+    "nur_pfad": true
+  },
+  "spiel/eigene/schaukelstuhl_schraeg.png": {
+    "beschreibung": "Alter Schaukelstuhl aus dunklem Holz schräg von links, Kufen sichtbar, rotes Kissen (Gemini, Bildwunsch 7.1).",
+    "art": "stuhl",
+    "blick": "rechts",
+    "ganz": true,
+    "sicher": 0.9,
+    "korrektur": "mittel-4",
+    "nur_pfad": true
+  },
+  "spiel/eigene/schaukelstuhl_seite.png": {
+    "beschreibung": "Alter Schaukelstuhl aus dunklem Holz von der Seite, Kufen deutlich (Gemini, Bildwunsch 7.1).",
+    "art": "stuhl",
+    "blick": "rechts",
+    "ganz": true,
+    "sicher": 0.9,
+    "korrektur": "mittel-4",
+    "nur_pfad": true
+  },
+  "spiel/eigene/fahrrad_steht.png": {
+    "beschreibung": "Rotes Jugendfahrrad mit Korb vorn, steht auf dem Ständer, leicht von oben (Gemini, Bildwunsch 7.3).",
+    "art": "fahrrad",
+    "blick": "rechts",
+    "ganz": true,
+    "sicher": 0.9,
+    "korrektur": "mittel-4",
+    "nur_pfad": true
+  },
+  "spiel/eigene/fahrrad_kopfueber.png": {
+    "beschreibung": "Rotes Fahrrad kopfüber auf Sattel und Lenker zur Reparatur, daneben eine kleine offene Werkzeugkiste (Gemini, Bildwunsch 7.3).",
+    "art": "fahrrad",
+    "ganz": true,
+    "sicher": 0.9,
+    "korrektur": "mittel-4",
+    "nur_pfad": true
+  },
+  "spiel/eigene/jukebox_an.png": {
+    "beschreibung": "Jukebox der Fünfziger mit gewölbtem Lichtbogen in Orange, Rosa und Blau, Plattenfenster, Lautsprechergitter, leuchtend (Gemini, Bildwunsch 7.4).",
+    "art": "geraet",
+    "blick": "unten",
+    "ganz": true,
+    "sicher": 0.9,
+    "korrektur": "mittel-4",
+    "nur_pfad": true
+  },
+  "spiel/eigene/jukebox_aus.png": {
+    "beschreibung": "Dieselbe Jukebox mit gedämpftem Licht (Gemini, Bildwunsch 7.4).",
+    "art": "geraet",
+    "blick": "unten",
+    "ganz": true,
+    "sicher": 0.9,
+    "korrektur": "mittel-4",
+    "nur_pfad": true
+  },
+  "spiel/eigene/innentuer_holz.png": {
+    "beschreibung": "Wandhohe Innentür aus hellem Holz, geschlossen (Ausschnitt aus animated_door_big_1).",
+    "art": "tuer",
+    "blick": "unten",
+    "ganz": true,
+    "sicher": 0.9,
+    "korrektur": "mittel-4",
+    "nur_pfad": true
+  },
+  "spiel/eigene/innentuer_dunkel.png": {
+    "beschreibung": "Wandhohe Innentür aus rotbraunem Holz, geschlossen (Ausschnitt aus animated_door_big_3).",
+    "art": "tuer",
+    "blick": "unten",
+    "ganz": true,
+    "sicher": 0.9,
+    "korrektur": "mittel-4",
+    "nur_pfad": true
+  },
+  "spiel/eigene/innentuer_glas.png": {
+    "beschreibung": "Wandhohe Innentür aus Holz mit Glasfenster (Ausschnitt aus animated_door_big_5).",
+    "art": "tuer",
+    "blick": "unten",
+    "ganz": true,
+    "sicher": 0.9,
+    "korrektur": "mittel-4",
+    "nur_pfad": true
+  },
+  "spiel/eigene/tischsets_stapel.png": {
+    "beschreibung": "Stapel weißer Tischsets mit rotem Rand und kleinem Schachbrett, flach.",
+    "art": "deko",
+    "ganz": true,
+    "sicher": 0.9,
+    "korrektur": "mittel-4",
+    "nur_pfad": true
+  },
+  "spiel/eigene/tischset_gerahmt.png": {
+    "beschreibung": "Gelöstes Tischset im schmalen Holzrahmen für die Wand.",
+    "art": "bild",
+    "ganz": true,
+    "sicher": 0.9,
+    "korrektur": "mittel-4",
+    "nur_pfad": true
+  },
+  "spiel/eigene/fenster_rund.png": {
+    "beschreibung": "Rundes Giebelfenster mit Holzring und Sprossenkreuz, dahinter Himmel und rotes Ahornlaub.",
+    "art": "fenster",
+    "ganz": true,
+    "sicher": 0.9,
+    "korrektur": "mittel-4",
+    "nur_pfad": true
+  },
+  "spiel/eigene/lichtkegel.png": {
+    "beschreibung": "Halb durchsichtiger warmer Lichtkegel vom Fenster auf den Boden, flach.",
+    "art": "licht",
+    "ganz": true,
+    "sicher": 0.9,
+    "korrektur": "mittel-4",
+    "nur_pfad": true
+  },
+  "spiel/eigene/fensterbank.png": {
+    "beschreibung": "Holzbrett unter einem Fenster an der Wand, links ein kleiner weißer Springer.",
+    "art": "fensterbank",
+    "ganz": true,
+    "sicher": 0.9,
+    "korrektur": "mittel-4",
+    "nur_pfad": true
+  },
+  "spiel/eigene/villa_whitlock.png": {
+    "beschreibung": "Holzvilla mit braunem Dach und rundem Giebelfenster, verblasst und ungestrichen grau (aus Villa_2 umgefärbt).",
+    "art": "gebaeude",
+    "blick": "unten",
+    "ganz": true,
+    "sicher": 0.9,
+    "korrektur": "mittel-4",
+    "nur_pfad": true
+  },
+  "spiel/eigene/kreidebrett.png": {
+    "beschreibung": "Schiefes Schachbrett aus Kreide auf Pflaster, mittlere Reihe mit neun Feldern, braunes Plastikpferd.",
+    "art": "boden",
+    "ganz": true,
+    "sicher": 0.9,
+    "korrektur": "mittel-4",
+    "nur_pfad": true
+  },
+  "spiel/eigene/kreidebrett_springer.png": {
+    "beschreibung": "Dasselbe Kreidebrett mit dazugemalten Springerzügen als L in Weiß und Gelb.",
+    "art": "boden",
+    "ganz": true,
+    "sicher": 0.9,
+    "korrektur": "mittel-4",
+    "nur_pfad": true
+  },
+  "spiel/eigene/treppenschacht.png": {
+    "beschreibung": "Öffnung im Boden mit Holzgeländer oben und an den Seiten, darin die obersten Stufen einer Holztreppe, unten offen (aus Visible Upstairs System).",
+    "art": "treppe",
+    "blick": "unten",
+    "ganz": true,
+    "sicher": 0.9,
+    "korrektur": "mittel-4",
+    "nur_pfad": true
+  },
+  "spiel/eigene/brett_decke.png": {
+    "beschreibung": "Altes Holzbrett zum größten Teil unter einem hellen Tuch, eine Ecke mit zwei Figuren schaut heraus.",
+    "art": "deko",
+    "ganz": true,
+    "sicher": 0.9,
+    "korrektur": "mittel-4",
+    "nur_pfad": true
+  },
+  "spiel/eigene/brett_radiergummi.png": {
+    "beschreibung": "Kleines Schachbrett, oben drei schwarze Figuren und eine Lücke mit rosa-blauem Radiergummi, unten weiße Figuren.",
+    "art": "deko",
+    "ganz": true,
+    "sicher": 0.9,
+    "korrektur": "mittel-4",
+    "nur_pfad": true
   }
 }

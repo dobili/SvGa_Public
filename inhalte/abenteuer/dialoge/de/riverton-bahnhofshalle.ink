@@ -186,7 +186,7 @@ Der Zug nach Cedar Creek steht abfahrbereit am Bahnsteig. Durch die Fenster sieh
 {
 - flashbackLondonBestanden and not londonNachgespraechGesehen: -> london_nachgespraech
 - flashbackLondonBestanden:
-    Die große Uhr tickt. Ambrose sagt nichts, aber du spürst, dass er an London denkt. #sprecher:erzaehler
+    Die große Uhr tickt. Ambrose sieht zu den hohen Fenstern und sagt nichts. #sprecher:erzaehler
     -> END
 - not bildschirmtischeGesehen:
     Eine Uhr, so groß wie ein Wagenrad. Sie tickt so laut, dass man es im Bauch spürt. #sprecher:erzaehler

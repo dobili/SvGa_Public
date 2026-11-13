@@ -8,6 +8,7 @@
 // trocknerStellungBestanden setzt die Hülle (regeln/dialogvariablen.ts).
 
 EXTERNAL beginneAufgaben(runde)
+EXTERNAL schalteSteckbrief(gegner, zeile)
 
 VAR boatengGetroffen = false
 VAR boatengLagos = false
@@ -68,8 +69,7 @@ Das kennst du jetzt. #sprecher:ambrose
 
 === boateng_lagos ===
 // Runde 11 (VC47 bis VC50, Roman Kapitel 11): Die Lagos-Geschichte als Pointe, Ambrose schweigt.
-// Dieselben Sätze sollen als Steckbriefzeile von Mrs. Okafor erscheinen; dafür fehlt noch eine
-// Zeilenart mit freiem Text.
+// Danach steht die Geschichte als Steckbriefzeile von Mrs. Okafor im Clubtagebuch.
 ~ boatengLagos = true
 Mr. Boateng nickt, zieht das Paketband ab und stellt eine neue Stellung auf. #sprecher:erzaehler
 Die alte hat mir ein Mädchen gezeigt. Vor fünfzig Jahren. Sie kam aus Lagos und hat im ganzen Staat Turniere gespielt. #sprecher:boateng
@@ -81,6 +81,8 @@ Sie hat gewartet. Immer. Bis einer zu früh gekommen ist. #sprecher:boateng #sti
 * [Nichts fragen]
     Er streicht das Paketband glatt und lässt sich Zeit. #sprecher:erzaehler #pause:2
 - Sie stellt Bücher ins Regal. Gegenüber. #sprecher:boateng
+// Steckbrief von Mrs. Okafor, Zeile 3 (Freitext steckbrief.okafor.lagos, gegner.json).
+~ schalteSteckbrief("cedarCreek.okafor", 3)
 -> END
 
 === boateng_alltag ===

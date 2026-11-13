@@ -414,10 +414,11 @@
       }
     },
     {
-      "name": "limoverkaeuferin",
+      "name": "patel",
       "typ": "statist",
       "feld": [27, 12],
       "eigenschaften": {
+        "bild": "patel",
         "tun": "verkauft Limonade und Süßes am Wagen",
         "wann": "tag"
       }

@@ -757,6 +757,7 @@
       "name": "zwillinge",
       "feld": [22, 23]
     },
+    { "name": "jonah", "feld": [23, 23] },
     {
       "name": "kettering",
       "feld": [40, 28]

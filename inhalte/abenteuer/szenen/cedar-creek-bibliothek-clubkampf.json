@@ -263,7 +263,8 @@
     {
       "name": "zwillingeDrinnen",
       "feld": [9, 13]
-    }
+    },
+    { "name": "jonahDrinnen", "feld": [10, 13] }
   ],
   "belebung": [
     {

@@ -1002,15 +1002,13 @@
       "bauteil_ok": true
     },
     {
-      "moebel": "wg4ZaunBottomRight",
-      "feld": [51, 11],
-      "bauteil_ok": true
-    },
-    {
       "moebel": "wg4ZaunBottomLeft",
       "feld": [54, 11],
       "bauteil_ok": true
     },
+    { "moebel":  "wg4ZaunBottomRight", "feld":  [51, 11], "bauteil_ok":  true},
+    { "moebel": "wg13HolztorOffenLinks", "feld": [51, 11], "bauteil_ok": true },
+    { "moebel": "wg13HolztorOffenRechts", "feld": [52, 11], "versatz": [12, 0], "bauteil_ok": true },
     {
       "moebel": "wg4ZaunBottomMiddle",
       "feld": [55, 11],
@@ -2090,18 +2088,6 @@
     {
       "moebel": "fz11TraktorHinten",
       "feld": [31, 5],
-      "bauteil_ok": true
-    },
-    {
-      "moebel": "wg4TorOffen1",
-      "feld": [52, 11],
-      "versatz": [-9, 0],
-      "bauteil_ok": true
-    },
-    {
-      "moebel": "wg4TorOffen2",
-      "feld": [53, 11],
-      "versatz": [9, 0],
       "bauteil_ok": true
     }
   ],

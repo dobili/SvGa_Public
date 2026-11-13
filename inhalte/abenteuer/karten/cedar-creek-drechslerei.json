@@ -11,7 +11,7 @@
  "tilewidth": 16,
  "tileheight": 16,
  "nextlayerid": 5,
- "nextobjectid": 27,
+ "nextobjectid": 30,
  "layers": [
   {
    "id": 1,
@@ -770,6 +770,90 @@
     },
     {
      "id": 10,
+     "name": "cc13SpringerMissraten1",
+     "type": "moebel",
+     "x": 97,
+     "y": 28,
+     "width": 9,
+     "height": 17,
+     "rotation": 0,
+     "visible": true,
+     "properties": [
+      {
+       "name": "tiefe",
+       "type": "int",
+       "value": 1
+      },
+      {
+       "name": "kollision",
+       "type": "bool",
+       "value": false
+      },
+      {
+       "name": "wenn",
+       "type": "string",
+       "value": "nadelCedarCreek > 0 und nadelRiverton == 0"
+      }
+     ]
+    },
+    {
+     "id": 11,
+     "name": "cc13SpringerMissraten2",
+     "type": "moebel",
+     "x": 107,
+     "y": 28,
+     "width": 9,
+     "height": 17,
+     "rotation": 0,
+     "visible": true,
+     "properties": [
+      {
+       "name": "tiefe",
+       "type": "int",
+       "value": 1
+      },
+      {
+       "name": "kollision",
+       "type": "bool",
+       "value": false
+      },
+      {
+       "name": "wenn",
+       "type": "string",
+       "value": "nadelCedarCreek > 0 und nadelRiverton == 0"
+      }
+     ]
+    },
+    {
+     "id": 12,
+     "name": "cc13SpringerMissraten3",
+     "type": "moebel",
+     "x": 117,
+     "y": 31,
+     "width": 9,
+     "height": 14,
+     "rotation": 0,
+     "visible": true,
+     "properties": [
+      {
+       "name": "tiefe",
+       "type": "int",
+       "value": 1
+      },
+      {
+       "name": "kollision",
+       "type": "bool",
+       "value": false
+      },
+      {
+       "name": "wenn",
+       "type": "string",
+       "value": "nadelCedarCreek > 0 und nadelRiverton == 0"
+      }
+     ]
+    },
+    {
+     "id": 13,
      "name": "pd6Werkzeugschrank",
      "type": "moebel",
      "x": 128,
@@ -792,7 +876,7 @@
      ]
     },
     {
-     "id": 11,
+     "id": 14,
      "name": "cc4Werktisch",
      "type": "moebel",
      "x": 160,
@@ -815,7 +899,7 @@
      ]
     },
     {
-     "id": 12,
+     "id": 15,
      "name": "rv5Leiter",
      "type": "moebel",
      "x": 224,
@@ -838,7 +922,7 @@
      ]
     },
     {
-     "id": 13,
+     "id": 16,
      "name": "pd9Werkbank",
      "type": "moebel",
      "x": 160,
@@ -861,7 +945,7 @@
      ]
     },
     {
-     "id": 14,
+     "id": 17,
      "name": "cc4Spaene",
      "type": "moebel",
      "x": 160,
@@ -884,7 +968,7 @@
      ]
     },
     {
-     "id": 15,
+     "id": 18,
      "name": "cc4Hocker",
      "type": "moebel",
      "x": 48,
@@ -907,7 +991,7 @@
      ]
     },
     {
-     "id": 16,
+     "id": 19,
      "name": "cc4Rundholz",
      "type": "moebel",
      "x": 16,
@@ -930,7 +1014,7 @@
      ]
     },
     {
-     "id": 17,
+     "id": 20,
      "name": "cc4RundholzKlein",
      "type": "moebel",
      "x": 48,
@@ -953,7 +1037,7 @@
      ]
     },
     {
-     "id": 18,
+     "id": 21,
      "name": "cc4Hocker",
      "type": "moebel",
      "x": 176,
@@ -976,7 +1060,7 @@
      ]
     },
     {
-     "id": 19,
+     "id": 22,
      "name": "cc4KisteLeer",
      "type": "moebel",
      "x": 208,
@@ -999,7 +1083,7 @@
      ]
     },
     {
-     "id": 20,
+     "id": 23,
      "name": "cc4RundholzMittel",
      "type": "moebel",
      "x": 208,
@@ -1022,7 +1106,7 @@
      ]
     },
     {
-     "id": 21,
+     "id": 24,
      "name": "cc8TuerSuedHolz",
      "type": "moebel",
      "x": 64,
@@ -1045,7 +1129,7 @@
      ]
     },
     {
-     "id": 22,
+     "id": 25,
      "name": "cc5Fussmatte",
      "type": "moebel",
      "x": 64,
@@ -1068,7 +1152,7 @@
      ]
     },
     {
-     "id": 23,
+     "id": 26,
      "name": "cc7Werkbank",
      "type": "moebel",
      "x": 96,
@@ -1091,7 +1175,7 @@
      ]
     },
     {
-     "id": 24,
+     "id": 27,
      "name": "cc7Werkbank",
      "type": "moebel",
      "x": 128,
@@ -1114,7 +1198,7 @@
      ]
     },
     {
-     "id": 25,
+     "id": 28,
      "name": "cc5Leiste",
      "type": "moebel",
      "x": 104,
@@ -1137,7 +1221,7 @@
      ]
     },
     {
-     "id": 26,
+     "id": 29,
      "name": "cc5Werkstueck",
      "type": "moebel",
      "x": 136,

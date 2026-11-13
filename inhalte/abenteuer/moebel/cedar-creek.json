@@ -1955,6 +1955,42 @@
       "begehbar": true,
       "begehbar_grund": "nasser Fleck auf dem Boden, man tritt hinein",
       "hinweis": "Nasser Boden vor den durchweichten Kartons im Archiv (Kartengutachten Akt 1); Bild wie pd6DielenNass"
+    },
+    "cc13SpringerMissraten1": {
+      "quelle": "spiel/eigene/springer_missraten_1.png",
+      "breite": 9,
+      "hoehe": 17,
+      "kollision": false,
+      "art": "deko",
+      "zustand": "gebraucht",
+      "stil": "rustikal",
+      "begehbar": true,
+      "begehbar_grund": "steht auf der Fensterbank",
+      "hinweis": "Missratener Holzspringer auf Dunmores Fensterbank, Stufe B (Gemini 7, Abschnitt 5)"
+    },
+    "cc13SpringerMissraten2": {
+      "quelle": "spiel/eigene/springer_missraten_2.png",
+      "breite": 9,
+      "hoehe": 17,
+      "kollision": false,
+      "art": "deko",
+      "zustand": "gebraucht",
+      "stil": "rustikal",
+      "begehbar": true,
+      "begehbar_grund": "steht auf der Fensterbank",
+      "hinweis": "Missratener Holzspringer auf Dunmores Fensterbank, Stufe B (Gemini 7, Abschnitt 5)"
+    },
+    "cc13SpringerMissraten3": {
+      "quelle": "spiel/eigene/springer_missraten_3.png",
+      "breite": 9,
+      "hoehe": 14,
+      "kollision": false,
+      "art": "deko",
+      "zustand": "gebraucht",
+      "stil": "rustikal",
+      "begehbar": true,
+      "begehbar_grund": "steht auf der Fensterbank",
+      "hinweis": "Missratener Holzspringer auf Dunmores Fensterbank, Stufe B (Gemini 7, Abschnitt 5)"
     }
   }
 }

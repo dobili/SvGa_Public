@@ -121,6 +121,9 @@ Tipp. Jeder Moment kommt höchstens einmal je Partie.
 
 ## Aufgabenrunden (`runden.json`)
 
+- `danach` (`datei.knoten`): Ein Dialog, der nach der Runde von selbst startet, sobald die
+  Ergebniskarte geschlossen ist; er kann über Dialogvariablen nach dem Ergebnis verzweigen.
+
 - Eine Runde (Ink: `beginneAufgaben("ort.runde")`) nennt Steller (Figur), Buchübungen (`ueb:…`,
   Teilmenge von `club.aufgaben.buchuebungen` des Ortes), Themen der Trainer (`haengend`, `matt1`,
   `mattbilder`, Motive wie `doppelangriff`) und `reihe` (gehört zur Aufgabenreihe vor dem

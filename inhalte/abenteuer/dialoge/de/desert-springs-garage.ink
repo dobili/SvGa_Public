@@ -6,7 +6,9 @@
 // Mentor-Zug ist nach der Versöhnung wieder frei), Dots Hinweis auf das Antiquariat (Szene 76).
 // Szene 77 Erinnerung 1858 (Begegnung desertSprings.erinnerung1858, Quest gleichen Namens): die
 // erfundene siebte Matchpartie gegen Hale als Stellungsduell nach Hales stillem Läuferzug
-// (Entscheidung 13.11.2026; Stellung mit der Engine gebaut, Weiß etwa +1,9, nur Lxh7+ hält).
+// (Entscheidung 13.11.2026; Stellung mit der Engine gebaut: Weiß hat genau einen Turm weniger, der
+// zweite steht abseits auf a1; Hales Läufer ist eben nach f8 zurück, Schwarz hat die Türme fern auf
+// a8 und b8. Stockfish Tiefe 22: Weiß etwa +2,2, nur 26. Lxh7+ hält).
 // Einstiege wie in orte.json: mira, tomas, dot.
 //
 // Der Club beginnt erst nach der Versöhnung (Hauptquest desertSprings.versoehnung, streng der

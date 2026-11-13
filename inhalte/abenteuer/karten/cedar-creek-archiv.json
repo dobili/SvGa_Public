@@ -11,7 +11,7 @@
  "tilewidth": 16,
  "tileheight": 16,
  "nextlayerid": 5,
- "nextobjectid": 29,
+ "nextobjectid": 30,
  "layers": [
   {
    "id": 1,
@@ -792,6 +792,29 @@
     },
     {
      "id": 18,
+     "name": "cc13BodenNass",
+     "type": "moebel",
+     "x": 16,
+     "y": 112,
+     "width": 32,
+     "height": 32,
+     "rotation": 0,
+     "visible": true,
+     "properties": [
+      {
+       "name": "tiefe",
+       "type": "int",
+       "value": 1
+      },
+      {
+       "name": "kollision",
+       "type": "bool",
+       "value": false
+      }
+     ]
+    },
+    {
+     "id": 19,
      "name": "cc4KartonHoch",
      "type": "moebel",
      "x": 16,
@@ -814,7 +837,7 @@
      ]
     },
     {
-     "id": 19,
+     "id": 20,
      "name": "cc4KartonHoch",
      "type": "moebel",
      "x": 16,
@@ -837,7 +860,7 @@
      ]
     },
     {
-     "id": 20,
+     "id": 21,
      "name": "cc4KartonHoch",
      "type": "moebel",
      "x": 16,
@@ -860,7 +883,7 @@
      ]
     },
     {
-     "id": 21,
+     "id": 22,
      "name": "cc12KartonsOben",
      "type": "moebel",
      "x": 48,
@@ -883,7 +906,7 @@
      ]
     },
     {
-     "id": 22,
+     "id": 23,
      "name": "cc12KartonsUnten",
      "type": "moebel",
      "x": 48,
@@ -906,7 +929,7 @@
      ]
     },
     {
-     "id": 23,
+     "id": 24,
      "name": "cc12Wasserfleck",
      "type": "moebel",
      "x": 96,
@@ -929,7 +952,7 @@
      ]
     },
     {
-     "id": 24,
+     "id": 25,
      "name": "cc4StuhlHinten",
      "type": "moebel",
      "x": 176,
@@ -952,7 +975,7 @@
      ]
     },
     {
-     "id": 25,
+     "id": 26,
      "name": "cc5Tisch",
      "type": "moebel",
      "x": 176,
@@ -975,7 +998,7 @@
      ]
     },
     {
-     "id": 26,
+     "id": 27,
      "name": "cc4Leselampe",
      "type": "moebel",
      "x": 193,
@@ -998,7 +1021,7 @@
      ]
     },
     {
-     "id": 27,
+     "id": 28,
      "name": "cc12BuchOffen",
      "type": "moebel",
      "x": 180,
@@ -1021,11 +1044,11 @@
      ]
     },
     {
-     "id": 28,
+     "id": 29,
      "name": "cc12Programmheft",
      "type": "moebel",
-     "x": 181,
-     "y": 132,
+     "x": 191,
+     "y": 142,
      "width": 8,
      "height": 8,
      "rotation": 0,

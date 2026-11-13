@@ -40,12 +40,13 @@ VAR kioskGesehen = false
 -> ankunft_camp
 
 === ankunft_camp ===
+// Kapitel 55 (Roman): vierzig Kinder aus dem ganzen Staat, ein Drittel kennt {held}.
 ~ ankunftCampGesehen = true
-Zwischen den Riesenbäumen öffnet sich der Wald. Ein See, Holzhütten, Kanus am Steg. Libellen über dem Wasser. #sprecher:erzaehler
-Auf dem Steg sitzen vier Kinder und lassen die Beine baumeln. Eins dreht sich um und schreit. #sprecher:erzaehler
-Da ist {held}! Ich hab's euch gesagt, dass {held} kommt! #sprecher:dex #stimmung:froh
-Dex aus Cedar Creek, Mae, Tamsin aus Riverton, Lou aus Port Delacroix. Kinder aus allen Städten. #sprecher:erzaehler
-Sie haben sich alle gefunden. Ohne dich hätten sie sich nie getroffen. #sprecher:ambrose #stimmung:friedlich
+Das Camp liegt an einem See zwischen den Bäumen. Zelte im Halbkreis, ein Steg, Kanus kieloben. #sprecher:erzaehler #musik:pinewood #geraeusch:camp
+Ein Schild aus einem halben Baumstamm: „Pinewood Camp. Schach, Schwimmen, Schlafen. In dieser Reihenfolge.“ #sprecher:erzaehler #bild:schild_camp
+Vierzig Kinder aus dem ganzen Staat. Ein Drittel davon kennst du. #sprecher:erzaehler #bild:aus
+Dex hat etwas gebaut, das Marshmallows von selbst dreht. Es funktioniert fast. Mae hat ihr Teleskop dabei. Lou hat Muscheln im Haar und einen Plan. #sprecher:erzaehler
+Die kennen sich alle seit einer Woche. Mae hat allen die Sterne erklärt. Ich brauch ein zweites Tagebuch. #sprecher:juno #stimmung:froh
 -> END
 
 // ---------------------------------------------------------------- Ezra
@@ -60,16 +61,16 @@ Ezra, ich bin hier der Betreuer. Du bist das Schachkind, von dem alle reden? Wun
 === ezra_regeln ===
 ~ varianteRaeuberschachGelernt = true
 ~ varianteTandemGelernt = true
-Am Feuer spielen wir zwei Sachen. Erstens Räuberschach: Wer schlagen kann, muss schlagen. Wer zuerst alle Figuren los ist, gewinnt. #sprecher:ezra
-Zweitens Tandem: zwei gegen zwei, an zwei Brettern. Was du schlägst, gibst du deinem Partner. Der darf es einsetzen, wo er will. #sprecher:ezra
-Wer alles verliert, gewinnt. In meinem Kaffeehaus hätte es dafür eine Schlägerei gegeben. #sprecher:ambrose #stimmung:lacht
+Ezra hat eine Gitarre, auf der zwei Saiten fehlen. #sprecher:erzaehler
+Tandem! Zwei gegen zwei! Was dein Partner schlägt, kriegst du in die Hand und darfst es einsetzen! Wer redet, wird gekitzelt! #sprecher:ezra
+Und Räuberschach: Wer alles verliert, gewinnt. Schlagen ist Pflicht. Wer als Erster keine Figur mehr hat, ist Sieger. #sprecher:ezra
 -> END
 
 === ezra_alltag ===
 {~Kanus nur mit Weste! Auch du, {held}!|Am Kiosk gibt's Limo und Marshmallows. Die Marshmallows sind für heute Abend.|Lou hat gestern im Räuberschach die Dame im ersten Zug verschenkt. Absichtlich. Genial.} #sprecher:ezra
 + [„Erklär mir die Regeln vom Lagerfeuer noch einmal.“]
     -> ezra_regeln
-+ [„Bis später.“]
++ [„Bis nachher.“]
     -> END
 
 // ---------------------------------------------------------------- Lagerfeuer
@@ -84,26 +85,46 @@ Wer alles verliert, gewinnt. In meinem Kaffeehaus hätte es dafür eine Schläge
 }
 
 === lagerfeuer_abend ===
+// Kapitel 55 (Roman): die letzte unbeschwerte Nacht. Lagerfeuer mit Ezras Gitarre, Tandem als
+// Wahnsinn, Räuberschach (held.rueckwaerts), dann der Steg mit dem Nachtstück, zum zweiten Mal.
 ~ lagerfeuerGesehen = true
 {not varianteTandemGelernt:
     ~ varianteRaeuberschachGelernt = true
     ~ varianteTandemGelernt = true
 }
-Es wird dunkel. Ezra zündet das Feuer an, die Kinder bringen Bretter und Stöcke mit Marshmallows. #sprecher:erzaehler
 // VARIANTE-FEHLT: Tandem und Räuberschach. Bis sie gebaut sind, wird am Feuer erzählt statt gespielt.
-An zwei Brettern spielen Dex und Tamsin gegen Lou und Ezra Tandem. Alle schreien durcheinander: „Gib mir einen Springer! Jetzt!“ #sprecher:erzaehler
-Mae spielt nicht mit. Sie liegt auf dem Rücken und zeigt nach oben. #sprecher:erzaehler
-Da, das ist der Große Wagen. Und wenn du die hinteren Räder fünfmal verlängerst, kommt der Polarstern. Der bleibt immer da. #sprecher:mae
-Wie ein König in der Rochade. #sprecher:dex
-Nein, Dex. Wie ein Freund. #sprecher:mae
-Ambrose sitzt ein Stück abseits und sieht ins Feuer. Er sagt lange nichts. #sprecher:erzaehler
-Weißt du, {held}, ich habe nie Freunde in deinem Alter gehabt. Nur Gegner. Das hier ist besser. #sprecher:ambrose #stimmung:friedlich
+Am Abend brennt das Feuer. Du sitzt neben Sam, gegenüber Dex und Mae, und Figuren fliegen über den Tisch. #sprecher:erzaehler #licht:nacht #musik:lagerfeuer #klang:tandem
+Springer! Ich brauch einen Springer! #sprecher:dex
+Sam stellt eine Dame mitten in die feindliche Stellung, aus der Hand. Die Chefin ist zurück! #sprecher:sam #stimmung:froh
+Er wird gekitzelt. #sprecher:erzaehler
+Das ist kein Schach. Es ist Wahnsinn. Figuren fallen vom Himmel. #sprecher:ambrose #stimmung:lachtOhneSpott
+Ich hätte gern mitgespielt. Mit zwanzig. Ich wäre unerträglich gewesen. #sprecher:ambrose
+Dann Räuberschach gegen Lou. Alles ist verkehrt herum. Du stellst deine Dame hin und flehst, dass jemand sie nimmt. #sprecher:erzaehler #musik:held.rueckwaerts
+Lou gewinnt. Sie hatte einen Plan. #sprecher:erzaehler
+Ein Spiel, bei dem man alles hergibt, und am Ende hat der gewonnen, dem nichts bleibt. #sprecher:ambrose #stimmung:still
+Es ist nicht das dümmste Spiel, das ich gesehen habe. #sprecher:ambrose
+-> steg_nacht
+
+// Am Steg: derselbe Himmelsausschnitt wie in Cedar Creek (Kapitel 14), Nachtstück zum zweiten Mal.
+= steg_nacht
+Als die Kleinen in den Zelten sind, liegt ihr am Steg. Mae zeigt nach oben. #sprecher:erzaehler #musik:nachtstueck #teilchen:sternschnuppen
+Kassiopeia. Sieht aus wie ein W. #sprecher:mae
+Du musst nicht alles benennen. #sprecher:dex
+Doch. #sprecher:mae
+Dieselbe Stelle am Himmel. Ein Jahr später, fünfhundert Meilen weiter. #sprecher:erzaehler
 {not stockGefunden:
     ~ stockGefunden = true
-    Ezra schnitzt eine Kerbe in einen Marshmallow-Stock und gibt ihn dir. #sprecher:erzaehler
-    Jede Kerbe ein Sieg. Die erste schenke ich dir. Für die Meisterschaft. #sprecher:ezra
+    Sam reicht dir einen Stock, vom Feuer geschwärzt, mit Kerben in der Rinde. #sprecher:erzaehler
+    Für jeden Sieg eine. Tradition. Du hast acht. Und eine für die Sache mit der Chefin. Die erste. Im Clubraum. #sprecher:sam
     ~ gibFund("marshmallowStock")
+    Da hast du nicht gewonnen, sagst du. Da hast du ihm was gezeigt. #sprecher:erzaehler
+    Ja. Eben. #sprecher:sam
 }
+Sie stehen noch wie früher. Das habe ich schon einmal bemerkt. An einem anderen Steg. #sprecher:ambrose
+Ich war damals beleidigt, weil ich nur eine Fußnote bin. Sechs Wörter. #sprecher:ambrose #stimmung:lachtOhneSpott
+Vierzig Kinder. In hundert Jahren weiß niemand mehr, wie sie hießen. Und es wird nicht das Geringste ausmachen. #sprecher:ambrose #stimmung:friedlich
+Sie haben heute Abend gespielt. Das war es. Das war immer alles. #sprecher:ambrose #stimmung:friedlich
+Über euch fällt ein Stern. Mae schreit auf. Du wünschst dir etwas und weißt, dass es nicht in Erfüllung geht. Das ist in Ordnung. #sprecher:erzaehler #klang:sternschnuppe
 -> END
 
 === lagerfeuer_alltag ===
@@ -122,8 +143,8 @@ Weißt du, {held}, ich habe nie Freunde in deinem Alter gehabt. Nur Gegner. Das 
 
 === hollis_erstes_treffen ===
 ~ hollisGetroffen = true
-Unter einem Riesenbaum am Ufer sitzt eine Rangerin auf einem Baumstumpf. Das Brett liegt auf ihren Knien. #sprecher:erzaehler
-Hollis. Rangerin. Ich spiele nur draußen. Drinnen denke ich zu schnell. #sprecher:hollis
+Unter einem der Riesenbäume sitzt eine Rangerin, ein Fernglas um den Hals. Das Brett steht auf einer Wurzel. Über euch arbeitet ein Specht. #sprecher:erzaehler
+Hollis. Ich spiele nur draußen. Drinnen kann ich nicht denken. #sprecher:hollis
 -> hollis_angebot
 
 === hollis_angebot ===
@@ -131,14 +152,14 @@ Eine Stellung, du hast Weiß. Keine Uhr. Der Wald hat Zeit, wir auch. #sprecher:
 + [„Gern.“]
     ~ beginnePartie("pinewoodCamp.hollis")
     -> END
-+ [„Später.“]
++ [„Nicht jetzt.“]
     Ich bin hier. Meistens. Wenn kein Bär im Camp ist. #sprecher:hollis
     -> END
 
 === hollis_nach_sieg ===
 {not hollisKarteGegeben:
     ~ hollisKarteGegeben = true
-    Gut gespielt. Ruhig, wie ein Baum, der wächst. #sprecher:hollis #stimmung:froh
+    Gut gespielt. Ruhig, wie ein Baum, der wächst. Eine Partie, die für nichts zählt. Die braucht man auch. #sprecher:hollis #stimmung:froh
     Hier. Jeder verdient im Wald eine zweite Chance. Auch auf dem Brett. #sprecher:hollis
     ~ gibKarte("zweiteChance")
 }
@@ -154,7 +175,7 @@ Der Wald gewinnt oft. Willst du es noch einmal versuchen? #sprecher:hollis
 + [„Revanche.“]
     ~ beginnePartie("pinewoodCamp.hollis")
     -> END
-+ [„Später.“]
++ [„Nicht jetzt.“]
     -> END
 
 // ---------------------------------------------------------------- Die Kinder

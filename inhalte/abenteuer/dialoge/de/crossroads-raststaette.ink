@@ -100,12 +100,12 @@ Weißt du, was das ist? Ein Kaffeehaus. Es sieht nicht so aus. Aber es ist eines
     -> END
 }
 ~ theoTabletZurueck = true
-Am Fenster sitzt Theo, gewachsen, einen Bildschirm auf dem Schoß. Du legst das Tablet vor ihn hin. #sprecher:erzaehler #geraeusch:tippen
+Am Fenster sitzt Theo, gewachsen, einen Bildschirm auf dem Schoß. Du legst das Tablet vor ihn hin. #sprecher:erzaehler
 Du gibst es zurück? Hat es nicht geholfen? #sprecher:theo
 * [„Es ist das Beste, was ich je gesehen habe.“]
 - Aber? #sprecher:theo
 * [„Es sagt nicht, warum man Angst hatte.“]
-- Er tippt etwas ein. Dann hört er auf zu tippen. #sprecher:erzaehler
+- Er tippt etwas ein. Dann hört er auf zu tippen. #sprecher:erzaehler #klang:tippen_hoert_auf
 Das kann man nicht messen. #sprecher:theo
 Dr. Lin hat gekündigt. Sie macht einen Club auf. In einem Keller. Ich hab gesagt, ich messe erst, ob es sich lohnt. #sprecher:theo
 Ich glaub, ich geh hin. #sprecher:theo

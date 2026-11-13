@@ -115,7 +115,7 @@ Gewitter. Ich hab dich gewarnt. Noch mal, bevor es regnet? #sprecher:sol #stimmu
 === seilbahn ===
 {
 - victorKriseGesehen and not victorSeiteGegeben:
-    Der Wärter an der Talstation zeigt nach oben. „Ein Junge ist eben hochgefahren. Allein. Er sah nicht froh aus.“ #sprecher:erzaehler
+    Der Wärter an der Talstation zeigt nach oben. „Ein Junge ist eben den Pfad hinaufgerannt. Nicht hinunter. Allein.“ #sprecher:erzaehler
 - else:
     Die Gondel schaukelt bergauf, über Tannen und Murmeltierbauten, bis über die Wolken. #sprecher:erzaehler
 }
@@ -138,7 +138,7 @@ Am Abend hängen Laternen über dem Marktplatz. Rund um den Drachenbrunnen stehe
 Ein Mädchen erklärt dir die Regel, ohne zu fragen, ob du sie hören willst. #sprecher:erzaehler
 Einmal im Jahr spielt hier jeder mit dem Drachen. Der Drache zieht wie eine Dame und springt wie ein Springer. #sprecher:erzaehler
 Die Sage sagt, er hat die Bergleute aus dem Stollen geführt. Deshalb darf er alles. #sprecher:erzaehler
-Ein Drache auf dem Brett. Zu meiner Zeit hätte man mich dafür aus dem Kaffeehaus geworfen. Herrlich. #sprecher:ambrose #stimmung:lacht
+Eine Figur, die alles darf. Und keiner hier findet das ungerecht. #sprecher:ambrose #stimmung:lacht
 {not drachenschuppeGefunden:
     ~ drachenschuppeGefunden = true
     Das Mädchen drückt dir eine Schuppe aus grünem Glas in die Hand. Für alle, die zum ersten Mal mitmachen. #sprecher:erzaehler

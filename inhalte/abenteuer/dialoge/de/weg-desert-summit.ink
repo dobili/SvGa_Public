@@ -33,10 +33,18 @@ VAR neonRepariert = false
 
 === earl ===
 {earlGetroffen: -> earl_alltag}
+-> diner_ankunft
+
+// Gutachten M2.4: Auftakt von Kapitel 47 auf jedem Weg; hängt auch am Übergang weiterBergstrasse.
+=== diner_ankunft ===
+{earlGetroffen: -> END}
 ~ earlGetroffen = true
-Es ist Sommer, und du bist fünfzehn. Mama hat drei Wochen Urlaub und fährt. Juno liest hinten die Straßenschilder vor. #sprecher:erzaehler
+Es ist Sommer, und du bist fünfzehn. #sprecher:erzaehler
+Juno hat dir eine Seite im Tagebuch geschenkt, leer, mit einem Rahmen aus Glitzer: Für das, was noch kommt. #sprecher:erzaehler
+Mama hat drei Wochen Urlaub und fährt. Ambrose ist leichter seit dem Canyon. Er lobt einen Bauern, der einfach ein Feld vorrückt. #sprecher:erzaehler
 Hässlich. Und vollkommen richtig. Ich beginne, an hässlichen Zügen Gefallen zu finden. Sag es niemandem. #sprecher:ambrose #stimmung:lacht
-Über dem Diner summt ein Neonschild in Form eines Königs. Drinnen schieben Fernfahrer Könige über Bretter. Nur Könige. Und Bauern. #sprecher:erzaehler
+* [Weiterfahren]
+- An einem Diner mit einem Neonschild in Form eines Königs haltet ihr zum Tanken. Drinnen schieben Fernfahrer Könige über Bretter. #sprecher:erzaehler
 Königsrennen. Ich bin Earl. Ich fahr seit dreißig Jahren diese Straße. #sprecher:earl #stimmung:froh
 -> earl_regel
 
@@ -69,7 +77,7 @@ Komm wieder, wenn du hier durchfährst. Dann rennen wir. #sprecher:earl
 Earl dreht das gebogene Glasrohr in der Hand. Dann holt er eine Leiter aus dem Lastwagen. #sprecher:erzaehler
 Seit neunundachtzig fehlt das Ding. Und du bringst es einfach zurück. #sprecher:earl #stimmung:froh
 Ein Klicken, ein Summen. Über der Tür leuchtet es rosa: „KING'S DINER“. #sprecher:erzaehler
-Ein Brett ist erst vollständig, wenn jede Figur an ihrem Platz steht. Bei Schildern ist es wohl ähnlich. #sprecher:ambrose
+Seit neunundachtzig. Und niemand hat es vermisst. Ich kenne das Gefühl. #sprecher:ambrose
 Der Kaffee geht ab heute aufs Haus. Für dich jedenfalls. #sprecher:earl
 -> END
 
@@ -81,7 +89,7 @@ Der Kaffee geht ab heute aufs Haus. Für dich jedenfalls. #sprecher:earl
     -> END
 }
 Neben der Kasse hängt eine Tafel: „Drei Endspiele. Wer alle löst, kriegt den Kaffee umsonst.“ #sprecher:erzaehler
-Im Endspiel zählt jedes Tempo. Und der König ist eine Figur wie jede andere. Eine starke. #sprecher:ambrose
+Nur Könige und Bauern. Wie seltsam. Und doch. #sprecher:ambrose
 + [Die Aufgaben lösen]
     ~ beginneAufgaben("wegDesertSummit.tafel")
     -> END

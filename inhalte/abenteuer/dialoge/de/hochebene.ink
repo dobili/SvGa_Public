@@ -199,7 +199,7 @@ VAR ambroseSprichtWieder = false
 === diplom_start ===
 ~ diplomBegonnen = true
 Heute ist Diplomtag. Und ich bin selbst noch Anfängerin. Willst du Prüfer sein? #sprecher:annek
-Drei Kinder, drei Aufgaben. Gut ist die Aufgabe, die ein Kind schaffen kann und bei der es etwas lernt. #sprecher:annek
+Drei Kinder, drei Aufgaben. Such jedem eine aus, die es schaffen kann. Nicht die schwerste. #sprecher:annek
 Die Diplome hab ich gemalt! Mit Falke und Bison. #sprecher:kira
 -> diplom_runde
 
@@ -214,8 +214,7 @@ Alle drei haben bestanden. Und ich habe auch etwas gelernt. #sprecher:annek
 Eins hab ich extra gemalt. Für den Prüfer. #sprecher:kira
 ~ gibFund("diplomKira")
 {ambroseSprichtWieder:
-    Lehren ist Spielen mit einem Brett, das man nicht sieht. #sprecher:ambrose
-    Die richtige Aufgabe zur richtigen Zeit. Das ist die halbe Kunst des Übens. #sprecher:ambrose
+    Drei Diplome, und die Lehrerin lernt mit. Zu meiner Zeit hätte man das für Unordnung gehalten. #sprecher:ambrose #stimmung:lacht
 }
 -> END
 

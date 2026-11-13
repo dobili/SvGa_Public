@@ -14,7 +14,8 @@
 // Runde 11 (13.11.2026): Kapitel 51 nach dem Roman (roman/akt4_teil1.md): Victor im Hemd am
 // Geländer über den Wolken, „Ich will einmal verlieren dürfen“, die Partie auf Junos Reisebrett
 // (die Stellung der Fernpartie wird abgebaut und gemerkt), sein erstes Lachen, die Seite mit
-// „40. … b5“ und Hales vier Zeilen, „Was sagt er?“. Klang: bergstation, victor.warm,
+// „40. … b5“ und Hales vier Zeilen, „Was sagt er?“ (Gutachten M2.2, M2.6: Buch, Vater weiß es nicht,
+// „Wer?“, Ambrose nickt). Klang: bergstation, victor.warm,
 // ambrose.hale.grundton.
 
 EXTERNAL beginnePartie(begegnung)
@@ -81,20 +82,23 @@ Du nimmst die Figuren herunter, eine nach der anderen, und merkst dir, wo sie hi
 
 === victor_seite ===
 ~ victorSeiteGegeben = true
-Irgendwann hat er gelacht. Über eine ganz gewöhnliche Gabel, die er nicht gesehen hat. #sprecher:erzaehler #musik:victor.warm
+Irgendwann, mitten in der Partie, hat er gelacht. Zum ersten Mal. Über etwas ganz Gewöhnliches, das er nicht gesehen hat. #sprecher:erzaehler #musik:victor.warm
 Das ist so dumm. Das ist so schön dumm. #sprecher:victor #stimmung:lacht
 Ein Hale, der lächelt. Ich habe zu lange gewartet, um das zu sehen. #sprecher:ambrose #stimmung:still
-Die Sonne kommt unter die Wolken, alles wird rot. #sprecher:erzaehler
-Victor holt aus der Innentasche etwas Kleines, in Leinen Gebundenes. #sprecher:erzaehler
-Das hat meinem Großvater gehört. Da ist etwas drin, das soll ich aufheben. Es sei wertlos. Aber man hebe es auf. #sprecher:victor
+* [Ihm zusehen]
+- Die Sonne kommt unter die Wolken, alles wird rot. #sprecher:erzaehler
+Victor greift in die Innentasche der Jacke. Ein Buch, klein und alt, in Leinen gebunden. #sprecher:erzaehler
+Das hat meinem Großvater gehört. Er hat es mir gegeben, als ich sieben war. Mein Vater weiß nicht, dass ich es habe. #sprecher:victor
+Er hat gesagt, da ist etwas drin, das soll ich aufheben. Es sei wertlos. Aber man hebe es auf. #sprecher:victor
 * [Hinsehen]
 - Zwischen den letzten Seiten liegt ein Blatt, herausgerissen, sauber, dicht am Falz. Die Schrift ist klein und senkrecht. #sprecher:erzaehler #musik:aus #pause:2
 In Silicon Bay hast du auf das Notizbuch gestarrt. In Ironwood auf ein Geländer. Und du redest mit einem Brett. #sprecher:victor
-Ich glaub, du weißt, wer der Mann aus dem Süden war. #sprecher:victor
+Ich hab meinen Vater gefragt, wer der Mann aus dem Süden war. Er hat es nicht gewusst. Ich glaub, du weißt es. #sprecher:victor
 -> victor_blatt
 
 // Kapitel 51: Hales Antwort von 1867; Ambrose liest sie. Danach „Was sagt er?“.
 === victor_blatt ===
+Mein Großvater hat gesagt, das hat schon sein Großvater gesagt. Für den Tag, an dem jemand weiterspielt. #sprecher:victor
 „März 1867. 40. … b5.“ Und darunter, in derselben Schrift, vier Zeilen. #sprecher:erzaehler
 „Whitlocks vierzigster Zug kam mit der Nachricht seines Todes. Ich habe meinen notiert, wie es sich gehört.“ #sprecher:erzaehler
 „Ich werde ihn niemandem schicken können. Für den Tag, an dem jemand weiterspielt.“ #sprecher:erzaehler
@@ -102,10 +106,13 @@ Ich glaub, du weißt, wer der Mann aus dem Süden war. #sprecher:victor
 - Er hat geantwortet. #sprecher:ambrose #stimmung:still #pause:2 #musik:ambrose.hale.grundton
 Einem Toten. Wie es sich gehört. b5. Natürlich b5. Der gewissenhafte, unerträgliche … #sprecher:ambrose
 Ein Hale. Ur-ur-ur … Herrje. Ein Hale eben. #sprecher:ambrose #stimmung:lacht
-* [Schweigen]
-- Was sagt er? Der, mit dem du redest. Ich hab dir geschrieben, dass ich dir glaube. Ich meine es so. #sprecher:victor
+Was sagt er? #sprecher:victor #pause:2
+* [„Wer?“]
+- Der, mit dem du redest. Ich hab dir geschrieben, dass ich dir glaube. Wegen des Bretts. #sprecher:victor
+Du siehst zu Ambrose. Er nickt. #sprecher:erzaehler #pause
 * [„Er sagt, dein Vorfahr war gewissenhaft und unerträglich.“]
-- Wie ist er? Der Zug. Ist er gut? #sprecher:victor
+- Und dass er hundertsechzig Jahre auf diesen Zug gewartet hat. #sprecher:erzaehler
+Wie ist er? Der Zug. Ist er gut? #sprecher:victor
 Sag ihm, er ist genau der, den ich an seiner Stelle auch gespielt hätte. #sprecher:ambrose #stimmung:froh
 Und dass das die größte Unverschämtheit ist, die mir je begegnet ist. #sprecher:ambrose #stimmung:lacht
 -> END
@@ -132,3 +139,11 @@ Pfeif, und sie pfeifen zurück. Murmeltiere sind höflicher als die meisten Mens
 Der Fahrplan der Seilbahn: jede halbe Stunde eine Gondel, bei Sturm keine. Darunter ein Zettel: „Schachbretter bitte nicht in der Gondel liegen lassen.“ #sprecher:erzaehler
 -> END
 // <<< Runde 6 (mittel-4)
+
+// Gutachten M2.9: geführter Moment in der freien Partie (begegnungen.json, summitCity.victorFrei).
+=== victor_luftig ===
+Das ist schlecht. Warum hab ich das gemacht? #sprecher:victor
+* [„Weiß ich nicht. Wie fühlt es sich an?“]
+- Er denkt nach, ernsthaft, mit schiefem Kopf. #sprecher:erzaehler
+Komisch. Luftig. #sprecher:victor #stimmung:lacht
+-> END

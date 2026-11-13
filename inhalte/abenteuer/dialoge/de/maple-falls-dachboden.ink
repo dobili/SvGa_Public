@@ -32,6 +32,10 @@ VAR reiheSamBestanden = false
 VAR reiheJunoBestanden = false
 VAR nadelMapleFalls = 0
 VAR endeAkt1Gesehen = false
+// Ergänzt nach dem Roman zu Akt 1 (13.11.2026): ersterAbendGesehen setzt maple-falls-wohnzimmer.ink,
+// ersteNachtGesehen diese Datei (Szene akt1.ersteNacht).
+VAR ersterAbendGesehen = false
+VAR ersteNachtGesehen = false
 
 === dachboden_brett ===
 Staub, Kisten, ein kaputter Lampenschirm. Unter einer Decke liegt etwas Flaches, Schweres. #sprecher:erzaehler
@@ -107,6 +111,7 @@ Nun? Die Figuren stehen, und ich habe Zeit. Zu viel davon. #sprecher:ambrose
 - not ambroseErwachtGesehen: -> ambrose_erwacht
 - ausgangMapleFallsErsteLektion == "" or ausgangMapleFallsErsteLektion == "abgebrochen": -> ambrose_wartet
 - not ersteLektionBesprochen: -> nach_erster_partie
+- ersterAbendGesehen and not ersteNachtGesehen: -> erste_nacht
 - else: -> ambrose_rat
 }
 
@@ -162,3 +167,45 @@ Nimm das Brett mit. Wo es ist, da bin ich auch. #sprecher:ambrose
 + [„Bis später.“]
     Später. Ja. Geh nur. #sprecher:ambrose #stimmung:bitter
     -> END
+
+// ---------------------------------------------------------------- Die erste Nacht
+
+// Szene akt1.ersteNacht (Roman, Kapitel 4; neu gegenüber der Story-Bibel), etwa drei Minuten.
+// Stimmung: warm, Nähe, leiser Humor; dann die offene Partie als Frage des ganzen Spiels.
+// Ort vorerst der Dachboden, bis es ein Zimmer für {held} gibt (Roman: Brett auf dem Schreibtisch).
+// Klang (docs/spiel/21_Klangplan.md): keine Musik, nur Kühlschrank, Wasserfall, ein Auto; ganz am
+// Schluss vier Töne von Ambroses Thema. Vorgemerkt für mittel-2, sobald es die Marken gibt:
+// #pause:3 vor „Ich. Und einer, …“ und vor „Er.“, #musik:ambroseVierTone auf der letzten Zeile.
+=== erste_nacht ===
+~ ersteNachtGesehen = true
+~ setzeSzene("akt1.ersteNacht")
+Nacht. Das Haus ist still, nur du nicht. Die Schatten stehen an den falschen Stellen. #sprecher:erzaehler
+Du steigst mit dem Brett noch einmal hinauf und legst es unter das runde Fenster. Die neunte Stufe knarrt. #sprecher:erzaehler #klang:knarren
+Unten summt der Kühlschrank. Von weit her rauscht der Wasserfall. #sprecher:erzaehler #klang:kuehlschrank
+* [„Bist du wach?“]
+    Ich schlafe nicht. Das ist eine der Unannehmlichkeiten. #sprecher:ambrose
+* [„Kannst du auch nicht schlafen?“]
+    Ich schlafe überhaupt nicht. Das ist eine der Unannehmlichkeiten. #sprecher:ambrose
+- Er steht am Fenster, kaum zu sehen, ein hellerer Fleck vor der Scheibe. #sprecher:erzaehler
+Was ist das für ein Licht dort drüben? Es brennt ohne Flamme. #sprecher:ambrose
+* [„Eine Straßenlaterne.“]
+- Und das Summen? #sprecher:ambrose
+* [„Der Kühlschrank.“]
+- Aha. #sprecher:ambrose #pause
+Er hat keine Ahnung, was ein Kühlschrank ist. Und er ist zu stolz, um zu fragen. #sprecher:erzaehler
+* [Leise lachen]
+    Lach nur. Ich bin seit hundertsechzig Jahren tot. Mir darf einiges entgangen sein. #sprecher:ambrose #stimmung:lacht
+* [„Ein Kasten, der das Essen kalt hält.“]
+    Ein Eiskeller in der Küche. Herrje. Ihr seid verwöhnt. #sprecher:ambrose #stimmung:lacht
+- Hundertsechzig Jahre. Du versuchst, es dir vorzustellen, und kannst es nicht. #sprecher:erzaehler
+Unter dem Fenster liegt die alte Stellung. Niemand hat sie angerührt. #sprecher:erzaehler
+* [„Wer hat diese Partie gespielt?“]
+* [„Warum darf niemand die Figuren anrühren?“]
+- Lange kommt keine Antwort. Der Wasserfall rauscht. #sprecher:erzaehler #pause
+Ich. Und einer, der mir noch einen Zug schuldet. #sprecher:ambrose #stimmung:still
+* [„Und wer ist am Zug?“]
+- Er. #sprecher:ambrose #stimmung:still #pause
+Mehr sagt er nicht. Du fragst nicht weiter. #sprecher:erzaehler
+Kurz bevor dir die Augen zufallen, denkst du: Mama hatte recht. Schwarz steht besser. #sprecher:erzaehler
+Du weißt nur nicht, woher du das weißt. #sprecher:erzaehler
+-> END

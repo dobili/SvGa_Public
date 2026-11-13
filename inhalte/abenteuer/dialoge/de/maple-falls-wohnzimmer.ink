@@ -88,6 +88,17 @@ Ach, und im Briefkasten lag ein Zettel von der Schule. Die haben ein Schachteam.
     Das haben sie früher auch zu mir gesagt. #sprecher:mutter
     Zu … ach, egal. Iss deine Pizza. #sprecher:mutter
 - Ein Schachteam. Wie vornehm diese Zeit ist. Morgen gehen wir hin. #sprecher:ambrose
+// Roman, Kapitel 4 (neu): Der Tisch wackelt, ein Pizzakarton kommt unter das Bein. Wärme ohne
+// Worte; das Wohnzimmer bekommt dafür eine Zustandsfassung (Karten, eigener Auftrag). Danach der
+// Hinweis auf die Nacht auf dem Dachboden (maple-falls-dachboden.erste_nacht).
+Mama schraubt den Tisch zusammen, die Anleitung verkehrt herum neben sich. Du hilfst ihr. #sprecher:erzaehler
+Als er steht, wackelt er. Ihr schiebt einen gefalteten Pizzakarton unter ein Bein. #sprecher:erzaehler
+Das ist jetzt eben so. #sprecher:mutter #stimmung:froh
+* [„Das ist jetzt eben so.“]
+    Für einen Moment ist es fast wie zu Hause. #sprecher:erzaehler
+* [Nichts sagen, nur nicken]
+    Mama lacht. Für einen Moment ist es fast wie zu Hause. #sprecher:erzaehler
+- Später, als das Haus still ist, kannst du nicht schlafen. Das Brett zieht dich noch einmal nach oben. #sprecher:erzaehler
 -> END
 
 === aufbruch ===

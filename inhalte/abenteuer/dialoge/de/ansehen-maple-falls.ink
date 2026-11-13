@@ -26,6 +26,7 @@ VAR angesehenBrettOhneDame = false
 VAR angesehenPlakatZaehlen = false
 VAR angesehenKisteWhitlock = false
 VAR ersteLektionBesprochen = false
+VAR angesehenTischPizzakarton = false
 
 // ---------------------------------------------------------------- Wohnzimmer
 
@@ -55,6 +56,18 @@ VAR ersteLektionBesprochen = false
     ~ angesehenPizzakarton = true
     Ein leerer Pizzakarton auf dem Boden. Ein Stück fehlt, und niemand gibt es zu. #sprecher:erzaehler
     Zu meiner Zeit aß man von Tellern. Und man räumte sie weg. #sprecher:ambrose
+}
+-> END
+
+// Roman, Kapitel 4: Der Tisch steht nach dem ersten Abend, ein gefalteter Pizzakarton unter einem
+// Bein. Gehört zur Zustandsfassung des Wohnzimmers mit Tisch.
+=== tisch_pizzakarton ===
+{angesehenTischPizzakarton:
+    Der Tisch wackelt nur noch, wenn man sich darauf stützt. Das ist jetzt eben so. #sprecher:erzaehler
+- else:
+    ~ angesehenTischPizzakarton = true
+    Unter einem Tischbein steckt ein gefalteter Pizzakarton. Der Tisch wackelt nicht mehr. Fast nicht. #sprecher:erzaehler
+    Bei uns legte man ein Spielkartenblatt unter. Herz Sieben, meistens. #sprecher:ambrose #stimmung:lacht
 }
 -> END
 

@@ -2564,7 +2564,7 @@
       "blick": "unten"
     },
     "mf7Gartenhaus": {
-      "quelle": "spiel/eigene/gartenhaus_blau.png",
+      "quelle": "modern-exteriors/Modern_Exteriors_16x16/ME_Theme_Sorter_16x16/17_Garden_Singles_16x16/ME_Singles_Garden_16x16_Blue_Brown_Wood_Storage.png",
       "breite": 48,
       "hoehe": 64,
       "kollision": true,
@@ -3653,6 +3653,57 @@
       "art": "karton",
       "zustand": "alt",
       "stil": "klassisch"
+    },
+    "mf13Spind": {
+      "quelle": "modern-interiors/1_Interiors/16x16/Theme_Sorter_Black_Shadow_Singles/5_Classroom_and_Library_Black_Shadow_Singles_16x16/Classroom_and_Library_Singles_40.png",
+      "breite": 16,
+      "hoehe": 32,
+      "kollision": true,
+      "art": "schrank",
+      "blick": "unten",
+      "zustand": "gebraucht",
+      "stil": "schule"
+    },
+    "mf13Vitrinenschrank": {
+      "quelle": "modern-interiors/1_Interiors/16x16/Theme_Sorter_Black_Shadow_Singles/2_LivingRoom_Black_Shadow_Singles_16x16/Living_Room_Black_Shadow_Singles_38.png",
+      "breite": 32,
+      "hoehe": 48,
+      "kollision": true,
+      "art": "schrank",
+      "blick": "unten",
+      "zustand": "gebraucht",
+      "stil": "klassisch"
+    },
+    "mf13PokalSockel": {
+      "quelle": "modern-interiors/1_Interiors/16x16/Theme_Sorter_Black_Shadow_Singles/6_Music_and_Sport_Black_Shadow_Singles_16x16/Music_and_Sport_Black_Shadow_Singles_141.png",
+      "breite": 16,
+      "hoehe": 16,
+      "kollision": true,
+      "art": "deko",
+      "zustand": "gebraucht",
+      "stil": "schule"
+    },
+    "mf13Urkunde": {
+      "quelle": "modern-interiors/1_Interiors/16x16/Theme_Sorter_Black_Shadow_Singles/6_Music_and_Sport_Black_Shadow_Singles_16x16/Music_and_Sport_Black_Shadow_Singles_97.png",
+      "breite": 16,
+      "hoehe": 32,
+      "kollision": false,
+      "art": "bild",
+      "zustand": "gebraucht",
+      "stil": "schule",
+      "begehbar": true,
+      "begehbar_grund": "hängt an der Wand"
+    },
+    "mf13PlakatZaehlen": {
+      "quelle": "spiel/eigene/plakat_erst_zaehlen_klein.png",
+      "breite": 32,
+      "hoehe": 24,
+      "kollision": false,
+      "art": "deko",
+      "zustand": "gebraucht",
+      "stil": "schule",
+      "begehbar": true,
+      "begehbar_grund": "hängt an der Wand"
     }
   }
 }

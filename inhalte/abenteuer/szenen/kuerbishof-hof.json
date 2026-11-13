@@ -2,12 +2,11 @@
   "karte": "kuerbishof.hof",
   "datei": "karten/kuerbishof-hof.json",
   "art": "aussen",
-  "beschreibung": "Variante C (reicher): Ein breites Bauernhaus und die Scheune zwischen Maisirrgarten und Kürbisfeld. Der Irrgarten links hat Gänge zwischen hohem Mais, der Eingang liegt am Hofweg, in der Mitte steht die Vogelscheuche „Morphy“; rechts das Kürbisfeld in Reihen mit der zweiten Vogelscheuche. Viele Heuballen, Sonnenblumen am Hofweg, am Hofladen eine Verkäuferin mit Kürbiskisten, vier Apfelbäume auf der Wiese, links unten die Kuhweide mit Zaun und Gatter. Der Traktor steht vor der Scheune.",
+  "beschreibung": "Ein breites Bauernhaus und die Scheune zwischen Maisirrgarten und Kürbisfeld. Der Irrgarten links hat Gänge zwischen hohem Mais, der Eingang liegt am Hofweg, in der Mitte steht die Vogelscheuche „Morphy“; rechts das Kürbisfeld, ein großes Beet mit dunkler Ackererde und Holzrahmen, die Kürbisse in Reihen darin, mit der zweiten Vogelscheuche. Der Mais steht auf durchgehendem Ackerboden ohne Rahmen. Der Zaun vor dem Kürbisfeld hat an allen vier Enden einen Pfosten. Viele Heuballen, Sonnenblumen am Hofweg, am Hofladen eine Verkäuferin mit Kürbiskisten, vier Apfelbäume auf der Wiese, links unten die Kuhweide mit Zaun und Gatter. Der Traktor steht vor der Scheune.",
   "boden": "gras",
   "wandart": "gras",
   "boeden": {
-    "e": "erde",
-    "f": "erde"
+    "e": "erde"
   },
   "zustand": ["neu", "gebraucht", "alt"],
   "stil": [
@@ -21,24 +20,24 @@
   ],
   "raster": [
     "################################################",
-    "#...................................fffffffffff#",
-    "#...................................fffffffffff#",
-    "#...................................fffffffffff#",
-    "#...................................fffffffffff#",
-    "#...................................fffffffffff#",
-    "#...................................fffffffffff#",
-    "#...................................fffffffffff#",
-    "#...................................fffffffffff#",
-    "#...................................fffffffffff#",
-    "#...................................fffffffffff#",
-    "#...................................fffffffffff#",
-    "#...................................fffffffffff#",
-    "#...................................fffffffffff#",
-    "#...................................fffffffffff#",
-    "#...................................fffffffffff#",
-    "#...................................fffffffffff#",
-    "#...................................fffffffffff#",
-    "#...................................fffffffffff#",
+    "#..............................................#",
+    "#..............................................#",
+    "#..............................................#",
+    "#..............................................#",
+    "#..............................................#",
+    "#..............................................#",
+    "#..............................................#",
+    "#..............................................#",
+    "#..............................................#",
+    "#..............................................#",
+    "#..............................................#",
+    "#..............................................#",
+    "#..............................................#",
+    "#..............................................#",
+    "#..............................................#",
+    "#..............................................#",
+    "#..............................................#",
+    "#..............................................#",
     "#.........ee.......ee.......ee.................#",
     "#.........ee.......ee.......ee...........ee....#",
     "#.........ee.......ee.......ee...........ee....#",
@@ -57,36 +56,12 @@
   ],
   "objekte": [
     {
-      "moebel": "lm8Acker10x5",
+      "moebel": "n12AckerMais",
       "feld": [1, 1]
     },
     {
-      "moebel": "lm8Acker10x5",
-      "feld": [1, 6]
-    },
-    {
-      "moebel": "lm8Acker10x5",
-      "feld": [1, 11]
-    },
-    {
-      "moebel": "lm8Acker5x5",
-      "feld": [9, 1]
-    },
-    {
-      "moebel": "lm8Acker5x5",
-      "feld": [9, 6]
-    },
-    {
-      "moebel": "lm8Acker5x5",
-      "feld": [9, 11]
-    },
-    {
-      "moebel": "lm8Acker10x5",
-      "feld": [1, 14]
-    },
-    {
-      "moebel": "lm8Acker5x5",
-      "feld": [9, 14]
+      "moebel": "n12AckerKuerbis",
+      "feld": [36, 1]
     },
     {
       "moebel": "n9MaisWand",
@@ -730,10 +705,6 @@
     },
     {
       "moebel": "n1Kuerbis",
-      "feld": [36, 1]
-    },
-    {
-      "moebel": "n1Kuerbis",
       "feld": [37, 1]
     },
     {
@@ -770,14 +741,6 @@
     },
     {
       "moebel": "n1Kuerbis",
-      "feld": [46, 1]
-    },
-    {
-      "moebel": "n1Kuerbis",
-      "feld": [36, 3]
-    },
-    {
-      "moebel": "n1Kuerbis",
       "feld": [37, 3]
     },
     {
@@ -799,14 +762,6 @@
     {
       "moebel": "n1Kuerbis",
       "feld": [45, 3]
-    },
-    {
-      "moebel": "n1Kuerbis",
-      "feld": [46, 3]
-    },
-    {
-      "moebel": "n1Kuerbis",
-      "feld": [36, 5]
     },
     {
       "moebel": "n1Kuerbis",
@@ -834,14 +789,6 @@
     },
     {
       "moebel": "n1Kuerbis",
-      "feld": [46, 5]
-    },
-    {
-      "moebel": "n1Kuerbis",
-      "feld": [36, 7]
-    },
-    {
-      "moebel": "n1Kuerbis",
       "feld": [37, 7]
     },
     {
@@ -863,14 +810,6 @@
     {
       "moebel": "n1Kuerbis",
       "feld": [45, 7]
-    },
-    {
-      "moebel": "n1Kuerbis",
-      "feld": [46, 7]
-    },
-    {
-      "moebel": "n1Kuerbis",
-      "feld": [36, 9]
     },
     {
       "moebel": "n1Kuerbis",
@@ -910,14 +849,6 @@
     },
     {
       "moebel": "n1Kuerbis",
-      "feld": [46, 9]
-    },
-    {
-      "moebel": "n1Kuerbis",
-      "feld": [36, 11]
-    },
-    {
-      "moebel": "n1Kuerbis",
       "feld": [37, 11]
     },
     {
@@ -951,14 +882,6 @@
     {
       "moebel": "n1Kuerbis",
       "feld": [45, 11]
-    },
-    {
-      "moebel": "n1Kuerbis",
-      "feld": [46, 11]
-    },
-    {
-      "moebel": "n1Kuerbis",
-      "feld": [36, 13]
     },
     {
       "moebel": "n1Kuerbis",
@@ -998,14 +921,6 @@
     },
     {
       "moebel": "n1Kuerbis",
-      "feld": [46, 13]
-    },
-    {
-      "moebel": "n1Kuerbis",
-      "feld": [36, 15]
-    },
-    {
-      "moebel": "n1Kuerbis",
       "feld": [37, 15]
     },
     {
@@ -1041,61 +956,8 @@
       "feld": [45, 15]
     },
     {
-      "moebel": "n1Kuerbis",
-      "feld": [46, 15]
-    },
-    {
-      "moebel": "n1Kuerbis",
-      "feld": [36, 17]
-    },
-    {
-      "moebel": "n1Kuerbis",
-      "feld": [37, 17]
-    },
-    {
-      "moebel": "n1Kuerbis",
-      "feld": [38, 17]
-    },
-    {
-      "moebel": "n1Kuerbis",
-      "feld": [39, 17]
-    },
-    {
-      "moebel": "n1Kuerbis",
-      "feld": [40, 17]
-    },
-    {
-      "moebel": "n1Kuerbis",
-      "feld": [41, 17]
-    },
-    {
-      "moebel": "n1Kuerbis",
-      "feld": [42, 17]
-    },
-    {
-      "moebel": "n1Kuerbis",
-      "feld": [43, 17]
-    },
-    {
-      "moebel": "n1Kuerbis",
-      "feld": [44, 17]
-    },
-    {
-      "moebel": "n1Kuerbis",
-      "feld": [45, 17]
-    },
-    {
-      "moebel": "n1Kuerbis",
-      "feld": [46, 17]
-    },
-    {
       "moebel": "n1Vogelscheuche",
       "feld": [40, 5]
-    },
-    {
-      "moebel": "n1ZaunM",
-      "feld": [36, 19],
-      "bauteil_ok": true
     },
     {
       "moebel": "n1ZaunM",
@@ -1130,11 +992,6 @@
     {
       "moebel": "n1ZaunM",
       "feld": [45, 19],
-      "bauteil_ok": true
-    },
-    {
-      "moebel": "n1ZaunM",
-      "feld": [46, 19],
       "bauteil_ok": true
     },
     {
@@ -1655,6 +1512,16 @@
     {
       "moebel": "fz11TraktorVorn",
       "feld": [31, 19],
+      "bauteil_ok": true
+    },
+    {
+      "moebel": "n1ZaunEndeRechts",
+      "feld": [36, 19],
+      "bauteil_ok": true
+    },
+    {
+      "moebel": "n1ZaunEndeLinks",
+      "feld": [46, 19],
       "bauteil_ok": true
     }
   ],

@@ -22,7 +22,9 @@ Regeln (Straßen wie in Nordamerika, Schauplatz der Geschichte):
 
 from PIL import Image, ImageDraw
 
-from pipeline.abenteuer.kehren import Kehre, bogenlinien, runde
+from pipeline.abenteuer.kehren import Kehre, bogenlinien, finde_kehren, runde
+from pipeline.abenteuer.saum import saeume
+from pipeline.abenteuer.strassenart import belagwechsel, landstrassen
 
 K = 16
 GELB, WEISS = (232, 196, 64, 255), (236, 236, 228, 255)
@@ -178,14 +180,39 @@ def _randlinien(bild: Image.Image, zeilen: list[str], zeichen: set[str], offen: 
                 z.line((x0, y0, *ende), fill=WEISS)
 
 
-def markiere(bild: Image.Image, zeilen: list[str], szene: dict) -> None:
-    """Alle Markierungen einer Szene: Linien auf Fahrbahnen (``markierung``), Parkbuchten
+def kehrenfelder(szene: dict, zeilen: list[str]) -> frozenset:
+    """Die Felder aller runden Kehren der Szene (leer ohne ``"kehren": "rund"``): Dort zeichnet
+    ``saum.saeume`` keinen geraden Rand, den Bogen säumt kehren.py."""
+    if szene.get("kehren") != "rund":
+        return frozenset()
+    kehren = finde_kehren(zeilen, set(szene.get("markierung", [])))
+    return frozenset().union(*(k.felder() for k in kehren))
+
+
+def markiere(
+    bild: Image.Image,
+    zeilen: list[str],
+    szene: dict,
+    gezeichnet: dict | None = None,
+    boeden: dict | None = None,
+) -> None:
+    """Alles, was nach den Böden auf das Bodenbild kommt: Säume an Bodenkanten (saum.py, nur mit
+    ``gezeichnet`` und ``boeden``), runde Kehren, Linien auf Fahrbahnen (``markierung``), Parkbuchten
     (``buchten``, ``buchten_laengs``), Randlinien um Haltebuchten (``randlinie``).
 
-    Ohne die beiden Schlüssel bleibt das Bild unverändert.
+    Eingaben: ``gezeichnet`` aus ``kartenbild.hintergrund`` (Feld → (Bodenart, Kachel)) und die
+    Böden aus materialien.json; ohne beide gibt es keine Säume (Tests der Linien).
     """
     fahrbahn = set(szene.get("markierung", []))
-    kehren = runde(bild, zeilen, fahrbahn) if szene.get("kehren") == "rund" else []
+    rund = szene.get("kehren") == "rund"
+    if gezeichnet is not None and boeden is not None:
+        ohne = (
+            frozenset().union(*(k.felder() for k in finde_kehren(zeilen, fahrbahn))) if rund else frozenset()
+        )
+        saeume(bild, gezeichnet, boeden, ohne)
+        landstrassen(bild, gezeichnet)
+        belagwechsel(bild, gezeichnet)
+    kehren = runde(bild, zeilen, fahrbahn) if rund else []
     _linien(bild, zeilen, fahrbahn, tuple(kehren))
     _buchten(bild, zeilen, szene.get("buchten", {}))
     _buchten_laengs(bild, zeilen, szene.get("buchten_laengs", {}))

@@ -527,7 +527,7 @@
       "stil": "modern"
     },
     "wc5Gartenhaus": {
-      "quelle": "spiel/eigene/gartenhaus_braun.png",
+      "quelle": "modern-exteriors/Modern_Exteriors_16x16/ME_Theme_Sorter_16x16/17_Garden_Singles_16x16/ME_Singles_Garden_16x16_Brown_Wood_Storage.png",
       "breite": 48,
       "hoehe": 64,
       "kollision": true,
@@ -537,7 +537,7 @@
       "stil": "landhaus"
     },
     "wc5GartenhausB": {
-      "quelle": "spiel/eigene/gartenhaus_rot.png",
+      "quelle": "modern-exteriors/Modern_Exteriors_16x16/ME_Theme_Sorter_16x16/17_Garden_Singles_16x16/ME_Singles_Garden_16x16_Red_Brown_Wood_Storage.png",
       "breite": 48,
       "hoehe": 64,
       "kollision": true,

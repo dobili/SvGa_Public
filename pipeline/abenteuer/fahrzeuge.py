@@ -32,7 +32,7 @@ ANSICHTEN = (
     (re.compile(r"Vehicles_16x16_(Ice_Cream_Truck|Tacos_Truck)_\d"), SEITE),
 )
 # Beläge, auf denen gefahren wird (Markierungen zählen zur Fahrbahn).
-FAHRBAHN = {"asphalt", "asphaltMitte", "asphaltMitteSenkrecht", "schotter", "pisteRot", "erde"}
+FAHRBAHN = {"asphalt", "landstrasse", "asphaltMitte", "asphaltMitteSenkrecht", "schotter", "pisteRot", "erde"}
 # So viel länger muss die Fahrbahn in einer Richtung sein, damit sie als eindeutig gilt.
 EINDEUTIG = 2
 # Gemalte Linien (spiel/eigene/fahrbahn_linie_<n>.png senkrecht, …_quer_<n>.png waagerecht).

@@ -992,3 +992,129 @@ auf jeder soll etwas passieren, das man entdecken kann. Die Geschichten dazu ste
     - **Prüfung im Werkzeug:** Der Lauftest stellt jeden Statisten und jedes Tier einzeln auf
       jede Kachel seines Laufwegs (alle anderen an ihrem Platz); dann muss weiter jeder Übergang,
       jede Figur und jeder Gegenstand erreichbar sein.
+
+### 10.71 Keine Abziehbilder; Rückansichten nur mit Tiefe (Rückmeldung des Autors, 11.11.2026)
+
+- **Abziehbild:** ein von Hand gezeichnetes Bild ohne Tiefe. Es zeigt nur eine Front: kein Dach von
+  oben, kein First, keine Oberseite, keine Seitenfläche, keine Schattierung. Solche Bilder kommen aus
+  allen Karten heraus (Liste mit Ersatz: `auftraege/gutachten/ABZIEHBILDER.md`).
+- **Fehlt ein Bild, in dieser Reihenfolge vorgehen** (Autor, 12.11.2026):
+  1. Fertiges Paketbild aus dem Katalog nehmen.
+  2. Gibt es keines: aus dem **Baukasten** zusammensetzen. Für Gebäude ist das zuerst
+     `topdown-16/` (Topdown Modern: Wände, Dächer mit First, Fenster, Türrahmen, Markisen,
+     Vordächer), daneben Paketteile von LimeZu (wie bei `laden_*`, `altstadt_*`, `haus_farm*`). Farben
+     des Baukastens an LimeZu angleichen (dämpfen).
+  3. Klappt das nicht: Wunsch für Gemini an den Haupt-Chat (Name, Größe in Kacheln, Ansicht, wofür).
+     Der Autor erzeugt das Bild.
+  4. **Nie selbst zeichnen**, außer Flaches (nächster Punkt).
+- **Jeder Zusammenbau wird am Bild kontrolliert, bevor er in eine Karte kommt** (Autor: im ersten
+  Probebau lag ein Fenster halb über der Türöffnung). Der Bauer sieht sich das fertige Bild vergrößert
+  an und prüft: Kein Teil überdeckt ein anderes (Fenster, Tür, Schild, Markise); die Tür ist ganz und
+  hat ein Türblatt; Dach und Wand schließen ohne Lücke und ohne abgeschnittene Kante; Fenster sitzen
+  auf einer Höhe; der Maßstab passt zur Figur (Tür etwa 1 × 2 Kacheln). Danach prüft der Gutachter
+  das Bild einzeln, erst dann wird es verwendet.
+- **Selbst Gezeichnetes** ist nur für Flaches erlaubt: Schilder, Markierungen, Böden, Plakate,
+  Etiketten.
+- **Rückansichten sind erlaubt, wenn das Bild passt** (Autor, 11.11.2026: „Ich habe nichts gegen
+  Gebäude von hinten, sie müssen halt vom Asset her passen“). Ein Haus südlich einer Straße darf seine
+  Rückseite zeigen. Die Rückansicht braucht dieselbe Tiefe wie die Pakethäuser: Dach von oben mit
+  First und Schattierung, Rückwand mit Fenstern, Hintertür oder Schuppenanbau. Die drei flachen
+  `haus_hinten_blau/_braun/_rot` entfallen; die `_b_`-Fassungen gelten als grenzwertig und werden
+  durch bessere ersetzt, sobald es sie gibt (Gemini Teil 4, Nr. 11). Wo eine Rückansicht nicht
+  überzeugt, das Haus mit Front nach Süden stellen und einen Weg oder eine Gasse zur Tür legen.
+- **Prüfung:** `test_abenteuer_moebelbilder.py` soll melden, wenn ein Möbel ein Bild aus der Liste der
+  Abziehbilder benutzt (sobald die Liste vollständig ist).
+
+71. **Kein Boden endet mit einer nackten geraden Kante im Gras** (Rückmeldung R041, R042, R049,
+    11.11.2026).
+    - Der Kartenzeichner säumt jede Kante zwischen befestigtem Boden und Naturboden selbst
+      (`pipeline/abenteuer/saum.py`); in der Szene ist nichts zu tun. Welcher Boden welchen Saum
+      bekommt, steht in `materialien.json` unter `"saum"`:
+      - `randstein` (Pflaster, Platten, Stein): eine Reihe heller Kantensteine mit Fugen;
+      - `bankett` (Asphalt): dunkler, ausgefranster Streifen ohne Bordstein, für Landstraßen. Eine
+        Stadtstraße bekommt ihren Bordstein durch den Gehweg aus Pflaster daneben;
+      - `weich` (Sand, Schotter, Felsboden, Sinter): Das Gras greift unregelmäßig ein bis drei
+        Pixel herein.
+    - Erde und Sandplatz haben Randkacheln (`rand`) und brauchen keinen Saum. Wasser hat sein Ufer.
+    - Ein neuer Boden braucht `rand` oder `saum`; sonst meldet der Kartenbau „endet mit nackter
+      Kante im Gras“.
+72. **Drei Straßenarten, die man unterscheidet** (Rückmeldung R036, R037, Entscheidung 3 im Auftrag
+    Runde 11).
+    - **Trampelpfad:** Boden `erde` (braun, mit Grasrand). Nur zu Fuß; kein Fahrzeug, keine
+      Haltestelle.
+    - **Landstraße:** Boden `landstrasse`: alter, ausgeblichener Asphalt ohne Bordstein, mit Bankett
+      und zwei Fahrspuren, ohne Mittellinie; mindestens drei Felder breit. Hier fährt der Bus.
+      Das Rasterzeichen kommt **nicht** in `markierung`.
+    - **Stadtstraße:** Boden `asphalt` mit `markierung` und Gehweg aus Pflaster (der Randstein des
+      Pflasters ist der Bordstein).
+    - **Übergang:** Wechselt eine Straße die Art, liegt der Wechsel auf einer Karte, nicht am
+      Kartenrand: Beide Beläge stoßen im Raster aneinander, der Kartenzeichner bricht den festeren
+      Belag unregelmäßig ab (`pipeline/abenteuer/strassenart.py`). Am Kartenrand hat die Straße auf
+      beiden Karten dieselbe Art.
+
+### 10.74 Grundriss der Gebäudebilder im Katalog (Wunsch des Autors, 12.11.2026)
+
+Jedes Gebäudebild hat im Katalog das Feld `grundriss` (öffentlich in
+`inhalte/abenteuer/katalog_korrekturen/grundrisse.json`, 361 Bilder). Wer einen Innenraum baut oder
+ändert, liest es zuerst: Der Raum folgt der Form des Gebäudes, Tür und Fenster liegen innen dort,
+wo sie außen im Bild sind (Form vor Größe; bei mehr als 50 % Abweichung der Fläche anpassen;
+Räume, die der Autor schon durchgesehen hat, werden nicht verkleinert, lieber das Gebäude größer).
+
+- `form`: `rechteck`, `L`, `T`, `rund`, `achteck`, `unregelmaessig`; `fassade` heißt Scheinfront
+  ohne Dach (Tiefe frei wählbar), `bauteil` und `sonder` sind keine Räume zum Betreten.
+- `breite`: Breite des Baukörpers in Kacheln. `tiefe`: sichtbare Dachreihen, also die Tiefe des
+  Hauses nach hinten; 0 heißt frei.
+- `geschosse`: Zahl der Geschosse an der Front.
+- `tueren`: Liste von Spalten (`von`, `bis`), gezählt ab 1 von links im Bild, eine Spalte ist
+  16 Pixel. Leer heißt: Im Bild ist keine Tür; der Eingang wird angesetzt oder das Bild ist eine
+  Hofseite.
+- `fenster`: je Geschoss (`EG`, `OG1`, `OG2`, …, `DG`) die Spalten der Fenster.
+- `aufgang` (bei mehreren Geschossen, sonst leer): `art` (`treppe`, `treppenhaus`, `wendeltreppe`,
+  `leiter`, `aussentreppe`, `fahrstuhl_und_treppenhaus`), `lage` in Worten (links und rechts wie im
+  Bild, hinten heißt von der Tür weg) und ein `hinweis`. Siehe 10.76.
+- `hinweis`: Vorbauten, Treppen, Flügel und was daraus für den Innenraum folgt.
+
+Die Angaben sind am Bild mit Kachelraster abgelesen (Hauptchat, 12.11.2026). Farbvarianten mit
+gleichem Umriss teilen sich einen Eintrag. Neue Gebäudebilder bekommen das Feld beim Eintragen.
+
+### 10.75 Wie viel größer ein Innenraum sein darf (Entscheidung des Autors, 13.11.2026)
+
+Außenbilder sind gestaucht: Das typische Gebäude ist 6 Kacheln breit und 4 tief, also etwa
+5 Türen breit; ein echtes Haus ist etwa 10 Türen breit. Wie in anderen Spielen dieser Art ist der
+Innenraum deshalb größer als das Gebäude außen. Übernommen werden Form, Verhältnisse und die Lage
+von Tür und Fenstern, nicht das genaue Maß.
+
+| Gebäude außen (Feld `breite`) | Breite innen               | Tiefe innen                 |
+| ----------------------------- | -------------------------- | --------------------------- |
+| klein, bis 5                  | bis 2,5-fach, mindestens 8 | mindestens 6 Reihen         |
+| mittel, 6 bis 11              | bis 2-fach                 | bis 2,5-fach der Dachreihen |
+| groß, ab 12                   | 1- bis 1,5-fach            | bis 2-fach                  |
+
+- Die Rangfolge bleibt: Eine Hütte ist innen kleiner als ein Laden, ein Laden kleiner als ein Amt.
+- Tür und Fenster liegen innen an derselben Stelle der Breite wie außen (Tür außen im rechten
+  Drittel heißt Tür innen im rechten Drittel).
+- Mehrere Geschosse außen dürfen innen mehrere Karten sein; jedes Geschoss zählt für sich.
+- Liegt ein Raum über dem Faktor: erst das Gebäude vergrößern, sonst den Raum teilen. Räume, die
+  der Autor schon durchgesehen hat, werden nicht verkleinert.
+- Die 50-Prozent-Regel misst gegen den Grundriss mal Faktor, nicht gegen das rohe Außenmaß. Für
+  das Gutachten Innen gegen Außen heißt das: Bis zum Faktor der Tabelle ist ein Raum in Ordnung
+  (bisher galt schon 1,5 als zu breit).
+
+### 10.76 Treppe, Leiter oder Fahrstuhl (Wunsch des Autors, 13.11.2026)
+
+Hat ein Gebäude außen mehrere Geschosse und innen mehr als eine Karte, steht der Aufgang dort, wo
+das Feld `aufgang` im Grundriss ihn nennt. Die Vorgaben dahinter:
+
+- **Wo außen etwas zu sehen ist, gilt das:** Treppenturm, Glasstreifen, hohes Treppenhausfenster,
+  Dachaufbau mit Tür, Außentreppe, Feuertreppe.
+- **Wohnhaus und Laden mit Wohnung:** einläufige Treppe an der Seitenwand hinter der Haustür oder
+  an der Rückwand, nie vor einem Fenster und nie im Weg zwischen Tür und Tresen. Bei Läden ist
+  die Treppe hinten und nicht für Kunden, außer das Obergeschoss gehört zum Laden.
+- **Sehr schmale Häuser (bis 5 breit):** steile Treppe an der Rückwand.
+- **Öffentliche Gebäude (Schule, Palast, Bahnhof, Hotel):** breites Treppenhaus in der Achse des
+  Eingangs oder im Turm.
+- **Fahrstuhl** nur in modernen Gebäuden ab vier Geschossen (Bürohaus, Konzernturm) und in der
+  Polizei; immer mit Treppenhaus daneben. Altbauten haben keinen.
+- **Leiter** nur zu Heuböden, im Rohbau und im Stellwerk. **Wendeltreppe** nur in runden Bauten
+  und Türmen.
+- Auf jeder Geschosskarte liegt der Aufgang an derselben Stelle.

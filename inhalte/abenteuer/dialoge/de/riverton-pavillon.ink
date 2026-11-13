@@ -84,28 +84,41 @@ Ambrose steht nicht neben dir. Er steht am Rand des Pavillons, wo das Dach aufh�
 -> END
 
 === slick_clubkampf ===
-Sonntag. Das letzte Spiel im Pavillon. #sprecher:slick
-Willst du Blitz? Blitz ist ehrlich. #sprecher:slick
-Er lebt von der Eile. Nimm ihm die Eile, {held}. Wähle eine lange Bedenkzeit. #sprecher:ambrose
-* [„Ich bin bereit.“]
-    Das hier ist der letzte Tisch mit echten Figuren. Wenn du verlierst, verlierst du gegen Riverton. #sprecher:slick
-    ~ beginnePartie("riverton.clubkampf")
-    -> END
+// Kapitel 22: Sonntag, Regen auf Blech, alle sind gekommen. Slick redet nicht. Die Zeit wählt
+// {held} im Spiel; die Wahl hier ist die Antwort im Gespräch (lang ist die ehrliche Fassung).
+// Momente in der Partie stehen in begegnungen.json (riverton.clubkampf). Musik riverton.clubkampf.
+Am Sonntag regnet es richtig. Es trommelt so laut aufs Blechdach, dass man schreien muss. #sprecher:erzaehler #musik:riverton.clubkampf
+Trotzdem sind alle gekommen, unter Schirmen in drei Reihen. Pops, Mr. Harlan, Mrs. Albescu, Mr. Quinn zwischen zwei Zügen. #sprecher:erzaehler
+Slick hat den Tisch mit der Mulde freigeräumt. Er hat die Kuriertasche abgelegt, zum ersten Mal. Er redet nicht. #sprecher:erzaehler
+Blitz? Drei Minuten. Wie es sich gehört. #sprecher:slick
+Er lebt von der Eile. Nimm ihm die Eile. #sprecher:ambrose
+* [„Fünfundvierzig Minuten.“]
+    Ein Murmeln geht durch die Schirme. Tamsin verdreht die Augen. #sprecher:erzaehler
+    Slick grinst, schief, mit einem Mundwinkel. #sprecher:erzaehler
+    Die Okafor hat dich verdorben. #sprecher:slick
+    Gut. Dann eben lang. Soll ja was davon bleiben. #sprecher:slick
+* [„Blitz. Drei Minuten.“]
+    Mutig. Oder dumm. Wir finden es raus. #sprecher:slick #stimmung:froh
 * [„Noch nicht.“]
     Bis Sonntag ist noch Zeit. Nicht viel. #sprecher:slick
     -> END
+- Er beugt sich vor, und einen Moment ist er wieder der Alte. #sprecher:erzaehler
+Das hier ist der letzte Tisch mit echten Figuren. Wenn du verlierst, verlierst du gegen Riverton. #sprecher:slick
+~ beginnePartie("riverton.clubkampf")
+-> END
 
 === slick_nach_niederlage ===
-Gut gekämpft. Aber Riverton bleibt bei mir. #sprecher:slick
-Noch einmal, solange es den Pavillon gibt? #sprecher:slick
-Er hat gewonnen, weil du ihm seine Eile gelassen hast. Diesmal nicht. #sprecher:ambrose
+Die Leute unter den Schirmen klatschen. Es war ihr Mann. #sprecher:erzaehler
+Gut gekämpft. Aber Riverton bleibt bei mir. Noch einmal, solange es den Pavillon gibt? #sprecher:slick
 * [„Noch einmal.“]
     ~ beginnePartie("riverton.clubkampf")
     -> END
-* [„Später.“]
+* [„Nicht jetzt.“]
     -> END
 
 === slick_nach_sieg ===
+// Kapitel 22: Slick nimmt den König in die Hand; Applaus wie Regen, dann die Fanfare; die Nadel
+// als grünes Achteck mit Uhr; „Lang spielen. Ich.“
 ~ clubkampfRivertonNadel = nadelRiverton
 {clubkampfRivertonBesprochen:
     Eine bessere Nadel, auf der Treppe erspielt. Die Treppe zählt genauso. #sprecher:slick #stimmung:froh
@@ -113,29 +126,38 @@ Er hat gewonnen, weil du ihm seine Eile gelassen hast. Diesmal nicht. #sprecher:
 }
 ~ clubkampfRivertonBesprochen = true
 {ausgangRivertonClubkampf == "remis":
-    Remis. Das ist fair. Die Bronzenadel gehört dir, und meine Limo auch. #sprecher:slick
+    Remis. Das ist fair. Wir wussten es beide. #sprecher:slick
 - else:
-    Gut. Du hast nachgedacht, wo ich gezogen hab. #sprecher:slick #stimmung:froh
+    Slick legt seinen König nicht um. Er nimmt ihn in die Hand und sieht ihn an. #sprecher:erzaehler #musik:aus #pause:2
 }
 Das war das letzte Spiel in diesem Pavillon. Gut, dass es ein richtiges war. #sprecher:slick #stimmung:ernst
-Tamsin klatscht, Ray nickt langsam. Draußen auf der Wiese leuchten die Bildschirme. #sprecher:erzaehler
-Komm morgen zum Wohnwagen am Fluss. Ich hab was für dich. #sprecher:slick
-Die dritte Nadel. Und einen Mentor-Zug dazu. Gib gut auf ihn acht. #sprecher:ambrose
+Applaus für Maple Falls! Na los! Es war umsonst, also klatscht! #sprecher:slick #klang:applaus_regen
+Sie klatschen. Es klingt wie noch mehr Regen. #sprecher:erzaehler #klang:fanfare.riverton
+Er steckt dir die Nadel an, ein kleines Achteck aus grünem Blech mit einer Uhr darauf, und hält dich einen Moment an der Schulter. #sprecher:erzaehler
+Lang spielen. Ich. Wer hätte das gedacht. #sprecher:slick
 -> END
 
 === slick_alltag ===
+// Kapitel 22: Montag im Pavillon (Stille S33: nur der Konzernton, wo vorher die Uhren klopften).
 {slickAbschiedGesehen:
-    Im Pavillon stehen jetzt Bildschirmtische. Slick spielt draußen auf der Treppe Blitz gegen Tamsin. #sprecher:erzaehler
+    Slick spielt draußen auf der Treppe Blitz gegen Tamsin. #sprecher:erzaehler
     Dann spielen wir eben auf der Treppe. Die Treppe gehört der Stadt. #sprecher:slick
-- else:
-    Slick packt das letzte Marmorbrett in seine Kuriertasche. #sprecher:erzaehler
-    Wohnwagen am Fluss, gleich hinter der Brücke. Ich warte. #sprecher:slick
+    -> slick_alltag_wahl
 }
+Im Pavillon stehen Bildschirmtische. Vier Stück, im Kreis, weiß. Die Steintische sind weg. #sprecher:erzaehler #musik:konzern.flaeche
+Auf dem Boden sieht man noch, wo sie standen: vier helle Flecken im Holz. #sprecher:erzaehler #pause:2
+Slick kniet in der Mitte und packt die Steinplatte mit der Mulde in seine Kuriertasche. Sie passt kaum hinein. #sprecher:erzaehler
+Die haben sie mir gelassen. Einer von den Arbeitern hat weggeguckt. #sprecher:slick
+Er zieht den Riemen fest. #sprecher:erzaehler
+Dann spielen wir eben auf der Treppe. Ich wohn im Wohnwagen am Fluss, an der alten Steinbrücke. #sprecher:slick
+-> slick_alltag_wahl
+
+=== slick_alltag_wahl ===
 + {nadelRiverton < 3} [„Revanche um eine bessere Nadel?“]
     Auf der Treppe? Immer. #sprecher:slick
     ~ beginnePartie("riverton.clubkampf")
     -> END
-+ [„Bis später, Slick.“]
++ [„Bis bald, Slick.“]
     -> END
 
 // ---------------------------------------------------------------- Tamsin

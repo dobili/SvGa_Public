@@ -206,7 +206,31 @@
         "art": "grundstellung"
       },
       "kartenErlaubt": true,
-      "zeit": "wahl"
+      "zeit": "wahl",
+      "momente": [
+        {
+          "wenn": { "zug": 8 },
+          "sprecher": "slick",
+          "text": "moment.slick.musik"
+        },
+        {
+          "wenn": { "merkmal": "geschlagen:bauer" },
+          "sprecher": "slick",
+          "text": "moment.slick.autsch"
+        },
+        {
+          "wenn": { "zug": 20 },
+          "sprecher": "ambrose",
+          "text": "moment.ambrose.hier",
+          "musik": "aus"
+        },
+        {
+          "wenn": { "merkmal": "schachGegeben" },
+          "sprecher": "slick",
+          "text": "moment.slick.odum",
+          "musik": "aus"
+        }
+      ]
     },
     {
       "kennung": "ironwood.gus",

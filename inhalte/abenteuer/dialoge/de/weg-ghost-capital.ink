@@ -237,7 +237,7 @@ Ein Problem, das gelöst wird, ist nicht verloren. Es ist angekommen. #sprecher:
 === wanderer_erstes ===
 ~ wandererGetroffen = true
 Auf der Bank am Weg sitzt ein Mann mit gelbem Rucksack und zählt Papier. #sprecher:erzaehler
-Mein Manuskript. Auf jedem Weg hat der Wind mir eine Seite genommen. Dreizehn Seiten, und jetzt fehlen sie mir alle. #sprecher:wanderer
+Meine Sammlung. Alte Blätter mit Stellungen, auf jedem Weg hat der Wind mir eines genommen. Dreizehn fehlen mir. #sprecher:wanderer
 -> END
 
 === wanderer_seiten ===
@@ -245,14 +245,14 @@ Mein Manuskript. Auf jedem Weg hat der Wind mir eine Seite genommen. Dreizehn Se
 ~ wandererSeitenZurueck = buchseiten
 Du hast meine Seiten! Warte, ich streiche sie glatt. Jede einzelne. #sprecher:wanderer
 {buchseiten >= 13:
-    Alle dreizehn. Nach deinem Finale bringe ich sie zum Verlag. Komm mich in Capital besuchen. #sprecher:wanderer
+    Alle dreizehn. Nach deinem Finale lasse ich sie binden. Komm mich in Capital besuchen. #sprecher:wanderer
 - else:
     {buchseiten} von dreizehn. Der Rest liegt noch irgendwo zwischen hier und Maple Falls. #sprecher:wanderer
 }
 -> END
 
 === wanderer_danach ===
-{~Jede Seite hat ihren eigenen Weg genommen. Ich hätte sie festbinden sollen.|Ein Buch für Einsteiger, das ist das schwerste. Man muss alles weglassen, was man selbst gern liest.|Der Wind hier ist freundlicher. Er nimmt nur Hüte.} #sprecher:wanderer
+{~Jede Seite hat ihren eigenen Weg genommen. Ich hätte sie festbinden sollen.|Ich sammle Stellungen, die jemand irgendwo aufgezeichnet hat. Jede hat jemandem etwas bedeutet.|Der Wind hier ist freundlicher. Er nimmt nur Hüte.} #sprecher:wanderer
 -> END
 
 === seite12 ===

@@ -107,7 +107,7 @@ Auch für Port Delacroix schreibe ich dir noch eine Notiz. Ich war dort nicht st
 
 === mira_alltag ===
 {~Im Canyon antwortet das Echo. Am Brett nicht. Deshalb mag ich das Brett.|Opfer sind schöner als Recht haben.|Warum hat das Huhn die Straße überquert? Um den König zu schützen.} #sprecher:mira
-+ {nadelDesertSprings > 0 and not erinnerung1858Bestanden} [„Ambrose will dir etwas zeigen.“]
++ {nadelDesertSprings > 0 and not erinnerung1858Bestanden} [„Ambrose, zeig sie mir. Die siebte von 1858.“]
     -> mira_erinnerung
 + {nadelDesertSprings > 0 and nadelDesertSprings < 3} [„Revanche um eine bessere Nadel?“]
     Jetzt. #sprecher:mira
@@ -119,11 +119,22 @@ Auch für Port Delacroix schreibe ich dir noch eine Notiz. Ich war dort nicht st
 // ---------------------------------------------------------------- Erinnerung 1858 (Szene 77)
 
 === mira_erinnerung ===
-Es wird Abend. Tomás zieht das Garagentor halb herunter, Mira setzt sich im Schneidersitz vor dein Brett. #sprecher:erzaehler
-1858 spielte ich meine letzte Partie gegen Hale. Ich opferte, so wie Morphy es im selben Jahr in London tat. #sprecher:ambrose
-Aber dann zögerte ich. Morphy zögerte nicht. #sprecher:ambrose
-Spiel seine Züge, {held}. Dann sehen wir, was ich hätte tun sollen. #sprecher:ambrose
-* [Die Partie spielen]
+// Kapitel 45 (Roman): die siebte Partie von 1858 auf dem Klapptisch. Musik: die Erinnerung von
+// Cedar Creek gedämpft; bei den drei fahrigen Zügen stolpert sie (ambrose.stolpert), S58.
+Abend in der Garage. Grillen, ein Radio aus dem Motel. Mira hockt auf einem Reifenstapel, isst Kekse und tut, als höre sie nicht zu. #sprecher:erzaehler #geraeusch:garage
+Ich habe sie niemandem gezeigt. Man hat nur das Ergebnis gedruckt. #sprecher:ambrose #stimmung:alt
+* [„Er hat geschrieben, es war Mut.“]
+- Er war höflich. #sprecher:ambrose
+* [„Er war nie höflich. Er war unerträglich.“]
+- Das sitzt. Auf dem Klapptisch, zwischen einer Zündkerze und einer Keksdose, liegt die Stellung. #sprecher:erzaehler #musik:ambrose.stolpert #erinnerung #bild:stellung1858
+Weiß steht gut. Der Bauer, den man nehmen und nach Hause gehen konnte. Und daneben die offene Linie. #sprecher:erzaehler
+Da. Dorthin der Turm. Jetzt du, für Schwarz. Such, was er gesucht hat. #sprecher:ambrose
+Du weißt, dass es ihn gibt: den stillen Zug. Den Läufer, ein Feld zurück. Er deckt alles. #sprecher:erzaehler
+Bemerkenswert unnötig. #sprecher:ambrose #stimmung:still
+Er zeigt dir, was er danach spielte. Ein Schach, das nichts bringt. Ein Rückzug. Ein zweites Schach. #sprecher:erzaehler #klang:figuren_kippen
+Ich wusste, dass ich mich verrechnet hatte. Dass alle es gesehen hatten. Ich wollte nur noch, dass es vorbei ist. #sprecher:ambrose #pause:2 #bild:aus #erinnerung:aus
+Du siehst auf die Stellung nach dem Läuferzug. Bevor er fahrig wurde. Du zählst. #sprecher:erzaehler
+* [Die Stellung durchspielen]
     ~ beginneAufgaben("desertSprings.erinnerung1858")
     -> END
 * [„Ein andermal.“]
@@ -131,10 +142,29 @@ Spiel seine Züge, {held}. Dann sehen wir, was ich hätte tun sollen. #sprecher:
     -> END
 
 === mira_nach_erinnerung ===
+// Kapitel 45, Schluss: Miras Motiv bricht herein; Ambroses Lachen ohne Musik, lang (S59);
+// dann sein Thema rein (ambrose.rein), zum ersten Mal ohne den fremden Ton.
 ~ erinnerung1858Besprochen = true
-Mira springt auf. #sprecher:erzaehler
-Das Opfer war richtig! Du hast nur danach gezögert! #sprecher:mira
-Hundertsechzig Jahre, und ein Kind sagt es mir. #sprecher:ambrose #stimmung:lacht
+Du hast mehr Angreifer am König. Springer, Läufer, die Dame, ein Bauer. Gegen einen Läufer und einen fernen Turm. #sprecher:erzaehler
+Das Opfer war richtig! #sprecher:mira #musik:mira
+Mira ist vom Reifenstapel gesprungen, den Mund voll Keks. Das Brett aus Licht sieht sie nicht, aber du hast die Stellung daneben mitgebaut. #sprecher:erzaehler
+Der Turm ist richtig da! Der Läufer geht zurück, na und? Dann kommt die Dame rüber, und der Bauer läuft. Das gewinnt. #sprecher:mira
+Wer hat das gespielt? #sprecher:mira
+* [„Ein Bekannter.“]
+- Der hat aber danach gezögert. Das hier ist Quatsch. Das ist Angst. #sprecher:mira
+Er hat richtig geopfert und dann Angst gekriegt. Sag ihm das. #sprecher:mira
+Ambrose sitzt auf einem Ölkanister. Zum dritten Mal in seinem Tod. #sprecher:erzaehler #musik:aus
+Es hat gestimmt. Es hat die ganze Zeit gestimmt. #sprecher:ambrose #stimmung:still
+Ich hätte das Match gewonnen. Wenn ich nach seinem Läuferzug einmal durchgeatmet und gezählt hätte. #sprecher:ambrose
+Ich habe geglaubt, mein Fehler sei der Mut gewesen. Mein Fehler kam danach. Als ich aufhörte, daran zu glauben. #sprecher:ambrose
+Er beginnt zu lachen. Das Lachen vom Steg, nur lauter. Er lacht, bis er sich die Seiten hält, die er nicht hat. #sprecher:erzaehler #stimmung:lachtOhneSpott #pause:6
+Hundertsechzig Jahre, und ein Kind mit Keksen sagt es mir. Im Vorbeigehen. In einer Garage. #sprecher:ambrose #stimmung:lachtOhneSpott
+* [„Sie hat dich nicht mal gesehen.“]
+- Das macht es schlimmer! #sprecher:ambrose #stimmung:lacht
+Mira sieht herüber, ob ihr verrückt geworden seid, und entscheidet, dass es sie nichts angeht. #sprecher:erzaehler #musik:ambrose.rein
+Als es still ist, sagt er noch etwas. #sprecher:erzaehler
+Hale hat es gewusst. Deshalb hat er „unnötig“ gesagt, nicht „falsch“. Er war immer genau mit Worten. #sprecher:ambrose
+Er wusste, dass er eine verlorene Partie gewonnen hatte, weil der andere die Nerven verlor. Das hätte mich auch nicht schlafen lassen. #sprecher:ambrose #stimmung:still
 -> END
 
 // ---------------------------------------------------------------- Tomás

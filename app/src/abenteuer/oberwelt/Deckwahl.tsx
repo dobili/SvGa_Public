@@ -15,6 +15,7 @@ import { deckErlaubt } from "../regeln/karten";
 import { ZEITKLASSEN, type Zeitklasse } from "../regeln/zeitkarten";
 import { DECKGROESSE, type Kartenbesitz, type Kartensorte } from "../schnittstelle/karten";
 import { tSpiel } from "../texte/texte";
+import { istAmbrosesKarte } from "../regeln/abwesenheit";
 
 /** Die Zeitklassen in der Reihenfolge der Knöpfe. */
 const KLASSEN: readonly Zeitklasse[] = ["ohne", "schnell", "blitz"];
@@ -28,6 +29,7 @@ export function Deckwahl({
   zeitwahl,
   farbeFrei = false,
   mentorGesperrt = false,
+  ambroseFehlt = false,
   schutzengelGesperrt = false,
   freieKarten = [],
   steckbrief = [],
@@ -48,6 +50,8 @@ export function Deckwahl({
   readonly farbeFrei?: boolean;
   /** Regel R29: Mentor-Zug zwischen Tiefpunkt und Versöhnung gesperrt. */
   readonly mentorGesperrt?: boolean;
+  /** Ambrose ist nicht da (Tiefpunkt): seine Karten grau mit „Er ist nicht da.“ */
+  readonly ambroseFehlt?: boolean;
   /** Schutzengel (K4) gesperrt: ohne Ambrose (regeln/schutzengel.ts). */
   readonly schutzengelGesperrt?: boolean;
   /** Freie Karten der Begegnung (R29), liegen ohne Besitz zusätzlich im Deck. */
@@ -70,10 +74,16 @@ export function Deckwahl({
     const sorte = alleSorten.find((s) => s.kennung === k.kennung);
     if (sorte?.spruch_art && !sprueche) return false;
     if (sorte?.wirkung.art === "farbwahl" && !farbeFrei) return false;
-    if (sorte?.wirkung.art === "mentorzug" && mentorGesperrt) return false;
-    if (sorte?.wirkung.art === "schutzengel" && schutzengelGesperrt) return false;
     return sorte !== undefined && sorte.zeitpunkt !== "nachher";
   });
+  /** Gesperrte Karten bleiben sichtbar, aber grau: Ambrose ist nicht da (regeln/abwesenheit.ts). */
+  const gesperrt = (kennung: string) => {
+    const sorte = alleSorten.find((s) => s.kennung === kennung);
+    if (!sorte) return false;
+    if (ambroseFehlt && istAmbrosesKarte(sorte)) return true;
+    if (sorte.wirkung.art === "mentorzug" && mentorGesperrt) return true;
+    return sorte.wirkung.art === "schutzengel" && schutzengelGesperrt;
+  };
   const schalte = (kennung: string) => {
     if (deck.includes(kennung)) setzeDeck(deck.filter((k) => k !== kennung));
     else if (deckErlaubt(deck, kennung, alleSorten, groesse)) setzeDeck([...deck, kennung]);
@@ -131,17 +141,25 @@ export function Deckwahl({
           {waehlbar.map((k) => {
             const sorte = alleSorten.find((s) => s.kennung === k.kennung);
             const gewaehlt = deck.includes(k.kennung);
+            const fehlt = gesperrt(k.kennung);
             return (
               <button
                 key={k.kennung}
                 type="button"
                 className="abenteuer-karte"
                 aria-pressed={gewaehlt}
-                disabled={!gewaehlt && !deckErlaubt(deck, k.kennung, alleSorten, groesse)}
+                data-gesperrt={fehlt ? "ja" : undefined}
+                data-testid={`abenteuer-deckkarte-${k.kennung}`}
+                disabled={
+                  fehlt || (!gewaehlt && !deckErlaubt(deck, k.kennung, alleSorten, groesse))
+                }
                 onClick={() => schalte(k.kennung)}
               >
                 {tSpiel(sorte?.name ?? k.kennung)}
                 {k.anzahl > 1 && ` × ${k.anzahl}`}
+                {fehlt && (
+                  <small className="abenteuer-karte-grund">{tSpiel("deck.ambroseFehlt")}</small>
+                )}
               </button>
             );
           })}

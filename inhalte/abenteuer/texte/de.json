@@ -88,6 +88,7 @@
   "tagebuch.karten": "Meine Hilfskarten",
   "tagebuch.keineKarten": "Noch keine. Ambrose hat welche.",
   "tagebuch.schliessen": "Schließen",
+  "deck.ambroseFehlt": "Er ist nicht da.",
   "deck.titel": "Karten für die Partie",
   "deck.hinweis": "Bis zu {max} Karten. Ohne Karten gibt es Gold.",
   "deck.keine": "Du hast noch keine Karten.",

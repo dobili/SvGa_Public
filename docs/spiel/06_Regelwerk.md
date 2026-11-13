@@ -312,6 +312,16 @@ Daten aus `inhalte/abenteuer/karten.json`; Wirkung als Ablauf der Kartenleiste.
 - Im Halbfinale liegt der Mentor-Zug ohne Besitz als vierte Karte frei im Deck, einmal spielbar, ohne Verbrauch und ohne Folge für die Wertung („Held und Ambrose spielen gemeinsam“). Wer ihn nicht spielt, bekommt den Extra-Abspann (Dokument 02, 2.7).
 - Der Vertrag hat dafür noch kein Feld (Vorschlag V6).
 
+### R29b Ambrose fehlt im Tiefpunkt
+
+- Zwischen „Tiefpunkt“ (`tiefpunktGesehen`) und „Versöhnung“ (`versoehnungGesehen`) ist Ambrose
+  nicht da (Wunsch des Haupt-Chats, 13.11.2026): Die Figur `ambrose` steht auf keiner Karte (die
+  geladene Karte verliert das Objekt), Partiemomente mit `sprecher: ambrose` fallen weg.
+- Seine Karten sind in der Deckwahl grau und nicht wählbar, darunter „Er ist nicht da.“: Karten, in
+  denen Ambrose selbst handelt (Mentor-Zug, Schutzengel, Fingerzeig, Flüstern und Klares Flüstern).
+  Sprüche und Werkzeugkarten gehören dem Helden und bleiben.
+- Code: `regeln/abwesenheit.ts`; R29 (Mentor-Zug) und R29a (Schutzengel) fragen dieselbe Bedingung.
+
 ### R29a Schutzengel (K4)
 
 - Verbrauchskarte, Stufe mittel, „während“ (Dokument 11, K4; Wunsch des Autors, 13.11.2026). Gespielt

@@ -23,6 +23,7 @@ import {
 import type { Ausgang, Nadelstufe } from "../schnittstelle/partie";
 import type { Abenteuerstand, Partiekarten } from "../schnittstelle/spielstand";
 import { wendeWirkungenAn } from "./quests";
+import { ambroseFehlt } from "./abwesenheit";
 
 /** Rangfolge der Nadeln (R21: beste bleibt). */
 const NADELRANG: Readonly<Record<Nadelstufe, number>> = { bronze: 1, silber: 2, gold: 3 };
@@ -237,5 +238,5 @@ export function mitLernkarten(
  * Beispiel: tiefpunktGesehen true, versoehnungGesehen false → gesperrt.
  */
 export function mentorzugGesperrt(variablen: Abenteuerstand["dialogvariablen"]): boolean {
-  return variablen.tiefpunktGesehen === true && variablen.versoehnungGesehen !== true;
+  return ambroseFehlt(variablen);
 }

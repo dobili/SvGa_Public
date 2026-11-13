@@ -57,8 +57,7 @@ für die acht Statisten-Typen von Akt 1) ist der erste sinnvolle Schritt mit dem
 - **Keine Figur:** `tafel` (die Rätseltafel) ist ein Ding, keine Person.
 - **Der Schmied von 1866 heißt im Roman Gideon** (Kapitel 56, 57); die Kennung `gideon` ist neu.
   `tobias` ist Tobias Wren, der Vorrundengegner.
-- **„Marian Marsh“** kommt in Bibel, Roman und Spieltexten nicht vor. Gemeint ist vermutlich Dot
-  (Dorothy Marsh) oder die Stellwerkswärterin Rosalind Marsh; beide haben einen Abschnitt.
+- **Marian Shaw:** Die Stellwerkswärterin am Bahndamm heißt jetzt Marian Shaw (Kennung `rosalind`, vorher Rosalind Marsh).
 - **Neue Kennungen** (Figuren aus dem Roman ohne Eintrag in den Spieltexten): `held`, `owen`, `eli`,
   `kieseritzky`, `anderssen`, `morphy`, `claire`, `vaterWhitlock`, `gideon`, dazu die Fassungen
   `ambroseJung`, `victorPullover`, `novaPullover` und die Porträts `josiahHale`, `margaretWhitlock`.
@@ -1179,9 +1178,9 @@ Gemini, Porträtblatt (2×1):
 Vorlage: Standbild south dieser Figur anhängen. Zeichne ein Porträtblatt dieser Figur im Pixelstil wie die Vorlage, mit denselben Farben, derselben Frisur und derselben Kleidung: Junge von 12 Jahren, Sommersprossen, rotes Haar unter grauer Schiebermütze, Tasche voller Zeitungen. Blatt mit 2 Spalten × 1 Zeile, zwei gleich große quadratische Felder, in jedem Feld Kopf und Schultern von vorn, Blick zum Betrachter. Ausdrücke in dieser Reihenfolge: neutral, lächelt. Hintergrund in jedem Feld einfarbig hellgrün #00FF00, keine Ränder, keine Schrift.
 ```
 
-### `rosalind` – Rosalind Marsh
+### `rosalind` – Marian Shaw
 
-- **Rolle:** Wärterin im alten Stellwerk am Bahndamm.
+- **Rolle:** Wärterin im alten Stellwerk am Bahndamm (früher „Rosalind Marsh“, seit 13.11.2026 Marian Shaw; Kennung bleibt `rosalind`).
 - **Akt:** 2
 - **Größe:** erwachsen
 - **Aussehen:** Routen (Stellwerk); Aussehen frei

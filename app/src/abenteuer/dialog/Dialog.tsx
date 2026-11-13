@@ -11,6 +11,7 @@
 import { useEffect, useState } from "react";
 import { useZurueckSchliesst } from "../../app/blattstapel";
 import { tSpiel } from "../texte/texte";
+import { tonregie } from "../ton/tonregie";
 import { pausendauer } from "./dialogtakt";
 import { Portraet } from "./Portraet";
 import { Geschichte, type Dialogschritt, type Dialogvariablen, type Wirkungen } from "./geschichte";
@@ -50,6 +51,8 @@ export function Dialog({
   const dauerVon = (s: Dialogschritt) => (s.art === "zeile" ? pausendauer(s.zeile.tags) : 0);
   const [wartet, setzeWartet] = useState(() => dauerVon(schritt) > 0);
   useEffect(() => {
+    // Musik, Geräusche und Klänge der Zeile (#musik, #geraeusch, #klang; ton/tonregie.ts).
+    if (letzteZeile?.art === "zeile") tonregie.dialogzeile(letzteZeile.zeile.tags);
     const dauer = letzteZeile ? dauerVon(letzteZeile) : 0;
     if (dauer === 0) return;
     const uhr = window.setTimeout(() => setzeWartet(false), dauer);
@@ -65,6 +68,7 @@ export function Dialog({
     const naechster = geschichte.weiter();
     meldeKnoten();
     if (naechster.art === "ende") {
+      tonregie.dialogBeendet();
       beiEnde(geschichte.variablen());
       return;
     }
@@ -80,7 +84,10 @@ export function Dialog({
     weiter();
   };
 
-  useZurueckSchliesst(true, () => beiEnde(geschichte.variablen()));
+  useZurueckSchliesst(true, () => {
+    tonregie.dialogBeendet();
+    beiEnde(geschichte.variablen());
+  });
 
   if (schritt.art === "ende") return null;
   const zeile = letzteZeile?.art === "zeile" ? letzteZeile.zeile : null;

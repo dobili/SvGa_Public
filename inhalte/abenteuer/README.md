@@ -29,7 +29,14 @@ Hintergrund: `docs/spiel/04_Architektur.md`, Abschnitt 2 und 9.
 
 - Knoten `=== name ===` sind die Einsprungpunkte; Quests warten auf „datei.knoten“.
 - Tags am Zeilenende steuern die Anzeige: `#sprecher:ambrose` (Porträt und Name),
-  `#stimmung:streng` (Porträtvariante), `#klang:knarren` (Geräusch), `#pause` (eine Sekunde) oder `#pause:3` (Sekunden, höchstens 10; „Weiter“ ist so lange gesperrt).
+  `#stimmung:streng` (Porträtvariante), `#pause` (eine Sekunde) oder `#pause:3` (Sekunden,
+  höchstens 10; „Weiter“ ist so lange gesperrt).
+- Ton (T1, T2): `#musik:kennung` wechselt die Musik der Szene (Datei `musik/<kennung>.m4a`, sonst
+  `.ogg`), `#musik:aus` blendet aus, `#musik:karte` kehrt zur Musik der Karte zurück,
+  `#musik:bleibt` behält die Szenenmusik über das Dialogende hinaus (eigene Zeile, weil gleichnamige
+  Tags in einer Zeile nur den letzten gelten lassen). `#geraeusch:kennung` und `#geraeusch:aus` für
+  ein Dauergeräusch (`klang/<kennung>.m4a`), `#klang:knarren` spielt ein Geräusch einmal. Musik und
+  Geräusch einer Karte stehen in `orte.json` (`musik`, `geraeusch`). Fehlende Dateien bleiben still.
 - Externe Funktionen (`EXTERNAL`) führt die React-Hülle aus und schreibt in den Spielstand:
   `gibKarte(kennung)`, `setzeSzene(kennung)`, `beginnePartie(begegnung)`, `beginneAufgaben(runde)`,
   `setzeZustand(gegner, faktor, grund)`, `schalteSteckbrief(gegner, zeile)`, `gibFund(kennung)`,

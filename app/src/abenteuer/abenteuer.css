@@ -518,3 +518,25 @@ body.abenteuer-mit-kulisse {
 .abenteuer-dialog-wahlen button:disabled {
   opacity: 0;
 }
+
+/* Musik und Geräusche im Spielmenü (anbindung/Tonregler.tsx, T1 und T2). */
+.abenteuer-ton {
+  display: flex;
+  flex-direction: column;
+  gap: var(--raster);
+  border: 1px solid var(--gold);
+  border-radius: var(--radius);
+  padding: var(--raster);
+}
+.abenteuer-tonregler {
+  display: flex;
+  align-items: center;
+  gap: var(--raster);
+}
+.abenteuer-tonregler input[type="range"] {
+  flex: 1;
+}
+.abenteuer-ton-hinweis {
+  margin: 0;
+  font-size: 0.9em;
+}

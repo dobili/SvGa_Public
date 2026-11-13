@@ -7,6 +7,7 @@ import {
   einstellungenAus,
   leereDaten,
   SCHEMA_VERSION,
+  STANDARD_ABENTEUERTON,
   STANDARD_EINSTELLUNGEN,
   wandleUm,
 } from "./format";
@@ -33,6 +34,7 @@ describe("Format 0: Merker der Versionen 0.2.x", () => {
       ton: "aus",
       vorWerkzeugen: "aus",
       maia: "an",
+      abenteuerton: STANDARD_ABENTEUERTON,
     });
     expect(ergebnis.daten.lernstand).toEqual({ 1: [0, 3], 8: [] });
     expect(ergebnis.daten.fortschritt).toEqual({
@@ -104,6 +106,7 @@ describe("Format 1", () => {
           ton: "aus",
           vorWerkzeugen: "aus",
           maia: "an",
+          abenteuerton: STANDARD_ABENTEUERTON,
         },
         // Beantwortete Warum-Fragen fehlen in Format 1 und lesen sich leer.
         fortschritt: { ...format1.fortschritt, warum: {}, eingeschaetzt: {} },
@@ -369,5 +372,13 @@ describe("Format 8 (Varianten)", () => {
     const ergebnis = wandleUm(JSON.parse(JSON.stringify(roh)), JETZT);
     if (!ergebnis.ok) throw new Error("nicht gelesen");
     expect(ergebnis.daten.variationen).toEqual([VARIANTE]);
+  });
+
+  it("liest den Ton des Abenteuers und füllt Fehlendes mit der Vorgabe", () => {
+    expect(einstellungenAus({}).abenteuerton).toEqual({ musik: 60, geraeusche: 80, stumm: false });
+    expect(
+      einstellungenAus({ abenteuerton: { musik: 140, geraeusche: -5, stumm: true } }).abenteuerton,
+    ).toEqual({ musik: 100, geraeusche: 0, stumm: true });
+    expect(einstellungenAus({ abenteuerton: { musik: "laut" } }).abenteuerton.musik).toBe(60);
   });
 });

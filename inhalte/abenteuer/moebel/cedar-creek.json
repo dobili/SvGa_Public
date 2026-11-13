@@ -1919,6 +1919,18 @@
       "art": "teppich",
       "zustand": "gebraucht",
       "stil": "klassisch"
+    },
+    "cc13Radio": {
+      "quelle": "spiel/eigene/radio_alt.png",
+      "breite": 16,
+      "hoehe": 16,
+      "kollision": false,
+      "art": "deko",
+      "zustand": "gebraucht",
+      "stil": "einfach",
+      "begehbar": true,
+      "begehbar_grund": "steht auf dem Regal",
+      "hinweis": "Altes Radio im Waschsalon (Kartenliste Akt 1), gleiches Bild wie mf9RadioAlt"
     }
   }
 }

@@ -16,7 +16,7 @@
     "#............#",
     "#............#",
     "#............#",
-    "#######.######"
+    "####.#########"
   ],
   "objekte": [
     {
@@ -94,8 +94,9 @@
       "feld": [
         11,
         1
-      ]
+      ], "id": "regal"
     },
+    { "moebel": "cc13Radio", "auf": "regal" },
     {
       "moebel": "cc4AutomatLinks",
       "feld": [
@@ -146,8 +147,8 @@
     {
       "moebel": "cc4WaeschekorbGruen",
       "feld": [
-        4,
-        7
+        9,
+        8
       ]
     },
     {
@@ -160,7 +161,7 @@
     {
       "moebel": "sb8GlastuerSued",
       "feld": [
-        7,
+        4,
         10
       ],
       "an_wand": true
@@ -168,7 +169,7 @@
     {
       "moebel": "cc4Fussmatte",
       "feld": [
-        7,
+        4,
         9
       ],
       "versatz": [
@@ -181,7 +182,7 @@
     {
       "name": "start",
       "feld": [
-        7,
+        4,
         9
       ],
       "eigenschaften": {
@@ -191,7 +192,7 @@
     {
       "name": "waschsalonAusgang",
       "feld": [
-        7,
+        4,
         10
       ]
     },

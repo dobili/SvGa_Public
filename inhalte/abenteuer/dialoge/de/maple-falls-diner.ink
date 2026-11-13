@@ -61,7 +61,7 @@ Ich hab erst die Dame gezogen, dann gemerkt, das ist falsch, dann den Turm. Und 
     Drei Wochen. Und eine Nacht. Und zwei Kaffee. #sprecher:hector
 - Ein Gast kommt herein. Hector dreht sich zu ihm um. #sprecher:erzaehler
 Hast du's gehört? Ich hab eins gelöst. Selbst! Matt in zwei! #sprecher:hector #stimmung:froh
-Später, beim Bezahlen, hörst du es ein drittes Mal. #sprecher:erzaehler
+Beim Bezahlen hörst du es ein drittes Mal. #sprecher:erzaehler
 Drei Wochen für ein Matt in zwei. Ich hätte keinen Tag gebraucht. Aber ich hätte mich nicht so gefreut. #sprecher:ambrose #stimmung:still
 -> END
 

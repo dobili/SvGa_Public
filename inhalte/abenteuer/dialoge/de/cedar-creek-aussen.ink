@@ -18,6 +18,8 @@ EXTERNAL reise(karte, ausloeser)
 EXTERNAL gibFund(kennung)
 
 VAR held = "Du"
+// Ambrose nennt {held} erst nach dem Archiv beim Namen (cedar-creek-archiv.erzaehlung_1858).
+VAR erzaehlung1858Gesehen = false
 VAR ambroseVertrauen = 0
 VAR ankunftCedarCreekGesehen = false
 VAR maeEingeladen = false
@@ -89,7 +91,11 @@ Zu meiner Zeit sah man über dem Mississippi mehr Sterne als Wasser. Diese hier 
 Um Mitternacht gähnt Mrs. Okafor. So spät war ich seit Jahren nicht wach. #sprecher:okafor
 Morgen bin ich bestimmt müde. #sprecher:okafor
 ~ setzeZustand("cedarCreek.okafor", 1.3, "zustand.schlechtGeschlafen")
-Du hast das nicht geplant, {held}. Es war einfach ein schöner Abend. #sprecher:ambrose
+{erzaehlung1858Gesehen:
+    Du hast das nicht geplant, {held}. Es war einfach ein schöner Abend. #sprecher:ambrose
+- else:
+    Du hast das nicht geplant, Lehrling. Es war einfach ein schöner Abend. #sprecher:ambrose
+}
 Aber du wirst es morgen am Brett merken. #sprecher:ambrose
 -> END
 
@@ -155,7 +161,7 @@ Ich stelle dir ein Mattbild auf. Du hast Weiß und einen Vorteil, zehn Züge lan
 Hältst du ihn, hast du gewonnen. #sprecher:rosa
 * [„Abgemacht.“]
     -> rosa_duell
-* [„Später.“]
+* [„Nicht jetzt.“]
     Die Fische warten. Ich auch. #sprecher:rosa
     -> END
 
@@ -169,7 +175,7 @@ Nicht gezappelt. Gut. Noch eine Runde, während die Fische schlafen? #sprecher:r
 Ruhige Hände, ruhiger Kopf. Das hatte ich in deinem Alter nicht. #sprecher:ambrose
 + [„Noch eine.“]
     -> rosa_duell
-+ [„Später.“]
++ [„Gleich.“]
     -> END
 
 === rosa_nach_niederlage ===
@@ -177,7 +183,7 @@ Gezappelt. Der Vorteil ist weggeschwommen. Noch mal? #sprecher:rosa
 Ein Vorteil ist wie ein Fisch an der Leine. Man muss ihn halten, nicht nur fangen. #sprecher:ambrose
 + [„Revanche.“]
     -> rosa_duell
-+ [„Später.“]
++ [„Gleich.“]
     -> END
 
 // ---------------------------------------------------------------- Victor

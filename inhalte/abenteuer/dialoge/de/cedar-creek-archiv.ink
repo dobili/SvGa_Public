@@ -40,14 +40,14 @@ Frag oben die Dame mit dem Buch. Das gebietet der Anstand. #sprecher:ambrose
 -> END
 
 === ordnen ===
-// Wer einmal „Später helfen“ gesagt hat, darf auch nach der Clubnadel noch ordnen (Quest
+// Wer einmal „Nachher helfen“ gesagt hat, darf auch nach der Clubnadel noch ordnen (Quest
 // cedarCreek.archivOrdnen beginnt hier; Befund der Gesamtsimulation).
 ~ ordnenAngeboten = true
 Der Keller riecht nach altem Papier. Zehn Kartons stehen in einer Pfütze, auf jedem eine Jahreszahl. #sprecher:erzaehler
 Da bist du ja. Die Regale links sind für das neunzehnte Jahrhundert, rechts für das zwanzigste. #sprecher:okafor
 * [Anfangen]
     -> ordnen_wahl
-* [Später helfen]
+* [Nachher helfen]
     Kein Problem. Die Pfütze läuft nicht weg. Leider. #sprecher:okafor
     -> END
 
@@ -78,7 +78,7 @@ Manche Dinge liest man besser allein. #sprecher:okafor
 Du hast gearbeitet, ohne zu fragen, was es dir bringt. Das ehrt dich. #sprecher:ambrose
 * [Den Karton öffnen]
     -> karton_1858
-* [Später]
+* [Nicht jetzt]
     -> END
 
 // ---------------------------------------------------------------- 1858
@@ -153,8 +153,8 @@ Und dann frage ich dich: Was hätte er gespielt? Was hättest du gespielt? #spre
 * [„Los geht's.“]
     ~ beginneAufgaben("cedarCreek.erinnerungNewYork")
     -> END
-* [„Später.“]
-    Später. Ausgerechnet heute. Nun gut. #sprecher:ambrose #stimmung:bitter
+* [„Nicht jetzt.“]
+    Nicht jetzt? Ausgerechnet heute. Nun gut. #sprecher:ambrose #stimmung:bitter
     -> END
 
 === programmheft_danach ===

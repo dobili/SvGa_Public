@@ -55,15 +55,15 @@ Sie sieht das Brett unter deinem Arm. #sprecher:erzaehler
 - Wir haben ein Schachteam. Coach Delgado sucht dringend ein viertes Brett für die Kreisliga. #sprecher:juno
 Ich spiele auch. Schlecht. Aber mit Herz. #sprecher:juno
 * [„Ich komme mit.“]
-    Perfekt! Nach der Schule, Clubraum im ersten Stock. #sprecher:juno #stimmung:froh
+    Perfekt! Nach der Schule, Raum 12 im Erdgeschoss. #sprecher:juno #stimmung:froh
 * [„Ich kann kaum Schach.“]
     Ich auch nicht. Deshalb brauche ich jemanden zum Reden. #sprecher:juno
-    Nach der Schule, Clubraum im ersten Stock. Keine Ausrede. #sprecher:juno
+    Nach der Schule, Raum 12 im Erdgeschoss. Keine Ausrede. #sprecher:juno
 - Eine junge Dame mit Tagebuch und Glitzer. Sie wird dich überallhin schleppen. Gut so. #sprecher:ambrose
 -> END
 
 === juno_zum_club ===
-Clubraum, erster Stock! Coach Delgado beißt nicht. Meistens. #sprecher:juno
+Raum 12, Erdgeschoss! Coach Delgado beißt nicht. Meistens. #sprecher:juno
 -> END
 
 === juno_alltag ===

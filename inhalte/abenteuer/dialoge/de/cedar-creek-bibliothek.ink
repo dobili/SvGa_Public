@@ -102,7 +102,11 @@ Die Aufgaben sind gelöst. Dann setz dich, {held}. Um die Clubnadel. #sprecher:o
 Coach Delgado pfeift. Das Team aus Maple Falls hat das Auswärtsspiel gewonnen. #sprecher:erzaehler #klang:pfiff
 Eine zweite Nadel. Und eine Karte, die ich nicht leichtfertig gebe. #sprecher:ambrose
 Lass mich. Nur dieses eine Mal, wenn es sein muss. #sprecher:ambrose
-Am Abend fährt der Bus. Geh vorher noch einmal zum Steg, {held}. #sprecher:ambrose
+{erzaehlung1858Gesehen:
+    Am Abend fährt der Bus. Geh vorher noch einmal zum Steg, {held}. #sprecher:ambrose
+- else:
+    Am Abend fährt der Bus. Geh vorher noch einmal zum Steg, Lehrling. #sprecher:ambrose
+}
 Ich möchte dir etwas sagen. #sprecher:ambrose
 -> END
 
@@ -112,7 +116,7 @@ Bei uns sagte man: Wer nur auf seinen Weg schaut, fällt in das Loch daneben. #s
 Das heißt: Schau auch auf meine Züge, nicht nur auf deine. Noch einmal? #sprecher:okafor
 * [„Noch einmal.“]
     -> okafor_partie
-* [„Später.“]
+* [„Nicht jetzt.“]
     Das Brett wartet. Ich auch. #sprecher:okafor
     -> END
 
@@ -187,7 +191,11 @@ Erst Dex, dann ich. Meine sind schwerer. Matt in zwei! #sprecher:mae
 === mae_reihe ===
 Matt in zwei und Mattbilder: Grundreihe, Erstickung, Anastasia, das Arabische. #sprecher:mae
 Mattbilder sind wie Gesichter. Wer eines kennt, erkennt es in jeder Menge. #sprecher:ambrose
-Präg sie dir ein, {held}. Sie kommen wieder. #sprecher:ambrose
+{erzaehlung1858Gesehen:
+    Präg sie dir ein, {held}. Sie kommen wieder. #sprecher:ambrose
+- else:
+    Präg sie dir ein, Lehrling. Sie kommen wieder. #sprecher:ambrose
+}
 * [„Los geht's.“]
     ~ beginneAufgaben("cedarCreek.reiheMae")
     -> END

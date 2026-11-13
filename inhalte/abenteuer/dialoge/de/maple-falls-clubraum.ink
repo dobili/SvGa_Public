@@ -100,7 +100,7 @@ Ich spiele ehrlich. Du auch. Und danach gibt es Kekse, egal wie es ausgeht. #spr
 }
 Viertes Brett, du bist dran. Samstag spielen wir in Cedar Creek. #sprecher:coachDelgado
 Hier, deine Clubnadel. Juno klebt sie gleich ins Tagebuch. #sprecher:coachDelgado
-Dein erster Sieg in einem Club, {held}. Merk dir dieses Gefühl. #sprecher:ambrose #stimmung:stolz
+Dein erster Sieg in einem Club, Lehrling. Merk dir dieses Gefühl. #sprecher:ambrose #stimmung:stolz
 Es kommt seltener, als man glaubt. #sprecher:ambrose
 Und noch ein Versprechen, nenn es Mentor-Zug: Einmal ziehe ich für dich. Ich hoffe, du brauchst es nie. #sprecher:ambrose
 {not heimwegNadelGesehen:
@@ -114,8 +114,8 @@ Das war nichts für heute. Aber du hast in der Eröffnung gut gekämpft. #sprech
 Noch einmal? Ich habe Zeit. Und Kekse. #sprecher:coachDelgado
 * [„Noch einmal.“]
     -> coach_partie
-* [„Später.“]
-    Später ist gut. Das Brett wartet. #sprecher:coachDelgado
+* [„Nicht jetzt.“]
+    Kein Problem. Das Brett wartet. #sprecher:coachDelgado
     -> END
 
 === coach_alltag ===
@@ -126,7 +126,7 @@ Noch einmal? Ich habe Zeit. Und Kekse. #sprecher:coachDelgado
 }
 + {nadelMapleFalls > 0 and nadelMapleFalls < 3} [„Noch eine Partie um die Nadel.“]
     -> coach_partie
-+ [„Bis später, Coach.“]
++ [„Bis morgen, Coach.“]
     -> END
 
 // ---------------------------------------------------------------- Nach der Nadel (Roman, Kapitel 8)
@@ -173,7 +173,7 @@ Du bist also das neue vierte Brett? Mal sehen. Ich bin Sam, erstes Brett. #sprec
 Dame raus, Zug zwei. Funktioniert immer. Fast immer. #sprecher:sam
 * [„Zeig mir deine Aufgaben.“]
     -> sam_reihe
-* [„Später.“]
+* [„Gleich.“]
     Klar. Wenn du dich traust. #sprecher:sam
     -> END
 
@@ -220,7 +220,7 @@ Das hast du nicht von mir. #sprecher:sam
 * [„Revanche.“]
     ~ beginnePartie("mapleFalls.samRevanche")
     -> END
-* [„Später.“]
+* [„Gleich.“]
     -> END
 
 === sam_nach_revanche ===
@@ -294,8 +294,8 @@ Wähle eine gute. #sprecher:ambrose
 * [„Das ist unfair.“]
     Unfair ist, dass du glaubst, eine Nadel sei etwas wert. Spielst du oder nicht? #sprecher:victor
     -> victor_partie
-* [„Später.“]
-    Später. Natürlich. #sprecher:victor
+* [„Nicht jetzt.“]
+    Nicht jetzt. Natürlich. #sprecher:victor
     -> END
 
 === victor_partie ===

@@ -79,7 +79,7 @@ Hörst du das Rauschen? Der Wasserfall. Nach einer Woche hört man ihn nicht meh
 ~ ersterAbendGesehen = true
 Du kommst mit dem alten Brett die Treppe herunter. Mama sitzt mit einem Stück Pizza auf einem Karton. #sprecher:erzaehler
 Was hast du da? Zeig mal. #sprecher:mutter
-Sie sieht lange auf die Stellung. Dann sagt sie, ohne nachzudenken: „Schwarz steht besser.“ #sprecher:erzaehler #pause
+Sie sieht lange auf die Stellung. Dann sagt sie, ohne nachzudenken: „Weiß steht besser.“ #sprecher:erzaehler #pause
 * [„Du kannst Schach?“]
     Ich? Nein. Das hab ich irgendwo gelesen. #sprecher:mutter
 * [„Woher weißt du das?“]
@@ -103,7 +103,7 @@ Das ist jetzt eben so. #sprecher:mutter #stimmung:froh
     Für einen Moment ist es fast wie zu Hause. #sprecher:erzaehler
 * [Nichts sagen, nur nicken]
     Mama lacht. Für einen Moment ist es fast wie zu Hause. #sprecher:erzaehler
-- Später, als das Haus still ist, kannst du nicht schlafen. Das Brett zieht dich noch einmal nach oben. #sprecher:erzaehler
+- In der Nacht, als das Haus still ist, kannst du nicht schlafen. Das Brett zieht dich noch einmal nach oben. #sprecher:erzaehler
 -> END
 
 === aufbruch ===

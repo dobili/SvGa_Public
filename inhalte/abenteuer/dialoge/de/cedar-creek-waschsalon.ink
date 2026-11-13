@@ -33,7 +33,7 @@ Auf dem Trockner dort klebt jede Woche eine neue Stellung. Wer sie löst, wäsch
 * [„Ich versuche es.“]
     Nur zu. Weiß am Zug, Matt in zwei. #sprecher:boateng
 * [„Ich habe gar keine Wäsche dabei.“]
-    Dann hast du einen Gutschein für später. Das ist auch was. #sprecher:boateng
+    Dann hast du einen Gutschein für nachher. Das ist auch was. #sprecher:boateng
 - Ein Brett auf einer Waschmaschine. Diese Zeit hat ihren eigenen Witz. Er gefällt mir. #sprecher:ambrose #stimmung:lacht
 -> END
 
@@ -59,7 +59,7 @@ Das kennst du jetzt. #sprecher:ambrose
 * [Die Stellung lösen]
     ~ beginneAufgaben("cedarCreek.trocknerStellung")
     -> END
-* [Später]
+* [Nicht jetzt]
     -> END
 
 === boateng_lagos ===

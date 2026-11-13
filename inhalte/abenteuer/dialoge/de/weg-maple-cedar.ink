@@ -139,7 +139,7 @@ Im Gras unter einem Busch steckt ein vergilbtes Blatt in einer Blechdose. #sprec
 Ein Partieformular, eng beschrieben, die Tinte verblasst. #sprecher:erzaehler
 ~ gibFund("formular1857")
 Diese Handschrift. Ich kenne sie, aber ich kann sie nicht mehr lesen. #sprecher:ambrose #stimmung:traurig
-Heb es gut auf, {held}. #sprecher:ambrose
+Heb es gut auf, Lehrling. #sprecher:ambrose
 -> END
 
 === fund_muenzen ===
@@ -220,7 +220,7 @@ Sie gibt dir eine Karte mit sechzehn leeren Kästchen. „Sechzehn weiße Figure
 ~ gibFund("finchKarte")
 „Wo eine liegt, hab ich einen Finken hingemalt. Und das Heft hier nimmst du auch mit, drei Aufgaben für unterwegs.“ #sprecher:erzaehler
 ~ gibFund("problemheft")
-Sechzehn Figuren. Das wird ein langer Spaziergang, {held}. Ein schöner. #sprecher:ambrose #stimmung:lacht
+Sechzehn Figuren. Das wird ein langer Spaziergang, Lehrling. Ein schöner. #sprecher:ambrose #stimmung:lacht
 -> END
 
 === flohmarkt_spaeter ===

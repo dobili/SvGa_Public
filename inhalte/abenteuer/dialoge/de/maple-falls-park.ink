@@ -74,7 +74,7 @@ Der Brief war sehr alt, nur Züge darin. #sprecher:abernathy
 Und eine Unterschrift: A. W. Ich habe alles abgeschrieben. #sprecher:abernathy
 Das ist meine Partie. Die letzte. Ein Stück davon. #sprecher:ambrose #stimmung:traurig #pause
 * [„Ambrose? Was für eine Partie?“]
-    Später. Nein. Nicht später. Irgendwann erzähle ich es dir. Versprochen. #sprecher:ambrose
+    Nicht jetzt. Irgendwann erzähle ich es dir. Versprochen. #sprecher:ambrose
 * [„Danke, Mr. Abernathy.“]
     Ich danke Ihnen. Behalten Sie die Abschrift. #sprecher:abernathy
     Sie gehört eher ins Whitlock-Haus als zu mir. #sprecher:abernathy
@@ -104,14 +104,14 @@ Ich bin gerührt. Und beleidigt, es fehlt ein Bauer. #sprecher:ambrose
 ~ parkbankBrettGefunden = true
 Auf der Bank liegt ein kleines grünes Brett mit Magnetfiguren. Daneben ein Zettel. #sprecher:erzaehler
 „Weiß am Zug gewinnt eine Figur.“ #sprecher:erzaehler
-Zähl, {held}. Wer greift an, wer verteidigt? #sprecher:ambrose
+Zähl, Kind. Wer greift an, wer verteidigt? #sprecher:ambrose
 -> parkbank_raetsel
 
 === parkbank_raetsel ===
 * [Die Stellung lösen]
     ~ beginneAufgaben("mapleFalls.parkbankRaetsel")
     -> END
-* [Später wiederkommen]
+* [Nicht jetzt]
     -> END
 
 // ---------------------------------------------------------------- Jo
@@ -153,7 +153,7 @@ Okay, okay. Limo geht auf mich. Noch eine? #sprecher:skaterJo
 Wer im Park gewinnt, gewinnt bald auch im Club. #sprecher:ambrose
 + [„Noch eine.“]
     -> jo_duell
-+ [„Später.“]
++ [„Gleich.“]
     -> END
 
 === jo_nach_niederlage ===
@@ -165,7 +165,7 @@ Wer im Park gewinnt, gewinnt bald auch im Club. #sprecher:ambrose
 Du hast deinen Vorteil verschenkt. Nicht schlimm. Dafür ist der Park da. #sprecher:ambrose
 + [„Revanche.“]
     -> jo_duell
-+ [„Später.“]
++ [„Gleich.“]
     -> END
 
 // ---------------------------------------------------------------- Limo für Jo (Bibel, Szene 10a)
@@ -246,7 +246,7 @@ Eine Limonade für eine Schwäche. Ein guter Handel. #sprecher:ambrose #stimmung
 - ankunftCedarCreekGesehen:
     Die Landstraße nach Cedar Creek. Du kennst den Weg schon. #sprecher:erzaehler
 - else:
-    Zu Fuß? Gut. Der Bus fährt später auch. #sprecher:ambrose
+    Zu Fuß? Gut. Der Bus fährt nachher auch. #sprecher:ambrose
 }
 -> END
 

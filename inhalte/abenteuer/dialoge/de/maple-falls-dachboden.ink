@@ -75,7 +75,9 @@ Wer wagt es, mein Brett zu berühren? #sprecher:ambrose #stimmung:streng
 ~ ambroseErwachtGesehen = true
 Ein Kind. Bei allen Heiligen, ein Kind hält meinen König. Wie lange habe ich in dieser Kiste gelegen? #sprecher:ambrose
 Ambrose Whitlock, zu Diensten. Schachmeister aus New Orleans. Verzeih den Ton, ich habe lange mit niemandem gesprochen. #sprecher:ambrose #stimmung:stolz
-Und du bist {held}? Der Name steht hier oben auf jeder zweiten Kiste. Du hältst den König wie einen Suppenlöffel. #sprecher:ambrose
+* [„Ich bin {held}.“]
+- Das habe ich mir gedacht. Der Name steht dort unten auf jedem zweiten Karton. #sprecher:ambrose
+Du hältst den König wie einen Suppenlöffel. #sprecher:ambrose
 * [„Ich kann kaum Schach.“]
     ~ ambroseVertrauen = ambroseVertrauen + 1
     Ehrlich. Das ist mehr, als die meisten mitbringen. #sprecher:ambrose
@@ -157,24 +159,24 @@ Dieselbe Schrift wie auf den Kisten. #sprecher:erzaehler #pause
 Jemand, der dieses Brett sechzig Jahre lang abgestaubt hat. Und nie einen Zug darauf gemacht. #sprecher:ambrose #stimmung:still
 Ich habe ihr nie danken können. Sie hat mich nicht gehört. #sprecher:ambrose #stimmung:still
 Er sagt es leichthin. Aber er sieht dich nicht an dabei. #sprecher:erzaehler
-- Und nun trag mich hinunter, {held}. Ich möchte sehen, in welcher Welt ich aufgewacht bin. #sprecher:ambrose
+- Und nun trag mich hinunter, Kind. Ich möchte sehen, in welcher Welt ich aufgewacht bin. #sprecher:ambrose
 Nimm das Brett mit. Wo es ist, da bin ich auch. #sprecher:ambrose
 -> END
 
 === ambrose_rat ===
 {
-- not clubBeigetreten: Die Schule, {held}. Das Schachteam wartet, und ich werde nicht jünger. #sprecher:ambrose
+- not clubBeigetreten: Die Schule, Lehrling. Das Schachteam wartet, und ich werde nicht jünger. #sprecher:ambrose
 - not (reiheSamBestanden and reiheJunoBestanden): Erst die Stellungen, die deine Mitspieler dir vorlegen. Wer das Rätsel scheut, scheut auch den Gegner. #sprecher:ambrose
 - nadelMapleFalls == 0: Die Trainerin wartet. Und denk daran: Sie sieht nur ihren eigenen Angriff. #sprecher:ambrose
 - not kenntHale: Eine Nadel am Kragen. Zu meiner Zeit gab es dafür Wein, für dich gibt es Limonade. #sprecher:ambrose #stimmung:lacht
-- endeAkt1Gesehen: Der Weg führt weiter, aber nicht heute. Ruh dich aus, {held}. #sprecher:ambrose
+- endeAkt1Gesehen: Der Weg führt weiter, aber nicht heute. Ruh dich aus, Lehrling. #sprecher:ambrose
 - else: Cedar Creek? Den Namen habe ich nie gehört. Ich war allerdings eine Weile verhindert. #sprecher:ambrose
 }
 + [„Erzähl mir von früher.“]
     {~New Orleans hatte Kaffeehäuser, in denen man bis Mitternacht spielte. Bei Kerzenlicht.|Ich habe einmal gegen den Kapitän eines Dampfers gespielt. Er setzte sein Schiff. Ich lehnte ab.|Der junge Morphy war der Beste von uns allen. Ich habe ihn nie geschlagen. Nie.} #sprecher:ambrose
     -> END
-+ [„Bis später.“]
-    Später. Ja. Geh nur. #sprecher:ambrose #stimmung:bitter
++ [„Bis morgen.“]
+    Morgen. Ja. Geh nur. #sprecher:ambrose #stimmung:bitter
     -> END
 
 // ---------------------------------------------------------------- Die erste Nacht
@@ -215,7 +217,7 @@ Ich. Und einer, der mir noch einen Zug schuldet. #sprecher:ambrose #stimmung:sti
 * [„Und wer ist am Zug?“]
 - Er. #sprecher:ambrose #stimmung:still #pause
 Mehr sagt er nicht. Du fragst nicht weiter. #sprecher:erzaehler
-Kurz bevor dir die Augen zufallen, denkst du: Mama hatte recht. Schwarz steht besser. #sprecher:erzaehler
+Kurz bevor dir die Augen zufallen, denkst du: Mama hatte recht. Weiß steht besser. #sprecher:erzaehler
 Du weißt nur nicht, woher du das weißt. #sprecher:erzaehler
 -> END
 

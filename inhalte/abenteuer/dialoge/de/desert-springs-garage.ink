@@ -32,6 +32,9 @@ VAR erinnerung1858Bestanden = false
 VAR erinnerung1858Besprochen = false
 // Kapitel 43 (Roman): Dot und Margaret, Tomás und der Dosenpokal, Miras „Weil ich kann“.
 VAR miraGarageGesehen = false
+// Kapitel 46 (Roman): „Atme“ als Wahl mitten im Clubkampf (Partiemoment clubkampf_atme).
+VAR atmeGesagt = false
+VAR atmeMomentGesehen = false
 VAR margaretErzaehlt = false
 
 // ---------------------------------------------------------------- Vor der Versöhnung
@@ -76,14 +79,44 @@ Ich opfere den Läufer. #sprecher:mira
 ->->
 
 === mira_clubkampf ===
-Jetzt ich. Spielen wir? #sprecher:mira
-Sie opfert früh und gern. Wer kühl rechnet, gewinnt. Aber du entscheidest. #sprecher:ambrose
-* [„Spielen wir.“]
+// Kapitel 46 (Roman): ganz Desert Springs in der Garage; Nadel als Kupferkaktus mit Blüte.
+Ganz Desert Springs passt in die Garage. Buck mit Zahnstocher, Dot mit Lockenwicklern, Mr. Okoro mit einem Buch, falls es langweilig wird. #sprecher:erzaehler
+Die Nadel liegt auf einem Ölkanister. Ein kleiner Kaktus aus Kupfer, mit einer einzigen Blüte. #sprecher:erzaehler #bild:nadel_kaktus
+Karten? #sprecher:tomas #bild:aus
+Nur, wenn du willst. Dann kommentiere ich. Aber du entscheidest. #sprecher:ambrose
+Ich habe gelernt, was geschieht, wenn es andersherum läuft. #sprecher:ambrose #stimmung:still
+Mira setzt sich. Ihre Füße reichen nicht bis zum Boden. #sprecher:erzaehler
+Ich opfere früh. Du kannst es nicht verhindern. #sprecher:mira
+* [„Ich will sehen, ob es stimmt.“]
+    Sie grinst. Zum ersten Mal sieht sie aus wie zehn. #sprecher:erzaehler #musik:desertSprings.clubkampf
     ~ beginnePartie("desertSprings.clubkampf")
     -> END
 * [„Noch nicht.“]
     Okay. Ich warte. #sprecher:mira
     -> END
+
+// ---------------------------------------------------------------- Partiemomente (Kapitel 46)
+// Feste Momente im Clubkampf (begegnungen.json, momente). Stellungsneutral: Die Sätze stimmen
+// in jeder Partie gegen Mira.
+
+=== clubkampf_sturm ===
+Es ist wie ein Sturm. Aber du warst schon in einem, in einem Pavillon im Regen. Im Sturm zählt man. #sprecher:erzaehler
+Prüf es für sie. So gründlich, als wärst du sie. Angreifer, Verteidiger. #sprecher:ambrose
+Sie opfert, weil es schön ist. Nicht immer, weil es geht. Ich erkenne es. #sprecher:ambrose #stimmung:alt
+-> END
+
+=== clubkampf_atme ===
+{atmeMomentGesehen: -> END}
+~ atmeMomentGesehen = true
+Miras Summen hört auf. Ihre Hand geht vor, schnell. Die Hand von jemandem, unter dem der Boden weggebrochen ist. #sprecher:erzaehler #musik:aus
+* [„Mira. Atme.“]
+    ~ atmeGesagt = true
+    Sie starrt dich an. #sprecher:erzaehler #musik:atme
+    Er hat richtig geopfert und dann Angst gekriegt, hast du gesagt. Die Stellung ist noch nicht verloren. Guck hin. Zähl. #sprecher:erzaehler
+    Mira zieht die Hand zurück und setzt sich auf ihre Finger. Sie sieht hin, lange, die Zunge zwischen den Zähnen. #sprecher:erzaehler #musik:mira.held
+* [Schweigen]
+    Du sagst nichts. Ihre Hand zieht. #sprecher:erzaehler #musik:desertSprings.clubkampf
+- -> END
 
 === mira_nach_niederlage ===
 Ich hab gewonnen. Das Opfer war richtig. Noch mal? #sprecher:mira
@@ -94,16 +127,28 @@ Ich hab gewonnen. Das Opfer war richtig. Noch mal? #sprecher:mira
     -> END
 
 === mira_nach_sieg ===
+// Kapitel 46: Fanfare, dann Miras „Noch mal. Jetzt.“ ohne Musik (S61).
 ~ clubkampfDesertSpringsNadel = nadelDesertSprings
 {ausgangDesertSpringsClubkampf == "remis":
     Remis. Langweilig. Aber gut gespielt. #sprecher:mira
 - else:
-    Du hast mich geschlagen. #sprecher:mira #pause
+    Am Ende gibt sie dir die Hand. Ihre ist klebrig. #sprecher:erzaehler #klang:fanfare
+    Du hast mich geschlagen. #sprecher:mira
 }
-Noch mal. Jetzt. #sprecher:mira
-Die siebte Nadel. Und diesmal haben wir sie zusammen gewonnen, auch wenn du jeden Zug selbst gemacht hast. #sprecher:ambrose #stimmung:froh
-Auch für Port Delacroix schreibe ich dir noch eine Notiz. Ich war dort nicht still, weil ich nichts zu sagen hatte. #sprecher:ambrose
+Noch mal. Jetzt. #sprecher:mira #musik:aus #pause:3
+Morgen. #sprecher:tomas
+Jetzt! #sprecher:mira
+Mira. #sprecher:tomas
+Sie verschränkt die Arme. Dann drückt sie dir widerwillig den Kupferkaktus in die Hand. #sprecher:erzaehler
+{atmeGesagt: -> warum_atme ->}
 -> END
+
+= warum_atme
+Du hast gesagt: Atme. Warum? Ich hätte verloren. Schneller. #sprecher:mira
+* [„Weil mir jemand erzählt hat, was sonst passiert.“]
+- Sie versteht es nicht. Sie wird es verstehen. In zehn Jahren, oder in hundertsechzig. #sprecher:erzaehler
+Ambrose sagt nichts. Aber er sieht dich an, wie er dich noch nie angesehen hat. #sprecher:erzaehler
+->->
 
 === mira_alltag ===
 {~Im Canyon antwortet das Echo. Am Brett nicht. Deshalb mag ich das Brett.|Opfer sind schöner als Recht haben.|Warum hat das Huhn die Straße überquert? Um den König zu schützen.} #sprecher:mira

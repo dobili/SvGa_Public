@@ -22,6 +22,8 @@ VAR miraCrossroadsGetroffen = false
 VAR bigJoeCrossroadsGetroffen = false
 VAR rosieCrossroadsGetroffen = false
 VAR gatterschluessel = false
+// Kapitel 53 (Roman): Delgado und der Bildschirm; noch ohne Figur in Crossroads.
+VAR coachCrossroadsGetroffen = false
 
 // ---------------------------------------------------------------- Ankunft (Szene 93)
 
@@ -33,54 +35,71 @@ VAR gatterschluessel = false
 -> ankunft_crossroads
 
 === ankunft_crossroads ===
+// Kapitel 53 (Roman): vier Straßen, die sich in der Mitte von nichts treffen. Musik: die
+// Ortsthemen nacheinander über einem fröhlichen Rhythmus (crossroads), Stimmengewirr.
 ~ ankunftCrossroadsGesehen = true
-Mitten in der Prärie kreuzen sich vier Straßen. An der Ecke eine Tankstelle und eine Raststätte mit rotem Dach. #sprecher:erzaehler
-Auf dem Parkplatz steht ein Bus mit der Aufschrift „Ironwood Werke“. Daneben ein Food-Truck, den du kennst. #sprecher:erzaehler
-Und da, am Wegweiser: ein Kurierrad, das du auch kennst. #sprecher:erzaehler
+Vier Straßen kommen aus vier Richtungen und treffen sich in der Mitte von nichts. #sprecher:erzaehler #musik:crossroads #licht:abend
+An der Ecke eine Raststätte, niedrig und breit, mit Veranda rundherum: „Darlene's. Alle Wege. Alle Spiele.“ #sprecher:erzaehler #bild:schild_darlene
+Der Parkplatz ist voll. Ein grauer Werksbus mit Rostflecken: „Stahlwerk Ironwood. Schicht B.“ #sprecher:erzaehler #bild:aus
 Alle Wege führen zur Capital Arena. Und alle machen hier Pause. #sprecher:mutter
-Das ist wie das Ende einer langen Partie. Alle Figuren kommen noch einmal aufs Brett. #sprecher:ambrose #stimmung:friedlich
 -> END
 
 // ---------------------------------------------------------------- Slick
 
 === slick ===
 {slickGetroffen:
-    {~Die Arena hat dreitausend Plätze. Ich hab gefragt.|Sechshundert Meilen mit dem Rad. Na gut, die Hälfte im Bus.|Ich spiele nicht mit. Ich schaue zu und erzähle es allen.} #sprecher:slick
+    {~Wände sind was für Leute, die Angst vor Wetter haben.|Meine Pokale sind schief. Aber es sind welche.|Tamsin hat nur einmal verloren. Deshalb ja.} #sprecher:slick
     -> END
 }
+// Kapitel 53 (Roman): Slick redet langsamer und lässt Platz zwischen den Sätzen.
 ~ slickGetroffen = true
-Am Wegweiser lehnt Slick an seinem Kurierrad und grinst. #sprecher:erzaehler
-Na, wenn das nicht {held} aus Riverton ist! Ich bin auf dem Weg zur Meisterschaft. Als Zuschauer, bevor du fragst. #sprecher:slick #stimmung:froh
-Ich hab's allen im Pavillon erzählt. Du bist jetzt eine kleine Berühmtheit am Fluss. #sprecher:slick
-Berühmtheit. Ich hatte das auch einmal. Es ist weniger warm, als man denkt. #sprecher:ambrose #stimmung:lacht
+Auf dem Geländer der Veranda sitzt jemand und redet auf drei Kinder mit einem Klappbrett ein. Dünner geworden, brauner. #sprecher:erzaehler
+… und ich sag, Wände sind was für Leute, die Angst vor Wetter haben … #sprecher:slick
+Er sieht dich und rutscht vom Geländer. Maple Falls! #sprecher:slick #stimmung:froh
+Hast du den Springer? #sprecher:tamsin
+* [Den Springer aus Stein hervorholen]
+- Slick dreht ihn in den Fingern. Die Mähne ist an einer Stelle abgestoßen. #sprecher:erzaehler
+Du hast mir ein Foto geschickt. Von einem Pokal aus einer Dose. In einer Garage in der Wüste. #sprecher:slick
+Ich hab es an die Brücke gehängt. Unter den Bogen, wo der Stein liegt. #sprecher:slick
+Ich hab seit März wieder angefangen. Mit den Dosen. Meine sind schief. Tamsin hat einen gekriegt. Bester Verlierer. #sprecher:slick
+Ich hab nur einmal verloren! #sprecher:tamsin
+Deshalb ja. Den Springer nehm ich wieder mit, wenn's recht ist. Der gehört auf den Stein. #sprecher:slick
+Es ist recht. #sprecher:erzaehler
 -> END
 
 // ---------------------------------------------------------------- Mira und Tomás
 
 === mira ===
 {miraCrossroadsGetroffen:
-    {~Ich hab im Auto zwölf Damen geopfert. Gegen Tomás. Elf waren richtig.|Onkel Ray hat angerufen. Du hast ihn getroffen? Er redet nur von Enten.|Spielst du in der Arena auch so ruhig? Ich nicht. Ich bin nur Zuschauerin.} #sprecher:mira
+    {~Noch mal. Jetzt.|Atmen ist langweilig. Aber es hilft.|Die Frau vom Pfarrer spielt an zwei Brettern. Gegen mich. Gleichzeitig.} #sprecher:mira
     -> END
 }
 ~ miraCrossroadsGetroffen = true
-Auf der Bank vor der Tankstelle sitzt Mira im Schneidersitz. Tomás tankt den alten Wagen voll. #sprecher:erzaehler
-Da bist du! Wir fahren zur Meisterschaft. Zum Zuschauen. Und zum Anfeuern. Laut. #sprecher:mira #stimmung:froh
-Sie meint es so. Sehr laut. #sprecher:tomas
-Ein Opfer ist ein Versprechen, das man halten muss. Du hast es gehalten, damals im Canyon. #sprecher:ambrose
+Mira sitzt im Schneidersitz auf einem Tisch und spielt gegen Tomás, Dot und die Frau des Pfarrers zugleich. Die Frau des Pfarrers spielt an zwei Brettern. #sprecher:erzaehler #musik:mira
+Du. Noch mal. Jetzt. #sprecher:mira
+* [„Nach dem Essen.“]
+- Ich hab geübt. Atmen. Es ist langweilig. Aber es hilft. #sprecher:mira
+Sie zieht an vier Brettern hintereinander, ohne hinzusehen. #sprecher:erzaehler #musik:crossroads
 -> END
 
 // ---------------------------------------------------------------- Big Joe
 
 === big_joe ===
 {bigJoeCrossroadsGetroffen:
-    {~Der Bus braucht Diesel. Ich brauche Kaffee. Wir sind ein gutes Team.|Hank lässt grüßen. Er sagt, du sollst auf die Läufer achten.|Halb Ironwood sitzt in der Arena. Wir haben Schilder gemalt.} #sprecher:bigJoe
+    {~Geliehen ist ein großes Wort, Kumpel.|Zwölf Mann, ein Heizstrahler. Mehr braucht ein Club nicht.|Der Pokal steht jetzt auf der Werkbank. Laurie hat gesagt, er soll stehen, wo man ihn sieht.} #sprecher:bigJoe
     -> END
 }
+// Kapitel 53 (Roman): Big Joe hebt {held} hoch; der Club spielt jetzt in seiner Garage.
 ~ bigJoeCrossroadsGetroffen = true
-Ein großer Mann steigt aus dem Werksbus und breitet die Arme aus. #sprecher:erzaehler
-Da ist ja mein Lieblingsgegner! Ich fahre die halbe Belegschaft zur Meisterschaft. Wir haben Schilder gemalt. Mit deinem Namen. #sprecher:bigJoe #stimmung:lacht
-Schilder. Mit deinem Namen. #sprecher:ambrose #pause
-Ich fürchte, {held}, jetzt musst du gewinnen. #sprecher:ambrose #stimmung:lacht
+Kumpel! #sprecher:bigJoe #stimmung:froh
+Big Joe braucht eine Weile, bis er ausgestiegen ist. Dann hebt er dich hoch. Einfach so, mit dem Rucksack. #sprecher:erzaehler
+Acht! Hab ich gehört! Die Ward! Die hat mich neunzehnachtundachtzig in sechzig Zügen zerlegt. #sprecher:bigJoe
+Wir fahren zur Meisterschaft. Die ganze Schicht. Den Bus hab ich geliehen. Geliehen ist ein großes Wort. #sprecher:bigJoe
+* [„Wo spielt ihr jetzt?“]
+- Sein Gesicht wird einen Moment lang ernst. #sprecher:erzaehler
+In meiner Garage. Zwölf Mann, ein Heizstrahler. Die Tische in der Kantine leuchten, hab ich gehört. Es geht keiner hin. #sprecher:bigJoe
+Das Stahlbrett steht auf der Werkbank. Und daneben der Pokal von zweitausendeins. Deine Mutter hat gesagt, er soll stehen, wo man ihn sieht. #sprecher:bigJoe
+Hinter ihm steigen Hank und Priya aus. Hank nickt, was bei ihm eine Rede ist. #sprecher:erzaehler
 -> END
 
 // ---------------------------------------------------------------- Rosie
@@ -88,12 +107,35 @@ Ich fürchte, {held}, jetzt musst du gewinnen. #sprecher:ambrose #stimmung:lacht
 === rosie ===
 {not rosieCrossroadsGetroffen:
     ~ rosieCrossroadsGetroffen = true
-    Aus dem Food-Truck winkt Rosie mit einem Pfannenwender. #sprecher:erzaehler
-    Ich fahre der Meisterschaft hinterher! Wo Schachspieler sind, ist Hunger. Das habe ich in Silicon Bay gelernt. #sprecher:rosie #stimmung:froh
+    Am Ende der Veranda dampft ein türkisfarbener Lastwagen mit Beulen. Rosie winkt mit einem Pfannenwender. #sprecher:erzaehler
+    Davor redet Dash auf Buck ein, Buck redet zurück. Keiner hört dem anderen zu, und beide sind glücklich. #sprecher:erzaehler
+    Wo Schachspieler sind, ist Hunger. Das hab ich in Silicon Bay gelernt. #sprecher:rosie #stimmung:froh
 - else:
     {~Heute im Angebot: alles. Wie immer.|Die Sauce ist neu. Scharf wie ein Doppelangriff.} #sprecher:rosie
 }
 ~ oeffneLaden("siliconBay.foodtruck")
+-> END
+
+// ---------------------------------------------------------------- Coach Delgado (Kapitel 53)
+// Noch ohne Figur auf der Karte (Schulbus mit Fahrrad auf dem Dach); Einstieg crossroads-aussen.coach.
+
+=== coach ===
+{coachCrossroadsGetroffen:
+    {~Aufstellung! Wer zuletzt am Büfett ist, spielt gegen Mira!|Mr. Pratt verkauft den Kuchen. Er ist erschreckend gut darin.} #sprecher:coachDelgado
+    -> END
+}
+~ coachCrossroadsGetroffen = true
+Auf der Veranda pfeift jemand. Auf zwei Fingern. Du kennst den Pfiff. #sprecher:erzaehler #klang:pfiff
+Coach Delgado zählt neben einem Schulbus Köpfe. Sam, zwei Jüngere. Und eine Siebzehnjährige mit Fahrrad auf dem Dachträger, die so tut, als gehöre sie nicht dazu. #sprecher:erzaehler
+Carla spielt Brett drei. Sie hat gesagt, nur dieses eine Mal. Sie hat es dreimal gesagt. #sprecher:juno #stimmung:froh
+Viertes Brett! Du stehst auf einem Plakat! Mit Ketchup! #sprecher:coachDelgado
+* [„Was ist mit dem Bildschirm im Clubraum?“]
+- Sie wird nicht verlegen. Sie sieht dich gerade an. #sprecher:erzaehler
+Ich hab unterschrieben. Im September. Wir hatten kein Geld für den Bus nach Cedar Creek. #sprecher:coachDelgado
+Die haben den Bus bezahlt, die Bretter und das Startgeld. Im Frühjahr wollten sie dafür den Raum. Ohne mich. #sprecher:coachDelgado
+Da hab ich gekündigt. Den Vertrag, nicht die Schule. #sprecher:coachDelgado
+Der Bildschirm steht im Flur und zeigt den Vertretungsplan. Das Beste, was er je gezeigt hat. #sprecher:coachDelgado #stimmung:lachtOhneSpott
+Für den Bus backen wir Kuchen. Mr. Pratt verkauft ihn. Er ist erschreckend gut darin. #sprecher:coachDelgado
 -> END
 
 // ---------------------------------------------------------------- Wegweiser und Wege

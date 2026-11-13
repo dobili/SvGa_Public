@@ -34,6 +34,8 @@ VAR varianteRaeuberschachGelernt = false
 VAR varianteTandemGelernt = false
 VAR varianteSchach960Gelernt = false
 VAR varianteFalkeUndBisonGelernt = false
+// Kapitel 53 (Roman): Theo bekommt das Tablet zurück (noch ohne Figur, Einstieg theo).
+VAR theoTabletZurueck = false
 
 // ---------------------------------------------------------------- Darlene
 
@@ -41,9 +43,9 @@ VAR varianteFalkeUndBisonGelernt = false
 {novaBitteGehoert and not lieferungFuerDolores: -> darlene_lieferung}
 {not darleneGetroffen:
     ~ darleneGetroffen = true
-    Hinter dem Tresen steht eine Frau mit Brille an einer Kette und gießt Kaffee ein, ohne hinzusehen. #sprecher:erzaehler
-    Darlene. Mir gehört die Raststätte, seit es die Kreuzung gibt. Fast. #sprecher:darlene
-    Hier kommt jeder vorbei, früher oder später. Und jeder kauft was. Du auch? #sprecher:darlene #stimmung:froh
+    Drinnen ist es laut und warm. An der Wand ein großes Brett aus Kork, darauf an Nägeln kleine Tafeln: Königsrennen, Atomschach, Falke und Bison, Der Drache. #sprecher:erzaehler #bild:korkwand
+    Hinter der Theke Darlene. Sechzig, mit den Händen von einer, die vierzig Jahre Kaffee eingeschenkt hat. #sprecher:erzaehler #bild:aus
+    Der Varianten-Tisch. Jeder, der hier durchkommt, bringt ein Spiel mit. Ich heb sie auf. Du hast auch welche mitgebracht, hör ich. #sprecher:darlene #stimmung:froh
 - else:
     {~Kaffee? Geht aufs Haus, wenn du was kaufst.|Ich hab alles, was die Läden davor hatten. Nur netter verpackt.|Der Tisch da hinten? Da spielt man alles, nur kein normales Schach.} #sprecher:darlene
 }
@@ -71,18 +73,42 @@ Eine Kiste, ein Schlüssel und ein Auftrag. So fingen meine besten Reisen an. #s
 -> nova_bitte
 
 === nova_bitte ===
+// Kapitel 53 (Roman): Nova ohne weiße Jacke, Ärmel über den Händen; alles tritt zurück, nur ihre
+// Stimme. Der Ohrstöpsel von der Glasbrücke wird zum Beweis.
 ~ novaBitteGehoert = true
-In der hintersten Ecke sitzt Nova, allein, vor einem kalten Kakao. Kein Tablet. Kein Ohrstöpsel. #sprecher:erzaehler
-Hallo. Setz dich, wenn du willst. #sprecher:nova
-Dr. Lin hat angerufen. Sie legt bei der Meisterschaft alles vor. Die Spielberichte, den Empfänger aus dem Serverraum. #sprecher:nova
-Ich sage aus. Ich sage, wie es war. #sprecher:nova #pause
+In der hintersten Ecke, an einem Tisch für zwei, sitzt Nova allein. Pullover, zu groß, die Ärmel über den Händen. Ein Kakao, den sie nicht angerührt hat. #sprecher:erzaehler #musik:aus
+Dr. Lin hat angerufen. Sie hat die Berichte gefunden. Alle. #sprecher:nova
+Sie hat nicht gefragt, ob es stimmt. Sie hat gefragt, wie es mir geht. Das hat mich seit zwei Jahren keiner gefragt. #sprecher:nova #stimmung:riss
+Ich sage aus. Bei der Meisterschaft. Du hast noch den einen. Den von der Brücke. #sprecher:nova
+Du legst den Ohrstöpsel auf den Tisch. Ein halbes Jahr hast du ihn getragen, neben einem Springer. #sprecher:erzaehler
 Hilfst du mir? #sprecher:nova
-+ [„Ja. Ich stehe neben dir.“]
+* [„Ja.“]
     ~ novaHilfeZugesagt = true
-    Danke. Ich glaube, allein hätte ich es mir noch mal anders überlegt. #sprecher:nova #stimmung:froh
-+ [„Das schaffst du allein. Aber ich bin da.“]
-    Allein. Ja. Das muss ich wohl. Aber es ist gut zu wissen, dass jemand im Saal sitzt. #sprecher:nova
-- Sie war die Erste, die das Gerät getragen hat, und sie ist die Erste, die es ablegt. Das braucht mehr Mut als jedes Opfer. #sprecher:ambrose #stimmung:still
+- Sie nickt und zieht den Kakao zu sich. #sprecher:erzaehler
+Ich hab Angst. Nicht vor denen. Davor, was ich bin, wenn ich es nicht mehr im Ohr habe. Vielleicht bin ich schlecht. #sprecher:nova
+* [„Vierundsiebzig Prozent. Im Training hattest du es nie.“]
+- Sie starrt dich an. Dann geht etwas über ihr Gesicht. Kein Lächeln vom Podium. Es dauert länger, und es geht nicht wieder aus. #sprecher:erzaehler #stimmung:echtesLaecheln
+Es wird ein langer Abend, an einem Tisch aus vier Tischen, zwischen Menschen aus acht Städten. Du kennst jeden. #sprecher:erzaehler #musik:crossroads
+Weißt du, was das ist? Ein Kaffeehaus. Es sieht nicht so aus. Aber es ist eines. So hat es geklungen. #sprecher:ambrose #stimmung:still
+-> END
+
+// ---------------------------------------------------------------- Theo (Kapitel 53)
+
+=== theo ===
+{theoTabletZurueck:
+    {~Ich messe noch, ob es sich lohnt. Ich glaub, ich geh hin.|Angst kann man nicht messen. Hm.} #sprecher:theo
+    -> END
+}
+~ theoTabletZurueck = true
+Am Fenster sitzt Theo, gewachsen, einen Bildschirm auf dem Schoß. Du legst das Tablet vor ihn hin. #sprecher:erzaehler #geraeusch:tippen
+Du gibst es zurück? Hat es nicht geholfen? #sprecher:theo
+* [„Es ist das Beste, was ich je gesehen habe.“]
+- Aber? #sprecher:theo
+* [„Es sagt nicht, warum man Angst hatte.“]
+- Er tippt etwas ein. Dann hört er auf zu tippen. #sprecher:erzaehler #geraeusch:aus
+Das kann man nicht messen. #sprecher:theo
+Dr. Lin hat gekündigt. Sie macht einen Club auf. In einem Keller. Ich hab gesagt, ich messe erst, ob es sich lohnt. #sprecher:theo
+Ich glaub, ich geh hin. #sprecher:theo
 -> END
 
 // ---------------------------------------------------------------- Varianten-Tisch

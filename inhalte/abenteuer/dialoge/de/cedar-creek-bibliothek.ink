@@ -27,6 +27,9 @@ VAR reiheMaeBestanden = false
 VAR ausgangCedarCreekClubkampf = ""
 VAR nadelCedarCreek = 0
 VAR clubkampfCedarCreekBesprochen = 0
+VAR teamAngekommen = false
+VAR nadelRiverton = 0
+VAR nadelIronwood = 0
 
 // ---------------------------------------------------------------- Mrs. Okafor
 
@@ -43,6 +46,8 @@ VAR clubkampfCedarCreekBesprochen = 0
 === okafor_erstes_treffen ===
 ~ okaforGetroffen = true
 Hohe Regale, grüne Leselampen, vier Bretter an einem langen Tisch. Eine ältere Dame sieht von einem Buch auf. #sprecher:erzaehler
+// Runde 11: Am Freitag ist nur die Vorhut da (Roman, Kapitel 11).
+{not teamAngekommen: Ihr seid die Vorhut. Die Matten liegen im Lesesaal. #sprecher:okafor}
 Das Team aus Maple Falls. Willkommen. Ich bin Grace Okafor. #sprecher:okafor #stimmung:froh
 Ihr Blick bleibt an deinem Rucksack hängen. Am Rand des alten Bretts sieht man eingebrannte Buchstaben: A. W. 1857. #sprecher:erzaehler
 Whitlock. #sprecher:okafor #pause
@@ -50,9 +55,12 @@ Whitlock. #sprecher:okafor #pause
     Aus einer Fußnote in einem alten Schachkalender. Unten im Archiv. #sprecher:okafor
 * [„Das Brett lag auf unserem Dachboden.“]
     Im Whitlock-Haus in Maple Falls? Dann passt es. #sprecher:okafor
-- Was glaubst du denn, warum ein Brett so alt wird? Weil jemand es liebt. #sprecher:okafor
+// Runde 11: „Sechs Wörter“ (Roman, Kapitel 11). Sie fragt nicht weiter; das ist ihre Art.
+- Niemand schreibt über ihn. Eine Fußnote, sechs Wörter. #sprecher:okafor
+Was glaubst du denn, warum ein Brett so alt wird? Weil jemand es liebt. #sprecher:okafor
 Sie kennt meinen Namen. Nach hundertsechzig Jahren. #sprecher:ambrose #stimmung:traurig
 Ich weiß nicht, ob ich mich freuen soll. #sprecher:ambrose
+Sechs Wörter. Eine Fußnote. #sprecher:ambrose #stimmung:bitter
 Im Keller hatten wir einen Wasserschaden. Hilfst du mir beim Umräumen, suchen wir den Kalender gemeinsam. #sprecher:okafor
 * [„Klar helfe ich.“]
     Danke. Die Treppe hinten führt hinunter. Ich komme gleich nach. #sprecher:okafor
@@ -211,4 +219,31 @@ Dex kommt, Juno kommt, Mrs. Okafor passt auf. Kommst du auch? #sprecher:mae
 - else:
     {~Am Steg sieht man die Sterne am besten. Komm doch!|Ein Erstickungsmatt mit dem Springer. Das ist mein Lieblingsbild.} #sprecher:mae
 }
+-> END
+
+
+// ================================================================ Runde 11: Roman, Kapitel 11
+// Kleine Geschichte der Zwillinge Ivy und Jonah Pell (Dokument 20, Cedar Creek), drinnen ab
+// Stufe C: C nach Akt 1 (nadelRiverton > 0), D nach Akt 2 (nadelIronwood > 0). Stufe A und B
+// stehen in cedar-creek-aussen.ink (Treppe). Ohne Porträt; Sätze beim Erzähler.
+// Auslöser für die Karte (fehlt noch): zwillinge (Figur in der Bibliothek ab Stufe C).
+
+=== zwillinge ===
+{
+- nadelIronwood > 0: -> zwillinge_d
+- nadelRiverton > 0: -> zwillinge_c
+- else:
+    Die Zwillinge sitzen draußen auf der Treppe. Hier drinnen ist es still. #sprecher:erzaehler
+    -> END
+}
+
+=== zwillinge_c ===
+Am Tresen hängt eine Strichliste in Miss Ashbys Schrift: Ivy 14, Jonah 14. #sprecher:erzaehler
+Die Zwillinge spielen am langen Tisch. Leise. Keiner sagt, wer gewinnt. #sprecher:erzaehler
+Vierzehn zu vierzehn. Die gerechteste Zahl, die es gibt. Und die langweiligste. #sprecher:ambrose #stimmung:lacht
+-> END
+
+=== zwillinge_d ===
+Jonah sitzt im Club am Brett, gegen Dex. Ivy sitzt daneben und liest. #sprecher:erzaehler
+„Wir streiten nicht mehr“, sagt Ivy, ohne aufzusehen. „Es ist furchtbar.“ #sprecher:erzaehler
 -> END

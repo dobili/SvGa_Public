@@ -67,6 +67,10 @@ Das kennst du jetzt. #sprecher:ambrose
 Gelöst! Gut gemacht. #sprecher:boateng
 Die Stellung habe ich von einem Mädchen aus Lagos, vor fünfzig Jahren. #sprecher:boateng
 Sie hat damals jedes Turnier hier gewonnen. Heute leitet sie den Club in der Bibliothek. #sprecher:boateng
+// Runde 11 (Roman, Kapitel 11): wie das Mädchen aus Lagos spielte. Dieselben Sätze sollen als
+// Steckbriefzeile von Mrs. Okafor erscheinen; dafür fehlt noch eine Zeilenart mit freiem Text.
+Die Männer mochten das nicht. Sie hat gewartet. Immer. #sprecher:boateng
+Sie hat einfach gewartet, bis einer zu früh gekommen ist. #sprecher:boateng #stimmung:froh
 * [„Mrs. Okafor?“]
     Genau die. Frag sie nach der Grundreihe. #sprecher:boateng #stimmung:froh
     Oder besser nicht, sonst stellt sie dir eine Falle. #sprecher:boateng

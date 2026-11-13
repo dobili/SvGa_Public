@@ -359,3 +359,34 @@ Der neue Fahrplan ist überklebt. Darauf steht mit Kugelschreiber: „Fährt doc
 „Einunddreißig Jahre“, sagt Mr. Kettering. „Und ein paar Monate. Wer zählt mit?“ #sprecher:erzaehler
 Ein Mann, der seine Strecke nicht hergibt. Zu meiner Zeit hätte er Postkutschen gefahren. #sprecher:ambrose
 -> bus_zurueck
+
+// ================================================================ Runde 11: Roman, Kapitel 11
+// Kleine Geschichte der Zwillinge Ivy und Jonah Pell (Dokument 20, Cedar Creek), draußen auf der
+// Bibliothekstreppe: A bis zur Nadel von Cedar Creek, B danach bis zur Nadel von Riverton. Ab
+// Stufe C sitzen sie drinnen (cedar-creek-bibliothek.zwillinge). Ohne Porträt; Sätze beim Erzähler.
+// Auslöser für die Karte (fehlt noch): zwillinge (Figur auf der Treppe, Stufe A und B).
+
+=== zwillinge ===
+{
+- nadelRiverton > 0:
+    Die Treppe ist leer. Drinnen hört man zwei Stimmen flüstern. #sprecher:erzaehler
+    -> END
+- nadelCedarCreek > 0: -> zwillinge_b
+- else: -> zwillinge_a
+}
+
+=== zwillinge_a ===
+Auf der Bibliothekstreppe sitzen zwei Kinder, die genau gleich aussehen. Sie haben Figuren in den Händen und kein Brett. #sprecher:erzaehler
+„Ich hab gewonnen!“ – „Du hast den Turm bewegt, als ich nicht geguckt hab!“ – „Du guckst nie!“ #sprecher:erzaehler
+* [„Wer hat denn gewonnen?“]
+    Beide zeigen auf sich. Dann aufeinander. Dann wieder auf sich. #sprecher:erzaehler
+* [Leise vorbeigehen]
+    Als du vorbeigehst, verstummen sie und sehen dir nach. #sprecher:erzaehler
+- Zwei Könige und kein Brett. Daraus wird nie ein Ende. #sprecher:ambrose #stimmung:lacht
+-> END
+
+=== zwillinge_b ===
+Die Zwillinge sitzen wieder auf der Treppe. Zwischen ihnen liegt jetzt ein Zettel mit Strichen. #sprecher:erzaehler
+„Miss Ashby zählt mit“, sagt das Mädchen. „Sie ist die Schiedsrichterin. Sie guckt immer.“ #sprecher:erzaehler
+„Dreizehn zu zwölf“, sagt der Junge. „Für mich.“ – „Für mich!“ #sprecher:erzaehler
+-> END

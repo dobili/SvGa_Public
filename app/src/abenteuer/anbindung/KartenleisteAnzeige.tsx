@@ -25,7 +25,7 @@ import { aendere } from "../../speicher/speicher";
 import { leserAmZug, type Partie } from "../../spiel/partie";
 import { uciZuSan } from "../../spiel/zuege";
 import { ladeSpieldaten, type Gegnerdaten, type Kartendaten } from "../daten/laden";
-import { kartenSpielbar, mitGespielterKarte } from "../regeln/karten";
+import { kartenSpielbar, mitGespielterKarte, nurAnwesenheit } from "../regeln/karten";
 import { passtZurPartie, remisMoeglich, spruecheErlaubt } from "../regeln/zeitkarten";
 import { spieleZeitkarte } from "./spruchkarte";
 import { drohung, remisangebot, waage, werkzeugkarte, type Kartenanzeige } from "./kartenwirkungen";
@@ -197,6 +197,11 @@ export function KartenleisteAnzeige({
           beiMarkierungen(await fluestern(fen));
           break;
         case "mentorzug": {
+          // Frei in der Begegnung (Halbfinale, R29): kein Zug, nur Ambrose („Er ist da.“).
+          if (nurAnwesenheit(karten, sorte.kennung)) {
+            zeilen = [tSpiel("karte.mentorzug.erIstDa")];
+            break;
+          }
           const bewertung = await engine.bewerte(fen, MENTOR_MS, 1);
           const san = bewertung.besterZug ? uciZuSan(fen, bewertung.besterZug) : null;
           if (san) steuerung.spieleLeser(san);
@@ -271,6 +276,7 @@ export function KartenleisteAnzeige({
             key={kennung}
             type="button"
             className="abenteuer-karte"
+            data-frei={nurAnwesenheit(karten, kennung)}
             disabled={!erlaubt}
             aria-pressed={gespielt}
             data-testid={`abenteuer-karte-${kennung}`}

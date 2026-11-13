@@ -229,6 +229,10 @@
                   }
                 }
               },
+              "zugerraten": {
+                "description": "Nach diesem Moment sucht der Held den besten Zug selbst (Halbfinale, Story-Bibel 34.3): Seine Uhr steht, Versuche beliebig, nach drei Fehlversuchen ein Hinweis ohne Zug (app/src/abenteuer/regeln/zugerraten.ts)",
+                "type": "boolean"
+              },
               "sprecher": {
                 "description": "Figur wie im Dialogtag #sprecher (Porträt und Name); bei dialog die Figur, die den Moment auslöst",
                 "type": "string",

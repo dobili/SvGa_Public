@@ -160,16 +160,30 @@ export function faelligerMoment(
   verlauf: Partieverlauf,
 ): { index: number; halbzug: number } | null {
   const letzter = verlauf.vomHelden.length;
-  if (letzter === 0) return null;
+  const zuletzt = gesprocheneMomente(momente, verlauf).at(-1);
+  return zuletzt && zuletzt.halbzug === letzter ? zuletzt : null;
+}
+
+/**
+ * Alle Momente, die im bisherigen Verlauf gesprochen haben, in der Reihenfolge der Halbzüge.
+ * Gleiche Regel wie faelligerMoment (der erste ausgelöste Moment spricht, gleichzeitig ausgelöste
+ * gelten als verbraucht). Gebraucht vom Zugerraten (regeln/zugerraten.ts): Es beginnt mit dem
+ * Halbzug, an dem sein Moment sprach.
+ */
+export function gesprocheneMomente(
+  momente: readonly Partiemoment[],
+  verlauf: Partieverlauf,
+): readonly { index: number; halbzug: number }[] {
+  const gesprochen: { index: number; halbzug: number }[] = [];
   const verbraucht = new Set<number>();
-  for (let h = 1; h <= letzter; h++) {
+  for (let h = 1; h <= verlauf.vomHelden.length; h++) {
     const treffer = momente.findIndex((m, i) => !verbraucht.has(i) && loestAus(m, verlauf, h));
     if (treffer < 0) continue;
     // Gleichzeitig ausgelöste Momente gelten als verbraucht (nur einer spricht).
     momente.forEach((m, i) => {
       if (!verbraucht.has(i) && loestAus(m, verlauf, h)) verbraucht.add(i);
     });
-    if (h === letzter) return { index: treffer, halbzug: h };
+    gesprochen.push({ index: treffer, halbzug: h });
   }
-  return null;
+  return gesprochen;
 }

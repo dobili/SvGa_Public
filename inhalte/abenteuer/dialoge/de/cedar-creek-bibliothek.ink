@@ -321,11 +321,10 @@ Was glaubst du denn, warum er dort steht? #sprecher:okafor #pause:2
 Lass mich. #sprecher:ambrose #musik:ambrose.lassMich
 Nur dieses eine Mal. Ich sehe es. Der Turm, {ambroseNenntNamen:{held}|Lehrling}, der Turm, mitten hinein. #sprecher:ambrose
 Sie muss ihn nehmen, und dann … Es wäre schön. Es wäre so schön. #sprecher:ambrose
+{erzaehlung1858Gesehen: Ein Turm, einfach hingestellt. Du hast die Geschichte im Archiv gehört. #sprecher:erzaehler}
+// Gutachten K1.4: Die Frage des Helden ist der Wendepunkt; sie fällt immer.
 * [„Stimmt es?“]
-    Stille. Die Uhr tickt. #sprecher:erzaehler #pause:2
-    Ich weiß es nicht. #sprecher:ambrose #stimmung:traurig #musik:aus #pause:3
-* [Die Hand auf dem Turm lassen]
-    {erzaehlung1858Gesehen: Ein Turm, einfach hingestellt. Du hast die Geschichte im Archiv gehört. #sprecher:erzaehler}
-    Ich weiß nicht, ob es stimmt. #sprecher:ambrose #stimmung:traurig #musik:aus #pause:3
-- Vergib mir. Zähl. #sprecher:ambrose #klang:aha
+- Stille. Die Uhr tickt. #sprecher:erzaehler #pause:2
+Ich weiß es nicht. #sprecher:ambrose #stimmung:traurig #musik:aus #pause:3
+Vergib mir. Zähl. #sprecher:ambrose #klang:aha
 -> END

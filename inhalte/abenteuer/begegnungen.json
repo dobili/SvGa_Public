@@ -581,6 +581,7 @@
         },
         {
           "wenn": {
+            "merkmal": "damenTausch",
             "abZug": 40
           },
           "sprecher": "erzaehler",
@@ -605,13 +606,13 @@
             "abZug": 5
           },
           "sprecher": "victor",
-          "text": "moment.victor.luftig"
+          "dialog": "summit-city-bergstation.victor_luftig"
         },
         {
           "wenn": {
             "merkmal": "geschlagen:laeufer"
           },
-          "sprecher": "victor",
+          "sprecher": "erzaehler",
           "text": "moment.victor.haengt"
         }
       ]

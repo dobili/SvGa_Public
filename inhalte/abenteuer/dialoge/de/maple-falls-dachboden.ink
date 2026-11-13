@@ -17,6 +17,7 @@ EXTERNAL setzeSzene(kennung)
 EXTERNAL beginnePartie(begegnung)
 EXTERNAL zeigeFensterbank()
 
+VAR ausgangCapitalArenaFinale = ""
 VAR held = "Du"
 VAR ambroseImHalbfinaleGerufen = false
 VAR mentorzugFreiGespielt = false
@@ -327,7 +328,7 @@ Eine Figur steht anders als am Abend. Daneben liegt ein Zettel in alter, steiler
 
 === epilog_lily ===
 An einem Nachmittag im Oktober steht jemand auf der Treppe. Du hörst die neunte Stufe. #sprecher:erzaehler #klang:stufe
-Mama sagt, du bist Meister. Mein Cousin sagt, Mädchen können nicht richtig spielen. Nur den Springer. #sprecher:lily
+{ausgangCapitalArenaFinale == "sieg":Mama sagt, du hast gewonnen.|Mama sagt, du warst bei der Meisterschaft.} Mein Cousin sagt, Mädchen können nicht richtig spielen. Nur den Springer. #sprecher:lily
 * [„Dein Cousin redet viel.“]
 - Bringst du es mir bei? Richtig? #sprecher:lily
 Du räumst die zwei Könige und den Springer ab, vorsichtig, und legst sie in den Geigenkasten. Dann stellst du alle zweiunddreißig auf. #sprecher:erzaehler
@@ -338,7 +339,7 @@ Und jetzt? #sprecher:lily
 Durch das runde Fenster fällt das Licht. Der Staub hängt in der Luft wie etwas, das sich entschieden hat, nicht zu fallen. #sprecher:erzaehler
 * [„Schau nicht auf alles. Stell eine Frage.“]
 - Welche? #sprecher:lily
-* [„Was hängt?“]
-- Ende. #sprecher:erzaehler #musik:schlussklang #pause:4
+* [Lächeln]
+- Was hängt? #sprecher:held #musik:schlussklang #pause:4
 ~ setzeSzene("akt5.postGame")
 -> END

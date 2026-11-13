@@ -69,11 +69,11 @@ Zuunterst ein Umschlag aus dickem, gelblichem Papier. Die Schrift ist klein und 
 „An Mr. A. Whitlock, Esq., New Orleans, Louisiana.“ #sprecher:erzaehler
 In der Ecke, noch kleiner: „J. Hale.“ #sprecher:erzaehler #geraeusch:aus #musik:aus
 Die Klappe ist offen. Der Umschlag ist leer. #sprecher:erzaehler
-~ gibFund("umschlag")
 Sonderbar. Der Brief muss herausgefallen sein. Es gab damals eine Verordnung, bei Fieber … #sprecher:teague
 Ambrose steht so still, wie du ihn noch nie gesehen hast. #sprecher:erzaehler #pause:5
 Er hat mir geschrieben. #sprecher:ambrose #stimmung:still #musik:ambrose.cello
-Achtzehnhundertsechsundsechzig. Im Winter. Da war ich schon unterwegs. #sprecher:ambrose
+Nachdem ich … Achtzehnhundertsechsundsechzig. Im Winter. Da war ich schon unterwegs. #sprecher:ambrose #pause
+Er hat geschrieben, und ich war schon unterwegs. #sprecher:ambrose
 * [„Was stand drin?“]
 - Ich weiß es nicht. #sprecher:ambrose
 Er streckt die Hand nach dem Umschlag aus. Sie geht hindurch. #sprecher:erzaehler #bild:aus
@@ -83,10 +83,12 @@ Du kennst den Namen. #sprecher:teague
 * [„Ein bisschen.“]
 - Er nickt langsam. #sprecher:erzaehler
 Nimm ihn mit. Ein leerer Umschlag gehört niemandem. Vielleicht findest du, was hineingehört. #sprecher:teague
+~ gibFund("umschlag")
 -> END
 
 === vitrine ===
 {erinnerungBirdBestanden and not birdNachgesprochen: -> vitrine_mut}
+// Die Hülle öffnet vitrine_mut nach der Runde von selbst (runden.json, danach), auch ohne Bestehen.
 {erinnerungBirdBestanden:
     In der Vitrine liegt die Zeitung von 1858. Ambrose sieht sie nicht mehr an. #sprecher:erzaehler
     -> END
@@ -102,9 +104,13 @@ Der junge Morphy gegen einen Mann namens Bird. Ich habe sie nachgespielt. Zwanzi
     -> END
 
 // Kapitel 26, Schluss: was Ambrose in dieser Nacht gelernt hat.
+// Kapitel 26, Schluss: was Ambrose in dieser Nacht gelernt hat (Gutachten L1.10).
 === vitrine_mut ===
+{birdNachgesprochen: -> END}
 ~ birdNachgesprochen = true
+Ein Turm, zum Schlagen hingestellt, mitten ins Nichts. Dann die Dame, quer über das ganze Brett, in eine Ecke. Es dauert drei Züge, bis du siehst, warum. #sprecher:erzaehler
 Er verlor nie den Mut. Das habe ich in dieser Nacht gelernt. Nicht, wie man opfert. Wie man am nächsten Morgen aufsteht. #sprecher:ambrose
+{umschlagGeoeffnet: Er sieht auf den Umschlag in deiner Hand. #sprecher:erzaehler}
 Ich schon. Ich habe den Mut verloren. Einen Abend lang. #sprecher:ambrose
 * [„Nur einen?“]
 - Er antwortet nicht gleich. #sprecher:erzaehler #pause

@@ -3251,6 +3251,12 @@ sind nur die Bibel und dieses Dokument. Die Zeilennummern in Teil G gelten für 
   Drachenfest (Szene 90), Kiras Satz zum Falken (Fundtabelle), Coach Delgado (September, sieben
   Kinder). Kira war in der Bibel schon 13.
 
+Nachtrag nach der Antwort des Hauptchats: Das Zugerraten des Turmzugs läuft im Halbfinale
+immer, die Karte bringt nur Ambrose ins Bild; Dr. Lins Club bleibt im Post-Game besuchbar;
+„Buchbezug:“ für Schreiber bleibt. Die ersten beiden Punkte sind in der Bibel nachgetragen, die
+Romanstelle in Kapitel 20 hat der Hauptchat umgestellt. Die entsprechenden Zeilen in H2 und H3
+sind damit erledigt.
+
 ### H2 Nicht ausgeführt oder offen
 
 - **Extra-Abspann:** Er bleibt an die Bedingung „Mentor-Zug im Halbfinale nicht gespielt“

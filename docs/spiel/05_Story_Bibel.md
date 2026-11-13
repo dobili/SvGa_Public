@@ -2398,7 +2398,7 @@ spielt ab dann allein, sichtbar verunsichert (Zustand wie „abgelenkt“, Fakto
 Partie, siehe Technikliste). **R29:** Der Mentor-Zug liegt ohne Besitz als vierte Karte frei im Deck,
 einmal spielbar, ohne Verbrauch und ohne Folge für die Wertung: „Held und Ambrose spielen
 gemeinsam.“ Ambrose vor der Partie: „Ein einziges Mal. Wenn du mich rufst, komme ich. Wenn nicht,
-schaue ich zu.“ Im Schlüsselmoment sieht {held} den Zug (ein Turmopfer) selbst und ruft Ambrose nur, um ihn zu prüfen. Die Karte Mentor-Zug hat hier einen goldenen Rand und zeigt keinen Zug, sondern nur „Er ist da“; Ambrose weiß es auch nicht („Ich weiß es nicht.“). Der Spieler findet den Turmzug selbst (Zugerraten, beliebig viele Versuche, die Uhr hält an); dann stellen beide den Turm gemeinsam hin. Danach Ambrose: „Das ist meine unsterbliche Partie. Mit dir.“ Wer die Karte nicht spielt, schaltet den **Extra-Abspann** frei (Zettel im Epilog, Szene 109). Bei Niederlage: Wiedereinstieg am Kipppunkt nach R14 (dann wieder mit freiem
+schaue ich zu.“ Im Schlüsselmoment sieht {held} den Zug (ein Turmopfer) selbst und ruft Ambrose nur, um ihn zu prüfen. Der Spieler findet den Turmzug in jedem Fall selbst (Zugerraten, beliebig viele Versuche, die Uhr hält an), ob er die Karte spielt oder nicht. Die Karte Mentor-Zug hat hier einen goldenen Rand und zeigt keinen Zug; sie bringt nur Ambrose ins Bild („Er ist da“). Ambrose weiß es auch nicht („Ich weiß es nicht.“); mit der Karte stellen beide den Turm gemeinsam hin. Danach Ambrose: „Das ist meine unsterbliche Partie. Mit dir.“ Wer die Karte nicht spielt, schaltet den **Extra-Abspann** frei (Zettel im Epilog, Szene 109). Bei Niederlage: Wiedereinstieg am Kipppunkt nach R14 (dann wieder mit freiem
 Mentor-Zug). Etwa 35 Minuten.
 
 **107. Vor dem Finale** · `akt4.vorDemFinale`
@@ -2429,8 +2429,7 @@ alter Schrift: „Du hast mich nicht gebraucht. Das ist das schönste Geschenk. 
 Ort Maple Falls und alle Städte · Ereignis: Weltmeisterschaft in der erreichten Liga, zweiter
 Durchlauf mit +300 (R10), neue Dialoge (Leute erkennen {held} als WM-Teilnehmer), Revanchen mit
 Victor, versteckter Bonusgegner in Ghost Town: „das Echo des Ingenieurs“ (Rolle `story`, sehr stark,
-spielt wie Hale positionell; Konzeptsammlung, Post-Game). Dr. Lins neuer Club ohne Bildschirme in
-Silicon Bay, Novas erstes freies Turnier, das Musikhaus in Port Delacroix mit Schach960-Abenden (L1).
+spielt wie Hale positionell; Konzeptsammlung, Post-Game). Dr. Lins neuer Club ohne Bildschirme in Silicon Bay (der Epilog zeigt ihn nur kurz, hier ist er besuchbar), Novas erstes freies Turnier, das Musikhaus in Port Delacroix mit Schach960-Abenden (L1).
 
 ### Zeitrechnung
 
@@ -2520,7 +2519,7 @@ Im Turnier gibt es keinen Laden am Brett; vor der Meisterschaft lohnt sich Cross
    Gegnerprofil von „mit Gerät“ auf „allein, abgelenkt 1,5“; braucht einen Auslöser in der
    Partieansicht oder eine zweigeteilte Begegnung.
 3. **Freie vierte Karte** (R29, Vorschlag V6 aus dem Regelwerk): `Partieauftrag.freieKarten` und eine
-   Dialogvariable `mentorzugImHalbfinaleGespielt` für den Extra-Abspann. Die Karte zeigt im Halbfinale keinen Zug, sondern nur „Er ist da“ (goldener Rand); danach Zugerraten des Turmzugs mit beliebig vielen Versuchen bei angehaltener Uhr.
+   Dialogvariable `mentorzugImHalbfinaleGespielt` für den Extra-Abspann. Die Karte zeigt im Halbfinale keinen Zug, sondern nur „Er ist da“ (goldener Rand); das Zugerraten des Turmzugs läuft immer, mit oder ohne Karte, mit beliebig vielen Versuchen bei angehaltener Uhr.
 4. **Varianten** (10, Abschnitt 3 und 3a): Schach960 (L1) und Blindschach (L2) mit der vorhandenen
    Engine; Königsrennen (L8), Drei-Schach (L3), Atomschach (L4), König der Hügel (L7), Drache (L10),
    Falke und Bison (L9), Räuberschach mit Fairy-Stockfish als Zusatzpaket; Entenschach (L6) prüfen;

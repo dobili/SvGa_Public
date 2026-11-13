@@ -91,6 +91,11 @@ Tipp. Jeder Moment kommt höchstens einmal je Partie.
   Wahlen über dem Brett; die Uhr des Helden steht, solange er offen ist. Variablen gehen in den
   Spielstand, Oberwelt-Funktionen (Karten, Reisen, Läden) wirken hier nicht, und Quests hören die
   Knoten nicht. Der Dialog führt keinen Zug aus.
+- Rückfall für seltene Merkmale: `koeder` und `turmopfer` kommen nicht in jeder Partie vor. Soll
+  der Moment sicher kommen, folgt ein zweiter Eintrag mit demselben `dialog` und nur `abZug`
+  (etwa 20). Weil jeder Moment höchstens einmal kommt und der Dialog seine Variable setzt
+  (`clubkampfZaehlGesagt`), fragt der Knoten am Anfang die Variable ab und endet sofort, wenn er
+  schon lief; ein Knoten ohne Zeile schließt den Dialog ohne Anzeige.
 - Lösen mehrere Momente zugleich aus, spricht der erste der Liste; die anderen sind verbraucht.
 - `text` steht in `texte/<sprache>.json`, der Name kommt aus `figur.<sprecher>.name`; `klang` und
   `musik` wirken wie die Dialogtags.

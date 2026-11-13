@@ -1248,7 +1248,7 @@
       "auf_moebel": true
     }
   ],
-  "figuren": [],
+  "figuren": [{ "name": "tessaFluss", "feld": [58, 19] }],
   "belebung": [
     {
       "name": "angler",

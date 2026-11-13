@@ -809,7 +809,15 @@
           "kennung": "wegMapleCedar.tessa",
           "name": "figur.tessa.name",
           "sprite": "figuren/tessa.png",
-          "dialog": "weg-maple-cedar.tessa"
+          "dialog": "weg-maple-cedar.tessa",
+          "wenn": "nadelCedarCreek == 0"
+        },
+        {
+          "kennung": "wegMapleCedar.tessaFluss",
+          "name": "figur.tessa.name",
+          "sprite": "figuren/tessa.png",
+          "dialog": "weg-maple-cedar.tessa",
+          "wenn": "nadelCedarCreek > 0 und nadelRiverton == 0"
         }
       ],
       "ausloeser": [

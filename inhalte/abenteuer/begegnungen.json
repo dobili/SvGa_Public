@@ -616,7 +616,23 @@
         "art": "fen",
         "fen": "6k1/p2R4/2n4p/1p6/2n1P3/6KP/P5P1/8 w - - 0 41"
       },
-      "kartenErlaubt": false
+      "kartenErlaubt": false,
+      "momente": [
+        {
+          "wenn": {
+            "abZug": 5
+          },
+          "sprecher": "ambrose",
+          "dialog": "ghost-town-saloon.fernpartie_wie_er"
+        },
+        {
+          "wenn": {
+            "abZug": 11
+          },
+          "sprecher": "erzaehler",
+          "dialog": "ghost-town-saloon.fernpartie_zaehlen"
+        }
+      ]
     },
     {
       "kennung": "capitalArena.runde1",

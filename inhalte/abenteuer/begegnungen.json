@@ -582,7 +582,7 @@
         },
         {
           "wenn": {
-            "merkmal": "opposition",
+            "merkmal": "oppositionGegeben",
             "abZug": 30
           },
           "sprecher": "erzaehler",
@@ -618,7 +618,7 @@
         },
         {
           "wenn": {
-            "merkmal": "gabel",
+            "merkmal": "gabelGegeben",
             "abZug": 8
           },
           "sprecher": "erzaehler",

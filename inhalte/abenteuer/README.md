@@ -200,6 +200,15 @@ Tipp. Jeder Moment kommt höchstens einmal je Partie.
   `grafik/platzhalter.png` (CC0), 4 × 4 Kacheln. Gekaufte Grafik (LimeZu) liegt nur lokal unter
   `app/inhalte-privat/abenteuer/grafik/` (gleiche Dateinamen); der Paketbau nimmt sie, wenn sie da
   ist, sonst zeichnet er die Platzhalter.
+- Figuren aus PixelLab (Entscheidung zum Stil, 13.11.2026): je Figur ein Ordner
+  `figuren-neu/<name>/` im privaten Repository, wie PixelLab ihn exportiert (`rotations/<richtung>.png`
+  32 × 32, `animations/Walk/<richtung>/frame_00N.png` 48 × 48). Der Paketbau
+  (`app/skripte/figurenbogen.mjs`) setzt daraus `figuren32/<name>.png` zusammen: Rahmen 32 × 32 in
+  der Ordnung von LimeZu, Laufbilder um die Mitte auf 32 × 32 zugeschnitten (Füße auf Zeile 30, wie
+  die Standbilder), den Bodenschatten des Exports überall entfernt; fehlt eine Laufrichtung, wird
+  links aus rechts gespiegelt, sonst bleibt das Standbild. `<name>` ist der Name des alten Bogens
+  (`figuren/juno.png` → `figuren-neu/juno/`, der Held `held-0`); wo es keinen neuen gibt, gilt
+  LimeZu. Die Figur ist etwa 28 Pixel hoch, die Kollision bleibt die Kachel der Füße.
 - Beispiel: `karten/maple-falls-dachboden.json` (12 × 10, Auslöser `start`, `brett`, `treppe`),
   erzeugt mit einem kleinen Skript; die Kacheln 1–8 sind Boden, Wand, Kiste, Teppich, Brett,
   Treppe, Lampe, Fenster.

@@ -15,6 +15,7 @@ import { dirname, join, resolve } from "node:path";
 import { fileURLToPath } from "node:url";
 import { deflateSync } from "node:zlib";
 import { genutzteMoebel, kompakteKarte, ladbareKarten } from "./abenteuerpaket-auswahl.mjs";
+import { baueFigurenbogen } from "./figurenbogen.mjs";
 
 const require = createRequire(import.meta.url);
 const { Compiler } = require("inkjs/compiler/Compiler");
@@ -83,6 +84,23 @@ async function kopiereOberflaeche() {
       await readFile(quelle),
       name.endsWith(".json") ? "daten" : "grafik",
     );
+  }
+}
+
+/**
+ * Figuren aus PixelLab (privates Repository, figuren-neu/<name>/): je Ordner ein Bogen
+ * figuren32/<name>.png mit Rahmen 32 × 32 (skripte/figurenbogen.mjs). Der Name ist der des alten
+ * Bogens (figuren/<name>.png); die App nimmt den neuen, wo es ihn gibt (oberwelt/figurbogen.ts).
+ */
+async function baueFigurenboegen() {
+  const quelle = join(PRIVAT, "figuren-neu");
+  if (!existsSync(quelle)) return;
+  for (const name of (await readdir(quelle, { withFileTypes: true }))
+    .filter((e) => e.isDirectory())
+    .map((e) => e.name)
+    .sort()) {
+    const bogen = await baueFigurenbogen(join(quelle, name));
+    if (bogen) await schreibe(`figuren32/${name}.png`, bogen, "grafik");
   }
 }
 
@@ -377,6 +395,7 @@ async function main() {
   }
   await kopiereOberflaeche();
   await kopierePrivatordner("figuren");
+  await baueFigurenboegen();
   // Tierbögen der Belebung (pipeline/abenteuer/belebungsbilder.py, Runde 7).
   await kopierePrivatordner("tiere");
   await kopierePrivatordner("portraets");

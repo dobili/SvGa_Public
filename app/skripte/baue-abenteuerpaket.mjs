@@ -347,6 +347,8 @@ async function main() {
     "vorfuehrungen.json",
     // Gedächtnisstellungen und Simultan (Runde 6, docs/spiel/15 Abschnitt 4).
     "partieformen.json",
+    // Aufbau der Porträtblätter (dialog/portraetblatt.ts): Fassung → Feld, Stimmung → Fassung.
+    "portraetblatt.json",
   ]) {
     await kopiereJson("daten", name, "daten");
   }
@@ -380,6 +382,8 @@ async function main() {
   await kopierePrivatordner("portraets");
   // Große Porträts (64 × 64 oder 96 × 96 je Fassung, dialog/Portraet.tsx); fehlen sie, SVG.
   await kopierePrivatordner("portraets/gross", () => true, [".png", ".webp"]);
+  // Porträtblätter: je Figur sechs Fassungen à 64 × 64 (3 × 2), portraetblatt.json.
+  await kopierePrivatordner("portraets/blatt");
   await kopierePrivatordner("grafik");
   await kopiereTon("musik");
   await kopiereTon("klang");

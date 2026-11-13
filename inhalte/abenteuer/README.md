@@ -49,9 +49,13 @@ Hintergrund: `docs/spiel/04_Architektur.md`, Abschnitt 2 und 9.
   Sepia, bis `#erinnerung:aus` oder bis der Dialog endet.
 - Porträtfassungen (T4): `#stimmung:jung|ertappt|riss|alt|lachtOhneSpott|muede` zeigt
   `portraets/<sprecher>-<fassung>.svg` (kebab-case, etwa `mira-lacht-ohne-spott.svg`); fehlt die
-  Datei, die Grundfassung. Andere Stimmungen zeigen immer die Grundfassung. Große Porträts (64 × 64 oder 96 × 96) liegen
-  im privaten Repository unter `portraets/gross/<name>[-<fassung>].webp` (oder `.png`) und gehen
-  vor; das SVG bleibt Rückfall.
+  Datei, die Grundfassung. Andere Stimmungen zeigen immer die Grundfassung. Porträtblätter: je Figur ein Blatt
+  `portraets/blatt/<name>.png` im privaten Repository mit sechs Fassungen à 64 × 64 (3 × 2: neutral,
+  lächelt, nachdenklich, überrascht, bitter, lacht; Ambrose jung als eigenes Blatt
+  `ambrose-jung.png`). Welche Stimmung welches Feld zeigt, steht in `portraetblatt.json`
+  (konfigurierbar, Schema `abenteuer-portraetblatt`). Ein Einzelbild
+  `portraets/gross/<name>[-<fassung>].webp|png` geht dem Blatt vor (Sonderfassungen wie `riss`);
+  das SVG bleibt Rückfall.
 - Tondateien: Die Kennung wird zum Dateinamen (camelCase → kebab-case, ein Punkt bleibt:
   `ambrose.lassMich` → `musik/ambrose.lass-mich.m4a`). Im privaten Repository liegt der Ton von
   Akt 1 direkt in `musik/` und `klang/` (Grundpaket), der Ton der Akte 2 bis 4 in `musik/akt2/` …

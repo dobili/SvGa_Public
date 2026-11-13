@@ -30,6 +30,7 @@ DATEIEN = {
     "vorfuehrungen.json": "abenteuer-vorfuehrungen.schema.json",
     "partieformen.json": "abenteuer-partieformen.schema.json",
     "texte/de.json": "abenteuer-texte.schema.json",
+    "portraetblatt.json": "abenteuer-portraetblatt.schema.json",
 }
 
 

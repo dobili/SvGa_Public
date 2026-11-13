@@ -55,6 +55,15 @@ function holeErzeuger(): AudioContext | null {
 }
 
 /**
+ * Der gemeinsame Tonerzeuger der App, auch für Musik und Geräusche des Abenteuers
+ * (abenteuer/ton/tonregie.ts): Ein einziger AudioContext, damit das Entsperren am iPhone für beides
+ * gilt. Null ohne Web Audio (alte Browser, Tests).
+ */
+export function tonErzeuger(): AudioContext | null {
+  return holeErzeuger();
+}
+
+/**
  * Weckt den Tonerzeuger; aufzurufen bei einer Berührung des Lesers (Vorgabe von Safari).
  * Sonderfall: Ohne Web Audio (alte Browser, Tests) geschieht nichts.
  */

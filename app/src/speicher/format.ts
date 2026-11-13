@@ -131,10 +131,43 @@ export interface Einstellungen {
    * Paket wirkt der Schalter nicht.
    */
   readonly maia: Maiaschalter;
+  /** Musik und Geräusche im Schach-Abenteuer (seit 13.11.2026). */
+  readonly abenteuerton: Abenteuerton;
 }
 
 /** Maia an oder aus (wirkt nur mit geladenem Paket). */
 export type Maiaschalter = "an" | "aus";
+
+/**
+ * Musik und Geräusche im Schach-Abenteuer (abenteuer/ton/, Atmosphäre T1 und T2): Lautstärken in
+ * Prozent (0 bis 100) und ein Stummschalter. Wirken nur, wenn der allgemeine Ton an ist.
+ */
+export interface Abenteuerton {
+  readonly musik: number;
+  readonly geraeusche: number;
+  readonly stumm: boolean;
+}
+
+export const STANDARD_ABENTEUERTON: Abenteuerton = { musik: 60, geraeusche: 80, stumm: false };
+const PROZENT_HOECHSTENS = 100;
+
+/** Eine Lautstärke aus Rohdaten: ganze Prozent 0 bis 100, sonst die Vorgabe. */
+function prozentAus(roh: unknown, vorgabe: number): number {
+  return typeof roh === "number" && Number.isFinite(roh)
+    ? Math.round(Math.min(Math.max(roh, 0), PROZENT_HOECHSTENS))
+    : vorgabe;
+}
+
+/** Ton des Abenteuers aus Rohdaten; ältere Stände ohne den Eintrag bekommen die Vorgabe. */
+export function abenteuertonAus(roh: unknown): Abenteuerton {
+  if (typeof roh !== "object" || roh === null) return STANDARD_ABENTEUERTON;
+  const r = roh as Record<string, unknown>;
+  return {
+    musik: prozentAus(r.musik, STANDARD_ABENTEUERTON.musik),
+    geraeusche: prozentAus(r.geraeusche, STANDARD_ABENTEUERTON.geraeusche),
+    stumm: r.stumm === true,
+  };
+}
 
 /** Die Einstellungen beim ersten Start: Brett und Figuren wie im Buch, ohne Ton, Maia an. */
 export const STANDARD_EINSTELLUNGEN: Einstellungen = {
@@ -144,6 +177,7 @@ export const STANDARD_EINSTELLUNGEN: Einstellungen = {
   ton: "aus",
   vorWerkzeugen: "aus",
   maia: "an",
+  abenteuerton: STANDARD_ABENTEUERTON,
 };
 
 /** Je Kapitelnummer die Positionen der abgehakten Lernziele (0 = erster Punkt der Buchliste). */
@@ -275,6 +309,7 @@ export function einstellungenAus(roh: unknown): Einstellungen {
     // gespeicherter Wert wird übergangen.
     vorWerkzeugen: roh.vorWerkzeugen === "an" ? "an" : "aus",
     maia: roh.maia === "aus" ? "aus" : "an",
+    abenteuerton: abenteuertonAus(roh.abenteuerton),
   };
 }
 

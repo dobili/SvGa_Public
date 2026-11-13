@@ -60,8 +60,8 @@
     "#.................................ppp...................ee.....................#",
     "#.................................ppp...................ee.....................#",
     "#.................................ppp...................ee.....................#",
-    "#..eeeeeeeeeeeeeeeeeeeeeeeeeeeeeeeppp..........eeeeeeeeeeeeeeeeeeeeeeeeeeeeeeee#",
-    "#..eeeeeeeeeeeeeeeeeeeeeeeeeeeeeeeppp..........eeeeeeeeeeeeeeeeeeeeeeeeeeeeeeee#",
+    "#..eeeeeeeeeeeeeeeeeeeeeeeeeeeeeeepppeeeeeeeeeeeeeeeeeeeeeeeeeeeeeeeeeeeeeeeeee#",
+    "#..eeeeeeeeeeeeeeeeeeeeeeeeeeeeeeepppeeeeeeeeeeeeeeeeeeeeeeeeeeeeeeeeeeeeeeeeee#",
     "#.................................ppp...................ee.....................#",
     "#.................................ppp...................ee.....................#",
     "#.................................ppp...................ee.....................#",
@@ -147,7 +147,7 @@
     },
     {
       "moebel": "sc7Plakat",
-      "feld": [38, 46]
+      "feld": [42, 53]
     },
     {
       "moebel": "wds6Bank",
@@ -211,7 +211,7 @@
     },
     {
       "moebel": "wds6Kegelbaum",
-      "feld": [41, 44]
+      "feld": [41, 49]
     },
     {
       "moebel": "wds6Wacholder",
@@ -454,6 +454,50 @@
     {
       "moebel": "scFelsKlein",
       "feld": [14, 11]
+    },
+    {
+      "moebel": "mf4ZaunSeite",
+      "feld": [45, 48]
+    },
+    {
+      "moebel": "mf4ZaunSeite",
+      "feld": [45, 49]
+    },
+    {
+      "moebel": "mf4ZaunSeite",
+      "feld": [45, 50]
+    },
+    {
+      "moebel": "mf4ZaunSeite",
+      "feld": [45, 51]
+    },
+    {
+      "moebel": "mf4ZaunSeite",
+      "feld": [45, 52]
+    },
+    {
+      "moebel": "mf4ZaunSeite",
+      "feld": [45, 53]
+    },
+    {
+      "moebel": "mf4ZaunSeite",
+      "feld": [45, 54]
+    },
+    {
+      "moebel": "mf4ZaunSeite",
+      "feld": [45, 55]
+    },
+    {
+      "moebel": "mf4ZaunSeite",
+      "feld": [45, 56]
+    },
+    {
+      "moebel": "mf4ZaunSeite",
+      "feld": [45, 57]
+    },
+    {
+      "moebel": "mf4ZaunSeite",
+      "feld": [45, 58]
     }
   ],
   "ausloeser": [

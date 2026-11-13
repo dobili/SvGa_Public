@@ -5,7 +5,8 @@
  * Rolle im Gesamtbild: Teil des Dialogfensters (dialog/Dialog.tsx). Der Sprecher kommt aus dem
  * Ink-Tag `#sprecher:okafor`, die Datei heißt `portraets/okafor.svg` (camelCase wird kebab-case:
  * `coachDelgado` → `coach-delgado`). Mit `#stimmung:jung` zeigt Ambrose sein junges Gesicht
- * (Erinnerungen). Fehlt ein Bild, bleibt nur der Name stehen.
+ * (Erinnerungen); andere Fassungen (T4, portraetpfad.ts) ebenso. Fehlt eine Fassung, zeigt es die
+ * Grundfassung; fehlt auch die, bleibt nur der Name stehen.
  * Abhängigkeiten: paket/paketlader.ts.
  */
 import { useEffect, useState } from "react";
@@ -52,16 +53,19 @@ export function Portraet({
   zeile?: string;
 }) {
   const pfad = portraetpfad(sprecher, stimmung);
+  const grund = portraetpfad(sprecher, null);
   const [bild, setzeBild] = useState<{ pfad: string; bild: Bild | null } | null>(null);
   useEffect(() => {
     let aktiv = true;
-    void lade(pfad).then((geladenesBild) => {
-      if (aktiv) setzeBild({ pfad, bild: geladenesBild });
-    });
+    void lade(pfad)
+      .then((geladenesBild) => geladenesBild ?? (pfad === grund ? null : lade(grund)))
+      .then((geladenesBild) => {
+        if (aktiv) setzeBild({ pfad, bild: geladenesBild });
+      });
     return () => {
       aktiv = false;
     };
-  }, [pfad]);
+  }, [pfad, grund]);
   if (!bild || bild.pfad !== pfad || !bild.bild) return null;
   if (bild.bild.bogen) {
     return (

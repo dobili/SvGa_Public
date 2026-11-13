@@ -24,7 +24,9 @@ import { loeschePaket } from "../paket/paketlader";
 import { leererAbenteuerstand } from "../regeln/spielstand";
 import type { Abenteuermodul } from "../schnittstelle/modul";
 import type { Paketzustand } from "../schnittstelle/paket";
+import { useAbenteuerton } from "../ton/useAbenteuerton";
 import { aktualisierePaketzustand, useAbenteuerstand, useAppdienste } from "./dienste";
+import { Tonregler } from "./Tonregler";
 
 /** Der geladene Baustein, einmal je Seite. */
 let modulVorrat: Promise<Abenteuermodul> | null = null;
@@ -188,6 +190,7 @@ function Spielmenue({
           )}
         </>
       )}
+      <Tonregler />
       <button type="button" className="knopf-zweit" onClick={beiLoeschen}>
         {t("abenteuer.paketLoeschen")}
       </button>
@@ -212,6 +215,8 @@ export function AbenteuerAnsicht({ wert }: { readonly wert: string | null }) {
   const pixelrahmen = usePixelrahmen();
   // Name des Helden vor dem ersten Start; leer heißt „Du“.
   const [neuerName, setzeNeuenNamen] = useState("");
+  // Musik und Geräusche des Abenteuers (ton/): Einstellungen anwenden, beim Verlassen ausblenden.
+  useAbenteuerton();
 
   /** Ein eingegebener Name, bereinigt; leer → „Du“. */
   const bereinigt = (name: string) =>

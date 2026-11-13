@@ -80,7 +80,10 @@ function rueckkehr(welt, st, frist, h) {
       if (!s && !(q.haupt && bereit(st, q))) continue;
       ziele.push(q.ort);
       st.zielOrte = new Set([q.ort, ...nachbarorte(welt, [q.ort])]);
-      const startkarte = q.start?.karte || ort.karten[0].kennung;
+      // Die Startkarte nur, wenn sie im Zielort liegt: Finch-Jagd und verlorene Seiten beginnen
+      // auf der Landstraße bei Maple Falls, ihre Schritte liegen aber auf Weg 12 und in Capital.
+      const imOrt = q.start?.karte && welt.karteZuOrt[q.start.karte]?.kennung === q.ort;
+      const startkarte = imOrt ? q.start.karte : ort.karten[0].kennung;
       betrete(welt, st, startkarte);
       // Quests mit mehreren Partien (drei Sets Schach960) brauchen je Partie mehrere Anläufe.
       bleibe(welt, st, h, startkarte, RUECKKEHR_SCHRITTE, () =>

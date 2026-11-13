@@ -22,6 +22,7 @@ EXTERNAL beginnePartie(begegnung)
 EXTERNAL gibFund(kennung)
 
 VAR held = "Du"
+VAR victorGelacht = false
 VAR victorKriseGesehen = false
 VAR victorBergstationGesprochen = false
 VAR victorSeiteGegeben = false
@@ -82,8 +83,7 @@ Du nimmst die Figuren herunter, eine nach der anderen, und merkst dir, wo sie hi
 
 === victor_seite ===
 ~ victorSeiteGegeben = true
-Irgendwann, mitten in der Partie, hat er gelacht. Zum ersten Mal. Über etwas ganz Gewöhnliches, das er nicht gesehen hat. #sprecher:erzaehler #musik:victor.warm
-Das ist so dumm. Das ist so schön dumm. #sprecher:victor #stimmung:lacht
+{victorGelacht:Er hat gelacht, mitten in der Partie. Zum ersten Mal.|Du weißt nicht, wer gewonnen hat. Es ist nicht wichtig. Victor sieht leichter aus als vorher.} #sprecher:erzaehler #musik:victor.warm
 Ein Hale, der lächelt. Ich habe zu lange gewartet, um das zu sehen. #sprecher:ambrose #stimmung:still
 * [Ihm zusehen]
 - Die Sonne kommt unter die Wolken, alles wird rot. #sprecher:erzaehler
@@ -146,4 +146,13 @@ Das ist schlecht. Warum hab ich das gemacht? #sprecher:victor
 * [„Weiß ich nicht. Wie fühlt es sich an?“]
 - Er denkt nach, ernsthaft, mit schiefem Kopf. #sprecher:erzaehler
 Komisch. Luftig. #sprecher:victor #stimmung:lacht
+-> END
+
+// Gutachten M2.9: Victors erstes Lachen bei einer Gabel in der freien Partie (Merkmal gabel).
+=== victor_gabel ===
+{victorGelacht: -> END}
+~ victorGelacht = true
+Victor starrt auf das Brett. Und dann lacht er. #sprecher:erzaehler #musik:aus
+Eine Gabel. Eine ganz gewöhnliche Gabel! Ich hab die nicht gesehen! #sprecher:victor #stimmung:lacht
+Das ist so dumm. Das ist so schön dumm. #sprecher:victor #stimmung:lacht
 -> END

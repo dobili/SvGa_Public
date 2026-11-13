@@ -516,6 +516,21 @@
       ]
     },
     {
+      "kennung": "desertSprings.erinnerung1858",
+      "gegner": "desertSprings.hale1858",
+      "farbe": "white",
+      "format": {
+        "art": "stellungsduell",
+        "zuege": 12,
+        "mindestvorteil": 1.0
+      },
+      "startstellung": {
+        "art": "fen",
+        "fen": "r2r1bk1/pp1q1ppp/1np5/3p2N1/3P4/1PPB4/P4PPP/3Q2K1 w - - 0 26"
+      },
+      "kartenErlaubt": false
+    },
+    {
       "kennung": "summitCity.clubkampf",
       "gegner": "summitCity.ward",
       "farbe": "zufall",

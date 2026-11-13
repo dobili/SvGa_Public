@@ -1782,8 +1782,9 @@
         {
           "text": "quest.erinnerung1858.schritt1",
           "ereignis": {
-            "art": "aufgaben",
-            "runde": "desertSprings.erinnerung1858"
+            "art": "partie",
+            "begegnung": "desertSprings.erinnerung1858",
+            "ausgang": ["sieg", "remis", "niederlage"]
           },
           "wirkungen": [
             {

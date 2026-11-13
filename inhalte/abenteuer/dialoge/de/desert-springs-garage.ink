@@ -4,9 +4,9 @@
 // Szenen der Bibel (Abschnitt 20): 75 Aufgabenreihen (Runden desertSprings.reiheTomas,
 // desertSprings.reiheDot), 78 Clubkampf (Begegnung desertSprings.clubkampf, Karten erlaubt, der
 // Mentor-Zug ist nach der Versöhnung wieder frei), Dots Hinweis auf das Antiquariat (Szene 76).
-// Szene 77 Erinnerung 1858 (Runde desertSprings.erinnerung1858, Quest gleichen Namens): Ambrose
-// erzählt Mira am Abend nach dem Clubkampf von seiner letzten Partie gegen Hale. Weil die Sammlung
-// vor 1866 keine freie Partie mehr hat, rät der Held Morphys Züge aus Bird–Morphy 1858 (Bericht).
+// Szene 77 Erinnerung 1858 (Begegnung desertSprings.erinnerung1858, Quest gleichen Namens): die
+// erfundene siebte Matchpartie gegen Hale als Stellungsduell nach Hales stillem Läuferzug
+// (Entscheidung 13.11.2026; Stellung mit der Engine gebaut, Weiß etwa +1,9, nur Lxh7+ hält).
 // Einstiege wie in orte.json: mira, tomas, dot.
 //
 // Der Club beginnt erst nach der Versöhnung (Hauptquest desertSprings.versoehnung, streng der
@@ -28,7 +28,9 @@ VAR clubkampfDesertSpringsNadel = 0
 VAR tomasGetroffen = false
 VAR dotGetroffen = false
 VAR dotOkoroErzaehlt = false
-VAR erinnerung1858Bestanden = false
+// Kapitel 45: Stellungsduell ab Hales Läuferzug (Begegnung desertSprings.erinnerung1858, Gegner
+// desertSprings.hale1858); den Ausgang setzt die Hülle (R42).
+VAR ausgangDesertSpringsErinnerung1858 = ""
 VAR erinnerung1858Besprochen = false
 // Kapitel 43 (Roman): Dot und Margaret, Tomás und der Dosenpokal, Miras „Weil ich kann“.
 VAR miraGarageGesehen = false
@@ -54,7 +56,7 @@ VAR margaretErzaehlt = false
 {
 - not versoehnungGesehen: -> garage_wartet
 - nadelDesertSprings > clubkampfDesertSpringsNadel: -> mira_nach_sieg
-- erinnerung1858Bestanden and not erinnerung1858Besprochen: -> mira_nach_erinnerung
+- ausgangDesertSpringsErinnerung1858 != "" and ausgangDesertSpringsErinnerung1858 != "abgebrochen" and not erinnerung1858Besprochen: -> mira_nach_erinnerung
 - not (reiheTomasBestanden and reiheDotBestanden): -> mira_reihe_offen
 - nadelDesertSprings == 0 and ausgangDesertSpringsClubkampf == "niederlage": -> mira_nach_niederlage
 - nadelDesertSprings == 0: -> mira_clubkampf
@@ -152,7 +154,7 @@ Ambrose sagt nichts. Aber er sieht dich an, wie er dich noch nie angesehen hat. 
 
 === mira_alltag ===
 {~Im Canyon antwortet das Echo. Am Brett nicht. Deshalb mag ich das Brett.|Opfer sind schöner als Recht haben.|Warum hat das Huhn die Straße überquert? Um den König zu schützen.} #sprecher:mira
-+ {nadelDesertSprings > 0 and not erinnerung1858Bestanden} [„Ambrose, zeig sie mir. Die siebte von 1858.“]
++ {nadelDesertSprings > 0 and not erinnerung1858Besprochen} [„Ambrose, zeig sie mir. Die siebte von 1858.“]
     -> mira_erinnerung
 + {nadelDesertSprings > 0 and nadelDesertSprings < 3} [„Revanche um eine bessere Nadel?“]
     Jetzt. #sprecher:mira
@@ -179,8 +181,9 @@ Bemerkenswert unnötig. #sprecher:ambrose #stimmung:still
 Er zeigt dir, was er danach spielte. Ein Schach, das nichts bringt. Ein Rückzug. Ein zweites Schach. #sprecher:erzaehler #klang:figuren_kippen
 Ich wusste, dass ich mich verrechnet hatte. Dass alle es gesehen hatten. Ich wollte nur noch, dass es vorbei ist. #sprecher:ambrose #pause:2 #bild:aus #erinnerung:aus
 Du siehst auf die Stellung nach dem Läuferzug. Bevor er fahrig wurde. Du zählst. #sprecher:erzaehler
-* [Die Stellung durchspielen]
-    ~ beginneAufgaben("desertSprings.erinnerung1858")
+* [Die Stellung von 1858 spielen]
+    Du spielst Weiß. Gegen Hale, wie er damals saß. #sprecher:erzaehler
+    ~ beginnePartie("desertSprings.erinnerung1858")
     -> END
 * [„Ein andermal.“]
     Ich habe hundertsechzig Jahre gewartet. Ein Abend mehr schadet nicht. #sprecher:ambrose

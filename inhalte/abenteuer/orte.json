@@ -92,6 +92,13 @@
       ],
       "figuren": [
         {
+          "kennung": "mapleFalls.ambrose",
+          "name": "figur.ambrose.name",
+          "sprite": "figuren/ambrose.png",
+          "dialog": "maple-falls-dachboden.ambrose",
+          "geist": true
+        },
+        {
           "kennung": "mapleFalls.mutter",
           "name": "figur.mutter.name",
           "sprite": "figuren/mutter.png",
@@ -140,40 +147,40 @@
         {
           "kennung": "mapleFalls.hector",
           "name": "figur.hector.name",
-          "sprite": "figuren/kellner.png",
+          "sprite": "figuren/hector.png",
           "dialog": "maple-falls-diner.hector"
         },
         {
           "kennung": "mapleFalls.calloway",
           "name": "figur.calloway.name",
-          "sprite": "figuren/statist-11.png",
+          "sprite": "figuren/calloway.png",
           "dialog": "maple-falls-aussen.calloway"
         },
         {
           "kennung": "mapleFalls.carla",
           "name": "figur.carla.name",
-          "sprite": "figuren/statist-26.png",
+          "sprite": "figuren/carla.png",
           "dialog": "maple-falls-aussen.carla",
           "wenn": "nicht endeAkt1Gesehen"
         },
         {
           "kennung": "mapleFalls.carlaSchule",
           "name": "figur.carla.name",
-          "sprite": "figuren/statist-26.png",
+          "sprite": "figuren/carla.png",
           "dialog": "maple-falls-aussen.carla",
           "wenn": "endeAkt1Gesehen und nadelIronwood == 0"
         },
         {
           "kennung": "mapleFalls.carlaClub",
           "name": "figur.carla.name",
-          "sprite": "figuren/statist-26.png",
+          "sprite": "figuren/carla.png",
           "dialog": "maple-falls-aussen.carla",
           "wenn": "nadelIronwood > 0"
         },
         {
           "kennung": "mapleFalls.owen",
           "name": "figur.owen.name",
-          "sprite": "figuren/statist-07.png",
+          "sprite": "figuren/owen.png",
           "dialog": "maple-falls-aussen.calloway",
           "wenn": "endeAkt1Gesehen"
         },
@@ -558,26 +565,38 @@
         },
         {
           "kennung": "cedarCreek.zwillinge",
-          "name": "figur.zwillinge.name",
-          "sprite": "figuren/statist-05.png",
+          "name": "figur.ivy.name",
+          "sprite": "figuren/ivy.png",
+          "dialog": "cedar-creek-aussen.zwillinge"
+        },
+        {
+          "kennung": "cedarCreek.jonah",
+          "name": "figur.jonah.name",
+          "sprite": "figuren/jonah.png",
           "dialog": "cedar-creek-aussen.zwillinge"
         },
         {
           "kennung": "cedarCreek.kettering",
           "name": "figur.kettering.name",
-          "sprite": "figuren/statist-14.png",
+          "sprite": "figuren/kettering.png",
           "dialog": "cedar-creek-aussen.kettering"
         },
         {
           "kennung": "cedarCreek.zwillingeDrinnen",
-          "name": "figur.zwillinge.name",
-          "sprite": "figuren/statist-05.png",
+          "name": "figur.ivy.name",
+          "sprite": "figuren/ivy.png",
+          "dialog": "cedar-creek-bibliothek.zwillinge"
+        },
+        {
+          "kennung": "cedarCreek.jonahDrinnen",
+          "name": "figur.jonah.name",
+          "sprite": "figuren/jonah.png",
           "dialog": "cedar-creek-bibliothek.zwillinge"
         },
         {
           "kennung": "cedarCreek.dunmore",
           "name": "figur.dunmore.name",
-          "sprite": "figuren/statist-13.png",
+          "sprite": "figuren/dunmore.png",
           "dialog": "cedar-creek-drechslerei.dunmore"
         }
       ],
@@ -846,27 +865,27 @@
         {
           "kennung": "wegMapleCedar.ada",
           "name": "figur.ada.name",
-          "sprite": "figuren/statist-11.png",
+          "sprite": "figuren/ada.png",
           "dialog": "weg-maple-cedar.ada"
         },
         {
           "kennung": "wegMapleCedar.tessa",
           "name": "figur.tessa.name",
-          "sprite": "figuren/statist-23.png",
+          "sprite": "figuren/joggerin.png",
           "dialog": "weg-maple-cedar.tessa",
           "wenn": "nadelCedarCreek == 0"
         },
         {
           "kennung": "wegMapleCedar.tessaFluss",
           "name": "figur.tessa.name",
-          "sprite": "figuren/statist-23.png",
+          "sprite": "figuren/joggerin.png",
           "dialog": "weg-maple-cedar.tessa",
           "wenn": "nadelCedarCreek > 0 und nadelRiverton == 0"
         },
         {
           "kennung": "wegMapleCedar.tessaZedern",
           "name": "figur.tessa.name",
-          "sprite": "figuren/statist-23.png",
+          "sprite": "figuren/joggerin.png",
           "dialog": "weg-maple-cedar.tessa",
           "wenn": "nadelRiverton > 0 und nadelIronwood == 0"
         }

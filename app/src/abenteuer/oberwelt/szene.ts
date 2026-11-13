@@ -30,6 +30,7 @@ import {
 } from "./figurbilder";
 import { ladeMoebelbilder, stelleMoebelAuf, type Moebel } from "./moebel";
 import { setzeSitzend } from "./figurensitz";
+import { zeigeAlsGeist } from "./geistfigur";
 import { EINGABEPAUSE_MS, gegenrichtung, pausenschritt } from "./eingabepause";
 import { baueSperrkarte } from "./sperrkarte";
 import type { Toenung } from "./toenung";
@@ -92,6 +93,8 @@ export interface Szenendaten {
   readonly heldfigur?: string | null;
   /** Bögen der Figuren dieser Karte im Format von LimeZu, nach Objektname. */
   readonly figurenbilder?: Readonly<Record<string, string>>;
+  /** Figuren mit geist: true (geistfigur.ts, regeln/geist.ts), nach Objektname. */
+  readonly geister?: ReadonlySet<string>;
   /** Möbel und Schmuck der Karte (moebel.ts). */
   readonly moebel?: readonly Moebel[];
   /**
@@ -99,21 +102,17 @@ export interface Szenendaten {
    * Kachelebenen nur noch für die Kollision gebraucht und nicht gezeichnet.
    */
   readonly hintergrund?: string | null;
-  /** Name des Kachelsatzes in der Tiled-Datei. */
-  readonly kachelsatz: string;
+  readonly kachelsatz: string; // Name des Kachelsatzes in der Tiled-Datei
   readonly start: Weltposition;
   /** Namen der Auslöser, die Übergänge sind: Sie lösen erst beim Gehen in den Durchgang aus. */
   readonly uebergaenge?: readonly string[];
   readonly melder: Melder;
-  /** Faktor auf das Lauftempo (Fahrrad draußen: 2; sonst 1). */
-  readonly tempofaktor?: number;
+  readonly tempofaktor?: number; // Faktor auf das Lauftempo (Fahrrad draußen: 2; sonst 1)
   /** Bögen der Statisten und Tiere (belebungsschicht.ts), Pfad im Paket → Adresse. */
   readonly belebungsbilder?: Belebungsbilder;
-  /** Stunde für die Tageszeit der Statisten (`wann`); ohne Angabe die Uhr des Geräts. */
-  readonly stunde?: number;
-  /** Tönung der Karte (toenung.ts) und ob der Held eine Laterne trägt (Lichtkreis bei „dunkel“). */
-  readonly toenung?: Toenung | null;
-  readonly laterne?: boolean;
+  readonly stunde?: number; // Stunde für die Statisten (`wann`); sonst die Uhr des Geräts
+  readonly toenung?: Toenung | null; // Tönung der Karte (toenung.ts)
+  readonly laterne?: boolean; // Der Held trägt eine Laterne (Lichtkreis bei „dunkel“)
   /** Winterkarte (winter.ts): Möbel umfärben, Schnee fallen lassen; sonst Teilchen der Karte (T8). */
   readonly winter?: boolean;
   readonly teilchen?: Teilchenart | null;
@@ -252,6 +251,7 @@ export class Oberweltszene extends Phaser.Scene {
       figur.setName(a.name);
       if (eigenes) stelleAufKachel(figur, KACHEL);
       if (eigenes && a.sitzt) setzeSitzend(figur, a.sitzt);
+      if (this.daten.geister?.has(a.name)) zeigeAlsGeist(this, figur);
       figur.setDepth(figur.y);
     }
     this.physics.add.collider(held, gruppe);

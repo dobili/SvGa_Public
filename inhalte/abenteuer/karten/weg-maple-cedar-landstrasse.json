@@ -11089,6 +11089,11 @@
        "value": "35,12"
       },
       {
+       "name": "bild",
+       "type": "string",
+       "value": "otis"
+      },
+      {
        "name": "tun",
        "type": "string",
        "value": "Otis prüft das reife Korn am Feldrand"

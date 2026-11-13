@@ -20,6 +20,10 @@ K = 16
 STATISTEN = 40
 VORN = 3  # Reihenfolge der Standbilder: rechts, oben, links, unten
 SITZ_RAHMEN = ("rechts", "oben", "links", "unten")
+# Zeile der Füße im 32er-Rahmen (app/skripte/figurenbogen.mjs, FUSSZEILE).
+FUSSZEILE = 30
+# Richtungen der PixelLab-Exporte in derselben Ordnung.
+PIXELLAB = ("east", "north", "west", "south")
 SITZ_HUB = 6  # sitzende Statisten stehen so viel höher (oberwelt/sitzrichtung.ts)
 # Arten und Wortstämme wie in der App (app/src/abenteuer/oberwelt/tierarten.json, eine Quelle).
 _TIERARTEN = json.loads(
@@ -59,13 +63,40 @@ def tierart(name: str) -> str | None:
 
 
 def statistenbogen(name: str, bild: str | None = None) -> str:
-    """Bogen eines Statisten: eigenes Bild („statist-07“, wie in der App), sonst fest nach dem Namen.
+    """Bogen eines Statisten: eigenes Bild („statist-07“ oder Name einer Figur wie „otis“, wie in der
+    App), sonst fest nach dem Namen.
 
     Beispiel: ``statistenbogen("schuelerin", "statist-07")`` → „figuren/statist-07.png“.
     """
-    if bild and bild.startswith("statist-"):
+    if bild:
         return f"figuren/{bild}.png"
     return f"figuren/statist-{zlib.crc32(name.encode()) % STATISTEN + 1:02d}.png"
+
+
+def rgba(pfad: Path) -> Image.Image:
+    """Öffnet ein Bild als RGBA (``oeffne`` für teile und figurbild)."""
+    return Image.open(pfad).convert("RGBA")
+
+
+def figurbild(privat: Path, bogen: str, rahmen: int, oeffne) -> Image.Image | None:
+    """Standbild einer Figur in Blickrichtung ``rahmen`` (Ordnung wie SITZ_RAHMEN).
+
+    Zuerst der PixelLab-Export ``figuren-neu/<name>/rotations/<richtung>.png`` (32 × 32, wie der
+    Paketbau in app/skripte/figurenbogen.mjs), sonst der alte Bogen ``figuren/<name>.png`` (16 × 32),
+    sonst None. Beispiel: „figuren/ada.png“, 3 → figuren-neu/ada/rotations/south.png.
+    """
+    neu = privat / "spiel" / "figuren-neu" / Path(bogen).stem / "rotations" / f"{PIXELLAB[rahmen]}.png"
+    if neu.exists():
+        # Füße auf FUSSZEILE wie im Paketbau (Kinder stehen im Export oft höher).
+        bild = oeffne(neu)
+        umriss = bild.getbbox()
+        if not umriss:
+            return None
+        gesetzt = Image.new("RGBA", bild.size)
+        gesetzt.paste(bild, (0, FUSSZEILE + 1 - umriss[3]))
+        return gesetzt
+    alt = privat / "spiel" / bogen
+    return oeffne(alt).crop((rahmen * K, 0, (rahmen + 1) * K, 2 * K)) if alt.exists() else None
 
 
 def teile(szene: dict, privat: Path, oeffne) -> list[tuple[int, int, int, object]]:
@@ -79,33 +110,44 @@ def teile(szene: dict, privat: Path, oeffne) -> list[tuple[int, int, int, object
     for b in szene.get("belebung", []):
         x, y = b["feld"][0] * K, b["feld"][1] * K
         if b.get("typ") == "statist":
-            bogen = statistenbogen(b["name"], b.get("eigenschaften", {}).get("bild"))
-            pfad, (breite, hoehe) = privat / "spiel" / bogen, (16, 32)
-        else:
-            art = tierart(b["name"])
-            if art is None:
-                continue
-            pfad, (breite, hoehe) = privat / "spiel" / "tiere" / f"{art}.png", TIERBILDER[art]
-        if not pfad.exists():
+            ergebnis += _statist(b, privat, oeffne, x, y)
             continue
-        sichtbar = hoehe
-        if b.get("eigenschaften", {}).get("verhalten") == "schwimmen":
-            sichtbar = round(hoehe * WASSERLINIE)
-        rahmen = VORN if b.get("typ") == "statist" else SEITE
-        # Sitzende Statisten (R020): Standbild ihrer Blickrichtung, SITZ_HUB höher (wie die App).
-        sitzt = b.get("eigenschaften", {}).get("sitzt") if b.get("typ") == "statist" else None
-        sitzt = "unten" if sitzt == "ja" else sitzt
-        if sitzt in SITZ_RAHMEN:
-            rahmen = SITZ_RAHMEN.index(sitzt)
-        bild = oeffne(pfad).crop((rahmen * breite, 0, (rahmen + 1) * breite, sichtbar))
-        massstab = 1 if b.get("typ") == "statist" else MASSSTAB.get(art, 1)
+        art = tierart(b["name"])
+        pfad = privat / "spiel" / "tiere" / f"{art}.png"
+        if art is None or not pfad.exists():
+            continue
+        breite, hoehe = TIERBILDER[art]
+        sichtbar = _sichtbar(b, hoehe)
+        bild = oeffne(pfad).crop((SEITE * breite, 0, (SEITE + 1) * breite, sichtbar))
+        massstab = MASSSTAB.get(art, 1)
         if massstab != 1:
             breite, sichtbar = round(breite * massstab), round(sichtbar * massstab)
             bild = bild.resize((breite, sichtbar), Image.Resampling.NEAREST)
         anzahl = 3 if any(w in b["name"].lower() for w in SCHAR) else 1
         for i in range(anzahl):
             dx, dy = i * (breite // 2 + 4), (i % 2) * 6
-            # Schwimmer sinken um den abgeschnittenen Teil tiefer ins Wasser.
-            hub = SITZ_HUB if sitzt in SITZ_RAHMEN else 0
-            ergebnis.append((y + K + dy, x + dx, y + K - sichtbar + dy - hub, bild))
+            ergebnis.append((y + K + dy, x + dx, y + K - sichtbar + dy, bild))
     return ergebnis
+
+
+def _sichtbar(b: dict, hoehe: int) -> int:
+    """Sichtbare Höhe: Schwimmer (``verhalten: schwimmen``) nur bis zur Wasserlinie (Regel 10.55)."""
+    if b.get("eigenschaften", {}).get("verhalten") == "schwimmen":
+        return round(hoehe * WASSERLINIE)
+    return hoehe
+
+
+def _statist(b: dict, privat: Path, oeffne, x: int, y: int) -> list[tuple[int, int, int, object]]:
+    """Bildteil eines Statisten: Standbild von vorn (sitzend in Blickrichtung, SITZ_HUB höher, R020),
+    unten mittig auf seinem Feld; PixelLab 32 × 32 oder LimeZu 16 × 32 (figurbild)."""
+    eigenschaften = b.get("eigenschaften", {})
+    sitzt = "unten" if eigenschaften.get("sitzt") == "ja" else eigenschaften.get("sitzt")
+    rahmen = SITZ_RAHMEN.index(sitzt) if sitzt in SITZ_RAHMEN else VORN
+    bogen = statistenbogen(b["name"], eigenschaften.get("bild"))
+    bild = figurbild(privat, bogen, rahmen, oeffne)
+    if bild is None:
+        return []
+    sichtbar = _sichtbar(b, bild.height)
+    bild = bild.crop((0, 0, bild.width, sichtbar))
+    hub = SITZ_HUB if sitzt in SITZ_RAHMEN else 0
+    return [(y + K, x + (K - bild.width) // 2, y + K - sichtbar - hub, bild)]

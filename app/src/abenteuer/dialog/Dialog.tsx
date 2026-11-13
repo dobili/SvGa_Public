@@ -7,7 +7,8 @@
  * (app/blattstapel.ts). Sprecher „erzaehler“ hat keinen Namen. Eine Zeile mit `#pause` sperrt
  * „Weiter“ für ihre Dauer (dialog/dialogtakt.ts, T3); `#bild:kennung` zeigt ein Bild groß über der
  * Zeile (dialog/Grossansicht.tsx, T7). `#erscheint` blendet das Porträt ein, `#geist` zeigt es halb
- * durchsichtig (T9); `#erinnerung` bis `#erinnerung:aus` zeigt den Dialog und die Karte in Sepia (T10); Bühnenanweisungen für die Karte (`#licht`, `#figur`) gehen an `beiZeile`.
+ * durchsichtig (T9); Figuren mit geist: true (Ambrose) sind sonst leicht durchsichtig, außer in
+ * Erinnerungen (regeln/geist.ts); `#erinnerung` bis `#erinnerung:aus` zeigt den Dialog und die Karte in Sepia (T10); Bühnenanweisungen für die Karte (`#licht`, `#figur`) gehen an `beiZeile`.
  * Abhängigkeiten: dialog/geschichte.ts, dialog/dialogtakt.ts, texte/texte.ts, app/blattstapel.ts.
  */
 import { useEffect, useState } from "react";
@@ -18,6 +19,8 @@ import { pausendauer } from "./dialogtakt";
 import { Grossansicht } from "./Grossansicht";
 import { bildpfad } from "./grossbild";
 import { Portraet } from "./Portraet";
+import { erscheinungDesPortraets } from "../regeln/geist";
+import { useGeistsprecher } from "./useGeistsprecher";
 import { Geschichte, type Dialogschritt, type Dialogvariablen, type Wirkungen } from "./geschichte";
 
 const ERZAEHLER = "erzaehler";
@@ -29,13 +32,6 @@ const ERZAEHLER = "erzaehler";
 function erinnerungNach(vorher: boolean, s: Dialogschritt): boolean {
   if (s.art !== "zeile" || s.zeile.tags.erinnerung === undefined) return vorher;
   return s.zeile.tags.erinnerung !== "aus";
-}
-
-/** Erscheinung des Porträts (T9): einblenden (`#erscheint`) oder halb durchsichtig (`#geist`). */
-function erscheinung(tags: Readonly<Record<string, string>> | undefined): string | undefined {
-  if (tags?.geist) return "geist";
-  if (tags?.erscheint) return "erscheint";
-  return undefined;
 }
 
 export function Dialog({
@@ -74,6 +70,7 @@ export function Dialog({
   const dauerVon = (s: Dialogschritt) => (s.art === "zeile" ? pausendauer(s.zeile.tags) : 0);
   const [wartet, setzeWartet] = useState(() => dauerVon(schritt) > 0);
   const [erinnerung, setzeErinnerung] = useState(() => erinnerungNach(false, schritt));
+  const geister = useGeistsprecher();
   useEffect(() => {
     // Musik, Geräusche und Klänge der Zeile (#musik, #geraeusch, #klang; ton/tonregie.ts).
     if (letzteZeile?.art === "zeile") {
@@ -139,7 +136,10 @@ export function Dialog({
     >
       {bild && <Grossansicht pfad={bild} />}
       {sprecher !== ERZAEHLER && (
-        <div className="abenteuer-dialog-kopf" data-erscheinung={erscheinung(zeile?.tags)}>
+        <div
+          className="abenteuer-dialog-kopf"
+          data-erscheinung={erscheinungDesPortraets(zeile?.tags, sprecher, geister, erinnerung)}
+        >
           <Portraet
             sprecher={sprecher}
             stimmung={zeile?.tags.stimmung ?? null}

@@ -4589,7 +4589,7 @@
     },
     {
      "id": 20,
-     "name": "limoverkaeuferin",
+     "name": "patel",
      "type": "statist",
      "x": 432,
      "y": 192,
@@ -4598,6 +4598,11 @@
      "rotation": 0,
      "visible": true,
      "properties": [
+      {
+       "name": "bild",
+       "type": "string",
+       "value": "patel"
+      },
       {
        "name": "tun",
        "type": "string",

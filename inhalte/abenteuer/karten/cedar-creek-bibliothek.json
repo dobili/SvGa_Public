@@ -1587,8 +1587,8 @@
      "id": 15,
      "name": "rentnerZeitung",
      "type": "statist",
-     "x": 256,
-     "y": 208,
+     "x": 320,
+     "y": 192,
      "width": 16,
      "height": 16,
      "rotation": 0,
@@ -1597,7 +1597,7 @@
       {
        "name": "tun",
        "type": "string",
-       "value": "blättert in den Zeitungen"
+       "value": "liest am Lesetisch Zeitung"
       },
       {
        "name": "wann",
@@ -1608,6 +1608,11 @@
        "name": "sagt",
        "type": "string",
        "value": "statist.cedarCreek.bibliothek.rentnerZeitung"
+      },
+      {
+       "name": "sitzt",
+       "type": "string",
+       "value": "unten"
       }
      ]
     },

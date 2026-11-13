@@ -26,6 +26,7 @@ function eintrag(typ: "statist" | "tier", verhalten: Tierverhalten = "sitzen"): 
     zeigt: null,
     bild: null,
     verhalten,
+    sitzt: null,
   };
 }
 

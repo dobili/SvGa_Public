@@ -55,6 +55,12 @@ Für Ambrose: Figur farbig erzeugen (natürliche, blasse Haut), das Geisterhafte
    (neutral, lächelt, nachdenklich, überrascht, bitter, lacht), 3 Spalten × 2 Zeilen, einfarbig
    hellgrüner Hintergrund. Der Hauptchat schneidet und rechnet auf 64×64 herunter.
 5. Nebenfiguren mit wenig Text brauchen nur das neutrale Porträt und eines mit Lächeln.
+6. Figuren, die irgendwo sitzen (Schachspieler, Leser, Gäste; Wunsch des Autors R020):
+   zusätzlich „Template motion“ → Sitting für dieselben vier Richtungen. Im Export heißt der
+   Ordner `animations/Sitting/<richtung>/` (`frame_000.png` …); der Paketbau nimmt je Richtung das
+   erste Bild und legt die vier Sitzbilder als dritte Reihe in den Bogen (ab Rahmen 48, Ordnung
+   rechts, oben, links, unten). Ohne Sitzbilder zeigt die App das Standbild der Richtung sechs
+   Pixel höher, sodass die Figur hinter dem Tisch zu sitzen scheint.
 
 ## Kosten
 
@@ -63,6 +69,15 @@ Animation). Für rund 100 Figuren reicht die Gratisprobe nicht; das Abo kostet 2
 (Entscheidung des Autors, wann).
 
 ## Technik
+
+- **Sitzen in den Szenen:** Figur `{ "name": …, "feld": …, "sitzt": "unten" }` (oder `true` für
+  unten) auf einem Stuhl-, Bank-, Sessel- oder Sofafeld; Statist mit `"eigenschaften": { "sitzt":
+  "unten" }`, er läuft dann nicht. Kartenbau und Regel 10.55 akzeptieren das
+  (`pipeline/abenteuer/kartenbau.py`, `sitzrichtung`), die App liest es in
+  `app/src/abenteuer/oberwelt/sitzrichtung.ts`.
+- **Kleinere Leinwand (jüngere Kinder 24×24):** Der Paketbau liest die Leinwand aus
+  `metadata.json` und füllt jedes Bild unten bündig und mittig auf 32×32 auf
+  (`app/skripte/figurenbogen.mjs`).
 
 Die App zeigt das neue Format mit Fußpunkt unten Mitte; Kollision bleibt bei den Füßen. Umsetzung
 bei mittel-2 (Auftrag 13.11.2026), mit LimeZu-Figur als Rückfall je Figur.

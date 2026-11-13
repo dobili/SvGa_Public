@@ -135,6 +135,25 @@ def sperrfelder(stueck: dict) -> set[tuple[int, int]]:
     return {(x0 + a, y0 + b) for a, b in maskenfelder(stueck)}
 
 
+# Möbel, auf denen Figuren und Statisten sitzen dürfen (Name enthält eines dieser Wörter).
+SITZMOEBEL = ("stuhl", "bank", "sessel", "sofa", "hocker", "couch")
+RICHTUNGEN = ("oben", "unten", "links", "rechts")
+
+
+def ist_sitzmoebel(name: str) -> bool:
+    """Ist das Möbel ein Sitzplatz? Beispiel: „cc4StuhlVorn“ → ja, „cc5Tisch“ → nein."""
+    return any(w in name.lower() for w in SITZMOEBEL)
+
+
+def sitzrichtung(eintrag: dict) -> str | None:
+    """Blickrichtung einer sitzenden Figur: ``"sitzt": true`` heißt nach unten, sonst die
+    angegebene Richtung (oben, unten, links, rechts); ohne Angabe None."""
+    wert = eintrag.get("sitzt")
+    if wert is True:
+        return "unten"
+    return wert if wert in RICHTUNGEN else None
+
+
 def pruefe(zeilen: list[str], gesetzt: list[dict], punkte: list[dict], aussen: bool = False) -> list[str]:
     """Rand, Wände, Überlappungen und zugestellte Auslöser.
 
@@ -164,8 +183,10 @@ def pruefe(zeilen: list[str], gesetzt: list[dict], punkte: list[dict], aussen: b
             belegt[feld] = s["name"]
     for p in punkte:
         feld = tuple(p["feld"])
-        # Gegenstände zum Ansehen dürfen auf einem Möbel liegen (man steht davor, wie beim Brett).
-        if feld in belegt and not p.get("auf_moebel"):
+        # Gegenstände zum Ansehen dürfen auf einem Möbel liegen (man steht davor, wie beim Brett);
+        # eine sitzende Figur sitzt auf einem Stuhl, einer Bank oder einem Sofa.
+        sitzplatz = sitzrichtung(p) and feld in belegt and ist_sitzmoebel(belegt[feld])
+        if feld in belegt and not p.get("auf_moebel") and not sitzplatz:
             befunde.append(f"{p['name']} ist von {belegt[feld]} zugestellt")
     return befunde
 
@@ -203,7 +224,10 @@ def tiled(szene: dict, zeilen: list[str], gesetzt: list[dict], vorlage: dict) ->
         eig = [{"name": k, "type": "string", "value": v} for k, v in a.get("eigenschaften", {}).items()]
         objekt(a["name"], "ausloeser", a["feld"][0] * K, a["feld"][1] * K, eig=eig)
     for f in szene.get("figuren", []):
-        objekt(f["name"], "figur", f["feld"][0] * K, f["feld"][1] * K)
+        # Sitzende Figur (Wunsch des Autors R020): Blickrichtung als Eigenschaft „sitzt“.
+        sitzt = sitzrichtung(f)
+        eig = [{"name": "sitzt", "type": "string", "value": sitzt}] if sitzt else None
+        objekt(f["name"], "figur", f["feld"][0] * K, f["feld"][1] * K, eig=eig)
     # Statisten und Tiere (Belebung, Weltbeschreibung 4a) mit ihren Laufwegen.
     for b in szene.get("belebung", []):
         eig = [{"name": k, "type": "string", "value": v} for k, v in b.get("eigenschaften", {}).items()]

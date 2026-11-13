@@ -17,6 +17,10 @@
  *   wird überall entfernt, damit alle Figuren gleich aussehen; einen eigenen Schatten gibt es nicht.
  * - Fehlt eine Laufrichtung, wird links aus rechts gespiegelt (und umgekehrt); sonst bleibt das
  *   Standbild stehen. Fehlt ein Standbild, gilt das erste Laufbild oder das Spiegelbild.
+ * - Sitzbilder (Wunsch des Autors R020, Doc 24): Hat der Export `animations/Sitting/<richtung>/`,
+ *   bekommt der Bogen eine dritte Reihe mit vier Sitzbildern ab Rahmen 48 (erstes Bild je
+ *   Richtung, Ordnung wie die Standbilder; fehlende gespiegelt oder das Standbild). Die App
+ *   erkennt die Reihe an der Bogenhöhe (oberwelt/sitzrichtung.ts).
  * Abhängigkeiten: sharp.
  */
 import { existsSync } from "node:fs";
@@ -119,6 +123,9 @@ export function gespiegelt(rahmen) {
 
 /** Namen des Laufordners im Export (PixelLab nennt ihn je nach Fassung so oder so). */
 const LAUFORDNER = ["Walk", "Walking"];
+/** Name des Sitzordners im Export (Doc 24). */
+const SITZORDNER = "Sitting";
+const SITZREIHE = 2;
 
 /** Die Laufbilder einer Richtung (bis zu sechs), oder null. */
 async function laufbilder(ordner, richtung, leinwand) {
@@ -129,6 +136,14 @@ async function laufbilder(ordner, richtung, leinwand) {
   return Promise.all(
     namen.slice(0, LAUFBILDER).map(async (n) => laufrahmen(await roh(join(pfad, n)), leinwand)),
   );
+}
+
+/** Das erste Sitzbild einer Richtung als 32er-Rahmen, oder null. */
+async function sitzbild(ordner, richtung, leinwand) {
+  const pfad = join(ordner, "animations", SITZORDNER, richtung);
+  if (!existsSync(pfad)) return null;
+  const erstes = (await readdir(pfad)).filter((n) => n.endsWith(".png")).sort()[0];
+  return erstes ? laufrahmen(await roh(join(pfad, erstes)), leinwand) : null;
 }
 
 /** Das Standbild einer Richtung als 32er-Rahmen, oder null. */
@@ -159,15 +174,20 @@ async function sammle(ordner) {
     roheDaten[name] = {
       still: await standbild(ordner, name, leinwand),
       lauf: await laufbilder(ordner, name, leinwand),
+      sitz: await sitzbild(ordner, name, leinwand),
     };
   }
+  const mitSitz = RICHTUNGEN.some(({ name }) => roheDaten[name].sitz);
   return RICHTUNGEN.map(({ name, spiegel }) => {
     const eigen = roheDaten[name];
     const partner = spiegel ? roheDaten[spiegel] : null;
     const lauf = eigen.lauf ?? partner?.lauf?.map(gespiegelt) ?? null;
     const still =
       eigen.still ?? (partner?.still ? gespiegelt(partner.still) : null) ?? lauf?.[0] ?? null;
-    return { still, lauf: lauf ?? (still ? Array(LAUFBILDER).fill(still) : null) };
+    const sitz = mitSitz
+      ? (eigen.sitz ?? (partner?.sitz ? gespiegelt(partner.sitz) : null) ?? still)
+      : null;
+    return { still, lauf: lauf ?? (still ? Array(LAUFBILDER).fill(still) : null), sitz };
   });
 }
 
@@ -179,15 +199,19 @@ export async function baueFigurenbogen(ordner) {
   const richtungen = await sammle(ordner);
   if (richtungen.every((r) => !r.still)) return null;
   const leer = Buffer.alloc(RAHMEN * RAHMEN * KANAELE);
-  const bogen = Buffer.alloc(SPALTEN * RAHMEN * 2 * RAHMEN * KANAELE);
+  const reihen = richtungen.some((r) => r.sitz) ? SITZREIHE + 1 : SITZREIHE;
+  const bogen = Buffer.alloc(SPALTEN * RAHMEN * reihen * RAHMEN * KANAELE);
   richtungen.forEach((r, i) => {
     lege(bogen, r.still ?? leer, i, 0);
     (r.lauf ?? []).forEach((rahmen, j) => {
       const nummer = SPALTEN + i * LAUFBILDER + j;
       lege(bogen, rahmen, nummer % SPALTEN, Math.floor(nummer / SPALTEN));
     });
+    if (r.sitz) lege(bogen, r.sitz, i, SITZREIHE);
   });
-  return sharp(bogen, { raw: { width: SPALTEN * RAHMEN, height: 2 * RAHMEN, channels: KANAELE } })
+  return sharp(bogen, {
+    raw: { width: SPALTEN * RAHMEN, height: reihen * RAHMEN, channels: KANAELE },
+  })
     .png()
     .toBuffer();
 }

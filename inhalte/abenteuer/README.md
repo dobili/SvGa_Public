@@ -49,9 +49,13 @@ Hintergrund: `docs/spiel/04_Architektur.md`, Abschnitt 2 und 9.
   Sepia, bis `#erinnerung:aus` oder bis der Dialog endet.
 - Porträtfassungen (T4): `#stimmung:jung|ertappt|riss|alt|lachtOhneSpott|muede` zeigt
   `portraets/<sprecher>-<fassung>.svg` (kebab-case, etwa `mira-lacht-ohne-spott.svg`); fehlt die
-  Datei, die Grundfassung. Andere Stimmungen zeigen immer die Grundfassung. Große Porträts (64 × 64 oder 96 × 96) liegen
-  im privaten Repository unter `portraets/gross/<name>[-<fassung>].webp` (oder `.png`) und gehen
-  vor; das SVG bleibt Rückfall.
+  Datei, die Grundfassung. Andere Stimmungen zeigen immer die Grundfassung. Porträtblätter: je Figur ein Blatt
+  `portraets/blatt/<name>.png` im privaten Repository mit sechs Fassungen à 64 × 64 (3 × 2: neutral,
+  lächelt, nachdenklich, überrascht, bitter, lacht; Ambrose jung als eigenes Blatt
+  `ambrose-jung.png`). Welche Stimmung welches Feld zeigt, steht in `portraetblatt.json`
+  (konfigurierbar, Schema `abenteuer-portraetblatt`). Ein Einzelbild
+  `portraets/gross/<name>[-<fassung>].webp|png` geht dem Blatt vor (Sonderfassungen wie `riss`);
+  das SVG bleibt Rückfall.
 - Tondateien: Die Kennung wird zum Dateinamen (camelCase → kebab-case, ein Punkt bleibt:
   `ambrose.lassMich` → `musik/ambrose.lass-mich.m4a`). Im privaten Repository liegt der Ton von
   Akt 1 direkt in `musik/` und `klang/` (Grundpaket), der Ton der Akte 2 bis 4 in `musik/akt2/` …
@@ -116,6 +120,9 @@ Tipp. Jeder Moment kommt höchstens einmal je Partie.
   `musik` wirken wie die Dialogtags.
 
 ## Aufgabenrunden (`runden.json`)
+
+- `danach` (`datei.knoten`): Ein Dialog, der nach der Runde von selbst startet, sobald die
+  Ergebniskarte geschlossen ist; er kann über Dialogvariablen nach dem Ergebnis verzweigen.
 
 - Eine Runde (Ink: `beginneAufgaben("ort.runde")`) nennt Steller (Figur), Buchübungen (`ueb:…`,
   Teilmenge von `club.aufgaben.buchuebungen` des Ortes), Themen der Trainer (`haengend`, `matt1`,
@@ -193,6 +200,15 @@ Tipp. Jeder Moment kommt höchstens einmal je Partie.
   `grafik/platzhalter.png` (CC0), 4 × 4 Kacheln. Gekaufte Grafik (LimeZu) liegt nur lokal unter
   `app/inhalte-privat/abenteuer/grafik/` (gleiche Dateinamen); der Paketbau nimmt sie, wenn sie da
   ist, sonst zeichnet er die Platzhalter.
+- Figuren aus PixelLab (Entscheidung zum Stil, 13.11.2026): je Figur ein Ordner
+  `figuren-neu/<name>/` im privaten Repository, wie PixelLab ihn exportiert (`rotations/<richtung>.png`
+  32 × 32, `animations/Walk/<richtung>/frame_00N.png` 48 × 48). Der Paketbau
+  (`app/skripte/figurenbogen.mjs`) setzt daraus `figuren32/<name>.png` zusammen: Rahmen 32 × 32 in
+  der Ordnung von LimeZu, Laufbilder um die Mitte auf 32 × 32 zugeschnitten (Füße auf Zeile 30, wie
+  die Standbilder), den Bodenschatten des Exports überall entfernt; fehlt eine Laufrichtung, wird
+  links aus rechts gespiegelt, sonst bleibt das Standbild. `<name>` ist der Name des alten Bogens
+  (`figuren/juno.png` → `figuren-neu/juno/`, der Held `held-0`); wo es keinen neuen gibt, gilt
+  LimeZu. Die Figur ist etwa 28 Pixel hoch, die Kollision bleibt die Kachel der Füße.
 - Beispiel: `karten/maple-falls-dachboden.json` (12 × 10, Auslöser `start`, `brett`, `treppe`),
   erzeugt mit einem kleinen Skript; die Kacheln 1–8 sind Boden, Wand, Kiste, Teppich, Brett,
   Treppe, Lampe, Fenster.

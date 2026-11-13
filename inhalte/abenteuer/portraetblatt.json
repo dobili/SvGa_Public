@@ -1,0 +1,34 @@
+{
+  "schemaVersion": 1,
+  "feldPixel": 64,
+  "spalten": 3,
+  "zeilen": 2,
+  "grundfassung": "neutral",
+  "fassungen": {
+    "neutral": 0,
+    "laechelt": 1,
+    "nachdenklich": 2,
+    "ueberrascht": 3,
+    "bitter": 4,
+    "lacht": 5
+  },
+  "stimmungen": {
+    "froh": "laechelt",
+    "friedlich": "laechelt",
+    "stolz": "laechelt",
+    "lacht": "lacht",
+    "lachtOhneSpott": "lacht",
+    "fern": "nachdenklich",
+    "still": "nachdenklich",
+    "ernst": "nachdenklich",
+    "streng": "nachdenklich",
+    "muede": "nachdenklich",
+    "gebannt": "ueberrascht",
+    "ertappt": "ueberrascht",
+    "traurig": "bitter",
+    "kalt": "bitter",
+    "bitter": "bitter",
+    "wuetend": "bitter",
+    "riss": "bitter"
+  }
+}

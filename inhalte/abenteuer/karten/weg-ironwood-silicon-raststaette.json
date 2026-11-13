@@ -13529,7 +13529,14 @@
      "width": 16,
      "height": 16,
      "rotation": 0,
-     "visible": true
+     "visible": true,
+     "properties": [
+      {
+       "name": "durchgang",
+       "type": "string",
+       "value": "oben"
+      }
+     ]
     },
     {
      "id": 3,

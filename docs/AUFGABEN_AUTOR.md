@@ -1601,3 +1601,25 @@ die 40 häufigsten Gambits. Ein paar Zahlen (Anteil an allen Partien des Bandes)
       (wie bei DB1) drei Secrets anlegen: `RESEND_KEY` (der Schlüssel), `MAIL_AN` (deine Adresse),
       `MAIL_VON` (etwa `Dashboard <dashboard@schach-von-grund-auf.com>`). Ohne Mailversand meldet
       GitHub rote Prüfungen trotzdem per Mail.
+
+- [ ] RO1. **Roman zu Akt 1 lesen (Schach-Abenteuer):** Die Geschichte von Akt 1 steht jetzt als
+      Roman in 16 Kapiteln im Ordner `docs/spiel/roman/` (vier Dateien `akt1_teil1.md` bis
+      `akt1_teil4.md`, zusammen rund 14 000 Wörter, etwa eine Stunde Lesezeit). Er ist der Leitfaden
+      für Karten, Dialoge und Klang. Bitte lesen und sagen, ob Ton und Länge so passen; davon
+      hängt ab, wie Akt 2 bis 4 geschrieben werden.
+- [ ] RO2. **Erzählform:** Der Roman ist in der Ich-Form geschrieben, damit Name und Geschlecht
+      des Helden offen bleiben wie im Spiel (wo andere ihn ansprechen, steht „Robin“). Empfehlung:
+      so lassen. Schon umgesetzt, Widerspruch genügt.
+- [ ] RO3. **Zu Fuß nach Cedar Creek:** Im Roman gehen der Held und Juno am Freitag zu Fuß am
+      Fluss entlang und übernachten mit Erlaubnis von Mrs. Okafor im Lesesaal der Bibliothek; das
+      Team kommt am Samstag mit dem Bus. Das begründet den Weg und die Sternennacht. Empfehlung:
+      so ins Spiel übernehmen. Im Roman schon umgesetzt, im Spiel noch nicht; Widerspruch genügt.
+- [ ] RO4. **Eigenes Zimmer für den Helden:** Die neue Nachtszene (der Geist fragt nach der
+      Straßenlaterne und dem Kühlschrank) spielt im Zimmer des Helden. Das wäre eine neue kleine
+      Karte. Empfehlung: bauen, weil das Zimmer auch als Ort zum Speichern und für spätere
+      Abendgespräche taugt. Noch nicht umgesetzt (Kartenarbeit ruht).
+- [ ] RO5. **Mehr Geschichte je Akt:** Bisher war in Akt 1 nur etwa ein Fünftel der Spielzeit
+      Geschichte (50 von 270 Minuten). Mit den neuen Szenen des Romans sind es rund 30 Prozent.
+      Empfehlung für alle Akte: etwa ein Drittel Geschichte, nie mehr als 30 Minuten Schach am
+      Stück, und in jeder Partie der Hauptgeschichte ein bis zwei Momente, in denen jemand spricht.
+      Als Vorgabe festgehalten, Widerspruch genügt.

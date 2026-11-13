@@ -20,6 +20,7 @@ from pipeline.abenteuer.kartenregeln import pruefe_regeln
 from pipeline.abenteuer.kehren import kehrenbefunde
 from pipeline.abenteuer.maske import maskenfelder
 from pipeline.abenteuer.moebelliste import lade_moebel
+from pipeline.abenteuer.saum import saumbefunde
 from pipeline.abenteuer.stadtgroesse import ortseintrag, pruefe_gebaeude, zaehlt_als_stadtkarte
 from pipeline.abenteuer.varianten import vergleiche_mit_a
 
@@ -300,6 +301,7 @@ def baue(pfad: Path) -> list[str]:
 
     befunde += pruefe_zusammenhang(szene, zeilen, gesetzt, moebel)
     befunde += kehrenbefunde(szene, zeilen)
+    befunde += saumbefunde(szene, zeilen, lade(INHALTE / "materialien.json")["boeden"])
     if not ist_archiv(pfad):
         befunde += pruefe_gebaeude(szene, gesetzt, moebel)
         ort = ortseintrag(szene["karte"]) or {}

@@ -229,7 +229,7 @@
       "stil": "natur"
     },
     "st5Schuppen": {
-      "quelle": "spiel/eigene/gartenhaus_braun.png",
+      "quelle": "modern-exteriors/Modern_Exteriors_16x16/ME_Theme_Sorter_16x16/17_Garden_Singles_16x16/ME_Singles_Garden_16x16_Brown_Wood_Storage.png",
       "breite": 48,
       "hoehe": 64,
       "kollision": true,

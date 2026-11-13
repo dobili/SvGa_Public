@@ -81,3 +81,23 @@ schwer. Beide verlieren ihren Ort an denselben Käufer.
   gewinnt. Die Story-Bibel hatte zwei Fassungen je nach Ausgang. Empfehlung: die Fassung des
   Romans als Hauptfassung, weil sie Mamas Geschichte abschließt, statt sie dem Zufall der Partie zu
   überlassen. In `docs/AUFGABEN_AUTOR.md` als RO6 eingetragen.
+
+## 7. Entscheidungen nach der Prüfung des Gutachters (13.11.2026)
+
+Der Gutachter-Chat hat Akt 2 geprüft (`22_Dialogpruefung.md`, Teil C). Entschieden vom Hauptchat;
+der Roman ist entsprechend geändert.
+
+| Frage                                        | Entscheidung                                                                                                                                                                                       |
+| -------------------------------------------- | -------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------- |
+| Zugfolge der Unsterblichen Partie            | Wie in `klassiker.json`: Läuferzug, Schwarz nimmt den ersten Turm, Bauernzug (hier hält Ambrose an), Schwarz nimmt den zweiten Turm mit Schach, König vor, Springerschach, Damenopfer, Läufermatt. |
+| Mamas Fehler von 2001                        | Ein Spieß: Dame vorn, Turm dahinter auf derselben Schräge, der Läufer am anderen Ende. Roman genauer gefasst.                                                                                      |
+| Oma Ruth                                     | Der Held kennt sie und war seit dem Umzug nicht mehr dort; Mamas Zimmer war immer zu.                                                                                                              |
+| „Wer eines kennt, erkennt es in jeder Menge“ | Sagt Ambrose (Akt 1), nicht Mae.                                                                                                                                                                   |
+| Datum des Matchs von 1858                    | Oktober 1858; die Londoner Zeitung mit Bird gegen Morphy ist sechs Wochen alt.                                                                                                                     |
+| Ambrose über 1866 vor Akt 3                  | In Akt 2 fallen nur Splitter („elf Tage“, „nicht angekommen“); erzählt wird es am Felsbogen.                                                                                                       |
+| Zahl der Tische in Riverton                  | Wie in `orte/riverton.md`: sechs Bildschirmtische auf der Wiese, vier Steintische im Pavillon.                                                                                                     |
+| Graffiti-Künstlerin                          | Ist Noor Haddad aus `14_Akt2_Leben_teil1.md`, nicht neu; neu ist nur, dass sie die Werkbank ihres Großvaters malt.                                                                                 |
+| Lage                                         | Wie in den Ortsdokumenten: Slicks Wohnwagen am Westende des Parks an der Steinbrücke; Elm Street Nummer zehn, Eckhaus; „J. H.“ an der Stahlbrücke der Schnellstraße hinter dem Werkstor.           |
+| Fragmente 2 bis 4                            | Kommen im Spiel wie in Abschnitt 35 der Bibel vor; der Roman erwähnt sie nicht einzeln.                                                                                                            |
+| Postsäcke                                    | Von 1866 (Bibel Szene 41); „1870“ in Abschnitt 9.3 der Bibel ist ein Versehen.                                                                                                                     |
+| Big Joes Satz nach dem Clubkampf             | Bezieht sich auf die Grundreihe, nicht auf Mamas Fehler.                                                                                                                                           |

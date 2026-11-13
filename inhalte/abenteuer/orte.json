@@ -628,14 +628,18 @@
           "datei": "karten/weg-maple-cedar-flussweg.json",
           "name": "ort.wegMapleCedar.flussweg",
           "innen": false,
-          "musik": "musik/landstrasse.ogg"
+          "musik": "musik/weg.fluss.m4a",
+          "geraeusch": "klang/fluss.m4a",
+          "licht": "tag"
         },
         {
           "kennung": "wegMapleCedar.zedernpfad",
           "datei": "karten/weg-maple-cedar-zedernpfad.json",
           "name": "ort.wegMapleCedar.zedernpfad",
           "innen": false,
-          "musik": "musik/landstrasse.ogg"
+          "musik": "musik/weg.zedern.m4a",
+          "geraeusch": "klang/wald_still.m4a",
+          "licht": "dunst"
         }
       ],
       "figuren": [
@@ -778,6 +782,11 @@
           "name": "apfelstand",
           "art": "gegenstand",
           "dialog": "weg-maple-cedar.apfelstand"
+        },
+        {
+          "name": "faehrstein",
+          "art": "gegenstand",
+          "dialog": "weg-maple-cedar.faehrstein"
         }
       ]
     },

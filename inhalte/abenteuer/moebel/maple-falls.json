@@ -1292,11 +1292,12 @@
       "quelle": "spiel/eigene/treppe_ab_gelaender.png",
       "breite": 96,
       "hoehe": 80,
-      "kollision": false,
+      "kollision": true,
       "art": "treppe",
       "blick": "unten",
       "zustand": "alt",
-      "stil": "rustikal"
+      "stil": "rustikal",
+      "maske": ["##..##", "##..##", "##..##", "##..##", "##..##"]
     },
     "mf4Fussmatte": {
       "quelle": "modern-interiors/1_Interiors/16x16/Theme_Sorter_Singles/26_Condominium_Singles/Condominium_Singles_66.png",
@@ -3704,6 +3705,17 @@
       "stil": "schule",
       "begehbar": true,
       "begehbar_grund": "hängt an der Wand"
+    },
+    "mf12PizzakartonUnterBein": {
+      "quelle": "spiel/eigene/pizzakarton_flach.png",
+      "breite": 16,
+      "hoehe": 16,
+      "kollision": false,
+      "art": "karton",
+      "zustand": "gebraucht",
+      "stil": "modern",
+      "begehbar": true,
+      "begehbar_grund": "gefaltet unter einem Tischbein, flach am Boden (Roman Kap. 4)"
     }
   }
 }

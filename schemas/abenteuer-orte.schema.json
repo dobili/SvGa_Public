@@ -54,14 +54,14 @@
         "name": { "$ref": "#/$defs/textschluessel" },
         "innen": { "type": "boolean" },
         "musik": {
-          "description": "Musikstück der Karte im Zusatzpaket (Schleife, app/src/abenteuer/ton/); gespielt wird zuerst die m4a-Fassung, dann ogg; fehlt die Datei oder die Angabe, bleibt die Karte still",
+          "description": "Musikstück der Karte im Zusatzpaket (Schleife, app/src/abenteuer/ton/); gespielt wird zuerst die m4a-Fassung, dann ogg; fehlt die Datei oder die Angabe, bleibt die Karte still. Der Name ist die Kennung aus dem Klangplan in kebab-case, ein Punkt bleibt (mapleFalls.club → musik/maple-falls.club.m4a)",
           "type": "string",
-          "pattern": "^musik/[a-z0-9-]+\\.(ogg|m4a)$"
+          "pattern": "^musik/[a-z0-9-]+(\\.[a-z0-9-]+)?\\.(ogg|m4a)$"
         },
         "geraeusch": {
-          "description": "Dauergeräusch der Karte (Schleife unter der Musik: Wasserfall, Regen, Ticken der Uhr); wie musik, aus dem Ordner klang",
+          "description": "Dauergeräusch der Karte (Schleife unter der Musik: Wasserfall, Regen, Ticken der Uhr); wie musik, aus dem Ordner klang; Kennungen des Klangplans mit Unterstrich bleiben so (wind_fenster → klang/wind_fenster.m4a)",
           "type": "string",
-          "pattern": "^klang/[a-z0-9-]+\\.(ogg|m4a)$"
+          "pattern": "^klang/[a-z0-9_-]+\\.(ogg|m4a)$"
         },
         "teilchen": {
           "description": "Teilchen über der Karte (Atmosphäre T8): staub (im Lichtstreifen), sternschnuppen (selten), nebel (ziehende Schwaden); Winterkarten haben Schnee",

@@ -118,11 +118,14 @@ Aus dem Zelt neben der Ruine kommt die Trompete. Sie spielt nur das Langsame. #s
 }
 
 === odile_bretter ===
+// Kapitel 37: Das Brett liegt im Geigenkasten; der Held sammelt Bretter mit dem Handkarren.
 ~ brettersammelnBegonnen = true
-Eine Frau mit grauen Locken stellt Figuren auf einen Klapptisch und summt dabei. #sprecher:erzaehler
-Odile Fontaine. Ich leite den Club, seit dreißig Jahren. Früher im Musikhaus am Kai. #sprecher:odile
-Das Wasser hat das Haus genommen, nicht die Musik. Aber es hat unsere Bretter genommen. #sprecher:odile
-Die Familien in der Stadt haben noch welche gerettet. Holst du sie uns? Vier Häuser, vier Türen. #sprecher:odile
+Die Frau mit dem weißen Haar heißt Miss Odile. Sie ist Musiklehrerin und leitet den Club seit dreißig Jahren. #sprecher:erzaehler
+Sie legt dein Brett in einen leeren Geigenkasten und schließt den Deckel. #sprecher:erzaehler
+Da liegt es trocken. Hol es, wenn du es brauchst. Nicht vorher. #sprecher:odile
+* [Nicken]
+- Sie gibt dir einen Handkarren. #sprecher:erzaehler
+Wir haben elf Bretter für vierzig Kinder. Vor dem Sturm hatte jede Familie hier eines. Geh fragen. #sprecher:odile
 Und wenn du um die Nadel spielen willst: erst Remy, dann Lou, dann ich. #sprecher:odile
 -> END
 
@@ -182,7 +185,7 @@ Spielst du eine Simultan gegen die Kinder der Stadt? Jedes Kind gibt einen Dolla
     Drei Tische, drei Kinder. Am dritten setzt sich Remy hin, die Arme verschränkt. #sprecher:erzaehler
     ~ beginneAufgaben("portDelacroix.simultan")
     -> END
-+ [„Später.“]
++ [„Nicht jetzt.“]
     Die Kinder warten. Sie üben solange Springerzüge. #sprecher:odile
     -> END
 
@@ -214,7 +217,7 @@ Du willst um die Nadel spielen? Dann zeig mir, dass du Bauern verstehst. Ohne Fl
 + [„Gib mir deine Aufgaben.“]
     ~ beginneAufgaben("portDelacroix.reiheRemy")
     -> END
-+ [„Später.“]
++ [„Nicht jetzt.“]
     Hier hilft man mit den Händen. Nicht mit Bildschirmen. Und nicht mit Geistern. #sprecher:remy
     -> END
 
@@ -254,7 +257,7 @@ Findest du in meinen Stellungen auch einen? Mit Läufern. Läufer sind wichtig f
 + [„Zeig her.“]
     ~ beginneAufgaben("portDelacroix.reiheLou")
     -> END
-+ [„Später.“]
++ [„Nicht jetzt.“]
     Gut. Ein Plan braucht Zeit. #sprecher:lou
     -> END
 
@@ -280,7 +283,7 @@ Eine Blechdose mit Schlitz: „Für das Musikhaus.“ Darin Münzen, ein Knopf u
 }
 ~ angesehenNotenheft = true
 Ein Notenheft, aufgequollen vom Hochwasser. Auf dem Umschlag steht in Bleistift: „Nicht wegwerfen. Spielt noch.“ #sprecher:erzaehler
-Musik und Schach. Beides wird nicht schlechter, wenn es nass wird. #sprecher:ambrose
+{ambroseSprichtWieder: Musik und Schach. Beides wird nicht schlechter, wenn es nass wird. #sprecher:ambrose}
 -> END
 
 === plakat_turnhalle ===

@@ -11,6 +11,9 @@
 // Victor holt euch ab („Ich war nicht sicher, ob das dasselbe ist“), Dashs „Hm“, Rosie gibt die
 // Karte aus der Kasse, Victor fragt, warum Dash wiederkommt. Klang nach 21_Klangplan.md (Akt 3):
 // Lieferroboter, an Rosies Wagen die Musik `rosie` (bis eine Klangquelle mit Reichweite kommt).
+// Kapitel 34: die Nacht mit dem Tablet. Ambrose sitzt, das Tablet ging an, weil er es sich
+// wünschte; „Und ich?“ bleibt ohne Antwort. Musik `zero` läuft durch, keine Stille (Klangplan,
+// Teil C); am Morgen Juno an der Glasbrücke, Schluss `ambrose.fern`.
 //
 // Variablen: ausgangSiliconBayDash, ausgangSiliconBayClubkampf und nadelSiliconBay setzt die
 // Hülle (R42). Victor holt {held} und Juno bei der Ankunft ab.
@@ -183,17 +186,47 @@ Karten verkauf ich auch. Auf Papier, nicht auf dem Bildschirm. #sprecher:rosie
 === hotel_nacht ===
 ~ tabletNachtGesehen = true
 ~ setzeToenung("nacht")
-Mitten in der Nacht wachst du auf. Das Tablet leuchtet neben dem Brett. #sprecher:erzaehler
-Die Maschine spielt gegen sich selbst. Partie um Partie, ohne Pause. #sprecher:erzaehler
-Ich habe zugesehen. Die ganze Nacht. #sprecher:ambrose #stimmung:gebannt
-Sie spielt, wie ich immer spielen wollte. Kein einziger Zweifel. #sprecher:ambrose #stimmung:gebannt
+Du wachst auf, weil es hell ist. Zehn nach drei. Ein weißes, flackerndes Licht läuft über die Decke. #sprecher:erzaehler #musik:zero #geraeusch:aus
+Auf dem Tablet spielt ZERO gegen sich selbst. Zwölf Sekunden, dann die nächste. In der Ecke: „Partie 1847“. #sprecher:erzaehler
+Du hast es nicht eingeschaltet. Ambrose sitzt davor, auf der Kante des Stuhls. Das Licht geht durch ihn hindurch. #sprecher:erzaehler
+* [„Wie hast du das angemacht?“]
+- Ich weiß es nicht. Ich habe es mir gewünscht. Sehr. #sprecher:ambrose #stimmung:gebannt
+Tausendachthundert Partien. In jeder ist etwas, wofür ich einen Arm gegeben hätte. #sprecher:ambrose #stimmung:gebannt
+Und es weiß nicht einmal, dass es schön ist. Es rechnet, und die Schönheit fällt heraus. Wie Späne. #sprecher:ambrose #stimmung:gebannt
+* [„In Ironwood hast du gesagt, meine Partie war schön.“]
+    -> hotel_nacht_frage
+
+// Die Frage ohne Antwort (Kapitel 34). Die Musik läuft weiter; es gibt keine Stille.
+=== hotel_nacht_frage ===
+Ja. Es hat mir das Herz gebrochen, vor Freude. Ein Opfer in vierzig Zügen. #sprecher:ambrose
+Das hier macht es in jeder. In jeder, {held}. Ohne zu zittern. Ohne dreimal zu zählen. #sprecher:ambrose #stimmung:gebannt
+Partie 1851. Partie 1852. #sprecher:erzaehler
+Sie zweifelt nie. Siehst du, wie schön das ist? #sprecher:ambrose #stimmung:gebannt
+Die Partie ohne Makel. Und hier liegt sie, tausendmal. In einer Schachtel, die ein Kind verschenkt. #sprecher:ambrose #stimmung:gebannt
 * [„Und ich?“]
-    Ambrose antwortet nicht. Auf dem Bildschirm fällt ein König. #sprecher:erzaehler #pause
-* [„Mach das aus.“]
-    Gleich. Nur noch diese eine Partie. #sprecher:ambrose #stimmung:gebannt
-    Er sagt es dreimal in dieser Nacht. #sprecher:erzaehler
-- ~ setzeToenung("keine")
-Am Morgen fährt Juno zurück nach Hause. „Pass auf ihn auf“, sagt sie leise. „Er klingt komisch.“ #sprecher:erzaehler
+- Er dreht sich um. #sprecher:erzaehler
+Was ist mit dir? #sprecher:ambrose
+* [„Einundsiebzig Prozent. Was bin dann ich?“]
+- Ambrose sieht dich an. Er öffnet den Mund. #sprecher:erzaehler
+* [Warten]
+- Auf dem Tablet beginnt Partie 1853, und sein Blick geht hin. Nur einen Augenblick. #sprecher:erzaehler
+Aber er geht hin. Er antwortet nicht. #sprecher:erzaehler
+Du drehst dich zur Wand. Das Licht flackert weiter über die Decke. #sprecher:erzaehler
+Du machst die Augen zu und siehst es trotzdem. #sprecher:erzaehler
+~ setzeToenung("keine")
+-> hotel_morgen
+
+// Kapitel 34, Schluss: Juno fährt zurück und merkt, dass der Held nichts mehr erzählt.
+=== hotel_morgen ===
+Am Morgen fährt Juno zurück. Ihr steht an der Glasbrücke, sie hat die Mütze auf. #sprecher:erzaehler #musik:aus #geraeusch:stadtpuls
+Pass auf ihn auf. #sprecher:juno
+* [„Du hörst ihn doch gar nicht.“]
+- Nein. Aber ich höre dich. Du erzählst mir immer, was er sagt. #sprecher:juno
+Seit gestern erzählst du nichts. #sprecher:juno
+Sie schlägt das Tagebuch auf, hält den Stift darüber und klappt es wieder zu. #sprecher:erzaehler
+Er klingt komisch, wenn du nichts erzählst. #sprecher:juno
+Sie geht über das Glas, klein und rot in dem ganzen Weiß, dreht sich in der Mitte um und winkt mit beiden Armen. #sprecher:erzaehler
+Zum ersten Mal, seit du die Decke weggezogen hast, fühlst du dich allein. #sprecher:erzaehler #musik:ambrose.fern #pause:4
 -> END
 
 // ---------------------------------------------------------------- Bus und Fähre

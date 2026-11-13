@@ -40,6 +40,8 @@ VAR kreidebrettGesehen = false
 // Roman, Kapitel 23: Das Verbot kommt zu Hause (maple-falls-wohnzimmer.nicht_ironwood) oder hier.
 VAR verbotGesehen = false
 VAR held = "Du"
+// Gutachten L1.2: „Und er hat mir geschrieben“ nur mit dem Umschlag aus dem Museum.
+VAR umschlagGeoeffnet = false
 
 // ---------------------------------------------------------------- Ankunft und Verbot
 
@@ -53,12 +55,13 @@ VAR held = "Du"
 // (maple-falls-wohnzimmer.nicht_ironwood); sonst kommt es hier als Anruf, trocken und ohne Pause.
 // Ironwood ist grau, wie Dinge grau sind, die gearbeitet haben. Klang: tiefes Thema mit Blech und
 // einem langsamen Schlag, dazu das Fauchen des Hochofens in Abständen; Lichtwechsel orange.
-Von der Brücke führt ein Abhang hinunter in eine Stadt aus Backstein und Stahl. Reihenhäuser, eins am anderen, alle gleich. #sprecher:erzaehler #musik:ironwood
+Ironwood ist grau. Nicht hässlich. Grau, wie Dinge grau sind, die gearbeitet haben. #sprecher:erzaehler #musik:ironwood
+Reihenhäuser, eins am anderen, alle gleich, mit schmalen Treppen und Eisengeländern. #sprecher:erzaehler
 Über den Hallen leuchtet der Himmel orange auf. Einen Atemzug später kommt das Geräusch, ein tiefes Fauchen. #sprecher:erzaehler #klang:hochofen #licht:ironwood
 {verbotGesehen:
     Auf den Gehwegen malen Kinder Schachbretter mit Kreide. Richtige, acht mal acht. #sprecher:erzaehler
     Die können hier zählen. #sprecher:juno
-    Mama hat Nein gesagt. Nicht zum Turnier. Gucken ist kein Turnier. #sprecher:juno
+    Deine Mama hat gesagt: nicht zum Turnier. Gucken ist kein Turnier. #sprecher:juno
     -> END
 }
 ~ verbotGesehen = true
@@ -68,12 +71,12 @@ Dein Handy klingelt. Mama. #sprecher:erzaehler
 Nein. #sprecher:mutter #stimmung:verschlossen
 Nicht Ironwood. #sprecher:mutter #stimmung:verschlossen
 * [„Warum?“]
-    Frag nicht. Bitte. Nicht heute. #sprecher:mutter #stimmung:verschlossen
-    Sie hat schon aufgelegt. #sprecher:erzaehler
-* [„Okay, Mama.“]
-    Danke. Frag nicht. Bitte. #sprecher:mutter
-- Deine Mutter hat Angst. Vor einer Stadt. Das ist selten. #sprecher:ambrose
-Wir sind ja schon da. Wir gucken uns nur um. Gucken ist kein Turnier. #sprecher:juno
+* [Nichts sagen]
+- Frag nicht. Bitte. Nicht heute. #sprecher:mutter #stimmung:verschlossen
+Sie hat schon aufgelegt. #sprecher:erzaehler
+Deine Mutter hat Angst. Vor einer Stadt. Das ist selten. #sprecher:ambrose
+Sie hat gesagt: nicht zum Turnier. Gucken ist kein Turnier. #sprecher:juno
+Das ist eine Unterscheidung, die Advokaten machen. #sprecher:ambrose
 -> END
 
 // ---------------------------------------------------------------- Übergänge und Busse
@@ -95,7 +98,7 @@ Zurück zur Eisenbrücke und dem Kanalweg nach Riverton. #sprecher:erzaehler
 
 === haustuer_ruth ===
 {elmStreetBekannt:
-    Elm Street, Nummer zehn. Das Eckhaus mit dem grünen Geländer. #sprecher:erzaehler #musik:aus #geraeusch:schnee_schritte
+    Elm Street, Nummer zehn. Das Eckhaus mit dem grünen Geländer. #sprecher:erzaehler #musik:aus #geraeusch:schritte_pflaster
     Du klingelst. Drinnen schlurfen Hausschuhe. #sprecher:erzaehler
 - else:
     Reihenhäuser, eins am anderen, alle gleich. Nur das Eckhaus hat ein grünes Geländer. #sprecher:erzaehler
@@ -238,7 +241,7 @@ Edna. Eisenwaren. Was du hier kaufst, hält. #sprecher:edna
     An der Bushaltestelle liegen ein paar Schneeflocken auf der Bank, wo Victor saß. #sprecher:erzaehler
     -> END
 - else:
-    Victor steht mit einem Tablet am Werkstor und tippt. Er nickt dir zu, mehr nicht. #sprecher:erzaehler
+    // Steht erst nach der Nadel am Werkstor (orte.json, wenn; Gutachten L1.3).
     -> END
 }
 
@@ -249,7 +252,7 @@ Edna. Eisenwaren. Was du hier kaufst, hält. #sprecher:edna
     Graham Hale telefoniert am Werkstor. „Ja, unterschrieben. Ja, ab Montag.“ #sprecher:erzaehler
     -> END
 - else:
-    Ein Mann im Anzug spricht am Werkstor mit dem Pförtner. Auf seiner Mappe steht „Perfect Move“. #sprecher:erzaehler
+    // Steht erst nach der Nadel am Werkstor (orte.json, wenn; Gutachten L1.3).
     -> END
 }
 
@@ -257,6 +260,7 @@ Edna. Eisenwaren. Was du hier kaufst, hält. #sprecher:edna
 // Kapitel 29 (Roman): kein Thema, nur Wind und fernes Werk; unter Graham Hales Rede der glatte
 // Konzernton. Big Joe kommt heraus: Stille, nur das Klirren der Pokale.
 ~ kaufGesehen = true
+Es dauert neun Tage. Dann ruft Big Joe an. Nicht dich. Mama. Sie hört nur zu und nimmt den Mantel. #sprecher:erzaehler #musik:aus
 Am Werkstor hängt ein neues Schild, weiß und glänzend: „Perfect Move Trainingszentrum Ironwood. Eröffnung im Januar.“ #sprecher:erzaehler #musik:aus #bild:schild_werkstor
 Darunter, kleiner: „In den Räumen der ehemaligen Werkskantine.“ #sprecher:erzaehler #bild:aus
 Der Club bleibt selbstverständlich. An den neuen Tischen, zu denselben Zeiten, kostenlos. #sprecher:grahamHale #klang:konzern
@@ -264,6 +268,7 @@ Mit einem Trainer, der nie müde wird. #sprecher:grahamHale
 Er glaubt es. Das ist das Schlimme. Er hält es wirklich für ein Geschenk. #sprecher:erzaehler
 Big Joe kommt heraus. Er trägt einen Karton vor dem Bauch, oben schauen die Pokale heraus und klirren bei jedem Schritt. #sprecher:erzaehler #geraeusch:pokale
 Er sieht Graham Hale nicht an. Hinter ihm tragen Hank und Priya das Stahlbrett, zu zweit. #sprecher:erzaehler
+Neben seinem Vater steht Victor, in Weiß, das Tablet unter dem Arm. Er sieht Big Joe nach, den großen Händen, die den Karton halten, als wäre er aus Glas. #sprecher:erzaehler
 Vater. Vielleicht … #sprecher:victor #pause
 Graham Hale dreht sich zu ihm um. Freundlich. Fragend. #sprecher:erzaehler
 Nichts. #sprecher:victor
@@ -292,7 +297,10 @@ Ein Hale, der fragt. Das ist neu. #sprecher:ambrose
 Auf dem ersten Pfosten des Geländers, klein und sauber: J. H. #sprecher:erzaehler
 Ambrose legt die Hand darauf. Diesmal lässt er sie dort. #sprecher:erzaehler #musik:ambrose.victor
 Er hat überall unterschrieben. Auf jeder Niete. Was für ein unerträglicher, gewissenhafter Mensch. #sprecher:ambrose #stimmung:riss
-Und er hat mir geschrieben. #sprecher:ambrose #stimmung:riss
+{umschlagGeoeffnet:
+    Seine Stimme bricht. #sprecher:erzaehler #pause:2
+    Und er hat mir geschrieben. #sprecher:ambrose #stimmung:riss
+}
 Juno kommt die Brücke herauf, das Tagebuch unter der Jacke. #sprecher:erzaehler
 Was hat er gewollt? #sprecher:juno
 * [Ihr die Karte zeigen]

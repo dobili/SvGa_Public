@@ -6132,3 +6132,1448 @@ einem Eimer. Mamas blaues Heft auf der Fähre fehlt.
   diesen Dateien nur als Besitzerin des Reisebretts vor; es gibt keinen Widerspruch dazu.
 - Szene 70 (Das Schild) und die Bläserin liegen außerhalb der Kapitel 35–40; die Datei ist gelesen,
   aber nur gegen die Bibel und die Maßstäbe gehalten, nicht gegen einen Romantext.
+
+## Teil M: Spieldialoge gegen den Roman, Kapitel 41 bis 66 (Bericht, nichts geändert)
+
+Auftrag des Hauptchats vom 13.11.2026. Geprüft ist der Stand der Ink-Dateien von
+`claude/friendly-shannon-y8bf90`, Commit f0c38353 (17:55 UTC). Vier Lesedurchgänge durch Helfer
+(M1 bis M4, je 10 Befunde nach Wichtigkeit); jeder hat seine Zitate per Skript gegen die Dateien
+geprüft. Der Gutachter hat zehn Stellen selbst nachgeschlagen (`desert-springs-antiquariat.ink`
+Zeile 73, `summit-city-huette.ink` Zeile 321, Suche nach „Mein Vater weiß nicht“ in
+`summit-city-bergstation.ink`: kein Treffer, `texte/de.json` Zeile 754, `ghost-town-aussen.ink`
+Zeile 155, `capital-arena-halle.ink` Zeilen 459 und 470, Suche nach „Dorrance“ in allen
+Ink-Dateien: kein Treffer, `maple-falls-dachboden.ink` Zeile 329, Suche nach den Figuren `coach`
+und `theo` in `orte.json`: kein Treffer); alle stimmen. Nichts ist gespielt worden: Aussagen über
+Erreichbarkeit und Reihenfolge stützen sich auf Ink, `quests.json`, `orte.json` und die
+Szenendateien. Die Stellungen in M5 hat der Gutachter selbst mit dem Stockfish der App geprüft.
+
+| Teil | Kapitel   | fehlt | widerspricht | plump | Pausen und Marken |
+| ---- | --------- | ----- | ------------ | ----- | ----------------- |
+| M1   | 41 bis 46 | 1     | 7            | 1     | 1                 |
+| M2   | 47 bis 52 | 4     | 2            | 2     | 2                 |
+| M3   | 53 bis 59 | 3     | 5            | 1     | 1                 |
+| M4   | 60 bis 66 | 4     | 4            | 1     | 1                 |
+
+Gesamtbild wie in Teil L: Die festen Wortlaute stimmen überwiegend, Buchverweise stehen in den
+gesprochenen Zeilen nicht. Die Befunde liegen im Gerüst (tragende Sätze am freiwilligen Antippen,
+an einer Antwortwahl oder an einer ungesicherten Reihenfolge) und in den Daten, die den alten
+Stand tragen (Ghost Town, Wards Hütte, Halbfinale).
+
+### M5 Die Stellungen (vom Gutachter mit der Engine geprüft)
+
+Geprüft mit dem Stockfish der App (`stockfish` 19, Tiefe 20, drei beste Züge), Bewertung aus
+Sicht von Weiß.
+
+- **`desertSprings.erinnerung1858`** (`begegnungen.json`), FEN
+  `r2r1bk1/pp1q1ppp/1np5/3p2N1/3P4/1PPB4/P4PPP/3Q2K1 w - - 0 26`: Die Bewertung passt zur Bibel
+  (Szene 77, Vorteil +0,8 bis +2,5): **Lxh7+** etwa +1,9; die nächstbesten Züge verlieren (Dh5
+  etwa −7,1, Sxh7 etwa −7,9). Der Hinweis im Dateikopf von `desert-springs-garage.ink` („Weiß
+  etwa +1,9, nur Lxh7+ hält“) stimmt also. **Das Material passt nicht zum Roman:** Weiß hat gar
+  keinen Turm, Schwarz zwei (Weiß Dame, Läufer, Springer, sieben Bauern; Schwarz Dame, zwei
+  Türme, Läufer, Springer, sieben Bauern). Der Roman sagt „Ich habe einen Turm weniger.“
+  (`roman/akt3_teil3.md`, Zeile 580) und zählt bei Schwarz „Ein Turm, der weit weg stand“
+  (Zeilen 571–572); die Ink-Datei übernimmt „Gegen einen Läufer und einen fernen Turm“ (Zeile
+  201). Im Spiel fehlen Weiß zwei Türme, und Schwarz hat zwei Türme in der Nähe (a8 und d8).
+  Vorschlag: entweder die Stellung so bauen, dass Weiß einen Turm behält, oder die beiden Sätze
+  an die Stellung angleichen. Der schwarze Läufer auf f8 passt zum „Läufer, ein Feld zurück“.
+- **`desertSprings.dotFernpartie`**, FEN
+  `3r2k1/ppR2ppp/2n1p3/3p4/3P4/P3PN2/1P3PPP/6K1 b - - 0 31`: stimmt mit Roman und Ink überein.
+  Schwarz (Margaret, gespielt von {held}) ist im 31. Zug am Zug, Dots Turm steht auf der
+  siebten Reihe, Weiß steht mit etwa +1,5 bis +1,9 besser („Ich stand besser.“, Roman Zeilen
+  322–323). Material gleich. {held} beginnt also in einer schlechteren Stellung; das ist so
+  gewollt, sollte aber beim Ausgang bedacht sein (ein Remis ist für Schwarz ein gutes Ergebnis).
+- **`ghostTown.fernpartie`**, FEN `6k1/p2R4/2n4p/1p6/2n1P3/6KP/P5P1/8 w - - 0 41`: dieselbe
+  Stellung wie in Abschnitt 35 der Bibel nach 40… b5 (vom Gutachter schon nachgespielt), etwa
+  +1,9 für Weiß (Kh4 oder Tc7).
+
+### M1 Kapitel 41 bis 46: Canyon, Felsbogen und Desert Springs
+
+Geprüft gegen `docs/spiel/roman/akt3_teil3.md` (Kapitel 41–46, mit Randnotizen und der Tabelle „Neu
+gegenüber der Story-Bibel“). Dialogdateien in `inhalte/abenteuer/dialoge/de/`:
+`weg-delacroix-desert.ink` (kurz: WEG), `desert-springs-aussen.ink` (AUSSEN),
+`desert-springs-garage.ink` (GARAGE), `desert-springs-antiquariat.ink` (ANTIQ). Weitere Dateien
+gehören nicht dazu (`ls`: nur diese vier tragen Canyon oder Desert Springs im Namen;
+`weg-desert-summit.ink` ist Akt 4). Die Partiemomente des Clubkampfs stehen hier nicht in
+`texte/de.json`, sondern als Ink-Knoten `clubkampf_sturm` und `clubkampf_atme` in GARAGE
+(Zuordnung in `begegnungen.json`, Begegnung `desertSprings.clubkampf`); in `de.json` liegen nur Bucks
+Sprüche (`spruch.konter.buck.1/2`) und Statistensätze. Reihenfolge und Auslöser sind gegen
+`quests.json` und `orte.json` gelesen.
+
+Gesamturteil: Die großen Szenen folgen dem Roman eng und oft wörtlich (1866 am Felsbogen, Brief,
+Dot und Margaret, Abend am Motel). Die festen Punkte zu 1866, zum Sitzen, zum Geigenkasten, zu Dot,
+zum Siegel, zur Sie-Form, zu den Zügen 29 bis 32 und zu Juno sind eingehalten; „Josiah“ und
+„Ur-ur-ur“ kommen nicht vor, Verweise auf das Buch stehen in keinem Spieltext. Die Schwächen liegen
+im Gerüst: Die Erinnerung 1858 liegt im Spiel hinter dem Clubkampf und ist freiwillig, obwohl
+Clubkampf und Motel auf sie verweisen; zwei feste Wortlaute sind gekürzt (Hales Einladung,
+Leitsatz 1); und mehrere tragende Sätze hängen am freiwilligen Antippen.
+
+---
+
+#### M1.1 – widerspricht – Erinnerung 1858 (Szene 77) liegt hinter dem Clubkampf und ist freiwillig; „Atme“ und Junos Anruf verweisen trotzdem auf sie
+
+- Datei: GARAGE, Knoten `mira_alltag`, `clubkampf_atme`, `mira_erinnerung`, `mira_nach_niederlage`;
+  AUSSEN, Knoten `abend_motel`; `quests.json`, Quest `desertSprings.erinnerung1858` (Nebenquest,
+  Start nur über die Wahl in `mira_alltag`).
+- Ink: „+ {nadelDesertSprings > 0 and not erinnerung1858Besprochen} [„Ambrose, zeig sie mir. Die siebte von 1858.“]“ (Zeile 162);
+  „Er hat richtig geopfert und dann Angst gekriegt, hast du gesagt.“ (Zeile 122);
+  „_ [„Er hat gelacht. Eine Viertelstunde lang.“]“ (Zeile 120);
+  „_ [„Er hat geschrieben, es war Mut.“]“ (Zeile 178);
+  „Ich hab gewonnen. Das Opfer war richtig. Noch mal?“ (Zeile 129)
+- Roman: „„Zeig sie mir“, sagte ich an diesem Abend.“ (Zeile 516) (Kapitel 45, vor dem Clubkampf);
+  „Der Clubkampf fand am nächsten Abend statt“ (Zeile 657);
+  „„Du hast gestern gesagt, er hat richtig geopfert und dann Angst gekriegt.“ (Zeile 731);
+  „„Er hat gelacht“, sagte ich. „Eine Viertelstunde lang.““ (Zeile 786)
+- Befund: Die Erinnerung ist erst mit einer Nadel wählbar (`nadelDesertSprings > 0`), also immer
+  nach dem ersten Clubkampf. Im Clubkampf zitiert der Atme-Moment aber Miras Satz aus der
+  Erinnerung, den sie noch gar nicht gesagt hat. Der Abend am Motel ist Schritt 6 der Hauptquest und
+  braucht die Erinnerung nicht: Juno hört „Er hat gelacht“, auch wenn Ambrose nie gelacht hat.
+  `mira_erinnerung` setzt außerdem Hales Brief voraus („Er hat geschrieben, es war Mut.“), ohne
+  `briefGelesen` zu prüfen (der Brief ist ebenfalls Nebenquest). Und `mira_nach_niederlage` lässt
+  Mira den festen Satz „Das Opfer war richtig“ schon nach jeder verlorenen Clubpartie sagen; in
+  Szene 77 ist er dann verbraucht.
+- Vorschlag: Reihenfolge wie im Roman sichern. In `mira` einen Zweig vor `mira_clubkampf`:
+  wenn beide Reihen bestanden, `briefGelesen` und die Erinnerung noch nicht besprochen, führt Mira
+  (oder der Abend in der Garage) in `mira_erinnerung`; die Wahl in `mira_alltag` entfällt. Der
+  Clubkampf öffnet erst nach `erinnerung1858Besprochen`, der Brief wird Schritt der Hauptquest
+  (zwischen Schritt 4 und 5). Soll beides Nebenquest bleiben, dann mindestens: Zeile 122 nur mit
+  `erinnerung1858Besprochen`, sonst nur „Die Stellung ist noch nicht verloren. Guck hin. Zähl.“;
+  in `abend_motel` ohne Erinnerung eine andere Antwort auf „Wie geht es ihm?“; in
+  `mira_nach_niederlage` „Ich hab gewonnen. Noch mal. Jetzt.“ statt des festen Satzes.
+
+#### M1.2 – widerspricht – Hales Brief: der feste Satz „Wir spielen die letzten Züge an einem Brett“ fehlt
+
+- Datei: ANTIQ, Knoten `okoro_brief`.
+- Ink: „„Ein Endspiel spielt man nicht mit der Post. Kommen Sie nach Norden. Ich lasse ein Zimmer richten.““ (Zeile 73);
+  „„Ich habe sieben Jahre gebraucht, um zu begreifen, dass es Mut war. Und dass ich davon zu wenig habe.““ (Zeile 72)
+- Roman: „\_Ein Endspiel spielt man nicht mit der Post. Kommen Sie nach Norden. Wir spielen die letzten“ (Zeile 447) /
+  „Züge an einem Brett, von Angesicht zu Angesicht, wie es sich gehört. Ich lasse ein Zimmer“ (Zeile 448);
+  „Spiel damals für Leichtsinn. Ich habe sieben Jahre und diese Partie gebraucht, um zu“ (Zeile 444)
+  (ebenso Story-Bibel, Szene 76: „Kommen Sie nach Norden. Wir spielen die letzten Züge an einem Brett.“)
+- Befund: Fester Wortlaut gekürzt. Genau der Satz, der sagt, worauf Hale wartet (die letzten Züge
+  am Brett, von Angesicht zu Angesicht), fehlt; er trägt Akt 4 (die Partie wird am Brett zu Ende
+  gespielt) und erklärt die vier Züge auf der Rückseite („wenn ich ankomme“). Kleiner: „und diese
+  Partie“ fehlt, damit auch, dass die Fernpartie Hale verändert hat.
+- Vorschlag: Zeile 73 teilen: „Ein Endspiel spielt man nicht mit der Post. Kommen Sie nach Norden.“ /
+  „Wir spielen die letzten Züge an einem Brett, von Angesicht zu Angesicht. Ich lasse ein Zimmer
+  richten.“ Zeile 72: „Ich habe sieben Jahre und diese Partie gebraucht, um zu begreifen, dass es
+  Mut war.“ Die Großansicht `hales_brief` sollte den vollen Wortlaut aus Kapitel 44 zeigen.
+
+#### M1.3 – widerspricht – Leitsatz 1 am Felsbogen ist um das Prüfen gekürzt
+
+- Datei: WEG, Knoten `versoehnung_abend`; Folge in AUSSEN, Knoten `abend_motel`.
+- Ink: „Ein Opfer von jemandem, der hofft, dass es stimmt, und dem dabei das Herz schlägt. Dafür läuft der Verlierer zum Telegrafenamt.“ (Zeile 151);
+  „Aber ich habe etwas vergessen. Du zweifelst. Du zählst dreimal. Und dann spielst du trotzdem.“ (Zeile 149);
+  „- Nein. Aber ich hoffe es. Und ich habe es geprüft, so gut ich kann.“ (Zeile 130)
+- Roman: „stimmt, ist eine Rechnung. Ein Opfer, das jemand spielt, der hofft, dass es stimmt, und es“ (Zeile 185) /
+  „geprüft hat, so gut er kann, und dem dabei das Herz schlägt, das ist …“ Er suchte. „Das ist“ (Zeile 186);
+  „Du hast Angst, dass es nicht stimmt. Und dann spielst du trotzdem.““ (Zeile 179);
+  `19_Ton_und_Spannungsbogen.md`: „ein Opfer von jemandem, der es geprüft hat, so gut er kann, und dann hofft, ist“ (Zeile 31)
+- Befund: Der Leitsatz hat zwei Hälften: prüfen, so gut man kann, und dann hoffen. Im Spiel bleibt
+  nur das Hoffen; auch der Gegensatz („der weiß, dass es stimmt, ist eine Rechnung“) und „Du hast
+  Angst, dass es nicht stimmt“ fehlen. Ohne das Prüfen klingt der Satz nach bloßem Wagemut, also
+  nach dem alten Ambrose, und sein Schlusssatz am Motel („geprüft, so gut ich kann“) hat nichts
+  mehr, worauf er antwortet.
+- Vorschlag: Zeile 151 in zwei Zeilen: „Ein Opfer von jemandem, der weiß, dass es stimmt, ist eine
+  Rechnung.“ / „Ein Opfer von jemandem, der hofft, dass es stimmt, und es geprüft hat, so gut er
+  kann, und dem dabei das Herz schlägt …“ `#pause` / „Das ist das, wofür der Verlierer zum
+  Telegrafenamt läuft.“ Zeile 149: „Du zweifelst. Du zählst dreimal. Du hast Angst, dass es nicht
+  stimmt.“ / „Und dann spielst du trotzdem.“
+
+#### M1.4 – widerspricht – „Atme“: Der Satz des Helden steht als Erzähltext und ist verdreht; der Auslöser kennt die Stellung nicht
+
+- Datei: GARAGE, Knoten `clubkampf_atme`; `begegnungen.json`, Begegnung `desertSprings.clubkampf`
+  (Momente „schachGegen ab Zug 14“ und „ab Zug 24“).
+- Ink: „Er hat richtig geopfert und dann Angst gekriegt, hast du gesagt. Die Stellung ist noch nicht verloren. Guck hin. Zähl. #sprecher:erzaehler“ (Zeile 122);
+  „Miras Summen hört auf. Ihre Hand geht vor, schnell. Die Hand von jemandem, unter dem der Boden weggebrochen ist.“ (Zeile 118)
+- Roman: „„Du hast gestern gesagt, er hat richtig geopfert und dann Angst gekriegt. Dein Läufer war“ (Zeile 731) /
+  „nicht richtig. Aber die Stellung ist noch nicht verloren. Guck hin. Zähl.““ (Zeile 732);
+  Tabelle: „Wahl mitten in der Partie: schweigen oder „Atme““ (Zeile 875)
+- Befund: Im Roman spricht der Held zu Mira („Du hast gestern gesagt“). Im Spiel ist es Erzähltext
+  mit „hast du gesagt“; „du“ ist dort der Held, also hätte der Held den Satz gesagt. Die ehrliche
+  Mitte („Dein Läufer war nicht richtig.“) fehlt. Der Moment feuert außerdem nach Zugzahl oder
+  Schach, nicht nach Stellung: Er erscheint auch, wenn Mira besser steht oder gar nicht geopfert
+  hat; dann stimmen weder „unter dem der Boden weggebrochen ist“ noch „noch nicht verloren“. Der
+  Kopfkommentar („Die Sätze stimmen in jeder Partie gegen Mira“) trifft für diesen Knoten nicht zu.
+- Vorschlag: Als zweite Wahl nach „Mira. Atme.“ dem Helden den Satz geben: \* [„Du hast gestern
+  gesagt, er hat richtig geopfert und dann Angst gekriegt.“] – dann Erzähler: „Dein Läufer war nicht
+  richtig. Aber die Stellung ist noch nicht verloren. Guck hin. Zähl.“ als wörtliche Rede in
+  Anführungszeichen. Den Moment an eine Bedingung der Stellung binden (Mira steht schlechter, etwa
+  nach Figurenverlust), sonst entfällt er.
+
+#### M1.5 – widerspricht – Szene 77: Das Duell beginnt nach dem Läuferzug statt am Moment des Opfers; Miras „Nicht gleich.“ fehlt
+
+- Datei: GARAGE, Dateikopf Zeile 7–9, Knoten `mira_erinnerung` und `mira_nach_erinnerung`;
+  `begegnungen.json`, Begegnung `desertSprings.erinnerung1858` (FEN mit Läufer auf f8, Weiß am Zug,
+  Zug 26, kein weißer Turm mehr).
+- Ink: „// erfundene siebte Matchpartie gegen Hale als Stellungsduell nach Hales stillem Läuferzug“ (Zeile 8);
+  „Der Turm ist richtig da! Der Läufer geht zurück, na und? Dann kommt die Dame rüber, und der Bauer läuft. Das gewinnt.“ (Zeile 204);
+  „Du hast mehr Angreifer am König. Springer, Läufer, die Dame, ein Bauer. Gegen einen Läufer und einen fernen Turm.“ (Zeile 201)
+- Roman: „hier, und der Bauer läuft, und er kann nicht mehr alles decken, und dann …“ Sie schob Figuren, schneller, als ich gucken konnte. „Das gewinnt. Nicht gleich. Aber das gewinnt. Wer hat das gespielt?““ (Zeile 597);
+  Randnotiz: „Die Partie ist als Stellungsduell spielbar: Der Held spielt ab dem Läuferzug für Weiß weiter.“ (Zeile 648);
+  `akt3_befunde.md`, Abschnitt 7: „im Spiel bleibt das Stellungsduell am Moment des Opfers (Bibel)“ (Zeile 102)
+- Befund: Zwei Quellen widersprechen sich, und das Spiel folgt der Randnotiz des Romans, nicht der
+  Entscheidung in den Befunden und nicht der Bibel (Szene 77: „am Moment seines tollkühnen
+  Opfers“). Der Dateikopf beruft sich auf eine „Entscheidung 13.11.2026“, die in den Befunden
+  gerade andersherum steht. Fest ist dagegen Miras Urteil, und davon fehlt „Nicht gleich. Aber das
+  gewinnt.“ Zusätzlich läuft `mira_nach_erinnerung` auch nach einer Niederlage (die Quest nimmt
+  jeden Ausgang): Dann hat der Held gerade mit „mehr Angreifern“ verloren, und der Erzähler
+  behauptet trotzdem das Zählen als Ergebnis.
+- Vorschlag: Zeile 204: „… und der Bauer läuft, und er kann nicht mehr alles decken.“ / „Das
+  gewinnt. Nicht gleich. Aber das gewinnt.“ Den Startmoment klären (Rückfrage an den Autor):
+  entweder Stellung vor dem Turmopfer, der Held zieht den Turm selbst („Da. Dorthin der Turm.“ als
+  erster Zug), oder die Befunde und die Bibel auf „ab dem Läuferzug“ ändern. Nach einer Niederlage
+  Zeile 201 ersetzen, etwa: „Du zählst noch einmal nach. Springer, Läufer, die Dame, ein Bauer.“
+
+#### M1.6 – Pausen – Die Bitte um Verzeihung ist ein Block von elf Zeilen; die Brüche des Romans fehlen
+
+- Datei: WEG, Knoten `versoehnung_abend`, Zeile 141–151.
+- Ink: „- Er setzt sich dir gegenüber auf den Fels. Der Wind geht durch den Bogen. #sprecher:erzaehler #pause:4“ (Zeile 140);
+  „Das ist schöner. #sprecher:ambrose #musik:ambrose.held“ (Zeile 150)
+- Roman: „Er sah mich an. Dann setzte er sich, mir gegenüber, auf den Fels. Zum zweiten Mal in seinem“ (Zeile 148);
+  „Ich sagte nichts.“ (Zeile 158); „Das Licht wurde röter.“ (Zeile 171); „Seine Stimme brach.“ (Zeile 181)
+- Befund: Zwischen „Setz dich.“ und „Du warst ein Idiot.“ spricht Ambrose elf Zeilen ohne Wahl,
+  Pause oder Erzählzeile (Regel 5.1: höchstens sechs). Der Roman gliedert genau hier viermal
+  (Schweigen des Helden, „Er hob den Kopf“, das Licht, die brechende Stimme). Vor „Das ist schöner.“
+  steht keine Pause, obwohl dort die Musik einsetzt. „Zum zweiten Mal in seinem Tod“ fehlt, während
+  GARAGE Zeile 209 „Zum dritten Mal in seinem Tod“ zählt. Ähnlich lang ohne Pause: ANTIQ
+  `okoro_kiste` (zwölf Zeilen bis zur Wahl), GARAGE `dot_margaret` (acht Zeilen).
+- Vorschlag: Nach Zeile 144 Erzähler „Du sagst nichts.“ `#pause`; nach Zeile 146 „Das Licht wird
+  röter.“ `#licht` (zweite Stufe); Zeile 149 mit „Seine Stimme bricht.“ `#pause:2` abschließen, dann
+  „Das ist schöner.“ Zeile 140: „Er sieht dich an. Dann setzt er sich, dir gegenüber, auf den Fels.
+  Zum zweiten Mal in seinem Tod.“
+
+#### M1.7 – widerspricht – Ambroses erste Sätze im Canyon hängen am Antippen von Mrs. Holloway und an `ambroseSprichtWieder`
+
+- Datei: WEG, Knoten `holloway` (in `orte.json` eine Figur, kein Pflichtschritt) und `mira_stein`.
+- Ink: „Ich war nie in einer Wüste. #sprecher:ambrose #musik:ambrose.gitarre“ (Zeile 43);
+  „{ambroseSprichtWieder: -> mira_ambrose ->}“ (Zeile 91);
+  „Ich sehe ihn erst jetzt. Sie hat sich die Knie aufgeschlagen.“ (Zeile 101)
+- Roman: „„Ich war nie in einer Wüste“, sagte Ambrose.“ (Zeile 42); „Er ging neben mir. Er war noch blass, aber er war da.“ (Zeile 44)
+  (Story-Bibel, Szene 71: „Ambrose spricht wieder, aber vorsichtig“).
+- Befund: „Still wie ein Club“ (Titel von Kapitel 41, erster Satz nach dem Schweigen) fällt nur,
+  wer die Wanderin anspricht, und dann mitten im Gespräch mit einer Fremden. Wer `mira_stein` mit
+  `ambroseSprichtWieder = false` erreicht (die Werkstattszene, die die Variable setzt, ist nach
+  L3.1 nicht gesichert), verliert „Verzeih.“ und „Sie hat sich die Knie aufgeschlagen“ für immer,
+  weil `miraSteinGesehen` trotzdem gesetzt wird. Am Felsbogen bezieht sich dann nichts mehr darauf.
+- Vorschlag: Die Canyon-Zeilen (Zeile 40–46 und `holloway_gefaellt`) in einen eigenen Knoten
+  legen, der beim ersten Betreten von `canyonpfad` läuft; `holloway` behält nur die Weisheit. In
+  `mira_stein` Ambroses Zeilen ohne Bedingung spielen (Bibel: Er spricht hier wieder) oder den
+  Schritt erst nach der Werkstatt öffnen.
+
+#### M1.8 – widerspricht – „Er hat gelebt. Lange.“ hängt am freiwilligen Fund und geht verloren, wenn man ihn vor der Versöhnung antippt
+
+- Datei: WEG, Knoten `fund_nieten` und `nieten_ambrose`.
+- Ink: „Ambrose sagt nichts. Aber du spürst, dass er hinsieht. #sprecher:erzaehler #bild:aus“ (Zeile 220);
+  „- Er hat gelebt. Lange. Er hat weitergebaut, bis hierher, ans Ende von allem.“ (Zeile 225)
+- Roman: „Als wir abstiegen, im letzten Grau, sah ich unter dem Felsbogen etwas, das ich vorher nicht“ (Zeile 258);
+  „„Er hat gelebt“, sagte er. „Lange. Er hat weitergebaut, bis hierher, ans Ende von allem.“ Er“ (Zeile 271)
+- Befund: Der Schluss von Kapitel 42 (Auflösung „Nietenkopf J. H.“, erster versöhnlicher Satz über
+  Hale, Vorbereitung des Briefs) ist ein Gegenstand, den man nicht antippen muss. Tippt man ihn vor
+  der Versöhnung an, wird `nietenCanyonGefunden` gesetzt und Ambroses Antwort kommt nie mehr.
+- Vorschlag: Die Brücke an das Ende von `versoehnung_lektion` hängen („Als ihr absteigt, im
+  letzten Grau, siehst du unter dem Felsbogen eine Brücke.“ → `fund_nieten`, falls noch nicht
+  gefunden, sonst gleich `nieten_ambrose`). Wer den Fund früher antippt, bekommt nur die
+  Beschreibung; `nietenCanyonGefunden` sperrt `nieten_ambrose` nicht.
+
+#### M1.9 – plump – Ambrose nennt die Spielmechanik beim Namen und sagt Lehren auf
+
+- Datei: WEG, Knoten `versoehnung_lektion` und `fund_eidechsenhaut`; AUSSEN, Knoten `ankunft_zu_fuss`.
+- Ink: „Den Mentor-Zug aus Port Delacroix habe ich dir aufgehoben. Jetzt darfst du ihn spielen.“ (Zeile 189);
+  „Sie hat sich aus der alten Haut befreit. Manchmal muss man das.“ (Zeile 203);
+  „Eine Stadt, so klein wie ein Brett. Und trotzdem spielt man hier.“ (Zeile 41)
+- Roman: „Wir übten, bis das Licht fort war.“ (Zeile 256) (Ende der Lektion; kein Wort über die Karte);
+  „Ich legte drei hin. Die dritte war der Mentor-Zug. Ich hatte sie seit Port Delacroix nicht“ (Zeile 668);
+  „„Nur, wenn du willst“, sagte Ambrose.“ (Zeile 671)
+- Befund: „Mentor-Zug“ ist ein Kartenname; im Roman legt der Held die Karte hin, und Ambrose sagt
+  nur „Nur, wenn du willst.“ Hier erklärt er dem Helden nach dem bewegendsten Gespräch des Akts
+  eine Spielregel („Jetzt darfst du ihn spielen“) und nimmt „Aber du entscheidest“ vorweg, das in
+  `mira_clubkampf` noch einmal kommt. Die Eidechsenhaut bekommt eine aufgesagte Moral, die zudem
+  die Versöhnung vorwegnehmen kann (der Fund liegt davor); der Satz zur Ankunft ist ein
+  Kalenderspruch ohne Vorlage.
+- Vorschlag: Zeile 188–189 streichen; die Karte gibt die Quest ohnehin (Wirkung in Schritt 2), eine
+  Erzählzeile genügt: „Im Geigenkasten liegt eine Karte, die du seit Port Delacroix nicht angefasst
+  hast.“ Eidechsenhaut ohne Ambrose oder mit Staunen statt Lehre („Sie lässt ihr Kleid einfach
+  liegen. Donnerwetter.“). Ankunft: Ambrose schweigt, das Ortsschild trägt die Pointe.
+
+#### M1.10 – fehlt – Kiste im Keller: „nie geöffnet“ und der leere Umschlag fehlen; der Schluss setzt den Umschlag ungeprüft voraus
+
+- Datei: ANTIQ, Knoten `okoro_kiste` und `okoro_brief`.
+- Ink: „Er hat ihn versiegelt und nicht in den Umschlag gelegt. Hale. Der Mann, der jede Niete signiert.“ (Zeile 53);
+  „Du faltest den Brief und legst ihn in den Umschlag aus Ironwood. Er passt genau.“ (Zeile 89);
+  „Die Briefe warten schon lange. Ein paar Tage mehr schaden nicht.“ (Zeile 60)
+- Roman: „Der Umschlag ging leer hinaus.“ (Zeile 421);
+  „Den Brief hat er auf seinem Tisch gefunden, als es zu spät war, und nie geöffnet.“ (Zeile 494);
+  „Ich faltete den Brief. Ich legte ihn in den Umschlag aus Ironwood. Er passte genau.“ (Zeile 497)
+- Befund: Dass das Blatt nie geöffnet wurde und warum (Hale fand es, als es zu spät war), sagt das
+  Spiel nirgends; die Bibel nennt es „ein einzelnes, nie geöffnetes Blatt“. Die Zeilen zum Umschlag
+  in `okoro_kiste` stehen unter `gefundenUmschlag`, der Schluss in `okoro_brief` nicht: Ohne
+  Umschlag legt der Held den Brief trotzdem hinein (Bibel: nur „wer den Umschlag hat“). Die
+  Ironwood-Quest vergibt den Gegenstand als `umschlagOhneBrief`; ob daraus `gefundenUmschlag` wird,
+  ist nicht belegt. Wer „Nicht jetzt“ wählt, hört beim nächsten Mal die ganze Kellerszene samt „Er
+  hat sie aufgehoben. Jeden.“ noch einmal.
+- Vorschlag: Nach Zeile 53: „Der Umschlag ging leer hinaus.“ In `okoro_brief` vor Zeile 88 die
+  Zeile des Romans: „Den Brief hat er auf seinem Tisch gefunden, als es zu spät war, und nie
+  geöffnet.“ Zeile 89 unter `{gefundenUmschlag: …}` stellen. Für die Wiederkehr einen kurzen Knoten
+  (Variable `kisteGesehen`): „Das Blatt mit dem Siegel liegt noch auf der Kiste.“ und gleich die
+  Wahl.
+
+---
+
+#### Gut gelungen
+
+1. WEG, `erzaehlung_1866`: 1866 erst hier, kurz, aus Ungeduld, ohne Einzelheiten zum Sterben, mit
+   Stille am Schluss: „Ich bin nicht angekommen. Darum warte ich noch. #sprecher:ambrose #stimmung:traurig #musik:aus #erinnerung:aus #pause:3“ (Zeile 171).
+   Die drei Antworten der Bibel („Idiot“, „vermisst“, „1866“) kommen alle nacheinander vor; nichts
+   hängt an einer Wahl.
+2. ANTIQ, `okoro_brief`: Sie-Form, fünf Sekunden Stille und der Klangplan stimmen:
+   „„Ich warte. J. Hale“ #sprecher:erzaehler #pause:5“ (Zeile 74); danach
+   „Neunundzwanzig bis zweiunddreißig. Zur Kontrolle. Damit wir dieselbe Stellung aufbauen, wenn ich ankomme.“ (Zeile 86)
+   und „Er passt genau“ (nicht „Das Siegel passt“). Das Siegel ist „Wieder eine Fesselung. Eine andere, schwerer.“ (Zeile 51)
+3. GARAGE, `dot_margaret`: Dots vierzig Jahre mit Margaret sind über `dot_warten` und `dot_reihe`
+   gesichert (Tunnel beim ersten Gespräch) und enden mit
+   „An meinem Tisch. Vierzig Jahre. Mit dieser Frau. #sprecher:ambrose #stimmung:riss #musik:desertSprings“ (Zeile 294);
+   die Nebenaufgabe schließt den Bogen ohne Rede (der Faden zur leeren Postkarte).
+
+#### Zählung
+
+Nach Art (Hauptart je Befund): widerspricht 7 (M1.1–M1.5, M1.7, M1.8), fehlt 1 (M1.10), plump 1
+(M1.9), Pausen 1 (M1.6). Mehrere Befunde tragen eine zweite Art mit (M1.3 und M1.6 auch „fehlt“,
+M1.10 auch „Pausen“).
+
+Nach Datei (Hauptfundstelle): `weg-delacroix-desert.ink` 5 (M1.3, M1.6, M1.7, M1.8, M1.9),
+`desert-springs-garage.ink` 3 (M1.1, M1.4, M1.5), `desert-springs-antiquariat.ink` 2 (M1.2, M1.10),
+`desert-springs-aussen.ink` 0 als Hauptfundstelle (betroffen in M1.1, M1.3, M1.9).
+
+Unter der Grenze von zehn geblieben, nicht ausgeführt: Buck (AUSSEN `buck_nach_sieg`): „Na, das
+wird teuer.“ des Helden fehlt, deshalb bezieht sich „Das war beinahe fein.“ auf nichts;
+`mira_clubkampf` und `mira_erinnerung` wiederholen bei „Noch nicht.“ / „Ein andermal.“ die ganze
+Einleitung; Ambrose sagt am Motel „Tablet“ (so auch im Roman, gegen Regel 5.3 Nr. 4);
+`dot_okoro` endet mit `#pause` vor dem Ende des Gesprächs.
+
+#### Nicht geprüft
+
+- Den Code der Hülle: ob Gegenstände wie `aussichtspunkt` beim Betreten von selbst auslösen, wie
+  Quest-Schritte Knoten erzwingen, ob einmalige Wahlen (`*`) über Besuche hinweg verbraucht bleiben,
+  und wie `gefundenUmschlag` aus dem Gegenstand `umschlagOhneBrief` entsteht. Die Aussagen zur
+  Reihenfolge stützen sich nur auf Ink, `quests.json`, `orte.json` und `begegnungen.json`.
+- Die Schachstellungen (FEN der Erinnerung 1858 und von Dots Fernpartie, Runden `siegel`,
+  `reiheTomas`, `reiheDot`, `tafel`) nicht mit einer Engine und nicht gegen die Erzählzeilen
+  („Springer, Läufer, die Dame, ein Bauer“). Aufgefallen ist nur: In der FEN hat Weiß gar keinen
+  Turm mehr, der Roman spricht von einem Turm weniger.
+- `texte/de.json` nur gezielt durchsucht (Buck, Mira, Orte, Quest, Statisten von Canyon und Desert
+  Springs überflogen); Quest-, Fund- und Kartentexte nicht Satz für Satz gelesen.
+- Ob es die Marken und Kennungen gibt (`#licht`, `#teilchen`, `#erinnerung`, `#bild:…`,
+  `#musik:…`, `#stimmung:riss`, `ertappt`, `alt`, `lachtOhneSpott`), ebenso Bilder, Klänge und
+  Karten der Randnotizen (Licht in vier Stufen, Karten wieder farbig, Tablet grau im Inventar).
+- Die Knoten ohne Romanvorlage (Seilschaft, Sternwarte, Buchseite, Finch-Läufer, `highway` für
+  Akt 4) nur auf die festen Punkte gelesen, nicht gegen ihre eigenen Dokumente.
+- Die Abhängigkeit von Port Delacroix (wann `ambroseSprichtWieder` gesetzt wird) nur aus L3
+  übernommen, nicht neu geprüft. Szene 80 nur gegen den Roman, nicht gegen die Reiselogik.
+- Zeilenlänge (140 Zeichen) und Lesealter nicht gemessen.
+
+### M2 Kapitel 47 bis 52: Weg nach Summit City, Hochebene und Summit City
+
+Geprüft gegen `docs/spiel/roman/akt4_teil1.md` (Kapitel 47–52, mit Randnotizen und der Tabelle „Neu
+gegenüber der Story-Bibel“). Dialogdateien in `inhalte/abenteuer/dialoge/de/`:
+`weg-desert-summit.ink`, `hochebene.ink`, `summit-city-aussen.ink`, `summit-city-huette.ink`,
+`summit-city-bergstation.ink`, `summit-city-bergladen.ink`. Weitere Dateien zu diesen Orten gibt es
+nicht (`weg-summit-crossroads.ink` gehört zum nächsten Abschnitt). Partiemomente außerhalb von Ink:
+`inhalte/abenteuer/texte/de.json`, Zeile 514–516 (`moment.victor.luftig`, `moment.victor.haengt`,
+`moment.held.koenigLaeuft`), Zuordnung in `begegnungen.json` (`summitCity.victorFrei`,
+`summitCity.clubkampf`; dort auch der geführte Moment `summit-city-huette.clubkampf_heimweg`). Die
+Pflichtfolge steht in `quests.json` (`summitCity.endspiel`, sieben Schritte), die Auslöser in
+`orte.json`.
+
+Marken, die die Dateien benutzen: `#sprecher`, `#stimmung` (`froh`, `lacht`, `still`, `friedlich`,
+`muede`), `#pause` und `#pause:2`, `#musik` (Kennung, `aus`, `karte`), `#klang`, `#geraeusch:aus`.
+
+Gesamturteil: Die sechs großen Szenen (Ankunft, Lektion, Victors Niederlage, Bergstation, Laurie,
+„Jetzt zeig mir, wie“) folgen dem Roman eng und oft wörtlich; die festen Sätze von Kira, Ward und
+Ambrose stimmen. Die Schwächen liegen im Gerüst: Kapitel 49 (Hastings, Wards Ankündigung zu Laurie)
+ist ein freiwilliger Nebenweg und kann nach dem Clubkampf liegen, zwei tragende Sätze von Ambrose
+hängen an freiwilligen Gesprächen, an der Bergstation fehlt ein fester Satz, und die Hütte hat im
+Spiel doch einen Pokal und ein Diagramm an der Wand. Verweise auf das Buch stehen in keinem
+Spieltext (nur in Kommentaren). Auf der Hochebene gibt es keine Kostüme, Federn oder
+Nebelweisheit. Ambrose sitzt in diesen Dateien nirgends (Roman: er steht am Geländer und über dem
+Brett); Victors Januar-Satz kommt in diesen Dateien nicht vor und wird nirgends vorweggenommen.
+
+---
+
+#### M2.1 – widerspricht – Kapitel 49 hängt an einer Antwortwahl und kann nach Victors Niederlage oder nach dem Clubkampf liegen
+
+- Datei: `summit-city-huette.ink`, Knoten `ward`, Zeile 44–46; `ward_reihe_offen`, Zeile 82;
+  `ward_alltag`, Zeile 182; `ward_erinnerung`, Zeile 195–199; `ward_nach_erinnerung`, Zeile 215;
+  `ward_nach_sieg`, Zeile 167. In `quests.json` ist `summitCity.erinnerungHastings` mit
+  `"haupt": false` eingetragen.
+- Ink: „+ {not erinnerungHastingsBestanden} [„Wie haben Sie Schach lieben gelernt?“]“;
+  „- not victorKriseGesehen: -> victor_krise“;
+  „Ich weiß. Sie steckt die Hände noch immer in die Ärmel. Ich werde es ihr sagen, bevor ihr fahrt.“;
+  „Zum ersten Mal lächelt sie. Es macht sie zwanzig Jahre jünger.“;
+  „Sie lächelt, zum zweiten Mal in sechs Tagen.“
+- Roman: `akt4_teil1.md`, Zeile 235: „Am vierten Abend ließ sie mich nicht gehen.“; Zeile 256:
+  „Ich werde es ihr sagen. Bevor ihr fahrt.“; Zeile 303: „Dabei habe ich nur den Anfang gesehen.“;
+  Zeile 328: „Am fünften Tag war Victor an der Reihe.“ (`akt4_befunde.md`, Abschnitt 7: Ward sagt
+  es Mama „bevor ihr fahrt“ (vor dem Clubkampf).)
+- Befund: Der ganze vierte Abend (Wards Geständnis über Laurie, Steinitz, Ambroses Trost, „Ich
+  frage nicht.“) fällt nur, wenn man die Frage „Wie haben Sie Schach lieben gelernt?“ wählt. Wer
+  Kit und Haraldsen löst, ohne sie zu wählen, landet beim nächsten Gespräch sofort in
+  `victor_krise` (fünfter Tag); danach gibt es die Wahl erst wieder in `ward_alltag`, also nach der
+  Nadel. Dann kündigt Ward „Ich werde es ihr sagen, bevor ihr fahrt“ an, nachdem sie es in
+  `ward_laurie` längst gesagt hat, lächelt „zum ersten Mal“ nach dem „zweiten Mal“, und „Unten ist
+  heute das Drachenfest“ liegt nach Victors Niederlage. Umgekehrt ist die Wahl schon vor Kits
+  Aufgaben offen: der „vierte Abend“ am ersten Tag. Außerdem fragt im Roman nicht der Held; Ward
+  sagt „Bleib“, und ihre Antwort im Spiel („Bleib. Unten ist heute das Drachenfest.“) passt nicht
+  auf die gestellte Frage. Wer „Ein andermal.“ wählt, hört das ganze Geständnis beim nächsten Mal
+  noch einmal.
+- Vorschlag: Die Zeilen 195–200 (Bleib, Kowalskis Anruf, Laurie, „bevor ihr fahrt“) als eigenen
+  Pflichtknoten `ward_bleib` in `ward` vor `victor_krise` einhängen (nach beiden Reihen, einmalig,
+  eigene Variable), ohne Frage des Helden. Daran schließt das Heft an; die Zugerraten-Runde darf
+  freiwillig bleiben („Ein andermal.“ springt dann nur zum Heft zurück). Die Wahlzeilen 82 und 182
+  heißen dann „Das Heft im Packpapier.“ In Zeile 167 die Zählung an `erinnerungHastingsBesprochen`
+  binden; sonst: „Dann lächelt sie. Es macht sie zwanzig Jahre jünger.“
+
+#### M2.2 – fehlt – Bergstation: „Mein Vater weiß nicht, dass ich es habe.“ fehlt, und das Buch wird nicht Buch genannt
+
+- Datei: `summit-city-bergstation.ink`, Knoten `victor_seite`, Zeile 88–93.
+- Ink: „Victor holt aus der Innentasche etwas Kleines, in Leinen Gebundenes.“;
+  „Das hat meinem Großvater gehört. Da ist etwas drin, das soll ich aufheben. Es sei wertlos. Aber man hebe es auf.“;
+  „Ich glaub, du weißt, wer der Mann aus dem Süden war.“
+- Roman: `akt4_teil1.md`, Zeile 541–542: „Er holte ein Buch heraus.“ … „Ein Schachbuch.“; Zeile 545:
+  „Mein Vater weiß nicht, dass ich es habe.“; Zeile 557: „Mein Großvater hat gesagt, das hat schon
+  sein Großvater gesagt.“; Zeile 561: „Er hat es nicht gewusst. Ich glaub, du weißt es.“
+  (Story-Bibel, Szene 88, gleicher Wortlaut; `akt4_befunde.md`, Abschnitt 7: „Graham Hale weiß
+  nichts von dem Buch“.)
+- Befund: Fester Punkt verletzt. Ohne „Mein Vater weiß nicht, dass ich es habe.“ fehlt die
+  Voraussetzung für Graham Hale in Kapitel 53 ff. (er weiß nichts von Buch und Seite). Dass der
+  Vater gefragt wurde und es nicht wusste, fällt ebenfalls weg; „Ich glaub, du weißt, wer …“ klingt
+  so, als hätte Victor nie gesucht. Das Wort „Buch“ kommt in der Szene nicht vor; ein Kind sieht
+  nur „etwas Kleines“. Auch die Herkunft des Satzes über Generationen („das hat schon sein
+  Großvater gesagt“) fehlt, und wann Victor das Buch bekam (mit sieben, nach der Partie gegen den
+  Vater; das bindet es an Zeile 53).
+- Vorschlag: Zeile 88: „Victor greift in die Innentasche der Jacke. Ein Buch, klein und alt, in
+  Leinen gebunden. Ein Schachbuch.“ Zeile 89 teilen: „Das hat meinem Großvater gehört. Er hat es
+  mir gegeben, als ich sieben war. Mein Vater weiß nicht, dass ich es habe.“ / „Er hat gesagt, da
+  ist etwas drin, das soll ich aufheben. Es sei wertlos. Aber man hebe es auf.“ Zeile 93: „Ich hab
+  meinen Vater gefragt, wer der Mann aus dem Süden war. Er hat es nicht gewusst. Ich glaub, du
+  weißt es.“ Vor Zeile 98 Victor: „Mein Großvater hat gesagt, das hat schon sein Großvater gesagt.“
+  Keine dieser Zeilen an eine Wahl hängen.
+
+#### M2.3 – widerspricht – Wards leere Wände: Pokal, Diagramm über dem Kamin und Vitrine mit Mannschaftsfoto
+
+- Datei: `summit-city-huette.ink`, Knoten `pokal`, Zeile 321–323; `kaminfeuer`, Zeile 328; `foto`,
+  Zeile 333; Dateikopf Zeile 2; dagegen `ward_lektion`, Zeile 55.
+- Ink: „Auf dem Regal steht ein Pokal: „Landesmeisterin 1985 – E. Ward“. Daneben ein Foto vom Gipfel.“;
+  „Über dem Kamin hängt ein Diagramm: König und Bauer gegen König. Darunter steht „Opposition!“.“;
+  „In der Vitrine steht ein altes Foto: eine Mannschaft vor dieser Hütte“;
+  Kopf: „Kaminfeuer, Bücherregal, Endspieldiagramme an der Wand“;
+  dagegen: „An den Wänden hängt nichts außer einem Thermometer.“
+- Roman: `akt4_teil1.md`, Zeile 144: „Wänden hingen keine Pokale. Es hing überhaupt nichts an den
+  Wänden, außer einem Thermometer.“; Tabelle Zeile 770: „Ward fragt nach früheren Siegen; ihre
+  Hütte hat leere Wände.“ (`19_Ton_und_Spannungsbogen.md`, Zeile 178: „lobt nicht; leere Wände“.)
+- Befund: Fester Punkt verletzt, und das Spiel widerspricht sich selbst: Der Erzähler sagt beim
+  Eintreten, an den Wänden hänge nichts, zwei Schritte weiter stehen ein Pokal mit Jahreszahl, ein
+  Mannschaftsfoto in einer Vitrine und ein Lehrdiagramm mit Ausrufezeichen. Wards Scherz am Pokal
+  („Damals hatte ich noch keine grauen Haare. Nur einen Turm mehr.“) macht aus der Kargen eine
+  Plaudernde. Das Diagramm nimmt außerdem die Antwort auf ihre Frage „Wer am Zug ist, verliert.
+  Warum?“ vorweg.
+- Vorschlag: Auslöser `pokal` wird das Thermometer: „An der Wand hängt ein Thermometer. Sonst
+  nichts. Keine Pokale.“ `kaminfeuer`, zweite Fassung: „Auf dem Kaminsims steht eine Teekanne mit
+  Sprung. Darüber ist die Wand leer.“ `foto` streichen oder in den Bergladen legen (Haraldsens
+  Laden, dort stört es nicht). Dateikopf angleichen; Karte der Hütte und `orte.json` (Auslöser
+  `pokal`, `foto`) entsprechend ändern.
+
+#### M2.4 – fehlt (hängt am Antippen) – Der Auftakt von Kapitel 47 und „Merk dir, wie der König läuft.“ stehen nur im freiwilligen Gespräch mit Earl
+
+- Datei: `weg-desert-summit.ink`, Knoten `earl`, Zeile 37–40, und `earl_regel`, Zeile 48 (in
+  `orte.json` nur als Figur `wegDesertSummit.earl` angebunden; die Hauptquest beginnt erst mit
+  `ankunft_summit`); Rückbezüge: `texte/de.json`, Zeile 516 (`moment.held.koenigLaeuft`), und
+  `summit-city-huette.ink`, Knoten `ward_nach_sieg`, Zeile 162.
+- Ink: „Es ist Sommer, und du bist fünfzehn. Mama hat drei Wochen Urlaub und fährt. Juno liest hinten die Straßenschilder vor.“;
+  „Hässlich. Und vollkommen richtig. Ich beginne, an hässlichen Zügen Gefallen zu finden. Sag es niemandem.“;
+  „Auch hier gewinnt, wer den Weg kennt. Merk dir, wie der König läuft. Ich habe das Gefühl, du wirst es brauchen.“;
+  Rückbezüge: „Merk dir, wie der König läuft. Kits Quadrat, Haraldsens Seil, Earls König im Diner.“;
+  „Dass ein Fernfahrer dir gezeigt hat, wie er läuft.“
+- Roman: `akt4_teil1.md`, Zeile 23: „Er lobte Züge, die er selbst nie gespielt hätte“; Zeile 41:
+  „Merk dir, wie der König läuft.“; Zeile 680: „_Merk dir, wie der König läuft._“; Tabelle Zeile 767:
+  „Die Variante zahlt sich im Clubkampf aus; kein bloßer Nebenschauplatz.“
+- Befund: Wer am Diner vorbeiläuft, ohne Earl anzusprechen, erfährt weder, dass Sommer ist und der
+  Held fünfzehn (Voraussetzung für Kiras „zwei Jahre jünger“ und für Mamas Urlaub), noch hört er
+  den Satz, auf den der Clubkampf zweimal zurückgreift. Der Moment bei Zug 40 und Wards „Du hast
+  gehofft“ greifen dann ins Leere. Zusätzlich steht „Hässlich. Und vollkommen richtig.“ ohne
+  Anlass zwischen Straßenschildern und Neonschild: Es ist kein Zug zu sehen, den Ambrose meinen
+  könnte. Die geschenkte Tagebuchseite „Für das, was noch kommt“ (Roman Zeile 16, Tabelle: „Seite
+  im Tagebuchmenü“) kommt nirgends vor, obwohl Juno in `ward_nadel` ruft „Ich hab eine Seite frei
+  gelassen!“.
+- Vorschlag: Zeile 37–39 als einmaliges Pflichtereignis beim Betreten der Karte Diner (Auslöser
+  `start` mit Dialog), mit Anlass für Ambrose: „Ambrose ist leichter seit dem Canyon. Er lobt Züge,
+  die er selbst nie gespielt hätte: einen Bauern, der einfach ein Feld vorrückt.“ / „Hässlich. Und
+  vollkommen richtig. …“ Davor eine Zeile: „Juno hat dir eine Seite im Tagebuch geschenkt. Leer,
+  mit einem Rahmen aus Glitzer: Für das, was noch kommt.“ Earl und `earl_regel` beim Tanken gleich
+  anschließen („An einem Diner mit einem Neonschild in Form eines Königs haltet ihr zum Tanken.“),
+  sodass Zeile 48 auf jedem Weg fällt; den Übergang `weiterBergstrasse` bis dahin sperren.
+
+#### M2.5 – fehlt (ungesicherte Reihenfolge) – „Deshalb lernst du es. Nicht ich.“ fällt nur, wenn man zwischen Kit und Haraldsen mit Ward redet
+
+- Datei: `summit-city-huette.ink`, Knoten `ward`, Zeile 45–46; `ward_reihe_offen`, Zeile 76;
+  `abend_fernpartie`, Zeile 96.
+- Ink: „{reiheKitBestanden and not fernpartieEndspielGesagt: -> abend_fernpartie}“;
+  „- not (reiheKitBestanden and reiheHaraldsenBestanden): -> ward_reihe_offen“;
+  „Deshalb lernst du es. Nicht ich.“
+- Roman: `akt4_teil1.md`, Zeile 211: „„Die Fernpartie“, sagte ich am dritten Abend auf dem Weg
+  hinunter.“; Zeile 222: „Deshalb lernst du es. Nicht ich.“; Tabelle Zeile 771: „Ambrose gibt ab;
+  das Endspiel der Fernpartie wird die Aufgabe des Helden.“ (`19_Ton_und_Spannungsbogen.md`,
+  Zeile 136, Ambrose in Akt 4: „Deshalb lernst du es. Nicht ich.“)
+- Befund: `abend_fernpartie` ist nur über `ward_reihe_offen` erreichbar, also solange Haraldsens
+  Reihe offen ist. Kit schickt nach ihrer Reihe niemanden zu Ward zurück, Haraldsen prüft nur
+  `reiheKitBestanden`. Wer von Kit gleich zu Haraldsen geht, kommt bei Ward direkt in
+  `victor_krise`; der Satz, mit dem Ambrose das Endspiel der Fernpartie abgibt (Voraussetzung für
+  Ghost Town), fällt dann nie. Dass ein Gespräch mit Ward in der Hütte „Auf dem Weg hinunter“
+  beginnt, ist zudem ein Ortssprung ohne Übergang.
+- Vorschlag: Den Knoten vom Gespräch mit Ward lösen und an den Übergang `huetteAusgang` hängen
+  (einmalig, sobald `reiheKitBestanden`); als Sicherung in `ward` vor `victor_krise`:
+  `- not fernpartieEndspielGesagt: -> abend_fernpartie`, mit der Erzählzeile „Am dritten Abend, auf
+  dem Weg hinunter, gehen in der Stadt die Lichter an.“
+
+#### M2.6 – Pausen/Marken – „Was sagt er?“ ist in eine Zeile gestaucht; „Wer?“ und Ambroses Nicken fehlen
+
+- Datei: `summit-city-bergstation.ink`, Knoten `victor_blatt`, Zeile 105–107.
+- Ink: „\* [Schweigen]“;
+  „Was sagt er? Der, mit dem du redest. Ich hab dir geschrieben, dass ich dir glaube. Ich meine es so.“;
+  „\* [„Er sagt, dein Vorfahr war gewissenhaft und unerträglich.“]“
+- Roman: `akt4_teil1.md`, Zeile 593: „„Was sagt er?“, fragte Victor.“; Zeile 597: „„Wer?““;
+  Zeile 599: „„Der, mit dem du redest.““; Zeile 603: „Ich sah zu Ambrose. Er nickte.“; Zeile 606:
+  „Und dass er hundertsechzig Jahre auf diesen Zug gewartet hat.“; Tabelle Zeile 779: „**Victor
+  erfährt von Ambrose** und fragt: „Was sagt er?““
+- Befund: Die Wende „wer was weiß“ (nach Juno der Zweite) steht in einer Zeile mit vier Sätzen
+  (Regel 5.1: höchstens zwei) und ohne Pause. Der Schreck des Helden („Wer?“) fehlt, ebenso
+  Ambroses Einverständnis: Im Spiel verrät der Held ihn, ohne dass Ambrose nickt. Die Antwort
+  verliert ihre zweite Hälfte (hundertsechzig Jahre gewartet), also genau das, was Victor über
+  Ambrose erfährt. Die Wahl „Schweigen“ davor ist leer: Sie beantwortet nichts und verzögert nur.
+- Vorschlag: „Was sagt er?“ `#sprecher:victor #pause:2` / `* [„Wer?“]` / „Der, mit dem du redest.“
+  / „Ich hab dir geschrieben, dass ich dir glaube. Wegen des Bretts. Ich meine es so.“ / Erzähler:
+  „Du siehst zu Ambrose. Er nickt.“ `#pause` / `* [„Er sagt, dein Ur-ur-ur-Großvater war ein
+gewissenhafter, unerträglicher Mensch.“]` / Erzähler oder zweite Einzelwahl: „Und dass er
+  hundertsechzig Jahre auf diesen Zug gewartet hat.“ Die Wahl „Schweigen“ streichen.
+
+#### M2.7 – Pausen/Marken – Erzähltext steht in Sprechzeilen, auch beim tragenden Satz „Er spielt, als wäre er nicht da.“
+
+- Datei: `summit-city-huette.ink`, Knoten `victor_krise`, Zeile 248; `ward_lektion`, Zeile 57;
+  `clubkampf_heimweg`, Zeile 137; `ward_nach_sieg`, Zeile 167; `ward_nadel`, Zeile 173.
+- Ink: „Ward stellt den schwarzen König zurück. Er spielt, als wäre er nicht da. #sprecher:ward“;
+  „Sie betrachtet dich, wie man eine Stellung betrachtet. Sieben. Wie hast du Big Joe geschlagen? #sprecher:ward“;
+  „Er lacht leise. Dann sage ich nichts mehr. #sprecher:ambrose #stimmung:lacht“;
+  „Sie lächelt, zum zweiten Mal in sechs Tagen. Da siehst du, wie alt man werden kann, ohne fertig zu sein. #sprecher:ward“;
+  „In der Tür steht Juno, keuchend. Acht! Acht! Ich hab eine Seite frei gelassen! #sprecher:juno #stimmung:froh“
+- Roman: `akt4_teil1.md`, Zeile 396–398: „Ward hob den schwarzen König auf und stellte ihn zurück.“
+  … „„Er spielt“, sagte sie, „als wäre er nicht da.““; Zeile 153–157: „„Sieben“, sagte sie.“ …
+  „„Wie hast du Kowalski geschlagen?““
+- Befund: Unter Wards Porträt erscheint Erzähltext, als spräche sie über sich selbst („Ward stellt
+  …“, „Sie betrachtet dich …“, „Sie lächelt …“); dasselbe bei Ambrose und Juno. Wards fester Satz
+  über Victor verliert so sein Gewicht: Er steht als zweiter Satz einer Erzählzeile, ohne Pause,
+  obwohl davor mit `#pause:2` Raum geschaffen wurde. Wards trockenes „Sieben.“ geht ebenso unter.
+  Nebenbei: Ward sagt im Roman „Kowalski“ (Zeile 157 und 243), im Spiel zweimal „Big Joe“ (Zeile
+  57, 196); der Nachname passt zu ihrer Strenge.
+- Vorschlag: Trennen. „Ward hebt den schwarzen König auf und stellt ihn zurück.“
+  `#sprecher:erzaehler #pause` / „Er spielt, als wäre er nicht da.“ `#sprecher:ward`. „Sie
+  betrachtet dich, wie man eine Stellung betrachtet.“ `#sprecher:erzaehler` / „Sieben.“
+  `#sprecher:ward` / `* [„Ja.“]` / „Wie hast du Kowalski geschlagen?“ Ebenso Zeile 137, 167, 173
+  (Erzähler: „In der Tür steht Juno, keuchend.“ / Juno: „Acht! Acht! Ich hab eine Seite frei
+  gelassen!“).
+
+#### M2.8 – fehlt – Clubkampf: Wards „Ah.“ und der Augenblick der Opposition fehlen; im Remis-Zweig lobt Ward
+
+- Datei: `begegnungen.json`, Begegnung `summitCity.clubkampf` (nur zwei Momente: `damenTausch` und
+  `abZug: 40`); `texte/de.json`, Zeile 516; `summit-city-huette.ink`, Knoten `ward_nach_sieg`,
+  Zeile 152.
+- Ink: „Merk dir, wie der König läuft. Kits Quadrat, Haraldsens Seil, Earls König im Diner.“
+  (`moment.held.koenigLaeuft`);
+  „Remis. Ich habe bis zum letzten Bauern gespielt, und du auch. Das ist mehr wert, als du denkst.“
+- Roman: `akt4_teil1.md`, Zeile 696: „Als die Könige voreinander standen, ein Feld dazwischen, war
+  sie am Zug.“; Zeile 700: „„Ah“, sagte Großmeisterin Ward.“; Zeile 674: „Ich musste nicht
+  gewinnen. Ein Remis genügte für die Nadel.“; Tabelle Zeile 781: „Auslöser im Endspiel (Könige in
+  Opposition); Wards „Ah“.“ (`19_Ton_und_Spannungsbogen.md`, Zeile 194: „Zwei Könige stehen sich
+  gegenüber; „Ah.““)
+- Befund: Der feste Moment des Orts hat im Spiel keinen Auslöser und keinen Text. Stattdessen
+  kommt bei Zug 40, gleich wie die Stellung aussieht, eine Erinnerungszeile, die drei Lehren in
+  Stichworten aufzählt (und auf Earl verweist, den man nicht getroffen haben muss, siehe M2.4). Im
+  Remis-Zweig sagt Ward dem Kind, was sein Ergebnis wert ist: Das ist Lob mit Erklärung von der
+  Figur, die nicht lobt; „Ein Remis genügt für die Nadel“ selbst steht dagegen nirgends, auch
+  nicht vor der Partie.
+- Vorschlag: Moment mit Merkmal „Könige in Opposition im Endspiel, Gegnerin am Zug“: Erzähler „Zwei
+  Könige, ein Feld dazwischen. Sie ist am Zug.“ `#musik:aus`, dann Ward: „Ah.“ (neuer Schlüssel
+  `moment.ward.ah`). Zeile 516 auf den Romansatz kürzen: „Merk dir, wie der König läuft.“ und nur
+  auslösen, wenn die Damen getauscht sind. Remis: „Remis. Bis zum letzten Bauern.“ / Erzähler:
+  „Sie nimmt den Silbergipfel vom Kaminsims. Ein Remis genügt.“ Vor der Partie in `ward_clubkampf`
+  eine Erzählzeile: „Du musst nicht gewinnen. Ein Remis genügt für die Nadel.“
+
+#### M2.9 – plump – Victors erstes Lachen wird nur nacherzählt; in der Partie sagt Victor das Gesetz des Helden auf
+
+- Datei: `summit-city-bergstation.ink`, Knoten `victor_seite`, Zeile 84–85; `texte/de.json`,
+  Zeile 514–515 (`moment.victor.luftig`, `moment.victor.haengt`; in `begegnungen.json` bei
+  `abZug: 5` und `geschlagen:laeufer`).
+- Ink: „Irgendwann hat er gelacht. Über eine ganz gewöhnliche Gabel, die er nicht gesehen hat.“;
+  „Das ist schlecht. Warum hab ich das gemacht? Komisch. Luftig.“;
+  „Der hängt. Was hängt, wird genommen, oder?“
+- Roman: `akt4_teil1.md`, Zeile 497: „„Weiß ich nicht. Wie fühlt es sich an?““; Zeile 512: „„Was
+  hängt, wird genommen. Das ist Gesetz. Ich kenne eine, die ist die Polizei.““; Zeile 520: „Und
+  dann lachte er.“; Zeile 525: „„Eine Gabel“, sagte er. „Eine ganz gewöhnliche Gabel! Ich hab die
+  nicht gesehen! Ich seh so“; Tabelle Zeile 777: „Seine Befreiung als Handlung; er lacht über eine
+  gewöhnliche Gabel.“ (`19_Ton_und_Spannungsbogen.md`, Zeile 68: „Er lacht zum ersten Mal in Akt 4.“)
+- Befund: Der Augenblick, auf den Victors Bogen seit Akt 1 zuläuft, ist ein Rückblick des
+  Erzählers nach der Partie („Irgendwann hat er gelacht“), gleich bei welchem Ausgang und ob es
+  eine Gabel gab. In der Partie selbst gibt es dafür keinen Moment. „Komisch. Luftig.“ ist im
+  Roman die Antwort auf eine Frage des Helden; im Spiel fragt und antwortet Victor in einer Zeile
+  mit vier Sätzen, und zwar bei Zug 5, auch wenn sein Zug gut war. „Was hängt, wird genommen“ ist
+  Tamsins Gesetz und im Roman die Antwort des Helden; Victor kennt es nicht. Zudem löst der Moment
+  erst aus, wenn der Läufer schon geschlagen ist („Der hängt“ kommt zu spät).
+- Vorschlag: `moment.victor.luftig` an Victors ersten eingestreuten schwachen Zug binden und
+  teilen: Victor „Das ist schlecht. Warum hab ich das gemacht?“ / Erzähler „Du fragst, wie es sich
+  anfühlt. Er denkt ernsthaft nach.“ / Victor „Komisch. Luftig.“ `moment.victor.haengt`: Victor
+  „Der hängt. Soll ich ihn nehmen?“ / Erzähler „Was hängt, wird genommen. Das ist Gesetz. Du
+  kennst eine, die ist die Polizei.“ Neuer Moment bei einer Gabel oder einem Figurengewinn des
+  Helden: Erzähler „Victor starrt auf den Springer. Und dann lacht er.“ `#musik:aus` / Victor
+  „Eine Gabel. Eine ganz gewöhnliche Gabel! Ich hab die nicht gesehen!“ Zeile 84 dann: „Du weißt
+  nicht, wer gewonnen hat. Ihr habt nicht zu Ende gespielt.“ (nach Roman Zeile 535), als Fassung für
+  einen abgebrochenen oder verlorenen Ausgang.
+
+#### M2.10 – plump – Ambrose als Lehrbuch und Kalender: Diplomtag, Rätseltafel, Neonschild
+
+- Datei: `hochebene.ink`, Knoten `diplom_ende`, Zeile 217–218, und `diplom_start`, Zeile 202;
+  `weg-desert-summit.ink`, Knoten `tafel`, Zeile 84, und `earl_k`, Zeile 72.
+- Ink: „Lehren ist Spielen mit einem Brett, das man nicht sieht.“;
+  „Die richtige Aufgabe zur richtigen Zeit. Das ist die halbe Kunst des Übens.“;
+  „Drei Kinder, drei Aufgaben. Gut ist die Aufgabe, die ein Kind schaffen kann und bei der es etwas lernt.“;
+  „Im Endspiel zählt jedes Tempo. Und der König ist eine Figur wie jede andere. Eine starke.“;
+  „Ein Brett ist erst vollständig, wenn jede Figur an ihrem Platz steht. Bei Schildern ist es wohl ähnlich.“
+- Roman: `akt4_teil1.md`, Zeile 78: „nicht erklärt. Man lernt sie. Spiel noch eine.“; Zeile 39:
+  „„Ein Rennen ohne Angriff“, sagte Ambrose. „Wie seltsam. Und doch.““; Tabelle Zeile 766: „Sein
+  Bogen in Akt 4 (`friedlich`): Er lernt noch.“
+- Befund: In Akt 4 staunt Ambrose und gibt ab; er erklärt nicht mehr. Diese vier Zeilen sind
+  Merksätze ohne Anlass in der Szene. „Die halbe Kunst des Übens“ ist Trainingslehre, keine Stimme
+  von 1866 (der Dateikommentar nennt die Herkunft selbst: Trainingsmethodik). Die Zeile an der
+  Tafel verrät vor Summit City, was der Held im Clubkampf selbst finden soll („Der König läuft“),
+  und steht im selben Kapitel, in dem Ambrose sagt, man erkläre Spiele nicht. Anneks Satz zur
+  guten Aufgabe ist eine Definition; so redet keine Sportlehrerin am Diplomtag. Der Satz am
+  Neonschild ist ein Kalenderspruch mit angehängtem Vergleich.
+- Vorschlag: `diplom_ende`: beide Ambrose-Zeilen streichen; dafür eine, die staunt: „Drei Diplome,
+  und die Lehrerin lernt mit. Zu meiner Zeit hätte man das für Unordnung gehalten.“ Annek, Zeile
+  202: „Drei Kinder, drei Aufgaben. Such jedem eine aus, die es schaffen kann. Nicht die
+  schwerste.“ `tafel`, Zeile 84: „Nur Könige und Bauern. Wie seltsam. Und doch.“ `earl_k`, Zeile
+  72: „Seit neunundachtzig. Und niemand hat es vermisst. Ich kenne das Gefühl.“
+
+---
+
+#### Knapp nicht unter den zehn
+
+- `summit-city-aussen.ink`, Zeile 141, und `summit-city-huette.ink`, Zeile 225: Ambroses
+  Drachen-Satz („Zu meiner Zeit hätte man mich dafür aus dem Kaffeehaus geworfen.“) fällt zweimal,
+  am Brunnen und am Fenster der Hütte. Roman (Zeile 314–315): nur von oben. Am Brunnen eine andere
+  Zeile.
+- `summit-city-aussen.ink`, Knoten `seilbahn`, Zeile 118: „Ein Junge ist eben hochgefahren. Allein.“
+  Victor rennt im Roman und in `victor_krise` den Pfad hinauf („Aufwärts. Nicht hinunter.“), nicht
+  ins Tal zur Gondel; der Wärter der Seilbahn ist außerdem Mr. Haraldsen, der in der Hütte sitzt.
+- `summit-city-huette.ink`, Zeile 236 gegen Zeile 306: „Haraldsen hat es dir gezeigt. Die Brücke.“
+  Haraldsen sagt im Spiel nur „Philidor, Lucena.“; das Wort „Brücke“ führt niemand ein (Roman
+  Zeile 205: „die er _die Brücke_ nannte“).
+- `summit-city-huette.ink`, Zeile 221–222: Zettel mit vier Zugpaaren in Wards Heft und „Das ist
+  meine Partie gegen Hale.“ stehen nicht im Roman (Kapitel 49); die Bibel sieht in Szene 85 ein
+  Fragment vor. Ob Ward ein Stück der Fernpartie besitzen soll, ist eine Entscheidung für den
+  Hauptchat (sieben Orte, `akt4_befunde.md`, Abschnitt 7).
+- `summit-city-huette.ink`, Zeile 270: „Kit. Fünfzehn. Mein Vater ist Bergführer, ich bin Wards
+  Schülerin.“ ist ein Steckbrief; ebenso Zeile 100 („Du vielleicht schon.“) als Wegweiser.
+
+#### Gut gelungen
+
+1. `summit-city-huette.ink`, `ward_lektion`, Zeile 62: „Auf dem Brett stehen drei Figuren. Ein
+   weißer König, ein weißer Bauer, ein schwarzer König. Sonst nichts.“ mit `#musik:aus` und
+   `#geraeusch:aus`. Genau die Randnotiz („Bei den drei Figuren auf dem Brett ist es vollkommen
+   still.“), und Wards Fragen nach Kowalski und Castillo tragen ihre Art ohne ein Adjektiv.
+2. `summit-city-huette.ink`, `victor_krise`, Zeile 238–247: das Summen als einziger Klang
+   (`#musik:geraet`, `#klang:geraet_summen`), „Er ist zu gut erzogen, um einen Stuhl umzuwerfen.“,
+   „Aufwärts. Nicht hinunter.“ mit `#pause:2`. Kein Wort der Deutung; die Moral bleibt bei Ward
+   („Jemand hat ihm sehr gründlich beigebracht, sich nicht zu glauben.“).
+3. `summit-city-bergstation.ink`, `victor_blatt`, Zeile 98–104: Hales vier Zeilen wörtlich,
+   danach „Er hat geantwortet.“ mit `#pause:2` und dem gemeinsamen Grundton, und „Ein Hale.
+   Ur-ur-ur … Herrje. Ein Hale eben.“ im festen Wortlaut. Ebenso stimmig: `hochebene.ink`,
+   `kira_geschenk`, Zeile 72 („Werkstück. Den hab ich verschnitten. Aber er zieht trotzdem.“) und
+   `ward_laurie`, Zeile 121–124.
+
+#### Zählung
+
+Nach Art (zehn Befunde): fehlt 4 (M2.2, M2.4, M2.5, M2.8), widerspricht 2 (M2.1, M2.3), plump 2
+(M2.9, M2.10), Pausen/Marken 2 (M2.6, M2.7).
+
+Nach Datei (Mehrfachnennung): `summit-city-huette.ink` 6 (M2.1, M2.3, M2.4, M2.5, M2.7, M2.8),
+`summit-city-bergstation.ink` 3 (M2.2, M2.6, M2.9), `weg-desert-summit.ink` 2 (M2.4, M2.10),
+`hochebene.ink` 1 (M2.10), `texte/de.json` mit `begegnungen.json` 3 (M2.4, M2.8, M2.9),
+`summit-city-aussen.ink` 0, `summit-city-bergladen.ink` 0.
+
+#### Nicht geprüft
+
+- Die Karten (Tiled-Dateien) und Bilder: ob die Hütte dort Pokal, Vitrine und Diagramm zeigt, ob
+  die Bergstation eine Plattform mit Geländer ist (der Dateikopf der Bergstation spricht noch von
+  einer „Bank am Fenster“, `orte.json` führt die Karte als Innenraum), ob Ambrose irgendwo sitzend
+  gezeichnet ist.
+- Das Verhalten der Hülle: ob der Auslöser `start` einen Dialog tragen kann, ob es Merkmale für
+  „Könige in Opposition“ oder „Gabel“ gibt, wie `abZug` genau zählt, was bei Schnellreise nach
+  Summit City mit `ankunft_summit` geschieht. Die Vorschläge in M2.4, M2.8 und M2.9 setzen das
+  voraus.
+- Die Statistentexte in `texte/de.json` (`statist.summitCity.*`, `statist.wegDesertSummit.*`,
+  `statist.hochebene.*`) habe ich nur überflogen, nicht gegen den Roman geprüft. Aufgefallen ist
+  dabei: `statist.summitCity.bergstation.skifahrerin` und `statist.summitCity.aussen.blitzspieler`
+  nennen lebende Spieler (Regel 5.1 der Story-Bibel).
+- Aufgabenrunden (`runden.json`: Kit, Haraldsen, Hastings, Rätseltafel, Diplom) und ihre Texte;
+  ob die Brücke dort benannt wird, habe ich nur per Suche nach „Brücke“ und „Lucena“ in
+  `runden.json` und `de.json` geprüft (keine Treffer).
+- Nebenstränge ohne Romanstelle in Kapitel 47–52 (Funkschach mit Mama Bear, Kreidespringer,
+  Hinterzimmer, Fink-Figuren, lose Seiten, Spur P4, Sol, Bergladen) nur auf Ton und feste Punkte
+  gelesen, nicht auf ihre eigene Logik.
+- `19_Ton_und_Spannungsbogen.md` habe ich nicht ganz gelesen, sondern die Stellen zu Akt 4, Ward,
+  Victor, Ambrose und der Zählhilfe „sitzt“; `22_Dialogpruefung.md` nur den Anfang von L3 (bis
+  L3.5) und K2.13 als Muster. Story-Bibel: Abschnitt 5 und die Szenen 80–91 ganz.
+- Ob Musik- und Klangkennungen (`geraet`, `hastings`, `bergstation`, `victor.warm`,
+  `ambrose.hale.grundton`, `murmeltier`, `fanfare`) als Dateien vorliegen. Die Randnotiz „Sieg ohne
+  Fanfare; erst nach „Jetzt zeig mir, wie““ ist eingehalten (`#klang:fanfare` in `ward_nadel`).
+- Die Sensibilitätslesung der Hochebene ersetzt diese Prüfung nicht.
+
+### M3 Kapitel 53 bis 59: Crossroads, Pinewood und Ghost Town
+
+Geprüft gegen `docs/spiel/roman/akt4_teil2.md` (Kapitel 53–55) und `akt4_teil3.md` (Kapitel 56–59),
+jeweils mit Randnotizen und der Tabelle „Neu gegenüber der Story-Bibel“. Dialogdateien in
+`inhalte/abenteuer/dialoge/de/`: `weg-summit-crossroads.ink`, `crossroads-aussen.ink`,
+`crossroads-raststaette.ink`, `weg-crossroads-pinewood.ink`, `pinewood-camp-aussen.ink`,
+`weg-pinewood-ghost.ink`, `ghost-town-aussen.ink`, `ghost-town-saloon.ink`, `erinnerung-siedlung.ink`.
+Weitere Ink-Dateien zu diesen Kapiteln gibt es nicht (`ls`); Victors Abschied vom Anfang des Kapitels
+53 läge in den Dateien von Summit City (nicht Teil dieses Auftrags). Die beiden Partiemomente der
+Fernpartie stehen nicht in `texte/de.json`, sondern als Knoten in `ghost-town-saloon.ink`
+(`fernpartie_wie_er`, `fernpartie_zaehlen`; Zuordnung in `begegnungen.json`, Begegnung
+`ghostTown.fernpartie`, `kartenErlaubt: false`). Aus `texte/de.json` gehören Ortsnamen und
+Statistensätze der Orte dazu; sie sind dort mitgeprüft, wo sie einem festen Punkt widersprechen.
+Welche Knoten erreichbar sind, ist gegen `orte.json`, `quests.json` und die Szenendateien in
+`inhalte/abenteuer/szenen/` gelesen.
+
+Marken, die die Dateien benutzen: `#sprecher`, `#stimmung` (`froh`, `still`, `fern`, `friedlich`,
+`lacht`, `lachtOhneSpott`, `riss`, `jung`, `echtesLaecheln`, `weintUndLaechelt`), `#pause` und
+`#pause:2` bis `#pause:4`, `#musik`, `#klang`, `#geraeusch`, `#bild`, `#licht`, `#teilchen`,
+`#erinnerung`.
+
+Gesamturteil: Im Wortlaut sind diese Kapitel die treuesten des Spiels. Die festen Sätze stehen fast
+alle wörtlich da (Grab, „Hier bin ich angekommen“, „Bring ihn nach Norden. Er wartet.“, b5 als „Ein
+Feld“, „Nicht makellos. Schön.“, das Möbelstück auf beiden Antworten, das vierte Sitzen). Die
+Schwächen liegen im Gerüst und in den Daten um die Dialoge herum: Zwei Auflösungen von Crossroads
+haben keinen Auslöser, Ghost Town ist auf der Karte bevölkert, die Erinnerung heißt „Bretterhütte“
+und zeigt den Postreiter, „Es ist still“ hängt an einem freiwilligen Antippen, und eine Wanderin
+weiß vom Geist. Verweise auf das Buch stehen in keinem Spieltext (nur in Kommentaren).
+
+---
+
+#### M3.1 – fehlt (nicht erreichbar) – Coach Delgado und Theo haben keinen Auslöser; im Text fehlen „Woche nach Victors Besuch“ und „sieben Kinder“
+
+- Datei: `crossroads-aussen.ink`, Knoten `coach`, Zeile 120–139; `crossroads-raststaette.ink`,
+  Knoten `theo`, Zeile 37 und 97–112. In `orte.json` (Ort `crossroads`) und in
+  `szenen/crossroads-aussen.json`, `szenen/crossroads-raststaette.json` gibt es weder Figur noch
+  Auslöser dafür.
+- Ink: „// Noch ohne Figur auf der Karte (Schulbus mit Fahrrad auf dem Dach); Einstieg crossroads-aussen.coach.“;
+  „Ich hab unterschrieben. Im September. Wir hatten kein Geld für den Bus nach Cedar Creek.“;
+  „Die haben den Bus bezahlt, die Bretter und das Startgeld. Im Frühjahr wollten sie dafür den Raum. Ohne mich.“;
+  „Dr. Lin hat gekündigt. Sie macht einen Club auf. In einem Keller. Ich hab gesagt, ich messe erst, ob es sich lohnt.“
+- Roman: `akt4_teil2.md`, Zeile 239: „„Ich hab unterschrieben“, sagte Coach Delgado. „Im September, in der Woche, nachdem der Junge mit dem Tablet bei uns war.“;
+  Zeile 241: „und das Startgeld für sieben Kinder.“; Zeile 174: „Dr. Lin hat gekündigt. Wusstest du das? Sie macht einen Club“
+  (Story-Bibel Zeile 2103 und Szene 93; `akt4_befunde.md`, Abschnitt 7).
+- Befund: Der feste Punkt von Szene 93 ist geschrieben, aber im Spiel nicht zu hören: Kein Auslöser
+  führt zu `coach` oder `theo`. Damit fehlt auch „Dr. Lin hat gekündigt“ ganz, denn nur Theo sagt es
+  (Nova sagt nur „Dr. Lin hat angerufen.“). Das Tablet bleibt beim Helden. Im Text selbst fehlen
+  zwei feste Angaben: die Woche nach Victors Besuch und das Startgeld „für sieben Kinder“; auch
+  „Dienstags und donnerstags, für ihr Programm“ ist zu „Ohne mich.“ verkürzt.
+- Vorschlag: Figuren `coachDelgado` (am Schulbus) und `theo` (am Fenster der Raststätte) in
+  `orte.json` und den Szenen eintragen. Zeile 134–135 nach dem Roman: „Ich hab unterschrieben. Im
+  September, in der Woche, nachdem der Junge mit dem Tablet bei uns war.“ / „Wir hatten kein Geld
+  für den Bus nach Cedar Creek. Die haben den Bus bezahlt und die Bretter und das Startgeld für
+  sieben Kinder.“ / „Im Frühjahr wollten sie dafür den Raum. Dienstags und donnerstags, für ihr
+  Programm, ohne mich.“ Dazu in `nova_bitte` einen Satz, der nicht an Theo hängt: „Sie hat
+  gekündigt. Sie kommt mit. Sie bringt die Berichte.“
+
+#### M3.2 – widerspricht – Ghost Town ist auf der Karte nicht leer: Statisten, Reisebus, Ortsschild
+
+- Datei: `texte/de.json`, Zeile 1193–1201 (`statist.ghostTown.aussen.*`) und 1232–1233
+  (`statist.ghostTown.saloon.*`), gesetzt in `szenen/ghost-town-aussen.json` und
+  `szenen/ghost-town-saloon.json` samt Varianten; `ghost-town-aussen.ink`, Knoten `ortsschild`,
+  Zeile 155, gegen Knoten `ankunft_zu_fuss`, Zeile 30–31, und `pruitt`, Zeile 64–65.
+- Ink und Texte: „Es ist niemand da. Seit hundert Jahren. Der Wind schiebt einen Busch über die Straße.“;
+  „Besuch! Ich hab seit April keinen gehabt. Pruitt. Ich bin die Einwohnerzahl.“;
+  „Ein Holzschild am Ortseingang: „Gold Hill, pop. 312“. Die Zahl ist durchgestrichen, darunter steht mit Kreide eine Null.“;
+  „Hier hat man 1866 Gold gefunden, und zwanzig Jahre später waren alle wieder fort.“;
+  „Dann hielt ein Bus, und alle haben das alte Brett im Saloon fotografiert, für ihre Perfect-Move-App.“
+- Roman: `akt4_teil3.md`, Zeile 30: „Die Stadt kam ohne Schild.“; Zeile 37: „Es war niemand da. Es war seit hundert Jahren niemand da.“;
+  Zeile 65: „Er erzählte. Achtzehnhundertdreiundsechzig Gold gefunden, viertausend Menschen in zwei“.
+- Befund: Fester Punkt verletzt (Mr. Pruitt ist die einzige Figur, kein Ortsschild). Auf der
+  Außenkarte stehen acht sprechende Statisten und weitere stumme, im Saloon zwei Touristen. Sie
+  widersprechen dem Erzähler und Mr. Pruitt im selben Ort, einer nennt ein anderes Jahr für das
+  Gold (1866 statt 1863; Pruitt: der Letzte ging 1873), einer lässt eine Reisegruppe genau das
+  Brett fotografieren, auf dem die Fernpartie enden soll. Das Ortsschild widerspricht der Zeile 30
+  derselben Datei; seine Zahl 312 ist zufällig die der Rosen („Dreihundertzwölf“). Die Stille, von
+  der Kapitel 56 bis 59 leben, gibt es so nicht.
+- Vorschlag: Alle Statisten aus den Szenen von Ghost Town (auch den Varianten) und ihre Zeilen in
+  `de.json` entfernen; die Tiere dürfen bleiben. Den Auslöser `ortsschild` streichen oder umtexten:
+  „Am Ortseingang stehen zwei Pfosten. Das Schild dazwischen fehlt.“
+
+#### M3.3 – widerspricht – Erinnerung 1866: Die Karte heißt „Bretterhütte“, der Postreiter steht als Figur im Raum, Gideon nicht
+
+- Datei: `texte/de.json`, Zeile 754 (`ort.erinnerungSiedlung.huette`); `orte.json`, Ort
+  `erinnerungSiedlung` (Figur `erinnerungSiedlung.postreiter`, in
+  `szenen/erinnerung-siedlung-huette.json` auf Feld 7, 8); `erinnerung-siedlung.ink`, Knoten
+  `postreiter`, Zeile 20, Dateikopf Zeile 5, Knoten `zug37`, Zeile 44; `ghost-town-saloon.ink`,
+  Knoten `victor_wartet`, Zeile 47.
+- Ink und Texte: „Bretterhütte, 1866“;
+  „Unten wartet der Postreiter neben seinem Pferd. Er will weiter, vor dem Schnee.“;
+  „// Ambrose schreibt die letzten vier Züge der Fernpartie (37. Txd7 bis 40. Kxg3, Bibel Abschnitt 35)“;
+  „Der 37. Zug. Sein Turm auf d7 bedroht mich. Was schreibe ich?“;
+  „Hinter dem Tresen. Ich erinnere mich an einen Reiter mit einem Abzeichen.“
+- Roman: `akt4_teil3.md`, Zeile 143: „\_Szene 99 (Flashback: Die letzte Kerze, 1866). Erinnerung: ein Zimmer über dem Laden, Nacht.“;
+  Zeile 264: „„Unten ist der Postreiter“, sagte Gideon. „Er will weiter, vor dem Schnee.““;
+  Zeile 207: „„Ich zeige dir, wie sie hierhergekommen ist. Nur die letzten Züge. Rate mit.““;
+  Zeile 339: „Erinnerungskarte: dasselbe Zimmer 1866 mit Bett, Tisch, Stuhl und Brett.“
+- Befund: Die Dialogzeilen der Kerze sind richtig (Rosen, Gideon, „Bring ihn nach Norden. Er
+  wartet.“), aber der Rahmen stammt noch aus der alten Fassung. Der Ort wird dem Spieler als
+  „Bretterhütte, 1866“ angezeigt. Der Postreiter, der unten warten und nicht zu sehen sein soll,
+  ist die einzige Figur auf der Karte und lässt sich ansprechen; Gideon, der im Zimmer sitzt, hat
+  keine. Ambrose „erinnert sich“ im Saloon an einen Reiter, den er nie gesehen hat. Und im
+  Zugerraten „schreibt“ er den 37. Zug, obwohl die Züge 37 bis 39 längst gespielt sind: Er zeigt
+  sie Gideon und schreibt nur den vierzigsten.
+- Vorschlag: Namen ändern in „Zimmer über dem Laden, 1866“. Figur Postreiter von der Karte nehmen,
+  seinen Satz Gideon geben (Roman, Zeile 264) und Gideon als Figur an die Bettkante setzen. Zeile 44:
+  „Der 37. Zug. Sein Turm steht auf d7. Was habe ich gespielt?“ Zeile 47 im Saloon: „Hinter dem
+  Tresen. Der Postreiter hat hier unten gewartet.“ Dateikopf berichtigen.
+
+#### M3.4 – fehlt (hängt am Antippen, Reihenfolge) – „Es ist still“ liegt hinter dem Rangerhaus; der Abschied in Ghost Town setzt es voraus
+
+- Datei: `weg-crossroads-pinewood.ink`, Knoten `rangerhaus`, Zeile 115, und `es_ist_still`, Zeile
+  127–136; `crossroads-aussen.ink`, Knoten `viehgatter_offen`, Zeile 173; `ghost-town-aussen.ink`,
+  Knoten `nacht_ambrose`, Zeile 127 und 137.
+- Ink: „{gretaGetroffen and not esIstStillGesagt: -> es_ist_still}“;
+  „Wenn ich die Augen schließe, ist da nichts mehr. Das erste Mal seit achtzehnhundertsechsundsechzig ist es still.“;
+  „Im Wald ist es still geworden. Seit heute Mittag ist es mehr als das. Ich bin leichter. Das Brett hält mich nicht mehr so fest.“
+- Roman: `akt4_teil2.md`, Zeile 360–362: „Wenn ich die Augen schließe, ist da nichts mehr. Es ist das erste Mal seit“
+  (Tabelle Zeile 502: „Erstes Zeichen des Abschieds, ohne das Wort.“ / „Zeile am Ende von Szene 94“);
+  `akt4_teil3.md`, Zeile 621: „„Im Wald habe ich dir erzählt, dass es still geworden ist.“
+- Befund: Der Schluss von Kapitel 54 trägt den Abschied vor. Im Spiel hört man ihn nur, wer erst
+  Greta anspricht und dann das Rangerhaus antippt (Auslöser `rangerhaus`, Art `gegenstand`; die
+  Hauptquest `pinewoodCamp.sommercamp` verlangt nur die Ankunft im Camp und das Lagerfeuer). Wer das
+  Rangerhaus vor Greta antippt, bekommt die Bäume, danach nichts mehr, bis Greta gesprochen hat. Wer
+  nach Novas Bitte mit Darlenes Schlüssel die Minenstraße nimmt, kommt ohne Wald und Camp nach Ghost
+  Town. In der Nacht sagt Ambrose trotzdem „Im Wald ist es still geworden“ und, auf „Ich weiß.“,
+  „Seit dem Wald.“ Dasselbe gilt für „Das war immer alles.“ am Steg (Kapitel 55).
+- Vorschlag: `es_ist_still` an den Übergang `weiterCamp` hängen (vor
+  `pinewood-camp-aussen.ankunft_zu_fuss`), nicht an Greta binden; die Bäume beim Betreten der Karte
+  „Unter den Riesenbäumen“ zeigen. Die Minenstraße erst nach `lagerfeuerGesehen` öffnen, oder Zeile
+  127 in Ghost Town an `esIstStillGesagt` binden und sonst nach dem Roman neu ansetzen: „Seit der
+  Bergstation sehe ich die Stellung nicht mehr im Dunkeln. Seit heute Mittag ist es mehr als das.“
+
+#### M3.5 – widerspricht (wer was weiß) – Greta spricht vom „Geist“
+
+- Datei: `weg-crossroads-pinewood.ink`, Knoten `greta_angebot`, Zeile 76; Knoten
+  `greta_nach_partie`, Zeile 86.
+- Ink: „Der Geist da spielt doch, oder? Ich seh's dir an. Setz dich mit ihm auf die Bank. Ich schreib mit.“;
+  „Ich hab mitgeschrieben. Siebenundzwanzig Züge, kein einziger falscher. Fast.“
+- Roman: `akt4_teil2.md`, Zeile 342–344: „„Ich hab einen Freund“, sagte ich. „Der sieht für mich.““ /
+  „„Dann halt ihn fest“, sagte Greta. „Solche findet man nicht oft.““; `akt4_befunde.md`, Abschnitt 2,
+  Punkt 1: „wissen es zwei: Juno und Victor.“
+- Befund: Von Ambrose wissen Juno und Victor, sonst niemand. Greta hält den Helden im Roman für
+  jemanden, der am ersten Tag gut sieht, und der Satz vom Freund bleibt für sie ein gewöhnlicher
+  Satz. Gleich nach „Dann halt ihn fest.“ (Zeile 72) nennt sie im Spiel einen Geist, sieht ihn
+  („Der Geist da“) und schreibt seine Partie mit. Das nimmt dem Satz davor seinen Doppelsinn und
+  macht aus der Fremden eine Eingeweihte.
+- Vorschlag: Zeile 76: „Dein Freund spielt doch, oder? Setzt euch auf die Bank. Ihr sagt die Züge,
+  ich schreib mit.“ Zeile 86 kann bleiben, wenn Greta nur hört, was der Held ansagt; sonst „Du hast
+  beide Seiten angesagt. Siebenundzwanzig Züge, kein einziger falscher. Fast.“
+
+#### M3.6 – widerspricht und fehlt – Szene 101: „Und dann gehst du.“ – „Ja.“ fehlt; „gebeten zu bleiben“ fällt auch auf „Ich weiß.“
+
+- Datei: `ghost-town-aussen.ink`, Knoten `nacht_ambrose`, Zeile 133–137 und 144.
+- Ink: „Noch eine Partie. Deine. Gegen ihn. In der großen Halle, vor allen Leuten. Dann ist es gut.“;
+  „Natürlich weißt du es. Seit dem Wald. Vielleicht seit dem Felsbogen.“;
+  „Es hat mich in meinem ganzen Leben niemand gebeten zu bleiben. Ich war sehr gut im Gehen. Es ist ein seltsames Geschenk, am Ende gefragt zu werden.“
+- Roman: `akt4_teil3.md`, Zeile 637–639: „„Und dann gehst du.““ / „„Ja.““;
+  Zeile 681: „„Ich weiß“, sagte ich. „Ich weiß, dass du gehen musst. Ich wollte es nur einmal sagen.““;
+  Zeile 683: „„Ich bin froh, dass du es gesagt hast. Es hat mich in meinem ganzen Leben niemand gebeten zu“
+  (Kopf des Kapitels, Zeile 587–588: „Ambrose“ / „sagt es.“; Bibel Szene 101: er sagt „zum ersten Mal offen, dass er gehen wird“).
+- Befund: Das Möbelstück fällt richtig hinter den Sammelpunkt, also auf beide Antworten. Zwei Dinge
+  stimmen nicht. Erstens sagt Ambrose im Spiel nie, dass er geht: Zwischen „Dann ist es gut.“ und
+  der Wahl fehlt der Wechsel „Und dann gehst du.“ – „Ja.“, auf den „Bleib.“ erst antwortet. Zweitens
+  steht Zeile 144 ebenfalls hinter dem Sammelpunkt: Wer „Ich weiß.“ gewählt hat, hat ihn nie
+  gebeten zu bleiben, und Ambrose dankt für eine Bitte, die nicht fiel. Im Roman sagt der Held
+  beides; die Randnotiz verlangt nur, dass beide Wahlen ins selbe Gespräch führen.
+- Vorschlag: Nach Zeile 133 als Erzählerzeile mit Antwort: „Und dann gehst du, sagst du.“ / „Ja.“
+  (Ambrose, `#pause`). Im Zweig „Ich weiß.“ den Helden die Bitte nachholen lassen, mit den Worten des
+  Romans: „Du weißt, dass er gehen muss. Bleib, sagst du trotzdem. Du wolltest es nur einmal sagen.“
+  Dann passt Zeile 144 auf beide Wege; davor „Ich bin froh, dass du es gesagt hast.“
+
+#### M3.7 – fehlt und widerspricht – Nach der Fernpartie: Zusatz beim Sieg fehlt, der Text behauptet Brettfakten, die Niederlage ist unklar
+
+- Datei: `ghost-town-saloon.ink`, Knoten `victor_nach_fernpartie`, Zeile 114–130, Unterknoten
+  `verzaehlt`, Zeile 138–141; `begegnungen.json`, Begegnung `ghostTown.fernpartie`
+  (Stellungsduell über 15 Züge); `quests.json`, Quest `ghostTown.fernpartie`, Schritt 3 (Ausgang
+  auch `niederlage`).
+- Ink: „Victor sieht lange auf das Brett. Dann legt er seinen König um, ganz langsam, und lacht.“;
+  „Am Ende stehen auf dem alten Brett zwei Könige und ein Springer. Mehr ist nicht mehr zu wollen. Remis?“;
+  „Victors Springer kommt zurück, im genau richtigen Augenblick. Er hält deinen König fest, dann stellt er ihn behutsam wieder auf.“;
+  „Sie ist zu Ende. Jemand hat sie zu Ende gespielt. Ein Kind, das zählt und hofft, und ein Hale, der einen Springer rückwärts zieht.“
+- Roman: `akt4_teil3.md`, Zeile 734: „Im Spiel bleibt der Ausgang offen; bei Sieg lautet Ambroses Zeile gleich, mit einem Zusatz („Du hast für mich gewonnen, was ich nie gebraucht hätte“).“;
+  Zeile 581: „jeder Ausgang führt weiter, Ambroses Schlusssatz bleibt derselbe.“
+- Befund: Der Schlusssatz stimmt in allen Ausgängen. Aber: (a) Beim Sieg fehlt der Zusatz, den der
+  Roman für das Spiel festlegt; so klingt „Nicht makellos.“ nach einem Sieg unbegründet. (b) Das
+  Duell endet nach 15 Zügen; auf dem Brett stehen dann weder „zwei Könige und ein Springer“ noch
+  muss Victor einen Springer rückwärts gezogen haben. Zeile 127 sagt es trotzdem in jedem Ausgang,
+  auch nach dem Sieg, nach dem Victor „seinen König umlegt“. (c) Bibel und Befunde kennen nur Sieg
+  oder Remis; der dritte Zweig liest sich wie eine Niederlage („Er hält deinen König fest“), danach
+  heißt es ohne Übergang „zu Ende gespielt“. (d) Die Entschuldigung „Ich hab mich verzählt.“ ist im
+  Remis Pflicht, obwohl der Spieler sich vielleicht nicht verzählt hat.
+- Vorschlag: Ausgangszeilen stellungsneutral, wie die Partiemomente: Sieg „Victor sieht lange auf
+  das Brett. Dann gibt er dir die Hand.“; sonst „Mehr ist nicht mehr zu wollen. Remis?“ (Victor),
+  auch für `niederlage`, die das Spiel hier als Remis erzählt. Zeile 127 teilen: „Sie ist zu Ende.
+  Jemand hat sie zu Ende gespielt.“ / „Ein Kind, das zählt und hofft, und ein Hale.“ Beim Sieg nach
+  „Nicht makellos. Schön.“ den Zusatz „Du hast für mich gewonnen, was ich nie gebraucht hätte.“
+  `verzaehlt` als Wahl mit zwei Antworten („Es tut mir leid.“ / „Sie ist remis.“), beide führen auf
+  „{held}.“
+
+#### M3.8 – plump und fehlt – Die letzte Kerze: eine Punktzahl an der Stelle, an der Ambrose verzeiht
+
+- Datei: `erinnerung-siedlung.ink`, Knoten `letzter_brief`, Zeile 101–106.
+- Ink: „Vier von vier. Du kennst meine Züge besser als ich.“;
+  „{kerzeRichtig} von vier. Die Partie gehört jetzt auch dir.“;
+  „Die Feder kratzt. Zweimal muss er absetzen. „40. König schlägt g3.“ Mehr schreibt die Hand nicht.“
+- Roman: `akt4_teil3.md`, Zeile 251: „Gideon hielt mir das Blatt. Ich schrieb. Es dauerte. Die Feder kratzte, und zweimal musste“;
+  Zeile 256–258: „Darunter wollte ich noch etwas schreiben. Dass ich unterwegs sei. Dass ich es nicht mehr“ …
+  „irgendwann um den zwanzigsten Zug, ohne es zu merken.“; Tabelle Zeile 726: „Erzählerzeile im Flashback.“
+- Befund: Zwischen dem Königszug („Jedes Kind hätte ihn gefunden.“) und dem Brief steht eine
+  Auswertung. Ambrose spricht dabei aus dem Jahr 1866 heraus den Spieler an („Du kennst meine
+  Züge“), mitten in einer Szene, in der er mit Gideon allein ist. Das ist der einzige Bruch im Ton
+  der Erinnerung. Zugleich fehlt, was der Roman hier als Erzählerzeile festlegt: was er noch
+  schreiben wollte, und dass er Hale verziehen hat. Ohne sie bleibt „Mehr schreibt die Hand nicht.“
+  leer; das Gegenstück zu Hales Brief entfällt. Es fehlt auch, dass Gideon das Blatt hält (Bibel,
+  Szene 99). Der Erzähler wechselt zudem die Person („muss er absetzen“, vorher „meine Stellung“).
+- Vorschlag: Zeile 101–105 streichen (die Zählung kann nach der Rückkehr als Tagebuchzeile
+  erscheinen). Zeile 106 in drei Zeilen nach dem Roman: „Gideon hält ihm das Blatt. Die Feder
+  kratzt. Zweimal muss er absetzen.“ / „40. König schlägt g3.“ (`#pause`) / „Darunter wollte er
+  schreiben, dass er ihm verziehen hat. Irgendwann um den zwanzigsten Zug, ohne es zu merken. Die
+  Hand tut es nicht mehr.“
+
+#### M3.9 – fehlt – Nova: „Das waren deine.“ fehlt; der tragende Satz steht nur im Antworttext
+
+- Datei: `crossroads-raststaette.ink`, Knoten `nova_bitte`, Zeile 83 und 89–91.
+- Ink: „\* [„Vierundsiebzig Prozent. Im Training hattest du es nie.“]“;
+  „Du legst den Ohrstöpsel auf den Tisch. Ein halbes Jahr hast du ihn getragen, neben einem Springer.“;
+  „Es wird ein langer Abend, an einem Tisch aus vier Tischen, zwischen Menschen aus acht Städten. Du kennst jeden.“
+- Roman: `akt4_teil2.md`, Zeile 212–213: „„Vierundsiebzig Prozent“, sagte ich. „Ich hab deine Trainingspartien gesehen. Du bist besser“ /
+  „als ich.““; Zeile 217: „„Im Training hattest du es nie. Das waren deine.““
+  (Tabelle Zeile 497: „Gibt ihr zurück, was sie verloren glaubte (welche Züge ihre sind)“).
+- Befund: „Das waren deine.“ ist die Antwort auf Novas Satz aus Akt 3, sie wisse nicht mehr, welche
+  Züge ihre sind. Im Spiel steht davon nur die erste Hälfte, und nur als Beschriftung der Antwort,
+  die nach dem Antippen verschwindet; das Lächeln folgt auf einen Satz, den niemand sagt. Es fehlen
+  auch „Du bist besser als ich.“ und „Sie kommt mit. Sie bringt die Berichte.“ Der Ohrstöpsel bleibt
+  im Besitz (keine Übergabe). Und weil der Schluss des Abends („Du kennst jeden.“, das Kaffeehaus)
+  an Nova hängt, fällt er auch dann, wenn der Spieler draußen noch niemanden gesprochen hat.
+- Vorschlag: Nach der Wahl zwei gesprochene Zeilen: „Ich hab deine Trainingspartien gesehen. Du bist
+  besser als ich.“ / „Im Training hattest du es nie. Das waren deine.“ (`#pause`), dann Zeile 90.
+  Zeile 91–92 in einen eigenen Knoten legen, der erst läuft, wenn Slick, Mira, Big Joe und Coach
+  Delgado gesprochen sind (sonst beim Verlassen nach `wegPinewood`).
+
+#### M3.10 – Pausen und Marken – Lagerfeuer und Steg 24 Zeilen ohne Halt; zwei Pausen fehlen; Erzählsätze unter Figurensprechern
+
+- Datei: `pinewood-camp-aussen.ink`, Knoten `lagerfeuer_abend` mit `steg_nacht`, Zeile 96–127;
+  `ghost-town-saloon.ink`, Knoten `victor_aufstellen`, Zeile 76, 80 und 83, Knoten
+  `victor_nach_fernpartie`, Zeile 129–130; `ghost-town-aussen.ink`, Zeile 86 und 124.
+- Ink: „Sie haben heute Abend gespielt. Das war es. Das war immer alles.“;
+  „Sam stellt eine Dame mitten in die feindliche Stellung, aus der Hand. Die Chefin ist zurück!“;
+  „Victor schiebt den Bauern vor. Ein Feld. Holz auf Holz.“;
+  „Victor legt die Seite neben das Brett. 40. … b5. Er fasst den Bauern an. Darf ich?“;
+  „Er wartet am Ende des Gehsteigs, wo die Bretter aufhören. Setz dich.“
+- Roman: `akt4_teil3.md`, Zeile 442: „Niemand sagte etwas. Durch das Loch im Dach fiel die Sonne auf das Brett, und der Staub in“;
+  Zeile 557: „Er wischte sich über die Augen.“; `akt4_teil2.md`, Zeile 475: „Über uns fiel ein Stern. Mae schrie auf.“
+  (Story-Bibel 5.1: „Höchstens **sechs Zeilen am Stück**, dann eine Wahl, eine Pause (`#pause`) oder ein Ereignis.“).
+- Befund: (a) Vom Feuer bis zur Sternschnuppe laufen 24 Zeilen ohne Wahl und ohne Pause; in sechs
+  der neun Dateien steht höchstens eine Pause. „Das war immer alles.“ geht darin unter, und die
+  Antworten des Helden („Sechs Wörter.“, „Da hab ich nicht gewonnen.“) sind dem Erzähler oder
+  Ambrose zugeschlagen. (b) Nach b5 fehlt die Stille, die der Roman dort setzt; die Pause steht drei
+  Zeilen früher. Vor „Nicht makellos. Schön.“ fehlt sie ebenfalls. (c) An mindestens neun Stellen
+  stehen Handlung und Rede in einer Zeile unter dem Sprecher der Figur (Slick, Greta dreimal, Sam,
+  Pruitt, Victor zweimal, Ambrose): Das Porträt spricht dann Regie. (d)
+  Viele Zeilen haben vier bis fünf Sätze (Regel: zwei), etwa der Schluss der Kerze in einer einzigen
+  Zeile.
+- Vorschlag: Am Feuer drei Halte: Wahl nach dem Tandem („Das ist kein Schach.“ – „Nein.“), `#pause:2`
+  nach „dem nichts bleibt“, am Steg die Wahl „Sechs Wörter.“ und `#pause:2` vor „Sie haben heute Abend
+  gespielt.“ Im Saloon `#pause:3` an Zeile 83 (statt an Zeile 79 oder zusätzlich) und `#pause:2` an
+  Zeile 129. Handlung in Erzählerzeilen auslagern: „Victor legt die Seite neben das Brett. 40. … b5.“
+  (Erzähler) / „Darf ich?“ (Victor). Die Kerze in drei Zeilen: „Es ist still. Sehr schön still.“ /
+  „Die Flamme wird klein. Sie wird blau.“ / „Sie geht aus.“ (`#pause:2`).
+
+---
+
+#### Knapp nicht unter den zehn
+
+- widerspricht (Reihenfolge), `ghost-town-saloon.ink`, Knoten `victor`, Zeile 35: Victor steht von
+  Anfang an auf der Karte und sagt „Ich bin gerade angekommen. Mr. Pruitt sagt, am Friedhof liegt einer mit einem Schachbrett.“,
+  bevor am Grab sein Bus kommt (`ghost-town-aussen.ink`, Zeile 99–101). Ebenso spricht Mr. Pruitt am
+  Grab, auch wenn ihn der Spieler noch nicht getroffen hat.
+- plump (Ambrose), `weg-summit-crossroads.ink`, Zeile 204: „Wer Rechner mit Geysiren kühlen will, braucht sehr viele Rechner.“
+  (Regel 5.3, Punkt 4: „Rechenmaschine“); Lehrbuchsätze an den Tafeln, Zeile 104 und 170, und in
+  `weg-crossroads-pinewood.ink`, Zeile 105; `weg-summit-crossroads.ink`, Zeile 123:
+  „Geduld. Die schwerste Figur auf jedem Brett.“ (im Roman denkt der Held an Mrs. Okafor, Ambrose
+  schweigt).
+- plump, `pinewood-camp-aussen.ink`, Zeile 162: Hollis spricht aus, was im Roman ein Gedanke des
+  Helden ist („Eine Partie, die für nichts zählt. Die braucht man auch.“).
+- widerspricht (Wortlaut), `weg-summit-crossroads.ink`, Zeile 49: „Eine Lehre“ statt „Eine Lektion“
+  (Roman Zeile 33–34, Bibel Szene 92).
+
+#### Gut gelungen
+
+1. `ghost-town-aussen.ink`, Knoten `grab_erstes`, Zeile 85–98: Die Zeile aus dem Kirchenbuch steht
+   wörtlich wie im Roman, dann „Ambrose steht lange vor dem Stein.“ mit `#pause:3`, dann die beiden
+   festen Sätze auf zwei Zeilen mit `#stimmung:friedlich` und eigenem Musikeinsatz. Junos Blume auf
+   e4 und „Guter Zug.“ tragen den Abschied ohne ein erklärendes Wort.
+2. `ghost-town-aussen.ink`, Knoten `nacht_ambrose` und `weg_capital`, Zeile 44–46 und 132–139: Die
+   Nacht ist gesichert (wer gleich zum Bus geht, erlebt sie vorher), das vierte Sitzen wird gezählt,
+   bei beiden Antworten setzt die Musik aus (`#musik:aus #pause:4`), und „Ein Geist, der bleibt,
+   wird ein Möbelstück“ steht hinter dem Sammelpunkt.
+3. `ghost-town-saloon.ink`, Knoten `victor_aufstellen`, Zeile 80–87: „Darf ich?“ – „Er fragt nicht
+   dich.“ – „Sag ihm, es wäre mir eine Ehre.“ – „Ein Feld. Holz auf Holz.“ Der Schritt auf der
+   b-Linie stimmt, die Karten sind gesperrt, und „Du spielst für dich, mit meinen Figuren.“ fällt
+   nach einer einzigen Antwort, also immer.
+
+#### Zählung
+
+| Art                   | Befunde                      | Anzahl |
+| --------------------- | ---------------------------- | ------ |
+| (1) fehlt             | M3.1, M3.4, M3.9             | 3      |
+| (2) widerspricht      | M3.2, M3.3, M3.5, M3.6, M3.7 | 5      |
+| (3) plump, belehrend  | M3.8                         | 1      |
+| (4) Pausen und Marken | M3.10                        | 1      |
+
+M3.6, M3.7 und M3.8 enthalten zusätzlich je einen fehlenden Satz (Art 1); gezählt ist die Hauptart.
+
+| Datei (Hauptfundstelle)                               | Befunde                                            | Anzahl |
+| ----------------------------------------------------- | -------------------------------------------------- | ------ |
+| `crossroads-aussen.ink`                               | M3.1                                               | 1      |
+| `crossroads-raststaette.ink`                          | M3.9                                               | 1      |
+| `weg-crossroads-pinewood.ink`                         | M3.4, M3.5                                         | 2      |
+| `pinewood-camp-aussen.ink`                            | M3.10                                              | 1      |
+| `ghost-town-aussen.ink`                               | M3.6                                               | 1      |
+| `ghost-town-saloon.ink`                               | M3.7                                               | 1      |
+| `erinnerung-siedlung.ink`                             | M3.8                                               | 1      |
+| `texte/de.json`, `orte.json`, Szenendateien           | M3.2, M3.3                                         | 2      |
+| `weg-summit-crossroads.ink`, `weg-pinewood-ghost.ink` | nur Kleineres (siehe „Knapp nicht unter den zehn“) | 0      |
+
+#### Nicht geprüft
+
+- Nichts im Spiel gespielt. Erreichbarkeit und Reihenfolge sind aus `orte.json`, `quests.json`, den
+  Szenendateien und `app/src/abenteuer/dialog/geschichte.ts` gelesen. Ob eine Figur ohne Eintrag
+  auf anderem Weg erscheint (etwa über eine Karte in `karten/`), habe ich nur für `coach` und `theo`
+  mit einer Textsuche geprüft.
+- Die Karten selbst (Zimmer über dem Laden, Treppe im Laden, Gehsteigkante, Loch im Dach des
+  Saloons) und die Bilder, Musikstücke und Geräusche hinter den Marken habe ich nicht angesehen; nur,
+  ob die Marken an den Stellen stehen, die die Randnotizen nennen.
+- Die Schachangaben im Zugerraten (falsche Antworten zu Zug 37 bis 40, etwa „Dann schlägt der
+  Springer von a5 meine Dame“) und die Startstellung der Fernpartie sind nicht mit einer Engine oder
+  gegen Abschnitt 35 der Bibel Zug für Zug nachgerechnet; geprüft ist nur, dass b5 in der FEN ein
+  Schritt von b6 ist und das Material stimmt (Turm und vier Bauern gegen zwei Springer und drei).
+- Die Statistensätze der übrigen Orte (Crossroads, Wege, Camp) sind nur überflogen, nicht einzeln
+  gegen den Roman gehalten. Aufgefallen sind dort Namen lebender oder jüngerer Spieler nicht; „Bobby
+  Fischer“ steht in zwei Statistensätzen (Camp, Saloon) und gehört nach Stilregel 5.1 geprüft.
+- Die Fundtexte, Questtexte und Ladentexte in `de.json` sind nur für die genannten Kennungen
+  gelesen. Victors Zeilen am Ende von Summit City (Anfang von Kapitel 53) und die Dateien
+  `jahrmarkt.ink` und `goldmine.ink`, die an Crossroads und Ghost Town hängen, sind nicht geprüft.
+- „Buch“ in `weg-pinewood-ghost.ink`, Zeile 112 („als die Partie das Buch verlassen hat“) meint das
+  Eröffnungsbuch des Greifarms; ob das unter das Verbot von Buchverweisen fällt, entscheidet der
+  Autor.
+- Die Regel „höchstens zwei Sätze und 140 Zeichen je Zeile“ ist nur gezählt (je Datei ein bis acht
+  Zeilen über 140 Zeichen), nicht Zeile für Zeile als Befund aufgeführt.
+
+### M4 Kapitel 60 bis 66: Weg nach Capital, Arena und Epilog
+
+Geprüft gegen `docs/spiel/roman/akt4_teil4.md` (Kapitel 60–66, mit Randnotizen und der Tabelle „Neu
+gegenüber der Story-Bibel“). Dialogdateien in `inhalte/abenteuer/dialoge/de/`:
+`weg-ghost-capital.ink`, `capital-arena-aussen.ink`, `capital-arena-halle.ink`,
+`capital-arena-innenstadt.ink`, `capital-arena-ubahnhof.ink` und in `maple-falls-dachboden.ink` die
+Knoten `epilog`, `epilog_zettel`, `epilog_lily` (Zeile 304–343; Einstieg über `dachboden_brett`,
+Zeile 53). Weitere Dateien zu Capital oder zum Epilog gibt es nicht (mit `ls` und Suche nach
+`capitalArena` und `epilog` nachgesehen). Die Sätze in den Partien stehen in
+`inhalte/abenteuer/texte/de.json` (`moment.nova.*`, `moment.ambrose.novaGut`, `moment.kade.*`,
+`moment.finale.*`, `moment.victor.zugZwoelf`; Zuordnung in `begegnungen.json`, Begegnungen
+`capitalArena.runde3`, `capitalArena.halbfinale`, `capitalArena.finale`). Einen Schlüssel
+`abspann.extra` gibt es in `de.json` nicht mehr; der Zettel steht seit dem 13.11.2026 im Epilog
+(`epilog_zettel`). Die Reihenfolge der Hauptquest steht in `quests.json`
+(`capitalArena.meisterschaft`, sieben Schritte), die Auslöser in `orte.json`.
+
+Marken, die die Dateien benutzen: `#sprecher`, `#stimmung` (`froh`, `ernst`, `lacht`, `friedlich`),
+`#pause`, `#pause:2` bis `#pause:4`, `#musik` (Kennung, `aus`), `#klang`, `#geraeusch:gang`.
+
+Gesamturteil: Die großen Szenen folgen dem Roman eng und oft wörtlich (Aussage, Gang vor dem
+Finale, Abschied, Epilog). Die Schwächen liegen wie in L3 im Gerüst: Zwei tragende Momente (Victors
+Lauf zum Vater, Novas „Zum ersten Mal …“) hängen am freiwilligen Antippen, der Abschied und der
+Epilog setzen den Ausgang des Romans voraus (Sieg, Fehler im 31. Zug, Fernpartie remis), und die
+Karte mit goldenem Rand ist in den Daten der gewöhnliche Mentor-Zug. Dazu zwei Sachfehler (Dr. Lins
+Kündigung, Kade „tippt ans Ohr“) und eine fehlende feste Zeile (Mr. Dorrance). Verweise auf Kapitel
+oder Seiten des Buches stehen in keinem Dialog; der Wanderer und der Abspann spielen aber auf das
+Buch an (M4.10).
+
+---
+
+#### M4.1 – fehlt (hängt am Antippen, Reihenfolge ungesichert) – Victors Lachen, sein Lauf zum Vater und „Er läuft zum Telegrafenamt“
+
+- Datei: `capital-arena-halle.ink`, Knoten `victor` (Zeile 294–305), `nach_dem_finale` (Zeile
+  358–373), `finale_lauf` (Zeile 376–386); `capital-arena-aussen.ink`, Knoten `treppe` (Zeile
+  123–132); `quests.json`, `capitalArena.meisterschaft`, Schritt 6 und 7.
+- Ink: `- not finaleBesprochen: -> nach_dem_finale` (nur wenn der Spieler Victor nach der Partie
+  anspricht); `Du kannst ihn nicht hören. Aber du siehst seine Lippen: Er läuft zum Telegrafenamt.`;
+  auf der Treppe prüft `treppe` nur `not finaleGespielt()` und `abschiedGesehen`.
+- Roman: `akt4_teil4.md`, Zeile 846 `Und dann fing er an zu lachen.`, Zeile 868 `Und er rannte.`,
+  Zeile 911 `Er läuft zum Telegrafenamt.`; Randnotiz Zeile 915: `Jeder Ausgang führt weiter; bei Remis oder Niederlage läuft Victor ebenfalls zu seinem Vater`.
+  Story-Bibel, Szene 108 (Zeile 2412): `bei jedem Ausgang freut sich Victor über die Partie und läuft mit dem Formular zu seinem Vater`.
+- Befund: Nach der Finalpartie geschieht von selbst nichts. Die Quest springt von Schritt 6 (Partie)
+  sofort zu Schritt 7 (`Nach der Siegerehrung auf die Treppe vor der Arena setzen.`). Wer die Halle
+  verlässt, ohne Victor noch einmal anzutippen, bekommt den Abschied, ohne Victors Lachen, den Lauf
+  und Ambroses Lippen gesehen zu haben. Das ist der Höhepunkt des Spiels (`akt4_befunde.md`, Zeile
+  38: `Bei jedem anderen Ausgang läuft er ebenfalls.`). Der Abschied setzt die Szene dann voraus
+  (`Unten gehen Victor und sein Vater, das Formular zwischen sich, jeder hält eine Ecke.`). Dazu
+  drei Kleinigkeiten im Knoten selbst: (a) Die einzige Antwort `* [„Nein. Ich hab gehofft.“]` passt
+  nur zur Frage beim Sieg (`Hast du es gesehen? Bis zum Ende?`), nicht zu `Hast du gesehen, wie wir gespielt haben?`
+  (Remis) und `Hast du gesehen, wie?` (Niederlage). (b) Bei der Niederlage fehlt das „Danke.“ der
+  Bibel (Zeile 2414–2415: `„Du hast mich gezwungen, gut zu spielen. Danke.“`). (c) Die Siegerehrung,
+  die der Questtext nennt, kommt nirgends vor (Roman, Zeile 924: `Die Siegerehrung habe ich vergessen.`).
+- Vorschlag: `nach_dem_finale` unmittelbar nach der Partie starten (Ergebnisdialog der Begegnung
+  oder eigener Questschritt zwischen 6 und 7) und in `treppe` zusätzlich `finaleBesprochen`
+  verlangen; solange es fehlt: „Drinnen ruft jemand deinen Namen. Victor.“ Antworten je Ausgang:
+  Sieg „Nein. Nur bis zum sechsten Zug. Danach war es dunkel.“ / „Ich hab gehofft.“; Remis und
+  Niederlage eine eigene Wahl („Jeden Zug.“). Niederlage: „Du hast mich gezwungen, gut zu spielen.
+  Danke.“ Am Ende von `finale_lauf` eine Erzählzeile: „Die Siegerehrung vergisst du. Es gibt einen
+  Pokal, der zu groß ist, und Hände, viele.“
+
+#### M4.2 – widerspricht – Abschied, Epilog und Partiemomente setzen den Ausgang des Romans voraus
+
+- Datei: `capital-arena-aussen.ink`, Knoten `abschied` (Zeile 143), `abschied_rede` (Zeile 153 und
+  157), Knoten `mama` (Zeile 104); `maple-falls-dachboden.ink`, Knoten `epilog_lily` (Zeile 329);
+  `texte/de.json`, `moment.finale.niemand`, `moment.finale.einenDenDuMerkst` (in `begegnungen.json`
+  fest an `"zug": 2` und `"abZug": 32` gebunden, Farbe `zufall`).
+- Ink: `Jeden Zug. Einunddreißig. Der Turm. Ich habe an der Wand gestanden und mir auf die Zunge gebissen.`;
+  `Die Fernpartie ist remis, und in deinem Finale steht ein Turm auf der falschen Linie.`;
+  `Einen Jungen, der vor Freude rennt, weil er verloren hat.`;
+  `Mama sagt, du bist Meister.`; `Nicht wegen des Titels. Wegen allem.`;
+  `Neben dir steht niemand. Du ziehst einen Bauern in die Mitte. Weil das alle tun.`;
+  `Niemand sagt dir die Zugnummer. Niemand tröstet dich. Einen kleinen Fehler. Einen, den du merkst. Du siehst hin.`
+- Roman: `akt4_befunde.md`, Zeile 34: `Das Spiel lässt Sieg oder Remis zu; Ambroses Schlusssatz ist derselbe.`
+  (Fernpartie); `akt4_teil4.md`, Tabelle Zeile 1181: `Im Spiel nicht erzwingbar; als Erzählerzeile nach dem ersten ungenauen Zug des Spielers („Niemand sagt es dir“) und nach dem nächsten starken Zug.`;
+  Story-Bibel, Szene 108: Sieg, Remis und Niederlage führen alle weiter.
+- Befund: Ambrose nennt im Abschied Brettfakten, die nur im Roman stimmen: den Turm im 31. Zug, die
+  remis geendete Fernpartie und einen Victor, der „verloren hat“. Wer das Finale verliert oder remis
+  spielt, hört trotzdem, Victor renne, „weil er verloren hat“, und Lily sagt ein Jahr später „du bist
+  Meister“ (zugleich ein Substantiv mit Geschlecht für {held}, Bibel 5.2). Der Moment bei Zug 32
+  behauptet einen Fehler, den der Spieler vielleicht nicht gemacht hat; der Moment bei Zug 2
+  behauptet einen Bauernzug in die Mitte, auch wenn der Spieler Schwarz hat oder anders zieht.
+- Vorschlag: Zeile 143: „Jeden Zug. Ich habe an der Wand gestanden und mir auf die Zunge gebissen.
+  Die Großmeisterin hat mich angesehen, als wüsste sie es.“ Zeile 153 nach Variablen: bei remis
+  geendeter Fernpartie wie jetzt, sonst „Die Fernpartie hatte einen Fehler darin. Das Halbfinale war
+  bis zum zwanzigsten Zug ein Untergang.“ Zeile 157: bei Sieg wie jetzt, sonst „Einen Jungen, der mit
+  einem Blatt Papier zu seinem Vater rennt.“ Lily: „Mama sagt, du warst bei der Meisterschaft.“
+  `moment.finale.einenDenDuMerkst` an den ersten ungenauen Zug binden (Tabelle des Romans) und ohne
+  Behauptung fassen: „Niemand sagt dir die Zugnummer. Niemand tröstet dich. Du siehst hin.“
+  `moment.finale.niemand`: nur „Neben dir steht niemand.“ (steht schon in `finale_angebot`, Zeile
+  352; dort streichen oder hier).
+
+#### M4.3 – widerspricht – Die Karte mit goldenem Rand ist der gewöhnliche Mentor-Zug; gerufen wird über eine Antwortwahl; Zeilen des gemeinsamen Zugs fehlen
+
+- Datei: `begegnungen.json`, `capitalArena.halbfinale` (`"freieKarten": ["mentorzug"]`, Moment
+  `"abZug": 21` mit `capital-arena-halle.halbfinale_turm`); `texte/de.json`, `karte.mentorzug.spruch`,
+  `karte.mentorzug.erklaerung`; `capital-arena-halle.ink`, Knoten `halbfinale_turm` (Zeile 250–258),
+  `halbfinale_zusammen` (Zeile 260–269), `halbfinale_danach` (Zeile 277).
+- Ink und Texte: `Lass mich. Nur dieses eine Mal.`; `Einmal ziehe ich für dich. Schau dir danach an, warum ich so zog; ein Zug, den man versteht, ist mehr wert als einer, den man bekommt.`;
+  `Du siehst etwas. Keine Rettung. Einen Turm, und ein Feld mitten in seiner Stellung. Der Bauer würde fehlen, und dahinter ist sein König.`;
+  `* [„Ambrose.“]` / `* [Allein prüfen]`.
+- Roman: `akt4_teil4.md`, Zeile 361: `Diese hatte einen goldenen Rand.`; Zeile 368:
+  `„Dann spielen wir einen Zug zusammen. Nicht ich für dich. Wir.“`; Zeile 426:
+  `Ich legte die Hand auf die Karte mit dem goldenen Rand.`; Zeile 456:
+  `„Er hat kein Gesicht“, sagte Ambrose. „Noch nicht. Sieh auf den Mann mit dem Gerät.“`; Zeile 478:
+  `„Jetzt hat er eines“, sagte Ambrose. „Ein Gesicht.“`; Zeile 494: `„Er hofft.“`. Story-Bibel,
+  Szene 106 (Zeile 2399): `Die Karte Mentor-Zug hat hier einen goldenen Rand und zeigt keinen Zug; sie bringt nur Ambrose ins Bild („Er ist da“).`
+  und `Der Spieler findet den Turmzug in jedem Fall selbst (Zugerraten, beliebig viele Versuche, die Uhr hält an)`.
+- Befund: (a) Als freie Karte liegt die Sorte `mentorzug` im Deck. Ihr Spruch ist genau der Satz aus
+  Cedar Creek, den das Halbfinale umkehren soll, und ihre Erklärung verspricht einen Zug von Ambrose.
+  Einen Text „Er ist da“ und eine eigene Fassung mit goldenem Rand habe ich weder in `de.json` noch
+  in `karten.json` gefunden. (b) Ambrose wird nicht über die Karte gerufen, sondern über die
+  Antwortwahl `„Ambrose.“`; daneben setzt die Karte `mentorzugFreiGespielt`. Zwei Wege für dasselbe:
+  Wer „Allein prüfen“ wählt und später die Karte spielt, hört nach der Partie „Mit dir.“, ohne dass
+  „Ich weiß es nicht.“ und „Zusammen.“ je gefallen sind. (c) Der Moment kommt fest ab Zug 21 einer
+  freien Partie; der Erzähler behauptet einen Turm, ein Feld und einen Bauern, die auf dem Brett des
+  Spielers nicht stehen müssen. Das Zugerraten des Turmzugs, auf das der Kommentar in Zeile 248–249
+  verweist, habe ich in `app/src/abenteuer` nicht gefunden (nur für Erinnerungen). (d) Im
+  gemeinsamen Zug fehlen „Was hast du in der Wüste gelernt?“, „Jetzt hat er eines. Ein Gesicht.“ und
+  Wards „Er hofft.“ (Tabelle Zeile 1175: `Zeilen für beide; Ward: „Er hofft.“`).
+- Vorschlag: Eigene Kartensorte (etwa `mentorzugGold`) mit Text „Er ist da.“ und ohne Zuganzeige;
+  das Spielen der Karte startet `halbfinale_zusammen`, die Wahl „Ambrose.“ entfällt oder spielt die
+  Karte. Den Turm als Zugerraten aus fester Stellung nach dem Schuh (Bibel), sonst die Erzählzeile
+  ohne Brettfakten: „Du siehst etwas. Keine Rettung. Ein Opfer, mitten in seine Stellung.“ In
+  `halbfinale_zusammen` nach „Du nicht.“ einfügen: Wahl „Was machen wir?“ – Ambrose: „Was hast du in
+  der Wüste gelernt?“ – Wahl „Prüfen, so gut man kann. Dann hoffen. Und ihm ins Gesicht sehen.“ –
+  Ambrose: „Jetzt hat er eines. Ein Gesicht.“ Nach „Zusammen.“ Erzähler: „Ein Raunen geht durch die
+  Halle. Slick, irgendwo oben: ‚Was macht er da?‘ Und Ward, ganz ruhig: ‚Er hofft.‘“ `#pause:2`
+
+#### M4.4 – fehlt (hängt am Antippen) – Novas fester Satz nach Runde 3
+
+- Datei: `capital-arena-halle.ink`, Knoten `nova` (Zeile 407–419), `nova_nach_partie` (Zeile
+  422–440), `turnierleiterin` und `vorrunde_naechste` (Zeile 73–110).
+- Ink: `Zum ersten Mal weiß ich nicht, ob ich gewinne. Ich hab es keine Sekunde gewusst.`
+  (nur über `- gespielt(ausgangCapitalArenaRunde3):` im Knoten `nova`, also nur, wenn der Spieler
+  Nova nach der Partie anspricht).
+- Roman: `akt4_teil4.md`, Zeile 206–208: `„Zum ersten Mal weiß ich nicht, ob ich gewinne“, sagte Nova Sinclair.`
+  … `„Das fühlt sich gut an. Das fühlt sich so gut an.“`; Story-Bibel, Szene 104 (Zeile 2378–2380):
+  `nach der Partie: „Zum ersten Mal weiß ich nicht, ob ich gewinne. Das fühlt sich gut`.
+  `akt4_befunde.md`, Abschnitt 3: Runde 3 darf nicht gekürzt werden.
+- Befund: Nach Runde 3 führt die Turnierleiterin sofort zu Runde 4. Novas ganzer Bogen (Hand auf
+  dem Tisch, das Strahlen, „Der war meiner.“, die Eltern auf der Tribüne) kommt nur, wenn man sie
+  von sich aus antippt. Nebenbei: Die Zweige `aussageGesehen and novaHilfeZugesagt` und
+  `aussageGesehen` im Knoten `nova` sind nie erreichbar, weil die Aussage erst nach allen vier
+  Runden kommt und dann immer der erste Zweig greift (`Jetzt bin ich frei.` fällt nie). Bei einer
+  Niederlage des Spielers sagt Nova `Ich hab gewonnen. Ich weiß nicht mal genau, wie.`; das nimmt
+  „Der war meiner.“ zwei Zeilen später die Kraft.
+- Vorschlag: In `turnierleiterin` vor `vorrunde_naechste` einen Zweig setzen: Runde 3 gespielt und
+  `not novaNachPartieGesehen` führt zu `nova_nach_partie` (oder als Ergebnisdialog der Begegnung).
+  Im Knoten `nova` die Reihenfolge drehen (erst `aussageGesehen`, dann `gespielt`). Bei Niederlage:
+  „Ich hab gewonnen. Ohne.“
+
+#### M4.5 – widerspricht – Dr. Lin „verliert wohl ihre Stelle“, obwohl sie vor der Meisterschaft gekündigt hat
+
+- Datei: `capital-arena-halle.ink`, Knoten `lin`, Zeile 470.
+- Ink: `Ich verliere wohl meine Stelle. Dann gründe ich einen Club ohne Bildschirme.`
+- Roman: `akt4_teil2.md`, Zeile 174: `Dr. Lin hat gekündigt. Wusstest du das?`; `akt4_teil4.md`,
+  Zeile 997: `Ich habe eine Lehrerin gesehen, die gekündigt hat.`; `akt4_befunde.md`, Zeile 42:
+  `**Dr. Lin** kündigt vor der Meisterschaft; ihr Kellerclub ist im Epilog zu sehen.`
+- Befund: Im Spiel selbst sagt Theo in Crossroads schon „Dr. Lin hat gekündigt.“
+  (`crossroads-raststaette.ink`, Zeile 110), und Ambrose nennt sie im Abschied
+  `Eine Lehrerin, die gekündigt hat.` Die Zeile nach der Aussage widerspricht beidem und macht aus
+  ihrem Entschluss etwas, das ihr geschieht.
+- Vorschlag: „Ich habe gekündigt, bevor wir hergefahren sind. Der Club ist in einem Keller. Es gibt
+  einen Heizlüfter und keinen einzigen Bildschirm.“
+
+#### M4.6 – fehlt – Aussage: Mr. Dorrance, Grahams fester Wortlaut, die Zahlen der Mappe
+
+- Datei: `capital-arena-halle.ink`, Knoten `aussage` (Zeile 187), `aussage_lin` (Zeile 193–196),
+  `aussage_victor` (Zeile 203).
+- Ink: `Das Halbfinale wird unter Funkaufsicht gespielt. Perfect Move ist von der weiteren Leitung entbunden.`;
+  `Das wusste ich nicht. Ich habe die Engine für das Training gebaut. Ich habe nie …`;
+  `Ich hätte Nein sagen können.`
+- Roman: `akt4_teil4.md`, Zeile 288–289: `Ich nenne einen Namen, weil er auf den Verträgen`
+  `steht: Mr. Dorrance, Vertrieb. Er ist nicht mehr im Haus.“`; Zeile 301–302:
+  `Ich habe die Engine gebaut. Ich`; Zeile 266: `„Es stand in meinem Vertrag“, sagte Nova. „Nicht so. Aber es stand drin.`;
+  Zeile 275: `Vierundsiebzig Prozent im Training. Achtundneunzig im Turnier.` Story-Bibel, Szene 105
+  (Zeile 2389): `Graham Hale: „Ich habe die Engine gebaut. Für das Training.“`; Tabelle Zeile 1170:
+  `Ein Name statt eines Bösewichts (Bibel: nur als Name).`
+- Befund: Der Name Dorrance kommt in keinem Dialog und keinem Text des Spiels vor (Suche über
+  `inhalte/abenteuer`). Damit bleibt offen, wer verantwortlich war; Graham Hales „Das wusste ich
+  nicht“ steht ohne Gegenstück da. Sein fester Satz ist zu einem Satz zusammengezogen und verliert
+  den Schlag der zwei Sätze. Die Mappe wird hingelegt, aber niemand sagt, was darin steht; Novas
+  „Es stand in meinem Vertrag“ fehlt, sodass „Ich hätte Nein sagen können.“ ohne Anlass kommt.
+- Vorschlag: Nach Zeile 196 Turnierleiterin: „Ich nenne einen Namen, weil er auf den Verträgen
+  steht: Mr. Dorrance, Vertrieb. Er ist nicht mehr im Haus.“ Zeile 203: „Das wusste ich nicht. Ich
+  habe die Engine gebaut. Für das Training. Ich habe nie …“ Vor Zeile 194 Dr. Lin: „Vierundsiebzig
+  Prozent im Training. Achtundneunzig im Turnier. Bei vier Spielern, über zwei Jahre.“ Zeile 187:
+  „Es stand in meinem Vertrag. Nicht so. Aber es stand drin. Ich hätte Nein sagen können.“
+
+#### M4.7 – widerspricht – Kade „tippt ans Ohr“ und stellt sich vor; das Gerät steckt im Schuh
+
+- Datei: `capital-arena-halle.ink`, Knoten `kade`, Zeile 456–459; `texte/de.json`,
+  `moment.kade.schuh`.
+- Ink: `Ein Junge im Firmenpulli sitzt am Rand und tippt ans Ohr. Er sieht dich nicht an.`;
+  `Kade Sterling. Ich spiele für Perfect Move. Wir sehen uns im Halbfinale.`;
+  `Der Funkprüfer hält das Gerät tief, auf die Schuhe. Kade reicht seinen rechten Schuh hinüber. Dann sieht er zum ersten Mal auf das Brett.`
+- Roman: `akt4_teil4.md`, Zeile 230–233: `Er hatte beide Hände auf dem Tisch. Er hielt den Kopf ganz gerade.`
+  … `Seine Haare fielen ihm über die Ohren.`; Zeile 345: `Er war nicht unfreundlich. Er war nicht da.`;
+  Zeile 466–467: `und sie nahm etwas aus der Sohle, flach und grau wie ein Kieselstein.`; Zeile 514–515:
+  `zwei Jahre lang, erst in der Tasche und zuletzt in einem`; `akt4_befunde.md`, Zeile 110.
+- Befund: Die Spannung des Halbfinales lebt davon, dass man bei Kade nichts sieht (Haare über den
+  Ohren, der Prüfer sucht „an der falschen Stelle“). Ein Kade, der vor der Vorrunde ans Ohr tippt,
+  verrät das Versteck falsch und widerspricht dem Schuh. Nach der Aussage würde er sich auch nicht
+  mit „Ich spiele für Perfect Move“ vorstellen; im Roman spricht er vor der Partie kein Wort. Im
+  Moment am Brett fehlt, dass etwas gefunden wird (die Sohle), und die „zwei Jahre, erst Tasche,
+  zuletzt Schuh“ kommen im Spiel nirgends vor.
+- Vorschlag: Vor der Vorrunde: „Ein Junge in Weiß sitzt am Rand, beide Hände auf dem Tisch. Er hält
+  den Kopf ganz gerade.“ Nach der Vorrunde: „Kade Sterling sieht auf einen Punkt über deiner
+  Schulter. Er ist nicht unfreundlich. Er ist nicht da.“ (Erzähler). `moment.kade.schuh`: „Der
+  Funkprüfer hält das Gerät tief, auf die Schuhe. Die Schiedsrichterin nimmt etwas aus der Sohle,
+  flach und grau wie ein Kieselstein. Kade sitzt da, in einem Schuh, und sieht zum ersten Mal auf
+  das Brett.“ In `halbfinale_danach` vor Kades Zeile (Erzähler): „Er hat es zwei Jahre bei sich
+  getragen, erst in der Tasche und zuletzt im Schuh. Suchen musste er nie.“
+
+#### M4.8 – fehlt (hängt am Antippen) – Der Leuchtturm ist überspringbar; die Nacht im Hotel und die Rückkehr der Farben fehlen
+
+- Datei: `weg-ghost-capital.ink`, Knoten `abe` (Zeile 46–60); `orte.json`, Übergang `weiterCapital`
+  (ohne Bedingung); `capital-arena-aussen.ink`, Knoten `ankunft_zu_fuss` (Zeile 44–62).
+- Ink: `Der König muss zum Leuchtturm. Wie wir alle.` (nur beim Ansprechen von Abe);
+  `Die Arena ist rund und weiß, mit einem Dach wie eine Muschel. Über dem Eingang hängt das Band mit acht Gesichtern.`
+  (erste Zeile der Ankunft).
+- Roman: `akt4_teil4.md`, Zeile 14: `Die Farben kamen zurück, als wir den See erreichten.`; Zeile
+  27–28: `„Der König muss zum Leuchtturm“, sagte Ambrose.` … `„Wie wir alle.“`; Zeile 32:
+  `Am Abend desselben Tages fuhren wir in die Hauptstadt und schliefen in einem Hotel, von dessen Fenster aus man die Arena sah.`;
+  `akt4_befunde.md`, Zeile 116: `eine Nacht im Hotel vor dem`.
+- Befund: Szene 102 trägt Ambroses ersten leisen Abschiedssatz. Der Übergang zur Arena verlangt Abe
+  nicht; wer am Wärter vorbeigeht, hört den Satz nie. Die Ankunft beginnt dann unmittelbar vor der
+  Arena: Die Nacht im Hotel (fester Punkt) und die zurückkehrenden Farben fehlen als Satz. Die Wahl
+  `* [Eine Partie spielen]` startet keine Partie; der Erzähler behauptet sie nur (laut Dateikopf
+  fehlt die Technik noch).
+- Vorschlag: `weiterCapital` an `abeGetroffen` binden (sonst Ambrose: „Der Mann am Turm hat ein
+  Brett. Lass uns einen Augenblick bleiben.“). Am Anfang von `ankunft_zu_fuss`: „Am Abend fahrt ihr
+  in die Hauptstadt und schlaft in einem Hotel, von dessen Fenster aus man die Arena sieht.“
+  `#pause:2`, dann „Am Morgen steht ihr davor.“ Am Seeufer (erster Besuch): „Die Farben kommen
+  zurück, als ihr den See erreicht.“
+
+#### M4.9 – Pausen und Marken – Stille fehlt an den großen Sätzen; zu lange Blöcke; „Ende.“ nach „Was hängt?“
+
+- Datei: `capital-arena-halle.ink`, Knoten `aussage`/`aussage_lin` (Zeile 186–196),
+  `vor_dem_finale_ambrose`/`finale_angebot` (Zeile 339–350); `capital-arena-aussen.ink`, Knoten
+  `abschied_rede` (Zeile 157–159), `abschied_verbeugung` (Zeile 173–175);
+  `maple-falls-dachboden.ink`, Knoten `epilog_lily` (Zeile 340–341).
+- Ink: `Ich gebe die Titel zurück. Heute habe ich eine Partie ohne gespielt. Es ist das einzige Ergebnis der letzten zwei Jahre, das mir gehört.`
+  (ohne Pause, gleich danach die Mappe); `Menschen, die kämpfen. Die Fehler machen. Und wachsen. Das ist es, was schön ist an diesem Spiel. Nicht die Züge.`
+  (fünf Sätze, keine Pause); `- Er lacht, laut, von ganz unten. Das Lachen vom Steg und aus der Garage. #sprecher:erzaehler #musik:aus`;
+  `- Ende. #sprecher:erzaehler #musik:schlussklang #pause:4`
+- Roman: `akt4_teil4.md`, Zeile 272: `Sie trat zurück.`; Randnotiz Zeile 1154:
+  `„Später?“: Stille. Sein Lachen, ohne Musik.`; Zeile 1054: `Er sah mich an.`; Zeile 1150:
+  `„Was hängt?“`; Story-Bibel, Szene 109 (Zeile 2423): `letzter Satz des Spiels: „Was hängt?“`;
+  Bibel 5.1 (höchstens zwei Sätze je Zeile, sechs Zeilen am Stück) und 5.5 (Zeile 737).
+- Befund: (a) Zwischen der Wahl `[Zuhören]` und `[Zu den Wänden sehen]` stehen acht Zeilen; Novas
+  Rückgabe der Titel geht ohne Atem in Dr. Lins Mappe über. (b) Von der Wahl am Getränkeautomaten
+  bis zur Wahl „Ich bin bereit.“ stehen acht Zeilen (Zeile 339–343 und 348–350); der Gong hat keine
+  Pause, und die Bühne folgt ohne Schnitt. (c) Der Leitsatz steht in einer Zeile mit fünf Sätzen und
+  ohne Pause davor oder danach; er fällt im ganzen Spiel nur zweimal. (d) Nach „Später?“ verlangt
+  der Roman Stille („Er sah mich an.“), dann das Lachen; im Spiel kommt das Lachen sofort. (e) Der
+  letzte Satz des Spiels ist die Erzählzeile „Ende.“; „Was hängt?“ ist nur der Text einer
+  Schaltfläche. (f) Allgemein: In `capital-arena-halle.ink` haben nach grober Zählung rund 55
+  Zeilen mehr als zwei Sätze (etwa Zeile 180, 252, 265, 342).
+- Vorschlag: (a) `#pause:2` an Novas Zeile 189, davor eine Wahl oder danach die Erzählzeile „Sie
+  tritt zurück.“ (b) `#pause:2` an die Gong-Zeile; `finale_angebot` mit einer Wahl „Aufstehen“
+  abtrennen. (c) Zeile 158 teilen: „Menschen, die kämpfen. Die Fehler machen. Und wachsen.“
+  `#pause:2` / „Das ist es, was schön ist an diesem Spiel. Nicht die Züge. Die waren nie das
+  Schöne.“ (d) Nach der Wahl „Später?“: „Er sieht dich an.“ `#sprecher:erzaehler #musik:aus
+#pause:2`, dann das Lachen. (e) „Ende.“ streichen; nach der Wahl „Was hängt?“ nur eine leere
+  Schlussmarke (`#musik:schlussklang #pause:4`) oder den Satz als letzte sichtbare Zeile zeigen.
+
+#### M4.10 – plump (Ambrose) und Buchanspielung – Nebeninhalte: Merksätze, moderne Wörter, „Es ist angekommen“, der Wanderer und sein Buch
+
+- Datei: `capital-arena-ubahnhof.ink`, Knoten `mo_victor` (Zeile 68); `capital-arena-halle.ink`,
+  Knoten `lin_mappe` (Zeile 482); `weg-ghost-capital.ink`, Knoten `weiter_leuchtturm` (Zeile 97),
+  `odette_geloest` (Zeile 219), `wanderer_erstes` (Zeile 240), `wanderer_danach` (Zeile 255);
+  `capital-arena-aussen.ink`, Knoten `wanderer` (Zeile 205), `wanderer_buch` (Zeile 220–221);
+  `texte/de.json`, `abspann.mitwirkende.buch`.
+- Ink: `Ein Spiel ohne Namen, ohne Kamera, nur zwei Menschen und eine Uhr. So hat alles angefangen.`;
+  `Sechs Spuren, eine Mappe. Manchmal gewinnt man, indem man nur genau hinsieht.`;
+  `Wir haben in Ghost Town und bei Nova noch etwas zu erledigen. Dann kommen wir durch.`;
+  `Ein Problem, das gelöst wird, ist nicht verloren. Es ist angekommen.`;
+  `Ein Buch für Anfänger. Die besten Bücher sind die, die man immer wieder aufschlägt.`;
+  `Ein Buch für Einsteiger, das ist das schwerste.`; `~ gibFund("buchVonGrundAuf")`;
+  `Das Buch „Schach von Grund auf“, aus dem jede Lektion stammt`
+- Roman und Maßstab: `akt4_teil4.md`, Zeile 1091: `Er ist angekommen.` (der letzte
+  Tagebucheintrag, einmal); Zeile 640: `„Das habe ich begriffen. Ich frage mich nur, wer darin sitzt.“`
+  (so staunt Ambrose über moderne Dinge); Story-Bibel 5.3, Regel 4 (Zeile 705):
+  `**Moderne Dinge umschreibt er**, statt sie zu benennen, und staunt dabei`;
+  `15_Routen_Ereignisse.md`, Zeile 623: `nennt er weder Buch noch Kapitel; die Seiten sind Seiten aus Ambroses altem Buch`.
+- Befund: (a) Ambrose sagt „Kamera“ und nennt die Uhr den Anfang von allem; 1866 spielte man ohne
+  Schachuhr. (b) „Manchmal gewinnt man, indem man …“ und „Die besten Bücher sind die …“ sind
+  Merksätze, wie sie ein Lehrbuch sagt. (c) „noch etwas zu erledigen“ macht ihn zum Wegweiser der
+  Quest. (d) „Es ist angekommen.“ nimmt bei einer Nebenfigur das Wort vorweg, das am Schluss im
+  Tagebuch steht und dort sein Gewicht haben soll. (e) Der Wanderer hat nach Dokument 15 Seiten aus
+  Ambroses altem Buch; im Spiel ist es sein eigenes Manuskript für einen Verlag, ein „Buch für
+  Einsteiger“ mit „zweiter Auflage“ und der Kennung `buchVonGrundAuf`. Das ist die Anspielung auf
+  das Buch des Autors, die seit dem 13.11.2026 nicht mehr sein soll. Der Abspann nennt das Buch
+  ausdrücklich, zwischen Abschied und Epilog (als Quellenangabe vertretbar, aber an dieser Stelle
+  sichtbar; Entscheidung des Autors).
+- Vorschlag: (a) „Niemand fragt hier nach einem Namen. Zwei Menschen und ein Brett. So war es im
+  Kaffeehaus auch.“ (b) Zeile 482 streichen oder: „Sechs Spuren. Du hast hingesehen, wo andere
+  vorbeigegangen sind.“ (c) Dem Erzähler geben: „Du denkst an Ghost Town. Und an Nova.“ (d) „Ein
+  Problem will gelöst werden. Dieses hat lange gewartet.“ (e) Wanderer nach Dokument 15: „Alte
+  Schachblätter. Der Wind hat mir dreizehn genommen.“; Ambrose bei der Übergabe: „Das ist eine von
+  meinen Seiten.“; Geschenk „die gebundene Sammlung“; Kennung umbenennen.
+
+---
+
+#### Gut gelungen
+
+1. `capital-arena-halle.ink`, Knoten `vor_dem_finale` bis `vor_dem_finale_ambrose` (Zeile 307–344):
+   Alle vier festen Sätze der Szene 107 stehen wörtlich und in einem gesicherten, linearen Ablauf
+   (`Ich habe gerechnet und vergessen, wofür. Entschuldige, Victor.`,
+   `Ich spiel heute für mich. Und gegen meinen besten Gegner.`,
+   `Spiel deine Partie. Ich hab meine verloren, und es war trotzdem schön, dass ich sie gespielt hab.`,
+   `Das Brett gehört euch.`). Die Pause sitzt richtig vor der Entschuldigung (`Es ist lange still.`
+   mit `#pause:2`), die Wahlen „Weghören wollen“ und „Nicht hinsehen“ geben dem Spieler die Scham
+   des Lauschens, ohne dass ein Satz daran hängt, und „acht Jahre“ stimmt.
+2. `capital-arena-halle.ink`, Knoten `aussage_victor` (Zeile 204–210): `Nicht vor sie. Neben sie.`,
+   Victors Bekenntnis mit „im Januar“ und „keinem gesagt, der etwas hätte tun können“, kein
+   Applaus, die acht Clubs stehen, Novas Eltern stehen auch. Niemand sagt eine Moral. Novas Satz
+   `Es ist das einzige Ergebnis der letzten zwei Jahre, das mir gehört.` ist klug vom Remis des
+   Romans gelöst und stimmt bei jedem Ausgang von Runde 3. Der Abschaltton der Bildschirme hat
+   seine eigene Zeile mit Pause.
+3. `capital-arena-aussen.ink`, Knoten `abschied` bis `abschied_ende` (Zeile 134–185) und
+   `maple-falls-dachboden.ink`, `epilog_zettel` (Zeile 321–325): Die drei Wahlen der Bibel kommen
+   wie im Roman nacheinander und sind nie eine Entweder-oder-Wahl; `Nein. Dieses eine Mal nicht später.`
+   steht wörtlich, mit `#musik:aus` davor und `#pause:3` am Lichtwechsel; Ambrose sitzt; die
+   Schlussstellung der Fernpartie liegt auf der Stufe; Juno hält den Stift hin. Die Reihenfolge
+   Abschied, Abspann, Epilog, Post-Game ist durch `zeigeAbspann()`, `reise(...)` und die Quest
+   `mapleFalls.epilog` gesichert. Der Zettel hat den festen Wortlaut
+   (`„Du hast mich nicht gebraucht. Das ist das schönste Geschenk. – A. W.“`) und die richtige
+   Bedingung; für den Fall ohne Ruf gibt es nach dem Halbfinale die schöne eigene Zeile
+   `Dann weiß ich jetzt, dass du mich nicht gebraucht hast. Das ist auch ein schöner Tag.`
+
+#### Zählung
+
+Nach Art (zehn Befunde): fehlt 4 (M4.1, M4.4, M4.6, M4.8; davon drei „hängt am Antippen“),
+widerspricht 4 (M4.2, M4.3, M4.5, M4.7), plump 1 (M4.10), Pausen und Marken 1 (M4.9).
+
+Nach Datei (ein Befund kann mehrere Dateien berühren): `capital-arena-halle.ink` 8 (M4.1, M4.3,
+M4.4, M4.5, M4.6, M4.7, M4.9, M4.10); `capital-arena-aussen.ink` 5 (M4.1, M4.2, M4.8, M4.9, M4.10);
+`weg-ghost-capital.ink` 2 (M4.8, M4.10); `maple-falls-dachboden.ink` 2 (M4.2, M4.9);
+`capital-arena-ubahnhof.ink` 1 (M4.10); `capital-arena-innenstadt.ink` 0; `texte/de.json` 4 (M4.2,
+M4.3, M4.7, M4.10); `begegnungen.json` 2 (M4.2, M4.3); `orte.json`/`quests.json` 2 (M4.1, M4.8).
+
+Weitere Beobachtungen, nicht unter den zehn:
+
+- `texte/de.json`, Statisten am Weg und in Capital nennen lebende Spieler und ein reales Produkt:
+  `Magnus Carlsen hatte 2014 eine Elo-Zahl von 2882, höher war noch keiner.`,
+  `Judit Polgár war mit fünfzehn Großmeisterin, jünger als Fischer damals.`,
+  `1997 hat der Rechner Deep Blue in New York Kasparow im Wettkampf geschlagen.` Bibel 5.1 (Zeile
+  679): `Keine Namen realer Produkte, Spiele, Serien oder lebender Spieler.`
+- `capital-arena-halle.ink`, Zeile 107: `fünf Minuten und drei Sekunden je Zug` liest sich wie
+  fünf Minuten je Zug; Roman, Zeile 218: `fünf Minuten und drei Sekunden dazu`.
+- Die kleine Szene zwischen Runde 2 und 3 (Slick steht auf, Tamsin zieht ihn am Ärmel; Roman Zeile
+  121–122, `akt4_befunde.md` Abschnitt 3) fehlt; ebenso die Rückbezüge nach Runde 1 und 2 (Bisons,
+  der leise Turmzug).
+- `capital-arena-aussen.ink`, Zeile 163: `Das war das Geringste. Das weiß jeder.` ist schwächer als
+  der Roman (Zeile 1022: `„Das war das Geringste. Das steht in jedem Buch.“`); der Satz meint
+  Schachbücher allgemein und wäre kein Verweis auf das Buch. Die Antwort mit dem Geigenkasten
+  (Zeile 1025–1027) fehlt.
+- Juno nennt Bronze nicht (`Sechzehn Punkte für Silber, zweiundzwanzig für Gold.`); die Schwellen
+  16 und 22 stimmen, die Bronze-Liga ist der Sonst-Zweig (unter 16), eine Grenze bei 8 prüft Ink
+  nicht.
+
+#### Nicht geprüft
+
+- Kein Spieltest. Ablauf und Erreichbarkeit habe ich aus Ink, `orte.json`, `quests.json` und
+  `begegnungen.json` gelesen und nur an einer Stelle mit inkjs nachgerechnet (jeder Dialog startet
+  in der App eine frische Geschichte, deshalb sind die Einmal-Wahlen `*` in wiederholbaren Knoten
+  kein Fehler). Ob die App nach der Finalpartie von sich aus einen Dialog startet, habe ich im
+  Code nicht bis zum Ende verfolgt; in den Daten steht kein solcher Auslöser.
+- Karte mit goldenem Rand und Zugerraten im Halbfinale (M4.3): nur Datensuche und Suche in
+  `app/src/abenteuer` (`karten.ts`, `Deckwahl.tsx`, `partiemomente.ts`), kein vollständiges Lesen
+  der Partieansicht. Es kann eine Darstellung geben, die ich übersehen habe.
+- Klang- und Musikkennungen (`abschied.treppe`, `victor.lauf`, `zusammen`, `mit.dir` usw.) nicht
+  gegen `21_Klangplan.md` und die vorhandenen Dateien geprüft; die Randnotizen `[Bild: …]` und
+  `[Karte: …]` (Sättigung am See, Porträtfassungen, Gang als eigene Karte, Bildschirme dunkel) nur
+  dort, wo sie Text betreffen.
+- „Das Nachtstück kommt genau dreimal vor“: In den geprüften Dateien kommt es nicht vor; die übrigen
+  Dialogdateien habe ich dafür nicht durchgesehen.
+- `19_Ton_und_Spannungsbogen.md`: Abschnitt 2 (Leitsätze) gelesen, die übrigen Abschnitte nur nach
+  Überschriften. Story-Bibel: Abschnitt 5 und Szenen 102–110 gelesen, der Rest von Abschnitt 29
+  nicht. `22_Dialogpruefung.md`: nur Kopf von L3 und L3.11 als Muster.
+- Nebeninhalte der Runde 6 (Weltschachtag, Odette Finch, Kreidenacht, Kreidespringer) habe ich
+  gelesen, aber nur auf Ton und feste Punkte geprüft, nicht gegen `15_Routen_Ereignisse.md` im
+  Einzelnen. Die Statistentexte in `de.json` nur überflogen; `ansehen-*.ink` nicht geprüft.
+- Gegnerprofile in `gegner.json`: nur Victors Eröffnung nachgesehen (fest Spanisch, passt zu „lässt
+  den Helden ins Spanische“); Stärken, Liga-Versatz und Novas Zustandswechsel nicht.
+- Die Zählung der Zeilen mit mehr als zwei Sätzen (M4.9 f) ist eine grobe Skriptzählung nach
+  Satzzeichen, keine Handzählung.

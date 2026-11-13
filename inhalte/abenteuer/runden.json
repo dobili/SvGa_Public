@@ -188,6 +188,7 @@
     {
       "kennung": "ironwood.erinnerungBird",
       "ort": "ironwood",
+      "danach": "ironwood-museum.vitrine_mut",
       "steller": "ironwood.ambrose",
       "reihe": false,
       "buchuebungen": [],

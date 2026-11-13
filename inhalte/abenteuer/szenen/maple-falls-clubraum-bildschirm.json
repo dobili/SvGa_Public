@@ -875,6 +875,10 @@
     {
       "name": "sam",
       "feld": [9, 9]
+    },
+    {
+      "name": "carlaClub",
+      "feld": [16, 9]
     }
   ],
   "belebung": [

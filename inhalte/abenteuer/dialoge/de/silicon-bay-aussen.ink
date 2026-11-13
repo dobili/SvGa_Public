@@ -42,20 +42,26 @@ VAR batterieErhalten = false
     -> END
 }
 ~ ankunftSiliconBayGesehen = true
+In Silicon Bay ist es nicht kalt. Es liegt kein Schnee. #sprecher:erzaehler
 Die Häuser sind aus Glas. In ihnen spiegeln sich die anderen Häuser, man sieht nicht, wo eines aufhört. #sprecher:erzaehler
 Es ist still. Still wie ein Raum, in dem ein Gerät läuft, das man erst bemerkt, wenn es ausgeht. #sprecher:erzaehler
 Auf den Bänken sitzt jeder für sich, auf vielen Bildschirmen kleine Schachbretter. Niemand spielt gegen jemanden. #sprecher:erzaehler
-Etwas Weißes, Kniehohes summt auf dich zu und fährt vorbei, ohne langsamer zu werden. #sprecher:erzaehler #klang:lieferroboter
+* [Weitergehen]
+- Etwas Weißes, Kniehohes summt auf dich zu und fährt vorbei, ohne langsamer zu werden. #sprecher:erzaehler #klang:lieferroboter
 Ein Lieferroboter. Der bringt Essen. #sprecher:juno
 * [„Wem?“]
 - Jemandem, der nicht rausgehen will. #sprecher:juno
 Ambrose dreht sich einmal um sich selbst. In zwanzig Scheiben Glas ist er nicht zu sehen. #sprecher:erzaehler
-Kein Baum. Keine Taube. Nicht einmal eine Ratte. Wo wohnen hier die Tiere? #sprecher:ambrose
+Kein Baum. Keine Taube. Nicht einmal eine Ratte. #sprecher:ambrose
+Ich habe in Hafenstädten gelebt. Ich weiß, wie eine Stadt ohne Ratten aussieht: gar nicht. Wo wohnen hier die Tiere? #sprecher:ambrose
 Die stören die Sensoren. #sprecher:victor
-Victor steht hinter euch, ganz in Weiß. Er sieht aus, als hätte er nicht geschlafen. #sprecher:erzaehler
+* [Dich umdrehen]
+- Victor steht hinter euch, ganz in Weiß. Er sieht aus, als hätte er nicht geschlafen. #sprecher:erzaehler
 Ihr seid gekommen. #sprecher:victor
 * [„Du hast eingeladen.“]
-- Ja. Ich war nicht sicher, ob das dasselbe ist. #sprecher:victor
+- Ja. #sprecher:victor
+Er sieht auf seine Schuhe. #sprecher:erzaehler #pause:2
+Ich war nicht sicher, ob das dasselbe ist. #sprecher:victor
 -> ankunft_rundgang
 
 // Victor zählt auf, weil Zahlen das Einzige sind, worüber er ohne Mühe redet (Kapitel 31).
@@ -94,7 +100,6 @@ Nächster! Du da, mit den Blechdingern an der Jacke. Drei Minuten, um einen Burr
 Ich bin Dash. Ich rede dabei. Stört dich das? Mich nicht. #sprecher:dash
 * [„Mich auch nicht.“]
 - Im Park redet man. Und das hier ist ein Park. Wenn auch einer aus Glas, mit einer einzigen Bank. #sprecher:ambrose #stimmung:froh
-Wenn er redet, darfst du zurückreden. Mit einem Spruch. Aber nie gemein. #sprecher:ambrose
 -> dash_angebot
 
 === dash_angebot ===
@@ -129,10 +134,10 @@ Er redet, damit du nicht denkst. Mach das Gegenteil. #sprecher:ambrose
 // Rosie gibt die Karte aus ihrer Kasse (Grübelfalle), Victor fragt, warum Dash wiederkommt.
 === dash_hm ===
 ~ dashKarteGegeben = true
-Was war das eben? Du hast aufs Brett gestarrt, als hättest du was Furchtbares entdeckt. #sprecher:dash #musik:rosie
+Mitten in der Partie hast du gezogen und dann lange aufs Brett gesehen, als hättest du etwas Furchtbares entdeckt. #sprecher:erzaehler #musik:rosie
 * [„Hm.“]
 - Was, hm? Was hast du gesehen? Da ist doch nichts. Oder? #sprecher:dash
-Er sucht vierzig Sekunden lang nach etwas, das es nicht gibt. Dann lacht er, laut und ohne Groll. #sprecher:erzaehler
+Seine Uhr lief. Er hat vierzig Sekunden lang etwas gesucht, das es nicht gab. Nach der Partie lacht er, laut und ohne Groll. #sprecher:erzaehler
 Das war nicht fein. #sprecher:ambrose
 * [„Du hast gesagt, im Park redet man.“]
 - Ich habe nicht gesagt, dass es fein ist. #sprecher:ambrose
@@ -191,6 +196,7 @@ Auf dem Tablet spielt ZERO gegen sich selbst. Zwölf Sekunden, dann die nächste
 Du hast es nicht eingeschaltet. Ambrose sitzt davor, auf der Kante des Stuhls. Das Licht geht durch ihn hindurch. #sprecher:erzaehler
 * [„Wie hast du das angemacht?“]
 - Ich weiß es nicht. Ich habe es mir gewünscht. Sehr. #sprecher:ambrose #stimmung:gebannt
+Ich habe zugesehen. Die ganze Nacht. #sprecher:ambrose #stimmung:gebannt
 Tausendachthundert Partien. In jeder ist etwas, wofür ich einen Arm gegeben hätte. #sprecher:ambrose #stimmung:gebannt
 Und es weiß nicht einmal, dass es schön ist. Es rechnet, und die Schönheit fällt heraus. Wie Späne. #sprecher:ambrose #stimmung:gebannt
 * [„In Ironwood hast du gesagt, meine Partie war schön.“]
@@ -202,7 +208,10 @@ Ja. Es hat mir das Herz gebrochen, vor Freude. Ein Opfer in vierzig Zügen. #spr
 Das hier macht es in jeder. In jeder, {held}. Ohne zu zittern. Ohne dreimal zu zählen. #sprecher:ambrose #stimmung:gebannt
 Partie 1851. Partie 1852. #sprecher:erzaehler
 Sie zweifelt nie. Siehst du, wie schön das ist? #sprecher:ambrose #stimmung:gebannt
-Die Partie ohne Makel. Und hier liegt sie, tausendmal. In einer Schachtel, die ein Kind verschenkt. #sprecher:ambrose #stimmung:gebannt
+Sie spielt, wie ich immer spielen wollte. Die Partie ohne Makel. #sprecher:ambrose #stimmung:gebannt
+Ich habe geglaubt, sie sei ein einzelnes Ding. Eines, das man einmal schafft, wenn man Glück hat und Mut. #sprecher:ambrose #stimmung:gebannt
+* [Aufstehen. Der Boden ist kalt.]
+- Und hier liegt sie. Tausendmal. In einer Schachtel, die ein Kind verschenkt. #sprecher:ambrose #stimmung:gebannt
 * [„Und ich?“]
 - Er dreht sich um. #sprecher:erzaehler
 Was ist mit dir? #sprecher:ambrose
@@ -225,7 +234,9 @@ Pass auf ihn auf. #sprecher:juno
 Seit gestern erzählst du nichts. #sprecher:juno
 Sie schlägt das Tagebuch auf, hält den Stift darüber und klappt es wieder zu. #sprecher:erzaehler
 Er klingt komisch, wenn du nichts erzählst. #sprecher:juno
-Sie geht über das Glas, klein und rot in dem ganzen Weiß, dreht sich in der Mitte um und winkt mit beiden Armen. #sprecher:erzaehler
+* [Ihr nachsehen]
+- Sie geht über das Glas, klein und rot in dem ganzen Weiß, dreht sich in der Mitte um und winkt mit beiden Armen. #sprecher:erzaehler
+Du stehst da mit einem Brett im Rucksack, einem Reisebrett in der Jackentasche und einem Tablet unter dem Arm. #sprecher:erzaehler
 Zum ersten Mal, seit du die Decke weggezogen hast, fühlst du dich allein. #sprecher:erzaehler #musik:ambrose.fern #pause:4
 -> END
 
@@ -271,12 +282,12 @@ Heute ist nicht Sonntag. Und für die Insel brauchst du einen Grund. Hol dir ers
 
 === werbetafel ===
 Auf der Werbetafel leuchtet ZERO in weißer Schrift auf schwarzem Grund: „Nie wieder Fehler.“ #sprecher:erzaehler
-Nie wieder Fehler. Und nie wieder ein Grund, etwas Neues zu probieren. #sprecher:ambrose
+{tabletNachtGesehen: Ambrose sieht lange hin. Er sagt nichts dazu. #sprecher:erzaehler|Nie wieder Fehler. Das ist ein großes Versprechen. #sprecher:ambrose}
 -> END
 
 === netze ===
 An der Fassade der alten Fischhalle hängen Netze zum Trocknen, steif vor Salz. Über dem Tor steht verblichen: „Fresh Fish Daily“. #sprecher:erzaehler
-Bevor die Bildschirme kamen, roch diese Stadt nach Fisch. Ein ehrlicher Geruch. #sprecher:ambrose
+Hier riecht es. Nach Salz, nach Fisch. Zum ersten Mal in dieser Stadt riecht etwas. #sprecher:ambrose
 -> END
 
 // ---------------------------------------------------------------- Altstadt: Eisenwarenladen (Batterie)

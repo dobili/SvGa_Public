@@ -13,6 +13,7 @@ EXTERNAL schalteSteckbrief(gegner, zeile)
 VAR boatengGetroffen = false
 VAR boatengLagos = false
 VAR trocknerStellungBestanden = false
+VAR maeGetroffen = false
 VAR formularGefunden = false
 VAR formularEntziffert = false
 VAR okaforGetroffen = false
@@ -111,3 +112,13 @@ Ich hatte vergessen, wie ich schrieb. #sprecher:ambrose
 * [„Woher können Sie das lesen?“]
     Mein Großvater schrieb so. Er war Lehrer in Accra und hat mir die alte Schrift beigebracht. #sprecher:boateng
 - -> END
+
+// Gutachten K1.15: nach der Trocknerrunde von selbst (runden.json „danach“). Mae hat dem Helden
+// das Bild vorher gezeigt (Roman Kapitel 12); ohne Mae nur die Maschine.
+=== trockner_danach ===
+{trocknerStellungBestanden:
+    {maeGetroffen: Mae hat dir das vor einer Stunde gezeigt. #sprecher:erzaehler|Die Maschine schleudert. Die Figuren halten. #sprecher:erzaehler}
+- else:
+    Die Maschine läuft weiter. Die Stellung auch. #sprecher:erzaehler
+}
+-> END

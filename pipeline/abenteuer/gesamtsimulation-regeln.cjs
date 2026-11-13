@@ -101,15 +101,22 @@ function ladeWelt() {
   for (const ort of orte)
     for (const k of ort.karten) {
       welt.karteZuOrt[k.kennung] = ort;
-      const tiled = JSON.parse(
-        fs.readFileSync(path.join(DATEN, k.datei), "utf8"),
-      );
-      welt.objekte[k.kennung] = tiled.layers
-        .filter((l) => l.type === "objectgroup")
-        .flatMap((l) =>
-          l.objects.map((o) => ({ name: o.name, typ: o.type || o.class })),
-        )
-        .filter((o) => o.typ !== "statist" && o.typ !== "tier");
+      // Zustandskarten zählen mit (Runde 12): Manche Dinge gibt es nur in einer Fassung, etwa der
+      // Tisch mit dem Pizzakarton im Wohnzimmer. Vereinfachung: Die Simulation prüft nicht, in
+      // welcher Fassung ein Ding steht, sondern nimmt die Objekte aller Fassungen zusammen.
+      const objekteVon = (datei) =>
+        JSON.parse(fs.readFileSync(path.join(DATEN, datei), "utf8"))
+          .layers.filter((l) => l.type === "objectgroup")
+          .flatMap((l) =>
+            l.objects.map((o) => ({ name: o.name, typ: o.type || o.class })),
+          )
+          .filter((o) => o.typ !== "statist" && o.typ !== "tier");
+      const grund = objekteVon(k.datei);
+      const namen = new Set(grund.map((o) => o.name));
+      const dazu = Object.values(k.zustaende || {})
+        .flatMap(objekteVon)
+        .filter((o) => !namen.has(o.name) && namen.add(o.name));
+      welt.objekte[k.kennung] = [...grund, ...dazu];
     }
   return welt;
 }

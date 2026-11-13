@@ -57,15 +57,19 @@ VAR clubkampfSiliconBayNadel = 0
 Ein Raum ohne Ecken. Dreißig Plätze im Halbkreis, in jeden Tisch ist ein leuchtendes Brett eingelassen. Es riecht nach nichts. #sprecher:erzaehler
 Die Frau, die auf dich zukommt, sieht dir als Erste in dieser Stadt in die Augen. Auf ihrem Kittel: „Dr. E. Lin“. #sprecher:erzaehler
 Du bist das Kind mit den vier Nadeln. Victor hat von dir erzählt. Er erzählt sonst von niemandem. #sprecher:lin #stimmung:froh
-Ich bringe hier Kindern Schach bei. Vierzig im Jahr. Früher acht, in einem Keller mit Heizlüfter. #sprecher:lin
-Die Bildschirme zeigen jedem sofort den Fehler. Kein Kind muss warten, bis ich Zeit habe. Glaube ich. #sprecher:lin
+* [„Vier. Fünf bald.“]
+- Ich bringe hier Kindern Schach bei. Vierzig im Jahr. Früher acht, in einem Keller mit Heizlüfter. #sprecher:lin
+Die Bildschirme zeigen jedem sofort den Fehler. Kein Kind muss warten, bis ich Zeit habe. #sprecher:lin
+Sie zögert. #sprecher:erzaehler #pause
+Glaube ich. #sprecher:lin
 Drei Ziele in der Eröffnung? Welches vergisst man am leichtesten? #sprecher:lin
 * [„Zentrum, Entwicklung, König. Das dritte.“]
 - Warum? #sprecher:lin
 * [„Weil man gerade angreift.“]
-- Sie lächelt. Wer hat dir das beigebracht? #sprecher:lin #stimmung:froh
-* [„Viele Leute. Und meine Mutter.“]
-- Und ich. #sprecher:ambrose #stimmung:streng
+- Sie lächelt. #sprecher:erzaehler
+Wer hat dir das beigebracht? #sprecher:lin #stimmung:froh
+* [„Eine Mathelehrerin. Ein Kurier. Ein Kranführer. Und Mama.“]
+- Und ich. #sprecher:ambrose #stimmung:traurig
 Bevor du gegen mich spielst, fragen dich Theo und Nova ab. So ist es hier üblich. #sprecher:lin
 -> END
 
@@ -100,7 +104,7 @@ Bereit? Ich spiele, was die Theorie sagt. Mal sehen, was du dagegen hast. #sprec
 
 === lin_nach_niederlage ===
 Gut gespielt bis zum Mittelspiel. Danach habe ich die Theorie noch einmal nachgespielt. #sprecher:lin
-Sie war sicher, solange es Regeln gab. Zwing sie in eine Stellung ohne Regeln. #sprecher:ambrose
+Sie spielt wie eine sehr gute Seite in einem sehr guten Buch. Lass sie das Buch zuklappen, {held}. #sprecher:ambrose
 + [„Noch einmal.“]
     ~ beginnePartie("siliconBay.clubkampf")
     -> END
@@ -115,7 +119,7 @@ Sie war sicher, solange es Regeln gab. Zwing sie in eine Stellung ohne Regeln. #
 }
 ~ clubkampfSiliconBayBesprochen = true
 {ausgangSiliconBayClubkampf == "remis":
-    Remis. Ehrlich erkämpft. Die Bronzenadel gehört dir. #sprecher:lin #klang:fanfare.gedaempft
+    Remis. Ehrlich erkämpft. Die Nadel gehört dir. #sprecher:lin #klang:fanfare.gedaempft
     -> lin_tisch_aus
 }
 Dr. Lin sitzt lange still. Dann nimmt sie die Nadel aus der Kitteltasche: klares Glas, darin ein einzelner Bauer. #sprecher:erzaehler #klang:fanfare.gedaempft
@@ -125,11 +129,11 @@ Sie sagt „Sie“. Zu dir. Einmal. #sprecher:erzaehler
 
 // Kapitel 33: Die Tische zeigen den Fehler, nicht die Angst. Danach wirkliche Stille (S48).
 === lin_tisch_aus ===
-Wissen Sie, was die Tische nicht zeigen? Wo der Fehler war, ja. Nicht, warum man Angst hatte. #sprecher:lin
+{ausgangSiliconBayClubkampf == "remis":Weißt du|Wissen Sie}, was die Tische nicht zeigen? Wo der Fehler war, ja. Nicht, warum man Angst hatte. #sprecher:lin
 Sie schaltet den Tisch aus. Darunter nur schwarzes Glas, in dem ihr euch beide spiegelt. #sprecher:erzaehler #klang:abschaltton #musik:aus #geraeusch:aus #pause:4
 Ich habe die Spielberichte meiner Klasse nie so genau angesehen. #sprecher:lin #stimmung:ernst
 * [Schweigen]
-- Du hast es versprochen. Aber sie hat deinen Blick gesehen. Und sie ist eine Lehrerin. #sprecher:erzaehler
+- {ohrempfaengerGefunden:Du hast es versprochen. Aber sie hat deinen Blick gesehen. Und sie ist eine Lehrerin.|Sie sieht dich an, als warte sie auf etwas. Du weißt nicht, worauf.} #sprecher:erzaehler
 -> END
 
 === lin_alltag ===
@@ -161,6 +165,7 @@ Er heißt Theo. Er meint es nicht unhöflich. Bei jedem deiner Züge zuckt auf s
 Einundsiebzig Prozent. Genauigkeit. Das ist … menschlich. #sprecher:theo
 * [„Ist das gut?“]
 - Der Durchschnitt eines sehr guten Vereinsspielers. Victor hat neunundachtzig. Nova im Turnier achtundneunzig. #sprecher:theo
+Er runzelt die Stirn über der letzten Zahl. Nur kurz. #sprecher:erzaehler
 Du machst im Mittelspiel alle elf Züge einen Fehler. Den kann man wegtrainieren. Hier. #sprecher:theo
 -> theo_tablet
 
@@ -168,7 +173,9 @@ Du machst im Mittelspiel alle elf Züge einen Fehler. Den kann man wegtrainieren
 === theo_tablet ===
 ~ zeroTabletGeschenkt = true
 ~ gibFund("zeroTablet")
-Ein Tablet, weiß und dünn, mit dem Zeichen des Konzerns. Da ist ZERO drauf. Die volle Fassung. #sprecher:theo
+Er hält dir ein Tablet hin. Weiß, dünn, mit dem Zeichen des Konzerns. #sprecher:erzaehler
+Geschenkt. Da ist ZERO drauf. Die volle Fassung. #sprecher:theo
+Damit trainierst du in einer Woche mehr als in einem Jahr. #sprecher:theo
 * [„Was ist ZERO?“]
 - Theo sieht dich an, als hättest du gefragt, was Wasser ist. #sprecher:erzaehler
 Die Maschine. Die, die nie verliert. #sprecher:theo
@@ -178,11 +185,12 @@ Ambrose steht über das Tablet gebeugt. So hast du ihn noch nie stehen sehen. #s
 Noch einmal. #sprecher:ambrose #stimmung:gebannt #musik:ambrose.gebannt
 * [Noch einmal tippen]
 - Eine andere Partie. Ein Opfer in der Mitte, ein Turm, der stehen bleibt, und alles fällt ineinander wie ein Uhrwerk. #sprecher:erzaehler
-Kein einziger Fehler. Nicht einer. Der Turm hing sieben Züge lang, und sie wusste es. #sprecher:ambrose #stimmung:gebannt
+Kein einziger Fehler. Nicht einer. Hast du das gesehen? #sprecher:ambrose #stimmung:gebannt
+Der Turm. Sie hat ihn hängen lassen, sieben Züge lang, und sie wusste. Sie wusste es einfach. #sprecher:ambrose #stimmung:gebannt
 * [„Ambrose.“]
-- Noch einmal. #sprecher:ambrose #stimmung:gebannt
-{linGetroffen: -> theo_reihe}
--> theo_erst_lin
+- Noch einmal. #sprecher:ambrose #stimmung:gebannt #pause:2
+Neben dir ist es still geworden. #sprecher:erzaehler
+-> END
 
 === theo_erst_lin ===
 Die Abfrage machen wir offiziell. Melde dich erst bei Dr. Lin, dann messe ich. #sprecher:theo
@@ -199,10 +207,8 @@ Eröffnungsgrundsätze. Ich will sehen, ob du sie kennst oder nur benutzt. #spre
 
 === theo_serverraum ===
 ~ serverraumOffen = true
-Theo sieht von seinem Bildschirm auf. „Du hast dir Novas Partien angesehen, oder?“ #sprecher:erzaehler
-Ich hab das auch gesehen. Achtundneunzig Prozent. Das schafft kein Mensch. #sprecher:theo
-Im Serverraum gibt es eine Schublade, die immer abgeschlossen ist. Heute nicht. #sprecher:theo
-Ich hab nichts gesagt. Zahlen lügen nicht. Ich auch nicht. #sprecher:theo
+Du hast dir die Berichte angesehen. #sprecher:theo
+Die Rohdaten liegen unten. Im Serverraum. Da schließt keiner ab. Hier wird alles gefilmt. #sprecher:theo
 -> END
 
 === theo_alltag ===
@@ -223,9 +229,7 @@ Ich hab nichts gesagt. Zahlen lügen nicht. Ich auch nicht. #sprecher:theo
 === nova_erstes_treffen ===
 ~ novaGetroffen = true
 Auf der Fensterbank sitzt Nova Sinclair, die Knie angezogen. Vor ihr eine Kamera auf dem Stativ, das rote Licht ist aus. #sprecher:erzaehler
-Als sie merkt, dass du sie ansiehst, lächelt sie. Das Lächeln vom Podium in Riverton. Es geht an und wieder aus. #sprecher:erzaehler
-Mit Perfect Move trainiert jeder wie ein Champion! #sprecher:nova #stimmung:froh
-Sieht gerade jemand her? Nein? Dann kann ich ja kurz sitzen bleiben. #sprecher:nova
+Als sie merkt, dass du sie ansiehst, lächelt sie. Das Lächeln vom Podium in Riverton. Es geht an und wieder aus. #sprecher:erzaehler #pause
 -> END
 
 === nova_erst_theo ===
@@ -242,7 +246,7 @@ Fallen. Ich kenne jede. Die Frage ist, ob du sie siehst, bevor du reinfällst. #
 
 === nova_danach ===
 Nova sieht dich an und dann schnell weg. #sprecher:erzaehler
-Du hast es versprochen. Noch nicht. Bitte. #sprecher:nova #stimmung:ernst
+Noch nicht. Bitte. #sprecher:nova #stimmung:ernst
 -> END
 
 === nova_alltag ===
@@ -255,6 +259,6 @@ Du hast es versprochen. Noch nicht. Bitte. #sprecher:nova #stimmung:ernst
 {serverraumOffen:
     Die Tür zum Serverraum steht einen Spalt offen. Kalte Luft weht heraus. #sprecher:erzaehler
 - else:
-    Auf der Tür steht „Serverraum – nur Personal“. Sie ist verschlossen. #sprecher:erzaehler
+    Auf der Tür steht „Serverraum – nur Personal“. Sie ist nicht abgeschlossen. Du hast dort unten nichts zu suchen. Noch nicht. #sprecher:erzaehler
 }
 -> END

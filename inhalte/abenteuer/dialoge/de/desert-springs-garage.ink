@@ -4,9 +4,9 @@
 // Szenen der Bibel (Abschnitt 20): 75 Aufgabenreihen (Runden desertSprings.reiheTomas,
 // desertSprings.reiheDot), 78 Clubkampf (Begegnung desertSprings.clubkampf, Karten erlaubt, der
 // Mentor-Zug ist nach der Versöhnung wieder frei), Dots Hinweis auf das Antiquariat (Szene 76).
-// Szene 77 Erinnerung 1858 (Runde desertSprings.erinnerung1858, Quest gleichen Namens): Ambrose
-// erzählt Mira am Abend nach dem Clubkampf von seiner letzten Partie gegen Hale. Weil die Sammlung
-// vor 1866 keine freie Partie mehr hat, rät der Held Morphys Züge aus Bird–Morphy 1858 (Bericht).
+// Szene 77 Erinnerung 1858 (Begegnung desertSprings.erinnerung1858, Quest gleichen Namens): die
+// erfundene siebte Matchpartie gegen Hale als Stellungsduell nach Hales stillem Läuferzug
+// (Entscheidung 13.11.2026; Stellung mit der Engine gebaut, Weiß etwa +1,9, nur Lxh7+ hält).
 // Einstiege wie in orte.json: mira, tomas, dot.
 //
 // Der Club beginnt erst nach der Versöhnung (Hauptquest desertSprings.versoehnung, streng der
@@ -16,6 +16,7 @@
 
 EXTERNAL beginnePartie(begegnung)
 EXTERNAL beginneAufgaben(runde)
+EXTERNAL gibFund(kennung)
 
 VAR held = "Du"
 VAR miraSteinGesehen = false
@@ -28,7 +29,9 @@ VAR clubkampfDesertSpringsNadel = 0
 VAR tomasGetroffen = false
 VAR dotGetroffen = false
 VAR dotOkoroErzaehlt = false
-VAR erinnerung1858Bestanden = false
+// Kapitel 45: Stellungsduell ab Hales Läuferzug (Begegnung desertSprings.erinnerung1858, Gegner
+// desertSprings.hale1858); den Ausgang setzt die Hülle (R42).
+VAR ausgangDesertSpringsErinnerung1858 = ""
 VAR erinnerung1858Besprochen = false
 // Kapitel 43 (Roman): Dot und Margaret, Tomás und der Dosenpokal, Miras „Weil ich kann“.
 VAR miraGarageGesehen = false
@@ -36,6 +39,10 @@ VAR miraGarageGesehen = false
 VAR atmeGesagt = false
 VAR atmeMomentGesehen = false
 VAR margaretErzaehlt = false
+// Nebenaufgabe „Dots Partie“ (Tabelle „Neu gegenüber“, Akt 3 Teil 3): {held} spielt Margarets
+// Seite ab dem 31. Zug (Begegnung desertSprings.dotFernpartie); den Ausgang setzt die Hülle.
+VAR ausgangDesertSpringsDotFernpartie = ""
+VAR dotFernpartieBesprochen = false
 
 // ---------------------------------------------------------------- Vor der Versöhnung
 
@@ -54,7 +61,7 @@ VAR margaretErzaehlt = false
 {
 - not versoehnungGesehen: -> garage_wartet
 - nadelDesertSprings > clubkampfDesertSpringsNadel: -> mira_nach_sieg
-- erinnerung1858Bestanden and not erinnerung1858Besprochen: -> mira_nach_erinnerung
+- ausgangDesertSpringsErinnerung1858 != "" and ausgangDesertSpringsErinnerung1858 != "abgebrochen" and not erinnerung1858Besprochen: -> mira_nach_erinnerung
 - not (reiheTomasBestanden and reiheDotBestanden): -> mira_reihe_offen
 - nadelDesertSprings == 0 and ausgangDesertSpringsClubkampf == "niederlage": -> mira_nach_niederlage
 - nadelDesertSprings == 0: -> mira_clubkampf
@@ -152,7 +159,7 @@ Ambrose sagt nichts. Aber er sieht dich an, wie er dich noch nie angesehen hat. 
 
 === mira_alltag ===
 {~Im Canyon antwortet das Echo. Am Brett nicht. Deshalb mag ich das Brett.|Opfer sind schöner als Recht haben.|Warum hat das Huhn die Straße überquert? Um den König zu schützen.} #sprecher:mira
-+ {nadelDesertSprings > 0 and not erinnerung1858Bestanden} [„Ambrose, zeig sie mir. Die siebte von 1858.“]
++ {nadelDesertSprings > 0 and not erinnerung1858Besprochen} [„Ambrose, zeig sie mir. Die siebte von 1858.“]
     -> mira_erinnerung
 + {nadelDesertSprings > 0 and nadelDesertSprings < 3} [„Revanche um eine bessere Nadel?“]
     Jetzt. #sprecher:mira
@@ -179,8 +186,9 @@ Bemerkenswert unnötig. #sprecher:ambrose #stimmung:still
 Er zeigt dir, was er danach spielte. Ein Schach, das nichts bringt. Ein Rückzug. Ein zweites Schach. #sprecher:erzaehler #klang:figuren_kippen
 Ich wusste, dass ich mich verrechnet hatte. Dass alle es gesehen hatten. Ich wollte nur noch, dass es vorbei ist. #sprecher:ambrose #pause:2 #bild:aus #erinnerung:aus
 Du siehst auf die Stellung nach dem Läuferzug. Bevor er fahrig wurde. Du zählst. #sprecher:erzaehler
-* [Die Stellung durchspielen]
-    ~ beginneAufgaben("desertSprings.erinnerung1858")
+* [Die Stellung von 1858 spielen]
+    Du spielst Weiß. Gegen Hale, wie er damals saß. #sprecher:erzaehler
+    ~ beginnePartie("desertSprings.erinnerung1858")
     -> END
 * [„Ein andermal.“]
     Ich habe hundertsechzig Jahre gewartet. Ein Abend mehr schadet nicht. #sprecher:ambrose
@@ -254,6 +262,8 @@ Du denkst an einen Wohnwagen unter einer Brücke. „Ich hab seit März keinen n
 - not reiheTomasBestanden: -> dot_warten
 - not reiheDotBestanden: -> dot_reihe
 - not dotOkoroErzaehlt: -> dot_okoro
+- ausgangDesertSpringsDotFernpartie != "" and ausgangDesertSpringsDotFernpartie != "abgebrochen" and not dotFernpartieBesprochen: -> dot_nach_fernpartie
+- margaretErzaehlt and (ausgangDesertSpringsDotFernpartie == "" or ausgangDesertSpringsDotFernpartie == "abgebrochen"): -> dot_fernpartie
 - else: -> dot_alltag
 }
 
@@ -280,6 +290,7 @@ Ich stand besser. Ich sag das nicht gern, wenn jemand nicht mehr widersprechen k
 * [„Ich wohne in ihrem Haus.“]
 - Sie nimmt die Lesebrille ab und setzt sie wieder auf. Dann legt sie einen Stapel Postkarten hin. Oben ein Wasserfall. #sprecher:erzaehler #bild:postkarten_wasserfall
 Dann weißt du vielleicht, was sie gezogen hätte. #sprecher:dot #bild:aus
+~ gibFund("postkartenMargaret")
 An meinem Tisch. Vierzig Jahre. Mit dieser Frau. #sprecher:ambrose #stimmung:riss #musik:desertSprings
 ->->
 
@@ -300,6 +311,34 @@ Du magst alte Sachen, oder? Dein Brett sieht aus, als hätte es Geschichten. #sp
 Mr. Okoro im Antiquariat hat den Kram von einem alten Brückenbauer im Keller. #sprecher:dot
 Kisten voller Briefe. Frag ihn. #sprecher:dot
 Ein Brückenbauer. Hier, in der Wüste. #sprecher:ambrose #pause
+-> END
+
+// Nebenaufgabe: Margarets Partie zu Ende spielen (Dot steht besser, Turm auf der siebten Reihe).
+=== dot_fernpartie ===
+Dot legt ein kleines Steckbrett auf die Theke. Die Stellung nach dem einunddreißigsten Zug, seit Jahren unverändert. #sprecher:erzaehler
+Margaret hatte Schwarz. Mein Turm steht auf ihrer siebten Reihe. Spielst du für sie weiter, Liebes? #sprecher:dot
+* [„Ich spiele für Margaret.“]
+    Sie hat nie schnell gezogen. Lass dir Zeit. #sprecher:ambrose
+    ~ beginnePartie("desertSprings.dotFernpartie")
+    -> END
+* [„Nicht jetzt.“]
+    Vierzig Jahre hat sie gewartet. Die Stellung auch. #sprecher:dot
+    -> END
+
+=== dot_nach_fernpartie ===
+~ dotFernpartieBesprochen = true
+{ausgangDesertSpringsDotFernpartie:
+- "sieg":
+    Dot nimmt die Lesebrille ab. Du hast mich geschlagen. Mit ihren Figuren. #sprecher:dot #stimmung:froh
+    Sie hätte gelacht, glaube ich. Sie hat nie gelacht, wenn sie verloren hat. #sprecher:dot
+- "remis":
+    Remis. Das ist gerecht. Wir hätten uns nie geeinigt, wer besser war. #sprecher:dot
+- else:
+    Ich hab gewonnen. Ich sag das nicht gern. Sie hätte bis zum Schluss gekämpft, so wie du. #sprecher:dot
+}
+Sie zieht einen Faden von der Nadel im Nordosten zu einer leeren Postkarte und knotet ihn fest. #sprecher:erzaehler
+Jetzt ist die Partie fertig. #sprecher:dot
+An meinem Tisch hat sie das Brett abgestaubt. Jeden Tag. Jetzt weiß ich, wofür. #sprecher:ambrose #stimmung:still
 -> END
 
 === dot_alltag ===

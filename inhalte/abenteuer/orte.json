@@ -13,9 +13,21 @@
           "datei": "karten/maple-falls-dachboden.json",
           "name": "ort.mapleFalls.dachboden",
           "innen": true,
-          "musik": "musik/dachboden.ogg",
+          "geraeusch": "klang/wind_fenster.m4a",
+          "teilchen": "staub",
           "zustaende": {
             "ersterAbendGesehen": "karten/maple-falls-dachboden-ohne-brett.json"
+          }
+        },
+        {
+          "kennung": "mapleFalls.zimmer",
+          "datei": "karten/maple-falls-zimmer.json",
+          "name": "ort.mapleFalls.zimmer",
+          "innen": true,
+          "musik": "musik/maple-falls.ogg",
+          "geraeusch": "klang/wasserfall.m4a",
+          "zustaende": {
+            "ersterAbendGesehen": "karten/maple-falls-zimmer-brett.json"
           }
         },
         {
@@ -23,7 +35,10 @@
           "datei": "karten/maple-falls-wohnzimmer.json",
           "name": "ort.mapleFalls.wohnzimmer",
           "innen": true,
+          "musik": "musik/maple-falls.ogg",
+          "geraeusch": "klang/wasserfall.m4a",
           "zustaende": {
+            "ersterAbendGesehen": "karten/maple-falls-wohnzimmer-tisch.json",
             "aufbruchGesehen": "karten/maple-falls-wohnzimmer-ausgepackt.json"
           }
         },
@@ -32,15 +47,18 @@
           "datei": "karten/maple-falls-aussen.json",
           "name": "ort.mapleFalls.aussen",
           "innen": false,
-          "musik": "musik/maple-falls.ogg"
+          "musik": "musik/maple-falls.ogg",
+          "geraeusch": "klang/wasserfall.m4a"
         },
         {
           "kennung": "mapleFalls.clubraum",
           "datei": "karten/maple-falls-clubraum.json",
           "name": "ort.mapleFalls.clubraum",
           "innen": true,
+          "musik": "musik/maple-falls.club.m4a",
           "zustaende": {
-            "nadelMapleFalls >= 1": "karten/maple-falls-clubraum-pokal.json"
+            "nadelMapleFalls >= 1": "karten/maple-falls-clubraum-pokal.json",
+            "victorGesehen": "karten/maple-falls-clubraum-bildschirm.json"
           }
         },
         {
@@ -48,16 +66,22 @@
           "datei": "karten/maple-falls-park.json",
           "name": "ort.mapleFalls.park",
           "innen": false,
+          "musik": "musik/maple-falls.ogg",
+          "geraeusch": "klang/wasserfall.m4a",
           "zustaende": {
-            "nadelMapleFalls >= 1": "karten/maple-falls-park-steg-neu.json",
-            "aufbruchGesehen und nicht ankunftCedarCreekGesehen": "karten/maple-falls-park-schulbus.json"
+            "nadelMapleFalls >= 1": "karten/maple-falls-park-steg-neu.json"
           }
         },
         {
           "kennung": "mapleFalls.diner",
           "datei": "karten/maple-falls-diner.json",
           "name": "ort.mapleFalls.diner",
-          "innen": true
+          "innen": true,
+          "musik": "musik/diner.m4a",
+          "geraeusch": "klang/diner_kueche.m4a",
+          "zustaende": {
+            "nadelMapleFalls >= 1 und dinerAbendGesehen": "karten/maple-falls-diner-tischset.json"
+          }
         }
       ],
       "figuren": [
@@ -106,6 +130,24 @@
           "name": "figur.lily.name",
           "sprite": "figuren/lily.png",
           "dialog": "maple-falls-aussen.lily"
+        },
+        {
+          "kennung": "mapleFalls.hector",
+          "name": "figur.hector.name",
+          "sprite": "figuren/kellner.png",
+          "dialog": "maple-falls-diner.hector"
+        },
+        {
+          "kennung": "mapleFalls.calloway",
+          "name": "figur.calloway.name",
+          "sprite": "figuren/statist-11.png",
+          "dialog": "maple-falls-aussen.calloway"
+        },
+        {
+          "kennung": "mapleFalls.carla",
+          "name": "figur.carla.name",
+          "sprite": "figuren/statist-26.png",
+          "dialog": "maple-falls-aussen.carla"
         }
       ],
       "ausloeser": [
@@ -122,16 +164,16 @@
           "name": "treppe",
           "art": "uebergang",
           "ziel": {
-            "karte": "mapleFalls.wohnzimmer",
-            "ausloeser": "treppeOben"
+            "karte": "mapleFalls.zimmer",
+            "ausloeser": "treppeDachboden"
           }
         },
         {
           "name": "treppeOben",
           "art": "uebergang",
           "ziel": {
-            "karte": "mapleFalls.dachboden",
-            "ausloeser": "treppe"
+            "karte": "mapleFalls.zimmer",
+            "ausloeser": "treppeUnten"
           }
         },
         {
@@ -293,6 +335,60 @@
           "karte": "mapleFalls.park",
           "art": "gegenstand",
           "dialog": "maple-falls-park.steg"
+        },
+        {
+          "name": "tischPizzakarton",
+          "karte": "mapleFalls.wohnzimmer",
+          "art": "gegenstand",
+          "dialog": "ansehen-maple-falls.tisch_pizzakarton"
+        },
+        {
+          "name": "treppeDachboden",
+          "karte": "mapleFalls.zimmer",
+          "art": "uebergang",
+          "ziel": {
+            "karte": "mapleFalls.dachboden",
+            "ausloeser": "treppe"
+          }
+        },
+        {
+          "name": "treppeUnten",
+          "karte": "mapleFalls.zimmer",
+          "art": "uebergang",
+          "ziel": {
+            "karte": "mapleFalls.wohnzimmer",
+            "ausloeser": "treppeOben"
+          }
+        },
+        {
+          "name": "fensterbank",
+          "karte": "mapleFalls.zimmer",
+          "art": "gegenstand",
+          "dialog": "maple-falls-dachboden.fensterbank"
+        },
+        {
+          "name": "brettSchreibtisch",
+          "karte": "mapleFalls.zimmer",
+          "art": "gegenstand",
+          "dialog": "maple-falls-dachboden.ambrose"
+        },
+        {
+          "name": "kisteWhitlock",
+          "karte": "mapleFalls.dachboden",
+          "art": "gegenstand",
+          "dialog": "ansehen-maple-falls.kiste_whitlock"
+        },
+        {
+          "name": "bildschirmPult",
+          "karte": "mapleFalls.clubraum",
+          "art": "gegenstand",
+          "dialog": "ansehen-maple-falls.bildschirm_pult"
+        },
+        {
+          "name": "kreidebrett",
+          "karte": "mapleFalls.aussen",
+          "art": "gegenstand",
+          "dialog": "ansehen-maple-falls.kreidebrett"
         }
       ],
       "club": {
@@ -2706,6 +2802,7 @@
           "name": "weiterDeich",
           "karte": "wegSiliconDelacroix.faehre",
           "art": "uebergang",
+          "dialog": "weg-silicon-delacroix.bug",
           "ziel": {
             "karte": "wegSiliconDelacroix.deich",
             "ausloeser": "zurueckFaehre"
@@ -5248,7 +5345,9 @@
           "kennung": "kuerbishof.hof",
           "datei": "karten/kuerbishof-hof.json",
           "name": "ort.kuerbishof.hof",
-          "innen": false
+          "innen": false,
+          "musik": "musik/weg.kuerbishof.m4a",
+          "geraeusch": "klang/huehner.m4a"
         }
       ],
       "figuren": [

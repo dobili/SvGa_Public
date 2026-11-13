@@ -221,6 +221,12 @@
       "muenzen": 5
     },
     {
+      "kennung": "postkartenMargaret",
+      "ort": "desertSprings",
+      "name": "fund.postkartenMargaret.name",
+      "text": "fund.postkartenMargaret.text"
+    },
+    {
       "kennung": "postkarteStaedte",
       "ort": "crossroads",
       "name": "fund.postkarteStaedte.name",

@@ -1052,6 +1052,29 @@
       ]
     },
     {
+      "kennung": "desertSprings.hale1858",
+      "name": "figur.hale1858.name",
+      "rolle": "story",
+      "portraet": "portraets/hale1858.svg",
+      "staerke": {
+        "art": "eingang",
+        "versatz": 500
+      },
+      "stil": "positionsspieler",
+      "eroeffnung": {
+        "art": "fest",
+        "eroeffnungen": ["praxis:Italian Game: Evans Gambit"],
+        "abweichung": 0
+      },
+      "menschlich": true,
+      "steckbrief": [
+        {
+          "art": "stil",
+          "wert": "positionsspieler"
+        }
+      ]
+    },
+    {
       "kennung": "desertSprings.mira",
       "name": "figur.mira.name",
       "rolle": "clubchef",

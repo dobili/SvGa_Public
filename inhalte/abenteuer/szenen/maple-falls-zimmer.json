@@ -1,0 +1,183 @@
+{
+  "karte": "mapleFalls.zimmer",
+  "datei": "karten/maple-falls-zimmer.json",
+  "art": "innen",
+  "beschreibung": "Das Zimmer des Helden im Obergeschoss des Whitlock-Hauses (Roman Kap. 4: „Zimmer des Helden mit Schreibtisch für das Brett“; T15 Fensterbank), 16 × 12. Das Haus außen ist eine Villa aus Holz, 9 breit und 2 Geschosse hoch; der Aufgang liegt nach KARTENREGELN 10.76 hinten links hinter der Haustür, auf jeder Geschosskarte an derselben Stelle. Deshalb liegt links der Treppenabsatz: An der Nordwand führt die steile Holztreppe weiter zum Dachboden (neunte Stufe knarrt), darunter öffnet sich mit Geländer die Treppe ins Erdgeschoss. Rechts das Zimmer mit Dielen und cremefarbenen Wänden: an der Nordwand ein Bücherregal, das Fenster zur Birch Lane und darunter das Fensterbrett, auf dem sich im Lauf der Reise die Funde sammeln (zuerst ein Springer mit abgestoßener Mähne). Daneben ein Poster und rechts in der Ecke der Schreibtisch, auf dem später das alte Brett liegt, mit einem Stuhl davor. An der Ostwand das Bett mit dem Kopfende zur Wand, davor ein runder Teppich, über dem Kopfende eine Kommode mit Tischlampe. Vorn stehen noch drei Umzugskartons, in der Ecke eine Pflanze. Laufwege: von der Treppe nach rechts zur Fensterbank, zum Schreibtisch und zum Bett; die Treppe zum Dachboden erreicht man vom Absatz aus.",
+  "wand": "creme",
+  "boden": "holzHell",
+  "zustand": ["neu", "gebraucht", "alt"],
+  "stil": ["modern", "klassisch", "rustikal", "kinder"],
+  "raster": [
+    "################",
+    "################",
+    "################",
+    "#..............#",
+    "#..............#",
+    "#..............#",
+    "#..............#",
+    "#..............#",
+    "#..............#",
+    "#..............#",
+    "#..............#",
+    "################"
+  ],
+  "objekte": [
+    {
+      "moebel": "mf4Treppe",
+      "feld": [1, 1],
+      "id": "treppeDach"
+    },
+    {
+      "moebel": "mf4TreppeAb",
+      "feld": [1, 5],
+      "id": "treppeAb"
+    },
+    {
+      "moebel": "mf7Buecherregal",
+      "feld": [7, 1]
+    },
+    {
+      "moebel": "wzFenster",
+      "feld": [9, 1],
+      "an_wand": true
+    },
+    {
+      "moebel": "mf12Fensterbank",
+      "feld": [9, 2],
+      "an_wand": true,
+      "versatz": [0, 4]
+    },
+    {
+      "moebel": "sbPoster",
+      "feld": [11, 0],
+      "an_wand": true,
+      "versatz": [0, 4]
+    },
+    {
+      "moebel": "cc3Schreibtisch",
+      "feld": [13, 2],
+      "id": "schreibtisch"
+    },
+    {
+      "moebel": "mf3StuhlHellRechts",
+      "feld": [12, 3],
+      "zu": "schreibtisch"
+    },
+    {
+      "moebel": "rv5BettKopfRechts",
+      "feld": [12, 7],
+      "id": "bett"
+    },
+    {
+      "moebel": "mf7TeppichRund",
+      "feld": [9, 6]
+    },
+    {
+      "moebel": "mf4KartonStapel",
+      "feld": [7, 9]
+    },
+    {
+      "moebel": "mf4Karton",
+      "feld": [8, 9]
+    },
+    {
+      "moebel": "mf4KartonBreit",
+      "feld": [9, 9]
+    },
+    {
+      "moebel": "wzPflanze",
+      "feld": [14, 9]
+    },
+    {
+      "moebel": "mf8Kommode",
+      "feld": [13, 5],
+      "id": "kommode"
+    },
+    {
+      "moebel": "mf7Tischlampe",
+      "auf": "kommode"
+    }
+  ],
+  "ausloeser": [
+    {
+      "name": "start",
+      "feld": [5, 4],
+      "eigenschaften": {
+        "richtung": "rechts"
+      }
+    },
+    {
+      "name": "treppeDachboden",
+      "feld": [1, 3]
+    },
+    {
+      "name": "treppeDachboden",
+      "feld": [1, 4]
+    },
+    {
+      "name": "treppeDachboden",
+      "feld": [2, 3]
+    },
+    {
+      "name": "treppeDachboden",
+      "feld": [2, 4]
+    },
+    {
+      "name": "treppeDachboden",
+      "feld": [3, 3]
+    },
+    {
+      "name": "treppeDachboden",
+      "feld": [3, 4]
+    },
+    {
+      "name": "treppeUnten",
+      "feld": [3, 5]
+    },
+    {
+      "name": "treppeUnten",
+      "feld": [3, 6]
+    },
+    {
+      "name": "treppeUnten",
+      "feld": [3, 7]
+    },
+    {
+      "name": "treppeUnten",
+      "feld": [3, 8]
+    },
+    {
+      "name": "treppeUnten",
+      "feld": [3, 9]
+    },
+    {
+      "name": "treppeUnten",
+      "feld": [4, 5]
+    },
+    {
+      "name": "treppeUnten",
+      "feld": [4, 6]
+    },
+    {
+      "name": "treppeUnten",
+      "feld": [4, 7]
+    },
+    {
+      "name": "treppeUnten",
+      "feld": [4, 8]
+    },
+    {
+      "name": "treppeUnten",
+      "feld": [4, 9]
+    },
+    {
+      "name": "fensterbank",
+      "feld": [9, 3]
+    },
+    {
+      "name": "fensterbank",
+      "feld": [10, 3]
+    }
+  ],
+  "figuren": []
+}

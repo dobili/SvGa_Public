@@ -8,6 +8,10 @@
 // Einstiege wie in orte.json: ankunft_zu_fuss, sol, weg_desert, seilbahn, drachenfest,
 // weg_crossroads.
 //
+// Runde 11 (13.11.2026): Ankunft nach dem Roman (roman/akt4_teil1.md, Kapitel 48): Wolken von oben,
+// Murmeltiere („Vor uns.“), acht Gesichter auf dem Plakat, das achte mit Ketchup am Kinn, Victor
+// und der Bote im grauen Anzug.
+//
 // Variablen: ausgangSummitCitySol und nadelSummitCity setzt die Hülle (R42); victorKriseGesehen
 // setzt summit-city-huette.ink, victorSeiteGegeben summit-city-bergstation.ink; die übrigen
 // setzt diese Datei. Die Drachenschuppe kommt über gibFund; Ink merkt sie sich selbst.
@@ -39,14 +43,21 @@ VAR abschiedSummitGesehen = false
 
 === ankunft_summit ===
 ~ ankunftSummitGesehen = true
-Die letzte Kurve, dann liegt Summit City vor dir: Holzhütten am Hang, eine Seilbahn, und darüber Schnee auf den Gipfeln. #sprecher:erzaehler
-An der Talstation wartet Mama. Neben ihr hüpft jemand mit Rucksack auf und ab. #sprecher:erzaehler
-Sommerferien! Ich darf mit bis zur Meisterschaft! Das Tagebuch hab ich auch dabei. #sprecher:juno #stimmung:froh
-Ich habe eine Hütte für uns gemietet. Mit Ofen. Nachts wird es hier kalt, hat man mir gesagt. #sprecher:mutter
-An jeder Laterne hängt ein Plakat: „Landesmeisterschaft in der Capital Arena. Präsentiert von Perfect Move.“ #sprecher:erzaehler
-Vor dem Plakat steht Victor. Ein Mann im Anzug beugt sich zu ihm und sagt ihm etwas ins Ohr. Victor nickt, ohne aufzusehen. #sprecher:erzaehler
-Er sieht aus wie ein Junge, dem man das Spielen abgewöhnt. #sprecher:ambrose #stimmung:still
-Oben am Hang wohnt Großmeisterin Ward. Die letzte Clubchefin vor der Meisterschaft. #sprecher:ambrose
+Summit City liegt so hoch, dass man die Wolken von oben sieht. Holzhäuser, eine Seilbahn, die leise surrt. #sprecher:erzaehler
+Es ist Juli, und auf den Gipfeln liegt Schnee. #sprecher:erzaehler
+Zwischen den Häusern pfeift etwas, schrill und kurz. #sprecher:erzaehler #klang:murmeltier
+Murmeltiere. Die warnen sich. #sprecher:mutter
+* [„Wovor?“]
+- Vor uns. #sprecher:mutter
+An der Seilbahnstation glänzt ein Plakat: „Landesmeisterschaft der Jugend. Präsentiert von Perfect Move.“ Acht Gesichter. #sprecher:erzaehler
+Das zweite ist Nova. Das vierte Victor. Das achte bist du. #sprecher:erzaehler
+Das ist von meinem Foto! Da hast du Ketchup am Kinn! #sprecher:juno #stimmung:froh
+* [Zum Hotel sehen]
+- Vor dem Hotel steht Victor, in Weiß. Ein Mann im grauen Anzug beugt sich zu ihm und sagt ihm etwas ins Ohr. Victor nickt. #sprecher:erzaehler
+* [„Der Trainer, der kein Mensch ist.“]
+- Der dort ist ein Mensch. Aber ich glaube, er ist nur der Bote. #sprecher:ambrose
+Die Hütte der Großmeisterin liegt eine Stunde über der Stadt. Mama bleibt unten. #sprecher:erzaehler
+Sie hat mich in neunzehn Zügen geschlagen. Ich will ihr nicht gleich am ersten Tag begegnen. #sprecher:mutter
 -> END
 
 // ---------------------------------------------------------------- Sol auf dem Gipfelfelsen (Szene 89)
@@ -72,7 +83,7 @@ Drei Minuten, zwei Sekunden Zuschlag. Eine Stellung, du hast Weiß. Bevor die Wo
     Sie redet vom Wetter, um dich zu treiben. Das Brett kennt kein Wetter. #sprecher:ambrose
     ~ beginnePartie("summitCity.sol")
     -> END
-+ [„Später.“]
++ [„Nicht jetzt.“]
     Der Felsen läuft nicht weg. Die Wolken schon. #sprecher:sol
     -> END
 
@@ -96,7 +107,7 @@ Gewitter. Ich hab dich gewarnt. Noch mal, bevor es regnet? #sprecher:sol #stimmu
 + [„Revanche.“]
     ~ beginnePartie("summitCity.sol")
     -> END
-+ [„Später.“]
++ [„Nicht jetzt.“]
     -> END
 
 // ---------------------------------------------------------------- Seilbahn

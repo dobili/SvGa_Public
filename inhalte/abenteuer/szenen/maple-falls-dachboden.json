@@ -4,7 +4,7 @@
   "art": "innen",
   "zustand": ["alt", "gebraucht"],
   "stil": ["klassisch", "rustikal"],
-  "beschreibung": "Der Dachboden des Whitlock-Hauses voll mit altem Hausrat. In der Nordwestecke die Bodenluke mit Leiter, daneben ein Waldbild, durch das Sprossenfenster leuchtet das rote Laub der Ahorne; der Bauernschrank und ein Bücherregal voller vergilbter Bücher an der Nordwand. Gleich neben der Luke liegt der verblichene Teppich mit dem runden Tisch, dem Reiseschachbrett und zwei Stühlen, daneben eine Stehlampe. An Ost- und Südwand zwei mit Tüchern abgedeckte Truhen, auf einer sitzt ein Teddy, ein Kistenstapel, ein alter Karton in der Südwestecke, die Zeitungen von 1961, die kleine gestreifte Hutschachtel neben dem Teppich und der Standspiegel.",
+  "beschreibung": "Der Dachboden des Whitlock-Hauses voll mit altem Hausrat (Roman Kap. 2). In der Nordwestecke die Bodenluke mit Leiter (die steile Treppe aus dem Obergeschoss kommt hier an, KARTENREGELN 10.76: an derselben Stelle wie unten), gleich daneben die Holzkiste mit der steilen Schrift „Whitlock – nicht wegwerfen“, die der Held am ersten Tag heraufgetragen hat (Roman Kap. 1); darüber ein Waldbild. Mitten in der Stirnwand das runde Giebelfenster; sein Licht fällt als Kegel auf den verblichenen Teppich und den niedrigen runden Tisch direkt darunter, auf dem unter einer Decke ohne Staub das alte Brett liegt, zwei Stühle daneben. Im Lichtkegel tanzt der Staub (Teilchen staub). Rechts an der Stirnwand der Bauernschrank und ein Bücherregal voller vergilbter Bücher, davor eine Stehlampe. An Ost- und Südwand zwei mit Tüchern abgedeckte Truhen, auf einer sitzt ein Teddy, ein Kistenstapel, ein alter Karton in der Südwestecke, links die Zeitungen von 1961, die kleine gestreifte Hutschachtel und der Standspiegel. Der Schaukelstuhl aus dem Roman fehlt noch (Bildwunsch).",
   "wand": "holz",
   "boden": "dielen",
   "raster": [
@@ -26,7 +26,7 @@
       "feld": [1, 2]
     },
     {
-      "moebel": "mf12FensterAhorn",
+      "moebel": "mf12FensterRund",
       "feld": [7, 1],
       "an_wand": true
     },
@@ -44,31 +44,31 @@
       "feld": [11, 1]
     },
     {
+      "moebel": "mf12Lichtkegel",
+      "feld": [6, 3]
+    },
+    {
       "moebel": "mf2TeppichAlt",
-      "feld": [3, 5]
+      "feld": [6, 4]
     },
     {
       "moebel": "mf3Rundtisch",
-      "feld": [4, 6],
+      "feld": [7, 5],
       "id": "tisch"
     },
     {
-      "moebel": "mf3BrettKlein",
-      "auf": "tisch"
-    },
-    {
       "moebel": "mf3StuhlDunkelRechts",
-      "feld": [3, 6],
+      "feld": [6, 5],
       "zu": "tisch"
     },
     {
       "moebel": "mf3StuhlDunkelLinks",
-      "feld": [6, 6],
+      "feld": [9, 5],
       "zu": "tisch"
     },
     {
       "moebel": "mf2Stehlampe",
-      "feld": [7, 5]
+      "feld": [10, 4]
     },
     {
       "moebel": "mf7Truhe",
@@ -77,11 +77,11 @@
     },
     {
       "moebel": "mf12KartonAltHoch",
-      "feld": [11, 6]
+      "feld": [11, 7]
     },
     {
       "moebel": "mf12KartonAltHoch",
-      "feld": [11, 6],
+      "feld": [11, 7],
       "versatz": [0, -12]
     },
     {
@@ -99,7 +99,7 @@
     },
     {
       "moebel": "mf2Zeitungsstapel",
-      "feld": [7, 7]
+      "feld": [3, 6]
     },
     {
       "moebel": "mf12Hutschachtel",
@@ -109,6 +109,15 @@
       "moebel": "mf2Standspiegel",
       "feld": [1, 6],
       "id": "spiegel"
+    },
+    {
+      "moebel": "mf12KartonWhitlock",
+      "feld": [3, 3],
+      "id": "kisteWhitlock"
+    },
+    {
+      "moebel": "mf3BrettKlein",
+      "auf": "tisch"
     }
   ],
   "ausloeser": [
@@ -121,11 +130,11 @@
     },
     {
       "name": "treppe",
-      "feld": [1, 4]
+      "feld": [1, 3]
     },
     {
       "name": "treppe",
-      "feld": [1, 3]
+      "feld": [1, 4]
     },
     {
       "name": "treppe",
@@ -136,13 +145,8 @@
       "feld": [2, 4]
     },
     {
-      "name": "brett",
-      "feld": [4, 7],
-      "auf_moebel": true
-    },
-    {
       "name": "hutschachtel",
-      "feld": [4, 9],
+      "feld": [5, 9],
       "auf_moebel": true
     },
     {
@@ -152,7 +156,17 @@
     },
     {
       "name": "zeitungen1961",
-      "feld": [7, 9],
+      "feld": [3, 8],
+      "auf_moebel": true
+    },
+    {
+      "name": "kisteWhitlock",
+      "feld": [4, 4],
+      "auf_moebel": true
+    },
+    {
+      "name": "brett",
+      "feld": [7, 6],
       "auf_moebel": true
     }
   ]

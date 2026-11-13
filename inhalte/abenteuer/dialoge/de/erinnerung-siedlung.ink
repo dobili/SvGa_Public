@@ -1,5 +1,6 @@
-// Erinnerung: Die letzte Kerze, 1866 (Akt 4, Szene 99 der Story-Bibel; Ort erinnerungSiedlung, Sepia,
-// Ambrose als Held). Eine Bretterhütte der Bergbausiedlung, Fieber, eine Kerze, das Brett.
+// Erinnerung: Die letzte Kerze, 1866 (Akt 4, Szene 99 der Story-Bibel; Roman Kapitel 57; Ort
+// erinnerungSiedlung, Sepia, Ambrose als Held). Das Zimmer über dem Laden mit der Rosentapete,
+// Gideon der Schmied, eine Kerze, das Brett.
 //
 // Ambrose schreibt die letzten vier Züge der Fernpartie (37. Txd7 bis 40. Kxg3, Bibel Abschnitt 35)
 // in den Brief. Weil die Fernpartie nicht in der Klassikersammlung steht, rät der Held die Züge als
@@ -14,69 +15,86 @@ VAR kerzeRichtig = 0
 
 === postreiter ===
 {kerzeGesehen:
-    Der Postreiter steckt den Brief in seine Tasche. „Nach Norden. Ich weiß.“ #sprecher:erzaehler
+    Unten schnaubt ein Pferd. Hufe entfernen sich nach Norden. #sprecher:erzaehler #klang:stiefel_pferd
 - else:
-    Vor der Hütte wartet ein Postreiter neben seinem Pferd. „Der Brief, Sir? Ich reite bei Sonnenaufgang.“ #sprecher:erzaehler
+    Unten wartet der Postreiter neben seinem Pferd. Er will weiter, vor dem Schnee. #sprecher:erzaehler
 }
 -> END
 
+// Kapitel 57 (Roman): Erinnerung bei Kerzenlicht (Klangplan S72: nur Kerze, Atem, Feder;
+// Ambroses Thema fehlt bis zum Königszug, dann ambrose.1866). {held} rät die vier Züge mit;
+// jeder falsche Tipp wird freundlich berichtigt.
 === kerze ===
 {kerzeGesehen:
     Die Kerze ist heruntergebrannt. Auf dem Tisch liegt kein Brief mehr. #sprecher:erzaehler
     -> END
 }
 ~ kerzeRichtig = 0
-Eine Bretterhütte. Auf dem Tisch brennt eine Kerze, daneben das Brett und ein halb geschriebener Brief. #sprecher:erzaehler
-Mir ist heiß und kalt zugleich. Aber die Partie wartet. Hale wartet. #sprecher:ambrose #stimmung:jung
-Hale hat gerade mit der Dame auf f2 geschlagen. Mein König steht auf h2. Ich habe einen Turm auf d1. #sprecher:ambrose #stimmung:jung
+Das Mondlicht wird gelb. Es ist eine Kerze, weit heruntergebrannt. Die Rosen an der Wand tanzen im Flackern. #sprecher:erzaehler #erinnerung #musik:kerzenton #geraeusch:feder
+Meine Hände liegen auf einer Decke. Sie sind sehr dünn. Es tut nichts weh. Das Fieber ist gerade fort, wie die Flut fortgeht. #sprecher:ambrose #stimmung:jung
+Auf dem Stuhl neben dem Bett steht das Brett. Jemand hat die Fäden gelöst. Die Figuren stehen frei. #sprecher:erzaehler
+Neben dem Brett ein aufgerissener Brief. Eine Zeile, senkrecht wie ein Zaun: „39. … Dame schlägt g3, Schach.“ #sprecher:erzaehler #bild:zettel_39
+Er hat also gezogen. Sein Zug ist mir nachgereist, elf Tage durch den Schnee, bis in ein Zimmer mit Rosen. #sprecher:ambrose #stimmung:jung #bild:aus
+Mister? #sprecher:gideon
+In der Tür steht ein großer Mann mit Lederschurz und Armen wie Balken. Er trägt eine Schüssel, als wäre sie aus Glas. #sprecher:erzaehler
+Gideon. Stell es hin. Setz dich. Sieh her. Ich zeige dir, wie die Partie hierhergekommen ist. Nur die letzten Züge. Rate mit. #sprecher:ambrose #stimmung:jung
 -> zug37
 
 === zug37 ===
-Der 37. Zug. Was schreibe ich? #sprecher:ambrose #stimmung:jung
+Der 37. Zug. Sein Turm auf d7 bedroht mich. Was schreibe ich? #sprecher:ambrose #stimmung:jung
 * [37. Txd7]
     ~ kerzeRichtig = kerzeRichtig + 1
-    Ja. Erst den Turm nehmen, der mich bedroht. #sprecher:ambrose #stimmung:jung
+    Ja. Der Turm geht auf die siebte Reihe und holt alles dort ab. #sprecher:ambrose #stimmung:jung
 * [37. Dc4+]
     Dann schlägt der Springer von a5 meine Dame. Ich nahm: 37. Txd7. #sprecher:ambrose #stimmung:jung
 * [37. Dxa5]
     Der Springer ist gedeckt. Ich nahm: 37. Txd7. #sprecher:ambrose #stimmung:jung
-- Hale antwortete mit 37… Dxf2. Seine Dame dringt ein. #sprecher:erzaehler
+- Seine Dame fährt in meine Stellung und nimmt einen Bauern. 37… Dxf2. Grob, gierig, ganz unähnlich dem Mann, der sie führt. #sprecher:erzaehler
 -> zug38
 
 === zug38 ===
 Der 38. Zug. Meine Dame muss zurück zum König. #sprecher:ambrose #stimmung:jung
 * [38. Da3]
     ~ kerzeRichtig = kerzeRichtig + 1
-    Ja. Über a3 kommt sie nach g3. #sprecher:ambrose #stimmung:jung
+    Ja. Ein stilles Feld. Über a3 kommt sie nach g3. #sprecher:ambrose #stimmung:jung
 * [38. Td8+]
     Ein Schach ins Leere. Ich zog: 38. Da3. #sprecher:ambrose #stimmung:jung
 * [38. Dxc6]
     Zu gierig, dann jagt seine Dame meinen König. Ich zog: 38. Da3. #sprecher:ambrose #stimmung:jung
-- Hale antwortete mit 38… Sc4. #sprecher:erzaehler
+- Sein Springer kommt herüber. 38… Sc4. #sprecher:erzaehler
+Und jetzt? #sprecher:gideon
 -> zug39
 
 === zug39 ===
-Der 39. Zug. Jetzt biete ich den Tausch der Damen an. #sprecher:ambrose #stimmung:jung
+Der 39. Zug. Jetzt gebe ich Schach. Mit der Dame. #sprecher:ambrose #stimmung:jung
 * [39. Dg3+]
     ~ kerzeRichtig = kerzeRichtig + 1
-    Ja. Mit Schach, dann muss er tauschen. #sprecher:ambrose #stimmung:jung
+    Ja. Mit Schach. #sprecher:ambrose #stimmung:jung
 * [39. Dxa7]
     Ein Bauer, aber seine Dame bleibt. Ich zog: 39. Dg3+. #sprecher:ambrose #stimmung:jung
 * [39. Td8+]
     Der König geht nach g7, und nichts ist gewonnen. Ich zog: 39. Dg3+. #sprecher:ambrose #stimmung:jung
-- Hale tauschte: 39… Dxg3+. #sprecher:erzaehler
+- Dann nimmt er sie doch. #sprecher:gideon
+Ja. Dann nimmt er sie. Er tauscht immer, wenn er kann. Ich habe es trotzdem gespielt, weil es richtig war. #sprecher:ambrose #stimmung:jung
+Zum ersten Mal in meinem Leben wollte ich nicht gewinnen, bevor es so weit war. #sprecher:ambrose #stimmung:jung
+Auf dem Brett steht seine Dame neben meinem König. 39… Dxg3+. #sprecher:erzaehler
 -> zug40
 
 === zug40 ===
+Und dann? #sprecher:gideon
 Der 40. Zug. Mein letzter. #sprecher:ambrose #stimmung:jung #pause
 * [40. Kxg3]
     ~ kerzeRichtig = kerzeRichtig + 1
-    Ja. Der König schlägt zurück und geht nach vorn. Im Endspiel ist er eine Figur. #sprecher:ambrose #stimmung:jung
+    Der König schlägt zurück. #sprecher:ambrose #stimmung:jung
 * [40. Kh1]
-    Der König in die Ecke? Ich schlug zurück: 40. Kxg3. #sprecher:ambrose #stimmung:jung
+    Der König in die Ecke? Nein. Der König schlägt zurück: 40. Kxg3. #sprecher:ambrose #stimmung:jung
 * [40. Kg1]
-    Dann bleibt die Dame stehen. Ich schlug zurück: 40. Kxg3. #sprecher:ambrose #stimmung:jung
-- -> letzter_brief
+    Dann bleibt die Dame stehen. Der König schlägt zurück: 40. Kxg3. #sprecher:ambrose #stimmung:jung
+- Der König? Der schlägt doch nicht. Der versteckt sich. #sprecher:gideon
+Das habe ich auch immer gedacht. #sprecher:ambrose #stimmung:jung
+Er ist schwer, unten mit Blei ausgegossen, das Kreuz auf der Krone ein bisschen schief. Ein Schritt nach vorn, aus der Ecke heraus, ins Freie. #sprecher:erzaehler #musik:ambrose.1866
+Ein kleiner Zug. Der einzige, den es gab. Jedes Kind hätte ihn gefunden. #sprecher:ambrose #stimmung:jung
+-> letzter_brief
 
 === letzter_brief ===
 ~ kerzeGesehen = true
@@ -85,11 +103,28 @@ Der 40. Zug. Mein letzter. #sprecher:ambrose #stimmung:jung #pause
 - else:
     {kerzeRichtig} von vier. Die Partie gehört jetzt auch dir. #sprecher:ambrose
 }
-Ambrose faltet den Brief und schreibt außen: „J. Hale, im Norden“. #sprecher:erzaehler
-Vor der Tür gibt er ihn dem Postreiter. „Bring ihn nach Norden. Er wartet.“ #sprecher:erzaehler
-Drinnen flackert die Kerze. Dann geht sie aus. #sprecher:erzaehler #pause
+Die Feder kratzt. Zweimal muss er absetzen. „40. König schlägt g3.“ Mehr schreibt die Hand nicht. #sprecher:erzaehler
+Gib es dem Postreiter. Bring ihn nach Norden. Er wartet. #sprecher:ambrose #stimmung:jung
+Wer? #sprecher:gideon
+Ein unerträglicher Mann. Der beste Gegner, den ich hatte. #sprecher:ambrose #stimmung:jung
+Und das Brett, Mister? Wem soll ich es geben? #sprecher:gideon
+Meiner Schwester. Claire. Die Adresse steht innen im Deckel. Und die Stellung rührt niemand an. Er ist dran. #sprecher:ambrose #stimmung:jung
+Stiefel auf der Treppe, schwer, Stufe um Stufe. Unten ein Pferd. Hufe, die sich entfernen. #sprecher:erzaehler #klang:stiefel_pferd #geraeusch:aus
+Es ist still. Sehr schön still. Die Flamme wird klein. Sie wird blau. Sie geht aus. #sprecher:erzaehler #musik:aus #pause:2
 -> END
 
 === rueckkehr ===
-Die Farben kehren zurück. Du stehst wieder im Saloon, das Abzeichen in der Hand. #sprecher:erzaehler
+// Rückkehr ohne Musik ins leere Zimmer über dem Laden (Kapitel 57, Schluss).
+{not kerzeGesehen:
+    Die Kerze brennt noch. Du gehst zurück in die Nacht von Ghost Town. #sprecher:erzaehler #erinnerung:aus
+    -> END
+}
+Mondlicht. Die Farben kehren zurück, und deine Hände sind deine. Sie sind nass. #sprecher:erzaehler #erinnerung:aus
+Ambrose steht am Fenster und sieht die Straße hinunter, nach Norden. #sprecher:erzaehler
+* [„Er ist angekommen. Hale hat es aufgeschrieben.“]
+- Ja. Gideon hat alles getan, worum ich ihn gebeten habe. #sprecher:ambrose #stimmung:still
+Er hat das Brett nach Maple Falls geschickt. Er hat einen Stein behauen. Er hat einem Fremden drei Tage die Stirn gekühlt. #sprecher:ambrose
+Hundertsechzig Jahre habe ich an Hale gedacht. Jeden Tag. Und nicht ein einziges Mal an den Schmied. #sprecher:ambrose
+Nicht auf den Falschen gewartet. Das ist ungerecht. Aber nur auf den einen. #sprecher:ambrose #stimmung:friedlich
+Morgen spielt ihr sie zu Ende. Du und der junge Hale. Ich sehe zu. Das ist schöner, als ich dachte. #sprecher:ambrose #stimmung:friedlich
 -> END

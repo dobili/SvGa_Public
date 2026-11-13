@@ -24,7 +24,8 @@ VAR juniperGetroffen = false
 Am Canyonrand hängt eine Frau im Seil und winkt. Unten auf einem Felsvorsprung steht ein Brett. #sprecher:erzaehler
 Juniper. Wir Kletterer spielen hier Drei-Schach. Wer dreimal Schach gibt, gewinnt. #sprecher:juniper
 Bei jedem Schach rufen wir laut. Wenn das dritte Echo verklungen ist, ist Schluss. #sprecher:juniper
-Drei Schachs, und keiner muss matt sein. Wie ungeduldig. Und wie lustig. #sprecher:ambrose #stimmung:lacht
+Sie rufen sich die Züge zu und warten auf das Echo, bevor die Nächste zieht. Ein seltsames, schönes Spiel. #sprecher:erzaehler #geraeusch:canyonrand
+Aber Ambrose ist still geworden. Er sieht nach Norden. #sprecher:erzaehler
 -> END
 
 // ---------------------------------------------------------------- Rätseltafel und Rückweg

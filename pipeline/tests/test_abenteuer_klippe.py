@@ -172,3 +172,33 @@ def test_hohe_wand_wiederholt_die_felswand():
     assert reihen == [REIHE_KANTE, REIHE_WAND, REIHE_WAND, REIHE_WAND, REIHE_FUSS]
     # Ohne die Angabe bleibt es bei drei Reihen: Die oberen zwei sind dann Rand und Hochfläche.
     assert [klippenfeld(raster, 1, y, GRAS)[1] for y in (1, 2, 3)] == [REIHE_RAND, REIHE_OBEN, REIHE_KANTE]
+
+
+def test_seitenkante_ueber_dem_wandende():
+    """Regel: KARTENREGELN 10.74 (R028): Über dem Ende einer Wand läuft der Rand der Hochfläche
+    als einzelne Spalte weiter; der Rand liegt auf der tieferen Seite."""
+    from pipeline.abenteuer.klippe import hochseite
+
+    zeilen = ["....#....", "....#....", "#####....", "#####....", "#####....", "........."]
+    assert hochseite(zeilen, 4, 0) == "links"
+    assert klippenfeld(zeilen, 4, 1, {"."}) == (10, 43)  # rechter Rand der Hochfläche (Gras)
+    gespiegelt = [z[::-1] for z in zeilen]
+    assert hochseite(gespiegelt, 4, 0) == "rechts"
+    assert klippenfeld(gespiegelt, 4, 1, {"."}) == (8, 43)
+    assert hochseite(["..#..", "..#..", "....."], 2, 0) is None
+
+
+def test_treppe_laeuft_schraeg_durch_die_wand():
+    """Regel: Rückmeldung R027 (Zedernpfad): Auch wo der Weg je Reihe um ein Feld versetzt durch
+    die Wand führt, liegt auf jedem Wegfeld eine Treppenkachel."""
+    zeilen = [
+        "............",
+        "#####eee####",
+        "####eee#####",
+        "###eee######",
+        "............",
+    ]
+    from pipeline.abenteuer.klippe import treppenfelder
+
+    felder = {(x, y) for x, y, _ in treppenfelder(zeilen, set())}
+    assert felder == {(5, 1), (6, 1), (7, 1), (4, 2), (5, 2), (6, 2), (3, 3), (4, 3), (5, 3)}

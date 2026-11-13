@@ -303,7 +303,10 @@
       "quelle": "spiel/serene/serene_58.png",
       "breite": 64,
       "hoehe": 64,
-      "kollision": true
+      "kollision": true,
+      "art": "gebaeude",
+      "zustand": "gebraucht",
+      "stil": "landhaus"
     },
     "svHausBlau": {
       "quelle": "spiel/serene/serene_76.png",

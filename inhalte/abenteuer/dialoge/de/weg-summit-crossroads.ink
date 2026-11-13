@@ -46,7 +46,7 @@ Bell. Rangerin. In sechs Minuten bricht der große Geysir aus. Bis dahin: Willst
 ~ varianteAtomschachGelernt = true
 Atomschach. Wer schlägt, löst eine Explosion aus. Alle Figuren rund um das Feld fliegen vom Brett, die eigenen auch. Nur Bauern bleiben stehen. #sprecher:bell
 Also zählst du vorher. Wer greift an, wer verteidigt, was fliegt mit in die Luft. #sprecher:bell
-Wer schlägt, ohne zu zählen, fliegt in die Luft. Eine Lehre, die ich gern früher gehabt hätte. #sprecher:ambrose #stimmung:lacht
+Wer schlägt, ohne zu zählen, fliegt in die Luft. Eine Lehre, die ich gern früher gehabt hätte. Etwa achtzehnhundertachtundfünfzig. #sprecher:ambrose #stimmung:lachtOhneSpott
 Angreifer und Verteidiger zählen, {held}. Hier zählt man nur ein paar Felder weiter. #sprecher:ambrose
 -> bell_angebot
 
@@ -118,7 +118,8 @@ Was hängt, was ist gedeckt, wer schlägt zuletzt? Zählen, {held}. Nicht raten.
 Mitten auf dem Steg stehen drei Bisons. Sie sehen dich an. Sie gehen nicht weg. #sprecher:erzaehler
 + [Warten]
     ~ bisonsGewartet = true
-    Du wartest. Der große Geysir bricht aus, Dampf steigt in den Himmel. Als er sich legt, trotten die Bisons zur Seite. #sprecher:erzaehler
+    Du wartest. Niemand hupt. Juno malt einen Bison ins Tagebuch, mit Glitzer. #sprecher:erzaehler #geraeusch:praerie
+    Nach vierzig Minuten trotten die Bisons zur Seite. #sprecher:erzaehler
     Geduld. Die schwerste Figur auf jedem Brett. #sprecher:ambrose
     -> END
 + [Vorsichtig vorbeigehen]

@@ -15,6 +15,10 @@
 // earl_k neonRepariert: orte.json lädt dann die Fassung der Karte mit leuchtendem K
 // (weg-desert-summit-diner-neon.json, zustand_der_karte, Runde 6).
 
+// Runde 11 (13.11.2026): Kapitel 47 nach dem Roman (roman/akt4_teil1.md): Sommer, der Held ist
+// fünfzehn, Mama fährt; Ambrose ist leichter und findet Gefallen an hässlichen Zügen. Earls Regel
+// mit dem Kaffee, Ambrose: „Merk dir, wie der König läuft.“
+
 EXTERNAL beginneAufgaben(runde)
 EXTERNAL gibFund(kennung)
 
@@ -30,17 +34,18 @@ VAR neonRepariert = false
 === earl ===
 {earlGetroffen: -> earl_alltag}
 ~ earlGetroffen = true
-Vor dem Diner stehen drei Lastwagen in der Hitze. Über der Tür summt ein Neonschild: „ING'S DINER“. #sprecher:erzaehler
-Drinnen sitzt ein Mann mit grauem Bart vor einem Brett. Auf dem Brett stehen nur zwei Könige und ein paar Figuren. #sprecher:erzaehler
-Earl. Ich fahr seit dreißig Jahren diese Straße. Und seit dreißig Jahren zahlt hier der, der das Rennen verliert. #sprecher:earl #stimmung:froh
+Es ist Sommer, und du bist fünfzehn. Mama hat drei Wochen Urlaub und fährt. Juno liest hinten die Straßenschilder vor. #sprecher:erzaehler
+Hässlich. Und vollkommen richtig. Ich beginne, an hässlichen Zügen Gefallen zu finden. Sag es niemandem. #sprecher:ambrose #stimmung:lacht
+Über dem Diner summt ein Neonschild in Form eines Königs. Drinnen schieben Fernfahrer Könige über Bretter. Nur Könige. Und Bauern. #sprecher:erzaehler
+Königsrennen. Ich bin Earl. Ich fahr seit dreißig Jahren diese Straße. #sprecher:earl #stimmung:froh
 -> earl_regel
 
 === earl_regel ===
 ~ varianteKoenigsrennenGelernt = true
-Königsrennen. Keiner darf Schach geben, keiner darf im Schach stehen. #sprecher:earl
-Wer mit seinem König zuerst die letzte Reihe erreicht, gewinnt. Wer verliert, zahlt den Kaffee. #sprecher:earl
-Ein Rennen ohne Angriff. Wie seltsam. #sprecher:ambrose
-Und doch: Auch hier gewinnt, wer den Weg kennt. Im Endspiel muss der König laufen, {held}. #sprecher:ambrose
+Wer zuerst hinten ankommt, ohne dass ihm einer Schach gibt, zahlt nicht. Alle anderen zahlen dem seinen Kaffee. #sprecher:earl
+Den ersten Kaffee verlierst du, weil du versuchst, etwas zu schlagen. #sprecher:erzaehler
+Ein Rennen ohne Angriff. Wie seltsam. Und doch. #sprecher:ambrose
+Auch hier gewinnt, wer den Weg kennt. Merk dir, wie der König läuft. Ich habe das Gefühl, du wirst es brauchen. #sprecher:ambrose
 -> earl_angebot
 
 === earl_angebot ===

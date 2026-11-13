@@ -17,6 +17,10 @@
 // Einstiege wie in orte.json: zurueck, kira, annek, joss, steintisch, werkstatt, aushang.
 // Variablen: alle setzt diese Datei; den Fund merkt sie sich selbst (falkeGeschenkt).
 
+// Runde 11 (13.11.2026): Kapitel 47 nach dem Roman (roman/akt4_teil1.md): „Die kennst du nicht“,
+// Kira gewinnt in vierzehn Zügen, Ambrose entzückt („Man lernt sie. Spiel noch eine.“), der Falke
+// als verschnittenes Werkstück.
+
 EXTERNAL gibFund(kennung)
 
 VAR held = "Du"
@@ -40,9 +44,10 @@ VAR varianteFalkeUndBisonGelernt = false
 ~ kiraGetroffen = true
 ~ varianteFalkeUndBisonGelernt = true
 Am Fuß der Felstürme steht ein flacher Steintisch. Ein Mädchen mit Schulrucksack und Basketball unter dem Arm stellt Figuren auf ein abgegriffenes Brett. #sprecher:erzaehler
-Spielst du Schach? Dann setz dich. Das hier ist fast Schach. Nur besser. #sprecher:kira #stimmung:froh
+Die kennst du nicht. Das hier ist fast Schach. Nur besser. #sprecher:kira #stimmung:froh
 Ich bin Kira. Der Bus fährt in einer halben Stunde, das reicht für eine Erklärung. #sprecher:kira
-Sie hebt zwei Figuren hoch, die nicht in dein Schachspiel gehören: einen Vogel mit eckigen Flügeln und ein breites Tier mit gesenktem Kopf. #sprecher:erzaehler
+* [„Was sind das für Figuren?“]
+- Sie hebt zwei Figuren hoch, die nicht in dein Schachspiel gehören: einen Vogel mit eckigen Flügeln und ein breites Tier mit gesenktem Kopf. #sprecher:erzaehler
 Der Falke zieht wie ein Läufer oder springt wie ein Springer. Der Bison zieht wie ein Turm oder springt wie ein Springer. #sprecher:kira
 Man setzt sie ein, wenn eine Figur von der Grundreihe zum ersten Mal zieht. Dann landen sie auf dem Feld, das frei wird. #sprecher:kira
 Bei uns heißt das Spiel einfach Falke und Bison. Meine Urgroßmutter hat die zwei geschnitzt, in einem Winter, als die Straße zugeschneit war und dem Schulschach zwei Figuren fehlten. #sprecher:kira
@@ -51,10 +56,10 @@ Den Falken, weil über den Felstürmen immer einer kreist. Den Bison, weil ihr B
 
 === kira_vorfuehren ===
 Kira zeigt es dir an einer kurzen Partie. Du ziehst vorsichtig, sie zieht schnell. #sprecher:erzaehler
-Im neunten Zug springt ihr Falke über deine Bauern, und dein König hat kein Feld mehr. #sprecher:erzaehler
+Sie schlägt dich in vierzehn Zügen. Der Falke kommt aus einer Richtung, mit der du nicht rechnest, und dann aus einer anderen. #sprecher:erzaehler
 Das passiert allen beim ersten Mal. Mein Cousin hat ein Jahr gebraucht. #sprecher:kira
-Ambrose sieht lange auf das Brett. #sprecher:erzaehler
-Ich habe gelernt, dass man Spiele nicht erklärt, sondern lernt. #sprecher:ambrose #stimmung:friedlich
+Ich könnte dir erklären, wie man dagegen spielt. Aber ich weiß es nicht. Ich sehe diese Figuren zum ersten Mal. #sprecher:ambrose #stimmung:froh
+Ich habe gelernt, dass man Spiele nicht erklärt. Man lernt sie. Spiel noch eine. #sprecher:ambrose #stimmung:froh
 // VARIANTE-FEHLT: Falke und Bison (L9). Bis es gebaut ist, nur die Regel, die Vorführung und eine Vertröstung.
 Der Bus! Eine richtige Partie, wenn du wiederkommst. Und frag meine Tante in der Schule, die will Schach lernen. Sagt sie seit zehn Jahren. #sprecher:kira
 -> END
@@ -63,8 +68,8 @@ Der Bus! Eine richtige Partie, wenn du wiederkommst. Und frag meine Tante in der
 ~ falkeGeschenkt = true
 Kira kommt vom Bus gerannt. #sprecher:erzaehler
 Tante Annek hat erzählt, dass du ihr Schach beigebracht hast. Sie hat beim Abendessen nur noch von Springern geredet. #sprecher:kira #stimmung:lacht
-Sie legt dir einen kleinen Falken aus Holz in die Hand. Die Flügel sind eckig, die Unterseite ist mit Filz beklebt. #sprecher:erzaehler
-Den hab ich im Werkunterricht gemacht. Damit du nicht vergisst, wie man fliegt. Auf dem Brett, meine ich. #sprecher:kira
+Sie drückt dir einen Falken in die Hand, aus hellem Holz, kleiner als die auf dem Tisch. Die Flügel sind noch nicht ganz fertig. #sprecher:erzaehler
+Werkstück. Den hab ich verschnitten. Aber er zieht trotzdem. #sprecher:kira
 ~ gibFund("falkeAusHolz")
 -> END
 
@@ -101,10 +106,11 @@ Annek Vell. Mathematik und Sport, und dienstags Busaufsicht. Suchst du jemanden?
 Kira hat dich also schon verlieren lassen. Gut. Dann bist du dran. #sprecher:annek #stimmung:lacht
 Ich wollte immer Schach lernen. Aber jeder, der es mir erklären wollte, hat nach fünf Minuten von Eröffnungen geredet. #sprecher:annek
 Ihr setzt euch auf die Treppe vor der Turnhalle. Du stellst die Figuren auf und erklärst, eine nach der anderen. #sprecher:erzaehler
-Annek nimmt den Springer in die Hand und lässt ihn über die Bauern hüpfen. #sprecher:erzaehler
+* [Mit dem Springer anfangen]
+- Annek nimmt den Springer in die Hand und lässt ihn über die Bauern hüpfen. #sprecher:erzaehler
 Euer Springer springt wie unser Falke. Nur feiger. Er darf danach nicht weiterfliegen. #sprecher:annek
 Und der Turm ist ein Bison, der das Springen verlernt hat. Armes Tier. #sprecher:annek
-Nach einer halben Stunde spielt sie ihre erste Partie. Sie verliert, lacht und baut sofort neu auf. #sprecher:erzaehler
+Nach einer Viertelstunde spielt sie ihre erste Partie. Sie verliert, lacht und baut sofort neu auf. #sprecher:erzaehler
 Zwei Spiele auf demselben Brett. Ich dachte immer, es gäbe nur eins. #sprecher:ambrose #stimmung:friedlich
 -> END
 
@@ -121,7 +127,8 @@ Neben der Schule steht eine offene Werkstatt. Unter dem Schulbus schauen zwei St
 Moment! #sprecher:joss
 Ein Mann rollt auf einem Brett hervor, Öl an der Stirn. #sprecher:erzaehler
 Joss Vell. Ich halte den Bus am Leben, die Traktoren und die Heizung der Schule. Alles, was älter ist als ich. #sprecher:joss
-Letztes Jahr war einer von Perfect Move hier. Anzug, neue Schuhe. Er wollte eine App aus Falke und Bison machen. Mit Bewertung nach jedem Zug. #sprecher:joss
+* [Zuhören]
+- Letztes Jahr war einer von Perfect Move hier. Anzug, neue Schuhe. Er wollte eine App aus Falke und Bison machen. Mit Bewertung nach jedem Zug. #sprecher:joss
 Ich hab ihm gesagt: Bei uns sagt dir nach jedem Zug die Großtante, was du falsch gemacht hast. Das reicht. #sprecher:joss #stimmung:lacht
 Er hat nicht gelacht. Seine Schuhe waren danach auch nicht mehr neu. Hier oben ist alles Staub. #sprecher:joss
 Ein Mann, der weiß, was er nicht verkauft. Selten. #sprecher:ambrose

@@ -67,7 +67,8 @@
       "reihe": false,
       "buchuebungen": [],
       "themen": ["matt2"],
-      "anzahl": 3
+      "anzahl": 3,
+      "danach": "cedar-creek-waschsalon.trockner_danach"
     },
     {
       "kennung": "cedarCreek.erinnerungNewYork",
@@ -81,7 +82,8 @@
         "partie": "klassik-paulsen-morphy",
         "abZug": 13,
         "seite": "black"
-      }
+      },
+      "danach": "cedar-creek-archiv.programmheft_danach"
     },
     {
       "kennung": "wegMapleCedar.tafel",
@@ -277,7 +279,8 @@
         "partie": "klassik-unsterbliche",
         "abZug": 1,
         "seite": "white"
-      }
+      },
+      "danach": "port-delacroix-werkstatt.werkbank_nach_flashback"
     },
     {
       "kennung": "wegDelacroixDesert.tafel",
@@ -312,20 +315,6 @@
       "buchuebungen": [],
       "themen": ["fesselung"],
       "anzahl": 1
-    },
-    {
-      "kennung": "desertSprings.erinnerung1858",
-      "ort": "desertSprings",
-      "steller": "desertSprings.ambrose",
-      "reihe": false,
-      "buchuebungen": [],
-      "themen": ["mattbilder"],
-      "anzahl": 1,
-      "erinnerung": {
-        "partie": "klassik-bird-morphy",
-        "abZug": 11,
-        "seite": "black"
-      }
     },
     {
       "kennung": "wegPinewoodGhost.tafel",

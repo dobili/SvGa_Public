@@ -9,7 +9,7 @@
 // Einstiege wie in orte.json: odile, remy, lou. Wer die Halle zum ersten Mal betritt und jemanden
 // anspricht, erlebt zuerst den Vorwurf.
 //
-// Ambrose schweigt nach dem Vorwurf bis zu den Nachfahren (ambroseSprichtWieder, gesetzt in
+// Ambrose schweigt nach dem Vorwurf bis zur Familie (Szene 68) (ambroseSprichtWieder, gesetzt in
 // port-delacroix-werkstatt.ink), außer einem Satz je Szene. Beim Benefiz (Szene 69) gibt Miss Odile die Karte
 // Schutzengel.
 // Runde 11 (13.11.2026): Der Vorwurf nach dem Roman (roman/akt3_teil2.md, Kapitel 36): Remys Mauer,
@@ -28,6 +28,7 @@ EXTERNAL beginnePartie(begegnung)
 EXTERNAL beginneAufgaben(runde)
 EXTERNAL gibKarte(kennung)
 
+VAR leimAuftrag = false
 VAR tiefpunktGesehen = false
 VAR ambroseSprichtWieder = false
 VAR brettersammelnBegonnen = false
@@ -53,13 +54,15 @@ Das Turnier ist in der Turnhalle der Schule. Unter den Basketballkörben stehen 
 Wenn ein Fremder hereinkommt, wird es einen Moment leiser. Du bist ein Fremder, mit fünf Nadeln, eine aus Glas. #sprecher:erzaehler
 Aus Silicon Bay. Die waren hier, nach dem Sturm. Mit einem Lastwagen. Wir dachten, die bringen Decken. #sprecher:remy
 Bildschirme haben sie gebracht. Zwanzig Stück. Damit die Kinder etwas zu tun haben. #sprecher:remy
-Er stößt seinen Trompetenkasten mit dem Fuß an. Hier hilft man mit den Händen. #sprecher:remy
+Er stößt seinen Trompetenkasten mit dem Fuß an. #sprecher:erzaehler
+Hier hilft man mit den Händen. #sprecher:remy
 * [Zum ersten Brett gehen]
 - Die erste Runde gewinnst du, die zweite endet remis. In der dritten sitzt dir Remy gegenüber. #sprecher:erzaehler
 Er baut eine Mauer aus Bauern. Nach fünfunddreißig Zügen stehst du sehr viel schlechter. #sprecher:erzaehler #musik:remy.mauer
 Du zählst. Es hilft nicht. Es hängt nichts, es gibt nur diese Mauer, und sie kommt näher. #sprecher:erzaehler
 * [„Ambrose. Bitte.“]
-- König nach h1. #sprecher:ambrose #musik:zero
+- Eine Pause. Dann seine Stimme, flach, schnell, als läse er etwas ab. #sprecher:erzaehler #pause:2
+König nach h1. #sprecher:ambrose #musik:zero
 * [„Was?“]
 - König. Eine Ecke weiter. Jetzt. #sprecher:ambrose
 Dein König steht sicher. Ihn zu bewegen ergibt keinen Sinn. #sprecher:erzaehler
@@ -100,7 +103,8 @@ Du nimmst das Brett in beide Hände. Es ist so schwer wie am ersten Tag. #sprech
 === vorwurf_ende ===
 Er antwortet nicht. Er nickt, ein einziges Mal, wie jemand, der ein Urteil annimmt. #sprecher:erzaehler #musik:ambrose.ende
 Am Schiedsrichtertisch sitzt eine Frau mit weißem Haar. Du legst das Brett vor sie hin. #sprecher:erzaehler
-* [„Schreiben Sie null. Das Brett bleibt bei Ihnen.“]
+* [„Ich gebe die Partie auf. Die gegen ihn.“]
+- * [„Schreiben Sie null. Das Brett bleibt, solange ich spiele.“]
 - Sie sieht dich lange an. Sie hat sehr ruhige Hände. #sprecher:erzaehler
 Das Wasser hat das Haus genommen, nicht die Musik. Setz dich, Kind. Wir fangen neu an. #sprecher:odile
 Draußen auf den Stufen setzt Mama sich neben dich. Sie fragt nichts. Sie riecht nach Desinfektionsmittel und Meer. #sprecher:erzaehler
@@ -118,6 +122,7 @@ Aus dem Zelt neben der Ruine kommt die Trompete. Sie spielt nur das Langsame. #s
 - nadelPortDelacroix > clubkampfPortDelacroixNadel: -> odile_nach_partie
 - ausgangPortDelacroixClubkampf == "niederlage" and not odileHandGegeben: -> odile_nach_partie
 - not brettersammelnBegonnen: -> odile_bretter
+- bretterGesammelt >= 4 and not leimAuftrag: -> odile_leim
 - else: -> odile_alltag
 }
 
@@ -133,13 +138,23 @@ Wir haben elf Bretter für vierzig Kinder. Vor dem Sturm hatte jede Familie hier
 Und wenn du um die Nadel spielen willst: erst Remy, dann Lou, dann ich. #sprecher:odile
 -> END
 
+// Gutachten L3.4, Roman Kapitel 38: Miss Odile schickt den Helden mit dem Geigenkasten zum
+// Klavierbauer in der Rue des Facteurs.
+=== odile_leim ===
+~ leimAuftrag = true
+In der Rue des Facteurs wohnt ein Klavierbauer. Der hat Leim, den guten, für die Bretter, die sich verzogen haben. #sprecher:odile
+Den Geigenkasten gibt sie dir mit. #sprecher:erzaehler
+* [„Er ist schwer.“]
+- Das soll er sein. #sprecher:odile #pause
+-> END
+
 === odile_alltag ===
-{~Bauern sind die Melodie. Die Figuren spielen nur dazu.|Hör auf den Takt der Stellung. Nicht auf den Lärm in der Halle.|Miss Odile singt leise, während sie Figuren sortiert.} #sprecher:odile
+{~Bauern sind die Melodie. Die Figuren spielen nur dazu.|Hör auf den Takt der Stellung. Nicht auf den Lärm in der Halle.} #sprecher:odile
 + {reiheRemyBestanden and reiheLouBestanden and nadelPortDelacroix == 0} [„Ich möchte um die Nadel spielen.“]
     -> odile_clubkampf
 + {nadelPortDelacroix > 0 and nadelPortDelacroix < 3} [„Revanche um eine bessere Nadel?“]
     -> odile_clubkampf
-+ {bretterGesammelt >= 4 and not portDelacroixSimultanBestanden} [„Was kann ich noch für das Musikhaus tun?“]
++ {bretterGesammelt >= 4 and ambroseSprichtWieder and not portDelacroixSimultanBestanden} [„Was kann ich noch für das Musikhaus tun?“]
     -> odile_simultan
 + [„Bis später, Miss Odile.“]
     -> END
@@ -149,7 +164,7 @@ Und wenn du um die Nadel spielen willst: erst Remy, dann Lou, dann ich. #spreche
     Noch einmal? Gut. Ein Plan ist kein Sprint. #sprecher:odile
     -> odile_clubkampf_wahl
 }
-Die Turnhalle ist voll. Sie sind alle gekommen, um den zu sehen, der in seinen Rucksack flüstert. #sprecher:erzaehler #musik:aus
+Die Turnhalle ist voll. Sie sind alle gekommen, um zu sehen, wer da in einen Rucksack flüstert. #sprecher:erzaehler #musik:aus
 Du stellst den Geigenkasten auf den Schiedsrichtertisch, geschlossen. Deine Karten liegen daneben, mit dem Bild nach unten. #sprecher:erzaehler
 Miss Odile setzt sich dir gegenüber, in einem Kleid mit kleinen Notenschlüsseln. #sprecher:erzaehler
 Ein Plan ist kein Sprint. Ich spiele langsam. Du wirst denken, es passiert nichts. #sprecher:odile
@@ -172,6 +187,7 @@ Dann ist er fort, und du bist allein mit vierundsechzig Feldern. #sprecher:erzae
 ~ clubkampfPortDelacroixNadel = nadelPortDelacroix
 {
 - ausgangPortDelacroixClubkampf == "sieg" and not odileHandGegeben:
+    Ein Plan. Dein erster. Er war hässlich und langsam, und er gehört dir. #sprecher:erzaehler
     Miss Odile sieht es an. Sie nickt, im Takt von etwas, das nur sie hört. #sprecher:erzaehler #musik:held
     Der Königsflügel. Immer mein Königsflügel. Mein Mann hat mir das vierzig Jahre lang gesagt. #sprecher:odile
 - ausgangPortDelacroixClubkampf == "sieg":
@@ -228,7 +244,8 @@ Die ganze Halle klatscht im Takt. Mama tanzt mit einem Mann aus dem Notzelt. #sp
 Miss Odile drückt dir eine Karte in die Hand: ein kleiner Engel mit einem Schild. #sprecher:erzaehler
 Damit du nicht wieder etwas verlierst, was dir wichtig ist. #sprecher:odile
 ~ gibKarte("schutzengel")
-Du siehst zum Geigenkasten hinüber. Der Deckel steht offen. #sprecher:erzaehler
+Den Geigenkasten schiebt sie dir über den Tisch. Der Kasten hat lange keine Geige mehr getragen. Jetzt hat er wieder was zu tun. #sprecher:odile
+Du siehst ihn an. Der Deckel steht offen. #sprecher:erzaehler
 -> END
 
 // ---------------------------------------------------------------- Remy
@@ -250,7 +267,7 @@ Du willst um die Nadel spielen? Dann zeig mir, dass du Bauern verstehst. Ohne Fl
     ~ beginneAufgaben("portDelacroix.reiheRemy")
     -> END
 + [„Nicht jetzt.“]
-    Hier hilft man mit den Händen. Nicht mit Bildschirmen. Und nicht mit Geistern. #sprecher:remy
+    Hier hilft man mit den Händen. Nicht mit Bildschirmen. Und nicht mit Flüstern. #sprecher:remy
     -> END
 
 === remy_alltag ===

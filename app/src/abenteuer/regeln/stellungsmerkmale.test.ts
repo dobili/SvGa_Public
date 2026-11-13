@@ -47,5 +47,10 @@ describe("Merkmale im Verlauf", () => {
     };
     expect(merkmalTrifft("gabel", gabel, 1)).toBe(true);
     expect(merkmalTrifft("opposition", gabel, 1)).toBe(false);
+    // Seite: Der Held (Weiß) hat gezogen, also „Gegeben“, nicht „Gegen“.
+    expect(merkmalTrifft("gabelGegeben", gabel, 1)).toBe(true);
+    expect(merkmalTrifft("gabelGegen", gabel, 1)).toBe(false);
+    expect(merkmalTrifft("oppositionGegeben", opposition, 1)).toBe(true);
+    expect(merkmalTrifft("oppositionGegen", opposition, 1)).toBe(false);
   });
 });

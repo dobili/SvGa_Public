@@ -53,6 +53,9 @@ const ROLLE: Readonly<Record<string, Role>> = {
   dame: "queen",
 };
 
+/** Opposition und Gabel mit optionaler Seite: „gabel“, „gabelGegeben“ (Held), „gabelGegen“. */
+const SEITENMERKMAL = /^(opposition|gabel)(Gegeben|Gegen)?$/;
+
 const GEZAEHLTE_ROLLEN: readonly Role[] = ["pawn", "knight", "bishop", "rook", "queen"];
 
 /** Material einer Seite in Bauerneinheiten (ohne König). */
@@ -114,8 +117,12 @@ export function merkmalTrifft(merkmal: string, verlauf: Partieverlauf, h: number
     return bilanz(s.vor, verlauf.held) > -RUECKSTAND && bilanz(s.nach, verlauf.held) <= -RUECKSTAND;
   }
   // Opposition und Gabel (regeln/stellungsmerkmale.ts) entstehen mit diesem Halbzug.
-  if (merkmal === "opposition") return inOpposition(s.nach.brett) && !inOpposition(s.vor.brett);
-  if (merkmal === "gabel") {
+  // Ohne Zusatz für beide Seiten; „…Gegeben“ nur nach einem Zug des Helden, „…Gegen“ nur nach
+  // einem Zug des Gegners (wie schachGegeben und schachGegen).
+  const seitig = SEITENMERKMAL.exec(merkmal);
+  if (seitig?.[1]) {
+    if (seitig[2] && (seitig[2] === "Gegeben") !== heldZog) return false;
+    if (seitig[1] === "opposition") return inOpposition(s.nach.brett) && !inOpposition(s.vor.brett);
     const farbe = heldZog ? verlauf.held : gegner(verlauf.held);
     return zielfelder(s.vor.brett, s.nach.brett, farbe).some((f) => istGabel(s.nach.brett, f));
   }

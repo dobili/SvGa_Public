@@ -43,61 +43,69 @@ VAR dinerAbendGesehen = false
 }
 
 === ankunft ===
+// Szene 1 nach dem Roman, Kapitel 1, und der Dialogprüfung (docs/spiel/22, VM1 bis VM6).
+// Stimmung: fremd, müde, Sommerende. Keine Musik bis zur Pizza; Wasserfall fern.
 ~ ankunftGesehen = true
 ~ setzeSzene("akt1.ankunft")
-Der Umzugswagen ist weg. Im Wohnzimmer stehen nur Kartons, ein Sofa und ein Pizzakarton. #sprecher:erzaehler
-Da bist du ja, {held}. Willkommen in Maple Falls. #sprecher:mutter #stimmung:froh
-Ich weiß, es sieht noch nicht nach Zuhause aus. Gib dem Haus eine Woche. #sprecher:mutter
-// Roman, Kapitel 1 (neu gegenüber der Story-Bibel): der Wasserfall als Wahrzeichen und Heimweh.
+Der Umzugswagen ist weg. Kartons, ein Sofa schief vor dem Fenster, sonst nichts. Das Licht fällt in langen staubigen Streifen. #sprecher:erzaehler
+Auf den meisten Kartons steht nur ein Name, deiner oder ihrer. #sprecher:erzaehler
+Alles, wo nur ein Name draufsteht, ins Wohnzimmer. #sprecher:mutter #stimmung:muede
 Hinter den Dächern rauscht etwas, gleichmäßig, wie eine ferne Straße. #sprecher:erzaehler #klang:wasserfall
-Der Wasserfall. Daher der Name. #sprecher:mutter
+Hörst du das? Der Wasserfall. Daher der Name. #sprecher:mutter
 Man gewöhnt sich dran, sagt die Maklerin. Nach einer Woche hört man ihn nicht mehr. #sprecher:mutter
 * [„Es ist ziemlich groß.“]
-    Groß und alt. Deshalb konnten wir es uns leisten. #sprecher:mutter
+    Groß. Und alt. #sprecher:mutter
 * [„Ich vermisse die alte Wohnung.“]
-    Ich auch. Aber hier hast du ein Zimmer mit Fenster zum Garten. #sprecher:mutter
-- Die alte Mrs. Whitlock hat hier gewohnt, ihr ganzes Leben lang. #sprecher:mutter
-Ihr Dachboden ist noch voll. #sprecher:mutter
-Auf einer Kiste neben der Treppe steht mit dickem Stift: „Whitlock – nicht wegwerfen“. #sprecher:erzaehler
-Bringst du die Kiste nach oben? Kisten auf den Dachboden, dann Pizza. #sprecher:mutter
-In der Reihenfolge. #sprecher:mutter
-* [„Schon unterwegs.“]
-    Danke. Und schau nicht zu lange in die alten Sachen. Da oben ist es staubig. #sprecher:mutter
+    Ich auch. #sprecher:mutter #pause
+- Mama fragt nicht, wie es dir geht. Dafür bist du ihr dankbar. #sprecher:erzaehler
+Eins noch. #sprecher:mutter
+Sie schiebt dir mit dem Fuß eine Kiste hin. Aus Holz, nicht aus Pappe. Auf dem Deckel, in steiler, altmodischer Schrift: „Whitlock – nicht wegwerfen.“ #sprecher:erzaehler
+Stand im Flur. Die Vorbesitzerin. Sie hat hier gewohnt, seit … immer, glaube ich. #sprecher:mutter
+Der Dachboden ist noch voll von ihren Sachen. Deshalb war das Haus so günstig. Alles, was oben ist, gehört jetzt uns. #sprecher:mutter
+* [„Und was machen wir damit?“]
+    Erst mal nichts. #sprecher:mutter
 * [„Erst Pizza?“]
-    Netter Versuch. Erst die Kiste. #sprecher:mutter #stimmung:ernst
-- -> END
+    Gleich. #sprecher:mutter
+- Bring die hier hoch zu den anderen, ja? Ich kann heute keine Treppe mehr sehen. #sprecher:mutter #stimmung:muede
+Etwas darin verrutscht, als du sie anhebst. Ein leises hölzernes Klacken, wie Kegel, die aneinanderstoßen. #sprecher:erzaehler #klang:holzklacken
+-> END
 
 === ankunft_kurz ===
 ~ ankunftGesehen = true
 ~ setzeSzene("akt1.ankunft")
-Da bist du ja, {held}. Warst du schon auf dem Dachboden? Staubig, oder? #sprecher:mutter
-Gib dem Haus eine Woche. Dann ist es ein Zuhause. #sprecher:mutter #stimmung:froh
+Da bist du ja. Warst du schon auf dem Dachboden? Staubig, oder? #sprecher:mutter #stimmung:muede
 Hörst du das Rauschen? Der Wasserfall. Nach einer Woche hört man ihn nicht mehr, sagt die Maklerin. #sprecher:mutter #klang:wasserfall
 -> mutter
 
 === erster_abend ===
+// Szene 4 nach dem Roman, Kapitel 4, und der Dialogprüfung (VM20 bis VM26). Mamas Können zeigt
+// sich ohne Worte; „Weiß steht besser“ (Entscheidung 13.11.2026, roman/akt1_befunde.md, 7).
+// Klang: Bei Mamas Satz setzt die Musik zwei Sekunden aus. Porträt „ertappt“ fehlt noch als Tag.
 ~ ersterAbendGesehen = true
-Du kommst mit dem alten Brett die Treppe herunter. Mama sitzt mit einem Stück Pizza auf einem Karton. #sprecher:erzaehler
-Was hast du da? Zeig mal. #sprecher:mutter
-Sie sieht lange auf die Stellung. Dann sagt sie, ohne nachzudenken: „Weiß steht besser.“ #sprecher:erzaehler #pause
-* [„Du kannst Schach?“]
-    Ich? Nein. Das hab ich irgendwo gelesen. #sprecher:mutter
-* [„Woher weißt du das?“]
-    Weiß ich nicht. Sieht halt so aus. #sprecher:mutter
+Du kommst mit dem alten Brett die Treppe herunter. Auf der neunten Stufe knarrt es. #sprecher:erzaehler #klang:knarren
+Die hat schon geknarrt, als das Haus neu war. #sprecher:ambrose
+Mama sitzt auf dem Boden und schraubt den Tisch zusammen, die Anleitung verkehrt herum neben sich. #sprecher:erzaehler
+Ihr Blick fällt auf das Brett. Sie sieht dich nicht an. Sie sieht die Stellung an. #sprecher:erzaehler #pause:2
+Weiß steht besser. #sprecher:mutter #pause:2
+Dann hört sie, was sie gesagt hat. Ihr Gesicht macht zu, wie eine Tür, die jemand leise schließt. #sprecher:erzaehler
+Hab ich irgendwo gelesen. Dass Weiß oft … ach, keine Ahnung. Wo hast du das her? #sprecher:mutter
+* [„Vom Dachboden.“]
+    Schön. Ist alt, oder? Pass auf, dass keine Figur wegkommt. #sprecher:mutter
+* [„Spielst du Schach?“]
+    Ich? Nein. #sprecher:mutter
+    Sie lacht, ein bisschen zu kurz. Ich kann nicht mal diesen Tisch. #sprecher:mutter
 - Deine Mutter, wenn ich das sagen darf, lügt schlecht. #sprecher:ambrose
-Das Brett ist alt. Pass auf die Figuren auf. Die sind bestimmt was wert. #sprecher:mutter
-Ach, und im Briefkasten lag ein Zettel von der Schule. Die haben ein Schachteam. #sprecher:mutter
+In der Schule gibt es übrigens ein Schachteam. Lag ein Zettel im Briefkasten. #sprecher:mutter
+Falls du Leute kennenlernen willst. #sprecher:mutter
 * [„Vielleicht schau ich mal hin.“]
-    Mach das. Vielleicht findest du da Freunde. #sprecher:mutter #stimmung:froh
+    Mach das. #sprecher:mutter #stimmung:froh
 * [„Schach ist doch nur für Streber.“]
-    Das haben sie früher auch zu mir gesagt. #sprecher:mutter
-    Zu … ach, egal. Iss deine Pizza. #sprecher:mutter
+    Dann eben nicht. Halt mal das Tischbein. #sprecher:mutter
 - Ein Schachteam. Wie vornehm diese Zeit ist. Morgen gehen wir hin. #sprecher:ambrose
 // Roman, Kapitel 4 (neu): Der Tisch wackelt, ein Pizzakarton kommt unter das Bein. Wärme ohne
 // Worte; das Wohnzimmer bekommt dafür eine Zustandsfassung (Karten, eigener Auftrag). Danach der
 // Hinweis auf die Nacht auf dem Dachboden (maple-falls-dachboden.erste_nacht).
-Mama schraubt den Tisch zusammen, die Anleitung verkehrt herum neben sich. Du hilfst ihr. #sprecher:erzaehler
-Als er steht, wackelt er. Ihr schiebt einen gefalteten Pizzakarton unter ein Bein. #sprecher:erzaehler
+Als der Tisch steht, wackelt er. Ihr schiebt einen gefalteten Pizzakarton unter ein Bein. #sprecher:erzaehler
 Das ist jetzt eben so. #sprecher:mutter #stimmung:froh
 * [„Das ist jetzt eben so.“]
     Für einen Moment ist es fast wie zu Hause. #sprecher:erzaehler
@@ -107,19 +115,26 @@ Das ist jetzt eben so. #sprecher:mutter #stimmung:froh
 -> END
 
 === aufbruch ===
+// Szene 13 nach dem Roman, Kapitel 10 (zu Fuß mit Juno, Nacht im Lesesaal; Entscheidung 13.11.2026)
+// und der Dialogprüfung (Szene 13, ohne Nummer). Der Schulbus mit dem Team fährt am Samstag.
 ~ aufbruchGesehen = true
-Coach Delgado hat angerufen. Ihr spielt Samstag auswärts in Cedar Creek? #sprecher:mutter
+Coach Delgado hat angerufen. Ihr spielt Samstag in Cedar Creek? #sprecher:mutter
+* [„Juno und ich gehen Freitag schon. Zu Fuß.“]
+    Zu Fuß. #sprecher:mutter
 * [„Ich spiele am vierten Brett!“]
-    Am vierten Brett. Ich weiß, was das heißt. Glaube ich. #sprecher:mutter #stimmung:froh
-* [„Darf ich mit?“]
-    Du darfst. Ich hab schon unterschrieben. #sprecher:mutter
-- Mit dem Coach im Schulbus, und um acht seid ihr zurück. #sprecher:mutter
-Und das alte Brett nimmst du mit, oder? Dann verlier es nicht. #sprecher:mutter
+    Am vierten Brett. Und Juno sagt, ihr geht schon Freitag. Zu Fuß. #sprecher:mutter
+- Sie sieht dich an, über den Rand ihrer Kaffeetasse. Der Tisch wackelt nicht mehr; der Pizzakarton liegt noch unter dem Bein. #sprecher:erzaehler
+Du hast in vier Wochen mehr geredet als im ganzen letzten Jahr. #sprecher:mutter
+* [„Zwei Stunden. Am Fluss entlang.“]
+* [„Wir schlafen in der Bibliothek. Es gibt Matten.“]
+- Sie sieht auf das Brett. Sie will etwas sagen und sagt es nicht. #sprecher:erzaehler #pause:2
+Mit Juno. Am Fluss. Gut. #sprecher:mutter
+Sie drückt dir eine Tüte in die Hand, belegte Brote, als hätte sie es die ganze Zeit gewusst. #sprecher:erzaehler
+Brett nicht verlieren. #sprecher:mutter #stimmung:froh
 * [„Woher weißt du, dass ich es mitnehme?“]
     Du trägst es seit Tagen herum. Wie ein Haustier. #sprecher:mutter
 * [„Versprochen.“]
-    Gut. Viel Glück, {held}. #sprecher:mutter #stimmung:froh
-- Der Bus wartet am Stadtpark. #sprecher:erzaehler
+- Juno wartet am Park, wo die Landstraße beginnt. #sprecher:erzaehler
 -> END
 
 === mutter_alltag ===

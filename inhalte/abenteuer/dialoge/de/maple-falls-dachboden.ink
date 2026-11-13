@@ -44,7 +44,9 @@ VAR abendJunoGesehen = false
 VAR abendDameGesehen = false
 
 === dachboden_brett ===
-Staub, Kisten, ein kaputter Lampenschirm. Unter einer Decke liegt etwas Flaches, Schweres. #sprecher:erzaehler
+// Szene 2 nach dem Roman, Kapitel 2, und der Dialogprüfung (VM8 bis VM13). Stimmung: still,
+// dann Staunen, nie gruselig. Klang: keine Musik, Holzknacken, Wind am Fenster.
+Staub, Kisten, ein Lampenschirm ohne Lampe. Unter einer Decke liegt etwas Flaches, Schweres. #sprecher:erzaehler
 // Roman, Kapitel 2: Die Decke ist das Einzige ohne Staub (Mrs. Whitlock hat das Brett gepflegt).
 { not brettBeruehrt:
     Auf allem hier oben liegt Staub. Nur auf dieser Decke nicht. #sprecher:erzaehler
@@ -60,8 +62,10 @@ Staub, Kisten, ein kaputter Lampenschirm. Unter einer Decke liegt etwas Flaches,
 
 === brett_beruehren ===
 ~ brettBeruehrt = true
-Ein Schachbrett. Holz, abgewetzt, die Ecken dunkel vom Anfassen. Die Figuren stehen mitten in einer Partie. #sprecher:erzaehler #klang:knarren
-Du hebst den weißen König an. #sprecher:erzaehler #pause
+Ein Schachbrett. Altes Holz, dunkel an den Ecken. Am Rand eingebrannt, ganz klein: A. W. 1857. #sprecher:erzaehler
+Die Figuren stehen mitten in einer Partie. Ein Turm weit vorn, zwei Springer dicht beieinander, eine Handvoll Bauern. #sprecher:erzaehler
+Du hebst den weißen König an. Er ist schwerer, als du dachtest. #sprecher:erzaehler #pause
+Das Licht im Fenster wird anders. Der Staub beginnt, sich langsam zu drehen. Die Dielen knacken. Einmal, zweimal. #sprecher:erzaehler #klang:knarren #pause:2
 Wer wagt es, mein Brett zu berühren? #sprecher:ambrose #stimmung:streng
 * [„Wer … wer ist da?“]
     Ein Meister. Einst. Jetzt offenbar ein Mieter in einer Kiste. #sprecher:ambrose
@@ -73,8 +77,14 @@ Wer wagt es, mein Brett zu berühren? #sprecher:ambrose #stimmung:streng
 
 === ambrose_erwacht ===
 ~ ambroseErwachtGesehen = true
-Ein Kind. Bei allen Heiligen, ein Kind hält meinen König. Wie lange habe ich in dieser Kiste gelegen? #sprecher:ambrose
+Über dem Brett steht jemand, halb durchsichtig wie ein Bild in einer dunklen Fensterscheibe. Ein schmaler Mann in einem langen Rock. #sprecher:erzaehler
+Ein Kind. Bei allen Heiligen. Ein Kind hält meinen König. #sprecher:ambrose #stimmung:streng #pause
+Er sieht sich um, sieht die Kisten, das Fenster. Etwas in seinem Gesicht gibt nach. #sprecher:erzaehler
+Wie lange habe ich hier gelegen? #sprecher:ambrose #stimmung:still
+* [„Ich weiß nicht. Wir sind heute eingezogen.“]
+- Heute. #sprecher:ambrose #pause
 Ambrose Whitlock, zu Diensten. Schachmeister aus New Orleans. Verzeih den Ton, ich habe lange mit niemandem gesprochen. #sprecher:ambrose #stimmung:stolz
+Whitlock. Wie auf der Kiste. #sprecher:erzaehler
 * [„Ich bin {held}.“]
 - Das habe ich mir gedacht. Der Name steht dort unten auf jedem zweiten Karton. #sprecher:ambrose
 Du hältst den König wie einen Suppenlöffel. #sprecher:ambrose
@@ -87,12 +97,17 @@ Du hältst den König wie einen Suppenlöffel. #sprecher:ambrose
     -> erste_lektion
 
 === erste_lektion ===
-Stell ihn zurück. Sachte. Sag mir nur eines: Spielt man noch, dort draußen? #sprecher:ambrose
-Du nickst? Gut. Dann ist nicht alles verloren. #sprecher:ambrose
+Stell ihn zurück. Sachte. #sprecher:ambrose #pause
+Sag mir nur eines. Spielt man noch? Dort draußen? #sprecher:ambrose #stimmung:still
+Du nickst. #sprecher:erzaehler #pause
+Er schließt die Augen. Gut. Dann ist nicht alles verloren. #sprecher:ambrose #stimmung:still
 Nimm das hier. Es ist kein Zauber, nur ein Versprechen: Stockst du, so zeige ich dir die Figur, die arbeiten will. Ein Fingerzeig. #sprecher:ambrose #klang:karte
 // Karte und Szene vergibt die Quest „Das Brett auf dem Dachboden“ (quests.json), sobald dieser
-// Knoten erreicht ist; gibKarte/setzeSzene bleiben für Belohnungen ohne Quest.
-Und jetzt setz dich. Du gegen mich, nur ein paar Züge. Ich möchte sehen, wie du denkst. #sprecher:ambrose
+// Knoten erreicht ist; gibKarte/setzeSzene bleiben für Belohnungen ohne Quest. Der Fingerzeig
+// kommt vor der Partie (Entscheidung 13.11.2026); der Roman erzählt ihn danach.
+Diese Stellung rührt niemand an. Wir spielen daneben. #sprecher:ambrose
+Er macht eine Bewegung mit zwei Fingern. Auf der anderen Hälfte des Tisches liegt ein zweites Brett, aus demselben Licht wie er. #sprecher:erzaehler
+Setz dich. Du gegen mich. Nur ein paar Züge. Ich möchte sehen, wie du denkst. #sprecher:ambrose
 * [„Jetzt?“]
     Ich habe lange genug gewartet. Länger, als du dir vorstellen kannst. #sprecher:ambrose
     -> partie_beginnt
@@ -108,8 +123,10 @@ Und jetzt setz dich. Du gegen mich, nur ein paar Züge. Ich möchte sehen, wie d
 Nun? Die Figuren stehen, und ich habe Zeit. Zu viel davon. #sprecher:ambrose
 * [„Lass uns spielen.“]
     -> partie_beginnt
+// „Später“ am ersten Tag: eine der drei Stellen des Leitmotivs in Akt 1 (Archiv, Steg).
 * [„Später.“]
-    Später. Ich kenne das Wort. Ich habe sehr lange darauf gewartet, dass es endet. #sprecher:ambrose #stimmung:bitter
+    Später. #sprecher:ambrose #pause
+    Ich kenne das Wort. Ich habe sehr lange darauf gewartet, dass es endet. #sprecher:ambrose #stimmung:bitter
     -> END
 
 // Ab hier ergänzt (Story-Bibel, Szene 3 Nachgespräch und Gespräche allein mit Ambrose).
@@ -127,56 +144,55 @@ Nun? Die Figuren stehen, und ich habe Zeit. Zu viel davon. #sprecher:ambrose
 }
 
 === nach_erster_partie ===
+// Szene 3 nach dem Roman, Kapitel 3, und der Dialogprüfung (VM15 bis VM19).
 ~ ersteLektionBesprochen = true
 {ausgangMapleFallsErsteLektion:
 - "sieg": Du hast gewonnen. Glück ist der Anfang jeder Begabung. Der Rest ist Arbeit. #sprecher:ambrose #stimmung:stolz
 - "remis": Remis. Weder du noch ich. Für den ersten Abend ist das gar nicht übel. #sprecher:ambrose
 - else: Verloren. Gut. Jetzt weißt du, was du lernen willst. #sprecher:ambrose
 }
-Und mein Versprechen gilt weiter. Der Fingerzeig bleibt dir. #sprecher:ambrose
-Ich zeige dir die Figur, die arbeiten will. Den Zug findest du selbst, das nehme ich dir nicht ab. #sprecher:ambrose
-Einmal in jeder Partie darfst du mich so fragen. Morgen wieder, und übermorgen auch. #sprecher:ambrose
-* [„Du hast beim Spielen gemurmelt: Was hängt?“]
-    Habe ich das? Eine alte Gewohnheit. Ich frage es vor jedem Zug. #sprecher:ambrose
+Draußen dämmert es. Ihr habt über eine Stunde gespielt. Durch das Fenster zirpen Grillen. #sprecher:erzaehler
+Du hast zweimal gefragt, bevor du gezogen hast. Die meisten, gegen die ich spielte, haben in ihrem Leben nicht zweimal gefragt. #sprecher:ambrose
+Der Fingerzeig bleibt dir. Ich zeige die Figur, die arbeiten will. Den Zug findest du selbst. #sprecher:ambrose
+* [„Was hängt? Das hast du mich gefragt.“]
+    Eine alte Gewohnheit. Ich frage es vor jedem Zug. #sprecher:ambrose
 * [„Kannst du mir nicht jeden Zug zeigen?“]
     Dann spielte ich und nicht du. Merk dir lieber eine Frage: Was hängt? #sprecher:ambrose #stimmung:streng
-- Eine Figur hängt, wenn sie angegriffen wird und niemand sie schützt. #sprecher:ambrose
-Oder wenn mehr Figuren sie angreifen, als sie verteidigen. Zähle beide Seiten. Immer. #sprecher:ambrose
+- Eine Figur hängt, wenn man sie schlagen kann und niemand zurückschlägt. Geh sie durch. Deine zuerst. Dann meine. #sprecher:ambrose
 Ich habe das an einem verlorenen Turm gelernt, vor einem vollen Kaffeehaus. Du lernst es billiger. #sprecher:ambrose
-* [„Zählen. Verstanden.“]
+* [„Was hängt. Verstanden.“]
     ~ ambroseVertrauen = ambroseVertrauen + 1
     Das sagen viele. Wir werden sehen. #sprecher:ambrose
 * [„Das klingt langweilig.“]
-    Langweilig ist ein verlorener Turm. Zählen dauert drei Sekunden. #sprecher:ambrose #stimmung:streng
+    Langweilig ist ein verlorener Turm. Fragen dauert drei Sekunden. #sprecher:ambrose #stimmung:streng
 // Roman, Kapitel 3 (neu): dieselbe Schrift auf Karte und Kisten; Mrs. Whitlock hat das Brett
 // sechzig Jahre abgestaubt und Ambrose nie gehört. Gibt ihm von Anfang an Schuld und Dank.
-// Vorgemerkt für mittel-2: #pause:3 vor der Antwort, wenn die neue Marke da ist.
 - Du drehst die Karte um. Auf der Rückseite steht in steiler Schrift: „Fingerzeig“. #sprecher:erzaehler
 Dieselbe Schrift wie auf den Kisten. #sprecher:erzaehler #pause
-* [„Wer hat hier vor uns gewohnt?“]
+* [„Wer hat hier gewohnt? Vor uns?“]
 * [„Wer hat das geschrieben?“]
-- Ambrose sieht zum Fenster. Draußen wird der Ahorn schwarz vor dem Himmel. #sprecher:erzaehler #pause
-Jemand, der dieses Brett sechzig Jahre lang abgestaubt hat. Und nie einen Zug darauf gemacht. #sprecher:ambrose #stimmung:still
+- Ambrose sieht zum Fenster. Draußen ist der Ahorn schwarz geworden vor dem Himmel. #sprecher:erzaehler #pause:3
+Jemand, der dieses Brett sechzig Jahre lang abgestaubt hat. Und nie einen Zug darauf gemacht. #sprecher:ambrose #stimmung:still #pause
 Ich habe ihr nie danken können. Sie hat mich nicht gehört. #sprecher:ambrose #stimmung:still
 Er sagt es leichthin. Aber er sieht dich nicht an dabei. #sprecher:erzaehler
-- Und nun trag mich hinunter, Kind. Ich möchte sehen, in welcher Welt ich aufgewacht bin. #sprecher:ambrose
-Nimm das Brett mit. Wo es ist, da bin ich auch. #sprecher:ambrose
+Nimm das Brett mit, Kind. Wo es ist, bin ich. Weiter komme ich nicht. #sprecher:ambrose #pause
+Ich habe es versucht. #sprecher:ambrose #stimmung:still
 -> END
 
 === ambrose_rat ===
 {
-- not clubBeigetreten: Die Schule, Lehrling. Das Schachteam wartet, und ich werde nicht jünger. #sprecher:ambrose
+- not clubBeigetreten: Die Schule, Kind. Das Schachteam wartet, und ich werde nicht jünger. #sprecher:ambrose
 - not (reiheSamBestanden and reiheJunoBestanden): Erst die Stellungen, die deine Mitspieler dir vorlegen. Wer das Rätsel scheut, scheut auch den Gegner. #sprecher:ambrose
-- nadelMapleFalls == 0: Die Trainerin wartet. Und denk daran: Sie sieht nur ihren eigenen Angriff. #sprecher:ambrose
+- nadelMapleFalls == 0: Die Trainerin wartet. #sprecher:ambrose
 - not kenntHale: Eine Nadel am Kragen. Zu meiner Zeit gab es dafür Wein, für dich gibt es Limonade. #sprecher:ambrose #stimmung:lacht
-- endeAkt1Gesehen: Der Weg führt weiter, aber nicht heute. Ruh dich aus, Lehrling. #sprecher:ambrose
+- endeAkt1Gesehen: Der Weg führt weiter, aber nicht heute. Ruh dich aus. #sprecher:ambrose
 - else: Cedar Creek? Den Namen habe ich nie gehört. Ich war allerdings eine Weile verhindert. #sprecher:ambrose
 }
 + [„Erzähl mir von früher.“]
     {~New Orleans hatte Kaffeehäuser, in denen man bis Mitternacht spielte. Bei Kerzenlicht.|Ich habe einmal gegen den Kapitän eines Dampfers gespielt. Er setzte sein Schiff. Ich lehnte ab.|Der junge Morphy war der Beste von uns allen. Ich habe ihn nie geschlagen. Nie.} #sprecher:ambrose
     -> END
 + [„Bis morgen.“]
-    Morgen. Ja. Geh nur. #sprecher:ambrose #stimmung:bitter
+    Geh nur. #sprecher:ambrose
     -> END
 
 // ---------------------------------------------------------------- Die erste Nacht

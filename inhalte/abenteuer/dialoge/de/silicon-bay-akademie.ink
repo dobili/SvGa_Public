@@ -8,6 +8,10 @@
 // Einstiege wie in orte.json: lin, nova, theo, serverraum_zu. Die Hauptquest siliconBay.akademie
 // wartet auf den Knoten „lin“; deshalb steht dort vor dem Verzweigen eine Zeile.
 //
+// Runde 11 (13.11.2026): Dr. Lin, Theo und Nova nach dem Roman (roman/akt3_teil1.md, Kapitel 32):
+// Lins drei Fragen, Theos Kurve („menschlich“), ZERO spielt in zwölf Sekunden, Ambrose gebannt.
+// Klang nach 21_Klangplan.md (zero, ambrose.gebannt). „Später“ nur in Akt 1, hier „Nicht jetzt.“.
+//
 // Variablen: reiheTheoBestanden, reiheNovaBestanden, siliconBayAuswertungBestanden,
 // ausgangSiliconBayClubkampf und nadelSiliconBay setzt die Hülle (R42); ohrempfaengerGefunden setzt
 // silicon-bay-serverraum.ink, zeroTabletGeschenkt merkt Theos Geschenk. clubkampfSiliconBayBesprochen und clubkampfSiliconBayNadel wie in Riverton.
@@ -48,12 +52,19 @@ VAR clubkampfSiliconBayNadel = 0
 
 === lin_erstes_treffen ===
 ~ linGetroffen = true
-Eine Frau mit Brille steht auf und reicht dir die Hand. Auf ihrem Schreibtisch liegt ein einziges Holzbrett. #sprecher:erzaehler
-Willkommen. Ich bin Dr. Lin, ich leite die Akademie. Victor hat von dir erzählt. #sprecher:lin #stimmung:froh
-Drei Ziele in der Eröffnung: Zentrum, Entwicklung, König in Sicherheit. Das lernen hier alle zuerst. #sprecher:lin
-Am Fenster sitzt ein Mädchen und lächelt in eine Kamera. Als die Kamera ausgeht, hört sie auf zu lächeln. #sprecher:erzaehler
+Ein Raum ohne Ecken. Dreißig Plätze im Halbkreis, in jeden Tisch ist ein leuchtendes Brett eingelassen. Es riecht nach nichts. #sprecher:erzaehler
+Die Frau, die auf dich zukommt, sieht dir als Erste in dieser Stadt in die Augen. Auf ihrem Kittel: „Dr. E. Lin“. #sprecher:erzaehler
+Du bist das Kind mit den vier Nadeln. Victor hat von dir erzählt. Er erzählt sonst von niemandem. #sprecher:lin #stimmung:froh
+Ich bringe hier Kindern Schach bei. Vierzig im Jahr. Früher acht, in einem Keller mit Heizlüfter. #sprecher:lin
+Die Bildschirme zeigen jedem sofort den Fehler. Kein Kind muss warten, bis ich Zeit habe. Glaube ich. #sprecher:lin
+Drei Ziele in der Eröffnung? Welches vergisst man am leichtesten? #sprecher:lin
+* [„Zentrum, Entwicklung, König. Das dritte.“]
+- Warum? #sprecher:lin
+* [„Weil man gerade angreift.“]
+- Sie lächelt. Wer hat dir das beigebracht? #sprecher:lin #stimmung:froh
+* [„Viele Leute. Und meine Mutter.“]
+- Und ich. #sprecher:ambrose #stimmung:streng
 Bevor du gegen mich spielst, fragen dich Theo und Nova ab. So ist es hier üblich. #sprecher:lin
-Eine Lehrerin mit einem Holzbrett zwischen all den Spiegeln. Sie gefällt mir. #sprecher:ambrose
 -> END
 
 === lin_reihe_offen ===
@@ -93,7 +104,7 @@ Sie war sicher, solange es Regeln gab. Zwing sie in eine Stellung ohne Regeln. #
 + [„Noch einmal.“]
     ~ beginnePartie("siliconBay.clubkampf")
     -> END
-* [„Später.“]
+* [„Nicht jetzt.“]
     -> END
 
 === lin_nach_sieg ===
@@ -135,19 +146,35 @@ Die fünfte Nadel. Und ein Mentor-Zug. Ich hätte ihn heute kaum gebraucht, du s
 
 === theo_erstes_treffen ===
 ~ theoGetroffen = true
-Ein Junge mit Kopfhörern um den Hals mustert dich. „Probepartie? Ich messe nur.“ #sprecher:erzaehler
-Nach zehn Zügen dreht er den Bildschirm zu dir. #sprecher:erzaehler
-Einundsiebzig Prozent Genauigkeit. Das ist … menschlich. #sprecher:theo
-Hier. Ein Tablet mit ZERO. Damit trainierst du in einer Woche mehr als in einem Jahr. #sprecher:theo
+Ein Junge in deinem Alter sieht auf einen zweiten Bildschirm, über den Zahlen laufen. Jetzt dreht er sich um. #sprecher:erzaehler
+Spiel eine. Gegen Stufe sechs. Ich will deine Kurve sehen. #sprecher:theo
+Er heißt Theo. Er meint es nicht unhöflich. Bei jedem deiner Züge zuckt auf seinem Bildschirm eine Linie. #sprecher:erzaehler
+Einundsiebzig Prozent. Genauigkeit. Das ist … menschlich. #sprecher:theo
+* [„Ist das gut?“]
+- Der Durchschnitt eines sehr guten Vereinsspielers. Victor hat neunundachtzig. Nova im Turnier achtundneunzig. #sprecher:theo
+Du machst im Mittelspiel alle elf Züge einen Fehler. Den kann man wegtrainieren. Hier. #sprecher:theo
+-> theo_tablet
+
+// Kapitel 32: Theos Geschenk. ZERO spielt gegen sich selbst, Ambrose kann nicht wegsehen.
+=== theo_tablet ===
 ~ zeroTabletGeschenkt = true
 ~ gibFund("zeroTablet")
-Auf dem Tablet gewinnt die Maschine eine Partie in zwölf Sekunden. Kein einziger Fehler. #sprecher:erzaehler
-Kein einziger Fehler. Nicht einer. #sprecher:ambrose #stimmung:gebannt
+Ein Tablet, weiß und dünn, mit dem Zeichen des Konzerns. Da ist ZERO drauf. Die volle Fassung. #sprecher:theo
+* [„Was ist ZERO?“]
+- Theo sieht dich an, als hättest du gefragt, was Wasser ist. #sprecher:erzaehler
+Die Maschine. Die, die nie verliert. #sprecher:theo
+Weiß und Schwarz bauen sich auf, und es spielt gegen sich selbst. Die Züge fallen wie Regen. #sprecher:erzaehler #musik:zero
+Zwölf Sekunden, vielleicht dreizehn, und der schwarze König liegt um. #sprecher:erzaehler
+Ambrose steht über das Tablet gebeugt. So hast du ihn noch nie stehen sehen. #sprecher:erzaehler
+Noch einmal. #sprecher:ambrose #stimmung:gebannt #musik:ambrose.gebannt
+* [Noch einmal tippen]
+- Eine andere Partie. Ein Opfer in der Mitte, ein Turm, der stehen bleibt, und alles fällt ineinander wie ein Uhrwerk. #sprecher:erzaehler
+Kein einziger Fehler. Nicht einer. Der Turm hing sieben Züge lang, und sie wusste es. #sprecher:ambrose #stimmung:gebannt
+* [„Ambrose.“]
+- Noch einmal. #sprecher:ambrose #stimmung:gebannt
 {linGetroffen: -> theo_reihe}
 -> theo_erst_lin
 
-// Die Reihe gibt es erst nach dem Gespräch mit Dr. Lin; sonst liefe die Runde, bevor die Quest
-// siliconBay.akademie auf sie wartet (Gesamtsimulation, Runde 6).
 === theo_erst_lin ===
 Die Abfrage machen wir offiziell. Melde dich erst bei Dr. Lin, dann messe ich. #sprecher:theo
 -> END
@@ -157,7 +184,7 @@ Eröffnungsgrundsätze. Ich will sehen, ob du sie kennst oder nur benutzt. #spre
 + [Die Aufgaben lösen]
     ~ beginneAufgaben("siliconBay.reiheTheo")
     -> END
-* [„Später.“]
+* [„Nicht jetzt.“]
     Ich speichere den Termin. #sprecher:theo
     -> END
 
@@ -186,9 +213,10 @@ Ich hab nichts gesagt. Zahlen lügen nicht. Ich auch nicht. #sprecher:theo
 
 === nova_erstes_treffen ===
 ~ novaGetroffen = true
-Das Mädchen am Fenster springt auf und lächelt. „Nova! Champion der Akademie. Ein Foto?“ #sprecher:erzaehler
+Auf der Fensterbank sitzt Nova Sinclair, die Knie angezogen. Vor ihr eine Kamera auf dem Stativ, das rote Licht ist aus. #sprecher:erzaehler
+Als sie merkt, dass du sie ansiehst, lächelt sie. Das Lächeln vom Podium in Riverton. Es geht an und wieder aus. #sprecher:erzaehler
 Mit Perfect Move trainiert jeder wie ein Champion! #sprecher:nova #stimmung:froh
-Sieht gerade jemand her? Nein? Kann ich jetzt kurz sitzen? #sprecher:nova
+Sieht gerade jemand her? Nein? Dann kann ich ja kurz sitzen bleiben. #sprecher:nova
 -> END
 
 === nova_erst_theo ===
@@ -200,7 +228,7 @@ Fallen. Ich kenne jede. Die Frage ist, ob du sie siehst, bevor du reinfällst. #
 + [Die Aufgaben lösen]
     ~ beginneAufgaben("siliconBay.reiheNova")
     -> END
-* [„Später.“]
+* [„Nicht jetzt.“]
     -> END
 
 === nova_danach ===

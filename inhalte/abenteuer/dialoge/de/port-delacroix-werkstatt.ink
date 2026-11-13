@@ -7,6 +7,11 @@
 // Céleste spielt eine Partie aus Neugier (Begegnung portDelacroix.celeste).
 // Einstiege wie in orte.json: henri, celeste, werkbank.
 //
+// Runde 11 (13.11.2026): Kapitel 38 nach dem Roman (roman/akt3_teil2.md): das Schild
+// Whitlock-Duval, „Hier war es“ aus dem Geigenkasten, die goldene Erinnerung 1840 (Klötzchen aus
+// Tastenholz) und 1852 (Claire, „Dann eben, wenn du tot bist“), danach Ambroses einer Satz:
+// „Deshalb bist du hier.“ Klang: ambrose.verstimmt, stimmton, ambrose.vierhaendig.
+//
 // Der Flashback läuft vorerst ohne eigene Sepia-Karte als Zugraten an der Werkbank (Bericht
 // mittel-1, fünfzehnter Auftrag). Variablen: ausgangPortDelacroixCeleste und
 // flashbackWerkstattBestanden setzt die Hülle (R42); ambroseSprichtWieder setzt diese Datei.
@@ -111,26 +116,54 @@ Hier sehe ich: Es reicht, dass es Menschen gibt, die weitermachen. Mit Klavieren
 }
 
 === werkbank_flashback ===
-An der alten Werkbank riecht es nach frisch gehobeltem Holz. Zwischen den Spänen liegt ein Springer aus Resten. #sprecher:erzaehler
-{not ambroseSprichtWieder:
-    Hier. Hier war es. #sprecher:ambrose #stimmung:fern
-- else:
-    Hier. Hier war es. Hier hat alles angefangen. #sprecher:ambrose #stimmung:fern
-}
-Die Farben werden braun wie ein altes Foto. Ein Junge fegt Späne, ein Mann stellt Figuren aus Resthölzern auf. #sprecher:erzaehler
-Ein Klavier und ein Schachbrett haben eines gemeinsam, Ambrose. Jede Taste, jede Figur muss ihren Platz kennen. #sprecher:erzaehler
-Zwölf Jahre später: Der junge Ambrose ist zurück aus London und spielt seinem Vater und seiner kleinen Schwester eine Partie vor. #sprecher:erzaehler
-+ [Die Partie mitspielen]
+Über der Tür hängt ein Schild, neuer als die anderen, die Buchstaben alt: „Whitlock-Duval. Facteurs de pianos depuis 1826.“ #sprecher:erzaehler
+Frisch gehobeltes Holz. Leim, warm. Etwas Harziges. Ein Geruch, den du kennst, ohne ihn zu kennen. #sprecher:erzaehler
+Im Geigenkasten unter deinem Arm bewegt sich nichts. Aber du hörst ihn. Zum ersten Mal seit fünf Tagen. #sprecher:erzaehler
+Hier. Hier war es. #sprecher:ambrose #stimmung:fern #musik:ambrose.verstimmt
+Mehr nicht. Aber die Werkstatt wird golden. #sprecher:erzaehler
++ [Mitgehen]
+    -> werkstatt_1840
++ [Zurück in die Gegenwart]
+    Das Gold verblasst. Henri hobelt, Céleste tippt. #sprecher:erzaehler
+    -> END
+
+// Erinnerung 1840: das Brett aus Abfallholz, die Figuren aus Tastenholz.
+=== werkstatt_1840 ===
+Du bist klein. Der Boden ist nah. Um dich liegen Späne, helle Locken, knöcheltief. #sprecher:erzaehler #musik:stimmton
+„Fegen, Ambrose. Nicht spielen.“ Ein Mann schlägt eine Saite an, lauscht, dreht an etwas, schlägt wieder an. #sprecher:erzaehler
+* [„Papa. Was machst du da?“]
+- „Ich suche den Ton. Er ist da drin. Man muss ihm nur helfen.“ #sprecher:erzaehler
+Du stellst Klötzchen aus Tastenholz auf die Werkbank. Er legt das Werkzeug hin und ritzt acht mal acht Linien in ein Abfallbrett. #sprecher:erzaehler
+Das größte ist der König. Das gerade der Turm. Das schiefe, beim Sägen verrutscht, ist das Pferd. #sprecher:erzaehler
+„Ein Klavier und ein Schachbrett haben eines gemeinsam, Ambrose. Jede Taste, jede Figur muss ihren Platz kennen. Dann klingt es.“ #sprecher:erzaehler
+* [Die Späne fliegen auf]
+    -> werkstatt_1852
+
+// Erinnerung 1852: das neue Brett, noch ohne die Buchstaben am Rand; Claire auf dem Schemel.
+=== werkstatt_1852 ===
+Du bist groß. Die Stiefel aus London drücken. Der Mann an der Werkbank hat graues Haar. #sprecher:erzaehler #musik:ambrose.vierhaendig
+Auf einem Schemel sitzt ein Mädchen von vielleicht acht Jahren, in einem Kleid mit Leimflecken. „Zeig es noch mal. Das mit dem Turm.“ #sprecher:erzaehler
+Auf der Werkbank steht ein Brett, helles Holz und dunkles, die Ecken noch scharf. Der Rand ist glatt und leer. #sprecher:erzaehler
++ [Die Partie vorspielen]
     ~ beginneAufgaben("portDelacroix.flashbackWerkstatt")
     -> END
 + [Zurück in die Gegenwart]
-    Die Farben kehren zurück. Henri hobelt, Céleste tippt. #sprecher:erzaehler
+    Das Gold verblasst. Henri hobelt, Céleste tippt. #sprecher:erzaehler
     -> END
 
 === werkbank_nach_flashback ===
 ~ claireErzaehlt = true
-Die kleine Schwester klatscht bei jedem Opfer. Dann kehren die Farben zurück. #sprecher:erzaehler
-Claire. Sie hat das Brett geerbt. Deshalb bist du hier. #sprecher:ambrose #stimmung:still
+„Er lässt ihn stehen? Den ganzen Läufer? Das ist doch Verschwendung.“ – „Das ist Musik, Papa.“ #sprecher:erzaehler #musik:ambrose.vierhaendig
+Bei jedem Opfer klatscht Claire. Sie versteht nichts davon. Sie klatscht, weil du so strahlst. #sprecher:erzaehler
+„Wenn ich groß bin, will ich das Brett haben.“ – „Es ist meines.“ – „Dann eben, wenn du tot bist.“ #sprecher:erzaehler
+* [„Abgemacht. Aber du musst darauf aufpassen.“]
+- „Ich pass immer auf“, sagt Claire. #sprecher:erzaehler
+Das Gold verblasst. Du stehst in der Werkstatt, dein Gesicht ist nass, und du weißt nicht, ob es deine Tränen sind. #sprecher:erzaehler #musik:aus
+Claire. Sie hat nach Norden geheiratet. In eine Stadt mit einem Wasserfall. Sie hat das Brett geerbt. #sprecher:ambrose #stimmung:still
+Sie hat aufgepasst. Und ihre Tochter. Und deren Tochter. Bis zu einer alten Frau, die es sechzig Jahre abgestaubt hat. #sprecher:ambrose #stimmung:still
+* [Warten]
+- Deshalb bist du hier. #sprecher:ambrose #stimmung:still #pause:2
+Dann schweigt er wieder. Es war sein einer Satz für diesen Tag. #sprecher:erzaehler
 -> END
 
 // ---------------------------------------------------------------- Ansehen (Runde 6)

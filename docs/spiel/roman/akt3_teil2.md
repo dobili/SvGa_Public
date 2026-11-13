@@ -428,8 +428,7 @@ Kleid mit Leimflecken.
 „Dann zeig es viermal.“
 
 Auf der Werkbank stand ein Brett. Ein richtiges jetzt, eingelegt, helles Holz und dunkles, an
-den Ecken noch scharf. Am Rand roch es nach frischer Beize, und neben dem Brett lag ein
-Brenneisen.
+den Ecken noch scharf. Am Rand roch es nach frischer Beize. Der Rand war noch glatt und leer; die Buchstaben habe ich erst fünf Jahre später eingebrannt, in dem Jahr, als ich aus New York zurückkam.
 
 Ich stellte die Figuren auf. Ich spielte es ihnen vor, von Anfang an. Den Bauern, der sich
 anbietet. Den Läufer, der hinausgeht und angegriffen wird und einfach stehen bleibt.
@@ -473,7 +472,7 @@ Dann schwieg er wieder. Es war sein einer Satz für diesen Tag, und er hatte ihn
 verbraucht.
 
 `[Klang: Rue des Facteurs: Sägen, die singen; einzelne Klaviertöne aus offenen Türen. „Hier war es“: Ambroses Thema kehrt zurück, ganz zart, auf einem einzelnen verstimmten Klavier. Erinnerung 1840: der Vater schlägt eine Saite an (ein einzelner Ton, der gestimmt wird, bis er rein ist; es ist der erste Ton von Ambroses Thema). 1852: das Thema als fröhliches Stück zu vier Händen; Claires Klatschen. Rückkehr: der eine Ton, rein, verklingt.]`
-`[Bild: Flügel auf dem Gehweg. Erinnerung in Gold statt Sepia (heller als London). Der kleine Ambrose mit Besen (eigene Figur). Brett aus Abfallholz mit Klötzchen. 1852: das Brett, neu, scharfe Ecken, Brenneisen daneben. Claire auf dem Schemel.]`
+`[Bild: Flügel auf dem Gehweg. Erinnerung in Gold statt Sepia (heller als London). Der kleine Ambrose mit Besen (eigene Figur). Brett aus Abfallholz mit Klötzchen. 1852: das Brett, neu, scharfe Ecken, noch ohne die Buchstaben am Rand (die kommen 1857). Claire auf dem Schemel.]`
 `[Karte: Straße der Instrumentenbauer mit Blechschildern. Werkstatt als Erinnerungskarte in zwei Fassungen (1840 unordentlich und warm, 1852 aufgeräumter). In der Gegenwart ist Ambrose für einen Augenblick wieder sichtbar.]`
 
 ---

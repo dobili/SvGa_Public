@@ -40,6 +40,7 @@ VAR clubkampfIronwoodNadel = 0
 VAR pokalregalGesehen = false
 // Kapitel 27 (Roman): Mama kommt in die Kantine, Big Joe hält sie fest.
 VAR mamaInKantine = false
+VAR morgenNachFeier = false
 VAR turnierheftBekommen = false
 
 // ---------------------------------------------------------------- Big Joe
@@ -50,7 +51,8 @@ VAR turnierheftBekommen = false
 - not bigJoeGetroffen: -> big_joe_erkennt
 - not briefFuerRuben and not lastkahnFrei: -> big_joe_brief
 - nadelIronwood > clubkampfIronwoodNadel: -> big_joe_nach_sieg
-- mamaSpielt and not feierGesehen and nadelIronwood == 0: -> feier_einladung
+- ausgangIronwoodMama != "" and ausgangIronwoodMama != "abgebrochen" and not mamaSpielt: -> mama_nach_partie
+- mamaSpielt and not feierGesehen: -> feier_einladung
 - not (reiheHankBestanden and reihePriyaBestanden): -> big_joe_reihe_offen
 - nadelIronwood == 0 and ausgangIronwoodClubkampf == "niederlage": -> big_joe_nach_niederlage
 - nadelIronwood == 0: -> big_joe_clubkampf
@@ -99,11 +101,24 @@ Du weißt es nicht. #sprecher:erzaehler
 -> END
 
 === big_joe_clubkampf ===
-{feierGesehen:
-    Big Joe gähnt so laut, dass die Tassen klirren. „Die Feier war lang, Kumpel.“ #sprecher:erzaehler
-}
+// Kapitel 28 (Roman): der Morgen nach der Feier, dann der Schraubstock. Nadel: Zahnrad mit Turm.
+{feierGesehen and not morgenNachFeier: -> morgen}
+-> brett
+
+= morgen
+~ morgenNachFeier = true
+Big Joe hat Ringe unter den Augen wie Kohlestriche. Er hält sich an seinem Kaffee fest. #sprecher:erzaehler #musik:aus
+Kumpel, ich hab drei Stunden geschlafen. Wenn ich heute verliere, liegt es an deiner Mutter und am Schinken. #sprecher:bigJoe #stimmung:muede
+* [„Sie können es verschieben.“]
+    Verschieben! Hier wird nicht verschoben. Hier wird geschichtet. #sprecher:bigJoe
+* [Nicken]
+- -> brett
+
+= brett
+Die Nadel liegt auf dem Stahlbrett. Ein kleines Zahnrad aus dunklem Metall, mit einem Turm in der Mitte. #sprecher:erzaehler
 {mamaSpielt:
-    Mama sitzt am Rand und sagt nur einen Satz: „Grundreihe. Immer die Grundreihe.“ #sprecher:erzaehler
+    Mama sitzt in der ersten Reihe. Sie beugt sich vor und sagt zwei Wörter, so leise, dass nur du sie hörst. #sprecher:erzaehler
+    Grundreihe. Immer. #sprecher:mutter
 }
 Um die Nadel, Kumpel? Auf meinem Stahlbrett. Das hält. #sprecher:bigJoe
 * [„Ich bin bereit.“]
@@ -115,26 +130,36 @@ Um die Nadel, Kumpel? Auf meinem Stahlbrett. Das hält. #sprecher:bigJoe
     -> END
 
 === big_joe_nach_niederlage ===
-Gut gekämpft, Kumpel. Aber die Kantine bleibt meine. Noch eine? #sprecher:bigJoe
+Was dranhängt, kann nicht weg, Kumpel. Noch eine? #sprecher:bigJoe
 * [„Noch eine.“]
     ~ beginnePartie("ironwood.clubkampf")
     -> END
-* [„Später.“]
+* [„Nicht jetzt.“]
     -> END
 
 === big_joe_nach_sieg ===
+// Kapitel 28, Schluss: „Ach, Kumpel“ ohne Musik; dann Fanfare und die Kantine brüllt; am Ende
+// Ambroses und Mamas Thema nacheinander, ohne Konzernmotiv (Klangplan `ambrose.mama`).
 ~ clubkampfIronwoodNadel = nadelIronwood
 {ausgangIronwoodClubkampf == "remis":
-    Remis. Ehrlich verdient. #sprecher:bigJoe
-    Die Bronzenadel gehört dir. Noch eine Runde, wenn du willst. #sprecher:bigJoe
+    Remis. Ehrlich verdient, Kumpel. #sprecher:bigJoe
+    Die Nadel gehört dir. Noch eine Runde, wenn du willst. #sprecher:bigJoe
 - else:
-    Kumpel, du hast mich auf meiner eigenen Grundreihe erwischt. Wie jemand, den ich mal kannte. #sprecher:bigJoe #stimmung:froh
+    Big Joe sieht auf seine Grundreihe. Niemand ist zu Hause. #sprecher:erzaehler #musik:aus
+    Ach, Kumpel. Ach, Kumpel. #sprecher:bigJoe #stimmung:muede
+    Er legt seinen König um, mit einem Finger. Auf dem Stahl klingt es leise. #sprecher:erzaehler #klang:fanfare
+    {mamaSpielt:
+        In der ersten Reihe hat Mama beide Hände vor dem Mund. #sprecher:erzaehler
+        Grundreihe. Du hast es dem Kumpel gesagt, Laurie. Dreißig Jahre, und du kennst mich immer noch. #sprecher:bigJoe #stimmung:froh
+    }
 }
+Er steckt dir das Zahnrad an die Jacke, neben die anderen Nadeln. #sprecher:erzaehler
 {feierGesehen:
     Revanche, wenn ich ausgeschlafen bin! #sprecher:bigJoe #stimmung:froh
 }
-Die vierte Nadel. Und wieder ein Mentor-Zug. #sprecher:ambrose
-Ich habe dir das Wertvollste gegeben, das ich habe. #sprecher:ambrose
+Die Kantine brüllt. #sprecher:erzaehler
+Noch ein Mentor-Zug. Heb ihn auf, du weißt, wofür. #sprecher:ambrose
+Es war schön. Und es hat gestimmt. Beides. #sprecher:ambrose #stimmung:still #musik:ambrose.mama
 Draußen am Werkstor stehen Männer in Anzügen. Big Joe sieht hinaus und wird still. #sprecher:erzaehler
 -> END
 
@@ -165,12 +190,19 @@ Bleibst du? Wird spät. #sprecher:bigJoe
     -> END
 
 === feier ===
+// Kapitel 28 (Roman): das Fest; bei Big Joes Pokal wird es kurz leise.
 ~ feierGesehen = true
-Hank holt eine Gitarre, Priya erklärt Juno die Statik einer Brücke mit Zuckerstücken. Mama lacht. #sprecher:erzaehler
-Um Mitternacht erzählt Big Joe noch Geschichten vom Werk, vom Club und von Laurie mit siebzehn. #sprecher:erzaehler
+Jemand holt einen Schinken aus dem Kühlraum. Priya steigt auf einen Stuhl und hält eine Rede über Tragwerke. Alle klatschen. #sprecher:erzaehler #musik:ironwood.feier
+Hank, der sonst drei Wörter am Tag sagt, erzählt Mama, was aus jedem geworden ist. Der Reihe nach, mit Jahreszahlen. #sprecher:erzaehler
+Laurie kam mit neun zum ersten Mal her, an der Hand ihres Vaters. Hat das Stahlbrett angefasst und gesagt: Das ist kalt. #sprecher:bigJoe #stimmung:froh
+Den Pokal von 2001 hatte ich schon gekauft. Vorher. So sicher war ich. #sprecher:bigJoe
+Wo ist er? #sprecher:mutter #musik:aus
+Im Schrank. Bei mir zu Hause. Ich hab ihn nicht zurückgeben können. Und hinstellen auch nicht. #sprecher:bigJoe #stimmung:traurig
+Mama legt ihm die Hand auf den Arm. Mehr nicht. #sprecher:erzaehler #pause:2
+Du hast Mama noch nie so gesehen: rote Wangen, die Ärmel hochgeschoben, mitten unter Leuten, die sie Laurie nennen. #sprecher:erzaehler #musik:ironwood.feier
+Um eins singt jemand. Um halb zwei schläft Juno auf zwei Stühlen. #sprecher:erzaehler
 ~ setzeZustand("ironwood.bigJoe", 1.4, "zustand.schlechtGeschlafen")
-Du hast das nicht geplant, {held}. Aber morgen wird er müde sein. #sprecher:ambrose
-Das ist kein Trick. Das ist ein Fest. #sprecher:ambrose
+Du hast das nicht geplant, {held}. Aber morgen wird er müde sein. Das ist kein Trick. Das ist ein Fest. #sprecher:ambrose
 -> END
 
 // ---------------------------------------------------------------- Mama

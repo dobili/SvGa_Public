@@ -51,12 +51,12 @@ Abschied (Kapitel 66). Sonst wird er gezeigt.
 
 - Niemand ist einfach böse. Victor steht unter Druck. Sein Vater hat aufgehört, mit ihm zu
   spielen, weil er dachte, er halte ihn auf. Dr. Lin hatte früher acht Kinder im Keller und jetzt
-  vierzig. Nova unterschrieb mit vierzehn. Kade Sterling war „mal richtig gut, in der achten
+  vierzig. Novas Eltern unterschrieben, als sie vierzehn war. Kade Sterling war „mal richtig gut, in der achten
   Klasse“. Coach Delgado unterschreibt beim Konzern, weil das Geld für den Bus fehlt.
 - Der Geist hat einen eigenen Fehler und einen eigenen Weg, und beides wird überraschend
   aufgelöst: Sein Opfer von 1858 war richtig; er verlor danach die Nerven.
 - Drei Paare schweigen einander aus demselben Grund an und finden sich wieder: Ambrose und Hale,
-  Mama und Big Joe, Victor und sein Vater. Jeder dachte, der andere sei enttäuscht.
+  Mama und Big Joe, Victor und sein Vater. Jeder dachte, der andere schweigt.
 - Der Schluss ist kein Sieg über einen Feind, sondern ein Finale zweier Freunde und ein Abschied.
 
 **Regeln gegen Plumpheit:**
@@ -67,8 +67,8 @@ Abschied (Kapitel 66). Sonst wird er gezeigt.
 | Figuren sagen die Moral auf.                         | Leitsatz 1 fällt zweimal. Die Antwort auf die Tische spricht Dr. Lin aus, die sie mag: „Sie zeigen, wo der Fehler war. Sie zeigen nicht, warum man Angst hatte.“                                                               |
 | Victor taut zu früh auf.                             | Je Akt genau ein Schritt (Abschnitt 5.3). Er lacht zum ersten Mal in Akt 4.                                                                                                                                                    |
 | Jeder Clubchef ist nett und weise.                   | Jeder hat eine Schwäche, die auch im Gespräch stört, und der Held gewinnt genau an dieser Stelle (Abschnitt 6).                                                                                                                |
-| Ambrose belehrt ohne Pause.                          | Er irrt, ist eifersüchtig, lässt den Helden im Stich, schämt sich und bittet um Verzeihung. In jedem Akt hat der Held einmal recht und er nicht.                                                                               |
-| Alles wird gut, niemand verliert etwas.              | Der Pavillon in Riverton und die Kantine in Ironwood bleiben verloren. Dr. Lin verliert ihre Stelle, Nova ihre Titel. Die Fernpartie endet nicht makellos. Ambrose geht.                                                       |
+| Ambrose belehrt ohne Pause.                          | Er irrt, ist gekränkt, lässt den Helden im Stich, schämt sich und bittet um Verzeihung. In Akt 1 bis 3 hat der Held je einmal recht und er nicht; in Akt 4 gibt er ab („Ich weiß es nicht“).                                   |
+| Alles wird gut, niemand verliert etwas.              | Der Pavillon in Riverton und die Kantine in Ironwood bleiben verloren. Dr. Lin gibt ihre Stelle auf, Nova ihre Titel. Die Fernpartie endet nicht makellos. Ambrose geht.                                                       |
 | Der Held gewinnt immer aus eigener Kraft.            | In Port Delacroix spielt der Held einen fremden Zug und gibt die Partie selbst auf. Im Finale macht der Held einen Fehler, den niemand ihm sagt.                                                                               |
 
 ## 4. Spannungsbogen über das ganze Spiel
@@ -83,7 +83,7 @@ und die Auswahl der Bilder (Einzelheiten je Ort in `20_Ortsblaetter.md`).
 | 1   | 9       | Victor                           | Niederlage ohne Mühe; Ambrose erschrickt über den Namen                | kalt, kurz, ein Stich               | 4        |
 | 1   | 10      | Weg nach Cedar Creek             | Erster Weg zu Fuß mit Juno                                             | frei, Sommerende                    | 2        |
 | 1   | 11–16   | Cedar Creek                      | Archiv, 1858, Sternennacht, „Lass mich“, der Wunsch                    | still, forschend, dann entschlossen | 3        |
-| 2   | 17–22   | Riverton                         | Bildschirmtische, Mr. Odums Pavillon, London 1851, das letzte Spiel    | laut, nass, lebendig, dann Verlust  | 3 → 4    |
+| 2   | 17–22   | Bahndamm, Riverton               | Bildschirmtische, Mr. Odums Pavillon, London 1851, das letzte Spiel    | laut, nass, lebendig, dann Verlust  | 3 → 4    |
 | 2   | 23–24   | Verbot, Kanalweg, Eisenbrücke    | „Nicht Ironwood“; J. H. auf jeder Niete                                | leicht, darunter etwas Verlassenes  | 2        |
 | 2   | 25–28   | Ironwood                         | Mamas Zimmer, der leere Umschlag, Mamas Partie, das erste Opfer        | schwer, rußig, dann Erlösung        | 4        |
 | 2   | 29      | Der Kauf                         | Kantine vermietet; Victor fragt im Schnee nach der richtigen Seite     | bitter, offen                       | 4        |
@@ -101,12 +101,12 @@ und die Auswahl der Bilder (Einzelheiten je Ort in `20_Ortsblaetter.md`).
 
 Regeln für den Bogen:
 
-- Nach jedem Abschnitt mit Spannung 4 oder 5 folgt ein Weg oder Ort mit 2. Wege sind die Pausen.
-- Jeder Akt endet mit einer offenen Frage. Akt 1: Was will Ambrose? Akt 2: Auf welcher Seite steht
+- Nach jedem Abschnitt mit Spannung 4 oder 5 fällt die Spannung um mindestens eine Stufe, in Akt 1 und 2 bis auf 2. Wege sind die Pausen.
+- Jeder Akt endet mit einer offenen Frage. Akt 1: Was hätte Hale gezogen? Akt 2: Auf welcher Seite steht
   Victor? Akt 3: Was hat Hale geantwortet? Akt 4 beantwortet alle drei.
 - Jeder Akt hat seine eine Frage im Inneren. Akt 1: „Was hängt?“ Akt 2: „Stimmt es?“ Akt 3: „Und
   ich?“ Akt 4: „Bleib.“
-- Der Tiefpunkt (Port Delacroix) ist der einzige Abschnitt ohne Ambrose: keine Karten von ihm,
+- Im Tiefpunkt (Port Delacroix) fehlt Ambrose über einen ganzen Abschnitt, sonst nur im Finale: keine Karten von ihm,
   keine Kommentare, sein Thema fehlt. Die Stille ist das Mittel.
 
 ## 5. Figurenbögen
@@ -142,26 +142,26 @@ Gehsteig in Ghost Town, Arenatreppe). Sonst steht er.
 
 | Akt | Will                    | Fürchtet            | Sichtbar durch                                                                                                                                                                                                                 |
 | --- | ----------------------- | ------------------- | ------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------ |
-| 1   | fertig werden           | den Vater           | Spielt „wie eine Uhr“. Gibt nicht die Hand. Verliert selbst täglich gegen das Programm. Drei Sekunden Zögern auf „Macht dir das eigentlich Spaß?“                                                                              |
+| 1   | fertig werden           | den Vater           | Spielt „wie eine Uhr“. Gibt nicht die Hand. Verliert selbst fast immer gegen das Programm („Remis. Einmal im Monat.“). Drei Sekunden Zögern auf „Macht dir das eigentlich Spaß?“                                               |
 | 2   | recht behalten          | dass er unrecht hat | Spricht die Sätze des Vaters nach; „Mein Vater sagt ja.“ – „Vater, vielleicht …“ Kommt ohne Tablet: „Sag mir, ob ich auf der richtigen Seite stehe.“                                                                           |
 | 3   | das Richtige tun        | es laut zu sagen    | Übt Freundlichkeit wie etwas Neues. Gibt die Spielberichte heimlich weiter. „Das kann man nicht messen.“ Eine Nachricht: „Ich glaube dir. Wegen des Bretts.“                                                                   |
 | 4   | einmal verlieren dürfen | nichts mehr         | Verliert gegen Ward, weil er dem Gerät glaubt. Macht absichtlich einen schlechten Zug: „Luftig.“ Lacht über eine Gabel. Erfährt von Ambrose. Stellt sich neben Nova. Verliert das Finale und rennt vor Freude zu seinem Vater. |
 
 ### 5.4 Slick
 
-| Akt    | Will                               | Fürchtet                     | Sichtbar durch                                                                                                               |
-| ------ | ---------------------------------- | ---------------------------- | ---------------------------------------------------------------------------------------------------------------------------- |
-| 2      | den Pavillon seines Lehrers halten | dass er nur ein Großmaul ist | Verstummt bei Mr. Odum. In der Partie bleibt seine Hand stehen; danach spielt er zum ersten Mal langsam. Im Wohnwagen leise. |
-| 3      | weitermachen, irgendwo             | dass die Kinder wegbleiben   | Postkarte: Der Club spielt unter der Steinbrücke, „Dach haben wir, Wände nicht“. Mira hat seinen Dosenpokal nachgebaut.      |
-| 4      | etwas Eigenes                      | nichts mehr                  | Crossroads: redet langsamer, baut wieder Dosenpokale („Meine sind schief“), nimmt den Springer zurück auf den Stein.         |
-| Epilog | —                                  | —                            | Die Steinplatte mit der Mulde liegt unter der Brücke, der Springer darauf.                                                   |
+| Akt    | Will                               | Fürchtet                     | Sichtbar durch                                                                                                                                                                                    |
+| ------ | ---------------------------------- | ---------------------------- | ------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------- |
+| 2      | den Pavillon seines Lehrers halten | dass er nur ein Großmaul ist | Verstummt bei Mr. Odum. In der Partie bleibt seine Hand stehen; danach spielt er zum ersten Mal langsam. Im Wohnwagen leise.                                                                      |
+| 3      | weitermachen, irgendwo             | dass die Kinder wegbleiben   | Postkarte: Der Club spielt unter der Steinbrücke, „Dach haben wir, Wände nicht“. Mira hat sich mit sechs einen Dosenpokal gebaut, nach einem Zeitungsfoto von seinem Regal; er schickt ihr einen. |
+| 4      | etwas Eigenes                      | nichts mehr                  | Crossroads: redet langsamer, baut wieder Dosenpokale („Meine sind schief“), nimmt den Springer zurück auf den Stein.                                                                              |
+| Epilog | —                                  | —                            | Die Steinplatte mit der Mulde liegt unter der Brücke, der Springer darauf.                                                                                                                        |
 
 ### 5.5 Nova (das Gesicht des Konzerns)
 
 | Akt | Will                   | Fürchtet                       | Sichtbar durch                                                                                                                                                                |
 | --- | ---------------------- | ------------------------------ | ----------------------------------------------------------------------------------------------------------------------------------------------------------------------------- |
 | 2   | ihren Vertrag erfüllen | aufzufallen                    | Zwei Gesichter, Kamera an und aus; setzt sich in den Regen.                                                                                                                   |
-| 3   | dass es niemand merkt  | dass sie ohne Gerät nichts ist | „Ich weiß nicht mehr, welche Züge meine sind.“ – „Die haben Anwälte. Ich hab ein Gesicht.“                                                                                    |
+| 3   | dass es niemand merkt  | dass sie ohne Gerät nichts ist | „Ich weiß nicht mehr, welche von den Zügen meine sind.“ – „Die haben Anwälte. Ich hab ein Gesicht.“                                                                           |
 | 4   | frei sein              | nichts mehr                    | Zu großer Pullover statt weißer Jacke. Haare zurückgebunden, der Stöpsel offen neben der Uhr. Stellt einen Bauern ein und findet sich. Gibt die Titel zurück. Echtes Lächeln. |
 
 ### 5.6 Weitere Bögen
@@ -207,9 +207,8 @@ Hauptgeschichte reagiert, ohne dass der Spieler sie vorantreiben muss.
 - Der Spieler muss nichts davon sehen, um weiterzukommen.
 
 Im Roman angelegt: Mrs. Calloway (zwei Stühle, dann ein Tisch dazwischen), Carla Martínez (hört
-auf, schaut zu, spielt Brett drei), Hector (ungelöste Tischsets), Ada und die Kasse, Tessa, Mr.
-Dunmore, die Zwillinge, Mr. Kettering; Mr. Harlan (niemand spielt ohne Uhr mit ihm), Eli am
-Bildschirmtisch, Mrs. Albescu, Noor und ihr Wandbild; Remy, Batiste; Dot und Margaret; Mr. Pruitt.
+auf, schaut zu, spielt Brett drei), Hector (ungelöste Tischsets), die Zwillinge, Mr. Kettering; Mr. Harlan (ohne Uhr gewinnt er immer, deshalb spielt niemand mehr mit ihm), Eli am
+Bildschirmtisch, Mrs. Albescu, Noor und ihr Wandbild; Remy, Batiste; Dot und Margaret; Mr. Pruitt. Aus den Ortsblättern (im Roman namenlos oder nicht vorhanden): Ada und die Kasse, Tessa, Mr. Dunmore.
 
 ## 8. Zeit für die Geschichte
 
@@ -233,23 +232,23 @@ Abschnitt 6 der Befunde, T1 bis T28).
 
 **Leitmotive** (Tonstufen im Klangplan):
 
-| Motiv           | Wo zuerst                | Was damit geschieht                                                                                                                                                        |
-| --------------- | ------------------------ | -------------------------------------------------------------------------------------------------------------------------------------------------------------------------- |
-| Ambrose         | Dachboden (vier Töne)    | Vollständig im Archiv. Entsteht aus dem Ton, den sein Vater stimmt. Enthält einen fremden Ton, den es in der Garage verliert. Schließt in Ghost Town mit einem Schlusston. |
-| Victor und Hale | Clubraum                 | Dieselben Töne wie Ambrose, kalt gespielt. Am Ende von Akt 2 erklingen beide gleichzeitig. Hale auf dem Horn. Victor wird an der Bergstation warm.                         |
-| Aha             | „Niemand“ (Kapitel 3)    | Bei jeder gelernten Einsicht. Letzter Klang des Spiels.                                                                                                                    |
-| Konzern, ZERO   | Bus (Kapitel 16)         | Ein glatter Ton, dann eine schöne, perlende Folge. Verschwindet nach der Aussage aus dem Spiel.                                                                            |
-| Mama            | Elm Street               | Fünf Töne, bricht am leeren Blatt ab, vollständig, als sie den Läufer sieht.                                                                                               |
-| {held}          | Clubkampf Port Delacroix | Drei aufsteigende Töne, zum ersten Mal ohne Ambrose. Im Halbfinale werden sie mit Ambroses Thema eine Melodie.                                                             |
-| Nachtstück      | Sternennacht             | Dreimal im Spiel: Cedar Creek, Camp, Ghost Town.                                                                                                                           |
-| Nova            | Runde 3                  | Ihr eigenes Thema, zum ersten Mal, als sie ohne Gerät spielt.                                                                                                              |
+| Motiv           | Wo zuerst                | Was damit geschieht                                                                                                                                                                                  |
+| --------------- | ------------------------ | ---------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------- |
+| Ambrose         | Dachboden (vier Töne)    | Vollständig im Archiv. Entsteht aus dem Ton, den sein Vater stimmt. Enthält einen fremden Ton, den es in der Garage verliert. Schließt in Ghost Town mit einem Schlusston.                           |
+| Victor und Hale | Clubraum                 | Dieselben Töne wie Ambrose, kalt gespielt. Am Ende von Akt 2 erklingen beide gleichzeitig. Hale auf dem Horn. Victor wird an der Bergstation warm.                                                   |
+| Aha             | „Niemand“ (Kapitel 3)    | Bei jeder gelernten Einsicht. Letzter Klang des Spiels.                                                                                                                                              |
+| Konzern, ZERO   | Bus (Kapitel 16)         | Ein glatter Ton, dann eine schöne, perlende Folge. Das Konzernmotiv verschwindet nach der Aussage (Kapitel 62); die Folge von ZERO reißt im Halbfinale ab, als der Schuh gefunden wird (Kapitel 63). |
+| Mama            | Elm Street               | Fünf Töne, bricht am leeren Blatt ab, vollständig, als sie den Läufer sieht.                                                                                                                         |
+| {held}          | Clubkampf Port Delacroix | Drei aufsteigende Töne, zum ersten Mal ohne Ambrose. Im Halbfinale werden sie mit Ambroses Thema eine Melodie.                                                                                       |
+| Nachtstück      | Sternennacht             | Dreimal im Spiel: Cedar Creek, Camp, Ghost Town.                                                                                                                                                     |
+| Nova            | Runde 3                  | Ihr eigenes Thema, zum ersten Mal, als sie ohne Gerät spielt.                                                                                                                                        |
 
 **Wiederkehrende Bilder:** Staub, der im Fensterlicht hängt (Dachboden, Saloon, Schluss). Der König
 mit dem schiefen Kreuz. Hände in den Ärmeln (Mama, Nova). Der schiefe Kopf (Hale, Victor). Nieten
 mit „J. H.“ (Eisenbrücke, Ironwood, Canyon). Die Stellung, die niemand anrührt. Zwei Stühle. Die
 Sterne über einem Steg. Jemand rennt mit einem Blatt Papier.
 
-**Leitwort „Später“:** In Akt 1 dreimal (erster Tag, Archiv, Steg). Hales Brief dreht es um (er
+**Leitwort „Später“:** In Akt 1 dreimal gesprochen (erster Tag, Archiv, Steg) und einmal gedacht (im Bus, letzter Satz des Akts). Hales Brief dreht es um (er
 hat sich dafür geschämt). Letzte Zeile von Ambrose: „Dieses eine Mal nicht später.“
 
 ## 10. Was daraus für die anderen Arbeiten folgt

@@ -849,7 +849,7 @@ Schwarz am Zug.
 
 **Ende von Akt 3.**
 
-`[Klang: Clubkampf: Miras Motiv als Sturm (schnell, hell, Gitarre und Händeklatschen), darunter das Thema des Helden, ruhig; die beiden laufen gegeneinander. Stiller Zug: Miras Motiv bricht ab. „Atme“: ein einzelner langer Ton. Danach beide Themen miteinander, zäh und schön. Sieg: Fanfare, dann Miras „Noch mal. Jetzt.“ ohne Musik. Nacht am Motel: das Nachtstück von Cedar Creek, weiter und leerer instrumentiert. Victors Nachricht: sein Thema, mit einem falschen, maschinellen Ton am Ende. Abfahrt: Mamas Thema; Schluss auf dem Endspielmotiv (ein langsames, kaltes, schönes Thema für Summit City, hier nur vier Töne).]`
+`[Klang: Clubkampf: Miras Motiv als Sturm (schnell, hell, Gitarre und Händeklatschen), darunter das Thema des Helden, ruhig; die beiden laufen gegeneinander. Stiller Zug: Miras Motiv bricht ab. „Atme“: ein einzelner langer Ton. Danach beide Themen miteinander, zäh und schön. Sieg: Fanfare, dann Miras „Noch mal. Jetzt.“ ohne Musik. Nacht am Motel: ein eigenes Stück (Slide-Gitarre mit dem Thema des Helden, weit und leer); das Nachtstück von Cedar Creek bleibt bei seinen drei Stellen. Victors Nachricht: sein Thema, mit einem falschen, maschinellen Ton am Ende. Abfahrt: Mamas Thema; Schluss auf dem Endspielmotiv (ein langsames, kaltes, schönes Thema für Summit City, hier nur vier Töne).]`
 `[Bild: Garage voller Menschen. Nadel als Kupferkaktus mit Blüte. Miras Opfer in Folge; der stille Zug. Mira sitzt auf ihren Fingern. Nachthimmel bis zum Boden. Zwei Nachrichten auf dem Bildschirm (Großansicht). Reisebrett mit der Stellung der Fernpartie.]`
 `[Karte: Garage als Clubkampf (Zustand). Motel bei Nacht mit Sternenhimmel. Das Tablet liegt als Gegenstand im Inventar, grau.]`
 

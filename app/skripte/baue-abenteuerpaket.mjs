@@ -87,6 +87,33 @@ async function kopiereOberflaeche() {
 }
 
 /**
+ * Musik und Geräusche aus dem privaten Repository (Ordner musik/ und klang/, Atmosphäre T1 und T2,
+ * docs/spiel/23_Technik_Atmosphaere.md): m4a und ogg, je in ihrer Paketgruppe. Ohne Ordner nichts;
+ * das Spiel bleibt dann still (abenteuer/ton/tonspieler.ts).
+ */
+async function kopiereTon(ordner) {
+  const quelle = join(PRIVAT, ordner);
+  if (!existsSync(quelle)) return;
+  const namen = (await readdir(quelle)).filter((d) => /\.(m4a|ogg)$/.test(d));
+  for (const name of namen.sort()) {
+    await schreibe(`${ordner}/${name}`, await readFile(join(quelle, name)), ordner);
+  }
+}
+
+/**
+ * Bilder der Großansicht im Dialog (Atmosphäre T7, `#bild:kennung`): WebP aus dem privaten Ordner
+ * bilder/, Gruppe grafik. Ohne Ordner nichts; die Dialogzeile erscheint dann ohne Bild.
+ */
+async function kopiereBilder() {
+  const quelle = join(PRIVAT, "bilder");
+  if (!existsSync(quelle)) return;
+  const namen = (await readdir(quelle)).filter((d) => d.endsWith(".webp"));
+  for (const name of namen.sort()) {
+    await schreibe(`bilder/${name}`, await readFile(join(quelle, name)), "grafik");
+  }
+}
+
+/**
  * Bilder, die es nur mit der gekauften Grafik gibt (Figuren im Format von LimeZu): alle PNG aus
  * dem privaten Ordner; ohne ihn nichts, das Spiel nimmt dann die Platzhalter.
  */
@@ -335,6 +362,9 @@ async function main() {
   await kopierePrivatordner("tiere");
   await kopierePrivatordner("portraets");
   await kopierePrivatordner("grafik");
+  await kopiereTon("musik");
+  await kopiereTon("klang");
+  await kopiereBilder();
   await kopierePrivatordner("grafik/karten", (name) => ladbar.hintergruende.has(name));
   await schreibeMoebel();
   await schreibeGrafik("grafik/platzhalter.png", platzhalterKacheln);

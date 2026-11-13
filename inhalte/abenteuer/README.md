@@ -29,7 +29,25 @@ Hintergrund: `docs/spiel/04_Architektur.md`, Abschnitt 2 und 9.
 
 - Knoten `=== name ===` sind die Einsprungpunkte; Quests warten auf „datei.knoten“.
 - Tags am Zeilenende steuern die Anzeige: `#sprecher:ambrose` (Porträt und Name),
-  `#stimmung:streng` (Porträtvariante), `#klang:knarren` (Geräusch), `#pause`.
+  `#stimmung:streng` (Porträtvariante), `#pause` (eine Sekunde) oder `#pause:3` (Sekunden,
+  höchstens 10; „Weiter“ ist so lange gesperrt).
+- Ton (T1, T2): `#musik:kennung` wechselt die Musik der Szene (Datei `musik/<kennung>.m4a`, sonst
+  `.ogg`), `#musik:aus` blendet aus, `#musik:karte` kehrt zur Musik der Karte zurück,
+  `#musik:bleibt` behält die Szenenmusik über das Dialogende hinaus (eigene Zeile, weil gleichnamige
+  Tags in einer Zeile nur den letzten gelten lassen). `#geraeusch:kennung` und `#geraeusch:aus` für
+  ein Dauergeräusch (`klang/<kennung>.m4a`), `#klang:knarren` spielt ein Geräusch einmal. Musik und
+  Geräusch einer Karte stehen in `orte.json` (`musik`, `geraeusch`). Fehlende Dateien bleiben still.
+- Bühne (T6, T9): `#licht:abend` legt für den Rest des Dialogs ein Licht über die Karte (`tag` =
+  keines; am Dialogende kehrt das Licht der Karte zurück, Wechsel blenden in zwei Sekunden um).
+  `#figur:<objektname>:aus|halb|ein` blendet eine Figur der Karte in einer Sekunde (nur bis zum
+  Verlassen der Karte; ausgeblendet sperrt sie den Weg nicht). `#erscheint` blendet das Porträt in
+  zwei Sekunden ein, `#geist` zeigt es halb durchsichtig.
+- Porträtfassungen (T4): `#stimmung:jung|ertappt|riss|alt|lachtOhneSpott|muede` zeigt
+  `portraets/<sprecher>-<fassung>.svg` (kebab-case, etwa `mira-lacht-ohne-spott.svg`); fehlt die
+  Datei, die Grundfassung. Andere Stimmungen zeigen immer die Grundfassung.
+- Bild (T7): `#bild:kennung` zeigt `bilder/<kennung>.webp` (privater Ordner `bilder/`, höchstens
+  1024 Pixel breit) groß über der Zeile; „Weiter“ schließt es mit der Zeile. Fehlt die Datei,
+  erscheint die Zeile ohne Bild.
 - Externe Funktionen (`EXTERNAL`) führt die React-Hülle aus und schreibt in den Spielstand:
   `gibKarte(kennung)`, `setzeSzene(kennung)`, `beginnePartie(begegnung)`, `beginneAufgaben(runde)`,
   `setzeZustand(gegner, faktor, grund)`, `schalteSteckbrief(gegner, zeile)`, `gibFund(kennung)`,
@@ -44,6 +62,28 @@ Hintergrund: `docs/spiel/04_Architektur.md`, Abschnitt 2 und 9.
   (Gruppe `dialoge`). Die Ink-Quelle bleibt die Wahrheit; JSON wird nie von Hand bearbeitet.
 - Beispiel: `dialoge/de/maple-falls-dachboden.ink` (Fund des Bretts, Ambrose erwacht, erste Karte,
   Übergang in die erste Partie).
+
+## Partiemomente (`begegnungen.json`, `momente`)
+
+Eine Sprechzeile mit Porträt erscheint mitten in der Partie oben über dem Brett (Atmosphäre T5).
+Sie blockiert nichts, die Engine wartet nicht, und sie verschwindet nach einer Lesedauer oder auf
+Tipp. Jeder Moment kommt höchstens einmal je Partie.
+
+```json
+"momente": [
+  { "wenn": { "zug": 12 }, "sprecher": "ambrose", "text": "moment.clubkampf.zaehl", "klang": "herzschlag" },
+  { "wenn": { "merkmal": "schachGegen" }, "sprecher": "ambrose", "text": "moment.okafor.lassMich", "musik": "aus" }
+]
+```
+
+- `zug`: direkt nach dem n-ten Zug des Helden.
+- `merkmal` gilt für den letzten Halbzug: `schachGegen` (der Held steht im Schach),
+  `schachGegeben`, `damenTausch` (die letzte Dame verschwindet), `materialMinus3` (der Held fällt
+  auf drei Bauerneinheiten Rückstand), `geschlagen:<figur>` (der Gegner schlägt `bauer`,
+  `springer`, `laeufer`, `turm` oder `dame` des Helden).
+- Lösen mehrere Momente zugleich aus, spricht der erste der Liste; die anderen sind verbraucht.
+- `text` steht in `texte/<sprache>.json`, der Name kommt aus `figur.<sprecher>.name`; `klang` und
+  `musik` wirken wie die Dialogtags.
 
 ## Aufgabenrunden (`runden.json`)
 
@@ -77,6 +117,10 @@ Hintergrund: `docs/spiel/04_Architektur.md`, Abschnitt 2 und 9.
   Möbel beim Laden genauso um, aber ohne die Wasserregel (`oberwelt/winter.ts`), und lässt Schnee
   fallen (`oberwelt/schneefall.ts`). Blumen und Pilze bleiben bunt; `kartenbild` meldet sie in
   Winterszenen, sie gehören dort weg.
+- **Licht** (Atmosphäre T6): `licht` je Karte in `orte.json` (`tag` = kein Schleier, `abend`,
+  `nacht`, `nebel`, `dunst`, `serverblau`, `sepia`, `dunkel`) geht vor der `toenung` der Szene,
+  ohne die Szene anzufassen. `licht_zustaende` (Bedingung → Licht, der letzte passende gilt)
+  ersetzt `licht`, etwa `{"nadelGhostCanyon >= 1": "abend"}`. `setzeToenung` im Dialog geht vor.
 - **Liste für den Autor:** `python -m pipeline.abenteuer.zustaende` (Text) oder `--json`.
   `pipeline/tests/test_abenteuer_zustaende.py` prüft Lesbarkeit, bekannte Variablen, Dateinamen und
   den „Zustand:“-Satz.

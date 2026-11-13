@@ -76,7 +76,8 @@ function setzeToenung(k: Wirkungskontext, name: string): void {
   const aktuell = k.stand();
   const neu = { ...aktuell.dialogvariablen, [toenungsvariable(welt.kennung)]: name };
   k.schreibe({ ...aktuell, dialogvariablen: neu });
-  k.toenung(aktuelleToenung(welt.karte, welt.kennung, neu));
+  const eintrag = welt.ort.karten.find((x) => x.kennung === welt.kennung);
+  k.toenung(aktuelleToenung(welt.karte, welt.kennung, neu, eintrag));
 }
 
 /**

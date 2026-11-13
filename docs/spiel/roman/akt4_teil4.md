@@ -17,7 +17,7 @@ Er war so groß, dass man das andere Ufer nicht sah. Wellen wie am Meer, aber si
 nichts, nur nach Wasser. Am Ende einer Landzunge stand ein Leuchtturm, weiß mit einem roten
 Band, und davor saß ein Mann auf einem Klappstuhl und flickte ein Netz.
 
-„König der Hügel“, sagte er, als er das Brett in meinem Rucksack sah. „Kennst du das? Wer
+„König der Hügel“, sagte er, als er das Brett im Geigenkasten sah. „Kennst du das? Wer
 seinen König zuerst in die Mitte bringt, auf eines von den vier Feldern, hat gewonnen. Sonst
 alles wie immer.“ Er zog einen Faden fest. „Die Kapitäne haben das hier gespielt, wenn sie auf
 besseres Wetter gewartet haben. Der König muss in den Hafen.“
@@ -29,7 +29,7 @@ auch am Tag langsam drehte. „Wie wir alle.“
 
 Es klang nicht traurig. Ich tat, als hätte ich es nicht gehört.
 
-Am Abend desselben Tages fuhren wir in die Hauptstadt.
+Am Abend desselben Tages fuhren wir in die Hauptstadt und schliefen in einem Hotel, von dessen Fenster aus man die Arena sah.
 
 Ich hatte gedacht, Riverton sei groß. Die Hauptstadt hatte Straßen mit sechs Spuren und
 Häuser, die oben im Dunst verschwanden, und in der Mitte, auf einem Platz mit Fahnen, stand
@@ -307,8 +307,8 @@ Victor sah seinen Vater an. Dann ging er los. Quer durch die Halle, an den Repor
 an den Tischen, und stellte sich neben Nova. Nicht vor sie. Neben sie.
 
 „Ich hab es gesehen“, sagte Victor. Er hatte kein Mikrofon. Man hörte ihn trotzdem. „In
-Silicon Bay. Im Frühjahr. Ich hab gesehen, wie sie es einsetzt, und ich hab nichts gesagt.
-Vier Monate lang.“ Er schluckte. „In Summit City hatte ich selbst eines in der Tasche. Für
+Silicon Bay. Im Januar. Ich hab gesehen, wie sie es einsetzt, und ich hab es keinem gesagt,
+der etwas hätte tun können. Ein halbes Jahr lang.“ Er schluckte. „In Summit City hatte ich selbst eines in der Tasche. Für
 das Training, haben sie gesagt. Ich hab es getragen.“
 
 Er sah zu mir herüber.
@@ -511,8 +511,8 @@ nicht sehen konnte.
 Er sah ihn nicht.
 
 Er sah ihn drei Minuten lang nicht, mit knetenden Händen, mit einem Gesicht, das mir wehtat.
-Er hatte ihn in der Tasche gehabt, zwei Jahre lang, in einem Schuh, und er hatte nie lernen
-müssen, ihn zu suchen.
+Er hatte ihn bei sich getragen, zwei Jahre lang, erst in der Tasche und zuletzt in einem
+Schuh, und er hatte nie lernen müssen, ihn zu suchen.
 
 Er zog den König.
 
@@ -576,7 +576,7 @@ Am anderen Ende des Ganges standen zwei.
 
 Ich wollte nicht zuhören. Aber der Gang trug jedes Wort.
 
-„… vierzehn Jahre“, sagte Graham Hale. Er hatte kein Telefon in der Hand. Ich sah ihn zum
+„… acht Jahre“, sagte Graham Hale. Er hatte kein Telefon in der Hand. Ich sah ihn zum
 ersten Mal ohne. Seine Hände wussten nicht, was sie tun sollten; er hatte sie in die
 Jackentaschen gesteckt und wieder herausgenommen. „Ich habe jede Partie nachgerechnet. Jede.
 Ich habe gedacht, das ist es, was ich dir geben kann. Ich bin kein Spieler. Ich bin
@@ -694,7 +694,7 @@ Neben mir stand niemand.
 
 Ich zog einen Bauern in die Mitte. Weil das alle tun.
 
-Victor antwortete. Spanisch. Dieselbe Eröffnung wie vor einem Jahr, in einem Klassenzimmer mit
+Victor antwortete, und er ließ mich ins Spanische. Dieselbe Eröffnung wie vor einem Jahr, in einem Klassenzimmer mit
 Pokalen von 1994. Nur dass ich diesmal alle Figuren hatte.
 
 Er sah auf und grinste. Er hatte es mit Absicht getan.
@@ -1095,7 +1095,7 @@ Im Herbst wurden die Ahornbäume an der Birch Lane wieder rot. Erst an den Ränd
 Ich hörte den Wasserfall noch immer. Die Maklerin hatte sich geirrt, und ich war froh darüber.
 
 Auf Mrs. Calloways Veranda standen zwei Stühle und dazwischen ein Tisch, und auf dem Tisch ein
-Brett, und sie verlor jeden Nachmittag gegen einen Siebenjährigen und beschwerte sich
+Brett, und sie verlor jeden Nachmittag gegen einen Achtjährigen und beschwerte sich
 darüber bei jedem, der vorbeikam. Im Diner hing ein zweites Tischset gerahmt an der Wand.
 Carla Martínez saß dienstags in Raum zwölf, neben dem Brett mit dem Radiergummi, und brachte
 den Neuen das Zählen bei. Der Bildschirm im Flur zeigte den Vertretungsplan.

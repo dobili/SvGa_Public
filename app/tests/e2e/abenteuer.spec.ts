@@ -47,6 +47,13 @@ test("vom Dachboden in die erste Partie und zurück", async ({ page }) => {
   await expect(page.getByTestId("abenteuer-menue").getByTestId("abenteuer-name")).toHaveValue(
     "Kim",
   );
+  // Musik und Geräusche (T1, T2): Regler und Stummschalter; stumm sperrt die Regler. Es gibt noch
+  // keine Tondatei, das Spiel läuft trotzdem (fehlende Dateien bleiben still).
+  const ton = page.getByTestId("abenteuer-ton");
+  await expect(ton.getByTestId("abenteuer-ton-musik")).toHaveValue("60");
+  await ton.getByTestId("abenteuer-ton-stumm").check();
+  await expect(ton.getByTestId("abenteuer-ton-musik")).toBeDisabled();
+  await ton.getByTestId("abenteuer-ton-stumm").uncheck();
   await page.getByRole("button", { name: "Weiterspielen" }).click();
   await expect(page.locator(".abenteuer-welt canvas")).toBeVisible({ timeout: 30000 });
   await page.waitForTimeout(800);

@@ -77,6 +77,13 @@ export function Dialog({
     // Nur bei einer neuen Zeile, nicht wenn die Oberwelt neue Rückrufe reicht.
     // eslint-disable-next-line react-hooks/exhaustive-deps
   }, [letzteZeile]);
+  // Ein Knoten ohne Zeile (nur Wirkungen, dann END) endet sofort; ohne diese Meldung bliebe der
+  // Aufrufer offen (Befund beim Partiemoment, T11).
+  useEffect(() => {
+    if (schritt.art === "ende") beiEnde(geschichte.variablen());
+    // Nur beim Öffnen.
+    // eslint-disable-next-line react-hooks/exhaustive-deps
+  }, []);
   /** Meldet jeden Knoten, der neu besucht wurde (Besuchszahl, dialog/geschichte.ts). */
   const meldeKnoten = () => {
     for (const knoten of geschichte.neueKnoten()) beiKnoten(knoten);

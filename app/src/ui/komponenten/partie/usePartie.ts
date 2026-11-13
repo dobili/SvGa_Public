@@ -73,6 +73,11 @@ export interface Partiesteuerung {
   readonly spieleLeser: (san: string) => void;
   readonly nimmZurueck: () => void;
   readonly gibAuf: () => void;
+  /**
+   * Hält die Uhr an (true) oder lässt sie weiterlaufen (false), etwa solange ein Dialog des
+   * Schach-Abenteuers über dem Brett liegt (geführter Moment, docs/spiel/23, T11).
+   */
+  readonly halteUhr: (an: boolean) => void;
 }
 
 /**
@@ -294,5 +299,7 @@ export function usePartie(id: string): Partiesteuerung {
       ),
     nimmZurueck: () => aendereNeueste(id, (p) => nimmZurueckMitUhr(p, Date.now())),
     gibAuf: () => aendereNeueste(id, (p) => gibAuf(pausiere(p, Date.now()))),
+    halteUhr: (an) =>
+      aendereNeueste(id, (p) => (an ? pausiere(p, Date.now()) : setzeUhrFort(p, Date.now()))),
   };
 }

@@ -166,39 +166,47 @@
           "type": "boolean"
         },
         "momente": {
-          "description": "Partiemomente (Atmosphäre T5, docs/spiel/23): eine Sprechzeile über dem Brett, ausgelöst nach dem n-ten Zug des Helden oder von einem Merkmal des letzten Halbzugs; jeder Moment höchstens einmal je Partie, die Engine wartet nicht. Merkmale: schachGegen (der Held steht im Schach), schachGegeben, damenTausch (die letzten Damen verschwinden), materialMinus3 (der Held fällt auf drei Bauerneinheiten zurück), geschlagen:<figur> (der Gegner schlägt eine Figur des Helden: bauer, springer, laeufer, turm, dame)",
+          "description": "Partiemomente (Atmosphäre T5 und T11, docs/spiel/23): eine Sprechzeile (text) oder ein Ink-Dialog (dialog, Uhr des Helden hält an) über dem Brett. Ausgelöst, wenn alle Bedingungen in wenn gelten; jeder Moment höchstens einmal je Partie, die Engine wartet nicht. Merkmale: schachGegen (der Held steht im Schach), schachGegeben, damenTausch (die letzten Damen verschwinden), materialMinus3 (der Held fällt auf drei Bauerneinheiten zurück), geschlagen:<figur> (der Gegner schlägt eine Figur des Helden: bauer, springer, laeufer, turm, dame); vor dem Zug des Helden: koeder (ein Bauer ist schlagbar, danach setzt der Gegner in höchstens zwei Zügen matt), turmopfer (ein Turm kann neben den gegnerischen König ziehen und ginge im Abtausch verloren)",
           "type": "array",
-          "maxItems": 12,
+
           "items": {
             "type": "object",
             "additionalProperties": false,
-            "required": ["wenn", "sprecher", "text"],
+            "required": ["wenn", "sprecher"],
+            "oneOf": [{ "required": ["text"] }, { "required": ["dialog"] }],
             "properties": {
               "wenn": {
-                "oneOf": [
-                  {
-                    "type": "object",
-                    "additionalProperties": false,
-                    "required": ["zug"],
-                    "properties": {
-                      "zug": { "type": "integer", "minimum": 1, "maximum": 150 }
-                    }
+                "description": "Alle angegebenen Bedingungen müssen gelten",
+                "type": "object",
+                "additionalProperties": false,
+                "minProperties": 1,
+                "properties": {
+                  "zug": {
+                    "description": "direkt nach dem n-ten Zug des Helden",
+                    "type": "integer",
+                    "minimum": 1,
+                    "maximum": 150
                   },
-                  {
-                    "type": "object",
-                    "additionalProperties": false,
-                    "required": ["merkmal"],
-                    "properties": {
-                      "merkmal": {
-                        "type": "string",
-                        "pattern": "^(schachGegen|schachGegeben|damenTausch|materialMinus3|geschlagen:(bauer|springer|laeufer|turm|dame))$"
-                      }
-                    }
+                  "abZug": {
+                    "description": "frühestens, wenn der Held so viele Züge gespielt hat",
+                    "type": "integer",
+                    "minimum": 1,
+                    "maximum": 150
+                  },
+                  "merkmal": {
+                    "type": "string",
+                    "pattern": "^(schachGegen|schachGegeben|damenTausch|materialMinus3|koeder|turmopfer|geschlagen:(bauer|springer|laeufer|turm|dame))$"
+                  },
+                  "uhrUnter": {
+                    "description": "Sekunden auf der Uhr des Helden: nur wenn weniger übrig sind (Partie mit Uhr)",
+                    "type": "integer",
+                    "minimum": 1,
+                    "maximum": 3600
                   }
-                ]
+                }
               },
               "sprecher": {
-                "description": "Figur wie im Dialogtag #sprecher (Porträt und Name)",
+                "description": "Figur wie im Dialogtag #sprecher (Porträt und Name); bei dialog die Figur, die den Moment auslöst",
                 "type": "string",
                 "pattern": "^[a-z][a-zA-Z0-9]*$"
               },
@@ -206,6 +214,11 @@
                 "description": "Textschlüssel der Spieltexte",
                 "type": "string",
                 "pattern": "^moment\\.[a-z][a-zA-Z0-9]*\\.[a-z][a-zA-Z0-9]*$"
+              },
+              "dialog": {
+                "description": "Ink-Knoten (Datei.Knoten) für einen Dialog mit Wahlen; er führt keinen Zug aus",
+                "type": "string",
+                "pattern": "^[a-z][a-z0-9-]*\\.[a-z][a-z0-9_]*$"
               },
               "klang": {
                 "description": "Geräusch einmal, wie #klang (klang/<kennung>.m4a)",

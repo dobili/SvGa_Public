@@ -188,3 +188,12 @@
     transform: none;
   }
 }
+
+/* Geführter Moment (T11, anbindung/Momentdialog.tsx): Der Dialog liegt über dem ganzen Brett und
+   nimmt die Tipps, solange er offen ist. */
+.abenteuer-momentdialog {
+  position: fixed;
+  z-index: 30;
+  inset: 0;
+  background: rgba(0, 0, 0, 0.25);
+}

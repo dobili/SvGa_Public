@@ -10,12 +10,16 @@
  * Neuladen kommt ein schon gezeigter Moment nicht wieder.
  * Merkmale gelten für den letzten Halbzug (Flanke, nicht Zustand): `materialMinus3` löst aus, wenn
  * der Held mit diesem Halbzug auf drei Bauerneinheiten Rückstand fällt, nicht bei jedem Zug danach.
+ * Geführte Momente (T11): `koeder` und `turmopfer` gelten vor dem Zug des Helden
+ * (regeln/gelegenheiten.ts); `uhrUnter` vergleicht die Uhr des Helden. Weil die Uhr nicht im
+ * Verlauf steht, merkt sich die Anzeige solche Momente selbst (anbindung/Momentzeile.tsx).
  * Buchbezug: Kapitel 1, Faustwerte der Figuren (Bauer 1, Springer und Läufer 3, Turm 5, Dame 9).
  * Abhängigkeiten: schach/stellung.ts, daten/laden.ts (Typ der Begegnung).
  */
 import type { Color, Role } from "chessops/types";
 import { FIGURENWERT, gegner, stellungAusFen, type Stellung } from "../../schach/stellung";
 import type { Begegnungsdaten } from "../daten/laden";
+import { gelegenheit } from "./gelegenheiten";
 
 /** Ein Moment einer Begegnung, wie in begegnungen.json. */
 export type Partiemoment = NonNullable<Begegnungsdaten["momente"]>[number];
@@ -28,7 +32,12 @@ export interface Partieverlauf {
   readonly vomHelden: readonly boolean[];
   /** Farbe des Helden. */
   readonly held: Color;
+  /** Restzeit des Helden jetzt (ms); fehlt ohne Uhr. Gilt nur für den letzten Halbzug. */
+  readonly uhrHeldMs?: number;
 }
+
+/** Millisekunden je Sekunde (für `uhrUnter`). */
+const MS_JE_SEKUNDE = 1000;
 
 /** Rückstand in Bauerneinheiten, ab dem `materialMinus3` auslöst. */
 const RUECKSTAND = 3;
@@ -103,6 +112,11 @@ export function merkmalTrifft(merkmal: string, verlauf: Partieverlauf, h: number
   if (merkmal === "materialMinus3") {
     return bilanz(s.vor, verlauf.held) > -RUECKSTAND && bilanz(s.nach, verlauf.held) <= -RUECKSTAND;
   }
+  if (merkmal === "koeder" || merkmal === "turmopfer") {
+    // Gelegenheiten gelten vor dem Zug des Helden: nach einem Zug des Gegners.
+    const fen = verlauf.fens[h] ?? "";
+    return !heldZog && s.nach.regeln !== null && gelegenheit(merkmal, fen, s.nach.regeln);
+  }
   if (merkmal.startsWith(PRAEFIX_GESCHLAGEN)) {
     const rolle = ROLLE[merkmal.slice(PRAEFIX_GESCHLAGEN.length)];
     if (!rolle || heldZog) return false;
@@ -114,13 +128,21 @@ export function merkmalTrifft(merkmal: string, verlauf: Partieverlauf, h: number
   return false;
 }
 
-/** Löst der Moment auf Halbzug `h` aus? `zug` zählt die Züge des Helden (1, 2, …). */
+/**
+ * Löst der Moment auf Halbzug `h` aus? Alle Bedingungen in `wenn` müssen gelten. `zug` und
+ * `abZug` zählen die Züge des Helden (1, 2, …); `uhrUnter` gilt nur für den letzten Halbzug, weil
+ * die Partie keine Uhrzeiten je Zug speichert.
+ */
 function loestAus(moment: Partiemoment, verlauf: Partieverlauf, h: number): boolean {
-  if ("zug" in moment.wenn) {
-    if (verlauf.vomHelden[h - 1] !== true) return false;
-    return verlauf.vomHelden.slice(0, h).filter(Boolean).length === moment.wenn.zug;
+  const { zug, abZug, merkmal, uhrUnter } = moment.wenn;
+  const heldenzuege = verlauf.vomHelden.slice(0, h).filter(Boolean).length;
+  if (zug !== undefined && (verlauf.vomHelden[h - 1] !== true || heldenzuege !== zug)) return false;
+  if (abZug !== undefined && heldenzuege < abZug) return false;
+  if (uhrUnter !== undefined) {
+    const rest = h === verlauf.vomHelden.length ? verlauf.uhrHeldMs : undefined;
+    if (rest === undefined || rest >= uhrUnter * MS_JE_SEKUNDE) return false;
   }
-  return merkmalTrifft(moment.wenn.merkmal, verlauf, h);
+  return merkmal === undefined || merkmalTrifft(merkmal, verlauf, h);
 }
 
 /**

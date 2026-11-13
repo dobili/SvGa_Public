@@ -9,6 +9,8 @@
 // Die Ankunft (Coach, Juno, Sam) läuft beim ersten Gespräch mit irgendetwas hier draußen, weil
 // beim Aussteigen kein Dialog von selbst startet (Vorschlag im Bericht mittel-1).
 //
+// Gutachten Teil K (13.11.2026): K1.2, K1.3, K1.9, K1.10, K1.13, K1.14, K1.16 bis K1.20 umgesetzt.
+//
 // Variablen: ausgangCedarCreekRosaDuell und nadelCedarCreek setzt die Hülle (regeln/dialogvariablen.ts);
 // maeEingeladen setzt cedar-creek-bibliothek.ink; die übrigen setzt diese Datei.
 
@@ -18,6 +20,8 @@ EXTERNAL reise(karte, ausloeser)
 EXTERNAL gibFund(kennung)
 
 VAR held = "Du"
+VAR clubkampfZaehlGesagt = false
+VAR erzaehlung1858Gesehen = false
 VAR ambroseVertrauen = 0
 VAR ankunftCedarCreekGesehen = false
 VAR maeEingeladen = false
@@ -69,8 +73,7 @@ Ein Plakat, das droht. Wie reizend. #sprecher:ambrose #stimmung:streng
 * [„Das ist die Firma von Victors Vater.“]
     So. Dann hat die Drohung einen Namen. #sprecher:ambrose
 * [„Vielleicht ist das gar nicht so schlecht.“]
-    Vielleicht. Eine Maschine, die Schach spielt. #sprecher:ambrose
-    Ich gestehe: Ich bin neugierig. #sprecher:ambrose
+    Vielleicht. #sprecher:ambrose #pause
 - -> END
 
 // ---------------------------------------------------------------- Steg
@@ -78,11 +81,18 @@ Ein Plakat, das droht. Wie reizend. #sprecher:ambrose #stimmung:streng
 === steg ===
 {
 - not ankunftCedarCreekGesehen: -> ankunft
+- nadelCedarCreek > 0 and not endeAkt1Gesehen and not erzaehlung1858Gesehen: -> steg_vor_archiv
 - nadelCedarCreek > 0 and not endeAkt1Gesehen: -> ende_akt1
 - maeEingeladen and not sternennachtGesehen and nadelCedarCreek == 0: -> sterne_angebot
 - not gefundenSchluessel: -> fund_schluessel
 - else: -> steg_alltag
 }
+
+// Gutachten K1.3: Der Abend am Steg setzt die Geschichte von 1858 voraus (Treppe, siebenundzwanzig).
+=== steg_vor_archiv ===
+Er steht am Geländer und sieht aufs Wasser. Er sagt nichts. #sprecher:erzaehler #pause:2
+Unten im Archiv steht noch ein Karton. #sprecher:erzaehler
+-> END
 
 === sterne_angebot ===
 Es wird dunkel. Am Steg sitzen Mae, Dex und Juno auf einer Decke. #sprecher:erzaehler
@@ -120,10 +130,11 @@ Hast du dir was gewünscht? #sprecher:juno #musik:nachtstueck
 * [Nicken]
 * [Nach oben sehen]
 - Man darf es nicht sagen. #sprecher:mae
+Du hast dir etwas gewünscht. Es hat mit dem Brett zu tun, und mit jemandem, der einen Zug schuldig ist. #sprecher:erzaehler #pause
 Mrs. Okafor ist aufgestanden und steht hinter euch, die Decke um die Schultern. #sprecher:erzaehler
 Als ich so alt war wie ihr, hat mein Onkel mir Schach beigebracht. Auf einem Dach in Lagos. #sprecher:okafor
 Er sagte: Geduld, Grace. Die Nacht ist lang, und der Gegner wird müde vor dir. #sprecher:okafor #pause
-Ich habe sechzig Jahre geglaubt, das sei ein Rat fürs Schach. #sprecher:okafor #pause:2
+Ich habe sechzig Jahre geglaubt, das sei ein Rat fürs Schach. #sprecher:okafor
 * [Weiter nach oben sehen]
 * [Die Augen schließen]
 - Sie bleibt bis nach Mitternacht. Ihr zählt elf Sternschnuppen. #sprecher:erzaehler
@@ -145,41 +156,58 @@ Du setzt dich ans Ende der Bretter und legst das Brett neben dich, ohne Handtuch
 -> fehler_am_steg ->
 * [„Was willst du eigentlich?“]
 * [„Du findest das Zählen langweilig. Was willst du?“]
-- Was ich will. #sprecher:ambrose #pause:2
+- Was ich will. #sprecher:ambrose
 Ein Fisch springt. Die Ringe laufen auseinander. #sprecher:erzaehler #pause:2
 Eine Partie ohne Makel. #sprecher:ambrose #musik:ambrose
 Er sagt es einfach so. Nicht stolz. Wie man etwas zugibt. #sprecher:erzaehler
 Eine. Von Anfang bis Ende richtig und von Anfang bis Ende schön. #sprecher:ambrose
-* [„Die Fernpartie.“]
+Ich habe mein ganzes Leben geglaubt, man müsse wählen. Hale hat richtig gespielt und ich schön. #sprecher:ambrose
 * [Zuhören]
-- Mein Leben lang glaubte ich, man müsse wählen: richtig oder schön. Hale spielte richtig, ich schön. #sprecher:ambrose
-Auf diesem Brett hatte ich sie, die eine. Gegen ihn, per Brief. Jeder Zug tagelang unterwegs, manchmal Wochen. #sprecher:ambrose
+- Er hat gewonnen. Und ich habe mir gesagt, dass es das wert war. #sprecher:ambrose #pause
+Ich hatte sie fast. Die eine Partie. Auf diesem Brett. #sprecher:ambrose
+* [„Die Fernpartie.“]
+* [Auf das Brett sehen]
+- Gegen ihn. Per Brief. Jeder Zug tagelang unterwegs, manchmal Wochen. #sprecher:ambrose
 Ich habe nie so langsam gespielt. So ehrlich. #sprecher:ambrose
-Es fehlte nur noch seine Antwort. Ein Zug. Jemand sagte: Später. #sprecher:ambrose #stimmung:traurig #pause:3
+Es fehlte nur noch seine Antwort. Ein Zug. #sprecher:ambrose #pause:2
+* [„Und er hat nicht geantwortet.“]
+* [Warten]
+- Jemand sagte: Später. #sprecher:ambrose #stimmung:traurig #musik:aus #pause:3
+Das Wort liegt zwischen euch auf dem Steg. #sprecher:erzaehler
 * [„Dann spielen wir sie eben jetzt.“]
     ~ ambroseVertrauen = ambroseVertrauen + 1
     Ambrose starrt dich an. #sprecher:erzaehler
     Du weißt nicht, was du da sagst. #sprecher:ambrose
     ** [„Nein. Aber ich sag es trotzdem.“]
     ** [„Ich werde besser. Du bringst es mir bei.“]
-    -- Ambrose lacht. Zum ersten Mal ohne Spott. Es klingt wie jemand, der sehr lange die Luft angehalten hat. #sprecher:erzaehler #musik:aus #pause:4
-    Ein Kind. Bei allen Heiligen. Ein Kind mit einem Radiergummi als Dame. #sprecher:ambrose #stimmung:lacht
+    -- -> ende_akt1_lachen
 * [„Ich bin nicht gut genug. Noch nicht.“]
     Nein. Noch nicht. #sprecher:ambrose #pause:2
-    Ich habe Zeit. #sprecher:ambrose
-- Hinter euch hupt der Bus. Mr. Kettering fährt, wie er seit einunddreißig Jahren fährt. #sprecher:erzaehler #klang:bus_hupe
+    ** [„Aber ich werde besser. Dann spielen wir sie jetzt.“]
+        ~ ambroseVertrauen = ambroseVertrauen + 1
+        Du weißt nicht, was du da sagst. #sprecher:ambrose
+        -> ende_akt1_lachen
+
+// Gutachten K1.2: Das Lachen ohne Spott fällt in jedem Zweig.
+=== ende_akt1_lachen ===
+Ambrose lacht. Zum ersten Mal ohne Spott. Es klingt wie jemand, der sehr lange die Luft angehalten hat. #sprecher:erzaehler #musik:aus #pause:4
+Ein Kind. Bei allen Heiligen. Ein Kind mit einem Radiergummi als Dame. #sprecher:ambrose #stimmung:lacht
+-> ende_akt1_bus
+
+=== ende_akt1_bus ===
+Hinter euch hupt der Bus. Mr. Kettering fährt, wie er seit einunddreißig Jahren fährt. #sprecher:erzaehler #klang:bus_hupe
 Die Witwe. – Der Hühnerstall. – Achtung, der lange Otis. #sprecher:kettering #musik:busfahrt #geraeusch:bus_innen
 Sam schläft nach der dritten Kurve ein, den Kopf auf dem Schachkoffer. #sprecher:erzaehler
 Vorn rechnet der Coach etwas auf einem Spielbericht. Keine Schachaufgabe: Zahlen mit Dollarzeichen. #sprecher:erzaehler
 * [Juno fragen, was der Coach rechnet]
-    Keine Ahnung. Seit der Bildschirm im Clubraum steht, rechnet sie dauernd. #sprecher:juno
+    Weiß ich nicht. Sie hat das Blatt umgedreht, als ich geguckt hab. #sprecher:juno
 * [Aus dem Fenster sehen]
     Die Zedern bleiben zurück, eine nach der anderen. #sprecher:erzaehler
 - Zwei Clubnadeln. Ein Ahornblatt, ein Buch. {sternennachtGesehen:Sternschnuppen: elf.} #sprecher:juno
 Ihr Handy summt. Ihr Gesicht verändert sich. #sprecher:erzaehler #klang:handy
 Meine Cousine. Aus Riverton. Die haben da einen Club im Park, schon immer. Der wird neu aufgestellt. #sprecher:juno
-Ein Foto: eine Reihe Tische mit Bildschirmen, an denen niemand sitzt. Darunter: „Mit Perfect Move. Ist das nicht toll?“ #sprecher:erzaehler #bild:fotoRiverton #musik:aus #pause:2
-Im Rucksack liegt das Brett. Schwarz ist am Zug. #sprecher:erzaehler #klang:konzern
+Ein Foto: eine Reihe Tische mit Bildschirmen, an denen niemand sitzt. Darunter: „Mit Perfect Move. Ist das nicht toll?“ #sprecher:erzaehler #bild:fotoRiverton #musik:aus #klang:konzern #pause:2
+Im Rucksack liegt das Brett. Schwarz ist am Zug. #sprecher:erzaehler
 Später, denkst du. Aber nicht mehr lange. #sprecher:erzaehler
 -> END
 
@@ -187,10 +215,11 @@ Später, denkst du. Aber nicht mehr lange. #sprecher:erzaehler
 Ich hätte dich die Partie gekostet. #sprecher:ambrose
 * [„Hast du aber nicht.“]
 * [„Ich hab gezählt. Wie du es mir beigebracht hast.“]
-- Weil du gefragt hast. Ich hätte nicht gefragt. Ich habe nie gefragt. #sprecher:ambrose
+- {clubkampfZaehlGesagt:Weil du gefragt hast. Ich hätte nicht gefragt. Ich habe nie gefragt.|Weil du gezählt hast. Ich hätte nicht gezählt. Ich habe nie gezählt.} #sprecher:ambrose
 Ein Loch in einer Königsstellung, und ich bin wieder siebenundzwanzig und will, dass die Treppe klatscht. #sprecher:ambrose
 Du spielst nicht schön, {ambroseNenntNamen:{held}|Lehrling}. Ich sage das ohne Bosheit. #sprecher:ambrose
 Du spielst wie jemand, der ein Haus abschließt, bevor er geht. Erst die Fenster, dann die Tür. #sprecher:ambrose
+Zu meiner Zeit hätte ich so jemanden nicht einmal gegrüßt. #sprecher:ambrose
 Und du hast heute eine Frau geschlagen, gegen die ich nicht sicher wäre. #sprecher:ambrose #stimmung:stolz
 ->->
 
@@ -288,27 +317,29 @@ Ruhig, ruhig. Der König läuft nicht weg. #sprecher:rosa
 // der Riss ist eine gemessene Stille von drei Sekunden (#pause:3). Victor durchgehend kalt; die
 // Porträtfassung „Riss“ für genau eine Zeile gibt es noch nicht (bis dahin muede). Klang: Stillen
 // S18 und S19 (21_Klangplan.md), Victors Thema beim Gehen.
-~ victorCedarCreekGesehen = true
 An der Haltestelle sitzt jemand. Gerade, die Füße nebeneinander, das Tablet auf den Knien. Das Plakat hängt über ihm. #sprecher:erzaehler #musik:aus
 Er zieht. Das Programm antwortet sofort. Ein leises Klicken, wie ein Fingernagel auf Glas. #sprecher:erzaehler #klang:tablet
 * [„Spielst du gegen das Ding?“]
     Ich trainiere. Mein Vater ist im Rathaus. #sprecher:victor #stimmung:kalt
     Der Bezirk hat drei Bibliotheken. Er will alle drei. Für Bildschirme. Es ist effizienter. #sprecher:victor #stimmung:kalt
 * [Leise weitergehen]
+    Er sieht nicht auf. Klick. #sprecher:erzaehler #klang:tablet
     -> END
 - Auf dem Brett geht es sehr schnell und sehr genau. Er verliert. Langsam, Zug um Zug, gegen etwas, das nie zögert. #sprecher:erzaehler
 * [„Gewinnst du manchmal?“]
     Remis. Einmal im Monat. #sprecher:victor #stimmung:kalt
     Mein Vater sagt, ein Remis gegen Schwächere ist eine Niederlage. Gegen das hier ist es ein Erfolg. #sprecher:victor
 * [Gehen]
-    -> victor_weg
+    -> END
 - Er tippt auf „Neue Partie“. #sprecher:erzaehler
 * [„Macht dir das eigentlich Spaß?“]
+    ~ victorCedarCreekGesehen = true
     Seine Hand bleibt über dem Bildschirm stehen. #sprecher:erzaehler #geraeusch:aus #pause:3
     Das ist keine Frage, die man beim Training stellt. #sprecher:victor #stimmung:muede
     Er zieht. Das Programm antwortet. Aber er hat drei Sekunden gebraucht. Du hast mitgezählt. #sprecher:erzaehler #klang:tablet
+    -> victor_weg
 * [Gehen]
-- -> victor_weg
+    -> END
 
 === victor_weg ===
 Erst auf dem Weg zum Steg, zwischen den Zedernhecken, hörst du Ambrose wieder. #sprecher:erzaehler #musik:victor
@@ -333,7 +364,7 @@ Victor spielt weiter auf seinem Tablet. Er sieht nicht auf. #sprecher:erzaehler
 - nadelCedarCreek > 0:
     Der Bus fährt um sieben. Am Steg ist das Wasser rot von der Sonne. #sprecher:erzaehler
 - else:
-    Der Linienbus nach Maple Falls fährt jede Stunde. Das Auswärtsspiel läuft noch. #sprecher:erzaehler
+    Der Linienbus nach Maple Falls fährt jede Stunde. {teamAngekommen:Das Auswärtsspiel läuft noch.|Morgen ist der Clubkampf.} #sprecher:erzaehler
 }
 * [Nach Maple Falls fahren]
     Der Bus rollt die Landstraße entlang. Hinter dir werden die Zedern kleiner. #sprecher:erzaehler
@@ -403,10 +434,10 @@ Sie hat nicht gefragt, warum. Sie fragt in letzter Zeit weniger. #sprecher:erzae
 Dann ein Pfiff auf zwei Fingern. #sprecher:erzaehler #klang:pfiff_finger
 Morgen, Vorhut! Steht die Bibliothek noch? #sprecher:coachDelgado
 Ich hab im Bus geschlafen. Mit dem Kopf auf dem Schachkoffer. Der ist hart. #sprecher:sam
-* [„Wir haben elf Sternschnuppen gesehen.“]
+* {sternennachtGesehen} [„Wir haben elf Sternschnuppen gesehen.“]
     Elf? Und ich hab geschlafen. Typisch. #sprecher:sam
-* [„Mrs. Okafor ist heute müde.“]
-    Müde ist gut. Müde ist sehr gut. #sprecher:coachDelgado
+* [„Wir haben auf Matten geschlafen. Zwischen den Regalen.“]
+    Zwischen Büchern? Da wär ich nie eingeschlafen. Doch. Wär ich. #sprecher:sam
 - Clubkampf am Vormittag. Bis dahin: Kopf frei, Figuren sortiert. #sprecher:coachDelgado #klang:pfiff
 Der Bus wartet bis heute Abend. Mr. Kettering fährt uns zurück. #sprecher:coachDelgado
 -> END
@@ -466,10 +497,10 @@ Ein Mann, der seine Strecke nicht hergibt. Zu meiner Zeit hätte er Postkutschen
 }
 
 === zwillinge_a ===
-Auf der Bibliothekstreppe sitzen zwei Kinder, die genau gleich aussehen. Sie haben Figuren in den Händen und kein Brett. #sprecher:erzaehler
-Ich hab gewonnen! #sprecher:ivy
-Du hast den Turm bewegt, als ich nicht geguckt hab! #sprecher:jonah
-Du guckst nie! #sprecher:ivy
+// Gutachten K1 (Nachtrag): Der Streit steht schon in „ankunft“; hier eine neue Runde.
+Die Zwillinge sitzen noch auf der Treppe. Jetzt hat jeder einen Turm in der Faust. #sprecher:erzaehler
+Diesmal guck ich die ganze Zeit. #sprecher:jonah
+Dann ziehst du ja nie! #sprecher:ivy
 * [„Wer hat denn gewonnen?“]
     Beide zeigen auf sich. Dann aufeinander. Dann wieder auf sich. #sprecher:erzaehler
 * [Leise vorbeigehen]

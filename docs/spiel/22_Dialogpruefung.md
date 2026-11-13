@@ -4393,3 +4393,667 @@ bestanden, 16 übersprungen) und `npm run pruefen` (2573 Tests bestanden).
   Lernkarten aus Dokument 11, Abschnitt 5, noch gibt: Sie belohnen im Spiel, wer in der App ein
   Buchkapitel abschließt. Der Gutachter hat die neue Entscheidung des Autors nicht in
   `ENTSCHEIDUNGEN.md` nachlesen können; sie war auf dem übernommenen Stand noch nicht eingetragen.
+
+## Teil K: Umgeschriebene Spieldialoge gegen den Roman, Kapitel 10 bis 22 (Bericht, nichts geändert)
+
+Auftrag des Hauptchats vom 13.11.2026. Geprüft ist der Stand der Ink-Dateien, der an diesem Tag
+von `claude/friendly-shannon-y8bf90` übernommen wurde. Zwei Lesedurchgänge durch Helfer (K1:
+Kapitel 10 bis 16, K2: Kapitel 17 bis 22), je höchstens 20 Befunde nach Wichtigkeit; jeder hat
+seine Zitate per Skript gegen die Dateien geprüft. Der Gutachter hat sieben Stellen selbst
+nachgeschlagen (`cedar-creek-archiv.ink` Zeilen 97 und 181–182, `cedar-creek-aussen.ink` Zeilen
+165–170, `erinnerung-london.ink` Zeile 84, `runden.json` „abZug“, `riverton-wohnwagen.ink` Zeilen
+43–45, Suche nach „elf Tage“ in allen Ink-Dateien: kein Treffer); alle stimmen. Nichts ist
+gespielt worden: Aussagen über Reihenfolgen stützen sich auf die Ink-Bedingungen und die Daten.
+
+| Teil | Kapitel   | fehlt | widerspricht | plump | Pausen und Marken |
+| ---- | --------- | ----- | ------------ | ----- | ----------------- |
+| K1   | 10 bis 16 | 5     | 9            | 4     | 2                 |
+| K2   | 17 bis 22 | 7     | 6            | 3     | 4                 |
+
+### K1 Kapitel 10 bis 16: Weg nach Cedar Creek und Cedar Creek
+
+Geprüft am 13.11.2026 gegen `docs/spiel/roman/akt1_teil3.md` (T3) und `akt1_teil4.md` (T4). Ink-Dateien
+in `inhalte/abenteuer/dialoge/de/`. Zeilennummern sind die der Dateien im Zweig
+`claude/brave-hopper-fpak3o`. Abkürzungen: weg = `weg-maple-cedar.ink`, aussen = `cedar-creek-aussen.ink`,
+bib = `cedar-creek-bibliothek.ink`, archiv = `cedar-creek-archiv.ink`, wasch = `cedar-creek-waschsalon.ink`,
+texte = `inhalte/abenteuer/texte/de.json` (Partiemomente des Clubkampfs).
+
+Gesamteindruck: Die Dateien folgen dem Roman über weite Strecken wörtlich und setzen Pausen und Klang
+bewusst. Die schweren Befunde liegen fast alle an derselben Stelle: Tragende Sätze hängen an einer
+Antwortwahl oder an der Reihenfolge, in der der Spieler Dinge antippt, und gehen dann verloren.
+
+#### Befunde (nach Wichtigkeit)
+
+**K1.1 · widerspricht · archiv · Knoten `karton_1858`, Z. 97**
+
+- Ink: „„Crescent City Herald“, Mai 1858. Darunter ein Schachkalender und ein Heft.“
+- Roman: T3 Z. 288: „Ein Datum im Oktober 1858.“ Fester Punkt (Bibel Z. 556: „Zeitung vom Oktober 1858“).
+  Nebenbei: Der Schachkalender liegt im Roman gerade nicht in diesem Karton (T3 Z. 279: „nie in den
+  Karton daneben geschaut“; so sagt es auch archiv Z. 85).
+- Vorschlag: „„Crescent City Herald“. Ein Datum im Oktober 1858. Ganz unten im Karton liegt ein Heft.“
+
+**K1.2 · fehlt · aussen · Knoten `ende_akt1`, Z. 167–169**
+
+- Ink: Wahl „[„Ich bin nicht gut genug. Noch nicht.“]“ → „Nein. Noch nicht.“ / „Ich habe Zeit.“ Danach
+  hupt sofort der Bus.
+- Roman: T4 Z. 369: „Dann spielen wir sie eben jetzt“; T4 Z. 381: „Und da lachte er.“ Im Roman sagt
+  der Held beides (T4 Z. 373: „Ich bin nicht gut genug. Noch nicht. Aber ich werde besser“).
+- Folge: Wer die zweite Wahl nimmt, verliert den Titelsatz des Kapitels, Ambroses erstes Lachen ohne
+  Spott (sein sichtbarer Schritt in Akt 1) und den Boden für den Schlusssatz „Später, denkst du. Aber
+  nicht mehr lange.“
+- Vorschlag: Beide Wahlen münden in denselben Schluss. Zweig 2: „Nein. Noch nicht.“ `#pause:2` → Wahl
+  [„Aber ich werde besser. Dann spielen wir sie eben jetzt.“] → „Du weißt nicht, was du da sagst.“ →
+  weiter wie Zweig 1 (Lachen, „Ein Kind mit einem Radiergummi als Dame.“). „Ich habe Zeit.“ streichen.
+
+**K1.3 · widerspricht (Reihenfolge) · aussen · Knoten `steg`, Z. 81, und `fehler_am_steg`, Z. 191**
+
+- Ink: „- nadelCedarCreek > 0 and not endeAkt1Gesehen: -> ende_akt1“; dort: „Ein Loch in einer
+  Königsstellung, und ich bin wieder siebenundzwanzig und will, dass die Treppe klatscht.“
+- Roman: Die Treppe und die Siebenundzwanzig stammen aus dem Archiv (T3 Z. 310: „Stadt stand auf der
+  Treppe“), das im Roman vor dem Clubkampf liegt. Im Spiel verlangt weder die Quest
+  `cedarCreek.clubkampf` noch der Steg `erzaehlung1858Gesehen`; bib Z. 154 schickt nach der Nadel
+  sogar erst ins Archiv („Der Karton mit den Jahren 1850 bis 1859 steht unten im Archiv.“).
+- Folge: Wer das Archiv auslässt, hört „Lass mich“, den Fehler am Steg, „Hale spielte richtig“ und
+  die Fernpartie ohne 1858; danach käme die Archivszene als Nachtrag.
+- Vorschlag: Steg-Bedingung um `erzaehlung1858Gesehen` ergänzen. Davor ein stiller Zustand: „Er steht
+  am Geländer und sieht aufs Wasser. Er sagt nichts. Unten im Archiv steht noch ein Karton.“ `#pause:2`
+
+**K1.4 · widerspricht · texte Z. 499 und aussen · Knoten `fehler_am_steg`, Z. 190**
+
+- Ink/Text: Partiemoment „Ob es stimmt? Ich weiß es nicht.“ (Ambrose fragt sich selbst); am Steg dann:
+  „Weil du gefragt hast. Ich hätte nicht gefragt. Ich habe nie gefragt.“
+- Roman: T4 Z. 257: „„Stimmt es?“, flüsterte ich.“ Die Frage des Helden ist der Wendepunkt (Dok. 19,
+  5.2, und die Frage von Akt 2). Im Spiel stellt sie niemand; der Satz am Steg stimmt dann nicht.
+  Die Momente kommen zudem fest bei Zug 28 bis 30; endet die Partie früher, fällt „Lass mich“ gar
+  nicht, der Steg setzt es aber voraus.
+- Vorschlag: Den Moment als geführten Moment bauen (README, „Geführter Moment (T11)“): Ambrose „Lass
+  mich. Nur dieses eine Mal. Der Turm, mitten hinein.“ → Wahl [„Stimmt es?“] → Erzähler „Die Uhr tickt.“
+  `#pause:3` → „Ich weiß es nicht.“ → „Vergib mir. Zähl.“ Mindestlösung: Text 499 ändern in „Stimmt
+  es?, flüsterst du. – Ich weiß es nicht.“ und am Steg `{…}` nur, wenn der Moment gefallen ist.
+
+**K1.5 · widerspricht · archiv · Knoten `erinnerung`, Z. 181–182**
+
+- Ink: „\* [„Später.“]“ → „Später. Ausgerechnet heute. Nun gut.“
+- Roman/Entscheidung: In Akt 1 fällt „Später“ nur dreimal; die Stelle im Archiv ist Hales Wort (T3
+  Z. 348: „Später.“), nicht eine Antwortwahl. `akt1_befunde.md` Z. 169: übrige Wahlen heißen „Nicht
+  jetzt.“ oder „Gleich.“ Hier fällt das Wort ein viertes und fünftes Mal, Minuten nach dem Schlag, und
+  bei jedem neuen Antippen wieder. Kleiner Nachbar: wasch Z. 40 „Dann hast du einen Gutschein für
+  später.“ (besser „für das nächste Mal“).
+- Vorschlag: „\* [„Gleich.“]“ → „Nun gut. Der Junge sieht ohnehin aus dem Fenster.“
+
+**K1.6 · widerspricht · wasch · Knoten `boateng_formular_entziffert`, Z. 106**
+
+- Ink: „Das sind meine Züge. Ein Stück meiner letzten Partie, in meiner eigenen Hand.“
+- Roman: Die Fernpartie nennt Ambrose erst am Steg (T4 Z. 354–356: „Die Fernpartie.“ – „Gegen ihn. Per
+  Brief.“); über sein Ende sagt er in Akt 1 nichts. „Letzte Partie“ verrät beides vorab, in einem
+  Waschsalon, nebenbei. (Der Fund liegt auf der Landstraße, also noch vor dem Archiv.)
+- Vorschlag: „Das sind Züge von mir. In meiner eigenen Hand.“ `#stimmung:traurig #pause:2` / „Ich hatte
+  vergessen, wie ich schrieb.“ Welche Partie es ist, bleibt offen bis zum Steg.
+
+**K1.7 · fehlt · archiv · Knoten `programmheft`, Z. 163, und `programmheft_danach`, Z. 200–201**
+
+- Ink: „- erinnerungNewYorkBestanden: -> programmheft_danach“; darin „\* [„Das war wunderschön.“]“ →
+  „Ja.“
+- Roman: T3 Z. 400: „„Gestern hast du gesagt, Zählen ist alles.““ und T3 Z. 419: „„Robin.““ folgen
+  unmittelbar auf das Damenopfer. Im Spiel kommen Damenopfer-Satz, Reibung und der erste Name nur, wenn
+  der Spieler das Heft nach der Runde noch einmal antippt; mit der zweiten Wahl entfällt die Reibung
+  ganz (Dok. 19 Z. 70: Der Held hat je Akt einmal recht und Ambrose nicht).
+- Vorschlag: `programmheft_danach` nach bestandener Runde von selbst starten (Wirkung der Quest
+  `cedarCreek.erinnerungNewYork`). Zweite Wahl ersetzen durch [Nichts sagen] → Erzähler: „Du denkst an
+  gestern.“ → Ambrose: „Sieh mich nicht so an. Das habe ich gesagt.“ `#stimmung:still`
+
+**K1.8 · fehlt · archiv · Knoten `erzaehlung_1858`, Z. 118 und Z. 126**
+
+- Ink: „_ [Ihn erzählen lassen]“ (dann fehlt Hale ganz) und „_ [„Hat es gestimmt?“]“ als direkte Wahl
+  (dann fehlt der Grund für das Opfer, Z. 123).
+- Roman: T3 Z. 315: „Brückenbauer, aus dem Norden. Er spielte, wie man eine Brücke baut.“ und T3 Z. 326:
+  „Aber die Leute standen auf der Treppe.“ Beides trägt weiter (Brücken und „J. H.“ in Akt 2; die
+  Treppe am Steg). Mit zwei naheliegenden Wahlen hört man weder den Gegner noch die Eitelkeit.
+- Vorschlag: Beide Stellen in den Stamm legen, die Wahlen nur als Einwurf: [„Und der andere?“] /
+  [Warten] → immer „Ein Ingenieur, Brückenbauer aus dem Norden …“; „Weil die Leute auf der Treppe
+  standen …“ immer vor der Wahl [„Hat es gestimmt?“] / [Warten]. Das Auf-und-ab-Gehen als Erzählerzeile
+  in den Stamm.
+
+**K1.9 · widerspricht (Wortlaut) · aussen · Knoten `ende_akt1`, Z. 155–156**
+
+- Ink: „Mein Leben lang glaubte ich, man müsse wählen: richtig oder schön. Hale spielte richtig, ich
+  schön.“ / „Auf diesem Brett hatte ich sie, die eine.“
+- Roman: T4 Z. 351: „Ich hatte sie fast. Die eine Partie. Auf diesem Brett.“ Ohne „fast“ behauptet er,
+  sie gehabt zu haben; der ganze Akt hängt am fehlenden Zug. Es fehlt auch T4 Z. 350: „und er hat
+  gewonnen, und ich habe mir gesagt, dass es das wert“ war. Der Doppelpunkt „richtig oder schön“
+  erklärt, was der Folgesatz zeigt; das Präteritum klingt geschrieben, der Roman spricht im Perfekt.
+- Vorschlag: „Ich habe mein ganzes Leben geglaubt, man müsse wählen. Hale hat richtig gespielt und ich
+  schön.“ / „Er hat gewonnen. Und ich habe mir gesagt, dass es das wert war.“ `#pause` / „Ich hatte sie
+  fast. Die eine Partie. Auf diesem Brett.“
+
+**K1.10 · Pausen · aussen · Knoten `ende_akt1`, Z. 158**
+
+- Ink: „Es fehlte nur noch seine Antwort. Ein Zug. Jemand sagte: Später.“ (vier Sätze, eine Zeile)
+- Roman: T4 Z. 362: „„Jemand sagte: Später.““ steht allein, danach T4 Z. 364: „Das Wort lag zwischen
+  uns auf dem Steg.“ Das dritte „Später“ des Akts geht in einer Sammelzeile unter (Bibel 5.1: höchstens
+  zwei Sätze je Zeile).
+- Vorschlag: „Es fehlte nur noch seine Antwort. Ein Zug.“ `#pause:2` / Wahl [„Und er hat nicht
+  geantwortet.“] / [Warten] / „Jemand sagte: Später.“ `#stimmung:traurig #musik:aus #pause:3` / Erzähler:
+  „Das Wort liegt zwischen euch auf dem Steg.“
+
+**K1.11 · widerspricht · weg · Knoten `fund_formular`, Z. 170, und `seite00`, Z. 282**
+
+- Ink: „Diese Handschrift. Ich kenne sie, aber ich kann sie nicht mehr lesen.“ und „Eine Stellung, die
+  der Wind gebracht hat. Heb sie auf, man weiß nie.“
+- Roman: T3 Z. 84: „Es war das Erste, was er seit dem Aufbruch sagte.“ (am Fluss). Beide Funde liegen
+  auf der Karte Landstraße (`szenen/weg-maple-cedar-landstrasse-*.json`), also vor dem Fluss. Bei Nia
+  ist das mit `faehrsteinGesehen` gelöst, hier nicht; die Erzählerzeile weg Z. 406 wird dadurch falsch.
+  (Außerhalb meiner Dateien, gleiche Sache: `maple-falls-park.ink` Z. 249 „Zu Fuß? Gut. Der Bus fährt
+  später auch.“)
+- Vorschlag: Ambroses Zeilen an `{faehrsteinGesehen: …}` binden; davor nur Erzähler: „Im Rucksack
+  bleibt es still.“ `#pause:2`. Die Handschrift-Zeile kann beim Entziffern im Waschsalon fallen.
+
+**K1.12 · plump (falscher Sprecher) · weg · Knoten `faehrstein`, Z. 406**
+
+- Ink: „Hier ist es schöner. Es ist das Erste, was Ambrose seit dem Aufbruch sagt. #sprecher:erzaehler“
+- Roman: T3 Z. 84: „„Hier ist es schöner“, sagte Ambrose.“ Sein erster Satz nach einer Stunde Schweigen
+  steht ohne Anführung in der Erzählerzeile, ohne Porträt und ohne Pause; er klingt wie ein Urteil des
+  Erzählers. Außerdem fällt er erst nach Silas und dem Stein, im Roman beim Abbiegen zum Fluss.
+- Vorschlag: „Hier ist es schöner.“ `#sprecher:ambrose #stimmung:still` / „Es ist das Erste, was er seit
+  dem Aufbruch sagt.“ `#sprecher:erzaehler #pause:2`; beides an den Anfang des Knotens, vor den Stein.
+
+**K1.13 · widerspricht / plump · aussen · Knoten `team_kommt`, Z. 406–409**
+
+- Ink: „_ [„Wir haben elf Sternschnuppen gesehen.“]“ und „_ [„Mrs. Okafor ist heute müde.“]“ → „Müde
+  ist gut. Müde ist sehr gut.“
+- Roman/Bibel: T4 Z. 163–166 hat nur Uhr, Bus und Pfiff. Bibel Z. 590: „{held} plant das nicht“. Hier
+  meldet der Held die Müdigkeit als Vorteil, und der Coach freut sich: Aus der schönen Nacht wird
+  Taktik. Beide Wahlen stehen auch dann da, wenn der Spieler die Sternennacht abgelehnt hat
+  (`sterne_angebot`, Z. 93).
+- Vorschlag: Wahl 1 nur mit `{sternennachtGesehen}`. Wahl 2 ersetzen: [„Wir haben auf Matten
+  geschlafen. Zwischen den Regalen.“] → Sam: „Zwischen Büchern? Da wär ich nie eingeschlafen. Doch.
+  Wär ich.“ Dass sie müde ist, sagt Mrs. Okafor am Brett selbst (bib Z. 103).
+
+**K1.14 · fehlt · aussen · Knoten `victor_tablet`, Z. 291 und Z. 297–298**
+
+- Ink: „~ victorCedarCreekGesehen = true“ steht vor der ersten Wahl; „\* [Leise weitergehen]“ → `END`.
+- Roman: T4 Z. 57: „„Das ist keine Frage“, sagte Victor Hale, „die man beim Training stellt.““ Victors
+  einziger Schritt in Akt 1 (Dok. 19, 5.3). Ein Tipp auf „Leise weitergehen“ oder „Gehen“ nimmt die
+  Szene für immer weg; danach bleibt nur „Victor spielt weiter auf seinem Tablet.“
+- Vorschlag: Die Variable erst setzen, wenn die Frage gestellt ist (oder in `victor_weg` nur nach der
+  Frage). Wer vorbeigeht, findet ihn beim nächsten Antippen wieder so vor: „Er sitzt noch da. Klick.“
+
+**K1.15 · plump (Ambrose sagt vor) · wasch · Knoten `trockner_raetsel`, Z. 61–62**
+
+- Ink: „Der König hinter seinen Bauern. Kein Fenster, keine Luft.“ / „Das kennst du jetzt.“
+- Roman: T3 Z. 241: „Mae hatte mir das vor einer Stunde gezeigt.“ Der Held findet es selbst; Ambrose
+  schweigt im Waschsalon. Hier nennt er die Lösung vor der Aufgabe und nimmt das „Fenster“ vorweg, das
+  im Clubkampf der eigene kleine Zug ist (T4 Z. 227). Ebenso wasch Z. 41: „Ein Brett auf einer
+  Maschine, die zittert. Und die Figuren halten.“ (sagt, was man sieht).
+- Vorschlag: Beide Ambrose-Zeilen streichen. Erzähler: „Die Figuren zittern leicht, weil die Maschine
+  läuft. Weiß am Zug, Matt in zwei.“ Nach der Lösung: „Mae hat dir das vor einer Stunde gezeigt.“
+
+**K1.16 · plump (deutet den Schatten aus) · aussen · Knoten `ende_akt1`, Z. 175**
+
+- Ink: „Keine Ahnung. Seit der Bildschirm im Clubraum steht, rechnet sie dauernd.“
+- Roman: T4 Z. 396: „mit Dollarzeichen.“ Mehr nicht; die Tabelle (T4 Z. 444) will die Versuchung
+  „offen“ halten, und der Kopf des Knotens (Z. 138–139) verlangt einen Schatten, den niemand
+  ausdeutet. Juno verbindet hier Bildschirm und Geld für den Spieler.
+- Vorschlag: „Weiß ich nicht. Sie hat das Blatt umgedreht, als ich geguckt hab.“ Oder die Wahl
+  streichen und nur das Bild lassen.
+
+**K1.17 · widerspricht (Reihenfolge) · aussen · Knoten `ende_akt1`, Z. 153**
+
+- Ink: „\* [„Die Fernpartie.“]“ steht nach „Von Anfang bis Ende richtig und von Anfang bis Ende schön.“
+  und vor „Mein Leben lang glaubte ich …“.
+- Roman: T4 Z. 354: „„Die Fernpartie.““ antwortet auf „Die Stellung, die du nicht anrühren darfst.“
+  Im Spiel rät der Held das Wort, bevor Ambrose vom Brett spricht, und Ambrose antwortet daran vorbei.
+- Vorschlag: Wahl hinter „Ich hatte sie fast. Die eine Partie. Auf diesem Brett.“ legen: [„Die
+  Fernpartie.“] / [Auf das Brett sehen] → „Gegen ihn. Per Brief. Jeder Zug tagelang unterwegs, manchmal
+  Wochen.“
+
+**K1.18 · fehlt · aussen · Knoten `sterne`, Z. 119–122**
+
+- Ink: „Hast du dir was gewünscht?“ → Wahlen „[Nicken]“ / „[Nach oben sehen]“ → „Man darf es nicht
+  sagen.“
+- Roman: T4 Z. 128: „Ich hatte mir etwas gewünscht. Es hatte mit dem Brett zu tun, und mit einer
+  Stellung, die“ niemand anrührt. Der Wunsch bereitet „Dann spielen wir sie eben jetzt“ vor; im Spiel
+  bleibt er leer.
+- Vorschlag: Nach Maes Satz eine Erzählerzeile: „Du hast dir etwas gewünscht. Es hat mit dem Brett zu
+  tun, und mit jemandem, der einen Zug schuldig ist.“ `#pause`
+
+**K1.19 · Pausen und Klang · aussen · Knoten `ende_akt1`, Z. 148–149 und Z. 182; Knoten `sterne`, Z. 125–126**
+
+- Ink: „Was ich will. #sprecher:ambrose #pause:2“ direkt vor „Ein Fisch springt. Die Ringe laufen
+  auseinander. #sprecher:erzaehler #pause:2“; „Ich habe sechzig Jahre geglaubt, das sei ein Rat fürs
+  Schach. #sprecher:okafor #pause:2“ direkt nach einer Zeile mit `#pause`; „Im Rucksack liegt das Brett.
+  Schwarz ist am Zug. #sprecher:erzaehler #klang:konzern“.
+- Maßstab: Bibel 5.5 (Z. 737): `#pause` höchstens einmal je sechs Zeilen. Roman T4 Z. 342: „Er war
+  lange still. Ein Fisch sprang.“ (eine Stille); T4 Z. 426: der kalte Klavierton gehört zur Nachricht,
+  nicht zum Brett.
+- Vorschlag: Pause in Z. 148 streichen (der Fisch ist die Pause). In `sterne` die Pause in Z. 126
+  streichen (danach kommt ohnehin eine Wahl) und die in Z. 125 behalten („Sie sah hinauf.“).
+  `#klang:konzern` auf Z. 181 (Foto) legen; der Brett-Satz bleibt ohne Klang.
+
+**K1.20 · plump (zu direkte Gefühle, Vorgriff) · bib · Knoten `okafor_clubkampf`, Z. 106**
+
+- Ink: „Sie wartet. Ich kenne das. Ich habe es nie ausgehalten.“
+- Roman: T4 Z. 197–199: „Sie tat nichts.“ / „Das war das Unheimliche.“ Ihr Warten merkt der Held im
+  Spiel; Ambrose schweigt bis „Lass mich“ (T4 Z. 247: seine Stimme „Hungrig“). Hier erklärt er vor dem
+  ersten Zug den Stil der Gegnerin und sein eigenes Gebrechen; das Geständnis gehört an den Steg.
+  Gleiche Art, kleiner: aussen Z. 73 „Ich gestehe: Ich bin neugierig.“ (greift Akt 2 und 3 vor),
+  weg Z. 153 „Bei drei Minuten denkt man nicht, man sieht. Das kommt mit der Übung.“ (Merksatz),
+  weg Z. 349 „Das ist mehr Vertrauen, als ich je hatte.“
+- Vorschlag: Z. 106 ersetzen durch Erzähler: „Die Uhr im Türmchen tickt. Man hört sie durch die Decke.“
+  aussen Z. 72–73: „Vielleicht.“ `#pause` genügt. weg Z. 153: „Drei Minuten. Zu meiner Zeit brauchte
+  ein Gentleman so lange, um den Hut abzulegen.“ weg Z. 349: „Eine Frau, die nicht fragt.“
+
+Knapp nicht unter den zwanzig (kurz): Der Streit der Zwillinge steht wortgleich in `ankunft`
+(aussen Z. 50–52) und `zwillinge_a` (aussen Z. 470–472), man liest ihn zweimal. `juno_weg` läuft nur
+über die Wahl „Weitergehen“ (weg Z. 67–68); wer die Tafel gleich löst, hört Junos Erzählung nicht, und
+Sams Schlaf auf dem Schachkoffer (T3 Z. 49) fehlt dort ganz. `bus_zurueck` sagt am Freitag „Das
+Auswärtsspiel läuft noch.“ (aussen Z. 336), es ist erst am Samstag. Dex und Mae sagen ihr
+Erkennungszeichen selbst auf („Schach ist wie ein Schaltplan.“, bib Z. 178; „Ich kenne alle
+Mattbilder. Alle mit Namen.“, bib Z. 208). In `fehler_am_steg` fehlt der Satz, der das Lob erst
+trägt (T4 Z. 327: „Zu meiner Zeit hätte ich so jemanden“ nicht einmal gegrüßt).
+
+#### Gut gelungen
+
+- **bib `okafor_erstes_treffen`, Z. 60–78:** das lange Ansehen, „Whitlock.“ mit `#musik:aus #pause:3`,
+  „Aha.“ und kein Weiterfragen, dann „Sechs Wörter.“ / „Eine Fußnote.“ in zwei Zeilen. Genau der Roman.
+- **aussen `victor_tablet`, Z. 299–309:** erst verliert er, dann die Frage; die drei Sekunden sind
+  wirklich drei Sekunden (`#geraeusch:aus #pause:3`), und „Du hast mitgezählt.“ bleibt Erzähler.
+- **archiv `erzaehlung_1858_nein` und `name_im_archiv`:** „Nein.“ allein mit Pause, der stille Läuferzug
+  mit Standbild, „Später.“ mit Türschlag; der erste Name erst beim Schließen des Deckels, mit „Es gab
+  allerdings auch niemanden.“ als Schluss.
+- **wasch `boateng_lagos`, Z. 69–83:** die Pointe „Sie stellt Bücher ins Regal. Gegenüber.“ kommt nach
+  einer Geste statt nach einer Erklärung; Ambrose schweigt.
+- **weg `ada` und `schild_cedar`:** „Drei Krähen, zwei Vogelscheuchen.“ als kleine Wahl mit einer
+  falschen Antwort, die Ada freundlich nimmt; die Ankunft endet mit vier Uhrschlägen ohne Musik.
+- **ansehen:** „Ich suche New Orleans. Da. Es ist noch da.“ und „Kein Dank, kein Wort. Sonderbar.“
+  zeigen Ambrose staunend und aus seiner Zeit, ohne Lehre.
+
+#### Zählung
+
+| Datei                                                | fehlt                  | widerspricht                 | plump     | Pausen           | Summe  |
+| ---------------------------------------------------- | ---------------------- | ---------------------------- | --------- | ---------------- | ------ |
+| cedar-creek-aussen.ink                               | 3 (K1.2, K1.14, K1.18) | 4 (K1.3, K1.9, K1.13, K1.17) | 1 (K1.16) | 2 (K1.10, K1.19) | 10     |
+| cedar-creek-archiv.ink                               | 2 (K1.7, K1.8)         | 2 (K1.1, K1.5)               | 0         | 0                | 4      |
+| weg-maple-cedar.ink                                  | 0                      | 1 (K1.11)                    | 1 (K1.12) | 0                | 2      |
+| cedar-creek-waschsalon.ink                           | 0                      | 1 (K1.6)                     | 1 (K1.15) | 0                | 2      |
+| cedar-creek-bibliothek.ink                           | 0                      | 0                            | 1 (K1.20) | 0                | 1      |
+| texte/de.json (Partiemomente)                        | 0                      | 1 (K1.4)                     | 0         | 0                | 1      |
+| cedar-creek-drechslerei.ink, ansehen-cedar-creek.ink | 0                      | 0                            | 0         | 0                | 0      |
+| **Summe**                                            | **5**                  | **9**                        | **4**     | **2**            | **20** |
+
+Mischbefunde sind nach ihrer Hauptart gezählt (K1.13 als widerspricht, K1.4 bei texte).
+
+#### Nicht geprüft
+
+- **Der Aufbruch bei Mama** (Kapitel 10, Anfang) steht in `maple-falls-wohnzimmer.ink`; die Datei gehörte
+  nicht zu meinem Auftrag. Ich habe nur per Suche gesehen, dass „Zu Fuß.“ und der Satz mit den vier
+  Wochen dort stehen. Ebenso `maple-falls-park.ink` (nur Z. 249 angesehen).
+- **Ablauf im laufenden Spiel:** nichts gestartet. Aussagen über Reihenfolgen (K1.3, K1.7, K1.11, K1.14)
+  stützen sich auf die Ink-Bedingungen, `quests.json`, `begegnungen.json`, die README und die Namen der
+  Szenendateien, nicht auf einen Testlauf. Ob die Hülle `programmheft_danach` doch von selbst startet
+  oder Momente an anderer Stelle bedingt, habe ich im App-Code nicht nachgesehen.
+- **Partiemomente:** nur die sechs Texte in `texte/de.json` (Z. 496–500) und die Zugnummern gelesen;
+  nicht, wie sie zur wirklichen Stellung passen (der Bauer bei Zug 20, „Geduld“ bei Zug 22, auch wenn
+  der Held den Bauern nimmt). Die Zugerraten-Runde New York hat keine eigenen Dialogtexte; der Satz
+  „Jetzt. Hier. Halt.“ vor dem Damenopfer (T3 Z. 379) steht in keiner der gelesenen Dateien.
+- **Klang- und Bildnamen:** nicht geprüft, ob es `turmuhr4`, `spaeter`, `konzern`, `sternenhimmel` usw.
+  als Dateien gibt, und nicht gegen `21_Klangplan.md` Zeile für Zeile abgeglichen. Porträtfassungen
+  „alt“, „Riss“, „müde“, „lacht ohne Spott“ fehlen laut den Dateiköpfen noch.
+- **Spätere Stufen** (Zustände nach Riverton und Ironwood bei Ada, Tessa, Kettering, Dunmore, Zwillingen,
+  Flohmarkt, Aufbruch nach Riverton in `zedernwald`) nur gelesen, nicht gegen die Romane zu Akt 2 bis 4
+  geprüft. `weg-cedar-riverton.ink` (Zedernwald, Kapitel 17 ff.) nicht gelesen.
+- **Story-Bibel:** nur Szenen 13 bis 25 und Abschnitt 5; `22_Dialogpruefung.md` nur über eine Suche nach
+  `#pause` gestreift, die Liste VC1 bis VC104 nicht einzeln nachgehalten.
+- **Längenregeln** (140 Zeichen, sechs Zeilen am Stück) nur grob per Skript; keine Einzelzählung.
+
+### K2 Kapitel 17 bis 22: Zedernwald, Weg nach Riverton und Riverton
+
+Geprüft gegen `docs/spiel/roman/akt2_teil1.md` (Kapitel 17–19) und `akt2_teil2.md` (Kapitel 20–22).
+Dialogdateien in `inhalte/abenteuer/dialoge/de/`: `weg-cedar-riverton.ink`, `riverton-aussen.ink`,
+`riverton-pavillon.ink`, `riverton-bahnhofshalle.ink`, `riverton-schuppen.ink`,
+`riverton-wohnwagen.ink`, dazu `erinnerung-london.ink` (Kapitel 21) und der Knoten `zedernwald` in
+`cedar-creek-aussen.ink` (Szene 26, Aufbruch). Eine `ansehen-riverton.ink` gibt es nicht. Die Sätze
+in der Clubpartie stehen nicht in Ink, sondern in `inhalte/abenteuer/texte/de.json`
+(`moment.slick.*`, `moment.ambrose.hier`); sie sind mitgeprüft.
+
+Marken, die die Dateien benutzen: `#sprecher`, `#stimmung` (`froh`, `ernst`, `kalt`, `fern`, `lacht`,
+`bitter`, `jung`), `#pause` (eine Sekunde) und `#pause:2`, `#musik` (Kennung, `aus`, `karte`),
+`#klang`, `#geraeusch`.
+
+Gesamturteil: Riverton selbst (Ankunft, Nova, Bildschirmtische, Pops, Harlan, Albescu, Nachgespräch
+nach London) folgt dem Roman eng und gut. Die Lücken liegen am Bahndamm (Kapitel 17 ist fast nur
+Mechanik), in der Erinnerung London (der feste Haltepunkt vor 19. e5 stimmt nicht) und am Schluss
+von Kapitel 22 (Wohnwagen und Fluss: zu viel in einer Zeile, ein Spruch-Tutorial an der stillsten
+Stelle).
+
+---
+
+#### K2.1 – widerspricht – Ambrose hält am falschen Zug an, der tragende Satz fehlt
+
+- Datei: `erinnerung-london.ink`, Knoten `schachtisch`, Zeile 84 (dazu Zeile 83); Runde
+  `riverton.flashbackLondon` in `inhalte/abenteuer/runden.json` (`"abZug": 17`).
+- Ink: „Halt. Schau hin. Was hättest du getan? Du hast Weiß, wie er. Ich frage dich bei jedem Zug.“
+- Roman: `akt2_teil2.md`, Zeile 141–142: „Halt. Schau hin. Er hat einen Turm weniger, und sein zweiter Turm hängt auch. Was hättest du getan?“
+- Befund: Fester Punkt verletzt. Im Spiel hält Ambrose vor dem 17. Zug an (Springer nach d5), wo
+  noch kein Turm fehlt; der Satz mit den zwei Türmen fehlt ganz. Auch das Bild davor stimmt am Brett
+  noch nicht: „die schwarze Dame steht tief in der weißen Stellung und frisst“ (Zeile 83) gilt erst
+  nach dem 17. Zug von Schwarz. „Ich frage dich bei jedem Zug“ ist Bedienungsanleitung in Ambroses
+  Mund.
+- Vorschlag: Runde ab Zug 19 beginnen (oder die Züge 17 und 18 als Erzählzeilen vorführen), dann:
+  „Der große Mann zieht einen Läufer. Mitten hinein, tief ins schwarze Lager. Ein Raunen.“ /
+  „Schwarz schlägt einen Turm. Einfach so, einen ganzen Turm.“ `#pause:2` / Ambrose (alt, ohne
+  `#stimmung:jung`): „Jetzt. Halt. Schau hin. Er hat einen Turm weniger, und sein zweiter Turm hängt
+  auch. Was hättest du getan?“ Den Satz „Ich frage dich bei jedem Zug“ streichen.
+
+#### K2.2 – fehlt – „Elf Tage, und ich bin nicht angekommen“ (einziger Splitter von 1866 in diesen Kapiteln)
+
+- Datei: `weg-cedar-riverton.ink`, Karte Bahndamm; nächster Knoten `quinn_erstes_treffen`, Zeile 80.
+- Ink (Bahndamm beginnt gleich mit dem Schaffner): „Am Bahndamm sitzt ein Mann in Schaffneruniform auf einem Schwellenstapel.“
+- Roman: `akt2_teil1.md`, Zeile 62–64: „Elf Tage, und ich bin nicht angekommen.“ (Tabelle „Neu“, Zeile 389: „Ein Satz am Bahndamm.“)
+- Befund: Der Güterzug (singende Schiene, vierzig Wagen) und Ambroses müder Satz fehlen in allen
+  Dateien (Suche nach „elf Tage“ ohne Treffer; „nicht angekommen“ erst in `weg-delacroix-desert.ink`).
+  Damit fehlt in Akt 2 der Splitter, der den Felsbogen vorbereitet. Nur der Fund der Fahrkarte
+  streift es („Wer fuhr damals, und kam er an?“).
+- Vorschlag: eigener Auslöser am Gleis vor dem Schaffner (oder Beginn von `quinn_erstes_treffen`):
+  „Erst singt die Schiene. Dann zittert der Boden. Dann rattert der Güterzug vorbei, vierzig Wagen.“
+  `#klang:gueterzug #musik:aus` / `#pause:2` / Ambrose `#stimmung:fern`: „So schnell. Ich habe elf
+  Tage gebraucht. Von New Orleans bis … nun.“ `#pause:2` / „Elf Tage, und ich bin nicht angekommen.“
+  / Erzähler: „Du wartest, ob er weiterspricht. Er tut es nicht.“
+
+#### K2.3 – plump – Spruch-Lektion mitten in Slicks stillster Szene
+
+- Datei: `riverton-wohnwagen.ink`, Knoten `slick_abschied`, Zeile 43–45.
+- Ink: „Und noch was für die Treppe. Wenn einer zu sicher wirkt, frag ihn ganz ruhig, ob sein Turm da wirklich sicher steht.“ (`#stimmung:froh`), danach „Dann grübelt er. Und die Uhr läuft.“
+- Roman: `akt2_teil2.md`, Zeile 350–352: „Stell ihn irgendwo hin, wo gespielt wird.“ … „Ich nahm ihn. Er war kalt und schwer.“ Danach geht es ohne ein weiteres Wort hinaus an den Fluss. Dokument 19, 5.4: „Im Wohnwagen leise.“
+- Befund: Direkt nach „Haben sie nicht.“ und dem Springer wird Slick wieder fröhlich und erklärt
+  einen Trick. Das nimmt dem Springer das Gewicht und dem Schluss die Stille.
+- Vorschlag: Zeilen 43–45 hier streichen und die Karte `gruebelfalle` in `riverton-pavillon.ink`,
+  `slick_alltag` (Slick auf der Treppe, nach `slickAbschiedGesehen`) geben, etwa: „Auf der Treppe
+  gelten Treppenregeln. Wenn einer zu sicher wirkt, frag ihn, ob sein Turm da wirklich sicher steht.“
+  Im Wohnwagen endet die Szene mit „Er ist kalt und schwer.“ `#pause:2`.
+
+#### K2.4 – Pausen – „Besser als ich.“ geht in einer Sammelzeile unter
+
+- Datei: `riverton-wohnwagen.ink`, Knoten `slick_fluss`, Zeile 52–53.
+- Ink: „Und die Tische spielen trotzdem besser als er. Besser als ich.“ (davor in einer Zeile: „Er hat recht. Und es ist ein Unrecht, und ich würde dem Stadtrat gern etwas sagen, das man vor Kindern nicht sagt.“)
+- Roman: `akt2_teil2.md`, Zeile 357–368: „„Er hat recht“, sagte Ambrose.“ – „Ich wartete.“ – … – „„Ja.““ – „„Besser als ich.““ – „Ich hatte ihn noch nie so gehört.“
+- Befund: Der Roman setzt drei Schläge mit Stille dazwischen; im Spiel sind es zwei volle Zeilen.
+  Der Satz, an dem Ambroses Bogen in Akt 2 hängt („fürchtet, dass es sie ohne ihn gibt“), bekommt
+  keine eigene Zeile.
+- Vorschlag: „Er hat recht.“ `#sprecher:ambrose #pause:2` / „Er hat recht, und es ist ein Unrecht,
+  und ich würde dem Stadtrat gern etwas sagen, das man vor Kindern nicht sagt.“ / „Und die Tische
+  spielen trotzdem besser als er.“ / Wahl `[„Ja.“]` oder `[Schweigen]` / „Besser als ich.“
+  `#stimmung:fern #musik:ambrose.zweifel #pause:2` / dann die Frage.
+
+#### K2.5 – plump – Der Held sagt die Moral auf, Ambrose macht einen Witz
+
+- Datei: `riverton-wohnwagen.ink`, Knoten `slick_fluss`, Zeile 59–60.
+- Ink: Wahl „Dass besser nicht alles ist.“, Antwort: „Vielleicht. Ich werde darüber nachdenken müssen. Ich habe ja Zeit.“
+- Roman: `akt2_teil2.md`, Zeile 377–381: „„Ich weiß es nicht“, sagte ich. „Aber ich weiß, mit wem ich lieber spiele.““ – „Er antwortete nicht.“ – „Es war nicht die Antwort, die er gesucht hatte.“
+- Befund: Die zweite Wahl spricht die Antwort der Geschichte aus (Dokument 19, Abschnitt 3: „Figuren
+  sagen die Moral auf“; Leitsatz 1 fällt nur zweimal), und Ambrose entschärft seine erste ernste
+  Frage mit einem Scherz. Akt 2 soll die Frage offen lassen. In der ersten Wahl fehlt außerdem das
+  ehrliche „Ich weiß es nicht“ davor.
+- Vorschlag: Wahl 1: `[„Ich weiß es nicht. Aber ich weiß, mit wem ich lieber spiele.“]`; Wahl 2
+  ersetzen durch `[„Ich weiß es nicht.“]` → Erzähler: „Er nickt nicht. Er sieht wieder hinauf zum
+  Park, wo es leuchtet.“ In allen drei Zweigen antwortet Ambrose nicht.
+
+#### K2.6 – fehlt – Ankunft in London: Sepia, fremde Hände, „Der Strand“
+
+- Datei: `erinnerung-london.ink`, Knoten `zeitungsjunge`, Zeile 42–43 (ein Knoten zur Ankunft fehlt;
+  der Auslöser `ankunft` in `orte.json` hat keinen Dialog).
+- Ink: „Ganz fern, wie durch Wasser, hört Ambrose eine Stimme: „Ambrose? Wo sind wir?“ Es ist {held}.“
+- Roman: `akt2_teil2.md`, Zeile 104–110: „Alles war braun und golden, wie eine alte Fotografie“ … „Ich sah auf Hände hinunter, die nicht meine waren, schmal, mit Tintenflecken“.
+- Befund: Die Ankunft wird nur erzählt, wenn man den Zeitungsjungen anspricht, und dann aus der
+  falschen Sicht (Ambrose hört den Helden; im Roman steckt der Held in Ambrose und hört dessen junge
+  Stimme „aus mir“). Das Bild der fremden Hände fehlt; im Nachgespräch steht aber „Deine Hände sind
+  deine.“ (`riverton-bahnhofshalle.ink`, Zeile 216), das ohne Vorbereitung ins Leere geht.
+- Vorschlag: Pflichtknoten bei der Ankunft: „Du stehst in einer Straße. Alles ist braun und golden,
+  wie eine alte Fotografie, in die jemand hineingegangen ist.“ / „Du siehst auf Hände hinunter, die
+  nicht deine sind. Schmal, mit Tintenflecken. Die Stiefel drücken.“ `#pause` / Ambrose
+  `#stimmung:jung`: „Der Strand. So heißt die Straße. Dort, das Haus mit dem Schild. Geh hinein.“
+
+#### K2.7 – fehlt – Die Bilder der Partie: der König tritt vor, die Armee, die nie aufwacht
+
+- Datei: `erinnerung-london.ink`, Knoten `schachtisch` (Zeile 76–90) und `rueckkehr` (Zeile 100).
+- Ink (nach der Runde geht es sofort weiter mit): „Der Verlierer steht auf, der nervöse kleine Mann, und er strahlt über das ganze Gesicht.“
+- Roman: `akt2_teil2.md`, Zeile 156–166: „Der große Mann zog seinen König ein Feld nach vorn, als träte er einem Besucher entgegen.“ … „Mit drei kleinen Figuren, gegen eine ganze Armee, die nie aufgewacht war.“
+- Befund: Zwischen „Was hättest du getan?“ und Kieseritzkys Strahlen steht nur die Aufgabenansicht.
+  „Er lässt ihn hängen“, der stille Königszug (Dokument 19, Leitsatz 2 nennt ihn als Beispiel), „Der
+  Raum hält den Atem an“ und das Schlussbild fehlen. Warum der Verlierer strahlt, trägt dann nur
+  noch das Brett.
+- Vorschlag: Nach der Runde, vor Zeile 100, drei Erzählzeilen: „Der Läufer gleitet ein einziges
+  Feld, und es ist vorbei.“ `#musik:aus` / „Matt. Mit drei kleinen Figuren, gegen eine ganze Armee,
+  die nie aufgewacht ist.“ `#pause:2` / „Niemand sagt etwas.“ Den Königszug, wenn möglich, als
+  Moment in der Runde: „Er zieht den König ein Feld nach vorn, als träte er einem Besucher entgegen.“
+
+#### K2.8 – widerspricht – Der Montag fehlt; Wohnwagen offen, bevor der Pavillon geräumt ist
+
+- Datei: `riverton-pavillon.ink`, Knoten `slick_alltag`, Zeile 147; `riverton-aussen.ink`, Knoten
+  `wohnwagen_zu`, Zeile 82.
+- Ink: „Im Pavillon stehen Bildschirmtische. Vier Stück, im Kreis, weiß. Die Steintische sind weg.“ und „Aus Slicks Wohnwagen ruft es: „Tür ist offen, Kopf einziehen!““
+- Roman: `akt2_teil2.md`, Zeile 322: „Am Montag, nach der Schule, fuhren wir noch einmal hin.“; Zeile 339–340: „Ohne das Reden sah er jünger aus.“
+- Befund: (a) Spricht man Slick nach der Nadel noch einmal an, sind die Steintische Sekunden nach
+  dem Applaus fort; ein Zeitsprung wird nicht gesagt. (b) `clubkampfRivertonBesprochen` öffnet den
+  Wohnwagen schon nach `slick_nach_sieg`; man kann also den Springer bekommen, bevor man die vier
+  hellen Flecken gesehen hat (Reihenfolge des Romans umgekehrt). (c) Der fröhliche Ruf aus dem
+  Wohnwagen passt nicht zum leisen Slick dieser Szene. Die Zahl (vier Tische, vier Flecken) stimmt.
+- Vorschlag: `slick_alltag` beginnen mit „Am Montag, nach der Schule, fahrt ihr noch einmal hin.
+  Juno hat gesagt, man müsse es sehen.“ `#musik:aus`; den Wohnwagen erst nach dieser Szene öffnen
+  (eigene Variable am Ende des ersten `slick_alltag`); in `wohnwagen_zu`: „Die Tür des Wohnwagens
+  steht einen Spalt offen. Drinnen brennt Licht.“
+
+#### K2.9 – widerspricht – „Bis Sonntag ist noch Zeit“, während es schon Sonntag ist
+
+- Datei: `riverton-pavillon.ink`, Knoten `slick_clubkampf`, Zeile 90 und 102–104.
+- Ink: „Bis Sonntag ist noch Zeit. Nicht viel.“ (Antwort auf „Noch nicht.“; Zeile 90 davor: „Am Sonntag regnet es richtig.“)
+- Roman: `akt2_teil2.md`, Zeile 221: „Am Sonntag regnete es richtig.“
+- Befund: Der Knoten erzählt erst den Sonntag mit allen Zuschauern unter Schirmen, lässt dann
+  „Noch nicht.“ zu und antwortet, als wäre noch Freitag. Beim nächsten Ansprechen läuft der
+  Sonntag von vorn.
+- Vorschlag: Die Frage vorziehen: Slick: „Sonntag ist das letzte Spiel. Bist du so weit?“ →
+  `[„Ich bin so weit.“]` / `[„Noch nicht.“]` („Bis Sonntag ist noch Zeit. Nicht viel.“). Erst nach
+  „Ich bin so weit.“ die Zeilen 90–94 mit dem Sonntag, dann nur noch die Wahl der Zeit.
+
+#### K2.10 – widerspricht – Momente in der Clubpartie: Ambrose sagt die Lösung, Slicks Satz kommt zu früh
+
+- Datei: `inhalte/abenteuer/texte/de.json`, Zeile 492–495 (ausgelöst in `begegnungen.json`,
+  `riverton.clubkampf`: Zug 8, Zug 20, `schachGegeben`); kein Ink-Knoten.
+- Text: „Ich bin hier. Er guckt nur nach vorn. Nie nach hinten.“ (`moment.ambrose.hier`) und „Was machst du da hinten? Hier vorn spielt die Musik!“ (`moment.slick.musik`, bei Zug 8).
+- Roman: `akt2_teil2.md`, Zeile 265–272: „„Ich bin hier.““ – „Aber er war nicht ganz da.“; der Satz von Tamsin ist dort die Erinnerung des Helden. Zeile 285: „„Was machst du da hinten?“, fragte Slick.“ fällt erst nach den zwei leisen Zügen. Zeile 291–298: die Hand bleibt „in der Luft stehen, über dem Brett“, dann „„Jedes Mal. Vierzehn Jahre lang.““
+- Befund: Ambrose ist in Akt 2 „nicht ganz da“ und liefert hier trotzdem den Gewinnplan
+  (Dokument 19: Der Held gewinnt an Slicks Schwäche, nicht auf Ansage). Slicks „da hinten“ bei Zug 8
+  hat noch keinen Anlass. Bei Mr. Odums Satz fehlen die stehende Hand und „Jedes Mal. Vierzehn Jahre
+  lang.“ (Moment aus Abschnitt 6, „Seine Hand bleibt in der Luft stehen“).
+- Vorschlag: `moment.ambrose.hier`: nur „Ich bin hier.“, danach Erzählzeile „Aber er ist nicht ganz
+  da.“ `moment.slick.musik` an einen stillen Zug des Helden binden (wenn es das Merkmal gibt), sonst
+  auf Zug 20 nach Ambrose legen. Vor `moment.slick.odum` eine Erzählzeile: „Slicks Hand bleibt in
+  der Luft stehen, über dem Brett.“ mit Pause, danach als zweite Zeile: „Jedes Mal. Vierzehn Jahre
+  lang.“
+
+#### K2.11 – fehlt – „Die Uhr ist auch eine Figur“; stattdessen ein Lehrsatz
+
+- Datei: `weg-cedar-riverton.ink`, Knoten `quinn_angebot` (Zeile 91), `quinn_nach_sieg` (Zeile 106),
+  `quinn_nach_niederlage` (Zeile 116).
+- Ink: „Mit Uhr sieht man weniger als ohne. Das ist der Preis der Eile.“ und „Du hast die Uhr behandelt wie eine Figur. Gut.“
+- Roman: `akt2_teil1.md`, Zeile 89–90: „Die Uhr ist auch eine Figur. Sie gehört zum Spiel. Aber sie ist nicht der König.“
+- Befund: Das Lob nach dem Sieg zitiert einen Satz, der im Spiel nie fällt. Nach der Niederlage
+  steht ein Merksatz im Lehrbuchton; vor der Partie ein Gegnersteckbrief („Er spielt wie ein
+  Fahrplan: genau, pünktlich, ohne Umwege.“). Der Roman lässt Ambrose mit einem Wort beruhigen.
+- Vorschlag: Zeile 116 ersetzen durch: „Ruhig. Die Uhr ist auch eine Figur. Sie gehört zum Spiel.
+  Aber sie ist nicht der König.“ Zeile 91 kürzen auf „Lass dich nicht hetzen.“ Zeile 106 dann:
+  „Du hast die Uhr ticken lassen und trotzdem hingesehen. Gut.“
+
+#### K2.12 – fehlt – Herkunft der Karte „Kühler Kopf“ (alter Herr mit Thermoskanne)
+
+- Datei: `weg-cedar-riverton.ink`, Knoten `quinn_nach_sieg`, Zeile 101–103.
+- Ink: „Bevor ich es vergesse, ein Rat von der Strecke: Wenn alle drängeln, atme einmal durch.“
+- Roman: `akt2_teil1.md`, Zeile 99–100: „Alter Herr mit einer Thermoskanne. Ich hab nie verstanden, wofür sie gut ist.“ (Tabelle „Neu“, Zeile 390: „Ein Satz von Mr. Quinn.“)
+- Befund: Die Karten haben im Roman eine Herkunft (Mr. Abernathy aus dem Park von Maple Falls); hier
+  wird die Karte zu einem Ratschlag. „Atme“ gehört außerdem Mira in Akt 3 (Dokument 19, Abschnitt 6)
+  und sollte nicht vorher verbraucht werden. Ambroses Zusatz („Ein kühler Kopf ist mehr wert als
+  zwei Minuten.“) erklärt die Karte, statt zu staunen.
+- Vorschlag: „Er greift in die Brusttasche und gibt dir eine Karte, steif, mit einem Kopf darauf,
+  über dem eine kleine Wolke hängt.“ / Quinn: „Die hat mir mal einer dagelassen. Vor Jahren. Alter
+  Herr mit einer Thermoskanne. Ich hab nie verstanden, wofür sie gut ist.“ / Erzähler: „Die Schrift
+  auf der Rückseite ist steil und altmodisch.“ Ambroses Zeile streichen.
+
+#### K2.13 – Pausen/Marken – Erzähltext steht in Sprechzeilen (falscher `#sprecher`)
+
+- Datei: `riverton-aussen.ink`, Knoten `victor`, Zeile 186–187; Knoten `albescu_alltag`, Zeile 145;
+  `riverton-bahnhofshalle.ink`, Knoten `harlan_spaeter`, Zeile 60.
+- Ink: „Dann kommt er herüber, nicht schnell. Du.“ (`#sprecher:victor #stimmung:kalt`) und „Er sieht auf deine Jacke. Zwei.“ (`#sprecher:victor`)
+- Roman: `akt2_teil1.md`, Zeile 175–178: „„Du“, sagte er.“ … „„Zwei.““
+- Befund: Unter Victors Porträt erscheint Erzähltext, als spräche er über sich selbst. Gerade seine
+  zwei Ein-Wort-Sätze verlieren so ihre Kälte. Gleiches Muster bei Mrs. Albescu („Mrs. Albescu
+  winkt mit einem Schraubenschlüssel. Die Kette springt? Komm her.“) und Mr. Harlan.
+- Vorschlag: trennen: „Dann kommt er herüber, nicht schnell.“ `#sprecher:erzaehler` / „Du.“
+  `#sprecher:victor #stimmung:kalt` / „Er sieht auf deine Jacke.“ `#sprecher:erzaehler` / „Zwei.“
+  `#sprecher:victor`. Entsprechend in den beiden anderen Zeilen.
+
+#### K2.14 – widerspricht – „Mein Vater sagt ja.“ lässt sich wegklicken
+
+- Datei: `riverton-aussen.ink`, Knoten `victor`, Zeile 192–196.
+- Ink: Wahl „Und das ist gut?“ führt zu „Mein Vater sagt ja.“; die Wahl `[Gehen]` beendet das Gespräch; danach gibt es nur noch `victor_alltag`.
+- Roman: `akt2_teil1.md`, Zeile 186–191: „„Und das ist gut?““ … „„Mein Vater sagt ja.““; Dokument 19, 5.3 nennt den Satz als das, woran man Victor in Akt 2 erkennt.
+- Befund: Victors einziger Schritt in Riverton hängt an einer Wahl. Wer „Gehen“ wählt, sieht in
+  Akt 2 keinen Riss.
+- Vorschlag: zweite Wahl `[Zu den Tischen sehen]` → Erzähler: „Du fragst nichts. Er sagt es
+  trotzdem, leiser.“ `#pause:2` → „Mein Vater sagt, das ist gut.“ So fällt der Satz in beiden
+  Zweigen, und die drei Sekunden bleiben.
+
+#### K2.15 – plump – Tamsin erklärt, was der Spieler gerade selbst gefunden hat
+
+- Datei: `riverton-pavillon.ink`, Knoten `tamsin_zettel`, Zeile 218.
+- Ink: „Er sieht alles, was laut ist. Aber wenn Ray leise einen Turm zur Seite schiebt, spielt er einfach weiter.“
+- Roman: `akt2_teil1.md`, Zeile 361–366: „Es dauerte, bis ich es fand. Er sah alles, was laut war.“ … „„Er guckt nur nach vorn“, flüsterte Tamsin. „Nie nach hinten.““
+- Befund: Im Roman ist das die eigene Entdeckung des Helden (und im Spiel die Aufgabenrunde
+  `riverton.slickBeobachten`); Tamsin sagt nur die zwei kurzen Sätze. Hier fasst sie das Ergebnis
+  der Runde noch einmal zusammen.
+- Vorschlag: Zeile 218 streichen oder als Erzählzeile aus Sicht des Helden: „Du hast es gesehen: Er
+  sieht alles, was laut ist.“ Dann Tamsin, mit `#pause` davor: „Er guckt nur nach vorn. Nie nach
+  hinten.“
+
+#### K2.16 – Pausen – Nach Pops’ schwerstem Satz geht sofort der Laden auf
+
+- Datei: `riverton-bahnhofshalle.ink`, Knoten `pops_odum`, Zeile 162–164.
+- Ink: „Damit keiner merkt, dass er nicht der Alte ist.“ (`#musik:karte`), danach `-> pops_laden`.
+- Roman: `akt2_teil1.md`, Zeile 336–337: „Aber er glaubt, er muss lauter sein als der Alte, damit keiner merkt, dass er nicht der Alte ist.“ (Absatzende, danach Szenenwechsel.)
+- Befund: Der Satz, der Slick als Menschen zeigt, wird vom Ladenfenster abgeschnitten; die Musik
+  springt in derselben Zeile zurück.
+- Vorschlag: `#pause:2` an die Zeile, `#musik:karte` weglassen und den Knoten mit `-> END` beenden;
+  der Laden öffnet beim nächsten Ansprechen.
+
+#### K2.17 – widerspricht – Juno weiß im Zedernwald schon vom „letzten Spiel“
+
+- Datei: `cedar-creek-aussen.ink`, Knoten `zedernwald`, Zeile 389.
+- Ink: „Dann spielen wir wenigstens das letzte Spiel. Das ist auch was.“
+- Roman: `akt2_teil1.md`, Zeile 21–25: „„Weiß ich nicht. Das, was vorher da war.““; vom letzten Spiel erfahren beide erst im Pavillon (Zeile 236: „„Sonntag ist das letzte Spiel“, sagte sie.“).
+- Befund: Juno weiß im Roman ausdrücklich nicht, was verloren geht. Die Zeile nimmt Tamsins Satz und
+  Slicks Einladung vorweg. Der Rest des Knotens ist gut.
+- Vorschlag: „Dann sehen wir wenigstens, was da jetzt steht. Und ich schreib es auf.“
+
+#### K2.18 – fehlt – Die Pointe der Wanderin
+
+- Datei: `weg-cedar-riverton.ink`, Knoten `fenwick`, Zeile 49.
+- Ink: „Wer angreift, soll zuerst zählen, wer verteidigt. Das hat mir mein Trainer hundertmal gesagt.“
+- Roman: `akt2_teil1.md`, Zeile 53–55: „„Das weiß jeder“, sagte die Frau. „Bis er angreift.““
+- Befund: Der Roman macht aus dem Merksatz einen kleinen Schlagabtausch mit Juno; das Spiel hängt
+  eine Quellenangabe an („mein Trainer“) und ein Urteil von Ambrose. So bleibt es ein Lehrsatz.
+- Vorschlag: „Wer angreift, soll zuerst zählen, wer verteidigt.“ `#sprecher:fenwick` / „Das wissen
+  wir.“ `#sprecher:juno` / „Das weiß jeder. Bis er angreift.“ `#sprecher:fenwick`. Ambroses Zeile
+  kann danach kürzer sein: „Moos an den Stiefeln. Sie gefällt mir.“
+
+#### K2.19 – fehlt – Die Mulde im Stein hängt an einer Wahl
+
+- Datei: `riverton-pavillon.ink`, Knoten `ray_mulde`, Zeile 265–267.
+- Ink: „Es stimmt. Eine flache Mulde, wo sechzig Jahre lang Hände gelegen haben.“ (nur nach der Wahl „Die Hand auf den Stein legen“; `[Nicken]` überspringt sie.)
+- Roman: `akt2_teil1.md`, Zeile 352: „Eine flache Mulde, wo sechzig Jahre lang Hände gelegen hatten.“ (Tabelle „Neu“, Zeile 397: „Was der Pavillon ist, in einem Ding.“)
+- Befund: Wer nickt, hört das Wort „Mulde“ nie, liest aber später „den Tisch mit der Mulde“ und „die
+  Steinplatte mit der Mulde“ (Zeile 92 und 149). Das Bild, das Kapitel 22 und den Abspann trägt,
+  darf nicht wählbar sein.
+- Vorschlag: Die Erzählzeile hinter die Wahl ziehen; `[Nicken]` → „Du nickst. Dann legst du die Hand
+  doch hin.“ Danach für beide: „Es stimmt. Eine flache Mulde, wo sechzig Jahre lang Hände gelegen
+  haben.“ `#pause:2`.
+
+#### K2.20 – Pausen/Marken – Der alte Ambrose spricht mit `#stimmung:jung`; „Ecktisch“ gegen „Mitte“
+
+- Datei: `erinnerung-london.ink`, Knoten `rueckkehr`, Zeile 102 (dazu Zeilen 67, 72, 77, 97 gegen 80).
+- Ink: „Er ist zum Telegrafenamt gelaufen. Um seine eigene Niederlage nach Paris zu melden. Weil sie so schön war.“ (`#stimmung:jung`)
+- Roman: `akt2_teil2.md`, Zeile 172–173: „„Er ist zum Telegrafenamt gelaufen“, sagte Ambrose leise.“ … „Seine Stimme zitterte.“
+- Befund: Den Rückblick spricht im Roman der alte Ambrose (wie schon „Jetzt. Halt.“); der junge
+  kann nicht wissen, wohin Kieseritzky lief. Die Marke `jung` zeigt das falsche Gesicht, und die
+  Zeile 103 gleich danach hat sie nicht. Nebenbei: Kellner, Zeitungsleser und Rückkehr sagen
+  „Ecktisch“, der Knoten `schachtisch` und der Roman „In der Mitte ein Tisch“.
+- Vorschlag: Zeile 102 ohne `#stimmung:jung`, davor Erzähler: „Seine Stimme ist wieder die alte.
+  Sie zittert.“ `#pause`; „Ecktisch“ überall durch „Tisch in der Mitte“ ersetzen.
+
+---
+
+#### Gut gelungen
+
+1. `riverton-bahnhofshalle.ink`, `london_nachgespraech` (Zeile 216–231): Die Versuchung steht fast
+   wörtlich wie im Roman, mit „Oder doch?“ als eigener Zeile samt `#stimmung:fern`,
+   `#musik:ambrose.zweifel` und Pause; Juno merkt nur die Stille („Sie glaubt dir nicht. Sie schreibt
+   nichts auf.“). Fester Punkt eingehalten.
+2. `riverton-pavillon.ink`, `slick_erstes_treffen` (Zeile 67–68): Slicks Verstummen bei Mr. Odum mit
+   `#musik:aus #pause:2`, danach nur „Na ja. Dann eben ich.“ Genau die Stille, die die Tabelle
+   „Neu“ verlangt.
+3. `riverton-aussen.ink`, `nova` (Zeile 166–174) und `bildschirmtische` (Zeile 212–219): zwei
+   Gesichter über eine Erzählzeile und eine Pause; Ambrose staunt und bricht ab („Und in keinem …“),
+   bevor er schimpft; „Aber er sieht weiter hin.“ Sechs Tische auf der Wiese stimmen.
+4. `riverton-aussen.ink`, `albescu_erstes_treffen` und `albescu_schluessel`, `riverton-schuppen.ink`:
+   Kapitel 20 fast vollständig, mit den Dingen statt der Gefühle (Besen, Kännchen in der Schürze,
+   „Sie nimmt ihn nicht gleich.“), Junos Tagebuchzeile am Schluss.
+5. `riverton-bahnhofshalle.ink`, `harlan_ohne_uhr` und `harlan_lupe`: „Deshalb spielt niemand mehr
+   mit mir.“ mit Pause; die Lupe mit Ambroses „Ein ehrliches Werkzeug.“ ohne Erklärung der Wirkung.
+
+#### Zählung
+
+Nach Art (20 Befunde): fehlt 7 (K2.2, K2.6, K2.7, K2.11, K2.12, K2.18, K2.19) · widerspricht 6
+(K2.1, K2.8, K2.9, K2.10, K2.14, K2.17) · plump 3 (K2.3, K2.5, K2.15) · Pausen und Marken 4 (K2.4,
+K2.13, K2.16, K2.20).
+
+Nach Datei (Hauptdatei des Befunds): `weg-cedar-riverton.ink` 4 (K2.2, K2.11, K2.12, K2.18) ·
+`erinnerung-london.ink` 4 (K2.1, K2.6, K2.7, K2.20) · `riverton-wohnwagen.ink` 3 (K2.3, K2.4, K2.5) ·
+`riverton-pavillon.ink` 4 (K2.8, K2.9, K2.15, K2.19) · `riverton-aussen.ink` 2 (K2.13, K2.14) ·
+`riverton-bahnhofshalle.ink` 1 (K2.16) · `cedar-creek-aussen.ink` 1 (K2.17) · `texte/de.json` 1
+(K2.10) · `riverton-schuppen.ink` 0.
+
+Kleinere Punkte, die nicht unter die 20 kamen (ohne volle Ausarbeitung):
+`weg-cedar-riverton.ink`: Der Schluss von Kapitel 17 fehlt (drei Brücken, „Nehmt einen Schirm.“ –
+„Wir hatten keinen.“); Mr. Quinn redet in Regelsprache („eine Stellung mit Vorteil für Weiß“, Zeile 88) und hat zwölf statt zwanzig Minuten Pause; das Bild von den zwei Briefen steht schon an der
+Tafel (Zeile 61) und dann noch einmal im Pavillon; die Antwortwahl „Später.“ (Zeile 94, 120, auch
+`riverton-bahnhofshalle.ink` Zeile 208) verbraucht das Leitwort. `riverton-bahnhofshalle.ink`:
+„Ambrose sagt nichts, aber du spürst, dass er an London denkt.“ (Zeile 189) nennt das Gefühl, statt
+ihn zu den Fenstern sehen zu lassen; `harlan_nach_sieg` prüft nicht, ob mit Uhr gespielt wurde, und
+„Ich gewann, und es fühlte sich nicht gut an“ fehlt; Pops spricht in `harlan_erstes_treffen`, bevor
+er vorgestellt ist; Mr. Quinn im Zug mit wechselnden Sätzen (Tabelle „Neu“) fehlt im Knoten `zug`.
+`riverton-pavillon.ink`: „Elias Odum“ (Gedenktafel) neben dem Jungen Eli; Limonadengläser statt
+Dosen. `riverton-aussen.ink`: „Beides ist recht.“ (Eli, Stufe D) ist ein Urteil des Erzählers.
+`riverton-schuppen.ink`: keine einzige Pause; vor „Nimm es.“ fehlt der Blick („dann das Rad, dann
+wieder mich“).
+
+#### Nicht geprüft
+
+- Nicht gespielt: Ich habe nur die Texte gelesen. Ob Marken wie `#stimmung:fern`, `#musik:konzern.flaeche`,
+  `#klang:uhr_hufschlag` eine Datei oder ein Porträt haben, ob `#pause` vor oder nach der Zeile
+  wirkt und wie die Knoten auf der Karte ausgelöst werden (Reihenfolge, Zustände „Nacht“,
+  „Sonntag“, „Montag“), ist nicht geprüft. K2.8 und K2.9 stützen sich auf die Ink-Logik und auf
+  `orte.json` (`wenn: clubkampfRivertonBesprochen`), nicht auf einen Test.
+- Die Aufgabenrunden selbst (Tafel, Tamsin, Ray, `slickBeobachten`, Zugerraten der Unsterblichen)
+  und ihre Begleittexte außerhalb von Ink sind nicht geprüft, nur `abZug` 17 in `runden.json` und
+  die vier Momente der Clubpartie in `texte/de.json`. Ob die Wahl der Zeit im Gespräch mit Slick zur
+  tatsächlich gewählten Zeitklasse passt, ist offen.
+- Nicht geprüft: `docs/spiel/20_Ortsblaetter.md`, `21_Klangplan.md`, `22_Dialogpruefung.md`,
+  `23_Technik_Atmosphaere.md`, `orte/riverton.md`; die Stufen der kleinen Geschichten (Eli, Harlan,
+  Albescu nach Akt 2) nur auf Ton, nicht gegen das Ortsblatt.
+- Noors Wandbild mit der Werkbank des Großvaters kommt in den geprüften Dateien nicht vor (es
+  gehört zum Kanalweg, `weg-riverton-ironwood.ink`, ausdrücklich ausgenommen); „Oktober 1858“ wird
+  in diesen Kapiteln nicht berührt. Beide festen Punkte sind hier also weder bestätigt noch verletzt.
+- Die Seitenstationen ohne Romanvorlage (Zugpartie am Stellwerk, Durchlass, Buchseite, Funde,
+  Lastkahn, Mr. Odums letzte Aufgabe) sind nur auf Ton gelesen, nicht gegen `14_Akt2_Leben_teil1.md`
+  oder `15`.
+- Zeilenlängen (140 Zeichen, zwei Sätze je Zeile) habe ich nicht durchgezählt; mehrere Zeilen
+  liegen sichtbar darüber (etwa `riverton-pavillon.ink` Zeile 67, `riverton-bahnhofshalle.ink`
+  Zeile 200, `riverton-schuppen.ink` Zeile 29).

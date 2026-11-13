@@ -429,7 +429,16 @@
         "art": "grundstellung"
       },
       "kartenErlaubt": true,
-      "zeit": "wahl"
+      "zeit": "wahl",
+      "momente": [
+        {
+          "wenn": {
+            "abZug": 15
+          },
+          "sprecher": "ambrose",
+          "text": "moment.ambrose.zuklappen"
+        }
+      ]
     },
     {
       "kennung": "portDelacroix.clubkampf",

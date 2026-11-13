@@ -1838,9 +1838,9 @@
       "blick": "unten"
     },
     "cc12SchuppenRot": {
-      "quelle": "modern-exteriors/Modern_Exteriors_16x16/ME_Theme_Sorter_16x16/17_Garden_Singles_16x16/ME_Singles_Garden_16x16_Red_Brown_Wood_Storage.png",
+      "quelle": "spiel/eigene/schuppen_rot.png",
       "breite": 48,
-      "hoehe": 64,
+      "hoehe": 72,
       "kollision": true,
       "art": "gebaeude",
       "blick": "unten",
@@ -1848,7 +1848,7 @@
       "stil": "laendlich"
     },
     "cc12SchuppenBlau": {
-      "quelle": "modern-exteriors/Modern_Exteriors_16x16/ME_Theme_Sorter_16x16/17_Garden_Singles_16x16/ME_Singles_Garden_16x16_Blue_White_Wood_Storage.png",
+      "quelle": "spiel/eigene/bootsschuppen.png",
       "breite": 48,
       "hoehe": 64,
       "kollision": true,
@@ -1859,9 +1859,9 @@
       "zum_wasser": true
     },
     "cc12SchuppenBraun": {
-      "quelle": "modern-exteriors/Modern_Exteriors_16x16/ME_Theme_Sorter_16x16/17_Garden_Singles_16x16/ME_Singles_Garden_16x16_Brown_Wood_Storage.png",
+      "quelle": "spiel/eigene/schuppen_braun.png",
       "breite": 48,
-      "hoehe": 64,
+      "hoehe": 72,
       "kollision": true,
       "art": "gebaeude",
       "blick": "unten",
@@ -1919,6 +1919,30 @@
       "art": "teppich",
       "zustand": "gebraucht",
       "stil": "klassisch"
+    },
+    "cc13Radio": {
+      "quelle": "spiel/eigene/radio_alt.png",
+      "breite": 16,
+      "hoehe": 16,
+      "kollision": false,
+      "art": "deko",
+      "zustand": "gebraucht",
+      "stil": "einfach",
+      "begehbar": true,
+      "begehbar_grund": "steht auf dem Regal",
+      "hinweis": "Altes Radio im Waschsalon (Kartenliste Akt 1), gleiches Bild wie mf9RadioAlt"
+    },
+    "cc13Bibliotheksleiter": {
+      "quelle": "modern-interiors/1_Interiors/16x16/Theme_Sorter_Singles/5_Classroom_and_Library_Singles/Classroom_and_Library_Singles_41.png",
+      "breite": 16,
+      "hoehe": 32,
+      "kollision": false,
+      "art": "deko",
+      "zustand": "gebraucht",
+      "stil": "klassisch",
+      "begehbar": true,
+      "begehbar_grund": "lehnt am Regal, man geht daran vorbei",
+      "hinweis": "Leiter in der Bibliothek, auf der Mrs. Okafor bei der ersten Begegnung steht (Kartenliste Akt 1)"
     }
   }
 }

@@ -2,7 +2,7 @@
   "karte": "mapleFalls.clubraum",
   "datei": "karten/maple-falls-clubraum.json",
   "art": "innen",
-  "beschreibung": "Der Clubraum des Schachclubs von Maple Falls in der Schule (26 × 15, KARTENREGELN 10.56): Die Schule ist außen das größte Gebäude des Orts, beim Clubkampf spielen sechs Bretter gleichzeitig. Ein roter Teppich mit goldenem Rand liegt mittig unter sechs runden Holztischen in zwei Reihen zu drei, an jedem zwei grüne Schulstühle dicht am Tisch, auf zweien sitzen Clubmitglieder vor ihren Partien, auf jedem ein aufgebautes Brett und eine Schachuhr; auf dem hinteren rechten Tisch steht das Brett, dem die weiße Dame fehlt, daneben statt der Uhr ein Zettel mit einem roten Fragezeichen. An der Nordwand hängen auf einer Höhe drei Fenster, die Weltkarte, eine Wanduhr, mittig über der Tür die Kreidetafel, die Pinnwand mit der Tabelle des Clubkampfs, das Plakat „Erst zählen“ und eine gerahmte Urkunde. Unter der Tafel steht der grüne Lehrertisch mit einem aufgeschlagenen Buch, Coach Delgado rechts daneben mit Blick in den Raum. Links eine Glasvitrine mit Holzrahmen, von oben zu sehen, obenauf die Pokale des Clubs, darunter der von 1994; daneben ein Bücherregal, auf dem der Globus steht, und ein niedriges Regal mit Schachbüchern; rechts ein zweites Bücherregal und sechs graue Schulspinde in zwei Blöcken (R011: Bilder mit sichtbarer Oberseite). An den Seitenwänden je eine Bank (die Seitenregale sind weg, R012) für die Eltern, mit dem Rücken zur Wand und Blick zu den Tischen; in allen vier Ecken Pflanzen. Die Tür liegt mittig in der Südwand.",
+  "beschreibung": "Der Clubraum des Schachclubs von Maple Falls in der Schule (26 × 15, KARTENREGELN 10.56): Die Schule ist außen das größte Gebäude des Orts, beim Clubkampf spielen sechs Bretter gleichzeitig. Ein roter Teppich mit goldenem Rand liegt mittig unter sechs runden Holztischen in zwei Reihen zu drei, an jedem zwei grüne Schulstühle dicht am Tisch, an zweien stehen Clubmitglieder vor ihren Partien (Sitzbilder gibt es noch nicht, R020), auf jedem ein aufgebautes Brett und eine Schachuhr; auf dem hinteren rechten Tisch steht das Brett, dem die schwarze Dame fehlt; auf d8 steht ein rosa-blauer Radiergummi (Roman Kap. 5). An der Nordwand hängen auf einer Höhe drei Fenster, die Weltkarte, eine Wanduhr, mittig über der Tür die Kreidetafel, die Pinnwand mit der Tabelle des Clubkampfs, das Plakat „Erst zählen“ und eine gerahmte Urkunde. Unter der Tafel steht der grüne Lehrertisch mit einem aufgeschlagenen Buch, Coach Delgado rechts daneben mit Blick in den Raum. Links eine Glasvitrine mit Holzrahmen, von oben zu sehen, obenauf die Pokale des Clubs, darunter der von 1994; daneben ein Bücherregal, auf dem der Globus steht, und ein niedriges Regal mit Schachbüchern; rechts ein zweites Bücherregal und sechs graue Schulspinde in zwei Blöcken (R011: Bilder mit sichtbarer Oberseite). An den Seitenwänden je eine Bank (die Seitenregale sind weg, R012) für die Eltern, mit dem Rücken zur Wand und Blick zu den Tischen; in allen vier Ecken Pflanzen. Die Tür liegt mittig in der Südwand. Sam steht am vorderen linken Tisch, Juno (sobald der Held im Club ist) bei den Spinden mit ihrem Clubtagebuch; Carla kommt erst nach Akt 2 dazu.",
   "wand": "creme",
   "boden": "holzHell",
   "raster": [
@@ -705,14 +705,9 @@
       "id": "t3"
     },
     {
-      "moebel": "mfc9BrettOhneDame",
+      "moebel": "mf12BrettRadiergummi",
       "auf": "t3",
-      "versatz": [-4, 0]
-    },
-    {
-      "moebel": "mfc10Zettel",
-      "auf": "t3",
-      "versatz": [10, -2]
+      "versatz": [0, 0]
     },
     {
       "moebel": "mf8SchulstuhlRechts",
@@ -859,20 +854,24 @@
     },
     {
       "name": "sam",
-      "feld": [9, 9]
+      "feld": [9, 7]
     },
     {
       "name": "carlaClub",
       "feld": [16, 9]
+    },
+    {
+      "name": "junoClub",
+      "feld": [22, 8]
     }
   ],
   "belebung": [
     {
       "name": "schuelerin",
       "typ": "statist",
-      "feld": [11, 7],
+      "feld": [10, 7],
       "eigenschaften": {
-        "tun": "sitzt am Tisch und stellt die Figuren auf",
+        "tun": "steht am Tisch und stellt die Figuren auf",
         "wann": "tag",
         "sagt": "statist.mapleFalls.clubraum.schuelerin",
         "bild": "statist-07",
@@ -882,9 +881,9 @@
     {
       "name": "clubmitglied",
       "typ": "statist",
-      "feld": [14, 10],
+      "feld": [15, 10],
       "eigenschaften": {
-        "tun": "sitzt am Brett und spielt eine Übungspartie",
+        "tun": "steht am Brett und spielt eine Übungspartie",
         "wann": "tag",
         "sagt": "statist.mapleFalls.clubraum.clubmitglied",
         "bild": "statist-14",
@@ -894,9 +893,9 @@
     {
       "name": "mutterWartet",
       "typ": "statist",
-      "feld": [1, 10],
+      "feld": [2, 11],
       "eigenschaften": {
-        "tun": "sitzt auf der Bank und wartet auf ihren Sohn",
+        "tun": "steht neben der Bank und wartet auf ihren Sohn",
         "wann": "tag",
         "sagt": "statist.mapleFalls.clubraum.mutterWartet",
         "bild": "statist-18",

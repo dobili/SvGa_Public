@@ -40580,5 +40580,40 @@
     "grundflaeche": "begehbar, sperrt nichts",
     "korrektur": "neue_pakete",
     "nur_pfad": true
+  },
+  "modern-farm/Single_Files_16x16/0_Complete_Tileset_Singles_16x16/DIY_Crafting_Table_16x16.png": {
+    "raumfunktion": ["werkstatt"],
+    "orte": ["bauernhof", "werkstatt"],
+    "innen_aussen": "beides",
+    "zustand": "gebraucht",
+    "material": ["holz"],
+    "stil": ["laendlich", "einfach"],
+    "epoche": "zeitlos",
+    "wohlstand": "einfach",
+    "blick": "unten",
+    "ansichten": [],
+    "nutzbar_von": ["unten"],
+    "ganz": true,
+    "gegenstuecke": "",
+    "befestigung": "boden",
+    "ablage": "Platte, untere 2/3 des Bildes",
+    "zugang": "unten",
+    "treppe": null,
+    "beziehungen": ["an der Wand", "Werkzeuge darauf"],
+    "einzigartig": false,
+    "grundflaeche": "sperrt 3x2 Kacheln (Platte und Beine); obere Reihe mit Regalaufsatz sperrt rechts, links oben frei",
+    "serie": "Bastelwerkstatt (Bauernhof)",
+    "fassungen": [
+      "modern-farm/Single_Files_16x16/Props_and_Buildings_16x16/DIY_Crafting_Table_Full_16x16.png"
+    ],
+    "doppelt": [],
+    "licht": false,
+    "anlass": null,
+    "anzahl": "einzeln",
+    "reihe": false,
+    "beschreibung": "Große hölzerne Werkbank mit breiter Platte und einem kleinen Regalaufsatz hinten rechts, ohne Werkzeug darauf; Vorderseite mit Beinen.",
+    "art": "tisch",
+    "sicher": 0.85,
+    "nur_pfad": true
   }
 }

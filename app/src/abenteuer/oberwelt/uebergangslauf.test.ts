@@ -31,6 +31,7 @@ interface Ortseintrag {
     readonly name: string;
     readonly art: string;
     readonly karte?: string;
+    readonly wenn?: string;
     readonly ziel?: { readonly karte: string; readonly ausloeser: string };
   }[];
 }
@@ -294,6 +295,31 @@ function versperrerPaare(
   return befunde;
 }
 
+/**
+ * Befunde aller Fassungen einer Karte. Ein Übergang mit `wenn` (Gatter der Landstraße) darf in einer
+ * Fassung unerreichbar sein, wenn eine andere ihn erreicht (Kartengutachten Akt 1, Zaunlücke).
+ */
+function befundeDerKarte(
+  ort: Ortseintrag,
+  k: Ortseintrag["karten"][number],
+  moebel: Record<string, Sperrangabe>,
+) {
+  const dateien = [k.datei, ...Object.values(k.zustaende ?? {})];
+  const je = dateien.map((d) => pruefeKarte(ort, k.kennung, d, moebel));
+  const bedingt = (name: string) => regel(ort, k.kennung, name)?.wenn !== undefined;
+  const rest = (b: string, d: string) => b.slice(d.length);
+  return je.flatMap((liste, i) =>
+    liste.filter((b) => {
+      const treffer = /^ (\w+): von (\w+) aus nicht erreichbar$/.exec(rest(b, dateien[i] ?? ""));
+      if (!treffer?.[1] || !treffer[2] || !(bedingt(treffer[1]) || bedingt(treffer[2])))
+        return true;
+      return je.every((andere, j) =>
+        andere.some((x) => rest(x, dateien[j] ?? "") === rest(b, dateien[i] ?? "")),
+      );
+    }),
+  );
+}
+
 /** So viele Richtungen hat ein Übergang, der frei im Raum liegt und keine Angabe trägt. */
 const ALLE_RICHTUNGEN = 4;
 
@@ -312,11 +338,7 @@ describe("Übergänge zu Fuß", () => {
       const moebel = moebelliste();
       const befunde: string[] = [];
       for (const ort of orte) {
-        for (const k of ort.karten) {
-          for (const datei of [k.datei, ...Object.values(k.zustaende ?? {})]) {
-            befunde.push(...pruefeKarte(ort, k.kennung, datei, moebel));
-          }
-        }
+        for (const k of ort.karten) befunde.push(...befundeDerKarte(ort, k, moebel));
       }
       expect(befunde).toEqual([]);
     },

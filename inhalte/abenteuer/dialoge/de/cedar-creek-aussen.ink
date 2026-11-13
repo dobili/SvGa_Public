@@ -385,6 +385,19 @@ Victor spielt weiter auf seinem Tablet. Er sieht nicht auf. #sprecher:erzaehler
 }
 -> ankunft
 
+// ---------------------------------------------------------------- Zedernpfad nach Maple Falls
+// Übergang „zedernpfad“ (orte.json, wenn: nadelCedarCreek): Der Pfad ist bis zur zweiten Nadel
+// gesperrt, wie auf der Seite des Parks (maple-falls-park.stamm_s2, Kartengutachten Akt 1).
+
+=== zedernpfad_zu ===
+{nadelCedarCreek >= 1:
+    -> END
+- else:
+    Der Pfad führt zwischen die Zedern, Richtung Maple Falls. Nach ein paar Schritten liegt ein umgestürzter Stamm quer über dem Weg. #sprecher:erzaehler
+    Von dieser Seite kommst du nicht hinüber. Mit dem Bus geht es schneller. #sprecher:erzaehler
+    -> END
+}
+
 // ---------------------------------------------------------------- Aufbruch nach Riverton (Akt 2)
 // Übergang „zedernwald“ am Steg (orte.json, wenn: endeAkt1Gesehen): läuft vor dem Wechsel auf
 // die Route wegCedarRiverton. Erstes Mal: Szene 26 der Bibel (akt2.aufbruch); die Quest

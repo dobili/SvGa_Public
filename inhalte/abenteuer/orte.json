@@ -170,6 +170,13 @@
           "sprite": "figuren/statist-07.png",
           "dialog": "maple-falls-aussen.calloway",
           "wenn": "endeAkt1Gesehen"
+        },
+        {
+          "kennung": "mapleFalls.junoClub",
+          "name": "figur.juno.name",
+          "sprite": "figuren/juno.png",
+          "dialog": "maple-falls-clubraum.juno",
+          "wenn": "clubBeigetreten"
         }
       ],
       "ausloeser": [
@@ -546,25 +553,25 @@
         {
           "kennung": "cedarCreek.zwillinge",
           "name": "figur.zwillinge.name",
-          "sprite": "figuren/zwillinge.png",
+          "sprite": "figuren/statist-05.png",
           "dialog": "cedar-creek-aussen.zwillinge"
         },
         {
           "kennung": "cedarCreek.kettering",
           "name": "figur.kettering.name",
-          "sprite": "figuren/kettering.png",
+          "sprite": "figuren/statist-14.png",
           "dialog": "cedar-creek-aussen.kettering"
         },
         {
           "kennung": "cedarCreek.zwillingeDrinnen",
           "name": "figur.zwillinge.name",
-          "sprite": "figuren/zwillinge.png",
+          "sprite": "figuren/statist-05.png",
           "dialog": "cedar-creek-bibliothek.zwillinge"
         },
         {
           "kennung": "cedarCreek.dunmore",
           "name": "figur.dunmore.name",
-          "sprite": "figuren/dunmore.png",
+          "sprite": "figuren/statist-13.png",
           "dialog": "cedar-creek-drechslerei.dunmore"
         }
       ],
@@ -652,7 +659,9 @@
           "ziel": {
             "karte": "wegMapleCedar.zedernpfad",
             "ausloeser": "zedernWeiterCedar"
-          }
+          },
+          "wenn": "nadelCedarCreek",
+          "dialog": "cedar-creek-aussen.zedernpfad_zu"
         },
         {
           "name": "flussweg",
@@ -831,27 +840,27 @@
         {
           "kennung": "wegMapleCedar.ada",
           "name": "figur.ada.name",
-          "sprite": "figuren/ada.png",
+          "sprite": "figuren/statist-11.png",
           "dialog": "weg-maple-cedar.ada"
         },
         {
           "kennung": "wegMapleCedar.tessa",
           "name": "figur.tessa.name",
-          "sprite": "figuren/tessa.png",
+          "sprite": "figuren/statist-23.png",
           "dialog": "weg-maple-cedar.tessa",
           "wenn": "nadelCedarCreek == 0"
         },
         {
           "kennung": "wegMapleCedar.tessaFluss",
           "name": "figur.tessa.name",
-          "sprite": "figuren/tessa.png",
+          "sprite": "figuren/statist-23.png",
           "dialog": "weg-maple-cedar.tessa",
           "wenn": "nadelCedarCreek > 0 und nadelRiverton == 0"
         },
         {
           "kennung": "wegMapleCedar.tessaZedern",
           "name": "figur.tessa.name",
-          "sprite": "figuren/tessa.png",
+          "sprite": "figuren/statist-23.png",
           "dialog": "weg-maple-cedar.tessa",
           "wenn": "nadelRiverton > 0 und nadelIronwood == 0"
         }

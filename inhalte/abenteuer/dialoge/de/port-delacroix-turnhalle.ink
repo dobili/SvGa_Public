@@ -16,6 +16,7 @@
 // „König nach h1“, der Stuhl fällt, „Er hat nicht ganz unrecht“, das Brett bleibt bei Miss Odile am
 // Schiedsrichtertisch. Klang: remy.mauer, zero (aus Ambroses Mund), Stille S49 und S50,
 // ambrose.ende. Danach fehlt Ambrose bis Kapitel 38.
+// Kapitel 40 nach dem Roman: Benefiz mit Remys Entschuldigung („Du hattest nicht ganz unrecht“).
 // Kapitel 39 nach dem Roman: Geigenkasten und Karten auf dem Schiedsrichtertisch, „Spiel deine
 // Partie“ aus dem Kasten, im Spiel Raumklang und der erste eigene Plan (Partiemomente in
 // begegnungen.json), nach dem Sieg steht die ganze Halle; Nadel als Lyra mit Grünspan.
@@ -214,13 +215,19 @@ Spielst du eine Simultan gegen die Kinder der Stadt? Jedes Kind gibt einen Dolla
     -> END
 
 === odile_nach_simultan ===
+// Kapitel 40: Remys Entschuldigung; der Held gibt ihm halb recht. Statt der Karte Schutzengel (keine
+// eigene Wirkung) gibt Miss Odile „Was droht?“.
 ~ simultanGedankt = true
-Die Kasse klingelt. Drei Dollar, und ein Vierter, den Mrs. Arceneaux dazulegt. #sprecher:erzaehler
-Remy bleibt am dritten Brett sitzen, als die anderen schon gehen. #sprecher:erzaehler
-Ich hab dich beobachtet. Du redest mit dem Brett, aber du spielst allein. Tut mir leid. #sprecher:remy #stimmung:still
-Miss Odile drückt dir eine Karte in die Hand: „Was droht?“ #sprecher:erzaehler
-Damit du nicht wieder etwas verlierst, was dir wichtig ist. #sprecher:odile
+Jedes Kind legt einen Dollar in die Blechdose. Am dritten Brett verliert Remy knapp, legt seinen Dollar hinein und bleibt sitzen. #sprecher:erzaehler
+Ich hab dich beobachtet. Die ganze Woche. Mit dem Karren. Bei Batiste. #sprecher:remy #stimmung:still
+Du redest mit dem Brett. Ich weiß nicht, warum. Aber du spielst allein. #sprecher:remy
+Tut mir leid. Die mit dem Glas haben uns Bildschirme gebracht, als wir Decken gebraucht haben. #sprecher:remy
+* [„Du hattest nicht ganz unrecht. Den Zug fand ich nicht.“]
+- Remy sieht dich lange an. Dann nimmt er die Trompete aus dem Kasten und spielt das Schnelle. #sprecher:erzaehler #musik:odile.tanz
+Die ganze Halle klatscht im Takt. Mama tanzt mit einem Mann aus dem Notzelt. #sprecher:erzaehler
+Miss Odile drückt dir eine Karte in die Hand. Damit du nicht wieder etwas verlierst, was dir wichtig ist. #sprecher:odile
 ~ gibKarte("wasDroht")
+Du siehst zum Geigenkasten hinüber. Der Deckel steht offen. #sprecher:erzaehler
 -> END
 
 // ---------------------------------------------------------------- Remy

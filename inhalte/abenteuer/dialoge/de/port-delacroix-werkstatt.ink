@@ -12,6 +12,9 @@
 // Tastenholz) und 1852 (Claire, „Dann eben, wenn du tot bist“), danach Ambroses einer Satz:
 // „Deshalb bist du hier.“ Klang: ambrose.verstimmt, stimmton, ambrose.vierhaendig.
 //
+// Kapitel 40 nach dem Roman: der Leim umsonst, das ovale Foto („Das bin ich“), Céleste mit dem
+// Skateboard spielt auf dem alten Brett, „Mit dir.“ Klang: ambrose.verstimmt, celeste, ambrose.held.
+//
 // Der Flashback läuft vorerst ohne eigene Sepia-Karte als Zugraten an der Werkbank (Bericht
 // mittel-1, fünfzehnter Auftrag). Variablen: ausgangPortDelacroixCeleste und
 // flashbackWerkstattBestanden setzt die Hülle (R42); ambroseSprichtWieder setzt diese Datei.
@@ -44,20 +47,34 @@ VAR angesehenLaptop = false
     -> END
 }
 ~ henriGetroffen = true
-Es riecht nach Leim und frisch gehobeltem Holz. Ein Mann mit Bleistift hinter dem Ohr kommt dir entgegen. #sprecher:erzaehler
-Henri Whitlock-Duval. Klavierbauer, wie mein Vater und sein Vater. Der Sturm hat das Dach erwischt, nicht die Klaviere. #sprecher:henri
-Ein Klavier hat zweihundertdreißig Saiten. Ihr Schach hat nur vierundsechzig Felder? Klingt erholsam. #sprecher:henri
+Ein Mann mit Sägemehl in den Augenbrauen kommt dir entgegen. Er lacht viel und arbeitet dabei weiter. #sprecher:erzaehler
+Henri Whitlock-Duval. Leim für den Club? Natürlich für den Club. Umsonst. #sprecher:henri
+Meine Großmutter hat dort Klavier gespielt, wenn die Herren ihre Partien hatten. Das einzige Publikum, das nie klatscht und nie geht. #sprecher:henri
+Ein Klavier hat zweihundertdreißig Saiten. Ihr Spiel hat nur vierundsechzig Felder? Klingt erholsam. #sprecher:henri
 -> END
 
 === henri_foto ===
 ~ fotoAmbroseGesehen = true
 ~ henriGetroffen = true
-Henri führt dich durch die Werkstatt, vorbei an Klavieren ohne Deckel und Kisten voller Tasten. #sprecher:erzaehler
-An der Wand hängt ein altes Foto: ein junger Mann mit einem Schachbrett unter dem Arm. #sprecher:erzaehler
-Ein Vorfahr. Keiner weiß mehr, wer. Das Brett hat er wohl selbst gebaut, in dieser Werkstatt. #sprecher:henri
-Das bin ich. #sprecher:ambrose #pause
-Henri hat nichts gehört. Er erzählt weiter von Saiten und Hämmern. Du siehst lange auf das Foto. #sprecher:erzaehler
-Hinten in der Werkstatt sitzt ein Mädchen mit Kopfhörern auf einer Werkbank und schaut neugierig herüber. #sprecher:erzaehler
+Durch ein Loch im Dach, über das eine Plane gespannt ist, fällt blaues Licht. Die Werkbank steht an derselben Stelle. #sprecher:erzaehler
+Das hier wird Sie interessieren, wenn Sie Schach mögen. #sprecher:henri
+Ein ovales Foto, sehr alt, braun. Ein junger Mann im Rock mit hohem Kragen, vor ihm ein Schachbrett. #sprecher:erzaehler #musik:aus #pause
+Ein Vorfahr. Keiner weiß mehr, wer. Er soll nach New Orleans gegangen sein und nie wiedergekommen. #sprecher:henri
+Die Familie hat nicht gern von ihm gesprochen. Ein Spieler, hieß es. Ich fand, er sieht nett aus. #sprecher:henri
+Das bin ich. #sprecher:ambrose #stimmung:still #musik:ambrose.verstimmt
+* [Hinsehen]
+- Du siehst ihn, zum ersten Mal seit sechs Tagen: schmal, hochgeschlossen, blasser als früher. #sprecher:erzaehler
+Ich erinnere mich an den Tag. Man musste eine Minute lang nicht atmen. Ich habe an einen Zug gedacht. #sprecher:ambrose
+Henri hört ihn nicht. Er leimt. #sprecher:erzaehler
+Keiner weiß mehr, wer. Ein Spieler. Sie haben nicht gern von mir gesprochen. #sprecher:ambrose #stimmung:traurig
+* [„Ambrose …“]
+- Nein. Lass. Sechs Generationen. Sie haben weitergemacht. Jede Saite muss stimmen. #sprecher:ambrose
+Mein Vater hätte ihn sehr gemocht. #sprecher:ambrose #stimmung:still
+* [Nichts sagen]
+- Eine Tür schlägt. Ein Mädchen, fünfzehn vielleicht, ein Skateboard unter dem Arm, Kopfhörer um den Hals. #sprecher:erzaehler #musik:celeste
+Papa, hast du mein Ladekabel … Oh. Besuch. Schach? Das ist doch was für alte Leute. #sprecher:celeste
+Für sehr alte. #sprecher:ambrose #stimmung:lacht
+Du musst lachen. Es ist das erste Mal seit der Turnhalle. #sprecher:erzaehler
 -> END
 
 === henri_alltag ===
@@ -77,9 +94,12 @@ Hinten in der Werkstatt sitzt ein Mädchen mit Kopfhörern auf einer Werkbank un
 }
 
 === celeste_angebot ===
-Céleste nimmt die Kopfhörer ab und zeigt auf deinen Rucksack. #sprecher:erzaehler
-Schach ist was für alte Leute. Aber das Brett da sieht cool aus. #sprecher:celeste
-Also, ich schieb die Pferde einfach rum, okay? #sprecher:celeste
+Céleste sieht auf den Hocker. Du hast den Geigenkasten aufgemacht, ohne es zu merken. #sprecher:erzaehler
+Das sieht cool aus. Das ist ja richtig alt. Darf ich? #sprecher:celeste
+Sie fährt mit dem Finger über die Buchstaben am Rand: A. W. 1857. Sie hat sein Kinn. Und die Hände. #sprecher:erzaehler
+* [„Kannst du es?“]
+- Ich weiß, wie die Dinger ziehen. Ungefähr. Also, ich schieb die Pferde einfach rum, okay? #sprecher:celeste
+Die Stellung, die niemand anrührt, hast du auf Junos Reisebrett übertragen. Er hat genickt. #sprecher:erzaehler
 + [„Okay. Eine Partie.“]
     ~ beginnePartie("portDelacroix.celeste")
     -> END
@@ -89,16 +109,24 @@ Also, ich schieb die Pferde einfach rum, okay? #sprecher:celeste
 
 === celeste_nach_partie ===
 ~ ambroseSprichtWieder = true
-Okay, das war nicht so schlecht. Aber ich geh jetzt skaten. #sprecher:celeste
-Sie klemmt sich das Brett unter den Arm, merkt es, lacht und gibt es dir zurück. Dann ist sie weg. #sprecher:erzaehler
-Sie muss es nicht lieben. Es reicht, dass sie einmal gespielt hat. #sprecher:ambrose #stimmung:froh
-Ich wollte, dass alles, was ich war, Schach ist. #sprecher:ambrose
-Hier sehe ich: Es reicht, dass es Menschen gibt, die weitermachen. Mit Klavieren. Mit dir. #sprecher:ambrose
-* [„Du redest wieder.“]
-    Ich habe zugehört. Das war nötig. #sprecher:ambrose
-* [Nichts sagen und das Brett festhalten]
-    Du hältst das Brett ein bisschen fester als sonst. #sprecher:erzaehler
-- -> END
+Einmal, ganz zufällig, stellt Céleste einen Springer auf ein Feld, auf das er gehört. #sprecher:erzaehler
+Hast du das gesehen? Das hat sie von … #sprecher:ambrose #stimmung:froh
+Er bricht ab. Er lächelt über sich selbst. #sprecher:erzaehler
+Okay. Das war nicht so schlecht. Aber ich geh jetzt skaten. #sprecher:celeste
+Draußen rattert das Skateboard über das Pflaster, kleiner werdend. Ambrose sieht ihr nach. #sprecher:erzaehler
+* [Warten]
+- Sie muss es nicht lieben. Es reicht, dass sie einmal gespielt hat. Auf diesem Brett. #sprecher:ambrose #stimmung:froh
+Ich wollte, dass alles, was ich war, Schach ist. Eine Fußnote, sechs Wörter, und ich war beleidigt. #sprecher:ambrose
+Und hier hängt mein Gesicht an der Wand, keiner weiß, wem es gehört, und sie bauen Klaviere und sind glücklich. #sprecher:ambrose
+* [„Macht dir das nichts aus?“]
+- Doch. Ein wenig. Aber weniger, als ich dachte. #sprecher:ambrose #stimmung:lacht
+Er sieht dich an, richtig, zum ersten Mal seit einer weißen, flackernden Nacht. #sprecher:erzaehler
+Es reicht, dass es Menschen gibt, die weitermachen. Mit Klavieren. #sprecher:ambrose #pause
+Mit dir. #sprecher:ambrose #stimmung:froh #musik:ambrose.held
+* [Nichts sagen können]
+- Ich schulde dir eine Antwort. Auf eine Frage. Ich habe sie noch nicht. #sprecher:ambrose
+Aber ich weiß jetzt, dass ich sie am falschen Ort gesucht habe. #sprecher:ambrose
+-> END
 
 === celeste_alltag ===
 {~Céleste ist skaten. Auf ihrem Laptop klebt ein Zettel: „Bin weg. Pferde rumschieben war okay.“|Céleste hört Musik und wippt mit dem Fuß. Sie hebt kurz den Daumen.} #sprecher:erzaehler
@@ -171,12 +199,12 @@ Dann schweigt er wieder. Es war sein einer Satz für diesen Tag. #sprecher:erzae
 === foto_wand ===
 {
 - fotoAmbroseGesehen:
-    Das alte Foto: ein junger Mann an einem Brett, um ihn herum Musiker. Ambrose sagt nichts mehr dazu. #sprecher:erzaehler
+    Das ovale Foto: ein junger Mann im Rock mit hohem Kragen, vor ihm ein Schachbrett. Er kann es kaum erwarten, dass das Stillsitzen vorbei ist. #sprecher:erzaehler
 - angesehenFotoWand:
     Das Foto hängt schief. Henri weiß sicher, wer darauf ist. #sprecher:erzaehler
 - else:
     ~ angesehenFotoWand = true
-    An der Wand hängt ein altes Foto in einem Holzrahmen: ein Brett, ein Tisch, Menschen mit Instrumenten. Das Glas ist gesprungen. #sprecher:erzaehler
+    An der Wand hängt ein altes Foto in einem ovalen Rahmen, braun und blass. Henri weiß sicher, wer darauf ist. #sprecher:erzaehler
 }
 -> END
 

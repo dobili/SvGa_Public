@@ -31,6 +31,10 @@ VAR teamAngekommen = false
 VAR nadelRiverton = 0
 VAR nadelIronwood = 0
 VAR ambroseNenntNamen = false
+VAR clubkampfBauerGesehen = false
+VAR nachtImLesesaal = false
+VAR clubkampfBauerAbgelehnt = false
+VAR clubkampfZaehlGesagt = false
 
 // ---------------------------------------------------------------- Mrs. Okafor
 
@@ -40,6 +44,7 @@ VAR ambroseNenntNamen = false
 - not (reiheDexBestanden and reiheMaeBestanden): -> okafor_reihe_offen
 - nadelCedarCreek > clubkampfCedarCreekBesprochen: -> okafor_nach_sieg
 - nadelCedarCreek == 0 and ausgangCedarCreekClubkampf == "niederlage": -> okafor_nach_niederlage
+- nadelCedarCreek == 0 and not nachtImLesesaal: -> okafor_bis_morgen
 - nadelCedarCreek == 0: -> okafor_clubkampf
 - else: -> okafor_alltag
 }
@@ -92,6 +97,20 @@ Eine Fußnote. #sprecher:ambrose #stimmung:bitter
     Und unten im Keller warten die nassen Kartons, wenn du magst. #sprecher:okafor
 }
 -> END
+
+// Ablauf nach dem Roman (Kapitel 10 bis 15): Der Clubkampf ist am Samstag, nach der Nacht im
+// Lesesaal. Wer nicht zum Steg geht, kann hier gleich schlafen gehen, damit nichts hängen bleibt.
+=== okafor_bis_morgen ===
+Die Aufgaben sind gelöst. Gespielt wird morgen, wenn dein Team da ist. #sprecher:okafor
+{maeEingeladen and not sternennachtGesehen: Heute Abend schauen die Kinder am Steg nach den Sternen. Danach: die Matten im Lesesaal. #sprecher:okafor}
+* [„Ich geh noch zum Steg.“]
+    Geduld ist auch ein Zug. #sprecher:okafor
+    -> END
+* [„Ich geh schlafen.“]
+    ~ nachtImLesesaal = true
+    Du rollst dich auf einer Matte zwischen den Regalen ein. Die Uhr im Türmchen tickt. #sprecher:erzaehler #geraeusch:uhr_ticken
+    Am Morgen sitzt Mrs. Okafor schon am langen Tisch, eine Tasse in der Hand. #sprecher:erzaehler
+    -> END
 
 === okafor_clubkampf ===
 // Runde 11 (VC86 bis VC88, Roman Kapitel 15): still gespannt, die Uhr zählt mit. Keine Ansage der
@@ -273,7 +292,40 @@ Wir streiten nicht mehr. Es ist furchtbar. #sprecher:ivy
 -> END
 
 // ================================================================ Runde 11: Roman, Kapitel 15
-// Die Momente mitten im Clubkampf (der angebotene Bauer, „Lass mich“ bis „Vergib mir. Zähl.“,
-// Dialogprüfung VC89, VC90) stehen als Partiemomente in begegnungen.json bei cedarCreek.clubkampf
-// (Technik T5 von mittel-2), Texte unter moment.okafor.* und moment.ambrose.* in texte/de.json.
-// Die Karte Mentor-Zug vergibt die Quest erst nach dem Clubkampf.
+// Zwei geführte Momente mitten im Clubkampf (Technik T11 von mittel-2; begegnungen.json,
+// cedarCreek.clubkampf): clubkampf_bauer beim Köder (Merkmal koeder, ab Zug 12; Rückfall ab Zug
+// 18) und clubkampf_lass_mich beim möglichen Turmopfer mit weniger als vier Minuten (turmopfer,
+// uhrUnter 240; Rückfall ab Zug 26). Jede Szene läuft nur einmal (Variablen unten), auch wenn
+// Merkmal und Rückfall beide auslösen. Die Uhr steht, solange der Dialog offen ist; er führt keinen
+// Zug aus. Die Karte Mentor-Zug vergibt die Quest erst nach dem Clubkampf.
+// Klang (21_Klangplan.md S22, S23): beim Bauern setzt die Musik aus; „Lass mich“ mit
+// ambrose.lassMich, Abriss bei „Ich weiß es nicht“, bei „Zähl“ das Aha.
+
+=== clubkampf_bauer ===
+{clubkampfBauerGesehen: -> END}
+~ clubkampfBauerGesehen = true
+Ein Bauer steht vor ihrem König. Niemand passt auf ihn auf. Du zählst zweimal: kein Verteidiger. #sprecher:erzaehler #musik:aus
+Was glaubst du denn, warum er dort steht? #sprecher:okafor #pause:2
+* [Die Hand zurückziehen]
+    ~ clubkampfBauerAbgelehnt = true
+    Du siehst noch einmal hin. Nicht auf den Bauern. Auf deinen König, hinter seinen drei Bauern. #sprecher:erzaehler
+    Grundreihe. Der König, der keine Luft kriegt. #sprecher:erzaehler
+    Geduld. Wo hast du die her? #sprecher:okafor #stimmung:froh #musik:karte
+* [Den Bauern trotzdem nehmen wollen]
+    Nun denn. #sprecher:okafor #musik:karte
+- -> END
+
+=== clubkampf_lass_mich ===
+{clubkampfZaehlGesagt: -> END}
+~ clubkampfZaehlGesagt = true
+Lass mich. #sprecher:ambrose #musik:ambrose.lassMich
+Nur dieses eine Mal. Ich sehe es. Der Turm, {ambroseNenntNamen:{held}|Lehrling}, der Turm, mitten hinein. #sprecher:ambrose
+Sie muss ihn nehmen, und dann … Es wäre schön. Es wäre so schön. #sprecher:ambrose
+* [„Stimmt es?“]
+    Stille. Die Uhr tickt. #sprecher:erzaehler #pause:2
+    Ich weiß es nicht. #sprecher:ambrose #stimmung:traurig #musik:aus #pause:3
+* [Die Hand auf dem Turm lassen]
+    {erzaehlung1858Gesehen: Ein Turm, einfach hingestellt. Du hast die Geschichte im Archiv gehört. #sprecher:erzaehler}
+    Ich weiß nicht, ob es stimmt. #sprecher:ambrose #stimmung:traurig #musik:aus #pause:3
+- Vergib mir. Zähl. #sprecher:ambrose #klang:aha
+-> END

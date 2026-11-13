@@ -205,8 +205,8 @@ Komm. Ich zeige es dir. #sprecher:ambrose
 * [Mitgehen]
     ~ reise("erinnerungLondon.strand", "ankunft")
     -> END
-* [„Später.“]
-    Später. Das Kaffeehaus wartet seit hundertfünfundsiebzig Jahren. Es wartet auch noch eine Stunde. #sprecher:ambrose #stimmung:bitter
+* [„Nicht jetzt.“]
+    Das Kaffeehaus wartet seit hundertfünfundsiebzig Jahren. Es wartet auch noch eine Stunde. #sprecher:ambrose
     -> END
 
 // Kapitel 21, Schluss: der Gedanke, der Ambrose in Akt 3 trägt. Wer alles sieht, muss nicht hoffen.

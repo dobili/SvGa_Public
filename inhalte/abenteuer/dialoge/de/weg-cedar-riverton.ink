@@ -91,7 +91,7 @@ Zehn Züge, dann fährt mein Zug. #sprecher:schaffner
     Er spielt wie ein Fahrplan: genau, pünktlich, ohne Umwege. Lass dich nicht hetzen. #sprecher:ambrose
     ~ beginnePartie("wegCedarRiverton.schaffner")
     -> END
-* [„Später.“]
+* [„Nicht jetzt.“]
     Der nächste Zug kommt in einer Stunde. Ich auch. #sprecher:schaffner
     -> END
 
@@ -117,7 +117,7 @@ Mit Uhr sieht man weniger als ohne. Das ist der Preis der Eile. #sprecher:ambros
 + [„Revanche.“]
     ~ beginnePartie("wegCedarRiverton.schaffner")
     -> END
-+ [„Später.“]
++ [„Nicht jetzt.“]
     -> END
 
 // ---------------------------------------------------------------- Funde

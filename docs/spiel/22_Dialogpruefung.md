@@ -2752,7 +2752,7 @@ Hinweise auf Widersprüche innerhalb des Romans (D19 folgt jeweils der späteren
 - Nicht geprüft: Abschnitt 1 (Vorbilder), Abschnitt 8 Regeln 2 bis 4 und Abschnitt 10 (Vorgaben für das Spiel), die Spalte „Farbe“ im Bogen über die Stimmungszeilen der Kapitel hinaus, die Verweise auf die Dokumente 05, 20, 21, 22, 23 und deren Inhalt.
 - Nichts außer dieser Datei wurde geändert.
 
-## Teil G: Story-Bibel angleichen (Liste der Änderungen, noch nicht ausgeführt)
+## Teil G: Story-Bibel angleichen (Liste der Änderungen; ausgeführt, siehe Teil H)
 
 Zählung: **52 Entscheidungen** (Akt 1: 14, Akt 2: 12, Akt 3: 11 aus Abschnitt 7 und 6 Festlegungen
 aus Abschnitt 2, Akt 4: 9 Festlegungen). Davon verlangen **27** eine Änderung oder einen Nachtrag
@@ -3210,3 +3210,63 @@ Entscheidung soll dort stehen.
 - **Andere Dokumente**, die dieselben Angaben tragen und mit angeglichen werden müssten (`12_Akt1_Leben.md`, `13_Wegenetz.md`, `14_Akt2_Leben_*.md`, `19_Ton_und_Spannungsbogen.md`, `20_Ortsblaetter.md`, `orte/*.md`, Ink-Dateien, `quests.json`): nicht geprüft; der Auftrag galt nur der Bibel.
 - **Schach:** Die Zugfolge der Unsterblichen (E-A2-1) habe ich nicht in `klassiker.json` nachgeschlagen, sondern aus DP C2.1 übernommen; die Fernpartie in Abschnitt 35 nicht am Brett nachgespielt.
 - **Zählung:** Die Einteilung in „Änderung“ und „Nachtrag“ ist meine Einschätzung; bei Zeilen 86–87, 1804–1805 und 2461 kann man sie auch anders sehen.
+
+## Teil H: Story-Bibel angeglichen (Vermerk, 13.11.2026)
+
+Auf Auftrag des Hauptchats ist `05_Story_Bibel.md` jetzt geändert, in vier Commits je Akt. Geändert
+sind nur die Bibel und dieses Dokument. Die Zeilennummern in Teil G gelten für den Stand davor.
+
+### H1 Ausgeführt
+
+- **Teil G2:** alle 54 Stellen. 51 wörtlich nach „alt“ und „neu“; drei Nachträge (Coach Delgado
+  in Abschnitt 27.1, Victor an der Bergstation in Szene 88, Crossroads in Szene 93) waren in G2
+  nur beschrieben und sind als Sätze ausformuliert. Wo die Bibel sich selbst widersprach, steht
+  die in G2 vorgeschlagene Fassung.
+- **G4 1:** Abschnitt 5.3 und Szene 25: Die Fernpartie nennt Ambrose am Steg, ohne Zahl; über
+  Reise und Tod spricht er in Akt 1 nicht.
+- **G4 2:** Der Coach-Satz („eine Legende, die niemand kennt“) steht in Szene 13, vor dem
+  Aufbruch; in Szene 14 ist er gestrichen.
+- **G4 3:** Zeitrechnung Akt 1: Dialoge und Laufen etwa 83 statt 50 Minuten, Summe etwa 300.
+  Szene 13 hat jetzt etwa 11 Minuten (3 für den Aufbruch, 8 für den Weg); diese Aufteilung ist
+  vom Gutachter aus der Tabelle in `roman/akt1_befunde.md`, Abschnitt 1, abgeleitet.
+- **G4 4:** Szene 24: „Lass mich“ fällt in der Partie, die Karte Mentor-Zug gibt es erst nach
+  dem Clubkampf in Cedar Creek. Die Kartentabelle nennt nur noch Club 2.
+- **G4 5:** Beide Regeln zu Buchverweisen (Abschnitt 2.2 und Abschnitt 5) sind ersetzt durch
+  den Verweis auf die Entscheidung vom 10.11.2026.
+- **G4 6:** Szene 35: Halt vor 19. e5, der Spieler errät den Bauernzug.
+- **G4 7:** Szene 43 in der Fassung des Romans, als **vorläufig** gekennzeichnet (RO6).
+- **G4 8:** Abschnitt 9.1 („Juno merkt nur, dass {held} still wird“) und Nachtrag in Szene 51
+  („Juno weiß seit Dezember von Ambrose“).
+- **G4 9:** Szene 63 und 68: Geigenkasten. „{held} kann nichts beweisen“ bleibt.
+- **G4 10 und 11:** Der Bruder ist älter und namenlos, er kommt in Szene 66 nicht vor. In der
+  Zeitlinie steht als Hintergrund, wie der Name Whitlock ins Haus zurückkam.
+- **G4 12:** Kennungen unverändert, nur der Titel von Szene 68.
+- **G4 13:** Szene 106, Kartentabelle und Technikliste: Die Karte zeigt nur „Er ist da“, der
+  Spieler findet den Turmzug selbst.
+- **G4 14:** Szene 109: Abschied, Abspann, Epilog mit Lily, danach Post-Game; der Zettel liegt
+  im Epilog.
+- **G4 15:** Zeitlinie und Szene 88: Der Großvater hält die Seite für wertlos, Graham Hale weiß
+  nichts von dem Buch. Hales Satz „Für den Tag, an dem jemand weiterspielt“ steht auf der Seite.
+- **`roman/akt4_befunde.md`, Abschnitt 7:** Gideon (Szene 99), Remis genügt (Szene 91),
+  Drachenfest (Szene 90), Kiras Satz zum Falken (Fundtabelle), Coach Delgado (September, sieben
+  Kinder). Kira war in der Bibel schon 13.
+
+### H2 Nicht ausgeführt oder offen
+
+- **Extra-Abspann:** Er bleibt an die Bedingung „Mentor-Zug im Halbfinale nicht gespielt“
+  gebunden, wie im Roman. Ob das Zugerraten des Turmzugs auch ohne die Karte läuft, ist nicht
+  entschieden; die Bibel beschreibt es nur für den Fall, dass die Karte gespielt wird.
+- **Die übrigen Punkte aus Abschnitt 7 von Akt 4** (Wards Gespräch mit Mama, Kades Gerät,
+  Victor im Januar, die Kleinigkeiten) stehen nur im Roman. Der Gutachter hat nicht einzeln
+  geprüft, ob die Bibel dazu etwas anderes sagt.
+- **Achtmal „Buchbezug:“** in den Szenen (etwa Szene 87 und 100) sind geblieben. Das sind
+  Angaben für die Schreiber, aus welchem Kapitel die Lektion kommt, keine Spieltexte.
+- **Szene 110** nennt Dr. Lins Club weiter im Post-Game, neben dem Epilog.
+- **Andere Dokumente** mit denselben Angaben (Regelwerk R27, `12_Akt1_Leben.md`,
+  `14_Akt2_Leben_*.md`, Ortsblätter, Ink, `quests.json`) sind nicht angeglichen.
+
+### H3 Stellen im Roman, die sich jetzt reiben
+
+- **`roman/akt2_teil2.md`, Zeilen 139–144:** Der Bauernzug ist schon gespielt, wenn Ambrose
+  „Halt“ sagt. Nach der Entscheidung liegt der Halt davor.
+- **Coach-Satz:** „eine Legende, die niemand kennt“ kommt im Roman zu Akt 1 nicht vor.

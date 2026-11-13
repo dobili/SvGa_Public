@@ -96,13 +96,16 @@ Eine Fußnote. #sprecher:ambrose #stimmung:bitter
 -> END
 
 === okafor_clubkampf ===
-Die Aufgaben sind gelöst. Dann setz dich, {held}. Um die Clubnadel. #sprecher:okafor
-{sternennachtGesehen:
-    Sie gähnt hinter vorgehaltener Hand. Die Sternennacht war lang. #sprecher:erzaehler
-    Verzeih. Eine alte Frau sollte nicht bis Mitternacht Sternschnuppen zählen. #sprecher:okafor
-}
+// Runde 11 (VC86 bis VC88, Roman Kapitel 15): still gespannt, die Uhr zählt mit. Keine Ansage der
+// Falle vor der Partie. Mrs. Okafor nach der Sternennacht in der Fassung „müde“ (gibt es noch
+// nicht). Später: #musik:clubkampfCedarCreek mit dem Ticken der Uhr darunter.
+In der Bibliothek flüstert man auch beim Schach. Der lange Tisch ist geräumt bis auf ein Brett. #sprecher:erzaehler
+Daneben liegt die Nadel: ein kleines Buch aus Metall, aufgeschlagen, mit einem Springer. #sprecher:erzaehler
+{teamAngekommen: Außerhalb des Lichtkreises sitzen sie alle. Der Coach hält die Pfeife in der Faust, damit sie nicht pfeift. #sprecher:erzaehler}
+{sternennachtGesehen: Ich bin gestern zu lange aufgeblieben. Das ist deine Schuld und die der Sterne. Ich beschwere mich nicht. #sprecher:okafor}
+Setz dich. #sprecher:okafor
 * [„Ich bin bereit.“]
-    Sie stellt Fallen an der Grundreihe. Zähle, wer deinen König schützt, bevor du angreifst. #sprecher:ambrose
+    Sie wartet. Ich kenne das. Ich habe es nie ausgehalten. #sprecher:ambrose
     -> okafor_partie
 * [„Noch nicht.“]
     Geduld ist auch ein Zug. #sprecher:okafor
@@ -113,30 +116,36 @@ Die Aufgaben sind gelöst. Dann setz dich, {held}. Um die Clubnadel. #sprecher:o
 -> END
 
 === okafor_nach_sieg ===
+// Runde 11 (VC91, VC92, Roman Kapitel 15): Ambrose schweigt nach der Partie („Er sagt nichts.
+// Aber er ist da.“); die Karte Mentor-Zug vergibt die Quest ohne Kommentar; zum Steg schickt Juno.
+// Später: #klang:turmuhr mit zwölf Schlägen vor der Fanfare.
 ~ clubkampfCedarCreekBesprochen = nadelCedarCreek
 {ausgangCedarCreekClubkampf == "remis":
-    Remis. Das war knapp. #sprecher:okafor
-    Die Bronzenadel gehört dir. Noch einmal, wenn du magst? #sprecher:okafor
-- else:
-    Gut gespielt. Du hast meine Falle gesehen, bevor sie zuschnappte. #sprecher:okafor #stimmung:froh
+    Remis. Das war knapp. Die Bronzenadel gehört dir. #sprecher:okafor
+    -> okafor_nadel
 }
-{sternennachtGesehen:
-    Revanche, wenn ich ausgeschlafen bin! #sprecher:okafor #stimmung:froh
-}
-Coach Delgado pfeift. Das Team aus Maple Falls hat das Auswärtsspiel gewonnen. #sprecher:erzaehler #klang:pfiff
-Eine zweite Nadel. Und eine Karte, die ich nicht leichtfertig gebe. #sprecher:ambrose
-Lass mich. Nur dieses eine Mal, wenn es sein muss. #sprecher:ambrose
-Am Abend fährt der Bus. Geh vorher noch einmal zum Steg, {held}. #sprecher:ambrose
-Ich möchte dir etwas sagen. #sprecher:ambrose
+Sie legt die Hände in den Schoß und sieht dich über die Brille an. #sprecher:erzaehler
+Das war keine Falle wert. Du hast sie alle gesehen. #sprecher:okafor
+* [„Nicht alle.“]
+* [Nicken]
+- Genug. #sprecher:okafor
+-> okafor_nadel
+
+=== okafor_nadel ===
+Sie reicht dir die Nadel über das Brett. {sternennachtGesehen:Revanche, wenn ich ausgeschlafen bin.|Noch einmal, wenn du magst.} #sprecher:okafor
+{teamAngekommen: Coach Delgado pfeift. In der Bibliothek. Miss Ashby lässt einen Stempel fallen. #sprecher:erzaehler #klang:pfiff}
+Das am Schluss hat keinen Namen. Darf ich ihm einen geben? #sprecher:mae #stimmung:froh
+* [Nicken]
+* [Die Nadel ansehen]
+- Ambrose sagt nichts. Aber er ist da. #sprecher:erzaehler #pause:2
+Der Bus fährt um sieben. Geh nur zum Steg. Du guckst schon den ganzen Tag so. #sprecher:juno
 -> END
 
 === okafor_nach_niederlage ===
-Diesmal nicht. Aber du hast lange gehalten. #sprecher:okafor
-Bei uns sagte man: Wer nur auf seinen Weg schaut, fällt in das Loch daneben. #sprecher:okafor
-Das heißt: Schau auch auf meine Züge, nicht nur auf deine. Noch einmal? #sprecher:okafor
+Diesmal nicht. Aber du hast lange gehalten. Noch einmal? #sprecher:okafor
 * [„Noch einmal.“]
     -> okafor_partie
-* [„Später.“]
+* [„Nicht jetzt.“]
     Das Brett wartet. Ich auch. #sprecher:okafor
     -> END
 
@@ -145,7 +154,7 @@ Das heißt: Schau auch auf meine Züge, nicht nur auf deine. Noch einmal? #sprec
 - not erzaehlung1858Gesehen:
     Der Karton mit den Jahren 1850 bis 1859 steht unten im Archiv. Schau ruhig hinein. #sprecher:okafor
 - else:
-    {~Manche Dinge erzählt man, wenn man so weit ist. Dein Brett erzählt viel.|Ein Matt ist ein Bild. Wer viele Bilder kennt, sieht sie im eigenen Spiel.|Komm wieder, wenn du magst. Die Bibliothek hat keine Bildschirme, aber Geduld.} #sprecher:okafor
+    {~Manche Dinge erzählt man, wenn man so weit ist. Dein Brett erzählt viel.|Ein Matt ist ein Bild. Wer viele Bilder kennt, sieht sie im eigenen Spiel.|Komm wieder, wenn du magst. Wir haben Zeit.} #sprecher:okafor
 }
 + {nadelCedarCreek > 0 and nadelCedarCreek < 3} [„Noch eine Partie um die Nadel.“]
     -> okafor_partie
@@ -301,9 +310,9 @@ Sie muss ihn nehmen, und dann … #sprecher:ambrose
 Es wäre schön. Es wäre so schön. #sprecher:ambrose
 * [„Stimmt es?“]
     Stille. Die Uhr tickt. Drei Minuten. #sprecher:erzaehler #pause
-    Ich weiß es nicht. #sprecher:ambrose #stimmung:traurig
+    Ich weiß es nicht. #sprecher:ambrose #stimmung:traurig #pause:2
 * [Die Hand auf dem Turm lassen]
     {erzaehlung1858Gesehen: Ein Turm, einfach hingestellt. Du hast die Geschichte im Archiv gehört. #sprecher:erzaehler}
-    Ich weiß nicht, ob es stimmt. #sprecher:ambrose #stimmung:traurig
+    Ich weiß nicht, ob es stimmt. #sprecher:ambrose #stimmung:traurig #pause:2
 - Vergib mir. Zähl. #sprecher:ambrose
 -> END

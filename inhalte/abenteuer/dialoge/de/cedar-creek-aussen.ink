@@ -133,56 +133,58 @@ Nach Mitternacht geht ihr hinüber in den Lesesaal. Die Matten liegen zwischen d
 -> END
 
 === ende_akt1 ===
+// Runde 11 (VC95 bis VC104, Roman Kapitel 16): leise, entschlossen; am Schluss ein Schatten, den
+// niemand ausdeutet. Erst der Fehler (nur wenn im Clubkampf „Lass mich“ lief), dann der Wunsch als
+// Folge. Hier fällt das dritte „Später“ von Akt 1. Später, wenn mittel-2 sie gebaut hat:
+// #musik:abendstueck, bei „Eine Partie ohne Makel“ nur Ambroses Thema, sein Lachen ohne Musik,
+// Porträtfassung „lacht ohne Spott“; im Bus das Thema von Maple Falls, bei der Nachricht Abbruch
+// und #musik:konzernmotiv; #bild:fotoRiverton als Großansicht.
 ~ endeAkt1Gesehen = true
-Die Sonne geht hinter den Zedern unter. Am Steg ist es still, nur der Bach redet. #sprecher:erzaehler
-// Runde 11 (Roman, Kapitel 16): erst der Fehler, dann der Wunsch. Den Fehler gesteht Ambrose
-// nur, wenn er im Clubkampf „Lass mich“ gesagt hat (clubkampfZaehlGesagt aus der Bibliothek).
-// Später: #musik:abendstueck (Klavier von Cedar Creek mit Ambroses Thema), sein Lachen ohne Musik.
+Das Wasser ist rot von der Sonne. Die Zedern stehen schwarz dagegen. #sprecher:erzaehler
+Du setzt dich ans Ende der Bretter und legst das Brett neben dich, ohne Handtuch. Er steht am Geländer. #sprecher:erzaehler
 {clubkampfZaehlGesagt: -> fehler_am_steg ->}
-* [„Ambrose? Was willst du eigentlich?“]
-    Was ich will? Das hat mich seit hundertsechzig Jahren niemand gefragt. #sprecher:ambrose
-* [„Du warst heute im Archiv sehr still.“]
-    Ich habe nachgedacht. Das kann ich gut, ich habe ja Zeit. #sprecher:ambrose
-- Eine Partie ohne Makel. Eine, über die man in hundert Jahren noch spricht. #sprecher:ambrose
-// Runde 11: Die Fernpartie war die Partie ohne Makel, langsam und ehrlich (Roman, Kapitel 16).
-Mein Leben lang glaubte ich, man müsse wählen: richtig oder schön. Hale spielte richtig, ich schön. #sprecher:ambrose
+* [„Was willst du eigentlich?“]
+* [„Du findest das Zählen langweilig. Was willst du?“]
+- Was ich will. #sprecher:ambrose #pause:2
+Ein Fisch springt. Die Ringe laufen auseinander. #sprecher:erzaehler #pause:2
+Eine Partie ohne Makel. #sprecher:ambrose
+Er sagt es einfach so. Nicht stolz. Wie man etwas zugibt. #sprecher:erzaehler
+Eine. Von Anfang bis Ende richtig und von Anfang bis Ende schön. #sprecher:ambrose
+* [„Die Fernpartie.“]
+* [Zuhören]
+- Mein Leben lang glaubte ich, man müsse wählen: richtig oder schön. Hale spielte richtig, ich schön. #sprecher:ambrose
 Auf diesem Brett hatte ich sie, die eine. Gegen ihn, per Brief. Jeder Zug tagelang unterwegs, manchmal Wochen. #sprecher:ambrose
 Ich habe nie so langsam gespielt. So ehrlich. #sprecher:ambrose
-Ich hatte sie fast. Dann sagte jemand „Später“. #sprecher:ambrose #stimmung:traurig #pause
+Es fehlte nur noch seine Antwort. Ein Zug. Jemand sagte: Später. #sprecher:ambrose #stimmung:traurig #pause:3
 * [„Dann spielen wir sie eben jetzt.“]
     ~ ambroseVertrauen = ambroseVertrauen + 1
+    Ambrose starrt dich an. #sprecher:erzaehler
     Du weißt nicht, was du da sagst. #sprecher:ambrose
     ** [„Nein. Aber ich sag es trotzdem.“]
     ** [„Ich werde besser. Du bringst es mir bei.“]
-    -- Ambrose lacht. Zum ersten Mal ohne Spott. #sprecher:erzaehler
-    Jetzt. Ein schönes Wort. Ich hatte vergessen, wie es klingt. #sprecher:ambrose #stimmung:lacht
-    Ein Kind mit einem Radiergummi als Dame. Bei allen Heiligen. #sprecher:ambrose #stimmung:lacht
-* [„Ich will erst mal besser werden.“]
-    Das ist der richtige Anfang. Die makellose Partie kommt am Ende, nie am Anfang. #sprecher:ambrose
-// Runde 11 (Roman, Kapitel 16): Busfahrt mit Mr. Ketterings Kurvennamen; Coach Delgado rechnet
-// Dollarbeträge (ihre Versuchung durch den Konzern bleibt offen, Dokument 19, Abschnitt 8).
-- Mr. Kettering fährt, wie er seit einunddreißig Jahren fährt, und sagt jede Kurve an. #sprecher:erzaehler
-„Die Witwe.“ – „Der Hühnerstall.“ – „Achtung, der lange Otis.“ #sprecher:erzaehler
+    -- Ambrose lacht. Zum ersten Mal ohne Spott. Es klingt wie jemand, der sehr lange die Luft angehalten hat. #sprecher:erzaehler
+    Ein Kind. Bei allen Heiligen. Ein Kind mit einem Radiergummi als Dame. #sprecher:ambrose #stimmung:lacht
+* [„Ich bin nicht gut genug. Noch nicht.“]
+    Nein. Noch nicht. #sprecher:ambrose #pause:2
+    Ich habe Zeit. #sprecher:ambrose
+- Hinter euch hupt der Bus. Mr. Kettering fährt, wie er seit einunddreißig Jahren fährt. #sprecher:erzaehler #klang:bus
+Er sagt jede Kurve an: „Die Witwe.“ – „Der Hühnerstall.“ – „Achtung, der lange Otis.“ #sprecher:erzaehler
 Sam schläft nach der dritten Kurve ein, den Kopf auf dem Schachkoffer. #sprecher:erzaehler
-Coach Delgado rechnet auf der Rückseite eines Spielberichts. Keine Schachaufgabe: Zahlen mit Dollarzeichen. #sprecher:erzaehler
+Vorn rechnet der Coach etwas auf einem Spielbericht. Keine Schachaufgabe: Zahlen mit Dollarzeichen. #sprecher:erzaehler
 * [Juno fragen, was der Coach rechnet]
     Keine Ahnung. Seit der Bildschirm im Clubraum steht, rechnet sie dauernd. #sprecher:juno
 * [Aus dem Fenster sehen]
     Die Zedern bleiben zurück, eine nach der anderen. #sprecher:erzaehler
-- Im Bus liest Juno aus dem Tagebuch vor: zwei Clubnadeln. Dann piept ihr Handy. #sprecher:erzaehler #klang:bus
-Oh. Der Schachclub im Park von Riverton wird „neu aufgestellt“. #sprecher:juno
-Mit Perfect Move. #sprecher:juno
-// Runde 11: Die Nachricht kommt mit Foto. Später: #bild:fotoRiverton als Großansicht und ein
-// einzelner kalter Klavierton (#musik:konzernmotiv), sobald mittel-2 sie gebaut hat.
-Unter der Nachricht ein Foto: eine Wiese, Bäume, und in einer Reihe Tische mit Bildschirmen. Niemand sitzt daran. #sprecher:erzaehler
-Neu aufgestellt. So nennt man es, wenn jemand die Figuren vom Brett wischt. #sprecher:ambrose #stimmung:streng
-In deinem Rucksack liegt das Brett. Schwarz ist am Zug. #sprecher:erzaehler
+- Zwei Clubnadeln. Ein Ahornblatt, ein Buch. {sternennachtGesehen:Sternschnuppen: elf.} #sprecher:juno
+Ihr Handy summt. Ihr Gesicht verändert sich. #sprecher:erzaehler
+Meine Cousine. Aus Riverton. Die haben da einen Club im Park, schon immer. Der wird neu aufgestellt. #sprecher:juno
+Ein Foto: eine Reihe Tische mit Bildschirmen, an denen niemand sitzt. Darunter: „Mit Perfect Move. Ist das nicht toll?“ #sprecher:erzaehler #pause:2
+Im Rucksack liegt das Brett. Schwarz ist am Zug. #sprecher:erzaehler
+Später, denkst du. Aber nicht mehr lange. #sprecher:erzaehler
 -> END
 
-// Runde 11 (Roman, Kapitel 16): Ambrose gesteht den Fehler aus dem Clubkampf, bevor er den Wunsch
-// gesteht. Tunnel aus ende_akt1. Den Namen sagt er nur, wenn er ihn im Archiv schon gesagt hat.
 === fehler_am_steg ===
-Ambrose steht am Geländer. Ich hätte dich die Partie gekostet. #sprecher:ambrose
+Ich hätte dich die Partie gekostet. #sprecher:ambrose
 * [„Hast du aber nicht.“]
 * [„Ich hab gezählt. Wie du es mir beigebracht hast.“]
 - Weil du gefragt hast. Ich hätte nicht gefragt. Ich habe nie gefragt. #sprecher:ambrose
@@ -329,7 +331,7 @@ Victor spielt weiter auf seinem Tablet. Er sieht nicht auf. #sprecher:erzaehler
 - endeAkt1Gesehen:
     Der Bus nach Maple Falls. Die Fenster sind golden vom Abendlicht. #sprecher:erzaehler #klang:bus
 - nadelCedarCreek > 0:
-    Der Bus nach Maple Falls. Ambrose wollte dir am Steg noch etwas sagen. #sprecher:erzaehler
+    Der Bus fährt um sieben. Am Steg ist das Wasser rot von der Sonne. #sprecher:erzaehler
 - else:
     Der Linienbus nach Maple Falls fährt jede Stunde. Das Auswärtsspiel läuft noch. #sprecher:erzaehler
 }

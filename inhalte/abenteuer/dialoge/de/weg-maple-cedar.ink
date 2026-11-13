@@ -65,7 +65,20 @@ Unter dem Ortsschild hängt eine Blechtafel mit Magnetfiguren: „Rätsel am Ort
     ~ beginneAufgaben("wegMapleCedar.tafel")
     -> END
 * [Weitergehen]
+    {tafel == 1: -> juno_weg}
     -> END
+
+// Runde 11 (Dialogprüfung B2, „Fehlt im Spiel“; Roman Kapitel 10): Juno erzählt auf der
+// Landstraße. Läuft einmal, nach dem ersten Blick auf die Tafel.
+=== juno_weg ===
+Die Landstraße läuft zwischen Feldern, gerade wie mit dem Lineal gezogen. Der Himmel ist sehr groß. #sprecher:erzaehler
+Meine Schwester Carla war drei Jahre im Team. Dann kam das Auto. Jetzt tut sie, als hätte es sie nie interessiert. #sprecher:juno
+Gegen Mrs. Okafor hat noch niemand aus Maple Falls gewonnen. #sprecher:juno
+* [„Niemand?“]
+    Der Coach einmal. Vor drei Jahren. Sie redet heute noch davon. #sprecher:juno #stimmung:froh
+* [Zum Himmel sehen]
+    Du siehst immer wieder hinauf. In der Stadt hattest du nie so viel Himmel. #sprecher:erzaehler
+- -> END
 
 // ---------------------------------------------------------------- Wanderer
 
@@ -181,7 +194,7 @@ Münzen im Fluss. Jemand hat sich hier etwas gewünscht und es sich anders über
 === schild_cedar ===
 // VC19, VC20: Gründungsjahr statt Witz; die Uhr spricht. Am Ende des Flusswegs stehen die Zedern.
 ~ schildCedarGesehen = true
-Die Zedern stehen so dicht, dass die Schritte auf den Nadeln kein Geräusch mehr machen. #sprecher:erzaehler
+Die Zedern stehen so dicht, dass die Schritte auf den Nadeln kein Geräusch mehr machen. Selbst Juno redet leiser. #sprecher:erzaehler
 Ein Schild aus Holz: „Cedar Creek. Gegr. 1851.“ Dahinter, zwischen den Bäumen, schlägt eine Uhr. Viermal, langsam. #sprecher:erzaehler #klang:turmuhr #pause:3
 -> END
 

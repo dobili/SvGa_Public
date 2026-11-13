@@ -782,6 +782,41 @@
       "stil": "rustikal",
       "begehbar": true,
       "begehbar_grund": "Leine des Boots am Poller, liegt flach am Boden (R050)"
+    },
+    "wg13HolztorZu": {
+      "quelle": "spiel/eigene/holztor_zu.png",
+      "breite": 48,
+      "hoehe": 26,
+      "kollision": true,
+      "maske": ["...", "###"],
+      "art": "zaun",
+      "zustand": "gebraucht",
+      "stil": "laendlich",
+      "hinweis": "Geschlossenes Holzgatter mit zwei Pfosten (Gemini 7, Abschnitt 2), drei Kacheln breit; sperrt die untere Reihe"
+    },
+    "wg13HolztorOffenLinks": {
+      "quelle": "spiel/eigene/holztor_offen_links.png",
+      "breite": 20,
+      "hoehe": 31,
+      "kollision": false,
+      "art": "zaun",
+      "zustand": "gebraucht",
+      "stil": "laendlich",
+      "begehbar": true,
+      "begehbar_grund": "offener Flügel am linken Pfosten, man geht daneben hindurch",
+      "hinweis": "Geöffneter linker Flügel des Holzgatters (Gemini 7, Abschnitt 2)"
+    },
+    "wg13HolztorOffenRechts": {
+      "quelle": "spiel/eigene/holztor_offen_rechts.png",
+      "breite": 20,
+      "hoehe": 32,
+      "kollision": false,
+      "art": "zaun",
+      "zustand": "gebraucht",
+      "stil": "laendlich",
+      "begehbar": true,
+      "begehbar_grund": "offener Flügel am rechten Pfosten, man geht daneben hindurch",
+      "hinweis": "Geöffneter rechter Flügel des Holzgatters (Gemini 7, Abschnitt 2)"
     }
   }
 }

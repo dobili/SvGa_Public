@@ -1003,14 +1003,10 @@
     },
     {
       "moebel": "wg4ZaunBottomMiddle",
-      "feld": [51, 11],
-      "bauteil_ok": true
-    },
-    {
-      "moebel": "wg4ZaunBottomMiddle",
       "feld": [54, 11],
       "bauteil_ok": true
     },
+    { "moebel": "wg13HolztorZu", "feld": [51, 10], "versatz": [0, 6], "bauteil_ok": true },
     {
       "moebel": "wg4ZaunBottomMiddle",
       "feld": [55, 11],
@@ -1334,16 +1330,6 @@
     {
       "moebel": "wg4ZaunBottomMiddle",
       "feld": [119, 11],
-      "bauteil_ok": true
-    },
-    {
-      "moebel": "wg4Tor1",
-      "feld": [52, 11],
-      "bauteil_ok": true
-    },
-    {
-      "moebel": "wg4Tor2",
-      "feld": [53, 11],
       "bauteil_ok": true
     },
     {

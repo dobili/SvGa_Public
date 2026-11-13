@@ -489,7 +489,11 @@
     {
       "kennung": "desertSprings.clubkampf",
       "staerkeNach": [
-        { "wenn": "atmeGesagt", "stufe": 1, "profil": "positionsspieler" }
+        {
+          "wenn": "atmeGesagt",
+          "stufe": 1,
+          "profil": "positionsspieler"
+        }
       ],
       "gegner": "desertSprings.mira",
       "farbe": "zufall",
@@ -714,7 +718,32 @@
         "art": "grundstellung"
       },
       "kartenErlaubt": true,
-      "zeit": "wahl"
+      "zeit": "wahl",
+      "momente": [
+        {
+          "wenn": {
+            "zug": 4
+          },
+          "sprecher": "erzaehler",
+          "text": "moment.nova.eis"
+        },
+        {
+          "wenn": {
+            "merkmal": "geschlagen:bauer"
+          },
+          "sprecher": "erzaehler",
+          "text": "moment.nova.atmet",
+          "musik": "nova"
+        },
+        {
+          "wenn": {
+            "abZug": 24
+          },
+          "sprecher": "ambrose",
+          "text": "moment.ambrose.novaGut",
+          "klang": "hale.springer"
+        }
+      ]
     },
     {
       "kennung": "capitalArena.runde4",

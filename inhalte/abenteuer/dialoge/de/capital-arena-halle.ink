@@ -35,6 +35,7 @@ VAR finaleBesprochen = false
 VAR angesehenBanner = false
 VAR spurenPM = 0
 VAR mappeGezeigt = false
+VAR novaNachPartieGesehen = false
 
 === function punkt(ausgang) ===
 {
@@ -88,16 +89,19 @@ VAR mappeGezeigt = false
 }
 {
 - not gespielt(ausgangCapitalArenaRunde1) or (alleGespielt() and ausgangCapitalArenaRunde1 != "sieg"):
-    Runde 1 gegen Bea Lindqvist. Sie verteidigt alles. Geduld gewinnt. #sprecher:turnierleiterin
+    Runde 1 gegen Bea Lindqvist. #sprecher:turnierleiterin #musik:arena.vorrunde
+    Bea ist Maes große Schwester. Sie hat bei Mrs. Okafor gelernt. Sie wartet und will ein Remis von jedem, der ungeduldig wird. #sprecher:erzaehler
     -> runde1_spielen
 - not gespielt(ausgangCapitalArenaRunde2) or (alleGespielt() and ausgangCapitalArenaRunde2 != "sieg"):
-    Runde 2 gegen Marcus Oyelaran. Er sieht jede Gabel. #sprecher:turnierleiterin
+    Runde 2 gegen Marcus Oyelaran. #sprecher:turnierleiterin #musik:arena.vorrunde
+    Er sieht jede Gabel, bevor sie da ist. Er ist schnell und laut in seinen Zügen. #sprecher:erzaehler
     -> runde2_spielen
 - not gespielt(ausgangCapitalArenaRunde3) or (alleGespielt() and ausgangCapitalArenaRunde3 != "sieg"):
-    Runde 3 gegen Nova. Sie spielt heute ohne Gerät, sagt sie. #sprecher:turnierleiterin
-    -> runde3_spielen
+    Tisch eins. Sinclair gegen … #sprecher:turnierleiterin #musik:aus
+    -> runde3_vorher
 - else:
     Runde 4 gegen Tobias Wren, mit fester Uhr: fünf Minuten und drei Sekunden je Zug. #sprecher:turnierleiterin
+    Er spielt, als würde das Haus brennen. Du lässt die Uhr eine Figur sein. Sie ist nicht der König. #sprecher:erzaehler
     -> runde4_spielen
 }
 
@@ -116,6 +120,16 @@ VAR mappeGezeigt = false
 + [„Noch einen Moment.“]
     Natürlich. Die Bretter warten. #sprecher:turnierleiterin
     -> END
+
+// Roman Kapitel 61: Nova ohne Gerät, beide Ohren frei, der Stöpsel offen neben der Uhr.
+=== runde3_vorher ===
+Sie sitzt schon da, im zu großen Pullover, die Haare zurückgebunden, sodass man beide Ohren sieht. Das soll man bemerken. #sprecher:erzaehler
+Neben der Uhr liegt etwas Kleines, Hautfarbenes, offen, wo jeder es sehen kann. Am Rand steht ein Mann mit einem Prüfgerät. #sprecher:erzaehler
+Nova gibt dir die Hand. Ihre zittert so, dass du es bis in den Ellbogen spürst. #sprecher:erzaehler
+Ich hab seit zwei Jahren keine Turnierpartie allein gespielt. Ich weiß nicht, wie ich anfange. #sprecher:nova
+* [„Mit einem Bauern in der Mitte. Das machen alle.“]
+- Sie lacht, kurz, erschrocken. #sprecher:erzaehler
+-> runde3_spielen
 
 === runde3_spielen ===
 + [„Ich bin bereit.“]
@@ -137,7 +151,9 @@ VAR mappeGezeigt = false
 ~ vorrundeGeschafft = true
 Die Turnierleiterin schreibt deinen Namen an die Tafel, ganz oben. #sprecher:erzaehler
 {punktetext()} von 4 Punkten. Du stehst im Halbfinale. Gratuliere. #sprecher:turnierleiterin
-Juno springt auf der Tribüne auf und ruft deinen Namen. #sprecher:erzaehler
+Du stehst auf. Deine Beine sind aus Watte. #sprecher:erzaehler
+Halbfinale. Gegen einen, der Kade Sterling heißt. Der ist von denen. Er hat alle vier gewonnen, keine länger als eine Stunde. #sprecher:juno
+An Tisch zwei räumt ein Junge in Weiß seine Figuren ein. Er hält den Kopf ganz gerade. Seine Haare fallen ihm über die Ohren. #sprecher:erzaehler
 -> END
 
 // ---------------------------------------------------------------- Die Aussage (Szene 105)
@@ -276,7 +292,7 @@ Auf den Tribünen jubeln alle Städte zugleich. Draußen auf der Treppe ist es r
 === nova ===
 {
 - gespielt(ausgangCapitalArenaRunde3):
-    Zum ersten Mal weiß ich nicht, ob ich gewinne. Das fühlt sich gut an. #sprecher:nova #stimmung:froh
+    -> nova_nach_partie
 - aussageGesehen and novaHilfeZugesagt:
     Du hast neben mir gestanden. Das vergesse ich nicht. Jetzt bin ich frei. #sprecher:nova #stimmung:froh
 - aussageGesehen:
@@ -285,6 +301,27 @@ Auf den Tribünen jubeln alle Städte zugleich. Draußen auf der Treppe ist es r
     Meine Hände zittern. Ohne Gerät ist alles so … laut. #sprecher:nova
     Spielst du trotzdem gegen mich? #sprecher:nova
 }
+-> END
+
+// Roman Kapitel 61, nach der Partie: „Der war meiner.“
+=== nova_nach_partie ===
+{novaNachPartieGesehen:
+    Ich hab es keine Sekunde gewusst. Die ganze Partie nicht. #sprecher:nova #stimmung:froh
+    -> END
+}
+~ novaNachPartieGesehen = true
+Nova sieht auf die Stellung, dann auf die Uhr, dann auf den kleinen Gegenstand, der in zwei Stunden kein einziges Mal gesummt hat. #sprecher:erzaehler #musik:nova
+{
+- ausgangCapitalArenaRunde3 == "remis": Ich hab nicht gewonnen. Ich hab nicht verloren. #sprecher:nova
+- ausgangCapitalArenaRunde3 == "sieg": Ich hab verloren. Und ich weiß genau, wo. #sprecher:nova
+- else: Ich hab gewonnen. Ich weiß nicht mal genau, wie. #sprecher:nova
+}
+Zum ersten Mal weiß ich nicht, ob ich gewinne. Ich hab es keine Sekunde gewusst. #sprecher:nova
+Sie strahlt, mit dem ganzen Gesicht. #sprecher:erzaehler
+Das fühlt sich gut an. Das fühlt sich so gut an. #sprecher:nova #stimmung:froh
+* [„Dein Springer. Der war deiner.“]
+- Ja. Der war meiner. #sprecher:nova #stimmung:froh
+Auf der Tribüne sind ein Mann und eine Frau aufgestanden. Die Frau hat die Hand vor dem Mund. #sprecher:erzaehler
 -> END
 
 === tobias ===

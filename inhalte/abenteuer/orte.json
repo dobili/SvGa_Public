@@ -650,7 +650,9 @@
           "ziel": {
             "karte": "wegMapleCedar.zedernpfad",
             "ausloeser": "zedernWeiterCedar"
-          }
+          },
+          "wenn": "nadelCedarCreek",
+          "dialog": "cedar-creek-aussen.zedernpfad_zu"
         },
         {
           "name": "flussweg",

@@ -19,6 +19,7 @@ EXTERNAL beginnePartie(begegnung)
 EXTERNAL beginneAufgaben(runde)
 
 VAR held = "Du"
+VAR fernpartieEndspielGesagt = false
 VAR wardLektionGesehen = false
 VAR reiheKitBestanden = false
 VAR reiheHaraldsenBestanden = false
@@ -49,23 +50,28 @@ VAR haraldsenGetroffen = false
 
 === ward_lektion ===
 ~ wardLektionGesehen = true
-In der Hütte knistert ein Kaminfeuer. Eine Frau mit grauem Zopf sitzt an einem alten Holzbrett und sieht nicht auf. #sprecher:erzaehler
-Tür zu. Die Wärme ist teuer hier oben. #sprecher:ward
-Eleanor Ward. Setz dich. Ich zeige dir etwas, bevor wir reden. #sprecher:ward
-Sie stellt drei Figuren auf: zwei Könige und einen weißen Bauern. #sprecher:erzaehler
-König und Bauer gegen König. Die Könige stehen sich gegenüber, ein Feld dazwischen. Wer zuerst zieht, verliert. Warum? #sprecher:ward
-+ [„Weil der König ausweichen muss.“]
-    Genau. Der andere König geht vor, auf das Feld, das frei wird. #sprecher:ward
-+ [„Ich weiß es nicht.“]
-    Ehrlich. Gut. Der König, der ziehen muss, muss ausweichen. Und der andere geht vor. #sprecher:ward
-- Das heißt Opposition. Wer sie hat, bestimmt, wohin der andere König darf. #sprecher:ward
-Opposition. Der König, der zuerst zieht, verliert. Wie im Leben, manchmal. #sprecher:ward
-Ambrose lehnt sich vor, so weit ein Geist sich vorlehnen kann. #sprecher:erzaehler
-Sie spielt, wie ich mit fünfzig gespielt hätte. Wenn ich fünfzig geworden wäre. #sprecher:ambrose #stimmung:friedlich
-Erst Kit, dann Haraldsen. Bauern, dann Türme. Dann sehen wir weiter. #sprecher:ward
+Die Hütte ist aus dunklem Holz. Im Kamin brennt auch im Juli Feuer. An den Wänden hängt nichts außer einem Thermometer. #sprecher:erzaehler
+Eleanor Ward sitzt im Sessel am Feuer und liest den Absatz zu Ende. Dann legt sie ein Lesezeichen ein. #sprecher:erzaehler
+Sie betrachtet dich, wie man eine Stellung betrachtet. Sieben. Wie hast du Big Joe geschlagen? #sprecher:ward
+* [„Grundreihe. Ein Springeropfer, damit der Turm hinunterkommt.“]
+- Und die kleine Castillo? #sprecher:ward
+* [„Ein Läufer, der nicht ging. Dann vierzig Züge Endspiel.“]
+- Vierzig Züge. Dann hast du schon einmal gesehen, wie es aussieht. Setz dich. #sprecher:ward
+Auf dem Brett stehen drei Figuren. Ein weißer König, ein weißer Bauer, ein schwarzer König. Sonst nichts. #sprecher:erzaehler #musik:aus #geraeusch:aus
+* [„Das ist alles?“]
+- Das ist alles, was übrig bleibt, wenn man lange genug spielt. #sprecher:ward
+Die Könige stehen sich gegenüber, ein Feld dazwischen. Wer am Zug ist, verliert. Warum? #sprecher:ward
+* [„Weil er weichen muss. Dann kommt der andere vorbei.“]
+* [„Ich weiß es nicht.“]
+    Ehrlich. Gut. Wer ziehen muss, muss zur Seite. Und dann kommt der andere vorbei. #sprecher:ward
+- Opposition. Der zuerst zieht, gibt nach. Wie im Leben, manchmal. #sprecher:ward
+Ein Endspiel ist eine Wahrheit. In der Eröffnung kann man schwindeln, im Mittelspiel blenden. Hier nicht. #sprecher:ward
+Sie spielt, wie ich mit fünfzig gespielt hätte. Wenn ich fünfzig geworden wäre. #sprecher:ambrose #stimmung:still
+Erst Kit, dann Haraldsen. Bauern, dann Türme. Dann sehen wir weiter. #sprecher:ward #musik:karte
 -> END
 
 === ward_reihe_offen ===
+{reiheKitBestanden and not fernpartieEndspielGesagt: -> abend_fernpartie}
 {not reiheKitBestanden:
     Kit zuerst. Bauernendspiele. Wer die nicht kann, braucht keine Türme. #sprecher:ward
 - else:
@@ -73,8 +79,20 @@ Erst Kit, dann Haraldsen. Bauern, dann Türme. Dann sehen wir weiter. #sprecher:
 }
 + {not erinnerungHastingsBestanden} [„Wie haben Sie Schach lieben gelernt?“]
     -> ward_erinnerung
-+ [„Bis später.“]
++ [„Bis morgen.“]
     -> END
+
+// Kapitel 48, dritter Abend auf dem Weg hinunter: Die Fernpartie ist auch ein Endspiel.
+=== abend_fernpartie ===
+~ fernpartieEndspielGesagt = true
+Auf dem Weg hinunter gehen in der Stadt die Lichter an. #sprecher:erzaehler
+* [„Die Fernpartie. Das ist auch ein Endspiel.“]
+- Ein Turm gegen zwei Springer. Und Bauern. Ich habe hundertsechzig Jahre darauf gestarrt. #sprecher:ambrose
+* [„Kannst du es gewinnen?“]
+- Er antwortet nicht gleich. #sprecher:erzaehler #pause:2
+Ich weiß es nicht. Ich konnte Angriffe. Ich konnte Opfer. Das hier konnte ich nie. #sprecher:ambrose
+Deshalb lernst du es. Nicht ich. #sprecher:ambrose #stimmung:still
+-> END
 
 === ward_victor_fort ===
 Er ist zur Seilbahn. Ich laufe keinem nach, der wegläuft. Du vielleicht schon. #sprecher:ward
@@ -98,7 +116,7 @@ Noch einmal, wenn du es weißt. Nicht vorher. #sprecher:ward
 + [„Ich weiß es.“]
     ~ beginnePartie("summitCity.clubkampf")
     -> END
-+ [„Später.“]
++ [„Nicht jetzt.“]
     -> END
 
 === ward_nach_sieg ===
@@ -183,14 +201,14 @@ Geh ihm nach. Ich glaube, er braucht jetzt keinen Erwachsenen. #sprecher:ambrose
 {not kitGetroffen:
     ~ kitGetroffen = true
     Am Fenster sitzt ein Mädchen in Wanderschuhen und zählt Felder mit dem Finger. #sprecher:erzaehler
-    Kit. Mein Vater ist Bergführer, ich bin Wards Schülerin. #sprecher:kit
+    Kit. Fünfzehn. Mein Vater ist Bergführer, ich bin Wards Schülerin. #sprecher:kit
 }
-Der Bauer läuft, der König rennt. Wer ist schneller? Zähl die Felder. #sprecher:kit
+Der Bauer läuft, der König rennt. Wer ist schneller? Zähl. Wenn der König in das Quadrat kommt, hat er ihn. #sprecher:kit
 Quadrat, Opposition, ein Tempo in Reserve. Meine Aufgaben sind klein. Aber gemein. #sprecher:kit
 + [„Zeig her.“]
     ~ beginneAufgaben("summitCity.reiheKit")
     -> END
-+ [„Später.“]
++ [„Nicht jetzt.“]
     Der Bauer wartet. Er ist geduldig. Ich nicht. #sprecher:kit
     -> END
 
@@ -218,12 +236,12 @@ Quadrat, Opposition, ein Tempo in Reserve. Meine Aufgaben sind klein. Aber gemei
     Ein alter Mann in Seilbahnuniform sitzt am Kamin und poliert eine Turmfigur. #sprecher:erzaehler
     Haraldsen. Ich fahre die Seilbahn, seit sie gebaut wurde. Und ich spiele Turmendspiele, seit ich denken kann. #sprecher:haraldsen
 }
-Ein Turm hinter dem Freibauern. Wie ein Seil hinter der Gondel. #sprecher:haraldsen
+Ein Turm hinter dem Freibauern. Wie ein Seil hinter der Gondel. Er schiebt, und er hält, beides zugleich. #sprecher:haraldsen
 Philidor, Lucena. Klingen wie Gipfel. Sind auch welche. #sprecher:haraldsen
 + [„Ich bin bereit.“]
     ~ beginneAufgaben("summitCity.reiheHaraldsen")
     -> END
-+ [„Später.“]
++ [„Nicht jetzt.“]
     Die nächste Gondel kommt in zehn Minuten. Ich auch. #sprecher:haraldsen
     -> END
 

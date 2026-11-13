@@ -3811,7 +3811,7 @@
     "mf12Lichtkegel": {
       "quelle": "spiel/eigene/lichtkegel.png",
       "breite": 48,
-      "hoehe": 48,
+      "hoehe": 64,
       "kollision": false,
       "art": "licht",
       "zustand": "alt",
@@ -3902,6 +3902,37 @@
       "zustand": "gebraucht",
       "stil": "klassisch",
       "hinweis": "kleiner Tisch mit Schachbrett zwischen Mrs. Calloways Stühlen (Stufe D, Ink calloway_d)"
+    },
+    "mf12Treppenschacht": {
+      "quelle": "spiel/eigene/treppenschacht.png",
+      "breite": 48,
+      "hoehe": 48,
+      "kollision": true,
+      "maske": ["###", "#.#", "#.#"],
+      "art": "treppe",
+      "zustand": "gebraucht",
+      "stil": "klassisch",
+      "hinweis": "Treppenöffnung mit Geländer im oberen Geschoss, unten offen (10.76); Bild aus bildwuensche/treppenschacht.py"
+    },
+    "mf12BrettDecke": {
+      "quelle": "spiel/eigene/brett_decke.png",
+      "breite": 24,
+      "hoehe": 16,
+      "kollision": true,
+      "art": "deko",
+      "zustand": "alt",
+      "stil": "klassisch",
+      "hinweis": "das alte Brett unter der staubfreien Decke (Roman Kap. 2); Bild aus bildwuensche/brett_decke.py"
+    },
+    "mf12BrettRadiergummi": {
+      "quelle": "spiel/eigene/brett_radiergummi.png",
+      "breite": 16,
+      "hoehe": 12,
+      "kollision": true,
+      "art": "deko",
+      "zustand": "gebraucht",
+      "stil": "schule",
+      "hinweis": "Clubbrett ohne schwarze Dame, Radiergummi auf d8 (Roman Kap. 5); Bild aus bildwuensche/brett_radiergummi.py"
     }
   }
 }

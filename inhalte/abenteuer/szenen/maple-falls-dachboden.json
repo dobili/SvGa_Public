@@ -4,7 +4,7 @@
   "art": "innen",
   "zustand": ["alt", "gebraucht"],
   "stil": ["klassisch", "rustikal"],
-  "beschreibung": "Der Dachboden des Whitlock-Hauses voll mit altem Hausrat (Roman Kap. 2). In der Nordwestecke die Bodenluke mit Leiter (die steile Treppe aus dem Obergeschoss kommt hier an, KARTENREGELN 10.76: an derselben Stelle wie unten), gleich daneben die Holzkiste mit der steilen Schrift „Whitlock – nicht wegwerfen“, die der Held am ersten Tag heraufgetragen hat (Roman Kap. 1); darüber ein Waldbild. Mitten in der Stirnwand das runde Giebelfenster; sein Licht fällt als Kegel auf den verblichenen Teppich und den niedrigen runden Tisch direkt darunter, auf dem unter einer Decke ohne Staub das alte Brett liegt, zwei Stühle daneben. Im Lichtkegel tanzt der Staub (Teilchen staub). Rechts an der Stirnwand der Bauernschrank und ein Bücherregal voller vergilbter Bücher, davor eine Stehlampe. An Ost- und Südwand zwei mit Tüchern abgedeckte Truhen, auf einer sitzt ein Teddy, ein Kistenstapel, ein alter Karton in der Südwestecke, links die Zeitungen von 1961, die kleine gestreifte Hutschachtel und der Standspiegel. Der Schaukelstuhl aus dem Roman fehlt noch (Bildwunsch).",
+  "beschreibung": "Der Dachboden des Whitlock-Hauses voll mit altem Hausrat (Roman Kap. 2). In der Nordwestecke die Öffnung mit Geländer, durch die die steile Treppe aus dem Obergeschoss heraufkommt (KARTENREGELN 10.76: an derselben Stelle wie unten, dieselbe Art), gleich daneben die Holzkiste, klein genug zum Tragen, mit der steilen Schrift „Whitlock – nicht wegwerfen“, die der Held am ersten Tag heraufgetragen hat (Roman Kap. 1); darüber ein Waldbild. Mitten in der Stirnwand das runde Giebelfenster; sein Licht fällt als Kegel auf den verblichenen Teppich und den niedrigen runden Tisch direkt darunter, auf dem unter einer hellen, staubfreien Decke das alte Brett liegt, eine Ecke mit zwei Figuren schaut heraus, zwei Stühle daneben. Im Lichtkegel tanzt der Staub (Teilchen staub). Rechts an der Stirnwand der Bauernschrank und ein Bücherregal voller vergilbter Bücher, davor eine Stehlampe. An Ost- und Südwand zwei mit Tüchern abgedeckte Truhen, auf einer sitzt ein Teddy, ein Kistenstapel, ein alter Karton in der Südwestecke, links die Zeitungen von 1961, die kleine gestreifte Hutschachtel und der Standspiegel. Der Schaukelstuhl aus dem Roman fehlt noch (Bildwunsch). Aufgang (KARTENREGELN 10.76, Kartengutachten Akt 1): eine Holztreppe an der Westwand hinter der Haustür, die nach Norden ansteigt; im Obergeschoss liegt genau darüber die Öffnung mit Geländer, und die nächste Treppe zum Dachboden setzt den Lauf an der Nordwand fort; auf dem Dachboden kommt man an derselben Stelle durch dieselbe Öffnung an.",
   "wand": "holz",
   "boden": "dielen",
   "raster": [
@@ -22,8 +22,9 @@
   ],
   "objekte": [
     {
-      "moebel": "mf4Luke",
-      "feld": [1, 2]
+      "moebel": "mf12Treppenschacht",
+      "feld": [1, 2],
+      "id": "luke"
     },
     {
       "moebel": "mf12FensterRund",
@@ -80,11 +81,6 @@
       "feld": [11, 7]
     },
     {
-      "moebel": "mf12KartonAltHoch",
-      "feld": [11, 7],
-      "versatz": [0, -12]
-    },
-    {
       "moebel": "mf7Truhe",
       "feld": [9, 7],
       "id": "truhe2"
@@ -111,12 +107,12 @@
       "id": "spiegel"
     },
     {
-      "moebel": "mf12KartonWhitlock",
-      "feld": [3, 3],
+      "moebel": "cc4KisteLeer",
+      "feld": [4, 3],
       "id": "kisteWhitlock"
     },
     {
-      "moebel": "mf3BrettKlein",
+      "moebel": "mf12BrettDecke",
       "auf": "tisch"
     }
   ],
@@ -127,22 +123,6 @@
       "eigenschaften": {
         "richtung": "unten"
       }
-    },
-    {
-      "name": "treppe",
-      "feld": [1, 3]
-    },
-    {
-      "name": "treppe",
-      "feld": [1, 4]
-    },
-    {
-      "name": "treppe",
-      "feld": [2, 3]
-    },
-    {
-      "name": "treppe",
-      "feld": [2, 4]
     },
     {
       "name": "hutschachtel",
@@ -168,6 +148,14 @@
       "name": "brett",
       "feld": [7, 6],
       "auf_moebel": true
+    },
+    {
+      "name": "treppe",
+      "feld": [2, 3]
+    },
+    {
+      "name": "treppe",
+      "feld": [2, 4]
     }
   ]
 }

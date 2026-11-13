@@ -170,6 +170,13 @@
           "sprite": "figuren/statist-07.png",
           "dialog": "maple-falls-aussen.calloway",
           "wenn": "endeAkt1Gesehen"
+        },
+        {
+          "kennung": "mapleFalls.junoClub",
+          "name": "figur.juno.name",
+          "sprite": "figuren/juno.png",
+          "dialog": "maple-falls-clubraum.juno",
+          "wenn": "clubBeigetreten"
         }
       ],
       "ausloeser": [

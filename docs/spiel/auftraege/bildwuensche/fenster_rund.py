@@ -6,7 +6,7 @@ Fenster nur als Außenansicht mit Giebel (Villa_Round_Window). Ein Fenster häng
 deshalb selbst gezeichnet, im Stil von ``fenster_ahorn.png``.
 
 - ``fenster_rund.png`` (32 × 32): Holzring mit Sprossenkreuz, dahinter Himmel und rotes Ahornlaub.
-- ``lichtkegel.png`` (48 × 48): flacher, halb durchsichtiger Lichtkegel vom Fenster auf den Boden
+- ``lichtkegel.png`` (48 × 64, bis auf Tisch und Teppich): flacher, halb durchsichtiger Lichtkegel vom Fenster auf den Boden
   (unter Tisch und Teppich gezeichnet, ohne Kollision); der Staub (T8) tanzt darin.
 
 Aufruf: ``python fenster_rund.py <zielordner>`` (im privaten Repository: spiel/eigene/).
@@ -62,10 +62,10 @@ def fenster() -> Image.Image:
 
 def lichtkegel() -> Image.Image:
     """Ein Kegel, oben schmal, unten breit; die Deckkraft nimmt nach unten ab."""
-    bild = Image.new("RGBA", (48, 48))
-    for y in range(48):
-        halb = 8 + y * 14 // 47
-        deckkraft = 70 - y * 40 // 47
+    bild = Image.new("RGBA", (48, 64))
+    for y in range(64):
+        halb = 8 + y * 15 // 63
+        deckkraft = 90 - y * 50 // 63
         for x in range(24 - halb, 24 + halb):
             rand = min(x - (24 - halb), (24 + halb - 1) - x)
             bild.putpixel((x, y), (255, 236, 170, deckkraft if rand > 1 else deckkraft // 2))

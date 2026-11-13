@@ -32,6 +32,9 @@ VAR victorGesehen = false
 VAR ausgangMapleFallsVictor = ""
 VAR victorUeberrascht = 0
 VAR kenntHale = false
+// Neu nach dem Roman zu Akt 1 (Kapitel 8 und 9): heimwegNadelGesehen und bildschirmGesehen setzt
+// diese Datei.
+VAR heimwegNadelGesehen = false
 
 // ---------------------------------------------------------------- Coach Delgado
 
@@ -101,6 +104,9 @@ Hier, deine Clubnadel. Juno klebt sie gleich ins Tagebuch. #sprecher:coachDelgad
 Dein erster Sieg in einem Club, {held}. Merk dir dieses Gefühl. #sprecher:ambrose #stimmung:stolz
 Es kommt seltener, als man glaubt. #sprecher:ambrose
 Und noch ein Versprechen, nenn es Mentor-Zug: Einmal ziehe ich für dich. Ich hoffe, du brauchst es nie. #sprecher:ambrose
+{not heimwegNadelGesehen:
+    -> pratt_und_heimweg ->
+}
 ~ setzeSzene("akt1.clubnadelMapleFalls")
 -> END
 
@@ -123,6 +129,30 @@ Noch einmal? Ich habe Zeit. Und Kekse. #sprecher:coachDelgado
     -> coach_partie
 + [„Bis später, Coach.“]
     -> END
+
+// ---------------------------------------------------------------- Nach der Nadel (Roman, Kapitel 8)
+
+// Neu gegenüber der Story-Bibel: Mr. Pratt an der Tür (die Stadt nimmt den Sieg wahr) und das
+// Heimweg-Gespräch, der erste Schritt in Ambroses Bogen (schön gegen richtig). Nur nach der
+// ersten Nadel, etwa eine Minute. Klang: nach der Siegfanfare Stille, dann Abendgeräusche; die
+// Laternen gehen an. Vorgemerkt für mittel-2: #pause:3 vor „Nein. Das ist das Merkwürdige.“
+=== pratt_und_heimweg ===
+~ heimwegNadelGesehen = true
+An der Tür steht der Hausmeister, einen Lappen in der Hand, und sieht auf die Pokale von 1994. #sprecher:erzaehler
+Die haben auch gezählt. Bevor sie geschlagen haben. #sprecher:pratt
+Dann geht er wieder. #sprecher:erzaehler
+Auf dem Heimweg sagt Ambrose lange nichts. Ahornblätter auf dem Gehweg. Die Laternen gehen an, eine nach der anderen. #sprecher:erzaehler #pause
+Es war keine schöne Partie. #sprecher:ambrose
+* [„Ich habe sie aber nicht verloren.“]
+    Nein. Du hast gezählt, bis nichts mehr übrig war. Buchhaltung, Zug um Zug. #sprecher:ambrose
+* [„Was ist eine schöne Partie?“]
+    Eine, über die man noch in hundert Jahren spricht. Über diese spricht man morgen. #sprecher:ambrose
+- Zu meiner Zeit hätte man so etwas nicht aufgeschrieben. #sprecher:ambrose #stimmung:streng
+* [„Bist du enttäuscht?“]
+- Er bleibt unter einer Laterne stehen. Man sieht fast durch ihn hindurch. #sprecher:erzaehler #pause
+Nein. #sprecher:ambrose #stimmung:still
+Nein. Das ist das Merkwürdige. #sprecher:ambrose #stimmung:still
+->->
 
 // ---------------------------------------------------------------- Sam
 

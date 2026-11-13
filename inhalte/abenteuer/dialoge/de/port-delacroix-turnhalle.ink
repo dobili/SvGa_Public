@@ -10,8 +10,8 @@
 // anspricht, erlebt zuerst den Vorwurf.
 //
 // Ambrose schweigt nach dem Vorwurf bis zu den Nachfahren (ambroseSprichtWieder, gesetzt in
-// port-delacroix-werkstatt.ink), außer einem Satz je Szene. Statt der Karte Schutzengel (Szene 69,
-// keine eigene Wirkung) gibt Miss Odile „Was droht?“.
+// port-delacroix-werkstatt.ink), außer einem Satz je Szene. Beim Benefiz (Szene 69) gibt Miss Odile die Karte
+// Schutzengel.
 // Runde 11 (13.11.2026): Der Vorwurf nach dem Roman (roman/akt3_teil2.md, Kapitel 36): Remys Mauer,
 // „König nach h1“, der Stuhl fällt, „Er hat nicht ganz unrecht“, das Brett bleibt bei Miss Odile am
 // Schiedsrichtertisch. Klang: remy.mauer, zero (aus Ambroses Mund), Stille S49 und S50,
@@ -215,8 +215,8 @@ Spielst du eine Simultan gegen die Kinder der Stadt? Jedes Kind gibt einen Dolla
     -> END
 
 === odile_nach_simultan ===
-// Kapitel 40: Remys Entschuldigung; der Held gibt ihm halb recht. Statt der Karte Schutzengel (keine
-// eigene Wirkung) gibt Miss Odile „Was droht?“.
+// Kapitel 40: Remys Entschuldigung; der Held gibt ihm halb recht. Miss Odile gibt die Karte
+// Schutzengel (Szene 69).
 ~ simultanGedankt = true
 Jedes Kind legt einen Dollar in die Blechdose. Am dritten Brett verliert Remy knapp, legt seinen Dollar hinein und bleibt sitzen. #sprecher:erzaehler
 Ich hab dich beobachtet. Die ganze Woche. Mit dem Karren. Bei Batiste. #sprecher:remy #stimmung:still
@@ -225,8 +225,9 @@ Tut mir leid. Die mit dem Glas haben uns Bildschirme gebracht, als wir Decken ge
 * [„Du hattest nicht ganz unrecht. Den Zug fand ich nicht.“]
 - Remy sieht dich lange an. Dann nimmt er die Trompete aus dem Kasten und spielt das Schnelle. #sprecher:erzaehler #musik:odile.tanz
 Die ganze Halle klatscht im Takt. Mama tanzt mit einem Mann aus dem Notzelt. #sprecher:erzaehler
-Miss Odile drückt dir eine Karte in die Hand. Damit du nicht wieder etwas verlierst, was dir wichtig ist. #sprecher:odile
-~ gibKarte("wasDroht")
+Miss Odile drückt dir eine Karte in die Hand: ein kleiner Engel mit einem Schild. #sprecher:erzaehler
+Damit du nicht wieder etwas verlierst, was dir wichtig ist. #sprecher:odile
+~ gibKarte("schutzengel")
 Du siehst zum Geigenkasten hinüber. Der Deckel steht offen. #sprecher:erzaehler
 -> END
 

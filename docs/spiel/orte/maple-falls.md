@@ -133,7 +133,7 @@ Laufzeit quer 44 Kacheln, 13 Sekunden.
 | aussen `schule` (47, 23), vor der Treppe            | clubraum `schule` (9, 12); Ankunft `start` (9, 11)                           | Südfassade ↔ Südwand Mitte (gebaut, 4.5).                                       |
 | aussen `park` Ostrand (63, 25–27); Ankunft (62, 26) | park `park` Westrand (0, 15–17); Ankunft (1, 16)                             | Straße läuft über den Rand, 3 breit.                                            |
 | park `landstrasse` Ostrand (43, 15–17)              | wegMapleCedar.landstrasse `zurueckPark` Westrand (0, 15–17); Ankunft (1, 16) | Reihen mit mittel-2 abgestimmt (cedar-creek.md); Fluss dort südlich der Straße. |
-| park `zedernpfad` Nordrand (10, 0) und (11, 0)      | zedernpfad `zedernZurueckPark` Südrand (10–11, 23)                           | über den Fußsteg; Zedernpfad Q1, Sperre S2.                                     |
+| park `zedernpfad` Nordrand (10, 0) und (11, 0)      | zedernpfad `zedernZurueckPark` Südrand (10–11, 33)                           | über den Fußsteg; Zedernpfad Q1, Sperre S2.                                     |
 | park `bushaltestelle` (26, 19), Dialog              | cedarCreek.aussen `bushaltestelle`                                           | Busfahrt (R41).                                                                 |
 
 Die Prüfung im Kartenbauer (`pipeline/abenteuer/uebergaenge.py`) verlangt: Jeder Übergang hat sein
@@ -772,6 +772,36 @@ Gutachten `maple-falls-innen.md`. Neue Bilder aus `bildwuensche/niedrig1_runde11
   - Glastür (`sb8GlastuerSued`) statt der Tür, von der nur die braune Matte zu sehen war.
   - Wartebank vor der Toilettenwand (5, 10). Die Nischen haben rote Polsterbänke mit hoher Lehne.
   - Die Pflanze steht nicht mehr im Durchgang zur Automatenecke.
+
+## Zedernpfad neu und Weltpuzzle Akt 1 (mittel-3, 11.11.2026; R027, R030, R032, R033)
+
+Rückmeldung des Autors: Treppen unvollständig (R027), Wald so licht, dass man am Südrand um das
+Gebirge herumläuft (R030), der Pfad viel kürzer als Landstraße plus Flussweg (R032), und legt man
+die Karten aneinander, liegt er auf dem Flussweg; er müsste oberhalb des Kürbishofs verlaufen (R033).
+
+- **Karte `wegMapleCedar.zedernpfad` jetzt 240 × 34** (vorher 100 × 24), so lang wie Landstraße
+  plus Flussweg. Eingang unverändert am Südrand (10–11, 33), Ausgang am Ostrand (239, 30–31).
+- **Zwei Felsstufen von Kartenrand zu Kartenrand** (Reihen 22–24 und 10–12). Nur der Pfad kommt
+  hinauf und hinab, über vier gerade Treppen, je zwei Felder breit (x 59–60, 109–110, 149–150,
+  194–195). Schräg durch den Fels läuft nichts mehr; daher fehlten früher Stufen.
+- **Wald lückenlos:** Um Pfad, Wegrand und drei Lichtungen (Pilzlichtung x 35–44, Kuppe mit
+  Baumstammbank im Steinkreis x 128–140, Rastplatz x 160–169) steht ein geschlossener Ring aus
+  Zedern, dahinter dichter Wald. Die Erzeugung prüft mit einer Flutfüllung, dass vom Eingang aus
+  genau Pfad, Wegrand und Lichtungen erreichbar sind.
+- **Weltpuzzle** (`python -m pipeline.abenteuer.weltpuzzle --ort mapleFalls wegMapleCedar kuerbishof
+cedarCreek`): Der Ring Stadtpark → Zedernpfad → Cedar Creek gegen Stadtpark → Landstraße →
+  Flussweg → Cedar Creek schließt sich, nichts überlappt. Der Zedernpfad liegt nördlich des
+  Kürbishofs. Dafür zwei **Zwischenstücke** (`inhalte/abenteuer/weltpuzzle.json`):
+  - `zwischenstueck` Stadtpark `zedernpfad` → Zedernpfad, Sprung 22 Kacheln nach Osten, 34 nach
+    Norden: Hinter dem Fußsteg steigt der Pfad ungezeichnet durch den Wald am Kürbishof vorbei; der
+    Zedernpfad beginnt erst oberhalb des Hofs.
+  - `zwischenstueck` Zedernpfad `zedernWeiterCedar` → Cedar Creek, Sprung 22 nach Osten, 37 nach
+    Süden: Vom Ostrand fällt der Pfad ungezeichnet durch den Wald hinab zum Ortsrand von Cedar
+    Creek, nördlich des Flusswegs.
+- Statisten und Tiere stehen am Wegrand oder auf den Lichtungen; das Sturmholz liegt weiter quer
+  über dem Pfad (mittlere Stufe, x 85–88).
+- Offen bei mittel-4 (R028, R029): ein Hang als Abschluss einer Felswand. Hier nicht mehr nötig,
+  weil beide Wände von Rand zu Rand laufen.
 
 ## Rückmeldung des Autors, Runde 11: Antworten (niedrig-1, 11.11.2026)
 

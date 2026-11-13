@@ -1,7 +1,8 @@
 // Ort: Wohnzimmer im Haus an der Birch Lane (Akt 1, Maple Falls). Figur: Mama.
 //
 // Szenen der Story-Bibel (docs/spiel/05_Story_Bibel.md, Abschnitt 4):
-// 1 Ankunft (akt1.ankunft), 4 Abend im neuen Haus (akt1.ersterAbend), 13 Aufbruch (akt1.aufbruch).
+// 1 Ankunft (akt1.ankunft), 4 Abend im neuen Haus (akt1.ersterAbend), 13 Aufbruch (akt1.aufbruch;
+// seit Runde 11 nach dem Roman: zu Fuß am Freitag, Knoten aufbruch_freitag).
 // Einstieg für die Figur ist der Knoten „mutter“ (orte.json, Figur mapleFalls.mutter); er verzweigt
 // nach dem Spielstand. Wirkungen (Karten, Szenen) stehen in quests.json, nicht hier.
 //
@@ -87,6 +88,14 @@ Ach, und im Briefkasten lag ein Zettel von der Schule. Die haben ein Schachteam.
 
 === aufbruch ===
 ~ aufbruchGesehen = true
+// Runde 11 (Roman, Kapitel 10; docs/spiel/roman/akt1_teil3.md): geänderter Ablauf. {held} und
+// Juno gehen am Freitag zu Fuß, schlafen im Lesesaal der Bibliothek, das Team kommt am Samstag mit
+// dem Bus; der Bus bleibt für die Rückfahrt und zum Hin- und Herfahren. Die erste Zeile steht
+// hier, weil die Quest auf den Knoten „aufbruch“ wartet. Die alte Fassung darunter (Bus am
+// Samstag) bleibt bis zur Dialogprüfung stehen (docs/spiel/22_Dialogpruefung.md), läuft aber nicht.
+Mama sitzt mit einer Kaffeetasse am Tisch. Das alte Brett liegt daneben, in ein Handtuch gewickelt. #sprecher:erzaehler
+-> aufbruch_freitag
+// Alte Fassung (Bus am Samstag):
 Coach Delgado hat angerufen. Ihr spielt Samstag auswärts in Cedar Creek? #sprecher:mutter
 * [„Ich spiele am vierten Brett!“]
     Am vierten Brett. Ich weiß, was das heißt. Glaube ich. #sprecher:mutter #stimmung:froh
@@ -99,6 +108,27 @@ Und das alte Brett nimmst du mit, oder? Dann verlier es nicht. #sprecher:mutter
 * [„Versprochen.“]
     Gut. Viel Glück, {held}. #sprecher:mutter #stimmung:froh
 - Der Bus wartet am Stadtpark. #sprecher:erzaehler
+-> END
+
+=== aufbruch_freitag ===
+// Stimmung: frei, Sommerende (Dokument 19, Abschnitt 4). Mama zeigt die Veränderung von {held}
+// von außen (Roman, Kapitel 10). Musik: die der Karte; das Wegthema beginnt auf der Landstraße.
+Coach Delgado hat angerufen. Ihr spielt Samstag in Cedar Creek. Und du willst schon morgen los? #sprecher:mutter
+* [„Zu Fuß, mit Juno. Sie kennt den Weg.“]
+    Zu Fuß. #sprecher:mutter
+* [„Wir schlafen in der Bibliothek. Es gibt Matten.“]
+    In einer Bibliothek. Zwischen den Büchern. #sprecher:mutter
+- Du erklärst alles in einem Atemzug: Der Coach kommt Samstag mit dem Bus nach, Mrs. Okafor hat es erlaubt. #sprecher:erzaehler
+Mama sieht dich über den Rand ihrer Tasse an. #sprecher:erzaehler
+Du hast in vier Wochen mehr geredet als im ganzen letzten Jahr. #sprecher:mutter #pause
+Wie weit ist es? #sprecher:mutter
+* [„Zwei Stunden. Am Fluss entlang.“]
+* [„Nicht weit. Juno ist ihn hundertmal gegangen.“]
+- Sie sieht auf das Brett im Handtuch. Sie will etwas sagen und sagt es nicht. #sprecher:erzaehler
+Mit Juno. Am Fluss. Gut. #sprecher:mutter
+Sie drückt dir eine Tüte mit belegten Broten in die Hand, als hätte sie es die ganze Zeit gewusst. #sprecher:erzaehler
+Samstagabend fahrt ihr alle mit dem Bus zurück. Und das Brett nicht verlieren. #sprecher:mutter
+Juno wartet am Stadtpark. Dahinter beginnt die Landstraße. #sprecher:erzaehler
 -> END
 
 === mutter_alltag ===

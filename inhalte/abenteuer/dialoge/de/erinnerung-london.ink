@@ -11,6 +11,11 @@
 // der großen Uhr in Riverton.
 // Sprecher: Ambrose als junger Mann (#sprecher:ambrose #stimmung:jung); {held} erscheint nur als
 // Stimme aus der Gegenwart, als Erzählzeile mit dem Namen. Tabakrauch nur als Wort.
+// Runde 11 (13.11.2026): an den Roman angeglichen (akt2_teil2.md, Kapitel 21): Anderssen als
+// Mathematiklehrer aus Breslau, Kieseritzky gibt Unterricht; keine Turnierpartie; nach dem Matt
+// läuft Kieseritzky zum Telegrafenamt. Das Nachgespräch in der Bahnhofshalle steht in
+// riverton-bahnhofshalle.london_nachgespraech. Musik ambrose.london, Geräusch kaffeehaus.
+//
 // Variablen: flashbackLondonBestanden setzt die Hülle (R42).
 
 EXTERNAL beginneAufgaben(runde)
@@ -49,9 +54,10 @@ Mein Vater nahm immer die Droschke. Ich ging lieber zu Fuß, da sieht man mehr. 
     -> END
 }
 ~ londonKaffeehausGesehen = true
-Hinter der Tür: Kaffeeduft, Stimmengewirr, das Rascheln von Zeitungen und ein wenig Tabakrauch unter der Decke. #sprecher:erzaehler
-Hier spielen sie. Mein Vater sagt, ich soll nicht lange bleiben. #sprecher:ambrose #stimmung:jung
-Ich bleibe lange. #sprecher:ambrose
+Die Tür ist schwer. Dahinter ist es warm und voll, viele Stimmen, die alle halblaut sprechen. #sprecher:erzaehler #musik:ambrose.london #geraeusch:kaffeehaus
+Zeitungen an Holzstangen. Kaffee in dicken Tassen. Männer mit Backenbärten über Brettern, und hinter ihnen Zuschauer, drei Reihen tief. #sprecher:erzaehler
+Ich bin damals hineingegangen, weil es regnete. Mein Vater sagte, ich solle nicht lange bleiben. #sprecher:ambrose #stimmung:jung
+Ich bin lange geblieben. #sprecher:ambrose #stimmung:jung
 -> END
 
 // ---------------------------------------------------------------- Kaffeehaus
@@ -68,17 +74,14 @@ Ein älterer Herr hält eine Zeitung so groß wie ein Tischtuch und sieht nicht 
 
 === schachtisch ===
 {flashbackLondonBestanden:
-    Am Ecktisch stellen die beiden Herren die Figuren wieder auf. Niemand redet. #sprecher:erzaehler
-    Alle wissen, was sie gesehen haben. #sprecher:erzaehler
-    Ich bin danach eine Stunde durch London gelaufen und habe nichts gesehen. Nur diese Partie. #sprecher:ambrose #stimmung:jung
+    Am Ecktisch stellen sie die Figuren wieder auf. Niemand redet. Alle wissen, was sie gesehen haben. #sprecher:erzaehler
     -> END
 }
-Am Ecktisch spielen zwei Herren. Der eine ruhig, mit Bart: Herr Anderssen. #sprecher:erzaehler
-Der andere elegant und laut: Herr Kieseritzky. #sprecher:erzaehler
-Die Zuschauer stehen dicht. Ambrose drängt sich in die zweite Reihe und hält den Atem an. #sprecher:erzaehler
-Anderssen hat schon einen Läufer gegeben. Jetzt will er mehr geben. Viel mehr. #sprecher:ambrose #stimmung:jung
-Spiel mit mir, {held}. Du hast Weiß, wie er. #sprecher:ambrose
-Bei jedem Zug frage ich dich: Was hättest du getan? #sprecher:ambrose
+In der Mitte ein Tisch, um den es still ist. Zwei Männer. Der eine groß, mit hoher Stirn, sehr gerade. Der andere kleiner, nervös. #sprecher:erzaehler
+Anderssen. Aus Breslau. Ein Mathematiklehrer. Man sagt, er sei der Beste in Europa. #sprecher:ambrose #stimmung:jung
+Der andere heißt Kieseritzky und gibt hier Unterricht, fünf Franc die Stunde. Es ist keine Turnierpartie. Sie spielen nur so. #sprecher:ambrose #stimmung:jung
+Es sieht aus wie ein Unfall. Weiß hat schon einen Läufer hergegeben, die schwarze Dame steht tief in der weißen Stellung und frisst. #sprecher:erzaehler
+Halt. Schau hin. Was hättest du getan? Du hast Weiß, wie er. Ich frage dich bei jedem Zug. #sprecher:ambrose
 * [Zusehen und mitraten]
     ~ beginneAufgaben("riverton.flashbackLondon")
     -> END
@@ -90,20 +93,22 @@ Bei jedem Zug frage ich dich: Was hättest du getan? #sprecher:ambrose
 
 === rueckkehr ===
 Eine große Uhr an der Wand des Kaffeehauses. Ihr Ticken klingt genau wie das der Bahnhofsuhr in Riverton. #sprecher:erzaehler
-{flashbackLondonBestanden:
-    Er gab beide Türme und die Dame. Und gewann. #sprecher:ambrose
-    Das nannten sie später die Unsterbliche. #sprecher:ambrose
-    Diese Maschinen würden das nie spielen. Oder doch? #sprecher:ambrose #stimmung:fern
-    Was wäre, wenn sie meine Partie spielen könnten? Die, die ich nie zu Ende brachte? #sprecher:ambrose #stimmung:fern
-- else:
+{not flashbackLondonBestanden:
     Noch nicht, {held}. Erst sollst du sehen, was am Ecktisch geschieht. #sprecher:ambrose
+    -> rueckkehr_wahl
 }
+Der Verlierer steht auf, der nervöse kleine Mann, und er strahlt über das ganze Gesicht. #sprecher:erzaehler #klang:lachen_kieseritzky
+Er schüttelt dem anderen die Hand mit beiden Händen, ruft etwas auf Französisch und läuft zur Tür, ohne Hut. #sprecher:erzaehler #musik:london.lauf
+Er ist zum Telegrafenamt gelaufen. Um seine eigene Niederlage nach Paris zu melden. Weil sie so schön war. #sprecher:ambrose #stimmung:jung
+Ich stand dort, wo du jetzt stehst. Ich war zwanzig. Und ich dachte: Das. Das will ich. #sprecher:ambrose
+Eine Partie, für die der Verlierer zum Telegrafenamt läuft. #sprecher:ambrose #pause:2
+-> rueckkehr_wahl
+
+=== rueckkehr_wahl ===
 * [Zurück in die Gegenwart]
-    Die Uhr schlägt. Das Kaffeehaus verblasst, und du stehst wieder in der Bahnhofshalle von Riverton. #sprecher:erzaehler
-    {flashbackLondonBestanden:
-        Juno sieht dich an. „Du bist ganz still. Alles gut?“ #sprecher:erzaehler
-    }
+    Das Braun wird blasser. Die Stimmen werden zu Hall. #sprecher:erzaehler #musik:aus #geraeusch:aus
     ~ reise("riverton.bahnhofshalle", "grosseUhr")
     -> END
 * [Noch bleiben]
     -> END
+

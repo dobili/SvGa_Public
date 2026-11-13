@@ -45,7 +45,7 @@ VAR angesehenAutomat = false
 - else:
     ~ angesehenSchildFluestern = true
     Ein Schild am Tresen: „Bitte flüstern“. #sprecher:erzaehler
-    Flüstern kann ich gut. Ich habe sogar eine Karte dafür. #sprecher:ambrose #stimmung:lacht
+    Flüstern. Das kann ich. Mich hört ohnehin nur einer. #sprecher:ambrose
 }
 -> END
 
@@ -67,7 +67,7 @@ VAR angesehenAutomat = false
 - else:
     ~ angesehenWasserfleck = true
     An der Wand ein Wasserfleck, genau in der Form eines Springers. #sprecher:erzaehler
-    Selbst das Wasser in diesem Keller spielt Schach. Ich fühle mich hier wohl. #sprecher:ambrose #stimmung:lacht
+    Ein Springer. Das Wasser hat sich Mühe gegeben. #sprecher:ambrose
 }
 -> END
 
@@ -97,6 +97,6 @@ VAR angesehenAutomat = false
 - else:
     ~ angesehenAutomat = true
     Ein Automat für Waschpulver und Kaugummi. Eine Kugel Kaugummi kostet eine Münze. #sprecher:erzaehler
-    Eine Maschine, die für eine Münze etwas tut. Das gab es zu meiner Zeit nur bei Menschen. #sprecher:ambrose
+    Eine Münze, eine Kugel. Kein Dank, kein Wort. Sonderbar. #sprecher:ambrose
 }
 -> END

@@ -32,6 +32,7 @@ VAR reiheSamBestanden = false
 VAR reiheJunoBestanden = false
 VAR nadelMapleFalls = 0
 VAR endeAkt1Gesehen = false
+VAR ersterTagSpaeter = false
 
 === dachboden_brett ===
 Staub, Kisten, ein kaputter Lampenschirm. Unter einer Decke liegt etwas Flaches, Schweres. #sprecher:erzaehler
@@ -93,6 +94,8 @@ Nun? Die Figuren stehen, und ich habe Zeit. Zu viel davon. #sprecher:ambrose
 * [„Lass uns spielen.“]
     -> partie_beginnt
 * [„Später.“]
+    // Runde 11: Das Archiv erinnert sich daran (Leitmotiv „Später“, Dokument 19, Abschnitt 8).
+    ~ ersterTagSpaeter = true
     Später. Ich kenne das Wort. Ich habe sehr lange darauf gewartet, dass es endet. #sprecher:ambrose #stimmung:bitter
     -> END
 

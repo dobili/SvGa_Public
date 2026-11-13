@@ -210,12 +210,12 @@
               "klang": {
                 "description": "Geräusch einmal, wie #klang (klang/<kennung>.m4a)",
                 "type": "string",
-                "pattern": "^[a-z0-9][a-zA-Z0-9-]*$"
+                "pattern": "^[a-z0-9][a-zA-Z0-9.-]*$"
               },
               "musik": {
-                "description": "Musikwechsel wie #musik (Kennung oder aus)",
+                "description": "Musikwechsel wie #musik (Kennung oder aus); Kennungen nach 21_Klangplan.md, auch mit Punkt (ambrose.lassMich)",
                 "type": "string",
-                "pattern": "^[a-z0-9][a-zA-Z0-9-]*$"
+                "pattern": "^[a-z0-9][a-zA-Z0-9.-]*$"
               }
             }
           }

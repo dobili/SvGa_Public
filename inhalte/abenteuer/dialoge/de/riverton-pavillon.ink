@@ -8,6 +8,9 @@
 // Die Quest riverton.parkclub wartet auf den Knoten „slick“; deshalb steht dort vor dem
 // Verzweigen eine Zeile (gemeldet wird der Knoten, in dem die erste Zeile steht).
 //
+// Runde 11 (13.11.2026): an den Roman zu Akt 2 angeglichen (Kapitel 18, 19, 22), Klang nach
+// 21_Klangplan.md (Akt 2).
+//
 // Variablen: reiheTamsinBestanden, reiheRayBestanden, slickBeobachtenBestanden,
 // ausgangRivertonClubkampf und nadelRiverton setzt die Hülle (R42). clubkampfRivertonBesprochen
 // (Wahrheitswert) öffnet den Wohnwagen (orte.json, wenn); clubkampfRivertonNadel (Zahl) merkt
@@ -31,6 +34,9 @@ VAR clubkampfRivertonBesprochen = false
 VAR clubkampfRivertonNadel = 0
 VAR odumGedenktafelGesehen = false
 VAR limonadenglasGesehen = false
+VAR tamsinZettelGegeben = false
+VAR tamsinEliErzaehlt = false
+VAR moldeGefuehlt = false
 
 // ---------------------------------------------------------------- Slick
 
@@ -46,20 +52,27 @@ VAR limonadenglasGesehen = false
 }
 
 === slick_erstes_treffen ===
+// Kapitel 18: Slick redet schnell und verstummt bei Mr. Odum (Stille S29: die Trompete setzt aus).
 ~ slickGetroffen = true
-Ein junger Mann in Kurierjacke klatscht einen Springer aufs Marmorbrett. „Gabel. #sprecher:erzaehler
-Zahlst du Limo?“ #sprecher:erzaehler
-Slick. Mir gehört der Club, bis Sonntag. Danach gehört er denen da draußen. #sprecher:slick
-Sie haben uns den Pavillon gelassen. Bis Sonntag. Großzügig, oder? #sprecher:slick #stimmung:ernst
-* [„Wir wollen hier spielen.“]
-    Dann spielst du das letzte Spiel im Pavillon. Sonntag, gegen mich. #sprecher:slick
-    Vorher fragen dich Tamsin und Ray ab. #sprecher:slick
+Steintische mit eingelassenen Brettern, glatt gespielt von sehr vielen Händen. An jedem schlagen zwei Leute auf die Uhren. #sprecher:erzaehler
+Mittendrin einer mit Kuriertasche, ein Bein über der Bank. Er spielt, ohne hinzusehen, und redet dabei. #sprecher:erzaehler
+Zwei Angriffe, ein Zug. Das nennt man Gabel, und ich esse damit. Schade um deinen Turm. #sprecher:slick #stimmung:froh
+Er schlägt auf die Uhr. Dann sieht er euch. #sprecher:erzaehler
+Kundschaft! #sprecher:slick
+Slick. Eigentlich Marcus, aber so nennt mich keiner. Nicht mal meine Mutter. #sprecher:slick
+* [„Wir sind aus Maple Falls.“]
+* [Auf die Nadeln zeigen]
+- Maple Falls! Zwei Nadeln, schau an. Die von der Delgado und die von der alten Okafor. #sprecher:slick
+Die Okafor hat mich mal vierzig Züge lang warten lassen. Vierzig. Ich bin dabei gealtert. #sprecher:slick
+Das hier ist der Parkclub. Seit 1953. Mr. Odum hat ihn gehabt, vierzig Jahre. Im Frühjahr hat er ihn mir gegeben, und dann ist er … #sprecher:slick #musik:aus #pause:2
+Na ja. Dann eben ich. #sprecher:slick
 * [„Was passiert mit dem Pavillon?“]
-    Trainingszentrum, sagen sie. Mit Bildschirmen. #sprecher:slick
-    Mein Lehrer hat hier vierzig Jahre Kindern Schach gezeigt. #sprecher:slick
-    Egal. Sonntag spielst du gegen mich. Vorher fragen dich Tamsin und Ray ab. #sprecher:slick
-- Zwei Angriffe, ein Zug. Das nennt man Gabel, und ich esse damit. #sprecher:slick #stimmung:froh
-Ein Mann, der schneller zieht, als er denkt. Das ist eine Gabe und eine Schwäche. #sprecher:ambrose
+* [Hinaus auf die Wiese sehen]
+- Der Stadtrat hat die Wiese verpachtet. Den Pavillon auch. Trainingszentrum soll das werden. #sprecher:slick #musik:karte
+Sie haben uns den Pavillon gelassen. Bis Sonntag. #sprecher:slick
+Sonntag ist das letzte Spiel. Wer spielt es? #sprecher:tamsin
+Na, wer wohl. Wenn schon Schluss, dann mit Gästen. Vorher fragen dich Tamsin und Ray ab. #sprecher:slick
+Ambrose steht nicht neben dir. Er steht am Rand des Pavillons, wo das Dach aufhört, und sieht hinaus auf die Tische. #sprecher:erzaehler
 -> END
 
 === slick_reihe_offen ===
@@ -71,28 +84,41 @@ Ein Mann, der schneller zieht, als er denkt. Das ist eine Gabe und eine Schwäch
 -> END
 
 === slick_clubkampf ===
-Sonntag. Das letzte Spiel im Pavillon. #sprecher:slick
-Willst du Blitz? Blitz ist ehrlich. #sprecher:slick
-Er lebt von der Eile. Nimm ihm die Eile, {held}. Wähle eine lange Bedenkzeit. #sprecher:ambrose
-* [„Ich bin bereit.“]
-    Das hier ist der letzte Tisch mit echten Figuren. Wenn du verlierst, verlierst du gegen Riverton. #sprecher:slick
-    ~ beginnePartie("riverton.clubkampf")
-    -> END
+// Kapitel 22: Sonntag, Regen auf Blech, alle sind gekommen. Slick redet nicht. Die Zeit wählt
+// {held} im Spiel; die Wahl hier ist die Antwort im Gespräch (lang ist die ehrliche Fassung).
+// Momente in der Partie stehen in begegnungen.json (riverton.clubkampf). Musik riverton.clubkampf.
+Am Sonntag regnet es richtig. Es trommelt so laut aufs Blechdach, dass man schreien muss. #sprecher:erzaehler #musik:riverton.clubkampf
+Trotzdem sind alle gekommen, unter Schirmen in drei Reihen. Pops, Mr. Harlan, Mrs. Albescu, Mr. Quinn zwischen zwei Zügen. #sprecher:erzaehler
+Slick hat den Tisch mit der Mulde freigeräumt. Er hat die Kuriertasche abgelegt, zum ersten Mal. Er redet nicht. #sprecher:erzaehler
+Blitz? Drei Minuten. Wie es sich gehört. #sprecher:slick
+Er lebt von der Eile. Nimm ihm die Eile. #sprecher:ambrose
+* [„Fünfundvierzig Minuten.“]
+    Ein Murmeln geht durch die Schirme. Tamsin verdreht die Augen. #sprecher:erzaehler
+    Slick grinst, schief, mit einem Mundwinkel. #sprecher:erzaehler
+    Die Okafor hat dich verdorben. #sprecher:slick
+    Gut. Dann eben lang. Soll ja was davon bleiben. #sprecher:slick
+* [„Blitz. Drei Minuten.“]
+    Mutig. Oder dumm. Wir finden es raus. #sprecher:slick #stimmung:froh
 * [„Noch nicht.“]
     Bis Sonntag ist noch Zeit. Nicht viel. #sprecher:slick
     -> END
+- Er beugt sich vor, und einen Moment ist er wieder der Alte. #sprecher:erzaehler
+Das hier ist der letzte Tisch mit echten Figuren. Wenn du verlierst, verlierst du gegen Riverton. #sprecher:slick
+~ beginnePartie("riverton.clubkampf")
+-> END
 
 === slick_nach_niederlage ===
-Gut gekämpft. Aber Riverton bleibt bei mir. #sprecher:slick
-Noch einmal, solange es den Pavillon gibt? #sprecher:slick
-Er hat gewonnen, weil du ihm seine Eile gelassen hast. Diesmal nicht. #sprecher:ambrose
+Die Leute unter den Schirmen klatschen. Es war ihr Mann. #sprecher:erzaehler
+Gut gekämpft. Aber Riverton bleibt bei mir. Noch einmal, solange es den Pavillon gibt? #sprecher:slick
 * [„Noch einmal.“]
     ~ beginnePartie("riverton.clubkampf")
     -> END
-* [„Später.“]
+* [„Nicht jetzt.“]
     -> END
 
 === slick_nach_sieg ===
+// Kapitel 22: Slick nimmt den König in die Hand; Applaus wie Regen, dann die Fanfare; die Nadel
+// als grünes Achteck mit Uhr; „Lang spielen. Ich.“
 ~ clubkampfRivertonNadel = nadelRiverton
 {clubkampfRivertonBesprochen:
     Eine bessere Nadel, auf der Treppe erspielt. Die Treppe zählt genauso. #sprecher:slick #stimmung:froh
@@ -100,29 +126,38 @@ Er hat gewonnen, weil du ihm seine Eile gelassen hast. Diesmal nicht. #sprecher:
 }
 ~ clubkampfRivertonBesprochen = true
 {ausgangRivertonClubkampf == "remis":
-    Remis. Das ist fair. Die Bronzenadel gehört dir, und meine Limo auch. #sprecher:slick
+    Remis. Das ist fair. Wir wussten es beide. #sprecher:slick
 - else:
-    Gut. Du hast nachgedacht, wo ich gezogen hab. #sprecher:slick #stimmung:froh
+    Slick legt seinen König nicht um. Er nimmt ihn in die Hand und sieht ihn an. #sprecher:erzaehler #musik:aus #pause:2
 }
 Das war das letzte Spiel in diesem Pavillon. Gut, dass es ein richtiges war. #sprecher:slick #stimmung:ernst
-Tamsin klatscht, Ray nickt langsam. Draußen auf der Wiese leuchten die Bildschirme. #sprecher:erzaehler
-Komm morgen zum Wohnwagen am Fluss. Ich hab was für dich. #sprecher:slick
-Die dritte Nadel. Und einen Mentor-Zug dazu. Gib gut auf ihn acht. #sprecher:ambrose
+Applaus für Maple Falls! Na los! Es war umsonst, also klatscht! #sprecher:slick #klang:applaus_regen
+Sie klatschen. Es klingt wie noch mehr Regen. #sprecher:erzaehler #klang:fanfare.riverton
+Er steckt dir die Nadel an, ein kleines Achteck aus grünem Blech mit einer Uhr darauf, und hält dich einen Moment an der Schulter. #sprecher:erzaehler
+Lang spielen. Ich. Wer hätte das gedacht. #sprecher:slick
 -> END
 
 === slick_alltag ===
+// Kapitel 22: Montag im Pavillon (Stille S33: nur der Konzernton, wo vorher die Uhren klopften).
 {slickAbschiedGesehen:
-    Im Pavillon stehen jetzt Bildschirmtische. Slick spielt draußen auf der Treppe Blitz gegen Tamsin. #sprecher:erzaehler
+    Slick spielt draußen auf der Treppe Blitz gegen Tamsin. #sprecher:erzaehler
     Dann spielen wir eben auf der Treppe. Die Treppe gehört der Stadt. #sprecher:slick
-- else:
-    Slick packt das letzte Marmorbrett in seine Kuriertasche. #sprecher:erzaehler
-    Wohnwagen am Fluss, gleich hinter der Brücke. Ich warte. #sprecher:slick
+    -> slick_alltag_wahl
 }
+Im Pavillon stehen Bildschirmtische. Vier Stück, im Kreis, weiß. Die Steintische sind weg. #sprecher:erzaehler #musik:konzern.flaeche
+Auf dem Boden sieht man noch, wo sie standen: vier helle Flecken im Holz. #sprecher:erzaehler #pause:2
+Slick kniet in der Mitte und packt die Steinplatte mit der Mulde in seine Kuriertasche. Sie passt kaum hinein. #sprecher:erzaehler
+Die haben sie mir gelassen. Einer von den Arbeitern hat weggeguckt. #sprecher:slick
+Er zieht den Riemen fest. #sprecher:erzaehler
+Dann spielen wir eben auf der Treppe. Ich wohn im Wohnwagen am Fluss, an der alten Steinbrücke. #sprecher:slick
+-> slick_alltag_wahl
+
+=== slick_alltag_wahl ===
 + {nadelRiverton < 3} [„Revanche um eine bessere Nadel?“]
     Auf der Treppe? Immer. #sprecher:slick
     ~ beginnePartie("riverton.clubkampf")
     -> END
-+ [„Bis später, Slick.“]
++ [„Bis bald, Slick.“]
     -> END
 
 // ---------------------------------------------------------------- Tamsin
@@ -138,43 +173,61 @@ Die dritte Nadel. Und einen Mentor-Zug dazu. Gib gut auf ihn acht. #sprecher:amb
 
 === tamsin_erstes_treffen ===
 ~ tamsinGetroffen = true
-Ein Mädchen mit Schachuhr unter dem Arm zählt laut mit, während Slick zieht. #sprecher:erzaehler
-Drei, zwei, eins, Gabel! Siehst du? #sprecher:tamsin #stimmung:froh
-Nicht nachdenken, gucken. Ich bin Tamsin. #sprecher:tamsin
+Ein Mädchen mit Schachuhr unter dem Arm zählt laut rückwärts, während Slick zieht. #sprecher:erzaehler
+Fünf, vier, drei, zwei – Gabel! Siehst du? #sprecher:tamsin #stimmung:froh
+Nicht nachdenken. Gucken. Ich bin Tamsin. #sprecher:tamsin
 -> tamsin_reihe
 
 === tamsin_reihe ===
-Meine Aufgaben sind Springergabeln. Ein Springer, zwei Opfer. Bereit? #sprecher:tamsin
+Meine Aufgaben sind Springer, die auf zwei Figuren gleichzeitig zeigen. Du findest sie, bevor ich bei null bin. #sprecher:tamsin
 * [„Bereit.“]
     ~ beginneAufgaben("riverton.reiheTamsin")
     -> END
 * [„Gleich.“]
-    Ich zähle so lange bis tausend. Schnell. #sprecher:tamsin
+    Ich zähle so lange bis tausend. Rückwärts. #sprecher:tamsin
     -> END
 
 === tamsin_zuschauen ===
+// Kapitel 19: Zuschauen bei Slick gegen Ray; Tamsins Zettel mit Slicks Eröffnungen.
 ~ zuschauenAngeboten = true
 Willst du was sehen? Slick und Ray spielen gleich Blitz. #sprecher:tamsin
-Zähl mit, was Slick übersieht. #sprecher:tamsin
-Er guckt nur nach vorn. Nie nach hinten. #sprecher:tamsin
-Das sag ich ihm nicht, das sag ich nur dir. #sprecher:tamsin
+Achte nicht auf die Züge. Achte darauf, was Slick nicht sieht. #sprecher:tamsin
 * [„Ich schau zu.“]
     ~ beginneAufgaben("riverton.slickBeobachten")
     -> END
-* [„Später.“]
-    Okay. Aber verpass es nicht, die beiden spielen nicht mehr lange hier. #sprecher:tamsin
+* [„Nicht jetzt.“]
+    Okay. Aber verpass es nicht. Die beiden spielen nicht mehr lange hier. #sprecher:tamsin
     -> END
 
 === tamsin_zuschauen_wieder ===
-Zuschauen? Slick und Ray spielen schon wieder. Zähl mit! #sprecher:tamsin
+Zuschauen? Slick und Ray spielen schon wieder. #sprecher:tamsin
 * [„Ja.“]
     ~ beginneAufgaben("riverton.slickBeobachten")
     -> END
-* [„Später.“]
+* [„Nicht jetzt.“]
     -> END
 
 === tamsin_alltag ===
-{~Fünf Minuten reichen für jede Partie. Fast jede.|Hast du gesehen? Er hat die Drohung wieder übersehen. Jedes Mal!|Die Bildschirmtische zählen nicht laut mit. Langweilig.} #sprecher:tamsin
+{not tamsinZettelGegeben: -> tamsin_zettel}
+{nadelRiverton == 0 and not tamsinEliErzaehlt: -> tamsin_eli}
+{~Fünf Minuten reichen für jede Partie. Fast jede.|Er guckt nur nach vorn. Jedes Mal!|Die Bildschirmtische zählen nicht laut mit. Langweilig.} #sprecher:tamsin
+-> END
+
+=== tamsin_zettel ===
+~ tamsinZettelGegeben = true
+Er sieht alles, was laut ist. Aber wenn Ray leise einen Turm zur Seite schiebt, spielt er einfach weiter. #sprecher:tamsin
+Er guckt nur nach vorn. Nie nach hinten. #sprecher:tamsin
+Sie schreibt etwas auf einen Zettel und schiebt ihn dir zu: „Schottisch. Immer. Und Evans, wenn er gut drauf ist.“ #sprecher:erzaehler
+Hast du nicht von mir. #sprecher:tamsin
+-> END
+
+=== tamsin_eli ===
+// Kapitel 19, Schluss: Eli am Bildschirmtisch in der Dämmerung.
+~ tamsinEliErzaehlt = true
+Draußen wird es dunkel. Die sechs Tische leuchten weiter, weiß und geduldig. An einem sitzt ein Junge, allein. #sprecher:erzaehler #musik:konzern.flaeche
+Das ist Eli. Der war früher hier. Der redet nicht gern. #sprecher:tamsin
+Sie zuckt die Schultern, aber sie sieht nicht weg. #sprecher:erzaehler
+Der Tisch redet auch nicht. Vielleicht deshalb. #sprecher:tamsin
 -> END
 
 // ---------------------------------------------------------------- Ray
@@ -190,8 +243,7 @@ Zuschauen? Slick und Ray spielen schon wieder. Zähl mit! #sprecher:tamsin
 === ray_erstes_treffen ===
 ~ rayGetroffen = true
 Ein älterer Herr mit Busfahrermütze stellt geduldig die Figuren auf. #sprecher:erzaehler
-Ray. Vierzig Jahre Bus gefahren, vierzig Jahre hier gespielt. #sprecher:ray
-Beides mit Fahrplan. #sprecher:ray
+Ray. Dreißig Jahre Bus gefahren, sechzig Jahre hier gespielt. Beides mit Fahrplan. #sprecher:ray
 {reiheTamsinBestanden: -> ray_reihe}
 -> ray_erst_tamsin
 
@@ -200,9 +252,24 @@ Erst Tamsin, dann ich. Ein Bus hält auch nicht zweimal an derselben Haltestelle
 -> END
 
 === ray_reihe ===
-Zwei Haltestellen, ein Bus. Der Gegner kann nur an einer aussteigen. #sprecher:ray
-Das ist ein Doppelangriff. #sprecher:ray
-Eine Gabel ist ein Zug, der zwei Briefe auf einmal zustellt. #sprecher:ambrose
+// Kapitel 19: die Mulde im Stein (Neu gegenüber der Story-Bibel); kehrt in Kapitel 22 wieder.
+Zwei Haltestellen, ein Bus. Der Gegner kann nur an einer aussteigen. Also fährst du zu der anderen. #sprecher:ray
+{not moldeGefuehlt: -> ray_mulde}
+-> ray_reihe_wahl
+
+=== ray_mulde ===
+~ moldeGefuehlt = true
+Er legt seine große Hand auf den Stein. #sprecher:erzaehler
+Hier hab ich neunundsechzig gegen Odum verloren. Und zweiundsiebzig. #sprecher:ray
+Und jedes Jahr danach. Der Stein ist hier dünner als da drüben. Fühl mal. #sprecher:ray
+* [Die Hand auf den Stein legen]
+    Es stimmt. Eine flache Mulde, wo sechzig Jahre lang Hände gelegen haben. #sprecher:erzaehler #pause
+* [Nicken]
+- Eine Gabel ist ein Zug, der zwei Briefe auf einmal zustellt. #sprecher:ambrose
+Er sagt es freundlich. Aber zwischen zwei Sätzen geht sein Blick hinaus auf die Wiese. #sprecher:erzaehler
+-> ray_reihe_wahl
+
+=== ray_reihe_wahl ===
 * [„Zeigen Sie es mir.“]
     ~ beginneAufgaben("riverton.reiheRay")
     -> END
@@ -211,7 +278,7 @@ Eine Gabel ist ein Zug, der zwei Briefe auf einmal zustellt. #sprecher:ambrose
     -> END
 
 === ray_alltag ===
-{~Der Pavillon war unsere Endhaltestelle. Mal sehen, wo die nächste ist.|Slick zieht zu schnell. Das sag ich ihm seit zehn Jahren.|Wenn du nach Ironwood fährst: Der Bus hält an der Schnellstraße. Aber der Kanalweg ist schöner.} #sprecher:ray
+{~Der Pavillon war unsere Endhaltestelle. Mal sehen, wo die nächste ist.|Slick zieht zu schnell. Der Alte hat ihm das vierzehn Jahre lang gesagt.|Wenn du nach Ironwood fährst: Der Bus hält an der Schnellstraße. Aber der Kanalweg ist schöner.} #sprecher:ray
 -> END
 
 // ---------------------------------------------------------------- Gegenstände

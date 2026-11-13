@@ -18,6 +18,10 @@ EXTERNAL beginnePartie(begegnung)
 EXTERNAL zeigeFensterbank()
 
 VAR held = "Du"
+VAR ambroseImHalbfinaleGerufen = false
+VAR mentorzugFreiGespielt = false
+VAR epilogGesehen = false
+VAR abschiedGesehen = false
 VAR ambroseVertrauen = 0
 VAR brettBeruehrt = false
 // Ergänzt mit dem Auftrag mittel-1 (Dialoge Maple Falls): ausgangMapleFallsErsteLektion,
@@ -46,6 +50,7 @@ VAR abendDameGesehen = false
 VAR ersterTagSpaeter = false
 
 === dachboden_brett ===
+{abschiedGesehen and not epilogGesehen: -> epilog}
 // Szene 2 nach dem Roman, Kapitel 2, und der Dialogprüfung (VM8 bis VM13). Stimmung: still,
 // dann Staunen, nie gruselig. Klang: keine Musik, Holzknacken, Wind am Fenster.
 Staub, Kisten, ein Lampenschirm ohne Lampe. Unter einer Decke liegt etwas Flaches, Schweres. #sprecher:erzaehler #musik:aus
@@ -294,4 +299,45 @@ Das war gut. Besser, als ich es erklärt hätte. Ich hätte ihm von Morphy erzä
 === fensterbank ===
 Auf der Fensterbank steht, was du unterwegs gefunden hast. Das Zimmer erzählt die Reise. #sprecher:erzaehler
 ~ zeigeFensterbank()
+-> END
+
+// ================================================================ Epilog (Szene 109, Roman Kapitel 66)
+// Ein Jahr später, im Herbst. Nach Abschied und Abspann reist der Held auf den Dachboden; das Brett
+// startet den Epilog (Quest mapleFalls.epilog). Der Zettel von Ambrose liegt nur dort, wenn der
+// Mentor-Zug im Halbfinale nicht gespielt und Ambrose nicht gerufen wurde (Extra-Abspann, R29).
+// Danach Post-Game (Szene 110). Klang: mapleFalls.herbst, schlussklang.
+=== epilog ===
+~ epilogGesehen = true
+Im Herbst werden die Ahornbäume an der Birch Lane wieder rot. Erst an den Rändern. Du hörst den Wasserfall noch immer. #sprecher:erzaehler #musik:mapleFalls.herbst
+Auf Mrs. Calloways Veranda verliert sie jeden Nachmittag gegen einen Achtjährigen. In Raum zwölf bringt Carla den Neuen das Zählen bei. #sprecher:erzaehler
+In einem Keller in Silicon Bay unterrichtet eine Frau acht Kinder bei einem Heizlüfter. #sprecher:erzaehler
+Eines davon hatte früher zwei Titel und kommt jetzt jeden Tag. #sprecher:erzaehler
+* [Auf den Dachboden gehen]
+-
+Das Brett steht auf dem Dachboden, auf dem niedrigen Tisch unter dem runden Fenster. Keine Decke darüber. Du staubst es ab. Oft. #sprecher:erzaehler
+{not (mentorzugFreiGespielt or ambroseImHalbfinaleGerufen): -> epilog_zettel}
+-> epilog_lily
+
+=== epilog_zettel ===
+Eine Figur steht anders als am Abend. Daneben liegt ein Zettel in alter, steiler Schrift. #sprecher:erzaehler #pause:2
+„Du hast mich nicht gebraucht. Das ist das schönste Geschenk. – A. W.“ #sprecher:erzaehler #pause:3
+* [Den Zettel einstecken]
+- -> epilog_lily
+
+=== epilog_lily ===
+An einem Nachmittag im Oktober steht jemand auf der Treppe. Du hörst die neunte Stufe. #sprecher:erzaehler #klang:stufe
+Mama sagt, du bist Meister. Mein Cousin sagt, Mädchen können nicht richtig spielen. Nur den Springer. #sprecher:lily
+* [„Dein Cousin redet viel.“]
+- Bringst du es mir bei? Richtig? #sprecher:lily
+Du räumst die zwei Könige und den Springer ab, vorsichtig, und legst sie in den Geigenkasten. Dann stellst du alle zweiunddreißig auf. #sprecher:erzaehler
+Der weiße König ist schwer, unten mit Blei ausgegossen, und das Kreuz auf seiner Krone ist ein bisschen schief. #sprecher:erzaehler
+* [„Setz dich. Du hast Weiß.“]
+- Lily klettert auf den Schaukelstuhl. Er knarrt. Sie sieht auf zweiunddreißig Dinge, von denen ihr keines etwas sagt. #sprecher:erzaehler
+Und jetzt? #sprecher:lily
+Durch das runde Fenster fällt das Licht. Der Staub hängt in der Luft wie etwas, das sich entschieden hat, nicht zu fallen. #sprecher:erzaehler
+* [„Schau nicht auf alles. Stell eine Frage.“]
+- Welche? #sprecher:lily
+* [„Was hängt?“]
+- Ende. #sprecher:erzaehler #musik:schlussklang #pause:4
+~ setzeSzene("akt5.postGame")
 -> END

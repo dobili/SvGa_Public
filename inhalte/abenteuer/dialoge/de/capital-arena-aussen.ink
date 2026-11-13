@@ -12,6 +12,7 @@
 
 EXTERNAL gibFund(kennung)
 EXTERNAL zeigeAbspann()
+EXTERNAL reise(karte, ausloeser)
 
 VAR held = "Du"
 VAR nadelMapleFalls = 0
@@ -125,24 +126,62 @@ Das hier sind dreitausend. Und kein Einziger raucht. #sprecher:ambrose #stimmung
     Die breite Treppe vor der Arena. Am Abend wird hier gefeiert, sagt man. #sprecher:erzaehler
     -> END
 - abschiedGesehen:
-    Auf der Treppe vor der Arena ist es still geworden. Das Brett in deinem Rucksack ist warm. #sprecher:erzaehler
+    Auf der Treppe vor der Arena ist es still geworden. Die Fahnen werfen lange Schatten. #sprecher:erzaehler
     -> END
 }
 -> abschied
 
 === abschied ===
+// Roman Kapitel 66: Ambrose sitzt zum fünften Mal auf einer Treppe. Alle drei Wahlen der Bibel
+// kommen nacheinander. Danach Abspann und Reise auf den Dachboden (Epilog in
+// maple-falls-dachboden.epilog). Klang: abschied.treppe, abschied, ambrose.nichtSpaeter.
 ~ abschiedGesehen = true
-Nach der Siegerehrung sitzt du allein auf der Treppe. Das Sommerlicht ist lang und golden. #sprecher:erzaehler
-Ich wollte eine Partie ohne Makel. Ich habe etwas Besseres bekommen. #sprecher:ambrose #stimmung:friedlich
-Menschen, die kämpfen, Fehler machen und wachsen. Du hast mir das gezeigt. #sprecher:ambrose #stimmung:friedlich
+Der Abend ist lang und golden. Kinder aus acht Städten rennen zwischen den Fahnenmasten herum. Du setzt dich auf die Treppe, ganz oben. #sprecher:erzaehler #musik:abschied.treppe
+Du legst das alte Brett auf die Stufe und stellst die Figuren von Junos Reisebrett darauf. Zwei Könige. Ein Springer. Die Schlussstellung. #sprecher:erzaehler
+Er sitzt neben dir, die Hände auf den Knien. Durch ihn hindurch siehst du die Fahnen. #sprecher:erzaehler
+* [„Hast du es gesehen?“]
+- Jeden Zug. Einunddreißig. Der Turm. Ich habe an der Wand gestanden und mir auf die Zunge gebissen. #sprecher:ambrose
+Ich habe mir gewünscht, dass du ihn merkst. Dass du danach so spielst, habe ich nicht zu wünschen gewagt. #sprecher:ambrose
+* [„War es richtig?“]
+- Ich weiß es nicht. Ich habe es nicht nachgerechnet. Ich wollte nicht. #sprecher:ambrose #stimmung:lacht
+Unten gehen Victor und sein Vater, das Formular zwischen sich, jeder hält eine Ecke. Graham Hale hat keinen Stift in der Hand. #sprecher:erzaehler
+-> abschied_rede
+
+=== abschied_rede ===
+Ich muss dir etwas sagen. Hör zu, ich sage es nur einmal. #sprecher:ambrose
+Ich wollte eine Partie ohne Makel. Ich habe sie nicht bekommen. #sprecher:ambrose
+Die Fernpartie ist remis, und in deinem Finale steht ein Turm auf der falschen Linie. #sprecher:ambrose
+* [„Tut mir leid.“]
+- Sei still. Ich bin noch nicht fertig. Ich habe etwas Besseres bekommen. #sprecher:ambrose #stimmung:froh #musik:abschied
+* [Zuhören]
+- Eine Lehrerin, die gekündigt hat. Ein Mädchen, das zwei Titel zurückgibt. Einen Jungen, der vor Freude rennt, weil er verloren hat. #sprecher:ambrose
+Menschen, die kämpfen. Die Fehler machen. Und wachsen. Das ist es, was schön ist an diesem Spiel. Nicht die Züge. #sprecher:ambrose
+Du hast mir das gezeigt. Ein Kind, das einen König hält wie einen Suppenlöffel. #sprecher:ambrose #stimmung:lacht
 * [„Danke.“]
-    Nein. Ich danke dir, {held}. #sprecher:ambrose #stimmung:friedlich
+- Wofür? #sprecher:ambrose
+* [„Für Was hängt? Für den Turm heute.“]
+- Das war das Geringste. Das weiß jeder. #sprecher:ambrose #stimmung:lacht
+-> abschied_verbeugung
+
+=== abschied_verbeugung ===
+Die Sonne steht tief. Er ist jetzt so durchsichtig, dass du nicht mehr sicher bist, ob du ihn siehst. #sprecher:erzaehler
 * [„Ich werde dich vermissen.“]
-    Und ich dich. Aber du wirst nicht allein spielen. Schau dich um. #sprecher:ambrose #stimmung:friedlich
+- Das hoffe ich doch. Ich war hundertsechzig Jahre lang eine Fußnote. Ich möchte wenigstens einem Menschen fehlen. #sprecher:ambrose
+Und ich dich. Wo immer man das tut, wohin ich gehe. #sprecher:ambrose
+Er steht auf und macht eine kleine, steife Verbeugung. Wie am ersten Tag. #sprecher:erzaehler
+Ambrose Whitlock, zu Diensten. Es war mir eine Ehre, {held}. #sprecher:ambrose
 * [„Später?“]
-    Nein. Dieses eine Mal nicht später. #sprecher:ambrose #stimmung:lacht
-- Das Brett wird still. Die Figuren stehen in der Schlussstellung der Fernpartie. #sprecher:erzaehler #pause
+- Er lacht, laut, von ganz unten. Das Lachen vom Steg und aus der Garage. #sprecher:erzaehler #musik:aus
+Nein. Dieses eine Mal nicht später. #sprecher:ambrose #stimmung:lacht #musik:ambrose.nichtSpaeter
+-> abschied_ende
+
+=== abschied_ende ===
+Das Licht verändert sich, wie wenn eine Wolke weiterzieht. Du stehst allein auf der Treppe. #sprecher:erzaehler #pause:3
+Auf der Stufe liegt ein Brett aus altem Holz. Zwei Könige. Ein Springer. Am Rand eingebrannte Buchstaben. Das Holz ist warm von der Sonne. #sprecher:erzaehler
+Jemand setzt sich neben dich. Juno, mit zwei Tagebüchern auf dem Schoß. Das obere ist aufgeschlagen, bei der Seite mit dem Glitzerrahmen. #sprecher:erzaehler
+Sie hält dir den Stift hin. Du überlegst lange. Dann schreibst du, in deiner eigenen Schrift: Er ist angekommen. #sprecher:erzaehler #pause:2
 ~ zeigeAbspann()
+~ reise("mapleFalls.dachboden", "treppe")
 -> END
 
 // ---------------------------------------------------------------- Ansehen (Runde 6)

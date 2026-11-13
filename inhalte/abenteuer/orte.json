@@ -54,8 +54,10 @@
           "datei": "karten/maple-falls-clubraum.json",
           "name": "ort.mapleFalls.clubraum",
           "innen": true,
+          "musik": "musik/maple-falls.club.m4a",
           "zustaende": {
-            "nadelMapleFalls >= 1": "karten/maple-falls-clubraum-pokal.json"
+            "nadelMapleFalls >= 1": "karten/maple-falls-clubraum-pokal.json",
+            "victorGesehen": "karten/maple-falls-clubraum-bildschirm.json"
           }
         },
         {
@@ -350,6 +352,12 @@
           "karte": "mapleFalls.dachboden",
           "art": "gegenstand",
           "dialog": "ansehen-maple-falls.kiste_whitlock"
+        },
+        {
+          "name": "bildschirmPult",
+          "karte": "mapleFalls.clubraum",
+          "art": "gegenstand",
+          "dialog": "ansehen-maple-falls.bildschirm_pult"
         }
       ],
       "club": {

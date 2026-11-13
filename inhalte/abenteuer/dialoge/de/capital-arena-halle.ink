@@ -305,20 +305,42 @@ Das ist meine unsterbliche Partie. Mit dir. #sprecher:ambrose #stimmung:froh #pa
 }
 
 === vor_dem_finale ===
+// Roman Kapitel 64: der Gang hinter der Halle, drei Gespräche nacheinander (Hales, Mama, Ambrose).
 {not halbfinaleDanachGesehen: -> halbfinale_danach}
 ~ vorDemFinaleGesehen = true
-{
-- mentorzugFreiGespielt:
-    Das war meine unsterbliche Partie. Mit dir. #sprecher:ambrose #stimmung:friedlich
-- else:
-    Du hast mich nicht gerufen. Und trotzdem gewonnen. #sprecher:ambrose #stimmung:friedlich
-}
-Im Gang vor der Bühne stehen Victor und sein Vater. Graham Hale räuspert sich. #sprecher:erzaehler
-Ich habe gerechnet und vergessen, wofür. Entschuldige, Victor. #sprecher:grahamHale
-Ich spiel heute für mich. Und gegen meinen besten Gegner. #sprecher:victor
-Mama drückt dir die Schulter. #sprecher:erzaehler
-Spiel deine Partie. Ich hab meine verloren, und es war trotzdem schön, dass ich sie gespielt hab. #sprecher:mutter
-Ich sage heute nichts. Das Brett gehört euch. #sprecher:ambrose #stimmung:friedlich
+Hinter der Halle ist ein langer, kahler Gang mit Neonlicht und einem Getränkeautomaten. #sprecher:erzaehler #musik:aus #geraeusch:gang
+Du sitzt auf dem Boden und wartest, dass deine Hände aufhören zu zittern. #sprecher:erzaehler
+Am anderen Ende stehen Graham Hale und Victor. Der Gang trägt jedes Wort. Graham hält kein Telefon in der Hand. #sprecher:erzaehler
+Acht Jahre habe ich jede Partie nachgerechnet. Ich bin kein Spieler. Ich bin Ingenieur. Ich kann messen. #sprecher:grahamHale
+* [Weghören wollen]
+- Du hast mit sieben gegen mich gewonnen. Am nächsten Morgen habe ich gedacht, ich halte dich auf. #sprecher:grahamHale
+Ich wollte nur noch eine. Mit dir. Ich hab acht Jahre lang jeden Abend gedacht, heute fragt er. #sprecher:victor
+* [Nicht hinsehen]
+- Es ist lange still. #sprecher:erzaehler #pause:2
+Ich habe gerechnet und vergessen, wofür. Entschuldige, Victor. #sprecher:grahamHale #musik:hale.victor
+Du hörst, wie zwei Menschen einander festhalten, ungeschickt, wie Leute, die es lange nicht getan haben. #sprecher:erzaehler
+Ich spiel heute für mich. Und gegen meinen besten Gegner. Du darfst zugucken. Aber du darfst nichts aufschreiben. #sprecher:victor
+Ich weiß nicht, ob ich das kann. #sprecher:grahamHale
+Probier’s. Es ist luftig. #sprecher:victor
+-> vor_dem_finale_mama
+
+=== vor_dem_finale_mama ===
+Mama kommt den Gang herunter und setzt sich neben dich auf den Boden. #sprecher:erzaehler #musik:mama.ruhig
+Ich hatte auch mal so ein Finale. Ich hab fünfundzwanzig Jahre gedacht, das Verlieren sei das Wichtigste daran. #sprecher:mutter
+Ich hab das Formular wieder angeguckt. Nicht Zug dreiunddreißig. Die anderen zweiunddreißig. Die waren richtig gut. #sprecher:mutter
+* [Mama ansehen]
+- Spiel deine Partie. Ich hab meine verloren, und es war trotzdem schön, dass ich sie gespielt hab. #sprecher:mutter
+Und guck auf die Grundreihe. #sprecher:mutter
+-> vor_dem_finale_ambrose
+
+=== vor_dem_finale_ambrose ===
+Ambrose steht am Getränkeautomaten, als versuche er ein letztes Mal, etwas zu verstehen. #sprecher:erzaehler #musik:ambrose.scherzo
+* [„Man wirft Geld hinein, und es fällt etwas heraus.“]
+- Das habe ich begriffen. Ich frage mich nur, wer darin sitzt. #sprecher:ambrose #stimmung:lacht
+Ich sage heute nichts. Kein Wort, nicht vorher, nicht währenddessen. Keine Karten. Das Brett gehört euch. #sprecher:ambrose
+Ich stehe hinten, bei der Großmeisterin. Sie dreht jedes Mal den Kopf, wenn ich neben ihr stehe. #sprecher:ambrose #stimmung:froh
+Ich will sehen, was du tust, wenn niemand neben dir steht. Nicht zu wissen, was du ziehst. Das Beste seit hundertsechzig Jahren. #sprecher:ambrose
+Aus der Halle kommt ein Gong. Deine Hände zittern nicht mehr. #sprecher:erzaehler #klang:gong
 -> finale_angebot
 
 === finale_angebot ===

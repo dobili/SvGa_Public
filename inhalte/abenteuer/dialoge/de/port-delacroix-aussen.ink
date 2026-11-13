@@ -3,7 +3,7 @@
 //
 // Szenen der Bibel: Ankunft über den Deich (Ende von Szene 62), 64 Bretter sammeln (Quest
 // portDelacroix.wiederaufbau, Besuch 1: vier Häuser), 65 Batiste am Kai (Begegnung
-// portDelacroix.batiste, immun gegen Sprüche; beim ersten Sieg Zweite Chance und Kühler Kopf statt
+// portDelacroix.batiste, immun gegen Sprüche; beim ersten Sieg Zweite Chance und Bauernkompass statt
 // Pokerface, das keine eigene Wirkung hat), Gebäckstand von Mrs. Arceneaux (Laden
 // portDelacroix.gebaeckstand), Weiterreise mit dem Wüstenzug (wenn nadelPortDelacroix).
 // Seit Akt 4 führt am Kai ein Luftboot in den Bayou (bayou, wenn musikhausOffen, bayou.ink).
@@ -183,9 +183,12 @@ Eine Stellung, in der nichts hängt und alles davon abhängt, welchen Bauern man
     Du gewinnst nicht schön. Aber allein. #sprecher:erzaehler
     Na also. Jetzt hat es auch keiner gehört. #sprecher:batiste
     Mach ein Gesicht wie das Wasser. Dann weiß keiner, was darunter ist. Auch du nicht, eine Weile. #sprecher:batiste
-    Er schiebt dir zwei Karten über die Kiste. Eine für einen zweiten Versuch, eine für einen kühlen Kopf. #sprecher:erzaehler
+    // „Kühler Kopf“ hat schon Mr. Quinn geschenkt; Batiste gibt den Bauernkompass (Bauer um Bauer,
+    // ohne Uhr; Dokument 11 schlug ihn für Port Delacroix vor).
+    Er schiebt dir zwei Karten über die Kiste. Eine für einen zweiten Versuch, eine mit einem Bauern und einer Kompassnadel. #sprecher:erzaehler
+    Welchen Bauern man wohin stellt. Das ist das Ganze. #sprecher:batiste
     ~ gibKarte("zweiteChance")
-    ~ gibKarte("kuehlerKopf")
+    ~ gibKarte("bauernkompass")
 - else:
     Gut gespielt. Keine Worte, nur Züge. So mag ich das. #sprecher:batiste
 }

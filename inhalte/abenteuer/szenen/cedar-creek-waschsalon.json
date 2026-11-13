@@ -97,14 +97,7 @@
       ], "id": "regal"
     },
     { "moebel": "cc13Radio", "auf": "regal" },
-    {
-      "moebel": "cc4AutomatLinks",
-      "feld": [
-        12,
-        4
-      ],
-      "bauteil_ok": true
-    },
+    { "moebel": "cc7AutomatFront", "feld": [11, 4] },
     {
       "moebel": "cc4Falttisch",
       "feld": [
@@ -113,14 +106,7 @@
       ],
       "id": "platte"
     },
-    {
-      "moebel": "cc4Falttisch",
-      "feld": [
-        6,
-        5
-      ],
-      "id": "platte2"
-    },
+    { "moebel": "crTheke", "feld": [9, 6], "id": "tresen" },
     {
       "moebel": "cc4Waeschekorb",
       "feld": [
@@ -223,7 +209,7 @@
       "name": "automat",
       "feld": [
         11,
-        5
+        7
       ]
     }
   ],
@@ -231,8 +217,8 @@
     {
       "name": "boateng",
       "feld": [
-        8,
-        6
+        10,
+        5
       ]
     }
   ],
@@ -241,7 +227,7 @@
       "name": "kundin",
       "typ": "statist",
       "feld": [
-        10,
+        7,
         7
       ],
       "eigenschaften": {

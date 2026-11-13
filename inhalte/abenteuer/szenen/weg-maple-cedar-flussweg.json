@@ -214,7 +214,7 @@
     },
     {
       "moebel": "wg6BootLaengs",
-      "feld": [100, 22],
+      "feld": [99, 21],
       "an_wand": false,
       "bauteil_ok": true
     },
@@ -1182,7 +1182,7 @@
     { "moebel": "mfc8BrettLeer", "auf": "faehrstein" },
     {
       "moebel": "wg6Seil",
-      "feld": [99, 21]
+      "feld": [98, 21]
     }
   ],
   "ausloeser": [

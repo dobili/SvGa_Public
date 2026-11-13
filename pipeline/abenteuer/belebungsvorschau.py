@@ -14,6 +14,8 @@ import json
 import zlib
 from pathlib import Path
 
+from PIL import Image
+
 K = 16
 STATISTEN = 40
 VORN = 3  # Reihenfolge der Standbilder: rechts, oben, links, unten
@@ -25,6 +27,8 @@ _TIERARTEN = json.loads(
 )
 TIERBILDER = {art: (a["breite"], a["hoehe"]) for art, a in _TIERARTEN["arten"].items()}
 STAEMME = _TIERARTEN["staemme"]
+# Zeichengröße je Art im Verhältnis zum Bogen (Feld massstab, ohne Angabe 1), wie in der App.
+MASSSTAB = {art: a.get("massstab", 1) for art, a in _TIERARTEN["arten"].items()}
 # Tiere von der Seite (Standbild „rechts“): Von vorn wirken Hund und Fuchs, als stünden sie aufrecht
 # (Gutachter 10.11.2026); Statisten weiter von vorn.
 SEITE = 0
@@ -87,6 +91,10 @@ def teile(szene: dict, privat: Path, oeffne) -> list[tuple[int, int, int, object
             sichtbar = round(hoehe * WASSERLINIE)
         rahmen = VORN if b.get("typ") == "statist" else SEITE
         bild = oeffne(pfad).crop((rahmen * breite, 0, (rahmen + 1) * breite, sichtbar))
+        massstab = 1 if b.get("typ") == "statist" else MASSSTAB.get(art, 1)
+        if massstab != 1:
+            breite, sichtbar = round(breite * massstab), round(sichtbar * massstab)
+            bild = bild.resize((breite, sichtbar), Image.Resampling.NEAREST)
         anzahl = 3 if any(w in b["name"].lower() for w in SCHAR) else 1
         for i in range(anzahl):
             dx, dy = i * (breite // 2 + 4), (i % 2) * 6

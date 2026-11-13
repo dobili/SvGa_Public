@@ -63,7 +63,8 @@ def platziere(szene: dict, moebel: dict) -> tuple[list[dict], list[str]]:
     ``feld`` = linke obere Kachel; ``auf`` = Kennung eines anderen Möbels (mittig auf dessen
     Oberseite, gezeichnet davor, ohne Kollision); ``an_wand`` = hängt an der Wandfläche (hinter
     allem, ohne Kollision); ``vorn`` = nach dem Fuß gezeichnet, ohne Kollision (Fahnenmast vor einer
-    Fassade); ``versatz`` = Feinschub in Pixeln.
+    Fassade); ``versatz`` = Feinschub in Pixeln; ``wenn`` = nur sichtbar, wenn die Bedingung beim
+    Betreten gilt (app/src/abenteuer/regeln/figurbedingung.ts); Gegenstände darauf erben sie.
     """
     befunde: list[str] = []
     nach_id: dict[str, dict] = {}
@@ -115,6 +116,11 @@ def platziere(szene: dict, moebel: dict) -> tuple[list[dict], list[str]]:
             **({"maske": angabe["maske"]} if "maske" in angabe else {}),
             "id": eintrag.get("id", f"{eintrag['moebel']}@{nummer}"),
         }
+        # Bedingte Möbel (wenn, Sprache von bedingung.py): Was auf einem bedingten Möbel steht,
+        # erbt dessen Bedingung (Calloways Tisch mit Brett). Die App zeigt sie nur, wenn sie gilt.
+        wenn = eintrag.get("wenn") or (nach_id.get(eintrag.get("auf", ""), {}).get("wenn"))
+        if wenn:
+            stueck["wenn"] = wenn
         nach_id[stueck["id"]] = stueck
         gesetzt.append(stueck)
     return gesetzt, befunde
@@ -207,6 +213,8 @@ def tiled(szene: dict, zeilen: list[str], gesetzt: list[dict], vorlage: dict) ->
             {"name": "tiefe", "type": "int", "value": s["tiefe"]},
             {"name": "kollision", "type": "bool", "value": s["kollision"]},
         ]
+        if "wenn" in s:
+            eig.append({"name": "wenn", "type": "string", "value": s["wenn"]})
         objekt(s["name"], "moebel", s["x"], s["y"], s["breite"], s["hoehe"], eig)
     leer = [0] * (breite * hoehe)
     ebenen = [("boden", boden), ("waende", waende), ("objekte", leer)]

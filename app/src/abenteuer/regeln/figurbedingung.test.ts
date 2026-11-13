@@ -36,3 +36,32 @@ describe("ohneFigurenNachBedingung", () => {
     expect(() => ohneFigurenNachBedingung(karte, () => "((", {})).toThrow();
   });
 });
+
+describe("bedingte Möbel", () => {
+  const mitMoebel = {
+    layers: [
+      {
+        type: "objectgroup",
+        objects: [
+          {
+            name: "ccTisch",
+            type: "moebel",
+            properties: [{ name: "wenn", value: "lilyGeholfen" }],
+          },
+          { name: "ccStuhl", type: "moebel", properties: [{ name: "tiefe", value: 3 }] },
+        ],
+      },
+    ],
+  };
+  const namenDerMoebel = (k: typeof mitMoebel) => (k.layers[0]?.objects ?? []).map((o) => o.name);
+
+  it("nimmt ein Möbel weg, dessen Eigenschaft wenn nicht gilt", () => {
+    const ergebnis = ohneFigurenNachBedingung(mitMoebel, () => undefined, {});
+    expect(namenDerMoebel(ergebnis)).toEqual(["ccStuhl"]);
+  });
+
+  it("lässt es stehen, wenn die Bedingung gilt", () => {
+    const ergebnis = ohneFigurenNachBedingung(mitMoebel, () => undefined, { lilyGeholfen: true });
+    expect(ergebnis).toBe(mitMoebel);
+  });
+});

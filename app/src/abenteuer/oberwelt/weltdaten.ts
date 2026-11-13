@@ -171,7 +171,7 @@ export async function ladeWelt(
     paketdateiAlsAdresse(FIGURBILD),
   ]);
   // Im Tiefpunkt steht Ambrose auf keiner Karte (regeln/abwesenheit.ts); Figuren mit `wenn`
-  // stehen nur, wenn ihre Bedingung gilt (regeln/figurbedingung.ts).
+  // und Möbel stehen nur, wenn ihre Bedingung gilt (regeln/figurbedingung.ts).
   const karte = ohneFigurenNachBedingung(
     ohneAbwesende(geladen, variablen as Abenteuerstand["dialogvariablen"]),
     (name) => figurZu(fund.ort, name)?.wenn,

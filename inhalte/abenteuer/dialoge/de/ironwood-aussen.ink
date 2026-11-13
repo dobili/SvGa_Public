@@ -39,6 +39,7 @@ VAR einladungGesehen = false
 VAR kreidebrettGesehen = false
 // Roman, Kapitel 23: Das Verbot kommt zu Hause (maple-falls-wohnzimmer.nicht_ironwood) oder hier.
 VAR verbotGesehen = false
+VAR held = "Du"
 
 // ---------------------------------------------------------------- Ankunft und Verbot
 
@@ -234,28 +235,50 @@ Edna. Eisenwaren. Was du hier kaufst, hält. #sprecher:edna
 }
 
 === kauf ===
+// Kapitel 29 (Roman): kein Thema, nur Wind und fernes Werk; unter Graham Hales Rede der glatte
+// Konzernton. Big Joe kommt heraus: Stille, nur das Klirren der Pokale.
 ~ kaufGesehen = true
-Am Werkstor hängt ein neues Schild: „Kantine ab Montag Trainingszentrum von Perfect Move“. #sprecher:erzaehler
-Das Werk hat die Kantine vermietet. Euer Club kann gern an unseren Tischen weiterspielen, kostenlos. #sprecher:grahamHale
-Big Joe sagt nichts. Er trägt die Pokale in einem Karton aus der Tür. #sprecher:erzaehler
-Victor steht neben seinem Vater und sieht Big Joe an. „Vater, vielleicht …“ Er bricht ab. #sprecher:erzaehler #pause
+Am Werkstor hängt ein neues Schild, weiß und glänzend: „Perfect Move Trainingszentrum Ironwood. Eröffnung im Januar.“ #sprecher:erzaehler #musik:aus #bild:schild_werkstor
+Darunter, kleiner: „In den Räumen der ehemaligen Werkskantine.“ #sprecher:erzaehler #bild:aus
+Der Club bleibt selbstverständlich. An den neuen Tischen, zu denselben Zeiten, kostenlos. #sprecher:grahamHale #klang:konzern
+Mit einem Trainer, der nie müde wird. #sprecher:grahamHale
+Er glaubt es. Das ist das Schlimme. Er hält es wirklich für ein Geschenk. #sprecher:erzaehler
+Big Joe kommt heraus. Er trägt einen Karton vor dem Bauch, oben schauen die Pokale heraus und klirren bei jedem Schritt. #sprecher:erzaehler #geraeusch:pokale
+Er sieht Graham Hale nicht an. Hinter ihm tragen Hank und Priya das Stahlbrett, zu zweit. #sprecher:erzaehler
+Vater. Vielleicht … #sprecher:victor #pause
+Graham Hale dreht sich zu ihm um. Freundlich. Fragend. #sprecher:erzaehler
+Nichts. #sprecher:victor
 {mamaSpielt:
-    Mama stellt sich neben Big Joe, ohne ein Wort. Ihre Hand liegt auf seinem Arm. #sprecher:erzaehler
+    Mama geht über den Platz, an dem schwarzen Wagen vorbei, und nimmt Big Joe den Karton ab. Zusammen heben sie ihn in den Lieferwagen. #sprecher:erzaehler
 }
-Zum dritten Mal ein Raum, in dem Menschen gespielt haben, und zum dritten Mal Bildschirme. Ich zähle mit. #sprecher:ambrose #stimmung:streng
+Es beginnt zu schneien. Die ersten Flocken des Jahres bleiben auf dem Schild liegen und auf dem Dach des schwarzen Wagens. #sprecher:erzaehler #musik:mama.schnee
 -> END
 
 === einladung ===
+// Kapitel 29, Ende von Akt 2: Victors Thema zum ersten Mal unsicher; bei „J. H.“ Ambroses und
+// Victors Thema gleichzeitig. Ambrose legt diesmal die Hand auf die Niete (Kapitel 24 nur darüber).
 ~ einladungGesehen = true
-Es wird Abend. Der erste Schnee fällt auf die Brücke. #sprecher:erzaehler
-Victor kommt allein vom Werkstor herüber, ohne Tablet. #sprecher:erzaehler
-Hier. Eine Einladung zum Jugendturnier der Akademie in Silicon Bay. #sprecher:victor
-Komm. Dann siehst du, wogegen du spielst. #sprecher:victor #stimmung:muede
-Und vielleicht sagst du mir dann, ob ich auf der richtigen Seite stehe. #sprecher:victor #pause
-Er steigt in den Bus nach Silicon Bay, bevor du antworten kannst. #sprecher:erzaehler
-Ambrose sieht dem Bus nach, dann auf die Nieten der Brücke mit „J. H.“. #sprecher:erzaehler
+An der alten Stahlbrücke hinter dem Werkstor. Victor kommt allein, ohne Tablet. Er weiß nicht, wohin mit den Händen. #sprecher:erzaehler #musik:victor.unsicher
+{held}. #sprecher:victor
+Du hast vier. #sprecher:victor
+* [„Ja.“]
+- Gegen den habe ich einmal gespielt. Kowalski. Bei einem Schaukampf. #sprecher:victor
+Er hat mir danach einen Kakao ausgegeben. Ich wusste nicht, was ich damit machen soll. Ich trinke keinen Kakao. #sprecher:victor
+Er hält dir eine Karte hin, weiß, mit silberner Schrift: „Jugendturnier der Perfect Move Akademie. Silicon Bay.“ #sprecher:erzaehler #bild:einladung_silber
+Komm. Dann siehst du, wogegen du spielst. #sprecher:victor
+Er geht nicht. Er sieht auf das Geländer zwischen euch. Mehr als drei Sekunden. #sprecher:erzaehler #bild:aus #pause:3
+Und vielleicht sagst du mir dann, ob ich auf der richtigen Seite stehe. #sprecher:victor #stimmung:muede
+Er steigt in den Bus an der Schnellstraße, ohne sich umzusehen. Die Rücklichter werden kleiner im Schneetreiben. #sprecher:erzaehler
 Ein Hale, der fragt. Das ist neu. #sprecher:ambrose
-Im Tagebuch steht jetzt „Silicon Bay“. Juno malt ein Fragezeichen dahinter, mit Glitzer. #sprecher:erzaehler
+Auf dem ersten Pfosten des Geländers, klein und sauber: J. H. #sprecher:erzaehler
+Ambrose legt die Hand darauf. Diesmal lässt er sie dort. #sprecher:erzaehler #musik:ambrose.victor
+Er hat überall unterschrieben. Auf jeder Niete. Was für ein unerträglicher, gewissenhafter Mensch. #sprecher:ambrose #stimmung:riss
+Und er hat mir geschrieben. #sprecher:ambrose #stimmung:riss
+Juno kommt die Brücke herauf, das Tagebuch unter der Jacke. #sprecher:erzaehler
+Was hat er gewollt? #sprecher:juno
+* [Ihr die Karte zeigen]
+- Sie liest. Sie schlägt das Tagebuch auf und schreibt quer über die Seite: „Silicon Bay“. #sprecher:erzaehler
+Nach kurzem Überlegen ein Fragezeichen dahinter. Mit Glitzer. #sprecher:erzaehler #bild:tagebuch_silicon_bay
 -> END
 
 // ---------------------------------------------------------------- Gegenstände

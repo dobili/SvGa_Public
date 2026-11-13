@@ -36,6 +36,12 @@ VAR endeAkt1Gesehen = false
 // ersteNachtGesehen diese Datei (Szene akt1.ersteNacht).
 VAR ersterAbendGesehen = false
 VAR ersteNachtGesehen = false
+// Abende nach den Aufgabenreihen (Roman, Kapitel 6): todsuendenBestanden setzt die Hülle nach der
+// Runde mapleFalls.todsuenden (Sams Dame); die „abend…Gesehen“ setzt diese Datei.
+VAR todsuendenBestanden = false
+VAR abendSamGesehen = false
+VAR abendJunoGesehen = false
+VAR abendDameGesehen = false
 
 === dachboden_brett ===
 Staub, Kisten, ein kaputter Lampenschirm. Unter einer Decke liegt etwas Flaches, Schweres. #sprecher:erzaehler
@@ -112,6 +118,9 @@ Nun? Die Figuren stehen, und ich habe Zeit. Zu viel davon. #sprecher:ambrose
 - ausgangMapleFallsErsteLektion == "" or ausgangMapleFallsErsteLektion == "abgebrochen": -> ambrose_wartet
 - not ersteLektionBesprochen: -> nach_erster_partie
 - ersterAbendGesehen and not ersteNachtGesehen: -> erste_nacht
+- reiheSamBestanden and not abendSamGesehen: -> abend_nach_sam
+- reiheJunoBestanden and not abendJunoGesehen: -> abend_nach_juno
+- todsuendenBestanden and not abendDameGesehen: -> abend_nach_dame
 - else: -> ambrose_rat
 }
 
@@ -208,4 +217,49 @@ Ich. Und einer, der mir noch einen Zug schuldet. #sprecher:ambrose #stimmung:sti
 Mehr sagt er nicht. Du fragst nicht weiter. #sprecher:erzaehler
 Kurz bevor dir die Augen zufallen, denkst du: Mama hatte recht. Schwarz steht besser. #sprecher:erzaehler
 Du weißt nur nicht, woher du das weißt. #sprecher:erzaehler
+-> END
+
+// ---------------------------------------------------------------- Abende auf dem Dachboden
+
+// Roman, Kapitel 6 (neu): Die Lernwochen als Abende mit Ambrose, je etwa eine Minute, nach jeder
+// bestandenen Aufgabenreihe. Stimmung: Lernen als Spiel, Tage, die ineinanderlaufen. Ambrose ist
+// ein ungeduldiger Lehrer; er seufzt und geht am Fenster auf und ab. Klang: Lernthema als Schleife,
+// Grillen durch das Fenster; beim Merksatz das Aha-Motiv (Klangplan).
+
+=== abend_nach_sam ===
+~ abendSamGesehen = true
+Abend. Durch das runde Fenster zirpen Grillen. Ihr geht Sams Stellungen noch einmal durch. #sprecher:erzaehler
+Ambrose geht am Fenster auf und ab. Bei jemandem, durch den man hindurchsehen kann, lenkt das sehr ab. #sprecher:erzaehler
+Du zählst richtig. Aber du zählst wie ein Buchhalter. #sprecher:ambrose #stimmung:streng
+Es geht nicht nur darum, wie viele. Es geht darum, wer zuerst schlägt und was er dabei aufs Spiel setzt. #sprecher:ambrose
+Mit der Dame fängt man keinen Tausch an. Man schickt den Bauern vor. #sprecher:ambrose
+* [„Warum?“]
+    Weil der Bauer nichts zu verlieren hat. Das ist bei Menschen ebenso. #sprecher:ambrose
+* [„Ein Buchhalter gewinnt auch.“]
+    Gewiss. Aber er erzählt hinterher niemandem davon. #sprecher:ambrose #stimmung:lacht
+    Der Bauer zuerst. Er hat am wenigsten zu verlieren. Das ist bei Menschen ebenso. #sprecher:ambrose
+- -> END
+
+=== abend_nach_juno ===
+~ abendJunoGesehen = true
+Abend. Junos Aufgaben liegen ausgebreitet auf dem Dachboden, in rosa Tinte. Neben guten Zügen klebt ein Stern. #sprecher:erzaehler
+Es gibt wenige Sterne. Es stört sie nicht. #sprecher:erzaehler
+Sie schreibt alles auf. Das ist mehr wert, als sie glaubt. Wer aufschreibt, kann zurückblättern. #sprecher:ambrose
+* [„Und du? Hast du deine Partien aufgeschrieben?“]
+    Jede. Auf Zettel, die nach Kaffee und Kerzenwachs rochen. Ich habe sie alle verloren. #sprecher:ambrose #stimmung:still
+    Bis auf eine. Die steht hier unter dem Fenster. #sprecher:ambrose #stimmung:still
+* [„Sie kann ihre eigene Schrift nicht lesen.“]
+    Dann bist du ihre Brille. Auch eine Aufgabe. #sprecher:ambrose #stimmung:lacht
+- -> END
+
+=== abend_nach_dame ===
+~ abendDameGesehen = true
+Abend. Du denkst an Sam, den Kopf auf dem Tisch, und an seine gefangene Dame. #sprecher:erzaehler
+Du hast es ihm erklärt, nicht ich. Wie hast du es gesagt? #sprecher:ambrose
+* [„Die Dame läuft allein über einen leeren Platz.“]
+    Und jeder kann auf sie zeigen. Während die anderen in Ruhe ihre Leute aufstellen. #sprecher:ambrose
+* [„Ich hab erzählt, wie es mir ging.“]
+    Vor zwei Wochen wusstest du es selbst nicht. Deshalb hat er dir zugehört. #sprecher:ambrose
+- Er schweigt einen Moment. Dann klingt er beinahe verlegen. #sprecher:erzaehler
+Das war gut. Besser, als ich es erklärt hätte. Ich hätte ihm von Morphy erzählt, und er wäre eingeschlafen. #sprecher:ambrose #stimmung:lacht
 -> END

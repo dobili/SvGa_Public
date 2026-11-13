@@ -27,6 +27,8 @@ VAR angesehenPlakatZaehlen = false
 VAR angesehenKisteWhitlock = false
 VAR ersteLektionBesprochen = false
 VAR angesehenTischPizzakarton = false
+VAR angesehenKreidebrett = false
+VAR lilyGeholfen = false
 
 // ---------------------------------------------------------------- Wohnzimmer
 
@@ -68,6 +70,25 @@ VAR angesehenTischPizzakarton = false
     ~ angesehenTischPizzakarton = true
     Unter einem Tischbein steckt ein gefalteter Pizzakarton. Der Tisch wackelt nicht mehr. Fast nicht. #sprecher:erzaehler
     Bei uns legte man ein Spielkartenblatt unter. Herz Sieben, meistens. #sprecher:ambrose #stimmung:lacht
+}
+-> END
+
+// Roman, Kapitel 6: Lilys Kreidebrett auf dem Gehweg vor dem Nachbarhaus, schief, neun Felder in
+// einer Reihe. Bleibt als Spur liegen und verblasst über die Akte (Karten). Nach Lilys Lektion
+// (lilyGeholfen) sind Springerzüge dazugemalt.
+=== kreidebrett ===
+{
+- lilyGeholfen:
+    Neben dem Kreidebrett ist ein L gemalt, dann noch eins und noch eins, bis zur Ecke. Weiß, schwarz, weiß, schwarz. #sprecher:erzaehler
+    {not angesehenKreidebrett:
+        ~ angesehenKreidebrett = true
+        Neun Felder in einer Reihe. Sie wird es merken, wenn sie so weit ist. Der Springer zuerst. #sprecher:ambrose #stimmung:lacht
+    }
+- angesehenKreidebrett:
+    Das Plastikpferd liegt noch auf dem Kreidebrett. Es wartet. #sprecher:erzaehler
+- else:
+    ~ angesehenKreidebrett = true
+    Ein Schachbrett aus Kreide auf dem Gehweg, schief, mit neun Feldern in einer Reihe. Darauf steht ein Plastikpferd. #sprecher:erzaehler
 }
 -> END
 

@@ -8,7 +8,11 @@
  * davon kommt in den Spielstand.
  * Abhängigkeiten: toenung.ts.
  */
+import { istTeilchenart, type Teilchenart } from "./teilchen";
 import { istToenung, TAGESLICHT, type Toenung } from "./toenung";
+
+/** Wert, der die Teilchen im Dialog abschaltet (`#teilchen:aus`). */
+const AUS = "aus";
 
 /** Deckkraft einer Figur nach `#figur:<name>:<wert>`. */
 const DECKKRAFT: Readonly<Record<string, number>> = { ein: 1, halb: 0.5, aus: 0 };
@@ -17,6 +21,8 @@ const DECKKRAFT: Readonly<Record<string, number>> = { ein: 1, halb: 0.5, aus: 0 
 export interface Buehnenanweisung {
   /** Licht für die Dauer des Dialogs (null: kein Schleier); fehlt: unverändert. */
   readonly licht?: Toenung | null;
+  /** Teilchen für die Dauer des Dialogs (T8; null: keine); fehlt: unverändert. */
+  readonly teilchen?: Teilchenart | null;
   /** Figur, die geblendet wird, mit Ziel-Deckkraft (0 bis 1). */
   readonly figur?: { readonly name: string; readonly deckkraft: number };
 }
@@ -37,5 +43,7 @@ export function buehnenanweisung(tags: Readonly<Record<string, string>>): Buehne
   const name = figur.slice(0, trenner);
   const deckkraft = DECKKRAFT[figur.slice(trenner + 1)];
   const figurteil = trenner > 0 && deckkraft !== undefined ? { figur: { name, deckkraft } } : {};
-  return { ...lichtteil, ...figurteil };
+  const t = tags.teilchen;
+  const teilchenteil = t === AUS ? { teilchen: null } : istTeilchenart(t) ? { teilchen: t } : {};
+  return { ...lichtteil, ...figurteil, ...teilchenteil };
 }

@@ -628,3 +628,20 @@ body.abenteuer-mit-kulisse {
     opacity: 0;
   }
 }
+
+/* Erinnerung im Dialog (Atmosphäre T10, `#erinnerung`): Sepia-Rahmen wie ein altes Foto, und die
+   Karte dahinter in Sepia, solange die Erinnerung dauert. */
+.abenteuer-dialog.abenteuer-dialog-erinnerung {
+  border: 3px double #8a6a3f;
+  background: rgba(74, 56, 34, 0.95);
+  color: #f3e6cc;
+}
+
+.abenteuer-dialog-erinnerung .abenteuer-dialog-portraet {
+  filter: sepia(0.85);
+}
+
+.abenteuer-welt:has(.abenteuer-dialog-erinnerung) canvas {
+  filter: sepia(0.85) contrast(0.95) brightness(1.05);
+  transition: filter 1s ease;
+}

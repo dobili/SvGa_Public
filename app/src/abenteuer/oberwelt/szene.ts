@@ -32,7 +32,7 @@ import { ladeMoebelbilder, stelleMoebelAuf, type Moebel } from "./moebel";
 import { EINGABEPAUSE_MS, gegenrichtung, pausenschritt } from "./eingabepause";
 import { baueSperrkarte } from "./sperrkarte";
 import type { Toenung } from "./toenung";
-import { Schneeschicht } from "./schneefall";
+import { zeigeTeilchen, type Teilchenart } from "./teilchen";
 import { Toenungsschicht } from "./toenungsschicht";
 import { faerbeWinterlich } from "./winter";
 import { liesBelebung, type Belebung, type Feld } from "./belebung";
@@ -113,8 +113,9 @@ export interface Szenendaten {
   /** Tönung der Karte (toenung.ts) und ob der Held eine Laterne trägt (Lichtkreis bei „dunkel“). */
   readonly toenung?: Toenung | null;
   readonly laterne?: boolean;
-  /** Winterkarte (winter.ts): Möbel umfärben, Schnee fallen lassen. */
+  /** Winterkarte (winter.ts): Möbel umfärben, Schnee fallen lassen; sonst Teilchen der Karte (T8). */
   readonly winter?: boolean;
+  readonly teilchen?: Teilchenart | null;
 }
 
 /** Tiefe des Hintergrundbilds: unter Möbeln an der Wand (Tiefe 0) und allem anderen. */
@@ -143,7 +144,6 @@ export class Oberweltszene extends Phaser.Scene {
   private belebung: Belebung[] = [];
   private belebungsschicht: Belebungsschicht | null = null;
   private toenungsschicht: Toenungsschicht | null = null;
-  private schnee: Schneeschicht | null = null;
   /** Ist eine Kachel für Tiere begehbar (sperrkarte.ts)? Vor create() ist nichts frei. */
   private frei: (x: number, y: number) => boolean = () => false;
 
@@ -232,7 +232,7 @@ export class Oberweltszene extends Phaser.Scene {
     this.belebungsschicht = schicht;
     this.toenungsschicht = new Toenungsschicht(this, KACHEL);
     this.setzeToenung(this.daten.toenung ?? null);
-    this.schnee = this.daten.winter ? new Schneeschicht(this) : null;
+    zeigeTeilchen(this, this.daten.winter ? "schnee" : (this.daten.teilchen ?? null), true);
     this.tasten = this.input.keyboard?.createCursorKeys() ?? null;
   }
 
@@ -331,7 +331,6 @@ export class Oberweltszene extends Phaser.Scene {
     }
     this.held.setDepth(this.held.y);
     this.toenungsschicht?.folge(this.held.x, this.held.y);
-    this.schnee?.aktualisiere(delta);
     this.meldeAusloeser();
     this.meldeKachel();
   }

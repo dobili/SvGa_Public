@@ -42,6 +42,11 @@ Hintergrund: `docs/spiel/04_Architektur.md`, Abschnitt 2 und 9.
   `#figur:<objektname>:aus|halb|ein` blendet eine Figur der Karte in einer Sekunde (nur bis zum
   Verlassen der Karte; ausgeblendet sperrt sie den Weg nicht). `#erscheint` blendet das Porträt in
   zwei Sekunden ein, `#geist` zeigt es halb durchsichtig.
+- Teilchen (T8): `teilchen` je Karte in `orte.json` (`staub` im Lichtstreifen, `sternschnuppen`,
+  `nebel`; Winterkarten haben Schnee). `#teilchen:staub` wechselt sie bis zum Dialogende,
+  `#teilchen:aus` nimmt sie weg. Auf dem Handy höchstens 40 Teilchen.
+- Erinnerung (T10): `#erinnerung` an einer Zeile zeigt den Dialog im Sepia-Rahmen und die Karte in
+  Sepia, bis `#erinnerung:aus` oder bis der Dialog endet.
 - Porträtfassungen (T4): `#stimmung:jung|ertappt|riss|alt|lachtOhneSpott|muede` zeigt
   `portraets/<sprecher>-<fassung>.svg` (kebab-case, etwa `mira-lacht-ohne-spott.svg`); fehlt die
   Datei, die Grundfassung. Andere Stimmungen zeigen immer die Grundfassung.

@@ -209,7 +209,7 @@
       "momente": [
         {
           "wenn": {
-            "zug": 8
+            "abZug": 22
           },
           "sprecher": "slick",
           "text": "moment.slick.musik"
@@ -234,8 +234,8 @@
             "merkmal": "schachGegeben"
           },
           "sprecher": "slick",
-          "text": "moment.slick.odum",
-          "musik": "aus"
+          "musik": "aus",
+          "dialog": "riverton-pavillon.clubkampf_odum"
         }
       ]
     },
@@ -451,7 +451,32 @@
         "art": "grundstellung"
       },
       "kartenErlaubt": false,
-      "zeit": "wahl"
+      "zeit": "wahl",
+      "momente": [
+        {
+          "wenn": {
+            "zug": 2
+          },
+          "sprecher": "erzaehler",
+          "text": "moment.odile.summt",
+          "musik": "odile"
+        },
+        {
+          "wenn": {
+            "abZug": 12
+          },
+          "sprecher": "erzaehler",
+          "text": "moment.held.plan",
+          "musik": "held"
+        },
+        {
+          "wenn": {
+            "abZug": 22
+          },
+          "sprecher": "erzaehler",
+          "text": "moment.odile.stille"
+        }
+      ]
     },
     {
       "kennung": "desertSprings.clubkampf",

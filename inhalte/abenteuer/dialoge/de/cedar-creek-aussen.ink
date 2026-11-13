@@ -417,7 +417,7 @@ Sie hat nicht gefragt, warum. Sie fragt in letzter Zeit weniger. #sprecher:erzae
 * [„Dann los. Zu Fuß durch den Wald.“]
     Zu Fuß! Zurück nehmen wir den Zug. Abenteuer mit Rückfahrkarte. #sprecher:juno #stimmung:froh
 * [„Und wenn wir zu spät sind?“]
-    Dann spielen wir wenigstens das letzte Spiel. Das ist auch was. #sprecher:juno
+    Dann sehen wir wenigstens, was da jetzt steht. Und ich schreib es auf. #sprecher:juno
 - Bäume, die älter sind als ich. Endlich jemand in meinem Alter. #sprecher:ambrose #stimmung:lacht
 -> END
 

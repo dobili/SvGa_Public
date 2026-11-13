@@ -57,7 +57,8 @@ VAR londonNachgespraechGesehen = false
 === harlan_spaeter ===
 {endeAkt3Gesehen:
     Neben der großen Uhr hängt jetzt eine zweite, kleine. Darunter ein Pappschild: „Für Leute mit Zeit.“ #sprecher:erzaehler
-    Mr. Harlan sieht von seinem Brett auf. Setz dich. Hier tickt nichts. #sprecher:harlan
+    Mr. Harlan sieht von seinem Brett auf. #sprecher:erzaehler
+    Setz dich. Hier tickt nichts. #sprecher:harlan
 - else:
     Auf der Bank unter der Uhr spielt Tamsin gegen Mr. Harlan. Ohne Uhr. Sie zählt nicht. #sprecher:erzaehler
     Sie ist die Erste seit Jahren, die wartet, bis ich ziehe. #sprecher:harlan
@@ -160,8 +161,9 @@ Im März ist er gestorben, im Schlaf. Im April hat der Stadtrat getagt. #spreche
 Und niemand hätte sich getraut, ihn zu stören, bevor sie fertig ist. #sprecher:pops
 Er schnürt das Bündel zu. #sprecher:erzaehler
 Slick ist ein guter Junge. Aber er glaubt, er muss lauter sein als der Alte. #sprecher:pops
-Damit keiner merkt, dass er nicht der Alte ist. #sprecher:pops #musik:karte
--> pops_laden
+// Gutachten K2.16: Nach diesem Satz kein Ladenfenster; der Laden öffnet beim nächsten Mal.
+Damit keiner merkt, dass er nicht der Alte ist. #sprecher:pops #pause:2
+-> END
 
 === pops_laden ===
 ~ oeffneLaden("riverton.zeitungsstand")
@@ -186,7 +188,7 @@ Der Zug nach Cedar Creek steht abfahrbereit am Bahnsteig. Durch die Fenster sieh
 {
 - flashbackLondonBestanden and not londonNachgespraechGesehen: -> london_nachgespraech
 - flashbackLondonBestanden:
-    Die große Uhr tickt. Ambrose sagt nichts, aber du spürst, dass er an London denkt. #sprecher:erzaehler
+    Die große Uhr tickt. Ambrose sieht zu den hohen Fenstern und sagt nichts. #sprecher:erzaehler
     -> END
 - not bildschirmtischeGesehen:
     Eine Uhr, so groß wie ein Wagenrad. Sie tickt so laut, dass man es im Bauch spürt. #sprecher:erzaehler

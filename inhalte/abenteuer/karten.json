@@ -39,6 +39,19 @@
       "zeitpunkt": "waehrend"
     },
     {
+      "kennung": "schutzengel",
+      "name": "karte.schutzengel.name",
+      "spruch": "karte.schutzengel.spruch",
+      "bild": "karten/schutzengel.webp",
+      "stufe": "mittel",
+      "art": "verbrauch",
+      "wirkung": {
+        "art": "schutzengel",
+        "zuege": 5
+      },
+      "zeitpunkt": "waehrend"
+    },
+    {
       "kennung": "fluestern",
       "name": "karte.fluestern.name",
       "spruch": "karte.fluestern.spruch",

@@ -27,6 +27,7 @@ EXTERNAL zahle(muenzen)
 VAR lastkahnFrei = false
 VAR muenzen = 0
 VAR held = "Du"
+VAR rivertonMontagGesehen = false
 VAR ankunftRivertonGesehen = false
 VAR novaGesehen = false
 VAR victorRivertonGesehen = false
@@ -78,8 +79,8 @@ Zurück auf den Feldweg am Bahndamm. Der Zug wäre schneller, aber der Weg ist s
 -> END
 
 === wohnwagen_zu ===
-{clubkampfRivertonBesprochen:
-    Aus Slicks Wohnwagen ruft es: „Tür ist offen, Kopf einziehen!“ #sprecher:erzaehler
+{rivertonMontagGesehen:
+    Die Tür des Wohnwagens steht einen Spalt offen. Drinnen brennt Licht. #sprecher:erzaehler
 - else:
     Ein Wohnwagen am Fluss, ein Kurierrad lehnt daneben. Die Tür ist zu, drinnen ist niemand. #sprecher:erzaehler
 }
@@ -142,7 +143,8 @@ Das Schloss klemmt. Es braucht euch beide und einen Tropfen Öl aus einem Kännc
 {
 - endeAkt3Gesehen:
     Über der Werkstatt hängt ein neues Schild, mit der Hand gemalt: „Reparatur am selben Tag“. #sprecher:erzaehler
-    Mrs. Albescu winkt mit einem Schraubenschlüssel. Die Kette springt? Komm her. #sprecher:albescu #stimmung:froh
+    Mrs. Albescu winkt mit einem Schraubenschlüssel. #sprecher:erzaehler
+    Die Kette springt? Komm her. #sprecher:albescu #stimmung:froh
 - nadelIronwood > 0:
     Vor der Werkstatt steht ein Rad auf dem Kopf. Mrs. Albescu sitzt auf einem Hocker davor und dreht an der Kette. #sprecher:erzaehler
     Dafür brauche ich keine Knie. Nur Zeit. #sprecher:albescu
@@ -182,17 +184,22 @@ Nova Sinclair. Landesmeisterin. Der Highschools. Die hat noch nie verloren. #spr
 }
 ~ victorRivertonGesehen = true
 Neben dem Podium steht Victor, im selben Weiß, die Hände auf dem Rücken. Auf seiner Jacke steht sein Name. #sprecher:erzaehler
-Ins Mikrofon sagt er drei Sätze. Trainingspläne, die sich anpassen. Auswertung in Echtzeit. Es sind die Sätze seines Vaters. #sprecher:erzaehler
-Dann kommt er herüber, nicht schnell. Du. #sprecher:victor #stimmung:kalt
-Er sieht auf deine Jacke. Zwei. #sprecher:victor
+Ins Mikrofon sagt er drei Sätze. Es sind die Sätze seines Vaters. #sprecher:erzaehler
+Dann kommt er herüber, nicht schnell. #sprecher:erzaehler
+Du. #sprecher:victor #stimmung:kalt
+Er sieht auf deine Jacke. #sprecher:erzaehler
+Zwei. #sprecher:victor
 * [„Zwei.“]
 * [Nichts sagen]
 - Er nickt, als trüge er eine Zahl in eine Liste ein. Dann sieht er zu den Tischen. #sprecher:erzaehler
 Sie machen keine Fehler. Das ist der Punkt. #sprecher:victor
+// Gutachten K2.14: Victors Satz fällt in beiden Zweigen.
 * [„Und das ist gut?“]
     Er antwortet nicht gleich. Wieder diese Sekunden. #sprecher:erzaehler #pause:2
     Mein Vater sagt ja. #sprecher:victor
-* [Gehen]
+* [Zu den Tischen sehen]
+    Du fragst nichts. Er sagt es trotzdem, leiser. #sprecher:erzaehler #pause:2
+    Mein Vater sagt, das ist gut. #sprecher:victor
 - -> END
 
 === victor_alltag ===

@@ -955,3 +955,11 @@ Hauptchats, in Arbeit bei mittel-2: Maßstab ist der Verlust an Stellungsbewertu
 Bauerneinheiten gegenüber dem besten Zug, oder ein übersehenes Matt); als Begründung höchstens die
 Art des Fehlers („Da hängt etwas.“, „Dein König.“), nie der bessere Zug; in Partien ohne Ambrose
 (Finale) ist die Karte gesperrt. Dauer und Häufigkeit bleiben wie in Dokument 11.
+
+## Abgabe des Vertikalschnitts als interaktive Weltkarte (13.11.2026)
+
+Wunsch des Autors: Die überarbeiteten Karten von Akt 1 bekommt er wieder als Übersichtsseite wie
+bei der letzten Durchsicht: Karten einzeln an- und ausschalten, die Übergänge zwischen den Karten
+sehen, das Ganze verschieben und zoomen. Mit dieser Seite arbeitet er am besten. Sie entsteht aus
+den gebauten Karten (Hintergründe gerendert) und wird unter derselben Adresse wie zuletzt
+aktualisiert.

@@ -312,6 +312,22 @@ Daten aus `inhalte/abenteuer/karten.json`; Wirkung als Ablauf der Kartenleiste.
 - Im Halbfinale liegt der Mentor-Zug ohne Besitz als vierte Karte frei im Deck, einmal spielbar, ohne Verbrauch und ohne Folge für die Wertung („Held und Ambrose spielen gemeinsam“). Wer ihn nicht spielt, bekommt den Extra-Abspann (Dokument 02, 2.7).
 - Der Vertrag hat dafür noch kein Feld (Vorschlag V6).
 
+### R29a Schutzengel (K4)
+
+- Verbrauchskarte, Stufe mittel, „während“ (Dokument 11, K4; Wunsch des Autors, 13.11.2026). Gespielt
+  wacht sie über die nächsten fünf eigenen Züge (`wirkung.zuege` in `karten.json`).
+- Vor jedem dieser Züge bewertet die Engine kurz (250 ms) den besten Wert der Stellung und den Wert
+  nach dem Zug. Ein grober Fehler wird nicht ausgeführt: Verlust von zwei Bauerneinheiten oder mehr
+  gegenüber dem besten Zug, ein zugelassenes Matt oder ein verpasstes eigenes Matt. Ambrose hält ihn
+  mit „Das spielst du besser nicht.“ auf und nennt höchstens die Art des Fehlers („Da hängt etwas.“,
+  „Dein König.“, „Da geht mehr.“), nie den besseren Zug. Der Held zieht neu.
+- Einmal je Karte: Nach dem ersten Aufhalten wacht sie nicht mehr. Antwortet die Engine nicht, wird
+  der Zug gespielt (der Engel blockiert nie).
+- Gesperrt ohne Ambrose: zwischen „Tiefpunkt“ und „Versöhnung“ (wie R29) und im Finale; dort lässt
+  sie sich nicht ins Deck legen.
+- Erhalt: Laden Antiquariat in Desert Springs (90 Münzen) und Szene 69 (Vergabe durch den Dialog).
+- Code: `regeln/schutzengel.ts` (Regeln), `anbindung/useSchutzengel.ts` (Prüfung vor dem Zug).
+
 ## 5. Aufgabenreihen (Entscheidungen A7, A8)
 
 ### R30 Umfang aus dem Zeitbudget

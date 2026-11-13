@@ -10,6 +10,11 @@
 // finch_turm_a und spur_pm3 (Dokument 15, 2.5: das Kapitänsproblem).
 //
 // Funde gibt gibFund; Ink merkt sie sich zusätzlich selbst.
+// Runde 11 (13.11.2026): nach dem Roman (roman/akt3_teil2.md, Kapitel 35): Ambrose am Bug sagt nur
+// noch die Zugnummer („Den, den sie gespielt hätte“), der Delfin, den er nicht sieht (Knoten
+// delfin), am Deich die Kette und „Ich bin hier weggegangen“. Ambrose kommentiert die Funde nicht
+// mehr. Klang: ambrose.verzerrt, delfin; „Nicht jetzt.“ statt „Später.“.
+//
 // Variablen: ausgangWegSiliconDelacroixSchiffskoch und wegSiliconDelacroixTafelBestanden setzt die
 // Hülle (R42); „abgebrochen“ zählt wie nicht gespielt (R35).
 
@@ -68,7 +73,7 @@ Du spielst, wie ich koche: nicht zu schnell, nicht zu langsam. Noch eine? #sprec
 + [„Noch eine.“]
     ~ beginnePartie("wegSiliconDelacroix.schiffskoch")
     -> END
-+ [„Später.“]
++ [„Nicht jetzt.“]
     -> END
 
 === ruiz_nach_niederlage ===
@@ -76,7 +81,7 @@ Angebrannt. Passiert. Noch einmal, solange das Meer ruhig ist? #sprecher:schiffs
 + [„Revanche.“]
     ~ beginnePartie("wegSiliconDelacroix.schiffskoch")
     -> END
-+ [„Später.“]
++ [„Nicht jetzt.“]
     -> END
 
 // ---------------------------------------------------------------- Mr. Guidry am Deich
@@ -87,10 +92,12 @@ Angebrannt. Passiert. Noch einmal, solange das Meer ruhig ist? #sprecher:schiffs
     -> END
 }
 ~ guidryGetroffen = true
-Am Deich stapelt ein Mann Sandsäcke. Hinter ihm liegt die Stadt: abgedeckte Dächer, Bauzäune, aus einem Zelt klingt Musik. #sprecher:erzaehler
-Guidry. Der Sturm hat uns erwischt, aber nicht umgeworfen. #sprecher:guidry
-Ein Loch im Deich ist wie ein Loch in der Bauernkette. Man stopft es, bevor es größer wird. Sagt meine Enkelin, die spielt Schach. #sprecher:guidry
-Diese Luft. Salz und Holz. Ich kenne diese Luft. #sprecher:ambrose #stimmung:fern
+Am Deich stapeln Männer und Frauen in Gummistiefeln Sandsäcke. Einer richtet sich auf, die Hand im Kreuz. #sprecher:erzaehler
+Ein Loch im Deich ist wie ein Loch in einer Kette. Man stopft es, bevor es größer wird. Hinterher ist man immer klüger. #sprecher:guidry
+Diese Luft. Salz und Holz. Und Teer. Und etwas Süßes, das fault: die Magnolien. #sprecher:ambrose #stimmung:fern
+Ich kenne diese Luft. #sprecher:ambrose #stimmung:fern
+* [„Du bist hier geboren.“]
+- Ich bin hier weggegangen. Das ist nicht dasselbe. #sprecher:ambrose
 -> END
 
 // ---------------------------------------------------------------- Rätseltafel und Rückweg
@@ -121,7 +128,6 @@ Die Fähre legt bald wieder ab, zurück nach Silicon Bay. #sprecher:erzaehler
 ~ flaschenpostGefunden = true
 Zwischen zwei Rettungsringen klemmt eine Flasche mit einem gerollten Zettel darin. Darauf ein Schachdiagramm und „Wer findet den Zug?“. #sprecher:erzaehler
 ~ gibFund("flaschenpost")
-Jemand hat ein Rätsel ins Meer geworfen. Das ist die schönste Art, Post zu verschicken. #sprecher:ambrose
 -> END
 
 === fund_muschel ===
@@ -159,7 +165,7 @@ Drei Fahrgäste haben ihre Lösung auf Zettel geschrieben und an den Rahmen gest
 + [Die Zettel prüfen und das Brett lösen]
     ~ beginneAufgaben("wegSiliconDelacroix.kapitaensproblem")
     -> END
-+ [„Später.“]
++ [„Nicht jetzt.“]
     Das Brett läuft nicht weg. Es hängt fest. #sprecher:kapitaen
     -> END
 
@@ -170,7 +176,6 @@ Er zeigt auf die Kordel über dem Steuer. Zieh. Kräftig. #sprecher:kapitaen
 Ein tiefer Ton rollt über das Wasser. Auf dem Deich drehen sich Leute um und winken. #sprecher:erzaehler
 ~ gibFund("kapitaensmuetze")
 Die gehört jetzt dir. Ich hab noch zwei, und keine passt mir so gut wie diese. #sprecher:kapitaen
-Dreißig Jahre hat das Brett gewartet. Es hat sich gelohnt. #sprecher:ambrose
 -> END
 
 === kapitaen_danach ===
@@ -197,12 +202,23 @@ Auf dem Achterdeck stehen Container mit der Aufschrift „Hochwasserhilfe“. Ei
 -> END
 
 === delfin ===
+// Kapitel 35: Ambrose am Bug. Er antwortet genau und knapp und sagt nur noch die Zugnummer.
 {angesehenDelfin:
-    Das Wasser ist ruhig. Vielleicht kommt er morgen wieder. #sprecher:erzaehler
+    Das Wasser ist ruhig. Am Bug steht Ambrose und sieht nach vorn. #sprecher:erzaehler
     -> END
 }
 ~ angesehenDelfin = true
-Neben der Fähre taucht ein Delfin auf, schwimmt ein Stück mit und ist wieder fort. #sprecher:erzaehler
+Mama steht viel an der Reling. Ihr spielt auf Junos Reisebrett, das bei jedem Wellenschlag verrutscht. Sie gewinnt öfter. #sprecher:erzaehler
+Ambrose steht am Bug. Früher bedachte er deine Fehler mit einem Seufzen. Jetzt sagt er die Zugnummer. #sprecher:erzaehler #musik:ambrose.verzerrt
+Zug vierzehn. #sprecher:ambrose
+* [„Was war da?“]
+- Der Läufer. Es gab einen besseren. #sprecher:ambrose
+* [„Welchen?“]
+- Den, den sie gespielt hätte. #sprecher:ambrose #stimmung:fern
+Er sagt „sie“. Wie bei einem Menschen. #sprecher:erzaehler #pause
+Neben dem Schiff springt ein Delfin, grau und glänzend, und ist wieder weg. Mama schreit auf wie ein Kind. #sprecher:erzaehler #klang:delfin
+* [Dich nach Ambrose umdrehen]
+- Er hat es nicht gesehen. Er sieht nach vorn, auf die Küste, die als brauner Strich aus dem Dunst kommt. #sprecher:erzaehler
 -> END
 
 === pumpenhaus ===
@@ -223,9 +239,9 @@ Im Pumpenhaus brummt eine alte Pumpe. An der Tür hängt ein Zettel: „Läuft. 
 }
 ~ seite02Gefunden = true
 ~ buchseiten = buchseiten + 1
-An der Reling hat sich ein Blatt Papier verfangen, nass vom Gischt. Eine lose Seite voller Schachdiagramme. #sprecher:erzaehler
+An der Reling hat sich ein Blatt Papier verfangen, nass vom Gischt. Darauf eine gezeichnete Stellung. #sprecher:erzaehler
 ~ gibFund("seite02")
-Jemand verliert sein Buch Seite für Seite. Heben wir sie auf. #sprecher:ambrose
+Der Wind verteilt Stellungen übers ganze Land. Heben wir sie auf. #sprecher:ambrose
 -> END
 
 === finch_turm_a ===

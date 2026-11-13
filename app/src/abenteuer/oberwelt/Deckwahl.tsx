@@ -28,6 +28,7 @@ export function Deckwahl({
   zeitwahl,
   farbeFrei = false,
   mentorGesperrt = false,
+  schutzengelGesperrt = false,
   freieKarten = [],
   steckbrief = [],
   beiWahl,
@@ -47,6 +48,8 @@ export function Deckwahl({
   readonly farbeFrei?: boolean;
   /** Regel R29: Mentor-Zug zwischen Tiefpunkt und Versöhnung gesperrt. */
   readonly mentorGesperrt?: boolean;
+  /** Schutzengel (K4) gesperrt: ohne Ambrose (regeln/schutzengel.ts). */
+  readonly schutzengelGesperrt?: boolean;
   /** Freie Karten der Begegnung (R29), liegen ohne Besitz zusätzlich im Deck. */
   readonly freieKarten?: readonly string[];
   /** Was die Lupe des Uhrmachers über den Gegner verrät (leer ohne Lupe). */
@@ -68,6 +71,7 @@ export function Deckwahl({
     if (sorte?.spruch_art && !sprueche) return false;
     if (sorte?.wirkung.art === "farbwahl" && !farbeFrei) return false;
     if (sorte?.wirkung.art === "mentorzug" && mentorGesperrt) return false;
+    if (sorte?.wirkung.art === "schutzengel" && schutzengelGesperrt) return false;
     return sorte !== undefined && sorte.zeitpunkt !== "nachher";
   });
   const schalte = (kennung: string) => {

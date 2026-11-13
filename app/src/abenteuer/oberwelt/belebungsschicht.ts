@@ -20,7 +20,13 @@ import {
   type Bewegung,
   type Umgebung,
 } from "./belebungsbewegung";
-import { erzeugeLaufanimationen, ladeFigurbogen, laufname, standbild } from "./figurbilder";
+import {
+  erzeugeLaufanimationen,
+  fussUrsprungY,
+  ladeFigurbogen,
+  laufname,
+  standbild,
+} from "./figurbilder";
 import {
   scharGroesse,
   scharversatz,
@@ -122,7 +128,7 @@ export class Belebungsschicht {
     const sprite = this.szene.add.sprite(0, 0, eigen ? bogen : platzhalter, 0);
     if (eigen) {
       erzeugeLaufanimationen(this.szene, bogen);
-      sprite.setOrigin(0.5, 1 - this.kachel / 2 / sprite.height);
+      sprite.setOrigin(0.5, fussUrsprungY(sprite, this.kachel));
     }
     this.fuegeHinzu(v, sprite, eigen ? bogen : null, this.neueSperre());
   }

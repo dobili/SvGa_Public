@@ -20,6 +20,7 @@ import { hatSpieltext, ladeSpieltexte, tSpiel } from "../texte/texte";
 export { ladeDialog } from "../dialog/dialogdatei";
 import { liesBelebung, statistenbild, statistensatz } from "./belebung";
 import type { SprechblasenInhalt } from "./Sprechblase";
+import { figurenbildAdresse } from "./figurbogen";
 import { kartenfassung } from "./kartenfassung";
 import { istWinter } from "./winter";
 import { ladeMoebel, type Moebel } from "./moebel";
@@ -78,7 +79,8 @@ async function belebungsbilderFuer(karte: object): Promise<Record<string, string
     }),
   );
   const paare = await Promise.all(
-    [...pfade].map(async (pfad) => [pfad, await paketdateiAlsAdresseOderNull(pfad)] as const),
+    // Statisten wie Figuren: PixelLab-Bogen vor LimeZu (figurbogen.ts); Tiere gehen durch.
+    [...pfade].map(async (pfad) => [pfad, await figurenbildAdresse(pfad)] as const),
   );
   return Object.fromEntries(paare.filter((p): p is readonly [string, string] => p[1] !== null));
 }
@@ -102,7 +104,7 @@ async function figurenbilderFuer(ort: Ortdaten, karte: object): Promise<Record<s
   const paare = await Promise.all(
     figurennamen(karte).map(async (name) => {
       const sprite = figurZu(ort, name)?.sprite;
-      const adresse = sprite ? await paketdateiAlsAdresseOderNull(sprite) : null;
+      const adresse = sprite ? await figurenbildAdresse(sprite) : null;
       return adresse ? ([name, adresse] as const) : null;
     }),
   );
@@ -171,7 +173,7 @@ export async function ladeWelt(
       paketdateiAlsAdresseOderNull(
         `grafik/stil-${kachelstil(fund.ort, fund.karte.innen, karte)}.png`,
       ),
-      paketdateiAlsAdresseOderNull(heldfigurpfad(erinnerung, heldvariante)),
+      figurenbildAdresse(heldfigurpfad(erinnerung, heldvariante)),
       figurenbilderFuer(fund.ort, karte),
       ladeMoebel(karte),
       paketdateiAlsAdresseOderNull(

@@ -141,8 +141,8 @@ Gut kommandiert. Die Kinder wollen ein Foto mit dir. #sprecher:ezra #stimmung:fr
     -> END
 }
 ~ seite10Gefunden = true
-Zwischen den Wurzeln eines Mammutbaums steckt ein Blatt Papier, voller Schachdiagramme. #sprecher:erzaehler
-Eine Seite aus einem Buch, an einem Baum, der älter ist als jedes Buch. #sprecher:ambrose
+Zwischen den Wurzeln eines Mammutbaums steckt ein loses Blatt mit einer gezeichneten Stellung. #sprecher:erzaehler
+Ein Blatt Papier an einem Baum, der älter ist als jedes Papier. #sprecher:ambrose
 ~ gibFund("seite10")
 ~ buchseiten = buchseiten + 1
 -> END

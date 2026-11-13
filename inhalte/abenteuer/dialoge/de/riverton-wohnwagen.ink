@@ -38,26 +38,31 @@ Haben sie nicht. #sprecher:slick
 Er hält dir einen weißen Springer aus Stein hin. Die Mähne ist an einer Stelle abgestoßen. #sprecher:erzaehler
 Aus dem letzten Satz. Nimm ihn mit. Stell ihn irgendwo hin, wo gespielt wird. #sprecher:slick
 * [Den Springer nehmen]
-    Er ist kalt und schwer. #sprecher:erzaehler
 - ~ gibFund("pavillonspringer")
-Und noch was für die Treppe. Wenn einer zu sicher wirkt, frag ihn ganz ruhig, ob sein Turm da wirklich sicher steht. #sprecher:slick #stimmung:froh
-Dann grübelt er. Und die Uhr läuft. #sprecher:slick
-~ gibKarte("gruebelfalle")
+// Gutachten K2.3: kein Spruch-Tutorial an der stillsten Stelle. Die Grübelfalle gibt nach dem Roman
+// erst Rosie in Silicon Bay (Mr. Odums Karte, Kapitel 31).
+Er ist kalt und schwer. #sprecher:erzaehler #pause:2
 * [Hinausgehen]
 - -> slick_fluss
 
 // Kapitel 22, Schluss: draußen am Fluss. Ambrose will zum ersten Mal wirklich eine Antwort.
 === slick_fluss ===
+// Gutachten K2.4 und K2.5: drei Schläge mit Stille; Ambrose antwortet in keinem Zweig.
 Draußen läuft der Fluss schwarz unter der Brücke. Oben im Park leuchtet es, jetzt an zehn Stellen. #sprecher:erzaehler #musik:aus #geraeusch:fluss
-Er hat recht. Und es ist ein Unrecht, und ich würde dem Stadtrat gern etwas sagen, das man vor Kindern nicht sagt. #sprecher:ambrose
-Und die Tische spielen trotzdem besser als er. Besser als ich. #sprecher:ambrose #stimmung:fern #pause:2
-Was heißt das, {held}? Wenn das Schöne und das Richtige dasselbe sind, und eine Maschine kann beides? #sprecher:ambrose #musik:ambrose.zweifel
+Er hat recht. #sprecher:ambrose #pause:2
+Er hat recht, und es ist ein Unrecht, und ich würde dem Stadtrat gern etwas sagen, das man vor Kindern nicht sagt. #sprecher:ambrose
+Und die Tische spielen trotzdem besser als er. #sprecher:ambrose
+* [„Ja.“]
+* [Schweigen]
+- Besser als ich. #sprecher:ambrose #stimmung:fern #musik:ambrose.zweifel #pause:2
+Du hast ihn noch nie so gehört. #sprecher:erzaehler
+Was heißt das, {held}? Wenn das Schöne und das Richtige dasselbe sind, und eine Maschine kann beides? #sprecher:ambrose
 Und ein Mann mit Dosenpokalen kann keines von beiden ganz. Was heißt das? #sprecher:ambrose
-* [„Ich weiß, mit wem ich lieber spiele.“]
+* [„Ich weiß es nicht. Aber ich weiß, mit wem ich lieber spiele.“]
     Er antwortet nicht. #sprecher:erzaehler #pause:2
-    Es ist nicht die Antwort, die er gesucht hat. Aber es ist die einzige, die du hast. #sprecher:erzaehler
-* [„Dass besser nicht alles ist.“]
-    Vielleicht. Ich werde darüber nachdenken müssen. Ich habe ja Zeit. #sprecher:ambrose
+    Es ist nicht die Antwort, die er gesucht hat. #sprecher:erzaehler
+* [„Ich weiß es nicht.“]
+    Er nickt nicht. Er sieht wieder hinauf zum Park, wo es leuchtet. #sprecher:erzaehler
 * [Den Springer in der Hand drehen]
     Du siehst auf die Stelle, wo die Mähne fehlt. Er wartet. Dann sieht er wieder zum Park. #sprecher:erzaehler
 - -> END

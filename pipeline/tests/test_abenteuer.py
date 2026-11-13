@@ -30,6 +30,7 @@ DATEIEN = {
     "vorfuehrungen.json": "abenteuer-vorfuehrungen.schema.json",
     "partieformen.json": "abenteuer-partieformen.schema.json",
     "texte/de.json": "abenteuer-texte.schema.json",
+    "portraetblatt.json": "abenteuer-portraetblatt.schema.json",
 }
 
 
@@ -118,7 +119,9 @@ def test_querverweise_stimmen():
     dialogordner = HAUPTORDNER / "inhalte" / "abenteuer" / "dialoge" / "de"
     for begegnung in _lade("begegnungen.json")["begegnungen"]:
         for moment in begegnung.get("momente", []):
-            schluessel = [f"figur.{moment['sprecher']}.name"]
+            # Der Erzähler hat keinen Namen (Momentzeile.tsx zeigt ihn ohne Porträt).
+            erzaehlt = moment["sprecher"] == "erzaehler"
+            schluessel = [] if erzaehlt else [f"figur.{moment['sprecher']}.name"]
             if "text" in moment:
                 schluessel.append(moment["text"])
             for s in schluessel:
@@ -282,6 +285,19 @@ def test_ink_szene_und_tiled_karte_liegen_bereit():
     namen = {o["name"] for o in objekte["objects"] if o.get("type") not in ("moebel", "statist", "tier")}
     ausloeser = {a["name"] for a in _lade("orte.json")["orte"][0]["ausloeser"]}
     assert namen <= ausloeser
+
+
+def test_dialog_nach_der_runde_gibt_es():
+    """Jeder Knoten in runden.json `danach` steht in seiner Ink-Datei."""
+    fehler: list[str] = []
+    for runde in _lade("runden.json")["runden"]:
+        if "danach" not in runde:
+            continue
+        datei, knoten = runde["danach"].split(".", 1)
+        ink = INHALTE / "dialoge" / "de" / f"{datei}.ink"
+        if not ink.exists() or f"=== {knoten} ===" not in ink.read_text(encoding="utf-8"):
+            fehler.append(f"{runde['kennung']}: Dialog {runde['danach']} fehlt")
+    assert fehler == []
 
 
 def test_tagebuchseiten_haben_ihren_text():

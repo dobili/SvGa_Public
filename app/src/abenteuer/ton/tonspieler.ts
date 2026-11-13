@@ -9,6 +9,8 @@
  * sie fehlerfrei laufen (docs/spiel/23_Technik_Atmosphaere.md, Grundsätze).
  * Abhängigkeiten: Browser-Schnittstelle AudioContext, ton/tonplan.ts (Dateinamen).
  */
+import { motivFuer } from "./motive";
+import { spieleMotiv } from "./motivspieler";
 import { dateienFuer } from "./tonplan";
 
 /** Überblenden beim Wechsel der Musik (Sekunden je Richtung). */
@@ -95,8 +97,17 @@ export class Tonspieler {
     this.laufend[spur] = { angabe, quelle, regler };
   }
 
-  /** Spielt ein Geräusch einmal (`#klang`); fehlt die Datei, geschieht nichts. */
+  /**
+   * Spielt ein Geräusch einmal (`#klang`); fehlt die Datei, geschieht nichts. Ist die Kennung ein
+   * erzeugtes Motiv (ton/motive.ts: aha, hale, blindschach.e4 …), erzeugt der Browser es selbst und
+   * spielt es mit der Musik (Regler „Musik“).
+   */
   async spieleEinmal(angabe: string): Promise<void> {
+    const motiv = motivFuer(angabe);
+    if (motiv) {
+      spieleMotiv(this.ctx, this.gesamt.musik, motiv);
+      return;
+    }
     const puffer = await this.holePuffer("klang", angabe);
     if (!puffer) return;
     const quelle = this.ctx.createBufferSource();

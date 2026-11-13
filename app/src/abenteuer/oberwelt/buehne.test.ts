@@ -21,6 +21,12 @@ describe("buehnenanweisung", () => {
     expect(buehnenanweisung({ figur: "mira:weg" })).toEqual({});
   });
 
+  it("liest Teilchen für die Szene (T8)", () => {
+    expect(buehnenanweisung({ teilchen: "staub" })).toEqual({ teilchen: "staub" });
+    expect(buehnenanweisung({ teilchen: "aus" })).toEqual({ teilchen: null });
+    expect(buehnenanweisung({ teilchen: "konfetti" })).toEqual({});
+  });
+
   it("lässt Zeilen ohne Anweisung unverändert", () => {
     expect(buehnenanweisung({ sprecher: "ambrose" })).toEqual({});
   });

@@ -63,6 +63,10 @@
           "type": "string",
           "pattern": "^klang/[a-z0-9-]+\\.(ogg|m4a)$"
         },
+        "teilchen": {
+          "description": "Teilchen über der Karte (Atmosphäre T8): staub (im Lichtstreifen), sternschnuppen (selten), nebel (ziehende Schwaden); Winterkarten haben Schnee",
+          "enum": ["staub", "sternschnuppen", "nebel"]
+        },
         "klangquellen": {
           "description": "Klangquellen mit Reichweite (Atmosphäre T28): Musik, die nur um ein Ding der Karte klingt (Rosies Wagen, Remys Trompete). objekt ist der Name eines Objekts der Tiled-Karte (jeder Art), musik eine Kennung wie bei #musik; voll bis zur halben Reichweite, dann leiser bis still; die Musik der Karte weicht im selben Maß",
           "type": "array",

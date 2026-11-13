@@ -206,23 +206,24 @@ Sie lacht, kurz und rau, und wirft dir die leere Flasche zu. #sprecher:erzaehler
 // ---------------------------------------------------------------- Bushaltestelle
 
 === bushaltestelle ===
+// Beim ersten Mal geht es nur zu Fuß mit Juno (Roman, Kapitel 10; Entscheidung des Hauptchats
+// 13.11.2026). Der Bus nach Cedar Creek ist erst nach der ersten Ankunft dort frei.
 {
 - not aufbruchGesehen:
     Hier hält der Bus nach Cedar Creek. Heute fährt er ohne dich. #sprecher:erzaehler
     -> END
-- ankunftCedarCreekGesehen:
-    Der Linienbus nach Cedar Creek fährt jede Stunde. Der Fahrer nickt dir zu. #sprecher:erzaehler #klang:bus
+- not ankunftCedarCreekGesehen:
+    Am Fahrplan ein Zettel: „Mr. Kettering fährt nach Cedar Creek nur samstags.“ #sprecher:erzaehler
+    Juno wartet an der Landstraße. Zu Fuß, am Fluss entlang. #sprecher:erzaehler
+    -> END
 - else:
-    // Roman, Kapitel 10: {held} und Juno gehen am Freitag zu Fuß, das Team fährt am Samstag mit dem
-    // Bus. Der Bus bleibt hier als Abkürzung; der Ablauf in Cedar Creek bleibt unverändert.
-    Hier hält der Bus nach Cedar Creek. Juno wollte eigentlich zu Fuß gehen, am Fluss entlang. #sprecher:erzaehler #klang:bus
-    Ein Wagen ohne Pferde. Ich werde mich nie daran gewöhnen. #sprecher:ambrose
+    Der Linienbus nach Cedar Creek fährt jede Stunde. Der Fahrer nickt dir zu. #sprecher:erzaehler #klang:bus
 }
 * [Einsteigen]
     Der Bus fährt los, die Landstraße entlang nach Cedar Creek. #sprecher:erzaehler
     ~ reise("cedarCreek.aussen", "bushaltestelle")
     -> END
-* [Noch nicht]
+* [Nicht jetzt]
     -> END
 
 // ---------------------------------------------------------------- Kiosk (G2) und Ortsausgang (W5)

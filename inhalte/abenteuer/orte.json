@@ -206,12 +206,6 @@
           "wenn": "aufbruchGesehen"
         },
         {
-          "name": "fotoGrandma",
-          "karte": "mapleFalls.wohnzimmer",
-          "art": "gegenstand",
-          "dialog": "ansehen-maple-falls.foto_grandma"
-        },
-        {
           "name": "kartonKueche",
           "karte": "mapleFalls.wohnzimmer",
           "art": "gegenstand",

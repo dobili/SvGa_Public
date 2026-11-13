@@ -119,13 +119,7 @@
             "art": "partie",
             "begegnung": "mapleFalls.clubkampf",
             "ausgang": ["sieg", "remis"]
-          },
-          "wirkungen": [
-            {
-              "art": "karte",
-              "karte": "mentorzug"
-            }
-          ]
+          }
         },
         {
           "text": "quest.viertesBrett.schritt5",

@@ -3,7 +3,7 @@
 // Je Raum drei Gegenstände ohne Spielwirkung (docs/spiel/09_Weltbeschreibung.md, Abschnitt 3
 // Punkt 2 und 5.1): beim ersten Ansehen ein Satz (manchmal mit einem Satz von Ambrose), danach
 // ein zweiter. Keine Quests, keine Belohnungen. Einstiege wie in orte.json (Auslöser in
-// camelCase, Knoten in snake_case): foto_grandma, karton_kueche, pizzakarton, hutschachtel,
+// camelCase, Knoten in snake_case): karton_kueche, pizzakarton, hutschachtel,
 // spiegel, zeitungen1961, pokalvitrine, brett_ohne_dame, plakat_zaehlen.
 // Neu nach dem Roman zu Akt 1 (docs/spiel/roman/akt1_teil1.md, akt1_teil2.md), noch ohne Auslöser
 // auf den Karten (Karten macht ein eigener Auftrag): kiste_whitlock (Dachboden, neben der Treppe),
@@ -15,7 +15,6 @@
 // dialogvariablen), ob er schon einmal angesehen wurde.
 // Nichts hier verrät Akt 2 (Bibel, Abschnitt 2.3: Mamas Vergangenheit bleibt verborgen).
 
-VAR angesehenFotoGrandma = false
 VAR angesehenKartonKueche = false
 VAR angesehenPizzakarton = false
 VAR angesehenHutschachtel = false
@@ -33,16 +32,6 @@ VAR angesehenBildschirmPult = false
 VAR nadelCedarCreek = 0
 
 // ---------------------------------------------------------------- Wohnzimmer
-
-=== foto_grandma ===
-{angesehenFotoGrandma:
-    Grandma Whitlock lächelt auf dem Foto, als hätte sie gerade einen guten Zug gesehen. #sprecher:erzaehler
-- else:
-    ~ angesehenFotoGrandma = true
-    Ein gerahmtes Foto: eine alte Dame mit weißem Dutt, vor ihr ein Schachbrett. Auf der Rückseite steht „Grandma Whitlock“. #sprecher:erzaehler
-    Sie hält den König richtig. Das sieht man sogar auf einem Bild. #sprecher:ambrose #stimmung:stolz
-}
--> END
 
 === karton_kueche ===
 {angesehenKartonKueche:
@@ -129,6 +118,8 @@ VAR nadelCedarCreek = 0
 // Roman, Kapitel 1: Die Kiste aus dem Flur, die {held} am ersten Tag hinaufträgt. Die Schrift ist
 // dieselbe wie auf allen Kisten und auf der Rückseite der Karten (Kapitel 3).
 === kiste_whitlock ===
+// Das Foto von Mrs. Whitlock liegt in der Kiste, nicht mehr im Wohnzimmer: Laut Roman ist alles von
+// ihr auf dem Dachboden (Entscheidung des Hauptchats 13.11.2026).
 {angesehenKisteWhitlock:
     {ersteLektionBesprochen:
         Dieselbe steile Schrift wie auf dem Fingerzeig. Du drehst die Karte in der Tasche um und vergleichst. #sprecher:erzaehler
@@ -138,7 +129,8 @@ VAR nadelCedarCreek = 0
 - else:
     ~ angesehenKisteWhitlock = true
     Eine Kiste aus Holz, nicht aus Pappe. Auf dem Deckel steht in steiler, altmodischer Schrift: „Whitlock – nicht wegwerfen“. #sprecher:erzaehler
-    Wenn man sie anhebt, klackt darin etwas Hölzernes, wie Kegel, die aneinanderstoßen. #sprecher:erzaehler #klang:holzklacken
+    Obenauf ein gerahmtes Foto: eine Frau mit weißem Dutt, vor ihr ein Schachbrett. Auf der Rückseite: „Margaret, Sonntag“. #sprecher:erzaehler #klang:holzklacken
+    Sie hält den König richtig. Das sieht man sogar auf einem Bild. #sprecher:ambrose #stimmung:still
 }
 -> END
 

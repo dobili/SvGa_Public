@@ -115,10 +115,8 @@ Viertes Brett. Samstag spielen wir in Cedar Creek. #sprecher:coachDelgado
     Juno umarmt dich so heftig, dass das Tagebuch auf den Boden fällt. #sprecher:erzaehler
     Ich hab's dir gesagt. #sprecher:sam #stimmung:froh
 }
-// Die Karte Mentor-Zug vergibt heute noch die Quest an dieser Stelle (quests.json). Der Roman gibt
-// sie erst nach dem Clubkampf von Cedar Creek (roman/akt1_befunde.md, Abschnitt 4); das ändert
-// den Ablauf und ist dem Hauptchat gemeldet.
-Noch ein Versprechen: Einmal ziehe ich für dich. Ich hoffe, du brauchst es nie. #sprecher:ambrose
+// Den Mentor-Zug gibt es erst nach dem Clubkampf von Cedar Creek (Roman und Story-Bibel,
+// Entscheidung des Hauptchats 13.11.2026; quests.json, cedarCreek.clubkampf).
 {not heimwegNadelGesehen:
     -> pratt_und_heimweg ->
 }

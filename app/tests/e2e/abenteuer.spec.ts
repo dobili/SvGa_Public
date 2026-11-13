@@ -58,12 +58,15 @@ test("vom Dachboden in die erste Partie und zurück", async ({ page }) => {
   await expect(page.locator(".abenteuer-welt canvas")).toBeVisible({ timeout: 30000 });
   await page.waitForTimeout(800);
 
-  // Dachboden (Variante C, vom Autor gewählt): Der Held steht auf (2,5) neben der Luke (1,4), das
-  // Brett liegt auf dem Tisch bei (4,7). Rechts bis (4,5), dann hinunter bis (4,6); der Tisch ist
-  // Kollision, das Brett liegt dann vor ihm.
+  // Dachboden (Runde 12): Der Held steht auf (2,5) neben der Luke (1,4); das Brett liegt auf dem
+  // runden Tisch unter dem Giebelfenster bei (7,6), die Kiste „Whitlock“ sperrt (3..5,4). Rechts
+  // bis (6,5), hinauf bis (6,4), rechts bis (7,4) und hinunter auf die Tischplatte (7,5); das Brett
+  // liegt dann vor ihm.
   await expect.poll(() => kachel(page), { timeout: 10000 }).toBe("2,5");
-  await laufeBis(page, "ArrowRight", "4,5");
-  await laufeBis(page, "ArrowDown", "4,6");
+  await laufeBis(page, "ArrowRight", "6,5");
+  await laufeBis(page, "ArrowUp", "6,4");
+  await laufeBis(page, "ArrowRight", "7,4");
+  await laufeBis(page, "ArrowDown", "7,5");
   const aktion = page.getByTestId("abenteuer-aktion");
   await expect(aktion).toBeVisible({ timeout: 5000 });
   // WebKit auf dem iPhone lädt die Dialogdatei aus dem Zwischenspeicher manchmal langsam, und ein
@@ -145,7 +148,7 @@ test("vom Dachboden in die erste Partie und zurück", async ({ page }) => {
   await expect(page.getByTestId("abenteuer-ergebnis")).toHaveCount(0);
 });
 
-test("Übergang von vorn: vom Dachboden über die Luke ins Wohnzimmer", async ({ page }) => {
+test("Übergang von vorn: vom Dachboden über die Luke ins Zimmer des Helden", async ({ page }) => {
   // Befund des Autors (10.11.2026): Wer auf die Luke zuging und sie dann betrat, kam nicht hinunter,
   // weil der Blick auf den Auslöser schon als derselbe Treffer galt. Ein echter Spieler geht immer
   // von vorn auf einen Durchgang zu.
@@ -160,8 +163,10 @@ test("Übergang von vorn: vom Dachboden über die Luke ins Wohnzimmer", async ({
   // Links neben die Luke, dann von unten auf die Luke (1,4): Der Held schaut sie vorher an.
   await laufeBis(page, "ArrowLeft", "1,5");
   await page.keyboard.down("ArrowUp");
-  // Im Wohnzimmer kommt der Held neben der Treppe an, auf (3,5) mit Blick von ihr weg
-  // (oberwelt/ankunft.ts); die gehaltene Taste zählt dort erst nach einer kurzen Pause.
-  await expect.poll(() => kachel(page), { timeout: 8000, intervals: [50] }).toBe("3,5");
+  // Seit Runde 12 führt die Luke ins Zimmer des Helden im Obergeschoss. Dort kommt der Held rechts
+  // neben der Treppe zum Dachboden an, auf (4,4) mit Blick von ihr weg (oberwelt/ankunft.ts); auf
+  // dem Dachboden ist (4,4) die Kiste „Whitlock“, die Kachel zeigt also den Kartenwechsel. Die
+  // gehaltene Taste zählt dort erst nach einer kurzen Pause.
+  await expect.poll(() => kachel(page), { timeout: 8000, intervals: [50] }).toBe("4,4");
   await page.keyboard.up("ArrowUp");
 });

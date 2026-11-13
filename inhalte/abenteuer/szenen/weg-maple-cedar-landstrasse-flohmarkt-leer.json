@@ -2151,7 +2151,7 @@
       "feld": [119, 17]
     }
   ],
-  "figuren": [
+  "figuren": [{ "name": "pratt", "feld": [6, 14] }, 
     {
       "name": "wanderer",
       "feld": [67, 16]

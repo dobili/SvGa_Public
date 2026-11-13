@@ -368,7 +368,7 @@
       "feld": [5, 7]
     }
   ],
-  "figuren": [
+  "figuren": [{ "name": "prattSteg", "feld": [7, 6] }, 
     {
       "name": "skaterJo",
       "feld": [16, 24]

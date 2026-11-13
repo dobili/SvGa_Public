@@ -34,6 +34,12 @@ export interface Paketdatei {
   readonly gruppe: Dateigruppe;
   /** Staffel, zu der die Datei gehört (1, 2); Staffel 2 wird erst geladen, wenn sie beginnt. */
   readonly staffel: number;
+  /**
+   * Nur Musik und Geräusche der Akte 2 bis 4: Sie gehören nicht zum Grundpaket und werden beim
+   * Betreten des Akts oder auf Wunsch in den Einstellungen nachgeladen (paket/aktton.ts).
+   * Fehlt das Feld, gehört die Datei zum Grundpaket (mit dem Ton von Akt 1).
+   */
+  readonly akt?: number;
 }
 
 /** Die Verzeichnisdatei des Pakets, beim Build erzeugt (skripte/baue-abenteuerpaket.mjs, später). */
@@ -43,7 +49,7 @@ export interface Paketverzeichnis {
   /** Version der App, mit der das Paket gebaut wurde; ein zu altes Paket wird neu geladen. */
   readonly appVersion: string;
   readonly dateien: readonly Paketdatei[];
-  /** Summe aller Bytes, für die Anzeige vor dem Laden („etwa 18 MB“). */
+  /** Summe der Bytes des Grundpakets (ohne Ton der Akte 2 bis 4), für die Anzeige vor dem Laden. */
   readonly bytes: number;
 }
 

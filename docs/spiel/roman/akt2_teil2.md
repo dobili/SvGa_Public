@@ -138,8 +138,6 @@ Der große Mann zog einen Läufer. Mitten hinein, tief ins schwarze Lager.
 
 Ein Raunen. Schwarz schlug einen Turm. Einfach so, einen ganzen Turm.
 
-Der große Mann zog einen Bauern vor. Sonst nichts.
-
 „Jetzt“, sagte Ambrose. Der alte, nicht der junge. „Halt. Schau hin. Er hat einen Turm
 weniger, und sein zweiter Turm hängt auch. Was hättest du getan?“
 
@@ -152,6 +150,8 @@ standen und schliefen. Die schwarze Dame war weit weg und satt.
 „Er lässt ihn hängen“, sagte ich.
 
 „Er lässt ihn hängen.“
+
+Der große Mann zog einen Bauern vor. Sonst nichts.
 
 Schwarz nahm den zweiten Turm, mit Schach. Der große Mann zog seinen König ein Feld nach vorn,
 als träte er einem Besucher entgegen.

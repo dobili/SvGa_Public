@@ -86,14 +86,56 @@ async function kopiereOberflaeche() {
   }
 }
 
+/** Letzter Akt des Abenteuers (Ton je Akt in akt2 … akt4). */
+const LETZTER_AKT = 4;
+
+/**
+ * Musik und Geräusche aus dem privaten Repository (Ordner musik/ und klang/, Atmosphäre T1 und T2,
+ * docs/spiel/23_Technik_Atmosphaere.md): m4a und ogg, je in ihrer Paketgruppe. Ohne Ordner nichts;
+ * das Spiel bleibt dann still (abenteuer/ton/tonspieler.ts).
+ */
+async function kopiereTon(ordner) {
+  const quelle = join(PRIVAT, ordner);
+  if (!existsSync(quelle)) return;
+  // Akt 1 liegt direkt im Ordner und kommt ins Grundpaket; Akt 2 bis 4 in Unterordnern akt2 …
+  // akt4 und werden erst beim Betreten des Akts nachgeladen (Entscheidung des Autors, 13.11.2026).
+  // Im Paket liegen alle flach unter <ordner>/, damit die Kennung im Dialog gleich bleibt.
+  const quellen = [{ pfad: quelle, akt: 1 }];
+  for (let akt = 2; akt <= LETZTER_AKT; akt++) {
+    const unter = join(quelle, `akt${akt}`);
+    if (existsSync(unter)) quellen.push({ pfad: unter, akt });
+  }
+  for (const { pfad, akt } of quellen) {
+    const namen = (await readdir(pfad)).filter((d) => /\.(m4a|ogg)$/.test(d));
+    for (const name of namen.sort()) {
+      await schreibe(`${ordner}/${name}`, await readFile(join(pfad, name)), ordner, 1, akt);
+    }
+  }
+}
+
+/**
+ * Bilder der Großansicht im Dialog (Atmosphäre T7, `#bild:kennung`): WebP aus dem privaten Ordner
+ * bilder/, Gruppe grafik. Ohne Ordner nichts; die Dialogzeile erscheint dann ohne Bild.
+ */
+async function kopiereBilder() {
+  const quelle = join(PRIVAT, "bilder");
+  if (!existsSync(quelle)) return;
+  const namen = (await readdir(quelle)).filter((d) => d.endsWith(".webp"));
+  for (const name of namen.sort()) {
+    await schreibe(`bilder/${name}`, await readFile(join(quelle, name)), "grafik");
+  }
+}
+
 /**
  * Bilder, die es nur mit der gekauften Grafik gibt (Figuren im Format von LimeZu): alle PNG aus
  * dem privaten Ordner; ohne ihn nichts, das Spiel nimmt dann die Platzhalter.
  */
-async function kopierePrivatordner(ordner, behalte = () => true) {
+async function kopierePrivatordner(ordner, behalte = () => true, endungen = [".png"]) {
   const quelle = join(PRIVAT, ordner);
   if (!existsSync(quelle)) return;
-  const namen = (await readdir(quelle)).filter((d) => d.endsWith(".png") && behalte(d));
+  const namen = (await readdir(quelle)).filter(
+    (d) => endungen.some((e) => d.endsWith(e)) && behalte(d),
+  );
   for (const name of namen.sort()) {
     await schreibe(`${ordner}/${name}`, await readFile(join(quelle, name)), "grafik");
   }
@@ -169,7 +211,7 @@ async function schreibeGrafik(pfad, platzhalter) {
   await schreibe(pfad, platzhalter(), "grafik");
 }
 
-async function schreibe(pfad, inhalt, gruppe, staffel = 1) {
+async function schreibe(pfad, inhalt, gruppe, staffel = 1, akt = 1) {
   const voll = join(ZIEL, pfad);
   await mkdir(dirname(voll), { recursive: true });
   if (typeof inhalt === "string") texte.push(inhalt);
@@ -181,6 +223,8 @@ async function schreibe(pfad, inhalt, gruppe, staffel = 1) {
     sha256: createHash("sha256").update(bytes).digest("hex"),
     gruppe,
     staffel,
+    // Nur Ton späterer Akte trägt den Akt; alles ohne „akt“ gehört zum Grundpaket.
+    ...(akt > 1 ? { akt } : {}),
   });
 }
 
@@ -334,7 +378,12 @@ async function main() {
   // Tierbögen der Belebung (pipeline/abenteuer/belebungsbilder.py, Runde 7).
   await kopierePrivatordner("tiere");
   await kopierePrivatordner("portraets");
+  // Große Porträts (64 × 64 oder 96 × 96 je Fassung, dialog/Portraet.tsx); fehlen sie, SVG.
+  await kopierePrivatordner("portraets/gross", () => true, [".png", ".webp"]);
   await kopierePrivatordner("grafik");
+  await kopiereTon("musik");
+  await kopiereTon("klang");
+  await kopiereBilder();
   await kopierePrivatordner("grafik/karten", (name) => ladbar.hintergruende.has(name));
   await schreibeMoebel();
   await schreibeGrafik("grafik/platzhalter.png", platzhalterKacheln);
@@ -350,7 +399,8 @@ async function main() {
     version: `${PAKET.version}-${inhaltshash}`,
     appVersion: PAKET.version,
     dateien,
-    bytes: dateien.reduce((summe, d) => summe + d.bytes, 0),
+    // Nur das Grundpaket; Ton späterer Akte lädt das Spiel nach (paket/aktton.ts).
+    bytes: dateien.filter((d) => !d.akt).reduce((summe, d) => summe + d.bytes, 0),
   };
   await writeFile(join(ZIEL, "paket.json"), JSON.stringify(verzeichnis, null, 1));
   console.log(

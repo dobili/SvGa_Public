@@ -540,7 +540,7 @@ Kapitels gelöst) sie nennt, gemerkt in `lernkarte<Kennung>`. „Was droht?“ r
 ±0,5 (AUSGEGLICHEN_BIS), Ende „vereinbart“. Schmeichelei: überheblich mindestens 1,3, Stärke neu
 gerechnet. Sprüche fehlen in der Deckwahl außer gegen Straßengegner. Kartentasche (Gegenstand,
 300 Münzen): Deck 4. Nicht gebaut: Schutzengel (bräuchte eine Bewertung jedes eigenen Zuges
-während der Bot rechnet), Spickzettel, Pokerface, Limo, Lupe, Reisebrett, Notizbuch.
+während der Bot rechnet; Stand überholt, siehe „Karte „Schutzengel“: Ambrose hält den Zug auf (13.11.2026)“), Spickzettel, Pokerface, Limo, Lupe, Reisebrett, Notizbuch.
 
 **Antworten aus Akt 3 (niedrig-1, 8.11.2026):** Konter für dash, batiste, buck, joggerin,
 schiffskoch. Immunitäten für die Gegnerprofile von Akt 3 (vorgemerkt): Dash grossesMaul und
@@ -596,7 +596,7 @@ mit `#stimmung:jung` die junge Fassung. Ein Test prüft, dass jeder Sprecher ein
 
 **Akt 3 vollständig in Daten (8.11.2026, abends):** Funde, Läden (Foodtruck Silicon Bay,
 Gebäckstand Port Delacroix, Antiquariat Desert Springs), Erinnerung 1858 (Bird–Morphy ab Zug 11 mit
-Schwarz, bei Mira), Pokerface und Schutzengel nicht als eigene Karten (ersetzt durch vorhandene).
+Schwarz, bei Mira), Pokerface und Schutzengel nicht als eigene Karten (ersetzt durch vorhandene; für den Schutzengel überholt, siehe den Eintrag vom 13.11.2026: Ambrose hält den Zug auf).
 Buck bleibt bei Abbildung 1.36: 8.44 steht bei Stockfish Tiefe 28 auf +2,84, zu viel für ein
 Stellungsduell nach R13 (Befund mittel-1). R29 gebaut: Zwischen Tiefpunkt und Versöhnung steht der
 Mentor-Zug nicht zur Wahl im Deck (`mentorzugGesperrt`).
@@ -928,3 +928,30 @@ dürfen deshalb größer sein. Es gilt die Tabelle in den Kartenregeln 10.75 (kl
 mittel bis 2-fach, groß bis 1,5-fach in der Breite); die 50-Prozent-Regel misst gegen den
 Grundriss mal Faktor. Zu jedem mehrgeschossigen Gebäudebild steht im Katalog, ob Treppe,
 Treppenhaus, Leiter oder Fahrstuhl passt und wo (Feld `aufgang`, Regel 10.76).
+
+## Das Spiel steht für sich; Buchinhalt nur als gesammelte Seiten (13.11.2026)
+
+Wunsch des Autors: Das Spiel soll ganz ohne das Buch funktionieren, weil es später vielleicht
+einzeln erscheint. Deshalb gibt es keinen Knopf „Im Buch nachlesen“ und keine Dialoge, die auf das
+Buch hinweisen oder zum Nachlesen dorthin schicken. Inhalt aus dem Buch darf vorkommen, etwa als
+Buchseiten, die man sammelt und im Spiel liest, solange es zusammen unter 10 % des Buches bleibt
+(bei rund 450 Seiten höchstens 45 Seiten). Das ergänzt die Entscheidung vom 10.11.2026. Folge für
+die Routen-Ereignisse (Dokument 15, Abschnitt 1.2): Der Knopf entfällt, die Erklärung steht
+vollständig im Ereignis; gesammelte Seiten zeigen ihren Inhalt selbst.
+
+## Ton je Akt als eigenes Paket (13.11.2026)
+
+Der Klangplan kommt auf etwa 120 MB. Der Autor ist einverstanden, dass der Ton von Akt 1 mit dem
+Grundpaket kommt und alle weiteren Pakete nachgeladen werden.
+
+## Karte „Schutzengel“: Ambrose hält den Zug auf (13.11.2026)
+
+Die Karte gibt es schon im Plan (K4 in Dokument 11: für die nächsten fünf eigenen Züge fragt die
+App einmal „Bist du sicher?“, wenn ein Zug zwei Bauern oder mehr verliert; Vergabe in Port
+Delacroix, danach im Laden von Desert Springs). Wunsch des Autors: Nicht die App fragt, sondern
+Ambrose springt mit einer Dialogzeile ein und hält den Zug auf („Das spielst du besser nicht.“),
+mit oder ohne kurze Begründung; der Zug wird nicht ausgeführt, der Held zieht neu. Empfehlung des
+Hauptchats, in Arbeit bei mittel-2: Maßstab ist der Verlust an Stellungsbewertung (etwa zwei
+Bauerneinheiten gegenüber dem besten Zug, oder ein übersehenes Matt); als Begründung höchstens die
+Art des Fehlers („Da hängt etwas.“, „Dein König.“), nie der bessere Zug; in Partien ohne Ambrose
+(Finale) ist die Karte gesperrt. Dauer und Häufigkeit bleiben wie in Dokument 11.

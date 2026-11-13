@@ -145,12 +145,12 @@ Spielarten, die man unterwegs gelernt hat. Hier trifft man alle wieder.
 
 ### 3.1 Was die Geschichte verlangt
 
-| Karte        | Szene | Figuren                     | Auslöser (orte.json)                                                          |
-| ------------ | ----- | --------------------------- | ----------------------------------------------------------------------------- |
-| geysirbecken | 92    | Rangerin Bell (`bell`)      | `start`, `zurueckSummit`, `tafel`, `fundBisonhaar`, `bisons`, `weiterPraerie` |
-| praerie      | 92    | Ray Castillo (`ray`)        | `zurueckGeysirbecken`, `sturmkeller`, `weiterCrossroads`                      |
-| aussen       | 93    | Slick, Mira, Big Joe, Rosie | `wegSummit`, `raststaetteTuer`, `wegweiser`, `wegPinewood`                    |
-| raststaette  | 93    | Darlene, Nova               | `raststaetteAusgang`, `variantenTisch`, `postkarten`                          |
+| Karte        | Szene | Figuren                                                                                                                                                                                                                                                                  | Auslöser (orte.json)                                                          |
+| ------------ | ----- | ------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------ | ----------------------------------------------------------------------------- |
+| geysirbecken | 92    | Rangerin Bell (`bell`)                                                                                                                                                                                                                                                   | `start`, `zurueckSummit`, `tafel`, `fundBisonhaar`, `bisons`, `weiterPraerie` |
+| praerie      | 92    | Ray Castillo (`ray`)                                                                                                                                                                                                                                                     | `zurueckGeysirbecken`, `sturmkeller`, `weiterCrossroads`                      |
+| aussen       | 93    | Slick, Mira (mit Tomás), Big Joe, Rosie, Coach Delgado mit dem Schulbus (Sam, Carla); sie sagt offen, dass sie den Vertrag mit Perfect Move unterschrieben und wieder gekündigt hat (Schulbus und Figuren fehlen auf der Karte, noch umzubauen, Entscheidung 13.11.2026) | `wegSummit`, `raststaetteTuer`, `wegweiser`, `wegPinewood`                    |
+| raststaette  | 93    | Darlene, Nova, Theo (fehlt auf der Karte, noch umzubauen, Entscheidung 13.11.2026)                                                                                                                                                                                       | `raststaetteAusgang`, `variantenTisch`, `postkarten`                          |
 
 ### 3.2 Entscheidungen
 

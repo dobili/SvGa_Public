@@ -3,7 +3,7 @@
 //
 // Szenen der Story-Bibel (Abschnitt 11): 39 erster Teil (Big Joe erkennt Lauries Kind, nennt die
 // Elm Street: Start der Quest ironwood.mamasFinale), 43 Mamas Partie (Begegnung ironwood.mama;
-// Mama kommt nach Ironwood, weil Oma Ruth sie angerufen hat), 44 Die Feier (Quest ironwood.feier,
+// Mama sieht das Foto zu Hause, maple-falls-wohnzimmer.mama_foto, und kommt zur Partie), 44 Die Feier (Quest ironwood.feier,
 // Big Joe abgelenkt), 46 Aufgabenreihe (Runden ironwood.reiheHank, ironwood.reihePriya),
 // 48 Clubkampf (Begegnung ironwood.clubkampf).
 // Einstiege wie in orte.json: big_joe, hank, priya, mama, pokalregal, stahlbrett. Die Quest
@@ -38,6 +38,10 @@ VAR ausgangIronwoodClubkampf = ""
 VAR nadelIronwood = 0
 VAR clubkampfIronwoodNadel = 0
 VAR pokalregalGesehen = false
+// Kapitel 27 (Roman): Mama kommt in die Kantine, Big Joe hält sie fest.
+VAR mamaInKantine = false
+VAR morgenNachFeier = false
+VAR turnierheftBekommen = false
 
 // ---------------------------------------------------------------- Big Joe
 
@@ -47,7 +51,8 @@ VAR pokalregalGesehen = false
 - not bigJoeGetroffen: -> big_joe_erkennt
 - not briefFuerRuben and not lastkahnFrei: -> big_joe_brief
 - nadelIronwood > clubkampfIronwoodNadel: -> big_joe_nach_sieg
-- mamaSpielt and not feierGesehen and nadelIronwood == 0: -> feier_einladung
+- ausgangIronwoodMama != "" and ausgangIronwoodMama != "abgebrochen" and not mamaSpielt: -> mama_nach_partie
+- mamaSpielt and not feierGesehen: -> feier_einladung
 - not (reiheHankBestanden and reihePriyaBestanden): -> big_joe_reihe_offen
 - nadelIronwood == 0 and ausgangIronwoodClubkampf == "niederlage": -> big_joe_nach_niederlage
 - nadelIronwood == 0: -> big_joe_clubkampf
@@ -55,21 +60,36 @@ VAR pokalregalGesehen = false
 }
 
 === big_joe_erkennt ===
+// Kapitel 25 (Roman): Big Joe erkennt Lauries Kind an der Art, wie es auf das Brett sieht. Bei
+// der Frage setzt alles aus (Klangplan S35), danach kommt die Musik der Karte zurück.
 ~ bigJoeGetroffen = true
 ~ elmStreetBekannt = true
-Ein riesiger Mann in Arbeitsjacke kommt auf dich zu, bleibt stehen und sieht dich lange an. #sprecher:erzaehler
-Kumpel, du hast ein Gesicht, das ich kenne. #sprecher:bigJoe #pause
-Bist du Lauries Kind? #sprecher:bigJoe #stimmung:ernst
-* [„Laurie? Meine Mama heißt Laura.“]
-    Laura. Für mich war sie immer Laurie. #sprecher:bigJoe
-    Die beste Spielerin, die dieser Club je hatte. #sprecher:bigJoe
-* [„Woher kennen Sie meine Mama?“]
-    Ich war ihr Trainer. Hier, in dieser Kantine. Lange her. #sprecher:bigJoe
-- Er zeigt auf das Pokalregal. Zwischen den Pokalen ist eine Lücke, als hätte dort einer gestanden. #sprecher:erzaehler
-Ihre Mutter wohnt noch in der Elm Street. Sag Laurie, Big Joe lässt grüßen. #sprecher:bigJoe
-Und dass es ihm leidtut. #sprecher:bigJoe
-Und wenn du um die Nadel spielen willst: erst Hank, dann Priya, dann ich. #sprecher:bigJoe
-Ein Trainer, der sich entschuldigen will. Das ist ein Mann, der lange getragen hat. #sprecher:ambrose
+Am Ende des Raums, unter dem Pokalregal, sitzt ein Mann wie aus demselben Stück wie der Ofen. Vor ihm ein Schachbrett aus Stahl. #sprecher:erzaehler
+Er setzt eine Figur hin, als wäre sie aus Glas. #sprecher:erzaehler
+Eine Fesselung ist wie ein Kranhaken, Priya. Was dranhängt, kann nicht weg. #sprecher:bigJoe
+Ein Spieß ist eine Fesselung von hinten. Statik. #sprecher:priya
+Statik! #sprecher:bigJoe #stimmung:lacht
+Er lacht, dass die Tassen klirren. Dann sieht er dich und hört auf. #sprecher:erzaehler
+Er steht auf. Es dauert, bis er oben ist. #sprecher:erzaehler
+Kumpel. Du hast ein Gesicht, das ich kenne. #sprecher:bigJoe
+Die Augen. Wie du auf das Brett guckst, bevor du auf mich guckst. #sprecher:bigJoe
+Bist du Lauries Kind? #sprecher:bigJoe #musik:aus #pause:3
+* [„Laura. Sie heißt Laura.“]
+- Laura. #sprecher:bigJoe
+Sein großes Gesicht wird froh und traurig zugleich. #sprecher:erzaehler
+Ja. Hier hieß sie Laurie. #sprecher:bigJoe #musik:karte
+Er heißt Big Joe. Er sagt es wie einen Dienstgrad. Kranführer, dreißig Jahre, und ebenso lange der Club. #sprecher:erzaehler
+Steckt sie noch die Hände in die Ärmel? Wenn sie nachdenkt? #sprecher:bigJoe
+* [„Ja.“]
+- Du hast nie darüber nachgedacht. #sprecher:erzaehler
+Im Pokalregal hinter ihm stehen die Pokale dicht an dicht. Nur an einer Stelle nicht. #sprecher:erzaehler
+Elm Street. Nummer zehn, das Eckhaus mit dem grünen Geländer. #sprecher:bigJoe
+Geh hin. Sie wartet seit fünfundzwanzig Jahren, dass jemand klingelt. #sprecher:bigJoe
+Und wenn du deine Mutter siehst: Big Joe lässt grüßen. #sprecher:bigJoe
+Und dass es ihm leidtut. #sprecher:bigJoe #stimmung:ernst
+Um die Nadel spielen? Erst Hank, dann Priya, dann ich. #sprecher:bigJoe
+Was tut ihm leid? #sprecher:juno
+Du weißt es nicht. #sprecher:erzaehler
 -> END
 
 === big_joe_reihe_offen ===
@@ -81,11 +101,24 @@ Ein Trainer, der sich entschuldigen will. Das ist ein Mann, der lange getragen h
 -> END
 
 === big_joe_clubkampf ===
-{feierGesehen:
-    Big Joe gähnt so laut, dass die Tassen klirren. „Die Feier war lang, Kumpel.“ #sprecher:erzaehler
-}
+// Kapitel 28 (Roman): der Morgen nach der Feier, dann der Schraubstock. Nadel: Zahnrad mit Turm.
+{feierGesehen and not morgenNachFeier: -> morgen}
+-> brett
+
+= morgen
+~ morgenNachFeier = true
+Big Joe hat Ringe unter den Augen wie Kohlestriche. Er hält sich an seinem Kaffee fest. #sprecher:erzaehler #musik:aus
+Kumpel, ich hab drei Stunden geschlafen. Wenn ich heute verliere, liegt es an deiner Mutter und am Schinken. #sprecher:bigJoe #stimmung:muede
+* [„Sie können es verschieben.“]
+    Verschieben! Hier wird nicht verschoben. Hier wird geschichtet. #sprecher:bigJoe
+* [Nicken]
+- -> brett
+
+= brett
+Die Nadel liegt auf dem Stahlbrett. Ein kleines Zahnrad aus dunklem Metall, mit einem Turm in der Mitte. #sprecher:erzaehler
 {mamaSpielt:
-    Mama sitzt am Rand und sagt nur einen Satz: „Grundreihe. Immer die Grundreihe.“ #sprecher:erzaehler
+    Mama sitzt in der ersten Reihe. Sie beugt sich vor und sagt zwei Wörter, so leise, dass nur du sie hörst. #sprecher:erzaehler
+    Grundreihe. Immer. #sprecher:mutter
 }
 Um die Nadel, Kumpel? Auf meinem Stahlbrett. Das hält. #sprecher:bigJoe
 * [„Ich bin bereit.“]
@@ -97,26 +130,36 @@ Um die Nadel, Kumpel? Auf meinem Stahlbrett. Das hält. #sprecher:bigJoe
     -> END
 
 === big_joe_nach_niederlage ===
-Gut gekämpft, Kumpel. Aber die Kantine bleibt meine. Noch eine? #sprecher:bigJoe
+Was dranhängt, kann nicht weg, Kumpel. Noch eine? #sprecher:bigJoe
 * [„Noch eine.“]
     ~ beginnePartie("ironwood.clubkampf")
     -> END
-* [„Später.“]
+* [„Nicht jetzt.“]
     -> END
 
 === big_joe_nach_sieg ===
+// Kapitel 28, Schluss: „Ach, Kumpel“ ohne Musik; dann Fanfare und die Kantine brüllt; am Ende
+// Ambroses und Mamas Thema nacheinander, ohne Konzernmotiv (Klangplan `ambrose.mama`).
 ~ clubkampfIronwoodNadel = nadelIronwood
 {ausgangIronwoodClubkampf == "remis":
-    Remis. Ehrlich verdient. #sprecher:bigJoe
-    Die Bronzenadel gehört dir. Noch eine Runde, wenn du willst. #sprecher:bigJoe
+    Remis. Ehrlich verdient, Kumpel. #sprecher:bigJoe
+    Die Nadel gehört dir. Noch eine Runde, wenn du willst. #sprecher:bigJoe
 - else:
-    Kumpel, du hast mich auf meiner eigenen Grundreihe erwischt. Wie jemand, den ich mal kannte. #sprecher:bigJoe #stimmung:froh
+    Big Joe sieht auf seine Grundreihe. Niemand ist zu Hause. #sprecher:erzaehler #musik:aus
+    Ach, Kumpel. Ach, Kumpel. #sprecher:bigJoe #stimmung:muede
+    Er legt seinen König um, mit einem Finger. Auf dem Stahl klingt es leise. #sprecher:erzaehler #klang:fanfare
+    {mamaSpielt:
+        In der ersten Reihe hat Mama beide Hände vor dem Mund. #sprecher:erzaehler
+        Grundreihe. Du hast es dem Kumpel gesagt, Laurie. Dreißig Jahre, und du kennst mich immer noch. #sprecher:bigJoe #stimmung:froh
+    }
 }
+Er steckt dir das Zahnrad an die Jacke, neben die anderen Nadeln. #sprecher:erzaehler
 {feierGesehen:
     Revanche, wenn ich ausgeschlafen bin! #sprecher:bigJoe #stimmung:froh
 }
-Die vierte Nadel. Und wieder ein Mentor-Zug. #sprecher:ambrose
-Ich habe dir das Wertvollste gegeben, das ich habe. #sprecher:ambrose
+Die Kantine brüllt. #sprecher:erzaehler
+Noch ein Mentor-Zug. Heb ihn auf, du weißt, wofür. #sprecher:ambrose
+Es war schön. Und es hat gestimmt. Beides. #sprecher:ambrose #stimmung:still #musik:ambrose.mama
 Draußen am Werkstor stehen Männer in Anzügen. Big Joe sieht hinaus und wird still. #sprecher:erzaehler
 -> END
 
@@ -147,46 +190,52 @@ Bleibst du? Wird spät. #sprecher:bigJoe
     -> END
 
 === feier ===
+// Kapitel 28 (Roman): das Fest; bei Big Joes Pokal wird es kurz leise.
 ~ feierGesehen = true
-Hank holt eine Gitarre, Priya erklärt Juno die Statik einer Brücke mit Zuckerstücken. Mama lacht. #sprecher:erzaehler
-Um Mitternacht erzählt Big Joe noch Geschichten vom Werk, vom Club und von Laurie mit siebzehn. #sprecher:erzaehler
+Jemand holt einen Schinken aus dem Kühlraum. Priya steigt auf einen Stuhl und hält eine Rede über Tragwerke. Alle klatschen. #sprecher:erzaehler #musik:ironwood.feier
+Hank, der sonst drei Wörter am Tag sagt, erzählt Mama, was aus jedem geworden ist. Der Reihe nach, mit Jahreszahlen. #sprecher:erzaehler
+Laurie kam mit neun zum ersten Mal her, an der Hand ihres Vaters. Hat das Stahlbrett angefasst und gesagt: Das ist kalt. #sprecher:bigJoe #stimmung:froh
+Den Pokal von 2001 hatte ich schon gekauft. Vorher. So sicher war ich. #sprecher:bigJoe
+Wo ist er? #sprecher:mutter #musik:aus
+Im Schrank. Bei mir zu Hause. Ich hab ihn nicht zurückgeben können. Und hinstellen auch nicht. #sprecher:bigJoe #stimmung:traurig
+Mama legt ihm die Hand auf den Arm. Mehr nicht. #sprecher:erzaehler #pause:2
+Du hast Mama noch nie so gesehen: rote Wangen, die Ärmel hochgeschoben, mitten unter Leuten, die sie Laurie nennen. #sprecher:erzaehler #musik:ironwood.feier
+Um eins singt jemand. Um halb zwei schläft Juno auf zwei Stühlen. #sprecher:erzaehler
 ~ setzeZustand("ironwood.bigJoe", 1.4, "zustand.schlechtGeschlafen")
-Du hast das nicht geplant, {held}. Aber morgen wird er müde sein. #sprecher:ambrose
-Das ist kein Trick. Das ist ein Fest. #sprecher:ambrose
+Du hast das nicht geplant, {held}. Aber morgen wird er müde sein. Das ist kein Trick. Das ist ein Fest. #sprecher:ambrose
 -> END
 
 // ---------------------------------------------------------------- Mama
 
 === mama ===
 {
-- not fotoGefunden:
+- not mamaFotoGesehen:
     Am Tisch am Fenster ist ein Platz frei. Big Joe stellt dort nie jemanden hin. #sprecher:erzaehler
     -> END
-- not mamaFotoGesehen: -> mama_foto
+- not mamaInKantine: -> mama_ankunft
 - ausgangIronwoodMama == "" or ausgangIronwoodMama == "abgebrochen": -> mama_partie_angebot
 - not mamaSpielt: -> mama_nach_partie
 - else: -> mama_alltag
 }
 
-=== mama_foto ===
-~ mamaFotoGesehen = true
-Die Tür geht auf. Mama steht im Mantel da, noch im Schwesternkittel darunter. #sprecher:erzaehler
-„Oma Ruth hat angerufen.“ #sprecher:erzaehler
-Du zeigst ihr das Foto aus der Elm Street. #sprecher:erzaehler
-* [„Ich hab das gefunden.“]
-    Sie nimmt das Foto. Lange sagt sie nichts. #sprecher:erzaehler #pause
-* [„Big Joe lässt grüßen. Und es tut ihm leid.“]
-    Sie sieht zu Big Joe hinüber. Er sieht auf den Boden. #sprecher:erzaehler #pause
-- Ich hab den Läufer nicht gesehen. Im Finale, Zug dreiunddreißig. Ein Spieß. Fünfundzwanzig Jahre, und ich sehe ihn jede Nacht. #sprecher:mutter #stimmung:ernst
-Danach hab ich nie wieder eine Figur angefasst. Ich wollte nicht, dass dir das auch passiert. #sprecher:mutter
-Big Joe kommt herüber. Die beiden umarmen sich, ohne ein Wort. #sprecher:erzaehler
+// Kapitel 27, zweiter Teil (Roman): Stille beim Eintreten, dann das Ironwood-Thema warm.
+=== mama_ankunft ===
+~ mamaInKantine = true
+Sie sind alle da, Hank und Priya und ein Dutzend andere in Arbeitsjacken. Als Mama in der Tür steht, wird es still wie in einer Kirche. #sprecher:erzaehler #musik:aus
+Big Joe steht auf. Er sagt nichts. Sie sagt nichts. #sprecher:erzaehler
+Sie geht durch den ganzen langen Raum. Er kommt ihr drei Schritte entgegen und hält sie fest, als könnte sie zerbrechen. #sprecher:erzaehler #pause:2
+Laurie. #sprecher:bigJoe
+Du hättest noch mal klingeln können. #sprecher:mutter
+Ich weiß. #sprecher:bigJoe
+Ich hätte aufgemacht. #sprecher:mutter
+Ich weiß. Jetzt. #sprecher:bigJoe #musik:karte
 -> mama_partie_angebot
 
 === mama_partie_angebot ===
-Gut. Eine Partie. #sprecher:mutter
-Hier, in diesem Raum. Aber wenn ich gewinne, räumst du die Spülmaschine aus. #sprecher:mutter
-* [„Abgemacht.“]
-    Deine Mutter, wenn ich das sagen darf, setzt sich wie jemand, der nie aufgehört hat. #sprecher:ambrose
+Am Stahlbrett. Mama hat Weiß. Sie sieht die Figuren an, eine nach der anderen, als müsste sie sich an ihre Namen erinnern. #sprecher:erzaehler
+* [„Ich bin bereit.“]
+    Ihre Hand zittert, als sie den ersten Bauern anfasst. Damenbauer, zwei Felder. Dann der daneben. #sprecher:erzaehler
+    Damengambit. Hat sie von mir. #sprecher:bigJoe #stimmung:froh
     ~ beginnePartie("ironwood.mama")
     -> END
 * [„Gleich, Mama.“]
@@ -194,20 +243,74 @@ Hier, in diesem Raum. Aber wenn ich gewinne, räumst du die Spülmaschine aus. #
     -> END
 
 === mama_nach_partie ===
+// Klangplan S39: Als Mama innehält, fällt alles weg; bei „Ich hab ihn gesehen“ Mamas Thema zum
+// ersten Mal vollständig (`mama.vollstaendig`). Das Ergebnis ist das Einzige, das nicht wichtig ist.
 ~ mamaSpielt = true
-{ausgangIronwoodMama == "sieg":
-    Mama lacht und weint gleichzeitig. #sprecher:erzaehler
-    Du hast mich mit einem Spieß erwischt. Natürlich. #sprecher:mutter
-    Kumpel, das war ihr Fehler von damals. Jetzt ist er erledigt. #sprecher:bigJoe
+Im dreißigsten Zug hat sie den Turm schon berührt. Dann hält sie inne. #sprecher:erzaehler #musik:aus
+Sie sieht nicht auf ihren Angriff. Ihr Blick geht die Schräge entlang, Feld für Feld, bis in deine Ecke. #sprecher:erzaehler #pause:3
+Big Joe hat die Augen zugemacht. Mama nimmt die Hand vom Turm und zieht die Dame aus der Schräge. #sprecher:erzaehler
+Ich hab ihn gesehen. Den Läufer. Diesmal hab ich ihn gesehen. #sprecher:mutter #musik:mama.vollstaendig #stimmung:hatIhnGesehen
+Sie hält sich mit beiden Händen an der Tischkante fest. Big Joes Augen sind nass, und es ist ihm vollkommen gleichgültig. #sprecher:erzaehler
+{ausgangIronwoodMama:
+- "sieg":
+    Ihr spielt zu Ende. Du gewinnst. Es ist das Einzige an diesem Tag, das nicht wichtig ist. #sprecher:erzaehler
+- "remis":
+    Ihr spielt zu Ende. Remis. Es ist das Einzige an diesem Tag, das nicht wichtig ist. #sprecher:erzaehler
 - else:
-    Ich hab ihn gesehen. Den Läufer. Diesmal hab ich ihn gesehen. #sprecher:mutter
-    Sie muss sich setzen. Big Joe bringt ihr einen Kaffee. #sprecher:erzaehler
+    Ihr spielt zu Ende. Mama gewinnt. Es ist das Einzige an diesem Tag, das nicht wichtig ist. #sprecher:erzaehler
 }
-Ab jetzt fahre ich mit zu den Turnieren. Jemand muss ja auf die Zeit achten. #sprecher:mutter #stimmung:froh
+{turnierheftBekommen: -> heft_satz ->}
+Und ab jetzt fahre ich mit. Zu den Turnieren. Jemand muss ja auf die Zeit achten. #sprecher:mutter #stimmung:froh
 Du spielst zu langsam. #sprecher:mutter
-Deine Mutter, wenn ich das sagen darf, spielt besser, als sie lügt. #sprecher:ambrose #stimmung:lacht
+Deine Mutter, wenn ich das sagen darf, spielt besser, als sie lügt. #sprecher:ambrose #stimmung:lachtOhneSpott
 Juno klebt das Foto ins Tagebuch. Mit Glitzer. Diesmal ja. #sprecher:juno #stimmung:froh
 -> END
+
+// ---------------------------------------------------------------- Partiemomente (Roman, Kap. 27/28)
+// Feste Momente in den Partien (begegnungen.json, momente). Sie sagen nichts über die Stellung,
+// was nicht in jeder Partie stimmt: Die Engine wartet nicht auf das Bild aus dem Roman.
+
+=== mama_moment_rost ===
+Mama wird langsamer. Sie rechnet, zieht die Hand zurück und sagt ein Wort, das du von ihr nicht kennst. #sprecher:erzaehler
+Eingerostet. Wie ein altes Tor. #sprecher:mutter #stimmung:lachtOhneSpott
+Schmieröl ist im Schrank. #sprecher:bigJoe
+-> END
+
+=== mama_moment_angriff ===
+Ihre Figuren rücken vor, eine nach der anderen, schön und entschlossen, auf deinen König zu. #sprecher:erzaehler #musik:aus
+* [„Ambrose. Was mache ich?“]
+- Er schweigt. Der Ofen bullert. #sprecher:erzaehler #pause:2
+Du spielst Schach. Mit deiner Mutter. Sie ist nicht hergekommen, um geschont zu werden. #sprecher:ambrose
+-> END
+
+=== clubkampf_schraubstock ===
+Er stellt eine Figur hin, und sie bleibt dort. Dann die nächste daneben. Jede hält eine von deinen fest. #sprecher:erzaehler
+Was dranhängt, kann nicht weg. #sprecher:bigJoe
+Das ist auch Schach. Kein Funken. Kein einziger. Und doch steht alles genau, wo es stehen muss. #sprecher:ambrose
+Der Brückenbauer hätte ihn gemocht. #sprecher:ambrose #stimmung:still
+-> END
+
+=== clubkampf_stimmt_es ===
+Big Joe reibt sich das Gesicht mit beiden Händen. Als er sie wegnimmt, braucht er einen Moment, bis er das Brett wiederfindet. #sprecher:erzaehler
+{mamaSpielt: Grundreihe. Immer. #sprecher:erzaehler}
+Siehst du etwas? Dann sag mir: Stimmt es? #sprecher:ambrose
+Diesmal fragt er. Nicht du. #sprecher:erzaehler
+* [„Ich zähle noch.“]
+    Dann zähl. Dreimal, wenn es sein muss. #sprecher:ambrose
+* [„Es stimmt.“]
+    Dann spiel es. #sprecher:ambrose
+- Und sieh ihm dabei ins Gesicht. Das ist die Hälfte. #sprecher:ambrose #stimmung:lachtOhneSpott
+-> END
+
+// Kapitel 27: Mamas Satz unter dem Finale (Tunnel, nur mit dem blauen Heft).
+=== heft_satz ===
+Mama schlägt das blaue Heft auf und nimmt Hank einen Kugelschreiber aus der Brusttasche, ohne zu fragen. #sprecher:erzaehler
+Unter „Finale. 12. Mai 2001“ schreibt sie einen einzigen Satz: „Es passiert jedem. Auch mir.“ #sprecher:erzaehler #bild:heft_neuer_satz
+Sie blättert um. Auf der nächsten Seite stehen drei Sätze in deiner Schrift. #sprecher:erzaehler #bild:aus
+Du schreibst ja in mein Heft. #sprecher:mutter
+* [„Oma hat gesagt …“]
+- Ich weiß, was Oma gesagt hat. Schreib weiter. #sprecher:mutter
+->->
 
 === mama_alltag ===
 {~Grundreihe. Immer die Grundreihe. Sag das Joe nicht.|Ich hab mir ein Taschenschach gekauft. Für die Nachtschicht.|Fünfundzwanzig Jahre. Und die Figuren fühlen sich an wie gestern.} #sprecher:mutter
@@ -268,14 +371,15 @@ Spieße und scheinbarer Schutz. Bereit für ein bisschen Statik? #sprecher:priya
 
 === pokalregal ===
 {pokalregalGesehen:
-    Die Lücke im Regal ist noch da. Ein Staubrand zeigt, wo der Pokal stand. #sprecher:erzaehler
+    Die Lücke im Regal ist noch da, so breit wie eine Hand. Darunter das Messingschild: 2001. #sprecher:erzaehler
     -> END
 }
 ~ pokalregalGesehen = true
-Im Pokalregal stehen dreißig Jahre Werksclub. Auf einem Schild unter einer Lücke steht: „Jugendmeisterschaft 2001“. #sprecher:erzaehler
+Im Pokalregal stehen dreißig Jahre Werksclub, dicht an dicht. #sprecher:erzaehler
+Nur an einer Stelle nicht. Eine Lücke, so breit wie eine Hand. Darunter ein Schildchen aus Messing: 2001. #sprecher:erzaehler #bild:pokalluecke_2001
 -> END
 
 === stahlbrett ===
-Ein Schachbrett aus Stahlplatten, selbst geschweißt, die Felder abwechselnd blank und geschwärzt. Die Figuren sind aus Holz. #sprecher:erzaehler
+Ein Schachbrett aus Stahl. Die Felder hell geschliffen und dunkel angelassen, die Schweißnähte am Rand dick wie Finger. #sprecher:erzaehler #bild:stahlbrett
 Stahl für das Brett, Holz für die Figuren. Ein Mann, der weiß, was hart sein muss und was nicht. #sprecher:ambrose
 -> END

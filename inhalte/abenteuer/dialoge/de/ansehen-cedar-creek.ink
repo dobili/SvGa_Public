@@ -14,6 +14,7 @@ VAR angesehenGlobus = false
 VAR angesehenSchildFluestern = false
 VAR angesehenBoxerfoto = false
 VAR angesehenWasserfleck = false
+VAR angesehenTreppenhaus = false
 VAR angesehenZettelTurm = false
 VAR angesehenComicheft = false
 VAR angesehenAutomat = false
@@ -45,11 +46,22 @@ VAR angesehenAutomat = false
 - else:
     ~ angesehenSchildFluestern = true
     Ein Schild am Tresen: „Bitte flüstern“. #sprecher:erzaehler
-    Flüstern kann ich gut. Ich habe sogar eine Karte dafür. #sprecher:ambrose #stimmung:lacht
+    Flüstern. Das kann ich. Mich hört ohnehin nur einer. #sprecher:ambrose
 }
 -> END
 
 // ---------------------------------------------------------------- Archiv
+
+// Tür zum Treppenhaus im Vorraum (Karte aus Runde 11, Auslöser treppenhaus in orte.json).
+=== treppenhaus ===
+{angesehenTreppenhaus:
+    Die Tür zum Treppenhaus bleibt zu. Oben knarrt eine Diele. #sprecher:erzaehler
+- else:
+    ~ angesehenTreppenhaus = true
+    Eine Tür mit einem Messingschild: „Treppenhaus. Magazin und Lesezimmer im ersten Stock, nur für Personal.“ #sprecher:erzaehler
+    Abgeschlossen. Von oben riecht es nach noch mehr Büchern. #sprecher:erzaehler
+}
+-> END
 
 === boxerfoto ===
 {angesehenBoxerfoto:
@@ -67,7 +79,7 @@ VAR angesehenAutomat = false
 - else:
     ~ angesehenWasserfleck = true
     An der Wand ein Wasserfleck, genau in der Form eines Springers. #sprecher:erzaehler
-    Selbst das Wasser in diesem Keller spielt Schach. Ich fühle mich hier wohl. #sprecher:ambrose #stimmung:lacht
+    Ein Springer. Das Wasser hat sich Mühe gegeben. #sprecher:ambrose
 }
 -> END
 
@@ -97,6 +109,6 @@ VAR angesehenAutomat = false
 - else:
     ~ angesehenAutomat = true
     Ein Automat für Waschpulver und Kaugummi. Eine Kugel Kaugummi kostet eine Münze. #sprecher:erzaehler
-    Eine Maschine, die für eine Münze etwas tut. Das gab es zu meiner Zeit nur bei Menschen. #sprecher:ambrose
+    Eine Münze, eine Kugel. Kein Dank, kein Wort. Sonderbar. #sprecher:ambrose
 }
 -> END

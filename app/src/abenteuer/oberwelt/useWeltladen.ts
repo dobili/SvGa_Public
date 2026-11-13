@@ -8,13 +8,16 @@
  * die Welt gewartet haben), gibt die Oberwelt als `beiWelt` mit.
  * Abhängigkeiten: oberwelt/weltdaten.ts, oberwelt/oberweltspiel.ts, oberwelt/toenung.ts.
  */
+import { klangorte } from "../ton/klangquelle";
+import { istTeilchenart } from "./teilchen";
+import { tonregie } from "../ton/tonregie";
 import { useEffect, useState, type RefObject } from "react";
 import { variablenAusBesitz, variablenNachBesuch } from "../regeln/dialogvariablen";
 import type { Abenteuerstand } from "../schnittstelle/spielstand";
 import { fehlertext } from "../texte/texte";
 import { szeneAus, type Oberweltkern } from "./kern";
 import { beendeOberwelt, starteOberwelt } from "./oberweltspiel";
-import type { Ausloesertreffer } from "./szene";
+import { KACHEL, type Ausloesertreffer } from "./szene";
 import { aktuelleToenung } from "./toenung";
 import { KACHELSATZ, ladeWelt, type Weltdaten } from "./weltdaten";
 
@@ -51,8 +54,17 @@ function merkeBesuch(k: Oberweltkern, w: Weltdaten): void {
 function starteSpiel(k: Oberweltkern, a: Weltanschluss, w: Weltdaten, stand: Abenteuerstand) {
   const rahmen = a.rahmen.current;
   if (!rahmen) return;
-  const toenung = aktuelleToenung(w.karte, w.kennung, stand.dialogvariablen);
+  const eintrag = w.ort.karten.find((x) => x.kennung === w.kennung);
+  // Licht aus orte.json (T6) vor der Tönung der Szene.
+  const toenung = aktuelleToenung(w.karte, w.kennung, stand.dialogvariablen, eintrag);
   k.zeigeToenung(toenung);
+  // Musik und Dauergeräusch der Karte aus orte.json (T1, T2); fehlt die Datei, bleibt es still.
+  // Klangquellen mit Reichweite (T28): Ort aus dem benannten Objekt der Tiled-Karte.
+  tonregie.karteBetreten(
+    eintrag?.musik,
+    eintrag?.geraeusch,
+    klangorte(w.karte, eintrag?.klangquellen ?? [], KACHEL),
+  );
   k.spiel.current = starteOberwelt(rahmen, {
     karte: w.karte,
     kachelbild: w.kachelbild,
@@ -64,6 +76,8 @@ function starteSpiel(k: Oberweltkern, a: Weltanschluss, w: Weltdaten, stand: Abe
     hintergrund: w.hintergrund,
     belebungsbilder: w.belebungsbilder,
     toenung,
+    // Teilchen der Karte aus orte.json (T8); Winterkarten haben Schnee.
+    teilchen: istTeilchenart(eintrag?.teilchen) ? eintrag.teilchen : null,
     laterne: stand.gegenstaende.includes(LATERNE),
     winter: w.winter,
     kachelsatz: KACHELSATZ,
@@ -78,6 +92,7 @@ function starteSpiel(k: Oberweltkern, a: Weltanschluss, w: Weltdaten, stand: Abe
       beiAusloeser: a.beiTreffer,
       beiKachel: (x, y) => {
         if (a.kachelanzeige.current) a.kachelanzeige.current.textContent = `${x},${y}`;
+        tonregie.heldBei(x, y);
       },
     },
   });

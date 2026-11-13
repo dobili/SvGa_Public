@@ -16,7 +16,8 @@ import {
 } from "../paket/paketlader";
 import { Spielfehler } from "../schnittstelle/spielfehler";
 import { sprache } from "../../i18n/sprache";
-import { GRUNDSPRACHE, hatSpieltext, ladeSpieltexte, spielsprache, tSpiel } from "../texte/texte";
+import { hatSpieltext, ladeSpieltexte, tSpiel } from "../texte/texte";
+export { ladeDialog } from "../dialog/dialogdatei";
 import { liesBelebung, statistenbild, statistensatz } from "./belebung";
 import type { SprechblasenInhalt } from "./Sprechblase";
 import { kartenfassung } from "./kartenfassung";
@@ -264,21 +265,4 @@ export function sprechblaseFuer(
       })
     : null;
   return { satz: tSpiel(s.satz, { held }), ambrose, zeigt: statist?.zeigt ?? null };
-}
-
-/**
- * Ein Dialog („datei“ ohne Endung) in der Sprache des Spiels; fehlt er dort, der deutsche
- * (Dokument 17, Abschnitt 3: Knoten und Variablen sind in allen Sprachen gleich).
- * Beispiel: Spiel auf Englisch, „ambrose“ nur deutsch übersetzt → dialoge/de/ambrose.json.
- */
-export async function ladeDialog(datei: string): Promise<object> {
-  const eigene = spielsprache();
-  if (eigene !== GRUNDSPRACHE) {
-    try {
-      return await liesPaketJson<object>(`dialoge/${eigene}/${datei}.json`);
-    } catch {
-      // Dieser Dialog ist noch nicht übersetzt: der deutsche gilt (gewollter Rückfall).
-    }
-  }
-  return liesPaketJson<object>(`dialoge/${GRUNDSPRACHE}/${datei}.json`);
 }

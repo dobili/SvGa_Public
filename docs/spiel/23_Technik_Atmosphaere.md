@@ -149,3 +149,88 @@ Jeder Schritt ist für sich lauffähig, mit Tests, `npm run pruefen` grün, eige
   `bilder/<kennung>.webp`, höchstens 1024 Pixel breit.
 - **Porträtfassungen** (T4) und die Dialogmarken selbst (Ton, Pause, Licht in den Ink-Dateien)
   setzt, wer die Dialoge schreibt.
+
+## 6. Stand (13.11.2026)
+
+| Schritt | Punkte     | Stand                                                                                        |
+| ------- | ---------- | -------------------------------------------------------------------------------------------- |
+| a       | T3         | fertig: `#pause:3` (dialog/dialogtakt.ts)                                                    |
+| b       | T1, T2     | fertig: Tonregie, Regler im Spielmenü, `geraeusch` in orte.json                              |
+| c       | T7         | fertig: `#bild:kennung` (dialog/Grossansicht.tsx)                                            |
+| d       | T5         | fertig: `momente` in begegnungen.json (regeln/partiemomente.ts)                              |
+| e       | T6, T9, T4 | fertig: `licht`, `licht_zustaende`, `#licht`, `#figur`, `#erscheint`/`#geist`, Fassungsnamen |
+| später  | T8, T10    | fertig (13.11. abends): `teilchen`, `#teilchen`, `#erinnerung`                               |
+
+Abweichungen vom Plan: Das Licht eines Dialogs (`#licht`) gilt bis zum Dialogende, nicht nur für
+eine Zeile. Eine ausgeblendete Figur (`#figur:<name>:aus`) sperrt den Weg nicht mehr; ansprechen
+lässt sie sich weiter, bis die Karte neu geladen wird. Partiemomente kommen ohne Speicher aus,
+weil sie allein aus dem Partieverlauf folgen.
+
+## 7. Weitere Punkte (Roman Akt 2 bis 4 und Helfer, 13.11.2026 nachmittags)
+
+Quellen: `roman/akt2_befunde.md` Abschnitt 5 (T11 bis T15), `akt3_befunde.md` Abschnitt 6 (T16
+bis T21), `akt4_befunde.md` Abschnitt 6 (T22 bis T28); Steckbrief-Freitext von mittel-3.
+
+### Jetzt (für Akt 1 oder schon bestellt)
+
+**f) T11 Geführter Moment als Ink-Dialog in der Partie** (mittel). Erweitert T5:
+
+- Ein Moment trägt statt `text` einen `dialog` (`datei.knoten`, wie bei Figuren). Dann öffnet die
+  Spielhülle den Dialog über dem Brett, mit Wahlen; die Uhr des Helden hält an, solange er offen
+  ist (der Gegner „hält sichtbar inne“), die Engine rechnet nicht, weil der Held am Zug ist.
+  Variablen des Dialogs gehen in den Spielstand wie in der Oberwelt. Der Dialog führt keinen Zug
+  aus.
+- `wenn` darf Bedingungen verbinden (alle müssen gelten): `zug`, `merkmal`, neu `uhrUnter`
+  (Sekunden auf der Uhr des Helden), `abZug` (frühestens ab diesem Zug des Helden).
+- Neue Merkmale, geprüft in der Stellung, in der der Held am Zug ist (also bevor er zieht):
+  - `koeder`: Der Held kann einen Bauern schlagen, und danach setzt der Gegner in höchstens zwei
+    Zügen matt (schach/mattsuche.ts). Fall Mrs. Okafor, Grundreihe (Kapitel 15).
+  - `turmopfer`: Ein Turm des Helden kann auf ein Feld neben dem gegnerischen König ziehen oder
+    dort schlagen und ginge dabei nach dem Abtausch verloren (schach/abtausch.ts). Ob das Opfer
+    korrekt wäre, prüft die App nicht; der Roman will gerade den Zweifel.
+- Erster Anwendungsfall: `cedarCreek.clubkampf` mit `cedar-creek-bibliothek.clubkampf_bauer`
+  (`koeder`, ab Zug 12) und `clubkampf_lass_mich` (`turmopfer` und `uhrUnter: 240`). Die Knoten
+  liegen auf dem Zweig von mittel-3; der Eintrag in `begegnungen.json` kommt, sobald die Zweige
+  zusammengeführt sind (die Prüfung verlangt, dass es den Knoten gibt).
+
+**g) Steckbriefzeile mit freiem Text** (klein): neue Zeilenart `text` in `gegner.json`
+(`{"art": "text", "wert": "steckbrief.okafor.lagos"}`), der Wert ist ein Textschlüssel der
+Spieltexte; Schema, Clubtagebuch und Lupe zeigen den Satz, pytest prüft den Schlüssel. Erste Zeile:
+Mrs. Okafor.
+
+**h) T28 Klangquelle mit Reichweite** (mittel): `klangquellen` je Karte in `orte.json`:
+`{"objekt": "rosiesWagen", "musik": "rosie", "reichweite": 20}`. Das Objekt ist eine Figur oder
+ein Auslöser der Karte (Name in Tiled), so bleibt die Karte unberührt. Die Lautstärke folgt dem
+Abstand des Helden (voll bis zur halben Reichweite, dann linear bis still); die Kartenmusik wird
+im selben Maß leiser. Eine eigene Spur der Tonregie; ohne Datei still.
+
+**i) T15 Fensterbank zeigt Funde** (klein): Ink-Funktion `zeigeFensterbank()` öffnet eine Ansicht
+mit allen Funden des Spielstands (Bild aus funde.json, sonst Name), in der Reihenfolge des
+Findens. Die Fensterbank im Zimmer des Helden ruft sie aus ihrem Dialog auf; keine Kartenänderung.
+
+### Später (nur geplant)
+
+| Nr. | Was                                                        | Weg                                                                                      |
+| --- | ---------------------------------------------------------- | ---------------------------------------------------------------------------------------- |
+| T12 | Gegnerprofil ändert sich mitten in der Partie              | wie `abgelenktAb` (Halbzug → Faktor), erweitert um Stufe und Bedenkzeit                  |
+| T13 | Klang und Bild blenden in eine Erinnerung über             | `#musik` mit Überblendung (gibt es) plus Sepia-Übergang aus T10                          |
+| T14 | Wetter als Zustand der Karte                               | `licht_zustaende` (gibt es) plus Teilchen aus T8 (`regen`, `schnee`; Schneefall gibt es) |
+| T16 | Begleiter blasser oder fehlt                               | `#geist` (gibt es) als Dialogvariable je Zustand, Porträt liest sie                      |
+| T17 | Karten im Menü gesperrt und grau, mit Grund                | Bedingung je Karte in der Deckwahl, Grund als Textschlüssel                              |
+| T18 | Gegenstand zeitweise nicht im Inventar                     | Dialogvariable `verwahrt.<ding>`, Inventar blendet aus                                   |
+| T19 | Wahl mitten in einer Partie mit Wirkung auf den Gegner     | f) plus Ink-Funktion `setzeGegnerzustand(faktor, halbzuege)`                             |
+| T20 | Licht ändert sich in Stufen in einer Szene                 | `#licht` (gibt es) Zeile für Zeile, mit Umblenden                                        |
+| T21 | Langer Brief als Großansicht in Handschrift                | `#brief:textschluessel` wie `#bild`, Schrift aus dem Paket                               |
+| T22 | Sättigung einer Karte in Stufen                            | CSS-Filter `saturate` über `#licht`-Werte `farbe1` bis `farbe4`                          |
+| T23 | Zuschauerpartie mit Geräuschen und Kommentar               | Vorführung (gibt es) mit `momente` aus f)                                                |
+| T24 | Stellungsaufbau Zug um Zug, beschleunigt, Musikwechsel     | Vorführung mit Takt und `#musik` je Abschnitt                                            |
+| T25 | Gegner wechselt den Zustand durch ein Ereignis             | f) mit Merkmal und T12                                                                   |
+| T26 | Karte nur in einer Partie zusätzlich (goldener Rand)       | `freieKarten` (gibt es) plus Randfarbe in der Kartenleiste                               |
+| T27 | Abspann aus Standbildern mit Musik, spielbare Schlussszene | Abspann (gibt es) mit `#bild`-Folge und `#musik`                                         |
+
+Reihenfolge: f, g, h, i; jede für sich mit Tests, eigener Commit, Meldung an den Haupt-Chat.
+
+Stand 13.11.2026 abends: f, g, h und i sind fertig. Offen für den Clubkampf ist nur der Eintrag
+der beiden Momente in `begegnungen.json`, sobald die Knoten von mittel-3 auf demselben Zweig
+liegen; Klangquellen und die Fensterbank warten auf ihre Einträge in `orte.json` und im Dialog
+der Fensterbank.

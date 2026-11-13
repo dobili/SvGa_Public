@@ -30,6 +30,10 @@ export interface Wirkungen {
   readonly gibFund: (kennung: string) => void;
   /** Zeigt nach dem Dialog den Abspann (Ende von Akt 4). */
   readonly zeigeAbspann?: () => void;
+  /** Zeigt nach dem Dialog die Fensterbank mit allen Funden (Atmosphäre T15, Kapitel 23). */
+  readonly zeigeFensterbank?: () => void;
+  /** Der Held schreibt eine Seite ins Tagebuch (Text tagebuch.eintrag.<name>), mit Schreibanimation. */
+  readonly schreibeTagebuch?: (name: string) => void;
   /** Reise auf eine Karte eines anderen Ortes (Bus nach Cedar Creek); wirkt nach dem Dialog. */
   readonly reise: (karte: string, ausloeser: string) => void;
   /** Gedächtnisstellung aus partieformen.json (Runde 6), sobald der Dialog zu ist. */
@@ -83,6 +87,16 @@ export class Geschichte {
     this.story.BindExternalFunction("gibFund", (k: string) => wirkungen.gibFund(k), false);
     this.story.BindExternalFunction("oeffneLaden", (k: string) => wirkungen.oeffneLaden(k), false);
     this.story.BindExternalFunction("zeigeAbspann", () => wirkungen.zeigeAbspann?.(), false);
+    this.story.BindExternalFunction(
+      "schreibeTagebuch",
+      (name: string) => wirkungen.schreibeTagebuch?.(name),
+      false,
+    );
+    this.story.BindExternalFunction(
+      "zeigeFensterbank",
+      () => wirkungen.zeigeFensterbank?.(),
+      false,
+    );
     this.story.BindExternalFunction("setzeSzene", (k: string) => wirkungen.setzeSzene(k), false);
     this.story.BindExternalFunction(
       "beginnePartie",

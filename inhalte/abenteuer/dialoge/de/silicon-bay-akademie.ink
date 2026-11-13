@@ -8,6 +8,12 @@
 // Einstiege wie in orte.json: lin, nova, theo, serverraum_zu. Die Hauptquest siliconBay.akademie
 // wartet auf den Knoten „lin“; deshalb steht dort vor dem Verzweigen eine Zeile.
 //
+// Runde 11 (13.11.2026): Dr. Lin, Theo und Nova nach dem Roman (roman/akt3_teil1.md, Kapitel 32):
+// Lins drei Fragen, Theos Kurve („menschlich“), ZERO spielt in zwölf Sekunden, Ambrose gebannt.
+// Klang nach 21_Klangplan.md (zero, ambrose.gebannt). „Später“ nur in Akt 1, hier „Nicht jetzt.“.
+// Kapitel 33: Ambrose verbietet das „Hm“ im Club, nach dem Sieg sagt Dr. Lin einmal „Sie“ und
+// schaltet den Tisch aus (abschaltton, dann Stille S48); im Clubkampf ein Moment bei Zug 15.
+//
 // Variablen: reiheTheoBestanden, reiheNovaBestanden, siliconBayAuswertungBestanden,
 // ausgangSiliconBayClubkampf und nadelSiliconBay setzt die Hülle (R42); ohrempfaengerGefunden setzt
 // silicon-bay-serverraum.ink, zeroTabletGeschenkt merkt Theos Geschenk. clubkampfSiliconBayBesprochen und clubkampfSiliconBayNadel wie in Riverton.
@@ -48,12 +54,19 @@ VAR clubkampfSiliconBayNadel = 0
 
 === lin_erstes_treffen ===
 ~ linGetroffen = true
-Eine Frau mit Brille steht auf und reicht dir die Hand. Auf ihrem Schreibtisch liegt ein einziges Holzbrett. #sprecher:erzaehler
-Willkommen. Ich bin Dr. Lin, ich leite die Akademie. Victor hat von dir erzählt. #sprecher:lin #stimmung:froh
-Drei Ziele in der Eröffnung: Zentrum, Entwicklung, König in Sicherheit. Das lernen hier alle zuerst. #sprecher:lin
-Am Fenster sitzt ein Mädchen und lächelt in eine Kamera. Als die Kamera ausgeht, hört sie auf zu lächeln. #sprecher:erzaehler
+Ein Raum ohne Ecken. Dreißig Plätze im Halbkreis, in jeden Tisch ist ein leuchtendes Brett eingelassen. Es riecht nach nichts. #sprecher:erzaehler
+Die Frau, die auf dich zukommt, sieht dir als Erste in dieser Stadt in die Augen. Auf ihrem Kittel: „Dr. E. Lin“. #sprecher:erzaehler
+Du bist das Kind mit den vier Nadeln. Victor hat von dir erzählt. Er erzählt sonst von niemandem. #sprecher:lin #stimmung:froh
+Ich bringe hier Kindern Schach bei. Vierzig im Jahr. Früher acht, in einem Keller mit Heizlüfter. #sprecher:lin
+Die Bildschirme zeigen jedem sofort den Fehler. Kein Kind muss warten, bis ich Zeit habe. Glaube ich. #sprecher:lin
+Drei Ziele in der Eröffnung? Welches vergisst man am leichtesten? #sprecher:lin
+* [„Zentrum, Entwicklung, König. Das dritte.“]
+- Warum? #sprecher:lin
+* [„Weil man gerade angreift.“]
+- Sie lächelt. Wer hat dir das beigebracht? #sprecher:lin #stimmung:froh
+* [„Viele Leute. Und meine Mutter.“]
+- Und ich. #sprecher:ambrose #stimmung:streng
 Bevor du gegen mich spielst, fragen dich Theo und Nova ab. So ist es hier üblich. #sprecher:lin
-Eine Lehrerin mit einem Holzbrett zwischen all den Spiegeln. Sie gefällt mir. #sprecher:ambrose
 -> END
 
 === lin_reihe_offen ===
@@ -67,19 +80,17 @@ Eine Lehrerin mit einem Holzbrett zwischen all den Spiegeln. Sie gefällt mir. #
 === lin_schweigen ===
 ~ schweigenErklaert = true
 Du hast die Reihe bestanden. Morgen früh spielen wir. #sprecher:lin
-Vor der Partie willst du einen Spruch üben. Ambrose räuspert sich. #sprecher:erzaehler
-Am Brett eines Clubs schweigt man. Im Park redet man. #sprecher:ambrose
-* [„Warum?“]
-    Im Park spielt man um eine Limonade. Im Club um die Ehre des anderen. #sprecher:ambrose
-    Wer ihn stört, nimmt ihm die Partie weg, nicht nur die Zeit. #sprecher:ambrose
-* [„Verstanden.“]
-    Gut. Auch in echten Turnieren gilt Ruhe. Den Gegner abzulenken ist dort verboten. #sprecher:ambrose
-- Die Sprüche bleiben heute in deiner Tasche. #sprecher:erzaehler
+Am Morgen probierst du etwas vor dem Spiegel. Ein Gesicht, ein „Hm“. #sprecher:erzaehler
+Nein. #sprecher:ambrose #stimmung:streng
+* [„Bei Dash hat es …“]
+- Am Brett eines Clubs schweigt man. Im Park redet man. #sprecher:ambrose #stimmung:streng
+Im Park spielt man um eine Limonade. Im Club um die Ehre des anderen. #sprecher:ambrose
+Wer ihn dort stört, nimmt ihm nicht die Zeit. Er nimmt ihm die Partie weg. Und die gehört euch beiden. #sprecher:ambrose
+Du lässt es. #sprecher:erzaehler
 -> lin_clubkampf
 
 === lin_clubkampf ===
 Bereit? Ich spiele, was die Theorie sagt. Mal sehen, was du dagegen hast. #sprecher:lin
-Führ sie von den gelernten Wegen herunter, {held}. Dann wird sie vorsichtig. #sprecher:ambrose
 + [„Ich bin bereit.“]
     ~ beginnePartie("siliconBay.clubkampf")
     -> END
@@ -93,23 +104,32 @@ Sie war sicher, solange es Regeln gab. Zwing sie in eine Stellung ohne Regeln. #
 + [„Noch einmal.“]
     ~ beginnePartie("siliconBay.clubkampf")
     -> END
-* [„Später.“]
+* [„Nicht jetzt.“]
     -> END
 
 === lin_nach_sieg ===
 ~ clubkampfSiliconBayNadel = nadelSiliconBay
 {clubkampfSiliconBayBesprochen:
-    Eine bessere Nadel. Ich schreibe es in mein Heft. Mit Tinte. #sprecher:lin #stimmung:froh
+    Eine bessere Nadel. Ich schreibe es in mein Heft. Mit Tinte. #sprecher:lin #stimmung:froh #klang:fanfare.gedaempft
     -> END
 }
 ~ clubkampfSiliconBayBesprochen = true
 {ausgangSiliconBayClubkampf == "remis":
-    Remis. Ehrlich erkämpft. Die Bronzenadel gehört dir. #sprecher:lin
-- else:
-    Ich habe Sie nichts gelehrt. Sie mich. #sprecher:lin #stimmung:froh
+    Remis. Ehrlich erkämpft. Die Bronzenadel gehört dir. #sprecher:lin #klang:fanfare.gedaempft
+    -> lin_tisch_aus
 }
-Dr. Lin hält einen Moment inne. Dann lacht sie über sich selbst: „Entschuldige. Das Sie ist mir rausgerutscht.“ #sprecher:erzaehler
-Die fünfte Nadel. Und ein Mentor-Zug. Ich hätte ihn heute kaum gebraucht, du schon gar nicht. #sprecher:ambrose
+Dr. Lin sitzt lange still. Dann nimmt sie die Nadel aus der Kitteltasche: klares Glas, darin ein einzelner Bauer. #sprecher:erzaehler #klang:fanfare.gedaempft
+Ich habe Sie nichts gelehrt. Sie mich. #sprecher:lin
+Sie sagt „Sie“. Zu dir. Einmal. #sprecher:erzaehler
+-> lin_tisch_aus
+
+// Kapitel 33: Die Tische zeigen den Fehler, nicht die Angst. Danach wirkliche Stille (S48).
+=== lin_tisch_aus ===
+Wissen Sie, was die Tische nicht zeigen? Wo der Fehler war, ja. Nicht, warum man Angst hatte. #sprecher:lin
+Sie schaltet den Tisch aus. Darunter nur schwarzes Glas, in dem ihr euch beide spiegelt. #sprecher:erzaehler #klang:abschaltton #musik:aus #geraeusch:aus #pause:4
+Ich habe die Spielberichte meiner Klasse nie so genau angesehen. #sprecher:lin #stimmung:ernst
+* [Schweigen]
+- Du hast es versprochen. Aber sie hat deinen Blick gesehen. Und sie ist eine Lehrerin. #sprecher:erzaehler
 -> END
 
 === lin_alltag ===
@@ -135,19 +155,35 @@ Die fünfte Nadel. Und ein Mentor-Zug. Ich hätte ihn heute kaum gebraucht, du s
 
 === theo_erstes_treffen ===
 ~ theoGetroffen = true
-Ein Junge mit Kopfhörern um den Hals mustert dich. „Probepartie? Ich messe nur.“ #sprecher:erzaehler
-Nach zehn Zügen dreht er den Bildschirm zu dir. #sprecher:erzaehler
-Einundsiebzig Prozent Genauigkeit. Das ist … menschlich. #sprecher:theo
-Hier. Ein Tablet mit ZERO. Damit trainierst du in einer Woche mehr als in einem Jahr. #sprecher:theo
+Ein Junge in deinem Alter sieht auf einen zweiten Bildschirm, über den Zahlen laufen. Jetzt dreht er sich um. #sprecher:erzaehler
+Spiel eine. Gegen Stufe sechs. Ich will deine Kurve sehen. #sprecher:theo
+Er heißt Theo. Er meint es nicht unhöflich. Bei jedem deiner Züge zuckt auf seinem Bildschirm eine Linie. #sprecher:erzaehler
+Einundsiebzig Prozent. Genauigkeit. Das ist … menschlich. #sprecher:theo
+* [„Ist das gut?“]
+- Der Durchschnitt eines sehr guten Vereinsspielers. Victor hat neunundachtzig. Nova im Turnier achtundneunzig. #sprecher:theo
+Du machst im Mittelspiel alle elf Züge einen Fehler. Den kann man wegtrainieren. Hier. #sprecher:theo
+-> theo_tablet
+
+// Kapitel 32: Theos Geschenk. ZERO spielt gegen sich selbst, Ambrose kann nicht wegsehen.
+=== theo_tablet ===
 ~ zeroTabletGeschenkt = true
 ~ gibFund("zeroTablet")
-Auf dem Tablet gewinnt die Maschine eine Partie in zwölf Sekunden. Kein einziger Fehler. #sprecher:erzaehler
-Kein einziger Fehler. Nicht einer. #sprecher:ambrose #stimmung:gebannt
+Ein Tablet, weiß und dünn, mit dem Zeichen des Konzerns. Da ist ZERO drauf. Die volle Fassung. #sprecher:theo
+* [„Was ist ZERO?“]
+- Theo sieht dich an, als hättest du gefragt, was Wasser ist. #sprecher:erzaehler
+Die Maschine. Die, die nie verliert. #sprecher:theo
+Weiß und Schwarz bauen sich auf, und es spielt gegen sich selbst. Die Züge fallen wie Regen. #sprecher:erzaehler #musik:zero
+Zwölf Sekunden, vielleicht dreizehn, und der schwarze König liegt um. #sprecher:erzaehler
+Ambrose steht über das Tablet gebeugt. So hast du ihn noch nie stehen sehen. #sprecher:erzaehler
+Noch einmal. #sprecher:ambrose #stimmung:gebannt #musik:ambrose.gebannt
+* [Noch einmal tippen]
+- Eine andere Partie. Ein Opfer in der Mitte, ein Turm, der stehen bleibt, und alles fällt ineinander wie ein Uhrwerk. #sprecher:erzaehler
+Kein einziger Fehler. Nicht einer. Der Turm hing sieben Züge lang, und sie wusste es. #sprecher:ambrose #stimmung:gebannt
+* [„Ambrose.“]
+- Noch einmal. #sprecher:ambrose #stimmung:gebannt
 {linGetroffen: -> theo_reihe}
 -> theo_erst_lin
 
-// Die Reihe gibt es erst nach dem Gespräch mit Dr. Lin; sonst liefe die Runde, bevor die Quest
-// siliconBay.akademie auf sie wartet (Gesamtsimulation, Runde 6).
 === theo_erst_lin ===
 Die Abfrage machen wir offiziell. Melde dich erst bei Dr. Lin, dann messe ich. #sprecher:theo
 -> END
@@ -157,7 +193,7 @@ Eröffnungsgrundsätze. Ich will sehen, ob du sie kennst oder nur benutzt. #spre
 + [Die Aufgaben lösen]
     ~ beginneAufgaben("siliconBay.reiheTheo")
     -> END
-* [„Später.“]
+* [„Nicht jetzt.“]
     Ich speichere den Termin. #sprecher:theo
     -> END
 
@@ -186,9 +222,10 @@ Ich hab nichts gesagt. Zahlen lügen nicht. Ich auch nicht. #sprecher:theo
 
 === nova_erstes_treffen ===
 ~ novaGetroffen = true
-Das Mädchen am Fenster springt auf und lächelt. „Nova! Champion der Akademie. Ein Foto?“ #sprecher:erzaehler
+Auf der Fensterbank sitzt Nova Sinclair, die Knie angezogen. Vor ihr eine Kamera auf dem Stativ, das rote Licht ist aus. #sprecher:erzaehler
+Als sie merkt, dass du sie ansiehst, lächelt sie. Das Lächeln vom Podium in Riverton. Es geht an und wieder aus. #sprecher:erzaehler
 Mit Perfect Move trainiert jeder wie ein Champion! #sprecher:nova #stimmung:froh
-Sieht gerade jemand her? Nein? Kann ich jetzt kurz sitzen? #sprecher:nova
+Sieht gerade jemand her? Nein? Dann kann ich ja kurz sitzen bleiben. #sprecher:nova
 -> END
 
 === nova_erst_theo ===
@@ -200,7 +237,7 @@ Fallen. Ich kenne jede. Die Frage ist, ob du sie siehst, bevor du reinfällst. #
 + [Die Aufgaben lösen]
     ~ beginneAufgaben("siliconBay.reiheNova")
     -> END
-* [„Später.“]
+* [„Nicht jetzt.“]
     -> END
 
 === nova_danach ===

@@ -1635,3 +1635,35 @@ die 40 häufigsten Gambits. Ein paar Zahlen (Anteil an allen Partien des Bandes)
       Junge namens Eli am Bildschirmtisch (der Konzern hat einen echten Vorzug), Slicks Lehrer
       Mr. Odum und das blaue Heft der Mutter. Bitte lesen, wenn Zeit ist; es gilt als abgesegnet,
       Widerspruch genügt.
+
+- [ ] RO8. **Roman zu Akt 3 und 4 lesen:** Der Roman ist für alle vier Akte fertig (66 Kapitel,
+      rund 73 000 Wörter; Akt 3 in `akt3_teil1.md` bis `akt3_teil3.md`, Akt 4 in `akt4_teil1.md`
+      bis `akt4_teil4.md`, alles unter `docs/spiel/roman/`). Lesefassungen ohne Randnotizen hat der
+      Hauptchat im Chat geschickt. Bitte lesen, wenn Zeit ist; gilt als abgesegnet, Widerspruch
+      genügt.
+- [ ] RO9. **Entscheidungen, die der Roman getroffen hat:** (a) Juno weiß ab Akt 3 vom Geist,
+      Victor ab Akt 4. (b) Der „unmögliche“ Zug in Port Delacroix stammt von der Maschine: Der Geist
+      gibt ihn weiter, der Held spielt ihn, ohne ihn zu verstehen, und gibt die Partie selbst auf.
+      (c) Das Opfer des Geists von 1858 war richtig; er verlor danach die Nerven und glaubte 160
+      Jahre, es sei falsch gewesen. (d) Die alte Fernpartie endet im Roman remis, durch einen Fehler
+      des Helden („Nicht makellos. Schön.“); im Spiel bleiben Sieg und Remis möglich. (e) Im
+      Halbfinale findet der Held den entscheidenden Zug selbst und ruft den Geist nur zum Prüfen;
+      beide wissen nicht, ob er stimmt. (f) Das Finale gewinnt im Roman der Held; Victor freut sich
+      über die Partie und rennt mit dem Formular zu seinem Vater. Im Spiel bleiben alle Ausgänge
+      möglich. (g) Coach Delgado hatte beim Konzern unterschrieben, weil das Geld für den Bus
+      fehlte, und wieder gekündigt. (h) Das Spiel endet auf dem Dachboden: Der Held bringt dem
+      Nachbarskind Lily die erste Frage bei, „Was hängt?“. Empfehlung: alles so übernehmen. Im Roman
+      umgesetzt, im Spiel noch nicht; Widerspruch genügt.
+- [ ] RO10. **Neue Figuren und Porträts:** Der Stil steht (Juno-Probe). Arbeitsweise mit
+      Prompt-Vorlage, Größen und Ablauf: `docs/spiel/24_Figuren_und_Portraets.md`. Kurz:
+      PixelLab, Create from Text, Low Top-Down, 32×32, Highly detailed; Kinder mit „short,
+      child height“; Animation Template motion, Skeleton v3, Walking für South, East, North, West;
+      ZIP an den Hauptchat. Danach Porträt in Gemini mit dem Standbild von vorn als Vorlage. Für
+      Juno fehlen noch die Laufbilder North und West. Weitere Figuren erst, wenn Juno im Spiel
+      läuft (mittel-2 baut die Anzeige um). Offen: wann das Abo (24 $ im Monat) nötig wird.
+- [ ] RO11. **Lernkarten für abgeschlossene Buchkapitel:** Der Kartenplan belohnt im Spiel, wer in
+      der App ein Kapitel des Buches abschließt, mit einer Lernkarte. Das schickt den Spieler
+      mittelbar zum Buch und passt nicht zu einem Spiel, das für sich steht. Empfehlung: Die
+      Lernkarten gibt es stattdessen für die Lektionen im Spiel selbst (Club, Trainer, gesammelte
+      Seiten); in der Buch-App kann es später eine eigene Belohnung geben. Noch nicht umgesetzt;
+      Zustimmung oder Widerspruch genügt.

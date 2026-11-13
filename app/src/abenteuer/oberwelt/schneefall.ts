@@ -73,6 +73,11 @@ export class Schneeschicht {
     this.grafik = szene.add.graphics().setDepth(TIEFE);
   }
 
+  /** Entfernt die Flocken (Wechsel der Teilchen, teilchen.ts). */
+  zerstoere(): void {
+    this.grafik.destroy();
+  }
+
   /** Ein Bild weiter (in update der Szene). */
   aktualisiere(deltaMs: number): void {
     const dt = deltaMs / 1000;

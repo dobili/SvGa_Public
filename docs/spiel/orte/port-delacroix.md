@@ -162,7 +162,8 @@ Knie.
 Am Kai liegen Fischerboote, Pelikane sitzen auf den Pollern, eine Katze schläft auf einem Bootsdach.
 Mr. Batiste flickt ein Netz und spielt dabei Schach auf einem umgedrehten Eimer. Das Musikhaus daneben
 war hundertdreißig Jahre lang der Ort, an dem die Stadt Musik und Schach gemacht hat; jetzt hat das
-Dach ein Loch, durch die Fenster sieht man den Himmel, und über dem Eingang hängt kein Schild mehr.
+Dach ein Loch, durch die Fenster sieht man den Himmel, und über dem Eingang hängt das Schild an einer
+einzigen Schraube.
 
 Im Süden wird die Stadt leiser. In der Rue des Facteurs, der Straße der Instrumentenbauer, steht die
 Klavierwerkstatt der Whitlock-Duvals mit einer Plane über dem Dach; aus der offenen Tür riecht es nach
@@ -184,7 +185,7 @@ Der Ton ist Hoffnung: Niemand jammert, alle packen an, und wer nichts tragen kan
 | 65 Batiste am Kai      | aussen                       | Batiste am Kai mit Eimer und Booten                                                         | Figur `batiste`                                            |
 | 66 Flashback Werkstatt | werkstatt (und aussen davor) | Geruch nach Holz vor der Werkstatt, Hobelbank                                               | `werkbank` (in der Werkstatt), `werkstattTuer`             |
 | 67 Clubkampf           | turnhalle                    | Partie an einem Tisch, Publikum                                                             | `odile`                                                    |
-| 68 Nachfahren          | werkstatt                    | Klaviere, altes Foto an der Wand, Célestes Laptop auf einem Flügel                          | `henri`, `celeste`                                         |
+| 68 Die Familie         | werkstatt                    | Klaviere, altes Foto an der Wand, Célestes Laptop auf einem Flügel                          | `henri`, `celeste`                                         |
 | 69 Benefiz-Simultan    | turnhalle                    | drei Bretter nebeneinander, Spendenkasse, Kinder                                            | `odile`, `remy`, `lou`                                     |
 | 70 Das Schild          | musikhaus                    | neues Dach, Klavier, Bretter auf den Tischen, Schild über der Tür                           | `schild`                                                   |
 | Bläser                 | aussen                       | Bläser auf einer Kiste                                                                      | Figur `blaeser`                                            |

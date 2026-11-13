@@ -26,19 +26,19 @@ Abschnitte, nie Seitenzahlen.
 
 ## 1. Zeitlinie
 
-| Jahr     | Ereignis                                                                                                                                                       |
-| -------- | -------------------------------------------------------------------------------------------------------------------------------------------------------------- |
-| 1831     | Ambrose Whitlock wird in Port Delacroix geboren, Sohn eines Klavierbauers.                                                                                     |
-| ab 1848  | Ambrose spielt in den Kaffeehäusern von New Orleans und wird dort der Beste nach dem jungen Paul Morphy (historische Figur, nur im Hintergrund).               |
-| 1857     | Ambrose reist nach New York zum Ersten Amerikanischen Schachkongress, als Zuschauer. Er sieht Morphy gegen Paulsen gewinnen (Erinnerung in Cedar Creek).       |
-| 1858     | Match in New Orleans gegen Josiah Hale, „den Ingenieur“, Brückenbauer aus dem Norden. Sieben Partien, Ambrose verliert 3 zu 4 mit einem tollkühnen Opfer.      |
-| 1859     | Ambrose fordert Revanche. Hale antwortet mit einem Wort: „Später.“                                                                                             |
-| 1860–64  | Schwere Jahre im Land, in denen kaum jemand Schach spielt. Die beiden schreiben sich Briefe.                                                                   |
-| 1865     | Hale willigt ein: eine Revanchepartie per Brief (Fernpartie). Ambrose stellt sie auf seinem Brett nach.                                                        |
-| 1866     | Ambrose reist nach Norden, um Hale die letzten Züge selbst zu bringen, und stirbt unterwegs am Fieber in einer Bergbausiedlung (später Ghost Town, Akt 4).     |
-| danach   | Das Brett geht an Ambroses Schwester, die nach Maple Falls heiratet. Es bleibt in der Familie, die Figuren stehen noch in der Stellung der unbeendeten Partie. |
-| bis 2025 | Die letzte Nachfahrin, die alte Mrs. Whitlock, lebt im Haus an der Birch Lane. Nach ihrem Tod wird das Haus mit vollem Dachboden günstig verkauft.             |
-| 2026     | {held} und die Mutter ziehen ein. Gegenwart des Spiels: Spätsommer, Schulbeginn.                                                                               |
+| Jahr     | Ereignis                                                                                                                                                                                                                                                                                                                                                |
+| -------- | ------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------- |
+| 1831     | Ambrose Whitlock wird in Port Delacroix geboren, Sohn eines Klavierbauers.                                                                                                                                                                                                                                                                              |
+| ab 1848  | Ambrose spielt in den Kaffeehäusern von New Orleans und wird dort der Beste nach dem jungen Paul Morphy (historische Figur, nur im Hintergrund).                                                                                                                                                                                                        |
+| 1857     | Ambrose reist nach New York zum Ersten Amerikanischen Schachkongress, als Zuschauer. Er sieht Morphy gegen Paulsen gewinnen (Erinnerung in Cedar Creek).                                                                                                                                                                                                |
+| 1858     | Match in New Orleans (Oktober 1858) gegen Josiah Hale, „den Ingenieur“, Brückenbauer aus dem Norden. Sieben Partien, Ambrose verliert 3 zu 4 mit einem tollkühnen Opfer.                                                                                                                                                                                |
+| 1859     | Ambrose fordert Revanche. Hale antwortet mit einem Wort: „Später.“                                                                                                                                                                                                                                                                                      |
+| 1860–64  | Schwere Jahre im Land, in denen kaum jemand Schach spielt. Die beiden schreiben sich Briefe.                                                                                                                                                                                                                                                            |
+| 1865     | Hale willigt ein: eine Revanchepartie per Brief (Fernpartie). Ambrose stellt sie auf seinem Brett nach.                                                                                                                                                                                                                                                 |
+| 1866     | Hales 39. Zug bleibt im Winter wochenlang aus. Ambrose bricht aus Ungeduld von sich aus nach Norden auf, um Hale die letzten Züge selbst zu bringen; Hales Einladung erreicht ihn nie. Er stirbt unterwegs am Fieber in einer Bergbausiedlung (später Ghost Town, Akt 4); dort schreibt er seinen letzten Zug und schickt ihn ab.                       |
+| danach   | Das Brett geht an Ambroses Schwester Claire, die nach Maple Falls heiratet, und von ihr über ihre Töchter weiter. Die Klavierwerkstatt in Port Delacroix führt ein älterer Bruder weiter (er bleibt namenlos); von ihm stammen die Whitlock-Duvals ab. Das Brett bleibt in der Familie, die Figuren stehen noch in der Stellung der unbeendeten Partie. |
+| bis 2025 | Die Letzte aus Claires Linie, die alte Mrs. Whitlock, lebt im Haus an der Birch Lane. Hintergrund, im Roman nicht erzählt: Claires Enkelin heiratete einen entfernten Vetter aus der Linie des Bruders; so kam der Name Whitlock ins Haus zurück. Nach ihrem Tod wird das Haus mit vollem Dachboden günstig verkauft.                                   |
+| 2026     | {held} und die Mutter ziehen ein. Gegenwart des Spiels: Spätsommer, Schulbeginn.                                                                                                                                                                                                                                                                        |
 
 Hinweise für spätere Akte, die Akt 1 nur andeutet:
 
@@ -48,8 +48,7 @@ Hinweise für spätere Akte, die Akt 1 nur andeutet:
   Folgeauftrag mit der Engine gebaut.
 - Victor ist ein Nachfahre von Josiah Hale. Rechnerisch liegen fünf Generationen dazwischen;
   „Urenkel“ aus der Konzeptsammlung stimmt nicht (Frage 3 in Abschnitt 6).
-- „Später“ ist Ambroses wunder Punkt. Das Wort steht schon im Ink-Beispiel (Knoten
-  `ambrose_wartet`) und wird zum Leitmotiv: Hale hat ihn warten lassen, bis es zu spät war.
+- „Später“ ist Ambroses wunder Punkt. Das Wort steht schon im Ink-Beispiel (Knoten `ambrose_wartet`) und wird zum Leitmotiv; in Akt 1 fällt es nur an drei Stellen (erster Tag auf dem Dachboden, Archiv, Steg): Hale hat ihn warten lassen, bis es zu spät war.
 
 ## 2. Figuren
 
@@ -83,8 +82,7 @@ herausfinden, was das eigene Schach ist. Das ist der Bogen über alle vier Akte.
 **Hintergrund.** Geboren 1831 in Port Delacroix (Hafenstadt im Delta, eine Tagesreise flussab von New Orleans), gestorben 1866 auf der Reise zu seinem Rivalen.
 Ein Meister der romantischen Schachzeit, fiktiver Zeitgenosse von Paul Morphy (Dokument 02, 3.2),
 den er bewundert und nie geschlagen hat. Liebt mutige Opfer, schöne Angriffe und Ehre; findet
-vorsichtiges Schach langweilig. Hat 1858 das Match gegen Josiah Hale verloren, weil er im
-letzten Spiel lieber schön als richtig spielen wollte, und das nie verwunden. Wohnt im Brett,
+vorsichtiges Schach langweilig. Hat 1858 das Match gegen Josiah Hale im letzten Spiel nach einem tollkühnen Opfer verloren und das nie verwunden. Er hält das Opfer seither für falsch; es war richtig, er hat es nur falsch fortgesetzt (Auflösung in Szene 77). Wohnt im Brett,
 kann es nicht verlassen und nur sprechen, wenn {held} es berührt oder in der Nähe hat. Andere
 Menschen hören ihn nicht.
 
@@ -106,9 +104,7 @@ darf“, nur im Gespräch mit {held}).
 - „Ich bin seit hundertsechzig Jahren tot. Geduld habe ich trotzdem nicht gelernt.“
 
 **Rolle.** Mentor, Erzähler der Lektionen aus dem Buch (in kleinen Häppchen, Dokument 02, 2.2),
-Kommentator der Schlüsselmomente nach jeder Partie, Geber der Hilfskarten. Er verweist auf das
-Buch nur als „ein Buch, das ich gern geschrieben hätte“, mit Abschnitt („Kapitel 1, Abschnitt
-1.4“), nie mit Seiten.
+Kommentator der Schlüsselmomente nach jeder Partie, Geber der Hilfskarten. Auf das Buch verweist er in Spieltexten nicht (Entscheidung vom 10.11.2026, `docs/spiel/ENTSCHEIDUNGEN.md`).
 
 **Verhältnis zum Schach.** Schach ist Kunst und Ehre. Ein Sieg ohne Schönheit ist für ihn nur
 halb so viel wert; eine Niederlage mit einem kühnen Opfer findet er fast in Ordnung. Genau das
@@ -138,8 +134,7 @@ Erfahrung macht: dass ein Spiel einem das Herz brechen kann.
 
 ### 2.4 Victor Hale, der Rivale
 
-**Hintergrund.** 15 Jahre, Sohn von Graham Hale, leitendem Entwickler bei Perfect Move Inc. in
-Silicon Bay. Privattrainer seit dem fünften Lebensjahr, besucht eine Privatschule, hat eine
+**Hintergrund.** 15 Jahre, Sohn von Graham Hale, leitendem Entwickler bei Perfect Move Inc. in Silicon Bay, der ZERO gebaut hat. Privattrainer seit dem fünften Lebensjahr, besucht eine Privatschule, hat eine
 Wertung, mit der er bei Erwachsenenturnieren vorne mitspielt. Kommt nach Maple Falls, weil der
 Vater dort das Schulamt für ein „Pilotprojekt“ des Konzerns gewinnen soll (Trainer-App statt
 Trainer), und langweilt sich. Er ist nicht fies, sondern unter Druck: Jede Partie ist für ihn eine
@@ -306,18 +301,16 @@ Kleinstadt am Fluss mit Wasserfall, Ahornbäume, eine Hauptstraße, Holzhäuser 
 Spätsommer, die Blätter werden an den Rändern schon rot. Ruhig, freundlich, ein bisschen
 verschlafen.
 
-| Karte                   | Art               | Zweck                                                                                | Figuren                                    | Atmosphäre                                                                        |
-| ----------------------- | ----------------- | ------------------------------------------------------------------------------------ | ------------------------------------------ | --------------------------------------------------------------------------------- |
-| `mapleFalls.aussen`     | außen             | Hauptstraße mit Haus an der Birch Lane, Schule, Diner, Bushaltestelle; Wege zu allem | Lily (vor dem Nachbarhaus), Juno (Szene 5) | Ahornblätter auf dem Gehweg, das Rauschen des Wasserfalls hinter den Dächern.     |
-| `mapleFalls.park`       | außen (Randkarte) | Stadtpark am Fluss mit Halfpipe und Bänken; Ausgang zur Landstraße nach Cedar Creek  | Jo, Mr. Abernathy                          | Rollen auf Beton, Enten, eine Bank, auf der immer jemand sitzt.                   |
-| `mapleFalls.wohnzimmer` | innen             | Zuhause, Speichern im Gespräch mit Mama, Treppe zum Dachboden                        | Mama                                       | Umzugskartons als Möbel, Pizzakarton auf dem Boden, Licht durch staubige Fenster. |
-| `mapleFalls.dachboden`  | innen             | Fund des Bretts, Ort für Gespräche allein mit Ambrose                                | Ambrose (im Brett)                         | Staub, Kisten der alten Mrs. Whitlock, ein Fenster mit Blick auf die Ahornbäume.  |
-| `mapleFalls.clubraum`   | innen             | Schachteam: Aufgabenreihen, Clubkampf, Victor-Szene                                  | Coach Delgado, Sam, Juno, später Victor    | Klassenzimmer mit Pokalen von 1994, ein Brett mit fehlender schwarzer Dame.       |
+| Karte                   | Art               | Zweck                                                                                | Figuren                                    | Atmosphäre                                                                                                                                                                                       |
+| ----------------------- | ----------------- | ------------------------------------------------------------------------------------ | ------------------------------------------ | ------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------ |
+| `mapleFalls.aussen`     | außen             | Hauptstraße mit Haus an der Birch Lane, Schule, Diner, Bushaltestelle; Wege zu allem | Lily (vor dem Nachbarhaus), Juno (Szene 5) | Ahornblätter auf dem Gehweg, das Rauschen des Wasserfalls hinter den Dächern.                                                                                                                    |
+| `mapleFalls.park`       | außen (Randkarte) | Stadtpark am Fluss mit Halfpipe und Bänken; Ausgang zur Landstraße nach Cedar Creek  | Jo, Mr. Abernathy                          | Rollen auf Beton, Enten, eine Bank, auf der immer jemand sitzt.                                                                                                                                  |
+| `mapleFalls.wohnzimmer` | innen             | Zuhause, Speichern im Gespräch mit Mama, Treppe zum Dachboden                        | Mama                                       | Umzugskartons als Möbel, Pizzakarton auf dem Boden, Licht durch staubige Fenster.                                                                                                                |
+| `mapleFalls.dachboden`  | innen             | Fund des Bretts, Ort für Gespräche allein mit Ambrose                                | Ambrose (im Brett)                         | Staub, Kisten der alten Mrs. Whitlock, ein Fenster mit Blick auf die Ahornbäume.                                                                                                                 |
+| `mapleFalls.clubraum`   | innen             | Schachteam: Aufgabenreihen, Clubkampf, Victor-Szene                                  | Coach Delgado, Sam, Juno, später Victor    | Klassenzimmer im Erdgeschoss (Raum 12, Blick auf den Fahnenmast) mit Pokalen von 1994, ein Brett mit fehlender schwarzer Dame; nach Szene 12 steht ein Bildschirm von Perfect Move auf dem Pult. |
 
 Entscheidung: Der Park bleibt eine eigene kleine Außenkarte, wie in `orte.json` angelegt, und
-wird zugleich der Stadtrand mit dem Weg nach Cedar Creek (wie ein kurzer Weg zwischen zwei
-Städten). Damit hat Maple Falls zwei kleine Außenkarten und drei Innenräume; das bleibt im Rahmen,
-weil der Park die Route ersetzt.
+ist zugleich der Stadtrand mit dem Ausgang zum Weg nach Cedar Creek. Der Weg (`wegMapleCedar`) hat zwei Karten, Landstraße und Flussweg; der Zedernpfad bleibt bis zur zweiten Clubnadel gesperrt. Damit hat Maple Falls zwei kleine Außenkarten und drei Innenräume.
 
 ### 3.2 Cedar Creek (Ort 2, `cedarCreek`)
 
@@ -333,8 +326,7 @@ Backstein von 1890 als größtes Gebäude. Ein wenig altmodisch, still, riecht n
 
 ### 3.3 Was in Akt 1 nicht vorkommt
 
-Perfect Move Inc. und die KI ZERO erscheinen in Akt 1 nur als Namen: auf Victors Tablet, im
-Gespräch über das Pilotprojekt, auf einem Plakat in Cedar Creek. Kein Aufkauf, kein Schummeln;
+Perfect Move Inc. und die KI ZERO erscheinen in Akt 1 nur als Namen: auf Victors Tablet, im Gespräch über das Pilotprojekt, auf dem Bildschirm, der nach Szene 12 im Clubraum stehen bleibt, auf einem Plakat in Cedar Creek. Kein Aufkauf, kein Schummeln;
 das beginnt in Akt 2 (Riverton). Die Arbeitsnamen bleiben bis zum Markencheck; „ZERO“ soll
 wegen der Nähe zu einem realen Programm umbenannt werden (Dokument 02, Abschnitt 5).
 
@@ -374,8 +366,7 @@ lernen willst.“). Danach die zwei Schlüsselmomente mit Ambrose und die Lektio
 
 **4. Abend im neuen Haus** · `akt1.ersterAbend`
 Ort `mapleFalls.wohnzimmer` · Mama · Ink `maple-falls-wohnzimmer.erster_abend`. Ereignis: Dialog.
-{held} kommt mit dem Brett herunter. Mama sieht die Stellung und sagt, ohne nachzudenken: „Schwarz
-steht besser.“ Dann schnell: „Hab ich irgendwo gelesen.“ Sie erwähnt, dass die Schule ein
+{held} kommt mit dem Brett herunter. Mama sieht die Stellung und sagt, ohne nachzudenken: „Weiß steht besser.“ Dann schnell: „Hab ich irgendwo gelesen.“ Sie erwähnt, dass die Schule ein
 Schachteam hat (Zettel im Briefkasten). Ambrose leise: „Ihre Mutter, wenn ich so sagen darf, lügt
 schlecht.“ Andeutung für Ironwood. Etwa 3 Minuten.
 
@@ -495,8 +486,7 @@ Brett, du bist dran. Samstag spielen wir in Cedar Creek.“ Etwa 30 Minuten.
 
 **12. Victor** · `akt1.victorTrifft`, danach `akt1.victorNiederlage` · H `mapleFalls.victor`
 Ort `mapleFalls.clubraum` · Victor, Graham Hale, Coach Delgado, Juno ·
-Ink `maple-falls-clubraum.victor`. Graham Hale stellt dem Schulamt im Clubraum das Pilotprojekt
-vor; Victor wartet gelangweilt, sieht die Clubnadel und fordert {held} heraus („Zeig mal, was eine
+Ink `maple-falls-clubraum.victor`. Graham Hale stellt dem Schulamt im Clubraum das Pilotprojekt vor, auf einem Bildschirm, den er auf das Pult stellt; der Bildschirm bleibt nach der Szene im Clubraum stehen (Zustandsfassung); Victor wartet gelangweilt, sieht die Clubnadel und fordert {held} heraus („Zeig mal, was eine
 Nadel hier wert ist.“). Ambrose hört den Namen Hale und verstummt mitten im Satz.
 Ereignis: Partie gegen Victor (Zielstärke E + 500, menschlich; Profil `mapleFalls.victor`,
 Begegnung `mapleFalls.victor`) nach Regelwerk R33: **Trainingsstellung** aus dem Spanier um Zug
@@ -522,20 +512,14 @@ zeigt die zwei Momente, dann fragt {held} nach dem Namen Hale. Ambrose: „Ein N
 Hales.“ Ziel im Tagebuch: „Ich will besser werden.“ Etwa 30 Minuten.
 
 **13. Aufbruch** · `akt1.aufbruch`
-Ort `mapleFalls.wohnzimmer`, dann `mapleFalls.park` · Mama, Juno. Ereignis: Dialog. Mama erlaubt
-das Auswärtsspiel („Mit dem Coach im Schulbus? Gut. Brett nicht verlieren.“). An der
-Bushaltestelle im Park (Auslöser `bushaltestelle`, Ink `maple-falls-park.bushaltestelle`) wartet
-der Schulbus; „Einsteigen“ ruft `reise("cedarCreek.aussen", "bushaltestelle")` (Regelwerk R41).
-Vorher sagt die Haltestelle nur: „Heute fährt er ohne dich.“ Etwa 3 Minuten.
+Ort `mapleFalls.wohnzimmer`, dann `mapleFalls.park` und der Weg `wegMapleCedar` (Landstraße, Flussweg) · Mama, Juno. Ereignis: Dialog. Am Freitag sagt der Coach noch in Maple Falls, vor dem Aufbruch, die Clubchefin von Cedar Creek sei „eine Legende, die niemand kennt“. Mama erlaubt, dass {held} am Freitag nach der Schule mit Juno zu Fuß vorausgeht („Mit Juno. Am Fluss. Gut.“ – „Brett nicht verlieren.“); die beiden übernachten im Lesesaal der Bibliothek, der Coach kommt am Samstag mit dem Team im Bus. Der erste Weg wird zu Fuß gegangen: vom Parkausgang über Landstraße und Flussweg. Der Bus an der Haltestelle im Park (Auslöser `bushaltestelle`, `reise("cedarCreek.aussen", "bushaltestelle")`, Regelwerk R41) bleibt für die Rückfahrt und für spätere Fahrten; vorher sagt die Haltestelle nur: „Heute fährt er ohne dich.“ Etwa 11 Minuten (3 für den Aufbruch, 8 für den Weg zu Fuß mit Ada, Silas und Ambroses Erinnerung).
 
 ### Cedar Creek
 
 **14. Ankunft in Cedar Creek** · `akt1.ankunftCedarCreek`
-Ort `cedarCreek.aussen` (Ankunft am Auslöser `bushaltestelle`) · Coach Delgado, Juno, Sam.
+Ort `cedarCreek.aussen` (Ankunft zu Fuß vom Flussweg, Freitagnachmittag) · Juno; Coach Delgado, Sam und das Team kommen am Samstag mit dem Bus (Auslöser `bushaltestelle`).
 Ereignis: Dialog. Zurück nach Maple Falls geht es jederzeit mit dem Bus am Auslöser `busZurueck`
-(Dialog, `reise` zum Park). Das Auswärtsspiel der
-Kreisliga findet im Bibliotheksclub statt; der Coach sagt, die Clubchefin sei „eine Legende, die
-niemand kennt“. Auf einem Plakat: „Perfect Move – Schach für die Zukunft. Bald auch in deiner
+(Dialog, `reise` zum Park). Das Auswärtsspiel der Kreisliga findet am Samstag im Bibliotheksclub statt; {held} und Juno schlafen die Nacht davor auf Matten im Lesesaal (Mrs. Okafor: „Ihr seid die Vorhut.“). Auf einem Plakat: „Perfect Move – Schach für die Zukunft. Bald auch in deiner
 Stadt.“ Ambrose: „Ein Plakat, das droht. Wie reizend.“ Etwa 3 Minuten.
 
 **15. Der Bibliotheksclub** · `akt1.bibliotheksclub` · H `cedarCreek.archiv1858`
@@ -569,11 +553,9 @@ nasse Kartons nach einem Wasserschaden umzuräumen. Belohnung: Karte **Ambroses 
 **19. 1858** · `akt1.erzaehlung1858` · H `cedarCreek.archiv1858`
 Ort `cedarCreek.archiv` · Ambrose, {held} (Mrs. Okafor ist nach oben gegangen) ·
 Ink `cedar-creek-archiv.erzaehlung_1858`. Ereignis: Dialog, der längste von Akt 1 (höchstens
-zwei Bildschirme am Stück, dann eine Wahl). In einer vergilbten Zeitung (erfundener Titel, etwa
-„Crescent City Herald“) steht: „Mr. Hale, Ingenieur, schlägt Mr. Whitlock im Match, vier zu drei.
+zwei Bildschirme am Stück, dann eine Wahl). In einer vergilbten Zeitung vom Oktober 1858 (erfundener Titel, etwa „Crescent City Herald“) steht: „Mr. Hale, Ingenieur, schlägt Mr. Whitlock im Match, vier zu drei.
 Mr. Whitlocks Opfer im letzten Spiel wird noch lange besprochen werden. Mr. Hale nannte es
-‚bemerkenswert unnötig‘.“ Ambrose erzählt zum ersten Mal: das Match, das Opfer, das er nicht lassen
-konnte, die Revanche und das Wort „Später“. Er erwähnt nicht, dass er auf der Reise zu Hale
+‚bemerkenswert unnötig‘.“ Ambrose erzählt zum ersten Mal: das Match, das Opfer, das er nicht lassen konnte und für falsch hält („Hat es gestimmt?“ – „Nein.“; sein Irrtum bleibt bis Szene 77 stehen), die Revanche und das Wort „Später“. Er erwähnt nicht, dass er auf der Reise zu Hale
 gestorben ist, und nicht, wie Hale mit Vornamen hieß. {held} fragt: „Hale wie Victor?“ Ambrose:
 „Hale wie viele.“ Wirkung: Szene gesetzt, Ambroses Vertrauen +1 (`ambroseVertrauen`). Etwa 8
 Minuten.
@@ -621,33 +603,31 @@ hat ein Angler verloren. Vor zwei Jahren schon.“ Etwa 8 Minuten.
 **24. Clubkampf Cedar Creek** · `akt1.clubnadelCedarCreek` · H `cedarCreek.clubkampf`
 Ort `cedarCreek.bibliothek` · Mrs. Okafor, Team Maple Falls als Zuschauer. Ereignis: Partie gegen
 den Clubchef, Zielstärke E + 280, Stil Fallensteller (Grundreihe, Mattbilder), Gegnerprofil im
-Folgeauftrag. Wie Szene 11: Kartenwahl, Kipppunkt, Clubnadel, Ambroses Notiz. Zusätzliche
-Belohnung beim ersten Sieg: Karte **Mentor-Zug** mit Ambroses erstem Zögern („Lass mich. Nur dieses
-eine Mal.“, Spruch aus den Spieltexten). Dazu gewinnt das Team das Auswärtsspiel; der Coach pfeift.
+Folgeauftrag. Wie Szene 11: Kartenwahl, Kipppunkt, Clubnadel, Ambroses Notiz. Mitten in der Partie sagt Ambrose zum ersten Mal „Lass mich. Nur dieses eine Mal.“ und hält sich dann doch zurück. Die Karte **Mentor-Zug** wird erst nach dem Clubkampf vergeben, beim ersten Sieg (nur hier, bei Club 2). Dazu gewinnt das Team das Auswärtsspiel; der Coach pfeift.
 Etwa 30 Minuten.
 
 **25. Ende von Akt 1** · `akt1.ende`
 Ort `cedarCreek.aussen` (Steg, Abenddämmerung), dann Rückfahrt · Ambrose, {held}, kurz Juno ·
 Ink `cedar-creek-aussen.ende_akt1`. Ereignis: Dialog. Am Steg fragt {held}, was Ambrose eigentlich
 will. Ambrose zum ersten Mal offen: „Eine Partie ohne Makel. Eine, über die man in hundert Jahren
-noch spricht. Ich hatte sie fast. Dann sagte jemand ‚Später‘.“ {held}: „Dann spielen wir sie eben
+noch spricht. Ich hatte sie fast. Dann sagte jemand ‚Später‘.“ Die Fernpartie nennt er dabei, ohne Jahreszahl: „Per Brief. Jeder Zug tagelang unterwegs, manchmal Wochen.“ Über die Reise und seinen Tod sagt er nichts. {held}: „Dann spielen wir sie eben
 jetzt.“ Ambrose lacht, zum ersten Mal ohne Spott. Im Bus liest Juno aus dem Tagebuch vor: zwei
 Clubnadeln. Auf Junos Handy eine Nachricht: Der Schachclub im Park von Riverton wird „neu
 aufgestellt“, mit Perfect Move. Übergang zu Akt 2. Etwa 4 Minuten.
 
 ### Zeitrechnung
 
-| Teil                                                      | Minuten                                                   |
-| --------------------------------------------------------- | --------------------------------------------------------- |
-| Dialoge und Laufen (Szenen 1, 2, 4, 5, 13–15, 19, 21, 25) | etwa 50                                                   |
-| Partien Hauptstory (3, 11, 12, 24)                        | etwa 110                                                  |
-| Aufgabenreihen (6, 16)                                    | etwa 30                                                   |
-| Nebenquests und Erinnerung (7–9, 17, 18, 20, 22)          | etwa 65                                                   |
-| Straßengegner (10, 23)                                    | etwa 15                                                   |
-| **Summe**                                                 | **etwa 270, also 3,5 bis 4,5 Stunden mit Wiederholungen** |
+| Teil                                                                                       | Minuten                                               |
+| ------------------------------------------------------------------------------------------ | ----------------------------------------------------- |
+| Dialoge und Laufen (Szenen 1, 2, 4, 5, 13–15, 19, 21, 25 und die Erweiterungen des Romans) | etwa 83                                               |
+| Partien Hauptstory (3, 11, 12, 24)                                                         | etwa 110                                              |
+| Aufgabenreihen (6, 16)                                                                     | etwa 30                                               |
+| Nebenquests und Erinnerung (7–9, 17, 18, 20, 22)                                           | etwa 65                                               |
+| Straßengegner (10, 23)                                                                     | etwa 15                                               |
+| **Summe**                                                                                  | **etwa 300, also 4 bis 5 Stunden mit Wiederholungen** |
 
-Das liegt am oberen Rand der Vorgabe. Wenn der Spielzeitzähler (Entscheidung C5) mehr zeigt,
-entfallen zuerst Szene 21 (optional) und Szene 23 (Straße), dann wird die Erinnerung kürzer
+Die Minuten für Dialoge und Laufen folgen dem Roman (`roman/akt1_befunde.md`, Abschnitt 1): 33 Minuten mehr Geschichte, damit etwa 27 % der Zeit statt 19 %. Akt 1 soll nicht länger werden als etwa fünf Stunden. Wenn der Spielzeitzähler (Entscheidung C5) mehr zeigt,
+entfällt zuerst ein Straßengegner (Szene 23), nicht eine Szene der Geschichte; dann Szene 21 (optional), dann wird die Erinnerung kürzer
 (ab Zug 15).
 
 ### Verteilung der Nebenquests
@@ -669,7 +649,7 @@ Münzen in `11_Karten_und_Gegenstaende.md`, Abschnitt 7.
 | --------------------- | ----------------------------------------------------------------------------------------- | ----------------------------------------------------- |
 | Fingerzeig            | Szene 2, Ambrose                                                                          | erste Karte, im Ink-Beispiel schon so                 |
 | Gefahrenradar         | Clubnadel Maple Falls (Quest `mapleFalls.viertesBrett`)                                   | passt zur Frage „Was hängt?“                          |
-| Mentor-Zug            | erste Clubnadel Maple Falls und Cedar Creek (R27)                                         | erste Nadel je Club                                   |
+| Mentor-Zug            | nach dem Clubkampf in Cedar Creek, nur Club 2 (Szene 24)                                  | Vertrauensbeweis (Frage 8)                            |
 | Zweite Chance         | Szene 9 (zwei), Straßensiege, erste Reihe Cedar Creek                                     | häufige leichte Karte, macht Anfänger mutiger         |
 | Ambroses Flüstern     | Szenen 7, 8, 17, 18 (Rätsel und Hilfe, R27)                                               | erste mittlere Karte, als Dank für Hilfe              |
 | Bauernvorgabe         | Szene 20, Erinnerung New York                                                             | erste Erinnerung der Staffel                          |
@@ -695,8 +675,7 @@ Münzen in `11_Karten_und_Gegenstaende.md`, Abschnitt 7.
   Kind ist und später einsieht, wie er war.
 - Lob konkret, nicht allgemein: nicht „Super!“, sondern „Dein Turm stand auf der offenen Linie. Das
   war es.“
-- Buchverweise nur als Kapitel und Abschnitt, höchstens einer je Gespräch, nie als Pflicht: „Wenn
-  du mehr willst: Kapitel 7, Abschnitt 7.4.“ Keine Buchzitate über einen kurzen Satz hinaus.
+- Keine Verweise auf das Buch und keine Buchtexte in Spieltexten (Entscheidung vom 10.11.2026, `docs/spiel/ENTSCHEIDUNGEN.md`).
 - Keine Namen realer Produkte, Spiele, Serien oder lebender Spieler. Historische Meister vor 1900
   (Morphy, Paulsen, Anderssen) dürfen im Hintergrund vorkommen, wenn die Partie in
   `klassiker.json` steht.
@@ -731,7 +710,7 @@ Münzen in `11_Karten_und_Gegenstaende.md`, Abschnitt 7.
    Man wird satt, aber man erinnert sich nicht.“
 
 Dazu: Ambroses Humor über seinen Tod bleibt freundlich und kurz, nie gruselig, nie mit Details zum
-Sterben. Über 1866 spricht er in Akt 1 gar nicht.
+Sterben. Über die Reise und seinen Tod 1866 spricht er in Akt 1 nicht; die Fernpartie nennt er am Steg, ohne Zahl.
 
 ### 5.4 Sprechweisen der anderen auf einen Blick
 
@@ -763,8 +742,7 @@ Wie in `inhalte/abenteuer/README.md` und im Ink-Beispiel, hier nur die Regeln f�
 - Globale Variablen für Akt 1: `held`, `ambroseVertrauen` (vorhanden), `brettBeruehrt`
   (vorhanden), dazu `kenntHale` (nach Szene 12), `sternennacht` (Teilnahme in Szene 22),
   `victorBesiegt` (seltene Variante in Szene 12).
-- Jede Wahl führt weiter; keine Sackgassen, aus denen man nur durch Neustart kommt. Wer „Später“
-  wählt, kommt mit einem Satz zurück an denselben Ort.
+- Jede Wahl führt weiter; keine Sackgassen, aus denen man nur durch Neustart kommt. Wer „Nicht jetzt.“ oder „Gleich.“ wählt, kommt mit einem Satz zurück an denselben Ort. Die Antwortwahl „Später“ gibt es in Akt 1 nur an den drei Stellen des Leitmotivs (erster Tag, Archiv, Steg).
 
 ## 6. Offene Fragen an den Autor
 
@@ -828,13 +806,13 @@ Teil 1 unverändert. Alle Namen sind Arbeitsnamen bis zum Markencheck.
 
 ## 8. Zeitlinie, Ergänzung für Akt 2
 
-| Jahr | Ereignis                                                                                                                                                                                              |
-| ---- | ----------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------- |
-| 1851 | Der zwanzigjährige Ambrose begleitet seinen Vater auf einer Reise nach London (Klavierholz kaufen). In einem Kaffeehaus am Strand sieht er die „Unsterbliche Partie“ von Anderssen gegen Kieseritzky. |
-| 1858 | Nach der Niederlage gegen Hale liest Ambrose in der Zeitung, wie Morphy in London Bird schlägt, und spielt die Partie nachts nach (Erinnerung in Ironwood).                                           |
-| 1866 | Ein Brief von Hale an Ambrose wird nie zugestellt: Er bleibt im Postamt der Bahnstation Ironwood liegen (übergreifender Fund, Auflösung in Akt 3).                                                    |
-| 2001 | Laura (Mama), 17, verliert in Ironwood das Finale der Jugendmeisterschaft des Bundesstaats nach einem übersehenen Spieß und hört auf zu spielen. Big Joe war damals ihr Trainer.                      |
-| 2026 | Herbst: Perfect Move kauft den Parkclub von Riverton und danach den Stahlwerker-Club von Ironwood.                                                                                                    |
+| Jahr | Ereignis                                                                                                                                                                                                                                                                                                       |
+| ---- | -------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------- |
+| 1851 | Der zwanzigjährige Ambrose begleitet seinen Vater auf einer Reise nach London (Klavierholz kaufen). In einem Kaffeehaus am Strand sieht er die „Unsterbliche Partie“ von Anderssen gegen Kieseritzky.                                                                                                          |
+| 1858 | Oktober 1858: In der Nacht nach der Niederlage gegen Hale liest Ambrose in einer sechs Wochen alten Londoner Zeitung, wie Morphy Bird schlägt, und spielt die Partie nach (Erinnerung in Ironwood).                                                                                                            |
+| 1866 | Hale schickt am selben Tag seinen 39. Zug und eine Einladung nach Norden. Der Zug kommt an. Den Brief mit der Einladung hat Hale versiegelt, aber nicht in den Umschlag gelegt: Der Umschlag geht leer hinaus und bleibt im Postamt der Bahnstation Ironwood liegen (übergreifender Fund, Auflösung in Akt 3). |
+| 2001 | Laura (Mama), 17, verliert in Ironwood das Finale der Jugendmeisterschaft des Bundesstaats nach einem übersehenen Spieß und hört auf zu spielen. Big Joe war damals ihr Trainer.                                                                                                                               |
+| 2026 | Herbst: Perfect Move kauft den Parkclub von Riverton und danach den Stahlwerker-Club von Ironwood.                                                                                                                                                                                                             |
 
 Entscheidung: Der nie zugestellte Brief verbindet Akt 2 mit Akt 3 (Versöhnung in Desert Springs):
 Hale hat Ambrose nicht vergessen. Sein Inhalt wird erst in Akt 3 gelesen (Abschnitt 11.3).
@@ -846,7 +824,7 @@ Hale hat Ambrose nicht vergessen. Sein Inhalt wird erst in Akt 3 gelesen (Abschn
 **Ambrose.** Neu in Akt 2 ist die Versuchung (Konzeptsammlung): Die Bildschirmtische in Riverton
 spielen fehlerlos. Ambrose ist empört („Eine Rechenmaschine, die nie zweifelt, ist kein Spieler.“)
 und schaut doch immer wieder hin. Nach dem Flashback sagt er zum ersten Mal: „Was wäre, wenn sie
-die Partie spielen könnte, die ich nie spielte?“ {held} merkt es; Juno auch. Das bereitet Akt 3
+die Partie spielen könnte, die ich nie spielte?“ {held} merkt es; Juno merkt nur, dass {held} still wird (von Ambrose weiß sie erst seit Dezember, Szene 51). Das bereitet Akt 3
 vor (er läuft fast zur Maschine über). Sprechweise unverändert; neue Stimmung `fern` (wenn er auf
 die Tische schaut).
 
@@ -959,7 +937,7 @@ schlafen will“. Beispiel: „Deine Mutter war das stillste Kind der Straße. A
 gewonnen hat.“ Rolle: öffnet Mamas Geheimnis (Szene 39).
 
 **Mr. Teague** (Nebenfigur). Walter Teague, achtzig, er, ehrenamtlicher Hüter des Heimatmuseums im
-alten Bahnhof. Hütet Postsäcke von 1870, die nie geöffnet wurden. Rolle: übergreifender Fund „Der
+alten Bahnhof. Hütet Postsäcke von 1866, die nie geöffnet wurden. Rolle: übergreifender Fund „Der
 leere Umschlag“ (Szene 41).
 
 ### 9.4 Sprechweisen auf einen Blick (Ergänzung zu 5.4)
@@ -1151,8 +1129,7 @@ schlägt, draußen leuchten die Bildschirmtische, und Ambrose und sagt: „Ich w
 Gang durch das Kaffeehaus (Zeitungsleser, Kaffeeduft, Tabakrauch nur als Wort), Ambrose (20) steht
 hinter zwei Spielern. Dann Zugerraten (C3) der Partie Anderssen gegen Kieseritzky, London 1851,
 `klassik-unsterbliche` aus `inhalte/zusatzpartien/klassiker.json`, mit Weiß ab Zug 17 bis zum
-Matt im 23. Zug: Anderssen gibt beide Türme und die Dame. Ambrose hält vor Zug 18 an: „Jetzt gibt
-er den zweiten Turm. Was hättest du getan?“ Zurück in der Gegenwart, leise: „Diese Maschinen
+Matt im 23. Zug: Anderssen gibt beide Türme und die Dame. Zugfolge wie in `klassiker.json`: Läuferzug, Schwarz nimmt den ersten Turm. Dort, vor 19. e5, hält Ambrose an: „Er hat einen Turm weniger, und sein zweiter Turm hängt auch. Was hättest du getan?“ Der Spieler errät als Erstes den stillen Bauernzug 19. e5. Danach nimmt Schwarz den zweiten Turm mit Schach, König vor, Springerschach, Damenopfer, Läufermatt. Zurück in der Gegenwart, leise: „Diese Maschinen
 würden das nie spielen. Oder doch? Was wäre, wenn sie meine Partie spielen könnten?“ Juno merkt,
 dass {held} still ist. Belohnung: **Partiefragment 3**, bei mindestens 70 Prozent Karte
 **Bauernvorgabe** (R27, R31). Etwa 5 Minuten (2 Minuten Gang, 3 Minuten Zugerraten).
@@ -1245,10 +1222,7 @@ Damengambit (Profil `mapleFalls.mutter`, Rolle `story`, Zielstärke E + 250, ein
 Fehlerhäufigkeit im Mittelspiel, Gewicht `taktikUebersehen` hoch, blinder Fleck `roentgen`
 (Spieße!)), Karten erlaubt, zählt für die App (R37), jeder Ausgang führt weiter.
 
-- **{held} gewinnt:** Mama lacht und weint gleichzeitig. „Du hast mich mit einem Spieß erwischt.
-  Natürlich.“ Big Joe: „Kumpel, das war ihr Fehler von damals. Jetzt ist er erledigt.“
-- **Mama gewinnt oder Remis:** „Ich hab ihn gesehen. Den Läufer. Diesmal hab ich ihn gesehen.“ Sie
-  muss sich setzen.
+Fassung des Romans, **vorläufig** (die Frage RO6 liegt noch beim Autor): In der Partie entsteht das Bild von 2001 wieder, als geführter Moment unabhängig vom Ausgang, und Mama sieht den Läufer selbst: „Ich hab ihn gesehen. Den Läufer. Diesmal hab ich ihn gesehen.“ Sie muss sich setzen. Wer gewinnt, bleibt offen. Die frühere Fassung je nach Ausgang („Du hast mich mit einem Spieß erwischt.“, dazu Big Joes Satz vom „Fehler von damals“) entfällt.
 
 In beiden Fällen: Mama sagt, sie fährt ab jetzt mit zu den Turnieren. „Jemand muss ja auf die
 Zeit achten. Du spielst zu langsam.“ Ambrose leise: „Ihre Mutter, wenn ich so sagen darf, spielt
@@ -1370,8 +1344,7 @@ Münzen nach G1 (5 bis 20).
    Fund am Steg gehört nach Akt 1 (siehe Bericht); die Auflösung ist hier.
 3. **„Umschlag ohne Brief“** (neu, Ironwood, Szene 41) mit **„Nietenkopf J. H.“** (Route 3): geht
    erst in Akt 3 auf. Plan für Akt 3: In Desert Springs, nach der Versöhnung, findet {held} in
-   einem Antiquariat den Brief, der zum Umschlag gehört (das Siegel passt). Hale schreibt 1866:
-   „Komm nach Norden. Wir spielen die letzten Züge an einem Brett.“ Ambrose erfährt, dass Hale auf
+   einem Antiquariat den Brief, der zum Umschlag gehört (er passt genau hinein; sein Siegel ist Hales eigenes, mit einer anderen Fesselung als das Siegel des Postmeisters am Postsack). Hale schreibt 1866: „Kommen Sie nach Norden. Wir spielen die letzten Züge an einem Brett.“ Ambrose erfährt, dass Hale auf
    ihn gewartet hat; das trägt die Versöhnung mit dem Geist und die Enthüllung in Akt 4 (Victor
    ist ein Nachfahre). Der Nietenkopf zeigt vorher, dass Hale nach 1866 noch Brücken baute, also
    lange lebte.
@@ -1464,23 +1437,22 @@ der Veröffentlichung umbenannt werden (Dokument 02, Abschnitt 5).
    Wiederaufbau.
 4. Dort wirft man {held} vor, mit dem Brett zu schummeln wie der Konzern mit der Maschine; {held}
    spielt den Clubkampf allein, und Ambrose zieht sich zu ZERO zurück (Tiefpunkt).
-5. Ambrose findet seine Nachfahren, die Klavierbauer Whitlock-Duval, die ohne Schach glücklich
-   sind; die junge Céleste spielt eine einzige Partie aus Neugier, und Ambrose lernt loszulassen.
+5. Ambrose findet seine Familie, die Klavierbauer Whitlock-Duval (Nachkommen eines älteren Bruders, der die Werkstatt weiterführte), die ohne Schach glücklich sind; die junge Céleste spielt eine einzige Partie aus Neugier, und Ambrose lernt loszulassen.
 6. Im Canyon vor Desert Springs versöhnen sich {held} und Ambrose; er lehrt das romantische Opfer
    und erzählt endlich, wie er 1866 auf der Reise zu Hale starb.
 7. In Desert Springs findet {held} den Brief zum leeren Umschlag: Hale hat auf Ambrose gewartet.
 
 ## 17. Zeitlinie, Ergänzung für Akt 3
 
-| Jahr         | Ereignis                                                                                                                                                                                                            |
-| ------------ | ------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------- |
-| 1831         | Ambrose wird in **Port Delacroix** geboren, einer Hafenstadt im Delta eine Tagesreise flussab von New Orleans; Teil 1 nennt New Orleans, weil er dort spielte (siehe Bericht).                                      |
-| 1840         | Der neunjährige Ambrose fegt Sägespäne in der Klavierwerkstatt seines Vaters und lernt dort Schach auf einem Brett aus Resthölzern (Flashback, Szene 66).                                                           |
-| 1852         | Nach der Londonreise spielt Ambrose seinem Vater und der kleinen Schwester Claire in der Werkstatt den Anfang der „Unsterblichen Partie“ vor (Flashback, Szene 66).                                                 |
-| 1866         | Hale schreibt aus dem Westen: „Komm nach Norden. Wir spielen die letzten Züge an einem Brett.“ Ambrose bricht auf und stirbt unterwegs; der Brief erreicht ihn nie (Umschlag in Ironwood, Brief in Desert Springs). |
-| 1879         | Josiah Hale baut die Eisenbahnbrücke über den Canyon bei Desert Springs, seine letzte Brücke; die Nieten tragen „J. H.“ wie in Ironwood.                                                                            |
-| 1885         | Hale stirbt in Desert Springs. Sein Nachlass geht an seine Söhne; ein Notizbuch bleibt in der Familie (übergreifende Quest für Akt 4).                                                                              |
-| letztes Jahr | Ein Hurrikan trifft Port Delacroix im Spätsommer und zerstört das alte Musikhaus. Akt 3 spielt im Winter und Frühjahr danach: Wiederaufbau.                                                                         |
+| Jahr         | Ereignis                                                                                                                                                                                                                                                                                                                                                                                                                                                |
+| ------------ | ------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------- |
+| 1831         | Ambrose wird in **Port Delacroix** geboren, einer Hafenstadt im Delta eine Tagesreise flussab von New Orleans; Teil 1 nennt New Orleans, weil er dort spielte (siehe Bericht).                                                                                                                                                                                                                                                                          |
+| 1840         | Der neunjährige Ambrose fegt Sägespäne in der Klavierwerkstatt seines Vaters und lernt dort Schach auf einem Brett aus Resthölzern (Flashback, Szene 66).                                                                                                                                                                                                                                                                                               |
+| 1852         | Nach der Londonreise spielt Ambrose seinem Vater und der kleinen Schwester Claire in der Werkstatt den Anfang der „Unsterblichen Partie“ vor, auf dem Brett, das er gerade gebaut hat; die Buchstaben „A. W. 1857“ brennt er erst fünf Jahre später ein (Flashback, Szene 66). Die Werkstatt führt später ein älterer Bruder weiter; er bleibt namenlos und kommt im Flashback nicht vor.                                                               |
+| 1866         | Hale schickt aus dem Westen seinen 39. Zug und am selben Tag die Einladung: „Kommen Sie nach Norden. Wir spielen die letzten Züge an einem Brett.“ Der Zug ist im Winter wochenlang unterwegs; Ambrose bricht aus Ungeduld von sich aus auf und stirbt unterwegs. Die Einladung erreicht ihn nie: Der Umschlag ging leer hinaus (Ironwood), den versiegelten Brief fand Hale zu spät auf seinem Tisch und öffnete ihn nie (Nachlass in Desert Springs). |
+| 1879         | Josiah Hale baut die Eisenbahnbrücke über den Canyon bei Desert Springs, seine letzte Brücke; die Nieten tragen „J. H.“ wie in Ironwood.                                                                                                                                                                                                                                                                                                                |
+| 1885         | Hale stirbt in Desert Springs. Sein Nachlass geht an seine Söhne; ein Notizbuch bleibt in der Familie (übergreifende Quest für Akt 4).                                                                                                                                                                                                                                                                                                                  |
+| letztes Jahr | Ein Hurrikan trifft Port Delacroix im Spätsommer und zerstört das alte Musikhaus. Akt 3 spielt im Winter und Frühjahr danach: Wiederaufbau.                                                                                                                                                                                                                                                                                                             |
 
 ## 18. Figuren in Akt 3
 
@@ -1493,7 +1465,7 @@ Ambrose ZERO beim Spielen zu. Er wird stiller, spricht von „vollkommenen“ Pa
 den Whitlock-Duvals sieht er, dass seine Familie ohne ihn und ohne Schach glücklich geworden ist,
 und im Canyon begreift er, dass Schach durch Menschen schön wird, die Fehler machen. Neue
 Stimmungen: `gebannt` (vor dem Bildschirm), `still` (im Tiefpunkt, nur ein Satz je Szene).
-Erst jetzt spricht er über 1866, kurz und ohne Einzelheiten (Abschnitt 5.3 gilt weiter).
+Erst jetzt, am Felsbogen (Szene 73), erzählt er von 1866, kurz und ohne Einzelheiten (Abschnitt 5.3 gilt weiter); in Akt 2 fielen nur Splitter („elf Tage“, „nicht angekommen“).
 
 - „Sie zweifelt nie. Siehst du, wie schön das ist? … Oder wie leer?“
 - „Ich bin in dieser Werkstatt aufgewachsen. Sie riecht noch genauso.“
@@ -1603,8 +1575,7 @@ Zielstärke E + 580 (Club 7, R4). Eröffnung: Königsgambit und Evans-Gambit (Ka
 **Tomás** (Clubmitglied). Tomás Castillo, 17, er, Miras Bruder, Mechaniker in der Garage, spielt
 solide und passt auf seine Schwester auf. Stellt die Aufgabenreihe zu Mattbildern mit Opfer.
 
-**Dot** (Clubmitglied). Dorothy Marsh, siebzig, sie, Motelbesitzerin, spielt seit fünfzig Jahren
-Fernschach per Post und hat Briefe aus aller Welt. Stellt die Aufgabenreihe zum Königsangriff und
+**Dot** (Clubmitglied). Dorothy Marsh, siebzig, sie, Motelbesitzerin, spielt seit fünfzig Jahren Fernschach per Post und hat Briefe aus aller Welt; vierzig Jahre lang war die alte Mrs. Whitlock aus Maple Falls ihre Gegnerin. Stellt die Aufgabenreihe zum Königsangriff und
 kennt das Antiquariat, in dem der Brief liegt (Szene 76).
 
 **Buck** (Straßengegner, Sprüche). Buck Harmon, sechzig, er, Tankwart, spielt auf der Motorhaube
@@ -1707,7 +1678,7 @@ gegen Straßengegner (S2), nie im Club. Mentor-Zug ist von Szene 63 (Tiefpunkt) 
 **51. Abfahrt im Schnee** · `akt3.abfahrt` · H `siliconBay.akademie`
 Ort `ironwood.aussen` (Bushaltestelle an der Schnellstraße) · Mama, Juno, Ambrose. Ereignis: Dialog.
 Mama erlaubt das Turnier in Silicon Bay („Ich hab Nachtschicht. Juno, du passt auf.“). Ambrose
-starrt auf Victors Einladung: „Eine Stadt aus Glas. Wie man wohl darin Schach spielt?“ Etwa 3 Minuten.
+starrt auf Victors Einladung: „Eine Stadt aus Glas. Wie man wohl darin Schach spielt?“ Juno weiß seit Dezember von Ambrose; ab hier spricht sie ihn über {held} an. Etwa 3 Minuten.
 
 **51a. Das Reisebrett** · Gegenstand Reisebrett (11, I3)
 Ort `ironwood.aussen` (Bushaltestelle) · Juno, Ambrose. Ereignis: Dialog. Bevor der Bus fährt, drückt
@@ -1801,12 +1772,9 @@ unruhig, je näher die Küste kommt: „Diese Luft. Salz und Holz. Ich kenne die
 erste Blick auf die Stadt: abgedeckte Dächer, Bauzäune, Musik aus einem Zelt. Etwa 15 Minuten.
 
 **63. Der Vorwurf** · `akt3.tiefpunkt` · H `portDelacroix.tiefpunkt` · R28, R29
-Ort `portDelacroix.turnhalle` · Miss Odile, Remy, Lou, Mama, Ambrose. Ereignis: Dialog. Beim
-Regionalturnier gewinnt {held} eine Partie mit einem Zug, den Remy für „unmöglich“ hält. Er hat
-gesehen, wie {held} vorher mit dem Brett geflüstert hat, und sagt vor allen: „Du schummelst. Wie die
+Ort `portDelacroix.turnhalle` · Miss Odile, Remy, Lou, Mama, Ambrose. Ereignis: Dialog. Beim Regionalturnier gewinnt {held} gegen Remy mit einem Zug, den Remy für „unmöglich“ hält. Der Zug stammt von ZERO: Ambrose hat ihn auf dem Tablet gesehen und weitergegeben, ohne ihn zu verstehen. Remy hat gesehen, wie {held} vorher mit dem Brett geflüstert hat, und sagt vor allen: „Du schummelst. Wie die
 mit ihren Bildschirmen. Nur altmodischer.“ Stille in der Halle. {held} kann nichts beweisen. Ambrose
-sagt nur: „Er hat nicht ganz unrecht.“ (`#stimmung:still`). {held} entscheidet: „Dann spiele ich
-ohne dich.“ Ab jetzt: Mentor-Zug gesperrt (R29), Clubkampf ohne Karten (R28), Ambrose schweigt bis
+sagt nur: „Er hat nicht ganz unrecht.“ (`#stimmung:still`). {held} begreift, dass der Zug nicht der eigene war („Das war ihr Zug.“), entscheidet: „Dann spiele ich ohne dich.“, gibt die Partie gegen Remy auf und legt das Brett am Schiedsrichtertisch ab („Das hier bleibt bei Ihnen, solange ich spiele.“). Miss Odile legt es in einen leeren Geigenkasten und schließt den Deckel; der Kasten steht während des Clubkampfs (Szene 67) auf dem Schiedsrichtertisch, Ambrose hört darin nur, was in der Halle geschieht. Danach schenkt sie {held} den Kasten; das Brett reist von da an im Geigenkasten. Ab jetzt: Mentor-Zug gesperrt (R29), Clubkampf ohne Karten (R28), Ambrose schweigt bis
 Szene 68 außer einem Satz je Szene. Mama nimmt {held} danach in den Arm: „Ich weiß, wie sich das
 anfühlt. Fast.“ Etwa 5 Minuten.
 
@@ -1830,11 +1798,10 @@ Ort Sepia-Karte `flashback.werkstatt` · der junge Ambrose als Held. Auslöser: 
 Whitlock-Duval riecht {held} frisch gehobeltes Holz; Ambrose, der seit Tagen schweigt, sagt: „Hier.
 Hier war es.“ Teil 1 (1840, etwa 1 Minute): Der neunjährige Ambrose fegt Späne, der Vater stellt
 Figuren aus Resthölzern auf: „Ein Klavier und ein Schachbrett haben eines gemeinsam, Ambrose. Jede
-Taste, jede Figur muss ihren Platz kennen.“ Teil 2 (1852, etwa 3 Minuten): Ambrose, 21, zurück aus
-London, spielt Vater und der kleinen Schwester Claire den Anfang der „Unsterblichen Partie“ vor:
+Taste, jede Figur muss ihren Platz kennen.“ Teil 2 (1852, etwa 3 Minuten): Ambrose, 21, zurück aus London, spielt Vater und der kleinen Schwester Claire auf dem Brett, das er gerade gebaut hat (Rand noch leer, „A. W. 1857“ kommt fünf Jahre später), den Anfang der „Unsterblichen Partie“ vor:
 Zugerraten von `klassik-unsterbliche` aus `inhalte/zusatzpartien/klassiker.json`, mit Weiß von Zug 1
 bis Zug 11 (Königsgambit, der Läufer wird schon im 5. Zug angegriffen). Claire klatscht bei jedem
-Opfer. Zurück in der Gegenwart, leise: „Claire. Sie hat das Brett geerbt. Deshalb bist du hier.“
+Opfer. Zurück in der Gegenwart, leise: „Claire. Sie hat das Brett geerbt. Deshalb bist du hier.“ (Claire heiratete nach Norden; das Brett ging von ihr an ihre Tochter und deren Tochter, bis zur alten Mrs. Whitlock.)
 Belohnung: **Partiefragment 5**. Hinweis: Die Sammlung hat vor 1866 nur drei Partien, alle schon
 benutzt; deshalb der Anfang der Partie, deren Ende der Flashback in Riverton zeigt (Bericht).
 Etwa 4 Minuten.
@@ -1848,11 +1815,10 @@ hier hat es gesehen.“ Remy schweigt, aber nickt. Belohnung: **Clubnadel Port D
 ohne Karten ist Gold möglich), Ambroses Notiz erst nach Szene 73 (er kommentiert nicht), 50 Münzen,
 Mentor-Zug wie R27, aber erst nach der Versöhnung spielbar. Etwa 30 Minuten.
 
-**68. Die Nachfahren** · `akt3.nachfahren` · N begegnung `portDelacroix.nachfahren` · O2
+**68. Die Familie** · `akt3.nachfahren` · N begegnung `portDelacroix.nachfahren` · O2
 Ort `portDelacroix.werkstatt` · Henri, Céleste, Ambrose. Ereignis: Dialog, dann Partie. Henri zeigt
-die Werkstatt, die Klaviere, ein altes Foto an der Wand: ein junger Mann mit einem Schachbrett, „ein
-Vorfahr, keiner weiß mehr, wer“. Ambrose bricht sein Schweigen: „Das bin ich.“ (`#pause`) Céleste
-findet Schach langweilig, aber das alte Brett in {held}s Rucksack „sieht cool aus“. Sie spielt eine
+die Werkstatt, die Klaviere, ein altes Foto an der Wand: ein junger Mann mit einem Schachbrett, „Ein Vorfahr. Keiner weiß mehr, wer. Ein Bruder von irgendwem.“. Ambrose bricht sein Schweigen: „Das bin ich.“ (`#pause`) Céleste
+findet Schach langweilig, aber das alte Brett im Geigenkasten, den {held} auf einen Hocker stellt, „sieht cool aus“. Sie spielt eine
 Partie aus Neugier (Begegnung aus der Grundstellung, Rolle `story`, sehr schwach, A − 300; zählt
 für die App), schiebt „die Pferde rum“ und verliert gern: „Okay, das war nicht so schlecht. Aber ich
 geh jetzt skaten.“ Ambrose, zum ersten Mal seit Tagen warm: „Sie muss es nicht lieben. Es reicht,
@@ -1866,8 +1832,7 @@ Ort `portDelacroix.turnhalle` · Miss Odile, Remy, Lou, Kinder der Stadt. Ereign
 drei Duelle, Datenauftrag), jedes Kind spendet einen Dollar in die Kasse für das Musikhaus. Remy
 spielt das dritte Brett und entschuldigt sich danach: „Ich hab dich beobachtet. Du redest mit dem
 Brett, aber du spielst allein. Tut mir leid.“ Belohnung: 30 Münzen (gehen in die Kasse), Wiederaufbau
-Schritt 2, und von Miss Odile die Karte **Schutzengel** (K4): „Damit du nicht wieder etwas
-verlierst, was dir wichtig ist.“ Etwa 10 Minuten.
+Schritt 2, und von Miss Odile die Karte **Schutzengel** (K4): „Damit du nicht wieder etwas verlierst, was dir wichtig ist.“ Wirkung: Ambrose hält einen Zug, der Material verliert, mit einer Zeile auf (Entscheidung vom 13.11.2026, `docs/spiel/ENTSCHEIDUNGEN.md`). Etwa 10 Minuten.
 
 **70. Das Schild** · N hilfe `portDelacroix.wiederaufbau` (Besuch 3 von 3)
 Ort `portDelacroix.musikhaus` · Miss Odile, Remy, Lou, Henri, Mama. Ereignis: Dialog, Ort. Beim
@@ -1897,8 +1862,7 @@ Ort `wegDelacroixDesert.felsbogen` (Abend, Licht wie Kupfer) · Ambrose, {held}.
 Felsbogen bleibt {held} stehen. Ambrose bittet um Verzeihung, auf seine Art: „Ich habe einer Maschine
 zugesehen, weil sie nie zweifelt. Aber ich habe vergessen, dass du zweifelst. Und trotzdem spielst.
 Das ist schöner.“ Wahl: „Ich hab dich vermisst.“ / „Du warst ein Idiot.“ / „Erzähl mir von 1866.“
-Bei jeder Wahl erzählt er kurz und ohne Einzelheiten: Hale hatte geschrieben, er solle kommen; er
-brach auf, wurde unterwegs krank und kam nie an. „Ich bin nicht angekommen. Darum warte ich noch.“
+Bei jeder Wahl erzählt er kurz und ohne Einzelheiten: Hales 39. Zug blieb im Winter wochenlang aus; Ambrose hielt das Warten nicht aus, brach von sich aus nach Norden auf, wurde unterwegs krank und kam nie an. Hales Einladung hat ihn nie erreicht. „Ich bin nicht angekommen. Darum warte ich noch.“
 Er lehrt das **romantische Opfer** (Buch Kapitel 1, Abschnitt 1.6, Goldene Angriffsregel; Kapitel
 11, Abschnitt 11.2, Morphy) in einer Lektion mit zwei Bildschirmen. Ab jetzt ist der Mentor-Zug
 wieder spielbar (R29). Unter dem Felsbogen läuft die alte Eisenbahnbrücke; an ihren Nieten steht
@@ -1919,13 +1883,9 @@ Kapitel 6, Abschnitte 6.3, 6.6; Übungen 7, 27, 33, 34). Erste bestandene Reihe:
 
 **76. Der Brief** · N rätsel `desertSprings.brief` · E4 (Auflösung „Umschlag ohne Brief“)
 Ort `desertSprings.antiquariat` · Mr. Okoro, Dot, Ambrose. Ereignis: Stellungsrätsel und Dialog. Dot
-erzählt, dass Mr. Okoro „den Kram von einem alten Brückenbauer“ im Keller hat. In einer Kiste liegt
-ein Bündel Briefe; einer ist mit einem Siegel verschlossen, auf dem dieselbe Stellung geprägt ist
-wie auf dem Umschlag aus Ironwood (Runde `desertSprings.siegel`, 1 Aufgabe, Thema `fesselung`). Wer
-den Umschlag hat (`hatUmschlagOhneBrief`), sieht: Das Siegel passt. Der Brief, 1866, von Josiah
-Hale: „Komm nach Norden. Wir spielen die letzten Züge an einem Brett. Ich warte.“ Ambrose liest mit
+erzählt, dass Mr. Okoro „den Kram von einem alten Brückenbauer“ im Keller hat. In einer Kiste liegen Ambroses Briefe, nach Jahren gebündelt; unter dem Bündel 1866 liegt ein einzelnes, nie geöffnetes Blatt mit Hales eigenem Siegel. Darin ist eine andere, schwerere Fesselung geprägt als im Siegel des Postmeisters am Postsack von Ironwood (Fernspieler drückten einander Aufgaben ins Wachs). Hale hatte den Brief versiegelt und vergessen, ihn in den Umschlag zu legen (Runde `desertSprings.siegel`, 1 Aufgabe, Thema `fesselung`). Wer den Umschlag hat (`hatUmschlagOhneBrief`), sieht: Der Brief passt genau hinein. Der Brief, 1866, von Josiah Hale (Wortlaut: Roman Kapitel 44): Sein 39. Zug sei unterwegs; für das Wort von 1859 schäme er sich; „Kommen Sie nach Norden. Wir spielen die letzten Züge an einem Brett.“ Schluss: „Ich warte.“ Ambrose liest mit
 {held} (`#pause`), dann: „Er hat gewartet. Er hat wirklich gewartet.“ Wirkung: Gegenstand
-**„Hales Brief“**, Fragment 7 (die letzten Züge, die Hale vorschlug), Dialogvariable `briefGelesen`.
+**„Hales Brief“**, Fragment 7 (vier Züge, 29 bis 32, auf der Rückseite des Briefs, zur Kontrolle der Stellung), Dialogvariable `briefGelesen`.
 Belohnung: Flüstern (R27, Rätsel). Etwa 8 Minuten.
 
 **77. Erinnerung: Das letzte Spiel 1858** · N begegnung (Erinnerung) `desertSprings.erinnerung1858`
@@ -2006,14 +1966,13 @@ Straßengegner.
 
 **Übergreifende Quests (E4):**
 
-1. **„Umschlag ohne Brief“ (aus Akt 2) – aufgelöst** in Szene 76: Das Siegel passt, Hale hat auf
-   Ambrose gewartet. Voraussetzung im Datenauftrag: Gegenstand `umschlagOhneBrief`.
+1. **„Umschlag ohne Brief“ (aus Akt 2) – aufgelöst** in Szene 76: Der Brief passt in den Umschlag, Hale hat auf Ambrose gewartet. Voraussetzung im Datenauftrag: Gegenstand `umschlagOhneBrief`.
 2. **„Nietenkopf J. H.“ (aus Akt 2) – aufgelöst** in Szene 73: dieselben Nieten an der Canyonbrücke
    von 1879; Hale baute weiter und lebte lange.
 3. **„Die fehlende Seite“ (neu, geht in Akt 4 auf):** Das Foto der Notizbuchseite aus der Vitrine
    der Hales (Szene 57) zeigt Ambroses Züge der Fernpartie; Hales Antwort stand auf der
    herausgerissenen Seite. Plan für Akt 4: Victor hat die Seite seit Jahren in seinem Schachbuch
-   versteckt, weil sein Vater sie „wertlos“ fand; er gibt sie {held} nach seiner Krise (Summit City).
+   versteckt (sie liegt im Buch des Großvaters, der sie „wertlos“ nannte und doch aufhob; der Vater weiß nichts davon); er gibt sie {held} nach seiner Krise (Summit City).
    Mit Hales Brief (Fragment 7), der Seite und allen Fragmenten wird in Ghost Town die Fernpartie
    vollständig, und Ambrose spielt sie am Ende mit {held} zu Ende.
 
@@ -2095,7 +2054,7 @@ Alle Namen sind Arbeitsnamen; „ZERO“ wird vor der Veröffentlichung umbenann
 4. In Ghost Town, an Ambroses Grab, spielen {held} und Victor die Fernpartie von 1866 zu Ende:
    {held} mit Ambroses Zügen, Victor mit denen seines Vorfahren.
 5. Bei der Landesmeisterschaft legen Dr. Lin und Nova die Beweise vor; im Halbfinale spielt ein
-   Junior des Konzerns mit Ohrempfänger, bis das Signal abgeschaltet wird, und {held} und Ambrose
+   Junior des Konzerns mit einem Gerät im Schuh, bis das Signal abgeschaltet wird, und {held} und Ambrose
    spielen ein einziges Mal gemeinsam.
 6. Das Finale gegen Victor ist ein faires Duell zweier Freunde, ohne Karten, ohne Geist.
 7. Danach verabschiedet sich Ambrose: Er hat seine Partie zu Ende gespielt und gesehen, dass Schach
@@ -2103,12 +2062,12 @@ Alle Namen sind Arbeitsnamen; „ZERO“ wird vor der Veröffentlichung umbenann
 
 ## 26. Zeitlinie, Ergänzung für Akt 4
 
-| Jahr          | Ereignis                                                                                                                                                   |
-| ------------- | ---------------------------------------------------------------------------------------------------------------------------------------------------------- |
-| 1866          | Ambrose schreibt in einer Bergbausiedlung (später Ghost Town) bei Kerzenlicht seinen letzten Zug auf und schickt ihn ab; er erreicht Hale nach seinem Tod. |
-| 1867          | Hale schreibt seine Antwort in sein Notizbuch und reißt die Seite später heraus, „für den Tag, an dem jemand weiterspielt“ (Familiengeschichte der Hales). |
-| um 1990       | Die Seite liegt in einem Schachbuch von Victors Großvater; Graham Hale hält sie für wertlos.                                                               |
-| Sommer, jetzt | Akt 4: Bergsommer in Summit City, Sommercamp, Mittagshitze in Ghost Town, die Landesmeisterschaft an einem langen Sommerabend (09, Abschnitt 2).           |
+| Jahr          | Ereignis                                                                                                                                                                                                              |
+| ------------- | --------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------- |
+| 1866          | Hales 39. Zug erreicht Ambrose, nachgeschickt, in einer Bergbausiedlung (später Ghost Town). Dort schreibt er bei Kerzenlicht seinen letzten Zug (40. Kxg3) auf und schickt ihn ab; er erreicht Hale nach seinem Tod. |
+| 1867          | Hale schreibt seine Antwort in sein Notizbuch und reißt die Seite später heraus, „für den Tag, an dem jemand weiterspielt“ (Familiengeschichte der Hales).                                                            |
+| um 1990       | Die Seite liegt in einem Schachbuch von Victors Großvater; er hält sie für wertlos, hebt sie aber auf und gibt das Buch Victor, als der sieben ist. Graham Hale weiß nichts von dem Buch.                             |
+| Sommer, jetzt | Akt 4: Bergsommer in Summit City, Sommercamp, Mittagshitze in Ghost Town, die Landesmeisterschaft an einem langen Sommerabend (09, Abschnitt 2).                                                                      |
 
 ## 27. Figuren in Akt 4
 
@@ -2130,20 +2089,18 @@ wieder gern. Er gibt die Seite aus dem Notizbuch weiter, steht im Finale als Fre
 sagt seinem Vater zum ersten Mal Nein. Neuer Beispielsatz: „Ich will einmal verlieren dürfen.
 Einfach so. Ohne dass jemand nachrechnet.“
 
-**Graham Hale.** Überfordert, nicht böse (Dokument 02, 2.3). Er erfährt bei der Meisterschaft, dass
-im Konzern geschummelt wurde, und stellt sich danach öffentlich hinter seinen Sohn. Beispiel: „Ich
+**Graham Hale.** Überfordert, nicht böse (Dokument 02, 2.3). Er hat ZERO gebaut, für das Training, und wusste nichts vom Missbrauch. Er erfährt bei der Meisterschaft, dass im Konzern geschummelt wurde, und stellt sich danach öffentlich hinter seinen Sohn. Beispiel: „Ich
 habe gerechnet und vergessen, wofür. Entschuldige, Victor.“
 
 **Nova.** Sie sagt bei der Meisterschaft aus, zusammen mit Dr. Lin, und spielt ihre letzte
 Vorrundenpartie ohne Gerät; danach ist sie frei. Beispiel: „Zum ersten Mal weiß ich nicht, ob ich
 gewinne. Das fühlt sich gut an.“
 
-**Dr. Lin.** Legt die Spielberichte und den Ohrempfänger vor (Akt 3, Szene 56) und verliert ihre
-Stelle bei Perfect Move; sie gründet danach einen Club ohne Bildschirme (Ausblick im Abspann).
+**Dr. Lin.** Legt die Spielberichte und den Ohrempfänger vor (Akt 3, Szene 56). Sie hat schon vor der Meisterschaft bei Perfect Move gekündigt und gründet einen Kellerclub ohne Bildschirme (im Epilog zu sehen).
 
 **Mama, Juno, Coach Delgado, die Clubchefs.** Alle kommen zur Landesmeisterschaft (Capital Arena):
 Mama als Begleitung, Juno mit dem Tagebuch, die Clubchefs von Akt 1 bis 3 als Publikum. Beim Finale
-sitzen sie zusammen; das ist das Bild des Abspanns.
+sitzen sie zusammen; das ist das Bild des Abspanns. Coach Delgado hatte den Vertrag mit Perfect Move im September unterschrieben, in der Woche nach Victors Besuch (Bus, Bretter und Startgeld für sieben Kinder), und im Frühjahr wieder gekündigt, als der Konzern den Clubraum wollte; sie erzählt es in Crossroads (Szene 93).
 
 ### 27.2 Summit City
 
@@ -2193,7 +2150,7 @@ Vier Vorrundengegner mit klarem Stil (Konzeptsammlung, Top-Vier-Pendant), Stärk
 | 2     | Marcus Oyelaran (16, er) | Taktiker                           | sieht jede Gabel, übersieht stille Züge                           |
 | 3     | Nova (16, sie)           | Positionsspielerin, **ohne Gerät** | nach ihrer Aussage; die erste ehrliche Turnierpartie ihres Lebens |
 | 4     | Tobias Wren (18, er)     | Zeitdruck-Spezialist               | einzige Partie mit fester Uhr 5 + 3 (R16); Kühler Kopf erlaubt    |
-| HF    | Kade Sterling (17, er)   | Konzern-Junior mit Ohrempfänger    | bis das Signal abgeschaltet wird (Szene 104)                      |
+| HF    | Kade Sterling (17, er)   | Konzern-Junior mit Gerät im Schuh  | bis das Signal abgeschaltet wird (Szene 104)                      |
 | F     | Victor                   | Positionsspieler                   | faires Duell, keine Karten (R28)                                  |
 
 Im Turnier gibt es keine Sprüche (S2); nur Tobias spielt mit Uhr, deshalb sind Zeitbonus und Kühler
@@ -2302,8 +2259,7 @@ Einfach so.“ Wahl: „Dann spielen wir. Ohne Uhr, ohne Gerät.“ / „Erzähl
 Grundstellung (Begegnung `summitCity.victorFrei`, Rolle `story`, E + 400, ohne Uhr, Karten erlaubt,
 zählt für die App, jeder Ausgang führt weiter). Victor lacht zum ersten Mal im Spiel, wenn {held}
 einen guten Zug macht. Danach zieht er aus seinem Schachbuch eine vergilbte Seite: Hales Antwort,
-die in der Vitrine fehlte (Akt 3, Szene 57). „Mein Großvater sagte: für den Tag, an dem jemand
-weiterspielt.“ Ambrose (`#pause`): „Ein Hale. Ur-ur-ur … Herrje. Ein Hale eben.“ Gegenstand
+die in der Vitrine fehlte (Akt 3, Szene 57). „Das hat meinem Großvater gehört. Er hat gesagt, da ist etwas drin, das soll ich aufheben. Es sei wertlos. Aber man hebe es auf. Mein Vater weiß nicht, dass ich es habe.“ Auf der Seite steht in Hales Schrift: „Für den Tag, an dem jemand weiterspielt.“ Ambrose (`#pause`): „Ein Hale. Ur-ur-ur … Herrje. Ein Hale eben.“ Victor fragt: „Was sagt er?“; {held} sagt es ihm. Von jetzt an weiß Victor von Ambrose (nach Juno der Zweite) und spricht ihn über {held} an. Gegenstand
 **„Hales Seite“** (übergreifende Quest „Die fehlende Seite“ aufgelöst). Etwa 25 Minuten.
 
 **89. Sol auf dem Gipfel** · S `summitCity.sol` · Sprüche
@@ -2316,12 +2272,12 @@ Ort `summitCity.aussen` (Marktplatz am Abend) · Bergführer, Kinder, Murmeltier
 Jahr spielt ganz Summit City mit dem Drachen (Dame + Springer) nach einer alten Bergwerkssage. {held}
 spielt eine Partie (V, Belohnung Fund „Drachenschuppe aus Glas“, Extra „Drachenfigur“ am
 Varianten-Tisch). Ambrose: „Ein Drache auf dem Brett. Zu meiner Zeit hätte man mich dafür aus dem
-Kaffeehaus geworfen. Herrlich.“ Etwa 10 Minuten.
+Kaffeehaus geworfen. Herrlich.“ Im Roman liegt das Fest am Abend vor Victors Niederlage (Szene 87); im Spiel ist es auch an einem anderen Abend besuchbar. Etwa 10 Minuten.
 
 **91. Clubkampf Summit City** · `akt4.clubnadelSummit` · H `summitCity.endspiel`
 Ort `summitCity.huette` · Ward, Victor als Zuschauer, Ambrose. Ereignis: Partie gegen die Clubchefin
 (Zielstärke E + 640), Wahl der Zeitklasse, Karten erlaubt. Ward vereinfacht gern; wer ins Endspiel
-will, braucht die Lektionen aus Szene 84 und 86. Belohnung: **Clubnadel Summit City** (die achte),
+will, braucht die Lektionen aus Szene 84 und 86. Ein Remis genügt für die Nadel. Belohnung: **Clubnadel Summit City** (die achte),
 Ambroses Notiz, Mentor-Zug (R27), 50 Münzen. Ward: „Du hast mich besiegt. Gut. Jetzt zeig mir, wie.“
 Juno zählt im Tagebuch: acht Nadeln, Punkte für die Liga (R22). Etwa 30 Minuten.
 
@@ -2338,7 +2294,7 @@ Etwa 20 Minuten.
 **93. Crossroads** · `akt4.crossroads`
 Ort `crossroads.aussen`, `crossroads.raststaette` · Darlene, viele Bekannte. Ereignis: Dialog, Laden,
 Varianten-Tisch. An der Kreuzung von vier Straßen treffen sich alle: Slick auf dem Weg zur
-Meisterschaft, Mira mit Tomás, Big Joe als Fahrer des Werksbusses, Rosie mit dem Food-Truck. Am
+Meisterschaft, Mira mit Tomás, Big Joe als Fahrer des Werksbusses, Rosie mit dem Food-Truck. Coach Delgado sagt offen, dass sie den Vertrag mit Perfect Move unterschrieben und wieder gekündigt hat. Am
 Varianten-Tisch stehen alle Varianten, die {held} unterwegs gelernt hat (V1 bis V6, L1 bis L10). Nova
 sitzt allein in einer Ecke und sagt: „Dr. Lin hat angerufen. Ich sage aus. Hilfst du mir?“ Wahl,
 beide führen weiter. Etwa 10 Minuten.
@@ -2376,9 +2332,7 @@ Rand: „Ein Reisender aus dem Süden, 1866. Er hatte ein Schachbrett bei sich.�
 „Hier bin ich angekommen. Nur nicht dort, wo ich wollte.“ Etwa 5 Minuten.
 
 **99. Flashback: Die letzte Kerze, 1866** · `akt4.flashbackKerze` · F2 (3)
-Ort Sepia-Karte `flashback.siedlung` · Ambrose als Held. Ereignis: Ambrose in einer Bretterhütte der
-Siedlung, Fieber, eine Kerze, das Brett auf dem Tisch. Er schreibt seinen letzten Zug auf und gibt
-den Brief einem Postreiter: „Bring ihn nach Norden. Er wartet.“ Keine Einzelheiten zum Sterben; die
+Ort Sepia-Karte `flashback.siedlung` · Ambrose als Held. Ereignis: Ambrose im Zimmer über dem Laden der Siedlung (Rosentapete; erreichbar über die Treppe im Laden), Fieber, eine Kerze, das Brett auf dem Tisch. Bei ihm ist Gideon, der Schmied der Siedlung (nicht Tobias; Tobias Wren ist der Turniergegner in der Arena); Ambrose zeigt ihm die Stellung. Er schreibt seinen letzten Zug auf, Gideon hält ihm das Blatt und trägt den Brief hinunter zum Postreiter: „Bring ihn nach Norden. Er wartet.“ Keine Einzelheiten zum Sterben; die
 Kerze geht aus, Szenenwechsel (Stilregel 5.3). Zugerraten: die letzten vier Züge der Fernpartie bis
 zu Ambroses letztem Zug (erfundene Partie, Stellung baut ein Folgeauftrag mit der Engine). Etwa 3
 Minuten.
@@ -2396,7 +2350,7 @@ die Seite zurück ins Buch: „Für den Tag, an dem wieder jemand weiterspielt.�
 `akt4.fernpartie`, Dialogvariable `fernpartieGespielt`. Etwa 25 Minuten.
 
 **101. Die Nacht in Ghost Town** · `akt4.ambroseSagtEs`
-Ort `ghostTown.aussen` (Nacht, Sterne) · Ambrose, {held}. Ereignis: Dialog. Ambrose sagt zum ersten
+Ort `ghostTown.aussen` (Nacht, Sterne; Gehsteigkante am Ende des Bretterwegs) · Ambrose, {held}. Ereignis: Dialog. Ambrose setzt sich neben {held} auf die Kante (das vierte Mal, dass er sitzt) und sagt zum ersten
 Mal offen, dass er gehen wird, wenn alles gespielt ist: „Noch eine Partie will ich sehen. Deine,
 gegen ihn. Dann ist es gut.“ Wahl: „Bleib.“ / „Ich weiß.“ Er antwortet auf beide: „Ein Geist, der
 bleibt, wird ein Möbelstück. Ich war lange genug ein Brett.“ Etwa 3 Minuten.
@@ -2432,8 +2386,7 @@ Dialog. Nova sagt vor der Turnierleitung aus; Dr. Lin legt die Spielberichte (98
 und den Ohrempfänger vor (Akt 3, Szene 56; Buchbezug Kapitel 12, Abschnitt 12.2). Die
 Turnierleitung lässt im Halbfinale einen Funkprüfer mitlaufen. Graham Hale erfährt es vor seinem
 Sohn und ist erschüttert; Victor stellt sich neben Nova: „Ich hab es gesehen. In Silicon Bay.“
-Niemand wird vorgeführt; der verantwortliche Vertriebschef des Konzerns wird nur als Name genannt
-und geht. Etwa 5 Minuten.
+Niemand wird vorgeführt; der verantwortliche Vertriebschef, Mr. Dorrance, wird nur als Name genannt und tritt nicht auf („nicht mehr im Haus“). Graham Hale: „Ich habe die Engine gebaut. Für das Training.“ Etwa 5 Minuten.
 
 **106. Halbfinale: Gemeinsam** · `akt4.halbfinale` · Begegnung `capitalArena.halbfinale` · R29
 Ort `capitalArena.halle` · Kade Sterling, Ambrose, Funkprüfer. Ereignis: Partie aus der
@@ -2443,9 +2396,7 @@ spielt ab dann allein, sichtbar verunsichert (Zustand wie „abgelenkt“, Fakto
 Partie, siehe Technikliste). **R29:** Der Mentor-Zug liegt ohne Besitz als vierte Karte frei im Deck,
 einmal spielbar, ohne Verbrauch und ohne Folge für die Wertung: „Held und Ambrose spielen
 gemeinsam.“ Ambrose vor der Partie: „Ein einziges Mal. Wenn du mich rufst, komme ich. Wenn nicht,
-schaue ich zu.“ Wer den Mentor-Zug spielt, sieht Ambroses Zug als goldenen Pfeil und hört: „Das ist
-meine unsterbliche Partie. Mit dir.“ Wer ihn nicht spielt, schaltet den **Extra-Abspann** frei
-(Szene 109). Bei Niederlage: Wiedereinstieg am Kipppunkt nach R14 (dann wieder mit freiem
+schaue ich zu.“ Im Schlüsselmoment sieht {held} den Zug (ein Turmopfer) selbst und ruft Ambrose nur, um ihn zu prüfen. Der Spieler findet den Turmzug in jedem Fall selbst (Zugerraten, beliebig viele Versuche, die Uhr hält an), ob er die Karte spielt oder nicht. Die Karte Mentor-Zug hat hier einen goldenen Rand und zeigt keinen Zug; sie bringt nur Ambrose ins Bild („Er ist da“). Ambrose weiß es auch nicht („Ich weiß es nicht.“); mit der Karte stellen beide den Turm gemeinsam hin. Danach Ambrose: „Das ist meine unsterbliche Partie. Mit dir.“ Wer die Karte nicht spielt, schaltet den **Extra-Abspann** frei (Zettel im Epilog, Szene 109). Bei Niederlage: Wiedereinstieg am Kipppunkt nach R14 (dann wieder mit freiem
 Mentor-Zug). Etwa 35 Minuten.
 
 **107. Vor dem Finale** · `akt4.vorDemFinale`
@@ -2458,28 +2409,25 @@ sage heute nichts. Das Brett gehört euch.“ Etwa 4 Minuten.
 **108. Finale gegen Victor** · `akt4.finale` · Begegnung `capitalArena.finale` · R28
 Ort `capitalArena.halle` (Bühne, Publikum aus allen Städten) · Victor. Ereignis: Partie aus der
 Grundstellung (Zielstärke nach Liga: Bronze E + 700, Silber E + 800, Gold E + 900, R22), Wahl der
-Zeitklasse, **keine Karten** (R28), keine Sprüche, Ambrose schweigt. Jeder Ausgang führt weiter: Sieg
+Zeitklasse, **keine Karten** (R28), keine Sprüche, Ambrose schweigt. Jeder Ausgang führt weiter, und bei jedem Ausgang freut sich Victor über die Partie und läuft mit dem Formular zu seinem Vater: Sieg
 (Landesmeister, Qualifikation für die Weltmeisterschaft in der erreichten Liga), Remis (geteilter
 Titel, „das schönste Remis des Turniers“), Niederlage (Vizemeister, Victor: „Du hast mich gezwungen,
 gut zu spielen. Danke.“). Revanche jederzeit im Post-Game. Etwa 40 Minuten.
 
-**109. Abschied** · `akt4.abschied` · Abspann
+**109. Abschied** · `akt4.abschied` · Abspann und Epilog
 Ort `capitalArena.aussen` (Abend, langes Sommerlicht), dann Dachboden in Maple Falls · Ambrose, {held},
 Juno, Mama, Victor. Ereignis: Dialog. Nach der Siegerehrung, allein auf der Treppe vor der Halle,
 spricht Ambrose zum letzten Mal: „Ich wollte eine Partie ohne Makel. Ich habe etwas Besseres
 bekommen: Menschen, die kämpfen, Fehler machen und wachsen. Du hast mir das gezeigt.“ Wahl: „Danke.“ /
 „Ich werde dich vermissen.“ / „Später?“ Auf „Später?“ lacht er: „Nein. Dieses eine Mal nicht später.“
-Das Brett wird still; die Figuren stehen in der Schlussstellung der Fernpartie. Abspann mit den
-Figuren aller Städte. **Extra-Abspann** (nur ohne Mentor-Zug im Halbfinale, Dokument 02, 2.7):
-Zurück auf dem Dachboden steht eine Figur auf dem Brett anders als am Abend; daneben ein Zettel in
+Das Brett wird still; die Figuren stehen in der Schlussstellung der Fernpartie. Reihenfolge: Abschied, dann Abspann mit den Figuren aller Städte, dann Epilog, danach Post-Game (Szene 110). **Epilog** (ein Jahr später, im Herbst, Dachboden in Maple Falls): Lily kommt herauf, {held} zeigt ihr die erste Lektion; letzter Satz des Spiels: „Was hängt?“ Dr. Lins Kellerclub ist im Epilog zu sehen. Der **Extra-Abspann** (nur ohne Mentor-Zug im Halbfinale, Dokument 02, 2.7) gehört in den Epilog: Auf dem Dachboden steht eine Figur auf dem Brett anders als am Abend; daneben liegt ein Zettel in
 alter Schrift: „Du hast mich nicht gebraucht. Das ist das schönste Geschenk. – A. W.“ Etwa 8 Minuten.
 
 **110. Post-Game** · `akt5.postGame`
 Ort Maple Falls und alle Städte · Ereignis: Weltmeisterschaft in der erreichten Liga, zweiter
 Durchlauf mit +300 (R10), neue Dialoge (Leute erkennen {held} als WM-Teilnehmer), Revanchen mit
 Victor, versteckter Bonusgegner in Ghost Town: „das Echo des Ingenieurs“ (Rolle `story`, sehr stark,
-spielt wie Hale positionell; Konzeptsammlung, Post-Game). Dr. Lins neuer Club ohne Bildschirme in
-Silicon Bay, Novas erstes freies Turnier, das Musikhaus in Port Delacroix mit Schach960-Abenden (L1).
+spielt wie Hale positionell; Konzeptsammlung, Post-Game). Dr. Lins neuer Club ohne Bildschirme in Silicon Bay (der Epilog zeigt ihn nur kurz, hier ist er besuchbar), Novas erstes freies Turnier, das Musikhaus in Port Delacroix mit Schach960-Abenden (L1).
 
 ### Zeitrechnung
 
@@ -2499,20 +2447,20 @@ Kürzungen, falls nötig: Vorrunde der Meisterschaft als vier Stellungsduelle st
 
 ## 30. Entdeckungen in Akt 4
 
-| Ort           | Fund                           | Wo                           | Satz                                                   | Wirkung                              |
-| ------------- | ------------------------------ | ---------------------------- | ------------------------------------------------------ | ------------------------------------ |
-| Weg 7         | Neonbuchstabe „K“              | hinter dem Diner             | Earl: „Das K von King's Diner. Ist seit '89 kaputt.“   | 10 Münzen                            |
-| Hochebene     | Falke aus Holz                 | Geschenk von Kira (Szene 82) | Kira: „Damit du nicht vergisst, wie man fliegt.“       | Extra „Falke und Bison“ am Varianten-Tisch |
-| Summit City   | Hales Seite                    | Victor (Szene 88)            | „Für den Tag, an dem jemand weiterspielt.“             | Auflösung „Die fehlende Seite“       |
-| Summit City   | Drachenschuppe aus Glas        | Drachenfest (Szene 90)       | „Ein Drache, der Licht fängt.“                         | Extra „Drachenfigur“                 |
-| Summit City   | Murmeltierpfeife               | Bergstation (versteckt)      | „Pfeif, und sie pfeifen zurück.“                       | 5 Münzen                             |
-| Weg 8         | Bisonhaar am Zaun              | Geysirbecken                 | Ambrose: „Ein Tier, das niemandem ausweicht. Respekt.“ | 5 Münzen                             |
-| Crossroads    | Postkarte aller Städte         | Ständer an der Kasse         | Juno: „Wir waren überall!“                             | Album                                |
-| Pinewood Camp | Marshmallow-Stock mit Kerben   | Lagerfeuer (Szene 95)        | Ezra: „Jede Kerbe ein Sieg.“                           | zählt Siege im Album                 |
-| Ghost Town    | Postreiterabzeichen von 1866   | Saloon (versteckt, Laterne)  | Ambrose: „Er hat meinen Brief getragen.“               | Album, Flashback-Auslöser            |
-| Ghost Town    | Schlussstellung der Fernpartie | Saloon (Szene 100)           | „Nicht makellos. Schön.“                               | Bretthintergrund „Fernpartie 1866“   |
-| Weg 11        | Leuchtturmlinse                | Leuchtturm                   | Abe: „Sie hat hundert Schiffe heimgebracht.“           | 10 Münzen                            |
-| Capital Arena | Teilnehmerausweis              | Szene 103                    | „{held}, Maple Falls.“                                 | Album                                |
+| Ort           | Fund                           | Wo                           | Satz                                                      | Wirkung                                    |
+| ------------- | ------------------------------ | ---------------------------- | --------------------------------------------------------- | ------------------------------------------ |
+| Weg 7         | Neonbuchstabe „K“              | hinter dem Diner             | Earl: „Das K von King's Diner. Ist seit '89 kaputt.“      | 10 Münzen                                  |
+| Hochebene     | Falke aus Holz                 | Geschenk von Kira (Szene 82) | Kira: „Den hab ich verschnitten. Aber er zieht trotzdem.“ | Extra „Falke und Bison“ am Varianten-Tisch |
+| Summit City   | Hales Seite                    | Victor (Szene 88)            | „Für den Tag, an dem jemand weiterspielt.“                | Auflösung „Die fehlende Seite“             |
+| Summit City   | Drachenschuppe aus Glas        | Drachenfest (Szene 90)       | „Ein Drache, der Licht fängt.“                            | Extra „Drachenfigur“                       |
+| Summit City   | Murmeltierpfeife               | Bergstation (versteckt)      | „Pfeif, und sie pfeifen zurück.“                          | 5 Münzen                                   |
+| Weg 8         | Bisonhaar am Zaun              | Geysirbecken                 | Ambrose: „Ein Tier, das niemandem ausweicht. Respekt.“    | 5 Münzen                                   |
+| Crossroads    | Postkarte aller Städte         | Ständer an der Kasse         | Juno: „Wir waren überall!“                                | Album                                      |
+| Pinewood Camp | Marshmallow-Stock mit Kerben   | Lagerfeuer (Szene 95)        | Ezra: „Jede Kerbe ein Sieg.“                              | zählt Siege im Album                       |
+| Ghost Town    | Postreiterabzeichen von 1866   | Saloon (versteckt, Laterne)  | Ambrose: „Er hat meinen Brief getragen.“                  | Album                                      |
+| Ghost Town    | Schlussstellung der Fernpartie | Saloon (Szene 100)           | „Nicht makellos. Schön.“                                  | Bretthintergrund „Fernpartie 1866“         |
+| Weg 11        | Leuchtturmlinse                | Leuchtturm                   | Abe: „Sie hat hundert Schiffe heimgebracht.“              | 10 Münzen                                  |
+| Capital Arena | Teilnehmerausweis              | Szene 103                    | „{held}, Maple Falls.“                                    | Album                                      |
 
 **Übergreifende Quests (E4):** „Die fehlende Seite“ (Akt 3) wird in Szene 88 aufgelöst; die
 Fernpartie (Fragmente aus allen Akten, Hales Brief, Hales Seite) schließt in Szene 100 ab. Neu für das
@@ -2532,14 +2480,14 @@ Im Turnier gibt es keinen Laden am Brett; vor der Meisterschaft lohnt sich Cross
 
 ## 32. Hilfskarten, Sprüche und Sperren in Akt 4
 
-| Karte oder Regel                 | Wo                                              | Warum                                                       |
-| -------------------------------- | ----------------------------------------------- | ----------------------------------------------------------- |
-| Mentor-Zug (R27)                 | Clubnadel Summit City                           | erste Nadel des Clubs                                       |
-| Kühler Kopf                      | Szene 89, erster Sieg gegen Sol                 | für die Partie gegen Tobias (Uhr)                           |
-| Mentor-Zug frei als vierte Karte | Szene 106, Halbfinale (R29)                     | „gemeinsam“; ohne Verbrauch; nicht gespielt → Extra-Abspann |
-| Keine Karten                     | Szene 100 (Fernpartie), Szene 108 (Finale, R28) | die Partien gehören den Spielern                            |
-| Keine Sprüche                    | gesamte Meisterschaft (S2)                      | Ruhe im Turnier                                             |
-| Uhr fest 5 + 3                   | Szene 104, Runde 4 (R16)                        | Zeitdruck-Spezialist; Zeitbonus und Kühler Kopf nur hier    |
+| Karte oder Regel                 | Wo                                              | Warum                                                                                                       |
+| -------------------------------- | ----------------------------------------------- | ----------------------------------------------------------------------------------------------------------- |
+| Mentor-Zug (R27)                 | Clubnadel Summit City                           | erste Nadel des Clubs                                                                                       |
+| Kühler Kopf                      | Szene 89, erster Sieg gegen Sol                 | für die Partie gegen Tobias (Uhr)                                                                           |
+| Mentor-Zug frei als vierte Karte | Szene 106, Halbfinale (R29)                     | „gemeinsam“; goldener Rand, zeigt nur „Er ist da“; ohne Verbrauch; nicht gespielt → Extra-Abspann im Epilog |
+| Keine Karten                     | Szene 100 (Fernpartie), Szene 108 (Finale, R28) | die Partien gehören den Spielern                                                                            |
+| Keine Sprüche                    | gesamte Meisterschaft (S2)                      | Ruhe im Turnier                                                                                             |
+| Uhr fest 5 + 3                   | Szene 104, Runde 4 (R16)                        | Zeitdruck-Spezialist; Zeitbonus und Kühler Kopf nur hier                                                    |
 
 ## 33. Offene Fragen an den Autor (Akt 4)
 
@@ -2551,11 +2499,11 @@ Im Turnier gibt es keinen Laden am Brett; vor der Meisterschaft lohnt sich Cross
 2. **Halbfinale mit Stärkewechsel mitten in der Partie.** Empfehlung: ja, das zeigt das Aufdecken im
    Spiel selbst. Falls zu teuer: zwei Partien (erst gegen Kade mit Gerät, Stellungsduell „überleben“
    über zwölf Züge; dann die echte Partie).
-3. **Wer den Konzern verantwortet.** Empfehlung: ein namentlich genannter Vertriebschef, der geht;
+3. **Wer den Konzern verantwortet.** Empfehlung: ein namentlich genannter Vertriebschef (Mr. Dorrance, tritt nicht auf), der geht;
    Graham Hale bleibt überfordert und einsichtig, kein Erwachsener wird vorgeführt (Dokument 02, 2.3).
 4. **Finale verloren.** Empfehlung: Die Geschichte endet bei jedem Ausgang gleich gut; der Titel ist
    egal, die Freundschaft nicht. Revanche im Post-Game.
-5. **Ambroses Abschied endgültig?** Empfehlung: ja, mit dem Extra-Abspann als leisem Gruß; im
+5. **Ambroses Abschied endgültig?** Empfehlung: ja, mit dem Extra-Abspann (Zettel im Epilog) als leisem Gruß; im
    Post-Game spricht er nicht mehr, nur der Zettel bleibt im Album.
 6. **Varianten an Nebenschauplätzen** brauchen Fairy-Stockfish (Technikliste); Empfehlung: L1, L2 und
    die Variante der Wüstenstraße (L8) zuerst, die übrigen mit dem Zusatzpaket.
@@ -2569,7 +2517,7 @@ Im Turnier gibt es keinen Laden am Brett; vor der Meisterschaft lohnt sich Cross
    Gegnerprofil von „mit Gerät“ auf „allein, abgelenkt 1,5“; braucht einen Auslöser in der
    Partieansicht oder eine zweigeteilte Begegnung.
 3. **Freie vierte Karte** (R29, Vorschlag V6 aus dem Regelwerk): `Partieauftrag.freieKarten` und eine
-   Dialogvariable `mentorzugImHalbfinaleGespielt` für den Extra-Abspann.
+   Dialogvariable `mentorzugImHalbfinaleGespielt` für den Extra-Abspann. Die Karte zeigt im Halbfinale keinen Zug, sondern nur „Er ist da“ (goldener Rand); das Zugerraten des Turmzugs läuft immer, mit oder ohne Karte, mit beliebig vielen Versuchen bei angehaltener Uhr.
 4. **Varianten** (10, Abschnitt 3 und 3a): Schach960 (L1) und Blindschach (L2) mit der vorhandenen
    Engine; Königsrennen (L8), Drei-Schach (L3), Atomschach (L4), König der Hügel (L7), Drache (L10),
    Falke und Bison (L9), Räuberschach mit Fairy-Stockfish als Zusatzpaket; Entenschach (L6) prüfen;
@@ -2580,8 +2528,7 @@ Im Turnier gibt es keinen Laden am Brett; vor der Meisterschaft lohnt sich Cross
 6. **Fernpartie** (Szene 99, 100): erfundene Partie 1865/66 mit der Engine bauen, Fragmente 0 bis 8 als
    Halbzüge festlegen, Endspielstellung für das Stellungsduell (R13) prüfen; Ambroses letzter Zug
    als Zugerraten.
-7. **Abspann und Extra-Abspann:** eine Abspann-Ansicht mit allen Figuren und Credits (LIZENZEN),
-   Extra-Abspann abhängig von der Dialogvariable aus Punkt 3.
+7. **Abspann, Epilog und Extra-Abspann:** eine Abspann-Ansicht mit allen Figuren und Credits (LIZENZEN), danach der Epilog auf dem Dachboden (Lily); der Extra-Abspann (Zettel im Epilog) hängt von der Dialogvariable aus Punkt 3 ab.
 8. **Neue Figurenbilder** (Porträt-Skript): Ward, Kit, Haraldsen, Sol, Darlene, Hollis, Ezra,
    Pruitt, Bea, Marcus, Tobias, Kade, Turnierleiterin, die Vell-Familie, Figuren der Wege.
 9. **Post-Game:** zweiter Durchlauf (+300, R10), getrennte Nadeln des zweiten Durchlaufs (V5),
@@ -2644,8 +2591,7 @@ Fragments): Fragment n enthält die Halbzüge 8n + 1 bis 8n + 8, also die Züge 
 | 8        | 65–72    | 33–36 | Akt 4, Szene 85: Erinnerung Hastings (Ward) | **35. Lxh6! gxh6 36. Sxf6+!**: das Doppelopfer |
 
 Hinweis für die Daten: Die vorhandenen Wirkungen `fragment` passen zu dieser Tabelle (Maple Falls 0,
-Cedar Creek 1 und 2, Riverton 3, Ironwood 4, Port Delacroix 5, Desert Springs 6 und 7); Fragment 8
-(Ward, Summit City) fehlt noch, bis die Quests von Akt 4 stehen.
+Cedar Creek 1 und 2, Riverton 3, Ironwood 4, Port Delacroix 5, Desert Springs 6 und 7); Fragment 8 (Ward, Summit City) steht inzwischen ebenfalls in `quests.json`.
 
 **Stellungen** (FEN):
 

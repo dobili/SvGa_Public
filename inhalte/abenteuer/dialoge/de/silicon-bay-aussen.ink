@@ -7,6 +7,14 @@
 // Einstiege wie in orte.json: ankunft_zu_fuss, dash, rosie, glasbruecke, hotel, bus_ironwood,
 // faehre. Rosie öffnet nach dem Gespräch ihren Laden (siliconBay.foodtruck).
 //
+// Runde 11 (13.11.2026): Ankunft, Dash und Rosie nach dem Roman (roman/akt3_teil1.md, Kapitel 31):
+// Victor holt euch ab („Ich war nicht sicher, ob das dasselbe ist“), Dashs „Hm“, Rosie gibt die
+// Karte aus der Kasse, Victor fragt, warum Dash wiederkommt. Klang nach 21_Klangplan.md (Akt 3):
+// Lieferroboter, an Rosies Wagen die Musik `rosie` (bis eine Klangquelle mit Reichweite kommt).
+// Kapitel 34: die Nacht mit dem Tablet. Ambrose sitzt, das Tablet ging an, weil er es sich
+// wünschte; „Und ich?“ bleibt ohne Antwort. Musik `zero` läuft durch, keine Stille (Klangplan,
+// Teil C); am Morgen Juno an der Glasbrücke, Schluss `ambrose.fern`.
+//
 // Variablen: ausgangSiliconBayDash, ausgangSiliconBayClubkampf und nadelSiliconBay setzt die
 // Hülle (R42). Victor holt {held} und Juno bei der Ankunft ab.
 
@@ -30,16 +38,37 @@ VAR batterieErhalten = false
 
 === ankunft_zu_fuss ===
 {ankunftSiliconBayGesehen:
-    Die Glasbrücke endet am Campus von Silicon Bay. #sprecher:erzaehler
+    Die Glasbrücke endet am Campus von Silicon Bay. Kein Baum, kein Vogel, nur Glas. #sprecher:erzaehler
     -> END
 }
 ~ ankunftSiliconBayGesehen = true
-Hinter der Glasbrücke glänzt eine Stadt aus Glas. Niemand trägt ein Brett, alle schauen auf Bildschirme. #sprecher:erzaehler
-Ein Lieferroboter rollt vorbei und fährt {held} fast über die Füße. #sprecher:erzaehler
-Victor wartet am Ende der Brücke, die Hände in den Taschen. Er sieht müde aus. #sprecher:erzaehler
-Ihr seid gekommen. Gut. Die Akademie ist dort drüben. #sprecher:victor
-Kein Baum. Keine Taube. Wo wohnen hier die Tiere? #sprecher:ambrose
-Juno flüstert: „Frag ihn, wo die Tiere sind.“ Victor zuckt mit den Schultern: „Die stören die Sensoren.“ #sprecher:erzaehler
+Die Häuser sind aus Glas. In ihnen spiegeln sich die anderen Häuser, man sieht nicht, wo eines aufhört. #sprecher:erzaehler
+Es ist still. Still wie ein Raum, in dem ein Gerät läuft, das man erst bemerkt, wenn es ausgeht. #sprecher:erzaehler
+Auf den Bänken sitzt jeder für sich, auf vielen Bildschirmen kleine Schachbretter. Niemand spielt gegen jemanden. #sprecher:erzaehler
+Etwas Weißes, Kniehohes summt auf dich zu und fährt vorbei, ohne langsamer zu werden. #sprecher:erzaehler #klang:lieferroboter
+Ein Lieferroboter. Der bringt Essen. #sprecher:juno
+* [„Wem?“]
+- Jemandem, der nicht rausgehen will. #sprecher:juno
+Ambrose dreht sich einmal um sich selbst. In zwanzig Scheiben Glas ist er nicht zu sehen. #sprecher:erzaehler
+Kein Baum. Keine Taube. Nicht einmal eine Ratte. Wo wohnen hier die Tiere? #sprecher:ambrose
+Die stören die Sensoren. #sprecher:victor
+Victor steht hinter euch, ganz in Weiß. Er sieht aus, als hätte er nicht geschlafen. #sprecher:erzaehler
+Ihr seid gekommen. #sprecher:victor
+* [„Du hast eingeladen.“]
+- Ja. Ich war nicht sicher, ob das dasselbe ist. #sprecher:victor
+-> ankunft_rundgang
+
+// Victor zählt auf, weil Zahlen das Einzige sind, worüber er ohne Mühe redet (Kapitel 31).
+=== ankunft_rundgang ===
+Er führt euch über den Campus. Vierzig Stockwerke, die Akademie im zweiten, die Serverhalle unter der Erde. #sprecher:erzaehler
+Gekühlt mit Meerwasser. #sprecher:victor
+Er gibt nicht an. Zahlen sind das Einzige, worüber er ohne Mühe reden kann. #sprecher:erzaehler
+Wohnst du hier? #sprecher:juno
+Im achtunddreißigsten. #sprecher:victor
+Kann man da die Fenster aufmachen? #sprecher:juno
+* [Auf Victors Antwort warten]
+- Victor überlegt. Ernsthaft. #sprecher:erzaehler
+Ich habe es nie versucht. #sprecher:victor
 -> END
 
 === glasbruecke ===
@@ -58,14 +87,18 @@ Die Glasbrücke führt zurück zur Raststätte an der Schnellstraße. #sprecher:
 
 === dash_erstes_treffen ===
 ~ dashGetroffen = true
-Auf der Bank vor dem Food-Truck sitzt ein Lieferradfahrer mit Helm und einem Brett auf den Knien. #sprecher:erzaehler
-Hey! Blitz um einen Burrito? Drei Minuten, ich red die ganze Zeit. Das gehört dazu. #sprecher:dash
-Im Park redet man, {held}. Hier ist ein Park, wenn auch einer aus Glas. #sprecher:ambrose
+Auf der Holzbank vor Rosies Wagen sitzt ein junger Mann neben einem Lieferrad, einen Burrito in der Hand. #sprecher:erzaehler #musik:rosie
+Tick, tack. Dein König hat Angst. Guck, wie der zittert. Denkst du noch oder verlierst du schon? #sprecher:dash
+Der Mann im Anzug gegenüber stellt einen Turm ein, steht auf und geht. #sprecher:erzaehler
+Nächster! Du da, mit den Blechdingern an der Jacke. Drei Minuten, um einen Burrito. #sprecher:dash
+Ich bin Dash. Ich rede dabei. Stört dich das? Mich nicht. #sprecher:dash
+* [„Mich auch nicht.“]
+- Im Park redet man. Und das hier ist ein Park. Wenn auch einer aus Glas, mit einer einzigen Bank. #sprecher:ambrose #stimmung:froh
 Wenn er redet, darfst du zurückreden. Mit einem Spruch. Aber nie gemein. #sprecher:ambrose
 -> dash_angebot
 
 === dash_angebot ===
-Tick, tack, dein König hat Angst. Spielen wir? #sprecher:dash
+Tick, tack. Spielen wir? #sprecher:dash #musik:rosie
 + [„Los, drei Minuten.“]
     ~ beginnePartie("siliconBay.dash")
     -> END
@@ -74,42 +107,63 @@ Tick, tack, dein König hat Angst. Spielen wir? #sprecher:dash
     -> END
 
 === dash_nach_niederlage ===
-Burrito für mich! Denkst du noch oder verlierst du schon? #sprecher:dash
+Burrito für mich! Denkst du noch oder verlierst du schon? #sprecher:dash #musik:rosie
+Es ist, als spielte man neben einem Radio. Du hast zugehört. #sprecher:erzaehler
 Er redet, damit du nicht denkst. Mach das Gegenteil. #sprecher:ambrose
 + [„Revanche.“]
     ~ beginnePartie("siliconBay.dash")
     -> END
-* [„Später.“]
+* [„Nicht jetzt.“]
     -> END
 
 === dash_nach_sieg ===
-{not dashKarteGegeben:
-    ~ dashKarteGegeben = true
-    Okay, okay. Du hast mich zum Grübeln gebracht. Das schafft sonst keiner. #sprecher:dash
-    Hier, nimm den. Den Spruch hab ich von meiner Oma: Lass sie zweifeln. #sprecher:dash
-    ~ gibKarte("gruebelfalle")
-    Eine Karte, die Zweifel sät. Benutze sie mit Anstand, {held}. #sprecher:ambrose
-    -> END
-}
-{~Du schon wieder. Mein Burrito wird kalt.|Okay, du bist gut. Aber ich bin lauter.|Morgen gewinn ich. Wahrscheinlich.} #sprecher:dash
+{not dashKarteGegeben: -> dash_hm}
+{~Du schon wieder. Mein Burrito wird kalt.|Okay, du bist gut. Aber ich bin lauter.|Morgen gewinn ich. Wahrscheinlich.} #sprecher:dash #musik:rosie
 + [„Noch eine?“]
     ~ beginnePartie("siliconBay.dash")
     -> END
 + [„Guten Appetit.“]
     -> END
 
+// Kapitel 31: Der Held hat Dash mit einem „Hm“ grübeln lassen. Ambrose findet das nicht fein,
+// Rosie gibt die Karte aus ihrer Kasse (Grübelfalle), Victor fragt, warum Dash wiederkommt.
+=== dash_hm ===
+~ dashKarteGegeben = true
+Was war das eben? Du hast aufs Brett gestarrt, als hättest du was Furchtbares entdeckt. #sprecher:dash #musik:rosie
+* [„Hm.“]
+- Was, hm? Was hast du gesehen? Da ist doch nichts. Oder? #sprecher:dash
+Er sucht vierzig Sekunden lang nach etwas, das es nicht gibt. Dann lacht er, laut und ohne Groll. #sprecher:erzaehler
+Das war nicht fein. #sprecher:ambrose
+* [„Du hast gesagt, im Park redet man.“]
+- Ich habe nicht gesagt, dass es fein ist. #sprecher:ambrose
+Dash kauft dir den Burrito selbst. Rosie reicht eine Karte durch die Klappe, ein Gesicht mit gerunzelter Stirn. #sprecher:erzaehler
+Die lag in der Kasse, seit ich den Wagen gekauft hab. Von einem alten Mann in Riverton. #sprecher:rosie
+Er hat gesagt, die gehört dem, der Dash zum Schweigen bringt. #sprecher:rosie
+* [Die Karte nehmen]
+- ~ gibKarte("gruebelfalle")
+-> dash_victor
+
+=== dash_victor ===
+Victor hat die ganze Zeit dabeigestanden. Er hat nichts gegessen. #sprecher:erzaehler
+Er verliert jeden Tag. Seine Genauigkeit liegt bei sechzig Prozent. Warum kommt er wieder? #sprecher:victor
+Es ist keine Verachtung in der Frage. Er will es wissen. #sprecher:erzaehler
+* [„Frag ihn.“]
+- Victor sieht zurück zur Bank. Dash hat schon den Nächsten. #sprecher:erzaehler
+Das kann man nicht messen. #sprecher:victor
+-> END
+
 // ---------------------------------------------------------------- Rosie
 
 === rosie ===
 {rosieGetroffen:
-    {~Burrito? Nein? Dann eben nicht.|Hier leuchtet nur meine Kochplatte.|Pass auf dich auf in der Akademie.} #sprecher:rosie
+    {~Burrito? Nein? Dann eben nicht.|Hier leuchtet nur meine Kochplatte.|Pass auf dich auf in der Akademie.} #sprecher:rosie #musik:rosie
     -> rosie_laden
 }
 ~ rosieGetroffen = true
-Aus dem Food-Truck duftet es nach Bohnen und Mais. Eine Frau mit Kochmütze lehnt sich aus dem Fenster. #sprecher:erzaehler
-Willkommen in Silicon Bay. Ich bin das Einzige hier, das nicht leuchtet. #sprecher:rosie
+Ein alter Lastwagen, türkis, mit Beulen. Aus der Klappe kommen Dampf und der Geruch von gebratenen Zwiebeln. #sprecher:erzaehler #musik:rosie
+Auf dem Dach dreht sich ein Blechschild, von Hand gemalt: „Rosies“. Die Frau in der Klappe hat Mehl an den Armen. #sprecher:erzaehler
+Ich bin das Einzige in dieser Stadt, das nicht leuchtet. Was wollt ihr? Sagt nicht Salat. #sprecher:rosie
 Karten verkauf ich auch. Auf Papier, nicht auf dem Bildschirm. #sprecher:rosie
-Eine Köchin, die lacht. In dieser Stadt aus Glas ist das ein Wunder. #sprecher:ambrose
 -> rosie_laden
 
 === rosie_laden ===
@@ -132,17 +186,47 @@ Eine Köchin, die lacht. In dieser Stadt aus Glas ist das ein Wunder. #sprecher:
 === hotel_nacht ===
 ~ tabletNachtGesehen = true
 ~ setzeToenung("nacht")
-Mitten in der Nacht wachst du auf. Das Tablet leuchtet neben dem Brett. #sprecher:erzaehler
-Die Maschine spielt gegen sich selbst. Partie um Partie, ohne Pause. #sprecher:erzaehler
-Ich habe zugesehen. Die ganze Nacht. #sprecher:ambrose #stimmung:gebannt
-Sie spielt, wie ich immer spielen wollte. Kein einziger Zweifel. #sprecher:ambrose #stimmung:gebannt
+Du wachst auf, weil es hell ist. Zehn nach drei. Ein weißes, flackerndes Licht läuft über die Decke. #sprecher:erzaehler #musik:zero #geraeusch:aus
+Auf dem Tablet spielt ZERO gegen sich selbst. Zwölf Sekunden, dann die nächste. In der Ecke: „Partie 1847“. #sprecher:erzaehler
+Du hast es nicht eingeschaltet. Ambrose sitzt davor, auf der Kante des Stuhls. Das Licht geht durch ihn hindurch. #sprecher:erzaehler
+* [„Wie hast du das angemacht?“]
+- Ich weiß es nicht. Ich habe es mir gewünscht. Sehr. #sprecher:ambrose #stimmung:gebannt
+Tausendachthundert Partien. In jeder ist etwas, wofür ich einen Arm gegeben hätte. #sprecher:ambrose #stimmung:gebannt
+Und es weiß nicht einmal, dass es schön ist. Es rechnet, und die Schönheit fällt heraus. Wie Späne. #sprecher:ambrose #stimmung:gebannt
+* [„In Ironwood hast du gesagt, meine Partie war schön.“]
+    -> hotel_nacht_frage
+
+// Die Frage ohne Antwort (Kapitel 34). Die Musik läuft weiter; es gibt keine Stille.
+=== hotel_nacht_frage ===
+Ja. Es hat mir das Herz gebrochen, vor Freude. Ein Opfer in vierzig Zügen. #sprecher:ambrose
+Das hier macht es in jeder. In jeder, {held}. Ohne zu zittern. Ohne dreimal zu zählen. #sprecher:ambrose #stimmung:gebannt
+Partie 1851. Partie 1852. #sprecher:erzaehler
+Sie zweifelt nie. Siehst du, wie schön das ist? #sprecher:ambrose #stimmung:gebannt
+Die Partie ohne Makel. Und hier liegt sie, tausendmal. In einer Schachtel, die ein Kind verschenkt. #sprecher:ambrose #stimmung:gebannt
 * [„Und ich?“]
-    Ambrose antwortet nicht. Auf dem Bildschirm fällt ein König. #sprecher:erzaehler #pause
-* [„Mach das aus.“]
-    Gleich. Nur noch diese eine Partie. #sprecher:ambrose #stimmung:gebannt
-    Er sagt es dreimal in dieser Nacht. #sprecher:erzaehler
-- ~ setzeToenung("keine")
-Am Morgen fährt Juno zurück nach Hause. „Pass auf ihn auf“, sagt sie leise. „Er klingt komisch.“ #sprecher:erzaehler
+- Er dreht sich um. #sprecher:erzaehler
+Was ist mit dir? #sprecher:ambrose
+* [„Einundsiebzig Prozent. Was bin dann ich?“]
+- Ambrose sieht dich an. Er öffnet den Mund. #sprecher:erzaehler
+* [Warten]
+- Auf dem Tablet beginnt Partie 1853, und sein Blick geht hin. Nur einen Augenblick. #sprecher:erzaehler
+Aber er geht hin. Er antwortet nicht. #sprecher:erzaehler
+Du drehst dich zur Wand. Das Licht flackert weiter über die Decke. #sprecher:erzaehler
+Du machst die Augen zu und siehst es trotzdem. #sprecher:erzaehler
+~ setzeToenung("keine")
+-> hotel_morgen
+
+// Kapitel 34, Schluss: Juno fährt zurück und merkt, dass der Held nichts mehr erzählt.
+=== hotel_morgen ===
+Am Morgen fährt Juno zurück. Ihr steht an der Glasbrücke, sie hat die Mütze auf. #sprecher:erzaehler #musik:aus #geraeusch:stadtpuls
+Pass auf ihn auf. #sprecher:juno
+* [„Du hörst ihn doch gar nicht.“]
+- Nein. Aber ich höre dich. Du erzählst mir immer, was er sagt. #sprecher:juno
+Seit gestern erzählst du nichts. #sprecher:juno
+Sie schlägt das Tagebuch auf, hält den Stift darüber und klappt es wieder zu. #sprecher:erzaehler
+Er klingt komisch, wenn du nichts erzählst. #sprecher:juno
+Sie geht über das Glas, klein und rot in dem ganzen Weiß, dreht sich in der Mitte um und winkt mit beiden Armen. #sprecher:erzaehler
+Zum ersten Mal, seit du die Decke weggezogen hast, fühlst du dich allein. #sprecher:erzaehler #musik:ambrose.fern #pause:4
 -> END
 
 // ---------------------------------------------------------------- Bus und Fähre

@@ -1,5 +1,18 @@
 {
-  "erklaerung": "Erlaubte Ausnahmen für das Weltpuzzle (pipeline/abenteuer/weltpuzzle.py, R034). zwischenstuecke: Übergänge, zwischen deren Karten ein ungezeichnetes Wegstück liegt; die Naht legt die Karten nicht bündig aneinander und darf bis 60 Kacheln springen. rand_ausnahmen: Nähte, deren Randbruch ein Zwischenstück erklärt. Jeder Eintrag: karte (Kennung), ausloeser (Name auf dieser Karte), grund (ein Satz, steht auch im Ortsdokument).",
-  "zwischenstuecke": [],
+  "erklaerung": "Erlaubte Ausnahmen für das Weltpuzzle (pipeline/abenteuer/weltpuzzle.py, R034). zwischenstuecke: Übergänge, zwischen deren Karten ein ungezeichnetes Wegstück liegt; die Naht legt die Karten nicht bündig aneinander und darf bis 60 Kacheln springen; mit sprung (dx, dy in Kacheln, von dieser Karte aus gesehen) liegt die Zielkarte genau um diesen Sprung versetzt. rand_ausnahmen: Nähte, deren Randbruch ein Zwischenstück erklärt. Jeder Eintrag: karte (Kennung), ausloeser (Name auf dieser Karte), hinweis (Begründung in einem Satz, steht auch im Ortsdokument).",
+  "zwischenstuecke": [
+    {
+      "karte": "mapleFalls.park",
+      "ausloeser": "zedernpfad",
+      "sprung": [22, -34],
+      "hinweis": "Hinter dem Fußsteg steigt der Pfad ungezeichnet durch den Wald am Kürbishof vorbei; der Zedernpfad beginnt erst oberhalb des Hofs."
+    },
+    {
+      "karte": "wegMapleCedar.zedernpfad",
+      "ausloeser": "zedernWeiterCedar",
+      "sprung": [22, 37],
+      "hinweis": "Vom Ostrand des Zedernpfads fällt der Pfad ungezeichnet durch den Wald hinab zum Ortsrand von Cedar Creek, nördlich des Flusswegs."
+    }
+  ],
   "rand_ausnahmen": []
 }

@@ -22,6 +22,11 @@ VAR daleGetroffen = false
 VAR zahnradGefunden = false
 VAR nietenkopfGefunden = false
 VAR zeitnotTrickErhalten = false
+// Kapitel 24 (Roman): Noors Wandbild wächst mit der Nadel von Ironwood (Hülle setzt nadelIronwood);
+// {held} spricht Ambrose erst nach dem Archiv aus, Kapitel 24 liegt danach.
+VAR nadelIronwood = 0
+VAR noorGetroffen = false
+VAR held = ""
 // Runde 6: Ereignis „Brückenbauern“ (Dokument 15, 2.3) und Sammelstränge. gefunden<Fund> setzt die
 // Hülle nach gibFund, ausgangWegRivertonIronwoodDime nach der Partie (R42).
 VAR gefundenKonservendose = false
@@ -40,27 +45,54 @@ VAR kreideTreffpunkte = 0
 
 === dale ===
 {daleGetroffen:
-    {~Der Kanal friert bald zu. Dann gehen die Kinder darauf Schlittschuh laufen und spielen am Ufer Schach.|Überleg vorher. Ich sag das meinen Kühen auch, aber die hören nicht zu.} #sprecher:dale
+    {~Ein Bauer zieht nie zurück.|Überleg vorher. Sag ich den Kühen auch.} #sprecher:dale
     -> END
 }
 ~ daleGetroffen = true
-An einem Zaun lehnt ein Mann in Latzhose und schaut auf den Kanal. Hinter ihm grasen drei Kühe. #sprecher:erzaehler
-Dale. Ich hab hier früher Gemüse an die Fabriken verkauft. #sprecher:dale
-Jetzt verkaufe ich nichts, ich schaue nur. #sprecher:dale
-Ein Bauer zieht nie zurück. Also überleg vorher. #sprecher:dale
-Sagt mein Enkel. Der spielt Schach, ich baue Zäune. #sprecher:dale
-Ein Landwirt, der Bauern versteht. Das ist naheliegend und trotzdem selten. #sprecher:ambrose #stimmung:lacht
+Ein Mann lehnt am Zaun und kaut einen Halm. #sprecher:erzaehler
+Ein Bauer zieht nie zurück. #sprecher:dale
+Also überleg vorher. #sprecher:dale
+Keiner hat ihn gefragt. Er meint vermutlich auch sich selbst. #sprecher:erzaehler
+-> END
+
+// ---------------------------------------------------------------- Noor Haddad (Kapitel 24)
+// Wandbild in Stufen (Roman, „Neu gegenüber“): Umrisse in Akt 2, Farbe nach der Nadel von
+// Ironwood. Die Stufen in Akt 3 (fertig mit Signatur, Künstlerin fort) kommen mit Akt 3.
+// Noch ohne Figur auf der Karte (Kartenpunkt vor der Fabrikmauer, K2).
+
+=== noor ===
+{nadelIronwood > 0:
+    -> noor_farbe
+}
+{noorGetroffen:
+    Nicht stehen bleiben. Das ist noch nichts. #sprecher:noor
+    -> END
+}
+~ noorGetroffen = true
+An einer langen Mauer steht eine junge Frau auf einer Leiter. Auf ihrem Eimer steht „Noor“. #sprecher:erzaehler #geraeusch:spruehdose
+Auf der Mauer wachsen schwarze Umrisse. Ein Turm. Ein halber Springer. #sprecher:erzaehler
+Nicht stehen bleiben. Das ist noch nichts. #sprecher:noor
+* [„Was wird es?“]
+- Weiß ich, wenn es fertig ist. #sprecher:noor
+Sie schüttelt eine Dose. Es klackert. #sprecher:erzaehler
+Mein Opa hat da drin gearbeitet. #sprecher:noor
+Die haben in der Pause gespielt, auf einer Werkbank. Ich mal die Bank. Vielleicht. #sprecher:noor
+-> END
+
+= noor_farbe
+Die Umrisse haben Farbe bekommen. Unter dem Turm steht jetzt eine Werkbank, zwei Männer in Blaumann beugen sich darüber. #sprecher:erzaehler
+Der Turm kriegt Ultramarin. Opa hätte gesagt: zu bunt. #sprecher:noor
 -> END
 
 // ---------------------------------------------------------------- Rätseltafel
 
 === tafel ===
 {wegRivertonIronwoodTafelBestanden:
-    Unter dem Fahrplan der Haltestelle steht in Kreide: „Gelöst. Der Bus kommt trotzdem nicht.“ #sprecher:erzaehler
+    Unter dem Fahrplan steht in Kreide: „Gelöst. Der Bus kommt trotzdem nicht.“ #sprecher:erzaehler
     -> END
 }
-An einer Bushaltestelle ohne Bus hängt eine Tafel mit zwei Diagrammen: „Was festgenagelt ist, kann nicht weg.“ #sprecher:erzaehler
-Fesselungen. Eine Figur, die stehen bleiben muss, weil hinter ihr etwas Wertvolleres steht. #sprecher:ambrose
+An einer Bushaltestelle ohne Bus hängt eine Rätseltafel aus Blech: „Was festgenagelt ist, kann nicht weg.“ #sprecher:erzaehler
+Fesselungen. Eine Figur muss stehen bleiben. Hinter ihr steht etwas Wertvolleres. #sprecher:ambrose
 * [Die Aufgaben lösen]
     ~ beginneAufgaben("wegRivertonIronwood.tafel")
     -> END
@@ -71,47 +103,70 @@ Fesselungen. Eine Figur, die stehen bleiben muss, weil hinter ihr etwas Wertvoll
 
 === fund_zahnrad ===
 {zahnradGefunden:
-    Am Zaun der leeren Fabrik hängt nur noch Rost. #sprecher:erzaehler
+    Am Zaun der leeren Fabrik sitzen Krähen. Sie sehen dir nach, als hätten sie hier das Sagen. #sprecher:erzaehler
     -> END
 }
 ~ zahnradGefunden = true
-Am Zaun einer leeren Fabrik liegt ein Zahnrad, so groß wie eine Hand. #sprecher:erzaehler
+Eine Fabrik aus rotem Stein, und niemand ist darin. Fenster ohne Glas. Aus dem Schornstein wächst ein Baum. #sprecher:erzaehler
+Am Zaun liegt ein Zahnrad, so groß wie eine Hand. #sprecher:erzaehler
 ~ gibFund("zahnrad")
-Ein Rad, das kein anderes mehr dreht. Wie traurig für ein Rad. #sprecher:ambrose
+Ein Rad, das kein anderes mehr dreht. #sprecher:ambrose
 -> END
 
 === fund_nietenkopf ===
 {nietenkopfGefunden:
-    Am Brückengeländer sitzen die Nieten in langen Reihen, eine fehlt. #sprecher:erzaehler
+    Am Geländer sitzen die Nieten in langen Reihen. Auf jedem Kopf: J. H. #sprecher:erzaehler
     -> END
 }
-~ nietenkopfGefunden = true
-Am Geländer der Eisenbrücke hat sich ein Nietenkopf gelöst. Eingeprägt sind zwei Buchstaben: J. H. #sprecher:erzaehler
-~ gibFund("nietenkopf")
-J. H.? Wer ist das? Ambrose, kennst du das? #sprecher:juno
-Ambrose schweigt. Sehr lange. #sprecher:erzaehler #pause
+-> jh ->
 -> END
+
+// Kapitel 24, Ende: Juno findet die Buchstaben, Ambrose erkennt sie und kann es nicht sagen. Als
+// Tunnel, weil es nach dem Zeitnot-Trick oder am Geländer zuerst kommen kann.
+=== jh ===
+~ nietenkopfGefunden = true
+Hier ist was eingeschlagen! In die Dinger. Die runden. #sprecher:juno
+Auf einem Nietenkopf am Fuß eines Pfostens stehen zwei Buchstaben. Klein, sauber, ins heiße Eisen gestempelt. #sprecher:erzaehler #bild:nietenkopf_jh
+J. H. #sprecher:erzaehler #klang:hale
+Auf dem nächsten auch. Und auf dem übernächsten. #sprecher:erzaehler
+Der Erbauer. Der hat überall unterschrieben. Eitel! #sprecher:juno
+~ gibFund("nietenkopf")
+Ambrose sieht auf die Buchstaben. Sein Gesicht ist leer. Wie ein Zimmer, aus dem gerade jemand hinausgegangen ist. #sprecher:erzaehler #bild:aus
+* [„Ambrose?“]
+- Ein Brückenbauer. Es gibt viele. #sprecher:ambrose #stimmung:still
+* [„Du sagtest, er war Brückenbauer. Aus dem Norden.“]
+- Es gibt viele Brücken. #sprecher:ambrose #stimmung:still
+Der Wind pfeift durch die Dreiecke. #sprecher:erzaehler #pause
+Ambrose steht noch einen Augenblick am Geländer. Eine Hand ausgestreckt, dicht über dem Eisen, ohne es zu berühren. #sprecher:erzaehler
+->->
 
 // ---------------------------------------------------------------- Der Zeitnot-Trick
 
 === zeitnot_trick ===
 {zeitnotTrickErhalten:
-    Der Wind pfeift durch die Brücke. Unten im Tal raucht das Stahlwerk. #sprecher:erzaehler
+    Der Wind singt in den Trägern. Am Ende des Tals raucht ein Schornstein. #sprecher:erzaehler
     -> END
 }
 ~ zeitnotTrickErhalten = true
-Mitten auf der Eisenbrücke bleibt Ambrose stehen, wenn man das so nennen kann. Der Wind zerrt an deiner Jacke. #sprecher:erzaehler
-Ich zeige dir einen Trick aus dem Kaffeehaus. Man tat so, als brenne die Kerze des Gegners schon herunter. #sprecher:ambrose
-Er glaubte es, und er eilte. Wer eilt, übersieht. #sprecher:ambrose
+Über das Tal läuft eine Brücke aus schwarzem Eisen. Lauter Dreiecke, jedes genau so groß wie das nächste. #sprecher:erzaehler #musik:aus #geraeusch:wind_traeger
+Und Tausende Nieten, runde Köpfe in geraden Reihen. #sprecher:erzaehler
+Wer baut so etwas? #sprecher:juno
+* [„Jemand, der nichts dem Zufall überlässt.“]
+- Du weißt nicht, warum du das sagst. Ambrose ist sehr still. #sprecher:erzaehler #pause
+Im Kaffeehaus gab es einen Trick. Man tat, als brenne die Kerze des Gegners schon herunter. #sprecher:ambrose
+Man sah darauf. Man seufzte. Er glaubte es, und er eilte. #sprecher:ambrose
 * [„Ist das nicht Schummeln?“]
-    Es ist Theater. Der Gegner sieht dieselbe Uhr wie du. #sprecher:ambrose
-    Ich rücke nichts, ich verrate nichts. #sprecher:ambrose
-* [„Und wenn ich selbst in Zeitnot bin?“]
-    Dann hilft dir kein Theater. Dann hilft nur Übung. #sprecher:ambrose
-- Und der ehrliche Teil: Ist bloß dein Gegner in Zeitnot, blitze nicht mit. Nutze die Zeit, die du hast. #sprecher:ambrose
-Nimm diese Karte. Einmal, und nur wenn die Uhr läuft. #sprecher:ambrose
-Eine Goldnadel bekommst du damit nicht. #sprecher:ambrose
+- Es ist Theater. Der Gegner sieht dieselbe Kerze wie du. #sprecher:ambrose
+Er hält dir eine Karte hin. Eine Sanduhr darauf, fast leer. #sprecher:erzaehler
 ~ gibKarte("grossesMaul")
+Sie ist nicht ganz sauber. Wenn du sie spielst, glänzt deine Nadel weniger. #sprecher:ambrose
+Ich sage es dir, weil ich es früher niemandem gesagt habe. #sprecher:ambrose
+* [„Und wenn der andere wirklich keine Zeit hat?“]
+- Dann spielt man nicht mit ihm um die Wette. Man nimmt sich die eigene Zeit und zieht in Ruhe. #sprecher:ambrose
+Das hat mich dreißig Jahre gekostet. Dann war ich tot. #sprecher:ambrose #stimmung:alt
+{nietenkopfGefunden == false:
+    -> jh ->
+}
 -> END
 
 // ---------------------------------------------------------------- Kanalweg: Ansehen (Runde 6)
@@ -141,8 +196,7 @@ Ein Häuschen mit vernagelter Tür. Auf dem Schild steht „Brückenwärter. Bit
 -> END
 
 === aussicht_tal ===
-Tief unten liegt ein graues Tal. Aus zwei Schornsteinen steigt Rauch, und der Wind trägt ein fernes Hämmern herauf. #sprecher:erzaehler
-Von hier oben sieht jede Stadt aus wie eine Stellung. Man erkennt erst unten, wer wo steht. #sprecher:ambrose
+Tief unten liegt der Kanal wie ein Strich. Am Ende des Tals stehen Schornsteine im Dunst. Aus einem kommt Rauch. #sprecher:erzaehler
 -> END
 
 // ---------------------------------------------------------------- Ereignis „Die Brückenbauern“
@@ -165,7 +219,7 @@ Am Brückenfuß ist ein Springer aus Kreide gezeichnet. Darunter, kleiner: #spre
 * [Kf2]
     Der König geht spazieren. Ein Matt ist das nicht. #sprecher:erzaehler
     -> raten
-* [Später nachdenken]
+* [Erst nachdenken]
     -> END
 
 === kreidespringer_geloest ===
@@ -195,7 +249,7 @@ Die da? Seit zwei Wochen. Filmt jede Partie. Fragt keiner, wozu. #sprecher:dime
     Dime stellt die Uhr. Bevor du den ersten Zug machst, hat er schon drei Sätze gesagt. #sprecher:erzaehler
     ~ beginnePartie("wegRivertonIronwood.dime")
     -> END
-* [Später]
+* [Nicht jetzt]
     Ich bin hier. Die Brücke auch. #sprecher:dime
     -> END
 

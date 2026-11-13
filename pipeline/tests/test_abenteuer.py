@@ -113,6 +113,27 @@ def test_querverweise_stimmen():
         if "kapitel" in karte:
             schluessel.append(f"karte.{karte['kennung']}.geschenkt")
         fehler.extend(f"Text {s} fehlt" for s in schluessel if s not in texte)
+    # Partiemomente (Atmosphäre T5, T11): Text und Name des Sprechers stehen in den Spieltexten,
+    # ein geführter Moment nennt einen Knoten, den es in der Ink-Datei gibt.
+    dialogordner = HAUPTORDNER / "inhalte" / "abenteuer" / "dialoge" / "de"
+    for begegnung in _lade("begegnungen.json")["begegnungen"]:
+        for moment in begegnung.get("momente", []):
+            schluessel = [f"figur.{moment['sprecher']}.name"]
+            if "text" in moment:
+                schluessel.append(moment["text"])
+            for s in schluessel:
+                if s not in texte:
+                    fehler.append(f"{begegnung['kennung']}: Moment-Text {s} fehlt")
+            if "dialog" in moment:
+                datei, knoten = moment["dialog"].split(".", 1)
+                ink = dialogordner / f"{datei}.ink"
+                if not ink.exists() or f"=== {knoten} ===" not in ink.read_text(encoding="utf-8"):
+                    fehler.append(f"{begegnung['kennung']}: Moment-Dialog {moment['dialog']} fehlt")
+    # Steckbriefzeilen mit freiem Text: Der Satz steht in den Spieltexten.
+    for profil in _lade("gegner.json")["gegner"]:
+        for zeile in profil["steckbrief"]:
+            if zeile["art"] == "text" and zeile["wert"] not in texte:
+                fehler.append(f"{profil['kennung']}: Steckbrieftext {zeile['wert']} fehlt")
     # Freie Karten (R29) gibt es in karten.json.
     for begegnung in _lade("begegnungen.json")["begegnungen"]:
         for k in begegnung.get("freieKarten", []):
@@ -261,6 +282,36 @@ def test_ink_szene_und_tiled_karte_liegen_bereit():
     namen = {o["name"] for o in objekte["objects"] if o.get("type") not in ("moebel", "statist", "tier")}
     ausloeser = {a["name"] for a in _lade("orte.json")["orte"][0]["ausloeser"]}
     assert namen <= ausloeser
+
+
+def test_tagebuchseiten_haben_ihren_text():
+    """Jedes schreibeTagebuch("name") in den Dialogen hat den Text tagebuch.eintrag.<name>."""
+    texte = set(_lade("texte/de.json"))
+    fehler = [
+        f"{ink.name}: tagebuch.eintrag.{name} fehlt"
+        for ink in sorted((INHALTE / "dialoge" / "de").glob("*.ink"))
+        for name in re.findall(r'schreibeTagebuch\("([A-Za-z0-9]+)"\)', ink.read_text("utf-8"))
+        if f"tagebuch.eintrag.{name}" not in texte
+    ]
+    assert fehler == []
+
+
+def test_klangquellen_nennen_objekte_der_karte():
+    """Jede Klangquelle (T28) nennt ein Objekt, das es in der Tiled-Karte gibt."""
+    fehler: list[str] = []
+    for ort in _lade("orte.json")["orte"]:
+        for karte in ort["karten"]:
+            quellen = karte.get("klangquellen", [])
+            if not quellen:
+                continue
+            tiled = json.loads((INHALTE / karte["datei"]).read_text(encoding="utf-8"))
+            namen = {o.get("name") for e in tiled["layers"] for o in e.get("objects", [])}
+            fehler.extend(
+                f"{karte['kennung']}: Klangquelle {q['objekt']} fehlt in der Karte"
+                for q in quellen
+                if q["objekt"] not in namen
+            )
+    assert fehler == []
 
 
 def test_startnummer_nur_bei_schach960():

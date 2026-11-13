@@ -508,3 +508,146 @@ body.abenteuer-mit-kulisse {
 .abenteuer-vorfuehrung .brettschalter-gruppe {
   display: none;
 }
+
+/* Pause im Dialog (#pause, T3): „Weiter“ ist gesperrt und blendet nach der Pause wieder ein. */
+.abenteuer-dialog-weiter,
+.abenteuer-dialog-wahlen button {
+  transition: opacity 0.4s ease;
+}
+.abenteuer-dialog-weiter:disabled,
+.abenteuer-dialog-wahlen button:disabled {
+  opacity: 0;
+}
+
+/* Musik und Geräusche im Spielmenü (anbindung/Tonregler.tsx, T1 und T2). */
+.abenteuer-ton {
+  display: flex;
+  flex-direction: column;
+  gap: var(--raster);
+  border: 1px solid var(--gold);
+  border-radius: var(--radius);
+  padding: var(--raster);
+}
+.abenteuer-tonregler {
+  display: flex;
+  align-items: center;
+  gap: var(--raster);
+}
+.abenteuer-tonregler input[type="range"] {
+  flex: 1;
+}
+.abenteuer-ton-hinweis {
+  margin: 0;
+  font-size: 0.9em;
+}
+
+/* Großansicht eines Bildes über der Dialogzeile (Atmosphäre T7, dialog/Grossansicht.tsx). */
+.abenteuer-grossansicht {
+  margin: 0 0 var(--raster);
+  display: flex;
+  justify-content: center;
+  animation: abenteuer-grossansicht-ein 0.4s ease-out;
+}
+
+.abenteuer-grossansicht img {
+  max-width: 100%;
+  max-height: 55vh;
+  object-fit: contain;
+  border-radius: 4px;
+  box-shadow: 0 2px 12px rgba(0, 0, 0, 0.45);
+}
+
+@keyframes abenteuer-grossansicht-ein {
+  from {
+    opacity: 0;
+  }
+
+  to {
+    opacity: 1;
+  }
+}
+
+/* Erscheinung des Porträts (Atmosphäre T9): #erscheint blendet in zwei Sekunden ein, #geist zeigt
+   die Figur halb durchsichtig (Ambrose im Kapitel 2). */
+.abenteuer-dialog-kopf[data-erscheinung="erscheint"] .abenteuer-dialog-portraet {
+  animation: abenteuer-erscheint 2s ease-in;
+}
+
+.abenteuer-dialog-kopf[data-erscheinung="geist"] .abenteuer-dialog-portraet {
+  opacity: 0.5;
+}
+
+@keyframes abenteuer-erscheint {
+  from {
+    opacity: 0;
+  }
+
+  to {
+    opacity: 1;
+  }
+}
+
+/* Fensterbank mit den Funden (Atmosphäre T15, oberwelt/Fensterbank.tsx). */
+.abenteuer-fensterbank ul {
+  max-height: 50vh;
+  overflow-y: auto;
+  margin: 0 0 var(--raster);
+  padding: 0;
+  list-style: none;
+  text-align: left;
+}
+
+.abenteuer-fensterbank li + li {
+  margin-top: calc(var(--raster) * 0.75);
+}
+
+/* Tagebuchseite mit Schreibanimation (Roman Kap. 9, oberwelt/Tagebuchseite.tsx): Handschrift ohne
+   Webschrift, damit das Paket nicht wächst. */
+.abenteuer-handschrift {
+  font-family: "Segoe Print", "Bradley Hand", "Comic Sans MS", cursive;
+  font-style: italic;
+}
+
+.abenteuer-tagebuchseite .abenteuer-handschrift {
+  min-height: 3em;
+  font-size: 1.4rem;
+}
+
+.abenteuer-feder {
+  display: inline-block;
+  width: 0.15em;
+  height: 1em;
+  margin-left: 0.05em;
+  background: currentColor;
+  vertical-align: text-bottom;
+  animation: abenteuer-feder 0.8s steps(2) infinite;
+}
+
+@keyframes abenteuer-feder {
+  50% {
+    opacity: 0;
+  }
+}
+
+/* Erinnerung im Dialog (Atmosphäre T10, `#erinnerung`): Sepia-Rahmen wie ein altes Foto, und die
+   Karte dahinter in Sepia, solange die Erinnerung dauert. */
+.abenteuer-dialog.abenteuer-dialog-erinnerung {
+  border: 3px double #8a6a3f;
+  background: rgba(74, 56, 34, 0.95);
+  color: #f3e6cc;
+}
+
+.abenteuer-dialog-erinnerung .abenteuer-dialog-portraet {
+  filter: sepia(0.85);
+}
+
+.abenteuer-welt:has(.abenteuer-dialog-erinnerung) canvas {
+  filter: sepia(0.85) contrast(0.95) brightness(1.05);
+  transition: filter 1s ease;
+}
+
+/* Große Porträts (64 × 64 oder 96 × 96, dialog/Portraet.tsx): 96 Pixel, scharfe Pixel. */
+.abenteuer-dialog-portraet.abenteuer-portraet-gross {
+  width: 96px;
+  height: 96px;
+}

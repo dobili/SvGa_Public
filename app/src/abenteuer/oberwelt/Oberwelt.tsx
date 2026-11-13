@@ -17,6 +17,7 @@
 import { useEffect, useRef, useState } from "react";
 import { Dialog } from "../dialog/Dialog";
 import { deckgroesse, mentorzugGesperrt } from "../regeln/karten";
+import { schutzengelGesperrt } from "../regeln/schutzengel";
 import { kaufe } from "../regeln/muenzen";
 import { variablenAusBesitz } from "../regeln/dialogvariablen";
 import { spruecheErlaubt, ZEITKLASSEN } from "../regeln/zeitkarten";
@@ -24,6 +25,8 @@ import type { Kartensorte } from "../schnittstelle/karten";
 import { tSpiel } from "../texte/texte";
 import { Abspann } from "./Abspann";
 import { Deckwahl } from "./Deckwahl";
+import { Fensterbank } from "./Fensterbank";
+import { Tagebuchseite } from "./Tagebuchseite";
 import { Fortsetzungskarte, Partieergebniskarte, Rundenergebniskarte } from "./Ergebniskarten";
 import { Gedaechtnisstellung } from "./Gedaechtnisstellung";
 import { szeneAus, useOberweltkern } from "./kern";
@@ -37,6 +40,7 @@ import { Steuerkreuz } from "./Steuerkreuz";
 import type { Ausloesertreffer, Richtung } from "./szene";
 import { Tagebuch } from "./Tagebuch";
 import { useAufgabenrunde } from "./useAufgabenrunde";
+import { useBuehne } from "./useBuehne";
 import { useDialogende } from "./useDialogende";
 import { LUPE, usePartiestart } from "./usePartiestart";
 import { useWeltladen } from "./useWeltladen";
@@ -65,6 +69,7 @@ function ladenDaten(w: Weltdaten, kennung: string) {
 
 export function Oberwelt() {
   const k = useOberweltkern();
+  const buehne = useBuehne(k);
   const { dienste, stand, standRef, welt, weltRef, spiel, meldung, setzeMeldung } = k;
   const { schreibe, melde, wechsleKarte } = k;
   const partie = usePartiestart(k);
@@ -222,7 +227,11 @@ export function Oberwelt() {
           variablen={{ ...stand.dialogvariablen, ...variablenAusBesitz(stand) }}
           heldname={stand.held.name}
           beiKnoten={(knoten) => melde({ art: "dialog", knoten: `${dialog.datei}.${knoten}` })}
-          beiEnde={dialoge.beiDialogende}
+          beiEnde={(variablen) => {
+            buehne.ende();
+            dialoge.beiDialogende(variablen);
+          }}
+          beiZeile={buehne.zeile}
         />
       )}
       {deckwahl && welt && (
@@ -236,6 +245,7 @@ export function Oberwelt() {
           steckbrief={lupeFuer(stand.gegenstaende, welt.daten.gegner, deckwahl.profil.kennung)}
           farbeFrei={deckwahl.farbeFrei === true}
           mentorGesperrt={mentorzugGesperrt(stand.dialogvariablen)}
+          schutzengelGesperrt={schutzengelGesperrt(stand.dialogvariablen, deckwahl.kennung)}
           freieKarten={deckwahl.freieKarten ?? []}
           beiWahl={(deck, zeit, farbe) =>
             partie.startePartie(
@@ -264,6 +274,19 @@ export function Oberwelt() {
       )}
       {abspann && welt && (
         <Abspann stand={stand} daten={welt.daten} beiSchliessen={dialoge.schliesseAbspann} />
+      )}
+      {dialoge.tagebuchseite && (
+        <Tagebuchseite
+          name={dialoge.tagebuchseite}
+          beiSchliessen={dialoge.schliesseTagebuchseite}
+        />
+      )}
+      {dialoge.fensterbank && welt && (
+        <Fensterbank
+          gefunden={stand.funde}
+          funde={welt.daten.funde}
+          beiSchliessen={dialoge.schliesseFensterbank}
+        />
       )}
       {reisen && welt && (
         <Reisen

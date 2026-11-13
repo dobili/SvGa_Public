@@ -12,6 +12,7 @@
 
 EXTERNAL gibFund(kennung)
 EXTERNAL zeigeAbspann()
+EXTERNAL reise(karte, ausloeser)
 
 VAR held = "Du"
 VAR nadelMapleFalls = 0
@@ -46,9 +47,18 @@ VAR wandererCapitalGetroffen = false
     -> END
 }
 ~ ankunftCapitalArenaGesehen = true
-Vor dir steht die Capital Arena: Glas, Fahnen, eine breite Treppe. Ein Banner: „Landesmeisterschaft der Jugend“. #sprecher:erzaehler
-Auf der Treppe warten Mama und Juno. Juno hält das Tagebuch hoch wie einen Pokal. #sprecher:erzaehler
-Da bist du ja! Alle sind da. Wirklich alle. #sprecher:juno #stimmung:froh
+// Roman Kapitel 60: die Arena als weiße Muschel, die Busse aller Städte, alle auf der Treppe.
+Die Arena ist rund und weiß, mit einem Dach wie eine Muschel. Über dem Eingang hängt das Band mit acht Gesichtern. #sprecher:erzaehler #musik:arena
+Deines hat noch immer Ketchup am Kinn. #sprecher:erzaehler
+Auf dem Platz stehen Busse. Der graue mit den Rostflecken. Ein Kleinbus mit „RIVETON“ aus Klebeband. #sprecher:erzaehler
+Ein türkisfarbener Lastwagen, aus dem es dampft. Ein Pick-up mit einem Zahnstocher am Rückspiegel. #sprecher:erzaehler
+Sie sind alle gekommen. #sprecher:mutter
+* [Zur Treppe sehen]
+- Coach Delgado zählt Köpfe. Mrs. Okafor sehr aufrecht neben Mr. Boateng mit seinem besten Hut. Slick auf dem Geländer, mit drei Kindern. #sprecher:erzaehler
+Big Joe braucht allein zwei Stufen. Dr. Lin ohne Kittel. Miss Odile, Remy, Lou. Mira auf Tomás’ Schultern. Dot mit Lockenwicklern. #sprecher:erzaehler
+Ward steht ein wenig abseits und betrachtet alles, als wäre es eine Stellung. #sprecher:erzaehler
+Acht Clubs. Acht Nadeln an deiner Jacke, und zu jeder gehört ein Gesicht. #sprecher:erzaehler #pause
+Das kommt ins Tagebuch. Ich hab zwei dabei. Das kommt alles ins Tagebuch. #sprecher:juno #stimmung:froh
 -> END
 
 === weg_ghost ===
@@ -66,24 +76,24 @@ Der Weg führt zurück zum Leuchtturm und weiter nach Ghost Town. #sprecher:erza
 
 === arena_ankunft ===
 ~ arenaGesehen = true
-In der Halle stehen Brettreihen unter einer hohen Decke. Auf den Tribünen sitzen Eltern mit Kaffee, Reporter, und alle Clubchefs. #sprecher:erzaehler
-Coach Delgado winkt. Miss Odile summt. Big Joe hat ein Schild gemalt, mit deinem Namen. #sprecher:erzaehler
-Juno schlägt das Tagebuch auf. „Acht Nadeln. Das sind {ligapunkte()} Punkte für die Liga.“ #sprecher:erzaehler
+Drinnen ist es kühl und hallt. Tribünen im Kreis, Scheinwerfer, Tische in langen Reihen. An den Wänden laufen Partien, die niemand spielt. #sprecher:erzaehler #musik:aus
+Sechzehn Punkte für Silber, zweiundzwanzig für Gold. Du hast … {ligapunkte()}. #sprecher:juno
 {
 - ligapunkte() >= 22:
-    Gold-Liga! Die stärkste! #sprecher:juno #stimmung:froh
+    Gold-Liga. Und es ist mir vollkommen egal. #sprecher:juno #stimmung:froh
 - ligapunkte() >= 16:
-    Silber-Liga! Das ist richtig gut! #sprecher:juno #stimmung:froh
+    Du spielst in der Silberliga. Und es ist mir vollkommen egal. #sprecher:juno #stimmung:froh
 - else:
-    Bronze-Liga! Du bist dabei, und das ist das Wichtigste! #sprecher:juno #stimmung:froh
+    Bronze-Liga. Du bist dabei, und alles andere ist mir vollkommen egal. #sprecher:juno #stimmung:froh
 }
-Dr. Lin und Nova gehen mit einer Mappe und einem kleinen Beutel zur Turnierleitung. #sprecher:erzaehler
-{novaHilfeZugesagt:
-    Nova dreht sich kurz um und hebt den Daumen. Nach der Vorrunde, heißt das. #sprecher:erzaehler
-}
-Am Eingang bekommst du deinen Teilnehmerausweis: „{held}, Maple Falls“. #sprecher:erzaehler
+Am Tisch der Turnierleitung stehen Dr. Lin mit einer Mappe und ein Mädchen in einem zu großen Pullover. #sprecher:erzaehler
+Nova dreht sich um. Sie sieht dich über die ganze Halle hinweg und nickt. Einmal. #sprecher:erzaehler #pause
 ~ gibFund("teilnehmerausweis")
-Heute ist Ruhe am Brett. Und heute spielt man ehrlich. #sprecher:ambrose #stimmung:friedlich
+* [Den Teilnehmerausweis anstecken]
+- Heute ist Ruhe am Brett. Und heute spielt man ehrlich. Es ist lange her, dass ich das von einem Turnier sagen konnte. #sprecher:ambrose #stimmung:froh
+* [„Warst du je auf so einem?“]
+- Dreihundert Leute in einem Saal in New York. Ich fand es gewaltig. #sprecher:ambrose
+Das hier sind dreitausend. Und kein Einziger raucht. #sprecher:ambrose #stimmung:lacht
 -> END
 
 // ---------------------------------------------------------------- Mama und Juno
@@ -116,24 +126,62 @@ Heute ist Ruhe am Brett. Und heute spielt man ehrlich. #sprecher:ambrose #stimmu
     Die breite Treppe vor der Arena. Am Abend wird hier gefeiert, sagt man. #sprecher:erzaehler
     -> END
 - abschiedGesehen:
-    Auf der Treppe vor der Arena ist es still geworden. Das Brett in deinem Rucksack ist warm. #sprecher:erzaehler
+    Auf der Treppe vor der Arena ist es still geworden. Die Fahnen werfen lange Schatten. #sprecher:erzaehler
     -> END
 }
 -> abschied
 
 === abschied ===
+// Roman Kapitel 66: Ambrose sitzt zum fünften Mal auf einer Treppe. Alle drei Wahlen der Bibel
+// kommen nacheinander. Danach Abspann und Reise auf den Dachboden (Epilog in
+// maple-falls-dachboden.epilog). Klang: abschied.treppe, abschied, ambrose.nichtSpaeter.
 ~ abschiedGesehen = true
-Nach der Siegerehrung sitzt du allein auf der Treppe. Das Sommerlicht ist lang und golden. #sprecher:erzaehler
-Ich wollte eine Partie ohne Makel. Ich habe etwas Besseres bekommen. #sprecher:ambrose #stimmung:friedlich
-Menschen, die kämpfen, Fehler machen und wachsen. Du hast mir das gezeigt. #sprecher:ambrose #stimmung:friedlich
+Der Abend ist lang und golden. Kinder aus acht Städten rennen zwischen den Fahnenmasten herum. Du setzt dich auf die Treppe, ganz oben. #sprecher:erzaehler #musik:abschied.treppe
+Du legst das alte Brett auf die Stufe und stellst die Figuren von Junos Reisebrett darauf. Zwei Könige. Ein Springer. Die Schlussstellung. #sprecher:erzaehler
+Er sitzt neben dir, die Hände auf den Knien. Durch ihn hindurch siehst du die Fahnen. #sprecher:erzaehler
+* [„Hast du es gesehen?“]
+- Jeden Zug. Einunddreißig. Der Turm. Ich habe an der Wand gestanden und mir auf die Zunge gebissen. #sprecher:ambrose
+Ich habe mir gewünscht, dass du ihn merkst. Dass du danach so spielst, habe ich nicht zu wünschen gewagt. #sprecher:ambrose
+* [„War es richtig?“]
+- Ich weiß es nicht. Ich habe es nicht nachgerechnet. Ich wollte nicht. #sprecher:ambrose #stimmung:lacht
+Unten gehen Victor und sein Vater, das Formular zwischen sich, jeder hält eine Ecke. Graham Hale hat keinen Stift in der Hand. #sprecher:erzaehler
+-> abschied_rede
+
+=== abschied_rede ===
+Ich muss dir etwas sagen. Hör zu, ich sage es nur einmal. #sprecher:ambrose
+Ich wollte eine Partie ohne Makel. Ich habe sie nicht bekommen. #sprecher:ambrose
+Die Fernpartie ist remis, und in deinem Finale steht ein Turm auf der falschen Linie. #sprecher:ambrose
+* [„Tut mir leid.“]
+- Sei still. Ich bin noch nicht fertig. Ich habe etwas Besseres bekommen. #sprecher:ambrose #stimmung:froh #musik:abschied
+* [Zuhören]
+- Eine Lehrerin, die gekündigt hat. Ein Mädchen, das zwei Titel zurückgibt. Einen Jungen, der vor Freude rennt, weil er verloren hat. #sprecher:ambrose
+Menschen, die kämpfen. Die Fehler machen. Und wachsen. Das ist es, was schön ist an diesem Spiel. Nicht die Züge. #sprecher:ambrose
+Du hast mir das gezeigt. Ein Kind, das einen König hält wie einen Suppenlöffel. #sprecher:ambrose #stimmung:lacht
 * [„Danke.“]
-    Nein. Ich danke dir, {held}. #sprecher:ambrose #stimmung:friedlich
+- Wofür? #sprecher:ambrose
+* [„Für Was hängt? Für den Turm heute.“]
+- Das war das Geringste. Das weiß jeder. #sprecher:ambrose #stimmung:lacht
+-> abschied_verbeugung
+
+=== abschied_verbeugung ===
+Die Sonne steht tief. Er ist jetzt so durchsichtig, dass du nicht mehr sicher bist, ob du ihn siehst. #sprecher:erzaehler
 * [„Ich werde dich vermissen.“]
-    Und ich dich. Aber du wirst nicht allein spielen. Schau dich um. #sprecher:ambrose #stimmung:friedlich
+- Das hoffe ich doch. Ich war hundertsechzig Jahre lang eine Fußnote. Ich möchte wenigstens einem Menschen fehlen. #sprecher:ambrose
+Und ich dich. Wo immer man das tut, wohin ich gehe. #sprecher:ambrose
+Er steht auf und macht eine kleine, steife Verbeugung. Wie am ersten Tag. #sprecher:erzaehler
+Ambrose Whitlock, zu Diensten. Es war mir eine Ehre, {held}. #sprecher:ambrose
 * [„Später?“]
-    Nein. Dieses eine Mal nicht später. #sprecher:ambrose #stimmung:lacht
-- Das Brett wird still. Die Figuren stehen in der Schlussstellung der Fernpartie. #sprecher:erzaehler #pause
+- Er lacht, laut, von ganz unten. Das Lachen vom Steg und aus der Garage. #sprecher:erzaehler #musik:aus
+Nein. Dieses eine Mal nicht später. #sprecher:ambrose #stimmung:lacht #musik:ambrose.nichtSpaeter
+-> abschied_ende
+
+=== abschied_ende ===
+Das Licht verändert sich, wie wenn eine Wolke weiterzieht. Du stehst allein auf der Treppe. #sprecher:erzaehler #pause:3
+Auf der Stufe liegt ein Brett aus altem Holz. Zwei Könige. Ein Springer. Am Rand eingebrannte Buchstaben. Das Holz ist warm von der Sonne. #sprecher:erzaehler
+Jemand setzt sich neben dich. Juno, mit zwei Tagebüchern auf dem Schoß. Das obere ist aufgeschlagen, bei der Seite mit dem Glitzerrahmen. #sprecher:erzaehler
+Sie hält dir den Stift hin. Du überlegst lange. Dann schreibst du, in deiner eigenen Schrift: Er ist angekommen. #sprecher:erzaehler #pause:2
 ~ zeigeAbspann()
+~ reise("mapleFalls.dachboden", "treppe")
 -> END
 
 // ---------------------------------------------------------------- Ansehen (Runde 6)

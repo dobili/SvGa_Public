@@ -2066,6 +2066,34 @@
       ]
     },
     {
+      "kennung": "mapleFalls.epilog",
+      "titel": "quest.epilog.titel",
+      "typ": "haupt",
+      "ort": "mapleFalls",
+      "haupt": true,
+      "start": {
+        "art": "ort",
+        "karte": "mapleFalls.dachboden"
+      },
+      "voraussetzung": ["capitalArena.meisterschaft"],
+      "schritte": [
+        {
+          "text": "quest.epilog.schritt1",
+          "ereignis": {
+            "art": "dialog",
+            "knoten": "maple-falls-dachboden.epilog"
+          },
+          "wirkungen": [
+            {
+              "art": "szene",
+              "akt": 5,
+              "szene": "akt5.postGame"
+            }
+          ]
+        }
+      ]
+    },
+    {
       "kennung": "summitCity.endspiel",
       "titel": "quest.summitEndspiel.titel",
       "typ": "haupt",

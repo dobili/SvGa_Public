@@ -45,14 +45,18 @@ VAR angesehenFaehrterminal = false
 
 === abe ===
 {abeGetroffen:
-    {~Bei Sturm suchen die Kapitäne das Licht. Bei dir ist es die Mitte.|Der Turm ist hundert Jahre alt. Die Stufen auch. Ich zähle sie jeden Tag.|Viel Glück in der Arena. Bring den König zum Leuchtturm.} #sprecher:abe
+    {~Bei Sturm suchen die Kapitäne das Licht. Bei dir ist es die Mitte.|Der Turm ist hundert Jahre alt. Die Stufen auch. Ich zähle sie jeden Tag.|Viel Glück in der Arena. Bring den König in den Hafen.} #sprecher:abe
     -> END
 }
 ~ abeGetroffen = true
-Vor dem rot-weißen Leuchtturm sitzt ein alter Mann mit Mütze und flickt ein Netz. #sprecher:erzaehler
-Abe Lindgren, Wärter. Früher suchten die Kapitäne bei Sturm den Hafen. Ich habe ihnen geleuchtet. #sprecher:abe
-Wir spielen hier König der Hügel. Wer seinen König in die Mitte bringt, gewinnt. #sprecher:abe
-Der König muss zum Leuchtturm. Wie wir alle. #sprecher:ambrose #stimmung:friedlich
+// Roman Kapitel 60: König der Hügel; Ambrose: „Wie wir alle.“ Es klingt nicht traurig.
+Der See ist so groß, dass man das andere Ufer nicht sieht. Vor dem Leuchtturm, weiß mit rotem Band, flickt ein Mann ein Netz. #sprecher:erzaehler #musik:leuchtturm
+König der Hügel. Kennst du das? Wer seinen König zuerst in die Mitte bringt, auf eines von den vier Feldern, hat gewonnen. #sprecher:abe
+Die Kapitäne haben das hier gespielt, wenn sie auf besseres Wetter gewartet haben. Der König muss in den Hafen. #sprecher:abe
+* [Eine Partie spielen]
+- Dein König läuft los, sobald er kann. Das hast du inzwischen gelernt. #sprecher:erzaehler
+Der König muss zum Leuchtturm. Wie wir alle. #sprecher:ambrose #stimmung:froh
+Es klingt nicht traurig. Du tust, als hättest du es nicht gehört. #sprecher:erzaehler
 -> END
 
 // ---------------------------------------------------------------- Rätseltafel, Fund und Rückweg

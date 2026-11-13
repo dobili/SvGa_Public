@@ -489,7 +489,11 @@
     {
       "kennung": "desertSprings.clubkampf",
       "staerkeNach": [
-        { "wenn": "atmeGesagt", "stufe": 1, "profil": "positionsspieler" }
+        {
+          "wenn": "atmeGesagt",
+          "stufe": 1,
+          "profil": "positionsspieler"
+        }
       ],
       "gegner": "desertSprings.mira",
       "farbe": "zufall",
@@ -714,7 +718,32 @@
         "art": "grundstellung"
       },
       "kartenErlaubt": true,
-      "zeit": "wahl"
+      "zeit": "wahl",
+      "momente": [
+        {
+          "wenn": {
+            "zug": 4
+          },
+          "sprecher": "erzaehler",
+          "text": "moment.nova.eis"
+        },
+        {
+          "wenn": {
+            "merkmal": "geschlagen:bauer"
+          },
+          "sprecher": "erzaehler",
+          "text": "moment.nova.atmet",
+          "musik": "nova"
+        },
+        {
+          "wenn": {
+            "abZug": 24
+          },
+          "sprecher": "ambrose",
+          "text": "moment.ambrose.novaGut",
+          "klang": "hale.springer"
+        }
+      ]
     },
     {
       "kennung": "capitalArena.runde4",
@@ -748,7 +777,32 @@
         "halbzug": 40,
         "faktor": 1.5
       },
-      "zeit": "wahl"
+      "zeit": "wahl",
+      "momente": [
+        {
+          "wenn": {
+            "abZug": 10
+          },
+          "sprecher": "erzaehler",
+          "text": "moment.kade.wasser",
+          "musik": "zero.halbfinale"
+        },
+        {
+          "wenn": {
+            "abZug": 20
+          },
+          "sprecher": "erzaehler",
+          "text": "moment.kade.schuh",
+          "musik": "aus"
+        },
+        {
+          "wenn": {
+            "abZug": 21
+          },
+          "sprecher": "erzaehler",
+          "dialog": "capital-arena-halle.halbfinale_turm"
+        }
+      ]
     },
     {
       "kennung": "capitalArena.finale",
@@ -761,7 +815,41 @@
         "art": "grundstellung"
       },
       "kartenErlaubt": false,
-      "zeit": "wahl"
+      "zeit": "wahl",
+      "momente": [
+        {
+          "wenn": {
+            "zug": 2
+          },
+          "sprecher": "erzaehler",
+          "text": "moment.finale.niemand",
+          "musik": "finale.eroeffnung"
+        },
+        {
+          "wenn": {
+            "zug": 12
+          },
+          "sprecher": "victor",
+          "text": "moment.victor.zugZwoelf",
+          "musik": "zug.zwoelf"
+        },
+        {
+          "wenn": {
+            "abZug": 20
+          },
+          "sprecher": "erzaehler",
+          "text": "moment.finale.allesDa",
+          "musik": "finale.mittelspiel"
+        },
+        {
+          "wenn": {
+            "abZug": 32
+          },
+          "sprecher": "erzaehler",
+          "text": "moment.finale.einenDenDuMerkst",
+          "musik": "held.allein"
+        }
+      ]
     },
     {
       "kennung": "wegCrossroadsPinewood.blindschach",

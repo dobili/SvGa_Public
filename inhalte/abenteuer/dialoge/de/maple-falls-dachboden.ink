@@ -132,6 +132,17 @@ Ich habe das an einem verlorenen Turm gelernt, vor einem vollen Kaffeehaus. Du l
     Das sagen viele. Wir werden sehen. #sprecher:ambrose
 * [„Das klingt langweilig.“]
     Langweilig ist ein verlorener Turm. Zählen dauert drei Sekunden. #sprecher:ambrose #stimmung:streng
+// Roman, Kapitel 3 (neu): dieselbe Schrift auf Karte und Kisten; Mrs. Whitlock hat das Brett
+// sechzig Jahre abgestaubt und Ambrose nie gehört. Gibt ihm von Anfang an Schuld und Dank.
+// Vorgemerkt für mittel-2: #pause:3 vor der Antwort, wenn die neue Marke da ist.
+- Du drehst die Karte um. Auf der Rückseite steht in steiler Schrift: „Fingerzeig“. #sprecher:erzaehler
+Dieselbe Schrift wie auf den Kisten. #sprecher:erzaehler #pause
+* [„Wer hat hier vor uns gewohnt?“]
+* [„Wer hat das geschrieben?“]
+- Ambrose sieht zum Fenster. Draußen wird der Ahorn schwarz vor dem Himmel. #sprecher:erzaehler #pause
+Jemand, der dieses Brett sechzig Jahre lang abgestaubt hat. Und nie einen Zug darauf gemacht. #sprecher:ambrose #stimmung:still
+Ich habe ihr nie danken können. Sie hat mich nicht gehört. #sprecher:ambrose #stimmung:still
+Er sagt es leichthin. Aber er sieht dich nicht an dabei. #sprecher:erzaehler
 - Und nun trag mich hinunter, {held}. Ich möchte sehen, in welcher Welt ich aufgewacht bin. #sprecher:ambrose
 Nimm das Brett mit. Wo es ist, da bin ich auch. #sprecher:ambrose
 -> END

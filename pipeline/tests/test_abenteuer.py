@@ -284,6 +284,24 @@ def test_ink_szene_und_tiled_karte_liegen_bereit():
     assert namen <= ausloeser
 
 
+def test_klangquellen_nennen_objekte_der_karte():
+    """Jede Klangquelle (T28) nennt ein Objekt, das es in der Tiled-Karte gibt."""
+    fehler: list[str] = []
+    for ort in _lade("orte.json")["orte"]:
+        for karte in ort["karten"]:
+            quellen = karte.get("klangquellen", [])
+            if not quellen:
+                continue
+            tiled = json.loads((INHALTE / karte["datei"]).read_text(encoding="utf-8"))
+            namen = {o.get("name") for e in tiled["layers"] for o in e.get("objects", [])}
+            fehler.extend(
+                f"{karte['kennung']}: Klangquelle {q['objekt']} fehlt in der Karte"
+                for q in quellen
+                if q["objekt"] not in namen
+            )
+    assert fehler == []
+
+
 def test_startnummer_nur_bei_schach960():
     # Eine feste Startstellung ergibt nur im Schach960 Sinn (docs/spiel/10, V1); Varianten-Partien
     # beginnen immer aus der Grundreihe, nicht aus einer Buchabbildung.

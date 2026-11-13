@@ -5,6 +5,10 @@
 // ein zweiter. Keine Quests, keine Belohnungen. Einstiege wie in orte.json (Auslöser in
 // camelCase, Knoten in snake_case): foto_grandma, karton_kueche, pizzakarton, hutschachtel,
 // spiegel, zeitungen1961, pokalvitrine, brett_ohne_dame, plakat_zaehlen.
+// Neu nach dem Roman zu Akt 1 (docs/spiel/roman/akt1_teil1.md, akt1_teil2.md), noch ohne Auslöser
+// auf den Karten (Karten macht ein eigener Auftrag): kiste_whitlock (Dachboden, neben der Treppe),
+// tisch_pizzakarton (Wohnzimmer, Zustand nach dem ersten Abend), kreidebrett (Birch Lane, vor
+// Lilys Haus), bildschirm_pult (Clubraum, Zustand nach Victor).
 //
 // Variablen: Die Hülle legt für jeden Dialog eine neue Ink-Geschichte an; Besuchszähler von Ink
 // überleben das nicht. Deshalb merkt sich je Gegenstand eine Variable „angesehen…“ (Spielstand,
@@ -20,6 +24,8 @@ VAR angesehenZeitungen1961 = false
 VAR angesehenPokalvitrine = false
 VAR angesehenBrettOhneDame = false
 VAR angesehenPlakatZaehlen = false
+VAR angesehenKisteWhitlock = false
+VAR ersteLektionBesprochen = false
 
 // ---------------------------------------------------------------- Wohnzimmer
 
@@ -81,6 +87,22 @@ VAR angesehenPlakatZaehlen = false
     ~ angesehenZeitungen1961 = true
     Ein Stapel Zeitungen von 1961, gelb und brüchig. Ganz oben: „Miss Whitlock gewinnt die Schachmeisterschaft des Kreises“. #sprecher:erzaehler
     Eine Whitlock, die gewinnt. Endlich. #sprecher:ambrose #stimmung:stolz
+}
+-> END
+
+// Roman, Kapitel 1: Die Kiste aus dem Flur, die {held} am ersten Tag hinaufträgt. Die Schrift ist
+// dieselbe wie auf allen Kisten und auf der Rückseite der Karten (Kapitel 3).
+=== kiste_whitlock ===
+{angesehenKisteWhitlock:
+    {ersteLektionBesprochen:
+        Dieselbe steile Schrift wie auf dem Fingerzeig. Du drehst die Karte in der Tasche um und vergleichst. #sprecher:erzaehler
+    - else:
+        Die Kiste steht bei den anderen. „Bettwäsche“, „Briefe 1970–1989“, „Weihnachten“. Alles in derselben steilen Schrift. #sprecher:erzaehler
+    }
+- else:
+    ~ angesehenKisteWhitlock = true
+    Eine Kiste aus Holz, nicht aus Pappe. Auf dem Deckel steht in steiler, altmodischer Schrift: „Whitlock – nicht wegwerfen“. #sprecher:erzaehler
+    Wenn man sie anhebt, klackt darin etwas Hölzernes, wie Kegel, die aneinanderstoßen. #sprecher:erzaehler #klang:holzklacken
 }
 -> END
 

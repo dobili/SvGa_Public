@@ -35,6 +35,10 @@ VAR endeAkt1Gesehen = false
 
 === dachboden_brett ===
 Staub, Kisten, ein kaputter Lampenschirm. Unter einer Decke liegt etwas Flaches, Schweres. #sprecher:erzaehler
+// Roman, Kapitel 2: Die Decke ist das Einzige ohne Staub (Mrs. Whitlock hat das Brett gepflegt).
+{ not brettBeruehrt:
+    Auf allem hier oben liegt Staub. Nur auf dieser Decke nicht. #sprecher:erzaehler
+}
 { brettBeruehrt:
     Das alte Brett. Die Figuren stehen noch so, wie du sie verlassen hast. #sprecher:erzaehler
     -> ambrose

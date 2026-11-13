@@ -43,6 +43,10 @@ VAR nadelMapleFalls = 0
 Der Umzugswagen ist weg. Im Wohnzimmer stehen nur Kartons, ein Sofa und ein Pizzakarton. #sprecher:erzaehler
 Da bist du ja, {held}. Willkommen in Maple Falls. #sprecher:mutter #stimmung:froh
 Ich weiß, es sieht noch nicht nach Zuhause aus. Gib dem Haus eine Woche. #sprecher:mutter
+// Roman, Kapitel 1 (neu gegenüber der Story-Bibel): der Wasserfall als Wahrzeichen und Heimweh.
+Hinter den Dächern rauscht etwas, gleichmäßig, wie eine ferne Straße. #sprecher:erzaehler #klang:wasserfall
+Der Wasserfall. Daher der Name. #sprecher:mutter
+Man gewöhnt sich dran, sagt die Maklerin. Nach einer Woche hört man ihn nicht mehr. #sprecher:mutter
 * [„Es ist ziemlich groß.“]
     Groß und alt. Deshalb konnten wir es uns leisten. #sprecher:mutter
 * [„Ich vermisse die alte Wohnung.“]
@@ -63,6 +67,7 @@ In der Reihenfolge. #sprecher:mutter
 ~ setzeSzene("akt1.ankunft")
 Da bist du ja, {held}. Warst du schon auf dem Dachboden? Staubig, oder? #sprecher:mutter
 Gib dem Haus eine Woche. Dann ist es ein Zuhause. #sprecher:mutter #stimmung:froh
+Hörst du das Rauschen? Der Wasserfall. Nach einer Woche hört man ihn nicht mehr, sagt die Maklerin. #sprecher:mutter #klang:wasserfall
 -> mutter
 
 === erster_abend ===

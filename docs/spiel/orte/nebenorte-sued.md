@@ -63,7 +63,7 @@ mit Bleistift Züge eingetragen hat.
 
 **Goldmine:** Kühl, dunkel, Wasser tropft. Holzstützen von 1866, Schienen, die irgendwo im Dunkel
 enden, eine Lore voller Gestein. Die Laterne zeichnet einen Kreis auf den Fels; in der Kammer der
-Bergleute steht noch ein Tisch, auf dem jemand einmal einen Brief geschrieben hat.
+Bergleute steht noch ein Tisch mit dem Logbuch von 1866.
 
 ## 3. Abgleich mit der Geschichte
 

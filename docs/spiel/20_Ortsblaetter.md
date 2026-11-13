@@ -284,10 +284,10 @@ Veröffentlichung.
 | Klang            | Einzelne Klaviertöne mit viel Raum, ein hohes Streicherflageolett; Seilbahnsurren, Murmeltierpfiffe, Wind, Kuhglocken fern. Das Summen des grauen Geräts.                                                                                                                       |
 | Nicht hier       | Gedränge, Lärm (außer am Drachenfest), Schmuck.                                                                                                                                                                                                                                 |
 
-| Bewohner          | A                                         | B                                       | C / D (nach der Meisterschaft)                                                  |
-| ----------------- | ----------------------------------------- | --------------------------------------- | ------------------------------------------------------------------------------- |
-| **Ward**          | Leere Wände. Lobt nicht.                  | Sagt Mama, dass sie die Beste war.      | An der Wand hängt ein einziges Bild: ein Foto von zwei Königen auf einem Brett. |
-| **Mr. Haraldsen** | Wartet die Seilbahn; ein Seil ist „müde“. | Er hat Victor seinen Pullover geliehen. | Das Seil ist gewechselt; der Pullover ist zurück, mit einem Zettel: „Luftig.“   |
+| Bewohner          | A                                                                                             | B                                                             | C / D (nach der Meisterschaft)                                                  |
+| ----------------- | --------------------------------------------------------------------------------------------- | ------------------------------------------------------------- | ------------------------------------------------------------------------------- |
+| **Ward**          | Leere Wände. Lobt nicht. Vor dem Clubkampf sagt sie Mama, dass sie die Beste in dem Jahr war. | Mama sitzt beim Clubkampf am Fenster; Ward hat es ihr gesagt. | An der Wand hängt ein einziges Bild: ein Foto von zwei Königen auf einem Brett. |
+| **Mr. Haraldsen** | Wartet die Seilbahn; ein Seil ist „müde“.                                                     | Er hat Victor seinen Pullover geliehen.                       | Das Seil ist gewechselt; der Pullover ist zurück, mit einem Zettel: „Luftig.“   |
 
 ### Crossroads · Kapitel 53
 
@@ -329,17 +329,17 @@ aufgestellt, auf dem endlich ein Name steht, D der Detektor lehnt in der Ecke; e
 Seeufer: ein See ohne anderes Ufer; die Farben kehren zurück; ein Leuchtturm, weiß mit rotem Band
 („Der König muss zum Leuchtturm. Wie wir alle“).
 
-| Zeile            | Festlegung                                                                                                                                                                                             |
-| ---------------- | ------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------ |
-| In einem Satz    | Groß, weiß und festlich; dreitausend Menschen, und auf der Treppe stehen alle acht Clubs.                                                                                                              |
-| Wahrzeichen      | Die Arena, rund und weiß mit einem Dach wie eine Muschel; davor ein Platz mit Fahnen und den Bussen aller Städte. Die Treppe, auf der das Spiel endet.                                                 |
-| Stimmung         | Groß, hell, Herzklopfen; am Schluss leise und warm.                                                                                                                                                    |
-| Licht und Farben | Ein langer Sommerabend, golden und ohne Eile; lange Schatten der Fahnen. Innen Scheinwerferweiß und Dunkel; auf der Bühne ein einziger Lichtkreis.                                                     |
-| Ordnung          | Großstadt mit sechs Spuren und Häusern, die im Dunst verschwinden. Die Halle: Tribünen im Kreis, Tische in Reihen, an den Wänden alle fünf Meter ein Bildschirm (sie gehen nach der Aussage alle aus). |
-| Schach hier      | **Turnier.** Keine Sprüche; im Finale keine Karten und kein Geist. Jede Runde ruft eine Lektion der Reise ab. Zwischen je zwei Partien liegt eine Szene.                                               |
-| Menschen         | Alle, die man kennt, an einem Ort. Dazu Reporter und Eltern mit Kaffeebechern.                                                                                                                         |
-| Klang            | Ein festliches Thema, aus dem Thema des Helden gebaut; die Stille einer sehr großen Halle. Nach der Aussage ist das Konzernmotiv für immer fort. Der letzte Klang des Spiels ist das Aha-Motiv.        |
-| Nicht hier       | Bösewichte. Vorführen und Bloßstellen. Sieg als Triumph über jemanden.                                                                                                                                 |
+| Zeile            | Festlegung                                                                                                                                                                                                                                           |
+| ---------------- | ---------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------- |
+| In einem Satz    | Groß, weiß und festlich; dreitausend Menschen, und auf der Treppe stehen alle acht Clubs.                                                                                                                                                            |
+| Wahrzeichen      | Die Arena, rund und weiß mit einem Dach wie eine Muschel; davor ein Platz mit Fahnen und den Bussen aller Städte. Die Treppe, auf der Ambrose Abschied nimmt (letzte Karte der Hauptgeschichte; das Spiel endet danach im Epilog auf dem Dachboden). |
+| Stimmung         | Groß, hell, Herzklopfen; am Schluss leise und warm.                                                                                                                                                                                                  |
+| Licht und Farben | Ein langer Sommerabend, golden und ohne Eile; lange Schatten der Fahnen. Innen Scheinwerferweiß und Dunkel; auf der Bühne ein einziger Lichtkreis.                                                                                                   |
+| Ordnung          | Großstadt mit sechs Spuren und Häusern, die im Dunst verschwinden. Die Halle: Tribünen im Kreis, Tische in Reihen, an den Wänden alle fünf Meter ein Bildschirm (sie gehen nach der Aussage alle aus).                                               |
+| Schach hier      | **Turnier.** Keine Sprüche; im Finale keine Karten und kein Geist. Jede Runde ruft eine Lektion der Reise ab. Zwischen je zwei Partien liegt eine Szene.                                                                                             |
+| Menschen         | Alle, die man kennt, an einem Ort. Dazu Reporter und Eltern mit Kaffeebechern.                                                                                                                                                                       |
+| Klang            | Ein festliches Thema, aus dem Thema des Helden gebaut; die Stille einer sehr großen Halle. Nach der Aussage ist das Konzernmotiv für immer fort. Der letzte Klang des Spiels ist das Aha-Motiv.                                                      |
+| Nicht hier       | Bösewichte. Vorführen und Bloßstellen. Sieg als Triumph über jemanden.                                                                                                                                                                               |
 
 ---
 

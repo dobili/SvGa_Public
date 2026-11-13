@@ -8,6 +8,12 @@
 // Einstiege: „tafel“, „wanderer“, „gegnerin“, „fund_formular“, „fund_muenzen“, „rast“,
 // „schild_cedar“.
 //
+// Runde 11 (13.11.2026): Teil B2 der Dialogprüfung (docs/spiel/22_Dialogpruefung.md, VC1 bis
+// VC25) und der Roman zu Akt 1 (roman/akt1_teil3.md, Kapitel 10) eingearbeitet. Maßstab ist der
+// Roman: Auf der Landstraße schweigt Ambrose; sein erster Satz fällt am Stein der Fährstelle
+// (Knoten „rast“). „Später“ fällt in Akt 1 nur dreimal (erster Tag, Archiv, Steg); hier heißen
+// die Wahlen „Nicht jetzt.“.
+//
 // Kennungen (zweiteilig, wie die Schemas verlangen): Begegnung „wegMapleCedar.nia“ (Variable
 // ausgangWegMapleCedarNia, R42), Runde „wegMapleCedar.tafel“ (runden.json, Variable in der
 // Langform wegMapleCedarTafelBestanden, damit sie nicht mit anderen Tafeln kollidiert). Beide setzt die Hülle (regeln/dialogvariablen.ts); „abgebrochen“ zählt wie
@@ -35,6 +41,12 @@ VAR flohmarktKarteErhalten = false
 VAR seite00Gefunden = false
 VAR finchBauerAGefunden = false
 VAR gatterOffenGesehen = false
+VAR nadelRiverton = 0
+VAR nadelIronwood = 0
+VAR adaGetroffen = false
+VAR faehrsteinGesehen = false
+VAR tafelGesehen = false
+VAR schildCedarGesehen = false
 
 // ---------------------------------------------------------------- Rätseltafel
 
@@ -43,12 +55,30 @@ VAR gatterOffenGesehen = false
     Auf der Tafel steht in Kreide: „Gelöst!“ Jemand hat einen Smiley daneben gemalt. #sprecher:erzaehler
     -> END
 }
-Am Ortsausgang hängt eine Holztafel mit drei Schachdiagrammen: „Matt in eins. Wer alle drei findet, kennt den Weg.“ #sprecher:erzaehler
+{not tafelGesehen:
+    ~ tafelGesehen = true
+    Hinter dem Park hört die Stadt einfach auf. Ein Schild: „Maple Falls, 2 140 Einwohner.“ #sprecher:erzaehler
+}
+Unter dem Ortsschild hängt eine Blechtafel mit Magnetfiguren: „Rätsel am Ortsausgang. Wer es löst, darf gehen. Wer nicht, auch.“ #sprecher:erzaehler
+{tafel == 1: Das macht Mr. Pratt. Jeden Monat ein neues. Niemand weiß, warum. #sprecher:juno #stimmung:froh}
 * [Die Aufgaben lösen]
     ~ beginneAufgaben("wegMapleCedar.tafel")
     -> END
 * [Weitergehen]
+    {tafel == 1: -> juno_weg}
     -> END
+
+// Runde 11 (Dialogprüfung B2, „Fehlt im Spiel“; Roman Kapitel 10): Juno erzählt auf der
+// Landstraße. Läuft einmal, nach dem ersten Blick auf die Tafel.
+=== juno_weg ===
+Die Landstraße läuft zwischen Feldern, gerade wie mit dem Lineal gezogen. Der Himmel ist sehr groß. #sprecher:erzaehler
+Meine Schwester Carla war drei Jahre im Team. Dann kam das Auto. Jetzt tut sie, als hätte es sie nie interessiert. #sprecher:juno
+Gegen Mrs. Okafor hat noch niemand aus Maple Falls gewonnen. #sprecher:juno
+* [„Niemand?“]
+    Der Coach einmal. Vor drei Jahren. Sie redet heute noch davon. #sprecher:juno #stimmung:froh
+* [Zum Himmel sehen]
+    Du siehst immer wieder hinauf. In der Stadt hattest du nie so viel Himmel. #sprecher:erzaehler
+- -> END
 
 // ---------------------------------------------------------------- Wanderer
 
@@ -62,19 +92,17 @@ Am Ortsausgang hängt eine Holztafel mit drei Schachdiagrammen: „Matt in eins.
 
 === wanderer_erstes ===
 Ein Mann mit Rucksack und Wanderstock sitzt am Wegrand. Aus der Tasche schaut ein Taschenschach. #sprecher:erzaehler
-Auch unterwegs nach Cedar Creek? Ich gehe die Strecke jede Woche, und jede Woche spiele ich eine Partie im Kopf. #sprecher:wanderer
-Ein Rat für den Weg: Bring erst deine Figuren ins Spiel, dann greif an. Wer mit zwei Figuren stürmt, stürmt allein. #sprecher:wanderer
-Ein Mann, der im Gehen Schach spielt. Ich mag ihn. #sprecher:ambrose
+Nach Cedar Creek? Zwei Stunden. Ich spiele unterwegs eine Partie im Kopf. #sprecher:wanderer
+Bei der Brücke bin ich meistens matt. #sprecher:wanderer
 -> END
 
 === wanderer_zweites ===
-Wieder unterwegs? Dann noch ein Rat. #sprecher:wanderer
-Schlag nicht vorschnell. Manchmal ist die Spannung die stärkere Waffe. #sprecher:wanderer
-Er hat recht. Ich habe zu Lebzeiten zu oft zu früh geschlagen. #sprecher:ambrose
+Wieder unterwegs? #sprecher:wanderer
+Heute hab ich am Gatter einen Bauern geschlagen. Am Fluss hat es mir leidgetan. #sprecher:wanderer
 -> END
 
 === wanderer_drittes ===
-{~Ein Gambit tauscht einen Bauern gegen Zeit. Wer die Zeit nicht nutzt, hat nur einen Bauern weniger.|Der Weg ist das halbe Spiel. Die andere Hälfte ist das Brett.|Ich gehe weiter. Viel Glück in Cedar Creek!} #sprecher:wanderer
+{~Der Weg ist das halbe Spiel. Die andere Hälfte ist das Brett.|Ich gehe weiter. Viel Glück in Cedar Creek!} #sprecher:wanderer
 -> END
 
 // ---------------------------------------------------------------- Nia
@@ -95,24 +123,25 @@ Egal. Ich bin Nia. #sprecher:nia
 -> nia_angebot
 
 === nia_angebot ===
-Blitz, drei Minuten und zwei Sekunden dazu je Zug. Ich stell dir eine Stellung hin, du hast Weiß und bist besser. #sprecher:nia
+Blitz. Drei Minuten. Du kriegst Weiß und die bessere Stellung, ich bin nett. #sprecher:nia
 Zehn Züge. Hältst du deinen Vorteil, darfst du vorbei. #sprecher:nia
 Sonst trägst du mein Board bis Cedar Creek. #sprecher:nia
 * [„Abgemacht.“]
     -> nia_duell
-* [„Später.“]
+* [„Nicht jetzt.“]
     Ich bin schnell. Du nicht. Bis gleich. #sprecher:nia
     -> END
 
 === nia_duell ===
-Sie greift an, bevor sie nachdenkt. Und sie zieht nie zurück, nicht einmal, wenn sie muss. #sprecher:ambrose
+// Ambrose schweigt auf dem ersten Weg bis zum Fluss (Roman, Kapitel 10).
+{faehrsteinGesehen: Sie hat die Figuren aufgestellt, bevor ich „Guten Tag“ sagen konnte. #sprecher:ambrose}
 ~ beginnePartie("wegMapleCedar.nia")
 Nia stellt die Figuren auf ihr Board, so schnell, dass du kaum hinsiehst. #sprecher:erzaehler
 -> END
 
 === nia_nach_sieg ===
 Okay, okay. Du bist schneller, als du aussiehst. Noch mal? #sprecher:nia
-Gut. Du hast gewartet, bis sie sich selbst verrannt hat. #sprecher:ambrose
+{faehrsteinGesehen: Schnell war sie. Du warst da. #sprecher:ambrose}
 + [„Noch eine.“]
     -> nia_duell
 + [„Ich muss weiter.“]
@@ -121,10 +150,10 @@ Gut. Du hast gewartet, bis sie sich selbst verrannt hat. #sprecher:ambrose
 
 === nia_nach_niederlage ===
 Board tragen! War nur Spaß. Noch eine Runde? #sprecher:nia
-Bei drei Minuten denkt man nicht, man sieht. Das kommt mit der Übung. #sprecher:ambrose
+{faehrsteinGesehen: Bei drei Minuten denkt man nicht, man sieht. Das kommt mit der Übung. #sprecher:ambrose}
 + [„Revanche.“]
     -> nia_duell
-+ [„Später.“]
++ [„Nicht jetzt.“]
     -> END
 
 // ---------------------------------------------------------------- Fund
@@ -138,8 +167,8 @@ Bei drei Minuten denkt man nicht, man sieht. Das kommt mit der Übung. #sprecher
 Im Gras unter einem Busch steckt ein vergilbtes Blatt in einer Blechdose. #sprecher:erzaehler
 Ein Partieformular, eng beschrieben, die Tinte verblasst. #sprecher:erzaehler
 ~ gibFund("formular1857")
-Diese Handschrift. Ich kenne sie, aber ich kann sie nicht mehr lesen. #sprecher:ambrose #stimmung:traurig
-Heb es gut auf, Lehrling. #sprecher:ambrose
+Diese Handschrift. Ich kenne sie, aber ich kann sie nicht mehr lesen. #sprecher:ambrose #stimmung:traurig #pause:2
+Heb es gut auf, Kind. #sprecher:ambrose
 -> END
 
 === fund_muenzen ===
@@ -150,20 +179,23 @@ Heb es gut auf, Lehrling. #sprecher:ambrose
 ~ muenzenGefunden = true
 Zwischen zwei Steinen am Ufer klemmt eine kleine Holzkiste. Darin klimpern Münzen. #sprecher:erzaehler
 ~ gibFund("muenzenFlussweg")
-Ein Schatz am Wegrand. Zu meiner Zeit hätte man dafür ein Abendessen bekommen, mit Nachtisch. #sprecher:ambrose #stimmung:lacht
+Münzen im Fluss. Jemand hat sich hier etwas gewünscht und es sich anders überlegt. #sprecher:ambrose
 -> END
 
 // ---------------------------------------------------------------- Rast und Schild
 
 === rast ===
-Eine Bank am Fluss, das Wasser glitzert. Du setzt dich kurz. #sprecher:erzaehler
-Zu meiner Zeit ging man oft zu Fuß von Stadt zu Stadt, das Brett im Gepäck. #sprecher:ambrose
-Ein Tag Weg für eine gute Partie war nicht zu viel. Man hatte unterwegs Zeit, die Züge im Kopf zu sortieren. #sprecher:ambrose
--> END
+// Fährstelle am Flussweg (Auslöser „rast“): der Stein mit dem eingeritzten Brett, Silas mit der
+// Angel, Ambroses erster Satz seit dem Aufbruch und seine erste eigene Erinnerung (Roman, Kapitel 10;
+// VC15 bis VC18). Musik und Fluss kommen von der Karte (weg.fluss, fluss).
+{faehrsteinGesehen: -> faehrstein_spaeter}
+-> faehrstein
 
 === schild_cedar ===
-Ein Holzschild: „Cedar Creek. Langsam fahren, hier spielen Kinder Schach.“ #sprecher:erzaehler
-Eine Stadt, die vor Schach warnt. Wir sind am richtigen Ort. #sprecher:ambrose #stimmung:lacht
+// VC19, VC20: Gründungsjahr statt Witz; die Uhr spricht. Am Ende des Flusswegs stehen die Zedern.
+~ schildCedarGesehen = true
+Die Zedern stehen so dicht, dass die Schritte auf den Nadeln kein Geräusch mehr machen. Selbst Juno redet leiser. #sprecher:erzaehler
+Ein Schild aus Holz: „Cedar Creek. Gegr. 1851.“ Dahinter, zwischen den Bäumen, schlägt eine Uhr. Viermal, langsam. #sprecher:erzaehler #klang:turmuhr4 #musik:aus #pause:3
 -> END
 
 // ---------------------------------------------------------------- Runde 6: Gatter S1 (Kürbishof)
@@ -177,10 +209,11 @@ Eine Stadt, die vor Schach warnt. Wir sind am richtigen Ort. #sprecher:ambrose #
     }
     ~ gatterOffenGesehen = true
     Das Gatter steht einen Spalt offen. Dahinter winkt ein Mann mit Strohhut. #sprecher:erzaehler
-    „Du hast die Tafel am Ortsausgang gelöst? Dann komm. Die Kühe suche ich später mit dir.“ #sprecher:erzaehler
+    „Du bist das Kind von der Tafel. Mr. Pratt hat es erzählt. Komm rein. Gatter zu.“ #sprecher:erzaehler
     -> END
 - else:
-    Das Gatter ist zu. Am Pfosten hängt ein Zettel: „Kühe ausgebüxt. Rein darf nur, wer denken kann. Die Tafel am Ortsausgang zeigt es. W. Miller.“ #sprecher:erzaehler
+    Das Gatter ist zu. Am Pfosten ein Zettel: „Kühe ausgebüxt. Bin suchen. W. Miller.“ #sprecher:erzaehler
+    Darunter, kleiner: „Wer die Tafel am Ortsausgang gelöst hat, darf helfen.“ #sprecher:erzaehler
     -> END
 }
 
@@ -199,33 +232,37 @@ Eine Stadt, die vor Schach warnt. Wir sind am richtigen Ort. #sprecher:ambrose #
 {wegMapleCedarFinchFallenBestanden: -> flohmarkt_karte}
 {odetteGetroffen: -> flohmarkt_angebot}
 ~ odetteGetroffen = true
-Auf den Tischen liegen Lampen, Kisten und ein Fahrrad ohne Kette. Vor dem Wohnmobil sitzt eine alte Dame auf einem Klappstuhl und lacht. #sprecher:erzaehler
-„Odette Finch. Problemhefte, fünfzig Cent das Stück. Aber erst stelle ich dir eine Falle.“ #sprecher:erzaehler
+Auf den Tischen liegen Lampen, Kisten und ein Fahrrad ohne Kette. Vor dem Wohnmobil sitzt eine alte Dame und lacht. #sprecher:erzaehler
+Odette Finch. Problemhefte, fünfzig Cent das Stück. Aber erst stelle ich dir eine Falle. #sprecher:odette
 -> flohmarkt_angebot
 
 === flohmarkt_angebot ===
-„Matt in einem Zug. Sieht aus wie Patt, ist es aber nicht. Drei Stück hab ich, eine gemeiner als die andere.“ #sprecher:erzaehler
+Matt in einem Zug. Sieht aus wie Patt, ist es aber nicht. #sprecher:odette
+Drei Stück hab ich, eine gemeiner als die andere. #sprecher:odette
 Solche Aufgaben standen zu meiner Zeit in den Zeitungen. Schön und gemein. #sprecher:ambrose
 * [Die Fallen lösen]
     ~ beginneAufgaben("wegMapleCedar.finchFallen")
     -> END
-* [Später]
-    „Ich bin den ganzen Samstag hier. Die Fallen laufen nicht weg.“ #sprecher:erzaehler
+* [Nicht jetzt]
+    Ich bin den ganzen Samstag hier. Die Fallen laufen nicht weg. #sprecher:odette
     -> END
 
 === flohmarkt_karte ===
 ~ flohmarktKarteErhalten = true
-Odette klatscht in die Hände. „Alle drei! Dann bist du genau richtig für meine letzte große Aufgabe.“ #sprecher:erzaehler
-Sie gibt dir eine Karte mit sechzehn leeren Kästchen. „Sechzehn weiße Figuren aus Buchsbaum, versteckt an den Wegen. Unter jeder steht ihr Feld.“ #sprecher:erzaehler
+Odette klatscht in die Hände. #sprecher:erzaehler
+Alle drei! Dann bist du genau richtig für meine letzte große Aufgabe. #sprecher:odette #stimmung:froh
+Sie gibt dir eine Karte mit sechzehn leeren Kästchen. #sprecher:erzaehler
+Sechzehn weiße Figuren aus Buchsbaum, versteckt an den Wegen. Unter jeder steht ihr Feld. #sprecher:odette
 ~ gibFund("finchKarte")
-„Wo eine liegt, hab ich einen Finken hingemalt. Und das Heft hier nimmst du auch mit, drei Aufgaben für unterwegs.“ #sprecher:erzaehler
+Wo eine liegt, hab ich einen Finken hingemalt. Und das Heft nimmst du mit, drei Aufgaben für unterwegs. #sprecher:odette
 ~ gibFund("problemheft")
 Sechzehn Figuren. Das wird ein langer Spaziergang, Lehrling. Ein schöner. #sprecher:ambrose #stimmung:lacht
 -> END
 
 === flohmarkt_spaeter ===
-„Hast du schon einen Finken gesehen? Die Figuren liegen nie ohne Zeichen.“ #sprecher:erzaehler
-Odette packt eine Lampe in Zeitungspapier. „Am Leuchtturm bei Capital sehen wir uns wieder. Dort stelle ich Schwarz auf.“ #sprecher:erzaehler
+Hast du schon einen Finken gesehen? Die Figuren liegen nie ohne Zeichen. #sprecher:odette
+Odette packt eine Lampe in Zeitungspapier. #sprecher:erzaehler
+Wir sehen uns wieder. Ich fahre weiter, als du denkst. #sprecher:odette
 -> END
 
 // ---------------------------------------------------------------- Runde 6: Sammelstellen
@@ -237,10 +274,12 @@ Odette packt eine Lampe in Zeitungspapier. „Am Leuchtturm bei Capital sehen wi
 }
 ~ seite00Gefunden = true
 Im Graben neben dem Hof steckt ein Blatt Papier, feucht vom Tau. #sprecher:erzaehler
-Eine lose Seite voller Schachdiagramme. #sprecher:erzaehler
+// Runde 11: Kein Buchverweis (Entscheidung vom 10.11.2026, Befund in 22_Dialogpruefung.md); ein
+// loses Blatt mit einer Stellung. Die Sammlung „buchseiten“ bleibt als Zähler bestehen.
+Ein loses Blatt mit einer gezeichneten Stellung. Jemand hat mit Bleistift „Weiß zieht“ darunter geschrieben. #sprecher:erzaehler
 ~ gibFund("seite00")
 ~ buchseiten = buchseiten + 1
-Eine Seite aus einem Buch, das es zu meiner Zeit noch nicht gab. Heb sie auf. #sprecher:ambrose
+Eine Stellung, die der Wind gebracht hat. Heb sie auf, man weiß nie. #sprecher:ambrose
 -> END
 
 === finch_bauer_a ===
@@ -267,3 +306,150 @@ Ein weißer Bauer aus hellem Holz. Unter dem Fuß ist ein Feld eingebrannt. #spr
     Hinter dem Stamm sieht man schon den Park von Maple Falls. #sprecher:erzaehler
     -> END
 }
+
+// ================================================================ Runde 11: Roman, Kapitel 10
+// Neu gegenüber der Story-Bibel (docs/spiel/roman/akt1_teil3.md, Tabelle am Ende): Ada und die
+// Krähen, die Ehrlichkeitskasse in drei Stufen, Silas am Stein der Fährstelle mit Ambroses erster
+// eigener Erinnerung (nur beim ersten Besuch), Tessa in vier Stufen. Stimmung: frei, Sommerende,
+// Atem holen (Dokument 19, Abschnitt 4; Ortsblatt „Weg“ in Dokument 20).
+//
+// Stufen der kleinen Geschichten (Dokument 20, Ortsblatt Weg). Die Spalte B des Ortsblatts („nach
+// der Nadel von Maple Falls“) liegt vor dem ersten Weg; deshalb zählt hier der erste Weg als A:
+//   A erster Weg (nadelCedarCreek == 0), B nach der Nadel von Cedar Creek (bis zur Nadel von
+//   Riverton), C in Akt 2 (nadelRiverton > 0), D nach Akt 2 (nadelIronwood > 0).
+//
+// Auslöser für die Karten (fehlen noch, Karten baut ein anderer Helfer):
+//   apfelstand  Landstraße, Kasse am Apfelstand (Gegenstand)   → weg-maple-cedar.apfelstand
+//   ada         Landstraße, Figur „Ada“ (heute Statistin apfelverkaeuferin) → weg-maple-cedar.ada
+//   Fährstelle  Flussweg, Stein mit eingeritztem Brett: läuft über den vorhandenen Auslöser „rast“
+//   tessa       Landstraße, Flussweg oder Zedernpfad je Stufe (heute Statistin joggerin) → weg-maple-cedar.tessa
+// Ada und Silas sprechen mit eigener Kennung (Namen in texte/de.json); ein Porträt gibt es noch
+// nicht, die App zeigt dann keines.
+
+// ---------------------------------------------------------------- Ehrlichkeitskasse
+
+=== apfelstand ===
+{
+- nadelIronwood > 0: -> apfelstand_d
+- nadelRiverton > 0: -> apfelstand_c
+- nadelCedarCreek > 0: -> apfelstand_b
+- else: -> apfelstand_a
+}
+
+=== apfelstand_a ===
+Ein Tisch am Gatter: Äpfel, Flaschen mit dunklem Sirup und eine Blechdose mit Schlitz. Niemand ist da. #sprecher:erzaehler
+Auf einem Pappschild steht: „Äpfel 1 Dollar. Sirup 4. Bitte ehrlich.“ #sprecher:erzaehler
+Juno legt einen Dollar in die Dose und nimmt zwei Äpfel. Einen gibt sie dir. #sprecher:erzaehler
+{not adaGetroffen: -> ada}
+-> END
+
+=== apfelstand_b ===
+An der Blechdose klebt jetzt ein Zettel in großer Schrift. #sprecher:erzaehler
+„Wer es war, kann es zurücklegen. Ich frag nicht.“ #sprecher:erzaehler
+Eine Frau, die nicht fragt. Das ist mehr Vertrauen, als ich je hatte. #sprecher:ambrose
+-> END
+
+=== apfelstand_c ===
+Der Zettel hängt noch an der Dose. Darunter hat jemand einen Apfelkern geklebt. #sprecher:erzaehler
+„Stimmt wieder“, steht in Adas Schrift daneben. „Mit Zinsen.“ #sprecher:erzaehler
+Ein Apfelkern als Entschuldigung. Das gefällt mir. #sprecher:ambrose #stimmung:lacht
+-> END
+
+=== apfelstand_d ===
+Die Kasse stimmt, der Zettel hängt noch. Daneben ein Zeitungsausschnitt in einer Klarsichthülle. #sprecher:erzaehler
+Ein Foto von der Joggerin, die Arme oben, hinter ihr ein Zielband. Sie selbst ist heute nicht da. #sprecher:erzaehler
+-> END
+
+// ---------------------------------------------------------------- Ada und die Krähen
+
+=== ada ===
+{adaGetroffen: -> ada_alltag}
+~ adaGetroffen = true
+Eine Frau in Gummistiefeln kommt über die Wiese, in jeder Hand einen Eimer. #sprecher:erzaehler
+Die Kasse stimmt fast immer. Fast. #sprecher:ada
+Sie stellt die Eimer ab und sieht auf das Feld. #sprecher:erzaehler
+Drei Krähen, zwei Vogelscheuchen. Wer gewinnt? #sprecher:ada #klang:kraehen
+* [„Die Krähen. Drei gegen zwei.“]
+    Sie sieht dich an, zum ersten Mal richtig. #sprecher:erzaehler
+    Die zählen in der Schule jetzt, was? #sprecher:ada
+* [„Die Vogelscheuchen. Die laufen nicht weg.“]
+    Weglaufen tun sie nicht. Aber es sind drei gegen zwei. #sprecher:ada
+- Sie nimmt den Deckel von der Dose, zählt mit den Lippen und seufzt. #sprecher:erzaehler #klang:kasse_muenzen
+Diese Woche fehlen wieder sechs. Ich frag nicht, wer. Ich schreib bloß einen Zettel. #sprecher:ada
+Ein Traktor fährt vorbei. Der Mann darauf hebt zwei Finger vom Lenkrad. Das ist alles. #sprecher:erzaehler
+Otis. Redet mit den Kühen. #sprecher:ada
+Gatter zu, wenn ihr geht. #sprecher:ada
+-> END
+
+=== ada_alltag ===
+{
+- nadelRiverton > 0: Die Kasse stimmt. Ich lass den Zettel trotzdem hängen. Man weiß ja nie. #sprecher:ada
+- nadelCedarCreek > 0: Der Zettel hängt. Mal sehen, wer ihn liest. #sprecher:ada
+- else: Drei Krähen, zwei Vogelscheuchen. Ich sag ja: Die Krähen gewinnen. #sprecher:ada
+}
+-> END
+
+// ---------------------------------------------------------------- Silas am Stein der Fährstelle
+
+=== faehrstein ===
+{faehrsteinGesehen: -> faehrstein_spaeter}
+~ faehrsteinGesehen = true
+Wo das Ufer flach ist, liegt ein großer Stein im Gras. Darin sind Linien eingeritzt, acht mal acht. #sprecher:erzaehler
+Daneben sitzt ein alter Mann auf einem Klappstuhl. Die Angel hängt im Wasser, der Eimer ist leer. #sprecher:erzaehler
+Mein Großvater hat hier Leute übergesetzt. Als es die Brücke noch nicht gab. #sprecher:silas
+Die Fährleute haben auf dem Stein gespielt, während sie warteten. Mit Kieseln. Helle und dunkle. #sprecher:silas
+* [Die Hand auf den Stein legen]
+    Der Stein ist warm von der Sonne. #sprecher:erzaehler
+* [„Beißen die Fische heute?“]
+    Er zieht die Angel heraus. Der Haken ist leer. #sprecher:erzaehler
+    Die wissen, wann ich komme. #sprecher:silas
+- Hier ist es schöner. Es ist das Erste, was Ambrose seit dem Aufbruch sagt. #sprecher:erzaehler
+Auf Straßen wie der dort oben bin ich wochenlang gefahren. In einer Kutsche, die jede Furche mitnahm. #sprecher:ambrose
+Am Fluss kann man wenigstens denken. #sprecher:ambrose
+* [„Wohin bist du gefahren?“]
+    Er antwortet nicht gleich. #sprecher:erzaehler #pause:2
+    Nach Norden. Es ist lange her. #sprecher:ambrose
+* [Nichts sagen]
+- Auf so etwas habe ich auch gespielt. An einem Kai, auf einem Fass, mit Knöpfen. Ich war neun. #sprecher:ambrose
+Ich verlor gegen einen Matrosen aus Marseille und weinte. Er schenkte mir eine Orange. #sprecher:ambrose
+Daran habe ich seit … Ich wusste nicht, dass ich das noch weiß. #sprecher:ambrose #stimmung:lacht
+Juno hat nichts gehört. Sie fotografiert den Stein für das Tagebuch. #sprecher:erzaehler
+-> END
+
+=== faehrstein_spaeter ===
+Der Stein mit dem eingeritzten Brett. Man fühlt die Linien eher, als man sie sieht. #sprecher:erzaehler
+{nadelCedarCreek == 0: Fische? Die wissen, wann ich komme. #sprecher:silas}
+-> END
+
+// ---------------------------------------------------------------- Tessa, die Joggerin
+
+=== tessa ===
+{
+- nadelIronwood > 0: -> tessa_d
+- nadelRiverton > 0: -> tessa_c
+- nadelCedarCreek > 0: -> tessa_b
+- else: -> tessa_a
+}
+
+=== tessa_a ===
+Eine Frau läuft vorbei, rot im Gesicht. Am Gatter bleibt sie stehen und keucht. #sprecher:erzaehler
+Noch – drei Kilometer! Halbe – Strecke! #sprecher:joggerin
+Und weg ist sie. #sprecher:erzaehler
+-> END
+
+=== tessa_b ===
+Die Joggerin kommt dir am Fluss entgegen, diesmal ohne Keuchen. #sprecher:erzaehler
+Bis zum Steg! Ganz! Morgen weiter! #sprecher:joggerin #stimmung:froh
+Am Steg steht ihre Wasserflasche, wie ein Merkzeichen. #sprecher:erzaehler
+-> END
+
+=== tessa_c ===
+Unter den Zedern läuft dir jemand entgegen, gleichmäßig, ohne Hast. Die Joggerin. #sprecher:erzaehler
+Sie hebt nur die Hand und läuft weiter. Zum Reden braucht sie den Atem nicht mehr. #sprecher:erzaehler
+Die ganze Strecke. Wer hätte das gedacht? Sie vermutlich nicht. #sprecher:ambrose
+-> END
+
+=== tessa_d ===
+Von der Joggerin ist heute nichts zu sehen. #sprecher:erzaehler
+Am Apfelstand hängt ein Zeitungsausschnitt. Vielleicht weiß Ada mehr. #sprecher:erzaehler
+-> END

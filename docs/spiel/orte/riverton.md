@@ -471,7 +471,7 @@ auf beiden Seiten.
 - `riverton.pavillon`: Bildschirmtische als Objektebene über den Marmortischen (nach Szene 37).
 - `wegCedarRiverton.bahndamm`: Durchlass (S14) als Objekt mit Bedingung `hatLaterne`; Thermoskanne im
   Durchlass.
-- `wegRivertonIronwood.kanalweg`: Noors Graffiti in zwei Stufen (Akt 2 halb, Akt 3 fertig); Konservendose
+- `wegRivertonIronwood.kanalweg`: Noors Wandbild in vier Stufen über die Akte (Umrisse, Farbe, fertig mit Signatur, Künstlerin fort); es zeigt neben Turm und Springer die Werkbank, auf der ihr Großvater in der Pause spielte (gebaut sind zwei Stufen; noch umzubauen, Entscheidung 13.11.2026); Konservendose
   am Rastanleger nur einmal.
 - `lockport.aussen`: Lastkahn am Kai (bis L3 vertäut und abgedeckt, danach mit Mannschaft); Steg am
   Untertor als Objekt (S3 zu, dann offen); Feld für Eis auf dem Becken (Akt 3).
@@ -591,27 +591,27 @@ der Story-Bibel und die Wege.
 
 ### 3.2 Was aus dem Ortsbild bleibt, was sich ändert, was entfällt
 
-| Element                                       | Entscheidung                                                                                                   | Grund                                                                                                                                                   |
-| --------------------------------------------- | -------------------------------------------------------------------------------------------------------------- | ------------------------------------------------------------------------------------------------------------------------------------------------------- |
-| Größen                                        | Zedernwald 140 × 30, Bahndamm 150 × 30, Riverton 72 × 56, Kanalweg 30 × 190, Brücke 30 × 160, Lockport 56 × 40 | 7a.2; heute je 28 × 20 und Riverton 32 × 24.                                                                                                            |
-| Ankunft zu Fuß                                | Westrand am Bahnzaun, nicht am Bahnhof                                                                         | Wer läuft, kommt nicht aus dem Zug (Regel 5.1, wie Cedar Creek). Szene 28 („Ort: Bahnhof“) spielt auf dem Vorplatz vor dem Bahnhof.                     |
-| Rückweg nach Cedar Creek                      | `zurueckCedar` führt an den Ostrand von Cedar Creek (`zedernwald`), nicht an die Bushaltestelle                | Randübergang Ost ↔ West; die Haltestelle ist die Schnellreise.                                                                                          |
-| Regen                                         | bleibt als Grundwetter von Riverton in Akt 2 (Partikel, Pfützen); nach der Nadel nur noch Pfützen              | 09, 2: „Regen in Riverton“; das Ende des Regens öffnet sichtbar das Hochwassergatter (Sperre in der Welt statt Nadel als Zahl).                         |
-| Bildschirmtische auf der Wiese                | bleiben, sechs Tische in zwei Reihen südwestlich vor dem Pavillon                                              | Szene 29 („auf der Wiese“), 13 §7.4 (Objektebene mit Bedingung).                                                                                        |
-| Pavillon                                      | nah an der Brücke (36–45 / 43–48), Sichtachse von der Brücke                                                   | Der wichtigste Ort der Stadt soll man vom Weg aus sehen (README, Sichtachsen); kurze Wege (7a.3, Regel 6).                                              |
-| Brücke mit Straßenmusiker                     | bleibt; Musiker bekommt einen Namen (Dima, 14) und sitzt unter dem ersten Bogen                                | Bibel 12 (Läufer „unter der Brücke beim Straßenmusiker“), 09, 4a.                                                                                       |
-| Handyladen                                    | bleibt Kulisse, Tür zur Straße, Verkäufer Kyle als Figur davor                                                 | Bibel 10.2: kein Laden für {held}; Kyle zeigt die Menschen hinter dem Konzern (14).                                                                     |
-| Bushaltestelle                                | auf dem Bahnhofsvorplatz, Bus nach Ironwood                                                                    | 09, 5.4; Schnellreise nach 13 §3 und Bibel 10.3.                                                                                                        |
-| Markt                                         | neu, mit Gemüsestand (Margie Pell)                                                                             | 09, 4a: Riverton lebt von „Bahn, Hafen am Fluss, Markt“; der Markt war bisher nirgends.                                                                 |
-| Hafen am Fluss                                | Lagerhäuser und Kran am Ostkai (Kulisse), Anleger am Kanalbecken                                               | 09, 4a; der Anleger ist Teil der Lastkahn-Schnellreise (13 §3).                                                                                         |
-| Fahrradwerkstatt mit Schuppen                 | Werkstatt am Westteil des Parks, Schuppen dahinter mit Tür zum Hinterweg am Südrand                            | Bibel 9.2 („hinter dem Park“; Prüfbericht Akt 2, Befund 21); die Schuppentür in der Südfassade passt zur Südwand innen.                                 |
-| Slicks Wohnwagen „am Fluss“                   | Westende des Parks am flachen Ufer                                                                             | Bibel 9.2; abseits, damit Szene 37 ein eigener Gang ist.                                                                                                |
-| Kanal                                         | beginnt am Kanalbecken im Südosten, Treidelpfad am Westufer                                                    | Bibel 10.3; der Seitenarm nach Lockport zweigt nach Westen ab, der Pfad quert ihn auf einer festen Brücke (keine Sackgasse, Befund 1 des Prüfberichts). |
-| Schleuse S3                                   | am Steg über das Untertor in Lockport, nicht auf Weg 3                                                         | 13 §3 und Befund 1: Weg 3 bleibt frei; man sieht Lockport hinter der Schleuse (Grundsatz aus 12, Abschnitt 5).                                          |
-| Bushaltestelle ohne Bus                       | an einer alten Werkstraße, die an einer offenen, rostigen Drehbrücke endet                                     | erklärt, warum dort einmal ein Bus hielt (Regel 5.8).                                                                                                   |
-| Eisenbrücke „über den Kanal, dann der Abhang“ | der Kanal schwenkt im Einschnitt unter dem Pfad durch; Abhang mit Serpentinen                                  | Bibel 10.3; Kurven nach README (Wegeführung).                                                                                                           |
-| Brücke mit Nieten in Ironwood (Szene 50)      | bleibt bei mittel-4 (Ironwood); auf Weg 3 nur der Nietenkopf am Geländer                                       | Bibel 12 und Szene 50 („dieselben Initialen wie auf Route 3“).                                                                                          |
-| Wohnwagen und Schuppen als Innenkarten        | bleiben, kleiner als 7a.2 für Wohnräume                                                                        | Bibel 10.2 („innen (klein)“); 1.7.                                                                                                                      |
+| Element                                       | Entscheidung                                                                                                                                 | Grund                                                                                                                                                   |
+| --------------------------------------------- | -------------------------------------------------------------------------------------------------------------------------------------------- | ------------------------------------------------------------------------------------------------------------------------------------------------------- |
+| Größen                                        | Zedernwald 140 × 30, Bahndamm 150 × 30, Riverton 72 × 56, Kanalweg 30 × 190, Brücke 30 × 160, Lockport 56 × 40                               | 7a.2; heute je 28 × 20 und Riverton 32 × 24.                                                                                                            |
+| Ankunft zu Fuß                                | Westrand am Bahnzaun, nicht am Bahnhof                                                                                                       | Wer läuft, kommt nicht aus dem Zug (Regel 5.1, wie Cedar Creek). Szene 28 („Ort: Bahnhof“) spielt auf dem Vorplatz vor dem Bahnhof.                     |
+| Rückweg nach Cedar Creek                      | `zurueckCedar` führt an den Ostrand von Cedar Creek (`zedernwald`), nicht an die Bushaltestelle                                              | Randübergang Ost ↔ West; die Haltestelle ist die Schnellreise.                                                                                          |
+| Regen                                         | bleibt als Grundwetter von Riverton in Akt 2 (Partikel, Pfützen); nach der Nadel nur noch Pfützen                                            | 09, 2: „Regen in Riverton“; das Ende des Regens öffnet sichtbar das Hochwassergatter (Sperre in der Welt statt Nadel als Zahl).                         |
+| Bildschirmtische auf der Wiese                | bleiben, sechs Tische in einer geraden Reihe auf der Wiese vor dem Pavillon (gebaut in zwei Reihen; noch umzubauen, Entscheidung 13.11.2026) | Szene 29 („auf der Wiese“), 13 §7.4 (Objektebene mit Bedingung).                                                                                        |
+| Pavillon                                      | nah an der Brücke (36–45 / 43–48), Sichtachse von der Brücke                                                                                 | Der wichtigste Ort der Stadt soll man vom Weg aus sehen (README, Sichtachsen); kurze Wege (7a.3, Regel 6).                                              |
+| Brücke mit Straßenmusiker                     | bleibt; Musiker bekommt einen Namen (Dima, 14) und sitzt unter dem ersten Bogen                                                              | Bibel 12 (Läufer „unter der Brücke beim Straßenmusiker“), 09, 4a.                                                                                       |
+| Handyladen                                    | bleibt Kulisse, Tür zur Straße, Verkäufer Kyle als Figur davor                                                                               | Bibel 10.2: kein Laden für {held}; Kyle zeigt die Menschen hinter dem Konzern (14).                                                                     |
+| Bushaltestelle                                | auf dem Bahnhofsvorplatz, Bus nach Ironwood                                                                                                  | 09, 5.4; Schnellreise nach 13 §3 und Bibel 10.3.                                                                                                        |
+| Markt                                         | neu, mit Gemüsestand (Margie Pell)                                                                                                           | 09, 4a: Riverton lebt von „Bahn, Hafen am Fluss, Markt“; der Markt war bisher nirgends.                                                                 |
+| Hafen am Fluss                                | Lagerhäuser und Kran am Ostkai (Kulisse), Anleger am Kanalbecken                                                                             | 09, 4a; der Anleger ist Teil der Lastkahn-Schnellreise (13 §3).                                                                                         |
+| Fahrradwerkstatt mit Schuppen                 | Werkstatt am Westteil des Parks, Schuppen dahinter mit Tür zum Hinterweg am Südrand                                                          | Bibel 9.2 („hinter dem Park“; Prüfbericht Akt 2, Befund 21); die Schuppentür in der Südfassade passt zur Südwand innen.                                 |
+| Slicks Wohnwagen „am Fluss“                   | Westende des Parks am flachen Ufer                                                                                                           | Bibel 9.2; abseits, damit Szene 37 ein eigener Gang ist.                                                                                                |
+| Kanal                                         | beginnt am Kanalbecken im Südosten, Treidelpfad am Westufer                                                                                  | Bibel 10.3; der Seitenarm nach Lockport zweigt nach Westen ab, der Pfad quert ihn auf einer festen Brücke (keine Sackgasse, Befund 1 des Prüfberichts). |
+| Schleuse S3                                   | am Steg über das Untertor in Lockport, nicht auf Weg 3                                                                                       | 13 §3 und Befund 1: Weg 3 bleibt frei; man sieht Lockport hinter der Schleuse (Grundsatz aus 12, Abschnitt 5).                                          |
+| Bushaltestelle ohne Bus                       | an einer alten Werkstraße, die an einer offenen, rostigen Drehbrücke endet                                                                   | erklärt, warum dort einmal ein Bus hielt (Regel 5.8).                                                                                                   |
+| Eisenbrücke „über den Kanal, dann der Abhang“ | der Kanal schwenkt im Einschnitt unter dem Pfad durch; Abhang mit Serpentinen                                                                | Bibel 10.3; Kurven nach README (Wegeführung).                                                                                                           |
+| Brücke mit Nieten in Ironwood (Szene 50)      | bleibt bei mittel-4 (Ironwood); auf Weg 3 nur der Nietenkopf am Geländer                                                                     | Bibel 12 und Szene 50 („dieselben Initialen wie auf Route 3“).                                                                                          |
+| Wohnwagen und Schuppen als Innenkarten        | bleiben, kleiner als 7a.2 für Wohnräume                                                                                                      | Bibel 10.2 („innen (klein)“); 1.7.                                                                                                                      |
 
 ### 3.3 Befunde und offene Punkte für den Haupt-Chat
 
@@ -678,8 +678,9 @@ der Story-Bibel und die Wege.
 - `riverton.bahnhofshalle` (A): echter Fahrkartenschalter (Tresen mit Schalterfenstern) statt Holztisch
   mit Kasse und abgeschnittenem Ticket-Bild; Getränke- und Kaffeeautomat nebeneinander; Wasserspender
   neben der Sitzreihe; Gepäck neben den Bänken; Pflanzen symmetrisch an den Säulen; Taube bleibt.
-- `riverton.pavillon` (A): 20 × 17 (Clubhaus mit langer Geschichte, 10.56); vier lange rechteckige
-  Tische mit je zwei Brettern nebeneinander; in der Mitte ein Bodenschachbrett aus hellen und dunklen
+- `riverton.pavillon` (A): 20 × 17 (Clubhaus mit langer Geschichte, 10.56); vier Steintische
+  (Marmor), einer mit der Mulde, statt der gebauten vier langen rechteckigen Tische mit je zwei
+  Brettern nebeneinander (noch umzubauen, Entscheidung 13.11.2026); in der Mitte ein Bodenschachbrett aus hellen und dunklen
   Fliesen (das Wahrzeichen des Clubs), Bank davor.
 - `riverton.wohnwagen` (A): 17 × 8 nach dem Grundriss eines Reisewohnwagens: Bett im Heck (links),
   Nasszelle mit Mini-Toilette und Waschbecken, Küchenzeile mit Spüle, Herd und Kühlschrank gegenüber
@@ -698,16 +699,16 @@ der Story-Bibel und die Wege.
 
 **Zustände (gebaut, Technik von mittel-2; Liste: `python -m pipeline.abenteuer.zustaende`):**
 
-| Karte                    | Szene                                       | Bedingung                               | was sich ändert                                                                                   |
-| ------------------------ | ------------------------------------------- | --------------------------------------- | ------------------------------------------------------------------------------------------------- |
-| `riverton.aussen`        | `riverton-aussen-trainingszentrum`          | `slickAbschiedGesehen` (nach Szene 37)  | Schild von Perfect Move über dem Pavillon, Absperrbock „Gesperrt“                                 |
-| `riverton.aussen`        | `riverton-aussen-tische-kaputt`             | dazu `nadelIronwood >= 1` (Akt 3)       | zwei Bildschirmtische kaputt (`rv9BildschirmtischKaputt`: Sprung, Flatterband)                    |
-| `riverton.aussen`        | `riverton-aussen-unterschriften`            | dazu `nadelDesertSprings >= 1` (Akt 4)  | Bildschirmtische abgeschaltet, Tisch für Slicks Unterschriftenliste                               |
-| `riverton.aussen`        | `riverton-aussen-nachspiel`                 | `nicht ausgangCapitalArenaFinale == ""` | Bildschirmtische und ihre Dächer weg, Schild ab                                                   |
-| `riverton.bahnhofshalle` | `riverton-bahnhofshalle-slick-auf-der-bank` | `nadelIronwood >= 1` (Akt 3)            | Slicks Brett auf der Bank, Kuriertasche daneben                                                   |
-| `riverton.bahnhofshalle` | `riverton-bahnhofshalle-plakat`             | `nadelDesertSprings >= 1` (Akt 4)       | Plakat der Landesmeisterschaft neben dem Kiosk                                                    |
-| `riverton.pavillon`      | `riverton-pavillon-perfect-move`            | `slickAbschiedGesehen` (nach Szene 37)  | sechs Bildschirmtische statt der langen Tische, Kartons, Rechnerschränke, Schild von Perfect Move |
-| `riverton.schuppen`      | `riverton-schuppen-ohne-fahrrad`            | `fahrradErhalten` (Szene 33)            | Fahrrad weg, nur die gefaltete Plane                                                              |
+| Karte                    | Szene                                       | Bedingung                               | was sich ändert                                                                                                                                                                                                                        |
+| ------------------------ | ------------------------------------------- | --------------------------------------- | -------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------- |
+| `riverton.aussen`        | `riverton-aussen-trainingszentrum`          | `slickAbschiedGesehen` (nach Szene 37)  | Schild von Perfect Move über dem Pavillon, Absperrbock „Gesperrt“                                                                                                                                                                      |
+| `riverton.aussen`        | `riverton-aussen-tische-kaputt`             | dazu `nadelIronwood >= 1` (Akt 3)       | zwei Bildschirmtische kaputt (`rv9BildschirmtischKaputt`: Sprung, Flatterband)                                                                                                                                                         |
+| `riverton.aussen`        | `riverton-aussen-unterschriften`            | dazu `nadelDesertSprings >= 1` (Akt 4)  | Bildschirmtische abgeschaltet, Tisch für Slicks Unterschriftenliste                                                                                                                                                                    |
+| `riverton.aussen`        | `riverton-aussen-nachspiel`                 | `nicht ausgangCapitalArenaFinale == ""` | Bildschirmtische und ihre Dächer weg, Schild ab                                                                                                                                                                                        |
+| `riverton.bahnhofshalle` | `riverton-bahnhofshalle-slick-auf-der-bank` | `nadelIronwood >= 1` (Akt 3)            | Slicks Brett auf der Bank, Kuriertasche daneben                                                                                                                                                                                        |
+| `riverton.bahnhofshalle` | `riverton-bahnhofshalle-plakat`             | `nadelDesertSprings >= 1` (Akt 4)       | Plakat der Landesmeisterschaft neben dem Kiosk                                                                                                                                                                                         |
+| `riverton.pavillon`      | `riverton-pavillon-perfect-move`            | `slickAbschiedGesehen` (nach Szene 37)  | vier Bildschirmtische im Kreis statt der vier Steintische; auf dem Holzboden vier helle Flecken, wo sie standen; Kartons, Rechnerschränke, Schild von Perfect Move (gebaut mit sechs Tischen; noch umzubauen, Entscheidung 13.11.2026) |
+| `riverton.schuppen`      | `riverton-schuppen-ohne-fahrrad`            | `fahrradErhalten` (Szene 33)            | Fahrrad weg, nur die gefaltete Plane                                                                                                                                                                                                   |
 
 Nicht als eigene Szene: `schuppenOffen` (außen ist das Vorhängeschloss im Bild nicht zu sehen), der
 Lastkahn am Anleger (Objekt mit `wenn`, sobald es Objekte mit Bedingung gibt), Regen und Schnee
@@ -764,11 +765,13 @@ die Platte ist ein Bildschirm mit Schachbrett).
 - Park (Grundkarte, `trainingszentrum`, `unterschriften`, `tische-kaputt`): sechs Tische in zwei
   Reihen (23/27/31 × 47/50), je eine Kachel Luft zur Seite und zum Erdweg. Vier Kacheln Abstand
   auch nach unten gehen nicht: zwischen Uferweg (Reihe 46) und Parkweg (Reihe 53) liegen nur sechs
-  Reihen Wiese; die Bänke der Tischbilder halten die Reihen trotzdem sichtbar auseinander.
+  Reihen Wiese; die Bänke der Tischbilder halten die Reihen trotzdem sichtbar auseinander. Nach dem Roman stehen die sechs Tische in einer geraden Reihe
+  (noch umzubauen, Entscheidung 13.11.2026).
 - `tische-kaputt`: Tisch 2 und 6 als `rv9BildschirmtischKaputt` (Zustand „kaputt“ in der Szene).
 - Der Parkschachtisch des Parkschachspielers steht jetzt auf dem Platz vor dem Pavillon (38, 51).
-- Pavillon `perfect-move`: Auch innen Bildschirmtische, je drei links und rechts statt der langen
-  Holztische mit Laptops (Szene 37); dazu Kartons der Lieferung und zwei Rechnerschränke.
+- Pavillon `perfect-move`: Auch innen Bildschirmtische, vier im Kreis statt der vier Steintische
+  (Szene 37); dazu Kartons der Lieferung und zwei Rechnerschränke. Gebaut sind je drei links und
+  rechts statt der langen Holztische mit Laptops (noch umzubauen, Entscheidung 13.11.2026).
 
 ## 3.5 Gutachten Runde 8 (10.11.2026, mittel-3): Innenräume
 
@@ -1340,13 +1343,13 @@ Boot; Pappelallee. Auslöser: `tafel` (15, 50), `fundZahnrad` (12, 43), `meilens
 
 **Zustände (Regel 10.63), gebaut, sobald mittel-2 die Technik meldet:**
 
-| Karte    | Zustand             | Wann und warum                                                            |
-| -------- | ------------------- | ------------------------------------------------------------------------- |
-| kanalweg | Graffiti halb       | Akt 2: Noor beginnt die Schachfiguren an der freien Wand                  |
-| kanalweg | Graffiti fertig     | ab Akt 3 (`endeAkt2`-Marke): die Wand zeigt Turm und Springer vollständig |
-| kanalweg | Winter              | Akt 3: Schnee am Pfad, Eis am Ufer (13, 7.3)                              |
-| bruecke  | Geländer gestrichen | nach Corwins Quest: Farbeimer und Leiter weg, Geländer frisch             |
-| bruecke  | Winter              | Akt 3: Schnee auf den Weiden, die Klapptische sind weggeräumt             |
+| Karte    | Zustand             | Wann und warum                                                                                                                                                                                               |
+| -------- | ------------------- | ------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------ |
+| kanalweg | Graffiti halb       | Akt 2: Noor beginnt an der freien Wand; Umrisse von Turm und halbem Springer                                                                                                                                 |
+| kanalweg | Graffiti fertig     | ab Akt 3 (`endeAkt2`-Marke): die Wand ist fertig und signiert: Turm, Springer und die Werkbank, auf der Noors Großvater in der Pause spielte (Werkbank und Signatur noch umzubauen, Entscheidung 13.11.2026) |
+| kanalweg | Winter              | Akt 3: Schnee am Pfad, Eis am Ufer (13, 7.3)                                                                                                                                                                 |
+| bruecke  | Geländer gestrichen | nach Corwins Quest: Farbeimer und Leiter weg, Geländer frisch                                                                                                                                                |
+| bruecke  | Winter              | Akt 3: Schnee auf den Weiden, die Klapptische sind weggeräumt                                                                                                                                                |
 
 ## Gutachten Runde 8: Antworten (niedrig-1, 10.11.2026)
 
@@ -1409,7 +1412,8 @@ Fußmatte, Stufendiagonalen der Wege); er wird hier nicht einzeln umgebaut.
 - Zur Nachprüfung: 5, 6, 7, 12, 13, 16, 19, 22.
 
 **Zustände Weg 3 (gebaut):** Kanalweg `graffiti` (`nadelIronwood >= 1`): Noors Wand ist fertig bemalt,
-Leiter und Sprayerin sind weg. Eisenbrücke `ohne-tische` (`nadelIronwood >= 1`): Die Brückenbauern haben
+Leiter und Sprayerin sind weg (nach dem Roman vier Stufen, das fertige Bild mit Werkbank und Signatur;
+noch umzubauen, Entscheidung 13.11.2026). Eisenbrücke `ohne-tische` (`nadelIronwood >= 1`): Die Brückenbauern haben
 die Klapptische weggeräumt, Corwin ist mit dem Streichen fertig. Der Winter beider Karten kommt mit der
 Schneefärbung (mittel-2).
 

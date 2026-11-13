@@ -14,6 +14,7 @@ VAR boatengLagos = false
 VAR trocknerStellungBestanden = false
 VAR formularGefunden = false
 VAR formularEntziffert = false
+VAR okaforGetroffen = false
 
 === boateng ===
 {
@@ -25,20 +26,23 @@ VAR formularEntziffert = false
 }
 
 === boateng_erstes_treffen ===
+// Runde 11 (VC45, VC51, Roman Kapitel 11): Bild statt Vorstellung; das Brummen von Anfang an.
+// Dauergeräusch und Radio kommen von der Karte (waschmaschine, 21_Klangplan.md B1).
 ~ boatengGetroffen = true
-Maschinen brummen, warme Luft, es riecht nach Seife. Ein Mann in Strickjacke faltet Handtücher. #sprecher:erzaehler
-Willkommen. Boateng, mir gehört der Laden. #sprecher:boateng
+{okaforGetroffen: Mrs. Okafor hat dich mit einem Sack Tischdecken herübergeschickt. #sprecher:erzaehler}
+Maschinen brummen, warme Luft, es riecht nach Seife. Hinter dem Tresen ein alter Mann mit sehr großen, ruhigen Händen. #sprecher:erzaehler #klang:waschmaschine
+Die Stellung da steht seit Montag. #sprecher:boateng
 Die Maschine schleudert, du denkst. Beides braucht zwölf Minuten. #sprecher:boateng
 Auf dem Trockner dort klebt jede Woche eine neue Stellung. Wer sie löst, wäscht einmal umsonst. #sprecher:boateng
 * [„Ich versuche es.“]
     Nur zu. Weiß am Zug, Matt in zwei. #sprecher:boateng
 * [„Ich habe gar keine Wäsche dabei.“]
     Dann hast du einen Gutschein für nachher. Das ist auch was. #sprecher:boateng
-- Ein Brett auf einer Waschmaschine. Diese Zeit hat ihren eigenen Witz. Er gefällt mir. #sprecher:ambrose #stimmung:lacht
+- Ein Brett auf einer Maschine, die zittert. Und die Figuren halten. #sprecher:ambrose
 -> END
 
 === boateng_wartet ===
-Die Stellung wartet auf dem Trockner. Kleiner Tipp: Schau dir die letzte Reihe an. #sprecher:boateng
+Die Maschine ist gleich fertig. Du auch? #sprecher:boateng
 -> END
 
 === trockner ===
@@ -53,7 +57,7 @@ Die Stellung wartet auf dem Trockner. Kleiner Tipp: Schau dir die letzte Reihe a
 }
 
 === trockner_raetsel ===
-Das Brett auf dem Trockner vibriert leise, die Figuren halten. Weiß am Zug, Matt in zwei. #sprecher:erzaehler #klang:waschmaschine
+Das Brett auf dem Trockner vibriert leise, die Figuren halten. Weiß am Zug, Matt in zwei. #sprecher:erzaehler #klang:trockner_figuren
 Der König hinter seinen Bauern. Kein Fenster, keine Luft. #sprecher:ambrose
 Das kennst du jetzt. #sprecher:ambrose
 * [Die Stellung lösen]
@@ -63,16 +67,20 @@ Das kennst du jetzt. #sprecher:ambrose
     -> END
 
 === boateng_lagos ===
+// Runde 11 (VC47 bis VC50, Roman Kapitel 11): Die Lagos-Geschichte als Pointe, Ambrose schweigt.
+// Dieselben Sätze sollen als Steckbriefzeile von Mrs. Okafor erscheinen; dafür fehlt noch eine
+// Zeilenart mit freiem Text.
 ~ boatengLagos = true
-Gelöst! Gut gemacht. #sprecher:boateng
-Die Stellung habe ich von einem Mädchen aus Lagos, vor fünfzig Jahren. #sprecher:boateng
-Sie hat damals jedes Turnier hier gewonnen. Heute leitet sie den Club in der Bibliothek. #sprecher:boateng
-* [„Mrs. Okafor?“]
-    Genau die. Frag sie nach der Grundreihe. #sprecher:boateng #stimmung:froh
-    Oder besser nicht, sonst stellt sie dir eine Falle. #sprecher:boateng
-* [„Sie hat Turniere gespielt?“]
-    Und wie. Sie stellt Fallen, die man erst sieht, wenn es zu spät ist. #sprecher:boateng
-- Das kommt in Junos Tagebuch, nehme ich an. Mit Glitzer. #sprecher:ambrose
+Mr. Boateng nickt, zieht das Paketband ab und stellt eine neue Stellung auf. #sprecher:erzaehler
+Die alte hat mir ein Mädchen gezeigt. Vor fünfzig Jahren. Sie kam aus Lagos und hat im ganzen Staat Turniere gespielt. #sprecher:boateng
+Die Männer mochten das nicht. #sprecher:boateng
+Er lächelt auf das Brett hinunter. #sprecher:erzaehler
+Sie hat gewartet. Immer. Bis einer zu früh gekommen ist. #sprecher:boateng #stimmung:froh
+* [„Was ist aus ihr geworden?“]
+    Er streicht das Paketband glatt. #sprecher:erzaehler #pause:2
+* [Nichts fragen]
+    Er streicht das Paketband glatt und lässt sich Zeit. #sprecher:erzaehler #pause:2
+- Sie stellt Bücher ins Regal. Gegenüber. #sprecher:boateng
 -> END
 
 === boateng_alltag ===
@@ -98,7 +106,7 @@ Er schreibt die Züge Zeile für Zeile in heutiger Notation auf einen Zettel und
 Das sind meine Züge. Ein Stück meiner letzten Partie, in meiner eigenen Hand. #sprecher:ambrose #stimmung:traurig
 Ich hatte vergessen, wie ich schrieb. #sprecher:ambrose
 * [„Danke, Mr. Boateng.“]
-    Gern. Alte Partien sind wie alte Wäsche: Man muss sie nur einmal gut ausschütteln. #sprecher:boateng
+    Gern. Bring mehr davon, wenn du welche findest. #sprecher:boateng
 * [„Woher können Sie das lesen?“]
     Mein Großvater schrieb so. Er war Lehrer in Accra und hat mir die alte Schrift beigebracht. #sprecher:boateng
 - -> END

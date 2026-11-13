@@ -42,6 +42,7 @@ VAR todsuendenBestanden = false
 VAR abendSamGesehen = false
 VAR abendJunoGesehen = false
 VAR abendDameGesehen = false
+VAR ersterTagSpaeter = false
 
 === dachboden_brett ===
 // Szene 2 nach dem Roman, Kapitel 2, und der Dialogprüfung (VM8 bis VM13). Stimmung: still,
@@ -125,6 +126,8 @@ Nun? Die Figuren stehen, und ich habe Zeit. Zu viel davon. #sprecher:ambrose
     -> partie_beginnt
 // „Später“ am ersten Tag: eine der drei Stellen des Leitmotivs in Akt 1 (Archiv, Steg).
 * [„Später.“]
+    // Runde 11: Das Archiv erinnert sich daran (Leitmotiv „Später“, Dokument 19, Abschnitt 8).
+    ~ ersterTagSpaeter = true
     Später. #sprecher:ambrose #pause
     Ich kenne das Wort. Ich habe sehr lange darauf gewartet, dass es endet. #sprecher:ambrose #stimmung:bitter
     -> END

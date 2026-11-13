@@ -183,7 +183,7 @@ function Spielfeld({ s, partie }: { s: Partiesteuerung; partie: Partie }) {
   return (
     <>
       {/* Partiemomente der Begegnung (T5): Sprechzeile über dem Brett, blockiert nichts. */}
-      <Momentzeile partie={partie} />
+      <Momentzeile s={s} partie={partie} />
       {partie.uhr && (
         <Uhr uhr={partie.uhr} farbe={gegenfarbe(eigene)} name={gegner} jetztMs={s.jetztMs} />
       )}

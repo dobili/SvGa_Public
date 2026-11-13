@@ -75,7 +75,7 @@ die Aussage, nach dem Halbfinale der Gang. Die Vorrunde darf als Stellungsduelle
 - Figuren: der Schmied Gideon (1866), Mr. Dorrance (nur als Name); der Mann im grauen Anzug.
 - Dinge: leere Tagebuchseite mit Glitzerrahmen, verschnittener Falke, Plakat mit acht Gesichtern,
   das graue Gerät, Victors Schachbuch mit Hales Seite, Sams Stock mit neun Kerben, Tapete mit Rosen,
-  Stein mit eingeritztem Brett, gelbe Blume, Doppelseite mit neun Zetteln, Karte mit goldenem Rand.
+  Stein mit eingeritztem Brett, gelbe Blume, Doppelseite mit acht Zetteln und Hales Brief, Karte mit goldenem Rand.
 - Clubnadel: Silbergipfel (Summit City). Alle acht: Ahornblatt, Buch mit Springer, grünes Achteck
   mit Uhr, Zahnrad mit Turm, Glasquadrat mit Bauer, Lyra mit Grünspan, Kupferkaktus, Silbergipfel.
 - Musik: Endspielmotiv; Arena-Thema; Novas eigenes Thema; Ambroses Thema schließt in Ghost Town zum

@@ -9,32 +9,38 @@
 // Einstiege wie in orte.json: oma_ruth, medaille, partieformular.
 
 EXTERNAL gibFund(kennung)
+EXTERNAL reise(karte, ausloeser)
 
 VAR held = "Du"
 VAR fotoGefunden = false
 VAR medailleGesehen = false
 VAR partieformular2001Gesehen = false
 VAR turnierheftBekommen = false
+VAR mamaFotoGesehen = false
 
 === oma_ruth ===
 // Kapitel 25 (Roman): Oma Ruth kennt {held}; die Umarmung auf der Schwelle, dann Mamas Thema
 // (Klangplan S36, `mama`), das am leeren Blatt nach vier Tönen abbricht. Das Heft gibt sie im
 // selben Besuch (oma_ruth_heft); wer früher schon hier war, bekommt es beim nächsten Mal.
 {fotoGefunden and not turnierheftBekommen: -> oma_ruth_heft}
+{fotoGefunden and not mamaFotoGesehen: -> oma_ruth_heft.heimfahrt}
 {fotoGefunden:
     {~Deine Mutter war das stillste Kind der Straße. Außer, wenn sie gewonnen hat.|Ich hab ihr Zimmer so gelassen, falls sie mal wieder schlafen will.|Du bist schon wieder gewachsen. Das gehört verboten.} #sprecher:omaRuth
     -> END
 }
 ~ fotoGefunden = true
 Die Frau in der Tür ist klein und hat Mamas Kinn. #sprecher:erzaehler
-Sie sieht dich an und sagt nichts. Dann zieht sie dich an sich. Sie riecht nach Mamas altem Waschmittel. #sprecher:erzaehler #musik:mama
+Sie sieht dich an und sagt nichts. #sprecher:erzaehler #pause:2
+Dann zieht sie dich an sich. Sie riecht nach Mamas altem Waschmittel. Dem von früher. #sprecher:erzaehler #musik:mama
 Du bist gewachsen. Seit dem Frühjahr. Das gehört verboten. #sprecher:omaRuth
 Sie macht Kakao und stellt Juno Fragen, als wäre Juno die Hauptperson. Juno beantwortet sie alle. #sprecher:erzaehler
 Komm. Ich zeig dir was. Sie wird mir böse sein. Soll sie. #sprecher:omaRuth
-Ein kleines Zimmer unter dem Dach. Poster von Bands, eine gehäkelte Decke. Durchs Fenster sieht man die Schornsteine. #sprecher:erzaehler
+Ein kleines Zimmer unter dem Dach. Die Tür war immer zu, solange du denken kannst. Poster von Bands, eine gehäkelte Decke. Durchs Fenster sieht man die Schornsteine. #sprecher:erzaehler
 An der Wand ein Foto: ein Mädchen, die Hände in den Ärmeln, über einem Brett. „Jugendmeisterschaft des Bundesstaats 2001. Finale. Laura M., Stahlwerker-Club Ironwood.“ #sprecher:erzaehler #bild:foto2001
 ~ gibFund("foto2001")
-Sie sieht so sicher aus. #sprecher:erzaehler #bild:aus
+Sie sieht so sicher aus. #sprecher:erzaehler #bild:aus #pause
+Daneben unter Glas ein Partieformular. Um den dreiunddreißigsten Zug ist ein Kreis, so fest gedrückt, dass das Papier fast durch ist. #sprecher:erzaehler #bild:partieformular2001
+Sie hat es eingerahmt und nie wieder angesehen. #sprecher:omaRuth #bild:aus
 Deine Mutter war das stillste Kind der Straße. Außer, wenn sie gewonnen hat. Dann hat man sie bis zum Werkstor gehört. #sprecher:omaRuth
 Joe sagt, er hat in dreißig Jahren keine zweite gehabt. Dann kam das Finale. Sie hat etwas übersehen, einen Läufer. #sprecher:omaRuth
 Sie kam nach Hause und trug den Koffer mit den Figuren in den Keller. #sprecher:omaRuth #stimmung:traurig
@@ -54,15 +60,22 @@ Jede Seite eine Partie. Datum, Gegner, Ergebnis. Darunter drei Sätze: „Was ic
 „Wenn ich angreife, sehe ich nichts anderes. Aufpassen!!“ #sprecher:erzaehler
 „Geduld ist kein Warten. Geduld ist Hinsehen.“ #sprecher:erzaehler
 Die Schrift wird erwachsener. Die letzte beschriebene Seite: „Finale. 12. Mai 2001.“ Darunter die Überschrift. #sprecher:erzaehler
-Und darunter nichts. #sprecher:erzaehler #musik:aus #pause:2
+Und darunter nichts. Danach nur leere Seiten. Mehr als die Hälfte des Hefts. #sprecher:erzaehler #musik:aus #pause:2
 Sie hat es mir dagelassen. Ich glaube, sie wollte, dass jemand weiterschreibt. #sprecher:omaRuth
 Draußen leuchtet der Himmel über dem Werk orange auf. Das Fauchen kommt einen Atemzug später. #sprecher:erzaehler #licht:ironwood #klang:hochofen
 Drei Sätze nach jeder Partie. Deine Mutter war eine ordentliche Spielerin, {held}. #sprecher:ambrose #stimmung:still
 Ich war das nie. Ich habe meine Niederlagen nicht aufgeschrieben. Ich habe sie auswendig gelernt. #sprecher:ambrose
 * [„Was macht man damit?“]
 - Mit einem halb leeren Heft? Man schreibt hinein. Was sonst. #sprecher:ambrose
-Ab jetzt stehen nach jeder Partie die wichtigsten Momente im blauen Heft. Du findest es im Tagebuch. #sprecher:erzaehler
--> END
+-> heimfahrt
+
+// Kapitel 27 beginnt zu Hause: Das Foto gehört auf den Küchentisch (maple-falls-wohnzimmer.mama_foto).
+= heimfahrt
+* [Mit dem Abendbus nach Hause fahren]
+    ~ reise("mapleFalls.wohnzimmer", "haustuer")
+    -> END
+* [Noch bleiben]
+    -> END
 
 === medaille ===
 {medailleGesehen:

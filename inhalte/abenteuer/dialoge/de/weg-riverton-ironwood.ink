@@ -8,8 +8,8 @@
 // Ankunft erzählt der Übergang nach Ironwood (ironwood-aussen.ankunft_zu_fuss).
 //
 // Karte des Zeitnot-Tricks: Der Name in karten.json kommt mit Schritt 13; bis dahin gibt der
-// Knoten zeitnot_trick: die Karte „Großes Maul“ (Schritt 13, docs/spiel/10, S1). Der Buchbezug ist ein
-// einziger Satz aus Kapitel 12, Abschnitt 12.5, mit Fundstelle.
+// Knoten zeitnot_trick: die Karte „Großes Maul“ (Schritt 13, docs/spiel/10, S1). Der Roman beschreibt
+// eine Sanduhr; Name und Bild der Karte sind noch nicht angeglichen (Gutachten L1, Rand).
 // Variablen: wegRivertonIronwoodTafelBestanden setzt die Hülle (Langform, R42).
 
 EXTERNAL beginneAufgaben(runde)
@@ -92,7 +92,7 @@ Der Turm kriegt Ultramarin. Opa hätte gesagt: zu bunt. #sprecher:noor
     -> END
 }
 An einer Bushaltestelle ohne Bus hängt eine Rätseltafel aus Blech: „Was festgenagelt ist, kann nicht weg.“ #sprecher:erzaehler
-Fesselungen. Eine Figur muss stehen bleiben. Hinter ihr steht etwas Wertvolleres. #sprecher:ambrose
+Festgenagelt. Ein hartes Wort für eine Figur, die nur treu ist. #sprecher:ambrose
 * [Die Aufgaben lösen]
     ~ beginneAufgaben("wegRivertonIronwood.tafel")
     -> END
@@ -148,7 +148,7 @@ Ambrose steht noch einen Augenblick am Geländer. Eine Hand ausgestreckt, dicht 
     -> END
 }
 ~ zeitnotTrickErhalten = true
-Über das Tal läuft eine Brücke aus schwarzem Eisen. Lauter Dreiecke, jedes genau so groß wie das nächste. #sprecher:erzaehler #musik:aus #geraeusch:wind_traeger
+Über das Tal läuft eine Brücke aus schwarzem Eisen, sehr alt und sehr schön, auf eine strenge Art. Lauter Dreiecke, jedes genau so groß wie das nächste. #sprecher:erzaehler #musik:aus #geraeusch:wind_traeger
 Und Tausende Nieten, runde Köpfe in geraden Reihen. #sprecher:erzaehler
 Wer baut so etwas? #sprecher:juno
 * [„Jemand, der nichts dem Zufall überlässt.“]

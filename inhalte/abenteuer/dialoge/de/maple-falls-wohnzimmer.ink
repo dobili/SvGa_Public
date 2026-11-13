@@ -15,6 +15,7 @@
 // Ankunft mit der Kiste.
 
 EXTERNAL setzeSzene(kennung)
+EXTERNAL reise(karte, ausloeser)
 
 VAR held = "Du"
 VAR brettBeruehrt = false
@@ -38,6 +39,7 @@ VAR ankunftIronwoodGesehen = false
 // ironwood-mamas-zimmer.ink, mamaFotoGesehen diese Datei (Quest ironwood.mamasFinale, Schritt 3).
 VAR fotoGefunden = false
 VAR mamaFotoGesehen = false
+VAR mamaInKantine = false
 
 === mutter ===
 {
@@ -48,9 +50,10 @@ VAR mamaFotoGesehen = false
     -> END
 - ersteLektionBesprochen and not ersterAbendGesehen: -> erster_abend
 - kenntHale and nadelMapleFalls > 0 and not aufbruchGesehen: -> aufbruch
-- joGetroffen and not dinerAbendGesehen: -> diner_einladung
-- nadelRiverton > 0 and not verbotGesehen and not ankunftIronwoodGesehen: -> nicht_ironwood
 - fotoGefunden and not mamaFotoGesehen: -> mama_foto
+- mamaFotoGesehen and not mamaInKantine: -> mama_fahrt
+- nadelRiverton > 0 and not verbotGesehen and not ankunftIronwoodGesehen: -> nicht_ironwood
+- joGetroffen and not dinerAbendGesehen: -> diner_einladung
 - else: -> mutter_alltag
 }
 
@@ -161,14 +164,16 @@ Du warst in Ironwood. Bei Mama. #sprecher:mutter #stimmung:verschlossen
 * [„Und bei Big Joe. Er lässt grüßen.“]
 - Und es tut ihm leid. Das sagst du auch. #sprecher:erzaehler
 Ihm tut es leid. Joe. Dieser sture, alberne … Ihm tut es leid. #sprecher:mutter #stimmung:riss
-Sie nimmt das Foto. Das Mädchen mit den Händen in den Ärmeln. #sprecher:erzaehler
+Sie nimmt das Foto. Das Mädchen mit den Händen in den Ärmeln. #sprecher:erzaehler #pause:2
 Ich war siebzehn. Ich war gut, weißt du. Ich sage das nicht, um anzugeben. #sprecher:mutter #stimmung:erzaehlt
 Im Finale stand ich auf Gewinn. Joe stand hinten an der Wand und hat sich nicht getraut zu atmen. #sprecher:mutter
 Zug dreiunddreißig. Ich sehe nur meinen Angriff. Ich ziehe den Turm vor, hinter meine Dame, auf dieselbe Schräge. #sprecher:mutter
-Und ganz hinten steht sein Läufer und sieht die Schräge entlang. Seit zwanzig Zügen. #sprecher:mutter
-Ein Spieß. Das Einfachste, was es gibt. #sprecher:mutter
-Ich hab den Läufer nicht gesehen. Fünfundzwanzig Jahre, und ich sehe ihn jede Nacht. #sprecher:mutter #musik:mama
+Und ganz hinten, am anderen Ende des Brettes, steht sein Läufer und sieht die Schräge entlang. Seit zwanzig Zügen. #sprecher:mutter
+Die Dame muss weg, und der Turm dahinter fällt. Ein Spieß. Das Einfachste, was es gibt. #sprecher:mutter
+Ich hab den Läufer nicht gesehen. Fünfundzwanzig Jahre, und ich sehe ihn jede Nacht. #sprecher:mutter #musik:mama #pause:2
 „Wenn ich angreife, sehe ich nichts anderes. Aufpassen!!“ Sie hat es mit dreizehn ins blaue Heft geschrieben. #sprecher:erzaehler
+Alle haben gesagt, das passiert. Das passiert jedem. #sprecher:mutter
+Joe hat es gesagt, meine Mutter, der Gegner sogar. Ein netter Junge. Er hat sich entschuldigt. #sprecher:mutter
 Ich wollte nicht, dass es jedem passiert. Ich wollte, dass es mir nicht passiert. #sprecher:mutter #musik:aus
 Ich hab die Figuren in den Keller getragen. Schule, Ausbildung. Du. Es ging ja. #sprecher:mutter
 * [„Du hast gesagt: Weiß steht besser.“]
@@ -176,10 +181,18 @@ Ich hab die Figuren in den Keller getragen. Schule, Ausbildung. Du. Es ging ja. 
 * [„Am ersten Abend. Drei Sekunden.“]
 - Zwei. Es waren zwei. Ich hab mich so erschrocken. #sprecher:mutter #stimmung:lachtOhneSpott
 Du legst das blaue Heft neben das Foto, aufgeschlagen auf der letzten Seite. Mama sieht auf die leere Stelle. #sprecher:erzaehler #bild:blaues_heft
-Sie steht auf, geht zum Fenster und schiebt die Hände in die Ärmel ihrer Strickjacke. #sprecher:erzaehler #bild:aus #stimmung:denktNach
-Gut. Eine Partie. #sprecher:mutter
+Sie steht auf, geht zum Fenster und schiebt die Hände in die Ärmel ihrer Strickjacke. #sprecher:erzaehler #bild:aus #pause:2
+Gut. Eine Partie. #sprecher:mutter #stimmung:denktNach
 In Ironwood. Ich will den Raum sehen. Und wenn ich gewinne, räumst du die Spülmaschine aus. #sprecher:mutter
--> END
+-> mama_fahrt
+
+=== mama_fahrt ===
+* [Am Samstag mit Mama nach Ironwood fahren]
+    ~ reise("ironwood.kantine", "kantineAusgang")
+    -> END
+* [„Nicht jetzt.“]
+    Samstag. Ich hab frei. #sprecher:mutter
+    -> END
 
 === mutter_alltag ===
 {~Ich hab gleich Nachtschicht. Im Kühlschrank ist noch Pizza.|Hast du die Kartons in deinem Zimmer schon ausgepackt? Einen wenigstens?|Wenn du rausgehst: Hauptsache, du bist vor zehn zu Hause.|Mrs. Calloway von gegenüber hat Kuchen gebracht. Die Leute hier sind nett.} #sprecher:mutter
@@ -268,10 +281,10 @@ Dann ist sie an der Tür, und die Tür ist zu. Der Wagen springt an und rollt di
 Deine Mutter hat Angst. Vor einer Stadt. Das ist selten. #sprecher:ambrose #musik:mapleFalls.klavier
 Vor Menschen hat man Angst, vor Schulden, vor dem Zahnarzt. Aber vor einer Stadt. #sprecher:ambrose
 * [„Sie hat nur gesagt: nicht zum Turnier.“]
-    Das ist eine Unterscheidung, die Advokaten machen. #sprecher:ambrose
-    Er klingt nicht tadelnd. Er klingt neugierig. Zum ersten Mal seit Riverton interessiert ihn etwas mehr als die Tische. #sprecher:erzaehler
 * [Den Zettel umdrehen]
-    Ein Turnier, eine Stadt, ein Nein. Ich frage mich, was dahintersteckt. #sprecher:ambrose
-- Am Samstag steht das grüne Fahrrad vor der Tür. Juno sitzt schon auf dem Gepäckträger. #sprecher:erzaehler #klang:fahrradklingel #geraeusch:aus
+    Sie hat nicht gesagt, dass du nicht hindarfst. #sprecher:erzaehler
+- Nicht zum Turnier, hat sie gesagt. Das ist eine Unterscheidung, die Advokaten machen. #sprecher:ambrose
+Er klingt nicht tadelnd. Er klingt neugierig. Zum ersten Mal seit Riverton interessiert ihn etwas mehr als die Tische. #sprecher:erzaehler
+Am Samstag steht das grüne Fahrrad vor der Tür. Juno sitzt schon auf dem Gepäckträger. #sprecher:erzaehler #klang:fahrradklingel #geraeusch:aus
 Ich frag gar nicht. Ich komm einfach mit. #sprecher:juno #stimmung:froh
 -> END

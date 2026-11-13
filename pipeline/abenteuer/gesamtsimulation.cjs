@@ -94,11 +94,31 @@ function erlaubt(welt, st, ort, reise = false) {
   return i <= st.phase && (!reise || i >= st.phase - 1);
 }
 
-/** Eine Reise aus einem Dialog nur in erlaubte Orte, und nur in Ruhe oder ins neue Gebiet. */
+/**
+ * Ob der nächste Schritt einer offenen Quest ein Dialog in diesem Ort ist (Dialogdatei beginnt mit
+ * dem Ort in Kleinbuchstaben mit Bindestrich, etwa maple-falls-wohnzimmer für mapleFalls).
+ */
+function questWartetIn(welt, st, ort) {
+  const vorsilbe = ort.replace(/[A-Z]/g, (b) => "-" + b.toLowerCase()) + "-";
+  return st.staende.some((s) => {
+    if (s.fertig) return false;
+    const q = welt.quests.find((x) => x.kennung === s.k);
+    const e = q?.schritte[s.i]?.ereignis;
+    return e?.art === "dialog" && e.knoten.startsWith(vorsilbe);
+  });
+}
+
+/**
+ * Eine Reise aus einem Dialog nur in erlaubte Orte, und nur in Ruhe oder ins neue Gebiet. Zurück in
+ * einen früheren Ort nur, wenn dort der nächste Schritt einer offenen Quest wartet: Die Geschichte
+ * schickt {held} manchmal nach Hause (Kapitel 27: Mamas Foto in der Küche, die Fahrt ist eine Wahl).
+ */
 function reiseErlaubtFuer(welt, st) {
   return (karte) => {
     const ort = welt.karteZuOrt[karte];
-    if (!ort || !erlaubt(welt, st, ort.kennung, true)) return false;
+    if (!ort) return false;
+    if (!erlaubt(welt, st, ort.kennung, true))
+      return questWartetIn(welt, st, ort.kennung);
     return (
       st.ruhe > RUHE_NEUER_VERSUCH ||
       FOLGE.indexOf(ort.kennung) === st.phase ||
@@ -291,7 +311,10 @@ function erkunde(welt, st, frist) {
   });
   betrete(welt, st, st.karte);
   for (let schritt = 1; Date.now() < frist; schritt++) {
-    waehleWeg(welt, st, besucheKarte(welt, st), schritt);
+    // Hat ein Dialog {held} woandershin gebracht, sieht sich die Simulation dort erst um.
+    const vorher = st.karte;
+    const wege = besucheKarte(welt, st);
+    if (st.karte === vorher) waehleWeg(welt, st, wege, schritt);
     if (!nachSchritt(st)) return;
   }
   st.meldungen.add("Zeitbudget erreicht (der Lauf ist nicht zu Ende gekommen)");

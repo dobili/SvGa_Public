@@ -15,6 +15,7 @@
 EXTERNAL gibKarte(kennung)
 EXTERNAL setzeSzene(kennung)
 EXTERNAL beginnePartie(begegnung)
+EXTERNAL zeigeFensterbank()
 
 VAR held = "Du"
 VAR ambroseVertrauen = 0
@@ -282,4 +283,15 @@ Du hast es ihm erklärt, nicht ich. Wie hast du es gesagt? #sprecher:ambrose
     Vor zwei Wochen wusstest du es selbst nicht. Deshalb hat er dir zugehört. #sprecher:ambrose
 - Er schweigt einen Moment. Dann klingt er beinahe verlegen. #sprecher:erzaehler
 Das war gut. Besser, als ich es erklärt hätte. Ich hätte ihm von Morphy erzählt, und er wäre eingeschlafen. #sprecher:ambrose #stimmung:lacht
+-> END
+
+// ---------------------------------------------------------------- Fensterbank (T15)
+
+// Roman, Kapitel 23 („Neu gegenüber“): Auf der Fensterbank im Zimmer des Helden stehen die Funde,
+// der Springer aus Riverton zuerst. zeigeFensterbank öffnet die Ansicht aller Funde. Noch ohne
+// Auslöser auf einer Karte: Ein Zimmer des Helden gibt es bisher nicht; der Hauptchat legt den
+// Kartenpunkt fest (Einstieg maple-falls-dachboden.fensterbank).
+=== fensterbank ===
+Auf der Fensterbank steht, was du unterwegs gefunden hast. Das Zimmer erzählt die Reise. #sprecher:erzaehler
+~ zeigeFensterbank()
 -> END

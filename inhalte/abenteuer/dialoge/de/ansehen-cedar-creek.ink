@@ -3,7 +3,7 @@
 // Je Raum drei Gegenstände (im Archiv zwei, dazu Karton und Programmheft der Geschichte) ohne
 // Spielwirkung (docs/spiel/09_Weltbeschreibung.md, Abschnitt 3 Punkt 2 und 5.3): beim ersten
 // Ansehen ein Satz (manchmal mit Ambrose), danach ein zweiter. Keine Quests, keine Belohnungen.
-// Einstiege wie in orte.json: zeitungsregal, globus, schild_fluestern, treppenhaus, boxerfoto, wasserfleck,
+// Einstiege wie in orte.json: zeitungsregal, globus, schild_fluestern, boxerfoto, wasserfleck,
 // zettel_turm, comicheft, automat.
 //
 // Variablen „angesehen…“ je Gegenstand, weil Ink-Besuchszähler einen neuen Dialog nicht
@@ -52,6 +52,7 @@ VAR angesehenAutomat = false
 
 // ---------------------------------------------------------------- Archiv
 
+// Tür zum Treppenhaus im Vorraum (Karte aus Runde 11, Auslöser treppenhaus in orte.json).
 === treppenhaus ===
 {angesehenTreppenhaus:
     Die Tür zum Treppenhaus bleibt zu. Oben knarrt eine Diele. #sprecher:erzaehler
@@ -74,7 +75,7 @@ VAR angesehenAutomat = false
 
 === wasserfleck ===
 {angesehenWasserfleck:
-    Der Springer auf dem Boden greift von seinem Feld aus drei Kartons auf einmal an. #sprecher:erzaehler
+    Der Springer an der Wand greift von seinem Feld aus drei Kartons auf einmal an. #sprecher:erzaehler
 - else:
     ~ angesehenWasserfleck = true
     An der Wand ein Wasserfleck, genau in der Form eines Springers. #sprecher:erzaehler

@@ -4,7 +4,7 @@
   "art": "innen",
   "zustand": ["alt", "gebraucht"],
   "stil": ["klassisch", "rustikal"],
-  "beschreibung": "Zustand: ab Szene 4 (ersterAbendGesehen) steht der runde Tisch leer, weil der Held das alte Brett mit hinuntergenommen hat und es von da an mit sich trägt; Ambrose spricht aus dem Brett im Gepäck. Der Dachboden des Whitlock-Hauses voll mit altem Hausrat. In der Nordwestecke die Bodenluke mit Leiter, daneben ein Waldbild, durch das Sprossenfenster leuchtet das rote Laub der Ahorne; der Bauernschrank und ein Bücherregal voller vergilbter Bücher an der Nordwand. Gleich neben der Luke liegt der verblichene Teppich mit dem runden Tisch, dem Reiseschachbrett und zwei Stühlen, daneben eine Stehlampe. An Ost- und Südwand zwei mit Tüchern abgedeckte Truhen, auf einer sitzt ein Teddy, ein Kistenstapel, ein alter Karton in der Südwestecke, die Zeitungen von 1961, die kleine gestreifte Hutschachtel neben dem Teppich und der Standspiegel.",
+  "beschreibung": "Zustand: ab Szene 4 (ersterAbendGesehen) steht der runde Tisch leer, weil der Held das alte Brett mit hinuntergenommen hat und es von da an mit sich trägt; Das Brett liegt seitdem auf dem Schreibtisch im Zimmer des Helden (mapleFalls.zimmer). Der Dachboden des Whitlock-Hauses voll mit altem Hausrat. In der Nordwestecke die Bodenluke mit Leiter (die steile Treppe aus dem Obergeschoss kommt hier an, KARTENREGELN 10.76: an derselben Stelle wie unten), gleich daneben die Holzkiste mit der steilen Schrift „Whitlock – nicht wegwerfen“, die der Held am ersten Tag heraufgetragen hat (Roman Kap. 1); darüber ein Waldbild, durch das Sprossenfenster leuchtet das rote Laub der Ahorne; der Bauernschrank und ein Bücherregal voller vergilbter Bücher an der Nordwand. Gleich neben der Luke liegt der verblichene Teppich mit dem runden Tisch, dem Reiseschachbrett und zwei Stühlen, daneben eine Stehlampe. An Ost- und Südwand zwei mit Tüchern abgedeckte Truhen, auf einer sitzt ein Teddy, ein Kistenstapel, ein alter Karton in der Südwestecke, die Zeitungen von 1961, die kleine gestreifte Hutschachtel neben dem Teppich und der Standspiegel.",
   "wand": "holz",
   "boden": "dielen",
   "raster": [
@@ -105,6 +105,11 @@
       "moebel": "mf2Standspiegel",
       "feld": [1, 6],
       "id": "spiegel"
+    },
+    {
+      "moebel": "mf12KartonWhitlock",
+      "feld": [3, 3],
+      "id": "kisteWhitlock"
     }
   ],
   "ausloeser": [
@@ -132,11 +137,6 @@
       "feld": [2, 4]
     },
     {
-      "name": "brett",
-      "feld": [4, 7],
-      "auf_moebel": true
-    },
-    {
       "name": "hutschachtel",
       "feld": [4, 9],
       "auf_moebel": true
@@ -149,6 +149,11 @@
     {
       "name": "zeitungen1961",
       "feld": [7, 9],
+      "auf_moebel": true
+    },
+    {
+      "name": "kisteWhitlock",
+      "feld": [4, 4],
       "auf_moebel": true
     }
   ],

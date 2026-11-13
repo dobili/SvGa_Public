@@ -11,6 +11,12 @@
 // gespielt; victorKriseGesehen setzt summit-city-huette.ink; die übrigen setzt diese Datei.
 // Die Pfeife kommt über gibFund; Ink merkt sie sich selbst (pfeifeGefunden).
 
+// Runde 11 (13.11.2026): Kapitel 51 nach dem Roman (roman/akt4_teil1.md): Victor im Hemd am
+// Geländer über den Wolken, „Ich will einmal verlieren dürfen“, die Partie auf Junos Reisebrett
+// (die Stellung der Fernpartie wird abgebaut und gemerkt), sein erstes Lachen, die Seite mit
+// „40. … b5“ und Hales vier Zeilen, „Was sagt er?“. Klang: bergstation, victor.warm,
+// ambrose.hale.grundton.
+
 EXTERNAL beginnePartie(begegnung)
 EXTERNAL gibFund(kennung)
 
@@ -39,52 +45,69 @@ Nicht jetzt. Ich hab Vorbereitung. Der Coach sagt, ich darf mit niemandem spiele
 
 === victor_bergstation ===
 ~ victorBergstationGesprochen = true
-Die Gondel hält über den Wolken. Auf der Bank am Fenster sitzt Victor und sieht hinaus, wo nichts ist als Weiß. #sprecher:erzaehler
-Du schon wieder. #sprecher:victor #pause
-Weißt du, was das Gerät macht? Es brummt einmal, wenn mein Zug gut ist. Zweimal, wenn er schlecht ist. Ich weiß gar nicht mehr, was ich selbst denke. #sprecher:victor
-Ich will einmal verlieren dürfen. Einfach so. Ohne dass jemand nachrechnet. #sprecher:victor
-+ [„Dann spielen wir. Ohne Uhr, ohne Gerät.“]
+Unter der Plattform liegen die Wolken im Tal wie Milch in einer Schüssel. Die Gipfel ragen daraus hervor wie Inseln. #sprecher:erzaehler #musik:aus
+Victor sitzt am Geländer, die Knie angezogen, nur im Hemd. Die weiße Jacke liegt neben ihm. #sprecher:erzaehler
+* [Dich zwei Meter weiter hinsetzen]
+- Du sagst nichts. Von Mrs. Okafor hast du gelernt, wie man das macht. Das Rad dreht sich, eine Gondel fährt hinunter. #sprecher:erzaehler
+Ich war fünf, da hat er mir das erste Brett hingestellt. Das Einzige, bei dem man immer weiß, wer besser ist. #sprecher:victor
+Mit sieben hab ich ihn geschlagen. Er hat sich so gefreut. Danach hat er aufgehört, mit mir zu spielen. #sprecher:victor
+Seit acht Jahren rechnet er nur noch nach. Jede Partie. Er schickt mir die Kurve. #sprecher:victor
+* [„Einundsiebzig Prozent. Meine. Menschlich, hat Theo gesagt.“]
+- Er gibt ein Geräusch von sich, das fast ein Lachen ist. #sprecher:erzaehler
+Ich hab die Brücke gesehen und gedacht: Das ist zu einfach, das hätte es doch gesagt. #sprecher:victor
+Ich weiß nicht mehr, welche Züge meine sind. #sprecher:victor
+Ich will einmal verlieren dürfen. Einfach so. Ohne dass jemand nachrechnet. Ohne Kurve. #sprecher:victor
++ [Junos Reisebrett aus der Jacke holen]
     -> victor_spielen
-+ [„Erzähl.“]
-    Mein Vater meint es gut. Glaube ich. Er hat einen Konzern und einen Sohn, und er verwechselt manchmal, was was ist. #sprecher:victor
-    Der Coach ist von Perfect Move. Er hat mir das Gerät gegeben und gesagt, alle machen das. Ich glaube, das stimmt nicht. #sprecher:victor
-    Er sagt es zum ersten Mal laut. Lass ihn. #sprecher:ambrose #stimmung:still
++ [„Gleich.“]
     -> victor_angebot
 
 === victor_angebot ===
-Hast du ein Brett dabei? Natürlich hast du ein Brett dabei. #sprecher:victor
-+ [„Spielen wir.“]
+Ich bleib hier. Hier oben ruft keiner an. Kein Netz. #sprecher:victor
++ [Junos Reisebrett aus der Jacke holen]
     -> victor_spielen
 + [„Gleich.“]
-    Ich bleib hier. Hier oben ruft keiner an. Kein Netz. #sprecher:victor
     -> END
 
 === victor_spielen ===
-Ihr stellt das alte Brett auf die Bank. Victor sieht es lange an, dann lächelt er schief. #sprecher:erzaehler
-Du fängst an. Oder ich. Egal. Das ist das Schöne. #sprecher:victor
+Auf dem Reisebrett steht die Stellung, die niemand anrührt. #sprecher:erzaehler #musik:bergstation
+Du nimmst die Figuren herunter, eine nach der anderen, und merkst dir, wo sie hingehören. #sprecher:erzaehler
+* [„Ohne Uhr. Ohne Gerät. Es zählt für nichts.“]
+- Das ist ein Kinderbrett. #sprecher:victor
+* [„Juno verliert darauf seit Jahren, und es geht ihr gut.“]
+- Er sieht dich an. Dann rückt er herüber. #sprecher:erzaehler
 ~ beginnePartie("summitCity.victorFrei")
 -> END
 
 === victor_seite ===
 ~ victorSeiteGegeben = true
-{
-- ausgangSummitCityVictorFrei == "niederlage":
-    Gewonnen. Und ich hab es selbst gesehen, ganz allein. #sprecher:victor #stimmung:lacht
-- ausgangSummitCityVictorFrei == "remis":
-    Remis. Und keiner hat mir gesagt, ob das gut ist. Ich finde, es ist gut. #sprecher:victor #stimmung:froh
-- else:
-    Verloren. #sprecher:victor #pause
-    Und es ist mir egal. Nein, stimmt nicht. Es ist gut so. Dein Springerzug war schön. #sprecher:victor #stimmung:lacht
-}
-Er hat gelacht. Mitten in der Partie. Hast du es gehört? #sprecher:ambrose #stimmung:froh
-Victor zieht ein altes Schachbuch aus dem Rucksack. Zwischen den Seiten steckt ein vergilbtes Blatt. #sprecher:erzaehler
-Das gehört in das Notizbuch in der Lobby. Die Seite, die fehlt. Mein Großvater hat sie herausgenommen. #sprecher:victor
-Er sagte: Für den Tag, an dem jemand weiterspielt. #sprecher:victor
-Er legt dir das Blatt in die Hand. Darauf ein Zug in alter Schrift, und darunter: „Ich warte.“ #sprecher:erzaehler
-Ein Hale. #sprecher:ambrose #pause
-Ur-ur-ur … Herrje. Ein Hale eben. #sprecher:ambrose #stimmung:friedlich
-Ein Hale, der lächelt. Ich habe zu lange gewartet, um das zu sehen. #sprecher:ambrose
-Ich fahr runter. Ward soll gegen dich spielen, und ich will zusehen. Richtig zusehen. #sprecher:victor
+Irgendwann hat er gelacht. Über eine ganz gewöhnliche Gabel, die er nicht gesehen hat. #sprecher:erzaehler #musik:victor.warm
+Das ist so dumm. Das ist so schön dumm. #sprecher:victor #stimmung:lacht
+Ein Hale, der lächelt. Ich habe zu lange gewartet, um das zu sehen. #sprecher:ambrose #stimmung:still
+Die Sonne kommt unter die Wolken, alles wird rot. #sprecher:erzaehler
+Victor holt aus der Innentasche etwas Kleines, in Leinen Gebundenes. #sprecher:erzaehler
+Das hat meinem Großvater gehört. Da ist etwas drin, das soll ich aufheben. Es sei wertlos. Aber man hebe es auf. #sprecher:victor
+* [Hinsehen]
+- Zwischen den letzten Seiten liegt ein Blatt, herausgerissen, sauber, dicht am Falz. Die Schrift ist klein und senkrecht. #sprecher:erzaehler #musik:aus #pause:2
+In Silicon Bay hast du auf das Notizbuch gestarrt. In Ironwood auf ein Geländer. Und du redest mit einem Brett. #sprecher:victor
+Ich glaub, du weißt, wer der Mann aus dem Süden war. #sprecher:victor
+-> victor_blatt
+
+// Kapitel 51: Hales Antwort von 1867; Ambrose liest sie. Danach „Was sagt er?“.
+=== victor_blatt ===
+„März 1867. 40. … b5.“ Und darunter, in derselben Schrift, vier Zeilen. #sprecher:erzaehler
+„Whitlocks vierzigster Zug kam mit der Nachricht seines Todes. Ich habe meinen notiert, wie es sich gehört.“ #sprecher:erzaehler
+„Ich werde ihn niemandem schicken können. Für den Tag, an dem jemand weiterspielt.“ #sprecher:erzaehler
+* [Ambrose ansehen]
+- Er hat geantwortet. #sprecher:ambrose #stimmung:still #pause:2 #musik:ambrose.hale.grundton
+Einem Toten. Wie es sich gehört. b5. Natürlich b5. Der gewissenhafte, unerträgliche … #sprecher:ambrose
+Ein Hale. Ur-ur-ur … Herrje. Ein Hale eben. #sprecher:ambrose #stimmung:lacht
+* [Schweigen]
+- Was sagt er? Der, mit dem du redest. Ich hab dir geschrieben, dass ich dir glaube. Ich meine es so. #sprecher:victor
+* [„Er sagt, dein Vorfahr war gewissenhaft und unerträglich.“]
+- Wie ist er? Der Zug. Ist er gut? #sprecher:victor
+Sag ihm, er ist genau der, den ich an seiner Stelle auch gespielt hätte. #sprecher:ambrose #stimmung:froh
+Und dass das die größte Unverschämtheit ist, die mir je begegnet ist. #sprecher:ambrose #stimmung:lacht
 -> END
 
 === victor_alltag ===

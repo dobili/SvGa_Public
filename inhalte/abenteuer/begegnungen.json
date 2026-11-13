@@ -480,6 +480,9 @@
     },
     {
       "kennung": "desertSprings.clubkampf",
+      "staerkeNach": [
+        { "wenn": "atmeGesagt", "stufe": 1, "profil": "positionsspieler" }
+      ],
       "gegner": "desertSprings.mira",
       "farbe": "zufall",
       "format": {
@@ -555,7 +558,23 @@
         "art": "grundstellung"
       },
       "kartenErlaubt": true,
-      "zeit": "wahl"
+      "zeit": "wahl",
+      "momente": [
+        {
+          "wenn": {
+            "merkmal": "damenTausch"
+          },
+          "sprecher": "ambrose",
+          "dialog": "summit-city-huette.clubkampf_heimweg"
+        },
+        {
+          "wenn": {
+            "abZug": 40
+          },
+          "sprecher": "erzaehler",
+          "text": "moment.held.koenigLaeuft"
+        }
+      ]
     },
     {
       "kennung": "summitCity.victorFrei",
@@ -567,7 +586,23 @@
       "startstellung": {
         "art": "grundstellung"
       },
-      "kartenErlaubt": true
+      "kartenErlaubt": true,
+      "momente": [
+        {
+          "wenn": {
+            "abZug": 5
+          },
+          "sprecher": "victor",
+          "text": "moment.victor.luftig"
+        },
+        {
+          "wenn": {
+            "merkmal": "geschlagen:laeufer"
+          },
+          "sprecher": "victor",
+          "text": "moment.victor.haengt"
+        }
+      ]
     },
     {
       "kennung": "summitCity.sol",

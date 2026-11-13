@@ -186,7 +186,18 @@ function abenteuerteil(roh: unknown): Pick<Partieeinstellung, "abenteuer"> {
     roh.variante === "blind" || roh.variante === "schach960"
       ? { variante: roh.variante as "blind" | "schach960" }
       : {};
-  return { abenteuer: { kennung: roh.kennung, ...zeitnotBis, ...abgelenktAb, ...variante } };
+  const staerkeWechsel = Array.isArray(roh.staerkeWechsel)
+    ? { staerkeWechsel: roh.staerkeWechsel.filter((n): n is number => Number.isInteger(n)) }
+    : {};
+  return {
+    abenteuer: {
+      kennung: roh.kennung,
+      ...zeitnotBis,
+      ...abgelenktAb,
+      ...variante,
+      ...staerkeWechsel,
+    },
+  };
 }
 
 /**

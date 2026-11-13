@@ -5057,3 +5057,1078 @@ wieder mich“).
 - Zeilenlängen (140 Zeichen, zwei Sätze je Zeile) habe ich nicht durchgezählt; mehrere Zeilen
   liegen sichtbar darüber (etwa `riverton-pavillon.ink` Zeile 67, `riverton-bahnhofshalle.ink`
   Zeile 200, `riverton-schuppen.ink` Zeile 29).
+
+## Teil L: Spieldialoge gegen den Roman, Kapitel 23 bis 40 (Bericht, nichts geändert)
+
+Auftrag des Hauptchats vom 13.11.2026. Geprüft ist der Stand der Ink-Dateien von
+`claude/friendly-shannon-y8bf90`, Commit 17c32543 (16:03 UTC). Drei Lesedurchgänge durch Helfer
+(L1: Kapitel 23 bis 29, L2: Kapitel 30 bis 34, L3: Kapitel 35 bis 40), zusammen 40 Befunde nach
+Wichtigkeit; jeder hat seine Zitate per Skript gegen die Dateien geprüft. Der Gutachter hat acht
+Stellen selbst nachgeschlagen (`ironwood-kantine.ink` Zeilen 249–253, „Und er hat mir
+geschrieben“, Suche nach „wie ich immer spielen wollte“ und „Die ganze Nacht“ in allen
+Ink-Dateien: kein Treffer, `texte/de.json` Zeile 511, Suche nach „Bruder von irgendwem“: kein
+Treffer, `port-delacroix-turnhalle.ink` Zeilen 103 und 253, `port-delacroix-werkstatt.ink` Zeile
+62); alle stimmen. Nichts ist gespielt worden: Aussagen über Reihenfolgen stützen sich auf die
+Ink-Bedingungen, `quests.json` und `orte.json`, nicht auf den App-Code.
+
+| Teil | Kapitel   | fehlt | widerspricht | plump | Pausen und Marken |
+| ---- | --------- | ----- | ------------ | ----- | ----------------- |
+| L1   | 23 bis 29 | 3     | 6            | 3     | 2                 |
+| L2   | 30 bis 34 | 2     | 7            | 2     | 2                 |
+| L3   | 35 bis 40 | 4     | 7            | 1     | 1                 |
+
+Gesamtbild: Wortlaut und Bilder folgen dem Roman eng, oft wörtlich; Buchverweise stehen in
+keinem geprüften Spieltext. Die Befunde liegen überwiegend im Gerüst: Tragende Sätze hängen an
+einer Antwortwahl, am Antippen oder an einer Reihenfolge, die nichts sichert.
+
+### L1 Kapitel 23 bis 29: Weg nach Ironwood und Ironwood
+
+Geprüft gegen `docs/spiel/roman/akt2_teil3.md` (Kapitel 23–25) und `akt2_teil4.md` (Kapitel 26–29),
+jeweils mit Randnotizen und der Tabelle „Neu gegenüber der Story-Bibel“. Dialogdateien in
+`inhalte/abenteuer/dialoge/de/`: `weg-riverton-ironwood.ink`, `ironwood-aussen.ink` (ohne
+`bus_silicon_bay_abfahrt`, Kapitel 30), `ironwood-kantine.ink`, `ironwood-mamas-zimmer.ink`,
+`ironwood-museum.ink`, `ironwood-umkleide.ink`, in `maple-falls-wohnzimmer.ink` der Knoten
+`mama_foto` und, weil Kapitel 23 dort liegt, mitgelesen `nicht_ironwood`. Weitere Dateien zu
+Ironwood gibt es nicht (`ls`: nur die fünf `ironwood-*.ink`; keine `ansehen-ironwood.ink`). Die
+Partiemomente stehen hier nicht in `texte/de.json`, sondern als Knoten in `ironwood-kantine.ink`
+(`mama_moment_rost`, `mama_moment_angriff`, `clubkampf_schraubstock`, `clubkampf_stimmt_es`),
+ausgelöst über `begegnungen.json` (`ironwood.mama`: ab Zug 14 und 28; `ironwood.clubkampf`: ab Zug
+20 und 28). In `texte/de.json` stehen zu Ironwood nur Fundtexte, Questschritte und Statisten.
+
+Marken, die die Dateien benutzen: `#sprecher`, `#stimmung` (`verschlossen`, `erzaehlt`, `denktNach`,
+`hatIhnGesehen`, `riss`, `still`, `alt`, `muede`, `froh`, `ernst`, `traurig`, `lacht`,
+`lachtOhneSpott`, `stolz`), `#pause` und `#pause:2/3/5`, `#musik`, `#klang`, `#geraeusch`, `#bild`,
+`#licht`.
+
+Gesamturteil: Wortlaut und Bilder folgen dem Roman eng; Kanalweg, Eisenbrücke, Big Joes Erkennen,
+Mamas Zimmer, der Umschlag und der Schluss an der Stahlbrücke sind fast Satz für Satz da. Die festen
+Punkte stimmen: Postsäcke von 1866, leerer Umschlag, Siegel am Sack, Spieß mit Turm hinter der Dame,
+Foto zu Hause, Oma Ruth in der Elm Street Nummer zehn, „J. H.“ an beiden Brücken, Zeitung sechs
+Wochen alt, keine Buchverweise in gesprochenen Zeilen, Juno hört Ambrose nirgends. Die Befunde
+liegen fast alle im Gerüst: Der Moment, an dem der Akt hängt, fällt erst nach der Partie und nur
+durch Antippen; die Reihenfolge der Kapitel 27 bis 29 ist nicht gesichert; drei tragende Sätze
+hängen an einer Antwortwahl oder an einer Nebenquest; an vier stillen Stellen steht Spielmechanik.
+
+---
+
+#### L1.1 – widerspricht – „Ich hab ihn gesehen“ fällt nicht in der Partie, und der Held sieht das Bild nie
+
+- Datei: `ironwood-kantine.ink`, Knoten `mama_nach_partie`, Zeile 249–253; dazu `mama_moment_angriff`,
+  Zeile 279–284, und der Verteiler `mama`, Zeile 210–219.
+- Ink: „Im dreißigsten Zug hat sie den Turm schon berührt. Dann hält sie inne.“ – im Moment in der
+  Partie davor nur: „Ihre Figuren rücken vor, eine nach der anderen, schön und entschlossen, auf deinen König zu.“ und die Wahl „Ambrose. Was mache ich?“
+- Roman: `akt2_teil4.md`, Zeile 265: „Ihre Dame, weit vorn. Dahinter, auf derselben Schräge, das Feld, auf das ihr Turm wollte. Und mein Läufer, in der Ecke, wo er seit zwanzig Zügen stand und nichts tat.“;
+  Zeile 269: „Es war dieselbe Stellung. Nicht genau, aber dasselbe Bild.“; Tabelle Zeile 624:
+  „Die Partie braucht einen geführten Moment (Stellung oder Auslöser), unabhängig vom Ausgang“.
+- Befund: Der feste Punkt ist dem Wortlaut nach erfüllt, der Form nach nicht. (a) In der Partie
+  (ab Zug 28) fehlt das Bild: Der Held sieht weder Dame noch Schräge noch den eigenen Läufer. Die
+  Frage „Was mache ich?“ hat damit keinen Anlass, und Ambroses Antwort („Sie ist nicht hergekommen,
+  um geschont zu werden.“) keinen Gegenstand. (b) Mamas Blick die Schräge entlang und ihr Satz
+  werden erst nach dem Ende der Partie nacherzählt, im Präsens, und danach heißt es „Ihr spielt zu
+  Ende.“, obwohl schon gespielt ist. (c) Der Knoten öffnet sich nur, wenn man Mama oder Big Joe nach
+  der Partie antippt (bei Big Joe kommt vorher noch `big_joe_brief`, solange der Brief nicht
+  vergeben ist). Ob die Hülle ihn von selbst öffnet, ist nicht geprüft; in der Ink-Datei hängt das
+  Herz von Akt 2 am Antippen.
+- Vorschlag: Den Moment in die Partie legen, als dritten Auslöser (etwa ab Zug 30) oder als zweiten
+  Teil von `mama_moment_angriff`, mit eigener Einblendung statt Aussage über die Engine-Stellung:
+  „Im dreißigsten Zug siehst du es. Ihre Dame, weit vorn. Dahinter, auf derselben Schräge, das Feld,
+  auf das ihr Turm will. Und dein Läufer, in der Ecke.“ `#musik:aus` / „Dir wird kalt. Nicht genau
+  dieselbe Stellung. Aber dasselbe Bild.“ `#pause:2` / Wahl `[„Ambrose.“]` / „Ich sehe es.“ / Wahl
+  `[„Was mache ich?“]` / „Er schweigt. Der Ofen bullert.“ `#pause:2` / „Du spielst Schach. Mit deiner
+  Mutter. …“ / dann die Zeilen 249–253 unverändert. Nach der Partie bleiben nur Ergebnis, Heft und
+  „Ab jetzt fahre ich mit“.
+
+#### L1.2 – widerspricht – „Und er hat mir geschrieben.“ fällt auch, wenn der Umschlag nie gefunden wurde
+
+- Datei: `ironwood-aussen.ink`, Knoten `einladung`, Zeile 295.
+- Ink: „Und er hat mir geschrieben.“ (`#sprecher:ambrose #stimmung:riss`)
+- Roman: `akt2_teil4.md`, Zeile 582–583: „Was für ein unerträglicher, gewissenhafter Mensch.“ Seine Stimme brach. „Und er hat mir geschrieben.“ – der Bezug ist Kapitel 26, Zeile 76: „Er hat mir geschrieben“.
+- Befund: Wer was weiß. Der Postsack ist eine Nebenquest (`quests.json`, `ironwood.postsack`,
+  `"haupt": false`); `einladung` prüft `umschlagGeoeffnet` nicht. Wer das Museum auslässt, hört am
+  Ende von Akt 2 einen Satz, den Ambrose noch nicht wissen kann. Umgekehrt hängt der stärkste Fund
+  des Akts (leerer Umschlag, fünf Sekunden Stille) an einer freiwilligen Aufgabe.
+- Vorschlag: Entweder den Postsack zur Voraussetzung des Clubkampfs machen (dann fällt alles auf
+  jedem Weg), oder in `einladung` weichen: mit Umschlag wie jetzt, davor `#pause:2`; ohne Umschlag
+  endet Ambrose auf „Was für ein unerträglicher, gewissenhafter Mensch.“ und der Satz wird im Museum
+  nachgeholt.
+
+#### L1.3 – widerspricht – Kapitel 28 und 29 lassen sich vor Kapitel 27 spielen; „Grundreihe. Immer.“ hängt an der Reihenfolge
+
+- Datei: `ironwood-kantine.ink`, Verteiler `big_joe`, Zeile 54–58, und `big_joe_clubkampf`, Zeile
+  119–122; `mama_ankunft`, Zeile 224.
+- Ink: „Sie sind alle da, Hank und Priya und ein Dutzend andere in Arbeitsjacken. Als Mama in der Tür steht, wird es still wie in einer Kirche.“ – und, nur unter `{mamaSpielt:`, „Grundreihe. Immer.“
+- Roman: `akt2_teil4.md`, Zeile 379–382: „Mama saß in der ersten Reihe. Zum ersten Mal sah sie mir zu.“ … „Grundreihe. Immer.“; Zeile 520–522 (Mama nimmt Big Joe den Karton ab).
+- Befund: Der Clubkampf verlangt nur die zwei Aufgabenreihen, nicht Mamas Partie (die Quest
+  `ironwood.clubkampf` hat keine Voraussetzung). Wer zuerst die Nadel holt, kann danach den Kauf
+  sehen (Pokale im Karton, Stahlbrett hinausgetragen) und erst dann Mama in die volle Kantine
+  bringen; `mama` prüft `kaufGesehen` nicht. Die Weichen `{mamaSpielt: …}` fangen das ab, kosten
+  aber drei tragende Stellen: Mamas zwei Wörter, „Du hast es dem Kumpel gesagt, Laurie.“ und Mama
+  am Lieferwagen. Außerdem stehen Victor und Graham Hale laut `orte.json` ohne Bedingung am Werkstor
+  („Victor steht mit einem Tablet am Werkstor und tippt.“), also schon in Kapitel 25.
+- Vorschlag: Clubkampf erst nach `mamaSpielt` freigeben (Voraussetzung `ironwood.mamasFinale`);
+  Big Joe bis dahin: „Erst Hank, dann Priya, dann ich.“ und, nach den Reihen, ein Satz des Wartens.
+  Die Weichen entfallen dann. Die beiden Hales erst nach der Nadel auf die Karte stellen.
+
+#### L1.4 – fehlt – „Das passiert jedem“ fehlt; Mamas Satz im Heft verliert sein Echo
+
+- Datei: `maple-falls-wohnzimmer.ink`, Knoten `mama_foto`, Zeile 193 (und 188–190).
+- Ink: „Ich wollte nicht, dass es jedem passiert. Ich wollte, dass es mir nicht passiert.“
+- Roman: `akt2_teil4.md`, Zeile 181–183: „Alle haben gesagt, das passiert. Das passiert jedem. Joe hat es gesagt, meine Mutter, der
+  Gegner sogar, ein netter Junge, er hat sich entschuldigt.“; Zeile 314: „Es passiert jedem. Auch mir.“
+- Befund: Ohne den Satz davor hat Mamas Widerspruch keinen Gegenstand, und der eine Satz, den sie
+  später ins Heft schreibt (`heft_satz`, Zeile 308), ist keine Antwort mehr, sondern ein Sinnspruch.
+  Am selben Ort ist das Bild des Spießes knapper als der feste Punkt: „Und ganz hinten steht sein
+  Läufer“ statt „am anderen Ende des Brettes“, und der Satz, der einem Kind den Spieß zeigt, fehlt.
+- Vorschlag: Vor Zeile 193 einfügen: „Alle haben gesagt, das passiert. Das passiert jedem.“ / „Joe
+  hat es gesagt, meine Mutter, der Gegner sogar. Ein netter Junge. Er hat sich entschuldigt.“ Und in
+  Zeile 189/190: „Und ganz hinten, am anderen Ende des Brettes, steht sein Läufer und sieht die
+  Schräge entlang. Seit zwanzig Zügen.“ / „Die Dame muss weg, und der Turm dahinter fällt. Ein
+  Spieß. Das Einfachste, was es gibt.“
+
+#### L1.5 – widerspricht – „Dann spiel es.“ fällt nur bei einer der beiden Antworten
+
+- Datei: `ironwood-kantine.ink`, Knoten `clubkampf_stimmt_es`, Zeile 296–302.
+- Ink: „Siehst du etwas? Dann sag mir: Stimmt es?“ – Wahl „Ich zähle noch.“ → „Dann zähl. Dreimal, wenn es sein muss.“; Wahl „Es stimmt.“ → „Dann spiel es.“; danach für beide: „Und sieh ihm dabei ins Gesicht. Das ist die Hälfte.“
+- Roman: `akt2_teil4.md`, Zeile 421–432: „Stimmt es?“, fragte Ambrose. … „Es stimmt“, sagte ich. – „Dann spiel es.“ Seine Stimme war sehr warm. „Und sieh ihm dabei ins Gesicht. Das ist die
+  Hälfte.“; Tabelle Zeile 627 („Wichtigster Schritt für beide Bögen in Akt 2“).
+- Befund: Tragender Satz hängt an der Antwortwahl. Nach „Ich zähle noch.“ fehlt „Dann spiel es.“,
+  und „dabei“ in der Schlusszeile hat kein Bezugswort. „Siehst du etwas? Dann sag mir:“ ist
+  Absicherung des Autors, nicht Ambrose; die Stimmung `lachtOhneSpott` passt nicht zu „sehr warm“.
+  Eine Pause vor der Frage fehlt (Klang: „Beim Opfer hält der Hammer an.“).
+- Vorschlag: Die Wahl hintereinander statt nebeneinander: „Stimmt es?“ `#musik:aus #pause:2` /
+  „Diesmal fragt er. Nicht du.“ / Wahl `[Zählen. Dreimal.]` / Wahl `[„Es stimmt.“]` / „Dann spiel
+  es.“ `#stimmung:froh` / „Und sieh ihm dabei ins Gesicht. Das ist die Hälfte.“
+
+#### L1.6 – Pausen – Der Fund „Umschlag“ springt in die Stille; „Nachdem ich …“ fehlt
+
+- Datei: `ironwood-museum.ink`, Knoten `postsack_offen`, Zeile 71–76.
+- Ink: „Die Klappe ist offen. Der Umschlag ist leer.“ – gleich danach `~ gibFund("umschlag")`, dann
+  Mr. Teague, dann erst „Ambrose steht so still, wie du ihn noch nie gesehen hast.“ `#pause:5`; Ambrose:
+  „Achtzehnhundertsechsundsechzig. Im Winter. Da war ich schon unterwegs.“
+- Roman: `akt2_teil4.md`, Zeile 76–78: „Nachdem ich … Achtzehnhundertsechsundsechzig. Im Winter. Da war ich schon
+  unterwegs. Er hat geschrieben, und ich war schon unterwegs.“; Zeile 92: „Nimm ihn mit. Ein leerer Umschlag gehört
+  niemandem.“; Randnotiz Zeile 125: „Die Pause vor Ambroses erstem Satz dauert mindestens fünf Sekunden und wird nicht gefüllt.“
+- Befund: Die Fundmeldung kommt zwischen „leer“ und der Stille, also genau dort, wo nach dem
+  Klangplan nichts sein soll, und sie kommt, bevor Mr. Teague den Umschlag hergibt. Die fünf
+  Sekunden selbst sind richtig gesetzt. Von Ambroses Satz fehlen der abgebrochene Anfang („Nachdem
+  ich …“, der Splitter von 1866 in diesem Kapitel) und die Wiederholung, an der man hört, dass er es
+  nicht fassen kann.
+- Vorschlag: `gibFund("umschlag")` ans Ende, nach „Nimm ihn mit. …“. Ambrose in drei Zeilen: „Er hat
+  mir geschrieben.“ / „Nachdem ich … Achtzehnhundertsechsundsechzig. Im Winter. Da war ich schon
+  unterwegs.“ `#pause` / „Er hat geschrieben, und ich war schon unterwegs.“
+
+#### L1.7 – plump – Zwischen „Die Kantine brüllt“ und „Es war schön“ steht Kartenverwaltung; der Satz fällt auch nach einem Remis
+
+- Datei: `ironwood-kantine.ink`, Knoten `big_joe_nach_sieg`, Zeile 161–162 (Remis: Zeile 144–146).
+- Ink: „Noch ein Mentor-Zug. Heb ihn auf, du weißt, wofür.“ – danach „Es war schön. Und es hat gestimmt. Beides.“
+- Roman: `akt2_teil4.md`, Zeile 456–460: „Auf dem Weg hinaus, im Lärm, sagte Ambrose etwas, und ich verstand es fast nicht.“ – „Es war schön“, sagte er. „Und es hat gestimmt. Beides.“ – „Er klang, als hätte er etwas gesehen, das es nicht geben dürfte.“
+- Befund: „Mentor-Zug“ ist ein Wort der Spielregeln in Ambroses Mund, unmittelbar vor dem Satz, mit
+  dem sein Bogen in Akt 2 schließt (Dokument 19, 5.2). Die Karte vergibt die Quest ohnehin
+  (`quests.json`, Wirkung `mentorzug`). Dazu: Nach einem Remis läuft derselbe Schluss durch („Remis.
+  Ehrlich verdient, Kumpel.“ … „Es war schön. Und es hat gestimmt. Beides.“), obwohl es kein Opfer
+  und kein Matt gab; und im Siegzweig behauptet „Big Joe sieht auf seine Grundreihe. Niemand ist zu
+  Hause.“ ein Bild, das die Partie nicht haben muss.
+- Vorschlag: Zeile 161 streichen (Karte still vergeben, wie in Cedar Creek). Schluss: „Auf dem Weg
+  hinaus, im Lärm, sagt Ambrose etwas. Du verstehst es fast nicht.“ `#pause` / „Es war schön. Und es
+  hat gestimmt. Beides.“ Im Remis-Zweig stattdessen ein eigener, kleinerer Satz (etwa „Es hat
+  gestimmt. Das Schöne holen wir nach.“) oder gar keiner.
+
+#### L1.8 – widerspricht – Kapitel 23: „Advokaten“ hängt an einer Wahl; am Telefon sagt der Held „Okay, Mama.“
+
+- Datei: `maple-falls-wohnzimmer.ink`, Knoten `nicht_ironwood`, Zeile 291–295;
+  `ironwood-aussen.ink`, Knoten `ankunft_zu_fuss`, Zeile 61 und 66–76.
+- Ink: „Das ist eine Unterscheidung, die Advokaten machen.“ (nur nach der ersten Wahl; nach „Den Zettel umdrehen“ stattdessen „Ein Turnier, eine Stadt, ein Nein. Ich frage mich, was dahintersteckt.“). Am Telefon: Wahl „Okay, Mama.“ → „Danke. Frag nicht. Bitte.“; Juno: „Mama hat Nein gesagt. Nicht zum Turnier. Gucken ist kein Turnier.“
+- Roman: `akt2_teil3.md`, Zeile 55–58: „Sie hat gesagt: nicht zum Turnier.“ – „Das“, sagte Ambrose, „ist eine Unterscheidung, die Advokaten machen.“; Tabelle Zeile 335: „Die Geschichte bestraft nichts, benennt aber, was der Held tut.“
+- Befund: (a) Der eine Satz, der benennt, was der Held tut, fällt nur bei einer von zwei
+  Antworten; die andere Zeile ist ein Detektivsatz, der die Szene zusammenfasst. (b) In der
+  Anruf-Fassung fehlt er ganz; dort macht Juno die Unterscheidung, und niemand benennt sie. (c) Mit
+  „Okay, Mama.“ verspricht der Held etwas und bricht es zwei Zeilen später; im Roman sagt er nie Ja.
+  Mamas „Frag nicht. Bitte.“ antwortet dann auf eine Frage, die nicht gestellt wurde, und „Nicht
+  heute“ entfällt. (d) Juno sagt „Mama“ statt „Deine Mama“. (e) Der Satz, der Ironwood ausmacht,
+  steht nur im Kommentar (Zeile 54), nicht im Text.
+- Vorschlag: In `nicht_ironwood` die zweite Wahl in den Sammelpunkt führen: `[Den Zettel umdrehen]`
+  → „Sie hat nicht gesagt, dass du nicht hindarfst.“ `#sprecher:erzaehler` → dann für beide Wege
+  „Nicht zum Turnier, hat sie gesagt. Das ist eine Unterscheidung, die Advokaten machen.“ Am Telefon
+  die zweite Wahl durch Schweigen ersetzen (`[Nichts sagen]` → „Frag nicht. Bitte. Nicht heute.“),
+  Juno: „Sie hat gesagt: nicht zum Turnier. Gucken ist kein Turnier.“, Ambrose darauf den
+  Advokatensatz. Bei der Ankunft: „Ironwood ist grau. Nicht hässlich. Grau, wie Dinge grau sind, die
+  gearbeitet haben.“
+
+#### L1.9 – plump – Big Joe wirbt für die Nadel, bevor Juno fragen kann, was ihm leidtut
+
+- Datei: `ironwood-kantine.ink`, Knoten `big_joe_erkennt`, Zeile 89–91 (dazu Zeile 85).
+- Ink: „Und dass es ihm leidtut.“ / „Um die Nadel spielen? Erst Hank, dann Priya, dann ich.“ / „Was tut ihm leid?“
+- Roman: `akt2_teil3.md`, Zeile 240–246: „Sag ihr, Big Joe lässt grüßen. Und dass es ihm leidtut.“ – „Was tut ihm leid?“, fragte Juno draußen. – „Ich wusste es nicht.“; Zeile 237–238: „Eine Lücke,
+  so breit wie eine Hand, und darunter ein Schildchen aus Messing: _2001._“
+- Befund: Der Mann, der sich gerade nicht mehr räuspern kann, schaltet in einem Atemzug auf
+  Spielablauf. Die Zeile trennt die Frage von dem Satz, auf den sie antwortet, und nach „leidtut“
+  fehlt die Pause. Außerdem nennt der Hauptweg die Lücke, aber nicht das Schild: „Nur an einer Stelle nicht.“
+  Die Jahreszahl steht nur am Gegenstand `pokalregal` (Antippen); sie ist das Gegenstück zum Pokal
+  im Schrank (Kapitel 28) und zu Mamas Foto.
+- Vorschlag: Zeile 90 herausnehmen und beim zweiten Antippen sagen (`big_joe_reihe_offen` sagt es
+  ohnehin: „Erst Hank, Kumpel.“). Dann: „Und dass es ihm leidtut.“ `#stimmung:ernst #pause:2` / „Was
+  tut ihm leid?“ `#sprecher:juno` / „Du weißt es nicht.“ In Zeile 85 ergänzen: „Eine Lücke, so breit
+  wie eine Hand. Darunter ein Schildchen aus Messing: 2001.“
+
+#### L1.10 – widerspricht – „Nein. Wenn ich ehrlich bin. Länger.“ fällt nur beim zweiten Antippen der Vitrine
+
+- Datei: `ironwood-museum.ink`, Knoten `vitrine`, Zeile 89, und `vitrine_mut`, Zeile 105–112.
+- Ink: „Ich schon. Ich habe den Mut verloren. Einen Abend lang.“ – Verzweigung davor: `{erinnerungBirdBestanden and not birdNachgesprochen: -> vitrine_mut}`
+- Roman: `akt2_teil4.md`, Zeile 116–123: „Er sah auf den Umschlag in meiner
+  Hand. „Ich schon. Ich habe den Mut verloren. Einen Abend lang.““ – „Nur einen?“ – „Nein“, sagte er. „Wenn ich ehrlich bin. Länger.“; Tabelle Zeile 619: „Ehrlichkeit als Fortschritt seines Bogens.“
+- Befund: Das Gespräch öffnet sich nur, wenn man nach der Runde die Vitrine noch einmal antippt,
+  und nur bei bestandener Runde. Tragender Satz hängt am Antippen. Der Blick auf den Umschlag fehlt
+  (die Vitrine ist auch vor dem Postsack spielbar; dann bezieht sich „Ich schon“ auf nichts
+  Sichtbares). Was der Held an der Partie sieht, steht nirgends in Worten: der Turm, „zum Schlagen,
+  mitten ins Nichts“, die Dame „quer über das ganze Brett in eine Ecke“, „drei Züge, bis ich sah,
+  warum“. Gleiche Art, kleiner: Der Kreis um den dreiunddreißigsten Zug steht nur am Gegenstand
+  `partieformular` (`ironwood-mamas-zimmer.ink`, Zeile 84), obwohl Mama später mit „Zug
+  dreiunddreißig.“ daran anknüpft.
+- Vorschlag: `vitrine_mut` von der Hülle direkt nach der Runde öffnen lassen (auch bei nicht
+  bestandener Runde), mit einer Erzählerzeile davor: „Ein Turm, zum Schlagen hingestellt, mitten
+  ins Nichts. Dann die Dame, quer über das ganze Brett, in eine Ecke. Es dauert drei Züge, bis du
+  siehst, warum.“ Mit Umschlag zusätzlich: „Er sieht auf den Umschlag in deiner Hand.“ Den Kreis um
+  Zug 33 in den Hauptweg von `oma_ruth` nehmen (nach dem Foto, mit Oma Ruths Satz).
+
+#### L1.11 – fehlt – Der Kauf: „neun Tage“, Big Joes Anruf und Victors Blick fehlen; der Vorgriff steht am Ende der Siegszene
+
+- Datei: `ironwood-aussen.ink`, Knoten `kauf`, Zeile 260–269; `ironwood-kantine.ink`, Knoten
+  `big_joe_nach_sieg`, Zeile 163.
+- Ink: „Draußen am Werkstor stehen Männer in Anzügen. Big Joe sieht hinaus und wird still.“ – in `kauf` tritt Victor erst mit „Vater. Vielleicht …“ auf.
+- Roman: `akt2_teil4.md`, Zeile 473–476: „Es dauerte neun Tage.“ – „Wir fuhren hin, weil Big Joe angerufen hatte. Nicht mich. Mama.“; Zeile 508–510: „Er sah Big Joe nach, dem
+  Karton, den großen Händen, die ihn hielten, als wäre er aus Glas, und ich sah, wie sich in
+  seinem Gesicht etwas bewegte.“
+- Befund: Im Spiel folgt der Kauf unmittelbar auf den Sieg, und die Siegszene endet nicht auf
+  Ambroses Satz, sondern auf einem Hinweis, wohin man als Nächstes gehen soll. Damit fällt die
+  Spannung nicht ab (Dokument 19, Abschnitt 4: nach Spannung 4 eine Stufe herunter). In `kauf` fehlt
+  der Grund für Victors abgebrochenen Satz: Man sieht nicht, dass er Big Joe nachsieht; „als wäre
+  er aus Glas“ verbindet ihn mit dem ersten Bild von Big Joe in der Kantine.
+- Vorschlag: Zeile 163 der Kantine streichen. `kauf` beginnen mit: „Es dauert neun Tage. Dann ruft
+  Big Joe an. Nicht dich. Mama. Sie hört nur zu und nimmt den Mantel.“ Vor „Vater. Vielleicht …“:
+  „Neben seinem Vater steht Victor, in Weiß, das Tablet unter dem Arm. Er sieht Big Joe nach, dem
+  Karton, den großen Händen, die ihn halten, als wäre er aus Glas.“
+
+#### L1.12 – plump – Ambrose als Steckbrief, Lehrbuch und Moral (vier Stellen)
+
+- Datei: `ironwood-kantine.ink`, Knoten `feier`, Zeile 205, und `big_joe_clubkampf`, Zeile 125;
+  `weg-riverton-ironwood.ink`, Knoten `tafel`, Zeile 95; `ironwood-mamas-zimmer.ink`, Knoten
+  `oma_ruth_heft`, Zeile 64 (Erzähler).
+- Ink: „Du hast das nicht geplant, {held}. Aber morgen wird er müde sein. Das ist kein Trick. Das ist ein Fest.“ – „Er nagelt Figuren fest wie ein Kranhaken. Aber hinter seinem König sieht er nicht gut.“ – „Fesselungen. Eine Figur muss stehen bleiben. Hinter ihr steht etwas Wertvolleres.“ – „Ab jetzt stehen nach jeder Partie die wichtigsten Momente im blauen Heft. Du findest es im Tagebuch.“
+- Roman: `akt2_teil4.md`, Zeile 364: „Um eins sang jemand. Um halb zwei schlief Juno auf zwei Stühlen.“ (Ende der Feier, ohne Ambrose); Zeile 379–382 (Mamas zwei Wörter sind der einzige Hinweis); `akt2_teil3.md`, Zeile 321: „Man schreibt hinein. Was sonst.“ (letzter Satz der Szene).
+- Befund: (1) Nach dem Fest erklärt Ambrose die Spielwirkung und spricht den Helden von einer
+  Schuld frei, die niemand erhoben hat. (2) Vor dem Clubkampf sagt er in einem Lehrsatz, was Mama
+  eine Zeile vorher in zwei Wörtern gesagt hat, und nimmt ihr den Auftritt; „Kranhaken“ ist Big
+  Joes Bild, nicht seins. (3) An der Rätseltafel definiert er die Fesselung wie ein Lehrbuch, obwohl
+  das Blech es schon sagt („Was festgenagelt ist, kann nicht weg.“). (4) Im Zimmer folgt auf den
+  stillsten Satz des Kapitels eine Bedienungsanleitung.
+- Vorschlag: (1) streichen; der Zustand „schlecht geschlafen“ zeigt sich am nächsten Morgen in Big
+  Joes eigenem Satz. (2) streichen, wenn `mamaSpielt` (nach L1.3 immer). (3) streichen oder tastend,
+  mit einem Bild aus seiner Zeit: „Festgenagelt. Ein hartes Wort für eine Figur, die nur treu ist.“
+  (4) den Hinweis als Zeile der Oberfläche zeigen (Tagebuch-Meldung), nicht als Erzähler; die Szene
+  endet auf „Was sonst.“
+
+#### L1.13 – fehlt – Die Fahrt mit Mama und „Manche Dinge gehören einem nicht“
+
+- Datei: `maple-falls-wohnzimmer.ink`, Knoten `mama_foto`, Zeile 202 (Ende); `ironwood-kantine.ink`,
+  Knoten `mama_ankunft`, Zeile 224 (Anfang).
+- Ink: „In Ironwood. Ich will den Raum sehen. Und wenn ich gewinne, räumst du die Spülmaschine aus.“ – danach steht Mama ohne Übergang in der Kantine.
+- Roman: `akt2_teil4.md`, Zeile 211–216: „Mama redete auf der ganzen Fahrt
+  über das Wetter. An der Eisenbrücke wurde sie still.“ … „Was sie und Oma Ruth an der Tür sagten, weiß ich nicht. Ich bin im Wagen geblieben. Manche
+  Dinge gehören einem nicht.“; Tabelle Zeile 622: „Die Szene bleibt außerhalb; ein Satz genügt.“
+- Befund: Der eine Satz, den die Tabelle verlangt, fehlt. Damit fehlt, dass Mama nach
+  fünfundzwanzig Jahren zuerst zu ihrer Mutter geht (Bibel, Szene 43: „zuerst zu Oma Ruth“), und der
+  Takt des Helden. In der Kantine erscheint Mama wie hingestellt.
+- Vorschlag: `mama_ankunft` mit drei Erzählerzeilen beginnen: „Ihr fahrt am Samstag, mit dem Wagen,
+  Juno auf der Rückbank. Mama redet die ganze Fahrt über das Wetter. An der Eisenbrücke wird sie
+  still.“ / „Vor dem Haus mit dem grünen Geländer bleibt sie eine Minute sitzen, die Hände am
+  Lenkrad.“ `#pause:2` / „Was sie und Oma Ruth an der Tür sagen, weißt du nicht. Du bleibst im Wagen.
+  Manche Dinge gehören einem nicht.“
+
+#### L1.14 – Pausen – Mamas Erzählung ohne Atem; Marken an der falschen Zeile (Sammelbefund)
+
+- Datei: `maple-falls-wohnzimmer.ink`, Knoten `mama_foto`, Zeile 183–194 und 200;
+  `ironwood-mamas-zimmer.ink`, `oma_ruth`, Zeile 29–40; `ironwood-kantine.ink`, Zeile 150 und 290;
+  `ironwood-aussen.ink`, Zeile 98 und 294–295.
+- Ink: „Sie steht auf, geht zum Fenster und schiebt die Hände in die Ärmel ihrer Strickjacke.“ (`#sprecher:erzaehler #bild:aus #stimmung:denktNach`, keine Pause); „Er legt seinen König um, mit einem Finger. Auf dem Stahl klingt es leise.“ (`#klang:fanfare`); „Elm Street, Nummer zehn. Das Eckhaus mit dem grünen Geländer.“ (`#geraeusch:schnee_schritte`)
+- Roman: `akt2_teil4.md`, Zeile 201–204 („Sie stand dort mit dem Rücken zu mir“ … „Gut“, sagte sie. „Eine Partie.“), Tabelle Zeile 621: „Porträtfassung; Pause.“; Randnotiz Zeile 462: „„Ach, Kumpel“ ohne Musik. Sieg: Fanfare, dann das Brüllen der Kantine.“; Zeile 526: „Es waren die ersten Flocken des Jahres.“; Zeile 398–399: „Eine Pause. „Der
+  Brückenbauer hätte ihn gemocht.““
+- Befund: (a) `mama_foto`: zwölf Zeilen am Stück ohne Wahl und ohne Pause (Regel 5.1: höchstens
+  sechs), genau in der Erzählung, die der Roman mit Schweigen gliedert. (b) Am Fenster fehlt die
+  Pause, und `#stimmung:denktNach` steht an einer Erzählerzeile, wo sie kein Porträt wechselt.
+  (c) `oma_ruth`: elf Zeilen am Stück; Ansehen, Schweigen und Umarmung stehen in einer Zeile, obwohl
+  der Klang „Stille bis zur Umarmung“ verlangt. (d) Die Fanfare liegt auf der leisesten Zeile der
+  Partie statt beim Anstecken der Nadel. (e) Schneeschritte an Oma Ruths Tür im November, obwohl der
+  erste Schnee erst in Kapitel 29 fällt. (f) Keine Pause vor „Der Brückenbauer hätte ihn gemocht.“
+  und keine vor „Und er hat mir geschrieben.“ (Roman: „Seine Stimme brach.“).
+- Vorschlag: (a) `#pause:2` nach „Sie nimmt das Foto.“ und nach „… ich sehe ihn jede Nacht.“
+  (b) Erzählerzeile mit `#pause:2`, die Stimmung an „Gut. Eine Partie.“ (c) „Sie sieht dich an und
+  sagt nichts.“ `#pause:2` / „Dann zieht sie dich an sich.“ `#musik:mama`; eine Wahl oder Pause nach
+  dem Foto. (d) `#klang:fanfare` an „Er steckt dir das Zahnrad an die Jacke“. (e) anderes
+  Schrittgeräusch. (f) je `#pause` bzw. `#pause:2`.
+
+---
+
+#### Am Rande (nicht mitgezählt)
+
+- `texte/de.json`, `fund.foto2001.text`: „Aus Mamas altem Zimmer. Sie hat genau so gelacht wie heute.“ Im Roman lacht das Mädchen nicht
+  (Hände in den Ärmeln, Blick aufs Brett; „Sie sah so sicher aus.“). `fund.nietenkopf.text`: „Am Brückengeländer. J. H.? Wer ist das?“,
+  obwohl der Held im selben Knoten den Brückenbauer nennt.
+- `weg-riverton-ironwood.ink`, Zeile 160–161: Ambrose beschreibt die Karte mit der Sanduhr, vergeben
+  wird `grossesMaul` („Großes Maul“, freche Sprüche). Im Dateikopf als Übergang vermerkt; der
+  Dateikopf nennt außerdem noch einen „Buchbezug … mit Fundstelle“, den es im Text zu Recht nicht gibt.
+- `weg-riverton-ironwood.ink`, Zeile 151: Der Brücke fehlt „sehr alt und sehr schön, auf eine
+  strenge Art“ (Tabelle Teil 3: Hale als Mensch spürbar).
+- `ironwood-mamas-zimmer.ink`, Zeile 34: Es fehlt, dass die Tür immer zu war (Entscheidung in
+  `akt2_befunde.md`, Abschnitt 7); „Mehr als die Hälfte des Hefts“ leer fehlt vor „Mit einem halb leeren Heft?“.
+- `ironwood-kantine.ink`, Zeile 123: „Das hält.“ ist Ednas Erkennungssatz, hier in Big Joes Mund.
+
+---
+
+### Gut gelungen
+
+- `weg-riverton-ironwood.ink`, Knoten `jh` (Zeile 126–141): Junos Fund, der tiefe Ton `#klang:hale`
+  genau an „J. H.“, das leere Gesicht, zwei kurze Ausflüchte, Wind, Pause, die Hand über dem Eisen.
+  Als Tunnel gebaut, sodass es auf beiden Wegen fällt. Ambrose sagt nichts, was er nicht sagen kann.
+- `ironwood-kantine.ink`, `big_joe_erkennt` bis „Hier hieß sie Laurie.“ (Zeile 67–82): Kranhaken und
+  Statik, dann `#musik:aus #pause:3` genau an „Bist du Lauries Kind?“, die Frage nach den Händen in
+  den Ärmeln. Alle Wahlen einzeln, nichts hängt an einer Antwort.
+- `ironwood-kantine.ink`, `mama_ankunft` (Zeile 224–231): die Versöhnung in vier Zeilen, wörtlich,
+  mit Stille davor und der Musik erst bei „Ich weiß. Jetzt.“
+- `ironwood-mamas-zimmer.ink`, `oma_ruth_heft` (Zeile 51–63): die drei Sätze aus dem Heft, „Und
+  darunter nichts.“ mit `#musik:aus #pause:2` (Mamas Thema bricht ab), Ambroses „Ich habe sie
+  auswendig gelernt.“ Kein Erklärton.
+- `ironwood-aussen.ink`, `einladung` (Zeile 280–294): Kakao, „Mehr als drei Sekunden.“ mit
+  `#pause:3`, „Ein Hale, der fragt.“, die Hand, die diesmal liegen bleibt, beide Themen zugleich.
+  Juno kommt erst danach die Brücke herauf.
+
+### Zählung
+
+Nach Art (14 Befunde): fehlt 3 (L1.4, L1.11, L1.13) · widerspricht 6 (L1.1, L1.2, L1.3, L1.5, L1.8,
+L1.10) · plump 3 (L1.7, L1.9, L1.12) · Pausen und Marken 2 (L1.6, L1.14).
+
+Nach Datei (Hauptfundstelle; Sammelbefunde berühren mehrere):
+
+| Datei                        | Befunde                                               |
+| ---------------------------- | ----------------------------------------------------- |
+| `ironwood-kantine.ink`       | 6 (L1.1, L1.3, L1.5, L1.7, L1.9, L1.12)               |
+| `maple-falls-wohnzimmer.ink` | 3 (L1.4, L1.13, L1.14); dazu Teil von L1.8            |
+| `ironwood-aussen.ink`        | 3 (L1.2, L1.8, L1.11)                                 |
+| `ironwood-museum.ink`        | 2 (L1.6, L1.10)                                       |
+| `weg-riverton-ironwood.ink`  | 0 eigene; berührt in L1.12, dazu zwei Randbemerkungen |
+| `ironwood-mamas-zimmer.ink`  | 0 eigene; berührt in L1.10, L1.12, L1.14              |
+| `ironwood-umkleide.ink`      | 0                                                     |
+
+### Nicht geprüft
+
+- Ob die Hülle Knoten von selbst öffnet (etwa `mama_nach_partie` nach der Partie, `vitrine_mut` nach
+  der Runde). L1.1 und L1.10 gelten für das, was in Ink und `quests.json` steht; der App-Code ist
+  nicht gelesen.
+- Ob Victor und Graham Hale auf der Karte Bedingungen haben, die nicht in `orte.json` stehen
+  (Kartendateien unter `karten/` nicht gelesen). L1.3 stützt sich auf `orte.json`, `quests.json` und
+  die Verteiler in Ink.
+- Ob Ink-Zustände zwischen zwei Öffnungen erhalten bleiben (verbrauchte `*`-Wahlen, etwa in
+  `feier_einladung`).
+- Die Schachinhalte: Stellung im Siegel, die Runde zu Bird gegen Morphy (nur `abZug: 17`, Schwarz,
+  gesehen), die Aufgaben von Hank, Priya und der Rätseltafel, Gus’ Stellung, die Kreideaufgabe „Td8“.
+- Ob die Marken einen Klang oder ein Bild haben (`#klang:hale`, `#musik:ambrose.victor`,
+  `#bild:…`, `#stimmung:verschlossen/erzaehlt/denktNach/hatIhnGesehen`); `portraetblatt.json` kennt
+  diese vier Stimmungen nicht, sie fallen vermutlich auf die Grundfassung zurück.
+- Inhalte ohne Romanvorlage: Dime und die Brückenbauern, Drohne, Kreidespringer, Konservendose,
+  Lastkahn, Gus, Edna, Umkleide, Steinbruch-Sperre, Statisten in `texte/de.json`. Nur auf
+  Buchverweise, Junos Wissen und Ambroses Ton durchgesehen, ohne Befund über die genannten hinaus.
+- `ironwood-aussen.ink`, `bus_silicon_bay_abfahrt` (Kapitel 30) und die Busse: auftragsgemäß nicht.
+- Dokument 19 und die Bibel sind nur in den Abschnitten gelesen, die Akt 2 und Ironwood betreffen
+  (19: Spannungsbogen, Figurenbögen, Clubtabelle; Bibel: 5, 9.1, 9.3, 9.4, Szenen 38–50).
+  `21_Klangplan.md` ist nicht gegengelesen; Klangaussagen stützen sich auf die Randnotizen im Roman.
+- Zeilenlängen (140 Zeichen) sind nicht durchgezählt.
+
+### L2 Kapitel 30 bis 34: Abfahrt, Weg nach Silicon Bay und Silicon Bay
+
+Geprüft gegen `docs/spiel/roman/akt3_teil1.md` (Kapitel 30–34 mit Randnotizen und der Tabelle „Neu
+gegenüber der Story-Bibel“). Dialogdateien in `inhalte/abenteuer/dialoge/de/`: `ironwood-aussen.ink`
+(nur `bus_silicon_bay`, `bus_silicon_bay_abfahrt`, `bus_silicon_bay_einsteigen`),
+`weg-ironwood-silicon.ink`, `silicon-bay-aussen.ink`, `silicon-bay-akademie.ink`,
+`silicon-bay-lobby.ink`, `silicon-bay-serverraum.ink`. Weitere Ink-Dateien zu Silicon Bay gibt es
+nicht (`ls`: nur diese vier `silicon-bay-*.ink`; eine `ansehen-silicon-bay.ink` fehlt, die
+Ansehen-Knoten stehen in den Ortsdateien). Der einzige Partiemoment steht nicht in Ink, sondern in
+`inhalte/abenteuer/texte/de.json` (`moment.ambrose.zuklappen`, ausgelöst in `begegnungen.json`,
+Begegnung `siliconBay.clubkampf`, `"abZug": 15`); er ist mitgeprüft. Die Reihenfolge der Auslöser
+ist gegen `quests.json` und `orte.json` gelesen.
+
+Marken, die die Dateien benutzen: `#sprecher`, `#stimmung` (`froh`, `gebannt`, `ernst`, `streng`,
+`still`, `traurig`, `muede`, `fern`, `lacht`, `denktNach`, `lachtOhneSpott`), `#pause:3` (einmal),
+`#pause:4` (zweimal), `#musik`, `#klang`, `#geraeusch`, `#bild`.
+
+Gesamturteil: Die Dateien folgen dem Roman über weite Strecken wörtlich (Abfahrt, Glasbrücke,
+Ankunft, Vitrine, Schweigen im Club, Dr. Lins Schluss, die Nacht). Die Festlegungen sind
+eingehalten: kein „Josiah“, kein „Ur-ur-ur“, Vertrag mit vierzehn, Reisebrett von Juno, Ambrose
+sitzt. Die Schwächen liegen an drei Stellen: (a) Ambroses Versuchung ist in der Nacht um ihren
+Kernsatz gekürzt und wird von frei antippbaren Ansehen-Texten unterlaufen, in denen er ZERO schon
+durchschaut; (b) Nebenquests und freie Auslöser (Serverraum, Vitrine, Spielberichte) sind nicht an
+den Stand der Geschichte gebunden, sodass tragende Sätze ohne Grundlage fallen oder Juno nach ihrer
+Abreise wieder dasteht; (c) fast alle Schläge von Kapitel 30 bis 33 laufen ohne Pause durch (drei
+Pausen in sechs Dateien).
+
+---
+
+#### L2.1 – fehlt – Der Kernsatz der Versuchung fehlt in der Nacht mit dem Tablet
+
+- Datei: `silicon-bay-aussen.ink`, Knoten `hotel_nacht` (Zeile 194) und `hotel_nacht_frage`
+  (Zeile 205).
+- Ink: „Die Partie ohne Makel. Und hier liegt sie, tausendmal. In einer Schachtel, die ein Kind verschenkt.“ Davor (Zeile 194): „Tausendachthundert Partien. In jeder ist etwas, wofür ich einen Arm gegeben hätte.“
+- Roman: `akt3_teil1.md`, Zeile 581: „Ich habe zugesehen“ … „Die ganze Nacht.“; Zeile 602: „Sie spielt, wie ich immer spielen wollte. Die Partie ohne Makel.“ (auch Story-Bibel, Szene 61, als Zitat).
+- Befund: „Sie spielt, wie ich immer spielen wollte.“ ist der Satz, an dem das Fast-Überlaufen
+  hängt (Bibel 18.1); er steht in keiner Datei. Ebenso fehlt „Ich habe zugesehen. Die ganze
+  Nacht.“ Ohne beide klingt Ambrose in Zeile 205 wie jemand, der sich über die Maschine wundert,
+  nicht wie jemand, der bei ihr sein will. Auch „Ich habe mein Leben lang geglaubt, sie sei ein
+  einzelnes Ding“ (Zeile 602–604) fehlt; das ist der Mann, der sich erinnert.
+- Vorschlag: Zeile 194 teilen: „Ich habe zugesehen. Die ganze Nacht.“ `#stimmung:gebannt` /
+  „Tausendachthundert Partien. In jeder ist etwas, wofür ich einen Arm gegeben hätte.“ Zeile 205
+  ersetzen durch zwei Zeilen: „Sie spielt, wie ich immer spielen wollte. Die Partie ohne Makel.“ /
+  „Ich habe geglaubt, sie sei ein einzelnes Ding. Eines, das man einmal schafft, wenn man Glück
+  hat und Mut.“ / „Und hier liegt sie. Tausendmal. In einer Schachtel, die ein Kind verschenkt.“
+  Dann erst die Wahl „Und ich?“.
+
+#### L2.2 – widerspricht – Ambrose durchschaut ZERO auf den Werbetafeln, bevor und während er ihr verfällt
+
+- Datei: `weg-ironwood-silicon.ink`, Knoten `werbetafel_zero`, Zeile 275; `silicon-bay-aussen.ink`,
+  Knoten `werbetafel`, Zeile 274.
+- Ink: „Aus Fehlern habe ich alles gelernt, was ich weiß. Was lernt man aus gar nichts?“ und „Nie wieder Fehler. Und nie wieder ein Grund, etwas Neues zu probieren.“
+- Roman: `akt3_teil1.md`, Zeile 67: „Er klang nicht spöttisch. Er klang, als freue er sich darauf.“; Zeile 598: „Sie zweifelt nie“ … „Siehst du, wie schön das ist?“ Dazu `akt3_befunde.md`, Zeile 33–35: „Sie spielt schön. Die Antwort ist: Sie muss nie hoffen. Leitsatz 1 fällt als Satz nur am Felsbogen“.
+- Befund: Beide Sätze sind die Moral des Akts, ausgesprochen von dem, der sie erst am Felsbogen
+  findet. Sie hängen an Gegenständen ohne Bedingung: Man kann sie vor der Akademie antippen (dann
+  ist die Versuchung schon beantwortet) und nach der Nacht mit dem Tablet (dann widerspricht
+  Ambrose sich selbst; er ist dort gebannt und fast stumm). Ähnlich, schwächer: `netze`, Zeile 279
+  („Bevor die Bildschirme kamen, roch diese Stadt nach Fisch. Ein ehrlicher Geruch.“): Ambrose
+  kennt die Stadt nicht und sagt „Bildschirme“.
+- Vorschlag: Ambrose staunt und tastet, er urteilt nicht. Glasbrücke: „Ein König aus Glas, der
+  sich dreht. Was steht darunter, {held}? Lies es mir vor.“ / nach dem Vorlesen: „Nie wieder
+  Fehler.“ `#pause` „Das ist ein großes Versprechen.“ Campus: nur Erzähler, oder mit Bedingung
+  (`tabletNachtGesehen`): Ambrose sagt nichts, Erzähler: „Ambrose sieht lange hin. Er sagt nichts
+  dazu.“ `netze`: „Hier riecht es. Nach Salz, nach Fisch. Zum ersten Mal in dieser Stadt riecht
+  etwas.“ (Roman, Zeile 262: „Es roch nach nichts.“)
+
+#### L2.3 – widerspricht – Das Schweigen im Serverraum hängt an einer Antwortwahl, und der Held sagt die Moral auf
+
+- Datei: `silicon-bay-serverraum.ink`, Knoten `schummelgeraete_nova`, Zeile 51–56.
+- Ink: Wahl „Ich sag nichts. Noch nicht.“ oder „Das ist nicht fair. Dir gegenüber auch nicht.“, darauf „Danke. Ich muss los, bevor mich jemand sucht.“ oder „Ich weiß. Gib mir Zeit. Bitte.“
+- Roman: `akt3_teil1.md`, Zeile 487–489: „Ich legte die Schachtel zurück. Den einen Stöpsel behielt ich.“ – „Ich habe lange überlegt, ob das richtig war. Ich weiß es bis heute nicht sicher.“ Story-Bibel, Szene 56: „{held} schweigt (keine Wahl, Akt 4 löst auf).“
+- Befund: Im Roman sagt der Held nach Novas Bitte kein Wort; die Antwort ist eine Handlung. Im
+  Spiel verspricht er auf dem ersten Weg ausdrücklich, auf dem zweiten spricht er das Urteil aus
+  („nicht fair“) und verspricht gar nichts, trotzdem setzt beides `novaVersprechen`, und später
+  heißt es in der Akademie „Du hast es versprochen.“ (`nova_danach`, Zeile 245; `lin_tisch_aus`,
+  Zeile 132). Der Zweifel des Helden (Zeile 58) wirkt nach einem gesprochenen Versprechen
+  schwächer. „Danke. Ich muss los“ ist erfunden und nimmt Nova die Würde ihrer Bitte.
+- Vorschlag: Die Wahl streichen oder durch eine Handlung ohne Worte ersetzen: `* [Die Schachtel
+zurücklegen]`. Danach: „Du legst die Schachtel zurück. Den Stöpsel von der Glasbrücke behältst
+  du.“ `#pause:2` / „Nova sieht es. Sie sagt nichts dazu.“ / „Ob das richtig war, weißt du nicht
+  sicher.“ In `nova_danach` statt „Du hast es versprochen.“: „Noch nicht. Bitte.“
+
+#### L2.4 – widerspricht – Dr. Lins Schluss und „Du hast es versprochen“ fallen auch, wenn der Held nie im Serverraum war
+
+- Datei: `silicon-bay-akademie.ink`, Knoten `lin_tisch_aus`, Zeile 130–132; dazu `quests.json`,
+  Quest `siliconBay.spielberichte` (`"haupt": false`).
+- Ink: „Ich habe die Spielberichte meiner Klasse nie so genau angesehen.“ und „Du hast es versprochen. Aber sie hat deinen Blick gesehen. Und sie ist eine Lehrerin.“
+- Roman: `akt3_teil1.md`, Zeile 544–546: „Ich sagte nichts. Ich hatte es versprochen.“ – „Aber sie hatte meinen Blick gesehen. Und sie war eine Lehrerin.“ (dort nach Serverraum und Novas Bitte, Zeile 448–489).
+- Befund: Die Spielberichte und der Serverraum sind eine Nebenquest; die Hauptquest
+  (`siliconBay.akademie`) führt ohne sie zum Clubkampf. Wer sie auslässt, liest ein Versprechen,
+  das es nicht gab, und einen Blick, der nichts zu verbergen hat. Umgekehrt kann man den Serverraum
+  nach dem Clubkampf finden; dann kommt Novas Bitte nach Dr. Lins Satz. Der Bogen
+  Verdacht – Bitte – ehrlicher Kampf (Kapitel 33) ist damit nicht gesichert. Dasselbe gilt für
+  „Was bin dann ich?“ nicht (Theos Zahl ist Pflicht), wohl aber für die Vitrine (freier Auslöser).
+- Vorschlag: Entweder die Schritte der Spielberichte in die Hauptquest vor Schritt 6 ziehen
+  (so setzt es der Roman: zweiter Abend Berichte, dann Serverraum, dritter Tag Clubkampf), oder
+  in `lin_tisch_aus` verzweigen: mit `ohrempfaengerGefunden` wie jetzt; ohne: nach „… nie so genau
+  angesehen.“ nur „Sie sieht dich an, als warte sie auf etwas. Du weißt nicht, worauf.“
+
+#### L2.5 – widerspricht – „Lass sie das Buch zuklappen“ ist ersetzt, und Dr. Lins Angst kommt in der Partie nicht vor
+
+- Datei: `inhalte/abenteuer/texte/de.json`, Schlüssel `moment.ambrose.zuklappen`, Zeile 511
+  (Auslöser in `begegnungen.json`, `siliconBay.clubkampf`, `"abZug": 15`); dazu
+  `silicon-bay-akademie.ink`, Knoten `lin_nach_niederlage`, Zeile 103.
+- Ink: „Stell ihr eine Frage, die in keiner Theorie steht.“ und „Sie war sicher, solange es Regeln gab. Zwing sie in eine Stellung ohne Regeln.“
+- Roman: `akt3_teil1.md`, Zeile 510–512: „Lass sie das Buch zuklappen“ … „Er hatte seit zwei Tagen kaum etwas gesagt. Aber das sagte er.“; Zeile 524–525: „Sie sah aus wie ein Mädchen in einem Kellerraum mit einem Heizlüfter, das Angst hat, etwas falsch zu machen.“
+- Befund: Der feste Moment der Partie (`akt3_befunde.md`, Abschnitt 3; Dokument 19, Tabelle der
+  Clubs) hat einen anderen Wortlaut bekommen, vermutlich wegen „keine Hinweise auf ein Buch“. Das
+  Buch hier ist aber Dr. Lins Eröffnungslehrbuch in der Geschichte, nicht das Begleitbuch; der Schlüssel heißt
+  sogar noch `zuklappen`. Der Ersatz erklärt („Theorie“ ist außerdem kein Wort für Ambrose), „eine
+  Stellung ohne Regeln“ ist sachlich schief. Der zweite Teil des Moments, die Verwandlung von
+  Dr. Lin (Brille von der Stirn auf die Nase, Figuren rücken zurück), fehlt ganz; ohne ihn hat ihr
+  Satz „… warum man Angst hatte“ (Zeile 128) keinen Boden. Der Auslöser „ab Zug 15“ ist an die
+  Zugzahl gebunden, nicht an das Verlassen der Eröffnung (Tabelle „Neu“, Zeile 673).
+- Vorschlag: `moment.ambrose.zuklappen`: „Lass sie das Buch zuklappen.“ Zweiter Moment als
+  Erzähler, sobald die Stellung das Eröffnungsbuch verlassen hat: „Dr. Lin schiebt die Brille von
+  der Stirn auf die Nase. Ihre Figuren rücken einen Schritt zurück. Dann noch einen.“
+  `lin_nach_niederlage`: „Sie spielt wie eine sehr gute Seite in einem sehr guten Buch. Lass sie
+  das Buch zuklappen, {held}.“
+
+#### L2.6 – widerspricht – Theo weiß Bescheid und schickt den Helden zur Schublade; die Tür ist verschlossen
+
+- Datei: `silicon-bay-akademie.ink`, Knoten `theo_serverraum`, Zeile 202–205; Knoten
+  `serverraum_zu`, Zeile 258; `silicon-bay-serverraum.ink`, Zeile 23.
+- Ink: „Ich hab das auch gesehen. Achtundneunzig Prozent. Das schafft kein Mensch.“ – „Im Serverraum gibt es eine Schublade, die immer abgeschlossen ist. Heute nicht.“ – „Ich hab nichts gesagt. Zahlen lügen nicht. Ich auch nicht.“
+- Roman: `akt3_teil1.md`, Zeile 311: „Er runzelte die Stirn über der Zahl, nur kurz.“; Zeile 448–449: „Die Tür war nicht abgeschlossen; in dieser Stadt schloss niemand ab, weil alles gefilmt wurde.“
+- Befund: Im Roman ahnt Theo nur (ein Stirnrunzeln), und der Held geht allein hinunter. Im Spiel
+  kennt Theo den Befund, die Schublade und ihren Inhalt und sagt es einem Gast; damit wüsste ein
+  drittes Kind der Akademie davon, was Novas „Weiß nichts“ über Dr. Lin und Victors einsamen
+  Schritt entwertet. „Zahlen lügen nicht. Ich auch nicht.“ ist ein Merksatz. Die verschlossene Tür
+  („Sie ist verschlossen.“) und die wieder verschlossene Schublade widersprechen dem Bild der Stadt,
+  die nicht abschließt, weil sie filmt. Zeile 202 legt Theos Rede in eine Erzählerzeile.
+- Vorschlag: In `theo_erstes_treffen` nach Zeile 163: „Er runzelt die Stirn über der letzten Zahl.
+  Nur kurz.“ `theo_serverraum` knapp und ahnungslos: „Du hast dir die Berichte angesehen.“ /
+  „Die Rohdaten liegen unten. Im Serverraum. Da schließt keiner ab. Hier wird alles gefilmt.“
+  `serverraum_zu` vor der Auswertung: „Die Tür ist nicht abgeschlossen. Du hast dort unten nichts
+  zu suchen. Noch nicht.“
+
+#### L2.7 – widerspricht – Juno steht nach ihrer Abreise wieder an der Vitrine und über den Spielberichten
+
+- Datei: `silicon-bay-lobby.ink`, Knoten `vitrine_foto`, Zeile 130, und `victor_falsch`, Zeile 68
+  und 75; Auslöser `vitrineHale` in `orte.json` ohne Bedingung.
+- Ink: „Juno macht ein Foto. Der Blitz spiegelt sich in der Scheibe.“ und „Vielleicht ist sie im Turnier besser. Manche sind das.“
+- Roman: `akt3_teil1.md`, Zeile 632: „Am Morgen fuhr Juno zurück.“ (Kapitel 34, nach Vitrine, Kapitel 32, und Spielberichten, Kapitel 33); Zeile 420: „Juno und ich saßen bis Mitternacht auf dem Teppich.“
+- Befund: Vitrine und Spielberichte sind frei spielbar, auch nach `hotel_morgen` (Juno „klein und
+  rot“ über die Brücke). Dann fotografiert eine Abgereiste, und der Fund der fehlenden Seite hängt
+  an ihr. In `victor_falsch` sitzt die Auswertung zudem in der Lobby statt im Hotelzimmer, Victor
+  „hat zugehört“, und Ambrose „sieht auf das Tablet, das dunkel daliegt“ (Zeile 75), ohne dass ein
+  Ort dafür da ist; im Roman ist Victor längst gegangen, und das Tablet liegt auf dem Nachttisch.
+- Vorschlag: `hotel` erst auslösen, wenn Vitrine und Spielberichte gesehen sind (oder beide vor
+  Schritt 7 zur Pflicht machen). Sonst zweite Fassung nach `tabletNachtGesehen`: „Du machst ein
+  Foto für Juno. Der Blitz spiegelt sich in der Scheibe.“ `victor_falsch` mit einer Ortszeile
+  beginnen: „Am Abend, im Hotelzimmer. Juno und du sitzt bis Mitternacht auf dem Teppich.“ und
+  Victors „Das ist falsch.“ in ein eigenes Gespräch am nächsten Tag legen.
+
+#### L2.8 – widerspricht – Das „Hm“ gegen Dash fällt nach der Partie statt in ihr; davor ein Bediensatz von Ambrose
+
+- Datei: `silicon-bay-aussen.ink`, Knoten `dash_hm`, Zeile 132–135; Knoten `dash_erstes_treffen`,
+  Zeile 97.
+- Ink: „Was war das eben? Du hast aufs Brett gestarrt, als hättest du was Furchtbares entdeckt.“, dann Wahl „Hm.“, dann „Er sucht vierzig Sekunden lang nach etwas, das es nicht gibt. Dann lacht er, laut und ohne Groll.“ Zeile 97: „Wenn er redet, darfst du zurückreden. Mit einem Spruch. Aber nie gemein.“
+- Roman: `akt3_teil1.md`, Zeile 206–218: „Ich zog, und dann sah ich auf das Brett, lange, als hätte ich etwas Furchtbares entdeckt, und sagte: „Hm.““ … „Seine Uhr lief.“ … „Er suchte vierzig Sekunden lang etwas, das es nicht gab.“
+- Befund: Der Witz der Szene ist die laufende Uhr. Im Spiel ist die Partie gewonnen, wenn Dash
+  fragt, der Held sagt sein „Hm“ erst jetzt, und Dash sucht vierzig Sekunden in einer beendeten
+  Partie. Dash beschreibt außerdem selbst, was der Held getan hat. Zeile 97 ist eine
+  Bedienungsanleitung in Ambroses Mund, gleich nach seinem schönsten Satz der Szene („ein Park …
+  mit einer einzigen Bank“); „Aber nie gemein“ nimmt „Das war nicht fein.“ (Zeile 136) vorweg.
+- Vorschlag: `dash_hm` als Rückblick des Erzählers beginnen: „Mitten in der Partie hast du gezogen
+  und dann lange aufs Brett gesehen. „Hm.““ / Dash: „Was, hm? Was hast du gesehen? Da ist doch
+  nichts. Oder?“ / „Seine Uhr lief. Er hat vierzig Sekunden lang etwas gesucht, das es nicht gab.“
+  Dann wie jetzt ab „Das war nicht fein.“ Zeile 97 streichen; die Erklärung der Sprüche gibt
+  ohnehin die Kartenleiste (`spruch.ambrose.ersterSpruch`).
+
+#### L2.9 – plump – Nova spricht den Werbespruch bei ausgeschalteter Kamera und sagt dann, was man sieht
+
+- Datei: `silicon-bay-akademie.ink`, Knoten `nova_erstes_treffen`, Zeile 227–228.
+- Ink: „Mit Perfect Move trainiert jeder wie ein Champion!“ und „Sieht gerade jemand her? Nein? Dann kann ich ja kurz sitzen bleiben.“
+- Roman: `akt3_teil1.md`, Zeile 346–349: „das rote Licht war aus“ … „Es war das Lächeln von dem Podium in Riverton. Es ging an und wieder aus.“
+- Befund: Im Roman sagt Nova in Kapitel 32 kein Wort; das Lächeln, das an- und ausgeht, ist die
+  ganze Szene (Zeile 226 hat es wörtlich). Die zwei Sprechzeilen danach erklären es: erst der
+  Slogan, obwohl keine Kamera läuft, dann der Satz, der ausspricht, dass sie nur spielt. Ihr erstes
+  wirkliches Wort im Roman ist „Bitte.“ im Serverraum; das verliert so seine Wucht.
+- Vorschlag: Beide Zeilen streichen; der Knoten endet mit „Es geht an und wieder aus.“ `#pause`.
+  Wenn der Slogan bleiben soll, dann davor und mit Licht: „Das rote Licht geht an.“ / Slogan /
+  „Das rote Licht geht aus. Sie zieht die Knie an und sieht hinunter auf den Campus.“
+
+#### L2.10 – Pausen – Abfahrt: achtzehn Zeilen am Stück, zwei Zeiten und drei Schläge ohne eine Pause
+
+- Datei: `ironwood-aussen.ink`, Knoten `bus_silicon_bay_abfahrt`, Zeile 135–152.
+- Ink: „Sie strahlt eine Woche lang.“ und gleich danach „Jetzt ist Januar. An der Haltestelle an der Schnellstraße liegt der Schnee fest. Der Bus nach Silicon Bay hat den Motor an.“
+- Roman: `akt3_teil1.md`, Zeile 33–35 (Absatzwechsel zwischen Dezember und Januar); Zeile 50–51: „Und glaub nicht alles, was glänzt.“ … „Man friert darin, und man weiß nicht, warum.“; Zeile 67: „Er klang nicht spöttisch. Er klang, als freue er sich darauf.“
+- Befund: Nach der einzigen Wahl laufen achtzehn Zeilen durch (Story-Bibel 5.1: höchstens sechs,
+  dann Wahl, Pause oder Ereignis). Der Sprung von Dezember nach Januar, Mamas Rat und Ambroses
+  Vorfreude haben keinen Atem; das Tagebuch im September (Zeile 136) steht ohne Halt vor Junos
+  vier Fragen. Außerdem fehlt „Ich kann nur bis Mittwoch“ … „Dann ist Schule.“ (Roman, Zeile 58),
+  das Junos Abreise in Kapitel 34 vorbereitet, und die drei Sätze von Zeile 140 sind einer zu viel.
+- Vorschlag: Nach Zeile 136 `#pause:2`. Nach „Sie strahlt eine Woche lang.“ `#pause:2`, dann
+  „Jetzt ist Januar.“ als eigene Zeile. Nach Mamas „Man friert darin, und man weiß nicht, warum.“
+  eine Wahl `* [Einsteigen]` und die Kiste erst im Bus (so der Roman, Zeile 53). Juno: „Ich kann
+  nur bis Mittwoch. Dann ist Schule.“ vor „Damit du nicht vergisst, wie man verliert.“
+
+#### L2.11 – Pausen – Serverraum: Novas Bitte ohne eine einzige Pause, drei Bilder des Romans fehlen
+
+- Datei: `silicon-bay-serverraum.ink`, Knoten `schummelgeraete`, Zeile 34–36, und
+  `schummelgeraete_nova`, Zeile 45–50.
+- Ink: „Bitte.“ – „Nova steht in der Tür, ohne Kamera, in einem Pullover, der ihr zu groß ist.“ – „Bitte. Noch nicht.“; später „Ich war gut, weißt du. Vorher.“ – „Ich weiß nicht mehr, welche von den Zügen meine sind.“
+- Roman: `akt3_teil1.md`, Zeile 464–465: „sie sah aus wie jemand, der seit einem Jahr darauf wartet, dass diese Tür aufgeht“; Zeile 478–479: „Ich war richtig gut. Ich weiß nicht mehr, wie gut.“; Zeile 481: „Ich dachte an ein Mädchen auf einem Foto, das die Hände in den Ärmeln hatte.“ Randnotiz Zeile 548: „Nova: kein Thema, nur ihre Stimme und das Rauschen.“
+- Befund: Die Datei hat keine `#pause`. Das erste „Bitte.“, der Fund (der Stöpsel passt in die
+  fünfte Mulde, Zeile 29) und „welche von den Zügen meine sind“ folgen ohne Halt aufeinander; nach
+  der Wahl „Und Dr. Lin?“ kommen sechs Zeilen am Stück. Es fehlen der Blick dessen, der seit einem
+  Jahr wartet (er macht ihr Schweigen verständlich), die Steigerung „richtig gut … wie gut“ und
+  das Foto mit den Händen in den Ärmeln (Motiv Mama/Nova, Dokument 19, Abschnitt 9).
+- Vorschlag: Zeile 29 mit `#pause:2`. Nach Zeile 35: „Sie sieht auf die Schachtel in deiner Hand
+  wie jemand, der seit einem Jahr darauf wartet, dass diese Tür aufgeht.“ `#pause:2`. Zeile 47–48:
+  „Ich war gut, weißt du. Vorher. Ich war richtig gut.“ / „Ich weiß nicht mehr, wie gut. Ich weiß
+  nicht mehr, welche von den Zügen meine sind.“ `#pause:2` / Erzähler: „Du denkst an ein Mädchen
+  auf einem Foto, das die Hände in den Ärmeln hat.“
+
+#### L2.12 – plump – Theos Geschenk: Ambroses Staunen ist zu einem Befund gekürzt und geht ohne Halt in die Aufgabenreihe über
+
+- Datei: `silicon-bay-akademie.ink`, Knoten `theo_tablet`, Zeile 171, 181 und 183–185.
+- Ink: „Kein einziger Fehler. Nicht einer. Der Turm hing sieben Züge lang, und sie wusste es.“; nach dem zweiten „Noch einmal.“ folgt (mit `linGetroffen`) sofort „Eröffnungsgrundsätze. Ich will sehen, ob du sie kennst oder nur benutzt.“ Zeile 171: „Ein Tablet, weiß und dünn, mit dem Zeichen des Konzerns. Da ist ZERO drauf. Die volle Fassung.“ mit `#sprecher:theo`.
+- Roman: `akt3_teil1.md`, Zeile 339–340: „Nicht einer. Hast du das gesehen? Der Turm. Sie hat ihn hängen lassen, sieben Züge lang, und sie wusste. Sie wusste es einfach.“; Zeile 316–317: „Geschenkt. Da ist ZERO drauf. Die volle Fassung. Damit trainierst du in einer Woche mehr als in einem Jahr.“
+- Befund: Im Roman flüstert und stockt Ambrose („Hast du das gesehen? Der Turm.“), im Spiel fasst
+  er zusammen. Das dritte „Noch einmal.“ ist der Augenblick, in dem der Held ihn zum ersten Mal
+  nicht erreicht; danach kommt ohne Pause Theos Prüfungsansage. In Zeile 171 spricht Theo eine
+  Erzählerzeile; „Geschenkt.“ und sein Satz von der Woche und dem Jahr (Bibel 18.2, Theos
+  Kennsatz) fehlen. Dieselbe Vermischung in Zeile 66 („Sie lächelt. Wer hat dir das beigebracht?“
+  als Dr. Lin) und in `weg-ironwood-silicon.ink`, Zeile 162 (Juno).
+- Vorschlag: Zeile 171: Erzähler „Er hält dir ein Tablet hin. Weiß, dünn, mit dem Zeichen des
+  Konzerns.“ / Theo „Geschenkt. Da ist ZERO drauf. Die volle Fassung.“ / Theo „Damit trainierst du
+  in einer Woche mehr als in einem Jahr.“ Zeile 181 teilen: „Kein einziger Fehler. Nicht einer.
+  Hast du das gesehen?“ / „Der Turm. Sie hat ihn hängen lassen, sieben Züge lang, und sie wusste.
+  Sie wusste es einfach.“ Nach dem letzten „Noch einmal.“ `#pause:2`, Erzähler „Neben dir ist es
+  still geworden.“ und `-> END`; die Reihe beim nächsten Ansprechen.
+
+#### L2.13 – fehlt – Ankunft: Ambroses Erinnerung an die Hafenstädte und Victors Zögern sind gestrichen
+
+- Datei: `silicon-bay-aussen.ink`, Knoten `ankunft_zu_fuss`, Zeile 53 und 58.
+- Ink: „Kein Baum. Keine Taube. Nicht einmal eine Ratte. Wo wohnen hier die Tiere?“ und „Ja. Ich war nicht sicher, ob das dasselbe ist.“
+- Roman: `akt3_teil1.md`, Zeile 150–152: „und ich habe in Hafenstädten gelebt, ich weiß, wie eine Stadt ohne Ratten aussieht: gar nicht.“ – „Er klang ratlos.“; Zeile 163: „Er sah auf seine Schuhe.“; Zeile 120–122: „In Silicon Bay war es nicht kalt.“
+- Befund: Gerade der Halbsatz, in dem Ambrose sich erinnert und einen trockenen Witz macht, fehlt;
+  übrig ist die Aufzählung. Victors „Ja.“ und sein Nachsatz stehen in einer Zeile, der Blick auf
+  die Schuhe und die Pause dazwischen fehlen (Tabelle „Neu“: „Er übt Freundlichkeit wie etwas
+  Neues.“). Von den vier Merkmalen des Orts (keine Kälte, kein Geruch, kein Tier, keine
+  Spiegelung) fehlt bei der Ankunft die Kälte, die Mamas „Man friert darin“ umkehrt; ebenso die
+  Straßenbahn ohne Fahrer.
+- Vorschlag: Erste Zeile der Ankunft: „In Silicon Bay ist es nicht kalt. Es liegt kein Schnee.“
+  Zeile 53 in zwei: „Kein Baum. Keine Taube. Nicht einmal eine Ratte.“ / „Ich habe in Hafenstädten
+  gelebt. Ich weiß, wie eine Stadt ohne Ratten aussieht: gar nicht. Wo wohnen hier die Tiere?“
+  Zeile 58: „Ja.“ `#sprecher:victor` / Erzähler „Er sieht auf seine Schuhe.“ `#pause:2` / „Ich war
+  nicht sicher, ob das dasselbe ist.“
+
+---
+
+#### Kleinere Stellen (nicht unter den 13)
+
+- `silicon-bay-akademie.ink`, `lin_erstes_treffen`, Zeile 61: „Kein Kind muss warten, bis ich Zeit habe. Glaube ich.“
+  Drei Sätze in einer Zeile; der Zweifel braucht eine eigene Zeile nach `#pause` (Roman, Zeile 278:
+  „Sie zögerte.“). Zeile 67: Die Wahl „Viele Leute. Und meine Mutter.“ kürzt die Liste des Romans
+  (Zeile 292: „Eine Mathelehrerin. Eine Bibliothekarin. Ein Fahrradkurier und ein Kranführer.“), auf die Ambroses
+  gekränktes „Und ich.“ antwortet; `#stimmung:streng` passt dort nicht zu „gekränkt“.
+- `silicon-bay-akademie.ink`, `lin_nach_sieg`, Zeile 118: „Remis. Ehrlich erkämpft. Die Bronzenadel gehört dir.“
+  Im Remis-Zweig duzt Dr. Lin und siezt eine Zeile später („Wissen Sie, …“), ohne dass „Sie sagt
+  „Sie“. Zu dir. Einmal.“ gefallen ist; „Bronzenadel“ passt nicht zum Glasquadrat mit Bauer.
+- `silicon-bay-lobby.ink`, `victor_falsch`, Zeile 76: „Nein. Ich nicht.“ ohne Pause davor (Roman,
+  Zeile 443: „Er antwortete nicht gleich.“). `vitrine_victor`: Es fehlt „Er hielt den Kopf ein wenig schief.“
+  (Roman, Zeile 380; Motiv Hale/Victor). `vitrine_foto`, Zeile 132: „Er hat sie aufgehoben. Meine Züge.“
+  ohne „In einem Buch.“ und mit `#stimmung:traurig` statt des Schwankens „zwischen Lachen und etwas anderem“.
+- `silicon-bay-aussen.ink`, `hotel_morgen`: Das Schlussbild fehlt (Roman, Zeile 646–647: „einem Reisebrett in der Jackentasche und einem Tablet unter dem Arm“).
+  In `hotel_nacht_frage` steht keine Pause; das ist richtig (Randnotiz: keine Stille).
+
+---
+
+#### Gut gelungen
+
+- `ironwood-aussen.ink`, `bus_silicon_bay_abfahrt`: Junos Wissen ist als Rückblick mit der
+  Tagebuchseite gelöst, alle tragenden Sätze fallen unabhängig von der Wahl („{held} redet mit dem
+  Brett. Nicht fragen. Noch nicht.“, „Clubtagebuch, Außenstelle.“, „Spiel mit Ambrose.“, „Eine
+  Stadt aus Glas. Wie man wohl darin Schach spielt?“ mit `#stimmung:froh`).
+- `silicon-bay-lobby.ink`, `vitrine`: Stille (`#musik:aus #geraeusch:aus`), Wahl „Warten“,
+  `#pause:3`, dann „Das sind meine Züge.“ mit dem einstimmigen Thema; Victors Zählen („der Vater
+  vom Vater vom Großvater meines Vaters“) ohne „Josiah“ und ohne „Ur-ur-ur“, „die einzige
+  Zeitverschwendung, die er sich erlaubt hat“ wörtlich.
+- `silicon-bay-aussen.ink`, `hotel_nacht_frage`: „Und ich?“ ist eine einzelne Wahl, also auf jedem
+  Weg gesagt; Ambrose sitzt („auf der Kante des Stuhls“), öffnet den Mund, die Wahl „Warten“, dann
+  der Blick zur Partie 1853; die Musik `zero` läuft durch. Schluss mit `#musik:ambrose.fern
+#pause:4`.
+- `silicon-bay-akademie.ink`, `lin_schweigen` und `lin_tisch_aus`: Ambroses Regel wörtlich und
+  ohne Zusatz („Er nimmt ihm die Partie weg. Und die gehört euch beiden.“); Dr. Lin als ehrliche
+  Spielerin mit „Ich habe Sie nichts gelehrt. Sie mich.“, dem Satz über die Angst, dem
+  Abschaltton und vier Sekunden Stille.
+- `weg-ironwood-silicon.ink`, `glasbruecke` und `fund_ohrstoepsel`: Die Eisenbrücke fällt nach
+  beiden Antworten; der Stöpsel wird ohne Deutung eingesteckt, Ambrose schweigt dazu.
+
+#### Zählung
+
+Nach Art (13 Befunde): fehlt 2 (L2.1, L2.13) · widerspricht 7 (L2.2 bis L2.8) · plump 2 (L2.9,
+L2.12) · Pausen 2 (L2.10, L2.11).
+
+Nach Datei (Hauptfundstelle): `silicon-bay-aussen.ink` 3 (L2.1, L2.8, L2.13) ·
+`silicon-bay-akademie.ink` 4 (L2.4, L2.6, L2.9, L2.12) · `silicon-bay-serverraum.ink` 2 (L2.3,
+L2.11) · `silicon-bay-lobby.ink` 1 (L2.7) · `weg-ironwood-silicon.ink` 1 (L2.2, mit zweiter Stelle
+in `silicon-bay-aussen.ink`) · `ironwood-aussen.ink` 1 (L2.10) · `texte/de.json` 1 (L2.5).
+
+Pausen im Bestand: `#pause:3` einmal (Vitrine), `#pause:4` zweimal (Tisch aus, Schlusssatz
+Kapitel 34); in `weg-ironwood-silicon.ink`, `silicon-bay-serverraum.ink` und im Abfahrtsknoten
+keine.
+
+#### Nicht geprüft
+
+- Die Aufgabenrunden (`siliconBay.reiheTheo`, `.reiheNova`, `.auswertung`, `wegIronwoodSilicon.tafel`,
+  `.stream`) und ihre Texte in `runden.json`; die Stellungen der Begegnungen (Dash, Joggerin,
+  Stream) und ob Dr. Lins Spielweise in `gegner.json` zum Roman passt.
+- Die Statistentexte in `texte/de.json` (`statist.siliconBay.*`, `statist.wegIronwoodSilicon.*`)
+  sind nur überflogen. Aufgefallen, aber nicht geprüft: Namen realer Programme und lebender
+  Spieler (Regel 5.1 der Bibel) und Möwen über der Glasbrücke; ob das für Statisten gilt, habe ich
+  nicht nachgeschlagen.
+- Steckbriefe, Quest- und Fundtexte, `szenen/`, `vorfuehrungen.json` (ob die Vorführpartien von
+  ZERO „sichtbar glänzen“), die Großansichten (`#bild:…`) und ob die Bildkennungen vorhanden sind.
+- Klangkennungen sind nur gegen die Randnotizen des Romans gelesen, nicht Zeile für Zeile gegen
+  `21_Klangplan.md`; ob die Hülle `#pause:N`, `#klang:lieferroboter`, `#musik:spannung` kennt,
+  ist nicht geprüft.
+- Ob Ambrose ab der Nacht blasser dargestellt wird (T16), liegt im Programm, nicht in Ink.
+- In `ironwood-aussen.ink` sind nur die Knoten zur Haltestelle gelesen, dazu `einladung` als
+  Anschluss. Kapitel 35 (Fähre, `weg-silicon-delacroix.ink`) und der Knoten `faehre` sind nicht
+  gegen den Roman geprüft; die Knoten zu Altstadt, Inselfähre und Batterie (Runde 6, ohne
+  Romanstelle) nur auf Ambroses Ton gelesen.
+- `docs/spiel/19_Ton_und_Spannungsbogen.md` und die Story-Bibel sind in den genannten Abschnitten
+  gelesen (Bibel 5, 18.1, 18.2, Szenen 51–61), Dokument 19 nur über die Stellen zu Silicon Bay,
+  Ambrose, Nova, Dr. Lin und den Leitmotiven. Gespielt wurde nichts; alle Aussagen zur Reihenfolge
+  stammen aus dem Lesen von Ink, `quests.json` und `orte.json`.
+
+### L3 Kapitel 35 bis 40: Weg nach Port Delacroix und Port Delacroix
+
+Geprüft gegen `docs/spiel/roman/akt3_teil2.md` (Kapitel 35–40, mit Randnotizen und der Tabelle „Neu
+gegenüber der Story-Bibel“). Dialogdateien in `inhalte/abenteuer/dialoge/de/`:
+`weg-silicon-delacroix.ink`, `port-delacroix-aussen.ink`, `port-delacroix-turnhalle.ink`,
+`port-delacroix-musikhaus.ink`, `port-delacroix-werkstatt.ink`. Eine eigene Datei
+`erinnerung-werkstatt.ink` gibt es nicht (nur `erinnerung-london.ink` und `erinnerung-siedlung.ink`);
+die Erinnerung 1840 und 1852 steht in `port-delacroix-werkstatt.ink` (Knoten `werkbank_flashback`,
+`werkstatt_1840`, `werkstatt_1852`, `werkbank_nach_flashback`). Die Sätze in der Clubpartie stehen in
+`inhalte/abenteuer/texte/de.json` (`moment.odile.summt`, `moment.held.plan`, `moment.odile.stille`;
+Zuordnung in `begegnungen.json`, Begegnung `portDelacroix.clubkampf`); sie sind mitgeprüft. Batiste,
+Céleste und der Schiffskoch haben keine Partiemomente.
+
+Marken, die die Dateien benutzen: `#sprecher`, `#stimmung` (`fern`, `still`, `froh`, `traurig`,
+`lacht`, `friedlich`, `wuetend`), `#pause` und `#pause:2` bis `#pause:4`, `#musik` (Kennung, `aus`,
+`karte`), `#klang`, `#geraeusch:aus`.
+
+Gesamturteil: Die großen Szenen folgen dem Roman eng und oft wörtlich (Vorwurf, Clubkampf-Rahmen,
+„Das bin ich“, „Mit dir.“, Remys Entschuldigung). Die Schwächen liegen fast alle im Gerüst, nicht im
+Ton: Die Reihenfolge der Szenen 66 bis 69 ist im Spiel nicht gesichert, mehrere tragende Sätze
+hängen an freiwilligen Auslösern, zwei feste Wortlaute fehlen, und der Weg des Geigenkastens
+(Auftrag „Leim“, Übergabe, Geschenk) kommt nicht vor. Verweise auf das Buch stehen in keinem
+Spieltext (nur in Kommentaren und Daten).
+
+---
+
+#### L3.1 – widerspricht – Reihenfolge der Szenen 67, 68 und 69 ist nicht gesichert
+
+- Datei: `port-delacroix-werkstatt.ink`, Knoten `henri`, Zeile 38–42, und `henri_foto`, Zeile 66;
+  `port-delacroix-turnhalle.ink`, Knoten `odile_alltag`, Zeile 142, `odile_nach_simultan`, Zeile 223
+  und 231, Knoten `remy`, Zeile 241–242.
+- Ink: „- not fotoAmbroseGesehen: -> henri_foto“ (einzige Bedingung davor: `tiefpunktGesehen`);
+  „Du siehst ihn, zum ersten Mal seit sechs Tagen: schmal, hochgeschlossen, blasser als früher.“;
+  „+ {bretterGesammelt >= 4 and not portDelacroixSimultanBestanden} [„Was kann ich noch für das Musikhaus tun?“]“;
+  „Du redest mit dem Brett. Ich weiß nicht, warum. Aber du spielst allein.“;
+  „Du siehst zum Geigenkasten hinüber. Der Deckel steht offen.“
+- Roman: `akt3_teil2.md`, Zeile 482: „\_Szene 67 (Clubkampf Port Delacroix, ohne Ambrose). Turnhalle. Stimmung: still, trotzig,“;
+  Zeile 741: „Am Sonntag gab es in der Turnhalle ein Fest.“; Zeile 753: „Das am Donnerstag, das hat dir keiner gesagt.“
+- Befund: Gleich nach dem Vorwurf kann man zu Henri gehen, das Foto sehen, Céleste schlagen und
+  „Mit dir.“ hören (setzt `ambroseSprichtWieder`), bevor der Clubkampf „ohne Ambrose“ gespielt ist.
+  Dann stimmt weder „seit sechs Tagen“ noch „Dann ist er fort, und du bist allein“ im Clubkampf.
+  Ebenso ist die Benefiz-Simultan schon nach vier Brettern offen: Remy entschuldigt sich („du spielst
+  allein“) für eine Partie, die noch nicht gespielt ist, der Deckel „steht offen“, während Ambrose
+  noch schweigt, und weil `remy` zuerst `reiheRemyBestanden` prüft, sagt Remy nach seiner
+  Entschuldigung wieder „Ohne Flüstern.“ und nickt erst später beim Clubkampf. In `orte.json` und
+  `quests.json` steht dazu keine Sperre.
+- Vorschlag: `henri_foto` erst nach dem Clubkampf (`odileHandGegeben`, in der Werkstatt als Variable
+  nachtragen); vorher zeigt Henri nur die Begrüßung aus `henri_vorher`. Die Wahl zur Simultan in
+  `odile_alltag` zusätzlich an `ambroseSprichtWieder` binden (Roman: Sonntag, nach der Werkstatt).
+  In `remy` die Prüfung `simultanGedankt` vor `not reiheRemyBestanden` ist dann nicht mehr nötig,
+  weil die Reihe vor dem Clubkampf liegt.
+
+#### L3.2 – widerspricht – Henris fester Satz „Ein Bruder von irgendwem.“ fehlt
+
+- Datei: `port-delacroix-werkstatt.ink`, Knoten `henri_foto`, Zeile 62; Dateikopf Zeile 5–6.
+- Ink: „Ein Vorfahr. Keiner weiß mehr, wer. Er soll nach New Orleans gegangen sein und nie wiedergekommen.“
+- Roman: `akt3_teil2.md`, Zeile 631: „„Ein Vorfahr“, sagte Henri. „Keiner weiß mehr, wer. Ein Bruder von irgendwem. Er soll“
+  (ebenso Story-Bibel, Szene 68, Zeile 1820; `akt3_befunde.md`, Abschnitt 7, Zeile „Abstammung“).
+- Befund: Fester Punkt verletzt. Ohne „Ein Bruder von irgendwem.“ liest man Henri als direkten
+  Nachfahren von Ambrose; genau das soll die Szene „Die Familie“ nicht sagen (die Whitlock-Duvals
+  stammen von einem älteren Bruder ab). Auch „Sechs Generationen. Sie haben weitergemacht.“
+  (Zeile 71) klingt dann nach eigener Linie. Die Kommentare nennen die Szene noch „Die Nachfahren“
+  (Werkstatt Zeile 5, Turnhalle Zeile 12, außen Zeile 18); der Questtitel in `de.json` heißt richtig
+  „Die Familie“.
+- Vorschlag: Zeile 62 teilen: „Ein Vorfahr. Keiner weiß mehr, wer. Ein Bruder von irgendwem.“ /
+  „Er soll weggegangen sein, nach New Orleans, und nie wiedergekommen.“ Kommentare auf „Die Familie“
+  ändern.
+
+#### L3.3 – widerspricht – Wortlaut am Schiedsrichtertisch: „solange ich spiele“ und das Aufgeben fehlen
+
+- Datei: `port-delacroix-turnhalle.ink`, Knoten `vorwurf_ende`, Zeile 103.
+- Ink: „\* [„Schreiben Sie null. Das Brett bleibt bei Ihnen.“]“
+- Roman: `akt3_teil2.md`, Zeile 234–235: „„Ich gebe die Partie auf“, sagte ich. „Die gegen ihn. Schreiben Sie null. Und das hier bleibt“
+  / „bei Ihnen, solange ich spiele.““ (Story-Bibel, Szene 63: „Das hier bleibt bei Ihnen, solange ich spiele.“)
+- Befund: Fester Wortlaut verändert. „Ich gebe die Partie auf“ fällt nie; „Schreiben Sie null“ sagt
+  einem Kind nicht, dass {held} die gewonnene Partie selbst hergibt (Tabelle „Neu“: „Er zieht die
+  Folge selbst; Würde statt Opferrolle“). Ohne „solange ich spiele“ klingt es nach Weggeben für
+  immer; dann passt Miss Odiles „Hol es, wenn du es brauchst.“ nicht dazu.
+- Vorschlag: Erzähler/Wahl in zwei Schritten: `* [„Ich gebe die Partie auf. Die gegen ihn.“]`, dann
+  Zeile {held} oder zweite Einzelwahl: „Schreiben Sie null. Und das hier bleibt bei Ihnen, solange
+  ich spiele.“ Beide ohne Alternative, damit sie auf jedem Weg fallen.
+
+#### L3.4 – fehlt – Der Weg des Geigenkastens: Auftrag „Leim“, „Das soll er sein.“, Geschenk; Henris Begrüßung nur vor dem Vorwurf
+
+- Datei: `port-delacroix-werkstatt.ink`, Knoten `werkbank`, Zeile 143, `werkbank_flashback`,
+  Zeile 149, `henri_vorher`, Zeile 51; `port-delacroix-turnhalle.ink`, Knoten `odile_clubkampf`,
+  Zeile 153.
+- Ink: „Im Geigenkasten unter deinem Arm bewegt sich nichts. Aber du hörst ihn. Zum ersten Mal seit fünf Tagen.“;
+  „Henri Whitlock-Duval. Leim für den Club? Natürlich für den Club. Umsonst.“;
+  „Du stellst den Geigenkasten auf den Schiedsrichtertisch, geschlossen. Deine Karten liegen daneben, mit dem Bild nach unten.“
+- Roman: `akt3_teil2.md`, Zeile 358–365: „Am fünften Tag schickte Miss Odile mich in die Rue des Facteurs. Dort wohne ein Klavierbauer,“
+  … „Den Geigenkasten gab sie mir mit.“ – „„Er ist schwer“, sagte ich.“ – „„Das soll er sein.““;
+  Story-Bibel, Szene 63: „Danach schenkt sie {held} den Kasten“.
+- Befund: Im Spiel schickt niemand {held} in die Rue des Facteurs, und der Kasten wird weder
+  mitgegeben noch geschenkt; er ist einfach „unter deinem Arm“. Der Auslöser `werkbank` hat keine
+  Bedingung: Wer vor der Turnhalle in die Werkstatt geht, hört „Zum ersten Mal seit fünf Tagen“,
+  bevor Ambrose verstummt ist und bevor es einen Geigenkasten gibt. Henris Begrüßung (Leim,
+  Großmutter, zweihundertdreißig Saiten) steht nur in `henri_vorher`, also nur für den, der vor dem
+  Vorwurf kommt; auf dem Weg des Romans (erst Turnhalle) fällt sie nie, und der Leim hat keinen
+  Anlass.
+- Vorschlag: Neuer Knoten bei Miss Odile nach `bretter_vollstaendig` (Variable `leimAuftrag`):
+  „In der Rue des Facteurs wohnt ein Klavierbauer. Der hat Leim, den guten, für die Bretter, die sich
+  verzogen haben.“ / Erzähler: „Den Geigenkasten gibt sie dir mit.“ / `* [„Er ist schwer.“]` / „Das
+  soll er sein.“ `#pause`. `werkbank` und Henris Leim daran binden; Henris Begrüßung an den Anfang
+  seines ersten Gesprächs nach dem Auftrag stellen. Das Schenken (Bibel, nach dem Clubkampf) braucht
+  noch eine Zeile; der Roman hat in Kapitel 35–40 keinen Wortlaut dafür (Entscheidung Hauptchat).
+
+#### L3.5 – fehlt (hängt am Antippen) – „Zug vierzehn“ und „sie“ liegen an einem freiwilligen Ansehen-Auslöser
+
+- Datei: `weg-silicon-delacroix.ink`, Knoten `delfin`, Zeile 213–218 (in `orte.json` Auslöser
+  `delfin`, Art `dialog`), Knoten `guidry`, Zeile 97–100; Rückbezug in `port-delacroix-aussen.ink`,
+  Knoten `brett_gezaehlt`, Zeile 129.
+- Ink: „Den, den sie gespielt hätte.“; „Er sagt „sie“. Wie bei einem Menschen.“;
+  „Ich bin hier weggegangen. Das ist nicht dasselbe.“
+- Roman: `akt3_teil2.md`, Zeile 31–44: „Den, den sie gespielt hätte.“ … „Er sagte _sie_. Wie bei einem Menschen.“;
+  Zeile 59: „„Ich bin hier weggegangen“, sagte Ambrose. „Das ist nicht dasselbe.““; Tabelle Zeile 788:
+  „Die Entfremdung wird hörbar, bevor der Bruch kommt.“
+- Befund: Die Entfremdung auf der Fähre fällt nur, wenn man den Delfin-Punkt antippt; der Satz
+  über das Weggehen nur, wenn man Mr. Guidry anspricht. Wer beides auslässt, kommt ohne Vorbereitung
+  in den Vorwurf, und der Rückbezug „Es sagt niemand „Zug vierzehn““ beim Brettersammeln greift ins
+  Leere. Im Knoten selbst ist die Folge gut gebaut.
+- Vorschlag: Die Zeilen 211–218 (Reling, „Zug vierzehn“, „sie“) als einmaliges Pflichtereignis beim
+  Betreten des Decks; der Delfin kann Ansehen bleiben. „Diese Luft. Salz und Holz.“ / „Du bist hier
+  geboren.“ / „Ich bin hier weggegangen. Das ist nicht dasselbe.“ an den Anfang des Pflichtübergangs
+  `ankunft_zu_fuss` (dort spricht Ambrose ohnehin); Guidry behält nur seine Weisheit.
+
+#### L3.6 – fehlt (hängt am Antippen) und Pausen – Claires Versprechen und „Deshalb bist du hier.“ brauchen ein zweites Antippen; drei Stimmen in einer Zeile
+
+- Datei: `port-delacroix-werkstatt.ink`, Knoten `werkbank`, Zeile 139, und
+  `werkbank_nach_flashback`, Zeile 186 und 194.
+- Ink: „- flashbackWerkstattBestanden and not claireErzaehlt: -> werkbank_nach_flashback“;
+  „„Wenn ich groß bin, will ich das Brett haben.“ – „Es ist meines.“ – „Dann eben, wenn du tot bist.““;
+  „Dann schweigt er wieder. Es war sein einer Satz für diesen Tag.“
+- Roman: `akt3_teil2.md`, Zeile 443–455: „„Es ist meines. Ich habe es gerade erst gebaut.““ –
+  „„Dann eben, wenn du tot bist.““ – „„Claire!“, sagte mein Vater.“ –
+  „Ich lachte. Ich war einundzwanzig, und ich hatte alle Zeit der Welt.“; Zeile 471–472: „Es war sein einer Satz für diesen Tag, und er hatte ihn längst“
+  / „verbraucht.“; Tabelle Zeile 797: „Dialog im Flashback; Schlusszeile „Deshalb bist du hier“.“
+- Befund: Nach der Runde (Zugraten) endet die Quest `portDelacroix.flashbackWerkstatt`; das Versprechen
+  und Ambroses Schlusssatz kommen nur, wenn man die Werkbank von sich aus noch einmal antippt. Damit
+  hängt der Satz, der erklärt, warum das Brett in Maple Falls liegt, an der Reihenfolge des
+  Antippens. Im Knoten selbst ist der Kern in eine Zeile gepresst: drei Sprecher, kein Atem nach
+  „wenn du tot bist“; „Ich habe es gerade erst gebaut“ (fester Punkt: das Brett ist 1852 gerade
+  gebaut) und „alle Zeit der Welt“ fehlen. „Es war sein einer Satz“ folgt auf drei Ambrose-Zeilen
+  und wirkt ohne den Nachsatz wie ein Zählfehler.
+- Vorschlag: Zweiten Questschritt (Dialog `werkbank_nach_flashback`) anlegen oder die Hülle nach der
+  Runde von selbst dorthin führen. Zeilen: „Wenn ich groß bin, will ich das Brett haben.“ / „Es ist
+  meines. Ich habe es gerade erst gebaut.“ / „Dann eben, wenn du tot bist.“ `#pause` / „Claire!“,
+  sagt dein Vater. Du lachst. Du bist einundzwanzig, und du hast alle Zeit der Welt. / Wahl
+  „Abgemacht …“. Schluss: „Dann schweigt er wieder. Es war sein einer Satz für diesen Tag, und er
+  hat ihn längst verbraucht.“
+
+#### L3.7 – widerspricht – Ambrose spricht in der Schweigezeit (Ruine, Funde am Weg)
+
+- Datei: `port-delacroix-musikhaus.ink`, Knoten `loch_im_dach`, Zeile 149;
+  `weg-silicon-delacroix.ink`, Knoten `seite02`, Zeile 244, `spur_pm3`, Zeile 268, `fund_muschel`,
+  Zeile 141; Dateikopf Zeile 15.
+- Ink: „Früher hat hier jemand Trompete gespielt, bis die Fenster zitterten. Jetzt zittert nur das Wasser.“;
+  „Der Wind verteilt Stellungen übers ganze Land. Heben wir sie auf.“;
+  „Hilfe, die mitschreibt. Das gefällt mir nicht.“; im Kopf derselben Datei: „Ambrose kommentiert die Funde nicht“
+- Roman: `akt3_teil2.md`, Zeile 253: „Ab hier fehlt Ambrose auf allen Karten; im Menü sind seine Karten grau.“;
+  Tabelle Zeile 788: „Seine Kommentare nach Partien werden in diesem Abschnitt kurz und kalt.“
+- Befund: `loch_im_dach` hat keine Bedingung (anders als `notenheft`, das `ambroseSprichtWieder`
+  prüft): In der Ruine redet Ambrose mitten im Schweigen einen ganzen, wehmütigen Satz. Am Weg
+  kommentiert er drei Funde, obwohl der Dateikopf das Gegenteil sagt; „Heben wir sie auf.“ ist der
+  warme Reisegefährte aus Akt 2, und der Ambrose, der nachts der Maschine zusieht, würde über die
+  Mappe des Konzerns nicht so urteilen. Wer nach dem Vorwurf zum Deich zurückgeht, hört ihn dort
+  ebenfalls.
+- Vorschlag: `loch_im_dach`: Zeile 149 in `{ambroseSprichtWieder: …}` setzen. `seite02` und
+  `spur_pm3`: Ambrose-Zeile streichen (der Erzähler genügt). Die Muschel-Zeile („Meine Schwester
+  sammelte solche.“) darf als Vorbereitung auf Claire bleiben, aber nur vor dem Vorwurf
+  (`not tiefpunktGesehen`), und der Dateikopf muss das sagen.
+
+#### L3.8 – widerspricht (wer was weiß) – Remy spricht von „Geistern“
+
+- Datei: `port-delacroix-turnhalle.ink`, Knoten `remy_reihe`, Zeile 253.
+- Ink: „Hier hilft man mit den Händen. Nicht mit Bildschirmen. Und nicht mit Geistern.“
+- Roman: `akt3_teil2.md`, Zeile 752: „Du redest mit dem Brett. Ich weiß nicht, warum, und ich will es auch nicht“;
+  Zeile 195: „„Dann rede ich auch mit meinem.“ Remy lachte nicht.“
+- Befund: Remy weiß nichts von einem Geist; er hat nur das Flüstern in den Rucksack gesehen und
+  hält es bis zuletzt für unerklärt. „Geister“ verrät dem Spieler, dass die Halle mehr ahnt, und
+  nimmt Remys späterem Satz die Ehrlichkeit.
+- Vorschlag: „Hier hilft man mit den Händen. Nicht mit Bildschirmen. Und nicht mit Flüstern.“
+
+#### L3.9 – fehlt – Clubkampf: der feste Moment „niemand sagt, ob es stimmt“ fehlt; der Erzähler behauptet Brettfakten
+
+- Datei: `inhalte/abenteuer/texte/de.json`, Zeile 509–510 (`moment.held.plan`,
+  `moment.odile.stille`); `port-delacroix-turnhalle.ink`, Knoten `odile_nach_partie`, Zeile 176.
+- Text: „Es hängt nichts. Du fragst dich selbst: Was will sie? Und was will ich?“;
+  „Miss Odile hört auf zu summen. Es ist so still, dass du Remys Atem hörst.“
+- Roman: `akt3_teil2.md`, Zeile 546: „Ein Plan. Mein erster. Er war hässlich und langsam, und er gehörte mir.“;
+  Zeile 558: „Niemand sagte mir, ob ich mich verzählt hatte.“; Dokument 19, Abschnitt 6, Zeile 192:
+  „Die Stille; niemand sagt, ob es stimmt“.
+- Befund: Die drei Momente sind sparsam und gut gesetzt (Summen, Frage, Stille), aber der Satz, den
+  Dokument 19 als Moment dieser Partie festlegt, fehlt, ebenso „er gehörte mir“. „Es hängt nichts.“
+  wird ab Zug 12 gesagt, gleich wie das Brett aussieht; hängt gerade eine Figur, widerspricht der
+  Erzähler dem, was man sieht. (Dasselbe Risiko, kleiner, bei „Der Königsflügel. Immer mein
+  Königsflügel.“ nach jedem Sieg.)
+- Vorschlag: `moment.held.plan`: „Früher hättest du jetzt gefragt: Was hängt? Du fragst dich selbst:
+  Was will sie? Und was will ich?“ `moment.odile.stille`: „Miss Odile hört auf zu summen. Du rechnest
+  es dreimal. Niemand sagt dir, ob du dich verzählt hast.“ Nach dem Sieg in `odile_nach_partie` vor
+  Miss Odiles Satz eine Erzählzeile: „Ein Plan. Dein erster. Er war hässlich und langsam, und er
+  gehört dir.“
+
+#### L3.10 – widerspricht (Reihenfolge) – Brettersammeln: Rahmensatz nur an Haus 1, Batistes Stellung ohne Batiste, „Es war gut.“ fehlt
+
+- Datei: `port-delacroix-aussen.ink`, Knoten `brett_haus1`, Zeile 90, `brett_gezaehlt`, Zeile 129,
+  `bretter_vollstaendig`, Zeile 140.
+- Ink: „An fremde Türen klopfen, in einer Stadt, in der man dich gestern einen Betrüger genannt hat. Niemand schlägt die Tür zu.“;
+  „Es redet niemand neben dir. Es sagt niemand „Zug vierzehn“. Es ist still in deinem Kopf, wie wenn ein Zahn fehlt.“;
+  „Du liest sie dreimal. Dann baust du auf Junos Reisebrett die Stellung von Batiste auf und spielst sie allein noch einmal durch.“
+- Roman: `akt3_teil2.md`, Zeile 278: „Niemand schlug die Tür zu.“; Zeile 294: „Es war still in meinem Kopf, zum ersten Mal seit dem Sommer. Es war gut. Und es war, wie wenn“;
+  Zeile 344–345: „Dann holte ich Junos Reisebrett heraus und baute die Stellung von Batiste auf und spielte sie“
+  / „noch einmal durch, allein, bis ich verstand, was ich getan hatte.“
+- Befund: „Niemand schlägt die Tür zu“ steht nur im ersten Haus; wer mit Haus 3 beginnt, liest den
+  Rahmen als Drittes oder gar nicht zuerst. Die Postkarte kommt nach dem vierten Brett, auch wenn
+  man Batiste noch nie gesehen oder nie besiegt hat; dann gibt es keine „Stellung von Batiste“. In
+  der Zahn-Zeile (drei Sätze, Regel 5.1: zwei) fehlt die helle Hälfte: „Es war gut.“ Bibel, Szene 64:
+  „gut und einsam zugleich“.
+- Vorschlag: Rahmensatz nach `brett_gezaehlt` unter `bretterGesammelt == 1` ziehen, vor die
+  Zahn-Zeile, und diese teilen: „Es redet niemand neben dir. Es sagt niemand „Zug vierzehn“.“ /
+  „Es ist still in deinem Kopf, zum ersten Mal seit dem Sommer. Es ist gut.“ `#pause` / „Und es ist,
+  wie wenn ein Zahn fehlt.“ Postkarten-Schluss nur bei Sieg gegen Batiste
+  (`ausgangPortDelacroixBatiste == "sieg"`), mit „bis du verstehst, was du getan hast“; sonst endet
+  die Szene mit „Du liest sie dreimal.“
+
+#### L3.11 – Pausen – Die Pause sitzt nicht an der Enthüllung; Erzählsätze unter Figurensprechern
+
+- Datei: `port-delacroix-werkstatt.ink`, Knoten `henri_foto`, Zeile 61–64;
+  `port-delacroix-turnhalle.ink`, Knoten `vorwurf`, Zeile 56 und 61–62, Knoten `odile_alltag`,
+  Zeile 137; `port-delacroix-aussen.ink`, Knoten `ankunft_zu_fuss`, Zeile 56.
+- Ink: „Das bin ich. #sprecher:ambrose #stimmung:still #musik:ambrose.verstimmt“ (die `#pause` steht
+  drei Zeilen davor am Foto); „Er stößt seinen Trompetenkasten mit dem Fuß an. Hier hilft man mit den Händen. #sprecher:remy“;
+  „- König nach h1. #sprecher:ambrose #musik:zero“; „- Da stand das Wasser. #sprecher:mutter“
+- Roman: `akt3_teil2.md`, Zeile 636–638: „Der Deckel des Geigenkastens war zu. Ich hatte ihn nicht angerührt.“
+  – „„Das bin ich.““; Zeile 140–144: „Nichts.“ … „Eine Pause. Dann seine Stimme, flach, schnell, als läse er etwas ab.“;
+  Randnotiz Zeile 778: „Foto: Stille.“ Story-Bibel, Szene 68: „Das bin ich.“ mit `#pause`.
+- Befund: (a) Zwischen der Stille am Foto und „Das bin ich.“ liegen zwei Henri-Zeilen; die
+  Enthüllung selbst hat keine Pause, und der geschlossene Deckel fehlt. (b) Vor „König nach h1“
+  fehlt das Zögern: Ambrose antwortet sofort, die Stimme wird nicht beschrieben (nur die Musik trägt
+  es). (c) In Zeile 56 der Turnhalle und in der dritten Variante von `odile_alltag` („Miss Odile
+  singt leise, während sie Figuren sortiert.“) steht ein Erzählsatz unter dem Sprecher der Figur;
+  das Dialogfenster zeigt ihn als Rede. (d) „Da stand das Wasser.“ ist das Bild des Sturms und geht
+  ohne Atem in die nächste Erzählzeile über.
+- Vorschlag: (a) Nach Henris „Ich fand, er sieht nett aus.“ Erzähler: „Der Deckel des Geigenkastens
+  ist zu. Du hast ihn nicht angerührt.“ `#musik:aus #pause:2`, dann „Das bin ich.“ (b) Nach der Wahl
+  „Ambrose. Bitte.“: „Eine Pause. Dann seine Stimme, flach, schnell, als läse er etwas ab.“
+  `#sprecher:erzaehler #pause:2`, dann „König nach h1.“ (c) Zeile 56 teilen (Erzähler / Remy); die
+  Variante in `odile_alltag` dem Erzähler geben. (d) `#pause` an „Da stand das Wasser.“
+
+#### L3.12 – plump (Ambrose belehrt) – Lehrbuchsätze beim Schach960
+
+- Datei: `port-delacroix-musikhaus.ink`, Knoten `blaeser_regel`, Zeile 83, und `blaeser_set3`,
+  Zeile 110.
+- Ink: „Hier hilft dir nichts Auswendiggelerntes, {held}. Nur Grundsätze: Figuren entwickeln, das Zentrum besetzen, den König in Sicherheit bringen.“;
+  „Sie wird schneller und mutiger. Lass dich nicht mitreißen. Entwickeln, Zentrum, König. Dann darfst du improvisieren.“
+- Roman: keine Stelle in Kapitel 35–40 (die Bläserin gehört zu Akt 4). Maßstab: Dokument 19,
+  Abschnitt 3, Zeile 70: „Ambrose belehrt ohne Pause.“; Abschnitt 5.2, Zeile 136:
+  „Deshalb lernst du es. Nicht ich.“
+- Befund: Die Aufzählung ist eine Merkregel aus einem Lehrgang, zweimal, und „Dann darfst du
+  improvisieren“ erteilt Erlaubnis; in Akt 4 soll Ambrose gerade nicht mehr dozieren. Die beiden
+  Zeilen danach („Als Kind fand ich das Unsinn.“, „Fast zweihundert Jahre zu spät, aber in der
+  richtigen Stadt.“) treffen seinen Ton genau und tragen die Stelle allein. Mabel erklärt die Regel
+  schon vollständig.
+- Vorschlag: Zeile 83: „Hier hilft dir nichts Auswendiggelerntes, {held}. Sieh hin, was dasteht.“
+  Zeile 110: „Sie wird schneller und mutiger. Lass dich nicht mitreißen.“ (Rest streichen.)
+
+#### L3.13 – widerspricht (Maßstab Bibel 5.2) – männliche Formen für {held}
+
+- Datei: `port-delacroix-aussen.ink`, Knoten `batiste_erstes_treffen`, Zeile 164, `brett_haus1`,
+  Zeile 90; `port-delacroix-turnhalle.ink`, Knoten `odile_clubkampf`, Zeile 152.
+- Ink: „Du bist der mit dem Rucksack.“; „Die Turnhalle ist voll. Sie sind alle gekommen, um den zu sehen, der in seinen Rucksack flüstert.“;
+  dazu „einen Betrüger genannt“ (Zeile 90, Zitat in L3.10).
+- Roman: `akt3_teil2.md`, Zeile 300: „„Du bist der mit dem Rucksack“, sagte er, ohne aufzusehen.“ (der
+  Roman erzählt in der Ich-Form und legt sich dort fest; das Spiel darf es nicht). Story-Bibel 5.2,
+  Zeile 687: „Keine Substantive mit Geschlecht für {held}“.
+- Befund: Drei Stellen sind wörtlich aus dem Roman übernommen und machen {held} männlich.
+- Vorschlag: „Du bist das Kind mit dem Rucksack.“; „Sie sind alle gekommen, um zu sehen, wer da in
+  einen Rucksack flüstert.“; „in einer Stadt, in der es gestern hieß, du schummelst“.
+
+---
+
+#### Gut gelungen
+
+- `port-delacroix-turnhalle.ink`, `vorwurf_zug` bis `vorwurf_ende` (Zeile 71–110): alle festen Sätze
+  wörtlich und als Einzelwahl, also auf jedem Weg („Du schummelst. Wie die mit ihren Bildschirmen. Nur altmodischer.“,
+  „Er hat nicht ganz unrecht.“ mit `#stimmung:still #pause:4`, „Das war ihr Zug.“, „Dann spiele ich
+  ohne dich.“). Der Stuhl mit `#musik:aus #geraeusch:aus #pause:3`, Mamas „Fast.“ auf eigener Zeile
+  mit `#pause`.
+- `port-delacroix-werkstatt.ink`, `celeste_nach_partie` (Zeile 118–128): „Mit Klavieren.“ `#pause`,
+  dann „Mit dir.“ mit `#musik:ambrose.held`, danach nur die Wahl „Nichts sagen können“ und „Ich
+  schulde dir eine Antwort.“ Ambrose erklärt nichts, er lässt los.
+- `port-delacroix-turnhalle.ink`, `odile_nach_partie` und `odile_hand` (Zeile 171–202): „Das war
+  deine Partie. Jeder hier hat es gesehen.“ fällt bei jedem Ausgang; nach einer Niederlage „Miss
+  Odile hat gewonnen. Sie sieht nicht aus, als hätte sie gewonnen.“; Schluss mit der Hand auf dem
+  Kasten, „Noch nicht.“
+- `port-delacroix-aussen.ink`, `ankunft_zu_fuss` (Zeile 53–64): Wasserlinie als Frage und ein Satz
+  von Mama; Ambrose am Musikhaus mit `#stimmung:fern`, dann nur „Er macht einen Schritt darauf zu.
+  Dann noch einen.“ Dazu `brett_gezaehlt`: Die Zahn-Zeile hängt am ersten Brett, nicht an einem
+  bestimmten Haus (das richtige Muster, siehe L3.10).
+- `weg-silicon-delacroix.ink`, `delfin` (Zeile 211–221): Zugnummer, „sie“, Delfin und „Er hat es
+  nicht gesehen“ in zehn Zeilen, mit `#musik:ambrose.verzerrt`; nur der Ort im Gerüst ist falsch
+  (L3.5).
+
+#### Zählung
+
+| Art                        | Befunde                                    | Anzahl |
+| -------------------------- | ------------------------------------------ | ------ |
+| (1) fehlt                  | L3.4, L3.5, L3.6, L3.9                     | 4      |
+| (2) widerspricht           | L3.1, L3.2, L3.3, L3.7, L3.8, L3.10, L3.13 | 7      |
+| (3) plump, Ambrose belehrt | L3.12                                      | 1      |
+| (4) Pausen und Marken      | L3.11 (dazu Teil von L3.6)                 | 1      |
+
+| Datei (Hauptfundstelle)         | Befunde                 | Anzahl |
+| ------------------------------- | ----------------------- | ------ |
+| `port-delacroix-werkstatt.ink`  | L3.2, L3.4, L3.6, L3.11 | 4      |
+| `port-delacroix-turnhalle.ink`  | L3.1, L3.3, L3.8        | 3      |
+| `port-delacroix-aussen.ink`     | L3.10, L3.13            | 2      |
+| `port-delacroix-musikhaus.ink`  | L3.7, L3.12             | 2      |
+| `weg-silicon-delacroix.ink`     | L3.5                    | 1      |
+| `texte/de.json` (Partiemomente) | L3.9                    | 1      |
+
+Mehrere Befunde berühren zwei Dateien (L3.1 Werkstatt und Turnhalle; L3.7 Musikhaus und Weg; L3.11
+Werkstatt, Turnhalle und außen; L3.13 außen und Turnhalle).
+
+Kleinere Beobachtungen, nicht unter den 13: Im Musikhaus sagt Ambrose beim Schild „Klaviere
+gestimmt“, bei der Ankunft (wie im Roman) „die Orgel“; das Schild der Ruine heißt außen „Maison de
+Musique. Club d’Échecs, depuis 1889.“ und hängt, innen „Musik- und Schachclub Port Delacroix, seit
+1889“ und lehnt. Mama legt nach dem Vorwurf nicht den Arm um {held} (Roman Zeile 243, Bibel Szene
+63). Céleste sitzt laut Knoten `celeste` schon am Laptop, bevor in `henri_foto` „eine Tür schlägt“;
+ihr „Schach?“ fällt, ohne dass Henri den Schachclub genannt hat. „Mit diesen Händen.“ (Roman Zeile 717) fehlt bei Ambrose. Dass auf dem alten Brett gespielt wird („auf seinem Brett, zum ersten Mal“,
+Roman Zeile 686), wird nicht gesagt, nur das Umziehen der Stellung. `remy_versoehnt`, zweite
+Variante, sagt das Gefühl direkt („Ich weiß, wie das ist.“). Mrs. Arceneaux nennt Remy ihren Enkel,
+auch wenn man ihn noch nicht kennt. Batiste schiebt die Karten „über die Kiste“, das Brett steht auf
+einem Eimer. Mamas blaues Heft auf der Fähre fehlt.
+
+#### Nicht geprüft
+
+- Ob die App Sperren kennt, die nicht in `orte.json`, `quests.json` oder den Ink-Dateien stehen
+  (etwa im Code der Hülle). L3.1, L3.4 und L3.6 stützen sich darauf, dass in den Daten keine
+  Bedingung steht; den TypeScript-Code habe ich nicht gelesen. Ebenso nicht, ob die Hülle nach einer
+  Aufgabenrunde von selbst wieder in den Dialog führt (L3.6).
+- Die Sperre des Mentor-Zugs (R29) und die grauen Ambrose-Karten: Sie stehen nicht in Ink. In
+  `begegnungen.json` hat nur der Clubkampf `kartenErlaubt: false`; Batiste und Céleste erlauben
+  Karten. Ob das gewollt ist, habe ich nicht geklärt.
+- Die Statistenzeilen in `de.json` (`statist.portDelacroix.*`, `statist.wegSiliconDelacroix.*`) nur
+  überflogen. Eine davon ist eine Ambrose-Zeile (`statist.portDelacroix.aussen.rentner.ambrose`); ob
+  sie in der Schweigezeit unterdrückt wird, weiß ich nicht.
+- Die Aufgabenrunden selbst (`runden.json`: Tafel, Kapitänsproblem, Reihen von Remy und Lou,
+  Simultan, Zugraten der Erinnerung) und die Schachinhalte: nicht geprüft, auch nicht, ob das
+  Zugraten wirklich bei Zug 1 bis 11 liegt.
+- Klang, Bild und Karte nur so weit, wie Marken in Ink stehen; ob die Kennungen (`remy.mauer`,
+  `zero`, `ambrose.ende`, `stimmton`, `ambrose.vierhaendig`, `held`, `#stimmung:wuetend`) im
+  Klangplan und im Porträtvorrat vorhanden sind, habe ich nicht nachgesehen.
+- `weg-delacroix-desert.ink` (Kapitel 41 und folgende) gehört nicht zu diesem Teil und ist nur per
+  Suche gestreift. „Juno weiß seit Dezember von Ambrose“ ließ sich hier nicht prüfen: Juno kommt in
+  diesen Dateien nur als Besitzerin des Reisebretts vor; es gibt keinen Widerspruch dazu.
+- Szene 70 (Das Schild) und die Bläserin liegen außerhalb der Kapitel 35–40; die Datei ist gelesen,
+  aber nur gegen die Bibel und die Maßstäbe gehalten, nicht gegen einen Romantext.

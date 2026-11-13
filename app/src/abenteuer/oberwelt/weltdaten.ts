@@ -20,6 +20,8 @@ import { hatSpieltext, ladeSpieltexte, tSpiel } from "../texte/texte";
 export { ladeDialog } from "../dialog/dialogdatei";
 import { liesBelebung, statistenbild, statistensatz } from "./belebung";
 import type { SprechblasenInhalt } from "./Sprechblase";
+import { ohneAbwesende } from "../regeln/abwesenheit";
+import type { Abenteuerstand } from "../schnittstelle/spielstand";
 import { figurenbildAdresse } from "./figurbogen";
 import { kartenfassung } from "./kartenfassung";
 import { istWinter } from "./winter";
@@ -161,12 +163,14 @@ export async function ladeWelt(
   const fund = findeKarte(daten, kartenkennung);
   if (!fund) throw new Spielfehler("fehler.welt.karteFehlt", { karte: kartenkennung });
   const fassung = kartenfassung(fund.karte, variablen);
-  const [karte, kachelbild, heldbild, figurbild] = await Promise.all([
+  const [geladen, kachelbild, heldbild, figurbild] = await Promise.all([
     liesPaketJson<object>(fassung.datei),
     paketdateiAlsAdresse(KACHELBILD),
     paketdateiAlsAdresse(fund.ort.art === "erinnerung" ? FIGURBILD : HELDBILD),
     paketdateiAlsAdresse(FIGURBILD),
   ]);
+  // Im Tiefpunkt steht Ambrose auf keiner Karte (regeln/abwesenheit.ts).
+  const karte = ohneAbwesende(geladen, variablen as Abenteuerstand["dialogvariablen"]);
   const erinnerung = fund.ort.art === "erinnerung";
   const [stilbild, heldfigur, figurenbilder, moebel, hintergrund, belebungsbilder] =
     await Promise.all([

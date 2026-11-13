@@ -6,8 +6,8 @@
 // 20 Erinnerung: New York, 1857 (Zugerraten der Partie klassik-paulsen-morphy, Runde
 // cedarCreek.erinnerungNewYork). Einstiege wie in orte.json: „karton“, „programmheft“.
 // Gutachten Teil K (13.11.2026): Oktober 1858 (K1.1), „Gleich.“ statt „Später.“ (K1.5), die Reibung
-// nach New York in beiden Zweigen und auch über den Karton erreichbar (K1.7; einen Dialog, der nach
-// der Runde von selbst startet, kennt die Hülle nicht), Hale und Treppe im Stamm (K1.8).
+// nach New York in beiden Zweigen; programmheft_danach startet nach der Runde von selbst
+// (runden.json „danach“, K1.7), Hale und Treppe im Stamm (K1.8).
 // Den Karton 1850–1859 gibt es nach dem Umräumen oder nach dem Clubkampf (Bibel, Szene 18).
 // Ambrose erwähnt 1866 nicht und nennt Hales Vornamen nicht (Bibel, Szene 19).
 // Runde 11 (Roman, Kapitel 12; Dialogprüfung B2, VC53 bis VC73): Ordnen als stilles Tragen mit
@@ -44,7 +44,6 @@ VAR newYorkBesprochen = false
 - not okaforGetroffen: -> karton_fremd
 - not archivGeordnet and (nadelCedarCreek == 0 or ordnenAngeboten): -> ordnen
 - not erzaehlung1858Gesehen: -> karton_1858
-- erinnerungNewYorkBestanden and not newYorkBesprochen: -> programmheft_danach
 - else: -> karton_alltag
 }
 
@@ -185,6 +184,10 @@ Setz dich. Du spielst seine Züge. Ich sage dir nichts. #sprecher:ambrose
     -> END
 
 === programmheft_danach ===
+{not erinnerungNewYorkBestanden:
+    Das Programmheft liegt aufgeschlagen. Die Züge warten. #sprecher:erzaehler
+    -> END
+}
 {newYorkBesprochen:
     Das Programmheft. Die Ecken sind weich vom Anfassen. #sprecher:erzaehler
     -> END

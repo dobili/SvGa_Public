@@ -19,6 +19,9 @@ EXTERNAL beginnePartie(begegnung)
 EXTERNAL beginneAufgaben(runde)
 
 VAR held = "Du"
+VAR wardLaurieGesagt = false
+VAR clubkampfHeimwegGesehen = false
+VAR fernpartieEndspielGesagt = false
 VAR wardLektionGesehen = false
 VAR reiheKitBestanden = false
 VAR reiheHaraldsenBestanden = false
@@ -49,23 +52,28 @@ VAR haraldsenGetroffen = false
 
 === ward_lektion ===
 ~ wardLektionGesehen = true
-In der Hütte knistert ein Kaminfeuer. Eine Frau mit grauem Zopf sitzt an einem alten Holzbrett und sieht nicht auf. #sprecher:erzaehler
-Tür zu. Die Wärme ist teuer hier oben. #sprecher:ward
-Eleanor Ward. Setz dich. Ich zeige dir etwas, bevor wir reden. #sprecher:ward
-Sie stellt drei Figuren auf: zwei Könige und einen weißen Bauern. #sprecher:erzaehler
-König und Bauer gegen König. Die Könige stehen sich gegenüber, ein Feld dazwischen. Wer zuerst zieht, verliert. Warum? #sprecher:ward
-+ [„Weil der König ausweichen muss.“]
-    Genau. Der andere König geht vor, auf das Feld, das frei wird. #sprecher:ward
-+ [„Ich weiß es nicht.“]
-    Ehrlich. Gut. Der König, der ziehen muss, muss ausweichen. Und der andere geht vor. #sprecher:ward
-- Das heißt Opposition. Wer sie hat, bestimmt, wohin der andere König darf. #sprecher:ward
-Opposition. Der König, der zuerst zieht, verliert. Wie im Leben, manchmal. #sprecher:ward
-Ambrose lehnt sich vor, so weit ein Geist sich vorlehnen kann. #sprecher:erzaehler
-Sie spielt, wie ich mit fünfzig gespielt hätte. Wenn ich fünfzig geworden wäre. #sprecher:ambrose #stimmung:friedlich
-Erst Kit, dann Haraldsen. Bauern, dann Türme. Dann sehen wir weiter. #sprecher:ward
+Die Hütte ist aus dunklem Holz. Im Kamin brennt auch im Juli Feuer. An den Wänden hängt nichts außer einem Thermometer. #sprecher:erzaehler
+Eleanor Ward sitzt im Sessel am Feuer und liest den Absatz zu Ende. Dann legt sie ein Lesezeichen ein. #sprecher:erzaehler
+Sie betrachtet dich, wie man eine Stellung betrachtet. Sieben. Wie hast du Big Joe geschlagen? #sprecher:ward
+* [„Grundreihe. Ein Springeropfer, damit der Turm hinunterkommt.“]
+- Und die kleine Castillo? #sprecher:ward
+* [„Ein Läufer, der nicht ging. Dann vierzig Züge Endspiel.“]
+- Vierzig Züge. Dann hast du schon einmal gesehen, wie es aussieht. Setz dich. #sprecher:ward
+Auf dem Brett stehen drei Figuren. Ein weißer König, ein weißer Bauer, ein schwarzer König. Sonst nichts. #sprecher:erzaehler #musik:aus #geraeusch:aus
+* [„Das ist alles?“]
+- Das ist alles, was übrig bleibt, wenn man lange genug spielt. #sprecher:ward
+Die Könige stehen sich gegenüber, ein Feld dazwischen. Wer am Zug ist, verliert. Warum? #sprecher:ward
+* [„Weil er weichen muss. Dann kommt der andere vorbei.“]
+* [„Ich weiß es nicht.“]
+    Ehrlich. Gut. Wer ziehen muss, muss zur Seite. Und dann kommt der andere vorbei. #sprecher:ward
+- Opposition. Der zuerst zieht, gibt nach. Wie im Leben, manchmal. #sprecher:ward
+Ein Endspiel ist eine Wahrheit. In der Eröffnung kann man schwindeln, im Mittelspiel blenden. Hier nicht. #sprecher:ward
+Sie spielt, wie ich mit fünfzig gespielt hätte. Wenn ich fünfzig geworden wäre. #sprecher:ambrose #stimmung:still
+Erst Kit, dann Haraldsen. Bauern, dann Türme. Dann sehen wir weiter. #sprecher:ward #musik:karte
 -> END
 
 === ward_reihe_offen ===
+{reiheKitBestanden and not fernpartieEndspielGesagt: -> abend_fernpartie}
 {not reiheKitBestanden:
     Kit zuerst. Bauernendspiele. Wer die nicht kann, braucht keine Türme. #sprecher:ward
 - else:
@@ -73,24 +81,61 @@ Erst Kit, dann Haraldsen. Bauern, dann Türme. Dann sehen wir weiter. #sprecher:
 }
 + {not erinnerungHastingsBestanden} [„Wie haben Sie Schach lieben gelernt?“]
     -> ward_erinnerung
-+ [„Bis später.“]
++ [„Bis morgen.“]
     -> END
 
+// Kapitel 48, dritter Abend auf dem Weg hinunter: Die Fernpartie ist auch ein Endspiel.
+=== abend_fernpartie ===
+~ fernpartieEndspielGesagt = true
+Auf dem Weg hinunter gehen in der Stadt die Lichter an. #sprecher:erzaehler
+* [„Die Fernpartie. Das ist auch ein Endspiel.“]
+- Ein Turm gegen zwei Springer. Und Bauern. Ich habe hundertsechzig Jahre darauf gestarrt. #sprecher:ambrose
+* [„Kannst du es gewinnen?“]
+- Er antwortet nicht gleich. #sprecher:erzaehler #pause:2
+Ich weiß es nicht. Ich konnte Angriffe. Ich konnte Opfer. Das hier konnte ich nie. #sprecher:ambrose
+Deshalb lernst du es. Nicht ich. #sprecher:ambrose #stimmung:still
+-> END
+
 === ward_victor_fort ===
-Er ist zur Seilbahn. Ich laufe keinem nach, der wegläuft. Du vielleicht schon. #sprecher:ward
+Er ist den Pfad hinauf. Ich bin vierundsechzig. Ich renne keinem mehr nach. Du vielleicht schon. #sprecher:ward
 Ohne ihn spielen wir nicht. Ich will, dass er zusieht. #sprecher:ward
 -> END
 
 === ward_clubkampf ===
-Bauern, Türme, Opposition. Jetzt zeig mir, ob du sie auch in einer ganzen Partie findest. #sprecher:ward
-In der Ecke sitzt Victor, die Hände in den Taschen. Kein Gerät. Er wartet. #sprecher:erzaehler
-Sie tauscht gern und früh. Wer ins Endspiel will, kommt zu ihr nach Hause. Aber du entscheidest. #sprecher:ambrose
-+ [„Spielen wir.“]
+{not wardLaurieGesagt: -> ward_laurie}
+Ich vereinfache. Ich tausche, was sich tauschen lässt. Die meisten wollen im Mittelspiel gewinnen, weil sie das Ende fürchten. #sprecher:ward
+Was willst du? #sprecher:ward
++ [„Das Ende.“]
+    Sie nickt. Mehr nicht. #sprecher:erzaehler
     ~ beginnePartie("summitCity.clubkampf")
     -> END
 + [„Noch nicht.“]
     Das Feuer brennt noch eine Weile. #sprecher:ward
     -> END
+
+// Kapitel 52, vor der Partie: Mama kommt zum ersten Mal den Pfad herauf.
+=== ward_laurie ===
+~ wardLaurieGesagt = true
+Victor sitzt am Fenster, in einem Pullover von Mr. Haraldsen, der ihm zu groß ist. Die weiße Jacke hat er zurückgegeben. #sprecher:erzaehler
+Neben ihm sitzt Mama. Sie ist den Pfad heraufgekommen, zum ersten Mal. Sie und Ward sehen einander an, quer durch die Hütte. #sprecher:erzaehler
+Laurie. #sprecher:ward
+Mrs. Ward. #sprecher:mutter
+Du warst die Beste in dem Jahr. Ich hätte es dir sagen sollen. #sprecher:ward #pause:2
+Mama sagt nichts. Sie setzt sich und steckt die Hände in die Ärmel, und ihre Augen glänzen. #sprecher:erzaehler
+* [Zum Brett gehen]
+- Die Nadel liegt auf dem Kaminsims. Ein Berggipfel aus Silber, schlicht, ohne alles. #sprecher:erzaehler
+-> ward_clubkampf
+
+// Geführter Moment beim Damentausch (begegnungen.json, summitCity.clubkampf).
+=== clubkampf_heimweg ===
+{clubkampfHeimwegGesehen: -> END}
+~ clubkampfHeimwegGesehen = true
+Sie führt dich dorthin, wo sie zu Hause ist. Und du gehst mit. #sprecher:ambrose
+* [„Ja.“]
+- Weißt du, was du tust? #sprecher:ambrose
+* [„Ich hab es geprüft, so gut ich kann.“]
+- Er lacht leise. Dann sage ich nichts mehr. #sprecher:ambrose #stimmung:lacht
+-> END
 
 === ward_nach_niederlage ===
 Verloren. Und? Hast du gesehen, wo? #sprecher:ward
@@ -98,21 +143,38 @@ Noch einmal, wenn du es weißt. Nicht vorher. #sprecher:ward
 + [„Ich weiß es.“]
     ~ beginnePartie("summitCity.clubkampf")
     -> END
-+ [„Später.“]
++ [„Nicht jetzt.“]
     -> END
 
 === ward_nach_sieg ===
 ~ clubkampfSummitCityNadel = nadelSummitCity
 {ausgangSummitCityClubkampf == "remis":
     Remis. Ich habe bis zum letzten Bauern gespielt, und du auch. Das ist mehr wert, als du denkst. #sprecher:ward
-- else:
-    Du hast mich besiegt. Gut. #sprecher:ward #pause
-    Jetzt zeig mir, wie. #sprecher:ward
+    -> ward_nadel
 }
-Victor klatscht. Leise, aber er klatscht. #sprecher:erzaehler
-Die achte Nadel. Juno wird ein neues Blatt brauchen. #sprecher:ambrose #stimmung:froh
-Ward nickt Ambroses Brett zu, als könne sie ihn sehen. Vielleicht kann sie es. #sprecher:erzaehler
-Für die Meisterschaft: Spiel jede Stellung zu Ende. Auch die, die du für verloren hältst. #sprecher:ward
+Sie spielt es zu Ende, jeden Zug, bis zum letzten Bauern. Dann lehnt sie sich zurück und sieht dich lange an. #sprecher:erzaehler
+Du hast mich besiegt. Gut. #sprecher:ward #pause
+Sie nimmt den Silbergipfel vom Kaminsims. Sie gibt ihn dir nicht. #sprecher:erzaehler
+Jetzt zeig mir, wie. #sprecher:ward
+* [„Was?“]
+- Wo habe ich verloren? Nicht der Zug. Der Gedanke. #sprecher:ward
+* [Den König aus der Ecke zeigen]
+- Du zeigst ihr, dass du ein Jahr gelernt hast, ihn zu verstecken. Dass ein Fernfahrer dir gezeigt hat, wie er läuft. #sprecher:erzaehler
+Dass du gezählt hast, so gut du konntest, und dann gegangen bist. #sprecher:erzaehler
+Du hast gehofft. #sprecher:ward
+* [„Ja.“]
+- In einem Endspiel. Ich habe vierzig Jahre geglaubt, im Endspiel gebe es nichts zu hoffen. Nur zu wissen. #sprecher:ward
+Sie lächelt, zum zweiten Mal in sechs Tagen. Da siehst du, wie alt man werden kann, ohne fertig zu sein. #sprecher:ward
+-> ward_nadel
+
+=== ward_nadel ===
+Sie steckt dir die Nadel an. Die achte. #sprecher:erzaehler #klang:fanfare
+Victor klatscht, allein, dreimal, ungeschickt. Dann Mama, Kit und Mr. Haraldsen. #sprecher:erzaehler
+In der Tür steht Juno, keuchend. Acht! Acht! Ich hab eine Seite frei gelassen! #sprecher:juno #stimmung:froh
+* [„Es war keine schöne Partie.“]
+- Sie war makellos. #sprecher:ambrose
+Fast. Ein, zwei Züge waren ungenau. Aber sie war schön. Ich wusste nicht, dass etwas so Stilles schön sein kann. #sprecher:ambrose #stimmung:froh
+Ich lerne noch. Stell dir das vor. #sprecher:ambrose #stimmung:lacht
 -> END
 
 === ward_alltag ===
@@ -129,11 +191,15 @@ Für die Meisterschaft: Spiel jede Stellung zu Ende. Auch die, die du für verlo
 // ---------------------------------------------------------------- Erinnerung Hastings 1895 (Szene 85)
 
 === ward_erinnerung ===
-Ward nimmt ein zerlesenes Heft aus dem Regal. Die Seiten sind braun. #sprecher:erzaehler
-Mein Vater hat mir diese Partie gezeigt, da war ich neun. Hastings, 1895. Steinitz gegen von Bardeleben. #sprecher:ward
-Von Bardeleben stand am Ende auf und ging. Er hat nicht aufgegeben. Er ist einfach gegangen. #sprecher:ward
-Spiel du die weißen Züge ab dem siebzehnten. Rate, was Steinitz gezogen hat. #sprecher:ward
-Neunundzwanzig Jahre nach mir. #sprecher:ambrose #pause
+// Kapitel 49: Am vierten Abend lässt Ward den Helden nicht gehen. Erst Laurie, dann Hastings.
+Bleib. Unten ist heute das Drachenfest. Die halbe Stadt spielt mit einer Figur, die es nicht gibt. #sprecher:ward
+Big Joe hat mich angerufen. Da komme ein Kind, das zählt, bevor es schlägt, und trotzdem opfert. Das Kind sei von Laurie. #sprecher:ward
+Ich habe sie in neunzehn Zügen geschlagen. Sie war die Beste, die ich in dem Jahr gesehen hatte. Ich habe es ihr nicht gesagt. #sprecher:ward
+* [„Sie ist unten. In der Stadt.“]
+- Ich weiß. Sie steckt die Hände noch immer in die Ärmel. Ich werde es ihr sagen, bevor ihr fahrt. #sprecher:ward
+Es ist dreißig Jahre zu spät. Aber man macht manche Züge trotzdem noch. #sprecher:ward
+Sie holt ein dünnes Heft aus dem Regal, mit einem Umschlag aus Packpapier. #sprecher:erzaehler #musik:hastings
+Hastings, 1895. Ein alter Mann namens Steinitz. Er war Weltmeister gewesen, und alle sagten, er sei fertig. Rate. Du hast Weiß. #sprecher:ward
 + [Die Partie spielen]
     ~ beginneAufgaben("summitCity.erinnerungHastings")
     -> END
@@ -143,29 +209,47 @@ Neunundzwanzig Jahre nach mir. #sprecher:ambrose #pause
 
 === ward_nach_erinnerung ===
 ~ erinnerungHastingsBesprochen = true
-Ward klappt das Heft zu. #sprecher:erzaehler
-Du hast es gesehen, oder? Wie alles plötzlich aufgeht. Deshalb spiele ich noch. #sprecher:ward
-Neunundzwanzig Jahre nach mir. Und sie spielen noch schöner. Das tröstet mich. #sprecher:ambrose #stimmung:friedlich
+Ein Turm, der hängt und hängt und nicht geschlagen werden darf, weil dahinter jedes Mal etwas Schlimmeres wartet. #sprecher:erzaehler
+* [„Das ist kein Endspiel.“]
+- Nein. Das ist ein Angriff, wie ihn sich ein Endspieler ausdenkt. Er war neunundfünfzig. #sprecher:ward
+Zum ersten Mal lächelt sie. Es macht sie zwanzig Jahre jünger. #sprecher:erzaehler
+Achtzehnhundertfünfundneunzig. Neunundzwanzig Jahre nach mir. #sprecher:ambrose
+Ich dachte, danach hätten sie nur noch gerechnet. Brückenbauer, überall. Und sie spielen noch schöner. Schöner als wir. #sprecher:ambrose
+* [„Macht dich das traurig?“]
+- Es tröstet mich. Ich habe geglaubt, ich hätte etwas verpasst. Dabei habe ich nur den Anfang gesehen. #sprecher:ambrose #stimmung:froh
+Die meisten Leute reden mit sich selbst, wenn sie Schach lernen. Du hörst dabei zu. Das ist ungewöhnlich. Ich frage nicht. #sprecher:ward
 Zwischen den Seiten steckt ein Zettel in fremder Schrift. Züge aus einer alten Fernpartie, vier Paare. Ward weiß nicht, woher er kommt. #sprecher:erzaehler
 Das ist meine Partie gegen Hale. #sprecher:ambrose #pause
+* [Hinaussehen]
+- Unten im Tal steigt ein Feuerwerk auf, grün, in der Form von etwas mit Flügeln. #sprecher:erzaehler
+Ein Drache auf dem Brett. Dame und Springer in einer Figur. Zu meiner Zeit hätte man mich dafür aus dem Kaffeehaus geworfen. Herrlich. #sprecher:ambrose #stimmung:lacht
 -> END
 
 // ---------------------------------------------------------------- Victor verliert (Szene 87)
 
 === victor_krise ===
+// Kapitel 50: Victor spielt mit dem Gerät in der Tasche; das Summen ersetzt sein Thema (Musik geraet).
 ~ victorKriseGesehen = true
-Die Tür geht auf. Victor kommt herein, ohne zu klopfen, und setzt sich Ward gegenüber. #sprecher:erzaehler
-Ich soll gegen Sie spielen. Zur Vorbereitung. Mein Vater hat angerufen. #sprecher:victor
-Ward stellt die Figuren auf, ohne ein Wort. Sie spielen. #sprecher:erzaehler
-Nach jedem Zug brummt etwas in Victors Tasche. Er sieht nicht aufs Brett, er wartet auf das Brummen. #sprecher:erzaehler
-Nach zwei Stunden steht ein Turmendspiel auf dem Brett. Victor hat einen Bauern mehr. Dann brummt es zweimal, und er zieht den König in die falsche Richtung. #sprecher:erzaehler
-Drei Züge später gibt er auf. #sprecher:erzaehler
-Sein Telefon klingelt. Er nimmt ab, ohne etwas zu sagen. #sprecher:erzaehler
-Victor? Was sagt die Bewertung? Bist du dem Coach gefolgt? #sprecher:grahamHale
-Victor legt auf. Er zieht ein kleines schwarzes Gerät aus der Tasche, wirft es auf den Tisch und läuft hinaus. #sprecher:erzaehler
-Er spielt, als wäre er nicht da. #sprecher:ward
-Kopf und Ruhe, {held}. Wer einer Maschine in der Tasche glaubt, sieht das Brett nicht mehr. #sprecher:ambrose #stimmung:still
-Geh ihm nach. Ich glaube, er braucht jetzt keinen Erwachsenen. #sprecher:ambrose
+Am fünften Tag ist Victor an der Reihe. Der Mann im grauen Anzug wartet draußen. In die Hütte lässt Ward ihn nicht. #sprecher:erzaehler #musik:geraet
+Hier drin sind Spieler und ein Feuer. Sie sind keines von beiden. #sprecher:ward
+Du sitzt am Fenster. Victor legt nichts auf den Tisch. Seine rechte Hand hat er in der Jackentasche. #sprecher:erzaehler
+Nach dreißig Zügen hat er einen Bauern mehr und ein Turmendspiel, das du kennst. Haraldsen hat es dir gezeigt. Die Brücke. #sprecher:erzaehler
+* [Zusehen]
+- Er zieht nicht. Er hält die Schulter schief, als horche er auf etwas. Es summt. Kurz. Dann zwei lange. #sprecher:erzaehler #klang:geraet_summen
+Victor zieht den Turm. Nicht auf die vierte Reihe. Ward zieht ihren König ein Feld. Die Brücke ist nicht mehr zu bauen. #sprecher:erzaehler
+Zug um Zug rinnt es ihm durch die Finger. Ward stellt sich nur immer dorthin, wo er vorbeiwill. Opposition. #sprecher:erzaehler
+Nach siebzig Zügen hat er verloren. Ein gewonnenes Endspiel, mit einem Bauern mehr. #sprecher:erzaehler
+Sein Telefon klingelt. Auf dem Bildschirm steht „Vater“. Er sieht darauf, drei Sekunden, vier. Er drückt es weg. #sprecher:erzaehler #klang:telefon
+* [Victor ansehen]
+- Er wirft etwas Graues, Flaches auf den Tisch. Es schlittert über das Brett und stößt die Könige um. #sprecher:erzaehler #klang:figuren_kippen #musik:aus
+Es hat gesagt, plus zwei Komma eins. Die ganze Zeit. Ich hab doch gemacht, was es gesagt hat. #sprecher:victor #stimmung:muede
+Er steht auf. Der Stuhl bleibt stehen. Er ist zu gut erzogen, um einen Stuhl umzuwerfen. #sprecher:erzaehler
+Draußen ruft der Mann im grauen Anzug, dann rennende Schritte auf dem Pfad. Aufwärts. Nicht hinunter. #sprecher:erzaehler #pause:2
+Ward stellt den schwarzen König zurück. Er spielt, als wäre er nicht da. #sprecher:ward
+* [„Er hat die Brücke gesehen. Er wusste es.“]
+- Natürlich wusste er es. Er ist der Begabteste, den ich in zwanzig Jahren hier oben hatte. #sprecher:ward
+Er hat sich selbst nicht geglaubt. Jemand hat ihm sehr gründlich beigebracht, sich nicht zu glauben. #sprecher:ward
+Worauf wartest du? Ich bin vierundsechzig. Ich renne keinem mehr nach. #sprecher:ward
 -> END
 
 // ---------------------------------------------------------------- Kit
@@ -183,14 +267,14 @@ Geh ihm nach. Ich glaube, er braucht jetzt keinen Erwachsenen. #sprecher:ambrose
 {not kitGetroffen:
     ~ kitGetroffen = true
     Am Fenster sitzt ein Mädchen in Wanderschuhen und zählt Felder mit dem Finger. #sprecher:erzaehler
-    Kit. Mein Vater ist Bergführer, ich bin Wards Schülerin. #sprecher:kit
+    Kit. Fünfzehn. Mein Vater ist Bergführer, ich bin Wards Schülerin. #sprecher:kit
 }
-Der Bauer läuft, der König rennt. Wer ist schneller? Zähl die Felder. #sprecher:kit
+Der Bauer läuft, der König rennt. Wer ist schneller? Zähl. Wenn der König in das Quadrat kommt, hat er ihn. #sprecher:kit
 Quadrat, Opposition, ein Tempo in Reserve. Meine Aufgaben sind klein. Aber gemein. #sprecher:kit
 + [„Zeig her.“]
     ~ beginneAufgaben("summitCity.reiheKit")
     -> END
-+ [„Später.“]
++ [„Nicht jetzt.“]
     Der Bauer wartet. Er ist geduldig. Ich nicht. #sprecher:kit
     -> END
 
@@ -218,12 +302,12 @@ Quadrat, Opposition, ein Tempo in Reserve. Meine Aufgaben sind klein. Aber gemei
     Ein alter Mann in Seilbahnuniform sitzt am Kamin und poliert eine Turmfigur. #sprecher:erzaehler
     Haraldsen. Ich fahre die Seilbahn, seit sie gebaut wurde. Und ich spiele Turmendspiele, seit ich denken kann. #sprecher:haraldsen
 }
-Ein Turm hinter dem Freibauern. Wie ein Seil hinter der Gondel. #sprecher:haraldsen
+Ein Turm hinter dem Freibauern. Wie ein Seil hinter der Gondel. Er schiebt, und er hält, beides zugleich. #sprecher:haraldsen
 Philidor, Lucena. Klingen wie Gipfel. Sind auch welche. #sprecher:haraldsen
 + [„Ich bin bereit.“]
     ~ beginneAufgaben("summitCity.reiheHaraldsen")
     -> END
-+ [„Später.“]
++ [„Nicht jetzt.“]
     Die nächste Gondel kommt in zehn Minuten. Ich auch. #sprecher:haraldsen
     -> END
 

@@ -138,8 +138,12 @@ def test_rand_geschlossen(ort: dict, eintrag: dict):
 
 
 def _namen_auf_karten(ort: dict) -> set[str] | None:
-    """Namen aller Objekte auf den gezeichneten Karten eines Ortes; None, wenn keine gezeichnet ist."""
-    dateien = [INHALTE / e["datei"] for e in ort["karten"] if (INHALTE / e["datei"]).exists()]
+    """Namen aller Objekte auf den gezeichneten Karten eines Ortes; None, wenn keine gezeichnet ist.
+
+    Zustände zählen mit: Manche Dinge gibt es nur in einer Fassung (der Tisch mit dem Pizzakarton im
+    Wohnzimmer erst nach dem ersten Abend, Runde 12)."""
+    pfade = [p for e in ort["karten"] for p in (e["datei"], *e.get("zustaende", {}).values())]
+    dateien = [INHALTE / p for p in pfade if (INHALTE / p).exists()]
     if not dateien:
         return None
     return {o.name for datei in dateien for o in k.objekte(k.lade_karte(datei))}

@@ -32,7 +32,8 @@ oder ein Musikstück auswählt, liest das Kapitel und weiß, wie sich die Stelle
 | 1   | `akt1_teil4.md`                                                        | offen                |
 | 1   | `akt1_befunde.md`                                                      | offen, nach dem Text |
 | 2   | `akt2_teil1.md` bis `akt2_teil4.md` (Kapitel 17–29), `akt2_befunde.md` | fertig               |
-| 3–4 | —                                                                      | offen                |
+| 3   | `akt3_teil1.md` bis `akt3_teil3.md` (Kapitel 30–46), `akt3_befunde.md` | fertig               |
+| 4   | —                                                                      | offen                |
 
 ## Nächste Schritte (Stand 13.11.2026)
 

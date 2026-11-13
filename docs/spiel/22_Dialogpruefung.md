@@ -1974,3 +1974,239 @@ Karton mit Pokalen.
 - Schachlich nicht nachgerechnet: die erzählten Partien gegen Slick, Mama und Big Joe (nur das Bild
   „Spieß“ in C1.15 und Big Joes Schwäche in C1.17).
 - Stil, Ton und Länge waren nicht Auftrag.
+
+## Teil D: Roman Akt 3 gegen Story-Bibel, Akt 1 und Akt 2
+
+Abkürzungen: **R3-1, R3-2, R3-3** = `docs/spiel/roman/akt3_teil1.md`, `akt3_teil2.md`, `akt3_teil3.md`; **R1-1 … R1-4** und **R2-1 … R2-4** = die Teile von Akt 1 und Akt 2 des Romans; **B** = `docs/spiel/05_Story_Bibel.md`; **Bef1/Bef2/Bef3** = `akt1_befunde.md`, `akt2_befunde.md`, `akt3_befunde.md`; „Z.“ = Zeilennummer; „K“ = Kapitel. Stufen: **Widerspruch** (beides kann nicht stimmen), **Abweichung** (Roman ändert, vermutlich bewusst), **unklar** (eine Seite schweigt oder ist mehrdeutig). Zählung: **36 Befunde**, davon **7 Widersprüche** (D1.4, D2.1, D2.2, D2.3, D2.5, D4.1, D4.3), **9 Abweichungen** (D1.1, D1.2, D1.3, D2.4, D2.8, D2.9, D3.3, D3.7, D4.9) und **20 unklare Stellen**. Zwei der Widersprüche (D2.2, D4.3) betreffen nur Randnotizen. Ein Dokument „Akt 3 Leben“ gibt es in `docs/spiel/` nicht (vorhanden sind nur `12_Akt1_Leben.md` und `14_Akt2_Leben_teil1/2.md`); dagegen wurde also nicht geprüft.
+
+### Vom Hauptchat zu entscheiden
+
+| Frage                                                                    | Roman                                                                                                               | Bibel / andere Seite                                                                                                       | Befund     |
+| ------------------------------------------------------------------------ | ------------------------------------------------------------------------------------------------------------------- | -------------------------------------------------------------------------------------------------------------------------- | ---------- |
+| Wann und wo schrieb Ambrose seinen letzten Zug (40. Kxg3)?               | Vor der Abreise abgeschickt; Hale hat ihn seit neun Wochen (K42, K44; so auch Akt 1, K16)                           | Szene 99 (Akt 4): im Fieber in der Siedlung aufgeschrieben und einem Postreiter gegeben                                    | D2.3       |
+| Was steht auf der Rückseite des Briefs, und sind das „die letzten Züge“? | „unsere letzten Züge“, Züge 29 bis 32; Text „vier Züge“, Bildnotiz „drei Züge“                                      | Abschnitt 35: Partie geht bis Zug 40; Fragment 7 = Züge 29–32                                                              | D2.1, D2.2 |
+| Trägt der Umschlag aus Ironwood ein Siegel von Hale?                     | K44: Hale machte zwei gleiche Siegel (Umschlag und Brief)                                                           | Akt 2, K26 und Bibel Szene 41: Siegel des Postmeisters am Postsack, Umschlag offen; Bibel Szene 76: „wie auf dem Umschlag“ | D2.5       |
+| Wie kam der Brief ohne Umschlag in Hales Nachlass?                       | K42: Brief war „unterwegs nach Süden“; K44: liegt ungeöffnet versiegelt bei Hales Papieren                          | Bibel und Akt 2 erklären es nicht („herausgefallen oder herausgenommen“)                                                   | D2.6       |
+| Warum brach Ambrose 1866 auf?                                            | Weil keine Antwort kam (acht Wochen)                                                                                | Bibel Szene 73: weil Hale geschrieben hatte, er solle kommen (widerspricht Bibel Abschnitt 17)                             | D2.4       |
+| Wann wurde das Brett gebaut?                                             | K38: 1852 „gerade erst gebaut“, Brenneisen liegt daneben                                                            | Akt 1 und Bibel Szene 17: eingebrannt „A. W. 1857“                                                                         | D1.4       |
+| Hört Ambrose den Helden, wenn das Brett nicht dabei ist?                 | K42: hat im Kasten sechs Tage zugehört (Bretter sammeln, Batiste)                                                   | K37: Kasten blieb bei Miss Odile; Bibel 2.2: nur wenn das Brett in der Nähe ist                                            | D4.1       |
+| Von wem stammen die Whitlock-Duvals ab, und wer ist „die Letzte“?        | Henri: „ein Bruder von irgendwem“; Céleste „die Letzte meiner Familie“; Brett über Claires Töchter an Mrs. Whitlock | Bibel: Whitlock-Duval sind Ambroses „Nachfahren“; Mrs. Whitlock „die letzte Nachfahrin“                                    | D1.5, D1.6 |
+| „Josiah“ und „Ur-ur-ur … Ein Hale eben“ schon in Akt 3?                  | Beides in K32 (Vitrine)                                                                                             | Bibel: Vorname „fällt erst in Akt 4“; der Satz ist für Szene 88 (Akt 4) vorgesehen                                         | D1.1, D1.2 |
+| Erinnerung 1858: ab welcher Stellung, wie groß der Vorteil?              | Ab Hales Läuferzug; Mira: „Matt. In neun. Oder er gibt die Dame.“                                                   | Szene 77: „am Moment seines tollkühnen Opfers“, Vorteil +0,8 bis +2,5                                                      | D2.9       |
+
+### D1 Widersprüche und Abweichungen gegen die Bibel
+
+**D1.1 – Abweichung. Der Vorname „Josiah“ fällt schon in Akt 3.**
+Roman K32, R3-1 Z. 384–385: „Der Vater vom Vater vom Großvater meines Vaters. Josiah. Er hat Brücken gebaut.“
+Bibel Abschnitt 6, Frage 4, B Z. 784–785: „In Akt 1 nennt ihn niemand beim Vornamen; der Name fällt erst in Akt 4.“
+Der Roman lässt Victor den Vornamen in der Lobby nennen; in R1 und R2 kommt „Josiah“ nicht vor (Suche ohne Treffer). Die Generationenzahl selbst passt (fünf Schritte, B Z. 781–782).
+
+**D1.2 – Abweichung. „Ur-ur-ur … Herrje. Ein Hale eben.“ steht im Roman in Akt 3.**
+Roman K32, R3-1 Z. 393–394: „‚Ur-ur-ur‘, sagte er. […] ‚Herrje. Ein Hale eben.‘“
+Bibel B Z. 782–783: „Ambrose darf in Akt 4 einmal die ‚Ur‘ zählen und aufgeben“; Szene 88, B Z. 2306: „Ambrose (`#pause`): ‚Ein Hale. Ur-ur-ur … Herrje. Ein Hale eben.‘“
+Der Satz ist in der Bibel der Moment von Akt 4 (Hales Seite); im Roman ist er schon an der Vitrine verbraucht.
+
+**D1.3 – Abweichung. Victors „Das ist falsch.“ fehlt.**
+Roman K33, R3-1 Z. 412–418: „‚Die Spielberichte‘, sagte er. […] ‚Weil ich sie mir angeschaut habe.‘“
+Bibel 18.1, B Z. 1502–1504: „Als er sieht, wie Nova vor einer Partie ein winziges Gerät ins Ohr steckt, sagt er zum ersten Mal laut: ‚Das ist falsch.‘“
+Im Roman sieht Victor das Gerät nicht und sagt den Satz nicht; er übergibt nur stumm die Berichte (im Hotel statt in der Akademie). In den „Neu“-Listen nicht vermerkt.
+
+**D1.4 – Widerspruch. Das Brett ist 1852 neu gebaut, trägt aber die Jahreszahl 1857.**
+Roman K38, R3-2 Z. 430–432 und 446: „Ein richtiges jetzt, eingelegt, helles Holz und dunkles […] neben dem Brett lag ein Brenneisen.“ – „Es ist meines. Ich habe es gerade erst gebaut.“ (Szene spielt 1852, Z. 452: „Ich war einundzwanzig“.)
+Gegenstelle: R3-2 Z. 678 „_A. W. 1857._“; R1-1 Z. 96–97: „am Rand waren Buchstaben eingebrannt […] _A. W. 1857._“; Bibel Szene 17, B Z. 543–544: „die eingebrannten Buchstaben ‚A. W. 1857‘“.
+Ein 1852 fertiges Brett mit Brenneisen daneben passt nicht zu einer eingebrannten Jahreszahl 1857; vermutlich gilt 1857 (Akt 1, Bibel).
+
+**D1.5 – unklar. Abstammung der Whitlock-Duvals und wer „die Letzte“ ist.**
+Roman K40, R3-2 Z. 632: „Ein Vorfahr […] Keiner weiß mehr, wer. Ein Bruder von irgendwem.“; Z. 712–713: „_Die Letzte meiner Familie, und sie findet es langweilig._“
+Bibel Abschnitt 16, B Z. 1467: „Ambrose findet seine Nachfahren, die Klavierbauer Whitlock-Duval“; Zeitlinie, B Z. 40: „Die letzte Nachfahrin, die alte Mrs. Whitlock“.
+Im Roman ist Ambrose nur ein Seitenverwandter („Bruder von irgendwem“), in der Bibel sind es seine „Nachfahren“; von wem die Werkstatt-Linie abstammt, sagt keine Seite (der Roman zeigt als Kinder des Vaters nur Ambrose und Claire, und Claire heiratet nach Norden, R3-2 Z. 463). „Die Letzte“ ist einmal Céleste, in der Bibel Mrs. Whitlock.
+
+**D1.6 – unklar. Das Brett geht über Töchter weiter, die letzte Besitzerin heißt aber Whitlock.**
+Roman K38, R3-2 Z. 464–466: „Sie hat aufgepasst. Und ihre Tochter. Und deren Tochter. Bis zu einer alten Frau“.
+Bibel Zeitlinie, B Z. 39–40: „Das Brett geht an Ambroses Schwester, die nach Maple Falls heiratet. […] Die letzte Nachfahrin, die alte Mrs. Whitlock“.
+Über eine verheiratete Schwester und deren Töchter bliebe der Name Whitlock nicht erhalten; die Bibel hat dieselbe Lücke, der Roman macht sie mit „Tochter … deren Tochter“ sichtbar.
+
+**D1.7 – unklar. Der Held spielt gegen Buck einen Spruch, den er laut Bibel erst von Buck bekommt.**
+Roman K43, R3-3 Z. 304–307: „sagte ich: ‚Na, das wird teuer.‘ – ‚Na, jetzt willst du’s aber wissen!‘, rief Buck“.
+Bibel Szene 74, B Z. 1911–1912: „Belohnung: Karte **Großes Maul** beim ersten Sieg“; Abschnitt 18.4, B Z. 1611: „Nicht immun (‚Na, jetzt willst du's aber wissen!‘)“.
+Bucks Antwort ist die Reaktion auf einen Spruch; welcher Spruch das ist (Grübelfalle aus Szene 54 oder schon Großes Maul), sagt der Roman nicht.
+
+**D1.8 – unklar. Wem Hales Nachlass gehörte.**
+Roman K44, R3-3 Z. 394–395: „Im Keller. Den hat mein Vorgänger von der Bahn übernommen, mit dem Gebäude.“
+Bibel Abschnitt 17, B Z. 1482: „Sein Nachlass geht an seine Söhne; ein Notizbuch bleibt in der Familie“; 18.4, B Z. 1615–1616: „Hütet den Nachlass der Familie Hale […], ohne es zu wissen.“
+Nachlass bei den Söhnen (Bibel) oder Kisten, die bei der Bahn im Bahnhof blieben (Roman); außerdem weiß Mr. Okoro im Roman, dass es „der Kram von dem Brückenbauer“ ist.
+
+**D1.9 – unklar. Belohnungen der Bibel, die der Roman nicht nennt.**
+Roman: In K38 und K45 kommt kein Partiefragment vor; „Partiefragment 7“ steht nur in der „Neu“-Tabelle (R3-3 Z. 868). Ebenso fehlen Pokerface (Szene 65), Großes Maul (Szene 74), Flüstern (Szene 76), Mentor-Zug und Notiz nach den Clubkämpfen.
+Bibel Szene 66, B Z. 1838: „Belohnung: **Partiefragment 5**“; Szene 77, B Z. 1938: „Belohnung: **Partiefragment 6**“.
+Kein Widerspruch, der Roman schweigt; für die Spieldialoge fehlt damit die erzählte Fassung, wie die Fragmente 5 und 6 „zurückkommen“.
+
+### D2 Fernpartie und Vergangenheit
+
+**D2.1 – Widerspruch. „Unsere letzten Züge“ sind die Züge 29 bis 32.**
+Roman K44, R3-3 Z. 488: „‚Das sind unsere letzten Züge‘, sagte er. ‚Neunundzwanzig bis zweiunddreißig, wie er sie eingetragen hat. Zur Kontrolle.‘“
+Bibel Abschnitt 35, B Z. 2615–2616 und 2627: Partie bis „40. Kxg3 b5“; „Ambroses letzter Zug ist **40. Kxg3** (Halbzug 79)“; Fragment 7, B Z. 2643: „57–64 | 29–32 | Akt 3, Szene 76: Hales Brief“.
+Die Züge 29 bis 32 stimmen mit Fragment 7 und Bef1 Abschnitt 7 überein, sie sind aber nicht die letzten Züge der Partie (danach folgen 33 bis 40), und derselbe Brief spricht von „Ihr letzter Zug“ (R3-3 Z. 436). Zur Kontrolle der Endstellung taugen vier Züge aus der Mitte auch nicht. Die Bibel hat denselben Fehler in Szene 76, B Z. 1928: „Fragment 7 (die letzten Züge, die Hale vorschlug)“.
+
+**D2.2 – Widerspruch (Randnotiz). Vier Züge im Text, drei in der Bildnotiz.**
+Roman K44, R3-3 Z. 482: „Schachnotation, vier Züge, sauber untereinander.“
+Gegenstelle R3-3 Z. 499: „`[Bild: … Rückseite mit drei Zügen.`“
+Vier ist richtig (Züge 29 bis 32).
+
+**D2.3 – Widerspruch gegen Akt 4 der Bibel. Wann Ambrose seinen letzten Zug schrieb.**
+Roman K42, R3-3 Z. 215–216: „Ich hatte meinen Zug geschickt, den, der auf dem Brett steht, und es fehlte nur noch seine Antwort.“; K44, Z. 436: „_Ihr letzter Zug liegt seit neun Wochen vor mir. […] Meine Antwort steht seit gestern in meinem Buch._“ So auch Akt 1, R1-4 Z. 357–358: „Und dann war ich am Ende, und es fehlte nur noch seine Antwort. Ein Zug.“
+Bibel Szene 99, B Z. 2380–2381: „Er schreibt seinen letzten Zug auf und gibt den Brief einem Postreiter: ‚Bring ihn nach Norden. Er wartet.‘“; Abschnitt 35, B Z. 2627: Züge 37 bis 40 als Zugerraten „im Flashback ‚Die letzte Kerze‘“; Zeitlinie, B Z. 38: „um Hale die letzten Züge selbst zu bringen“.
+Im Roman hat Hale den Zug 40 lange vor Ambroses Abreise und seine Antwort schon notiert; in der Bibel entsteht derselbe Zug erst im Sterbezimmer. Beides zugleich geht nicht; der Roman (drei Stellen, zwei Akte) ist in sich einheitlich, Szene 99 müsste angepasst werden.
+
+**D2.4 – Abweichung. Grund des Aufbruchs 1866.**
+Roman K42, R3-3 Z. 216–223: „Und sie kam nicht. Vier Wochen. Sechs. Acht. […] Ich konnte nicht mehr warten. […] Ich wollte ihm den Zug aus der Hand nehmen“.
+Bibel Szene 73, B Z. 1900–1901: „Hale hatte geschrieben, er solle kommen; er brach auf, wurde unterwegs krank und kam nie an.“ Dagegen Bibel Abschnitt 17, B Z. 1480: „der Brief erreicht ihn nie“ und Akt 2, R2-4 Z. 77–78: „Da war ich schon unterwegs. Er hat geschrieben, und ich war schon unterwegs.“
+Der Roman folgt der Zeitlinie und Akt 2; Szene 73 der Bibel widerspricht ihrer eigenen Zeitlinie. In Bef3 nur mittelbar genannt („sie fuhren aneinander vorbei“).
+
+**D2.5 – Widerspruch. Das Siegel aus Ironwood stammt in Akt 2 vom Postmeister und sitzt am Postsack.**
+Roman K44, R3-3 Z. 421–422: „‚Er hat zwei Siegel gemacht‘, flüsterte ich. ‚Eines für den Umschlag. Eines für den Brief.‘“
+Akt 2 K26, R2-4 Z. 24–25: „Säcke […] jeder zugeschnürt und mit einem Klumpen Wachs versiegelt“; Z. 35–36: „Der alte Postmeister war ein Schachnarr. Jeder Sack eine Aufgabe.“; Z. 59–60: „Die Klappe war offen.“ Bibel Szene 41, B Z. 1222–1223: „einen ungeöffneten Postsack von 1866; auf dem Wachssiegel ist eine Schachstellung geprägt“.
+Der Umschlag hatte in Akt 2 gar kein Siegel; die Fesselung war das Rätsel des Postmeisters. Die Bibel ist hier selbst uneins (Szene 76, B Z. 1923–1924: „dieselbe Stellung […] wie auf dem Umschlag aus Ironwood“). Die Rückbezüge „in einem Museum gelöst, zwischen Postsäcken“ und „dieselbe Fesselung“ (R3-3 Z. 416–419) stimmen dagegen.
+
+**D2.6 – unklar. Der Brief war „unterwegs“ und liegt doch ungeöffnet in Hales Papieren.**
+Roman K42, R3-3 Z. 234–235: „An einen Brief, der unterwegs gewesen war, nach Süden“; K44, Z. 412: „Unter dem Bündel _1866_ lag ein einzelnes Blatt. Gefaltet, zweimal. Mit Wachs verschlossen.“
+Akt 2 K26, R2-4 Z. 64–65: „Der Brief muss herausgefallen sein. Oder jemand hat ihn herausgenommen.“; Bibel Abschnitt 17, B Z. 1480: „Umschlag in Ironwood, Brief in Desert Springs“.
+Keine Seite sagt, wie das versiegelte Blatt aus dem Umschlag in Ironwood zu Hales eigenen Kisten kam (oder ob Hale den Umschlag leer abschickte). Ambroses Deutung R3-3 Z. 474–476 („Er muss gedacht haben, ich hätte seinen Brief gelesen“) setzt voraus, dass Hale den Brief für abgeschickt hielt.
+
+**D2.7 – unklar. Acht Wochen gewartet, neun Wochen beim Schreiben.**
+Roman K42, R3-3 Z. 216: „Vier Wochen. Sechs. Acht.“; Z. 227: „Ich bin elf Tage gefahren.“; K44, Z. 436: „seit neun Wochen vor mir“.
+Gegenstelle R3-3 Z. 234–235 (Brief und Ambrose gleichzeitig unterwegs); R2-4 Z. 77–78.
+Rechnerisch knapp: Hale schreibt frühestens neun Wochen nach Eingang des Zugs, Ambrose ist nach acht Wochen und elf Tagen Fahrt schon krank. Möglich, aber „aneinander vorbeigefahren“ stimmt nur, wenn die Post nach Norden schnell war.
+
+**D2.8 – Abweichung (klein). Hale siezt im Brief.**
+Roman K44, R3-3 Z. 442: „_Kommen Sie nach Norden. Wir spielen die letzten Züge an einem Brett_“.
+Bibel Szene 76, B Z. 1926: „‚Komm nach Norden. Wir spielen die letzten Züge an einem Brett. Ich warte.‘“ (ebenso B Z. 1480, 1374).
+Wortlaut sonst gleich; der Roman ändert die Anrede und stellt „Ich warte.“ als eigene Zeile ans Ende.
+
+**D2.9 – Abweichung. Erinnerung 1858: Startstellung und Stärke des Vorteils.**
+Roman K45, R3-3 Z. 591–592: „‚Matt. In neun. Oder er gibt die Dame.‘“; Z. 643: „Der Held spielt ab dem Läuferzug für Weiß weiter.“
+Bibel Szene 77, B Z. 1932–1936: „am Moment seines tollkühnen Opfers: Diesmal spielt {held} die Stellung weiter, mit Weiß […] Vorteil +0,8 bis +2,5 nach R13“.
+Der Roman beginnt nach Hales Verteidigungszug und behauptet einen erzwungenen Gewinn; die Bibel beginnt beim Opfer und verlangt nur einen mäßigen Vorteil. Die Farbe (Weiß = Ambrose) passt.
+
+**D2.10 – unklar. Wusste Hale 1858, dass das Opfer richtig war?**
+Roman K45, R3-3 Z. 636–638: „Hale hat es gewusst. […] Er wusste, dass er eine verlorene Partie gewonnen hatte“.
+Roman K44, R3-3 Z. 438–440: „_Ich hielt Ihr Spiel damals für Leichtsinn. Ich habe sieben Jahre und diese Partie gebraucht, um zu begreifen, dass es Mut war_“.
+Ambroses Schluss in K45 passt nicht recht zum Wortlaut des Briefs: Dort schämt sich Hale für das Wort von 1859 und hielt das Opfer lange für Leichtsinn. Es ist nur Ambroses Deutung, steht aber als Erklärung da.
+
+**D2.11 – unklar. Hales Spielweise in der Fernpartie.**
+Roman K42, R3-3 Z. 211: „Und er, glaube ich, hat ein wenig gespielt wie ich. Er hat Dinge riskiert, die er 1858 nie riskiert hätte.“
+Bibel Abschnitt 35, B Z. 2597–2598: „Hale verteidigt nüchtern und hält mit zwei Springern gegen den Turm“.
+Die konstruierte Partie zeigt keinen riskierenden Hale; der Satz ist durch „glaube ich“ abgeschwächt.
+
+**D2.12 – Was zur Fernpartie und zur Vergangenheit passt** (jeweils nachgeschlagen):
+
+- Farben: Fernpartie endet „Ein Endspiel. Schwarz am Zug.“ (R3-3 Z. 841–843) = B Z. 2653–2655, Bef1 Abschnitt 7 und R1-4 Z. 366–367. In der Matchpartie 1858 hat Ambrose Weiß (R3-3 Z. 533, 542) = Szene 77, B Z. 1934.
+- Züge: „Neunundzwanzig bis zweiunddreißig“ = Fragment 7 (B Z. 2643) und Bef1 Z. 175; Hales Antwort steht nicht im Brief, sondern im Notizbuch auf der fehlenden Seite (R3-3 Z. 436, 488) = B Z. 2628 und Bef1 Z. 175; Vitrine mit voller linker Seite und herausgerissener rechter (R3-1 Z. 363–373) = Szene 57, B Z. 1759–1761.
+- „Geopfert habe ich erst, als ich es dreimal nachgerechnet hatte“ (R3-3 Z. 211) passt zu 35. Lxh6, 36. Sxf6+ (B Z. 2597); „über ein Jahr gespielt“ = 1865/66 und Bef1 Z. 166; „ein Zug, ein Brief“ ohne Zahl der Tage.
+- Jahreszahlen: 1859 das Wort „Später“ (R3-3 Z. 438 = B Z. 35, R1-3 Z. 343–348); „sieben Jahre“ 1859 bis 1866; 1879 und „Dreizehn Jahre danach“ (R3-3 Z. 266–268 = B Z. 1481); „hundertsechzig Jahre“; Bündel 1863 bis 1866 passen zu „Die beiden schreiben sich Briefe“ (B Z. 36); Alter: 9 im Jahr 1840, 21 im Jahr 1852 (B Z. 1478–1479), 27 im Jahr 1858 (R1-3 Z. 310), 20 in London (R2-2 Z. 93).
+- 1858: Match vier zu drei, Turmopfer, Bauer „nehmen und nach Hause gehen“, Hales Läufer „ein Feld zurück“, vierzig Minuten, Leute auf der Treppe, „bemerkenswert unnötig“, „unerträglich“ (R3-3 Z. 513–557, 464, 527) = R1-3 Z. 291–292, 309–338.
+- Die Auflösung „Das Opfer war richtig“ (R3-3 Z. 582–619) = Szene 77, B Z. 1935–1938 und Bef1 Z. 162; Akt 1 lässt das „Nein“ als Ambroses Glauben stehen (R1-3 Z. 329–338), Akt 2 bereitet mit „Es war schön. Und es hat gestimmt. Beides.“ vor (R2-4 Z. 463). Kein Widerspruch zwischen den drei Akten.
+- Tod: Winter 1866, elf Tage, Fieber, Bergbausiedlung, nicht angekommen (R3-3 Z. 227–230) = R2-1 Z. 63–64, R2-4 Z. 27–29 und 77, B Z. 38. „Ich bin nicht angekommen. Darum warte ich noch.“ = Szene 73, B Z. 1901.
+- Port Delacroix als Geburtsort, Vater Klavierbauer (R3-2 Z. 57, 86–87) = Bef1 Z. 167, B Z. 31, R1-4 Z. 116.
+
+### D3 Rückbezüge auf Akt 1 und Akt 2
+
+**D3.1 – unklar. „Kowalczyk“ und die Frage nach Verwandtschaft.**
+Roman K30, R3-1 Z. 81: „Sie hieß Kowalczyk. Ich fragte nicht, ob sie mit jemandem verwandt sei.“
+Gegenstelle R2-4 Z. 549: „Gegen den habe ich einmal gespielt. Kowalski.“; Bibel B Z. 922 „Joseph ‚Big Joe‘ Kowalski“, B Z. 1646 „Mrs. Kowalczyk“.
+Die Anspielung (Z. 75: „Armen wie Big Joe“) zielt auf Big Joe, dessen Name aber anders lautet; eine Person namens Kowalczyk gibt es in Akt 1 und 2 nicht.
+
+**D3.2 – unklar. Junos Turm in Cedar Creek.**
+Roman K30, R3-1 Z. 31: „dass ihr Turm in Cedar Creek einen ehrenvollen Tod gestorben ist“.
+Gegenstelle: In R1-3 und R1-4 habe ich keine Stelle gefunden, an der Juno in Cedar Creek einen Turm verliert (Suche nach „Turm“ bei Juno ohne Treffer). Der Rückbezug hat keinen Anker.
+
+**D3.3 – Abweichung (klein). Sams Dame.**
+Roman K40, R3-2 Z. 692: „Sie zog die Dame im dritten Zug heraus, wie Sam.“
+Akt 1 K6, R1-2 Z. 96: „‚Ich spiel Dame raus in Zug zwei‘, sagte Sam“.
+
+**D3.4 – unklar. Slicks Postkarte kommt über Mrs. Okafor.**
+Roman K37, R3-2 Z. 334–335: „Mrs. Okafor hatte sie nachgeschickt.“
+Gegenstelle R2-1 Z. 217: „Maple Falls! Zwei Nadeln […] Die von der Delgado und die von der alten Okafor.“
+Slick kennt den Helden als „Maple Falls“; warum die Karte über die Bibliothek von Cedar Creek läuft, sagt der Roman nicht. Die übrigen Angaben der Karte stimmen (zweite Brücke R2-2 Z. 333, Tamsin, Stein mit Mulde R2-2 Z. 327–328, Springer R2-2 Z. 347–350).
+
+**D3.5 – unklar. „Er hatte es nie gesagt.“**
+Roman K42, R3-3 Z. 206: „Ich hatte es nie gefragt. Er hatte es nie gesagt.“
+Akt 2, R2-1 Z. 63–64: „Ich habe elf Tage gebraucht. Von New Orleans bis … nun. Elf Tage, und ich bin nicht angekommen.“; R2-4 Z. 77–78.
+Angedeutet hatte er es zweimal; „nie gesagt“ ist zu stark, wenn die Stellen in Akt 2 bleiben.
+
+**D3.6 – unklar. „An einem Tag, an dem ich noch nicht wusste, was ein Opfer ist.“**
+Roman K44, R3-3 Z. 416–417.
+Akt 2: Das Siegelrätsel steht in K26 (R2-4 Z. 39–44), die Opfer der „Unsterblichen“ erlebt der Held schon in K21 (R2-2 ab Z. 74), Morphys Damenopfer in Akt 1 (R1-3 Z. 382–385). Gemeint ist wohl das eigene erste Opfer (K28); wörtlich stimmt der Satz nicht.
+
+**D3.7 – Abweichung (Randnotiz). Porträtfassung „lacht ohne Spott“.**
+Roman K45, R3-3 Z. 642: „Fassung ‚lacht ohne Spott‘, dann ‚befreit‘ (neu)“.
+Akt 1, R1-4 Z. 427: „Fassung ‚lacht ohne Spott‘ (neu, nur hier)“.
+
+**D3.8 – Rückbezüge, die stimmen:** Programmheft von New York (R1-3 Z. 360–361); Fußnote mit sechs Wörtern (R1-3 Z. 199–210); Mrs. Okafors Spruch vom Loch daneben (R1-3 Z. 278–279); „Diese Stellung rührt niemand an“ (R1-1 Z. 176); „Ich kann kaum Schach“ (R1-1 Z. 149) und „Ich werde besser“ (R1-4 Z. 373); das Lachen vom Steg (R1-4 Z. 381–385); „Partie ohne Makel“ (R1-4 Z. 344); Margaret, Fernschach per Post, „An meinem Tisch“ (R1-2 Z. 31–33, 531); sechzig Jahre abgestaubt (R1-1 Z. 260); Tagebuch in rosa Tinte (R1-2 Z. 140); Nadeln Blatt, Buch, Achteck, Zahnrad (R1-2 Z. 303, R1-4 Z. 192, R2-4 Z. 456); Rätseltafel am Ortsausgang (R1-3 Z. 39); Coach Delgado als Mathelehrerin (R1-2 Z. 78); Slick als Kurier, „hinter dir brennt das Haus“ (R2-2 Z. 296), „seit März keinen neuen“ (R2-2 Z. 340); Big Joe als Kranführer (R2-3 Z. 231); Nova auf dem Podium in Riverton (R2-1 Z. 146–169); Foto mit Händen in den Ärmeln (R2-3 Z. 268, R2-4 Z. 164); „Es war schön. Und es hat gestimmt.“ (R2-4 Z. 463); „zwei Dickköpfe“ von Oma Ruth (R2-3 Z. 292); Postmeister mit Fieber (R2-4 Z. 28); Telegrafenamt (R2-2 Z. 171–174); Einladung in silberner Schrift, Victor auf der Brücke, Geländer mit „J. H.“, Juno fragt (R2-4 Z. 535–608); Umschlag aus dickem, gelblichem Papier mit senkrechter Schrift (R2-4 Z. 49–51); Pavillon im Regen (R2-2 Z. 222); blaues Heft; Abfahrt im Januar nach erstem Schnee und „Eröffnung im Januar“ (R2-4 Z. 486, 529–531). Ambrose sitzt in Akt 1 und 2 nirgends, die Zählung „zum zweiten/dritten Mal“ (R3-3 Z. 148, 604) stimmt mit R3-1 Z. 573.
+
+### D4 Innere Stimmigkeit
+
+**D4.1 – Widerspruch. Ambrose will im Kasten zugehört haben, während der Kasten in der Turnhalle blieb.**
+Roman K42, R3-3 Z. 162–165: „Ich bin in diesem Kasten gelegen, sechs Tage, und habe dir zugehört. Wie du Bretter sammelst. Wie du gegen einen Bootsbauer verlierst“; Z. 199–200: „Und ich war die ganze Zeit drei Schritte neben dir.“
+Roman K37, R3-2 Z. 265–268: „Sie gab mir das Brett nicht zurück […] Sie legte es in einen Geigenkasten […] ‚Hol es, wenn du es brauchst. Nicht vorher.‘“ (erst am fünften Tag: „Den Geigenkasten gab sie mir mit“, Z. 361). Bibel 2.2, B Z. 86–87: „kann es nicht verlassen und nur sprechen, wenn {held} es berührt oder in der Nähe hat“.
+Beim Brettersammeln und am Kai war das Brett nicht dabei; nur den Clubkampf (Kasten auf dem Schiedsrichtertisch) konnte Ambrose hören.
+
+**D4.2 – unklar. Tageszählung in Port Delacroix.**
+Roman R3-2 Z. 358 „Am fünften Tag schickte Miss Odile mich in die Rue des Facteurs“ (Leim holen), Z. 380–381 „Zum ersten Mal seit fünf Tagen“, Z. 472 „sein einer Satz für diesen Tag“; Z. 641 „zum ersten Mal seit sechs Tagen“ (bei Henri, der erst jetzt den Leim gibt, Z. 610); dazwischen der Clubkampf mit „Spiel deine Partie.“ (Z. 503) und „vor einer Woche“ (Z. 582); Z. 755 „Das am Donnerstag“, Z. 743 „Am Sonntag“.
+Es geht auf, wenn der Vorwurf am Freitag fiel, die Erinnerung am Mittwoch (Tag 5) und Clubkampf wie Werkstattbesuch am Donnerstag (Tag 6) lagen; dann wurde der Held aber am fünften Tag zum Klavierbauer geschickt und betritt die Werkstatt erst am sechsten, nach dem Clubkampf. Der Roman erklärt das nicht.
+
+**D4.3 – Widerspruch (Randnotiz). Wann Ambrose wieder sichtbar ist.**
+Roman K38, R3-2 Z. 477: „In der Gegenwart ist Ambrose für einen Augenblick wieder sichtbar.“
+Roman K40, R3-2 Z. 641: „Ich sah ihn, zum ersten Mal seit sechs Tagen“.
+
+**D4.4 – unklar. Mamas „zwei Wochen“.**
+Roman K41, R3-3 Z. 20: „Das Notzelt brauchte sie noch zwei Wochen.“
+Roman K46, R3-3 Z. 822: „Mama holte mich zwei Tage später ab.“ Dazwischen liegen ein Tag und eine Nacht Zugfahrt (Z. 14), der Tag im Canyon, ein Tag in der Stadt, der Clubkampf „am nächsten Abend“ (Z. 652): etwa eine Woche. Sie kommt außerdem mit einem Wagen (Z. 826–832), von dem vorher nicht die Rede ist (Anreise mit der Fähre).
+
+**D4.5 – unklar. Mama zwischen Ironwood und der Fähre.**
+Roman K30, R3-1 Z. 39: „‚Ich hab Nachtschicht‘, sagte sie. ‚Die ganze Woche. Sonst käme ich mit.‘“
+Roman K35, R3-2 Z. 16: „Mama fuhr mit.“ (auf der Fähre ab Silicon Bay; in Port Delacroix ist dann schon Februar, Z. 288).
+Wann und wie Mama nach Silicon Bay kommt und wie viel Zeit zwischen Clubkampf und Fähre liegt, sagt der Roman nicht; die Bibel (Szene 62) auch nicht. Die Monate selbst passen (Dezember, Januar, Februar, „sechs Monate“ seit dem Spätsommer, R3-3 Z. 21).
+
+**D4.6 – unklar. Die Ohrstöpsel in der Schachtel.**
+Roman K33, R3-1 Z. 459–461: „Vier fehlten. Ich nahm den von der Glasbrücke aus der Tasche. Er passte in die fünfte Mulde.“ (Bildnotiz Z. 551: „vier leer“.)
+Wenn vier fehlen, ist die fünfte Mulde belegt; gemeint ist wohl eine der leeren.
+
+**D4.7 – unklar. Lage des Serverraums.**
+Roman K31, R3-1 Z. 165–166: „Die Akademie im zweiten. Die Serverhalle unter der Erde“.
+Roman K33, R3-1 Z. 450: „Der Serverraum lag unter der Akademie.“
+
+**D4.8 – unklar. „Der Zug, der auf dem Brett steht“.**
+Roman K42, R3-3 Z. 215–216: „meinen Zug geschickt, den, der auf dem Brett steht“.
+Roman K40, R3-2 Z. 687–689: „die Stellung, die niemand anrührt, hatte ich Figur für Figur auf Junos Reisebrett übertragen“.
+Seit K40 steht die Stellung auf dem Reisebrett, das alte Brett ist leer; am Schluss ist es wieder richtig (R3-3 Z. 837–839).
+
+**D4.9 – Abweichung (Randtext). „Bis Kapitel 40 nicht im Inventar“.**
+Roman „Neu“-Tabelle, R3-2 Z. 794: „das Brett ist bis Kapitel 40 nicht im Inventar“ (ebenso Bef3 Z. 81).
+Roman K38, R3-2 Z. 361: „Den Geigenkasten gab sie mir mit.“; K39, Z. 491–492: wieder auf dem Schiedsrichtertisch.
+Der Held trägt das Brett im Kasten schon ab K38.
+
+### D5 Vom Romanautor schon gemeldet und bestätigt
+
+- Der „unmögliche“ Zug stammt von ZERO; der Held gibt die Partie gegen Remy auf (Bibel Szene 63: er „gewinnt“). Bestätigt, R3-2 Z. 146–235.
+- Das Brett liegt im Geigenkasten bei Miss Odile; Céleste sieht es dort statt im Rucksack (Bibel Szene 68). Bestätigt; dazu D4.1 und D4.9.
+- Juno weiß seit Dezember von Ambrose. Bestätigt; die Bibel setzt es in Szene 51a voraus.
+- Grübelfalle kommt von Rosie aus der Kasse statt als Siegprämie; im Romantext heißt der Spender nur „ein alter Mann in Riverton“ (R3-1 Z. 228–229), der Name Mr. Odum steht nur in der „Neu“-Tabelle.
+- Der Held legt die Schachtel zurück und behält nur den Stöpsel von der Glasbrücke (Bibel: Fund „Ohrempfänger“ aus der Schublade als Beweisstück). Bestätigt.
+- Mama bleibt in Port Delacroix und kommt zu Szene 80 nach. Bestätigt; dazu D4.4.
+- Dot war Mrs. Whitlocks Fernschachgegnerin; Hales Brief im Wortlaut; Züge 29 bis 32 auf der Rückseite; das Opfer von 1858 war richtig; „Atme“; drei neue Nadelbilder; Victors zweite Zeile. Bestätigt; zu den Zügen D2.1.
+- Musikhaus: Dokument 19 (Z. 66: „ist nicht zurück“) widerspricht Szene 70; der Roman folgt der Bibel (R3-3 Z. 825–826). Bestätigt.
+
+### D6 Geprüft und ohne Befund
+
+Namen und Schreibweisen aller Figuren von Akt 3 (Dr. E. Lin, Theo, Nova Sinclair, Dash, Rosie, Miss Odile, Remy, Lou, Batiste, Henri und Céleste Whitlock-Duval, Mira, Tomás, Dot, Buck, Mr. Okoro, Kowalczyk); Alter (Dr. Lin Mitte vierzig, Remy 16, Céleste 15, Mira 10, Tomás 17, Dot siebzig, Theo „in meinem Alter“ zu Held 14, Nova 16 mit Vertrag seit 14); Reihenfolge der Szenen 51 bis 80 (im Roman nur 57 vor 56 und 58 erzählt, sonst gleich); Orte und Lage (Haltestelle Ironwood, Raststätte, Glasbrücke, Akademie, Lobby, Serverraum, Fähre zwei Tage, Deich, Kai, Turnhalle, Rue des Facteurs, Wüstenbahnhof, Canyonpfad, Felsbogen mit Brücke von 1879, Garage am Motel, Antiquariat im alten Bahnhof); Zahl der Nadeln (vier, fünf, sieben); Zitate der Bibel, die wörtlich oder sinngleich übernommen sind (unter anderem Szenen 51, 51a, 53, 55, 57, 59, 60, 61, 63, 65, 67, 68, 69, 72, 73, 78, 79, 80; kleine Wortänderungen wie „Loch in einer Kette“ statt „Bauernkette“ und „Ihr Spiel“ statt „Ihr Schach“ ohne Sinnänderung); Schild „depuis 1889“ zu „seit 1889“; sechste Generation und „depuis 1826“; Victors Vorfahrenkette (fünf Schritte); Miss Odile spielt Französisch, Schwäche Königsflügel; Mira Königsgambit; Schutzengel von Miss Odile; Tablet und Victors Nachricht am Motel; Jahreszeit und Wetter (Schnee im Januar in Ironwood, Silicon Bay ohne Jahreszeit, feuchter Februar, Wärme in der Wüste); Junos Rückfahrt (Mittwoch passt, wenn die Abfahrt am Sonntag war); Ambroses Schweigen von K36 bis K40 (kein Satz in K37, je eine Stelle in K38 und K39, bricht in K40 wie in Szene 68); wer das Brett hat (Rucksack, Schiedsrichtertisch, Geigenkasten, ab K40 Stellung auf dem Reisebrett, am Ende Kasten im Kofferraum); Ambrose sitzend gezählt; „Später“ kommt in Akt 3 nur in K42 als Leitmotiv vor.
+
+### D7 Nicht geprüft
+
+- Ein Dokument „Akt 3 Leben“ gibt es nicht; `12_Akt1_Leben.md` und `14_Akt2_Leben_*.md` wurden nicht gelesen.
+- `09_Weltbeschreibung.md`, `19_Ton_und_Spannungsbogen.md` (nur zwei Zeilen per Suche), `20_Ortsblaetter.md`, `21_Klangplan.md`, `06_Regelwerk.md` (R27 bis R29), `11_Karten_und_Gegenstaende.md`: nicht gegen den Roman geprüft.
+- Akt 1 und Akt 2 des Romans wurden nicht Zeile für Zeile gelesen, sondern nur an den Stellen, auf die Akt 3 verweist (Suche und Umfeld). Stellen in Akt 1 oder 2, die Akt 3 vorgreifen, ohne dass Akt 3 darauf zurückkommt, können fehlen.
+- Bibel: gelesen wurden die Abschnitte 1, 2.1, 2.2, 8, 16 bis 24 und 35 vollständig, aus Akt 2 und Akt 4 nur einzelne Szenen (41, 88, 98 bis 100) und Figureneinträge per Suche.
+- Die Zugfolge aus Abschnitt 35 wurde nicht am Brett nachgespielt; geprüft wurden nur Zugnummern, Farben und die Zuordnung der Fragmente.
+- Schachliche Richtigkeit der erzählten Partien (König nach h1, Miss Odiles Bauernsturm, Miras Opfer) und die Randnotizen zu Klang und Bild, soweit sie keinen Sachinhalt haben.
+- Spieldialoge (`.ink`) und Daten von Akt 3.
